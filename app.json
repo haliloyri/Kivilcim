@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "Kıvılcım",
+    "slug": "kivilcim",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.kivilcim.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.kivilcim.app"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
