@@ -5,9 +5,30 @@ import { useTheme } from '../context/ThemeContext';
 const { width } = Dimensions.get('window');
 
 const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
-  const { colors, typography, layout } = useTheme();
+  const { colors, typography, layout, lang } = useTheme();
   const isHero = type === 'hero';
   const isCompact = type === 'compact';
+  
+  const todayStr = '2026-03-16';
+  const isNew = story.publishDate === todayStr;
+  // Language-aware display
+  const displayTitle = (lang === 'en' && story.title_en) ? story.title_en : story.title;
+  const displayBody = (lang === 'en' && story.body_en) ? story.body_en : story.body;
+  const displayLesson = (lang === 'en' && story.lesson_en) ? story.lesson_en : story.lesson;
+  const displayQuote = (lang === 'en' && story.quote_en) ? story.quote_en : story.quote;
+  const displaySrc = (lang === 'en' && story.src_en) ? story.src_en : story.src;
+  const displaySourceBook = (lang === 'en' && story.source_book_en) ? story.source_book_en : story.source_book;
+  const engCatMap = {
+    'Finans': 'Finance',
+    'Psikoloji': 'Psychology',
+    'Tarih': 'History',
+    'Liderlik': 'Leadership',
+    'Sağlık': 'Health',
+    'Bilim': 'Science',
+    'Felsefe': 'Philosophy',
+    'İş & Girişim': 'Business'
+  };
+  const displayCat = (lang === 'en' ? engCatMap[story.cat] ?? story.cat : story.cat);
 
   const styles = StyleSheet.create({
     card: {
@@ -17,7 +38,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
       borderColor: colors.border,
       padding: isCompact ? 16 : 20,
       marginBottom: isCompact ? 0 : 16,
-      width: isCompact ? (width - 48) / 2 : '100%',
+      width: isCompact ? (width - (layout.padding.horizontal * 2) - 12) / 2 : '100%',
       justifyContent: 'space-between',
       minHeight: isHero ? 200 : isCompact ? 160 : 140,
     },
@@ -86,6 +107,13 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
     lockIcon: {
       fontSize: 14,
       color: colors.textSecondary,
+    },
+    newBadge: {
+      backgroundColor: colors.success,
+      borderColor: colors.success,
+    },
+    newBadgeText: {
+      color: '#FFF',
     }
   });
 
@@ -103,9 +131,14 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
       <View>
         <View style={styles.cardHeader}>
           <View style={styles.badge}>
-            <Text style={styles.badgeText}>{story.cat}</Text>
+            <Text style={styles.badgeText}>{displayCat}</Text>
           </View>
           <View style={{ flexDirection: 'row', gap: 6 }}>
+            {isNew && (
+              <View style={[styles.badge, styles.newBadge]}>
+                <Text style={[styles.badgeText, styles.newBadgeText]}>YENİ</Text>
+              </View>
+            )}
             {isRead && <Text style={{ fontSize: 14 }}>✓</Text>}
             {locked && <Text style={styles.lockIcon}>🔒</Text>}
           </View>
@@ -118,12 +151,12 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
             isCompact && styles.cardTitleCompact
           ]}
         >
-          {story.title}
+          {displayTitle}
         </Text>
       </View>
 
       <View style={styles.cardFooter}>
-        <Text style={styles.cardMeta}>{story.min} dk • {story.src}</Text>
+        <Text style={styles.cardMeta}>{story.min} dk • {displaySrc}</Text>
         {!isCompact && <Text style={styles.cardArrow}>→</Text>}
       </View>
     </TouchableOpacity>

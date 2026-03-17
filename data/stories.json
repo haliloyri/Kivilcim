@@ -1,0 +1,1052 @@
+[
+  {
+    "id": 1,
+    "cat": "Psikoloji",
+    "min": 4,
+    "sourceBookId": 1,
+    "publishDate": "2026-02-08",
+    "content": {
+      "tr": {
+        "title": "Milgram Deneyi",
+        "body": "Stanley Milgram 1960'larda Yale Üniversitesi'nde yürüttüğü deneyde, katılımcılardan bir öğretmen rolünde başka bir kişiye şok vererek 'öğrenme' süreci üzerindeki etkisini ölçmesi istendi. Şaşırtıcı sonuç: Deneycinin basit 'devam edin' komutuyla, çoğu katılımcı tehlikeli seviyede şok vermeye devam etti. Bu deney, sıradan insanların otorite figürleri tarafından nasıl yönlendirilebildiğini ortaya koymaktadır.",
+        "lesson": "Otoriteyi sorgulamak hayati önem taşır. Toplumsal baskı altında bile kişisel sorumluluk kaybetmemelidir.",
+        "quote": "Çoğu insan bundan çok daha iyisini yapabilir, fakat çoğu zaman kendi kapasitelerinin farkında değildir."
+      },
+      "en": {
+        "title": "The Milgram Experiment",
+        "body": "In the 1960s, Stanley Milgram conducted a landmark study at Yale University where participants acted as 'teachers' administering electric shocks to learners. The shocking result: most continued administering dangerous levels of electricity when instructed by an authority figure. This experiment revealed how ordinary people can be led to commit harmful acts under the guise of obedience to authority.",
+        "lesson": "Questioning authority is vital. Personal responsibility must not be abandoned even under social pressure.",
+        "quote": "Most people are capable of far more than they realize, but often lack awareness of their own potential."
+      }
+    }
+  },
+  {
+    "id": 2,
+    "cat": "Motivasyon",
+    "min": 5,
+    "sourceBookId": 2,
+    "publishDate": "2026-02-10",
+    "content": {
+      "tr": {
+        "title": "Angela Duckworth'un Grit Hikayesi",
+        "body": "Angela Duckworth, Batı Point askeri akademisine giren öğrencileri incelemek için bir proje başlattı. IQ ve SAT puanları ne kadar yüksek olursa olsun, okulu bırakanlar ve kalanlar arasında fark bulunmadığını keşfetti. Fakat 'grit' (kararlılık) olarak tanımladığı - başarıya ulaşmak için kişinin ne kadar ısrarcı olduğu - başarıyı en iyi tahmin eden faktördü. Üniversitede başarısız olan öğrenciler genellikle daha düşük grit puanına sahipti.",
+        "lesson": "Zeka ve yetenek kadar, belki de daha önemli olan şey, hedefe ulaşmak için gösterilen kararlılık ve ısrardır.",
+        "quote": "Grit, tutkuyla birleştirilmiş ısrardır."
+      },
+      "en": {
+        "title": "Angela Duckworth's Grit",
+        "body": "Angela Duckworth launched a project examining students entering West Point military academy. Regardless of high IQ and SAT scores, there was no difference between those who dropped out and those who stayed. However, what she termed 'grit'—the persistence and determination to achieve goals—was the strongest predictor of success. Students who failed out consistently had lower grit scores.",
+        "lesson": "Talent and intelligence matter, but perseverance and determination to reach goals may be even more important.",
+        "quote": "Grit is passion and perseverance combined."
+      }
+    }
+  },
+  {
+    "id": 3,
+    "cat": "Tarih",
+    "min": 6,
+    "sourceBookId": 3,
+    "publishDate": "2026-02-12",
+    "content": {
+      "tr": {
+        "title": "Steve Jobs'un Conectoma Felsefesi",
+        "body": "Steve Jobs, teknoloji ve yaratıcılığın kesişim noktasına inanıyordu. Üniversitesi bıraktıktan sonra da harf sanatı dersine devam etti. Yıllar sonra, bu bilgisi geri dönerek bilgisayar tasarımında kullandığı özür tipografi sayesinde Mac'in sunduğu görsel deneyim kalitesini arttırdığını düşünüyordu. O meşhur commencement konuşmasında, 'Connecting the dots' (noktaları birleştirmek) ile başladığı hikaye, nasıl görünüşte ilgisiz bilgilerin yaratıcılığı artırdığını gösterir.",
+        "lesson": "Heterojen bilgi ve deneyim havuzu yaratıcılığın kaynağıdır. Farklı disiplinleri tanımak buluş ve yenilikleri hızlandırır.",
+        "quote": "Yaratıcılık sadece şeyleri bağlamaktır."
+      },
+      "en": {
+        "title": "Steve Jobs' Connectoma Philosophy",
+        "body": "Steve Jobs believed in the intersection of technology and liberal arts. After dropping out of college, he continued attending calligraphy classes. Years later, this knowledge resurfaced when he designed the Mac's typography, creating a superior visual experience. In his famous Stanford commencement speech, his 'Connecting the Dots' story illustrated how seemingly unrelated knowledge fuels creativity and innovation.",
+        "lesson": "A heterogeneous knowledge base and diverse experience fuel creativity. Understanding different disciplines accelerates invention and innovation.",
+        "quote": "Creativity is just connecting things."
+      }
+    }
+  },
+  {
+    "id": 4,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 4,
+    "publishDate": "2026-02-14",
+    "content": {
+      "tr": {
+        "title": "Carol Dweck'in Mindset Araştırması",
+        "body": "Carol Dweck, çocukların başarısızlık karşısında nasıl tepki verdiğini inceledi. Bazı çocuklar başarısızlığı kişisel yetersizliğin kanıtı olarak görürken (sabit mindset), diğerleri onu öğrenme fırsatı olarak gördü (büyüme mindset). Büyüme mindsetine sahip çocuklar zorluk karşısında ısrarcıydı, hatalardan ders aldı ve daha yüksek başarı elde etti. Bu bulgular eğitim ve kişisel gelişim dünyasında devrim yarattı.",
+        "lesson": "Yetenekler kalıcı değildir. Çaba, uygulama ve doğru stratejiler ile herkes gelişebilir.",
+        "quote": "Başarı sabit bir özellik değil, geliştirilebilir bir beceridir."
+      },
+      "en": {
+        "title": "Carol Dweck's Mindset Research",
+        "body": "Carol Dweck examined how children respond to failure. Some viewed setbacks as proof of personal inadequacy (fixed mindset), while others saw them as learning opportunities (growth mindset). Growth mindset children persevered through challenges, learned from mistakes, and achieved higher success. These findings revolutionized education and personal development.",
+        "lesson": "Abilities are not fixed. With effort, practice, and right strategies, anyone can improve.",
+        "quote": "Success is not a fixed trait but a developable skill."
+      }
+    }
+  },
+  {
+    "id": 5,
+    "cat": "İş",
+    "min": 7,
+    "sourceBookId": 5,
+    "publishDate": "2026-02-16",
+    "content": {
+      "tr": {
+        "title": "Jeff Bezos'un Regret Minimization Framework",
+        "body": "Jeff Bezos, 30 yaşında saygın bir yatırım bankasında çalışırken, Amazon'u kurmak için bir karar alma yöntemi uyguladı. Hayatının sonunda geriye bakıp hangi karar almamaktan en çok pişman olurdu sorusunu sordu. Cevap açıktı: riskli de olsa Amazon'u kurma fırsatını kaçırmaktan. Bezos, bu 'pişmanlığı minimize etme' yaklaşımı ile geleceğe dönüp, bugün seçimini değerlendirebilseyin kendini nasıl hissedebileceğini hayal etmesini tavsiye eder.",
+        "lesson": "Kararlar alırken uzun vadeli perspektif önemlidir. Pişman olmayacağınız seçimi yapın.",
+        "quote": "80 yaşında, başarısız bir şirket mi kuracağını yoksa bir fırsatı kaçıracağını hatırlamak istersin?"
+      },
+      "en": {
+        "title": "Jeff Bezos' Regret Minimization Framework",
+        "body": "At age 30, while working at a respected investment bank, Jeff Bezos applied a decision-making method: looking back at life's end, what decision would he regret most? The answer was clear—missing the opportunity to start Amazon, despite the risk. Bezos recommends projecting yourself into the future and imagining how you'd feel about your choice today.",
+        "lesson": "Long-term perspective matters in decision-making. Make choices you won't regret.",
+        "quote": "At 80, would you regret failing at a venture or missing the opportunity entirely?"
+      }
+    }
+  },
+  {
+    "id": 6,
+    "cat": "Psikoloji",
+    "min": 4,
+    "sourceBookId": 6,
+    "publishDate": "2026-02-18",
+    "content": {
+      "tr": {
+        "title": "Solomon Asch'in Uyum Deneyi",
+        "body": "1950'lerde Solomon Asch, grup baskısının bireysel yargıyı nasıl etkilediğini araştırdı. Katılımcılardan, açık cevabı belli olan bir hat uzunluğu karşılaştırması yapması istendi. Ancak oda doldurulmuş oyuncu katılımcılar kasıtlı olarak yanlış cevap verdiler. Sonuç şaşırtıcıydı: gerçek katılımcıların %75'i en az bir kez yanlış cevapla uyum sağladı. Bu deney, grup dinamiğinin bireysel doğruluğu bile bastırabileceğini gösterdi.",
+        "lesson": "Grup düşüncesi tehlikeli olabilir. Kendi yargınıza güvenmeyi ve ihtiyaç olursa karşı çıkmayı öğrenin.",
+        "quote": "Bireysel düşünceyi korumak, uyuma direnç göstermek cesaret gerektirir."
+      },
+      "en": {
+        "title": "Solomon Asch's Conformity Experiment",
+        "body": "In the 1950s, Solomon Asch investigated how group pressure influences individual judgment. Participants were asked to compare line lengths, where the correct answer was obvious. However, the room was filled with confederates who deliberately gave wrong answers. The result was striking: 75% of real participants conformed to the wrong answer at least once. This showed that group dynamics could override individual truth.",
+        "lesson": "Groupthink is dangerous. Learn to trust your judgment and resist conformity when necessary.",
+        "quote": "Preserving individual thought requires courage to resist conformity."
+      }
+    }
+  },
+  {
+    "id": 7,
+    "cat": "Motivasyon",
+    "min": 6,
+    "sourceBookId": 7,
+    "publishDate": "2026-02-20",
+    "content": {
+      "tr": {
+        "title": "Elon Musk'un First Principles Düşüncesi",
+        "body": "Elon Musk, elektrikli araçlar ve uzay teknolojisine girişinde first principles (temel ilkeler) düşünme yöntemini uyguladı. Çoğu kimse 'piller çok pahalı, bu yüzden elektrikli arabalar imkansız' derken, Musk pil maliyetinin kaynak malzemelerinin maliyetinden pek fazla yüksek olamayacağını hesapladı. Aynı şekilde, roket geri dönüşü için, 'roketler malıymış çünkü bir kez kullanılıyordu' yerine 'uçaklar yeniden kullanılabilir' prensibini uyguladı. İlişkili örnek çıkarmak yerine ilk prensiplere dönmek, yenilikçi çözümler sağladı.",
+        "lesson": "Alışılmış kıstasları sorgula. Temel ilkelerden başlayarak çalış ve imkansız görünen sorunları çöz.",
+        "quote": "İnsanlar ilişkili örnekler yoluyla yanlış genellemelere varabilir. Fizik ve asıl ilkeler hakkında düşün."
+      },
+      "en": {
+        "title": "Elon Musk's First Principles Thinking",
+        "body": "Elon Musk applied first principles thinking when entering electric vehicles and space technology. While most said 'batteries are too expensive, impossible,' Musk calculated that battery costs couldn't exceed the cost of raw materials by much. Similarly, for rocket reusability, instead of accepting 'rockets are disposable because they always have been,' he applied the principle 'airplanes are reusable.' Working from fundamental principles rather than analogies unlocked innovative solutions.",
+        "lesson": "Question conventional wisdom. Work from first principles to solve seemingly impossible problems.",
+        "quote": "People often make incorrect generalizations through analogy. Think in terms of physics and fundamentals."
+      }
+    }
+  },
+  {
+    "id": 8,
+    "cat": "İş",
+    "min": 5,
+    "sourceBookId": 8,
+    "publishDate": "2026-02-22",
+    "content": {
+      "tr": {
+        "title": "Warren Buffett'in 2-Liste Stratejisi",
+        "body": "Warren Buffett, kapılarını Mike Flint'e (pilot) açtığında, onu hayatının hedefleriyle ilgilenmesi için görevlendir. Flint, Buffett'in tavsiyesi üzerine 25 hedefini listedi. Ardından Buffett ona, 'Şimdi bu 25'ten en önemli 5'ini seç' dedi ve kalan 20 üzerinde 'kaçınılması gereken' bir liste yarattı. Mesaj açıktı: odak eksikliği başarının en büyük düşmanı. Çoğu insanın başarısız olması, yanlış hedefleri değil, çok fazla hedefi seçmesidir.",
+        "lesson": "Öncelikleri belirle. Hedeflerin hepsi eşit değildir; hangisinin gerçekten önemli olduğunu bilmelisin.",
+        "quote": "Hayatında neyi kaçınacağını bilmek, neyi yapacağını bilmek kadar önemlidir."
+      },
+      "en": {
+        "title": "Warren Buffett's 2-List Strategy",
+        "body": "When Warren Buffett opened his doors to Mike Flint (his pilot), he tasked him with defining his life goals. Flint, following Buffett's advice, listed 25 goals. Buffett then asked, 'Pick your top 5,' and turned the remaining 20 into an 'avoid at all costs' list. The message was clear: lack of focus is success's biggest enemy. Most people fail not from wrong goals but from pursuing too many.",
+        "lesson": "Define priorities. Not all goals are equal; know what truly matters to you.",
+        "quote": "Knowing what to avoid in life is as important as knowing what to pursue."
+      }
+    }
+  },
+  {
+    "id": 9,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 9,
+    "publishDate": "2026-02-24",
+    "content": {
+      "tr": {
+        "title": "Daniel Kahneman'ın Düşünme Hızları",
+        "body": "Nobel Ödülü kazanan psikolog Daniel Kahneman, iki tür düşünme modunu tanımladı: Sistem 1 (hızlı, otomatik, sezgisel) ve Sistem 2 (yavaş, deliberatif, mantıksal). Sistem 1 saniyede bin kararı hızlıca alırken, Sistem 2 derin analiz yapar. Hata yapıyız çünkü Sistem 1'e çok güveniyoruz. Mesela 'A hastaya ameliyat riski %10 ise hayatta kalma riski %90' ile 'B hastaların %90'ı hayatta kaldı' cümlesi aynı bilgiyi içerse de, insanlar B'yi tercih eder. Bunu anlamak daha iyi karar almayı sağlar.",
+        "lesson": "Sezgilerine güvenme. Önemli kararların bazılarında yavaş düşünmeye zaman ayır.",
+        "quote": "Çoğu hatamız Sistem 1'in tuzaklarından kaynaklanır; Sistem 2'nin yavaşlığı avantajdır."
+      },
+      "en": {
+        "title": "Daniel Kahneman's Thinking Fast and Slow",
+        "body": "Nobel-winning psychologist Daniel Kahneman describes two thinking systems: System 1 (fast, automatic, intuitive) and System 2 (slow, deliberative, logical). System 1 makes thousands of snap decisions, while System 2 provides deep analysis. We err because we over-rely on System 1. For instance, 'Surgery has 10% mortality risk' and 'Patients survive at 90% rates' contain the same information, yet people prefer the latter framing. Understanding this enables better decisions.",
+        "lesson": "Don't blindly trust intuition. On important decisions, invest time in slow thinking.",
+        "quote": "Most errors stem from System 1's traps; System 2's slowness is an advantage."
+      }
+    }
+  },
+  {
+    "id": 10,
+    "cat": "Tarih",
+    "min": 6,
+    "sourceBookId": 10,
+    "publishDate": "2026-02-26",
+    "content": {
+      "tr": {
+        "title": "Viktor Frankl'in Anlamı Bulma",
+        "body": "Viktor Frankl, avusturya psikiyatrist, Auschwitz'te alıkonuldu. En korkunç koşullarda, hayatta kalanlar ile ölenler arasında bir fark buldu: yaşamın anlamını bulabilenler hayatta kaldı. Frankl, 'Yaşam soruyor, biz cevap veriyoruz' diye yazıyor. Hayatta kalan mahkumlar, çocuklarını görmek, bir görev tamamlamak veya sevdiklerini hatırlamak gibi bir amaç tanımlamışlardı. Kitabı 'Man's Search for Meaning', en çok okunan kişisel gelişim kitaplarından biridir.",
+        "lesson": "Hayatın anlamı dışarıdan gelmez; sen onu yaratırsın. En zor zamanlarda, bir amaç bul.",
+        "quote": "Kim yaşama neden bulursa, hemen hemen her nasıl yaşamı dayanabilir."
+      },
+      "en": {
+        "title": "Viktor Frankl's Search for Meaning",
+        "body": "Viktor Frankl, an Austrian psychiatrist, was imprisoned at Auschwitz. In the most horrific conditions, he found one difference between survivors and the dead: those who found meaning in life survived. Frankl wrote, 'Life asks questions, we provide answers.' Survivors identified purposes—seeing children again, completing a mission, remembering loved ones. His book 'Man's Search for Meaning' became one of the most-read personal development works.",
+        "lesson": "Life's meaning doesn't come from outside; you create it. In hardest times, find a purpose.",
+        "quote": "He who has a why to live can bear almost any how."
+      }
+    }
+  },
+  {
+    "id": 11,
+    "cat": "Motivasyon",
+    "min": 4,
+    "sourceBookId": 11,
+    "publishDate": "2026-02-28",
+    "content": {
+      "tr": {
+        "title": "David Goggins'in Hardship Account",
+        "body": "David Goggins, usta koğuş sahibi (SEAL), başlangıçta overweight ve yoğun yaşıyor. Bir gün, hava görevlisinin kişisinin imkansız olmasını keşfetti ve üç ay içinde 100 pound kaybetti. Ardından, SEAL eğitimini tamamlamak için kendini hazırlayan Goggins, 'Hardship Account' konseptini geliştirdi: acı, zorluk ve ızdırap, para gibi hesaplanan bir para birimi. Her zaman bir ödemeyi yanında taşıdığını söyledi; zorluk çektikçe, bu hesaptan çekebilirdi.",
+        "lesson": "Acı veya zorluk kaçınılmazdır. Ancak onları bir envestman olarak gör.",
+        "quote": "Büyüme acının diğer tarafında yatıyor."
+      },
+      "en": {
+        "title": "David Goggins' Hardship Account",
+        "body": "David Goggins, a Navy SEAL, was initially overweight and despondent. One day, discovering a Navy SEAL recruitment announcement, he transformed, losing 100 pounds in three months. Goggins later developed the 'Hardship Account' concept: pain, struggle, and suffering are like currency. He says he always carries debt; each hardship he endures is a withdrawal against that account.",
+        "lesson": "Pain and hardship are inevitable. But view them as an investment.",
+        "quote": "Growth lies on the other side of pain."
+      }
+    }
+  },
+  {
+    "id": 12,
+    "cat": "İş",
+    "min": 5,
+    "sourceBookId": 12,
+    "publishDate": "2026-03-02",
+    "content": {
+      "tr": {
+        "title": "Ray Dalio'nun İlke Odaklı Yönetim",
+        "body": "Ray Dalio, Bridgewater Associates'i kurduğunda, radikal şeffaflığı sisteme dahil etti. Herkes her toplantıyı kaydetmek, açık kritiği teşvik etmek ve hatalar olmadan gelişmenin imkansız olduğuna inanmıştı. Bir gün, oğlu Dalio'yu çalışma odalarında kaydedilmiş bir hata için eleştirdi. Dalio, öğrendiklerini yazarak 'İlkeler' adında bir kitap oluşturdu. Işletmede başarının, ekonomik veya pazarlama stratejisinden daha çok, insanları doğru prensiplere göre hareket etmeye teşvik etmek olduğunu savundu.",
+        "lesson": "İlkeler, eylemler için temel oluşturur. Açık iletişim ve hataları kabul etmek başarı sağlar.",
+        "quote": "Hatalar üzerinden öğrenmek, sistemik ilkeleri oluşturmanın temel yoludur."
+      },
+      "en": {
+        "title": "Ray Dalio's Principle-Based Management",
+        "body": "When Ray Dalio founded Bridgewater Associates, he embedded radical transparency into operations. Everyone recorded meetings, encouraged open critique, and believed improvement was impossible without mistakes. One day, his son criticized Dalio for an error documented in meeting recordings. Dalio learned and documented his learnings into 'Principles.' He argues business success stems not from economic strategy but from guiding people to act according to sound principles.",
+        "lesson": "Principles form the foundation for action. Radical transparency and embracing mistakes drive success.",
+        "quote": "Learning from mistakes is fundamental to building systematic principles."
+      }
+    }
+  },
+  {
+    "id": 13,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 13,
+    "publishDate": "2026-03-04",
+    "content": {
+      "tr": {
+        "title": "Mihaly Csikszentmihalyi'nin Flow Akışı",
+        "body": "Macar psikolog Mihaly Csikszentmihalyi, 'flow' (akış) halini tanımladı: o mükemmel konsantrasyonun, zaman algısının kaybolduğu, ve basitçe 'şimdi' da yaşanılan durum. Flow, ne çok kolay ne de çok zor görevlerde meydana gelir; beceriler ve zorluk seviyesi dengedeyken ortaya çıkar. Csikszentmihalyi, en mutlu insanların, not zamanlarını değil, becerilerini sınayabilecek bir görevde olduklarını buldu. Müzisyen çalan bir çocuk, oyun oynayan bir cerrah, yazı yazan bir yazar—hepsi flow halindeydi.",
+        "lesson": "Mutluluk reklamdan gelmez. Başarısı sağlayabileceğin, fakat seni çok zorlamayan görevler ara.",
+        "quote": "Flow durumunda zaman kaybolur çünkü sadece şimda yaşanıyor."
+      },
+      "en": {
+        "title": "Mihaly Csikszentmihalyi's Flow",
+        "body": "Hungarian psychologist Mihaly Csikszentmihalyi describes 'flow'—that perfect concentration where time dissolves and only 'now' exists. Flow occurs neither in too-easy nor too-hard tasks; it emerges when skills and challenge balance. Csikszentmihalyi found the happiest people spent time not in leisure, but in tasks stretching their abilities. A musician performing, a surgeon operating, a writer writing—all in flow.",
+        "lesson": "Happiness doesn't come from entertainment. Seek challenges you can master but that push you.",
+        "quote": "In flow, time disappears because you exist only in the present."
+      }
+    }
+  },
+  {
+    "id": 14,
+    "cat": "Motivasyon",
+    "min": 6,
+    "sourceBookId": 14,
+    "publishDate": "2026-03-06",
+    "content": {
+      "tr": {
+        "title": "Jocko Willink'in Disiplin Eşitliği",
+        "body": "Eski Navy SEAL Jocko Willink, 'Disiplin Eşittir Özgürlük' başlığında bir kitap yazdı. Temel fikri basit: kendisine disiplin uygulamamız, diğer kuvvetlerce zorlanmamız anlamına gelir. Jocko, sabah 4:30'te kalkıp, egzersiz yapıyor, daha sonra işine başlıyor. Bu rutin onda kontrol duygusunu, güç duygusunu, başarı duygusunu yaratıyor. Disiplin bir hapishane değil; özgürlüğün kapısıdır.",
+        "lesson": "Kendi kendine disiplin, başkasının kontrol altında olmaktan kurtarır.",
+        "quote": "Disiplin ne kadar sert olursa, özgürlük o kadar büyüktür."
+      },
+      "en": {
+        "title": "Jocko Willink's Discipline Equals Freedom",
+        "body": "Former Navy SEAL Jocko Willink wrote 'Discipline Equals Freedom.' The core idea: disciplining ourselves means no external force controls us. Jocko wakes at 4:30 AM, exercises, then works. This routine creates a sense of control, strength, and accomplishment. Discipline isn't a prison; it's the gateway to freedom.",
+        "lesson": "Self-discipline frees you from external control.",
+        "quote": "The harder the discipline, the greater the freedom."
+      }
+    }
+  },
+  {
+    "id": 15,
+    "cat": "Tarih",
+    "min": 7,
+    "sourceBookId": 15,
+    "publishDate": "2026-03-08",
+    "content": {
+      "tr": {
+        "title": "Benjamin Franklin'in Virtü Deneyi",
+        "body": "Benjamin Franklin, Philadelpia'da yaşarken, 13 erdem (virtü) tanımladı ve her hafta birini pratik etti. İlk hafta 'İtidal' (Temperance), ikinci hafta 'Sessizlik' (Silence), vb. Yılı bitirmeden beş kez döngü tamamladı. Her akşam, kendini kontrol ederek, günü puanladı. Franklin, mükemmel virtü ulaşamadığını, fakat her bir pratikten her bir hafta geliştirdiğini yazdı. Bunlar sonrası, başarısı hız kazandı.",
+        "lesson": "Karakteri geliştirmek, kasları geliştirmek gibidir. Düzenli pratik, zamanla büyük değişimler yaratır.",
+        "quote": "Mükemmellik alışkanlıktır, sadece bir eylem değil."
+      },
+      "en": {
+        "title": "Benjamin Franklin's Virtue Experiment",
+        "body": "Living in Philadelphia, Benjamin Franklin defined 13 virtues and practiced one each week. Week one: Temperance, Week two: Silence, and so on. He completed five cycles in a year, scoring himself each evening against his goals. Franklin wrote that while he never achieved perfect virtue, he improved each week through practice. His success accelerated thereafter.",
+        "lesson": "Character development is like muscle development. Consistent practice creates major transformation over time.",
+        "quote": "Excellence is a habit, not an act."
+      }
+    }
+  },
+  {
+    "id": 16,
+    "cat": "İş",
+    "min": 5,
+    "sourceBookId": 16,
+    "publishDate": "2026-03-10",
+    "content": {
+      "tr": {
+        "title": "Simon Sinek'in Niçin (Why) Bulması",
+        "body": "Simon Sinek, 'Start with Why' adlı kitabında, başarılı şirketlerin ortak özelliğini buldu: hedeflerinden başlamıyor, niyetlerinden (why) başlıyorlar. Apple neden ürün yapar? Cevap 'daha iyi bilgisayar yapmak için' değil; 'Dünyayı değiştirmek için' (change the world). Bu 'niçin' müşterileri, rakip ürünler değil, inancı satın alır. Harley-Davidson neden var? Bisiklet satmak değil; bir yaşam tarzı inancını sunmak.",
+        "lesson": "Başarı para değil, bir amaç etrafında insanları birleştirmekten gelir.",
+        "quote": "İnsanlar ne yaptığını değil, neden yaptığını alırlar."
+      },
+      "en": {
+        "title": "Simon Sinek's Start with Why",
+        "body": "Simon Sinek's 'Start with Why' identifies successful companies' common trait: they don't start with what they do, but why they do it. Why does Apple exist? Not 'make better computers,' but 'change the world.' This 'why' makes customers buy belief, not products. Why does Harley-Davidson exist? Not to sell bikes but to offer a lifestyle philosophy.",
+        "lesson": "Success comes not from profit but from uniting people around purpose.",
+        "quote": "People don't buy what you do; they buy why you do it."
+      }
+    }
+  },
+  {
+    "id": 17,
+    "cat": "Psikoloji",
+    "min": 4,
+    "sourceBookId": 17,
+    "publishDate": "2026-03-12",
+    "content": {
+      "tr": {
+        "title": "Albert Ellis'in Mantıksız İnançlar",
+        "body": "Albert Ellis, psikiyatrist, insanların çoğu sorunda mantıksız inanç sahibi olduğunu buldu. Düşünceler, duygular değildir; düşünceler duyguları şekillendirir. Örneğin, birisi seni yanlış anlarsa, sen düşünebilirsin 'Ben berbat bir insanım' (mantıksız inanç). Gerçekte, yanlışanlaşma sadece bir yanlışanlamadır. Ellis, rasyonel terapi geliştirdi: mantıksız inançları tanımla, sorgulanır, ve daha mantıklı bir inanç ile değiştir.",
+        "lesson": "Duygularını kontrol etmemek, düşüncelerini kontrol et.",
+        "quote": "Hayat seni rahatsız etmez; senin hakkında düşüncülerin rahatsız ediyor."
+      },
+      "en": {
+        "title": "Albert Ellis's Irrational Beliefs",
+        "body": "Psychiatrist Albert Ellis found most people suffer from irrational beliefs. Thoughts aren't emotions; thoughts shape emotions. For example, if misunderstood, you might think 'I'm terrible' (irrational belief). Reality: it was just a misunderstanding. Ellis developed rational therapy: identify irrational beliefs, challenge them, replace with logical ones.",
+        "lesson": "Don't control emotions; control thoughts.",
+        "quote": "Events don't disturb you; your thoughts about them do."
+      }
+    }
+  },
+  {
+    "id": 18,
+    "cat": "Motivasyon",
+    "min": 5,
+    "sourceBookId": 18,
+    "publishDate": "2026-03-14",
+    "content": {
+      "tr": {
+        "title": "Serena Williams'ın Zihinsel Oyun",
+        "body": "Serena Williams, tenis oyununda fiziksel kondisyon kadar önemli olan zihinsel oyunu vurguluyor. Bir maçı kaybetme korkusu değil, zihinsel odaklanmayı kaybetmek mahvediyordu. Serena, özellikle zor anlarda kendi kendine belirli söylemler (mantras) söylüyor ve konsantrasyonunu geri getiriyor. Bu teknik spor psikolojisinde 'self-talk' adlandırılır ve her başarılı sporcu bunu uygular. Zihinsel kasiyer, fiziksel kasiyer gibi çalışılmalıdır.",
+        "lesson": "Fiziksel antrenman önemli ama zihinsel kuvvet daha da önemlidir.",
+        "quote": "Maçlar zihinde oynanır. Beden sadece takip eder."
+      },
+      "en": {
+        "title": "Serena Williams' Mental Game",
+        "body": "Serena Williams emphasizes mental play in tennis as crucial as physical conditioning. Losing mental focus, not losing points, defines defeat. During tough moments, Serena uses mantras to refocus and maintain concentration. This technique, called 'self-talk' in sports psychology, is practiced by every elite athlete. Mental fitness must be trained like physical fitness.",
+        "lesson": "Physical training matters, but mental strength matters more.",
+        "quote": "Matches are played in the mind. The body just follows."
+      }
+    }
+  },
+  {
+    "id": 19,
+    "cat": "İş",
+    "min": 6,
+    "sourceBookId": 19,
+    "publishDate": "2026-03-16",
+    "content": {
+      "tr": {
+        "title": "Peter Drucker'ın Kendini Yönetme",
+        "body": "Peter Drucker, 'Kendini Yönetme' makalesinde, başarılı insanların müşterisi kendisi olduğunu yazıyor. Bir müşteri ne istediğini biliyorsa, kendisi de ne istediğini bilmelidir. Drucker, sorular soruyor: Güçlerin nedir? Nasıl çalışıyor? Değerler nelerdir? Kariyerini gücüne göre mi organize etmeli, zayıflıklarını mı düzeltmeye mi odaklannalı? Drucker'in bulduğu; başarılı insanlar güçlerini geliştirir, zayıflıkları yönetir.",
+        "lesson": "Başarı, kusursuzluğun değil, güçleri bilmek ve uygulamaktan gelir.",
+        "quote": "Hayatını yönetmek, gücünü yönetmekle başlar."
+      },
+      "en": {
+        "title": "Peter Drucker's Self-Management",
+        "body": "Peter Drucker wrote in 'Managing Oneself' that successful people are their own customer. If a customer knows what they want, so must you. Drucker asks: What are your strengths? How do you work? What are your values? Should you organize your career around strengths or fix weaknesses? Drucker found: successful people develop strengths, manage weaknesses.",
+        "lesson": "Success comes not from perfection but from knowing and leveraging strengths.",
+        "quote": "Managing your life starts with managing your strengths."
+      }
+    }
+  },
+  {
+    "id": 20,
+    "cat": "Tarih",
+    "min": 5,
+    "sourceBookId": 20,
+    "publishDate": "2026-03-18",
+    "content": {
+      "tr": {
+        "title": "Alan Turing'in Yapay Zeka Makalesi",
+        "body": "'İnsan Üzerine Makine Oyabilir mi?' adlı ünlü makalesinde, Alan Turing, zeka tanımını sorguladı. Bir makine, bir insan kadar zeki midir? Turing önerisi: 'İmitation Game' (taklit oyunu). Bir insan ve bir makine arasında konuşma, hangisinin insan, hangisinin makine olduğu belli değilse, makine 'zeki' sayılır. Bu 'Turing Testi' yapay zeka alanında temel bir kavram haline geldi. Turing'nin, matematik ve mantık dışında yaratıcılık ve estetik gibi 'insani' özellikleri önemli görması, o zamanın bilim dünyasını etkiledi.",
+        "lesson": "Zeka subjektif olabilir. Ne olduğunu tanımlamak, bunu ölçmek kadar önemlidir.",
+        "quote": "Bir makinenin düşündüğü sayılması için, düşünmeye benzer şekilde davranması yeterli midir?"
+      },
+      "en": {
+        "title": "Alan Turing's Artificial Intelligence Paper",
+        "body": "In his famous paper 'Computing Machinery and Intelligence,' Alan Turing questioned the definition of intelligence. Is a machine as intelligent as a human? Turing proposed: the 'Imitation Game.' If conversation between a human and machine makes distinguishing impossible, the machine is 'intelligent.' This 'Turing Test' became fundamental in AI. Turing's emphasis on creativity and aesthetics alongside logic influenced the scientific community.",
+        "lesson": "Intelligence can be subjective. Defining something is as important as measuring it.",
+        "quote": "Is it sufficient for a machine to behave like it thinks in order to be considered thinking?"
+      }
+    }
+  },
+  {
+    "id": 21,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 21,
+    "publishDate": "2026-03-20",
+    "content": {
+      "tr": {
+        "title": "Brené Brown'ın Savunmasızlığın Gücü",
+        "body": "Brené Brown, savunmasızlığı (vulnerability) araştırdığında, başarılı, yaratıcı ve cesur insanların bu özelliğe sahip olduğunu buldu. Savunmasızlık, zayıflık değildir; tersine, kendini açmak, hatalarını kabul etmek ve duygularını ifade etmek cesaret gerektirir. Brown, şirketleri, aileleri araştırarak, bağlantı ve yaratıcılık için savunmasızlığın zorunlu olduğunu ortaya koydu. İnsan yazarı, müzisyen, lider olarak başarılı olanlar hepsi bu kırılganlık ile hareket etmişti.",
+        "lesson": "Kendini açmak zafiyet değil, kuvvettir. İnsan bağlantısı savunmasızlık gerektirir.",
+        "quote": "Savunmasızlık istekli gücüdür."
+      },
+      "en": {
+        "title": "Brené Brown's Power of Vulnerability",
+        "body": "Researching vulnerability, Brené Brown found successful, creative, and courageous people share this trait. Vulnerability isn't weakness; it takes courage to open up, admit mistakes, and express emotions. Through studying organizations and families, Brown showed vulnerability is essential for connection and creativity. Writers, musicians, leaders who succeeded all operated with this fragility.",
+        "lesson": "Opening yourself isn't weakness; it's strength. Human connection requires vulnerability.",
+        "quote": "Vulnerability is daring strength."
+      }
+    }
+  },
+  {
+    "id": 22,
+    "cat": "İş",
+    "min": 6,
+    "sourceBookId": 22,
+    "publishDate": "2026-03-22",
+    "content": {
+      "tr": {
+        "title": "Clayton Christensen'in Disruptive Innovation",
+        "body": "Clayton Christensen, iş yapının geleneksel düşüncesini sorguladı. Neden en büyük şirketler bazı yeni oyuncular tarafından yok edilirdi? Christensen, 'disruptive innovation' (yıkıcı yenilik) kavramını tanımladı. Kayıt şirketi, dijital müzik platformu ile çöktü. Fotoğraf filmi şirketi, dijital kamera ile. Orijinal oyuncular yeni teknolojiyi uygulamadı çünkü kar marjını düşürdüğünü düşündüler. Ancak, zamanla, yıkıcı teknoloji pazarın büyük kısmını ele geçirdi.",
+        "lesson": "Başarı bir risk taşır: gelişme kaynağı olarak, değil, Geleneksel fikri kaybetmek.",
+        "quote": "Başarının kendi başarı sistemini öldürme kapasitesi sınırlıdır."
+      },
+      "en": {
+        "title": "Clayton Christensen's Disruptive Innovation",
+        "body": "Clayton Christensen questioned traditional business thinking. Why did dominant companies get destroyed by new entrants? Christensen defined 'disruptive innovation.' Record companies were disrupted by digital music. Film makers by digital cameras. Original players didn't adopt new tech because it reduced margins. Yet eventually, disruptive technology captured most of the market.",
+        "lesson": "Success carries risk: becoming hostage to past success, unable to disrupt itself.",
+        "quote": "Success limits the capacity of an organization to destroy itself successfully."
+      }
+    }
+  },
+  {
+    "id": 23,
+    "cat": "Motivasyon",
+    "min": 4,
+    "sourceBookId": 23,
+    "publishDate": "2026-03-24",
+    "content": {
+      "tr": {
+        "title": "Jordan Peterson'ın Sorumluluk Prensibi",
+        "body": "Jordan Peterson, 'Hayat Kuralları' kitabında, ilk kuralı 'Omuzlarını geri atın' (sit up straight with your shoulders back) ile başlar. Bu basit fiziksel hareket, psikolojik bir duruştur. Dik durmak, sorumluluğu kabul eden bir vücut dilidir. Peterson, insanların günümüzde çok fazla 'mağdur' olarak kimlik tanımlayıp, sorumluluk almadığını söylüyor. Yaşadığın sorunlar için, çoğu zaman başında bir seçim vardı; bu seçimi kabul etmek ve geleceği değiştirmek başladığını vurguluyor.",
+        "lesson": "Sorumluluk üstlenmek özgürlüğün başlangıcıdır. Bir şeyi değiştirmek için, önce kendini kabul et.",
+        "quote": "Dik ayağa kalt; sorumluluğu omuzlarında taşı."
+      },
+      "en": {
+        "title": "Jordan Peterson's Responsibility Principle",
+        "body": "Jordan Peterson's 'Rules for Life' begins with 'Sit up straight with your shoulders back.' This simple physical act is psychological posture. Standing straight is body language accepting responsibility. Peterson argues people today identify as victims, avoiding responsibility. For most of life's problems, a choice preceded them; accepting this choice and taking ownership enables change.",
+        "lesson": "Taking responsibility is the beginning of freedom. To change something, accept yourself first.",
+        "quote": "Stand up straight; carry responsibility on your shoulders."
+      }
+    }
+  },
+  {
+    "id": 24,
+    "cat": "Tarih",
+    "min": 6,
+    "sourceBookId": 24,
+    "publishDate": "2026-03-26",
+    "content": {
+      "tr": {
+        "title": "Marie Curie'nin Bilimsel Çalışkanlığı",
+        "body": "Marie Curie, radyoaktiviteyi keşfetmek için yıllar boyunca çalışmıştır. Laboratuvarında, ton başına birkaç miligram radyum izole etmek için, hem Pierre hem de kendisi, radyasyon ile direkt temasla çalıştı. Sağlığı bozulsa da, çalışmaya devam etti. İki Nobel Ödülü kazanan ilk kişi oldu. Açıkça, etkili olmasa, azim ve tutkusu bilime katkıda bulunmuştu. Curie'nin kütüphanesi bugün radyoaktif maddelerle ilginçliğinden hala kapalıdır.",
+        "lesson": "Gerçek başarı, çoğu zaman, zaman ve az sayıda insanın istediği çalışkanlıktan gelir.",
+        "quote": "Hiçbir şey, bir insan tarafından korkular ve kuşkular dışında durduğunda başarıya engel olamaz."
+      },
+      "en": {
+        "title": "Marie Curie's Scientific Diligence",
+        "body": "Marie Curie worked for years to discover radioactivity. In her lab, extracting milligrams of radium per ton required direct radiation exposure from both Pierre and herself. Despite health deterioration, she continued. She became the first person to win two Nobel Prizes. Her dedication and passion contributed profoundly to science. Curie's papers remain radioactive due to handling.",
+        "lesson": "Real success often comes from diligence few people would willingly undertake.",
+        "quote": "Nothing in life is to be feared; all is to be understood. Now is the time to understand more."
+      }
+    }
+  },
+  {
+    "id": 25,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 25,
+    "publishDate": "2026-03-28",
+    "content": {
+      "tr": {
+        "title": "Martin Seligman'ın Pozitif Psikoloji",
+        "body": "Martin Seligman, psikoloji alanını 'hastalık tedavi etmek' yerine 'refahı artırmak' yönünde kaydırdı. Pozitif psikoloji, mutluluğun, anlamın ve erdemliğin bilimsel incelemesidir. Seligman, PERMA modelini geliştirdi: Positive Emotion (pozitif duygular), Engagement (katılım), Relationships (ilişkiler), Meaning (anlam), Accomplishment (başarı). Depresyon tedavisi sadece olumsuzlukları kaldırmak değil, pozitif unsurları eklemektir.",
+        "lesson": "İyi bir yaşam sadece hastalıktan uzak olmak değil; aktif mutluluk arayışıdır.",
+        "quote": "Mutluluğu arayan insanlar, genellikle onu kaçırırlar. Anlam ve erdem arayan insanlar, mutluluğu bulurlar."
+      },
+      "en": {
+        "title": "Martin Seligman's Positive Psychology",
+        "body": "Martin Seligman shifted psychology from 'treating illness' to 'building well-being.' Positive psychology scientifically examines happiness, meaning, and virtue. Seligman developed PERMA: Positive Emotion, Engagement, Relationships, Meaning, Accomplishment. Depression treatment isn't just removing negatives but adding positives.",
+        "lesson": "A good life isn't just absence of illness; it's active pursuit of happiness.",
+        "quote": "People chasing happiness often miss it. Those seeking meaning and virtue find happiness."
+      }
+    }
+  },
+  {
+    "id": 26,
+    "cat": "İş",
+    "min": 6,
+    "sourceBookId": 26,
+    "publishDate": "2026-03-30",
+    "content": {
+      "tr": {
+        "title": "Gary Vaynerchuk'un Jab, Jab, Right Hook",
+        "body": "Gary Vaynerchuk, sosyal medya pazarlamasında, 'Jab, Jab, Right Hook' stratejisini ortaya koydu. Jab, sol direkt vurtuş, değer sunmaktur. Jab, sağ direkt, sonra right hook (sağ kancası) satış çağrısıdır. Sosyal medya, çoğu markaların 'hemen satış' yönü kullanarak başarısız olmasının nedeni, değeri vermedikleridir. Vaynerchuk, Instagram, Vine, Snapchat gibi her platformun kendi biçimsel kuralları olduğunu ve markaların bunu anlaması gerektiğini savunmuştur.",
+        "lesson": "Sosyal medya satış aracı değil; ilişki kurucu araçtır. Önce değer ver, sonra istersen satış yap.",
+        "quote": "İlişki kurmadan satış olmaz."
+      },
+      "en": {
+        "title": "Gary Vaynerchuk's Jab Jab Right Hook",
+        "body": "Gary Vaynerchuk presents 'Jab, Jab, Right Hook' strategy in social media marketing. Jabs (left-right) = providing value. Right hook = sales call. Most brands fail because they skip the jabs and jump to selling. Vaynerchuk argues each platform (Instagram, Vine, Snapchat) has unique rules; brands must adapt.",
+        "lesson": "Social media isn't a sales tool; it's a relationship builder. Provide value first, then sell.",
+        "quote": "No sales without relationship."
+      }
+    }
+  },
+  {
+    "id": 27,
+    "cat": "Motivasyon",
+    "min": 5,
+    "sourceBookId": 27,
+    "publishDate": "2026-04-01",
+    "content": {
+      "tr": {
+        "title": "Oprah Winfrey'ın Aitlik Bulmak",
+        "body": "Oprah Winfrey, fakir ve ırkçılığın olduğu Mississippi'de doğdu. Ama erken yaşlarda sorgulayıcı zihni ve konuşma becerisi, kendisini bu çevreye koydurduğu yeretmekten kurtardı. Oprah, İlkokul hocasından, bir mentör buldu. Mütevazı ortamda bile, insan bağlantısı ve empatinin gücü hissetti. Ünlü olmadan önce, radyo istasyonlarında, dergilerde çalıştı. Herhangi bir fırsatta, kendisini tanıtmayı ve sevgi göstermeyi öğrendi. Bugün, belki dünyada en başarılı insanlardan birisi.",
+        "lesson": "Ait olmak istediğin yer, içinde kaldığın yer değildir. Aitlik duygusu yaratmak için, kendinizi sunutmak ve vermek gerekir.",
+        "quote": "Sınırlamalar sadece fikirde vardır; gerçekleri değiştiremez."
+      },
+      "en": {
+        "title": "Oprah Winfrey's Finding Belonging",
+        "body": "Oprah Winfrey was born poor in racist Mississippi. Yet her curious mind and speaking ability freed her from accepting her circumstances. Oprah found mentors early; in modest surroundings, she felt the power of human connection and empathy. Before fame, she worked at radio stations and magazines, learning to introduce herself and show up. Today, she's among the world's most successful.",
+        "lesson": "Where you belong isn't where you're born. Creating belonging requires showing up and giving.",
+        "quote": "Limitations exist only in thought; they don't change reality."
+      }
+    }
+  },
+  {
+    "id": 28,
+    "cat": "Tarih",
+    "min": 6,
+    "sourceBookId": 28,
+    "publishDate": "2026-04-03",
+    "content": {
+      "tr": {
+        "title": "Isaac Newton'ın Basit Sorusu",
+        "body": "Isaac Newton, elma düşerken, 'Neden elma düşer ama ay düşmez?' sorusunu sordu. Bu basit merak, evrensel çekim yasasını ortaya koymadı. Newton, birçok matematikçi tarafından çözülememiş olan harita yöntemiyle, çekim formülü bulmuş ve başından matematik 'Prensiples' (İlkeler) kitabını yazarak, modern fiziğin temelini atılmıştır. Genç Newton'ın, okulu kapatılmış, evde çalıştığı dönem (1665-1666), en verimli dönemiydi. Bu dönem, oda 'Annus Mirabilis' (Mucize Yılı) olarak adlandırılır.",
+        "lesson": "Merak, başarının itici gücüdür. En basit sorulardan, en büyük keşifler doğar.",
+        "quote": "Bilimin dışında, en güzel şey meraktır."
+      },
+      "en": {
+        "title": "Isaac Newton's Simple Question",
+        "body": "Watching an apple fall, Isaac Newton asked, 'Why does the apple fall but the moon doesn't?' This simple curiosity led to the universal law of gravitation. Using mathematical methods others couldn't solve, Newton derived the gravity formula and wrote 'Principia' (Principles), laying modern physics' foundation. Newton's most productive period was home confinement during school closure (1665-1666), his 'Annus Mirabilis' (Year of Wonders).",
+        "lesson": "Curiosity drives success. The greatest discoveries stem from simplest questions.",
+        "quote": "Of all sciences, the most beautiful is curiosity."
+      }
+    }
+  },
+  {
+    "id": 29,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 29,
+    "publishDate": "2026-04-05",
+    "content": {
+      "tr": {
+        "title": "James Clear'ın Atomik Alışkanlıkları",
+        "body": "James Clear, 'Atomic Habits' kitabında, büyük değişim, günlük küçük alışkanlıklardan geldiğini gösterir. Bir üniversite öğrencisi, yarışmacı olmak için, her gün % 1 oranında gelişme yapsa, bir yıl sonra % 37 daha iyi olur. Tersine, her gün % 1 kötüleşse, % 3'e düşer. Clear, alışkanlıkların 'kimlik seviyesi'nde yapılandırılması gerektiğini savunur. 'Egzersiz yapmam lazım' değil, 'Ben sporcu'yum' düşüncesi alışkanlığı içselleştirir.",
+        "lesson": "Büyük başarı, küçük, tutarlı adımlardan gelir. Alışkanlığı kimlikle tanımla.",
+        "quote": "Sonuçlar, alışkanlık sistemi ile gelir, alışkanlık hedefleri değil."
+      },
+      "en": {
+        "title": "James Clear's Atomic Habits",
+        "body": "In 'Atomic Habits,' James Clear shows major change stems from daily micro-habits. A college student improving 1% daily becomes 37% better in a year. Conversely, 1% daily decline means 3% in a year. Clear argues habits should be framed at the 'identity level.' Not 'I must exercise' but 'I am an athlete' internalizes habit.",
+        "lesson": "Great success comes from small, consistent steps. Frame habit with identity.",
+        "quote": "Results come from habit systems, not habit goals."
+      }
+    }
+  },
+  {
+    "id": 30,
+    "cat": "İş",
+    "min": 6,
+    "sourceBookId": 30,
+    "publishDate": "2026-04-07",
+    "content": {
+      "tr": {
+        "title": "Reed Hastings'in Netflix Kültürü",
+        "body": "Reed Hastings, Netflix'in kuruluşunda, şirketi düzenlemek için geleneksel 'kontrol ve sürü' yaklaşımını reddetti. Bunun yerine, 'Özgürlük ve Sorumluluk' kültürü oluşturdu. Çalışanlarına inanır, meritokrasi ve açık iletişimin önemini vurgular. Netflix kültürü sunusu yüz milyondan fazla kez indirilen bir belge olmuş ve yönetim dünyasında etki yapmıştır. Hastings, böyle kültür sayesinde Netflix'in hızla yaşanan değişime uyum sağladığını savunmaktadır.",
+        "lesson": "Kontrolü azaltıp, sorumluluk verdiğinde, insanlar daha yaratıcı ve üretken olur.",
+        "quote": "Niyetin güzel ama yeteneğin kıtsaysa, özgürlük verilemez."
+      },
+      "en": {
+        "title": "Reed Hastings' Netflix Culture",
+        "body": "Founding Netflix, Reed Hastings rejected traditional 'command-and-control' management. Instead, he created a 'Freedom and Responsibility' culture, trusting employees, emphasizing meritocracy and open communication. Netflix's culture memo was downloaded over 100 million times, influencing management worldwide. Hastings credits this culture with Netflix's ability to adapt rapidly to change.",
+        "lesson": "Reducing control and giving responsibility makes people more creative and productive.",
+        "quote": "Good intent but poor performance: freedom cannot be given."
+      }
+    }
+  },
+  {
+    "id": 31,
+    "cat": "Motivasyon",
+    "min": 5,
+    "sourceBookId": 31,
+    "publishDate": "2026-04-09",
+    "content": {
+      "tr": {
+        "title": "Muhammad Ali'nin Kendine İnanması",
+        "body": "Muhammad Ali, boksunda efsane olmadan önce, Cassius Clay idi. Genç Clay'nin katılımı, onun dışlaması ve ırkçılığı karşısında, kendisine inanmayı kaybetmesi kolaydı. Ama Ali, muasır halk çok rahatsız olsa da, 'Kendimin en iyi versiyonuyum' mantrası ile kendiyle taşıdı. 'Float like a butterfly, sting like a bee' mottosu, sadece bilinç değil; kendiyle savaşmasını sembolize ediyordu. Ali'nin başarısı, bedensel güç değil, zihinsel sertliğinden geldi.",
+        "lesson": "Diğer insanların yargısı önemli değildir. Kendinize inanmak, başarının temel adımıdır.",
+        "quote": "Hepiniz nasıl düşünürseniz düşünün, ben en iyi'yim."
+      },
+      "en": {
+        "title": "Muhammad Ali's Belief in Himself",
+        "body": "Before becoming legendary in boxing, Muhammad Ali was Cassius Clay. Facing rejection and racism, Clay could have lost self-belief. Yet Ali carried the mantra 'I am the greatest' despite public disapproval. 'Float like a butterfly, sting like a bee' wasn't just showmanship; it symbolized self-mastery. Ali's success came from mental toughness, not just physical power.",
+        "lesson": "Others' judgment doesn't matter. Self-belief is success's foundation.",
+        "quote": "No matter what you think, I am the greatest."
+      }
+    }
+  },
+  {
+    "id": 32,
+    "cat": "Tarih",
+    "min": 6,
+    "sourceBookId": 32,
+    "publishDate": "2026-04-11",
+    "content": {
+      "tr": {
+        "title": "Albert Einstein'ın Hayal Gücü",
+        "body": "Albert Einstein, fizik biliminde devrim yaptı, fakat başarısından önce üniversite hocaları 'sefil öğrenci' olarak tanımladılar. Einstein, kuralları yapısını sorgulamayı sağladı ve deneyimden ziyade düşünce deneyine güveniyordu. 'Zeka'nın hangi form olduğunu sorduğunda, 'hayal gücü'nü seçti. Einstein, 'Light Beam' üzerindeki düşünce deneyiyle, görelilik teorisini geliştirdi. Hayal gücü sadece çocuklara değil, başarılı bilim insanlarının temel unsurudur.",
+        "lesson": "Hayal gücü ve sorgulamak, yeniliklerin kaynağıdır. Sınırları sorgulamaya cevap veri.",
+        "quote": "Hayal gücü bilgiden daha önemlidir. Bilgi sınırlıdır, hayal gücü sonsuz."
+      },
+      "en": {
+        "title": "Albert Einstein's Imagination",
+        "body": "Albert Einstein revolutionized physics, yet professors labeled him a poor student. Einstein questioned rules and trusted thought experiments over empiricism. Asked what intelligence meant, he chose imagination. Using thought experiments on 'light beams,' Einstein developed relativity theory. Imagination isn't just for children; it's fundamental to successful scientists.",
+        "lesson": "Imagination and questioning are sources of innovation. Dare to question boundaries.",
+        "quote": "Imagination is more important than knowledge. Knowledge is limited; imagination is infinite."
+      }
+    }
+  },
+  {
+    "id": 33,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 33,
+    "publishDate": "2026-04-13",
+    "content": {
+      "tr": {
+        "title": "Mal Gladwell'in 10.000 Saatlik Kural",
+        "body": "Malcolm Gladwell, 'Outliers' kitabında, başarıya ulaşmanın 10.000 saatlik pratik gerektirdiğini bulunmuştur. The Beatles'ın Liverpool'daki sahnelerde çalıştıkları saat, Bill Gates'ın yazılım kodlarına harcadığı zaman, hepsi 10.000 saate yakındı. Ancak Gladwell'ın daha sonra açıkladığı gibi, 10.000 saat bir mito değildir; fakat önemli olması, pratik, odak ve zaman gerektirdiğini gösterir.",
+        "lesson": "Başarı doğuştan değil, çalışmadır. Uzman olabilir misin? Evet, fakat zaman ve efor gerekir.",
+        "quote": "Başarıda talih kadar eğitim, yenlenme kadar işçiliğin rolü vardır."
+      },
+      "en": {
+        "title": "Malcolm Gladwell's 10,000-Hour Rule",
+        "body": "In 'Outliers,' Malcolm Gladwell found success requires 10,000 hours of practice. The Beatles performing in Liverpool clubs, Bill Gates coding, both approached 10,000 hours. Though later clarified as not exact, Gladwell's point stands: success demands practice, focus, and time, not innate talent alone.",
+        "lesson": "Success is not innate; it's work. Can you become an expert? Yes, but it takes time.",
+        "quote": "Success involves luck, education, as much as effort and persistence."
+      }
+    }
+  },
+  {
+    "id": 34,
+    "cat": "İş",
+    "min": 6,
+    "sourceBookId": 34,
+    "publishDate": "2026-04-15",
+    "content": {
+      "tr": {
+        "title": "Satya Nadella'nın Growth Mindset",
+        "body": "Satya Nadella, Microsoft'un CEO'su olduğunda, şirketi çok zor durumdaydı. Nadella, iç kültürü değiştirmek için, Carol Dweck'in 'büyüme mindset' teorisini uyguladı. Yenilik yapısından, sadece 'pazar şirket' pozisyonundan çıkmak için, hata ve öğrenmeyi teşvik etti. Nadella, Azure bulut hizmetini geliştirdi, yarışmacısı AWS'ye rakip oldu ve Microsoft'un değerini üçe katladı. Nadella'ın başarısı, teknoloji değil, kültür değişiminden geldi.",
+        "lesson": "Başarı, sık sık teknoloji değildir; kurum kültürü ve insanların mindset'idir.",
+        "quote": "Bir kurum, öğrenme kapasitesi ile sınırlandırılır."
+      },
+      "en": {
+        "title": "Satya Nadella's Growth Mindset",
+        "body": "When Satya Nadella became Microsoft's CEO, the company was struggling. To transform culture, Nadella applied Carol Dweck's growth mindset theory. From innovation to market competition, he encouraged mistakes and learning. Nadella developed Azure cloud services, competed with AWS, and tripled Microsoft's value. Nadella's success stemmed not from technology but from cultural change.",
+        "lesson": "Success often isn't technology; it's organizational culture and people's mindset.",
+        "quote": "An organization is limited by its learning capacity."
+      }
+    }
+  },
+  {
+    "id": 35,
+    "cat": "Motivasyon",
+    "min": 5,
+    "sourceBookId": 35,
+    "publishDate": "2026-04-17",
+    "content": {
+      "tr": {
+        "title": "Arianna Huffington'ın Uyku Devrimi",
+        "body": "Arianna Huffington, başarı ve çalışma hakkında düşüncesini değiştirdi. Yıllarca, uyku ihmal ederek çalışılması gerektiğine inanıyordu. Fakat çöküş ve sağlık sorunu çekendikten sonra, uykunun performans için kritik olduğunu fark etti. Huffington, 'The Sleep Revolution' kitabında, uykunun ne kadar zamanı olduğunu değil, kalitesi olduğunu savunmuştur. Tüm çalışanlarına uyku odaları sağladı ve şirkette başarı arttı.",
+        "lesson": "İyi performans için, iyi uyku şarttır. Uyku verimlilik, sağlık ve yaratıcılık sağlar.",
+        "quote": "Uyku, başarının önemli bileşenidir; onu ihmal etmek kendini sabote etmektir."
+      },
+      "en": {
+        "title": "Arianna Huffington's Sleep Revolution",
+        "body": "Arianna Huffington changed her beliefs about success and work. For years, she believed sleep was sacrificial for productivity. After collapse and health issues, she realized sleep was critical for performance. In 'The Sleep Revolution,' Huffington argues sleep quality, not quantity, matters. She provided sleep rooms for employees; company success increased.",
+        "lesson": "Good sleep is essential for good performance. Sleep enables productivity, health, and creativity.",
+        "quote": "Sleep is key to success; neglecting it is self-sabotage."
+      }
+    }
+  },
+  {
+    "id": 36,
+    "cat": "Tarih",
+    "min": 6,
+    "sourceBookId": 36,
+    "publishDate": "2026-04-19",
+    "content": {
+      "tr": {
+        "title": "Rosa Parks'ın Direnci",
+        "body": "Rosa Parks, Alabama'da bir otobüste oturmayı reddetti, çünkü siyahı ayrı bölüme gitmeleri gerekiyordu. Bu basit eylem, sivil haklar hareketini tetikledi. Parks, sonraki haftalar tutuklandı, mahkeme edildi, halkından tehditler aldı. Ama bu direnci, yapılan yasalarda değişim sağladı. Parks'ın cesareti, milyonları ilham verdi ve ırkçılığa karşı mücadelede dönüm noktası oldu. Bütün devrim, bir kişinin 'hayır' deme yüksülenmiş derecesi ile başlamıştır.",
+        "lesson": "Bireysel cesaret, toplumsal değişim yaratır. Bir kişi fark yaratabilir.",
+        "quote": "Atalarımızın yaptığı hata, şimdiki nesil için değişim fırsatı olabilir."
+      },
+      "en": {
+        "title": "Rosa Parks' Resistance",
+        "body": "Rosa Parks refused to move on an Alabama bus because Black passengers were required to sit in separate sections. This simple act sparked the Civil Rights Movement. Parks faced arrest, court, and death threats. Yet her resistance led to legal change. Parks' courage inspired millions and became a turning point against racism. All revolution began with one person's 'no.'",
+        "lesson": "Individual courage creates social change. One person can make a difference.",
+        "quote": "Our ancestors' mistakes are this generation's opportunity for change."
+      }
+    }
+  },
+  {
+    "id": 37,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 37,
+    "publishDate": "2026-04-21",
+    "content": {
+      "tr": {
+        "title": "BJ Fogg'un Davranış Modeli",
+        "body": "BJ Fogg, Stanford'da 'Behavior Design Lab' kuran araştırmacı, davranış değişiminin formülünü buldu. Davranış = Motivasyon + Yetenek + İşaret (Trigger). Eğer birisini uygulamayı devam ettirmek istiyorsan, motivasyonu arttırmalı, yapısını basitleştirmeli ve işareti açık kılmalısın. Örneğin, dişini fırçalamayı duş aldıktan sonraya koy (işaret), 30 saniye fırçalan (basitleştir), sonra kendine 'İyisin' de (motivasyon). Bu üçlü kombinasyon başarılı olur.",
+        "lesson": "Alışkanlık değişimi, motivasyon kadar kolay olmasına bağlı. Yapısını basit yap.",
+        "quote": "Motivasyon nadir; yeteneği basit yap; işareti açık yap."
+      },
+      "en": {
+        "title": "BJ Fogg's Behavior Model",
+        "body": "BJ Fogg, who runs Stanford's 'Behavior Design Lab,' found the formula for behavior change: Behavior = Motivation + Ability + Prompt. To sustain a behavior, increase motivation, simplify ability, make the prompt obvious. For example, brush teeth after showering (prompt), brush for 30 seconds (simplify), then say 'Good job' (motivate). This trio works.",
+        "lesson": "Habit change depends on making it easy, not just willing it. Simplify the action.",
+        "quote": "Motivation is rare; make ability simple; make prompts obvious."
+      }
+    }
+  },
+  {
+    "id": 38,
+    "cat": "İş",
+    "min": 6,
+    "sourceBookId": 38,
+    "publishDate": "2026-04-23",
+    "content": {
+      "tr": {
+        "title": "Sheryl Sandberg'in Devam Et",
+        "body": "Sheryl Sandberg, 'Lean In' kitabında, kadınların liderlik pozisyonlarına ulaşmada neden geri kaldığını açıklar. Sandberg, kendisinin yaşadığı, iş-yaşam dengesi çekişmesinin kadınlara orantısız etki ettiğini yazıyor. Özellikle annelik sonrası, kadınlar kendilerini çekmeler hissediler. Sandberg'in mesajı: bu hediye yerine, devam et. Kadınların sesini duyura, kararlarında yer talep etmeleri gerektiğini savunmuştur.",
+        "lesson": "Liderlik, cinsiyet değil; kararlılık ve sesini duyurmaktır.",
+        "quote": "Mükemmel oyun yok. Sadece bugünü yapınız."
+      },
+      "en": {
+        "title": "Sheryl Sandberg's Lean In",
+        "body": "In 'Lean In,' Sheryl Sandberg explains why women lag in leadership. Sandberg describes work-life tension that disproportionately impacts women, especially post-motherhood. Women feel conflicted. Sandberg's message: embrace it, persevere. Women must make their voices heard, demand decision-making roles.",
+        "lesson": "Leadership isn't gender; it's determination and assertiveness.",
+        "quote": "There is no perfect game. Just do today."
+      }
+    }
+  },
+  {
+    "id": 39,
+    "cat": "Motivasyon",
+    "min": 5,
+    "sourceBookId": 39,
+    "publishDate": "2026-04-25",
+    "content": {
+      "tr": {
+        "title": "Dwayne 'The Rock' Johnson'ın Egzersiz Etiketi",
+        "body": "Dwayne Johnson, ünlü olmadan önce, spor yeteneği olmayan bir güreşçiydi. Ancak, tüm rakiplerine karşı, çalışma saatleri en yüksek olan oyuncu olduğunu kabul eder. Johnson, her sabah saat 4'te kalkıyor, zaman kaybolmadan önce egzersiz yapıyor. 'The Iron Paradise' (demir cennet) yasa, Johnson'ın kişisel diyarıdır. Başarısı, doğal yeteneğinden değil, tutum ve çalışmadan gelir.",
+        "lesson": "Başarı, irade ve tutum kuruluşunda gizlenmiştir. Kaynağı ben, çevreyi değil.",
+        "quote": "Kaç saat uyuyorsan, kaç saat çalışırsın; ama çalışan saati hiçbir zaman unutma."
+      },
+      "en": {
+        "title": "Dwayne 'The Rock' Johnson's Work Ethic",
+        "body": "Dwayne Johnson wasn't naturally talented as a wrestler before fame. Yet he admits working harder than any competitor. Johnson wakes at 4 AM, never misses gym time. 'The Iron Paradise' is Johnson's personal monastery. His success comes not from natural talent but from attitude and work.",
+        "lesson": "Success is hidden in will and attitude, not external circumstances.",
+        "quote": "Sleep as much as you need, but never forget the hours you worked for it."
+      }
+    }
+  },
+  {
+    "id": 40,
+    "cat": "Tarih",
+    "min": 6,
+    "sourceBookId": 40,
+    "publishDate": "2026-04-27",
+    "content": {
+      "tr": {
+        "title": "Henry Ford'un Üretim Devrimi",
+        "body": "Henry Ford, otomobil üretimini neredeyse imkansız bir durumdan kurtardı. Ford, 'montaj bandı' konseptini uyguladığında, her işçi tek bir görevi tekrarlıyor, sonra ürün sonraki istasyona geçiyordu. Üretim hızı üçe katlandı. Fiyat düştü ve daha fazla insan araba satın aldı. Ford'un Modeli T, erişilebilir bir araç olmuş ve masa üretim standardını değiştirmiş. Ford'un başarısı, inovasyon değil, basitlik ve ölçektedir.",
+        "lesson": "Başarı karmaşıklık değildir; basitlik ve ölçektir. Sistemi optimize et.",
+        "quote": "Eğer soru 'Neden?' ise, cevap çoğu zaman 'Sistem'dir."
+      },
+      "en": {
+        "title": "Henry Ford's Production Revolution",
+        "body": "Henry Ford revolutionized car production from nearly impossible to accessible. Implementing the assembly line, each worker performed one task, then the product moved to the next station. Production tripled. Prices dropped and more people bought cars. Ford's Model T became accessible, changing mass production standards. Ford's success came from simplicity and scale, not innovation alone.",
+        "lesson": "Success isn't complexity; it's simplicity and scale. Optimize the system.",
+        "quote": "If the question is 'Why?', the answer is often 'The system.'"
+      }
+    }
+  },
+  {
+    "id": 41,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 41,
+    "publishDate": "2026-04-29",
+    "content": {
+      "tr": {
+        "title": "Susan David'in Emosiyon Sabırlığı",
+        "body": "Psikolog Susan David, 'Emotional Agility' (emosiyon sabırlığı) konseptini tanımlar. Duyguları bastırmak veya onlara tamamen boyun eğmek aşırılık. David, duygularımızı gözlemlemek, onları adlandırmak ve konuşmak önemlidir. Örneğin, 'Endişe hissediyorum' yerine 'Endişeli bir düşünce hissediyorum' demek, biraz mesafe yaratır ve kontrol duygusunu artırır. David, bu akılcı mesafe, iyilik ve başarı için şarttır.",
+        "lesson": "Duygularını kabul et ama ona kölesi olma. Gözlemci olmayı öğren.",
+        "quote": "Duygular veri; sen verinin kendisi değilsin."
+      },
+      "en": {
+        "title": "Susan David's Emotional Agility",
+        "body": "Psychologist Susan David defines 'Emotional Agility'—neither suppressing emotions nor surrendering to them. David emphasizes observing, naming, and discussing emotions. Instead of 'I'm anxious,' say 'I notice an anxious thought.' This creates distance and control. David argues this rational distance is essential for well-being and success.",
+        "lesson": "Accept emotions but don't be enslaved. Learn to observe them.",
+        "quote": "Emotions are data; you're not the data."
+      }
+    }
+  },
+  {
+    "id": 42,
+    "cat": "İş",
+    "min": 6,
+    "sourceBookId": 42,
+    "publishDate": "2026-05-01",
+    "content": {
+      "tr": {
+        "title": "Jack Ma'nın Kargo Evi",
+        "body": "Jack Ma, Alibaba'yı kargo kutusundan başladı. Shanghai'ın pis bir odada, Ma ve arkadaşları, e-ticaret sitesini inşa ettiler. Henüz İnternet hızı yavaş, kredi yüksek. Fakat Ma, görüş net idi: Çin'in ticaret platformuna ihtiyacı vardı. Belgeler biriktikçe, daha birçok şirket Alibaba'ya katıldı. Ma, başarının 'vizyondan sonra sabır' olduğunu söylüyor.",
+        "lesson": "Başlangıç koşulları önemli değildir. Vizyonun net ve sabırlıysa, imkansız mümkün olur.",
+        "quote": "Eğer vizyonun varsa, başlangıcı büyük görme. Başlangıcı büyük görmüyorsan, başlangıcını yap."
+      },
+      "en": {
+        "title": "Jack Ma's Cardboard Box Start",
+        "body": "Jack Ma started Alibaba from a cardboard box. In a cramped Shanghai room, Ma and friends built an e-commerce site. Internet was slow, credit high. Yet Ma's vision was clear: China needed a commerce platform. As documents accumulated, more companies joined. Ma says success is 'vision plus patience.'",
+        "lesson": "Starting conditions don't matter. With clear vision and patience, impossible becomes possible.",
+        "quote": "If you have vision, dream big from start. If not, start small."
+      }
+    }
+  },
+  {
+    "id": 43,
+    "cat": "Motivasyon",
+    "min": 5,
+    "sourceBookId": 43,
+    "publishDate": "2026-05-03",
+    "content": {
+      "tr": {
+        "title": "Kris Carr'ın Hastalık Yolculuğu",
+        "body": "Kris Carr, kanser tanısı aldığında, yaş 31'di. Geleneksel tedaviden sonra, kendi sağlığını kontrol etmeye karar verdi. Diyeti değiştirdi, egzersiz yaptı, stresin azaltmasına çalıştı. Carr, kanserini 'öğretmen' olarak görmüştü; ona neyi değiştirmesi gerektiğini öğretti. Bugün, Carr sağlıklı ve zengin, bir yazıktır. Fakat başarısı fiziksel iyileşme değil; zihinsel gücü yeniden kazanması oldu.",
+        "lesson": "Zorluğu, gelişim fırsatı olarak gör. Kontrol edebileceğine odaklan.",
+        "quote": "Hastalık, yaşamaya başlama çağrısıydı."
+      },
+      "en": {
+        "title": "Kris Carr's Wellness Journey",
+        "body": "Kris Carr received a cancer diagnosis at age 31. After traditional treatment, she decided to control her own health. She changed diet, exercised, reduced stress. Carr viewed cancer as a 'teacher,' teaching her what needed changing. Today, Carr is healthy and thriving. Her success wasn't physical recovery; it was reclaiming mental power.",
+        "lesson": "View hardship as growth opportunity. Focus on what you can control.",
+        "quote": "Illness was a call to start living."
+      }
+    }
+  },
+  {
+    "id": 44,
+    "cat": "Tarih",
+    "min": 6,
+    "sourceBookId": 44,
+    "publishDate": "2026-05-05",
+    "content": {
+      "tr": {
+        "title": "Nikola Tesla'nın Hayal Kurması",
+        "body": "Nikola Tesla, elektrik devrimi için hayati enerji sağladı. Sirbe'den Amerika'ya gelen Tesla, iş bulmakta zorluk çekti. Ama bir gün, Park'ta yürürken, AC (alternatif akım) motor konseptini gördü. Tesla, toprakta çizdiği, motor şemasını gözlemci oyuncu buldu. Tesla, zihininde tüm deneyimi yaptı, sonra fiziksel olarak yaptı. Tasarımı mükemmel olmuş. Edison'ın DC (doğru akım) ile savaşmasına rağmen, AC sonunda standart oldu ve modern enerjinin temeli idi.",
+        "lesson": "Görü ve hayal, başarının ilk adımı. Gerçeklik, senodan sonra gelir.",
+        "quote": "Hayal kurmazsam, hiçbir insan başarısız olan fikrini algılamaz."
+      },
+      "en": {
+        "title": "Nikola Tesla's Imagination",
+        "body": "Nikola Tesla provided essential energy for the electrical revolution. Emigrating from Serbia to America, Tesla struggled finding work. One day, walking in the park, he envisioned an AC motor concept. Tesla drew the motor design in the dirt, visualizing every detail. The physical design proved perfect. Despite Edison's war with AC, it became the standard, foundational to modern energy.",
+        "lesson": "Vision and imagination are the first steps. Reality follows visions.",
+        "quote": "Without imagination, no human perceives the concept of failure."
+      }
+    }
+  },
+  {
+    "id": 45,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 45,
+    "publishDate": "2026-05-07",
+    "content": {
+      "tr": {
+        "title": "Robert Cialdini'nin İkna İlkeleri",
+        "body": "Robert Cialdini, insan karar verme bilimini inceleyerek, 6 ikna ilkesi buldu: Seçim (Reciprocity), Taahhüt (Commitment), Sosyal Kanıt (Social Proof), Otorite (Authority), Sevme (Liking), Kıtlık (Scarcity). Örneğin, birilerine bir hediye verirsen, o kişi reciprocate etmeye meyillidir. Veya, kamuya bir söz verirse, kişi onu yerine getirme eğilimindedir. Cialdini'nin çalışması, pazarlamadan hukuka kadar birçok alanında uygulanmıştır.",
+        "lesson": "Kararlar rasyonel değil; insan doğası ile ilişkilidir. Psikolojisi anla.",
+        "quote": "İnsanlar, rasyonel karar almazlar; duygusal davranırlar."
+      },
+      "en": {
+        "title": "Robert Cialdini's Principles of Persuasion",
+        "body": "Robert Cialdini examined human decision-making and identified 6 persuasion principles: Reciprocity, Commitment, Social Proof, Authority, Liking, Scarcity. For example, give someone a gift, they're inclined to reciprocate. Or publicly commit, they're driven to follow through. Cialdini's work applies across marketing, law, and more.",
+        "lesson": "Decisions aren't rational; they're rooted in human nature. Understand the psychology.",
+        "quote": "People don't make rational decisions; they act emotionally."
+      }
+    }
+  },
+  {
+    "id": 46,
+    "cat": "İş",
+    "min": 6,
+    "sourceBookId": 46,
+    "publishDate": "2026-05-09",
+    "content": {
+      "tr": {
+        "title": "Delia Owens'in Başarı Hikayesi",
+        "body": "Delia Owens, yazarlığını uzun zaman denenmiş, hiçbir yayınevi kabul etmedi. Owens, 50 yaşında, ilk kitabını yayınlattı 'Where the Crawdads Sing' (Ates Bulbulleri Ne Zaman Şarkı Söyler). Kitap, rekor kıran başarı elde etti. Owens, sabrını ve disiplinini gözlemledi, hiçbir reddini kişisel olarak almadı ve yazarken devam etti. Sonunda, başarı geldi. Owels'in hikayesi, yaş hiçbir zaman özel olmadığını gösterir; başarı hiçbir zaman geç değildir.",
+        "lesson": "Başarı zamanı yönetir değil; sen yönetirsin. Reddi devam etme sinyali al.",
+        "quote": "Yaş sadece sayı. Bir rüya için asla çok geç değildir."
+      },
+      "en": {
+        "title": "Delia Owens' Late-Life Success",
+        "body": "Delia Owens submitted manuscripts for years; every publisher rejected them. At 50, Owens published her first book 'Where the Crawdads Sing.' It became a record-breaking bestseller. Owels observed rejection without taking it personally, continuing to write. Eventually, success came. Owels' story shows age was irrelevant; success was never too late.",
+        "lesson": "Success doesn't manage time; you do. Treat rejection as a signal to continue.",
+        "quote": "Age is just a number. It's never too late for a dream."
+      }
+    }
+  },
+  {
+    "id": 47,
+    "cat": "Motivasyon",
+    "min": 5,
+    "sourceBookId": 47,
+    "publishDate": "2026-05-11",
+    "content": {
+      "tr": {
+        "title": "Tom Brady'nin Dünya Kuşu",
+        "body": "Tom Brady, 2000 NFL Taslağında 199'uncu seçimde (en sonunda) seçildi. Hiç kimse ona inanmadı. Fakat Brady, her antrenman, her oyun, her sezon, kendini kanıtlamak için çalışıyor. Brady, 40'lı yaşlarında hala oynuyor ve başarı devam ediyor. Brady'nin başarısı, hünerden değil; kendini kanıtlama isteğinden gelir.",
+        "lesson": "Başlangıcınız, hedefiniz değildir. Sebat ve iyileşme, başarı getirir.",
+        "quote": "Sadece güçlü olanlar değil, uyumlular hayatta kalırlar."
+      },
+      "en": {
+        "title": "Tom Brady's Underdog Story",
+        "body": "Tom Brady was drafted 199th in the 2000 NFL Draft—last. No one believed in him. Yet Brady trained relentlessly, proving himself every practice, game, season. Now in his 40s, Brady still plays and succeeds. Brady's success stems not from talent but from the drive to prove himself.",
+        "lesson": "Your start isn't your destiny. Persistence and improvement bring success.",
+        "quote": "Not just the strong but the adaptable survive."
+      }
+    }
+  },
+  {
+    "id": 48,
+    "cat": "Tarih",
+    "min": 6,
+    "sourceBookId": 48,
+    "publishDate": "2026-05-13",
+    "content": {
+      "tr": {
+        "title": "Katherine Johnson'ın Matematik Devrimi",
+        "body": "Katherine Johnson, afroamerikalı matematikçi, NASA'da kritik hesaplamalar yaptı. Ancak, 1960'larda ırk ayrımcılığı nedenimde, o ve meslektaşları ayrı trafo kullanmaya zorlandılar. Johnson, silikon çip hesaplamasını yapsa da, bilgisayar bile Johnson'ın hesaplarını doğrulamak için ona başvuruyordu. Johnson, başarısını 'temiz iş' olarak tanımladı. Günümüzde, Johnson'ın hikayesi, matematik ve sosyal adalet için simbol olmuştur.",
+        "lesson": "Yetenekler başımızı altında Yüksek tutar; eşitsizlik dünyası tarafından karşılansa da.",
+        "quote": "Biz sadece sayılar değiliz; biz insanız. Bizin başımıza değer ver."
+      },
+      "en": {
+        "title": "Katherine Johnson's Mathematical Revolution",
+        "body": "Katherine Johnson, an African American mathematician, performed critical calculations for NASA. Yet in the 1960s, due to racial segregation, she and colleagues were forced to use separate restrooms. Though Johnson calculated complex trajectories, even computers verified her work. Johnson defined success as 'doing clean work.' Today, Johnson's story symbolizes mathematics and social justice.",
+        "lesson": "Talent rises above systemic inequality, though the world tries to suppress it.",
+        "quote": "We're not just numbers; we're people. Value our minds."
+      }
+    }
+  },
+  {
+    "id": 49,
+    "cat": "Psikoloji",
+    "min": 5,
+    "sourceBookId": 49,
+    "publishDate": "2026-05-15",
+    "content": {
+      "tr": {
+        "title": "Bessel van der Kolk'un Vücut Belleği",
+        "body": "Psikiyatrist Bessel van der Kolk, travma araştırması yaparak, öğrenmiştir ki travma sadece zihinde değil, vücutta depolanır. Hareketsiz durmuş korkulu anılar, yapısızlaştırılmış duyguların nörolojik baskısıdır. Van der Kolk, yoga, dans, spor gibi vücut odaklı etkinliklerin travmayı iyileştirdiğini görmüştür. Konuşma terapiden daha önce, vücudu hareket ettirmek önemlidir.",
+        "lesson": "Zihin kadar vücut da tedavi olur. Hareket et, yaşanan olayları bırak.",
+        "quote": "Travma vücutta yaşar; vücut onu açıklanabilir evetleştirir."
+      },
+      "en": {
+        "title": "Bessel van der Kolk's Body Keeps the Score",
+        "body": "Psychiatrist Bessel van der Kolk researched trauma and learned it's stored not just in the mind but in the body. Suppressed traumatic memories are neurological pressure of unprocessed emotions. Van der Kolk found body-centered activities—yoga, dance, exercise—heal trauma. Before talking therapy, moving the body matters.",
+        "lesson": "As mind heals, so does body. Move and release what was experienced.",
+        "quote": "Trauma lives in the body; movement allows it expression."
+      }
+    }
+  },
+  {
+    "id": 50,
+    "cat": "İş",
+    "min": 6,
+    "sourceBookId": 50,
+    "publishDate": "2026-05-17",
+    "content": {
+      "tr": {
+        "title": "Paul Graham'ın Y Combinator Felsefesi",
+        "body": "Paul Graham, Y Combinator'u kurmadan, 'nereden gelecek iş?' sorusuna, 'genç insanlardan' cevabını verdi. Graham, genç girişimcilere mini fonlar sundu, ama imajı: hızlı öğrenme ve dene-hatası toplamı. Y Combinator, Airbnb, Dropbox, Stripe gibi şirketleri buluşturdu. Graham'in felsefesi: başarı, girdi değildir; feedback döngüsü ve uyumluluktur.",
+        "lesson": "Girdi (para, yetenek) değil, dene-hata ve feedback, başarı getirir.",
+        "quote": "En iyi fikirler, kirazlık başında seçilen şeylerdedir. Ama seçim çoğu zaman keşif ile gelir."
+      },
+      "en": {
+        "title": "Paul Graham's Y Combinator Philosophy",
+        "body": "Before founding Y Combinator, Paul Graham asked 'Where will the next business come from?' Answer: young people. Graham provided mini-grants to young founders, betting on rapid learning and iteration. Y Combinator discovered Airbnb, Dropbox, Stripe. Graham's philosophy: success isn't input; it's feedback loops and adaptability.",
+        "lesson": "Input—money, talent—doesn't guarantee success. Iteration and feedback do.",
+        "quote": "The best ideas often come from exploration, not prediction."
+      }
+    }
+  }
+]

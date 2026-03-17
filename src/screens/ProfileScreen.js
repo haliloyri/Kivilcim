@@ -11,13 +11,49 @@ import { useUserData } from '../context/UserDataContext';
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
+    shouldShowBanner: true,
+    shouldShowList: true,
     shouldPlaySound: true,
     shouldSetBadge: false,
   }),
 });
 
 const ProfileScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark, toggleTheme } = useTheme();
+  const { colors, typography, layout, isDark, toggleTheme, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
+  // Simple in-file i18n for Profile screen
+  const translations = {
+    en: {
+      settings: 'App Settings',
+      darkMode: 'Dark (Ink) Mode',
+      notifyTest: 'Test Notifications',
+      test: 'TEST',
+      languageLabel: 'Language',
+      categories: 'Categories',
+      languageEnglish: 'English',
+      languageTurkish: 'Turkish',
+      editInfo: 'Edit My Information',
+      privacy: 'Privacy Policy',
+      logout: 'Logout',
+      account: 'Account'
+    },
+    tr: {
+      settings: 'Uygulama Ayarları',
+      darkMode: 'Mürekkep (Koyu) Mod',
+      notifyTest: 'Bildirim Testi Yap',
+      test: 'TEST ET',
+      languageLabel: 'Dil Seçimi',
+      categories: 'Kategoriler',
+      languageEnglish: 'English',
+      languageTurkish: 'Türkçe',
+      editInfo: 'Bilgilerimi Düzenle',
+      privacy: 'Gizlilik Politikası',
+      logout: 'Oturumu Kapat',
+      account: 'Hesap'
+    }
+  };
+  const t = (k) => translations[lang]?.[k] ?? k;
+  // Profil: takip edilen kategorileri gösterecek alan eklendi
+  const PROFILE_CATEGORIES = ['Finans','Psikoloji','Tarih','Liderlik','Sağlık','Bilim','Felsefe','İş & Girişim'];
   const { clearUserData, isPremium } = useUserData();
 
   const handleLogout = async () => {
@@ -128,10 +164,41 @@ const ProfileScreen = ({ navigation }) => {
       fontSize: 18,
     },
     menuItemText: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'DMSans_400Regular', 
       fontSize: 16,
       color: colors.text,
     },
+    // Categories UI styles
+    categoriesSection: {
+      marginTop: 16,
+    },
+    categoriesRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 8,
+    },
+    categoryPill: {
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+      borderRadius: 14,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.background,
+    },
+    categoryPillText: {
+      fontFamily: 'DMSans_400Regular',
+      fontSize: 12,
+      color: colors.text,
+    },
+    categoryPillActive: {
+      backgroundColor: colors.text,
+    },
+    categoryPillActiveText: {
+      color: colors.background,
+    },
+    // profile category section styles (reintroduced)
+    profileCategoriesSection: { marginTop: 12, paddingHorizontal: 0 },
+    profileCategoriesRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, paddingHorizontal: 16 },
   });
 
   return (
@@ -157,13 +224,36 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
+        <View style={styles.profileCategoriesSection}>
+          <Text style={styles.sectionTitle}>Takip Edilen Kategoriler</Text>
+          <View style={styles.profileCategoriesRow}>
+            {PROFILE_CATEGORIES.map((cat) => {
+              const isSelected = (selectedCategories || []).includes(cat);
+              const toggle = () => {
+                const cur = selectedCategories || [];
+                if (cur.includes(cat)) {
+                  const next = cur.filter(c => c !== cat);
+                  setSelectedCategories(next);
+                } else {
+                  setSelectedCategories([...cur, cat]);
+                }
+              };
+              return (
+                <TouchableOpacity key={cat} onPress={toggle} style={[styles.categoryPill, isSelected && styles.categoryPillActive]}>
+                  <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>{cat}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </View>
+
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Uygulama Ayarları</Text>
+          <Text style={styles.sectionTitle}>{t('settings')}</Text>
           
           <View style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuItemIcon}>{isDark ? '🌙' : '☀️'}</Text>
-              <Text style={styles.menuItemText}>Mürekkep (Koyu) Mod</Text>
+              <Text style={styles.menuItemText}>{t('darkMode')}</Text>
             </View>
             <Switch 
               value={isDark} 
@@ -173,25 +263,30 @@ const ProfileScreen = ({ navigation }) => {
             />
           </View>
 
+          {/* Kategoriler kaldırıldı. Profil sayfasında kategori seçim UI kaldırıldı. */}
+
           <TouchableOpacity style={styles.menuItem} onPress={scheduleTestNotification}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuItemIcon}>🔔</Text>
-              <Text style={styles.menuItemText}>Bildirim Testi Yap</Text>
+              <Text style={styles.menuItemText}>{t('notifyTest')}</Text>
             </View>
-            <Text style={{ color: colors.primary, fontFamily: 'DMSans_500Medium' }}>TEST ET</Text>
+            <Text style={{ color: colors.primary, fontFamily: 'DMSans_500Medium' }}>{t('test')}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
+          <View style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuItemIcon}>🌐</Text>
-              <Text style={styles.menuItemText}>Dil Seçimi</Text>
+              <Text style={styles.menuItemText}>{t('languageLabel')}</Text>
             </View>
-            <Text style={{ color: colors.textSecondary }}>Türkçe →</Text>
-          </TouchableOpacity>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+              <Text style={{ color: colors.text }}>{lang === 'en' ? t('languageEnglish') : t('languageTurkish')}</Text>
+              <Switch value={lang === 'en'} onValueChange={(v) => setLang(v ? 'en' : 'tr')} />
+            </View>
+          </View>
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Hesap</Text>
+          <Text style={styles.sectionTitle}>{t('account')}</Text>
           
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
@@ -209,7 +304,7 @@ const ProfileScreen = ({ navigation }) => {
 
           <TouchableOpacity style={[styles.menuItem, { borderBottomWidth: 0 }]} onPress={handleLogout}>
             <View style={styles.menuItemLeft}>
-              <Text style={[styles.menuItemText, { color: colors.danger }]}>Oturumu Kapat</Text>
+              <Text style={[styles.menuItemText, { color: colors.danger }]}>{t('logout')}</Text>
             </View>
           </TouchableOpacity>
         </View>

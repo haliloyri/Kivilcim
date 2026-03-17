@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
   StatusBar, Platform, Dimensions 
@@ -9,9 +10,9 @@ import { useUserData } from '../context/UserDataContext';
 import { stories } from '../../data/stories';
 import StoryCard from '../components/StoryCard';
 
-const SkeletonCard = ({ colors, isHero }) => (
+const SkeletonCard = ({ colors, layout, isHero }) => (
   <View style={{
-    width: isHero ? '100%' : (Dimensions.get('window').width - 48) / 2,
+    width: isHero ? '100%' : (Dimensions.get('window').width - (layout.padding.horizontal * 2) - 12) / 2,
     height: isHero ? 200 : 160,
     backgroundColor: colors.backgroundDark,
     borderRadius: 12,
@@ -21,10 +22,21 @@ const SkeletonCard = ({ colors, isHero }) => (
 );
 
 const HomeScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark } = useTheme();
+  const { colors, typography, layout, isDark, lang, setLang, selectedCategories, toggleSelectedCategory, setSelectedCategories } = useTheme();
   const { isPremium, history } = useUserData();
   const [loading, setLoading] = useState(true);
-  const [activeFilter, setActiveFilter] = useState('Tümü');
+  // Selected categories come from ThemeContext (multi-select)
+  // Visible categories: Tümü + currently selected Turkish categories
+  const visibleCategories = React.useMemo(() => {
+    const base = ['Tümü', ...(selectedCategories || [])];
+    return Array.from(new Set(base));
+  }, [selectedCategories]);
+  // Language strings
+  const greeting = lang === 'en' ? 'Good morning' : 'Günaydın';
+  const brandText = lang === 'en' ? 'Spark ✦' : 'Kıvılcım ✦';
+
+  const categoriesLabel = lang === 'en' ? 'Categories' : 'Kategoriler';
+  const todayLabel = lang === 'en' ? "Today's stories" : 'Bugünkü hikayeler';
 
   const checkIfRead = (id) => history.includes(id);
 
@@ -33,11 +45,41 @@ const HomeScreen = ({ navigation }) => {
     const timer = setTimeout(() => setLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
-  const allCats = ['Tümü', 'Finans', 'Psikoloji', 'Tarih', 'Liderlik', 'Sağlık', 'Bilim', 'Felsefe', 'İş & Girişim'];
+  // Ensure the screen refreshes to reflect latest selectedCategories on focus
+  const [refreshKey, setRefreshKey] = useState(0);
+  useFocusEffect(
+    React.useCallback(() => {
+      setRefreshKey((k) => k + 1);
+    }, [selectedCategories])
+  );
+  // (no extra) keep simple single source for visible categories
   
-  const filtered = activeFilter === 'Tümü' ? stories : stories.filter(s => s.cat === activeFilter);
-  const free = isPremium ? filtered : filtered.slice(0, 2);
-  const locked = isPremium ? [] : filtered.slice(2, 4);
+  // Bugünü al
+  const todayStr = new Date('2026-03-16').toISOString().split('T')[0];
+
+  // 1. Yayın tarihi geçmiş veya bugün olanları filtrele
+  const publishedStories = stories.filter(s => s.publishDate <= todayStr);
+
+  // 2. Kategori filtresi (multi-select: selectedCategories). If none selected, show all
+  const categoryFiltered = selectedCategories && selectedCategories.length > 0
+    ? publishedStories.filter((s) => selectedCategories.includes(s.cat))
+    : publishedStories;
+
+  // 3. Sıralama: Önce okunmayanlar, sonra okunanlar. Kendi içinde tarihe göre (yeni olan önce)
+  const sortedStories = [...categoryFiltered].sort((a, b) => {
+    const aRead = checkIfRead(a.id);
+    const bRead = checkIfRead(b.id);
+    
+    if (aRead !== bRead) {
+      return aRead ? 1 : -1; // Okunmayanlar (-1) önce gelir
+    }
+    
+    // Aynı okuma durumundaysalar tarihe göre sırala (yeni olan önce)
+    return b.publishDate.localeCompare(a.publishDate);
+  });
+
+  const free = isPremium ? sortedStories : sortedStories.slice(0, 2);
+  const locked = isPremium ? [] : sortedStories.slice(2, 4);
 
   const styles = StyleSheet.create({
     safe: { 
@@ -86,6 +128,20 @@ const HomeScreen = ({ navigation }) => {
       fontFamily: 'DMSans_500Medium', 
       fontSize: 12, 
       color: colors.textSecondary 
+    },
+    langBtn: {
+      paddingHorizontal: 8,
+      paddingVertical: 6,
+      borderRadius: 6,
+      borderWidth: layout.borderWidth,
+      borderColor: colors.border,
+      backgroundColor: colors.background,
+      marginLeft: 4
+    },
+    langBtnText: {
+      fontFamily: 'DMSans_500Medium',
+      fontSize: 12,
+      color: colors.text
     },
     streakCard: { 
       flexDirection: 'row', 
@@ -156,8 +212,8 @@ const HomeScreen = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.homeHeader}>
           <View>
-            <Text style={styles.greetSub}>Günaydın</Text>
-            <Text style={styles.greetName}>Kıvılcım ✦</Text>
+            <Text style={styles.greetSub}>{greeting}</Text>
+            <Text style={styles.greetName}>{brandText}</Text>
           </View>
           <View style={styles.headerRight}>
             <TouchableOpacity onPress={() => navigation.navigate('Search')}>
@@ -166,11 +222,14 @@ const HomeScreen = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.navigate('ProfileTab')} style={styles.avatar}>
               <Text style={styles.avatarText}>AY</Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => setLang(lang === 'en' ? 'tr' : 'en')} style={styles.langBtn}>
+              <Text style={styles.langBtnText}>{lang.toUpperCase()}</Text>
+            </TouchableOpacity>
           </View>
         </View>
 
         <View style={styles.streakCard}>
-          <Text style={{ fontSize: 32 }}>🔥</Text>
+        <Text style={{ fontSize: 32 }}>🔥</Text>
           <View style={{ marginLeft: 12, flex: 1 }}>
             <Text style={styles.streakDays}>7 gün</Text>
             <Text style={styles.streakLabel}>Kesintisiz seri</Text>
@@ -182,16 +241,24 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
 
-        <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>Kategoriler</Text>
+        <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
+          {categoriesLabel}
+        </Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 16 }}>
           <View style={{ flexDirection: 'row', gap: 8, paddingHorizontal: layout.padding.horizontal }}>
-            {allCats.map(cat => (
+            {visibleCategories.map(cat => (
               <TouchableOpacity
                 key={cat}
-                style={[styles.catPill, activeFilter === cat && styles.catPillActive]}
-                onPress={() => setActiveFilter(cat)}
+                style={[styles.catPill, (cat === 'Tümü' && (selectedCategories == null || selectedCategories.length === 0)) || (cat !== 'Tümü' && selectedCategories?.includes(cat)) ? styles.catPillActive : null]}
+                onPress={() => {
+                  if (cat === 'Tümü') {
+                    setSelectedCategories([]);
+                  } else {
+                    toggleSelectedCategory(cat);
+                  }
+                }}
               >
-                <Text style={[styles.catPillText, activeFilter === cat && styles.catPillTextActive]}>
+                <Text style={[styles.catPillText, (cat === 'Tümü' && (selectedCategories == null || selectedCategories.length === 0)) || (cat !== 'Tümü' && selectedCategories?.includes(cat)) ? styles.catPillTextActive : null]}>
                   {cat}
                 </Text>
               </TouchableOpacity>
@@ -199,15 +266,15 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </ScrollView>
 
-        <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>Bugünkü hikayeler</Text>
+        <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>{todayLabel}</Text>
         
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
           {loading ? (
             <>
-              <SkeletonCard colors={colors} isHero />
+              <SkeletonCard colors={colors} layout={layout} isHero />
               <View style={styles.storyGrid}>
-                <SkeletonCard colors={colors} />
-                <SkeletonCard colors={colors} />
+                <SkeletonCard colors={colors} layout={layout} />
+                <SkeletonCard colors={colors} layout={layout} />
               </View>
             </>
           ) : (

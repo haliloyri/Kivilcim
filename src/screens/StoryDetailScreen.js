@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { 
   View, Text, TouchableOpacity, StyleSheet, 
-  StatusBar, Animated, Dimensions, Platform, Modal, Share 
+  StatusBar, Animated, Dimensions, Platform, Modal, Share, Linking, ScrollView 
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { captureRef } from 'react-native-view-shot';
@@ -15,6 +15,7 @@ const { width } = Dimensions.get('window');
 
 const StoryDetailScreen = ({ route, navigation }) => {
   const { story } = route.params;
+  const { lang } = useTheme();
   const { colors, typography, layout, isDark } = useTheme();
   const { isFavorite, toggleFavorite, addToHistory } = useUserData();
   const [fontSize, setFontSize] = useState(typography.sizes.body);
@@ -26,6 +27,17 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [isSpeaking, setIsSpeaking] = useState(false);
 
   const liked = isFavorite(story.id);
+  // Language-aware display fields
+  const displayTitle = (lang === 'en' && story.title_en) ? story.title_en : story.title;
+  const displayBody = (lang === 'en' && story.body_en) ? story.body_en : story.body;
+  const displayQuote = (lang === 'en' && story.quote_en) ? story.quote_en : story.quote;
+  const displayLesson = (lang === 'en' && story.lesson_en) ? story.lesson_en : story.lesson;
+  const displaySrc = (lang === 'en' && story.src_en) ? story.src_en : story.src;
+  const displaySourceBook = (lang === 'en' && story.source_book_en) ? story.source_book_en : story.source_book;
+  const engCatMap = {
+    'Finans':'Finance','Psikoloji':'Psychology','Tarih':'History','Liderlik':'Leadership','Sağlık':'Health','Bilim':'Science','Felsefe':'Philosophy','İş & Girişim':'Business'
+  };
+  const displayCat = (lang === 'en' ? engCatMap[story.cat] ?? story.cat : story.cat);
 
   React.useEffect(() => {
     if (story) {
@@ -367,6 +379,49 @@ const StoryDetailScreen = ({ route, navigation }) => {
       fontSize: 12,
       color: colors.text,
     },
+    sourceSection: {
+      marginTop: 32,
+      padding: 16,
+      borderRadius: 12,
+      backgroundColor: colors.backgroundDark,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    sourceLabel: {
+      fontFamily: 'DMSans_500Medium',
+      fontSize: 12,
+      color: colors.textSecondary,
+      marginBottom: 8,
+      textTransform: 'uppercase',
+      letterSpacing: 1,
+    },
+    bookTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 18,
+      color: colors.text,
+      marginBottom: 16,
+    },
+    linksRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 10,
+    },
+    linkBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingHorizontal: 12,
+      paddingVertical: 8,
+      borderRadius: 8,
+      backgroundColor: colors.background,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    linkBtnText: {
+      fontFamily: 'DMSans_500Medium',
+      fontSize: 12,
+      color: colors.text,
+      marginLeft: 6,
+    },
   });
 
   return (
@@ -420,8 +475,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
         </View>
       </Modal>
 
-      <View style={{ position: 'absolute', left: -2000 }}>
-        <View ref={viewShotRef} style={styles.shareCardContainer}>
+      <View style={{ position: 'absolute', left: -3000 }}>
+        <View ref={viewShotRef} collapsable={false} style={styles.shareCardContainer}>
           {shareTheme === 'sunset' && <LinearGradient colors={['#FF512F', '#F09819']} style={[StyleSheet.absoluteFill]} />}
           {shareTheme === 'ocean' && <LinearGradient colors={['#1A2980', '#26D0CE']} style={[StyleSheet.absoluteFill]} />}
           {shareTheme === 'emerald' && <LinearGradient colors={['#11998e', '#38ef7d']} style={[StyleSheet.absoluteFill]} />}
@@ -454,7 +509,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
               styles.shareCardSrc, 
               { color: shareTheme === 'light' ? '#6B6255' : '#FFF' }
             ]}>
-              {story.src}
+              {displaySrc}
             </Text>
           </View>
           
@@ -507,23 +562,23 @@ const StoryDetailScreen = ({ route, navigation }) => {
         )}
         scrollEventThrottle={16}
       >
-        <View style={[styles.storyHero, { backgroundColor: colors.backgroundDark }]}>
+          <View style={[styles.storyHero, { backgroundColor: colors.backgroundDark }]}> 
           <View style={[styles.badge, { alignSelf: 'flex-start', marginBottom: 12 }]}>
-            <Text style={styles.badgeText}>{story.cat}</Text>
+            <Text style={styles.badgeText}>{displayCat}</Text>
           </View>
-          <Text style={styles.detailTitle}>{story.title}</Text>
+          <Text style={styles.detailTitle}>{displayTitle}</Text>
           <View style={{ flexDirection: 'row', gap: 16, marginTop: 10 }}>
             <Text style={styles.metaItem}>{story.min} dk okuma</Text>
-            <Text style={styles.metaItem}>{story.src}</Text>
+            <Text style={styles.metaItem}>{displaySrc}</Text>
           </View>
         </View>
 
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
-          <Text style={[styles.detailBody, { fontSize: fontSize, lineHeight: fontSize * 1.7 }]}>{story.body}</Text>
+          <Text style={[styles.detailBody, { fontSize: fontSize, lineHeight: fontSize * 1.7 }]}>{displayBody}</Text>
 
           {story.quote ? (
             <View style={styles.quoteBox}>
-              <Text style={styles.quoteText}>"{story.quote}"</Text>
+              <Text style={styles.quoteText}>"{displayQuote || story.quote}"</Text>
             </View>
           ) : null}
 
@@ -538,9 +593,48 @@ const StoryDetailScreen = ({ route, navigation }) => {
           </View>
 
           <View style={styles.lessonBox}>
-            <Text style={styles.lessonLabel}>GÜNÜN DERSİ</Text>
-            <Text style={styles.lessonText}>{story.lesson}</Text>
+            <Text style={styles.lessonLabel}>{lang === 'en' ? "DAY'S LESSON" : 'GÜNÜN DERSİ'}</Text>
+            <Text style={styles.lessonText}>{displayLesson}</Text>
           </View>
+
+          {story.source_book || story.links ? (
+            <View style={styles.sourceSection}>
+              <Text style={styles.sourceLabel}>{lang === 'en' ? 'Source & Explore' : 'Kaynak & Keşfet'}</Text>
+              {story.source_book ? (
+                <Text style={styles.bookTitle}>{displaySourceBook}</Text>
+              ) : null}
+              
+              <View style={styles.linksRow}>
+                {story.links?.amazon ? (
+                  <TouchableOpacity style={styles.linkBtn} onPress={() => Linking.openURL(story.links.amazon)}>
+                    <Text style={{ fontSize: 14 }}>📦</Text>
+                    <Text style={styles.linkBtnText}>Amazon</Text>
+                  </TouchableOpacity>
+                ) : null}
+                
+                {story.links?.hepsiburada ? (
+                  <TouchableOpacity style={styles.linkBtn} onPress={() => Linking.openURL(story.links.hepsiburada)}>
+                    <Text style={{ fontSize: 14 }}>🛒</Text>
+                    <Text style={styles.linkBtnText}>Hepsiburada</Text>
+                  </TouchableOpacity>
+                ) : null}
+
+                {story.links?.youtube ? (
+                  <TouchableOpacity style={styles.linkBtn} onPress={() => Linking.openURL(story.links.youtube)}>
+                    <Text style={{ fontSize: 14 }}>📺</Text>
+                    <Text style={styles.linkBtnText}>YouTube</Text>
+                  </TouchableOpacity>
+                ) : null}
+
+                {story.links?.tiktok ? (
+                  <TouchableOpacity style={styles.linkBtn} onPress={() => Linking.openURL(story.links.tiktok)}>
+                    <Text style={{ fontSize: 14 }}>📱</Text>
+                    <Text style={styles.linkBtnText}>TikTok</Text>
+                  </TouchableOpacity>
+                ) : null}
+              </View>
+            </View>
+          ) : null}
         </View>
         <View style={{ height: 100 }} />
       </Animated.ScrollView>
