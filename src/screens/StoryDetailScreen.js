@@ -55,7 +55,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
       Speech.stop();
       setIsSpeaking(false);
     } else {
-      const textToRead = `${story.title}. \n\n ${story.body} \n\n ${story.quote ? story.quote : ''} \n\n Günün Dersi: ${story.lesson}`;
+      const cleanBody = (story.body || '').replace(/##|\\$\\$|&&/g, '');
+      const textToRead = `${story.title}. \n\n ${cleanBody}`;
       setIsSpeaking(true);
       Speech.speak(textToRead, {
         language: 'tr-TR',
@@ -305,7 +306,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      marginVertical: 40,
+      marginVertical: 12,
     },
     separatorLine: {
       height: 0.5,
@@ -321,7 +322,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       backgroundColor: colors.backgroundDark, 
       borderRadius: layout.radius.card, 
       padding: 16, 
-      marginTop: 24, 
+      marginTop: 0, 
       paddingLeft: 16, 
       borderLeftWidth: 3, 
       borderLeftColor: colors.primary 
@@ -574,65 +575,184 @@ const StoryDetailScreen = ({ route, navigation }) => {
         </View>
 
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
-          <Text style={[styles.detailBody, { fontSize: fontSize, lineHeight: fontSize * 1.7 }]}>{displayBody}</Text>
+          {(() => {
+            // Parse the body into segments based on ##, $$, && markers
+            const rawBody = (displayBody || '').replace(/\n{3,}/g, '\n\n');
+            const segments = [];
+            let remaining = rawBody;
 
-          {story.quote ? (
-            <View style={styles.quoteBox}>
-              <Text style={styles.quoteText}>"{displayQuote || story.quote}"</Text>
-            </View>
-          ) : null}
+            while (remaining.length > 0) {
+              // Find the next marker
+              const markers = [
+                { marker: '##', type: 'highlight' },
+                { marker: '$$', type: 'lesson' },
+                { marker: '&&', type: 'reflection' },
+              ];
 
-          {story.detail ? (
-            <Text style={[styles.detailBody, { marginTop: 12, fontSize: fontSize, lineHeight: fontSize * 1.7 }]}>{story.detail}</Text>
-          ) : null}
+              let nearestIdx = remaining.length;
+              let nearestMarker = null;
 
-          <View style={styles.premiumSeparator}>
-            <View style={styles.separatorLine} />
-            <Text style={styles.separatorIcon}>✦</Text>
-            <View style={styles.separatorLine} />
-          </View>
+              for (const m of markers) {
+                const openIdx = remaining.indexOf(m.marker);
+                if (openIdx !== -1 && openIdx < nearestIdx) {
+                  const closeIdx = remaining.indexOf(m.marker, openIdx + m.marker.length);
+                  if (closeIdx !== -1) {
+                    nearestIdx = openIdx;
+                    nearestMarker = { ...m, open: openIdx, close: closeIdx };
+                  }
+                }
+              }
 
-          <View style={styles.lessonBox}>
-            <Text style={styles.lessonLabel}>{lang === 'en' ? "DAY'S LESSON" : 'GÜNÜN DERSİ'}</Text>
-            <Text style={styles.lessonText}>{displayLesson}</Text>
-          </View>
+              if (!nearestMarker) {
+                // No more markers, push remaining as plain text
+                if (remaining.trim()) {
+                  segments.push({ type: 'text', content: remaining });
+                }
+                break;
+              }
 
-          {story.source_book || story.links ? (
+              // Push text before the marker
+              const before = remaining.substring(0, nearestMarker.open);
+              if (before.trim()) {
+                segments.push({ type: 'text', content: before });
+              }
+
+              // Extract content between markers
+              const markerContent = remaining.substring(
+                nearestMarker.open + nearestMarker.marker.length,
+                nearestMarker.close
+              );
+              segments.push({ type: nearestMarker.type, content: markerContent.trim() });
+
+              // Move past the closing marker
+              remaining = remaining.substring(nearestMarker.close + nearestMarker.marker.length);
+            }
+
+            return segments.map((seg, idx) => {
+              if (seg.type === 'text') {
+                return (
+                  <Text
+                    key={idx}
+                    style={[styles.detailBody, { fontSize, lineHeight: fontSize * 1.55 }]}
+                  >
+                    {seg.content}
+                  </Text>
+                );
+              }
+
+              if (seg.type === 'highlight') {
+                return (
+                  <View
+                    key={idx}
+                    style={{
+                      borderLeftWidth: 3,
+                      borderLeftColor: '#C8A96A',
+                      backgroundColor: isDark ? 'rgba(200,169,106,0.08)' : 'rgba(200,169,106,0.1)',
+                      paddingLeft: 16,
+                      paddingVertical: 10,
+                      marginVertical: 6,
+                      borderRadius: 4,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        fontFamily: 'PlayfairDisplay_600SemiBold',
+                        fontSize: fontSize + 1,
+                        color: colors.text,
+                        lineHeight: (fontSize + 1) * 1.6,
+                      }}
+                    >
+                      {seg.content}
+                    </Text>
+                  </View>
+                );
+              }
+
+              if (seg.type === 'lesson') {
+                return (
+                  <View key={idx}>
+                    <View style={styles.premiumSeparator}>
+                      <View style={styles.separatorLine} />
+                      <Text style={styles.separatorIcon}>✦</Text>
+                      <View style={styles.separatorLine} />
+                    </View>
+                    <View style={styles.lessonBox}>
+                      <Text style={styles.lessonLabel}>
+                        {lang === 'en' ? "KEY TAKEAWAY" : 'HİKAYENİN ÖZÜ'}
+                      </Text>
+                      <Text style={styles.lessonText}>{seg.content}</Text>
+                    </View>
+                  </View>
+                );
+              }
+
+              if (seg.type === 'reflection') {
+                return (
+                  <View
+                    key={idx}
+                    style={{
+                      marginTop: 10,
+                      borderRadius: 16,
+                      overflow: 'hidden',
+                      borderWidth: 1,
+                      borderColor: isDark ? 'rgba(200,169,106,0.3)' : 'rgba(200,169,106,0.4)',
+                    }}
+                  >
+                    <LinearGradient
+                      colors={isDark
+                        ? ['rgba(200,169,106,0.12)', 'rgba(200,169,106,0.04)']
+                        : ['rgba(200,169,106,0.15)', 'rgba(200,169,106,0.05)']}
+                      style={{ padding: 16 }}
+                    >
+                      <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
+                        <Text style={{ fontSize: 20, marginRight: 8 }}>💭</Text>
+                        <Text
+                          style={{
+                            fontFamily: 'DMSans_500Medium',
+                            fontSize: typography.sizes.badge,
+                            color: '#C8A96A',
+                            letterSpacing: 1,
+                            textTransform: 'uppercase',
+                          }}
+                        >
+                          {lang === 'en' ? 'REFLECT' : 'DÜŞÜN VE SORGULA'}
+                        </Text>
+                      </View>
+                      <Text
+                        style={{
+                          fontFamily: 'PlayfairDisplay_400Regular_Italic',
+                          fontSize: fontSize,
+                          color: colors.text,
+                          lineHeight: fontSize * 1.7,
+                        }}
+                      >
+                        {seg.content}
+                      </Text>
+                    </LinearGradient>
+                  </View>
+                );
+              }
+
+              return null;
+            });
+          })()}
+
+          {/* Source & Book section */}
+          {story.source_book ? (
             <View style={styles.sourceSection}>
               <Text style={styles.sourceLabel}>{lang === 'en' ? 'Source & Explore' : 'Kaynak & Keşfet'}</Text>
-              {story.source_book ? (
-                <Text style={styles.bookTitle}>{displaySourceBook}</Text>
+              <Text style={styles.bookTitle}>{story.source_book}</Text>
+              {story.author ? (
+                <Text style={{
+                  fontFamily: 'DMSans_400Regular',
+                  fontSize: 13,
+                  color: colors.textSecondary,
+                  marginTop: -10,
+                  marginBottom: 12,
+                }}>
+                  ✍️ {story.author}
+                </Text>
               ) : null}
-              
-              <View style={styles.linksRow}>
-                {story.links?.amazon ? (
-                  <TouchableOpacity style={styles.linkBtn} onPress={() => Linking.openURL(story.links.amazon)}>
-                    <Text style={{ fontSize: 14 }}>📦</Text>
-                    <Text style={styles.linkBtnText}>Amazon</Text>
-                  </TouchableOpacity>
-                ) : null}
-                
-                {story.links?.hepsiburada ? (
-                  <TouchableOpacity style={styles.linkBtn} onPress={() => Linking.openURL(story.links.hepsiburada)}>
-                    <Text style={{ fontSize: 14 }}>🛒</Text>
-                    <Text style={styles.linkBtnText}>Hepsiburada</Text>
-                  </TouchableOpacity>
-                ) : null}
-
-                {story.links?.youtube ? (
-                  <TouchableOpacity style={styles.linkBtn} onPress={() => Linking.openURL(story.links.youtube)}>
-                    <Text style={{ fontSize: 14 }}>📺</Text>
-                    <Text style={styles.linkBtnText}>YouTube</Text>
-                  </TouchableOpacity>
-                ) : null}
-
-                {story.links?.tiktok ? (
-                  <TouchableOpacity style={styles.linkBtn} onPress={() => Linking.openURL(story.links.tiktok)}>
-                    <Text style={{ fontSize: 14 }}>📱</Text>
-                    <Text style={styles.linkBtnText}>TikTok</Text>
-                  </TouchableOpacity>
-                ) : null}
-              </View>
             </View>
           ) : null}
         </View>

@@ -6,6 +6,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
+import { categories } from '../../data/stories';
 
 const OnboardingScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark } = useTheme();
@@ -15,7 +16,7 @@ const OnboardingScreen = ({ navigation }) => {
   const [selectedTime, setSelectedTime] = useState(1);
   const fadeAnim = useRef(new Animated.Value(1)).current;
 
-  const allCats = ['Finans', 'Psikoloji', 'Tarih', 'Liderlik', 'Sağlık', 'Bilim', 'Felsefe', 'İş & Girişim'];
+  const allCats = categories;
   const timeOptions = [
     { label: '3 dakika', sub: 'Günde 1 hikaye', icon: '☕' },
     { label: '5 dakika', sub: 'Günde 2 hikaye', icon: '📖' },

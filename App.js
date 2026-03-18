@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import { View, Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -25,6 +25,7 @@ import { UserDataProvider } from './src/context/UserDataContext';
 
 // Splash screen'i dondur
 SplashScreen.preventAutoHideAsync();
+import { initDb, seedData } from './src/db/db';
 
 // Splash designer component (in-app splash screen)
 const SplashDesign = () => {
@@ -74,6 +75,21 @@ const stylesSplash = {
 };
 
 function Main() {
+  // Initialize DB and seed data on first run
+  useEffect(() => {
+    const startup = async () => {
+      await initDb();
+      // One-time: clear selected categories
+      const SQLite = require('expo-sqlite');
+      const db = SQLite.openDatabaseSync('kivilcim.db');
+      await db.execAsync('DELETE FROM user_selected_categories;');
+      const AsyncStorage = require('@react-native-async-storage/async-storage').default;
+      await AsyncStorage.removeItem('@kivilcim_categories');
+      console.log("Categories cleared");
+      await seedData();
+    };
+    startup().catch(console.error);
+  }, []);
   const [fontsLoaded] = useFonts({
     PlayfairDisplay_400Regular,
     PlayfairDisplay_600SemiBold,

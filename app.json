@@ -16,7 +16,8 @@
       "package": "com.kivilcim.app"
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      "expo-sqlite"
     ]
   }
 }

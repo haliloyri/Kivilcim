@@ -34,19 +34,29 @@ export const ThemeProvider = ({ children }) => {
   // --- Category selections (multi-select) ---
   const [selectedCategories, setSelectedCategories] = useState([]);
 
-  // Load persisted selections
+  // Load persisted selections (Search both SQLite and AsyncStorage for migration/safety)
   React.useEffect(() => {
     (async () => {
       try {
+        const { getSelectedCategories } = require('../db/db');
+        const dbList = await getSelectedCategories();
+        if (dbList && dbList.length > 0) {
+          setSelectedCategories(dbList);
+          return;
+        }
+
         const raw = await AsyncStorage.getItem('selectedCategories');
         if (raw) {
           const parsed = JSON.parse(raw);
           if (Array.isArray(parsed)) {
             setSelectedCategories(parsed);
+            // Sync to DB
+            const { setSelectedCategories: setDbList } = require('../db/db');
+            await setDbList('default', parsed);
           }
         }
-      } catch {
-        // ignore
+      } catch (e) {
+        console.error("ThemeContext category load error:", e);
       }
     })();
   }, []);
@@ -55,6 +65,8 @@ export const ThemeProvider = ({ children }) => {
     setSelectedCategories(list);
     try {
       await AsyncStorage.setItem('selectedCategories', JSON.stringify(list));
+      const { setSelectedCategories: setDbList } = require('../db/db');
+      await setDbList('default', list);
     } catch {
       // ignore
     }
@@ -88,7 +100,7 @@ export const ThemeProvider = ({ children }) => {
     selectedCategories,
     setSelectedCategories: updateSelectedCategories,
     toggleSelectedCategory,
-  }), [themeMode, activeColors, lang]);
+  }), [themeMode, activeColors, lang, selectedCategories]);
 
   return (
     <ThemeContext.Provider value={themeValue}>

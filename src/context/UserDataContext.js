@@ -1,9 +1,11 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTheme } from './ThemeContext';
 
 const UserDataContext = createContext();
 
 export const UserDataProvider = ({ children }) => {
+  const { setSelectedCategories: setGlobalCategories } = useTheme();
   const [favorites, setFavorites] = useState([]);
   const [history, setHistory] = useState([]);
   const [preferences, setPreferences] = useState({ categories: [], time: null });
@@ -78,6 +80,16 @@ export const UserDataProvider = ({ children }) => {
 
       await AsyncStorage.setItem('@kivilcim_preferences', JSON.stringify(prefs));
       await AsyncStorage.setItem('@kivilcim_onboarded', JSON.stringify(true));
+      
+      // Sync to SQLite for discovery page compatibility
+      try {
+        const { setSelectedCategories: setDbList } = require('../db/db');
+        await setDbList('default', userCategories);
+        // Also update the global ThemeContext so HomeScreen reflects this immediately
+        await setGlobalCategories(userCategories);
+      } catch (dbErr) {
+        console.error('Onboarding SQLite sync error:', dbErr);
+      }
     } catch (error) {
       console.error('Onboarding kaydetme hatası:', error);
     }
@@ -108,6 +120,8 @@ export const UserDataProvider = ({ children }) => {
       setPreferences({ categories: [], time: null });
       setIsOnboarded(false);
       setIsPremium(false);
+      // Clear global categories in ThemeContext too
+      await setGlobalCategories([]);
     } catch (error) {
       console.error('Veri silme hatası:', error);
     }

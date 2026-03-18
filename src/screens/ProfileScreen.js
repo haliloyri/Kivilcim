@@ -6,7 +6,9 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
 import { useTheme } from '../context/ThemeContext';
+import { getSelectedCategories, setSelectedCategories, toggleSelectedCategory } from '../db/db';
 import { useUserData } from '../context/UserDataContext';
+import { categories } from '../../data/stories';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -19,7 +21,7 @@ Notifications.setNotificationHandler({
 });
 
 const ProfileScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark, toggleTheme, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
+  const { colors, typography, layout, isDark, toggleTheme, lang, setLang, selectedCategories, toggleSelectedCategory } = useTheme();
   // Simple in-file i18n for Profile screen
   const translations = {
     en: {
@@ -53,7 +55,7 @@ const ProfileScreen = ({ navigation }) => {
   };
   const t = (k) => translations[lang]?.[k] ?? k;
   // Profil: takip edilen kategorileri gösterecek alan eklendi
-  const PROFILE_CATEGORIES = ['Finans','Psikoloji','Tarih','Liderlik','Sağlık','Bilim','Felsefe','İş & Girişim'];
+  const PROFILE_CATEGORIES = categories;
   const { clearUserData, isPremium } = useUserData();
 
   const handleLogout = async () => {
@@ -228,19 +230,13 @@ const ProfileScreen = ({ navigation }) => {
           <Text style={styles.sectionTitle}>Takip Edilen Kategoriler</Text>
           <View style={styles.profileCategoriesRow}>
             {PROFILE_CATEGORIES.map((cat) => {
-              const isSelected = (selectedCategories || []).includes(cat);
-              const toggle = () => {
-                const cur = selectedCategories || [];
-                if (cur.includes(cat)) {
-                  const next = cur.filter(c => c !== cat);
-                  setSelectedCategories(next);
-                } else {
-                  setSelectedCategories([...cur, cat]);
-                }
-              };
+              const isSelected = selectedCategories.includes(cat);
+              const onPressCat = () => toggleSelectedCategory(cat);
               return (
-                <TouchableOpacity key={cat} onPress={toggle} style={[styles.categoryPill, isSelected && styles.categoryPillActive]}>
-                  <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>{cat}</Text>
+                <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive]}>
+                  <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>
+                    {cat}
+                  </Text>
                 </TouchableOpacity>
               );
             })}

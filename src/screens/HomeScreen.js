@@ -7,6 +7,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
+import { getSelectedCategories } from '../db/db';
 import { stories } from '../../data/stories';
 import StoryCard from '../components/StoryCard';
 
@@ -22,15 +23,16 @@ const SkeletonCard = ({ colors, layout, isHero }) => (
 );
 
 const HomeScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark, lang, setLang, selectedCategories, toggleSelectedCategory, setSelectedCategories } = useTheme();
+  const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
   const { isPremium, history } = useUserData();
   const [loading, setLoading] = useState(true);
-  // Selected categories come from ThemeContext (multi-select)
-  // Visible categories: Tümü + currently selected Turkish categories
+  const [activeFilter, setActiveFilter] = useState('Tümü');
+
+  // Visible categories: Tümü + currently selected categories from preferences
   const visibleCategories = React.useMemo(() => {
-    const base = ['Tümü', ...(selectedCategories || [])];
-    return Array.from(new Set(base));
+    return ['Tümü', ...(selectedCategories || [])];
   }, [selectedCategories]);
+
   // Language strings
   const greeting = lang === 'en' ? 'Good morning' : 'Günaydın';
   const brandText = lang === 'en' ? 'Spark ✦' : 'Kıvılcım ✦';
@@ -45,25 +47,40 @@ const HomeScreen = ({ navigation }) => {
     const timer = setTimeout(() => setLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
-  // Ensure the screen refreshes to reflect latest selectedCategories on focus
-  const [refreshKey, setRefreshKey] = useState(0);
+
+  // Refresh on focus to load latest selected categories from DB if changed elsewhere
   useFocusEffect(
     React.useCallback(() => {
-      setRefreshKey((k) => k + 1);
-    }, [selectedCategories])
+      getSelectedCategories()
+        .then(list => {
+          if (Array.isArray(list)) {
+            setSelectedCategories(list);
+          }
+        })
+        .catch(() => {});
+    }, [])
   );
-  // (no extra) keep simple single source for visible categories
   
-  // Bugünü al
-  const todayStr = new Date('2026-03-16').toISOString().split('T')[0];
+  // Bugünü al (dinamik)
+  const todayStr = new Date().toISOString().split('T')[0];
 
   // 1. Yayın tarihi geçmiş veya bugün olanları filtrele
   const publishedStories = stories.filter(s => s.publishDate <= todayStr);
 
-  // 2. Kategori filtresi (multi-select: selectedCategories). If none selected, show all
-  const categoryFiltered = selectedCategories && selectedCategories.length > 0
-    ? publishedStories.filter((s) => selectedCategories.includes(s.cat))
-    : publishedStories;
+  // 2. Preferences Filter: Sadece takip edilen kategorileri gösteririz.
+  //    Eğer seçili kategorilerle eşleşen hikaye yoksa (veri değişikliği sonrası), tümünü göster.
+  let prefFiltered = publishedStories;
+  if (selectedCategories && selectedCategories.length > 0) {
+    const matched = publishedStories.filter(s => selectedCategories.includes(s.cat));
+    if (matched.length > 0) {
+      prefFiltered = matched;
+    }
+  }
+
+  // 2b. UI Filter: Ekranda tıklanan kategoriye göre filtreleme
+  const categoryFiltered = activeFilter === 'Tümü'
+    ? prefFiltered
+    : prefFiltered.filter(s => s.cat === activeFilter);
 
   // 3. Sıralama: Önce okunmayanlar, sonra okunanlar. Kendi içinde tarihe göre (yeni olan önce)
   const sortedStories = [...categoryFiltered].sort((a, b) => {
@@ -249,16 +266,10 @@ const HomeScreen = ({ navigation }) => {
             {visibleCategories.map(cat => (
               <TouchableOpacity
                 key={cat}
-                style={[styles.catPill, (cat === 'Tümü' && (selectedCategories == null || selectedCategories.length === 0)) || (cat !== 'Tümü' && selectedCategories?.includes(cat)) ? styles.catPillActive : null]}
-                onPress={() => {
-                  if (cat === 'Tümü') {
-                    setSelectedCategories([]);
-                  } else {
-                    toggleSelectedCategory(cat);
-                  }
-                }}
+                style={[styles.catPill, cat === activeFilter ? styles.catPillActive : null]}
+                onPress={() => setActiveFilter(cat)}
               >
-                <Text style={[styles.catPillText, (cat === 'Tümü' && (selectedCategories == null || selectedCategories.length === 0)) || (cat !== 'Tümü' && selectedCategories?.includes(cat)) ? styles.catPillTextActive : null]}>
+                <Text style={[styles.catPillText, cat === activeFilter ? styles.catPillTextActive : null]}>
                   {cat}
                 </Text>
               </TouchableOpacity>
@@ -277,6 +288,30 @@ const HomeScreen = ({ navigation }) => {
                 <SkeletonCard colors={colors} layout={layout} />
               </View>
             </>
+          ) : sortedStories.length === 0 ? (
+            <View style={{ alignItems: 'center', paddingVertical: 48, paddingHorizontal: 24 }}>
+              <Text style={{ fontSize: 48, marginBottom: 16 }}>📭</Text>
+              <Text style={{
+                fontFamily: 'PlayfairDisplay_600SemiBold',
+                fontSize: typography.sizes.headingSmall,
+                color: colors.text,
+                textAlign: 'center',
+                marginBottom: 8,
+              }}>
+                {lang === 'en' ? 'No stories yet' : 'Henüz hikaye yok'}
+              </Text>
+              <Text style={{
+                fontFamily: 'DMSans_400Regular',
+                fontSize: typography.sizes.body,
+                color: colors.textSecondary,
+                textAlign: 'center',
+                lineHeight: 22,
+              }}>
+                {lang === 'en'
+                  ? 'There are no stories in this category right now. Check back later or explore other categories!'
+                  : 'Bu kategoride şu an hikaye bulunmuyor. Daha sonra tekrar kontrol edin veya diğer kategorileri keşfedin!'}
+              </Text>
+            </View>
           ) : (
             <>
               {free.length > 0 && (
