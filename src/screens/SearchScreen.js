@@ -5,17 +5,19 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
-import { stories } from '../../data/stories';
+import { useStories } from '../context/StoriesContext';
 import StoryCard from '../components/StoryCard';
+import { t } from '../locales/i18n';
 
 const SearchScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark } = useTheme();
+  const { colors, typography, layout, isDark, lang } = useTheme();
+  const { stories } = useStories();
   const [query, setQuery] = useState('');
 
-  const filtered = stories.filter(s => 
-    s.title.toLowerCase().includes(query.toLowerCase()) || 
-    s.cat.toLowerCase().includes(query.toLowerCase())
-  );
+  const filtered = query.trim() ? (stories || []).filter(s => 
+    (s.title || '').toLowerCase().includes(query.toLowerCase()) || 
+    (s.cat_display || s.cat || '').toLowerCase().includes(query.toLowerCase())
+  ).slice(0, 20) : [];
 
   const styles = StyleSheet.create({
     safe: { 
@@ -75,7 +77,7 @@ const SearchScreen = ({ navigation }) => {
         </TouchableOpacity>
         <TextInput 
           style={styles.searchBar}
-          placeholder="Hikaye veya kategori ara..."
+          placeholder={t('searchPlaceholder', lang)}
           placeholderTextColor={colors.textSecondary}
           value={query}
           onChangeText={setQuery}
@@ -84,8 +86,8 @@ const SearchScreen = ({ navigation }) => {
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={styles.sectionLabel}>Sonuçlar</Text>
-        <Text style={styles.resultInfo}>{filtered.length} hikaye bulundu</Text>
+        <Text style={styles.sectionLabel}>{t('resultsLabel', lang)}</Text>
+        <Text style={styles.resultInfo}>{filtered.length} {t('foundStories', lang)}</Text>
         
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
           {filtered.map(story => (

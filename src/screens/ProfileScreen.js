@@ -8,7 +8,8 @@ import * as Notifications from 'expo-notifications';
 import { useTheme } from '../context/ThemeContext';
 import { getSelectedCategories, setSelectedCategories, toggleSelectedCategory } from '../db/db';
 import { useUserData } from '../context/UserDataContext';
-import { categories } from '../../data/stories';
+import { useStories } from '../context/StoriesContext';
+import { t } from '../locales/i18n';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -22,39 +23,8 @@ Notifications.setNotificationHandler({
 
 const ProfileScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, toggleTheme, lang, setLang, selectedCategories, toggleSelectedCategory } = useTheme();
-  // Simple in-file i18n for Profile screen
-  const translations = {
-    en: {
-      settings: 'App Settings',
-      darkMode: 'Dark (Ink) Mode',
-      notifyTest: 'Test Notifications',
-      test: 'TEST',
-      languageLabel: 'Language',
-      categories: 'Categories',
-      languageEnglish: 'English',
-      languageTurkish: 'Turkish',
-      editInfo: 'Edit My Information',
-      privacy: 'Privacy Policy',
-      logout: 'Logout',
-      account: 'Account'
-    },
-    tr: {
-      settings: 'Uygulama Ayarları',
-      darkMode: 'Mürekkep (Koyu) Mod',
-      notifyTest: 'Bildirim Testi Yap',
-      test: 'TEST ET',
-      languageLabel: 'Dil Seçimi',
-      categories: 'Kategoriler',
-      languageEnglish: 'English',
-      languageTurkish: 'Türkçe',
-      editInfo: 'Bilgilerimi Düzenle',
-      privacy: 'Gizlilik Politikası',
-      logout: 'Oturumu Kapat',
-      account: 'Hesap'
-    }
-  };
-  const t = (k) => translations[lang]?.[k] ?? k;
-  // Profil: takip edilen kategorileri gösterecek alan eklendi
+  // Global t() function is now used directly from i18n.js
+  const { categories } = useStories();
   const PROFILE_CATEGORIES = categories;
   const { clearUserData, isPremium } = useUserData();
 
@@ -199,8 +169,8 @@ const ProfileScreen = ({ navigation }) => {
       color: colors.background,
     },
     // profile category section styles (reintroduced)
-    profileCategoriesSection: { marginTop: 12, paddingHorizontal: 0 },
-    profileCategoriesRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, paddingHorizontal: 16 },
+    profileCategoriesSection: { marginTop: 12, paddingHorizontal: layout.padding.horizontal },
+    profileCategoriesRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   });
 
   return (
@@ -221,13 +191,13 @@ const ProfileScreen = ({ navigation }) => {
             disabled={isPremium}
           >
             <Text style={styles.premiumText}>
-              {isPremium ? '✦ Sınırsız Üye' : '✦ Sınırsız\'a Geç'}
+              {isPremium ? t('premiumMember', lang) : t('upgradePremium', lang)}
             </Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.profileCategoriesSection}>
-          <Text style={styles.sectionTitle}>Takip Edilen Kategoriler</Text>
+          <Text style={styles.sectionTitle}>{t('categories', lang)}</Text>
           <View style={styles.profileCategoriesRow}>
             {PROFILE_CATEGORIES.map((cat) => {
               const isSelected = selectedCategories.includes(cat);
@@ -235,7 +205,7 @@ const ProfileScreen = ({ navigation }) => {
               return (
                 <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive]}>
                   <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>
-                    {cat}
+                    {t(cat, lang)}
                   </Text>
                 </TouchableOpacity>
               );
@@ -244,12 +214,12 @@ const ProfileScreen = ({ navigation }) => {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{t('settings')}</Text>
+          <Text style={styles.sectionTitle}>{t('settings', lang)}</Text>
           
           <View style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuItemIcon}>{isDark ? '🌙' : '☀️'}</Text>
-              <Text style={styles.menuItemText}>{t('darkMode')}</Text>
+              <Text style={styles.menuItemText}>{t('darkMode', lang)}</Text>
             </View>
             <Switch 
               value={isDark} 
@@ -264,43 +234,43 @@ const ProfileScreen = ({ navigation }) => {
           <TouchableOpacity style={styles.menuItem} onPress={scheduleTestNotification}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuItemIcon}>🔔</Text>
-              <Text style={styles.menuItemText}>{t('notifyTest')}</Text>
+              <Text style={styles.menuItemText}>{t('notifyTest', lang)}</Text>
             </View>
-            <Text style={{ color: colors.primary, fontFamily: 'DMSans_500Medium' }}>{t('test')}</Text>
+            <Text style={{ color: colors.primary, fontFamily: 'DMSans_500Medium' }}>{t('test', lang)}</Text>
           </TouchableOpacity>
 
           <View style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuItemIcon}>🌐</Text>
-              <Text style={styles.menuItemText}>{t('languageLabel')}</Text>
+              <Text style={styles.menuItemText}>{t('languageLabel', lang)}</Text>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-              <Text style={{ color: colors.text }}>{lang === 'en' ? t('languageEnglish') : t('languageTurkish')}</Text>
+              <Text style={{ color: colors.text }}>{lang === 'en' ? t('languageEnglish', lang) : t('languageTurkish', lang)}</Text>
               <Switch value={lang === 'en'} onValueChange={(v) => setLang(v ? 'en' : 'tr')} />
             </View>
           </View>
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{t('account')}</Text>
+          <Text style={styles.sectionTitle}>{t('account', lang)}</Text>
           
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuItemIcon}>👤</Text>
-              <Text style={styles.menuItemText}>Bilgilerimi Düzenle</Text>
+              <Text style={styles.menuItemText}>{t('editInfo', lang)}</Text>
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuItemIcon}>🛡️</Text>
-              <Text style={styles.menuItemText}>Gizlilik Politikası</Text>
+              <Text style={styles.menuItemText}>{t('privacy', lang)}</Text>
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity style={[styles.menuItem, { borderBottomWidth: 0 }]} onPress={handleLogout}>
             <View style={styles.menuItemLeft}>
-              <Text style={[styles.menuItemText, { color: colors.danger }]}>{t('logout')}</Text>
+              <Text style={[styles.menuItemText, { color: colors.danger }]}>{t('logout', lang)}</Text>
             </View>
           </TouchableOpacity>
         </View>

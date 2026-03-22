@@ -41,9 +41,10 @@ export const UserDataProvider = ({ children }) => {
   const toggleFavorite = async (storyId) => {
     try {
       setFavorites((prev) => {
-        const newFavs = prev.includes(storyId) 
-          ? prev.filter(id => id !== storyId) 
-          : [...prev, storyId];
+        const strId = String(storyId);
+        const newFavs = prev.some(id => String(id) === strId)
+          ? prev.filter(id => String(id) !== strId) 
+          : [...prev, strId];
         
         AsyncStorage.setItem('@kivilcim_favorites', JSON.stringify(newFavs));
         return newFavs;
@@ -54,15 +55,15 @@ export const UserDataProvider = ({ children }) => {
   };
 
   const isFavorite = (storyId) => {
-    return favorites.includes(storyId);
+    return favorites.some(id => String(id) === String(storyId));
   };
 
   // Okuma Geçmişi (Son 20 Hikaye)
   const addToHistory = async (storyId) => {
     try {
       setHistory((prev) => {
-        const filtered = prev.filter(id => id !== storyId);
-        const newHist = [storyId, ...filtered].slice(0, 20); 
+        const filtered = prev.filter(id => String(id) !== String(storyId));
+        const newHist = [String(storyId), ...filtered].slice(0, 20); 
         AsyncStorage.setItem('@kivilcim_history', JSON.stringify(newHist));
         return newHist;
       });

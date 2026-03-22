@@ -1,47 +1,50 @@
 import React, { useState, useRef } from 'react';
 import { 
   View, Text, TouchableOpacity, StyleSheet, 
-  StatusBar, Animated, Dimensions, Platform, Modal, Share, Linking, ScrollView 
+  StatusBar, Animated, Dimensions, Platform, Modal, Alert, Linking, ScrollView 
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { captureRef } from 'react-native-view-shot';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Speech from 'expo-speech';
+import * as Sharing from 'expo-sharing';
+import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
-import { stories } from '../../data/stories';
+import { useStories } from '../context/StoriesContext';
+import { getCatIcon } from '../components/StoryCard';
+import { t } from '../locales/i18n';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 const StoryDetailScreen = ({ route, navigation }) => {
   const { story } = route.params;
-  const { lang } = useTheme();
-  const { colors, typography, layout, isDark } = useTheme();
-  const { isFavorite, toggleFavorite, addToHistory } = useUserData();
+  const { colors, typography, layout, isDark, lang } = useTheme();
+  const { isFavorite, toggleFavorite, addToHistory, isPremium } = useUserData();
+  const { stories } = useStories();
   const [fontSize, setFontSize] = useState(typography.sizes.body);
   const [shareModalVisible, setShareModalVisible] = useState(false);
-  const [shareTheme, setShareTheme] = useState('light'); // light, dark, sunset, ocean, emerald
+  const [shareTheme, setShareTheme] = useState('dark');
+  const [shareContent, setShareContent] = useState(['quote']);
+  const [shareFormat, setShareFormat] = useState('post');
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const scrollY = useRef(new Animated.Value(0)).current;
   const viewShotRef = useRef();
   const [isSpeaking, setIsSpeaking] = useState(false);
 
-  const liked = isFavorite(story.id);
-  // Language-aware display fields
-  const displayTitle = (lang === 'en' && story.title_en) ? story.title_en : story.title;
-  const displayBody = (lang === 'en' && story.body_en) ? story.body_en : story.body;
-  const displayQuote = (lang === 'en' && story.quote_en) ? story.quote_en : story.quote;
-  const displayLesson = (lang === 'en' && story.lesson_en) ? story.lesson_en : story.lesson;
-  const displaySrc = (lang === 'en' && story.src_en) ? story.src_en : story.src;
-  const displaySourceBook = (lang === 'en' && story.source_book_en) ? story.source_book_en : story.source_book;
-  const engCatMap = {
-    'Finans':'Finance','Psikoloji':'Psychology','Tarih':'History','Liderlik':'Leadership','Sağlık':'Health','Bilim':'Science','Felsefe':'Philosophy','İş & Girişim':'Business'
-  };
-  const displayCat = (lang === 'en' ? engCatMap[story.cat] ?? story.cat : story.cat);
+  const liked = isFavorite(story.story_id);
+  // DB already returns translated content for the active language
+  const displayTitle = story.title || '';
+  const displayBody = story.body || '';
+  const displayQuote = story.quote || '';
+  const displayLesson = story.lesson || '';
+  const displaySrc = story.src || '';
+  const displaySourceBook = story.source_book || '';
+  const displayCat = story.cat_display || t(story.cat, lang);
 
   React.useEffect(() => {
     if (story) {
-      addToHistory(story.id);
+      addToHistory(story.story_id);
       Speech.stop();
       setIsSpeaking(false);
     }
@@ -55,11 +58,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
       Speech.stop();
       setIsSpeaking(false);
     } else {
-      const cleanBody = (story.body || '').replace(/##|\\$\\$|&&/g, '');
-      const textToRead = `${story.title}. \n\n ${cleanBody}`;
+      const cleanBody = (displayBody || '').replace(/##|\$\$|&&/g, '');
+      const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
       setIsSpeaking(true);
       Speech.speak(textToRead, {
-        language: 'tr-TR',
+        language: lang === 'en' ? 'en-US' : 'tr-TR',
         rate: 0.95,
         pitch: 1.0,
         onDone: () => setIsSpeaking(false),
@@ -74,29 +77,89 @@ const StoryDetailScreen = ({ route, navigation }) => {
       Animated.timing(scaleAnim, { toValue: 1.3, duration: 100, useNativeDriver: true }),
       Animated.timing(scaleAnim, { toValue: 1, duration: 100, useNativeDriver: true }),
     ]).start();
-    toggleFavorite(story.id);
+    toggleFavorite(story.story_id);
   };
 
   const handleNext = () => {
-    const currentIndex = stories.findIndex(s => s.id === story.id);
+    if (!isPremium) {
+      navigation.navigate('Paywall');
+      return;
+    }
+    const currentIndex = stories.findIndex(s => s.story_id === story.story_id);
     const nextIndex = (currentIndex + 1) % stories.length;
-    // .replace prevents the stack from going infinitely deep when clicking "next" repeatedly
     navigation.replace('StoryDetail', { story: stories[nextIndex] });
+  };
+
+  // --- Share card theme configs ---
+  const SHARE_THEMES = [
+    { id: 'dark', label: t('themeInk', lang), bg: ['#131311', '#1E1C18'], text: '#E8E0D0', accent: '#FFB783', sub: '#A89A84' },
+    { id: 'light', label: t('themePaper', lang), bg: ['#F7F3EB', '#EDE8DD'], text: '#1A1208', accent: '#B55310', sub: '#6B6255' },
+    { id: 'sunset', label: t('themeSun', lang), bg: ['#FF512F', '#F09819'], text: '#FFF', accent: '#FFE0C2', sub: 'rgba(255,255,255,0.8)' },
+    { id: 'ocean', label: t('themeNight', lang), bg: ['#1A2980', '#26D0CE'], text: '#FFF', accent: '#B8E6FF', sub: 'rgba(255,255,255,0.8)' },
+    { id: 'emerald', label: t('themeEmerald', lang), bg: ['#11998e', '#38ef7d'], text: '#FFF', accent: '#D4FFED', sub: 'rgba(255,255,255,0.8)' },
+    { id: 'rose', label: lang === 'tr' ? 'Gül' : 'Rose', bg: ['#E96443', '#904E95'], text: '#FFF', accent: '#FFD6E0', sub: 'rgba(255,255,255,0.8)' },
+  ];
+
+  const currentTheme = SHARE_THEMES.find(th => th.id === shareTheme) || SHARE_THEMES[0];
+
+  const extractContent = (markerStr) => {
+    if (!displayBody) return '';
+    const startIdx = displayBody.indexOf(markerStr);
+    if (startIdx === -1) return '';
+    const bodySegment = displayBody.substring(startIdx + markerStr.length);
+    let nextMarkerIdx = bodySegment.length;
+    ['##', '$$', '&&'].forEach(m => {
+      const id = bodySegment.indexOf(m);
+      if (id !== -1 && id < nextMarkerIdx) {
+        nextMarkerIdx = id;
+      }
+    });
+    return bodySegment.substring(0, nextMarkerIdx).trim();
+  };
+
+  const getShareText = (type) => {
+    if (type === 'quote') {
+      const ext = extractContent('##');
+      return ext || displayQuote || displayBody.substring(0, 150) + '...';
+    }
+    if (type === 'lesson') {
+      const ext = extractContent('$$');
+      return ext || displayLesson || t('keyTakeaway', lang);
+    }
+    if (type === 'reflection') {
+      const ext = extractContent('&&');
+      return ext || (lang === 'tr' ? 'Neyi fark ettin?' : 'What did you realize?');
+    }
+    return '';
   };
 
   const onShare = async () => {
     try {
+      // 1. Capture the off-screen card as PNG
       const uri = await captureRef(viewShotRef, {
         format: 'png',
         quality: 1,
       });
-      await Share.share({
-        url: Platform.OS === 'ios' ? `file://${uri}` : uri,
-        message: `${story.title} - Kıvılcım Uygulamasından bir hikaye`,
-      });
-      setShareModalVisible(false);
+
+      // 2. Open native share sheet with the image
+      const canShare = await Sharing.isAvailableAsync();
+      if (canShare) {
+        await Sharing.shareAsync(uri, {
+          mimeType: 'image/png',
+          dialogTitle: `${displayTitle} — ${t('brandText', lang)}`,
+        });
+      } else {
+        Alert.alert(
+          lang === 'tr' ? 'Hata' : 'Error',
+          lang === 'tr' ? 'Paylaşım bu cihazda desteklenmiyor.' : 'Sharing is not available on this device.',
+        );
+      }
     } catch (error) {
       console.error('Paylaşım hatası:', error);
+      Alert.alert(
+        lang === 'tr' ? 'Hata' : 'Error',
+        lang === 'tr' ? 'Paylaşım sırasında bir hata oluştu.' : 'An error occurred while sharing.',
+      );
     }
   };
 
@@ -114,21 +177,22 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     modalOverlay: {
       flex: 1,
-      backgroundColor: 'rgba(0,0,0,0.5)',
+      backgroundColor: 'rgba(0,0,0,0.7)',
       justifyContent: 'flex-end',
     },
     modalContent: {
       backgroundColor: colors.background,
       borderTopLeftRadius: 24,
       borderTopRightRadius: 24,
-      padding: 24,
+      padding: 20,
       paddingBottom: Platform.OS === 'android' ? 48 : 32,
+      maxHeight: '92%',
     },
     modalHeader: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: 8,
+      marginBottom: 4,
     },
     modalTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
@@ -137,40 +201,80 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     modalSub: {
       fontFamily: 'DMSans_400Regular',
-      fontSize: 14,
+      fontSize: 13,
       color: colors.textSecondary,
-      marginBottom: 24,
+      marginBottom: 16,
     },
-    themeToggle: {
+    // --- Content type pills ---
+    contentPillsRow: {
       flexDirection: 'row',
-      gap: 16,
-      marginBottom: 24,
+      gap: 8,
+      marginBottom: 14,
     },
-    themeOption: {
-      flex: 1,
-      alignItems: 'center',
-      padding: 12,
-      borderRadius: 12,
+    contentPill: {
+      paddingHorizontal: 14,
+      paddingVertical: 7,
+      borderRadius: 20,
+      backgroundColor: colors.backgroundDark,
       borderWidth: 1,
       borderColor: colors.border,
     },
-    themeOptionActive: {
+    contentPillActive: {
+      backgroundColor: colors.primary,
       borderColor: colors.primary,
-      backgroundColor: colors.backgroundDark,
     },
-    themePreview: {
-      width: '100%',
-      height: 60,
-      borderRadius: 8,
-      marginBottom: 8,
-      borderWidth: 0.5,
+    contentPillText: {
+      fontFamily: 'DMSans_500Medium',
+      fontSize: 12,
+      color: colors.textSecondary,
+    },
+    contentPillTextActive: {
+      color: '#FFF',
+    },
+    // --- Theme swatches ---
+    themeToggle: {
+      flexDirection: 'row',
+      gap: 10,
+      marginBottom: 14,
+    },
+    themeSwatch: {
+      width: 36,
+      height: 36,
+      borderRadius: 18,
+      borderWidth: 2,
+      borderColor: 'transparent',
+    },
+    themeSwatchActive: {
+      borderColor: colors.primary,
+    },
+    // --- Format toggle ---
+    formatRow: {
+      flexDirection: 'row',
+      gap: 8,
+      marginBottom: 16,
+    },
+    formatBtn: {
+      flex: 1,
+      paddingVertical: 8,
+      borderRadius: 10,
+      alignItems: 'center',
+      backgroundColor: colors.backgroundDark,
+      borderWidth: 1,
       borderColor: colors.border,
     },
-    themeLabel: {
-      fontFamily: 'DMSans_500Medium',
-      fontSize: 13,
-      color: colors.text,
+    formatBtnActive: {
+      borderColor: colors.primary,
+      backgroundColor: isDark ? 'rgba(181,83,16,0.15)' : 'rgba(181,83,16,0.08)',
     },
+    formatBtnText: {
+      fontFamily: 'DMSans_500Medium',
+      fontSize: 12,
+      color: colors.textSecondary,
+    },
+    formatBtnTextActive: {
+      color: colors.primary,
+    },
+    // --- Buttons ---
     btnPrimary: { 
       backgroundColor: colors.primary, 
       borderRadius: layout.radius.button, 
@@ -180,56 +284,21 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     btnPrimaryText: { 
       fontFamily: 'DMSans_500Medium', 
-      color: colors.text, 
+      color: '#F7F3EB', 
       fontSize: typography.sizes.ui + 1 
     },
-    shareCardContainer: {
-      width: 1080,
-      height: 1080,
-      padding: 80,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    shareCardLogo: {
-      position: 'absolute',
-      top: 60,
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 40,
-    },
-    shareCardContent: {
-      alignItems: 'center',
-    },
-    shareCardTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 72,
-      textAlign: 'center',
-      lineHeight: 84,
-      marginBottom: 60,
-    },
-    shareCardQuoteBox: {
-      borderLeftWidth: 8,
-      paddingLeft: 40,
-      marginVertical: 40,
-      width: 800,
-    },
-    shareCardQuote: {
-      fontFamily: 'PlayfairDisplay_400Regular_Italic',
-      fontSize: 48,
-      lineHeight: 64,
-    },
-    shareCardSrc: {
-      fontFamily: 'DMSans_500Medium',
-      fontSize: 32,
-      marginTop: 40,
-      textTransform: 'uppercase',
-      letterSpacing: 4,
-    },
-    shareCardFooter: {
-      position: 'absolute',
-      bottom: 60,
-      fontFamily: 'DMSans_400Regular',
-      fontSize: 28,
-      opacity: 0.8,
+    // --- Share card (capture target) ---
+    shareCardWrapper: {
+      alignSelf: 'center',
+      marginBottom: 14,
+      borderRadius: 12,
+      overflow: 'hidden',
+      // shadow
+      shadowColor: '#000',
+      shadowOpacity: 0.3,
+      shadowRadius: 16,
+      shadowOffset: { width: 0, height: 8 },
+      elevation: 10,
     },
     readingProgressBarContainer: {
       height: 3,
@@ -425,8 +494,120 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
   });
 
+  // --- Helper: Render the share card (identical in both preview & capture) ---
+  const renderShareCard = () => {
+    const th = currentTheme;
+    const isPost = shareFormat === 'post';
+    
+    // Always use exact capture sizes
+    const cardW = 1080;
+    const cardH = isPost ? 1080 : 1920; 
+    
+    const fTitle = 52;
+    const fQuote = 42;
+    const fSrc = 24;
+    const fLogo = 32;
+    const fFooter = 22;
+    
+    const padHorizontal = 80;
+    const paddingTop = isPost ? 80 : 250;
+    const paddingBottom = isPost ? 80 : 300;
+    const borderW = 6;
+
+    return (
+      <View style={{ width: cardW, height: cardH, overflow: 'hidden', backgroundColor: th.bg[0], flexDirection: 'column' }}>
+        <LinearGradient
+          colors={th.bg}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={[StyleSheet.absoluteFill]}
+        />
+        
+        {/* All Content Filtered Through a Single Centered Container */}
+        <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: padHorizontal, paddingTop, paddingBottom }}>
+          
+          {/* Header (Logo) */}
+          <View style={{ alignItems: 'flex-start', marginBottom: 80 }}>
+            <Text style={{
+              fontFamily: 'PlayfairDisplay_700Bold',
+              fontSize: fLogo, color: th.accent,
+            }}>✦ {lang === 'tr' ? 'Kıvılcım' : 'Spark'}</Text>
+          </View>
+
+          {shareContent.map((type, index) => {
+            const label = type === 'lesson' ? (lang === 'tr' ? '💡 Anahtar Ders' : '💡 Key Takeaway') : 
+                          type === 'reflection' ? (lang === 'tr' ? '🤔 Sorgula' : '🤔 Reflect') : 
+                          displayTitle;
+            const textContent = getShareText(type);
+            
+            // dynamically scale text if multiple are selected
+            const dynTitle = shareContent.length > 1 ? fTitle * 0.8 : fTitle;
+            const dynQuote = shareContent.length > 1 ? fQuote * 0.8 : fQuote;
+            
+            return (
+              <View key={type} style={{ marginBottom: index === shareContent.length - 1 ? 0 : 60 }}>
+                <Text style={{
+                  fontFamily: 'PlayfairDisplay_700Bold',
+                  fontSize: dynTitle,
+                  color: th.text,
+                  lineHeight: dynTitle * 1.3,
+                  marginBottom: 40 * 0.6,
+                }}>
+                  {label}
+                </Text>
+                
+                <View style={{
+                  borderLeftWidth: borderW,
+                  borderLeftColor: th.accent,
+                  paddingLeft: 40 * 0.6,
+                  marginBottom: 30 * 0.6,
+                }}>
+                  <Text style={{
+                    fontFamily: 'PlayfairDisplay_400Regular_Italic',
+                    fontSize: dynQuote,
+                    color: th.sub,
+                    lineHeight: dynQuote * 1.6,
+                  }}>
+                    "{textContent}"
+                  </Text>
+                </View>
+              </View>
+            );
+          })}
+          
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 60 }}>
+            <Ionicons name="book-outline" size={fSrc + 4} color={th.sub} />
+            <Text style={{
+              fontFamily: 'DMSans_500Medium',
+              fontSize: fSrc,
+              color: th.sub,
+              textTransform: 'uppercase',
+              letterSpacing: 2,
+              marginLeft: 6,
+            }}>
+              {lang === 'tr' ? 'Kaynak: ' : 'Source: '}{displaySrc}
+            </Text>
+          </View>
+
+          {/* Footer */}
+          <View style={{ alignItems: 'center', marginTop: 80 }}>
+            <Text style={{
+              fontFamily: 'DMSans_400Regular',
+              fontSize: fFooter, color: th.sub,
+              textAlign: 'center',
+            }}>
+              {lang === 'tr' ? 'Daha fazlası için Kıvılcım uygulamasını indir.' : 'Download Spark for more.'}
+            </Text>
+          </View>
+
+        </View>
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.safe}>
+      {/* ===== SHARE MODAL ===== */}
       <Modal
         animationType="slide"
         transparent={true}
@@ -435,91 +616,112 @@ const StoryDetailScreen = ({ route, navigation }) => {
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
+            {/* Header */}
             <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>Kart Oluştur</Text>
+              <Text style={styles.modalTitle}>{t('createCard', lang)}</Text>
               <TouchableOpacity onPress={() => setShareModalVisible(false)}>
-                <Text style={{ fontSize: 20, color: colors.text }}>✕</Text>
+                <Ionicons name="close" size={22} color={colors.text} />
               </TouchableOpacity>
             </View>
+            <Text style={styles.modalSub}>{t('shareOnInstagram', lang)}</Text>
 
-            <Text style={styles.modalSub}>Bir tema seç ve Instagram'da paylaş.</Text>
-            
-            <View style={styles.themeToggle}>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 12 }}>
-                {[
-                  { id: 'light', label: 'Kâğıt', color: '#F7F3EB' },
-                  { id: 'dark', label: 'Mürekkep', color: '#1A1208' },
-                  { id: 'sunset', label: 'Güneş', gradient: ['#FF512F', '#F09819'] },
-                  { id: 'ocean', label: 'Gece', gradient: ['#1A2980', '#26D0CE'] },
-                  { id: 'emerald', label: 'Zümrüt', gradient: ['#11998e', '#38ef7d'] },
-                ].map((th) => (
-                  <TouchableOpacity 
-                    key={th.id}
-                    style={[styles.themeOption, shareTheme === th.id && styles.themeOptionActive, { width: 80 }]} 
-                    onPress={() => setShareTheme(th.id)}
-                  >
-                    {th.gradient ? (
-                      <LinearGradient colors={th.gradient} style={styles.themePreview} />
-                    ) : (
-                      <View style={[styles.themePreview, { backgroundColor: th.color }]} />
-                    )}
-                    <Text style={styles.themeLabel}>{th.label}</Text>
-                  </TouchableOpacity>
-                ))}
-              </ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false} style={{ flexShrink: 1, marginBottom: 16 }}>
+              {/* Card Preview (visible to user exactly as captured) */}
+              <View style={[styles.shareCardWrapper, {
+                width: width - 80,
+                height: (shareFormat === 'post' ? 1080 : 1920) * ((width - 80) / 1080),
+                alignItems: 'center', 
+                justifyContent: 'center',
+                backgroundColor: 'transparent'
+              }]}>
+                <View style={{
+                  width: 1080,
+                  height: shareFormat === 'post' ? 1080 : 1920,
+                  transform: [{ scale: (width - 80) / 1080 }]
+                }}>
+                  {renderShareCard()}
+                </View>
+              </View>
+
+            {/* Content type pills */}
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.contentPillsRow}>
+              {[
+                { id: 'quote', label: lang === 'tr' ? '❝ Alıntı' : '❝ Quote', icon: 'chatbox-ellipses-outline' },
+                { id: 'lesson', label: lang === 'tr' ? '💡 Ders' : '💡 Lesson', icon: 'bulb-outline' },
+                { id: 'reflection', label: lang === 'tr' ? '🤔 Sorgula' : '🤔 Reflect', icon: 'help-circle-outline' },
+              ].map(ct => (
+                <TouchableOpacity
+                  key={ct.id}
+                  style={[styles.contentPill, shareContent.includes(ct.id) && styles.contentPillActive]}
+                  onPress={() => {
+                    if (shareFormat === 'story') {
+                      setShareContent(prev => {
+                        if (prev.includes(ct.id)) {
+                          return prev.length > 1 ? prev.filter(id => id !== ct.id) : prev;
+                        }
+                        return [...prev, ct.id];
+                      });
+                    } else {
+                      setShareContent([ct.id]);
+                    }
+                  }}
+                >
+                  <Text style={[styles.contentPillText, shareContent.includes(ct.id) && styles.contentPillTextActive]}>
+                    {ct.label}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+
+            {/* Theme swatches */}
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.themeToggle}>
+              {SHARE_THEMES.map(th => (
+                <TouchableOpacity
+                  key={th.id}
+                  onPress={() => setShareTheme(th.id)}
+                >
+                  <LinearGradient
+                    colors={th.bg}
+                    style={[styles.themeSwatch, shareTheme === th.id && styles.themeSwatchActive]}
+                  />
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+
+            {/* Format selector */}
+            <View style={styles.formatRow}>
+              <TouchableOpacity
+                style={[styles.formatBtn, shareFormat === 'post' && styles.formatBtnActive]}
+                onPress={() => {
+                  setShareFormat('post');
+                  if (shareContent.length > 1) {
+                    setShareContent([shareContent[0]]);
+                  }
+                }}
+              >
+                <Text style={[styles.formatBtnText, shareFormat === 'post' && styles.formatBtnTextActive]}>📷 Post (1:1)</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.formatBtn, shareFormat === 'story' && styles.formatBtnActive]}
+                onPress={() => setShareFormat('story')}
+              >
+                <Text style={[styles.formatBtnText, shareFormat === 'story' && styles.formatBtnTextActive]}>📱 Story (9:16)</Text>
+              </TouchableOpacity>
             </View>
+            </ScrollView>
 
+            {/* Share button */}
             <TouchableOpacity style={styles.btnPrimary} onPress={onShare}>
-              <Text style={styles.btnPrimaryText}>Görüntüyü Kaydet ve Paylaş</Text>
+              <Text style={styles.btnPrimaryText}>{t('saveAndShare', lang)}</Text>
             </TouchableOpacity>
           </View>
         </View>
       </Modal>
 
-      <View style={{ position: 'absolute', left: -3000 }}>
-        <View ref={viewShotRef} collapsable={false} style={styles.shareCardContainer}>
-          {shareTheme === 'sunset' && <LinearGradient colors={['#FF512F', '#F09819']} style={[StyleSheet.absoluteFill]} />}
-          {shareTheme === 'ocean' && <LinearGradient colors={['#1A2980', '#26D0CE']} style={[StyleSheet.absoluteFill]} />}
-          {shareTheme === 'emerald' && <LinearGradient colors={['#11998e', '#38ef7d']} style={[StyleSheet.absoluteFill]} />}
-          {shareTheme === 'light' && <View style={[StyleSheet.absoluteFill, { backgroundColor: '#F7F3EB' }]} />}
-          {shareTheme === 'dark' && <View style={[StyleSheet.absoluteFill, { backgroundColor: '#1A1208' }]} />}
-          
-          <Text style={[styles.shareCardLogo, { color: shareTheme === 'light' ? colors.primary : '#FFF' }]}>✦ Kıvılcım</Text>
-          
-          <View style={styles.shareCardContent}>
-            <Text style={[
-              styles.shareCardTitle, 
-              { color: shareTheme === 'light' ? '#1A1208' : '#FFF' }
-            ]}>
-              {story.title}
-            </Text>
-            
-            <View style={[
-              styles.shareCardQuoteBox, 
-              { borderLeftColor: shareTheme === 'light' ? colors.primary : '#FFF' }
-            ]}>
-              <Text style={[
-                styles.shareCardQuote, 
-                { color: shareTheme === 'light' ? '#6B6255' : 'rgba(255,255,255,0.9)' }
-              ]}>
-                "{story.quote || story.body.substring(0, 100) + '...'}"
-              </Text>
-            </View>
-            
-            <Text style={[
-              styles.shareCardSrc, 
-              { color: shareTheme === 'light' ? '#6B6255' : '#FFF' }
-            ]}>
-              {displaySrc}
-            </Text>
-          </View>
-          
-          <Text style={[
-            styles.shareCardFooter, 
-            { color: shareTheme === 'light' ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.7)' }
-          ]}>
-            Daha fazlası için Kıvılcım uygulamasını indir.
-          </Text>
+      {/* ===== OFF-SCREEN CAPTURE TARGET ===== */}
+      <View style={{ position: 'absolute', left: -9999, top: -9999 }} pointerEvents="none">
+        <View ref={viewShotRef} collapsable={false}>
+          {renderShareCard()}
         </View>
       </View>
 
@@ -531,7 +733,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
       <View style={styles.detailHeader}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.backBtn}>← Geri</Text>
+          <Text style={styles.backBtn}>{t('backBtn', lang)}</Text>
         </TouchableOpacity>
         <View style={{ flexDirection: 'row', gap: 16, alignItems: 'center' }}>
           <TouchableOpacity onPress={toggleSpeech}>
@@ -564,12 +766,16 @@ const StoryDetailScreen = ({ route, navigation }) => {
         scrollEventThrottle={16}
       >
           <View style={[styles.storyHero, { backgroundColor: colors.backgroundDark }]}> 
-          <View style={[styles.badge, { alignSelf: 'flex-start', marginBottom: 12 }]}>
+          <View style={[styles.badge, { alignSelf: 'flex-start', marginBottom: 12, flexDirection: 'row', alignItems: 'center', gap: 6 }]}>
+            <Ionicons name={getCatIcon(story.cat)} size={12} color={colors.textSecondary} />
             <Text style={styles.badgeText}>{displayCat}</Text>
           </View>
           <Text style={styles.detailTitle}>{displayTitle}</Text>
           <View style={{ flexDirection: 'row', gap: 16, marginTop: 10 }}>
-            <Text style={styles.metaItem}>{story.min} dk okuma</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+              <Ionicons name="time-outline" size={14} color={colors.textSecondary} />
+              <Text style={styles.metaItem}>{story.min} dk okuma</Text>
+            </View>
             <Text style={styles.metaItem}>{displaySrc}</Text>
           </View>
         </View>
@@ -678,7 +884,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                     </View>
                     <View style={styles.lessonBox}>
                       <Text style={styles.lessonLabel}>
-                        {lang === 'en' ? "KEY TAKEAWAY" : 'HİKAYENİN ÖZÜ'}
+                        {t('keyTakeaway', lang)}
                       </Text>
                       <Text style={styles.lessonText}>{seg.content}</Text>
                     </View>
@@ -715,7 +921,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                             textTransform: 'uppercase',
                           }}
                         >
-                          {lang === 'en' ? 'REFLECT' : 'DÜŞÜN VE SORGULA'}
+                          {t('reflect', lang)}
                         </Text>
                       </View>
                       <Text
@@ -736,12 +942,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
               return null;
             });
           })()}
-
           {/* Source & Book section */}
-          {story.source_book ? (
+          {displaySourceBook ? (
             <View style={styles.sourceSection}>
-              <Text style={styles.sourceLabel}>{lang === 'en' ? 'Source & Explore' : 'Kaynak & Keşfet'}</Text>
-              <Text style={styles.bookTitle}>{story.source_book}</Text>
+              <Text style={styles.sourceLabel}>{t('sourceExplore', lang)}</Text>
+              <Text style={styles.bookTitle}>{displaySourceBook.split(' — ')[0].trim()}</Text>
               {story.author ? (
                 <Text style={{
                   fontFamily: 'DMSans_400Regular',
@@ -753,6 +958,30 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   ✍️ {story.author}
                 </Text>
               ) : null}
+
+              <View style={{ flexDirection: 'row', gap: 10, marginTop: 12 }}>
+                <TouchableOpacity 
+                   onPress={() => Linking.openURL(`https://www.amazon.com.tr/s?k=${encodeURIComponent(displaySourceBook)}`)}
+                   style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flex: 1, justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
+                >
+                  <Ionicons name="cart-outline" size={16} color={colors.text} style={{ marginRight: 6 }} />
+                  <Text style={{ color: colors.text, fontFamily: 'DMSans_500Medium', fontSize: 12 }}>{t('book', lang)}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                   onPress={() => Linking.openURL(`https://www.youtube.com/results?search_query=${encodeURIComponent(displaySourceBook)}`)}
+                   style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flex: 1, justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
+                >
+                  <Ionicons name="logo-youtube" size={16} color="#FF0000" style={{ marginRight: 6 }} />
+                  <Text style={{ color: colors.text, fontFamily: 'DMSans_500Medium', fontSize: 12 }}>Youtube</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                   onPress={() => Linking.openURL(`https://www.tiktok.com/search?q=${encodeURIComponent(displaySourceBook)}`)}
+                   style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flex: 1, justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
+                >
+                  <Ionicons name="logo-tiktok" size={16} color={colors.text} style={{ marginRight: 6 }} />
+                  <Text style={{ color: colors.text, fontFamily: 'DMSans_500Medium', fontSize: 12 }}>Tiktok</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           ) : null}
         </View>
@@ -761,10 +990,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
       <View style={styles.detailFooter}>
         <TouchableOpacity style={styles.btnSecondaryShare} onPress={() => setShareModalVisible(true)}>
-          <Text style={styles.btnSecondaryShareText}>Paylaş</Text>
+          <Text style={styles.btnSecondaryShareText}>{t('shareBtn', lang)}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.btnPrimary, { flex: 2 }]} onPress={handleNext}>
-          <Text style={styles.btnPrimaryText}>Sonraki hikaye →</Text>
+          <Text style={[styles.btnPrimaryText, { color: '#F7F3EB' }]}>{t('nextStory', lang)}</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

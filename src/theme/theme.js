@@ -1,23 +1,31 @@
 export const colors = {
+  // Light: "The Digital Hearth" – warm editorial palette from FirstSteps/DESIGN.md
   light: {
-    background: '#F7F3EB',
-    backgroundDark: '#E8E0D0',
-    text: '#1A1208',
-    textSecondary: '#6B6255',
-    primary: '#C8A96A',
-    danger: '#8B2E1A',
-    success: '#2C4A2E',
-    border: '#C8B89A',
+    background: '#fcf9f4',              // "Paper" – warm breathable base
+    backgroundDark: '#f6f3ee',           // surface-container-low – subtle section shift
+    surfaceContainerLowest: '#ffffff',   // lifted card surface
+    surfaceContainerHigh: '#ebe8e3',     // deeper container surface
+    text: '#1c1c19',                     // "Deep Anthracite" – never pure black
+    textSecondary: '#594238',            // on-surface-variant – warm muted brown
+    primary: '#9e3d00',                  // "The Spark" – deep sophisticated orange
+    primaryContainer: '#c64f00',         // primary container – CTA gradient end
+    onPrimary: '#ffffff',                // white text on dark primary buttons
+    danger: '#ba1a1a',                   // error red
+    success: '#2C4A2E',                  // forest green
+    border: '#e0c0b2',                   // outline-variant – Ghost Border (use at 20% opacity)
   },
+  // Dark: "The Nocturnal Bibliophile" – the primary palette from DESIGN.md
   dark: {
-    background: '#1A1208',
-    backgroundDark: '#2D241A',
-    text: '#F7F3EB',
-    textSecondary: '#C8B89A',
-    primary: '#C8A96A',
-    danger: '#B34A3A',
-    success: '#4A7A4E',
-    border: '#4A3B2B',
+    background: '#131311',       // Deep Charcoal – the foundation
+    backgroundDark: '#1E1C18',   // Surface Container Low – nested depth layer
+    text: '#E8E0D0',             // Soft Cream – high legibility, no eye-strain
+    textSecondary: '#A89A84',    // on_surface_variant – metadata & labels
+    primary: '#B55310',          // Darker/deeper orange to fix "fazla parlak" bug
+    primaryContainer: '#9F3C00', // Deep Rust – CTA gradient end
+    onPrimary: '#F2E9D8',        // Switched text to light cream so it's readable on darker orange
+    danger: '#E05A3A',           // Warm ember red, visible on dark backgrounds
+    success: '#5A9E5E',          // Muted forest green
+    border: '#4A3F33',           // outline_variant – Ghost Border base (use at 15% opacity)
   },
 };
 

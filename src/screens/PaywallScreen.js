@@ -6,20 +6,21 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
+import { t } from '../locales/i18n';
 
 const PaywallScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark } = useTheme();
+  const { colors, typography, layout, isDark, lang } = useTheme();
   const [plan, setPlan] = useState(1);
   const plans = [
-    { name: 'Aylık', price: '49₺', per: '/ay', save: null },
-    { name: 'Yıllık', price: '349₺', per: '/yıl', save: '%40 tasarruf', popular: true },
+    { name: t('planMonthly', lang), price: '49₺', per: t('perMo', lang), save: null },
+    { name: t('planAnnual', lang), price: '349₺', per: t('perYr', lang), save: t('save40', lang), popular: true },
   ];
   const features = [
-    'Sınırsız hikaye — tüm kategoriler',
-    'Sesli anlatım modu',
-    'Paylaşılabilir sohbet kartları',
-    'Kişisel öğrenme günlüğü',
-    'Reklamsız deneyim',
+    t('feat1', lang),
+    t('feat2', lang),
+    t('feat3', lang),
+    t('feat4', lang),
+    t('feat5', lang),
   ];
 
   const { buyPremium } = useUserData();
@@ -146,8 +147,8 @@ const PaywallScreen = ({ navigation }) => {
         </TouchableOpacity>
 
         <Text style={{ fontSize: 44, textAlign: 'center', marginBottom: 12, color: colors.primary }}>✦</Text>
-        <Text style={styles.paywallTitle}>Sınırsız Kıvılcım'a geç</Text>
-        <Text style={styles.paywallSub}>Günde 3 hikayeyle sınırlı kalma. Tüm kategorilere, sesli anlatımlara ve sohbet kartlarına eriş.</Text>
+        <Text style={styles.paywallTitle}>{t('paywallTitle', lang)}</Text>
+        <Text style={styles.paywallSub}>{t('paywallSub', lang)}</Text>
 
         <View style={{ flexDirection: 'row', gap: 10, marginBottom: 20 }}>
           {plans.map((p, i) => (
@@ -158,7 +159,7 @@ const PaywallScreen = ({ navigation }) => {
             >
               {p.popular && (
                 <View style={styles.popularBadge}>
-                  <Text style={styles.popularText}>Popüler</Text>
+                  <Text style={styles.popularText}>{t('popular', lang)}</Text>
                 </View>
               )}
               {!p.popular && <View style={{ height: 22 }} />}
@@ -182,10 +183,10 @@ const PaywallScreen = ({ navigation }) => {
         </View>
 
         <TouchableOpacity style={styles.btnPrimary} onPress={handlePurchase}>
-          <Text style={styles.btnPrimaryText}>7 gün ücretsiz dene</Text>
+          <Text style={styles.btnPrimaryText}>{t('subscribe', lang)}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={{ marginTop: 12, alignItems: 'center' }}>
-          <Text style={{ fontSize: 12, color: colors.textSecondary, fontFamily: 'DMSans_400Regular' }}>Satın alımı geri yükle</Text>
+          <Text style={{ fontSize: 12, color: colors.textSecondary, fontFamily: 'DMSans_400Regular' }}>{t('restore', lang)}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>

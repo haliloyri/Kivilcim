@@ -4,9 +4,11 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
+import { t } from '../locales/i18n';
 
 import OnboardingScreen from '../screens/OnboardingScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -21,7 +23,7 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function MainTabs() {
-  const { colors, typography, layout, isDark } = useTheme();
+  const { colors, typography, layout, isDark, lang } = useTheme();
   const insets = useSafeAreaInsets();
 
   return (
@@ -29,15 +31,15 @@ function MainTabs() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: colors.background,
+          backgroundColor: isDark ? '#131311' : '#fcf9f4',
           borderTopWidth: layout.borderWidth,
-          borderTopColor: colors.border,
+          borderTopColor: isDark ? '#4A3F33' : '#e0c0b2',
           height: 60 + insets.bottom,
           paddingBottom: Math.max(insets.bottom, 10),
           paddingTop: 10,
         },
-        tabBarActiveTintColor: colors.text,
-        tabBarInactiveTintColor: colors.textSecondary,
+        tabBarActiveTintColor: isDark ? '#FFB783' : '#9e3d00',
+        tabBarInactiveTintColor: isDark ? '#A89A84' : '#594238',
         tabBarLabelStyle: {
           fontFamily: 'DMSans_500Medium',
           fontSize: typography.sizes.badge,
@@ -47,36 +49,55 @@ function MainTabs() {
       <Tab.Screen 
         name="HomeTab" 
         component={HomeScreen} 
-        options={{ tabBarLabel: 'Keşfet', tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 18 }}>◈</Text> }}
-      />
-      <Tab.Screen 
-        name="ProgressTab" 
-        component={ProgressScreen} 
-        options={{ tabBarLabel: 'İlerleme', tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 18 }}>◎</Text> }}
+        options={{ 
+          tabBarLabel: t('tabHome', lang), 
+          tabBarIcon: ({ color, focused, size }) => (
+            <Ionicons name={focused ? 'compass' : 'compass-outline'} size={22} color={color} />
+          ),
+        }}
       />
       <Tab.Screen 
         name="LibraryTab" 
         component={LibraryScreen} 
-        options={{ tabBarLabel: 'Kütüphane', tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 18 }}>◻</Text> }}
+        options={{ 
+          tabBarLabel: t('tabLibrary', lang), 
+          tabBarIcon: ({ color, focused, size }) => (
+            <Ionicons name={focused ? 'book' : 'book-outline'} size={22} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen 
+        name="ProgressTab" 
+        component={ProgressScreen} 
+        options={{ 
+          tabBarLabel: t('tabProgress', lang), 
+          tabBarIcon: ({ color, focused, size }) => (
+            <Ionicons name={focused ? 'trending-up' : 'trending-up-outline'} size={22} color={color} />
+          ),
+        }}
       />
       <Tab.Screen 
         name="ProfileTab" 
         component={ProfileScreen} 
-        options={{ tabBarLabel: 'Profil', tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 18 }}>◷</Text> }}
+        options={{ 
+          tabBarLabel: t('tabProfile', lang), 
+          tabBarIcon: ({ color, focused, size }) => (
+            <Ionicons name={focused ? 'person' : 'person-outline'} size={22} color={color} />
+          ),
+        }}
       />
     </Tab.Navigator>
   );
 }
 
-// Helper Text component for icons since we used standard Text emojis earlier
-import { Text } from 'react-native';
+import LaunchScreen from '../screens/LaunchScreen';
 
 export default function AppNavigator() {
   const { isOnboarded, isLoadingUserData } = useUserData();
   const { colors } = useTheme();
 
   if (isLoadingUserData) {
-    return null; // or a Splash screen
+    return <LaunchScreen />; 
   }
 
   const navTheme = {

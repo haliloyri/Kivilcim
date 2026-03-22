@@ -7,9 +7,11 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
+import { useStories } from '../context/StoriesContext';
 import { getSelectedCategories } from '../db/db';
-import { stories } from '../../data/stories';
-import StoryCard from '../components/StoryCard';
+import StoryCard, { getCatIcon } from '../components/StoryCard';
+import { Ionicons } from '@expo/vector-icons';
+import { t, getGreeting } from '../locales/i18n';
 
 const SkeletonCard = ({ colors, layout, isHero }) => (
   <View style={{
@@ -25,6 +27,7 @@ const SkeletonCard = ({ colors, layout, isHero }) => (
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
   const { isPremium, history } = useUserData();
+  const { stories, storiesLoading, categories, errorMsg } = useStories();
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('Tümü');
 
@@ -34,19 +37,20 @@ const HomeScreen = ({ navigation }) => {
   }, [selectedCategories]);
 
   // Language strings
-  const greeting = lang === 'en' ? 'Good morning' : 'Günaydın';
-  const brandText = lang === 'en' ? 'Spark ✦' : 'Kıvılcım ✦';
+  const greeting = getGreeting(lang);
+  const brandText = t('brandText', lang);
 
-  const categoriesLabel = lang === 'en' ? 'Categories' : 'Kategoriler';
-  const todayLabel = lang === 'en' ? "Today's stories" : 'Bugünkü hikayeler';
+  const categoriesLabel = t('categoriesLabel', lang);
+  const todayLabel = t('todayLabel', lang);
 
   const checkIfRead = (id) => history.includes(id);
 
   useEffect(() => {
-    // Simulate loading data for Skeleton UX
-    const timer = setTimeout(() => setLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, []);
+    if (!storiesLoading) {
+      const timer = setTimeout(() => setLoading(false), 400);
+      return () => clearTimeout(timer);
+    }
+  }, [storiesLoading]);
 
   // Refresh on focus to load latest selected categories from DB if changed elsewhere
   useFocusEffect(
@@ -65,7 +69,7 @@ const HomeScreen = ({ navigation }) => {
   const todayStr = new Date().toISOString().split('T')[0];
 
   // 1. Yayın tarihi geçmiş veya bugün olanları filtrele
-  const publishedStories = stories.filter(s => s.publishDate <= todayStr);
+  const publishedStories = (stories || []).filter(s => s.publishDate <= todayStr);
 
   // 2. Preferences Filter: Sadece takip edilen kategorileri gösteririz.
   //    Eğer seçili kategorilerle eşleşen hikaye yoksa (veri değişikliği sonrası), tümünü göster.
@@ -84,19 +88,18 @@ const HomeScreen = ({ navigation }) => {
 
   // 3. Sıralama: Önce okunmayanlar, sonra okunanlar. Kendi içinde tarihe göre (yeni olan önce)
   const sortedStories = [...categoryFiltered].sort((a, b) => {
-    const aRead = checkIfRead(a.id);
-    const bRead = checkIfRead(b.id);
+    const aRead = checkIfRead(a.story_id);
+    const bRead = checkIfRead(b.story_id);
     
     if (aRead !== bRead) {
-      return aRead ? 1 : -1; // Okunmayanlar (-1) önce gelir
+      return aRead ? 1 : -1;
     }
     
-    // Aynı okuma durumundaysalar tarihe göre sırala (yeni olan önce)
-    return b.publishDate.localeCompare(a.publishDate);
-  });
+    return (b.publishDate || '').localeCompare(a.publishDate || '');
+  }).slice(0, 10);
 
   const free = isPremium ? sortedStories : sortedStories.slice(0, 2);
-  const locked = isPremium ? [] : sortedStories.slice(2, 4);
+  const locked = isPremium ? [] : sortedStories.slice(2);
 
   const styles = StyleSheet.create({
     safe: { 
@@ -234,7 +237,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
           <View style={styles.headerRight}>
             <TouchableOpacity onPress={() => navigation.navigate('Search')}>
-              <Text style={styles.searchIcon}>🔍</Text>
+              <Ionicons name="search" style={styles.searchIcon} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('ProfileTab')} style={styles.avatar}>
               <Text style={styles.avatarText}>AY</Text>
@@ -248,8 +251,8 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.streakCard}>
         <Text style={{ fontSize: 32 }}>🔥</Text>
           <View style={{ marginLeft: 12, flex: 1 }}>
-            <Text style={styles.streakDays}>7 gün</Text>
-            <Text style={styles.streakLabel}>Kesintisiz seri</Text>
+            <Text style={styles.streakDays}>7 {t('streakDays', lang)}</Text>
+            <Text style={styles.streakLabel}>{t('streakLabel', lang)}</Text>
           </View>
           <View style={{ flexDirection: 'row', gap: 4 }}>
             {[0, 1, 2, 3, 4, 5, 6].map(i => (
@@ -266,11 +269,12 @@ const HomeScreen = ({ navigation }) => {
             {visibleCategories.map(cat => (
               <TouchableOpacity
                 key={cat}
-                style={[styles.catPill, cat === activeFilter ? styles.catPillActive : null]}
+                style={[styles.catPill, cat === activeFilter ? styles.catPillActive : null, { flexDirection: 'row', alignItems: 'center', gap: 6 }]}
                 onPress={() => setActiveFilter(cat)}
               >
+                <Ionicons name={getCatIcon(cat)} size={14} color={cat === activeFilter ? colors.background : colors.textSecondary} />
                 <Text style={[styles.catPillText, cat === activeFilter ? styles.catPillTextActive : null]}>
-                  {cat}
+                  {t(cat, lang)}
                 </Text>
               </TouchableOpacity>
             ))}
@@ -298,7 +302,7 @@ const HomeScreen = ({ navigation }) => {
                 textAlign: 'center',
                 marginBottom: 8,
               }}>
-                {lang === 'en' ? 'No stories yet' : 'Henüz hikaye yok'}
+                Debug: DB:{stories?.length} cats:{categories?.length} (error: {errorMsg})
               </Text>
               <Text style={{
                 fontFamily: 'DMSans_400Regular',
@@ -307,9 +311,7 @@ const HomeScreen = ({ navigation }) => {
                 textAlign: 'center',
                 lineHeight: 22,
               }}>
-                {lang === 'en'
-                  ? 'There are no stories in this category right now. Check back later or explore other categories!'
-                  : 'Bu kategoride şu an hikaye bulunmuyor. Daha sonra tekrar kontrol edin veya diğer kategorileri keşfedin!'}
+                {t('noStoriesBody', lang)}
               </Text>
             </View>
           ) : (
@@ -318,7 +320,8 @@ const HomeScreen = ({ navigation }) => {
                 <StoryCard 
                   story={free[0]} 
                   type="hero" 
-                  isRead={checkIfRead(free[0].id)}
+                  hideCategory={activeFilter !== 'Tümü'}
+                  isRead={checkIfRead(free[0].story_id)}
                   onPress={() => navigation.navigate('StoryDetail', { story: free[0] })} 
                 />
               )}
@@ -326,19 +329,21 @@ const HomeScreen = ({ navigation }) => {
               <View style={styles.storyGrid}>
                 {free.slice(1).map(story => (
                   <StoryCard 
-                    key={story.id} 
+                    key={story.story_id} 
                     story={story} 
                     type="compact" 
-                    isRead={checkIfRead(story.id)}
+                    hideCategory={activeFilter !== 'Tümü'}
+                    isRead={checkIfRead(story.story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story })} 
                   />
                 ))}
                 {locked.map(story => (
                   <StoryCard 
-                    key={story.id} 
+                    key={story.story_id} 
                     story={story} 
                     type="compact" 
                     locked 
+                    hideCategory={activeFilter !== 'Tümü'}
                     onPress={() => navigation.navigate('Paywall')} 
                   />
                 ))}

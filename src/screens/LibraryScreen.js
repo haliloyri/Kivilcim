@@ -6,15 +6,28 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
-import { stories } from '../../data/stories';
+import { useStories } from '../context/StoriesContext';
 import StoryCard from '../components/StoryCard';
+import { t } from '../locales/i18n';
 
 const LibraryScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark } = useTheme();
+  const { colors, typography, layout, isDark, lang } = useTheme();
   const { favorites, history } = useUserData();
+  const { stories } = useStories();
 
-  const favoriteStories = favorites.map(id => stories.find(s => s.id === id)).filter(Boolean);
-  const historyStories = history.map(id => stories.find(s => s.id === id)).filter(Boolean);
+  const favoriteStories = [...new Map(
+    favorites.map(id => {
+      const s = (stories || []).find(st => st.story_id === String(id));
+      return s ? [s.story_id, s] : null;
+    }).filter(Boolean)
+  ).values()];
+
+  const historyStories = [...new Map(
+    history.map(id => {
+      const s = (stories || []).find(st => st.story_id === String(id));
+      return s ? [s.story_id, s] : null;
+    }).filter(Boolean)
+  ).values()];
 
   const styles = StyleSheet.create({
     safe: { 
@@ -66,42 +79,41 @@ const LibraryScreen = ({ navigation }) => {
       
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
         <View style={styles.header}>
-          <Text style={styles.title}>Kütüphanen</Text>
+          <Text style={styles.title}>{t('libraryTitle', lang)}</Text>
         </View>
 
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>Favori Hikayelerin</Text>
+          <Text style={styles.sectionLabel}>{t('favStories', lang)}</Text>
         </View>
 
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
           {favoriteStories.length > 0 ? (
             favoriteStories.map(story => (
               <StoryCard
-                key={story.id}
+                key={story.story_id}
                 story={story}
-                isRead={history.includes(story.id)}
+                isRead={false}
                 onPress={() => navigation.navigate('StoryDetail', { story })}
               />
             ))
           ) : (
             <View style={styles.emptyState}>
               <Text style={{ fontSize: 32 }}>🤍</Text>
-              <Text style={styles.emptyText}>Henüz hiç hikaye beğenmedin.</Text>
+              <Text style={styles.emptyText}>{t('noFavs', lang)}</Text>
             </View>
           )}
         </View>
 
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>Son Okudukların</Text>
+          <Text style={styles.sectionLabel}>{t('recentRead', lang)}</Text>
         </View>
 
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
           {historyStories.map(story => (
             <StoryCard
-              key={`hist-${story.id}`}
+              key={`hist-${story.story_id}`}
               story={story}
-              type="compact"
-              isRead={true}
+              isRead={false}
               onPress={() => navigation.navigate('StoryDetail', { story })}
             />
           ))}

@@ -22,6 +22,7 @@ import {
 // Tema ve Data
 import { ThemeProvider } from './src/context/ThemeContext';
 import { UserDataProvider } from './src/context/UserDataContext';
+import { StoriesProvider } from './src/context/StoriesContext';
 
 // Splash screen'i dondur
 SplashScreen.preventAutoHideAsync();
@@ -79,16 +80,9 @@ function Main() {
   useEffect(() => {
     const startup = async () => {
       await initDb();
-      // One-time: clear selected categories
-      const SQLite = require('expo-sqlite');
-      const db = SQLite.openDatabaseSync('kivilcim.db');
-      await db.execAsync('DELETE FROM user_selected_categories;');
-      const AsyncStorage = require('@react-native-async-storage/async-storage').default;
-      await AsyncStorage.removeItem('@kivilcim_categories');
-      console.log("Categories cleared");
       await seedData();
     };
-    startup().catch(console.error);
+    startup().catch(e => console.error('App.js startup error:', e));
   }, []);
   const [fontsLoaded] = useFonts({
     PlayfairDisplay_400Regular,
@@ -122,7 +116,9 @@ export default function App() {
     <SafeAreaProvider>
       <ThemeProvider>
         <UserDataProvider>
-          <Main />
+          <StoriesProvider>
+            <Main />
+          </StoriesProvider>
         </UserDataProvider>
       </ThemeProvider>
     </SafeAreaProvider>

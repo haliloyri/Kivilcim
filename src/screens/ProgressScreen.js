@@ -8,11 +8,12 @@ import Animated, {
   useSharedValue, useAnimatedStyle, withSpring, withSequence, withTiming 
 } from 'react-native-reanimated';
 import { useTheme } from '../context/ThemeContext';
+import { t } from '../locales/i18n';
 
 const { width } = Dimensions.get('window');
 
 const ProgressScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark } = useTheme();
+  const { colors, typography, layout, isDark, lang } = useTheme();
   const badgeScale = useSharedValue(0);
   const badgeOpacity = useSharedValue(0);
   const [showCelebration, setShowCelebration] = useState(false);
@@ -24,10 +25,10 @@ const ProgressScreen = ({ navigation }) => {
   }));
 
   const badges = [
-    { id: 1, title: '7 Gün', sub: 'Kesintisiz', icon: '🔥', earned: true },
-    { id: 2, title: 'Kaşif', sub: '10 Hikaye', icon: '🧭', earned: true },
-    { id: 3, title: 'Filozof', sub: 'Felsefe 5', icon: '🏛️', earned: false },
-    { id: 4, title: 'Bilge', sub: '25 Ders', icon: '📜', earned: false },
+    { id: 1, title: t('badge7Days', lang), sub: t('badgeStreak', lang), icon: '🔥', earned: true },
+    { id: 2, title: t('badgeExplorer', lang), sub: t('badge10Stories', lang), icon: '🧭', earned: true },
+    { id: 3, title: t('badgePhilosopher', lang), sub: t('badgePhilosophy5', lang), icon: '🏛️', earned: false },
+    { id: 4, title: t('badgeSage', lang), sub: t('badge25Lessons', lang), icon: '📜', earned: false },
   ];
 
   const triggerCelebration = () => {
@@ -207,11 +208,11 @@ const ProgressScreen = ({ navigation }) => {
       
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
         <View style={styles.homeHeader}>
-          <Text style={styles.greetName}>Senin Kıvılcımların</Text>
+          <Text style={styles.greetName}>{t('yourSparks', lang)}</Text>
         </View>
 
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>Okuma Alışkanlığı</Text>
+          <Text style={styles.sectionLabel}>{t('readingHabit', lang)}</Text>
         </View>
         <View style={styles.heatmapCard}>
           <View style={styles.heatmapGrid}>
@@ -230,18 +231,18 @@ const ProgressScreen = ({ navigation }) => {
             ))}
           </View>
           <View style={styles.heatmapLegend}>
-            <Text style={styles.heatmapLegendText}>Az</Text>
+            <Text style={styles.heatmapLegendText}>{t('less', lang)}</Text>
             <View style={[styles.heatmapSquare, { backgroundColor: colors.backgroundDark, marginHorizontal: 4 }]} />
             <View style={[styles.heatmapSquare, { backgroundColor: colors.primary, marginHorizontal: 4 }]} />
             <View style={[styles.heatmapSquare, { backgroundColor: '#8B6A30', marginHorizontal: 4 }]} />
-            <Text style={styles.heatmapLegendText}>Çok</Text>
+            <Text style={styles.heatmapLegendText}>{t('more', lang)}</Text>
           </View>
         </View>
 
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>Başarı Rozetleri</Text>
+          <Text style={styles.sectionLabel}>{t('achievementBadges', lang)}</Text>
           <TouchableOpacity onPress={triggerCelebration}>
-            <Text style={{ fontSize: 11, color: colors.primary, fontFamily: 'DMSans_500Medium' }}>TEST ET</Text>
+            <Text style={{ fontSize: 11, color: colors.primary, fontFamily: 'DMSans_500Medium' }}>{t('testBtn', lang)}</Text>
           </TouchableOpacity>
         </View>
         
@@ -260,15 +261,15 @@ const ProgressScreen = ({ navigation }) => {
         <View style={styles.statsRow}>
           <View style={styles.statBox}>
             <Text style={styles.statNum}>42</Text>
-            <Text style={styles.statLabel}>Okunan</Text>
+            <Text style={styles.statLabel}>{t('statRead', lang)}</Text>
           </View>
           <View style={styles.statBox}>
             <Text style={styles.statNum}>12</Text>
-            <Text style={styles.statLabel}>Kazanılan</Text>
+            <Text style={styles.statLabel}>{t('statEarned', lang)}</Text>
           </View>
           <View style={styles.statBox}>
             <Text style={styles.statNum}>7</Text>
-            <Text style={styles.statLabel}>Seri</Text>
+            <Text style={styles.statLabel}>{t('statStreak', lang)}</Text>
           </View>
         </View>
       </ScrollView>
@@ -279,8 +280,8 @@ const ProgressScreen = ({ navigation }) => {
             <View style={styles.congratsCircle}>
               <Text style={{ fontSize: 48 }}>🏆</Text>
             </View>
-            <Text style={styles.congratsTitle}>Tebrikler!</Text>
-            <Text style={styles.congratsSub}>Yeni bir rozet kazandın!</Text>
+            <Text style={styles.congratsTitle}>{t('congratsTitle', lang)}</Text>
+            <Text style={styles.congratsSub}>{t('congratsSub', lang)}</Text>
           </Animated.View>
         </View>
       )}

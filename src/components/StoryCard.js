@@ -1,34 +1,40 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
+import { t } from '../locales/i18n';
 
 const { width } = Dimensions.get('window');
 
-const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
+export const getCatIcon = (catName) => {
+  if (catName === 'Tümü' || catName === 'All') return 'grid-outline';
+  switch (catName) {
+    case 'Finans': case 'Finance': return 'wallet-outline';
+    case 'Psikoloji': case 'Psychology': return 'heart-outline';
+    case 'Tarih': case 'History': return 'hourglass-outline';
+    case 'Liderlik': case 'Leadership': return 'flag-outline';
+    case 'Sağlık': case 'Health': return 'fitness-outline';
+    case 'Bilim': case 'Science': return 'flask-outline';
+    case 'Felsefe': case 'Philosophy': return 'leaf-outline';
+    case 'Kişisel Gelişim': case 'Personal Growth': return 'trending-up-outline';
+    case 'Verimlilik': case 'Productivity': return 'rocket-outline';
+    case 'İletişim': case 'Communication': return 'chatbubbles-outline';
+    case 'İş & Girişim': case 'Business': return 'briefcase-outline';
+    default: return 'bookmark-outline';
+  }
+};
+
+const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false }) => {
   const { colors, typography, layout, lang } = useTheme();
   const isHero = type === 'hero';
   const isCompact = type === 'compact';
   
-  const todayStr = '2026-03-16';
+  const todayStr = new Date().toISOString().split('T')[0];
   const isNew = story.publishDate === todayStr;
-  // Language-aware display
-  const displayTitle = (lang === 'en' && story.title_en) ? story.title_en : story.title;
-  const displayBody = (lang === 'en' && story.body_en) ? story.body_en : story.body;
-  const displayLesson = (lang === 'en' && story.lesson_en) ? story.lesson_en : story.lesson;
-  const displayQuote = (lang === 'en' && story.quote_en) ? story.quote_en : story.quote;
-  const displaySrc = (lang === 'en' && story.src_en) ? story.src_en : story.src;
-  const displaySourceBook = (lang === 'en' && story.source_book_en) ? story.source_book_en : story.source_book;
-  const engCatMap = {
-    'Finans': 'Finance',
-    'Psikoloji': 'Psychology',
-    'Tarih': 'History',
-    'Liderlik': 'Leadership',
-    'Sağlık': 'Health',
-    'Bilim': 'Science',
-    'Felsefe': 'Philosophy',
-    'İş & Girişim': 'Business'
-  };
-  const displayCat = (lang === 'en' ? engCatMap[story.cat] ?? story.cat : story.cat);
+  // DB already returns translated content for the active language
+  const displayTitle = story.title || '';
+  const displaySrc = story.src || '';
+  const displayCat = story.cat_display || t(story.cat, lang);
 
   const styles = StyleSheet.create({
     card: {
@@ -67,6 +73,10 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
       backgroundColor: colors.backgroundDark,
       borderWidth: layout.borderWidth,
       borderColor: colors.border,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      flexShrink: 1,
     },
     badgeText: {
       fontFamily: 'DMSans_500Medium',
@@ -74,6 +84,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
       color: colors.textSecondary,
       letterSpacing: 1,
       textTransform: 'uppercase',
+      flexShrink: 1,
     },
     cardTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
@@ -130,16 +141,19 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
     >
       <View>
         <View style={styles.cardHeader}>
-          <View style={styles.badge}>
-            <Text style={styles.badgeText}>{displayCat}</Text>
-          </View>
-          <View style={{ flexDirection: 'row', gap: 6 }}>
+          {!hideCategory && (
+            <View style={styles.badge}>
+              <Ionicons name={getCatIcon(story.cat)} size={10} color={colors.textSecondary} />
+              <Text style={styles.badgeText} numberOfLines={1}>{displayCat}</Text>
+            </View>
+          )}
+          <View style={{ flexDirection: 'row', gap: 6, alignItems: 'center', flexShrink: 0 }}>
             {isNew && (
-              <View style={[styles.badge, styles.newBadge]}>
-                <Text style={[styles.badgeText, styles.newBadgeText]}>YENİ</Text>
+              <View style={[styles.badge, styles.newBadge, { paddingHorizontal: 6 }]}>
+                <Text style={[styles.badgeText, styles.newBadgeText]}>{t('newBadge', lang)}</Text>
               </View>
             )}
-            {isRead && <Text style={{ fontSize: 14 }}>✓</Text>}
+            {isRead && <Ionicons name="checkmark-circle" size={16} color={colors.primary} />}
             {locked && <Text style={styles.lockIcon}>🔒</Text>}
           </View>
         </View>
@@ -156,7 +170,10 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard' }) => {
       </View>
 
       <View style={styles.cardFooter}>
-        <Text style={styles.cardMeta}>{story.min} dk • {displaySrc}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 1, paddingRight: 8 }}>
+          <Ionicons name="time-outline" size={12} color={colors.textSecondary} />
+          <Text style={[styles.cardMeta, { flexShrink: 1 }]} numberOfLines={1}>{story.min} {t('minLabel', lang)} • {displaySrc}</Text>
+        </View>
         {!isCompact && <Text style={styles.cardArrow}>→</Text>}
       </View>
     </TouchableOpacity>
