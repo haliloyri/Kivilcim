@@ -302,7 +302,7 @@ const HomeScreen = ({ navigation }) => {
                 textAlign: 'center',
                 marginBottom: 8,
               }}>
-                Debug: DB:{stories?.length} cats:{categories?.length} (error: {errorMsg})
+                {t('noStoriesTitle', lang)}
               </Text>
               <Text style={{
                 fontFamily: 'DMSans_400Regular',

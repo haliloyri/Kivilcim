@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTheme } from '../context/ThemeContext';
+import { t } from '../locales/i18n';
 
 const { width, height } = Dimensions.get('window');
 
@@ -71,16 +72,18 @@ const DotGrid = () => {
 };
 
 const LaunchScreen = () => {
+  const { lang } = useTheme();
+  
   return (
     <SafeAreaView style={styles.container}>
       <DotGrid />
       
       <View style={styles.centerContent}>
-        <Animated.View style={styles.logoContainer}>
+        <View style={styles.logoContainer}>
           <SparkLogo color="#FFB783" size={54} />
-        </Animated.View>
+        </View>
         
-        <Text style={styles.brandText}>Kıvılcım</Text>
+        <Text style={styles.brandText}>{t('brandText', lang).replace(' ✦', '')}</Text>
         
         <View style={styles.divider} />
       </View>
@@ -90,7 +93,7 @@ const LaunchScreen = () => {
       
       <View style={styles.bottomContent}>
         <Text style={styles.tagline}>
-          Her gün bir kıvılcım. <Text style={{ fontSize: 14 }}>✦</Text>
+          {t('launch_tagline', lang)} <Text style={{ fontSize: 14 }}>✦</Text>
         </Text>
       </View>
     </SafeAreaView>

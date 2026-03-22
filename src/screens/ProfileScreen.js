@@ -41,14 +41,14 @@ const ProfileScreen = ({ navigation }) => {
     }
     
     if (finalStatus !== 'granted') {
-      alert('Bildirim izni verilmedi!');
+      alert(t('notif_perm_denied', lang));
       return;
     }
 
     await Notifications.scheduleNotificationAsync({
       content: {
-        title: "Kıvılcım ✦",
-        body: 'Günün kıvılcımı hazır! Bugünün dersini keşfetmek için dokun.',
+        title: t('brandText', lang),
+        body: t('notif_body', lang),
         data: { data: 'test data' },
       },
       trigger: null, // immediate
@@ -239,14 +239,35 @@ const ProfileScreen = ({ navigation }) => {
             <Text style={{ color: colors.primary, fontFamily: 'DMSans_500Medium' }}>{t('test', lang)}</Text>
           </TouchableOpacity>
 
-          <View style={styles.menuItem}>
+          <View style={[styles.menuItem, { flexDirection: 'column', alignItems: 'flex-start', borderBottomWidth: 0 }]}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuItemIcon}>🌐</Text>
               <Text style={styles.menuItemText}>{t('languageLabel', lang)}</Text>
             </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-              <Text style={{ color: colors.text }}>{lang === 'en' ? t('languageEnglish', lang) : t('languageTurkish', lang)}</Text>
-              <Switch value={lang === 'en'} onValueChange={(v) => setLang(v ? 'en' : 'tr')} />
+            <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
+              {[
+                { code: 'tr', label: t('languageTurkish', lang), flag: '🇹🇷' },
+                { code: 'en', label: t('languageEnglish', lang), flag: '🇺🇸' },
+                { code: 'es', label: t('languageSpanish', lang), flag: '🇪🇸' },
+                { code: 'de', label: t('languageGerman', lang), flag: '🇩🇪' },
+              ].map((l) => (
+                <TouchableOpacity 
+                  key={l.code}
+                  onPress={() => setLang(l.code)}
+                  style={[
+                    styles.categoryPill, 
+                    lang === l.code && styles.categoryPillActive,
+                    { paddingVertical: 8, paddingHorizontal: 12 }
+                  ]}
+                >
+                  <Text style={[
+                    styles.categoryPillText, 
+                    lang === l.code && styles.categoryPillActiveText
+                  ]}>
+                    {l.flag} {l.label}
+                  </Text>
+                </TouchableOpacity>
+              ))}
             </View>
           </View>
         </View>

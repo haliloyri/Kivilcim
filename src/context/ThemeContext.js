@@ -23,9 +23,9 @@ export const ThemeProvider = ({ children }) => {
       }
     })();
   }, []);
-
   const setLang = (l) => {
-    if (l === 'tr' || l === 'en') {
+    const supported = ['tr', 'en', 'es', 'de'];
+    if (supported.includes(l)) {
       setLangState(l);
       AsyncStorage.setItem('lang', l).catch(() => { });
     }

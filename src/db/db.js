@@ -23,35 +23,113 @@ const _dataReadyPromise = new Promise(r => { _dataReadyResolve = r; });
 export const waitForData = () => _dataReadyPromise;
 
 // ──────────────────────────────────────────────────────
-//  SCHEMA
+//  DB VERSION - Bump this number to force a DB reset
+//  on the next app launch. This deletes the old DB
+//  and copies the fresh one from assets/kivilcim.db.
+// ──────────────────────────────────────────────────────
+const DB_VERSION = 5;
+const DB_VERSION_KEY = 'db_version';
+
+const getVersionFilePath = () =>
+  FileSystem.documentDirectory + 'SQLite/.db_version';
+
+const readStoredVersion = async () => {
+  try {
+    const path = getVersionFilePath();
+    const info = await FileSystem.getInfoAsync(path);
+    if (!info.exists) return 0;
+    const raw = await FileSystem.readAsStringAsync(path);
+    return parseInt(raw, 10) || 0;
+  } catch {
+    return 0;
+  }
+};
+
+const writeStoredVersion = async (v) => {
+  await FileSystem.writeAsStringAsync(getVersionFilePath(), String(v));
+};
+
+// ──────────────────────────────────────────────────────
+//  INIT DB
 // ──────────────────────────────────────────────────────
 export const initDb = async () => {
   try {
     const dbDir = FileSystem.documentDirectory + 'SQLite';
     const dbPath = dbDir + '/kivilcim.db';
 
-    // Klasörü kontrol et ve oluştur
+    // Ensure directory exists
     const dirInfo = await FileSystem.getInfoAsync(dbDir);
     if (!dirInfo.exists) {
       await FileSystem.makeDirectoryAsync(dbDir, { intermediates: true });
     }
 
-    // Admin DB dosyasının cihazda henüz var olup olmadığını kontrol et
-    const dbInfo = await FileSystem.getInfoAsync(dbPath);
-    if (!dbInfo.exists) {
-      console.log('Admin DB kopyalanıyor...');
-      const asset = Asset.fromModule(require('../../assets/kivilcim.db'));
-      
-      // Asset uri bazen null dönebilir, güvenli olan direkt downloadAsync kullanmaktır.
-      await FileSystem.downloadAsync(asset.uri, dbPath);
-      console.log('Admin DB başarıyla cihaza kopyalandı.');
+    // -- Force Reset Logic --
+    // Compare stored version with current DB_VERSION.
+    // If they differ the old DB file is deleted so the
+    // fresh copy from assets takes its place.
+    const storedVersion = await readStoredVersion();
+    if (storedVersion < DB_VERSION) {
+      console.log(
+        'DB version mismatch (stored=' + storedVersion + ', current=' + DB_VERSION + '). ' +
+        'Deleting old DB for force reset...'
+      );
+      // Close any existing connection first
+      if (dbInstance) {
+        try { dbInstance.closeSync(); } catch (_) { /* ignore */ }
+        dbInstance = null;
+      }
+      await FileSystem.deleteAsync(dbPath, { idempotent: true });
+      await writeStoredVersion(DB_VERSION);
+      console.log('Old DB deleted. Will copy fresh DB from assets.');
     }
 
-    // Dosyayı cihazın dizinine yerleştirdikten sonra açabiliriz
-    const db = getDb();
-    
-    // Kullanıcı ile ilgili verilerin (beğeniler, okunanlar vb.) tutulduğu tabloların
-    // Admin DB'sinde var olduğundan veya her ihtimale karşı yaratıldığından emin olalım:
+    // -- Copy from assets if DB does not exist --
+    const copyAssetDb = async () => {
+      console.log('Copying Admin DB from assets...');
+      const asset = Asset.fromModule(require('../../assets/kivilcim.db'));
+      await asset.downloadAsync();
+      console.log('Asset localUri:', asset.localUri, 'uri:', asset.uri);
+      await FileSystem.copyAsync({
+        from: asset.localUri || asset.uri,
+        to: dbPath,
+      });
+      const copied = await FileSystem.getInfoAsync(dbPath);
+      console.log('Admin DB copy complete. Size:', copied.size, 'bytes');
+    };
+
+    const dbInfo = await FileSystem.getInfoAsync(dbPath);
+    if (!dbInfo.exists) {
+      await copyAssetDb();
+    }
+
+    let db = getDb();
+
+    // Verify the DB has the expected tables.
+    // If stories table is missing, the DB file is corrupt/empty — re-copy.
+    try {
+      const check = await db.getFirstAsync(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name='stories'"
+      );
+      if (!check) {
+        console.warn('stories table NOT found — forcing re-copy of Admin DB...');
+        try { db.closeSync(); } catch (_) {}
+        dbInstance = null;
+        await FileSystem.deleteAsync(dbPath, { idempotent: true });
+        await copyAssetDb();
+        db = getDb();
+      } else {
+        console.log('DB verification OK: stories table exists.');
+      }
+    } catch (verifyErr) {
+      console.warn('DB verification query failed:', verifyErr, '— forcing re-copy...');
+      try { db.closeSync(); } catch (_) {}
+      dbInstance = null;
+      await FileSystem.deleteAsync(dbPath, { idempotent: true });
+      await copyAssetDb();
+      db = getDb();
+    }
+
+    // Ensure essential user-state tables exist (these are NOT in the Admin DB)
     await db.execAsync(`
       CREATE TABLE IF NOT EXISTS user_selected_categories (
         user_id TEXT,
@@ -74,30 +152,26 @@ export const initDb = async () => {
     `);
 
   } catch (error) {
-    console.error('Veritabanı başlatma hatası:', error);
+    console.error('Database initialization error:', error);
   } finally {
     _dbReady = true;
     if (_dbReadyResolve) _dbReadyResolve();
+    // Since we use a pre-populated Admin DB (no JSON seeding),
+    // data is ready as soon as the DB is initialised.
+    _dataReady = true;
+    if (_dataReadyResolve) _dataReadyResolve();
   }
 }
 
 // ──────────────────────────────────────────────────────
-//  SEED DATA  (reads JSON files once → populates DB)
+//  SEED DATA  (reads JSON files once -> populates DB)
 // ──────────────────────────────────────────────────────
 
 export const seedData = async () => {
+  // Data is now marked ready inside initDb() itself,
+  // but we still wait here so callers behave correctly.
   await waitForDb();
-
-  try {
-    // Admin veritabanı doğrudan yüklendiği için artık stories.json'dan manuel ekleme yapmamıza gerek yok.
-    // Bu fonksiyon geriye dönük uyumluluk ve arayüz sözleşmesi için bırakılmıştır.
-    console.log('Admin DB kullanıldığı için JSON-seed işlemi atlanıyor.');
-  } catch (error) {
-    console.error('db.js seedData error:', error);
-  } finally {
-    _dataReady = true;
-    if (_dataReadyResolve) _dataReadyResolve();
-  }
+  console.log('Admin DB mode enabled. Skipping JSON seeding.');
 }
 
 // ──────────────────────────────────────────────────────
@@ -106,53 +180,63 @@ export const seedData = async () => {
 
 /**
  * Returns all stories with translations for the given language.
- * Falls back to Turkish ('tr') if the requested translation is missing.
+ * Joins with the books table using book_no vs list_no.
+ * Falls back to Turkish ('tr') if target translation is missing.
  */
 export const getStoriesForLang = async (lang = 'tr') => {
   await waitForData();
   const db = getDb();
+
   const rows = await db.getAllAsync(`
     SELECT
       s.id,
-      s.story_id,
-      s.cat,
-      s.min,
-      s.publish_date AS publishDate,
-      s.author,
-      s.source_book_id,
-      COALESCE(NULLIF(st.title, ''),   st_tr.title,  '')  AS title,
-      COALESCE(NULLIF(st.body, ''),    st_tr.body,   '')  AS body,
-      COALESCE(NULLIF(st.description, ''), st_tr.description, '') AS description,
-      COALESCE(NULLIF(st.lesson, ''),  st_tr.lesson, '')  AS lesson,
-      COALESCE(NULLIF(st.quote, ''),   st_tr.quote,  '')  AS quote,
-      COALESCE(NULLIF(st.reflection, ''), st_tr.reflection, '') AS reflection,
-      COALESCE(NULLIF(st.src, ''),     st_tr.src,    '')  AS src,
-      COALESCE(NULLIF(st.source_book_name, ''), st_tr.source_book_name, '') AS source_book,
-      COALESCE(NULLIF(st.cat_display, ''), st_tr.cat_display, s.cat) AS cat_display
+      b.id AS source_book_id,
+      b.author,
+      b.publish_year AS publishDate,
+      3 AS min,
+      COALESCE(NULLIF(bt.category_name, ''), bt_tr.category_name, 'Tumu') AS cat,
+      COALESCE(NULLIF(bt.category_name, ''), bt_tr.category_name, 'Tumu') AS cat_display,
+      COALESCE(NULLIF(bt.title, ''),         bt_tr.title,         '') AS source_book,
+      COALESCE(NULLIF(st.title, ''),         st_tr.title,         '') AS title,
+      COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
+      COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
+      '' AS lesson,
+      '' AS quote,
+      '' AS reflection,
+      '' AS src
     FROM stories s
-    LEFT JOIN story_translations st    ON st.story_id = s.id AND st.lang = ?
-    LEFT JOIN story_translations st_tr ON st_tr.story_id = s.id AND st_tr.lang = 'tr'
-    ORDER BY s.publish_date DESC
-  `, [lang]);
+    LEFT JOIN books b ON b.list_no = s.book_no
+    -- Story Translations
+    LEFT JOIN story_translations st    ON st.story_id = s.id AND st.lang_code = ?
+    LEFT JOIN story_translations st_tr ON st_tr.story_id = s.id AND st_tr.lang_code = 'tr'
+    -- Book Translations
+    LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
+    LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
+    ORDER BY s.id DESC
+  `, [lang, lang]);
 
-  // COALESCE handles empty strings too — filter those out
   return rows.map(r => ({
     ...r,
+    story_id: String(r.id),
     title: r.title || '',
     body: r.body || '',
-    source_book: r.source_book || '',
   }));
 };
 
 /**
- * Returns all unique categories from the stories table.
+ * Returns all unique categories from the book_translations table.
  */
-export const getCategoriesFromDb = async () => {
+export const getCategoriesFromDb = async (lang = 'tr') => {
   await waitForData();
   const db = getDb();
-  const rows = await db.getAllAsync(
-    "SELECT DISTINCT cat FROM stories WHERE cat != '' ORDER BY cat"
-  );
+  const rows = await db.getAllAsync(`
+    SELECT DISTINCT
+      COALESCE(NULLIF(bt.category_name, ''), bt_tr.category_name, 'Tumu') AS cat
+    FROM book_translations bt_tr
+    LEFT JOIN book_translations bt ON bt.book_id = bt_tr.book_id AND bt.lang_code = ?
+    WHERE bt_tr.lang_code = 'tr' AND bt_tr.category_name != ''
+    ORDER BY cat
+  `, [lang]);
   return rows.map(r => r.cat);
 };
 
@@ -164,33 +248,26 @@ export const getBookForLang = async (bookId, lang = 'tr') => {
   if (!bookId) return null;
   const db = getDb();
 
-  // Book translation
   const bt = await db.getFirstAsync(`
     SELECT
       b.id, b.publish_year,
-      COALESCE(NULLIF(bt.title, ''),   bt_tr.title,  '')  AS title,
-      COALESCE(NULLIF(bt.author, ''),  bt_tr.author, '')  AS author,
-      COALESCE(NULLIF(bt.summary, ''), bt_tr.summary,'')  AS summary,
-      COALESCE(NULLIF(bt.category, ''),bt_tr.category,'') AS category
+      COALESCE(NULLIF(bt.title, ''),         bt_tr.title,  '')  AS title,
+      COALESCE(NULLIF(b.author, ''),         '')               AS author,
+      COALESCE(NULLIF(st_desc.description, ''), '')            AS summary,
+      COALESCE(NULLIF(bt.category_name, ''), bt_tr.category_name, '') AS category
     FROM books b
-    LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang = ?
-    LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang = 'tr'
+    LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
+    LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
+    LEFT JOIN story_translations st_desc ON st_desc.story_id = (SELECT id FROM stories WHERE book_no = b.list_no LIMIT 1) AND st_desc.lang_code = ?
     WHERE b.id = ?
-  `, [lang, bookId]);
+  `, [lang, lang, bookId]);
 
   if (!bt) return null;
 
-  // Book links for this language (with fallback to tr)
   let links = await db.getAllAsync(
-    'SELECT platform, url FROM book_links WHERE book_id = ? AND lang = ?',
-    [bookId, lang]
+    'SELECT platform, url FROM book_links WHERE book_id = ?',
+    [bookId]
   );
-  if (!links || links.length === 0) {
-    links = await db.getAllAsync(
-      'SELECT platform, url FROM book_links WHERE book_id = ? AND lang = ?',
-      [bookId, 'tr']
-    );
-  }
 
   const linksMap = {};
   (links || []).forEach(l => { linksMap[l.platform] = l.url; });

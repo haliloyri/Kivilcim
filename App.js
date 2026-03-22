@@ -5,6 +5,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
 import { ActivityIndicator } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { t } from './src/locales/i18n';
 
 // Fontlar
 import {
@@ -29,15 +31,15 @@ SplashScreen.preventAutoHideAsync();
 import { initDb, seedData } from './src/db/db';
 
 // Splash designer component (in-app splash screen)
-const SplashDesign = () => {
+const SplashDesign = ({ lang = 'tr' }) => {
   return (
     <View style={stylesSplash.container}>
-      <LinearGradient colors={["#4c669f", "#3b5998", "#192f6a"]} style={stylesSplash.gradient} />
+      <LinearGradient colors={["#131311", "#1E1C18"]} style={stylesSplash.gradient} />
       <View style={stylesSplash.brandRow}>
-        <Text style={stylesSplash.brandText}>Kıvılcım</Text>
+        <Text style={stylesSplash.brandText}>{t('brandText', lang).replace(' ✦', '')}</Text>
       </View>
-      <Text style={stylesSplash.tag}>Daily sparks of wisdom</Text>
-      <ActivityIndicator size="large" color="white" style={stylesSplash.spinner} />
+      <Text style={stylesSplash.tag}>{t('launch_tagline', lang)}</Text>
+      <ActivityIndicator size="large" color="#FFB783" style={stylesSplash.spinner} />
     </View>
   );
 };
@@ -76,14 +78,20 @@ const stylesSplash = {
 };
 
 function Main() {
+  const [splashLang, setSplashLang] = React.useState('tr');
   // Initialize DB and seed data on first run
   useEffect(() => {
     const startup = async () => {
+      try {
+        const savedLang = await AsyncStorage.getItem('lang');
+        if (savedLang) setSplashLang(savedLang);
+      } catch (e) {}
       await initDb();
       await seedData();
     };
     startup().catch(e => console.error('App.js startup error:', e));
   }, []);
+
   const [fontsLoaded] = useFonts({
     PlayfairDisplay_400Regular,
     PlayfairDisplay_600SemiBold,
@@ -101,7 +109,7 @@ function Main() {
 
   if (!fontsLoaded) {
     // Splash design while fonts load
-    return <SplashDesign />;
+    return <SplashDesign lang={splashLang} />;
   }
 
   return (

@@ -8,6 +8,7 @@ import { captureRef } from 'react-native-view-shot';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Speech from 'expo-speech';
 import * as Sharing from 'expo-sharing';
+import * as Clipboard from 'expo-clipboard';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
@@ -38,9 +39,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const displayBody = story.body || '';
   const displayQuote = story.quote || '';
   const displayLesson = story.lesson || '';
-  const displaySrc = story.src || '';
+  const displaySrc = story.source_book || '';
   const displaySourceBook = story.source_book || '';
-  const displayCat = story.cat_display || t(story.cat, lang);
+  const displayCat = t(story.cat_display || story.cat, lang);
 
   React.useEffect(() => {
     if (story) {
@@ -62,7 +63,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
       setIsSpeaking(true);
       Speech.speak(textToRead, {
-        language: lang === 'en' ? 'en-US' : 'tr-TR',
+        language: lang === 'en' ? 'en-US' : lang === 'es' ? 'es-ES' : lang === 'de' ? 'de-DE' : 'tr-TR',
         rate: 0.95,
         pitch: 1.0,
         onDone: () => setIsSpeaking(false),
@@ -97,7 +98,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     { id: 'sunset', label: t('themeSun', lang), bg: ['#FF512F', '#F09819'], text: '#FFF', accent: '#FFE0C2', sub: 'rgba(255,255,255,0.8)' },
     { id: 'ocean', label: t('themeNight', lang), bg: ['#1A2980', '#26D0CE'], text: '#FFF', accent: '#B8E6FF', sub: 'rgba(255,255,255,0.8)' },
     { id: 'emerald', label: t('themeEmerald', lang), bg: ['#11998e', '#38ef7d'], text: '#FFF', accent: '#D4FFED', sub: 'rgba(255,255,255,0.8)' },
-    { id: 'rose', label: lang === 'tr' ? 'Gül' : 'Rose', bg: ['#E96443', '#904E95'], text: '#FFF', accent: '#FFD6E0', sub: 'rgba(255,255,255,0.8)' },
+    { id: 'rose', label: t('rose_theme', lang), bg: ['#E96443', '#904E95'], text: '#FFF', accent: '#FFD6E0', sub: 'rgba(255,255,255,0.8)' },
   ];
 
   const currentTheme = SHARE_THEMES.find(th => th.id === shareTheme) || SHARE_THEMES[0];
@@ -128,7 +129,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     }
     if (type === 'reflection') {
       const ext = extractContent('&&');
-      return ext || (lang === 'tr' ? 'Neyi fark ettin?' : 'What did you realize?');
+      return ext || t('share_realize', lang);
     }
     return '';
   };
@@ -141,7 +142,40 @@ const StoryDetailScreen = ({ route, navigation }) => {
         quality: 1,
       });
 
-      // 2. Open native share sheet with the image
+      // 2. Construct the text to be included as caption
+      const allTexts = shareContent.map(type => {
+        const text = getShareText(type);
+        let label = '';
+        if (type === 'lesson') label = t('share_key_takeaway', lang);
+        else if (type === 'reflection') label = t('share_reflect', lang);
+        else label = t('quote_label', lang);
+        
+        return `${label}\n"${text}"`;
+      }).join('\n\n');
+      
+      const catHashtag = displayCat.replace(/(\s+|&)/g, '');
+      const generalHashtags = lang === 'en' ? '#Spark #DailyInspiration #BookRecommendation #Awareness' : 
+                              lang === 'es' ? '#Spark #InspiraciónDiaria #RecomendaciónDeLibro #Conciencia' : 
+                              lang === 'de' ? '#Spark #TäglicheInspiration #Buchempfehlung #Achtsamkeit' : 
+                              '#Spark #gününilhamı #kitapönerisi #farkindalik';
+                              
+      const caption = `${displayTitle}\n\n${allTexts}\n\n#${catHashtag} ${generalHashtags}`;
+
+      // 3. Copy caption to clipboard so user can paste it on Instagram
+      try {
+        await Clipboard.setStringAsync(caption);
+        Alert.alert(
+          lang === 'tr' ? "Metin Kopyalandı" : "Text Copied",
+          lang === 'tr' 
+            ? "Görseldeki metin ve etiketler panoya kopyalandı. Instagram'da paylaşırken açıklama kısmına yapıştırabilirsiniz."
+            : "The text and hashtags have been copied to your clipboard. You can paste them in the caption section when sharing.",
+          [{ text: "Tamam", style: "default" }]
+        );
+      } catch (err) {
+        console.warn("Clipboard copy failed", err);
+      }
+
+      // 4. Open native share sheet with the image
       const canShare = await Sharing.isAvailableAsync();
       if (canShare) {
         await Sharing.shareAsync(uri, {
@@ -150,15 +184,15 @@ const StoryDetailScreen = ({ route, navigation }) => {
         });
       } else {
         Alert.alert(
-          lang === 'tr' ? 'Hata' : 'Error',
-          lang === 'tr' ? 'Paylaşım bu cihazda desteklenmiyor.' : 'Sharing is not available on this device.',
+          t('alert_error', lang),
+          t('alert_share_unavailable', lang),
         );
       }
     } catch (error) {
       console.error('Paylaşım hatası:', error);
       Alert.alert(
-        lang === 'tr' ? 'Hata' : 'Error',
-        lang === 'tr' ? 'Paylaşım sırasında bir hata oluştu.' : 'An error occurred while sharing.',
+        t('alert_error', lang),
+        t('alert_share_error', lang),
       );
     }
   };
@@ -503,16 +537,16 @@ const StoryDetailScreen = ({ route, navigation }) => {
     const cardW = 1080;
     const cardH = isPost ? 1080 : 1920; 
     
-    const fTitle = 52;
-    const fQuote = 42;
-    const fSrc = 24;
-    const fLogo = 32;
-    const fFooter = 22;
+    const fTitle = 68;
+    const fQuote = 50;
+    const fSrc = 32;
+    const fLogo = 42;
+    const fFooter = 28;
     
     const padHorizontal = 80;
     const paddingTop = isPost ? 80 : 250;
     const paddingBottom = isPost ? 80 : 300;
-    const borderW = 6;
+    const borderW = 10;
 
     return (
       <View style={{ width: cardW, height: cardH, overflow: 'hidden', backgroundColor: th.bg[0], flexDirection: 'column' }}>
@@ -527,16 +561,17 @@ const StoryDetailScreen = ({ route, navigation }) => {
         <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: padHorizontal, paddingTop, paddingBottom }}>
           
           {/* Header (Logo) */}
-          <View style={{ alignItems: 'flex-start', marginBottom: 80 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 80, borderBottomWidth: 4, borderBottomColor: th.accent, paddingBottom: 16, alignSelf: 'flex-start' }}>
             <Text style={{
               fontFamily: 'PlayfairDisplay_700Bold',
-              fontSize: fLogo, color: th.accent,
-            }}>✦ {lang === 'tr' ? 'Kıvılcım' : 'Spark'}</Text>
+              fontSize: 64, color: th.text,
+              letterSpacing: 2
+            }}>✦ {t('brandText', lang).replace(' ✦', '')}</Text>
           </View>
 
           {shareContent.map((type, index) => {
-            const label = type === 'lesson' ? (lang === 'tr' ? '💡 Anahtar Ders' : '💡 Key Takeaway') : 
-                          type === 'reflection' ? (lang === 'tr' ? '🤔 Sorgula' : '🤔 Reflect') : 
+            const label = type === 'lesson' ? t('share_key_takeaway', lang) : 
+                          type === 'reflection' ? t('share_reflect', lang) : 
                           displayTitle;
             const textContent = getShareText(type);
             
@@ -545,13 +580,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
             const dynQuote = shareContent.length > 1 ? fQuote * 0.8 : fQuote;
             
             return (
-              <View key={type} style={{ marginBottom: index === shareContent.length - 1 ? 0 : 60 }}>
+              <View key={type} style={{ marginBottom: index === shareContent.length - 1 ? 0 : 80 }}>
                 <Text style={{
                   fontFamily: 'PlayfairDisplay_700Bold',
                   fontSize: dynTitle,
                   color: th.text,
-                  lineHeight: dynTitle * 1.3,
-                  marginBottom: 40 * 0.6,
+                  lineHeight: dynTitle * 1.4,
+                  marginBottom: 32,
                 }}>
                   {label}
                 </Text>
@@ -559,11 +594,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 <View style={{
                   borderLeftWidth: borderW,
                   borderLeftColor: th.accent,
-                  paddingLeft: 40 * 0.6,
-                  marginBottom: 30 * 0.6,
+                  paddingLeft: 30,
+                  marginBottom: 20,
                 }}>
                   <Text style={{
-                    fontFamily: 'PlayfairDisplay_400Regular_Italic',
+                    fontFamily: 'PlayfairDisplay_600SemiBold',
                     fontSize: dynQuote,
                     color: th.sub,
                     lineHeight: dynQuote * 1.6,
@@ -584,19 +619,32 @@ const StoryDetailScreen = ({ route, navigation }) => {
               textTransform: 'uppercase',
               letterSpacing: 2,
               marginLeft: 6,
-            }}>
-              {lang === 'tr' ? 'Kaynak: ' : 'Source: '}{displaySrc}
+              flexShrink: 1,
+            }} numberOfLines={2}>
+              {t('share_source', lang)}{displaySourceBook}
             </Text>
           </View>
 
           {/* Footer */}
-          <View style={{ alignItems: 'center', marginTop: 80 }}>
+          <View style={{ alignItems: 'center', marginTop: 60 }}>
             <Text style={{
               fontFamily: 'DMSans_400Regular',
               fontSize: fFooter, color: th.sub,
               textAlign: 'center',
             }}>
-              {lang === 'tr' ? 'Daha fazlası için Kıvılcım uygulamasını indir.' : 'Download Spark for more.'}
+              {t('share_more', lang)}
+            </Text>
+            <Text style={{
+              fontFamily: 'DMSans_400Regular',
+              fontSize: fFooter, color: th.accent,
+              textAlign: 'center',
+              marginTop: 12,
+              letterSpacing: 1
+            }}>
+              #{displayCat.replace(/(\s+|&)/g, '')} {lang === 'en' ? '#Spark #DailyInspiration #BookRecommendation #Awareness' : 
+                                                    lang === 'es' ? '#Spark #InspiraciónDiaria #RecomendaciónDeLibro #Conciencia' : 
+                                                    lang === 'de' ? '#Spark #TäglicheInspiration #Buchempfehlung #Achtsamkeit' : 
+                                                    '#Spark #gününilhamı #kitapönerisi #farkindalik'}
             </Text>
           </View>
 
@@ -646,9 +694,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
             {/* Content type pills */}
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.contentPillsRow}>
               {[
-                { id: 'quote', label: lang === 'tr' ? '❝ Alıntı' : '❝ Quote', icon: 'chatbox-ellipses-outline' },
-                { id: 'lesson', label: lang === 'tr' ? '💡 Ders' : '💡 Lesson', icon: 'bulb-outline' },
-                { id: 'reflection', label: lang === 'tr' ? '🤔 Sorgula' : '🤔 Reflect', icon: 'help-circle-outline' },
+                { id: 'quote', label: t('quote_label', lang), icon: 'chatbox-ellipses-outline' },
+                { id: 'lesson', label: t('lesson_pill', lang), icon: 'bulb-outline' },
+                { id: 'reflection', label: t('reflect_pill', lang), icon: 'help-circle-outline' },
               ].map(ct => (
                 <TouchableOpacity
                   key={ct.id}
@@ -699,13 +747,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   }
                 }}
               >
-                <Text style={[styles.formatBtnText, shareFormat === 'post' && styles.formatBtnTextActive]}>📷 Post (1:1)</Text>
+                <Text style={[styles.formatBtnText, shareFormat === 'post' && styles.formatBtnTextActive]}>{t('format_post', lang)}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.formatBtn, shareFormat === 'story' && styles.formatBtnActive]}
                 onPress={() => setShareFormat('story')}
               >
-                <Text style={[styles.formatBtnText, shareFormat === 'story' && styles.formatBtnTextActive]}>📱 Story (9:16)</Text>
+                <Text style={[styles.formatBtnText, shareFormat === 'story' && styles.formatBtnTextActive]}>{t('format_story', lang)}</Text>
               </TouchableOpacity>
             </View>
             </ScrollView>
@@ -774,7 +822,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
           <View style={{ flexDirection: 'row', gap: 16, marginTop: 10 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
               <Ionicons name="time-outline" size={14} color={colors.textSecondary} />
-              <Text style={styles.metaItem}>{story.min} dk okuma</Text>
+              <Text style={styles.metaItem}>{story.min} {t('minLabel', lang)} {t('dk_reading', lang)}</Text>
             </View>
             <Text style={styles.metaItem}>{displaySrc}</Text>
           </View>

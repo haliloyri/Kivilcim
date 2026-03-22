@@ -33,8 +33,8 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   const isNew = story.publishDate === todayStr;
   // DB already returns translated content for the active language
   const displayTitle = story.title || '';
-  const displaySrc = story.src || '';
-  const displayCat = story.cat_display || t(story.cat, lang);
+  const displaySrc = story.source_book || '';
+  const displayCat = t(story.cat_display || story.cat, lang);
 
   const styles = StyleSheet.create({
     card: {

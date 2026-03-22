@@ -7,11 +7,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
+import { t } from '../locales/i18n';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 const OnboardingScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark } = useTheme();
+  const { colors, typography, layout, isDark, lang } = useTheme();
   const { saveOnboarding } = useUserData();
   const { categories } = useStories();
   const [step, setStep] = useState(0);
@@ -22,9 +23,9 @@ const OnboardingScreen = ({ navigation }) => {
 
   const allCats = categories;
   const timeOptions = [
-    { label: '3 dakika', sub: 'Günde 1 hikaye', icon: '☕' },
-    { label: '5 dakika', sub: 'Günde 2 hikaye', icon: '📖' },
-    { label: '10 dakika', sub: 'Günde 3+ hikaye', icon: '🚀' },
+    { label: t('time_3min', lang), sub: t('time_3min_sub', lang), icon: '☕' },
+    { label: t('time_5min', lang), sub: t('time_5min_sub', lang), icon: '📖' },
+    { label: t('time_10min', lang), sub: t('time_10min_sub', lang), icon: '🚀' },
   ];
 
   const TOTAL_STEPS = 4;
@@ -416,17 +417,17 @@ const OnboardingScreen = ({ navigation }) => {
 
       {/* Text */}
       <Text style={s.welcomeTitle}>
-        Kıvılcım'a{'\n'}Hoş Geldiniz
+        {t('onboarding_welcome', lang)}
       </Text>
       <Text style={s.welcomeSubtitle}>
-        Her gün 3 dakikada dünyanın en etkili kitaplarından ilham alarak okuma alışkanlığı kazanın.
+        {t('onboarding_welcome_sub', lang)}
       </Text>
     </View>,
 
     /* ── Step 1: Category Selection ── */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s1">
-      <Text style={s.sectionTitle}>Neleri merak{'\n'}ediyorsun?</Text>
-      <Text style={s.sectionSubtitle}>En az 2 kategori seç.</Text>
+      <Text style={s.sectionTitle}>{t('onboarding_why', lang)}</Text>
+      <Text style={s.sectionSubtitle}>{t('onboarding_why_sub', lang)}</Text>
       <View style={s.catGrid}>
         {allCats.map(cat => {
           const sel = selectedCats.includes(cat);
@@ -437,7 +438,7 @@ const OnboardingScreen = ({ navigation }) => {
               onPress={() => toggleCat(cat)}
               activeOpacity={0.7}
             >
-              <Text style={[s.catTileText, sel && s.catTileTextSelected]}>{cat}</Text>
+              <Text style={[s.catTileText, sel && s.catTileTextSelected]}>{t(cat, lang)}</Text>
               {sel && (
                 <View style={s.catCheckCircle}>
                   <Text style={{ fontSize: 12, color: '#fff', fontWeight: '700' }}>✓</Text>
@@ -449,15 +450,15 @@ const OnboardingScreen = ({ navigation }) => {
       </View>
       <Text style={s.catHint}>
         {selectedCats.length >= 2
-          ? `${selectedCats.length} kategori seçildi`
-          : `En az ${2 - selectedCats.length} tane daha seç`}
+          ? `${selectedCats.length} ${t('onboarding_cat_selected', lang)}`
+          : t('onboarding_cat_more', lang).replace('{{count}}', 2 - selectedCats.length)}
       </Text>
     </View>,
 
     /* ── Step 2: Time Selection ── */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s2">
-      <Text style={s.sectionTitle}>Günde kaç{'\n'}dakika?</Text>
-      <Text style={s.sectionSubtitle}>Gerçekçi bir hedef seç.</Text>
+      <Text style={s.sectionTitle}>{t('onboarding_how_long', lang)}</Text>
+      <Text style={s.sectionSubtitle}>{t('onboarding_how_long_sub', lang)}</Text>
       {timeOptions.map((t, i) => (
         <TouchableOpacity
           key={i}
@@ -484,26 +485,26 @@ const OnboardingScreen = ({ navigation }) => {
         <View style={s.readyStats}>
           <View style={s.readyStat}>
             <Text style={s.readyNum}>{selectedCats.length || 2}</Text>
-            <Text style={s.readyLabel}>kategori</Text>
+            <Text style={s.readyLabel}>{t('onboarding_cat', lang)}</Text>
           </View>
           <View style={s.readyStat}>
             <Text style={s.readyNum}>20</Text>
-            <Text style={s.readyLabel}>hikaye</Text>
+            <Text style={s.readyLabel}>{t('onboarding_story', lang)}</Text>
           </View>
           <View style={s.readyStat}>
             <Text style={s.readyNum}>∞</Text>
-            <Text style={s.readyLabel}>merak</Text>
+            <Text style={s.readyLabel}>{t('onboarding_curiosity', lang)}</Text>
           </View>
         </View>
       </View>
-      <Text style={[s.sectionTitle, { textAlign: 'center' }]}>Her şey hazır.</Text>
+      <Text style={[s.sectionTitle, { textAlign: 'center' }]}>{t('onboarding_ready', lang)}</Text>
       <Text style={[s.sectionSubtitle, { textAlign: 'center', marginBottom: 20 }]}>
-        Bugün seni bekleyen hikayeler hazır.{'\n'}Okumaya başlayalım.
+        {t('onboarding_ready_sub', lang)}
       </Text>
       <View style={s.selCats}>
         {(selectedCats.length ? selectedCats : ['Finans', 'Psikoloji']).map(c => (
           <View key={c} style={s.selCatPill}>
-            <Text style={s.selCatText}>{c}</Text>
+            <Text style={s.selCatText}>{t(c, lang)}</Text>
           </View>
         ))}
       </View>
@@ -524,10 +525,10 @@ const OnboardingScreen = ({ navigation }) => {
 
       {/* ── Header ── */}
       <View style={s.header}>
-        <Text style={s.headerBrand}>Kıvılcım</Text>
+        <Text style={s.headerBrand}>{t('brandText', lang).replace(' ✦', '')}</Text>
         {step === 0 && (
           <TouchableOpacity onPress={skip} activeOpacity={0.7}>
-            <Text style={s.headerSkip}>Atla</Text>
+            <Text style={s.headerSkip}>{t('onboarding_skip', lang)}</Text>
           </TouchableOpacity>
         )}
         {step > 0 && (
@@ -543,7 +544,7 @@ const OnboardingScreen = ({ navigation }) => {
             }}
             activeOpacity={0.7}
           >
-            <Text style={s.headerSkip}>← Geri</Text>
+            <Text style={s.headerSkip}>← {t('backBtn', lang).replace('← ', '')}</Text>
           </TouchableOpacity>
         )}
       </View>
@@ -579,7 +580,7 @@ const OnboardingScreen = ({ navigation }) => {
           activeOpacity={0.85}
         >
           <Text style={s.btnPrimaryText}>
-            {step < TOTAL_STEPS - 1 ? 'Devam Et' : 'Okumaya Başla'}
+            {step < TOTAL_STEPS - 1 ? t('next', lang) : t('onboarding_start_reading', lang)}
           </Text>
           <Text style={s.btnPrimaryArrow}>→</Text>
         </TouchableOpacity>

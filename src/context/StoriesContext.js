@@ -18,7 +18,7 @@ export const StoriesProvider = ({ children }) => {
       await waitForData();
       const [storiesList, catsList] = await Promise.all([
         getStoriesForLang(lang),
-        getCategoriesFromDb(),
+        getCategoriesFromDb(lang),
       ]);
       setStories(storiesList);
       setCategories(catsList);

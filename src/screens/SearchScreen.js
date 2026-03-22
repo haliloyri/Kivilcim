@@ -16,7 +16,7 @@ const SearchScreen = ({ navigation }) => {
 
   const filtered = query.trim() ? (stories || []).filter(s => 
     (s.title || '').toLowerCase().includes(query.toLowerCase()) || 
-    (s.cat_display || s.cat || '').toLowerCase().includes(query.toLowerCase())
+    (t(s.cat_display || s.cat || '', lang) || '').toLowerCase().includes(query.toLowerCase())
   ).slice(0, 20) : [];
 
   const styles = StyleSheet.create({
