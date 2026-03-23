@@ -234,7 +234,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       color: colors.text,
     },
     modalSub: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 13,
       color: colors.textSecondary,
       marginBottom: 16,
@@ -258,7 +258,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       borderColor: colors.primary,
     },
     contentPillText: {
-      fontFamily: 'DMSans_500Medium',
+      fontFamily: 'Inter_500Medium',
       fontSize: 12,
       color: colors.textSecondary,
     },
@@ -301,7 +301,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       backgroundColor: isDark ? 'rgba(181,83,16,0.15)' : 'rgba(181,83,16,0.08)',
     },
     formatBtnText: {
-      fontFamily: 'DMSans_500Medium',
+      fontFamily: 'Inter_500Medium',
       fontSize: 12,
       color: colors.textSecondary,
     },
@@ -317,7 +317,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       alignItems: 'center' 
     },
     btnPrimaryText: { 
-      fontFamily: 'DMSans_500Medium', 
+      fontFamily: 'Inter_500Medium', 
       color: '#F7F3EB', 
       fontSize: typography.sizes.ui + 1 
     },
@@ -350,59 +350,76 @@ const StoryDetailScreen = ({ route, navigation }) => {
       paddingHorizontal: layout.padding.horizontal, 
       paddingVertical: 12 
     },
+    headerPillLeft: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#F3EFE9',
+      paddingHorizontal: 16,
+      paddingVertical: 6,
+      borderRadius: 20,
+    },
     backBtn: { 
-      fontFamily: 'DMSans_400Regular', 
-      fontSize: typography.sizes.ui + 1, 
-      color: colors.textSecondary 
+      fontFamily: 'Inter_500Medium', 
+      fontSize: 14, 
+      color: '#1A1A1A',
+      marginLeft: 4,
     },
     storyHero: { 
       margin: layout.padding.horizontal, 
-      borderRadius: layout.radius.card, 
-      padding: 20, 
+      borderRadius: 16, 
+      paddingVertical: 16,
+      paddingHorizontal: 20,
       marginBottom: 16, 
-      borderWidth: layout.borderWidth, 
-      borderColor: colors.border 
+      borderWidth: 1, 
+      borderColor: '#DED5C4',
+      backgroundColor: '#EBE2D3',
     },
     badge: { 
       paddingHorizontal: 10, 
       paddingVertical: 4, 
-      borderRadius: 12, 
-      backgroundColor: colors.backgroundDark, 
-      borderWidth: layout.borderWidth, 
-      borderColor: colors.border 
+      borderRadius: 16, 
+      backgroundColor: '#EBDCCC',
+      marginBottom: 8,
+      flexDirection: 'row',
+      alignItems: 'center',
+      alignSelf: 'flex-end',
+      gap: 4,
     },
     badgeText: { 
-      fontFamily: 'DMSans_500Medium', 
-      fontSize: typography.sizes.badge, 
-      color: colors.text, 
-      letterSpacing: typography.spacing.badgeLetterSpacing, 
-      textTransform: 'uppercase' 
+      fontFamily: 'Inter_500Medium', 
+      fontSize: 10, 
+      color: '#A15916', 
     },
     detailTitle: { 
       fontFamily: 'PlayfairDisplay_700Bold', 
-      fontSize: typography.sizes.headingLarge - 4, 
-      color: colors.text, 
-      lineHeight: 32 
+      fontSize: 28, 
+      color: '#1A1A1A', 
+      lineHeight: 34,
+      marginBottom: 8,
     },
     metaItem: { 
-      fontFamily: 'DMSans_400Regular', 
-      fontSize: typography.sizes.ui - 2, 
-      color: colors.textSecondary 
+      fontFamily: 'Inter_400Regular', 
+      fontSize: 13, 
+      color: '#594238',
     },
     detailBody: { 
-      fontFamily: 'DMSans_400Regular', 
-      color: colors.text 
+      fontFamily: 'Inter_400Regular', 
+      color: '#1A1A1A',
+      marginBottom: 16,
     },
     quoteBox: { 
-      borderLeftWidth: 2, 
-      borderLeftColor: colors.primary, 
-      paddingLeft: 16, 
-      marginVertical: 24 
+      borderLeftWidth: 4, 
+      borderLeftColor: '#C8A96A', 
+      backgroundColor: '#F5F0E6',
+      padding: 16,
+      paddingLeft: 20,
+      marginVertical: 12,
+      borderRadius: 4,
     },
     quoteText: { 
-      fontFamily: 'PlayfairDisplay_400Regular_Italic', 
-      fontSize: typography.sizes.quote, 
-      color: colors.textSecondary, 
+      fontFamily: 'Inter_500Medium', 
+      fontSize: typography.sizes.body + 1, 
+      color: '#1A1A1A', 
       lineHeight: 28 
     },
     premiumSeparator: {
@@ -412,103 +429,119 @@ const StoryDetailScreen = ({ route, navigation }) => {
       marginVertical: 12,
     },
     separatorLine: {
-      height: 0.5,
-      backgroundColor: colors.border,
+      height: 1,
+      backgroundColor: '#E8E3DA',
       flex: 1,
     },
     separatorIcon: {
       marginHorizontal: 16,
-      color: colors.primary,
-      fontSize: 14,
+      color: '#9D451B',
+      fontSize: 16,
     },
     lessonBox: { 
-      backgroundColor: colors.backgroundDark, 
-      borderRadius: layout.radius.card, 
-      padding: 16, 
-      marginTop: 0, 
-      paddingLeft: 16, 
-      borderLeftWidth: 3, 
-      borderLeftColor: colors.primary 
+      borderRadius: 16, 
+      padding: 20, 
+      marginBottom: 20,
+      borderTopLeftRadius: 4,
+      borderBottomLeftRadius: 4,
+      borderLeftWidth: 5,
+      borderLeftColor: '#594238',
     },
     lessonLabel: { 
-      fontFamily: 'DMSans_500Medium', 
-      fontSize: typography.sizes.badge, 
-      color: colors.textSecondary, 
-      letterSpacing: typography.spacing.badgeLetterSpacing, 
+      fontFamily: 'Inter_500Medium', 
+      fontSize: 12, 
+      color: '#1A1A1A', 
+      letterSpacing: 1.5, 
+      textTransform: 'uppercase',
       marginBottom: 8 
     },
     lessonText: { 
-      fontFamily: 'DMSans_400Regular', 
-      fontSize: typography.sizes.ui, 
-      color: colors.text, 
-      lineHeight: 22 
+      fontFamily: 'Inter_500Medium', 
+      fontSize: 15, 
+      color: '#1A1A1A', 
+      lineHeight: 24 
+    },
+    reflectionBox: {
+      borderRadius: 16,
+      padding: 20,
+      marginBottom: 20,
+      borderWidth: 1,
+      borderColor: '#EBDCCA',
+      shadowColor: '#D4AF37',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 8,
+      elevation: 2,
+    },
+    reflectionLabel: {
+      fontFamily: 'Inter_500Medium', 
+      fontSize: 11, 
+      color: '#1A1A1A', 
+      letterSpacing: 1.5, 
+      textTransform: 'uppercase',
     },
     detailFooter: { 
       flexDirection: 'row', 
       gap: 12, 
       paddingHorizontal: layout.padding.horizontal, 
-      paddingTop: 12, 
-      paddingBottom: Platform.OS === 'android' ? 48 : 24, 
-      borderTopWidth: layout.borderWidth, 
-      borderTopColor: colors.border, 
+      paddingTop: 16, 
+      paddingBottom: Platform.OS === 'android' ? 48 : 32, 
+      borderTopWidth: 1, 
+      borderTopColor: '#E8E3DA', 
       backgroundColor: colors.background 
     },
     btnSecondaryShare: { 
       flex: 1, 
-      borderWidth: layout.borderWidth, 
-      borderColor: colors.primary, 
-      borderRadius: layout.radius.button, 
-      height: layout.heights.buttonPrimary, 
+      borderWidth: 1, 
+      borderColor: '#A15916', 
+      borderRadius: 12, 
+      height: 48, 
       justifyContent: 'center', 
       alignItems: 'center', 
       backgroundColor: 'transparent' 
     },
     btnSecondaryShareText: { 
-      fontFamily: 'DMSans_500Medium', 
-      fontSize: typography.sizes.ui, 
-      color: colors.text 
+      fontFamily: 'Inter_500Medium', 
+      fontSize: 15, 
+      color: '#1A1A1A' 
     },
     fontSizeControls: {
       flexDirection: 'row',
-      backgroundColor: colors.backgroundDark,
-      borderRadius: 8,
-      padding: 2,
+      backgroundColor: '#F3EFE9',
+      borderRadius: 20,
+      paddingHorizontal: 8,
+      paddingVertical: 4,
+      alignItems: 'center',
     },
     fontSizeBtn: {
       paddingHorizontal: 8,
-      paddingVertical: 4,
     },
     fontSizeBtnText: {
-      fontFamily: 'DMSans_500Medium',
-      fontSize: 12,
-      color: colors.text,
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: '#1A1A1A',
     },
     sourceSection: {
-      marginTop: 32,
+      marginTop: 24,
       padding: 16,
       borderRadius: 12,
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: '#F7F3E8',
       borderWidth: 1,
-      borderColor: colors.border,
+      borderColor: '#E8E3DA',
     },
     sourceLabel: {
-      fontFamily: 'DMSans_500Medium',
-      fontSize: 12,
-      color: colors.textSecondary,
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: '#594238',
       marginBottom: 8,
       textTransform: 'uppercase',
       letterSpacing: 1,
     },
     bookTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 18,
-      color: colors.text,
-      marginBottom: 16,
-    },
-    linksRow: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 10,
+      fontSize: 20,
+      color: '#1A1A1A',
+      marginBottom: 12,
     },
     linkBtn: {
       flexDirection: 'row',
@@ -518,12 +551,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
       borderRadius: 8,
       backgroundColor: colors.background,
       borderWidth: 1,
-      borderColor: colors.border,
+      borderColor: '#E8E3DA',
     },
     linkBtnText: {
-      fontFamily: 'DMSans_500Medium',
-      fontSize: 12,
-      color: colors.text,
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: '#1A1A1A',
       marginLeft: 6,
     },
   });
@@ -613,7 +646,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
           <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 60 }}>
             <Ionicons name="book-outline" size={fSrc + 4} color={th.sub} />
             <Text style={{
-              fontFamily: 'DMSans_500Medium',
+              fontFamily: 'Inter_500Medium',
               fontSize: fSrc,
               color: th.sub,
               textTransform: 'uppercase',
@@ -628,14 +661,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
           {/* Footer */}
           <View style={{ alignItems: 'center', marginTop: 60 }}>
             <Text style={{
-              fontFamily: 'DMSans_400Regular',
+              fontFamily: 'Inter_400Regular',
               fontSize: fFooter, color: th.sub,
               textAlign: 'center',
             }}>
               {t('share_more', lang)}
             </Text>
             <Text style={{
-              fontFamily: 'DMSans_400Regular',
+              fontFamily: 'Inter_400Regular',
               fontSize: fFooter, color: th.accent,
               textAlign: 'center',
               marginTop: 12,
@@ -780,12 +813,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
       </View>
 
       <View style={styles.detailHeader}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.backBtn}>{t('backBtn', lang)}</Text>
+        <TouchableOpacity style={styles.headerPillLeft} onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back" size={16} color="#1A1A1A" />
+          <Text style={styles.backBtn}>{t('backBtn', lang).replace(/^[\u2190<-]+\s*/g, '')}</Text>
         </TouchableOpacity>
         <View style={{ flexDirection: 'row', gap: 16, alignItems: 'center' }}>
           <TouchableOpacity onPress={toggleSpeech}>
-            <Text style={{ fontSize: 22, color: isSpeaking ? colors.primary : colors.text }}>
+            <Text style={{ fontSize: 24, color: isSpeaking ? colors.primary : '#1A1A1A' }}>
               {isSpeaking ? '⏸' : '▶'}
             </Text>
           </TouchableOpacity>
@@ -799,7 +833,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
           </View>
           <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
             <TouchableOpacity onPress={handleLike}>
-              <Text style={{ fontSize: 22, color: colors.text }}>{liked ? '♥' : '♡'}</Text>
+              <Ionicons name={liked ? "heart" : "heart-outline"} size={26} color={liked ? "#BA1A1A" : "#1A1A1A"} />
             </TouchableOpacity>
           </Animated.View>
         </View>
@@ -813,25 +847,24 @@ const StoryDetailScreen = ({ route, navigation }) => {
         )}
         scrollEventThrottle={16}
       >
-          <View style={[styles.storyHero, { backgroundColor: colors.backgroundDark }]}> 
-          <View style={[styles.badge, { alignSelf: 'flex-start', marginBottom: 12, flexDirection: 'row', alignItems: 'center', gap: 6 }]}>
-            <Ionicons name={getCatIcon(story.cat)} size={12} color={colors.textSecondary} />
+        <View style={styles.storyHero}> 
+          <View style={styles.badge}>
+            <Text style={{ fontSize: 13 }}>🚀</Text>
             <Text style={styles.badgeText}>{displayCat}</Text>
           </View>
           <Text style={styles.detailTitle}>{displayTitle}</Text>
-          <View style={{ flexDirection: 'row', gap: 16, marginTop: 10 }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
-              <Ionicons name="time-outline" size={14} color={colors.textSecondary} />
-              <Text style={styles.metaItem}>{story.min} {t('minLabel', lang)} {t('dk_reading', lang)}</Text>
+          <View style={{ flexDirection: 'row', gap: 16 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+              <Ionicons name="time-outline" size={16} color="#594238" />
+              <Text style={styles.metaItem}>{story.min} {t('minLabel', lang)} okuma</Text>
             </View>
-            <Text style={styles.metaItem}>{displaySrc}</Text>
           </View>
         </View>
 
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
           {(() => {
             // Parse the body into segments based on ##, $$, && markers
-            const rawBody = (displayBody || '').replace(/\n{3,}/g, '\n\n');
+            const rawBody = (displayBody || '').replace(/\r\n/g, '\n').replace(/\n{3,}/g, '\n\n');
             const segments = [];
             let remaining = rawBody;
 
@@ -884,39 +917,23 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
             return segments.map((seg, idx) => {
               if (seg.type === 'text') {
+                const trimmedText = seg.content.trim().replace(/\n{2,}/g, '\n\n');
+                if (!trimmedText) return null;
                 return (
                   <Text
                     key={idx}
-                    style={[styles.detailBody, { fontSize, lineHeight: fontSize * 1.55 }]}
+                    style={[styles.detailBody, { fontSize, lineHeight: Math.round(fontSize * 1.55) }]}
                   >
-                    {seg.content}
+                    {trimmedText}
                   </Text>
                 );
               }
 
               if (seg.type === 'highlight') {
                 return (
-                  <View
-                    key={idx}
-                    style={{
-                      borderLeftWidth: 3,
-                      borderLeftColor: '#C8A96A',
-                      backgroundColor: isDark ? 'rgba(200,169,106,0.08)' : 'rgba(200,169,106,0.1)',
-                      paddingLeft: 16,
-                      paddingVertical: 10,
-                      marginVertical: 6,
-                      borderRadius: 4,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        fontFamily: 'PlayfairDisplay_600SemiBold',
-                        fontSize: fontSize + 1,
-                        color: colors.text,
-                        lineHeight: (fontSize + 1) * 1.6,
-                      }}
-                    >
-                      {seg.content}
+                  <View key={idx} style={styles.quoteBox}>
+                    <Text style={[styles.quoteText, { fontSize: fontSize + 2, lineHeight: (fontSize + 2) * 1.5 }]}>
+                      "{seg.content}"
                     </Text>
                   </View>
                 );
@@ -930,60 +947,41 @@ const StoryDetailScreen = ({ route, navigation }) => {
                       <Text style={styles.separatorIcon}>✦</Text>
                       <View style={styles.separatorLine} />
                     </View>
-                    <View style={styles.lessonBox}>
-                      <Text style={styles.lessonLabel}>
-                        {t('keyTakeaway', lang)}
-                      </Text>
-                      <Text style={styles.lessonText}>{seg.content}</Text>
-                    </View>
+                    <LinearGradient 
+                      colors={['#EAD8C1', '#FBF8F3']} 
+                      start={{x: 0, y: 0}} end={{x: 1, y: 1}} 
+                      style={styles.lessonBox}
+                    >
+                      <Text style={styles.lessonLabel}>HİKAYENİN ÖZÜ</Text>
+                      <Text style={[styles.lessonText, { fontSize: fontSize + 1 }]} >{seg.content}</Text>
+                    </LinearGradient>
                   </View>
                 );
               }
 
               if (seg.type === 'reflection') {
                 return (
-                  <View
+                  <LinearGradient
                     key={idx}
-                    style={{
-                      marginTop: 10,
-                      borderRadius: 16,
-                      overflow: 'hidden',
-                      borderWidth: 1,
-                      borderColor: isDark ? 'rgba(200,169,106,0.3)' : 'rgba(200,169,106,0.4)',
-                    }}
+                    colors={['#EBE2D3', '#F8F5EF']} 
+                    start={{x: 0, y: 0}} end={{x: 1, y: 1}}
+                    style={styles.reflectionBox}
                   >
-                    <LinearGradient
-                      colors={isDark
-                        ? ['rgba(200,169,106,0.12)', 'rgba(200,169,106,0.04)']
-                        : ['rgba(200,169,106,0.15)', 'rgba(200,169,106,0.05)']}
-                      style={{ padding: 16 }}
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12 }}>
+                      <Text style={{ fontSize: 18, marginRight: 8 }}>💭</Text>
+                      <Text style={styles.reflectionLabel}>DÜŞÜN VE SORGULA</Text>
+                    </View>
+                    <Text
+                      style={{
+                        fontFamily: 'PlayfairDisplay_400Regular_Italic',
+                        fontSize: fontSize + 1,
+                        color: '#1A1A1A',
+                        lineHeight: (fontSize + 1) * 1.6,
+                      }}
                     >
-                      <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                        <Text style={{ fontSize: 20, marginRight: 8 }}>💭</Text>
-                        <Text
-                          style={{
-                            fontFamily: 'DMSans_500Medium',
-                            fontSize: typography.sizes.badge,
-                            color: '#C8A96A',
-                            letterSpacing: 1,
-                            textTransform: 'uppercase',
-                          }}
-                        >
-                          {t('reflect', lang)}
-                        </Text>
-                      </View>
-                      <Text
-                        style={{
-                          fontFamily: 'PlayfairDisplay_400Regular_Italic',
-                          fontSize: fontSize,
-                          color: colors.text,
-                          lineHeight: fontSize * 1.7,
-                        }}
-                      >
-                        {seg.content}
-                      </Text>
-                    </LinearGradient>
-                  </View>
+                      {seg.content}
+                    </Text>
+                  </LinearGradient>
                 );
               }
 
@@ -997,7 +995,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
               <Text style={styles.bookTitle}>{displaySourceBook.split(' — ')[0].trim()}</Text>
               {story.author ? (
                 <Text style={{
-                  fontFamily: 'DMSans_400Regular',
+                  fontFamily: 'Inter_400Regular',
                   fontSize: 13,
                   color: colors.textSecondary,
                   marginTop: -10,
@@ -1013,21 +1011,21 @@ const StoryDetailScreen = ({ route, navigation }) => {
                    style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flex: 1, justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
                 >
                   <Ionicons name="cart-outline" size={16} color={colors.text} style={{ marginRight: 6 }} />
-                  <Text style={{ color: colors.text, fontFamily: 'DMSans_500Medium', fontSize: 12 }}>{t('book', lang)}</Text>
+                  <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>{t('book', lang)}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
                    onPress={() => Linking.openURL(`https://www.youtube.com/results?search_query=${encodeURIComponent(displaySourceBook)}`)}
                    style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flex: 1, justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
                 >
                   <Ionicons name="logo-youtube" size={16} color="#FF0000" style={{ marginRight: 6 }} />
-                  <Text style={{ color: colors.text, fontFamily: 'DMSans_500Medium', fontSize: 12 }}>Youtube</Text>
+                  <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>Youtube</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
                    onPress={() => Linking.openURL(`https://www.tiktok.com/search?q=${encodeURIComponent(displaySourceBook)}`)}
                    style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flex: 1, justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
                 >
                   <Ionicons name="logo-tiktok" size={16} color={colors.text} style={{ marginRight: 6 }} />
-                  <Text style={{ color: colors.text, fontFamily: 'DMSans_500Medium', fontSize: 12 }}>Tiktok</Text>
+                  <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>Tiktok</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -1038,10 +1036,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
       <View style={styles.detailFooter}>
         <TouchableOpacity style={styles.btnSecondaryShare} onPress={() => setShareModalVisible(true)}>
-          <Text style={styles.btnSecondaryShareText}>{t('shareBtn', lang)}</Text>
+          <Text style={styles.btnSecondaryShareText}>Paylaş</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.btnPrimary, { flex: 2 }]} onPress={handleNext}>
-          <Text style={[styles.btnPrimaryText, { color: '#F7F3EB' }]}>{t('nextStory', lang)}</Text>
+        <TouchableOpacity style={[styles.btnPrimary, { flex: 2, backgroundColor: '#9D451B' }]} onPress={handleNext}>
+          <Text style={[styles.btnPrimaryText, { color: '#F7F3EB' }]}>Sonraki hikaye →</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

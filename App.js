@@ -20,6 +20,12 @@ import {
   DMSans_400Regular,
   DMSans_500Medium,
 } from '@expo-google-fonts/dm-sans';
+import {
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+  Inter_700Bold
+} from '@expo-google-fonts/inter';
 
 // Tema ve Data
 import { ThemeProvider } from './src/context/ThemeContext';
@@ -68,7 +74,7 @@ const stylesSplash = {
   },
   tag: {
     marginTop: 8,
-    fontFamily: 'DMSans_400Regular',
+    fontFamily: 'Inter_400Regular',
     color: 'white',
     fontSize: 14,
   },
@@ -99,6 +105,10 @@ function Main() {
     PlayfairDisplay_400Regular_Italic,
     DMSans_400Regular,
     DMSans_500Medium,
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_600SemiBold,
+    Inter_700Bold,
   });
 
   const onLayoutRootView = useCallback(async () => {

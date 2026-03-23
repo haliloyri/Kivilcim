@@ -5,6 +5,7 @@ import {
   StatusBar, Platform, Dimensions 
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
@@ -120,14 +121,14 @@ const HomeScreen = ({ navigation }) => {
       gap: 16,
     },
     greetSub: { 
-      fontFamily: 'DMSans_400Regular', 
-      fontSize: typography.sizes.ui - 1, 
-      color: colors.textSecondary, 
-      marginBottom: 2 
+      fontFamily: 'PlayfairDisplay_400Regular', 
+      fontSize: 24, 
+      color: colors.text, 
+      marginBottom: -4 
     },
     greetName: { 
       fontFamily: 'PlayfairDisplay_700Bold', 
-      fontSize: typography.sizes.headingSmall, 
+      fontSize: 32, 
       color: colors.text 
     },
     searchIcon: {
@@ -135,54 +136,56 @@ const HomeScreen = ({ navigation }) => {
       color: colors.textSecondary,
     },
     avatar: { 
-      width: 36, 
-      height: 36, 
-      borderRadius: 18, 
-      backgroundColor: colors.backgroundDark, 
-      borderWidth: layout.borderWidth, 
-      borderColor: colors.border, 
+      width: 38, 
+      height: 38, 
+      borderRadius: 12, 
+      backgroundColor: '#E6DEC8', 
       alignItems: 'center', 
       justifyContent: 'center' 
     },
     avatarText: { 
-      fontFamily: 'DMSans_500Medium', 
-      fontSize: 12, 
-      color: colors.textSecondary 
+      fontFamily: 'Inter_500Medium', 
+      fontSize: 14, 
+      color: colors.text 
     },
     langBtn: {
-      paddingHorizontal: 8,
-      paddingVertical: 6,
-      borderRadius: 6,
-      borderWidth: layout.borderWidth,
+      paddingHorizontal: 10,
+      paddingVertical: 8,
+      borderRadius: 12,
+      borderWidth: 1,
       borderColor: colors.border,
-      backgroundColor: colors.background,
+      backgroundColor: 'transparent',
       marginLeft: 4
     },
     langBtnText: {
-      fontFamily: 'DMSans_500Medium',
-      fontSize: 12,
+      fontFamily: 'Inter_500Medium',
+      fontSize: 14,
       color: colors.text
     },
     streakCard: { 
       flexDirection: 'row', 
       alignItems: 'center', 
-      backgroundColor: colors.backgroundDark, 
-      borderRadius: layout.radius.card, 
-      padding: 14, 
+      borderRadius: 16, 
+      paddingVertical: 20,
+      paddingHorizontal: 20, 
       marginHorizontal: layout.padding.horizontal, 
-      marginBottom: 20, 
-      borderWidth: layout.borderWidth, 
-      borderColor: colors.border 
+      marginBottom: 32, 
+      // Shadow for lifted premium feel
+      shadowColor: '#C5A059',
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.15,
+      shadowRadius: 12,
+      elevation: 5,
     },
     streakDays: { 
-      fontFamily: 'PlayfairDisplay_600SemiBold', 
-      fontSize: typography.sizes.headingSmall, 
-      color: colors.text 
+      fontFamily: 'PlayfairDisplay_700Bold', 
+      fontSize: 24, 
+      color: '#1A1A1A' 
     },
     streakLabel: { 
-      fontFamily: 'DMSans_400Regular', 
-      fontSize: typography.sizes.ui - 1, 
-      color: colors.textSecondary 
+      fontFamily: 'Inter_400Regular', 
+      fontSize: 14, 
+      color: '#333333' 
     },
     streakDot: { 
       width: 8, 
@@ -190,33 +193,28 @@ const HomeScreen = ({ navigation }) => {
       borderRadius: 4 
     },
     sectionLabel: { 
-      fontFamily: 'DMSans_500Medium', 
-      fontSize: typography.sizes.badge, 
-      color: colors.textSecondary, 
-      letterSpacing: 1, 
-      textTransform: 'uppercase', 
-      marginBottom: 10 
+      display: 'none', // Hide section labels for a cleaner look as per mockup
     },
     catPill: { 
-      paddingHorizontal: 14, 
-      paddingVertical: 7, 
-      borderRadius: 20, 
-      borderWidth: layout.borderWidth, 
+      paddingHorizontal: 18, 
+      paddingVertical: 10, 
+      borderRadius: 24, 
+      borderWidth: 1, 
       borderColor: colors.border, 
-      backgroundColor: colors.background 
+      backgroundColor: 'transparent' 
     },
     catPillActive: { 
-      backgroundColor: colors.text, 
-      borderColor: colors.text 
+      backgroundColor: colors.activeNav, 
+      borderColor: colors.activeNav 
     },
     catPillText: { 
-      fontFamily: 'DMSans_400Regular', 
-      fontSize: typography.sizes.ui - 1, 
+      fontFamily: 'Inter_400Regular', 
+      fontSize: 14, 
       color: colors.textSecondary 
     },
     catPillTextActive: { 
-      color: colors.background, 
-      fontFamily: 'DMSans_500Medium' 
+      color: '#FFFFFF', 
+      fontFamily: 'Inter_500Medium' 
     },
     storyGrid: {
       flexDirection: 'row',
@@ -248,18 +246,18 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
 
-        <View style={styles.streakCard}>
-        <Text style={{ fontSize: 32 }}>🔥</Text>
-          <View style={{ marginLeft: 12, flex: 1 }}>
-            <Text style={styles.streakDays}>7 {t('streakDays', lang)}</Text>
+        <LinearGradient colors={['#D8C08F', '#BE9347']} style={styles.streakCard} start={{x: 0, y: 0}} end={{x: 1, y: 1}}>
+          <Text style={{ fontSize: 42 }}>🔥</Text>
+          <View style={{ marginLeft: 16, flex: 1 }}>
+            <Text style={styles.streakDays}>7 {t('streakDays', lang).toLowerCase()}</Text>
             <Text style={styles.streakLabel}>{t('streakLabel', lang)}</Text>
           </View>
-          <View style={{ flexDirection: 'row', gap: 4 }}>
+          <View style={{ flexDirection: 'row', gap: 6 }}>
             {[0, 1, 2, 3, 4, 5, 6].map(i => (
-              <View key={i} style={[styles.streakDot, { backgroundColor: colors.primary }]} />
+              <View key={i} style={[styles.streakDot, i === 0 ? {width: 24, backgroundColor: isDark ? colors.text : '#fff'} : {backgroundColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.4)'}]} />
             ))}
           </View>
-        </View>
+        </LinearGradient>
 
         <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
           {categoriesLabel}
@@ -272,7 +270,6 @@ const HomeScreen = ({ navigation }) => {
                 style={[styles.catPill, cat === activeFilter ? styles.catPillActive : null, { flexDirection: 'row', alignItems: 'center', gap: 6 }]}
                 onPress={() => setActiveFilter(cat)}
               >
-                <Ionicons name={getCatIcon(cat)} size={14} color={cat === activeFilter ? colors.background : colors.textSecondary} />
                 <Text style={[styles.catPillText, cat === activeFilter ? styles.catPillTextActive : null]}>
                   {t(cat, lang)}
                 </Text>
@@ -305,7 +302,7 @@ const HomeScreen = ({ navigation }) => {
                 {t('noStoriesTitle', lang)}
               </Text>
               <Text style={{
-                fontFamily: 'DMSans_400Regular',
+                fontFamily: 'Inter_400Regular',
                 fontSize: typography.sizes.body,
                 color: colors.textSecondary,
                 textAlign: 'center',

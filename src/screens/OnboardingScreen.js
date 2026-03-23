@@ -93,7 +93,7 @@ const OnboardingScreen = ({ navigation }) => {
       letterSpacing: -0.5,
     },
     headerSkip: {
-      fontFamily: 'DMSans_500Medium',
+      fontFamily: 'Inter_500Medium',
       fontSize: 14,
       color: colors.textSecondary,
     },
@@ -166,7 +166,7 @@ const OnboardingScreen = ({ navigation }) => {
       marginBottom: 20,
     },
     welcomeSubtitle: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 17,
       color: colors.textSecondary,
       textAlign: 'center',
@@ -185,7 +185,7 @@ const OnboardingScreen = ({ navigation }) => {
       letterSpacing: -0.3,
     },
     sectionSubtitle: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 16,
       color: colors.textSecondary,
       lineHeight: 24,
@@ -211,12 +211,12 @@ const OnboardingScreen = ({ navigation }) => {
       backgroundColor: `${colors.primary}18`,
     },
     catTileText: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 14,
       color: colors.text,
     },
     catTileTextSelected: {
-      fontFamily: 'DMSans_500Medium',
+      fontFamily: 'Inter_500Medium',
       color: colors.primary,
     },
     catCheckCircle: {
@@ -228,7 +228,7 @@ const OnboardingScreen = ({ navigation }) => {
       justifyContent: 'center',
     },
     catHint: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 13,
       color: colors.textSecondary,
       textAlign: 'center',
@@ -253,12 +253,12 @@ const OnboardingScreen = ({ navigation }) => {
       marginRight: 16,
     },
     timeTileName: {
-      fontFamily: 'DMSans_500Medium',
+      fontFamily: 'Inter_500Medium',
       fontSize: 15,
       color: colors.text,
     },
     timeTileSub: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 12,
       color: colors.textSecondary,
       marginTop: 2,
@@ -315,7 +315,7 @@ const OnboardingScreen = ({ navigation }) => {
       color: colors.text,
     },
     readyLabel: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 12,
       color: colors.textSecondary,
       marginTop: 4,
@@ -334,7 +334,7 @@ const OnboardingScreen = ({ navigation }) => {
       paddingVertical: 6,
     },
     selCatText: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 13,
       color: colors.text,
     },
@@ -385,7 +385,7 @@ const OnboardingScreen = ({ navigation }) => {
       elevation: 4,
     },
     btnPrimaryText: {
-      fontFamily: 'DMSans_500Medium',
+      fontFamily: 'Inter_500Medium',
       fontSize: 17,
       color: colors.onPrimary,
       letterSpacing: 0.3,

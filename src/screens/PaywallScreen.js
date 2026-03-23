@@ -46,7 +46,7 @@ const PaywallScreen = ({ navigation }) => {
       lineHeight: 34 
     },
     paywallSub: { 
-      fontFamily: 'DMSans_400Regular', 
+      fontFamily: 'Inter_400Regular', 
       fontSize: typography.sizes.body - 1, 
       color: colors.textSecondary, 
       textAlign: 'center', 
@@ -74,12 +74,12 @@ const PaywallScreen = ({ navigation }) => {
       marginBottom: 8 
     },
     popularText: { 
-      fontFamily: 'DMSans_500Medium', 
+      fontFamily: 'Inter_500Medium', 
       fontSize: typography.sizes.badge, 
       color: '#FFFFFF' 
     },
     planName: { 
-      fontFamily: 'DMSans_400Regular', 
+      fontFamily: 'Inter_400Regular', 
       fontSize: typography.sizes.ui, 
       color: colors.text, 
       marginBottom: 4 
@@ -90,12 +90,12 @@ const PaywallScreen = ({ navigation }) => {
       color: colors.text 
     },
     planPer: { 
-      fontFamily: 'DMSans_400Regular', 
+      fontFamily: 'Inter_400Regular', 
       fontSize: typography.sizes.badge, 
       color: colors.textSecondary 
     },
     planSave: { 
-      fontFamily: 'DMSans_500Medium', 
+      fontFamily: 'Inter_500Medium', 
       fontSize: typography.sizes.badge, 
       color: colors.success, 
       marginTop: 4 
@@ -119,7 +119,7 @@ const PaywallScreen = ({ navigation }) => {
       justifyContent: 'center' 
     },
     featText: { 
-      fontFamily: 'DMSans_400Regular', 
+      fontFamily: 'Inter_400Regular', 
       fontSize: typography.sizes.body - 1, 
       color: colors.text, 
       flex: 1 
@@ -132,7 +132,7 @@ const PaywallScreen = ({ navigation }) => {
       alignItems: 'center' 
     },
     btnPrimaryText: { 
-      fontFamily: 'DMSans_500Medium', 
+      fontFamily: 'Inter_500Medium', 
       color: colors.text, 
       fontSize: typography.sizes.ui + 1 
     },
@@ -163,7 +163,7 @@ const PaywallScreen = ({ navigation }) => {
                 </View>
               )}
               {!p.popular && <View style={{ height: 22 }} />}
-              <Text style={[styles.planName, plan === i && { fontFamily: 'DMSans_500Medium' }]}>{p.name}</Text>
+              <Text style={[styles.planName, plan === i && { fontFamily: 'Inter_500Medium' }]}>{p.name}</Text>
               <Text style={styles.planPrice}>{p.price}</Text>
               <Text style={styles.planPer}>{p.per}</Text>
               {p.save && <Text style={styles.planSave}>{p.save}</Text>}
@@ -186,7 +186,7 @@ const PaywallScreen = ({ navigation }) => {
           <Text style={styles.btnPrimaryText}>{t('subscribe', lang)}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={{ marginTop: 12, alignItems: 'center' }}>
-          <Text style={{ fontSize: 12, color: colors.textSecondary, fontFamily: 'DMSans_400Regular' }}>{t('restore', lang)}</Text>
+          <Text style={{ fontSize: 12, color: colors.textSecondary, fontFamily: 'Inter_400Regular' }}>{t('restore', lang)}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>

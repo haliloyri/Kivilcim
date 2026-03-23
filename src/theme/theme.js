@@ -1,18 +1,19 @@
 export const colors = {
   // Light: "The Digital Hearth" – warm editorial palette from FirstSteps/DESIGN.md
   light: {
-    background: '#fcf9f4',              // "Paper" – warm breathable base
-    backgroundDark: '#f6f3ee',           // surface-container-low – subtle section shift
+    background: '#F9F6F1',              // Off-white / Hafif kemik rengi
+    backgroundDark: '#F2EFE8',          // Slightly darker for contrasts
     surfaceContainerLowest: '#ffffff',   // lifted card surface
-    surfaceContainerHigh: '#ebe8e3',     // deeper container surface
-    text: '#1c1c19',                     // "Deep Anthracite" – never pure black
-    textSecondary: '#594238',            // on-surface-variant – warm muted brown
-    primary: '#9e3d00',                  // "The Spark" – deep sophisticated orange
-    primaryContainer: '#c64f00',         // primary container – CTA gradient end
-    onPrimary: '#ffffff',                // white text on dark primary buttons
+    surfaceContainerHigh: '#EBE6DC',     // deeper container surface
+    text: '#1A1A1A',                     // Koyu antrasit
+    textSecondary: '#9E9E9E',            // Kategori etiketleri orta gri
+    primary: '#C5A059',                  // Altın/Toprak tonları vurgu
+    primaryContainer: '#D4AF37',         // Vurgu
+    onPrimary: '#ffffff',                // white text
     danger: '#ba1a1a',                   // error red
     success: '#2C4A2E',                  // forest green
-    border: '#e0c0b2',                   // outline-variant – Ghost Border (use at 20% opacity)
+    border: '#E8E3DA',                   // Subtle card border
+    activeNav: '#704214',                // Aktif Navigasyon - Koyu Kahve/Sepya
   },
   // Dark: "The Nocturnal Bibliophile" – the primary palette from DESIGN.md
   dark: {
@@ -33,7 +34,7 @@ export const typography = {
   fonts: {
     heading: 'PlayfairDisplay',
     headingItalic: 'PlayfairDisplay-Italic',
-    body: 'DMSans',
+    body: 'Inter',
   },
   sizes: {
     badge: 10,

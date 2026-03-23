@@ -225,7 +225,7 @@ export const translations = {
     goodMorning: 'Günaydın',
     goodAfternoon: 'Tünaydın',
     goodEvening: 'İyi akşamlar',
-    brandText: 'Kıvılcım ✦',
+    brandText: 'Spark ✦',
     categoriesLabel: 'Kategoriler',
     todayLabel: 'Bugünkü hikayeler',
     noStoriesTitle: 'Henüz hikaye yok',

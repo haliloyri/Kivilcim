@@ -38,23 +38,27 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
 
   const styles = StyleSheet.create({
     card: {
-      backgroundColor: colors.background,
+      backgroundColor: colors.backgroundDark,
       borderRadius: layout.radius.card,
-      borderWidth: layout.borderWidth,
-      borderColor: colors.border,
-      padding: isCompact ? 16 : 20,
-      marginBottom: isCompact ? 0 : 16,
-      width: isCompact ? (width - (layout.padding.horizontal * 2) - 12) / 2 : '100%',
+      borderWidth: 1,
+      borderColor: '#E8E3DA',
+      padding: isCompact ? 16 : 24,
+      marginBottom: isCompact ? 0 : 20,
+      width: isCompact ? (width - (layout.padding.horizontal * 2) - 16) / 2 : '100%',
       justifyContent: 'space-between',
-      minHeight: isHero ? 200 : isCompact ? 160 : 140,
+      minHeight: isHero ? 220 : isCompact ? 160 : 140,
+      shadowColor: '#1A1A1A',
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.05,
+      shadowRadius: 8,
+      elevation: 2,
     },
     heroCard: {
-      backgroundColor: colors.backgroundDark,
-      borderWidth: 1.5,
-      borderColor: colors.primary,
+      backgroundColor: '#EBE6DC',
+      borderWidth: 0,
     },
     lockedCard: {
-      opacity: 0.7,
+      opacity: 0.6,
       backgroundColor: colors.backgroundDark,
     },
     readCard: {
@@ -68,37 +72,37 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     badge: {
       paddingHorizontal: 8,
-      paddingVertical: 3,
-      borderRadius: 8,
-      backgroundColor: colors.backgroundDark,
-      borderWidth: layout.borderWidth,
-      borderColor: colors.border,
+      paddingVertical: 4,
+      borderRadius: 6,
+      backgroundColor: '#E8E3DA',
+      borderWidth: 0,
       flexDirection: 'row',
       alignItems: 'center',
       gap: 4,
       flexShrink: 1,
     },
     badgeText: {
-      fontFamily: 'DMSans_500Medium',
+      fontFamily: 'Inter_500Medium',
       fontSize: 10,
-      color: colors.textSecondary,
-      letterSpacing: 1,
+      color: '#704214',
+      letterSpacing: 0.5,
       textTransform: 'uppercase',
       flexShrink: 1,
     },
     cardTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 18,
+      fontFamily: 'PlayfairDisplay_600SemiBold',
+      fontSize: 20,
       color: colors.text,
-      lineHeight: 24,
+      lineHeight: 26,
     },
     cardTitleHero: {
-      fontSize: 24,
-      lineHeight: 30,
+      fontSize: 26,
+      lineHeight: 32,
     },
     cardTitleCompact: {
-      fontSize: 15,
-      lineHeight: 20,
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 18,
+      lineHeight: 24,
     },
     cardFooter: {
       flexDirection: 'row',
@@ -107,8 +111,8 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       marginTop: 16,
     },
     cardMeta: {
-      fontFamily: 'DMSans_400Regular',
-      fontSize: 11,
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
       color: colors.textSecondary,
     },
     cardArrow: {
@@ -142,9 +146,11 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       <View>
         <View style={styles.cardHeader}>
           {!hideCategory && (
-            <View style={styles.badge}>
-              <Ionicons name={getCatIcon(story.cat)} size={10} color={colors.textSecondary} />
-              <Text style={styles.badgeText} numberOfLines={1}>{displayCat}</Text>
+            <View style={isHero ? { marginBottom: -8 } : styles.badge}>
+              {!isHero && <Ionicons name={getCatIcon(story.cat)} size={10} color={'#704214'} />}
+              <Text style={isHero ? [styles.badgeText, { color: '#5C5C5C', fontSize: 13, textTransform: 'none', fontFamily: 'Inter_400Regular' }] : styles.badgeText} numberOfLines={1}>
+                {isHero ? 'Daily Insight' : displayCat}
+              </Text>
             </View>
           )}
           <View style={{ flexDirection: 'row', gap: 6, alignItems: 'center', flexShrink: 0 }}>

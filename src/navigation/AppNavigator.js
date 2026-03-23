@@ -41,7 +41,7 @@ function MainTabs() {
         tabBarActiveTintColor: isDark ? '#FFB783' : '#9e3d00',
         tabBarInactiveTintColor: isDark ? '#A89A84' : '#594238',
         tabBarLabelStyle: {
-          fontFamily: 'DMSans_500Medium',
+          fontFamily: 'Inter_500Medium',
           fontSize: typography.sizes.badge,
         },
       }}

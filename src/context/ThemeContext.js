@@ -8,14 +8,26 @@ const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const systemColorScheme = useColorScheme();
   const [themeMode, setThemeMode] = useState('light');
-  // Language support (tr | en). Default to Turkish but persist across restarts.
-  const [lang, setLangState] = useState('tr');
+  // Determine default language from device locale using Intl
+  const getDeviceLang = () => {
+    try {
+      const locale = Intl.DateTimeFormat().resolvedOptions().locale || '';
+      const prefix = locale.substring(0, 2).toLowerCase();
+      if (['tr', 'es', 'de'].includes(prefix)) return prefix;
+      return 'en';
+    } catch {
+      return 'en';
+    }
+  };
+
+  const [lang, setLangState] = useState(getDeviceLang());
+  
   // Load saved language on mount
   React.useEffect(() => {
     (async () => {
       try {
         const saved = await AsyncStorage.getItem('lang');
-        if (saved === 'tr' || saved === 'en') {
+        if (['tr', 'en', 'es', 'de'].includes(saved)) {
           setLangState(saved);
         }
       } catch (e) {

@@ -75,7 +75,7 @@ const ProgressScreen = ({ navigation }) => {
       marginBottom: 12,
     },
     sectionLabel: { 
-      fontFamily: 'DMSans_500Medium', 
+      fontFamily: 'Inter_500Medium', 
       fontSize: typography.sizes.badge, 
       color: colors.textSecondary, 
       letterSpacing: typography.spacing.badgeLetterSpacing, 
@@ -107,7 +107,7 @@ const ProgressScreen = ({ navigation }) => {
       marginTop: 16,
     },
     heatmapLegendText: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 10,
       color: colors.textSecondary,
     },
@@ -143,7 +143,7 @@ const ProgressScreen = ({ navigation }) => {
       color: colors.text,
     },
     badgeItemSub: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 12,
       color: colors.textSecondary,
     },
@@ -166,7 +166,7 @@ const ProgressScreen = ({ navigation }) => {
       color: colors.text,
     },
     statLabel: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 11,
       color: colors.textSecondary,
       textTransform: 'uppercase',
@@ -196,7 +196,7 @@ const ProgressScreen = ({ navigation }) => {
       marginBottom: 8,
     },
     congratsSub: {
-      fontFamily: 'DMSans_400Regular',
+      fontFamily: 'Inter_400Regular',
       fontSize: 16,
       color: colors.textSecondary,
     },
@@ -242,7 +242,7 @@ const ProgressScreen = ({ navigation }) => {
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionLabel}>{t('achievementBadges', lang)}</Text>
           <TouchableOpacity onPress={triggerCelebration}>
-            <Text style={{ fontSize: 11, color: colors.primary, fontFamily: 'DMSans_500Medium' }}>{t('testBtn', lang)}</Text>
+            <Text style={{ fontSize: 11, color: colors.primary, fontFamily: 'Inter_500Medium' }}>{t('testBtn', lang)}</Text>
           </TouchableOpacity>
         </View>
         

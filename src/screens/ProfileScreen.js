@@ -9,6 +9,7 @@ import { useTheme } from '../context/ThemeContext';
 import { getSelectedCategories, setSelectedCategories, toggleSelectedCategory } from '../db/db';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
+import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
 
 Notifications.setNotificationHandler({
@@ -56,121 +57,30 @@ const ProfileScreen = ({ navigation }) => {
   };
 
   const styles = StyleSheet.create({
-    safe: { 
-      flex: 1, 
-      backgroundColor: colors.background, 
-      paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 
-    },
-    header: { 
-      paddingHorizontal: layout.padding.horizontal, 
-      paddingVertical: 24,
-      alignItems: 'center',
-    },
+    safe: { flex: 1, backgroundColor: colors.background, paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 },
+    header: { paddingHorizontal: layout.padding.horizontal, paddingTop: 32, paddingBottom: 24, alignItems: 'center' },
     avatar: { 
-      width: 80, 
-      height: 80, 
-      borderRadius: 40, 
-      backgroundColor: colors.backgroundDark, 
-      borderWidth: 2, 
-      borderColor: colors.primary, 
-      alignItems: 'center', 
-      justifyContent: 'center',
-      marginBottom: 16,
+      width: 88, height: 88, borderRadius: 44, 
+      backgroundColor: '#F9F6F1', borderWidth: 2, borderColor: '#D4AF37', 
+      alignItems: 'center', justifyContent: 'center', marginBottom: 16,
+      shadowColor: '#C5A059', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.1, shadowRadius: 8, elevation: 3 
     },
-    avatarText: { 
-      fontFamily: 'PlayfairDisplay_700Bold', 
-      fontSize: 32, 
-      color: colors.textSecondary 
-    },
-    userName: { 
-      fontFamily: 'PlayfairDisplay_700Bold', 
-      fontSize: 24, 
-      color: colors.text 
-    },
-    userEmail: { 
-      fontFamily: 'DMSans_400Regular', 
-      fontSize: 14, 
-      color: colors.textSecondary,
-      marginTop: 4,
-    },
-    premiumBadge: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: colors.primary,
-      paddingHorizontal: 12,
-      paddingVertical: 6,
-      borderRadius: 20,
-      marginTop: 16,
-    },
-    premiumText: {
-      fontFamily: 'DMSans_500Medium',
-      fontSize: 12,
-      color: colors.background,
-    },
-    section: {
-      marginTop: 32,
-      paddingHorizontal: layout.padding.horizontal,
-    },
-    sectionTitle: {
-      fontFamily: 'DMSans_500Medium',
-      fontSize: typography.sizes.badge,
-      color: colors.textSecondary,
-      letterSpacing: 1,
-      textTransform: 'uppercase',
-      marginBottom: 16,
-    },
-    menuItem: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      paddingVertical: 16,
-      borderBottomWidth: layout.borderWidth,
-      borderBottomColor: colors.border,
-    },
-    menuItemLeft: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 12,
-    },
-    menuItemIcon: {
-      fontSize: 18,
-    },
-    menuItemText: {
-      fontFamily: 'DMSans_400Regular', 
-      fontSize: 16,
-      color: colors.text,
-    },
-    // Categories UI styles
-    categoriesSection: {
-      marginTop: 16,
-    },
-    categoriesRow: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 8,
-    },
-    categoryPill: {
-      paddingHorizontal: 12,
-      paddingVertical: 6,
-      borderRadius: 14,
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.background,
-    },
-    categoryPillText: {
-      fontFamily: 'DMSans_400Regular',
-      fontSize: 12,
-      color: colors.text,
-    },
-    categoryPillActive: {
-      backgroundColor: colors.text,
-    },
-    categoryPillActiveText: {
-      color: colors.background,
-    },
-    // profile category section styles (reintroduced)
-    profileCategoriesSection: { marginTop: 12, paddingHorizontal: layout.padding.horizontal },
-    profileCategoriesRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+    avatarText: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 32, color: '#594238' },
+    userName: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 28, color: colors.text },
+    userEmail: { fontFamily: 'Inter_400Regular', fontSize: 14, color: '#9A8B7A', marginTop: 4 },
+    premiumBadge: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#5A9CA0', paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20, marginTop: 16 },
+    premiumText: { fontFamily: 'Inter_500Medium', fontSize: 13, color: '#FFFFFF', marginLeft: 6 },
+    section: { marginTop: 32, paddingHorizontal: layout.padding.horizontal },
+    sectionTitle: { fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 16 },
+    menuItem: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 18, borderBottomWidth: 1, borderBottomColor: colors.border },
+    menuItemLeft: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+    menuItemText: { fontFamily: 'Inter_400Regular', fontSize: 16, color: colors.text },
+    profileCategoriesSection: { marginTop: 16, paddingHorizontal: layout.padding.horizontal },
+    profileCategoriesRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
+    categoryPill: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: 20, borderWidth: 1, borderColor: '#DED5C4', backgroundColor: 'transparent' },
+    categoryPillText: { fontFamily: 'Inter_400Regular', fontSize: 13, color: '#594238' },
+    categoryPillActive: { backgroundColor: '#E6DEC8', borderColor: '#E6DEC8' },
+    categoryPillActiveText: { color: '#1A1A1A', fontFamily: 'Inter_500Medium' },
   });
 
   return (
@@ -186,10 +96,11 @@ const ProfileScreen = ({ navigation }) => {
           <Text style={styles.userEmail}>asaf@example.com</Text>
           
           <TouchableOpacity 
-            style={[styles.premiumBadge, isPremium && { backgroundColor: '#10B981' }]} 
+            style={styles.premiumBadge} 
             onPress={() => !isPremium && navigation.navigate('Paywall')}
             disabled={isPremium}
           >
+            <Ionicons name="sparkles" size={14} color="#FFFFFF" />
             <Text style={styles.premiumText}>
               {isPremium ? t('premiumMember', lang) : t('upgradePremium', lang)}
             </Text>
@@ -218,30 +129,31 @@ const ProfileScreen = ({ navigation }) => {
           
           <View style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuItemIcon}>{isDark ? '🌙' : '☀️'}</Text>
+              <Ionicons name="sunny-outline" size={24} color={colors.textSecondary} />
               <Text style={styles.menuItemText}>{t('darkMode', lang)}</Text>
             </View>
-            <Switch 
-              value={isDark} 
-              onValueChange={toggleTheme}
-              trackColor={{ false: colors.border, true: colors.primary }}
-              thumbColor={Platform.OS === 'ios' ? '#FFFFFF' : isDark ? colors.primary : '#f4f3f4'}
-            />
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+              <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary }}>iOS</Text>
+              <Switch 
+                value={isDark} 
+                onValueChange={toggleTheme}
+                trackColor={{ false: colors.border, true: colors.primary }}
+                thumbColor={Platform.OS === 'ios' ? '#FFFFFF' : isDark ? colors.primary : '#f4f3f4'}
+              />
+            </View>
           </View>
-
-          {/* Kategoriler kaldırıldı. Profil sayfasında kategori seçim UI kaldırıldı. */}
 
           <TouchableOpacity style={styles.menuItem} onPress={scheduleTestNotification}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuItemIcon}>🔔</Text>
+              <Ionicons name="notifications-outline" size={24} color={colors.textSecondary} />
               <Text style={styles.menuItemText}>{t('notifyTest', lang)}</Text>
             </View>
-            <Text style={{ color: colors.primary, fontFamily: 'DMSans_500Medium' }}>{t('test', lang)}</Text>
+            <Text style={{ color: '#B55310', fontFamily: 'Inter_500Medium', letterSpacing: 0.5, fontSize: 13 }}>{t('test', lang).toUpperCase()}</Text>
           </TouchableOpacity>
 
           <View style={[styles.menuItem, { flexDirection: 'column', alignItems: 'flex-start', borderBottomWidth: 0 }]}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuItemIcon}>🌐</Text>
+              <Ionicons name="globe-outline" size={24} color={colors.textSecondary} />
               <Text style={styles.menuItemText}>{t('languageLabel', lang)}</Text>
             </View>
             <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
@@ -277,22 +189,25 @@ const ProfileScreen = ({ navigation }) => {
           
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuItemIcon}>👤</Text>
+              <Ionicons name="person-outline" size={24} color={colors.textSecondary} />
               <Text style={styles.menuItemText}>{t('editInfo', lang)}</Text>
             </View>
+            <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuItemIcon}>🛡️</Text>
+              <Ionicons name="shield-outline" size={24} color={colors.textSecondary} />
               <Text style={styles.menuItemText}>{t('privacy', lang)}</Text>
             </View>
+            <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
 
           <TouchableOpacity style={[styles.menuItem, { borderBottomWidth: 0 }]} onPress={handleLogout}>
             <View style={styles.menuItemLeft}>
-              <Text style={[styles.menuItemText, { color: colors.danger }]}>{t('logout', lang)}</Text>
+              <Text style={[styles.menuItemText, { color: '#BA1A1A' }]}>{t('logout', lang)}</Text>
             </View>
+
           </TouchableOpacity>
         </View>
       </ScrollView>
