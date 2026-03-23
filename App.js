@@ -7,6 +7,9 @@ import { ActivityIndicator } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { t } from './src/locales/i18n';
+import { setupNotificationHandler, scheduleDailyNotifications } from './src/utils/notifications';
+
+setupNotificationHandler();
 
 // Fontlar
 import {
@@ -94,6 +97,7 @@ function Main() {
       } catch (e) {}
       await initDb();
       await seedData();
+      await scheduleDailyNotifications(savedLang || 'tr');
     };
     startup().catch(e => console.error('App.js startup error:', e));
   }, []);

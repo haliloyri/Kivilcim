@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Dimensions 
+  StatusBar, Platform, Dimensions, Animated 
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -28,14 +28,48 @@ const SkeletonCard = ({ colors, layout, isHero }) => (
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
   const { isPremium, history } = useUserData();
-  const { stories, storiesLoading, categories, errorMsg } = useStories();
+  const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('Tümü');
+  const [visibleCount, setVisibleCount] = useState(11);
+  const [isFetchingMore, setIsFetchingMore] = useState(false);
+  const isFetchingRef = useRef(false);  // ref to avoid stale closure
+  const visibleCountRef = useRef(11);   // ref to read latest value in callbacks
+  const flipAnim = useRef(new Animated.Value(0)).current;
 
-  // Visible categories: Tümü + currently selected categories from preferences
-  const visibleCategories = React.useMemo(() => {
-    return ['Tümü', ...(selectedCategories || [])];
-  }, [selectedCategories]);
+  useEffect(() => {
+    if (isFetchingMore) {
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(flipAnim, { toValue: 1, duration: 300, useNativeDriver: true }),
+          Animated.timing(flipAnim, { toValue: 0, duration: 300, useNativeDriver: true })
+        ])
+      ).start();
+    } else {
+      flipAnim.stopAnimation();
+      flipAnim.setValue(0);
+    }
+  }, [isFetchingMore]);
+
+  const spin = flipAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '180deg']
+  });
+
+  // Visible categories: Tümü + User Selected Categories
+  const visibleCategoriesList = React.useMemo(() => {
+    let filteredParents = parentCategories;
+    if (selectedCategories && selectedCategories.length > 0) {
+      filteredParents = parentCategories.filter(p => selectedCategories.includes(p.name));
+    }
+    return ['Tümü', ...filteredParents.map(p => p.name)];
+  }, [parentCategories, selectedCategories]);
+
+  useEffect(() => {
+    if (activeFilter !== 'Tümü' && !visibleCategoriesList.includes(activeFilter)) {
+      setActiveFilter('Tümü');
+    }
+  }, [visibleCategoriesList, activeFilter]);
 
   // Language strings
   const greeting = getGreeting(lang);
@@ -45,6 +79,23 @@ const HomeScreen = ({ navigation }) => {
   const todayLabel = t('todayLabel', lang);
 
   const checkIfRead = (id) => history.includes(id);
+
+  const handleLoadMore = (nativeEvent) => {
+    const paddingToBottom = 200;
+    const { layoutMeasurement, contentOffset, contentSize } = nativeEvent;
+    const isCloseToBottom = layoutMeasurement.height + contentOffset.y >= contentSize.height - paddingToBottom;
+    if (isCloseToBottom && !isFetchingRef.current && visibleCountRef.current < sortedStories.length) {
+      isFetchingRef.current = true;
+      setIsFetchingMore(true);
+      setTimeout(() => {
+        const next = visibleCountRef.current + 10;
+        visibleCountRef.current = next;
+        setVisibleCount(next);
+        isFetchingRef.current = false;
+        setIsFetchingMore(false);
+      }, 1000);
+    }
+  };
 
   useEffect(() => {
     if (!storiesLoading) {
@@ -72,48 +123,50 @@ const HomeScreen = ({ navigation }) => {
   // 1. Yayın tarihi geçmiş veya bugün olanları filtrele
   const publishedStories = (stories || []).filter(s => s.publishDate <= todayStr);
 
-  // 2. Preferences Filter: Sadece takip edilen kategorileri gösteririz.
-  //    Eğer seçili kategorilerle eşleşen hikaye yoksa (veri değişikliği sonrası), tümünü göster.
+  // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri gösteririz.
   let prefFiltered = publishedStories;
   if (selectedCategories && selectedCategories.length > 0) {
-    const matched = publishedStories.filter(s => selectedCategories.includes(s.cat));
-    if (matched.length > 0) {
-      prefFiltered = matched;
-    }
+    prefFiltered = publishedStories.filter(s => selectedCategories.includes(s.parent_cat));
+    // If no stories found in selected categories, fallback to all published
+    if (prefFiltered.length === 0) prefFiltered = publishedStories;
   }
 
-  // 2b. UI Filter: Ekranda tıklanan kategoriye göre filtreleme
+  // 3. UI Filter: Ekranda tıklanan ebeveyn kategoriye göre filtreleme
   const categoryFiltered = activeFilter === 'Tümü'
     ? prefFiltered
-    : prefFiltered.filter(s => s.cat === activeFilter);
+    : prefFiltered.filter(s => s.parent_cat === activeFilter);
 
-  // 3. Sıralama: Önce okunmayanlar, sonra okunanlar. Kendi içinde tarihe göre (yeni olan önce)
+  // 3. Sıralama
   const sortedStories = [...categoryFiltered].sort((a, b) => {
-    const aRead = checkIfRead(a.story_id);
-    const bRead = checkIfRead(b.story_id);
-    
-    if (aRead !== bRead) {
-      return aRead ? 1 : -1;
+    // Sınırsız üyeler için okunmamış hikayeler (okunmadıysa false, history'de yok) önce gelsin
+    if (isPremium) {
+      const aRead = checkIfRead(a.story_id);
+      const bRead = checkIfRead(b.story_id);
+      if (aRead !== bRead) {
+        return aRead ? 1 : -1; // Okunanları sona at
+      }
     }
-    
-    return (b.publishDate || '').localeCompare(a.publishDate || '');
-  }).slice(0, 10);
+    // Geri kalan durumlar için id büyükten küçüğe sırala (en son eklenen ilk)
+    return parseInt(b.story_id, 10) - parseInt(a.story_id, 10);
+  });
 
-  const free = isPremium ? sortedStories : sortedStories.slice(0, 2);
-  const locked = isPremium ? [] : sortedStories.slice(2);
+  const paginatedStories = sortedStories.slice(0, visibleCount);
+
+  const free = isPremium ? paginatedStories : paginatedStories.slice(0, 2);
+  const locked = isPremium ? [] : paginatedStories.slice(2);
 
   const styles = StyleSheet.create({
     safe: { 
       flex: 1, 
-      backgroundColor: colors.background, 
-      paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 
+      backgroundColor: colors.background
     },
     homeHeader: { 
       flexDirection: 'row', 
       justifyContent: 'space-between', 
       alignItems: 'center', 
       paddingHorizontal: layout.padding.horizontal, 
-      paddingVertical: 16 
+      paddingTop: 32,
+      paddingBottom: 16 
     },
     headerRight: {
       flexDirection: 'row',
@@ -193,7 +246,15 @@ const HomeScreen = ({ navigation }) => {
       borderRadius: 4 
     },
     sectionLabel: { 
-      display: 'none', // Hide section labels for a cleaner look as per mockup
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: '#594238', // Inactive bottom menu color
+      letterSpacing: 1,
+      textTransform: 'uppercase',
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 32,
+      marginBottom: 16,
+      display: 'none', // Staying hidden per previous mockup logic, but updating color if shown
     },
     catPill: { 
       paddingHorizontal: 18, 
@@ -204,13 +265,13 @@ const HomeScreen = ({ navigation }) => {
       backgroundColor: 'transparent' 
     },
     catPillActive: { 
-      backgroundColor: colors.activeNav, 
-      borderColor: colors.activeNav 
+      backgroundColor: '#823b18', 
+      borderColor: '#823b18' 
     },
     catPillText: { 
-      fontFamily: 'Inter_400Regular', 
+      fontFamily: 'Inter_600SemiBold', 
       fontSize: 14, 
-      color: colors.textSecondary 
+      color: '#823b18' // Active bottom menu color
     },
     catPillTextActive: { 
       color: '#FFFFFF', 
@@ -225,9 +286,14 @@ const HomeScreen = ({ navigation }) => {
   });
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        showsVerticalScrollIndicator={false}
+        onScroll={({ nativeEvent }) => handleLoadMore(nativeEvent)}
+        onMomentumScrollEnd={({ nativeEvent }) => handleLoadMore(nativeEvent)}
+        scrollEventThrottle={100}
+      >
         <View style={styles.homeHeader}>
           <View>
             <Text style={styles.greetSub}>{greeting}</Text>
@@ -264,17 +330,21 @@ const HomeScreen = ({ navigation }) => {
         </Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 16 }}>
           <View style={{ flexDirection: 'row', gap: 8, paddingHorizontal: layout.padding.horizontal }}>
-            {visibleCategories.map(cat => (
-              <TouchableOpacity
-                key={cat}
-                style={[styles.catPill, cat === activeFilter ? styles.catPillActive : null, { flexDirection: 'row', alignItems: 'center', gap: 6 }]}
-                onPress={() => setActiveFilter(cat)}
-              >
-                <Text style={[styles.catPillText, cat === activeFilter ? styles.catPillTextActive : null]}>
-                  {t(cat, lang)}
-                </Text>
-              </TouchableOpacity>
-            ))}
+            {visibleCategoriesList.map(cat => {
+              const parentInfo = parentCategories.find(p => p.name === cat);
+              return (
+                <TouchableOpacity
+                  key={cat}
+                  style={[styles.catPill, cat === activeFilter ? styles.catPillActive : null, { flexDirection: 'row', alignItems: 'center', gap: 8 }]}
+                  onPress={() => setActiveFilter(cat)}
+                >
+                  {parentInfo && <Ionicons name={getCatIcon(parentInfo.name)} size={14} color={cat === activeFilter ? '#FFF' : '#823b18'} />}
+                  <Text style={[styles.catPillText, cat === activeFilter ? styles.catPillTextActive : null]}>
+                    {t(cat, lang)}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
           </View>
         </ScrollView>
 
@@ -348,6 +418,15 @@ const HomeScreen = ({ navigation }) => {
             </>
           )}
         </View>
+
+        {isFetchingMore && (
+          <View style={{ alignItems: 'center', paddingVertical: 20 }}>
+             <Animated.View style={{ transform: [{ rotateY: spin }] }}>
+               <Ionicons name="book-outline" size={32} color={colors.primary} />
+             </Animated.View>
+          </View>
+        )}
+
         <View style={{ height: 100 }} />
       </ScrollView>
     </SafeAreaView>

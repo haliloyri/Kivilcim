@@ -38,11 +38,13 @@ function MainTabs() {
           paddingBottom: Math.max(insets.bottom, 10),
           paddingTop: 10,
         },
-        tabBarActiveTintColor: isDark ? '#FFB783' : '#9e3d00',
+        tabBarActiveTintColor: '#823b18',
         tabBarInactiveTintColor: isDark ? '#A89A84' : '#594238',
         tabBarLabelStyle: {
-          fontFamily: 'Inter_500Medium',
-          fontSize: typography.sizes.badge,
+          fontFamily: 'Inter_600SemiBold',
+          fontSize: 12,
+          textTransform: 'capitalize',
+          letterSpacing: 0.5,
         },
       }}
     >
@@ -52,7 +54,7 @@ function MainTabs() {
         options={{ 
           tabBarLabel: t('tabHome', lang), 
           tabBarIcon: ({ color, focused, size }) => (
-            <Ionicons name={focused ? 'compass' : 'compass-outline'} size={22} color={color} />
+            <Ionicons name={focused ? 'compass' : 'compass-outline'} size={26} color={color} />
           ),
         }}
       />
@@ -62,7 +64,7 @@ function MainTabs() {
         options={{ 
           tabBarLabel: t('tabLibrary', lang), 
           tabBarIcon: ({ color, focused, size }) => (
-            <Ionicons name={focused ? 'book' : 'book-outline'} size={22} color={color} />
+            <Ionicons name={focused ? 'book' : 'book-outline'} size={26} color={color} />
           ),
         }}
       />
@@ -72,7 +74,7 @@ function MainTabs() {
         options={{ 
           tabBarLabel: t('tabProgress', lang), 
           tabBarIcon: ({ color, focused, size }) => (
-            <Ionicons name={focused ? 'trending-up' : 'trending-up-outline'} size={22} color={color} />
+            <Ionicons name={focused ? 'trending-up' : 'trending-up-outline'} size={26} color={color} />
           ),
         }}
       />
@@ -82,7 +84,7 @@ function MainTabs() {
         options={{ 
           tabBarLabel: t('tabProfile', lang), 
           tabBarIcon: ({ color, focused, size }) => (
-            <Ionicons name={focused ? 'person' : 'person-outline'} size={22} color={color} />
+            <Ionicons name={focused ? 'person' : 'person-outline'} size={26} color={color} />
           ),
         }}
       />

@@ -54,16 +54,16 @@ const ProgressScreen = ({ navigation }) => {
   const styles = StyleSheet.create({
     safe: { 
       flex: 1, 
-      backgroundColor: colors.background, 
-      paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 
+      backgroundColor: colors.background
     },
     homeHeader: { 
       paddingHorizontal: layout.padding.horizontal, 
-      paddingVertical: 16 
+      paddingTop: 32,
+      paddingBottom: 16 
     },
     greetName: { 
       fontFamily: 'PlayfairDisplay_700Bold', 
-      fontSize: typography.sizes.headingSmall, 
+      fontSize: 32, 
       color: colors.text 
     },
     sectionHeader: {
@@ -76,9 +76,9 @@ const ProgressScreen = ({ navigation }) => {
     },
     sectionLabel: { 
       fontFamily: 'Inter_500Medium', 
-      fontSize: typography.sizes.badge, 
-      color: colors.textSecondary, 
-      letterSpacing: typography.spacing.badgeLetterSpacing, 
+      fontSize: 11, 
+      color: '#594238', 
+      letterSpacing: 1, 
       textTransform: 'uppercase' 
     },
     heatmapCard: {
@@ -203,7 +203,7 @@ const ProgressScreen = ({ navigation }) => {
   });
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
       
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>

@@ -10,24 +10,17 @@ import { getSelectedCategories, setSelectedCategories, toggleSelectedCategory } 
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { Ionicons } from '@expo/vector-icons';
+import { getCatIcon } from '../components/StoryCard';
 import { t } from '../locales/i18n';
 
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldShowBanner: true,
-    shouldShowList: true,
-    shouldPlaySound: true,
-    shouldSetBadge: false,
-  }),
-});
+
 
 const ProfileScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, toggleTheme, lang, setLang, selectedCategories, toggleSelectedCategory } = useTheme();
   // Global t() function is now used directly from i18n.js
-  const { categories } = useStories();
-  const PROFILE_CATEGORIES = categories;
+  const { categories, parentCategories } = useStories();
   const { clearUserData, isPremium } = useUserData();
+  const testNotifIndex = React.useRef(0);
 
   const handleLogout = async () => {
     await clearUserData();
@@ -46,18 +39,23 @@ const ProfileScreen = ({ navigation }) => {
       return;
     }
 
+    const testMessages = ['notif_8', 'notif_13', 'notif_16', 'notif_21'];
+    const messageKey = testMessages[testNotifIndex.current];
+    
     await Notifications.scheduleNotificationAsync({
       content: {
         title: t('brandText', lang),
-        body: t('notif_body', lang),
+        body: t(messageKey, lang),
         data: { data: 'test data' },
       },
       trigger: null, // immediate
     });
+
+    testNotifIndex.current = (testNotifIndex.current + 1) % testMessages.length;
   };
 
   const styles = StyleSheet.create({
-    safe: { flex: 1, backgroundColor: colors.background, paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 },
+    safe: { flex: 1, backgroundColor: colors.background },
     header: { paddingHorizontal: layout.padding.horizontal, paddingTop: 32, paddingBottom: 24, alignItems: 'center' },
     avatar: { 
       width: 88, height: 88, borderRadius: 44, 
@@ -66,12 +64,19 @@ const ProfileScreen = ({ navigation }) => {
       shadowColor: '#C5A059', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.1, shadowRadius: 8, elevation: 3 
     },
     avatarText: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 32, color: '#594238' },
-    userName: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 28, color: colors.text },
+    userName: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 32, color: colors.text },
     userEmail: { fontFamily: 'Inter_400Regular', fontSize: 14, color: '#9A8B7A', marginTop: 4 },
     premiumBadge: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#5A9CA0', paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20, marginTop: 16 },
     premiumText: { fontFamily: 'Inter_500Medium', fontSize: 13, color: '#FFFFFF', marginLeft: 6 },
     section: { marginTop: 32, paddingHorizontal: layout.padding.horizontal },
-    sectionTitle: { fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 16 },
+    sectionTitle: { 
+      fontFamily: 'Inter_500Medium', 
+      fontSize: 11, 
+      color: '#594238', 
+      letterSpacing: 1, 
+      textTransform: 'uppercase', 
+      marginBottom: 16 
+    },
     menuItem: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 18, borderBottomWidth: 1, borderBottomColor: colors.border },
     menuItemLeft: { flexDirection: 'row', alignItems: 'center', gap: 12 },
     menuItemText: { fontFamily: 'Inter_400Regular', fontSize: 16, color: colors.text },
@@ -84,7 +89,7 @@ const ProfileScreen = ({ navigation }) => {
   });
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
       
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
@@ -110,11 +115,13 @@ const ProfileScreen = ({ navigation }) => {
         <View style={styles.profileCategoriesSection}>
           <Text style={styles.sectionTitle}>{t('categories', lang)}</Text>
           <View style={styles.profileCategoriesRow}>
-            {PROFILE_CATEGORIES.map((cat) => {
+            {parentCategories.map((p) => {
+              const cat = p.name;
               const isSelected = selectedCategories.includes(cat);
               const onPressCat = () => toggleSelectedCategory(cat);
               return (
-                <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive]}>
+                <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive, { flexDirection: 'row', alignItems: 'center', gap: 6 }]}>
+                  <Ionicons name={getCatIcon(cat)} size={14} color={isSelected ? '#1A1A1A' : colors.textSecondary} />
                   <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>
                     {t(cat, lang)}
                   </Text>

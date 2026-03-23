@@ -16,14 +16,14 @@ const SearchScreen = ({ navigation }) => {
 
   const filtered = query.trim() ? (stories || []).filter(s => 
     (s.title || '').toLowerCase().includes(query.toLowerCase()) || 
-    (t(s.cat_display || s.cat || '', lang) || '').toLowerCase().includes(query.toLowerCase())
+    (t(s.cat_display || s.cat || '', lang) || '').toLowerCase().includes(query.toLowerCase()) ||
+    (t(s.parent_cat || '', lang) || '').toLowerCase().includes(query.toLowerCase())
   ).slice(0, 20) : [];
 
   const styles = StyleSheet.create({
     safe: { 
       flex: 1, 
-      backgroundColor: colors.background, 
-      paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 
+      backgroundColor: colors.background
     },
     header: { 
       paddingHorizontal: layout.padding.horizontal, 
@@ -50,8 +50,8 @@ const SearchScreen = ({ navigation }) => {
     },
     sectionLabel: { 
       fontFamily: 'Inter_500Medium', 
-      fontSize: typography.sizes.badge, 
-      color: colors.textSecondary, 
+      fontSize: 11,
+      color: '#594238', 
       letterSpacing: 1, 
       textTransform: 'uppercase',
       marginHorizontal: layout.padding.horizontal,
@@ -68,7 +68,7 @@ const SearchScreen = ({ navigation }) => {
   });
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
       
       <View style={styles.header}>

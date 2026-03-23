@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
+import { getCategoryImage } from '../utils/categoryImages';
 
 const { width } = Dimensions.get('window');
 
@@ -34,22 +35,24 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   // DB already returns translated content for the active language
   const displayTitle = story.title || '';
   const displaySrc = story.source_book || '';
-  const displayCat = t(story.cat_display || story.cat, lang);
+  // Always use the main category (parent_cat) for display label
+  const rawDisplayCat = t(story.parent_cat || story.cat, lang) || '';
+  const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
 
   const styles = StyleSheet.create({
     card: {
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: isCompact ? '#ffffff' : colors.backgroundDark,
       borderRadius: layout.radius.card,
       borderWidth: 1,
-      borderColor: '#E8E3DA',
+      borderColor: 'rgba(218, 193, 184, 0.2)',
       padding: isCompact ? 16 : 24,
       marginBottom: isCompact ? 0 : 20,
       width: isCompact ? (width - (layout.padding.horizontal * 2) - 16) / 2 : '100%',
       justifyContent: 'space-between',
       minHeight: isHero ? 220 : isCompact ? 160 : 140,
-      shadowColor: '#1A1A1A',
+      shadowColor: '#1c1c19',
       shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.05,
+      shadowOpacity: 0.04,
       shadowRadius: 8,
       elevation: 2,
     },
@@ -74,7 +77,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       paddingHorizontal: 8,
       paddingVertical: 4,
       borderRadius: 6,
-      backgroundColor: '#E8E3DA',
+      backgroundColor: '#fcf9f4',
       borderWidth: 0,
       flexDirection: 'row',
       alignItems: 'center',
@@ -82,11 +85,11 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       flexShrink: 1,
     },
     badgeText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 10,
-      color: '#704214',
+      fontFamily: 'Inter_400Regular',
+      fontSize: 11,
+      color: '#594238', // Fixed to inactive menu color
       letterSpacing: 0.5,
-      textTransform: 'uppercase',
+      textTransform: 'none',
       flexShrink: 1,
     },
     cardTitle: {
@@ -140,47 +143,76 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
         styles.card, 
         isHero && styles.heroCard, 
         locked && styles.lockedCard,
-        isRead && styles.readCard
+        isRead && styles.readCard,
+        isHero && { padding: 0, overflow: 'hidden' } // Overlap hero card padding for image
       ]}
     >
-      <View>
-        <View style={styles.cardHeader}>
-          {!hideCategory && (
-            <View style={isHero ? { marginBottom: -8 } : styles.badge}>
-              {!isHero && <Ionicons name={getCatIcon(story.cat)} size={10} color={'#704214'} />}
-              <Text style={isHero ? [styles.badgeText, { color: '#5C5C5C', fontSize: 13, textTransform: 'none', fontFamily: 'Inter_400Regular' }] : styles.badgeText} numberOfLines={1}>
-                {isHero ? 'Daily Insight' : displayCat}
-              </Text>
-            </View>
-          )}
-          <View style={{ flexDirection: 'row', gap: 6, alignItems: 'center', flexShrink: 0 }}>
-            {isNew && (
-              <View style={[styles.badge, styles.newBadge, { paddingHorizontal: 6 }]}>
-                <Text style={[styles.badgeText, styles.newBadgeText]}>{t('newBadge', lang)}</Text>
+      {isHero && (() => {
+        const catImg = getCategoryImage(story.parent_cat || story.cat);
+        return (
+          <View style={StyleSheet.absoluteFill}>
+            <Image 
+              source={catImg.source} 
+              style={{ 
+                width: '100%', 
+                height: '100%',
+                transform: [
+                  { rotate: catImg.rotate },
+                  { scaleX: catImg.flip ? -1 : 1 }
+                ]
+              }}
+              resizeMode="cover"
+            />
+            <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.2 }]} />
+            <View style={[StyleSheet.absoluteFill, { backgroundColor: 'rgba(235, 230, 220, 0.4)' }]} />
+          </View>
+        );
+      })()}
+      <View style={isHero ? { padding: 24, flex: 1, justifyContent: 'space-between' } : null}>
+        <View>
+          <View style={styles.cardHeader}>
+            {!hideCategory && (
+              <View style={isHero ? { marginBottom: -8 } : styles.badge}>
+                {!isHero && <Ionicons name={getCatIcon(story.cat)} size={10} color={'#594238'} />}
+                <Text style={isHero ? [styles.badgeText, { color: '#333', fontSize: 13, textTransform: 'none', fontFamily: 'Inter_500Medium', backgroundColor: 'rgba(255,255,255,0.7)', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 }] : styles.badgeText} numberOfLines={1}>
+                  {isHero ? displayCat : displayCat}
+                </Text>
               </View>
             )}
-            {isRead && <Ionicons name="checkmark-circle" size={16} color={colors.primary} />}
-            {locked && <Text style={styles.lockIcon}>🔒</Text>}
+            <View style={{ flexDirection: 'row', gap: 6, alignItems: 'center', flexShrink: 0 }}>
+              {isNew && (
+                <View style={[styles.badge, styles.newBadge, { paddingHorizontal: 6 }]}>
+                  <Text style={[styles.badgeText, styles.newBadgeText]}>{t('newBadge', lang)}</Text>
+                </View>
+              )}
+              {isRead && <Ionicons name="checkmark-circle" size={16} color={colors.primary} />}
+              {locked && <Text style={styles.lockIcon}>🔒</Text>}
+            </View>
           </View>
+          <Text 
+            numberOfLines={isHero ? 3 : 2} 
+            style={[
+              styles.cardTitle, 
+              isHero && styles.cardTitleHero,
+              isCompact && styles.cardTitleCompact
+            ]}
+          >
+            {displayTitle}
+          </Text>
         </View>
-        <Text 
-          numberOfLines={isHero ? 3 : 2} 
-          style={[
-            styles.cardTitle, 
-            isHero && styles.cardTitleHero,
-            isCompact && styles.cardTitleCompact
-          ]}
-        >
-          {displayTitle}
-        </Text>
-      </View>
 
-      <View style={styles.cardFooter}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 1, paddingRight: 8 }}>
-          <Ionicons name="time-outline" size={12} color={colors.textSecondary} />
-          <Text style={[styles.cardMeta, { flexShrink: 1 }]} numberOfLines={1}>{story.min} {t('minLabel', lang)} • {displaySrc}</Text>
+        <View style={styles.cardFooter}>
+          <View style={{ flexShrink: 1, paddingRight: 8 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginBottom: isCompact ? 2 : 0 }}>
+              <Ionicons name="time-outline" size={12} color="#594238" />
+              <Text style={[styles.cardMeta, { color: '#594238' }]} numberOfLines={1}>
+                {story.min} {t('minLabel', lang)} {!isCompact && `• ${displaySrc}`}
+              </Text>
+            </View>
+            {/* Book name is hidden on search page / compact card as per request */}
+          </View>
+          {!isCompact && <Text style={[styles.cardArrow, isHero && { color: '#1A1A1A' }]}>→</Text>}
         </View>
-        {!isCompact && <Text style={styles.cardArrow}>→</Text>}
       </View>
     </TouchableOpacity>
   );

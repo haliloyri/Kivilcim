@@ -27,7 +27,7 @@ export const waitForData = () => _dataReadyPromise;
 //  on the next app launch. This deletes the old DB
 //  and copies the fresh one from assets/kivilcim.db.
 // ──────────────────────────────────────────────────────
-const DB_VERSION = 5;
+const DB_VERSION = 10;
 const DB_VERSION_KEY = 'db_version';
 
 const getVersionFilePath = () =>
@@ -52,6 +52,10 @@ const writeStoredVersion = async (v) => {
 // ──────────────────────────────────────────────────────
 //  INIT DB
 // ──────────────────────────────────────────────────────
+const populateCategoryMappings = async (db) => {
+  // Legacy category_mappings discarded. New schema uses categories, subcategories directly via the DB file.
+};
+
 export const initDb = async () => {
   try {
     const dbDir = FileSystem.documentDirectory + 'SQLite';
@@ -151,6 +155,8 @@ export const initDb = async () => {
       );
     `);
 
+    await populateCategoryMappings(db);
+
   } catch (error) {
     console.error('Database initialization error:', error);
   } finally {
@@ -194,18 +200,21 @@ export const getStoriesForLang = async (lang = 'tr') => {
       b.author,
       b.publish_year AS publishDate,
       3 AS min,
-      COALESCE(NULLIF(bt.category_name, ''), bt_tr.category_name, 'Tumu') AS cat,
-      COALESCE(NULLIF(bt.category_name, ''), bt_tr.category_name, 'Tumu') AS cat_display,
+      sub.subcategory_name AS cat,
+      sub.subcategory_name AS cat_display,
       COALESCE(NULLIF(bt.title, ''),         bt_tr.title,         '') AS source_book,
       COALESCE(NULLIF(st.title, ''),         st_tr.title,         '') AS title,
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
-      '' AS lesson,
-      '' AS quote,
-      '' AS reflection,
-      '' AS src
+      COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
+      c.category_name AS parent_cat_raw
     FROM stories s
     LEFT JOIN books b ON b.list_no = s.book_no
+    -- Category Hierarchy
+    LEFT JOIN subcategories sub ON sub.id = b.category_id
+    LEFT JOIN categories c ON c.id = sub.categori_id
+    LEFT JOIN categories_translations ct ON ct.category_id = c.id AND ct.language = ?
+    LEFT JOIN categories_translations ct_tr ON ct_tr.category_id = c.id AND ct_tr.language = 'tr'
     -- Story Translations
     LEFT JOIN story_translations st    ON st.story_id = s.id AND st.lang_code = ?
     LEFT JOIN story_translations st_tr ON st_tr.story_id = s.id AND st_tr.lang_code = 'tr'
@@ -213,7 +222,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
     ORDER BY s.id DESC
-  `, [lang, lang]);
+  `, [lang, lang, lang]);
 
   return rows.map(r => ({
     ...r,
@@ -221,6 +230,49 @@ export const getStoriesForLang = async (lang = 'tr') => {
     title: r.title || '',
     body: r.body || '',
   }));
+};
+
+export const getStoryByLang = async (storyId, lang = 'tr') => {
+  await waitForData();
+  const db = getDb();
+  const r = await db.getFirstAsync(`
+    SELECT
+      s.id,
+      b.id AS source_book_id,
+      b.author,
+      b.publish_year AS publishDate,
+      3 AS min,
+      sub.subcategory_name AS cat,
+      sub.subcategory_name AS cat_display,
+      COALESCE(NULLIF(bt.title, ''),         bt_tr.title,         '') AS source_book,
+      COALESCE(NULLIF(st.title, ''),         st_tr.title,         '') AS title,
+      COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
+      COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
+      COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
+      c.category_name AS parent_cat_raw
+    FROM stories s
+    LEFT JOIN books b ON b.list_no = s.book_no
+    -- Category Hierarchy
+    LEFT JOIN subcategories sub ON sub.id = b.category_id
+    LEFT JOIN categories c ON c.id = sub.categori_id
+    LEFT JOIN categories_translations ct ON ct.category_id = c.id AND ct.language = ?
+    LEFT JOIN categories_translations ct_tr ON ct_tr.category_id = c.id AND ct_tr.language = 'tr'
+    -- Story Translations
+    LEFT JOIN story_translations st    ON st.story_id = s.id AND st.lang_code = ?
+    LEFT JOIN story_translations st_tr ON st_tr.story_id = s.id AND st_tr.lang_code = 'tr'
+    -- Book Translations
+    LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
+    LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
+    WHERE s.id = ?
+  `, [lang, lang, lang, storyId]);
+
+  if (!r) return null;
+  return {
+    ...r,
+    story_id: String(r.id),
+    title: r.title || '',
+    body: r.body || '',
+  }
 };
 
 /**
@@ -231,13 +283,62 @@ export const getCategoriesFromDb = async (lang = 'tr') => {
   const db = getDb();
   const rows = await db.getAllAsync(`
     SELECT DISTINCT
-      COALESCE(NULLIF(bt.category_name, ''), bt_tr.category_name, 'Tumu') AS cat
-    FROM book_translations bt_tr
-    LEFT JOIN book_translations bt ON bt.book_id = bt_tr.book_id AND bt.lang_code = ?
-    WHERE bt_tr.lang_code = 'tr' AND bt_tr.category_name != ''
+      sub.subcategory_name AS cat
+    FROM subcategories sub
+    INNER JOIN books b ON b.category_id = sub.id
     ORDER BY cat
-  `, [lang]);
+  `);
   return rows.map(r => r.cat);
+};
+
+/**
+ * Returns parent categories with their details.
+ */
+export const getParentCategories = async (lang = 'tr') => {
+  await waitForData();
+  const db = getDb();
+  return await db.getAllAsync(`
+    SELECT 
+      c.id,
+      COALESCE(ct.translation, ct_tr.translation, c.category_name) AS name,
+      c.category_name AS raw_name,
+      COUNT(DISTINCT b.id) as count
+    FROM categories c
+    LEFT JOIN categories_translations ct ON ct.category_id = c.id AND ct.language = ?
+    LEFT JOIN categories_translations ct_tr ON ct_tr.category_id = c.id AND ct_tr.language = 'tr'
+    LEFT JOIN subcategories sub ON sub.categori_id = c.id
+    LEFT JOIN books b ON b.category_id = sub.id
+    GROUP BY c.id
+    ORDER BY c.[order] ASC
+  `, [lang]);
+};
+
+/**
+ * Returns all sub-categories belonging to a parent category.
+ */
+export const getSubCategoriesByParent = async (parentCatId) => {
+  await waitForData();
+  const db = getDb();
+  const rows = await db.getAllAsync(
+    'SELECT subcategory_name FROM subcategories WHERE categori_id = ?',
+    [parentCatId]
+  );
+  return rows.map(r => r.subcategory_name);
+};
+
+/**
+ * Returns the parent category for a given sub-category.
+ */
+export const getParentForSubCategory = async (subName) => {
+  await waitForData();
+  const db = getDb();
+  const row = await db.getFirstAsync(`
+    SELECT c.category_name AS parent_category
+    FROM subcategories sub
+    JOIN categories c ON c.id = sub.categori_id
+    WHERE sub.subcategory_name = ?
+  `, [subName]);
+  return row ? row.parent_category : null;
 };
 
 /**
@@ -254,8 +355,9 @@ export const getBookForLang = async (bookId, lang = 'tr') => {
       COALESCE(NULLIF(bt.title, ''),         bt_tr.title,  '')  AS title,
       COALESCE(NULLIF(b.author, ''),         '')               AS author,
       COALESCE(NULLIF(st_desc.description, ''), '')            AS summary,
-      COALESCE(NULLIF(bt.category_name, ''), bt_tr.category_name, '') AS category
+      sub.subcategory_name AS category
     FROM books b
+    LEFT JOIN subcategories sub ON sub.id = b.category_id
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
     LEFT JOIN story_translations st_desc ON st_desc.story_id = (SELECT id FROM stories WHERE book_no = b.list_no LIMIT 1) AND st_desc.lang_code = ?

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { 
   View, Text, TouchableOpacity, StyleSheet, 
-  StatusBar, Animated, Dimensions, Platform, Modal, Alert, Linking, ScrollView 
+  StatusBar, Animated, Dimensions, Platform, Modal, Alert, Linking, ScrollView, Image 
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { captureRef } from 'react-native-view-shot';
@@ -15,6 +15,8 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { getCatIcon } from '../components/StoryCard';
 import { t } from '../locales/i18n';
+import { getStoryByLang } from '../db/db';
+import { getCategoryImage } from '../utils/categoryImages';
 
 const { width, height } = Dimensions.get('window');
 
@@ -32,16 +34,32 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const scrollY = useRef(new Animated.Value(0)).current;
   const viewShotRef = useRef();
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [localLang, setLocalLang] = useState(lang);
+  const [localStory, setLocalStory] = useState(story);
+
+  React.useEffect(() => {
+    let active = true;
+    if (localLang !== lang) {
+      const fetchTranslation = async () => {
+        const tr = await getStoryByLang(story.story_id, localLang);
+        if (active && tr) setLocalStory(old => ({ ...old, title: tr.title, body: tr.body, source_book: tr.source_book, cat_display: tr.cat_display, cat: tr.cat }));
+      };
+      fetchTranslation();
+    } else {
+      setLocalStory(story);
+    }
+    return () => { active = false; };
+  }, [localLang, story, lang]);
 
   const liked = isFavorite(story.story_id);
   // DB already returns translated content for the active language
-  const displayTitle = story.title || '';
-  const displayBody = story.body || '';
-  const displayQuote = story.quote || '';
-  const displayLesson = story.lesson || '';
-  const displaySrc = story.source_book || '';
-  const displaySourceBook = story.source_book || '';
-  const displayCat = t(story.cat_display || story.cat, lang);
+  const displayTitle = localStory.title || '';
+  const displayBody = localStory.body || '';
+  const displayQuote = localStory.quote || '';
+  const displayLesson = localStory.lesson || '';
+  const displaySrc = localStory.source_book || '';
+  const displaySourceBook = localStory.source_book || '';
+  const displayCat = t(localStory.cat_display || localStory.cat || story.cat, lang);
 
   React.useEffect(() => {
     if (story) {
@@ -125,11 +143,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
     }
     if (type === 'lesson') {
       const ext = extractContent('$$');
-      return ext || displayLesson || t('keyTakeaway', lang);
+      return ext || displayLesson || t('keyTakeaway', localLang);
     }
     if (type === 'reflection') {
       const ext = extractContent('&&');
-      return ext || t('share_realize', lang);
+      return ext || t('share_realize', localLang);
     }
     return '';
   };
@@ -146,17 +164,17 @@ const StoryDetailScreen = ({ route, navigation }) => {
       const allTexts = shareContent.map(type => {
         const text = getShareText(type);
         let label = '';
-        if (type === 'lesson') label = t('share_key_takeaway', lang);
-        else if (type === 'reflection') label = t('share_reflect', lang);
-        else label = t('quote_label', lang);
+        if (type === 'lesson') label = t('share_key_takeaway', localLang);
+        else if (type === 'reflection') label = t('share_reflect', localLang);
+        else label = t('quote_label', localLang);
         
         return `${label}\n"${text}"`;
       }).join('\n\n');
       
       const catHashtag = displayCat.replace(/(\s+|&)/g, '');
-      const generalHashtags = lang === 'en' ? '#Spark #DailyInspiration #BookRecommendation #Awareness' : 
-                              lang === 'es' ? '#Spark #InspiraciónDiaria #RecomendaciónDeLibro #Conciencia' : 
-                              lang === 'de' ? '#Spark #TäglicheInspiration #Buchempfehlung #Achtsamkeit' : 
+      const generalHashtags = localLang === 'en' ? '#Spark #DailyInspiration #BookRecommendation #Awareness' : 
+                              localLang === 'es' ? '#Spark #InspiraciónDiaria #RecomendaciónDeLibro #Conciencia' : 
+                              localLang === 'de' ? '#Spark #TäglicheInspiration #Buchempfehlung #Achtsamkeit' : 
                               '#Spark #gününilhamı #kitapönerisi #farkindalik';
                               
       const caption = `${displayTitle}\n\n${allTexts}\n\n#${catHashtag} ${generalHashtags}`;
@@ -206,8 +224,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const styles = StyleSheet.create({
     safe: { 
       flex: 1, 
-      backgroundColor: colors.background, 
-      paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 
+      backgroundColor: colors.background
     },
     modalOverlay: {
       flex: 1,
@@ -367,8 +384,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     storyHero: { 
       margin: layout.padding.horizontal, 
       borderRadius: 16, 
-      paddingVertical: 16,
-      paddingHorizontal: 20,
+      overflow: 'hidden',
       marginBottom: 16, 
       borderWidth: 1, 
       borderColor: '#DED5C4',
@@ -382,13 +398,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
       marginBottom: 8,
       flexDirection: 'row',
       alignItems: 'center',
-      alignSelf: 'flex-end',
+      alignSelf: 'flex-start',
       gap: 4,
     },
     badgeText: { 
       fontFamily: 'Inter_500Medium', 
-      fontSize: 10, 
-      color: '#A15916', 
+      fontSize: 12, 
+      color: '#594238', 
     },
     detailTitle: { 
       fontFamily: 'PlayfairDisplay_700Bold', 
@@ -603,8 +619,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
           </View>
 
           {shareContent.map((type, index) => {
-            const label = type === 'lesson' ? t('share_key_takeaway', lang) : 
-                          type === 'reflection' ? t('share_reflect', lang) : 
+            const label = type === 'lesson' ? t('share_key_takeaway', localLang) : 
+                          type === 'reflection' ? t('share_reflect', localLang) : 
                           displayTitle;
             const textContent = getShareText(type);
             
@@ -654,7 +670,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
               marginLeft: 6,
               flexShrink: 1,
             }} numberOfLines={2}>
-              {t('share_source', lang)}{displaySourceBook}
+              {t('share_source', localLang)}{displaySourceBook}
             </Text>
           </View>
 
@@ -665,19 +681,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
               fontSize: fFooter, color: th.sub,
               textAlign: 'center',
             }}>
-              {t('share_more', lang)}
-            </Text>
-            <Text style={{
-              fontFamily: 'Inter_400Regular',
-              fontSize: fFooter, color: th.accent,
-              textAlign: 'center',
-              marginTop: 12,
-              letterSpacing: 1
-            }}>
-              #{displayCat.replace(/(\s+|&)/g, '')} {lang === 'en' ? '#Spark #DailyInspiration #BookRecommendation #Awareness' : 
-                                                    lang === 'es' ? '#Spark #InspiraciónDiaria #RecomendaciónDeLibro #Conciencia' : 
-                                                    lang === 'de' ? '#Spark #TäglicheInspiration #Buchempfehlung #Achtsamkeit' : 
-                                                    '#Spark #gününilhamı #kitapönerisi #farkindalik'}
+              {t('share_more', localLang)}
             </Text>
           </View>
 
@@ -687,7 +691,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
       {/* ===== SHARE MODAL ===== */}
       <Modal
         animationType="slide"
@@ -813,11 +817,33 @@ const StoryDetailScreen = ({ route, navigation }) => {
       </View>
 
       <View style={styles.detailHeader}>
-        <TouchableOpacity style={styles.headerPillLeft} onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" size={16} color="#1A1A1A" />
-          <Text style={styles.backBtn}>{t('backBtn', lang).replace(/^[\u2190<-]+\s*/g, '')}</Text>
-        </TouchableOpacity>
-        <View style={{ flexDirection: 'row', gap: 16, alignItems: 'center' }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <TouchableOpacity style={styles.headerPillLeft} onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={16} color="#1A1A1A" />
+            <Text style={styles.backBtn}>{t('backBtn', lang).replace(/^[\u2190<-]+\s*/g, '')}</Text>
+          </TouchableOpacity>
+          <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 13, color: '#A15916', marginLeft: 10 }}>
+            #{story.story_id}
+          </Text>
+        </View>
+        <View style={{ flexDirection: 'row', gap: 14, alignItems: 'center' }}>
+          <TouchableOpacity 
+            onPress={() => {
+              const langs = ['tr', 'en', 'es', 'de'];
+              const nextIndex = (langs.indexOf(localLang) + 1) % langs.length;
+              setLocalLang(langs[nextIndex]);
+            }} 
+            style={{
+              paddingHorizontal: 8,
+              paddingVertical: 5,
+              borderRadius: 8,
+              backgroundColor: '#EBE2D3',
+              borderWidth: 1,
+              borderColor: '#DED5C4'
+            }}
+          >
+            <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 13, color: '#1A1A1A' }}>{localLang.toUpperCase()}</Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={toggleSpeech}>
             <Text style={{ fontSize: 24, color: isSpeaking ? colors.primary : '#1A1A1A' }}>
               {isSpeaking ? '⏸' : '▶'}
@@ -848,15 +874,36 @@ const StoryDetailScreen = ({ route, navigation }) => {
         scrollEventThrottle={16}
       >
         <View style={styles.storyHero}> 
-          <View style={styles.badge}>
-            <Text style={{ fontSize: 13 }}>🚀</Text>
-            <Text style={styles.badgeText}>{displayCat}</Text>
-          </View>
-          <Text style={styles.detailTitle}>{displayTitle}</Text>
-          <View style={{ flexDirection: 'row', gap: 16 }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
-              <Ionicons name="time-outline" size={16} color="#594238" />
-              <Text style={styles.metaItem}>{story.min} {t('minLabel', lang)} okuma</Text>
+          {(() => {
+            const catImg = getCategoryImage(story.parent_cat || story.cat);
+            return (
+              <>
+                <Image 
+                  source={catImg.source} 
+                  style={[StyleSheet.absoluteFill, { 
+                    opacity: 0.4,
+                    transform: [
+                      { rotate: catImg.rotate },
+                      { scaleX: catImg.flip ? -1 : 1 }
+                    ]
+                  }]}
+                  resizeMode="cover"
+                />
+                <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.2 }]} />
+              </>
+            );
+          })()}
+          <View style={{ paddingVertical: 16, paddingHorizontal: 20 }}>
+            <View style={styles.badge}>
+              <Ionicons name={getCatIcon(story.parent_cat)} size={14} color="#594238" />
+              <Text style={styles.badgeText}>{t(story.parent_cat, lang)}</Text>
+            </View>
+            <Text style={styles.detailTitle}>{displayTitle}</Text>
+            <View style={{ flexDirection: 'row', gap: 16 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                <Ionicons name="time-outline" size={16} color="#594238" />
+                <Text style={styles.metaItem}>{story.min} {t('minLabel', lang)} okuma</Text>
+              </View>
             </View>
           </View>
         </View>
@@ -952,7 +999,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                       start={{x: 0, y: 0}} end={{x: 1, y: 1}} 
                       style={styles.lessonBox}
                     >
-                      <Text style={styles.lessonLabel}>HİKAYENİN ÖZÜ</Text>
+                      <Text style={styles.lessonLabel}>{t('keyTakeaway', localLang)}</Text>
                       <Text style={[styles.lessonText, { fontSize: fontSize + 1 }]} >{seg.content}</Text>
                     </LinearGradient>
                   </View>
@@ -969,7 +1016,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   >
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12 }}>
                       <Text style={{ fontSize: 18, marginRight: 8 }}>💭</Text>
-                      <Text style={styles.reflectionLabel}>DÜŞÜN VE SORGULA</Text>
+                      <Text style={styles.reflectionLabel}>{t('reflect', localLang)}</Text>
                     </View>
                     <Text
                       style={{

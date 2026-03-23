@@ -45,6 +45,13 @@ export const translations = {
     'Verimlilik': 'Productivity',
     'İletişim': 'Communication',
     'Tümü': 'All',
+    // Parent Categories
+    'Mind & Psychology': 'Mind & Psychology',
+    'Career & Success': 'Career & Success',
+    'Personal Growth': 'Personal Growth',
+    'Science & Future': 'Science & Future',
+    'Society & World': 'Society & World',
+    'Social Skills': 'Social Skills',
     
     // LibraryScreen
     libraryTitle: 'Your Library',
@@ -148,6 +155,10 @@ export const translations = {
     alert_share_error: 'An error occurred while sharing.',
     notif_perm_denied: 'Notification permission not granted!',
     notif_body: "The spark of the day is ready! Tap to explore today's lesson.",
+    notif_8: "Good morning! Ready to start your day with an inspiring story? ☀️",
+    notif_13: "Lunch break... Have you read today's lesson yet? 📖",
+    notif_16: "A spark in the middle of the day... A new story is waiting for you. ✨",
+    notif_21: "Ending the day in peace... Check out tonight's inspirational story. 🌙",
     rose_theme: 'Rose',
 
     // Onboarding
@@ -267,6 +278,13 @@ export const translations = {
     'Verimlilik': 'Verimlilik',
     'İletişim': 'İletişim',
     'Tümü': 'Tümü',
+    // Parent Categories
+    'Mind & Psychology': 'Zihin ve Psikoloji',
+    'Career & Success': 'Kariyer ve Başarı',
+    'Personal Growth': 'Kişisel Gelişim',
+    'Science & Future': 'Bilim ve Gelecek',
+    'Society & World': 'Toplum ve Dünya',
+    'Social Skills': 'Sosyal Beceriler',
 
     // LibraryScreen
     libraryTitle: 'Kütüphanen',
@@ -282,7 +300,7 @@ export const translations = {
     days: 'gün',
 
     // PaywallScreen
-    paywallTitle: 'Sınırsız Kıvılcım\'a geç',
+    paywallTitle: 'Sınırsız Spark\'a geç',
     paywallSub: 'Günde 3 hikayeyle sınırlı kalma. Tüm kategorilere, sesli anlatımlara ve sohbet kartlarına eriş.',
     subscribe: '7 gün ücretsiz dene',
     restore: 'Satın alımı geri yükle',
@@ -299,7 +317,7 @@ export const translations = {
     feat5: 'Reklamsız deneyim',
 
     // OnboardingScreen
-    onboarding1Title: 'Günlük Kıvılcımlar',
+    onboarding1Title: 'Günlük Sparklar',
     onboarding1Sub: 'Her gün yeni bir fikir.',
     onboarding2Title: 'Kaydet & Düşün',
     onboarding2Sub: 'Senin için önemli olanları sakla.',
@@ -313,7 +331,7 @@ export const translations = {
     tabProfile: 'Profil',
     
     // ProgressScreen
-    yourSparks: 'Senin Kıvılcımların',
+    yourSparks: 'Senin Sparkların',
     readingHabit: 'Okuma Alışkanlığı',
     less: 'Az',
     more: 'Çok',
@@ -369,11 +387,15 @@ export const translations = {
     alert_share_unavailable: 'Paylaşım bu cihazda desteklenmiyor.',
     alert_share_error: 'Paylaşım sırasında bir hata oluştu.',
     notif_perm_denied: 'Bildirim izni verilmedi!',
-    notif_body: 'Günün kıvılcımı hazır! Bugünün dersini keşfetmek için dokun.',
+    notif_body: 'Günün Spark\'ı hazır! Bugünün dersini keşfetmek için dokun.',
+    notif_8: 'Günaydın! Güne ilham verici bir hikaye ile başlamaya ne dersin? ☀️',
+    notif_13: 'Öğle molasında kısa bir mola... Bugünün dersini okudun mu? 📖',
+    notif_16: 'Günün yoğunluğunda bir kıvılcım... Yeni bir hikaye seni bekliyor. ✨',
+    notif_21: 'Günü huzurla kapatırken... Akşamın ilham dolu hikayesine göz at. 🌙',
     rose_theme: 'Kırmızı Gül',
 
     // Onboarding
-    onboarding_welcome: "Kıvılcım'a\nHoş Geldiniz",
+    onboarding_welcome: "Spark'a\nHoş Geldiniz",
     onboarding_welcome_sub: 'Her gün 3 dakikada dünyanın en etkili kitaplarından ilham alarak okuma alışkanlığı kazanın.',
     onboarding_why: 'Neleri merak\nediyorsun?',
     onboarding_why_sub: 'En az 2 kategori seç.',
@@ -397,13 +419,13 @@ export const translations = {
 
     // Share Card Labels
     share_realize: 'Neyi fark ettin?',
-    share_more: 'Daha fazlası için Kıvılcım uygulamasını indir.',
+    share_more: 'Daha fazlası için Spark uygulamasını indir.',
     share_source: 'Kaynak: ',
     share_key_takeaway: '💡 Anahtar Ders',
     share_reflect: '🤔 Sorgula',
 
     // Launch
-    launch_tagline: 'Her gün bir kıvılcım.',
+    launch_tagline: 'Her gün bir Spark.',
   },
   es: {
     // HomeScreen
@@ -531,6 +553,13 @@ export const translations = {
     'Duygular': 'Emociones',
     'Tümü': 'Todo',
     'İş & Girişim': 'Negocios y Emprendimiento',
+    // Parent Categories
+    'Mind & Psychology': 'Mente y Psicología',
+    'Career & Success': 'Carrera y Éxito',
+    'Personal Growth': 'Crecimiento Personal',
+    'Science & Future': 'Ciencia y Futuro',
+    'Society & World': 'Sociedad y Mundo',
+    'Social Skills': 'Habilidades Sociales',
 
   },
   de: {
@@ -659,6 +688,13 @@ export const translations = {
     'Duygular': 'Emotionen',
     'Tümü': 'Alle',
     'İş & Girişim': 'Wirtschaft & Unternehmensgründung',
+    // Parent Categories
+    'Mind & Psychology': 'Geist und Psychologie',
+    'Career & Success': 'Karriere und Erfolg',
+    'Personal Growth': 'Persönliches Wachstum',
+    'Science & Future': 'Wissenschaft und Zukunft',
+    'Society & World': 'Gesellschaft und Welt',
+    'Social Skills': 'Soziale Kompetenzen',
 
   }
 };

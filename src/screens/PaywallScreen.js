@@ -34,8 +34,7 @@ const PaywallScreen = ({ navigation }) => {
   const styles = StyleSheet.create({
     safe: { 
       flex: 1, 
-      backgroundColor: colors.background, 
-      paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 
+      backgroundColor: colors.background
     },
     paywallTitle: { 
       fontFamily: 'PlayfairDisplay_700Bold', 
@@ -139,7 +138,7 @@ const PaywallScreen = ({ navigation }) => {
   });
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
       <ScrollView contentContainerStyle={{ padding: 24, paddingBottom: Platform.OS === 'android' ? 48 : 24 }} showsVerticalScrollIndicator={false}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={{ alignSelf: 'flex-end', marginBottom: 8 }}>

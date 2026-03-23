@@ -1,7 +1,7 @@
 export const colors = {
   // Light: "The Digital Hearth" – warm editorial palette from FirstSteps/DESIGN.md
   light: {
-    background: '#F9F6F1',              // Off-white / Hafif kemik rengi
+    background: '#fcf9f4',              // Hafif kemik/off-white (kitap sayfası hissi)
     backgroundDark: '#F2EFE8',          // Slightly darker for contrasts
     surfaceContainerLowest: '#ffffff',   // lifted card surface
     surfaceContainerHigh: '#EBE6DC',     // deeper container surface

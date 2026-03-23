@@ -1,27 +1,29 @@
 import React, { useState, useRef } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  StatusBar, Animated, Platform, Dimensions
+  StatusBar, Animated, Platform, Dimensions, Image
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
+import { getCategoryImage } from '../utils/categoryImages';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 const OnboardingScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { saveOnboarding } = useUserData();
-  const { categories } = useStories();
+  const { isPremium, saveOnboarding } = useUserData();
+  const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
+  const [loading, setLoading] = useState(true);
   const [step, setStep] = useState(0);
   const [selectedCats, setSelectedCats] = useState([]);
   const [selectedTime, setSelectedTime] = useState(1);
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
 
-  const allCats = categories;
+  const allCats = parentCategories.map(p => p.name);
   const timeOptions = [
     { label: t('time_3min', lang), sub: t('time_3min_sub', lang), icon: '☕' },
     { label: t('time_5min', lang), sub: t('time_5min_sub', lang), icon: '📖' },
@@ -35,11 +37,11 @@ const OnboardingScreen = ({ navigation }) => {
     Animated.parallel([
       Animated.timing(fadeAnim, { toValue: 0, duration: 180, useNativeDriver: true }),
       Animated.timing(slideAnim, { toValue: -30, duration: 180, useNativeDriver: true }),
-    ]).start(() => {
+    ]).start(async () => {
       if (step < TOTAL_STEPS - 1) {
         setStep(step + 1);
       } else {
-        saveOnboarding(selectedCats, timeOptions[selectedTime]);
+        await handleFinish();
         return;
       }
       // Animate in
@@ -56,9 +58,15 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const toggleCat = (cat) => {
-    setSelectedCats(prev =>
-      prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]
-    );
+    setSelectedCats(prev => {
+      if (prev.includes(cat)) return prev.filter(c => c !== cat);
+      return [...prev, cat];
+    });
+  };
+
+  const handleFinish = async () => {
+    // Just save the selected Parent Category names directly
+    await saveOnboarding(selectedCats, timeOptions[selectedTime]);
   };
 
   /* ─────────────── STYLES ─────────────── */
@@ -438,7 +446,31 @@ const OnboardingScreen = ({ navigation }) => {
               onPress={() => toggleCat(cat)}
               activeOpacity={0.7}
             >
-              <Text style={[s.catTileText, sel && s.catTileTextSelected]}>{t(cat, lang)}</Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, flex: 1 }}>
+                <View style={{ width: 32, height: 32, borderRadius: 6, overflow: 'hidden' }}>
+                  {(() => {
+                    const catImg = getCategoryImage(cat);
+                    return (
+                      <>
+                        <Image 
+                          source={catImg.source} 
+                          style={{ 
+                            width: '100%', 
+                            height: '100%',
+                            transform: [
+                              { rotate: catImg.rotate },
+                              { scaleX: catImg.flip ? -1 : 1 }
+                            ]
+                          }}
+                          resizeMode="cover"
+                        />
+                        <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                      </>
+                    );
+                  })()}
+                </View>
+                <Text style={[s.catTileText, sel && s.catTileTextSelected, { flex: 1 }]} numberOfLines={2}>{t(cat, lang)}</Text>
+              </View>
               {sel && (
                 <View style={s.catCheckCircle}>
                   <Text style={{ fontSize: 12, color: '#fff', fontWeight: '700' }}>✓</Text>
@@ -514,7 +546,7 @@ const OnboardingScreen = ({ navigation }) => {
   const canNext = step === 1 ? selectedCats.length >= 2 : true;
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={s.safe}>
       <StatusBar
         barStyle="dark-content"
         backgroundColor={colors.background}
