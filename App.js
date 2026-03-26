@@ -91,13 +91,17 @@ function Main() {
   // Initialize DB and seed data on first run
   useEffect(() => {
     const startup = async () => {
+      let savedLang = 'tr';
       try {
-        const savedLang = await AsyncStorage.getItem('lang');
-        if (savedLang) setSplashLang(savedLang);
+        const stored = await AsyncStorage.getItem('lang');
+        if (stored) {
+          savedLang = stored;
+          setSplashLang(stored);
+        }
       } catch (e) {}
       await initDb();
       await seedData();
-      await scheduleDailyNotifications(savedLang || 'tr');
+      await scheduleDailyNotifications(savedLang);
     };
     startup().catch(e => console.error('App.js startup error:', e));
   }, []);
