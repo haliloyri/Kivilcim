@@ -390,7 +390,7 @@ export const translations = {
     notif_body: 'Günün Spark\'ı hazır! Bugünün dersini keşfetmek için dokun.',
     notif_8: 'Günaydın! Güne ilham verici bir hikaye ile başlamaya ne dersin? ☀️',
     notif_13: 'Öğle molasında kısa bir mola... Bugünün dersini okudun mu? 📖',
-    notif_16: 'Günün yoğunluğunda bir kıvılcım... Yeni bir hikaye seni bekliyor. ✨',
+    notif_16: 'Günün yoğunluğunda bir Spark... Yeni bir hikaye seni bekliyor. ✨',
     notif_21: 'Günü huzurla kapatırken... Akşamın ilham dolu hikayesine göz at. 🌙',
     rose_theme: 'Kırmızı Gül',
 

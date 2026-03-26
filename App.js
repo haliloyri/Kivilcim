@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
-import { View, Text } from 'react-native';
+import { View, Text, Image, ActivityIndicator, Dimensions } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
-import { ActivityIndicator } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { t } from './src/locales/i18n';
+
 import { setupNotificationHandler, scheduleDailyNotifications } from './src/utils/notifications';
 
 setupNotificationHandler();
@@ -40,15 +40,17 @@ SplashScreen.preventAutoHideAsync();
 import { initDb, seedData } from './src/db/db';
 
 // Splash designer component (in-app splash screen)
-const SplashDesign = ({ lang = 'tr' }) => {
+const SplashDesign = () => {
   return (
     <View style={stylesSplash.container}>
-      <LinearGradient colors={["#131311", "#1E1C18"]} style={stylesSplash.gradient} />
-      <View style={stylesSplash.brandRow}>
-        <Text style={stylesSplash.brandText}>{t('brandText', lang).replace(' ✦', '')}</Text>
+      <Image 
+        source={require('./assets/spark_launch.png')} 
+        style={stylesSplash.launchImage}
+        resizeMode="contain"
+      />
+      <View style={stylesSplash.loaderContainer}>
+        <ActivityIndicator size="small" color="#FFD700" />
       </View>
-      <Text style={stylesSplash.tag}>{t('launch_tagline', lang)}</Text>
-      <ActivityIndicator size="large" color="#FFB783" style={stylesSplash.spinner} />
     </View>
   );
 };
@@ -56,35 +58,20 @@ const SplashDesign = ({ lang = 'tr' }) => {
 const stylesSplash = {
   container: {
     flex: 1,
-    alignItems: 'center',
+    backgroundColor: '#131311',
     justifyContent: 'center',
-  },
-  gradient: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-  },
-  brandRow: {
-    marginTop: -40,
     alignItems: 'center',
   },
-  brandText: {
-    fontFamily: 'PlayfairDisplay_700Bold',
-    fontSize: 40,
-    color: 'white',
+  launchImage: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
   },
-  tag: {
-    marginTop: 8,
-    fontFamily: 'Inter_400Regular',
-    color: 'white',
-    fontSize: 14,
-  },
-  spinner: {
-    marginTop: 24,
+  loaderContainer: {
+    position: 'absolute',
+    bottom: 100,
   },
 };
+
 
 function Main() {
   const [splashLang, setSplashLang] = React.useState('tr');
