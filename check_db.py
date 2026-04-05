@@ -1,0 +1,12 @@
+import sqlite3
+
+conn = sqlite3.connect('assets/kivilcim.db')
+cursor = conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
+tables = [r[0] for r in cursor.fetchall()]
+print("Tables in assets/kivilcim.db:", tables)
+
+for t in tables:
+    count = conn.execute(f"SELECT COUNT(*) FROM [{t}]").fetchone()[0]
+    print(f"  {t}: {count} rows")
+
+conn.close()

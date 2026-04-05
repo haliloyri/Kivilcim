@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="2340" viewBox="0 0 1080 2340">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fcf9f4"/>
+      <stop offset="100%" stop-color="#f7f2e8"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#D8C08F"/>
+      <stop offset="100%" stop-color="#BE9347"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.12" flood-color="#6e5f4f"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect x="0" y="0" width="100%" height="120" fill="#fcf9f4"/>
+  <text x="60" y="78" font-family="Georgia, serif" font-size="42" fill="#823b18">Spark ✦</text>
+  <text x="60" y="130" font-family="Arial, sans-serif" font-size="30" fill="#7D6F5E">Ana Sayfa</text>
+
+  
+  <rect x="60" y="190" rx="30" ry="30" width="960" height="300" fill="url(#hero)" filter="url(#shadow)"/>
+  <text x="96" y="298" font-family="Georgia, serif" font-size="62" fill="#1f1a14">7 gün streak</text>
+  <text x="96" y="356" font-family="Arial, sans-serif" font-size="34" fill="#3c3327">Bugün okumaya devam et</text>
+  
+  <g>
+    <rect x="60" y="540" rx="38" ry="38" width="180" height="76" fill="#823b18" stroke="#823b18"/>
+    <text x="90" y="588" font-family="Arial, sans-serif" font-size="30" fill="#FFFFFF">Tümü</text>
+  </g>
+  <g>
+    <rect x="256" y="540" rx="38" ry="38" width="222" height="76" fill="transparent" stroke="#E8E3DA"/>
+    <text x="286" y="588" font-family="Arial, sans-serif" font-size="30" fill="#823b18">Psikoloji</text>
+  </g>
+  <g>
+    <rect x="494" y="540" rx="38" ry="38" width="180" height="76" fill="transparent" stroke="#E8E3DA"/>
+    <text x="524" y="588" font-family="Arial, sans-serif" font-size="30" fill="#823b18">Finans</text>
+  </g>
+  <g>
+    <rect x="690" y="540" rx="38" ry="38" width="204" height="76" fill="transparent" stroke="#E8E3DA"/>
+    <text x="720" y="588" font-family="Arial, sans-serif" font-size="30" fill="#823b18">Liderlik</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="60" y="660" rx="28" ry="28" width="960" height="310" fill="#ffffff" stroke="#E8E3DA"/>
+    <text x="88" y="724" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">Atomik Alışkanlıklar</text>
+    <text x="88" y="768" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">5 dk • Kişisel Gelişim</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="60" y="1004" rx="28" ry="28" width="470" height="280" fill="#ffffff" stroke="#E8E3DA"/>
+    <text x="88" y="1068" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">Düşünme Hataları</text>
+    <text x="88" y="1112" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">4 dk • Psikoloji</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="550" y="1004" rx="28" ry="28" width="470" height="280" fill="#ffffff" stroke="#E8E3DA"/>
+    <text x="578" y="1068" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">İkna Sanatı</text>
+    <text x="578" y="1112" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">6 dk • İletişim</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="60" y="1318" rx="28" ry="28" width="470" height="280" fill="#ffffff" stroke="#E8E3DA"/>
+    <text x="88" y="1382" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">İş Modeli Tasarımı</text>
+    <text x="88" y="1426" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">7 dk • İş &amp; Girişim</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="550" y="1318" rx="28" ry="28" width="470" height="280" fill="#ffffff" stroke="#E8E3DA"/>
+    <text x="578" y="1382" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">Zihin Notları</text>
+    <text x="578" y="1426" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">3 dk • Verimlilik</text>
+  </g>
+  <rect x="0" y="2190" width="1080" height="150" fill="#fcf9f4"/>
+  <line x1="60" y1="2190" x2="1020" y2="2190" stroke="#E8E3DA"/>
+  <text x="120" y="2278" font-family="Arial, sans-serif" font-size="28" fill="#823b18">Ana Sayfa</text>
+  <text x="420" y="2278" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">Kütüphane</text>
+  <text x="760" y="2278" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">Profil</text>
+</svg>

@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Spark",
+    "slug": "spark",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#131311",
+    "icon": "./assets/spark_launch.png",
+    "splash": {
+      "image": "./assets/spark_launch.png",
+      "backgroundColor": "#131311",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.kivilcim.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/spark_launch.png",
+        "backgroundColor": "#131311"
+      },
+      "package": "com.kivilcim.app"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-sqlite",
+      "expo-asset"
+    ]
+  }
+}
