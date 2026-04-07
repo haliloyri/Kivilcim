@@ -27,7 +27,7 @@ const SkeletonCard = ({ colors, layout, isHero }) => (
 
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
-  const { isPremium, history } = useUserData();
+  const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('Tümü');
@@ -79,6 +79,81 @@ const HomeScreen = ({ navigation }) => {
   const todayLabel = t('todayLabel', lang);
 
   const checkIfRead = (id) => history.includes(id);
+
+  const getUniqueCats = (stats) => (stats && typeof stats === 'object' ? Object.keys(stats).length : 0);
+  const getMaxCatReads = (stats) => (stats && typeof stats === 'object' ? Math.max(0, ...Object.values(stats)) : 0);
+
+  const badgeProgressInfo = React.useMemo(() => {
+    const badges = earnedBadges || [];
+    const total = badges.length;
+    const earned = badges.filter((b) => b.earned).length;
+    const uniqueCats = getUniqueCats(categoryStats);
+    const maxCatReads = getMaxCatReads(categoryStats);
+    const philosophyReads = (categoryStats?.Felsefe || 0) + (categoryStats?.Philosophy || 0);
+
+    const metricById = {
+      first_read: { current: totalReads, target: 1 },
+      explorer: { current: totalReads, target: 10 },
+      sage: { current: totalReads, target: 25 },
+      bookworm: { current: totalReads, target: 50 },
+      streak_7: { current: Math.max(streak, longestStreak), target: 7 },
+      cat_variety_3: { current: uniqueCats, target: 3 },
+      cat_variety_5: { current: uniqueCats, target: 5 },
+      cat_variety_10: { current: uniqueCats, target: 10 },
+      cat_master_5: { current: maxCatReads, target: 5 },
+      cat_master_10: { current: maxCatReads, target: 10 },
+      cat_master_25: { current: maxCatReads, target: 25 },
+      cat_master_50: { current: maxCatReads, target: 50 },
+      cat_master_100: { current: maxCatReads, target: 100 },
+      philosopher: { current: philosophyReads, target: 5 },
+      save_5: { current: favorites.length, target: 5 },
+      save_10: { current: favorites.length, target: 10 },
+      save_50: { current: favorites.length, target: 50 },
+      save_100: { current: favorites.length, target: 100 },
+      share_1: { current: shareCount, target: 1 },
+      share_10: { current: shareCount, target: 10 },
+      share_20: { current: shareCount, target: 20 },
+      share_30: { current: shareCount, target: 30 },
+      share_50: { current: shareCount, target: 50 },
+    };
+
+    const nextCandidates = badges
+      .filter((b) => !b.earned && metricById[b.id])
+      .map((b) => {
+        const { current, target } = metricById[b.id];
+        const ratio = target > 0 ? Math.min(current / target, 1) : 0;
+        return {
+          ...b,
+          current,
+          target,
+          ratio,
+          remaining: Math.max(target - current, 0),
+        };
+      })
+      .sort((a, b) => {
+        if (b.ratio !== a.ratio) return b.ratio - a.ratio;
+        return a.remaining - b.remaining;
+      });
+
+    return {
+      total,
+      earned,
+      completionRatio: total > 0 ? earned / total : 0,
+      nextBadge: nextCandidates[0] || null,
+    };
+  }, [earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites.length]);
+
+  const progressSegments = 7;
+  const activeSegments = Math.max(1, Math.round(badgeProgressInfo.completionRatio * progressSegments));
+  const nextBadgeTitle = badgeProgressInfo.nextBadge ? t(badgeProgressInfo.nextBadge.titleKey, lang) : null;
+  const nextBadgePercent = badgeProgressInfo.nextBadge ? Math.round(badgeProgressInfo.nextBadge.ratio * 100) : 100;
+  const headerPrimary = lang === 'tr' ? 'Rozet Yolculuğun' : 'Badge Journey';
+  const headerSecondary = badgeProgressInfo.nextBadge
+    ? (lang === 'tr' ? 'Sıradaki rozete yakınsın' : 'You are close to the next badge')
+    : (lang === 'tr' ? 'Tüm rozetler tamamlandı' : 'All badges completed');
+  const completionLine = lang === 'tr'
+    ? `${badgeProgressInfo.earned}/${badgeProgressInfo.total} rozet tamamlandı`
+    : `${badgeProgressInfo.earned}/${badgeProgressInfo.total} badges completed`;
 
   const handleLoadMore = (nativeEvent) => {
     const paddingToBottom = 200;
@@ -315,14 +390,28 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         <LinearGradient colors={['#D8C08F', '#BE9347']} style={styles.streakCard} start={{x: 0, y: 0}} end={{x: 1, y: 1}}>
-          <Text style={{ fontSize: 42 }}>🔥</Text>
+          <Text style={{ fontSize: 42 }}>{badgeProgressInfo.nextBadge ? badgeProgressInfo.nextBadge.icon : '🏆'}</Text>
           <View style={{ marginLeft: 16, flex: 1 }}>
-            <Text style={styles.streakDays}>7 {t('streakDays', lang).toLowerCase()}</Text>
-            <Text style={styles.streakLabel}>{t('streakLabel', lang)}</Text>
+            <Text style={styles.streakDays}>
+              {badgeProgressInfo.nextBadge ? `%${nextBadgePercent}` : '100%'}
+            </Text>
+            <Text style={styles.streakLabel}>{headerPrimary}</Text>
+            <Text style={[styles.streakLabel, { marginTop: 2 }]} numberOfLines={1}>
+              {badgeProgressInfo.nextBadge ? `${headerSecondary}: ${nextBadgeTitle}` : headerSecondary}
+            </Text>
+            <Text style={[styles.streakLabel, { marginTop: 2 }]}>{completionLine}</Text>
           </View>
           <View style={{ flexDirection: 'row', gap: 6 }}>
-            {[0, 1, 2, 3, 4, 5, 6].map(i => (
-              <View key={i} style={[styles.streakDot, i === 0 ? {width: 24, backgroundColor: isDark ? colors.text : '#fff'} : {backgroundColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.4)'}]} />
+            {Array.from({ length: progressSegments }).map((_, i) => (
+              <View
+                key={i}
+                style={[
+                  styles.streakDot,
+                  i < activeSegments
+                    ? { width: i === activeSegments - 1 ? 24 : 8, backgroundColor: isDark ? colors.text : '#fff' }
+                    : { backgroundColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.4)' },
+                ]}
+              />
             ))}
           </View>
         </LinearGradient>

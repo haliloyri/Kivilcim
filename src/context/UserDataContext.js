@@ -5,6 +5,7 @@ import { recordRead, getTotalReads, getStreak, getLongestStreak, getReadsPerCate
 import { checkBadges } from '../utils/badges';
 
 const UserDataContext = createContext();
+const SEEN_BADGES_STORAGE_KEY = '@kivilcim_seen_earned_badges';
 
 export const UserDataProvider = ({ children }) => {
   const { setSelectedCategories: setGlobalCategories } = useTheme();
@@ -19,6 +20,10 @@ export const UserDataProvider = ({ children }) => {
   const [longestStreak, setLongestStreak] = useState(0);
   const [categoryStats, setCategoryStats] = useState([]);
   const [shareCount, setShareCount] = useState(0);
+  const [seenBadgeIds, setSeenBadgeIds] = useState([]);
+  const [seenBadgesReady, setSeenBadgesReady] = useState(false);
+  const [shouldBootstrapSeenBadges, setShouldBootstrapSeenBadges] = useState(false);
+  const [activeBadgeModal, setActiveBadgeModal] = useState(null);
 
   // Güvenlik timeout'u: AsyncStorage 3 saniye içinde tamamlanmazsa devam et
   useEffect(() => {
@@ -72,6 +77,24 @@ export const UserDataProvider = ({ children }) => {
       }
     };
     loadData();
+  }, []);
+
+  useEffect(() => {
+    const loadSeenBadges = async () => {
+      try {
+        const raw = await AsyncStorage.getItem(SEEN_BADGES_STORAGE_KEY);
+        if (raw == null) setShouldBootstrapSeenBadges(true);
+        const parsed = raw ? JSON.parse(raw) : [];
+        setSeenBadgeIds(Array.isArray(parsed) ? parsed : []);
+      } catch (error) {
+        console.error('Gorulen rozetler yuklenemedi:', error);
+        setSeenBadgeIds([]);
+      } finally {
+        setSeenBadgesReady(true);
+      }
+    };
+
+    loadSeenBadges();
   }, []);
 
   // Favoriler
@@ -171,7 +194,8 @@ export const UserDataProvider = ({ children }) => {
         '@kivilcim_preferences',
         '@kivilcim_onboarded',
         '@kivilcim_premium',
-        '@kivilcim_share_count'
+        '@kivilcim_share_count',
+        SEEN_BADGES_STORAGE_KEY,
       ]);
       setFavorites([]);
       setHistory([]);
@@ -179,6 +203,8 @@ export const UserDataProvider = ({ children }) => {
       setIsOnboarded(false);
       setIsPremium(false);
       setShareCount(0);
+      setSeenBadgeIds([]);
+      setActiveBadgeModal(null);
       // Clear global categories in ThemeContext too
       await setGlobalCategories([]);
     } catch (error) {
@@ -191,6 +217,49 @@ export const UserDataProvider = ({ children }) => {
     checkBadges({ totalReads, streak, longestStreak, categoryStats, favoritesCount: favorites.length, shareCount }),
     [totalReads, streak, longestStreak, categoryStats, favorites.length, shareCount]
   );
+
+  const markBadgesAsSeen = useCallback(async (badgeIds) => {
+    if (!badgeIds?.length) return;
+
+    const next = Array.from(new Set([...seenBadgeIds, ...badgeIds]));
+    if (next.length === seenBadgeIds.length) return;
+
+    setSeenBadgeIds(next);
+    try {
+      await AsyncStorage.setItem(SEEN_BADGES_STORAGE_KEY, JSON.stringify(next));
+    } catch (error) {
+      console.error('Rozet gorunme durumu kaydedilemedi:', error);
+    }
+  }, [seenBadgeIds]);
+
+  useEffect(() => {
+    if (!seenBadgesReady || !earnedBadges.length) return;
+
+    if (shouldBootstrapSeenBadges) {
+      const alreadyEarnedIds = earnedBadges.filter((badge) => badge.earned).map((badge) => badge.id);
+      markBadgesAsSeen(alreadyEarnedIds);
+      setShouldBootstrapSeenBadges(false);
+      return;
+    }
+
+    const newlyEarned = earnedBadges.filter((badge) => badge.earned && !seenBadgeIds.includes(badge.id));
+    if (!newlyEarned.length) return;
+
+    setActiveBadgeModal(newlyEarned[0]);
+    markBadgesAsSeen(newlyEarned.map((badge) => badge.id));
+  }, [earnedBadges, seenBadgeIds, seenBadgesReady, markBadgesAsSeen, shouldBootstrapSeenBadges]);
+
+  const openBadgeModal = useCallback((badge) => {
+    if (!badge) return;
+    setActiveBadgeModal(badge);
+    if (badge.earned) {
+      markBadgesAsSeen([badge.id]);
+    }
+  }, [markBadgesAsSeen]);
+
+  const closeBadgeModal = useCallback(() => {
+    setActiveBadgeModal(null);
+  }, []);
 
   const value = useMemo(() => ({
     favorites,
@@ -205,6 +274,7 @@ export const UserDataProvider = ({ children }) => {
     categoryStats,
     shareCount,
     earnedBadges,
+    activeBadgeModal,
     toggleFavorite,
     isFavorite,
     addToHistory,
@@ -212,8 +282,10 @@ export const UserDataProvider = ({ children }) => {
     buyPremium,
     incrementShareCount,
     clearUserData,
-    refreshStats
-  }), [favorites, history, preferences, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, shareCount, earnedBadges]);
+    refreshStats,
+    openBadgeModal,
+    closeBadgeModal,
+  }), [favorites, history, preferences, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, shareCount, earnedBadges, activeBadgeModal, openBadgeModal, closeBadgeModal]);
 
   return (
     <UserDataContext.Provider value={value}>

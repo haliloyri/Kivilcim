@@ -35,7 +35,7 @@ const LaunchScreen = () => {
         ]}
       >
         <Image 
-          source={require('../../assets/spark_launch.png')} 
+          source={require('../../assets/spark_logo.png')} 
           style={styles.launchImage}
           resizeMode="contain"
         />

@@ -824,9 +824,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
             <Ionicons name="arrow-back" size={16} color={colors.text} />
             <Text style={styles.backBtn}>{t('backBtn', lang).replace(/^[\u2190<-]+\s*/g, '')}</Text>
           </TouchableOpacity>
-          <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 13, color: '#A15916', marginLeft: 10 }}>
-            #{story.story_id}
-          </Text>
         </View>
         <View style={{ flexDirection: 'row', gap: 14, alignItems: 'center' }}>
           <TouchableOpacity 

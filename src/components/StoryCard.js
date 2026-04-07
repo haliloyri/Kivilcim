@@ -29,6 +29,8 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   const { colors, typography, layout, lang } = useTheme();
   const isHero = type === 'hero';
   const isCompact = type === 'compact';
+  const isPhone = width < 768;
+  const isSmallPhone = width < 390;
   
   const todayStr = new Date().toISOString().split('T')[0];
   const isNew = story.publishDate === todayStr;
@@ -94,18 +96,18 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     cardTitle: {
       fontFamily: 'PlayfairDisplay_600SemiBold',
-      fontSize: 20,
+      fontSize: isSmallPhone ? 17 : isPhone ? 18 : 20,
       color: colors.text,
-      lineHeight: 26,
+      lineHeight: isSmallPhone ? 23 : isPhone ? 24 : 26,
     },
     cardTitleHero: {
-      fontSize: 26,
-      lineHeight: 32,
+      fontSize: isSmallPhone ? 22 : isPhone ? 24 : 26,
+      lineHeight: isSmallPhone ? 28 : isPhone ? 30 : 32,
     },
     cardTitleCompact: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 18,
-      lineHeight: 24,
+      fontSize: isSmallPhone ? 15 : isPhone ? 16 : 18,
+      lineHeight: isSmallPhone ? 20 : isPhone ? 22 : 24,
     },
     cardFooter: {
       flexDirection: 'row',

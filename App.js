@@ -44,7 +44,7 @@ const SplashDesign = () => {
   return (
     <View style={stylesSplash.container}>
       <Image 
-        source={require('./assets/spark_launch.png')} 
+        source={require('./assets/spark_logo.png')} 
         style={stylesSplash.launchImage}
         resizeMode="contain"
       />

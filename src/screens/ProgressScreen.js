@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Dimensions, Modal 
+  View, Text, ScrollView, TouchableOpacity, StyleSheet,
+  StatusBar, Dimensions
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Animated, { 
@@ -15,13 +15,12 @@ import { getReadHistory } from '../db/db';
 const { width } = Dimensions.get('window');
 
 const ProgressScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark, lang } = useTheme();
-  const { streak, totalReads, longestStreak, earnedBadges } = useUserData();
+  const { colors, layout, isDark, lang } = useTheme();
+  const { streak, totalReads, earnedBadges, openBadgeModal } = useUserData();
   const badgeScale = useSharedValue(0);
   const badgeOpacity = useSharedValue(0);
   const [showCelebration, setShowCelebration] = useState(false);
   const [heatmapData, setHeatmapData] = useState([]);
-  const [selectedBadge, setSelectedBadge] = useState(null);
 
   // Isı haritası verisini DB'den yükle
   useEffect(() => {
@@ -342,7 +341,7 @@ const ProgressScreen = ({ navigation }) => {
             <TouchableOpacity 
               key={badge.id} 
               activeOpacity={0.7}
-              onPress={() => setSelectedBadge(badge)}
+              onPress={() => openBadgeModal(badge)}
               style={[styles.badgeItem, !badge.earned && { opacity: 0.4 }]}
             >
               <View style={styles.badgeIconCircle}>
@@ -381,62 +380,6 @@ const ProgressScreen = ({ navigation }) => {
           </Animated.View>
         </View>
       )}
-
-      <Modal
-        visible={!!selectedBadge}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setSelectedBadge(null)}
-      >
-        <TouchableOpacity 
-          style={styles.modalOverlay} 
-          activeOpacity={1} 
-          onPress={() => setSelectedBadge(null)}
-        >
-          <TouchableOpacity activeOpacity={1} style={styles.modalCard}>
-            {selectedBadge && (
-              <>
-                <View style={[
-                  styles.modalIconCircle,
-                  { 
-                    backgroundColor: selectedBadge.earned ? colors.primary : colors.backgroundDark,
-                    borderWidth: 2,
-                    borderColor: selectedBadge.earned ? colors.primary : colors.border,
-                  }
-                ]}>
-                  <Text style={{ fontSize: 36 }}>{selectedBadge.icon}</Text>
-                </View>
-                <Text style={styles.modalTitle}>
-                  {t(selectedBadge.titleKey, lang) || selectedBadge.titleKey}
-                </Text>
-                <Text style={styles.modalSub}>
-                  {t(selectedBadge.subKey, lang) || selectedBadge.subKey}
-                </Text>
-                <Text style={styles.modalDesc}>
-                  {t(selectedBadge.descKey, lang) || ''}
-                </Text>
-                <View style={[
-                  styles.modalStatusBadge,
-                  { backgroundColor: selectedBadge.earned ? '#2E7D3220' : colors.backgroundDark }
-                ]}>
-                  <Text style={[
-                    styles.modalStatusText,
-                    { color: selectedBadge.earned ? '#2E7D32' : colors.textSecondary }
-                  ]}>
-                    {selectedBadge.earned ? t('badgeModalEarned', lang) : t('badgeModalLocked', lang)}
-                  </Text>
-                </View>
-                <TouchableOpacity 
-                  style={styles.modalCloseBtn} 
-                  onPress={() => setSelectedBadge(null)}
-                >
-                  <Text style={styles.modalCloseText}>{t('badgeModalClose', lang)}</Text>
-                </TouchableOpacity>
-              </>
-            )}
-          </TouchableOpacity>
-        </TouchableOpacity>
-      </Modal>
     </SafeAreaView>
   );
 };

@@ -31,6 +31,10 @@ const OnboardingScreen = ({ navigation }) => {
   ];
 
   const TOTAL_STEPS = 4;
+  const isPhone = SCREEN_WIDTH < 768;
+  const isSmallPhone = SCREEN_WIDTH < 390;
+  const catGridGap = isPhone ? 8 : 10;
+  const catTileWidth = (SCREEN_WIDTH - 64 - catGridGap) / 2;
 
   const next = async () => {
     // Animate out
@@ -202,13 +206,13 @@ const OnboardingScreen = ({ navigation }) => {
     catGrid: {
       flexDirection: 'row',
       flexWrap: 'wrap',
-      gap: 10,
+      gap: catGridGap,
       marginBottom: 16,
     },
     catTile: {
-      width: (SCREEN_WIDTH - 64 - 10) / 2,
-      paddingVertical: 16,
-      paddingHorizontal: 16,
+      width: catTileWidth,
+      paddingVertical: isSmallPhone ? 12 : isPhone ? 14 : 16,
+      paddingHorizontal: isSmallPhone ? 10 : isPhone ? 12 : 16,
       borderRadius: 16,
       backgroundColor: colors.backgroundDark,
       flexDirection: 'row',
@@ -220,7 +224,7 @@ const OnboardingScreen = ({ navigation }) => {
     },
     catTileText: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 14,
+      fontSize: isSmallPhone ? 12 : isPhone ? 13 : 14,
       color: colors.text,
     },
     catTileTextSelected: {
@@ -228,12 +232,20 @@ const OnboardingScreen = ({ navigation }) => {
       color: colors.primary,
     },
     catCheckCircle: {
-      width: 22,
-      height: 22,
-      borderRadius: 11,
+      width: isSmallPhone ? 20 : 22,
+      height: isSmallPhone ? 20 : 22,
+      borderRadius: isSmallPhone ? 10 : 11,
       backgroundColor: colors.primary,
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    catCheckSlot: {
+      width: isSmallPhone ? 20 : 22,
+      height: isSmallPhone ? 20 : 22,
+      marginLeft: isSmallPhone ? 6 : 8,
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexShrink: 0,
     },
     catHint: {
       fontFamily: 'Inter_400Regular',
@@ -446,8 +458,8 @@ const OnboardingScreen = ({ navigation }) => {
               onPress={() => toggleCat(cat)}
               activeOpacity={0.7}
             >
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, flex: 1 }}>
-                <View style={{ width: 32, height: 32, borderRadius: 6, overflow: 'hidden' }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: isSmallPhone ? 6 : 8, flex: 1 }}>
+                <View style={{ width: isSmallPhone ? 28 : 32, height: isSmallPhone ? 28 : 32, borderRadius: 6, overflow: 'hidden' }}>
                   {(() => {
                     const catImg = getCategoryImage(cat);
                     return (
@@ -469,13 +481,21 @@ const OnboardingScreen = ({ navigation }) => {
                     );
                   })()}
                 </View>
-                <Text style={[s.catTileText, sel && s.catTileTextSelected, { flex: 1 }]} numberOfLines={2}>{t(cat, lang)}</Text>
+                <Text
+                  style={[s.catTileText, sel && s.catTileTextSelected, { flex: 1 }]}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  {t(cat, lang)}
+                </Text>
               </View>
-              {sel && (
-                <View style={s.catCheckCircle}>
-                  <Text style={{ fontSize: 12, color: '#fff', fontWeight: '700' }}>✓</Text>
-                </View>
-              )}
+              <View style={s.catCheckSlot}>
+                {sel && (
+                  <View style={s.catCheckCircle}>
+                    <Text style={{ fontSize: isSmallPhone ? 11 : 12, color: '#fff', fontWeight: '700' }}>✓</Text>
+                  </View>
+                )}
+              </View>
             </TouchableOpacity>
           );
         })}
