@@ -164,6 +164,79 @@ const StoryDetailScreen = ({ route, navigation }) => {
     return '';
   };
 
+  const getCTAByLang = () => {
+    if (localLang === 'en') {
+      return [
+        'Save this and tag a friend who needs this today.',
+        'Follow Spark for daily actionable wisdom.',
+        'Try this insight today and share your result.',
+      ];
+    }
+    if (localLang === 'es') {
+      return [
+        'Guarda esto y etiqueta a alguien que lo necesite hoy.',
+        'Sigue a Spark para sabiduria diaria accionable.',
+        'Prueba esta idea hoy y comparte tu resultado.',
+      ];
+    }
+    if (localLang === 'de') {
+      return [
+        'Speichere das und markiere jemanden, der das heute braucht.',
+        'Folge Spark fur tagliche, umsetzbare Impulse.',
+        'Teste diese Erkenntnis heute und teile dein Ergebnis.',
+      ];
+    }
+    return [
+      'Bunu kaydet ve bugun ihtiyaci olan birini etiketle.',
+      'Her gun uygulanabilir bilgelik icin Spark\'i takip et.',
+      'Bu fikri bugun dene, sonucunu paylas.',
+    ];
+  };
+
+  const buildHashtags = () => {
+    const catHashtag = displayCat.replace(/[^\p{L}\p{N}]/gu, '');
+    const generalHashtags = localLang === 'en'
+      ? '#Spark #DailyInspiration #BookWisdom #Mindset'
+      : localLang === 'es'
+        ? '#Spark #InspiracionDiaria #Sabiduria #Mentalidad'
+        : localLang === 'de'
+          ? '#Spark #TaeglicheInspiration #Buchimpulse #Mindset'
+          : '#Spark #gununilhami #kitapbilgeligi #farkindalik';
+
+    return `#${catHashtag} ${generalHashtags}`;
+  };
+
+  const buildSharePayload = () => {
+    const selectedTexts = shareContent
+      .map(type => {
+        const text = getShareText(type);
+        if (!text) return '';
+        if (type === 'lesson') return `${t('share_key_takeaway', localLang)}\n${text}`;
+        if (type === 'reflection') return `${t('share_reflect', localLang)}\n${text}`;
+        if (type === 'hook') return `🎬 Hook\n${text}`;
+        return text;
+      })
+      .filter(Boolean)
+      .join('\n\n');
+
+    const ctas = getCTAByLang();
+    const primaryCta = ctas[0];
+    const secondaryCta = ctas[1];
+    const actionCta = ctas[2];
+    const hashtags = buildHashtags();
+
+    const caption = `${displayTitle}\n\n${selectedTexts}\n\n${primaryCta}\n${hashtags}`;
+
+    const reelScript = `${displayTitle}\n\n` +
+      `1) Hook: ${displayHook || getShareText('quote')}\n` +
+      `2) Ana fikir: ${getShareText('lesson') || getShareText('quote')}\n` +
+      `3) Soru: ${getShareText('reflection') || t('share_realize', localLang)}\n` +
+      `4) CTA: ${secondaryCta}\n` +
+      `5) Bonus CTA: ${actionCta}`;
+
+    return { caption, reelScript };
+  };
+
   const onShare = async () => {
     try {
       // 1. Capture the off-screen card as PNG
@@ -173,28 +246,19 @@ const StoryDetailScreen = ({ route, navigation }) => {
       });
 
       // 2. Construct the text to be included as caption
-      const allTexts = shareContent.map(type => {
-        const text = getShareText(type);
-        let label = '';
-        if (type === 'lesson') label = t('share_key_takeaway', localLang);
-        else if (type === 'reflection') label = t('share_reflect', localLang);
-        else if (type === 'hook') label = '🎬 Hook';
-      const catHashtag = displayCat.replace(/(\s+|&)/g, '');
-      const generalHashtags = localLang === 'en' ? '#Spark #DailyInspiration #BookRecommendation #Awareness' : 
-                              localLang === 'es' ? '#Spark #InspiraciónDiaria #RecomendaciónDeLibro #Conciencia' : 
-                              localLang === 'de' ? '#Spark #TäglicheInspiration #Buchempfehlung #Achtsamkeit' : 
-                              '#Spark #gününilhamı #kitapönerisi #farkindalik';
-                              
-      const caption = `${displayTitle}\n\n${allTexts}\n\n#${catHashtag} ${generalHashtags}`;
+      const { caption, reelScript } = buildSharePayload();
+      const clipboardPayload = shareFormat === 'reel'
+        ? `${caption}\n\n----- REEL SCRIPT -----\n${reelScript}`
+        : caption;
 
       // 3. Copy caption to clipboard so user can paste it on Instagram
       try {
-        await Clipboard.setStringAsync(caption);
+        await Clipboard.setStringAsync(clipboardPayload);
         Alert.alert(
-          lang === 'tr' ? "Metin Kopyalandı" : "Text Copied",
-          lang === 'tr' 
-            ? "Görseldeki metin ve etiketler panoya kopyalandı. Instagram'da paylaşırken açıklama kısmına yapıştırabilirsiniz."
-            : "The text and hashtags have been copied to your clipboard. You can paste them in the caption section when sharing.",
+          localLang === 'tr' ? 'Metin Kopyalandi' : 'Text Copied',
+          localLang === 'tr'
+            ? 'Aciklama metni panoya kopyalandi. Reel formatinda reel script de eklendi.'
+            : 'Caption copied to clipboard. Reel format also includes a short reel script.',
           [{ text: "Tamam", style: "default" }]
         );
       } catch (err) {
@@ -209,6 +273,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
           dialogTitle: `${displayTitle} — ${t('brandText', lang)}`,
         });
         incrementShareCount();
+        trackEvent(ANALYTICS_EVENTS.STORY_SHARED, {
+          source: 'story_detail',
+          storyId: story?.story_id,
+          shareFormat,
+          shareContent,
+          lang: localLang,
+        });
       } else {
         Alert.alert(
           t('alert_error', lang),
@@ -721,6 +792,18 @@ const StoryDetailScreen = ({ route, navigation }) => {
             </Text>
           </View>
 
+          <View style={{ position: 'absolute', right: 42, bottom: 36 }}>
+            <Text style={{
+              fontFamily: 'Inter_500Medium',
+              fontSize: 24,
+              color: th.text,
+              opacity: 0.35,
+              letterSpacing: 1,
+            }}>
+              Spark ✦
+            </Text>
+          </View>
+
         </View>
       </View>
     );
@@ -776,7 +859,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   key={ct.id}
                   style={[styles.contentPill, shareContent.includes(ct.id) && styles.contentPillActive]}
                   onPress={() => {
-                    if (shareFormat === 'story') {
+                    if (shareFormat === 'story' || shareFormat === 'reel') {
                       setShareContent(prev => {
                         if (prev.includes(ct.id)) {
                           return prev.length > 1 ? prev.filter(id => id !== ct.id) : prev;
@@ -828,6 +911,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 onPress={() => setShareFormat('story')}
               >
                 <Text style={[styles.formatBtnText, shareFormat === 'story' && styles.formatBtnTextActive]}>{t('format_story', lang)}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.formatBtn, shareFormat === 'reel' && styles.formatBtnActive]}
+                onPress={() => setShareFormat('reel')}
+              >
+                <Text style={[styles.formatBtnText, shareFormat === 'reel' && styles.formatBtnTextActive]}>🎥 Reel (9:16)</Text>
               </TouchableOpacity>
             </View>
             </ScrollView>

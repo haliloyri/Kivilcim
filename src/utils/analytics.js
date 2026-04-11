@@ -13,6 +13,10 @@ const ANALYTICS_EVENTS = {
   NOTIFICATION_SCHEDULED: 'notification_scheduled',
   NOTIFICATION_OPENED: 'notification_opened',
   REMINDER_TIME_CHANGED: 'reminder_time_changed',
+  MODULE_SHOWN: 'module_shown',
+  MODULE_CLICKED: 'module_clicked',
+  MODULE_DISMISSED: 'module_dismissed',
+  STORY_SHARED: 'story_shared',
 };
 
 const sanitizePayload = (payload) => {

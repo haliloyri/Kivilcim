@@ -113,20 +113,20 @@ Kod yuzeyi:
 - [x] Event isimleri ve payload alanlarini dokumante et
 
 ## 9. Kabul Kriterlerini Yaz
-- [ ] 3 dk secen kullanici ana ekranda 1 ana oneri gorur
-- [ ] 6 dk secen kullanici 2 hikayelik oneri seti gorur
-- [ ] 9 dk secen kullanici 3 hikayelik oneri seti gorur
-- [ ] Bildirim zamani secen kullanici icin bildirim sadece o tercih edilen saat civarinda planlanir
-- [ ] Kullanici hedefini degistirince ana ekran oneri adedi ayni oturumda guncellenir
-- [ ] Eski kullanicilar migration sonrasinda hatasiz sekilde varsayilan hedef alir
+- [x] 3 dk secen kullanici ana ekranda 1 ana oneri gorur
+- [x] 6 dk secen kullanici 2 hikayelik oneri seti gorur
+- [x] 9 dk secen kullanici 3 hikayelik oneri seti gorur
+- [x] Bildirim zamani secen kullanici icin bildirim sadece o tercih edilen saat civarinda planlanir
+- [x] Kullanici hedefini degistirince ana ekran oneri adedi ayni oturumda guncellenir
+- [x] Eski kullanicilar migration sonrasinda hatasiz sekilde varsayilan hedef alir
 
 ## 10. QA Checklist
-- [ ] Yeni kullanici 3 dk sectiginde dogru hedef geliyor mu
-- [ ] 6 dk icin oneri adedi dogru mu
-- [ ] 9 dk icin oneri adedi dogru mu
-- [ ] Kategori filtresi ile hedef birlikte calisiyor mu
-- [ ] Bildirim zamani degisince eski plan siliniyor mu
-- [ ] Uygulama yeniden acildiginda tercih korunuyor mu
+- [x] Yeni kullanici 3 dk sectiginde dogru hedef geliyor mu
+- [x] 6 dk icin oneri adedi dogru mu
+- [x] 9 dk icin oneri adedi dogru mu
+- [x] Kategori filtresi ile hedef birlikte calisiyor mu
+- [x] Bildirim zamani degisince eski plan siliniyor mu
+- [x] Uygulama yeniden acildiginda tercih korunuyor mu
 
 ## Onerilen Uygulama Sirasi
 - [ ] 1. Onboarding metni ve tercih modeli

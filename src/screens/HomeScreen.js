@@ -17,6 +17,13 @@ import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
+const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
+
+const MODULE_TYPES = {
+  CONTINUE: 'continue',
+  PICKED: 'picked',
+  FALLBACK: 'fallback',
+};
 
 const SkeletonCard = ({ colors, layout, isHero }) => (
   <View style={{
@@ -39,11 +46,14 @@ const HomeScreen = ({ navigation }) => {
   const [isFetchingMore, setIsFetchingMore] = useState(false);
   const [badgeCardIndex, setBadgeCardIndex] = useState(0);
   const [showFirstSessionPrompt, setShowFirstSessionPrompt] = useState(false);
+  const [isPersonalizedModuleDismissed, setIsPersonalizedModuleDismissed] = useState(false);
+  const [isPersonalizedModuleSnoozed, setIsPersonalizedModuleSnoozed] = useState(false);
   const isFetchingRef = useRef(false);  // ref to avoid stale closure
   const visibleCountRef = useRef(11);   // ref to read latest value in callbacks
   const badgeScrollRef = useRef(null);
   const flipAnim = useRef(new Animated.Value(0)).current;
   const hasTrackedPersonalizedFeedRef = useRef(false);
+  const trackedModuleShownKeyRef = useRef(null);
   const screenWidth = Dimensions.get('window').width;
 
   useEffect(() => {
@@ -88,6 +98,7 @@ const HomeScreen = ({ navigation }) => {
   const todayLabel = t('todayLabel', lang);
   const forYouLabel = t('home_for_you', lang);
   const personalizedTarget = preferences?.time?.dailyStoryTarget || 2;
+  const moduleStoryCount = Math.min(3, Math.max(1, personalizedTarget));
   const personalizedMinutes = preferences?.time?.minutes || 6;
   const forYouSubtitle = t('home_for_you_sub', lang)
     .replace('{{stories}}', String(personalizedTarget))
@@ -97,6 +108,12 @@ const HomeScreen = ({ navigation }) => {
   const firstSessionBody = t('home_first_session_sub', lang)
     .replace('{{stories}}', String(personalizedTarget))
     .replace('{{minutes}}', String(personalizedMinutes));
+  const firstSessionIntro = t('home_first_session_intro', lang);
+  const firstSessionRecoLabel = t('home_first_session_reco_label', lang);
+  const firstSessionMiniSummaryLabel = t('home_first_session_summary_label', lang);
+  const startQuicklyCta = lang === 'tr' ? '3 dakikada basla' : 'Start in 3 minutes';
+  const todayRecommendationCta = lang === 'tr' ? 'Bugunun onerisi' : "Today's recommendation";
+  const continueCta = lang === 'tr' ? 'Devam Et' : 'Continue';
 
   const checkIfRead = (id) => history.includes(id);
 
@@ -204,7 +221,8 @@ const HomeScreen = ({ navigation }) => {
       Promise.all([
         getSelectedCategories().catch(() => null),
         AsyncStorage.getItem(FIRST_SESSION_PROMPT_KEY).catch(() => null),
-      ]).then(([list, promptFlag]) => {
+        AsyncStorage.getItem(PERSONALIZED_MODULE_SNOOZE_KEY).catch(() => null),
+      ]).then(([list, promptFlag, moduleSnoozeUntil]) => {
         if (!isActive) return;
 
         if (Array.isArray(list)) {
@@ -212,6 +230,10 @@ const HomeScreen = ({ navigation }) => {
         }
 
         setShowFirstSessionPrompt(promptFlag === 'true');
+
+        const today = new Date().toISOString().split('T')[0];
+        setIsPersonalizedModuleDismissed(false);
+        setIsPersonalizedModuleSnoozed(Boolean(moduleSnoozeUntil && moduleSnoozeUntil >= today));
       });
 
       return () => {
@@ -253,9 +275,88 @@ const HomeScreen = ({ navigation }) => {
     return parseInt(b.story_id, 10) - parseInt(a.story_id, 10);
   });
 
-  const personalizedStories = sortedStories.slice(0, personalizedTarget);
+  const personalizedModule = React.useMemo(() => {
+    const storyById = new Map(sortedStories.map((s) => [String(s.story_id), s]));
+    const continueStory = (history || [])
+      .map((id) => storyById.get(String(id)))
+      .find(Boolean) || null;
+
+    const recentStories = (history || [])
+      .slice(0, 7)
+      .map((id) => storyById.get(String(id)))
+      .filter(Boolean);
+
+    const categoryScoreMap = recentStories.reduce((acc, item) => {
+      const cat = item?.parent_cat;
+      if (!cat) return acc;
+      acc[cat] = (acc[cat] || 0) + 1;
+      return acc;
+    }, {});
+
+    const dominantCategory = Object.entries(categoryScoreMap)
+      .sort((a, b) => b[1] - a[1])[0]?.[0] || null;
+
+    const pickedStories = dominantCategory
+      ? sortedStories.filter((s) => s.parent_cat === dominantCategory).slice(0, moduleStoryCount)
+      : [];
+
+    if (continueStory) {
+      const merged = [
+        continueStory,
+        ...sortedStories.filter((s) => String(s.story_id) !== String(continueStory.story_id)),
+      ].slice(0, moduleStoryCount);
+
+      return {
+        type: MODULE_TYPES.CONTINUE,
+        stories: merged,
+        continueStory,
+        dominantCategory,
+        dataFields: ['history[0]', 'history[0..6]', 'story.parent_cat', 'preferences.time.dailyStoryTarget'],
+      };
+    }
+
+    if (pickedStories.length > 0) {
+      return {
+        type: MODULE_TYPES.PICKED,
+        stories: pickedStories,
+        continueStory: null,
+        dominantCategory,
+        dataFields: ['history[0..6]', 'story.parent_cat', 'preferences.time.dailyStoryTarget'],
+      };
+    }
+
+    return {
+      type: MODULE_TYPES.FALLBACK,
+      stories: sortedStories.slice(0, moduleStoryCount),
+      continueStory: null,
+      dominantCategory: null,
+      dataFields: ['sortedStories', 'preferences.time.dailyStoryTarget'],
+    };
+  }, [sortedStories, history, moduleStoryCount]);
+
+  const personalizedStories = personalizedModule.stories;
   const personalizedStoryIds = new Set(personalizedStories.map((story) => story.story_id));
   const remainingStories = sortedStories.filter((story) => !personalizedStoryIds.has(story.story_id));
+
+  const firstSessionFocusCategories = React.useMemo(() => {
+    const preferred = (selectedCategories || []).filter(Boolean);
+    if (preferred.length > 0) return preferred.slice(0, 3);
+
+    const fromStories = Array.from(
+      new Set((personalizedStories || []).map((story) => story.parent_cat).filter(Boolean))
+    );
+    return fromStories.slice(0, 3);
+  }, [selectedCategories, personalizedStories]);
+
+  const firstSessionRecommendedTitle = personalizedStories[0]?.title || t('home_first_session_reco_fallback', lang);
+  const firstSessionCategoryStoryCount = React.useMemo(() => {
+    if (firstSessionFocusCategories.length === 0) return personalizedStories.length;
+    return publishedStories.filter((story) => firstSessionFocusCategories.includes(story.parent_cat)).length;
+  }, [firstSessionFocusCategories, personalizedStories.length, publishedStories]);
+
+  const firstSessionMiniSummary = t('home_first_session_summary', lang)
+    .replace('{{categories}}', String(Math.max(1, firstSessionFocusCategories.length)))
+    .replace('{{stories}}', String(Math.max(personalizedTarget, firstSessionCategoryStoryCount)));
 
   useEffect(() => {
     if (personalizedStories.length === 0 || hasTrackedPersonalizedFeedRef.current) {
@@ -267,9 +368,11 @@ const HomeScreen = ({ navigation }) => {
       dailyStoryTarget: personalizedTarget,
       personalizedStoriesCount: personalizedStories.length,
       filter: activeFilter,
+      moduleType: personalizedModule.type,
+      dominantCategory: personalizedModule.dominantCategory,
       lang,
     });
-  }, [personalizedStories, personalizedTarget, activeFilter, lang]);
+  }, [personalizedStories, personalizedTarget, activeFilter, lang, personalizedModule]);
 
   const openPersonalizedStory = (story, position) => {
     trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
@@ -329,7 +432,7 @@ const HomeScreen = ({ navigation }) => {
       trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
         storyId: firstStory.story_id,
         position: 0,
-        source: 'first_session_prompt',
+        source: personalizedModule.type === MODULE_TYPES.CONTINUE ? 'home_continue' : 'first_session_prompt',
         dailyStoryTarget: personalizedTarget,
         lang,
       });
@@ -338,6 +441,138 @@ const HomeScreen = ({ navigation }) => {
     }
 
     navigation.navigate('Search');
+  };
+
+  const personalizedModuleCard = React.useMemo(() => {
+    const firstStory = personalizedStories[0] || null;
+
+    if (!firstStory) {
+      return {
+        title: forYouLabel,
+        body: forYouSubtitle,
+        cta: startQuicklyCta,
+        story: null,
+        source: 'home_module_fallback',
+      };
+    }
+
+    if (personalizedModule.type === MODULE_TYPES.CONTINUE) {
+      return {
+        title: lang === 'tr' ? 'Devam etmeye hazirsin' : 'Ready to continue',
+        body: firstStory.title,
+        cta: continueCta,
+        story: firstStory,
+        source: 'home_module_continue',
+      };
+    }
+
+    if (personalizedModule.type === MODULE_TYPES.PICKED) {
+      return {
+        title: lang === 'tr' ? 'Senin Icin Secildi' : 'Picked for you',
+        body: firstStory.title,
+        cta: todayRecommendationCta,
+        story: firstStory,
+        source: 'home_module_picked',
+      };
+    }
+
+    return {
+      title: forYouLabel,
+      body: forYouSubtitle,
+      cta: startQuicklyCta,
+      story: firstStory,
+      source: 'home_module_fallback',
+    };
+  }, [personalizedStories, personalizedModule.type, forYouLabel, forYouSubtitle, startQuicklyCta, todayRecommendationCta, continueCta, lang]);
+
+  useEffect(() => {
+    const isVisible = !isPersonalizedModuleDismissed && !isPersonalizedModuleSnoozed && personalizedStories.length > 0;
+    if (!isVisible) return;
+
+    const moduleKey = `${personalizedModule.type}:${personalizedModuleCard.story?.story_id || 'none'}`;
+    if (trackedModuleShownKeyRef.current === moduleKey) return;
+
+    trackedModuleShownKeyRef.current = moduleKey;
+    trackEvent(ANALYTICS_EVENTS.MODULE_SHOWN, {
+      moduleType: personalizedModule.type,
+      storyId: personalizedModuleCard.story?.story_id,
+      dominantCategory: personalizedModule.dominantCategory,
+      ctaLabel: personalizedModuleCard.cta,
+      dailyStoryTarget: personalizedTarget,
+      filter: activeFilter,
+      lang,
+    });
+  }, [
+    isPersonalizedModuleDismissed,
+    isPersonalizedModuleSnoozed,
+    personalizedStories,
+    personalizedModule,
+    personalizedModuleCard,
+    personalizedTarget,
+    activeFilter,
+    lang,
+  ]);
+
+  const onPersonalizedModuleOpen = () => {
+    trackEvent(ANALYTICS_EVENTS.MODULE_CLICKED, {
+      moduleType: personalizedModule.type,
+      storyId: personalizedModuleCard.story?.story_id,
+      dominantCategory: personalizedModule.dominantCategory,
+      ctaLabel: personalizedModuleCard.cta,
+      dailyStoryTarget: personalizedTarget,
+      filter: activeFilter,
+      lang,
+    });
+
+    if (personalizedModuleCard.story) {
+      trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
+        storyId: personalizedModuleCard.story.story_id,
+        position: 0,
+        source: personalizedModuleCard.source,
+        dailyStoryTarget: personalizedTarget,
+        lang,
+      });
+      navigation.navigate('StoryDetail', { story: personalizedModuleCard.story });
+      return;
+    }
+
+    navigation.navigate('Search');
+  };
+
+  const dismissPersonalizedModule = () => {
+    trackEvent(ANALYTICS_EVENTS.MODULE_DISMISSED, {
+      moduleType: personalizedModule.type,
+      storyId: personalizedModuleCard.story?.story_id,
+      dominantCategory: personalizedModule.dominantCategory,
+      dismissReason: 'close',
+      dailyStoryTarget: personalizedTarget,
+      filter: activeFilter,
+      lang,
+    });
+    setIsPersonalizedModuleDismissed(true);
+  };
+
+  const snoozePersonalizedModule = async () => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrowStr = tomorrow.toISOString().split('T')[0];
+    trackEvent(ANALYTICS_EVENTS.MODULE_DISMISSED, {
+      moduleType: personalizedModule.type,
+      storyId: personalizedModuleCard.story?.story_id,
+      dominantCategory: personalizedModule.dominantCategory,
+      dismissReason: 'snooze_until_tomorrow',
+      snoozeUntil: tomorrowStr,
+      dailyStoryTarget: personalizedTarget,
+      filter: activeFilter,
+      lang,
+    });
+    setIsPersonalizedModuleDismissed(true);
+    setIsPersonalizedModuleSnoozed(true);
+    try {
+      await AsyncStorage.setItem(PERSONALIZED_MODULE_SNOOZE_KEY, tomorrowStr);
+    } catch (error) {
+      console.error('Kisisellestirilmis modul erteleme kaydedilemedi:', error);
+    }
   };
 
   const styles = StyleSheet.create({
@@ -491,6 +726,14 @@ const HomeScreen = ({ navigation }) => {
       backgroundColor: `${colors.primary}12`,
       padding: 16,
     },
+    firstSessionIntro: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11,
+      color: colors.primary,
+      letterSpacing: 0.7,
+      textTransform: 'uppercase',
+      marginBottom: 8,
+    },
     firstSessionTop: {
       flexDirection: 'row',
       alignItems: 'flex-start',
@@ -513,6 +756,48 @@ const HomeScreen = ({ navigation }) => {
       color: colors.textSecondary,
       lineHeight: 20,
     },
+    firstSessionInfoBox: {
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: `${colors.primary}30`,
+      backgroundColor: `${colors.background}AA`,
+      paddingHorizontal: 12,
+      paddingVertical: 10,
+      marginBottom: 10,
+      gap: 4,
+    },
+    firstSessionInfoLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.textSecondary,
+      textTransform: 'uppercase',
+      letterSpacing: 0.5,
+    },
+    firstSessionInfoValue: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.text,
+      lineHeight: 18,
+    },
+    firstSessionCatRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 6,
+      marginBottom: 12,
+    },
+    firstSessionCatPill: {
+      borderRadius: 999,
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+      backgroundColor: `${colors.primary}20`,
+      borderWidth: 1,
+      borderColor: `${colors.primary}45`,
+    },
+    firstSessionCatText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.primary,
+    },
     firstSessionClose: {
       width: 28,
       height: 28,
@@ -530,6 +815,68 @@ const HomeScreen = ({ navigation }) => {
       backgroundColor: colors.primary,
     },
     firstSessionCtaText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.onPrimary,
+      letterSpacing: 0.3,
+      textTransform: 'uppercase',
+    },
+    personalizedModuleCard: {
+      marginBottom: 16,
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: `${colors.primary}55`,
+      backgroundColor: `${colors.primary}12`,
+      padding: 16,
+    },
+    personalizedModuleTop: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start',
+      gap: 12,
+      marginBottom: 10,
+    },
+    personalizedModuleTextWrap: {
+      flex: 1,
+    },
+    personalizedModuleTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: typography.sizes.headingSmall,
+      color: colors.text,
+      marginBottom: 4,
+    },
+    personalizedModuleSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.bodySmall,
+      color: colors.textSecondary,
+      lineHeight: 20,
+    },
+    personalizedModuleActions: {
+      flexDirection: 'row',
+      gap: 10,
+      alignItems: 'center',
+    },
+    personalizedModuleSnoozeBtn: {
+      paddingHorizontal: 12,
+      paddingVertical: 8,
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.background,
+    },
+    personalizedModuleSnoozeText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.textSecondary,
+    },
+    personalizedModuleCta: {
+      alignSelf: 'flex-start',
+      paddingHorizontal: 16,
+      paddingVertical: 10,
+      borderRadius: 999,
+      backgroundColor: colors.primary,
+    },
+    personalizedModuleCtaText: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 13,
       color: colors.onPrimary,
@@ -692,6 +1039,7 @@ const HomeScreen = ({ navigation }) => {
             <>
               {showFirstSessionPrompt && (
                 <View style={styles.firstSessionCard}>
+                  <Text style={styles.firstSessionIntro}>{firstSessionIntro}</Text>
                   <View style={styles.firstSessionTop}>
                     <View style={styles.firstSessionTextWrap}>
                       <Text style={styles.firstSessionTitle}>{firstSessionTitle}</Text>
@@ -701,9 +1049,53 @@ const HomeScreen = ({ navigation }) => {
                       <Ionicons name="close" size={16} color={colors.primary} />
                     </TouchableOpacity>
                   </View>
+
+                  <View style={styles.firstSessionInfoBox}>
+                    <Text style={styles.firstSessionInfoLabel}>{firstSessionRecoLabel}</Text>
+                    <Text style={styles.firstSessionInfoValue} numberOfLines={2}>{firstSessionRecommendedTitle}</Text>
+                  </View>
+
+                  <View style={styles.firstSessionInfoBox}>
+                    <Text style={styles.firstSessionInfoLabel}>{firstSessionMiniSummaryLabel}</Text>
+                    <Text style={styles.firstSessionInfoValue}>{firstSessionMiniSummary}</Text>
+                  </View>
+
+                  {firstSessionFocusCategories.length > 0 ? (
+                    <View style={styles.firstSessionCatRow}>
+                      {firstSessionFocusCategories.map((cat) => (
+                        <View key={`first-session-cat-${cat}`} style={styles.firstSessionCatPill}>
+                          <Text style={styles.firstSessionCatText}>{t(cat, lang)}</Text>
+                        </View>
+                      ))}
+                    </View>
+                  ) : null}
+
                   <TouchableOpacity style={styles.firstSessionCta} onPress={openFirstRecommendedStory}>
                     <Text style={styles.firstSessionCtaText}>{t('home_open_first_story_cta', lang)}</Text>
                   </TouchableOpacity>
+                </View>
+              )}
+
+              {!isPersonalizedModuleDismissed && !isPersonalizedModuleSnoozed && personalizedStories.length > 0 && (
+                <View style={styles.personalizedModuleCard}>
+                  <View style={styles.personalizedModuleTop}>
+                    <View style={styles.personalizedModuleTextWrap}>
+                      <Text style={styles.personalizedModuleTitle}>{personalizedModuleCard.title}</Text>
+                      <Text style={styles.personalizedModuleSub}>{personalizedModuleCard.body}</Text>
+                    </View>
+                    <TouchableOpacity style={styles.firstSessionClose} onPress={dismissPersonalizedModule}>
+                      <Ionicons name="close" size={16} color={colors.primary} />
+                    </TouchableOpacity>
+                  </View>
+
+                  <View style={styles.personalizedModuleActions}>
+                    <TouchableOpacity style={styles.personalizedModuleSnoozeBtn} onPress={snoozePersonalizedModule}>
+                      <Text style={styles.personalizedModuleSnoozeText}>{lang === 'tr' ? 'Daha sonra' : 'Later'}</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.personalizedModuleCta} onPress={onPersonalizedModuleOpen}>
+                      <Text style={styles.personalizedModuleCtaText}>{personalizedModuleCard.cta}</Text>
+                    </TouchableOpacity>
+                  </View>
                 </View>
               )}
 

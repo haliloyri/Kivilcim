@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
   StatusBar, Platform, Image 
@@ -12,7 +12,7 @@ import { getCatIcon } from '../components/StoryCard';
 import { t } from '../locales/i18n';
 import { getCategoryImage } from '../utils/categoryImages';
 
-const FavoriteCard = ({ story, onPress, colors, typography, layout, lang }) => {
+const FavoriteCard = ({ story, onPress, colors, typography, layout, lang, journeyLine, badgeChip, onBadgePress }) => {
   const displayTitle = story.title || '';
   const rawDisplayCat = t(story.cat_display || story.cat, lang) || '';
   const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
@@ -84,6 +84,40 @@ const FavoriteCard = ({ story, onPress, colors, typography, layout, lang }) => {
           </Text>
           <Text style={{
             fontFamily: 'Inter_400Regular',
+            fontSize: 10,
+            color: colors.textSecondary,
+            marginTop: 6,
+          }} numberOfLines={2}>
+            {journeyLine}
+          </Text>
+
+          {badgeChip ? (
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={onBadgePress}
+              style={{
+                marginTop: 8,
+                alignSelf: 'flex-start',
+                paddingHorizontal: 8,
+                paddingVertical: 4,
+                borderRadius: 8,
+                backgroundColor: colors.primary + '20',
+                borderWidth: 1,
+                borderColor: colors.primary + '55',
+              }}
+            >
+              <Text style={{
+                fontFamily: 'Inter_500Medium',
+                fontSize: 10,
+                color: colors.primary,
+              }} numberOfLines={1}>
+                {`+ ${badgeChip.icon} ${t(badgeChip.titleKey, lang) || t('libraryBadgeNew', lang)}`}
+              </Text>
+            </TouchableOpacity>
+          ) : null}
+
+          <Text style={{
+            fontFamily: 'Inter_400Regular',
             fontSize: 11,
             color: colors.textSecondary,
             alignSelf: 'flex-end',
@@ -96,7 +130,7 @@ const FavoriteCard = ({ story, onPress, colors, typography, layout, lang }) => {
   );
 };
 
-const HistoryCard = ({ story, onPress, colors, typography, layout, lang }) => {
+const HistoryCard = ({ story, onPress, colors, typography, layout, lang, journeyLine, badgeChip, onBadgePress }) => {
   const displayTitle = story.title || '';
   const rawDisplayCat = t(story.cat_display || story.cat, lang) || '';
   const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
@@ -164,6 +198,38 @@ const HistoryCard = ({ story, onPress, colors, typography, layout, lang }) => {
         }} numberOfLines={2}>
           {displayTitle}
         </Text>
+        <Text style={{
+          fontFamily: 'Inter_400Regular',
+          fontSize: 11,
+          color: colors.textSecondary,
+          marginTop: 6,
+        }} numberOfLines={1}>
+          {journeyLine}
+        </Text>
+        {badgeChip ? (
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={onBadgePress}
+            style={{
+              marginTop: 8,
+              alignSelf: 'flex-start',
+              paddingHorizontal: 8,
+              paddingVertical: 4,
+              borderRadius: 8,
+              backgroundColor: colors.primary + '20',
+              borderWidth: 1,
+              borderColor: colors.primary + '55',
+            }}
+          >
+            <Text style={{
+              fontFamily: 'Inter_500Medium',
+              fontSize: 10,
+              color: colors.primary,
+            }} numberOfLines={1}>
+              {`+ ${badgeChip.icon} ${t(badgeChip.titleKey, lang) || t('libraryBadgeNew', lang)}`}
+            </Text>
+          </TouchableOpacity>
+        ) : null}
       </View>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
         <Text style={{
@@ -185,6 +251,8 @@ const LibraryScreen = ({ navigation }) => {
     favorites,
     history,
     readCountsByStory,
+    earnedBadges,
+    openBadgeModal,
     isStoryInFavoriteCollection,
     toggleStoryInFavoriteCollection,
   } = useUserData();
@@ -213,6 +281,53 @@ const LibraryScreen = ({ navigation }) => {
       return acc;
     }, {});
   }, [history]);
+
+  const earnedBadgeById = useMemo(() => {
+    return (earnedBadges || [])
+      .filter((badge) => badge.earned)
+      .reduce((acc, badge) => {
+        acc[badge.id] = badge;
+        return acc;
+      }, {});
+  }, [earnedBadges]);
+
+  const getBadgeForStory = useCallback((story) => {
+    if (!story) return null;
+    const categoryRaw = String(story.parent_cat || story.cat || '').toLocaleLowerCase('tr-TR');
+
+    if ((categoryRaw.includes('felsefe') || categoryRaw.includes('philosophy')) && earnedBadgeById.philosopher) {
+      return earnedBadgeById.philosopher;
+    }
+
+    const masteryPriority = ['cat_master_100', 'cat_master_50', 'cat_master_25', 'cat_master_10', 'cat_master_5'];
+    for (const id of masteryPriority) {
+      if (earnedBadgeById[id]) return earnedBadgeById[id];
+    }
+
+    return null;
+  }, [earnedBadgeById]);
+
+  const getStoryJourneyMeta = useCallback((story) => {
+    const storyId = String(story.story_id);
+    const readCount = Number(readCountsByStory?.[storyId] || 0);
+    const step = Math.max(1, readCount + 1);
+    const progressPct = Math.min(100, readCount * 25);
+    const badgeChip = getBadgeForStory(story);
+
+    const chapterText = t('libraryJourneyChapter', lang).replace('{{step}}', String(step));
+    const progressText = t('libraryJourneyProgress', lang).replace('{{pct}}', String(progressPct));
+    const badgeText = badgeChip ? t('libraryJourneyBadgeReady', lang) : t('libraryJourneyBadgeSoon', lang);
+
+    const journeyLine = t('libraryJourneyLine', lang)
+      .replace('{{chapter}}', chapterText)
+      .replace('{{progress}}', progressText)
+      .replace('{{badge}}', badgeText);
+
+    return {
+      journeyLine,
+      badgeChip,
+    };
+  }, [getBadgeForStory, lang, readCountsByStory]);
 
   const categoryOptions = useMemo(() => {
     const set = new Set();
@@ -422,6 +537,9 @@ const LibraryScreen = ({ navigation }) => {
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: layout.padding.horizontal }}>
               {favoriteStories.map(story => (
                 <View key={story.story_id}>
+                  {(() => {
+                    const meta = getStoryJourneyMeta(story);
+                    return (
                   <FavoriteCard
                     story={story}
                     onPress={() => navigation.navigate('StoryDetail', { story })}
@@ -429,7 +547,12 @@ const LibraryScreen = ({ navigation }) => {
                     typography={typography}
                     layout={layout}
                     lang={lang}
+                    journeyLine={meta.journeyLine}
+                    badgeChip={meta.badgeChip}
+                    onBadgePress={() => meta.badgeChip && openBadgeModal(meta.badgeChip)}
                   />
+                    );
+                  })()}
                   <TouchableOpacity
                     style={styles.collectionBtn}
                     onPress={() => toggleStoryInFavoriteCollection(story.story_id, 'saved_for_later')}
@@ -458,15 +581,23 @@ const LibraryScreen = ({ navigation }) => {
 
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
           {historyStories.length > 0 ? historyStories.map(story => (
-            <HistoryCard
-              key={`hist-${story.story_id}`}
-              story={story}
-              onPress={() => navigation.navigate('StoryDetail', { story })}
-              colors={colors}
-              typography={typography}
-              layout={layout}
-              lang={lang}
-            />
+            (() => {
+              const meta = getStoryJourneyMeta(story);
+              return (
+                <HistoryCard
+                  key={`hist-${story.story_id}`}
+                  story={story}
+                  onPress={() => navigation.navigate('StoryDetail', { story })}
+                  colors={colors}
+                  typography={typography}
+                  layout={layout}
+                  lang={lang}
+                  journeyLine={meta.journeyLine}
+                  badgeChip={meta.badgeChip}
+                  onBadgePress={() => meta.badgeChip && openBadgeModal(meta.badgeChip)}
+                />
+              );
+            })()
           )) : (
             <View style={[styles.emptyState, { paddingTop: 20 }]}>
               <Text style={styles.emptyText}>{t('noHistory', lang) || "Henüz hiç okuma yapmadınız."}</Text>

@@ -391,6 +391,10 @@ export const UserDataProvider = ({ children }) => {
         reminderWindow: prefs.reminderWindow,
         reminderHour: prefs.reminderHour,
         dailyStoryTarget: prefs.time?.dailyStoryTarget || 2,
+        totalReads,
+        streak,
+        shareCount,
+        isPremium,
       });
 
       await trackEvent(ANALYTICS_EVENTS.ONBOARDING_TIME_BUDGET_SELECTED, {
@@ -438,6 +442,10 @@ export const UserDataProvider = ({ children }) => {
         reminderWindow: nextPrefs.reminderWindow,
         reminderHour: nextPrefs.reminderHour,
         dailyStoryTarget: nextPrefs.time?.dailyStoryTarget || 2,
+        totalReads,
+        streak,
+        shareCount,
+        isPremium,
       });
 
       if (reminderChanged) {
@@ -465,6 +473,33 @@ export const UserDataProvider = ({ children }) => {
       return false;
     }
   };
+
+  useEffect(() => {
+    if (!isOnboarded || isLoading) return;
+    if (!preferences?.time?.dailyStoryTarget) return;
+
+    scheduleDailyNotifications({
+      lang,
+      reminderWindow: preferences.reminderWindow,
+      reminderHour: preferences.reminderHour,
+      dailyStoryTarget: preferences.time.dailyStoryTarget,
+      totalReads,
+      streak,
+      shareCount,
+      isPremium,
+    }).catch((error) => {
+      console.error('Segment bazli bildirim guncelleme hatasi:', error);
+    });
+  }, [
+    isOnboarded,
+    isLoading,
+    lang,
+    preferences,
+    totalReads,
+    streak,
+    shareCount,
+    isPremium,
+  ]);
 
   const updateUserProfile = async (partialProfile = {}) => {
     try {

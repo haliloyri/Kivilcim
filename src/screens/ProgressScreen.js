@@ -10,6 +10,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
+import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import { getReadHistory } from '../db/db';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
@@ -19,7 +20,8 @@ const DAILY_TARGET_COMPLETED_KEY = '@kivilcim_analytics_daily_target_completed_d
 
 const ProgressScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
-  const { streak, totalReads, earnedBadges, openBadgeModal, preferences, categoryStats } = useUserData();
+  const { streak, totalReads, earnedBadges, openBadgeModal, preferences, categoryStats, history } = useUserData();
+  const { stories } = useStories();
   const badgeScale = useSharedValue(0);
   const badgeOpacity = useSharedValue(0);
   const [showCelebration, setShowCelebration] = useState(false);
@@ -45,6 +47,14 @@ const ProgressScreen = ({ navigation }) => {
       remaining: nextMilestone - bestCount,
     };
   }, [categoryStats]);
+
+  const activeStories = useMemo(() => {
+    const byId = new Map((stories || []).map((story) => [String(story.story_id), story]));
+    return (history || [])
+      .slice(0, 3)
+      .map((id) => byId.get(String(id)))
+      .filter(Boolean);
+  }, [history, stories]);
 
   useEffect(() => {
     if (!isDailyGoalComplete) return;
@@ -255,6 +265,38 @@ const ProgressScreen = ({ navigation }) => {
       fontFamily: 'Inter_500Medium',
       fontSize: 11,
       color: colors.text,
+    },
+    activeStoryCard: {
+      backgroundColor: colors.background,
+      borderWidth: layout.borderWidth,
+      borderColor: colors.border,
+      borderRadius: layout.radius.card,
+      padding: 14,
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 10,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+    },
+    activeStoryIcon: {
+      width: 34,
+      height: 34,
+      borderRadius: 17,
+      backgroundColor: colors.backgroundDark,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    activeStoryTitle: {
+      fontFamily: 'PlayfairDisplay_600SemiBold',
+      fontSize: 16,
+      color: colors.text,
+      lineHeight: 21,
+    },
+    activeStorySub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 11,
+      color: colors.textSecondary,
+      marginTop: 2,
     },
     heatmapCard: {
       backgroundColor: colors.background,
@@ -500,7 +542,7 @@ const ProgressScreen = ({ navigation }) => {
                 {t('progressActionDailySub', lang).replace('{{count}}', String(Math.max(1, storiesLeftToday)))}
               </Text>
             </View>
-            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('HomeTab')}>
               <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
             </TouchableOpacity>
           </View>
@@ -519,7 +561,7 @@ const ProgressScreen = ({ navigation }) => {
                   : t('progressActionCategoryFallback', lang)}
               </Text>
             </View>
-            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('HomeTab')}>
               <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
             </TouchableOpacity>
           </View>
@@ -532,11 +574,41 @@ const ProgressScreen = ({ navigation }) => {
               <Text style={styles.actionTitle}>{t('progressActionStreakTitle', lang)}</Text>
               <Text style={styles.actionSub}>{t('progressActionStreakSub', lang)}</Text>
             </View>
-            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('HomeTab')}>
               <Text style={styles.actionButtonText}>{t('progressActionTomorrowCta', lang)}</Text>
             </TouchableOpacity>
           </View>
         </View>
+
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionLabel}>{t('progressActiveStoriesTitle', lang)}</Text>
+        </View>
+        {activeStories.length > 0 ? activeStories.map((story) => (
+          <View key={`active-${story.story_id}`} style={styles.activeStoryCard}>
+            <View style={styles.activeStoryIcon}>
+              <Text style={{ fontSize: 15 }}>📚</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.activeStoryTitle} numberOfLines={1}>{story.title || ''}</Text>
+              <Text style={styles.activeStorySub} numberOfLines={1}>
+                {`${t(story.parent_cat || story.cat, lang)} • ${story.min} ${t('minLabel', lang)}`}
+              </Text>
+            </View>
+            <TouchableOpacity
+              style={styles.actionButton}
+              onPress={() => {
+                navigation.navigate('LibraryTab');
+                navigation.navigate('StoryDetail', { story });
+              }}
+            >
+              <Text style={styles.actionButtonText}>{t('progressOpenInLibrary', lang)}</Text>
+            </TouchableOpacity>
+          </View>
+        )) : (
+          <View style={[styles.heatmapCard, { marginBottom: 8 }]}> 
+            <Text style={styles.actionSub}>{t('progressActiveStoriesEmpty', lang)}</Text>
+          </View>
+        )}
 
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionLabel}>{t('readingHabit', lang)}</Text>
