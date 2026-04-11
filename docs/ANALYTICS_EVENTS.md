@@ -37,6 +37,66 @@ Payload:
 - dailyStoryTarget: number
 - lang: string
 
+## paywall_viewed
+When: Paywall screen is opened.
+
+Payload:
+- reason: string (none | free_limit_reached)
+- source: string (direct | home_personalized_locked | home_feed_locked | story_detail_next)
+- selectedPlan: string
+- lang: string
+
+## paywall_plan_selected
+When: User changes selected subscription plan on paywall.
+
+Payload:
+- previousPlan: string
+- selectedPlan: string
+- selectedPrice: string
+- source: string
+- reason: string
+- lang: string
+
+## paywall_purchase_started
+When: User taps purchase CTA on paywall.
+
+Payload:
+- selectedPlan: string
+- selectedPrice: string
+- source: string
+- reason: string
+- lang: string
+
+## paywall_purchase_succeeded
+When: Premium purchase flow succeeds.
+
+Payload:
+- selectedPlan: string
+- selectedPrice: string
+- source: string
+- reason: string
+- lang: string
+
+## paywall_purchase_failed
+When: Premium purchase flow fails.
+
+Payload:
+- selectedPlan: string
+- selectedPrice: string
+- source: string
+- reason: string
+- lang: string
+- failureReason: string
+
+## free_limit_to_paywall
+When: User hits free limit and transitions to paywall after first 2 accessible stories.
+
+Payload:
+- source: string (home_personalized_locked | home_feed_locked | story_detail_next)
+- storyId: string | number (optional)
+- selectedPlan: string (when tracked on paywall open)
+- lang: string
+
 ## daily_target_completed
 When: Daily reading goal is completed in Progress screen. Tracked once per day.
 

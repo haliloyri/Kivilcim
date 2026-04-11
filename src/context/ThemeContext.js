@@ -4,10 +4,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors, typography, layout } from '../theme/theme';
 
 const ThemeContext = createContext();
+const THEME_MODE_STORAGE_KEY = 'themeMode';
+const LANGUAGE_STORAGE_KEY = 'lang';
+const SELECTED_CATEGORIES_STORAGE_KEY = 'selectedCategories';
 
 export const ThemeProvider = ({ children }) => {
   const systemColorScheme = useColorScheme();
-  const [themeMode, setThemeMode] = useState('light');
+  const getSystemThemeMode = () => (systemColorScheme === 'dark' ? 'dark' : 'light');
+  const [themeMode, setThemeModeState] = useState(getSystemThemeMode());
   // Determine default language from device locale using Intl
   const getDeviceLang = () => {
     try {
@@ -21,12 +25,27 @@ export const ThemeProvider = ({ children }) => {
   };
 
   const [lang, setLangState] = useState(getDeviceLang());
+
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const savedThemeMode = await AsyncStorage.getItem(THEME_MODE_STORAGE_KEY);
+        if (savedThemeMode === 'light' || savedThemeMode === 'dark') {
+          setThemeModeState(savedThemeMode);
+        } else {
+          setThemeModeState(getSystemThemeMode());
+        }
+      } catch (e) {
+        setThemeModeState(getSystemThemeMode());
+      }
+    })();
+  }, [systemColorScheme]);
   
   // Load saved language on mount
   React.useEffect(() => {
     (async () => {
       try {
-        const saved = await AsyncStorage.getItem('lang');
+        const saved = await AsyncStorage.getItem(LANGUAGE_STORAGE_KEY);
         if (['tr', 'en', 'es', 'de'].includes(saved)) {
           setLangState(saved);
         }
@@ -39,7 +58,7 @@ export const ThemeProvider = ({ children }) => {
     const supported = ['tr', 'en', 'es', 'de'];
     if (supported.includes(l)) {
       setLangState(l);
-      AsyncStorage.setItem('lang', l).catch(() => { });
+      AsyncStorage.setItem(LANGUAGE_STORAGE_KEY, l).catch(() => { });
     }
   };
 
@@ -57,7 +76,7 @@ export const ThemeProvider = ({ children }) => {
           return;
         }
 
-        const raw = await AsyncStorage.getItem('selectedCategories');
+        const raw = await AsyncStorage.getItem(SELECTED_CATEGORIES_STORAGE_KEY);
         if (raw) {
           const parsed = JSON.parse(raw);
           if (Array.isArray(parsed)) {
@@ -76,7 +95,7 @@ export const ThemeProvider = ({ children }) => {
   const updateSelectedCategories = async (list) => {
     setSelectedCategories(list);
     try {
-      await AsyncStorage.setItem('selectedCategories', JSON.stringify(list));
+      await AsyncStorage.setItem(SELECTED_CATEGORIES_STORAGE_KEY, JSON.stringify(list));
       const { setSelectedCategories: setDbList } = require('../db/db');
       await setDbList('default', list);
     } catch {
@@ -91,8 +110,40 @@ export const ThemeProvider = ({ children }) => {
     await updateSelectedCategories(next);
   };
 
+  const setThemeMode = (nextMode) => {
+    if (!['light', 'dark'].includes(nextMode)) return;
+    setThemeModeState(nextMode);
+    AsyncStorage.setItem(THEME_MODE_STORAGE_KEY, nextMode).catch(() => { });
+  };
+
   const toggleTheme = () => {
-    setThemeMode(prev => prev === 'light' ? 'dark' : 'light');
+    setThemeMode(themeMode === 'light' ? 'dark' : 'light');
+  };
+
+  const resetThemePreference = async () => {
+    const systemThemeMode = getSystemThemeMode();
+    setThemeModeState(systemThemeMode);
+    try {
+      await AsyncStorage.removeItem(THEME_MODE_STORAGE_KEY);
+    } catch {
+      // ignore
+    }
+  };
+
+  const resetAppSettings = async () => {
+    try {
+      await Promise.all([
+        AsyncStorage.removeItem(THEME_MODE_STORAGE_KEY),
+        AsyncStorage.removeItem(LANGUAGE_STORAGE_KEY),
+        AsyncStorage.removeItem(SELECTED_CATEGORIES_STORAGE_KEY),
+      ]);
+    } catch {
+      // ignore
+    }
+
+    setThemeModeState(getSystemThemeMode());
+    setLangState(getDeviceLang());
+    await updateSelectedCategories([]);
   };
 
   const activeColors = themeMode === 'light' ? colors.light : colors.dark;
@@ -105,6 +156,8 @@ export const ThemeProvider = ({ children }) => {
     themeMode,
     toggleTheme,
     setThemeMode,
+    resetThemePreference,
+    resetAppSettings,
     // language controls
     lang,
     setLang,

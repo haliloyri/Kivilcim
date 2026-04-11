@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
   StatusBar, Platform, Image 
@@ -181,22 +181,81 @@ const HistoryCard = ({ story, onPress, colors, typography, layout, lang }) => {
 
 const LibraryScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { favorites, history } = useUserData();
+  const {
+    favorites,
+    history,
+    readCountsByStory,
+    isStoryInFavoriteCollection,
+    toggleStoryInFavoriteCollection,
+  } = useUserData();
   const { stories } = useStories();
+  const [sortBy, setSortBy] = useState('recent');
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCollection, setActiveCollection] = useState('all');
 
-  const favoriteStories = [...new Map(
+  const favoriteStoriesRaw = [...new Map(
     favorites.map(id => {
       const s = (stories || []).find(st => st.story_id === String(id));
       return s ? [s.story_id, s] : null;
     }).filter(Boolean)
   ).values()];
 
-  const historyStories = [...new Map(
+  const historyStoriesRaw = [...new Map(
     history.map(id => {
       const s = (stories || []).find(st => st.story_id === String(id));
       return s ? [s.story_id, s] : null;
     }).filter(Boolean)
   ).values()];
+
+  const historyIndexMap = useMemo(() => {
+    return history.reduce((acc, id, idx) => {
+      acc[String(id)] = idx;
+      return acc;
+    }, {});
+  }, [history]);
+
+  const categoryOptions = useMemo(() => {
+    const set = new Set();
+    [...favoriteStoriesRaw, ...historyStoriesRaw].forEach((story) => {
+      const cat = story.parent_cat || story.cat;
+      if (cat) set.add(String(cat));
+    });
+    return ['all', ...Array.from(set)];
+  }, [favoriteStoriesRaw, historyStoriesRaw]);
+
+  const applyCategoryFilter = (list) => {
+    if (activeCategory === 'all') return list;
+    return list.filter((story) => String(story.parent_cat || story.cat) === String(activeCategory));
+  };
+
+  const applySort = (list) => {
+    if (sortBy === 'most_read') {
+      return list.slice().sort((a, b) => {
+        const readA = readCountsByStory?.[String(a.story_id)] || 0;
+        const readB = readCountsByStory?.[String(b.story_id)] || 0;
+        if (readA !== readB) return readB - readA;
+        return Number(b.story_id) - Number(a.story_id);
+      });
+    }
+
+    return list.slice().sort((a, b) => {
+      const idxA = historyIndexMap[String(a.story_id)] ?? Number.MAX_SAFE_INTEGER;
+      const idxB = historyIndexMap[String(b.story_id)] ?? Number.MAX_SAFE_INTEGER;
+      if (idxA !== idxB) return idxA - idxB;
+      return Number(b.story_id) - Number(a.story_id);
+    });
+  };
+
+  const favoriteStories = useMemo(() => {
+    const collectionFiltered = activeCollection === 'saved_for_later'
+      ? favoriteStoriesRaw.filter((story) => isStoryInFavoriteCollection(story.story_id, 'saved_for_later'))
+      : favoriteStoriesRaw;
+    return applySort(applyCategoryFilter(collectionFiltered));
+  }, [favoriteStoriesRaw, activeCollection, sortBy, activeCategory, readCountsByStory, historyIndexMap]);
+
+  const historyStories = useMemo(() => {
+    return applySort(applyCategoryFilter(historyStoriesRaw));
+  }, [historyStoriesRaw, sortBy, activeCategory, readCountsByStory, historyIndexMap]);
 
   const styles = StyleSheet.create({
     safe: { 
@@ -237,6 +296,59 @@ const LibraryScreen = ({ navigation }) => {
       textAlign: 'center',
       marginTop: 8,
     },
+    controlWrap: {
+      paddingHorizontal: layout.padding.horizontal,
+      gap: 10,
+      marginTop: 4,
+    },
+    chipRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 8,
+    },
+    chip: {
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.backgroundDark,
+      borderRadius: 18,
+      paddingVertical: 7,
+      paddingHorizontal: 12,
+    },
+    chipActive: {
+      backgroundColor: isDark ? '#3A3020' : '#E6DEC8',
+      borderColor: isDark ? '#6A5540' : '#E6DEC8',
+    },
+    chipText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.text,
+    },
+    subLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 10,
+      color: colors.textSecondary,
+      letterSpacing: 1,
+      textTransform: 'uppercase',
+      marginBottom: 6,
+    },
+    collectionBtn: {
+      marginTop: 10,
+      alignSelf: 'flex-start',
+      borderWidth: 1,
+      borderColor: colors.border,
+      borderRadius: 12,
+      paddingHorizontal: 8,
+      paddingVertical: 5,
+      backgroundColor: colors.background,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+    },
+    collectionBtnText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.textSecondary,
+    },
   });
 
   return (
@@ -248,6 +360,59 @@ const LibraryScreen = ({ navigation }) => {
           <Text style={styles.title}>{t('libraryTitle', lang)}</Text>
         </View>
 
+        <View style={styles.controlWrap}>
+          <View>
+            <Text style={styles.subLabel}>{t('librarySortLabel', lang)}</Text>
+            <View style={styles.chipRow}>
+              {[
+                { id: 'recent', label: t('librarySortRecent', lang) },
+                { id: 'most_read', label: t('librarySortMostRead', lang) },
+              ].map((item) => (
+                <TouchableOpacity
+                  key={item.id}
+                  style={[styles.chip, sortBy === item.id && styles.chipActive]}
+                  onPress={() => setSortBy(item.id)}
+                >
+                  <Text style={styles.chipText}>{item.label}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+
+          <View>
+            <Text style={styles.subLabel}>{t('libraryFilterCategory', lang)}</Text>
+            <View style={styles.chipRow}>
+              {categoryOptions.map((cat) => (
+                <TouchableOpacity
+                  key={cat}
+                  style={[styles.chip, activeCategory === cat && styles.chipActive]}
+                  onPress={() => setActiveCategory(cat)}
+                >
+                  <Text style={styles.chipText}>{cat === 'all' ? t('libraryFilterAll', lang) : t(cat, lang)}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+
+          <View>
+            <Text style={styles.subLabel}>{t('libraryCollectionsLabel', lang)}</Text>
+            <View style={styles.chipRow}>
+              {[
+                { id: 'all', label: t('libraryCollectionAll', lang) },
+                { id: 'saved_for_later', label: t('libraryCollectionSavedForLater', lang) },
+              ].map((item) => (
+                <TouchableOpacity
+                  key={item.id}
+                  style={[styles.chip, activeCollection === item.id && styles.chipActive]}
+                  onPress={() => setActiveCollection(item.id)}
+                >
+                  <Text style={styles.chipText}>{item.label}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+        </View>
+
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionLabel}>{t('favStories', lang)}</Text>
         </View>
@@ -256,15 +421,27 @@ const LibraryScreen = ({ navigation }) => {
           {favoriteStories.length > 0 ? (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: layout.padding.horizontal }}>
               {favoriteStories.map(story => (
-                <FavoriteCard
-                  key={story.story_id}
-                  story={story}
-                  onPress={() => navigation.navigate('StoryDetail', { story })}
-                  colors={colors}
-                  typography={typography}
-                  layout={layout}
-                  lang={lang}
-                />
+                <View key={story.story_id}>
+                  <FavoriteCard
+                    story={story}
+                    onPress={() => navigation.navigate('StoryDetail', { story })}
+                    colors={colors}
+                    typography={typography}
+                    layout={layout}
+                    lang={lang}
+                  />
+                  <TouchableOpacity
+                    style={styles.collectionBtn}
+                    onPress={() => toggleStoryInFavoriteCollection(story.story_id, 'saved_for_later')}
+                  >
+                    <Ionicons
+                      name={isStoryInFavoriteCollection(story.story_id, 'saved_for_later') ? 'bookmark' : 'bookmark-outline'}
+                      size={12}
+                      color={colors.textSecondary}
+                    />
+                    <Text style={styles.collectionBtnText}>{t('libraryCollectionSavedForLater', lang)}</Text>
+                  </TouchableOpacity>
+                </View>
               ))}
             </ScrollView>
           ) : (

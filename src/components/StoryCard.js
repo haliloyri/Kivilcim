@@ -25,7 +25,7 @@ export const getCatIcon = (catName) => {
   }
 };
 
-const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false }) => {
+const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false, supportText = null }) => {
   const { colors, typography, layout, lang } = useTheme();
   const isHero = type === 'hero';
   const isCompact = type === 'compact';
@@ -115,6 +115,13 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       alignItems: 'center',
       marginTop: 16,
     },
+    supportText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      lineHeight: 16,
+      color: locked ? colors.primary : colors.textSecondary,
+      marginTop: 8,
+    },
     cardMeta: {
       fontFamily: 'Inter_400Regular',
       fontSize: 12,
@@ -201,6 +208,9 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
           >
             {displayTitle}
           </Text>
+          {supportText ? (
+            <Text numberOfLines={2} style={styles.supportText}>{supportText}</Text>
+          ) : null}
         </View>
 
         <View style={styles.cardFooter}>

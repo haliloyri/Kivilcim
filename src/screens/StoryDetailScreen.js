@@ -17,6 +17,7 @@ import { getCatIcon } from '../components/StoryCard';
 import { t } from '../locales/i18n';
 import { getStoryByLang } from '../db/db';
 import { getCategoryImage } from '../utils/categoryImages';
+import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
 const { width, height } = Dimensions.get('window');
 
@@ -104,7 +105,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
   const handleNext = () => {
     if (!isPremium) {
-      navigation.navigate('Paywall');
+      trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
+        source: 'story_detail_next',
+        storyId: story?.story_id,
+        lang,
+      });
+      navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
       return;
     }
     const currentIndex = stories.findIndex(s => s.story_id === story.story_id);
@@ -1125,7 +1131,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
           <Text style={styles.btnSecondaryShareText}>Paylaş</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.btnPrimary, { flex: 2, backgroundColor: '#9D451B' }]} onPress={handleNext}>
-          <Text style={[styles.btnPrimaryText, { color: '#F7F3EB' }]}>Sonraki hikaye →</Text>
+          <Text style={[styles.btnPrimaryText, { color: '#F7F3EB' }]}>
+            {isPremium ? t('nextStory', lang) : t('nextStoryUnlock', lang)}
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

@@ -279,6 +279,79 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
   }
 };
 
+export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
+  await waitForData();
+  const normalized = String(query || '').trim().toLowerCase();
+  if (!normalized) return [];
+
+  const db = getDb();
+  const likeQuery = `%${normalized}%`;
+  const safeLimit = Number.isFinite(limit) ? Math.max(1, Math.min(100, Number(limit))) : 40;
+
+  const rows = await db.getAllAsync(`
+    SELECT
+      s.id,
+      b.id AS source_book_id,
+      b.author,
+      b.publish_year AS publishDate,
+      3 AS min,
+      sub.subcategory_name AS cat,
+      sub.subcategory_name AS cat_display,
+      COALESCE(NULLIF(bt.title, ''),         bt_tr.title,         '') AS source_book,
+      COALESCE(NULLIF(st.title, ''),         st_tr.title,         '') AS title,
+      COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
+      COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
+      COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
+      COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
+      c.category_name AS parent_cat_raw,
+      CASE WHEN LOWER(COALESCE(NULLIF(st.title, ''), st_tr.title, '')) LIKE ? THEN 0 ELSE 1 END AS rank_title,
+      CASE WHEN LOWER(COALESCE(NULLIF(st.content, ''), st_tr.content, '')) LIKE ? THEN 0 ELSE 1 END AS rank_body,
+      CASE WHEN LOWER(COALESCE(NULLIF(bt.title, ''), bt_tr.title, '')) LIKE ? THEN 0 ELSE 1 END AS rank_source
+    FROM stories s
+    LEFT JOIN books b ON b.list_no = s.book_no
+    LEFT JOIN subcategories sub ON sub.id = b.category_id
+    LEFT JOIN categories c ON c.id = sub.categori_id
+    LEFT JOIN categories_translations ct ON ct.category_id = c.id AND ct.language = ?
+    LEFT JOIN categories_translations ct_tr ON ct_tr.category_id = c.id AND ct_tr.language = 'tr'
+    LEFT JOIN story_translations st    ON st.story_id = s.id AND st.lang_code = ?
+    LEFT JOIN story_translations st_tr ON st_tr.story_id = s.id AND st_tr.lang_code = 'tr'
+    LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
+    LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
+    WHERE
+      LOWER(COALESCE(NULLIF(st.title, ''), st_tr.title, '')) LIKE ?
+      OR LOWER(COALESCE(NULLIF(st.content, ''), st_tr.content, '')) LIKE ?
+      OR LOWER(COALESCE(NULLIF(st.description, ''), st_tr.description, '')) LIKE ?
+      OR LOWER(COALESCE(NULLIF(st.hook, ''), st_tr.hook, '')) LIKE ?
+      OR LOWER(COALESCE(NULLIF(bt.title, ''), bt_tr.title, '')) LIKE ?
+      OR LOWER(COALESCE(ct.translation, ct_tr.translation, c.category_name, '')) LIKE ?
+      OR LOWER(COALESCE(sub.subcategory_name, '')) LIKE ?
+    ORDER BY rank_title ASC, rank_body ASC, rank_source ASC, s.id DESC
+    LIMIT ${safeLimit}
+  `, [
+    likeQuery,
+    likeQuery,
+    likeQuery,
+    lang,
+    lang,
+    lang,
+    likeQuery,
+    likeQuery,
+    likeQuery,
+    likeQuery,
+    likeQuery,
+    likeQuery,
+    likeQuery,
+  ]);
+
+  return rows.map((r) => ({
+    ...r,
+    story_id: String(r.id),
+    title: r.title || '',
+    body: r.body || '',
+    hook: r.hook || '',
+  }));
+};
+
 /**
  * Returns all unique categories from the book_translations table.
  */
@@ -558,6 +631,28 @@ export const getReadsPerCategory = async (userId = 'default') => {
     return map;
   } catch (e) {
     console.error('getReadsPerCategory error:', e);
+    return {};
+  }
+};
+
+export const getReadCountsByStory = async (userId = 'default') => {
+  await waitForDb();
+  const db = getDb();
+  try {
+    const rows = await db.getAllAsync(
+      `SELECT story_id, COUNT(*) AS cnt
+       FROM user_reads
+       WHERE user_id = ?
+       GROUP BY story_id`,
+      [userId]
+    );
+    const map = {};
+    for (const row of rows) {
+      map[String(row.story_id)] = row.cnt || 0;
+    }
+    return map;
+  } catch (error) {
+    console.error('getReadCountsByStory error:', error);
     return {};
   }
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Switch 
+  StatusBar, Platform, Switch, Alert, Linking 
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
@@ -15,10 +15,22 @@ import { t } from '../locales/i18n';
 
 
 const ProfileScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark, toggleTheme, lang, setLang, selectedCategories, toggleSelectedCategory } = useTheme();
+  const {
+    colors,
+    typography,
+    layout,
+    isDark,
+    themeMode,
+    toggleTheme,
+    lang,
+    setLang,
+    selectedCategories,
+    toggleSelectedCategory,
+    resetAppSettings,
+  } = useTheme();
   // Global t() function is now used directly from i18n.js
   const { categories, parentCategories } = useStories();
-  const { clearUserData, isPremium, preferences, updatePreferences } = useUserData();
+  const { clearUserData, isPremium, preferences, updatePreferences, userProfile, updateUserProfile } = useUserData();
   const testNotifIndex = React.useRef(0);
 
   const timeOptions = [
@@ -36,6 +48,16 @@ const ProfileScreen = ({ navigation }) => {
   const selectedReminder = preferences?.reminderWindow || 'evening';
   const selectedTarget = preferences?.time?.dailyStoryTarget || 2;
   const selectedReminderLabel = reminderOptions.find((o) => o.value === selectedReminder)?.label || t('reminder_evening', lang);
+  const currentThemeLabel = themeMode === 'dark' ? t('themeModeDark', lang) : t('themeModeLight', lang);
+  const profileDisplayName = userProfile?.displayName || t('profileGuestName', lang);
+  const profileEmail = userProfile?.email || t('profileGuestEmail', lang);
+  const avatarText = (userProfile?.displayName || t('profileGuestAvatar', lang))
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
 
   const handleReadingPlanChange = async (minutes) => {
     const selected = timeOptions.find((o) => o.value === minutes);
@@ -57,8 +79,54 @@ const ProfileScreen = ({ navigation }) => {
     });
   };
 
+  const openPrivacyPolicy = async () => {
+    const url = 'https://sparkapp.co/privacy';
+    try {
+      const canOpen = await Linking.canOpenURL(url);
+      if (!canOpen) {
+        Alert.alert(t('alert_error', lang), t('profileExternalLinkError', lang));
+        return;
+      }
+      await Linking.openURL(url);
+    } catch (error) {
+      Alert.alert(t('alert_error', lang), t('profileExternalLinkError', lang));
+    }
+  };
+
   const handleLogout = async () => {
-    await clearUserData();
+    Alert.alert(
+      t('profileLogoutTitle', lang),
+      t('profileLogoutSub', lang),
+      [
+        { text: t('profileCancel', lang), style: 'cancel' },
+        {
+          text: t('logout', lang),
+          style: 'destructive',
+          onPress: async () => {
+            await updateUserProfile({ displayName: null, email: null });
+          },
+        },
+      ]
+    );
+  };
+
+  const handleResetData = async () => {
+    Alert.alert(
+      t('profileResetDataTitle', lang),
+      t('profileResetDataSub', lang),
+      [
+        { text: t('profileCancel', lang), style: 'cancel' },
+        {
+          text: t('profileResetDataCta', lang),
+          style: 'destructive',
+          onPress: async () => {
+            await Notifications.cancelAllScheduledNotificationsAsync().catch(() => {});
+            await clearUserData();
+            await resetAppSettings();
+          },
+        },
+      ]
+    );
   };
 
   const scheduleTestNotification = async () => {
@@ -135,6 +203,37 @@ const ProfileScreen = ({ navigation }) => {
       fontSize: 13,
       color: colors.textSecondary,
     },
+    destructiveSection: {
+      marginTop: 12,
+      backgroundColor: colors.backgroundDark,
+      borderRadius: layout.radius.card,
+      borderWidth: 1,
+      borderColor: colors.border,
+      overflow: 'hidden',
+    },
+    destructiveItem: {
+      paddingHorizontal: 16,
+      paddingVertical: 16,
+      borderBottomWidth: 1,
+      borderBottomColor: colors.border,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12,
+    },
+    destructiveTitle: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 15,
+      color: colors.text,
+      marginBottom: 2,
+    },
+    destructiveSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      lineHeight: 17,
+      flexShrink: 1,
+    },
   });
 
   return (
@@ -144,10 +243,10 @@ const ProfileScreen = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
         <View style={styles.header}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarText}>AY</Text>
+            <Text style={styles.avatarText}>{avatarText}</Text>
           </View>
-          <Text style={styles.userName}>Asaf Oyri</Text>
-          <Text style={styles.userEmail}>asaf@example.com</Text>
+          <Text style={styles.userName}>{profileDisplayName}</Text>
+          <Text style={styles.userEmail}>{profileEmail}</Text>
           
           <TouchableOpacity 
             style={styles.premiumBadge} 
@@ -230,6 +329,8 @@ const ProfileScreen = ({ navigation }) => {
           </View>
 
           <View style={styles.prefSummaryBox}>
+            <Text style={styles.prefSummaryText}>{t('themeSummary', lang).replace('{{theme}}', currentThemeLabel)}</Text>
+            <Text style={styles.prefSummaryText}>{t('languageSummary', lang).replace('{{language}}', t(`language${lang === 'tr' ? 'Turkish' : lang === 'en' ? 'English' : lang === 'es' ? 'Spanish' : 'German'}`, lang))}</Text>
             <Text style={styles.prefSummaryText}>{t('dailyTargetSummary', lang).replace('{{target}}', String(selectedTarget))}</Text>
             <Text style={styles.prefSummaryText}>{t('reminderSummary', lang).replace('{{time}}', selectedReminderLabel)}</Text>
           </View>
@@ -240,7 +341,7 @@ const ProfileScreen = ({ navigation }) => {
               <Text style={styles.menuItemText}>{t('darkMode', lang)}</Text>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-              <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary }}>iOS</Text>
+              <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary }}>{currentThemeLabel}</Text>
               <Switch 
                 value={isDark} 
                 onValueChange={toggleTheme}
@@ -302,7 +403,7 @@ const ProfileScreen = ({ navigation }) => {
             <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity style={styles.menuItem} onPress={openPrivacyPolicy}>
             <View style={styles.menuItemLeft}>
               <Ionicons name="shield-outline" size={24} color={colors.textSecondary} />
               <Text style={styles.menuItemText}>{t('privacy', lang)}</Text>
@@ -310,12 +411,23 @@ const ProfileScreen = ({ navigation }) => {
             <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={[styles.menuItem, { borderBottomWidth: 0 }]} onPress={handleLogout}>
-            <View style={styles.menuItemLeft}>
-              <Text style={[styles.menuItemText, { color: '#BA1A1A' }]}>{t('logout', lang)}</Text>
-            </View>
+          <View style={styles.destructiveSection}>
+            <TouchableOpacity style={styles.destructiveItem} onPress={handleResetData}>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.destructiveTitle, { color: '#BA1A1A' }]}>{t('profileResetDataLabel', lang)}</Text>
+                <Text style={styles.destructiveSub}>{t('profileResetDataHint', lang)}</Text>
+              </View>
+              <Ionicons name="refresh-outline" size={18} color="#BA1A1A" />
+            </TouchableOpacity>
 
-          </TouchableOpacity>
+            <TouchableOpacity style={[styles.destructiveItem, { borderBottomWidth: 0 }]} onPress={handleLogout}>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.destructiveTitle, { color: '#BA1A1A' }]}>{t('logout', lang)}</Text>
+                <Text style={styles.destructiveSub}>{t('profileLogoutHint', lang)}</Text>
+              </View>
+              <Ionicons name="log-out-outline" size={18} color="#BA1A1A" />
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

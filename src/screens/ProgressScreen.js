@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
@@ -19,7 +19,7 @@ const DAILY_TARGET_COMPLETED_KEY = '@kivilcim_analytics_daily_target_completed_d
 
 const ProgressScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
-  const { streak, totalReads, earnedBadges, openBadgeModal, preferences } = useUserData();
+  const { streak, totalReads, earnedBadges, openBadgeModal, preferences, categoryStats } = useUserData();
   const badgeScale = useSharedValue(0);
   const badgeOpacity = useSharedValue(0);
   const [showCelebration, setShowCelebration] = useState(false);
@@ -29,6 +29,22 @@ const ProgressScreen = ({ navigation }) => {
   const dailyProgress = Math.min(todayReads, dailyTarget);
   const isDailyGoalComplete = dailyProgress >= dailyTarget;
   const todayKey = new Date().toISOString().split('T')[0];
+  const storiesLeftToday = Math.max(0, dailyTarget - dailyProgress);
+
+  const categoryAction = useMemo(() => {
+    const statsEntries = Object.entries(categoryStats || {});
+    if (statsEntries.length === 0) return null;
+
+    const [bestCategory, bestCount] = statsEntries.sort((a, b) => b[1] - a[1])[0];
+    const milestones = [5, 10, 25, 50, 100];
+    const nextMilestone = milestones.find((m) => m > bestCount);
+    if (!nextMilestone) return null;
+
+    return {
+      category: bestCategory,
+      remaining: nextMilestone - bestCount,
+    };
+  }, [categoryStats]);
 
   useEffect(() => {
     if (!isDailyGoalComplete) return;
@@ -190,6 +206,55 @@ const ProgressScreen = ({ navigation }) => {
       fontSize: 11,
       letterSpacing: 0.4,
       textTransform: 'uppercase',
+    },
+    actionsWrap: {
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 10,
+      gap: 10,
+    },
+    actionCard: {
+      backgroundColor: colors.background,
+      borderWidth: layout.borderWidth,
+      borderColor: colors.border,
+      borderRadius: layout.radius.card,
+      padding: 14,
+      flexDirection: 'row',
+      gap: 12,
+      alignItems: 'center',
+    },
+    actionIcon: {
+      width: 36,
+      height: 36,
+      borderRadius: 18,
+      backgroundColor: colors.backgroundDark,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    actionTitle: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 14,
+      color: colors.text,
+      marginBottom: 2,
+    },
+    actionSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      lineHeight: 18,
+    },
+    actionButton: {
+      marginLeft: 'auto',
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: colors.border,
+      paddingHorizontal: 10,
+      paddingVertical: 6,
+      backgroundColor: colors.backgroundDark,
+    },
+    actionButtonText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.text,
     },
     heatmapCard: {
       backgroundColor: colors.background,
@@ -418,6 +483,58 @@ const ProgressScreen = ({ navigation }) => {
             ]}>
               {isDailyGoalComplete ? t('dailyGoalComplete', lang) : t('dailyGoalInProgress', lang)}
             </Text>
+          </View>
+        </View>
+
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionLabel}>{t('progressActionsTitle', lang)}</Text>
+        </View>
+        <View style={styles.actionsWrap}>
+          <View style={styles.actionCard}>
+            <View style={styles.actionIcon}>
+              <Text style={{ fontSize: 16 }}>📖</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.actionTitle}>{t('progressActionDailyTitle', lang)}</Text>
+              <Text style={styles.actionSub}>
+                {t('progressActionDailySub', lang).replace('{{count}}', String(Math.max(1, storiesLeftToday)))}
+              </Text>
+            </View>
+            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('Home')}>
+              <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.actionCard}>
+            <View style={styles.actionIcon}>
+              <Text style={{ fontSize: 16 }}>🏅</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.actionTitle}>{t('progressActionCategoryTitle', lang)}</Text>
+              <Text style={styles.actionSub}>
+                {categoryAction
+                  ? t('progressActionCategorySub', lang)
+                      .replace('{{count}}', String(categoryAction.remaining))
+                      .replace('{{category}}', t(categoryAction.category, lang))
+                  : t('progressActionCategoryFallback', lang)}
+              </Text>
+            </View>
+            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('Home')}>
+              <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.actionCard}>
+            <View style={styles.actionIcon}>
+              <Text style={{ fontSize: 16 }}>🔥</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.actionTitle}>{t('progressActionStreakTitle', lang)}</Text>
+              <Text style={styles.actionSub}>{t('progressActionStreakSub', lang)}</Text>
+            </View>
+            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('Home')}>
+              <Text style={styles.actionButtonText}>{t('progressActionTomorrowCta', lang)}</Text>
+            </TouchableOpacity>
           </View>
         </View>
 

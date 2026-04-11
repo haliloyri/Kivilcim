@@ -282,11 +282,35 @@ const HomeScreen = ({ navigation }) => {
     navigation.navigate('StoryDetail', { story });
   };
 
+  const openPaywallFromFreeLimit = (source, storyId = null) => {
+    trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
+      source,
+      storyId,
+      lang,
+    });
+    navigation.navigate('Paywall', { reason: 'free_limit_reached', source });
+  };
+
   const paginatedStories = remainingStories.slice(0, visibleCount);
 
   const remainingFreeQuota = isPremium ? paginatedStories.length : Math.max(0, 2 - personalizedStories.length);
   const free = isPremium ? paginatedStories : paginatedStories.slice(0, remainingFreeQuota);
-  const locked = isPremium ? [] : paginatedStories.slice(remainingFreeQuota);
+  const lockedRaw = isPremium ? [] : paginatedStories.slice(remainingFreeQuota);
+
+  const today = new Date();
+  const yearStart = new Date(today.getFullYear(), 0, 1);
+  const dayOfYear = Math.floor((today - yearStart) / (24 * 60 * 60 * 1000));
+  const weekNumber = Math.floor(dayOfYear / 7) + 1;
+  const weekSeed = Number(`${today.getFullYear()}${weekNumber}`.slice(-6));
+
+  const weeklyBonusStory = (!isPremium && lockedRaw.length > 0)
+    ? lockedRaw[weekSeed % lockedRaw.length]
+    : null;
+  const lockedWithoutWeeklyBonus = weeklyBonusStory
+    ? lockedRaw.filter((story) => String(story.story_id) !== String(weeklyBonusStory.story_id))
+    : lockedRaw;
+  const teaserStory = (!isPremium && lockedWithoutWeeklyBonus.length > 0) ? lockedWithoutWeeklyBonus[0] : null;
+  const locked = teaserStory ? lockedWithoutWeeklyBonus.slice(1) : lockedWithoutWeeklyBonus;
 
   const dismissFirstSessionPrompt = async () => {
     setShowFirstSessionPrompt(false);
@@ -707,9 +731,10 @@ const HomeScreen = ({ navigation }) => {
                             story={story}
                             type="compact"
                             locked={isLocked}
+                            supportText={isLocked ? t('homeFreemiumPremiumBenefit', lang) : null}
                             hideCategory={activeFilter !== 'Tümü'}
                             isRead={checkIfRead(story.story_id)}
-                            onPress={() => isLocked ? navigation.navigate('Paywall') : openPersonalizedStory(story, index + 1)}
+                            onPress={() => isLocked ? openPaywallFromFreeLimit('home_personalized_locked', story.story_id) : openPersonalizedStory(story, index + 1)}
                           />
                         );
                       })}
@@ -739,14 +764,37 @@ const HomeScreen = ({ navigation }) => {
                     onPress={() => navigation.navigate('StoryDetail', { story })} 
                   />
                 ))}
+                {weeklyBonusStory ? (
+                  <StoryCard
+                    key={`bonus-${weeklyBonusStory.story_id}`}
+                    story={weeklyBonusStory}
+                    type="compact"
+                    hideCategory={activeFilter !== 'Tümü'}
+                    supportText={t('homeFreemiumWeeklyBonusHint', lang)}
+                    isRead={checkIfRead(weeklyBonusStory.story_id)}
+                    onPress={() => navigation.navigate('StoryDetail', { story: weeklyBonusStory })}
+                  />
+                ) : null}
+                {teaserStory ? (
+                  <StoryCard
+                    key={`teaser-${teaserStory.story_id}`}
+                    story={teaserStory}
+                    type="compact"
+                    locked
+                    hideCategory={activeFilter !== 'Tümü'}
+                    supportText={t('homeFreemiumTeaserHint', lang)}
+                    onPress={() => openPaywallFromFreeLimit('home_feed_teaser', teaserStory.story_id)}
+                  />
+                ) : null}
                 {locked.map(story => (
                   <StoryCard 
                     key={story.story_id} 
                     story={story} 
                     type="compact" 
                     locked 
+                    supportText={t('homeFreemiumPremiumBenefit', lang)}
                     hideCategory={activeFilter !== 'Tümü'}
-                    onPress={() => navigation.navigate('Paywall')} 
+                    onPress={() => openPaywallFromFreeLimit('home_feed_locked', story.story_id)} 
                   />
                 ))}
               </View>
