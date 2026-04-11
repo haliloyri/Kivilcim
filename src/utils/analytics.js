@@ -1,0 +1,34 @@
+const ANALYTICS_EVENTS = {
+  ONBOARDING_TIME_BUDGET_SELECTED: 'onboarding_time_budget_selected',
+  ONBOARDING_NOTIFICATION_TIME_SELECTED: 'onboarding_notification_time_selected',
+  PERSONALIZED_FEED_SHOWN: 'personalized_feed_shown',
+  PERSONALIZED_STORY_OPENED: 'personalized_story_opened',
+  DAILY_TARGET_COMPLETED: 'daily_target_completed',
+  NOTIFICATION_SCHEDULED: 'notification_scheduled',
+  NOTIFICATION_OPENED: 'notification_opened',
+  REMINDER_TIME_CHANGED: 'reminder_time_changed',
+};
+
+const sanitizePayload = (payload) => {
+  if (!payload || typeof payload !== 'object') return {};
+
+  return Object.fromEntries(
+    Object.entries(payload).filter(([, value]) => value !== undefined)
+  );
+};
+
+export const trackEvent = async (eventName, payload = {}) => {
+  if (!eventName) return;
+
+  const safePayload = sanitizePayload(payload);
+  const logPayload = {
+    event: eventName,
+    payload: safePayload,
+    timestamp: new Date().toISOString(),
+  };
+
+  // Centralized logging point so a real analytics SDK can be attached later.
+  console.log('[analytics]', JSON.stringify(logPayload));
+};
+
+export { ANALYTICS_EVENTS };

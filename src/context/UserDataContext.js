@@ -3,15 +3,141 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from './ThemeContext';
 import { recordRead, getTotalReads, getStreak, getLongestStreak, getReadsPerCategory } from '../db/db';
 import { checkBadges } from '../utils/badges';
+import { scheduleDailyNotifications } from '../utils/notifications';
+import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
 const UserDataContext = createContext();
 const SEEN_BADGES_STORAGE_KEY = '@kivilcim_seen_earned_badges';
+const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
+const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening', reminderHour: 21 };
+
+const normalizeMinutes = (rawMinutes) => {
+  if (rawMinutes == null) return null;
+
+  const parsed = Number(rawMinutes);
+  if (Number.isNaN(parsed)) return null;
+  if (parsed <= 3) return 3;
+  if (parsed <= 6) return 6;
+  return 9;
+};
+
+const inferMinutesFromTimePreference = (timePreference) => {
+  if (!timePreference) return null;
+
+  if (typeof timePreference === 'number') {
+    return normalizeMinutes(timePreference);
+  }
+
+  if (typeof timePreference === 'string') {
+    const match = timePreference.match(/\d+/);
+    return normalizeMinutes(match ? match[0] : null);
+  }
+
+  if (typeof timePreference === 'object') {
+    if (timePreference.minutes != null) {
+      return normalizeMinutes(timePreference.minutes);
+    }
+
+    const candidates = [timePreference.label, timePreference.value, timePreference.title];
+    for (const candidate of candidates) {
+      if (typeof candidate === 'string') {
+        const match = candidate.match(/\d+/);
+        if (match) return normalizeMinutes(match[0]);
+      }
+    }
+  }
+
+  return null;
+};
+
+const getDailyStoryTarget = (minutes) => {
+  if (minutes === 3) return 1;
+  if (minutes === 6) return 2;
+  if (minutes === 9) return 3;
+  return null;
+};
+
+const buildReminderPreference = (reminderPreference) => {
+  if (!reminderPreference) {
+    return { reminderWindow: 'evening', reminderHour: 21 };
+  }
+
+  if (typeof reminderPreference === 'string') {
+    const reminderWindow = ['morning', 'noon', 'evening'].includes(reminderPreference)
+      ? reminderPreference
+      : 'evening';
+    const reminderHour = reminderWindow === 'morning' ? 8 : reminderWindow === 'noon' ? 13 : 21;
+    return { reminderWindow, reminderHour };
+  }
+
+  if (typeof reminderPreference === 'object') {
+    const reminderWindow = ['morning', 'noon', 'evening'].includes(reminderPreference.reminderWindow)
+      ? reminderPreference.reminderWindow
+      : ['morning', 'noon', 'evening'].includes(reminderPreference.window)
+        ? reminderPreference.window
+        : 'evening';
+
+    const parsedHour = Number(
+      reminderPreference.reminderHour ?? reminderPreference.hour ?? reminderPreference.value
+    );
+    const reminderHour = !Number.isNaN(parsedHour) && parsedHour >= 0 && parsedHour <= 23
+      ? parsedHour
+      : reminderWindow === 'morning'
+        ? 8
+        : reminderWindow === 'noon'
+          ? 13
+          : 21;
+
+    return { reminderWindow, reminderHour };
+  }
+
+  return { reminderWindow: 'evening', reminderHour: 21 };
+};
+
+const buildTimePreference = (timePreference) => {
+  const minutes = inferMinutesFromTimePreference(timePreference);
+  if (!minutes) return null;
+
+  const dailyStoryTarget = getDailyStoryTarget(minutes);
+  const icon = typeof timePreference === 'object' && timePreference?.icon
+    ? timePreference.icon
+    : minutes === 3
+      ? '☕'
+      : minutes === 6
+        ? '📚'
+        : '🚀';
+
+  return {
+    ...(typeof timePreference === 'object' && timePreference ? timePreference : {}),
+    minutes,
+    dailyStoryTarget,
+    icon,
+  };
+};
+
+const normalizePreferences = (storedPreferences) => {
+  if (!storedPreferences || typeof storedPreferences !== 'object') {
+    return EMPTY_PREFERENCES;
+  }
+
+  const reminder = buildReminderPreference(storedPreferences.reminderWindow ? {
+    reminderWindow: storedPreferences.reminderWindow,
+    reminderHour: storedPreferences.reminderHour,
+  } : storedPreferences.reminder || null);
+
+  return {
+    categories: Array.isArray(storedPreferences.categories) ? storedPreferences.categories : [],
+    time: buildTimePreference(storedPreferences.time),
+    reminderWindow: reminder.reminderWindow,
+    reminderHour: reminder.reminderHour,
+  };
+};
 
 export const UserDataProvider = ({ children }) => {
-  const { setSelectedCategories: setGlobalCategories } = useTheme();
+  const { setSelectedCategories: setGlobalCategories, lang } = useTheme();
   const [favorites, setFavorites] = useState([]);
   const [history, setHistory] = useState([]);
-  const [preferences, setPreferences] = useState({ categories: [], time: null });
+  const [preferences, setPreferences] = useState(EMPTY_PREFERENCES);
   const [isOnboarded, setIsOnboarded] = useState(false);
   const [isPremium, setIsPremium] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +150,7 @@ export const UserDataProvider = ({ children }) => {
   const [seenBadgesReady, setSeenBadgesReady] = useState(false);
   const [shouldBootstrapSeenBadges, setShouldBootstrapSeenBadges] = useState(false);
   const [activeBadgeModal, setActiveBadgeModal] = useState(null);
+  const [pendingBadges, setPendingBadges] = useState([]);
 
   // Güvenlik timeout'u: AsyncStorage 3 saniye içinde tamamlanmazsa devam et
   useEffect(() => {
@@ -66,7 +193,15 @@ export const UserDataProvider = ({ children }) => {
 
         if (storedFavorites) setFavorites(JSON.parse(storedFavorites));
         if (storedHistory) setHistory(JSON.parse(storedHistory));
-        if (storedPreferences) setPreferences(JSON.parse(storedPreferences));
+        if (storedPreferences) {
+          const parsedPreferences = JSON.parse(storedPreferences);
+          const normalizedPreferences = normalizePreferences(parsedPreferences);
+          setPreferences(normalizedPreferences);
+
+          if (JSON.stringify(parsedPreferences) !== JSON.stringify(normalizedPreferences)) {
+            await AsyncStorage.setItem('@kivilcim_preferences', JSON.stringify(normalizedPreferences));
+          }
+        }
         if (storedOnboarding) setIsOnboarded(JSON.parse(storedOnboarding));
         if (storedPremium) setIsPremium(JSON.parse(storedPremium));
         if (storedShareCount) setShareCount(JSON.parse(storedShareCount));
@@ -139,14 +274,39 @@ export const UserDataProvider = ({ children }) => {
   };
 
   // Onboarding Tamamlama
-  const saveOnboarding = async (userCategories, userTimeObj) => {
+  const saveOnboarding = async (userCategories, userTimeObj, userReminderObj = null) => {
     try {
-      const prefs = { categories: userCategories, time: userTimeObj };
+      const reminder = buildReminderPreference(userReminderObj);
+      const prefs = normalizePreferences({
+        categories: userCategories,
+        time: userTimeObj,
+        reminderWindow: reminder.reminderWindow,
+        reminderHour: reminder.reminderHour,
+      });
       setPreferences(prefs);
       setIsOnboarded(true);
 
       await AsyncStorage.setItem('@kivilcim_preferences', JSON.stringify(prefs));
       await AsyncStorage.setItem('@kivilcim_onboarded', JSON.stringify(true));
+      await AsyncStorage.setItem(FIRST_SESSION_PROMPT_KEY, JSON.stringify(true));
+
+      await scheduleDailyNotifications({
+        lang,
+        reminderWindow: prefs.reminderWindow,
+        reminderHour: prefs.reminderHour,
+        dailyStoryTarget: prefs.time?.dailyStoryTarget || 2,
+      });
+
+      await trackEvent(ANALYTICS_EVENTS.ONBOARDING_TIME_BUDGET_SELECTED, {
+        minutes: prefs.time?.minutes,
+        dailyStoryTarget: prefs.time?.dailyStoryTarget,
+        lang,
+      });
+      await trackEvent(ANALYTICS_EVENTS.ONBOARDING_NOTIFICATION_TIME_SELECTED, {
+        reminderWindow: prefs.reminderWindow,
+        reminderHour: prefs.reminderHour,
+        lang,
+      });
       
       // Sync to SQLite for discovery page compatibility
       try {
@@ -159,6 +319,42 @@ export const UserDataProvider = ({ children }) => {
       }
     } catch (error) {
       console.error('Onboarding kaydetme hatası:', error);
+    }
+  };
+
+  const updatePreferences = async (partialPrefs = {}) => {
+    try {
+      const reminderChanged = Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderWindow')
+        || Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderHour');
+      const candidate = {
+        categories: partialPrefs.categories ?? preferences.categories,
+        time: partialPrefs.time ?? preferences.time,
+        reminderWindow: partialPrefs.reminderWindow ?? preferences.reminderWindow,
+        reminderHour: partialPrefs.reminderHour ?? preferences.reminderHour,
+      };
+
+      const nextPrefs = normalizePreferences(candidate);
+      setPreferences(nextPrefs);
+      await AsyncStorage.setItem('@kivilcim_preferences', JSON.stringify(nextPrefs));
+
+      await scheduleDailyNotifications({
+        lang,
+        reminderWindow: nextPrefs.reminderWindow,
+        reminderHour: nextPrefs.reminderHour,
+        dailyStoryTarget: nextPrefs.time?.dailyStoryTarget || 2,
+      });
+
+      if (reminderChanged) {
+        await trackEvent(ANALYTICS_EVENTS.REMINDER_TIME_CHANGED, {
+          reminderWindow: nextPrefs.reminderWindow,
+          reminderHour: nextPrefs.reminderHour,
+          previousReminderWindow: preferences.reminderWindow,
+          previousReminderHour: preferences.reminderHour,
+          lang,
+        });
+      }
+    } catch (error) {
+      console.error('Tercih güncelleme hatası:', error);
     }
   };
 
@@ -195,11 +391,12 @@ export const UserDataProvider = ({ children }) => {
         '@kivilcim_onboarded',
         '@kivilcim_premium',
         '@kivilcim_share_count',
+        FIRST_SESSION_PROMPT_KEY,
         SEEN_BADGES_STORAGE_KEY,
       ]);
       setFavorites([]);
       setHistory([]);
-      setPreferences({ categories: [], time: null });
+      setPreferences(EMPTY_PREFERENCES);
       setIsOnboarded(false);
       setIsPremium(false);
       setShareCount(0);
@@ -245,7 +442,8 @@ export const UserDataProvider = ({ children }) => {
     const newlyEarned = earnedBadges.filter((badge) => badge.earned && !seenBadgeIds.includes(badge.id));
     if (!newlyEarned.length) return;
 
-    setActiveBadgeModal(newlyEarned[0]);
+    // Rozetleri bekletme kuyruğuna ekle; hikaye okunup scroll tamamlandığında gösterilecek
+    setPendingBadges(prev => [...prev, ...newlyEarned]);
     markBadgesAsSeen(newlyEarned.map((badge) => badge.id));
   }, [earnedBadges, seenBadgeIds, seenBadgesReady, markBadgesAsSeen, shouldBootstrapSeenBadges]);
 
@@ -259,6 +457,15 @@ export const UserDataProvider = ({ children }) => {
 
   const closeBadgeModal = useCallback(() => {
     setActiveBadgeModal(null);
+  }, []);
+
+  // Bekleyen ilk rozeti modal olarak göster (hikaye scroll tamamlandığında çağrılır)
+  const releasePendingBadge = useCallback(() => {
+    setPendingBadges(prev => {
+      if (prev.length === 0) return prev;
+      setActiveBadgeModal(prev[0]);
+      return prev.slice(1);
+    });
   }, []);
 
   const value = useMemo(() => ({
@@ -279,13 +486,15 @@ export const UserDataProvider = ({ children }) => {
     isFavorite,
     addToHistory,
     saveOnboarding,
+    updatePreferences,
     buyPremium,
     incrementShareCount,
     clearUserData,
     refreshStats,
     openBadgeModal,
     closeBadgeModal,
-  }), [favorites, history, preferences, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, shareCount, earnedBadges, activeBadgeModal, openBadgeModal, closeBadgeModal]);
+    releasePendingBadge,
+  }), [favorites, history, preferences, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, shareCount, earnedBadges, activeBadgeModal, openBadgeModal, closeBadgeModal, releasePendingBadge]);
 
   return (
     <UserDataContext.Provider value={value}>

@@ -33,6 +33,7 @@ function MainTabs() {
 
   return (
     <Tab.Navigator
+      initialRouteName="HomeTab"
       screenOptions={{
         headerShown: false,
         tabBarStyle: {

@@ -132,7 +132,7 @@ const PaywallScreen = ({ navigation }) => {
     },
     btnPrimaryText: { 
       fontFamily: 'Inter_500Medium', 
-      color: colors.text, 
+      color: colors.onPrimary, 
       fontSize: typography.sizes.ui + 1 
     },
   });

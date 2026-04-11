@@ -23,7 +23,7 @@ const { width, height } = Dimensions.get('window');
 const StoryDetailScreen = ({ route, navigation }) => {
   const { story } = route.params;
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount } = useUserData();
+  const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount, releasePendingBadge } = useUserData();
   const { stories } = useStories();
   const [fontSize, setFontSize] = useState(typography.sizes.body);
   const [shareModalVisible, setShareModalVisible] = useState(false);
@@ -32,6 +32,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [shareFormat, setShareFormat] = useState('post');
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const scrollY = useRef(new Animated.Value(0)).current;
+  const hasReachedBottom = useRef(false);
   const viewShotRef = useRef();
   const insets = useSafeAreaInsets();
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -61,6 +62,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const displaySrc = localStory.source_book || '';
   const displaySourceBook = localStory.source_book || '';
   const displayCat = t(localStory.cat_display || localStory.cat || story.cat, lang);
+  const displayHook = localStory.hook || story.hook || '';
 
   React.useEffect(() => {
     if (story) {
@@ -150,6 +152,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
       const ext = extractContent('&&');
       return ext || t('share_realize', localLang);
     }
+    if (type === 'hook') {
+      return displayHook;
+    }
     return '';
   };
 
@@ -167,11 +172,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
         let label = '';
         if (type === 'lesson') label = t('share_key_takeaway', localLang);
         else if (type === 'reflection') label = t('share_reflect', localLang);
-        else label = t('quote_label', localLang);
-        
-        return `${label}\n"${text}"`;
-      }).join('\n\n');
-      
+        else if (type === 'hook') label = '🎬 Hook';
       const catHashtag = displayCat.replace(/(\s+|&)/g, '');
       const generalHashtags = localLang === 'en' ? '#Spark #DailyInspiration #BookRecommendation #Awareness' : 
                               localLang === 'es' ? '#Spark #InspiraciónDiaria #RecomendaciónDeLibro #Conciencia' : 
@@ -569,7 +570,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       borderRadius: 8,
       backgroundColor: colors.background,
       borderWidth: 1,
-      borderColor: '#E8E3DA',
+      borderColor: colors.border,
     },
     linkBtnText: {
       fontFamily: 'Inter_500Medium',
@@ -622,13 +623,40 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
           {shareContent.map((type, index) => {
             const label = type === 'lesson' ? t('share_key_takeaway', localLang) : 
-                          type === 'reflection' ? t('share_reflect', localLang) : 
+                          type === 'reflection' ? t('share_reflect', localLang) :
+                          type === 'hook' ? '' :
                           displayTitle;
             const textContent = getShareText(type);
             
             // dynamically scale text if multiple are selected
             const dynTitle = shareContent.length > 1 ? fTitle * 0.8 : fTitle;
             const dynQuote = shareContent.length > 1 ? fQuote * 0.8 : fQuote;
+
+            // Hook: büyük, cesur, tam ekran hook cümlesi
+            if (type === 'hook') {
+              return (
+                <View key={type} style={{ marginBottom: index === shareContent.length - 1 ? 0 : 80 }}>
+                  <Text style={{
+                    fontFamily: 'PlayfairDisplay_700Bold',
+                    fontSize: dynQuote * 1.1,
+                    color: th.text,
+                    lineHeight: dynQuote * 1.7,
+                    textAlign: 'center',
+                    letterSpacing: 1,
+                  }}>
+                    {textContent}
+                  </Text>
+                  <View style={{
+                    width: 120,
+                    height: 4,
+                    backgroundColor: th.accent,
+                    alignSelf: 'center',
+                    marginTop: 40,
+                    borderRadius: 2,
+                  }} />
+                </View>
+              );
+            }
             
             return (
               <View key={type} style={{ marginBottom: index === shareContent.length - 1 ? 0 : 80 }}>
@@ -736,6 +764,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 { id: 'quote', label: t('quote_label', lang), icon: 'chatbox-ellipses-outline' },
                 { id: 'lesson', label: t('lesson_pill', lang), icon: 'bulb-outline' },
                 { id: 'reflection', label: t('reflect_pill', lang), icon: 'help-circle-outline' },
+                ...(displayHook ? [{ id: 'hook', label: '🎬 Hook', icon: 'videocam-outline' }] : []),
               ].map(ct => (
                 <TouchableOpacity
                   key={ct.id}
@@ -868,7 +897,18 @@ const StoryDetailScreen = ({ route, navigation }) => {
         showsVerticalScrollIndicator={false}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-          { useNativeDriver: false }
+          {
+            useNativeDriver: false,
+            listener: (event) => {
+              if (!hasReachedBottom.current) {
+                const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
+                if (contentOffset.y + layoutMeasurement.height >= contentSize.height - 60) {
+                  hasReachedBottom.current = true;
+                  releasePendingBadge();
+                }
+              }
+            },
+          }
         )}
         scrollEventThrottle={16}
       >

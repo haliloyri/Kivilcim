@@ -14,7 +14,10 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.kivilcim.app"
+      "bundleIdentifier": "com.kivilcim.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +30,12 @@
       "expo-font",
       "expo-sqlite",
       "expo-asset"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "73e8e4f4-f966-42cd-9c4e-3ffb9799314e"
+      }
+    },
+    "owner": "hoyri"
   }
 }

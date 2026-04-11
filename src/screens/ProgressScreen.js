@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
   StatusBar, Dimensions
@@ -11,24 +12,59 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import { getReadHistory } from '../db/db';
+import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
 const { width } = Dimensions.get('window');
+const DAILY_TARGET_COMPLETED_KEY = '@kivilcim_analytics_daily_target_completed_day';
 
 const ProgressScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
-  const { streak, totalReads, earnedBadges, openBadgeModal } = useUserData();
+  const { streak, totalReads, earnedBadges, openBadgeModal, preferences } = useUserData();
   const badgeScale = useSharedValue(0);
   const badgeOpacity = useSharedValue(0);
   const [showCelebration, setShowCelebration] = useState(false);
   const [heatmapData, setHeatmapData] = useState([]);
+  const [todayReads, setTodayReads] = useState(0);
+  const dailyTarget = preferences?.time?.dailyStoryTarget || 2;
+  const dailyProgress = Math.min(todayReads, dailyTarget);
+  const isDailyGoalComplete = dailyProgress >= dailyTarget;
+  const todayKey = new Date().toISOString().split('T')[0];
+
+  useEffect(() => {
+    if (!isDailyGoalComplete) return;
+
+    const trackDailyCompletion = async () => {
+      try {
+        const trackedDay = await AsyncStorage.getItem(DAILY_TARGET_COMPLETED_KEY);
+        if (trackedDay === todayKey) return;
+
+        await trackEvent(ANALYTICS_EVENTS.DAILY_TARGET_COMPLETED, {
+          date: todayKey,
+          dailyTarget,
+          dailyProgress,
+          todayReads,
+          lang,
+        });
+        await AsyncStorage.setItem(DAILY_TARGET_COMPLETED_KEY, todayKey);
+      } catch (error) {
+        console.error('Gunluk hedef analytics kaydi basarisiz:', error);
+      }
+    };
+
+    trackDailyCompletion();
+  }, [isDailyGoalComplete, todayKey, dailyTarget, dailyProgress, todayReads, lang]);
 
   // Isı haritası verisini DB'den yükle
   useEffect(() => {
     const loadHeatmap = async () => {
       try {
-        const history = await getReadHistory(91);
+        const [history, todayHistory] = await Promise.all([
+          getReadHistory(91),
+          getReadHistory(0),
+        ]);
         const map = {};
         history.forEach(r => { map[r.day] = r.count; });
+        setTodayReads(todayHistory[0]?.count || 0);
         const data = [];
         for (let i = 90; i >= 0; i--) {
           const d = new Date();
@@ -43,6 +79,7 @@ const ProgressScreen = ({ navigation }) => {
       } catch (e) {
         console.error('Heatmap yükleme hatası:', e);
         setHeatmapData(Array.from({ length: 91 }, (_, i) => ({ id: i, level: 0 })));
+        setTodayReads(0);
       }
     };
     loadHeatmap();
@@ -99,6 +136,60 @@ const ProgressScreen = ({ navigation }) => {
       color: colors.textSecondary, 
       letterSpacing: 1, 
       textTransform: 'uppercase' 
+    },
+    goalCard: {
+      backgroundColor: colors.backgroundDark,
+      borderRadius: layout.radius.card,
+      marginHorizontal: layout.padding.horizontal,
+      padding: 18,
+      marginBottom: 12,
+    },
+    goalHeader: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 10,
+    },
+    goalTitle: {
+      fontFamily: 'PlayfairDisplay_600SemiBold',
+      fontSize: 20,
+      color: colors.text,
+    },
+    goalCounter: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 28,
+      color: colors.text,
+    },
+    goalSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 13,
+      color: colors.textSecondary,
+      lineHeight: 20,
+      marginBottom: 14,
+    },
+    goalBarTrack: {
+      height: 10,
+      borderRadius: 999,
+      backgroundColor: colors.border,
+      overflow: 'hidden',
+      marginBottom: 12,
+    },
+    goalBarFill: {
+      height: '100%',
+      borderRadius: 999,
+      backgroundColor: colors.primary,
+    },
+    goalStatus: {
+      alignSelf: 'flex-start',
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+      borderRadius: 999,
+    },
+    goalStatusText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      letterSpacing: 0.4,
+      textTransform: 'uppercase',
     },
     heatmapCard: {
       backgroundColor: colors.background,
@@ -299,6 +390,35 @@ const ProgressScreen = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
         <View style={styles.homeHeader}>
           <Text style={styles.greetName}>{t('yourSparks', lang)}</Text>
+        </View>
+
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionLabel}>{t('dailyGoal', lang)}</Text>
+        </View>
+        <View style={styles.goalCard}>
+          <View style={styles.goalHeader}>
+            <Text style={styles.goalTitle}>{t('dailyGoalTitle', lang)}</Text>
+            <Text style={styles.goalCounter}>{`${dailyProgress}/${dailyTarget}`}</Text>
+          </View>
+          <Text style={styles.goalSub}>
+            {t('dailyGoalSub', lang)
+              .replace('{{done}}', String(dailyProgress))
+              .replace('{{target}}', String(dailyTarget))}
+          </Text>
+          <View style={styles.goalBarTrack}>
+            <View style={[styles.goalBarFill, { width: `${(dailyProgress / dailyTarget) * 100}%` }]} />
+          </View>
+          <View style={[
+            styles.goalStatus,
+            { backgroundColor: isDailyGoalComplete ? `${colors.primary}22` : `${colors.border}66` },
+          ]}>
+            <Text style={[
+              styles.goalStatusText,
+              { color: isDailyGoalComplete ? colors.primary : colors.textSecondary },
+            ]}>
+              {isDailyGoalComplete ? t('dailyGoalComplete', lang) : t('dailyGoalInProgress', lang)}
+            </Text>
+          </View>
         </View>
 
         <View style={styles.sectionHeader}>

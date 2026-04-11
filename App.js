@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
+import * as Notifications from 'expo-notifications';
 import { View, Text, Image, ActivityIndicator, Dimensions } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
@@ -8,6 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { t } from './src/locales/i18n';
 
 import { setupNotificationHandler, scheduleDailyNotifications } from './src/utils/notifications';
+import { ANALYTICS_EVENTS, trackEvent } from './src/utils/analytics';
 
 setupNotificationHandler();
 
@@ -88,9 +90,36 @@ function Main() {
       } catch (e) {}
       await initDb();
       await seedData();
-      await scheduleDailyNotifications(savedLang);
+
+      let savedPreferences = null;
+      try {
+        const storedPreferences = await AsyncStorage.getItem('@kivilcim_preferences');
+        savedPreferences = storedPreferences ? JSON.parse(storedPreferences) : null;
+      } catch (e) {}
+
+      await scheduleDailyNotifications({
+        lang: savedLang,
+        reminderWindow: savedPreferences?.reminderWindow,
+        reminderHour: savedPreferences?.reminderHour,
+        dailyStoryTarget: savedPreferences?.time?.dailyStoryTarget || 2,
+      });
     };
     startup().catch(e => console.error('App.js startup error:', e));
+  }, []);
+
+  useEffect(() => {
+    const subscription = Notifications.addNotificationResponseReceivedListener((response) => {
+      const notification = response?.notification;
+      trackEvent(ANALYTICS_EVENTS.NOTIFICATION_OPENED, {
+        identifier: notification?.request?.identifier,
+        title: notification?.request?.content?.title,
+        triggerType: notification?.request?.trigger?.type,
+      });
+    });
+
+    return () => {
+      subscription.remove();
+    };
   }, []);
 
   const [fontsLoaded] = useFonts({

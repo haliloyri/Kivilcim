@@ -27,7 +27,7 @@ export const waitForData = () => _dataReadyPromise;
 //  on the next app launch. This deletes the old DB
 //  and copies the fresh one from assets/kivilcim.db.
 // ──────────────────────────────────────────────────────
-const DB_VERSION = 10;
+const DB_VERSION = 11;
 const DB_VERSION_KEY = 'db_version';
 
 const getVersionFilePath = () =>
@@ -206,6 +206,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
       COALESCE(NULLIF(st.title, ''),         st_tr.title,         '') AS title,
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
+      COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
       COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
       c.category_name AS parent_cat_raw
     FROM stories s
@@ -229,6 +230,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
     story_id: String(r.id),
     title: r.title || '',
     body: r.body || '',
+    hook: r.hook || '',
   }));
 };
 
@@ -248,6 +250,7 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
       COALESCE(NULLIF(st.title, ''),         st_tr.title,         '') AS title,
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
+      COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
       COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
       c.category_name AS parent_cat_raw
     FROM stories s
@@ -272,6 +275,7 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
     story_id: String(r.id),
     title: r.title || '',
     body: r.body || '',
+    hook: r.hook || '',
   }
 };
 

@@ -6,7 +6,6 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
 import { useTheme } from '../context/ThemeContext';
-import { getSelectedCategories, setSelectedCategories, toggleSelectedCategory } from '../db/db';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,8 +18,44 @@ const ProfileScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, toggleTheme, lang, setLang, selectedCategories, toggleSelectedCategory } = useTheme();
   // Global t() function is now used directly from i18n.js
   const { categories, parentCategories } = useStories();
-  const { clearUserData, isPremium } = useUserData();
+  const { clearUserData, isPremium, preferences, updatePreferences } = useUserData();
   const testNotifIndex = React.useRef(0);
+
+  const timeOptions = [
+    { label: t('time_3min', lang), value: 3, icon: '☕' },
+    { label: t('time_6min', lang), value: 6, icon: '📚' },
+    { label: t('time_9min', lang), value: 9, icon: '🚀' },
+  ];
+  const reminderOptions = [
+    { label: t('reminder_morning', lang), value: 'morning', icon: '🌅', reminderHour: 8 },
+    { label: t('reminder_noon', lang), value: 'noon', icon: '☀️', reminderHour: 13 },
+    { label: t('reminder_evening', lang), value: 'evening', icon: '🌙', reminderHour: 21 },
+  ];
+
+  const selectedMinutes = preferences?.time?.minutes || 6;
+  const selectedReminder = preferences?.reminderWindow || 'evening';
+  const selectedTarget = preferences?.time?.dailyStoryTarget || 2;
+  const selectedReminderLabel = reminderOptions.find((o) => o.value === selectedReminder)?.label || t('reminder_evening', lang);
+
+  const handleReadingPlanChange = async (minutes) => {
+    const selected = timeOptions.find((o) => o.value === minutes);
+    if (!selected) return;
+
+    const nextTimePreference = {
+      label: selected.label,
+      icon: selected.icon,
+      minutes,
+      dailyStoryTarget: minutes === 3 ? 1 : minutes === 6 ? 2 : 3,
+    };
+    await updatePreferences({ time: nextTimePreference });
+  };
+
+  const handleReminderChange = async (windowValue, reminderHour) => {
+    await updatePreferences({
+      reminderWindow: windowValue,
+      reminderHour,
+    });
+  };
 
   const handleLogout = async () => {
     await clearUserData();
@@ -59,20 +94,20 @@ const ProfileScreen = ({ navigation }) => {
     header: { paddingHorizontal: layout.padding.horizontal, paddingTop: 32, paddingBottom: 24, alignItems: 'center' },
     avatar: { 
       width: 88, height: 88, borderRadius: 44, 
-      backgroundColor: '#F9F6F1', borderWidth: 2, borderColor: '#D4AF37', 
+      backgroundColor: isDark ? '#2A2520' : '#F9F6F1', borderWidth: 2, borderColor: '#D4AF37', 
       alignItems: 'center', justifyContent: 'center', marginBottom: 16,
       shadowColor: '#C5A059', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.1, shadowRadius: 8, elevation: 3 
     },
-    avatarText: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 32, color: '#594238' },
+    avatarText: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 32, color: isDark ? colors.text : '#594238' },
     userName: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 32, color: colors.text },
-    userEmail: { fontFamily: 'Inter_400Regular', fontSize: 14, color: '#9A8B7A', marginTop: 4 },
+    userEmail: { fontFamily: 'Inter_400Regular', fontSize: 14, color: colors.textSecondary, marginTop: 4 },
     premiumBadge: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#5A9CA0', paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20, marginTop: 16 },
     premiumText: { fontFamily: 'Inter_500Medium', fontSize: 13, color: '#FFFFFF', marginLeft: 6 },
     section: { marginTop: 32, paddingHorizontal: layout.padding.horizontal },
     sectionTitle: { 
       fontFamily: 'Inter_500Medium', 
       fontSize: 11, 
-      color: '#594238', 
+      color: colors.textSecondary, 
       letterSpacing: 1, 
       textTransform: 'uppercase', 
       marginBottom: 16 
@@ -82,10 +117,24 @@ const ProfileScreen = ({ navigation }) => {
     menuItemText: { fontFamily: 'Inter_400Regular', fontSize: 16, color: colors.text },
     profileCategoriesSection: { marginTop: 16, paddingHorizontal: layout.padding.horizontal },
     profileCategoriesRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
-    categoryPill: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: 20, borderWidth: 1, borderColor: '#DED5C4', backgroundColor: 'transparent' },
-    categoryPillText: { fontFamily: 'Inter_400Regular', fontSize: 13, color: '#594238' },
-    categoryPillActive: { backgroundColor: '#E6DEC8', borderColor: '#E6DEC8' },
-    categoryPillActiveText: { color: '#1A1A1A', fontFamily: 'Inter_500Medium' },
+    categoryPill: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: 20, borderWidth: 1, borderColor: colors.border, backgroundColor: 'transparent' },
+    categoryPillText: { fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary },
+    categoryPillActive: { backgroundColor: isDark ? '#3A3020' : '#E6DEC8', borderColor: isDark ? '#6A5540' : '#E6DEC8' },
+    categoryPillActiveText: { color: colors.text, fontFamily: 'Inter_500Medium' },
+    prefSummaryBox: {
+      marginTop: 16,
+      backgroundColor: colors.backgroundDark,
+      borderRadius: layout.radius.card,
+      padding: 12,
+      borderWidth: 1,
+      borderColor: colors.border,
+      gap: 6,
+    },
+    prefSummaryText: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 13,
+      color: colors.textSecondary,
+    },
   });
 
   return (
@@ -121,7 +170,7 @@ const ProfileScreen = ({ navigation }) => {
               const onPressCat = () => toggleSelectedCategory(cat);
               return (
                 <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive, { flexDirection: 'row', alignItems: 'center', gap: 6 }]}>
-                  <Ionicons name={getCatIcon(cat)} size={14} color={isSelected ? '#1A1A1A' : colors.textSecondary} />
+                  <Ionicons name={getCatIcon(cat)} size={14} color={isSelected ? colors.text : colors.textSecondary} />
                   <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>
                     {t(cat, lang)}
                   </Text>
@@ -133,6 +182,57 @@ const ProfileScreen = ({ navigation }) => {
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{t('settings', lang)}</Text>
+
+          <View style={[styles.menuItem, { flexDirection: 'column', alignItems: 'flex-start' }] }>
+            <View style={styles.menuItemLeft}>
+              <Ionicons name="book-outline" size={24} color={colors.textSecondary} />
+              <Text style={styles.menuItemText}>{t('readingPlan', lang)}</Text>
+            </View>
+            <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
+              {timeOptions.map((option) => (
+                <TouchableOpacity
+                  key={option.value}
+                  onPress={() => handleReadingPlanChange(option.value)}
+                  style={[
+                    styles.categoryPill,
+                    selectedMinutes === option.value && styles.categoryPillActive,
+                    { paddingVertical: 8, paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center', gap: 6 },
+                  ]}
+                >
+                  <Text style={[styles.categoryPillText, selectedMinutes === option.value && styles.categoryPillActiveText]}>{option.icon}</Text>
+                  <Text style={[styles.categoryPillText, selectedMinutes === option.value && styles.categoryPillActiveText]}>{option.label}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+
+          <View style={[styles.menuItem, { flexDirection: 'column', alignItems: 'flex-start' }] }>
+            <View style={styles.menuItemLeft}>
+              <Ionicons name="time-outline" size={24} color={colors.textSecondary} />
+              <Text style={styles.menuItemText}>{t('reminderTime', lang)}</Text>
+            </View>
+            <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
+              {reminderOptions.map((option) => (
+                <TouchableOpacity
+                  key={option.value}
+                  onPress={() => handleReminderChange(option.value, option.reminderHour)}
+                  style={[
+                    styles.categoryPill,
+                    selectedReminder === option.value && styles.categoryPillActive,
+                    { paddingVertical: 8, paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center', gap: 6 },
+                  ]}
+                >
+                  <Text style={[styles.categoryPillText, selectedReminder === option.value && styles.categoryPillActiveText]}>{option.icon}</Text>
+                  <Text style={[styles.categoryPillText, selectedReminder === option.value && styles.categoryPillActiveText]}>{option.label}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+
+          <View style={styles.prefSummaryBox}>
+            <Text style={styles.prefSummaryText}>{t('dailyTargetSummary', lang).replace('{{target}}', String(selectedTarget))}</Text>
+            <Text style={styles.prefSummaryText}>{t('reminderSummary', lang).replace('{{time}}', selectedReminderLabel)}</Text>
+          </View>
           
           <View style={styles.menuItem}>
             <View style={styles.menuItemLeft}>

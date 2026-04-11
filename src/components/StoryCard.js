@@ -172,7 +172,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       })()}
       <View style={isHero ? { padding: 24, flex: 1, justifyContent: 'space-between' } : null}>
         <View>
-          <View style={styles.cardHeader}>
+          <View style={[styles.cardHeader, (!hideCategory || isNew || isRead || locked) ? null : { marginBottom: 0 }]}>
             {!hideCategory && (
               <View style={isHero ? { marginBottom: -8 } : styles.badge}>
                 {!isHero && <Ionicons name={getCatIcon(story.cat)} size={10} color={colors.textSecondary} />}

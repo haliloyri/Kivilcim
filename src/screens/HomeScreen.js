@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
   StatusBar, Platform, Dimensions, Animated 
@@ -13,6 +14,9 @@ import { getSelectedCategories } from '../db/db';
 import StoryCard, { getCatIcon } from '../components/StoryCard';
 import { Ionicons } from '@expo/vector-icons';
 import { t, getGreeting } from '../locales/i18n';
+import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+
+const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 
 const SkeletonCard = ({ colors, layout, isHero }) => (
   <View style={{
@@ -27,15 +31,20 @@ const SkeletonCard = ({ colors, layout, isHero }) => (
 
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
-  const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites } = useUserData();
+  const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites, preferences } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('Tümü');
   const [visibleCount, setVisibleCount] = useState(11);
   const [isFetchingMore, setIsFetchingMore] = useState(false);
+  const [badgeCardIndex, setBadgeCardIndex] = useState(0);
+  const [showFirstSessionPrompt, setShowFirstSessionPrompt] = useState(false);
   const isFetchingRef = useRef(false);  // ref to avoid stale closure
   const visibleCountRef = useRef(11);   // ref to read latest value in callbacks
+  const badgeScrollRef = useRef(null);
   const flipAnim = useRef(new Animated.Value(0)).current;
+  const hasTrackedPersonalizedFeedRef = useRef(false);
+  const screenWidth = Dimensions.get('window').width;
 
   useEffect(() => {
     if (isFetchingMore) {
@@ -77,6 +86,17 @@ const HomeScreen = ({ navigation }) => {
 
   const categoriesLabel = t('categoriesLabel', lang);
   const todayLabel = t('todayLabel', lang);
+  const forYouLabel = t('home_for_you', lang);
+  const personalizedTarget = preferences?.time?.dailyStoryTarget || 2;
+  const personalizedMinutes = preferences?.time?.minutes || 6;
+  const forYouSubtitle = t('home_for_you_sub', lang)
+    .replace('{{stories}}', String(personalizedTarget))
+    .replace('{{minutes}}', String(personalizedMinutes));
+  const firstSessionTitle = t('home_first_session_title', lang)
+    .replace('{{stories}}', String(personalizedTarget));
+  const firstSessionBody = t('home_first_session_sub', lang)
+    .replace('{{stories}}', String(personalizedTarget))
+    .replace('{{minutes}}', String(personalizedMinutes));
 
   const checkIfRead = (id) => history.includes(id);
 
@@ -139,21 +159,18 @@ const HomeScreen = ({ navigation }) => {
       total,
       earned,
       completionRatio: total > 0 ? earned / total : 0,
-      nextBadge: nextCandidates[0] || null,
+      nextCandidates: nextCandidates.slice(0, 5),
     };
   }, [earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites.length]);
 
   const progressSegments = 7;
   const activeSegments = Math.max(1, Math.round(badgeProgressInfo.completionRatio * progressSegments));
-  const nextBadgeTitle = badgeProgressInfo.nextBadge ? t(badgeProgressInfo.nextBadge.titleKey, lang) : null;
-  const nextBadgePercent = badgeProgressInfo.nextBadge ? Math.round(badgeProgressInfo.nextBadge.ratio * 100) : 100;
-  const headerPrimary = lang === 'tr' ? 'Rozet Yolculuğun' : 'Badge Journey';
-  const headerSecondary = badgeProgressInfo.nextBadge
-    ? (lang === 'tr' ? 'Sıradaki rozete yakınsın' : 'You are close to the next badge')
-    : (lang === 'tr' ? 'Tüm rozetler tamamlandı' : 'All badges completed');
   const completionLine = lang === 'tr'
     ? `${badgeProgressInfo.earned}/${badgeProgressInfo.total} rozet tamamlandı`
     : `${badgeProgressInfo.earned}/${badgeProgressInfo.total} badges completed`;
+  const badgeCarouselItems = badgeProgressInfo.nextCandidates.length > 0
+    ? badgeProgressInfo.nextCandidates
+    : [null]; // null = "all completed" card
 
   const handleLoadMore = (nativeEvent) => {
     const paddingToBottom = 200;
@@ -182,13 +199,24 @@ const HomeScreen = ({ navigation }) => {
   // Refresh on focus to load latest selected categories from DB if changed elsewhere
   useFocusEffect(
     React.useCallback(() => {
-      getSelectedCategories()
-        .then(list => {
-          if (Array.isArray(list)) {
-            setSelectedCategories(list);
-          }
-        })
-        .catch(() => {});
+      let isActive = true;
+
+      Promise.all([
+        getSelectedCategories().catch(() => null),
+        AsyncStorage.getItem(FIRST_SESSION_PROMPT_KEY).catch(() => null),
+      ]).then(([list, promptFlag]) => {
+        if (!isActive) return;
+
+        if (Array.isArray(list)) {
+          setSelectedCategories(list);
+        }
+
+        setShowFirstSessionPrompt(promptFlag === 'true');
+      });
+
+      return () => {
+        isActive = false;
+      };
     }, [])
   );
   
@@ -225,10 +253,68 @@ const HomeScreen = ({ navigation }) => {
     return parseInt(b.story_id, 10) - parseInt(a.story_id, 10);
   });
 
-  const paginatedStories = sortedStories.slice(0, visibleCount);
+  const personalizedStories = sortedStories.slice(0, personalizedTarget);
+  const personalizedStoryIds = new Set(personalizedStories.map((story) => story.story_id));
+  const remainingStories = sortedStories.filter((story) => !personalizedStoryIds.has(story.story_id));
 
-  const free = isPremium ? paginatedStories : paginatedStories.slice(0, 2);
-  const locked = isPremium ? [] : paginatedStories.slice(2);
+  useEffect(() => {
+    if (personalizedStories.length === 0 || hasTrackedPersonalizedFeedRef.current) {
+      return;
+    }
+
+    hasTrackedPersonalizedFeedRef.current = true;
+    trackEvent(ANALYTICS_EVENTS.PERSONALIZED_FEED_SHOWN, {
+      dailyStoryTarget: personalizedTarget,
+      personalizedStoriesCount: personalizedStories.length,
+      filter: activeFilter,
+      lang,
+    });
+  }, [personalizedStories, personalizedTarget, activeFilter, lang]);
+
+  const openPersonalizedStory = (story, position) => {
+    trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
+      storyId: story?.story_id,
+      position,
+      source: 'home_for_you',
+      dailyStoryTarget: personalizedTarget,
+      lang,
+    });
+    navigation.navigate('StoryDetail', { story });
+  };
+
+  const paginatedStories = remainingStories.slice(0, visibleCount);
+
+  const remainingFreeQuota = isPremium ? paginatedStories.length : Math.max(0, 2 - personalizedStories.length);
+  const free = isPremium ? paginatedStories : paginatedStories.slice(0, remainingFreeQuota);
+  const locked = isPremium ? [] : paginatedStories.slice(remainingFreeQuota);
+
+  const dismissFirstSessionPrompt = async () => {
+    setShowFirstSessionPrompt(false);
+    try {
+      await AsyncStorage.removeItem(FIRST_SESSION_PROMPT_KEY);
+    } catch (error) {
+      console.error('Ilk oturum mesaji kaldirilamadi:', error);
+    }
+  };
+
+  const openFirstRecommendedStory = async () => {
+    const firstStory = personalizedStories[0];
+    await dismissFirstSessionPrompt();
+
+    if (firstStory) {
+      trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
+        storyId: firstStory.story_id,
+        position: 0,
+        source: 'first_session_prompt',
+        dailyStoryTarget: personalizedTarget,
+        lang,
+      });
+      navigation.navigate('StoryDetail', { story: firstStory });
+      return;
+    }
+
+    navigation.navigate('Search');
+  };
 
   const styles = StyleSheet.create({
     safe: { 
@@ -360,6 +446,72 @@ const HomeScreen = ({ navigation }) => {
       gap: 12,
       marginTop: 12,
     },
+    sectionTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: typography.sizes.headingSmall,
+      color: colors.text,
+      marginBottom: 6,
+    },
+    sectionSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.bodySmall,
+      color: colors.textSecondary,
+      lineHeight: 20,
+      marginBottom: 16,
+    },
+    firstSessionCard: {
+      marginBottom: 20,
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: `${colors.primary}55`,
+      backgroundColor: `${colors.primary}12`,
+      padding: 16,
+    },
+    firstSessionTop: {
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      justifyContent: 'space-between',
+      marginBottom: 10,
+      gap: 12,
+    },
+    firstSessionTextWrap: {
+      flex: 1,
+    },
+    firstSessionTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: typography.sizes.headingSmall,
+      color: colors.text,
+      marginBottom: 4,
+    },
+    firstSessionSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.bodySmall,
+      color: colors.textSecondary,
+      lineHeight: 20,
+    },
+    firstSessionClose: {
+      width: 28,
+      height: 28,
+      borderRadius: 14,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: `${colors.primary}18`,
+    },
+    firstSessionCta: {
+      alignSelf: 'flex-start',
+      marginTop: 4,
+      paddingHorizontal: 16,
+      paddingVertical: 10,
+      borderRadius: 999,
+      backgroundColor: colors.primary,
+    },
+    firstSessionCtaText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.onPrimary,
+      letterSpacing: 0.3,
+      textTransform: 'uppercase',
+    },
   });
 
   return (
@@ -389,32 +541,72 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
 
-        <LinearGradient colors={['#D8C08F', '#BE9347']} style={styles.streakCard} start={{x: 0, y: 0}} end={{x: 1, y: 1}}>
-          <Text style={{ fontSize: 42 }}>{badgeProgressInfo.nextBadge ? badgeProgressInfo.nextBadge.icon : '🏆'}</Text>
-          <View style={{ marginLeft: 16, flex: 1 }}>
-            <Text style={styles.streakDays}>
-              {badgeProgressInfo.nextBadge ? `%${nextBadgePercent}` : '100%'}
-            </Text>
-            <Text style={styles.streakLabel}>{headerPrimary}</Text>
-            <Text style={[styles.streakLabel, { marginTop: 2 }]} numberOfLines={1}>
-              {badgeProgressInfo.nextBadge ? `${headerSecondary}: ${nextBadgeTitle}` : headerSecondary}
-            </Text>
-            <Text style={[styles.streakLabel, { marginTop: 2 }]}>{completionLine}</Text>
-          </View>
-          <View style={{ flexDirection: 'row', gap: 6 }}>
-            {Array.from({ length: progressSegments }).map((_, i) => (
-              <View
-                key={i}
-                style={[
-                  styles.streakDot,
-                  i < activeSegments
-                    ? { width: i === activeSegments - 1 ? 24 : 8, backgroundColor: isDark ? colors.text : '#fff' }
-                    : { backgroundColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.4)' },
-                ]}
-              />
-            ))}
-          </View>
-        </LinearGradient>
+        <View style={{ marginBottom: 32 }}>
+          <ScrollView
+            ref={badgeScrollRef}
+            horizontal
+            pagingEnabled
+            showsHorizontalScrollIndicator={false}
+            onMomentumScrollEnd={(e) => {
+              const index = Math.round(e.nativeEvent.contentOffset.x / screenWidth);
+              setBadgeCardIndex(index);
+            }}
+          >
+            {badgeCarouselItems.map((badge, i) => {
+              const badgeTitle = badge ? t(badge.titleKey, lang) : null;
+              const badgePercent = badge ? Math.round(badge.ratio * 100) : 100;
+              const headerSub = badge
+                ? (lang === 'tr' ? `Sıradaki rozete yakınsın: ${badgeTitle}` : `You are close to the next badge: ${badgeTitle}`)
+                : (lang === 'tr' ? 'Tüm rozetler tamamlandı' : 'All badges completed');
+              return (
+                <View key={i} style={{ width: screenWidth, paddingHorizontal: layout.padding.horizontal }}>
+                  <LinearGradient
+                    colors={['#D8C08F', '#BE9347']}
+                    style={[styles.streakCard, { marginHorizontal: 0, marginBottom: 0 }]}
+                    start={{x: 0, y: 0}}
+                    end={{x: 1, y: 1}}
+                  >
+                    <Text style={{ fontSize: 42 }}>{badge ? badge.icon : '🏆'}</Text>
+                    <View style={{ marginLeft: 16, flex: 1 }}>
+                      <Text style={styles.streakDays}>{`%${badgePercent}`}</Text>
+                      <Text style={styles.streakLabel}>{lang === 'tr' ? 'Rozet Yolculuğun' : 'Badge Journey'}</Text>
+                      <Text style={[styles.streakLabel, { marginTop: 2 }]} numberOfLines={1}>{headerSub}</Text>
+                      <Text style={[styles.streakLabel, { marginTop: 2 }]}>{completionLine}</Text>
+                    </View>
+                    <View style={{ flexDirection: 'row', gap: 6 }}>
+                      {Array.from({ length: progressSegments }).map((_, j) => (
+                        <View
+                          key={j}
+                          style={[
+                            styles.streakDot,
+                            j < activeSegments
+                              ? { width: j === activeSegments - 1 ? 24 : 8, backgroundColor: isDark ? colors.text : '#fff' }
+                              : { backgroundColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.4)' },
+                          ]}
+                        />
+                      ))}
+                    </View>
+                  </LinearGradient>
+                </View>
+              );
+            })}
+          </ScrollView>
+          {badgeCarouselItems.length > 1 && (
+            <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 6, marginTop: 10 }}>
+              {badgeCarouselItems.map((_, i) => (
+                <View
+                  key={i}
+                  style={{
+                    width: badgeCardIndex === i ? 16 : 6,
+                    height: 6,
+                    borderRadius: 3,
+                    backgroundColor: badgeCardIndex === i ? colors.primary : colors.textSecondary + '40',
+                  }}
+                />
+              ))}
+            </View>
+          )}
+        </View>
 
         <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
           {categoriesLabel}
@@ -474,6 +666,58 @@ const HomeScreen = ({ navigation }) => {
             </View>
           ) : (
             <>
+              {showFirstSessionPrompt && (
+                <View style={styles.firstSessionCard}>
+                  <View style={styles.firstSessionTop}>
+                    <View style={styles.firstSessionTextWrap}>
+                      <Text style={styles.firstSessionTitle}>{firstSessionTitle}</Text>
+                      <Text style={styles.firstSessionSub}>{firstSessionBody}</Text>
+                    </View>
+                    <TouchableOpacity style={styles.firstSessionClose} onPress={dismissFirstSessionPrompt}>
+                      <Ionicons name="close" size={16} color={colors.primary} />
+                    </TouchableOpacity>
+                  </View>
+                  <TouchableOpacity style={styles.firstSessionCta} onPress={openFirstRecommendedStory}>
+                    <Text style={styles.firstSessionCtaText}>{t('home_open_first_story_cta', lang)}</Text>
+                  </TouchableOpacity>
+                </View>
+              )}
+
+              {personalizedStories.length > 0 && (
+                <View style={{ marginBottom: 28 }}>
+                  <Text style={styles.sectionTitle}>{forYouLabel}</Text>
+                  <Text style={styles.sectionSub}>{forYouSubtitle}</Text>
+
+                  <StoryCard
+                    story={personalizedStories[0]}
+                    type="hero"
+                    hideCategory={activeFilter !== 'Tümü'}
+                    isRead={checkIfRead(personalizedStories[0].story_id)}
+                    onPress={() => openPersonalizedStory(personalizedStories[0], 0)}
+                  />
+
+                  {personalizedStories.length > 1 && (
+                    <View style={styles.storyGrid}>
+                      {personalizedStories.slice(1).map((story, index) => {
+                        const isLocked = !isPremium && index + 1 >= 2;
+
+                        return (
+                          <StoryCard
+                            key={story.story_id}
+                            story={story}
+                            type="compact"
+                            locked={isLocked}
+                            hideCategory={activeFilter !== 'Tümü'}
+                            isRead={checkIfRead(story.story_id)}
+                            onPress={() => isLocked ? navigation.navigate('Paywall') : openPersonalizedStory(story, index + 1)}
+                          />
+                        );
+                      })}
+                    </View>
+                  )}
+                </View>
+              )}
+
               {free.length > 0 && (
                 <StoryCard 
                   story={free[0]} 

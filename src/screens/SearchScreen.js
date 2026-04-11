@@ -51,7 +51,7 @@ const SearchScreen = ({ navigation }) => {
     sectionLabel: { 
       fontFamily: 'Inter_500Medium', 
       fontSize: 11,
-      color: '#594238', 
+      color: colors.textSecondary, 
       letterSpacing: 1, 
       textTransform: 'uppercase',
       marginHorizontal: layout.padding.horizontal,

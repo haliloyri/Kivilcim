@@ -20,17 +20,28 @@ const OnboardingScreen = ({ navigation }) => {
   const [step, setStep] = useState(0);
   const [selectedCats, setSelectedCats] = useState([]);
   const [selectedTime, setSelectedTime] = useState(1);
+  const [selectedReminder, setSelectedReminder] = useState(2);
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
 
   const allCats = parentCategories.map(p => p.name);
   const timeOptions = [
-    { label: t('time_3min', lang), sub: t('time_3min_sub', lang), icon: '☕' },
-    { label: t('time_5min', lang), sub: t('time_5min_sub', lang), icon: '📖' },
-    { label: t('time_10min', lang), sub: t('time_10min_sub', lang), icon: '🚀' },
+    { label: t('time_3min', lang), sub: t('time_3min_sub', lang), icon: '☕', minutes: 3, dailyStoryTarget: 1 },
+    { label: t('time_6min', lang), sub: t('time_6min_sub', lang), icon: '📚', minutes: 6, dailyStoryTarget: 2 },
+    { label: t('time_9min', lang), sub: t('time_9min_sub', lang), icon: '🚀', minutes: 9, dailyStoryTarget: 3 },
   ];
+  const reminderOptions = [
+    { label: t('reminder_morning', lang), sub: t('reminder_morning_sub', lang), icon: '🌅', reminderWindow: 'morning', reminderHour: 8 },
+    { label: t('reminder_noon', lang), sub: t('reminder_noon_sub', lang), icon: '☀️', reminderWindow: 'noon', reminderHour: 13 },
+    { label: t('reminder_evening', lang), sub: t('reminder_evening_sub', lang), icon: '🌙', reminderWindow: 'evening', reminderHour: 21 },
+  ];
+  const selectedTimeOption = timeOptions[selectedTime];
+  const selectedReminderOption = reminderOptions[selectedReminder];
+  const readyPlanSummary = t('onboarding_ready_plan', lang)
+    .replace('{{minutes}}', selectedTimeOption.label)
+    .replace('{{stories}}', String(selectedTimeOption.dailyStoryTarget));
 
-  const TOTAL_STEPS = 4;
+  const TOTAL_STEPS = 5;
   const isPhone = SCREEN_WIDTH < 768;
   const isSmallPhone = SCREEN_WIDTH < 390;
   const catGridGap = isPhone ? 8 : 10;
@@ -58,7 +69,7 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const skip = async () => {
-    await saveOnboarding([], timeOptions[1]);
+    await saveOnboarding([], timeOptions[1], reminderOptions[2]);
   };
 
   const toggleCat = (cat) => {
@@ -70,7 +81,7 @@ const OnboardingScreen = ({ navigation }) => {
 
   const handleFinish = async () => {
     // Just save the selected Parent Category names directly
-    await saveOnboarding(selectedCats, timeOptions[selectedTime]);
+    await saveOnboarding(selectedCats, timeOptions[selectedTime], reminderOptions[selectedReminder]);
   };
 
   /* ─────────────── STYLES ─────────────── */
@@ -511,17 +522,17 @@ const OnboardingScreen = ({ navigation }) => {
     <View style={{ flex: 1, justifyContent: 'center' }} key="s2">
       <Text style={s.sectionTitle}>{t('onboarding_how_long', lang)}</Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_how_long_sub', lang)}</Text>
-      {timeOptions.map((t, i) => (
+      {timeOptions.map((option, i) => (
         <TouchableOpacity
           key={i}
           style={[s.timeTile, selectedTime === i && s.timeTileSelected]}
           onPress={() => setSelectedTime(i)}
           activeOpacity={0.7}
         >
-          <Text style={s.timeTileIcon}>{t.icon}</Text>
+          <Text style={s.timeTileIcon}>{option.icon}</Text>
           <View style={{ flex: 1 }}>
-            <Text style={s.timeTileName}>{t.label}</Text>
-            <Text style={s.timeTileSub}>{t.sub}</Text>
+            <Text style={s.timeTileName}>{option.label}</Text>
+            <Text style={s.timeTileSub}>{option.sub}</Text>
           </View>
           <View style={[s.timeRadio, selectedTime === i && s.timeRadioSelected]}>
             {selectedTime === i && <View style={s.timeRadioInner} />}
@@ -531,6 +542,29 @@ const OnboardingScreen = ({ navigation }) => {
     </View>,
 
     /* ── Step 3: Ready ── */
+    <View style={{ flex: 1, justifyContent: 'center' }} key="s4">
+      <Text style={s.sectionTitle}>{t('onboarding_when_remind', lang)}</Text>
+      <Text style={s.sectionSubtitle}>{t('onboarding_when_remind_sub', lang)}</Text>
+      {reminderOptions.map((option, i) => (
+        <TouchableOpacity
+          key={i}
+          style={[s.timeTile, selectedReminder === i && s.timeTileSelected]}
+          onPress={() => setSelectedReminder(i)}
+          activeOpacity={0.7}
+        >
+          <Text style={s.timeTileIcon}>{option.icon}</Text>
+          <View style={{ flex: 1 }}>
+            <Text style={s.timeTileName}>{option.label}</Text>
+            <Text style={s.timeTileSub}>{option.sub}</Text>
+          </View>
+          <View style={[s.timeRadio, selectedReminder === i && s.timeRadioSelected]}>
+            {selectedReminder === i && <View style={s.timeRadioInner} />}
+          </View>
+        </TouchableOpacity>
+      ))}
+    </View>,
+
+    /* ── Step 4: Ready ── */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s3">
       <View style={s.readyArt}>
         <Text style={s.readySparkIcon}>✦</Text>
@@ -540,19 +574,20 @@ const OnboardingScreen = ({ navigation }) => {
             <Text style={s.readyLabel}>{t('onboarding_cat', lang)}</Text>
           </View>
           <View style={s.readyStat}>
-            <Text style={s.readyNum}>20</Text>
+            <Text style={s.readyNum}>{selectedTimeOption.dailyStoryTarget}</Text>
             <Text style={s.readyLabel}>{t('onboarding_story', lang)}</Text>
           </View>
           <View style={s.readyStat}>
-            <Text style={s.readyNum}>∞</Text>
-            <Text style={s.readyLabel}>{t('onboarding_curiosity', lang)}</Text>
+            <Text style={s.readyNum}>{selectedTimeOption.minutes}</Text>
+            <Text style={s.readyLabel}>{t('onboarding_minutes', lang)}</Text>
           </View>
         </View>
       </View>
       <Text style={[s.sectionTitle, { textAlign: 'center' }]}>{t('onboarding_ready', lang)}</Text>
       <Text style={[s.sectionSubtitle, { textAlign: 'center', marginBottom: 20 }]}>
-        {t('onboarding_ready_sub', lang)}
+        {readyPlanSummary}
       </Text>
+      <Text style={[s.catHint, { marginBottom: 8 }]}>{selectedReminderOption.label}</Text>
       <View style={s.selCats}>
         {(selectedCats.length ? selectedCats : ['Finans', 'Psikoloji']).map(c => (
           <View key={c} style={s.selCatPill}>
@@ -632,7 +667,7 @@ const OnboardingScreen = ({ navigation }) => {
           activeOpacity={0.85}
         >
           <Text style={s.btnPrimaryText}>
-            {step < TOTAL_STEPS - 1 ? t('next', lang) : t('onboarding_start_reading', lang)}
+            {step < TOTAL_STEPS - 1 ? t('next', lang) : t('onboarding_show_recommendations', lang)}
           </Text>
           <Text style={s.btnPrimaryArrow}>→</Text>
         </TouchableOpacity>
