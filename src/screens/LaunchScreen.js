@@ -2,28 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { View, StyleSheet, Animated, Image, ActivityIndicator, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-// Static logo map — React Native requires static paths at build time
-const LOGO_MAP = {
-  de: require('../../assets/spark_logo_de.png'),
-  en: require('../../assets/spark_logo_en.png'),
-  tr: require('../../assets/spark_logo_tr.png'),
-  es: require('../../assets/spark_logo_es.png'),
-};
-
-/**
- * Detect device locale and map to a supported logo language.
- * Falls back to 'de' (German) as the default.
- */
-const getLogoLang = () => {
-  try {
-    const locale = Intl.DateTimeFormat().resolvedOptions().locale || '';
-    const prefix = locale.substring(0, 2).toLowerCase();
-    if (prefix in LOGO_MAP) return prefix;
-  } catch {
-    // ignore
-  }
-  return 'de';
-};
+const ROUND_LOGO = require('../../assets/spark_logo_transparent.png');
 
 /**
  * Returns logo size based on screen dimensions.
@@ -33,7 +12,7 @@ const getLogoSize = () => {
   const { width, height } = Dimensions.get('window');
   const shortSide = Math.min(width, height);
   const isTablet = shortSide >= 600;
-  const size = isTablet ? shortSide * 0.42 : shortSide * 0.72;
+  const size = isTablet ? shortSide * 0.58 : shortSide * 0.88;
   return size;
 };
 
@@ -41,7 +20,6 @@ const LaunchScreen = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.95)).current;
 
-  const logoLang = getLogoLang();
   const logoSize = getLogoSize();
 
   useEffect(() => {
@@ -71,8 +49,8 @@ const LaunchScreen = () => {
         ]}
       >
         <Image
-          source={LOGO_MAP[logoLang]}
-          style={{ width: logoSize, height: logoSize }}
+          source={ROUND_LOGO}
+          style={{ width: logoSize, height: logoSize, borderRadius: logoSize / 2 }}
           resizeMode="contain"
         />
       </Animated.View>

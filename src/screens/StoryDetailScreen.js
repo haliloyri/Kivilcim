@@ -581,10 +581,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
       gap: 12, 
       paddingHorizontal: layout.padding.horizontal, 
       paddingTop: 16, 
-      paddingBottom: Math.max(insets.bottom, 16), 
+      paddingBottom: Math.max(insets.bottom + 6, 22), 
       borderTopWidth: 1, 
       borderTopColor: colors.border, 
-      backgroundColor: colors.background 
+      backgroundColor: colors.background,
+      marginBottom: Platform.OS === 'android' ? 4 : 0,
     },
     btnSecondaryShare: { 
       flex: 1, 

@@ -3,7 +3,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Dimensions, Animated 
+  StatusBar, Platform, Dimensions, Animated, Modal, TextInput
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -18,6 +18,7 @@ import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
+const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
 
 const MODULE_TYPES = {
   CONTINUE: 'continue',
@@ -38,7 +39,7 @@ const SkeletonCard = ({ colors, layout, isHero }) => (
 
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
-  const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites, preferences } = useUserData();
+  const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('Tümü');
@@ -48,6 +49,9 @@ const HomeScreen = ({ navigation }) => {
   const [showFirstSessionPrompt, setShowFirstSessionPrompt] = useState(false);
   const [isPersonalizedModuleDismissed, setIsPersonalizedModuleDismissed] = useState(false);
   const [isPersonalizedModuleSnoozed, setIsPersonalizedModuleSnoozed] = useState(false);
+  const [showProfilePrompt, setShowProfilePrompt] = useState(false);
+  const [profileNameInput, setProfileNameInput] = useState('');
+  const [profileEmailInput, setProfileEmailInput] = useState('');
   const isFetchingRef = useRef(false);  // ref to avoid stale closure
   const visibleCountRef = useRef(11);   // ref to read latest value in callbacks
   const badgeScrollRef = useRef(null);
@@ -79,7 +83,7 @@ const HomeScreen = ({ navigation }) => {
   const visibleCategoriesList = React.useMemo(() => {
     let filteredParents = parentCategories;
     if (selectedCategories && selectedCategories.length > 0) {
-      filteredParents = parentCategories.filter(p => selectedCategories.includes(p.name));
+      filteredParents = parentCategories.filter(p => selectedCategories.includes(p.raw_name));
     }
     return ['Tümü', ...filteredParents.map(p => p.name)];
   }, [parentCategories, selectedCategories]);
@@ -213,6 +217,54 @@ const HomeScreen = ({ navigation }) => {
     }
   }, [storiesLoading]);
 
+  // Ask profile info once on first app use if user profile is incomplete.
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      try {
+        const hasSeenPrompt = await AsyncStorage.getItem(PROFILE_INFO_PROMPT_SEEN_KEY);
+        const hasName = Boolean(userProfile?.displayName);
+        const hasEmail = Boolean(userProfile?.email);
+        if (!active || hasSeenPrompt === 'true' || (hasName && hasEmail)) return;
+        setProfileNameInput(userProfile?.displayName || '');
+        setProfileEmailInput(userProfile?.email || '');
+        setShowProfilePrompt(true);
+      } catch {
+        // no-op
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, [userProfile?.displayName, userProfile?.email]);
+
+  const saveProfilePrompt = async () => {
+    await updateUserProfile({
+      displayName: profileNameInput,
+      email: profileEmailInput,
+    });
+    await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true');
+    setShowProfilePrompt(false);
+  };
+
+  const skipProfilePrompt = async () => {
+    await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true');
+    setShowProfilePrompt(false);
+  };
+
+  // Migrate: normalize stored category names to raw_names (language-independent)
+  useEffect(() => {
+    if (parentCategories.length === 0 || selectedCategories.length === 0) return;
+    const rawNames = new Set(parentCategories.map(p => p.raw_name));
+    if (selectedCategories.every(cat => rawNames.has(cat))) return;
+    const normalized = selectedCategories.map(cat => {
+      const found = parentCategories.find(p => p.name === cat || p.raw_name === cat);
+      return found ? found.raw_name : cat;
+    });
+    setSelectedCategories(normalized);
+  }, [parentCategories]);
+
   // Refresh on focus to load latest selected categories from DB if changed elsewhere
   useFocusEffect(
     React.useCallback(() => {
@@ -251,7 +303,7 @@ const HomeScreen = ({ navigation }) => {
   // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri gösteririz.
   let prefFiltered = publishedStories;
   if (selectedCategories && selectedCategories.length > 0) {
-    prefFiltered = publishedStories.filter(s => selectedCategories.includes(s.parent_cat));
+    prefFiltered = publishedStories.filter(s => selectedCategories.includes(s.parent_cat_raw));
     // If no stories found in selected categories, fallback to all published
     if (prefFiltered.length === 0) prefFiltered = publishedStories;
   }
@@ -1136,13 +1188,34 @@ const HomeScreen = ({ navigation }) => {
               )}
 
               {free.length > 0 && (
-                <StoryCard 
-                  story={free[0]} 
-                  type="hero" 
-                  hideCategory={activeFilter !== 'Tümü'}
-                  isRead={checkIfRead(free[0].story_id)}
-                  onPress={() => navigation.navigate('StoryDetail', { story: free[0] })} 
-                />
+                <>
+                  <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    marginTop: 8,
+                    marginBottom: 20,
+                    gap: 12,
+                  }}>
+                    <View style={{ flex: 1, height: 1, backgroundColor: colors.border }} />
+                    <Text style={{
+                      fontFamily: 'Inter_500Medium',
+                      fontSize: 11,
+                      color: colors.textSecondary,
+                      letterSpacing: 1.2,
+                      textTransform: 'uppercase',
+                    }}>
+                      {lang === 'tr' ? 'Diğer Hikayeler' : lang === 'es' ? 'Más Historias' : lang === 'de' ? 'Weitere Geschichten' : 'More Stories'}
+                    </Text>
+                    <View style={{ flex: 1, height: 1, backgroundColor: colors.border }} />
+                  </View>
+                  <StoryCard 
+                    story={free[0]} 
+                    type="hero" 
+                    hideCategory={activeFilter !== 'Tümü'}
+                    isRead={checkIfRead(free[0].story_id)}
+                    onPress={() => navigation.navigate('StoryDetail', { story: free[0] })} 
+                  />
+                </>
               )}
 
               <View style={styles.storyGrid}>
@@ -1204,6 +1277,85 @@ const HomeScreen = ({ navigation }) => {
 
         <View style={{ height: 100 }} />
       </ScrollView>
+
+      <Modal
+        visible={showProfilePrompt}
+        transparent
+        animationType="fade"
+        onRequestClose={skipProfilePrompt}
+      >
+        <View style={{
+          flex: 1,
+          backgroundColor: 'rgba(0,0,0,0.55)',
+          justifyContent: 'center',
+          paddingHorizontal: layout.padding.horizontal,
+        }}>
+          <View style={{
+            backgroundColor: colors.background,
+            borderRadius: 16,
+            borderWidth: 1,
+            borderColor: colors.border,
+            padding: 18,
+            gap: 10,
+          }}>
+            <Text style={{ fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, color: colors.text }}>
+              {lang === 'tr' ? 'Profilini Tamamla' : 'Complete your profile'}
+            </Text>
+            <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, lineHeight: 20, color: colors.textSecondary }}>
+              {lang === 'tr' ? 'İlk kullanım için ad ve e-posta bilgini kaydedelim. Sonra Profil ekranından güncelleyebilirsin.' : 'Save your name and email for first use. You can update it later from Profile.'}
+            </Text>
+
+            <TextInput
+              value={profileNameInput}
+              onChangeText={setProfileNameInput}
+              placeholder={lang === 'tr' ? 'Ad Soyad' : 'Full name'}
+              placeholderTextColor={colors.textSecondary}
+              style={{
+                borderWidth: 1,
+                borderColor: colors.border,
+                borderRadius: 10,
+                paddingHorizontal: 12,
+                paddingVertical: 10,
+                color: colors.text,
+                fontFamily: 'Inter_400Regular',
+                backgroundColor: colors.backgroundDark,
+              }}
+            />
+
+            <TextInput
+              value={profileEmailInput}
+              onChangeText={setProfileEmailInput}
+              placeholder="E-posta"
+              placeholderTextColor={colors.textSecondary}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              style={{
+                borderWidth: 1,
+                borderColor: colors.border,
+                borderRadius: 10,
+                paddingHorizontal: 12,
+                paddingVertical: 10,
+                color: colors.text,
+                fontFamily: 'Inter_400Regular',
+                backgroundColor: colors.backgroundDark,
+              }}
+            />
+
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 10, marginTop: 4 }}>
+              <TouchableOpacity onPress={skipProfilePrompt} style={{ paddingHorizontal: 12, paddingVertical: 10 }}>
+                <Text style={{ fontFamily: 'Inter_500Medium', color: colors.textSecondary }}>
+                  {lang === 'tr' ? 'Sonra' : 'Later'}
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={saveProfilePrompt} style={{ backgroundColor: colors.primary, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 10 }}>
+                <Text style={{ fontFamily: 'Inter_500Medium', color: colors.onPrimary }}>
+                  {lang === 'tr' ? 'Kaydet' : 'Save'}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };

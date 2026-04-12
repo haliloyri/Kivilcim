@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Switch, Alert, Linking 
+  StatusBar, Platform, Switch, Alert, Linking, Modal, TextInput
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
@@ -32,6 +32,9 @@ const ProfileScreen = ({ navigation }) => {
   const { categories, parentCategories } = useStories();
   const { clearUserData, isPremium, preferences, updatePreferences, userProfile, updateUserProfile } = useUserData();
   const testNotifIndex = React.useRef(0);
+  const [showEditProfileModal, setShowEditProfileModal] = useState(false);
+  const [editName, setEditName] = useState('');
+  const [editEmail, setEditEmail] = useState('');
 
   const timeOptions = [
     { label: t('time_3min', lang), value: 3, icon: '☕' },
@@ -45,9 +48,12 @@ const ProfileScreen = ({ navigation }) => {
   ];
 
   const selectedMinutes = preferences?.time?.minutes || 6;
-  const selectedReminder = preferences?.reminderWindow || 'evening';
+  const selectedReminders = preferences?.reminderWindows || [preferences?.reminderWindow || 'evening'];
   const selectedTarget = preferences?.time?.dailyStoryTarget || 2;
-  const selectedReminderLabel = reminderOptions.find((o) => o.value === selectedReminder)?.label || t('reminder_evening', lang);
+  const selectedReminderLabel = reminderOptions
+    .filter(o => selectedReminders.includes(o.value))
+    .map(o => o.label)
+    .join(', ') || t('reminder_evening', lang);
   const currentThemeLabel = themeMode === 'dark' ? t('themeModeDark', lang) : t('themeModeLight', lang);
   const profileDisplayName = userProfile?.displayName || t('profileGuestName', lang);
   const profileEmail = userProfile?.email || t('profileGuestEmail', lang);
@@ -72,11 +78,16 @@ const ProfileScreen = ({ navigation }) => {
     await updatePreferences({ time: nextTimePreference });
   };
 
-  const handleReminderChange = async (windowValue, reminderHour) => {
-    await updatePreferences({
-      reminderWindow: windowValue,
-      reminderHour,
-    });
+  const handleReminderToggle = async (windowValue) => {
+    const current = preferences?.reminderWindows || [preferences?.reminderWindow || 'evening'];
+    let next;
+    if (current.includes(windowValue)) {
+      if (current.length === 1) return; // en az bir seçim zorunlu
+      next = current.filter(w => w !== windowValue);
+    } else {
+      next = [...current, windowValue];
+    }
+    await updatePreferences({ reminderWindows: next });
   };
 
   const openPrivacyPolicy = async () => {
@@ -155,6 +166,20 @@ const ProfileScreen = ({ navigation }) => {
     });
 
     testNotifIndex.current = (testNotifIndex.current + 1) % testMessages.length;
+  };
+
+  const openEditProfileModal = () => {
+    setEditName(userProfile?.displayName || '');
+    setEditEmail(userProfile?.email || '');
+    setShowEditProfileModal(true);
+  };
+
+  const saveProfileEdits = async () => {
+    await updateUserProfile({
+      displayName: editName,
+      email: editEmail,
+    });
+    setShowEditProfileModal(false);
   };
 
   const styles = StyleSheet.create({
@@ -264,7 +289,7 @@ const ProfileScreen = ({ navigation }) => {
           <Text style={styles.sectionTitle}>{t('categories', lang)}</Text>
           <View style={styles.profileCategoriesRow}>
             {parentCategories.map((p) => {
-              const cat = p.name;
+              const cat = p.raw_name;
               const isSelected = selectedCategories.includes(cat);
               const onPressCat = () => toggleSelectedCategory(cat);
               return (
@@ -311,20 +336,24 @@ const ProfileScreen = ({ navigation }) => {
               <Text style={styles.menuItemText}>{t('reminderTime', lang)}</Text>
             </View>
             <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
-              {reminderOptions.map((option) => (
-                <TouchableOpacity
-                  key={option.value}
-                  onPress={() => handleReminderChange(option.value, option.reminderHour)}
-                  style={[
-                    styles.categoryPill,
-                    selectedReminder === option.value && styles.categoryPillActive,
-                    { paddingVertical: 8, paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center', gap: 6 },
-                  ]}
-                >
-                  <Text style={[styles.categoryPillText, selectedReminder === option.value && styles.categoryPillActiveText]}>{option.icon}</Text>
-                  <Text style={[styles.categoryPillText, selectedReminder === option.value && styles.categoryPillActiveText]}>{option.label}</Text>
-                </TouchableOpacity>
-              ))}
+              {reminderOptions.map((option) => {
+                const isSelected = selectedReminders.includes(option.value);
+                return (
+                  <TouchableOpacity
+                    key={option.value}
+                    onPress={() => handleReminderToggle(option.value)}
+                    style={[
+                      styles.categoryPill,
+                      isSelected && styles.categoryPillActive,
+                      { paddingVertical: 8, paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center', gap: 6 },
+                    ]}
+                  >
+                    <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>{option.icon}</Text>
+                    <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>{option.label}</Text>
+                    {isSelected && <Ionicons name="checkmark" size={13} color={isSelected ? colors.text : colors.textSecondary} />}
+                  </TouchableOpacity>
+                );
+              })}
             </View>
           </View>
 
@@ -395,7 +424,7 @@ const ProfileScreen = ({ navigation }) => {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{t('account', lang)}</Text>
           
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity style={styles.menuItem} onPress={openEditProfileModal}>
             <View style={styles.menuItemLeft}>
               <Ionicons name="person-outline" size={24} color={colors.textSecondary} />
               <Text style={styles.menuItemText}>{t('editInfo', lang)}</Text>
@@ -430,6 +459,80 @@ const ProfileScreen = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
+
+      <Modal
+        visible={showEditProfileModal}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setShowEditProfileModal(false)}
+      >
+        <View style={{
+          flex: 1,
+          backgroundColor: 'rgba(0,0,0,0.55)',
+          justifyContent: 'center',
+          paddingHorizontal: layout.padding.horizontal,
+        }}>
+          <View style={{
+            backgroundColor: colors.background,
+            borderRadius: 16,
+            borderWidth: 1,
+            borderColor: colors.border,
+            padding: 18,
+            gap: 10,
+          }}>
+            <Text style={{ fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, color: colors.text }}>
+              {t('editInfo', lang)}
+            </Text>
+
+            <TextInput
+              value={editName}
+              onChangeText={setEditName}
+              placeholder={lang === 'tr' ? 'Ad Soyad' : 'Full name'}
+              placeholderTextColor={colors.textSecondary}
+              style={{
+                borderWidth: 1,
+                borderColor: colors.border,
+                borderRadius: 10,
+                paddingHorizontal: 12,
+                paddingVertical: 10,
+                color: colors.text,
+                fontFamily: 'Inter_400Regular',
+                backgroundColor: colors.backgroundDark,
+              }}
+            />
+
+            <TextInput
+              value={editEmail}
+              onChangeText={setEditEmail}
+              placeholder="E-posta"
+              placeholderTextColor={colors.textSecondary}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              style={{
+                borderWidth: 1,
+                borderColor: colors.border,
+                borderRadius: 10,
+                paddingHorizontal: 12,
+                paddingVertical: 10,
+                color: colors.text,
+                fontFamily: 'Inter_400Regular',
+                backgroundColor: colors.backgroundDark,
+              }}
+            />
+
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 10, marginTop: 4 }}>
+              <TouchableOpacity onPress={() => setShowEditProfileModal(false)} style={{ paddingHorizontal: 12, paddingVertical: 10 }}>
+                <Text style={{ fontFamily: 'Inter_500Medium', color: colors.textSecondary }}>{t('profileCancel', lang)}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={saveProfileEdits} style={{ backgroundColor: colors.primary, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 10 }}>
+                <Text style={{ fontFamily: 'Inter_500Medium', color: colors.onPrimary }}>
+                  {lang === 'tr' ? 'Kaydet' : 'Save'}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };

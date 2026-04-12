@@ -11,7 +11,7 @@ const SEEN_BADGES_STORAGE_KEY = '@kivilcim_seen_earned_badges';
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const USER_PROFILE_STORAGE_KEY = '@kivilcim_user_profile';
 const FAVORITE_COLLECTIONS_STORAGE_KEY = '@kivilcim_favorite_collections';
-const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening', reminderHour: 21 };
+const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening', reminderHour: 21, reminderWindows: ['evening'] };
 const EMPTY_USER_PROFILE = { displayName: null, email: null };
 const EMPTY_FAVORITE_COLLECTIONS = { saved_for_later: [] };
 
@@ -124,16 +124,26 @@ const normalizePreferences = (storedPreferences) => {
     return EMPTY_PREFERENCES;
   }
 
-  const reminder = buildReminderPreference(storedPreferences.reminderWindow ? {
-    reminderWindow: storedPreferences.reminderWindow,
-    reminderHour: storedPreferences.reminderHour,
-  } : storedPreferences.reminder || null);
+  // Normalize reminderWindows: new array format or migrate from legacy single
+  let reminderWindows;
+  if (Array.isArray(storedPreferences.reminderWindows) && storedPreferences.reminderWindows.length > 0) {
+    reminderWindows = storedPreferences.reminderWindows.filter(w => ['morning', 'noon', 'evening'].includes(w));
+    if (reminderWindows.length === 0) reminderWindows = ['evening'];
+  } else {
+    const reminder = buildReminderPreference(storedPreferences.reminderWindow ? {
+      reminderWindow: storedPreferences.reminderWindow,
+      reminderHour: storedPreferences.reminderHour,
+    } : storedPreferences.reminder || null);
+    reminderWindows = [reminder.reminderWindow];
+  }
+  const primary = buildReminderPreference({ reminderWindow: reminderWindows[0] });
 
   return {
     categories: Array.isArray(storedPreferences.categories) ? storedPreferences.categories : [],
     time: buildTimePreference(storedPreferences.time),
-    reminderWindow: reminder.reminderWindow,
-    reminderHour: reminder.reminderHour,
+    reminderWindow: primary.reminderWindow,
+    reminderHour: primary.reminderHour,
+    reminderWindows,
   };
 };
 
@@ -370,14 +380,21 @@ export const UserDataProvider = ({ children }) => {
   };
 
   // Onboarding Tamamlama
-  const saveOnboarding = async (userCategories, userTimeObj, userReminderObj = null) => {
+  const saveOnboarding = async (userCategories, userTimeObj, userReminderParam = null) => {
     try {
-      const reminder = buildReminderPreference(userReminderObj);
+      // Accept either a windows array ['morning','evening'] or a legacy single option object
+      let reminderWindows;
+      if (Array.isArray(userReminderParam)) {
+        reminderWindows = userReminderParam.filter(w => ['morning', 'noon', 'evening'].includes(w));
+        if (reminderWindows.length === 0) reminderWindows = ['evening'];
+      } else {
+        const reminder = buildReminderPreference(userReminderParam);
+        reminderWindows = [reminder.reminderWindow];
+      }
       const prefs = normalizePreferences({
         categories: userCategories,
         time: userTimeObj,
-        reminderWindow: reminder.reminderWindow,
-        reminderHour: reminder.reminderHour,
+        reminderWindows,
       });
       setPreferences(prefs);
       setIsOnboarded(true);
@@ -388,6 +405,7 @@ export const UserDataProvider = ({ children }) => {
 
       await scheduleDailyNotifications({
         lang,
+        reminderWindows: prefs.reminderWindows,
         reminderWindow: prefs.reminderWindow,
         reminderHour: prefs.reminderHour,
         dailyStoryTarget: prefs.time?.dailyStoryTarget || 2,
@@ -403,6 +421,7 @@ export const UserDataProvider = ({ children }) => {
         lang,
       });
       await trackEvent(ANALYTICS_EVENTS.ONBOARDING_NOTIFICATION_TIME_SELECTED, {
+        reminderWindows: prefs.reminderWindows,
         reminderWindow: prefs.reminderWindow,
         reminderHour: prefs.reminderHour,
         lang,
@@ -424,11 +443,13 @@ export const UserDataProvider = ({ children }) => {
 
   const updatePreferences = async (partialPrefs = {}) => {
     try {
-      const reminderChanged = Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderWindow')
+      const reminderChanged = Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderWindows')
+        || Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderWindow')
         || Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderHour');
       const candidate = {
         categories: partialPrefs.categories ?? preferences.categories,
         time: partialPrefs.time ?? preferences.time,
+        reminderWindows: partialPrefs.reminderWindows ?? preferences.reminderWindows ?? [preferences.reminderWindow || 'evening'],
         reminderWindow: partialPrefs.reminderWindow ?? preferences.reminderWindow,
         reminderHour: partialPrefs.reminderHour ?? preferences.reminderHour,
       };
@@ -439,6 +460,7 @@ export const UserDataProvider = ({ children }) => {
 
       await scheduleDailyNotifications({
         lang,
+        reminderWindows: nextPrefs.reminderWindows,
         reminderWindow: nextPrefs.reminderWindow,
         reminderHour: nextPrefs.reminderHour,
         dailyStoryTarget: nextPrefs.time?.dailyStoryTarget || 2,
@@ -450,8 +472,10 @@ export const UserDataProvider = ({ children }) => {
 
       if (reminderChanged) {
         await trackEvent(ANALYTICS_EVENTS.REMINDER_TIME_CHANGED, {
+          reminderWindows: nextPrefs.reminderWindows,
           reminderWindow: nextPrefs.reminderWindow,
           reminderHour: nextPrefs.reminderHour,
+          previousReminderWindows: preferences.reminderWindows,
           previousReminderWindow: preferences.reminderWindow,
           previousReminderHour: preferences.reminderHour,
           lang,

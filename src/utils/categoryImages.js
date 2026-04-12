@@ -240,6 +240,13 @@ const categoryImageMap = {
   'Negociación': IMG_COMMUNICATION,
   'Verhandlung': IMG_COMMUNICATION,
 
+  // ── English parent category names (raw DB names) ──
+  'Mind & Psychology': IMG_PSYCHOLOGY,
+  'Career & Success': IMG_LEADERSHIP,
+  'Science & Future': IMG_SCIENCE,
+  'Society & World': IMG_PHILOSOPHY,
+  'Social Skills': IMG_COMMUNICATION,
+
   // ── All ──
   'Tümü': IMG_DEFAULT,
   'All': IMG_DEFAULT,

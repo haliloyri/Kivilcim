@@ -132,7 +132,11 @@ const buildNotificationBody = ({
 export async function scheduleDailyNotifications(options = 'tr') {
   const normalized = typeof options === 'string' ? { lang: options } : (options || {});
   const lang = normalized.lang || 'tr';
-  const reminderWindow = normalized.reminderWindow || 'evening';
+  // Support multi-window array or legacy single window
+  const reminderWindows = Array.isArray(normalized.reminderWindows) && normalized.reminderWindows.length > 0
+    ? normalized.reminderWindows.filter(w => ['morning', 'noon', 'evening'].includes(w))
+    : [normalized.reminderWindow || 'evening'];
+  const reminderWindow = reminderWindows[0];
   const reminderHour = getReminderHour(reminderWindow, normalized.reminderHour);
   const dailyStoryTarget = Number(normalized.dailyStoryTarget) || 2;
   const totalReads = Number(normalized.totalReads) || 0;
@@ -178,23 +182,28 @@ export async function scheduleDailyNotifications(options = 'tr') {
 
   const planKey = getPlanNotificationKey(dailyStoryTarget);
 
-  await Notifications.scheduleNotificationAsync({
-    content: {
-      title: t('brandText', lang),
-      body,
-      sound: true,
-    },
-    trigger: {
-      hour: reminderHour,
-      minute: 0,
-      repeats: true,
-    },
-  });
+  // Schedule one notification per selected reminder window
+  for (const window of reminderWindows) {
+    const windowHour = getReminderHour(window, null);
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: t('brandText', lang),
+        body,
+        sound: true,
+      },
+      trigger: {
+        hour: windowHour,
+        minute: 0,
+        repeats: true,
+      },
+    });
+  }
 
   await trackEvent(ANALYTICS_EVENTS.NOTIFICATION_SCHEDULED, {
     success: true,
     platform: Platform.OS,
     lang,
+    reminderWindows,
     reminderWindow,
     reminderHour,
     dailyStoryTarget,
