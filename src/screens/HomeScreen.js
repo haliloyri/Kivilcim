@@ -52,7 +52,8 @@ const HomeScreen = ({ navigation }) => {
   const [showProfilePrompt, setShowProfilePrompt] = useState(false);
   const [profileNameInput, setProfileNameInput] = useState('');
   const [profileEmailInput, setProfileEmailInput] = useState('');
-  const isFetchingRef = useRef(false);  // ref to avoid stale closure
+  const [dailyClickedIds, setDailyClickedIds] = useState(new Set());
+  const [isDailyPanelCollapsed, setIsDailyPanelCollapsed] = useState(false);  const isFetchingRef = useRef(false);  // ref to avoid stale closure
   const visibleCountRef = useRef(11);   // ref to read latest value in callbacks
   const badgeScrollRef = useRef(null);
   const flipAnim = useRef(new Animated.Value(0)).current;
@@ -115,9 +116,9 @@ const HomeScreen = ({ navigation }) => {
   const firstSessionIntro = t('home_first_session_intro', lang);
   const firstSessionRecoLabel = t('home_first_session_reco_label', lang);
   const firstSessionMiniSummaryLabel = t('home_first_session_summary_label', lang);
-  const startQuicklyCta = lang === 'tr' ? '3 dakikada basla' : 'Start in 3 minutes';
-  const todayRecommendationCta = lang === 'tr' ? 'Bugunun onerisi' : "Today's recommendation";
-  const continueCta = lang === 'tr' ? 'Devam Et' : 'Continue';
+  const startQuicklyCta = t('home_start_quickly_cta', lang);
+  const todayRecommendationCta = t('home_today_recommendation_cta', lang);
+  const continueCta = t('home_continue_cta', lang);
 
   const checkIfRead = (id) => history.includes(id);
 
@@ -186,9 +187,9 @@ const HomeScreen = ({ navigation }) => {
 
   const progressSegments = 7;
   const activeSegments = Math.max(1, Math.round(badgeProgressInfo.completionRatio * progressSegments));
-  const completionLine = lang === 'tr'
-    ? `${badgeProgressInfo.earned}/${badgeProgressInfo.total} rozet tamamlandı`
-    : `${badgeProgressInfo.earned}/${badgeProgressInfo.total} badges completed`;
+  const completionLine = t('home_badge_completion_line', lang)
+    .replace('{{earned}}', String(badgeProgressInfo.earned))
+    .replace('{{total}}', String(badgeProgressInfo.total));
   const badgeCarouselItems = badgeProgressInfo.nextCandidates.length > 0
     ? badgeProgressInfo.nextCandidates
     : [null]; // null = "all completed" card
@@ -269,12 +270,15 @@ const HomeScreen = ({ navigation }) => {
   useFocusEffect(
     React.useCallback(() => {
       let isActive = true;
+      const todayKey = new Date().toISOString().split('T')[0];
+      const DAILY_PANEL_KEY = `@spark_daily_panel_${todayKey}`;
 
       Promise.all([
         getSelectedCategories().catch(() => null),
         AsyncStorage.getItem(FIRST_SESSION_PROMPT_KEY).catch(() => null),
         AsyncStorage.getItem(PERSONALIZED_MODULE_SNOOZE_KEY).catch(() => null),
-      ]).then(([list, promptFlag, moduleSnoozeUntil]) => {
+        AsyncStorage.getItem(DAILY_PANEL_KEY).catch(() => null),
+      ]).then(([list, promptFlag, moduleSnoozeUntil, dailyPanelData]) => {
         if (!isActive) return;
 
         if (Array.isArray(list)) {
@@ -286,6 +290,19 @@ const HomeScreen = ({ navigation }) => {
         const today = new Date().toISOString().split('T')[0];
         setIsPersonalizedModuleDismissed(false);
         setIsPersonalizedModuleSnoozed(Boolean(moduleSnoozeUntil && moduleSnoozeUntil >= today));
+
+        if (dailyPanelData) {
+          try {
+            const parsed = JSON.parse(dailyPanelData);
+            setDailyClickedIds(new Set((parsed.clickedIds || []).map(String)));
+            setIsDailyPanelCollapsed(Boolean(parsed.collapsed));
+          } catch {
+            // ignore
+          }
+        } else {
+          setDailyClickedIds(new Set());
+          setIsDailyPanelCollapsed(false);
+        }
       });
 
       return () => {
@@ -510,7 +527,7 @@ const HomeScreen = ({ navigation }) => {
 
     if (personalizedModule.type === MODULE_TYPES.CONTINUE) {
       return {
-        title: lang === 'tr' ? 'Devam etmeye hazirsin' : 'Ready to continue',
+        title: t('home_module_continue_title', lang),
         body: firstStory.title,
         cta: continueCta,
         story: firstStory,
@@ -520,7 +537,7 @@ const HomeScreen = ({ navigation }) => {
 
     if (personalizedModule.type === MODULE_TYPES.PICKED) {
       return {
-        title: lang === 'tr' ? 'Senin Icin Secildi' : 'Picked for you',
+        title: t('home_module_picked_title', lang),
         body: firstStory.title,
         cta: todayRecommendationCta,
         story: firstStory,
@@ -625,6 +642,30 @@ const HomeScreen = ({ navigation }) => {
     } catch (error) {
       console.error('Kisisellestirilmis modul erteleme kaydedilemedi:', error);
     }
+  };
+
+  // Daily panel: handle story tap
+  const handleDailyStoryPress = (story, totalDailyCount) => {
+    const todayKey = new Date().toISOString().split('T')[0];
+    const DAILY_PANEL_KEY = `@spark_daily_panel_${todayKey}`;
+    const newIds = new Set(dailyClickedIds);
+    newIds.add(String(story.story_id));
+    setDailyClickedIds(newIds);
+    const allClicked = newIds.size >= totalDailyCount;
+    if (allClicked) {
+      setIsDailyPanelCollapsed(true);
+    }
+    AsyncStorage.setItem(DAILY_PANEL_KEY, JSON.stringify({
+      clickedIds: [...newIds],
+      collapsed: allClicked,
+    })).catch(() => {});
+    trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
+      storyId: story.story_id,
+      source: 'home_daily_panel',
+      dailyStoryTarget: personalizedTarget,
+      lang,
+    });
+    navigation.navigate('StoryDetail', { story });
   };
 
   const styles = StyleSheet.create({
@@ -935,6 +976,46 @@ const HomeScreen = ({ navigation }) => {
       letterSpacing: 0.3,
       textTransform: 'uppercase',
     },
+    dailyPanelCard: {
+      marginBottom: 20,
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: `${colors.primary}40`,
+      backgroundColor: isDark ? `${colors.primary}0D` : `${colors.primary}0A`,
+      overflow: 'hidden',
+    },
+    dailyPanelHeader: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingHorizontal: 16,
+      paddingVertical: 14,
+    },
+    dailyPanelTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.primary,
+      letterSpacing: 0.5,
+      textTransform: 'uppercase',
+      flex: 1,
+    },
+    dailyPanelStoriesWrap: {
+      paddingHorizontal: 12,
+      paddingBottom: 12,
+      gap: 8,
+    },
+    dailyStoryRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingVertical: 10,
+      paddingHorizontal: 12,
+      borderRadius: 12,
+      backgroundColor: colors.backgroundDark,
+      gap: 12,
+    },
+    dailyStoryRowClicked: {
+      opacity: 0.55,
+    },
   });
 
   return (
@@ -979,8 +1060,8 @@ const HomeScreen = ({ navigation }) => {
               const badgeTitle = badge ? t(badge.titleKey, lang) : null;
               const badgePercent = badge ? Math.round(badge.ratio * 100) : 100;
               const headerSub = badge
-                ? (lang === 'tr' ? `Sıradaki rozete yakınsın: ${badgeTitle}` : `You are close to the next badge: ${badgeTitle}`)
-                : (lang === 'tr' ? 'Tüm rozetler tamamlandı' : 'All badges completed');
+                ? t('home_badge_next_close', lang).replace('{{badge}}', badgeTitle)
+                : t('home_badge_all_completed', lang);
               return (
                 <View key={i} style={{ width: screenWidth, paddingHorizontal: layout.padding.horizontal }}>
                   <LinearGradient
@@ -992,22 +1073,9 @@ const HomeScreen = ({ navigation }) => {
                     <Text style={{ fontSize: 42 }}>{badge ? badge.icon : '🏆'}</Text>
                     <View style={{ marginLeft: 16, flex: 1 }}>
                       <Text style={styles.streakDays}>{`%${badgePercent}`}</Text>
-                      <Text style={styles.streakLabel}>{lang === 'tr' ? 'Rozet Yolculuğun' : 'Badge Journey'}</Text>
+                      <Text style={styles.streakLabel}>{t('home_badge_journey_label', lang)}</Text>
                       <Text style={[styles.streakLabel, { marginTop: 2 }]} numberOfLines={1}>{headerSub}</Text>
                       <Text style={[styles.streakLabel, { marginTop: 2 }]}>{completionLine}</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row', gap: 6 }}>
-                      {Array.from({ length: progressSegments }).map((_, j) => (
-                        <View
-                          key={j}
-                          style={[
-                            styles.streakDot,
-                            j < activeSegments
-                              ? { width: j === activeSegments - 1 ? 24 : 8, backgroundColor: isDark ? colors.text : '#fff' }
-                              : { backgroundColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.4)' },
-                          ]}
-                        />
-                      ))}
                     </View>
                   </LinearGradient>
                 </View>
@@ -1089,103 +1157,73 @@ const HomeScreen = ({ navigation }) => {
             </View>
           ) : (
             <>
-              {showFirstSessionPrompt && (
-                <View style={styles.firstSessionCard}>
-                  <Text style={styles.firstSessionIntro}>{firstSessionIntro}</Text>
-                  <View style={styles.firstSessionTop}>
-                    <View style={styles.firstSessionTextWrap}>
-                      <Text style={styles.firstSessionTitle}>{firstSessionTitle}</Text>
-                      <Text style={styles.firstSessionSub}>{firstSessionBody}</Text>
-                    </View>
-                    <TouchableOpacity style={styles.firstSessionClose} onPress={dismissFirstSessionPrompt}>
-                      <Ionicons name="close" size={16} color={colors.primary} />
+              {/* Daily recommendations panel */}
+              {personalizedStories.length > 0 && (() => {
+                const panelStories = personalizedStories;
+                const isDailyComplete = dailyClickedIds.size >= panelStories.length;
+                return (
+                  <View style={styles.dailyPanelCard}>
+                    <TouchableOpacity
+                      style={styles.dailyPanelHeader}
+                      onPress={() => setIsDailyPanelCollapsed(prev => !prev)}
+                      activeOpacity={0.7}
+                    >
+                      <Text style={styles.dailyPanelTitle} numberOfLines={1}>
+                        {t('home_first_session_intro', lang)}
+                      </Text>
+                      {isDailyComplete ? (
+                        <Ionicons name="checkmark-circle" size={20} color={colors.primary} style={{ marginLeft: 8 }} />
+                      ) : (
+                        <Ionicons
+                          name={isDailyPanelCollapsed ? 'chevron-down-outline' : 'chevron-up-outline'}
+                          size={18}
+                          color={colors.primary}
+                          style={{ marginLeft: 8 }}
+                        />
+                      )}
                     </TouchableOpacity>
+
+                    {!isDailyPanelCollapsed && !isDailyComplete && (
+                      <View style={styles.dailyPanelStoriesWrap}>
+                        {panelStories.map((story) => {
+                          const isClicked = dailyClickedIds.has(String(story.story_id));
+                          const isLocked = !isPremium && !isClicked && personalizedStories.indexOf(story) >= 2;
+                          return (
+                            <TouchableOpacity
+                              key={story.story_id}
+                              style={[styles.dailyStoryRow, isClicked && styles.dailyStoryRowClicked]}
+                              onPress={() => isLocked
+                                ? openPaywallFromFreeLimit('home_daily_panel_locked', story.story_id)
+                                : handleDailyStoryPress(story, panelStories.length)
+                              }
+                              activeOpacity={0.7}
+                            >
+                              <Ionicons
+                                name={isClicked ? 'checkmark-circle' : 'book-outline'}
+                                size={18}
+                                color={isClicked ? colors.primary : colors.textSecondary}
+                              />
+                              <View style={{ flex: 1 }}>
+                                <Text style={{ fontFamily: 'PlayfairDisplay_600SemiBold', fontSize: 14, color: colors.text, lineHeight: 20 }} numberOfLines={2}>
+                                  {story.title}
+                                </Text>
+                                <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 2 }}>
+                                  {t(story.parent_cat, lang)} · {story.min} {t('minLabel', lang)}
+                                </Text>
+                              </View>
+                              {isLocked ? (
+                                <Ionicons name="lock-closed-outline" size={16} color={colors.textSecondary} />
+                              ) : (
+                                <Ionicons name="chevron-forward" size={16} color={colors.textSecondary} />
+                              )}
+                            </TouchableOpacity>
+                          );
+                        })}
+                      </View>
+                    )}
                   </View>
-
-                  <View style={styles.firstSessionInfoBox}>
-                    <Text style={styles.firstSessionInfoLabel}>{firstSessionRecoLabel}</Text>
-                    <Text style={styles.firstSessionInfoValue} numberOfLines={2}>{firstSessionRecommendedTitle}</Text>
-                  </View>
-
-                  <View style={styles.firstSessionInfoBox}>
-                    <Text style={styles.firstSessionInfoLabel}>{firstSessionMiniSummaryLabel}</Text>
-                    <Text style={styles.firstSessionInfoValue}>{firstSessionMiniSummary}</Text>
-                  </View>
-
-                  {firstSessionFocusCategories.length > 0 ? (
-                    <View style={styles.firstSessionCatRow}>
-                      {firstSessionFocusCategories.map((cat) => (
-                        <View key={`first-session-cat-${cat}`} style={styles.firstSessionCatPill}>
-                          <Text style={styles.firstSessionCatText}>{t(cat, lang)}</Text>
-                        </View>
-                      ))}
-                    </View>
-                  ) : null}
-
-                  <TouchableOpacity style={styles.firstSessionCta} onPress={openFirstRecommendedStory}>
-                    <Text style={styles.firstSessionCtaText}>{t('home_open_first_story_cta', lang)}</Text>
-                  </TouchableOpacity>
-                </View>
-              )}
-
-              {!isPersonalizedModuleDismissed && !isPersonalizedModuleSnoozed && personalizedStories.length > 0 && (
-                <View style={styles.personalizedModuleCard}>
-                  <View style={styles.personalizedModuleTop}>
-                    <View style={styles.personalizedModuleTextWrap}>
-                      <Text style={styles.personalizedModuleTitle}>{personalizedModuleCard.title}</Text>
-                      <Text style={styles.personalizedModuleSub}>{personalizedModuleCard.body}</Text>
-                    </View>
-                    <TouchableOpacity style={styles.firstSessionClose} onPress={dismissPersonalizedModule}>
-                      <Ionicons name="close" size={16} color={colors.primary} />
-                    </TouchableOpacity>
-                  </View>
-
-                  <View style={styles.personalizedModuleActions}>
-                    <TouchableOpacity style={styles.personalizedModuleSnoozeBtn} onPress={snoozePersonalizedModule}>
-                      <Text style={styles.personalizedModuleSnoozeText}>{lang === 'tr' ? 'Daha sonra' : 'Later'}</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.personalizedModuleCta} onPress={onPersonalizedModuleOpen}>
-                      <Text style={styles.personalizedModuleCtaText}>{personalizedModuleCard.cta}</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              )}
-
-              {personalizedStories.length > 0 && (
-                <View style={{ marginBottom: 28 }}>
-                  <Text style={styles.sectionTitle}>{forYouLabel}</Text>
-                  <Text style={styles.sectionSub}>{forYouSubtitle}</Text>
-
-                  <StoryCard
-                    story={personalizedStories[0]}
-                    type="hero"
-                    hideCategory={activeFilter !== 'Tümü'}
-                    isRead={checkIfRead(personalizedStories[0].story_id)}
-                    onPress={() => openPersonalizedStory(personalizedStories[0], 0)}
-                  />
-
-                  {personalizedStories.length > 1 && (
-                    <View style={styles.storyGrid}>
-                      {personalizedStories.slice(1).map((story, index) => {
-                        const isLocked = !isPremium && index + 1 >= 2;
-
-                        return (
-                          <StoryCard
-                            key={story.story_id}
-                            story={story}
-                            type="compact"
-                            locked={isLocked}
-                            supportText={isLocked ? t('homeFreemiumPremiumBenefit', lang) : null}
-                            hideCategory={activeFilter !== 'Tümü'}
-                            isRead={checkIfRead(story.story_id)}
-                            onPress={() => isLocked ? openPaywallFromFreeLimit('home_personalized_locked', story.story_id) : openPersonalizedStory(story, index + 1)}
-                          />
-                        );
-                      })}
-                    </View>
-                  )}
-                </View>
-              )}
+                );
+              })()}
 
               {free.length > 0 && (
                 <>
@@ -1204,7 +1242,7 @@ const HomeScreen = ({ navigation }) => {
                       letterSpacing: 1.2,
                       textTransform: 'uppercase',
                     }}>
-                      {lang === 'tr' ? 'Diğer Hikayeler' : lang === 'es' ? 'Más Historias' : lang === 'de' ? 'Weitere Geschichten' : 'More Stories'}
+                      {t('home_more_stories', lang)}
                     </Text>
                     <View style={{ flex: 1, height: 1, backgroundColor: colors.border }} />
                   </View>
@@ -1299,16 +1337,16 @@ const HomeScreen = ({ navigation }) => {
             gap: 10,
           }}>
             <Text style={{ fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, color: colors.text }}>
-              {lang === 'tr' ? 'Profilini Tamamla' : 'Complete your profile'}
+              {t('home_profile_prompt_title', lang)}
             </Text>
             <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, lineHeight: 20, color: colors.textSecondary }}>
-              {lang === 'tr' ? 'İlk kullanım için ad ve e-posta bilgini kaydedelim. Sonra Profil ekranından güncelleyebilirsin.' : 'Save your name and email for first use. You can update it later from Profile.'}
+              {t('home_profile_prompt_body', lang)}
             </Text>
 
             <TextInput
               value={profileNameInput}
               onChangeText={setProfileNameInput}
-              placeholder={lang === 'tr' ? 'Ad Soyad' : 'Full name'}
+              placeholder={t('home_profile_name_placeholder', lang)}
               placeholderTextColor={colors.textSecondary}
               style={{
                 borderWidth: 1,
@@ -1344,12 +1382,12 @@ const HomeScreen = ({ navigation }) => {
             <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 10, marginTop: 4 }}>
               <TouchableOpacity onPress={skipProfilePrompt} style={{ paddingHorizontal: 12, paddingVertical: 10 }}>
                 <Text style={{ fontFamily: 'Inter_500Medium', color: colors.textSecondary }}>
-                  {lang === 'tr' ? 'Sonra' : 'Later'}
+                  {t('home_profile_prompt_later', lang)}
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={saveProfilePrompt} style={{ backgroundColor: colors.primary, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 10 }}>
                 <Text style={{ fontFamily: 'Inter_500Medium', color: colors.onPrimary }}>
-                  {lang === 'tr' ? 'Kaydet' : 'Save'}
+                  {t('home_profile_prompt_save', lang)}
                 </Text>
               </TouchableOpacity>
             </View>

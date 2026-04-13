@@ -20,7 +20,7 @@ const DAILY_TARGET_COMPLETED_KEY = '@kivilcim_analytics_daily_target_completed_d
 
 const ProgressScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
-  const { streak, totalReads, earnedBadges, openBadgeModal, preferences, categoryStats, history } = useUserData();
+  const { streak, totalReads, earnedBadges, openBadgeModal, preferences, categoryStats, history, completedStories } = useUserData();
   const { stories } = useStories();
   const badgeScale = useSharedValue(0);
   const badgeOpacity = useSharedValue(0);
@@ -50,11 +50,13 @@ const ProgressScreen = ({ navigation }) => {
 
   const activeStories = useMemo(() => {
     const byId = new Map((stories || []).map((story) => [String(story.story_id), story]));
+    const completedSet = new Set((completedStories || []).map((id) => String(id)));
     return (history || [])
+      .filter((id) => !completedSet.has(String(id)))
       .slice(0, 3)
       .map((id) => byId.get(String(id)))
       .filter(Boolean);
-  }, [history, stories]);
+  }, [history, stories, completedStories]);
 
   useEffect(() => {
     if (!isDailyGoalComplete) return;

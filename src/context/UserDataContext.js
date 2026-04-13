@@ -11,6 +11,7 @@ const SEEN_BADGES_STORAGE_KEY = '@kivilcim_seen_earned_badges';
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const USER_PROFILE_STORAGE_KEY = '@kivilcim_user_profile';
 const FAVORITE_COLLECTIONS_STORAGE_KEY = '@kivilcim_favorite_collections';
+const COMPLETED_STORIES_STORAGE_KEY = '@kivilcim_completed_stories';
 const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening', reminderHour: 21, reminderWindows: ['evening'] };
 const EMPTY_USER_PROFILE = { displayName: null, email: null };
 const EMPTY_FAVORITE_COLLECTIONS = { saved_for_later: [] };
@@ -198,6 +199,7 @@ export const UserDataProvider = ({ children }) => {
   const [readCountsByStory, setReadCountsByStory] = useState({});
   const [shareCount, setShareCount] = useState(0);
   const [favoriteCollections, setFavoriteCollections] = useState(EMPTY_FAVORITE_COLLECTIONS);
+  const [completedStories, setCompletedStories] = useState([]);
   const [seenBadgeIds, setSeenBadgeIds] = useState([]);
   const [seenBadgesReady, setSeenBadgesReady] = useState(false);
   const [shouldBootstrapSeenBadges, setShouldBootstrapSeenBadges] = useState(false);
@@ -246,6 +248,7 @@ export const UserDataProvider = ({ children }) => {
         const storedShareCount = await AsyncStorage.getItem('@kivilcim_share_count');
         const storedUserProfile = await AsyncStorage.getItem(USER_PROFILE_STORAGE_KEY);
         const storedCollections = await AsyncStorage.getItem(FAVORITE_COLLECTIONS_STORAGE_KEY);
+        const storedCompletedStories = await AsyncStorage.getItem(COMPLETED_STORIES_STORAGE_KEY);
 
         const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
         if (storedFavorites) setFavorites(parsedFavorites);
@@ -276,6 +279,10 @@ export const UserDataProvider = ({ children }) => {
           if (JSON.stringify(parsedProfile) !== JSON.stringify(normalizedProfile)) {
             await AsyncStorage.setItem(USER_PROFILE_STORAGE_KEY, JSON.stringify(normalizedProfile));
           }
+        }
+        if (storedCompletedStories) {
+          const parsedCompleted = JSON.parse(storedCompletedStories);
+          setCompletedStories(Array.isArray(parsedCompleted) ? parsedCompleted.map((id) => String(id)) : []);
         }
       } catch (error) {
         console.error('AsyncStorage veri yükleme hatası:', error);
@@ -354,6 +361,35 @@ export const UserDataProvider = ({ children }) => {
     });
   };
 
+  const isStorySavedForLater = useCallback((storyId) => {
+    const strId = String(storyId);
+    return (favoriteCollections?.saved_for_later || []).includes(strId);
+  }, [favoriteCollections]);
+
+  const toggleReadLater = async (storyId) => {
+    const strId = String(storyId);
+
+    setFavorites((prev) => {
+      if (prev.some((id) => String(id) === strId)) return prev;
+      const nextFavorites = [...prev, strId];
+      AsyncStorage.setItem('@kivilcim_favorites', JSON.stringify(nextFavorites));
+      return nextFavorites;
+    });
+
+    setFavoriteCollections((prev) => {
+      const current = Array.isArray(prev?.saved_for_later) ? prev.saved_for_later : [];
+      const nextList = current.includes(strId)
+        ? current.filter((id) => id !== strId)
+        : [...current, strId];
+      const next = {
+        ...prev,
+        saved_for_later: [...new Set(nextList)],
+      };
+      AsyncStorage.setItem(FAVORITE_COLLECTIONS_STORAGE_KEY, JSON.stringify(next));
+      return next;
+    });
+  };
+
   const isStoryInFavoriteCollection = (storyId, collectionId = 'saved_for_later') => {
     const strId = String(storyId);
     return (favoriteCollections?.[collectionId] || []).includes(strId);
@@ -378,6 +414,20 @@ export const UserDataProvider = ({ children }) => {
       console.error('Okuma geçmişi kaydetme hatası:', error);
     }
   };
+
+  const markStoryCompleted = async (storyId) => {
+    const strId = String(storyId);
+    setCompletedStories((prev) => {
+      if (prev.includes(strId)) return prev;
+      const next = [strId, ...prev].slice(0, 100);
+      AsyncStorage.setItem(COMPLETED_STORIES_STORAGE_KEY, JSON.stringify(next));
+      return next;
+    });
+  };
+
+  const isStoryCompleted = useCallback((storyId) => {
+    return completedStories.includes(String(storyId));
+  }, [completedStories]);
 
   // Onboarding Tamamlama
   const saveOnboarding = async (userCategories, userTimeObj, userReminderParam = null) => {
@@ -568,6 +618,7 @@ export const UserDataProvider = ({ children }) => {
         '@kivilcim_premium',
         '@kivilcim_share_count',
         FAVORITE_COLLECTIONS_STORAGE_KEY,
+        COMPLETED_STORIES_STORAGE_KEY,
         USER_PROFILE_STORAGE_KEY,
         FIRST_SESSION_PROMPT_KEY,
         SEEN_BADGES_STORAGE_KEY,
@@ -576,6 +627,7 @@ export const UserDataProvider = ({ children }) => {
       setHistory([]);
       setPreferences(EMPTY_PREFERENCES);
       setFavoriteCollections(EMPTY_FAVORITE_COLLECTIONS);
+      setCompletedStories([]);
       setUserProfile(EMPTY_USER_PROFILE);
       setIsOnboarded(false);
       setIsPremium(false);
@@ -662,6 +714,7 @@ export const UserDataProvider = ({ children }) => {
     categoryStats,
     readCountsByStory,
     favoriteCollections,
+    completedStories,
     shareCount,
     earnedBadges,
     activeBadgeModal,
@@ -669,7 +722,11 @@ export const UserDataProvider = ({ children }) => {
     isFavorite,
     isStoryInFavoriteCollection,
     toggleStoryInFavoriteCollection,
+    isStorySavedForLater,
+    toggleReadLater,
     addToHistory,
+    isStoryCompleted,
+    markStoryCompleted,
     saveOnboarding,
     updatePreferences,
     buyPremium,
@@ -680,7 +737,7 @@ export const UserDataProvider = ({ children }) => {
     openBadgeModal,
     closeBadgeModal,
     releasePendingBadge,
-  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, shareCount, earnedBadges, activeBadgeModal, openBadgeModal, closeBadgeModal, releasePendingBadge]);
+  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, isStorySavedForLater, toggleReadLater, isStoryCompleted, openBadgeModal, closeBadgeModal, releasePendingBadge]);
 
   return (
     <UserDataContext.Provider value={value}>

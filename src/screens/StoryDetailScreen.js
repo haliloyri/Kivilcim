@@ -24,7 +24,7 @@ const { width, height } = Dimensions.get('window');
 const StoryDetailScreen = ({ route, navigation }) => {
   const { story } = route.params;
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount, releasePendingBadge } = useUserData();
+  const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount, releasePendingBadge, isStorySavedForLater, toggleReadLater, isStoryCompleted, markStoryCompleted } = useUserData();
   const { stories } = useStories();
   const [fontSize, setFontSize] = useState(typography.sizes.body);
   const [shareModalVisible, setShareModalVisible] = useState(false);
@@ -55,6 +55,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   }, [localLang, story, lang]);
 
   const liked = isFavorite(story.story_id);
+  const savedForLater = isStorySavedForLater(story.story_id);
   // DB already returns translated content for the active language
   const displayTitle = localStory.title || '';
   const displayBody = localStory.body || '';
@@ -101,6 +102,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
       Animated.timing(scaleAnim, { toValue: 1, duration: 100, useNativeDriver: true }),
     ]).start();
     toggleFavorite(story.story_id);
+  };
+
+  const handleReadLater = () => {
+    toggleReadLater(story.story_id);
   };
 
   const handleNext = () => {
@@ -981,6 +986,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
               <Text style={styles.fontSizeBtnText}>A+</Text>
             </TouchableOpacity>
           </View>
+          <TouchableOpacity onPress={() => setShareModalVisible(true)}>
+            <Ionicons name="share-social" size={22} color={colors.text} />
+          </TouchableOpacity>
           <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
             <TouchableOpacity onPress={handleLike}>
               <Ionicons name={liked ? "heart" : "heart-outline"} size={26} color={liked ? "#BA1A1A" : colors.text} />
@@ -1000,6 +1008,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
                 if (contentOffset.y + layoutMeasurement.height >= contentSize.height - 60) {
                   hasReachedBottom.current = true;
+                  if (!isStoryCompleted(story.story_id)) {
+                    markStoryCompleted(story.story_id);
+                  }
                   releasePendingBadge();
                 }
               }
@@ -1015,7 +1026,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
               <>
                 <Image 
                   source={catImg.source} 
-                  style={[StyleSheet.absoluteFill, { 
+                  style={[StyleSheet.absoluteFill, {
+                    width: '100%',
+                    height: '100%',
                     opacity: 0.4,
                     transform: [
                       { rotate: catImg.rotate },
@@ -1217,10 +1230,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       </Animated.ScrollView>
 
       <View style={styles.detailFooter}>
-        <TouchableOpacity style={styles.btnSecondaryShare} onPress={() => setShareModalVisible(true)}>
-          <Text style={styles.btnSecondaryShareText}>Paylaş</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.btnPrimary, { flex: 2, backgroundColor: '#9D451B' }]} onPress={handleNext}>
+        <TouchableOpacity style={[styles.btnPrimary, { flex: 1, backgroundColor: '#9D451B' }]} onPress={handleNext}>
           <Text style={[styles.btnPrimaryText, { color: '#F7F3EB' }]}>
             {isPremium ? t('nextStory', lang) : t('nextStoryUnlock', lang)}
           </Text>

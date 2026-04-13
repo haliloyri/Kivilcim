@@ -2,17 +2,18 @@ import React, { useEffect, useRef } from 'react';
 import { View, StyleSheet, Animated, Image, ActivityIndicator, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const ROUND_LOGO = require('../../assets/spark_logo_transparent.png');
+const LANGUAGE_LOGO = require('../../assets/spark_logo_de.png');
 
 /**
  * Returns logo size based on screen dimensions.
  * Tablets (short side >= 600dp) get a smaller percentage to avoid oversized logos.
+ * Size is 2x larger than original (100% bigger).
  */
 const getLogoSize = () => {
   const { width, height } = Dimensions.get('window');
   const shortSide = Math.min(width, height);
   const isTablet = shortSide >= 600;
-  const size = isTablet ? shortSide * 0.58 : shortSide * 0.88;
+  const size = isTablet ? shortSide * 1.16 : shortSide * 1.76;
   return size;
 };
 
@@ -49,8 +50,8 @@ const LaunchScreen = () => {
         ]}
       >
         <Image
-          source={ROUND_LOGO}
-          style={{ width: logoSize, height: logoSize, borderRadius: logoSize / 2 }}
+          source={LANGUAGE_LOGO}
+          style={{ width: logoSize, height: logoSize }}
           resizeMode="contain"
         />
       </Animated.View>

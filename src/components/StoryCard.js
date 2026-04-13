@@ -21,7 +21,13 @@ export const getCatIcon = (catName) => {
     case 'Verimlilik': case 'Productivity': return 'rocket-outline';
     case 'İletişim': case 'Communication': return 'chatbubbles-outline';
     case 'İş & Girişim': case 'Business': return 'briefcase-outline';
-    default: return 'bookmark-outline';
+    // Parent category raw names (English DB keys) and their localized forms
+    case 'Mind & Psychology': case 'Zihin ve Psikoloji': case 'Mente y Psicología': case 'Geist und Psychologie': return 'heart-outline';
+    case 'Career & Success': case 'Kariyer ve Başarı': case 'Carrera y Éxito': case 'Karriere und Erfolg': return 'briefcase-outline';
+    case 'Science & Future': case 'Bilim ve Gelecek': case 'Ciencia y Futuro': case 'Wissenschaft und Zukunft': return 'flask-outline';
+    case 'Society & World': case 'Toplum ve Dünya': case 'Sociedad y Mundo': case 'Gesellschaft und Welt': return 'earth-outline';
+    case 'Social Skills': case 'Sosyal Beceriler': case 'Habilidades Sociales': case 'Soziale Fähigkeiten': return 'chatbubbles-outline';
+    default: return 'book-outline';
   }
 };
 

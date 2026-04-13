@@ -9,7 +9,6 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { Ionicons } from '@expo/vector-icons';
-import { getCatIcon } from '../components/StoryCard';
 import { t } from '../locales/i18n';
 
 
@@ -293,8 +292,7 @@ const ProfileScreen = ({ navigation }) => {
               const isSelected = selectedCategories.includes(cat);
               const onPressCat = () => toggleSelectedCategory(cat);
               return (
-                <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive, { flexDirection: 'row', alignItems: 'center', gap: 6 }]}>
-                  <Ionicons name={getCatIcon(cat)} size={14} color={isSelected ? colors.text : colors.textSecondary} />
+                <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive]}>
                   <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>
                     {t(cat, lang)}
                   </Text>

@@ -3,12 +3,13 @@ import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
   StatusBar, Animated, Platform, Dimensions, Image
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
-import { getCategoryImage } from '../utils/categoryImages';
+import { getCatIcon } from '../components/StoryCard';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -16,6 +17,7 @@ const OnboardingScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
   const { isPremium, saveOnboarding } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
+  const insets = useSafeAreaInsets();
   const [loading, setLoading] = useState(true);
   const [step, setStep] = useState(0);
   const [selectedCats, setSelectedCats] = useState([]);
@@ -157,7 +159,7 @@ const OnboardingScreen = ({ navigation }) => {
       width: '100%',
       height: '100%',
       borderRadius: 20,
-      backgroundColor: '#ffffff',
+      backgroundColor: isDark ? colors.backgroundDark : '#ffffff',
       alignItems: 'center',
       justifyContent: 'center',
       // Ambient shadow – soft, natural gallery lighting
@@ -382,7 +384,7 @@ const OnboardingScreen = ({ navigation }) => {
     /* ── Footer ── */
     footer: {
       paddingHorizontal: 32,
-      paddingBottom: Platform.OS === 'android' ? 32 : 24,
+      paddingBottom: Math.max(insets.bottom + 16, Platform.OS === 'android' ? 32 : 24),
       paddingTop: 16,
       alignItems: 'center',
       gap: 20,
@@ -466,7 +468,7 @@ const OnboardingScreen = ({ navigation }) => {
 
     /* ── Step 1: Category Selection ── */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s1">
-      <Text style={s.sectionTitle}>{t('onboarding_why', lang)}</Text>
+      <Text style={s.sectionTitle} numberOfLines={1} adjustsFontSizeToFit>{t('onboarding_why', lang)}</Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_why_sub', lang)}</Text>
       <View style={s.catGrid}>
         {allCats.map(cat => {
@@ -479,27 +481,19 @@ const OnboardingScreen = ({ navigation }) => {
               activeOpacity={0.7}
             >
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: isSmallPhone ? 6 : 8, flex: 1 }}>
-                <View style={{ width: isSmallPhone ? 28 : 32, height: isSmallPhone ? 28 : 32, borderRadius: 6, overflow: 'hidden' }}>
-                  {(() => {
-                    const catImg = getCategoryImage(cat);
-                    return (
-                      <>
-                        <Image 
-                          source={catImg.source} 
-                          style={{ 
-                            width: '100%', 
-                            height: '100%',
-                            transform: [
-                              { rotate: catImg.rotate },
-                              { scaleX: catImg.flip ? -1 : 1 }
-                            ]
-                          }}
-                          resizeMode="cover"
-                        />
-                        <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
-                      </>
-                    );
-                  })()}
+                <View style={{
+                  width: isSmallPhone ? 28 : 32,
+                  height: isSmallPhone ? 28 : 32,
+                  borderRadius: 8,
+                  backgroundColor: sel ? `${colors.primary}20` : colors.background,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                  <Ionicons
+                    name={getCatIcon(cat)}
+                    size={isSmallPhone ? 14 : 16}
+                    color={sel ? colors.primary : colors.textSecondary}
+                  />
                 </View>
                 <Text
                   style={[s.catTileText, sel && s.catTileTextSelected, { flex: 1 }]}
@@ -529,7 +523,7 @@ const OnboardingScreen = ({ navigation }) => {
 
     /* ── Step 2: Time Selection ── */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s2">
-      <Text style={s.sectionTitle}>{t('onboarding_how_long', lang)}</Text>
+      <Text style={s.sectionTitle} numberOfLines={1} adjustsFontSizeToFit>{t('onboarding_how_long', lang)}</Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_how_long_sub', lang)}</Text>
       {timeOptions.map((option, i) => (
         <TouchableOpacity
@@ -552,7 +546,7 @@ const OnboardingScreen = ({ navigation }) => {
 
     /* ── Step 3: Ready ── */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s4">
-      <Text style={s.sectionTitle}>{t('onboarding_when_remind', lang)}</Text>
+      <Text style={s.sectionTitle} numberOfLines={1} adjustsFontSizeToFit>{t('onboarding_when_remind', lang)}</Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_when_remind_sub', lang)}</Text>
       {reminderOptions.map((option, i) => {
         const isSelected = selectedReminders.includes(option.reminderWindow);
@@ -576,38 +570,49 @@ const OnboardingScreen = ({ navigation }) => {
       })}
     </View>,
 
-    /* ── Step 4: Ready ── */
+    /* ── Step 4: Summary / Ready ── */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s3">
-      <View style={s.readyArt}>
-        <Text style={s.readySparkIcon}>✦</Text>
-        <View style={s.readyStats}>
-          <View style={s.readyStat}>
-            <Text style={s.readyNum}>{selectedCats.length || 2}</Text>
-            <Text style={s.readyLabel}>{t('onboarding_cat', lang)}</Text>
-          </View>
-          <View style={s.readyStat}>
-            <Text style={s.readyNum}>{selectedTimeOption.dailyStoryTarget}</Text>
-            <Text style={s.readyLabel}>{t('onboarding_story', lang)}</Text>
-          </View>
-          <View style={s.readyStat}>
-            <Text style={s.readyNum}>{selectedTimeOption.minutes}</Text>
-            <Text style={s.readyLabel}>{t('onboarding_minutes', lang)}</Text>
-          </View>
-        </View>
-      </View>
-      <Text style={[s.sectionTitle, { textAlign: 'center' }]}>{t('onboarding_ready', lang)}</Text>
-      <Text style={[s.sectionSubtitle, { textAlign: 'center', marginBottom: 20 }]}>
+      <Text style={[s.sectionTitle, { textAlign: 'center', marginBottom: 6 }]}>
+        {t('onboarding_ready', lang)}
+      </Text>
+      <Text style={[s.sectionSubtitle, { textAlign: 'center', marginBottom: 24 }]}>
         {readyPlanSummary}
       </Text>
-      <Text style={[s.catHint, { marginBottom: 8 }]}>
-        {reminderOptions.filter(o => selectedReminders.includes(o.reminderWindow)).map(o => o.label).join(', ')}
-      </Text>
-      <View style={s.selCats}>
-        {(selectedCats.length ? selectedCats : ['Finans', 'Psikoloji']).map(c => (
-          <View key={c} style={s.selCatPill}>
-            <Text style={s.selCatText}>{t(c, lang)}</Text>
+
+      {/* Selected categories */}
+      <View style={[s.readyArt, { paddingVertical: 20, paddingHorizontal: 20, marginBottom: 16 }]}>
+        <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 12 }}>
+          {t('onboarding_cat', lang)} ({(selectedCats.length || 2)})
+        </Text>
+        <View style={s.selCats}>
+          {(selectedCats.length ? selectedCats : allCats.slice(0, 2)).map(c => (
+            <View key={c} style={s.selCatPill}>
+              <Text style={[s.selCatText, { color: colors.primary }]}>{t(c, lang)}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+
+      {/* Reading plan + reminder summary */}
+      <View style={[s.readyArt, { paddingVertical: 16, paddingHorizontal: 20 }]}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 12 }}>
+          <View style={{ flex: 1 }}>
+            <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginBottom: 4 }}>
+              {t('readingPlan', lang)}
+            </Text>
+            <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
+              {selectedTimeOption.icon} {selectedTimeOption.label} · {selectedTimeOption.dailyStoryTarget} {t('onboarding_story', lang)}
+            </Text>
           </View>
-        ))}
+          <View style={{ flex: 1, paddingLeft: 12 }}>
+            <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginBottom: 4 }}>
+              {t('reminderTime', lang)}
+            </Text>
+            <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
+              {reminderOptions.filter(o => selectedReminders.includes(o.reminderWindow)).map(o => `${o.icon} ${o.label}`).join(', ')}
+            </Text>
+          </View>
+        </View>
       </View>
     </View>,
   ];
