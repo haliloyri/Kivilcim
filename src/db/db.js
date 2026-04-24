@@ -56,6 +56,90 @@ const populateCategoryMappings = async (db) => {
   // Legacy category_mappings discarded. New schema uses categories, subcategories directly via the DB file.
 };
 
+const normalizeCategoryId = (value) => {
+  if (value == null) return null;
+  const num = Number(value);
+  if (!Number.isFinite(num) || num <= 0) return null;
+  return Math.trunc(num);
+};
+
+const resolveCategoryId = async (db, input) => {
+  const normalized = normalizeCategoryId(input);
+  if (normalized) return normalized;
+
+  const key = String(input || '').trim();
+  if (!key) return null;
+
+  const row = await db.getFirstAsync(
+    `SELECT c.id
+     FROM categories c
+     LEFT JOIN categories_translations ct ON ct.category_id = c.id
+     WHERE c.category_name = ? OR ct.translation = ?
+     ORDER BY CASE WHEN c.category_name = ? THEN 0 ELSE 1 END
+     LIMIT 1`,
+    [key, key, key]
+  );
+
+  return normalizeCategoryId(row?.id);
+};
+
+const resolveCategoryIds = async (db, list = []) => {
+  if (!Array.isArray(list) || list.length === 0) return [];
+  const resolved = [];
+  for (const item of list) {
+    const categoryId = await resolveCategoryId(db, item);
+    if (categoryId) resolved.push(categoryId);
+  }
+  return [...new Set(resolved)];
+};
+
+const migrateUserSelectedCategoriesToIds = async (db) => {
+  const columns = await db.getAllAsync(`PRAGMA table_info(user_selected_categories)`);
+  const hasCategoryId = columns.some((c) => c.name === 'category_id');
+  const hasLegacyCategory = columns.some((c) => c.name === 'category');
+
+  if (hasCategoryId && !hasLegacyCategory) return;
+
+  await db.execAsync(`
+    CREATE TABLE IF NOT EXISTS user_selected_categories_new (
+      user_id TEXT,
+      category_id INTEGER,
+      PRIMARY KEY(user_id, category_id),
+      FOREIGN KEY(category_id) REFERENCES categories(id)
+    );
+  `);
+
+  if (hasCategoryId) {
+    await db.execAsync(`
+      INSERT OR IGNORE INTO user_selected_categories_new (user_id, category_id)
+      SELECT user_id, category_id
+      FROM user_selected_categories
+      WHERE category_id IS NOT NULL;
+    `);
+  }
+
+  if (hasLegacyCategory) {
+    await db.execAsync(`
+      INSERT OR IGNORE INTO user_selected_categories_new (user_id, category_id)
+      SELECT usc.user_id, c.id
+      FROM user_selected_categories usc
+      JOIN categories c ON c.category_name = usc.category
+      WHERE usc.category IS NOT NULL;
+
+      INSERT OR IGNORE INTO user_selected_categories_new (user_id, category_id)
+      SELECT usc.user_id, ct.category_id
+      FROM user_selected_categories usc
+      JOIN categories_translations ct ON ct.translation = usc.category
+      WHERE usc.category IS NOT NULL;
+    `);
+  }
+
+  await db.execAsync(`
+    DROP TABLE IF EXISTS user_selected_categories;
+    ALTER TABLE user_selected_categories_new RENAME TO user_selected_categories;
+  `);
+};
+
 export const initDb = async () => {
   try {
     const dbDir = FileSystem.documentDirectory + 'SQLite';
@@ -137,8 +221,9 @@ export const initDb = async () => {
     await db.execAsync(`
       CREATE TABLE IF NOT EXISTS user_selected_categories (
         user_id TEXT,
-        category TEXT,
-        PRIMARY KEY(user_id, category)
+        category_id INTEGER,
+        PRIMARY KEY(user_id, category_id),
+        FOREIGN KEY(category_id) REFERENCES categories(id)
       );
       CREATE TABLE IF NOT EXISTS user_reads (
         user_id TEXT,
@@ -154,6 +239,8 @@ export const initDb = async () => {
         PRIMARY KEY(user_id, story_id)
       );
     `);
+
+    await migrateUserSelectedCategoriesToIds(db);
 
     await populateCategoryMappings(db);
 
@@ -202,6 +289,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
       3 AS min,
       sub.subcategory_name AS cat,
       sub.subcategory_name AS cat_display,
+      c.id AS parent_cat_id,
       COALESCE(NULLIF(bt.title, ''),         bt_tr.title,         '') AS source_book,
       COALESCE(NULLIF(st.title, ''),         st_tr.title,         '') AS title,
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
@@ -246,6 +334,7 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
       3 AS min,
       sub.subcategory_name AS cat,
       sub.subcategory_name AS cat_display,
+      c.id AS parent_cat_id,
       COALESCE(NULLIF(bt.title, ''),         bt_tr.title,         '') AS source_book,
       COALESCE(NULLIF(st.title, ''),         st_tr.title,         '') AS title,
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
@@ -297,6 +386,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
       3 AS min,
       sub.subcategory_name AS cat,
       sub.subcategory_name AS cat_display,
+      c.id AS parent_cat_id,
       COALESCE(NULLIF(bt.title, ''),         bt_tr.title,         '') AS source_book,
       COALESCE(NULLIF(st.title, ''),         st_tr.title,         '') AS title,
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
@@ -462,10 +552,12 @@ export const getSelectedCategories = async (userId = 'default') => {
   try {
     const db = getDb();
     const result = await db.getAllAsync(
-      'SELECT category FROM user_selected_categories WHERE user_id = ?',
+      'SELECT category_id FROM user_selected_categories WHERE user_id = ? ORDER BY category_id ASC',
       [userId]
     );
-    return result.map(row => row.category);
+    return result
+      .map((row) => normalizeCategoryId(row.category_id))
+      .filter(Boolean);
   } catch (error) {
     return [];
   }
@@ -475,13 +567,13 @@ export const setSelectedCategories = async (userId = 'default', list) => {
   await waitForDb();
   try {
     const db = getDb();
+    const categoryIds = await resolveCategoryIds(db, list);
     await db.runAsync('DELETE FROM user_selected_categories WHERE user_id = ?', [userId]);
-    if (Array.isArray(list) && list.length) {
-      const unique = [...new Set(list)];
-      for (const category of unique) {
+    if (categoryIds.length > 0) {
+      for (const categoryId of categoryIds) {
         await db.runAsync(
-          'INSERT OR REPLACE INTO user_selected_categories (user_id, category) VALUES (?, ?)',
-          [userId, category]
+          'INSERT OR REPLACE INTO user_selected_categories (user_id, category_id) VALUES (?, ?)',
+          [userId, categoryId]
         );
       }
     }
@@ -492,10 +584,13 @@ export const setSelectedCategories = async (userId = 'default', list) => {
 
 export const toggleSelectedCategory = async (userId = 'default', category) => {
   await waitForDb();
+  const db = getDb();
+  const categoryId = await resolveCategoryId(db, category);
+  if (!categoryId) return await getSelectedCategories(userId);
   const current = await getSelectedCategories(userId)
   let next
-  if (current.includes(category)) next = current.filter(c => c !== category)
-  else next = [...current, category]
+  if (current.includes(categoryId)) next = current.filter(c => c !== categoryId)
+  else next = [...current, categoryId]
   await setSelectedCategories(userId, next)
   return next
 }

@@ -32,7 +32,7 @@ export const getCatIcon = (catName) => {
 };
 
 const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false, supportText = null }) => {
-  const { colors, typography, layout, lang } = useTheme();
+  const { colors, typography, layout, lang, isDark } = useTheme();
   const isHero = type === 'hero';
   const isCompact = type === 'compact';
   const isPhone = width < 768;
@@ -53,6 +53,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       borderRadius: layout.radius.card,
       borderWidth: 1,
       borderColor: 'rgba(218, 193, 184, 0.2)',
+      overflow: 'hidden',
       padding: isCompact ? 16 : 24,
       marginBottom: isCompact ? 0 : 20,
       width: isCompact ? (width - (layout.padding.horizontal * 2) - 16) / 2 : '100%',
@@ -147,7 +148,11 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     newBadgeText: {
       color: '#FFF',
-    }
+    },
+    surfaceOverlay: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: isDark ? 'transparent' : colors.overlaySoft,
+    },
   });
 
   return (
@@ -163,7 +168,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       ]}
     >
       {isHero && (() => {
-        const catImg = getCategoryImage(story.parent_cat || story.cat);
+        const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat);
         return (
           <View style={StyleSheet.absoluteFill}>
             <Image 
@@ -179,16 +184,16 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
               resizeMode="cover"
             />
             <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.2 }]} />
-            <View style={[StyleSheet.absoluteFill, { backgroundColor: 'rgba(235, 230, 220, 0.4)' }]} />
+            <View style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'rgba(0,0,0,0.12)' : colors.overlaySoft }]} />
           </View>
         );
       })()}
+      {!isHero && <View pointerEvents="none" style={styles.surfaceOverlay} />}
       <View style={isHero ? { padding: 24, flex: 1, justifyContent: 'space-between' } : null}>
         <View>
           <View style={[styles.cardHeader, (!hideCategory || isNew || isRead || locked) ? null : { marginBottom: 0 }]}>
             {!hideCategory && (
               <View style={isHero ? { marginBottom: -8 } : styles.badge}>
-                {!isHero && <Ionicons name={getCatIcon(story.cat)} size={10} color={colors.textSecondary} />}
                 <Text style={isHero ? [styles.badgeText, { color: '#1A1A1A', fontSize: 13, textTransform: 'none', fontFamily: 'Inter_500Medium', backgroundColor: 'rgba(255,255,255,0.7)', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 }] : styles.badgeText} numberOfLines={1}>
                   {isHero ? displayCat : displayCat}
                 </Text>

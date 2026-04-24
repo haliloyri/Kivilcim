@@ -8,6 +8,16 @@ const THEME_MODE_STORAGE_KEY = 'themeMode';
 const LANGUAGE_STORAGE_KEY = 'lang';
 const SELECTED_CATEGORIES_STORAGE_KEY = 'selectedCategories';
 
+const normalizeCategoryIds = (list) => {
+  if (!Array.isArray(list)) return [];
+  return [...new Set(
+    list
+      .map((item) => Number(item))
+      .filter((num) => Number.isFinite(num) && num > 0)
+      .map((num) => Math.trunc(num))
+  )];
+};
+
 export const ThemeProvider = ({ children }) => {
   const systemColorScheme = useColorScheme();
   const getSystemThemeMode = () => (systemColorScheme === 'dark' ? 'dark' : 'light');
@@ -72,7 +82,7 @@ export const ThemeProvider = ({ children }) => {
         const { getSelectedCategories } = require('../db/db');
         const dbList = await getSelectedCategories();
         if (dbList && dbList.length > 0) {
-          setSelectedCategories(dbList);
+          setSelectedCategories(normalizeCategoryIds(dbList));
           return;
         }
 
@@ -80,10 +90,11 @@ export const ThemeProvider = ({ children }) => {
         if (raw) {
           const parsed = JSON.parse(raw);
           if (Array.isArray(parsed)) {
-            setSelectedCategories(parsed);
             // Sync to DB
             const { setSelectedCategories: setDbList } = require('../db/db');
             await setDbList('default', parsed);
+            const synced = await getSelectedCategories();
+            setSelectedCategories(normalizeCategoryIds(synced));
           }
         }
       } catch (e) {
@@ -93,19 +104,23 @@ export const ThemeProvider = ({ children }) => {
   }, []);
 
   const updateSelectedCategories = async (list) => {
-    setSelectedCategories(list);
+    const normalized = normalizeCategoryIds(list);
+    setSelectedCategories(normalized);
     try {
-      await AsyncStorage.setItem(SELECTED_CATEGORIES_STORAGE_KEY, JSON.stringify(list));
+      await AsyncStorage.setItem(SELECTED_CATEGORIES_STORAGE_KEY, JSON.stringify(normalized));
       const { setSelectedCategories: setDbList } = require('../db/db');
-      await setDbList('default', list);
+      await setDbList('default', normalized);
     } catch {
       // ignore
     }
   };
 
   const toggleSelectedCategory = async (cat) => {
-    const exists = selectedCategories.includes(cat);
-    let next = exists ? selectedCategories.filter(c => c !== cat) : [...selectedCategories, cat];
+    const normalizedCat = Number(cat);
+    if (!Number.isFinite(normalizedCat) || normalizedCat <= 0) return;
+    const categoryId = Math.trunc(normalizedCat);
+    const exists = selectedCategories.includes(categoryId);
+    let next = exists ? selectedCategories.filter(c => c !== categoryId) : [...selectedCategories, categoryId];
     next = Array.from(new Set(next));
     await updateSelectedCategories(next);
   };

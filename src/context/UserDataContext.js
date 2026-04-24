@@ -16,6 +16,16 @@ const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening
 const EMPTY_USER_PROFILE = { displayName: null, email: null };
 const EMPTY_FAVORITE_COLLECTIONS = { saved_for_later: [] };
 
+const normalizeCategoryIds = (categories) => {
+  if (!Array.isArray(categories)) return [];
+  return [...new Set(
+    categories
+      .map((item) => Number(item))
+      .filter((num) => Number.isFinite(num) && num > 0)
+      .map((num) => Math.trunc(num))
+  )];
+};
+
 const normalizeMinutes = (rawMinutes) => {
   if (rawMinutes == null) return null;
 
@@ -140,7 +150,7 @@ const normalizePreferences = (storedPreferences) => {
   const primary = buildReminderPreference({ reminderWindow: reminderWindows[0] });
 
   return {
-    categories: Array.isArray(storedPreferences.categories) ? storedPreferences.categories : [],
+    categories: normalizeCategoryIds(storedPreferences.categories),
     time: buildTimePreference(storedPreferences.time),
     reminderWindow: primary.reminderWindow,
     reminderHour: primary.reminderHour,
@@ -442,7 +452,7 @@ export const UserDataProvider = ({ children }) => {
         reminderWindows = [reminder.reminderWindow];
       }
       const prefs = normalizePreferences({
-        categories: userCategories,
+        categories: normalizeCategoryIds(userCategories),
         time: userTimeObj,
         reminderWindows,
       });
@@ -480,9 +490,9 @@ export const UserDataProvider = ({ children }) => {
       // Sync to SQLite for discovery page compatibility
       try {
         const { setSelectedCategories: setDbList } = require('../db/db');
-        await setDbList('default', userCategories);
+        await setDbList('default', prefs.categories);
         // Also update the global ThemeContext so HomeScreen reflects this immediately
-        await setGlobalCategories(userCategories);
+        await setGlobalCategories(prefs.categories);
       } catch (dbErr) {
         console.error('Onboarding SQLite sync error:', dbErr);
       }

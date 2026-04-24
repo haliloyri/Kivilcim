@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Switch, Alert, Linking, Modal, TextInput
+  StatusBar, Platform, Switch, Alert, Linking, Modal, TextInput, Image
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
@@ -10,6 +10,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
+import { getCategoryImage } from '../utils/categoryImages';
 
 
 
@@ -288,13 +289,18 @@ const ProfileScreen = ({ navigation }) => {
           <Text style={styles.sectionTitle}>{t('categories', lang)}</Text>
           <View style={styles.profileCategoriesRow}>
             {parentCategories.map((p) => {
-              const cat = p.raw_name;
+              const cat = Number(p.id);
               const isSelected = selectedCategories.includes(cat);
+              const catImg = getCategoryImage(p.raw_name);
               const onPressCat = () => toggleSelectedCategory(cat);
               return (
-                <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive]}>
+                <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive, { flexDirection: 'row', alignItems: 'center', gap: 8 }]}> 
+                  <View style={{ width: 18, height: 18, borderRadius: 6, overflow: 'hidden' }}>
+                    <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
+                    <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                  </View>
                   <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>
-                    {t(cat, lang)}
+                    {p.name}
                   </Text>
                 </TouchableOpacity>
               );
@@ -466,7 +472,7 @@ const ProfileScreen = ({ navigation }) => {
       >
         <View style={{
           flex: 1,
-          backgroundColor: 'rgba(0,0,0,0.55)',
+          backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.24)',
           justifyContent: 'center',
           paddingHorizontal: layout.padding.horizontal,
         }}>

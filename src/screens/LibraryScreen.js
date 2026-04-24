@@ -8,11 +8,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
-import { getCatIcon } from '../components/StoryCard';
 import { t } from '../locales/i18n';
 import { getCategoryImage } from '../utils/categoryImages';
 
-const FavoriteCard = ({ story, onPress, colors, typography, layout, lang, journeyLine, badgeChip, onBadgePress }) => {
+const FavoriteCard = ({ story, onPress, colors, typography, layout, isDark, lang, journeyLine, badgeChip, onBadgePress }) => {
   const displayTitle = story.title || '';
   const rawDisplayCat = t(story.cat_display || story.cat, lang) || '';
   const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
@@ -23,15 +22,20 @@ const FavoriteCard = ({ story, onPress, colors, typography, layout, lang, journe
         borderRadius: 12,
         borderWidth: 1,
         borderColor: colors.border,
+        position: 'relative',
         overflow: 'hidden',
         height: 200,
         justifyContent: 'space-between',
         paddingBottom: 16
       }}>
+        <View
+          pointerEvents="none"
+          style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'transparent' : colors.overlaySoft }]}
+        />
         {/* Category Image Area */}
         <View style={{ height: 110, position: 'relative' }}>
           {(() => {
-            const catImg = getCategoryImage(story.parent_cat || story.cat);
+            const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat);
             return (
               <>
                 <Image 
@@ -59,11 +63,7 @@ const FavoriteCard = ({ story, onPress, colors, typography, layout, lang, journe
             paddingHorizontal: 8,
             paddingVertical: 4,
             borderRadius: 6,
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: 4,
           }}>
-            <Ionicons name={getCatIcon(story.cat)} size={10} color="#594238" />
             <Text style={{
               fontFamily: 'Inter_500Medium',
               fontSize: 10,
@@ -130,7 +130,7 @@ const FavoriteCard = ({ story, onPress, colors, typography, layout, lang, journe
   );
 };
 
-const HistoryCard = ({ story, onPress, colors, typography, layout, lang, journeyLine, badgeChip, onBadgePress }) => {
+const HistoryCard = ({ story, onPress, colors, typography, layout, isDark, lang, journeyLine, badgeChip, onBadgePress }) => {
   const displayTitle = story.title || '';
   const rawDisplayCat = t(story.cat_display || story.cat, lang) || '';
   const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
@@ -140,15 +140,21 @@ const HistoryCard = ({ story, onPress, colors, typography, layout, lang, journey
       borderRadius: 12,
       borderWidth: 1,
       borderColor: colors.border,
+      position: 'relative',
+      overflow: 'hidden',
       padding: 12,
       marginBottom: 12,
       flexDirection: 'row',
       alignItems: 'center',
     }}>
+      <View
+        pointerEvents="none"
+        style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'transparent' : colors.overlaySoft }]}
+      />
       {/* Category Thumbnail */}
       <View style={{ width: 60, height: 60, borderRadius: 8, overflow: 'hidden', marginRight: 16 }}>
         {(() => {
-          const catImg = getCategoryImage(story.parent_cat || story.cat);
+          const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat);
           return (
             <>
               <Image 
@@ -177,11 +183,7 @@ const HistoryCard = ({ story, onPress, colors, typography, layout, lang, journey
           paddingVertical: 2,
           borderRadius: 4,
           marginBottom: 6,
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: 4,
         }}>
-          <Ionicons name={getCatIcon(story.cat)} size={10} color={colors.textSecondary} />
           <Text style={{
             fontFamily: 'Inter_500Medium',
             fontSize: 9,
@@ -293,7 +295,7 @@ const LibraryScreen = ({ navigation }) => {
 
   const getBadgeForStory = useCallback((story) => {
     if (!story) return null;
-    const categoryRaw = String(story.parent_cat || story.cat || '').toLocaleLowerCase('tr-TR');
+    const categoryRaw = String(story.parent_cat_raw || story.parent_cat || story.cat || '').toLocaleLowerCase('tr-TR');
 
     if ((categoryRaw.includes('felsefe') || categoryRaw.includes('philosophy')) && earnedBadgeById.philosopher) {
       return earnedBadgeById.philosopher;
@@ -330,17 +332,23 @@ const LibraryScreen = ({ navigation }) => {
   }, [getBadgeForStory, lang, readCountsByStory]);
 
   const categoryOptions = useMemo(() => {
-    const set = new Set();
+    const map = new Map();
     [...favoriteStoriesRaw, ...historyStoriesRaw].forEach((story) => {
-      const cat = story.parent_cat || story.cat;
-      if (cat) set.add(String(cat));
+      const catId = Number(story.parent_cat_id);
+      if (!catId) return;
+      if (!map.has(catId)) {
+        map.set(catId, {
+          id: catId,
+          label: String(story.parent_cat || story.cat || ''),
+        });
+      }
     });
-    return ['all', ...Array.from(set)];
-  }, [favoriteStoriesRaw, historyStoriesRaw]);
+    return [{ id: 'all', label: t('libraryFilterAll', lang) }, ...Array.from(map.values())];
+  }, [favoriteStoriesRaw, historyStoriesRaw, lang]);
 
   const applyCategoryFilter = (list) => {
     if (activeCategory === 'all') return list;
-    return list.filter((story) => String(story.parent_cat || story.cat) === String(activeCategory));
+    return list.filter((story) => Number(story.parent_cat_id) === Number(activeCategory));
   };
 
   const applySort = (list) => {
@@ -499,11 +507,11 @@ const LibraryScreen = ({ navigation }) => {
             <View style={styles.chipRow}>
               {categoryOptions.map((cat) => (
                 <TouchableOpacity
-                  key={cat}
-                  style={[styles.chip, activeCategory === cat && styles.chipActive]}
-                  onPress={() => setActiveCategory(cat)}
+                  key={String(cat.id)}
+                  style={[styles.chip, activeCategory === cat.id && styles.chipActive]}
+                  onPress={() => setActiveCategory(cat.id)}
                 >
-                  <Text style={styles.chipText}>{cat === 'all' ? t('libraryFilterAll', lang) : t(cat, lang)}</Text>
+                  <Text style={styles.chipText}>{cat.label}</Text>
                 </TouchableOpacity>
               ))}
             </View>
@@ -546,6 +554,7 @@ const LibraryScreen = ({ navigation }) => {
                     colors={colors}
                     typography={typography}
                     layout={layout}
+                    isDark={isDark}
                     lang={lang}
                     journeyLine={meta.journeyLine}
                     badgeChip={meta.badgeChip}
@@ -591,6 +600,7 @@ const LibraryScreen = ({ navigation }) => {
                   colors={colors}
                   typography={typography}
                   layout={layout}
+                  isDark={isDark}
                   lang={lang}
                   journeyLine={meta.journeyLine}
                   badgeChip={meta.badgeChip}

@@ -100,6 +100,7 @@ function MainTabs() {
 }
 
 import LaunchScreen from '../screens/LaunchScreen';
+import UseInConversationScreen from '../screens/UseInConversationScreen';
 
 export default function AppNavigator() {
   const { isOnboarded, isLoadingUserData, activeBadgeModal, closeBadgeModal } = useUserData();
@@ -218,7 +219,7 @@ export default function AppNavigator() {
   const styles = StyleSheet.create({
     modalOverlay: {
       flex: 1,
-      backgroundColor: 'rgba(0,0,0,0.5)',
+      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.24)',
       justifyContent: 'center',
       alignItems: 'center',
       padding: 24,
@@ -312,6 +313,7 @@ export default function AppNavigator() {
             <>
               <Stack.Screen name="MainTabs" component={MainTabs} />
               <Stack.Screen name="StoryDetail" component={StoryDetailScreen} />
+              <Stack.Screen name="SohbetteKullan" component={UseInConversationScreen} />
               <Stack.Screen name="Search" component={SearchScreen} />
               <Stack.Screen 
                 name="Paywall" 

@@ -392,7 +392,7 @@ const ProgressScreen = ({ navigation }) => {
     },
     celebrationOverlay: {
       ...StyleSheet.absoluteFillObject,
-      backgroundColor: isDark ? 'rgba(0,0,0,0.8)' : 'rgba(247, 243, 235, 0.95)',
+      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.16)',
       justifyContent: 'center',
       alignItems: 'center',
       zIndex: 1000,
@@ -421,7 +421,7 @@ const ProgressScreen = ({ navigation }) => {
     },
     modalOverlay: {
       flex: 1,
-      backgroundColor: 'rgba(0,0,0,0.5)',
+      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.24)',
       justifyContent: 'center',
       alignItems: 'center',
       padding: 24,

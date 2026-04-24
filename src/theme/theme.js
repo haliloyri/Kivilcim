@@ -1,32 +1,40 @@
 export const colors = {
-  // Light: "The Digital Hearth" – warm editorial palette from FirstSteps/DESIGN.md
+  // Light: "Digital Hearth+" – cleaner cream tones, premium editorial feel
   light: {
-    background: '#fcf9f4',              // Hafif kemik/off-white (kitap sayfası hissi)
-    backgroundDark: '#F2EFE8',          // Slightly darker for contrasts
-    surfaceContainerLowest: '#ffffff',   // lifted card surface
-    surfaceContainerHigh: '#EBE6DC',     // deeper container surface
-    text: '#1A1A1A',                     // Koyu antrasit
-    textSecondary: '#9E9E9E',            // Kategori etiketleri orta gri
-    primary: '#C5A059',                  // Altın/Toprak tonları vurgu
-    primaryContainer: '#D4AF37',         // Vurgu
-    onPrimary: '#ffffff',                // white text
-    danger: '#ba1a1a',                   // error red
-    success: '#2C4A2E',                  // forest green
-    border: '#E8E3DA',                   // Subtle card border
-    activeNav: '#704214',                // Aktif Navigasyon - Koyu Kahve/Sepya
+    background: '#F7F3ED',              // Daha temiz, daha az sarı
+    backgroundDark: '#EFE9DF',          // Kart kontrastı artırıldı
+    surfaceContainerLowest: '#FFFFFF',   // lifted card surface
+    surfaceContainerHigh: '#E6DFD4',     // hafif derinlik
+    text: '#181716',                     // Daha doğal siyah
+    textSecondary: '#8F8A80',            // Daha okunabilir secondary
+    primary: '#C29B4C',                  // Altın daha sofistike
+    primaryContainer: '#E0B95B',         // Gradient için optimize
+    onPrimary: '#FFFFFF',                // white text
+    danger: '#B3261E',                   // Material uyumlu
+    success: '#3A5F3C',                  // Daha doğal yeşil
+    border: '#E4DED4',                   // Daha soft border
+    activeNav: '#6B3E1E',                // Biraz daha modern kahve
+    quoteHighlight: '#FFD166',           // Alıntı vurguları
+    overlaySoft: 'rgba(0,0,0,0.03)',     // Açık mod depth
+    ctaGradientStart: '#C29B4C',         // CTA başlangıç
+    ctaGradientEnd: '#E0B95B',           // CTA bitiş
   },
-  // Dark: "The Nocturnal Bibliophile" – the primary palette from DESIGN.md
+  // Dark: "Nocturnal Bibliophile+" – softer contrast, more controlled accents
   dark: {
-    background: '#131311',       // Deep Charcoal – the foundation
-    backgroundDark: '#1E1C18',   // Surface Container Low – nested depth layer
-    text: '#E8E0D0',             // Soft Cream – high legibility, no eye-strain
-    textSecondary: '#A89A84',    // on_surface_variant – metadata & labels
-    primary: '#B55310',          // Darker/deeper orange to fix "fazla parlak" bug
-    primaryContainer: '#9F3C00', // Deep Rust – CTA gradient end
-    onPrimary: '#F2E9D8',        // Switched text to light cream so it's readable on darker orange
-    danger: '#E05A3A',           // Warm ember red, visible on dark backgrounds
-    success: '#5A9E5E',          // Muted forest green
-    border: '#4A3F33',           // outline_variant – Ghost Border base (use at 15% opacity)
+    background: '#12110F',       // Daha soft siyah
+    backgroundDark: '#1A1814',   // Kart ayrımı arttı
+    text: '#E6DCC8',             // Daha sıcak krem
+    textSecondary: '#9C8F78',    // Daha net secondary
+    primary: '#D06A1B',          // Daha canlı ama abartısız
+    primaryContainer: '#A94E10', // Gradient uyumu
+    onPrimary: '#F4EBDD',        // Kontrast iyileştirildi
+    danger: '#F06A4A',           // Daha görünür
+    success: '#6FBF73',          // Daha canlı yeşil
+    border: '#3F362C',           // Daha görünür border
+    quoteHighlight: '#FFD166',   // Alıntı vurguları
+    overlayDark: 'rgba(0,0,0,0.4)',  // Koyu mod depth
+    ctaGradientStart: '#D06A1B',     // CTA başlangıç
+    ctaGradientEnd: '#A94E10',       // CTA bitiş
   },
 };
 
@@ -46,14 +54,16 @@ export const typography = {
   },
   spacing: {
     bodyLineHeight: 26,
+    quoteLineHeight: 30,
     badgeLetterSpacing: 0.5,
+    bodyLetterSpacing: 0.2,
   }
 };
 
 export const layout = {
   radius: {
-    button: 12,
-    card: 15,
+    button: 14,
+    card: 18,
   },
   heights: {
     buttonPrimary: 48,
@@ -62,7 +72,7 @@ export const layout = {
   padding: {
     horizontal: 20,
     vertical: 16,
-    cardGap: 12,
+    cardGap: 14,
   },
   borderWidth: 0.5,
 };

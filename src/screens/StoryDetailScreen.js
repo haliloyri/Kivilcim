@@ -13,7 +13,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
-import { getCatIcon } from '../components/StoryCard';
 import { t } from '../locales/i18n';
 import { getStoryByLang } from '../db/db';
 import { getCategoryImage } from '../utils/categoryImages';
@@ -313,7 +312,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     modalOverlay: {
       flex: 1,
-      backgroundColor: 'rgba(0,0,0,0.7)',
+      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.28)',
       justifyContent: 'flex-end',
     },
     modalContent: {
@@ -411,12 +410,19 @@ const StoryDetailScreen = ({ route, navigation }) => {
       color: colors.primary,
     },
     // --- Buttons ---
-    btnPrimary: { 
-      backgroundColor: colors.primary, 
+    btnPrimary: {
       borderRadius: layout.radius.button, 
       height: layout.heights.buttonPrimary, 
       justifyContent: 'center', 
-      alignItems: 'center' 
+      alignItems: 'center',
+      width: '100%',
+    },
+    btnPrimaryGradient: {
+      borderRadius: layout.radius.button,
+      height: layout.heights.buttonPrimary,
+      justifyContent: 'center',
+      alignItems: 'center',
+      overflow: 'hidden',
     },
     btnPrimaryText: { 
       fontFamily: 'Inter_500Medium', 
@@ -510,8 +516,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     quoteBox: { 
       borderLeftWidth: 4, 
-      borderLeftColor: isDark ? colors.primary : '#C8A96A', 
-      backgroundColor: isDark ? colors.backgroundDark : '#F5F0E6',
+      borderLeftColor: colors.quoteHighlight,
+      backgroundColor: isDark ? colors.backgroundDark : `${colors.quoteHighlight}1A`,
       padding: 16,
       paddingLeft: 20,
       marginVertical: 12,
@@ -928,8 +934,17 @@ const StoryDetailScreen = ({ route, navigation }) => {
             </ScrollView>
 
             {/* Share button */}
-            <TouchableOpacity style={styles.btnPrimary} onPress={onShare}>
-              <Text style={styles.btnPrimaryText}>{t('saveAndShare', lang)}</Text>
+            <TouchableOpacity onPress={onShare}>
+              <LinearGradient
+                colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.btnPrimaryGradient}
+              >
+                <View style={styles.btnPrimary}>
+                  <Text style={styles.btnPrimaryText}>{t('saveAndShare', lang)}</Text>
+                </View>
+              </LinearGradient>
             </TouchableOpacity>
           </View>
         </View>
@@ -1021,7 +1036,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       >
         <View style={styles.storyHero}> 
           {(() => {
-            const catImg = getCategoryImage(story.parent_cat || story.cat);
+            const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat);
             return (
               <>
                 <Image 
@@ -1043,7 +1058,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
           })()}
           <View style={{ paddingVertical: 16, paddingHorizontal: 20 }}>
             <View style={styles.badge}>
-              <Ionicons name={getCatIcon(story.parent_cat)} size={14} color={colors.textSecondary} />
               <Text style={styles.badgeText}>{t(story.parent_cat, lang)}</Text>
             </View>
             <Text style={styles.detailTitle}>{displayTitle}</Text>
@@ -1225,14 +1239,49 @@ const StoryDetailScreen = ({ route, navigation }) => {
               </View>
             </View>
           ) : null}
+
+          {/* ── "Sohbette Kullan" entry — removed from body, now in footer ─ */}
         </View>
         <View style={{ height: 100 }} />
       </Animated.ScrollView>
 
       <View style={styles.detailFooter}>
-        <TouchableOpacity style={[styles.btnPrimary, { flex: 1, backgroundColor: '#9D451B' }]} onPress={handleNext}>
-          <Text style={[styles.btnPrimaryText, { color: '#F7F3EB' }]}>
-            {isPremium ? t('nextStory', lang) : t('nextStoryUnlock', lang)}
+        {/* PRIMARY: Sohbette Kullan */}
+        <TouchableOpacity
+          style={{ flex: 2 }}
+          onPress={() => {
+            trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
+              storyId: story?.story_id,
+              source: 'story_detail_footer',
+              lang,
+            });
+            navigation.navigate('SohbetteKullan', { story: localStory });
+          }}
+          accessibilityRole="button"
+          accessibilityLabel={t('story_detail_use_cta', lang)}
+        >
+          <LinearGradient
+            colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.btnPrimaryGradient}
+          >
+            <View style={styles.btnPrimary}>
+              <Text style={[styles.btnPrimaryText, { color: '#F7F3EB' }]}>
+                {t('story_detail_use_cta', lang)}
+              </Text>
+            </View>
+          </LinearGradient>
+        </TouchableOpacity>
+
+        {/* SECONDARY: Next Story */}
+        <TouchableOpacity
+          style={[styles.btnSecondaryShare, { flex: 1 }]}
+          onPress={handleNext}
+          accessibilityRole="button"
+        >
+          <Text style={styles.btnSecondaryShareText}>
+            {t('story_detail_next_secondary', lang)}
           </Text>
         </TouchableOpacity>
       </View>

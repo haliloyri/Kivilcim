@@ -42,6 +42,39 @@ const IMG_COMMUNICATION = require('../../assets/categories/cat_communication.png
 const IMG_BUSINESS = require('../../assets/categories/cat_business.png');
 const IMG_DEFAULT = require('../../assets/categories/cat_default.png');
 
+const PARENT_CATEGORY_IMAGE_MAP = {
+  'Mind & Psychology': IMG_PSYCHOLOGY,
+  'Career & Success': IMG_LEADERSHIP,
+  'Personal Growth': IMG_GROWTH,
+  'Science & Future': IMG_SCIENCE,
+  'Society & World': IMG_PHILOSOPHY,
+  'Social Skills': IMG_COMMUNICATION,
+  'Tümü': IMG_DEFAULT,
+};
+
+const PARENT_CATEGORY_ALIASES = {
+  'All': 'Tümü',
+  'Todo': 'Tümü',
+  'Alle': 'Tümü',
+  'Zihin ve Psikoloji': 'Mind & Psychology',
+  'Mente y Psicología': 'Mind & Psychology',
+  'Geist und Psychologie': 'Mind & Psychology',
+  'Kariyer ve Başarı': 'Career & Success',
+  'Carrera y Éxito': 'Career & Success',
+  'Karriere und Erfolg': 'Career & Success',
+  'Bilim ve Gelecek': 'Science & Future',
+  'Ciencia y Futuro': 'Science & Future',
+  'Wissenschaft und Zukunft': 'Science & Future',
+  'Toplum ve Dünya': 'Society & World',
+  'Sociedad y Mundo': 'Society & World',
+  'Gesellschaft und Welt': 'Society & World',
+  'Sosyal Beceriler': 'Social Skills',
+  'Habilidades Sociales': 'Social Skills',
+  'Soziale Fähigkeiten': 'Social Skills',
+  'Crecimiento Personal': 'Personal Growth',
+  'Persönliches Wachstum': 'Personal Growth',
+};
+
 const categoryImageMap = {
   // ── Finance group ──
   'Finans': IMG_FINANCE,
@@ -264,9 +297,10 @@ const categoryImageMap = {
  */
 export const getCategoryImage = (catName) => {
   if (!catName) return { source: IMG_DEFAULT, rotate: '0deg', flip: false, tint: 'transparent' };
-  
-  const source = categoryImageMap[catName] || IMG_DEFAULT;
-  const style = CAT_STYLES[catName] || { rotate: '0deg', flip: false, tint: 'transparent' };
+
+  const normalizedKey = PARENT_CATEGORY_ALIASES[catName] || catName;
+  const source = PARENT_CATEGORY_IMAGE_MAP[normalizedKey] || categoryImageMap[normalizedKey] || IMG_DEFAULT;
+  const style = CAT_STYLES[normalizedKey] || { rotate: '0deg', flip: false, tint: 'transparent' };
 
   return { source, ...style };
 };

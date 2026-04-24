@@ -17,6 +17,10 @@ const ANALYTICS_EVENTS = {
   MODULE_CLICKED: 'module_clicked',
   MODULE_DISMISSED: 'module_dismissed',
   STORY_SHARED: 'story_shared',
+  // Conversation-use success signals
+  USE_IN_CONVO_OPENED: 'use_in_convo_opened',
+  MICRO_VARIANT_COPIED: 'micro_variant_copied',
+  MICRO_VARIANT_FAVORITED: 'micro_variant_favorited',
 };
 
 const sanitizePayload = (payload) => {

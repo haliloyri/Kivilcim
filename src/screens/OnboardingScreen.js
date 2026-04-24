@@ -4,12 +4,11 @@ import {
   StatusBar, Animated, Platform, Dimensions, Image
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
-import { getCatIcon } from '../components/StoryCard';
+import { getCategoryImage } from '../utils/categoryImages';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -26,7 +25,7 @@ const OnboardingScreen = ({ navigation }) => {
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
 
-  const allCats = parentCategories.map(p => p.raw_name);
+  const allCats = parentCategories.map((p) => Number(p.id));
   const timeOptions = [
     { label: t('time_3min', lang), sub: t('time_3min_sub', lang), icon: '☕', minutes: 3, dailyStoryTarget: 1 },
     { label: t('time_6min', lang), sub: t('time_6min_sub', lang), icon: '📚', minutes: 6, dailyStoryTarget: 2 },
@@ -472,6 +471,9 @@ const OnboardingScreen = ({ navigation }) => {
       <Text style={s.sectionSubtitle}>{t('onboarding_why_sub', lang)}</Text>
       <View style={s.catGrid}>
         {allCats.map(cat => {
+          const category = parentCategories.find((p) => Number(p.id) === Number(cat));
+          const categoryName = category?.name || '';
+          const categoryRawName = category?.raw_name || '';
           const sel = selectedCats.includes(cat);
           return (
             <TouchableOpacity
@@ -485,14 +487,15 @@ const OnboardingScreen = ({ navigation }) => {
                   width: isSmallPhone ? 28 : 32,
                   height: isSmallPhone ? 28 : 32,
                   borderRadius: 8,
-                  backgroundColor: sel ? `${colors.primary}20` : colors.background,
+                  backgroundColor: sel ? `${colors.primary}16` : colors.background,
                   alignItems: 'center',
                   justifyContent: 'center',
+                  overflow: 'hidden',
                 }}>
-                  <Ionicons
-                    name={getCatIcon(cat)}
-                    size={isSmallPhone ? 14 : 16}
-                    color={sel ? colors.primary : colors.textSecondary}
+                  <Image
+                    source={getCategoryImage(categoryRawName).source}
+                    style={{ width: '100%', height: '100%' }}
+                    resizeMode="cover"
                   />
                 </View>
                 <Text
@@ -500,7 +503,7 @@ const OnboardingScreen = ({ navigation }) => {
                   numberOfLines={1}
                   ellipsizeMode="tail"
                 >
-                  {t(cat, lang)}
+                  {categoryName}
                 </Text>
               </View>
               <View style={s.catCheckSlot}>
@@ -587,7 +590,9 @@ const OnboardingScreen = ({ navigation }) => {
         <View style={s.selCats}>
           {(selectedCats.length ? selectedCats : allCats.slice(0, 2)).map(c => (
             <View key={c} style={s.selCatPill}>
-              <Text style={[s.selCatText, { color: colors.primary }]}>{t(c, lang)}</Text>
+              <Text style={[s.selCatText, { color: colors.primary }]}>
+                {(parentCategories.find((p) => Number(p.id) === Number(c))?.name) || ''}
+              </Text>
             </View>
           ))}
         </View>

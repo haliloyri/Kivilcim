@@ -1,81 +1,117 @@
-# Design System Strategy: The Nocturnal Bibliophile
+# Spark Tasarim Tanimlari (Acik + Koyu Mod)
 
-## 1. Overview & Creative North Star
-The Creative North Star for this design system is **"The Digital Curatorship."**
+Bu dokuman, uygulamadaki mevcut tema token'larini tek bir yerde toplar ve yeni tasarim calismasi icin referans verir.
 
-We are moving away from the "app-like" fatigue of standard dark modes into a space that feels like a private library at midnight. This is an editorial-first experience where negative space is as communicative as the content itself. We break the "template" look by utilizing intentional asymmetry, oversized serif typography, and a "Tonal Layering" philosophy that replaces traditional UI borders with atmospheric depth.
+Kaynak kod eslesmesi:
+- Renk tokenlari: `src/theme/theme.js`
+- Tema secimi ve persist mekanizmasi: `src/context/ThemeContext.js`
 
-Every layout should feel like a well-composed book spread. Instead of rigid grids, we lean into generous margins and overlapping elements that create a sense of bespoke, high-end craftsmanship.
+## 1. Tasarim Yonelimi
 
----
+### Acik Mod: "Digital Hearth"
+- Hedef hissiyat: sicak, kagit benzeri, uzun okuma odakli.
+- Gorsel dil: acik zemin, yumusak kontrast, toprak/altin vurgu.
+- Kullanim amaci: gun ici rahat okunabilirlik ve premium ama sakin gorunum.
 
-## 2. Colors & Atmospheric Depth
-Our palette is rooted in the "Nocturnal Bibliophile" aesthetic—low-contrast, high-legibility, and deeply warm.
+### Koyu Mod: "Nocturnal Bibliophile"
+- Hedef hissiyat: gece kutuphanesi, editoriyal, goz yormayan koyu tonlar.
+- Gorsel dil: koyu komur zemin, krem yazi, pas/turuncu vurgu.
+- Kullanim amaci: dusuk isikta rahat okuma ve odakli deneyim.
 
-### The "No-Line" Rule
-**Explicit Instruction:** Designers are prohibited from using 1px solid borders for sectioning. Structural boundaries must be defined solely through background color shifts or subtle tonal transitions. For instance, a `surface-container-low` section sitting against a `surface` background provides all the separation necessary without the visual "clutter" of a stroke.
+## 2. Renk Token Tanimlari
 
-### Surface Hierarchy & Nesting
-Treat the UI as a series of physical layers—like stacked sheets of heavy, charcoal-dyed paper.
-- **Background (`#131311`):** The foundation.
-- **Surface Tiers:** Use `surface-container-lowest` up to `highest` to create nested depth. An inner card should use a slightly higher tier than its parent container to signify importance and "lift."
+Asagidaki degerler uygulamanin su an kullandigi resmi token'lardir.
 
-### The "Glass & Gradient" Rule
-To avoid a flat, "out-of-the-box" Material feel, utilize Glassmorphism for floating elements (e.g., navigation bars or modals).
-- **Backdrop-blur:** Use `12px` to `20px` blur with semi-transparent surface colors.
-- **Signature Gradients:** For primary CTAs, transition from `primary` (#ffb783) to `primary_container` (#e67e22) to provide a soft, glowing "ember" effect that flat colors cannot achieve.
+### 2.1 Acik Mod Tokenlari
 
----
+| Token | Deger | Amac |
+|---|---|---|
+| `background` | `#fcf9f4` | Ana ekran zemini (kemik beyaz) |
+| `backgroundDark` | `#F2EFE8` | Kart/ikincil zemin |
+| `surfaceContainerLowest` | `#ffffff` | En yuksek aydinlikta kaldirilmis yuzey |
+| `surfaceContainerHigh` | `#EBE6DC` | Derin katman/yuzey farki |
+| `text` | `#1A1A1A` | Ana metin |
+| `textSecondary` | `#9E9E9E` | Ikincil metin, etiket, metadata |
+| `primary` | `#C5A059` | Ana aksiyon vurgu rengi |
+| `primaryContainer` | `#D4AF37` | CTA gradyan veya ikincil vurgu |
+| `onPrimary` | `#ffffff` | Primary buton uzeri yazi |
+| `danger` | `#ba1a1a` | Hata/dikkat durumlari |
+| `success` | `#2C4A2E` | Basari/olumlu durumlar |
+| `border` | `#E8E3DA` | Ince ayirici/kenar |
+| `activeNav` | `#704214` | Aktif alt navigasyon tonu |
 
-## 3. Typography: Editorial Authority
-We utilize **Newsreader** as our primary voice, supported by **Work Sans** for functional utility.
+### 2.2 Koyu Mod Tokenlari
 
-* **Display & Headlines:** Use `display-lg` through `headline-sm` in Newsreader. These should be treated as hero elements. Don't be afraid of oversized type; it establishes the "Editorial" feel.
-* **Body Copy:** `body-lg` (Newsreader) is optimized for long-form reading. The `on_surface` color (Soft Cream) ensures high legibility without the eye-strain of pure white.
-* **Labels:** Use `label-md` (Work Sans) for functional UI elements like buttons or small metadata. The sans-serif contrast ensures the user knows when they are "interacting" versus "reading."
+| Token | Deger | Amac |
+|---|---|---|
+| `background` | `#131311` | Ana ekran zemini (deep charcoal) |
+| `backgroundDark` | `#1E1C18` | Kart/ikincil zemin |
+| `text` | `#E8E0D0` | Ana metin (soft cream) |
+| `textSecondary` | `#A89A84` | Ikincil metin, etiket, metadata |
+| `primary` | `#B55310` | Ana aksiyon vurgu rengi |
+| `primaryContainer` | `#9F3C00` | CTA gradyan veya ikincil vurgu |
+| `onPrimary` | `#F2E9D8` | Primary buton uzeri yazi |
+| `danger` | `#E05A3A` | Hata/dikkat durumlari |
+| `success` | `#5A9E5E` | Basari/olumlu durumlar |
+| `border` | `#4A3F33` | Ghost border tabani (dusuk opaklikla) |
 
----
+## 3. Tipografi ve Boyut Sistemi
 
-## 4. Elevation & Depth: Tonal Layering
-Traditional drop shadows are often too harsh for a "nocturnal" theme. We achieve hierarchy through light and opacity.
+Su anki global tipografi tokenlari (moddan bagimsiz):
 
-* **The Layering Principle:** Stacking tiers creates natural lift. Place a `surface_container_highest` element on top of `surface_dim` to create a focal point without needing a single shadow.
-* **Ambient Shadows:** If a floating effect is required (e.g., a dropdown), shadows must be extra-diffused.
-* **Blur:** 20px–40px.
-* **Opacity:** 4%–8%.
-* **Color:** Use a tinted version of `on_surface` rather than black to mimic natural ambient light.
-* **The "Ghost Border":** If a boundary is required for accessibility, use the `outline_variant` token at **15% opacity**. Never use 100% opaque borders.
+- `heading`: `PlayfairDisplay`
+- `headingItalic`: `PlayfairDisplay-Italic`
+- `body`: `Inter`
 
----
+Boyutlar:
+- `badge`: `10`
+- `ui`: `13`
+- `body`: `15`
+- `quote`: `18`
+- `headingSmall`: `22`
+- `headingLarge`: `30`
 
-## 5. Components
+Okuma ritmi:
+- `bodyLineHeight`: `26`
+- `badgeLetterSpacing`: `0.5`
 
-### Buttons
-* **Primary:** A soft gradient from `primary` to `primary_container`. Text in `on_primary` (Work Sans).
-* **Tertiary/Ghost:** No container. Use `primary` text with a subtle underline or arrow icon to indicate action.
-* **Roundedness:** Stick to `md` (0.375rem) for a sophisticated, slightly sharp editorial look. Avoid `full` pill shapes unless it's a floating action button.
+## 4. Yerlesim ve Yuvarlatma Sistemi
 
-### Input Fields
-* **Style:** No bottom line or full border. Use `surface_container_low` as a background fill with a "Ghost Border" that illuminates to `primary` (#ffb783) only on focus.
-* **Typography:** Labels use `label-sm` (Work Sans) in `on_surface_variant`.
+- `button` radius: `12`
+- `card` radius: `15`
+- `buttonPrimary` yukseklik: `48`
+- `buttonSecondary` yukseklik: `40`
+- Yatay padding: `20`
+- Dikey padding: `16`
+- Kartlar arasi bosluk: `12`
+- Standart border kalinligi: `0.5`
 
-### Cards & Lists
-* **The Divider Ban:** Strictly forbid 1px dividers. Separate list items using the **Spacing Scale** (e.g., `spacing-4` or `1.4rem`) or by alternating very subtle background shades (`surface_container_low` vs `surface_container`).
-* **Editorial Cards:** Use `title-lg` for card headings. Ensure generous internal padding (`spacing-6` or `2rem`) to give the content room to breathe.
+## 5. Modlar Arasi Uygulama Kurallari
 
-### Additional Signature Component: The "Reading Progress Bar"
-A thin, 2px line at the top of the viewport using the `primary` rust color. As the user scrolls through long-form content, the line grows—a nod to the bibliophile roots of the system.
+1. Ana ekran zemini her zaman `colors.background` ile baslamalidir.
+2. Kart ve panel gibi ikincil katmanlar `colors.backgroundDark` kullanmalidir.
+3. Ana metinler `colors.text`, ikincil metinler `colors.textSecondary` olmalidir.
+4. Buton ve onemli aksiyonlar `colors.primary`; gerekiyorsa `primary -> primaryContainer` gradyani kullanilmalidir.
+5. `danger` ve `success` sadece durum bildirimi icin kullanilmali, dekoratif kullanilmamalidir.
+6. Koyu modda sert beyaz/siyah kullanimi yapilmamali; sadece token degerleri tercih edilmelidir.
+7. Acik modda asiri kontrastli siyah metin yerine token tabanli `text` tonu korunmalidir.
 
----
+## 6. Yeni Tasarim Icin Guncelleme Ceklisti
 
-## 6. Do's and Don'ts
+Bu tanimlar guncellenirken asagidaki sirayla ilerlenmelidir:
 
-### Do
-* **DO** use asymmetry. Shift text blocks slightly off-center to create a bespoke, non-templated look.
-* **DO** use "Primary Rust" (#E67E22) sparingly as a "heartbeat" color for high-importance actions.
-* **DO** prioritize the "Newsreader" serif for any text longer than three words.
+1. Ilk olarak sadece token degerleri guncellenmeli (`src/theme/theme.js`).
+2. Sert kodlanmis renkler temizlenip token kullanimina cekilmelidir.
+3. Her iki modda da ayni bilesen hiyerarsisi korunmalidir (zemin -> katman -> vurgu).
+4. Metin kontrastlari manuel kontrol edilmelidir (ozellikle `text` ve `onPrimary`).
+5. Profil ekranindaki tema secimi ve sistemden devralma akisi test edilmelidir.
+6. Son adimda ekran bazli gorsel ince ayarlar yapilmalidir.
 
-### Don't
-* **DON'T** use pure black (#000). Always use our "Deep Charcoal" (#131311) to maintain the premium paper feel.
-* **DON'T** use standard Material shadows. They feel "techy" and break the editorial immersion.
-* **DON'T** use icons for everything. Sometimes a well-placed word in `label-md` is more elegant and clear.
+## 7. Uygulama Durumu Notu
+
+Tema secimi su an:
+- Sistem temasini varsayilan alir.
+- Kullanici secimini `AsyncStorage` icinde `themeMode` anahtari ile saklar.
+- `light` ve `dark` modlari global context uzerinden tum ekranlara dagitilir.
+
+Bu nedenle yeni tasarim gecisinde sadece renk/typography/layout tokenlarini degistirmek bile buyuk kisimda otomatik etki uretecektir.

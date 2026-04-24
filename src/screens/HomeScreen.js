@@ -3,7 +3,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Dimensions, Animated, Modal, TextInput
+  StatusBar, Platform, Dimensions, Animated, Modal, TextInput, Image
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -11,10 +11,11 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { getSelectedCategories } from '../db/db';
-import StoryCard, { getCatIcon } from '../components/StoryCard';
+import StoryCard from '../components/StoryCard';
 import { Ionicons } from '@expo/vector-icons';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import { getCategoryImage } from '../utils/categoryImages';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -42,7 +43,7 @@ const HomeScreen = ({ navigation }) => {
   const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const [loading, setLoading] = useState(true);
-  const [activeFilter, setActiveFilter] = useState('Tümü');
+  const [activeFilter, setActiveFilter] = useState('all');
   const [visibleCount, setVisibleCount] = useState(11);
   const [isFetchingMore, setIsFetchingMore] = useState(false);
   const [badgeCardIndex, setBadgeCardIndex] = useState(0);
@@ -80,18 +81,21 @@ const HomeScreen = ({ navigation }) => {
     outputRange: ['0deg', '180deg']
   });
 
-  // Visible categories: Tümü + User Selected Categories
+  // Visible categories: all + user-selected parent category IDs
   const visibleCategoriesList = React.useMemo(() => {
     let filteredParents = parentCategories;
     if (selectedCategories && selectedCategories.length > 0) {
-      filteredParents = parentCategories.filter(p => selectedCategories.includes(p.raw_name));
+      filteredParents = parentCategories.filter((p) => selectedCategories.includes(Number(p.id)));
     }
-    return ['Tümü', ...filteredParents.map(p => p.name)];
-  }, [parentCategories, selectedCategories]);
+    return [
+      { key: 'all', label: t('Tümü', lang), rawName: 'Tümü' },
+      ...filteredParents.map((p) => ({ key: Number(p.id), label: p.name, rawName: p.raw_name })),
+    ];
+  }, [parentCategories, selectedCategories, lang]);
 
   useEffect(() => {
-    if (activeFilter !== 'Tümü' && !visibleCategoriesList.includes(activeFilter)) {
-      setActiveFilter('Tümü');
+    if (activeFilter !== 'all' && !visibleCategoriesList.some((item) => item.key === activeFilter)) {
+      setActiveFilter('all');
     }
   }, [visibleCategoriesList, activeFilter]);
 
@@ -254,18 +258,6 @@ const HomeScreen = ({ navigation }) => {
     setShowProfilePrompt(false);
   };
 
-  // Migrate: normalize stored category names to raw_names (language-independent)
-  useEffect(() => {
-    if (parentCategories.length === 0 || selectedCategories.length === 0) return;
-    const rawNames = new Set(parentCategories.map(p => p.raw_name));
-    if (selectedCategories.every(cat => rawNames.has(cat))) return;
-    const normalized = selectedCategories.map(cat => {
-      const found = parentCategories.find(p => p.name === cat || p.raw_name === cat);
-      return found ? found.raw_name : cat;
-    });
-    setSelectedCategories(normalized);
-  }, [parentCategories]);
-
   // Refresh on focus to load latest selected categories from DB if changed elsewhere
   useFocusEffect(
     React.useCallback(() => {
@@ -320,15 +312,15 @@ const HomeScreen = ({ navigation }) => {
   // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri gösteririz.
   let prefFiltered = publishedStories;
   if (selectedCategories && selectedCategories.length > 0) {
-    prefFiltered = publishedStories.filter(s => selectedCategories.includes(s.parent_cat_raw));
+    prefFiltered = publishedStories.filter((s) => selectedCategories.includes(Number(s.parent_cat_id)));
     // If no stories found in selected categories, fallback to all published
     if (prefFiltered.length === 0) prefFiltered = publishedStories;
   }
 
   // 3. UI Filter: Ekranda tıklanan ebeveyn kategoriye göre filtreleme
-  const categoryFiltered = activeFilter === 'Tümü'
+  const categoryFiltered = activeFilter === 'all'
     ? prefFiltered
-    : prefFiltered.filter(s => s.parent_cat === activeFilter);
+    : prefFiltered.filter((s) => Number(s.parent_cat_id) === Number(activeFilter));
 
   // 3. Sıralama
   const sortedStories = [...categoryFiltered].sort((a, b) => {
@@ -356,7 +348,7 @@ const HomeScreen = ({ navigation }) => {
       .filter(Boolean);
 
     const categoryScoreMap = recentStories.reduce((acc, item) => {
-      const cat = item?.parent_cat;
+      const cat = Number(item?.parent_cat_id);
       if (!cat) return acc;
       acc[cat] = (acc[cat] || 0) + 1;
       return acc;
@@ -366,7 +358,7 @@ const HomeScreen = ({ navigation }) => {
       .sort((a, b) => b[1] - a[1])[0]?.[0] || null;
 
     const pickedStories = dominantCategory
-      ? sortedStories.filter((s) => s.parent_cat === dominantCategory).slice(0, moduleStoryCount)
+      ? sortedStories.filter((s) => Number(s.parent_cat_id) === Number(dominantCategory)).slice(0, moduleStoryCount)
       : [];
 
     if (continueStory) {
@@ -412,7 +404,7 @@ const HomeScreen = ({ navigation }) => {
     if (preferred.length > 0) return preferred.slice(0, 3);
 
     const fromStories = Array.from(
-      new Set((personalizedStories || []).map((story) => story.parent_cat).filter(Boolean))
+      new Set((personalizedStories || []).map((story) => Number(story.parent_cat_id)).filter(Boolean))
     );
     return fromStories.slice(0, 3);
   }, [selectedCategories, personalizedStories]);
@@ -420,7 +412,7 @@ const HomeScreen = ({ navigation }) => {
   const firstSessionRecommendedTitle = personalizedStories[0]?.title || t('home_first_session_reco_fallback', lang);
   const firstSessionCategoryStoryCount = React.useMemo(() => {
     if (firstSessionFocusCategories.length === 0) return personalizedStories.length;
-    return publishedStories.filter((story) => firstSessionFocusCategories.includes(story.parent_cat)).length;
+    return publishedStories.filter((story) => firstSessionFocusCategories.includes(Number(story.parent_cat_id))).length;
   }, [firstSessionFocusCategories, personalizedStories.length, publishedStories]);
 
   const firstSessionMiniSummary = t('home_first_session_summary', lang)
@@ -1065,7 +1057,7 @@ const HomeScreen = ({ navigation }) => {
               return (
                 <View key={i} style={{ width: screenWidth, paddingHorizontal: layout.padding.horizontal }}>
                   <LinearGradient
-                    colors={['#D8C08F', '#BE9347']}
+                    colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
                     style={[styles.streakCard, { marginHorizontal: 0, marginBottom: 0 }]}
                     start={{x: 0, y: 0}}
                     end={{x: 1, y: 1}}
@@ -1104,17 +1096,21 @@ const HomeScreen = ({ navigation }) => {
         </Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 16 }}>
           <View style={{ flexDirection: 'row', gap: 8, paddingHorizontal: layout.padding.horizontal }}>
-            {visibleCategoriesList.map(cat => {
-              const parentInfo = parentCategories.find(p => p.name === cat);
+            {visibleCategoriesList.map((item) => {
+              const isActive = item.key === activeFilter;
+              const catImg = getCategoryImage(item.rawName);
               return (
                 <TouchableOpacity
-                  key={cat}
-                  style={[styles.catPill, cat === activeFilter ? styles.catPillActive : null, { flexDirection: 'row', alignItems: 'center', gap: 8 }]}
-                  onPress={() => setActiveFilter(cat)}
+                  key={item.key}
+                  style={[styles.catPill, isActive ? styles.catPillActive : null, { flexDirection: 'row', alignItems: 'center', gap: 8 }]}
+                  onPress={() => setActiveFilter(item.key)}
                 >
-                  {parentInfo && <Ionicons name={getCatIcon(parentInfo.name)} size={14} color={cat === activeFilter ? '#FFF' : colors.primary} />}
-                  <Text style={[styles.catPillText, cat === activeFilter ? styles.catPillTextActive : null]}>
-                    {t(cat, lang)}
+                  <View style={{ width: 20, height: 20, borderRadius: 6, overflow: 'hidden' }}>
+                    <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
+                    <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                  </View>
+                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null]}>
+                    {item.label}
                   </Text>
                 </TouchableOpacity>
               );
@@ -1169,7 +1165,7 @@ const HomeScreen = ({ navigation }) => {
                       activeOpacity={0.7}
                     >
                       <Text style={styles.dailyPanelTitle} numberOfLines={1}>
-                        {t('home_first_session_intro', lang)}
+                        {t('home_daily_cta', lang)}
                       </Text>
                       {isDailyComplete ? (
                         <Ionicons name="checkmark-circle" size={20} color={colors.primary} style={{ marginLeft: 8 }} />
@@ -1185,38 +1181,69 @@ const HomeScreen = ({ navigation }) => {
 
                     {!isDailyPanelCollapsed && !isDailyComplete && (
                       <View style={styles.dailyPanelStoriesWrap}>
-                        {panelStories.map((story) => {
+                        {panelStories.map((story, storyIdx) => {
                           const isClicked = dailyClickedIds.has(String(story.story_id));
                           const isLocked = !isPremium && !isClicked && personalizedStories.indexOf(story) >= 2;
+                          const isFirst = storyIdx === 0;
                           return (
-                            <TouchableOpacity
-                              key={story.story_id}
-                              style={[styles.dailyStoryRow, isClicked && styles.dailyStoryRowClicked]}
-                              onPress={() => isLocked
-                                ? openPaywallFromFreeLimit('home_daily_panel_locked', story.story_id)
-                                : handleDailyStoryPress(story, panelStories.length)
-                              }
-                              activeOpacity={0.7}
-                            >
-                              <Ionicons
-                                name={isClicked ? 'checkmark-circle' : 'book-outline'}
-                                size={18}
-                                color={isClicked ? colors.primary : colors.textSecondary}
-                              />
-                              <View style={{ flex: 1 }}>
-                                <Text style={{ fontFamily: 'PlayfairDisplay_600SemiBold', fontSize: 14, color: colors.text, lineHeight: 20 }} numberOfLines={2}>
-                                  {story.title}
-                                </Text>
-                                <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 2 }}>
-                                  {t(story.parent_cat, lang)} · {story.min} {t('minLabel', lang)}
-                                </Text>
-                              </View>
-                              {isLocked ? (
-                                <Ionicons name="lock-closed-outline" size={16} color={colors.textSecondary} />
-                              ) : (
-                                <Ionicons name="chevron-forward" size={16} color={colors.textSecondary} />
+                            <View key={story.story_id}>
+                              <TouchableOpacity
+                                style={[styles.dailyStoryRow, isClicked && styles.dailyStoryRowClicked]}
+                                onPress={() => isLocked
+                                  ? openPaywallFromFreeLimit('home_daily_panel_locked', story.story_id)
+                                  : handleDailyStoryPress(story, panelStories.length)
+                                }
+                                activeOpacity={0.7}
+                              >
+                                <Ionicons
+                                  name={isClicked ? 'checkmark-circle' : 'chatbubbles-outline'}
+                                  size={18}
+                                  color={isClicked ? colors.primary : colors.primary}
+                                />
+                                <View style={{ flex: 1 }}>
+                                  <Text style={{ fontFamily: 'PlayfairDisplay_600SemiBold', fontSize: 14, color: colors.text, lineHeight: 20 }} numberOfLines={2}>
+                                    {story.title}
+                                  </Text>
+                                  <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 2 }}>
+                                    {t(story.parent_cat, lang)} · {story.min} {t('minLabel', lang)}
+                                  </Text>
+                                </View>
+                                {isLocked ? (
+                                  <Ionicons name="lock-closed-outline" size={16} color={colors.textSecondary} />
+                                ) : (
+                                  <Ionicons name="chevron-forward" size={16} color={colors.textSecondary} />
+                                )}
+                              </TouchableOpacity>
+                              {isFirst && !isClicked && !isLocked && (
+                                <TouchableOpacity
+                                  style={{
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: 6,
+                                    marginTop: 6,
+                                    marginBottom: 4,
+                                    paddingVertical: 10,
+                                    borderRadius: 10,
+                                    backgroundColor: colors.primary,
+                                  }}
+                                  onPress={() => {
+                                    trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
+                                      storyId: story.story_id,
+                                      source: 'home_daily_panel_quick',
+                                      lang,
+                                    });
+                                    navigation.navigate('SohbetteKullan', { story });
+                                  }}
+                                  activeOpacity={0.85}
+                                >
+                                  <Ionicons name="chatbubbles" size={15} color={colors.onPrimary} />
+                                  <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 13, color: colors.onPrimary }}>
+                                    {t('home_use_today_btn', lang)}
+                                  </Text>
+                                </TouchableOpacity>
                               )}
-                            </TouchableOpacity>
+                            </View>
                           );
                         })}
                       </View>
@@ -1249,7 +1276,7 @@ const HomeScreen = ({ navigation }) => {
                   <StoryCard 
                     story={free[0]} 
                     type="hero" 
-                    hideCategory={activeFilter !== 'Tümü'}
+                    hideCategory={activeFilter !== 'all'}
                     isRead={checkIfRead(free[0].story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story: free[0] })} 
                   />
@@ -1262,7 +1289,7 @@ const HomeScreen = ({ navigation }) => {
                     key={story.story_id} 
                     story={story} 
                     type="compact" 
-                    hideCategory={activeFilter !== 'Tümü'}
+                    hideCategory={activeFilter !== 'all'}
                     isRead={checkIfRead(story.story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story })} 
                   />
@@ -1272,7 +1299,7 @@ const HomeScreen = ({ navigation }) => {
                     key={`bonus-${weeklyBonusStory.story_id}`}
                     story={weeklyBonusStory}
                     type="compact"
-                    hideCategory={activeFilter !== 'Tümü'}
+                    hideCategory={activeFilter !== 'all'}
                     supportText={t('homeFreemiumWeeklyBonusHint', lang)}
                     isRead={checkIfRead(weeklyBonusStory.story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story: weeklyBonusStory })}
@@ -1284,7 +1311,7 @@ const HomeScreen = ({ navigation }) => {
                     story={teaserStory}
                     type="compact"
                     locked
-                    hideCategory={activeFilter !== 'Tümü'}
+                    hideCategory={activeFilter !== 'all'}
                     supportText={t('homeFreemiumTeaserHint', lang)}
                     onPress={() => openPaywallFromFreeLimit('home_feed_teaser', teaserStory.story_id)}
                   />
@@ -1296,7 +1323,7 @@ const HomeScreen = ({ navigation }) => {
                     type="compact" 
                     locked 
                     supportText={t('homeFreemiumPremiumBenefit', lang)}
-                    hideCategory={activeFilter !== 'Tümü'}
+                    hideCategory={activeFilter !== 'all'}
                     onPress={() => openPaywallFromFreeLimit('home_feed_locked', story.story_id)} 
                   />
                 ))}
@@ -1324,7 +1351,7 @@ const HomeScreen = ({ navigation }) => {
       >
         <View style={{
           flex: 1,
-          backgroundColor: 'rgba(0,0,0,0.55)',
+          backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.24)',
           justifyContent: 'center',
           paddingHorizontal: layout.padding.horizontal,
         }}>
