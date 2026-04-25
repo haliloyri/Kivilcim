@@ -31,6 +31,16 @@ jobs:
             echo "Missing secret. Add EXPO_TOKEN or EAS_TOKEN in repository secrets."
             exit 1
           fi
+
+      - name: Verify Expo account
+        run: |
+          ACTUAL_ACCOUNT="$(eas whoami --non-interactive)"
+          echo "EAS authenticated as: $ACTUAL_ACCOUNT"
+          if [ "$ACTUAL_ACCOUNT" != "hoyri" ]; then
+            echo "Wrong Expo account. Expected: hoyri"
+            echo "Create token while logged in as hoyri and update EXPO_TOKEN (or EAS_TOKEN)."
+            exit 1
+          fi
       
       - name: Build iOS (Preview)
         run: eas build --platform ios --profile preview --non-interactive
