@@ -257,6 +257,8 @@ const LibraryScreen = ({ navigation }) => {
     openBadgeModal,
     isStoryInFavoriteCollection,
     toggleStoryInFavoriteCollection,
+    isPremium,
+    variantUsage,
   } = useUserData();
   const { stories } = useStories();
   const [sortBy, setSortBy] = useState('recent');
@@ -379,6 +381,21 @@ const LibraryScreen = ({ navigation }) => {
   const historyStories = useMemo(() => {
     return applySort(applyCategoryFilter(historyStoriesRaw));
   }, [historyStoriesRaw, sortBy, activeCategory, readCountsByStory, historyIndexMap]);
+
+  // "Son kullandıkların" — unique stories from variant usage (premium only)
+  const recentlyUsedStories = useMemo(() => {
+    if (!isPremium || !variantUsage || variantUsage.length === 0) return [];
+    const seen = new Set();
+    const result = [];
+    for (const entry of variantUsage) {
+      if (seen.has(entry.storyId)) continue;
+      seen.add(entry.storyId);
+      const s = (stories || []).find(st => String(st.story_id) === entry.storyId);
+      if (s) result.push({ ...s, _lastUsedAt: entry.usedAt, _lastAction: entry.action, _lastVariantType: entry.variantType });
+      if (result.length >= 20) break;
+    }
+    return result;
+  }, [isPremium, variantUsage, stories]);
 
   const styles = StyleSheet.create({
     safe: { 
@@ -587,6 +604,74 @@ const LibraryScreen = ({ navigation }) => {
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionLabel}>{t('recentRead', lang)}</Text>
         </View>
+
+        {/* ── Recently Used Variants (Premium) ─────────────────────────── */}
+        {isPremium && recentlyUsedStories.length > 0 && (
+          <>
+            <View style={styles.sectionHeader}>
+              <Text style={styles.sectionLabel}>
+                <Ionicons name="chatbubbles-outline" size={12} color={colors.textSecondary} />
+                {'  '}{t('libraryRecentlyUsed', lang)}
+              </Text>
+            </View>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: layout.padding.horizontal }}>
+              {recentlyUsedStories.map(story => (
+                <TouchableOpacity
+                  key={`used-${story.story_id}`}
+                  activeOpacity={0.8}
+                  onPress={() => navigation.navigate('UseInConversation', { story })}
+                  style={{
+                    width: 160,
+                    marginRight: 12,
+                    backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+                    borderRadius: 12,
+                    borderWidth: 1,
+                    borderColor: colors.border,
+                    padding: 14,
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  <View>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginBottom: 8 }}>
+                      <Ionicons
+                        name={story._lastAction === 'share' ? 'share-social-outline' : 'copy-outline'}
+                        size={12}
+                        color={colors.primary}
+                      />
+                      <Text style={{
+                        fontFamily: 'Inter_500Medium',
+                        fontSize: 10,
+                        color: colors.primary,
+                        textTransform: 'uppercase',
+                        letterSpacing: 0.5,
+                      }}>
+                        {story._lastAction === 'share' ? t('libraryUsedShared', lang) : t('libraryUsedCopied', lang)}
+                      </Text>
+                    </View>
+                    <Text style={{
+                      fontFamily: 'PlayfairDisplay_600SemiBold',
+                      fontSize: 14,
+                      color: colors.text,
+                      lineHeight: 20,
+                    }} numberOfLines={3}>
+                      {story.title}
+                    </Text>
+                  </View>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 10 }}>
+                    <Ionicons name="chatbubbles" size={10} color={colors.textSecondary} />
+                    <Text style={{
+                      fontFamily: 'Inter_400Regular',
+                      fontSize: 10,
+                      color: colors.textSecondary,
+                    }}>
+                      {t('mv_use_in_convo', lang).replace(/💬\s*/, '')}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </>
+        )}
 
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
           {historyStories.length > 0 ? historyStories.map(story => (

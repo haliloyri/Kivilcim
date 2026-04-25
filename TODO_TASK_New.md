@@ -129,19 +129,6 @@ Kod yuzeyi:
 - [x] Uygulama yeniden acildiginda tercih korunuyor mu
 
 ## Onerilen Uygulama Sirasi
-- [ ] 1. Paywall metinleri ve fark tablosu
-- [ ] 2. "Ilk 2 icerik acik" akisinin netlestirilmesi
-- [ ] 3. Guven unsurlari ve hukuki linkler
-- [ ] 4. Profilde sabit veri temizligi ve gercek veri baglantisi
-- [ ] 5. Analytics ve QA
-
-## Görsel İyileştirmeler
-[] 23. İlerleme ekranında Sıradaki en iyi adımlar dinamik olsun. Bu kısmı analiz edelim. ***
-[] 11. Spark logosu ekranda şu an baklava dilimi gibi. Ateşli bir S şeklinde kitap ayracı olsun.
-[] 12. Rozet görsellerini gözden geçir.
-[] 13. Kategori görsellerini gözden geçir.
-
-## Onerilen Uygulama Sirasi
 - [ ] 1. Onboarding metni ve tercih modeli
 - [ ] 2. Home kisilestirme
 - [ ] 3. Gunluk hedef ve Progress guncellemesi

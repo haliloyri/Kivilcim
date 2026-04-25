@@ -40,7 +40,7 @@ const SkeletonCard = ({ colors, layout, isHero }) => (
 
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
-  const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile } = useUserData();
+  const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('all');
@@ -54,7 +54,8 @@ const HomeScreen = ({ navigation }) => {
   const [profileNameInput, setProfileNameInput] = useState('');
   const [profileEmailInput, setProfileEmailInput] = useState('');
   const [dailyClickedIds, setDailyClickedIds] = useState(new Set());
-  const [isDailyPanelCollapsed, setIsDailyPanelCollapsed] = useState(false);  const isFetchingRef = useRef(false);  // ref to avoid stale closure
+  const [isDailyPanelCollapsed, setIsDailyPanelCollapsed] = useState(false);
+  const isFetchingRef = useRef(false);  // ref to avoid stale closure
   const visibleCountRef = useRef(11);   // ref to read latest value in callbacks
   const badgeScrollRef = useRef(null);
   const flipAnim = useRef(new Animated.Value(0)).current;
@@ -481,6 +482,7 @@ const HomeScreen = ({ navigation }) => {
     try {
       await AsyncStorage.removeItem(FIRST_SESSION_PROMPT_KEY);
     } catch (error) {
+      console.error('Failed to remove first session prompt:', error);
       console.error('Ilk oturum mesaji kaldirilamadi:', error);
     }
   };
@@ -632,6 +634,7 @@ const HomeScreen = ({ navigation }) => {
     try {
       await AsyncStorage.setItem(PERSONALIZED_MODULE_SNOOZE_KEY, tomorrowStr);
     } catch (error) {
+      console.error('Failed to save personalized module snooze state:', error);
       console.error('Kisisellestirilmis modul erteleme kaydedilemedi:', error);
     }
   };
@@ -1233,6 +1236,9 @@ const HomeScreen = ({ navigation }) => {
                                       source: 'home_daily_panel_quick',
                                       lang,
                                     });
+                                    if (isPremium && !isStoryCompleted(story.story_id)) {
+                                      markStoryCompleted(story.story_id);
+                                    }
                                     navigation.navigate('SohbetteKullan', { story });
                                   }}
                                   activeOpacity={0.85}

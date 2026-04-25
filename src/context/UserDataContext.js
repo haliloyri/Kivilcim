@@ -12,6 +12,7 @@ const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const USER_PROFILE_STORAGE_KEY = '@kivilcim_user_profile';
 const FAVORITE_COLLECTIONS_STORAGE_KEY = '@kivilcim_favorite_collections';
 const COMPLETED_STORIES_STORAGE_KEY = '@kivilcim_completed_stories';
+const VARIANT_USAGE_STORAGE_KEY = '@kivilcim_variant_usage';
 const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening', reminderHour: 21, reminderWindows: ['evening'] };
 const EMPTY_USER_PROFILE = { displayName: null, email: null };
 const EMPTY_FAVORITE_COLLECTIONS = { saved_for_later: [] };
@@ -215,6 +216,7 @@ export const UserDataProvider = ({ children }) => {
   const [shouldBootstrapSeenBadges, setShouldBootstrapSeenBadges] = useState(false);
   const [activeBadgeModal, setActiveBadgeModal] = useState(null);
   const [pendingBadges, setPendingBadges] = useState([]);
+  const [variantUsage, setVariantUsage] = useState([]);
 
   // Güvenlik timeout'u: AsyncStorage 3 saniye içinde tamamlanmazsa devam et
   useEffect(() => {
@@ -293,6 +295,11 @@ export const UserDataProvider = ({ children }) => {
         if (storedCompletedStories) {
           const parsedCompleted = JSON.parse(storedCompletedStories);
           setCompletedStories(Array.isArray(parsedCompleted) ? parsedCompleted.map((id) => String(id)) : []);
+        }
+        const storedVariantUsage = await AsyncStorage.getItem(VARIANT_USAGE_STORAGE_KEY);
+        if (storedVariantUsage) {
+          const parsed = JSON.parse(storedVariantUsage);
+          setVariantUsage(Array.isArray(parsed) ? parsed : []);
         }
       } catch (error) {
         console.error('AsyncStorage veri yükleme hatası:', error);
@@ -617,6 +624,34 @@ export const UserDataProvider = ({ children }) => {
     }
   };
 
+  // Varyant kullanım kaydı (copy / share / mark-used)
+  const recordVariantUsage = useCallback(async ({ storyId, storyTitle, variantType, variantId, action }) => {
+    try {
+      const entry = {
+        storyId: String(storyId),
+        storyTitle: storyTitle || '',
+        variantType,
+        variantId,
+        action, // 'copy' | 'share' | 'mark_used'
+        usedAt: new Date().toISOString(),
+      };
+      setVariantUsage(prev => {
+        const next = [entry, ...prev].slice(0, 200); // keep last 200
+        AsyncStorage.setItem(VARIANT_USAGE_STORAGE_KEY, JSON.stringify(next));
+        return next;
+      });
+      trackEvent(ANALYTICS_EVENTS.STORY_VARIANT_USED, {
+        storyId: String(storyId),
+        variantType,
+        variantId,
+        action,
+        lang,
+      });
+    } catch (error) {
+      console.error('Varyant kullanım kayıt hatası:', error);
+    }
+  }, [lang]);
+
   // Verileri Sıfırla (Debug ve Çıkış için)
   const clearUserData = async () => {
     try {
@@ -632,6 +667,7 @@ export const UserDataProvider = ({ children }) => {
         USER_PROFILE_STORAGE_KEY,
         FIRST_SESSION_PROMPT_KEY,
         SEEN_BADGES_STORAGE_KEY,
+        VARIANT_USAGE_STORAGE_KEY,
       ]);
       setFavorites([]);
       setHistory([]);
@@ -644,6 +680,7 @@ export const UserDataProvider = ({ children }) => {
       setShareCount(0);
       setSeenBadgeIds([]);
       setActiveBadgeModal(null);
+      setVariantUsage([]);
       // Clear global categories in ThemeContext too
       await setGlobalCategories([]);
     } catch (error) {
@@ -742,12 +779,14 @@ export const UserDataProvider = ({ children }) => {
     buyPremium,
     updateUserProfile,
     incrementShareCount,
+    recordVariantUsage,
+    variantUsage,
     clearUserData,
     refreshStats,
     openBadgeModal,
     closeBadgeModal,
     releasePendingBadge,
-  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, isStorySavedForLater, toggleReadLater, isStoryCompleted, openBadgeModal, closeBadgeModal, releasePendingBadge]);
+  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge]);
 
   return (
     <UserDataContext.Provider value={value}>

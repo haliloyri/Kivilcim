@@ -76,23 +76,68 @@ function pills(y, labels, activeIdx = 0) {
   }).join('');
 }
 
+function storyCardUsable(x, y, w, h, title, cat, min) {
+  return `
+  <g filter="url(#shadow)">
+    <rect x="${x}" y="${y}" rx="28" ry="28" width="${w}" height="${h}" fill="${theme.card}" stroke="${theme.border}"/>
+    <text x="${x + 28}" y="${y + 48}" font-family="Arial, sans-serif" font-size="22" fill="${theme.sub}">${escapeXml(cat)}</text>
+    <text x="${x + 28}" y="${y + 100}" font-family="Georgia, serif" font-size="38" fill="${theme.text}">${escapeXml(title)}</text>
+    <circle cx="${x + 42}" cy="${y + h - 62}" r="10" fill="none" stroke="${theme.primary}" stroke-width="2"/>
+    <text x="${x + 56}" y="${y + h - 56}" font-family="Arial, sans-serif" font-size="22" fill="${theme.primary}">Sohbette Kullanılabilir</text>
+    <text x="${x + 28}" y="${y + h - 28}" font-family="Arial, sans-serif" font-size="20" fill="${theme.sub}" opacity="0.6">${min} dk · ${escapeXml(cat)}</text>
+  </g>`;
+}
+
 function makeHome() {
-  const body = `
-  <rect x="60" y="190" rx="30" ry="30" width="960" height="300" fill="url(#hero)" filter="url(#shadow)"/>
-  <text x="96" y="298" font-family="Georgia, serif" font-size="62" fill="#1f1a14">7 gün streak</text>
-  <text x="96" y="356" font-family="Arial, sans-serif" font-size="34" fill="#3c3327">Bugün okumaya devam et</text>
-  ${pills(540, ['Tümü', 'Psikoloji', 'Finans', 'Liderlik'], 0)}
-  ${card(60, 660, 960, 310, 'Atomik Alışkanlıklar', '5 dk • Kişisel Gelişim')}
-  ${card(60, 1004, 470, 280, 'Düşünme Hataları', '4 dk • Psikoloji')}
-  ${card(550, 1004, 470, 280, 'İkna Sanatı', '6 dk • İletişim')}
-  ${card(60, 1318, 470, 280, 'İş Modeli Tasarımı', '7 dk • İş & Girişim')}
-  ${card(550, 1318, 470, 280, 'Zihin Notları', '3 dk • Verimlilik')}
+  /* ── Daily Panel ─────────────────────────────────────── */
+  const dailyPanel = `
+  <rect x="60" y="190" rx="24" ry="24" width="960" height="420" fill="${theme.card}" stroke="${theme.border}"/>
+  <text x="96" y="260" font-family="Georgia, serif" font-size="40" fill="${theme.primary}">Bugün ne söyleyeceksin?</text>
+
+  <!-- daily story row 1 -->
+  <circle cx="108" cy="326" r="16" fill="none" stroke="${theme.primary}" stroke-width="3"/>
+  <text cx="108" cy="332" x="108" y="332" font-family="Arial, sans-serif" font-size="18" fill="${theme.primary}" text-anchor="middle">💬</text>
+  <text x="140" y="320" font-family="Georgia, serif" font-size="32" fill="${theme.text}">Atomik Alışkanlıklar</text>
+  <text x="140" y="354" font-family="Arial, sans-serif" font-size="22" fill="${theme.sub}">Zihin ve Psikoloji · 5 dk</text>
+
+  <!-- quick CTA button -->
+  <rect x="96" y="376" rx="14" ry="14" width="880" height="68" fill="${theme.primaryDeep}"/>
+  <text x="408" y="420" font-family="Arial, sans-serif" font-size="28" fill="#fff">🗣 Sohbette Kullan</text>
+
+  <!-- daily story row 2 -->
+  <circle cx="108" cy="488" r="16" fill="none" stroke="${theme.border}" stroke-width="3"/>
+  <text x="140" y="482" font-family="Georgia, serif" font-size="32" fill="${theme.text}">İkna Sanatı</text>
+  <text x="140" y="514" font-family="Arial, sans-serif" font-size="22" fill="${theme.sub}">Sosyal Beceriler · 6 dk</text>
+  <text x="920" y="494" font-family="Arial, sans-serif" font-size="26" fill="${theme.sub}">›</text>
+
+  <!-- daily story row 3 (locked) -->
+  <circle cx="108" cy="564" r="16" fill="none" stroke="${theme.border}" stroke-width="3"/>
+  <text x="140" y="558" font-family="Georgia, serif" font-size="32" fill="${theme.sub}" opacity="0.6">Derin İş</text>
+  <text x="140" y="590" font-family="Arial, sans-serif" font-size="22" fill="${theme.sub}" opacity="0.5">Kariyer ve Başarı · 4 dk</text>
+  <text x="920" y="570" font-family="Arial, sans-serif" font-size="24" fill="${theme.sub}">🔒</text>`;
+
+  /* ── Category pills ──────────────────────────────────── */
+  const catPills = pills(660, ['Tümü', 'Psikoloji', 'Finans', 'Liderlik'], 0);
+
+  /* ── Story cards with "Sohbette Kullanılabilir" badge ── */
+  const cards = [
+    storyCardUsable(60, 780, 960, 310, 'Hızlı Düşün, Yavaş Karar Ver', 'Psikoloji', 5),
+    storyCardUsable(60, 1124, 470, 280, 'Düşünme Hataları', 'Psikoloji', 4),
+    storyCardUsable(550, 1124, 470, 280, 'Büyüme Zihniyeti', 'Liderlik', 6),
+    storyCardUsable(60, 1438, 470, 280, 'İş Modeli Tasarımı', 'İş & Girişim', 7),
+    storyCardUsable(550, 1438, 470, 280, 'Zihin Notları', 'Verimlilik', 3),
+  ].join('');
+
+  const tabBar = `
   <rect x="0" y="2190" width="1080" height="150" fill="${theme.background}"/>
   <line x1="60" y1="2190" x2="1020" y2="2190" stroke="${theme.border}"/>
   <text x="120" y="2278" font-family="Arial, sans-serif" font-size="28" fill="${theme.primaryDeep}">Ana Sayfa</text>
   <text x="420" y="2278" font-family="Arial, sans-serif" font-size="28" fill="${theme.sub}">Kütüphane</text>
   <text x="760" y="2278" font-family="Arial, sans-serif" font-size="28" fill="${theme.sub}">Profil</text>`;
-  return wrapScreen('Ana Sayfa', body);
+
+  const body = dailyPanel + catPills + cards + tabBar;
+
+  return wrapScreen('Bugün ne söyleyeceksin?', body);
 }
 
 function makeOnboarding() {
@@ -138,17 +183,45 @@ function makeProgress() {
     }
   }
 
+  const defs = `
+  <defs>
+    <linearGradient id="badge-grad-1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FF8C00" />
+    </linearGradient>
+    <linearGradient id="badge-grad-2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00C9FF" />
+      <stop offset="100%" stop-color="#92FE9D" />
+    </linearGradient>
+    <linearGradient id="badge-grad-3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b1b1b1" />
+      <stop offset="100%" stop-color="#e0e0e0" />
+    </linearGradient>
+  </defs>`;
+
+  const badgeItem = (x, y, title, status, grad) => {
+    return `
+    <g filter="url(#shadow)">
+      <rect x="${x}" y="${y}" rx="28" ry="28" width="470" height="260" fill="${theme.card}" stroke="${theme.border}"/>
+      <circle cx="${x + 235}" cy="${y + 100}" r="45" fill="url(#${grad})"/>
+      <text x="${x + 235}" y="${y + 185}" font-family="Georgia, serif" font-size="32" fill="${theme.text}" text-anchor="middle">${escapeXml(title)}</text>
+      <rect x="${x + 160}" y="${y + 205}" rx="14" ry="14" width="150" height="34" fill="${status === 'Kazanıldı' ? theme.primaryDeep : theme.surface}" />
+      <text x="${x + 235}" y="${y + 228}" font-family="Arial, sans-serif" font-size="18" fill="${status === 'Kazanıldı' ? '#fff' : theme.sub}" text-anchor="middle">${escapeXml(status)}</text>
+    </g>`;
+  };
+
   const body = `
+  ${defs}
   <text x="60" y="230" font-family="Georgia, serif" font-size="64" fill="${theme.text}">İlerlemen</text>
   <text x="60" y="276" font-family="Arial, sans-serif" font-size="30" fill="${theme.sub}">Son 90 günlük okuma yoğunluğu</text>
   <rect x="60" y="300" rx="28" ry="28" width="960" height="560" fill="${theme.card}" stroke="${theme.border}"/>
   ${squares.join('')}
 
   <text x="60" y="940" font-family="Arial, sans-serif" font-size="30" fill="${theme.sub}">Rozetler</text>
-  ${card(60, 970, 470, 260, '🔥 7 Gün Seri', 'Kazanıldı')}
-  ${card(550, 970, 470, 260, '🧭 Keşifçi', 'Kazanıldı')}
-  ${card(60, 1250, 470, 260, '🏛️ Filozof', 'Kilidi Açılmadı')}
-  ${card(550, 1250, 470, 260, '📜 Bilge', 'Kilidi Açılmadı')}`;
+  ${badgeItem(60, 970, '7 Gün Seri', 'Kazanıldı', 'badge-grad-1')}
+  ${badgeItem(550, 970, 'Keşifçi', 'Kazanıldı', 'badge-grad-2')}
+  ${badgeItem(60, 1250, 'Filozof', 'Kilidi Açılmadı', 'badge-grad-3')}
+  ${badgeItem(550, 1250, 'Bilge', 'Kilidi Açılmadı', 'badge-grad-3')}`;
   return wrapScreen('İstatistik', body);
 }
 
@@ -237,12 +310,15 @@ fs.mkdirSync(OUT_DIR, { recursive: true });
 
 const outputs = {
   home: makeHome(),
-  onboarding: makeOnboarding(),
-  library: makeLibrary(),
-  progress: makeProgress(),
-  profile: makeProfile(),
-  'story-detail': makeStoryDetail(),
 };
+
+// Keep other generators available but only run home for now
+// To generate all: uncomment below
+outputs.onboarding = makeOnboarding();
+outputs.library = makeLibrary();
+outputs.progress = makeProgress();
+outputs.profile = makeProfile();
+// outputs['story-detail'] = makeStoryDetail();
 
 Object.entries(outputs).forEach(([name, svg]) => write(name, svg));
 fs.writeFileSync(path.join(OUT_DIR, 'index.html'), buildIndex(Object.keys(outputs)), 'utf8');

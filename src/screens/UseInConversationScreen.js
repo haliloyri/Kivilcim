@@ -24,6 +24,7 @@ import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
+import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import MicroVariantCard from '../components/MicroVariantCard';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
@@ -126,6 +127,7 @@ const buildMicroVariants = (story, lang) => {
 const UseInConversationScreen = ({ route, navigation }) => {
   const { story } = route.params;
   const { colors, typography, layout, isDark, lang } = useTheme();
+  const { isPremium, recordVariantUsage } = useUserData();
   const insets = useSafeAreaInsets();
 
   const variants = useMemo(
@@ -155,8 +157,25 @@ const UseInConversationScreen = ({ route, navigation }) => {
     () => variants.find(v => v.defaultExpanded)?.id ?? variants[0]?.id ?? null,
   );
 
-  // Shows "Kopyalandı" checkmark for 2s
+  // Shows copied checkmark for 2s
   const [copiedId, setCopiedId] = useState(null);
+
+  // Variant IDs that are premium-locked (all except ONE_LINER)
+  const lockedIds = useMemo(() => {
+    if (isPremium) return new Set();
+    return new Set(
+      variants.filter(v => v.type !== 'ONE_LINER').map(v => v.id),
+    );
+  }, [variants, isPremium]);
+
+  const handlePremiumTap = useCallback(() => {
+    trackEvent(ANALYTICS_EVENTS.PAYWALL_VIEWED, {
+      source: 'use_in_conversation',
+      storyId: story?.story_id,
+      lang,
+    });
+    navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'locked_variant' });
+  }, [navigation, story?.story_id, lang]);
 
   const toggleExpanded = useCallback((id) => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
@@ -177,17 +196,33 @@ const UseInConversationScreen = ({ route, navigation }) => {
       variantId: variant.id,
       lang,
     });
-  }, [story?.story_id, lang]);
+    recordVariantUsage({
+      storyId: story?.story_id,
+      storyTitle: story?.title,
+      variantType: variant.type,
+      variantId: variant.id,
+      action: 'copy',
+    });
+  }, [story?.story_id, story?.title, lang, recordVariantUsage]);
 
   const handleShare = useCallback(async (variant) => {
     setSelectedId(variant.id);
     try {
       // react-native Share is available on both platforms without extra deps
-      await Share.share({ message: `${story.title}\n\n${variant.body}` });
+      const result = await Share.share({ message: `${story.title}\n\n${variant.body}` });
+      if (result.action === Share.sharedAction) {
+        recordVariantUsage({
+          storyId: story?.story_id,
+          storyTitle: story?.title,
+          variantType: variant.type,
+          variantId: variant.id,
+          action: 'share',
+        });
+      }
     } catch {
       // user cancelled or share failed — no-op
     }
-  }, [story.title]);
+  }, [story.title, story?.story_id, recordVariantUsage]);
 
   const handleAppBarShare = useCallback(async () => {
     const selected = variants.find(v => v.id === selectedId);
@@ -290,9 +325,11 @@ const UseInConversationScreen = ({ route, navigation }) => {
             isExpanded={!!expandedIds[variant.id]}
             isSelected={variant.id === selectedId}
             isCopied={variant.id === copiedId}
+            locked={lockedIds.has(variant.id)}
             onToggle={() => toggleExpanded(variant.id)}
             onCopy={() => handleCopy(variant)}
             onShare={() => handleShare(variant)}
+            onPremiumTap={handlePremiumTap}
             colors={colors}
             typography={typography}
             layout={layout}

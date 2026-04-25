@@ -54,9 +54,11 @@ const MicroVariantCard = ({
   isExpanded,
   isSelected,
   isCopied,
+  locked,
   onToggle,
   onCopy,
   onShare,
+  onPremiumTap,
   colors,
   typography,
   layout,
@@ -76,7 +78,7 @@ const MicroVariantCard = ({
       {/* ── Header row (tappable) ────────────────────────────────────── */}
       <TouchableOpacity
         style={styles.header}
-        onPress={onToggle}
+        onPress={locked ? onPremiumTap : onToggle}
         activeOpacity={0.7}
         accessibilityRole="button"
         accessibilityLabel={variant.title}
@@ -85,12 +87,14 @@ const MicroVariantCard = ({
         <View style={styles.headerLeft}>
           {/* Coloured icon badge */}
           <View style={[styles.iconCircle, { backgroundColor: `${accent}22` }]}>
-            <Ionicons name={iconName} size={15} color={accent} />
+            <Ionicons name={locked ? 'lock-closed' : iconName} size={15} color={accent} />
           </View>
 
           <View style={styles.headerText}>
             <Text style={styles.variantTitle}>{variant.title}</Text>
-            {variant.toneTag ? (
+            {locked ? (
+              <Text style={styles.lockedTag}>{t('mv_premium_locked', lang)}</Text>
+            ) : variant.toneTag ? (
               <Text style={styles.toneTag}>{variant.toneTag}</Text>
             ) : null}
           </View>
@@ -107,18 +111,44 @@ const MicroVariantCard = ({
           </View>
         )}
 
-        {/* Chevron — only shown on accordion types */}
-        {!alwaysExpanded && (
+        {/* Lock badge or chevron */}
+        {locked ? (
+          <View style={styles.premiumBadge}>
+            <Ionicons name="sparkles" size={11} color="#E8A838" />
+            <Text style={styles.premiumBadgeText}>Premium</Text>
+          </View>
+        ) : !alwaysExpanded ? (
           <Ionicons
             name={isExpanded ? 'chevron-up' : 'chevron-down'}
             size={16}
             color={colors.textSecondary}
           />
-        )}
+        ) : null}
       </TouchableOpacity>
 
-      {/* ── Body + Actions ───────────────────────────────────────────── */}
-      {bodyVisible && (
+      {/* ── Locked body overlay ───────────────────────────────────────── */}
+      {locked && bodyVisible && (
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={onPremiumTap}
+          style={styles.lockedBody}
+        >
+          <View style={styles.divider} />
+          <View style={styles.blurredContent}>
+            <Text style={styles.blurredText} numberOfLines={3}>
+              {variant.body}
+            </Text>
+            <View style={styles.blurOverlay} />
+          </View>
+          <View style={styles.unlockRow}>
+            <Ionicons name="lock-closed" size={14} color="#E8A838" />
+            <Text style={styles.unlockText}>{t('mv_unlock_premium', lang)}</Text>
+          </View>
+        </TouchableOpacity>
+      )}
+
+      {/* ── Body + Actions (unlocked) ────────────────────────────────── */}
+      {!locked && bodyVisible && (
         <>
           <View style={styles.divider} />
 
@@ -264,6 +294,63 @@ const buildStyles = (colors, typography, layout, isDark, accent, isSelected) =>
       fontFamily: 'Inter_500Medium',
       fontSize: 12,
       color: colors.text,
+    },
+    // Locked / Premium styles
+    lockedTag: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: '#E8A838',
+      marginTop: 2,
+    },
+    premiumBadge: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      paddingHorizontal: 10,
+      paddingVertical: 4,
+      borderRadius: 12,
+      backgroundColor: isDark ? '#3A2E1A' : '#FFF8ED',
+      borderWidth: 1,
+      borderColor: '#E8A83844',
+    },
+    premiumBadgeText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 10,
+      color: '#E8A838',
+      letterSpacing: 0.3,
+    },
+    lockedBody: {
+      overflow: 'hidden',
+    },
+    blurredContent: {
+      position: 'relative',
+      paddingHorizontal: 16,
+      paddingTop: 14,
+      paddingBottom: 0,
+    },
+    blurredText: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.body,
+      color: colors.text,
+      lineHeight: 26,
+      opacity: 0.15,
+    },
+    blurOverlay: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: isDark ? 'rgba(20,18,15,0.7)' : 'rgba(255,255,255,0.7)',
+    },
+    unlockRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 6,
+      paddingVertical: 14,
+      paddingHorizontal: 16,
+    },
+    unlockText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: '#E8A838',
     },
   });
 

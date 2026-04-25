@@ -1023,9 +1023,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
                 if (contentOffset.y + layoutMeasurement.height >= contentSize.height - 60) {
                   hasReachedBottom.current = true;
-                  if (!isStoryCompleted(story.story_id)) {
-                    markStoryCompleted(story.story_id);
-                  }
+                  // Completion now triggered by navigating to SohbetteKullan
                   releasePendingBadge();
                 }
               }
@@ -1246,44 +1244,47 @@ const StoryDetailScreen = ({ route, navigation }) => {
       </Animated.ScrollView>
 
       <View style={styles.detailFooter}>
-        {/* PRIMARY: Sohbette Kullan */}
-        <TouchableOpacity
-          style={{ flex: 2 }}
-          onPress={() => {
-            trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
-              storyId: story?.story_id,
-              source: 'story_detail_footer',
-              lang,
-            });
-            navigation.navigate('SohbetteKullan', { story: localStory });
-          }}
-          accessibilityRole="button"
-          accessibilityLabel={t('story_detail_use_cta', lang)}
-        >
-          <LinearGradient
-            colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.btnPrimaryGradient}
+        {/* PRIMARY: Sohbette Kullan — main CTA with micro-copy */}
+        <View style={{ flex: 1 }}>
+          <TouchableOpacity
+            onPress={() => {
+              trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
+                storyId: story?.story_id,
+                source: 'story_detail_footer',
+                lang,
+              });
+              // Only premium users get completion; free users stay "incomplete"
+              if (isPremium && !isStoryCompleted(localStory.story_id)) {
+                markStoryCompleted(localStory.story_id);
+              }
+              navigation.navigate('SohbetteKullan', { story: localStory });
+            }}
+            accessibilityRole="button"
+            accessibilityLabel={t('story_detail_use_cta', lang)}
           >
-            <View style={styles.btnPrimary}>
-              <Text style={[styles.btnPrimaryText, { color: '#F7F3EB' }]}>
-                {t('story_detail_use_cta', lang)}
-              </Text>
-            </View>
-          </LinearGradient>
-        </TouchableOpacity>
-
-        {/* SECONDARY: Next Story */}
-        <TouchableOpacity
-          style={[styles.btnSecondaryShare, { flex: 1 }]}
-          onPress={handleNext}
-          accessibilityRole="button"
-        >
-          <Text style={styles.btnSecondaryShareText}>
-            {t('story_detail_next_secondary', lang)}
+            <LinearGradient
+              colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={[styles.btnPrimaryGradient, { height: 54 }]}
+            >
+              <View style={[styles.btnPrimary, { height: 54 }]}>
+                <Text style={[styles.btnPrimaryText, { color: '#F7F3EB', fontSize: typography.sizes.ui + 2 }]}>
+                  {t('story_detail_use_cta', lang)}
+                </Text>
+              </View>
+            </LinearGradient>
+          </TouchableOpacity>
+          <Text style={{
+            fontFamily: 'Inter_400Regular',
+            fontSize: 12,
+            color: colors.textSecondary,
+            textAlign: 'center',
+            marginTop: 6,
+          }}>
+            {t('story_detail_use_cta_sub', lang)}
           </Text>
-        </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );

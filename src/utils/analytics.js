@@ -21,6 +21,7 @@ const ANALYTICS_EVENTS = {
   USE_IN_CONVO_OPENED: 'use_in_convo_opened',
   MICRO_VARIANT_COPIED: 'micro_variant_copied',
   MICRO_VARIANT_FAVORITED: 'micro_variant_favorited',
+  STORY_VARIANT_USED: 'story_variant_used',
 };
 
 const sanitizePayload = (payload) => {

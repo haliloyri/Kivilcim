@@ -93,6 +93,29 @@ const resolveCategoryIds = async (db, list = []) => {
   return [...new Set(resolved)];
 };
 
+const migrateSortOrder = async (db) => {
+  const columns = await db.getAllAsync(`PRAGMA table_info(stories)`);
+  const hasSortOrder = columns.some((c) => c.name === 'sort_order');
+  if (hasSortOrder) return;
+
+  await db.execAsync(`ALTER TABLE stories ADD COLUMN sort_order INTEGER;`);
+
+  await db.runAsync(`
+    WITH ranked AS (
+      SELECT id, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn
+      FROM stories
+    )
+    UPDATE stories
+    SET sort_order = (SELECT rn FROM ranked WHERE ranked.id = stories.id);
+  `);
+
+  await db.execAsync(`
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_stories_sort_order ON stories(sort_order);
+  `);
+
+  console.log('migrateSortOrder: sort_order column added and populated.');
+};
+
 const migrateUserSelectedCategoriesToIds = async (db) => {
   const columns = await db.getAllAsync(`PRAGMA table_info(user_selected_categories)`);
   const hasCategoryId = columns.some((c) => c.name === 'category_id');
@@ -242,6 +265,8 @@ export const initDb = async () => {
 
     await migrateUserSelectedCategoriesToIds(db);
 
+    await migrateSortOrder(db);
+
     await populateCategoryMappings(db);
 
   } catch (error) {
@@ -310,7 +335,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
     -- Book Translations
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
-    ORDER BY s.id DESC
+    ORDER BY s.sort_order ASC
   `, [lang, lang, lang]);
 
   return rows.map(r => ({
@@ -415,7 +440,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
       OR LOWER(COALESCE(NULLIF(bt.title, ''), bt_tr.title, '')) LIKE ?
       OR LOWER(COALESCE(ct.translation, ct_tr.translation, c.category_name, '')) LIKE ?
       OR LOWER(COALESCE(sub.subcategory_name, '')) LIKE ?
-    ORDER BY rank_title ASC, rank_body ASC, rank_source ASC, s.id DESC
+    ORDER BY rank_title ASC, rank_body ASC, rank_source ASC, s.sort_order ASC
     LIMIT ${safeLimit}
   `, [
     likeQuery,

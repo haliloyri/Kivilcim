@@ -7,13 +7,13 @@ const LANGUAGE_LOGO = require('../../assets/spark_logo_de.png');
 /**
  * Returns logo size based on screen dimensions.
  * Tablets (short side >= 600dp) get a smaller percentage to avoid oversized logos.
- * Size is 2x larger than original (100% bigger).
+ * Keep the logo within the screen bounds by using a fraction of the short side.
  */
 const getLogoSize = () => {
   const { width, height } = Dimensions.get('window');
   const shortSide = Math.min(width, height);
   const isTablet = shortSide >= 600;
-  const size = isTablet ? shortSide * 1.16 : shortSide * 1.76;
+  const size = isTablet ? shortSide * 0.4 : shortSide * 0.6;
   return size;
 };
 
