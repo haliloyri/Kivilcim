@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN || secrets.EAS_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       
@@ -21,6 +21,13 @@ jobs:
       
       - name: Install EAS CLI
         run: npm install -g eas-cli
+
+      - name: Validate Expo token
+        run: |
+          if [ -z "$EXPO_TOKEN" ]; then
+            echo "Missing secret. Add EXPO_TOKEN or EAS_TOKEN in repository secrets."
+            exit 1
+          fi
       
       - name: Build iOS (Preview)
         run: eas build --platform ios --profile preview --non-interactive
