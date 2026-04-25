@@ -18,6 +18,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
+
+      - name: Install project dependencies
+        run: npm ci
       
       - name: Install EAS CLI
         run: npm install -g eas-cli
