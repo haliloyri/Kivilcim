@@ -1,0 +1,33 @@
+name: EAS Build iOS
+
+on:
+  push:
+    branches:
+      - main
+      - release/*
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install EAS CLI
+        run: npm install -g eas-cli
+      
+      - name: Authenticate to Expo
+        run: |
+          npm install -g eas-cli
+          eas login --username "${{ secrets.EXPO_USERNAME }}" --password "${{ secrets.EXPO_PASSWORD }}"
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: '0'
+      
+      - name: Build iOS (Preview)
+        run: eas build --platform ios --profile preview --non-interactive
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: '0'
