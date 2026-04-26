@@ -1,8 +1,8 @@
 /**
  * UseInConversationScreen
  *
- * "Use in Conversation" screen — shows 5 ready-made micro-variants of a story
- * (One-Liner, 30-Second, Punchline, Question, Key Contrast) so the user can
+ * "Use in Conversation" screen — shows ready-made micro-variants of a story
+ * (Punchline, 30-Second, Question, Key Contrast) so the user can
  * quickly copy or share the right format for any social context.
  *
  * Receives: route.params.story  (same shape as StoryDetailScreen)
@@ -14,7 +14,6 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  Share,
   LayoutAnimation,
   Platform,
   UIManager,
@@ -59,7 +58,7 @@ const cleanBodyText = (body) =>
     .trim();
 
 /**
- * Build the 5-variant list from a story object.
+ * Build the variant list from a story object.
  * Variants with empty body are excluded so the list is always clean.
  */
 const buildMicroVariants = (story, lang) => {
@@ -67,24 +66,15 @@ const buildMicroVariants = (story, lang) => {
   const quote      = extractMarker(body, '##');
   const lesson     = extractMarker(body, '$$');
   const reflection = extractMarker(body, '&&');
-  const hook       = story.hook || '';
+  const thirtySec  = (story.thirty_sec || '').trim();
   const clean      = cleanBodyText(body);
 
   const candidates = [
     {
-      id: 'one_liner',
-      type: 'ONE_LINER',
-      title: t('mv_one_liner', lang),
-      body: hook || clean.split('\n')[0] || '',
-      defaultExpanded: true,
-      toneTag: t('mv_tone_straight', lang),
-      contextTags: [t('mv_context_meeting', lang), t('mv_context_social', lang)],
-    },
-    {
       id: 'thirty_sec',
       type: 'THIRTY_SEC',
       title: t('mv_thirty_sec', lang),
-      body: clean.length > 320 ? clean.substring(0, 320).trimEnd() + '…' : clean,
+      body: thirtySec || (clean.length > 320 ? clean.substring(0, 320).trimEnd() + '…' : clean),
       defaultExpanded: false,
       toneTag: t('mv_tone_story', lang),
       contextTags: [t('mv_context_oneonone', lang), t('mv_context_meeting', lang)],
@@ -94,7 +84,7 @@ const buildMicroVariants = (story, lang) => {
       type: 'PUNCHLINE',
       title: t('mv_punchline', lang),
       body: lesson || quote,
-      defaultExpanded: false,
+      defaultExpanded: true,
       toneTag: t('mv_tone_bold', lang),
       contextTags: [t('mv_context_meeting', lang), t('mv_context_social', lang)],
     },
@@ -152,7 +142,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // The last-touched variant is "selected" — AppBar share uses it
+  // The last-touched variant is selected
   const [selectedId, setSelectedId] = useState(
     () => variants.find(v => v.defaultExpanded)?.id ?? variants[0]?.id ?? null,
   );
@@ -160,11 +150,11 @@ const UseInConversationScreen = ({ route, navigation }) => {
   // Shows copied checkmark for 2s
   const [copiedId, setCopiedId] = useState(null);
 
-  // Variant IDs that are premium-locked (all except ONE_LINER)
+  // Variant IDs that are premium-locked (all except PUNCHLINE)
   const lockedIds = useMemo(() => {
     if (isPremium) return new Set();
     return new Set(
-      variants.filter(v => v.type !== 'ONE_LINER').map(v => v.id),
+      variants.filter(v => v.type !== 'PUNCHLINE').map(v => v.id),
     );
   }, [variants, isPremium]);
 
@@ -205,36 +195,32 @@ const UseInConversationScreen = ({ route, navigation }) => {
     });
   }, [story?.story_id, story?.title, lang, recordVariantUsage]);
 
-  const handleShare = useCallback(async (variant) => {
+  const handleShare = useCallback((variant) => {
     setSelectedId(variant.id);
-    try {
-      // react-native Share is available on both platforms without extra deps
-      const result = await Share.share({ message: `${story.title}\n\n${variant.body}` });
-      if (result.action === Share.sharedAction) {
-        recordVariantUsage({
-          storyId: story?.story_id,
-          storyTitle: story?.title,
-          variantType: variant.type,
-          variantId: variant.id,
-          action: 'share',
-        });
-      }
-    } catch {
-      // user cancelled or share failed — no-op
-    }
-  }, [story.title, story?.story_id, recordVariantUsage]);
+    const sharePreset =
+      variant.type === 'QUESTION'
+        ? 'reflection'
+        : variant.type === 'PUNCHLINE'
+          ? 'lesson'
+          : 'quote';
 
-  const handleAppBarShare = useCallback(async () => {
-    const selected = variants.find(v => v.id === selectedId);
-    if (!selected) return;
-    try {
-      await Share.share({ message: `${story.title}\n\n${selected.body}` });
-    } catch {
-      // cancelled
-    }
-  }, [selectedId, variants, story.title]);
+    recordVariantUsage({
+      storyId: story?.story_id,
+      storyTitle: story?.title,
+      variantType: variant.type,
+      variantId: variant.id,
+      action: 'share_open',
+    });
 
-  const selectedVariant = variants.find(v => v.id === selectedId);
+    navigation.navigate('StoryDetail', {
+      story,
+      openShareModal: true,
+      sharePreset,
+      shareOverrideText: variant.body,
+      shareSource: 'use_in_conversation',
+      shareVariantType: variant.type,
+    });
+  }, [navigation, story, story?.story_id, story?.title, recordVariantUsage]);
   const displayCat = t(story.parent_cat || story.cat || '', lang);
 
   const styles = buildStyles(colors, typography, layout, isDark, insets);
@@ -269,15 +255,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
           </Text>
         </View>
 
-        <TouchableOpacity
-          onPress={handleAppBarShare}
-          disabled={!selectedVariant}
-          accessibilityLabel={t('shareBtn', lang)}
-          accessibilityRole="button"
-          style={[styles.appBarShareBtn, !selectedVariant && styles.appBarShareBtnDisabled]}
-        >
-          <Ionicons name="share-social-outline" size={22} color={colors.text} />
-        </TouchableOpacity>
+        <View style={styles.appBarRightSpacer} />
       </View>
 
       {/* ── Story Header Card ──────────────────────────────────────────── */}
@@ -394,12 +372,9 @@ const buildStyles = (colors, typography, layout, isDark, insets) =>
       textAlign: 'center',
       marginTop: 2,
     },
-    appBarShareBtn: {
-      padding: 6,
-      borderRadius: 20,
-    },
-    appBarShareBtnDisabled: {
-      opacity: 0.3,
+    appBarRightSpacer: {
+      width: 34,
+      height: 34,
     },
     // Story header
     storyHeader: {

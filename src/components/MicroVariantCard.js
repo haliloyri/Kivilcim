@@ -3,8 +3,8 @@
  *
  * A single variant card in the "Sohbette Kullan" screen.
  *
- * ONE_LINER / PUNCHLINE / ONE_WORD are always expanded (no accordion chrome).
- * THIRTY_SEC / QUESTION have a collapse-able accordion.
+ * PUNCHLINE is always expanded (no accordion chrome).
+ * THIRTY_SEC / QUESTION / ONE_WORD have a collapse-able accordion.
  *
  * Props:
  *   variant        – { id, type, title, body, toneTag? }
@@ -45,7 +45,7 @@ const TYPE_ICON = {
  * Types that skip the accordion and always show their body.
  * The header is still tappable so it marks the card as "selected".
  */
-const ALWAYS_EXPANDED_TYPES = new Set(['ONE_LINER', 'PUNCHLINE', 'ONE_WORD']);
+const ALWAYS_EXPANDED_TYPES = new Set(['PUNCHLINE']);
 
 // ─── component ───────────────────────────────────────────────────────────────
 

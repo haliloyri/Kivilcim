@@ -30,6 +30,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [shareTheme, setShareTheme] = useState('dark');
   const [shareContent, setShareContent] = useState(['quote']);
   const [shareFormat, setShareFormat] = useState('post');
+  const [shareTextOverride, setShareTextOverride] = useState('');
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const scrollY = useRef(new Animated.Value(0)).current;
   const hasReachedBottom = useRef(false);
@@ -52,6 +53,40 @@ const StoryDetailScreen = ({ route, navigation }) => {
     }
     return () => { active = false; };
   }, [localLang, story, lang]);
+
+  React.useEffect(() => {
+    if (!route.params?.openShareModal) return;
+
+    const preset = route.params?.sharePreset;
+    const overrideText = typeof route.params?.shareOverrideText === 'string'
+      ? route.params.shareOverrideText.trim()
+      : '';
+
+    if (preset) {
+      setShareContent([preset]);
+    }
+    setShareTextOverride(overrideText);
+    setShareFormat('post');
+    setShareModalVisible(true);
+
+    navigation.setParams({
+      openShareModal: false,
+      sharePreset: undefined,
+      shareOverrideText: undefined,
+      shareSource: undefined,
+      shareVariantType: undefined,
+    });
+  }, [
+    navigation,
+    route.params?.openShareModal,
+    route.params?.sharePreset,
+    route.params?.shareOverrideText,
+  ]);
+
+  const closeShareModal = () => {
+    setShareModalVisible(false);
+    setShareTextOverride('');
+  };
 
   const liked = isFavorite(story.story_id);
   const savedForLater = isStorySavedForLater(story.story_id);
@@ -150,6 +185,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
   };
 
   const getShareText = (type) => {
+    if (shareTextOverride && shareContent.length === 1 && shareContent[0] === type) {
+      return shareTextOverride;
+    }
+
     if (type === 'quote') {
       const ext = extractContent('##');
       return ext || displayQuote || displayBody.substring(0, 150) + '...';
@@ -828,14 +867,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
         animationType="slide"
         transparent={true}
         visible={shareModalVisible}
-        onRequestClose={() => setShareModalVisible(false)}
+        onRequestClose={closeShareModal}
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             {/* Header */}
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>{t('createCard', lang)}</Text>
-              <TouchableOpacity onPress={() => setShareModalVisible(false)}>
+              <TouchableOpacity onPress={closeShareModal}>
                 <Ionicons name="close" size={22} color={colors.text} />
               </TouchableOpacity>
             </View>
@@ -1001,7 +1040,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
               <Text style={styles.fontSizeBtnText}>A+</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity onPress={() => setShareModalVisible(true)}>
+          <TouchableOpacity
+            onPress={() => {
+              setShareTextOverride('');
+              setShareModalVisible(true);
+            }}
+          >
             <Ionicons name="share-social" size={22} color={colors.text} />
           </TouchableOpacity>
           <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>

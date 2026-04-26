@@ -116,6 +116,16 @@ const migrateSortOrder = async (db) => {
   console.log('migrateSortOrder: sort_order column added and populated.');
 };
 
+const migrateThirtySecColumn = async (db) => {
+  const columns = await db.getAllAsync(`PRAGMA table_info(stories)`);
+  const hasThirtySec = columns.some((c) => c.name === 'thirty_sec');
+  if (hasThirtySec) return;
+
+  await db.execAsync(`ALTER TABLE stories ADD COLUMN thirty_sec TEXT;`);
+
+  console.log('migrateThirtySecColumn: thirty_sec column added.');
+};
+
 const migrateUserSelectedCategoriesToIds = async (db) => {
   const columns = await db.getAllAsync(`PRAGMA table_info(user_selected_categories)`);
   const hasCategoryId = columns.some((c) => c.name === 'category_id');
@@ -267,6 +277,8 @@ export const initDb = async () => {
 
     await migrateSortOrder(db);
 
+    await migrateThirtySecColumn(db);
+
     await populateCategoryMappings(db);
 
   } catch (error) {
@@ -320,6 +332,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
       COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
+      COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
       COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
       c.category_name AS parent_cat_raw
     FROM stories s
@@ -344,6 +357,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
     title: r.title || '',
     body: r.body || '',
     hook: r.hook || '',
+    thirty_sec: r.thirty_sec || '',
   }));
 };
 
@@ -365,6 +379,7 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
       COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
+      COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
       COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
       c.category_name AS parent_cat_raw
     FROM stories s
@@ -390,6 +405,7 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
     title: r.title || '',
     body: r.body || '',
     hook: r.hook || '',
+    thirty_sec: r.thirty_sec || '',
   }
 };
 
@@ -417,6 +433,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
       COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
+      COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
       COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
       c.category_name AS parent_cat_raw,
       CASE WHEN LOWER(COALESCE(NULLIF(st.title, ''), st_tr.title, '')) LIKE ? THEN 0 ELSE 1 END AS rank_title,
@@ -464,6 +481,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
     title: r.title || '',
     body: r.body || '',
     hook: r.hook || '',
+    thirty_sec: r.thirty_sec || '',
   }));
 };
 

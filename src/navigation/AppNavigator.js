@@ -20,6 +20,7 @@ import ProgressScreen from '../screens/ProgressScreen';
 import LibraryScreen from '../screens/LibraryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SearchScreen from '../screens/SearchScreen';
+import UseInConversationScreen from '../screens/UseInConversationScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -311,6 +312,7 @@ export default function AppNavigator() {
             <>
               <Stack.Screen name="MainTabs" component={MainTabs} />
               <Stack.Screen name="StoryDetail" component={StoryDetailScreen} />
+              <Stack.Screen name="UseInConversation" component={UseInConversationScreen} />
               <Stack.Screen name="Search" component={SearchScreen} />
               <Stack.Screen 
                 name="Paywall" 
