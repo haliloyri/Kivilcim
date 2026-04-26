@@ -38,9 +38,9 @@ jobs:
           echo "EAS authenticated as: $ACTUAL_ACCOUNT"
           # Extract just the account name (first word before any parentheses or extra info)
           ACCOUNT_NAME=$(echo "$ACTUAL_ACCOUNT" | awk '{print $1}')
-          if [ "$ACCOUNT_NAME" != "haliloyri" ]; then
-            echo "Wrong Expo account. Expected: haliloyri, got: $ACCOUNT_NAME"
-            echo "Create token while logged in as haliloyri and update EXPO_TOKEN (or EAS_TOKEN)."
+          if [ "$ACCOUNT_NAME" != "halil-1" ]; then
+            echo "Wrong Expo account. Expected: halil-1, got: $ACCOUNT_NAME"
+            echo "Create token while logged in as halil-1 and update EXPO_TOKEN (or EAS_TOKEN)."
             exit 1
           fi
       
