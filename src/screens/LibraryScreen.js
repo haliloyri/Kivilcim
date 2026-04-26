@@ -35,7 +35,8 @@ const FavoriteCard = ({ story, onPress, colors, typography, layout, isDark, lang
         {/* Category Image Area */}
         <View style={{ height: 110, position: 'relative' }}>
           {(() => {
-            const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat);
+            const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+            if (!catImg.source) return null;
             return (
               <>
                 <Image 
@@ -43,6 +44,7 @@ const FavoriteCard = ({ story, onPress, colors, typography, layout, isDark, lang
                   style={{ 
                     width: '100%', 
                     height: '100%',
+                    opacity: isDark ? 0.22 : 1,
                     transform: [
                       { rotate: catImg.rotate },
                       { scaleX: catImg.flip ? -1 : 1 }
@@ -154,7 +156,8 @@ const HistoryCard = ({ story, onPress, colors, typography, layout, isDark, lang,
       {/* Category Thumbnail */}
       <View style={{ width: 60, height: 60, borderRadius: 8, overflow: 'hidden', marginRight: 16 }}>
         {(() => {
-          const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat);
+          const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+          if (!catImg.source) return null;
           return (
             <>
               <Image 
@@ -162,6 +165,7 @@ const HistoryCard = ({ story, onPress, colors, typography, layout, isDark, lang,
                 style={{ 
                   width: '100%', 
                   height: '100%',
+                  opacity: isDark ? 0.22 : 1,
                   transform: [
                     { rotate: catImg.rotate },
                     { scaleX: catImg.flip ? -1 : 1 }

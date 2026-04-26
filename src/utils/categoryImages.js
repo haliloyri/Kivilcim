@@ -28,6 +28,16 @@ export const CAT_STYLES = {
   'Social Skills': { rotate: '0deg', flip: true, tint: 'rgba(186, 26, 26, 0.05)' }, // Crimson Mist
 };
 
+// Dark mode variants — deeper, desaturated tints for better contrast on dark backgrounds
+export const CAT_STYLES_DARK = {
+  'Mind & Psychology': { rotate: '0deg', flip: false, tint: 'rgba(10, 20, 80, 0.55)' },
+  'Career & Success': { rotate: '0deg', flip: false, tint: 'rgba(80, 60, 8, 0.55)' },
+  'Personal Growth': { rotate: '90deg', flip: true, tint: 'rgba(5, 55, 55, 0.55)' },
+  'Science & Future': { rotate: '180deg', flip: false, tint: 'rgba(55, 40, 8, 0.50)' },
+  'Society & World': { rotate: '270deg', flip: true, tint: 'rgba(65, 28, 5, 0.55)' },
+  'Social Skills': { rotate: '0deg', flip: true, tint: 'rgba(75, 8, 8, 0.50)' },
+};
+
 // Base images
 const IMG_FINANCE = require('../../assets/categories/cat_finance.png');
 const IMG_PSYCHOLOGY = require('../../assets/categories/cat_psychology.png');
@@ -40,7 +50,6 @@ const IMG_GROWTH = require('../../assets/categories/cat_growth.png');
 const IMG_PRODUCTIVITY = require('../../assets/categories/cat_productivity.png');
 const IMG_COMMUNICATION = require('../../assets/categories/cat_communication.png');
 const IMG_BUSINESS = require('../../assets/categories/cat_business.png');
-const IMG_DEFAULT = require('../../assets/categories/cat_default.png');
 
 const PARENT_CATEGORY_IMAGE_MAP = {
   'Mind & Psychology': IMG_PSYCHOLOGY,
@@ -49,7 +58,6 @@ const PARENT_CATEGORY_IMAGE_MAP = {
   'Science & Future': IMG_SCIENCE,
   'Society & World': IMG_PHILOSOPHY,
   'Social Skills': IMG_COMMUNICATION,
-  'Tümü': IMG_DEFAULT,
 };
 
 const PARENT_CATEGORY_ALIASES = {
@@ -281,26 +289,25 @@ const categoryImageMap = {
   'Social Skills': IMG_COMMUNICATION,
 
   // ── All ──
-  'Tümü': IMG_DEFAULT,
-  'All': IMG_DEFAULT,
-  'Todo': IMG_DEFAULT,
-  'Alle': IMG_DEFAULT,
+  'Tümü': null,
+  'All': null,
+  'Todo': null,
+  'Alle': null,
 };
 
 /**
- * Returns the image source for a given category name.
- * Falls back to a default image if the category is not found.
- */
-/**
  * Returns the image source and visual style for a given category name.
  * Handles both sub-categories and Parent Groups.
+ * @param {string} catName - Category name
+ * @param {boolean} isDark - Whether dark mode is active
  */
-export const getCategoryImage = (catName) => {
-  if (!catName) return { source: IMG_DEFAULT, rotate: '0deg', flip: false, tint: 'transparent' };
+export const getCategoryImage = (catName, isDark = false) => {
+  if (!catName) return { source: null, rotate: '0deg', flip: false, tint: 'transparent' };
 
   const normalizedKey = PARENT_CATEGORY_ALIASES[catName] || catName;
-  const source = PARENT_CATEGORY_IMAGE_MAP[normalizedKey] || categoryImageMap[normalizedKey] || IMG_DEFAULT;
-  const style = CAT_STYLES[normalizedKey] || { rotate: '0deg', flip: false, tint: 'transparent' };
+  const source = PARENT_CATEGORY_IMAGE_MAP[normalizedKey] ?? categoryImageMap[normalizedKey] ?? null;
+  const styleMap = isDark ? CAT_STYLES_DARK : CAT_STYLES;
+  const style = styleMap[normalizedKey] || { rotate: '0deg', flip: false, tint: 'transparent' };
 
   return { source, ...style };
 };

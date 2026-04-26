@@ -1109,8 +1109,12 @@ const HomeScreen = ({ navigation }) => {
                   onPress={() => setActiveFilter(item.key)}
                 >
                   <View style={{ width: 20, height: 20, borderRadius: 6, overflow: 'hidden' }}>
-                    <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
-                    <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                    {catImg.source ? (
+                      <>
+                        <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
+                        <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                      </>
+                    ) : null}
                   </View>
                   <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null]}>
                     {item.label}

@@ -42,6 +42,25 @@ Kıvılcım, her gün size farklı kategorilerden (Finans, Psikoloji, Felsefe, L
    npx expo start
    ```
 
+## Android APK Build (Expo + EAS)
+
+1. Expo hesabına girin:
+   ```bash
+   eas login
+   ```
+2. APK build'i başlatın:
+   ```bash
+   npm run build:apk
+   ```
+3. Expo dev client APK gerekiyorsa:
+   ```bash
+   npm run build:apk:dev
+   ```
+4. Local build gerekiyorsa:
+   ```bash
+   npm run build:apk:local
+   ```
+
 ---
 
 <a name="english-version"></a>

@@ -296,8 +296,12 @@ const ProfileScreen = ({ navigation }) => {
               return (
                 <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive, { flexDirection: 'row', alignItems: 'center', gap: 8 }]}> 
                   <View style={{ width: 18, height: 18, borderRadius: 6, overflow: 'hidden' }}>
-                    <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
-                    <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                    {catImg.source ? (
+                      <>
+                        <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
+                        <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                      </>
+                    ) : null}
                   </View>
                   <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>
                     {p.name}

@@ -168,7 +168,12 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       ]}
     >
       {isHero && (() => {
-        const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat);
+        const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+        if (!catImg.source) return (
+          <View style={StyleSheet.absoluteFill}>
+            <View style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'rgba(0,0,0,0.12)' : colors.overlaySoft }]} />
+          </View>
+        );
         return (
           <View style={StyleSheet.absoluteFill}>
             <Image 
@@ -176,6 +181,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
               style={{ 
                 width: '100%', 
                 height: '100%',
+                opacity: isDark ? 0.22 : 1,
                 transform: [
                   { rotate: catImg.rotate },
                   { scaleX: catImg.flip ? -1 : 1 }
@@ -183,7 +189,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
               }}
               resizeMode="cover"
             />
-            <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.2 }]} />
+            <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint }]} />
             <View style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'rgba(0,0,0,0.12)' : colors.overlaySoft }]} />
           </View>
         );

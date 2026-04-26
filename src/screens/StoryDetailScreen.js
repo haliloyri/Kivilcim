@@ -1034,7 +1034,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
       >
         <View style={styles.storyHero}> 
           {(() => {
-            const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat);
+            const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+            if (!catImg.source) return null;
             return (
               <>
                 <Image 
@@ -1042,7 +1043,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   style={[StyleSheet.absoluteFill, {
                     width: '100%',
                     height: '100%',
-                    opacity: 0.4,
+                    opacity: isDark ? 0.22 : 0.40,
                     transform: [
                       { rotate: catImg.rotate },
                       { scaleX: catImg.flip ? -1 : 1 }
@@ -1050,7 +1051,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   }]}
                   resizeMode="cover"
                 />
-                <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.2 }]} />
+                <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint }]} />
               </>
             );
           })()}

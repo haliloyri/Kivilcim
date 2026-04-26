@@ -232,6 +232,7 @@ const OnboardingScreen = ({ navigation }) => {
     },
     catTile: {
       width: catTileWidth,
+      minHeight: isSmallPhone ? 56 : 60,
       paddingVertical: isSmallPhone ? 12 : isPhone ? 14 : 16,
       paddingHorizontal: isSmallPhone ? 10 : isPhone ? 12 : 16,
       borderRadius: 16,
@@ -247,6 +248,7 @@ const OnboardingScreen = ({ navigation }) => {
       fontFamily: 'Inter_400Regular',
       fontSize: isSmallPhone ? 12 : isPhone ? 13 : 14,
       color: colors.text,
+      lineHeight: isSmallPhone ? 16 : 18,
     },
     catTileTextSelected: {
       fontFamily: 'Inter_500Medium',
@@ -483,25 +485,27 @@ const OnboardingScreen = ({ navigation }) => {
               activeOpacity={0.7}
             >
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: isSmallPhone ? 6 : 8, flex: 1 }}>
-                <View style={{
-                  width: isSmallPhone ? 28 : 32,
-                  height: isSmallPhone ? 28 : 32,
-                  borderRadius: 8,
-                  backgroundColor: sel ? `${colors.primary}16` : colors.background,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  overflow: 'hidden',
-                }}>
-                  <Image
-                    source={getCategoryImage(categoryRawName).source}
-                    style={{ width: '100%', height: '100%' }}
-                    resizeMode="cover"
-                  />
-                </View>
+                {getCategoryImage(categoryRawName).source ? (
+                  <View style={{
+                    width: isSmallPhone ? 28 : 32,
+                    height: isSmallPhone ? 28 : 32,
+                    borderRadius: 8,
+                    backgroundColor: sel ? `${colors.primary}16` : colors.background,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    overflow: 'hidden',
+                    flexShrink: 0,
+                  }}>
+                    <Image
+                      source={getCategoryImage(categoryRawName).source}
+                      style={{ width: '100%', height: '100%' }}
+                      resizeMode="cover"
+                    />
+                  </View>
+                ) : null}
                 <Text
                   style={[s.catTileText, sel && s.catTileTextSelected, { flex: 1 }]}
-                  numberOfLines={1}
-                  ellipsizeMode="tail"
+                  numberOfLines={2}
                 >
                   {categoryName}
                 </Text>
