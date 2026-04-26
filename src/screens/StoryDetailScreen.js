@@ -1067,7 +1067,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
                 if (contentOffset.y + layoutMeasurement.height >= contentSize.height - 60) {
                   hasReachedBottom.current = true;
-                  // Completion now triggered by navigating to SohbetteKullan
+                  // Completion now triggered by navigating to UseInConversation
                   releasePendingBadge();
                 }
               }
@@ -1302,7 +1302,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
               if (isPremium && !isStoryCompleted(localStory.story_id)) {
                 markStoryCompleted(localStory.story_id);
               }
-              navigation.navigate('SohbetteKullan', { story: localStory });
+              navigation.navigate('UseInConversation', { story: localStory });
             }}
             accessibilityRole="button"
             accessibilityLabel={t('story_detail_use_cta', lang)}

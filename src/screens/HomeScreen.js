@@ -1108,14 +1108,12 @@ const HomeScreen = ({ navigation }) => {
                   style={[styles.catPill, isActive ? styles.catPillActive : null, { flexDirection: 'row', alignItems: 'center', gap: 8 }]}
                   onPress={() => setActiveFilter(item.key)}
                 >
-                  <View style={{ width: 20, height: 20, borderRadius: 6, overflow: 'hidden' }}>
-                    {catImg.source ? (
-                      <>
-                        <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
-                        <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
-                      </>
-                    ) : null}
-                  </View>
+                  {catImg.source ? (
+                    <View style={{ width: 20, height: 20, borderRadius: 6, overflow: 'hidden' }}>
+                      <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
+                      <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                    </View>
+                  ) : null}
                   <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null]}>
                     {item.label}
                   </Text>
@@ -1243,7 +1241,7 @@ const HomeScreen = ({ navigation }) => {
                                     if (isPremium && !isStoryCompleted(story.story_id)) {
                                       markStoryCompleted(story.story_id);
                                     }
-                                    navigation.navigate('SohbetteKullan', { story });
+                                    navigation.navigate('UseInConversation', { story });
                                   }}
                                   activeOpacity={0.85}
                                 >
