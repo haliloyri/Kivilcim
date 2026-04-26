@@ -29,21 +29,20 @@ const BADGE_SOUND_ASSET = require('../../assets/sounds/badge.wav');
 function MainTabs() {
   const { colors, typography, layout, isDark, lang } = useTheme();
   const insets = useSafeAreaInsets();
-  const androidBottomInset = Platform.OS === 'android' ? Math.max(insets.bottom, 18) : insets.bottom;
+  const androidBottomInset = Platform.OS === 'android' ? Math.max(insets.bottom, 12) : insets.bottom;
 
   return (
     <Tab.Navigator
-      initialRouteName="HomeTab"
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
           backgroundColor: isDark ? '#131311' : '#fcf9f4',
           borderTopWidth: layout.borderWidth,
           borderTopColor: isDark ? '#4A3F33' : '#e0c0b2',
-          height: 62 + androidBottomInset,
+          height: 60 + androidBottomInset,
           paddingBottom: androidBottomInset,
           paddingTop: 10,
-          marginBottom: Platform.OS === 'android' ? 6 : 0,
+          marginBottom: Platform.OS === 'android' ? 4 : 0,
         },
         tabBarActiveTintColor: '#823b18',
         tabBarInactiveTintColor: isDark ? '#A89A84' : '#594238',
@@ -100,7 +99,6 @@ function MainTabs() {
 }
 
 import LaunchScreen from '../screens/LaunchScreen';
-import UseInConversationScreen from '../screens/UseInConversationScreen';
 
 export default function AppNavigator() {
   const { isOnboarded, isLoadingUserData, activeBadgeModal, closeBadgeModal } = useUserData();
@@ -219,7 +217,7 @@ export default function AppNavigator() {
   const styles = StyleSheet.create({
     modalOverlay: {
       flex: 1,
-      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.24)',
+      backgroundColor: 'rgba(0,0,0,0.5)',
       justifyContent: 'center',
       alignItems: 'center',
       padding: 24,
@@ -313,7 +311,6 @@ export default function AppNavigator() {
             <>
               <Stack.Screen name="MainTabs" component={MainTabs} />
               <Stack.Screen name="StoryDetail" component={StoryDetailScreen} />
-              <Stack.Screen name="SohbetteKullan" component={UseInConversationScreen} />
               <Stack.Screen name="Search" component={SearchScreen} />
               <Stack.Screen 
                 name="Paywall" 

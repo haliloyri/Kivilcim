@@ -6,9 +6,9 @@
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#131311",
-    "icon": "./assets/spark_launch.png",
+    "icon": "./assets/spark_logo.png",
     "splash": {
-      "image": "./assets/spark_launch.png",
+      "image": "./assets/spark_logo.png",
       "backgroundColor": "#131311",
       "resizeMode": "contain"
     },
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/spark_launch.png",
+        "foregroundImage": "./assets/spark_logo.png",
         "backgroundColor": "#131311"
       },
       "package": "com.kivilcim.app"

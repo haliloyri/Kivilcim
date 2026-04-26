@@ -1,137 +1,236 @@
-# Spark Task Checklist
+Aşağıda **Claude Code’a doğrudan task olarak verebileceğin**, uygulamanda **psikolojik fiyat çerçevesini gerçekten çalıştırmak için** yapman gereken tüm değişiklikleri kapsayan **detaylı ve uygulanabilir bir TODO list** var.
 
-Bu task setinin mantigi:
-- [ ] Tum hikayelerin yaklasik 3 dakikalik oldugu varsayimini netlestir
-- [ ] Onboarding secimini hikaye uzunlugu degil, gunluk seans butcesi olarak konumlandir
-- [ ] Sure eslemesini urun genelinde sabitle:
-	- [ ] 3 dk = 1 hikaye
-	- [ ] 6 dk = 2 hikaye
-	- [ ] 9 dk = 3 hikaye
+Bu liste:
 
-## 1. Onboarding Metnini Guncelle
-- [ ] Onboarding sorusunu "Bugun ne kadar zaman ayirabilirsin?" olarak guncelle
-- [ ] Sure seceneklerini 3 dk, 6 dk, 9 dk olarak degistir
-- [ ] Alt metinleri guncelle
-	- [ ] 3 dk = 1 hikaye
-	- [ ] 6 dk = 2 hikaye
-	- [ ] 9 dk = 3 hikaye
-- [ ] Onboarding tamamlama ekraninda secime gore dinamik ozet goster
-- [ ] Metinlerin i18n tarafina eklendigini kontrol et
+*   ✅ *Yeni özellik şişirmeden*
+*   ✅ *Mevcut mimariyi bozmadan*
+*   ✅ *Premium fiyatını zihinde savunulur hale getirecek*
 
-Kod yuzeyi:
-- [ ] OnboardingScreen.js
-- [ ] i18n.js
+şekilde hazırlanmıştır.
 
-## 2. Tercih Modelini Sadelestir
-- [ ] Kaydedilen tercih nesnesine `minutes` alani ekle
-- [ ] `dailyStoryTarget` alani ekle veya turet
-	- [ ] 3 -> 1
-	- [ ] 6 -> 2
-	- [ ] 9 -> 3
+***
 
-Kod yuzeyi:
-- [ ] UserDataContext.js
+# ✅ CLAUDE CODE – PRODUCT & UX CHANGE TODO LIST
 
-## 3. Ana Ekranda Gercek Kisisellestirme Yap
-- [ ] Home ekraninda `dailyStoryTarget` hesapla
-- [ ] "Bugun senin icin" modulu ekle
-- [ ] 3 dk secen kullaniciya 1 ana oneri goster
-- [ ] 6 dk secen kullaniciya 2 hikayelik akis goster
-- [ ] 9 dk secen kullaniciya 3 hikayelik akis goster
-- [ ] Oneri modulu kategori tercihlerini korusun
-- [ ] Oneriler secilen kategorilerden beslensin
+## Amaç: Aylık / Yıllık fiyatı **psikolojik olarak meşru** kılmak
 
-Kod yuzeyi:
-- [ ] HomeScreen.js
-- [ ] UserDataContext.js
+***
 
-## 4. Gunluk Hedef Mantigini Ekle
-- [ ] Gunluk hedefi hikaye adedi olarak tanimla
-- [ ] Progress ekranina bugunku hedef karti ekle
-	- [ ] 1/1 senaryosunu goster
-	- [ ] 1/2 senaryosunu goster
-	- [ ] 2/3 senaryosunu goster
-- [ ] Hedef tamamlaninca kucuk basari mesaji goster
-- [ ] Gunluk hedef hesaplamasinin okuma gecmisi ile uyumlu oldugunu kontrol et
+## 🧭 GLOBAL AMAÇ (Context – Claude’a söyle)
 
-Kod yuzeyi:
-- [ ] ProgressScreen.js
-- [ ] UserDataContext.js
+> Uygulama artık “hikâye okunan” değil,  
+> **“gerçek hayatta kullanılan cümleler üreten”** bir ürün olacak.  
+> Premium, içerik değil **sosyal etki** satar.
 
-## 5. Bildirimleri Zaman Butcesine Gore Kisisellestir
-- [ ] Onboarding icine bildirim zamani tercihi ekle
-- [ ] Basit zaman pencereleri tanimla
-	- [ ] Sabah
-	- [ ] Oglen
-	- [ ] Aksam
-- [ ] Schedule fonksiyonunu kullanici tercih ettigi saate gore calisacak hale getir
-- [ ] Bildirim metinlerini seans butcesine gore kisisellestir
-	- [ ] 3 dk = "Bugun 1 kisa hikaye icin zamanin var"
-	- [ ] 6 dk = "Bugunku 2 hikayelik akisin hazir"
-	- [ ] 9 dk = "Bugun icin 3 hikayelik planin seni bekliyor"
-- [ ] Tercih degisince eski bildirimleri iptal et
-- [ ] Yeni bildirim schedule kaydini olustur
+***
 
-Kod yuzeyi:
-- [ ] notifications.js
-- [ ] App.js
-- [ ] OnboardingScreen.js
+## TODO 1 — PRIMARY USER FLOW’U DEĞİŞTİR
 
-## 6. Profilde Tercihleri Duzenlenebilir Yap
-- [ ] Profil ekranina okuma hedefi duzenleme alani ekle
-- [ ] Profil ekranina bildirim saati duzenleme alani ekle
-- [ ] Mevcut tercihleri ozet olarak goster
-	- [ ] Gunluk hedef: 2 hikaye
-	- [ ] Hatirlatma: 20:30
-- [ ] Tercih degisikliginin ayni oturumda uygulandigini kontrol et
+**(En kritik değişiklik – yapılmazsa diğerleri çalışmaz)**
 
-Kod yuzeyi:
-- [ ] ProfileScreen.js
+*   [ ] Home Screen’in ana CTA’sını değiştir
+    *   ❌ “Günün Hikâyesi”
+    *   ✅ **“Bugün Ne Söyleyeceksin?”**
 
-## 7. Ilk Oturum Deneyimini Guclendir
-- [x] Onboarding sonrasi kullaniciyi hedefe uygun onerilere yonlendir
-- [x] Acilista secime gore mesaj goster
-	- [x] "Bugun senin icin 2 hikaye hazirladik"
-- [x] Ilk hikaye acilma oranini artirmak icin CTAyi netlestir
-- [x] Onboarding sonrasi gecisin teknik olarak dogru ekrana gittigini kontrol et
+*   [ ] Home’daki her hikâye kartında:
+    *   “Sohbette Kullanılabilir” etiketi ekle
+    *   Okuma süresini geri plana al
 
-Kod yuzeyi:
-- [x] OnboardingScreen.js
-- [x] AppNavigator.js
-- [x] HomeScreen.js
-- [x] UserDataContext.js
+*   [ ] Default başarı anını değiştir:
+    *   ❌ “Hikâyeyi okudu”
+    *   ✅ **“Sohbette Kullan sayfasına geçti”**
 
-## 8. Analytics Ekle
-- [x] `onboarding_time_budget_selected`
-- [x] `onboarding_notification_time_selected`
-- [x] `personalized_feed_shown`
-- [x] `personalized_story_opened`
-- [x] `daily_target_completed`
-- [x] `notification_scheduled`
-- [x] `notification_opened`
-- [x] `reminder_time_changed`
-- [x] Event isimleri ve payload alanlarini dokumante et
+👉 **Amaç:** Fiyat, okuma değil *kullanım* üzerinden savunulsun.
 
-## 9. Kabul Kriterlerini Yaz
-- [x] 3 dk secen kullanici ana ekranda 1 ana oneri gorur
-- [x] 6 dk secen kullanici 2 hikayelik oneri seti gorur
-- [x] 9 dk secen kullanici 3 hikayelik oneri seti gorur
-- [x] Bildirim zamani secen kullanici icin bildirim sadece o tercih edilen saat civarinda planlanir
-- [x] Kullanici hedefini degistirince ana ekran oneri adedi ayni oturumda guncellenir
-- [x] Eski kullanicilar migration sonrasinda hatasiz sekilde varsayilan hedef alir
+***
 
-## 10. QA Checklist
-- [x] Yeni kullanici 3 dk sectiginde dogru hedef geliyor mu
-- [x] 6 dk icin oneri adedi dogru mu
-- [x] 9 dk icin oneri adedi dogru mu
-- [x] Kategori filtresi ile hedef birlikte calisiyor mu
-- [x] Bildirim zamani degisince eski plan siliniyor mu
-- [x] Uygulama yeniden acildiginda tercih korunuyor mu
+## TODO 2 — STORY DETAIL EKRANINI “YARIM BIRAK”
 
-## Onerilen Uygulama Sirasi
-- [ ] 1. Onboarding metni ve tercih modeli
-- [ ] 2. Home kisilestirme
-- [ ] 3. Gunluk hedef ve Progress guncellemesi
-- [ ] 4. Bildirim zamani tercihi ve schedule yapisi
-- [ ] 5. Profil duzenleme
-- [ ] 6. Analytics, kabul kriterleri ve QA
+**(Bilinçli eksiklik yarat)**
+
+*   [ ] Hikâye detay ekranında:
+    *   Okuma ve ders kısmı kalsın ✅
+    *   Ama **asıl vurgu CTA’da olsun**
+
+*   [ ] Ana CTA:
+    *   🗣 **Sohbette Kullan**
+    *   Alt micro-copy:
+        > “Bu hikâyeyi gerçek hayatta nasıl söylersin?”
+
+*   [ ] Free kullanıcı için:
+    *   Hikâye → tamamlanmış sayılmasın
+    *   Completion sinyali **SOHBETTE KULLAN’a geçiş** olsun
+
+👉 **Amaç:** Free kullanıcı “tam kullanmadım” hissiyle kalsın.
+
+***
+
+## TODO 3 — “SOHBETTE KULLAN” EKRANINI PRODUCT HALİNE GETİR
+
+*   [ ] Bu ekranı secondary değil **core screen** olarak tanımla
+
+*   [ ] Aşağıdaki varyantları sırayla render et:
+    1.  Tek Cümle (Free açık)
+    2.  30 Sn Versiyon (Premium kilit)
+    3.  Vurucu Ders (Premium kilit)
+    4.  Sohbet Açan Soru (Premium kilit)
+    5.  Kapanış Cümlesi (Premium kilit)
+
+*   [ ] Kilitli alanlar:
+    *   Bulanık içerik
+    *   Net açıklama:
+        > “Bu versiyon Premium’da”
+
+👉 **Amaç:** Premium = *hikâyeyi anlatabilme yeteneği*
+
+***
+
+## TODO 4 — KULLANIM SİNYALİNİ APP İÇİNE AL
+
+**(Fiyatın en güçlü savunması)**
+
+*   [ ] Aşağıdaki aksiyonları “kullanım” olarak işaretle:
+    *   Copy
+    *   Share
+    *   “Bunu kullandım” (opsiyonel)
+
+*   [ ] Local veya backend event:
+    *   event: `story_variant_used`
+
+*   [ ] Premium kullanıcıya:
+    *   “Son kullandıkların” listesi oluştur
+
+👉 **Amaç:**
+
+> “Ben buna para verdim ve gerçekten kullandım.”
+
+***
+
+## TODO 5 — 5 PREMIUM KISITI TEKNİK OLARAK ENTEGRE ET
+
+### 🔒 KISIT 1 — DERİNLİK
+
+*   [ ] Free → yalnızca tek cümle
+*   [ ] Premium → tüm varyantlar
+
+***
+
+### 🔒 KISIT 2 — BAĞLAM
+
+*   [ ] Free → açıklamasız metin
+*   [ ] Premium → etiketler ekle:
+    *   “Toplantıda”
+    *   “1:1 görüşmede”
+    *   “Arkadaş sohbetinde”
+    *   “Sunum açılışında”
+
+👉 *Yanlış yerde yanlış laf etme korkusu = upgrade trigger*
+
+***
+
+### 🔒 KISIT 3 — KOPYALA / PAYLAŞ
+
+*   [ ] Free:
+    *   Copy butonu disabled
+    *   Tooltip:
+        > “Kullanmak için Premium”
+
+*   [ ] Premium:
+    *   Tek tık copy/share
+
+***
+
+### 🔒 KISIT 4 — HAFIZA
+
+*   [ ] Free:
+    *   History yok
+    *   Favorites yok
+
+*   [ ] Premium:
+    *   Favori varyantlar
+    *   Kullanım geçmişi
+
+👉 *İptal etmeyi zorlaştırır*
+
+***
+
+### 🔒 KISIT 5 — İTİBAR (PRIVATE METRICS)
+
+*   [ ] Premium kullanıcıya özel:
+    *   “Bu hafta 3 sohbet başlattın”
+    *   “Toplam 12 kullandın”
+
+*   [ ] Free kullanıcı:
+    *   Bu metrikleri göremez
+
+***
+
+## TODO 6 — PAYWALL’U YANLIŞ YERDEN KALDIR
+
+*   [ ] Okuma ekranına paywall koyma ❌
+
+*   [ ] Paywall’u şu anlarda tetikle:
+    *   Kilitli varyanta tıklanınca
+    *   Copy butonuna basılınca
+
+*   [ ] Paywall başlığı:
+    > “Okumak değil, kullanmak fark yaratır.”
+
+👉 **Amaç:**  
+Premium = *aksiyon sırasında* gerekli hissettirmek
+
+***
+
+## TODO 7 — AYLIK / YILLIK PAKETLERİ DAVRANIŞSAL AYIR
+
+*   [ ] Aylık paket micro-copy:
+    > “Bir ay boyunca sohbetlerinde dene.”
+
+*   [ ] Yıllık paket micro-copy:
+    > “Bu yıl söylediklerin rastgele olmayacak.”
+
+*   [ ] Yıllık paketi:
+    *   “Alışkanlık”
+    *   “Süreklilik”
+        diliyle çerçevele
+
+***
+
+## TODO 8 — İPTAL KORKUSUNU NAZİKÇE HATIRLAT
+
+*   [ ] İptal ekranında göster:
+    *   Favoriler
+    *   Kullanılan varyant sayısı
+
+*   [ ] Micro-copy:
+    > “Premium kapanırsa bu liste silinir.”
+
+👉 **Kaybedilecek şey görünür olmalı**
+
+***
+
+## TODO 9 — TEK CÜMLELİK MARKA GERÇEĞİNİ SABİTLE
+
+Uygulamanın 2–3 yerinde aynı cümle geçsin:
+
+> **“Kıvılcım Premium, daha çok okuman için değil;  
+> konuşurken daha az düşünüp daha çok etki bırakman için.”**
+
+👉 Bu cümle **fiyatın özeti**dir.
+
+***
+
+## ✅ SON KONTROL (Claude’dan iste)
+
+*   [ ] Free kullanıcı:
+    *   Uygulamayı seviyor mu?
+    *   Ama eksik hissediyor mu?
+
+*   [ ] Premium kullanıcı:
+    *   “Bu paraya değiyor” diyebilir mi?
+    *   İptal ederken zorlanır mı?
+
+Eğer cevaplar **EVET** ise:
+👉 fiyat **psikolojik olarak savunulabiliyor** demektir.
+
+
