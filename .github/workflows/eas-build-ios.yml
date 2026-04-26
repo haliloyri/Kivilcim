@@ -1,10 +1,6 @@
 name: EAS Build iOS
 
 on:
-  push:
-    branches:
-      - main
-      - release/*
   workflow_dispatch:
 
 jobs:
