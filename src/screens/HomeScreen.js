@@ -1233,6 +1233,24 @@ const HomeScreen = ({ navigation }) => {
                       )}
                     </TouchableOpacity>
 
+                    {isDailyPanelCollapsed && isDailyComplete && (
+                      <View style={{ paddingHorizontal: 16, paddingVertical: 12 }}>
+                        <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginBottom: 8 }}>
+                          {t('home_daily_complete_summary', lang) || 'Today\'s stories read:'}
+                        </Text>
+                        {panelStories.slice(0, 2).map((story, idx) => (
+                          <Text key={story.story_id} style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.text, lineHeight: 18 }}>
+                            {idx + 1}. {story.title}
+                          </Text>
+                        ))}
+                        {panelStories.length > 2 && (
+                          <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 4 }}>
+                            +{panelStories.length - 2} {t('more', lang) || 'more'}
+                          </Text>
+                        )}
+                      </View>
+                    )}
+
                     {!isDailyPanelCollapsed && !isDailyComplete && (
                       <View style={styles.dailyPanelStoriesWrap}>
                         {panelStories.map((story, storyIdx) => {

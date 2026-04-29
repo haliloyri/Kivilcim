@@ -167,42 +167,41 @@ const MicroVariantCard = ({
 
           <Text style={styles.body}>{variant.body}</Text>
 
-          <View style={styles.actions}>
-            {/* Copy button */}
-            <TouchableOpacity
-              style={[styles.actionBtn, isCopied && { backgroundColor: accent, borderColor: accent }]}
-              onPress={onCopy}
-              accessibilityRole="button"
-              accessibilityLabel={isCopied ? t('mv_copied', lang) : t('mv_copy', lang)}
-            >
-              <Ionicons
-                name={isCopied ? 'checkmark' : 'copy-outline'}
-                size={13}
-                color={isCopied ? '#fff' : colors.text}
-              />
-              <Text style={[styles.actionBtnText, isCopied && { color: '#fff' }]}>
-                {isCopied ? t('mv_copied', lang) : t('mv_copy', lang)}
-              </Text>
-            </TouchableOpacity>
+          <View style={styles.actionsContainer}>
+            <View style={styles.actions}>
+              {/* Copy button - icon only */}
+              <TouchableOpacity
+                style={[styles.actionBtn, styles.iconOnlyBtn, isCopied && { backgroundColor: accent, borderColor: accent }]}
+                onPress={onCopy}
+                accessibilityRole="button"
+                accessibilityLabel={isCopied ? t('mv_copied', lang) : t('mv_copy', lang)}
+              >
+                <Ionicons
+                  name={isCopied ? 'checkmark' : 'copy-outline'}
+                  size={15}
+                  color={isCopied ? '#fff' : colors.text}
+                />
+              </TouchableOpacity>
 
-            {/* Share button */}
-            <TouchableOpacity
-              style={styles.actionBtn}
-              onPress={onShare}
-              accessibilityRole="button"
-              accessibilityLabel={t('shareBtn', lang)}
-            >
-              <Ionicons name="share-social-outline" size={13} color={colors.text} />
-              <Text style={styles.actionBtnText}>{t('shareBtn', lang)}</Text>
-            </TouchableOpacity>
+              {/* Share button - icon only */}
+              <TouchableOpacity
+                style={[styles.actionBtn, styles.iconOnlyBtn]}
+                onPress={onShare}
+                accessibilityRole="button"
+                accessibilityLabel={t('shareBtn', lang)}
+              >
+                <Ionicons name="share-social-outline" size={15} color={colors.text} />
+              </TouchableOpacity>
+            </View>
 
+            {/* Mark as Used button - full button at bottom right */}
             <TouchableOpacity
-              style={[styles.actionBtn, { borderColor: `${accent}66` }]}
+              style={[styles.markUsedBtn, { borderColor: `${accent}66`, backgroundColor: isCopied ? 'transparent' : colors.backgroundDark }]}
               onPress={onMarkUsed}
               accessibilityRole="button"
               accessibilityLabel={t('mv_mark_used', lang)}
             >
-              <Ionicons name="checkmark-done-outline" size={13} color={accent} />
+              <Ionicons name="checkmark" size={16} color={accent} />
               <Text style={[styles.actionBtnText, { color: accent }]}>{t('mv_mark_used', lang)}</Text>
             </TouchableOpacity>
           </View>
@@ -296,11 +295,14 @@ const buildStyles = (colors, typography, layout, isDark, accent, isSelected) =>
       paddingTop: 14,
       paddingBottom: 10,
     },
+    actionsContainer: {
+      paddingHorizontal: 16,
+      paddingBottom: 14,
+      gap: 8,
+    },
     actions: {
       flexDirection: 'row',
       gap: 8,
-      paddingHorizontal: 16,
-      paddingBottom: 14,
     },
     actionBtn: {
       flexDirection: 'row',
@@ -312,6 +314,21 @@ const buildStyles = (colors, typography, layout, isDark, accent, isSelected) =>
       backgroundColor: isDark ? '#2A2520' : '#F0EAE1',
       borderWidth: 1,
       borderColor: colors.border,
+    },
+    iconOnlyBtn: {
+      flex: 1,
+      justifyContent: 'center',
+      paddingHorizontal: 12,
+    },
+    markUsedBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      paddingHorizontal: 14,
+      paddingVertical: 8,
+      borderRadius: 20,
+      borderWidth: 1,
+      alignSelf: 'flex-end',
     },
     actionBtnText: {
       fontFamily: 'Inter_500Medium',

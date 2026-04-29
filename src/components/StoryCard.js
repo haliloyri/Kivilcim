@@ -249,14 +249,8 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
 
         <View style={styles.cardFooter}>
           <View style={{ flexShrink: 1, paddingRight: 8 }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginBottom: isCompact ? 2 : 0 }}>
-              <Ionicons name="chatbubbles-outline" size={11} color={colors.primary} />
-              <Text style={[styles.cardMeta, { color: colors.primary, fontFamily: 'Inter_500Medium', fontSize: 11 }]} numberOfLines={1}>
-                {t('mv_usable_badge', lang)}
-              </Text>
-            </View>
             {!isCompact && (
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2, opacity: 0.6 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, opacity: 0.6 }}>
                 <Ionicons name="time-outline" size={10} color={colors.textSecondary} />
                 <Text style={[styles.cardMeta, { color: colors.textSecondary, fontSize: 10 }]} numberOfLines={1}>
                   {story.min} {t('minLabel', lang)} • {displaySrc}

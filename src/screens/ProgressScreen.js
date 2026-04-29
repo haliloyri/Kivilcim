@@ -255,6 +255,7 @@ const ProgressScreen = ({ navigation }) => {
         const ratio = target > 0 ? Math.min(current / target, 1) : 0;
         return { ...b, current, target, ratio, remaining: Math.max(target - current, 0) };
       })
+      .filter((b) => b.ratio < 1) // Only show badges that are NOT at 100%
       .sort((a, b) => b.ratio - a.ratio)[0] || null;
   }, [badges, badgeProgressMeta]);
 

@@ -132,15 +132,6 @@ const buildMicroVariants = (story, lang) => {
 
   const candidates = [
     {
-      id: 'thirty_sec',
-      type: 'THIRTY_SEC',
-      title: t('mv_thirty_sec', lang),
-      body: thirtySec || (clean.length > 320 ? clean.substring(0, 320).trimEnd() + '…' : clean),
-      defaultExpanded: false,
-      toneTag: t('mv_tone_story', lang),
-      contextTags: [t('mv_context_oneonone', lang), t('mv_context_meeting', lang)],
-    },
-    {
       id: 'punchline',
       type: 'PUNCHLINE',
       title: t('mv_punchline', lang),
@@ -148,6 +139,15 @@ const buildMicroVariants = (story, lang) => {
       defaultExpanded: true,
       toneTag: t('mv_tone_bold', lang),
       contextTags: [t('mv_context_meeting', lang), t('mv_context_social', lang)],
+    },
+    {
+      id: 'thirty_sec',
+      type: 'THIRTY_SEC',
+      title: t('mv_thirty_sec', lang),
+      body: thirtySec || (clean.length > 320 ? clean.substring(0, 320).trimEnd() + '…' : clean),
+      defaultExpanded: false,
+      toneTag: t('mv_tone_story', lang),
+      contextTags: [t('mv_context_oneonone', lang), t('mv_context_meeting', lang)],
     },
     {
       id: 'question',

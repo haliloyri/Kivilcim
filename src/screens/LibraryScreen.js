@@ -401,6 +401,21 @@ const LibraryScreen = ({ navigation }) => {
     return result;
   }, [isPremium, variantUsage, stories]);
 
+  // Marked stories (marked as used with feedback)
+  const markedStories = useMemo(() => {
+    if (!isPremium || !variantUsage || variantUsage.length === 0) return [];
+    const seen = new Set();
+    const result = [];
+    for (const entry of variantUsage.filter(item => item.action === 'mark_used')) {
+      if (seen.has(entry.storyId)) continue;
+      seen.add(entry.storyId);
+      const s = (stories || []).find(st => String(st.story_id) === entry.storyId);
+      if (s) result.push({ ...s, _markedAt: entry.usedAt, _markedVariantType: entry.variantType, _feedbackRating: entry.feedbackRating });
+      if (result.length >= 20) break;
+    }
+    return result;
+  }, [isPremium, variantUsage, stories]);
+
   const styles = StyleSheet.create({
     safe: { 
       flex: 1, 
@@ -544,6 +559,7 @@ const LibraryScreen = ({ navigation }) => {
               {[
                 { id: 'all', label: t('libraryCollectionAll', lang) },
                 { id: 'saved_for_later', label: t('libraryCollectionSavedForLater', lang) },
+                ...(isPremium && markedStories.length > 0 ? [{ id: 'marked_used', label: t('libraryCollectionMarkedUsed', lang) || 'Marked as Used' }] : []),
               ].map((item) => (
                 <TouchableOpacity
                   key={item.id}
