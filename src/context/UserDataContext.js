@@ -625,14 +625,16 @@ export const UserDataProvider = ({ children }) => {
   };
 
   // Varyant kullanım kaydı (copy / share / mark-used)
-  const recordVariantUsage = useCallback(async ({ storyId, storyTitle, variantType, variantId, action }) => {
+  const recordVariantUsage = useCallback(async ({ storyId, storyTitle, storyCategory, variantType, variantId, action, feedbackRating = null }) => {
     try {
       const entry = {
         storyId: String(storyId),
         storyTitle: storyTitle || '',
+        storyCategory: storyCategory || null,
         variantType,
         variantId,
         action, // 'copy' | 'share' | 'mark_used'
+        feedbackRating,
         usedAt: new Date().toISOString(),
       };
       setVariantUsage(prev => {
@@ -642,9 +644,11 @@ export const UserDataProvider = ({ children }) => {
       });
       trackEvent(ANALYTICS_EVENTS.STORY_VARIANT_USED, {
         storyId: String(storyId),
+        storyCategory: storyCategory || null,
         variantType,
         variantId,
         action,
+        feedbackRating,
         lang,
       });
     } catch (error) {
@@ -690,8 +694,16 @@ export const UserDataProvider = ({ children }) => {
 
   // Rozetleri hesapla
   const earnedBadges = useMemo(() => 
-    checkBadges({ totalReads, streak, longestStreak, categoryStats, favoritesCount: favorites.length, shareCount }),
-    [totalReads, streak, longestStreak, categoryStats, favorites.length, shareCount]
+    checkBadges({
+      totalReads,
+      streak,
+      longestStreak,
+      categoryStats,
+      favoritesCount: favorites.length,
+      shareCount,
+      variantUsage,
+    }),
+    [totalReads, streak, longestStreak, categoryStats, favorites.length, shareCount, variantUsage]
   );
 
   const markBadgesAsSeen = useCallback(async (badgeIds) => {
@@ -747,6 +759,11 @@ export const UserDataProvider = ({ children }) => {
     });
   }, []);
 
+  const unseenEarnedBadgeCount = useMemo(
+    () => earnedBadges.filter((b) => b.earned && !seenBadgeIds.includes(b.id)).length,
+    [earnedBadges, seenBadgeIds]
+  );
+
   const value = useMemo(() => ({
     favorites,
     history,
@@ -765,6 +782,7 @@ export const UserDataProvider = ({ children }) => {
     shareCount,
     earnedBadges,
     activeBadgeModal,
+    unseenEarnedBadgeCount,
     toggleFavorite,
     isFavorite,
     isStoryInFavoriteCollection,
@@ -786,7 +804,7 @@ export const UserDataProvider = ({ children }) => {
     openBadgeModal,
     closeBadgeModal,
     releasePendingBadge,
-  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge]);
+  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge]);
 
   return (
     <UserDataContext.Provider value={value}>

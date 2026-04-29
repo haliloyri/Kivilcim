@@ -3,6 +3,17 @@
 // Helper: categoryStats objesinden türetilen değerler
 const getUniqueCats = (cs) => cs && typeof cs === 'object' ? Object.keys(cs).length : 0;
 const getMaxCatReads = (cs) => cs && typeof cs === 'object' ? Math.max(0, ...Object.values(cs)) : 0;
+const getUniqueUsedCategories = (variantUsage = []) => {
+  if (!Array.isArray(variantUsage)) return 0;
+  const used = variantUsage
+    .filter((item) => item?.action === 'mark_used' && item?.storyCategory)
+    .map((item) => String(item.storyCategory));
+  return new Set(used).size;
+};
+const getUsedCount = (variantUsage = []) => {
+  if (!Array.isArray(variantUsage)) return 0;
+  return variantUsage.filter((item) => item?.action === 'mark_used').length;
+};
 
 const BADGE_DEFINITIONS = [
   // ── Okuma Sayısı ──
@@ -28,7 +39,7 @@ const BADGE_DEFINITIONS = [
     titleKey: 'badgeSage',
     subKey: 'badge25Lessons',
     descKey: 'badgeSageDesc',
-    check: ({ totalReads }) => totalReads >= 25,
+    check: ({ totalReads, variantUsage }) => totalReads >= 25 && getUniqueUsedCategories(variantUsage) >= 3,
   },
   {
     id: 'bookworm',
@@ -206,12 +217,31 @@ const BADGE_DEFINITIONS = [
     descKey: 'badgeShare50Desc',
     check: ({ shareCount }) => shareCount >= 50,
   },
+  {
+    id: 'icebreaker',
+    icon: '🗣️',
+    titleKey: 'badgeIcebreaker',
+    subKey: 'badgeIcebreakerSub',
+    descKey: 'badgeIcebreakerDesc',
+    check: ({ variantUsage }) => {
+      if (!Array.isArray(variantUsage)) return false;
+      return variantUsage.some((item) => item?.action === 'mark_used' && item?.variantType === 'QUESTION');
+    },
+  },
+  {
+    id: 'storyteller',
+    icon: '🎙️',
+    titleKey: 'badgeStoryteller',
+    subKey: 'badgeStorytellerSub',
+    descKey: 'badgeStorytellerDesc',
+    check: ({ variantUsage }) => getUsedCount(variantUsage) >= 10,
+  },
 ];
 
-export function checkBadges({ totalReads, streak, longestStreak, categoryStats, favoritesCount = 0, shareCount = 0 }) {
+export function checkBadges({ totalReads, streak, longestStreak, categoryStats, favoritesCount = 0, shareCount = 0, variantUsage = [] }) {
   return BADGE_DEFINITIONS.map(badge => ({
     ...badge,
-    earned: badge.check({ totalReads, streak, longestStreak, categoryStats, favoritesCount, shareCount }),
+    earned: badge.check({ totalReads, streak, longestStreak, categoryStats, favoritesCount, shareCount, variantUsage }),
   }));
 }
 

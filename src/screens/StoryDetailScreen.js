@@ -33,6 +33,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [shareTextOverride, setShareTextOverride] = useState('');
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const scrollY = useRef(new Animated.Value(0)).current;
+  const titleEnterAnim = useRef(new Animated.Value(0)).current;
   const hasReachedBottom = useRef(false);
   const viewShotRef = useRef();
   const insets = useSafeAreaInsets();
@@ -106,10 +107,15 @@ const StoryDetailScreen = ({ route, navigation }) => {
       Speech.stop();
       setIsSpeaking(false);
     }
+    Animated.timing(titleEnterAnim, {
+      toValue: 1,
+      duration: 360,
+      useNativeDriver: true,
+    }).start();
     return () => {
       Speech.stop();
     };
-  }, [story]);
+  }, [story, titleEnterAnim]);
 
   const toggleSpeech = async () => {
     if (isSpeaking) {
@@ -343,6 +349,24 @@ const StoryDetailScreen = ({ route, navigation }) => {
     outputRange: [0, width],
     extrapolate: 'clamp',
   });
+
+  const titleEnterStyle = {
+    opacity: titleEnterAnim,
+    transform: [
+      {
+        translateY: titleEnterAnim.interpolate({
+          inputRange: [0, 1],
+          outputRange: [14, 0],
+        }),
+      },
+      {
+        scale: titleEnterAnim.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0.97, 1],
+        }),
+      },
+    ],
+  };
 
   const styles = StyleSheet.create({
     safe: { 
@@ -1103,7 +1127,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
             <View style={styles.badge}>
               <Text style={styles.badgeText}>{t(story.parent_cat, lang)}</Text>
             </View>
-            <Text style={styles.detailTitle}>{displayTitle}</Text>
+            <Animated.Text style={[styles.detailTitle, titleEnterStyle]}>{displayTitle}</Animated.Text>
             <View style={{ flexDirection: 'row', gap: 16 }}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
                 <Ionicons name="time-outline" size={16} color={colors.textSecondary} />
@@ -1191,50 +1215,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 );
               }
 
-              if (seg.type === 'lesson') {
-                return (
-                  <View key={idx}>
-                    <View style={styles.premiumSeparator}>
-                      <View style={styles.separatorLine} />
-                      <Text style={styles.separatorIcon}>✦</Text>
-                      <View style={styles.separatorLine} />
-                    </View>
-                    <LinearGradient 
-                      colors={isDark ? [colors.backgroundDark, colors.background] : ['#EAD8C1', '#FBF8F3']} 
-                      start={{x: 0, y: 0}} end={{x: 1, y: 1}} 
-                      style={styles.lessonBox}
-                    >
-                      <Text style={styles.lessonLabel}>{t('keyTakeaway', localLang)}</Text>
-                      <Text style={[styles.lessonText, { fontSize: fontSize + 1 }]} >{seg.content}</Text>
-                    </LinearGradient>
-                  </View>
-                );
-              }
-
-              if (seg.type === 'reflection') {
-                return (
-                  <LinearGradient
-                    key={idx}
-                    colors={isDark ? [colors.backgroundDark, colors.background] : ['#EBE2D3', '#F8F5EF']} 
-                    start={{x: 0, y: 0}} end={{x: 1, y: 1}}
-                    style={styles.reflectionBox}
-                  >
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12 }}>
-                      <Text style={{ fontSize: 18, marginRight: 8 }}>💭</Text>
-                      <Text style={styles.reflectionLabel}>{t('reflect', localLang)}</Text>
-                    </View>
-                    <Text
-                      style={{
-                        fontFamily: 'PlayfairDisplay_400Regular_Italic',
-                        fontSize: fontSize + 1,
-                        color: colors.text,
-                        lineHeight: (fontSize + 1) * 1.6,
-                      }}
-                    >
-                      {seg.content}
-                    </Text>
-                  </LinearGradient>
-                );
+              if (seg.type === 'lesson' || seg.type === 'reflection') {
+                return null;
               }
 
               return null;
@@ -1306,17 +1288,32 @@ const StoryDetailScreen = ({ route, navigation }) => {
             }}
             accessibilityRole="button"
             accessibilityLabel={t('story_detail_use_cta', lang)}
+            activeOpacity={0.9}
           >
             <LinearGradient
-              colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
+              colors={[colors.ctaGradientStart, colors.ctaGradientEnd, '#7A2A00']}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
-              style={[styles.btnPrimaryGradient, { height: 54 }]}
+              style={[
+                styles.btnPrimaryGradient,
+                {
+                  height: 58,
+                  borderWidth: 1,
+                  borderColor: isDark ? 'rgba(255,255,255,0.14)' : 'rgba(122,42,0,0.18)',
+                  shadowColor: colors.ctaGradientEnd,
+                  shadowOpacity: 0.35,
+                  shadowRadius: 14,
+                  shadowOffset: { width: 0, height: 8 },
+                  elevation: 8,
+                },
+              ]}
             >
-              <View style={[styles.btnPrimary, { height: 54 }]}>
-                <Text style={[styles.btnPrimaryText, { color: '#F7F3EB', fontSize: typography.sizes.ui + 2 }]}>
+              <View style={[styles.btnPrimary, { height: 58, flexDirection: 'row', gap: 8 }]}> 
+                <Ionicons name="sparkles" size={18} color="#F7F3EB" />
+                <Text style={[styles.btnPrimaryText, { color: '#F7F3EB', fontSize: typography.sizes.ui + 3, letterSpacing: 0.2 }]}>
                   {t('story_detail_use_cta', lang)}
                 </Text>
+                <Ionicons name="arrow-forward" size={17} color="#F7F3EB" />
               </View>
             </LinearGradient>
           </TouchableOpacity>
@@ -1325,7 +1322,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
             fontSize: 12,
             color: colors.textSecondary,
             textAlign: 'center',
-            marginTop: 6,
+            marginTop: 7,
+            opacity: 0.9,
           }}>
             {t('story_detail_use_cta_sub', lang)}
           </Text>

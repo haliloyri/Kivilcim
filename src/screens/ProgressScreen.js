@@ -43,6 +43,8 @@ const BADGE_MAP = {
   share_10: { icon: 'share', colors: ['#1E90FF', '#0D4880'] },
   share_20: { icon: 'megaphone', colors: ['#00BFFF', '#005580'] },
   share_30: { icon: 'cellular', colors: ['#4682B4', '#153652'] }
+  , storyteller: { icon: 'mic', colors: ['#D97706', '#92400E'] }
+  , icebreaker: { icon: 'chatbubble-ellipses', colors: ['#2563EB', '#1E3A8A'] }
 };
 
 const ProfessionalBadgeIcon = ({ badge, earned, isDark }) => {
@@ -79,6 +81,24 @@ const ProfessionalBadgeIcon = ({ badge, earned, isDark }) => {
         }}>
           <Ionicons name={earned ? meta.icon : 'lock-closed'} size={size * 0.45} color={iconColor} />
         </View>
+        {earned && (
+          <LinearGradient
+            colors={['rgba(255,255,255,0.45)', 'rgba(255,255,255,0.02)']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={{
+              position: 'absolute',
+              top: 3,
+              left: 3,
+              right: 3,
+              height: size * 0.38,
+              borderTopLeftRadius: size / 2,
+              borderTopRightRadius: size / 2,
+              borderBottomLeftRadius: size / 3,
+              borderBottomRightRadius: size / 3,
+            }}
+          />
+        )}
       </LinearGradient>
     </View>
   );
@@ -86,7 +106,7 @@ const ProfessionalBadgeIcon = ({ badge, earned, isDark }) => {
 
 const ProgressScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
-  const { streak, totalReads, earnedBadges, openBadgeModal, preferences, categoryStats, history, completedStories } = useUserData();
+  const { streak, totalReads, earnedBadges, openBadgeModal, preferences, categoryStats, history, completedStories, variantUsage } = useUserData();
   const { stories } = useStories();
   const badgeScale = useSharedValue(0);
   const badgeOpacity = useSharedValue(0);
@@ -123,6 +143,50 @@ const ProgressScreen = ({ navigation }) => {
       .map((id) => byId.get(String(id)))
       .filter(Boolean);
   }, [history, stories, completedStories]);
+
+  const usedStoriesCount = useMemo(
+    () => (variantUsage || []).filter((item) => item?.action === 'mark_used').length,
+    [variantUsage]
+  );
+
+  const usedCategoryCount = useMemo(() => {
+    const categories = (variantUsage || [])
+      .filter((item) => item?.action === 'mark_used' && item?.storyCategory)
+      .map((item) => String(item.storyCategory));
+    return new Set(categories).size;
+  }, [variantUsage]);
+
+  const badgeProgressMeta = useMemo(() => {
+    const uniqueCats = Object.keys(categoryStats || {}).length;
+    const maxCatReads = Math.max(0, ...Object.values(categoryStats || {}));
+    const map = {
+      first_read: { current: totalReads, target: 1 },
+      explorer: { current: totalReads, target: 10 },
+      sage: { current: totalReads, target: 25 },
+      bookworm: { current: totalReads, target: 50 },
+      streak_7: { current: streak, target: 7 },
+      cat_variety_3: { current: uniqueCats, target: 3 },
+      cat_variety_5: { current: uniqueCats, target: 5 },
+      cat_variety_10: { current: uniqueCats, target: 10 },
+      cat_master_5: { current: maxCatReads, target: 5 },
+      cat_master_10: { current: maxCatReads, target: 10 },
+      cat_master_25: { current: maxCatReads, target: 25 },
+      cat_master_50: { current: maxCatReads, target: 50 },
+      cat_master_100: { current: maxCatReads, target: 100 },
+      save_5: { current: 0, target: 5 },
+      save_10: { current: 0, target: 10 },
+      save_50: { current: 0, target: 50 },
+      save_100: { current: 0, target: 100 },
+      share_1: { current: 0, target: 1 },
+      share_10: { current: 0, target: 10 },
+      share_20: { current: 0, target: 20 },
+      share_30: { current: 0, target: 30 },
+      share_50: { current: 0, target: 50 },
+      storyteller: { current: usedStoriesCount, target: 10 },
+      icebreaker: { current: (variantUsage || []).some((item) => item?.action === 'mark_used' && item?.variantType === 'QUESTION') ? 1 : 0, target: 1 },
+    };
+    return map;
+  }, [categoryStats, totalReads, streak, usedStoriesCount, variantUsage]);
 
   useEffect(() => {
     if (!isDailyGoalComplete) return;
@@ -180,6 +244,19 @@ const ProgressScreen = ({ navigation }) => {
   }, [totalReads]);
 
   const badges = earnedBadges || [];
+
+  const closestBadge = useMemo(() => {
+    const notEarned = badges.filter((b) => !b.earned);
+    if (!notEarned.length) return null;
+    return notEarned
+      .filter((b) => badgeProgressMeta[b.id])
+      .map((b) => {
+        const { current, target } = badgeProgressMeta[b.id];
+        const ratio = target > 0 ? Math.min(current / target, 1) : 0;
+        return { ...b, current, target, ratio, remaining: Math.max(target - current, 0) };
+      })
+      .sort((a, b) => b.ratio - a.ratio)[0] || null;
+  }, [badges, badgeProgressMeta]);
 
   const triggerCelebration = () => {
     setShowCelebration(true);
@@ -383,7 +460,7 @@ const ProgressScreen = ({ navigation }) => {
     heatmapSquare: {
       width: (width - 80) / 13 - 4,
       height: (width - 80) / 13 - 4,
-      borderRadius: 2,
+      borderRadius: 999,
     },
     heatmapLegend: {
       flexDirection: 'row',
@@ -410,6 +487,25 @@ const ProgressScreen = ({ navigation }) => {
       borderRadius: layout.radius.card,
       padding: 16,
       alignItems: 'center',
+    },
+    badgeProgressTrack: {
+      marginTop: 10,
+      width: '100%',
+      height: 3,
+      borderRadius: 999,
+      backgroundColor: colors.border,
+      overflow: 'hidden',
+    },
+    badgeProgressFill: {
+      height: '100%',
+      borderRadius: 999,
+      backgroundColor: colors.primary,
+    },
+    badgeProgressText: {
+      marginTop: 5,
+      fontFamily: 'Inter_500Medium',
+      fontSize: 10,
+      color: colors.textSecondary,
     },
     badgeIconCircle: {
       width: 60,
@@ -570,6 +666,75 @@ const ProgressScreen = ({ navigation }) => {
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionLabel}>{t('dailyGoal', lang)}</Text>
         </View>
+
+        {/* ── Sıradaki Hedef Spotlight ──────────────────────────────── */}
+        {closestBadge && (
+          <View style={{ marginHorizontal: layout.padding.horizontal, marginBottom: 14 }}>
+            <LinearGradient
+              colors={isDark ? ['#2A1F14', '#1E1814'] : ['#FBF5EA', '#F2E8D4']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={{
+                borderRadius: layout.radius.card,
+                padding: 16,
+                borderWidth: 1,
+                borderColor: `${colors.primary}55`,
+              }}
+            >
+              <Text style={{
+                fontFamily: 'Inter_500Medium',
+                fontSize: 10,
+                color: colors.primary,
+                letterSpacing: 1.2,
+                textTransform: 'uppercase',
+                marginBottom: 10,
+              }}>
+                {t('progress_spotlight_label', lang)}
+              </Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+                <Text style={{ fontSize: 40 }}>{closestBadge.icon}</Text>
+                <View style={{ flex: 1 }}>
+                  <Text style={{
+                    fontFamily: 'PlayfairDisplay_700Bold',
+                    fontSize: 18,
+                    color: colors.text,
+                    marginBottom: 2,
+                  }}>
+                    {t(closestBadge.titleKey, lang)}
+                  </Text>
+                  <Text style={{
+                    fontFamily: 'Inter_400Regular',
+                    fontSize: 12,
+                    color: colors.textSecondary,
+                  }}>
+                    {closestBadge.remaining > 0
+                      ? t('progress_spotlight_badge_remaining', lang).replace('{{n}}', String(closestBadge.remaining))
+                      : t('progress_spotlight_badge_almost', lang)}
+                  </Text>
+                </View>
+                <Text style={{
+                  fontFamily: 'PlayfairDisplay_700Bold',
+                  fontSize: 22,
+                  color: colors.primary,
+                }}>
+                  {`${Math.round(closestBadge.ratio * 100)}%`}
+                </Text>
+              </View>
+              <View style={{
+                height: 5, borderRadius: 999,
+                backgroundColor: isDark ? colors.backgroundDark : colors.border,
+                marginTop: 12, overflow: 'hidden',
+              }}>
+                <View style={{
+                  height: '100%', borderRadius: 999,
+                  backgroundColor: colors.primary,
+                  width: `${Math.round(closestBadge.ratio * 100)}%`,
+                }} />
+              </View>
+            </LinearGradient>
+          </View>
+        )}
+
         <View style={styles.goalCard}>
           <View style={styles.goalHeader}>
             <Text style={styles.goalTitle}>{t('dailyGoalTitle', lang)}</Text>
@@ -673,8 +838,9 @@ const ProgressScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         )) : (
-          <View style={[styles.heatmapCard, { marginBottom: 8 }]}> 
-            <Text style={styles.actionSub}>{t('progressActiveStoriesEmpty', lang)}</Text>
+          <View style={[styles.heatmapCard, { marginBottom: 8, alignItems: 'center' }]}> 
+            <Text style={{ fontSize: 28, marginBottom: 8 }}>✨</Text>
+            <Text style={[styles.actionSub, { textAlign: 'center' }]}>{t('progressActiveStoriesEmpty', lang)}</Text>
           </View>
         )}
 
@@ -689,7 +855,7 @@ const ProgressScreen = ({ navigation }) => {
                 style={[
                   styles.heatmapSquare, 
                   { 
-                    backgroundColor: item.level === 0 ? colors.backgroundDark : 
+                    backgroundColor: item.level === 0 ? `${colors.backgroundDark}88` : 
                                      item.level === 1 ? '#DBCFA7' : 
                                      item.level === 2 ? colors.primary : '#8B6A30' 
                   }
@@ -724,6 +890,23 @@ const ProgressScreen = ({ navigation }) => {
               <ProfessionalBadgeIcon badge={badge} earned={badge.earned} isDark={isDark} />
               <Text style={styles.badgeItemTitle}>{t(badge.titleKey, lang) || badge.titleKey}</Text>
               <Text style={styles.badgeItemSub}>{t(badge.subKey, lang) || badge.subKey}</Text>
+              {!badge.earned && badgeProgressMeta[badge.id] ? (
+                <>
+                  <View style={styles.badgeProgressTrack}>
+                    <View
+                      style={[
+                        styles.badgeProgressFill,
+                        {
+                          width: `${Math.min(100, Math.round((badgeProgressMeta[badge.id].current / Math.max(1, badgeProgressMeta[badge.id].target)) * 100))}%`,
+                        },
+                      ]}
+                    />
+                  </View>
+                  <Text style={styles.badgeProgressText}>
+                    {`${Math.min(badgeProgressMeta[badge.id].current, badgeProgressMeta[badge.id].target)}/${badgeProgressMeta[badge.id].target}`}
+                  </Text>
+                </>
+              ) : null}
             </TouchableOpacity>
           ))}
         </View>
@@ -741,6 +924,19 @@ const ProgressScreen = ({ navigation }) => {
             <Text style={styles.statNum}>{streak}</Text>
             <Text style={styles.statLabel}>{t('statStreak', lang)}</Text>
           </View>
+          <View style={styles.statBox}>
+            <Text style={styles.statNum}>{usedStoriesCount}</Text>
+            <Text style={styles.statLabel}>{t('statTold', lang)}</Text>
+          </View>
+        </View>
+
+        <View style={[styles.heatmapCard, { marginTop: 16 }]}> 
+          <Text style={styles.actionTitle}>{t('progressConversationStatTitle', lang)}</Text>
+          <Text style={[styles.actionSub, { marginTop: 4 }]}>
+            {t('progressConversationStatSub', lang)
+              .replace('{{used}}', String(usedStoriesCount))
+              .replace('{{cats}}', String(usedCategoryCount))}
+          </Text>
         </View>
       </ScrollView>
 

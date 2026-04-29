@@ -29,6 +29,7 @@ const BADGE_SOUND_ASSET = require('../../assets/sounds/badge.wav');
 
 function MainTabs() {
   const { colors, typography, layout, isDark, lang } = useTheme();
+  const { unseenEarnedBadgeCount } = useUserData();
   const insets = useSafeAreaInsets();
   const androidBottomInset = Platform.OS === 'android' ? Math.max(insets.bottom, 12) : insets.bottom;
 
@@ -80,8 +81,18 @@ function MainTabs() {
         component={ProgressScreen} 
         options={{ 
           tabBarLabel: t('tabProgress', lang), 
-          tabBarIcon: ({ color, focused, size }) => (
-            <Ionicons name={focused ? 'trending-up' : 'trending-up-outline'} size={26} color={color} />
+          tabBarIcon: ({ color, focused }) => (
+            <View>
+              <Ionicons name={focused ? 'trending-up' : 'trending-up-outline'} size={26} color={color} />
+              {unseenEarnedBadgeCount > 0 && (
+                <View style={{
+                  position: 'absolute', top: 0, right: -3,
+                  width: 9, height: 9, borderRadius: 5,
+                  backgroundColor: '#C5A059',
+                  borderWidth: 1.5, borderColor: isDark ? '#131311' : '#fcf9f4',
+                }} />
+              )}
+            </View>
           ),
         }}
       />

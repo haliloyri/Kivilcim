@@ -5,7 +5,7 @@ import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet, 
   StatusBar, Platform, Dimensions, Animated, Modal, TextInput, Image
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
@@ -38,10 +38,61 @@ const SkeletonCard = ({ colors, layout, isHero }) => (
   }} />
 );
 
+/** Circular daily progress ring shown in the home header */
+const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) => {
+  const sw = 3;
+  const pct = total > 0 ? Math.min(done / total, 1) : 0;
+  const isDone = done >= total && total > 0;
+  const inner = size - sw * 2;
+  // Two-half clip trick: right half covers first 180°, left half covers next 180°
+  const rightDeg = Math.min(pct * 360, 180) - 90;
+  const leftDeg = (pct * 360 > 180 ? pct * 360 - 180 : 0) - 90;
+  const trackColor = isDark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.09)';
+  return (
+    <TouchableOpacity onPress={onPress} activeOpacity={0.75} style={{ width: size, height: size }}>
+      {/* background track */}
+      <View style={{ position: 'absolute', width: size, height: size, borderRadius: size / 2, borderWidth: sw, borderColor: trackColor }} />
+      {/* right half progress (0 → 180°) */}
+      {pct > 0 && (
+        <View style={{ position: 'absolute', width: size / 2, height: size, left: size / 2, overflow: 'hidden' }}>
+          <View style={{
+            position: 'absolute', left: -(size / 2), width: size, height: size,
+            borderRadius: size / 2, borderWidth: sw, borderColor: colors.primary,
+            transform: [{ rotate: `${rightDeg}deg` }],
+          }} />
+        </View>
+      )}
+      {/* left half progress (180° → 360°) */}
+      {pct > 0.5 && (
+        <View style={{ position: 'absolute', width: size / 2, height: size, left: 0, overflow: 'hidden' }}>
+          <View style={{
+            position: 'absolute', left: 0, width: size, height: size,
+            borderRadius: size / 2, borderWidth: sw, borderColor: colors.primary,
+            transform: [{ rotate: `${leftDeg}deg` }],
+          }} />
+        </View>
+      )}
+      {/* inner hole with label */}
+      <View style={{
+        position: 'absolute', top: sw, left: sw,
+        width: inner, height: inner, borderRadius: inner / 2,
+        backgroundColor: colors.background,
+        alignItems: 'center', justifyContent: 'center',
+      }}>
+        {isDone
+          ? <Ionicons name="checkmark" size={inner * 0.52} color={colors.primary} />
+          : <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: size * 0.19, color: colors.text, textAlign: 'center', lineHeight: size * 0.22 }}>{`${done}\n${total}`}</Text>
+        }
+      </View>
+    </TouchableOpacity>
+  );
+};
+
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
   const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
+  const insets = useSafeAreaInsets();
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('all');
   const [visibleCount, setVisibleCount] = useState(11);
@@ -769,10 +820,15 @@ const HomeScreen = ({ navigation }) => {
     catPill: { 
       paddingHorizontal: 18, 
       paddingVertical: 10, 
-      borderRadius: 24, 
+      borderRadius: 999, 
       borderWidth: 1, 
       borderColor: colors.border, 
-      backgroundColor: 'transparent' 
+      backgroundColor: isDark ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)',
+      shadowColor: '#8A6C43',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: isDark ? 0 : 0.08,
+      shadowRadius: 4,
+      elevation: isDark ? 0 : 2,
     },
     catPillActive: { 
       backgroundColor: '#823b18', 
@@ -788,10 +844,28 @@ const HomeScreen = ({ navigation }) => {
       fontFamily: 'Inter_500Medium' 
     },
     storyGrid: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 12,
+      flexDirection: 'column',
+      gap: 4,
       marginTop: 12,
+    },
+    editorialUseCta: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      paddingVertical: 8,
+      paddingHorizontal: 14,
+      marginTop: 6,
+      marginBottom: 14,
+      borderRadius: 10,
+      alignSelf: 'flex-start',
+      backgroundColor: isDark ? `${colors.primary}12` : `${colors.primary}0D`,
+      borderWidth: 1,
+      borderColor: `${colors.primary}30`,
+    },
+    editorialUseCtaText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.primary,
     },
     sectionTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
@@ -805,6 +879,28 @@ const HomeScreen = ({ navigation }) => {
       color: colors.textSecondary,
       lineHeight: 20,
       marginBottom: 16,
+    },
+    fabPratikYap: {
+      position: 'absolute',
+      bottom: 90 + Math.max(0, insets.bottom - 16),
+      right: layout.padding.horizontal,
+      width: 54,
+      height: 54,
+      borderRadius: 27,
+      shadowColor: '#C5A059',
+      shadowOffset: { width: 0, height: 6 },
+      shadowOpacity: 0.45,
+      shadowRadius: 16,
+      elevation: 12,
+    },
+    fabGradient: {
+      width: 54,
+      height: 54,
+      borderRadius: 27,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 1,
+      borderColor: 'rgba(255,255,255,0.28)',
     },
     firstSessionCard: {
       marginBottom: 20,
@@ -1031,6 +1127,13 @@ const HomeScreen = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.navigate('Search')}>
               <Ionicons name="search" style={styles.searchIcon} />
             </TouchableOpacity>
+            <DailyProgressRing
+              done={dailyClickedIds.size}
+              total={personalizedTarget}
+              colors={colors}
+              isDark={isDark}
+              onPress={() => navigation.navigate('ProgressTab')}
+            />
             <TouchableOpacity onPress={() => navigation.navigate('ProfileTab')} style={styles.avatar}>
               <Text style={styles.avatarText}>AY</Text>
             </TouchableOpacity>
@@ -1038,60 +1141,6 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.langBtnText}>{lang.toUpperCase()}</Text>
             </TouchableOpacity>
           </View>
-        </View>
-
-        <View style={{ marginBottom: 32 }}>
-          <ScrollView
-            ref={badgeScrollRef}
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            onMomentumScrollEnd={(e) => {
-              const index = Math.round(e.nativeEvent.contentOffset.x / screenWidth);
-              setBadgeCardIndex(index);
-            }}
-          >
-            {badgeCarouselItems.map((badge, i) => {
-              const badgeTitle = badge ? t(badge.titleKey, lang) : null;
-              const badgePercent = badge ? Math.round(badge.ratio * 100) : 100;
-              const headerSub = badge
-                ? t('home_badge_next_close', lang).replace('{{badge}}', badgeTitle)
-                : t('home_badge_all_completed', lang);
-              return (
-                <View key={i} style={{ width: screenWidth, paddingHorizontal: layout.padding.horizontal }}>
-                  <LinearGradient
-                    colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
-                    style={[styles.streakCard, { marginHorizontal: 0, marginBottom: 0 }]}
-                    start={{x: 0, y: 0}}
-                    end={{x: 1, y: 1}}
-                  >
-                    <Text style={{ fontSize: 42 }}>{badge ? badge.icon : '🏆'}</Text>
-                    <View style={{ marginLeft: 16, flex: 1 }}>
-                      <Text style={styles.streakDays}>{`%${badgePercent}`}</Text>
-                      <Text style={styles.streakLabel}>{t('home_badge_journey_label', lang)}</Text>
-                      <Text style={[styles.streakLabel, { marginTop: 2 }]} numberOfLines={1}>{headerSub}</Text>
-                      <Text style={[styles.streakLabel, { marginTop: 2 }]}>{completionLine}</Text>
-                    </View>
-                  </LinearGradient>
-                </View>
-              );
-            })}
-          </ScrollView>
-          {badgeCarouselItems.length > 1 && (
-            <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 6, marginTop: 10 }}>
-              {badgeCarouselItems.map((_, i) => (
-                <View
-                  key={i}
-                  style={{
-                    width: badgeCardIndex === i ? 16 : 6,
-                    height: 6,
-                    borderRadius: 3,
-                    backgroundColor: badgeCardIndex === i ? colors.primary : colors.textSecondary + '40',
-                  }}
-                />
-              ))}
-            </View>
-          )}
         </View>
 
         <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
@@ -1288,25 +1337,55 @@ const HomeScreen = ({ navigation }) => {
                     isRead={checkIfRead(free[0].story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story: free[0] })} 
                   />
+                  <TouchableOpacity
+                    style={{
+                      marginTop: -8,
+                      marginBottom: 14,
+                      borderRadius: 14,
+                      borderWidth: 1,
+                      borderColor: `${colors.primary}66`,
+                      backgroundColor: isDark ? 'rgba(208,106,27,0.12)' : 'rgba(255,248,237,0.95)',
+                      paddingVertical: 10,
+                      paddingHorizontal: 14,
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 8,
+                    }}
+                    onPress={() => navigation.navigate('UseInConversation', { story: free[0] })}
+                    activeOpacity={0.85}
+                  >
+                    <Ionicons name="chatbubbles-outline" size={16} color={colors.primary} />
+                    <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 13, color: colors.primary }}>
+                      {t('story_detail_use_cta', lang)}
+                    </Text>
+                  </TouchableOpacity>
                 </>
               )}
 
               <View style={styles.storyGrid}>
                 {free.slice(1).map(story => (
-                  <StoryCard 
-                    key={story.story_id} 
-                    story={story} 
-                    type="compact" 
-                    hideCategory={activeFilter !== 'all'}
-                    isRead={checkIfRead(story.story_id)}
-                    onPress={() => navigation.navigate('StoryDetail', { story })} 
-                  />
+                  <View key={story.story_id}>
+                    <StoryCard
+                      story={story}
+                      hideCategory={activeFilter !== 'all'}
+                      isRead={checkIfRead(story.story_id)}
+                      onPress={() => navigation.navigate('StoryDetail', { story })}
+                    />
+                    <TouchableOpacity
+                      style={styles.editorialUseCta}
+                      onPress={() => navigation.navigate('UseInConversation', { story })}
+                      activeOpacity={0.75}
+                    >
+                      <Ionicons name="chatbubbles-outline" size={13} color={colors.primary} />
+                      <Text style={styles.editorialUseCtaText}>{t('story_detail_use_cta', lang)}</Text>
+                    </TouchableOpacity>
+                  </View>
                 ))}
                 {weeklyBonusStory ? (
                   <StoryCard
                     key={`bonus-${weeklyBonusStory.story_id}`}
                     story={weeklyBonusStory}
-                    type="compact"
                     hideCategory={activeFilter !== 'all'}
                     supportText={t('homeFreemiumWeeklyBonusHint', lang)}
                     isRead={checkIfRead(weeklyBonusStory.story_id)}
@@ -1317,7 +1396,6 @@ const HomeScreen = ({ navigation }) => {
                   <StoryCard
                     key={`teaser-${teaserStory.story_id}`}
                     story={teaserStory}
-                    type="compact"
                     locked
                     hideCategory={activeFilter !== 'all'}
                     supportText={t('homeFreemiumTeaserHint', lang)}
@@ -1325,14 +1403,13 @@ const HomeScreen = ({ navigation }) => {
                   />
                 ) : null}
                 {locked.map(story => (
-                  <StoryCard 
-                    key={story.story_id} 
-                    story={story} 
-                    type="compact" 
-                    locked 
+                  <StoryCard
+                    key={story.story_id}
+                    story={story}
+                    locked
                     supportText={t('homeFreemiumPremiumBenefit', lang)}
                     hideCategory={activeFilter !== 'all'}
-                    onPress={() => openPaywallFromFreeLimit('home_feed_locked', story.story_id)} 
+                    onPress={() => openPaywallFromFreeLimit('home_feed_locked', story.story_id)}
                   />
                 ))}
               </View>
@@ -1350,6 +1427,29 @@ const HomeScreen = ({ navigation }) => {
 
         <View style={{ height: 100 }} />
       </ScrollView>
+
+      {/* ── FAB: Pratik Yap ──────────────────────────────────────────── */}
+      {(personalizedStories.length > 0 || (sortedStories && sortedStories.length > 0)) && (
+        <TouchableOpacity
+          style={styles.fabPratikYap}
+          onPress={() => {
+            const story = personalizedStories[0] || sortedStories[0];
+            navigation.navigate('UseInConversation', { story });
+          }}
+          activeOpacity={0.82}
+        >
+          <LinearGradient
+            colors={isDark
+              ? ['rgba(208,106,27,0.92)', 'rgba(160,68,10,0.97)']
+              : ['rgba(194,155,76,0.94)', 'rgba(155,118,42,0.97)']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.fabGradient}
+          >
+            <Ionicons name="mic" size={22} color="#FFF" />
+          </LinearGradient>
+        </TouchableOpacity>
+      )}
 
       <Modal
         visible={showProfilePrompt}

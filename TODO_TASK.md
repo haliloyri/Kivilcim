@@ -120,13 +120,50 @@ Kod yuzeyi:
 - [x] Kullanici hedefini degistirince ana ekran oneri adedi ayni oturumda guncellenir
 - [x] Eski kullanicilar migration sonrasinda hatasiz sekilde varsayilan hedef alir
 
-## 10. QA Checklist
-- [x] Yeni kullanici 3 dk sectiginde dogru hedef geliyor mu
-- [x] 6 dk icin oneri adedi dogru mu
-- [x] 9 dk icin oneri adedi dogru mu
-- [x] Kategori filtresi ile hedef birlikte calisiyor mu
-- [x] Bildirim zamani degisince eski plan siliniyor mu
-- [x] Uygulama yeniden acildiginda tercih korunuyor mu
+## 10. New Design
+1. Ana Sayfa (Keşfet) Tasarımı
+• [x] Mesh Gradient Uygulaması: Hero kartındaki düz gradyanı, daha derinlikli bir "mesh gradient" (altın, krem, kehribar tonları) ile değiştir.
+• [x] Tipografi Hiyerarşisi: Başlıklarda yüksek kontrastlı serif (Playfair Display vb.), kullanıcı arayüzü metinlerinde ise temiz bir sans-serif (SF Pro, Inter) kullan.
+• [x] "Sohbette Kullan" Butonu: İlk hikaye kartının hemen altına, kartla bütünleşik ama görsel olarak ayrışan (ince kontürlü) bir buton ekle.
+• [x] Kategori Hapları (Pills): Kategori butonlarına hafif bir dış gölge ve daha fazla yuvarlatılmış köşeler ekleyerek "Apple-level" yumuşaklığına ulaştır.
+• [x] Say This Today (Kart Destesi): Kartlar arası geçişe hafif bir 3D rotasyon veya üst üste binme (stacking) efekti ekle.
+2. Hikaye Detay ve Sohbet Kiti Sayfaları
+• [x] "Conversation Toolkit" Sayfa Tasarımı: Kullanıcıyı "Punchline", "Conversation Starter" ve "Key Contrast" gibi farklı anlatım formatlarının olduğu yeni bir sayfaya yönlendir.
+• [x] Anlattım (Mark as Used) Özelliği: Her formatın yanına veya hikaye sonuna "Bunu gerçek hayatta kullandım ✅" butonu ekle.
+• [x] Bağlamsal Varyasyonlar: Kartların üzerine "Toplantı", "Sosyal Ortam", "1:1 Görüşme" gibi minik etiketler ekleyerek kullanım alanını belirt.
+• [x] Kopyalama Deneyimi: Metne tıklandığında ekranın altında beliren zarif, pastel tonlarda bir onay mesajı (toast) tasarla.
+• [x] Shared Element Transition: Ana sayfadaki hikaye başlığının, detay sayfasına geçerken süzülerek yerine oturduğu bir geçiş animasyonu kurgula.
+3. İlerleme (Progress) Sayfası
+• [x] Reading Habit (Takvim) Revizesi: Takvimdeki kareleri daha yuvarlak köşeli yap veya dairesel bir form kullan; boş günlerin rengini arka planla daha uyumlu (neredeyse transparan) hale getir.
+• [x] Rozet (Badge) Tasarımları: Rozetleri daha değerli hissettirmek için üzerlerine hafif bir cam efekti (glassmorphism) veya 3D dokunuş ekle.
+• [x] İlerleme Çubukları: Kilitli rozetlerin altına, kullanıcının hedefe ne kadar yaklaştığını gösteren (örn: 22/25) çok ince progress bar'lar ekle.
+• [x] Sohbet İstatistikleri: Sayfaya sadece "okuma" değil, "kaç hikaye anlatıldığına" dair yeni bir sayaç veya kart ekle.
+• [x] Boş Durum (Empty State) Tasarımı: "Active Stories" alanı boşken görünecek daha ilham verici bir ikon ve metin (örn: "İlk kıvılcımı çakmaya hazır mısın?") hazırla.
+4. Genel UX ve Oyunlaştırma (Gamification)
+• [x] Yeni Rozet Tanımları: Sadece okumaya değil, anlatmaya dayalı "Storyteller" (10 Anlatım), "Icebreaker" (İlk Sohbet Başlatıcı) gibi yeni başarımlar oluştur.
+• [x] Kullanım Sonrası Geri Bildirim: "Anlattım" butonuna basıldıktan sonra, çok kısa bir mikro-anketle ("Nasıl geçti? ⭐") deneyimi puanlat.
+• [x] Kilit Mekanizması: Bazı üst düzey rozetleri (örn: Sage/Bilge) almak için "en az 3 farklı kategoriden hikayeyi gerçek hayatta kullanmış olma" şartını koda ekle.
+
+## 11.New Design V2
+1. Ana Ekran (Keşfet) Temizliği ve Hiyerarşi
+• [x] Rozet Kartını Kaldır: Ekranın en tepesindeki o büyük, hantal rozet kartını sil.
+• [x] Progress Ring (Halka) Ekle: Sağ üst köşeye, "Profil" veya "Bildirim" alanının yakınına, günlük hedefini gösteren %'li ve zarif bir ilerleme halkası ekle. (Dokunulduğunda Progress sayfasına gitsin).
+• [x] Hero Section'ı Odakla: "Günün Odak Noktası" kartını en tepeye al. İçindeki gereksiz ikonları temizle, sadece vurucu başlık ve "3 Dakikada Öğren" butonu kalsın.
+• [x] Editorial Liste Düzeni: Hikaye listesini, yan yana kartlar yerine, aşağı doğru akan, geniş beyaz alanlı (whitespace) ve büyük tipografili bir "dergi" düzenine geçir.
+• [x] Aksiyon Butonu: Her hikaye kartının altına "Sohbette Kullan" butonunu, ince bir kontür ve sade bir ikonla standart hale getir.
+2. Görsel Cila (Apple-Level UI)
+• [x] Mesh Gradient: Hero kartın arka planını düz renk yerine, altın, bal rengi ve krem tonlarının birbirine karıştığı "mesh gradient" yap.
+• [x] Tipografi Eşleşmesi: Başlıklarda mutlaka yüksek kontrastlı bir Serif font (Playfair Display vb.) kullan. UI metinleri (dakika, kategori) için SF Pro veya Inter kullan.
+• [x] Glassmorphism: "Pratik Yap" mikrofonunu ve alt navigasyon çubuğunu, arkadaki içeriği hafifçe flulaştıran (blur) şeffaf bir yüzey haline getir.
+• [x] Floating Action Button (FAB): Sağ alt köşeye "Pratik Yap" mikrofonunu, dairesel ve cam efektli bir buton olarak yerleştir.
+3. İlerleme (Progress) Sayfası Dönüşümü
+• [x] GitHub Grid Revizesi: "Reading Habit" takvimindeki karelerin köşelerini maksimum seviyede yuvarlat (neredeyse daire olsun) ve boş günleri arka plan rengine çok yakın bir tona çek.
+• [x] "Sıradaki Hedef" Spotlight: Sayfanın üst kısmına, kullanıcının kazanmaya en yakın olduğu rozeti (örn: "Bilge Rozeti için 2 hikaye kaldı") gösteren özel bir kart ekle.
+• [x] Mücevher Estetiği: Rozet ikonlarını düz çizim yerine, hafif gölgeli ve derinliği olan "dijital madalyon" gibi tasarla.
+• [x] İstatistik Ayrıştırması: Sadece "Okuma" değil, "Sohbette Kullanma" (anlatım) sayısını da ayrı bir sayaç olarak ekle.
+4. Mikro-Etkileşimler (UX)
+• [x] Hızlı Kopyala: "Hemen Kullan" (Punchline) kartlarına uzun basıldığında (haptic touch) metni kopyalayan ve ekranda zarif bir "Kopyalandı ✨" mesajı çıkaran akışı kur.
+• [x] Bildirim Noktası: İlerleme sayfasında yeni bir rozet veya başarı olduğunda, alt menüdeki ikonun üzerine çok küçük, altın rengi bir bildirim noktası ekle.
 
 ## Onerilen Uygulama Sirasi
 - [ ] 1. Paywall metinleri ve fark tablosu

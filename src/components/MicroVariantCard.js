@@ -14,9 +14,10 @@
  *   onToggle()     – called when the header row is pressed
  *   onCopy()       – called when the Copy button is pressed
  *   onShare()      – called when the Share button is pressed
+ *   onMarkUsed()   – called when the Mark as Used button is pressed
  *   colors / typography / layout / isDark / lang  – from ThemeContext
  */
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
@@ -58,6 +59,7 @@ const MicroVariantCard = ({
   onToggle,
   onCopy,
   onShare,
+  onMarkUsed,
   onPremiumTap,
   colors,
   typography,
@@ -70,6 +72,15 @@ const MicroVariantCard = ({
   const alwaysExpanded = ALWAYS_EXPANDED_TYPES.has(variant.type);
   const bodyVisible = alwaysExpanded || isExpanded;
 
+  const handleLongPress = useCallback(async () => {
+    if (!alwaysExpanded || locked) return;
+    try {
+      const Haptics = require('expo-haptics');
+      await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    } catch (_) {}
+    onCopy();
+  }, [alwaysExpanded, locked, onCopy]);
+
   const styles = buildStyles(colors, typography, layout, isDark, accent, isSelected);
 
   return (
@@ -79,6 +90,8 @@ const MicroVariantCard = ({
       <TouchableOpacity
         style={styles.header}
         onPress={locked ? onPremiumTap : onToggle}
+        onLongPress={alwaysExpanded && !locked ? handleLongPress : undefined}
+        delayLongPress={380}
         activeOpacity={0.7}
         accessibilityRole="button"
         accessibilityLabel={variant.title}
@@ -181,6 +194,16 @@ const MicroVariantCard = ({
             >
               <Ionicons name="share-social-outline" size={13} color={colors.text} />
               <Text style={styles.actionBtnText}>{t('shareBtn', lang)}</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[styles.actionBtn, { borderColor: `${accent}66` }]}
+              onPress={onMarkUsed}
+              accessibilityRole="button"
+              accessibilityLabel={t('mv_mark_used', lang)}
+            >
+              <Ionicons name="checkmark-done-outline" size={13} color={accent} />
+              <Text style={[styles.actionBtnText, { color: accent }]}>{t('mv_mark_used', lang)}</Text>
             </TouchableOpacity>
           </View>
         </>

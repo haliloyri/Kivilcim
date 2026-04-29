@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
 import { getCategoryImage } from '../utils/categoryImages';
@@ -31,7 +32,7 @@ export const getCatIcon = (catName) => {
   }
 };
 
-const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false, supportText = null }) => {
+const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false, supportText = null, stackIndex = 0, stackTotal = 1 }) => {
   const { colors, typography, layout, lang, isDark } = useTheme();
   const isHero = type === 'hero';
   const isCompact = type === 'compact';
@@ -46,6 +47,9 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   // Always use the main category (parent_cat) for display label
   const rawDisplayCat = t(story.parent_cat || story.cat, lang) || '';
   const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
+
+  const stackRotate = isCompact ? `${Math.max(-6, Math.min(6, (stackIndex - 1) * 1.8))}deg` : '0deg';
+  const stackTranslateY = isCompact ? Math.max(0, stackIndex) * 3 : 0;
 
   const styles = StyleSheet.create({
     card: {
@@ -164,7 +168,11 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
         isHero && styles.heroCard, 
         locked && styles.lockedCard,
         isRead && styles.readCard,
-        isHero && { padding: 0, overflow: 'hidden' } // Overlap hero card padding for image
+        isHero && { padding: 0, overflow: 'hidden' }, // Overlap hero card padding for image
+        isCompact ? {
+          transform: [{ rotate: stackRotate }, { translateY: stackTranslateY }],
+          zIndex: Math.max(1, stackTotal - stackIndex),
+        } : null,
       ]}
     >
       {isHero && (() => {
@@ -191,6 +199,15 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
             />
             <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint }]} />
             <View style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'rgba(0,0,0,0.12)' : colors.overlaySoft }]} />
+            <LinearGradient
+              colors={isDark ? ['rgba(25,21,15,0.5)', 'rgba(18,17,15,0.1)'] : ['rgba(252,232,194,0.38)', 'rgba(244,236,220,0.08)']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={StyleSheet.absoluteFill}
+            />
+            <View style={{ position: 'absolute', width: 180, height: 180, borderRadius: 90, top: -30, left: -20, backgroundColor: 'rgba(255,214,138,0.22)' }} />
+            <View style={{ position: 'absolute', width: 200, height: 200, borderRadius: 100, bottom: -60, right: -40, backgroundColor: 'rgba(188,108,37,0.18)' }} />
+            <View style={{ position: 'absolute', width: 120, height: 120, borderRadius: 60, top: 72, right: 42, backgroundColor: 'rgba(255,246,220,0.2)' }} />
           </View>
         );
       })()}

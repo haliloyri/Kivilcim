@@ -18,6 +18,9 @@ import {
   Platform,
   UIManager,
   StatusBar,
+  Share,
+  Animated,
+  Modal,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -56,6 +59,64 @@ const cleanBodyText = (body) =>
     .replace(/&&[\s\S]*?&&/g, '')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
+
+const normalizeHashtag = (value = '') =>
+  value
+    .toString()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\p{L}\p{N}]/gu, '');
+
+const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
+  const body = (variant?.body || '').trim();
+  const storyTitle = (story?.title || '').trim();
+
+  const hookByLang = {
+    tr: {
+      PUNCHLINE: 'Bugünün en vurucu çıkarımı:',
+      QUESTION: 'Bugün kendine sor:',
+      THIRTY_SEC: '30 saniyede anlatım:',
+      ONE_WORD: 'Tek kelime, büyük etki:',
+      fallback: 'Bu hikayeyi sevdim:',
+      engage: 'Sence bunun en kritik noktası ne?',
+      tags: '#Spark #Farkındalık #KişiselGelişim #KitapNotları',
+    },
+    en: {
+      PUNCHLINE: 'Today\'s sharpest takeaway:',
+      QUESTION: 'Ask yourself this today:',
+      THIRTY_SEC: 'This in 30 seconds:',
+      ONE_WORD: 'One word, big impact:',
+      fallback: 'This story stayed with me:',
+      engage: 'What part resonates with you most?',
+      tags: '#Spark #Mindset #Growth #BookNotes',
+    },
+    es: {
+      PUNCHLINE: 'La idea mas potente de hoy:',
+      QUESTION: 'Preguntate esto hoy:',
+      THIRTY_SEC: 'Esto en 30 segundos:',
+      ONE_WORD: 'Una palabra, gran impacto:',
+      fallback: 'Esta historia me impacto:',
+      engage: 'Que parte te resuena mas?',
+      tags: '#Spark #Mentalidad #Crecimiento #NotasDeLibros',
+    },
+    de: {
+      PUNCHLINE: 'Die kraftigste Erkenntnis heute:',
+      QUESTION: 'Stell dir heute diese Frage:',
+      THIRTY_SEC: 'In 30 Sekunden:',
+      ONE_WORD: 'Ein Wort, grosse Wirkung:',
+      fallback: 'Diese Geschichte bleibt haengen:',
+      engage: 'Welcher Teil spricht dich am meisten an?',
+      tags: '#Spark #Mindset #Weiterentwicklung #BuchImpulse',
+    },
+  };
+
+  const copy = hookByLang[lang] || hookByLang.tr;
+  const hook = copy[variant?.type] || copy.fallback;
+  const categoryTag = normalizeHashtag(categoryLabel || story?.parent_cat || story?.cat || '');
+  const hashtags = categoryTag ? `#${categoryTag} ${copy.tags}` : copy.tags;
+
+  return `${hook}\n\n${body || storyTitle}\n\n${copy.engage}\n\n${hashtags}`;
+};
 
 /**
  * Build the variant list from a story object.
@@ -149,6 +210,10 @@ const UseInConversationScreen = ({ route, navigation }) => {
 
   // Shows copied checkmark for 2s
   const [copiedId, setCopiedId] = useState(null);
+  const [copyToastVisible, setCopyToastVisible] = useState(false);
+  const [ratingVariant, setRatingVariant] = useState(null);
+  const [ratingValue, setRatingValue] = useState(0);
+  const toastAnim = React.useRef(new Animated.Value(0)).current;
 
   // Variant IDs that are premium-locked (all except PUNCHLINE)
   const lockedIds = useMemo(() => {
@@ -189,38 +254,79 @@ const UseInConversationScreen = ({ route, navigation }) => {
     recordVariantUsage({
       storyId: story?.story_id,
       storyTitle: story?.title,
+      storyCategory: story?.parent_cat || story?.cat || null,
       variantType: variant.type,
       variantId: variant.id,
       action: 'copy',
     });
+    setCopyToastVisible(true);
+    Animated.sequence([
+      Animated.timing(toastAnim, { toValue: 1, duration: 180, useNativeDriver: true }),
+      Animated.delay(1300),
+      Animated.timing(toastAnim, { toValue: 0, duration: 220, useNativeDriver: true }),
+    ]).start(() => setCopyToastVisible(false));
   }, [story?.story_id, story?.title, lang, recordVariantUsage]);
 
-  const handleShare = useCallback((variant) => {
+  const handleShare = useCallback(async (variant) => {
     setSelectedId(variant.id);
-    const sharePreset =
-      variant.type === 'QUESTION'
-        ? 'reflection'
-        : variant.type === 'PUNCHLINE'
-          ? 'lesson'
-          : 'quote';
+    const payload = buildVariantShareMessage({
+      story,
+      variant,
+      lang,
+      categoryLabel: displayCat,
+    });
+
+    try {
+      await Share.share({
+        message: payload,
+        title: story?.title || t('mv_screen_title', lang),
+      });
+      trackEvent(ANALYTICS_EVENTS.STORY_SHARED, {
+        source: 'use_in_conversation',
+        storyId: story?.story_id,
+        variantType: variant.type,
+        variantId: variant.id,
+        lang,
+      });
+    } catch (error) {
+      // Ignore user-cancelled share actions
+      if (error?.message && /cancel|dismiss/i.test(error.message)) return;
+      console.warn('Native share failed', error);
+    }
 
     recordVariantUsage({
       storyId: story?.story_id,
       storyTitle: story?.title,
+      storyCategory: story?.parent_cat || story?.cat || null,
       variantType: variant.type,
       variantId: variant.id,
-      action: 'share_open',
+      action: 'share_native',
+    });
+  }, [story, story?.story_id, story?.title, lang, displayCat, recordVariantUsage]);
+
+  const openMarkUsedSurvey = useCallback((variant) => {
+    setSelectedId(variant.id);
+    setRatingVariant(variant);
+    setRatingValue(0);
+  }, []);
+
+  const submitMarkUsedSurvey = useCallback(async () => {
+    if (!ratingVariant) return;
+
+    await recordVariantUsage({
+      storyId: story?.story_id,
+      storyTitle: story?.title,
+      storyCategory: story?.parent_cat || story?.cat || null,
+      variantType: ratingVariant.type,
+      variantId: ratingVariant.id,
+      action: 'mark_used',
+      feedbackRating: ratingValue || null,
     });
 
-    navigation.navigate('StoryDetail', {
-      story,
-      openShareModal: true,
-      sharePreset,
-      shareOverrideText: variant.body,
-      shareSource: 'use_in_conversation',
-      shareVariantType: variant.type,
-    });
-  }, [navigation, story, story?.story_id, story?.title, recordVariantUsage]);
+    setRatingVariant(null);
+    setRatingValue(0);
+  }, [ratingVariant, ratingValue, recordVariantUsage, story?.story_id, story?.title, story?.parent_cat, story?.cat]);
+
   const displayCat = t(story.parent_cat || story.cat || '', lang);
 
   const styles = buildStyles(colors, typography, layout, isDark, insets);
@@ -249,9 +355,6 @@ const UseInConversationScreen = ({ route, navigation }) => {
         <View style={styles.appBarCenter}>
           <Text style={styles.appBarTitle} numberOfLines={1}>
             {t('mv_screen_title', lang)}
-          </Text>
-          <Text style={styles.appBarSub} numberOfLines={1}>
-            {t('mv_screen_sub', lang)}
           </Text>
         </View>
 
@@ -290,6 +393,12 @@ const UseInConversationScreen = ({ route, navigation }) => {
         <Text style={styles.readyBannerText}>{t('mv_ready_banner', lang)}</Text>
       </View>
 
+      {/* ── Context Note (moved subtitle) ─────────────────────────────── */}
+      <View style={styles.contextNote}>
+        <Ionicons name="sparkles-outline" size={14} color={colors.textSecondary} />
+        <Text style={styles.contextNoteText}>{t('mv_screen_sub', lang)}</Text>
+      </View>
+
       {/* ── Variant Cards ─────────────────────────────────────────────── */}
       <ScrollView
         contentContainerStyle={styles.scrollContent}
@@ -307,6 +416,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
             onToggle={() => toggleExpanded(variant.id)}
             onCopy={() => handleCopy(variant)}
             onShare={() => handleShare(variant)}
+            onMarkUsed={() => openMarkUsedSurvey(variant)}
             onPremiumTap={handlePremiumTap}
             colors={colors}
             typography={typography}
@@ -318,6 +428,61 @@ const UseInConversationScreen = ({ route, navigation }) => {
 
         <View style={{ height: insets.bottom + 32 }} />
       </ScrollView>
+
+      {copyToastVisible && (
+        <Animated.View
+          style={[
+            styles.copyToast,
+            {
+              opacity: toastAnim,
+              transform: [{ translateY: toastAnim.interpolate({ inputRange: [0, 1], outputRange: [14, 0] }) }],
+            },
+          ]}
+          pointerEvents="none"
+        >
+          <Ionicons name="checkmark-circle" size={16} color="#2E7D32" />
+          <Text style={styles.copyToastText}>{t('mv_copy_toast', lang)}</Text>
+        </Animated.View>
+      )}
+
+      <Modal
+        visible={Boolean(ratingVariant)}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setRatingVariant(null)}
+      >
+        <View style={styles.feedbackOverlay}>
+          <View style={styles.feedbackCard}>
+            <Text style={styles.feedbackTitle}>{t('mv_feedback_title', lang)}</Text>
+            <Text style={styles.feedbackSub}>
+              {ratingVariant ? ratingVariant.title : ''}
+            </Text>
+            <View style={styles.feedbackStars}>
+              {[1, 2, 3, 4, 5].map((star) => (
+                <TouchableOpacity
+                  key={star}
+                  onPress={() => setRatingValue(star)}
+                  style={styles.feedbackStarBtn}
+                >
+                  <Ionicons
+                    name={star <= ratingValue ? 'star' : 'star-outline'}
+                    size={24}
+                    color={star <= ratingValue ? '#C98A19' : colors.textSecondary}
+                  />
+                </TouchableOpacity>
+              ))}
+            </View>
+            <View style={styles.feedbackActions}>
+              <TouchableOpacity onPress={() => setRatingVariant(null)} style={styles.feedbackSecondaryBtn}>
+                <Text style={styles.feedbackSecondaryText}>{t('profileCancel', lang)}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={submitMarkUsedSurvey} style={styles.feedbackPrimaryBtn}>
+                <Text style={styles.feedbackPrimaryText}>{t('mv_mark_used', lang)}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };
@@ -360,17 +525,9 @@ const buildStyles = (colors, typography, layout, isDark, insets) =>
     },
     appBarTitle: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 10,
-      color: colors.primary,
-      letterSpacing: 1.8,
-      textTransform: 'uppercase',
-    },
-    appBarSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 11,
-      color: colors.textSecondary,
-      textAlign: 'center',
-      marginTop: 2,
+      fontSize: 17,
+      color: colors.text,
+      letterSpacing: 0.2,
     },
     appBarRightSpacer: {
       width: 34,
@@ -425,10 +582,110 @@ const buildStyles = (colors, typography, layout, isDark, insets) =>
       color: colors.primary,
       letterSpacing: 0.3,
     },
+    // Subtitle moved under banner with a distinct visual style
+    contextNote: {
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      gap: 8,
+      marginTop: 10,
+      marginHorizontal: layout.padding.horizontal,
+      paddingHorizontal: 12,
+      paddingVertical: 10,
+      borderRadius: 12,
+      borderWidth: layout.borderWidth,
+      borderColor: colors.border,
+      backgroundColor: isDark ? colors.card : '#F7F3EC',
+    },
+    contextNoteText: {
+      flex: 1,
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      lineHeight: 18,
+      color: colors.textSecondary,
+    },
     // Scroll area
     scrollContent: {
       paddingHorizontal: layout.padding.horizontal,
       paddingTop: 18,
+    },
+    copyToast: {
+      position: 'absolute',
+      left: layout.padding.horizontal,
+      right: layout.padding.horizontal,
+      bottom: Math.max(insets.bottom + 14, 22),
+      borderRadius: 12,
+      paddingHorizontal: 14,
+      paddingVertical: 11,
+      backgroundColor: isDark ? '#2B2A24' : '#EAF6EC',
+      borderWidth: 1,
+      borderColor: isDark ? colors.border : '#CDE6D1',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 8,
+    },
+    copyToastText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: isDark ? colors.text : '#2E5F37',
+    },
+    feedbackOverlay: {
+      flex: 1,
+      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.25)',
+      justifyContent: 'flex-end',
+      padding: 16,
+    },
+    feedbackCard: {
+      backgroundColor: colors.background,
+      borderRadius: 18,
+      borderWidth: 1,
+      borderColor: colors.border,
+      padding: 16,
+    },
+    feedbackTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 22,
+      color: colors.text,
+    },
+    feedbackSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      marginTop: 4,
+      marginBottom: 12,
+    },
+    feedbackStars: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginBottom: 14,
+    },
+    feedbackStarBtn: {
+      padding: 6,
+    },
+    feedbackActions: {
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      gap: 10,
+      marginTop: 2,
+    },
+    feedbackSecondaryBtn: {
+      paddingHorizontal: 10,
+      paddingVertical: 8,
+    },
+    feedbackSecondaryText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: colors.textSecondary,
+    },
+    feedbackPrimaryBtn: {
+      borderRadius: 10,
+      backgroundColor: colors.primary,
+      paddingHorizontal: 12,
+      paddingVertical: 8,
+    },
+    feedbackPrimaryText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.onPrimary,
     },
   });
 
