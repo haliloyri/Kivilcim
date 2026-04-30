@@ -32,7 +32,7 @@ export const getCatIcon = (catName) => {
   }
 };
 
-const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false, supportText = null, stackIndex = 0, stackTotal = 1 }) => {
+const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false, supportText = null, stackIndex = 0, stackTotal = 1, onUseInConversation }) => {
   const { colors, typography, layout, lang, isDark } = useTheme();
   const isHero = type === 'hero';
   const isCompact = type === 'compact';
@@ -53,7 +53,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
 
   const styles = StyleSheet.create({
     card: {
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: isDark ? colors.backgroundDark : '#FDFAF4',
       borderRadius: layout.radius.card,
       borderWidth: 1,
       borderColor: 'rgba(218, 193, 184, 0.2)',
@@ -75,7 +75,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     lockedCard: {
       opacity: 0.6,
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: isDark ? colors.backgroundDark : '#FDFAF4',
     },
     readCard: {
       opacity: 0.5,
@@ -258,7 +258,29 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
               </View>
             )}
           </View>
-          {!isCompact && <Text style={[styles.cardArrow, isHero && { color: colors.text }]}>→</Text>}
+          {!isCompact && onUseInConversation && !locked && (
+            <TouchableOpacity
+              onPress={onUseInConversation}
+              activeOpacity={0.85}
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 5,
+                paddingVertical: 6,
+                paddingHorizontal: 10,
+                borderRadius: 8,
+                backgroundColor: isDark ? `${colors.primary}20` : `${colors.primary}14`,
+                borderWidth: 1,
+                borderColor: `${colors.primary}45`,
+              }}
+            >
+              <Ionicons name="chatbubbles" size={12} color={colors.primary} />
+              <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 11, color: colors.primary }}>
+                {t('story_detail_use_cta', lang)}
+              </Text>
+            </TouchableOpacity>
+          )}
+          {!isCompact && !onUseInConversation && <Text style={[styles.cardArrow, isHero && { color: colors.text }]}>→</Text>}
         </View>
       </View>
     </TouchableOpacity>

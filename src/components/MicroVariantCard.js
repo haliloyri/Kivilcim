@@ -55,6 +55,7 @@ const MicroVariantCard = ({
   isExpanded,
   isSelected,
   isCopied,
+  isMarkedUsed,
   locked,
   onToggle,
   onCopy,
@@ -169,9 +170,9 @@ const MicroVariantCard = ({
 
           <View style={styles.actionsContainer}>
             <View style={styles.actions}>
-              {/* Copy button - icon only */}
+              {/* Copy button */}
               <TouchableOpacity
-                style={[styles.actionBtn, styles.iconOnlyBtn, isCopied && { backgroundColor: accent, borderColor: accent }]}
+                style={[styles.actionBtn, styles.actionBtnFlex, isCopied && { backgroundColor: accent, borderColor: accent }]}
                 onPress={onCopy}
                 accessibilityRole="button"
                 accessibilityLabel={isCopied ? t('mv_copied', lang) : t('mv_copy', lang)}
@@ -181,28 +182,39 @@ const MicroVariantCard = ({
                   size={15}
                   color={isCopied ? '#fff' : colors.text}
                 />
+                <Text style={[styles.actionBtnText, isCopied && { color: '#fff' }]}>
+                  {isCopied ? t('mv_copied', lang) : t('mv_copy', lang)}
+                </Text>
               </TouchableOpacity>
 
-              {/* Share button - icon only */}
+              {/* Share button */}
               <TouchableOpacity
-                style={[styles.actionBtn, styles.iconOnlyBtn]}
+                style={[styles.actionBtn, styles.actionBtnFlex]}
                 onPress={onShare}
                 accessibilityRole="button"
                 accessibilityLabel={t('shareBtn', lang)}
               >
                 <Ionicons name="share-social-outline" size={15} color={colors.text} />
+                <Text style={styles.actionBtnText}>{t('shareBtn', lang)}</Text>
               </TouchableOpacity>
             </View>
 
-            {/* Mark as Used button - full button at bottom right */}
+            {/* Mark as Used button - toggle state */}
             <TouchableOpacity
-              style={[styles.markUsedBtn, { borderColor: `${accent}66`, backgroundColor: isCopied ? 'transparent' : colors.backgroundDark }]}
+              style={[
+                styles.markUsedBtn,
+                isMarkedUsed
+                  ? { borderColor: colors.primary, backgroundColor: isDark ? 'transparent' : `${colors.primary}15` }
+                  : { borderColor: `${accent}66`, backgroundColor: isDark ? colors.backgroundDark : 'transparent' },
+              ]}
               onPress={onMarkUsed}
               accessibilityRole="button"
               accessibilityLabel={t('mv_mark_used', lang)}
             >
-              <Ionicons name="checkmark" size={16} color={accent} />
-              <Text style={[styles.actionBtnText, { color: accent }]}>{t('mv_mark_used', lang)}</Text>
+              {isMarkedUsed && <Ionicons name="checkmark" size={16} color={colors.primary} />}
+              <Text style={[styles.actionBtnText, { color: isMarkedUsed ? colors.primary : accent }]}>
+                {t('mv_mark_used', lang)}
+              </Text>
             </TouchableOpacity>
           </View>
         </>
@@ -315,7 +327,7 @@ const buildStyles = (colors, typography, layout, isDark, accent, isSelected) =>
       borderWidth: 1,
       borderColor: colors.border,
     },
-    iconOnlyBtn: {
+    actionBtnFlex: {
       flex: 1,
       justifyContent: 'center',
       paddingHorizontal: 12,

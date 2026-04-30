@@ -451,6 +451,13 @@ const HomeScreen = ({ navigation }) => {
   const personalizedStoryIds = new Set(personalizedStories.map((story) => story.story_id));
   const remainingStories = sortedStories.filter((story) => !personalizedStoryIds.has(story.story_id));
 
+  // Count actually-read stories from personalizedStories using history (#4 fix)
+  const historySet = React.useMemo(() => new Set((history || []).map(id => String(id))), [history]);
+  const doneCount = React.useMemo(() =>
+    personalizedStories.filter(s => historySet.has(String(s.story_id))).length,
+    [personalizedStories, historySet]
+  );
+
   const firstSessionFocusCategories = React.useMemo(() => {
     const preferred = (selectedCategories || []).filter(Boolean);
     if (preferred.length > 0) return preferred.slice(0, 3);
@@ -724,57 +731,37 @@ const HomeScreen = ({ navigation }) => {
       justifyContent: 'space-between', 
       alignItems: 'center', 
       paddingHorizontal: layout.padding.horizontal, 
-      paddingTop: 32,
-      paddingBottom: 16 
+      paddingTop: 14,
+      paddingBottom: 12,
     },
-    headerRight: {
+    brandLogo: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 22,
+      color: colors.text,
+      letterSpacing: 0.5,
+    },
+    dailyProgressBanner: {
       flexDirection: 'row',
       alignItems: 'center',
-      gap: 16,
-    },
-    greetSub: { 
-      fontFamily: 'PlayfairDisplay_400Regular', 
-      fontSize: 24, 
-      color: colors.text, 
-      marginBottom: -4 
-    },
-    greetName: { 
-      fontFamily: 'PlayfairDisplay_700Bold', 
-      fontSize: 32, 
-      color: colors.text 
-    },
-    searchIcon: {
-      fontSize: 22,
-      color: colors.textSecondary,
-    },
-    avatar: { 
-      width: 38, 
-      height: 38, 
-      borderRadius: 12, 
-      backgroundColor: isDark ? colors.backgroundDark : '#E6DEC8', 
-      borderWidth: isDark ? 1 : 0,
-      borderColor: colors.border,
-      alignItems: 'center', 
-      justifyContent: 'center' 
-    },
-    avatarText: { 
-      fontFamily: 'Inter_500Medium', 
-      fontSize: 14, 
-      color: colors.text 
-    },
-    langBtn: {
-      paddingHorizontal: 10,
-      paddingVertical: 8,
-      borderRadius: 12,
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 16,
+      paddingHorizontal: 16,
+      paddingVertical: 14,
+      borderRadius: 16,
+      backgroundColor: isDark ? `${colors.primary}0D` : `${colors.primary}0A`,
       borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: 'transparent',
-      marginLeft: 4
+      borderColor: `${colors.primary}30`,
     },
-    langBtnText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 14,
-      color: colors.text
+    dailyProgressTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.text,
+      marginBottom: 2,
+    },
+    dailyProgressSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
     },
     streakCard: { 
       flexDirection: 'row', 
@@ -1105,7 +1092,7 @@ const HomeScreen = ({ navigation }) => {
       gap: 12,
     },
     dailyStoryRowClicked: {
-      opacity: 0.55,
+      backgroundColor: isDark ? `${colors.primary}18` : `${colors.primary}0D`,
     },
   });
 
@@ -1119,28 +1106,31 @@ const HomeScreen = ({ navigation }) => {
         scrollEventThrottle={100}
       >
         <View style={styles.homeHeader}>
-          <View>
-            <Text style={styles.greetSub}>{greeting}</Text>
-            <Text style={styles.greetName}>{brandText}</Text>
+          <Text style={styles.brandLogo}>Spark</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Search')} style={{ padding: 4 }}>
+            <Ionicons name="search" size={22} color={colors.textSecondary} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.dailyProgressBanner}>
+          <DailyProgressRing
+            done={doneCount}
+            total={personalizedTarget}
+            colors={colors}
+            isDark={isDark}
+            size={52}
+            onPress={() => navigation.navigate('ProgressTab')}
+          />
+          <View style={{ flex: 1, marginLeft: 14 }}>
+            <Text style={styles.dailyProgressTitle} numberOfLines={1}>{t('home_daily_cta', lang)}</Text>
+            <Text style={styles.dailyProgressSub}>{doneCount} / {personalizedTarget}</Text>
           </View>
-          <View style={styles.headerRight}>
-            <TouchableOpacity onPress={() => navigation.navigate('Search')}>
-              <Ionicons name="search" style={styles.searchIcon} />
-            </TouchableOpacity>
-            <DailyProgressRing
-              done={dailyClickedIds.size}
-              total={personalizedTarget}
-              colors={colors}
-              isDark={isDark}
-              onPress={() => navigation.navigate('ProgressTab')}
-            />
-            <TouchableOpacity onPress={() => navigation.navigate('ProfileTab')} style={styles.avatar}>
-              <Text style={styles.avatarText}>AY</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setLang(lang === 'en' ? 'tr' : 'en')} style={styles.langBtn}>
-              <Text style={styles.langBtnText}>{lang.toUpperCase()}</Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ProgressTab')}
+            style={{ padding: 6 }}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="chevron-forward" size={18} color={colors.textSecondary} />
+          </TouchableOpacity>
         </View>
 
         <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
@@ -1210,7 +1200,7 @@ const HomeScreen = ({ navigation }) => {
               {/* Daily recommendations panel */}
               {personalizedStories.length > 0 && (() => {
                 const panelStories = personalizedStories;
-                const isDailyComplete = dailyClickedIds.size >= panelStories.length;
+                const isDailyComplete = doneCount >= panelStories.length;
                 return (
                   <View style={styles.dailyPanelCard}>
                     <TouchableOpacity
@@ -1254,7 +1244,7 @@ const HomeScreen = ({ navigation }) => {
                     {!isDailyPanelCollapsed && !isDailyComplete && (
                       <View style={styles.dailyPanelStoriesWrap}>
                         {panelStories.map((story, storyIdx) => {
-                          const isClicked = dailyClickedIds.has(String(story.story_id));
+                          const isClicked = dailyClickedIds.has(String(story.story_id)) || historySet.has(String(story.story_id));
                           const isLocked = !isPremium && !isClicked && personalizedStories.indexOf(story) >= 2;
                           const isFirst = storyIdx === 0;
                           return (
@@ -1353,52 +1343,22 @@ const HomeScreen = ({ navigation }) => {
                     type="hero" 
                     hideCategory={activeFilter !== 'all'}
                     isRead={checkIfRead(free[0].story_id)}
-                    onPress={() => navigation.navigate('StoryDetail', { story: free[0] })} 
+                    onPress={() => navigation.navigate('StoryDetail', { story: free[0] })}
+                    onUseInConversation={() => navigation.navigate('UseInConversation', { story: free[0] })}
                   />
-                  <TouchableOpacity
-                    style={{
-                      marginTop: -8,
-                      marginBottom: 14,
-                      borderRadius: 14,
-                      borderWidth: 1,
-                      borderColor: `${colors.primary}66`,
-                      backgroundColor: isDark ? 'rgba(208,106,27,0.12)' : 'rgba(255,248,237,0.95)',
-                      paddingVertical: 10,
-                      paddingHorizontal: 14,
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: 8,
-                    }}
-                    onPress={() => navigation.navigate('UseInConversation', { story: free[0] })}
-                    activeOpacity={0.85}
-                  >
-                    <Ionicons name="chatbubbles-outline" size={16} color={colors.primary} />
-                    <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 13, color: colors.primary }}>
-                      {t('story_detail_use_cta', lang)}
-                    </Text>
-                  </TouchableOpacity>
                 </>
               )}
 
               <View style={styles.storyGrid}>
                 {free.slice(1).map(story => (
-                  <View key={story.story_id}>
-                    <StoryCard
-                      story={story}
-                      hideCategory={activeFilter !== 'all'}
-                      isRead={checkIfRead(story.story_id)}
-                      onPress={() => navigation.navigate('StoryDetail', { story })}
-                    />
-                    <TouchableOpacity
-                      style={styles.editorialUseCta}
-                      onPress={() => navigation.navigate('UseInConversation', { story })}
-                      activeOpacity={0.75}
-                    >
-                      <Ionicons name="chatbubbles-outline" size={13} color={colors.primary} />
-                      <Text style={styles.editorialUseCtaText}>{t('story_detail_use_cta', lang)}</Text>
-                    </TouchableOpacity>
-                  </View>
+                  <StoryCard
+                    key={story.story_id}
+                    story={story}
+                    hideCategory={activeFilter !== 'all'}
+                    isRead={checkIfRead(story.story_id)}
+                    onPress={() => navigation.navigate('StoryDetail', { story })}
+                    onUseInConversation={() => navigation.navigate('UseInConversation', { story })}
+                  />
                 ))}
                 {weeklyBonusStory ? (
                   <StoryCard

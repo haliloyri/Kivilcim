@@ -213,6 +213,8 @@ const UseInConversationScreen = ({ route, navigation }) => {
   const [copyToastVisible, setCopyToastVisible] = useState(false);
   const [ratingVariant, setRatingVariant] = useState(null);
   const [ratingValue, setRatingValue] = useState(0);
+  const [markedUsedIds, setMarkedUsedIds] = useState(new Set());
+  const [modalMarked, setModalMarked] = useState(false);
   const toastAnim = React.useRef(new Animated.Value(0)).current;
 
   // Variant IDs that are premium-locked (all except PUNCHLINE)
@@ -308,24 +310,35 @@ const UseInConversationScreen = ({ route, navigation }) => {
     setSelectedId(variant.id);
     setRatingVariant(variant);
     setRatingValue(0);
-  }, []);
+    setModalMarked(markedUsedIds.has(variant.id));
+  }, [markedUsedIds]);
 
-  const submitMarkUsedSurvey = useCallback(async () => {
+  const closeMarkUsedSurvey = useCallback(async () => {
     if (!ratingVariant) return;
 
-    await recordVariantUsage({
-      storyId: story?.story_id,
-      storyTitle: story?.title,
-      storyCategory: story?.parent_cat || story?.cat || null,
-      variantType: ratingVariant.type,
-      variantId: ratingVariant.id,
-      action: 'mark_used',
-      feedbackRating: ratingValue || null,
-    });
+    if (modalMarked) {
+      await recordVariantUsage({
+        storyId: story?.story_id,
+        storyTitle: story?.title,
+        storyCategory: story?.parent_cat || story?.cat || null,
+        variantType: ratingVariant.type,
+        variantId: ratingVariant.id,
+        action: 'mark_used',
+        feedbackRating: ratingValue || null,
+      });
+      setMarkedUsedIds(prev => new Set([...prev, ratingVariant.id]));
+    } else {
+      setMarkedUsedIds(prev => {
+        const next = new Set(prev);
+        next.delete(ratingVariant.id);
+        return next;
+      });
+    }
 
     setRatingVariant(null);
     setRatingValue(0);
-  }, [ratingVariant, ratingValue, recordVariantUsage, story?.story_id, story?.title, story?.parent_cat, story?.cat]);
+    setModalMarked(false);
+  }, [ratingVariant, ratingValue, modalMarked, recordVariantUsage, story?.story_id, story?.title, story?.parent_cat, story?.cat]);
 
   const displayCat = t(story.parent_cat || story.cat || '', lang);
 
@@ -412,6 +425,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
             isExpanded={!!expandedIds[variant.id]}
             isSelected={variant.id === selectedId}
             isCopied={variant.id === copiedId}
+            isMarkedUsed={markedUsedIds.has(variant.id)}
             locked={lockedIds.has(variant.id)}
             onToggle={() => toggleExpanded(variant.id)}
             onCopy={() => handleCopy(variant)}
@@ -472,12 +486,26 @@ const UseInConversationScreen = ({ route, navigation }) => {
                 </TouchableOpacity>
               ))}
             </View>
+            <TouchableOpacity
+              style={[
+                styles.feedbackMarkUsedToggle,
+                modalMarked
+                  ? { borderColor: colors.primary, backgroundColor: isDark ? 'transparent' : `${colors.primary}15` }
+                  : { borderColor: colors.border, backgroundColor: isDark ? colors.backgroundDark : 'transparent' },
+              ]}
+              onPress={() => setModalMarked(prev => !prev)}
+            >
+              {modalMarked && <Ionicons name="checkmark" size={16} color={colors.primary} />}
+              <Text style={[styles.feedbackMarkUsedText, { color: modalMarked ? colors.primary : colors.text }]}>
+                {t('mv_mark_used', lang)}
+              </Text>
+            </TouchableOpacity>
             <View style={styles.feedbackActions}>
               <TouchableOpacity onPress={() => setRatingVariant(null)} style={styles.feedbackSecondaryBtn}>
                 <Text style={styles.feedbackSecondaryText}>{t('profileCancel', lang)}</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={submitMarkUsedSurvey} style={styles.feedbackPrimaryBtn}>
-                <Text style={styles.feedbackPrimaryText}>{t('mv_mark_used', lang)}</Text>
+              <TouchableOpacity onPress={closeMarkUsedSurvey} style={styles.feedbackPrimaryBtn}>
+                <Text style={styles.feedbackPrimaryText}>{t('badgeModalClose', lang)}</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -686,6 +714,21 @@ const buildStyles = (colors, typography, layout, isDark, insets) =>
       fontFamily: 'Inter_600SemiBold',
       fontSize: 13,
       color: colors.onPrimary,
+    },
+    feedbackMarkUsedToggle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      paddingHorizontal: 14,
+      paddingVertical: 9,
+      borderRadius: 20,
+      borderWidth: 1,
+      alignSelf: 'flex-start',
+      marginBottom: 12,
+    },
+    feedbackMarkUsedText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
     },
   });
 
