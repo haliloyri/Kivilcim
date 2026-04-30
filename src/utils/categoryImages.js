@@ -38,6 +38,58 @@ export const CAT_STYLES_DARK = {
   'Social Skills': { rotate: '0deg', flip: true, tint: 'rgba(75, 8, 8, 0.50)' },
 };
 
+const CATEGORY_THEME_MAP = {
+  'Mind & Psychology': {
+    accent: '#566FC1',
+    lightSoft: 'rgba(86, 111, 193, 0.10)',
+    lightStrong: 'rgba(86, 111, 193, 0.16)',
+    darkSoft: 'rgba(86, 111, 193, 0.18)',
+    darkStrong: 'rgba(86, 111, 193, 0.24)',
+  },
+  'Career & Success': {
+    accent: '#B8861D',
+    lightSoft: 'rgba(184, 134, 29, 0.10)',
+    lightStrong: 'rgba(184, 134, 29, 0.16)',
+    darkSoft: 'rgba(184, 134, 29, 0.18)',
+    darkStrong: 'rgba(184, 134, 29, 0.24)',
+  },
+  'Personal Growth': {
+    accent: '#1F8A77',
+    lightSoft: 'rgba(31, 138, 119, 0.10)',
+    lightStrong: 'rgba(31, 138, 119, 0.16)',
+    darkSoft: 'rgba(31, 138, 119, 0.18)',
+    darkStrong: 'rgba(31, 138, 119, 0.24)',
+  },
+  'Science & Future': {
+    accent: '#5F7C45',
+    lightSoft: 'rgba(95, 124, 69, 0.10)',
+    lightStrong: 'rgba(95, 124, 69, 0.16)',
+    darkSoft: 'rgba(95, 124, 69, 0.18)',
+    darkStrong: 'rgba(95, 124, 69, 0.24)',
+  },
+  'Society & World': {
+    accent: '#BA6830',
+    lightSoft: 'rgba(186, 104, 48, 0.10)',
+    lightStrong: 'rgba(186, 104, 48, 0.16)',
+    darkSoft: 'rgba(186, 104, 48, 0.18)',
+    darkStrong: 'rgba(186, 104, 48, 0.24)',
+  },
+  'Social Skills': {
+    accent: '#B65252',
+    lightSoft: 'rgba(182, 82, 82, 0.10)',
+    lightStrong: 'rgba(182, 82, 82, 0.16)',
+    darkSoft: 'rgba(182, 82, 82, 0.18)',
+    darkStrong: 'rgba(182, 82, 82, 0.24)',
+  },
+  default: {
+    accent: '#8A6C43',
+    lightSoft: 'rgba(138, 108, 67, 0.08)',
+    lightStrong: 'rgba(138, 108, 67, 0.14)',
+    darkSoft: 'rgba(138, 108, 67, 0.16)',
+    darkStrong: 'rgba(138, 108, 67, 0.22)',
+  },
+};
+
 // Base images
 const IMG_FINANCE = require('../../assets/categories/cat_finance.png');
 const IMG_PSYCHOLOGY = require('../../assets/categories/cat_psychology.png');
@@ -302,10 +354,25 @@ const categoryImageMap = {
  * @param {string} catName - Category name
  * @param {boolean} isDark - Whether dark mode is active
  */
+export const normalizeCategoryKey = (catName) => PARENT_CATEGORY_ALIASES[catName] || catName;
+
+export const getCategoryTheme = (catName, isDark = false) => {
+  const normalizedKey = normalizeCategoryKey(catName);
+  const palette = CATEGORY_THEME_MAP[normalizedKey] || CATEGORY_THEME_MAP.default;
+
+  return {
+    key: normalizedKey,
+    accent: palette.accent,
+    borderColor: palette.accent,
+    backgroundColor: isDark ? palette.darkSoft : palette.lightSoft,
+    strongBackgroundColor: isDark ? palette.darkStrong : palette.lightStrong,
+  };
+};
+
 export const getCategoryImage = (catName, isDark = false) => {
   if (!catName) return { source: null, rotate: '0deg', flip: false, tint: 'transparent' };
 
-  const normalizedKey = PARENT_CATEGORY_ALIASES[catName] || catName;
+  const normalizedKey = normalizeCategoryKey(catName);
   const source = PARENT_CATEGORY_IMAGE_MAP[normalizedKey] ?? categoryImageMap[normalizedKey] ?? null;
   const styleMap = isDark ? CAT_STYLES_DARK : CAT_STYLES;
   const style = styleMap[normalizedKey] || { rotate: '0deg', flip: false, tint: 'transparent' };

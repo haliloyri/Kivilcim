@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
-import { getCategoryImage } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 
 const { width } = Dimensions.get('window');
 
@@ -47,16 +47,17 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   // Always use the main category (parent_cat) for display label
   const rawDisplayCat = t(story.parent_cat || story.cat, lang) || '';
   const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
+  const categoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
 
   const stackRotate = isCompact ? `${Math.max(-6, Math.min(6, (stackIndex - 1) * 1.8))}deg` : '0deg';
   const stackTranslateY = isCompact ? Math.max(0, stackIndex) * 3 : 0;
 
   const styles = StyleSheet.create({
     card: {
-      backgroundColor: isDark ? colors.backgroundDark : '#FDFAF4',
+      backgroundColor: categoryTheme.backgroundColor,
       borderRadius: layout.radius.card,
-      borderWidth: 1,
-      borderColor: 'rgba(218, 193, 184, 0.2)',
+      borderWidth: 1.5,
+      borderColor: categoryTheme.borderColor,
       overflow: 'hidden',
       padding: isCompact ? 16 : 24,
       marginBottom: isCompact ? 0 : 20,
@@ -70,12 +71,12 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       elevation: 2,
     },
     heroCard: {
-      backgroundColor: isDark ? colors.backgroundDark : '#EBE6DC',
-      borderWidth: 0,
+      backgroundColor: categoryTheme.strongBackgroundColor,
+      borderWidth: 1.5,
     },
     lockedCard: {
       opacity: 0.6,
-      backgroundColor: isDark ? colors.backgroundDark : '#FDFAF4',
+      backgroundColor: categoryTheme.backgroundColor,
     },
     readCard: {
       opacity: 0.5,
@@ -90,7 +91,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       paddingHorizontal: 8,
       paddingVertical: 4,
       borderRadius: 6,
-      backgroundColor: colors.background,
+      backgroundColor: isDark ? colors.background : 'rgba(255,255,255,0.72)',
       borderWidth: 0,
       flexDirection: 'row',
       alignItems: 'center',

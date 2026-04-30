@@ -625,14 +625,14 @@ export const UserDataProvider = ({ children }) => {
   };
 
   // Varyant kullanım kaydını sil (mark-used geri alındığında)
-  const removeVariantUsage = useCallback(async ({ storyId, variantId }) => {
+  const removeVariantUsage = useCallback(async ({ storyId, variantId, variantKey = null }) => {
     try {
       setVariantUsage(prev => {
         const next = prev.filter(
           item =>
             !(
               String(item.storyId) === String(storyId) &&
-              item.variantId === variantId &&
+              (variantKey ? item.variantKey === variantKey : item.variantId === variantId) &&
               item.action === 'mark_used'
             )
         );
@@ -645,7 +645,7 @@ export const UserDataProvider = ({ children }) => {
   }, []);
 
   // Varyant kullanım kaydı (copy / share / mark-used)
-  const recordVariantUsage = useCallback(async ({ storyId, storyTitle, storyCategory, variantType, variantId, action, feedbackRating = null }) => {
+  const recordVariantUsage = useCallback(async ({ storyId, storyTitle, storyCategory, variantType, variantId, variantKey = null, action, feedbackRating = null }) => {
     try {
       const entry = {
         storyId: String(storyId),
@@ -653,6 +653,7 @@ export const UserDataProvider = ({ children }) => {
         storyCategory: storyCategory || null,
         variantType,
         variantId,
+        variantKey: variantKey || null,
         action, // 'copy' | 'share' | 'mark_used'
         feedbackRating,
         usedAt: new Date().toISOString(),

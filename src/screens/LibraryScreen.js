@@ -9,19 +9,20 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
-import { getCategoryImage } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 
 const FavoriteCard = ({ story, onPress, colors, typography, layout, isDark, lang, journeyLine, badgeChip, onBadgePress }) => {
   const displayTitle = story.title || '';
   const rawDisplayCat = t(story.cat_display || story.cat, lang) || '';
   const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
+  const categoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={onPress} style={{ width: 154, marginRight: 12 }}>
       <View style={{
-        backgroundColor: colors.backgroundDark,
+        backgroundColor: categoryTheme.backgroundColor,
         borderRadius: 12,
-        borderWidth: 1,
-        borderColor: colors.border,
+        borderWidth: 1.5,
+        borderColor: categoryTheme.borderColor,
         position: 'relative',
         overflow: 'hidden',
         height: 200,
@@ -136,12 +137,13 @@ const HistoryCard = ({ story, onPress, colors, typography, layout, isDark, lang,
   const displayTitle = story.title || '';
   const rawDisplayCat = t(story.cat_display || story.cat, lang) || '';
   const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
+  const categoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onPress} style={{
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: categoryTheme.backgroundColor,
       borderRadius: 12,
-      borderWidth: 1,
-      borderColor: colors.border,
+      borderWidth: 1.5,
+      borderColor: categoryTheme.borderColor,
       position: 'relative',
       overflow: 'hidden',
       padding: 12,

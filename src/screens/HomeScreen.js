@@ -15,7 +15,7 @@ import StoryCard from '../components/StoryCard';
 import { Ionicons } from '@expo/vector-icons';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { getCategoryImage } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -697,10 +697,17 @@ const HomeScreen = ({ navigation }) => {
     }
   };
 
-  // Daily panel: handle story tap
-  const handleDailyStoryPress = (story, totalDailyCount) => {
+  const persistDailyPanelState = React.useCallback((clickedIds, collapsed) => {
     const todayKey = new Date().toISOString().split('T')[0];
     const DAILY_PANEL_KEY = `@spark_daily_panel_${todayKey}`;
+    AsyncStorage.setItem(DAILY_PANEL_KEY, JSON.stringify({
+      clickedIds: [...clickedIds],
+      collapsed,
+    })).catch(() => {});
+  }, []);
+
+  // Daily panel: handle story tap
+  const handleDailyStoryPress = (story, totalDailyCount) => {
     const newIds = new Set(dailyClickedIds);
     newIds.add(String(story.story_id));
     setDailyClickedIds(newIds);
@@ -708,10 +715,7 @@ const HomeScreen = ({ navigation }) => {
     if (allClicked) {
       setIsDailyPanelCollapsed(true);
     }
-    AsyncStorage.setItem(DAILY_PANEL_KEY, JSON.stringify({
-      clickedIds: [...newIds],
-      collapsed: allClicked,
-    })).catch(() => {});
+    persistDailyPanelState(newIds, allClicked);
     trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
       storyId: story.story_id,
       source: 'home_daily_panel',
@@ -720,6 +724,17 @@ const HomeScreen = ({ navigation }) => {
     });
     navigation.navigate('StoryDetail', { story });
   };
+
+  useEffect(() => {
+    if (personalizedStories.length === 0) return;
+    const isComplete = doneCount >= personalizedStories.length;
+    if (!isComplete || isDailyPanelCollapsed) return;
+
+    setIsDailyPanelCollapsed(true);
+    const clickedIds = new Set(personalizedStories.map((story) => String(story.story_id)));
+    setDailyClickedIds(clickedIds);
+    persistDailyPanelState(clickedIds, true);
+  }, [doneCount, isDailyPanelCollapsed, personalizedStories, persistDailyPanelState]);
 
   const styles = StyleSheet.create({
     safe: { 
@@ -739,29 +754,6 @@ const HomeScreen = ({ navigation }) => {
       fontSize: 22,
       color: colors.text,
       letterSpacing: 0.5,
-    },
-    dailyProgressBanner: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginHorizontal: layout.padding.horizontal,
-      marginBottom: 16,
-      paddingHorizontal: 16,
-      paddingVertical: 14,
-      borderRadius: 16,
-      backgroundColor: isDark ? `${colors.primary}0D` : `${colors.primary}0A`,
-      borderWidth: 1,
-      borderColor: `${colors.primary}30`,
-    },
-    dailyProgressTitle: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
-      color: colors.text,
-      marginBottom: 2,
-    },
-    dailyProgressSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      color: colors.textSecondary,
     },
     streakCard: { 
       flexDirection: 'row', 
@@ -808,8 +800,7 @@ const HomeScreen = ({ navigation }) => {
       paddingHorizontal: 18, 
       paddingVertical: 10, 
       borderRadius: 999, 
-      borderWidth: 1, 
-      borderColor: colors.border, 
+      borderWidth: 1.5, 
       backgroundColor: isDark ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)',
       shadowColor: '#8A6C43',
       shadowOffset: { width: 0, height: 2 },
@@ -818,8 +809,7 @@ const HomeScreen = ({ navigation }) => {
       elevation: isDark ? 0 : 2,
     },
     catPillActive: { 
-      backgroundColor: '#823b18', 
-      borderColor: '#823b18' 
+      borderColor: 'transparent' 
     },
     catPillText: { 
       fontFamily: 'Inter_600SemiBold', 
@@ -1057,9 +1047,7 @@ const HomeScreen = ({ navigation }) => {
     dailyPanelCard: {
       marginBottom: 20,
       borderRadius: 16,
-      borderWidth: 1,
-      borderColor: `${colors.primary}40`,
-      backgroundColor: isDark ? `${colors.primary}0D` : `${colors.primary}0A`,
+      borderWidth: 2,
       overflow: 'hidden',
     },
     dailyPanelHeader: {
@@ -1068,14 +1056,26 @@ const HomeScreen = ({ navigation }) => {
       justifyContent: 'space-between',
       paddingHorizontal: 16,
       paddingVertical: 14,
+      gap: 12,
+    },
+    dailyPanelHeaderMain: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+      flex: 1,
     },
     dailyPanelTitle: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 13,
-      color: colors.primary,
+      color: colors.text,
       letterSpacing: 0.5,
       textTransform: 'uppercase',
-      flex: 1,
+      marginBottom: 2,
+    },
+    dailyPanelSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
     },
     dailyPanelStoriesWrap: {
       paddingHorizontal: 12,
@@ -1094,6 +1094,9 @@ const HomeScreen = ({ navigation }) => {
     dailyStoryRowClicked: {
       backgroundColor: isDark ? `${colors.primary}18` : `${colors.primary}0D`,
     },
+    dailyStoryRowCollapsed: {
+      paddingVertical: 12,
+    },
   });
 
   return (
@@ -1111,28 +1114,6 @@ const HomeScreen = ({ navigation }) => {
             <Ionicons name="search" size={22} color={colors.textSecondary} />
           </TouchableOpacity>
         </View>
-        <View style={styles.dailyProgressBanner}>
-          <DailyProgressRing
-            done={doneCount}
-            total={personalizedTarget}
-            colors={colors}
-            isDark={isDark}
-            size={52}
-            onPress={() => navigation.navigate('ProgressTab')}
-          />
-          <View style={{ flex: 1, marginLeft: 14 }}>
-            <Text style={styles.dailyProgressTitle} numberOfLines={1}>{t('home_daily_cta', lang)}</Text>
-            <Text style={styles.dailyProgressSub}>{doneCount} / {personalizedTarget}</Text>
-          </View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('ProgressTab')}
-            style={{ padding: 6 }}
-            activeOpacity={0.7}
-          >
-            <Ionicons name="chevron-forward" size={18} color={colors.textSecondary} />
-          </TouchableOpacity>
-        </View>
-
         <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
           {categoriesLabel}
         </Text>
@@ -1140,11 +1121,24 @@ const HomeScreen = ({ navigation }) => {
           <View style={{ flexDirection: 'row', gap: 8, paddingHorizontal: layout.padding.horizontal }}>
             {visibleCategoriesList.map((item) => {
               const isActive = item.key === activeFilter;
-              const catImg = getCategoryImage(item.rawName);
+              const catImg = getCategoryImage(item.rawName, isDark);
+              const catTheme = getCategoryTheme(item.rawName, isDark);
               return (
                 <TouchableOpacity
                   key={item.key}
-                  style={[styles.catPill, isActive ? styles.catPillActive : null, { flexDirection: 'row', alignItems: 'center', gap: 8 }]}
+                  style={[
+                    styles.catPill,
+                    isActive ? styles.catPillActive : null,
+                    {
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      gap: 8,
+                      borderColor: item.key === 'all' ? colors.border : catTheme.borderColor,
+                      backgroundColor: isActive
+                        ? (item.key === 'all' ? '#823b18' : catTheme.accent)
+                        : (item.key === 'all' ? (isDark ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)') : catTheme.backgroundColor),
+                    },
+                  ]}
                   onPress={() => setActiveFilter(item.key)}
                 >
                   {catImg.source ? (
@@ -1201,43 +1195,70 @@ const HomeScreen = ({ navigation }) => {
               {personalizedStories.length > 0 && (() => {
                 const panelStories = personalizedStories;
                 const isDailyComplete = doneCount >= panelStories.length;
+                const panelTheme = getCategoryTheme(panelStories[0]?.parent_cat_raw || panelStories[0]?.parent_cat || panelStories[0]?.cat, isDark);
                 return (
-                  <View style={styles.dailyPanelCard}>
+                  <View style={[styles.dailyPanelCard, { borderColor: panelTheme.borderColor, backgroundColor: panelTheme.backgroundColor }]}>
                     <TouchableOpacity
                       style={styles.dailyPanelHeader}
-                      onPress={() => setIsDailyPanelCollapsed(prev => !prev)}
+                      onPress={() => {
+                        const nextCollapsed = !isDailyPanelCollapsed;
+                        setIsDailyPanelCollapsed(nextCollapsed);
+                        persistDailyPanelState(dailyClickedIds, nextCollapsed);
+                      }}
                       activeOpacity={0.7}
                     >
-                      <Text style={styles.dailyPanelTitle} numberOfLines={1}>
-                        {t('home_daily_cta', lang)}
-                      </Text>
+                      <View style={styles.dailyPanelHeaderMain}>
+                        <DailyProgressRing
+                          done={doneCount}
+                          total={panelStories.length}
+                          colors={colors}
+                          isDark={isDark}
+                          size={50}
+                          onPress={() => navigation.navigate('ProgressTab')}
+                        />
+                        <View style={{ flex: 1 }}>
+                          <Text style={styles.dailyPanelTitle} numberOfLines={1}>
+                            {t('home_daily_cta', lang)}
+                          </Text>
+                          <Text style={styles.dailyPanelSub}>{doneCount} / {panelStories.length}</Text>
+                        </View>
+                      </View>
                       {isDailyComplete ? (
-                        <Ionicons name="checkmark-circle" size={20} color={colors.primary} style={{ marginLeft: 8 }} />
+                        <Ionicons name="checkmark-circle" size={20} color={panelTheme.accent} style={{ marginLeft: 8 }} />
                       ) : (
                         <Ionicons
                           name={isDailyPanelCollapsed ? 'chevron-down-outline' : 'chevron-up-outline'}
                           size={18}
-                          color={colors.primary}
+                          color={panelTheme.accent}
                           style={{ marginLeft: 8 }}
                         />
                       )}
                     </TouchableOpacity>
 
                     {isDailyPanelCollapsed && isDailyComplete && (
-                      <View style={{ paddingHorizontal: 16, paddingVertical: 12 }}>
-                        <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginBottom: 8 }}>
-                          {t('home_daily_complete_summary', lang) || 'Today\'s stories read:'}
-                        </Text>
-                        {panelStories.slice(0, 2).map((story, idx) => (
-                          <Text key={story.story_id} style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.text, lineHeight: 18 }}>
-                            {idx + 1}. {story.title}
-                          </Text>
-                        ))}
-                        {panelStories.length > 2 && (
-                          <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 4 }}>
-                            +{panelStories.length - 2} {t('more', lang) || 'more'}
-                          </Text>
-                        )}
+                      <View style={styles.dailyPanelStoriesWrap}>
+                        {panelStories.map((story) => {
+                          const storyTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+                          return (
+                            <TouchableOpacity
+                              key={`collapsed-${story.story_id}`}
+                              style={[
+                                styles.dailyStoryRow,
+                                styles.dailyStoryRowCollapsed,
+                                styles.dailyStoryRowClicked,
+                                { borderWidth: 1, borderColor: storyTheme.borderColor, backgroundColor: storyTheme.backgroundColor },
+                              ]}
+                              onPress={() => navigation.navigate('StoryDetail', { story })}
+                              activeOpacity={0.75}
+                            >
+                              <Ionicons name="book-outline" size={16} color={storyTheme.accent} />
+                              <Text style={{ flex: 1, fontFamily: 'PlayfairDisplay_600SemiBold', fontSize: 14, color: colors.text, lineHeight: 20 }} numberOfLines={2}>
+                                {story.title}
+                              </Text>
+                              <Ionicons name="checkmark-circle" size={16} color={storyTheme.accent} />
+                            </TouchableOpacity>
+                          );
+                        })}
                       </View>
                     )}
 

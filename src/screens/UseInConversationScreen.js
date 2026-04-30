@@ -118,6 +118,8 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
   return `${hook}\n\n${body || storyTitle}\n\n${copy.engage}\n\n${hashtags}`;
 };
 
+const getUsageVariantKey = (storyId, variantId) => `${String(storyId)}:${String(variantId)}`;
+
 /**
  * Build the variant list from a story object.
  * Variants with empty body are excluded so the list is always clean.
@@ -218,7 +220,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
     return new Set(
       (variantUsage || [])
         .filter(item => String(item.storyId) === storyId && item.action === 'mark_used')
-        .map(item => item.variantId)
+        .map(item => item.variantKey || getUsageVariantKey(item.storyId, item.variantId))
     );
   });
   const [modalMarked, setModalMarked] = useState(false);
@@ -315,16 +317,24 @@ const UseInConversationScreen = ({ route, navigation }) => {
   }, [story, story?.story_id, story?.title, lang, displayCat, recordVariantUsage]);
 
   const openMarkUsedSurvey = useCallback((variant) => {
+    const variantKey = getUsageVariantKey(story?.story_id, variant.id);
+    const existingUsage = (variantUsage || []).find(
+      item => String(item.storyId) === String(story?.story_id)
+        && item.action === 'mark_used'
+        && (item.variantKey === variantKey || item.variantId === variant.id)
+    );
     setSelectedId(variant.id);
     setRatingVariant(variant);
-    setRatingValue(0);
-    const wasMarked = markedUsedIds.has(variant.id);
+    setRatingValue(Number(existingUsage?.feedbackRating) || 0);
+    const wasMarked = markedUsedIds.has(variantKey);
     setModalMarked(wasMarked);
     setInitialModalMarked(wasMarked);
-  }, [markedUsedIds]);
+  }, [markedUsedIds, story?.story_id, variantUsage]);
 
   const closeMarkUsedSurvey = useCallback(async () => {
     if (!ratingVariant) return;
+
+    const variantKey = getUsageVariantKey(story?.story_id, ratingVariant.id);
 
     if (modalMarked && !initialModalMarked) {
       // Yeni işaretlendi → kaydet, sayaç artar
@@ -334,19 +344,21 @@ const UseInConversationScreen = ({ route, navigation }) => {
         storyCategory: story?.parent_cat || story?.cat || null,
         variantType: ratingVariant.type,
         variantId: ratingVariant.id,
+        variantKey,
         action: 'mark_used',
         feedbackRating: ratingValue || null,
       });
-      setMarkedUsedIds(prev => new Set([...prev, ratingVariant.id]));
+      setMarkedUsedIds(prev => new Set([...prev, variantKey]));
     } else if (!modalMarked && initialModalMarked) {
       // Vazgeçildi → sil, sayaç azalır
       await removeVariantUsage({
         storyId: story?.story_id,
         variantId: ratingVariant.id,
+        variantKey,
       });
       setMarkedUsedIds(prev => {
         const next = new Set(prev);
-        next.delete(ratingVariant.id);
+        next.delete(variantKey);
         return next;
       });
     }
@@ -443,7 +455,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
             isExpanded={!!expandedIds[variant.id]}
             isSelected={variant.id === selectedId}
             isCopied={variant.id === copiedId}
-            isMarkedUsed={markedUsedIds.has(variant.id)}
+            isMarkedUsed={markedUsedIds.has(getUsageVariantKey(story?.story_id, variant.id))}
             locked={lockedIds.has(variant.id)}
             onToggle={() => toggleExpanded(variant.id)}
             onCopy={() => handleCopy(variant)}
