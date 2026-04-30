@@ -70,7 +70,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       elevation: 2,
     },
     heroCard: {
-      backgroundColor: '#EBE6DC',
+      backgroundColor: isDark ? colors.backgroundDark : '#EBE6DC',
       borderWidth: 0,
     },
     lockedCard: {

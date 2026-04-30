@@ -81,6 +81,7 @@ const PARENT_CATEGORY_ALIASES = {
   'Soziale Fähigkeiten': 'Social Skills',
   'Crecimiento Personal': 'Personal Growth',
   'Persönliches Wachstum': 'Personal Growth',
+  'Kişisel Gelişim': 'Personal Growth',
 };
 
 const categoryImageMap = {

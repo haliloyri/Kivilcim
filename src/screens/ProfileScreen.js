@@ -210,10 +210,10 @@ const ProfileScreen = ({ navigation }) => {
     menuItemText: { fontFamily: 'Inter_400Regular', fontSize: 16, color: colors.text },
     profileCategoriesSection: { marginTop: 16, paddingHorizontal: layout.padding.horizontal },
     profileCategoriesRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
-    categoryPill: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: 20, borderWidth: 1, borderColor: colors.border, backgroundColor: 'transparent' },
-    categoryPillText: { fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary },
-    categoryPillActive: { backgroundColor: isDark ? '#3A3020' : '#E6DEC8', borderColor: isDark ? '#6A5540' : '#E6DEC8' },
-    categoryPillActiveText: { color: colors.text, fontFamily: 'Inter_500Medium' },
+    categoryPill: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: 20, borderWidth: 1, borderColor: colors.border, backgroundColor: isDark ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)' },
+    categoryPillText: { fontFamily: 'Inter_600SemiBold', fontSize: 13, color: colors.primary },
+    categoryPillActive: { backgroundColor: '#823b18', borderColor: '#823b18' },
+    categoryPillActiveText: { color: '#FFFFFF', fontFamily: 'Inter_500Medium' },
     prefSummaryBox: {
       marginTop: 16,
       backgroundColor: colors.backgroundDark,
@@ -291,12 +291,12 @@ const ProfileScreen = ({ navigation }) => {
             {parentCategories.map((p) => {
               const cat = Number(p.id);
               const isSelected = selectedCategories.includes(cat);
-              const catImg = getCategoryImage(p.raw_name);
+              const catImg = (() => { const byRaw = getCategoryImage(p.raw_name); return byRaw.source ? byRaw : getCategoryImage(p.name); })();
               const onPressCat = () => toggleSelectedCategory(cat);
               return (
                 <TouchableOpacity key={cat} onPress={onPressCat} style={[styles.categoryPill, isSelected && styles.categoryPillActive, { flexDirection: 'row', alignItems: 'center', gap: 8 }]}> 
                   {catImg.source ? (
-                    <View style={{ width: 18, height: 18, borderRadius: 6, overflow: 'hidden' }}>
+                    <View style={{ width: 20, height: 20, borderRadius: 6, overflow: 'hidden' }}>
                       <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
                       <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
                     </View>
@@ -401,10 +401,10 @@ const ProfileScreen = ({ navigation }) => {
             </View>
             <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
               {[
-                { code: 'tr', label: t('languageTurkish', lang), flag: '🇹🇷' },
-                { code: 'en', label: t('languageEnglish', lang), flag: '🇺🇸' },
-                { code: 'es', label: t('languageSpanish', lang), flag: '🇪🇸' },
-                { code: 'de', label: t('languageGerman', lang), flag: '🇩🇪' },
+                { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+                { code: 'en', label: 'English', flag: '🇺🇸' },
+                { code: 'es', label: 'Español', flag: '🇪🇸' },
+                { code: 'tr', label: 'Türkçe', flag: '🇹🇷' },
               ].map((l) => (
                 <TouchableOpacity 
                   key={l.code}

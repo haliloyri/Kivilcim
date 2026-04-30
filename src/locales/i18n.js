@@ -94,7 +94,7 @@ export const translations = {
     'Social Skills': 'Social Skills',
     
     // LibraryScreen
-    libraryTitle: 'Your Library',
+    libraryTitle: 'My Library',
     favStories: 'Favorite Stories',
     noFavs: 'You haven\'t liked any stories yet.',
     recentRead: 'Recently Read',
@@ -183,7 +183,7 @@ export const translations = {
     tabProfile: 'Profile',
     
     // ProgressScreen
-    yourSparks: 'Your Sparks',
+    yourSparks: 'My Journey',
     dailyGoal: 'Daily Goal',
     dailyGoalTitle: 'Today\'s reading plan',
     dailyGoalSub: 'You completed {{done}} of {{target}} stories today.',
@@ -580,7 +580,7 @@ export const translations = {
     'Social Skills': 'Sosyal Beceriler',
 
     // LibraryScreen
-    libraryTitle: 'Kütüphanen',
+    libraryTitle: 'Kitaplığım',
     favStories: 'Favori Hikayelerin',
     noFavs: 'Henüz hiç hikaye beğenmedin.',
     recentRead: 'Son Okudukların',
@@ -669,7 +669,7 @@ export const translations = {
     tabProfile: 'Profil',
     
     // ProgressScreen
-    yourSparks: 'Senin Sparkların',
+    yourSparks: 'Yolculuğum',
     dailyGoal: 'Günlük Hedef',
     dailyGoalTitle: 'Bugünkü okuma planın',
     dailyGoalSub: 'Bugün {{target}} hikayenin {{done}} tanesini tamamladın.',
@@ -1080,7 +1080,7 @@ export const translations = {
     totalRead: 'Total leído',
     longestStreak: 'Racha más larga',
     days: 'días',
-    yourSparks: 'Tus Sparks',
+    yourSparks: 'Mi viaje',
     dailyGoal: 'Meta diaria',
     dailyGoalTitle: 'Tu plan de lectura de hoy',
     dailyGoalSub: 'Completaste {{done}} de {{target}} historias hoy.',
@@ -1188,7 +1188,7 @@ export const translations = {
     congratsSub: '¡Ganaste una nueva insignia!',
 
     // LibraryScreen
-    libraryTitle: 'Tu biblioteca',
+    libraryTitle: 'Mi biblioteca',
     favStories: 'Historias favoritas',
     noFavs: 'Aún no te ha gustado ninguna historia.',
     recentRead: 'Leídas recientemente',
@@ -1542,7 +1542,7 @@ export const translations = {
     totalRead: 'Gesamt gelesen',
     longestStreak: 'Längste Serie',
     days: 'Tage',
-    yourSparks: 'Deine Sparks',
+    yourSparks: 'Meine Reise',
     dailyGoal: 'Tagesziel',
     dailyGoalTitle: 'Dein Leseplan für heute',
     dailyGoalSub: 'Du hast heute {{done}} von {{target}} Geschichten abgeschlossen.',
@@ -1650,7 +1650,7 @@ export const translations = {
     congratsSub: 'Du hast ein neues Abzeichen verdient!',
 
     // LibraryScreen
-    libraryTitle: 'Deine Bibliothek',
+    libraryTitle: 'Meine Bibliothek',
     favStories: 'Lieblingsgeschichten',
     noFavs: 'Du hast noch keine Geschichten geliked.',
     recentRead: 'Zuletzt gelesen',

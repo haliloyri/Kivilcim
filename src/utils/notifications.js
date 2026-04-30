@@ -180,6 +180,16 @@ export async function scheduleDailyNotifications(options = 'tr') {
   // Clear existing scheduled notifications to avoid duplicates
   await Notifications.cancelAllScheduledNotificationsAsync();
 
+  // Android requires a notification channel
+  if (Platform.OS === 'android') {
+    await Notifications.setNotificationChannelAsync('default', {
+      name: 'Daily Reminders',
+      importance: Notifications.AndroidImportance.HIGH,
+      vibrationPattern: [0, 250, 250, 250],
+      lightColor: '#D06A1B',
+    });
+  }
+
   const planKey = getPlanNotificationKey(dailyStoryTarget);
 
   // Schedule one notification per selected reminder window
@@ -190,11 +200,12 @@ export async function scheduleDailyNotifications(options = 'tr') {
         title: t('brandText', lang),
         body,
         sound: true,
+        ...(Platform.OS === 'android' ? { channelId: 'default' } : {}),
       },
       trigger: {
+        type: 'daily',
         hour: windowHour,
         minute: 0,
-        repeats: true,
       },
     });
   }
@@ -226,4 +237,14 @@ export function setupNotificationHandler() {
       shouldSetBadge: false,
     }),
   });
+
+  // Register default Android channel immediately at app launch
+  if (Platform.OS === 'android') {
+    Notifications.setNotificationChannelAsync('default', {
+      name: 'Daily Reminders',
+      importance: Notifications.AndroidImportance.HIGH,
+      vibrationPattern: [0, 250, 250, 250],
+      lightColor: '#D06A1B',
+    }).catch(() => {});
+  }
 }

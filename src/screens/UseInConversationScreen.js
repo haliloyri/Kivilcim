@@ -178,7 +178,7 @@ const buildMicroVariants = (story, lang) => {
 const UseInConversationScreen = ({ route, navigation }) => {
   const { story } = route.params;
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { isPremium, recordVariantUsage } = useUserData();
+  const { isPremium, recordVariantUsage, removeVariantUsage, variantUsage } = useUserData();
   const insets = useSafeAreaInsets();
 
   const variants = useMemo(
@@ -213,8 +213,16 @@ const UseInConversationScreen = ({ route, navigation }) => {
   const [copyToastVisible, setCopyToastVisible] = useState(false);
   const [ratingVariant, setRatingVariant] = useState(null);
   const [ratingValue, setRatingValue] = useState(0);
-  const [markedUsedIds, setMarkedUsedIds] = useState(new Set());
+  const [markedUsedIds, setMarkedUsedIds] = useState(() => {
+    const storyId = String(story?.story_id);
+    return new Set(
+      (variantUsage || [])
+        .filter(item => String(item.storyId) === storyId && item.action === 'mark_used')
+        .map(item => item.variantId)
+    );
+  });
   const [modalMarked, setModalMarked] = useState(false);
+  const [initialModalMarked, setInitialModalMarked] = useState(false);
   const toastAnim = React.useRef(new Animated.Value(0)).current;
 
   // Variant IDs that are premium-locked (all except PUNCHLINE)
@@ -310,13 +318,16 @@ const UseInConversationScreen = ({ route, navigation }) => {
     setSelectedId(variant.id);
     setRatingVariant(variant);
     setRatingValue(0);
-    setModalMarked(markedUsedIds.has(variant.id));
+    const wasMarked = markedUsedIds.has(variant.id);
+    setModalMarked(wasMarked);
+    setInitialModalMarked(wasMarked);
   }, [markedUsedIds]);
 
   const closeMarkUsedSurvey = useCallback(async () => {
     if (!ratingVariant) return;
 
-    if (modalMarked) {
+    if (modalMarked && !initialModalMarked) {
+      // Yeni işaretlendi → kaydet, sayaç artar
       await recordVariantUsage({
         storyId: story?.story_id,
         storyTitle: story?.title,
@@ -327,18 +338,25 @@ const UseInConversationScreen = ({ route, navigation }) => {
         feedbackRating: ratingValue || null,
       });
       setMarkedUsedIds(prev => new Set([...prev, ratingVariant.id]));
-    } else {
+    } else if (!modalMarked && initialModalMarked) {
+      // Vazgeçildi → sil, sayaç azalır
+      await removeVariantUsage({
+        storyId: story?.story_id,
+        variantId: ratingVariant.id,
+      });
       setMarkedUsedIds(prev => {
         const next = new Set(prev);
         next.delete(ratingVariant.id);
         return next;
       });
     }
+    // modalMarked === initialModalMarked ise değişiklik yok
 
     setRatingVariant(null);
     setRatingValue(0);
     setModalMarked(false);
-  }, [ratingVariant, ratingValue, modalMarked, recordVariantUsage, story?.story_id, story?.title, story?.parent_cat, story?.cat]);
+    setInitialModalMarked(false);
+  }, [ratingVariant, ratingValue, modalMarked, initialModalMarked, recordVariantUsage, removeVariantUsage, story?.story_id, story?.title, story?.parent_cat, story?.cat]);
 
   const displayCat = t(story.parent_cat || story.cat || '', lang);
 
@@ -501,7 +519,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
               </Text>
             </TouchableOpacity>
             <View style={styles.feedbackActions}>
-              <TouchableOpacity onPress={() => setRatingVariant(null)} style={styles.feedbackSecondaryBtn}>
+              <TouchableOpacity onPress={() => { setRatingVariant(null); setRatingValue(0); setModalMarked(false); setInitialModalMarked(false); }} style={styles.feedbackSecondaryBtn}>
                 <Text style={styles.feedbackSecondaryText}>{t('profileCancel', lang)}</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={closeMarkUsedSurvey} style={styles.feedbackPrimaryBtn}>

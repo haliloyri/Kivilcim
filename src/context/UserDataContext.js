@@ -624,6 +624,26 @@ export const UserDataProvider = ({ children }) => {
     }
   };
 
+  // Varyant kullanım kaydını sil (mark-used geri alındığında)
+  const removeVariantUsage = useCallback(async ({ storyId, variantId }) => {
+    try {
+      setVariantUsage(prev => {
+        const next = prev.filter(
+          item =>
+            !(
+              String(item.storyId) === String(storyId) &&
+              item.variantId === variantId &&
+              item.action === 'mark_used'
+            )
+        );
+        AsyncStorage.setItem(VARIANT_USAGE_STORAGE_KEY, JSON.stringify(next));
+        return next;
+      });
+    } catch (error) {
+      console.error('Varyant kullanım silme hatası:', error);
+    }
+  }, []);
+
   // Varyant kullanım kaydı (copy / share / mark-used)
   const recordVariantUsage = useCallback(async ({ storyId, storyTitle, storyCategory, variantType, variantId, action, feedbackRating = null }) => {
     try {
@@ -798,13 +818,14 @@ export const UserDataProvider = ({ children }) => {
     updateUserProfile,
     incrementShareCount,
     recordVariantUsage,
+    removeVariantUsage,
     variantUsage,
     clearUserData,
     refreshStats,
     openBadgeModal,
     closeBadgeModal,
     releasePendingBadge,
-  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge]);
+  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, removeVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge]);
 
   return (
     <UserDataContext.Provider value={value}>
