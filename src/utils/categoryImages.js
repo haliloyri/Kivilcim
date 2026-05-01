@@ -111,6 +111,13 @@ const IMG_PRODUCTIVITY = require('../../assets/categories/cat_productivity.png')
 const IMG_COMMUNICATION = require('../../assets/categories/cat_communication.png');
 const IMG_BUSINESS = require('../../assets/categories/cat_business.png');
 
+// Category pill icons generated for home top filter row
+const PILL_ICON_ALL = require('../../assets/categories/pill_icons/all.png');
+const PILL_ICON_FINANCE = require('../../assets/categories/pill_icons/finance.png');
+const PILL_ICON_PSYCHOLOGY = require('../../assets/categories/pill_icons/psychology.png');
+const PILL_ICON_LEADERSHIP = require('../../assets/categories/pill_icons/leadership.png');
+const PILL_ICON_COMMUNICATION = require('../../assets/categories/pill_icons/communication.png');
+
 const PARENT_CATEGORY_IMAGE_MAP = {
   'Mind & Psychology': IMG_PSYCHOLOGY,
   'Career & Success': IMG_LEADERSHIP,
@@ -118,6 +125,17 @@ const PARENT_CATEGORY_IMAGE_MAP = {
   'Science & Future': IMG_SCIENCE,
   'Society & World': IMG_PHILOSOPHY,
   'Social Skills': IMG_COMMUNICATION,
+};
+
+const CATEGORY_PILL_ICON_MAP = {
+  'Tümü': PILL_ICON_ALL,
+  all: PILL_ICON_ALL,
+  'Mind & Psychology': PILL_ICON_PSYCHOLOGY,
+  'Career & Success': PILL_ICON_FINANCE,
+  'Science & Future': PILL_ICON_LEADERSHIP,
+  'Society & World': PILL_ICON_LEADERSHIP,
+  'Social Skills': PILL_ICON_COMMUNICATION,
+  'Personal Growth': PILL_ICON_PSYCHOLOGY,
 };
 
 const PARENT_CATEGORY_ALIASES = {
@@ -386,6 +404,14 @@ export const getCategoryImage = (catName, isDark = false) => {
   const style = styleMap[normalizedKey] || { rotate: '0deg', flip: false, tint: 'transparent' };
 
   return { source, ...style };
+};
+
+export const getCategoryPillIcon = (catName) => {
+  if (!catName) return { source: PILL_ICON_ALL };
+
+  const normalizedKey = normalizeCategoryKey(catName);
+  const source = CATEGORY_PILL_ICON_MAP[normalizedKey] || CATEGORY_PILL_ICON_MAP[String(catName).toLowerCase()] || PILL_ICON_ALL;
+  return { source };
 };
 
 export default getCategoryImage;

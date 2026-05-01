@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { 
@@ -15,7 +15,7 @@ import StoryCard from '../components/StoryCard';
 import { Ionicons } from '@expo/vector-icons';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme, getCategoryPillIcon } from '../utils/categoryImages';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -44,7 +44,7 @@ const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) 
   const pct = total > 0 ? Math.min(done / total, 1) : 0;
   const isDone = done >= total && total > 0;
   const inner = size - sw * 2;
-  // Two-half clip trick: right half covers first 180°, left half covers next 180°
+  // Two-half clip trick: right half covers first 180┬░, left half covers next 180┬░
   const rightDeg = Math.min(pct * 360, 180) - 90;
   const leftDeg = (pct * 360 > 180 ? pct * 360 - 180 : 0) - 90;
   const trackColor = isDark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.09)';
@@ -52,7 +52,7 @@ const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) 
     <TouchableOpacity onPress={onPress} activeOpacity={0.75} style={{ width: size, height: size }}>
       {/* background track */}
       <View style={{ position: 'absolute', width: size, height: size, borderRadius: size / 2, borderWidth: sw, borderColor: trackColor }} />
-      {/* right half progress (0 → 180°) */}
+      {/* right half progress (0 ÔåÆ 180┬░) */}
       {pct > 0 && (
         <View style={{ position: 'absolute', width: size / 2, height: size, left: size / 2, overflow: 'hidden' }}>
           <View style={{
@@ -62,7 +62,7 @@ const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) 
           }} />
         </View>
       )}
-      {/* left half progress (180° → 360°) */}
+      {/* left half progress (180┬░ ÔåÆ 360┬░) */}
       {pct > 0.5 && (
         <View style={{ position: 'absolute', width: size / 2, height: size, left: 0, overflow: 'hidden' }}>
           <View style={{
@@ -140,7 +140,7 @@ const HomeScreen = ({ navigation }) => {
       filteredParents = parentCategories.filter((p) => selectedCategories.includes(Number(p.id)));
     }
     return [
-      { key: 'all', label: t('Tümü', lang), rawName: 'Tümü' },
+      { key: 'all', label: t('T├╝m├╝', lang), rawName: 'T├╝m├╝' },
       ...filteredParents.map((p) => ({ key: Number(p.id), label: p.name, rawName: p.raw_name })),
     ];
   }, [parentCategories, selectedCategories, lang]);
@@ -355,13 +355,13 @@ const HomeScreen = ({ navigation }) => {
     }, [])
   );
   
-  // Bugünü al (dinamik)
+  // Bug├╝n├╝ al (dinamik)
   const todayStr = new Date().toISOString().split('T')[0];
 
-  // 1. Yayın tarihi geçmiş veya bugün olanları filtrele
+  // 1. Yay─▒n tarihi ge├ğmi┼ş veya bug├╝n olanlar─▒ filtrele
   const publishedStories = (stories || []).filter(s => s.publishDate <= todayStr);
 
-  // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri gösteririz.
+  // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri g├Âsteririz.
   let prefFiltered = publishedStories;
   if (selectedCategories && selectedCategories.length > 0) {
     prefFiltered = publishedStories.filter((s) => selectedCategories.includes(Number(s.parent_cat_id)));
@@ -369,22 +369,22 @@ const HomeScreen = ({ navigation }) => {
     if (prefFiltered.length === 0) prefFiltered = publishedStories;
   }
 
-  // 3. UI Filter: Ekranda tıklanan ebeveyn kategoriye göre filtreleme
+  // 3. UI Filter: Ekranda t─▒klanan ebeveyn kategoriye g├Âre filtreleme
   const categoryFiltered = activeFilter === 'all'
     ? prefFiltered
     : prefFiltered.filter((s) => Number(s.parent_cat_id) === Number(activeFilter));
 
-  // 3. Sıralama
+  // 3. S─▒ralama
   const sortedStories = [...categoryFiltered].sort((a, b) => {
-    // Sınırsız üyeler için okunmamış hikayeler (okunmadıysa false, history'de yok) önce gelsin
+    // S─▒n─▒rs─▒z ├╝yeler i├ğin okunmam─▒┼ş hikayeler (okunmad─▒ysa false, history'de yok) ├Ânce gelsin
     if (isPremium) {
       const aRead = checkIfRead(a.story_id);
       const bRead = checkIfRead(b.story_id);
       if (aRead !== bRead) {
-        return aRead ? 1 : -1; // Okunanları sona at
+        return aRead ? 1 : -1; // Okunanlar─▒ sona at
       }
     }
-    // Geri kalan durumlar için id büyükten küçüğe sırala (en son eklenen ilk)
+    // Geri kalan durumlar i├ğin id b├╝y├╝kten k├╝├ğ├╝─şe s─▒rala (en son eklenen ilk)
     return parseInt(b.story_id, 10) - parseInt(a.story_id, 10);
   });
 
@@ -534,6 +534,7 @@ const HomeScreen = ({ navigation }) => {
     : lockedRaw;
   const teaserStory = (!isPremium && lockedWithoutWeeklyBonus.length > 0) ? lockedWithoutWeeklyBonus[0] : null;
   const locked = teaserStory ? lockedWithoutWeeklyBonus.slice(1) : lockedWithoutWeeklyBonus;
+  const dailyDeck = (personalizedStories.length > 0 ? personalizedStories : sortedStories).slice(0, 3);
 
   const dismissFirstSessionPrompt = async () => {
     setShowFirstSessionPrompt(false);
@@ -741,19 +742,51 @@ const HomeScreen = ({ navigation }) => {
       flex: 1, 
       backgroundColor: colors.background
     },
-    homeHeader: { 
+    homeHeader: {
       flexDirection: 'row', 
       justifyContent: 'space-between', 
       alignItems: 'center', 
       paddingHorizontal: layout.padding.horizontal, 
-      paddingTop: 16,
-      paddingBottom: 16,
+      paddingTop: 10,
+      paddingBottom: 8,
     },
     brandLogo: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: typography.sizes.heroTitle,
-      color: colors.text,
+      fontSize: 54,
+      color: colors.primary,
       letterSpacing: 0.5,
+      flex: 1,
+      textAlign: 'center',
+    },
+    headerSpacer: {
+      width: 72,
+    },
+    headerTargetBadge: {
+      width: 72,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 6,
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: isDark ? colors.cardBackground : '#F4EDE0',
+      paddingVertical: 5,
+    },
+    headerTargetIcon: {
+      width: 22,
+      height: 22,
+      borderRadius: 11,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#F7E8C4',
+      borderWidth: 1,
+      borderColor: '#D8BE82',
+    },
+    headerTargetText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 19,
+      color: colors.text,
     },
     streakCard: { 
       flexDirection: 'row', 
@@ -797,18 +830,43 @@ const HomeScreen = ({ navigation }) => {
     },
     sectionHeading: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: typography.sizes.headingLarge,
+      fontSize: 46,
       color: colors.text,
       marginHorizontal: layout.padding.horizontal,
-      marginTop: 24,
-      marginBottom: 16,
+      marginTop: 6,
+      marginBottom: 10,
     },
-    catPill: { 
+    sectionHeadingRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 8,
+      gap: 8,
+    },
+    miniProgressTrack: {
+      width: 74,
+      height: 8,
+      borderRadius: 6,
+      backgroundColor: '#EADFCB',
+      overflow: 'hidden',
+    },
+    miniProgressFill: {
+      height: 8,
+      borderRadius: 6,
+      backgroundColor: colors.primary,
+    },
+    miniProgressText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 15,
+      color: colors.textSecondary,
+    },
+    catPill: {
       paddingHorizontal: 20, 
       paddingVertical: 0, 
       height: layout.heights.categoryPill,
       justifyContent: 'center',
-      borderRadius: layout.radius.categoryPill, 
+      borderRadius: 16,
       borderWidth: 1.5, 
       backgroundColor: isDark ? colors.cardBackground || 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)',
       shadowColor: '#C89B3C',
@@ -820,10 +878,20 @@ const HomeScreen = ({ navigation }) => {
     catPillActive: { 
       borderColor: 'transparent' 
     },
-    catPillText: { 
+    catPillText: {
       fontFamily: 'Inter_600SemiBold', 
-      fontSize: typography.sizes.categoryPill, 
+      fontSize: 15,
       color: colors.primary
+    },
+    catPillIconWrap: {
+      width: 20,
+      height: 20,
+      borderRadius: 10,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'rgba(255,255,255,0.8)',
+      borderWidth: 1,
+      borderColor: 'rgba(0,0,0,0.08)',
     },
     catPillTextActive: { 
       color: '#FFFFFF', 
@@ -835,11 +903,11 @@ const HomeScreen = ({ navigation }) => {
       marginBottom: 8,
     },
     featuredCard: {
-      width: screenWidth * layout.featuredCardWidth,
-      height: layout.heights.featuredCard,
-      borderRadius: layout.radius.featuredCard,
+      width: (screenWidth - (layout.padding.horizontal * 2) - 20) / 3,
+      height: 300,
+      borderRadius: 16,
       marginRight: 12,
-      padding: 20,
+      padding: 10,
       justifyContent: 'space-between',
       overflow: 'hidden',
       shadowColor: '#000',
@@ -850,13 +918,13 @@ const HomeScreen = ({ navigation }) => {
     },
     featuredCardTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: typography.sizes.headingSmall,
+      fontSize: 20,
       color: colors.text,
-      lineHeight: 30,
+      lineHeight: 24,
     },
     featuredCardMeta: {
       fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.meta,
+      fontSize: 12,
       color: colors.textSecondary,
     },
     featuredCardBadge: {
@@ -869,13 +937,34 @@ const HomeScreen = ({ navigation }) => {
     },
     featuredCardBadgeText: {
       fontFamily: 'Inter_500Medium',
-      fontSize: 13,
+      fontSize: 11,
       color: colors.textSecondary,
+    },
+    featuredCardUseBtn: {
+      marginTop: 8,
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: '#DDCDAE',
+      backgroundColor: '#F4E9D4',
+      paddingVertical: 9,
+      alignItems: 'center',
+    },
+    featuredCardUseBtnText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+      color: '#2B2418',
     },
     storyGrid: {
       flexDirection: 'column',
       gap: 4,
-      marginTop: 12,
+      marginTop: 6,
+    },
+    readyTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 42,
+      color: colors.text,
+      marginBottom: 8,
+      marginTop: 4,
     },
     editorialUseCta: {
       flexDirection: 'row',
@@ -1160,15 +1249,19 @@ const HomeScreen = ({ navigation }) => {
         onMomentumScrollEnd={({ nativeEvent }) => handleLoadMore(nativeEvent)}
         scrollEventThrottle={100}
       >
-        {/* ── Header ───────────────────────────────────────────────── */}
+        {/* ÔöÇÔöÇ Header ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
         <View style={styles.homeHeader}>
+          <View style={styles.headerSpacer} />
           <Text style={styles.brandLogo}>Spark</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Search')} style={{ padding: 6 }}>
-            <Ionicons name="search" size={24} color={colors.textSecondary} />
+          <TouchableOpacity style={styles.headerTargetBadge} onPress={() => navigation.navigate('ProgressTab')} activeOpacity={0.85}>
+            <View style={styles.headerTargetIcon}>
+              <Ionicons name="ribbon-outline" size={13} color={colors.primary} />
+            </View>
+            <Text style={styles.headerTargetText}>{doneCount}/{Math.max(1, dailyDeck.length)}</Text>
           </TouchableOpacity>
         </View>
 
-        {/* ── Category Pills ───────────────────────────────────────── */}
+        {/* ÔöÇÔöÇ Category Pills ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
         <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
           {categoriesLabel}
         </Text>
@@ -1177,6 +1270,7 @@ const HomeScreen = ({ navigation }) => {
             {visibleCategoriesList.map((item) => {
               const isActive = item.key === activeFilter;
               const catImg = getCategoryImage(item.rawName, isDark);
+              const pillIcon = getCategoryPillIcon(item.rawName || item.label);
               const catTheme = getCategoryTheme(item.rawName, isDark);
               return (
                 <TouchableOpacity
@@ -1198,13 +1292,18 @@ const HomeScreen = ({ navigation }) => {
                   ]}
                   onPress={() => setActiveFilter(item.key)}
                 >
-                  {catImg.source ? (
-                    <View style={{ width: 22, height: 22, borderRadius: 7, overflow: 'hidden' }}>
-                      <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
-                      <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                  {item.key !== 'all' ? (
+                    <View style={styles.catPillIconWrap}>
+                      {pillIcon.source ? (
+                        <View style={{ width: 16, height: 16, borderRadius: 8, overflow: 'hidden' }}>
+                          <Image source={pillIcon.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
+                        </View>
+                      ) : (
+                        <Ionicons name="ellipse" size={10} color={isActive ? '#FFFFFF' : colors.textSecondary} />
+                      )}
                     </View>
                   ) : null}
-                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null]}>
+                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null, isActive ? { color: '#FFF' } : null]}>
                     {item.label}
                   </Text>
                 </TouchableOpacity>
@@ -1213,23 +1312,31 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </ScrollView>
 
-        {/* ── Featured Story Cards (Horizontal Scroll) ─────────────── */}
+        {/* ÔöÇÔöÇ Featured Story Cards (Horizontal Scroll) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
         {!loading && sortedStories.length > 0 && (() => {
           const featuredStories = personalizedStories.length > 0
             ? personalizedStories
             : sortedStories.slice(0, 4);
           return (
             <>
-              <Text style={styles.sectionHeading}>{forYouLabel}</Text>
+              <View style={styles.sectionHeadingRow}>
+                <Text style={[styles.sectionHeading, { marginHorizontal: 0, marginTop: 0, marginBottom: 0 }]}>Günün Anlatılacak Hikayeleri</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                  <View style={styles.miniProgressTrack}>
+                    <View style={[styles.miniProgressFill, { width: `${(doneCount / Math.max(1, dailyDeck.length)) * 100}%` }]} />
+                  </View>
+                  <Text style={styles.miniProgressText}>{doneCount}/{Math.max(1, dailyDeck.length)}</Text>
+                </View>
+              </View>
               <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 decelerationRate="fast"
-                snapToInterval={screenWidth * layout.featuredCardWidth + 12}
+                snapToInterval={(screenWidth - (layout.padding.horizontal * 2) - 20) / 3 + 12}
                 snapToAlignment="start"
                 contentContainerStyle={styles.featuredScroll}
               >
-                {featuredStories.map((story, idx) => {
+                {featuredStories.slice(0, 3).map((story, idx) => {
                   const catTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                   const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                   const displayCat = t(story.parent_cat || story.cat, lang) || '';
@@ -1283,12 +1390,19 @@ const HomeScreen = ({ navigation }) => {
                         {isRead && <Ionicons name="checkmark-circle" size={18} color={colors.primary} style={{ position: 'absolute', top: 0, right: 0 }} />}
                       </View>
                       <View>
-                        <Text numberOfLines={3} style={styles.featuredCardTitle}>
+                        <Text numberOfLines={2} style={styles.featuredCardTitle}>
                           {story.title}
                         </Text>
-                        <Text style={[styles.featuredCardMeta, { marginTop: 8 }]}>
-                          {story.min} {t('minLabel', lang)} · {story.source_book || ''}
-                        </Text>
+                        <Text numberOfLines={2} style={[styles.featuredCardMeta, { marginTop: 6 }]}>Nasıl Kullanılır: Kısa konuşma pratiği.</Text>
+                        <Text style={[styles.featuredCardMeta, { marginTop: 4 }]}>◷ {story.min} dk</Text>
+                        <TouchableOpacity
+                          style={styles.featuredCardUseBtn}
+                          onPress={() => navigation.navigate('UseInConversation', { story })}
+                          activeOpacity={0.86}
+                        >
+                          <Text style={styles.featuredCardUseBtnText}>Sohbet İçin Kullan</Text>
+                        </TouchableOpacity>
+                        <Text style={[styles.featuredCardMeta, { marginTop: 4, textAlign: 'right' }]}>{displayCat}</Text>
                       </View>
                     </TouchableOpacity>
                   );
@@ -1311,7 +1425,7 @@ const HomeScreen = ({ navigation }) => {
             </>
           ) : sortedStories.length === 0 ? (
             <View style={{ alignItems: 'center', paddingVertical: 48, paddingHorizontal: 24 }}>
-              <Text style={{ fontSize: 48, marginBottom: 16 }}>📭</Text>
+              <Text style={{ fontSize: 48, marginBottom: 16 }}>­şô¡</Text>
               <Text style={{
                 fontFamily: 'PlayfairDisplay_600SemiBold',
                 fontSize: typography.sizes.headingSmall,
@@ -1333,8 +1447,8 @@ const HomeScreen = ({ navigation }) => {
             </View>
           ) : (
             <>
-              {/* Daily recommendations panel */}
-              {personalizedStories.length > 0 && (() => {
+              {/* Daily recommendations panel hidden for this visual */}
+              {false && personalizedStories.length > 0 && (() => {
                 const panelStories = personalizedStories;
                 const isDailyComplete = doneCount >= panelStories.length;
                 const panelTheme = getCategoryTheme(panelStories[0]?.parent_cat_raw || panelStories[0]?.parent_cat || panelStories[0]?.cat, isDark);
@@ -1430,7 +1544,7 @@ const HomeScreen = ({ navigation }) => {
                                     {story.title}
                                   </Text>
                                   <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 2 }}>
-                                    {t(story.parent_cat, lang)} · {story.min} {t('minLabel', lang)}
+                                    {t(story.parent_cat, lang)} ┬À {story.min} {t('minLabel', lang)}
                                   </Text>
                                 </View>
                                 {isLocked ? (
@@ -1480,7 +1594,9 @@ const HomeScreen = ({ navigation }) => {
                 );
               })()}
 
-              {free.length > 0 && (
+              <Text style={styles.readyTitle}>Anlatılmaya Hazır Hikayeler</Text>
+
+              {false && free.length > 0 && (
                 <>
                   <View style={{
                     flexDirection: 'row',
@@ -1513,7 +1629,7 @@ const HomeScreen = ({ navigation }) => {
               )}
 
               <View style={styles.storyGrid}>
-                {free.slice(1).map(story => (
+                {free.map(story => (
                   <StoryCard
                     key={story.story_id}
                     story={story}
@@ -1569,7 +1685,7 @@ const HomeScreen = ({ navigation }) => {
         <View style={{ height: 100 }} />
       </ScrollView>
 
-      {/* ── FAB: Pratik Yap ──────────────────────────────────────────── */}
+      {/* ÔöÇÔöÇ FAB: Pratik Yap ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
       {(personalizedStories.length > 0 || (sortedStories && sortedStories.length > 0)) && (
         <TouchableOpacity
           style={styles.fabPratikYap}
