@@ -64,7 +64,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       width: isCompact ? (width - (layout.padding.horizontal * 2) - 16) / 2 : '100%',
       justifyContent: 'space-between',
       minHeight: isHero ? 240 : isCompact ? 170 : 155,
-      shadowColor: '#1c1c19',
+      shadowColor: colors.border,
       shadowOffset: { width: 0, height: 4 },
       shadowOpacity: 0.05,
       shadowRadius: 10,
@@ -91,7 +91,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       paddingHorizontal: 10,
       paddingVertical: 5,
       borderRadius: 8,
-      backgroundColor: isDark ? colors.background : 'rgba(255,255,255,0.72)',
+      backgroundColor: isDark ? colors.background : colors.surfaceContainerLowest,
       borderWidth: 0,
       flexDirection: 'row',
       alignItems: 'center',
@@ -152,7 +152,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       borderColor: colors.success,
     },
     newBadgeText: {
-      color: '#FFF',
+      color: colors.onPrimary,
     },
     surfaceOverlay: {
       ...StyleSheet.absoluteFillObject,
@@ -180,7 +180,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
         const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
         if (!catImg.source) return (
           <View style={StyleSheet.absoluteFill}>
-            <View style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'rgba(0,0,0,0.12)' : colors.overlaySoft }]} />
+            <View style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? colors.overlayDark : colors.overlaySoft }]} />
           </View>
         );
         return (
@@ -199,7 +199,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
               resizeMode="cover"
             />
             <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint }]} />
-            <View style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'rgba(0,0,0,0.12)' : colors.overlaySoft }]} />
+            <View style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? colors.overlayDark : colors.overlaySoft }]} />
             <LinearGradient
               colors={isDark ? ['rgba(25,21,15,0.5)', 'rgba(18,17,15,0.1)'] : ['rgba(252,232,194,0.38)', 'rgba(244,236,220,0.08)']}
               start={{ x: 0, y: 0 }}
@@ -218,7 +218,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
           <View style={[styles.cardHeader, (!hideCategory || isNew || isRead || locked) ? null : { marginBottom: 0 }]}>
             {!hideCategory && (
               <View style={isHero ? { marginBottom: -8 } : styles.badge}>
-                <Text style={isHero ? [styles.badgeText, { color: '#1A1A1A', fontSize: 13, textTransform: 'none', fontFamily: 'Inter_500Medium', backgroundColor: 'rgba(255,255,255,0.7)', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 }] : styles.badgeText} numberOfLines={1}>
+                <Text style={isHero ? [styles.badgeText, { color: colors.text, fontSize: 13, textTransform: 'none', fontFamily: 'Inter_500Medium', backgroundColor: colors.surfaceContainerLowest, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 }] : styles.badgeText} numberOfLines={1}>
                   {isHero ? displayCat : displayCat}
                 </Text>
               </View>

@@ -770,7 +770,7 @@ const HomeScreen = ({ navigation }) => {
       borderRadius: 16,
       borderWidth: 1,
       borderColor: colors.border,
-      backgroundColor: isDark ? colors.cardBackground : '#F4EDE0',
+      backgroundColor: isDark ? (colors.elevatedSurface || colors.cardBackground) : colors.primaryContainer,
       paddingVertical: 5,
     },
     headerTargetIcon: {
@@ -779,9 +779,9 @@ const HomeScreen = ({ navigation }) => {
       borderRadius: 11,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#F7E8C4',
+      backgroundColor: isDark ? colors.cardBackground : colors.surfaceContainerLowest,
       borderWidth: 1,
-      borderColor: '#D8BE82',
+      borderColor: colors.border,
     },
     headerTargetText: {
       fontFamily: 'Inter_600SemiBold',
@@ -796,7 +796,7 @@ const HomeScreen = ({ navigation }) => {
       paddingHorizontal: 20, 
       marginHorizontal: layout.padding.horizontal, 
       marginBottom: 32, 
-      shadowColor: '#C89B3C',
+      shadowColor: colors.primary,
       shadowOffset: { width: 0, height: 8 },
       shadowOpacity: 0.08,
       shadowRadius: 12,
@@ -805,12 +805,12 @@ const HomeScreen = ({ navigation }) => {
     streakDays: { 
       fontFamily: 'PlayfairDisplay_700Bold', 
       fontSize: typography.sizes.headingSmall, 
-      color: '#1A1A1A' 
+      color: colors.text 
     },
     streakLabel: { 
       fontFamily: 'Inter_400Regular', 
       fontSize: typography.sizes.meta, 
-      color: '#333333' 
+      color: colors.textSecondary 
     },
     streakDot: { 
       width: 8, 
@@ -848,7 +848,7 @@ const HomeScreen = ({ navigation }) => {
       width: 74,
       height: 8,
       borderRadius: 6,
-      backgroundColor: '#EADFCB',
+      backgroundColor: colors.surfaceContainerHigh,
       overflow: 'hidden',
     },
     miniProgressFill: {
@@ -868,8 +868,8 @@ const HomeScreen = ({ navigation }) => {
       justifyContent: 'center',
       borderRadius: 16,
       borderWidth: 1.5, 
-      backgroundColor: isDark ? colors.cardBackground || 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)',
-      shadowColor: '#C89B3C',
+      backgroundColor: isDark ? colors.cardBackground : colors.surfaceContainerLowest,
+      shadowColor: colors.primary,
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: isDark ? 0 : 0.06,
       shadowRadius: 6,
@@ -889,12 +889,12 @@ const HomeScreen = ({ navigation }) => {
       borderRadius: 10,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: 'rgba(255,255,255,0.8)',
+      backgroundColor: colors.surfaceContainerLowest,
       borderWidth: 1,
-      borderColor: 'rgba(0,0,0,0.08)',
+      borderColor: colors.border,
     },
     catPillTextActive: { 
-      color: '#FFFFFF', 
+      color: colors.onPrimary, 
       fontFamily: 'Inter_500Medium' 
     },
     featuredScroll: {
@@ -910,7 +910,7 @@ const HomeScreen = ({ navigation }) => {
       padding: 10,
       justifyContent: 'space-between',
       overflow: 'hidden',
-      shadowColor: '#000',
+      shadowColor: colors.border,
       shadowOffset: { width: 0, height: 4 },
       shadowOpacity: 0.08,
       shadowRadius: 12,
@@ -931,7 +931,7 @@ const HomeScreen = ({ navigation }) => {
       paddingHorizontal: 10,
       paddingVertical: 5,
       borderRadius: 8,
-      backgroundColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.72)',
+      backgroundColor: isDark ? colors.elevatedSurface || colors.cardBackground : colors.surfaceContainerLowest,
       alignSelf: 'flex-start',
       marginBottom: 12,
     },
@@ -944,15 +944,15 @@ const HomeScreen = ({ navigation }) => {
       marginTop: 8,
       borderRadius: 10,
       borderWidth: 1,
-      borderColor: '#DDCDAE',
-      backgroundColor: '#F4E9D4',
+      borderColor: colors.border,
+      backgroundColor: colors.primaryContainer,
       paddingVertical: 9,
       alignItems: 'center',
     },
     featuredCardUseBtnText: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 12,
-      color: '#2B2418',
+      color: colors.text,
     },
     storyGrid: {
       flexDirection: 'column',
@@ -1005,7 +1005,7 @@ const HomeScreen = ({ navigation }) => {
       width: 56,
       height: 56,
       borderRadius: 28,
-      shadowColor: '#C89B3C',
+      shadowColor: colors.primary,
       shadowOffset: { width: 0, height: 6 },
       shadowOpacity: 0.35,
       shadowRadius: 16,
@@ -1018,7 +1018,7 @@ const HomeScreen = ({ navigation }) => {
       alignItems: 'center',
       justifyContent: 'center',
       borderWidth: 1,
-      borderColor: 'rgba(255,255,255,0.28)',
+      borderColor: colors.border,
     },
     firstSessionCard: {
       marginBottom: 20,
@@ -1286,7 +1286,7 @@ const HomeScreen = ({ navigation }) => {
                       backgroundColor: isActive
                         ? (item.key === 'all' ? colors.primary : catTheme.accent)
                         : (item.key === 'all'
-                          ? (isDark ? colors.cardBackground || 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)')
+                          ? (isDark ? colors.cardBackground : colors.surfaceContainerLowest)
                           : catTheme.backgroundColor),
                     },
                   ]}
@@ -1299,11 +1299,11 @@ const HomeScreen = ({ navigation }) => {
                           <Image source={pillIcon.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
                         </View>
                       ) : (
-                        <Ionicons name="ellipse" size={10} color={isActive ? '#FFFFFF' : colors.textSecondary} />
+                        <Ionicons name="ellipse" size={10} color={isActive ? colors.onPrimary : colors.textSecondary} />
                       )}
                     </View>
                   ) : null}
-                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null, isActive ? { color: '#FFF' } : null]}>
+                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null, isActive ? { color: colors.onPrimary } : null]}>
                     {item.label}
                   </Text>
                 </TouchableOpacity>
@@ -1349,10 +1349,10 @@ const HomeScreen = ({ navigation }) => {
                         {
                           backgroundColor: isDark
                             ? colors.cardBackground
-                            : (colors.cardBackground || '#FFFDF9'),
+                            : colors.cardBackground,
                           borderWidth: 1.5,
                           borderColor: isDark
-                            ? 'rgba(255,255,255,0.08)'
+                            ? colors.border
                             : catTheme.borderColor,
                         },
                         isRead && { opacity: 0.55 },
@@ -1703,7 +1703,7 @@ const HomeScreen = ({ navigation }) => {
             end={{ x: 1, y: 1 }}
             style={styles.fabGradient}
           >
-            <Ionicons name="mic" size={22} color="#FFF" />
+            <Ionicons name="mic" size={22} color={colors.onPrimary} />
           </LinearGradient>
         </TouchableOpacity>
       )}
@@ -1716,7 +1716,7 @@ const HomeScreen = ({ navigation }) => {
       >
         <View style={{
           flex: 1,
-          backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.24)',
+          backgroundColor: colors.overlayDark,
           justifyContent: 'center',
           paddingHorizontal: layout.padding.horizontal,
         }}>
