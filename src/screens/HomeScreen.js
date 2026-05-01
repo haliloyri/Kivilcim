@@ -746,38 +746,37 @@ const HomeScreen = ({ navigation }) => {
       justifyContent: 'space-between', 
       alignItems: 'center', 
       paddingHorizontal: layout.padding.horizontal, 
-      paddingTop: 14,
-      paddingBottom: 12,
+      paddingTop: 16,
+      paddingBottom: 16,
     },
     brandLogo: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 22,
+      fontSize: typography.sizes.heroTitle,
       color: colors.text,
       letterSpacing: 0.5,
     },
     streakCard: { 
       flexDirection: 'row', 
       alignItems: 'center', 
-      borderRadius: 16, 
+      borderRadius: layout.radius.featuredCard, 
       paddingVertical: 20,
       paddingHorizontal: 20, 
       marginHorizontal: layout.padding.horizontal, 
       marginBottom: 32, 
-      // Shadow for lifted premium feel
-      shadowColor: '#C5A059',
+      shadowColor: '#C89B3C',
       shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: 0.15,
+      shadowOpacity: 0.08,
       shadowRadius: 12,
       elevation: 5,
     },
     streakDays: { 
       fontFamily: 'PlayfairDisplay_700Bold', 
-      fontSize: 24, 
+      fontSize: typography.sizes.headingSmall, 
       color: '#1A1A1A' 
     },
     streakLabel: { 
       fontFamily: 'Inter_400Regular', 
-      fontSize: 14, 
+      fontSize: typography.sizes.meta, 
       color: '#333333' 
     },
     streakDot: { 
@@ -787,25 +786,35 @@ const HomeScreen = ({ navigation }) => {
     },
     sectionLabel: { 
       fontFamily: 'Inter_500Medium',
-      fontSize: 11,
+      fontSize: 12,
       color: colors.textSecondary,
-      letterSpacing: 1,
+      letterSpacing: 1.2,
       textTransform: 'uppercase',
       marginHorizontal: layout.padding.horizontal,
       marginTop: 32,
       marginBottom: 16,
-      display: 'none', // Staying hidden per previous mockup logic, but updating color if shown
+      display: 'none',
+    },
+    sectionHeading: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: typography.sizes.headingLarge,
+      color: colors.text,
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 24,
+      marginBottom: 16,
     },
     catPill: { 
-      paddingHorizontal: 18, 
-      paddingVertical: 10, 
-      borderRadius: 999, 
+      paddingHorizontal: 20, 
+      paddingVertical: 0, 
+      height: layout.heights.categoryPill,
+      justifyContent: 'center',
+      borderRadius: layout.radius.categoryPill, 
       borderWidth: 1.5, 
-      backgroundColor: isDark ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)',
-      shadowColor: '#8A6C43',
+      backgroundColor: isDark ? colors.cardBackground || 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)',
+      shadowColor: '#C89B3C',
       shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: isDark ? 0 : 0.08,
-      shadowRadius: 4,
+      shadowOpacity: isDark ? 0 : 0.06,
+      shadowRadius: 6,
       elevation: isDark ? 0 : 2,
     },
     catPillActive: { 
@@ -813,12 +822,55 @@ const HomeScreen = ({ navigation }) => {
     },
     catPillText: { 
       fontFamily: 'Inter_600SemiBold', 
-      fontSize: 14, 
+      fontSize: typography.sizes.categoryPill, 
       color: colors.primary
     },
     catPillTextActive: { 
       color: '#FFFFFF', 
       fontFamily: 'Inter_500Medium' 
+    },
+    featuredScroll: {
+      paddingLeft: layout.padding.horizontal,
+      paddingRight: 8,
+      marginBottom: 8,
+    },
+    featuredCard: {
+      width: screenWidth * layout.featuredCardWidth,
+      height: layout.heights.featuredCard,
+      borderRadius: layout.radius.featuredCard,
+      marginRight: 12,
+      padding: 20,
+      justifyContent: 'space-between',
+      overflow: 'hidden',
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.08,
+      shadowRadius: 12,
+      elevation: 4,
+    },
+    featuredCardTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: typography.sizes.headingSmall,
+      color: colors.text,
+      lineHeight: 30,
+    },
+    featuredCardMeta: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.meta,
+      color: colors.textSecondary,
+    },
+    featuredCardBadge: {
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+      borderRadius: 8,
+      backgroundColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.72)',
+      alignSelf: 'flex-start',
+      marginBottom: 12,
+    },
+    featuredCardBadgeText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: colors.textSecondary,
     },
     storyGrid: {
       flexDirection: 'column',
@@ -841,7 +893,7 @@ const HomeScreen = ({ navigation }) => {
     },
     editorialUseCtaText: {
       fontFamily: 'Inter_500Medium',
-      fontSize: 12,
+      fontSize: 13,
       color: colors.primary,
     },
     sectionTitle: {
@@ -852,28 +904,28 @@ const HomeScreen = ({ navigation }) => {
     },
     sectionSub: {
       fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.bodySmall,
+      fontSize: typography.sizes.body,
       color: colors.textSecondary,
-      lineHeight: 20,
+      lineHeight: 22,
       marginBottom: 16,
     },
     fabPratikYap: {
       position: 'absolute',
       bottom: 90 + Math.max(0, insets.bottom - 16),
       right: layout.padding.horizontal,
-      width: 54,
-      height: 54,
-      borderRadius: 27,
-      shadowColor: '#C5A059',
+      width: 56,
+      height: 56,
+      borderRadius: 28,
+      shadowColor: '#C89B3C',
       shadowOffset: { width: 0, height: 6 },
-      shadowOpacity: 0.45,
+      shadowOpacity: 0.35,
       shadowRadius: 16,
       elevation: 12,
     },
     fabGradient: {
-      width: 54,
-      height: 54,
-      borderRadius: 27,
+      width: 56,
+      height: 56,
+      borderRadius: 28,
       alignItems: 'center',
       justifyContent: 'center',
       borderWidth: 1,
@@ -881,15 +933,15 @@ const HomeScreen = ({ navigation }) => {
     },
     firstSessionCard: {
       marginBottom: 20,
-      borderRadius: 16,
+      borderRadius: layout.radius.card,
       borderWidth: 1,
       borderColor: `${colors.primary}55`,
       backgroundColor: `${colors.primary}12`,
-      padding: 16,
+      padding: 20,
     },
     firstSessionIntro: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 11,
+      fontSize: 12,
       color: colors.primary,
       letterSpacing: 0.7,
       textTransform: 'uppercase',
@@ -913,32 +965,32 @@ const HomeScreen = ({ navigation }) => {
     },
     firstSessionSub: {
       fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.bodySmall,
+      fontSize: typography.sizes.body,
       color: colors.textSecondary,
-      lineHeight: 20,
+      lineHeight: 22,
     },
     firstSessionInfoBox: {
-      borderRadius: 12,
+      borderRadius: 14,
       borderWidth: 1,
       borderColor: `${colors.primary}30`,
       backgroundColor: `${colors.background}AA`,
-      paddingHorizontal: 12,
-      paddingVertical: 10,
+      paddingHorizontal: 14,
+      paddingVertical: 12,
       marginBottom: 10,
       gap: 4,
     },
     firstSessionInfoLabel: {
       fontFamily: 'Inter_500Medium',
-      fontSize: 11,
+      fontSize: 12,
       color: colors.textSecondary,
       textTransform: 'uppercase',
       letterSpacing: 0.5,
     },
     firstSessionInfoValue: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
+      fontSize: 14,
       color: colors.text,
-      lineHeight: 18,
+      lineHeight: 20,
     },
     firstSessionCatRow: {
       flexDirection: 'row',
@@ -948,21 +1000,21 @@ const HomeScreen = ({ navigation }) => {
     },
     firstSessionCatPill: {
       borderRadius: 999,
-      paddingHorizontal: 10,
-      paddingVertical: 5,
+      paddingHorizontal: 12,
+      paddingVertical: 6,
       backgroundColor: `${colors.primary}20`,
       borderWidth: 1,
       borderColor: `${colors.primary}45`,
     },
     firstSessionCatText: {
       fontFamily: 'Inter_500Medium',
-      fontSize: 11,
+      fontSize: 12,
       color: colors.primary,
     },
     firstSessionClose: {
-      width: 28,
-      height: 28,
-      borderRadius: 14,
+      width: 30,
+      height: 30,
+      borderRadius: 15,
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: `${colors.primary}18`,
@@ -970,25 +1022,25 @@ const HomeScreen = ({ navigation }) => {
     firstSessionCta: {
       alignSelf: 'flex-start',
       marginTop: 4,
-      paddingHorizontal: 16,
-      paddingVertical: 10,
+      paddingHorizontal: 20,
+      paddingVertical: 12,
       borderRadius: 999,
       backgroundColor: colors.primary,
     },
     firstSessionCtaText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
+      fontSize: 14,
       color: colors.onPrimary,
       letterSpacing: 0.3,
       textTransform: 'uppercase',
     },
     personalizedModuleCard: {
       marginBottom: 16,
-      borderRadius: 16,
+      borderRadius: layout.radius.card,
       borderWidth: 1,
       borderColor: `${colors.primary}55`,
       backgroundColor: `${colors.primary}12`,
-      padding: 16,
+      padding: 20,
     },
     personalizedModuleTop: {
       flexDirection: 'row',
@@ -1008,9 +1060,9 @@ const HomeScreen = ({ navigation }) => {
     },
     personalizedModuleSub: {
       fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.bodySmall,
+      fontSize: typography.sizes.body,
       color: colors.textSecondary,
-      lineHeight: 20,
+      lineHeight: 22,
     },
     personalizedModuleActions: {
       flexDirection: 'row',
@@ -1018,35 +1070,35 @@ const HomeScreen = ({ navigation }) => {
       alignItems: 'center',
     },
     personalizedModuleSnoozeBtn: {
-      paddingHorizontal: 12,
-      paddingVertical: 8,
-      borderRadius: 10,
+      paddingHorizontal: 14,
+      paddingVertical: 10,
+      borderRadius: 12,
       borderWidth: 1,
       borderColor: colors.border,
       backgroundColor: colors.background,
     },
     personalizedModuleSnoozeText: {
       fontFamily: 'Inter_500Medium',
-      fontSize: 12,
+      fontSize: 13,
       color: colors.textSecondary,
     },
     personalizedModuleCta: {
       alignSelf: 'flex-start',
-      paddingHorizontal: 16,
-      paddingVertical: 10,
+      paddingHorizontal: 20,
+      paddingVertical: 12,
       borderRadius: 999,
       backgroundColor: colors.primary,
     },
     personalizedModuleCtaText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
+      fontSize: 14,
       color: colors.onPrimary,
       letterSpacing: 0.3,
       textTransform: 'uppercase',
     },
     dailyPanelCard: {
       marginBottom: 20,
-      borderRadius: 16,
+      borderRadius: layout.radius.card,
       borderWidth: 2,
       overflow: 'hidden',
     },
@@ -1066,7 +1118,7 @@ const HomeScreen = ({ navigation }) => {
     },
     dailyPanelTitle: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
+      fontSize: 14,
       color: colors.text,
       letterSpacing: 0.5,
       textTransform: 'uppercase',
@@ -1074,7 +1126,7 @@ const HomeScreen = ({ navigation }) => {
     },
     dailyPanelSub: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 12,
+      fontSize: 13,
       color: colors.textSecondary,
     },
     dailyPanelStoriesWrap: {
@@ -1087,8 +1139,8 @@ const HomeScreen = ({ navigation }) => {
       alignItems: 'center',
       paddingVertical: 10,
       paddingHorizontal: 12,
-      borderRadius: 12,
-      backgroundColor: colors.backgroundDark,
+      borderRadius: 14,
+      backgroundColor: colors.backgroundDark || colors.cardBackground,
       gap: 12,
     },
     dailyStoryRowClicked: {
@@ -1108,17 +1160,20 @@ const HomeScreen = ({ navigation }) => {
         onMomentumScrollEnd={({ nativeEvent }) => handleLoadMore(nativeEvent)}
         scrollEventThrottle={100}
       >
+        {/* ── Header ───────────────────────────────────────────────── */}
         <View style={styles.homeHeader}>
           <Text style={styles.brandLogo}>Spark</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Search')} style={{ padding: 4 }}>
-            <Ionicons name="search" size={22} color={colors.textSecondary} />
+          <TouchableOpacity onPress={() => navigation.navigate('Search')} style={{ padding: 6 }}>
+            <Ionicons name="search" size={24} color={colors.textSecondary} />
           </TouchableOpacity>
         </View>
+
+        {/* ── Category Pills ───────────────────────────────────────── */}
         <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
           {categoriesLabel}
         </Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 16 }}>
-          <View style={{ flexDirection: 'row', gap: 8, paddingHorizontal: layout.padding.horizontal }}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 8 }}>
+          <View style={{ flexDirection: 'row', gap: 10, paddingHorizontal: layout.padding.horizontal }}>
             {visibleCategoriesList.map((item) => {
               const isActive = item.key === activeFilter;
               const catImg = getCategoryImage(item.rawName, isDark);
@@ -1135,14 +1190,16 @@ const HomeScreen = ({ navigation }) => {
                       gap: 8,
                       borderColor: item.key === 'all' ? colors.border : catTheme.borderColor,
                       backgroundColor: isActive
-                        ? (item.key === 'all' ? '#823b18' : catTheme.accent)
-                        : (item.key === 'all' ? (isDark ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)') : catTheme.backgroundColor),
+                        ? (item.key === 'all' ? colors.primary : catTheme.accent)
+                        : (item.key === 'all'
+                          ? (isDark ? colors.cardBackground || 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)')
+                          : catTheme.backgroundColor),
                     },
                   ]}
                   onPress={() => setActiveFilter(item.key)}
                 >
                   {catImg.source ? (
-                    <View style={{ width: 20, height: 20, borderRadius: 6, overflow: 'hidden' }}>
+                    <View style={{ width: 22, height: 22, borderRadius: 7, overflow: 'hidden' }}>
                       <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
                       <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
                     </View>
@@ -1155,6 +1212,91 @@ const HomeScreen = ({ navigation }) => {
             })}
           </View>
         </ScrollView>
+
+        {/* ── Featured Story Cards (Horizontal Scroll) ─────────────── */}
+        {!loading && sortedStories.length > 0 && (() => {
+          const featuredStories = personalizedStories.length > 0
+            ? personalizedStories
+            : sortedStories.slice(0, 4);
+          return (
+            <>
+              <Text style={styles.sectionHeading}>{forYouLabel}</Text>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                decelerationRate="fast"
+                snapToInterval={screenWidth * layout.featuredCardWidth + 12}
+                snapToAlignment="start"
+                contentContainerStyle={styles.featuredScroll}
+              >
+                {featuredStories.map((story, idx) => {
+                  const catTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+                  const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+                  const displayCat = t(story.parent_cat || story.cat, lang) || '';
+                  const isRead = checkIfRead(story.story_id);
+                  return (
+                    <TouchableOpacity
+                      key={`featured-${story.story_id}`}
+                      style={[
+                        styles.featuredCard,
+                        {
+                          backgroundColor: isDark
+                            ? colors.cardBackground
+                            : (colors.cardBackground || '#FFFDF9'),
+                          borderWidth: 1.5,
+                          borderColor: isDark
+                            ? 'rgba(255,255,255,0.08)'
+                            : catTheme.borderColor,
+                        },
+                        isRead && { opacity: 0.55 },
+                      ]}
+                      activeOpacity={0.85}
+                      onPress={() => {
+                        openPersonalizedStory(story, idx);
+                      }}
+                    >
+                      {/* Category image background */}
+                      {catImg.source && (
+                        <View style={[StyleSheet.absoluteFill, { borderRadius: layout.radius.featuredCard, overflow: 'hidden' }]}>
+                          <Image
+                            source={catImg.source}
+                            style={{ width: '100%', height: '100%', opacity: isDark ? 0.15 : 0.12 }}
+                            resizeMode="cover"
+                          />
+                        </View>
+                      )}
+                      {/* Soft gradient overlay */}
+                      <LinearGradient
+                        colors={isDark
+                          ? ['rgba(32,33,36,0.2)', 'rgba(32,33,36,0.85)']
+                          : ['rgba(255,253,249,0.1)', 'rgba(255,253,249,0.88)']}
+                        start={{ x: 0.5, y: 0 }}
+                        end={{ x: 0.5, y: 1 }}
+                        style={[StyleSheet.absoluteFill, { borderRadius: layout.radius.featuredCard }]}
+                      />
+                      <View>
+                        <View style={styles.featuredCardBadge}>
+                          <Text style={styles.featuredCardBadgeText}>
+                            {displayCat.charAt(0).toUpperCase() + displayCat.slice(1).toLocaleLowerCase('tr-TR')}
+                          </Text>
+                        </View>
+                        {isRead && <Ionicons name="checkmark-circle" size={18} color={colors.primary} style={{ position: 'absolute', top: 0, right: 0 }} />}
+                      </View>
+                      <View>
+                        <Text numberOfLines={3} style={styles.featuredCardTitle}>
+                          {story.title}
+                        </Text>
+                        <Text style={[styles.featuredCardMeta, { marginTop: 8 }]}>
+                          {story.min} {t('minLabel', lang)} · {story.source_book || ''}
+                        </Text>
+                      </View>
+                    </TouchableOpacity>
+                  );
+                })}
+              </ScrollView>
+            </>
+          );
+        })()}
 
         <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>{todayLabel}</Text>
         
@@ -1439,8 +1581,8 @@ const HomeScreen = ({ navigation }) => {
         >
           <LinearGradient
             colors={isDark
-              ? ['rgba(208,106,27,0.92)', 'rgba(160,68,10,0.97)']
-              : ['rgba(194,155,76,0.94)', 'rgba(155,118,42,0.97)']}
+              ? ['rgba(229,194,122,0.92)', 'rgba(217,177,95,0.97)']
+              : ['rgba(200,155,60,0.94)', 'rgba(232,211,168,0.97)']}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
             style={styles.fabGradient}

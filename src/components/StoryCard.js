@@ -63,11 +63,11 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       marginBottom: isCompact ? 0 : 20,
       width: isCompact ? (width - (layout.padding.horizontal * 2) - 16) / 2 : '100%',
       justifyContent: 'space-between',
-      minHeight: isHero ? 220 : isCompact ? 160 : 140,
+      minHeight: isHero ? 240 : isCompact ? 170 : 155,
       shadowColor: '#1c1c19',
       shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.04,
-      shadowRadius: 8,
+      shadowOpacity: 0.05,
+      shadowRadius: 10,
       elevation: 2,
     },
     heroCard: {
@@ -88,9 +88,9 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       marginBottom: 12,
     },
     badge: {
-      paddingHorizontal: 8,
-      paddingVertical: 4,
-      borderRadius: 6,
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+      borderRadius: 8,
       backgroundColor: isDark ? colors.background : 'rgba(255,255,255,0.72)',
       borderWidth: 0,
       flexDirection: 'row',
@@ -100,7 +100,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     badgeText: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 11,
+      fontSize: 12,
       color: colors.textSecondary,
       letterSpacing: 0.5,
       textTransform: 'none',
@@ -108,9 +108,9 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     cardTitle: {
       fontFamily: 'PlayfairDisplay_600SemiBold',
-      fontSize: isSmallPhone ? 17 : isPhone ? 18 : 20,
+      fontSize: isSmallPhone ? 19 : isPhone ? 20 : 22,
       color: colors.text,
-      lineHeight: isSmallPhone ? 23 : isPhone ? 24 : 26,
+      lineHeight: isSmallPhone ? 25 : isPhone ? 26 : 28,
     },
     cardTitleHero: {
       fontSize: isSmallPhone ? 22 : isPhone ? 24 : 26,
@@ -118,8 +118,8 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     cardTitleCompact: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: isSmallPhone ? 15 : isPhone ? 16 : 18,
-      lineHeight: isSmallPhone ? 20 : isPhone ? 22 : 24,
+      fontSize: isSmallPhone ? 16 : isPhone ? 17 : 19,
+      lineHeight: isSmallPhone ? 22 : isPhone ? 23 : 25,
     },
     cardFooter: {
       flexDirection: 'row',
@@ -129,22 +129,22 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     supportText: {
       fontFamily: 'Inter_500Medium',
-      fontSize: 11,
-      lineHeight: 16,
+      fontSize: 12,
+      lineHeight: 18,
       color: locked ? colors.primary : colors.textSecondary,
       marginTop: 8,
     },
     cardMeta: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 12,
+      fontSize: 13,
       color: colors.textSecondary,
     },
     cardArrow: {
-      fontSize: 16,
+      fontSize: 18,
       color: colors.primary,
     },
     lockIcon: {
-      fontSize: 14,
+      fontSize: 16,
       color: colors.textSecondary,
     },
     newBadge: {

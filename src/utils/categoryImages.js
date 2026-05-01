@@ -39,54 +39,62 @@ export const CAT_STYLES_DARK = {
 };
 
 const CATEGORY_THEME_MAP = {
+  // DESIGN_AI 2026 category colors
   'Mind & Psychology': {
-    accent: '#566FC1',
-    lightSoft: 'rgba(86, 111, 193, 0.10)',
-    lightStrong: 'rgba(86, 111, 193, 0.16)',
-    darkSoft: 'rgba(86, 111, 193, 0.18)',
-    darkStrong: 'rgba(86, 111, 193, 0.24)',
+    accent: '#5C8D67',                       // Psikoloji
+    lightSoft: 'rgba(92, 141, 103, 0.08)',   // #DDEBDD equivalent
+    lightStrong: 'rgba(92, 141, 103, 0.15)',
+    darkSoft: 'rgba(121, 185, 138, 0.14)',   // #79B98A → #1E3A2B
+    darkStrong: 'rgba(121, 185, 138, 0.22)',
+    darkAccent: '#79B98A',
   },
   'Career & Success': {
-    accent: '#B8861D',
-    lightSoft: 'rgba(184, 134, 29, 0.10)',
-    lightStrong: 'rgba(184, 134, 29, 0.16)',
-    darkSoft: 'rgba(184, 134, 29, 0.18)',
-    darkStrong: 'rgba(184, 134, 29, 0.24)',
+    accent: '#C89B3C',                       // Finans
+    lightSoft: 'rgba(200, 155, 60, 0.08)',   // #F7E7C1 equivalent
+    lightStrong: 'rgba(200, 155, 60, 0.15)',
+    darkSoft: 'rgba(217, 177, 95, 0.14)',    // #D9B15F → #4A3A18
+    darkStrong: 'rgba(217, 177, 95, 0.22)',
+    darkAccent: '#D9B15F',
   },
   'Personal Growth': {
-    accent: '#1F8A77',
-    lightSoft: 'rgba(31, 138, 119, 0.10)',
-    lightStrong: 'rgba(31, 138, 119, 0.16)',
-    darkSoft: 'rgba(31, 138, 119, 0.18)',
-    darkStrong: 'rgba(31, 138, 119, 0.24)',
+    accent: '#8C5BD6',                       // Motivasyon
+    lightSoft: 'rgba(140, 91, 214, 0.07)',   // #EADFFD equivalent
+    lightStrong: 'rgba(140, 91, 214, 0.14)',
+    darkSoft: 'rgba(181, 141, 255, 0.14)',   // #B58DFF → #34214D
+    darkStrong: 'rgba(181, 141, 255, 0.22)',
+    darkAccent: '#B58DFF',
   },
   'Science & Future': {
-    accent: '#5F7C45',
-    lightSoft: 'rgba(95, 124, 69, 0.10)',
-    lightStrong: 'rgba(95, 124, 69, 0.16)',
-    darkSoft: 'rgba(95, 124, 69, 0.18)',
-    darkStrong: 'rgba(95, 124, 69, 0.24)',
+    accent: '#4AA89A',                       // Alışkanlık
+    lightSoft: 'rgba(74, 168, 154, 0.07)',   // #D8F2EE equivalent
+    lightStrong: 'rgba(74, 168, 154, 0.14)',
+    darkSoft: 'rgba(99, 199, 184, 0.14)',    // #63C7B8 → #183D39
+    darkStrong: 'rgba(99, 199, 184, 0.22)',
+    darkAccent: '#63C7B8',
   },
   'Society & World': {
-    accent: '#BA6830',
-    lightSoft: 'rgba(186, 104, 48, 0.10)',
-    lightStrong: 'rgba(186, 104, 48, 0.16)',
-    darkSoft: 'rgba(186, 104, 48, 0.18)',
-    darkStrong: 'rgba(186, 104, 48, 0.24)',
+    accent: '#4E6E9E',                       // Liderlik
+    lightSoft: 'rgba(78, 110, 158, 0.07)',   // #DCE6F5 equivalent
+    lightStrong: 'rgba(78, 110, 158, 0.14)',
+    darkSoft: 'rgba(110, 145, 200, 0.14)',   // #6E91C8 → #1D2D44
+    darkStrong: 'rgba(110, 145, 200, 0.22)',
+    darkAccent: '#6E91C8',
   },
   'Social Skills': {
-    accent: '#B65252',
-    lightSoft: 'rgba(182, 82, 82, 0.10)',
-    lightStrong: 'rgba(182, 82, 82, 0.16)',
-    darkSoft: 'rgba(182, 82, 82, 0.18)',
-    darkStrong: 'rgba(182, 82, 82, 0.24)',
+    accent: '#D9792B',                       // İletişim
+    lightSoft: 'rgba(217, 121, 43, 0.07)',   // #FCE5D3 equivalent
+    lightStrong: 'rgba(217, 121, 43, 0.14)',
+    darkSoft: 'rgba(242, 155, 87, 0.14)',    // #F29B57 → #4A2B16
+    darkStrong: 'rgba(242, 155, 87, 0.22)',
+    darkAccent: '#F29B57',
   },
   default: {
-    accent: '#8A6C43',
-    lightSoft: 'rgba(138, 108, 67, 0.08)',
-    lightStrong: 'rgba(138, 108, 67, 0.14)',
-    darkSoft: 'rgba(138, 108, 67, 0.16)',
-    darkStrong: 'rgba(138, 108, 67, 0.22)',
+    accent: '#C89B3C',
+    lightSoft: 'rgba(200, 155, 60, 0.06)',
+    lightStrong: 'rgba(200, 155, 60, 0.12)',
+    darkSoft: 'rgba(229, 194, 122, 0.12)',
+    darkStrong: 'rgba(229, 194, 122, 0.20)',
+    darkAccent: '#E5C27A',
   },
 };
 
@@ -362,8 +370,8 @@ export const getCategoryTheme = (catName, isDark = false) => {
 
   return {
     key: normalizedKey,
-    accent: palette.accent,
-    borderColor: palette.accent,
+    accent: isDark ? (palette.darkAccent || palette.accent) : palette.accent,
+    borderColor: isDark ? (palette.darkAccent || palette.accent) : palette.accent,
     backgroundColor: isDark ? palette.darkSoft : palette.lightSoft,
     strongBackgroundColor: isDark ? palette.darkStrong : palette.lightStrong,
   };

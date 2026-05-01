@@ -38,21 +38,21 @@ function MainTabs() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: isDark ? '#131311' : '#fcf9f4',
-          borderTopWidth: layout.borderWidth,
-          borderTopColor: isDark ? '#4A3F33' : '#e0c0b2',
-          height: 60 + androidBottomInset,
+          backgroundColor: isDark ? 'rgba(20,20,22,0.88)' : '#fcf9f4',
+          borderTopWidth: isDark ? StyleSheet.hairlineWidth : layout.borderWidth,
+          borderTopColor: isDark ? 'rgba(255,255,255,0.05)' : colors.border,
+          height: 92 + androidBottomInset,
           paddingBottom: androidBottomInset,
           paddingTop: 10,
           marginBottom: Platform.OS === 'android' ? 4 : 0,
         },
-        tabBarActiveTintColor: '#823b18',
-        tabBarInactiveTintColor: isDark ? '#A89A84' : '#594238',
+        tabBarActiveTintColor: colors.activeNav || colors.primary,
+        tabBarInactiveTintColor: isDark ? '#8C8C92' : '#6B6B6B',
         tabBarLabelStyle: {
           fontFamily: 'Inter_600SemiBold',
-          fontSize: 12,
+          fontSize: 15,
           textTransform: 'capitalize',
-          letterSpacing: 0.5,
+          letterSpacing: 0.3,
         },
       }}
     >
@@ -88,8 +88,8 @@ function MainTabs() {
                 <View style={{
                   position: 'absolute', top: 0, right: -3,
                   width: 9, height: 9, borderRadius: 5,
-                  backgroundColor: '#C5A059',
-                  borderWidth: 1.5, borderColor: isDark ? '#131311' : '#fcf9f4',
+                  backgroundColor: colors.primary,
+                  borderWidth: 1.5, borderColor: isDark ? 'rgba(20,20,22,0.88)' : '#fcf9f4',
                 }} />
               )}
             </View>

@@ -166,15 +166,15 @@ Kod yuzeyi:
 • [x] Bildirim Noktası: İlerleme sayfasında yeni bir rozet veya başarı olduğunda, alt menüdeki ikonun üzerine çok küçük, altın rengi bir bildirim noktası ekle.
 
 ## 12.After New Design
-- [] 1. Ana ekranda "Bugun Ne Söyeleceksin?" Başlığı altında görev tamamlanınca bu kart kapansın, sağdaki oka tıklayınca açılsın. Böyle ne okuduğu kayboluyor. 
-- [] 2. Sıradaki hedef %100 olan son hedef gözüküyor. Ya başlık deişsin ya da %100 olmayan ve oranı en yüksek olan bir rozet gösterilsin.
-- [] 3. Ana ekrandaki kartlarada "sohbette Kullanılabilir" ifadesini kaldır.
-- [] 4. "Sohbette Kullan kart" aksiyonu içinde altta sağda olsun.
-- [] 4.1. "Sohbette Kullan kart" yazısının yanıda iki ikn var. Birini kaldır. HAngisi daha iyise o kalsın.
-- [] 5. Ana ekranda ve profildeki kategoris yatay lsitede kategorilerin ikonları/görselleri olmalı mı? Şu an sadece ingilizce dilinde var.
-- [] 6. Sohbette Kullan ekranıda "Vurucu cümle" alanı ilk alan olsun. Sonra "30 Saniye" alanı gelsin.
-- [] 7. Sohbete Kullan ekranında "Bunu Kullandım" butonu ekran sığmıyor. Sağ yanındaki yeiş tiki kaldır. seçildi ise soldaki tik ikonun rengi değişsin.
-- [] 8. "Bunu Kullandım" olarak işaretlenen hikayeleri kaydet. "Nasıl geçti" cevabını da kaydet. İşaretlenenler için Kütüphaneye bir kategori ekle.
+- [x] 1. Ana ekranda "Bugun Ne Söyeleceksin?" Başlığı altında görev tamamlanınca bu kart kapansın, sağdaki oka tıklayınca açılsın. Böyle ne okuduğu kayboluyor. 
+- [x] 2. Sıradaki hedef %100 olan son hedef gözüküyor. Ya başlık deişsin ya da %100 olmayan ve oranı en yüksek olan bir rozet gösterilsin.
+- [x] 3. Ana ekrandaki kartlarada "sohbette Kullanılabilir" ifadesini kaldır.
+- [x] 4. "Sohbette Kullan kart" aksiyonu içinde altta sağda olsun.
+- [x] 4.1. "Sohbette Kullan kart" yazısının yanıda iki ikn var. Birini kaldır. HAngisi daha iyise o kalsın.
+- [x] 5. Ana ekranda ve profildeki kategoris yatay lsitede kategorilerin ikonları/görselleri olmalı mı? Şu an sadece ingilizce dilinde var.
+- [x] 6. Sohbette Kullan ekranıda "Vurucu cümle" alanı ilk alan olsun. Sonra "30 Saniye" alanı gelsin.
+- [x] 7. Sohbete Kullan ekranında "Bunu Kullandım" butonu ekran sığmıyor. Sağ yanındaki yeiş tiki kaldır. seçildi ise soldaki tik ikonun rengi değişsin.
+- [x] 8. "Bunu Kullandım" olarak işaretlenen hikayeleri kaydet. "Nasıl geçti" cevabını da kaydet. İşaretlenenler için Kütüphaneye bir kategori ekle.
 ## Onerilen Uygulama Sirasi
 - [ ] 1. Paywall metinleri ve fark tablosu
 - [ ] 2. "Ilk 2 icerik acik" akisinin netlestirilmesi
