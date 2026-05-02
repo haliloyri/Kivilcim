@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../context/ThemeContext';
 import { useStories } from '../context/StoriesContext';
 import StoryCard from '../components/StoryCard';
+import CategoryPill from '../components/CategoryPill';
 import { t } from '../locales/i18n';
 import { searchStoriesForLang } from '../db/db';
 
@@ -28,8 +29,7 @@ const SearchScreen = ({ navigation }) => {
       .slice()
       .sort((a, b) => (b.count || 0) - (a.count || 0))
       .slice(0, 6)
-      .map((item) => item.name)
-      .filter(Boolean);
+      .filter((item) => item?.name);
   }, [parentCategories]);
 
   useEffect(() => {
@@ -219,7 +219,16 @@ const SearchScreen = ({ navigation }) => {
 
             <Text style={styles.sectionLabel}>{t('searchPopularTitle', lang)}</Text>
             <View style={styles.chipRow}>
-              {(popularCategories.length > 0 ? popularCategories : DEFAULT_SUGGESTIONS).map((item, idx) => (
+              {popularCategories.length > 0 ? popularCategories.map((item, idx) => (
+                <CategoryPill
+                  key={`${item.name}-${idx}`}
+                  label={item.name}
+                  categoryName={item.raw_name || item.name}
+                  isDark={isDark}
+                  compact
+                  onPress={() => applySearchTerm(item.name)}
+                />
+              )) : DEFAULT_SUGGESTIONS.map((item, idx) => (
                 <TouchableOpacity key={`${item}-${idx}`} style={styles.chip} onPress={() => applySearchTerm(item)}>
                   <Text style={styles.chipText}>{item}</Text>
                 </TouchableOpacity>
@@ -239,7 +248,16 @@ const SearchScreen = ({ navigation }) => {
                 <Text style={styles.emptySub}>{t('searchNoResultsSub', lang)}</Text>
                 <Text style={styles.sectionLabel}>{t('searchTrySuggestions', lang)}</Text>
                 <View style={styles.chipRow}>
-                  {(popularCategories.length > 0 ? popularCategories : DEFAULT_SUGGESTIONS).map((item, idx) => (
+                  {popularCategories.length > 0 ? popularCategories.map((item, idx) => (
+                    <CategoryPill
+                      key={`${item.name}-${idx}`}
+                      label={item.name}
+                      categoryName={item.raw_name || item.name}
+                      isDark={isDark}
+                      compact
+                      onPress={() => applySearchTerm(item.name)}
+                    />
+                  )) : DEFAULT_SUGGESTIONS.map((item, idx) => (
                     <TouchableOpacity key={`${item}-${idx}`} style={styles.chip} onPress={() => applySearchTerm(item)}>
                       <Text style={styles.chipText}>{item}</Text>
                     </TouchableOpacity>

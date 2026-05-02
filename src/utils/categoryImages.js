@@ -98,6 +98,313 @@ const CATEGORY_THEME_MAP = {
   },
 };
 
+const CATEGORY_PILL_PALETTE_MAP = {
+  all: {
+    light: {
+      background: '#F8F5F1',
+      border: '#E8DDD0',
+      text: '#8A7E72',
+      icon: '#9C8F83',
+      iconBackground: 'rgba(255,255,255,0.55)',
+      gradient: ['#F8F5F1', '#F1ECE5'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#34343A',
+      text: '#B7B9BE',
+      icon: '#8E9197',
+      iconBackground: 'rgba(255,255,255,0.04)',
+      gradient: ['#2A2A2E', '#202024'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  finance: {
+    light: {
+      background: '#F8F5F1',
+      border: '#C58B22',
+      text: '#FFFFFF',
+      icon: '#FFF4D6',
+      iconBackground: 'rgba(255,244,214,0.18)',
+      gradient: ['#D8A53A', '#B97A16'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#B9852C',
+      text: '#FFF8EC',
+      icon: '#FFD978',
+      iconBackground: 'rgba(255,217,120,0.12)',
+      gradient: ['#8E6513', '#6E4C0A'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  psychology: {
+    light: {
+      background: '#F8F5F1',
+      border: '#5F9C68',
+      text: '#FFFFFF',
+      icon: '#E8FFF0',
+      iconBackground: 'rgba(232,255,240,0.18)',
+      gradient: ['#7DBB87', '#4F8C5A'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#4F8A5E',
+      text: '#F1FFF5',
+      icon: '#9AE6B4',
+      iconBackground: 'rgba(154,230,180,0.14)',
+      gradient: ['#356B42', '#24492D'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  leadership: {
+    light: {
+      background: '#F8F5F1',
+      border: '#3D6EA8',
+      text: '#FFFFFF',
+      icon: '#EAF3FF',
+      iconBackground: 'rgba(234,243,255,0.18)',
+      gradient: ['#4D82C3', '#2F5F9C'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#537AB5',
+      text: '#F2F7FF',
+      icon: '#8CB8FF',
+      iconBackground: 'rgba(140,184,255,0.14)',
+      gradient: ['#2D4E7C', '#1D3352'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  health: {
+    light: {
+      background: '#F8F5F1',
+      border: '#29B487',
+      text: '#FFFFFF',
+      icon: '#E9FFF7',
+      iconBackground: 'rgba(233,255,247,0.18)',
+      gradient: ['#3CCB9B', '#1C9C73'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#29A17D',
+      text: '#F0FFF9',
+      icon: '#7DFFD0',
+      iconBackground: 'rgba(125,255,208,0.14)',
+      gradient: ['#17785B', '#0D5741'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  growth: {
+    light: {
+      background: '#F8F5F1',
+      border: '#7456E8',
+      text: '#FFFFFF',
+      icon: '#F0EBFF',
+      iconBackground: 'rgba(240,235,255,0.18)',
+      gradient: ['#8B6DFF', '#6448D9'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#826FFF',
+      text: '#F7F4FF',
+      icon: '#C1B4FF',
+      iconBackground: 'rgba(193,180,255,0.14)',
+      gradient: ['#5A46B8', '#3C2F7C'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  science: {
+    light: {
+      background: '#F8F5F1',
+      border: '#2F8CC3',
+      text: '#FFFFFF',
+      icon: '#EAF8FF',
+      iconBackground: 'rgba(234,248,255,0.18)',
+      gradient: ['#3FA7D6', '#2176AE'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#4095C7',
+      text: '#F2FAFF',
+      icon: '#84D8FF',
+      iconBackground: 'rgba(132,216,255,0.14)',
+      gradient: ['#215E7D', '#14384B'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  philosophy: {
+    light: {
+      background: '#F8F5F1',
+      border: '#77553B',
+      text: '#FFFFFF',
+      icon: '#FFF1E5',
+      iconBackground: 'rgba(255,241,229,0.18)',
+      gradient: ['#8C6A4A', '#5F4530'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#8E6B4D',
+      text: '#FFF6EF',
+      icon: '#D9B08C',
+      iconBackground: 'rgba(217,176,140,0.14)',
+      gradient: ['#5E4734', '#3D2D20'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  communication: {
+    light: {
+      background: '#F8F5F1',
+      border: '#E38716',
+      text: '#FFFFFF',
+      icon: '#FFF4E8',
+      iconBackground: 'rgba(255,244,232,0.18)',
+      gradient: ['#F39C34', '#D87400'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#D97A15',
+      text: '#FFF8F2',
+      icon: '#FFBE78',
+      iconBackground: 'rgba(255,190,120,0.14)',
+      gradient: ['#A45700', '#733B00'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  productivity: {
+    light: {
+      background: '#F8F5F1',
+      border: '#4C5AB8',
+      text: '#FFFFFF',
+      icon: '#EEF1FF',
+      iconBackground: 'rgba(238,241,255,0.18)',
+      gradient: ['#5C6BC0', '#3949AB'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#6677E0',
+      text: '#F4F6FF',
+      icon: '#A7B6FF',
+      iconBackground: 'rgba(167,182,255,0.14)',
+      gradient: ['#3E4D9E', '#29326B'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+  history: {
+    light: {
+      background: '#F8F5F1',
+      border: '#925A31',
+      text: '#FFFFFF',
+      icon: '#FFF2E7',
+      iconBackground: 'rgba(255,242,231,0.18)',
+      gradient: ['#A76B3C', '#7A4B27'],
+      shadowColor: 'rgba(0,0,0,0.08)',
+    },
+    dark: {
+      background: '#232326',
+      border: '#A56A3A',
+      text: '#FFF7F0',
+      icon: '#E1A97A',
+      iconBackground: 'rgba(225,169,122,0.14)',
+      gradient: ['#714423', '#4D2E17'],
+      shadowColor: 'rgba(0,0,0,0.35)',
+    },
+  },
+};
+
+const CATEGORY_PILL_FAMILY_MAP = {
+  Tümü: 'all',
+  All: 'all',
+  Todo: 'all',
+  Alle: 'all',
+  all: 'all',
+  'Mind & Psychology': 'psychology',
+  'Zihin ve Psikoloji': 'psychology',
+  'Mente y Psicología': 'psychology',
+  'Geist und Psychologie': 'psychology',
+  Psikoloji: 'psychology',
+  Psychology: 'psychology',
+  Psicología: 'psychology',
+  Psychologie: 'psychology',
+  'Career & Success': 'finance',
+  'Kariyer ve Başarı': 'finance',
+  'Carrera y Éxito': 'finance',
+  'Karriere und Erfolg': 'finance',
+  Finans: 'finance',
+  Finance: 'finance',
+  Finanzas: 'finance',
+  Finanzen: 'finance',
+  'Personal Growth': 'growth',
+  'Kişisel Gelişim': 'growth',
+  'Crecimiento Personal': 'growth',
+  'Persönliches Wachstum': 'growth',
+  Büyüme: 'growth',
+  Growth: 'growth',
+  Bilim: 'science',
+  Science: 'science',
+  Ciencia: 'science',
+  Wissenschaft: 'science',
+  'Science & Future': 'science',
+  'Bilim ve Gelecek': 'science',
+  'Ciencia y Futuro': 'science',
+  'Wissenschaft und Zukunft': 'science',
+  Liderlik: 'leadership',
+  Leadership: 'leadership',
+  Liderazgo: 'leadership',
+  Führung: 'leadership',
+  Sağlık: 'health',
+  Health: 'health',
+  Salud: 'health',
+  Gesundheit: 'health',
+  Felsefe: 'philosophy',
+  Philosophy: 'philosophy',
+  Filosofía: 'philosophy',
+  Philosophie: 'philosophy',
+  'Society & World': 'philosophy',
+  'Toplum ve Dünya': 'philosophy',
+  'Sociedad y Mundo': 'philosophy',
+  'Gesellschaft und Welt': 'philosophy',
+  İletişim: 'communication',
+  Communication: 'communication',
+  Comunicación: 'communication',
+  Kommunikation: 'communication',
+  'Social Skills': 'communication',
+  'Sosyal Beceriler': 'communication',
+  'Habilidades Sociales': 'communication',
+  'Soziale Fähigkeiten': 'communication',
+  Verimlilik: 'productivity',
+  Productivity: 'productivity',
+  Productividad: 'productivity',
+  Produktivität: 'productivity',
+  Tarih: 'history',
+  History: 'history',
+  Historia: 'history',
+  Geschichte: 'history',
+};
+
+const CATEGORY_PILL_ICON_NAME_MAP = {
+  all: 'apps-outline',
+  finance: 'cash-outline',
+  psychology: 'bulb-outline',
+  leadership: 'people-outline',
+  health: 'heart-outline',
+  growth: 'trending-up-outline',
+  science: 'flask-outline',
+  philosophy: 'book-outline',
+  communication: 'chatbubbles-outline',
+  productivity: 'checkmark-circle-outline',
+  history: 'time-outline',
+};
+
 // Base images
 const IMG_FINANCE = require('../../assets/categories/cat_finance.png');
 const IMG_PSYCHOLOGY = require('../../assets/categories/cat_psychology.png');
@@ -385,13 +692,39 @@ export const normalizeCategoryKey = (catName) => PARENT_CATEGORY_ALIASES[catName
 export const getCategoryTheme = (catName, isDark = false) => {
   const normalizedKey = normalizeCategoryKey(catName);
   const palette = CATEGORY_THEME_MAP[normalizedKey] || CATEGORY_THEME_MAP.default;
+  const pillFamily = CATEGORY_PILL_FAMILY_MAP[normalizedKey] || CATEGORY_PILL_FAMILY_MAP[String(catName || '')] || 'finance';
+  const pillPalette = CATEGORY_PILL_PALETTE_MAP[pillFamily]?.[isDark ? 'dark' : 'light'];
 
   return {
     key: normalizedKey,
-    accent: isDark ? (palette.darkAccent || palette.accent) : palette.accent,
-    borderColor: isDark ? (palette.darkAccent || palette.accent) : palette.accent,
-    backgroundColor: isDark ? palette.darkSoft : palette.lightSoft,
-    strongBackgroundColor: isDark ? palette.darkStrong : palette.lightStrong,
+    accent: pillPalette?.gradient?.[0] || (isDark ? (palette.darkAccent || palette.accent) : palette.accent),
+    borderColor: pillPalette?.border || (isDark ? (palette.darkAccent || palette.accent) : palette.accent),
+    backgroundColor: pillPalette?.background || (isDark ? palette.darkSoft : palette.lightSoft),
+    strongBackgroundColor: pillPalette?.gradient?.[1] || (isDark ? palette.darkStrong : palette.lightStrong),
+  };
+};
+
+export const getCategoryPillTheme = (catName, isDark = false) => {
+  const normalizedKey = normalizeCategoryKey(catName);
+  const family = CATEGORY_PILL_FAMILY_MAP[normalizedKey] || CATEGORY_PILL_FAMILY_MAP[String(catName || '')] || 'finance';
+  const palette = CATEGORY_PILL_PALETTE_MAP[family]?.[isDark ? 'dark' : 'light'] || CATEGORY_PILL_PALETTE_MAP.finance[isDark ? 'dark' : 'light'];
+  const passivePalette = CATEGORY_PILL_PALETTE_MAP.all[isDark ? 'dark' : 'light'];
+
+  return {
+    family,
+    key: normalizedKey,
+    activeBackgroundColor: palette.background,
+    activeBorderColor: palette.border,
+    activeTextColor: palette.text,
+    activeIconColor: palette.icon,
+    activeIconBackgroundColor: palette.iconBackground,
+    inactiveBackgroundColor: passivePalette.background,
+    inactiveBorderColor: passivePalette.border,
+    inactiveTextColor: passivePalette.text,
+    inactiveIconColor: passivePalette.icon,
+    inactiveIconBackgroundColor: passivePalette.iconBackground,
+    gradientColors: palette.gradient,
+    shadowColor: palette.shadowColor,
   };
 };
 
@@ -407,11 +740,12 @@ export const getCategoryImage = (catName, isDark = false) => {
 };
 
 export const getCategoryPillIcon = (catName) => {
-  if (!catName) return { source: PILL_ICON_ALL };
+  if (!catName) return { source: PILL_ICON_ALL, name: CATEGORY_PILL_ICON_NAME_MAP.all };
 
   const normalizedKey = normalizeCategoryKey(catName);
+  const family = CATEGORY_PILL_FAMILY_MAP[normalizedKey] || CATEGORY_PILL_FAMILY_MAP[String(catName || '')] || 'all';
   const source = CATEGORY_PILL_ICON_MAP[normalizedKey] || CATEGORY_PILL_ICON_MAP[String(catName).toLowerCase()] || PILL_ICON_ALL;
-  return { source };
+  return { source, name: CATEGORY_PILL_ICON_NAME_MAP[family] || CATEGORY_PILL_ICON_NAME_MAP.all };
 };
 
 export default getCategoryImage;

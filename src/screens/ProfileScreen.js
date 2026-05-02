@@ -11,6 +11,7 @@ import { useStories } from '../context/StoriesContext';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
 import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import CategoryPill from '../components/CategoryPill';
 
 
 
@@ -291,35 +292,17 @@ const ProfileScreen = ({ navigation }) => {
             {parentCategories.map((p) => {
               const cat = Number(p.id);
               const isSelected = selectedCategories.includes(cat);
-              const catImg = (() => { const byRaw = getCategoryImage(p.raw_name); return byRaw.source ? byRaw : getCategoryImage(p.name); })();
-              const catTheme = getCategoryTheme(p.raw_name || p.name, isDark);
               const onPressCat = () => toggleSelectedCategory(cat);
               return (
-                <TouchableOpacity
+                <CategoryPill
                   key={cat}
+                  label={p.name}
+                  categoryName={p.raw_name || p.name}
+                  active={isSelected}
+                  isDark={isDark}
+                  compact
                   onPress={onPressCat}
-                  style={[
-                    styles.categoryPill,
-                    {
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      gap: 8,
-                      borderColor: catTheme.borderColor,
-                      backgroundColor: isSelected ? catTheme.accent : catTheme.backgroundColor,
-                    },
-                    isSelected && styles.categoryPillActive,
-                  ]}
-                > 
-                  {catImg.source ? (
-                    <View style={{ width: 20, height: 20, borderRadius: 6, overflow: 'hidden' }}>
-                      <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
-                      <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
-                    </View>
-                  ) : null}
-                  <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>
-                    {p.name}
-                  </Text>
-                </TouchableOpacity>
+                />
               );
             })}
           </View>

@@ -12,10 +12,12 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { getSelectedCategories } from '../db/db';
 import StoryCard from '../components/StoryCard';
+import StoryRowCard from '../components/StoryRowCard';
 import { Ionicons } from '@expo/vector-icons';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { getCategoryImage, getCategoryTheme, getCategoryPillIcon } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import CategoryPill from '../components/CategoryPill';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -1269,44 +1271,15 @@ const HomeScreen = ({ navigation }) => {
           <View style={{ flexDirection: 'row', gap: 10, paddingHorizontal: layout.padding.horizontal }}>
             {visibleCategoriesList.map((item) => {
               const isActive = item.key === activeFilter;
-              const catImg = getCategoryImage(item.rawName, isDark);
-              const pillIcon = getCategoryPillIcon(item.rawName || item.label);
-              const catTheme = getCategoryTheme(item.rawName, isDark);
               return (
-                <TouchableOpacity
+                <CategoryPill
                   key={item.key}
-                  style={[
-                    styles.catPill,
-                    isActive ? styles.catPillActive : null,
-                    {
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      gap: 8,
-                      borderColor: item.key === 'all' ? colors.border : catTheme.borderColor,
-                      backgroundColor: isActive
-                        ? (item.key === 'all' ? colors.primary : catTheme.accent)
-                        : (item.key === 'all'
-                          ? (isDark ? colors.cardBackground : colors.surfaceContainerLowest)
-                          : catTheme.backgroundColor),
-                    },
-                  ]}
+                  label={item.label}
+                  categoryName={item.key === 'all' ? 'all' : (item.rawName || item.label)}
+                  active={isActive}
+                  isDark={isDark}
                   onPress={() => setActiveFilter(item.key)}
-                >
-                  {item.key !== 'all' ? (
-                    <View style={styles.catPillIconWrap}>
-                      {pillIcon.source ? (
-                        <View style={{ width: 16, height: 16, borderRadius: 8, overflow: 'hidden' }}>
-                          <Image source={pillIcon.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
-                        </View>
-                      ) : (
-                        <Ionicons name="ellipse" size={10} color={isActive ? colors.onPrimary : colors.textSecondary} />
-                      )}
-                    </View>
-                  ) : null}
-                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null, isActive ? { color: colors.onPrimary } : null]}>
-                    {item.label}
-                  </Text>
-                </TouchableOpacity>
+                />
               );
             })}
           </View>
@@ -1628,44 +1601,38 @@ const HomeScreen = ({ navigation }) => {
                 </>
               )}
 
-              <View style={styles.storyGrid}>
+              <View style={[styles.storyGrid, { gap: 10 }]}>
                 {free.map(story => (
-                  <StoryCard
+                  <StoryRowCard
                     key={story.story_id}
                     story={story}
-                    hideCategory={activeFilter !== 'all'}
                     isRead={checkIfRead(story.story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story })}
                     onUseInConversation={() => navigation.navigate('UseInConversation', { story })}
                   />
                 ))}
                 {weeklyBonusStory ? (
-                  <StoryCard
+                  <StoryRowCard
                     key={`bonus-${weeklyBonusStory.story_id}`}
                     story={weeklyBonusStory}
-                    hideCategory={activeFilter !== 'all'}
-                    supportText={t('homeFreemiumWeeklyBonusHint', lang)}
                     isRead={checkIfRead(weeklyBonusStory.story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story: weeklyBonusStory })}
+                    onUseInConversation={() => navigation.navigate('UseInConversation', { story: weeklyBonusStory })}
                   />
                 ) : null}
                 {teaserStory ? (
-                  <StoryCard
+                  <StoryRowCard
                     key={`teaser-${teaserStory.story_id}`}
                     story={teaserStory}
                     locked
-                    hideCategory={activeFilter !== 'all'}
-                    supportText={t('homeFreemiumTeaserHint', lang)}
                     onPress={() => openPaywallFromFreeLimit('home_feed_teaser', teaserStory.story_id)}
                   />
                 ) : null}
                 {locked.map(story => (
-                  <StoryCard
+                  <StoryRowCard
                     key={story.story_id}
                     story={story}
                     locked
-                    supportText={t('homeFreemiumPremiumBenefit', lang)}
-                    hideCategory={activeFilter !== 'all'}
                     onPress={() => openPaywallFromFreeLimit('home_feed_locked', story.story_id)}
                   />
                 ))}

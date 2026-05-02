@@ -15,7 +15,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import { getStoryByLang } from '../db/db';
-import { getCategoryImage } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
 const { width, height } = Dimensions.get('window');
@@ -100,6 +100,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const displaySourceBook = localStory.source_book || '';
   const displayCat = t(localStory.cat_display || localStory.cat || story.cat, lang);
   const displayHook = localStory.hook || story.hook || '';
+  const categoryKey = story.parent_cat_raw || story.parent_cat || localStory.cat || story.cat;
+  const categoryImage = getCategoryImage(categoryKey, isDark);
+  const categoryTheme = getCategoryTheme(categoryKey, isDark);
 
   React.useEffect(() => {
     if (story) {
@@ -566,6 +569,39 @@ const StoryDetailScreen = ({ route, navigation }) => {
       color: colors.text, 
       lineHeight: 34,
       marginBottom: 8,
+    },
+    categoryVisualCard: {
+      borderRadius: 16,
+      marginTop: 4,
+      marginBottom: 12,
+      paddingTop: 12,
+      paddingHorizontal: 12,
+      paddingBottom: 10,
+      alignItems: 'center',
+      borderWidth: 1,
+      borderColor: isDark ? 'rgba(255,255,255,0.18)' : 'rgba(34,26,18,0.12)',
+    },
+    categoryVisualTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: '#FFFFFF',
+      textAlign: 'center',
+      marginBottom: 8,
+      letterSpacing: 0.3,
+    },
+    categoryVisualImageWrap: {
+      width: '100%',
+      height: 96,
+      borderRadius: 12,
+      backgroundColor: 'rgba(255,255,255,0.16)',
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
+    },
+    categoryVisualImage: {
+      width: '100%',
+      height: '100%',
+      opacity: 0.95,
     },
     metaItem: { 
       fontFamily: 'Inter_400Regular', 
@@ -1102,24 +1138,23 @@ const StoryDetailScreen = ({ route, navigation }) => {
       >
         <View style={styles.storyHero}> 
           {(() => {
-            const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
-            if (!catImg.source) return null;
+            if (!categoryImage.source) return null;
             return (
               <>
                 <Image 
-                  source={catImg.source} 
+                  source={categoryImage.source} 
                   style={[StyleSheet.absoluteFill, {
                     width: '100%',
                     height: '100%',
                     opacity: isDark ? 0.22 : 0.40,
                     transform: [
-                      { rotate: catImg.rotate },
-                      { scaleX: catImg.flip ? -1 : 1 }
+                      { rotate: categoryImage.rotate },
+                      { scaleX: categoryImage.flip ? -1 : 1 }
                     ]
                   }]}
                   resizeMode="cover"
                 />
-                <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint }]} />
+                <View style={[StyleSheet.absoluteFill, { backgroundColor: categoryImage.tint }]} />
               </>
             );
           })()}
@@ -1128,6 +1163,28 @@ const StoryDetailScreen = ({ route, navigation }) => {
               <Text style={styles.badgeText}>{t(story.parent_cat, lang)}</Text>
             </View>
             <Animated.Text style={[styles.detailTitle, titleEnterStyle]}>{displayTitle}</Animated.Text>
+            <View style={[styles.categoryVisualCard, { backgroundColor: categoryTheme.accent }]}> 
+              <Text style={styles.categoryVisualTitle}>{displayCat}</Text>
+              <View style={styles.categoryVisualImageWrap}>
+                {categoryImage.source ? (
+                  <Image
+                    source={categoryImage.source}
+                    style={[
+                      styles.categoryVisualImage,
+                      {
+                        transform: [
+                          { rotate: categoryImage.rotate },
+                          { scaleX: categoryImage.flip ? -1 : 1 },
+                        ],
+                      },
+                    ]}
+                    resizeMode="cover"
+                  />
+                ) : (
+                  <Ionicons name="images-outline" size={28} color="rgba(255,255,255,0.92)" />
+                )}
+              </View>
+            </View>
             <View style={{ flexDirection: 'row', gap: 16 }}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
                 <Ionicons name="time-outline" size={16} color={colors.textSecondary} />
