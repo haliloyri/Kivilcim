@@ -20,29 +20,29 @@ CREATE TABLE story_translations (
     lang_code TEXT,
     title TEXT,
     description TEXT,
-    content TEXT,
+    content TEXT, hook TEXT,
     FOREIGN KEY(story_id) REFERENCES stories(id)
   )
 
-CREATE TABLE categories (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    category_name TEXT NOT NULL,
-    [order] INTEGER
+CREATE TABLE categories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category_name TEXT NOT NULL,
+    [order] INTEGER
 )
 
-CREATE TABLE categories_translations (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    category_id INTEGER,
-    language TEXT,
-    translation TEXT,
-    FOREIGN KEY (category_id) REFERENCES categories (id)
+CREATE TABLE categories_translations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category_id INTEGER,
+    language TEXT,
+    translation TEXT,
+    FOREIGN KEY (category_id) REFERENCES categories (id)
 )
 
-CREATE TABLE subcategories (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    categori_id INTEGER NOT NULL,
-    subcategory_name TEXT NOT NULL,
-    FOREIGN KEY (categori_id) REFERENCES categories (id)
+CREATE TABLE subcategories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    categori_id INTEGER NOT NULL,
+    subcategory_name TEXT NOT NULL,
+    FOREIGN KEY (categori_id) REFERENCES categories (id)
 )
 
 CREATE TABLE "books" (

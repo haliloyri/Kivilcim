@@ -36,10 +36,14 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   const { colors, typography, layout, lang, isDark } = useTheme();
   const isHero = type === 'hero';
   const isCompact = type === 'compact';
+  const isReady = type === 'ready';
   const isPhone = width < 768;
   const isSmallPhone = width < 390;
   
   const todayStr = new Date().toISOString().split('T')[0];
+  const isSaved = Boolean(
+    story?.isSaved || story?.saved || story?.savedForLater || story?.isFavorite || story?.favorite || story?.bookmarked || story?.saved_for_later
+  );
   const isNew = story.publishDate === todayStr;
   // DB already returns translated content for the active language
   const displayTitle = story.title || '';
@@ -51,6 +55,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
 
   const stackRotate = isCompact ? `${Math.max(-6, Math.min(6, (stackIndex - 1) * 1.8))}deg` : '0deg';
   const stackTranslateY = isCompact ? Math.max(0, stackIndex) * 3 : 0;
+  const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
 
   const styles = StyleSheet.create({
     card: {
@@ -69,6 +74,94 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       shadowOpacity: 0.05,
       shadowRadius: 10,
       elevation: 2,
+    },
+    readyCard: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: categoryTheme.backgroundColor,
+      borderRadius: layout.radius.card,
+      borderWidth: 1.5,
+      borderColor: categoryTheme.borderColor,
+      borderLeftWidth: 8,
+      padding: 16,
+      paddingVertical: 18,
+      marginBottom: 20,
+      minHeight: 136,
+      gap: 14,
+    },
+    readyLeft: {
+      width: 84,
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      gap: 10,
+    },
+    readyCategoryLabel: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+      color: categoryTheme.borderColor,
+      textTransform: 'uppercase',
+      letterSpacing: 0.6,
+      textAlign: 'center',
+      width: '100%',
+    },
+    readyImageWrapper: {
+      width: 64,
+      height: 64,
+      borderRadius: 18,
+      overflow: 'hidden',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: isDark ? colors.surfaceContainerHigh : colors.surfaceContainerLowest,
+    },
+    readyImage: {
+      width: '100%',
+      height: '100%',
+    },
+    readyImagePlaceholder: {
+      backgroundColor: isDark ? colors.surfaceContainerHigh : colors.surfaceContainerLowest,
+    },
+    readyBody: {
+      flex: 1,
+      justifyContent: 'center',
+    },
+    readyTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 17,
+      lineHeight: 22,
+      color: colors.text,
+      marginBottom: 6,
+    },
+    readyMeta: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      lineHeight: 18,
+    },
+    readyRight: {
+      width: 96,
+      alignItems: 'flex-end',
+      justifyContent: 'space-between',
+      height: '100%',
+    },
+    readyStatusRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 8,
+      marginBottom: 12,
+    },
+    readyActionBtn: {
+      paddingVertical: 10,
+      paddingHorizontal: 12,
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: colors.primary,
+      backgroundColor: isDark ? `${colors.primary}12` : `${colors.primary}14`,
+    },
+    readyActionText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+      color: colors.primary,
+      textAlign: 'center',
     },
     heroCard: {
       backgroundColor: categoryTheme.strongBackgroundColor,
@@ -160,6 +253,62 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
   });
 
+  if (isReady) {
+    return (
+      <TouchableOpacity 
+        activeOpacity={0.7} 
+        onPress={onPress}
+        style={[
+          styles.card,
+          styles.readyCard,
+          locked && styles.lockedCard,
+          isRead && styles.readCard,
+        ]}
+      >
+        <View style={styles.readyLeft}>
+          <Text style={styles.readyCategoryLabel}>{displayCat}</Text>
+          <View style={[styles.readyImageWrapper, !catImg.source && styles.readyImagePlaceholder]}>
+            {catImg.source ? (
+              <Image source={catImg.source} style={styles.readyImage} resizeMode="cover" />
+            ) : (
+              <Ionicons name={getCatIcon(rawDisplayCat)} size={28} color={categoryTheme.accent} />
+            )}
+          </View>
+        </View>
+
+        <View style={styles.readyBody}>
+          <Text numberOfLines={3} style={styles.readyTitle}>
+            {displayTitle}
+          </Text>
+          <Text style={styles.readyMeta} numberOfLines={1}>
+            {story.min} {t('minLabel', lang)}
+          </Text>
+          {displaySrc ? (
+            <Text style={styles.readyMeta} numberOfLines={1}>
+              {displaySrc}
+            </Text>
+          ) : null}
+        </View>
+
+        <View style={styles.readyRight}>
+          <View style={styles.readyStatusRow}>
+            {isSaved && <Ionicons name="bookmark" size={18} color={colors.primary} />}
+            {isRead && <Ionicons name="checkmark-circle" size={18} color={colors.primary} />}
+          </View>
+          {onUseInConversation && !locked ? (
+            <TouchableOpacity
+              onPress={onUseInConversation}
+              activeOpacity={0.85}
+              style={styles.readyActionBtn}
+            >
+              <Text style={styles.readyActionText}>{t('story_detail_use_cta', lang)}</Text>
+            </TouchableOpacity>
+          ) : null}
+        </View>
+      </TouchableOpacity>
+    );
+  }
+
   return (
     <TouchableOpacity 
       activeOpacity={0.7} 
@@ -177,7 +326,6 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       ]}
     >
       {isHero && (() => {
-        const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
         if (!catImg.source) return (
           <View style={StyleSheet.absoluteFill}>
             <View style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? colors.overlayDark : colors.overlaySoft }]} />
@@ -213,6 +361,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
         );
       })()}
       {!isHero && <View pointerEvents="none" style={styles.surfaceOverlay} />}
+
       <View style={isHero ? { padding: 24, flex: 1, justifyContent: 'space-between' } : null}>
         <View>
           <View style={[styles.cardHeader, (!hideCategory || isNew || isRead || locked) ? null : { marginBottom: 0 }]}>

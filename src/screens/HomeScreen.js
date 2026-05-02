@@ -140,7 +140,7 @@ const HomeScreen = ({ navigation }) => {
       filteredParents = parentCategories.filter((p) => selectedCategories.includes(Number(p.id)));
     }
     return [
-      { key: 'all', label: t('T├╝m├╝', lang), rawName: 'T├╝m├╝' },
+      { key: 'all', label: t('Tümü', lang), rawName: 'Tümü' },
       ...filteredParents.map((p) => ({ key: Number(p.id), label: p.name, rawName: p.raw_name })),
     ];
   }, [parentCategories, selectedCategories, lang]);
@@ -355,13 +355,13 @@ const HomeScreen = ({ navigation }) => {
     }, [])
   );
   
-  // Bug├╝n├╝ al (dinamik)
+  // Bugünü al (dinamik)
   const todayStr = new Date().toISOString().split('T')[0];
 
-  // 1. Yay─▒n tarihi ge├ğmi┼ş veya bug├╝n olanlar─▒ filtrele
+  // 1. Yayın tarihi geçmiş veya bugün olanları filtrele
   const publishedStories = (stories || []).filter(s => s.publishDate <= todayStr);
 
-  // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri g├Âsteririz.
+  // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri gösteririz.
   let prefFiltered = publishedStories;
   if (selectedCategories && selectedCategories.length > 0) {
     prefFiltered = publishedStories.filter((s) => selectedCategories.includes(Number(s.parent_cat_id)));
@@ -369,22 +369,22 @@ const HomeScreen = ({ navigation }) => {
     if (prefFiltered.length === 0) prefFiltered = publishedStories;
   }
 
-  // 3. UI Filter: Ekranda t─▒klanan ebeveyn kategoriye g├Âre filtreleme
+  // 3. UI Filter: Ekranda tıklanan ebeveyn kategoriye göre filtreleme
   const categoryFiltered = activeFilter === 'all'
     ? prefFiltered
     : prefFiltered.filter((s) => Number(s.parent_cat_id) === Number(activeFilter));
 
-  // 3. S─▒ralama
+  // 3. Sıralama
   const sortedStories = [...categoryFiltered].sort((a, b) => {
-    // S─▒n─▒rs─▒z ├╝yeler i├ğin okunmam─▒┼ş hikayeler (okunmad─▒ysa false, history'de yok) ├Ânce gelsin
+    // Sınırsız üyeler için okunmamış hikayeler (okunmadıysa false, history'de yok) önce gelsin
     if (isPremium) {
       const aRead = checkIfRead(a.story_id);
       const bRead = checkIfRead(b.story_id);
       if (aRead !== bRead) {
-        return aRead ? 1 : -1; // Okunanlar─▒ sona at
+        return aRead ? 1 : -1; // Okunanları sona at
       }
     }
-    // Geri kalan durumlar i├ğin id b├╝y├╝kten k├╝├ğ├╝─şe s─▒rala (en son eklenen ilk)
+    // Geri kalan durumlar için id büyüktan küçüğe sırala (en son eklenen ilk)
     return parseInt(b.story_id, 10) - parseInt(a.story_id, 10);
   });
 
@@ -1347,13 +1347,9 @@ const HomeScreen = ({ navigation }) => {
                       style={[
                         styles.featuredCard,
                         {
-                          backgroundColor: isDark
-                            ? colors.cardBackground
-                            : colors.cardBackground,
+                          backgroundColor: catTheme.strongBackgroundColor,
                           borderWidth: 1.5,
-                          borderColor: isDark
-                            ? colors.border
-                            : catTheme.borderColor,
+                          borderColor: catTheme.borderColor,
                         },
                         isRead && { opacity: 0.55 },
                       ]}
@@ -1633,6 +1629,7 @@ const HomeScreen = ({ navigation }) => {
                   <StoryCard
                     key={story.story_id}
                     story={story}
+                    type="ready"
                     hideCategory={activeFilter !== 'all'}
                     isRead={checkIfRead(story.story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story })}
@@ -1643,6 +1640,7 @@ const HomeScreen = ({ navigation }) => {
                   <StoryCard
                     key={`bonus-${weeklyBonusStory.story_id}`}
                     story={weeklyBonusStory}
+                    type="ready"
                     hideCategory={activeFilter !== 'all'}
                     supportText={t('homeFreemiumWeeklyBonusHint', lang)}
                     isRead={checkIfRead(weeklyBonusStory.story_id)}
@@ -1653,6 +1651,7 @@ const HomeScreen = ({ navigation }) => {
                   <StoryCard
                     key={`teaser-${teaserStory.story_id}`}
                     story={teaserStory}
+                    type="ready"
                     locked
                     hideCategory={activeFilter !== 'all'}
                     supportText={t('homeFreemiumTeaserHint', lang)}
@@ -1663,6 +1662,7 @@ const HomeScreen = ({ navigation }) => {
                   <StoryCard
                     key={story.story_id}
                     story={story}
+                    type="ready"
                     locked
                     supportText={t('homeFreemiumPremiumBenefit', lang)}
                     hideCategory={activeFilter !== 'all'}
