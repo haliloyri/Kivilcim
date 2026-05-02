@@ -12,12 +12,10 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { getSelectedCategories } from '../db/db';
 import StoryCard from '../components/StoryCard';
-import StoryRowCard from '../components/StoryRowCard';
 import { Ionicons } from '@expo/vector-icons';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
-import CategoryPill from '../components/CategoryPill';
+import { getCategoryImage, getCategoryTheme, getCategoryPillIcon } from '../utils/categoryImages';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -142,7 +140,7 @@ const HomeScreen = ({ navigation }) => {
       filteredParents = parentCategories.filter((p) => selectedCategories.includes(Number(p.id)));
     }
     return [
-      { key: 'all', label: t('T├╝m├╝', lang), rawName: 'T├╝m├╝' },
+      { key: 'all', label: t('Tümü', lang), rawName: 'Tümü' },
       ...filteredParents.map((p) => ({ key: Number(p.id), label: p.name, rawName: p.raw_name })),
     ];
   }, [parentCategories, selectedCategories, lang]);
@@ -357,13 +355,13 @@ const HomeScreen = ({ navigation }) => {
     }, [])
   );
   
-  // Bug├╝n├╝ al (dinamik)
+  // Bugünü al (dinamik)
   const todayStr = new Date().toISOString().split('T')[0];
 
-  // 1. Yay─▒n tarihi ge├ğmi┼ş veya bug├╝n olanlar─▒ filtrele
+  // 1. Yayın tarihi geçmiş veya bugün olanları filtrele
   const publishedStories = (stories || []).filter(s => s.publishDate <= todayStr);
 
-  // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri g├Âsteririz.
+  // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri gösteririz.
   let prefFiltered = publishedStories;
   if (selectedCategories && selectedCategories.length > 0) {
     prefFiltered = publishedStories.filter((s) => selectedCategories.includes(Number(s.parent_cat_id)));
@@ -371,22 +369,22 @@ const HomeScreen = ({ navigation }) => {
     if (prefFiltered.length === 0) prefFiltered = publishedStories;
   }
 
-  // 3. UI Filter: Ekranda t─▒klanan ebeveyn kategoriye g├Âre filtreleme
+  // 3. UI Filter: Ekranda tıklanan ebeveyn kategoriye göre filtreleme
   const categoryFiltered = activeFilter === 'all'
     ? prefFiltered
     : prefFiltered.filter((s) => Number(s.parent_cat_id) === Number(activeFilter));
 
-  // 3. S─▒ralama
+  // 3. Sıralama
   const sortedStories = [...categoryFiltered].sort((a, b) => {
-    // S─▒n─▒rs─▒z ├╝yeler i├ğin okunmam─▒┼ş hikayeler (okunmad─▒ysa false, history'de yok) ├Ânce gelsin
+    // Sınırsız üyeler için okunmamış hikayeler (okunmadıysa false, history'de yok) önce gelsin
     if (isPremium) {
       const aRead = checkIfRead(a.story_id);
       const bRead = checkIfRead(b.story_id);
       if (aRead !== bRead) {
-        return aRead ? 1 : -1; // Okunanlar─▒ sona at
+        return aRead ? 1 : -1; // Okunanları sona at
       }
     }
-    // Geri kalan durumlar i├ğin id b├╝y├╝kten k├╝├ğ├╝─şe s─▒rala (en son eklenen ilk)
+    // Geri kalan durumlar için id büyüktan küçüğe sırala (en son eklenen ilk)
     return parseInt(b.story_id, 10) - parseInt(a.story_id, 10);
   });
 
@@ -1271,15 +1269,44 @@ const HomeScreen = ({ navigation }) => {
           <View style={{ flexDirection: 'row', gap: 10, paddingHorizontal: layout.padding.horizontal }}>
             {visibleCategoriesList.map((item) => {
               const isActive = item.key === activeFilter;
+              const catImg = getCategoryImage(item.rawName, isDark);
+              const pillIcon = getCategoryPillIcon(item.rawName || item.label);
+              const catTheme = getCategoryTheme(item.rawName, isDark);
               return (
-                <CategoryPill
+                <TouchableOpacity
                   key={item.key}
-                  label={item.label}
-                  categoryName={item.key === 'all' ? 'all' : (item.rawName || item.label)}
-                  active={isActive}
-                  isDark={isDark}
+                  style={[
+                    styles.catPill,
+                    isActive ? styles.catPillActive : null,
+                    {
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      gap: 8,
+                      borderColor: item.key === 'all' ? colors.border : catTheme.borderColor,
+                      backgroundColor: isActive
+                        ? (item.key === 'all' ? colors.primary : catTheme.accent)
+                        : (item.key === 'all'
+                          ? (isDark ? colors.cardBackground : colors.surfaceContainerLowest)
+                          : catTheme.backgroundColor),
+                    },
+                  ]}
                   onPress={() => setActiveFilter(item.key)}
-                />
+                >
+                  {item.key !== 'all' ? (
+                    <View style={styles.catPillIconWrap}>
+                      {pillIcon.source ? (
+                        <View style={{ width: 16, height: 16, borderRadius: 8, overflow: 'hidden' }}>
+                          <Image source={pillIcon.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
+                        </View>
+                      ) : (
+                        <Ionicons name="ellipse" size={10} color={isActive ? colors.onPrimary : colors.textSecondary} />
+                      )}
+                    </View>
+                  ) : null}
+                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null, isActive ? { color: colors.onPrimary } : null]}>
+                    {item.label}
+                  </Text>
+                </TouchableOpacity>
               );
             })}
           </View>
@@ -1320,13 +1347,9 @@ const HomeScreen = ({ navigation }) => {
                       style={[
                         styles.featuredCard,
                         {
-                          backgroundColor: isDark
-                            ? colors.cardBackground
-                            : colors.cardBackground,
+                          backgroundColor: catTheme.strongBackgroundColor,
                           borderWidth: 1.5,
-                          borderColor: isDark
-                            ? colors.border
-                            : catTheme.borderColor,
+                          borderColor: catTheme.borderColor,
                         },
                         isRead && { opacity: 0.55 },
                       ]}
@@ -1601,38 +1624,48 @@ const HomeScreen = ({ navigation }) => {
                 </>
               )}
 
-              <View style={[styles.storyGrid, { gap: 10 }]}>
+              <View style={styles.storyGrid}>
                 {free.map(story => (
-                  <StoryRowCard
+                  <StoryCard
                     key={story.story_id}
                     story={story}
+                    type="ready"
+                    hideCategory={activeFilter !== 'all'}
                     isRead={checkIfRead(story.story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story })}
                     onUseInConversation={() => navigation.navigate('UseInConversation', { story })}
                   />
                 ))}
                 {weeklyBonusStory ? (
-                  <StoryRowCard
+                  <StoryCard
                     key={`bonus-${weeklyBonusStory.story_id}`}
                     story={weeklyBonusStory}
+                    type="ready"
+                    hideCategory={activeFilter !== 'all'}
+                    supportText={t('homeFreemiumWeeklyBonusHint', lang)}
                     isRead={checkIfRead(weeklyBonusStory.story_id)}
                     onPress={() => navigation.navigate('StoryDetail', { story: weeklyBonusStory })}
-                    onUseInConversation={() => navigation.navigate('UseInConversation', { story: weeklyBonusStory })}
                   />
                 ) : null}
                 {teaserStory ? (
-                  <StoryRowCard
+                  <StoryCard
                     key={`teaser-${teaserStory.story_id}`}
                     story={teaserStory}
+                    type="ready"
                     locked
+                    hideCategory={activeFilter !== 'all'}
+                    supportText={t('homeFreemiumTeaserHint', lang)}
                     onPress={() => openPaywallFromFreeLimit('home_feed_teaser', teaserStory.story_id)}
                   />
                 ) : null}
                 {locked.map(story => (
-                  <StoryRowCard
+                  <StoryCard
                     key={story.story_id}
                     story={story}
+                    type="ready"
                     locked
+                    supportText={t('homeFreemiumPremiumBenefit', lang)}
+                    hideCategory={activeFilter !== 'all'}
                     onPress={() => openPaywallFromFreeLimit('home_feed_locked', story.story_id)}
                   />
                 ))}
