@@ -39,57 +39,118 @@ export const CAT_STYLES_DARK = {
 };
 
 const CATEGORY_THEME_MAP = {
-  // DESIGN_AI 2026 category colors
-  'Mind & Psychology': {
-    accent: '#5C8D67',                       // Psikoloji
-    lightSoft: 'rgba(92, 141, 103, 0.08)',   // #DDEBDD equivalent
-    lightStrong: 'rgba(92, 141, 103, 0.15)',
-    darkSoft: 'rgba(121, 185, 138, 0.14)',   // #79B98A → #1E3A2B
-    darkStrong: 'rgba(121, 185, 138, 0.22)',
-    darkAccent: '#79B98A',
+  // Home category palette
+  'Tümü': {
+    accent: '#C8A96B',
+    borderColor: '#E2C48C',
+    lightSoft: '#FFFBF5',
+    lightStrong: 'rgba(200, 169, 107, 0.14)',
+    darkSoft: 'rgba(200, 169, 107, 0.20)',
+    darkStrong: 'rgba(200, 169, 107, 0.30)',
+    darkAccent: '#C8A96B',
   },
-  'Career & Success': {
-    accent: '#C89B3C',                       // Finans
-    lightSoft: 'rgba(200, 155, 60, 0.08)',   // #F7E7C1 equivalent
-    lightStrong: 'rgba(200, 155, 60, 0.15)',
-    darkSoft: 'rgba(217, 177, 95, 0.14)',    // #D9B15F → #4A3A18
-    darkStrong: 'rgba(217, 177, 95, 0.22)',
-    darkAccent: '#D9B15F',
+  'Finance': {
+    accent: '#C6922F',
+    borderColor: '#D8A94B',
+    lightSoft: '#FFF8EC',
+    lightStrong: 'rgba(198, 146, 47, 0.14)',
+    darkSoft: 'rgba(198, 146, 47, 0.20)',
+    darkStrong: 'rgba(198, 146, 47, 0.30)',
+    darkAccent: '#C6922F',
   },
-  'Personal Growth': {
-    accent: '#8C5BD6',                       // Motivasyon
-    lightSoft: 'rgba(140, 91, 214, 0.07)',   // #EADFFD equivalent
-    lightStrong: 'rgba(140, 91, 214, 0.14)',
-    darkSoft: 'rgba(181, 141, 255, 0.14)',   // #B58DFF → #34214D
-    darkStrong: 'rgba(181, 141, 255, 0.22)',
-    darkAccent: '#B58DFF',
+  'Psychology': {
+    accent: '#5C8F63',
+    borderColor: '#79A97F',
+    lightSoft: '#F4FBF4',
+    lightStrong: 'rgba(92, 143, 99, 0.14)',
+    darkSoft: 'rgba(92, 143, 99, 0.20)',
+    darkStrong: 'rgba(92, 143, 99, 0.30)',
+    darkAccent: '#5C8F63',
   },
-  'Science & Future': {
-    accent: '#4AA89A',                       // Alışkanlık
-    lightSoft: 'rgba(74, 168, 154, 0.07)',   // #D8F2EE equivalent
-    lightStrong: 'rgba(74, 168, 154, 0.14)',
-    darkSoft: 'rgba(99, 199, 184, 0.14)',    // #63C7B8 → #183D39
-    darkStrong: 'rgba(99, 199, 184, 0.22)',
-    darkAccent: '#63C7B8',
+  'Leadership': {
+    accent: '#4D7DAF',
+    borderColor: '#6A97C7',
+    lightSoft: '#F3F8FD',
+    lightStrong: 'rgba(77, 125, 175, 0.14)',
+    darkSoft: 'rgba(77, 125, 175, 0.20)',
+    darkStrong: 'rgba(77, 125, 175, 0.30)',
+    darkAccent: '#4D7DAF',
   },
-  'Society & World': {
-    accent: '#4E6E9E',                       // Liderlik
-    lightSoft: 'rgba(78, 110, 158, 0.07)',   // #DCE6F5 equivalent
-    lightStrong: 'rgba(78, 110, 158, 0.14)',
-    darkSoft: 'rgba(110, 145, 200, 0.14)',   // #6E91C8 → #1D2D44
-    darkStrong: 'rgba(110, 145, 200, 0.22)',
-    darkAccent: '#6E91C8',
+  'Health': {
+    accent: '#37A37C',
+    borderColor: '#57BC96',
+    lightSoft: '#F2FCF8',
+    lightStrong: 'rgba(55, 163, 124, 0.14)',
+    darkSoft: 'rgba(55, 163, 124, 0.20)',
+    darkStrong: 'rgba(55, 163, 124, 0.30)',
+    darkAccent: '#37A37C',
   },
-  'Social Skills': {
-    accent: '#D9792B',                       // İletişim
-    lightSoft: 'rgba(217, 121, 43, 0.07)',   // #FCE5D3 equivalent
-    lightStrong: 'rgba(217, 121, 43, 0.14)',
-    darkSoft: 'rgba(242, 155, 87, 0.14)',    // #F29B57 → #4A2B16
-    darkStrong: 'rgba(242, 155, 87, 0.22)',
-    darkAccent: '#F29B57',
+  'Growth': {
+    accent: '#D97A2B',
+    borderColor: '#E89B59',
+    lightSoft: '#FFF6ED',
+    lightStrong: 'rgba(217, 122, 43, 0.14)',
+    darkSoft: 'rgba(217, 122, 43, 0.20)',
+    darkStrong: 'rgba(217, 122, 43, 0.30)',
+    darkAccent: '#D97A2B',
+  },
+  'Science': {
+    accent: '#4F8EDB',
+    borderColor: '#7AB0F0',
+    lightSoft: '#F4F9FF',
+    lightStrong: 'rgba(79, 142, 219, 0.14)',
+    darkSoft: 'rgba(79, 142, 219, 0.20)',
+    darkStrong: 'rgba(79, 142, 219, 0.30)',
+    darkAccent: '#4F8EDB',
+  },
+  'Philosophy': {
+    accent: '#8C6B4A',
+    borderColor: '#B08A63',
+    lightSoft: '#FBF7F2',
+    lightStrong: 'rgba(140, 107, 74, 0.14)',
+    darkSoft: 'rgba(140, 107, 74, 0.20)',
+    darkStrong: 'rgba(140, 107, 74, 0.30)',
+    darkAccent: '#8C6B4A',
+  },
+  'Communication': {
+    accent: '#D97724',
+    borderColor: '#E89A53',
+    lightSoft: '#FFF7F1',
+    lightStrong: 'rgba(217, 151, 68, 0.14)',
+    darkSoft: 'rgba(217, 151, 68, 0.20)',
+    darkStrong: 'rgba(217, 151, 68, 0.30)',
+    darkAccent: '#D97724',
+  },
+  'Productivity': {
+    accent: '#7B9E36',
+    borderColor: '#A8C75B',
+    lightSoft: '#F8FCEB',
+    lightStrong: 'rgba(123, 158, 54, 0.14)',
+    darkSoft: 'rgba(123, 158, 54, 0.20)',
+    darkStrong: 'rgba(123, 158, 54, 0.30)',
+    darkAccent: '#7B9E36',
+  },
+  'History': {
+    accent: '#A86A3A',
+    borderColor: '#C78A59',
+    lightSoft: '#FBF5EF',
+    lightStrong: 'rgba(168, 106, 58, 0.14)',
+    darkSoft: 'rgba(168, 106, 58, 0.20)',
+    darkStrong: 'rgba(168, 106, 58, 0.30)',
+    darkAccent: '#A86A3A',
+  },
+  'Business': {
+    accent: '#B8843A',
+    borderColor: '#D6A75B',
+    lightSoft: '#FFF8EE',
+    lightStrong: 'rgba(184, 132, 58, 0.14)',
+    darkSoft: 'rgba(184, 132, 58, 0.20)',
+    darkStrong: 'rgba(184, 132, 58, 0.30)',
+    darkAccent: '#B8843A',
   },
   default: {
     accent: '#C89B3C',
+    borderColor: '#D8A94B',
     lightSoft: 'rgba(200, 155, 60, 0.06)',
     lightStrong: 'rgba(200, 155, 60, 0.12)',
     darkSoft: 'rgba(229, 194, 122, 0.12)',
@@ -406,42 +467,51 @@ const CATEGORY_PILL_ICON_NAME_MAP = {
 };
 
 // Base images
-const IMG_FINANCE = require('../../assets/categories/cat_finance.png');
-const IMG_PSYCHOLOGY = require('../../assets/categories/cat_psychology.png');
-const IMG_HISTORY = require('../../assets/categories/cat_history.png');
-const IMG_LEADERSHIP = require('../../assets/categories/cat_leadership.png');
-const IMG_HEALTH = require('../../assets/categories/cat_health.png');
-const IMG_SCIENCE = require('../../assets/categories/cat_science.png');
-const IMG_PHILOSOPHY = require('../../assets/categories/cat_philosophy.png');
-const IMG_GROWTH = require('../../assets/categories/cat_growth.png');
-const IMG_PRODUCTIVITY = require('../../assets/categories/cat_productivity.png');
-const IMG_COMMUNICATION = require('../../assets/categories/cat_communication.png');
-const IMG_BUSINESS = require('../../assets/categories/cat_business.png');
+const IMG_FINANCE = require('../../assets/categories/Finance.png');
+const IMG_PSYCHOLOGY = require('../../assets/categories/Psychology.png');
+const IMG_HISTORY = require('../../assets/categories/History.png');
+const IMG_LEADERSHIP = require('../../assets/categories/Leadership.png');
+const IMG_HEALTH = require('../../assets/categories/Health.png');
+const IMG_SCIENCE = require('../../assets/categories/Science.png');
+const IMG_PHILOSOPHY = require('../../assets/categories/Philosophy.png');
+const IMG_GROWTH = require('../../assets/categories/Growth.png');
+const IMG_PRODUCTIVITY = require('../../assets/categories/Productivity.png');
+const IMG_COMMUNICATION = require('../../assets/categories/Communication.png');
+const IMG_BUSINESS = IMG_FINANCE;
 
 // Category pill icons generated for home top filter row
-const PILL_ICON_ALL = require('../../assets/categories/pill_icons/all.png');
-const PILL_ICON_FINANCE = require('../../assets/categories/pill_icons/finance.png');
-const PILL_ICON_PSYCHOLOGY = require('../../assets/categories/pill_icons/psychology.png');
-const PILL_ICON_LEADERSHIP = require('../../assets/categories/pill_icons/leadership.png');
-const PILL_ICON_COMMUNICATION = require('../../assets/categories/pill_icons/communication.png');
+const PILL_ICON_ALL = null;
+const PILL_ICON_FINANCE = require('../../assets/categories/pill_icons/Finance.png');
+const PILL_ICON_PSYCHOLOGY = require('../../assets/categories/pill_icons/Psychology.png');
+const PILL_ICON_LEADERSHIP = require('../../assets/categories/pill_icons/Leadership.png');
+const PILL_ICON_HEALTH = require('../../assets/categories/pill_icons/Health.png');
+const PILL_ICON_SCIENCE = require('../../assets/categories/pill_icons/Science.png');
+const PILL_ICON_PHILOSOPHY = require('../../assets/categories/pill_icons/Philosophy.png');
+const PILL_ICON_GROWTH = require('../../assets/categories/pill_icons/Growth.png');
+const PILL_ICON_PRODUCTIVITY = require('../../assets/categories/pill_icons/Productivity.png');
+const PILL_ICON_COMMUNICATION = require('../../assets/categories/pill_icons/Communication.png');
+const PILL_ICON_HISTORY = require('../../assets/categories/pill_icons/History.png');
+const PILL_ICON_BUSINESS = PILL_ICON_FINANCE;
 
 const PARENT_CATEGORY_IMAGE_MAP = {
   'Mind & Psychology': IMG_PSYCHOLOGY,
   'Psikoloji': IMG_PSYCHOLOGY,
   'Career & Success': IMG_LEADERSHIP,
-  'Finans': IMG_LEADERSHIP,
+  'Finans': IMG_FINANCE,
   'Personal Growth': IMG_GROWTH,
   'Büyüme': IMG_GROWTH,
-  'Verimlilik': IMG_GROWTH,
+  'Verimlilik': IMG_PRODUCTIVITY,
   'Science & Future': IMG_SCIENCE,
   'Bilim': IMG_SCIENCE,
-  'Sağlık': IMG_SCIENCE,
+  'Sağlık': IMG_HEALTH,
   'Society & World': IMG_PHILOSOPHY,
-  'Liderlik': IMG_PHILOSOPHY,
+  'Liderlik': IMG_LEADERSHIP,
   'Felsefe': IMG_PHILOSOPHY,
-  'Tarih': IMG_PHILOSOPHY,
+  'Tarih': IMG_HISTORY,
   'Social Skills': IMG_COMMUNICATION,
   'İletişim': IMG_COMMUNICATION,
+  'İş & Girişim': IMG_BUSINESS,
+  'Kariyer': IMG_BUSINESS,
 };
 
 const CATEGORY_PILL_ICON_MAP = {
@@ -451,18 +521,21 @@ const CATEGORY_PILL_ICON_MAP = {
   'Psikoloji': PILL_ICON_PSYCHOLOGY,
   'Career & Success': PILL_ICON_FINANCE,
   'Finans': PILL_ICON_FINANCE,
-  'Science & Future': PILL_ICON_LEADERSHIP,
-  'Bilim': PILL_ICON_LEADERSHIP,
-  'Sağlık': PILL_ICON_LEADERSHIP,
-  'Society & World': PILL_ICON_LEADERSHIP,
+  'Business': PILL_ICON_BUSINESS,
+  'İş & Girişim': PILL_ICON_BUSINESS,
+  'Kariyer': PILL_ICON_BUSINESS,
+  'Science & Future': PILL_ICON_SCIENCE,
+  'Bilim': PILL_ICON_SCIENCE,
+  'Sağlık': PILL_ICON_HEALTH,
+  'Society & World': PILL_ICON_PHILOSOPHY,
   'Liderlik': PILL_ICON_LEADERSHIP,
-  'Felsefe': PILL_ICON_LEADERSHIP,
-  'Tarih': PILL_ICON_LEADERSHIP,
+  'Felsefe': PILL_ICON_PHILOSOPHY,
+  'Tarih': PILL_ICON_HISTORY,
   'Social Skills': PILL_ICON_COMMUNICATION,
   'İletişim': PILL_ICON_COMMUNICATION,
-  'Personal Growth': PILL_ICON_PSYCHOLOGY,
-  'Büyüme': PILL_ICON_PSYCHOLOGY,
-  'Verimlilik': PILL_ICON_PSYCHOLOGY,
+  'Personal Growth': PILL_ICON_GROWTH,
+  'Büyüme': PILL_ICON_GROWTH,
+  'Verimlilik': PILL_ICON_PRODUCTIVITY,
 };
 
 const PARENT_CATEGORY_ALIASES = {
@@ -472,31 +545,33 @@ const PARENT_CATEGORY_ALIASES = {
   'Zihin ve Psikoloji': 'Mind & Psychology',
   'Mente y Psicología': 'Mind & Psychology',
   'Geist und Psychologie': 'Mind & Psychology',
-  'Psikoloji': 'Mind & Psychology',
+  'Psikoloji': 'Psychology',
   'Kariyer ve Başarı': 'Career & Success',
   'Carrera y Éxito': 'Career & Success',
   'Karriere und Erfolg': 'Career & Success',
-  'Finans': 'Career & Success',
+  'Finans': 'Finance',
   'Bilim ve Gelecek': 'Science & Future',
   'Ciencia y Futuro': 'Science & Future',
   'Wissenschaft und Zukunft': 'Science & Future',
-  'Bilim': 'Science & Future',
-  'Sağlık': 'Science & Future',
+  'Bilim': 'Science',
+  'Sağlık': 'Health',
   'Toplum ve Dünya': 'Society & World',
   'Sociedad y Mundo': 'Society & World',
   'Gesellschaft und Welt': 'Society & World',
-  'Liderlik': 'Society & World',
-  'Felsefe': 'Society & World',
-  'Tarih': 'Society & World',
+  'Liderlik': 'Leadership',
+  'Felsefe': 'Philosophy',
+  'Tarih': 'History',
   'Sosyal Beceriler': 'Social Skills',
   'Habilidades Sociales': 'Social Skills',
   'Soziale Fähigkeiten': 'Social Skills',
   'İletişim': 'Social Skills',
   'Crecimiento Personal': 'Personal Growth',
   'Persönliches Wachstum': 'Personal Growth',
-  'Kişisel Gelişim': 'Personal Growth',
-  'Büyüme': 'Personal Growth',
-  'Verimlilik': 'Personal Growth',
+  'Kişisel Gelişim': 'Growth',
+  'Büyüme': 'Growth',
+  'Verimlilik': 'Productivity',
+  'İş & Girişim': 'Business',
+  'Kariyer': 'Business',
 };
 
 const categoryImageMap = {
@@ -727,34 +802,10 @@ export const getCategoryTheme = (catName, isDark = false) => {
 
   return {
     key: normalizedKey,
-    accent: pillPalette?.gradient?.[0] || (isDark ? (palette.darkAccent || palette.accent) : palette.accent),
-    borderColor: pillPalette?.border || (isDark ? (palette.darkAccent || palette.accent) : palette.accent),
-    backgroundColor: pillPalette?.background || (isDark ? palette.darkSoft : palette.lightSoft),
-    strongBackgroundColor: pillPalette?.gradient?.[1] || (isDark ? palette.darkStrong : palette.lightStrong),
-  };
-};
-
-export const getCategoryPillTheme = (catName, isDark = false) => {
-  const normalizedKey = normalizeCategoryKey(catName);
-  const family = CATEGORY_PILL_FAMILY_MAP[normalizedKey] || CATEGORY_PILL_FAMILY_MAP[String(catName || '')] || 'finance';
-  const palette = CATEGORY_PILL_PALETTE_MAP[family]?.[isDark ? 'dark' : 'light'] || CATEGORY_PILL_PALETTE_MAP.finance[isDark ? 'dark' : 'light'];
-  const passivePalette = CATEGORY_PILL_PALETTE_MAP.all[isDark ? 'dark' : 'light'];
-
-  return {
-    family,
-    key: normalizedKey,
-    activeBackgroundColor: palette.background,
-    activeBorderColor: palette.border,
-    activeTextColor: palette.text,
-    activeIconColor: palette.icon,
-    activeIconBackgroundColor: palette.iconBackground,
-    inactiveBackgroundColor: passivePalette.background,
-    inactiveBorderColor: passivePalette.border,
-    inactiveTextColor: passivePalette.text,
-    inactiveIconColor: passivePalette.icon,
-    inactiveIconBackgroundColor: passivePalette.iconBackground,
-    gradientColors: palette.gradient,
-    shadowColor: palette.shadowColor,
+    accent: isDark ? (palette.darkAccent || palette.accent) : palette.accent,
+    borderColor: isDark ? (palette.borderColor || palette.darkAccent || palette.accent) : (palette.borderColor || palette.accent),
+    backgroundColor: isDark ? palette.darkSoft : palette.lightSoft,
+    strongBackgroundColor: isDark ? palette.darkStrong : palette.lightStrong,
   };
 };
 

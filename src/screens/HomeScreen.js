@@ -1282,12 +1282,8 @@ const HomeScreen = ({ navigation }) => {
                       flexDirection: 'row',
                       alignItems: 'center',
                       gap: 8,
-                      borderColor: item.key === 'all' ? colors.border : catTheme.borderColor,
-                      backgroundColor: isActive
-                        ? (item.key === 'all' ? colors.primary : catTheme.accent)
-                        : (item.key === 'all'
-                          ? (isDark ? colors.cardBackground : colors.surfaceContainerLowest)
-                          : catTheme.backgroundColor),
+                      borderColor: catTheme.borderColor,
+                      backgroundColor: isActive ? catTheme.accent : catTheme.backgroundColor,
                     },
                   ]}
                   onPress={() => setActiveFilter(item.key)}
