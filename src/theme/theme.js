@@ -1,7 +1,7 @@
 export const colors = {
   // Light: Premium warm – DESIGN_AI 2026 spec
   light: {
-    background: '#F8F5F0',
+    background: '#F8F3EA',
     backgroundDark: '#EFE9DF',
     surfaceContainerLowest: '#FFFFFF',
     surfaceContainerHigh: '#E6DFD4',
@@ -14,7 +14,7 @@ export const colors = {
     danger: '#B3261E',
     success: '#3A5F3C',
     border: '#E7DFD4',
-    activeNav: '#C89B3C',
+    activeNav: '#9D846D',
     quoteHighlight: '#FFD166',
     overlaySoft: 'rgba(0,0,0,0.03)',
     overlayDark: 'rgba(0,0,0,0.24)',

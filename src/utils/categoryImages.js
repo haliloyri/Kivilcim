@@ -574,6 +574,17 @@ const PARENT_CATEGORY_ALIASES = {
   'Kariyer': 'Business',
 };
 
+const normalizeLookupKey = (value) => String(value || '').trim().toLowerCase();
+const CATEGORY_PILL_FAMILY_MAP_LOWER = Object.fromEntries(
+  Object.entries(CATEGORY_PILL_FAMILY_MAP).map(([key, val]) => [normalizeLookupKey(key), val])
+);
+const CATEGORY_PILL_ICON_MAP_LOWER = Object.fromEntries(
+  Object.entries(CATEGORY_PILL_ICON_MAP).map(([key, val]) => [normalizeLookupKey(key), val])
+);
+const PARENT_CATEGORY_ALIASES_LOWER = Object.fromEntries(
+  Object.entries(PARENT_CATEGORY_ALIASES).map(([key, val]) => [normalizeLookupKey(key), val])
+);
+
 const categoryImageMap = {
   // ── Finance group ──
   'Finans': IMG_FINANCE,
@@ -792,12 +803,26 @@ const categoryImageMap = {
  * @param {string} catName - Category name
  * @param {boolean} isDark - Whether dark mode is active
  */
-export const normalizeCategoryKey = (catName) => PARENT_CATEGORY_ALIASES[catName] || catName;
+export const normalizeCategoryKey = (catName) => {
+  const trimmed = String(catName || '').trim();
+  if (!trimmed) return '';
+
+  return (
+    PARENT_CATEGORY_ALIASES[trimmed]
+    || PARENT_CATEGORY_ALIASES_LOWER[normalizeLookupKey(trimmed)]
+    || trimmed
+  );
+};
 
 export const getCategoryTheme = (catName, isDark = false) => {
   const normalizedKey = normalizeCategoryKey(catName);
   const palette = CATEGORY_THEME_MAP[normalizedKey] || CATEGORY_THEME_MAP.default;
-  const pillFamily = CATEGORY_PILL_FAMILY_MAP[normalizedKey] || CATEGORY_PILL_FAMILY_MAP[String(catName || '')] || 'finance';
+  const pillFamily =
+    CATEGORY_PILL_FAMILY_MAP[normalizedKey]
+    || CATEGORY_PILL_FAMILY_MAP[String(catName || '').trim()]
+    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(normalizedKey)]
+    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(catName)]
+    || 'finance';
   const pillPalette = CATEGORY_PILL_PALETTE_MAP[pillFamily]?.[isDark ? 'dark' : 'light'];
 
   return {
@@ -824,8 +849,18 @@ export const getCategoryPillIcon = (catName) => {
   if (!catName) return { source: PILL_ICON_ALL, name: CATEGORY_PILL_ICON_NAME_MAP.all };
 
   const normalizedKey = normalizeCategoryKey(catName);
-  const family = CATEGORY_PILL_FAMILY_MAP[normalizedKey] || CATEGORY_PILL_FAMILY_MAP[String(catName || '')] || 'all';
-  const source = CATEGORY_PILL_ICON_MAP[normalizedKey] || CATEGORY_PILL_ICON_MAP[String(catName).toLowerCase()] || PILL_ICON_ALL;
+  const family =
+    CATEGORY_PILL_FAMILY_MAP[normalizedKey]
+    || CATEGORY_PILL_FAMILY_MAP[String(catName || '').trim()]
+    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(normalizedKey)]
+    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(catName)]
+    || 'all';
+  const source =
+    CATEGORY_PILL_ICON_MAP[normalizedKey]
+    || CATEGORY_PILL_ICON_MAP[String(catName || '').trim()]
+    || CATEGORY_PILL_ICON_MAP_LOWER[normalizeLookupKey(normalizedKey)]
+    || CATEGORY_PILL_ICON_MAP_LOWER[normalizeLookupKey(catName)]
+    || PILL_ICON_ALL;
   return { source, name: CATEGORY_PILL_ICON_NAME_MAP[family] || CATEGORY_PILL_ICON_NAME_MAP.all };
 };
 

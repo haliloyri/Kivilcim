@@ -11,15 +11,29 @@ import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 
+const toPascalCase = (value = '') => {
+  const normalized = String(value || '').trim();
+  if (!normalized) return '';
+
+  return normalized
+    .split(/\s+/)
+    .map((part) => {
+      const lower = part.toLocaleLowerCase('tr-TR');
+      return lower.charAt(0).toLocaleUpperCase('tr-TR') + lower.slice(1);
+    })
+    .join(' ');
+};
+
 const FavoriteCard = ({ story, onPress, colors, typography, layout, isDark, lang, journeyLine, badgeChip, onBadgePress }) => {
   const displayTitle = story.title || '';
   const rawDisplayCat = t(story.cat_display || story.cat, lang) || '';
-  const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
+  const displayCat = toPascalCase(rawDisplayCat);
   const categoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+  const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={onPress} style={{ width: 154, marginRight: 12 }}>
       <View style={{
-        backgroundColor: categoryTheme.backgroundColor,
+        backgroundColor: '#FDF9F3',
         borderRadius: 12,
         borderWidth: 1.5,
         borderColor: categoryTheme.borderColor,
@@ -27,53 +41,52 @@ const FavoriteCard = ({ story, onPress, colors, typography, layout, isDark, lang
         overflow: 'hidden',
         height: 200,
         justifyContent: 'space-between',
-        paddingBottom: 16
+        paddingBottom: 12,
+        shadowColor: '#7A5B43',
+        shadowOffset: { width: 0, height: 8 },
+        shadowOpacity: isDark ? 0.16 : 0.12,
+        shadowRadius: 12,
+        elevation: 4,
       }}>
-        <View
-          pointerEvents="none"
-          style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'transparent' : colors.overlaySoft }]}
-        />
-        {/* Category Image Area */}
-        <View style={{ height: 110, position: 'relative' }}>
-          {(() => {
-            const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
-            if (!catImg.source) return null;
-            return (
+        <View style={{ backgroundColor: categoryTheme.strongBackgroundColor, paddingHorizontal: 8, paddingTop: 8, paddingBottom: 8 }}>
+          <View style={{
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: 8,
+          }}>
+            <Text style={{
+              fontFamily: 'Inter_600SemiBold',
+              fontSize: 11,
+              color: categoryTheme.borderColor,
+            }} numberOfLines={1}>{displayCat}</Text>
+          </View>
+          <View style={{ width: '100%', height: 66, borderRadius: 10, overflow: 'hidden', borderWidth: 1, borderColor: `${categoryTheme.borderColor}80` }}>
+            {catImg.source ? (
               <>
-                <Image 
-                  source={catImg.source} 
-                  style={{ 
-                    width: '100%', 
+                <Image
+                  source={catImg.source}
+                  style={{
+                    width: '100%',
                     height: '100%',
-                    opacity: isDark ? 0.22 : 1,
+                    opacity: isDark ? 0.8 : 0.95,
                     transform: [
-                      { rotate: catImg.rotate },
-                      { scaleX: catImg.flip ? -1 : 1 }
-                    ]
+                      { rotate: catImg.rotate || '0deg' },
+                      { scaleX: catImg.flip ? -1 : 1 },
+                    ],
                   }}
                   resizeMode="cover"
                 />
-                <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.15 }]} />
+                <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint || 'transparent' }]} />
               </>
-            );
-          })()}
-          {/* Glass pill */}
-          <View style={{
-            position: 'absolute',
-            top: 8,
-            left: 8,
-            backgroundColor: 'rgba(255,255,255,0.75)',
-            paddingHorizontal: 8,
-            paddingVertical: 4,
-            borderRadius: 6,
-          }}>
-            <Text style={{
-              fontFamily: 'Inter_500Medium',
-              fontSize: 10,
-              color: '#594238',
-            }} numberOfLines={1}>{displayCat}</Text>
+            ) : (
+              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Ionicons name="book-outline" size={22} color={categoryTheme.accent} />
+              </View>
+            )}
           </View>
         </View>
+        <View style={{ height: 1, backgroundColor: categoryTheme.borderColor, opacity: 0.55, marginHorizontal: 8 }} />
 
         <View style={{ paddingHorizontal: 12, flex: 1, justifyContent: 'space-between' }}>
           <Text style={{
@@ -136,73 +149,69 @@ const FavoriteCard = ({ story, onPress, colors, typography, layout, isDark, lang
 const HistoryCard = ({ story, onPress, colors, typography, layout, isDark, lang, journeyLine, badgeChip, onBadgePress }) => {
   const displayTitle = story.title || '';
   const rawDisplayCat = t(story.cat_display || story.cat, lang) || '';
-  const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
+  const displayCat = toPascalCase(rawDisplayCat);
   const categoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+  const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onPress} style={{
-      backgroundColor: categoryTheme.backgroundColor,
+      backgroundColor: '#FDF9F3',
       borderRadius: 12,
       borderWidth: 1.5,
       borderColor: categoryTheme.borderColor,
       position: 'relative',
       overflow: 'hidden',
-      padding: 12,
+      paddingVertical: 10,
+      paddingHorizontal: 10,
       marginBottom: 12,
       flexDirection: 'row',
       alignItems: 'center',
+      shadowColor: '#7A5B43',
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: isDark ? 0.16 : 0.12,
+      shadowRadius: 12,
+      elevation: 4,
     }}>
-      <View
-        pointerEvents="none"
-        style={[StyleSheet.absoluteFill, { backgroundColor: isDark ? 'transparent' : colors.overlaySoft }]}
-      />
-      {/* Category Thumbnail */}
-      <View style={{ width: 60, height: 60, borderRadius: 8, overflow: 'hidden', marginRight: 16 }}>
-        {(() => {
-          const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
-          if (!catImg.source) return null;
-          return (
+      <View style={{ width: 94, backgroundColor: categoryTheme.strongBackgroundColor, borderRadius: 12, paddingHorizontal: 6, paddingVertical: 8, alignItems: 'center', marginRight: 10 }}>
+        <Text style={{
+          fontFamily: 'Inter_600SemiBold',
+          fontSize: 11,
+          color: categoryTheme.borderColor,
+          marginBottom: 6,
+          textAlign: 'center',
+        }} numberOfLines={2}>{displayCat}</Text>
+        <View style={{ width: '100%', height: 58, borderRadius: 10, overflow: 'hidden', borderWidth: 1, borderColor: `${categoryTheme.borderColor}80` }}>
+          {catImg.source ? (
             <>
-              <Image 
-                source={catImg.source} 
-                style={{ 
-                  width: '100%', 
+              <Image
+                source={catImg.source}
+                style={{
+                  width: '100%',
                   height: '100%',
-                  opacity: isDark ? 0.22 : 1,
+                  opacity: isDark ? 0.8 : 0.95,
                   transform: [
-                    { rotate: catImg.rotate },
-                    { scaleX: catImg.flip ? -1 : 1 }
-                  ]
+                    { rotate: catImg.rotate || '0deg' },
+                    { scaleX: catImg.flip ? -1 : 1 },
+                  ],
                 }}
                 resizeMode="cover"
               />
-              <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint, opacity: 0.1 }]} />
+              <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint || 'transparent' }]} />
             </>
-          );
-        })()}
+          ) : (
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+              <Ionicons name="book-outline" size={22} color={categoryTheme.accent} />
+            </View>
+          )}
+        </View>
       </View>
+      <View style={{ width: 1, alignSelf: 'stretch', backgroundColor: categoryTheme.borderColor, opacity: 0.55, marginVertical: 4, marginRight: 10 }} />
 
       <View style={{ flex: 1, paddingRight: 8 }}>
-        <View style={{
-          backgroundColor: colors.background,
-          alignSelf: 'flex-start',
-          paddingHorizontal: 6,
-          paddingVertical: 2,
-          borderRadius: 4,
-          marginBottom: 6,
-        }}>
-          <Text style={{
-            fontFamily: 'Inter_500Medium',
-            fontSize: 9,
-            color: colors.textSecondary,
-            letterSpacing: 0.5,
-            textTransform: 'none'
-          }} numberOfLines={1}>{displayCat}</Text>
-        </View>
         <Text style={{
           fontFamily: 'PlayfairDisplay_600SemiBold',
-          fontSize: 16,
+          fontSize: 15,
           color: colors.text,
-          lineHeight: 22,
+          lineHeight: 20,
         }} numberOfLines={2}>
           {displayTitle}
         </Text>
@@ -645,12 +654,17 @@ const LibraryScreen = ({ navigation }) => {
                   style={{
                     width: 160,
                     marginRight: 12,
-                    backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+                    backgroundColor: '#FDF9F3',
                     borderRadius: 12,
-                    borderWidth: 1,
-                    borderColor: colors.border,
+                    borderWidth: 1.5,
+                    borderColor: getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark).borderColor,
                     padding: 14,
                     justifyContent: 'space-between',
+                    shadowColor: '#7A5B43',
+                    shadowOffset: { width: 0, height: 8 },
+                    shadowOpacity: isDark ? 0.16 : 0.12,
+                    shadowRadius: 12,
+                    elevation: 4,
                   }}
                 >
                   <View>

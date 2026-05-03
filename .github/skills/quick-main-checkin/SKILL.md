@@ -1,4 +1,4 @@
----
+git diff origin/main..main---
 name: quick-main-checkin
 description: 'Quickly create a safe check-in commit on the main branch. Use when the user says main brancha commit yap, checkin yap, hızlı commit al, quick commit, or commit this change to main.'
 argument-hint: 'Optional: commit message and which files to include'

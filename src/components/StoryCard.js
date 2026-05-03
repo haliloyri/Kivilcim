@@ -32,6 +32,19 @@ export const getCatIcon = (catName) => {
   }
 };
 
+const toPascalCase = (value = '') => {
+  const normalized = String(value || '').trim();
+  if (!normalized) return '';
+
+  return normalized
+    .split(/\s+/)
+    .map((part) => {
+      const lower = part.toLocaleLowerCase('tr-TR');
+      return lower.charAt(0).toLocaleUpperCase('tr-TR') + lower.slice(1);
+    })
+    .join(' ');
+};
+
 const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false, supportText = null, stackIndex = 0, stackTotal = 1, onUseInConversation }) => {
   const { colors, typography, layout, lang, isDark } = useTheme();
   const isHero = type === 'hero';
@@ -50,7 +63,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   const displaySrc = story.source_book || '';
   // Always use the main category (parent_cat) for display label
   const rawDisplayCat = t(story.parent_cat || story.cat, lang) || '';
-  const displayCat = rawDisplayCat ? rawDisplayCat.charAt(0).toUpperCase() + rawDisplayCat.slice(1).toLocaleLowerCase('tr-TR') : '';
+  const displayCat = toPascalCase(rawDisplayCat);
   const categoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
 
   const stackRotate = isCompact ? `${Math.max(-6, Math.min(6, (stackIndex - 1) * 1.8))}deg` : '0deg';
@@ -78,44 +91,55 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     readyCard: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: categoryTheme.backgroundColor,
+      backgroundColor: '#FDF9F3',
       borderRadius: layout.radius.card,
       borderWidth: 1.5,
       borderColor: categoryTheme.borderColor,
-      borderLeftWidth: 8,
-      padding: 16,
-      paddingVertical: 18,
+      paddingHorizontal: isSmallPhone ? 10 : 14,
+      paddingVertical: isSmallPhone ? 10 : 12,
       marginBottom: 20,
       minHeight: 136,
-      gap: 14,
+      gap: 10,
+      maxWidth: '100%',
+      shadowColor: '#7A5B43',
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: isDark ? 0.2 : 0.16,
+      shadowRadius: 12,
+      elevation: 4,
     },
     readyLeft: {
-      width: 84,
+      width: isSmallPhone ? 84 : 98,
       alignItems: 'center',
-      justifyContent: 'flex-start',
-      gap: 10,
+      justifyContent: 'center',
+      gap: 8,
+      flexShrink: 0,
+      borderRadius: 14,
+      paddingVertical: 8,
+      paddingHorizontal: 6,
     },
     readyCategoryLabel: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 12,
+      fontSize: 11,
       color: categoryTheme.borderColor,
-      textTransform: 'uppercase',
-      letterSpacing: 0.6,
+      letterSpacing: 0.2,
       textAlign: 'center',
       width: '100%',
     },
     readyImageWrapper: {
-      width: 64,
-      height: 64,
-      borderRadius: 18,
+      width: '100%',
+      height: isSmallPhone ? 58 : 70,
+      borderRadius: 12,
       overflow: 'hidden',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: isDark ? colors.surfaceContainerHigh : colors.surfaceContainerLowest,
+      borderWidth: 1,
+      borderColor: `${categoryTheme.borderColor}80`,
     },
     readyImage: {
       width: '100%',
       height: '100%',
+      opacity: 1,
     },
     readyImagePlaceholder: {
       backgroundColor: isDark ? colors.surfaceContainerHigh : colors.surfaceContainerLowest,
@@ -123,12 +147,14 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     readyBody: {
       flex: 1,
       justifyContent: 'center',
+      minWidth: 0,
+      paddingLeft: 2,
     },
     readyTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: 17,
       lineHeight: 22,
-      color: colors.text,
+      color: '#4A3A2C',
       marginBottom: 6,
     },
     readyMeta: {
@@ -137,11 +163,18 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       color: colors.textSecondary,
       lineHeight: 18,
     },
+    readyDivider: {
+      width: 1,
+      alignSelf: 'stretch',
+      opacity: 0.55,
+      marginVertical: 4,
+    },
     readyRight: {
-      width: 96,
+      width: isSmallPhone ? 74 : 96,
       alignItems: 'flex-end',
       justifyContent: 'space-between',
       height: '100%',
+      flexShrink: 0,
     },
     readyStatusRow: {
       flexDirection: 'row',
@@ -151,15 +184,16 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     readyActionBtn: {
       paddingVertical: 10,
-      paddingHorizontal: 12,
+      paddingHorizontal: isSmallPhone ? 8 : 12,
       borderRadius: 12,
       borderWidth: 1,
       borderColor: colors.primary,
       backgroundColor: isDark ? `${colors.primary}12` : `${colors.primary}14`,
+      maxWidth: '100%',
     },
     readyActionText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 12,
+      fontSize: isSmallPhone ? 11 : 12,
       color: colors.primary,
       textAlign: 'center',
     },
@@ -202,7 +236,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     cardTitle: {
       fontFamily: 'PlayfairDisplay_600SemiBold',
       fontSize: isSmallPhone ? 19 : isPhone ? 20 : 22,
-      color: colors.text,
+      color: '#4A3A2C',
       lineHeight: isSmallPhone ? 25 : isPhone ? 26 : 28,
     },
     cardTitleHero: {
@@ -265,7 +299,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
           isRead && styles.readCard,
         ]}
       >
-        <View style={styles.readyLeft}>
+        <View style={[styles.readyLeft, { backgroundColor: categoryTheme.strongBackgroundColor }]}>
           <Text style={styles.readyCategoryLabel}>{displayCat}</Text>
           <View style={[styles.readyImageWrapper, !catImg.source && styles.readyImagePlaceholder]}>
             {catImg.source ? (
@@ -275,6 +309,8 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
             )}
           </View>
         </View>
+
+        <View style={[styles.readyDivider, { backgroundColor: categoryTheme.borderColor }]} />
 
         <View style={styles.readyBody}>
           <Text numberOfLines={3} style={styles.readyTitle}>

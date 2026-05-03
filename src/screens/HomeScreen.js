@@ -38,6 +38,19 @@ const SkeletonCard = ({ colors, layout, isHero }) => (
   }} />
 );
 
+const toPascalCase = (value = '') => {
+  const normalized = String(value || '').trim();
+  if (!normalized) return '';
+
+  return normalized
+    .split(/\s+/)
+    .map((part) => {
+      const lower = part.toLocaleLowerCase('tr-TR');
+      return lower.charAt(0).toLocaleUpperCase('tr-TR') + lower.slice(1);
+    })
+    .join(' ');
+};
+
 /** Circular daily progress ring shown in the home header */
 const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) => {
   const sw = 3;
@@ -753,30 +766,37 @@ const HomeScreen = ({ navigation }) => {
     brandLogo: {
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: 54,
-      color: colors.primary,
+      color: '#4A3A2C',
       letterSpacing: 0.5,
       flex: 1,
       textAlign: 'center',
     },
     headerSpacer: {
-      width: 72,
+      width: 82,
     },
-    headerTargetBadge: {
-      width: 72,
-      flexDirection: 'row',
+    headerTargetWrap: {
+      width: 82,
       alignItems: 'center',
       justifyContent: 'center',
-      gap: 6,
-      borderRadius: 16,
+      position: 'relative',
+    },
+    headerTargetBadge: {
+      width: 82,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 18,
       borderWidth: 1,
       borderColor: colors.border,
       backgroundColor: isDark ? (colors.elevatedSurface || colors.cardBackground) : colors.primaryContainer,
-      paddingVertical: 5,
+      paddingVertical: 7,
     },
-    headerTargetIcon: {
-      width: 22,
-      height: 22,
-      borderRadius: 11,
+    headerFloatingIcon: {
+      position: 'absolute',
+      top: -11,
+      right: -9,
+      width: 26,
+      height: 26,
+      borderRadius: 13,
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: isDark ? colors.cardBackground : colors.surfaceContainerLowest,
@@ -785,7 +805,7 @@ const HomeScreen = ({ navigation }) => {
     },
     headerTargetText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 19,
+      fontSize: 16,
       color: colors.text,
     },
     streakCard: { 
@@ -830,18 +850,18 @@ const HomeScreen = ({ navigation }) => {
     },
     sectionHeading: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 46,
-      color: colors.text,
+      fontSize: 36,
+      color: '#4A3A2C',
       marginHorizontal: layout.padding.horizontal,
-      marginTop: 6,
-      marginBottom: 10,
+      marginTop: 10,
+      marginBottom: 14,
     },
     sectionHeadingRow: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
       marginHorizontal: layout.padding.horizontal,
-      marginBottom: 8,
+      marginBottom: 16,
       gap: 8,
     },
     miniProgressTrack: {
@@ -858,15 +878,15 @@ const HomeScreen = ({ navigation }) => {
     },
     miniProgressText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 15,
+      fontSize: 13,
       color: colors.textSecondary,
     },
     catPill: {
-      paddingHorizontal: 20, 
+      paddingHorizontal: 18, 
       paddingVertical: 0, 
-      height: layout.heights.categoryPill,
+      height: 44,
       justifyContent: 'center',
-      borderRadius: 16,
+      borderRadius: 14,
       borderWidth: 1.5, 
       backgroundColor: isDark ? colors.cardBackground : colors.surfaceContainerLowest,
       shadowColor: colors.primary,
@@ -880,8 +900,8 @@ const HomeScreen = ({ navigation }) => {
     },
     catPillText: {
       fontFamily: 'Inter_600SemiBold', 
-      fontSize: 15,
-      color: colors.primary
+      fontSize: 13,
+      color: '#FFFFFF'
     },
     catPillIconWrap: {
       width: 20,
@@ -889,18 +909,16 @@ const HomeScreen = ({ navigation }) => {
       borderRadius: 10,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: colors.surfaceContainerLowest,
-      borderWidth: 1,
-      borderColor: colors.border,
+      backgroundColor: 'rgba(255,255,255,0.22)',
     },
     catPillTextActive: { 
-      color: colors.onPrimary, 
+      color: '#FFFFFF', 
       fontFamily: 'Inter_500Medium' 
     },
     featuredScroll: {
       paddingLeft: layout.padding.horizontal,
       paddingRight: 8,
-      marginBottom: 8,
+      marginBottom: 20,
     },
     featuredCard: {
       width: (screenWidth - (layout.padding.horizontal * 2) - 20) / 3,
@@ -916,37 +934,66 @@ const HomeScreen = ({ navigation }) => {
       shadowRadius: 12,
       elevation: 4,
     },
+    featuredCardInnerBorder: {
+      ...StyleSheet.absoluteFillObject,
+      top: 4,
+      left: 4,
+      right: 4,
+      bottom: 4,
+      borderRadius: 12,
+      borderWidth: 1,
+      opacity: 0.85,
+    },
+    featuredCategoryVisual: {
+      width: '100%',
+      height: 118,
+      borderRadius: 12,
+      overflow: 'hidden',
+      marginBottom: 10,
+      borderWidth: 1,
+      borderColor: `${colors.border}80`,
+      backgroundColor: 'rgba(255,255,255,0.35)',
+    },
+    featuredCategoryImage: {
+      width: '100%',
+      height: '100%',
+    },
     featuredCardTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 20,
-      color: colors.text,
-      lineHeight: 24,
+      fontSize: 17,
+      color: '#4A3A2C',
+      lineHeight: 22,
     },
     featuredCardMeta: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 12,
+      fontSize: 11,
       color: colors.textSecondary,
     },
-    featuredCardBadge: {
-      paddingHorizontal: 10,
-      paddingVertical: 5,
-      borderRadius: 8,
-      backgroundColor: isDark ? colors.elevatedSurface || colors.cardBackground : colors.surfaceContainerLowest,
-      alignSelf: 'flex-start',
-      marginBottom: 12,
+    featuredCardMetaRow: {
+      marginTop: 12,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
     },
-    featuredCardBadgeText: {
+    featuredCardMetaDot: {
+      width: 4,
+      height: 4,
+      borderRadius: 2,
+      backgroundColor: colors.textSecondary,
+      opacity: 0.8,
+    },
+    featuredCardCategoryMeta: {
       fontFamily: 'Inter_500Medium',
       fontSize: 11,
       color: colors.textSecondary,
     },
     featuredCardUseBtn: {
-      marginTop: 8,
+      marginTop: 14,
       borderRadius: 10,
       borderWidth: 1,
       borderColor: colors.border,
       backgroundColor: colors.primaryContainer,
-      paddingVertical: 9,
+      paddingVertical: 10,
       alignItems: 'center',
     },
     featuredCardUseBtnText: {
@@ -956,15 +1003,15 @@ const HomeScreen = ({ navigation }) => {
     },
     storyGrid: {
       flexDirection: 'column',
-      gap: 4,
-      marginTop: 6,
+      gap: 12,
+      marginTop: 12,
     },
     readyTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 42,
-      color: colors.text,
-      marginBottom: 8,
-      marginTop: 4,
+      fontSize: 32,
+      color: '#A17F6A',
+      marginBottom: 12,
+      marginTop: 14,
     },
     editorialUseCta: {
       flexDirection: 'row',
@@ -1253,12 +1300,14 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.homeHeader}>
           <View style={styles.headerSpacer} />
           <Text style={styles.brandLogo}>Spark</Text>
-          <TouchableOpacity style={styles.headerTargetBadge} onPress={() => navigation.navigate('ProgressTab')} activeOpacity={0.85}>
-            <View style={styles.headerTargetIcon}>
-              <Ionicons name="ribbon-outline" size={13} color={colors.primary} />
-            </View>
-            <Text style={styles.headerTargetText}>{doneCount}/{Math.max(1, dailyDeck.length)}</Text>
-          </TouchableOpacity>
+          <View style={styles.headerTargetWrap}>
+            <TouchableOpacity style={styles.headerTargetBadge} onPress={() => navigation.navigate('ProgressTab')} activeOpacity={0.85}>
+              <Text style={styles.headerTargetText}>{doneCount}/{Math.max(1, dailyDeck.length)}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.headerFloatingIcon} onPress={() => navigation.navigate('ProgressTab')} activeOpacity={0.85}>
+              <Ionicons name="ribbon-outline" size={16} color={colors.primary} />
+            </TouchableOpacity>
+          </View>
         </View>
 
         {/* ÔöÇÔöÇ Category Pills ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
@@ -1283,7 +1332,7 @@ const HomeScreen = ({ navigation }) => {
                       alignItems: 'center',
                       gap: 8,
                       borderColor: catTheme.borderColor,
-                      backgroundColor: isActive ? catTheme.accent : catTheme.backgroundColor,
+                      backgroundColor: catTheme.borderColor,
                     },
                   ]}
                   onPress={() => setActiveFilter(item.key)}
@@ -1295,11 +1344,11 @@ const HomeScreen = ({ navigation }) => {
                           <Image source={pillIcon.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
                         </View>
                       ) : (
-                        <Ionicons name="ellipse" size={10} color={isActive ? colors.onPrimary : colors.textSecondary} />
+                        <Ionicons name="ellipse" size={10} color="#FFFFFF" />
                       )}
                     </View>
                   ) : null}
-                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null, isActive ? { color: colors.onPrimary } : null]}>
+                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null, { color: '#FFFFFF' }]}>
                     {item.label}
                   </Text>
                 </TouchableOpacity>
@@ -1335,7 +1384,7 @@ const HomeScreen = ({ navigation }) => {
                 {featuredStories.slice(0, 3).map((story, idx) => {
                   const catTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                   const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
-                  const displayCat = t(story.parent_cat || story.cat, lang) || '';
+                  const displayCat = toPascalCase(t(story.parent_cat || story.cat, lang) || '');
                   const isRead = checkIfRead(story.story_id);
                   return (
                     <TouchableOpacity
@@ -1343,8 +1392,8 @@ const HomeScreen = ({ navigation }) => {
                       style={[
                         styles.featuredCard,
                         {
-                          backgroundColor: catTheme.strongBackgroundColor,
-                          borderWidth: 1.5,
+                          backgroundColor: '#F6F1E6',
+                          borderWidth: 2.5,
                           borderColor: catTheme.borderColor,
                         },
                         isRead && { opacity: 0.55 },
@@ -1354,30 +1403,30 @@ const HomeScreen = ({ navigation }) => {
                         openPersonalizedStory(story, idx);
                       }}
                     >
-                      {/* Category image background */}
-                      {catImg.source && (
-                        <View style={[StyleSheet.absoluteFill, { borderRadius: layout.radius.featuredCard, overflow: 'hidden' }]}>
-                          <Image
-                            source={catImg.source}
-                            style={{ width: '100%', height: '100%', opacity: isDark ? 0.15 : 0.12 }}
-                            resizeMode="cover"
-                          />
-                        </View>
-                      )}
-                      {/* Soft gradient overlay */}
-                      <LinearGradient
-                        colors={isDark
-                          ? ['rgba(32,33,36,0.2)', 'rgba(32,33,36,0.85)']
-                          : ['rgba(255,253,249,0.1)', 'rgba(255,253,249,0.88)']}
-                        start={{ x: 0.5, y: 0 }}
-                        end={{ x: 0.5, y: 1 }}
-                        style={[StyleSheet.absoluteFill, { borderRadius: layout.radius.featuredCard }]}
-                      />
+                      <View pointerEvents="none" style={[styles.featuredCardInnerBorder, { borderColor: catTheme.borderColor }]} />
                       <View>
-                        <View style={styles.featuredCardBadge}>
-                          <Text style={styles.featuredCardBadgeText}>
-                            {displayCat.charAt(0).toUpperCase() + displayCat.slice(1).toLocaleLowerCase('tr-TR')}
-                          </Text>
+                        <View style={styles.featuredCategoryVisual}>
+                          {catImg.source ? (
+                            <Image
+                              source={catImg.source}
+                              style={[
+                                styles.featuredCategoryImage,
+                                {
+                                  opacity: isDark ? 0.8 : 0.95,
+                                  transform: [
+                                    { rotate: catImg.rotate || '0deg' },
+                                    { scaleX: catImg.flip ? -1 : 1 },
+                                  ],
+                                },
+                              ]}
+                              resizeMode="cover"
+                            />
+                          ) : (
+                            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                              <Ionicons name="book-outline" size={26} color={catTheme.accent} />
+                            </View>
+                          )}
+                          <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint || 'transparent' }]} />
                         </View>
                         {isRead && <Ionicons name="checkmark-circle" size={18} color={colors.primary} style={{ position: 'absolute', top: 0, right: 0 }} />}
                       </View>
@@ -1385,8 +1434,12 @@ const HomeScreen = ({ navigation }) => {
                         <Text numberOfLines={2} style={styles.featuredCardTitle}>
                           {story.title}
                         </Text>
-                        <Text numberOfLines={2} style={[styles.featuredCardMeta, { marginTop: 6 }]}>Nasıl Kullanılır: Kısa konuşma pratiği.</Text>
-                        <Text style={[styles.featuredCardMeta, { marginTop: 4 }]}>◷ {story.min} dk</Text>
+                        <Text numberOfLines={2} style={[styles.featuredCardMeta, { marginTop: 12, lineHeight: 16 }]}>Nasıl Kullanılır: Kısa konuşma pratiği.</Text>
+                        <View style={styles.featuredCardMetaRow}>
+                          <Text style={styles.featuredCardMeta}>◷ {story.min} dk</Text>
+                          <View style={styles.featuredCardMetaDot} />
+                          <Text numberOfLines={1} style={styles.featuredCardCategoryMeta}>{displayCat}</Text>
+                        </View>
                         <TouchableOpacity
                           style={styles.featuredCardUseBtn}
                           onPress={() => navigation.navigate('UseInConversation', { story })}
@@ -1394,7 +1447,6 @@ const HomeScreen = ({ navigation }) => {
                         >
                           <Text style={styles.featuredCardUseBtnText}>Sohbet İçin Kullan</Text>
                         </TouchableOpacity>
-                        <Text style={[styles.featuredCardMeta, { marginTop: 4, textAlign: 'right' }]}>{displayCat}</Text>
                       </View>
                     </TouchableOpacity>
                   );

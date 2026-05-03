@@ -271,7 +271,9 @@ const SearchScreen = ({ navigation }) => {
                 <StoryCard
                   key={story.id}
                   story={story}
+                  type="ready"
                   onPress={() => openStory(story)}
+                  onUseInConversation={() => navigation.navigate('UseInConversation', { story })}
                 />
               ))}
             </View>
