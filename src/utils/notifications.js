@@ -248,3 +248,105 @@ export function setupNotificationHandler() {
     }).catch(() => {});
   }
 }
+
+/**
+ * Get next scheduled notification time for a reminder window.
+ * @param {string} window - 'morning' | 'noon' | 'evening'
+ * @returns {Date} Next scheduled notification date/time
+ */
+export const getNextNotificationTime = (window) => {
+  const hour = REMINDER_WINDOW_HOURS[window] ?? REMINDER_WINDOW_HOURS.evening;
+  const now = new Date();
+  const next = new Date();
+  next.setHours(hour, 0, 0, 0);
+
+  // If time has already passed today, schedule for tomorrow
+  if (next <= now) {
+    next.setDate(next.getDate() + 1);
+  }
+
+  return next;
+};
+
+/**
+ * Check if current local time falls within notification display windows.
+ * Shows notification if within 1 hour before/after scheduled time.
+ * @param {string} window - 'morning' | 'noon' | 'evening'
+ * @returns {boolean}
+ */
+export const shouldShowNotificationNow = (window) => {
+  const hour = REMINDER_WINDOW_HOURS[window] ?? REMINDER_WINDOW_HOURS.evening;
+  const now = new Date();
+  const currentHour = now.getHours();
+
+  // Show notification 1 hour before to 2 hours after scheduled time
+  const startHour = (hour - 1 + 24) % 24;
+  const endHour = (hour + 2) % 24;
+
+  if (startHour < endHour) {
+    return currentHour >= startHour && currentHour < endHour;
+  } else {
+    // Wraps around midnight
+    return currentHour >= startHour || currentHour < endHour;
+  }
+};
+
+/**
+ * Get formatted display time for a notification window.
+ * @param {string} window - 'morning' | 'noon' | 'evening'
+ * @param {string} lang - Language code ('tr', 'en', etc.)
+ * @returns {string} Formatted time string (e.g., "08:00" or "8:00 AM")
+ */
+export const getNotificationWindowDisplayTime = (window, lang = 'tr') => {
+  const hour = REMINDER_WINDOW_HOURS[window] ?? REMINDER_WINDOW_HOURS.evening;
+  const pad = (n) => String(n).padStart(2, '0');
+
+  if (lang === 'en') {
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const displayHour = hour % 12 || 12;
+    return `${displayHour}:00 ${ampm}`;
+  }
+
+  // Turkish 24-hour format
+  return `${pad(hour)}:00`;
+};
+
+/**
+ * Get human-readable window label.
+ * @param {string} window - 'morning' | 'noon' | 'evening'
+ * @param {string} lang - Language code
+ * @returns {string} Window label (e.g., "Sabah", "Morning")
+ */
+export const getNotificationWindowLabel = (window, lang = 'tr') => {
+  const labels = {
+    tr: { morning: 'Sabah', noon: 'Öğlen', evening: 'Akşam' },
+    en: { morning: 'Morning', noon: 'Noon', evening: 'Evening' },
+  };
+
+  const langLabels = labels[lang] || labels.en;
+  return langLabels[window] || langLabels.evening;
+};
+
+/**
+ * Cancel all scheduled notifications.
+ */
+export async function cancelAllNotifications() {
+  try {
+    await Notifications.cancelAllScheduledNotificationsAsync();
+  } catch (error) {
+    console.warn('Failed to cancel notifications:', error);
+  }
+}
+
+/**
+ * Get all scheduled notifications.
+ * @returns {Promise<Array>} Array of scheduled notification objects
+ */
+export async function getScheduledNotifications() {
+  try {
+    return await Notifications.getAllScheduledNotificationsAsync();
+  } catch (error) {
+    console.warn('Failed to get scheduled notifications:', error);
+    return [];
+  }
+}
