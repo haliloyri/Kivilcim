@@ -479,6 +479,34 @@ const IMG_PRODUCTIVITY = require('../../assets/categories/Productivity.png');
 const IMG_COMMUNICATION = require('../../assets/categories/Communication.png');
 const IMG_BUSINESS = IMG_FINANCE;
 
+// Dark mode category images
+const IMG_FINANCE_DARK = require('../../assets/categories/Finance-dark.png');
+const IMG_PSYCHOLOGY_DARK = require('../../assets/categories/Psychology-dark.png');
+const IMG_HISTORY_DARK = require('../../assets/categories/History-dark.png');
+const IMG_LEADERSHIP_DARK = require('../../assets/categories/Leadership-dark.png');
+const IMG_HEALTH_DARK = require('../../assets/categories/Health-dark.png');
+const IMG_SCIENCE_DARK = require('../../assets/categories/Science-dark.png');
+const IMG_PHILOSOPHY_DARK = require('../../assets/categories/Philosophy-dark.png');
+const IMG_GROWTH_DARK = require('../../assets/categories/Growth-dark.png');
+const IMG_PRODUCTIVITY_DARK = require('../../assets/categories/Productivity-dark.png');
+const IMG_COMMUNICATION_DARK = require('../../assets/categories/Communication-dark.png');
+const IMG_BUSINESS_DARK = IMG_FINANCE_DARK;
+
+// Dark mode image mapping
+const DARK_IMAGE_MAP = {
+  [IMG_FINANCE]: IMG_FINANCE_DARK,
+  [IMG_PSYCHOLOGY]: IMG_PSYCHOLOGY_DARK,
+  [IMG_HISTORY]: IMG_HISTORY_DARK,
+  [IMG_LEADERSHIP]: IMG_LEADERSHIP_DARK,
+  [IMG_HEALTH]: IMG_HEALTH_DARK,
+  [IMG_SCIENCE]: IMG_SCIENCE_DARK,
+  [IMG_PHILOSOPHY]: IMG_PHILOSOPHY_DARK,
+  [IMG_GROWTH]: IMG_GROWTH_DARK,
+  [IMG_PRODUCTIVITY]: IMG_PRODUCTIVITY_DARK,
+  [IMG_COMMUNICATION]: IMG_COMMUNICATION_DARK,
+  [IMG_BUSINESS]: IMG_BUSINESS_DARK,
+};
+
 // Category pill icons generated for home top filter row
 const PILL_ICON_ALL = null;
 const PILL_ICON_FINANCE = require('../../assets/categories/pill_icons/Finance.png');
@@ -493,7 +521,7 @@ const PILL_ICON_COMMUNICATION = require('../../assets/categories/pill_icons/Comm
 const PILL_ICON_HISTORY = require('../../assets/categories/pill_icons/History.png');
 const PILL_ICON_BUSINESS = PILL_ICON_FINANCE;
 
-const PARENT_CATEGORY_IMAGE_MAP = {
+const PARENT_CATEGORY_IMAGE_MAP_LIGHT = {
   'Mind & Psychology': IMG_PSYCHOLOGY,
   'Psikoloji': IMG_PSYCHOLOGY,
   'Career & Success': IMG_LEADERSHIP,
@@ -512,6 +540,27 @@ const PARENT_CATEGORY_IMAGE_MAP = {
   'İletişim': IMG_COMMUNICATION,
   'İş & Girişim': IMG_BUSINESS,
   'Kariyer': IMG_BUSINESS,
+};
+
+const PARENT_CATEGORY_IMAGE_MAP_DARK = {
+  'Mind & Psychology': IMG_PSYCHOLOGY_DARK,
+  'Psikoloji': IMG_PSYCHOLOGY_DARK,
+  'Career & Success': IMG_LEADERSHIP_DARK,
+  'Finans': IMG_FINANCE_DARK,
+  'Personal Growth': IMG_GROWTH_DARK,
+  'Büyüme': IMG_GROWTH_DARK,
+  'Verimlilik': IMG_PRODUCTIVITY_DARK,
+  'Science & Future': IMG_SCIENCE_DARK,
+  'Bilim': IMG_SCIENCE_DARK,
+  'Sağlık': IMG_HEALTH_DARK,
+  'Society & World': IMG_PHILOSOPHY_DARK,
+  'Liderlik': IMG_LEADERSHIP_DARK,
+  'Felsefe': IMG_PHILOSOPHY_DARK,
+  'Tarih': IMG_HISTORY_DARK,
+  'Social Skills': IMG_COMMUNICATION_DARK,
+  'İletişim': IMG_COMMUNICATION_DARK,
+  'İş & Girişim': IMG_BUSINESS_DARK,
+  'Kariyer': IMG_BUSINESS_DARK,
 };
 
 const CATEGORY_PILL_ICON_MAP = {
@@ -838,7 +887,13 @@ export const getCategoryImage = (catName, isDark = false) => {
   if (!catName) return { source: null, rotate: '0deg', flip: false, tint: 'transparent' };
 
   const normalizedKey = normalizeCategoryKey(catName);
-  const source = PARENT_CATEGORY_IMAGE_MAP[normalizedKey] ?? categoryImageMap[normalizedKey] ?? null;
+  const imageMap = isDark ? PARENT_CATEGORY_IMAGE_MAP_DARK : PARENT_CATEGORY_IMAGE_MAP_LIGHT;
+  let source = imageMap[normalizedKey] ?? categoryImageMap[normalizedKey] ?? null;
+
+  if (isDark && source) {
+    source = DARK_IMAGE_MAP[source] || source;
+  }
+
   const styleMap = isDark ? CAT_STYLES_DARK : CAT_STYLES;
   const style = styleMap[normalizedKey] || { rotate: '0deg', flip: false, tint: 'transparent' };
 
