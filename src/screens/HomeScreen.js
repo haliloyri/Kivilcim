@@ -12,10 +12,11 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { getSelectedCategories } from '../db/db';
 import StoryCard from '../components/StoryCard';
+import CategoryPill from '../components/CategoryPill';
 import { Ionicons } from '@expo/vector-icons';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { getCategoryImage, getCategoryTheme, getCategoryPillIcon } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -262,6 +263,10 @@ const HomeScreen = ({ navigation }) => {
   const badgeCarouselItems = badgeProgressInfo.nextCandidates.length > 0
     ? badgeProgressInfo.nextCandidates
     : [null]; // null = "all completed" card
+  const nextBadgeCandidate = badgeProgressInfo.nextCandidates[0] || null;
+  const badgeLeadLine = nextBadgeCandidate
+    ? t('home_badge_next_close', lang).replace('{{badge}}', t(nextBadgeCandidate.titleKey, lang))
+    : t('home_badge_all_completed', lang);
 
   const handleLoadMore = (nativeEvent) => {
     const paddingToBottom = 200;
@@ -766,47 +771,45 @@ const HomeScreen = ({ navigation }) => {
     brandLogo: {
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: 54,
-      color: '#4A3A2C',
+      color: '#9D846D',
       letterSpacing: 0.5,
       flex: 1,
       textAlign: 'center',
     },
-    headerSpacer: {
-      width: 82,
-    },
-    headerTargetWrap: {
-      width: 82,
+    headerBadgeWrap: {
+      minWidth: 110,
+      flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
+      gap: 8,
     },
-    headerTargetBadge: {
-      width: 82,
-      alignItems: 'center',
-      justifyContent: 'center',
+    headerBadgeIcon: {
+      width: 36,
+      height: 36,
       borderRadius: 18,
+      alignItems: 'center',
+      justifyContent: 'center',
       borderWidth: 1,
       borderColor: colors.border,
       backgroundColor: isDark ? (colors.elevatedSurface || colors.cardBackground) : colors.primaryContainer,
-      paddingVertical: 7,
     },
-    headerFloatingIcon: {
-      position: 'absolute',
-      top: -11,
-      right: -9,
-      width: 26,
-      height: 26,
-      borderRadius: 13,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: isDark ? colors.cardBackground : colors.surfaceContainerLowest,
-      borderWidth: 1,
-      borderColor: colors.border,
+    headerBadgeInfo: {
+      flex: 1,
     },
-    headerTargetText: {
+    headerBadgeTitle: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 16,
+      fontSize: 11,
       color: colors.text,
+      lineHeight: 14,
+    },
+    headerBadgeSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 10,
+      color: colors.textSecondary,
+      lineHeight: 13,
+      marginTop: 1,
+    },
+    headerRightSpacer: {
+      width: 110,
     },
     streakCard: { 
       flexDirection: 'row', 
@@ -853,8 +856,8 @@ const HomeScreen = ({ navigation }) => {
       fontSize: 36,
       color: '#4A3A2C',
       marginHorizontal: layout.padding.horizontal,
-      marginTop: 10,
-      marginBottom: 14,
+      marginTop: 16,
+      marginBottom: 16,
     },
     sectionHeadingRow: {
       flexDirection: 'row',
@@ -918,7 +921,7 @@ const HomeScreen = ({ navigation }) => {
     featuredScroll: {
       paddingLeft: layout.padding.horizontal,
       paddingRight: 8,
-      marginBottom: 20,
+      marginBottom: 16,
     },
     featuredCard: {
       width: (screenWidth - (layout.padding.horizontal * 2) - 20) / 3,
@@ -953,6 +956,26 @@ const HomeScreen = ({ navigation }) => {
       borderWidth: 1,
       borderColor: `${colors.border}80`,
       backgroundColor: 'rgba(255,255,255,0.35)',
+      shadowColor: '#000000',
+      shadowOffset: { width: 2, height: 4 },
+      shadowOpacity: 0.2,
+      shadowRadius: 8,
+      elevation: 3,
+    },
+    featuredCategoryLabel: {
+      position: 'absolute',
+      right: 8,
+      bottom: 8,
+      borderWidth: 1,
+      borderColor: 'rgba(255,255,255,0.66)',
+      borderRadius: 8,
+      backgroundColor: 'rgba(18,17,15,0.38)',
+      paddingHorizontal: 8,
+      paddingVertical: 4,
+      color: '#FFFFFF',
+      textAlign: 'right',
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11,
     },
     featuredCategoryImage: {
       width: '100%',
@@ -989,11 +1012,13 @@ const HomeScreen = ({ navigation }) => {
     },
     featuredCardUseBtn: {
       marginTop: 14,
+      marginBottom: 3,
       borderRadius: 10,
       borderWidth: 1,
       borderColor: colors.border,
       backgroundColor: colors.primaryContainer,
-      paddingVertical: 10,
+      paddingVertical: 9,
+      paddingHorizontal: 6,
       alignItems: 'center',
     },
     featuredCardUseBtnText: {
@@ -1298,16 +1323,21 @@ const HomeScreen = ({ navigation }) => {
       >
         {/* ÔöÇÔöÇ Header ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
         <View style={styles.homeHeader}>
-          <View style={styles.headerSpacer} />
+          <TouchableOpacity
+            style={styles.headerBadgeWrap}
+            onPress={() => navigation.navigate('ProgressTab')}
+            activeOpacity={0.85}
+          >
+            <View style={styles.headerBadgeIcon}>
+              <Text style={{ fontSize: 18 }}>{nextBadgeCandidate?.icon || '🏆'}</Text>
+            </View>
+            <View style={styles.headerBadgeInfo}>
+              <Text numberOfLines={1} style={styles.headerBadgeTitle}>{completionLine}</Text>
+              <Text numberOfLines={1} style={styles.headerBadgeSub}>{badgeLeadLine}</Text>
+            </View>
+          </TouchableOpacity>
           <Text style={styles.brandLogo}>Spark</Text>
-          <View style={styles.headerTargetWrap}>
-            <TouchableOpacity style={styles.headerTargetBadge} onPress={() => navigation.navigate('ProgressTab')} activeOpacity={0.85}>
-              <Text style={styles.headerTargetText}>{doneCount}/{Math.max(1, dailyDeck.length)}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.headerFloatingIcon} onPress={() => navigation.navigate('ProgressTab')} activeOpacity={0.85}>
-              <Ionicons name="ribbon-outline" size={16} color={colors.primary} />
-            </TouchableOpacity>
-          </View>
+          <View style={styles.headerRightSpacer} />
         </View>
 
         {/* ÔöÇÔöÇ Category Pills ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
@@ -1318,40 +1348,16 @@ const HomeScreen = ({ navigation }) => {
           <View style={{ flexDirection: 'row', gap: 10, paddingHorizontal: layout.padding.horizontal }}>
             {visibleCategoriesList.map((item) => {
               const isActive = item.key === activeFilter;
-              const catImg = getCategoryImage(item.rawName, isDark);
-              const pillIcon = getCategoryPillIcon(item.rawName || item.label);
-              const catTheme = getCategoryTheme(item.rawName, isDark);
               return (
-                <TouchableOpacity
+                <CategoryPill
                   key={item.key}
-                  style={[
-                    styles.catPill,
-                    isActive ? styles.catPillActive : null,
-                    {
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      gap: 8,
-                      borderColor: catTheme.borderColor,
-                      backgroundColor: catTheme.borderColor,
-                    },
-                  ]}
+                  label={item.label}
+                  categoryName={item.rawName || item.label}
+                  active={isActive}
+                  compact
+                  isDark={isDark}
                   onPress={() => setActiveFilter(item.key)}
-                >
-                  {item.key !== 'all' ? (
-                    <View style={styles.catPillIconWrap}>
-                      {pillIcon.source ? (
-                        <View style={{ width: 16, height: 16, borderRadius: 8, overflow: 'hidden' }}>
-                          <Image source={pillIcon.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
-                        </View>
-                      ) : (
-                        <Ionicons name="ellipse" size={10} color="#FFFFFF" />
-                      )}
-                    </View>
-                  ) : null}
-                  <Text style={[styles.catPillText, isActive ? styles.catPillTextActive : null, { color: '#FFFFFF' }]}>
-                    {item.label}
-                  </Text>
-                </TouchableOpacity>
+                />
               );
             })}
           </View>
@@ -1366,12 +1372,6 @@ const HomeScreen = ({ navigation }) => {
             <>
               <View style={styles.sectionHeadingRow}>
                 <Text style={[styles.sectionHeading, { marginHorizontal: 0, marginTop: 0, marginBottom: 0 }]}>Günün Anlatılacak Hikayeleri</Text>
-                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                  <View style={styles.miniProgressTrack}>
-                    <View style={[styles.miniProgressFill, { width: `${(doneCount / Math.max(1, dailyDeck.length)) * 100}%` }]} />
-                  </View>
-                  <Text style={styles.miniProgressText}>{doneCount}/{Math.max(1, dailyDeck.length)}</Text>
-                </View>
               </View>
               <ScrollView
                 horizontal
@@ -1427,6 +1427,7 @@ const HomeScreen = ({ navigation }) => {
                             </View>
                           )}
                           <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint || 'transparent' }]} />
+                          <Text numberOfLines={1} style={styles.featuredCategoryLabel}>{displayCat}</Text>
                         </View>
                         {isRead && <Ionicons name="checkmark-circle" size={18} color={colors.primary} style={{ position: 'absolute', top: 0, right: 0 }} />}
                       </View>

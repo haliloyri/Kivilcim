@@ -52,6 +52,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   const isReady = type === 'ready';
   const isPhone = width < 768;
   const isSmallPhone = width < 390;
+  const isVerySmallPhone = width < 360;
   
   const todayStr = new Date().toISOString().split('T')[0];
   const isSaved = Boolean(
@@ -90,51 +91,65 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     readyCard: {
       flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#FDF9F3',
+      alignItems: 'stretch',
+      backgroundColor: isDark ? '#1F1A16' : '#2A241F',
       borderRadius: layout.radius.card,
-      borderWidth: 1.5,
-      borderColor: categoryTheme.borderColor,
-      paddingHorizontal: isSmallPhone ? 10 : 14,
-      paddingVertical: isSmallPhone ? 10 : 12,
+      borderWidth: 1,
+      borderColor: isDark ? '#4A3E34' : '#504238',
+      paddingHorizontal: isVerySmallPhone ? 8 : isSmallPhone ? 10 : 12,
+      paddingVertical: isVerySmallPhone ? 8 : isSmallPhone ? 10 : 11,
       marginBottom: 20,
-      minHeight: 136,
-      gap: 10,
+      minHeight: isVerySmallPhone ? 124 : isSmallPhone ? 134 : 142,
+      gap: isVerySmallPhone ? 8 : 10,
       maxWidth: '100%',
-      shadowColor: '#7A5B43',
+      overflow: 'hidden',
+      shadowColor: '#000000',
       shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: isDark ? 0.2 : 0.16,
+      shadowOpacity: isDark ? 0.24 : 0.2,
       shadowRadius: 12,
       elevation: 4,
     },
     readyLeft: {
-      width: isSmallPhone ? 84 : 98,
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 8,
+      width: isVerySmallPhone ? 72 : isSmallPhone ? 84 : 98,
+      alignItems: 'stretch',
+      justifyContent: 'flex-end',
       flexShrink: 0,
       borderRadius: 14,
-      paddingVertical: 8,
-      paddingHorizontal: 6,
+      overflow: 'hidden',
+      paddingVertical: 0,
+      paddingHorizontal: 0,
     },
     readyCategoryLabel: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 11,
-      color: categoryTheme.borderColor,
+      fontSize: isVerySmallPhone ? 9 : 11,
+      color: '#FFFFFF',
       letterSpacing: 0.2,
-      textAlign: 'center',
-      width: '100%',
+      textAlign: 'right',
+      alignSelf: 'flex-end',
+      borderWidth: 1,
+      borderColor: 'rgba(255,255,255,0.65)',
+      borderRadius: 8,
+      paddingHorizontal: isVerySmallPhone ? 6 : 8,
+      paddingVertical: isVerySmallPhone ? 3 : 4,
+      maxWidth: '92%',
+      backgroundColor: 'rgba(18,17,15,0.45)',
     },
     readyImageWrapper: {
       width: '100%',
-      height: isSmallPhone ? 58 : 70,
+      height: isVerySmallPhone ? 106 : isSmallPhone ? 120 : 124,
       borderRadius: 12,
       overflow: 'hidden',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: isDark ? colors.surfaceContainerHigh : colors.surfaceContainerLowest,
-      borderWidth: 1,
-      borderColor: `${categoryTheme.borderColor}80`,
+      alignItems: 'flex-end',
+      justifyContent: 'flex-end',
+      backgroundColor: isDark ? '#2B231D' : '#3B3028',
+      borderWidth: 1.5,
+      borderColor: `${categoryTheme.borderColor}BB`,
+      padding: isVerySmallPhone ? 6 : 8,
+      shadowColor: '#000000',
+      shadowOffset: { width: 2, height: 4 },
+      shadowOpacity: 0.24,
+      shadowRadius: 6,
+      elevation: 3,
     },
     readyImage: {
       width: '100%',
@@ -152,16 +167,16 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     readyTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 17,
-      lineHeight: 22,
-      color: '#4A3A2C',
-      marginBottom: 6,
+      fontSize: isVerySmallPhone ? 14 : 17,
+      lineHeight: isVerySmallPhone ? 18 : 22,
+      color: '#F6EDE1',
+      marginBottom: isVerySmallPhone ? 4 : 6,
     },
     readyMeta: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      color: colors.textSecondary,
-      lineHeight: 18,
+      fontSize: isVerySmallPhone ? 10 : 12,
+      color: 'rgba(246,237,225,0.74)',
+      lineHeight: isVerySmallPhone ? 14 : 18,
     },
     readyDivider: {
       width: 1,
@@ -170,31 +185,33 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       marginVertical: 4,
     },
     readyRight: {
-      width: isSmallPhone ? 74 : 96,
+      width: isVerySmallPhone ? 62 : isSmallPhone ? 74 : 96,
       alignItems: 'flex-end',
       justifyContent: 'space-between',
-      height: '100%',
+      alignSelf: 'stretch',
       flexShrink: 0,
+      paddingVertical: 2,
     },
     readyStatusRow: {
       flexDirection: 'row',
       alignItems: 'center',
-      gap: 8,
-      marginBottom: 12,
+      gap: isVerySmallPhone ? 6 : 8,
+      marginBottom: isVerySmallPhone ? 8 : 12,
     },
     readyActionBtn: {
-      paddingVertical: 10,
-      paddingHorizontal: isSmallPhone ? 8 : 12,
+      paddingVertical: isVerySmallPhone ? 7 : 10,
+      paddingHorizontal: isVerySmallPhone ? 6 : isSmallPhone ? 8 : 12,
       borderRadius: 12,
       borderWidth: 1,
-      borderColor: colors.primary,
-      backgroundColor: isDark ? `${colors.primary}12` : `${colors.primary}14`,
+      borderColor: 'rgba(246,237,225,0.56)',
+      backgroundColor: 'rgba(246,237,225,0.08)',
       maxWidth: '100%',
+      marginBottom: 2,
     },
     readyActionText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: isSmallPhone ? 11 : 12,
-      color: colors.primary,
+      fontSize: isVerySmallPhone ? 10 : isSmallPhone ? 11 : 12,
+      color: '#F6EDE1',
       textAlign: 'center',
     },
     heroCard: {
@@ -202,8 +219,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       borderWidth: 1.5,
     },
     lockedCard: {
-      opacity: 0.6,
-      backgroundColor: categoryTheme.backgroundColor,
+      opacity: 1,
     },
     readCard: {
       opacity: 0.5,
@@ -274,6 +290,16 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       fontSize: 16,
       color: colors.textSecondary,
     },
+    readyLockBadge: {
+      width: isVerySmallPhone ? 24 : 28,
+      height: isVerySmallPhone ? 24 : 28,
+      borderRadius: isVerySmallPhone ? 12 : 14,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 1,
+      borderColor: 'rgba(246,237,225,0.42)',
+      backgroundColor: 'rgba(18,17,15,0.45)',
+    },
     newBadge: {
       backgroundColor: colors.success,
       borderColor: colors.success,
@@ -295,31 +321,32 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
         style={[
           styles.card,
           styles.readyCard,
+          { borderLeftWidth: 6, borderLeftColor: categoryTheme.borderColor },
           locked && styles.lockedCard,
           isRead && styles.readCard,
         ]}
       >
-        <View style={[styles.readyLeft, { backgroundColor: categoryTheme.strongBackgroundColor }]}>
-          <Text style={styles.readyCategoryLabel}>{displayCat}</Text>
+        <View style={styles.readyLeft}>
           <View style={[styles.readyImageWrapper, !catImg.source && styles.readyImagePlaceholder]}>
             {catImg.source ? (
               <Image source={catImg.source} style={styles.readyImage} resizeMode="cover" />
             ) : (
               <Ionicons name={getCatIcon(rawDisplayCat)} size={28} color={categoryTheme.accent} />
             )}
+            <Text numberOfLines={1} style={styles.readyCategoryLabel}>{displayCat}</Text>
           </View>
         </View>
 
         <View style={[styles.readyDivider, { backgroundColor: categoryTheme.borderColor }]} />
 
         <View style={styles.readyBody}>
-          <Text numberOfLines={3} style={styles.readyTitle}>
+          <Text numberOfLines={isVerySmallPhone ? 2 : 3} style={styles.readyTitle}>
             {displayTitle}
           </Text>
           <Text style={styles.readyMeta} numberOfLines={1}>
             {story.min} {t('minLabel', lang)}
           </Text>
-          {displaySrc ? (
+          {displaySrc && !isVerySmallPhone ? (
             <Text style={styles.readyMeta} numberOfLines={1}>
               {displaySrc}
             </Text>
@@ -328,6 +355,11 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
 
         <View style={styles.readyRight}>
           <View style={styles.readyStatusRow}>
+            {locked ? (
+              <View style={styles.readyLockBadge}>
+                <Ionicons name="lock-closed" size={isVerySmallPhone ? 13 : 15} color="#F6EDE1" />
+              </View>
+            ) : null}
             {isSaved && <Ionicons name="bookmark" size={18} color={colors.primary} />}
             {isRead && <Ionicons name="checkmark-circle" size={18} color={colors.primary} />}
           </View>
@@ -415,7 +447,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
                 </View>
               )}
               {isRead && <Ionicons name="checkmark-circle" size={16} color={colors.primary} />}
-              {locked && <Text style={styles.lockIcon}>🔒</Text>}
+              {locked && <Ionicons name="lock-closed" size={15} color={colors.textSecondary} />}
             </View>
           </View>
           <Text 
