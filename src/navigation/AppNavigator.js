@@ -393,7 +393,11 @@ export default function AppNavigator() {
                   },
                 ]}
               >
-                <Text style={{ fontSize: 36 }}>{activeBadgeModal.icon}</Text>
+                {activeBadgeModal.earned ? (
+                  <Text style={{ fontSize: 36 }}>{activeBadgeModal.icon}</Text>
+                ) : (
+                  <Ionicons name="lock-closed" size={28} color={colors.textSecondary} />
+                )}
               </Animated.View>
               <Text style={styles.modalTitle}>{t(activeBadgeModal.titleKey, lang) || activeBadgeModal.titleKey}</Text>
               <Text style={styles.modalSub}>{t(activeBadgeModal.subKey, lang) || activeBadgeModal.subKey}</Text>

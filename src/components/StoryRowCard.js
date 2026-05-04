@@ -17,7 +17,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
-import { getCategoryImage, getCategoryPillTheme } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 
 const StoryRowCard = ({
   story,
@@ -33,7 +33,7 @@ const StoryRowCard = ({
   const scale = useRef(new Animated.Value(1)).current;
 
   const catKey = story.parent_cat_raw || story.parent_cat || story.cat;
-  const pillTheme = getCategoryPillTheme(catKey, isDark);
+  const pillTheme = getCategoryTheme(catKey, isDark);
   const catImage = getCategoryImage(catKey, isDark);
 
   const displayTitle = story.title || '';
@@ -44,7 +44,7 @@ const StoryRowCard = ({
     : '';
   const displayMin = story.min || '?';
 
-  const accentColor = pillTheme.activeBorderColor;
+  const accentColor = pillTheme.borderColor;
   const isCompleted = isStoryCompleted ? isStoryCompleted(story.story_id) : isRead;
   const isSaved = isFavorite(story.story_id);
 
@@ -199,51 +199,57 @@ const StoryRowCard = ({
 
         {/* ── Action column ── */}
         <View style={styles.actions}>
-          {/* Mic */}
-          <TouchableOpacity
-            onPress={!locked ? onUseInConversation : null}
-            activeOpacity={0.75}
-            style={[
-              styles.actionBtn,
-              { backgroundColor: `${accentColor}1A` },
-            ]}
-          >
-            <Ionicons name="mic-outline" size={16} color={accentColor} />
-          </TouchableOpacity>
+          {/* Top icons: Read checkmark + Bookmark, 24px */}
+          <View style={{ flexDirection: 'row', gap: 12, alignItems: 'center', justifyContent: 'center' }}>
+            {/* Read checkmark */}
+            <TouchableOpacity
+              onPress={() =>
+                markStoryCompleted && markStoryCompleted(story.story_id)
+              }
+              activeOpacity={0.75}
+            >
+              <Ionicons
+                name={isCompleted ? 'checkmark-circle' : 'checkmark-circle-outline'}
+                size={24}
+                color={isCompleted ? accentColor : colors.textSecondary}
+              />
+            </TouchableOpacity>
 
-          {/* Read checkmark */}
-          <TouchableOpacity
-            onPress={() =>
-              markStoryCompleted && markStoryCompleted(story.story_id)
-            }
-            activeOpacity={0.75}
-            style={styles.actionItem}
-          >
-            <Ionicons
-              name={isCompleted ? 'checkmark-circle' : 'checkmark-circle-outline'}
-              size={19}
-              color={isCompleted ? colors.primary : colors.textSecondary}
-            />
-            <Text style={[styles.actionLabel, { color: colors.textSecondary }]}>
-              {t('statRead', lang) || 'Okundu'}
-            </Text>
-          </TouchableOpacity>
+            {/* Bookmark */}
+            <TouchableOpacity
+              onPress={() => toggleFavorite(story.story_id)}
+              activeOpacity={0.75}
+            >
+              <Ionicons
+                name={isSaved ? 'bookmark' : 'bookmark-outline'}
+                size={24}
+                color={isSaved ? accentColor : colors.textSecondary}
+              />
+            </TouchableOpacity>
+          </View>
 
-          {/* Bookmark */}
-          <TouchableOpacity
-            onPress={() => toggleFavorite(story.story_id)}
-            activeOpacity={0.75}
-            style={styles.actionItem}
-          >
-            <Ionicons
-              name={isSaved ? 'bookmark' : 'bookmark-outline'}
-              size={19}
-              color={isSaved ? colors.primary : colors.textSecondary}
-            />
-            <Text style={[styles.actionLabel, { color: colors.textSecondary }]}>
-              {t('home_profile_prompt_save', lang) || 'Kaydet'}
-            </Text>
-          </TouchableOpacity>
+          {/* Bottom CTA: Sohbette Kullan */}
+          {!locked && onUseInConversation ? (
+            <TouchableOpacity
+              onPress={onUseInConversation}
+              activeOpacity={0.85}
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 6,
+                borderRadius: 8,
+                paddingVertical: 8,
+                paddingHorizontal: 8,
+                backgroundColor: accentColor,
+              }}
+            >
+              <Ionicons name="chatbubbles-outline" size={14} color="#FFFFFF" />
+              <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 11, color: '#FFFFFF', textAlign: 'center' }}>
+                {t('story_detail_use_cta', lang)}
+              </Text>
+            </TouchableOpacity>
+          ) : null}
         </View>
       </TouchableOpacity>
     </Animated.View>
@@ -363,11 +369,13 @@ const styles = StyleSheet.create({
 
   /* ── Action column ── */
   actions: {
-    width: 50,
+    width: 90,
     paddingVertical: 12,
-    paddingHorizontal: 4,
+    paddingHorizontal: 6,
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+    gap: 8,
   },
   actionBtn: {
     width: 32,

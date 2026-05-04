@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { 
   View, Text, TouchableOpacity, StyleSheet, 
-  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Image 
+  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Image, Platform 
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { captureRef } from 'react-native-view-shot';
@@ -98,7 +98,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const displayLesson = localStory.lesson || '';
   const displaySrc = localStory.source_book || '';
   const displaySourceBook = localStory.source_book || '';
-  const displayCat = t(localStory.cat_display || localStory.cat || story.cat, lang);
+  const displayCat = t(localStory.cat_display || localStory.cat || story.cat, localLang);
   const displayHook = localStory.hook || story.hook || '';
   const categoryKey = story.parent_cat_raw || story.parent_cat || localStory.cat || story.cat;
   const categoryImage = getCategoryImage(categoryKey, isDark);
@@ -574,25 +574,24 @@ const StoryDetailScreen = ({ route, navigation }) => {
       borderRadius: 16,
       marginTop: 4,
       marginBottom: 12,
-      paddingTop: 12,
-      paddingHorizontal: 12,
-      paddingBottom: 10,
-      alignItems: 'center',
-      borderWidth: 1,
-      borderColor: isDark ? 'rgba(255,255,255,0.18)' : 'rgba(34,26,18,0.12)',
+      height: 96,
+      overflow: 'hidden',
+      position: 'relative',
     },
     categoryVisualTitle: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 13,
       color: '#FFFFFF',
-      textAlign: 'center',
-      marginBottom: 8,
+      textAlign: 'right',
       letterSpacing: 0.3,
+      position: 'absolute',
+      bottom: 8,
+      right: 12,
+      zIndex: 2,
     },
     categoryVisualImageWrap: {
-      width: '100%',
-      height: 96,
-      borderRadius: 12,
+      ...StyleSheet.absoluteFillObject,
+      borderRadius: 16,
       backgroundColor: 'rgba(255,255,255,0.16)',
       alignItems: 'center',
       justifyContent: 'center',
@@ -765,6 +764,29 @@ const StoryDetailScreen = ({ route, navigation }) => {
       fontSize: 13,
       color: colors.text,
       marginLeft: 6,
+    },
+    fabMic: {
+      position: 'absolute',
+      bottom: Math.max(insets.bottom + 6, 22) + layout.heights.buttonPrimary + 16 + 20,
+      right: layout.padding.horizontal,
+      width: 52,
+      height: 52,
+      borderRadius: 26,
+      shadowColor: colors.primary,
+      shadowOffset: { width: 0, height: 6 },
+      shadowOpacity: 0.35,
+      shadowRadius: 16,
+      elevation: 12,
+      zIndex: 10,
+    },
+    fabMicGradient: {
+      width: 52,
+      height: 52,
+      borderRadius: 26,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 1,
+      borderColor: isDark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.08)',
     },
   });
 
@@ -1159,37 +1181,15 @@ const StoryDetailScreen = ({ route, navigation }) => {
             );
           })()}
           <View style={{ paddingVertical: 16, paddingHorizontal: 20 }}>
-            <View style={styles.badge}>
-              <Text style={styles.badgeText}>{t(story.parent_cat, lang)}</Text>
-            </View>
             <Animated.Text style={[styles.detailTitle, titleEnterStyle]}>{displayTitle}</Animated.Text>
-            <View style={[styles.categoryVisualCard, { backgroundColor: categoryTheme.accent }]}> 
-              <Text style={styles.categoryVisualTitle}>{displayCat}</Text>
-              <View style={styles.categoryVisualImageWrap}>
-                {categoryImage.source ? (
-                  <Image
-                    source={categoryImage.source}
-                    style={[
-                      styles.categoryVisualImage,
-                      {
-                        transform: [
-                          { rotate: categoryImage.rotate },
-                          { scaleX: categoryImage.flip ? -1 : 1 },
-                        ],
-                      },
-                    ]}
-                    resizeMode="cover"
-                  />
-                ) : (
-                  <Ionicons name="images-outline" size={28} color="rgba(255,255,255,0.92)" />
-                )}
-              </View>
-            </View>
-            <View style={{ flexDirection: 'row', gap: 16 }}>
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+            <View style={{ flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 1 }}>
                 <Ionicons name="time-outline" size={16} color={colors.textSecondary} />
-                <Text style={styles.metaItem}>{story.min} {t('minLabel', lang)} okuma</Text>
+                <Text style={styles.metaItem}>{story.min} {t('minLabel', localLang)}</Text>
               </View>
+              <Text numberOfLines={1} style={[styles.metaItem, { color: categoryTheme.borderColor, fontFamily: 'Inter_500Medium', textAlign: 'right', flexShrink: 1 }]}>
+                {displayCat}
+              </Text>
             </View>
           </View>
         </View>
@@ -1264,7 +1264,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
               if (seg.type === 'highlight') {
                 return (
-                  <View key={idx} style={styles.quoteBox}>
+                  <View key={idx} style={[
+                    styles.quoteBox,
+                    {
+                      borderLeftColor: categoryTheme.borderColor,
+                      backgroundColor: categoryTheme.backgroundColor,
+                    },
+                  ]}>
                     <Text style={[styles.quoteText, { fontSize: fontSize + 2, lineHeight: (fontSize + 2) * 1.5 }]}>
                       "{seg.content}"
                     </Text>
@@ -1326,6 +1332,33 @@ const StoryDetailScreen = ({ route, navigation }) => {
         </View>
         <View style={{ height: 100 }} />
       </Animated.ScrollView>
+
+      <TouchableOpacity
+        style={styles.fabMic}
+        onPress={() => {
+          trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
+            storyId: story?.story_id,
+            source: 'story_detail_fab',
+            lang,
+          });
+          if (isPremium && !isStoryCompleted(localStory.story_id)) {
+            markStoryCompleted(localStory.story_id);
+          }
+          navigation.navigate('UseInConversation', { story: localStory });
+        }}
+        activeOpacity={0.82}
+      >
+        <LinearGradient
+          colors={isDark
+            ? ['rgba(229,194,122,0.92)', 'rgba(217,177,95,0.97)']
+            : ['rgba(200,155,60,0.94)', 'rgba(232,211,168,0.97)']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.fabMicGradient}
+        >
+          <Ionicons name="mic" size={22} color={colors.onPrimary} />
+        </LinearGradient>
+      </TouchableOpacity>
 
       <View style={styles.detailFooter}>
         {/* PRIMARY: Sohbette Kullan — main CTA with micro-copy */}

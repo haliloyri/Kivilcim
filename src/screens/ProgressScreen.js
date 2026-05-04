@@ -671,6 +671,10 @@ const ProgressScreen = ({ navigation }) => {
         {/* ── Sıradaki Hedef Spotlight ──────────────────────────────── */}
         {closestBadge && (
           <View style={{ marginHorizontal: layout.padding.horizontal, marginBottom: 14 }}>
+            <TouchableOpacity
+              activeOpacity={0.86}
+              onPress={() => openBadgeModal(closestBadge)}
+            >
             <LinearGradient
               colors={isDark ? ['#2A1F14', '#1E1814'] : ['#FBF5EA', '#F2E8D4']}
               start={{ x: 0, y: 0 }}
@@ -733,6 +737,7 @@ const ProgressScreen = ({ navigation }) => {
                 }} />
               </View>
             </LinearGradient>
+            </TouchableOpacity>
           </View>
         )}
 
