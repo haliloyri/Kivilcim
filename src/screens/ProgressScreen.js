@@ -7,12 +7,8 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
-import Animated, { 
-  useSharedValue, useAnimatedStyle, withSpring, withSequence, withTiming 
-} from 'react-native-reanimated';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
-import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import { getReadHistory } from '../db/db';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
@@ -42,9 +38,10 @@ const BADGE_MAP = {
   share_1: { icon: 'share-social', colors: ['#87CEFA', '#3A637F'] },
   share_10: { icon: 'share', colors: ['#1E90FF', '#0D4880'] },
   share_20: { icon: 'megaphone', colors: ['#00BFFF', '#005580'] },
-  share_30: { icon: 'cellular', colors: ['#4682B4', '#153652'] }
-  , storyteller: { icon: 'mic', colors: ['#D97706', '#92400E'] }
-  , icebreaker: { icon: 'chatbubble-ellipses', colors: ['#2563EB', '#1E3A8A'] }
+  share_30: { icon: 'cellular', colors: ['#4682B4', '#153652'] },
+  share_50: { icon: 'star', colors: ['#C0C0FF', '#5050B0'] },
+  storyteller: { icon: 'mic', colors: ['#D97706', '#92400E'] },
+  icebreaker: { icon: 'chatbubble-ellipses', colors: ['#2563EB', '#1E3A8A'] },
 };
 
 const ProfessionalBadgeIcon = ({ badge, earned, isDark }) => {
@@ -106,11 +103,10 @@ const ProfessionalBadgeIcon = ({ badge, earned, isDark }) => {
 
 const ProgressScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
-  const { streak, totalReads, earnedBadges, openBadgeModal, preferences, categoryStats, history, completedStories, variantUsage } = useUserData();
-  const { stories } = useStories();
-  const badgeScale = useSharedValue(0);
-  const badgeOpacity = useSharedValue(0);
-  const [showCelebration, setShowCelebration] = useState(false);
+  const {
+    streak, totalReads, longestStreak, earnedBadges, openBadgeModal,
+    preferences, categoryStats, variantUsage, shareCount, favorites,
+  } = useUserData();
   const [heatmapData, setHeatmapData] = useState([]);
   const [todayReads, setTodayReads] = useState(0);
   const dailyTarget = preferences?.time?.dailyStoryTarget || 2;
@@ -134,32 +130,16 @@ const ProgressScreen = ({ navigation }) => {
     };
   }, [categoryStats]);
 
-  const activeStories = useMemo(() => {
-    const byId = new Map((stories || []).map((story) => [String(story.story_id), story]));
-    const completedSet = new Set((completedStories || []).map((id) => String(id)));
-    return (history || [])
-      .filter((id) => !completedSet.has(String(id)))
-      .slice(0, 3)
-      .map((id) => byId.get(String(id)))
-      .filter(Boolean);
-  }, [history, stories, completedStories]);
-
   const usedStoriesCount = useMemo(
     () => (variantUsage || []).filter((item) => item?.action === 'mark_used').length,
     [variantUsage]
   );
 
-  const usedCategoryCount = useMemo(() => {
-    const categories = (variantUsage || [])
-      .filter((item) => item?.action === 'mark_used' && item?.storyCategory)
-      .map((item) => String(item.storyCategory));
-    return new Set(categories).size;
-  }, [variantUsage]);
-
   const badgeProgressMeta = useMemo(() => {
     const uniqueCats = Object.keys(categoryStats || {}).length;
     const maxCatReads = Math.max(0, ...Object.values(categoryStats || {}));
-    const map = {
+    const philosopherCount = (categoryStats?.['Felsefe'] || categoryStats?.['Philosophy'] || 0);
+    return {
       first_read: { current: totalReads, target: 1 },
       explorer: { current: totalReads, target: 10 },
       sage: { current: totalReads, target: 25 },
@@ -173,21 +153,22 @@ const ProgressScreen = ({ navigation }) => {
       cat_master_25: { current: maxCatReads, target: 25 },
       cat_master_50: { current: maxCatReads, target: 50 },
       cat_master_100: { current: maxCatReads, target: 100 },
-      save_5: { current: 0, target: 5 },
-      save_10: { current: 0, target: 10 },
-      save_50: { current: 0, target: 50 },
-      save_100: { current: 0, target: 100 },
-      share_1: { current: 0, target: 1 },
-      share_10: { current: 0, target: 10 },
-      share_20: { current: 0, target: 20 },
-      share_30: { current: 0, target: 30 },
-      share_50: { current: 0, target: 50 },
+      philosopher: { current: philosopherCount, target: 5 },
+      save_5: { current: favorites.length, target: 5 },
+      save_10: { current: favorites.length, target: 10 },
+      save_50: { current: favorites.length, target: 50 },
+      save_100: { current: favorites.length, target: 100 },
+      share_1: { current: shareCount, target: 1 },
+      share_10: { current: shareCount, target: 10 },
+      share_20: { current: shareCount, target: 20 },
+      share_30: { current: shareCount, target: 30 },
+      share_50: { current: shareCount, target: 50 },
       storyteller: { current: usedStoriesCount, target: 10 },
       icebreaker: { current: (variantUsage || []).some((item) => item?.action === 'mark_used' && item?.variantType === 'QUESTION') ? 1 : 0, target: 1 },
     };
-    return map;
-  }, [categoryStats, totalReads, streak, usedStoriesCount, variantUsage]);
+  }, [categoryStats, totalReads, streak, usedStoriesCount, variantUsage, shareCount, favorites.length]);
 
+  // Analytics: Daily target completed
   useEffect(() => {
     if (!isDailyGoalComplete) return;
 
@@ -212,17 +193,14 @@ const ProgressScreen = ({ navigation }) => {
     trackDailyCompletion();
   }, [isDailyGoalComplete, todayKey, dailyTarget, dailyProgress, todayReads, lang]);
 
-  // Isı haritası verisini DB'den yükle
+  // Heatmap: Single DB call, derive todayReads from same dataset
   useEffect(() => {
     const loadHeatmap = async () => {
       try {
-        const [history, todayHistory] = await Promise.all([
-          getReadHistory(91),
-          getReadHistory(0),
-        ]);
+        const historyRows = await getReadHistory(91);
         const map = {};
-        history.forEach(r => { map[r.day] = r.count; });
-        setTodayReads(todayHistory[0]?.count || 0);
+        historyRows.forEach(r => { map[r.day] = r.count; });
+        setTodayReads(map[todayKey] || 0);
         const data = [];
         for (let i = 90; i >= 0; i--) {
           const d = new Date();
@@ -241,59 +219,45 @@ const ProgressScreen = ({ navigation }) => {
       }
     };
     loadHeatmap();
-  }, [totalReads]);
+  }, [totalReads, todayKey]);
 
   const badges = earnedBadges || [];
 
-  const closestBadge = useMemo(() => {
-    const notEarned = badges.filter((b) => !b.earned);
-    if (!notEarned.length) return null;
-    return notEarned
-      .filter((b) => badgeProgressMeta[b.id])
-      .map((b) => {
+  // Badge groups: Near (top 3 with progress > 0), Earned, Locked
+  const nearBadges = useMemo(() => {
+    return badges
+      .filter(b => !b.earned && badgeProgressMeta[b.id])
+      .map(b => {
         const { current, target } = badgeProgressMeta[b.id];
         const ratio = target > 0 ? Math.min(current / target, 1) : 0;
         return { ...b, current, target, ratio, remaining: Math.max(target - current, 0) };
       })
-      .filter((b) => b.ratio < 1) // Only show badges that are NOT at 100%
-      .sort((a, b) => b.ratio - a.ratio)[0] || null;
+      .filter(b => b.ratio > 0 && b.ratio < 1)
+      .sort((a, b) => b.ratio - a.ratio)
+      .slice(0, 3);
   }, [badges, badgeProgressMeta]);
 
-  const triggerCelebration = () => {
-    setShowCelebration(true);
-    badgeScale.value = 0;
-    badgeOpacity.value = 1;
-    badgeScale.value = withSequence(
-      withSpring(1.2),
-      withSpring(1)
-    );
-    
-    setTimeout(() => {
-      badgeOpacity.value = withTiming(0, { duration: 500 });
-      setTimeout(() => setShowCelebration(false), 500);
-    }, 2000);
-  };
+  const earnedBadgesList = useMemo(() => badges.filter(b => b.earned), [badges]);
 
-  const animatedBadgeStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: badgeScale.value }],
-    opacity: badgeOpacity.value,
-  }));
+  const lockedBadges = useMemo(() => {
+    const nearIds = new Set(nearBadges.map(b => b.id));
+    return badges.filter(b => !b.earned && !nearIds.has(b.id));
+  }, [badges, nearBadges]);
+
+  // Spotlight = top near badge
+  const closestBadge = nearBadges[0] || null;
+
+  // Active reading days count for heatmap KPI
+  const activeDaysCount = useMemo(() => heatmapData.filter(d => d.level > 0).length, [heatmapData]);
 
   const styles = StyleSheet.create({
-    safe: { 
-      flex: 1, 
-      backgroundColor: colors.background
-    },
-    homeHeader: { 
-      paddingHorizontal: layout.padding.horizontal, 
+    safe: { flex: 1, backgroundColor: colors.background },
+    homeHeader: {
+      paddingHorizontal: layout.padding.horizontal,
       paddingTop: 32,
-      paddingBottom: 16 
+      paddingBottom: 16,
     },
-    greetName: { 
-      fontFamily: 'PlayfairDisplay_700Bold', 
-      fontSize: 32, 
-      color: colors.text 
-    },
+    greetName: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 32, color: colors.text },
     sectionHeader: {
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -302,72 +266,113 @@ const ProgressScreen = ({ navigation }) => {
       marginTop: 24,
       marginBottom: 12,
     },
-    sectionLabel: { 
-      fontFamily: 'Inter_500Medium', 
-      fontSize: 11, 
-      color: colors.textSecondary, 
-      letterSpacing: 1, 
-      textTransform: 'uppercase' 
+    sectionLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.textSecondary,
+      letterSpacing: 1,
+      textTransform: 'uppercase',
     },
-    goalCard: {
+    // ── Hero Card ─────────────────────────────────────────────────
+    heroCard: {
       backgroundColor: colors.backgroundDark,
       borderRadius: layout.radius.card,
       marginHorizontal: layout.padding.horizontal,
       padding: 18,
       marginBottom: 12,
     },
-    goalHeader: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      marginBottom: 10,
-    },
-    goalTitle: {
-      fontFamily: 'PlayfairDisplay_600SemiBold',
-      fontSize: 20,
-      color: colors.text,
-    },
-    goalCounter: {
+    heroRow: { flexDirection: 'row', alignItems: 'center' },
+    heroStreakBox: { alignItems: 'center', flex: 1, paddingRight: 16 },
+    heroStreakEmoji: { fontSize: 22, marginBottom: 2 },
+    heroStreakNum: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 28,
+      fontSize: 44,
       color: colors.text,
+      lineHeight: 52,
     },
-    goalSub: {
+    heroStreakDays: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 13,
+      fontSize: 12,
       color: colors.textSecondary,
-      lineHeight: 20,
-      marginBottom: 14,
     },
-    goalBarTrack: {
-      height: 10,
+    heroDivider: { width: 1, height: 72, backgroundColor: colors.border },
+    heroGoalBox: { flex: 1, paddingLeft: 16 },
+    heroGoalLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 10,
+      color: colors.textSecondary,
+      textTransform: 'uppercase',
+      letterSpacing: 0.8,
+      marginBottom: 4,
+    },
+    heroGoalCounter: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 26,
+      color: colors.text,
+      marginBottom: 6,
+    },
+    heroGoalBarTrack: {
+      height: 6,
       borderRadius: 999,
       backgroundColor: colors.border,
       overflow: 'hidden',
-      marginBottom: 12,
+      marginBottom: 6,
     },
-    goalBarFill: {
-      height: '100%',
-      borderRadius: 999,
-      backgroundColor: colors.primary,
-    },
-    goalStatus: {
-      alignSelf: 'flex-start',
-      paddingHorizontal: 12,
+    heroGoalBarFill: { height: '100%', borderRadius: 999, backgroundColor: colors.primary },
+    heroReadCta: { fontFamily: 'Inter_500Medium', fontSize: 12, color: colors.primary },
+    heroCompleteTag: { fontFamily: 'Inter_500Medium', fontSize: 12, color: colors.primary },
+    heroRiskRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      backgroundColor: `${colors.danger}18`,
+      borderRadius: 8,
+      paddingHorizontal: 10,
       paddingVertical: 6,
-      borderRadius: 999,
+      marginTop: 12,
     },
-    goalStatusText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 11,
-      letterSpacing: 0.4,
-      textTransform: 'uppercase',
+    heroRiskText: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.danger,
+      flex: 1,
     },
-    actionsWrap: {
-      marginHorizontal: layout.padding.horizontal,
-      marginBottom: 10,
+    heroSpotlightRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
       gap: 10,
+      marginTop: 14,
+      paddingTop: 12,
+      borderTopWidth: 1,
+      borderTopColor: colors.border,
     },
+    heroSpotlightLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 9,
+      color: colors.primary,
+      textTransform: 'uppercase',
+      letterSpacing: 0.8,
+    },
+    heroSpotlightTitle: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: colors.text,
+      marginBottom: 4,
+    },
+    heroSpotlightBarTrack: {
+      height: 3,
+      borderRadius: 999,
+      backgroundColor: colors.border,
+      overflow: 'hidden',
+    },
+    heroSpotlightBarFill: { height: '100%', borderRadius: 999, backgroundColor: colors.primary },
+    heroSpotlightPct: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 16,
+      color: colors.primary,
+    },
+    // ── Actions ───────────────────────────────────────────────────
+    actionsWrap: { marginHorizontal: layout.padding.horizontal, marginBottom: 10, gap: 10 },
     actionCard: {
       backgroundColor: colors.background,
       borderWidth: layout.borderWidth,
@@ -379,71 +384,30 @@ const ProgressScreen = ({ navigation }) => {
       alignItems: 'center',
     },
     actionIcon: {
-      width: 36,
-      height: 36,
-      borderRadius: 18,
+      width: 36, height: 36, borderRadius: 18,
       backgroundColor: colors.backgroundDark,
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: 'center', alignItems: 'center',
     },
-    actionTitle: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 14,
-      color: colors.text,
-      marginBottom: 2,
-    },
-    actionSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      color: colors.textSecondary,
-      lineHeight: 18,
-    },
+    actionTitle: { fontFamily: 'Inter_500Medium', fontSize: 14, color: colors.text, marginBottom: 2 },
+    actionSub: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, lineHeight: 18 },
     actionButton: {
-      marginLeft: 'auto',
-      borderRadius: 10,
-      borderWidth: 1,
-      borderColor: colors.border,
-      paddingHorizontal: 10,
-      paddingVertical: 6,
-      backgroundColor: colors.backgroundDark,
+      marginLeft: 'auto', borderRadius: 10, borderWidth: 1, borderColor: colors.border,
+      paddingHorizontal: 10, paddingVertical: 6, backgroundColor: colors.backgroundDark,
     },
-    actionButtonText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 11,
-      color: colors.text,
+    actionButtonText: { fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.text },
+    // ── Stats ─────────────────────────────────────────────────────
+    statsRow: {
+      flexDirection: 'row', gap: 12,
+      paddingHorizontal: layout.padding.horizontal,
+      marginTop: 24,
     },
-    activeStoryCard: {
-      backgroundColor: colors.background,
-      borderWidth: layout.borderWidth,
-      borderColor: colors.border,
-      borderRadius: layout.radius.card,
-      padding: 14,
-      marginHorizontal: layout.padding.horizontal,
-      marginBottom: 10,
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 12,
+    statBox: {
+      flex: 1, backgroundColor: colors.backgroundDark,
+      borderRadius: layout.radius.card, padding: 16, alignItems: 'center',
     },
-    activeStoryIcon: {
-      width: 34,
-      height: 34,
-      borderRadius: 17,
-      backgroundColor: colors.backgroundDark,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    activeStoryTitle: {
-      fontFamily: 'PlayfairDisplay_600SemiBold',
-      fontSize: 16,
-      color: colors.text,
-      lineHeight: 21,
-    },
-    activeStorySub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 11,
-      color: colors.textSecondary,
-      marginTop: 2,
-    },
+    statNum: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 24, color: colors.text },
+    statLabel: { fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, textTransform: 'uppercase' },
+    // ── Heatmap ───────────────────────────────────────────────────
     heatmapCard: {
       backgroundColor: colors.background,
       borderWidth: layout.borderWidth,
@@ -452,32 +416,32 @@ const ProgressScreen = ({ navigation }) => {
       marginHorizontal: layout.padding.horizontal,
       padding: 16,
     },
-    heatmapGrid: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 4,
-      justifyContent: 'center',
+    heatmapKpiRow: { flexDirection: 'row', gap: 12, marginBottom: 16 },
+    heatmapKpi: {
+      flex: 1, backgroundColor: colors.backgroundDark,
+      borderRadius: layout.radius.card, padding: 12, alignItems: 'center',
     },
-    heatmapSquare: {
-      width: (width - 80) / 13 - 4,
-      height: (width - 80) / 13 - 4,
-      borderRadius: 999,
+    heatmapKpiNum: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, color: colors.text },
+    heatmapKpiLabel: {
+      fontFamily: 'Inter_400Regular', fontSize: 10, color: colors.textSecondary,
+      textTransform: 'uppercase', letterSpacing: 0.5, marginTop: 2, textAlign: 'center',
     },
-    heatmapLegend: {
-      flexDirection: 'row',
-      justifyContent: 'flex-end',
-      alignItems: 'center',
+    heatmapGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4, justifyContent: 'center' },
+    heatmapSquare: { width: (width - 80) / 13 - 4, height: (width - 80) / 13 - 4, borderRadius: 999 },
+    heatmapLegend: { flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', marginTop: 16 },
+    heatmapLegendText: { fontFamily: 'Inter_400Regular', fontSize: 10, color: colors.textSecondary },
+    // ── Badges ────────────────────────────────────────────────────
+    badgeGroupHeader: {
+      paddingHorizontal: layout.padding.horizontal,
       marginTop: 16,
+      marginBottom: 8,
     },
-    heatmapLegendText: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 10,
-      color: colors.textSecondary,
+    badgeGroupLabel: {
+      fontFamily: 'Inter_500Medium', fontSize: 10, color: colors.textSecondary,
+      textTransform: 'uppercase', letterSpacing: 1,
     },
     badgeContainer: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 12,
+      flexDirection: 'row', flexWrap: 'wrap', gap: 12,
       paddingHorizontal: layout.padding.horizontal,
     },
     badgeItem: {
@@ -490,306 +454,129 @@ const ProgressScreen = ({ navigation }) => {
       alignItems: 'center',
     },
     badgeProgressTrack: {
-      marginTop: 10,
-      width: '100%',
-      height: 3,
-      borderRadius: 999,
-      backgroundColor: colors.border,
-      overflow: 'hidden',
+      marginTop: 10, width: '100%', height: 3, borderRadius: 999,
+      backgroundColor: colors.border, overflow: 'hidden',
     },
-    badgeProgressFill: {
-      height: '100%',
-      borderRadius: 999,
-      backgroundColor: colors.primary,
-    },
-    badgeProgressText: {
-      marginTop: 5,
-      fontFamily: 'Inter_500Medium',
-      fontSize: 10,
-      color: colors.textSecondary,
-    },
-    badgeIconCircle: {
-      width: 60,
-      height: 60,
-      borderRadius: 30,
-      backgroundColor: colors.backgroundDark,
-      borderWidth: 1.5,
-      borderColor: colors.primary,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: 12,
-    },
-    badgeItemTitle: {
-      fontFamily: 'PlayfairDisplay_600SemiBold',
-      fontSize: 16,
-      color: colors.text,
-    },
-    badgeItemSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      color: colors.textSecondary,
-    },
-    statsRow: {
-      flexDirection: 'row',
-      gap: 12,
-      paddingHorizontal: layout.padding.horizontal,
-      marginTop: 24,
-    },
-    statBox: {
-      flex: 1,
-      backgroundColor: colors.backgroundDark,
-      borderRadius: layout.radius.card,
-      padding: 16,
-      alignItems: 'center',
-    },
-    statNum: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 24,
-      color: colors.text,
-    },
-    statLabel: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 11,
-      color: colors.textSecondary,
-      textTransform: 'uppercase',
-    },
-    celebrationOverlay: {
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.16)',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: 1000,
-    },
-    congratsCircle: {
-      width: 120,
-      height: 120,
-      borderRadius: 60,
-      backgroundColor: colors.primary,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: 24,
-      borderWidth: 3,
-      borderColor: colors.danger,
-    },
-    congratsTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 32,
-      color: colors.text,
-      marginBottom: 8,
-    },
-    congratsSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 16,
-      color: colors.textSecondary,
-    },
-    modalOverlay: {
-      flex: 1,
-      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.24)',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 24,
-    },
-    modalCard: {
-      backgroundColor: colors.background,
-      borderRadius: layout.radius.card,
-      padding: 28,
-      width: '100%',
-      maxWidth: 340,
-      alignItems: 'center',
-      borderWidth: layout.borderWidth,
-      borderColor: colors.border,
-    },
-    modalIconCircle: {
-      width: 80,
-      height: 80,
-      borderRadius: 40,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: 16,
-    },
-    modalTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 22,
-      color: colors.text,
-      marginBottom: 4,
-      textAlign: 'center',
-    },
-    modalSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 13,
-      color: colors.textSecondary,
-      marginBottom: 16,
-      textAlign: 'center',
-    },
-    modalDesc: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 14,
-      color: colors.text,
-      textAlign: 'center',
-      lineHeight: 20,
-      marginBottom: 16,
-    },
-    modalStatusBadge: {
-      paddingHorizontal: 16,
-      paddingVertical: 6,
-      borderRadius: 20,
-      marginBottom: 20,
-    },
-    modalStatusText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 12,
-      textTransform: 'uppercase',
-      letterSpacing: 0.5,
-    },
-    modalCloseBtn: {
-      paddingHorizontal: 32,
-      paddingVertical: 10,
-      borderRadius: layout.radius.card,
-      borderWidth: 1,
-      borderColor: colors.border,
-    },
-    modalCloseText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 14,
-      color: colors.text,
-    },
+    badgeProgressFill: { height: '100%', borderRadius: 999, backgroundColor: colors.primary },
+    badgeProgressText: { marginTop: 5, fontFamily: 'Inter_500Medium', fontSize: 10, color: colors.textSecondary },
+    badgeItemTitle: { fontFamily: 'PlayfairDisplay_600SemiBold', fontSize: 16, color: colors.text },
+    badgeItemSub: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary },
   });
+
+  const renderBadgeItem = (badge, progressMeta) => (
+    <TouchableOpacity
+      key={badge.id}
+      activeOpacity={0.7}
+      onPress={() => openBadgeModal(badge)}
+      style={[styles.badgeItem, !badge.earned && { opacity: 0.55 }]}
+    >
+      <ProfessionalBadgeIcon badge={badge} earned={badge.earned} isDark={isDark} />
+      <Text style={styles.badgeItemTitle}>{t(badge.titleKey, lang) || badge.titleKey}</Text>
+      <Text style={styles.badgeItemSub}>{t(badge.subKey, lang) || badge.subKey}</Text>
+      {!badge.earned && progressMeta ? (
+        <>
+          <View style={styles.badgeProgressTrack}>
+            <View
+              style={[
+                styles.badgeProgressFill,
+                { width: `${Math.min(100, Math.round((progressMeta.current / Math.max(1, progressMeta.target)) * 100))}%` },
+              ]}
+            />
+          </View>
+          <Text style={styles.badgeProgressText}>
+            {`${Math.min(progressMeta.current, progressMeta.target)}/${progressMeta.target}`}
+          </Text>
+        </>
+      ) : null}
+    </TouchableOpacity>
+  );
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
-      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
-      
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={colors.background} />
+
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
         <View style={styles.homeHeader}>
           <Text style={styles.greetName}>{t('yourSparks', lang)}</Text>
         </View>
 
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>{t('dailyGoal', lang)}</Text>
-        </View>
+        {/* ── Today Hero Card: Streak + Daily Goal + Spotlight ───── */}
+        <View style={styles.heroCard}>
+          <View style={styles.heroRow}>
+            {/* Left: Streak */}
+            <View style={styles.heroStreakBox}>
+              <Text style={styles.heroStreakEmoji}>🔥</Text>
+              <Text style={styles.heroStreakNum}>{streak}</Text>
+              <Text style={styles.heroStreakDays}>{t('streakDays', lang)}</Text>
+            </View>
+            <View style={styles.heroDivider} />
+            {/* Right: Daily Goal */}
+            <View style={styles.heroGoalBox}>
+              <Text style={styles.heroGoalLabel}>{t('dailyGoalTitle', lang)}</Text>
+              <Text style={styles.heroGoalCounter}>{`${dailyProgress}/${dailyTarget}`}</Text>
+              <View style={styles.heroGoalBarTrack}>
+                <View style={[styles.heroGoalBarFill, { width: `${(dailyProgress / dailyTarget) * 100}%` }]} />
+              </View>
+              {isDailyGoalComplete ? (
+                <Text style={styles.heroCompleteTag}>✓ {t('dailyGoalComplete', lang)}</Text>
+              ) : (
+                <TouchableOpacity onPress={() => navigation.navigate('HomeTab')}>
+                  <Text style={styles.heroReadCta}>{t('progressActionOpenHome', lang)} →</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+          </View>
 
-        {/* ── Sıradaki Hedef Spotlight ──────────────────────────────── */}
-        {closestBadge && (
-          <View style={{ marginHorizontal: layout.padding.horizontal, marginBottom: 14 }}>
+          {/* Streak risk warning: shown only when streak > 0 and nothing read today */}
+          {streak > 0 && todayReads === 0 && (
+            <View style={styles.heroRiskRow}>
+              <Ionicons name="warning-outline" size={14} color={colors.danger} />
+              <Text style={styles.heroRiskText}>{t('streakRiskWarning', lang)}</Text>
+            </View>
+          )}
+
+          {/* Spotlight: next closest badge, integrated */}
+          {closestBadge && (
             <TouchableOpacity
-              activeOpacity={0.86}
+              style={styles.heroSpotlightRow}
               onPress={() => openBadgeModal(closestBadge)}
+              activeOpacity={0.8}
             >
-            <LinearGradient
-              colors={isDark ? ['#2A1F14', '#1E1814'] : ['#FBF5EA', '#F2E8D4']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={{
-                borderRadius: layout.radius.card,
-                padding: 16,
-                borderWidth: 1,
-                borderColor: `${colors.primary}55`,
-              }}
-            >
-              <Text style={{
-                fontFamily: 'Inter_500Medium',
-                fontSize: 10,
-                color: colors.primary,
-                letterSpacing: 1.2,
-                textTransform: 'uppercase',
-                marginBottom: 10,
-              }}>
-                {t('progress_spotlight_label', lang)}
-              </Text>
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
-                <Text style={{ fontSize: 40 }}>{closestBadge.icon}</Text>
-                <View style={{ flex: 1 }}>
-                  <Text style={{
-                    fontFamily: 'PlayfairDisplay_700Bold',
-                    fontSize: 18,
-                    color: colors.text,
-                    marginBottom: 2,
-                  }}>
-                    {t(closestBadge.titleKey, lang)}
-                  </Text>
-                  <Text style={{
-                    fontFamily: 'Inter_400Regular',
-                    fontSize: 12,
-                    color: colors.textSecondary,
-                  }}>
-                    {closestBadge.remaining > 0
-                      ? t('progress_spotlight_badge_remaining', lang).replace('{{n}}', String(closestBadge.remaining))
-                      : t('progress_spotlight_badge_almost', lang)}
-                  </Text>
+              <Text style={{ fontSize: 26 }}>{closestBadge.icon}</Text>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.heroSpotlightLabel}>{t('progress_spotlight_label', lang)}</Text>
+                <Text style={styles.heroSpotlightTitle}>{t(closestBadge.titleKey, lang)}</Text>
+                <View style={styles.heroSpotlightBarTrack}>
+                  <View style={[styles.heroSpotlightBarFill, { width: `${Math.round(closestBadge.ratio * 100)}%` }]} />
                 </View>
-                <Text style={{
-                  fontFamily: 'PlayfairDisplay_700Bold',
-                  fontSize: 22,
-                  color: colors.primary,
-                }}>
-                  {`${Math.round(closestBadge.ratio * 100)}%`}
-                </Text>
               </View>
-              <View style={{
-                height: 5, borderRadius: 999,
-                backgroundColor: isDark ? colors.backgroundDark : colors.border,
-                marginTop: 12, overflow: 'hidden',
-              }}>
-                <View style={{
-                  height: '100%', borderRadius: 999,
-                  backgroundColor: colors.primary,
-                  width: `${Math.round(closestBadge.ratio * 100)}%`,
-                }} />
-              </View>
-            </LinearGradient>
+              <Text style={styles.heroSpotlightPct}>{`${Math.round(closestBadge.ratio * 100)}%`}</Text>
+              <Ionicons name="chevron-forward" size={16} color={colors.textSecondary} />
             </TouchableOpacity>
-          </View>
-        )}
-
-        <View style={styles.goalCard}>
-          <View style={styles.goalHeader}>
-            <Text style={styles.goalTitle}>{t('dailyGoalTitle', lang)}</Text>
-            <Text style={styles.goalCounter}>{`${dailyProgress}/${dailyTarget}`}</Text>
-          </View>
-          <Text style={styles.goalSub}>
-            {t('dailyGoalSub', lang)
-              .replace('{{done}}', String(dailyProgress))
-              .replace('{{target}}', String(dailyTarget))}
-          </Text>
-          <View style={styles.goalBarTrack}>
-            <View style={[styles.goalBarFill, { width: `${(dailyProgress / dailyTarget) * 100}%` }]} />
-          </View>
-          <View style={[
-            styles.goalStatus,
-            { backgroundColor: isDailyGoalComplete ? `${colors.primary}22` : `${colors.border}66` },
-          ]}>
-            <Text style={[
-              styles.goalStatusText,
-              { color: isDailyGoalComplete ? colors.primary : colors.textSecondary },
-            ]}>
-              {isDailyGoalComplete ? t('dailyGoalComplete', lang) : t('dailyGoalInProgress', lang)}
-            </Text>
-          </View>
+          )}
         </View>
 
+        {/* ── Action Cards (daily + category; streak card removed) ─ */}
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionLabel}>{t('progressActionsTitle', lang)}</Text>
         </View>
         <View style={styles.actionsWrap}>
+          {!isDailyGoalComplete && (
+            <View style={styles.actionCard}>
+              <View style={styles.actionIcon}><Text style={{ fontSize: 16 }}>📖</Text></View>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.actionTitle}>{t('progressActionDailyTitle', lang)}</Text>
+                <Text style={styles.actionSub}>
+                  {t('progressActionDailySub', lang).replace('{{count}}', String(Math.max(1, storiesLeftToday)))}
+                </Text>
+              </View>
+              <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('HomeTab')}>
+                <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
+              </TouchableOpacity>
+            </View>
+          )}
           <View style={styles.actionCard}>
-            <View style={styles.actionIcon}>
-              <Text style={{ fontSize: 16 }}>📖</Text>
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.actionTitle}>{t('progressActionDailyTitle', lang)}</Text>
-              <Text style={styles.actionSub}>
-                {t('progressActionDailySub', lang).replace('{{count}}', String(Math.max(1, storiesLeftToday)))}
-              </Text>
-            </View>
-            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('HomeTab')}>
-              <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.actionCard}>
-            <View style={styles.actionIcon}>
-              <Text style={{ fontSize: 16 }}>🏅</Text>
-            </View>
+            <View style={styles.actionIcon}><Text style={{ fontSize: 16 }}>🏅</Text></View>
             <View style={{ flex: 1 }}>
               <Text style={styles.actionTitle}>{t('progressActionCategoryTitle', lang)}</Text>
               <Text style={styles.actionSub}>
@@ -804,126 +591,16 @@ const ProgressScreen = ({ navigation }) => {
               <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
             </TouchableOpacity>
           </View>
-
-          <View style={styles.actionCard}>
-            <View style={styles.actionIcon}>
-              <Text style={{ fontSize: 16 }}>🔥</Text>
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.actionTitle}>{t('progressActionStreakTitle', lang)}</Text>
-              <Text style={styles.actionSub}>{t('progressActionStreakSub', lang)}</Text>
-            </View>
-            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('HomeTab')}>
-              <Text style={styles.actionButtonText}>{t('progressActionTomorrowCta', lang)}</Text>
-            </TouchableOpacity>
-          </View>
         </View>
 
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>{t('progressActiveStoriesTitle', lang)}</Text>
-        </View>
-        {activeStories.length > 0 ? activeStories.map((story) => (
-          <View key={`active-${story.story_id}`} style={styles.activeStoryCard}>
-            <View style={styles.activeStoryIcon}>
-              <Text style={{ fontSize: 15 }}>📚</Text>
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.activeStoryTitle} numberOfLines={1}>{story.title || ''}</Text>
-              <Text style={styles.activeStorySub} numberOfLines={1}>
-                {`${t(story.parent_cat || story.cat, lang)} • ${story.min} ${t('minLabel', lang)}`}
-              </Text>
-            </View>
-            <TouchableOpacity
-              style={styles.actionButton}
-              onPress={() => {
-                navigation.navigate('LibraryTab');
-                navigation.navigate('StoryDetail', { story });
-              }}
-            >
-              <Text style={styles.actionButtonText}>{t('progressOpenInLibrary', lang)}</Text>
-            </TouchableOpacity>
-          </View>
-        )) : (
-          <View style={[styles.heatmapCard, { marginBottom: 8, alignItems: 'center' }]}> 
-            <Text style={{ fontSize: 28, marginBottom: 8 }}>✨</Text>
-            <Text style={[styles.actionSub, { textAlign: 'center' }]}>{t('progressActiveStoriesEmpty', lang)}</Text>
-          </View>
-        )}
-
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>{t('readingHabit', lang)}</Text>
-        </View>
-        <View style={styles.heatmapCard}>
-          <View style={styles.heatmapGrid}>
-            {heatmapData.map(item => (
-              <View 
-                key={item.id} 
-                style={[
-                  styles.heatmapSquare, 
-                  { 
-                    backgroundColor: item.level === 0 ? `${colors.backgroundDark}88` : 
-                                     item.level === 1 ? '#DBCFA7' : 
-                                     item.level === 2 ? colors.primary : '#8B6A30' 
-                  }
-                ]} 
-              />
-            ))}
-          </View>
-          <View style={styles.heatmapLegend}>
-            <Text style={styles.heatmapLegendText}>{t('less', lang)}</Text>
-            <View style={[styles.heatmapSquare, { backgroundColor: colors.backgroundDark, marginHorizontal: 4 }]} />
-            <View style={[styles.heatmapSquare, { backgroundColor: colors.primary, marginHorizontal: 4 }]} />
-            <View style={[styles.heatmapSquare, { backgroundColor: '#8B6A30', marginHorizontal: 4 }]} />
-            <Text style={styles.heatmapLegendText}>{t('more', lang)}</Text>
-          </View>
-        </View>
-
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>{t('achievementBadges', lang)}</Text>
-          <TouchableOpacity onPress={triggerCelebration}>
-            <Text style={{ fontSize: 11, color: colors.primary, fontFamily: 'Inter_500Medium' }}>{t('testBtn', lang)}</Text>
-          </TouchableOpacity>
-        </View>
-        
-        <View style={styles.badgeContainer}>
-          {badges.map(badge => (
-            <TouchableOpacity 
-              key={badge.id} 
-              activeOpacity={0.7}
-              onPress={() => openBadgeModal(badge)}
-              style={[styles.badgeItem, !badge.earned && { opacity: 0.4 }]}
-            >
-              <ProfessionalBadgeIcon badge={badge} earned={badge.earned} isDark={isDark} />
-              <Text style={styles.badgeItemTitle}>{t(badge.titleKey, lang) || badge.titleKey}</Text>
-              <Text style={styles.badgeItemSub}>{t(badge.subKey, lang) || badge.subKey}</Text>
-              {!badge.earned && badgeProgressMeta[badge.id] ? (
-                <>
-                  <View style={styles.badgeProgressTrack}>
-                    <View
-                      style={[
-                        styles.badgeProgressFill,
-                        {
-                          width: `${Math.min(100, Math.round((badgeProgressMeta[badge.id].current / Math.max(1, badgeProgressMeta[badge.id].target)) * 100))}%`,
-                        },
-                      ]}
-                    />
-                  </View>
-                  <Text style={styles.badgeProgressText}>
-                    {`${Math.min(badgeProgressMeta[badge.id].current, badgeProgressMeta[badge.id].target)}/${badgeProgressMeta[badge.id].target}`}
-                  </Text>
-                </>
-              ) : null}
-            </TouchableOpacity>
-          ))}
-        </View>
-
+        {/* ── Stats Row ──────────────────────────────────────────── */}
         <View style={styles.statsRow}>
           <View style={styles.statBox}>
             <Text style={styles.statNum}>{totalReads}</Text>
             <Text style={styles.statLabel}>{t('statRead', lang)}</Text>
           </View>
           <View style={styles.statBox}>
-            <Text style={styles.statNum}>{badges.filter(b => b.earned).length}</Text>
+            <Text style={styles.statNum}>{earnedBadgesList.length}</Text>
             <Text style={styles.statLabel}>{t('statEarned', lang)}</Text>
           </View>
           <View style={styles.statBox}>
@@ -936,29 +613,86 @@ const ProgressScreen = ({ navigation }) => {
           </View>
         </View>
 
-        <View style={[styles.heatmapCard, { marginTop: 16 }]}> 
-          <Text style={styles.actionTitle}>{t('progressConversationStatTitle', lang)}</Text>
-          <Text style={[styles.actionSub, { marginTop: 4 }]}>
-            {t('progressConversationStatSub', lang)
-              .replace('{{used}}', String(usedStoriesCount))
-              .replace('{{cats}}', String(usedCategoryCount))}
-          </Text>
+        {/* ── Heatmap + KPIs ─────────────────────────────────────── */}
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionLabel}>{t('readingHabit', lang)}</Text>
         </View>
-      </ScrollView>
-
-      {showCelebration && (
-        <View style={styles.celebrationOverlay} pointerEvents="none">
-          <Animated.View style={[{ alignItems: 'center' }, animatedBadgeStyle]}>
-            <View style={styles.congratsCircle}>
-              <Text style={{ fontSize: 48 }}>🏆</Text>
+        <View style={styles.heatmapCard}>
+          <View style={styles.heatmapKpiRow}>
+            <View style={styles.heatmapKpi}>
+              <Text style={styles.heatmapKpiNum}>{activeDaysCount}</Text>
+              <Text style={styles.heatmapKpiLabel}>{t('heatmapReadingDays', lang)}</Text>
             </View>
-            <Text style={styles.congratsTitle}>{t('congratsTitle', lang)}</Text>
-            <Text style={styles.congratsSub}>{t('congratsSub', lang)}</Text>
-          </Animated.View>
+            <View style={styles.heatmapKpi}>
+              <Text style={styles.heatmapKpiNum}>{longestStreak}</Text>
+              <Text style={styles.heatmapKpiLabel}>{t('longestStreak', lang)}</Text>
+            </View>
+          </View>
+          <View style={styles.heatmapGrid}>
+            {heatmapData.map(item => (
+              <View
+                key={item.id}
+                style={[
+                  styles.heatmapSquare,
+                  {
+                    backgroundColor: item.level === 0 ? `${colors.backgroundDark}88` :
+                                     item.level === 1 ? '#DBCFA7' :
+                                     item.level === 2 ? colors.primary : '#8B6A30',
+                  },
+                ]}
+              />
+            ))}
+          </View>
+          <View style={styles.heatmapLegend}>
+            <Text style={styles.heatmapLegendText}>{t('less', lang)}</Text>
+            <View style={[styles.heatmapSquare, { backgroundColor: colors.backgroundDark, marginHorizontal: 4 }]} />
+            <View style={[styles.heatmapSquare, { backgroundColor: colors.primary, marginHorizontal: 4 }]} />
+            <View style={[styles.heatmapSquare, { backgroundColor: '#8B6A30', marginHorizontal: 4 }]} />
+            <Text style={styles.heatmapLegendText}>{t('more', lang)}</Text>
+          </View>
         </View>
-      )}
+
+        {/* ── Badge Collection (Near / Earned / Locked) ──────────── */}
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionLabel}>{t('achievementBadges', lang)}</Text>
+        </View>
+
+        {nearBadges.length > 0 && (
+          <>
+            <View style={styles.badgeGroupHeader}>
+              <Text style={styles.badgeGroupLabel}>{t('badgesGroupNear', lang)}</Text>
+            </View>
+            <View style={styles.badgeContainer}>
+              {nearBadges.map(b => renderBadgeItem(b, { current: b.current, target: b.target }))}
+            </View>
+          </>
+        )}
+
+        {earnedBadgesList.length > 0 && (
+          <>
+            <View style={styles.badgeGroupHeader}>
+              <Text style={styles.badgeGroupLabel}>{t('badgesGroupEarned', lang)}</Text>
+            </View>
+            <View style={styles.badgeContainer}>
+              {earnedBadgesList.map(b => renderBadgeItem(b, null))}
+            </View>
+          </>
+        )}
+
+        {lockedBadges.length > 0 && (
+          <>
+            <View style={styles.badgeGroupHeader}>
+              <Text style={styles.badgeGroupLabel}>{t('badgesGroupLocked', lang)}</Text>
+            </View>
+            <View style={styles.badgeContainer}>
+              {lockedBadges.map(b => renderBadgeItem(b, badgeProgressMeta[b.id] || null))}
+            </View>
+          </>
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 };
 
 export default ProgressScreen;
+

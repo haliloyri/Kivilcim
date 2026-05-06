@@ -70,6 +70,32 @@ High-impact checks:
 4. If changing DB schema/seed behavior, verify boot flow still succeeds via [App.js](App.js) + [src/db/db.js](src/db/db.js).
 5. If changing copy/locale behavior, validate both Turkish and English keys are present.
 
+## Available Agents
+Custom agents in `.github/agents/`:
+
+| Agent | Purpose |
+|-------|---------|
+| **Spark Bugfix Specialist** | Fix TODO_BUGS items: UI polish, localization, state/persistence, Android behavior |
+| **Explore** | Fast read-only codebase exploration and Q&A |
+| **RN UI Developer** | Create/modify screens, components, navigation with proper patterns |
+| **i18n Manager** | Add/update/audit translation keys across all 4 languages (en, tr, es, de) |
+
+## Available Skills
+Custom skills in `.github/skills/`:
+
+| Skill | Trigger |
+|-------|---------|
+| **build-apk** | `apk build et`, `release apk al`, `android build yap` |
+| **push-to-main** | `main'e push et`, `github'a gönder` |
+| **quick-main-checkin** | `checkin yap`, `hızlı commit`, `quick commit` |
+| **add-screen** | `yeni ekran ekle`, `ekran oluştur`, `create new screen` |
+| **add-component** | `bileşen ekle`, `component oluştur`, `create component` |
+| **add-translation** | `çeviri ekle`, `translation ekle`, `i18n key ekle` |
+| **run-android** | `android çalıştır`, `android aç`, `run android` |
+| **run-ios** | `ios çalıştır`, `simulatörde aç`, `run ios` |
+| **expo-prebuild** | `prebuild yap`, `native güncelle`, `expo prebuild` |
+| **db-migration** | `veritabanı değiştir`, `tablo ekle`, `schema güncelle` |
+
 ## Prefer Links, Not Duplication
 This file is intentionally concise. For detailed operational steps and troubleshooting:
 - Android build details: [ANDROID_APK_REHBERI.md](ANDROID_APK_REHBERI.md)

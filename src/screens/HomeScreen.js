@@ -1003,8 +1003,9 @@ const HomeScreen = ({ navigation }) => {
     },
     featuredCategoryLabel: {
       position: 'absolute',
+      top: 8,
+      left: 8,
       right: 8,
-      bottom: 8,
       borderWidth: 1,
       borderColor: 'rgba(255,255,255,0.66)',
       borderRadius: 8,
@@ -1012,7 +1013,7 @@ const HomeScreen = ({ navigation }) => {
       paddingHorizontal: 8,
       paddingVertical: 4,
       color: '#FFFFFF',
-      textAlign: 'right',
+      textAlign: 'center',
       fontFamily: 'Inter_600SemiBold',
       fontSize: 11,
     },
@@ -1065,8 +1066,10 @@ const HomeScreen = ({ navigation }) => {
       borderWidth: 1,
       borderColor: colors.border,
       backgroundColor: colors.primaryContainer,
-      paddingVertical: 9,
-      paddingHorizontal: 6,
+      paddingVertical: 7,
+      paddingHorizontal: 14,
+      minWidth: 140,
+      alignSelf: 'center',
       alignItems: 'center',
     },
     featuredCardUseBtnText: {
@@ -1458,6 +1461,7 @@ const HomeScreen = ({ navigation }) => {
                             </View>
                           )}
                           <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint || 'transparent' }]} />
+                          <Text numberOfLines={1} style={styles.featuredCategoryLabel}>{displayCat}</Text>
                         </View>
                         {isRead && <Ionicons name="checkmark-circle" size={18} color={colors.primary} style={{ position: 'absolute', top: 0, right: 0 }} />}
                         {isLocked && (

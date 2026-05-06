@@ -185,7 +185,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       marginHorizontal: isVerySmallPhone ? 6 : 8,
     },
     readyRight: {
-      width: isVerySmallPhone ? 93 : isSmallPhone ? 111 : 144,
+      width: isVerySmallPhone ? 104 : isSmallPhone ? 122 : 158,
       alignItems: 'flex-end',
       justifyContent: 'space-between',
       alignSelf: 'stretch',
@@ -200,8 +200,8 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       marginBottom: isVerySmallPhone ? 8 : 12,
     },
     readyActionBtn: {
-      paddingVertical: isVerySmallPhone ? 11 : 15,
-      paddingHorizontal: isVerySmallPhone ? 9 : isSmallPhone ? 12 : 18,
+      paddingVertical: isVerySmallPhone ? 10 : 13,
+      paddingHorizontal: isVerySmallPhone ? 6 : isSmallPhone ? 8 : 10,
       borderRadius: 14,
       borderWidth: 1,
       borderColor: isDark ? 'rgba(246,237,225,0.56)' : 'rgba(62,47,36,0.28)',
@@ -212,7 +212,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     readyActionText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: isVerySmallPhone ? 15 : isSmallPhone ? 16.5 : 18,
+      fontSize: isVerySmallPhone ? 12 : isSmallPhone ? 13 : 14,
       color: isDark ? '#F6EDE1' : '#3E2F24',
       textAlign: 'center',
     },

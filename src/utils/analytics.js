@@ -22,6 +22,9 @@ const ANALYTICS_EVENTS = {
   MICRO_VARIANT_COPIED: 'micro_variant_copied',
   MICRO_VARIANT_FAVORITED: 'micro_variant_favorited',
   STORY_VARIANT_USED: 'story_variant_used',
+  STORYTELLER_MODE_OPENED: 'storyteller_mode_opened',
+  STORYTELLER_PRACTICE_COMPLETED: 'storyteller_practice_completed',
+  SOCIAL_SHARE_PLATFORM: 'social_share_platform',
 };
 
 const sanitizePayload = (payload) => {

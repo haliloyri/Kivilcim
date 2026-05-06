@@ -2,8 +2,10 @@
  * UseInConversationScreen
  *
  * "Use in Conversation" screen — shows ready-made micro-variants of a story
- * (Punchline, 30-Second, Question, Key Contrast) so the user can
- * quickly copy or share the right format for any social context.
+ * (Punchline, 30-Second, Question, Key Contrast) so the user can quickly
+ * share on their preferred platform or practice telling it.
+ *
+ * All variants are free. Premium gates: Storyteller Mode + Instagram visual card.
  *
  * Receives: route.params.story  (same shape as StoryDetailScreen)
  */
@@ -20,7 +22,6 @@ import {
   StatusBar,
   Share,
   Animated,
-  Modal,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -29,6 +30,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import MicroVariantCard from '../components/MicroVariantCard';
+import StorytellerOverlay from '../components/StorytellerOverlay';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
 // Enable LayoutAnimation on Android
@@ -118,12 +120,33 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
   return `${hook}\n\n${body || storyTitle}\n\n${copy.engage}\n\n${hashtags}`;
 };
 
-const getUsageVariantKey = (storyId, variantId) => `${String(storyId)}:${String(variantId)}`;
+/** Truncate a string to maxLen, breaking at word boundary */
+const truncate = (str, maxLen) => {
+  if (!str || str.length <= maxLen) return str;
+  const cut = str.lastIndexOf(' ', maxLen);
+  return str.substring(0, cut > 0 ? cut : maxLen) + '…';
+};
 
-/**
- * Build the variant list from a story object.
- * Variants with empty body are excluded so the list is always clean.
- */
+/** Build platform-specific share text with appropriate length limits */
+const buildShareForPlatform = ({ story, variant, lang, categoryLabel, platform }) => {
+  const base = buildVariantShareMessage({ story, variant, lang, categoryLabel });
+  const limits = { x: 280, threads: 500, linkedin: 3000, whatsapp: null, native: null };
+  const limit = limits[platform] ?? null;
+  if (!limit) return base;
+  return truncate(base, limit);
+};
+
+/** Map variant type → share preset name used by StoryDetailScreen's share modal */
+const mapVariantToPreset = (variant) => {
+  switch (variant?.type) {
+    case 'PUNCHLINE':  return 'quote';
+    case 'THIRTY_SEC': return 'story';
+    case 'QUESTION':   return 'post';
+    default:           return 'post';
+  }
+};
+
+const getUsageVariantKey = (storyId, variantId) => `${String(storyId)}:${String(variantId)}`;
 const buildMicroVariants = (story, lang) => {
   const body = story.body || '';
   const quote      = extractMarker(body, '##');
@@ -180,13 +203,16 @@ const buildMicroVariants = (story, lang) => {
 const UseInConversationScreen = ({ route, navigation }) => {
   const { story } = route.params;
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { isPremium, recordVariantUsage, removeVariantUsage, variantUsage } = useUserData();
+  const { isPremium, recordVariantUsage, removeVariantUsage, variantUsage, incrementShareCount } = useUserData();
   const insets = useSafeAreaInsets();
 
   const variants = useMemo(
     () => buildMicroVariants(story, lang),
     [story, lang],
   );
+
+  // ── displayCat declared BEFORE any callbacks that use it ─────────────────
+  const displayCat = t(story.parent_cat || story.cat || '', lang);
 
   // Accordion open/close state
   const [expandedIds, setExpandedIds] = useState(() => {
@@ -195,7 +221,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
     return init;
   });
 
-  // Track screen open as a success signal
+  // Track screen open
   useEffect(() => {
     trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
       storyId: story?.story_id,
@@ -205,16 +231,12 @@ const UseInConversationScreen = ({ route, navigation }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // The last-touched variant is selected
   const [selectedId, setSelectedId] = useState(
     () => variants.find(v => v.defaultExpanded)?.id ?? variants[0]?.id ?? null,
   );
-
-  // Shows copied checkmark for 2s
   const [copiedId, setCopiedId] = useState(null);
   const [copyToastVisible, setCopyToastVisible] = useState(false);
-  const [ratingVariant, setRatingVariant] = useState(null);
-  const [ratingValue, setRatingValue] = useState(0);
+  const [showStorytellerFor, setShowStorytellerFor] = useState(null);
   const [markedUsedIds, setMarkedUsedIds] = useState(() => {
     const storyId = String(story?.story_id);
     return new Set(
@@ -223,17 +245,10 @@ const UseInConversationScreen = ({ route, navigation }) => {
         .map(item => item.variantKey || getUsageVariantKey(item.storyId, item.variantId))
     );
   });
-  const [modalMarked, setModalMarked] = useState(false);
-  const [initialModalMarked, setInitialModalMarked] = useState(false);
   const toastAnim = React.useRef(new Animated.Value(0)).current;
 
-  // Variant IDs that are premium-locked (all except PUNCHLINE)
-  const lockedIds = useMemo(() => {
-    if (isPremium) return new Set();
-    return new Set(
-      variants.filter(v => v.type !== 'PUNCHLINE').map(v => v.id),
-    );
-  }, [variants, isPremium]);
+  // All variants are free now — lockedIds is always empty
+  const lockedIds = useMemo(() => new Set(), []);
 
   const handlePremiumTap = useCallback(() => {
     trackEvent(ANALYTICS_EVENTS.PAYWALL_VIEWED, {
@@ -241,7 +256,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
       storyId: story?.story_id,
       lang,
     });
-    navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'locked_variant' });
+    navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
   }, [navigation, story?.story_id, lang]);
 
   const toggleExpanded = useCallback((id) => {
@@ -252,7 +267,6 @@ const UseInConversationScreen = ({ route, navigation }) => {
 
   const handleCopy = useCallback(async (variant) => {
     setSelectedId(variant.id);
-    // expo-clipboard is already a dep; lazy-require avoids import order issues
     const Clipboard = require('expo-clipboard');
     await Clipboard.setStringAsync(variant.body);
     setCopiedId(variant.id);
@@ -277,15 +291,34 @@ const UseInConversationScreen = ({ route, navigation }) => {
       Animated.delay(1300),
       Animated.timing(toastAnim, { toValue: 0, duration: 220, useNativeDriver: true }),
     ]).start(() => setCopyToastVisible(false));
-  }, [story?.story_id, story?.title, lang, recordVariantUsage]);
+  }, [story?.story_id, story?.title, lang, recordVariantUsage, toastAnim]);
 
-  const handleShare = useCallback(async (variant) => {
+  const handleSharePlatform = useCallback(async (variant, platform) => {
     setSelectedId(variant.id);
-    const payload = buildVariantShareMessage({
+
+    // Instagram → navigate to StoryDetail share modal
+    if (platform === 'instagram') {
+      navigation.navigate('StoryDetail', {
+        story,
+        openShareModal: true,
+        sharePreset: mapVariantToPreset(variant),
+        sourceScreen: 'use_in_conversation',
+      });
+      trackEvent(ANALYTICS_EVENTS.SOCIAL_SHARE_PLATFORM, {
+        platform: 'instagram',
+        storyId: story?.story_id,
+        variantType: variant.type,
+        lang,
+      });
+      return;
+    }
+
+    const payload = buildShareForPlatform({
       story,
       variant,
       lang,
       categoryLabel: displayCat,
+      platform,
     });
 
     try {
@@ -293,15 +326,14 @@ const UseInConversationScreen = ({ route, navigation }) => {
         message: payload,
         title: story?.title || t('mv_screen_title', lang),
       });
-      trackEvent(ANALYTICS_EVENTS.STORY_SHARED, {
-        source: 'use_in_conversation',
+      trackEvent(ANALYTICS_EVENTS.SOCIAL_SHARE_PLATFORM, {
+        platform,
         storyId: story?.story_id,
         variantType: variant.type,
-        variantId: variant.id,
         lang,
       });
+      incrementShareCount?.();
     } catch (error) {
-      // Ignore user-cancelled share actions
       if (error?.message && /cancel|dismiss/i.test(error.message)) return;
       console.warn('Native share failed', error);
     }
@@ -312,65 +344,69 @@ const UseInConversationScreen = ({ route, navigation }) => {
       storyCategory: story?.parent_cat || story?.cat || null,
       variantType: variant.type,
       variantId: variant.id,
-      action: 'share_native',
+      action: `share_${platform}`,
     });
-  }, [story, story?.story_id, story?.title, lang, displayCat, recordVariantUsage]);
+  }, [story, displayCat, lang, navigation, recordVariantUsage, incrementShareCount]);
 
-  const openMarkUsedSurvey = useCallback((variant) => {
+  const handleMarkUsed = useCallback(async (variant) => {
     const variantKey = getUsageVariantKey(story?.story_id, variant.id);
-    const existingUsage = (variantUsage || []).find(
-      item => String(item.storyId) === String(story?.story_id)
-        && item.action === 'mark_used'
-        && (item.variantKey === variantKey || item.variantId === variant.id)
-    );
-    setSelectedId(variant.id);
-    setRatingVariant(variant);
-    setRatingValue(Number(existingUsage?.feedbackRating) || 0);
     const wasMarked = markedUsedIds.has(variantKey);
-    setModalMarked(wasMarked);
-    setInitialModalMarked(wasMarked);
-  }, [markedUsedIds, story?.story_id, variantUsage]);
 
-  const closeMarkUsedSurvey = useCallback(async () => {
-    if (!ratingVariant) return;
-
-    const variantKey = getUsageVariantKey(story?.story_id, ratingVariant.id);
-
-    if (modalMarked && !initialModalMarked) {
-      // Yeni işaretlendi → kaydet, sayaç artar
+    if (!wasMarked) {
+      setMarkedUsedIds(prev => new Set([...prev, variantKey]));
       await recordVariantUsage({
         storyId: story?.story_id,
         storyTitle: story?.title,
         storyCategory: story?.parent_cat || story?.cat || null,
-        variantType: ratingVariant.type,
-        variantId: ratingVariant.id,
+        variantType: variant.type,
+        variantId: variant.id,
         variantKey,
         action: 'mark_used',
-        feedbackRating: ratingValue || null,
       });
-      setMarkedUsedIds(prev => new Set([...prev, variantKey]));
-    } else if (!modalMarked && initialModalMarked) {
-      // Vazgeçildi → sil, sayaç azalır
-      await removeVariantUsage({
-        storyId: story?.story_id,
-        variantId: ratingVariant.id,
-        variantKey,
-      });
+    } else {
       setMarkedUsedIds(prev => {
         const next = new Set(prev);
         next.delete(variantKey);
         return next;
       });
+      await removeVariantUsage({
+        storyId: story?.story_id,
+        variantId: variant.id,
+        variantKey,
+      });
     }
-    // modalMarked === initialModalMarked ise değişiklik yok
+  }, [markedUsedIds, story, recordVariantUsage, removeVariantUsage]);
 
-    setRatingVariant(null);
-    setRatingValue(0);
-    setModalMarked(false);
-    setInitialModalMarked(false);
-  }, [ratingVariant, ratingValue, modalMarked, initialModalMarked, recordVariantUsage, removeVariantUsage, story?.story_id, story?.title, story?.parent_cat, story?.cat]);
+  const handleStorytellerOpen = useCallback((variant) => {
+    setShowStorytellerFor(variant);
+    trackEvent(ANALYTICS_EVENTS.STORYTELLER_MODE_OPENED, {
+      storyId: story?.story_id,
+      variantType: variant?.type,
+      lang,
+    });
+  }, [story?.story_id, lang]);
 
-  const displayCat = t(story.parent_cat || story.cat || '', lang);
+  const handleStorytellerDone = useCallback(async () => {
+    if (!showStorytellerFor) return;
+    const variant = showStorytellerFor;
+    const variantKey = getUsageVariantKey(story?.story_id, variant.id);
+    setMarkedUsedIds(prev => new Set([...prev, variantKey]));
+    await recordVariantUsage({
+      storyId: story?.story_id,
+      storyTitle: story?.title,
+      storyCategory: story?.parent_cat || story?.cat || null,
+      variantType: variant.type,
+      variantId: variant.id,
+      variantKey,
+      action: 'mark_used',
+    });
+    trackEvent(ANALYTICS_EVENTS.STORYTELLER_PRACTICE_COMPLETED, {
+      storyId: story?.story_id,
+      variantType: variant.type,
+      lang,
+    });
+    setShowStorytellerFor(null);
+  }, [showStorytellerFor, story, recordVariantUsage, lang]);
 
   const styles = buildStyles(colors, typography, layout, isDark, insets);
 
@@ -436,7 +472,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
         <Text style={styles.readyBannerText}>{t('mv_ready_banner', lang)}</Text>
       </View>
 
-      {/* ── Context Note (moved subtitle) ─────────────────────────────── */}
+      {/* ── Context Note ─────────────────────────────────────────────── */}
       <View style={styles.contextNote}>
         <Ionicons name="sparkles-outline" size={14} color={colors.textSecondary} />
         <Text style={styles.contextNoteText}>{t('mv_screen_sub', lang)}</Text>
@@ -459,8 +495,9 @@ const UseInConversationScreen = ({ route, navigation }) => {
             locked={lockedIds.has(variant.id)}
             onToggle={() => toggleExpanded(variant.id)}
             onCopy={() => handleCopy(variant)}
-            onShare={() => handleShare(variant)}
-            onMarkUsed={() => openMarkUsedSurvey(variant)}
+            onSharePlatform={(platform) => handleSharePlatform(variant, platform)}
+            onMarkUsed={() => handleMarkUsed(variant)}
+            onStoryteller={() => handleStorytellerOpen(variant)}
             onPremiumTap={handlePremiumTap}
             colors={colors}
             typography={typography}
@@ -473,6 +510,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
         <View style={{ height: insets.bottom + 32 }} />
       </ScrollView>
 
+      {/* ── Copy toast ───────────────────────────────────────────────── */}
       {copyToastVisible && (
         <Animated.View
           style={[
@@ -489,58 +527,20 @@ const UseInConversationScreen = ({ route, navigation }) => {
         </Animated.View>
       )}
 
-      <Modal
-        visible={Boolean(ratingVariant)}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setRatingVariant(null)}
-      >
-        <View style={styles.feedbackOverlay}>
-          <View style={styles.feedbackCard}>
-            <Text style={styles.feedbackTitle}>{t('mv_feedback_title', lang)}</Text>
-            <Text style={styles.feedbackSub}>
-              {ratingVariant ? ratingVariant.title : ''}
-            </Text>
-            <View style={styles.feedbackStars}>
-              {[1, 2, 3, 4, 5].map((star) => (
-                <TouchableOpacity
-                  key={star}
-                  onPress={() => setRatingValue(star)}
-                  style={styles.feedbackStarBtn}
-                >
-                  <Ionicons
-                    name={star <= ratingValue ? 'star' : 'star-outline'}
-                    size={24}
-                    color={star <= ratingValue ? '#C98A19' : colors.textSecondary}
-                  />
-                </TouchableOpacity>
-              ))}
-            </View>
-            <TouchableOpacity
-              style={[
-                styles.feedbackMarkUsedToggle,
-                modalMarked
-                  ? { borderColor: colors.primary, backgroundColor: isDark ? 'transparent' : `${colors.primary}15` }
-                  : { borderColor: colors.border, backgroundColor: isDark ? colors.backgroundDark : 'transparent' },
-              ]}
-              onPress={() => setModalMarked(prev => !prev)}
-            >
-              {modalMarked && <Ionicons name="checkmark" size={16} color={colors.primary} />}
-              <Text style={[styles.feedbackMarkUsedText, { color: modalMarked ? colors.primary : colors.text }]}>
-                {t('mv_mark_used', lang)}
-              </Text>
-            </TouchableOpacity>
-            <View style={styles.feedbackActions}>
-              <TouchableOpacity onPress={() => { setRatingVariant(null); setRatingValue(0); setModalMarked(false); setInitialModalMarked(false); }} style={styles.feedbackSecondaryBtn}>
-                <Text style={styles.feedbackSecondaryText}>{t('profileCancel', lang)}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={closeMarkUsedSurvey} style={styles.feedbackPrimaryBtn}>
-                <Text style={styles.feedbackPrimaryText}>{t('badgeModalClose', lang)}</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
+      {/* ── Storyteller Overlay ──────────────────────────────────────── */}
+      <StorytellerOverlay
+        visible={!!showStorytellerFor}
+        story={story}
+        variant={showStorytellerFor}
+        isPremium={isPremium}
+        onClose={() => setShowStorytellerFor(null)}
+        onDone={handleStorytellerDone}
+        onPremiumTap={handlePremiumTap}
+        colors={colors}
+        layout={layout}
+        isDark={isDark}
+        lang={lang}
+      />
     </SafeAreaView>
   );
 };
@@ -685,80 +685,6 @@ const buildStyles = (colors, typography, layout, isDark, insets) =>
       fontFamily: 'Inter_500Medium',
       fontSize: 12,
       color: isDark ? colors.text : '#2E5F37',
-    },
-    feedbackOverlay: {
-      flex: 1,
-      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.25)',
-      justifyContent: 'flex-end',
-      padding: 16,
-    },
-    feedbackCard: {
-      backgroundColor: colors.background,
-      borderRadius: 18,
-      borderWidth: 1,
-      borderColor: colors.border,
-      padding: 16,
-    },
-    feedbackTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 22,
-      color: colors.text,
-    },
-    feedbackSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      color: colors.textSecondary,
-      marginTop: 4,
-      marginBottom: 12,
-    },
-    feedbackStars: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      marginBottom: 14,
-    },
-    feedbackStarBtn: {
-      padding: 6,
-    },
-    feedbackActions: {
-      flexDirection: 'row',
-      justifyContent: 'flex-end',
-      gap: 10,
-      marginTop: 2,
-    },
-    feedbackSecondaryBtn: {
-      paddingHorizontal: 10,
-      paddingVertical: 8,
-    },
-    feedbackSecondaryText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 13,
-      color: colors.textSecondary,
-    },
-    feedbackPrimaryBtn: {
-      borderRadius: 10,
-      backgroundColor: colors.primary,
-      paddingHorizontal: 12,
-      paddingVertical: 8,
-    },
-    feedbackPrimaryText: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
-      color: colors.onPrimary,
-    },
-    feedbackMarkUsedToggle: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 6,
-      paddingHorizontal: 14,
-      paddingVertical: 9,
-      borderRadius: 20,
-      borderWidth: 1,
-      alignSelf: 'flex-start',
-      marginBottom: 12,
-    },
-    feedbackMarkUsedText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 13,
     },
   });
 

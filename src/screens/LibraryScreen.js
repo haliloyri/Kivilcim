@@ -9,7 +9,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
-import StoryRowCard from '../components/StoryRowCard';
+import StoryCard from '../components/StoryCard';
 
 const LibraryScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
@@ -356,9 +356,10 @@ const LibraryScreen = ({ navigation }) => {
 
         <View style={styles.listWrap}>
           {collectionStories.length > 0 ? collectionStories.map(story => (
-            <StoryRowCard
+            <StoryCard
               key={`${activeCollection}-${story.story_id}`}
               story={story}
+              type="ready"
               isRead={(readCountsByStory?.[String(story.story_id)] || 0) > 0}
               onPress={() => navigation.navigate('StoryDetail', { story })}
               onUseInConversation={() => navigation.navigate('UseInConversation', { story })}

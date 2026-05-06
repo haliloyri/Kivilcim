@@ -7,18 +7,20 @@
  * THIRTY_SEC / QUESTION / ONE_WORD have a collapse-able accordion.
  *
  * Props:
- *   variant        – { id, type, title, body, toneTag? }
- *   isExpanded     – accordion state (parent manages it)
- *   isSelected     – border highlight when this card was last touched
- *   isCopied       – shows ✓ checkmark for 2 s after copy
- *   onToggle()     – called when the header row is pressed
- *   onCopy()       – called when the Copy button is pressed
- *   onShare()      – called when the Share button is pressed
- *   onMarkUsed()   – called when the Mark as Used button is pressed
+ *   variant         – { id, type, title, body, toneTag?, useCaseTag? }
+ *   isExpanded      – accordion state (parent manages it)
+ *   isSelected      – border highlight when this card was last touched
+ *   isCopied        – shows ✓ checkmark for 2 s after copy
+ *   isMarkedUsed    – toggle state
+ *   onToggle()      – called when the header row is pressed
+ *   onCopy()        – called when the Copy button is pressed
+ *   onSharePlatform(platform) – platform: 'x'|'threads'|'linkedin'|'whatsapp'|'instagram'|'native'
+ *   onMarkUsed()    – single-tap toggle
+ *   onStoryteller() – open storyteller overlay
  *   colors / typography / layout / isDark / lang  – from ThemeContext
  */
 import React, { useCallback } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
 
@@ -48,6 +50,16 @@ const TYPE_ICON = {
  */
 const ALWAYS_EXPANDED_TYPES = new Set(['PUNCHLINE']);
 
+/** Platform pills config (order matters for display) */
+const PLATFORMS = [
+  { key: 'x',        icon: 'logo-twitter',    i18nKey: 'mv_share_on_x' },
+  { key: 'threads',  icon: 'at-circle-outline', i18nKey: 'mv_share_on_threads' },
+  { key: 'linkedin', icon: 'logo-linkedin',   i18nKey: 'mv_share_on_linkedin' },
+  { key: 'whatsapp', icon: 'logo-whatsapp',   i18nKey: 'mv_share_on_whatsapp' },
+  { key: 'instagram',icon: 'logo-instagram',  i18nKey: 'mv_share_on_instagram' },
+  { key: 'native',   icon: 'share-social-outline', i18nKey: 'mv_share_native' },
+];
+
 // ─── component ───────────────────────────────────────────────────────────────
 
 const MicroVariantCard = ({
@@ -59,8 +71,9 @@ const MicroVariantCard = ({
   locked,
   onToggle,
   onCopy,
-  onShare,
+  onSharePlatform,
   onMarkUsed,
+  onStoryteller,
   onPremiumTap,
   colors,
   typography,
@@ -74,13 +87,13 @@ const MicroVariantCard = ({
   const bodyVisible = alwaysExpanded || isExpanded;
 
   const handleLongPress = useCallback(async () => {
-    if (!alwaysExpanded || locked) return;
+    if (!alwaysExpanded) return;
     try {
       const Haptics = require('expo-haptics');
       await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     } catch (_) {}
     onCopy();
-  }, [alwaysExpanded, locked, onCopy]);
+  }, [alwaysExpanded, onCopy]);
 
   const styles = buildStyles(colors, typography, layout, isDark, accent, isSelected);
 
@@ -90,8 +103,8 @@ const MicroVariantCard = ({
       {/* ── Header row (tappable) ────────────────────────────────────── */}
       <TouchableOpacity
         style={styles.header}
-        onPress={locked ? onPremiumTap : onToggle}
-        onLongPress={alwaysExpanded && !locked ? handleLongPress : undefined}
+        onPress={onToggle}
+        onLongPress={alwaysExpanded ? handleLongPress : undefined}
         delayLongPress={380}
         activeOpacity={0.7}
         accessibilityRole="button"
@@ -101,37 +114,21 @@ const MicroVariantCard = ({
         <View style={styles.headerLeft}>
           {/* Coloured icon badge */}
           <View style={[styles.iconCircle, { backgroundColor: `${accent}22` }]}>
-            <Ionicons name={locked ? 'lock-closed' : iconName} size={15} color={accent} />
+            <Ionicons name={iconName} size={15} color={accent} />
           </View>
 
           <View style={styles.headerText}>
             <Text style={styles.variantTitle}>{variant.title}</Text>
-            {locked ? (
-              <Text style={styles.lockedTag}>{t('mv_premium_locked', lang)}</Text>
+            {variant.useCaseTag ? (
+              <Text style={styles.toneTag}>{variant.useCaseTag}</Text>
             ) : variant.toneTag ? (
               <Text style={styles.toneTag}>{variant.toneTag}</Text>
             ) : null}
           </View>
         </View>
 
-        {/* Context usage tags */}
-        {variant.contextTags && variant.contextTags.length > 0 && (
-          <View style={styles.contextRow}>
-            {variant.contextTags.map((tag) => (
-              <View key={tag} style={[styles.contextTag, { borderColor: `${accent}55`, backgroundColor: `${accent}12` }]}>
-                <Text style={[styles.contextTagText, { color: accent }]}>{tag}</Text>
-              </View>
-            ))}
-          </View>
-        )}
-
-        {/* Lock badge or chevron */}
-        {locked ? (
-          <View style={styles.premiumBadge}>
-            <Ionicons name="sparkles" size={11} color="#E8A838" />
-            <Text style={styles.premiumBadgeText}>Premium</Text>
-          </View>
-        ) : !alwaysExpanded ? (
+        {/* Chevron */}
+        {!alwaysExpanded ? (
           <Ionicons
             name={isExpanded ? 'chevron-up' : 'chevron-down'}
             size={16}
@@ -140,33 +137,32 @@ const MicroVariantCard = ({
         ) : null}
       </TouchableOpacity>
 
-      {/* ── Locked body overlay ───────────────────────────────────────── */}
-      {locked && bodyVisible && (
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={onPremiumTap}
-          style={styles.lockedBody}
-        >
-          <View style={styles.divider} />
-          <View style={styles.blurredContent}>
-            <Text style={styles.blurredText} numberOfLines={3}>
-              {variant.body}
-            </Text>
-            <View style={styles.blurOverlay} />
-          </View>
-          <View style={styles.unlockRow}>
-            <Ionicons name="lock-closed" size={14} color="#E8A838" />
-            <Text style={styles.unlockText}>{t('mv_unlock_premium', lang)}</Text>
-          </View>
-        </TouchableOpacity>
-      )}
-
-      {/* ── Body + Actions (unlocked) ────────────────────────────────── */}
-      {!locked && bodyVisible && (
+      {/* ── Body + Actions ───────────────────────────────────────────── */}
+      {bodyVisible && (
         <>
           <View style={styles.divider} />
 
           <Text style={styles.body}>{variant.body}</Text>
+
+          {/* Platform share pills */}
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.pillsRow}
+          >
+            {PLATFORMS.map(p => (
+              <TouchableOpacity
+                key={p.key}
+                style={styles.platformPill}
+                onPress={() => onSharePlatform(p.key)}
+                accessibilityRole="button"
+                accessibilityLabel={t(p.i18nKey, lang)}
+              >
+                <Ionicons name={p.icon} size={13} color={accent} />
+                <Text style={[styles.pillText, { color: accent }]}>{t(p.i18nKey, lang)}</Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
 
           <View style={styles.actionsContainer}>
             <View style={styles.actions}>
@@ -187,19 +183,19 @@ const MicroVariantCard = ({
                 </Text>
               </TouchableOpacity>
 
-              {/* Share button */}
+              {/* Storyteller button */}
               <TouchableOpacity
                 style={[styles.actionBtn, styles.actionBtnFlex]}
-                onPress={onShare}
+                onPress={onStoryteller}
                 accessibilityRole="button"
-                accessibilityLabel={t('shareBtn', lang)}
+                accessibilityLabel={t('mv_storyteller_cta', lang)}
               >
-                <Ionicons name="share-social-outline" size={15} color={colors.text} />
-                <Text style={styles.actionBtnText}>{t('shareBtn', lang)}</Text>
+                <Text style={{ fontSize: 14 }}>🎤</Text>
+                <Text style={styles.actionBtnText}>{t('mv_storyteller_cta', lang)}</Text>
               </TouchableOpacity>
             </View>
 
-            {/* Mark as Used button - toggle state */}
+            {/* Mark as Used toggle */}
             <TouchableOpacity
               style={[
                 styles.markUsedBtn,
@@ -316,6 +312,27 @@ const buildStyles = (colors, typography, layout, isDark, accent, isSelected) =>
       flexDirection: 'row',
       gap: 8,
     },
+    pillsRow: {
+      paddingHorizontal: 16,
+      paddingVertical: 10,
+      gap: 6,
+      flexDirection: 'row',
+    },
+    platformPill: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+      borderRadius: 999,
+      borderWidth: 1,
+      borderColor: `${accent}44`,
+      backgroundColor: `${accent}0D`,
+    },
+    pillText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+    },
     actionBtn: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -346,63 +363,6 @@ const buildStyles = (colors, typography, layout, isDark, accent, isSelected) =>
       fontFamily: 'Inter_500Medium',
       fontSize: 12,
       color: colors.text,
-    },
-    // Locked / Premium styles
-    lockedTag: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 11,
-      color: '#E8A838',
-      marginTop: 2,
-    },
-    premiumBadge: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 4,
-      paddingHorizontal: 10,
-      paddingVertical: 4,
-      borderRadius: 12,
-      backgroundColor: isDark ? '#3A2E1A' : '#FFF8ED',
-      borderWidth: 1,
-      borderColor: '#E8A83844',
-    },
-    premiumBadgeText: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 10,
-      color: '#E8A838',
-      letterSpacing: 0.3,
-    },
-    lockedBody: {
-      overflow: 'hidden',
-    },
-    blurredContent: {
-      position: 'relative',
-      paddingHorizontal: 16,
-      paddingTop: 14,
-      paddingBottom: 0,
-    },
-    blurredText: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.body,
-      color: colors.text,
-      lineHeight: 26,
-      opacity: 0.15,
-    },
-    blurOverlay: {
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: isDark ? 'rgba(20,18,15,0.7)' : 'rgba(255,255,255,0.7)',
-    },
-    unlockRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 6,
-      paddingVertical: 14,
-      paddingHorizontal: 16,
-    },
-    unlockText: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
-      color: '#E8A838',
     },
   });
 
