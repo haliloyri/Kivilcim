@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { View, StyleSheet, Animated, Image, ActivityIndicator, Dimensions } from 'react-native';
+import { View, StyleSheet, Animated, Image, ActivityIndicator, Dimensions, useColorScheme } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const LANGUAGE_LOGO = require('../../assets/spark_logo_de.png');
+const LIGHT_LOGO = require('../../assets/spark_logo.png');
+const DARK_LOGO = require('../../assets/spark_logo_dark.png');
 
 /**
  * Returns logo size based on screen dimensions.
@@ -18,10 +19,12 @@ const getLogoSize = () => {
 };
 
 const LaunchScreen = () => {
+  const colorScheme = useColorScheme();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.95)).current;
 
   const logoSize = getLogoSize();
+  const logoSource = colorScheme === 'dark' ? DARK_LOGO : LIGHT_LOGO;
 
   useEffect(() => {
     Animated.parallel([
@@ -50,7 +53,7 @@ const LaunchScreen = () => {
         ]}
       >
         <Image
-          source={LANGUAGE_LOGO}
+          source={logoSource}
           style={{ width: logoSize, height: logoSize }}
           resizeMode="contain"
         />

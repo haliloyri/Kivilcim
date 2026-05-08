@@ -278,25 +278,46 @@ const ProgressScreen = ({ navigation }) => {
       backgroundColor: colors.backgroundDark,
       borderRadius: layout.radius.card,
       marginHorizontal: layout.padding.horizontal,
-      padding: 18,
+      padding: 10,
       marginBottom: 12,
+      gap: 8,
     },
-    heroRow: { flexDirection: 'row', alignItems: 'center' },
-    heroStreakBox: { alignItems: 'center', flex: 1, paddingRight: 16 },
-    heroStreakEmoji: { fontSize: 22, marginBottom: 2 },
+    heroTilesRow: { flexDirection: 'row', gap: 8 },
+    heroTile: {
+      flex: 1,
+      backgroundColor: colors.background,
+      borderRadius: 12,
+      borderWidth: layout.borderWidth,
+      borderColor: colors.border,
+      padding: 12,
+    },
+    heroTileHeader: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 5,
+      marginBottom: 8,
+    },
+    heroTileLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 10,
+      color: colors.textSecondary,
+      textTransform: 'uppercase',
+      letterSpacing: 0.8,
+    },
+    heroStreakBox: { alignItems: 'center' },
+    heroStreakEmoji: { fontSize: 0 },
     heroStreakNum: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 44,
+      fontSize: 40,
       color: colors.text,
-      lineHeight: 52,
+      lineHeight: 48,
     },
     heroStreakDays: {
       fontFamily: 'Inter_400Regular',
       fontSize: 12,
       color: colors.textSecondary,
     },
-    heroDivider: { width: 1, height: 72, backgroundColor: colors.border },
-    heroGoalBox: { flex: 1, paddingLeft: 16 },
+    heroGoalBox: {},
     heroGoalLabel: {
       fontFamily: 'Inter_500Medium',
       fontSize: 10,
@@ -327,24 +348,28 @@ const ProgressScreen = ({ navigation }) => {
       gap: 6,
       backgroundColor: `${colors.danger}18`,
       borderRadius: 8,
-      paddingHorizontal: 10,
-      paddingVertical: 6,
-      marginTop: 12,
+      paddingHorizontal: 8,
+      paddingVertical: 5,
+      marginTop: 8,
     },
     heroRiskText: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 12,
+      fontSize: 11,
       color: colors.danger,
       flex: 1,
+    },
+    heroSpotlightTile: {
+      backgroundColor: colors.background,
+      borderRadius: 12,
+      borderWidth: layout.borderWidth,
+      borderColor: colors.border,
+      padding: 12,
     },
     heroSpotlightRow: {
       flexDirection: 'row',
       alignItems: 'center',
       gap: 10,
-      marginTop: 14,
-      paddingTop: 12,
-      borderTopWidth: 1,
-      borderTopColor: colors.border,
+      marginTop: 8,
     },
     heroSpotlightLabel: {
       fontFamily: 'Inter_500Medium',
@@ -502,56 +527,69 @@ const ProgressScreen = ({ navigation }) => {
 
         {/* ── Today Hero Card: Streak + Daily Goal + Spotlight ───── */}
         <View style={styles.heroCard}>
-          <View style={styles.heroRow}>
-            {/* Left: Streak */}
-            <View style={styles.heroStreakBox}>
-              <Text style={styles.heroStreakEmoji}>🔥</Text>
-              <Text style={styles.heroStreakNum}>{streak}</Text>
-              <Text style={styles.heroStreakDays}>{t('streakDays', lang)}</Text>
-            </View>
-            <View style={styles.heroDivider} />
-            {/* Right: Daily Goal */}
-            <View style={styles.heroGoalBox}>
-              <Text style={styles.heroGoalLabel}>{t('dailyGoalTitle', lang)}</Text>
-              <Text style={styles.heroGoalCounter}>{`${dailyProgress}/${dailyTarget}`}</Text>
-              <View style={styles.heroGoalBarTrack}>
-                <View style={[styles.heroGoalBarFill, { width: `${(dailyProgress / dailyTarget) * 100}%` }]} />
+          {/* Row 1: Streak tile + Daily Goal tile side by side */}
+          <View style={styles.heroTilesRow}>
+            {/* Tile 1: Streak */}
+            <View style={styles.heroTile}>
+              <View style={styles.heroTileHeader}>
+                <Ionicons name="flame" size={12} color={colors.textSecondary} />
+                <Text style={styles.heroTileLabel}>{t('streakDays', lang)}</Text>
               </View>
-              {isDailyGoalComplete ? (
-                <Text style={styles.heroCompleteTag}>✓ {t('dailyGoalComplete', lang)}</Text>
-              ) : (
-                <TouchableOpacity onPress={() => navigation.navigate('HomeTab')}>
-                  <Text style={styles.heroReadCta}>{t('progressActionOpenHome', lang)} →</Text>
-                </TouchableOpacity>
+              <View style={styles.heroStreakBox}>
+                <Text style={styles.heroStreakNum}>{streak}</Text>
+              </View>
+              {/* Streak risk warning inside Streak tile */}
+              {streak > 0 && todayReads === 0 && (
+                <View style={styles.heroRiskRow}>
+                  <Ionicons name="warning-outline" size={12} color={colors.danger} />
+                  <Text style={styles.heroRiskText}>{t('streakRiskWarning', lang)}</Text>
+                </View>
               )}
+            </View>
+            {/* Tile 2: Daily Goal */}
+            <View style={styles.heroTile}>
+              <View style={styles.heroTileHeader}>
+                <Ionicons name="flag" size={12} color={colors.textSecondary} />
+                <Text style={styles.heroTileLabel}>{t('dailyGoalTitle', lang)}</Text>
+              </View>
+              <View style={styles.heroGoalBox}>
+                <Text style={styles.heroGoalCounter}>{`${dailyProgress}/${dailyTarget}`}</Text>
+                <View style={styles.heroGoalBarTrack}>
+                  <View style={[styles.heroGoalBarFill, { width: `${(dailyProgress / dailyTarget) * 100}%` }]} />
+                </View>
+                {isDailyGoalComplete ? (
+                  <Text style={styles.heroCompleteTag}>✓ {t('dailyGoalComplete', lang)}</Text>
+                ) : (
+                  <TouchableOpacity onPress={() => navigation.navigate('HomeTab')}>
+                    <Text style={styles.heroReadCta}>{t('progressActionOpenHome', lang)} →</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
             </View>
           </View>
 
-          {/* Streak risk warning: shown only when streak > 0 and nothing read today */}
-          {streak > 0 && todayReads === 0 && (
-            <View style={styles.heroRiskRow}>
-              <Ionicons name="warning-outline" size={14} color={colors.danger} />
-              <Text style={styles.heroRiskText}>{t('streakRiskWarning', lang)}</Text>
-            </View>
-          )}
-
-          {/* Spotlight: next closest badge, integrated */}
+          {/* Tile 3: Spotlight — full width, only when closestBadge exists */}
           {closestBadge && (
             <TouchableOpacity
-              style={styles.heroSpotlightRow}
+              style={styles.heroSpotlightTile}
               onPress={() => openBadgeModal(closestBadge)}
               activeOpacity={0.8}
             >
-              <Text style={{ fontSize: 26 }}>{closestBadge.icon}</Text>
-              <View style={{ flex: 1 }}>
-                <Text style={styles.heroSpotlightLabel}>{t('progress_spotlight_label', lang)}</Text>
-                <Text style={styles.heroSpotlightTitle}>{t(closestBadge.titleKey, lang)}</Text>
-                <View style={styles.heroSpotlightBarTrack}>
-                  <View style={[styles.heroSpotlightBarFill, { width: `${Math.round(closestBadge.ratio * 100)}%` }]} />
-                </View>
+              <View style={styles.heroTileHeader}>
+                <Ionicons name="trophy-outline" size={12} color={colors.textSecondary} />
+                <Text style={styles.heroTileLabel}>{t('progress_spotlight_label', lang)}</Text>
               </View>
-              <Text style={styles.heroSpotlightPct}>{`${Math.round(closestBadge.ratio * 100)}%`}</Text>
-              <Ionicons name="chevron-forward" size={16} color={colors.textSecondary} />
+              <View style={styles.heroSpotlightRow}>
+                <Text style={{ fontSize: 26 }}>{closestBadge.icon}</Text>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.heroSpotlightTitle}>{t(closestBadge.titleKey, lang)}</Text>
+                  <View style={styles.heroSpotlightBarTrack}>
+                    <View style={[styles.heroSpotlightBarFill, { width: `${Math.round(closestBadge.ratio * 100)}%` }]} />
+                  </View>
+                </View>
+                <Text style={styles.heroSpotlightPct}>{`${Math.round(closestBadge.ratio * 100)}%`}</Text>
+                <Ionicons name="chevron-forward" size={16} color={colors.textSecondary} />
+              </View>
             </TouchableOpacity>
           )}
         </View>

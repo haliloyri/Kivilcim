@@ -130,7 +130,8 @@ const HomeScreen = ({ navigation }) => {
   const screenWidth = viewportWidth;
   const isTablet = screenWidth >= 768;
   const isSmallPhone = screenWidth < 380;
-  const brandLogoFontSize = isTablet ? 62 : isSmallPhone ? 42 : 54;
+  const brandLogoWidth = isTablet ? 180 : isSmallPhone ? 124 : 156;
+  const brandLogoHeight = isTablet ? 72 : isSmallPhone ? 52 : 62;
   const sectionHeadingFontSize = isTablet ? 44 : isSmallPhone ? 30 : 36;
   const readyTitleFontSize = isTablet ? 38 : isSmallPhone ? 28 : 32;
   const featuredCardColumns = isTablet ? 3.1 : isSmallPhone ? 2.05 : 2.25;
@@ -188,8 +189,6 @@ const HomeScreen = ({ navigation }) => {
 
   // Language strings
   const greeting = getGreeting(lang);
-  const brandText = t('brandText', lang);
-
   const categoriesLabel = t('categoriesLabel', lang);
   const todayLabel = t('todayLabel', lang);
   const forYouLabel = t('home_for_you', lang);
@@ -810,12 +809,13 @@ const HomeScreen = ({ navigation }) => {
       paddingBottom: 8,
     },
     brandLogo: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: brandLogoFontSize,
-      color: '#9D846D',
-      letterSpacing: 0.5,
       flex: 1,
-      textAlign: 'left',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    brandLogoImage: {
+      width: brandLogoWidth,
+      height: brandLogoHeight,
     },
     headerBadgeWrap: {
       flexDirection: 'row',
@@ -1353,7 +1353,13 @@ const HomeScreen = ({ navigation }) => {
         {/* ÔöÇÔöÇ Header ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
         <View style={styles.homeHeader}>
           <View style={styles.headerLeftSpacer} />
-          <Text style={styles.brandLogo}>Spark</Text>
+          <View style={styles.brandLogo}>
+            <Image
+              source={require('../../assets/spark_shortcut_logo.png')}
+              style={styles.brandLogoImage}
+              resizeMode="contain"
+            />
+          </View>
           <TouchableOpacity
             style={styles.headerBadgeWrap}
             onPress={() => navigation.navigate('ProgressTab')}

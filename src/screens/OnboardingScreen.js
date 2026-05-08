@@ -1,67 +1,82 @@
-import React, { useState, useRef } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  StatusBar, Animated, Platform, Dimensions, Image
+  StatusBar, Animated, Platform, Dimensions, Image, TextInput,
+  KeyboardAvoidingView,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Haptics from 'expo-haptics';
+import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import { getCategoryImage } from '../utils/categoryImages';
 
+const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
+
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 const OnboardingScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { isPremium, saveOnboarding } = useUserData();
+  const { isPremium, saveOnboarding, updateUserProfile } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const insets = useSafeAreaInsets();
-  const [loading, setLoading] = useState(true);
   const [step, setStep] = useState(0);
   const [selectedCats, setSelectedCats] = useState([]);
   const [selectedTime, setSelectedTime] = useState(1);
   const [selectedReminders, setSelectedReminders] = useState(['evening']);
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
+  const breatheAnim = useRef(new Animated.Value(1.0)).current;
+
+  // Logo breathe animation on welcome screen
+  useEffect(() => {
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(breatheAnim, { toValue: 1.04, duration: 1300, useNativeDriver: true }),
+        Animated.timing(breatheAnim, { toValue: 1.0, duration: 1300, useNativeDriver: true }),
+      ])
+    );
+    loop.start();
+    return () => loop.stop();
+  }, []);
 
   const allCats = parentCategories.map((p) => Number(p.id));
   const timeOptions = [
-    { label: t('time_3min', lang), sub: t('time_3min_sub', lang), icon: '☕', minutes: 3, dailyStoryTarget: 1 },
-    { label: t('time_6min', lang), sub: t('time_6min_sub', lang), icon: '📚', minutes: 6, dailyStoryTarget: 2 },
-    { label: t('time_9min', lang), sub: t('time_9min_sub', lang), icon: '🚀', minutes: 9, dailyStoryTarget: 3 },
+    { label: t('time_3min', lang), sub: t('time_3min_sub', lang), icon: 'â˜•', minutes: 3, dailyStoryTarget: 1 },
+    { label: t('time_6min', lang), sub: t('time_6min_sub', lang), icon: 'ğŸ“š', minutes: 6, dailyStoryTarget: 2 },
+    { label: t('time_9min', lang), sub: t('time_9min_sub', lang), icon: 'ğŸš€', minutes: 9, dailyStoryTarget: 3 },
   ];
   const reminderOptions = [
-    { label: t('reminder_morning', lang), sub: t('reminder_morning_sub', lang), icon: '🌅', reminderWindow: 'morning', reminderHour: 8 },
-    { label: t('reminder_noon', lang), sub: t('reminder_noon_sub', lang), icon: '☀️', reminderWindow: 'noon', reminderHour: 13 },
-    { label: t('reminder_evening', lang), sub: t('reminder_evening_sub', lang), icon: '🌙', reminderWindow: 'evening', reminderHour: 21 },
+    { label: t('reminder_morning', lang), sub: t('reminder_morning_sub', lang), icon: 'ğŸŒ…', reminderWindow: 'morning', reminderHour: 8 },
+    { label: t('reminder_noon', lang), sub: t('reminder_noon_sub', lang), icon: 'â˜€ï¸', reminderWindow: 'noon', reminderHour: 13 },
+    { label: t('reminder_evening', lang), sub: t('reminder_evening_sub', lang), icon: 'ğŸŒ™', reminderWindow: 'evening', reminderHour: 21 },
   ];
   const selectedTimeOption = timeOptions[selectedTime];
-  const selectedReminderOption = reminderOptions.find(o => selectedReminders.includes(o.reminderWindow)) || reminderOptions[2];
   const readyPlanSummary = t('onboarding_ready_plan', lang)
     .replace('{{minutes}}', selectedTimeOption.label)
     .replace('{{stories}}', String(selectedTimeOption.dailyStoryTarget));
 
-  const TOTAL_STEPS = 5;
+  // Step 0: Welcome, 1: How it works, 2: Categories, 3: Time, 4: Reminders, 5: Name, 6: Summary
+  const TOTAL_STEPS = 7;
   const isPhone = SCREEN_WIDTH < 768;
   const isSmallPhone = SCREEN_WIDTH < 390;
   const catGridGap = isPhone ? 8 : 10;
   const catTileWidth = (SCREEN_WIDTH - 64 - catGridGap) / 2;
 
-  const next = async () => {
-    // Animate out
+  const animateStep = (direction, cb) => {
+    const outOffset = direction === 'forward' ? -30 : 30;
+    const inOffset = direction === 'forward' ? 30 : -30;
     Animated.parallel([
       Animated.timing(fadeAnim, { toValue: 0, duration: 180, useNativeDriver: true }),
-      Animated.timing(slideAnim, { toValue: -30, duration: 180, useNativeDriver: true }),
-    ]).start(async () => {
-      if (step < TOTAL_STEPS - 1) {
-        setStep(step + 1);
-      } else {
-        await handleFinish();
-        return;
-      }
-      // Animate in
-      slideAnim.setValue(30);
+      Animated.timing(slideAnim, { toValue: outOffset, duration: 180, useNativeDriver: true }),
+    ]).start(() => {
+      cb();
+      slideAnim.setValue(inOffset);
       Animated.parallel([
         Animated.timing(fadeAnim, { toValue: 1, duration: 250, useNativeDriver: true }),
         Animated.timing(slideAnim, { toValue: 0, duration: 250, useNativeDriver: true }),
@@ -69,11 +84,34 @@ const OnboardingScreen = ({ navigation }) => {
     });
   };
 
+  const next = async () => {
+    Haptics.selectionAsync().catch(() => {});
+    if (step < TOTAL_STEPS - 1) {
+      animateStep('forward', () => setStep(s => s + 1));
+    } else {
+      await handleFinish();
+    }
+  };
+
+  const goBack = () => {
+    if (step === 0) return;
+    Haptics.selectionAsync().catch(() => {});
+    animateStep('back', () => setStep(s => s - 1));
+  };
+
+  const goToStep = (targetStep) => {
+    if (targetStep >= step) return;
+    Haptics.selectionAsync().catch(() => {});
+    animateStep('back', () => setStep(targetStep));
+  };
+
   const skip = async () => {
     await saveOnboarding([], timeOptions[1], reminderOptions[2]);
+    await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
   };
 
   const toggleCat = (cat) => {
+    Haptics.selectionAsync().catch(() => {});
     setSelectedCats(prev => {
       if (prev.includes(cat)) return prev.filter(c => c !== cat);
       return [...prev, cat];
@@ -81,9 +119,10 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const toggleReminder = (windowValue) => {
+    Haptics.selectionAsync().catch(() => {});
     setSelectedReminders(prev => {
       if (prev.includes(windowValue)) {
-        if (prev.length === 1) return prev; // en az bir seçim zorunlu
+        if (prev.length === 1) return prev;
         return prev.filter(w => w !== windowValue);
       }
       return [...prev, windowValue];
@@ -91,17 +130,30 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const handleFinish = async () => {
+    const name = userName.trim();
+    const email = userEmail.trim();
+    if (name || email) {
+      await updateUserProfile({
+        ...(name ? { displayName: name } : {}),
+        ...(email ? { email } : {}),
+      });
+    }
     await saveOnboarding(selectedCats, timeOptions[selectedTime], selectedReminders);
+    await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
   };
 
-  /* ─────────────── STYLES ─────────────── */
+  /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ STYLES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  const cardBg = isDark
+    ? (colors.surfaceContainerHigh || colors.backgroundDark)
+    : (colors.cardBackground || '#FFFDF9');
+
   const s = StyleSheet.create({
     safe: {
       flex: 1,
       backgroundColor: colors.background,
     },
 
-    /* ── Reading progress bar (top 2px line) ── */
+    /* â”€â”€ Reading progress bar (top 2px line) â”€â”€ */
     readingProgress: {
       position: 'absolute',
       top: 0,
@@ -111,7 +163,7 @@ const OnboardingScreen = ({ navigation }) => {
       zIndex: 60,
     },
 
-    /* ── Header ── */
+    /* â”€â”€ Header â”€â”€ */
     header: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -119,26 +171,35 @@ const OnboardingScreen = ({ navigation }) => {
       paddingHorizontal: 24,
       height: 56,
     },
+    headerLogoRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 8,
+    },
+    headerLogoImg: {
+      width: isSmallPhone ? 28 : 32,
+      height: isSmallPhone ? 28 : 32,
+    },
     headerBrand: {
       fontFamily: 'PlayfairDisplay_400Regular_Italic',
-      fontSize: 24,
+      fontSize: 22,
       color: colors.primary,
       letterSpacing: -0.5,
     },
-    headerSkip: {
+    headerAction: {
       fontFamily: 'Inter_500Medium',
       fontSize: 14,
       color: colors.textSecondary,
     },
 
-    /* ── Content area ── */
+    /* â”€â”€ Content area â”€â”€ */
     contentScroll: {
       flexGrow: 1,
       paddingHorizontal: 32,
       justifyContent: 'center',
     },
 
-    /* ── Step 0: Welcome ── */
+    /* â”€â”€ Step 0: Welcome hero â”€â”€ */
     heroContainer: {
       width: '100%',
       aspectRatio: 1,
@@ -146,48 +207,44 @@ const OnboardingScreen = ({ navigation }) => {
       alignItems: 'center',
       justifyContent: 'center',
     },
-    heroGlow: {
+    heroOuterRing: {
       position: 'absolute',
-      width: '90%',
-      height: '90%',
+      width: '92%',
+      height: '92%',
+      borderRadius: 999,
+      borderWidth: 1,
+      borderColor: `${colors.primary}14`,
+    },
+    heroInnerRing: {
+      position: 'absolute',
+      width: '76%',
+      height: '76%',
+      borderRadius: 999,
+      borderWidth: 1,
+      borderColor: `${colors.primary}22`,
+    },
+    heroGlowBlob: {
+      position: 'absolute',
+      width: '52%',
+      height: '52%',
       borderRadius: 999,
       backgroundColor: colors.primary,
-      opacity: 0.06,
+      opacity: 0.07,
     },
-    heroCard: {
-      width: '100%',
-      height: '100%',
-      borderRadius: 20,
-      backgroundColor: isDark ? colors.backgroundDark : '#ffffff',
+    heroLogoWrapper: {
+      width: '44%',
+      aspectRatio: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      // Ambient shadow – soft, natural gallery lighting
-      shadowColor: colors.text,
-      shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: 0.04,
-      shadowRadius: 24,
-      elevation: 3,
-      overflow: 'hidden',
+      shadowColor: colors.primary,
+      shadowOffset: { width: 0, height: 6 },
+      shadowOpacity: 0.18,
+      shadowRadius: 20,
+      elevation: 4,
     },
-    heroInnerGlow: {
-      position: 'absolute',
-      width: 200,
-      height: 200,
-      borderRadius: 100,
-      backgroundColor: colors.primary,
-      opacity: 0.08,
-    },
-    heroBookIcon: {
-      fontSize: 80,
-      color: colors.primary,
-      marginBottom: 8,
-    },
-    heroSparkle: {
-      position: 'absolute',
-      top: -8,
-      right: -8,
-      fontSize: 36,
-      color: '#cca730', // tertiary gold accent
+    heroLogoImg: {
+      width: '100%',
+      height: '100%',
     },
     welcomeTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
@@ -208,7 +265,7 @@ const OnboardingScreen = ({ navigation }) => {
       alignSelf: 'center',
     },
 
-    /* ── Step 1: Category Selection ── */
+    /* â”€â”€ Section titles (steps 1+) â”€â”€ */
     sectionTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: 30,
@@ -224,6 +281,49 @@ const OnboardingScreen = ({ navigation }) => {
       lineHeight: 24,
       marginBottom: 28,
     },
+
+    /* â”€â”€ Step 1: How it works cards â”€â”€ */
+    hiwCard: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingVertical: 16,
+      paddingHorizontal: 18,
+      borderRadius: 16,
+      backgroundColor: cardBg,
+      marginBottom: 10,
+      shadowColor: colors.text,
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.04,
+      shadowRadius: 8,
+      elevation: 1,
+    },
+    hiwIconBox: {
+      width: 44,
+      height: 44,
+      borderRadius: 12,
+      backgroundColor: `${colors.primary}12`,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginRight: 16,
+      flexShrink: 0,
+    },
+    hiwIcon: {
+      fontSize: 22,
+    },
+    hiwCardTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 14,
+      color: colors.text,
+      marginBottom: 2,
+    },
+    hiwCardSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      lineHeight: 18,
+    },
+
+    /* â”€â”€ Step 2: Category Selection â”€â”€ */
     catGrid: {
       flexDirection: 'row',
       flexWrap: 'wrap',
@@ -236,13 +336,13 @@ const OnboardingScreen = ({ navigation }) => {
       paddingVertical: isSmallPhone ? 12 : isPhone ? 14 : 16,
       paddingHorizontal: isSmallPhone ? 10 : isPhone ? 12 : 16,
       borderRadius: 16,
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: cardBg,
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
     },
     catTileSelected: {
-      backgroundColor: `${colors.primary}18`,
+      backgroundColor: `${colors.primary}1F`,
     },
     catTileText: {
       fontFamily: 'Inter_400Regular',
@@ -278,18 +378,18 @@ const OnboardingScreen = ({ navigation }) => {
       marginTop: 8,
     },
 
-    /* ── Step 2: Time ── */
+    /* â”€â”€ Steps 3 & 4: Time / Reminder tiles â”€â”€ */
     timeTile: {
       flexDirection: 'row',
       alignItems: 'center',
       paddingVertical: 18,
       paddingHorizontal: 18,
       borderRadius: 16,
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: cardBg,
       marginBottom: 10,
     },
     timeTileSelected: {
-      backgroundColor: `${colors.primary}18`,
+      backgroundColor: `${colors.primary}1F`,
     },
     timeTileIcon: {
       fontSize: 24,
@@ -325,43 +425,39 @@ const OnboardingScreen = ({ navigation }) => {
       backgroundColor: colors.primary,
     },
 
-    /* ── Step 3: Ready ── */
-    readyArt: {
-      backgroundColor: colors.backgroundDark,
-      borderRadius: 20,
-      paddingVertical: 40,
-      paddingHorizontal: 24,
-      alignItems: 'center',
-      marginBottom: 32,
-      // Ambient shadow
-      shadowColor: colors.text,
-      shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: 0.04,
-      shadowRadius: 24,
-      elevation: 2,
-    },
-    readySparkIcon: {
-      fontSize: 52,
-      color: colors.primary,
-      marginBottom: 24,
-    },
-    readyStats: {
-      flexDirection: 'row',
-      gap: 48,
-    },
-    readyStat: {
-      alignItems: 'center',
-    },
-    readyNum: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 32,
-      color: colors.text,
-    },
-    readyLabel: {
+    /* â”€â”€ Step 5: Name â”€â”€ */
+    nameInput: {
+      backgroundColor: cardBg,
+      borderRadius: 16,
+      paddingVertical: 16,
+      paddingHorizontal: 18,
       fontFamily: 'Inter_400Regular',
-      fontSize: 12,
+      fontSize: 16,
+      color: colors.text,
+      marginBottom: 10,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    nameSkipHint: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 13,
       color: colors.textSecondary,
-      marginTop: 4,
+      textAlign: 'center',
+      marginTop: 8,
+    },
+
+    /* â”€â”€ Step 6: Summary â”€â”€ */
+    readyArt: {
+      backgroundColor: cardBg,
+      borderRadius: 20,
+      paddingVertical: 16,
+      paddingHorizontal: 20,
+      marginBottom: 12,
+      shadowColor: colors.text,
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.04,
+      shadowRadius: 16,
+      elevation: 1,
     },
     selCats: {
       flexDirection: 'row',
@@ -371,18 +467,13 @@ const OnboardingScreen = ({ navigation }) => {
       marginTop: 8,
     },
     selCatPill: {
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: `${colors.primary}12`,
       borderRadius: 20,
       paddingHorizontal: 14,
       paddingVertical: 6,
     },
-    selCatText: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 13,
-      color: colors.text,
-    },
 
-    /* ── Footer ── */
+    /* â”€â”€ Footer â”€â”€ */
     footer: {
       paddingHorizontal: 32,
       paddingBottom: Math.max(insets.bottom + 16, Platform.OS === 'android' ? 32 : 24),
@@ -391,7 +482,7 @@ const OnboardingScreen = ({ navigation }) => {
       gap: 20,
     },
 
-    /* ── Step Dots ── */
+    /* â”€â”€ Step Dots â”€â”€ */
     stepDots: {
       flexDirection: 'row',
       gap: 8,
@@ -409,8 +500,14 @@ const OnboardingScreen = ({ navigation }) => {
       borderRadius: 3,
       backgroundColor: colors.primary,
     },
+    stepDotCompleted: {
+      width: 6,
+      height: 6,
+      borderRadius: 3,
+      backgroundColor: `${colors.primary}55`,
+    },
 
-    /* ── Primary Button ── */
+    /* â”€â”€ Primary Button â”€â”€ */
     btnPrimary: {
       width: '100%',
       height: 60,
@@ -420,7 +517,6 @@ const OnboardingScreen = ({ navigation }) => {
       justifyContent: 'center',
       flexDirection: 'row',
       gap: 8,
-      // Button shadow – warm glow
       shadowColor: colors.primary,
       shadowOffset: { width: 0, height: 8 },
       shadowOpacity: 0.2,
@@ -442,34 +538,60 @@ const OnboardingScreen = ({ navigation }) => {
     },
   });
 
-  /* ─────────────── STEP CONTENT ─────────────── */
+  /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ STEP CONTENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   const steps = [
-    /* ── Step 0: Welcome ── */
+    /* â”€â”€ Step 0: Welcome â”€â”€ */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s0">
-      {/* Hero visual */}
-      <View style={s.heroContainer}>
-        <View style={s.heroGlow} />
-        <View style={s.heroCard}>
-          <View style={s.heroInnerGlow} />
-          <View style={{ position: 'relative' }}>
-            <Text style={s.heroBookIcon}>📖</Text>
-            <Text style={s.heroSparkle}>✦</Text>
-          </View>
+      <Animated.View style={[s.heroContainer, { transform: [{ scale: breatheAnim }] }]}>
+        <View style={s.heroOuterRing} />
+        <View style={s.heroInnerRing} />
+        <View style={s.heroGlowBlob} />
+        <View style={s.heroLogoWrapper}>
+          <Image
+            source={require('../../assets/spark_logo.png')}
+            style={s.heroLogoImg}
+            resizeMode="contain"
+          />
         </View>
-      </View>
-
-      {/* Text */}
-      <Text style={s.welcomeTitle}>
-        {t('onboarding_welcome', lang)}
-      </Text>
-      <Text style={s.welcomeSubtitle}>
-        {t('onboarding_welcome_sub', lang)}
-      </Text>
+      </Animated.View>
+      <Text style={s.welcomeTitle}>{t('onboarding_welcome', lang)}</Text>
+      <Text style={s.welcomeSubtitle}>{t('onboarding_welcome_sub', lang)}</Text>
     </View>,
 
-    /* ── Step 1: Category Selection ── */
+    /* â”€â”€ Step 1: How it works â”€â”€ */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s1">
-      <Text style={s.sectionTitle} numberOfLines={1} adjustsFontSizeToFit>{t('onboarding_why', lang)}</Text>
+      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
+        {t('onboarding_how_it_works', lang)}
+      </Text>
+      <Text style={s.sectionSubtitle}>{t('onboarding_how_it_works_sub', lang)}</Text>
+      <View style={s.hiwCard}>
+        <View style={s.hiwIconBox}><Text style={s.hiwIcon}>ğŸ“š</Text></View>
+        <View style={{ flex: 1 }}>
+          <Text style={s.hiwCardTitle}>{t('onboarding_hiw_stories_title', lang)}</Text>
+          <Text style={s.hiwCardSub}>{t('onboarding_hiw_stories_sub', lang)}</Text>
+        </View>
+      </View>
+      <View style={s.hiwCard}>
+        <View style={s.hiwIconBox}><Text style={s.hiwIcon}>ğŸ”¥</Text></View>
+        <View style={{ flex: 1 }}>
+          <Text style={s.hiwCardTitle}>{t('onboarding_hiw_spark_title', lang)}</Text>
+          <Text style={s.hiwCardSub}>{t('onboarding_hiw_spark_sub', lang)}</Text>
+        </View>
+      </View>
+      <View style={s.hiwCard}>
+        <View style={s.hiwIconBox}><Text style={s.hiwIcon}>ğŸ””</Text></View>
+        <View style={{ flex: 1 }}>
+          <Text style={s.hiwCardTitle}>{t('onboarding_hiw_reminder_title', lang)}</Text>
+          <Text style={s.hiwCardSub}>{t('onboarding_hiw_reminder_sub', lang)}</Text>
+        </View>
+      </View>
+    </View>,
+
+    /* â”€â”€ Step 2: Category Selection â”€â”€ */
+    <View style={{ flex: 1, justifyContent: 'center' }} key="s2">
+      <Text style={s.sectionTitle} numberOfLines={1} adjustsFontSizeToFit>
+        {t('onboarding_why', lang)}
+      </Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_why_sub', lang)}</Text>
       <View style={s.catGrid}>
         {allCats.map(cat => {
@@ -490,7 +612,7 @@ const OnboardingScreen = ({ navigation }) => {
                     width: isSmallPhone ? 28 : 32,
                     height: isSmallPhone ? 28 : 32,
                     borderRadius: 8,
-                    backgroundColor: sel ? `${colors.primary}16` : colors.background,
+                    backgroundColor: sel ? `${colors.primary}16` : `${colors.primary}08`,
                     alignItems: 'center',
                     justifyContent: 'center',
                     overflow: 'hidden',
@@ -513,7 +635,7 @@ const OnboardingScreen = ({ navigation }) => {
               <View style={s.catCheckSlot}>
                 {sel && (
                   <View style={s.catCheckCircle}>
-                    <Text style={{ fontSize: isSmallPhone ? 11 : 12, color: '#fff', fontWeight: '700' }}>✓</Text>
+                    <Text style={{ fontSize: isSmallPhone ? 11 : 12, color: '#fff', fontWeight: '700' }}>âœ“</Text>
                   </View>
                 )}
               </View>
@@ -528,15 +650,17 @@ const OnboardingScreen = ({ navigation }) => {
       </Text>
     </View>,
 
-    /* ── Step 2: Time Selection ── */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s2">
-      <Text style={s.sectionTitle} numberOfLines={1} adjustsFontSizeToFit>{t('onboarding_how_long', lang)}</Text>
+    /* â”€â”€ Step 3: Time Selection â”€â”€ */
+    <View style={{ flex: 1, justifyContent: 'center' }} key="s3">
+      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
+        {t('onboarding_how_long', lang)}
+      </Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_how_long_sub', lang)}</Text>
       {timeOptions.map((option, i) => (
         <TouchableOpacity
           key={i}
           style={[s.timeTile, selectedTime === i && s.timeTileSelected]}
-          onPress={() => setSelectedTime(i)}
+          onPress={() => { Haptics.selectionAsync().catch(() => {}); setSelectedTime(i); }}
           activeOpacity={0.7}
         >
           <Text style={s.timeTileIcon}>{option.icon}</Text>
@@ -551,9 +675,11 @@ const OnboardingScreen = ({ navigation }) => {
       ))}
     </View>,
 
-    /* ── Step 3: Ready ── */
+    /* â”€â”€ Step 4: Reminder Selection â”€â”€ */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s4">
-      <Text style={s.sectionTitle} numberOfLines={1} adjustsFontSizeToFit>{t('onboarding_when_remind', lang)}</Text>
+      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
+        {t('onboarding_when_remind', lang)}
+      </Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_when_remind_sub', lang)}</Text>
       {reminderOptions.map((option, i) => {
         const isSelected = selectedReminders.includes(option.reminderWindow);
@@ -577,24 +703,56 @@ const OnboardingScreen = ({ navigation }) => {
       })}
     </View>,
 
-    /* ── Step 4: Summary / Ready ── */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s3">
+    /* â”€â”€ Step 5: Name (optional) â”€â”€ */
+    <View style={{ flex: 1, justifyContent: 'center' }} key="s5">
+      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
+        {t('onboarding_name_title', lang)}
+      </Text>
+      <Text style={s.sectionSubtitle}>{t('onboarding_name_sub', lang)}</Text>
+      <TextInput
+        style={s.nameInput}
+        placeholder={t('onboarding_name_placeholder', lang)}
+        placeholderTextColor={colors.textSecondary}
+        value={userName}
+        onChangeText={setUserName}
+        autoCapitalize="words"
+        autoCorrect={false}
+        returnKeyType="next"
+      />
+      <TextInput
+        style={s.nameInput}
+        placeholder={t('onboarding_email_placeholder', lang)}
+        placeholderTextColor={colors.textSecondary}
+        value={userEmail}
+        onChangeText={setUserEmail}
+        autoCapitalize="none"
+        autoCorrect={false}
+        keyboardType="email-address"
+        returnKeyType="done"
+      />
+      <Text style={s.nameSkipHint}>{t('onboarding_name_skip_hint', lang)}</Text>
+    </View>,
+
+    /* â”€â”€ Step 6: Summary / Ready â”€â”€ */
+    <View style={{ flex: 1, justifyContent: 'center' }} key="s6">
       <Text style={[s.sectionTitle, { textAlign: 'center', marginBottom: 6 }]}>
-        {t('onboarding_ready', lang)}
+        {userName.trim()
+          ? t('onboarding_ready_greeting', lang).replace('{{name}}', userName.trim())
+          : t('onboarding_ready', lang)}
       </Text>
       <Text style={[s.sectionSubtitle, { textAlign: 'center', marginBottom: 24 }]}>
         {readyPlanSummary}
       </Text>
 
       {/* Selected categories */}
-      <View style={[s.readyArt, { paddingVertical: 20, paddingHorizontal: 20, marginBottom: 16 }]}>
+      <View style={s.readyArt}>
         <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 12 }}>
           {t('onboarding_cat', lang)} ({(selectedCats.length || 2)})
         </Text>
         <View style={s.selCats}>
           {(selectedCats.length ? selectedCats : allCats.slice(0, 2)).map(c => (
             <View key={c} style={s.selCatPill}>
-              <Text style={[s.selCatText, { color: colors.primary }]}>
+              <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.primary }}>
                 {(parentCategories.find((p) => Number(p.id) === Number(c))?.name) || ''}
               </Text>
             </View>
@@ -602,15 +760,15 @@ const OnboardingScreen = ({ navigation }) => {
         </View>
       </View>
 
-      {/* Reading plan + reminder summary */}
-      <View style={[s.readyArt, { paddingVertical: 16, paddingHorizontal: 20 }]}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 12 }}>
+      {/* Reading plan + reminder */}
+      <View style={s.readyArt}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <View style={{ flex: 1 }}>
             <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginBottom: 4 }}>
               {t('readingPlan', lang)}
             </Text>
             <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
-              {selectedTimeOption.icon} {selectedTimeOption.label} · {selectedTimeOption.dailyStoryTarget} {t('onboarding_story', lang)}
+              {selectedTimeOption.icon} {selectedTimeOption.label} Â· {selectedTimeOption.dailyStoryTarget} {t('onboarding_story', lang)}
             </Text>
           </View>
           <View style={{ flex: 1, paddingLeft: 12 }}>
@@ -626,7 +784,7 @@ const OnboardingScreen = ({ navigation }) => {
     </View>,
   ];
 
-  const canNext = step === 1 ? selectedCats.length >= 2 : true;
+  const canNext = step === 2 ? selectedCats.length >= 2 : true;
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={s.safe}>
@@ -635,57 +793,65 @@ const OnboardingScreen = ({ navigation }) => {
         backgroundColor={colors.background}
       />
 
-      {/* ── Reading Progress Bar (signature element from DESIGN.md) ── */}
+      {/* â”€â”€ Reading Progress Bar â”€â”€ */}
       <View style={[s.readingProgress, { width: `${((step + 1) / TOTAL_STEPS) * 100}%` }]} />
 
-      {/* ── Header ── */}
+      {/* â”€â”€ Header â”€â”€ */}
       <View style={s.header}>
-        <Text style={s.headerBrand}>{t('brandText', lang).replace(' ✦', '')}</Text>
-        {step === 0 && (
-          <TouchableOpacity onPress={skip} activeOpacity={0.7}>
-            <Text style={s.headerSkip}>{t('onboarding_skip', lang)}</Text>
+        {/* Left: logo + brand name */}
+        <View style={s.headerLogoRow}>
+          <Image
+            source={require('../../assets/spark_shortcut_logo.png')}
+            style={s.headerLogoImg}
+            resizeMode="contain"
+          />
+          <Text style={s.headerBrand}>Spark</Text>
+        </View>
+
+        {/* Right: Skip (steps 0 & 5) or Back chevron (other steps) */}
+        {(step === 0 || step === 5) ? (
+          <TouchableOpacity onPress={step === 0 ? skip : next} activeOpacity={0.7}>
+            <Text style={s.headerAction}>{t('onboarding_skip', lang)}</Text>
           </TouchableOpacity>
-        )}
-        {step > 0 && (
-          <TouchableOpacity
-            onPress={() => {
-              fadeAnim.setValue(0);
-              slideAnim.setValue(-30);
-              setStep(step - 1);
-              Animated.parallel([
-                Animated.timing(fadeAnim, { toValue: 1, duration: 250, useNativeDriver: true }),
-                Animated.timing(slideAnim, { toValue: 0, duration: 250, useNativeDriver: true }),
-              ]).start();
-            }}
-            activeOpacity={0.7}
-          >
-            <Text style={s.headerSkip}>← {t('backBtn', lang).replace('← ', '')}</Text>
+        ) : (
+          <TouchableOpacity onPress={goBack} activeOpacity={0.7} style={{ padding: 4 }}>
+            <Ionicons name="chevron-back" size={22} color={colors.textSecondary} />
           </TouchableOpacity>
         )}
       </View>
 
-      {/* ── Animated Content ── */}
-      <Animated.View style={{
-        flex: 1,
-        opacity: fadeAnim,
-        transform: [{ translateY: slideAnim }],
-      }}>
-        <ScrollView
-          contentContainerStyle={s.contentScroll}
-          showsVerticalScrollIndicator={false}
-          bounces={false}
-        >
-          {steps[step]}
-        </ScrollView>
-      </Animated.View>
+      {/* â”€â”€ Animated Content â”€â”€ */}
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        <Animated.View style={{ flex: 1, opacity: fadeAnim, transform: [{ translateY: slideAnim }] }}>
+          <ScrollView
+            contentContainerStyle={s.contentScroll}
+            showsVerticalScrollIndicator={false}
+            bounces={false}
+            keyboardShouldPersistTaps="handled"
+          >
+            {steps[step]}
+          </ScrollView>
+        </Animated.View>
+      </KeyboardAvoidingView>
 
-      {/* ── Footer ── */}
+      {/* â”€â”€ Footer â”€â”€ */}
       <View style={s.footer}>
-        {/* Step Dots */}
+        {/* Step Dots â€” tap completed dots to navigate back */}
         <View style={s.stepDots}>
-          {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
-            <View key={i} style={step === i ? s.stepDotActive : s.stepDot} />
-          ))}
+          {Array.from({ length: TOTAL_STEPS }).map((_, i) => {
+            if (i === step) return <View key={i} style={s.stepDotActive} />;
+            if (i < step) {
+              return (
+                <TouchableOpacity key={i} onPress={() => goToStep(i)} activeOpacity={0.6}>
+                  <View style={s.stepDotCompleted} />
+                </TouchableOpacity>
+              );
+            }
+            return <View key={i} style={s.stepDot} />;
+          })}
         </View>
 
         {/* Primary CTA Button */}
@@ -695,9 +861,11 @@ const OnboardingScreen = ({ navigation }) => {
           activeOpacity={0.85}
         >
           <Text style={s.btnPrimaryText}>
-            {step < TOTAL_STEPS - 1 ? t('next', lang) : t('onboarding_show_recommendations', lang)}
+            {step < TOTAL_STEPS - 1
+              ? t('next', lang)
+              : t('onboarding_start_journey', lang)}
           </Text>
-          <Text style={s.btnPrimaryArrow}>→</Text>
+          <Text style={s.btnPrimaryArrow}>â†’</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

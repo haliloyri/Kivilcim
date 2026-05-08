@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  StatusBar, Modal
+  StatusBar, Modal, FlatList
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,6 +10,7 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import StoryCard from '../components/StoryCard';
+import CategoryPill from '../components/CategoryPill';
 
 const LibraryScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
@@ -94,10 +95,11 @@ const LibraryScreen = ({ navigation }) => {
         map.set(catId, {
           id: catId,
           label: String(story.parent_cat || story.cat || ''),
+          rawName: String(story.parent_cat || story.cat || ''),
         });
       }
     });
-    return [{ id: 'all', label: t('libraryFilterAll', lang) }, ...Array.from(map.values())];
+    return [{ id: 'all', label: t('libraryFilterAll', lang), rawName: 'Tümü' }, ...Array.from(map.values())];
   }, [favoriteStoriesRaw, historyStoriesRaw, recentlyUsedStories, lang]);
 
   const applyCategoryFilter = (list) => {
@@ -186,18 +188,54 @@ const LibraryScreen = ({ navigation }) => {
       fontSize: 32, 
       color: colors.text 
     },
-    sectionHeader: {
-      paddingHorizontal: layout.padding.horizontal,
+    sectionHeading: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 22,
+      color: colors.text,
+      marginHorizontal: layout.padding.horizontal,
       marginTop: 24,
       marginBottom: 12,
+    },
+    sectionHeadingRow: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 24,
+      marginBottom: 12,
     },
-    sectionLabel: { 
-      fontFamily: 'Inter_500Medium', 
+    sectionHeadingRowText: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 22,
+      color: colors.text,
+      flex: 1,
+    },
+    pillListContent: {
+      gap: 10,
+      paddingHorizontal: layout.padding.horizontal,
+    },
+    collectionPill: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      borderWidth: 1,
+      borderColor: colors.border,
+      borderRadius: 999,
+      paddingVertical: 8,
+      paddingHorizontal: 12,
+      backgroundColor: colors.backgroundDark,
+    },
+    collectionPillActive: {
+      backgroundColor: colors.primary,
+      borderColor: colors.primary,
+    },
+    collectionPillText: {
+      fontFamily: 'Inter_600SemiBold',
       fontSize: 13,
       color: colors.text,
+    },
+    collectionPillTextActive: {
+      color: '#FFFFFF',
     },
     emptyState: {
       padding: 40,
@@ -210,44 +248,6 @@ const LibraryScreen = ({ navigation }) => {
       color: colors.textSecondary,
       textAlign: 'center',
       marginTop: 8,
-    },
-    controlWrap: {
-      paddingHorizontal: layout.padding.horizontal,
-      gap: 14,
-      marginTop: 4,
-    },
-    controlLine: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 10,
-    },
-    controlLabel: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
-      color: colors.text,
-      minWidth: 96,
-    },
-    chipRow: {
-      flexDirection: 'row',
-      gap: 8,
-      paddingRight: 8,
-    },
-    chip: {
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.backgroundDark,
-      borderRadius: 18,
-      paddingVertical: 7,
-      paddingHorizontal: 12,
-    },
-    chipActive: {
-      backgroundColor: isDark ? '#3A3020' : '#E6DEC8',
-      borderColor: isDark ? '#6A5540' : '#E6DEC8',
-    },
-    chipText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 12,
-      color: colors.text,
     },
     sortBtn: {
       flexDirection: 'row',
@@ -262,7 +262,7 @@ const LibraryScreen = ({ navigation }) => {
     },
     sortBtnText: {
       fontFamily: 'Inter_500Medium',
-      fontSize: 12,
+      fontSize: 13,
       color: colors.textSecondary,
     },
     listWrap: {
@@ -314,40 +314,56 @@ const LibraryScreen = ({ navigation }) => {
           <Text style={styles.title}>{t('libraryTitle', lang)}</Text>
         </View>
 
-        <View style={styles.controlWrap}>
-          <View style={styles.controlLine}>
-            <Text style={styles.controlLabel}>{`${t('libraryCategoriesLabel', lang)}:`}</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipRow}>
-              {categoryOptions.map((cat) => (
-                <TouchableOpacity
-                  key={String(cat.id)}
-                  style={[styles.chip, activeCategory === cat.id && styles.chipActive]}
-                  onPress={() => setActiveCategory(cat.id)}
-                >
-                  <Text style={styles.chipText}>{cat.label}</Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          </View>
+        {/* ── Kategoriler ──────────────────────────────────────── */}
+        <Text style={styles.sectionHeading}>{t('libraryCategoriesLabel', lang)}</Text>
+        <FlatList
+          horizontal
+          scrollEnabled
+          data={categoryOptions}
+          renderItem={({ item }) => (
+            <CategoryPill
+              label={item.label}
+              categoryName={item.rawName || item.label}
+              active={activeCategory === item.id}
+              compact
+              isDark={isDark}
+              onPress={() => setActiveCategory(item.id)}
+            />
+          )}
+          keyExtractor={(item) => String(item.id)}
+          contentContainerStyle={styles.pillListContent}
+          showsHorizontalScrollIndicator={false}
+          style={{ marginBottom: 8 }}
+        />
 
-          <View style={styles.controlLine}>
-            <Text style={styles.controlLabel}>{`${t('libraryMyCollectionLabel', lang)}:`}</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipRow}>
-              {collectionItems.map((item) => (
-                <TouchableOpacity
-                  key={item.id}
-                  style={[styles.chip, activeCollection === item.id && styles.chipActive]}
-                  onPress={() => setActiveCollection(item.id)}
-                >
-                  <Text style={styles.chipText}>{item.label}</Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          </View>
-        </View>
+        {/* ── Koleksiyonum ────────────────────────────────────── */}
+        <Text style={styles.sectionHeading}>{t('libraryMyCollectionLabel', lang)}</Text>
+        <FlatList
+          horizontal
+          scrollEnabled
+          data={collectionItems}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              style={[styles.collectionPill, activeCollection === item.id && styles.collectionPillActive]}
+              onPress={() => setActiveCollection(item.id)}
+            >
+              <Ionicons
+                name={item.id === 'favorites' ? 'heart-outline' : item.id === 'used' ? 'bookmark-outline' : 'time-outline'}
+                size={14}
+                color={activeCollection === item.id ? '#FFFFFF' : colors.textSecondary}
+              />
+              <Text style={[styles.collectionPillText, activeCollection === item.id && styles.collectionPillTextActive]}>{item.label}</Text>
+            </TouchableOpacity>
+          )}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.pillListContent}
+          showsHorizontalScrollIndicator={false}
+          style={{ marginBottom: 8 }}
+        />
 
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>{dynamicTitle}</Text>
+        {/* ── Liste başlığı + Sırala ───────────────────────────── */}
+        <View style={styles.sectionHeadingRow}>
+          <Text style={styles.sectionHeadingRowText}>{dynamicTitle}</Text>
           <TouchableOpacity style={styles.sortBtn} onPress={() => setSortModalVisible(true)}>
             <Ionicons name="swap-vertical-outline" size={15} color={colors.textSecondary} />
             <Text style={styles.sortBtnText}>{t('librarySortAction', lang)}</Text>
@@ -360,7 +376,7 @@ const LibraryScreen = ({ navigation }) => {
               key={`${activeCollection}-${story.story_id}`}
               story={story}
               type="ready"
-              isRead={(readCountsByStory?.[String(story.story_id)] || 0) > 0}
+              isRead={false}
               onPress={() => navigation.navigate('StoryDetail', { story })}
               onUseInConversation={() => navigation.navigate('UseInConversation', { story })}
             />
