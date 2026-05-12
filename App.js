@@ -10,6 +10,7 @@ import { t } from './src/locales/i18n';
 
 import { setupNotificationHandler, scheduleDailyNotifications } from './src/utils/notifications';
 import { ANALYTICS_EVENTS, trackEvent } from './src/utils/analytics';
+import { initAds } from './src/utils/ads';
 
 setupNotificationHandler();
 
@@ -90,6 +91,7 @@ function Main() {
       } catch (e) {}
       await initDb();
       await seedData();
+      initAds().catch(e => console.warn('initAds error:', e?.message));
 
       let savedPreferences = null;
       try {

@@ -31,7 +31,9 @@ import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import MicroVariantCard from '../components/MicroVariantCard';
 import StorytellerOverlay from '../components/StorytellerOverlay';
+import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import { shouldShowAd, loadRewarded } from '../utils/ads';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android') {
@@ -256,8 +258,32 @@ const UseInConversationScreen = ({ route, navigation }) => {
       storyId: story?.story_id,
       lang,
     });
-    navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
-  }, [navigation, story?.story_id, lang]);
+    if (shouldShowAd({ isPremium, isOnboarded: true })) {
+      setAdSheet(true);
+    } else {
+      navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
+    }
+  }, [navigation, story?.story_id, lang, isPremium]);
+
+  const [adSheet, setAdSheet] = React.useState(false);
+  const [isAdLoading, setIsAdLoading] = React.useState(false);
+
+  const handleWatchAdUIC = async () => {
+    setIsAdLoading(true);
+    trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation', choice: 'ad' });
+    const ad = await loadRewarded();
+    setIsAdLoading(false);
+    setAdSheet(false);
+    if (!ad) {
+      navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
+      return;
+    }
+    const { RewardedAdEventType } = require('react-native-google-mobile-ads');
+    ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
+      trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'use_in_conversation' });
+    });
+    ad.show().catch(e => console.warn('[UseInConversation] rewarded show error:', e?.message));
+  };
 
   const toggleExpanded = useCallback((id) => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
@@ -539,6 +565,23 @@ const UseInConversationScreen = ({ route, navigation }) => {
         colors={colors}
         layout={layout}
         isDark={isDark}
+        lang={lang}
+      />
+
+      {/* Ad or Premium Sheet */}
+      <AdOrPremiumSheet
+        visible={adSheet}
+        onClose={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation', choice: 'dismiss' });
+          setAdSheet(false);
+        }}
+        onWatchAd={handleWatchAdUIC}
+        onGoPremium={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation', choice: 'premium' });
+          setAdSheet(false);
+          navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
+        }}
+        isAdLoading={isAdLoading}
         lang={lang}
       />
     </SafeAreaView>

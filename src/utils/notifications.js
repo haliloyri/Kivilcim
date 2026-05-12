@@ -5,17 +5,68 @@ import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from './analytics';
 
 const REMINDER_WINDOW_HOURS = {
-  morning: 8,
-  noon: 13,
-  evening: 21,
+  morning: 7,
+  noon: 12,
+  evening: 19,
 };
 
-const getReminderHour = (windowKey, explicitHour) => {
+const REMINDER_WINDOW_MINUTES = {
+  morning: 42,
+  noon: 35,
+  evening: 45,
+};
+
+// Weekend (Sat/Sun) shifted hours — later start, relaxed schedule
+const REMINDER_WINDOW_HOURS_WEEKEND = {
+  morning: 9,
+  noon: 13,
+  evening: 20,
+};
+
+const REMINDER_WINDOW_MINUTES_WEEKEND = {
+  morning: 30,
+  noon: 5,
+  evening: 15,
+};
+
+// expo-notifications weekday: 1=Sunday, 2=Monday, ..., 7=Saturday
+const WEEKDAYS = [2, 3, 4, 5, 6]; // Mon–Fri
+const WEEKEND_DAYS = [7, 1]; // Sat, Sun
+
+const getReminderHour = (windowKey, explicitHour, isWeekend = false) => {
   const parsedHour = Number(explicitHour);
   if (!Number.isNaN(parsedHour) && parsedHour >= 0 && parsedHour <= 23) {
     return parsedHour;
   }
+  if (isWeekend) {
+    return REMINDER_WINDOW_HOURS_WEEKEND[windowKey] ?? REMINDER_WINDOW_HOURS_WEEKEND.evening;
+  }
   return REMINDER_WINDOW_HOURS[windowKey] ?? REMINDER_WINDOW_HOURS.evening;
+};
+
+const getReminderMinute = (windowKey, isWeekend = false) => {
+  if (isWeekend) {
+    return REMINDER_WINDOW_MINUTES_WEEKEND[windowKey] ?? REMINDER_WINDOW_MINUTES_WEEKEND.evening;
+  }
+  return REMINDER_WINDOW_MINUTES[windowKey] ?? REMINDER_WINDOW_MINUTES.evening;
+};
+
+/**
+ * Schedule a single notification for each day in `days` array at the given hour/minute.
+ * Returns a promise that resolves when all are scheduled.
+ */
+const scheduleWeeklyForDays = async ({ days, hour, minute, content }) => {
+  for (const weekday of days) {
+    await Notifications.scheduleNotificationAsync({
+      content,
+      trigger: {
+        type: 'weekly',
+        weekday,
+        hour,
+        minute,
+      },
+    });
+  }
 };
 
 const getPlanNotificationKey = (dailyStoryTarget) => {
@@ -29,6 +80,7 @@ const NOTIFICATION_SEGMENTS = {
   ACTIVE_3D: 'active_3d',
   CHURN_RISK: 'churn_risk',
   SHARER_NON_PREMIUM: 'sharer_non_premium',
+  STREAK_RISK: 'streak_risk',
   DEFAULT: 'default',
 };
 
@@ -97,6 +149,7 @@ const getSegmentTemplateKey = (segment) => {
   if (segment === NOTIFICATION_SEGMENTS.ACTIVE_3D) return 'notif_seg_active_3d';
   if (segment === NOTIFICATION_SEGMENTS.CHURN_RISK) return 'notif_seg_churn_risk';
   if (segment === NOTIFICATION_SEGMENTS.SHARER_NON_PREMIUM) return 'notif_seg_sharer_non_premium';
+  if (segment === NOTIFICATION_SEGMENTS.STREAK_RISK) return 'notif_seg_streak_risk';
   return null;
 };
 
@@ -137,7 +190,6 @@ export async function scheduleDailyNotifications(options = 'tr') {
     ? normalized.reminderWindows.filter(w => ['morning', 'noon', 'evening'].includes(w))
     : [normalized.reminderWindow || 'evening'];
   const reminderWindow = reminderWindows[0];
-  const reminderHour = getReminderHour(reminderWindow, normalized.reminderHour);
   const dailyStoryTarget = Number(normalized.dailyStoryTarget) || 2;
   const totalReads = Number(normalized.totalReads) || 0;
   const streak = Number(normalized.streak) || 0;
@@ -168,7 +220,8 @@ export async function scheduleDailyNotifications(options = 'tr') {
         platform: Platform.OS,
         lang,
         reminderWindow,
-        reminderHour,
+        reminderHourWeekday: getReminderHour(reminderWindow, null, false),
+        reminderHourWeekend: getReminderHour(reminderWindow, null, true),
         dailyStoryTarget,
         segment,
         bodyKey,
@@ -192,21 +245,59 @@ export async function scheduleDailyNotifications(options = 'tr') {
 
   const planKey = getPlanNotificationKey(dailyStoryTarget);
 
-  // Schedule one notification per selected reminder window
+  const notifContent = (bodyText) => ({
+    title: t('brandText', lang),
+    body: bodyText,
+    sound: true,
+    ...(Platform.OS === 'android' ? { channelId: 'default' } : {}),
+  });
+
+  // Schedule weekday (Mon–Fri) and weekend (Sat–Sun) notifications per window
   for (const window of reminderWindows) {
-    const windowHour = getReminderHour(window, null);
-    await Notifications.scheduleNotificationAsync({
-      content: {
-        title: t('brandText', lang),
-        body,
-        sound: true,
-        ...(Platform.OS === 'android' ? { channelId: 'default' } : {}),
-      },
-      trigger: {
-        type: 'daily',
-        hour: windowHour,
-        minute: 0,
-      },
+    const weekdayHour = getReminderHour(window, null, false);
+    const weekdayMinute = getReminderMinute(window, false);
+    const weekendHour = getReminderHour(window, null, true);
+    const weekendMinute = getReminderMinute(window, true);
+
+    await scheduleWeeklyForDays({
+      days: WEEKDAYS,
+      hour: weekdayHour,
+      minute: weekdayMinute,
+      content: notifContent(body),
+    });
+
+    await scheduleWeeklyForDays({
+      days: WEEKEND_DAYS,
+      hour: weekendHour,
+      minute: weekendMinute,
+      content: notifContent(body),
+    });
+  }
+
+  // Streak-risk night reminder if streak >= 2
+  // Weekday: 22:30 — Weekend: 21:45 (earlier, people sleep earlier on weekends)
+  if (streak >= 2) {
+    const { body: streakRiskBody } = buildNotificationBody({
+      segment: NOTIFICATION_SEGMENTS.STREAK_RISK,
+      lang,
+      dailyStoryTarget,
+      streak,
+      daysSinceLastRead,
+    });
+    const streakContent = notifContent(streakRiskBody);
+
+    await scheduleWeeklyForDays({
+      days: WEEKDAYS,
+      hour: 22,
+      minute: 30,
+      content: streakContent,
+    });
+
+    await scheduleWeeklyForDays({
+      days: WEEKEND_DAYS,
+      hour: 21,
+      minute: 45,
+      content: streakContent,
     });
   }
 
@@ -216,7 +307,8 @@ export async function scheduleDailyNotifications(options = 'tr') {
     lang,
     reminderWindows,
     reminderWindow,
-    reminderHour,
+    reminderHourWeekday: getReminderHour(reminderWindow, null, false),
+    reminderHourWeekend: getReminderHour(reminderWindow, null, true),
     dailyStoryTarget,
     totalReads,
     streak,

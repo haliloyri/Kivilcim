@@ -25,6 +25,12 @@ const ANALYTICS_EVENTS = {
   STORYTELLER_MODE_OPENED: 'storyteller_mode_opened',
   STORYTELLER_PRACTICE_COMPLETED: 'storyteller_practice_completed',
   SOCIAL_SHARE_PLATFORM: 'social_share_platform',
+  // Ads
+  AD_IMPRESSION: 'ad_impression',
+  AD_CLICKED: 'ad_clicked',
+  AD_FAILED_TO_LOAD: 'ad_failed_to_load',
+  REWARDED_AD_COMPLETED: 'rewarded_ad_completed',
+  AD_OR_PREMIUM_CHOICE: 'ad_or_premium_choice',
 };
 
 const sanitizePayload = (payload) => {

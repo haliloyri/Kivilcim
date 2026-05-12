@@ -17,6 +17,8 @@ import { t } from '../locales/i18n';
 import { getStoryByLang } from '../db/db';
 import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
+import { shouldShowAd, loadRewarded } from '../utils/ads';
 
 const { width, height } = Dimensions.get('window');
 
@@ -40,6 +42,33 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [localLang, setLocalLang] = useState(lang);
   const [localStory, setLocalStory] = useState(story);
+  const [adSheet, setAdSheet] = useState(false);
+  const [isAdLoading, setIsAdLoading] = useState(false);
+
+  const handleNextWithAd = () => {
+    if (shouldShowAd({ isPremium, isOnboarded: true })) {
+      setAdSheet(true);
+    } else {
+      navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
+    }
+  };
+
+  const handleWatchAdNext = async () => {
+    setIsAdLoading(true);
+    trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_next', choice: 'ad' });
+    const ad = await loadRewarded();
+    setIsAdLoading(false);
+    setAdSheet(false);
+    if (!ad) {
+      navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
+      return;
+    }
+    const { RewardedAdEventType } = require('react-native-google-mobile-ads');
+    ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
+      trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_next' });
+    });
+    ad.show().catch(e => console.warn('[StoryDetail] rewarded show error:', e?.message));
+  };
 
   React.useEffect(() => {
     let active = true;
@@ -158,7 +187,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
         storyId: story?.story_id,
         lang,
       });
-      navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
+      handleNextWithAd();
       return;
     }
     const currentIndex = stories.findIndex(s => s.story_id === story.story_id);
@@ -943,6 +972,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   };
 
   return (
+    <>
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
       {/* ===== SHARE MODAL ===== */}
       <Modal
@@ -1420,6 +1450,23 @@ const StoryDetailScreen = ({ route, navigation }) => {
         </View>
       </View>
     </SafeAreaView>
+
+    <AdOrPremiumSheet
+      visible={adSheet}
+      onClose={() => {
+        trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_next', choice: 'dismiss' });
+        setAdSheet(false);
+      }}
+      onWatchAd={handleWatchAdNext}
+      onGoPremium={() => {
+        trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_next', choice: 'premium' });
+        setAdSheet(false);
+        navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
+      }}
+      isAdLoading={isAdLoading}
+      lang={lang}
+    />
+    </>
   );
 };
 

@@ -12,10 +12,12 @@ import { useStories } from '../context/StoriesContext';
 import { getSelectedCategories } from '../db/db';
 import StoryCard from '../components/StoryCard';
 import CategoryPill from '../components/CategoryPill';
+import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import { Ionicons } from '@expo/vector-icons';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import { shouldShowAd, loadRewarded } from '../utils/ads';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -543,14 +545,47 @@ const HomeScreen = ({ navigation }) => {
     navigation.navigate('StoryDetail', { story });
   };
 
-  const openPaywallFromFreeLimit = (source, storyId = null) => {
-    trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
-      source,
-      storyId,
-      lang,
-    });
-    navigation.navigate('Paywall', { reason: 'free_limit_reached', source });
+  // ─── Ad / Premium sheet state ──────────────────────────────────────────────
+  const [adSheet, setAdSheet] = useState({ visible: false, source: null, storyId: null });
+  const [isAdLoading, setIsAdLoading] = useState(false);
+
+  const openAdOrPremiumSheet = (source, storyId = null) => {
+    trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, { source, storyId, lang });
+    if (shouldShowAd({ isPremium, isOnboarded })) {
+      setAdSheet({ visible: true, source, storyId });
+    } else {
+      navigation.navigate('Paywall', { reason: 'free_limit_reached', source });
+    }
   };
+
+  const handleWatchAd = async () => {
+    setIsAdLoading(true);
+    trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: adSheet.source, choice: 'ad' });
+    const ad = await loadRewarded();
+    setIsAdLoading(false);
+    if (!ad) {
+      // Ad failed — fall back to paywall
+      setAdSheet({ visible: false, source: null, storyId: null });
+      navigation.navigate('Paywall', { reason: 'free_limit_reached', source: adSheet.source });
+      return;
+    }
+    setAdSheet({ visible: false, source: null, storyId: null });
+    ad.addAdEventListener('rewarded_loaded', () => {});
+    const { RewardedAdEventType } = require('react-native-google-mobile-ads');
+    ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
+      trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: adSheet.source });
+    });
+    ad.show().catch(e => console.warn('[HomeScreen] rewarded show error:', e?.message));
+  };
+
+  const handleAdSheetGoPremium = () => {
+    trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: adSheet.source, choice: 'premium' });
+    setAdSheet({ visible: false, source: null, storyId: null });
+    navigation.navigate('Paywall', { reason: 'free_limit_reached', source: adSheet.source });
+  };
+
+  // Keep old name as alias so existing callsites work without change
+  const openPaywallFromFreeLimit = openAdOrPremiumSheet;
 
   const paginatedStories = remainingStories.slice(0, visibleCount);
 
@@ -1867,6 +1902,19 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
       </Modal>
+
+      {/* Ad or Premium Sheet */}
+      <AdOrPremiumSheet
+        visible={adSheet.visible}
+        onClose={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: adSheet.source, choice: 'dismiss' });
+          setAdSheet({ visible: false, source: null, storyId: null });
+        }}
+        onWatchAd={handleWatchAd}
+        onGoPremium={handleAdSheetGoPremium}
+        isAdLoading={isAdLoading}
+        lang={lang}
+      />
     </SafeAreaView>
   );
 };
