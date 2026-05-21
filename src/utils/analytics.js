@@ -10,6 +10,8 @@ const ANALYTICS_EVENTS = {
   PAYWALL_PURCHASE_FAILED: 'paywall_purchase_failed',
   FREE_LIMIT_TO_PAYWALL: 'free_limit_to_paywall',
   DAILY_TARGET_COMPLETED: 'daily_target_completed',
+  STREAK_FREEZE_ACTIVATED: 'streak_freeze_activated',
+  STREAK_FREEZE_UPSELL_CLICKED: 'streak_freeze_upsell_clicked',
   NOTIFICATION_SCHEDULED: 'notification_scheduled',
   NOTIFICATION_OPENED: 'notification_opened',
   REMINDER_TIME_CHANGED: 'reminder_time_changed',

@@ -22,16 +22,6 @@ export const translations = {
     homeFreemiumTeaserHint: 'Today\'s 3rd story is available as an ad-free teaser. Unlock Premium for full access.',
     homeFreemiumPremiumBenefit: 'Premium unlocks all locked stories, audio mode, and personal notes.',
     homeFreemiumWeeklyBonusHint: 'Weekly bonus: 1 extra story is open this week.',
-    // Ads
-    adSheetTitle: 'Unlock This Story',
-    adSheetSubtitle: 'Watch a short ad or upgrade to Premium for unlimited access.',
-    adWatchCta: 'Watch Ad — Unlock 1 Story',
-    adWatchSubtitle: 'Free · Takes about 30 seconds',
-    adOrLabel: 'or',
-    premiumUpgradeCta: 'Go Premium',
-    premiumUpgradeSubtitle: 'Unlimited stories · Ad-free · All features',
-    adRemoveWithPremium: 'Remove ads with Premium',
-    adSponsored: 'Sponsored',
     noStoriesTitle: 'No stories yet',
     noStoriesBody: 'There are no stories in this category right now. Check back later or explore other categories!',
     // SearchScreen
@@ -193,6 +183,15 @@ export const translations = {
     paywallLegalRefund: 'Refund',
     paywallLegalUnavailable: 'Legal page could not be opened right now. Please try again later.',
     paywallPurchaseFailed: 'Purchase could not be completed. Please try again.',
+    adSheetTitle: 'Today\'s free limit is reached',
+    adSheetSubtitle: 'You can continue by watching an ad or unlock everything with Premium.',
+    adWatchCta: 'Watch an ad',
+    adWatchSubtitle: 'A short ad unlocks this action once.',
+    adNotReady: 'Ad is not ready right now.',
+    adTryAgainLater: 'Try again later',
+    adOrLabel: 'or',
+    premiumUpgradeCta: 'View Premium',
+    premiumUpgradeSubtitle: 'Premium removes ads and unlocks all stories.',
     
     // OnboardingScreen
     onboarding1Title: 'Daily Sparks',
@@ -471,6 +470,12 @@ export const translations = {
 
     // Launch
     launch_tagline: 'A spark every day.',
+    launch_preparing_library: 'Preparing your library...',
+    launch_loading_stories: 'Loading stories...',
+    launch_preparing_plan: 'Preparing your personal plan...',
+    launch_taking_longer: 'This is taking a little longer, we are still working...',
+    launch_loading_failed: 'Loading could not be completed.',
+    launch_try_again: 'Try again',
 
     // SohbetteKullanScreen
     mv_screen_title: 'USE IN CONVERSATION',
@@ -575,16 +580,6 @@ export const translations = {
     homeFreemiumTeaserHint: 'Bugunun 3. icerigi reklamsiz teaser olarak acik. Tam erisim icin Premium\'u ac.',
     homeFreemiumPremiumBenefit: 'Premium ile tum kilitli hikayeler, sesli mod ve kisisel notlar acilir.',
     homeFreemiumWeeklyBonusHint: 'Haftalik bonus: Bu hafta 1 ekstra icerik acik.',
-    // Ads
-    adSheetTitle: 'Bu Hikayeyi Aç',
-    adSheetSubtitle: 'Kısa bir reklam izle ya da Premium\'a geç ve sınırsız erişim kazan.',
-    adWatchCta: 'Reklam İzle — 1 Hikaye Aç',
-    adWatchSubtitle: 'Ücretsiz · Yaklaşık 30 saniye',
-    adOrLabel: 'veya',
-    premiumUpgradeCta: 'Premium Ol',
-    premiumUpgradeSubtitle: 'Sınırsız hikaye · Reklamsız · Tüm özellikler',
-    adRemoveWithPremium: 'Premium ile reklamları kaldır',
-    adSponsored: 'Sponsorlu',
     noStoriesTitle: 'Henüz hikaye yok',
     noStoriesBody: 'Bu kategoride şu an hikaye bulunmuyor. Daha sonra tekrar kontrol edin veya diğer kategorileri keşfedin!',
     
@@ -747,6 +742,15 @@ export const translations = {
     paywallLegalRefund: 'İade',
     paywallLegalUnavailable: 'Hukuki sayfa şu anda açılamadı. Lütfen daha sonra tekrar dene.',
     paywallPurchaseFailed: 'Satın alma tamamlanamadı. Lütfen tekrar dene.',
+    adSheetTitle: 'Bugünkü ücretsiz limit doldu',
+    adSheetSubtitle: 'Bir reklam izleyerek devam edebilir veya Premium ile her şeyi açabilirsin.',
+    adWatchCta: 'Reklam izle',
+    adWatchSubtitle: 'Kısa bir reklam bu işlemi bir kez açar.',
+    adNotReady: 'Reklam şu anda hazır değil.',
+    adTryAgainLater: 'Daha sonra dene',
+    adOrLabel: 'veya',
+    premiumUpgradeCta: 'Premium\'u gör',
+    premiumUpgradeSubtitle: 'Premium reklamları kaldırır ve tüm hikayeleri açar.',
 
     // OnboardingScreen
     onboarding1Title: 'Günlük Sparklar',
@@ -1025,6 +1029,12 @@ export const translations = {
 
     // Launch
     launch_tagline: 'Her gün bir Spark.',
+    launch_preparing_library: 'Kitaplığın hazırlanıyor...',
+    launch_loading_stories: 'Hikayeler yükleniyor...',
+    launch_preparing_plan: 'Kişisel planın hazırlanıyor...',
+    launch_taking_longer: 'Bu biraz uzun sürdü, hala çalışıyoruz...',
+    launch_loading_failed: 'Yükleme tamamlanamadı.',
+    launch_try_again: 'Tekrar dene',
 
     // SohbetteKullanScreen
     mv_screen_title: 'SOHBETTE KULLAN',
@@ -1092,16 +1102,6 @@ export const translations = {
     homeFreemiumTeaserHint: 'La 3. historia de hoy está abierta como teaser sin anuncios. Desbloquea Premium para acceso total.',
     homeFreemiumPremiumBenefit: 'Premium desbloquea todas las historias bloqueadas, modo audio y notas personales.',
     homeFreemiumWeeklyBonusHint: 'Bono semanal: 1 historia extra abierta esta semana.',
-    // Ads
-    adSheetTitle: 'Desbloquear Esta Historia',
-    adSheetSubtitle: 'Mira un anuncio corto o actualiza a Premium para acceso ilimitado.',
-    adWatchCta: 'Ver Anuncio — Desbloquear 1 Historia',
-    adWatchSubtitle: 'Gratis · Unos 30 segundos',
-    adOrLabel: 'o',
-    premiumUpgradeCta: 'Obtener Premium',
-    premiumUpgradeSubtitle: 'Historias ilimitadas · Sin anuncios · Todas las funciones',
-    adRemoveWithPremium: 'Eliminar anuncios con Premium',
-    adSponsored: 'Patrocinado',
     noStoriesTitle: 'Aún no hay historias',
     noStoriesBody: 'No hay historias en esta categoría en este momento. ¡Vuelve más tarde o explora otras categorías!',
     
@@ -1202,6 +1202,12 @@ export const translations = {
     share_reflect: '🤔 Reflexionar',
 
     launch_tagline: 'Una chispa cada día.',
+    launch_preparing_library: 'Preparando tu biblioteca...',
+    launch_loading_stories: 'Cargando historias...',
+    launch_preparing_plan: 'Preparando tu plan personal...',
+    launch_taking_longer: 'Esto está tardando un poco más, seguimos trabajando...',
+    launch_loading_failed: 'No se pudo completar la carga.',
+    launch_try_again: 'Intentar de nuevo',
 
     // SohbetteKullanScreen
     mv_screen_title: 'ÚSALO EN CONVERSACIÓN',
@@ -1463,7 +1469,7 @@ export const translations = {
     onboarding_hiw_spark_sub: 'Un pequeño hábito que puedes mantener. El progreso se acumula.',
     onboarding_hiw_reminder_title: 'Un recordatorio suave en el momento justo',
     onboarding_hiw_reminder_sub: 'Te avisamos cuando eliges — mañana, mediodía o noche.',
-    onboarding_name_title: '¿Cómo te llamamos?',
+    onboarding_name_title: '¿Cómo tellamamos?',
     onboarding_name_sub: 'Opcional — puedes añadirlo después en Perfil.',
     onboarding_name_placeholder: 'Tu nombre',
     onboarding_email_placeholder: 'Correo electrónico (opcional)',
@@ -1525,6 +1531,15 @@ export const translations = {
     paywallLegalRefund: 'Reembolso',
     paywallLegalUnavailable: 'No se pudo abrir la página legal ahora. Inténtalo más tarde.',
     paywallPurchaseFailed: 'No se pudo completar la compra. Inténtalo de nuevo.',
+    adSheetTitle: 'Alcanzaste el límite gratis de hoy',
+    adSheetSubtitle: 'Puedes continuar viendo un anuncio o desbloquear todo con Premium.',
+    adWatchCta: 'Ver anuncio',
+    adWatchSubtitle: 'Un anuncio corto desbloquea esta acción una vez.',
+    adNotReady: 'El anuncio no está listo ahora.',
+    adTryAgainLater: 'Intentar más tarde',
+    adOrLabel: 'o',
+    premiumUpgradeCta: 'Ver Premium',
+    premiumUpgradeSubtitle: 'Premium elimina anuncios y desbloquea todas las historias.',
     newBadge: 'NUEVO',
     minLabel: 'min',
     notif_8: '¡Buenos días! ¿Listo para comenzar el día con una historia inspiradora? ☀️',
@@ -1619,16 +1634,6 @@ export const translations = {
     homeFreemiumTeaserHint: 'Die 3. Geschichte heute ist als werbefreier Teaser offen. Für vollen Zugriff Premium freischalten.',
     homeFreemiumPremiumBenefit: 'Premium schaltet alle gesperrten Geschichten, Audiomodus und persönliche Notizen frei.',
     homeFreemiumWeeklyBonusHint: 'Wochenbonus: Diese Woche ist 1 extra Geschichte offen.',
-    // Ads
-    adSheetTitle: 'Diese Geschichte Freischalten',
-    adSheetSubtitle: 'Schau eine kurze Werbung oder upgrade auf Premium für unbegrenzten Zugang.',
-    adWatchCta: 'Werbung Ansehen — 1 Geschichte freischalten',
-    adWatchSubtitle: 'Kostenlos · Etwa 30 Sekunden',
-    adOrLabel: 'oder',
-    premiumUpgradeCta: 'Premium werden',
-    premiumUpgradeSubtitle: 'Unbegrenzte Geschichten · Werbefrei · Alle Funktionen',
-    adRemoveWithPremium: 'Werbung mit Premium entfernen',
-    adSponsored: 'Gesponsert',
     noStoriesTitle: 'Noch keine Geschichten',
     noStoriesBody: 'In dieser Kategorie gibt es gerade keine Geschichten. Schau später wieder vorbei oder entdecke andere Kategorien!',
     
@@ -1729,6 +1734,12 @@ export const translations = {
     share_reflect: '🤔 Reflektieren',
 
     launch_tagline: 'Jeden Tag ein Funke.',
+    launch_preparing_library: 'Deine Bibliothek wird vorbereitet...',
+    launch_loading_stories: 'Geschichten werden geladen...',
+    launch_preparing_plan: 'Dein persönlicher Plan wird vorbereitet...',
+    launch_taking_longer: 'Das dauert etwas länger, wir arbeiten noch daran...',
+    launch_loading_failed: 'Das Laden konnte nicht abgeschlossen werden.',
+    launch_try_again: 'Erneut versuchen',
 
     // SohbetteKullanScreen
     mv_screen_title: 'IM GESPRÄCH NUTZEN',
@@ -2052,6 +2063,15 @@ export const translations = {
     paywallLegalRefund: 'Rückerstattung',
     paywallLegalUnavailable: 'Die Rechtsseite konnte gerade nicht geöffnet werden. Bitte später erneut versuchen.',
     paywallPurchaseFailed: 'Der Kauf konnte nicht abgeschlossen werden. Bitte erneut versuchen.',
+    adSheetTitle: 'Dein kostenloses Limit für heute ist erreicht',
+    adSheetSubtitle: 'Du kannst mit einer Anzeige fortfahren oder mit Premium alles freischalten.',
+    adWatchCta: 'Anzeige ansehen',
+    adWatchSubtitle: 'Eine kurze Anzeige schaltet diese Aktion einmal frei.',
+    adNotReady: 'Die Anzeige ist gerade nicht bereit.',
+    adTryAgainLater: 'Später erneut versuchen',
+    adOrLabel: 'oder',
+    premiumUpgradeCta: 'Premium ansehen',
+    premiumUpgradeSubtitle: 'Premium entfernt Anzeigen und schaltet alle Geschichten frei.',
     newBadge: 'NEU',
     minLabel: 'min',
     notif_8: 'Guten Morgen! Bereit, den Tag mit einer inspirierenden Geschichte zu beginnen? ☀️',

@@ -12,12 +12,112 @@ import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 const PaywallScreen = ({ navigation, route }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
   const [plan, setPlan] = useState(1);
-  const isFreeLimitReached = route?.params?.reason === 'free_limit_reached';
+  const paywallReason = route?.params?.reason || 'none';
+  const isFreeLimitReached = paywallReason === 'free_limit_reached';
+  const isEarlyTrial = paywallReason === 'early_trial';
   const paywallSource = route?.params?.source || 'direct';
   const hasTrackedViewRef = useRef(false);
+  const isLockedStorySource = [
+    'home_featured_story_locked',
+    'home_daily_panel_locked',
+    'home_feed_teaser',
+    'home_feed_locked',
+    'story_detail_next',
+  ].includes(paywallSource);
+  const isStorytellerSource = paywallReason === 'storyteller_mode' || paywallSource === 'use_in_conversation';
+  const isProfileSource = paywallSource === 'profile_upsell';
+  const isStreakFreezeSource = paywallReason === 'streak_freeze' || paywallSource === 'progress_streak_freeze';
+  const paywallVariant = React.useMemo(() => {
+    if (isEarlyTrial) {
+      return {
+        bannerTitleKey: 'paywallEarlyTrialTitle',
+        bannerSubKey: 'paywallEarlyTrialSub',
+        titleKey: 'paywallEarlyTrialHeroTitle',
+        subKey: 'paywallEarlyTrialHeroSub',
+        whyTitleKey: 'paywallWhyNowTrialTitle',
+        whySubKey: 'paywallWhyNowTrialSub',
+        valueKeys: ['paywallTrialValue1', 'paywallTrialValue2', 'paywallTrialValue3'],
+      };
+    }
+
+    if (isStorytellerSource) {
+      return {
+        bannerTitleKey: 'paywallStorytellerTitle',
+        bannerSubKey: 'paywallStorytellerSub',
+        titleKey: 'paywallStorytellerHeroTitle',
+        subKey: 'paywallStorytellerHeroSub',
+        whyTitleKey: 'paywallWhyNowStorytellerTitle',
+        whySubKey: 'paywallWhyNowStorytellerSub',
+        valueKeys: ['paywallStorytellerValue1', 'paywallStorytellerValue2', 'paywallStorytellerValue3'],
+      };
+    }
+
+    if (isStreakFreezeSource) {
+      return {
+        bannerTitleKey: 'paywallStreakFreezeTitle',
+        bannerSubKey: 'paywallStreakFreezeSub',
+        titleKey: 'paywallStreakFreezeHeroTitle',
+        subKey: 'paywallStreakFreezeHeroSub',
+        whyTitleKey: 'paywallWhyNowStreakFreezeTitle',
+        whySubKey: 'paywallWhyNowStreakFreezeSub',
+        valueKeys: ['paywallStreakFreezeValue1', 'paywallStreakFreezeValue2', 'paywallStreakFreezeValue3'],
+      };
+    }
+
+    if (isLockedStorySource) {
+      return {
+        bannerTitleKey: 'paywallLockedTitle',
+        bannerSubKey: 'paywallLockedSub',
+        titleKey: 'paywallLockedHeroTitle',
+        subKey: 'paywallLockedHeroSub',
+        whyTitleKey: 'paywallWhyNowLockedTitle',
+        whySubKey: 'paywallWhyNowLockedSub',
+        valueKeys: ['paywallLockedValue1', 'paywallLockedValue2', 'paywallLockedValue3'],
+      };
+    }
+
+    if (isProfileSource) {
+      return {
+        bannerTitleKey: 'paywallProfileTitle',
+        bannerSubKey: 'paywallProfileSub',
+        titleKey: 'paywallProfileHeroTitle',
+        subKey: 'paywallProfileHeroSub',
+        whyTitleKey: 'paywallWhyNowProfileTitle',
+        whySubKey: 'paywallWhyNowProfileSub',
+        valueKeys: ['paywallProfileValue1', 'paywallProfileValue2', 'paywallProfileValue3'],
+      };
+    }
+
+    return {
+      bannerTitleKey: null,
+      bannerSubKey: null,
+      titleKey: 'paywallTitle',
+      subKey: 'paywallSub',
+      whyTitleKey: 'paywallWhyNowTitle',
+      whySubKey: 'paywallWhyNowSub',
+      valueKeys: ['paywallValue1', 'paywallValue2', 'paywallValue3'],
+    };
+  }, [isEarlyTrial, isLockedStorySource, isProfileSource, isStorytellerSource, isStreakFreezeSource]);
   const plans = [
-    { name: t('planMonthly', lang), price: '49₺', per: t('perMo', lang), save: null },
-    { name: t('planAnnual', lang), price: '349₺', per: t('perYr', lang), save: t('save40', lang), popular: true },
+    {
+      id: 'monthly',
+      name: t('planMonthly', lang),
+      price: '49₺',
+      per: t('perMo', lang),
+      save: null,
+      detail: t('paywallMonthlyDetail', lang),
+    },
+    {
+      id: 'annual',
+      name: t('planAnnual', lang),
+      price: '349₺',
+      per: t('perYr', lang),
+      save: t('save40', lang),
+      popular: true,
+      badge: t('paywallAnnualBestValue', lang),
+      detail: t('paywallAnnualDetail', lang),
+      effectivePrice: t('paywallAnnualMonthlyEquivalent', lang),
+    },
   ];
   const features = [
     t('feat1', lang),
@@ -26,11 +126,7 @@ const PaywallScreen = ({ navigation, route }) => {
     t('feat4', lang),
     t('feat5', lang),
   ];
-  const valuePoints = [
-    t('paywallValue1', lang),
-    t('paywallValue2', lang),
-    t('paywallValue3', lang),
-  ];
+  const valuePoints = paywallVariant.valueKeys.map((key) => t(key, lang));
   const trustPoints = [
     t('paywallTrust1', lang),
     t('paywallTrust2', lang),
@@ -50,10 +146,12 @@ const PaywallScreen = ({ navigation, route }) => {
 
     trackEvent(ANALYTICS_EVENTS.PAYWALL_PLAN_SELECTED, {
       previousPlan: plans[plan]?.name,
+      previousPlanId: plans[plan]?.id,
       selectedPlan: plans[nextPlan]?.name,
+      selectedPlanId: plans[nextPlan]?.id,
       selectedPrice: plans[nextPlan]?.price,
       source: paywallSource,
-      reason: route?.params?.reason || 'none',
+      reason: paywallReason,
       lang,
     });
 
@@ -65,9 +163,10 @@ const PaywallScreen = ({ navigation, route }) => {
     hasTrackedViewRef.current = true;
 
     trackEvent(ANALYTICS_EVENTS.PAYWALL_VIEWED, {
-      reason: route?.params?.reason || 'none',
+      reason: paywallReason,
       source: paywallSource,
       selectedPlan: plans[plan]?.name,
+      selectedPlanId: plans[plan]?.id,
       lang,
     });
 
@@ -78,15 +177,16 @@ const PaywallScreen = ({ navigation, route }) => {
         lang,
       });
     }
-  }, [isFreeLimitReached, lang, paywallSource, plan, plans, route?.params?.reason]);
+  }, [isFreeLimitReached, lang, paywallReason, paywallSource, plan, plans]);
 
   const handlePurchase = async () => {
     const selectedPlan = plans[plan];
     await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_STARTED, {
       selectedPlan: selectedPlan?.name,
+      selectedPlanId: selectedPlan?.id,
       selectedPrice: selectedPlan?.price,
       source: paywallSource,
-      reason: route?.params?.reason || 'none',
+      reason: paywallReason,
       lang,
     });
 
@@ -94,9 +194,10 @@ const PaywallScreen = ({ navigation, route }) => {
     if (success) {
       await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_SUCCEEDED, {
         selectedPlan: selectedPlan?.name,
+        selectedPlanId: selectedPlan?.id,
         selectedPrice: selectedPlan?.price,
         source: paywallSource,
-        reason: route?.params?.reason || 'none',
+        reason: paywallReason,
         lang,
       });
       navigation.goBack();
@@ -105,9 +206,10 @@ const PaywallScreen = ({ navigation, route }) => {
 
     await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_FAILED, {
       selectedPlan: selectedPlan?.name,
+      selectedPlanId: selectedPlan?.id,
       selectedPrice: selectedPlan?.price,
       source: paywallSource,
-      reason: route?.params?.reason || 'none',
+      reason: paywallReason,
       lang,
       failureReason: 'buy_premium_returned_false',
     });
@@ -263,7 +365,8 @@ const PaywallScreen = ({ navigation, route }) => {
     },
     planCardSelected: { 
       borderWidth: 1.5, 
-      borderColor: colors.primary 
+      borderColor: colors.primary,
+      backgroundColor: isDark ? 'rgba(200, 150, 80, 0.12)' : '#FFF8EC',
     },
     popularBadge: { 
       backgroundColor: colors.danger, 
@@ -298,6 +401,38 @@ const PaywallScreen = ({ navigation, route }) => {
       fontSize: typography.sizes.badge, 
       color: colors.success, 
       marginTop: 4 
+    },
+    planDetail: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.badge,
+      color: colors.textSecondary,
+      textAlign: 'center',
+      lineHeight: 16,
+      marginTop: 6,
+    },
+    planEffectivePrice: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: typography.sizes.badge + 1,
+      color: colors.primary,
+      marginTop: 6,
+      textAlign: 'center',
+    },
+    annualNudge: {
+      borderWidth: 1,
+      borderColor: `${colors.primary}55`,
+      borderRadius: layout.radius.card,
+      backgroundColor: isDark ? 'rgba(200, 150, 80, 0.10)' : '#FFF6E8',
+      paddingHorizontal: 12,
+      paddingVertical: 10,
+      marginTop: -8,
+      marginBottom: 16,
+    },
+    annualNudgeText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: typography.sizes.badge + 1,
+      color: colors.text,
+      textAlign: 'center',
+      lineHeight: 18,
     },
     featureRow: { 
       flexDirection: 'row', 
@@ -419,15 +554,15 @@ const PaywallScreen = ({ navigation, route }) => {
 
         <Text style={{ fontSize: 44, textAlign: 'center', marginBottom: 12, color: colors.primary }}>✦</Text>
 
-        {isFreeLimitReached && (
+        {paywallVariant.bannerTitleKey && (
           <View style={styles.limitBanner}>
-            <Text style={styles.limitBannerTitle}>{t('paywallLimitReachedTitle', lang)}</Text>
-            <Text style={styles.limitBannerSub}>{t('paywallLimitReachedSub', lang)}</Text>
+            <Text style={styles.limitBannerTitle}>{t(paywallVariant.bannerTitleKey, lang)}</Text>
+            <Text style={styles.limitBannerSub}>{t(paywallVariant.bannerSubKey, lang)}</Text>
           </View>
         )}
 
-        <Text style={styles.paywallTitle}>{t('paywallTitle', lang)}</Text>
-        <Text style={styles.paywallSub}>{t('paywallSub', lang)}</Text>
+        <Text style={styles.paywallTitle}>{t(paywallVariant.titleKey, lang)}</Text>
+        <Text style={styles.paywallSub}>{t(paywallVariant.subKey, lang)}</Text>
 
         <View style={styles.modelCard}>
           <Text style={styles.modelTitle}>{t('paywallModelTitle', lang)}</Text>
@@ -445,8 +580,8 @@ const PaywallScreen = ({ navigation, route }) => {
         </View>
 
         <View style={styles.whyNowCard}>
-          <Text style={styles.whyNowTitle}>{t('paywallWhyNowTitle', lang)}</Text>
-          <Text style={styles.whyNowSub}>{t('paywallWhyNowSub', lang)}</Text>
+          <Text style={styles.whyNowTitle}>{t(paywallVariant.whyTitleKey, lang)}</Text>
+          <Text style={styles.whyNowSub}>{t(paywallVariant.whySubKey, lang)}</Text>
           {valuePoints.map((point, idx) => (
             <View key={idx} style={styles.whyNowRow}>
               <Text style={styles.whyNowBullet}>●</Text>
@@ -464,16 +599,22 @@ const PaywallScreen = ({ navigation, route }) => {
             >
               {p.popular && (
                 <View style={styles.popularBadge}>
-                  <Text style={styles.popularText}>{t('popular', lang)}</Text>
+                  <Text style={styles.popularText}>{p.badge || t('popular', lang)}</Text>
                 </View>
               )}
               {!p.popular && <View style={{ height: 22 }} />}
               <Text style={[styles.planName, plan === i && { fontFamily: 'Inter_500Medium' }]}>{p.name}</Text>
               <Text style={styles.planPrice}>{p.price}</Text>
               <Text style={styles.planPer}>{p.per}</Text>
+              {p.effectivePrice && <Text style={styles.planEffectivePrice}>{p.effectivePrice}</Text>}
               {p.save && <Text style={styles.planSave}>{p.save}</Text>}
+              <Text style={styles.planDetail}>{p.detail}</Text>
             </TouchableOpacity>
           ))}
+        </View>
+
+        <View style={styles.annualNudge}>
+          <Text style={styles.annualNudgeText}>{t('paywallAnnualNudge', lang)}</Text>
         </View>
 
         <View style={{ marginBottom: 20 }}>

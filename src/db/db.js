@@ -271,6 +271,12 @@ export const initDb = async () => {
         liked_at TEXT,
         PRIMARY KEY(user_id, story_id)
       );
+      CREATE TABLE IF NOT EXISTS user_streak_freezes (
+        user_id TEXT,
+        freeze_date TEXT,
+        used_at TEXT,
+        PRIMARY KEY(user_id, freeze_date)
+      );
     `);
 
     await migrateUserSelectedCategoriesToIds(db);
@@ -691,14 +697,56 @@ export const getReadHistory = async (days = 90, userId = 'default') => {
   return result;
 };
 
+const getStreakProtectedDays = async (userId = 'default') => {
+  await waitForDb();
+  const db = getDb();
+  const rows = await db.getAllAsync(
+    `SELECT freeze_date AS day FROM user_streak_freezes WHERE user_id = ? ORDER BY freeze_date`,
+    [userId]
+  );
+  return rows.map((row) => row.day).filter(Boolean);
+};
+
+export const recordStreakFreeze = async (dateStr, userId = 'default') => {
+  await waitForDb();
+  const db = getDb();
+  const freezeDate = dateStr || new Date().toISOString().split('T')[0];
+  const usedAt = new Date().toISOString();
+  await db.runAsync(
+    `INSERT OR IGNORE INTO user_streak_freezes (user_id, freeze_date, used_at) VALUES (?, ?, ?)`,
+    [userId, freezeDate, usedAt]
+  );
+};
+
+export const getStreakFreezes = async (userId = 'default') => {
+  await waitForDb();
+  const db = getDb();
+  const rows = await db.getAllAsync(
+    `SELECT freeze_date AS day, used_at AS usedAt FROM user_streak_freezes WHERE user_id = ? ORDER BY freeze_date DESC`,
+    [userId]
+  );
+  return rows;
+};
+
+export const clearStreakFreezes = async (userId = 'default') => {
+  await waitForDb();
+  const db = getDb();
+  await db.runAsync(`DELETE FROM user_streak_freezes WHERE user_id = ?`, [userId]);
+};
+
 export const getStreak = async (userId = 'default') => {
   await waitForDb();
   const db = getDb();
   // Get distinct reading days ordered descending
-  const rows = await db.getAllAsync(
+  const readRows = await db.getAllAsync(
     `SELECT DISTINCT read_at AS day FROM user_reads WHERE user_id = ? ORDER BY read_at DESC`,
     [userId]
   );
+  const protectedDays = await getStreakProtectedDays(userId);
+  const rows = Array.from(new Set([...readRows.map((row) => row.day), ...protectedDays]))
+    .filter(Boolean)
+    .sort((a, b) => (a < b ? 1 : -1))
+    .map((day) => ({ day }));
   if (rows.length === 0) return 0;
 
   const today = new Date();
@@ -727,10 +775,15 @@ export const getStreak = async (userId = 'default') => {
 export const getLongestStreak = async (userId = 'default') => {
   await waitForDb();
   const db = getDb();
-  const rows = await db.getAllAsync(
+  const readRows = await db.getAllAsync(
     `SELECT DISTINCT read_at AS day FROM user_reads WHERE user_id = ? ORDER BY read_at ASC`,
     [userId]
   );
+  const protectedDays = await getStreakProtectedDays(userId);
+  const rows = Array.from(new Set([...readRows.map((row) => row.day), ...protectedDays]))
+    .filter(Boolean)
+    .sort()
+    .map((day) => ({ day }));
   if (rows.length === 0) return 0;
 
   let longest = 1;

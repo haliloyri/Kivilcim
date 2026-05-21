@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Platform, Modal, View, Text, Pressable, TouchableOpacity, StyleSheet, Animated, Easing } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Haptics from 'expo-haptics';
 import { Audio } from 'expo-av';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
@@ -10,6 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
+import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 
 import OnboardingScreen from '../screens/OnboardingScreen';
@@ -26,6 +28,7 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const CONFETTI_COLORS = ['#FFD166', '#FF6B6B', '#06D6A0', '#4D96FF', '#F4A261', '#B8E1FF'];
 const BADGE_SOUND_ASSET = require('../../assets/sounds/badge.wav');
+const ONBOARDING_TRIAL_PAYWALL_KEY = '@kivilcim_onboarding_trial_paywall_pending';
 
 function MainTabs() {
   const { colors, typography, layout, isDark, lang } = useTheme();
@@ -113,8 +116,12 @@ function MainTabs() {
 import LaunchScreen from '../screens/LaunchScreen';
 
 export default function AppNavigator() {
-  const { isOnboarded, isLoadingUserData, activeBadgeModal, closeBadgeModal } = useUserData();
+  const { isOnboarded, isPremium, isLoadingUserData, userDataErrorMsg, retryUserDataLoad, activeBadgeModal, closeBadgeModal } = useUserData();
+  const { errorMsg, refreshStories } = useStories();
   const { colors, layout, lang } = useTheme();
+  const [isNavigationReady, setIsNavigationReady] = useState(false);
+  const navigationRef = useRef(null);
+  const hasCheckedOnboardingTrialRef = useRef(false);
   const modalAnim = useRef(new Animated.Value(0)).current;
   const iconAnim = useRef(new Animated.Value(0.7)).current;
   const confettiAnim = useRef(new Animated.Value(0)).current;
@@ -127,6 +134,31 @@ export default function AppNavigator() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (!isNavigationReady || isLoadingUserData || !isOnboarded || hasCheckedOnboardingTrialRef.current) return;
+
+    hasCheckedOnboardingTrialRef.current = true;
+    let active = true;
+
+    (async () => {
+      const shouldShowTrialPaywall = await AsyncStorage.getItem(ONBOARDING_TRIAL_PAYWALL_KEY).catch(() => null);
+      if (!active || shouldShowTrialPaywall !== 'true') return;
+
+      await AsyncStorage.removeItem(ONBOARDING_TRIAL_PAYWALL_KEY).catch(() => {});
+
+      if (isPremium) return;
+
+      navigationRef.current?.navigate('Paywall', {
+        reason: 'early_trial',
+        source: 'onboarding_complete',
+      });
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, [isNavigationReady, isLoadingUserData, isOnboarded, isPremium]);
 
   useEffect(() => {
     const triggerCelebrationFeedback = async () => {
@@ -215,7 +247,16 @@ export default function AppNavigator() {
   });
 
   if (isLoadingUserData) {
-    return <LaunchScreen />; 
+    return (
+      <LaunchScreen
+        status="user"
+        errorMessage={userDataErrorMsg || errorMsg}
+        onRetry={() => {
+          retryUserDataLoad?.();
+          refreshStories?.();
+        }}
+      />
+    ); 
   }
 
   const navTheme = {
@@ -315,7 +356,11 @@ export default function AppNavigator() {
 
   return (
     <>
-      <NavigationContainer theme={navTheme}>
+      <NavigationContainer
+        ref={navigationRef}
+        theme={navTheme}
+        onReady={() => setIsNavigationReady(true)}
+      >
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           {!isOnboarded ? (
             <Stack.Screen name="Onboarding" component={OnboardingScreen} />

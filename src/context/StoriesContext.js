@@ -15,6 +15,8 @@ export const StoriesProvider = ({ children }) => {
   const [errorMsg, setErrorMsg] = useState(null);
 
   const refresh = useCallback(async () => {
+    setLoading(true);
+    setErrorMsg(null);
     try {
       await waitForData();
       const [storiesList, catsList, parents] = await Promise.all([
@@ -35,7 +37,6 @@ export const StoriesProvider = ({ children }) => {
 
   // Reload when language changes or DB becomes ready
   useEffect(() => {
-    setLoading(true);
     refresh();
   }, [refresh]);
 

@@ -14,6 +14,7 @@
  *   title          {string}    — e.g. t('adSheetTitle', lang)
  *   subtitle       {string}    — optional context line
  *   watchAdLabel   {string}    — override button label
+ *   adUnavailable  {boolean}   — show not-ready fallback copy after a failed ad load
  *   isAdLoading    {boolean}   — show spinner on Watch Ad button while ad preloads
  *   lang           {string}
  */
@@ -40,6 +41,7 @@ const AdOrPremiumSheet = ({
   title,
   subtitle,
   watchAdLabel,
+  adUnavailable = false,
   isAdLoading = false,
   lang = 'tr',
 }) => {
@@ -48,7 +50,7 @@ const AdOrPremiumSheet = ({
 
   const resolvedTitle    = title    || t('adSheetTitle', lang);
   const resolvedSubtitle = subtitle || t('adSheetSubtitle', lang);
-  const resolvedWatchLabel = watchAdLabel || t('adWatchCta', lang);
+  const resolvedWatchLabel = watchAdLabel || (adUnavailable ? t('adTryAgainLater', lang) : t('adWatchCta', lang));
 
   return (
     <Modal
@@ -103,7 +105,7 @@ const AdOrPremiumSheet = ({
           <Text style={styles.watchAdLabel}>{resolvedWatchLabel}</Text>
         </TouchableOpacity>
 
-        <Text style={styles.watchAdHint}>{t('adWatchSubtitle', lang)}</Text>
+        <Text style={styles.watchAdHint}>{adUnavailable ? t('adNotReady', lang) : t('adWatchSubtitle', lang)}</Text>
 
         {/* Separator */}
         <View style={styles.separatorRow}>

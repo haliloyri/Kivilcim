@@ -41,9 +41,10 @@ Payload:
 When: Paywall screen is opened.
 
 Payload:
-- reason: string (none | free_limit_reached)
-- source: string (direct | home_personalized_locked | home_feed_locked | story_detail_next)
+- reason: string (none | free_limit_reached | early_trial | storyteller_mode | profile_upgrade | streak_freeze)
+- source: string (direct | onboarding_complete | profile_upsell | use_in_conversation | progress_streak_freeze | home_featured_story_locked | home_daily_panel_locked | home_feed_teaser | home_feed_locked | story_detail_next)
 - selectedPlan: string
+- selectedPlanId: string (monthly | annual)
 - lang: string
 
 ## paywall_plan_selected
@@ -51,10 +52,12 @@ When: User changes selected subscription plan on paywall.
 
 Payload:
 - previousPlan: string
+- previousPlanId: string (monthly | annual)
 - selectedPlan: string
+- selectedPlanId: string (monthly | annual)
 - selectedPrice: string
-- source: string
-- reason: string
+- source: string (for example direct | onboarding_complete | profile_upsell | use_in_conversation | home_feed_locked)
+- reason: string (none | free_limit_reached | early_trial | storyteller_mode | profile_upgrade | streak_freeze)
 - lang: string
 
 ## paywall_purchase_started
@@ -62,9 +65,10 @@ When: User taps purchase CTA on paywall.
 
 Payload:
 - selectedPlan: string
+- selectedPlanId: string (monthly | annual)
 - selectedPrice: string
-- source: string
-- reason: string
+- source: string (for example direct | onboarding_complete | profile_upsell | use_in_conversation | home_feed_locked)
+- reason: string (none | free_limit_reached | early_trial | storyteller_mode | profile_upgrade | streak_freeze)
 - lang: string
 
 ## paywall_purchase_succeeded
@@ -72,9 +76,10 @@ When: Premium purchase flow succeeds.
 
 Payload:
 - selectedPlan: string
+- selectedPlanId: string (monthly | annual)
 - selectedPrice: string
-- source: string
-- reason: string
+- source: string (for example direct | onboarding_complete | profile_upsell | use_in_conversation | home_feed_locked)
+- reason: string (none | free_limit_reached | early_trial | storyteller_mode | profile_upgrade | streak_freeze)
 - lang: string
 
 ## paywall_purchase_failed
@@ -82,9 +87,10 @@ When: Premium purchase flow fails.
 
 Payload:
 - selectedPlan: string
+- selectedPlanId: string (monthly | annual)
 - selectedPrice: string
-- source: string
-- reason: string
+- source: string (for example direct | onboarding_complete | profile_upsell | use_in_conversation | home_feed_locked)
+- reason: string (none | free_limit_reached | early_trial | storyteller_mode | profile_upgrade | streak_freeze)
 - lang: string
 - failureReason: string
 
@@ -92,7 +98,7 @@ Payload:
 When: User hits free limit and transitions to paywall after first 2 accessible stories.
 
 Payload:
-- source: string (home_personalized_locked | home_feed_locked | story_detail_next)
+- source: string (home_featured_story_locked | home_daily_panel_locked | home_feed_teaser | home_feed_locked | story_detail_next)
 - storyId: string | number (optional)
 - selectedPlan: string (when tracked on paywall open)
 - lang: string
@@ -104,6 +110,24 @@ Payload:
 - date: string (YYYY-MM-DD)
 - dailyTarget: number
 - dailyProgress: number
+- todayReads: number
+- lang: string
+
+## streak_freeze_activated
+When: Premium user spends a streak-freeze credit from Progress while their streak is at risk.
+
+Payload:
+- date: string (YYYY-MM-DD)
+- remainingCredits: number
+- streak: number
+- lang: string
+
+## streak_freeze_upsell_clicked
+When: Free user taps the locked streak-freeze CTA and is sent to paywall.
+
+Payload:
+- source: string (progress_streak_freeze)
+- streak: number
 - todayReads: number
 - lang: string
 

@@ -258,6 +258,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
       storyId: story?.story_id,
       lang,
     });
+    setAdUnavailable(false);
     if (shouldShowAd({ isPremium, isOnboarded: true })) {
       setAdSheet(true);
     } else {
@@ -267,17 +268,20 @@ const UseInConversationScreen = ({ route, navigation }) => {
 
   const [adSheet, setAdSheet] = React.useState(false);
   const [isAdLoading, setIsAdLoading] = React.useState(false);
+  const [adUnavailable, setAdUnavailable] = React.useState(false);
 
   const handleWatchAdUIC = async () => {
     setIsAdLoading(true);
     trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation', choice: 'ad' });
     const ad = await loadRewarded();
     setIsAdLoading(false);
-    setAdSheet(false);
     if (!ad) {
-      navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
+      setAdUnavailable(true);
+      trackEvent(ANALYTICS_EVENTS.AD_FAILED_TO_LOAD, { source: 'use_in_conversation', storyId: story?.story_id, lang });
       return;
     }
+    setAdUnavailable(false);
+    setAdSheet(false);
     const { RewardedAdEventType } = require('react-native-google-mobile-ads');
     ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
       trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'use_in_conversation' });
@@ -573,14 +577,17 @@ const UseInConversationScreen = ({ route, navigation }) => {
         visible={adSheet}
         onClose={() => {
           trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation', choice: 'dismiss' });
+          setAdUnavailable(false);
           setAdSheet(false);
         }}
         onWatchAd={handleWatchAdUIC}
         onGoPremium={() => {
           trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation', choice: 'premium' });
+          setAdUnavailable(false);
           setAdSheet(false);
           navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
         }}
+        adUnavailable={adUnavailable}
         isAdLoading={isAdLoading}
         lang={lang}
       />

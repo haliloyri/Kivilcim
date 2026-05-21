@@ -106,6 +106,7 @@ const ProgressScreen = ({ navigation }) => {
   const {
     streak, totalReads, longestStreak, earnedBadges, openBadgeModal,
     preferences, categoryStats, variantUsage, shareCount, favorites,
+    isPremium, streakFreezeCredits, streakFreezeDates, useStreakFreeze,
   } = useUserData();
   const [heatmapData, setHeatmapData] = useState([]);
   const [todayReads, setTodayReads] = useState(0);
@@ -114,6 +115,23 @@ const ProgressScreen = ({ navigation }) => {
   const isDailyGoalComplete = dailyProgress >= dailyTarget;
   const todayKey = new Date().toISOString().split('T')[0];
   const storiesLeftToday = Math.max(0, dailyTarget - dailyProgress);
+  const isStreakAtRisk = streak > 0 && todayReads === 0;
+  const isStreakProtectedToday = (streakFreezeDates || []).includes(todayKey);
+
+  const handleStreakFreezePress = async () => {
+    if (!isPremium) {
+      trackEvent(ANALYTICS_EVENTS.STREAK_FREEZE_UPSELL_CLICKED, {
+        source: 'progress_streak_freeze',
+        streak,
+        todayReads,
+        lang,
+      });
+      navigation.navigate('Paywall', { source: 'progress_streak_freeze', reason: 'streak_freeze' });
+      return;
+    }
+
+    await useStreakFreeze(todayKey);
+  };
 
   const categoryAction = useMemo(() => {
     const statsEntries = Object.entries(categoryStats || {});
@@ -358,6 +376,56 @@ const ProgressScreen = ({ navigation }) => {
       color: colors.danger,
       flex: 1,
     },
+    freezeCard: {
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 10,
+      borderRadius: layout.radius.card,
+      borderWidth: 1,
+      borderColor: isStreakProtectedToday ? `${colors.primary}66` : `${colors.danger}55`,
+      backgroundColor: isStreakProtectedToday
+        ? (isDark ? `${colors.primary}18` : `${colors.primary}10`)
+        : (isDark ? 'rgba(186,26,26,0.14)' : '#FFF1EF'),
+      padding: 14,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+    },
+    freezeIcon: {
+      width: 40,
+      height: 40,
+      borderRadius: 20,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.background,
+      borderWidth: 1,
+      borderColor: isStreakProtectedToday ? `${colors.primary}55` : `${colors.danger}40`,
+    },
+    freezeTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 14,
+      color: colors.text,
+      marginBottom: 2,
+    },
+    freezeSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      lineHeight: 17,
+    },
+    freezeButton: {
+      borderRadius: 10,
+      paddingHorizontal: 12,
+      paddingVertical: 8,
+      backgroundColor: isPremium ? colors.primary : colors.background,
+      borderWidth: 1,
+      borderColor: isPremium ? colors.primary : colors.border,
+    },
+    freezeButtonText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11,
+      color: isPremium ? colors.onPrimary : colors.text,
+      textAlign: 'center',
+    },
     heroSpotlightTile: {
       backgroundColor: colors.background,
       borderRadius: 12,
@@ -539,10 +607,16 @@ const ProgressScreen = ({ navigation }) => {
                 <Text style={styles.heroStreakNum}>{streak}</Text>
               </View>
               {/* Streak risk warning inside Streak tile */}
-              {streak > 0 && todayReads === 0 && (
+              {isStreakAtRisk && !isStreakProtectedToday && (
                 <View style={styles.heroRiskRow}>
                   <Ionicons name="warning-outline" size={12} color={colors.danger} />
                   <Text style={styles.heroRiskText}>{t('streakRiskWarning', lang)}</Text>
+                </View>
+              )}
+              {isStreakProtectedToday && (
+                <View style={[styles.heroRiskRow, { backgroundColor: `${colors.primary}16` }]}>
+                  <Ionicons name="shield-checkmark-outline" size={12} color={colors.primary} />
+                  <Text style={[styles.heroRiskText, { color: colors.primary }]}>{t('streakProtectedToday', lang)}</Text>
                 </View>
               )}
             </View>
@@ -593,6 +667,42 @@ const ProgressScreen = ({ navigation }) => {
             </TouchableOpacity>
           )}
         </View>
+
+        {(isStreakAtRisk || isStreakProtectedToday) && (
+          <View style={styles.freezeCard}>
+            <View style={styles.freezeIcon}>
+              <Ionicons
+                name={isStreakProtectedToday ? 'shield-checkmark' : 'shield-outline'}
+                size={20}
+                color={isStreakProtectedToday ? colors.primary : colors.danger}
+              />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.freezeTitle}>
+                {t(isStreakProtectedToday ? 'streakFreezeProtectedTitle' : 'streakFreezeTitle', lang)}
+              </Text>
+              <Text style={styles.freezeSub}>
+                {t(isStreakProtectedToday
+                  ? 'streakFreezeProtectedSub'
+                  : isPremium
+                    ? 'streakFreezePremiumSub'
+                    : 'streakFreezeLockedSub', lang)
+                    .replace('{{credits}}', String(streakFreezeCredits || 0))}
+              </Text>
+            </View>
+            {!isStreakProtectedToday && (
+              <TouchableOpacity
+                style={[styles.freezeButton, isPremium && streakFreezeCredits <= 0 && { opacity: 0.45 }]}
+                onPress={handleStreakFreezePress}
+                disabled={isPremium && streakFreezeCredits <= 0}
+              >
+                <Text style={styles.freezeButtonText}>
+                  {t(isPremium ? 'streakFreezeUseCta' : 'streakFreezePremiumCta', lang)}
+                </Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        )}
 
         {/* ── Action Cards (daily + category; streak card removed) ─ */}
         <View style={styles.sectionHeader}>

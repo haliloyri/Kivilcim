@@ -9,6 +9,9 @@
  *
  * Test Ad Unit IDs are used automatically in __DEV__ mode.
  * Replace PROD_* constants with real AdMob unit IDs from console.
+ * Native app IDs are configured in app.json through the
+ * react-native-google-mobile-ads config plugin. Debug builds intentionally use
+ * Google's sample app IDs there so the native SDK can initialize safely.
  */
 import { Platform } from 'react-native';
 import MobileAds, {
@@ -78,6 +81,16 @@ export const shouldShowAd = ({ isPremium, isOnboarded }) => {
  */
 export const loadRewarded = () => {
   return new Promise((resolve) => {
+    let settled = false;
+    let fallbackTimer = null;
+
+    const finish = (ad) => {
+      if (settled) return;
+      settled = true;
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+      resolve(ad);
+    };
+
     try {
       const ad = RewardedAd.createForAdRequest(AD_UNITS.rewarded, {
         requestNonPersonalizedAdsOnly: false,
@@ -86,20 +99,27 @@ export const loadRewarded = () => {
       const unsubscribeLoaded = ad.addAdEventListener(RewardedAdEventType.LOADED, () => {
         unsubscribeLoaded();
         unsubscribeError();
-        resolve(ad);
+        finish(ad);
       });
 
       const unsubscribeError = ad.addAdEventListener(AdEventType.ERROR, (e) => {
         unsubscribeLoaded();
         unsubscribeError();
         console.warn('[ads] rewarded load error:', e?.message);
-        resolve(null);
+        finish(null);
       });
+
+      fallbackTimer = setTimeout(() => {
+        unsubscribeLoaded();
+        unsubscribeError();
+        console.warn('[ads] rewarded load timeout');
+        finish(null);
+      }, 8000);
 
       ad.load();
     } catch (e) {
       console.warn('[ads] loadRewarded exception:', e?.message);
-      resolve(null);
+      finish(null);
     }
   });
 };

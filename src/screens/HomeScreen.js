@@ -105,7 +105,7 @@ const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) 
 
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
-  const { isPremium, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted } = useUserData();
+  const { isPremium, isOnboarded, history, earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const insets = useSafeAreaInsets();
   const { width: viewportWidth } = useWindowDimensions();
@@ -132,8 +132,7 @@ const HomeScreen = ({ navigation }) => {
   const screenWidth = viewportWidth;
   const isTablet = screenWidth >= 768;
   const isSmallPhone = screenWidth < 380;
-  const brandLogoWidth = isTablet ? 180 : isSmallPhone ? 124 : 156;
-  const brandLogoHeight = isTablet ? 72 : isSmallPhone ? 52 : 62;
+  const brandLogoSize = isTablet ? 32 : isSmallPhone ? 24 : 28;
   const sectionHeadingFontSize = isTablet ? 44 : isSmallPhone ? 30 : 36;
   const readyTitleFontSize = isTablet ? 38 : isSmallPhone ? 28 : 32;
   const featuredCardColumns = isTablet ? 3.1 : isSmallPhone ? 2.05 : 2.25;
@@ -548,9 +547,11 @@ const HomeScreen = ({ navigation }) => {
   // ─── Ad / Premium sheet state ──────────────────────────────────────────────
   const [adSheet, setAdSheet] = useState({ visible: false, source: null, storyId: null });
   const [isAdLoading, setIsAdLoading] = useState(false);
+  const [adUnavailable, setAdUnavailable] = useState(false);
 
   const openAdOrPremiumSheet = (source, storyId = null) => {
     trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, { source, storyId, lang });
+    setAdUnavailable(false);
     if (shouldShowAd({ isPremium, isOnboarded })) {
       setAdSheet({ visible: true, source, storyId });
     } else {
@@ -564,11 +565,11 @@ const HomeScreen = ({ navigation }) => {
     const ad = await loadRewarded();
     setIsAdLoading(false);
     if (!ad) {
-      // Ad failed — fall back to paywall
-      setAdSheet({ visible: false, source: null, storyId: null });
-      navigation.navigate('Paywall', { reason: 'free_limit_reached', source: adSheet.source });
+      setAdUnavailable(true);
+      trackEvent(ANALYTICS_EVENTS.AD_FAILED_TO_LOAD, { source: adSheet.source, storyId: adSheet.storyId, lang });
       return;
     }
+    setAdUnavailable(false);
     setAdSheet({ visible: false, source: null, storyId: null });
     ad.addAdEventListener('rewarded_loaded', () => {});
     const { RewardedAdEventType } = require('react-native-google-mobile-ads');
@@ -845,12 +846,20 @@ const HomeScreen = ({ navigation }) => {
     },
     brandLogo: {
       flex: 1,
+      flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
+      gap: 6,
     },
     brandLogoImage: {
-      width: brandLogoWidth,
-      height: brandLogoHeight,
+      width: brandLogoSize,
+      height: brandLogoSize,
+    },
+    brandLogoText: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: brandLogoSize * 0.85,
+      color: colors.text,
+      letterSpacing: 0.5,
     },
     headerBadgeWrap: {
       flexDirection: 'row',
@@ -1385,15 +1394,16 @@ const HomeScreen = ({ navigation }) => {
         onMomentumScrollEnd={({ nativeEvent }) => handleLoadMore(nativeEvent)}
         scrollEventThrottle={100}
       >
-        {/* ÔöÇÔöÇ Header ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
+        {/* Header */}
         <View style={styles.homeHeader}>
           <View style={styles.headerLeftSpacer} />
           <View style={styles.brandLogo}>
             <Image
-              source={require('../../assets/spark_shortcut_logo.png')}
+              source={isDark ? require('../../assets/spark_logo_dark.png') : require('../../assets/spark_logo.png')}
               style={styles.brandLogoImage}
               resizeMode="contain"
             />
+            <Text style={styles.brandLogoText}>Spark</Text>
           </View>
           <TouchableOpacity
             style={styles.headerBadgeWrap}
@@ -1407,7 +1417,7 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        {/* ÔöÇÔöÇ Category Pills ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
+        {/* Category Pills */}
         <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
           {categoriesLabel}
         </Text>
@@ -1433,7 +1443,7 @@ const HomeScreen = ({ navigation }) => {
           scrollToOverflowEnabled={true}
         />
 
-        {/* ÔöÇÔöÇ Featured Story Cards (Horizontal Scroll) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
+        {/* Featured Story Cards (Horizontal Scroll) */}
         {!loading && sortedStories.length > 0 && (() => {
           const featuredStories = personalizedStories.length > 0
             ? personalizedStories
@@ -1819,7 +1829,7 @@ const HomeScreen = ({ navigation }) => {
         <View style={{ height: 100 }} />
       </ScrollView>
 
-      {/* ÔöÇÔöÇ FAB: Pratik Yap ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */}
+      {/* FAB */}
       {(personalizedStories.length > 0 || (sortedStories && sortedStories.length > 0)) && (
           null
         )}
@@ -1908,10 +1918,12 @@ const HomeScreen = ({ navigation }) => {
         visible={adSheet.visible}
         onClose={() => {
           trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: adSheet.source, choice: 'dismiss' });
+          setAdUnavailable(false);
           setAdSheet({ visible: false, source: null, storyId: null });
         }}
         onWatchAd={handleWatchAd}
         onGoPremium={handleAdSheetGoPremium}
+        adUnavailable={adUnavailable}
         isAdLoading={isAdLoading}
         lang={lang}
       />

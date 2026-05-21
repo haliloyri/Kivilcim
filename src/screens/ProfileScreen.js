@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { 
-  View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Switch, Alert, Linking, Modal, TextInput, Image
+import {
+  View, Text, ScrollView, TouchableOpacity, StyleSheet,
+  StatusBar, Platform, Switch, Alert, Linking, Modal, TextInput,
+  useWindowDimensions,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
@@ -10,28 +11,28 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
-import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 import CategoryPill from '../components/CategoryPill';
 
 
 
 const ProfileScreen = ({ navigation }) => {
+  const { width } = useWindowDimensions();
+  const isTablet = width >= 768;
+  const isSmallPhone = width < 380;
+  const fz = (base) => isTablet ? base + 4 : isSmallPhone ? base - 2 : base;
+
   const {
-    colors,
-    typography,
-    layout,
-    isDark,
-    themeMode,
-    toggleTheme,
-    lang,
-    setLang,
-    selectedCategories,
-    toggleSelectedCategory,
-    resetAppSettings,
+    colors, typography, layout, isDark, themeMode,
+    toggleTheme, lang, setLang,
+    selectedCategories, toggleSelectedCategory, resetAppSettings,
   } = useTheme();
-  // Global t() function is now used directly from i18n.js
-  const { categories, parentCategories } = useStories();
-  const { clearUserData, isPremium, preferences, updatePreferences, userProfile, updateUserProfile } = useUserData();
+
+  const { parentCategories, stories } = useStories();
+  const {
+    clearUserData, isPremium, preferences,
+    updatePreferences, userProfile, updateUserProfile,
+    history, earnedBadges, totalReads, streak, longestStreak,
+  } = useUserData();
   const testNotifIndex = React.useRef(0);
   const [showEditProfileModal, setShowEditProfileModal] = useState(false);
   const [editName, setEditName] = useState('');
@@ -65,6 +66,21 @@ const ProfileScreen = ({ navigation }) => {
     .map((part) => part[0])
     .join('')
     .toUpperCase();
+  const isGuest = !userProfile?.displayName;
+  const langName = lang === 'tr' ? 'Turkish' : lang === 'en' ? 'English' : lang === 'es' ? 'Spanish' : 'German';
+
+  const earnedBadgesList = React.useMemo(() => earnedBadges.filter(b => b.earned), [earnedBadges]);
+  const lastEarned = earnedBadgesList[earnedBadgesList.length - 1];
+
+  const recentStories = React.useMemo(() => {
+    if (!history?.length || !stories?.length) return [];
+    return history
+      .slice(0, 3)
+      .map(id => stories.find(s => String(s.story_id) === String(id)))
+      .filter(Boolean);
+  }, [history, stories]);
+
+  const showStats = totalReads > 0 || streak > 0;
 
   const handleReadingPlanChange = async (minutes) => {
     const selected = timeOptions.find((o) => o.value === minutes);
@@ -183,52 +199,243 @@ const ProfileScreen = ({ navigation }) => {
     setShowEditProfileModal(false);
   };
 
-  const styles = StyleSheet.create({
+  const s = StyleSheet.create({
     safe: { flex: 1, backgroundColor: colors.background },
-    header: { paddingHorizontal: layout.padding.horizontal, paddingTop: 32, paddingBottom: 24, alignItems: 'center' },
-    avatar: { 
-      width: 88, height: 88, borderRadius: 44, 
-      backgroundColor: isDark ? '#2A2520' : '#F9F6F1', borderWidth: 2, borderColor: '#D4AF37', 
-      alignItems: 'center', justifyContent: 'center', marginBottom: 16,
-      shadowColor: '#C5A059', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.1, shadowRadius: 8, elevation: 3 
+    scrollContent: { paddingBottom: 120 },
+    // ── Header ───────────────────────────────────────────────────────────
+    header: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingHorizontal: layout.padding.horizontal,
+      paddingTop: 28,
+      paddingBottom: 20,
+      gap: 14,
     },
-    avatarText: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 32, color: isDark ? colors.text : '#594238' },
-    userName: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 32, color: colors.text },
-    userEmail: { fontFamily: 'Inter_400Regular', fontSize: 14, color: colors.textSecondary, marginTop: 4 },
-    premiumBadge: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#5A9CA0', paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20, marginTop: 16 },
-    premiumText: { fontFamily: 'Inter_500Medium', fontSize: 13, color: '#FFFFFF', marginLeft: 6 },
-    section: { marginTop: 32, paddingHorizontal: layout.padding.horizontal },
-    sectionTitle: { 
-      fontFamily: 'Inter_500Medium', 
-      fontSize: 11, 
-      color: colors.textSecondary, 
-      letterSpacing: 1, 
-      textTransform: 'uppercase', 
-      marginBottom: 16 
+    avatar: {
+      width: 64, height: 64, borderRadius: 32,
+      backgroundColor: colors.surfaceContainerHigh,
+      borderWidth: 2, borderColor: colors.primary,
+      alignItems: 'center', justifyContent: 'center',
+      shadowColor: colors.primary, shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.15, shadowRadius: 8, elevation: 3,
     },
-    menuItem: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 18, borderBottomWidth: 1, borderBottomColor: colors.border },
-    menuItemLeft: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-    menuItemText: { fontFamily: 'Inter_400Regular', fontSize: 16, color: colors.text },
-    profileCategoriesSection: { marginTop: 16, paddingHorizontal: layout.padding.horizontal },
-    profileCategoriesRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
-    categoryPill: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: 20, borderWidth: 1, borderColor: colors.border, backgroundColor: isDark ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.82)' },
-    categoryPillText: { fontFamily: 'Inter_600SemiBold', fontSize: 13, color: colors.primary },
-    categoryPillActive: { backgroundColor: '#823b18', borderColor: '#823b18' },
-    categoryPillActiveText: { color: '#FFFFFF', fontFamily: 'Inter_500Medium' },
-    prefSummaryBox: {
-      marginTop: 16,
-      backgroundColor: colors.backgroundDark,
-      borderRadius: layout.radius.card,
-      padding: 12,
-      borderWidth: 1,
-      borderColor: colors.border,
-      gap: 6,
+    avatarText: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: fz(24),
+      color: colors.primary,
     },
-    prefSummaryText: {
+    headerInfo: { flex: 1 },
+    userName: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: fz(22),
+      color: colors.text,
+      lineHeight: fz(28),
+    },
+    userEmail: {
       fontFamily: 'Inter_400Regular',
+      fontSize: fz(13),
+      color: colors.textSecondary,
+      marginTop: 2,
+    },
+    guestCta: {
+      marginTop: 6,
+      alignSelf: 'flex-start',
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+      borderRadius: 8,
+      backgroundColor: `${colors.primary}18`,
+      borderWidth: 1,
+      borderColor: `${colors.primary}40`,
+    },
+    guestCtaText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.primary,
+    },
+    headerEdit: {
+      width: 36, height: 36, borderRadius: 18,
+      backgroundColor: colors.backgroundDark,
+      borderWidth: 1, borderColor: colors.border,
+      alignItems: 'center', justifyContent: 'center',
+    },
+    premiumTag: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 4,
+      gap: 5,
+      alignSelf: 'flex-start',
+    },
+    premiumTagText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.primary,
+    },
+    // ── Stats ────────────────────────────────────────────────────────────
+    statsCard: {
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 16,
+      borderRadius: layout.radius.card,
+      borderWidth: 1,
+      borderColor: `${colors.primary}40`,
+      backgroundColor: `${colors.primary}10`,
+      flexDirection: 'row',
+      padding: 16,
+    },
+    statItem: {
+      flex: 1,
+      alignItems: 'center',
+      gap: 4,
+    },
+    statDivider: {
+      width: 1,
+      backgroundColor: `${colors.primary}30`,
+      marginVertical: 4,
+    },
+    statValue: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: fz(22),
+      color: colors.text,
+    },
+    statLabel: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: fz(11),
+      color: colors.textSecondary,
+      textAlign: 'center',
+    },
+    // ── Premium Upsell ───────────────────────────────────────────────────
+    premiumCard: {
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 16,
+      borderRadius: layout.radius.card,
+      borderWidth: 1,
+      borderColor: `${colors.primary}55`,
+      backgroundColor: `${colors.primary}12`,
+      padding: 20,
+    },
+    premiumCardIntro: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11,
+      color: colors.primary,
+      letterSpacing: 1,
+      textTransform: 'uppercase',
+      marginBottom: 6,
+    },
+    premiumCardTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: fz(22),
+      color: colors.text,
+      marginBottom: 6,
+    },
+    premiumCardSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: fz(15),
+      color: colors.textSecondary,
+      lineHeight: 21,
+      marginBottom: 14,
+    },
+    premiumCardCta: {
+      alignSelf: 'flex-start',
+      paddingHorizontal: 20,
+      paddingVertical: 10,
+      borderRadius: 999,
+      backgroundColor: colors.primary,
+    },
+    premiumCardCtaText: {
+      fontFamily: 'Inter_600SemiBold',
       fontSize: 13,
+      color: colors.onPrimary,
+      letterSpacing: 0.5,
+      textTransform: 'uppercase',
+    },
+    // ── Section ──────────────────────────────────────────────────────────
+    section: {
+      marginTop: 24,
+      paddingHorizontal: layout.padding.horizontal,
+    },
+    sectionHeadingRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 14,
+    },
+    sectionTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: fz(22),
+      color: colors.text,
+    },
+    seeAllText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: colors.primary,
+    },
+    // ── Category pills ───────────────────────────────────────────────────
+    pillsRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
+    // ── Preference pills ─────────────────────────────────────────────────
+    prefPill: {
+      paddingHorizontal: 14, paddingVertical: 9,
+      borderRadius: 20, borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.cardBackground,
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+    },
+    prefPillActive: {
+      backgroundColor: colors.primary,
+      borderColor: colors.primary,
+    },
+    prefPillText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: fz(13),
       color: colors.textSecondary,
     },
+    prefPillActiveText: {
+      color: colors.onPrimary,
+    },
+    // ── Menu ─────────────────────────────────────────────────────────────
+    menuItem: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingVertical: 16,
+      borderBottomWidth: 1,
+      borderBottomColor: colors.border,
+    },
+    menuItemLeft: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+    menuItemText: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: fz(15),
+      color: colors.text,
+    },
+    // ── Pref summary box ─────────────────────────────────────────────────
+    prefSummaryBox: {
+      marginTop: 14,
+      backgroundColor: colors.backgroundDark,
+      borderRadius: layout.radius.card,
+      padding: 14,
+      borderWidth: 1,
+      borderColor: colors.border,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+    },
+    prefSummaryCell: {
+      width: '50%',
+      paddingVertical: 6,
+      paddingHorizontal: 4,
+    },
+    prefSummaryCellLabel: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: fz(11),
+      color: colors.textSecondary,
+      textTransform: 'uppercase',
+      letterSpacing: 0.4,
+      marginBottom: 2,
+    },
+    prefSummaryCellValue: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: fz(13),
+      color: colors.text,
+    },
+    // ── Destructive ──────────────────────────────────────────────────────
     destructiveSection: {
       marginTop: 12,
       backgroundColor: colors.backgroundDark,
@@ -238,61 +445,169 @@ const ProfileScreen = ({ navigation }) => {
       overflow: 'hidden',
     },
     destructiveItem: {
-      paddingHorizontal: 16,
-      paddingVertical: 16,
-      borderBottomWidth: 1,
-      borderBottomColor: colors.border,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      gap: 12,
+      paddingHorizontal: 16, paddingVertical: 16,
+      borderBottomWidth: 1, borderBottomColor: colors.border,
+      flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 12,
     },
     destructiveTitle: {
       fontFamily: 'Inter_500Medium',
-      fontSize: 15,
-      color: colors.text,
+      fontSize: fz(14),
+      color: colors.danger,
       marginBottom: 2,
     },
     destructiveSub: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 12,
+      fontSize: fz(12),
       color: colors.textSecondary,
       lineHeight: 17,
       flexShrink: 1,
     },
+    // ── Badges ───────────────────────────────────────────────────────────
+    badgesRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: colors.backgroundDark,
+      borderRadius: layout.radius.card,
+      borderWidth: 1,
+      borderColor: colors.border,
+      padding: 14,
+      gap: 12,
+    },
+    badgeIconsGroup: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 2,
+    },
+    badgeEmoji: {
+      fontSize: 22,
+    },
+    badgesInfo: { flex: 1 },
+    badgesCount: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: fz(14),
+      color: colors.text,
+    },
+    badgesSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: fz(12),
+      color: colors.textSecondary,
+      marginTop: 2,
+    },
+    // ── Recent reads ─────────────────────────────────────────────────────
+    recentCard: {
+      width: 160,
+      height: 120,
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.backgroundDark,
+      padding: 12,
+      marginRight: 10,
+      justifyContent: 'space-between',
+    },
+    recentCategory: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.primary,
+      textTransform: 'uppercase',
+      letterSpacing: 0.4,
+      marginBottom: 4,
+    },
+    recentTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: fz(14),
+      color: colors.text,
+      lineHeight: 19,
+      flex: 1,
+    },
+    recentMins: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 11,
+      color: colors.textSecondary,
+      marginTop: 4,
+    },
+    // ── Notify test ──────────────────────────────────────────────────────
+    notifyTestLabel: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+      color: colors.primary,
+      letterSpacing: 0.5,
+    },
   });
 
   return (
-    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
-      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
-      
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
-        <View style={styles.header}>
-          <View style={styles.avatar}>
-            <Text style={styles.avatarText}>{avatarText}</Text>
+    <SafeAreaView edges={['top', 'left', 'right']} style={s.safe}>
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={colors.background} />
+
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.scrollContent}>
+
+        {/* ── Header ── */}
+        <View style={s.header}>
+          <View style={s.avatar}>
+            <Text style={s.avatarText}>{avatarText}</Text>
           </View>
-          <Text style={styles.userName}>{profileDisplayName}</Text>
-          <Text style={styles.userEmail}>{profileEmail}</Text>
-          
-          <TouchableOpacity 
-            style={styles.premiumBadge} 
-            onPress={() => !isPremium && navigation.navigate('Paywall')}
-            disabled={isPremium}
-          >
-            <Ionicons name="sparkles" size={14} color="#FFFFFF" />
-            <Text style={styles.premiumText}>
-              {isPremium ? t('premiumMember', lang) : t('upgradePremium', lang)}
-            </Text>
+          <View style={s.headerInfo}>
+            <Text style={s.userName} numberOfLines={1}>{profileDisplayName}</Text>
+            <Text style={s.userEmail} numberOfLines={1}>{profileEmail}</Text>
+            {isGuest && (
+              <TouchableOpacity style={s.guestCta} onPress={openEditProfileModal}>
+                <Text style={s.guestCtaText}>{t('profileCompletePrompt', lang)}</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+          <TouchableOpacity style={s.headerEdit} onPress={openEditProfileModal}>
+            <Ionicons name="pencil" size={16} color={colors.textSecondary} />
           </TouchableOpacity>
         </View>
 
-        <View style={styles.profileCategoriesSection}>
-          <Text style={styles.sectionTitle}>{t('categories', lang)}</Text>
-          <View style={styles.profileCategoriesRow}>
-            {parentCategories.map((p) => {
+        {isPremium && (
+          <View style={s.premiumTag}>
+            <Ionicons name="sparkles" size={13} color={colors.primary} />
+            <Text style={s.premiumTagText}>{t('premiumMember', lang)}</Text>
+          </View>
+        )}
+
+        {/* ── Stats ── */}
+        {showStats && (
+          <TouchableOpacity style={s.statsCard} onPress={() => navigation.navigate('ProgressTab')} activeOpacity={0.82}>
+            <View style={s.statItem}>
+              <Text style={s.statValue}>{totalReads}</Text>
+              <Text style={s.statLabel}>{t('profileStatsTotalReads', lang)}</Text>
+            </View>
+            <View style={s.statDivider} />
+            <View style={s.statItem}>
+              <Text style={s.statValue}>🔥 {streak}</Text>
+              <Text style={s.statLabel}>{t('profileStatsStreak', lang)}</Text>
+            </View>
+            <View style={s.statDivider} />
+            <View style={s.statItem}>
+              <Text style={s.statValue}>{longestStreak}</Text>
+              <Text style={s.statLabel}>{t('profileStatsLongest', lang)}</Text>
+            </View>
+          </TouchableOpacity>
+        )}
+
+        {/* ── Premium upsell ── */}
+        {!isPremium && (
+          <TouchableOpacity style={s.premiumCard} onPress={() => navigation.navigate('Paywall', { source: 'profile_upsell', reason: 'profile_upgrade' })} activeOpacity={0.88}>
+            <Text style={s.premiumCardIntro}>✨ PREMIUM</Text>
+            <Text style={s.premiumCardTitle}>{t('profilePremiumUpsellTitle', lang)}</Text>
+            <Text style={s.premiumCardSub}>{t('profilePremiumUpsellSub', lang)}</Text>
+            <View style={s.premiumCardCta}>
+              <Text style={s.premiumCardCtaText}>{t('profilePremiumUpsellCta', lang)}</Text>
+            </View>
+          </TouchableOpacity>
+        )}
+
+        {/* ── Categories ── */}
+        <View style={s.section}>
+          <View style={s.sectionHeadingRow}>
+            <Text style={s.sectionTitle}>{t('categories', lang)}</Text>
+          </View>
+          <View style={s.pillsRow}>
+            {parentCategories.map(p => {
               const cat = Number(p.id);
               const isSelected = selectedCategories.includes(cat);
-              const onPressCat = () => toggleSelectedCategory(cat);
               return (
                 <CategoryPill
                   key={cat}
@@ -301,82 +616,93 @@ const ProfileScreen = ({ navigation }) => {
                   active={isSelected}
                   isDark={isDark}
                   compact
-                  onPress={onPressCat}
+                  onPress={() => toggleSelectedCategory(cat)}
                 />
               );
             })}
           </View>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{t('settings', lang)}</Text>
+        {/* ── Preferences ── */}
+        <View style={s.section}>
+          <View style={s.sectionHeadingRow}>
+            <Text style={s.sectionTitle}>{t('settings', lang)}</Text>
+          </View>
 
-          <View style={[styles.menuItem, { flexDirection: 'column', alignItems: 'flex-start' }] }>
-            <View style={styles.menuItemLeft}>
-              <Ionicons name="book-outline" size={24} color={colors.textSecondary} />
-              <Text style={styles.menuItemText}>{t('readingPlan', lang)}</Text>
+          {/* Reading plan */}
+          <View style={[s.menuItem, { flexDirection: 'column', alignItems: 'flex-start' }]}>
+            <View style={s.menuItemLeft}>
+              <Ionicons name="book-outline" size={22} color={colors.textSecondary} />
+              <Text style={s.menuItemText}>{t('readingPlan', lang)}</Text>
             </View>
             <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
-              {timeOptions.map((option) => (
+              {timeOptions.map(option => (
                 <TouchableOpacity
                   key={option.value}
                   onPress={() => handleReadingPlanChange(option.value)}
-                  style={[
-                    styles.categoryPill,
-                    selectedMinutes === option.value && styles.categoryPillActive,
-                    { paddingVertical: 8, paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center', gap: 6 },
-                  ]}
+                  style={[s.prefPill, selectedMinutes === option.value && s.prefPillActive]}
                 >
-                  <Text style={[styles.categoryPillText, selectedMinutes === option.value && styles.categoryPillActiveText]}>{option.icon}</Text>
-                  <Text style={[styles.categoryPillText, selectedMinutes === option.value && styles.categoryPillActiveText]}>{option.label}</Text>
+                  <Text style={[s.prefPillText, selectedMinutes === option.value && s.prefPillActiveText]}>{option.icon}</Text>
+                  <Text style={[s.prefPillText, selectedMinutes === option.value && s.prefPillActiveText]}>{option.label}</Text>
                 </TouchableOpacity>
               ))}
             </View>
           </View>
 
-          <View style={[styles.menuItem, { flexDirection: 'column', alignItems: 'flex-start' }] }>
-            <View style={styles.menuItemLeft}>
-              <Ionicons name="time-outline" size={24} color={colors.textSecondary} />
-              <Text style={styles.menuItemText}>{t('reminderTime', lang)}</Text>
+          {/* Reminder */}
+          <View style={[s.menuItem, { flexDirection: 'column', alignItems: 'flex-start' }]}>
+            <View style={s.menuItemLeft}>
+              <Ionicons name="time-outline" size={22} color={colors.textSecondary} />
+              <Text style={s.menuItemText}>{t('reminderTime', lang)}</Text>
             </View>
             <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
-              {reminderOptions.map((option) => {
+              {reminderOptions.map(option => {
                 const isSelected = selectedReminders.includes(option.value);
                 return (
                   <TouchableOpacity
                     key={option.value}
                     onPress={() => handleReminderToggle(option.value)}
-                    style={[
-                      styles.categoryPill,
-                      isSelected && styles.categoryPillActive,
-                      { paddingVertical: 8, paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center', gap: 6 },
-                    ]}
+                    style={[s.prefPill, isSelected && s.prefPillActive]}
                   >
-                    <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>{option.icon}</Text>
-                    <Text style={[styles.categoryPillText, isSelected && styles.categoryPillActiveText]}>{option.label}</Text>
-                    {isSelected && <Ionicons name="checkmark" size={13} color={isSelected ? colors.text : colors.textSecondary} />}
+                    <Text style={[s.prefPillText, isSelected && s.prefPillActiveText]}>{option.icon}</Text>
+                    <Text style={[s.prefPillText, isSelected && s.prefPillActiveText]}>{option.label}</Text>
+                    {isSelected && <Ionicons name="checkmark" size={12} color={isSelected ? colors.onPrimary : colors.textSecondary} />}
                   </TouchableOpacity>
                 );
               })}
             </View>
           </View>
 
-          <View style={styles.prefSummaryBox}>
-            <Text style={styles.prefSummaryText}>{t('themeSummary', lang).replace('{{theme}}', currentThemeLabel)}</Text>
-            <Text style={styles.prefSummaryText}>{t('languageSummary', lang).replace('{{language}}', t(`language${lang === 'tr' ? 'Turkish' : lang === 'en' ? 'English' : lang === 'es' ? 'Spanish' : 'German'}`, lang))}</Text>
-            <Text style={styles.prefSummaryText}>{t('dailyTargetSummary', lang).replace('{{target}}', String(selectedTarget))}</Text>
-            <Text style={styles.prefSummaryText}>{t('reminderSummary', lang).replace('{{time}}', selectedReminderLabel)}</Text>
+          {/* Pref summary 2×2 grid */}
+          <View style={s.prefSummaryBox}>
+            <View style={s.prefSummaryCell}>
+              <Text style={s.prefSummaryCellLabel}>{t('themeSummary', lang).split(':')[0]}</Text>
+              <Text style={s.prefSummaryCellValue}>{currentThemeLabel}</Text>
+            </View>
+            <View style={s.prefSummaryCell}>
+              <Text style={s.prefSummaryCellLabel}>{t('languageLabel', lang)}</Text>
+              <Text style={s.prefSummaryCellValue}>{t(`language${langName}`, lang)}</Text>
+            </View>
+            <View style={s.prefSummaryCell}>
+              <Text style={s.prefSummaryCellLabel}>{t('readingPlan', lang)}</Text>
+              <Text style={s.prefSummaryCellValue}>{t('dailyTargetSummary', lang).replace('{{target}}', String(selectedTarget))}</Text>
+            </View>
+            <View style={s.prefSummaryCell}>
+              <Text style={s.prefSummaryCellLabel}>{t('reminderTime', lang)}</Text>
+              <Text style={s.prefSummaryCellValue}>{selectedReminderLabel}</Text>
+            </View>
           </View>
-          
-          <View style={styles.menuItem}>
-            <View style={styles.menuItemLeft}>
-              <Ionicons name="sunny-outline" size={24} color={colors.textSecondary} />
-              <Text style={styles.menuItemText}>{t('darkMode', lang)}</Text>
+
+          {/* Dark mode */}
+          <View style={s.menuItem}>
+            <View style={s.menuItemLeft}>
+              <Ionicons name="sunny-outline" size={22} color={colors.textSecondary} />
+              <Text style={s.menuItemText}>{t('darkMode', lang)}</Text>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
               <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary }}>{currentThemeLabel}</Text>
-              <Switch 
-                value={isDark} 
+              <Switch
+                value={isDark}
                 onValueChange={toggleTheme}
                 trackColor={{ false: colors.border, true: colors.primary }}
                 thumbColor={Platform.OS === 'ios' ? '#FFFFFF' : isDark ? colors.primary : '#f4f3f4'}
@@ -384,18 +710,20 @@ const ProfileScreen = ({ navigation }) => {
             </View>
           </View>
 
-          <TouchableOpacity style={styles.menuItem} onPress={scheduleTestNotification}>
-            <View style={styles.menuItemLeft}>
-              <Ionicons name="notifications-outline" size={24} color={colors.textSecondary} />
-              <Text style={styles.menuItemText}>{t('notifyTest', lang)}</Text>
+          {/* Notify test */}
+          <TouchableOpacity style={s.menuItem} onPress={scheduleTestNotification}>
+            <View style={s.menuItemLeft}>
+              <Ionicons name="notifications-outline" size={22} color={colors.textSecondary} />
+              <Text style={s.menuItemText}>{t('notifyTest', lang)}</Text>
             </View>
-            <Text style={{ color: '#B55310', fontFamily: 'Inter_500Medium', letterSpacing: 0.5, fontSize: 13 }}>{t('test', lang).toUpperCase()}</Text>
+            <Text style={s.notifyTestLabel}>{t('test', lang).toUpperCase()}</Text>
           </TouchableOpacity>
 
-          <View style={[styles.menuItem, { flexDirection: 'column', alignItems: 'flex-start', borderBottomWidth: 0 }]}>
-            <View style={styles.menuItemLeft}>
-              <Ionicons name="globe-outline" size={24} color={colors.textSecondary} />
-              <Text style={styles.menuItemText}>{t('languageLabel', lang)}</Text>
+          {/* Language */}
+          <View style={[s.menuItem, { flexDirection: 'column', alignItems: 'flex-start', borderBottomWidth: 0 }]}>
+            <View style={s.menuItemLeft}>
+              <Ionicons name="globe-outline" size={22} color={colors.textSecondary} />
+              <Text style={s.menuItemText}>{t('languageLabel', lang)}</Text>
             </View>
             <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
               {[
@@ -403,67 +731,121 @@ const ProfileScreen = ({ navigation }) => {
                 { code: 'en', label: 'English', flag: '🇺🇸' },
                 { code: 'es', label: 'Español', flag: '🇪🇸' },
                 { code: 'tr', label: 'Türkçe', flag: '🇹🇷' },
-              ].map((l) => (
-                <TouchableOpacity 
+              ].map(l => (
+                <TouchableOpacity
                   key={l.code}
                   onPress={() => setLang(l.code)}
-                  style={[
-                    styles.categoryPill, 
-                    lang === l.code && styles.categoryPillActive,
-                    { paddingVertical: 8, paddingHorizontal: 12 }
-                  ]}
+                  style={[s.prefPill, lang === l.code && s.prefPillActive]}
                 >
-                  <Text style={[
-                    styles.categoryPillText, 
-                    lang === l.code && styles.categoryPillActiveText
-                  ]}>
-                    {l.flag} {l.label}
-                  </Text>
+                  <Text style={[s.prefPillText, lang === l.code && s.prefPillActiveText]}>{l.flag} {l.label}</Text>
                 </TouchableOpacity>
               ))}
             </View>
           </View>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{t('account', lang)}</Text>
-          
-          <TouchableOpacity style={styles.menuItem} onPress={openEditProfileModal}>
-            <View style={styles.menuItemLeft}>
-              <Ionicons name="person-outline" size={24} color={colors.textSecondary} />
-              <Text style={styles.menuItemText}>{t('editInfo', lang)}</Text>
+        {/* ── Activity ── */}
+        <View style={s.section}>
+          <View style={s.sectionHeadingRow}>
+            <Text style={s.sectionTitle}>{t('profileActivitySection', lang)}</Text>
+          </View>
+
+          {/* Badges summary */}
+          <TouchableOpacity style={s.badgesRow} onPress={() => navigation.navigate('ProgressTab')} activeOpacity={0.82}>
+            <View style={s.badgeIconsGroup}>
+              {earnedBadgesList.length > 0
+                ? earnedBadgesList.slice(-3).map((b, i) => (
+                    <Text key={b.id} style={[s.badgeEmoji, { opacity: 1 - i * 0.2 }]}>{b.icon}</Text>
+                  ))
+                : <Text style={s.badgeEmoji}>🏅</Text>
+              }
             </View>
-            <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
+            <View style={s.badgesInfo}>
+              <Text style={s.badgesCount}>{t('profileBadgesTitle', lang)}: {earnedBadgesList.length} / {earnedBadges.length}</Text>
+              {lastEarned
+                ? <Text style={s.badgesSub}>{lastEarned.icon} {lastEarned.name || lastEarned.id}</Text>
+                : <Text style={s.badgesSub}>{t('profileSeeAll', lang)}</Text>
+              }
+            </View>
+            <Ionicons name="chevron-forward" size={18} color={colors.textSecondary} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem} onPress={openPrivacyPolicy}>
-            <View style={styles.menuItemLeft}>
-              <Ionicons name="shield-outline" size={24} color={colors.textSecondary} />
-              <Text style={styles.menuItemText}>{t('privacy', lang)}</Text>
-            </View>
-            <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
-          </TouchableOpacity>
-
-          <View style={styles.destructiveSection}>
-            <TouchableOpacity style={styles.destructiveItem} onPress={handleResetData}>
-              <View style={{ flex: 1 }}>
-                <Text style={[styles.destructiveTitle, { color: '#BA1A1A' }]}>{t('profileResetDataLabel', lang)}</Text>
-                <Text style={styles.destructiveSub}>{t('profileResetDataHint', lang)}</Text>
+          {/* Recent reads */}
+          {recentStories.length > 0 && (
+            <>
+              <View style={[s.sectionHeadingRow, { marginTop: 20, marginBottom: 8 }]}>
+                <Text style={[s.sectionTitle, { fontSize: fz(17) }]}>{t('profileRecentTitle', lang)}</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('LibraryTab')}>
+                  <Text style={s.seeAllText}>{t('profileSeeAll', lang)}</Text>
+                </TouchableOpacity>
               </View>
-              <Ionicons name="refresh-outline" size={18} color="#BA1A1A" />
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{ paddingVertical: 4 }}
+              >
+                {recentStories.map(story => (
+                  <TouchableOpacity
+                    key={story.story_id}
+                    style={s.recentCard}
+                    onPress={() => navigation.navigate('StoryDetail', { story })}
+                    activeOpacity={0.82}
+                  >
+                    <Text style={s.recentCategory} numberOfLines={1}>{story.category || story.parent_category || ''}</Text>
+                    <Text style={s.recentTitle} numberOfLines={3}>{story.title}</Text>
+                    {story.read_time != null && (
+                      <Text style={s.recentMins}>{story.read_time} dk</Text>
+                    )}
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            </>
+          )}
+        </View>
+
+        {/* ── Account ── */}
+        <View style={s.section}>
+          <View style={s.sectionHeadingRow}>
+            <Text style={s.sectionTitle}>{t('account', lang)}</Text>
+          </View>
+
+          <TouchableOpacity style={s.menuItem} onPress={openEditProfileModal}>
+            <View style={s.menuItemLeft}>
+              <Ionicons name="person-outline" size={22} color={colors.textSecondary} />
+              <Text style={s.menuItemText}>{t('editInfo', lang)}</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={s.menuItem} onPress={openPrivacyPolicy}>
+            <View style={s.menuItemLeft}>
+              <Ionicons name="shield-outline" size={22} color={colors.textSecondary} />
+              <Text style={s.menuItemText}>{t('privacy', lang)}</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
+          </TouchableOpacity>
+
+          <View style={s.destructiveSection}>
+            <TouchableOpacity style={s.destructiveItem} onPress={handleResetData}>
+              <View style={{ flex: 1 }}>
+                <Text style={s.destructiveTitle}>{t('profileResetDataLabel', lang)}</Text>
+                <Text style={s.destructiveSub}>{t('profileResetDataHint', lang)}</Text>
+              </View>
+              <Ionicons name="refresh-outline" size={18} color={colors.danger} />
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.destructiveItem, { borderBottomWidth: 0 }]} onPress={handleLogout}>
+            <TouchableOpacity style={[s.destructiveItem, { borderBottomWidth: 0 }]} onPress={handleLogout}>
               <View style={{ flex: 1 }}>
-                <Text style={[styles.destructiveTitle, { color: '#BA1A1A' }]}>{t('logout', lang)}</Text>
-                <Text style={styles.destructiveSub}>{t('profileLogoutHint', lang)}</Text>
+                <Text style={s.destructiveTitle}>{t('logout', lang)}</Text>
+                <Text style={s.destructiveSub}>{t('profileLogoutHint', lang)}</Text>
               </View>
-              <Ionicons name="log-out-outline" size={18} color="#BA1A1A" />
+              <Ionicons name="log-out-outline" size={18} color={colors.danger} />
             </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
 
+      {/* ── Edit Profile Modal ── */}
       <Modal
         visible={showEditProfileModal}
         transparent
@@ -491,16 +873,12 @@ const ProfileScreen = ({ navigation }) => {
             <TextInput
               value={editName}
               onChangeText={setEditName}
-              placeholder={lang === 'tr' ? 'Ad Soyad' : 'Full name'}
+              placeholder={t('profileNamePlaceholder', lang)}
               placeholderTextColor={colors.textSecondary}
               style={{
-                borderWidth: 1,
-                borderColor: colors.border,
-                borderRadius: 10,
-                paddingHorizontal: 12,
-                paddingVertical: 10,
-                color: colors.text,
-                fontFamily: 'Inter_400Regular',
+                borderWidth: 1, borderColor: colors.border, borderRadius: 10,
+                paddingHorizontal: 12, paddingVertical: 10,
+                color: colors.text, fontFamily: 'Inter_400Regular',
                 backgroundColor: colors.backgroundDark,
               }}
             />
@@ -508,18 +886,14 @@ const ProfileScreen = ({ navigation }) => {
             <TextInput
               value={editEmail}
               onChangeText={setEditEmail}
-              placeholder="E-posta"
+              placeholder={t('profileEmailPlaceholder', lang)}
               placeholderTextColor={colors.textSecondary}
               autoCapitalize="none"
               keyboardType="email-address"
               style={{
-                borderWidth: 1,
-                borderColor: colors.border,
-                borderRadius: 10,
-                paddingHorizontal: 12,
-                paddingVertical: 10,
-                color: colors.text,
-                fontFamily: 'Inter_400Regular',
+                borderWidth: 1, borderColor: colors.border, borderRadius: 10,
+                paddingHorizontal: 12, paddingVertical: 10,
+                color: colors.text, fontFamily: 'Inter_400Regular',
                 backgroundColor: colors.backgroundDark,
               }}
             />
@@ -529,9 +903,7 @@ const ProfileScreen = ({ navigation }) => {
                 <Text style={{ fontFamily: 'Inter_500Medium', color: colors.textSecondary }}>{t('profileCancel', lang)}</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={saveProfileEdits} style={{ backgroundColor: colors.primary, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 10 }}>
-                <Text style={{ fontFamily: 'Inter_500Medium', color: colors.onPrimary }}>
-                  {lang === 'tr' ? 'Kaydet' : 'Save'}
-                </Text>
+                <Text style={{ fontFamily: 'Inter_500Medium', color: colors.onPrimary }}>{t('profileSave', lang)}</Text>
               </TouchableOpacity>
             </View>
           </View>

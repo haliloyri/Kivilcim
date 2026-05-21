@@ -44,8 +44,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [localStory, setLocalStory] = useState(story);
   const [adSheet, setAdSheet] = useState(false);
   const [isAdLoading, setIsAdLoading] = useState(false);
+  const [adUnavailable, setAdUnavailable] = useState(false);
 
   const handleNextWithAd = () => {
+    setAdUnavailable(false);
     if (shouldShowAd({ isPremium, isOnboarded: true })) {
       setAdSheet(true);
     } else {
@@ -58,11 +60,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
     trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_next', choice: 'ad' });
     const ad = await loadRewarded();
     setIsAdLoading(false);
-    setAdSheet(false);
     if (!ad) {
-      navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
+      setAdUnavailable(true);
+      trackEvent(ANALYTICS_EVENTS.AD_FAILED_TO_LOAD, { source: 'story_detail_next', lang });
       return;
     }
+    setAdUnavailable(false);
+    setAdSheet(false);
     const { RewardedAdEventType } = require('react-native-google-mobile-ads');
     ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
       trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_next' });
@@ -1455,6 +1459,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       visible={adSheet}
       onClose={() => {
         trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_next', choice: 'dismiss' });
+        setAdUnavailable(false);
         setAdSheet(false);
       }}
       onWatchAd={handleWatchAdNext}
@@ -1463,6 +1468,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
         setAdSheet(false);
         navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
       }}
+      adUnavailable={adUnavailable}
       isAdLoading={isAdLoading}
       lang={lang}
     />

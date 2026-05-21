@@ -15,6 +15,7 @@ import { t } from '../locales/i18n';
 import { getCategoryImage } from '../utils/categoryImages';
 
 const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
+const ONBOARDING_TRIAL_PAYWALL_KEY = '@kivilcim_onboarding_trial_paywall_pending';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -47,14 +48,14 @@ const OnboardingScreen = ({ navigation }) => {
 
   const allCats = parentCategories.map((p) => Number(p.id));
   const timeOptions = [
-    { label: t('time_3min', lang), sub: t('time_3min_sub', lang), icon: 'â˜•', minutes: 3, dailyStoryTarget: 1 },
-    { label: t('time_6min', lang), sub: t('time_6min_sub', lang), icon: 'ğŸ“š', minutes: 6, dailyStoryTarget: 2 },
-    { label: t('time_9min', lang), sub: t('time_9min_sub', lang), icon: 'ğŸš€', minutes: 9, dailyStoryTarget: 3 },
+    { label: t('time_3min', lang), sub: t('time_3min_sub', lang), iconName: 'cafe-outline', icon: '\u2615', minutes: 3, dailyStoryTarget: 1 },
+    { label: t('time_6min', lang), sub: t('time_6min_sub', lang), iconName: 'book-outline', icon: '\uD83D\uDCDA', minutes: 6, dailyStoryTarget: 2 },
+    { label: t('time_9min', lang), sub: t('time_9min_sub', lang), iconName: 'rocket-outline', icon: '\uD83D\uDE80', minutes: 9, dailyStoryTarget: 3 },
   ];
   const reminderOptions = [
-    { label: t('reminder_morning', lang), sub: t('reminder_morning_sub', lang), icon: 'ğŸŒ…', reminderWindow: 'morning', reminderHour: 8 },
-    { label: t('reminder_noon', lang), sub: t('reminder_noon_sub', lang), icon: 'â˜€ï¸', reminderWindow: 'noon', reminderHour: 13 },
-    { label: t('reminder_evening', lang), sub: t('reminder_evening_sub', lang), icon: 'ğŸŒ™', reminderWindow: 'evening', reminderHour: 21 },
+    { label: t('reminder_morning', lang), sub: t('reminder_morning_sub', lang), iconName: 'sunny-outline', icon: '\uD83C\uDF05', reminderWindow: 'morning', reminderHour: 8 },
+    { label: t('reminder_noon', lang), sub: t('reminder_noon_sub', lang), iconName: 'partly-sunny-outline', icon: '\u2600\uFE0F', reminderWindow: 'noon', reminderHour: 13 },
+    { label: t('reminder_evening', lang), sub: t('reminder_evening_sub', lang), iconName: 'moon-outline', icon: '\uD83C\uDF19', reminderWindow: 'evening', reminderHour: 21 },
   ];
   const selectedTimeOption = timeOptions[selectedTime];
   const readyPlanSummary = t('onboarding_ready_plan', lang)
@@ -137,6 +138,9 @@ const OnboardingScreen = ({ navigation }) => {
         ...(name ? { displayName: name } : {}),
         ...(email ? { email } : {}),
       });
+    }
+    if (!isPremium) {
+      await AsyncStorage.setItem(ONBOARDING_TRIAL_PAYWALL_KEY, 'true').catch(() => {});
     }
     await saveOnboarding(selectedCats, timeOptions[selectedTime], selectedReminders);
     await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
@@ -308,7 +312,8 @@ const OnboardingScreen = ({ navigation }) => {
       flexShrink: 0,
     },
     hiwIcon: {
-      fontSize: 22,
+      width: 24,
+      textAlign: 'center',
     },
     hiwCardTitle: {
       fontFamily: 'Inter_600SemiBold',
@@ -392,8 +397,9 @@ const OnboardingScreen = ({ navigation }) => {
       backgroundColor: `${colors.primary}1F`,
     },
     timeTileIcon: {
-      fontSize: 24,
       marginRight: 16,
+      width: 28,
+      textAlign: 'center',
     },
     timeTileName: {
       fontFamily: 'Inter_500Medium',
@@ -565,21 +571,21 @@ const OnboardingScreen = ({ navigation }) => {
       </Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_how_it_works_sub', lang)}</Text>
       <View style={s.hiwCard}>
-        <View style={s.hiwIconBox}><Text style={s.hiwIcon}>ğŸ“š</Text></View>
+        <View style={s.hiwIconBox}><Ionicons name="book-outline" size={22} color={colors.primary} style={s.hiwIcon} /></View>
         <View style={{ flex: 1 }}>
           <Text style={s.hiwCardTitle}>{t('onboarding_hiw_stories_title', lang)}</Text>
           <Text style={s.hiwCardSub}>{t('onboarding_hiw_stories_sub', lang)}</Text>
         </View>
       </View>
       <View style={s.hiwCard}>
-        <View style={s.hiwIconBox}><Text style={s.hiwIcon}>ğŸ”¥</Text></View>
+        <View style={s.hiwIconBox}><Ionicons name="flame-outline" size={22} color={colors.primary} style={s.hiwIcon} /></View>
         <View style={{ flex: 1 }}>
           <Text style={s.hiwCardTitle}>{t('onboarding_hiw_spark_title', lang)}</Text>
           <Text style={s.hiwCardSub}>{t('onboarding_hiw_spark_sub', lang)}</Text>
         </View>
       </View>
       <View style={s.hiwCard}>
-        <View style={s.hiwIconBox}><Text style={s.hiwIcon}>ğŸ””</Text></View>
+        <View style={s.hiwIconBox}><Ionicons name="notifications-outline" size={22} color={colors.primary} style={s.hiwIcon} /></View>
         <View style={{ flex: 1 }}>
           <Text style={s.hiwCardTitle}>{t('onboarding_hiw_reminder_title', lang)}</Text>
           <Text style={s.hiwCardSub}>{t('onboarding_hiw_reminder_sub', lang)}</Text>
@@ -635,7 +641,7 @@ const OnboardingScreen = ({ navigation }) => {
               <View style={s.catCheckSlot}>
                 {sel && (
                   <View style={s.catCheckCircle}>
-                    <Text style={{ fontSize: isSmallPhone ? 11 : 12, color: '#fff', fontWeight: '700' }}>âœ“</Text>
+                    <Ionicons name="checkmark" size={isSmallPhone ? 12 : 14} color="#fff" />
                   </View>
                 )}
               </View>
@@ -663,7 +669,7 @@ const OnboardingScreen = ({ navigation }) => {
           onPress={() => { Haptics.selectionAsync().catch(() => {}); setSelectedTime(i); }}
           activeOpacity={0.7}
         >
-          <Text style={s.timeTileIcon}>{option.icon}</Text>
+          <Ionicons name={option.iconName} size={24} color={selectedTime === i ? colors.primary : colors.textSecondary} style={s.timeTileIcon} />
           <View style={{ flex: 1 }}>
             <Text style={s.timeTileName}>{option.label}</Text>
             <Text style={s.timeTileSub}>{option.sub}</Text>
@@ -690,7 +696,7 @@ const OnboardingScreen = ({ navigation }) => {
             onPress={() => toggleReminder(option.reminderWindow)}
             activeOpacity={0.7}
           >
-            <Text style={s.timeTileIcon}>{option.icon}</Text>
+            <Ionicons name={option.iconName} size={24} color={isSelected ? colors.primary : colors.textSecondary} style={s.timeTileIcon} />
             <View style={{ flex: 1 }}>
               <Text style={s.timeTileName}>{option.label}</Text>
               <Text style={s.timeTileSub}>{option.sub}</Text>
@@ -768,7 +774,7 @@ const OnboardingScreen = ({ navigation }) => {
               {t('readingPlan', lang)}
             </Text>
             <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
-              {selectedTimeOption.icon} {selectedTimeOption.label} Â· {selectedTimeOption.dailyStoryTarget} {t('onboarding_story', lang)}
+              {selectedTimeOption.label} - {selectedTimeOption.dailyStoryTarget} {t('onboarding_story', lang)}
             </Text>
           </View>
           <View style={{ flex: 1, paddingLeft: 12 }}>
@@ -776,7 +782,7 @@ const OnboardingScreen = ({ navigation }) => {
               {t('reminderTime', lang)}
             </Text>
             <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
-              {reminderOptions.filter(o => selectedReminders.includes(o.reminderWindow)).map(o => `${o.icon} ${o.label}`).join(', ')}
+              {reminderOptions.filter(o => selectedReminders.includes(o.reminderWindow)).map(o => o.label).join(', ')}
             </Text>
           </View>
         </View>
@@ -865,7 +871,7 @@ const OnboardingScreen = ({ navigation }) => {
               ? t('next', lang)
               : t('onboarding_start_journey', lang)}
           </Text>
-          <Text style={s.btnPrimaryArrow}>â†’</Text>
+          <Ionicons name="arrow-forward" size={18} color={colors.onPrimary} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>

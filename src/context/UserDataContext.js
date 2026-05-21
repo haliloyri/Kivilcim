@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from './ThemeContext';
-import { recordRead, getTotalReads, getStreak, getLongestStreak, getReadsPerCategory, getReadCountsByStory } from '../db/db';
+import { recordRead, getTotalReads, getStreak, getLongestStreak, getReadsPerCategory, getReadCountsByStory, recordStreakFreeze, getStreakFreezes, clearStreakFreezes } from '../db/db';
 import { checkBadges } from '../utils/badges';
 import { scheduleDailyNotifications } from '../utils/notifications';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
@@ -13,6 +13,7 @@ const USER_PROFILE_STORAGE_KEY = '@kivilcim_user_profile';
 const FAVORITE_COLLECTIONS_STORAGE_KEY = '@kivilcim_favorite_collections';
 const COMPLETED_STORIES_STORAGE_KEY = '@kivilcim_completed_stories';
 const VARIANT_USAGE_STORAGE_KEY = '@kivilcim_variant_usage';
+const STREAK_FREEZE_CREDITS_STORAGE_KEY = '@kivilcim_streak_freeze_credits';
 const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening', reminderHour: 21, reminderWindows: ['evening'] };
 const EMPTY_USER_PROFILE = { displayName: null, email: null };
 const EMPTY_FAVORITE_COLLECTIONS = { saved_for_later: [] };
@@ -217,12 +218,16 @@ export const UserDataProvider = ({ children }) => {
   const [activeBadgeModal, setActiveBadgeModal] = useState(null);
   const [pendingBadges, setPendingBadges] = useState([]);
   const [variantUsage, setVariantUsage] = useState([]);
+  const [streakFreezeCredits, setStreakFreezeCredits] = useState(0);
+  const [streakFreezeDates, setStreakFreezeDates] = useState([]);
+  const [loadErrorMsg, setLoadErrorMsg] = useState(null);
+  const [loadAttempt, setLoadAttempt] = useState(0);
 
   // Güvenlik timeout'u: AsyncStorage 3 saniye içinde tamamlanmazsa devam et
   useEffect(() => {
     const safetyTimer = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(safetyTimer);
-  }, []);
+  }, [loadAttempt]);
 
   // Okuma istatistiklerini yükle
   const refreshStats = useCallback(async () => {
@@ -239,6 +244,8 @@ export const UserDataProvider = ({ children }) => {
       setLongestStreak(longest);
       setCategoryStats(catStats);
       setReadCountsByStory(storyReadCounts);
+      const freezes = await getStreakFreezes();
+      setStreakFreezeDates(freezes.map((item) => item.day).filter(Boolean));
     } catch (error) {
       console.error('İstatistik yükleme hatası:', error);
     }
@@ -251,6 +258,8 @@ export const UserDataProvider = ({ children }) => {
   // Verileri yükle
   useEffect(() => {
     const loadData = async () => {
+      setIsLoading(true);
+      setLoadErrorMsg(null);
       try {
         const storedFavorites = await AsyncStorage.getItem('@kivilcim_favorites');
         const storedHistory = await AsyncStorage.getItem('@kivilcim_history');
@@ -261,6 +270,7 @@ export const UserDataProvider = ({ children }) => {
         const storedUserProfile = await AsyncStorage.getItem(USER_PROFILE_STORAGE_KEY);
         const storedCollections = await AsyncStorage.getItem(FAVORITE_COLLECTIONS_STORAGE_KEY);
         const storedCompletedStories = await AsyncStorage.getItem(COMPLETED_STORIES_STORAGE_KEY);
+        const storedStreakFreezeCredits = await AsyncStorage.getItem(STREAK_FREEZE_CREDITS_STORAGE_KEY);
 
         const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
         if (storedFavorites) setFavorites(parsedFavorites);
@@ -276,6 +286,12 @@ export const UserDataProvider = ({ children }) => {
         }
         if (storedOnboarding) setIsOnboarded(JSON.parse(storedOnboarding));
         if (storedPremium) setIsPremium(JSON.parse(storedPremium));
+        if (storedStreakFreezeCredits) {
+          setStreakFreezeCredits(Math.max(0, Number(JSON.parse(storedStreakFreezeCredits)) || 0));
+        } else if (storedPremium && JSON.parse(storedPremium)) {
+          setStreakFreezeCredits(1);
+          await AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(1));
+        }
         if (storedShareCount) setShareCount(JSON.parse(storedShareCount));
         const parsedCollections = storedCollections ? JSON.parse(storedCollections) : EMPTY_FAVORITE_COLLECTIONS;
         const normalizedCollections = normalizeFavoriteCollections(parsedCollections, parsedFavorites);
@@ -303,11 +319,16 @@ export const UserDataProvider = ({ children }) => {
         }
       } catch (error) {
         console.error('AsyncStorage veri yükleme hatası:', error);
+        setLoadErrorMsg(error?.message || String(error));
       } finally {
         setIsLoading(false);
       }
     };
     loadData();
+  }, [loadAttempt]);
+
+  const retryUserDataLoad = useCallback(() => {
+    setLoadAttempt((attempt) => attempt + 1);
   }, []);
 
   useEffect(() => {
@@ -557,6 +578,11 @@ export const UserDataProvider = ({ children }) => {
   const buyPremium = async () => {
     try {
       setIsPremium(true);
+      setStreakFreezeCredits((prev) => {
+        const next = Math.max(prev, 1);
+        AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(next));
+        return next;
+      });
       await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(true));
       return true;
     } catch (error) {
@@ -693,6 +719,7 @@ export const UserDataProvider = ({ children }) => {
         FIRST_SESSION_PROMPT_KEY,
         SEEN_BADGES_STORAGE_KEY,
         VARIANT_USAGE_STORAGE_KEY,
+        STREAK_FREEZE_CREDITS_STORAGE_KEY,
       ]);
       setFavorites([]);
       setHistory([]);
@@ -706,6 +733,9 @@ export const UserDataProvider = ({ children }) => {
       setSeenBadgeIds([]);
       setActiveBadgeModal(null);
       setVariantUsage([]);
+      setStreakFreezeCredits(0);
+      setStreakFreezeDates([]);
+      await clearStreakFreezes();
       // Clear global categories in ThemeContext too
       await setGlobalCategories([]);
     } catch (error) {
@@ -785,6 +815,31 @@ export const UserDataProvider = ({ children }) => {
     [earnedBadges, seenBadgeIds]
   );
 
+  const useStreakFreeze = useCallback(async (dateStr = new Date().toISOString().split('T')[0]) => {
+    if (!isPremium || streakFreezeCredits <= 0 || streakFreezeDates.includes(dateStr)) {
+      return false;
+    }
+
+    try {
+      await recordStreakFreeze(dateStr);
+      const nextCredits = Math.max(0, streakFreezeCredits - 1);
+      setStreakFreezeCredits(nextCredits);
+      setStreakFreezeDates(prev => Array.from(new Set([dateStr, ...prev])));
+      await AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(nextCredits));
+      await refreshStats();
+      await trackEvent(ANALYTICS_EVENTS.STREAK_FREEZE_ACTIVATED, {
+        date: dateStr,
+        remainingCredits: nextCredits,
+        streak,
+        lang,
+      });
+      return true;
+    } catch (error) {
+      console.error('Streak freeze kullanilamadi:', error);
+      return false;
+    }
+  }, [isPremium, streakFreezeCredits, streakFreezeDates, refreshStats, streak, lang]);
+
   const value = useMemo(() => ({
     favorites,
     history,
@@ -793,6 +848,8 @@ export const UserDataProvider = ({ children }) => {
     isOnboarded,
     isPremium,
     isLoadingUserData: isLoading,
+    userDataErrorMsg: loadErrorMsg,
+    retryUserDataLoad,
     streak,
     totalReads,
     longestStreak,
@@ -804,6 +861,8 @@ export const UserDataProvider = ({ children }) => {
     earnedBadges,
     activeBadgeModal,
     unseenEarnedBadgeCount,
+    streakFreezeCredits,
+    streakFreezeDates,
     toggleFavorite,
     isFavorite,
     isStoryInFavoriteCollection,
@@ -826,7 +885,8 @@ export const UserDataProvider = ({ children }) => {
     openBadgeModal,
     closeBadgeModal,
     releasePendingBadge,
-  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, removeVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge]);
+    useStreakFreeze,
+  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, removeVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge, useStreakFreeze]);
 
   return (
     <UserDataContext.Provider value={value}>
