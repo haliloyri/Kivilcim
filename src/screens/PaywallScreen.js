@@ -12,6 +12,7 @@ import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 const PaywallScreen = ({ navigation, route }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
   const [plan, setPlan] = useState(1);
+  const [purchaseConfirmed, setPurchaseConfirmed] = useState(false);
   const paywallReason = route?.params?.reason || 'none';
   const isFreeLimitReached = paywallReason === 'free_limit_reached';
   const isEarlyTrial = paywallReason === 'early_trial';
@@ -200,7 +201,7 @@ const PaywallScreen = ({ navigation, route }) => {
         reason: paywallReason,
         lang,
       });
-      navigation.goBack();
+      setPurchaseConfirmed(true);
       return;
     }
 
@@ -227,6 +228,10 @@ const PaywallScreen = ({ navigation, route }) => {
     } catch (error) {
       Alert.alert(t('alert_error', lang), t('paywallLegalUnavailable', lang));
     }
+  };
+
+  const handleRestorePress = () => {
+    Alert.alert(t('paywallRestoreUnavailableTitle', lang), t('paywallRestoreUnavailableSub', lang));
   };
 
   const styles = StyleSheet.create({
@@ -542,13 +547,40 @@ const PaywallScreen = ({ navigation, route }) => {
       textAlign: 'center',
       lineHeight: 16,
     },
+    successCard: {
+      borderWidth: 1,
+      borderColor: `${colors.primary}66`,
+      borderRadius: layout.radius.card,
+      backgroundColor: isDark ? `${colors.primary}18` : `${colors.primary}10`,
+      padding: 16,
+      marginBottom: 16,
+      alignItems: 'center',
+      gap: 8,
+    },
+    successTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: typography.sizes.ui,
+      color: colors.text,
+    },
+    successSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.badge + 1,
+      color: colors.textSecondary,
+      textAlign: 'center',
+      lineHeight: 18,
+    },
   });
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
       <ScrollView contentContainerStyle={{ padding: 24, paddingBottom: Platform.OS === 'android' ? 48 : 24 }} showsVerticalScrollIndicator={false}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={{ alignSelf: 'flex-end', marginBottom: 8 }}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={{ alignSelf: 'flex-end', marginBottom: 8, minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center' }}
+          accessibilityRole="button"
+          accessibilityLabel={t('close', lang)}
+        >
           <Text style={{ fontSize: 22, color: colors.textSecondary }}>✕</Text>
         </TouchableOpacity>
 
@@ -596,6 +628,9 @@ const PaywallScreen = ({ navigation, route }) => {
               key={i}
               style={[styles.planCard, plan === i && styles.planCardSelected]}
               onPress={() => handleSelectPlan(i)}
+              accessibilityRole="button"
+              accessibilityLabel={`${p.name} ${p.price}${p.per}`}
+              accessibilityState={{ selected: plan === i }}
             >
               {p.popular && (
                 <View style={styles.popularBadge}>
@@ -628,8 +663,20 @@ const PaywallScreen = ({ navigation, route }) => {
           ))}
         </View>
 
-        <TouchableOpacity style={styles.btnPrimary} onPress={handlePurchase}>
-          <Text style={styles.btnPrimaryText}>{t('subscribe', lang)}</Text>
+        {purchaseConfirmed && (
+          <View style={styles.successCard} accessibilityRole="summary">
+            <Text style={styles.successTitle}>{t('paywallPurchaseSuccessTitle', lang)}</Text>
+            <Text style={styles.successSub}>{t('paywallPurchaseSuccessSub', lang)}</Text>
+          </View>
+        )}
+
+        <TouchableOpacity
+          style={styles.btnPrimary}
+          onPress={purchaseConfirmed ? () => navigation.goBack() : handlePurchase}
+          accessibilityRole="button"
+          accessibilityLabel={purchaseConfirmed ? t('paywallContinueCta', lang) : t('subscribe', lang)}
+        >
+          <Text style={styles.btnPrimaryText}>{t(purchaseConfirmed ? 'paywallContinueCta' : 'subscribe', lang)}</Text>
         </TouchableOpacity>
         <View style={styles.trustWrap}>
           {trustPoints.map((item, idx) => (
@@ -650,13 +697,24 @@ const PaywallScreen = ({ navigation, route }) => {
 
         <View style={styles.legalWrap}>
           {legalLinks.map((item) => (
-            <TouchableOpacity key={item.label} style={styles.legalChip} onPress={() => openLegalLink(item.url)}>
+            <TouchableOpacity
+              key={item.label}
+              style={styles.legalChip}
+              onPress={() => openLegalLink(item.url)}
+              accessibilityRole="link"
+              accessibilityLabel={item.label}
+            >
               <Text style={styles.legalChipText}>{item.label}</Text>
             </TouchableOpacity>
           ))}
         </View>
 
-        <TouchableOpacity style={{ marginTop: 12, alignItems: 'center' }}>
+        <TouchableOpacity
+          style={{ marginTop: 12, alignItems: 'center', minHeight: 44, justifyContent: 'center' }}
+          onPress={handleRestorePress}
+          accessibilityRole="button"
+          accessibilityLabel={t('restore', lang)}
+        >
           <Text style={{ fontSize: 12, color: colors.textSecondary, fontFamily: 'Inter_400Regular' }}>{t('restore', lang)}</Text>
         </TouchableOpacity>
       </ScrollView>

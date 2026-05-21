@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useStories } from '../context/StoriesContext';
 import StoryCard from '../components/StoryCard';
@@ -14,7 +15,6 @@ import { searchStoriesForLang } from '../db/db';
 
 const RECENT_SEARCHES_KEY = '@kivilcim_recent_searches';
 const MAX_RECENT_SEARCHES = 8;
-const DEFAULT_SUGGESTIONS = ['alışkanlık', 'felsefe', 'liderlik', 'motivasyon'];
 
 const SearchScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
@@ -31,6 +31,12 @@ const SearchScreen = ({ navigation }) => {
       .slice(0, 6)
       .filter((item) => item?.name);
   }, [parentCategories]);
+
+  const defaultSuggestions = useMemo(() => {
+    return ['1', '2', '3', '4']
+      .map((suffix) => t(`searchSuggestion${suffix}`, lang))
+      .filter(Boolean);
+  }, [lang]);
 
   useEffect(() => {
     const loadRecentSearches = async () => {
@@ -113,20 +119,41 @@ const SearchScreen = ({ navigation }) => {
       gap: 12,
     },
     backBtn: {
-      fontSize: 20,
-      color: colors.text,
+      width: 44,
+      height: 44,
+      borderRadius: 22,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.backgroundDark,
+      borderWidth: layout.borderWidth,
+      borderColor: colors.border,
+    },
+    searchWrap: {
+      flex: 1,
+      height: 44,
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: colors.backgroundDark,
+      borderRadius: 22,
+      borderWidth: layout.borderWidth,
+      borderColor: colors.border,
+      paddingLeft: 14,
+      paddingRight: 6,
     },
     searchBar: {
       flex: 1,
       height: 44,
-      backgroundColor: colors.backgroundDark,
-      borderRadius: 22,
-      paddingHorizontal: 16,
+      paddingHorizontal: 8,
       fontFamily: 'Inter_400Regular',
       fontSize: 16,
       color: colors.text,
-      borderWidth: layout.borderWidth,
-      borderColor: colors.border,
+    },
+    clearBtn: {
+      width: 34,
+      height: 34,
+      borderRadius: 17,
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     sectionLabel: { 
       fontFamily: 'Inter_500Medium', 
@@ -180,6 +207,27 @@ const SearchScreen = ({ navigation }) => {
       marginHorizontal: layout.padding.horizontal,
       marginBottom: 10,
     },
+    emptyActions: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 10,
+      paddingHorizontal: layout.padding.horizontal,
+      marginBottom: 8,
+    },
+    homeCta: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      paddingHorizontal: 14,
+      paddingVertical: 9,
+      borderRadius: 18,
+      backgroundColor: colors.primary,
+    },
+    homeCtaText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+      color: colors.onPrimary,
+    },
   });
 
   return (
@@ -187,18 +235,38 @@ const SearchScreen = ({ navigation }) => {
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
       
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.backBtn}>←</Text>
+        <TouchableOpacity
+          style={styles.backBtn}
+          onPress={() => navigation.goBack()}
+          accessibilityRole="button"
+          accessibilityLabel={t('searchBackAccessibility', lang)}
+        >
+          <Ionicons name="chevron-back" size={24} color={colors.text} />
         </TouchableOpacity>
-        <TextInput 
-          style={styles.searchBar}
-          placeholder={t('searchPlaceholder', lang)}
-          placeholderTextColor={colors.textSecondary}
-          value={query}
-          onChangeText={setQuery}
-          onSubmitEditing={() => persistRecentSearch(query)}
-          autoFocus={true}
-        />
+        <View style={styles.searchWrap}>
+          <Ionicons name="search" size={18} color={colors.textSecondary} />
+          <TextInput
+            style={styles.searchBar}
+            placeholder={t('searchPlaceholder', lang)}
+            placeholderTextColor={colors.textSecondary}
+            value={query}
+            onChangeText={setQuery}
+            onSubmitEditing={() => persistRecentSearch(query)}
+            autoFocus={true}
+            returnKeyType="search"
+            accessibilityLabel={t('searchInputAccessibility', lang)}
+          />
+          {query.trim().length > 0 && (
+            <TouchableOpacity
+              style={styles.clearBtn}
+              onPress={() => setQuery('')}
+              accessibilityRole="button"
+              accessibilityLabel={t('searchClearAccessibility', lang)}
+            >
+              <Ionicons name="close-circle" size={20} color={colors.textSecondary} />
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -228,7 +296,7 @@ const SearchScreen = ({ navigation }) => {
                   compact
                   onPress={() => applySearchTerm(item.name)}
                 />
-              )) : DEFAULT_SUGGESTIONS.map((item, idx) => (
+              )) : defaultSuggestions.map((item, idx) => (
                 <TouchableOpacity key={`${item}-${idx}`} style={styles.chip} onPress={() => applySearchTerm(item)}>
                   <Text style={styles.chipText}>{item}</Text>
                 </TouchableOpacity>
@@ -246,6 +314,12 @@ const SearchScreen = ({ navigation }) => {
               <>
                 <Text style={styles.emptyTitle}>{t('searchNoResultsTitle', lang)}</Text>
                 <Text style={styles.emptySub}>{t('searchNoResultsSub', lang)}</Text>
+                <View style={styles.emptyActions}>
+                  <TouchableOpacity style={styles.homeCta} onPress={() => navigation.navigate('HomeTab')} accessibilityRole="button">
+                    <Ionicons name="home-outline" size={15} color={colors.onPrimary} />
+                    <Text style={styles.homeCtaText}>{t('searchReturnHome', lang)}</Text>
+                  </TouchableOpacity>
+                </View>
                 <Text style={styles.sectionLabel}>{t('searchTrySuggestions', lang)}</Text>
                 <View style={styles.chipRow}>
                   {popularCategories.length > 0 ? popularCategories.map((item, idx) => (
@@ -257,7 +331,7 @@ const SearchScreen = ({ navigation }) => {
                       compact
                       onPress={() => applySearchTerm(item.name)}
                     />
-                  )) : DEFAULT_SUGGESTIONS.map((item, idx) => (
+                  )) : defaultSuggestions.map((item, idx) => (
                     <TouchableOpacity key={`${item}-${idx}`} style={styles.chip} onPress={() => applySearchTerm(item)}>
                       <Text style={styles.chipText}>{item}</Text>
                     </TouchableOpacity>

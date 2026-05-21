@@ -28,7 +28,6 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const CONFETTI_COLORS = ['#FFD166', '#FF6B6B', '#06D6A0', '#4D96FF', '#F4A261', '#B8E1FF'];
 const BADGE_SOUND_ASSET = require('../../assets/sounds/badge.wav');
-const ONBOARDING_TRIAL_PAYWALL_KEY = '@kivilcim_onboarding_trial_paywall_pending';
 
 function MainTabs() {
   const { colors, typography, layout, isDark, lang } = useTheme();
@@ -121,7 +120,6 @@ export default function AppNavigator() {
   const { colors, layout, lang } = useTheme();
   const [isNavigationReady, setIsNavigationReady] = useState(false);
   const navigationRef = useRef(null);
-  const hasCheckedOnboardingTrialRef = useRef(false);
   const modalAnim = useRef(new Animated.Value(0)).current;
   const iconAnim = useRef(new Animated.Value(0.7)).current;
   const confettiAnim = useRef(new Animated.Value(0)).current;
@@ -134,31 +132,6 @@ export default function AppNavigator() {
       }
     };
   }, []);
-
-  useEffect(() => {
-    if (!isNavigationReady || isLoadingUserData || !isOnboarded || hasCheckedOnboardingTrialRef.current) return;
-
-    hasCheckedOnboardingTrialRef.current = true;
-    let active = true;
-
-    (async () => {
-      const shouldShowTrialPaywall = await AsyncStorage.getItem(ONBOARDING_TRIAL_PAYWALL_KEY).catch(() => null);
-      if (!active || shouldShowTrialPaywall !== 'true') return;
-
-      await AsyncStorage.removeItem(ONBOARDING_TRIAL_PAYWALL_KEY).catch(() => {});
-
-      if (isPremium) return;
-
-      navigationRef.current?.navigate('Paywall', {
-        reason: 'early_trial',
-        source: 'onboarding_complete',
-      });
-    })();
-
-    return () => {
-      active = false;
-    };
-  }, [isNavigationReady, isLoadingUserData, isOnboarded, isPremium]);
 
   useEffect(() => {
     const triggerCelebrationFeedback = async () => {

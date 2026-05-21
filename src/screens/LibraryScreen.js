@@ -168,10 +168,43 @@ const LibraryScreen = ({ navigation }) => {
   }, [collectionItems, activeCollection, lang]);
 
   const emptyText = useMemo(() => {
+    if (activeCategory !== 'all') return t('libraryFilteredEmptyTitle', lang);
     if (activeCollection === 'favorites') return t('noFavs', lang);
     if (activeCollection === 'used') return t('libraryNoUsedStories', lang);
     return t('noHistory', lang);
   }, [activeCollection, lang]);
+
+  const emptyStateMeta = useMemo(() => {
+    if (activeCategory !== 'all') {
+      return {
+        subtitle: t('libraryFilteredEmptySub', lang),
+        cta: t('libraryClearFilterCta', lang),
+        action: () => setActiveCategory('all'),
+      };
+    }
+
+    if (activeCollection === 'favorites') {
+      return {
+        subtitle: t('libraryEmptyFavoritesSub', lang),
+        cta: t('libraryEmptyFavoritesCta', lang),
+        action: () => navigation.navigate('HomeTab'),
+      };
+    }
+
+    if (activeCollection === 'used') {
+      return {
+        subtitle: t('libraryEmptyUsedSub', lang),
+        cta: t('libraryEmptyUsedCta', lang),
+        action: () => navigation.navigate('HomeTab'),
+      };
+    }
+
+    return {
+      subtitle: t('libraryEmptyReadSub', lang),
+      cta: t('libraryEmptyReadCta', lang),
+      action: () => navigation.navigate('HomeTab'),
+    };
+  }, [activeCategory, activeCollection, lang, navigation]);
 
   const styles = StyleSheet.create({
     safe: { 
@@ -248,6 +281,26 @@ const LibraryScreen = ({ navigation }) => {
       color: colors.textSecondary,
       textAlign: 'center',
       marginTop: 8,
+    },
+    emptyTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 16,
+      color: colors.text,
+      textAlign: 'center',
+    },
+    emptyButton: {
+      marginTop: 16,
+      minHeight: 44,
+      borderRadius: 12,
+      paddingHorizontal: 16,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.primary,
+    },
+    emptyButtonText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.onPrimary,
     },
     sortBtn: {
       flexDirection: 'row',
@@ -328,6 +381,8 @@ const LibraryScreen = ({ navigation }) => {
               compact
               isDark={isDark}
               onPress={() => setActiveCategory(item.id)}
+              accessibilityRole="button"
+              accessibilityLabel={`${t('libraryFilterCategory', lang)}: ${item.label}`}
             />
           )}
           keyExtractor={(item) => String(item.id)}
@@ -346,6 +401,9 @@ const LibraryScreen = ({ navigation }) => {
             <TouchableOpacity
               style={[styles.collectionPill, activeCollection === item.id && styles.collectionPillActive]}
               onPress={() => setActiveCollection(item.id)}
+              accessibilityRole="button"
+              accessibilityLabel={item.label}
+              accessibilityState={{ selected: activeCollection === item.id }}
             >
               <Ionicons
                 name={item.id === 'favorites' ? 'heart-outline' : item.id === 'used' ? 'bookmark-outline' : 'time-outline'}
@@ -364,7 +422,12 @@ const LibraryScreen = ({ navigation }) => {
         {/* ── Liste başlığı + Sırala ───────────────────────────── */}
         <View style={styles.sectionHeadingRow}>
           <Text style={styles.sectionHeadingRowText}>{dynamicTitle}</Text>
-          <TouchableOpacity style={styles.sortBtn} onPress={() => setSortModalVisible(true)}>
+          <TouchableOpacity
+            style={styles.sortBtn}
+            onPress={() => setSortModalVisible(true)}
+            accessibilityRole="button"
+            accessibilityLabel={t('librarySortAction', lang)}
+          >
             <Ionicons name="swap-vertical-outline" size={15} color={colors.textSecondary} />
             <Text style={styles.sortBtnText}>{t('librarySortAction', lang)}</Text>
           </TouchableOpacity>
@@ -382,7 +445,16 @@ const LibraryScreen = ({ navigation }) => {
             />
           )) : (
             <View style={[styles.emptyState, { paddingTop: 20 }]}>
-              <Text style={styles.emptyText}>{emptyText}</Text>
+              <Text style={styles.emptyTitle}>{emptyText}</Text>
+              <Text style={styles.emptyText}>{emptyStateMeta.subtitle}</Text>
+              <TouchableOpacity
+                style={styles.emptyButton}
+                onPress={emptyStateMeta.action}
+                accessibilityRole="button"
+                accessibilityLabel={emptyStateMeta.cta}
+              >
+                <Text style={styles.emptyButtonText}>{emptyStateMeta.cta}</Text>
+              </TouchableOpacity>
             </View>
           )}
         </View>
@@ -409,8 +481,11 @@ const LibraryScreen = ({ navigation }) => {
                   setSortBy(opt.id);
                   setSortModalVisible(false);
                 }}
+                accessibilityRole="button"
+                accessibilityLabel={opt.label}
+                accessibilityState={{ selected: sortBy === opt.id }}
               >
-                <Text style={styles.sortOptionText}>{opt.label}</Text>
+                <Text style={[styles.sortOptionText, sortBy === opt.id && { color: colors.primary, fontFamily: 'Inter_600SemiBold' }]}>{opt.label}</Text>
                 {sortBy === opt.id ? (
                   <Ionicons name="checkmark" size={20} color={colors.primary} />
                 ) : null}

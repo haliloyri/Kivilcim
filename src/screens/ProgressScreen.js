@@ -265,6 +265,46 @@ const ProgressScreen = ({ navigation }) => {
   // Spotlight = top near badge
   const closestBadge = nearBadges[0] || null;
 
+  const nextBestAction = useMemo(() => {
+    if (!isDailyGoalComplete) {
+      return {
+        icon: 'book-outline',
+        title: storiesLeftToday === 1 ? t('progressNextDailyOneTitle', lang) : t('progressNextDailyManyTitle', lang).replace('{{count}}', String(storiesLeftToday)),
+        subtitle: t('progressNextDailySub', lang),
+        cta: t('progressActionOpenHome', lang),
+        action: () => navigation.navigate('HomeTab'),
+      };
+    }
+
+    if (isStreakProtectedToday) {
+      return {
+        icon: 'shield-checkmark-outline',
+        title: t('progressNextProtectedTitle', lang),
+        subtitle: t('progressNextProtectedSub', lang),
+        cta: t('progressActionTomorrowCta', lang),
+        action: null,
+      };
+    }
+
+    if (closestBadge) {
+      return {
+        icon: 'trophy-outline',
+        title: t('progressNextBadgeTitle', lang),
+        subtitle: t('progressNextBadgeSub', lang).replace('{{badge}}', t(closestBadge.titleKey, lang)),
+        cta: t('progressViewBadgeCta', lang),
+        action: () => openBadgeModal(closestBadge),
+      };
+    }
+
+    return {
+      icon: 'checkmark-circle-outline',
+      title: t('progressNextCompleteTitle', lang),
+      subtitle: t('progressNextCompleteSub', lang),
+      cta: t('progressActionTomorrowCta', lang),
+      action: null,
+    };
+  }, [closestBadge, isDailyGoalComplete, isStreakProtectedToday, lang, navigation, openBadgeModal, storiesLeftToday]);
+
   // Active reading days count for heatmap KPI
   const activeDaysCount = useMemo(() => heatmapData.filter(d => d.level > 0).length, [heatmapData]);
 
@@ -464,6 +504,48 @@ const ProgressScreen = ({ navigation }) => {
       fontSize: 16,
       color: colors.primary,
     },
+    nextBestCard: {
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 12,
+      borderRadius: layout.radius.card,
+      borderWidth: 1,
+      borderColor: `${colors.primary}66`,
+      backgroundColor: isDark ? `${colors.primary}18` : `${colors.primary}10`,
+      padding: 16,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+    },
+    nextBestIcon: {
+      width: 42,
+      height: 42,
+      borderRadius: 21,
+      backgroundColor: colors.background,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 1,
+      borderColor: `${colors.primary}44`,
+    },
+    nextBestLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 10,
+      color: colors.primary,
+      letterSpacing: 0.8,
+      textTransform: 'uppercase',
+      marginBottom: 3,
+    },
+    nextBestTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 15,
+      color: colors.text,
+      marginBottom: 3,
+    },
+    nextBestSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      lineHeight: 17,
+    },
     // ── Actions ───────────────────────────────────────────────────
     actionsWrap: { marginHorizontal: layout.padding.horizontal, marginBottom: 10, gap: 10 },
     actionCard: {
@@ -593,6 +675,27 @@ const ProgressScreen = ({ navigation }) => {
           <Text style={styles.greetName}>{t('yourSparks', lang)}</Text>
         </View>
 
+        <View style={styles.nextBestCard}>
+          <View style={styles.nextBestIcon}>
+            <Ionicons name={nextBestAction.icon} size={22} color={colors.primary} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.nextBestLabel}>{t('progressNextBestLabel', lang)}</Text>
+            <Text style={styles.nextBestTitle}>{nextBestAction.title}</Text>
+            <Text style={styles.nextBestSub}>{nextBestAction.subtitle}</Text>
+          </View>
+          {nextBestAction.action && (
+            <TouchableOpacity
+              style={styles.actionButton}
+              onPress={nextBestAction.action}
+              accessibilityRole="button"
+              accessibilityLabel={nextBestAction.cta}
+            >
+              <Text style={styles.actionButtonText}>{nextBestAction.cta}</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+
         {/* ── Today Hero Card: Streak + Daily Goal + Spotlight ───── */}
         <View style={styles.heroCard}>
           {/* Row 1: Streak tile + Daily Goal tile side by side */}
@@ -634,7 +737,11 @@ const ProgressScreen = ({ navigation }) => {
                 {isDailyGoalComplete ? (
                   <Text style={styles.heroCompleteTag}>✓ {t('dailyGoalComplete', lang)}</Text>
                 ) : (
-                  <TouchableOpacity onPress={() => navigation.navigate('HomeTab')}>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate('HomeTab')}
+                    accessibilityRole="button"
+                    accessibilityLabel={t('progressActionOpenHome', lang)}
+                  >
                     <Text style={styles.heroReadCta}>{t('progressActionOpenHome', lang)} →</Text>
                   </TouchableOpacity>
                 )}
@@ -648,6 +755,8 @@ const ProgressScreen = ({ navigation }) => {
               style={styles.heroSpotlightTile}
               onPress={() => openBadgeModal(closestBadge)}
               activeOpacity={0.8}
+              accessibilityRole="button"
+              accessibilityLabel={t(closestBadge.titleKey, lang)}
             >
               <View style={styles.heroTileHeader}>
                 <Ionicons name="trophy-outline" size={12} color={colors.textSecondary} />
@@ -695,6 +804,8 @@ const ProgressScreen = ({ navigation }) => {
                 style={[styles.freezeButton, isPremium && streakFreezeCredits <= 0 && { opacity: 0.45 }]}
                 onPress={handleStreakFreezePress}
                 disabled={isPremium && streakFreezeCredits <= 0}
+                accessibilityRole="button"
+                accessibilityLabel={t(isPremium ? 'streakFreezeUseCta' : 'streakFreezePremiumCta', lang)}
               >
                 <Text style={styles.freezeButtonText}>
                   {t(isPremium ? 'streakFreezeUseCta' : 'streakFreezePremiumCta', lang)}
@@ -718,7 +829,12 @@ const ProgressScreen = ({ navigation }) => {
                   {t('progressActionDailySub', lang).replace('{{count}}', String(Math.max(1, storiesLeftToday)))}
                 </Text>
               </View>
-              <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('HomeTab')}>
+              <TouchableOpacity
+                style={styles.actionButton}
+                onPress={() => navigation.navigate('HomeTab')}
+                accessibilityRole="button"
+                accessibilityLabel={t('progressActionOpenHome', lang)}
+              >
                 <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
               </TouchableOpacity>
             </View>
@@ -735,13 +851,20 @@ const ProgressScreen = ({ navigation }) => {
                   : t('progressActionCategoryFallback', lang)}
               </Text>
             </View>
-            <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('HomeTab')}>
+            <TouchableOpacity
+              style={styles.actionButton}
+              onPress={() => navigation.navigate('HomeTab')}
+              accessibilityRole="button"
+              accessibilityLabel={t('progressActionOpenHome', lang)}
+            >
               <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
             </TouchableOpacity>
           </View>
         </View>
 
         {/* ── Stats Row ──────────────────────────────────────────── */}
+              accessibilityRole="button"
+              accessibilityLabel={t(badge.titleKey, lang) || badge.titleKey}
         <View style={styles.statsRow}>
           <View style={styles.statBox}>
             <Text style={styles.statNum}>{totalReads}</Text>

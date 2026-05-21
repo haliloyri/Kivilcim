@@ -629,6 +629,44 @@ const HomeScreen = ({ navigation }) => {
   const teaserStory = (!isPremium && lockedWithoutWeeklyBonus.length > 0) ? lockedWithoutWeeklyBonus[0] : null;
   const locked = teaserStory ? lockedWithoutWeeklyBonus.slice(1) : lockedWithoutWeeklyBonus;
   const dailyDeck = (personalizedStories.length > 0 ? personalizedStories : sortedStories).slice(0, 3);
+  const primaryHomeAction = React.useMemo(() => {
+    const nextStory = personalizedStories.find((story) => !historySet.has(String(story.story_id))) || personalizedStories[0] || sortedStories[0] || null;
+    const isComplete = personalizedStories.length > 0 && doneCount >= personalizedStories.length;
+
+    if (isComplete) {
+      return {
+        eyebrow: t('home_primary_completed_eyebrow', lang),
+        title: t('home_primary_completed_title', lang),
+        sub: t('home_primary_completed_sub', lang),
+        cta: t('home_primary_completed_cta', lang),
+        icon: 'checkmark-circle',
+        story: nextStory,
+        source: 'home_primary_completed',
+      };
+    }
+
+    if (historySet.size > 0) {
+      return {
+        eyebrow: t('home_primary_continue_eyebrow', lang),
+        title: t('home_primary_continue_title', lang),
+        sub: nextStory?.title || t('home_primary_empty_sub', lang),
+        cta: t('home_primary_continue_cta', lang),
+        icon: 'play-circle',
+        story: nextStory,
+        source: 'home_primary_continue',
+      };
+    }
+
+    return {
+      eyebrow: t('home_primary_new_eyebrow', lang),
+      title: t('home_primary_new_title', lang),
+      sub: nextStory?.title || t('home_primary_empty_sub', lang),
+      cta: t('home_primary_new_cta', lang),
+      icon: 'sparkles',
+      story: nextStory,
+      source: 'home_primary_new',
+    };
+  }, [personalizedStories, sortedStories, historySet, doneCount, lang]);
 
   const dismissFirstSessionPrompt = async () => {
     setShowFirstSessionPrompt(false);
@@ -653,6 +691,22 @@ const HomeScreen = ({ navigation }) => {
         lang,
       });
       navigation.navigate('StoryDetail', { story: firstStory });
+      return;
+    }
+
+    navigation.navigate('Search');
+  };
+
+  const openPrimaryHomeAction = () => {
+    if (primaryHomeAction.story) {
+      trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
+        storyId: primaryHomeAction.story.story_id,
+        position: 0,
+        source: primaryHomeAction.source,
+        dailyStoryTarget: personalizedTarget,
+        lang,
+      });
+      navigation.navigate('StoryDetail', { story: primaryHomeAction.story });
       return;
     }
 
@@ -1330,6 +1384,79 @@ const HomeScreen = ({ navigation }) => {
       letterSpacing: 0.3,
       textTransform: 'uppercase',
     },
+    primaryActionCard: {
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 12,
+      marginBottom: 12,
+      borderRadius: layout.radius.card,
+      borderWidth: 1.5,
+      borderColor: `${colors.primary}55`,
+      backgroundColor: isDark ? colors.surfaceContainerHigh : colors.primaryContainer,
+      padding: 18,
+    },
+    primaryActionTop: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+      marginBottom: 12,
+    },
+    primaryActionIcon: {
+      width: 42,
+      height: 42,
+      borderRadius: 21,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.primary,
+    },
+    primaryActionTextWrap: {
+      flex: 1,
+    },
+    primaryActionEyebrow: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11,
+      color: colors.primary,
+      textTransform: 'uppercase',
+      letterSpacing: 0.8,
+      marginBottom: 4,
+    },
+    primaryActionTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: isSmallPhone ? 24 : 27,
+      color: colors.text,
+      lineHeight: isSmallPhone ? 30 : 34,
+    },
+    primaryActionSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 14,
+      color: colors.textSecondary,
+      lineHeight: 20,
+      marginBottom: 14,
+    },
+    primaryActionFooter: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 12,
+    },
+    primaryActionProgress: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.textSecondary,
+    },
+    primaryActionCta: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      borderRadius: 999,
+      paddingHorizontal: 16,
+      paddingVertical: 10,
+      backgroundColor: colors.primary,
+    },
+    primaryActionCtaText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.onPrimary,
+    },
     dailyPanelCard: {
       marginBottom: 20,
       borderRadius: layout.radius.card,
@@ -1442,6 +1569,33 @@ const HomeScreen = ({ navigation }) => {
           style={{ marginTop: 20, marginBottom: 8 }}
           scrollToOverflowEnabled={true}
         />
+
+        {!loading && sortedStories.length > 0 && (
+          <TouchableOpacity
+            style={styles.primaryActionCard}
+            onPress={openPrimaryHomeAction}
+            activeOpacity={0.86}
+            accessibilityRole="button"
+          >
+            <View style={styles.primaryActionTop}>
+              <View style={styles.primaryActionIcon}>
+                <Ionicons name={primaryHomeAction.icon} size={24} color={colors.onPrimary} />
+              </View>
+              <View style={styles.primaryActionTextWrap}>
+                <Text style={styles.primaryActionEyebrow}>{primaryHomeAction.eyebrow}</Text>
+                <Text style={styles.primaryActionTitle}>{primaryHomeAction.title}</Text>
+              </View>
+            </View>
+            <Text style={styles.primaryActionSub} numberOfLines={2}>{primaryHomeAction.sub}</Text>
+            <View style={styles.primaryActionFooter}>
+              <Text style={styles.primaryActionProgress}>{doneCount} / {Math.max(personalizedStories.length, 1)}</Text>
+              <View style={styles.primaryActionCta}>
+                <Text style={styles.primaryActionCtaText}>{primaryHomeAction.cta}</Text>
+                <Ionicons name="arrow-forward" size={16} color={colors.onPrimary} />
+              </View>
+            </View>
+          </TouchableOpacity>
+        )}
 
         {/* Featured Story Cards (Horizontal Scroll) */}
         {!loading && sortedStories.length > 0 && (() => {

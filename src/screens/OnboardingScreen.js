@@ -15,7 +15,6 @@ import { t } from '../locales/i18n';
 import { getCategoryImage } from '../utils/categoryImages';
 
 const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
-const ONBOARDING_TRIAL_PAYWALL_KEY = '@kivilcim_onboarding_trial_paywall_pending';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -138,9 +137,6 @@ const OnboardingScreen = ({ navigation }) => {
         ...(name ? { displayName: name } : {}),
         ...(email ? { email } : {}),
       });
-    }
-    if (!isPremium) {
-      await AsyncStorage.setItem(ONBOARDING_TRIAL_PAYWALL_KEY, 'true').catch(() => {});
     }
     await saveOnboarding(selectedCats, timeOptions[selectedTime], selectedReminders);
     await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
