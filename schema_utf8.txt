@@ -1,0 +1,73 @@
+CREATE TABLE sqlite_sequence(name,seq)
+
+CREATE TABLE book_translations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    book_id INTEGER,
+    lang_code TEXT,
+    title TEXT,
+    category_name TEXT,
+    FOREIGN KEY(book_id) REFERENCES books(id)
+  )
+
+CREATE TABLE stories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    book_no INTEGER
+  )
+
+CREATE TABLE story_translations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    story_id INTEGER,
+    lang_code TEXT,
+    title TEXT,
+    description TEXT,
+    content TEXT, hook TEXT,
+    FOREIGN KEY(story_id) REFERENCES stories(id)
+  )
+
+CREATE TABLE categories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category_name TEXT NOT NULL,
+    [order] INTEGER
+)
+
+CREATE TABLE categories_translations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category_id INTEGER,
+    language TEXT,
+    translation TEXT,
+    FOREIGN KEY (category_id) REFERENCES categories (id)
+)
+
+CREATE TABLE subcategories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    categori_id INTEGER NOT NULL,
+    subcategory_name TEXT NOT NULL,
+    FOREIGN KEY (categori_id) REFERENCES categories (id)
+)
+
+CREATE TABLE "books" (
+	"id"	INTEGER,
+	"list_no"	INTEGER UNIQUE,
+	"author"	TEXT,
+	"publish_year"	TEXT,
+	"category_id"	INTEGER, sub_category_id INTEGER REFERENCES sub_categories(id),
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+CREATE TABLE main_categories (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name_tr TEXT UNIQUE,
+      name_en TEXT,
+      name_de TEXT,
+      name_es TEXT
+    )
+
+CREATE TABLE sub_categories (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      main_category_id INTEGER,
+      name_tr TEXT UNIQUE,
+      name_en TEXT,
+      name_de TEXT,
+      name_es TEXT,
+      FOREIGN KEY(main_category_id) REFERENCES main_categories(id)
+    )

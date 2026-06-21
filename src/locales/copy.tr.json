@@ -1,0 +1,148 @@
+{
+  "screen": {
+    "sohbetteKullan": {
+      "lockedBanner": "Kullanım rehberi Premium'a özel.",
+      "lockedCta": "Premium ile Aç",
+      "guidePlaceholderTitle": "Rehber burada görünecek",
+      "guidePlaceholderSubtitle": "Premium ile bu fikri sohbete nasıl taşıyacağını öğren."
+    }
+  },
+  "constraint": {
+    "1": {
+      "locked": {
+        "title": "Bu fikrin derinliği Premium'da",
+        "subtitle": "Farklı açılar, örnekler ve tam bağlam için Premium'u aç.",
+        "cta": {
+          "1": "Premium ile Aç",
+          "2": "Derinleştir",
+          "3": "Tümünü Gör"
+        }
+      },
+      "tooltip": {
+        "why": "Ücretsiz sürümde tek cümlelik özet sunulur. Varyantlar Premium kapsamında.",
+        "trust": "Varyantlar; analoji, örnek ve uygulama açısından fikirle gerçekten bağ kurmanı sağlar."
+      }
+    },
+    "2": {
+      "locked": {
+        "title": "Kullanım rehberi Premium'a özel",
+        "subtitle": "Bu fikri sohbetlere nasıl taşıyacağını rehber anlatıyor.",
+        "cta": {
+          "1": "Premium ile Aç",
+          "2": "Rehberi Aç",
+          "3": "Nasıl Kullanırım"
+        }
+      },
+      "tooltip": {
+        "why": "Ücretsiz hesapta rehber içeriği görünmez. Sohbet rehberleri Premium kapsamındadır.",
+        "trust": "Rehberler, fikirleri günlük konuşmalara doğal taşımanı sağlamak için hazırlandı."
+      }
+    },
+    "3": {
+      "locked": {
+        "title": "Paylaşım Premium üyelere açık",
+        "subtitle": "İçeriği kopyalamak ve kartı paylaşmak Premium'a özel.",
+        "cta": {
+          "1": "Premium ile Aç",
+          "2": "Paylaşmak İçin",
+          "3": "Erişim Al"
+        }
+      },
+      "tooltip": {
+        "why": "Ücretsiz hesaplarda kopyala ve paylaş özellikleri kapalıdır.",
+        "trust": "Paylaşımı Premium'a taşıdık; böylece kaliteli kartlar ve tam kontrol sunabiliyoruz."
+      }
+    },
+    "4": {
+      "locked": {
+        "title": "Favori ve geçmiş Premium'da",
+        "subtitle": "Beğenilen hikayeler ve okuma geçmişi Premium üyelere özel.",
+        "cta": {
+          "1": "Premium ile Aç",
+          "2": "Kaydetmeye Başla",
+          "3": "Kütüphaneyi Aç"
+        }
+      },
+      "tooltip": {
+        "why": "Ücretsiz hesaplarda favoriler ve okuma geçmişi kaydedilmez.",
+        "trust": "Kişisel arşivin cihazında güvenle saklanır. Verilerini yalnızca sen görebilirsin."
+      }
+    },
+    "5": {
+      "locked": {
+        "title": "Rozetler ve istatistikler Premium'da",
+        "subtitle": "Okuma alışkanlığını takip et, özel rozetler kazan.",
+        "cta": {
+          "1": "Premium ile Aç",
+          "2": "İlerlememi Gör",
+          "3": "Rozetleri Aç"
+        }
+      },
+      "tooltip": {
+        "why": "Detaylı istatistikler ve rozet sistemi Premium kapsamında sunulur.",
+        "trust": "Rozetler, düzenli okuma alışkanlığını pekiştirmek için tasarlandı. Premium ile tam erişim."
+      }
+    }
+  },
+  "emptyState": {
+    "favorites": {
+      "title": "Henüz favori yok",
+      "subtitle": "Beğendiğin hikayeleri kalp simgesine basarak buraya ekle.",
+      "cta": "Hikayelere Bak"
+    },
+    "history": {
+      "title": "Okuma geçmişin burada görünecek",
+      "subtitle": "İlk hikayeni oku; geçmiş otomatik olarak kayıt altına alınır.",
+      "cta": "İlk Hikayeyi Aç"
+    },
+    "metrics": {
+      "title": "Henüz veri yok",
+      "subtitle": "İlk hikayeni okuduktan sonra istatistiklerin burada belirecek.",
+      "cta": "Okumaya Başla"
+    }
+  },
+  "paywall": {
+    "title": "Spark ile daha ileri git",
+    "subtitle": "Fikirleri derinlemesine oku, kaydet ve sohbetlere taşı.",
+    "benefit": {
+      "1": "Her fikri farklı açılardan ve örneklerle keşfet.",
+      "2": "Sohbet rehberleriyle fikirleri hayata geçir.",
+      "3": "İçerikleri kopyala ve anında paylaş.",
+      "4": "Favorilerini kaydet, okuma geçmişine kolayca dön.",
+      "5": "Okuma alışkanlığını takip et ve rozetler kazan."
+    },
+    "primaryCta": {
+      "1": "Premium'u Aç",
+      "2": "7 Gün Ücretsiz Dene",
+      "3": "Hemen Başla"
+    },
+    "secondaryCta": {
+      "1": "Şimdilik Devam",
+      "2": "Belki Sonra",
+      "3": "Ücretsiz Kal"
+    },
+    "trust": "İstediğin zaman iptal edebilirsin. Sürpriz ücret yok."
+  },
+  "nudge": {
+    "lockedTap": {
+      "a": "Bu içerik Premium'da. Bir adımla açabilirsin.",
+      "b": "Devam etmek için Premium gerekiyor.",
+      "c": "Kilitli içerik — Premium ile hemen eriş."
+    },
+    "lockedSecondTime": {
+      "a": "Yine burada. Premium ile tüm kısıtlar bir anda kalkar.",
+      "b": "Bunu da görmek istiyorsun. Premium bir kez, hepsi açılır.",
+      "c": "İkinci kez buraya geldin. Premium bunları tamamen kaldırır."
+    },
+    "copyLocked": {
+      "a": "Kopyalamak için Premium gerekiyor.",
+      "b": "Premium ile kopyala ve dilediğin yere yapıştır.",
+      "c": "Bu içeriği almak için Premium'u açman gerek."
+    },
+    "useInConversationIdle": {
+      "a": "Rehberi görmek ister misin? Premium'da seni bekliyor.",
+      "b": "Sohbette ne söyleyeceğini biliyor musun? Rehber Premium'da.",
+      "c": "Bu ekrandan daha fazlasını almak için Premium'u aç."
+    }
+  }
+}

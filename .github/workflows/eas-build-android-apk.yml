@@ -1,0 +1,43 @@
+name: EAS Build Android APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN || secrets.EAS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Install EAS CLI
+        run: npm install -g eas-cli@latest
+
+      - name: Validate Expo token
+        run: |
+          if [ -z "$EXPO_TOKEN" ]; then
+            echo "Missing secret. Add EXPO_TOKEN or EAS_TOKEN in repository secrets."
+            exit 1
+          fi
+
+      - name: Verify Expo account
+        run: |
+          ACTUAL_ACCOUNT="$(eas whoami --non-interactive)"
+          echo "EAS authenticated as: $ACTUAL_ACCOUNT"
+          ACCOUNT_NAME="$(printf '%s\n' "$ACTUAL_ACCOUNT" | head -n 1 | awk '{print $1}')"
+          if [ "$ACCOUNT_NAME" != "hoyri" ]; then
+            echo "Wrong Expo account. Expected: hoyri, got: $ACCOUNT_NAME"
+            echo "Create token while logged in as hoyri and update EXPO_TOKEN (or EAS_TOKEN)."
+            exit 1
+          fi
+
+      - name: Build Android APK
+        run: eas build --platform android --profile apk --non-interactive

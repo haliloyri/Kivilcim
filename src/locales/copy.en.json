@@ -1,0 +1,148 @@
+{
+  "screen": {
+    "sohbetteKullan": {
+      "lockedBanner": "Conversation guide is Premium only.",
+      "lockedCta": "Unlock with Premium",
+      "guidePlaceholderTitle": "Guide will appear here",
+      "guidePlaceholderSubtitle": "Unlock Premium to learn how to bring this idea into a real conversation."
+    }
+  },
+  "constraint": {
+    "1": {
+      "locked": {
+        "title": "Deeper insights are in Premium",
+        "subtitle": "Open Premium to explore examples, angles, and full context.",
+        "cta": {
+          "1": "Unlock with Premium",
+          "2": "Go Deeper",
+          "3": "See All"
+        }
+      },
+      "tooltip": {
+        "why": "The free version shows a one-sentence summary. Deeper variants are in Premium.",
+        "trust": "Variants help you truly connect with ideas through analogies, examples, and applications."
+      }
+    },
+    "2": {
+      "locked": {
+        "title": "Usage guide is Premium only",
+        "subtitle": "The guide shows how to bring this idea into a real conversation.",
+        "cta": {
+          "1": "Unlock with Premium",
+          "2": "Open Guide",
+          "3": "How Do I Use This"
+        }
+      },
+      "tooltip": {
+        "why": "The conversation guide is not visible in free accounts. It is part of Premium.",
+        "trust": "Guides are crafted to help you use ideas naturally in everyday conversations."
+      }
+    },
+    "3": {
+      "locked": {
+        "title": "Sharing is available in Premium",
+        "subtitle": "Copying and sharing cards is a Premium feature.",
+        "cta": {
+          "1": "Unlock with Premium",
+          "2": "For Sharing",
+          "3": "Get Access"
+        }
+      },
+      "tooltip": {
+        "why": "Copy and share features are disabled in free accounts.",
+        "trust": "We moved sharing to Premium to offer high-quality cards and full control."
+      }
+    },
+    "4": {
+      "locked": {
+        "title": "Favorites and history in Premium",
+        "subtitle": "Saved stories and reading history are available with Premium.",
+        "cta": {
+          "1": "Unlock with Premium",
+          "2": "Start Saving",
+          "3": "Open Library"
+        }
+      },
+      "tooltip": {
+        "why": "Favorites and reading history are not saved in free accounts.",
+        "trust": "Your personal archive is stored securely on your device. Only you can see it."
+      }
+    },
+    "5": {
+      "locked": {
+        "title": "Badges and stats are in Premium",
+        "subtitle": "Track your reading habit and earn exclusive badges.",
+        "cta": {
+          "1": "Unlock with Premium",
+          "2": "See My Progress",
+          "3": "Unlock Badges"
+        }
+      },
+      "tooltip": {
+        "why": "Detailed stats and the badge system are part of Premium.",
+        "trust": "Badges are designed to reinforce consistent reading habits. Full access with Premium."
+      }
+    }
+  },
+  "emptyState": {
+    "favorites": {
+      "title": "No favorites yet",
+      "subtitle": "Tap the heart on any story to save it here.",
+      "cta": "Browse Stories"
+    },
+    "history": {
+      "title": "Your reading history will appear here",
+      "subtitle": "Read your first story and it will be logged automatically.",
+      "cta": "Open First Story"
+    },
+    "metrics": {
+      "title": "No data yet",
+      "subtitle": "After your first read, your stats will show up here.",
+      "cta": "Start Reading"
+    }
+  },
+  "paywall": {
+    "title": "Go further with Spark",
+    "subtitle": "Read deeply, save ideas, and bring them into conversations.",
+    "benefit": {
+      "1": "Explore each idea from multiple angles with examples.",
+      "2": "Use conversation guides to bring ideas to life.",
+      "3": "Copy and share content instantly.",
+      "4": "Save favorites and return to your reading history.",
+      "5": "Track your reading habit and earn badges."
+    },
+    "primaryCta": {
+      "1": "Unlock Premium",
+      "2": "Try 7 Days Free",
+      "3": "Get Started"
+    },
+    "secondaryCta": {
+      "1": "Continue for Now",
+      "2": "Maybe Later",
+      "3": "Stay Free"
+    },
+    "trust": "Cancel anytime. No surprise charges."
+  },
+  "nudge": {
+    "lockedTap": {
+      "a": "This content is in Premium. One step to unlock.",
+      "b": "Premium is required to continue.",
+      "c": "Locked content — unlock instantly with Premium."
+    },
+    "lockedSecondTime": {
+      "a": "Here again. Premium removes all restrictions at once.",
+      "b": "You want this too. Premium unlocks everything in one step.",
+      "c": "Another locked item. Premium removes all of them."
+    },
+    "copyLocked": {
+      "a": "Copying requires Premium.",
+      "b": "Unlock Premium to copy and paste anywhere.",
+      "c": "You need Premium to take this content."
+    },
+    "useInConversationIdle": {
+      "a": "Want to see the guide? It is waiting for you in Premium.",
+      "b": "Not sure what to say? The conversation guide is in Premium.",
+      "c": "Get more from this screen by unlocking Premium."
+    }
+  }
+}

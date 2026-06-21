@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="2340" viewBox="0 0 1080 2340">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fcf9f4"/>
+      <stop offset="100%" stop-color="#f7f2e8"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#D8C08F"/>
+      <stop offset="100%" stop-color="#BE9347"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.12" flood-color="#6e5f4f"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect x="0" y="0" width="100%" height="120" fill="#fcf9f4"/>
+  <text x="60" y="78" font-family="Georgia, serif" font-size="42" fill="#823b18">Spark ✦</text>
+  <text x="60" y="130" font-family="Arial, sans-serif" font-size="30" fill="#7D6F5E">Profil</text>
+
+  
+  <circle cx="180" cy="300" r="84" fill="#F9F6F1" stroke="#C5A059" stroke-width="6"/>
+  <text x="132" y="320" font-family="Georgia, serif" font-size="64" fill="#823b18">AY</text>
+  <text x="300" y="286" font-family="Georgia, serif" font-size="52" fill="#1A1A1A">Asaf Oyri</text>
+  <text x="300" y="332" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">asaf@example.com</text>
+  <rect x="300" y="360" rx="20" ry="20" width="360" height="62" fill="#5A9CA0"/>
+  <text x="344" y="401" font-family="Arial, sans-serif" font-size="28" fill="#fff">Premium Üye</text>
+
+  <text x="60" y="500" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">Ayarlar</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="60" y="530" rx="28" ry="28" width="960" height="140" fill="#ffffff" stroke="#E8E3DA"/>
+    <text x="88" y="594" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">Dark (Ink) Mode</text>
+    <text x="88" y="638" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">Açık</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="60" y="690" rx="28" ry="28" width="960" height="140" fill="#ffffff" stroke="#E8E3DA"/>
+    <text x="88" y="754" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">Dil</text>
+    <text x="88" y="798" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">TR</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="60" y="850" rx="28" ry="28" width="960" height="140" fill="#ffffff" stroke="#E8E3DA"/>
+    <text x="88" y="914" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">Kategoriler</text>
+    <text x="88" y="958" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">6 kategori seçili</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="60" y="1010" rx="28" ry="28" width="960" height="140" fill="#ffffff" stroke="#E8E3DA"/>
+    <text x="88" y="1074" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">Bildirim Testi</text>
+    <text x="88" y="1118" font-family="Arial, sans-serif" font-size="28" fill="#7D6F5E">Anında gönder</text>
+  </g>
+</svg>

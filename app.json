@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "Spark",
+    "slug": "spark",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#131311",
+    "icon": "./assets/spark_shortcut_logo.png",
+    "splash": {
+      "image": "./assets/spark_logo.png",
+      "backgroundColor": "#131311",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.kivilcim.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/spark_shortcut_logo.png",
+        "backgroundColor": "#131311"
+      },
+      "package": "com.kivilcim.app"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-sqlite",
+      "expo-asset",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511",
+          "userTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you.",
+          "skAdNetworkItems": []
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "73e8e4f4-f966-42cd-9c4e-3ffb9799314e"
+      }
+    },
+    "owner": "hoyri"
+  }
+}
