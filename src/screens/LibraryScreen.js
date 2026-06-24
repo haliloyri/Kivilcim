@@ -135,7 +135,7 @@ const LibraryScreen = ({ navigation }) => {
         map.set(catId, {
           id: catId,
           label: String(story.parent_cat || story.cat || ''),
-          rawName: String(story.parent_cat || story.cat || ''),
+          rawName: String(story.parent_cat_raw || story.parent_cat || story.cat || ''),
         });
       }
     });
@@ -251,9 +251,15 @@ const LibraryScreen = ({ navigation }) => {
     };
   }, [activeCategory, activeCollection, lang, navigation]);
 
+  // Shared neutral tokens — match CategoryPill's passive (B2) look so the
+  // collection / sort / recording chips read as one calm system.
+  const neutral = isDark
+    ? { background: '#232326', border: '#34343A', text: '#B7B9BE' }
+    : { background: '#F1ECE1', border: '#E4DBCB', text: '#857E6E' };
+
   const styles = StyleSheet.create({
-    safe: { 
-      flex: 1, 
+    safe: {
+      flex: 1,
       backgroundColor: colors.background
     },
     header: { 
@@ -301,11 +307,11 @@ const LibraryScreen = ({ navigation }) => {
       alignItems: 'center',
       gap: 6,
       borderWidth: 1,
-      borderColor: colors.border,
+      borderColor: neutral.border,
       borderRadius: 999,
       paddingVertical: 8,
       paddingHorizontal: 12,
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: neutral.background,
     },
     collectionPillActive: {
       backgroundColor: colors.primary,
@@ -314,10 +320,52 @@ const LibraryScreen = ({ navigation }) => {
     collectionPillText: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 13,
-      color: colors.text,
+      color: neutral.text,
     },
     collectionPillTextActive: {
       color: '#FFFFFF',
+    },
+    segment: {
+      flexDirection: 'row',
+      gap: 4,
+      backgroundColor: neutral.background,
+      borderRadius: 14,
+      padding: 4,
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 4,
+      marginBottom: 12,
+    },
+    segmentItem: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 9,
+      borderRadius: 11,
+    },
+    segmentItemActive: {
+      backgroundColor: colors.primary,
+    },
+    segmentText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: neutral.text,
+    },
+    segmentTextActive: {
+      color: '#FFFFFF',
+    },
+    filterRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 8,
+      paddingHorizontal: layout.padding.horizontal,
+      marginBottom: 12,
+    },
+    countLine: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 10,
     },
     emptyState: {
       padding: 40,
@@ -356,16 +404,16 @@ const LibraryScreen = ({ navigation }) => {
       alignItems: 'center',
       gap: 6,
       borderWidth: 1,
-      borderColor: colors.border,
+      borderColor: neutral.border,
       borderRadius: 14,
       paddingHorizontal: 10,
       paddingVertical: 7,
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: neutral.background,
     },
     sortBtnText: {
       fontFamily: 'Inter_500Medium',
       fontSize: 13,
-      color: colors.textSecondary,
+      color: neutral.text,
     },
     listWrap: {
       paddingHorizontal: layout.padding.horizontal,
@@ -413,110 +461,92 @@ const LibraryScreen = ({ navigation }) => {
       
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
         <View style={styles.header}>
-          <Text style={styles.title}>{t('libraryTitle', lang)}</Text>
+          <Text style={styles.title}>{t('tabLibrary', lang)}</Text>
         </View>
 
-        {/* ── Kategoriler ──────────────────────────────────────── */}
-        <Text style={styles.sectionHeading}>{t('libraryCategoriesLabel', lang)}</Text>
-        <FlatList
-          horizontal
-          scrollEnabled
-          data={categoryOptions}
-          renderItem={({ item }) => (
-            <CategoryPill
-              label={item.label}
-              categoryName={item.rawName || item.label}
-              active={activeCategory === item.id}
-              compact
-              isDark={isDark}
-              onPress={() => setActiveCategory(item.id)}
-              accessibilityRole="button"
-              accessibilityLabel={`${t('libraryFilterCategory', lang)}: ${item.label}`}
-            />
-          )}
-          keyExtractor={(item) => String(item.id)}
-          contentContainerStyle={styles.pillListContent}
-          showsHorizontalScrollIndicator={false}
-          style={{ marginBottom: 8 }}
-        />
+        {/* ── Koleksiyon segment kontrolü (birincil eksen) ─────── */}
+        <View style={styles.segment}>
+          {collectionItems.map((item) => {
+            const active = activeCollection === item.id;
+            const count = item.id === 'favorites'
+              ? favoriteStoriesRaw.length
+              : item.id === 'used'
+                ? recentlyUsedStories.length
+                : historyStoriesRaw.length;
+            return (
+              <TouchableOpacity
+                key={item.id}
+                style={[styles.segmentItem, active && styles.segmentItemActive]}
+                onPress={() => setActiveCollection(item.id)}
+                accessibilityRole="button"
+                accessibilityState={{ selected: active }}
+              >
+                <Text numberOfLines={1} style={[styles.segmentText, active && styles.segmentTextActive]}>
+                  {item.label}
+                  {count > 0 ? <Text style={{ opacity: active ? 0.85 : 0.6 }}>{`  ${count}`}</Text> : null}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
 
-        {/* ── Koleksiyonum ────────────────────────────────────── */}
-        <Text style={styles.sectionHeading}>{t('libraryMyCollectionLabel', lang)}</Text>
-        <FlatList
-          horizontal
-          scrollEnabled
-          data={collectionItems}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={[styles.collectionPill, activeCollection === item.id && styles.collectionPillActive]}
-              onPress={() => setActiveCollection(item.id)}
-              accessibilityRole="button"
-              accessibilityLabel={item.label}
-              accessibilityState={{ selected: activeCollection === item.id }}
-            >
-              <Ionicons
-                name={item.id === 'favorites' ? 'heart-outline' : item.id === 'used' ? 'bookmark-outline' : 'time-outline'}
-                size={14}
-                color={activeCollection === item.id ? '#FFFFFF' : colors.textSecondary}
-              />
-              <Text style={[styles.collectionPillText, activeCollection === item.id && styles.collectionPillTextActive]}>{item.label}</Text>
-            </TouchableOpacity>
-          )}
-          keyExtractor={(item) => item.id}
-          contentContainerStyle={styles.pillListContent}
-          showsHorizontalScrollIndicator={false}
-          style={{ marginBottom: 8 }}
-        />
-
-        {/* ── Ses Kaydı Filtresi ──────────────────────────────── */}
-        {recordedStoryIds.size > 0 && (
-          <TouchableOpacity
-            onPress={() => setFilterRecorded(f => !f)}
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              alignSelf: 'flex-start',
-              gap: 6,
-              marginHorizontal: layout.padding.horizontal,
-              marginBottom: 4,
-              paddingHorizontal: 12,
-              paddingVertical: 7,
-              borderRadius: 999,
-              borderWidth: 1,
-              borderColor: filterRecorded ? colors.primary : colors.border,
-              backgroundColor: filterRecorded ? `${colors.primary}18` : colors.backgroundDark,
-            }}
-            accessibilityRole="button"
-            accessibilityState={{ selected: filterRecorded }}
+        {/* ── İkincil filtre satırı: kategori + ses + sırala ───── */}
+        <View style={styles.filterRow}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={{ flex: 1 }}
+            contentContainerStyle={{ gap: 8, alignItems: 'center', paddingRight: 4 }}
           >
-            <Ionicons name="mic" size={14} color={filterRecorded ? colors.primary : colors.textSecondary} />
-            <Text style={{
-              fontFamily: filterRecorded ? 'Inter_600SemiBold' : 'Inter_500Medium',
-              fontSize: 13,
-              color: filterRecorded ? colors.primary : colors.textSecondary,
-            }}>
-              {lang === 'tr' ? 'Ses kaydı olanlar' : 'With recordings'}
-              {filterRecorded ? ` (${recordedStoryIds.size})` : ''}
-            </Text>
-            {filterRecorded && (
-              <Ionicons name="close-circle" size={14} color={colors.primary} />
+            {categoryOptions.map((item) => (
+              <CategoryPill
+                key={String(item.id)}
+                label={item.label}
+                categoryName={item.rawName || item.label}
+                active={activeCategory === item.id}
+                compact
+                isDark={isDark}
+                onPress={() => setActiveCategory(item.id)}
+              />
+            ))}
+            {recordedStoryIds.size > 0 && (
+              <TouchableOpacity
+                onPress={() => setFilterRecorded(f => !f)}
+                style={{
+                  flexDirection: 'row', alignItems: 'center', gap: 5, flexShrink: 0,
+                  paddingHorizontal: 13, paddingVertical: 8, borderRadius: 999, borderWidth: 1,
+                  borderColor: filterRecorded ? colors.primary : neutral.border,
+                  backgroundColor: filterRecorded ? `${colors.primary}18` : neutral.background,
+                }}
+                accessibilityRole="button"
+                accessibilityState={{ selected: filterRecorded }}
+                accessibilityLabel={lang === 'tr' ? 'Ses kaydı olanlar' : 'With recordings'}
+              >
+                <Ionicons name="mic" size={14} color={filterRecorded ? colors.primary : neutral.text} />
+                <Text style={{
+                  fontFamily: filterRecorded ? 'Inter_600SemiBold' : 'Inter_500Medium',
+                  fontSize: 12.5,
+                  color: filterRecorded ? colors.primary : neutral.text,
+                }}>
+                  {lang === 'tr' ? 'Sesli' : 'Audio'}{` ${recordedStoryIds.size}`}
+                </Text>
+                {filterRecorded && <Ionicons name="close" size={13} color={colors.primary} />}
+              </TouchableOpacity>
             )}
-          </TouchableOpacity>
-        )}
-
-        {/* ── Liste başlığı + Sırala ───────────────────────────── */}
-        <View style={styles.sectionHeadingRow}>
-          <Text style={styles.sectionHeadingRowText}>{dynamicTitle}</Text>
+          </ScrollView>
           <TouchableOpacity
             style={styles.sortBtn}
             onPress={() => setSortModalVisible(true)}
             accessibilityRole="button"
             accessibilityLabel={t('librarySortAction', lang)}
           >
-            <Ionicons name="swap-vertical-outline" size={15} color={colors.textSecondary} />
-            <Text style={styles.sortBtnText}>{t('librarySortAction', lang)}</Text>
+            <Ionicons name="swap-vertical-outline" size={16} color={neutral.text} />
           </TouchableOpacity>
         </View>
+
+        <Text style={styles.countLine}>
+          {`${collectionStories.length} ${lang === 'tr' ? 'hikaye' : 'stories'}`}
+        </Text>
 
         <View style={styles.listWrap}>
           {collectionStories.length > 0 ? collectionStories.map(story => (
@@ -525,6 +555,7 @@ const LibraryScreen = ({ navigation }) => {
               story={story}
               type="ready"
               isRead={false}
+              hasRecording={recordedStoryIds.has(String(story.story_id))}
               usageDate={activeCollection === 'used' ? story._usageDate : null}
               onPress={() => navigation.navigate('StoryDetail', { story })}
               onUseInConversation={() => navigation.navigate('UseInConversation', { story })}

@@ -21,7 +21,6 @@ const normalizeCategoryIds = (list) => {
 export const ThemeProvider = ({ children }) => {
   const systemColorScheme = useColorScheme();
   const getSystemThemeMode = () => (systemColorScheme === 'dark' ? 'dark' : 'light');
-  const [themeMode, setThemeModeState] = useState(getSystemThemeMode());
   // Determine default language from device locale using Intl
   const getDeviceLang = () => {
     try {
@@ -34,7 +33,9 @@ export const ThemeProvider = ({ children }) => {
     }
   };
 
-  const [lang, setLangState] = useState(getDeviceLang());
+  // Start as null — render nothing until AsyncStorage preferences are loaded
+  const [themeMode, setThemeModeState] = useState(null);
+  const [lang, setLangState] = useState(null);
 
   React.useEffect(() => {
     (async () => {
@@ -51,16 +52,18 @@ export const ThemeProvider = ({ children }) => {
     })();
   }, [systemColorScheme]);
   
-  // Load saved language on mount
+  // Load saved language on mount; fall back to device locale
   React.useEffect(() => {
     (async () => {
       try {
         const saved = await AsyncStorage.getItem(LANGUAGE_STORAGE_KEY);
         if (['tr', 'en', 'es', 'de'].includes(saved)) {
           setLangState(saved);
+        } else {
+          setLangState(getDeviceLang());
         }
       } catch (e) {
-        // ignore
+        setLangState(getDeviceLang());
       }
     })();
   }, []);
@@ -181,6 +184,12 @@ export const ThemeProvider = ({ children }) => {
     setSelectedCategories: updateSelectedCategories,
     toggleSelectedCategory,
   }), [themeMode, activeColors, lang, selectedCategories]);
+
+  // Don't render children until both theme and language are loaded from storage
+  // This prevents a flash of wrong theme/language on startup
+  if (themeMode === null || lang === null) {
+    return null;
+  }
 
   return (
     <ThemeContext.Provider value={themeValue}>

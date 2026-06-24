@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { 
-  View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Linking, Alert
+import {
+  View, Text, ScrollView, TouchableOpacity, StyleSheet,
+  StatusBar, Platform, Linking, Alert, Image, ActivityIndicator
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
@@ -9,10 +9,23 @@ import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
+// Single source of truth for pricing. Update these and every derived label
+// (monthly-equivalent, savings %, months-free) recomputes automatically.
+const SPARK_LOGO = require('../../assets/spark_logo.png');
+const SPARK_LOGO_DARK = require('../../assets/spark_logo_dark.png');
+
+const PRICING = { currency: '₺', monthly: 49, annual: 349 };
+const formatPrice = (amount) => `${amount}${PRICING.currency}`;
+const ANNUAL_MONTHLY_EQUIVALENT = Math.round(PRICING.annual / 12);
+const ANNUAL_SAVINGS_PCT = Math.floor((1 - PRICING.annual / (PRICING.monthly * 12)) * 100);
+const ANNUAL_MONTHS_FREE = Math.round((PRICING.monthly * 12 - PRICING.annual) / PRICING.monthly);
+
 const PaywallScreen = ({ navigation, route }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
   const [plan, setPlan] = useState(1);
   const [purchaseConfirmed, setPurchaseConfirmed] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [livePackages, setLivePackages] = useState(null);
   const paywallReason = route?.params?.reason || 'none';
   const isFreeLimitReached = paywallReason === 'free_limit_reached';
   const isEarlyTrial = paywallReason === 'early_trial';
@@ -99,25 +112,31 @@ const PaywallScreen = ({ navigation, route }) => {
       valueKeys: ['paywallValue1', 'paywallValue2', 'paywallValue3'],
     };
   }, [isEarlyTrial, isLockedStorySource, isProfileSource, isStorytellerSource, isStreakFreezeSource]);
+  // When live billing is connected, prices/currency come from the store
+  // (localized, regionally correct). Otherwise fall back to the built-in values.
+  const livePriceString = (planId, fallback) =>
+    livePackages?.[planId]?.product?.priceString || fallback;
   const plans = [
     {
       id: 'monthly',
       name: t('planMonthly', lang),
-      price: '49₺',
+      price: livePriceString('monthly', formatPrice(PRICING.monthly)),
       per: t('perMo', lang),
       save: null,
       detail: t('paywallMonthlyDetail', lang),
+      package: livePackages?.monthly || null,
     },
     {
       id: 'annual',
       name: t('planAnnual', lang),
-      price: '349₺',
+      price: livePriceString('annual', formatPrice(PRICING.annual)),
       per: t('perYr', lang),
-      save: t('save40', lang),
+      save: t('save40', lang).replace('{{pct}}', String(ANNUAL_SAVINGS_PCT)),
       popular: true,
       badge: t('paywallAnnualBestValue', lang),
       detail: t('paywallAnnualDetail', lang),
-      effectivePrice: t('paywallAnnualMonthlyEquivalent', lang),
+      effectivePrice: t('paywallAnnualMonthlyEquivalent', lang).replace('{{price}}', String(ANNUAL_MONTHLY_EQUIVALENT)),
+      package: livePackages?.annual || null,
     },
   ];
   const features = [
@@ -127,14 +146,30 @@ const PaywallScreen = ({ navigation, route }) => {
     t('feat4', lang),
     t('feat5', lang),
   ];
-  const valuePoints = paywallVariant.valueKeys.map((key) => t(key, lang));
-  const trustPoints = [
-    t('paywallTrust1', lang),
-    t('paywallTrust2', lang),
-    t('paywallTrust3', lang),
-  ];
+  const { buyPremium, restorePremium, getPremiumOfferings, billingLive } = useUserData();
 
-  const { buyPremium } = useUserData();
+  const valuePoints = paywallVariant.valueKeys.map((key) => t(key, lang));
+  // Trust1 (social proof) always shows. Trust2/3 explain that billing isn't
+  // connected yet — only relevant in dev/local builds.
+  const trustPoints = billingLive
+    ? [t('paywallTrust1', lang)]
+    : [t('paywallTrust1', lang), t('paywallTrust2', lang), t('paywallTrust3', lang)];
+
+  // App Store / Play require auto-renewable subscription terms next to the CTA.
+  const autoRenewDisclosure = t('paywallAutoRenewDisclosure', lang)
+    .replace('{{monthlyPrice}}', plans[0].price)
+    .replace('{{annualPrice}}', plans[1].price);
+
+  // Load live store prices when billing is connected.
+  useEffect(() => {
+    if (!billingLive) return;
+    let cancelled = false;
+    (async () => {
+      const pkgs = await getPremiumOfferings();
+      if (!cancelled && pkgs) setLivePackages(pkgs);
+    })();
+    return () => { cancelled = true; };
+  }, [billingLive, getPremiumOfferings]);
 
   const legalLinks = [
     { label: t('paywallLegalPrivacy', lang), url: 'https://sparkapp.co/privacy' },
@@ -191,30 +226,39 @@ const PaywallScreen = ({ navigation, route }) => {
       lang,
     });
 
-    const success = await buyPremium();
-    if (success) {
-      await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_SUCCEEDED, {
+    if (isProcessing) return;
+    setIsProcessing(true);
+    try {
+      const result = await buyPremium(selectedPlan?.package || null);
+      if (result?.success) {
+        await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_SUCCEEDED, {
+          selectedPlan: selectedPlan?.name,
+          selectedPlanId: selectedPlan?.id,
+          selectedPrice: selectedPlan?.price,
+          source: paywallSource,
+          reason: paywallReason,
+          lang,
+        });
+        setPurchaseConfirmed(true);
+        return;
+      }
+
+      // User dismissed the store sheet — not an error, stay silent.
+      if (result?.userCancelled) return;
+
+      await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_FAILED, {
         selectedPlan: selectedPlan?.name,
         selectedPlanId: selectedPlan?.id,
         selectedPrice: selectedPlan?.price,
         source: paywallSource,
         reason: paywallReason,
         lang,
+        failureReason: result?.error || 'buy_premium_failed',
       });
-      setPurchaseConfirmed(true);
-      return;
+      Alert.alert(t('alert_error', lang), t('paywallPurchaseFailed', lang));
+    } finally {
+      setIsProcessing(false);
     }
-
-    await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_FAILED, {
-      selectedPlan: selectedPlan?.name,
-      selectedPlanId: selectedPlan?.id,
-      selectedPrice: selectedPlan?.price,
-      source: paywallSource,
-      reason: paywallReason,
-      lang,
-      failureReason: 'buy_premium_returned_false',
-    });
-    Alert.alert(t('alert_error', lang), t('paywallPurchaseFailed', lang));
   };
 
   const openLegalLink = async (url) => {
@@ -230,14 +274,36 @@ const PaywallScreen = ({ navigation, route }) => {
     }
   };
 
-  const handleRestorePress = () => {
-    Alert.alert(t('paywallRestoreUnavailableTitle', lang), t('paywallRestoreUnavailableSub', lang));
+  const handleRestorePress = async () => {
+    if (!billingLive) {
+      Alert.alert(t('paywallRestoreUnavailableTitle', lang), t('paywallRestoreUnavailableSub', lang));
+      return;
+    }
+    if (isProcessing) return;
+    setIsProcessing(true);
+    try {
+      const result = await restorePremium();
+      if (result?.success && result?.entitled) {
+        setPurchaseConfirmed(true);
+        Alert.alert(t('paywallRestoreSuccessTitle', lang), t('paywallRestoreSuccessSub', lang));
+      } else {
+        Alert.alert(t('paywallRestoreNoneTitle', lang), t('paywallRestoreNoneSub', lang));
+      }
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   const styles = StyleSheet.create({
-    safe: { 
-      flex: 1, 
+    safe: {
+      flex: 1,
       backgroundColor: colors.background
+    },
+    brandLogo: {
+      width: 64,
+      height: 64,
+      alignSelf: 'center',
+      marginBottom: 12,
     },
     paywallTitle: { 
       fontFamily: 'PlayfairDisplay_700Bold', 
@@ -547,6 +613,15 @@ const PaywallScreen = ({ navigation, route }) => {
       textAlign: 'center',
       lineHeight: 16,
     },
+    disclosureText: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.badge - 1,
+      color: colors.textSecondary,
+      textAlign: 'center',
+      lineHeight: 15,
+      marginTop: 12,
+      paddingHorizontal: 4,
+    },
     successCard: {
       borderWidth: 1,
       borderColor: `${colors.primary}66`,
@@ -584,7 +659,14 @@ const PaywallScreen = ({ navigation, route }) => {
           <Text style={{ fontSize: 22, color: colors.textSecondary }}>✕</Text>
         </TouchableOpacity>
 
-        <Text style={{ fontSize: 44, textAlign: 'center', marginBottom: 12, color: colors.primary }}>✦</Text>
+        <Image
+          source={isDark ? SPARK_LOGO_DARK : SPARK_LOGO}
+          style={styles.brandLogo}
+          resizeMode="contain"
+          accessibilityRole="image"
+          accessibilityLabel="Spark"
+        />
+
 
         {paywallVariant.bannerTitleKey && (
           <View style={styles.limitBanner}>
@@ -648,9 +730,14 @@ const PaywallScreen = ({ navigation, route }) => {
           ))}
         </View>
 
-        <View style={styles.annualNudge}>
-          <Text style={styles.annualNudgeText}>{t('paywallAnnualNudge', lang)}</Text>
-        </View>
+        {plans[plan]?.id === 'annual' && (
+          <View style={styles.annualNudge}>
+            <Text style={styles.annualNudgeText}>
+              {t('paywallAnnualNudge', lang)
+                .replace('{{months}}', String(ANNUAL_MONTHS_FREE))}
+            </Text>
+          </View>
+        )}
 
         <View style={{ marginBottom: 20 }}>
           {features.map((f, i) => (
@@ -671,13 +758,24 @@ const PaywallScreen = ({ navigation, route }) => {
         )}
 
         <TouchableOpacity
-          style={styles.btnPrimary}
+          style={[styles.btnPrimary, isProcessing && { opacity: 0.6 }]}
           onPress={purchaseConfirmed ? () => navigation.goBack() : handlePurchase}
+          disabled={isProcessing}
           accessibilityRole="button"
+          accessibilityState={{ disabled: isProcessing, busy: isProcessing }}
           accessibilityLabel={purchaseConfirmed ? t('paywallContinueCta', lang) : t('subscribe', lang)}
         >
-          <Text style={styles.btnPrimaryText}>{t(purchaseConfirmed ? 'paywallContinueCta' : 'subscribe', lang)}</Text>
+          {isProcessing ? (
+            <ActivityIndicator color={colors.onPrimary} />
+          ) : (
+            <Text style={styles.btnPrimaryText}>{t(purchaseConfirmed ? 'paywallContinueCta' : 'subscribe', lang)}</Text>
+          )}
         </TouchableOpacity>
+
+        {billingLive && !purchaseConfirmed && (
+          <Text style={styles.disclosureText}>{autoRenewDisclosure}</Text>
+        )}
+
         <View style={styles.trustWrap}>
           {trustPoints.map((item, idx) => (
             <Text key={idx} style={styles.trustText}>{item}</Text>
@@ -690,9 +788,19 @@ const PaywallScreen = ({ navigation, route }) => {
         </View>
 
         <View style={styles.policyCard}>
-          <Text style={styles.policyTitle}>{t('paywallTrialTitle', lang)}</Text>
-          <Text style={styles.policyText}>{t('paywallTrialSub', lang)}</Text>
-          <Text style={styles.policyText}>{t('paywallRefundText', lang)}</Text>
+          {billingLive ? (
+            <>
+              <Text style={styles.policyTitle}>{t('paywallManageTitle', lang)}</Text>
+              <Text style={styles.policyText}>{t('paywallManageSub', lang)}</Text>
+              <Text style={styles.policyText}>{t('paywallManageCancel', lang)}</Text>
+            </>
+          ) : (
+            <>
+              <Text style={styles.policyTitle}>{t('paywallTrialTitle', lang)}</Text>
+              <Text style={styles.policyText}>{t('paywallTrialSub', lang)}</Text>
+              <Text style={styles.policyText}>{t('paywallRefundText', lang)}</Text>
+            </>
+          )}
         </View>
 
         <View style={styles.legalWrap}>
@@ -712,10 +820,13 @@ const PaywallScreen = ({ navigation, route }) => {
         <TouchableOpacity
           style={{ marginTop: 12, alignItems: 'center', minHeight: 44, justifyContent: 'center' }}
           onPress={handleRestorePress}
+          disabled={isProcessing}
           accessibilityRole="button"
-          accessibilityLabel={t('restore', lang)}
+          accessibilityLabel={billingLive ? t('paywallRestoreCta', lang) : t('restore', lang)}
         >
-          <Text style={{ fontSize: 12, color: colors.textSecondary, fontFamily: 'Inter_400Regular' }}>{t('restore', lang)}</Text>
+          <Text style={{ fontSize: 12, color: colors.textSecondary, fontFamily: 'Inter_400Regular' }}>
+            {billingLive ? t('paywallRestoreCta', lang) : t('restore', lang)}
+          </Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>

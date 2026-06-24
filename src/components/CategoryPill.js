@@ -11,10 +11,26 @@ const CategoryPill = ({
   compact = false,
   onPress,
   disabled = false,
+  activeColor,
+  showIcon = true,
 }) => {
   const displayLabel = label || categoryName || '';
-  const theme = getCategoryTheme(categoryName || label, isDark);
-  const pillIcon = getCategoryPillIcon(categoryName || label);
+  const pillIcon = showIcon ? getCategoryPillIcon(categoryName || label) : { source: null };
+
+  // Each category carries its own accent. When selected, the pill is filled
+  // with that category's colour instead of a single shared gold. An explicit
+  // `activeColor` prop still overrides it if a caller needs to.
+  const catTheme = getCategoryTheme(categoryName || label, isDark);
+  const resolvedActiveColor = activeColor || catTheme.accent || '#C29B4C';
+
+  const neutral = isDark
+    ? { background: '#232326', border: '#34343A', text: '#B7B9BE' }
+    : { background: '#F1ECE1', border: '#E4DBCB', text: '#857E6E' };
+
+  const backgroundColor = active ? resolvedActiveColor : neutral.background;
+  const borderColor = active ? resolvedActiveColor : neutral.border;
+  const labelColor = active ? '#FFFFFF' : neutral.text;
+  const iconWrapBg = active ? 'rgba(255,255,255,0.20)' : 'transparent';
 
   return (
     <TouchableOpacity
@@ -24,18 +40,31 @@ const CategoryPill = ({
       style={[
         styles.base,
         compact ? styles.compact : styles.regular,
-        {
-          borderColor: theme.borderColor,
-          backgroundColor: active ? theme.accent : theme.backgroundColor,
+        { borderColor, backgroundColor },
+        active && styles.activeElevation,
+        active && {
+          shadowColor: resolvedActiveColor,
+          transform: [{ scale: 1.03 }],
         },
       ]}
     >
+      {pillIcon.source ? (
+        <View
+          style={[
+            styles.iconWrap,
+            compact ? styles.iconWrapCompact : null,
+            { backgroundColor: iconWrapBg },
+          ]}
+        >
+          <Image source={pillIcon.source} style={styles.iconImage} resizeMode="contain" />
+        </View>
+      ) : null}
       <Text
         numberOfLines={1}
         style={[
           styles.label,
           compact ? styles.labelCompact : null,
-          { color: active ? '#FFFFFF' : theme.accent },
+          { color: labelColor },
         ]}
       >
         {displayLabel}
@@ -51,6 +80,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+  },
+  activeElevation: {
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.35,
+    shadowRadius: 6,
+    elevation: 4,
   },
   regular: {
     paddingHorizontal: 14,

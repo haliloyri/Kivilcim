@@ -5,6 +5,7 @@ import { recordRead, getTotalReads, getStreak, getLongestStreak, getReadsPerCate
 import { checkBadges } from '../utils/badges';
 import { scheduleDailyNotifications } from '../utils/notifications';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import { BILLING_LIVE, purchasePackage, restorePurchases, getOfferingPackages, checkEntitlement } from '../services/billing';
 
 const UserDataContext = createContext();
 const SEEN_BADGES_STORAGE_KEY = '@kivilcim_seen_earned_badges';
@@ -14,7 +15,7 @@ const FAVORITE_COLLECTIONS_STORAGE_KEY = '@kivilcim_favorite_collections';
 const COMPLETED_STORIES_STORAGE_KEY = '@kivilcim_completed_stories';
 const VARIANT_USAGE_STORAGE_KEY = '@kivilcim_variant_usage';
 const STREAK_FREEZE_CREDITS_STORAGE_KEY = '@kivilcim_streak_freeze_credits';
-const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening', reminderHour: 21, reminderWindows: ['evening'] };
+const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening', reminderHour: 21, reminderWindows: ['evening'], storyVersion: 1 };
 const EMPTY_USER_PROFILE = { displayName: null, email: null };
 const EMPTY_FAVORITE_COLLECTIONS = { saved_for_later: [] };
 
@@ -150,6 +151,7 @@ const normalizePreferences = (storedPreferences) => {
     reminderWindows = [reminder.reminderWindow];
   }
   const primary = buildReminderPreference({ reminderWindow: reminderWindows[0] });
+  const storyVersion = Number(storedPreferences.storyVersion) === 2 ? 2 : 1;
 
   return {
     categories: normalizeCategoryIds(storedPreferences.categories),
@@ -157,6 +159,7 @@ const normalizePreferences = (storedPreferences) => {
     reminderWindow: primary.reminderWindow,
     reminderHour: primary.reminderHour,
     reminderWindows,
+    storyVersion,
   };
 };
 
@@ -552,6 +555,7 @@ export const UserDataProvider = ({ children }) => {
         reminderWindows: partialPrefs.reminderWindows ?? preferences.reminderWindows ?? [preferences.reminderWindow || 'evening'],
         reminderWindow: partialPrefs.reminderWindow ?? preferences.reminderWindow,
         reminderHour: partialPrefs.reminderHour ?? preferences.reminderHour,
+        storyVersion: partialPrefs.storyVersion ?? preferences.storyVersion ?? 1,
       };
 
       const nextPrefs = normalizePreferences(candidate);
@@ -587,21 +591,81 @@ export const UserDataProvider = ({ children }) => {
   };
 
   // Abonelik Satın Al (Mock)
-  const buyPremium = async () => {
+  // Grants Premium locally (persisted) once an entitlement is confirmed —
+  // or, when real billing isn't connected, for the dev/local activation flow.
+  const activatePremiumLocally = async () => {
+    setIsPremium(true);
+    setStreakFreezeCredits((prev) => {
+      const next = Math.max(prev, 1);
+      AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(next));
+      return next;
+    });
+    await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(true));
+  };
+
+  // Purchases Premium. With live billing, runs the store purchase via RevenueCat
+  // and only unlocks on a confirmed entitlement. Without it, falls back to local
+  // activation (dev builds). `pkg` is the RevenueCat package for the chosen plan.
+  const buyPremium = async (pkg = null) => {
     try {
-      setIsPremium(true);
-      setStreakFreezeCredits((prev) => {
-        const next = Math.max(prev, 1);
-        AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(next));
-        return next;
-      });
-      await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(true));
-      return true;
+      if (!BILLING_LIVE) {
+        await activatePremiumLocally();
+        return { success: true, live: false };
+      }
+      const result = await purchasePackage(pkg);
+      if (result.success && result.entitled) {
+        await activatePremiumLocally();
+        return { success: true, live: true };
+      }
+      return {
+        success: false,
+        live: true,
+        userCancelled: !!result.userCancelled,
+        error: result.error,
+      };
     } catch (error) {
       console.error('Satın alma hatası:', error);
-      return false;
+      return { success: false, error: error?.message };
     }
   };
+
+  // Restores a previous purchase. With live billing, asks RevenueCat and unlocks
+  // on a confirmed entitlement. Without it, there is nothing to restore.
+  const restorePremium = async () => {
+    if (!BILLING_LIVE) return { success: false, live: false };
+    try {
+      const result = await restorePurchases();
+      if (result.success && result.entitled) {
+        await activatePremiumLocally();
+        return { success: true, live: true, entitled: true };
+      }
+      return { success: result.success, live: true, entitled: false, error: result.error };
+    } catch (error) {
+      console.error('Geri yükleme hatası:', error);
+      return { success: false, live: true, error: error?.message };
+    }
+  };
+
+  // Live store packages (localized prices) for the paywall, or null when billing
+  // isn't connected — callers then show the built-in fallback prices.
+  const getPremiumOfferings = async () => {
+    if (!BILLING_LIVE) return null;
+    return getOfferingPackages();
+  };
+
+  // On launch with live billing, reconcile local Premium with the store's
+  // entitlement (handles refunds, lapses, and cross-device restores).
+  useEffect(() => {
+    if (!BILLING_LIVE || isLoading) return;
+    let cancelled = false;
+    (async () => {
+      const entitled = await checkEntitlement();
+      if (cancelled || entitled === null) return;
+      setIsPremium(entitled);
+      AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(entitled)).catch(() => {});
+    })();
+    return () => { cancelled = true; };
+  }, [isLoading]);
 
   useEffect(() => {
     if (!isOnboarded || isLoading) return;
@@ -888,6 +952,9 @@ export const UserDataProvider = ({ children }) => {
     saveOnboarding,
     updatePreferences,
     buyPremium,
+    restorePremium,
+    getPremiumOfferings,
+    billingLive: BILLING_LIVE,
     updateUserProfile,
     incrementShareCount,
     recordVariantUsage,

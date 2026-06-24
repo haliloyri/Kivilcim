@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import {
   View, Text, TouchableOpacity, StyleSheet,
-  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Image, Platform
+  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Image, Platform, ActivityIndicator
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { captureRef } from 'react-native-view-shot';
@@ -9,6 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Speech from 'expo-speech';
 import * as Sharing from 'expo-sharing';
 import * as Clipboard from 'expo-clipboard';
+import * as MediaLibrary from 'expo-media-library';
 import { Audio } from 'expo-av';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
@@ -40,6 +41,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const titleEnterAnim = useRef(new Animated.Value(0)).current;
   const hasReachedBottom = useRef(false);
   const viewShotRef = useRef();
+  const carouselRefs = useRef({});
   const insets = useSafeAreaInsets();
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [localLang, setLocalLang] = useState(lang);
@@ -47,6 +49,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [adSheet, setAdSheet] = useState(false);
   const [isAdLoading, setIsAdLoading] = useState(false);
   const [adUnavailable, setAdUnavailable] = useState(false);
+  const [isCapturing, setIsCapturing] = useState(false);
+  const [isSavingCarousel, setIsSavingCarousel] = useState(false);
+  const [cardUnlocked, setCardUnlocked] = useState(false);
+  const [cardGate, setCardGate] = useState(false);
+  const [cardAdLoading, setCardAdLoading] = useState(false);
+  const [cardAdUnavailable, setCardAdUnavailable] = useState(false);
   const [recording, setRecording] = useState(null);
   const [isRecording, setIsRecording] = useState(false);
   const [recordingDuration, setRecordingDuration] = useState(0);
@@ -54,9 +62,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [audioRecordings, setAudioRecordings] = useState([]);
   const [playingIndex, setPlayingIndex] = useState(null);
   const [soundObj, setSoundObj] = useState(null);
+  const [recPanelVisible, setRecPanelVisible] = useState(false);
 
   const AUDIO_LIST_KEY = `story_audio_list_${story?.story_id}`;
   const MAX_RECORDINGS = 3;
+  // Maksimum kayıt süresi (otomatik durur). 60.000 ms = 1 dk.
+  const MAX_DURATION_MS = 60000;
 
   React.useEffect(() => {
     return soundObj
@@ -116,7 +127,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
         newRecording.setOnRecordingStatusUpdate((status) => {
           if (status.isRecording) {
             setRecordingDuration(status.durationMillis);
-            if (status.durationMillis >= 180000) {
+            if (status.durationMillis >= MAX_DURATION_MS) {
               stopRecording(newRecording, status.durationMillis);
             }
           }
@@ -231,6 +242,43 @@ const StoryDetailScreen = ({ route, navigation }) => {
       trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_next' });
     });
     ad.show().catch(e => console.warn('[StoryDetail] rewarded show error:', e?.message));
+  };
+
+  // --- Visual card gate: premium-only, free users unlock via rewarded ad ---
+  const openShareModalGated = () => {
+    setShareTextOverride('');
+    if (isPremium || cardUnlocked || !shouldShowAd({ isPremium, isOnboarded: true })) {
+      setShareModalVisible(true);
+      return;
+    }
+    setCardAdUnavailable(false);
+    setCardGate(true);
+    trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
+      source: 'story_detail_card',
+      storyId: story?.story_id,
+      lang,
+    });
+  };
+
+  const handleWatchAdForCard = async () => {
+    setCardAdLoading(true);
+    trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_card', choice: 'ad' });
+    const ad = await loadRewarded();
+    setCardAdLoading(false);
+    if (!ad) {
+      setCardAdUnavailable(true);
+      trackEvent(ANALYTICS_EVENTS.AD_FAILED_TO_LOAD, { source: 'story_detail_card', lang });
+      return;
+    }
+    setCardAdUnavailable(false);
+    const { RewardedAdEventType } = require('react-native-google-mobile-ads');
+    ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
+      trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_card' });
+      setCardUnlocked(true);
+      setCardGate(false);
+      setShareModalVisible(true);
+    });
+    ad.show().catch(e => console.warn('[StoryDetail] card rewarded show error:', e?.message));
   };
 
   React.useEffect(() => {
@@ -362,13 +410,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
   };
 
   // --- Share card theme configs ---
+  // Unified palette — shares gold/slate/teal/plum accents with BadgeShareSheet
   const SHARE_THEMES = [
-    { id: 'dark', label: t('themeInk', lang), bg: ['#131311', '#1E1C18'], text: '#E8E0D0', accent: '#FFB783', sub: '#A89A84' },
-    { id: 'light', label: t('themePaper', lang), bg: ['#F7F3EB', '#EDE8DD'], text: '#1A1208', accent: '#B55310', sub: '#6B6255' },
-    { id: 'sunset', label: t('themeSun', lang), bg: ['#FF512F', '#F09819'], text: '#FFF', accent: '#FFE0C2', sub: 'rgba(255,255,255,0.8)' },
-    { id: 'ocean', label: t('themeNight', lang), bg: ['#1A2980', '#26D0CE'], text: '#FFF', accent: '#B8E6FF', sub: 'rgba(255,255,255,0.8)' },
-    { id: 'emerald', label: t('themeEmerald', lang), bg: ['#11998e', '#38ef7d'], text: '#FFF', accent: '#D4FFED', sub: 'rgba(255,255,255,0.8)' },
-    { id: 'rose', label: t('rose_theme', lang), bg: ['#E96443', '#904E95'], text: '#FFF', accent: '#FFD6E0', sub: 'rgba(255,255,255,0.8)' },
+    { id: 'dark', label: t('themeInk', lang), bg: ['#14120E', '#211C14'], text: '#F2EAD8', accent: '#E5C27A', sub: '#A6977C' },
+    { id: 'light', label: t('themePaper', lang), bg: ['#F7F2E8', '#ECE4D5'], text: '#1A1208', accent: '#A86A1C', sub: '#6B5A48' },
+    { id: 'gold', label: t('themeGold', lang), bg: ['#4A3A16', '#6B5320'], text: '#FFF7E6', accent: '#F0D9A0', sub: 'rgba(255,247,230,0.78)' },
+    { id: 'slate', label: t('themeSlate', lang), bg: ['#29384A', '#41566E'], text: '#FFFFFF', accent: '#B8C8D8', sub: 'rgba(255,255,255,0.8)' },
+    { id: 'forest', label: t('themeForest', lang), bg: ['#1C3F35', '#2C6E5A'], text: '#FFFFFF', accent: '#A8D8C5', sub: 'rgba(255,255,255,0.8)' },
+    { id: 'plum', label: t('themePlum', lang), bg: ['#3E2433', '#6E3B52'], text: '#FFFFFF', accent: '#E6B8CC', sub: 'rgba(255,255,255,0.8)' },
   ];
 
   const currentTheme = SHARE_THEMES.find(th => th.id === shareTheme) || SHARE_THEMES[0];
@@ -475,16 +524,18 @@ const StoryDetailScreen = ({ route, navigation }) => {
     const caption = `${displayTitle}\n\n${selectedTexts}\n\n${primaryCta}\n${hashtags}`;
 
     const reelScript = `${displayTitle}\n\n` +
-      `1) Hook: ${displayHook || getShareText('quote')}\n` +
-      `2) Ana fikir: ${getShareText('lesson') || getShareText('quote')}\n` +
-      `3) Soru: ${getShareText('reflection') || t('share_realize', localLang)}\n` +
-      `4) CTA: ${secondaryCta}\n` +
-      `5) Bonus CTA: ${actionCta}`;
+      `1) ${t('reel_label_hook', localLang)}: ${displayHook || getShareText('quote')}\n` +
+      `2) ${t('reel_label_main', localLang)}: ${getShareText('lesson') || getShareText('quote')}\n` +
+      `3) ${t('reel_label_question', localLang)}: ${getShareText('reflection') || t('share_realize', localLang)}\n` +
+      `4) ${t('reel_label_cta', localLang)}: ${secondaryCta}\n` +
+      `5) ${t('reel_label_bonus', localLang)}: ${actionCta}`;
 
     return { caption, reelScript };
   };
 
   const onShare = async () => {
+    if (isCapturing || isSavingCarousel) return;
+    setIsCapturing(true);
     try {
       // 1. Capture the off-screen card as PNG
       const uri = await captureRef(viewShotRef, {
@@ -495,18 +546,16 @@ const StoryDetailScreen = ({ route, navigation }) => {
       // 2. Construct the text to be included as caption
       const { caption, reelScript } = buildSharePayload();
       const clipboardPayload = shareFormat === 'reel'
-        ? `${caption}\n\n----- REEL SCRIPT -----\n${reelScript}`
+        ? `${caption}\n\n----- ${t('reel_script_divider', localLang)} -----\n${reelScript}`
         : caption;
 
       // 3. Copy caption to clipboard so user can paste it on Instagram
       try {
         await Clipboard.setStringAsync(clipboardPayload);
         Alert.alert(
-          localLang === 'tr' ? 'Metin Kopyalandi' : 'Text Copied',
-          localLang === 'tr'
-            ? 'Aciklama metni panoya kopyalandi. Reel formatinda reel script de eklendi.'
-            : 'Caption copied to clipboard. Reel format also includes a short reel script.',
-          [{ text: "Tamam", style: "default" }]
+          t('share_copied_title', localLang),
+          t(shareFormat === 'reel' ? 'share_copied_body' : 'share_copied_body_story', localLang),
+          [{ text: t('alert_ok', localLang), style: "default" }]
         );
       } catch (err) {
         console.warn("Clipboard copy failed", err);
@@ -539,6 +588,72 @@ const StoryDetailScreen = ({ route, navigation }) => {
         t('alert_error', lang),
         t('alert_share_error', lang),
       );
+    } finally {
+      setIsCapturing(false);
+    }
+  };
+
+  // Canonical carousel order so frames always read hook → quote → lesson → reflection
+  const CAROUSEL_ORDER = ['hook', 'lesson', 'quote', 'reflection'];
+  const getCarouselFrames = () =>
+    [...shareContent].sort((a, b) => CAROUSEL_ORDER.indexOf(a) - CAROUSEL_ORDER.indexOf(b));
+
+  // Save each selected message as its own card to the gallery → Instagram carousel
+  const onSaveCarousel = async () => {
+    if (isCapturing || isSavingCarousel) return;
+    setIsSavingCarousel(true);
+    try {
+      // 1. Ask only for write access (least intrusive)
+      const perm = await MediaLibrary.requestPermissionsAsync(true);
+      if (!perm.granted) {
+        Alert.alert(
+          t('alert_error', lang),
+          t('alert_media_permission', localLang),
+          [{ text: t('alert_ok', localLang), style: 'default' }]
+        );
+        return;
+      }
+
+      // 2. Capture each frame in canonical order and save to gallery
+      const frames = getCarouselFrames();
+      let saved = 0;
+      for (const type of frames) {
+        const ref = carouselRefs.current[type];
+        if (!ref) continue;
+        const uri = await captureRef(ref, { format: 'png', quality: 1 });
+        await MediaLibrary.saveToLibraryAsync(uri);
+        saved += 1;
+      }
+
+      // 3. Copy caption so the user can paste it on the carousel post
+      try {
+        const { caption } = buildSharePayload();
+        await Clipboard.setStringAsync(caption);
+      } catch (err) {
+        console.warn('Clipboard copy failed', err);
+      }
+
+      // 4. Tell the user how to assemble the carousel in Instagram
+      Alert.alert(
+        t('carousel_saved_title', localLang),
+        `${saved} ${t('carousel_saved_body', localLang)}`,
+        [{ text: t('alert_ok', localLang), style: 'default' }]
+      );
+
+      incrementShareCount();
+      trackEvent(ANALYTICS_EVENTS.STORY_SHARED, {
+        source: 'story_detail_carousel',
+        storyId: story?.story_id,
+        shareFormat,
+        shareContent: frames,
+        frameCount: saved,
+        lang: localLang,
+      });
+    } catch (error) {
+      console.error('Carousel kaydetme hatası:', error);
+      Alert.alert(t('alert_error', lang), t('alert_share_error', lang));
+    } finally {
+      setIsSavingCarousel(false);
     }
   };
 
@@ -670,6 +785,19 @@ const StoryDetailScreen = ({ route, navigation }) => {
     formatBtnTextActive: {
       color: colors.primary,
     },
+    reelBadge: {
+      marginTop: 3,
+      paddingHorizontal: 6,
+      paddingVertical: 1,
+      borderRadius: 6,
+      backgroundColor: isDark ? 'rgba(181,83,16,0.22)' : 'rgba(181,83,16,0.10)',
+    },
+    reelBadgeText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 9,
+      color: colors.primary,
+      letterSpacing: 0.3,
+    },
     // --- Buttons ---
     btnPrimary: {
       borderRadius: layout.radius.button,
@@ -689,6 +817,23 @@ const StoryDetailScreen = ({ route, navigation }) => {
       fontFamily: 'Inter_500Medium',
       color: '#F7F3EB',
       fontSize: typography.sizes.ui + 1
+    },
+    carouselBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+      marginTop: 10,
+      height: layout.heights.buttonPrimary,
+      borderRadius: layout.radius.button,
+      borderWidth: 1.5,
+      borderColor: colors.border || 'rgba(0,0,0,0.12)',
+      backgroundColor: 'transparent',
+    },
+    carouselBtnText: {
+      fontFamily: 'Inter_500Medium',
+      color: colors.text,
+      fontSize: typography.sizes.ui,
     },
     // --- Share card (capture target) ---
     shareCardWrapper: {
@@ -891,6 +1036,65 @@ const StoryDetailScreen = ({ route, navigation }) => {
       backgroundColor: colors.background,
       marginBottom: Platform.OS === 'android' ? 4 : 0,
     },
+    footerMicBtn: {
+      width: 58,
+      height: 58,
+      borderRadius: 14,
+      borderWidth: 1.5,
+      borderColor: colors.border,
+      backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    footerMicBadge: {
+      position: 'absolute',
+      top: -5,
+      right: -5,
+      minWidth: 20,
+      height: 20,
+      borderRadius: 10,
+      paddingHorizontal: 5,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 2,
+      borderColor: colors.background,
+    },
+    footerMicBadgeText: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 11,
+      color: '#FFFFFF',
+    },
+    recInlinePanel: {
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 10,
+      backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+      borderRadius: 18,
+      borderWidth: 1,
+      borderColor: colors.border,
+      paddingVertical: 14,
+      paddingHorizontal: 16,
+      shadowColor: '#000',
+      shadowOpacity: 0.08,
+      shadowRadius: 12,
+      shadowOffset: { width: 0, height: 4 },
+      elevation: 4,
+    },
+    recordCardBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 14,
+      borderWidth: 1,
+      borderRadius: 16,
+      padding: 14,
+      marginBottom: 14,
+    },
+    recordCardMic: {
+      width: 48,
+      height: 48,
+      borderRadius: 24,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
     btnSecondaryShare: {
       flex: 1,
       borderWidth: 1,
@@ -963,7 +1167,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   });
 
   // --- Helper: Render the share card (identical in both preview & capture) ---
-  const renderShareCard = () => {
+  const renderShareCard = (contentTypes = shareContent) => {
     const th = currentTheme;
     const isPost = shareFormat === 'post';
 
@@ -978,8 +1182,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
     const fFooter = 28;
 
     const padHorizontal = 80;
-    const paddingTop = isPost ? 80 : 250;
-    const paddingBottom = isPost ? 80 : 300;
+    const paddingTop = isPost ? 90 : 140;
+    const paddingBottom = isPost ? 90 : 160;
     const borderW = 10;
 
     return (
@@ -991,11 +1195,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
           style={[StyleSheet.absoluteFill]}
         />
 
-        {/* All Content Filtered Through a Single Centered Container */}
-        <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: padHorizontal, paddingTop, paddingBottom }}>
+        {/* Three-zone layout: brand / centered content / footer strip */}
+        <View style={{ flex: 1, justifyContent: 'space-between', paddingHorizontal: padHorizontal, paddingTop, paddingBottom }}>
 
           {/* Header (Logo) */}
-          <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 80, borderBottomWidth: 4, borderBottomColor: th.accent, paddingBottom: 16, alignSelf: 'flex-start' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomWidth: 4, borderBottomColor: th.accent, paddingBottom: 16, alignSelf: 'flex-start' }}>
             <Text style={{
               fontFamily: 'PlayfairDisplay_700Bold',
               fontSize: 64, color: th.text,
@@ -1003,7 +1207,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
             }}>✦ {t('brandText', lang).replace(' ✦', '')}</Text>
           </View>
 
-          {shareContent.map((type, index) => {
+          {/* Content zone — vertically centered */}
+          <View style={{ flex: 1, justifyContent: 'center', paddingVertical: 60 }}>
+          {contentTypes.map((type, index) => {
             const label = type === 'lesson' ? t('share_key_takeaway', localLang) :
               type === 'reflection' ? t('share_reflect', localLang) :
                 type === 'hook' ? '' :
@@ -1011,13 +1217,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
             const textContent = getShareText(type);
 
             // dynamically scale text if multiple are selected
-            const dynTitle = shareContent.length > 1 ? fTitle * 0.8 : fTitle;
-            const dynQuote = shareContent.length > 1 ? fQuote * 0.8 : fQuote;
+            const dynTitle = contentTypes.length > 1 ? fTitle * 0.8 : fTitle;
+            const dynQuote = contentTypes.length > 1 ? fQuote * 0.8 : fQuote;
 
             // Hook: büyük, cesur, tam ekran hook cümlesi
             if (type === 'hook') {
               return (
-                <View key={type} style={{ marginBottom: index === shareContent.length - 1 ? 0 : 80 }}>
+                <View key={type} style={{ marginBottom: index === contentTypes.length - 1 ? 0 : 80 }}>
                   <Text style={{
                     fontFamily: 'PlayfairDisplay_700Bold',
                     fontSize: dynQuote * 1.1,
@@ -1041,7 +1247,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
             }
 
             return (
-              <View key={type} style={{ marginBottom: index === shareContent.length - 1 ? 0 : 80 }}>
+              <View key={type} style={{ marginBottom: index === contentTypes.length - 1 ? 0 : 80 }}>
                 <Text style={{
                   fontFamily: 'PlayfairDisplay_700Bold',
                   fontSize: dynTitle,
@@ -1070,43 +1276,35 @@ const StoryDetailScreen = ({ route, navigation }) => {
               </View>
             );
           })}
-
-          <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 60 }}>
-            <Ionicons name="book-outline" size={fSrc + 4} color={th.sub} />
-            <Text style={{
-              fontFamily: 'Inter_500Medium',
-              fontSize: fSrc,
-              color: th.sub,
-              textTransform: 'uppercase',
-              letterSpacing: 2,
-              marginLeft: 6,
-              flexShrink: 1,
-            }} numberOfLines={2}>
-              {t('share_source', localLang)}{displaySourceBook}
-            </Text>
           </View>
 
-          {/* Footer */}
-          <View style={{ alignItems: 'center', marginTop: 60 }}>
-            <Text style={{
-              fontFamily: 'Inter_400Regular',
-              fontSize: fFooter, color: th.sub,
-              textAlign: 'center',
-            }}>
-              {t('share_more', localLang)}
-            </Text>
-          </View>
-
-          <View style={{ position: 'absolute', right: 42, bottom: 36 }}>
-            <Text style={{
-              fontFamily: 'Inter_500Medium',
-              fontSize: 24,
-              color: th.text,
-              opacity: 0.35,
-              letterSpacing: 1,
-            }}>
-              Spark ✦
-            </Text>
+          {/* Footer strip — source + single CTA (replaces duplicate watermark) */}
+          <View>
+            <View style={{ height: 3, backgroundColor: th.accent, opacity: 0.45, borderRadius: 2, marginBottom: 28 }} />
+            <View style={{ flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+              <View style={{ flexDirection: 'row', alignItems: 'flex-start', flex: 1, marginRight: 24 }}>
+                <Ionicons name="book-outline" size={fSrc + 2} color={th.sub} style={{ marginTop: 4 }} />
+                <Text style={{
+                  fontFamily: 'Inter_500Medium',
+                  fontSize: fSrc,
+                  color: th.sub,
+                  textTransform: 'uppercase',
+                  letterSpacing: 2,
+                  marginLeft: 10,
+                  flexShrink: 1,
+                }} numberOfLines={2}>
+                  {t('share_source', localLang)}{displaySourceBook}
+                </Text>
+              </View>
+              <Text style={{
+                fontFamily: 'Inter_500Medium',
+                fontSize: fSrc,
+                color: th.accent,
+                letterSpacing: 1,
+              }}>
+                {t('card_cta_short', localLang)} ✦
+              </Text>
+            </View>
           </View>
 
         </View>
@@ -1222,24 +1420,45 @@ const StoryDetailScreen = ({ route, navigation }) => {
                     style={[styles.formatBtn, shareFormat === 'reel' && styles.formatBtnActive]}
                     onPress={() => setShareFormat('reel')}
                   >
-                    <Text style={[styles.formatBtnText, shareFormat === 'reel' && styles.formatBtnTextActive]}>🎥 Reel (9:16)</Text>
+                    <Text style={[styles.formatBtnText, shareFormat === 'reel' && styles.formatBtnTextActive]}>{t('format_reel', lang)}</Text>
+                    <View style={styles.reelBadge}>
+                      <Text style={styles.reelBadgeText}>{t('reel_badge', lang)}</Text>
+                    </View>
                   </TouchableOpacity>
                 </View>
               </ScrollView>
 
               {/* Share button */}
-              <TouchableOpacity onPress={onShare}>
+              <TouchableOpacity onPress={onShare} disabled={isCapturing || isSavingCarousel} activeOpacity={0.85}>
                 <LinearGradient
                   colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
-                  style={styles.btnPrimaryGradient}
+                  style={[styles.btnPrimaryGradient, (isCapturing || isSavingCarousel) && { opacity: 0.7 }]}
                 >
-                  <View style={styles.btnPrimary}>
+                  <View style={[styles.btnPrimary, { flexDirection: 'row', gap: 10 }]}>
+                    {isCapturing && <ActivityIndicator size="small" color="#F7F3EB" />}
                     <Text style={styles.btnPrimaryText}>{t('saveAndShare', lang)}</Text>
                   </View>
                 </LinearGradient>
               </TouchableOpacity>
+
+              {/* Carousel button — saves each message as its own frame to the gallery */}
+              {shareContent.length > 1 && (
+                <TouchableOpacity
+                  onPress={onSaveCarousel}
+                  disabled={isCapturing || isSavingCarousel}
+                  activeOpacity={0.85}
+                  style={[styles.carouselBtn, (isCapturing || isSavingCarousel) && { opacity: 0.6 }]}
+                >
+                  {isSavingCarousel
+                    ? <ActivityIndicator size="small" color={colors.text} />
+                    : <Ionicons name="images-outline" size={20} color={colors.text} />}
+                  <Text style={styles.carouselBtnText}>
+                    {t('saveCarousel', lang)} ({shareContent.length})
+                  </Text>
+                </TouchableOpacity>
+              )}
             </View>
           </View>
         </Modal>
@@ -1249,6 +1468,19 @@ const StoryDetailScreen = ({ route, navigation }) => {
           <View ref={viewShotRef} collapsable={false}>
             {renderShareCard()}
           </View>
+        </View>
+
+        {/* ===== OFF-SCREEN CAROUSEL FRAMES (one card per message) ===== */}
+        <View style={{ position: 'absolute', left: -9999, top: -9999 }} pointerEvents="none">
+          {shareContent.map(type => (
+            <View
+              key={`frame-${type}`}
+              ref={el => { carouselRefs.current[type] = el; }}
+              collapsable={false}
+            >
+              {renderShareCard([type])}
+            </View>
+          ))}
         </View>
 
         <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
@@ -1278,17 +1510,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 <Text style={styles.fontSizeBtnText}>A+</Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity
-              onPress={() => {
-                setShareTextOverride('');
-                setShareModalVisible(true);
-              }}
-            >
+            <TouchableOpacity onPress={openShareModalGated}>
               <Ionicons name="share-social" size={22} color={colors.text} />
             </TouchableOpacity>
             <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
               <TouchableOpacity onPress={handleLike}>
-                <Ionicons name={liked ? "heart" : "heart-outline"} size={26} color={liked ? "#BA1A1A" : colors.text} />
+                <Ionicons name={liked ? "heart" : "heart-outline"} size={26} color={liked ? categoryTheme.accent : colors.text} />
               </TouchableOpacity>
             </Animated.View>
           </View>
@@ -1314,7 +1541,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
           )}
           scrollEventThrottle={16}
         >
-          <View style={styles.storyHero}>
+          <View style={[styles.storyHero, {
+            backgroundColor: categoryTheme.backgroundColor,
+            borderColor: categoryTheme.borderColor,
+          }]}>
             {(() => {
               if (!categoryImage.source) return null;
               return (
@@ -1340,9 +1570,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
               <Animated.Text style={[styles.detailTitle, titleEnterStyle]}>{displayTitle}</Animated.Text>
               {usageDate ? (
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 }}>
-                  <View style={{ backgroundColor: `${colors.primary}20`, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6, flexDirection: 'row', alignItems: 'center', gap: 4, borderWidth: 1, borderColor: `${colors.primary}40` }}>
-                    <Ionicons name="checkmark-done" size={14} color={colors.primary} />
-                    <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12, color: colors.primary }}>
+                  <View style={{ backgroundColor: isDark ? `${categoryTheme.accent}26` : '#FFFFFF', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6, flexDirection: 'row', alignItems: 'center', gap: 4, borderWidth: 1, borderColor: `${categoryTheme.accent}40` }}>
+                    <Ionicons name="checkmark-done" size={14} color={categoryTheme.accent} />
+                    <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12, color: categoryTheme.accent }}>
                       {localLang === 'tr' ? `Daha önce kurgulandı (${new Date(usageDate).toLocaleDateString('tr-TR')})` : `Crafted previously (${new Date(usageDate).toLocaleDateString()})`}
                     </Text>
                   </View>
@@ -1499,108 +1729,122 @@ const StoryDetailScreen = ({ route, navigation }) => {
           <View style={{ height: 100 }} />
         </Animated.ScrollView>
 
-        {/* ── Kayıt Paneli ─────────────────────────────────────── */}
-        <View style={{
-          marginHorizontal: layout.padding.horizontal,
-          marginBottom: 12,
-          backgroundColor: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.03)',
-          borderRadius: 20,
-          borderWidth: 1,
-          borderColor: isRecording ? `${colors.primary}60` : colors.border,
-          paddingVertical: 14,
-          paddingHorizontal: 16,
-        }}>
-          {/* Üst satır: başlık + kayıt butonu */}
-          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: audioRecordings.length > 0 || isRecording ? 12 : 0 }}>
-            <View>
-              <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 13, color: colors.text }}>
-                {lang === 'tr' ? 'Ses Kaydım' : 'My Recordings'}
-              </Text>
-              <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 2 }}>
-                {isRecording
-                  ? `⏺ ${formatDuration(recordingDuration)}`
-                  : audioRecordings.length >= MAX_RECORDINGS
-                    ? (lang === 'tr' ? 'Maksimum 3 kayıt doldu' : 'Max 3 recordings reached')
-                    : (lang === 'tr' ? `${audioRecordings.length}/${MAX_RECORDINGS} kayıt` : `${audioRecordings.length}/${MAX_RECORDINGS} recordings`)}
-              </Text>
-            </View>
-            <TouchableOpacity
-              onPress={toggleRecording}
-              disabled={!isRecording && audioRecordings.length >= MAX_RECORDINGS}
-              style={{
-                width: 48,
-                height: 48,
-                borderRadius: 24,
-                overflow: 'hidden',
-                opacity: (!isRecording && audioRecordings.length >= MAX_RECORDINGS) ? 0.38 : 1,
-              }}
-            >
-              <LinearGradient
-                colors={isRecording
-                  ? ['#FF4D4D', '#CC1A1A']
-                  : isDark
-                    ? ['rgba(229,194,122,0.92)', 'rgba(217,177,95,0.97)']
-                    : ['rgba(200,155,60,0.94)', 'rgba(180,130,40,0.97)']}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-                style={{ width: 48, height: 48, borderRadius: 24, alignItems: 'center', justifyContent: 'center' }}
-              >
-                <Ionicons
-                  name={isRecording ? 'stop' : 'mic'}
-                  size={22}
-                  color={colors.onPrimary}
-                />
-              </LinearGradient>
-            </TouchableOpacity>
-          </View>
-
-          {/* Kayıt listesi */}
-          {audioRecordings.map((rec, index) => (
-            <View key={`rec-${index}`} style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              paddingVertical: 8,
-              paddingHorizontal: 10,
-              borderRadius: 12,
-              backgroundColor: playingIndex === index
-                ? `${colors.primary}18`
-                : isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.04)',
-              marginBottom: index < audioRecordings.length - 1 ? 6 : 0,
-              borderWidth: playingIndex === index ? 1 : 0,
-              borderColor: `${colors.primary}40`,
-            }}>
-              {/* Play/Pause butonu */}
-              <TouchableOpacity onPress={() => playRecording(index)} style={{ marginRight: 10 }}>
-                <Ionicons
-                  name={playingIndex === index ? 'pause-circle' : 'play-circle'}
-                  size={32}
-                  color={playingIndex === index ? colors.primary : colors.textSecondary}
-                />
-              </TouchableOpacity>
-
-              {/* Süre ve tarih */}
-              <View style={{ flex: 1 }}>
-                <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 13, color: colors.text }}>
-                  {lang === 'tr' ? `Kayıt ${index + 1}` : `Take ${index + 1}`}
-                  {' · '}
-                  <Text style={{ fontFamily: 'Inter_400Regular', color: colors.textSecondary }}>
-                    {formatDuration(rec.durationMs)}
+        {/* ── Ses Kaydı Paneli (satır içi — hikâye okunurken erişilebilir) ── */}
+        {recPanelVisible ? (
+          <View style={styles.recInlinePanel}>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+                <Text style={styles.modalTitle}>{lang === 'tr' ? 'Ses Kaydım' : 'My Recordings'}</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                  <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary }}>
+                    {`${audioRecordings.length}/${MAX_RECORDINGS} ${lang === 'tr' ? 'kayıt' : 'recordings'}`}
                   </Text>
-                </Text>
-                <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 1 }}>
-                  {new Date(rec.date).toLocaleDateString(lang === 'tr' ? 'tr-TR' : 'en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
-                </Text>
+                  <TouchableOpacity onPress={() => { if (!isRecording) setRecPanelVisible(false); }} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+                    <Ionicons name="chevron-down" size={22} color={colors.textSecondary} />
+                  </TouchableOpacity>
+                </View>
               </View>
 
-              {/* Sil butonu */}
-              <TouchableOpacity onPress={() => deleteRecording(index)} style={{ padding: 6 }}>
-                <Ionicons name="trash-outline" size={18} color={colors.textSecondary} />
+              {/* Kayıt al / durdur — büyük buton */}
+              <TouchableOpacity
+                onPress={toggleRecording}
+                disabled={!isRecording && audioRecordings.length >= MAX_RECORDINGS}
+                activeOpacity={0.85}
+                style={[
+                  styles.recordCardBtn,
+                  {
+                    borderColor: isRecording ? categoryTheme.accent : categoryTheme.borderColor,
+                    backgroundColor: isRecording ? categoryTheme.strongBackgroundColor : categoryTheme.backgroundColor,
+                    opacity: (!isRecording && audioRecordings.length >= MAX_RECORDINGS) ? 0.4 : 1,
+                  },
+                ]}
+              >
+                <View style={[styles.recordCardMic, { backgroundColor: categoryTheme.accent }]}>
+                  <Ionicons name={isRecording ? 'stop' : 'mic'} size={24} color="#FFFFFF" />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 16, color: categoryTheme.accent }}>
+                    {isRecording
+                      ? (lang === 'tr' ? 'Kaydı durdur' : 'Stop recording')
+                      : (lang === 'tr' ? 'Yeni kayıt al' : 'New recording')}
+                  </Text>
+                  <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: isRecording ? categoryTheme.accent : colors.textSecondary, marginTop: 2 }}>
+                    {isRecording
+                      ? `● ${formatDuration(recordingDuration)} / ${formatDuration(MAX_DURATION_MS)}`
+                      : audioRecordings.length >= MAX_RECORDINGS
+                        ? (lang === 'tr' ? 'Maksimum 3 kayıt doldu' : 'Max 3 recordings reached')
+                        : (lang === 'tr' ? `Bas ve konuş · en fazla ${formatDuration(MAX_DURATION_MS)}` : `Tap and speak · up to ${formatDuration(MAX_DURATION_MS)}`)}
+                  </Text>
+                </View>
               </TouchableOpacity>
-            </View>
-          ))}
-        </View>
 
-        <View style={styles.detailFooter}>
+              {/* Kayıt listesi */}
+              {audioRecordings.map((rec, index) => (
+                <View key={`rec-${index}`} style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  paddingVertical: 10,
+                  paddingHorizontal: 12,
+                  borderRadius: 14,
+                  backgroundColor: playingIndex === index
+                    ? `${categoryTheme.accent}18`
+                    : isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.04)',
+                  marginBottom: 8,
+                  borderWidth: playingIndex === index ? 1 : 0,
+                  borderColor: `${categoryTheme.accent}40`,
+                }}>
+                  <TouchableOpacity onPress={() => playRecording(index)} style={{ marginRight: 12 }}>
+                    <Ionicons
+                      name={playingIndex === index ? 'pause-circle' : 'play-circle'}
+                      size={36}
+                      color={categoryTheme.accent}
+                    />
+                  </TouchableOpacity>
+                  <View style={{ flex: 1 }}>
+                    <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
+                      {lang === 'tr' ? `Kayıt ${index + 1}` : `Take ${index + 1}`}
+                      {' · '}
+                      <Text style={{ fontFamily: 'Inter_400Regular', color: colors.textSecondary }}>
+                        {formatDuration(rec.durationMs)}
+                      </Text>
+                    </Text>
+                    <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginTop: 1 }}>
+                      {new Date(rec.date).toLocaleDateString(lang === 'tr' ? 'tr-TR' : 'en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                    </Text>
+                  </View>
+                  <TouchableOpacity onPress={() => deleteRecording(index)} style={{ padding: 6 }}>
+                    <Ionicons name="trash-outline" size={20} color={colors.textSecondary} />
+                  </TouchableOpacity>
+                </View>
+              ))}
+
+              {audioRecordings.length === 0 && !isRecording ? (
+                <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary, textAlign: 'center', marginTop: 6 }}>
+                  {lang === 'tr' ? 'Henüz kayıt yok. Hikâyeyi sesli prova et.' : 'No recordings yet. Rehearse the story aloud.'}
+                </Text>
+              ) : null}
+          </View>
+        ) : null}
+
+        <View style={[styles.detailFooter, { alignItems: 'flex-start' }]}>
+          {/* Ses kaydı — kompakt mikrofon butonu (paneli açar) */}
+          <TouchableOpacity
+            onPress={() => setRecPanelVisible(v => !v)}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityLabel={lang === 'tr' ? 'Ses kayıtları' : 'Voice recordings'}
+            style={[styles.footerMicBtn, {
+              borderColor: categoryTheme.borderColor,
+              backgroundColor: recPanelVisible ? categoryTheme.backgroundColor : (isDark ? colors.backgroundDark : '#FFFFFF'),
+            }]}
+          >
+            <Ionicons name={recPanelVisible ? 'mic' : 'mic-outline'} size={24} color={categoryTheme.accent} />
+            {audioRecordings.length > 0 ? (
+              <View style={[styles.footerMicBadge, { backgroundColor: categoryTheme.accent }]}>
+                <Text style={styles.footerMicBadgeText}>{audioRecordings.length}</Text>
+              </View>
+            ) : null}
+          </TouchableOpacity>
+
           {/* PRIMARY: Sohbette Kullan — main CTA with micro-copy */}
           <View style={{ flex: 1 }}>
             <TouchableOpacity
@@ -1676,6 +1920,27 @@ const StoryDetailScreen = ({ route, navigation }) => {
         }}
         adUnavailable={adUnavailable}
         isAdLoading={isAdLoading}
+        lang={lang}
+      />
+
+      {/* Visual card gate — free users unlock by ad or go Premium */}
+      <AdOrPremiumSheet
+        visible={cardGate}
+        onClose={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_card', choice: 'dismiss' });
+          setCardAdUnavailable(false);
+          setCardGate(false);
+        }}
+        onWatchAd={handleWatchAdForCard}
+        onGoPremium={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_card', choice: 'premium' });
+          setCardGate(false);
+          navigation.navigate('Paywall', { reason: 'image_card', source: 'story_detail_card' });
+        }}
+        title={t('cardGateTitle', lang)}
+        subtitle={t('cardGateSubtitle', lang)}
+        adUnavailable={cardAdUnavailable}
+        isAdLoading={cardAdLoading}
         lang={lang}
       />
     </>

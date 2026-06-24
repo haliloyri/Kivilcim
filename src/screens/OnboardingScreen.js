@@ -13,10 +13,27 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import { getCategoryImage } from '../utils/categoryImages';
+import { ensureNotificationPermission } from '../utils/notifications';
 
 const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
+
+// Category names arrive from the DB with a leading emoji (e.g. "💰 Finance").
+// Split it so we can render a single icon slot + a clean, non-truncating label.
+const splitLeadingEmoji = (label = '') => {
+  const cps = Array.from(String(label).trim());
+  let i = 0;
+  while (i < cps.length) {
+    const cp = cps[i].codePointAt(0);
+    if (cps[i] === ' ' || cp >= 0x2000) { i++; continue; } // emoji/symbols/VS/ZWJ + spaces
+    break;
+  }
+  return {
+    emoji: cps.slice(0, i).join('').trim(),
+    text: cps.slice(i).join('').trim() || String(label).trim(),
+  };
+};
 
 const OnboardingScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
@@ -29,6 +46,7 @@ const OnboardingScreen = ({ navigation }) => {
   const [selectedReminders, setSelectedReminders] = useState(['evening']);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
+  const [focusedField, setFocusedField] = useState(null);
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
   const breatheAnim = useRef(new Animated.Value(1.0)).current;
@@ -57,9 +75,10 @@ const OnboardingScreen = ({ navigation }) => {
     { label: t('reminder_evening', lang), sub: t('reminder_evening_sub', lang), iconName: 'moon-outline', icon: '\uD83C\uDF19', reminderWindow: 'evening', reminderHour: 21 },
   ];
   const selectedTimeOption = timeOptions[selectedTime];
+  const storyWord = t(selectedTimeOption.dailyStoryTarget === 1 ? 'onboarding_story' : 'onboarding_stories', lang);
   const readyPlanSummary = t('onboarding_ready_plan', lang)
     .replace('{{minutes}}', selectedTimeOption.label)
-    .replace('{{stories}}', String(selectedTimeOption.dailyStoryTarget));
+    .replace('{{stories}}', `${selectedTimeOption.dailyStoryTarget} ${storyWord}`);
 
   // Step 0: Welcome, 1: How it works, 2: Categories, 3: Time, 4: Reminders, 5: Name, 6: Summary
   const TOTAL_STEPS = 7;
@@ -86,6 +105,11 @@ const OnboardingScreen = ({ navigation }) => {
 
   const next = async () => {
     Haptics.selectionAsync().catch(() => {});
+    // Reminder step (4): prime the OS notification permission in-context, right after
+    // the user has chosen when to be nudged — higher opt-in than a cold prompt at the end.
+    if (step === 4) {
+      ensureNotificationPermission().catch(() => {});
+    }
     if (step < TOTAL_STEPS - 1) {
       animateStep('forward', () => setStep(s => s + 1));
     } else {
@@ -146,6 +170,16 @@ const OnboardingScreen = ({ navigation }) => {
   const cardBg = isDark
     ? (colors.surfaceContainerHigh || colors.backgroundDark)
     : (colors.cardBackground || '#FFFDF9');
+
+  // CTA contrast & elevation differ per mode.
+  // Light: onPrimary (#FFFFFF) over gold (#C89B3C) fails WCAG AA, so use dark text token.
+  // Shadow: a gold "glow" reads well on dark, but on light a soft neutral shadow is cleaner.
+  const ctaTextColor = isDark ? colors.onPrimary : colors.text;
+  const ctaShadowColor = isDark ? colors.primary : colors.text;
+  const ctaShadowOpacity = isDark ? 0.25 : 0.12;
+  // Gold-as-text fails WCAG AA on light surfaces (#C89B3C → 2.31:1). Use a deeper
+  // bronze-gold for small accent text in light mode; gold stays for fills/borders/icons.
+  const primaryText = isDark ? colors.primary : '#7A5E1C';
 
   const s = StyleSheet.create({
     safe: {
@@ -290,6 +324,8 @@ const OnboardingScreen = ({ navigation }) => {
       paddingHorizontal: 18,
       borderRadius: 16,
       backgroundColor: cardBg,
+      borderWidth: 1,
+      borderColor: colors.border,
       marginBottom: 10,
       shadowColor: colors.text,
       shadowOffset: { width: 0, height: 2 },
@@ -338,12 +374,15 @@ const OnboardingScreen = ({ navigation }) => {
       paddingHorizontal: isSmallPhone ? 10 : isPhone ? 12 : 16,
       borderRadius: 16,
       backgroundColor: cardBg,
+      borderWidth: 1,
+      borderColor: colors.border,
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
     },
     catTileSelected: {
       backgroundColor: `${colors.primary}1F`,
+      borderColor: colors.primary,
     },
     catTileText: {
       fontFamily: 'Inter_400Regular',
@@ -353,7 +392,7 @@ const OnboardingScreen = ({ navigation }) => {
     },
     catTileTextSelected: {
       fontFamily: 'Inter_500Medium',
-      color: colors.primary,
+      color: primaryText,
     },
     catCheckCircle: {
       width: isSmallPhone ? 20 : 22,
@@ -387,10 +426,13 @@ const OnboardingScreen = ({ navigation }) => {
       paddingHorizontal: 18,
       borderRadius: 16,
       backgroundColor: cardBg,
+      borderWidth: 1,
+      borderColor: colors.border,
       marginBottom: 10,
     },
     timeTileSelected: {
       backgroundColor: `${colors.primary}1F`,
+      borderColor: colors.primary,
     },
     timeTileIcon: {
       marginRight: 16,
@@ -429,7 +471,7 @@ const OnboardingScreen = ({ navigation }) => {
 
     /* â”€â”€ Step 5: Name â”€â”€ */
     nameInput: {
-      backgroundColor: cardBg,
+      backgroundColor: colors.surfaceContainerHigh || cardBg,
       borderRadius: 16,
       paddingVertical: 16,
       paddingHorizontal: 18,
@@ -439,6 +481,18 @@ const OnboardingScreen = ({ navigation }) => {
       marginBottom: 10,
       borderWidth: 1,
       borderColor: colors.border,
+    },
+    nameInputFocused: {
+      borderColor: colors.primary,
+    },
+    emailNote: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      lineHeight: 17,
+      marginTop: 2,
+      marginBottom: 4,
+      paddingHorizontal: 4,
     },
     nameSkipHint: {
       fontFamily: 'Inter_400Regular',
@@ -452,6 +506,8 @@ const OnboardingScreen = ({ navigation }) => {
     readyArt: {
       backgroundColor: cardBg,
       borderRadius: 20,
+      borderWidth: 1,
+      borderColor: colors.border,
       paddingVertical: 16,
       paddingHorizontal: 20,
       marginBottom: 12,
@@ -460,6 +516,18 @@ const OnboardingScreen = ({ navigation }) => {
       shadowOpacity: 0.04,
       shadowRadius: 16,
       elevation: 1,
+    },
+    readyArtHeaderRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: 12,
+    },
+    editLink: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: primaryText,
+      letterSpacing: 0.2,
     },
     selCats: {
       flexDirection: 'row',
@@ -519,21 +587,21 @@ const OnboardingScreen = ({ navigation }) => {
       justifyContent: 'center',
       flexDirection: 'row',
       gap: 8,
-      shadowColor: colors.primary,
+      shadowColor: ctaShadowColor,
       shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: 0.2,
+      shadowOpacity: ctaShadowOpacity,
       shadowRadius: 24,
       elevation: 4,
     },
     btnPrimaryText: {
       fontFamily: 'Inter_500Medium',
       fontSize: 17,
-      color: colors.onPrimary,
+      color: ctaTextColor,
       letterSpacing: 0.3,
     },
     btnPrimaryArrow: {
       fontSize: 18,
-      color: colors.onPrimary,
+      color: ctaTextColor,
     },
     btnDisabled: {
       opacity: 0.45,
@@ -550,7 +618,9 @@ const OnboardingScreen = ({ navigation }) => {
         <View style={s.heroGlowBlob} />
         <View style={s.heroLogoWrapper}>
           <Image
-            source={require('../../assets/spark_logo.png')}
+            source={isDark
+              ? require('../../assets/spark_logo_dark.png')
+              : require('../../assets/spark_logo.png')}
             style={s.heroLogoImg}
             resizeMode="contain"
           />
@@ -591,15 +661,17 @@ const OnboardingScreen = ({ navigation }) => {
 
     /* â”€â”€ Step 2: Category Selection â”€â”€ */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s2">
-      <Text style={s.sectionTitle} numberOfLines={1} adjustsFontSizeToFit>
+      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
         {t('onboarding_why', lang)}
       </Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_why_sub', lang)}</Text>
       <View style={s.catGrid}>
         {allCats.map(cat => {
           const category = parentCategories.find((p) => Number(p.id) === Number(cat));
-          const categoryName = category?.name || '';
           const categoryRawName = category?.raw_name || '';
+          const { emoji: catEmoji, text: catLabel } = splitLeadingEmoji(category?.name || '');
+          const imgSource = getCategoryImage(categoryRawName, isDark).source;
+          const iconTileSize = isSmallPhone ? 28 : 32;
           const sel = selectedCats.includes(cat);
           return (
             <TouchableOpacity
@@ -609,10 +681,10 @@ const OnboardingScreen = ({ navigation }) => {
               activeOpacity={0.7}
             >
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: isSmallPhone ? 6 : 8, flex: 1 }}>
-                {getCategoryImage(categoryRawName).source ? (
+                {(imgSource || catEmoji) ? (
                   <View style={{
-                    width: isSmallPhone ? 28 : 32,
-                    height: isSmallPhone ? 28 : 32,
+                    width: iconTileSize,
+                    height: iconTileSize,
                     borderRadius: 8,
                     backgroundColor: sel ? `${colors.primary}16` : `${colors.primary}08`,
                     alignItems: 'center',
@@ -620,24 +692,30 @@ const OnboardingScreen = ({ navigation }) => {
                     overflow: 'hidden',
                     flexShrink: 0,
                   }}>
-                    <Image
-                      source={getCategoryImage(categoryRawName).source}
-                      style={{ width: '100%', height: '100%' }}
-                      resizeMode="cover"
-                    />
+                    {imgSource ? (
+                      <Image
+                        source={imgSource}
+                        style={{ width: '100%', height: '100%' }}
+                        resizeMode="cover"
+                      />
+                    ) : (
+                      <Text style={{ fontSize: isSmallPhone ? 15 : 17 }}>{catEmoji}</Text>
+                    )}
                   </View>
                 ) : null}
                 <Text
                   style={[s.catTileText, sel && s.catTileTextSelected, { flex: 1 }]}
-                  numberOfLines={2}
+                  numberOfLines={1}
+                  adjustsFontSizeToFit
+                  minimumFontScale={0.75}
                 >
-                  {categoryName}
+                  {catLabel}
                 </Text>
               </View>
               <View style={s.catCheckSlot}>
                 {sel && (
                   <View style={s.catCheckCircle}>
-                    <Ionicons name="checkmark" size={isSmallPhone ? 12 : 14} color="#fff" />
+                    <Ionicons name="checkmark" size={isSmallPhone ? 12 : 14} color={colors.onPrimary} />
                   </View>
                 )}
               </View>
@@ -703,6 +781,7 @@ const OnboardingScreen = ({ navigation }) => {
           </TouchableOpacity>
         );
       })}
+      <Text style={s.catHint}>{t('onboarding_reminder_permission_note', lang)}</Text>
     </View>,
 
     /* â”€â”€ Step 5: Name (optional) â”€â”€ */
@@ -712,26 +791,31 @@ const OnboardingScreen = ({ navigation }) => {
       </Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_name_sub', lang)}</Text>
       <TextInput
-        style={s.nameInput}
+        style={[s.nameInput, focusedField === 'name' && s.nameInputFocused]}
         placeholder={t('onboarding_name_placeholder', lang)}
-        placeholderTextColor={colors.textSecondary}
+        placeholderTextColor={colors.mutedText || colors.textSecondary}
         value={userName}
         onChangeText={setUserName}
+        onFocus={() => setFocusedField('name')}
+        onBlur={() => setFocusedField(null)}
         autoCapitalize="words"
         autoCorrect={false}
         returnKeyType="next"
       />
       <TextInput
-        style={s.nameInput}
+        style={[s.nameInput, focusedField === 'email' && s.nameInputFocused]}
         placeholder={t('onboarding_email_placeholder', lang)}
-        placeholderTextColor={colors.textSecondary}
+        placeholderTextColor={colors.mutedText || colors.textSecondary}
         value={userEmail}
         onChangeText={setUserEmail}
+        onFocus={() => setFocusedField('email')}
+        onBlur={() => setFocusedField(null)}
         autoCapitalize="none"
         autoCorrect={false}
         keyboardType="email-address"
         returnKeyType="done"
       />
+      <Text style={s.emailNote}>{t('onboarding_email_note', lang)}</Text>
       <Text style={s.nameSkipHint}>{t('onboarding_name_skip_hint', lang)}</Text>
     </View>,
 
@@ -748,13 +832,18 @@ const OnboardingScreen = ({ navigation }) => {
 
       {/* Selected categories */}
       <View style={s.readyArt}>
-        <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 12 }}>
-          {t('onboarding_cat', lang)} ({(selectedCats.length || 2)})
-        </Text>
+        <View style={s.readyArtHeaderRow}>
+          <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary, letterSpacing: 1, textTransform: 'uppercase' }}>
+            {t('onboarding_cat', lang)} ({(selectedCats.length || 2)})
+          </Text>
+          <TouchableOpacity onPress={() => goToStep(2)} activeOpacity={0.6} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+            <Text style={s.editLink}>{t('onboarding_edit', lang)}</Text>
+          </TouchableOpacity>
+        </View>
         <View style={s.selCats}>
           {(selectedCats.length ? selectedCats : allCats.slice(0, 2)).map(c => (
             <View key={c} style={s.selCatPill}>
-              <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.primary }}>
+              <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: primaryText }}>
                 {(parentCategories.find((p) => Number(p.id) === Number(c))?.name) || ''}
               </Text>
             </View>
@@ -770,8 +859,11 @@ const OnboardingScreen = ({ navigation }) => {
               {t('readingPlan', lang)}
             </Text>
             <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
-              {selectedTimeOption.label} - {selectedTimeOption.dailyStoryTarget} {t('onboarding_story', lang)}
+              {selectedTimeOption.label} - {selectedTimeOption.dailyStoryTarget} {t(selectedTimeOption.dailyStoryTarget === 1 ? 'onboarding_story' : 'onboarding_stories', lang)}
             </Text>
+            <TouchableOpacity onPress={() => goToStep(3)} activeOpacity={0.6} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} style={{ marginTop: 6 }}>
+              <Text style={s.editLink}>{t('onboarding_edit', lang)}</Text>
+            </TouchableOpacity>
           </View>
           <View style={{ flex: 1, paddingLeft: 12 }}>
             <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginBottom: 4 }}>
@@ -780,6 +872,9 @@ const OnboardingScreen = ({ navigation }) => {
             <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
               {reminderOptions.filter(o => selectedReminders.includes(o.reminderWindow)).map(o => o.label).join(', ')}
             </Text>
+            <TouchableOpacity onPress={() => goToStep(4)} activeOpacity={0.6} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} style={{ marginTop: 6 }}>
+              <Text style={s.editLink}>{t('onboarding_edit', lang)}</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -791,7 +886,7 @@ const OnboardingScreen = ({ navigation }) => {
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={s.safe}>
       <StatusBar
-        barStyle="dark-content"
+        barStyle={isDark ? 'light-content' : 'dark-content'}
         backgroundColor={colors.background}
       />
 
@@ -803,7 +898,9 @@ const OnboardingScreen = ({ navigation }) => {
         {/* Left: logo + brand name */}
         <View style={s.headerLogoRow}>
           <Image
-            source={require('../../assets/spark_shortcut_logo.png')}
+            source={isDark
+              ? require('../../assets/spark_logo_dark.png')
+              : require('../../assets/spark_shortcut_logo.png')}
             style={s.headerLogoImg}
             resizeMode="contain"
           />
@@ -867,7 +964,7 @@ const OnboardingScreen = ({ navigation }) => {
               ? t('next', lang)
               : t('onboarding_start_journey', lang)}
           </Text>
-          <Ionicons name="arrow-forward" size={18} color={colors.onPrimary} />
+          <Ionicons name="arrow-forward" size={18} color={ctaTextColor} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>

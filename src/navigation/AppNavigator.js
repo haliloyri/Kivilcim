@@ -13,6 +13,8 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
+import BadgeIcon, { BADGE_MAP } from '../components/BadgeIcon';
+import BadgeShareSheet from '../components/BadgeShareSheet';
 
 import OnboardingScreen from '../screens/OnboardingScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -29,6 +31,74 @@ const Tab = createBottomTabNavigator();
 const CONFETTI_COLORS = ['#FFD166', '#FF6B6B', '#06D6A0', '#4D96FF', '#F4A261', '#B8E1FF'];
 const BADGE_SOUND_ASSET = require('../../assets/sounds/badge.wav');
 
+// Famous quote per badge — shown softly at the bottom of the badge modal and
+// appended to the share text. { q: quote, a: author }
+const BADGE_QUOTES = {
+  first_read:     { q: 'Bin millik yolculuk tek bir adımla başlar.', a: 'Lao Tzu' },
+  explorer:       { q: 'Gerçek keşif, yeni manzaralar aramak değil, yeni gözlere sahip olmaktır.', a: 'Marcel Proust' },
+  sage:           { q: 'Tek bildiğim, hiçbir şey bilmediğimdir.', a: 'Sokrates' },
+  bookworm:       { q: 'Okumak zihne, egzersizin bedene yaptığını yapar.', a: 'Joseph Addison' },
+  streak_7:       { q: 'Biz tekrar tekrar yaptığımız şeyiz; mükemmellik bir eylem değil, alışkanlıktır.', a: 'Aristoteles' },
+  cat_variety_3:  { q: 'Özel bir yeteneğim yok; sadece tutkuyla meraklıyım.', a: 'Albert Einstein' },
+  cat_variety_5:  { q: 'Ne kadar çok okursan o kadar çok bilirsin; ne kadar öğrenirsen o kadar çok yere gidersin.', a: 'Dr. Seuss' },
+  cat_variety_10: { q: 'Dünya bir kitaptır; seyahat etmeyenler yalnızca bir sayfasını okur.', a: 'Aziz Augustinus' },
+  cat_master_5:   { q: 'Bir şeyi basitçe anlatamıyorsan, onu yeterince anlamamışsındır.', a: 'Albert Einstein' },
+  cat_master_10:  { q: 'Mükemmellik küçük şeylerin toplamıdır, ama küçük bir şey değildir.', a: 'Michelangelo' },
+  cat_master_25:  { q: 'Ne yaparsan yap, iyi yap.', a: 'Abraham Lincoln' },
+  cat_master_50:  { q: 'Dehanın yüzde biri ilham, yüzde doksan dokuzu terdir.', a: 'Thomas Edison' },
+  cat_master_100: { q: 'Başarı, küçük çabaların gün be gün tekrarıdır.', a: 'Robert Collier' },
+  philosopher:    { q: 'Sorgulanmamış bir hayat yaşanmaya değmez.', a: 'Sokrates' },
+  save_5:         { q: 'Kitaplığı olmayan ev, ruhu olmayan bedene benzer.', a: 'Cicero' },
+  save_10:        { q: 'Kitaplar, en sessiz ve en sadık dostlardır.', a: 'Charles W. Eliot' },
+  save_50:        { q: 'Bir kütüphaneniz ve bir bahçeniz varsa, her şeyiniz var demektir.', a: 'Cicero' },
+  save_100:       { q: 'İyi bir kitap, ruhun damıtılmış özüdür.', a: 'Thomas Carlyle' },
+  share_1:        { q: 'Bir mum, başka bir mumu yakmakla ışığından bir şey yitirmez.', a: 'Atasözü' },
+  share_10:       { q: 'Bilgi, paylaştıkça çoğalan tek hazinedir.', a: 'Atasözü' },
+  share_20:       { q: 'Başkalarını aydınlatan, kendi yolunu da aydınlatır.', a: 'Atasözü' },
+  share_30:       { q: 'İyi bir fikir, anlatıldıkça büyür.', a: 'Atasözü' },
+  share_50:       { q: 'Paylaşılmayan bilgi, yakılmamış bir mum gibidir.', a: 'Atasözü' },
+  storyteller:    { q: 'İnsanlar gerçekleri unutur ama iyi bir hikâyeyi asla.', a: 'Atasözü' },
+  icebreaker:     { q: 'Her büyük dostluk basit bir merhaba ile başlar.', a: 'Atasözü' },
+};
+
+// Animated tab icon with a soft "pill" highlight behind the active tab.
+// Subtle by design: the pill fades + scales in using a low-opacity tint of the
+// primary gold, so the active tab reads clearly without dominating the bar.
+function TabBarIcon({ focused, color, name, badge }) {
+  const { colors, isDark } = useTheme();
+  const anim = useRef(new Animated.Value(focused ? 1 : 0)).current;
+
+  useEffect(() => {
+    Animated.timing(anim, {
+      toValue: focused ? 1 : 0,
+      duration: 220,
+      easing: Easing.out(Easing.cubic),
+      useNativeDriver: true,
+    }).start();
+  }, [focused, anim]);
+
+  const pillScale = anim.interpolate({ inputRange: [0, 1], outputRange: [0.7, 1] });
+
+  return (
+    <View style={{ width: 58, height: 32, alignItems: 'center', justifyContent: 'center' }}>
+      <Animated.View
+        pointerEvents="none"
+        style={{
+          position: 'absolute',
+          width: 58,
+          height: 32,
+          borderRadius: 16,
+          backgroundColor: isDark ? `${colors.primary}26` : `${colors.primary}22`,
+          opacity: anim,
+          transform: [{ scale: pillScale }],
+        }}
+      />
+      <Ionicons name={name} size={23} color={color} />
+      {badge}
+    </View>
+  );
+}
+
 function MainTabs() {
   const { colors, typography, layout, isDark, lang } = useTheme();
   const { unseenEarnedBadgeCount } = useUserData();
@@ -40,21 +110,25 @@ function MainTabs() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: isDark ? 'rgba(20,20,22,0.88)' : '#fcf9f4',
+          backgroundColor: isDark ? 'rgba(20,20,22,0.92)' : '#FBF7F0',
           borderTopWidth: isDark ? StyleSheet.hairlineWidth : layout.borderWidth,
-          borderTopColor: isDark ? 'rgba(255,255,255,0.05)' : colors.border,
-          height: 92 + androidBottomInset,
-          paddingBottom: androidBottomInset,
-          paddingTop: 10,
+          borderTopColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
+          height: 84 + androidBottomInset,
+          paddingBottom: androidBottomInset + 6,
+          paddingTop: 8,
           marginBottom: Platform.OS === 'android' ? 4 : 0,
         },
-        tabBarActiveTintColor: colors.activeNav || colors.primary,
-        tabBarInactiveTintColor: isDark ? '#8C8C92' : '#6B6B6B',
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: isDark ? '#9A9AA2' : '#8A7E6B',
         tabBarLabelStyle: {
-          fontFamily: 'Inter_600SemiBold',
-          fontSize: 15,
-          textTransform: 'capitalize',
-          letterSpacing: 0.3,
+          fontFamily: 'Inter_500Medium',
+          fontSize: 11.5,
+          textTransform: 'none',
+          letterSpacing: 0.2,
+          marginTop: 5,
+        },
+        tabBarIconStyle: {
+          marginTop: 4,
         },
       }}
     >
@@ -62,9 +136,9 @@ function MainTabs() {
         name="HomeTab" 
         component={HomeScreen} 
         options={{ 
-          tabBarLabel: t('tabHome', lang), 
-          tabBarIcon: ({ color, focused, size }) => (
-            <Ionicons name={focused ? 'compass' : 'compass-outline'} size={26} color={color} />
+          tabBarLabel: t('tabHome', lang),
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon focused={focused} color={color} name="compass" />
           ),
         }}
       />
@@ -72,9 +146,9 @@ function MainTabs() {
         name="LibraryTab" 
         component={LibraryScreen} 
         options={{ 
-          tabBarLabel: t('tabLibrary', lang), 
-          tabBarIcon: ({ color, focused, size }) => (
-            <Ionicons name={focused ? 'book' : 'book-outline'} size={26} color={color} />
+          tabBarLabel: t('tabLibrary', lang),
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon focused={focused} color={color} name="library" />
           ),
         }}
       />
@@ -82,19 +156,21 @@ function MainTabs() {
         name="ProgressTab" 
         component={ProgressScreen} 
         options={{ 
-          tabBarLabel: t('tabProgress', lang), 
+          tabBarLabel: t('tabProgress', lang),
           tabBarIcon: ({ color, focused }) => (
-            <View>
-              <Ionicons name={focused ? 'trending-up' : 'trending-up-outline'} size={26} color={color} />
-              {unseenEarnedBadgeCount > 0 && (
+            <TabBarIcon
+              focused={focused}
+              color={color}
+              name="stats-chart"
+              badge={unseenEarnedBadgeCount > 0 ? (
                 <View style={{
-                  position: 'absolute', top: 0, right: -3,
+                  position: 'absolute', top: 4, right: 14,
                   width: 9, height: 9, borderRadius: 5,
                   backgroundColor: colors.primary,
-                  borderWidth: 1.5, borderColor: isDark ? 'rgba(20,20,22,0.88)' : '#fcf9f4',
+                  borderWidth: 1.5, borderColor: isDark ? 'rgba(20,20,22,0.88)' : '#FBF7F0',
                 }} />
-              )}
-            </View>
+              ) : null}
+            />
           ),
         }}
       />
@@ -102,9 +178,9 @@ function MainTabs() {
         name="ProfileTab" 
         component={ProfileScreen} 
         options={{ 
-          tabBarLabel: t('tabProfile', lang), 
-          tabBarIcon: ({ color, focused, size }) => (
-            <Ionicons name={focused ? 'person' : 'person-outline'} size={26} color={color} />
+          tabBarLabel: t('tabProfile', lang),
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon focused={focused} color={color} name="person" />
           ),
         }}
       />
@@ -115,15 +191,16 @@ function MainTabs() {
 import LaunchScreen from '../screens/LaunchScreen';
 
 export default function AppNavigator() {
-  const { isOnboarded, isPremium, isLoadingUserData, userDataErrorMsg, retryUserDataLoad, activeBadgeModal, closeBadgeModal } = useUserData();
+  const { isOnboarded, isPremium, isLoadingUserData, userDataErrorMsg, retryUserDataLoad, activeBadgeModal, closeBadgeModal, userProfile } = useUserData();
   const { errorMsg, refreshStories } = useStories();
-  const { colors, layout, lang } = useTheme();
+  const { colors, layout, lang, isDark } = useTheme();
   const [isNavigationReady, setIsNavigationReady] = useState(false);
   const navigationRef = useRef(null);
   const modalAnim = useRef(new Animated.Value(0)).current;
   const iconAnim = useRef(new Animated.Value(0.7)).current;
   const confettiAnim = useRef(new Animated.Value(0)).current;
   const soundRef = useRef(null);
+  const [shareSheetBadge, setShareSheetBadge] = useState(null);
 
   useEffect(() => {
     return () => {
@@ -270,15 +347,6 @@ export default function AppNavigator() {
       height: 14,
       borderRadius: 2,
     },
-    modalIconCircle: {
-      width: 80,
-      height: 80,
-      borderRadius: 40,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: 16,
-      borderWidth: 2,
-    },
     modalTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: 22,
@@ -313,12 +381,43 @@ export default function AppNavigator() {
       textTransform: 'uppercase',
       letterSpacing: 0.5,
     },
+    modalBadgeIcon: {
+      width: 80, height: 80, borderRadius: 40,
+      alignItems: 'center', justifyContent: 'center',
+    },
+    modalQuoteWrap: {
+      marginTop: 18, paddingTop: 16, width: '100%',
+      borderTopWidth: layout.borderWidth, borderTopColor: colors.border,
+      alignItems: 'center',
+    },
+    modalQuoteText: {
+      fontFamily: 'PlayfairDisplay_400Regular_Italic',
+      fontSize: 14, lineHeight: 21, color: colors.text,
+      textAlign: 'center',
+    },
+    modalQuoteAuthor: {
+      fontFamily: 'Inter_500Medium', fontSize: 12,
+      color: colors.textSecondary, marginTop: 6,
+    },
+    modalBtnRow: {
+      flexDirection: 'row', alignItems: 'center', gap: 10,
+      alignSelf: 'stretch',
+    },
+    modalShareBtn: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
+      paddingHorizontal: 20, paddingVertical: 12, borderRadius: layout.radius.card,
+      backgroundColor: colors.primary,
+    },
+    modalShareText: {
+      fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.onPrimary,
+    },
     modalCloseBtn: {
       paddingHorizontal: 32,
-      paddingVertical: 10,
+      paddingVertical: 12,
       borderRadius: layout.radius.card,
       borderWidth: 1,
       borderColor: colors.border,
+      alignItems: 'center',
     },
     modalCloseText: {
       fontFamily: 'Inter_500Medium',
@@ -326,6 +425,12 @@ export default function AppNavigator() {
       color: colors.text,
     },
   });
+
+  const modalMeta = activeBadgeModal
+    ? (BADGE_MAP[activeBadgeModal.id] || { icon: 'trophy', colors: ['#C89B3C', '#8C701B'] })
+    : null;
+  const modalQuote = activeBadgeModal ? BADGE_QUOTES[activeBadgeModal.id] : null;
+
 
   return (
     <>
@@ -401,21 +506,17 @@ export default function AppNavigator() {
                 })}
               </View>
 
-              <Animated.View
-                style={[
-                  styles.modalIconCircle,
-                  {
-                    backgroundColor: activeBadgeModal.earned ? colors.primary : colors.backgroundDark,
-                    borderColor: activeBadgeModal.earned ? colors.primary : colors.border,
-                    transform: [{ scale: iconAnim }],
-                  },
-                ]}
-              >
-                {activeBadgeModal.earned ? (
-                  <Text style={{ fontSize: 36 }}>{activeBadgeModal.icon}</Text>
-                ) : (
-                  <Ionicons name="lock-closed" size={28} color={colors.textSecondary} />
-                )}
+              <Animated.View style={[{ marginBottom: 16 }, { transform: [{ scale: iconAnim }] }]}>
+                <View style={[
+                  styles.modalBadgeIcon,
+                  { backgroundColor: activeBadgeModal.earned ? `${modalMeta.colors[0]}1F` : colors.backgroundDark },
+                ]}>
+                  <Ionicons
+                    name={activeBadgeModal.earned ? modalMeta.icon : 'lock-closed'}
+                    size={38}
+                    color={activeBadgeModal.earned ? modalMeta.colors[0] : colors.textSecondary}
+                  />
+                </View>
               </Animated.View>
               <Text style={styles.modalTitle}>{t(activeBadgeModal.titleKey, lang) || activeBadgeModal.titleKey}</Text>
               <Text style={styles.modalSub}>{t(activeBadgeModal.subKey, lang) || activeBadgeModal.subKey}</Text>
@@ -435,13 +536,49 @@ export default function AppNavigator() {
                   {activeBadgeModal.earned ? t('badgeModalEarned', lang) : t('badgeModalLocked', lang)}
                 </Text>
               </View>
-              <TouchableOpacity style={styles.modalCloseBtn} onPress={closeBadgeModal}>
-                <Text style={styles.modalCloseText}>{t('badgeModalClose', lang)}</Text>
-              </TouchableOpacity>
+
+              {modalQuote && (
+                <View style={styles.modalQuoteWrap}>
+                  <Text style={styles.modalQuoteText}>{`“${modalQuote.q}”`}</Text>
+                  <Text style={styles.modalQuoteAuthor}>{`— ${modalQuote.a}`}</Text>
+                </View>
+              )}
+
+              {activeBadgeModal.earned ? (
+                <View style={[styles.modalBtnRow, { marginTop: 20 }]}>
+                  <TouchableOpacity
+                    style={[styles.modalShareBtn, { flex: 1 }]}
+                    onPress={() => {
+                      const b = activeBadgeModal;
+                      closeBadgeModal();
+                      setTimeout(() => setShareSheetBadge(b), 320);
+                    }}
+                    accessibilityRole="button"
+                  >
+                    <Ionicons name="share-social-outline" size={16} color={colors.onPrimary} />
+                    <Text style={styles.modalShareText}>{lang === 'tr' ? 'Paylaş' : 'Share'}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={[styles.modalCloseBtn, { flex: 1 }]} onPress={closeBadgeModal}>
+                    <Text style={styles.modalCloseText}>{t('badgeModalClose', lang)}</Text>
+                  </TouchableOpacity>
+                </View>
+              ) : (
+                <TouchableOpacity style={[styles.modalCloseBtn, { alignSelf: 'stretch', marginTop: 20 }]} onPress={closeBadgeModal}>
+                  <Text style={styles.modalCloseText}>{t('badgeModalClose', lang)}</Text>
+                </TouchableOpacity>
+              )}
             </Animated.View>
           )}
         </View>
       </Modal>
+
+      <BadgeShareSheet
+        visible={!!shareSheetBadge}
+        badge={shareSheetBadge}
+        name={userProfile?.displayName}
+        quote={shareSheetBadge ? BADGE_QUOTES[shareSheetBadge.id] : null}
+        onClose={() => setShareSheetBadge(null)}
+      />
     </>
   );
 }

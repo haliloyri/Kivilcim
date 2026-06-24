@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { 
-  View, Text, ScrollView, TouchableOpacity, StyleSheet, 
-  StatusBar, Platform, Dimensions, Animated, Modal, TextInput, Image, useWindowDimensions, FlatList
+  View, Text, ScrollView, TouchableOpacity, StyleSheet,
+  StatusBar, Platform, Dimensions, Animated, Modal, TextInput, Image, ImageBackground, useWindowDimensions, FlatList
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
@@ -17,8 +17,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme, getCategoryBanner, getBadgeBanner } from '../utils/categoryImages';
 import { shouldShowAd, loadRewarded } from '../utils/ads';
+import BadgeIcon, { BADGE_MAP } from '../components/BadgeIcon';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -54,35 +55,10 @@ const toPascalCase = (value = '') => {
     .join(' ');
 };
 
-const getBadgeColors = (icon, isDark) => {
-  const map = {
-    '🔥': { start: '#FF512F', end: '#DD2476', text: '#FFFFFF' },
-    '✨': { start: '#D4AF37', end: '#B59017', text: '#FFFFFF' },
-    '🌟': { start: '#D4AF37', end: '#B59017', text: '#FFFFFF' },
-    '🌠': { start: '#4CA1AF', end: '#2C3E50', text: '#FFFFFF' },
-    '💎': { start: '#12C2E9', end: '#C471ED', text: '#FFFFFF' },
-    '👑': { start: '#D4AF37', end: '#B59017', text: '#FFFFFF' },
-    '🏆': { start: '#D4AF37', end: '#B59017', text: '#FFFFFF' },
-    '🏅': { start: '#D4AF37', end: '#B59017', text: '#FFFFFF' },
-    '📚': { start: '#5C258D', end: '#4389A2', text: '#FFFFFF' },
-    '📜': { start: '#8E54E9', end: '#4776E6', text: '#FFFFFF' },
-    '🏛️': { start: '#606C88', end: '#3F4C6B', text: '#FFFFFF' },
-    '🧭': { start: '#1D976C', end: '#118050', text: '#FFFFFF' },
-    '🗺️': { start: '#1D976C', end: '#118050', text: '#FFFFFF' },
-    '🌍': { start: '#000428', end: '#004e92', text: '#FFFFFF' },
-    '🌐': { start: '#000428', end: '#004e92', text: '#FFFFFF' },
-    '🎯': { start: '#cb2d3e', end: '#ef473a', text: '#FFFFFF' },
-    '💾': { start: '#4B79A1', end: '#283E51', text: '#FFFFFF' },
-    '📌': { start: '#cb2d3e', end: '#ef473a', text: '#FFFFFF' },
-    '🗄️': { start: '#3a7bd5', end: '#3a6073', text: '#FFFFFF' },
-    '📤': { start: '#DA4453', end: '#89216B', text: '#FFFFFF' },
-    '📣': { start: '#DA4453', end: '#89216B', text: '#FFFFFF' },
-    '🔗': { start: '#2193b0', end: '#6dd5ed', text: '#FFFFFF' },
-    '📡': { start: '#141E30', end: '#243B55', text: '#FFFFFF' },
-    '🗣️': { start: '#00B4DB', end: '#0083B0', text: '#FFFFFF' },
-    '🎙️': { start: '#00B4DB', end: '#0083B0', text: '#FFFFFF' },
-  };
-  return map[icon] || { start: isDark ? '#444444' : '#666666', end: isDark ? '#222222' : '#444444', text: '#FFFFFF' };
+const getBadgeColors = (badgeId, isDark) => {
+  const meta = BADGE_MAP[badgeId];
+  if (meta?.colors) return { start: meta.colors[0], end: meta.colors[1], text: '#FFFFFF' };
+  return { start: isDark ? '#444444' : '#666666', end: isDark ? '#222222' : '#444444', text: '#FFFFFF' };
 };
 
 /** Circular daily progress ring shown in the home header */
@@ -429,8 +405,10 @@ const HomeScreen = ({ navigation }) => {
   // Bugünü al (dinamik)
   const todayStr = new Date().toISOString().split('T')[0];
 
-  // 1. Yayın tarihi geçmiş veya bugün olanları filtrele
-  const publishedStories = (stories || []).filter(s => s.publishDate <= todayStr);
+  // 1. Profilde seçilen içerik sürümünü ve yayın tarihini uygula.
+  const selectedStoryVersion = Number(preferences?.storyVersion) === 2 ? 2 : 1;
+  const versionStories = (stories || []).filter((story) => Number(story.version || 1) === selectedStoryVersion);
+  const publishedStories = versionStories.filter(s => s.publishDate <= todayStr);
 
   // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri gösteririz.
   let prefFiltered = publishedStories;
@@ -1249,6 +1227,49 @@ const HomeScreen = ({ navigation }) => {
       gap: 12,
       marginTop: 12,
     },
+    insightRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 14,
+      backgroundColor: colors.surfaceContainerLowest,
+      borderRadius: 18,
+      borderWidth: 1,
+      padding: 12,
+    },
+    insightIcon: {
+      width: 54,
+      height: 54,
+      borderRadius: 14,
+      overflow: 'hidden',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexShrink: 0,
+    },
+    insightIconImg: {
+      width: '100%',
+      height: '100%',
+    },
+    insightTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 16,
+      lineHeight: 21,
+      color: colors.text,
+    },
+    insightMeta: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      marginTop: 3,
+    },
+    insightAction: {
+      flexShrink: 0,
+      marginLeft: 10,
+      width: 40,
+      height: 40,
+      borderRadius: 20,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
     readyTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: readyTitleFontSize,
@@ -1639,61 +1660,107 @@ const HomeScreen = ({ navigation }) => {
           scrollToOverflowEnabled={true}
         />
 
-        {!loading && sortedStories.length > 0 && (
+        {!loading && sortedStories.length > 0 && (() => {
+          // Banner takes the active category colour (B2). On "All" it keeps the
+          // brand gold; on a category it shifts from a lighter tone (top-left)
+          // to the accent (bottom-right) for soft depth.
+          const isAllFilter = activeFilter === 'all';
+          const activeCatItem = visibleCategoriesList.find((item) => item.key === activeFilter);
+          const activeCatTheme = getCategoryTheme(activeCatItem?.rawName || activeCatItem?.label, isDark);
+          const isBadge = primaryHomeAction.isBadgeCard;
+          // Soft light banner artwork in light mode (badge or category); dark
+          // mode falls back to a coloured gradient.
+          const useBannerImage = !isDark;
+          const badgeAccent = getBadgeColors(primaryHomeAction.badge?.id, isDark).end || colors.primary;
+          const accentColor = isBadge
+            ? badgeAccent
+            : (isAllFilter ? (colors.ctaGradientStart || colors.primary) : activeCatTheme.accent);
+          const bannerCtaColor = accentColor;
+          const bannerColors = isBadge
+            ? [getBadgeColors(primaryHomeAction.badge?.id, isDark).start, getBadgeColors(primaryHomeAction.badge?.id, isDark).end]
+            : isAllFilter
+              ? [colors.ctaGradientStart || colors.primary, colors.ctaGradientEnd || colors.primaryContainer]
+              : [activeCatTheme.borderColor, activeCatTheme.accent];
+          const bannerSource = isBadge
+            ? getBadgeBanner(primaryHomeAction.badge?.id).source
+            : getCategoryBanner(isAllFilter ? 'Tümü' : (activeCatItem?.rawName || activeCatItem?.label)).source;
+          const titleColor = useBannerImage ? '#2E2A22' : '#FFFFFF';
+          const eyebrowColor = useBannerImage ? accentColor : 'rgba(255,255,255,0.9)';
+          const subColor = useBannerImage ? '#5A5246' : 'rgba(255,255,255,0.85)';
+          const progressColor = useBannerImage ? accentColor : 'rgba(255,255,255,0.85)';
+          const progressTrackBg = useBannerImage ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.2)';
+          const iconWrapBg = useBannerImage ? '#FFFFFF' : 'rgba(255,255,255,0.25)';
+          const iconColor = useBannerImage ? accentColor : '#FFFFFF';
+
+          const bannerInner = (
+            <>
+              <View style={styles.primaryActionTop}>
+                <View style={[styles.primaryActionIconWrap, { backgroundColor: iconWrapBg }]}>
+                  {primaryHomeAction.isBadgeCard ? (
+                    <BadgeIcon badge={primaryHomeAction.badge} earned isDark={isDark} size={44} />
+                  ) : (
+                    <Ionicons name={primaryHomeAction.icon} size={26} color={iconColor} />
+                  )}
+                </View>
+                <View style={styles.primaryActionTextWrap}>
+                  <Text style={[styles.primaryActionEyebrow, { color: eyebrowColor }]}>{primaryHomeAction.eyebrow}</Text>
+                  <Text style={[styles.primaryActionTitle, { color: titleColor }]}>{primaryHomeAction.title}</Text>
+                </View>
+              </View>
+              <Text style={[styles.primaryActionSub, { color: subColor }]} numberOfLines={2}>{primaryHomeAction.sub}</Text>
+
+              {primaryHomeAction.isBadgeCard ? (
+                <View style={[styles.primaryActionFooter, { alignItems: 'center' }]}>
+                  <View style={{ flex: 1, marginRight: 16 }}>
+                    <View style={{ height: 6, backgroundColor: progressTrackBg, borderRadius: 3, overflow: 'hidden' }}>
+                      <View style={{ width: `${primaryHomeAction.badge.ratio * 100}%`, height: '100%', backgroundColor: progressColor }} />
+                    </View>
+                  </View>
+                  <Text style={[styles.primaryActionProgress, { color: progressColor }]}>
+                    {primaryHomeAction.badge.current} / {primaryHomeAction.badge.target}
+                  </Text>
+                </View>
+              ) : (
+                <View style={styles.primaryActionFooter}>
+                  <Text style={[styles.primaryActionProgress, { color: progressColor }]}>{doneCount} / {Math.max(personalizedTarget, 1)}</Text>
+                  <View style={styles.primaryActionCta}>
+                    <Text style={[styles.primaryActionCtaText, { color: bannerCtaColor }]}>{primaryHomeAction.cta}</Text>
+                    <Ionicons name="arrow-forward" size={16} color={bannerCtaColor} />
+                  </View>
+                </View>
+              )}
+            </>
+          );
+
+          return (
           <TouchableOpacity
             style={styles.primaryActionCard}
             onPress={primaryHomeAction.isBadgeCard ? () => navigation.navigate('ProgressTab') : openPrimaryHomeAction}
             activeOpacity={0.86}
             accessibilityRole="button"
           >
-            <LinearGradient
-              colors={
-                primaryHomeAction.isBadgeCard 
-                  ? [getBadgeColors(primaryHomeAction.icon, isDark).start, getBadgeColors(primaryHomeAction.icon, isDark).end]
-                  : [colors.ctaGradientStart || colors.primary, colors.ctaGradientEnd || colors.primaryContainer]
-              }
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.primaryActionGradient}
-            >
-              <View style={styles.primaryActionTop}>
-                <View style={styles.primaryActionIconWrap}>
-                  {primaryHomeAction.isBadgeCard ? (
-                    <Text style={{ fontSize: 26, lineHeight: 26 }}>{primaryHomeAction.icon}</Text>
-                  ) : (
-                    <Ionicons name={primaryHomeAction.icon} size={26} color="#FFFFFF" />
-                  )}
-                </View>
-                <View style={styles.primaryActionTextWrap}>
-                  <Text style={[styles.primaryActionEyebrow, primaryHomeAction.isBadgeCard && { color: getBadgeColors(primaryHomeAction.icon, isDark).text }]}>{primaryHomeAction.eyebrow}</Text>
-                  <Text style={[styles.primaryActionTitle, primaryHomeAction.isBadgeCard && { color: getBadgeColors(primaryHomeAction.icon, isDark).text }]}>{primaryHomeAction.title}</Text>
-                </View>
-              </View>
-              <Text style={[styles.primaryActionSub, primaryHomeAction.isBadgeCard && { color: getBadgeColors(primaryHomeAction.icon, isDark).text }]} numberOfLines={2}>{primaryHomeAction.sub}</Text>
-              
-              {primaryHomeAction.isBadgeCard ? (
-                <View style={[styles.primaryActionFooter, { alignItems: 'center' }]}>
-                  <View style={{ flex: 1, marginRight: 16 }}>
-                    <View style={{ height: 6, backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: 3, overflow: 'hidden' }}>
-                      <View style={{ width: `${primaryHomeAction.badge.ratio * 100}%`, height: '100%', backgroundColor: getBadgeColors(primaryHomeAction.icon, isDark).text }} />
-                    </View>
-                  </View>
-                  <Text style={[styles.primaryActionProgress, { color: getBadgeColors(primaryHomeAction.icon, isDark).text }]}>
-                    {primaryHomeAction.badge.current} / {primaryHomeAction.badge.target}
-                  </Text>
-                </View>
-              ) : (
-                <View style={styles.primaryActionFooter}>
-                  <Text style={styles.primaryActionProgress}>{doneCount} / {Math.max(personalizedTarget, 1)}</Text>
-                  <View style={styles.primaryActionCta}>
-                    <Text style={[styles.primaryActionCtaText, { color: colors.ctaGradientStart || colors.primary }]}>{primaryHomeAction.cta}</Text>
-                    <Ionicons name="arrow-forward" size={16} color={colors.ctaGradientStart || colors.primary} />
-                  </View>
-                </View>
-              )}
-            </LinearGradient>
+            {useBannerImage ? (
+              <ImageBackground
+                source={bannerSource}
+                resizeMode="cover"
+                style={styles.primaryActionGradient}
+                imageStyle={{ borderRadius: layout.radius.card }}
+              >
+                {bannerInner}
+              </ImageBackground>
+            ) : (
+              <LinearGradient
+                colors={bannerColors}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.primaryActionGradient}
+              >
+                {bannerInner}
+              </LinearGradient>
+            )}
           </TouchableOpacity>
-        )}
+          );
+        })()}
 
         {/* Featured Story Cards (Horizontal Scroll) */}
         {!loading && sortedStories.length > 0 && (() => {
@@ -1705,32 +1772,18 @@ const HomeScreen = ({ navigation }) => {
               <View style={styles.sectionHeadingRow}>
                  <Text style={[styles.sectionHeading, { marginHorizontal: 0, marginTop: 0, marginBottom: 0 }]}>{t('home_featured_section_title', lang).replace('{{count}}', String(personalizedTarget))}</Text>
               </View>
-              <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                decelerationRate="fast"
-                snapToInterval={featuredCardWidth + featuredCardGap}
-                snapToAlignment="start"
-                contentContainerStyle={styles.featuredScroll}
-              >
+              <View style={{ paddingHorizontal: layout.padding.horizontal, gap: 10 }}>
                 {featuredStories.slice(0, 3).map((story, idx) => {
                   const catTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                   const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                   const displayCat = toPascalCase(t(story.parent_cat || story.cat, lang) || '');
                   const isRead = checkIfRead(story.story_id);
                   const isLocked = !isPremium && !free.some(freeStory => String(freeStory.story_id) === String(story.story_id));
+                  const mins = Number(story.min || story.possible_read_minutes) || personalizedMinutes;
                   return (
                     <TouchableOpacity
                       key={`featured-${story.story_id}`}
-                      style={[
-                        styles.featuredCard,
-                        {
-                          backgroundColor: isDark ? '#1F1A16' : '#F6F1E6',
-                          borderWidth: 2.5,
-                          borderColor: catTheme.borderColor,
-                          opacity: isLocked ? 0.6 : 1,
-                        },
-                      ]}
+                      style={[styles.insightRow, { borderColor: isRead ? `${colors.border}` : `${catTheme.borderColor}66`, opacity: isLocked ? 0.6 : 1 }]}
                       activeOpacity={0.85}
                       onPress={() => {
                         if (isLocked) {
@@ -1740,61 +1793,40 @@ const HomeScreen = ({ navigation }) => {
                         }
                       }}
                     >
-                      <View pointerEvents="none" style={[styles.featuredCardInnerBorder, { borderColor: catTheme.borderColor }]} />
-                      <View>
-                        <View style={styles.featuredCategoryVisual}>
-                          {catImg.source ? (
-                            <Image
-                              source={catImg.source}
-                              style={[
-                                styles.featuredCategoryImage,
-                                {
-                                  opacity: isDark ? 0.8 : 0.95,
-                                  transform: [
-                                    { rotate: catImg.rotate || '0deg' },
-                                    { scaleX: catImg.flip ? -1 : 1 },
-                                  ],
-                                },
-                              ]}
-                              resizeMode="cover"
-                            />
-                          ) : (
-                            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                              <Ionicons name="book-outline" size={26} color={catTheme.accent} />
-                            </View>
-                          )}
-                          <View style={[StyleSheet.absoluteFill, { backgroundColor: catImg.tint || 'transparent' }]} />
-                        </View>
-                        {isRead && <Ionicons name="checkmark-circle" size={18} color={colors.primary} style={{ position: 'absolute', top: 0, right: 0 }} />}
-                        {isLocked && (
-                          <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.4)', borderRadius: 12, alignItems: 'center', justifyContent: 'center' }}>
-                            <Ionicons name="lock-closed" size={32} color="#FFFFFF" />
-                          </View>
+                      <View style={[styles.insightIcon, { backgroundColor: catTheme.backgroundColor }]}>
+                        {catImg.source ? (
+                          <Image source={catImg.source} style={styles.insightIconImg} resizeMode="cover" />
+                        ) : (
+                          <Ionicons name="book-outline" size={24} color={catTheme.accent} />
                         )}
                       </View>
-                      <View style={{ flex: 1, justifyContent: 'space-between', position: 'relative' }}>
-                        <View>
-                          <Text numberOfLines={3} style={styles.featuredCardTitle}>
-                            {story.title}
-                          </Text>
-                        <View style={[styles.featuredCardMetaRow, { marginTop: 8 }]}>
-                          <Text numberOfLines={1} style={[styles.featuredCardCategoryMeta, { color: catTheme.borderColor, textAlign: 'left' }]}>{displayCat}</Text>
-                        </View>
-                        </View>
-                        {!isLocked && (
-                          <TouchableOpacity
-                            style={[styles.featuredCardUseBtn, { marginTop: 12 }]}
-                            onPress={() => navigation.navigate('UseInConversation', { story })}
-                            activeOpacity={0.86}
-                          >
-                            <Text style={styles.featuredCardUseBtnText}>{t('story_detail_use_cta', lang)}</Text>
-                          </TouchableOpacity>
-                        )}
+                      <View style={{ flex: 1, minWidth: 0 }}>
+                        <Text numberOfLines={2} style={styles.insightTitle}>{story.title}</Text>
+                        <Text numberOfLines={1} style={styles.insightMeta}>
+                          <Text style={{ color: catTheme.accent, fontFamily: 'Inter_600SemiBold' }}>{displayCat}</Text>
+                          {`  ·  ${mins} ${lang === 'tr' ? 'dk' : 'min'}`}
+                        </Text>
                       </View>
+                      {isLocked ? (
+                        <Ionicons name="lock-closed" size={20} color={colors.textSecondary} style={{ marginLeft: 10 }} />
+                      ) : isRead ? (
+                        <Ionicons name="checkmark" size={22} color={colors.success} style={{ marginLeft: 10 }} />
+                      ) : (
+                        <TouchableOpacity
+                          style={[styles.insightAction, { backgroundColor: `${catTheme.accent}1A` }]}
+                          onPress={() => navigation.navigate('UseInConversation', { story })}
+                          activeOpacity={0.86}
+                          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                          accessibilityRole="button"
+                          accessibilityLabel={t('story_detail_use_cta', lang)}
+                        >
+                          <Ionicons name="chatbubble-ellipses-outline" size={20} color={catTheme.accent} />
+                        </TouchableOpacity>
+                      )}
                     </TouchableOpacity>
                   );
                 })}
-              </ScrollView>
+              </View>
             </>
           );
         })()}

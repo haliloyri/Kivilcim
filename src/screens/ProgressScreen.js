@@ -5,101 +5,16 @@ import {
   StatusBar, Dimensions
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import { getReadHistory } from '../db/db';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import BadgeIcon, { BADGE_MAP, GradientIcon, ACTION_ICON_COLORS } from '../components/BadgeIcon';
 
 const { width } = Dimensions.get('window');
 const DAILY_TARGET_COMPLETED_KEY = '@kivilcim_analytics_daily_target_completed_day';
-
-const BADGE_MAP = {
-  first_read: { icon: 'star', colors: ['#E6A800', '#B38100'] },
-  explorer: { icon: 'compass', colors: ['#0066CC', '#004B99'] },
-  sage: { icon: 'leaf', colors: ['#7A19FF', '#5610B3'] },
-  bookworm: { icon: 'library', colors: ['#38A169', '#246B46'] },
-  streak_7: { icon: 'flame', colors: ['#E53E3E', '#992929'] },
-  cat_variety_3: { icon: 'map', colors: ['#65A89E', '#215A52'] },
-  cat_variety_5: { icon: 'earth', colors: ['#288CB3', '#0C4A61'] },
-  cat_variety_10: { icon: 'globe', colors: ['#1F6A99', '#0A314D'] },
-  cat_master_5: { icon: 'git-merge', colors: ['#A0A0A0', '#4A4A4A'] },
-  cat_master_10: { icon: 'medal', colors: ['#D4AF37', '#8C701B'] },
-  cat_master_25: { icon: 'ribbon', colors: ['#D4AF37', '#8C701B'] },
-  cat_master_50: { icon: 'diamond', colors: ['#00E5FF', '#007A8C'] },
-  cat_master_100: { icon: 'planet', colors: ['#FF5E99', '#8C1C45'] },
-  philosopher: { icon: 'book', colors: ['#605B56', '#1F1E1C'] },
-  save_5: { icon: 'bookmark', colors: ['#FFB6C1', '#A6557F'] },
-  save_10: { icon: 'bookmarks', colors: ['#FF69B4', '#8A1B55'] },
-  save_50: { icon: 'albums', colors: ['#C71585', '#6B0B47'] },
-  save_100: { icon: 'archive', colors: ['#DB7093', '#711F4A'] },
-  share_1: { icon: 'share-social', colors: ['#87CEFA', '#3A637F'] },
-  share_10: { icon: 'share', colors: ['#1E90FF', '#0D4880'] },
-  share_20: { icon: 'megaphone', colors: ['#00BFFF', '#005580'] },
-  share_30: { icon: 'cellular', colors: ['#4682B4', '#153652'] },
-  share_50: { icon: 'star', colors: ['#C0C0FF', '#5050B0'] },
-  storyteller: { icon: 'mic', colors: ['#D97706', '#92400E'] },
-  icebreaker: { icon: 'chatbubble-ellipses', colors: ['#2563EB', '#1E3A8A'] },
-};
-
-const ProfessionalBadgeIcon = ({ badge, earned, isDark }) => {
-  const meta = BADGE_MAP[badge.id] || { icon: 'trophy', colors: ['#D4AF37', '#8C701B'] };
-  const size = 60;
-  
-  const lockedColors = isDark ? ['#3A3A3A', '#1A1A1A'] : ['#E5E5E5', '#B0B0B0'];
-  const lockedBorder = isDark ? '#4A4A4A' : '#CCCCCC';
-  const earnedBorder = isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)';
-  const colors = earned ? meta.colors : lockedColors;
-  const iconColor = earned ? '#FFFFFF' : (isDark ? '#555555' : '#999999');
-
-  return (
-    <View style={{
-      width: size, height: size, borderRadius: size / 2,
-      marginBottom: 12, elevation: earned ? 4 : 0,
-      shadowColor: earned ? meta.colors[0] : '#000',
-      shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.3, shadowRadius: 6,
-    }}>
-      <LinearGradient
-        colors={colors}
-        start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-        style={{
-          width: '100%', height: '100%', borderRadius: size / 2,
-          justifyContent: 'center', alignItems: 'center',
-          borderWidth: 1.5, borderColor: earned ? earnedBorder : lockedBorder,
-        }}
-      >
-        <View style={{
-          width: size - 8, height: size - 8, borderRadius: (size - 8) / 2,
-          justifyContent: 'center', alignItems: 'center',
-          backgroundColor: isDark ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)',
-        }}>
-          <Ionicons name={earned ? meta.icon : 'lock-closed'} size={size * 0.45} color={iconColor} />
-        </View>
-        {earned && (
-          <LinearGradient
-            colors={['rgba(255,255,255,0.45)', 'rgba(255,255,255,0.02)']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={{
-              position: 'absolute',
-              top: 3,
-              left: 3,
-              right: 3,
-              height: size * 0.38,
-              borderTopLeftRadius: size / 2,
-              borderTopRightRadius: size / 2,
-              borderBottomLeftRadius: size / 3,
-              borderBottomRightRadius: size / 3,
-            }}
-          />
-        )}
-      </LinearGradient>
-    </View>
-  );
-};
 
 const ProgressScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
@@ -108,8 +23,9 @@ const ProgressScreen = ({ navigation }) => {
     preferences, categoryStats, variantUsage, shareCount, favorites,
     isPremium, streakFreezeCredits, streakFreezeDates, useStreakFreeze,
   } = useUserData();
-  const [heatmapData, setHeatmapData] = useState([]);
+  const [heatmapDays, setHeatmapDays] = useState([]);
   const [todayReads, setTodayReads] = useState(0);
+  const [showAllBadges, setShowAllBadges] = useState(false);
   const dailyTarget = preferences?.time?.dailyStoryTarget || 2;
   const dailyProgress = Math.min(todayReads, dailyTarget);
   const isDailyGoalComplete = dailyProgress >= dailyTarget;
@@ -211,28 +127,35 @@ const ProgressScreen = ({ navigation }) => {
     trackDailyCompletion();
   }, [isDailyGoalComplete, todayKey, dailyTarget, dailyProgress, todayReads, lang]);
 
-  // Heatmap: Single DB call, derive todayReads from same dataset
+  // Heatmap: week-aligned last 8 weeks (56 days). Columns = weeks, rows = Mon→Sun.
+  const HEATMAP_WEEKS = 8;
   useEffect(() => {
     const loadHeatmap = async () => {
       try {
-        const historyRows = await getReadHistory(91);
+        const historyRows = await getReadHistory(70);
         const map = {};
         historyRows.forEach(r => { map[r.day] = r.count; });
         setTodayReads(map[todayKey] || 0);
-        const data = [];
-        for (let i = 90; i >= 0; i--) {
-          const d = new Date();
-          d.setHours(0, 0, 0, 0);
-          d.setDate(d.getDate() - i);
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const mondayOffset = (today.getDay() + 6) % 7; // days since Monday
+        const start = new Date(today);
+        start.setDate(today.getDate() - mondayOffset - (HEATMAP_WEEKS - 1) * 7);
+
+        const days = [];
+        for (let i = 0; i < HEATMAP_WEEKS * 7; i++) {
+          const d = new Date(start);
+          d.setDate(start.getDate() + i);
           const key = d.toISOString().split('T')[0];
           const count = map[key] || 0;
           const level = count === 0 ? 0 : count === 1 ? 1 : count <= 3 ? 2 : 3;
-          data.push({ id: 90 - i, level });
+          days.push({ id: i, key, level, future: d > today });
         }
-        setHeatmapData(data);
+        setHeatmapDays(days);
       } catch (e) {
         console.error('Heatmap yükleme hatası:', e);
-        setHeatmapData(Array.from({ length: 91 }, (_, i) => ({ id: i, level: 0 })));
+        setHeatmapDays([]);
         setTodayReads(0);
       }
     };
@@ -306,7 +229,28 @@ const ProgressScreen = ({ navigation }) => {
   }, [closestBadge, isDailyGoalComplete, isStreakProtectedToday, lang, navigation, openBadgeModal, storiesLeftToday]);
 
   // Active reading days count for heatmap KPI
-  const activeDaysCount = useMemo(() => heatmapData.filter(d => d.level > 0).length, [heatmapData]);
+  const activeDaysCount = useMemo(() => heatmapDays.filter(d => d.level > 0).length, [heatmapDays]);
+
+  // Group days into week columns (each column = 7 days Mon→Sun)
+  const heatmapWeeks = useMemo(() => {
+    const cols = [];
+    for (let w = 0; w < Math.ceil(heatmapDays.length / 7); w++) {
+      cols.push(heatmapDays.slice(w * 7, w * 7 + 7));
+    }
+    return cols;
+  }, [heatmapDays]);
+
+  const totalBadges = badges.length;
+  const heatmapCellColor = (cell) => {
+    const lvl = cell ? cell.level : 0;
+    if (lvl === 0) return isDark ? 'rgba(255,255,255,0.06)' : '#ECE6DA';
+    if (lvl === 1) return '#F0D9A8';
+    if (lvl === 2) return colors.primary;
+    return '#8B6A30';
+  };
+  const weekdayLabels = lang === 'tr'
+    ? ['Pzt', '', 'Çar', '', 'Cum', '', 'Paz']
+    : ['Mon', '', 'Wed', '', 'Fri', '', 'Sun'];
 
   const styles = StyleSheet.create({
     safe: { flex: 1, backgroundColor: colors.background },
@@ -524,16 +468,6 @@ const ProgressScreen = ({ navigation }) => {
       alignItems: 'center',
       gap: 12,
     },
-    nextBestIcon: {
-      width: 42,
-      height: 42,
-      borderRadius: 21,
-      backgroundColor: colors.background,
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderWidth: 1,
-      borderColor: `${colors.primary}44`,
-    },
     nextBestLabel: {
       fontFamily: 'Inter_500Medium',
       fontSize: 10,
@@ -565,11 +499,6 @@ const ProgressScreen = ({ navigation }) => {
       flexDirection: 'row',
       gap: 12,
       alignItems: 'center',
-    },
-    actionIcon: {
-      width: 36, height: 36, borderRadius: 18,
-      backgroundColor: colors.backgroundDark,
-      justifyContent: 'center', alignItems: 'center',
     },
     actionTitle: { fontFamily: 'Inter_500Medium', fontSize: 14, color: colors.text, marginBottom: 2 },
     actionSub: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, lineHeight: 18 },
@@ -644,35 +573,119 @@ const ProgressScreen = ({ navigation }) => {
     badgeProgressText: { marginTop: 5, fontFamily: 'Inter_500Medium', fontSize: 10, color: colors.textSecondary },
     badgeItemTitle: { fontFamily: 'PlayfairDisplay_600SemiBold', fontSize: 16, color: colors.text },
     badgeItemSub: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary },
+
+    // ── Redesign: focus card ──────────────────────────────────────
+    focusCard: {
+      flexDirection: 'row', alignItems: 'center', gap: 13,
+      marginHorizontal: layout.padding.horizontal,
+      backgroundColor: `${colors.primary}14`,
+      borderWidth: layout.borderWidth, borderColor: `${colors.primary}33`,
+      borderRadius: 20, padding: 16,
+    },
+    focusIcon: {
+      width: 50, height: 50, borderRadius: 16,
+      backgroundColor: colors.surfaceContainerLowest,
+      alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+    },
+    focusEyebrow: {
+      fontFamily: 'Inter_600SemiBold', fontSize: 11, letterSpacing: 0.8,
+      color: colors.primary, textTransform: 'uppercase',
+    },
+    focusTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold', fontSize: 19, color: colors.text, marginTop: 1,
+    },
+    focusSub: { fontFamily: 'Inter_400Regular', fontSize: 12.5, color: colors.textSecondary, marginTop: 2 },
+    focusTrack: {
+      height: 8, borderRadius: 999, backgroundColor: isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.07)',
+      overflow: 'hidden', marginTop: 10,
+    },
+    focusFill: { height: '100%', borderRadius: 999, backgroundColor: colors.primary },
+    focusPct: { fontFamily: 'Inter_600SemiBold', fontSize: 16, color: colors.primary, flexShrink: 0 },
+
+    // ── Redesign: stat strip ──────────────────────────────────────
+    statStrip: {
+      flexDirection: 'row', gap: 8,
+      paddingHorizontal: layout.padding.horizontal, marginTop: 16,
+    },
+    statCard: {
+      flex: 1, backgroundColor: colors.backgroundDark,
+      borderRadius: 14, paddingVertical: 12, paddingHorizontal: 4, alignItems: 'center',
+    },
+    statCardNum: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 20, color: colors.text },
+    statCardLabel: { fontFamily: 'Inter_400Regular', fontSize: 10.5, color: colors.textSecondary, marginTop: 2 },
+
+    // ── Redesign: heatmap (week-aligned) ──────────────────────────
+    hmCard: {
+      backgroundColor: colors.background, borderWidth: layout.borderWidth, borderColor: colors.border,
+      borderRadius: layout.radius.card, marginHorizontal: layout.padding.horizontal, padding: 16,
+    },
+    hmDay: { fontFamily: 'Inter_400Regular', fontSize: 9, color: colors.textSecondary },
+    hmLegend: { flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', gap: 4, marginTop: 12 },
+    hmLegendText: { fontFamily: 'Inter_400Regular', fontSize: 10, color: colors.textSecondary },
+    hmLegendCell: { width: 11, height: 11, borderRadius: 3 },
+
+    // ── Redesign: flat badge tile ─────────────────────────────────
+    flatBadge: {
+      width: (width - (layout.padding.horizontal * 2) - 12) / 2,
+      backgroundColor: colors.surfaceContainerLowest,
+      borderWidth: layout.borderWidth, borderColor: colors.border,
+      borderRadius: 16, padding: 12,
+    },
+    flatBadgeRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+    flatBadgeIcon: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+    flatBadgeTitle: { fontFamily: 'PlayfairDisplay_600SemiBold', fontSize: 14, color: colors.text },
+    flatBadgeSub: { fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 1 },
+    flatBadgeTrack: { height: 5, borderRadius: 999, backgroundColor: colors.border, overflow: 'hidden', marginTop: 10 },
+    flatBadgeFill: { height: '100%', borderRadius: 999 },
+    flatBadgeProg: { fontFamily: 'Inter_500Medium', fontSize: 10.5, color: colors.textSecondary, marginTop: 5 },
+    seeAllBtn: {
+      marginHorizontal: layout.padding.horizontal, marginTop: 12,
+      borderRadius: 12, borderWidth: layout.borderWidth, borderColor: colors.border,
+      paddingVertical: 12, alignItems: 'center', backgroundColor: colors.backgroundDark,
+    },
+    seeAllText: { fontFamily: 'Inter_600SemiBold', fontSize: 13, color: colors.text },
+    sectionHeaderRow: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      paddingHorizontal: layout.padding.horizontal, marginTop: 24, marginBottom: 8,
+    },
   });
 
-  const renderBadgeItem = (badge, progressMeta) => (
-    <TouchableOpacity
-      key={badge.id}
-      activeOpacity={0.7}
-      onPress={() => openBadgeModal(badge)}
-      style={[styles.badgeItem, !badge.earned && { opacity: 0.55 }]}
-    >
-      <ProfessionalBadgeIcon badge={badge} earned={badge.earned} isDark={isDark} />
-      <Text style={styles.badgeItemTitle}>{t(badge.titleKey, lang) || badge.titleKey}</Text>
-      <Text style={styles.badgeItemSub}>{t(badge.subKey, lang) || badge.subKey}</Text>
-      {!badge.earned && progressMeta ? (
-        <>
-          <View style={styles.badgeProgressTrack}>
-            <View
-              style={[
-                styles.badgeProgressFill,
-                { width: `${Math.min(100, Math.round((progressMeta.current / Math.max(1, progressMeta.target)) * 100))}%` },
-              ]}
-            />
+  // Flat badge tile (replaces glossy 3D BadgeIcon to match the soft design)
+  const renderBadgeItem = (badge, progressMeta) => {
+    const meta = BADGE_MAP[badge.id] || { icon: 'trophy', colors: ['#C89B3C', '#8C701B'] };
+    const accent = meta.colors[0];
+    const earned = badge.earned;
+    const iconBg = earned ? `${accent}1F` : (isDark ? 'rgba(255,255,255,0.06)' : '#ECE6DA');
+    const pct = progressMeta ? Math.min(100, Math.round((progressMeta.current / Math.max(1, progressMeta.target)) * 100)) : 0;
+    return (
+      <TouchableOpacity
+        key={badge.id}
+        activeOpacity={0.8}
+        onPress={() => openBadgeModal(badge)}
+        style={styles.flatBadge}
+      >
+        <View style={styles.flatBadgeRow}>
+          <View style={[styles.flatBadgeIcon, { backgroundColor: iconBg }]}>
+            <Ionicons name={earned ? meta.icon : 'lock-closed'} size={20} color={earned ? accent : colors.textSecondary} />
           </View>
-          <Text style={styles.badgeProgressText}>
-            {`${Math.min(progressMeta.current, progressMeta.target)}/${progressMeta.target}`}
-          </Text>
-        </>
-      ) : null}
-    </TouchableOpacity>
-  );
+          <View style={{ flex: 1, minWidth: 0 }}>
+            <Text numberOfLines={1} style={styles.flatBadgeTitle}>{t(badge.titleKey, lang) || badge.titleKey}</Text>
+            <Text numberOfLines={1} style={styles.flatBadgeSub}>{t(badge.subKey, lang) || badge.subKey}</Text>
+          </View>
+        </View>
+        {!earned && progressMeta ? (
+          <>
+            <View style={styles.flatBadgeTrack}>
+              <View style={[styles.flatBadgeFill, { width: `${pct}%`, backgroundColor: accent }]} />
+            </View>
+            <Text style={styles.flatBadgeProg}>
+              {`${Math.min(progressMeta.current, progressMeta.target)}/${progressMeta.target}`}
+            </Text>
+          </>
+        ) : null}
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
@@ -680,35 +693,71 @@ const ProgressScreen = ({ navigation }) => {
 
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
         <View style={styles.homeHeader}>
-          <Text style={styles.greetName}>{t('yourSparks', lang)}</Text>
+          <Text style={styles.greetName}>{t('tabProgress', lang)}</Text>
         </View>
 
-        <View style={styles.nextBestCard}>
-          <View style={styles.nextBestIcon}>
-            <Ionicons name={nextBestAction.icon} size={22} color={colors.primary} />
+        {/* ── Focus card: the single "next step" (merges 3 old cards) ── */}
+        <TouchableOpacity
+          style={styles.focusCard}
+          activeOpacity={0.85}
+          onPress={nextBestAction.action || (closestBadge ? () => openBadgeModal(closestBadge) : undefined)}
+          disabled={!nextBestAction.action && !closestBadge}
+          accessibilityRole="button"
+          accessibilityLabel={nextBestAction.title}
+        >
+          <View style={styles.focusIcon}>
+            <Ionicons name={nextBestAction.icon} size={24} color={colors.primary} />
           </View>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.nextBestLabel}>{t('progressNextBestLabel', lang)}</Text>
-            <Text style={styles.nextBestTitle}>{nextBestAction.title}</Text>
-            <Text style={styles.nextBestSub}>{nextBestAction.subtitle}</Text>
+          <View style={{ flex: 1, minWidth: 0 }}>
+            <Text style={styles.focusEyebrow}>{t('progressNextBestLabel', lang)}</Text>
+            <Text style={styles.focusTitle} numberOfLines={1}>{nextBestAction.title}</Text>
+            <Text style={styles.focusSub} numberOfLines={2}>{nextBestAction.subtitle}</Text>
+            {closestBadge && (
+              <View style={styles.focusTrack}>
+                <View style={[styles.focusFill, { width: `${Math.round(closestBadge.ratio * 100)}%` }]} />
+              </View>
+            )}
           </View>
-          {nextBestAction.action && (
-            <TouchableOpacity
-              style={styles.actionButton}
-              onPress={nextBestAction.action}
-              accessibilityRole="button"
-              accessibilityLabel={nextBestAction.cta}
-            >
-              <Text style={styles.actionButtonText}>{nextBestAction.cta}</Text>
-            </TouchableOpacity>
-          )}
+          {closestBadge ? (
+            <Text style={styles.focusPct}>{`${Math.round(closestBadge.ratio * 100)}%`}</Text>
+          ) : nextBestAction.action ? (
+            <Ionicons name="chevron-forward" size={18} color={colors.primary} />
+          ) : null}
+        </TouchableOpacity>
+
+        {/* ── Stat strip (one row, no duplicated streak/reads) ──────── */}
+        <View style={styles.statStrip}>
+          <View style={styles.statCard}>
+            <Text style={styles.statCardNum}>{streak}</Text>
+            <Text style={styles.statCardLabel}>{t('statStreak', lang)}</Text>
+          </View>
+          <View style={styles.statCard}>
+            <Text style={styles.statCardNum}>{totalReads}</Text>
+            <Text style={styles.statCardLabel}>{t('statRead', lang)}</Text>
+          </View>
+          <View style={styles.statCard}>
+            <Text style={styles.statCardNum}>
+              {earnedBadgesList.length}
+              <Text style={{ fontSize: 12, color: colors.textSecondary }}>{`/${totalBadges}`}</Text>
+            </Text>
+            <Text style={styles.statCardLabel}>{t('statEarned', lang)}</Text>
+          </View>
+          <View style={[styles.statCard, isDailyGoalComplete && { backgroundColor: `${colors.success}1A` }]}>
+            {isDailyGoalComplete ? (
+              <Ionicons name="checkmark" size={20} color={colors.success} style={{ marginTop: 2 }} />
+            ) : (
+              <Text style={styles.statCardNum}>{`${dailyProgress}/${dailyTarget}`}</Text>
+            )}
+            <Text style={[styles.statCardLabel, isDailyGoalComplete && { color: colors.success }]}>
+              {lang === 'tr' ? 'Bugün' : 'Today'}
+            </Text>
+          </View>
         </View>
 
-        {/* ── Today Hero Card: Streak + Daily Goal + Spotlight ───── */}
+        {/* legacy hidden block kept out — replaced by focus card + stat strip */}
+        {false && (
         <View style={styles.heroCard}>
-          {/* Row 1: Streak tile + Daily Goal tile side by side */}
           <View style={styles.heroTilesRow}>
-            {/* Tile 1: Streak */}
             <View style={styles.heroTile}>
               <View style={styles.heroTileHeader}>
                 <Ionicons name="flame" size={12} color={colors.textSecondary} />
@@ -771,7 +820,7 @@ const ProgressScreen = ({ navigation }) => {
                 <Text style={styles.heroTileLabel}>{t('progress_spotlight_label', lang)}</Text>
               </View>
               <View style={styles.heroSpotlightRow}>
-                <Text style={{ fontSize: 26 }}>{closestBadge.icon}</Text>
+                <BadgeIcon badge={closestBadge} earned={false} isDark={isDark} size={44} />
                 <View style={{ flex: 1 }}>
                   <Text style={styles.heroSpotlightTitle}>{t(closestBadge.titleKey, lang)}</Text>
                   <View style={styles.heroSpotlightBarTrack}>
@@ -784,6 +833,7 @@ const ProgressScreen = ({ navigation }) => {
             </TouchableOpacity>
           )}
         </View>
+        )}
 
         {(isStreakAtRisk || isStreakProtectedToday) && (
           <View style={styles.freezeCard}>
@@ -823,116 +873,56 @@ const ProgressScreen = ({ navigation }) => {
           </View>
         )}
 
-        {/* ── Action Cards (daily + category; streak card removed) ─ */}
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionLabel}>{t('progressActionsTitle', lang)}</Text>
-        </View>
-        <View style={styles.actionsWrap}>
-          {!isDailyGoalComplete && (
-            <View style={styles.actionCard}>
-              <View style={styles.actionIcon}><Text style={{ fontSize: 16 }}>📖</Text></View>
-              <View style={{ flex: 1 }}>
-                <Text style={styles.actionTitle}>{t('progressActionDailyTitle', lang)}</Text>
-                <Text style={styles.actionSub}>
-                  {t('progressActionDailySub', lang).replace('{{count}}', String(Math.max(1, storiesLeftToday)))}
-                </Text>
-              </View>
-              <TouchableOpacity
-                style={styles.actionButton}
-                onPress={() => navigation.navigate('HomeTab')}
-                accessibilityRole="button"
-                accessibilityLabel={t('progressActionOpenHome', lang)}
-              >
-                <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
-              </TouchableOpacity>
-            </View>
-          )}
-          <View style={styles.actionCard}>
-            <View style={styles.actionIcon}><Text style={{ fontSize: 16 }}>🏅</Text></View>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.actionTitle}>{t('progressActionCategoryTitle', lang)}</Text>
-              <Text style={styles.actionSub}>
-                {categoryAction
-                  ? t('progressActionCategorySub', lang)
-                      .replace('{{count}}', String(categoryAction.remaining))
-                      .replace('{{category}}', t(categoryAction.category, lang))
-                  : t('progressActionCategoryFallback', lang)}
-              </Text>
-            </View>
-            <TouchableOpacity
-              style={styles.actionButton}
-              onPress={() => navigation.navigate('HomeTab')}
-              accessibilityRole="button"
-              accessibilityLabel={t('progressActionOpenHome', lang)}
-            >
-              <Text style={styles.actionButtonText}>{t('progressActionOpenHome', lang)}</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        {/* ── Stats Row ──────────────────────────────────────────── */}
-
-        <View style={styles.statsRow}>
-          <View style={styles.statBox}>
-            <Text style={styles.statNum}>{totalReads}</Text>
-            <Text style={styles.statLabel}>{t('statRead', lang)}</Text>
-          </View>
-          <View style={styles.statBox}>
-            <Text style={styles.statNum}>{earnedBadgesList.length}</Text>
-            <Text style={styles.statLabel}>{t('statEarned', lang)}</Text>
-          </View>
-          <View style={styles.statBox}>
-            <Text style={styles.statNum}>{streak}</Text>
-            <Text style={styles.statLabel}>{t('statStreak', lang)}</Text>
-          </View>
-          <View style={styles.statBox}>
-            <Text style={styles.statNum}>{usedStoriesCount}</Text>
-            <Text style={styles.statLabel}>{t('statTold', lang)}</Text>
-          </View>
-        </View>
-
-        {/* ── Heatmap + KPIs ─────────────────────────────────────── */}
-        <View style={styles.sectionHeader}>
+        {/* ── Heatmap (week-aligned: rows=Mon→Sun, cols=weeks) ───── */}
+        <View style={styles.sectionHeaderRow}>
           <Text style={styles.sectionLabel}>{t('readingHabit', lang)}</Text>
+          <Text style={styles.hmLegendText}>
+            {`${HEATMAP_WEEKS} ${lang === 'tr' ? 'hafta' : 'weeks'} · ${activeDaysCount} ${lang === 'tr' ? 'aktif gün' : 'active days'}`}
+          </Text>
         </View>
-        <View style={styles.heatmapCard}>
-          <View style={styles.heatmapKpiRow}>
-            <View style={styles.heatmapKpi}>
-              <Text style={styles.heatmapKpiNum}>{activeDaysCount}</Text>
-              <Text style={styles.heatmapKpiLabel}>{t('heatmapReadingDays', lang)}</Text>
+        <View style={styles.hmCard}>
+          <View style={{ flexDirection: 'row' }}>
+            <View style={{ width: 26, marginRight: 6 }}>
+              {weekdayLabels.map((d, i) => (
+                <View key={i} style={{ height: 20, marginBottom: i < 6 ? 5 : 0, justifyContent: 'center' }}>
+                  <Text style={styles.hmDay}>{d}</Text>
+                </View>
+              ))}
             </View>
-            <View style={styles.heatmapKpi}>
-              <Text style={styles.heatmapKpiNum}>{longestStreak}</Text>
-              <Text style={styles.heatmapKpiLabel}>{t('longestStreak', lang)}</Text>
+            <View style={{ flex: 1 }}>
+              {[0, 1, 2, 3, 4, 5, 6].map((row) => (
+                <View key={row} style={{ flexDirection: 'row', gap: 5, marginBottom: row < 6 ? 5 : 0 }}>
+                  {heatmapWeeks.map((col, ci) => {
+                    const cell = col[row];
+                    return (
+                      <View
+                        key={ci}
+                        style={{
+                          flex: 1, height: 20, borderRadius: 4,
+                          backgroundColor: heatmapCellColor(cell),
+                          opacity: cell && cell.future ? 0.3 : 1,
+                        }}
+                      />
+                    );
+                  })}
+                </View>
+              ))}
             </View>
           </View>
-          <View style={styles.heatmapGrid}>
-            {heatmapData.map(item => (
-              <View
-                key={item.id}
-                style={[
-                  styles.heatmapSquare,
-                  {
-                    backgroundColor: item.level === 0 ? `${colors.backgroundDark}88` :
-                                     item.level === 1 ? '#DBCFA7' :
-                                     item.level === 2 ? colors.primary : '#8B6A30',
-                  },
-                ]}
-              />
-            ))}
-          </View>
-          <View style={styles.heatmapLegend}>
-            <Text style={styles.heatmapLegendText}>{t('less', lang)}</Text>
-            <View style={[styles.heatmapSquare, { backgroundColor: colors.backgroundDark, marginHorizontal: 4 }]} />
-            <View style={[styles.heatmapSquare, { backgroundColor: colors.primary, marginHorizontal: 4 }]} />
-            <View style={[styles.heatmapSquare, { backgroundColor: '#8B6A30', marginHorizontal: 4 }]} />
-            <Text style={styles.heatmapLegendText}>{t('more', lang)}</Text>
+          <View style={styles.hmLegend}>
+            <Text style={styles.hmLegendText}>{t('less', lang)}</Text>
+            <View style={[styles.hmLegendCell, { backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : '#ECE6DA' }]} />
+            <View style={[styles.hmLegendCell, { backgroundColor: '#F0D9A8' }]} />
+            <View style={[styles.hmLegendCell, { backgroundColor: colors.primary }]} />
+            <View style={[styles.hmLegendCell, { backgroundColor: '#8B6A30' }]} />
+            <Text style={styles.hmLegendText}>{t('more', lang)}</Text>
           </View>
         </View>
 
-        {/* ── Badge Collection (Near / Earned / Locked) ──────────── */}
-        <View style={styles.sectionHeader}>
+        {/* ── Badges (near + earned; locked collapsed behind a toggle) ── */}
+        <View style={styles.sectionHeaderRow}>
           <Text style={styles.sectionLabel}>{t('achievementBadges', lang)}</Text>
+          <Text style={styles.hmLegendText}>{`${earnedBadgesList.length}/${totalBadges}`}</Text>
         </View>
 
         {nearBadges.length > 0 && (
@@ -958,14 +948,29 @@ const ProgressScreen = ({ navigation }) => {
         )}
 
         {lockedBadges.length > 0 && (
-          <>
-            <View style={styles.badgeGroupHeader}>
-              <Text style={styles.badgeGroupLabel}>{t('badgesGroupLocked', lang)}</Text>
-            </View>
-            <View style={styles.badgeContainer}>
-              {lockedBadges.map(b => renderBadgeItem(b, badgeProgressMeta[b.id] || null))}
-            </View>
-          </>
+          showAllBadges ? (
+            <>
+              <View style={styles.badgeGroupHeader}>
+                <Text style={styles.badgeGroupLabel}>{t('badgesGroupLocked', lang)}</Text>
+              </View>
+              <View style={styles.badgeContainer}>
+                {lockedBadges.map(b => renderBadgeItem(b, badgeProgressMeta[b.id] || null))}
+              </View>
+            </>
+          ) : (
+            <TouchableOpacity
+              style={styles.seeAllBtn}
+              activeOpacity={0.8}
+              onPress={() => setShowAllBadges(true)}
+              accessibilityRole="button"
+            >
+              <Text style={styles.seeAllText}>
+                {lang === 'tr'
+                  ? `Kilitli rozetleri gör (${lockedBadges.length})`
+                  : `Show locked badges (${lockedBadges.length})`}
+              </Text>
+            </TouchableOpacity>
+          )
         )}
       </ScrollView>
     </SafeAreaView>

@@ -420,6 +420,23 @@ export const getNotificationWindowLabel = (window, lang = 'tr') => {
 };
 
 /**
+ * Ensure notification permission, prompting the OS dialog in-context if undetermined.
+ * Safe to call multiple times: iOS/Android only surface the system dialog once.
+ * @returns {Promise<boolean>} whether permission is granted
+ */
+export async function ensureNotificationPermission() {
+  try {
+    const { status } = await Notifications.getPermissionsAsync();
+    if (status === 'granted') return true;
+    const { status: askStatus } = await Notifications.requestPermissionsAsync();
+    return askStatus === 'granted';
+  } catch (error) {
+    console.warn('Notification permission request failed:', error);
+    return false;
+  }
+}
+
+/**
  * Cancel all scheduled notifications.
  */
 export async function cancelAllNotifications() {

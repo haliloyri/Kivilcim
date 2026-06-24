@@ -27,7 +27,7 @@ export const waitForData = () => _dataReadyPromise;
 //  on the next app launch. This deletes the old DB
 //  and copies the fresh one from assets/kivilcim.db.
 // ──────────────────────────────────────────────────────
-const DB_VERSION = 11;
+const DB_VERSION = 16;
 const DB_VERSION_KEY = 'db_version';
 
 const getVersionFilePath = () =>
@@ -54,6 +54,39 @@ const writeStoredVersion = async (v) => {
 // ──────────────────────────────────────────────────────
 const populateCategoryMappings = async (db) => {
   // Legacy category_mappings discarded. New schema uses categories, subcategories directly via the DB file.
+};
+
+// Matches any run of leading whitespace, emoji, pictographs, symbols and the
+// invisible joiners/variation-selectors that accompany them.
+const LEADING_SYMBOL_RE = /^[\s←-⇿⌀-➿⬀-⯿︀-️‍\u{1F000}-\u{1FAFF}]+/u;
+
+const stripLeadingSymbols = (value) =>
+  String(value || '').replace(LEADING_SYMBOL_RE, '').trim();
+
+/**
+ * Removes emoji/symbol prefixes from category translations (e.g. the bundled
+ * Admin DB ships English names like "💰 Finance"). Runs on every init — including
+ * right after the DB is re-copied from assets on a force reset — so the emoji
+ * never resurfaces. Keeps category labels consistent across all languages.
+ */
+const sanitizeCategoryTranslations = async (db) => {
+  const rows = await db.getAllAsync(
+    `SELECT id, translation FROM categories_translations`
+  );
+  let cleaned = 0;
+  for (const row of rows) {
+    const next = stripLeadingSymbols(row.translation);
+    if (next && next !== row.translation) {
+      await db.runAsync(
+        `UPDATE categories_translations SET translation = ? WHERE id = ?`,
+        [next, row.id]
+      );
+      cleaned += 1;
+    }
+  }
+  if (cleaned > 0) {
+    console.log('sanitizeCategoryTranslations: cleaned ' + cleaned + ' category labels.');
+  }
 };
 
 const normalizeCategoryId = (value) => {
@@ -124,6 +157,61 @@ const migrateThirtySecColumn = async (db) => {
   await db.execAsync(`ALTER TABLE stories ADD COLUMN thirty_sec TEXT;`);
 
   console.log('migrateThirtySecColumn: thirty_sec column added.');
+};
+
+const migrateStoryVersion = async (db) => {
+  const columns = await db.getAllAsync(`PRAGMA table_info(stories)`);
+  const hasVersion = columns.some((c) => c.name === 'version');
+
+  if (!hasVersion) {
+    await db.execAsync(`ALTER TABLE stories ADD COLUMN version INTEGER DEFAULT 1;`);
+  }
+
+  await db.execAsync(`UPDATE stories SET version = 1 WHERE version IS NULL;`);
+};
+
+const migrateStoryDuration = async (db) => {
+  const columns = await db.getAllAsync(`PRAGMA table_info(stories)`);
+  const names = new Set(columns.map((column) => column.name));
+
+  if (!names.has('current_read_minutes')) {
+    await db.execAsync(`ALTER TABLE stories ADD COLUMN current_read_minutes INTEGER DEFAULT 1;`);
+  }
+  if (!names.has('possible_read_minutes')) {
+    await db.execAsync(`ALTER TABLE stories ADD COLUMN possible_read_minutes INTEGER DEFAULT 1;`);
+  }
+  if (!names.has('target_word_count')) {
+    await db.execAsync(`ALTER TABLE stories ADD COLUMN target_word_count INTEGER DEFAULT 160;`);
+  }
+  if (!names.has('target_word_tolerance')) {
+    await db.execAsync(`ALTER TABLE stories ADD COLUMN target_word_tolerance INTEGER DEFAULT 40;`);
+  }
+
+  await db.execAsync(`
+    UPDATE stories
+    SET current_read_minutes = COALESCE(current_read_minutes, 1),
+        possible_read_minutes = COALESCE(possible_read_minutes, 1),
+        target_word_count = COALESCE(target_word_count, 160),
+        target_word_tolerance = COALESCE(target_word_tolerance, 40);
+  `);
+};
+
+const ensureStoryConversationVariants = async (db) => {
+  await db.execAsync(`
+    CREATE TABLE IF NOT EXISTS story_conversation_variants (
+      story_id INTEGER NOT NULL,
+      lang_code TEXT NOT NULL,
+      punchline TEXT,
+      thirty_sec TEXT,
+      question TEXT,
+      key_contrast TEXT,
+      PRIMARY KEY (story_id, lang_code),
+      FOREIGN KEY (story_id) REFERENCES stories(id)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_story_conversation_variants_lang
+      ON story_conversation_variants(lang_code);
+  `);
 };
 
 const migrateUserSelectedCategoriesToIds = async (db) => {
@@ -285,7 +373,15 @@ export const initDb = async () => {
 
     await migrateThirtySecColumn(db);
 
+    await migrateStoryVersion(db);
+
+    await migrateStoryDuration(db);
+
+    await ensureStoryConversationVariants(db);
+
     await populateCategoryMappings(db);
+
+    await sanitizeCategoryTranslations(db);
 
   } catch (error) {
     console.error('Database initialization error:', error);
@@ -326,10 +422,14 @@ export const getStoriesForLang = async (lang = 'tr') => {
   const rows = await db.getAllAsync(`
     SELECT
       s.id,
+      COALESCE(s.version, 1) AS version,
       b.id AS source_book_id,
       b.author,
       b.publish_year AS publishDate,
-      3 AS min,
+      COALESCE(s.current_read_minutes, 1) AS min,
+      COALESCE(s.possible_read_minutes, 1) AS possible_read_minutes,
+      COALESCE(s.target_word_count, 160) AS target_word_count,
+      COALESCE(s.target_word_tolerance, 40) AS target_word_tolerance,
       sub.subcategory_name AS cat,
       sub.subcategory_name AS cat_display,
       c.id AS parent_cat_id,
@@ -339,6 +439,10 @@ export const getStoriesForLang = async (lang = 'tr') => {
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
       COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
       COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
+      COALESCE(NULLIF(scv.punchline, ''),    scv_tr.punchline,    '') AS conversation_punchline,
+      COALESCE(NULLIF(scv.thirty_sec, ''),   scv_tr.thirty_sec,   '') AS conversation_thirty_sec,
+      COALESCE(NULLIF(scv.question, ''),     scv_tr.question,     '') AS conversation_question,
+      COALESCE(NULLIF(scv.key_contrast, ''), scv_tr.key_contrast,'') AS conversation_key_contrast,
       COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
       c.category_name AS parent_cat_raw
     FROM stories s
@@ -351,11 +455,13 @@ export const getStoriesForLang = async (lang = 'tr') => {
     -- Story Translations
     LEFT JOIN story_translations st    ON st.story_id = s.id AND st.lang_code = ?
     LEFT JOIN story_translations st_tr ON st_tr.story_id = s.id AND st_tr.lang_code = 'tr'
+    LEFT JOIN story_conversation_variants scv    ON scv.story_id = s.id AND scv.lang_code = ?
+    LEFT JOIN story_conversation_variants scv_tr ON scv_tr.story_id = s.id AND scv_tr.lang_code = 'tr'
     -- Book Translations
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
     ORDER BY s.sort_order ASC
-  `, [lang, lang, lang]);
+  `, [lang, lang, lang, lang]);
 
   return rows.map(r => ({
     ...r,
@@ -373,10 +479,14 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
   const r = await db.getFirstAsync(`
     SELECT
       s.id,
+      COALESCE(s.version, 1) AS version,
       b.id AS source_book_id,
       b.author,
       b.publish_year AS publishDate,
-      3 AS min,
+      COALESCE(s.current_read_minutes, 1) AS min,
+      COALESCE(s.possible_read_minutes, 1) AS possible_read_minutes,
+      COALESCE(s.target_word_count, 160) AS target_word_count,
+      COALESCE(s.target_word_tolerance, 40) AS target_word_tolerance,
       sub.subcategory_name AS cat,
       sub.subcategory_name AS cat_display,
       c.id AS parent_cat_id,
@@ -386,6 +496,10 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
       COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
       COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
+      COALESCE(NULLIF(scv.punchline, ''),    scv_tr.punchline,    '') AS conversation_punchline,
+      COALESCE(NULLIF(scv.thirty_sec, ''),   scv_tr.thirty_sec,   '') AS conversation_thirty_sec,
+      COALESCE(NULLIF(scv.question, ''),     scv_tr.question,     '') AS conversation_question,
+      COALESCE(NULLIF(scv.key_contrast, ''), scv_tr.key_contrast,'') AS conversation_key_contrast,
       COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
       c.category_name AS parent_cat_raw
     FROM stories s
@@ -398,11 +512,13 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
     -- Story Translations
     LEFT JOIN story_translations st    ON st.story_id = s.id AND st.lang_code = ?
     LEFT JOIN story_translations st_tr ON st_tr.story_id = s.id AND st_tr.lang_code = 'tr'
+    LEFT JOIN story_conversation_variants scv    ON scv.story_id = s.id AND scv.lang_code = ?
+    LEFT JOIN story_conversation_variants scv_tr ON scv_tr.story_id = s.id AND scv_tr.lang_code = 'tr'
     -- Book Translations
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
     WHERE s.id = ?
-  `, [lang, lang, lang, storyId]);
+  `, [lang, lang, lang, lang, storyId]);
 
   if (!r) return null;
   return {
@@ -427,10 +543,14 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
   const rows = await db.getAllAsync(`
     SELECT
       s.id,
+      COALESCE(s.version, 1) AS version,
       b.id AS source_book_id,
       b.author,
       b.publish_year AS publishDate,
-      3 AS min,
+      COALESCE(s.current_read_minutes, 1) AS min,
+      COALESCE(s.possible_read_minutes, 1) AS possible_read_minutes,
+      COALESCE(s.target_word_count, 160) AS target_word_count,
+      COALESCE(s.target_word_tolerance, 40) AS target_word_tolerance,
       sub.subcategory_name AS cat,
       sub.subcategory_name AS cat_display,
       c.id AS parent_cat_id,
@@ -440,6 +560,10 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
       COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
       COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
+      COALESCE(NULLIF(scv.punchline, ''),    scv_tr.punchline,    '') AS conversation_punchline,
+      COALESCE(NULLIF(scv.thirty_sec, ''),   scv_tr.thirty_sec,   '') AS conversation_thirty_sec,
+      COALESCE(NULLIF(scv.question, ''),     scv_tr.question,     '') AS conversation_question,
+      COALESCE(NULLIF(scv.key_contrast, ''), scv_tr.key_contrast,'') AS conversation_key_contrast,
       COALESCE(ct.translation, ct_tr.translation, c.category_name, 'Tümü') AS parent_cat,
       c.category_name AS parent_cat_raw,
       CASE WHEN LOWER(COALESCE(NULLIF(st.title, ''), st_tr.title, '')) LIKE ? THEN 0 ELSE 1 END AS rank_title,
@@ -453,6 +577,8 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
     LEFT JOIN categories_translations ct_tr ON ct_tr.category_id = c.id AND ct_tr.language = 'tr'
     LEFT JOIN story_translations st    ON st.story_id = s.id AND st.lang_code = ?
     LEFT JOIN story_translations st_tr ON st_tr.story_id = s.id AND st_tr.lang_code = 'tr'
+    LEFT JOIN story_conversation_variants scv    ON scv.story_id = s.id AND scv.lang_code = ?
+    LEFT JOIN story_conversation_variants scv_tr ON scv_tr.story_id = s.id AND scv_tr.lang_code = 'tr'
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
     WHERE
@@ -469,6 +595,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
     likeQuery,
     likeQuery,
     likeQuery,
+    lang,
     lang,
     lang,
     lang,

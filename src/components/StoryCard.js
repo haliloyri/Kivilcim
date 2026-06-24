@@ -45,7 +45,7 @@ const toPascalCase = (value = '') => {
     .join(' ');
 };
 
-const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false, supportText = null, stackIndex = 0, stackTotal = 1, onUseInConversation, usageDate }) => {
+const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCategory = false, supportText = null, stackIndex = 0, stackTotal = 1, onUseInConversation, usageDate, hasRecording = false }) => {
   const { colors, typography, layout, lang, isDark } = useTheme();
   const isHero = type === 'hero';
   const isCompact = type === 'compact';
@@ -70,6 +70,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   const stackRotate = isCompact ? `${Math.max(-6, Math.min(6, (stackIndex - 1) * 1.8))}deg` : '0deg';
   const stackTranslateY = isCompact ? Math.max(0, stackIndex) * 3 : 0;
   const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+  const readMins = Number(story?.min || story?.possible_read_minutes) || null;
 
   const styles = StyleSheet.create({
     card: {
@@ -315,86 +316,94 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   });
 
   if (isReady) {
+    // Compact list row: small category icon chip + serif title + meta + action.
+    // Matches the home "Today's insights" rows for one consistent system.
     return (
-      <TouchableOpacity 
-        activeOpacity={0.7} 
+      <TouchableOpacity
+        activeOpacity={0.7}
         onPress={onPress}
-        style={[
-          styles.card,
-          styles.readyCard,
-          locked && styles.lockedCard,
-          isRead && styles.readCard,
-        ]}
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 14,
+          backgroundColor: isDark ? colors.cardBackground : colors.surfaceContainerLowest,
+          borderRadius: 18,
+          borderWidth: 1,
+          borderColor: locked ? colors.border : `${categoryTheme.borderColor}55`,
+          padding: 12,
+          opacity: isRead ? 0.6 : 1,
+        }}
       >
-        <View style={styles.readyLeft}>
-          <View style={[styles.readyImageWrapper, !catImg.source && styles.readyImagePlaceholder]}>
+        <View style={{ width: 56, height: 56, flexShrink: 0 }}>
+          <View style={{
+            width: '100%', height: '100%', borderRadius: 14, overflow: 'hidden',
+            alignItems: 'center', justifyContent: 'center',
+            backgroundColor: categoryTheme.backgroundColor,
+          }}>
             {catImg.source ? (
-              <Image source={catImg.source} style={styles.readyImage} resizeMode="cover" />
+              <Image source={catImg.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
             ) : (
-              <Ionicons name={getCatIcon(rawDisplayCat)} size={42} color={categoryTheme.accent} />
+              <Ionicons name={getCatIcon(rawDisplayCat)} size={26} color={categoryTheme.accent} />
             )}
-            <Text
-              numberOfLines={1}
-              style={[
-                styles.readyCategoryLabel,
-                {
-                  color: categoryTheme.borderColor,
-                  position: 'absolute',
-                  top: 6,
-                  left: 0,
-                  right: 0,
-                },
-              ]}
-            >
-              {displayCat}
-            </Text>
             {locked ? (
-              <View style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: 'rgba(10,8,6,0.52)',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-                <Ionicons name="lock-closed" size={isVerySmallPhone ? 30 : 36} color="#F6EDE1" />
+              <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(10,8,6,0.5)', alignItems: 'center', justifyContent: 'center' }}>
+                <Ionicons name="lock-closed" size={22} color="#F6EDE1" />
               </View>
             ) : null}
           </View>
+          {hasRecording && !locked ? (
+            <View style={{
+              position: 'absolute', bottom: -3, right: -3,
+              width: 22, height: 22, borderRadius: 11,
+              backgroundColor: categoryTheme.accent,
+              borderWidth: 2, borderColor: isDark ? colors.cardBackground : colors.surfaceContainerLowest,
+              alignItems: 'center', justifyContent: 'center',
+            }}>
+              <Ionicons name="mic" size={11} color="#FFFFFF" />
+            </View>
+          ) : null}
         </View>
 
-        <View style={styles.readyContentGroup}>
-          <View style={[styles.readyDivider, { backgroundColor: categoryTheme.borderColor }]} />
-
-          <View style={styles.readyBody}>
-            <View>
-              <Text numberOfLines={2} style={styles.readyTitle}>
-                {displayTitle}
+        <View style={{ flex: 1, minWidth: 0 }}>
+          <Text numberOfLines={2} style={{
+            fontFamily: 'PlayfairDisplay_700Bold',
+            fontSize: isVerySmallPhone ? 15 : 16,
+            lineHeight: isVerySmallPhone ? 20 : 21,
+            color: isDark ? '#F6EDE1' : colors.text,
+          }}>
+            {displayTitle}
+          </Text>
+          {usageDate ? (
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 4, gap: 4 }}>
+              <Ionicons name="checkmark-done" size={13} color={categoryTheme.accent} />
+              <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary }}>
+                {lang === 'tr' ? `Kurgulandı: ${new Date(usageDate).toLocaleDateString('tr-TR')}` : `Crafted: ${new Date(usageDate).toLocaleDateString()}`}
               </Text>
-              {usageDate ? (
-                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 4, gap: 4 }}>
-                  <Ionicons name="checkmark-done" size={13} color={colors.primary} />
-                  <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary }}>
-                    {lang === 'tr' ? `Kurgulandı: ${new Date(usageDate).toLocaleDateString('tr-TR')}` : `Crafted: ${new Date(usageDate).toLocaleDateString()}`}
-                  </Text>
-                </View>
-              ) : null}
             </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', marginTop: 8 }}>
-              {onUseInConversation ? (
-                <TouchableOpacity
-                  onPress={onUseInConversation}
-                  activeOpacity={0.85}
-                  style={[styles.readyActionBtn, { backgroundColor: categoryTheme.accent, borderColor: 'transparent', width: 'auto', marginBottom: 0 }]}
-                >
-                  <Text numberOfLines={1} style={[styles.readyActionText, { color: '#FFFFFF' }]}>{t('story_detail_use_cta', lang)}</Text>
-                </TouchableOpacity>
-              ) : null}
-            </View>
-          </View>
+          ) : (
+            <Text numberOfLines={1} style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginTop: 3 }}>
+              <Text style={{ color: categoryTheme.accent, fontFamily: 'Inter_600SemiBold' }}>{displayCat}</Text>
+              {readMins ? `  ·  ${readMins} ${lang === 'tr' ? 'dk' : 'min'}` : ''}
+            </Text>
+          )}
         </View>
+
+        {locked ? (
+          <Ionicons name="lock-closed" size={20} color={colors.textSecondary} style={{ marginLeft: 8 }} />
+        ) : onUseInConversation ? (
+          <TouchableOpacity
+            onPress={onUseInConversation}
+            activeOpacity={0.85}
+            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+            accessibilityRole="button"
+            accessibilityLabel={t('story_detail_use_cta', lang)}
+            style={{ width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center', backgroundColor: `${categoryTheme.accent}1A`, marginLeft: 6, flexShrink: 0 }}
+          >
+            <Ionicons name="chatbubble-ellipses-outline" size={20} color={categoryTheme.accent} />
+          </TouchableOpacity>
+        ) : (
+          <Ionicons name="arrow-forward" size={20} color={colors.textSecondary} style={{ marginLeft: 8 }} />
+        )}
       </TouchableOpacity>
     );
   }

@@ -14,14 +14,33 @@
  * Google's sample app IDs there so the native SDK can initialize safely.
  */
 import { Platform } from 'react-native';
-import MobileAds, {
-  RewardedAd,
-  RewardedAdEventType,
-  InterstitialAd,
-  AdEventType,
-  BannerAdSize,
-  TestIds,
-} from 'react-native-google-mobile-ads';
+import Constants from 'expo-constants';
+
+// react-native-google-mobile-ads is a native module — not available in Expo Go.
+// We provide no-op stubs so the app doesn't crash during development.
+const isExpoGo = Constants.appOwnership === 'expo';
+
+let MobileAds, RewardedAd, RewardedAdEventType, InterstitialAd, AdEventType, BannerAdSize, TestIds;
+
+if (isExpoGo) {
+  const noop = () => {};
+  const noopAd = {
+    addAdEventListener: () => noop,
+    load: noop,
+    show: noop,
+  };
+  MobileAds = () => ({ initialize: async () => {} });
+  RewardedAd = { createForAdRequest: () => noopAd };
+  InterstitialAd = { createForAdRequest: () => noopAd };
+  RewardedAdEventType = { LOADED: 'loaded', EARNED_REWARD: 'earned_reward' };
+  AdEventType = { LOADED: 'loaded', ERROR: 'error', CLOSED: 'closed' };
+  BannerAdSize = { BANNER: 'BANNER' };
+  TestIds = { REWARDED: '', INTERSTITIAL: '', BANNER: '' };
+} else {
+  const ads = require('react-native-google-mobile-ads');
+  MobileAds = ads.default;
+  ({ RewardedAd, RewardedAdEventType, InterstitialAd, AdEventType, BannerAdSize, TestIds } = ads);
+}
 
 // ─── Ad Unit IDs ─────────────────────────────────────────────────────────────
 // Replace these with real IDs obtained from AdMob console.

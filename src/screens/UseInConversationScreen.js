@@ -1,11 +1,17 @@
 /**
- * UseInConversationScreen
+ * UseInConversationScreen  (v2 — redesign)
  *
- * "Use in Conversation" screen — shows ready-made micro-variants of a story
- * (Punchline, 30-Second, Question, Key Contrast) so the user can quickly
- * share on their preferred platform or practice telling it.
+ * "Use in Conversation" screen — redesigned around a single calm-premium flow:
+ *   1. 2x2 format selector grid (Punchline / 30s / Question / Key Contrast)
+ *   2. One large preview card for the selected format (quote-block styling)
+ *   3. Fixed bottom action dock:
+ *        · share row (Instagram first) — targeted one-tap shares
+ *        · "Copy" gold primary CTA — the universal action
+ *        · "Practice" + "Used" toggle — secondary
  *
- * All variants are free. Premium gates: Storyteller Mode + Instagram visual card.
+ * Design language: DESIGN_NEW (single gold accent, no per-category colors,
+ * Playfair headings + Inter body). All variants are free.
+ * Premium gates: Storyteller Mode + Instagram visual card.
  *
  * Receives: route.params.story  (same shape as StoryDetailScreen)
  */
@@ -16,9 +22,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  LayoutAnimation,
   Platform,
-  UIManager,
   StatusBar,
   Share,
   Animated,
@@ -29,16 +33,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
-import MicroVariantCard from '../components/MicroVariantCard';
 import StorytellerOverlay from '../components/StorytellerOverlay';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import { shouldShowAd, loadRewarded } from '../utils/ads';
-
-// Enable LayoutAnimation on Android
-if (Platform.OS === 'android') {
-  UIManager.setLayoutAnimationEnabledExperimental?.(true);
-}
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -68,7 +66,7 @@ const normalizeHashtag = (value = '') =>
   value
     .toString()
     .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[̀-ͯ]/g, '')
     .replace(/[^\p{L}\p{N}]/gu, '');
 
 const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
@@ -149,79 +147,82 @@ const mapVariantToPreset = (variant) => {
 };
 
 const getUsageVariantKey = (storyId, variantId) => `${String(storyId)}:${String(variantId)}`;
+
 const buildMicroVariants = (story, lang) => {
   const body = story.body || '';
-  const quote      = extractMarker(body, '##');
-  const lesson     = extractMarker(body, '$$');
-  const reflection = extractMarker(body, '&&');
-  const thirtySec  = (story.thirty_sec || '').trim();
-  const clean      = cleanBodyText(body);
+  const quote       = extractMarker(body, '##');
+  const lesson      = extractMarker(body, '$$');
+  const reflection  = extractMarker(body, '&&');
+  const punchline   = (story.conversation_punchline || '').trim();
+  const thirtySec   = (story.conversation_thirty_sec || story.thirty_sec || '').trim();
+  const question    = (story.conversation_question || '').trim();
+  const keyContrast = (story.conversation_key_contrast || '').trim();
+  const clean       = cleanBodyText(body);
 
   const candidates = [
     {
       id: 'punchline',
       type: 'PUNCHLINE',
       title: t('mv_punchline', lang),
-      body: lesson || quote,
-      defaultExpanded: true,
+      gridDesc: t('mv_grid_desc_punchline', lang),
+      icon: 'flame-outline',
+      iconActive: 'flame',
+      body: punchline || lesson || quote,
       toneTag: t('mv_tone_bold', lang),
-      contextTags: [t('mv_context_meeting', lang), t('mv_context_social', lang)],
     },
     {
       id: 'thirty_sec',
       type: 'THIRTY_SEC',
       title: t('mv_thirty_sec', lang),
+      gridDesc: t('mv_grid_desc_thirty', lang),
+      icon: 'time-outline',
+      iconActive: 'time',
       body: thirtySec || (clean.length > 320 ? clean.substring(0, 320).trimEnd() + '…' : clean),
-      defaultExpanded: false,
       toneTag: t('mv_tone_story', lang),
-      contextTags: [t('mv_context_oneonone', lang), t('mv_context_meeting', lang)],
     },
     {
       id: 'question',
       type: 'QUESTION',
       title: t('mv_question', lang),
-      body: reflection,
-      defaultExpanded: false,
+      gridDesc: t('mv_grid_desc_question', lang),
+      icon: 'chatbubble-ellipses-outline',
+      iconActive: 'chatbubble-ellipses',
+      body: question || reflection,
       toneTag: t('mv_tone_curious', lang),
-      contextTags: [t('mv_context_oneonone', lang), t('mv_context_social', lang)],
     },
     {
       id: 'one_word',
       type: 'ONE_WORD',
       title: t('mv_one_word', lang),
-      // Use the quote as key contrast; fall back to lesson if they differ
-      body: quote && quote !== lesson ? quote : '',
-      defaultExpanded: false,
+      gridDesc: t('mv_grid_desc_contrast', lang),
+      icon: 'key-outline',
+      iconActive: 'key',
+      body: keyContrast || (quote && quote !== lesson ? quote : ''),
       toneTag: t('mv_tone_minimal', lang),
-      contextTags: [t('mv_context_meeting', lang)],
     },
   ];
 
   return candidates.filter(v => v.body.length > 0);
 };
 
+/** Which platform a given length comfortably fits (for the char hint) */
+const platformFitLabel = (len, lang) => {
+  if (len <= 280) return t('mv_share_on_x', lang);
+  if (len <= 500) return t('mv_share_on_threads', lang);
+  return null;
+};
+
 // ─── screen ─────────────────────────────────────────────────────────────────
 
 const UseInConversationScreen = ({ route, navigation }) => {
   const { story } = route.params;
-  const { colors, typography, layout, isDark, lang } = useTheme();
+  const { colors, layout, isDark, lang } = useTheme();
   const { isPremium, recordVariantUsage, removeVariantUsage, variantUsage, incrementShareCount } = useUserData();
   const insets = useSafeAreaInsets();
 
-  const variants = useMemo(
-    () => buildMicroVariants(story, lang),
-    [story, lang],
-  );
+  const variants = useMemo(() => buildMicroVariants(story, lang), [story, lang]);
 
-  // ── displayCat declared BEFORE any callbacks that use it ─────────────────
   const displayCat = t(story.parent_cat || story.cat || '', lang);
-
-  // Accordion open/close state
-  const [expandedIds, setExpandedIds] = useState(() => {
-    const init = {};
-    variants.forEach(v => { init[v.id] = !!v.defaultExpanded; });
-    return init;
-  });
 
   // Track screen open
   useEffect(() => {
@@ -230,14 +231,18 @@ const UseInConversationScreen = ({ route, navigation }) => {
       source: 'screen_mount',
       lang,
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [selectedId, setSelectedId] = useState(
-    () => variants.find(v => v.defaultExpanded)?.id ?? variants[0]?.id ?? null,
+  // Selected format (single-select)
+  const [selectedId, setSelectedId] = useState(() => variants[0]?.id ?? null);
+  const selected = useMemo(
+    () => variants.find(v => v.id === selectedId) || variants[0] || null,
+    [variants, selectedId],
   );
-  const [copiedId, setCopiedId] = useState(null);
+
   const [copyToastVisible, setCopyToastVisible] = useState(false);
+  const [toastMsg, setToastMsg] = useState('');
   const [showStorytellerFor, setShowStorytellerFor] = useState(null);
   const [markedUsedIds, setMarkedUsedIds] = useState(() => {
     const storyId = String(story?.story_id);
@@ -249,8 +254,19 @@ const UseInConversationScreen = ({ route, navigation }) => {
   });
   const toastAnim = React.useRef(new Animated.Value(0)).current;
 
-  // All variants are free now — lockedIds is always empty
-  const lockedIds = useMemo(() => new Set(), []);
+  const [adSheet, setAdSheet] = React.useState(false);
+  const [isAdLoading, setIsAdLoading] = React.useState(false);
+  const [adUnavailable, setAdUnavailable] = React.useState(false);
+
+  const showToast = useCallback((msg) => {
+    setToastMsg(msg);
+    setCopyToastVisible(true);
+    Animated.sequence([
+      Animated.timing(toastAnim, { toValue: 1, duration: 180, useNativeDriver: true }),
+      Animated.delay(1300),
+      Animated.timing(toastAnim, { toValue: 0, duration: 220, useNativeDriver: true }),
+    ]).start(() => setCopyToastVisible(false));
+  }, [toastAnim]);
 
   const handlePremiumTap = useCallback(() => {
     trackEvent(ANALYTICS_EVENTS.PAYWALL_VIEWED, {
@@ -265,10 +281,6 @@ const UseInConversationScreen = ({ route, navigation }) => {
       navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
     }
   }, [navigation, story?.story_id, lang, isPremium]);
-
-  const [adSheet, setAdSheet] = React.useState(false);
-  const [isAdLoading, setIsAdLoading] = React.useState(false);
-  const [adUnavailable, setAdUnavailable] = React.useState(false);
 
   const handleWatchAdUIC = async () => {
     setIsAdLoading(true);
@@ -289,44 +301,36 @@ const UseInConversationScreen = ({ route, navigation }) => {
     ad.show().catch(e => console.warn('[UseInConversation] rewarded show error:', e?.message));
   };
 
-  const toggleExpanded = useCallback((id) => {
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-    setExpandedIds(prev => ({ ...prev, [id]: !prev[id] }));
+  const handleSelect = useCallback((id) => {
     setSelectedId(id);
   }, []);
 
-  const handleCopy = useCallback(async (variant) => {
-    setSelectedId(variant.id);
+  const handleCopy = useCallback(async () => {
+    if (!selected) return;
     const Clipboard = require('expo-clipboard');
-    await Clipboard.setStringAsync(variant.body);
-    setCopiedId(variant.id);
-    setTimeout(() => setCopiedId(id => (id === variant.id ? null : id)), 2000);
+    await Clipboard.setStringAsync(selected.body);
     trackEvent(ANALYTICS_EVENTS.MICRO_VARIANT_COPIED, {
       storyId: story?.story_id,
-      variantType: variant.type,
-      variantId: variant.id,
+      variantType: selected.type,
+      variantId: selected.id,
       lang,
     });
     recordVariantUsage({
       storyId: story?.story_id,
       storyTitle: story?.title,
       storyCategory: story?.parent_cat || story?.cat || null,
-      variantType: variant.type,
-      variantId: variant.id,
+      variantType: selected.type,
+      variantId: selected.id,
       action: 'copy',
     });
-    setCopyToastVisible(true);
-    Animated.sequence([
-      Animated.timing(toastAnim, { toValue: 1, duration: 180, useNativeDriver: true }),
-      Animated.delay(1300),
-      Animated.timing(toastAnim, { toValue: 0, duration: 220, useNativeDriver: true }),
-    ]).start(() => setCopyToastVisible(false));
-  }, [story?.story_id, story?.title, lang, recordVariantUsage, toastAnim]);
+    showToast(t('mv_copy_toast', lang));
+  }, [selected, story, lang, recordVariantUsage, showToast]);
 
-  const handleSharePlatform = useCallback(async (variant, platform) => {
-    setSelectedId(variant.id);
+  const handleSharePlatform = useCallback(async (platform) => {
+    if (!selected) return;
+    const variant = selected;
 
-    // Instagram → navigate to StoryDetail share modal
+    // Instagram → navigate to StoryDetail share modal (visual card)
     if (platform === 'instagram') {
       navigation.navigate('StoryDetail', {
         story,
@@ -376,10 +380,11 @@ const UseInConversationScreen = ({ route, navigation }) => {
       variantId: variant.id,
       action: `share_${platform}`,
     });
-  }, [story, displayCat, lang, navigation, recordVariantUsage, incrementShareCount]);
+  }, [selected, story, displayCat, lang, navigation, recordVariantUsage, incrementShareCount]);
 
-  const handleMarkUsed = useCallback(async (variant) => {
-    const variantKey = getUsageVariantKey(story?.story_id, variant.id);
+  const handleToggleUsed = useCallback(async () => {
+    if (!selected) return;
+    const variantKey = getUsageVariantKey(story?.story_id, selected.id);
     const wasMarked = markedUsedIds.has(variantKey);
 
     if (!wasMarked) {
@@ -388,8 +393,8 @@ const UseInConversationScreen = ({ route, navigation }) => {
         storyId: story?.story_id,
         storyTitle: story?.title,
         storyCategory: story?.parent_cat || story?.cat || null,
-        variantType: variant.type,
-        variantId: variant.id,
+        variantType: selected.type,
+        variantId: selected.id,
         variantKey,
         action: 'mark_used',
       });
@@ -401,20 +406,21 @@ const UseInConversationScreen = ({ route, navigation }) => {
       });
       await removeVariantUsage({
         storyId: story?.story_id,
-        variantId: variant.id,
+        variantId: selected.id,
         variantKey,
       });
     }
-  }, [markedUsedIds, story, recordVariantUsage, removeVariantUsage]);
+  }, [markedUsedIds, selected, story, recordVariantUsage, removeVariantUsage]);
 
-  const handleStorytellerOpen = useCallback((variant) => {
-    setShowStorytellerFor(variant);
+  const handleStorytellerOpen = useCallback(() => {
+    if (!selected) return;
+    setShowStorytellerFor(selected);
     trackEvent(ANALYTICS_EVENTS.STORYTELLER_MODE_OPENED, {
       storyId: story?.story_id,
-      variantType: variant?.type,
+      variantType: selected?.type,
       lang,
     });
-  }, [story?.story_id, lang]);
+  }, [selected, story?.story_id, lang]);
 
   const handleStorytellerDone = useCallback(async () => {
     if (!showStorytellerFor) return;
@@ -438,7 +444,55 @@ const UseInConversationScreen = ({ route, navigation }) => {
     setShowStorytellerFor(null);
   }, [showStorytellerFor, story, recordVariantUsage, lang]);
 
-  const styles = buildStyles(colors, typography, layout, isDark, insets);
+  // AI rewrite — UI present; backend not wired yet (gentle "coming soon").
+  const handleAiRewrite = useCallback(() => {
+    trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
+      storyId: story?.story_id,
+      source: 'ai_rewrite_tap',
+      lang,
+    });
+    showToast(t('mv_ai_soon', lang));
+  }, [story?.story_id, lang, showToast]);
+
+  const styles = buildStyles(colors, isDark, insets);
+
+  const isUsed = selected
+    ? markedUsedIds.has(getUsageVariantKey(story?.story_id, selected.id))
+    : false;
+
+  const charCount = selected ? selected.body.length : 0;
+  const fitLabel = platformFitLabel(charCount, lang);
+  const charLine = fitLabel
+    ? `${charCount} ${t('mv_chars', lang)} · ${t('mv_fits_platform', lang).replace('{{platform}}', fitLabel)}`
+    : `${charCount} ${t('mv_chars', lang)}`;
+
+  const tint = isDark ? `${colors.primary}26` : `${colors.primary}1F`;
+
+  // share targets — Instagram first (featured / premium visual card)
+  const shareTargets = [
+    { key: 'instagram', kind: 'instagram', premium: true },
+    { key: 'x', kind: 'x' },
+    { key: 'threads', kind: 'threads' },
+    { key: 'linkedin', kind: 'linkedin' },
+    { key: 'whatsapp', kind: 'whatsapp' },
+  ];
+
+  const renderShareGlyph = (kind) => {
+    switch (kind) {
+      case 'instagram':
+        return <Ionicons name="logo-instagram" size={22} color={colors.text} />;
+      case 'x':
+        return <Text style={styles.shareGlyphX}>𝕏</Text>;
+      case 'threads':
+        return <Text style={styles.shareGlyphAt}>@</Text>;
+      case 'linkedin':
+        return <Ionicons name="logo-linkedin" size={22} color="#2F5F9C" />;
+      case 'whatsapp':
+        return <Ionicons name="logo-whatsapp" size={22} color="#1FA855" />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
@@ -455,9 +509,9 @@ const UseInConversationScreen = ({ route, navigation }) => {
           accessibilityLabel={t('backBtn', lang)}
           accessibilityRole="button"
         >
-          <Ionicons name="arrow-back" size={18} color={colors.text} />
+          <Ionicons name="chevron-back" size={18} color={colors.text} />
           <Text style={styles.backBtnText}>
-            {t('backBtn', lang).replace(/^[\u2190<\-]+\s*/g, '')}
+            {t('backBtn', lang).replace(/^[←<\-]+\s*/g, '')}
           </Text>
         </TouchableOpacity>
 
@@ -470,77 +524,173 @@ const UseInConversationScreen = ({ route, navigation }) => {
         <View style={styles.appBarRightSpacer} />
       </View>
 
-      {/* ── Story Header Card ──────────────────────────────────────────── */}
-      <LinearGradient
-        colors={
-          isDark
-            ? ['#1E1A14', colors.background]
-            : ['#EDE5D8', colors.background]
-        }
-        start={{ x: 0, y: 0 }}
-        end={{ x: 0, y: 1 }}
-        style={styles.storyHeader}
-      >
-        <View style={styles.categoryRow}>
-          {displayCat ? (
-            <Text style={styles.categoryLabel}>{displayCat}</Text>
-          ) : null}
-          {story.min ? (
-            <Text style={styles.durationLabel}>
-              · {story.min} {t('minLabel', lang)}
-            </Text>
-          ) : null}
-        </View>
-        <Text style={styles.storyTitle} numberOfLines={3}>
-          {story.title}
-        </Text>
-      </LinearGradient>
-
-      {/* ── Ready-to-use banner ───────────────────────────────────────── */}
-      <View style={styles.readyBanner}>
-        <Ionicons name="chatbubbles" size={14} color={colors.primary} />
-        <Text style={styles.readyBannerText}>{t('mv_ready_banner', lang)}</Text>
-      </View>
-
-      {/* ── Context Note ─────────────────────────────────────────────── */}
-      <View style={styles.contextNote}>
-        <Ionicons name="sparkles-outline" size={14} color={colors.textSecondary} />
-        <Text style={styles.contextNoteText}>{t('mv_screen_sub', lang)}</Text>
-      </View>
-
-      {/* ── Variant Cards ─────────────────────────────────────────────── */}
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       >
-        {variants.map(variant => (
-          <MicroVariantCard
-            key={variant.id}
-            variant={variant}
-            isExpanded={!!expandedIds[variant.id]}
-            isSelected={variant.id === selectedId}
-            isCopied={variant.id === copiedId}
-            isMarkedUsed={markedUsedIds.has(getUsageVariantKey(story?.story_id, variant.id))}
-            locked={lockedIds.has(variant.id)}
-            onToggle={() => toggleExpanded(variant.id)}
-            onCopy={() => handleCopy(variant)}
-            onSharePlatform={(platform) => handleSharePlatform(variant, platform)}
-            onMarkUsed={() => handleMarkUsed(variant)}
-            onStoryteller={() => handleStorytellerOpen(variant)}
-            onPremiumTap={handlePremiumTap}
-            colors={colors}
-            typography={typography}
-            layout={layout}
-            isDark={isDark}
-            lang={lang}
-          />
-        ))}
+        {/* ── Story header ─────────────────────────────────────────────── */}
+        <View style={styles.storyHeader}>
+          <Text style={styles.categoryLabel}>
+            {displayCat ? displayCat.toUpperCase() : ''}
+            {story.min ? `  ·  ${story.min} ${t('minLabel', lang)}` : ''}
+          </Text>
+          <Text style={styles.storyTitle} numberOfLines={3}>
+            {story.title}
+          </Text>
+        </View>
 
-        <View style={{ height: insets.bottom + 32 }} />
+        {/* ── Format selector 2x2 grid ─────────────────────────────────── */}
+        <Text style={styles.sectionLabel}>{t('mv_format_label', lang)}</Text>
+        <View style={styles.grid}>
+          {variants.map(v => {
+            const active = v.id === selected?.id;
+            return (
+              <TouchableOpacity
+                key={v.id}
+                style={[styles.gridCard, active && styles.gridCardActive]}
+                onPress={() => handleSelect(v.id)}
+                activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityState={{ selected: active }}
+                accessibilityLabel={v.title}
+              >
+                <View
+                  style={[
+                    styles.gridIconCircle,
+                    { backgroundColor: active ? colors.primary : tint },
+                  ]}
+                >
+                  <Ionicons
+                    name={active ? v.iconActive : v.icon}
+                    size={16}
+                    color={active ? colors.onPrimary : colors.primary}
+                  />
+                </View>
+                <View style={styles.gridTextCol}>
+                  <Text style={styles.gridName} numberOfLines={1}>{v.title}</Text>
+                  <Text style={styles.gridDesc} numberOfLines={1}>{v.gridDesc}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+
+        {/* ── Preview card ─────────────────────────────────────────────── */}
+        {selected && (
+          <View style={styles.previewCard}>
+            <View style={styles.previewHeader}>
+              <Text style={styles.previewLabel}>{selected.title.toUpperCase()}</Text>
+              <TouchableOpacity
+                style={[styles.aiPill, { backgroundColor: tint }]}
+                onPress={handleAiRewrite}
+                activeOpacity={0.8}
+                accessibilityRole="button"
+                accessibilityLabel={t('mv_ai_rewrite', lang)}
+              >
+                <Ionicons name="sparkles" size={12} color={colors.primary} />
+                <Text style={styles.aiPillText}>{t('mv_ai_rewrite', lang)}</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.quoteRow}>
+              <View style={styles.quoteBar} />
+              <Text
+                style={[
+                  styles.quoteText,
+                  charCount > 150 && styles.quoteTextLong,
+                ]}
+              >
+                {selected.body}
+              </Text>
+            </View>
+
+            <Text style={styles.charLine}>{charLine}</Text>
+          </View>
+        )}
       </ScrollView>
 
-      {/* ── Copy toast ───────────────────────────────────────────────── */}
+      {/* ── Bottom action dock ──────────────────────────────────────────── */}
+      <View style={styles.dock}>
+        <Text style={styles.dockLabel}>{t('mv_share_label', lang)}</Text>
+
+        <View style={styles.shareRow}>
+          {shareTargets.map(target => (
+            <TouchableOpacity
+              key={target.key}
+              style={styles.shareBtn}
+              onPress={() => handleSharePlatform(target.kind)}
+              activeOpacity={0.8}
+              accessibilityRole="button"
+              accessibilityLabel={t(`mv_share_on_${target.kind}`, lang)}
+            >
+              {renderShareGlyph(target.kind)}
+              {target.premium && !isPremium && (
+                <View style={styles.premiumBadge}>
+                  <Ionicons name="star" size={9} color="#FFFFFF" />
+                </View>
+              )}
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        {/* Primary: Copy (universal action) */}
+        <TouchableOpacity
+          onPress={handleCopy}
+          activeOpacity={0.9}
+          accessibilityRole="button"
+          accessibilityLabel={t('mv_copy', lang)}
+        >
+          <LinearGradient
+            colors={[colors.ctaGradientEnd, colors.ctaGradientStart]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={styles.copyBtn}
+          >
+            <Ionicons name="copy-outline" size={18} color={colors.onPrimary} />
+            <Text style={styles.copyBtnText}>{t('mv_copy', lang)}</Text>
+          </LinearGradient>
+        </TouchableOpacity>
+
+        {/* Secondary: Practice | Used toggle */}
+        <View style={styles.secondaryRow}>
+          <TouchableOpacity
+            style={styles.secondaryBtn}
+            onPress={handleStorytellerOpen}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityLabel={t('mv_practice_short', lang)}
+          >
+            <Ionicons name="mic-outline" size={17} color={colors.text} />
+            <Text style={styles.secondaryBtnText}>{t('mv_practice_short', lang)}</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.secondaryBtn, isUsed && styles.secondaryBtnActive]}
+            onPress={handleToggleUsed}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityState={{ selected: isUsed }}
+            accessibilityLabel={t('mv_mark_used', lang)}
+          >
+            <Ionicons
+              name={isUsed ? 'checkmark-circle' : 'checkmark-circle-outline'}
+              size={17}
+              color={isUsed ? colors.success : colors.textSecondary}
+            />
+            <Text
+              style={[
+                styles.secondaryBtnTextMuted,
+                isUsed && { color: colors.success },
+              ]}
+            >
+              {t('mv_used_short', lang)}
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* ── Copy / info toast ───────────────────────────────────────────── */}
       {copyToastVisible && (
         <Animated.View
           style={[
@@ -552,12 +702,12 @@ const UseInConversationScreen = ({ route, navigation }) => {
           ]}
           pointerEvents="none"
         >
-          <Ionicons name="checkmark-circle" size={16} color="#2E7D32" />
-          <Text style={styles.copyToastText}>{t('mv_copy_toast', lang)}</Text>
+          <Ionicons name="checkmark-circle" size={16} color={colors.success} />
+          <Text style={styles.copyToastText}>{toastMsg}</Text>
         </Animated.View>
       )}
 
-      {/* ── Storyteller Overlay ──────────────────────────────────────── */}
+      {/* ── Storyteller Overlay ──────────────────────────────────────────── */}
       <StorytellerOverlay
         visible={!!showStorytellerFor}
         story={story}
@@ -597,30 +747,32 @@ const UseInConversationScreen = ({ route, navigation }) => {
 
 // ─── styles ─────────────────────────────────────────────────────────────────
 
-const buildStyles = (colors, typography, layout, isDark, insets) =>
-  StyleSheet.create({
+const buildStyles = (colors, isDark, insets) => {
+  const HPAD = 20;
+  return StyleSheet.create({
     safe: {
       flex: 1,
       backgroundColor: colors.background,
     },
+
     // AppBar
     appBar: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingHorizontal: layout.padding.horizontal,
+      paddingHorizontal: HPAD,
       paddingVertical: 10,
-      borderBottomWidth: layout.borderWidth,
-      borderBottomColor: colors.border,
       gap: 8,
     },
     backBtn: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingHorizontal: 12,
-      paddingVertical: 6,
-      borderRadius: 20,
-      backgroundColor: isDark ? colors.backgroundDark : '#F0EAE0',
-      gap: 4,
+      paddingHorizontal: 10,
+      paddingVertical: 7,
+      borderRadius: 18,
+      backgroundColor: colors.backgroundDark,
+      borderWidth: 1,
+      borderColor: colors.border,
+      gap: 2,
     },
     backBtnText: {
       fontFamily: 'Inter_500Medium',
@@ -630,96 +782,277 @@ const buildStyles = (colors, typography, layout, isDark, insets) =>
     appBarCenter: {
       flex: 1,
       alignItems: 'center',
+      marginRight: 34,
     },
     appBarTitle: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 17,
+      fontSize: 14,
       color: colors.text,
-      letterSpacing: 0.2,
-    },
-    appBarRightSpacer: {
-      width: 34,
-      height: 34,
-    },
-    // Story header
-    storyHeader: {
-      paddingHorizontal: layout.padding.horizontal,
-      paddingTop: 14,
-      paddingBottom: 16,
-      borderBottomWidth: layout.borderWidth,
-      borderBottomColor: colors.border,
-    },
-    categoryRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginBottom: 6,
-      gap: 4,
-    },
-    categoryLabel: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 11,
-      color: colors.textSecondary,
-      textTransform: 'uppercase',
       letterSpacing: 1.2,
     },
-    durationLabel: {
-      fontFamily: 'Inter_400Regular',
+    appBarRightSpacer: {
+      width: 0,
+    },
+
+    // Scroll
+    scrollContent: {
+      paddingHorizontal: HPAD,
+      paddingBottom: 24,
+    },
+
+    // Story header
+    storyHeader: {
+      paddingTop: 6,
+      paddingBottom: 18,
+    },
+    categoryLabel: {
+      fontFamily: 'Inter_600SemiBold',
       fontSize: 11,
       color: colors.textSecondary,
+      letterSpacing: 1.4,
+      marginBottom: 8,
     },
     storyTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 18,
+      fontSize: 25,
+      lineHeight: 31,
       color: colors.text,
-      lineHeight: 26,
     },
-    // Ready-to-use banner
-    readyBanner: {
+
+    // Section label
+    sectionLabel: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11,
+      color: colors.textSecondary,
+      letterSpacing: 1.4,
+      marginBottom: 12,
+    },
+
+    // Grid
+    grid: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+    },
+    gridCard: {
+      width: '48.5%',
       flexDirection: 'row',
       alignItems: 'center',
-      gap: 6,
-      paddingHorizontal: layout.padding.horizontal,
-      paddingVertical: 10,
-      borderBottomWidth: layout.borderWidth,
-      borderBottomColor: colors.border,
-      backgroundColor: isDark ? `${colors.primary}12` : `${colors.primary}0A`,
+      paddingVertical: 11,
+      paddingHorizontal: 12,
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surfaceContainerLowest,
+      marginBottom: 10,
+      gap: 10,
     },
-    readyBannerText: {
+    gridCardActive: {
+      borderColor: colors.primary,
+      borderWidth: 1.5,
+      backgroundColor: isDark ? `${colors.primary}1A` : '#F4ECDA',
+    },
+    gridIconCircle: {
+      width: 30,
+      height: 30,
+      borderRadius: 15,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    gridTextCol: {
+      flex: 1,
+    },
+    gridName: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13.5,
+      color: colors.text,
+    },
+    gridDesc: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 11,
+      color: colors.textSecondary,
+      marginTop: 1,
+    },
+
+    // Preview card
+    previewCard: {
+      marginTop: 8,
+      borderRadius: 18,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surfaceContainerLowest,
+      padding: 18,
+      shadowColor: '#000',
+      shadowOpacity: isDark ? 0 : 0.05,
+      shadowRadius: 10,
+      shadowOffset: { width: 0, height: 4 },
+      elevation: 2,
+    },
+    previewHeader: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: 14,
+    },
+    previewLabel: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11,
+      color: colors.primary,
+      letterSpacing: 1.2,
+      flex: 1,
+    },
+    aiPill: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 5,
+      paddingHorizontal: 11,
+      paddingVertical: 6,
+      borderRadius: 15,
+    },
+    aiPillText: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 12,
       color: colors.primary,
-      letterSpacing: 0.3,
     },
-    // Subtitle moved under banner with a distinct visual style
-    contextNote: {
+    quoteRow: {
       flexDirection: 'row',
-      alignItems: 'flex-start',
-      gap: 8,
-      marginTop: 10,
-      marginHorizontal: layout.padding.horizontal,
-      paddingHorizontal: 12,
-      paddingVertical: 10,
-      borderRadius: 12,
-      borderWidth: layout.borderWidth,
-      borderColor: colors.border,
-      backgroundColor: isDark ? colors.card : '#F7F3EC',
+      gap: 12,
     },
-    contextNoteText: {
+    quoteBar: {
+      width: 3.5,
+      borderRadius: 2,
+      backgroundColor: colors.primary,
+    },
+    quoteText: {
       flex: 1,
+      fontFamily: 'PlayfairDisplay_600SemiBold',
+      fontSize: 19,
+      lineHeight: 28,
+      color: colors.text,
+    },
+    quoteTextLong: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      lineHeight: 18,
+      fontSize: 15.5,
+      lineHeight: 25,
+    },
+    charLine: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 11,
+      color: colors.textSecondary,
+      marginTop: 16,
+    },
+
+    // Dock
+    dock: {
+      paddingHorizontal: HPAD,
+      paddingTop: 14,
+      paddingBottom: Math.max(insets.bottom, 12) + 4,
+      backgroundColor: colors.backgroundDark,
+      borderTopWidth: 1,
+      borderTopColor: colors.border,
+    },
+    dockLabel: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11,
+      color: colors.textSecondary,
+      letterSpacing: 1.4,
+      marginBottom: 12,
+    },
+    shareRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginBottom: 14,
+    },
+    shareBtn: {
+      width: 52,
+      height: 52,
+      borderRadius: 26,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.surfaceContainerLowest,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    shareGlyphX: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 22,
+      color: colors.text,
+      marginTop: -2,
+    },
+    shareGlyphAt: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 24,
+      color: colors.text,
+      marginTop: -2,
+    },
+    premiumBadge: {
+      position: 'absolute',
+      top: -2,
+      right: -2,
+      width: 18,
+      height: 18,
+      borderRadius: 9,
+      backgroundColor: colors.primary,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 2,
+      borderColor: colors.backgroundDark,
+    },
+    copyBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 9,
+      height: 54,
+      borderRadius: 16,
+      shadowColor: colors.primary,
+      shadowOpacity: isDark ? 0 : 0.3,
+      shadowRadius: 10,
+      shadowOffset: { width: 0, height: 5 },
+      elevation: 3,
+    },
+    copyBtnText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 17,
+      color: colors.onPrimary,
+    },
+    secondaryRow: {
+      flexDirection: 'row',
+      gap: 10,
+      marginTop: 12,
+    },
+    secondaryBtn: {
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+      height: 46,
+      borderRadius: 14,
+      backgroundColor: colors.surfaceContainerLowest,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    secondaryBtnActive: {
+      borderColor: colors.success,
+      backgroundColor: isDark ? `${colors.success}1A` : '#EAF4EB',
+    },
+    secondaryBtnText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 14,
+      color: colors.text,
+    },
+    secondaryBtnTextMuted: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 14,
       color: colors.textSecondary,
     },
-    // Scroll area
-    scrollContent: {
-      paddingHorizontal: layout.padding.horizontal,
-      paddingTop: 18,
-    },
+
+    // Toast
     copyToast: {
       position: 'absolute',
-      left: layout.padding.horizontal,
-      right: layout.padding.horizontal,
+      left: HPAD,
+      right: HPAD,
       bottom: Math.max(insets.bottom + 14, 22),
       borderRadius: 12,
       paddingHorizontal: 14,
@@ -737,5 +1070,6 @@ const buildStyles = (colors, typography, layout, isDark, insets) =>
       color: isDark ? colors.text : '#2E5F37',
     },
   });
+};
 
 export default UseInConversationScreen;

@@ -23,6 +23,7 @@ export const CAT_STYLES = {
   'Mind & Psychology': { rotate: '0deg', flip: false, tint: 'rgba(26, 41, 128, 0.08)' }, // Midnight Indigo
   'Career & Success': { rotate: '0deg', flip: false, tint: 'rgba(204, 167, 48, 0.12)' }, // Golden Grain
   'Personal Growth': { rotate: '90deg', flip: true, tint: 'rgba(12, 107, 107, 0.08)' }, // Emerald Deep
+  'Growth': { rotate: '90deg', flip: true, tint: 'rgba(12, 107, 107, 0.08)' }, // Emerald Deep (normalized alias)
   'Science & Future': { rotate: '180deg', flip: false, tint: 'rgba(139, 106, 48, 0.05)' }, // Bronze Earth
   'Society & World': { rotate: '270deg', flip: true, tint: 'rgba(161, 89, 22, 0.10)' }, // Terracotta
   'Social Skills': { rotate: '0deg', flip: true, tint: 'rgba(186, 26, 26, 0.05)' }, // Crimson Mist
@@ -33,6 +34,7 @@ export const CAT_STYLES_DARK = {
   'Mind & Psychology': { rotate: '0deg', flip: false, tint: 'rgba(10, 20, 80, 0.55)' },
   'Career & Success': { rotate: '0deg', flip: false, tint: 'rgba(80, 60, 8, 0.55)' },
   'Personal Growth': { rotate: '90deg', flip: true, tint: 'rgba(5, 55, 55, 0.55)' },
+  'Growth': { rotate: '90deg', flip: true, tint: 'rgba(5, 55, 55, 0.55)' },
   'Science & Future': { rotate: '180deg', flip: false, tint: 'rgba(55, 40, 8, 0.50)' },
   'Society & World': { rotate: '270deg', flip: true, tint: 'rgba(65, 28, 5, 0.55)' },
   'Social Skills': { rotate: '0deg', flip: true, tint: 'rgba(75, 8, 8, 0.50)' },
@@ -49,104 +51,107 @@ const CATEGORY_THEME_MAP = {
     darkStrong: 'rgba(200, 169, 107, 0.30)',
     darkAccent: '#C8A96B',
   },
+  // Palette unified with regenerated category artwork (icon + banner + card all
+  // share one accent per category). Greens/blues deliberately spaced apart so
+  // adjacent categories never collide.
   'Finance': {
-    accent: '#C6922F',
-    borderColor: '#D8A94B',
-    lightSoft: '#FFF8EC',
-    lightStrong: 'rgba(198, 146, 47, 0.14)',
-    darkSoft: 'rgba(198, 146, 47, 0.20)',
-    darkStrong: 'rgba(198, 146, 47, 0.30)',
-    darkAccent: '#C6922F',
+    accent: '#9A6A2F',
+    borderColor: '#B98A55',
+    lightSoft: '#FBF1DE',
+    lightStrong: 'rgba(154, 106, 47, 0.14)',
+    darkSoft: 'rgba(154, 106, 47, 0.20)',
+    darkStrong: 'rgba(154, 106, 47, 0.30)',
+    darkAccent: '#B98A55',
   },
   'Psychology': {
-    accent: '#5C8F63',
-    borderColor: '#79A97F',
-    lightSoft: '#F4FBF4',
-    lightStrong: 'rgba(92, 143, 99, 0.14)',
-    darkSoft: 'rgba(92, 143, 99, 0.20)',
-    darkStrong: 'rgba(92, 143, 99, 0.30)',
-    darkAccent: '#5C8F63',
+    accent: '#6E6196',
+    borderColor: '#8E82AE',
+    lightSoft: '#F3EDF6',
+    lightStrong: 'rgba(110, 97, 150, 0.14)',
+    darkSoft: 'rgba(110, 97, 150, 0.20)',
+    darkStrong: 'rgba(110, 97, 150, 0.30)',
+    darkAccent: '#8E82AE',
   },
   'Leadership': {
-    accent: '#4D7DAF',
-    borderColor: '#6A97C7',
-    lightSoft: '#F3F8FD',
-    lightStrong: 'rgba(77, 125, 175, 0.14)',
-    darkSoft: 'rgba(77, 125, 175, 0.20)',
-    darkStrong: 'rgba(77, 125, 175, 0.30)',
-    darkAccent: '#4D7DAF',
+    accent: '#3F5A73',
+    borderColor: '#6E8198',
+    lightSoft: '#E8EFF8',
+    lightStrong: 'rgba(63, 90, 115, 0.14)',
+    darkSoft: 'rgba(63, 90, 115, 0.20)',
+    darkStrong: 'rgba(63, 90, 115, 0.30)',
+    darkAccent: '#6E8198',
   },
   'Health': {
-    accent: '#37A37C',
-    borderColor: '#57BC96',
-    lightSoft: '#F2FCF8',
-    lightStrong: 'rgba(55, 163, 124, 0.14)',
-    darkSoft: 'rgba(55, 163, 124, 0.20)',
-    darkStrong: 'rgba(55, 163, 124, 0.30)',
-    darkAccent: '#37A37C',
+    accent: '#2C8068',
+    borderColor: '#5AA08C',
+    lightSoft: '#E6F2EE',
+    lightStrong: 'rgba(44, 128, 104, 0.14)',
+    darkSoft: 'rgba(44, 128, 104, 0.20)',
+    darkStrong: 'rgba(44, 128, 104, 0.30)',
+    darkAccent: '#5AA08C',
   },
   'Growth': {
-    accent: '#D97A2B',
-    borderColor: '#E89B59',
-    lightSoft: '#FFF6ED',
-    lightStrong: 'rgba(217, 122, 43, 0.14)',
-    darkSoft: 'rgba(217, 122, 43, 0.20)',
-    darkStrong: 'rgba(217, 122, 43, 0.30)',
-    darkAccent: '#D97A2B',
+    accent: '#C06A38',
+    borderColor: '#D08C64',
+    lightSoft: '#FBEFE4',
+    lightStrong: 'rgba(192, 106, 56, 0.14)',
+    darkSoft: 'rgba(192, 106, 56, 0.20)',
+    darkStrong: 'rgba(192, 106, 56, 0.30)',
+    darkAccent: '#D08C64',
   },
   'Science': {
-    accent: '#4F8EDB',
-    borderColor: '#7AB0F0',
-    lightSoft: '#F4F9FF',
-    lightStrong: 'rgba(79, 142, 219, 0.14)',
-    darkSoft: 'rgba(79, 142, 219, 0.20)',
-    darkStrong: 'rgba(79, 142, 219, 0.30)',
-    darkAccent: '#4F8EDB',
+    accent: '#3E6FA0',
+    borderColor: '#6B92BC',
+    lightSoft: '#E7F1FB',
+    lightStrong: 'rgba(62, 111, 160, 0.14)',
+    darkSoft: 'rgba(62, 111, 160, 0.20)',
+    darkStrong: 'rgba(62, 111, 160, 0.30)',
+    darkAccent: '#6B92BC',
   },
   'Philosophy': {
-    accent: '#8C6B4A',
-    borderColor: '#B08A63',
-    lightSoft: '#FBF7F2',
-    lightStrong: 'rgba(140, 107, 74, 0.14)',
-    darkSoft: 'rgba(140, 107, 74, 0.20)',
-    darkStrong: 'rgba(140, 107, 74, 0.30)',
-    darkAccent: '#8C6B4A',
+    accent: '#7A6A4E',
+    borderColor: '#9A8C72',
+    lightSoft: '#F2EDE3',
+    lightStrong: 'rgba(122, 106, 78, 0.14)',
+    darkSoft: 'rgba(122, 106, 78, 0.20)',
+    darkStrong: 'rgba(122, 106, 78, 0.30)',
+    darkAccent: '#9A8C72',
   },
   'Communication': {
-    accent: '#D97724',
-    borderColor: '#E89A53',
-    lightSoft: '#FFF7F1',
-    lightStrong: 'rgba(217, 151, 68, 0.14)',
-    darkSoft: 'rgba(217, 151, 68, 0.20)',
-    darkStrong: 'rgba(217, 151, 68, 0.30)',
-    darkAccent: '#D97724',
+    accent: '#C46A3C',
+    borderColor: '#D18B66',
+    lightSoft: '#FCEFE4',
+    lightStrong: 'rgba(196, 106, 60, 0.14)',
+    darkSoft: 'rgba(196, 106, 60, 0.20)',
+    darkStrong: 'rgba(196, 106, 60, 0.30)',
+    darkAccent: '#D18B66',
   },
   'Productivity': {
-    accent: '#7B9E36',
-    borderColor: '#A8C75B',
-    lightSoft: '#F8FCEB',
-    lightStrong: 'rgba(123, 158, 54, 0.14)',
-    darkSoft: 'rgba(123, 158, 54, 0.20)',
-    darkStrong: 'rgba(123, 158, 54, 0.30)',
-    darkAccent: '#7B9E36',
+    accent: '#3E7D5E',
+    borderColor: '#6BA088',
+    lightSoft: '#E6F1EB',
+    lightStrong: 'rgba(62, 125, 94, 0.14)',
+    darkSoft: 'rgba(62, 125, 94, 0.20)',
+    darkStrong: 'rgba(62, 125, 94, 0.30)',
+    darkAccent: '#6BA088',
   },
   'History': {
-    accent: '#A86A3A',
-    borderColor: '#C78A59',
-    lightSoft: '#FBF5EF',
-    lightStrong: 'rgba(168, 106, 58, 0.14)',
-    darkSoft: 'rgba(168, 106, 58, 0.20)',
-    darkStrong: 'rgba(168, 106, 58, 0.30)',
-    darkAccent: '#A86A3A',
+    accent: '#9C5238',
+    borderColor: '#B57C66',
+    lightSoft: '#F5EBE4',
+    lightStrong: 'rgba(156, 82, 56, 0.14)',
+    darkSoft: 'rgba(156, 82, 56, 0.20)',
+    darkStrong: 'rgba(156, 82, 56, 0.30)',
+    darkAccent: '#B57C66',
   },
   'Business': {
-    accent: '#B8843A',
-    borderColor: '#D6A75B',
-    lightSoft: '#FFF8EE',
-    lightStrong: 'rgba(184, 132, 58, 0.14)',
-    darkSoft: 'rgba(184, 132, 58, 0.20)',
-    darkStrong: 'rgba(184, 132, 58, 0.30)',
-    darkAccent: '#B8843A',
+    accent: '#4F6475',
+    borderColor: '#768799',
+    lightSoft: '#EBEFF2',
+    lightStrong: 'rgba(79, 100, 117, 0.14)',
+    darkSoft: 'rgba(79, 100, 117, 0.20)',
+    darkStrong: 'rgba(79, 100, 117, 0.30)',
+    darkAccent: '#768799',
   },
   default: {
     accent: '#C89B3C',
@@ -521,6 +526,24 @@ const PILL_ICON_COMMUNICATION = require('../../assets/categories/pill_icons/Comm
 const PILL_ICON_HISTORY = require('../../assets/categories/pill_icons/History.png');
 const PILL_ICON_BUSINESS = PILL_ICON_FINANCE;
 
+// Banner background artwork (soft category-tinted gradient + faint watermark).
+// Used behind the home "badge journey / next step" card so it adopts the
+// active category's colour. Light-mode only; dark mode falls back to a gradient.
+const BANNER_DEFAULT = require('../../assets/banner/Default.png');
+const BANNER_MAP = {
+  finance: require('../../assets/banner/Finance.png'),
+  business: require('../../assets/banner/Business.png'),
+  psychology: require('../../assets/banner/Psychology.png'),
+  leadership: require('../../assets/banner/Leadership.png'),
+  health: require('../../assets/banner/Health.png'),
+  growth: require('../../assets/banner/Growth.png'),
+  science: require('../../assets/banner/Science.png'),
+  philosophy: require('../../assets/banner/Philosophy.png'),
+  communication: require('../../assets/banner/Communication.png'),
+  productivity: require('../../assets/banner/Productivity.png'),
+  history: require('../../assets/banner/History.png'),
+};
+
 const PARENT_CATEGORY_IMAGE_MAP_LIGHT = {
   'Mind & Psychology': IMG_PSYCHOLOGY,
   'Psikoloji': IMG_PSYCHOLOGY,
@@ -777,6 +800,7 @@ const categoryImageMap = {
   'Gemeinschaft': IMG_PHILOSOPHY,
 
   // ── Personal Growth group ──
+  'Growth': IMG_GROWTH,
   'Kişisel Gelişim': IMG_GROWTH,
   'Personal Growth': IMG_GROWTH,
   'Crecimiento personal': IMG_GROWTH,
@@ -898,6 +922,53 @@ export const getCategoryImage = (catName, isDark = false) => {
   const style = styleMap[normalizedKey] || { rotate: '0deg', flip: false, tint: 'transparent' };
 
   return { source, ...style };
+};
+
+/**
+ * Banner background for the home primary card. Returns the category-tinted
+ * artwork (light mode). For "All"/unknown returns the brand-gold default.
+ * @param {string} catName
+ */
+// Soft per-badge banner backgrounds (light tint of each badge colour).
+const BADGE_BANNER_MAP = {
+  first_read: require('../../assets/banner/badge/first_read.png'),
+  explorer: require('../../assets/banner/badge/explorer.png'),
+  sage: require('../../assets/banner/badge/sage.png'),
+  bookworm: require('../../assets/banner/badge/bookworm.png'),
+  streak_7: require('../../assets/banner/badge/streak_7.png'),
+  cat_variety_3: require('../../assets/banner/badge/cat_variety_3.png'),
+  cat_variety_5: require('../../assets/banner/badge/cat_variety_5.png'),
+  cat_variety_10: require('../../assets/banner/badge/cat_variety_10.png'),
+  cat_master_5: require('../../assets/banner/badge/cat_master_5.png'),
+  cat_master_10: require('../../assets/banner/badge/cat_master_10.png'),
+  cat_master_25: require('../../assets/banner/badge/cat_master_25.png'),
+  cat_master_50: require('../../assets/banner/badge/cat_master_50.png'),
+  cat_master_100: require('../../assets/banner/badge/cat_master_100.png'),
+  philosopher: require('../../assets/banner/badge/philosopher.png'),
+  save_5: require('../../assets/banner/badge/save_5.png'),
+  save_10: require('../../assets/banner/badge/save_10.png'),
+  save_50: require('../../assets/banner/badge/save_50.png'),
+  save_100: require('../../assets/banner/badge/save_100.png'),
+  share_1: require('../../assets/banner/badge/share_1.png'),
+  share_10: require('../../assets/banner/badge/share_10.png'),
+  share_20: require('../../assets/banner/badge/share_20.png'),
+  share_30: require('../../assets/banner/badge/share_30.png'),
+  share_50: require('../../assets/banner/badge/share_50.png'),
+  storyteller: require('../../assets/banner/badge/storyteller.png'),
+  icebreaker: require('../../assets/banner/badge/icebreaker.png'),
+};
+
+/** Soft banner background for a badge id (light). Falls back to brand gold. */
+export const getBadgeBanner = (badgeId) => ({ source: BADGE_BANNER_MAP[badgeId] || BANNER_DEFAULT });
+
+export const getCategoryBanner = (catName) => {
+  const normalizedKey = normalizeCategoryKey(catName);
+  const family =
+    CATEGORY_PILL_FAMILY_MAP[normalizedKey]
+    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(normalizedKey)]
+    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(catName)]
+    || null;
+  return { source: BANNER_MAP[family] || BANNER_DEFAULT };
 };
 
 export const getCategoryPillIcon = (catName) => {

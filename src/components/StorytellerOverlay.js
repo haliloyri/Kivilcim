@@ -48,7 +48,7 @@ const buildTalkingPoints = (variant, story) => {
   if (body) points.push(body);
 
   // Point 2: 30-sec version if different
-  const thirtySec = (story?.thirty_sec || '').trim();
+  const thirtySec = (story?.conversation_thirty_sec || story?.thirty_sec || '').trim();
   if (thirtySec && thirtySec !== body) points.push(thirtySec);
 
   // Point 3: reflection/question marker fallback

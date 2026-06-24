@@ -4,19 +4,20 @@
     "slug": "spark",
     "version": "1.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "dark",
+    "userInterfaceStyle": "light",
     "backgroundColor": "#131311",
     "icon": "./assets/spark_shortcut_logo.png",
     "splash": {
       "image": "./assets/spark_logo.png",
-      "backgroundColor": "#131311",
+      "backgroundColor": "#FAF7F1",
       "resizeMode": "contain"
     },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.kivilcim.app",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSPhotoLibraryAddUsageDescription": "Spark, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister."
       }
     },
     "android": {
@@ -31,6 +32,14 @@
       "expo-sqlite",
       "expo-asset",
       [
+        "expo-media-library",
+        {
+          "photosPermission": "Spark, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.",
+          "savePhotosPermission": "Spark, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.",
+          "isAccessMediaLocationEnabled": false
+        }
+      ],
+      [
         "react-native-google-mobile-ads",
         {
           "androidAppId": "ca-app-pub-3940256099942544~3347511713",
@@ -43,6 +52,16 @@
     "extra": {
       "eas": {
         "projectId": "73e8e4f4-f966-42cd-9c4e-3ffb9799314e"
+      },
+      "revenuecat": {
+        "iosApiKey": "REPLACE_WITH_REVENUECAT_IOS_PUBLIC_SDK_KEY",
+        "androidApiKey": "REPLACE_WITH_REVENUECAT_ANDROID_PUBLIC_SDK_KEY",
+        "entitlementId": "premium",
+        "offeringId": "default",
+        "products": {
+          "monthly": "spark_premium_monthly",
+          "annual": "spark_premium_annual"
+        }
       }
     },
     "owner": "hoyri"
