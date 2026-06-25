@@ -148,17 +148,29 @@ export const loadRewarded = () => {
  * Loads and returns an InterstitialAd ready to show.
  * Respects session frequency cap. Returns null if cap reached or load fails.
  */
-export const loadInterstitial = () => {
+export const loadInterstitial = ({ ignoreCap = false } = {}) => {
   return new Promise((resolve) => {
     const now = Date.now();
-    if (_sessionInterstitialCount >= SESSION_INTERSTITIAL_MAX) {
-      resolve(null);
-      return;
+    // Frequency cap (skippable for test/"every story" flows via ignoreCap).
+    if (!ignoreCap) {
+      if (_sessionInterstitialCount >= SESSION_INTERSTITIAL_MAX) {
+        resolve(null);
+        return;
+      }
+      if (now - _lastInterstitialTimestamp < INTERSTITIAL_COOLDOWN_MS) {
+        resolve(null);
+        return;
+      }
     }
-    if (now - _lastInterstitialTimestamp < INTERSTITIAL_COOLDOWN_MS) {
-      resolve(null);
-      return;
-    }
+
+    let settled = false;
+    let fallbackTimer = null;
+    const finish = (ad) => {
+      if (settled) return;
+      settled = true;
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+      resolve(ad);
+    };
 
     try {
       const ad = InterstitialAd.createForAdRequest(AD_UNITS.interstitial, {
@@ -168,20 +180,28 @@ export const loadInterstitial = () => {
       const unsubscribeLoaded = ad.addAdEventListener(AdEventType.LOADED, () => {
         unsubscribeLoaded();
         unsubscribeError();
-        resolve(ad);
+        finish(ad);
       });
 
       const unsubscribeError = ad.addAdEventListener(AdEventType.ERROR, (e) => {
         unsubscribeLoaded();
         unsubscribeError();
         console.warn('[ads] interstitial load error:', e?.message);
-        resolve(null);
+        finish(null);
       });
+
+      // Never block the UI forever if the SDK neither loads nor errors.
+      fallbackTimer = setTimeout(() => {
+        unsubscribeLoaded();
+        unsubscribeError();
+        console.warn('[ads] interstitial load timeout');
+        finish(null);
+      }, 8000);
 
       ad.load();
     } catch (e) {
       console.warn('[ads] loadInterstitial exception:', e?.message);
-      resolve(null);
+      finish(null);
     }
   });
 };
@@ -208,6 +228,56 @@ export const showInterstitial = (ad, onClosed) => {
   } catch (e) {
     console.warn('[ads] showInterstitial error:', e?.message);
     onClosed?.();
+  }
+};
+
+/**
+ * Show a pre-loaded RewardedAd with proper listener cleanup.
+ *
+ * IMPORTANT: A full-screen ad must NOT be presented while a React Native
+ * <Modal> is still mounted/animating — on Android this causes the ad to flash
+ * for ~1s and then the app to freeze (window/focus conflict). Callers should
+ * close any open Modal first and only then call this helper (e.g. after a short
+ * delay so the dismiss animation completes).
+ *
+ * @param {RewardedAd} ad        - ad returned by loadRewarded()
+ * @param {object} handlers
+ * @param {function} handlers.onEarned  - called when the reward is earned
+ * @param {function} handlers.onClosed  - called once when the ad closes or errors
+ */
+export const showRewarded = (ad, { onEarned, onClosed } = {}) => {
+  if (!ad) {
+    onClosed?.();
+    return;
+  }
+
+  let finished = false;
+  const cleanup = () => {
+    unsubscribeEarned?.();
+    unsubscribeClosed?.();
+    unsubscribeError?.();
+  };
+  const finishOnce = () => {
+    if (finished) return;
+    finished = true;
+    cleanup();
+    onClosed?.();
+  };
+
+  const unsubscribeEarned = ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
+    onEarned?.();
+  });
+  const unsubscribeClosed = ad.addAdEventListener(AdEventType.CLOSED, finishOnce);
+  const unsubscribeError = ad.addAdEventListener(AdEventType.ERROR, (e) => {
+    console.warn('[ads] rewarded show error:', e?.message);
+    finishOnce();
+  });
+
+  try {
+    ad.show();
+  } catch (e) {
+    console.warn('[ads] showRewarded exception:', e?.message);
+    finishOnce();
   }
 };
 

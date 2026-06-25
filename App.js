@@ -9,7 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { t } from './src/locales/i18n';
 
 import { setupNotificationHandler, scheduleDailyNotifications } from './src/utils/notifications';
-import { ANALYTICS_EVENTS, trackEvent } from './src/utils/analytics';
+import { ANALYTICS_EVENTS, trackEvent, initAnalytics, setAnalyticsContext } from './src/utils/analytics';
 import { initAds } from './src/utils/ads';
 
 setupNotificationHandler();
@@ -46,8 +46,8 @@ import { initDb, seedData } from './src/db/db';
 const SplashDesign = () => {
   return (
     <View style={stylesSplash.container}>
-      <Image 
-        source={require('./assets/spark_logo.png')} 
+      <Image
+        source={require('./assets/spark_logo_dark.png')}
         style={stylesSplash.launchImage}
         resizeMode="contain"
       />
@@ -89,6 +89,9 @@ function Main() {
           setSplashLang(stored);
         }
       } catch (e) {}
+      // Analytics: init as early as possible, then tag every event with lang.
+      initAnalytics();
+      setAnalyticsContext({ lang: savedLang });
       await initDb();
       await seedData();
       initAds().catch(e => console.warn('initAds error:', e?.message));

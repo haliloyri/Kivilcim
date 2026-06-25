@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { getCategoryPillIcon, getCategoryTheme } from '../utils/categoryImages';
+import { readableTextOn } from '../theme/theme';
 
 const CategoryPill = ({
   label,
@@ -12,6 +13,7 @@ const CategoryPill = ({
   onPress,
   disabled = false,
   activeColor,
+  activeTextColor,
   showIcon = true,
 }) => {
   const displayLabel = label || categoryName || '';
@@ -29,8 +31,16 @@ const CategoryPill = ({
 
   const backgroundColor = active ? resolvedActiveColor : neutral.background;
   const borderColor = active ? resolvedActiveColor : neutral.border;
-  const labelColor = active ? '#FFFFFF' : neutral.text;
-  const iconWrapBg = active ? 'rgba(255,255,255,0.20)' : 'transparent';
+  // The filled colour varies per category (gold/blue/green…), so derive the
+  // label colour from contrast instead of hardcoding white — light accents
+  // (e.g. dark-mode gold #E5C27A) get dark text, dark accents get white.
+  // Callers using a single shared accent (e.g. Profile's gold pills) can pass an
+  // explicit `activeTextColor` (typically the theme's onPrimary token) to force it.
+  const onActiveColor = activeTextColor || readableTextOn(resolvedActiveColor);
+  const labelColor = active ? onActiveColor : neutral.text;
+  const iconWrapBg = active
+    ? (onActiveColor === '#FFFFFF' ? 'rgba(255,255,255,0.20)' : 'rgba(0,0,0,0.12)')
+    : 'transparent';
 
   return (
     <TouchableOpacity

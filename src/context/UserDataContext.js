@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from './ThemeContext';
-import { recordRead, getTotalReads, getStreak, getLongestStreak, getReadsPerCategory, getReadCountsByStory, recordStreakFreeze, getStreakFreezes, clearStreakFreezes } from '../db/db';
+import { recordRead, getTotalReads, getStreak, getLongestStreak, getReadsPerCategory, getReadCountsByStory, recordStreakFreeze, getStreakFreezes, clearStreakFreezes, clearUserReads } from '../db/db';
 import { checkBadges } from '../utils/badges';
 import { scheduleDailyNotifications } from '../utils/notifications';
-import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import { ANALYTICS_EVENTS, trackEvent, setAnalyticsContext } from '../utils/analytics';
 import { BILLING_LIVE, purchasePackage, restorePurchases, getOfferingPackages, checkEntitlement } from '../services/billing';
 
 const UserDataContext = createContext();
@@ -207,6 +207,13 @@ export const UserDataProvider = ({ children }) => {
   const [isOnboarded, setIsOnboarded] = useState(false);
   const [isPremium, setIsPremium] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Segment every analytics event by subscription + onboarding state so the
+  // paywall-conversion and retention funnels can be sliced by user type.
+  useEffect(() => {
+    setAnalyticsContext({ is_premium: isPremium, is_onboarded: isOnboarded });
+  }, [isPremium, isOnboarded]);
+
   const [streak, setStreak] = useState(0);
   const [totalReads, setTotalReads] = useState(0);
   const [longestStreak, setLongestStreak] = useState(0);
@@ -603,6 +610,19 @@ export const UserDataProvider = ({ children }) => {
     await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(true));
   };
 
+  // DEV-ONLY: force Premium on/off locally to test free vs premium flows
+  // (e.g. ads). No-op in production builds.
+  const devSetPremium = async (value) => {
+    if (!__DEV__) return;
+    const next = !!value;
+    setIsPremium(next);
+    try {
+      await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(next));
+    } catch (e) {
+      console.warn('[dev] devSetPremium failed:', e?.message);
+    }
+  };
+
   // Purchases Premium. With live billing, runs the store purchase via RevenueCat
   // and only unlocks on a confirmed entitlement. Without it, falls back to local
   // activation (dev builds). `pkg` is the RevenueCat package for the chosen plan.
@@ -812,6 +832,15 @@ export const UserDataProvider = ({ children }) => {
       setStreakFreezeCredits(0);
       setStreakFreezeDates([]);
       await clearStreakFreezes();
+      // Progress stats live in the user_reads DB table, not AsyncStorage — wipe
+      // them too, then reset the derived in-memory state so the UI updates.
+      await clearUserReads();
+      setTotalReads(0);
+      setStreak(0);
+      setLongestStreak(0);
+      setCategoryStats([]);
+      setReadCountsByStory({});
+      setTodayReadsCount(0);
       // Clear global categories in ThemeContext too
       await setGlobalCategories([]);
     } catch (error) {
@@ -953,6 +982,7 @@ export const UserDataProvider = ({ children }) => {
     updatePreferences,
     buyPremium,
     restorePremium,
+    devSetPremium,
     getPremiumOfferings,
     billingLive: BILLING_LIVE,
     updateUserProfile,

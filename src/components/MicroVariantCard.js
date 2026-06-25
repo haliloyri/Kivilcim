@@ -23,6 +23,7 @@ import React, { useCallback } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
+import { readableTextOn } from '../theme/theme';
 
 // ─── constants ───────────────────────────────────────────────────────────────
 
@@ -176,9 +177,9 @@ const MicroVariantCard = ({
                 <Ionicons
                   name={isCopied ? 'checkmark' : 'copy-outline'}
                   size={15}
-                  color={isCopied ? '#fff' : colors.text}
+                  color={isCopied ? readableTextOn(accent) : colors.text}
                 />
-                <Text style={[styles.actionBtnText, isCopied && { color: '#fff' }]}>
+                <Text style={[styles.actionBtnText, isCopied && { color: readableTextOn(accent) }]}>
                   {isCopied ? t('mv_copied', lang) : t('mv_copy', lang)}
                 </Text>
               </TouchableOpacity>

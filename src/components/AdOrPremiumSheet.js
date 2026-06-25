@@ -36,6 +36,7 @@ import { t } from '../locales/i18n';
 const AdOrPremiumSheet = ({
   visible,
   onClose,
+  onDismiss,
   onWatchAd,
   onGoPremium,
   title,
@@ -59,6 +60,7 @@ const AdOrPremiumSheet = ({
       animationType="slide"
       statusBarTranslucent
       onRequestClose={onClose}
+      onDismiss={onDismiss}
     >
       {/* Dimmed backdrop — tap to dismiss */}
       <TouchableWithoutFeedback onPress={onClose}>

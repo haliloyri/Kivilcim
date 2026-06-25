@@ -7,7 +7,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>$(DEVELOPMENT_LANGUAGE)</string>
     <key>CFBundleDisplayName</key>
-    <string>Spark</string>
+    <string>Talira</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -53,9 +53,9 @@
     <key>NSMicrophoneUsageDescription</key>
     <string>Allow $(PRODUCT_NAME) to access your microphone</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Allow $(PRODUCT_NAME) to save photos</string>
+    <string>Spark, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.</string>
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>Allow $(PRODUCT_NAME) to access your photos</string>
+    <string>Spark, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.</string>
     <key>NSUserTrackingUsageDescription</key>
     <string>This identifier will be used to deliver personalized ads to you.</string>
     <key>RCTNewArchEnabled</key>
@@ -78,7 +78,7 @@
       <string>UIInterfaceOrientationPortraitUpsideDown</string>
     </array>
     <key>UIUserInterfaceStyle</key>
-    <string>Dark</string>
+    <string>Light</string>
     <key>UIViewControllerBasedStatusBarAppearance</key>
     <false/>
   </dict>

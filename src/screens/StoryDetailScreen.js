@@ -13,17 +13,32 @@ import * as MediaLibrary from 'expo-media-library';
 import { Audio } from 'expo-av';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
+import Constants from 'expo-constants';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import { getStoryByLang } from '../db/db';
 import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import { readableTextOn } from '../theme/theme';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
-import { shouldShowAd, loadRewarded } from '../utils/ads';
+import { shouldShowAd, loadRewarded, showRewarded, loadInterstitial, showInterstitial } from '../utils/ads';
 
 const { width, height } = Dimensions.get('window');
+
+// Where people who see a share card can find the app. Set this in
+// app.json -> expo.extra.shareLink (store URL, landing page, or @handle)
+// once the app is live.
+const SHARE_LINK =
+  Constants.expoConfig?.extra?.shareLink ??
+  Constants.manifest?.extra?.shareLink ??
+  '';
+
+// Brand logo (book + star + "Talira" wordmark). Dark variant has the cream
+// wordmark for dark card backgrounds; light variant has the ink wordmark.
+const LOGO_LIGHT_BG = require('../../assets/spark_logo.png');
+const LOGO_DARK_BG = require('../../assets/spark_logo_dark.png');
 
 const StoryDetailScreen = ({ route, navigation }) => {
   const { story } = route.params;
@@ -55,6 +70,16 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [cardGate, setCardGate] = useState(false);
   const [cardAdLoading, setCardAdLoading] = useState(false);
   const [cardAdUnavailable, setCardAdUnavailable] = useState(false);
+  // Holds a loaded rewarded ad to show only after the gate Modal is fully
+  // dismissed — showing it while the Modal is still presented makes iOS throw
+  // "already presenting another view controller" and Android freeze.
+  const pendingRewardedRef = useRef(null);
+  const flushPendingRewarded = () => {
+    const p = pendingRewardedRef.current;
+    if (!p) return;
+    pendingRewardedRef.current = null;
+    showRewarded(p.ad, { onEarned: p.onEarned, onClosed: p.onClosed });
+  };
   const [recording, setRecording] = useState(null);
   const [isRecording, setIsRecording] = useState(false);
   const [recordingDuration, setRecordingDuration] = useState(0);
@@ -63,6 +88,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [playingIndex, setPlayingIndex] = useState(null);
   const [soundObj, setSoundObj] = useState(null);
   const [recPanelVisible, setRecPanelVisible] = useState(false);
+  // Full-screen interstitial gate: free users see an ad before the story.
+  const [storyAdGate, setStoryAdGate] = useState(
+    shouldShowAd({ isPremium, isOnboarded: true })
+  );
 
   const AUDIO_LIST_KEY = `story_audio_list_${story?.story_id}`;
   const MAX_RECORDINGS = 3;
@@ -92,6 +121,33 @@ const StoryDetailScreen = ({ route, navigation }) => {
     loadSavedAudio();
   }, [story?.story_id]);
 
+
+  // On open, show a full-screen (interstitial) ad first, then reveal the story.
+  // Premium users and ad-load failures fall straight through to reading.
+  // NOTE: ignoreCap:true => one ad on every story open (test mode). For the
+  // future "every N stories" rule, drop ignoreCap and gate this call instead.
+  React.useEffect(() => {
+    let cancelled = false;
+    // Skip the on-open interstitial when this screen was opened solely to show
+    // the share card (e.g. from "Use in conversation"). The share itself is
+    // already gated by its own rewarded-ad / premium sheet, so a second ad here
+    // would pop over the share modal and disrupt the flow.
+    if (route.params?.openShareModal || !shouldShowAd({ isPremium, isOnboarded: true })) {
+      setStoryAdGate(false);
+      return;
+    }
+    (async () => {
+      const ad = await loadInterstitial({ ignoreCap: true });
+      if (cancelled) return;
+      if (ad) {
+        showInterstitial(ad, () => { if (!cancelled) setStoryAdGate(false); });
+      } else {
+        setStoryAdGate(false);
+      }
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleNextWithAd = () => {
     setAdUnavailable(false);
@@ -236,12 +292,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
       return;
     }
     setAdUnavailable(false);
+    // Queue the ad and close the sheet. Shown from the Modal's onDismiss (iOS)
+    // or a fallback timer (Android) — never while the Modal is presented.
+    pendingRewardedRef.current = {
+      ad,
+      onEarned: () => trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_next' }),
+    };
     setAdSheet(false);
-    const { RewardedAdEventType } = require('react-native-google-mobile-ads');
-    ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
-      trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_next' });
-    });
-    ad.show().catch(e => console.warn('[StoryDetail] rewarded show error:', e?.message));
+    setTimeout(flushPendingRewarded, 600);
   };
 
   // --- Visual card gate: premium-only, free users unlock via rewarded ad ---
@@ -271,14 +329,24 @@ const StoryDetailScreen = ({ route, navigation }) => {
       return;
     }
     setCardAdUnavailable(false);
-    const { RewardedAdEventType } = require('react-native-google-mobile-ads');
-    ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
-      trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_card' });
-      setCardUnlocked(true);
-      setCardGate(false);
-      setShareModalVisible(true);
-    });
-    ad.show().catch(e => console.warn('[StoryDetail] card rewarded show error:', e?.message));
+    // Queue the ad and close the gate sheet. It is shown from the Modal's
+    // onDismiss (iOS) or a fallback timer (Android). We unlock + open the share
+    // modal only after the ad closes (another modal over the ad also conflicts).
+    let earned = false;
+    pendingRewardedRef.current = {
+      ad,
+      onEarned: () => {
+        earned = true;
+        trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_card' });
+      },
+      onClosed: () => {
+        if (!earned) return;
+        setCardUnlocked(true);
+        setShareModalVisible(true);
+      },
+    };
+    setCardGate(false);
+    setTimeout(flushPendingRewarded, 600);
   };
 
   React.useEffect(() => {
@@ -308,7 +376,21 @@ const StoryDetailScreen = ({ route, navigation }) => {
     }
     setShareTextOverride(overrideText);
     setShareFormat('post');
-    setShareModalVisible(true);
+
+    // Same premium/ad gate as the top-menu share entry: free users who would
+    // otherwise see an ad must pass the card gate before the share modal opens.
+    // If the caller already ran the gate (e.g. Use-in-Conversation), open directly.
+    if (route.params?.shareGatePassed || isPremium || cardUnlocked || !shouldShowAd({ isPremium, isOnboarded: true })) {
+      setShareModalVisible(true);
+    } else {
+      setCardAdUnavailable(false);
+      setCardGate(true);
+      trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
+        source: 'story_detail_card',
+        storyId: story?.story_id,
+        lang,
+      });
+    }
 
     navigation.setParams({
       openShareModal: false,
@@ -316,12 +398,15 @@ const StoryDetailScreen = ({ route, navigation }) => {
       shareOverrideText: undefined,
       shareSource: undefined,
       shareVariantType: undefined,
+      shareGatePassed: undefined,
     });
   }, [
     navigation,
     route.params?.openShareModal,
     route.params?.sharePreset,
     route.params?.shareOverrideText,
+    isPremium,
+    cardUnlocked,
   ]);
 
   const closeShareModal = () => {
@@ -464,27 +549,27 @@ const StoryDetailScreen = ({ route, navigation }) => {
     if (localLang === 'en') {
       return [
         'Save this and tag a friend who needs this today.',
-        'Follow Spark for daily actionable wisdom.',
+        'Follow Talira for daily actionable wisdom.',
         'Try this insight today and share your result.',
       ];
     }
     if (localLang === 'es') {
       return [
         'Guarda esto y etiqueta a alguien que lo necesite hoy.',
-        'Sigue a Spark para sabiduria diaria accionable.',
+        'Sigue a Talira para sabiduria diaria accionable.',
         'Prueba esta idea hoy y comparte tu resultado.',
       ];
     }
     if (localLang === 'de') {
       return [
         'Speichere das und markiere jemanden, der das heute braucht.',
-        'Folge Spark fur tagliche, umsetzbare Impulse.',
+        'Folge Talira fur tagliche, umsetzbare Impulse.',
         'Teste diese Erkenntnis heute und teile dein Ergebnis.',
       ];
     }
     return [
       'Bunu kaydet ve bugun ihtiyaci olan birini etiketle.',
-      'Her gun uygulanabilir bilgelik icin Spark\'i takip et.',
+      'Her gun uygulanabilir bilgelik icin Talira\'yi takip et.',
       'Bu fikri bugun dene, sonucunu paylas.',
     ];
   };
@@ -492,12 +577,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const buildHashtags = () => {
     const catHashtag = displayCat.replace(/[^\p{L}\p{N}]/gu, '');
     const generalHashtags = localLang === 'en'
-      ? '#Spark #DailyInspiration #BookWisdom #Mindset'
+      ? '#Talira #DailyInspiration #BookWisdom #Mindset'
       : localLang === 'es'
-        ? '#Spark #InspiracionDiaria #Sabiduria #Mentalidad'
+        ? '#Talira #InspiracionDiaria #Sabiduria #Mentalidad'
         : localLang === 'de'
-          ? '#Spark #TaeglicheInspiration #Buchimpulse #Mindset'
-          : '#Spark #gununilhami #kitapbilgeligi #farkindalik';
+          ? '#Talira #TaeglicheInspiration #Buchimpulse #Mindset'
+          : '#Talira #gununilhami #kitapbilgeligi #farkindalik';
 
     return `#${catHashtag} ${generalHashtags}`;
   };
@@ -686,6 +771,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
       flex: 1,
       backgroundColor: colors.background
     },
+    adGateOverlay: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: colors.background,
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 999,
+    },
     modalOverlay: {
       flex: 1,
       backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.28)',
@@ -740,7 +832,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       color: colors.textSecondary,
     },
     contentPillTextActive: {
-      color: '#FFF',
+      color: colors.onPrimary,
     },
     // --- Theme swatches ---
     themeToggle: {
@@ -1198,13 +1290,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
         {/* Three-zone layout: brand / centered content / footer strip */}
         <View style={{ flex: 1, justifyContent: 'space-between', paddingHorizontal: padHorizontal, paddingTop, paddingBottom }}>
 
-          {/* Header (Logo) */}
-          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomWidth: 4, borderBottomColor: th.accent, paddingBottom: 16, alignSelf: 'flex-start' }}>
-            <Text style={{
-              fontFamily: 'PlayfairDisplay_700Bold',
-              fontSize: 64, color: th.text,
-              letterSpacing: 2
-            }}>✦ {t('brandText', lang).replace(' ✦', '')}</Text>
+          {/* Header (Logo) — real brand mark, theme-aware */}
+          <View style={{ alignSelf: 'flex-start', borderBottomWidth: 4, borderBottomColor: th.accent, paddingBottom: 16 }}>
+            <Image
+              source={th.id === 'light' ? LOGO_LIGHT_BG : LOGO_DARK_BG}
+              style={{ width: 200, height: 200 }}
+              resizeMode="contain"
+            />
           </View>
 
           {/* Content zone — vertically centered */}
@@ -1296,14 +1388,27 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   {t('share_source', localLang)}{displaySourceBook}
                 </Text>
               </View>
-              <Text style={{
-                fontFamily: 'Inter_500Medium',
-                fontSize: fSrc,
-                color: th.accent,
-                letterSpacing: 1,
-              }}>
-                {t('card_cta_short', localLang)} ✦
-              </Text>
+              <View style={{ alignItems: 'flex-end' }}>
+                <Text style={{
+                  fontFamily: 'Inter_500Medium',
+                  fontSize: fSrc,
+                  color: th.accent,
+                  letterSpacing: 1,
+                }}>
+                  {t('card_cta_short', localLang)} ✦
+                </Text>
+                {SHARE_LINK ? (
+                  <Text style={{
+                    fontFamily: 'Inter_500Medium',
+                    fontSize: fFooter,
+                    color: th.sub,
+                    letterSpacing: 1,
+                    marginTop: 8,
+                  }}>
+                    {SHARE_LINK}
+                  </Text>
+                ) : null}
+              </View>
             </View>
           </View>
 
@@ -1840,7 +1945,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
             <Ionicons name={recPanelVisible ? 'mic' : 'mic-outline'} size={24} color={categoryTheme.accent} />
             {audioRecordings.length > 0 ? (
               <View style={[styles.footerMicBadge, { backgroundColor: categoryTheme.accent }]}>
-                <Text style={styles.footerMicBadgeText}>{audioRecordings.length}</Text>
+                <Text style={[styles.footerMicBadgeText, { color: readableTextOn(categoryTheme.accent) }]}>{audioRecordings.length}</Text>
               </View>
             ) : null}
           </TouchableOpacity>
@@ -1912,6 +2017,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
           setAdUnavailable(false);
           setAdSheet(false);
         }}
+        onDismiss={flushPendingRewarded}
         onWatchAd={handleWatchAdNext}
         onGoPremium={() => {
           trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_next', choice: 'premium' });
@@ -1931,6 +2037,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
           setCardAdUnavailable(false);
           setCardGate(false);
         }}
+        onDismiss={flushPendingRewarded}
         onWatchAd={handleWatchAdForCard}
         onGoPremium={() => {
           trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_card', choice: 'premium' });
@@ -1943,6 +2050,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
         isAdLoading={cardAdLoading}
         lang={lang}
       />
+
+      {/* Cover the story until the interstitial is shown (or fails) */}
+      {storyAdGate && (
+        <View style={styles.adGateOverlay} pointerEvents="auto">
+          <ActivityIndicator size="large" color={colors.primary} />
+        </View>
+      )}
     </>
   );
 };

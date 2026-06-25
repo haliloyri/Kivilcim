@@ -18,8 +18,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import { getCategoryImage, getCategoryTheme, getCategoryBanner, getBadgeBanner } from '../utils/categoryImages';
-import { shouldShowAd, loadRewarded } from '../utils/ads';
+import { shouldShowAd, loadRewarded, showRewarded } from '../utils/ads';
 import BadgeIcon, { BADGE_MAP } from '../components/BadgeIcon';
+import { readableTextOn } from '../theme/theme';
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -55,10 +56,41 @@ const toPascalCase = (value = '') => {
     .join(' ');
 };
 
+// Blend two hex colours. t=0 → a, t=1 → b. Used to deepen badge gradients for
+// dark mode so they sit in the charcoal palette and clear text contrast.
+const mixHex = (a, b, t) => {
+  const parse = (h) => {
+    let x = String(h || '').replace('#', '');
+    if (x.length === 3) x = x.split('').map((c) => c + c).join('');
+    if (x.length !== 6) return [0, 0, 0];
+    return [parseInt(x.slice(0, 2), 16), parseInt(x.slice(2, 4), 16), parseInt(x.slice(4, 6), 16)];
+  };
+  const [r1, g1, b1] = parse(a);
+  const [r2, g2, b2] = parse(b);
+  const m = (u, v) => Math.round(u + (v - u) * t);
+  const hx = (n) => Math.max(0, Math.min(255, n)).toString(16).padStart(2, '0');
+  return `#${hx(m(r1, r2))}${hx(m(g1, g2))}${hx(m(b1, b2))}`;
+};
+
 const getBadgeColors = (badgeId, isDark) => {
   const meta = BADGE_MAP[badgeId];
-  if (meta?.colors) return { start: meta.colors[0], end: meta.colors[1], text: '#FFFFFF' };
-  return { start: isDark ? '#444444' : '#666666', end: isDark ? '#222222' : '#444444', text: '#FFFFFF' };
+  const base = meta?.colors
+    ? { start: meta.colors[0], end: meta.colors[1] }
+    : { start: isDark ? '#444444' : '#666666', end: isDark ? '#222222' : '#444444' };
+  if (isDark) {
+    // Light-mode badge gradients run bright→dark, so the card's single text
+    // colour (derived from the lighter stop) fails WCAG AA over the dark
+    // bottom-right where the progress counter sits. Deepen both stops toward the
+    // dark canvas (#131311): the fill stays in the "Nocturnal Bibliophile"
+    // palette, keeps the badge hue, and lets cream/white text clear contrast
+    // across the whole gradient. The vibrant BadgeIcon glyph is unchanged.
+    return {
+      start: mixHex(base.start, '#131311', 0.6),
+      end: mixHex(base.end, '#131311', 0.74),
+      text: '#F2E9D8',
+    };
+  }
+  return { start: base.start, end: base.end, text: '#FFFFFF' };
 };
 
 /** Circular daily progress ring shown in the home header */
@@ -587,6 +619,16 @@ const HomeScreen = ({ navigation }) => {
   const [adSheet, setAdSheet] = useState({ visible: false, source: null, storyId: null });
   const [isAdLoading, setIsAdLoading] = useState(false);
   const [adUnavailable, setAdUnavailable] = useState(false);
+  // Holds a loaded rewarded ad to show only after the sheet Modal is fully
+  // dismissed — showing it while the Modal is still presented makes iOS throw
+  // "already presenting another view controller" and Android freeze.
+  const pendingRewardedRef = useRef(null);
+  const flushPendingRewarded = () => {
+    const p = pendingRewardedRef.current;
+    if (!p) return;
+    pendingRewardedRef.current = null;
+    showRewarded(p.ad, { onEarned: p.onEarned, onClosed: p.onClosed });
+  };
 
   const openAdOrPremiumSheet = (source, storyId = null) => {
     trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, { source, storyId, lang });
@@ -609,13 +651,15 @@ const HomeScreen = ({ navigation }) => {
       return;
     }
     setAdUnavailable(false);
+    const source = adSheet.source;
+    // Queue the ad and close the sheet. It is shown from the Modal's onDismiss
+    // (iOS) or a fallback timer (Android) — never while the Modal is presented.
+    pendingRewardedRef.current = {
+      ad,
+      onEarned: () => trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source }),
+    };
     setAdSheet({ visible: false, source: null, storyId: null });
-    ad.addAdEventListener('rewarded_loaded', () => {});
-    const { RewardedAdEventType } = require('react-native-google-mobile-ads');
-    ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
-      trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: adSheet.source });
-    });
-    ad.show().catch(e => console.warn('[HomeScreen] rewarded show error:', e?.message));
+    setTimeout(flushPendingRewarded, 600);
   };
 
   const handleAdSheetGoPremium = () => {
@@ -1618,7 +1662,7 @@ const HomeScreen = ({ navigation }) => {
         {/* Header */}
         <View style={styles.homeHeader}>
           <View style={styles.brandLogo}>
-            <Text style={styles.brandLogoText}>Spark</Text>
+            <Text style={styles.brandLogoText}>Talira</Text>
           </View>
           {doneCount < personalizedTarget && (
             <TouchableOpacity
@@ -1684,13 +1728,33 @@ const HomeScreen = ({ navigation }) => {
           const bannerSource = isBadge
             ? getBadgeBanner(primaryHomeAction.badge?.id).source
             : getCategoryBanner(isAllFilter ? 'Tümü' : (activeCatItem?.rawName || activeCatItem?.label)).source;
-          const titleColor = useBannerImage ? '#2E2A22' : '#FFFFFF';
-          const eyebrowColor = useBannerImage ? accentColor : 'rgba(255,255,255,0.9)';
-          const subColor = useBannerImage ? '#5A5246' : 'rgba(255,255,255,0.85)';
-          const progressColor = useBannerImage ? accentColor : 'rgba(255,255,255,0.85)';
-          const progressTrackBg = useBannerImage ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.2)';
-          const iconWrapBg = useBannerImage ? '#FFFFFF' : 'rgba(255,255,255,0.25)';
-          const iconColor = useBannerImage ? accentColor : '#FFFFFF';
+          // Dark mode fills the card with a gradient (no banner image). The gold/
+          // accent fills are light, so hardcoded white text fails contrast. Derive
+          // the text colour from the lighter gradient stop via readableTextOn().
+          const relLum = (hex) => {
+            if (typeof hex !== 'string' || hex[0] !== '#') return 1;
+            let h = hex.slice(1);
+            if (h.length === 3) h = h.split('').map((c) => c + c).join('');
+            if (h.length !== 6) return 1;
+            const ch = (s) => {
+              const v = parseInt(s, 16) / 255;
+              return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+            };
+            return 0.2126 * ch(h.slice(0, 2)) + 0.7152 * ch(h.slice(2, 4)) + 0.0722 * ch(h.slice(4, 6));
+          };
+          const fillRef = relLum(bannerColors[0]) >= relLum(bannerColors[1]) ? bannerColors[0] : bannerColors[1];
+          const onFill = readableTextOn(fillRef);
+          const isDarkText = onFill === '#1A1A1A';
+          const onFillSoft = isDarkText ? 'rgba(26,26,26,0.72)' : 'rgba(255,255,255,0.85)';
+          const onFillFaint = isDarkText ? 'rgba(26,26,26,0.6)' : 'rgba(255,255,255,0.8)';
+
+          const titleColor = useBannerImage ? '#2E2A22' : onFill;
+          const eyebrowColor = useBannerImage ? accentColor : onFillSoft;
+          const subColor = useBannerImage ? '#5A5246' : onFillSoft;
+          const progressColor = useBannerImage ? accentColor : onFillFaint;
+          const progressTrackBg = useBannerImage ? 'rgba(0,0,0,0.08)' : (isDarkText ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.2)');
+          const iconWrapBg = useBannerImage ? '#FFFFFF' : (isDarkText ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.25)');
+          const iconColor = useBannerImage ? accentColor : onFill;
 
           const bannerInner = (
             <>
@@ -1723,7 +1787,7 @@ const HomeScreen = ({ navigation }) => {
               ) : (
                 <View style={styles.primaryActionFooter}>
                   <Text style={[styles.primaryActionProgress, { color: progressColor }]}>{doneCount} / {Math.max(personalizedTarget, 1)}</Text>
-                  <View style={styles.primaryActionCta}>
+                  <View style={[styles.primaryActionCta, isDark && { backgroundColor: '#1A1A1A' }]}>
                     <Text style={[styles.primaryActionCtaText, { color: bannerCtaColor }]}>{primaryHomeAction.cta}</Text>
                     <Ionicons name="arrow-forward" size={16} color={bannerCtaColor} />
                   </View>
@@ -2202,6 +2266,7 @@ const HomeScreen = ({ navigation }) => {
           setAdUnavailable(false);
           setAdSheet({ visible: false, source: null, storyId: null });
         }}
+        onDismiss={flushPendingRewarded}
         onWatchAd={handleWatchAd}
         onGoPremium={handleAdSheetGoPremium}
         adUnavailable={adUnavailable}

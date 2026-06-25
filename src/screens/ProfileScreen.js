@@ -29,7 +29,7 @@ const ProfileScreen = ({ navigation }) => {
   const { parentCategories } = useStories();
   const {
     clearUserData, isPremium, preferences,
-    updatePreferences, userProfile, updateUserProfile,
+    updatePreferences, userProfile, updateUserProfile, devSetPremium,
   } = useUserData();
 
   const testNotifIndex = React.useRef(0);
@@ -38,14 +38,14 @@ const ProfileScreen = ({ navigation }) => {
   const [editEmail, setEditEmail] = useState('');
 
   const timeOptions = [
-    { label: t('time_3min', lang), value: 3, icon: '☕' },
-    { label: t('time_6min', lang), value: 6, icon: '📚' },
-    { label: t('time_9min', lang), value: 9, icon: '🚀' },
+    { label: t('time_3min', lang), value: 3, icon: '☕', ionIcon: 'cafe-outline' },
+    { label: t('time_6min', lang), value: 6, icon: '📚', ionIcon: 'book-outline' },
+    { label: t('time_9min', lang), value: 9, icon: '🚀', ionIcon: 'rocket-outline' },
   ];
   const reminderOptions = [
-    { label: t('reminder_morning', lang), value: 'morning', icon: '🌅', reminderHour: 8 },
-    { label: t('reminder_noon', lang), value: 'noon', icon: '☀️', reminderHour: 13 },
-    { label: t('reminder_evening', lang), value: 'evening', icon: '🌙', reminderHour: 21 },
+    { label: t('reminder_morning', lang), value: 'morning', icon: '🌅', ionIcon: 'partly-sunny-outline', reminderHour: 8 },
+    { label: t('reminder_noon', lang), value: 'noon', icon: '☀️', ionIcon: 'sunny-outline', reminderHour: 13 },
+    { label: t('reminder_evening', lang), value: 'evening', icon: '🌙', ionIcon: 'moon-outline', reminderHour: 21 },
   ];
 
   const selectedMinutes = preferences?.time?.minutes || 6;
@@ -263,7 +263,7 @@ const ProfileScreen = ({ navigation }) => {
 
     // ── Settings card ────────────────────────────────────────────────────
     card: {
-      backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+      backgroundColor: isDark ? colors.cardBackground : '#FFFFFF',
       borderRadius: 18,
       borderWidth: 1, borderColor: colors.border,
       overflow: 'hidden',
@@ -287,7 +287,9 @@ const ProfileScreen = ({ navigation }) => {
     prefPill: {
       paddingHorizontal: 12, paddingVertical: 6,
       borderRadius: 20, borderWidth: 1, borderColor: colors.border,
-      backgroundColor: colors.background,
+      // Sit one elevation step above the card it lives in (was colors.background,
+      // which is darker than the card in dark mode — an inverted-depth look).
+      backgroundColor: colors.surfaceContainerHigh,
       flexDirection: 'row', alignItems: 'center', gap: 5,
     },
     prefPillActive: { backgroundColor: colors.primary, borderColor: colors.primary },
@@ -302,7 +304,7 @@ const ProfileScreen = ({ navigation }) => {
 
     // ── Destructive ──────────────────────────────────────────────────────
     dangerCard: {
-      backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+      backgroundColor: isDark ? colors.cardBackground : '#FFFFFF',
       borderRadius: 18, borderWidth: 1, borderColor: colors.border,
       overflow: 'hidden', marginTop: 8,
     },
@@ -370,6 +372,39 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         )}
 
+        {/* ── DEV ONLY: Premium toggle (test free vs premium / ads) ── */}
+        {__DEV__ && (
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginHorizontal: 20,
+              marginBottom: 16,
+              padding: 14,
+              borderRadius: 12,
+              borderWidth: 1,
+              borderColor: colors.border,
+              backgroundColor: colors.backgroundDark,
+            }}
+          >
+            <View style={{ flex: 1, marginRight: 12 }}>
+              <Text style={{ color: colors.text, fontFamily: 'Inter_600SemiBold', fontSize: 14 }}>
+                DEV · Premium
+              </Text>
+              <Text style={{ color: colors.textSecondary, fontSize: 12, marginTop: 2 }}>
+                {isPremium ? 'Premium (reklam yok)' : 'Free (reklam açık)'}
+              </Text>
+            </View>
+            <Switch
+              value={isPremium}
+              onValueChange={(v) => devSetPremium(v)}
+              trackColor={{ false: colors.border, true: colors.primary }}
+              thumbColor={'#FFFFFF'}
+            />
+          </View>
+        )}
+
         {/* ── İlgi Alanları ── */}
         <View style={s.section}>
           <View style={s.sectionHeadingRow}>
@@ -387,6 +422,7 @@ const ProfileScreen = ({ navigation }) => {
                   isDark={isDark}
                   compact
                   activeColor={colors.primary}
+                  activeTextColor={colors.onPrimary}
                   showIcon={false}
                   onPress={() => toggleSelectedCategory(cat)}
                 />
@@ -415,17 +451,25 @@ const ProfileScreen = ({ navigation }) => {
               </View>
               <View style={[s.expandedRow]}>
                 <View style={s.pillGroup}>
-                  {timeOptions.map(option => (
-                    <TouchableOpacity
-                      key={option.value}
-                      onPress={() => handleReadingPlanChange(option.value)}
-                      style={[s.prefPill, selectedMinutes === option.value && s.prefPillActive]}
-                    >
-                      <Text style={[s.prefPillText, selectedMinutes === option.value && s.prefPillActiveText]}>
-                        {option.icon} {option.label}
-                      </Text>
-                    </TouchableOpacity>
-                  ))}
+                  {timeOptions.map(option => {
+                    const isSelected = selectedMinutes === option.value;
+                    return (
+                      <TouchableOpacity
+                        key={option.value}
+                        onPress={() => handleReadingPlanChange(option.value)}
+                        style={[s.prefPill, isSelected && s.prefPillActive]}
+                      >
+                        <Ionicons
+                          name={option.ionIcon}
+                          size={15}
+                          color={isSelected ? colors.onPrimary : iconColor.gold}
+                        />
+                        <Text style={[s.prefPillText, isSelected && s.prefPillActiveText]}>
+                          {option.label}
+                        </Text>
+                      </TouchableOpacity>
+                    );
+                  })}
                 </View>
               </View>
             </View>
@@ -450,8 +494,13 @@ const ProfileScreen = ({ navigation }) => {
                         onPress={() => handleReminderToggle(option.value)}
                         style={[s.prefPill, isSelected && s.prefPillActive]}
                       >
+                        <Ionicons
+                          name={option.ionIcon}
+                          size={15}
+                          color={isSelected ? colors.onPrimary : iconColor.gold}
+                        />
                         <Text style={[s.prefPillText, isSelected && s.prefPillActiveText]}>
-                          {option.icon} {option.label}
+                          {option.label}
                         </Text>
                       </TouchableOpacity>
                     );

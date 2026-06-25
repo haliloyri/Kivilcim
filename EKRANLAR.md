@@ -89,10 +89,16 @@ Bir hikayelerin tam içeriğinin okunduğu ekran.
 - **Yazı boyutu ayarı** — kullanıcı font büyüklüğünü değiştirebilir
 - **Favori** ekleme / çıkarma
 - **Sonraya kaydet** (read later) özelliği
-- **Paylaşım:**
-  - Görsel kart oluşturma (açık/koyu tema, farklı formatlar)
-  - Pano'ya kopyalama
-  - Sistem paylaşım diyaloğu
+- **Paylaşım — "Kart Oluştur":**
+  - **İçerik tipi** (çoklu seçim, Story/Reel'de birden fazla): Alıntı, Ders, Sorgula (yansıma), Hook
+  - **6 tema (birleşik palet):** Ink (koyu), Paper (açık), Gold, Slate, Forest, Plum. Gold/Slate/Forest/Plum aksanları ve marka gold'u (`#C89B3C` / dark `#E5C27A`), rozet paylaşım ekranıyla (`BadgeShareSheet`) aynı renk dilini paylaşır — iki ekran arasında görsel tutarlılık sağlanır. (Eski Sun/Night/Emerald/Rose gradientleri kaldırıldı.)
+  - **3 format:** Post (1:1), Story (9:16), Reel (9:16). Reel görsel olarak Story ile aynıdır; ek olarak panoya hazır bir reel senaryosu (`+script` rozetiyle belirtilir) ekler.
+  - **Kart düzeni:** üç bölgeli (marka şeridi / dikeyde ortalı içerik / tek satır kaynak künyesi + CTA)
+  - Paylaş butonu görsel hazırlanırken yükleniyor durumu gösterir
+  - Pano'ya açıklama metni (caption + hashtag) kopyalama
+  - Sistem paylaşım diyaloğu ile PNG paylaşımı
+  - **Carousel — "Tüm kareleri kaydet":** Birden fazla içerik tipi seçildiğinde görünen ikincil buton. Her seçili mesajı **ayrı bir kart** olarak üretip galeriye kaydeder (`expo-media-library`), böylece kullanıcı Instagram'da çoklu seçimle carousel gönderisi oluşturur. Kanonik kare sırası: **Hook → Ders → Alıntı → Sorgula** (hook scroll'u durdurur, değer hemen ardından gelir, soru en sonda etkileşim tetikler). Kendi yükleniyor durumu vardır (paylaş butonundan bağımsız); caption otomatik panoya kopyalanır. iOS'ta yalnızca yazma izni (`NSPhotoLibraryAddUsageDescription`) istenir.
+  - **Erişim:** Premium kullanıcılar serbest; ücretsiz kullanıcılar ödüllü reklam izleyerek veya Premium'a geçerek açar (oturum içinde bir kez)
 - **Text-to-Speech** — Hikayeyi sesli dinleme
 - **Ses kaydı** — Kullanıcı kendi sesini kaydedebilir (maks. 3 dk), kaydı yeniden dinleyebilir
 - **Dil değiştirme** — Hikayeyi farklı dilde okuma
@@ -193,6 +199,7 @@ Kullanıcının okuma istatistiklerini ve başarımlarını gösteren ekran. (Al
 - Kazanılan rozetler renkli gradient ikonlarla gösterilir
 - Kilitli rozetler gri ve asma kilit ikonuyla gösterilir
 - Rozet kazanıldığında konfetti animasyonu + ses efekti + haptic feedback içeren kutlama modalı
+- **Rozet paylaş (`BadgeShareSheet`):** Rozeti paylaşıma hazır karta dönüştürür. Renk seçenekleri (Gold `#C89B3C` / Slate `#3F5A73` / Teal `#2C8068` / Plum `#6E3B52`) "Kart Oluştur" temalarıyla aynı paleti paylaşır; tek vurgu rengi + yumuşak tonlu zemin mantığıyla çalışır. Format: Post / Story.
 
 ### İstatistikler
 - Toplam okunan hikaye sayısı
@@ -251,6 +258,7 @@ Premium satın alma ekranı. Farklı bağlamlara göre değişen içerikle gelir
 | Ücretsiz hikaye limiti | Daha fazla hikaye okuma |
 | Erken deneme | Özel deneme teklifi |
 | Storyteller Modu | Anlatıcı özellikleri |
+| Görsel kart (image_card) | Paylaşılabilir kart oluşturma |
 | Streak Freeze | Seriyi koruma |
 | Kilitli hikaye | İçeriğe erişim |
 | Profil | Genel premium değer önerisi |
@@ -282,6 +290,8 @@ Premium satın alma ekranı. Farklı bağlamlara göre değişen içerikle gelir
 | Bildirimler | `expo-notifications` |
 | TTS | `expo-speech` |
 | Ses Kaydı | `expo-av` |
+| Görsel Yakalama | `react-native-view-shot` (kartı PNG'ye çevirir) |
+| Galeriye Kaydetme | `expo-media-library` (carousel kareleri) |
 | Analizler | Özel `trackEvent` utility |
 | Reklamlar | Rewarded ad sistemi (`ads.js`) |
 | Yazı Tipleri | Inter + Playfair Display |

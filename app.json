@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Spark",
+    "name": "Talira",
     "slug": "spark",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,8 +8,8 @@
     "backgroundColor": "#131311",
     "icon": "./assets/spark_shortcut_logo.png",
     "splash": {
-      "image": "./assets/spark_logo.png",
-      "backgroundColor": "#FAF7F1",
+      "image": "./assets/spark_logo_dark.png",
+      "backgroundColor": "#131311",
       "resizeMode": "contain"
     },
     "ios": {
@@ -47,7 +47,8 @@
           "userTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you.",
           "skAdNetworkItems": []
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "extra": {
       "eas": {
@@ -62,7 +63,12 @@
           "monthly": "spark_premium_monthly",
           "annual": "spark_premium_annual"
         }
-      }
+      },
+      "posthog": {
+        "apiKey": "phc_xGTa3Jhe9VUdbLnaDE3Y9bPoWMApSTyNrTNZDn3ukDe8",
+        "host": "https://us.i.posthog.com"
+      },
+      "shareLink": "kivilcim.app"
     },
     "owner": "hoyri"
   }

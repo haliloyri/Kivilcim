@@ -35,8 +35,9 @@ import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import StorytellerOverlay from '../components/StorytellerOverlay';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
+import ShareCardModal from '../components/ShareCardModal';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { shouldShowAd, loadRewarded } from '../utils/ads';
+import { shouldShowAd, loadRewarded, showRewarded } from '../utils/ads';
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -81,7 +82,7 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       ONE_WORD: 'Tek kelime, büyük etki:',
       fallback: 'Bu hikayeyi sevdim:',
       engage: 'Sence bunun en kritik noktası ne?',
-      tags: '#Spark #Farkındalık #KişiselGelişim #KitapNotları',
+      tags: '#Talira #Farkındalık #KişiselGelişim #KitapNotları',
     },
     en: {
       PUNCHLINE: 'Today\'s sharpest takeaway:',
@@ -90,7 +91,7 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       ONE_WORD: 'One word, big impact:',
       fallback: 'This story stayed with me:',
       engage: 'What part resonates with you most?',
-      tags: '#Spark #Mindset #Growth #BookNotes',
+      tags: '#Talira #Mindset #Growth #BookNotes',
     },
     es: {
       PUNCHLINE: 'La idea mas potente de hoy:',
@@ -99,7 +100,7 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       ONE_WORD: 'Una palabra, gran impacto:',
       fallback: 'Esta historia me impacto:',
       engage: 'Que parte te resuena mas?',
-      tags: '#Spark #Mentalidad #Crecimiento #NotasDeLibros',
+      tags: '#Talira #Mentalidad #Crecimiento #NotasDeLibros',
     },
     de: {
       PUNCHLINE: 'Die kraftigste Erkenntnis heute:',
@@ -108,7 +109,7 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       ONE_WORD: 'Ein Wort, grosse Wirkung:',
       fallback: 'Diese Geschichte bleibt haengen:',
       engage: 'Welcher Teil spricht dich am meisten an?',
-      tags: '#Spark #Mindset #Weiterentwicklung #BuchImpulse',
+      tags: '#Talira #Mindset #Weiterentwicklung #BuchImpulse',
     },
   };
 
@@ -257,6 +258,25 @@ const UseInConversationScreen = ({ route, navigation }) => {
   const [adSheet, setAdSheet] = React.useState(false);
   const [isAdLoading, setIsAdLoading] = React.useState(false);
   const [adUnavailable, setAdUnavailable] = React.useState(false);
+  // Separate gate state for the social-share (Instagram) flow.
+  const [shareGate, setShareGate] = React.useState(false);
+  const [shareAdLoading, setShareAdLoading] = React.useState(false);
+  const [shareAdUnavailable, setShareAdUnavailable] = React.useState(false);
+  const pendingShareVariantRef = React.useRef(null);
+  // Local "create card" modal — rendered on THIS screen so it overlays the
+  // Use-in-Conversation screen instead of navigating to StoryDetail.
+  const [shareCardVisible, setShareCardVisible] = React.useState(false);
+  const [shareCardContent, setShareCardContent] = React.useState(['quote']);
+  // Holds a loaded rewarded ad to show only after the sheet Modal is fully
+  // dismissed — showing it while the Modal is still presented makes iOS throw
+  // "already presenting another view controller" and Android freeze.
+  const pendingRewardedRef = React.useRef(null);
+  const flushPendingRewarded = () => {
+    const p = pendingRewardedRef.current;
+    if (!p) return;
+    pendingRewardedRef.current = null;
+    showRewarded(p.ad, { onEarned: p.onEarned, onClosed: p.onClosed });
+  };
 
   const showToast = useCallback((msg) => {
     setToastMsg(msg);
@@ -293,12 +313,49 @@ const UseInConversationScreen = ({ route, navigation }) => {
       return;
     }
     setAdUnavailable(false);
+    // Queue the ad and close the sheet. Shown from the Modal's onDismiss (iOS)
+    // or a fallback timer (Android) — never while the Modal is presented.
+    pendingRewardedRef.current = {
+      ad,
+      onEarned: () => trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'use_in_conversation' }),
+    };
     setAdSheet(false);
-    const { RewardedAdEventType } = require('react-native-google-mobile-ads');
-    ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
-      trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'use_in_conversation' });
-    });
-    ad.show().catch(e => console.warn('[UseInConversation] rewarded show error:', e?.message));
+    setTimeout(flushPendingRewarded, 600);
+  };
+
+  // --- Social-share (Instagram visual card) gate -------------------------
+  // Run the premium/ad gate HERE, then open the card modal ON this screen so
+  // the Use-in-Conversation screen stays in the background (no navigation).
+  const openShareCard = (variant) => {
+    setShareCardContent([mapVariantToPreset(variant)]);
+    setShareCardVisible(true);
+  };
+
+  const handleWatchAdForShare = async () => {
+    const variant = pendingShareVariantRef.current;
+    setShareAdLoading(true);
+    trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation_share', choice: 'ad' });
+    const ad = await loadRewarded();
+    setShareAdLoading(false);
+    if (!ad) {
+      setShareAdUnavailable(true);
+      trackEvent(ANALYTICS_EVENTS.AD_FAILED_TO_LOAD, { source: 'use_in_conversation_share', storyId: story?.story_id, lang });
+      return;
+    }
+    setShareAdUnavailable(false);
+    let earned = false;
+    pendingRewardedRef.current = {
+      ad,
+      onEarned: () => {
+        earned = true;
+        trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'use_in_conversation_share' });
+      },
+      // Open the share card only after the ad fully closes, so nothing
+      // changes on screen while the ad is showing.
+      onClosed: () => { if (earned && variant) openShareCard(variant); },
+    };
+    setShareGate(false);
+    setTimeout(flushPendingRewarded, 600);
   };
 
   const handleSelect = useCallback((id) => {
@@ -330,20 +387,27 @@ const UseInConversationScreen = ({ route, navigation }) => {
     if (!selected) return;
     const variant = selected;
 
-    // Instagram → navigate to StoryDetail share modal (visual card)
+    // Instagram → visual share card on StoryDetail. Gate premium/ad HERE first
+    // so the ad shows over this screen; only navigate once the gate is passed.
     if (platform === 'instagram') {
-      navigation.navigate('StoryDetail', {
-        story,
-        openShareModal: true,
-        sharePreset: mapVariantToPreset(variant),
-        sourceScreen: 'use_in_conversation',
-      });
       trackEvent(ANALYTICS_EVENTS.SOCIAL_SHARE_PLATFORM, {
         platform: 'instagram',
         storyId: story?.story_id,
         variantType: variant.type,
         lang,
       });
+      if (isPremium || !shouldShowAd({ isPremium, isOnboarded: true })) {
+        openShareCard(variant);
+      } else {
+        pendingShareVariantRef.current = variant;
+        setShareAdUnavailable(false);
+        setShareGate(true);
+        trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
+          source: 'use_in_conversation_share',
+          storyId: story?.story_id,
+          lang,
+        });
+      }
       return;
     }
 
@@ -380,7 +444,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
       variantId: variant.id,
       action: `share_${platform}`,
     });
-  }, [selected, story, displayCat, lang, navigation, recordVariantUsage, incrementShareCount]);
+  }, [selected, story, displayCat, lang, navigation, recordVariantUsage, incrementShareCount, isPremium]);
 
   const handleToggleUsed = useCallback(async () => {
     if (!selected) return;
@@ -730,6 +794,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
           setAdUnavailable(false);
           setAdSheet(false);
         }}
+        onDismiss={flushPendingRewarded}
         onWatchAd={handleWatchAdUIC}
         onGoPremium={() => {
           trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation', choice: 'premium' });
@@ -740,6 +805,41 @@ const UseInConversationScreen = ({ route, navigation }) => {
         adUnavailable={adUnavailable}
         isAdLoading={isAdLoading}
         lang={lang}
+      />
+
+      {/* Ad or Premium Sheet — social share (Instagram) gate */}
+      <AdOrPremiumSheet
+        visible={shareGate}
+        onClose={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation_share', choice: 'dismiss' });
+          setShareAdUnavailable(false);
+          setShareGate(false);
+          pendingShareVariantRef.current = null;
+        }}
+        onDismiss={flushPendingRewarded}
+        onWatchAd={handleWatchAdForShare}
+        onGoPremium={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation_share', choice: 'premium' });
+          setShareAdUnavailable(false);
+          setShareGate(false);
+          pendingShareVariantRef.current = null;
+          navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'image_card' });
+        }}
+        adUnavailable={shareAdUnavailable}
+        isAdLoading={shareAdLoading}
+        lang={lang}
+      />
+
+      {/* Create-card modal — overlays this screen, no navigation */}
+      <ShareCardModal
+        visible={shareCardVisible}
+        onClose={() => setShareCardVisible(false)}
+        story={story}
+        lang={lang}
+        localLang={lang}
+        initialContent={shareCardContent}
+        initialFormat="post"
+        shareSource="use_in_conversation"
       />
     </SafeAreaView>
   );

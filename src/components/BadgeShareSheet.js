@@ -5,6 +5,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { captureRef } from 'react-native-view-shot';
 import * as Sharing from 'expo-sharing';
+import Constants from 'expo-constants';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
 import { BADGE_MAP } from './BadgeIcon';
@@ -42,6 +43,13 @@ const BADGE_LINE1_TR = {
 const ACCENTS = ['#C89B3C', '#3F5A73', '#2C8068', '#6E3B52'];
 const LOGO_LIGHT = require('../../assets/spark_logo.png');
 const LOGO_DARK = require('../../assets/spark_logo_dark.png');
+
+// Where people who see a shared card can find the app.
+// Set in app.json -> expo.extra.shareLink (store URL, landing page, or @handle).
+const SHARE_LINK =
+  Constants.expoConfig?.extra?.shareLink ??
+  Constants.manifest?.extra?.shareLink ??
+  '';
 
 const hx = (h) => { h = h.replace('#', ''); return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; };
 const mix = (c1, c2, t2) => { const a = hx(c1), b = hx(c2); return `rgb(${Math.round(a[0] + (b[0] - a[0]) * t2)},${Math.round(a[1] + (b[1] - a[1]) * t2)},${Math.round(a[2] + (b[2] - a[2]) * t2)})`; };
@@ -89,7 +97,7 @@ const ShareCard = ({ badge, accent, theme, lang, name, quote, tall }) => {
           style={{ width: logoSize, height: logoSize, marginTop: 2 }}
           resizeMode="contain"
         />
-        <Text style={[s.sig, { color: nameC, fontSize: sigSize }]}>Spark</Text>
+        <Text style={[s.sig, { color: nameC, fontSize: sigSize }]}>Talira</Text>
       </View>
 
       {/* İçerik merkezi */}
@@ -115,8 +123,12 @@ const ShareCard = ({ badge, accent, theme, lang, name, quote, tall }) => {
         ) : null}
       </View>
 
-      {/* Alt 2 satır boşluk (~40px) */}
-      <View style={{ height: 40 }} />
+      {/* Alt: uygulama erişim adresi */}
+      <View style={{ height: 40, alignItems: 'center', justifyContent: 'center' }}>
+        {SHARE_LINK ? (
+          <Text style={[s.link, { color: dark ? '#8C8579' : authorC }]}>{SHARE_LINK}</Text>
+        ) : null}
+      </View>
     </View>
   );
 };
@@ -158,7 +170,7 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
       onPress={onPress}
       style={{ flex: 1, alignItems: 'center', borderRadius: 10, paddingVertical: 9, backgroundColor: active ? colors.primary : neutral.bg }}
     >
-      <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12.5, color: active ? '#FFFFFF' : neutral.text }}>{label}</Text>
+      <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12.5, color: active ? colors.onPrimary : neutral.text }}>{label}</Text>
     </TouchableOpacity>
   );
 
@@ -243,6 +255,7 @@ const s = StyleSheet.create({
   author: { fontFamily: 'Inter_500Medium', fontSize: 11, textAlign: 'center', marginTop: 6 },
   sigRow: { alignSelf: 'flex-end', flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 20 },
   sig: { fontFamily: 'PlayfairDisplay_700Bold' },
+  link: { fontFamily: 'Inter_500Medium', fontSize: 12, letterSpacing: 0.5 },
 });
 
 const st = StyleSheet.create({

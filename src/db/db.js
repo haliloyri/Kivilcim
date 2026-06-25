@@ -872,6 +872,17 @@ export const clearStreakFreezes = async (userId = 'default') => {
   await db.runAsync(`DELETE FROM user_streak_freezes WHERE user_id = ?`, [userId]);
 };
 
+// Wipes all reading records for a user. The progress stats (total reads,
+// streak, longest streak, category breakdown, today's reads) are all derived
+// from the user_reads table, so this must be called on a full data reset —
+// otherwise progress survives the reset.
+export const clearUserReads = async (userId = 'default') => {
+  await waitForDb();
+  const db = getDb();
+  await db.runAsync(`DELETE FROM user_reads WHERE user_id = ?`, [userId]);
+  await db.runAsync(`DELETE FROM user_likes WHERE user_id = ?`, [userId]);
+};
+
 export const getStreak = async (userId = 'default') => {
   await waitForDb();
   const db = getDb();

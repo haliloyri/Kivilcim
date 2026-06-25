@@ -904,7 +904,7 @@ const OnboardingScreen = ({ navigation }) => {
             style={s.headerLogoImg}
             resizeMode="contain"
           />
-          <Text style={s.headerBrand}>Spark</Text>
+          <Text style={s.headerBrand}>Talira</Text>
         </View>
 
         {/* Right: Skip (steps 0 & 5) or Back chevron (other steps) */}

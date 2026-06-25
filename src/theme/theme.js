@@ -48,6 +48,33 @@ export const colors = {
   },
 };
 
+// Picks the most readable text colour (#1A1A1A vs #FFFFFF) for a given filled
+// background using WCAG relative luminance. Used wherever a pill/badge/button is
+// filled with a variable accent colour (e.g. per-category gold/blue/green), so
+// the label always meets contrast instead of being hardcoded to white.
+export const readableTextOn = (background) => {
+  if (!background || typeof background !== 'string' || background[0] !== '#') {
+    return '#FFFFFF';
+  }
+  let hex = background.slice(1);
+  if (hex.length === 3) hex = hex.split('').map((c) => c + c).join('');
+  if (hex.length !== 6) return '#FFFFFF';
+
+  const channel = (c) => {
+    const v = c / 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  };
+  const r = channel(parseInt(hex.slice(0, 2), 16));
+  const g = channel(parseInt(hex.slice(2, 4), 16));
+  const b = channel(parseInt(hex.slice(4, 6), 16));
+  const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+
+  // Luminance of the two candidate text colours (#1A1A1A ≈ 0.0103, #FFFFFF = 1).
+  const contrastDark = (L + 0.05) / (0.0103 + 0.05);
+  const contrastWhite = (1 + 0.05) / (L + 0.05);
+  return contrastDark >= contrastWhite ? '#1A1A1A' : '#FFFFFF';
+};
+
 export const typography = {
   fonts: {
     heading: 'PlayfairDisplay',

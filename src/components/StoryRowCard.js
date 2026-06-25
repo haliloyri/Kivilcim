@@ -18,6 +18,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import { readableTextOn } from '../theme/theme';
 
 const StoryRowCard = ({
   story,
@@ -45,6 +46,7 @@ const StoryRowCard = ({
   const displayMin = story.min || '?';
 
   const accentColor = pillTheme.borderColor;
+  const onAccent = readableTextOn(accentColor);
   const isCompleted = isStoryCompleted ? isStoryCompleted(story.story_id) : isRead;
   const isSaved = isFavorite(story.story_id);
 
@@ -244,8 +246,8 @@ const StoryRowCard = ({
                 backgroundColor: accentColor,
               }}
             >
-              <Ionicons name="chatbubbles-outline" size={14} color="#FFFFFF" />
-              <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 11, color: '#FFFFFF', textAlign: 'center' }}>
+              <Ionicons name="chatbubbles-outline" size={14} color={onAccent} />
+              <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 11, color: onAccent, textAlign: 'center' }}>
                 {t('story_detail_use_cta', lang)}
               </Text>
             </TouchableOpacity>

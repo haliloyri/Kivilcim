@@ -433,7 +433,7 @@ const buildStyles = (colors, layout, isDark) =>
     doneBtnText: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 15,
-      color: '#fff',
+      color: colors.onPrimary,
     },
     // Premium gate
     premiumGate: {

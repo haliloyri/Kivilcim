@@ -323,7 +323,7 @@ const LibraryScreen = ({ navigation }) => {
       color: neutral.text,
     },
     collectionPillTextActive: {
-      color: '#FFFFFF',
+      color: colors.onPrimary,
     },
     segment: {
       flexDirection: 'row',
@@ -351,7 +351,7 @@ const LibraryScreen = ({ navigation }) => {
       color: neutral.text,
     },
     segmentTextActive: {
-      color: '#FFFFFF',
+      color: colors.onPrimary,
     },
     filterRow: {
       flexDirection: 'row',

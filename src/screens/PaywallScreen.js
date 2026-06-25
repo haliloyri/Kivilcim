@@ -116,6 +116,39 @@ const PaywallScreen = ({ navigation, route }) => {
   // (localized, regionally correct). Otherwise fall back to the built-in values.
   const livePriceString = (planId, fallback) =>
     livePackages?.[planId]?.product?.priceString || fallback;
+
+  // Derived labels (monthly-equivalent, savings %, months-free) must reflect the
+  // LIVE store prices/currency when billing is connected — otherwise other
+  // markets would see absurd ₺-derived numbers. Fall back to built-in values.
+  const priceMeta = React.useMemo(() => {
+    const m = livePackages?.monthly?.product;
+    const a = livePackages?.annual?.product;
+    if (typeof m?.price === 'number' && typeof a?.price === 'number' && m.price > 0) {
+      const currency = a.currencyCode || m.currencyCode;
+      const fmt = (num) => {
+        try {
+          return new Intl.NumberFormat(undefined, {
+            style: 'currency',
+            currency,
+            maximumFractionDigits: 2,
+          }).format(num);
+        } catch (e) {
+          return `${num.toFixed(2)} ${currency || ''}`.trim();
+        }
+      };
+      return {
+        savingsPct: Math.max(0, Math.floor((1 - a.price / (m.price * 12)) * 100)),
+        monthsFree: Math.max(0, Math.round((m.price * 12 - a.price) / m.price)),
+        monthlyEquivalent: fmt(a.price / 12),
+      };
+    }
+    return {
+      savingsPct: ANNUAL_SAVINGS_PCT,
+      monthsFree: ANNUAL_MONTHS_FREE,
+      monthlyEquivalent: formatPrice(ANNUAL_MONTHLY_EQUIVALENT),
+    };
+  }, [livePackages]);
+
   const plans = [
     {
       id: 'monthly',
@@ -131,11 +164,11 @@ const PaywallScreen = ({ navigation, route }) => {
       name: t('planAnnual', lang),
       price: livePriceString('annual', formatPrice(PRICING.annual)),
       per: t('perYr', lang),
-      save: t('save40', lang).replace('{{pct}}', String(ANNUAL_SAVINGS_PCT)),
+      save: t('save40', lang).replace('{{pct}}', String(priceMeta.savingsPct)),
       popular: true,
       badge: t('paywallAnnualBestValue', lang),
       detail: t('paywallAnnualDetail', lang),
-      effectivePrice: t('paywallAnnualMonthlyEquivalent', lang).replace('{{price}}', String(ANNUAL_MONTHLY_EQUIVALENT)),
+      effectivePrice: t('paywallAnnualMonthlyEquivalent', lang).replace('{{price}}', priceMeta.monthlyEquivalent),
       package: livePackages?.annual || null,
     },
   ];
@@ -664,7 +697,7 @@ const PaywallScreen = ({ navigation, route }) => {
           style={styles.brandLogo}
           resizeMode="contain"
           accessibilityRole="image"
-          accessibilityLabel="Spark"
+          accessibilityLabel="Talira"
         />
 
 
@@ -734,7 +767,7 @@ const PaywallScreen = ({ navigation, route }) => {
           <View style={styles.annualNudge}>
             <Text style={styles.annualNudgeText}>
               {t('paywallAnnualNudge', lang)
-                .replace('{{months}}', String(ANNUAL_MONTHS_FREE))}
+                .replace('{{months}}', String(priceMeta.monthsFree))}
             </Text>
           </View>
         )}

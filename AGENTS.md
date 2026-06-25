@@ -101,3 +101,5 @@ This file is intentionally concise. For detailed operational steps and troublesh
 - Android build details: [ANDROID_APK_REHBERI.md](ANDROID_APK_REHBERI.md)
 - Product/feature context: [README.md](README.md)
 - Analytics payload details: [docs/ANALYTICS_EVENTS.md](docs/ANALYTICS_EVENTS.md)
+
+## Imported Claude Cowork project instructions
