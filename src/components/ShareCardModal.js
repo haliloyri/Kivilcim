@@ -48,7 +48,7 @@ const SHARE_LINK =
   Constants.manifest?.extra?.shareLink ??
   '';
 
-// Brand logo (book + star + "Talira" wordmark). Dark variant has the cream
+// Brand logo (book + star + "Albor" wordmark). Dark variant has the cream
 // wordmark for dark card backgrounds; light variant has the ink wordmark.
 const LOGO_LIGHT_BG = require('../../assets/spark_logo.png');
 const LOGO_DARK_BG = require('../../assets/spark_logo_dark.png');
@@ -147,27 +147,27 @@ const ShareCardModal = ({
     if (cLang === 'en') {
       return [
         'Save this and tag a friend who needs this today.',
-        'Follow Talira for daily actionable wisdom.',
+        'Follow Albor for daily actionable wisdom.',
         'Try this insight today and share your result.',
       ];
     }
     if (cLang === 'es') {
       return [
         'Guarda esto y etiqueta a alguien que lo necesite hoy.',
-        'Sigue a Talira para sabiduria diaria accionable.',
+        'Sigue a Albor para sabiduria diaria accionable.',
         'Prueba esta idea hoy y comparte tu resultado.',
       ];
     }
     if (cLang === 'de') {
       return [
         'Speichere das und markiere jemanden, der das heute braucht.',
-        'Folge Talira fur tagliche, umsetzbare Impulse.',
+        'Folge Albor fur tagliche, umsetzbare Impulse.',
         'Teste diese Erkenntnis heute und teile dein Ergebnis.',
       ];
     }
     return [
       'Bunu kaydet ve bugun ihtiyaci olan birini etiketle.',
-      'Her gun uygulanabilir bilgelik icin Talira\'yi takip et.',
+      'Her gun uygulanabilir bilgelik icin Albor\'u takip et.',
       'Bu fikri bugun dene, sonucunu paylas.',
     ];
   };
@@ -175,12 +175,12 @@ const ShareCardModal = ({
   const buildHashtags = () => {
     const catHashtag = displayCat.replace(/[^\p{L}\p{N}]/gu, '');
     const generalHashtags = cLang === 'en'
-      ? '#Talira #DailyInspiration #BookWisdom #Mindset'
+      ? '#Albor #DailyInspiration #BookWisdom #Mindset'
       : cLang === 'es'
-        ? '#Talira #InspiracionDiaria #Sabiduria #Mentalidad'
+        ? '#Albor #InspiracionDiaria #Sabiduria #Mentalidad'
         : cLang === 'de'
-          ? '#Talira #TaeglicheInspiration #Buchimpulse #Mindset'
-          : '#Talira #gununilhami #kitapbilgeligi #farkindalik';
+          ? '#Albor #TaeglicheInspiration #Buchimpulse #Mindset'
+          : '#Albor #gununilhami #kitapbilgeligi #farkindalik';
     return `#${catHashtag} ${generalHashtags}`;
   };
 

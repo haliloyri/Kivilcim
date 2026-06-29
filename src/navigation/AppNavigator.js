@@ -32,33 +32,124 @@ const CONFETTI_COLORS = ['#FFD166', '#FF6B6B', '#06D6A0', '#4D96FF', '#F4A261', 
 const BADGE_SOUND_ASSET = require('../../assets/sounds/badge.wav');
 
 // Famous quote per badge — shown softly at the bottom of the badge modal and
-// appended to the share text. { q: quote, a: author }
+// appended to the share text. Localized per language. { q: quote, a: author }
 const BADGE_QUOTES = {
-  first_read:     { q: 'Bin millik yolculuk tek bir adımla başlar.', a: 'Lao Tzu' },
-  explorer:       { q: 'Gerçek keşif, yeni manzaralar aramak değil, yeni gözlere sahip olmaktır.', a: 'Marcel Proust' },
-  sage:           { q: 'Tek bildiğim, hiçbir şey bilmediğimdir.', a: 'Sokrates' },
-  bookworm:       { q: 'Okumak zihne, egzersizin bedene yaptığını yapar.', a: 'Joseph Addison' },
-  streak_7:       { q: 'Biz tekrar tekrar yaptığımız şeyiz; mükemmellik bir eylem değil, alışkanlıktır.', a: 'Aristoteles' },
-  cat_variety_3:  { q: 'Özel bir yeteneğim yok; sadece tutkuyla meraklıyım.', a: 'Albert Einstein' },
-  cat_variety_5:  { q: 'Ne kadar çok okursan o kadar çok bilirsin; ne kadar öğrenirsen o kadar çok yere gidersin.', a: 'Dr. Seuss' },
-  cat_variety_10: { q: 'Dünya bir kitaptır; seyahat etmeyenler yalnızca bir sayfasını okur.', a: 'Aziz Augustinus' },
-  cat_master_5:   { q: 'Bir şeyi basitçe anlatamıyorsan, onu yeterince anlamamışsındır.', a: 'Albert Einstein' },
-  cat_master_10:  { q: 'Mükemmellik küçük şeylerin toplamıdır, ama küçük bir şey değildir.', a: 'Michelangelo' },
-  cat_master_25:  { q: 'Ne yaparsan yap, iyi yap.', a: 'Abraham Lincoln' },
-  cat_master_50:  { q: 'Dehanın yüzde biri ilham, yüzde doksan dokuzu terdir.', a: 'Thomas Edison' },
-  cat_master_100: { q: 'Başarı, küçük çabaların gün be gün tekrarıdır.', a: 'Robert Collier' },
-  philosopher:    { q: 'Sorgulanmamış bir hayat yaşanmaya değmez.', a: 'Sokrates' },
-  save_5:         { q: 'Kitaplığı olmayan ev, ruhu olmayan bedene benzer.', a: 'Cicero' },
-  save_10:        { q: 'Kitaplar, en sessiz ve en sadık dostlardır.', a: 'Charles W. Eliot' },
-  save_50:        { q: 'Bir kütüphaneniz ve bir bahçeniz varsa, her şeyiniz var demektir.', a: 'Cicero' },
-  save_100:       { q: 'İyi bir kitap, ruhun damıtılmış özüdür.', a: 'Thomas Carlyle' },
-  share_1:        { q: 'Bir mum, başka bir mumu yakmakla ışığından bir şey yitirmez.', a: 'Atasözü' },
-  share_10:       { q: 'Bilgi, paylaştıkça çoğalan tek hazinedir.', a: 'Atasözü' },
-  share_20:       { q: 'Başkalarını aydınlatan, kendi yolunu da aydınlatır.', a: 'Atasözü' },
-  share_30:       { q: 'İyi bir fikir, anlatıldıkça büyür.', a: 'Atasözü' },
-  share_50:       { q: 'Paylaşılmayan bilgi, yakılmamış bir mum gibidir.', a: 'Atasözü' },
-  storyteller:    { q: 'İnsanlar gerçekleri unutur ama iyi bir hikâyeyi asla.', a: 'Atasözü' },
-  icebreaker:     { q: 'Her büyük dostluk basit bir merhaba ile başlar.', a: 'Atasözü' },
+  tr: {
+    first_read:     { q: 'Bin millik yolculuk tek bir adımla başlar.', a: 'Lao Tzu' },
+    explorer:       { q: 'Gerçek keşif, yeni manzaralar aramak değil, yeni gözlere sahip olmaktır.', a: 'Marcel Proust' },
+    sage:           { q: 'Tek bildiğim, hiçbir şey bilmediğimdir.', a: 'Sokrates' },
+    bookworm:       { q: 'Okumak zihne, egzersizin bedene yaptığını yapar.', a: 'Joseph Addison' },
+    streak_7:       { q: 'Biz tekrar tekrar yaptığımız şeyiz; mükemmellik bir eylem değil, alışkanlıktır.', a: 'Aristoteles' },
+    cat_variety_3:  { q: 'Özel bir yeteneğim yok; sadece tutkuyla meraklıyım.', a: 'Albert Einstein' },
+    cat_variety_5:  { q: 'Ne kadar çok okursan o kadar çok bilirsin; ne kadar öğrenirsen o kadar çok yere gidersin.', a: 'Dr. Seuss' },
+    cat_variety_10: { q: 'Dünya bir kitaptır; seyahat etmeyenler yalnızca bir sayfasını okur.', a: 'Aziz Augustinus' },
+    cat_master_5:   { q: 'Bir şeyi basitçe anlatamıyorsan, onu yeterince anlamamışsındır.', a: 'Albert Einstein' },
+    cat_master_10:  { q: 'Mükemmellik küçük şeylerin toplamıdır, ama küçük bir şey değildir.', a: 'Michelangelo' },
+    cat_master_25:  { q: 'Ne yaparsan yap, iyi yap.', a: 'Abraham Lincoln' },
+    cat_master_50:  { q: 'Dehanın yüzde biri ilham, yüzde doksan dokuzu terdir.', a: 'Thomas Edison' },
+    cat_master_100: { q: 'Başarı, küçük çabaların gün be gün tekrarıdır.', a: 'Robert Collier' },
+    philosopher:    { q: 'Sorgulanmamış bir hayat yaşanmaya değmez.', a: 'Sokrates' },
+    save_5:         { q: 'Kitaplığı olmayan ev, ruhu olmayan bedene benzer.', a: 'Cicero' },
+    save_10:        { q: 'Kitaplar, en sessiz ve en sadık dostlardır.', a: 'Charles W. Eliot' },
+    save_50:        { q: 'Bir kütüphaneniz ve bir bahçeniz varsa, her şeyiniz var demektir.', a: 'Cicero' },
+    save_100:       { q: 'İyi bir kitap, ruhun damıtılmış özüdür.', a: 'Thomas Carlyle' },
+    share_1:        { q: 'Bir mum, başka bir mumu yakmakla ışığından bir şey yitirmez.', a: 'Atasözü' },
+    share_10:       { q: 'Bilgi, paylaştıkça çoğalan tek hazinedir.', a: 'Atasözü' },
+    share_20:       { q: 'Başkalarını aydınlatan, kendi yolunu da aydınlatır.', a: 'Atasözü' },
+    share_30:       { q: 'İyi bir fikir, anlatıldıkça büyür.', a: 'Atasözü' },
+    share_50:       { q: 'Paylaşılmayan bilgi, yakılmamış bir mum gibidir.', a: 'Atasözü' },
+    storyteller:    { q: 'İnsanlar gerçekleri unutur ama iyi bir hikâyeyi asla.', a: 'Atasözü' },
+    icebreaker:     { q: 'Her büyük dostluk basit bir merhaba ile başlar.', a: 'Atasözü' },
+  },
+  en: {
+    first_read:     { q: 'A journey of a thousand miles begins with a single step.', a: 'Lao Tzu' },
+    explorer:       { q: 'The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.', a: 'Marcel Proust' },
+    sage:           { q: 'The only thing I know is that I know nothing.', a: 'Socrates' },
+    bookworm:       { q: 'Reading is to the mind what exercise is to the body.', a: 'Joseph Addison' },
+    streak_7:       { q: 'We are what we repeatedly do. Excellence, then, is not an act but a habit.', a: 'Aristotle' },
+    cat_variety_3:  { q: 'I have no special talent. I am only passionately curious.', a: 'Albert Einstein' },
+    cat_variety_5:  { q: 'The more that you read, the more things you will know. The more that you learn, the more places you\'ll go.', a: 'Dr. Seuss' },
+    cat_variety_10: { q: 'The world is a book, and those who do not travel read only one page.', a: 'Saint Augustine' },
+    cat_master_5:   { q: 'If you can\'t explain it simply, you don\'t understand it well enough.', a: 'Albert Einstein' },
+    cat_master_10:  { q: 'Perfection is made up of trifles, but perfection is no trifle.', a: 'Michelangelo' },
+    cat_master_25:  { q: 'Whatever you are, be a good one.', a: 'Abraham Lincoln' },
+    cat_master_50:  { q: 'Genius is one percent inspiration and ninety-nine percent perspiration.', a: 'Thomas Edison' },
+    cat_master_100: { q: 'Success is the sum of small efforts repeated day in and day out.', a: 'Robert Collier' },
+    philosopher:    { q: 'The unexamined life is not worth living.', a: 'Socrates' },
+    save_5:         { q: 'A room without books is like a body without a soul.', a: 'Cicero' },
+    save_10:        { q: 'Books are the quietest and most constant of friends.', a: 'Charles W. Eliot' },
+    save_50:        { q: 'If you have a garden and a library, you have everything you need.', a: 'Cicero' },
+    save_100:       { q: 'A good book is the purest essence of a human soul.', a: 'Thomas Carlyle' },
+    share_1:        { q: 'A candle loses nothing by lighting another candle.', a: 'Proverb' },
+    share_10:       { q: 'Knowledge is the only treasure that grows when shared.', a: 'Proverb' },
+    share_20:       { q: 'Those who light the way for others also light their own path.', a: 'Proverb' },
+    share_30:       { q: 'A good idea grows each time it is shared.', a: 'Proverb' },
+    share_50:       { q: 'Knowledge not shared is like a candle never lit.', a: 'Proverb' },
+    storyteller:    { q: 'People forget facts, but they never forget a good story.', a: 'Proverb' },
+    icebreaker:     { q: 'Every great friendship begins with a simple hello.', a: 'Proverb' },
+  },
+  es: {
+    first_read:     { q: 'Un viaje de mil millas comienza con un solo paso.', a: 'Lao-Tse' },
+    explorer:       { q: 'El verdadero viaje de descubrimiento no consiste en buscar nuevos paisajes, sino en tener nuevos ojos.', a: 'Marcel Proust' },
+    sage:           { q: 'Solo sé que no sé nada.', a: 'Sócrates' },
+    bookworm:       { q: 'La lectura es a la mente lo que el ejercicio al cuerpo.', a: 'Joseph Addison' },
+    streak_7:       { q: 'Somos lo que hacemos repetidamente. La excelencia, entonces, no es un acto, sino un hábito.', a: 'Aristóteles' },
+    cat_variety_3:  { q: 'No tengo ningún talento especial. Solo soy apasionadamente curioso.', a: 'Albert Einstein' },
+    cat_variety_5:  { q: 'Cuanto más leas, más cosas sabrás. Cuanto más aprendas, a más lugares irás.', a: 'Dr. Seuss' },
+    cat_variety_10: { q: 'El mundo es un libro, y quienes no viajan leen solo una página.', a: 'San Agustín' },
+    cat_master_5:   { q: 'Si no puedes explicarlo de forma sencilla, no lo entiendes lo suficiente.', a: 'Albert Einstein' },
+    cat_master_10:  { q: 'La perfección se compone de pequeñeces, pero la perfección no es una pequeñez.', a: 'Miguel Ángel' },
+    cat_master_25:  { q: 'Hagas lo que hagas, hazlo bien.', a: 'Abraham Lincoln' },
+    cat_master_50:  { q: 'El genio es uno por ciento inspiración y noventa y nueve por ciento transpiración.', a: 'Thomas Edison' },
+    cat_master_100: { q: 'El éxito es la suma de pequeños esfuerzos repetidos día tras día.', a: 'Robert Collier' },
+    philosopher:    { q: 'Una vida sin examen no merece ser vivida.', a: 'Sócrates' },
+    save_5:         { q: 'Una habitación sin libros es como un cuerpo sin alma.', a: 'Cicerón' },
+    save_10:        { q: 'Los libros son los amigos más silenciosos y constantes.', a: 'Charles W. Eliot' },
+    save_50:        { q: 'Si tienes un jardín y una biblioteca, tienes todo lo que necesitas.', a: 'Cicerón' },
+    save_100:       { q: 'Un buen libro es la esencia más pura del alma humana.', a: 'Thomas Carlyle' },
+    share_1:        { q: 'Una vela no pierde nada por encender otra vela.', a: 'Proverbio' },
+    share_10:       { q: 'El conocimiento es el único tesoro que crece al compartirlo.', a: 'Proverbio' },
+    share_20:       { q: 'Quien ilumina el camino de los demás, también ilumina el suyo.', a: 'Proverbio' },
+    share_30:       { q: 'Una buena idea crece cada vez que se comparte.', a: 'Proverbio' },
+    share_50:       { q: 'El conocimiento que no se comparte es como una vela sin encender.', a: 'Proverbio' },
+    storyteller:    { q: 'La gente olvida los hechos, pero nunca una buena historia.', a: 'Proverbio' },
+    icebreaker:     { q: 'Toda gran amistad comienza con un simple hola.', a: 'Proverbio' },
+  },
+  de: {
+    first_read:     { q: 'Eine Reise von tausend Meilen beginnt mit einem einzigen Schritt.', a: 'Laotse' },
+    explorer:       { q: 'Die wahre Entdeckungsreise besteht nicht darin, neue Landschaften zu suchen, sondern mit neuen Augen zu sehen.', a: 'Marcel Proust' },
+    sage:           { q: 'Ich weiß, dass ich nichts weiß.', a: 'Sokrates' },
+    bookworm:       { q: 'Lesen ist für den Geist, was Bewegung für den Körper ist.', a: 'Joseph Addison' },
+    streak_7:       { q: 'Wir sind, was wir wiederholt tun. Exzellenz ist daher keine Tat, sondern eine Gewohnheit.', a: 'Aristoteles' },
+    cat_variety_3:  { q: 'Ich habe keine besondere Begabung, ich bin nur leidenschaftlich neugierig.', a: 'Albert Einstein' },
+    cat_variety_5:  { q: 'Je mehr du liest, desto mehr wirst du wissen. Je mehr du lernst, desto mehr Orte wirst du sehen.', a: 'Dr. Seuss' },
+    cat_variety_10: { q: 'Die Welt ist ein Buch. Wer nie reist, sieht nur eine Seite davon.', a: 'Augustinus' },
+    cat_master_5:   { q: 'Wenn du es nicht einfach erklären kannst, hast du es nicht gut genug verstanden.', a: 'Albert Einstein' },
+    cat_master_10:  { q: 'Vollkommenheit besteht aus Kleinigkeiten, doch Vollkommenheit ist keine Kleinigkeit.', a: 'Michelangelo' },
+    cat_master_25:  { q: 'Was auch immer du tust, mach es gut.', a: 'Abraham Lincoln' },
+    cat_master_50:  { q: 'Genie ist ein Prozent Inspiration und neunundneunzig Prozent Transpiration.', a: 'Thomas Edison' },
+    cat_master_100: { q: 'Erfolg ist die Summe kleiner Anstrengungen, die sich Tag für Tag wiederholen.', a: 'Robert Collier' },
+    philosopher:    { q: 'Ein Leben ohne Selbstprüfung ist nicht lebenswert.', a: 'Sokrates' },
+    save_5:         { q: 'Ein Raum ohne Bücher ist wie ein Körper ohne Seele.', a: 'Cicero' },
+    save_10:        { q: 'Bücher sind die stillsten und treuesten Freunde.', a: 'Charles W. Eliot' },
+    save_50:        { q: 'Wenn du einen Garten und eine Bibliothek hast, hast du alles, was du brauchst.', a: 'Cicero' },
+    save_100:       { q: 'Ein gutes Buch ist die reinste Essenz einer menschlichen Seele.', a: 'Thomas Carlyle' },
+    share_1:        { q: 'Eine Kerze verliert nichts, wenn sie eine andere Kerze entzündet.', a: 'Sprichwort' },
+    share_10:       { q: 'Wissen ist der einzige Schatz, der wächst, wenn man ihn teilt.', a: 'Sprichwort' },
+    share_20:       { q: 'Wer anderen den Weg leuchtet, erhellt auch den eigenen.', a: 'Sprichwort' },
+    share_30:       { q: 'Eine gute Idee wächst, je öfter man sie erzählt.', a: 'Sprichwort' },
+    share_50:       { q: 'Ungeteiltes Wissen ist wie eine Kerze, die nie angezündet wurde.', a: 'Sprichwort' },
+    storyteller:    { q: 'Menschen vergessen Fakten, aber niemals eine gute Geschichte.', a: 'Sprichwort' },
+    icebreaker:     { q: 'Jede große Freundschaft beginnt mit einem einfachen Hallo.', a: 'Sprichwort' },
+  },
+};
+
+// Pick a badge's quote in the active language, falling back to English (then
+// Turkish) so the modal and share card never render an empty quote.
+const getBadgeQuote = (id, lang) => {
+  if (!id) return null;
+  const table = BADGE_QUOTES[lang] || BADGE_QUOTES.en;
+  return table[id] || BADGE_QUOTES.en[id] || BADGE_QUOTES.tr[id] || null;
 };
 
 // Animated tab icon with a soft "pill" highlight behind the active tab.
@@ -429,7 +520,7 @@ export default function AppNavigator() {
   const modalMeta = activeBadgeModal
     ? (BADGE_MAP[activeBadgeModal.id] || { icon: 'trophy', colors: ['#C89B3C', '#8C701B'] })
     : null;
-  const modalQuote = activeBadgeModal ? BADGE_QUOTES[activeBadgeModal.id] : null;
+  const modalQuote = getBadgeQuote(activeBadgeModal?.id, lang);
 
 
   return (
@@ -576,7 +667,7 @@ export default function AppNavigator() {
         visible={!!shareSheetBadge}
         badge={shareSheetBadge}
         name={userProfile?.displayName}
-        quote={shareSheetBadge ? BADGE_QUOTES[shareSheetBadge.id] : null}
+        quote={getBadgeQuote(shareSheetBadge?.id, lang)}
         onClose={() => setShareSheetBadge(null)}
       />
     </>

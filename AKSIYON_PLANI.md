@@ -66,7 +66,7 @@ _Hedefler: (1) gelir, (2) indirilme, (3) düzenli kullanım_
 - **Yapılan:**
   - Hikaye paylaşım kartı footer'ına erişim linki eklendi (`app.json → extra.shareLink`, şu an `kivilcim.app`). Link boşsa hiç gösterilmiyor.
   - Rozet paylaşım kartına da (`BadgeShareSheet.js`) aynı erişim linki eklendi.
-  - Hikaye kartındaki metin logo (`✦ Talira`) gerçek marka logosuyla değiştirildi (tema duyarlı: koyu/açık).
+  - Hikaye kartındaki metin logo (`✦ Albor`) gerçek marka logosuyla değiştirildi (tema duyarlı: koyu/açık).
   - Sosyal paylaşıma premium/reklam kapısı eklendi (önceden sadece üst menüde vardı).
   - "Kart oluştur" modalı `ShareCardModal` bileşenine taşındı; Sohbette Kullan'dan açılınca artık StoryDetail'e yönlenmeden aynı ekranın üzerinde açılıyor.
 - **Not / kaldı:** `shareLink`'i yayına çıkışta gerçek store/landing URL'i ya da sosyal handle ile değiştir.
@@ -76,7 +76,7 @@ _Hedefler: (1) gelir, (2) indirilme, (3) düzenli kullanım_
 - **Yapılacak:** "Arkadaşını davet et → 1 hafta premium" döngüsü. Hem acquisition hem retention besler.
 
 ### 7. ASO + store listing — 🟡 Metin taslağı hazır, mağazaya giriş + görseller kaldı (25 Haz 2026)
-- **Yapılan:** 4 dilde (tr/en/es/de) mağaza metni hazırlandı → `ASO_STORE_LISTING.md`. App adı/alt başlık/anahtar kelime/kısa+uzun açıklama, karakter limitleri içinde; tohum anahtar kelime listesi dahil. App adı varsayımı: **Talira**.
+- **Yapılan:** 4 dilde (tr/en/es/de) mağaza metni hazırlandı → `ASO_STORE_LISTING.md`. App adı/alt başlık/anahtar kelime/kısa+uzun açıklama, karakter limitleri içinde; tohum anahtar kelime listesi dahil. App adı varsayımı: **Albor**.
 - **Kaldı (senin tarafın):** Metinleri App Store Connect + Play Console'a gir; her dil için ekran görüntüsü seti hazırla; yayından 2–4 hafta sonra arama verisiyle anahtar kelimeleri revize et.
 - **Yapılacak:** Anahtar kelime araştırması; store listing mesajlarını ekran gerçeğiyle birebir hizala; her dil için ekran görüntüsü seti.
 - **Mesaj önerisi (tek cümle değer önerisi):** "Her gün birkaç dakikada uygulanabilir fikirler, hikayeler ve ilham."

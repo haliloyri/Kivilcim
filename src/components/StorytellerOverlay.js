@@ -28,6 +28,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
+import { useTheme } from '../context/ThemeContext';
 
 const TIMER_SECONDS = 30;
 
@@ -69,11 +70,8 @@ const StorytellerOverlay = ({
   onClose,
   onDone,
   onPremiumTap,
-  colors,
-  layout,
-  isDark,
-  lang,
 }) => {
+  const { colors, layout, isDark, lang } = useTheme();
   const [selectedContext, setSelectedContext] = useState('social');
   const [timerActive, setTimerActive] = useState(false);
   const [timeLeft, setTimeLeft] = useState(TIMER_SECONDS);

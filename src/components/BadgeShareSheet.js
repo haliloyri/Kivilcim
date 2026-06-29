@@ -97,7 +97,7 @@ const ShareCard = ({ badge, accent, theme, lang, name, quote, tall }) => {
           style={{ width: logoSize, height: logoSize, marginTop: 2 }}
           resizeMode="contain"
         />
-        <Text style={[s.sig, { color: nameC, fontSize: sigSize }]}>Talira</Text>
+        <Text style={[s.sig, { color: nameC, fontSize: sigSize }]}>Albor</Text>
       </View>
 
       {/* İçerik merkezi */}

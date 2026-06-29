@@ -697,7 +697,7 @@ const PaywallScreen = ({ navigation, route }) => {
           style={styles.brandLogo}
           resizeMode="contain"
           accessibilityRole="image"
-          accessibilityLabel="Talira"
+          accessibilityLabel="Albor"
         />
 
 

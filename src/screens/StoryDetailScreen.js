@@ -23,7 +23,7 @@ import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 import { readableTextOn } from '../theme/theme';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
-import { shouldShowAd, loadRewarded, showRewarded, loadInterstitial, showInterstitial } from '../utils/ads';
+import { shouldShowAd, loadRewarded, showRewarded, loadInterstitial, showInterstitial, recordStoryRead } from '../utils/ads';
 
 const { width, height } = Dimensions.get('window');
 
@@ -35,7 +35,7 @@ const SHARE_LINK =
   Constants.manifest?.extra?.shareLink ??
   '';
 
-// Brand logo (book + star + "Talira" wordmark). Dark variant has the cream
+// Brand logo (book + star + "Albor" wordmark). Dark variant has the cream
 // wordmark for dark card backgrounds; light variant has the ink wordmark.
 const LOGO_LIGHT_BG = require('../../assets/spark_logo.png');
 const LOGO_DARK_BG = require('../../assets/spark_logo_dark.png');
@@ -122,10 +122,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
   }, [story?.story_id]);
 
 
-  // On open, show a full-screen (interstitial) ad first, then reveal the story.
-  // Premium users and ad-load failures fall straight through to reading.
-  // NOTE: ignoreCap:true => one ad on every story open (test mode). For the
-  // future "every N stories" rule, drop ignoreCap and gate this call instead.
+  // On open, show a full-screen (interstitial) ad every 3 stories with a
+  // minimum 3-minute cooldown between ads. Premium users skip entirely.
   React.useEffect(() => {
     let cancelled = false;
     // Skip the on-open interstitial when this screen was opened solely to show
@@ -133,6 +131,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
     // already gated by its own rewarded-ad / premium sheet, so a second ad here
     // would pop over the share modal and disrupt the flow.
     if (route.params?.openShareModal || !shouldShowAd({ isPremium, isOnboarded: true })) {
+      setStoryAdGate(false);
+      return;
+    }
+    const adDue = recordStoryRead();
+    if (!adDue) {
       setStoryAdGate(false);
       return;
     }
@@ -549,27 +552,27 @@ const StoryDetailScreen = ({ route, navigation }) => {
     if (localLang === 'en') {
       return [
         'Save this and tag a friend who needs this today.',
-        'Follow Talira for daily actionable wisdom.',
+        'Follow Albor for daily actionable wisdom.',
         'Try this insight today and share your result.',
       ];
     }
     if (localLang === 'es') {
       return [
         'Guarda esto y etiqueta a alguien que lo necesite hoy.',
-        'Sigue a Talira para sabiduria diaria accionable.',
+        'Sigue a Albor para sabiduria diaria accionable.',
         'Prueba esta idea hoy y comparte tu resultado.',
       ];
     }
     if (localLang === 'de') {
       return [
         'Speichere das und markiere jemanden, der das heute braucht.',
-        'Folge Talira fur tagliche, umsetzbare Impulse.',
+        'Folge Albor fur tagliche, umsetzbare Impulse.',
         'Teste diese Erkenntnis heute und teile dein Ergebnis.',
       ];
     }
     return [
       'Bunu kaydet ve bugun ihtiyaci olan birini etiketle.',
-      'Her gun uygulanabilir bilgelik icin Talira\'yi takip et.',
+      'Her gun uygulanabilir bilgelik icin Albor\'u takip et.',
       'Bu fikri bugun dene, sonucunu paylas.',
     ];
   };
@@ -577,12 +580,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const buildHashtags = () => {
     const catHashtag = displayCat.replace(/[^\p{L}\p{N}]/gu, '');
     const generalHashtags = localLang === 'en'
-      ? '#Talira #DailyInspiration #BookWisdom #Mindset'
+      ? '#Albor #DailyInspiration #BookWisdom #Mindset'
       : localLang === 'es'
-        ? '#Talira #InspiracionDiaria #Sabiduria #Mentalidad'
+        ? '#Albor #InspiracionDiaria #Sabiduria #Mentalidad'
         : localLang === 'de'
-          ? '#Talira #TaeglicheInspiration #Buchimpulse #Mindset'
-          : '#Talira #gununilhami #kitapbilgeligi #farkindalik';
+          ? '#Albor #TaeglicheInspiration #Buchimpulse #Mindset'
+          : '#Albor #gununilhami #kitapbilgeligi #farkindalik';
 
     return `#${catHashtag} ${generalHashtags}`;
   };

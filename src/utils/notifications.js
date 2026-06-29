@@ -1,8 +1,10 @@
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
+import Constants from 'expo-constants';
 import { getReadHistory } from '../db/db';
 import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from './analytics';
+import { upsertPushToken, removePushToken } from '../services/supabase';
 
 const REMINDER_WINDOW_HOURS = {
   morning: 7,
@@ -457,5 +459,71 @@ export async function getScheduledNotifications() {
   } catch (error) {
     console.warn('Failed to get scheduled notifications:', error);
     return [];
+  }
+}
+
+// ─── Push token (server-side notifications) ───────────────────────────────────
+
+/**
+ * Register this device for remote push notifications and save the Expo
+ * push token to Supabase so the server can reach it.
+ *
+ * Call on app startup (after auth) and whenever the user logs in.
+ *
+ * @param {string|null} userId — Supabase auth user ID, or null for anonymous
+ * @returns {string|null} The Expo push token, or null if unavailable
+ */
+export async function registerAndSavePushToken(userId = null) {
+  try {
+    // Push notifications only work on physical devices
+    const isDevice = Constants.isDevice ?? !Constants.expoGoConfig;
+    if (!isDevice) {
+      console.log('[push] Skipping push token — simulator/Expo Go');
+      return null;
+    }
+
+    const granted = await ensureNotificationPermission();
+    if (!granted) return null;
+
+    // Android requires a notification channel for push as well
+    if (Platform.OS === 'android') {
+      await Notifications.setNotificationChannelAsync('default', {
+        name: 'Albor Notifications',
+        importance: Notifications.AndroidImportance.HIGH,
+        vibrationPattern: [0, 250, 250, 250],
+        lightColor: '#D06A1B',
+      });
+    }
+
+    const { data: tokenData } = await Notifications.getExpoPushTokenAsync({
+      projectId: Constants.expoConfig?.extra?.eas?.projectId,
+    });
+
+    if (!tokenData) return null;
+
+    // Persist to Supabase push_tokens table
+    await upsertPushToken(userId, tokenData, Platform.OS);
+
+    console.log('[push] Token registered:', tokenData);
+    return tokenData;
+  } catch (error) {
+    console.warn('[push] registerAndSavePushToken failed:', error?.message);
+    return null;
+  }
+}
+
+/**
+ * Remove this device's push token from Supabase (call on logout).
+ * The device will stop receiving server-side push notifications.
+ *
+ * @param {string|null} token — the token returned by registerAndSavePushToken
+ */
+export async function unregisterPushToken(token) {
+  if (!token) return;
+  try {
+    await removePushToken(token);
+    console.log('[push] Token removed from Supabase');
+  } catch (error) {
+    console.warn('[push] unregisterPushToken failed:', error?.message);
   }
 }

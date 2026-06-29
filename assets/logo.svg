@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="2048" preserveAspectRatio="none" style="display: block;" version="1.1" viewBox="0 0 2048 2048" width="2048">
+<defs>
+	<linearGradient gradientUnits="userSpaceOnUse" id="Gradient1" x1="1024.14" x2="1022.99" y1="1133.36" y2="940.209">
+		<stop class="stop0" offset="0" stop-color="rgb(198,100,31)" stop-opacity="1"></stop>
+		<stop class="stop1" offset="1" stop-color="rgb(239,162,69)" stop-opacity="1"></stop>
+	</linearGradient>
+</defs>
+<path d="M 0 0 L 2048 0 L 2048 2048 L 0 2048 L 0 0 z" fill="rgb(255,255,255)" transform="translate(0,0)"></path>
+<path d="M 862.511 946.244 C 868.626 938.732 879.069 930.407 886.871 924.707 C 920.682 899.786 960.628 884.519 1002.44 880.535 C 1063.07 874.458 1123.62 892.773 1170.71 931.434 C 1178.65 937.92 1185.2 944.42 1192.4 951.627 C 1234.3 997.011 1257.94 1054.35 1255.6 1116.59 C 1255.33 1122.81 1254.78 1129.02 1253.94 1135.2 L 1374.57 1135.2 L 1374.42 1169.37 L 674.056 1169.51 L 674.069 1135.16 C 714.338 1134.96 754.608 1134.97 794.877 1135.19 C 784.261 1071.82 814.662 988.769 862.511 946.244 z" fill="url(#Gradient1)" transform="translate(0,0)"></path>
+<path d="M 794.877 1135.19 L 1099.03 1135.12 C 1148.41 1135.14 1205.08 1136.59 1253.94 1135.2 L 1374.57 1135.2 L 1374.42 1169.37 L 674.056 1169.51 L 674.069 1135.16 C 714.338 1134.96 754.608 1134.97 794.877 1135.19 z" fill="rgb(34,6,54)" transform="translate(0,0)"></path>
+<path d="M 862.511 946.244 C 868.626 938.732 879.069 930.407 886.871 924.707 C 920.682 899.786 960.628 884.519 1002.44 880.535 C 1063.07 874.458 1123.62 892.773 1170.71 931.434 C 1178.65 937.92 1185.2 944.42 1192.4 951.627 C 1171.81 949.113 1153.59 950.548 1135 948.858 C 1109.78 945.999 1084.47 943.644 1059.19 941.502 C 1024.85 938.594 990.458 945.902 956.446 945.041 C 955.005 946.055 952.209 948.172 950.497 948.138 C 941.962 947.429 932.406 947.991 923.974 946.962 C 903.444 944.456 883.53 949.81 863.068 949.23 C 863.109 948.157 862.807 947.27 862.511 946.244 z" fill="rgb(246,174,81)" transform="translate(0,0)"></path>
+<metadata><recraft-signature>{"signed_by": "recraft", "signature_b64": "g7JSlIgsbiRsAWs0I0j0cLDy3oS0Ptcl6CPejMGQFSfPk3KYQ6QQUNeKeczG2Ol4AuOF00WDEsBcj1AVX0yPBA==", "signing_algo": "Ed25519", "generation_timestamp": 1782509109, "identifier": "22f1a1c1-1405-4166-aaba-0d626f2353ce"}</recraft-signature></metadata></svg>

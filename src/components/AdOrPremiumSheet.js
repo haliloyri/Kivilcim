@@ -62,6 +62,7 @@ const AdOrPremiumSheet = ({
       onRequestClose={onClose}
       onDismiss={onDismiss}
     >
+      <View style={styles.container}>
       {/* Dimmed backdrop — tap to dismiss */}
       <TouchableWithoutFeedback onPress={onClose}>
         <View style={styles.backdrop} />
@@ -137,13 +138,18 @@ const AdOrPremiumSheet = ({
 
         <View style={styles.bottomSpacer} />
       </View>
+      </View>
     </Modal>
   );
 };
 
 const makeStyles = (colors) => StyleSheet.create({
-  backdrop: {
+  container: {
     flex: 1,
+    justifyContent: 'flex-end',
+  },
+  backdrop: {
+    ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(0,0,0,0.55)',
   },
   sheet: {

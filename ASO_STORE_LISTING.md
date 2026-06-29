@@ -1,8 +1,8 @@
-# Talira — ASO & Mağaza Metni (tr / en / es / de)
+# Albor — ASO & Mağaza Metni (tr / en / es / de)
 
 _Hazırlanma: 25 Haziran 2026 · Aksiyon Planı Madde 7_
 
-**Varsayım:** Uygulamanın halka açık adı **Talira** (uygulama içi marka, logo ve `#Talira` etiketleriyle uyumlu). Eski "Spark / Kıvılcım" adını kullanacaksan başlıkları ona göre değiştir.
+**Varsayım:** Uygulamanın halka açık adı **Albor** (uygulama içi marka, logo ve `#Albor` etiketleriyle uyumlu). Eski "Spark / Kıvılcım" adını kullanacaksan başlıkları ona göre değiştir.
 
 **Tek cümlelik değer önerisi:** _Her gün birkaç dakikada, kitaplardan damıtılmış uygulanabilir fikirler, hikâyeler ve ilham._
 
@@ -35,8 +35,8 @@ Aşağıdakiler konumlandırmadan türetilmiş tohum kelimelerdir; yayından son
 
 ## 🇹🇷 Türkçe
 
-**App adı (iOS, 30):** `Talira: Günlük Kitap Bilgeliği`
-**Play başlığı (30):** `Talira: Günlük Bilgelik`
+**App adı (iOS, 30):** `Albor: Günlük Kitap Bilgeliği`
+**Play başlığı (30):** `Albor: Günlük Bilgelik`
 **Alt başlık (iOS, 30):** `Birkaç dakikada ilham & fikir`
 **Kısa açıklama (Play, 80):** `Kitaplardan damıtılmış fikirler. Her gün birkaç dakikada uygulanabilir bilgelik.`
 **Anahtar kelimeler (iOS, ~100):**
@@ -46,7 +46,7 @@ Aşağıdakiler konumlandırmadan türetilmiş tohum kelimelerdir; yayından son
 ```
 Her gün birkaç dakika. Kalıcı bir fikir.
 
-Talira, kitaplardan damıtılmış uygulanabilir bilgeliği günlük, kısa ve okunması kolay hikâyelere dönüştürür. Uzun kitaplara saatler ayırmana gerek yok — özünü dakikalar içinde al, bugün uygula.
+Albor, kitaplardan damıtılmış uygulanabilir bilgeliği günlük, kısa ve okunması kolay hikâyelere dönüştürür. Uzun kitaplara saatler ayırmana gerek yok — özünü dakikalar içinde al, bugün uygula.
 
 NELER VAR
 • Günün Kıvılcımı: Her gün senin için seçilen bir fikir
@@ -56,18 +56,18 @@ NELER VAR
 • Seri & rozetler: Küçük günlük alışkanlığını sürdür
 • Koyu tema ve kişiselleştirilmiş akış
 
-NEDEN TALIRA
+NEDEN ALBOR
 Bilgi yığını değil, uygulanabilir tek bir adım. Her hikâye; bir alıntı, bir ders ve bir soruyla biter — okuduğunu hayata geçirmen için.
 
-Bugün bir kıvılcım çak. Talira'yı indir.
+Bugün bir kıvılcım çak. Albor'u indir.
 ```
 
 ---
 
 ## 🇬🇧 English
 
-**App name (iOS, 30):** `Talira: Daily Book Wisdom`
-**Play title (30):** `Talira: Daily Book Wisdom`
+**App name (iOS, 30):** `Albor: Daily Book Wisdom`
+**Play title (30):** `Albor: Daily Book Wisdom`
 **Subtitle (iOS, 30):** `Big ideas in a few minutes`
 **Short description (Play, 80):** `Actionable wisdom distilled from books. A big idea every day, in minutes.`
 **Keywords (iOS, ~100):**
@@ -77,7 +77,7 @@ Bugün bir kıvılcım çak. Talira'yı indir.
 ```
 A few minutes a day. One idea that sticks.
 
-Talira turns actionable wisdom from books into short, daily, easy-to-read stories. No need to spend hours on long books — get the essence in minutes and apply it today.
+Albor turns actionable wisdom from books into short, daily, easy-to-read stories. No need to spend hours on long books — get the essence in minutes and apply it today.
 
 WHAT'S INSIDE
 • Daily Spark: one hand-picked idea every day
@@ -87,18 +87,18 @@ WHAT'S INSIDE
 • Streaks & badges: keep your small daily habit alive
 • Dark mode and a personalized feed
 
-WHY TALIRA
+WHY ALBOR
 Not an information dump — one step you can actually take. Every story ends with a quote, a lesson and a question, so you turn reading into doing.
 
-Spark something today. Download Talira.
+Spark something today. Download Albor.
 ```
 
 ---
 
 ## 🇪🇸 Español
 
-**Nombre (iOS, 30):** `Talira: Sabiduría Diaria`
-**Título (Play, 30):** `Talira: Sabiduría Diaria`
+**Nombre (iOS, 30):** `Albor: Sabiduría Diaria`
+**Título (Play, 30):** `Albor: Sabiduría Diaria`
 **Subtítulo (iOS, 30):** `Grandes ideas en minutos`
 **Descripción corta (Play, 80):** `Sabiduría de libros, lista para aplicar. Una gran idea al día, en minutos.`
 **Palabras clave (iOS, ~100):**
@@ -108,7 +108,7 @@ Spark something today. Download Talira.
 ```
 Unos minutos al día. Una idea que se queda contigo.
 
-Talira convierte la sabiduría práctica de los libros en historias diarias, cortas y fáciles de leer. No necesitas horas con libros largos: capta la esencia en minutos y aplícala hoy.
+Albor convierte la sabiduría práctica de los libros en historias diarias, cortas y fáciles de leer. No necesitas horas con libros largos: capta la esencia en minutos y aplícala hoy.
 
 QUÉ INCLUYE
 • Chispa del día: una idea elegida para ti cada día
@@ -118,18 +118,18 @@ QUÉ INCLUYE
 • Rachas e insignias: mantén tu pequeño hábito diario
 • Modo oscuro y un feed personalizado
 
-POR QUÉ TALIRA
+POR QUÉ ALBOR
 No es información de sobra, sino un paso que sí puedes dar. Cada historia termina con una cita, una lección y una pregunta, para convertir la lectura en acción.
 
-Enciende una chispa hoy. Descarga Talira.
+Enciende una chispa hoy. Descarga Albor.
 ```
 
 ---
 
 ## 🇩🇪 Deutsch
 
-**Name (iOS, 30):** `Talira: Buchweisheit Täglich`
-**Titel (Play, 30):** `Talira: Tägliche Weisheit`
+**Name (iOS, 30):** `Albor: Buchweisheit Täglich`
+**Titel (Play, 30):** `Albor: Tägliche Weisheit`
 **Untertitel (iOS, 30):** `Große Ideen in Minuten`
 **Kurzbeschreibung (Play, 80):** `Anwendbare Weisheit aus Büchern. Eine große Idee pro Tag, in Minuten.`
 **Keywords (iOS, ~100):**
@@ -139,7 +139,7 @@ Enciende una chispa hoy. Descarga Talira.
 ```
 Ein paar Minuten am Tag. Eine Idee, die bleibt.
 
-Talira verwandelt anwendbare Weisheit aus Büchern in kurze, tägliche und leicht lesbare Geschichten. Du brauchst keine Stunden für dicke Bücher — erfasse den Kern in Minuten und setze ihn heute um.
+Albor verwandelt anwendbare Weisheit aus Büchern in kurze, tägliche und leicht lesbare Geschichten. Du brauchst keine Stunden für dicke Bücher — erfasse den Kern in Minuten und setze ihn heute um.
 
 WAS DICH ERWARTET
 • Funke des Tages: jeden Tag eine handverlesene Idee
@@ -149,10 +149,10 @@ WAS DICH ERWARTET
 • Serien & Abzeichen: halte deine kleine tägliche Gewohnheit am Leben
 • Dunkler Modus und ein personalisierter Feed
 
-WARUM TALIRA
+WARUM ALBOR
 Keine Informationsflut, sondern ein Schritt, den du wirklich gehen kannst. Jede Geschichte endet mit einem Zitat, einer Lektion und einer Frage — damit aus Lesen Handeln wird.
 
-Entzünde heute einen Funken. Lade Talira herunter.
+Entzünde heute einen Funken. Lade Albor herunter.
 ```
 
 ---

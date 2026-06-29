@@ -22,25 +22,19 @@ const isExpoGo = Constants.appOwnership === 'expo';
 
 let MobileAds, RewardedAd, RewardedAdEventType, InterstitialAd, AdEventType, BannerAdSize, TestIds;
 
-if (isExpoGo || Platform.OS === 'web') {
-  const noop = () => {};
-  const noopAd = {
-    addAdEventListener: () => noop,
-    load: noop,
-    show: noop,
-  };
-  MobileAds = () => ({ initialize: async () => {} });
-  RewardedAd = { createForAdRequest: () => noopAd };
-  InterstitialAd = { createForAdRequest: () => noopAd };
-  RewardedAdEventType = { LOADED: 'loaded', EARNED_REWARD: 'earned_reward' };
-  AdEventType = { LOADED: 'loaded', ERROR: 'error', CLOSED: 'closed' };
-  BannerAdSize = { BANNER: 'BANNER' };
-  TestIds = { REWARDED: '', INTERSTITIAL: '', BANNER: '' };
-} else {
-  const ads = require('react-native-google-mobile-ads');
-  MobileAds = ads.default;
-  ({ RewardedAd, RewardedAdEventType, InterstitialAd, AdEventType, BannerAdSize, TestIds } = ads);
-}
+const noop = () => {};
+const noopAd = {
+  addAdEventListener: () => noop,
+  load: noop,
+  show: noop,
+};
+MobileAds = () => ({ initialize: async () => {} });
+RewardedAd = { createForAdRequest: () => noopAd };
+InterstitialAd = { createForAdRequest: () => noopAd };
+RewardedAdEventType = { LOADED: 'loaded', EARNED_REWARD: 'earned_reward' };
+AdEventType = { LOADED: 'loaded', ERROR: 'error', CLOSED: 'closed' };
+BannerAdSize = { BANNER: 'BANNER' };
+TestIds = { REWARDED: '', INTERSTITIAL: '', BANNER: '' };
 
 // ─── Ad Unit IDs ─────────────────────────────────────────────────────────────
 // Replace these with real IDs obtained from AdMob console.

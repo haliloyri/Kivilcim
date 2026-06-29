@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
   StatusBar, Animated, Platform, Dimensions, Image, TextInput,
@@ -904,7 +904,7 @@ const OnboardingScreen = ({ navigation }) => {
             style={s.headerLogoImg}
             resizeMode="contain"
           />
-          <Text style={s.headerBrand}>Talira</Text>
+          <Text style={s.headerBrand}>Albor</Text>
         </View>
 
         {/* Right: Skip (steps 0 & 5) or Back chevron (other steps) */}

@@ -1,0 +1,106 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" width="800" height="400">
+  <defs>
+    <!-- Dawn gradient: deep indigo → golden amber → pale gold -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1040"/>
+      <stop offset="55%" stop-color="#c2440e"/>
+      <stop offset="100%" stop-color="#f5a623"/>
+    </linearGradient>
+
+    <!-- Sun glow -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff6c0"/>
+      <stop offset="40%" stop-color="#f5c842"/>
+      <stop offset="100%" stop-color="#f5a623" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Horizon line glow -->
+    <linearGradient id="horizonGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5a623" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#f5c842" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#fff6c0" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#f5c842" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#f5a623" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Text gradient: warm gold -->
+    <linearGradient id="textGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5c842"/>
+      <stop offset="100%" stop-color="#fff6c0"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="strongGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="200" fill="url(#skyGrad)" rx="16"/>
+
+  <!-- Horizon glow strip -->
+  <rect x="0" y="108" width="400" height="4" fill="url(#horizonGlow)" opacity="0.9"/>
+
+  <!-- Sun glow halo (large, soft) -->
+  <ellipse cx="200" cy="110" rx="70" ry="50" fill="url(#sunGlow)" opacity="0.55"/>
+
+  <!-- Sun rays (thin lines emanating upward from horizon) -->
+  <g filter="url(#softGlow)" opacity="0.7">
+    <!-- Center rays -->
+    <line x1="200" y1="110" x2="200" y2="48" stroke="#fff6c0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="182" y2="50" stroke="#f5c842" stroke-width="1" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="218" y2="50" stroke="#f5c842" stroke-width="1" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="164" y2="55" stroke="#f5a623" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="236" y2="55" stroke="#f5a623" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="148" y2="64" stroke="#f5a623" stroke-width="0.6" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="252" y2="64" stroke="#f5a623" stroke-width="0.6" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="134" y2="76" stroke="#c2440e" stroke-width="0.5" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="266" y2="76" stroke="#c2440e" stroke-width="0.5" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="118" y2="90" stroke="#c2440e" stroke-width="0.4" stroke-linecap="round"/>
+    <line x1="200" y1="110" x2="282" y2="90" stroke="#c2440e" stroke-width="0.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Sun disc (half circle on horizon) -->
+  <path d="M 164 110 A 36 36 0 0 1 236 110 Z" fill="url(#sunGlow)" filter="url(#strongGlow)"/>
+  <path d="M 168 110 A 32 32 0 0 1 232 110 Z" fill="#fff6c0" opacity="0.95"/>
+
+  <!-- Horizon line -->
+  <line x1="20" y1="110" x2="380" y2="110" stroke="#f5c842" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- "ALBOR" text -->
+  <text
+    x="200"
+    y="155"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="38"
+    font-weight="400"
+    letter-spacing="14"
+    text-anchor="middle"
+    fill="url(#textGrad)"
+    filter="url(#softGlow)"
+  >ALBOR</text>
+
+  <!-- Tagline -->
+  <text
+    x="200"
+    y="175"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="8.5"
+    font-weight="300"
+    letter-spacing="4"
+    text-anchor="middle"
+    fill="#f5c842"
+    opacity="0.65"
+  >FIRST LIGHT · DAILY INSIGHTS</text>
+</svg>

@@ -82,7 +82,7 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       ONE_WORD: 'Tek kelime, büyük etki:',
       fallback: 'Bu hikayeyi sevdim:',
       engage: 'Sence bunun en kritik noktası ne?',
-      tags: '#Talira #Farkındalık #KişiselGelişim #KitapNotları',
+      tags: '#Albor #Farkındalık #KişiselGelişim #KitapNotları',
     },
     en: {
       PUNCHLINE: 'Today\'s sharpest takeaway:',
@@ -91,7 +91,7 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       ONE_WORD: 'One word, big impact:',
       fallback: 'This story stayed with me:',
       engage: 'What part resonates with you most?',
-      tags: '#Talira #Mindset #Growth #BookNotes',
+      tags: '#Albor #Mindset #Growth #BookNotes',
     },
     es: {
       PUNCHLINE: 'La idea mas potente de hoy:',
@@ -100,7 +100,7 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       ONE_WORD: 'Una palabra, gran impacto:',
       fallback: 'Esta historia me impacto:',
       engage: 'Que parte te resuena mas?',
-      tags: '#Talira #Mentalidad #Crecimiento #NotasDeLibros',
+      tags: '#Albor #Mentalidad #Crecimiento #NotasDeLibros',
     },
     de: {
       PUNCHLINE: 'Die kraftigste Erkenntnis heute:',
@@ -109,7 +109,7 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       ONE_WORD: 'Ein Wort, grosse Wirkung:',
       fallback: 'Diese Geschichte bleibt haengen:',
       engage: 'Welcher Teil spricht dich am meisten an?',
-      tags: '#Talira #Mindset #Weiterentwicklung #BuchImpulse',
+      tags: '#Albor #Mindset #Weiterentwicklung #BuchImpulse',
     },
   };
 

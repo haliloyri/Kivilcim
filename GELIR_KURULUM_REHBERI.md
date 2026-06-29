@@ -1,4 +1,4 @@
-# Talira — Gelir & Ölçüm Kurulum Rehberi (Madde 2 · 4 · 1)
+# Albor — Gelir & Ölçüm Kurulum Rehberi (Madde 2 · 4 · 1)
 
 _Hazırlanma: 25 Haziran 2026 · Kod hazır; bu rehber yalnızca dış hesap adımlarını içerir._
 
@@ -17,20 +17,29 @@ Bu rehber kodda zaten yazılı olan RevenueCat + AdMob + PostHog entegrasyonunu 
 
 ---
 
-## 0. Ön koşullar (hesaplar)
+## 1. RevenueCat Kurulumu (Madde 2 & 4)
 
-- [ ] **Apple Developer Program** — 99 USD/yıl (iOS için zorunlu)
-- [ ] **Google Play Developer** — 25 USD tek seferlik
-- [ ] **RevenueCat** hesabı — ücretsiz kademe yeterli ([revenuecat.com](https://www.revenuecat.com))
-- [ ] **AdMob** hesabı — ücretsiz ([admob.google.com](https://admob.google.com))
-- [ ] Banka/vergi bilgileri: App Store Connect "Agreements, Tax, and Banking" ve Play Console "Payments profile" **tamamlanmadan** abonelik satışı aktifleşmez.
+Canlı ortamda App Store / Google Play satın alımları RevenueCat üzerinden yönetilir. `UserDataContext.js` içinde RevenueCat SDK bağlantısı altyapısı mevcuttur.
 
----
+### Adım 1.1: RevenueCat Hesabı & Proje
+1. [RevenueCat Dashboard](https://app.revenuecat.com/)'a gir ve yeni proje oluştur.
+2. Proje ayarlarında iOS ve Android uygulamalarını ekle.
 
-## 1. App Store Connect — abonelikler (iOS)
+### Adım 1.2: App Store Connect & Play Console Ürün Tanımları
+1. **App Store Connect:**
+   - Uygulamanız → **App In-Purchase / Subscriptions**.
+   - Bir **Subscription Group** oluştur (ör. "Albor Subscriptions").
+   - 2 Ürün ekle:
+     - `spark_premium_monthly`: Aylık abonelik.
+     - `spark_premium_annual`: Yıllık abonelik.
+2. **Google Play Console:**
+   - Uygulamanız → **Monetize** → **Subscriptions**.
+   - Aynı ürün ID'leri ile (`spark_premium_monthly`, `spark_premium_annual`) abonelikleri tanımla.
 
-1. [ ] App Store Connect → **My Apps** → uygulamayı oluştur (bundle: `com.kivilcim.app`).
-2. [ ] Sol menü → **Subscriptions** → bir **Subscription Group** oluştur (ör. "Talira Premium").
+### Adım 1.3: RevenueCat Entitlement & Offering Yapılandırması
+1. RevenueCat Dashboard → **Entitlements** → **+ New entitlement**:
+   - Identifier: `premium`.
+2. Sol menü → **Subscriptions** → bir **Subscription Group** oluştur (ör. "Albor Premium").
 3. [ ] Grup içine 2 **auto-renewable** abonelik ekle — Product ID'ler birebir:
    - [ ] `spark_premium_monthly` (1 ay)
    - [ ] `spark_premium_annual` (1 yıl)

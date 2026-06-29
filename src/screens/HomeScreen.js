@@ -652,11 +652,21 @@ const HomeScreen = ({ navigation }) => {
     }
     setAdUnavailable(false);
     const source = adSheet.source;
+    const pendingStoryId = adSheet.storyId;
     // Queue the ad and close the sheet. It is shown from the Modal's onDismiss
     // (iOS) or a fallback timer (Android) — never while the Modal is presented.
     pendingRewardedRef.current = {
       ad,
       onEarned: () => trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source }),
+      onClosed: () => {
+        if (pendingStoryId) {
+          const story = sortedStories.find(s => String(s.story_id) === String(pendingStoryId));
+          if (story) {
+            trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, { storyId: pendingStoryId, source: 'ad_unlocked', lang });
+            navigation.navigate('StoryDetail', { story });
+          }
+        }
+      },
     };
     setAdSheet({ visible: false, source: null, storyId: null });
     setTimeout(flushPendingRewarded, 600);
@@ -1662,7 +1672,7 @@ const HomeScreen = ({ navigation }) => {
         {/* Header */}
         <View style={styles.homeHeader}>
           <View style={styles.brandLogo}>
-            <Text style={styles.brandLogoText}>Talira</Text>
+            <Text style={styles.brandLogoText}>Albor</Text>
           </View>
           {doneCount < personalizedTarget && (
             <TouchableOpacity
