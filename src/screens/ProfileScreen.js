@@ -259,7 +259,7 @@ const ProfileScreen = ({ navigation }) => {
       fontFamily: 'PlayfairDisplay_700Bold', fontSize: fz(19), color: colors.text,
     },
     sectionLink: { fontFamily: 'Inter_500Medium', fontSize: 13, color: colors.primary },
-    pillsRow:    { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
+    pillsRow:    { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
 
     // ── Settings card ────────────────────────────────────────────────────
     card: {
@@ -420,7 +420,7 @@ const ProfileScreen = ({ navigation }) => {
                   categoryName={p.raw_name || p.name}
                   active={selectedCategories.includes(cat)}
                   isDark={isDark}
-                  compact
+                  vertical
                   onPress={() => toggleSelectedCategory(cat)}
                 />
               );

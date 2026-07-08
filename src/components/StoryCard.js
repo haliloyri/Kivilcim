@@ -244,9 +244,9 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       flexShrink: 1,
     },
     badgeText: {
-      fontFamily: 'Inter_400Regular',
+      fontFamily: 'Inter_600SemiBold',
       fontSize: 12,
-      color: colors.textSecondary,
+      color: categoryTheme.accent,
       letterSpacing: 0.5,
       textTransform: 'none',
       flexShrink: 1,
@@ -473,7 +473,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
           <View style={[styles.cardHeader, (!hideCategory || isNew || isRead || locked) ? null : { marginBottom: 0 }]}>
             {!hideCategory && (
               <View style={isHero ? { marginBottom: -8 } : styles.badge}>
-                <Text style={isHero ? [styles.badgeText, { color: colors.text, fontSize: 13, textTransform: 'none', fontFamily: 'Inter_500Medium', backgroundColor: colors.surfaceContainerLowest, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 }] : styles.badgeText} numberOfLines={1}>
+                <Text style={isHero ? [styles.badgeText, { color: categoryTheme.accent, fontSize: 13, textTransform: 'none', fontFamily: 'Inter_600SemiBold', backgroundColor: colors.surfaceContainerLowest, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 }] : styles.badgeText} numberOfLines={1}>
                   {isHero ? displayCat : displayCat}
                 </Text>
               </View>

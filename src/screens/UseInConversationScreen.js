@@ -38,6 +38,7 @@ import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import ShareCardModal from '../components/ShareCardModal';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import { shouldShowAd, loadRewarded, showRewarded } from '../utils/ads';
+import { getCategoryTheme } from '../utils/categoryImages';
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -221,6 +222,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
   const variants = useMemo(() => buildMicroVariants(story, lang), [story, lang]);
 
   const displayCat = t(story.parent_cat || story.cat || '', lang);
+  const categoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
 
   // Track screen open
   useEffect(() => {
@@ -584,8 +586,8 @@ const UseInConversationScreen = ({ route, navigation }) => {
       >
         {/* ── Story header ─────────────────────────────────────────────── */}
         <View style={styles.storyHeader}>
-          <Text style={styles.categoryLabel}>
-            {displayCat ? displayCat.toUpperCase() : ''}
+          <Text style={[styles.categoryLabel, { color: colors.textSecondary }]}>
+            <Text style={{ color: categoryTheme.accent }}>{displayCat ? displayCat.toUpperCase() : ''}</Text>
             {story.min ? `  ·  ${story.min} ${t('minLabel', lang)}` : ''}
           </Text>
           <Text style={styles.storyTitle} numberOfLines={3}>
@@ -897,7 +899,6 @@ const buildStyles = (colors, isDark, insets) => {
     categoryLabel: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 11,
-      color: colors.textSecondary,
       letterSpacing: 1.4,
       marginBottom: 8,
     },

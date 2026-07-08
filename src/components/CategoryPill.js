@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   verticalBase: {
-    width: 72,
+    minWidth: 72,
     minHeight: 66,
     borderWidth: 1,
     borderRadius: 18,
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 4,
-    paddingHorizontal: 6,
+    paddingHorizontal: 10,
     gap: 2,
   },
   verticalIconWrap: {

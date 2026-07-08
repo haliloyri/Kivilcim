@@ -2102,6 +2102,7 @@ const HomeScreen = ({ navigation }) => {
                           const isClicked = dailyClickedIds.has(String(story.story_id)) || historySet.has(String(story.story_id));
                           const isLocked = !isPremium && !isClicked && personalizedStories.indexOf(story) >= 2;
                           const isFirst = storyIdx === 0;
+                          const dailyStoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                           return (
                             <View key={story.story_id}>
                               <TouchableOpacity
@@ -2122,7 +2123,8 @@ const HomeScreen = ({ navigation }) => {
                                     {story.title}
                                   </Text>
                                   <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 2 }}>
-                                    {t(story.parent_cat, lang)} ┬À {story.min} {t('minLabel', lang)}
+                                    <Text style={{ color: dailyStoryTheme.accent, fontFamily: 'Inter_600SemiBold' }}>{t(story.parent_cat, lang)}</Text>
+                                    {` · ${story.min} ${t('minLabel', lang)}`}
                                   </Text>
                                 </View>
                                 {isLocked ? (
