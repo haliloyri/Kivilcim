@@ -128,13 +128,10 @@ const truncate = (str, maxLen) => {
   return str.substring(0, cut > 0 ? cut : maxLen) + '…';
 };
 
-/** Build platform-specific share text with appropriate length limits */
-const buildShareForPlatform = ({ story, variant, lang, categoryLabel, platform }) => {
+/** Build the native-share text (safe length for most platforms) */
+const buildNativeShareText = ({ story, variant, lang, categoryLabel }) => {
   const base = buildVariantShareMessage({ story, variant, lang, categoryLabel });
-  const limits = { x: 280, threads: 500, linkedin: 3000, whatsapp: null, native: null };
-  const limit = limits[platform] ?? null;
-  if (!limit) return base;
-  return truncate(base, limit);
+  return truncate(base, 280);
 };
 
 /** Map variant type → share preset name used by StoryDetailScreen's share modal */
@@ -289,18 +286,20 @@ const UseInConversationScreen = ({ route, navigation }) => {
   }, [toastAnim]);
 
   const handlePremiumTap = useCallback(() => {
-    trackEvent(ANALYTICS_EVENTS.PAYWALL_VIEWED, {
-      source: 'use_in_conversation',
-      storyId: story?.story_id,
-      lang,
+    trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, {
+      source: 'use_in_conversation_storyteller_gate',
+      choice: 'premium',
     });
-    setAdUnavailable(false);
-    if (shouldShowAd({ isPremium, isOnboarded: true })) {
-      setAdSheet(true);
-    } else {
+    // Close the Storyteller (Practice) overlay FIRST. It's a full-screen
+    // native Modal — stacking the ad/premium sheet or the Paywall screen
+    // underneath/on top of it leaves the overlay stuck and unresponsive
+    // (can't be closed, buttons stop registering taps) once the second
+    // modal is dismissed. Dismiss it before presenting anything else.
+    setShowStorytellerFor(null);
+    setTimeout(() => {
       navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
-    }
-  }, [navigation, story?.story_id, lang, isPremium]);
+    }, 250);
+  }, [navigation]);
 
   const handleWatchAdUIC = async () => {
     setIsAdLoading(true);
@@ -411,12 +410,11 @@ const UseInConversationScreen = ({ route, navigation }) => {
       return;
     }
 
-    const payload = buildShareForPlatform({
+    const payload = buildNativeShareText({
       story,
       variant,
       lang,
       categoryLabel: displayCat,
-      platform,
     });
 
     try {
@@ -425,7 +423,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
         title: story?.title || t('mv_screen_title', lang),
       });
       trackEvent(ANALYTICS_EVENTS.SOCIAL_SHARE_PLATFORM, {
-        platform,
+        platform: 'native',
         storyId: story?.story_id,
         variantType: variant.type,
         lang,
@@ -442,7 +440,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
       storyCategory: story?.parent_cat || story?.cat || null,
       variantType: variant.type,
       variantId: variant.id,
-      action: `share_${platform}`,
+      action: 'share_native',
     });
   }, [selected, story, displayCat, lang, navigation, recordVariantUsage, incrementShareCount, isPremium]);
 
@@ -532,27 +530,18 @@ const UseInConversationScreen = ({ route, navigation }) => {
 
   const tint = isDark ? `${colors.primary}26` : `${colors.primary}1F`;
 
-  // share targets — Instagram first (featured / premium visual card)
+  // share targets — Instagram (featured visual card) + one generic native share
   const shareTargets = [
     { key: 'instagram', kind: 'instagram', premium: true },
-    { key: 'x', kind: 'x' },
-    { key: 'threads', kind: 'threads' },
-    { key: 'linkedin', kind: 'linkedin' },
-    { key: 'whatsapp', kind: 'whatsapp' },
+    { key: 'native', kind: 'native' },
   ];
 
   const renderShareGlyph = (kind) => {
     switch (kind) {
       case 'instagram':
         return <Ionicons name="logo-instagram" size={22} color={colors.text} />;
-      case 'x':
-        return <Text style={styles.shareGlyphX}>𝕏</Text>;
-      case 'threads':
-        return <Text style={styles.shareGlyphAt}>@</Text>;
-      case 'linkedin':
-        return <Ionicons name="logo-linkedin" size={22} color="#2F5F9C" />;
-      case 'whatsapp':
-        return <Ionicons name="logo-whatsapp" size={22} color="#1FA855" />;
+      case 'native':
+        return <Ionicons name="share-social-outline" size={22} color={colors.text} />;
       default:
         return null;
     }
@@ -686,7 +675,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
               onPress={() => handleSharePlatform(target.kind)}
               activeOpacity={0.8}
               accessibilityRole="button"
-              accessibilityLabel={t(`mv_share_on_${target.kind}`, lang)}
+              accessibilityLabel={target.kind === 'native' ? t('mv_share_native', lang) : t(`mv_share_on_${target.kind}`, lang)}
             >
               {renderShareGlyph(target.kind)}
               {target.premium && !isPremium && (
@@ -1060,7 +1049,7 @@ const buildStyles = (colors, isDark, insets) => {
     },
     shareRow: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      gap: 12,
       marginBottom: 14,
     },
     shareBtn: {
@@ -1072,18 +1061,6 @@ const buildStyles = (colors, isDark, insets) => {
       backgroundColor: colors.surfaceContainerLowest,
       borderWidth: 1,
       borderColor: colors.border,
-    },
-    shareGlyphX: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 22,
-      color: colors.text,
-      marginTop: -2,
-    },
-    shareGlyphAt: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 24,
-      color: colors.text,
-      marginTop: -2,
     },
     premiumBadge: {
       position: 'absolute',

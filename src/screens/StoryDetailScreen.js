@@ -10,7 +10,14 @@ import * as Speech from 'expo-speech';
 import * as Sharing from 'expo-sharing';
 import * as Clipboard from 'expo-clipboard';
 import * as MediaLibrary from 'expo-media-library';
-import { Audio } from 'expo-av';
+import {
+  useAudioRecorder,
+  useAudioRecorderState,
+  RecordingPresets,
+  AudioModule,
+  setAudioModeAsync,
+  createAudioPlayer,
+} from 'expo-audio';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import Constants from 'expo-constants';
@@ -24,6 +31,7 @@ import { readableTextOn } from '../theme/theme';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import { shouldShowAd, loadRewarded, showRewarded, loadInterstitial, showInterstitial, recordStoryRead } from '../utils/ads';
+import { getBookBuyLinks } from '../utils/bookLinks';
 
 const { width, height } = Dimensions.get('window');
 
@@ -39,6 +47,8 @@ const SHARE_LINK =
 // wordmark for dark card backgrounds; light variant has the ink wordmark.
 const LOGO_LIGHT_BG = require('../../assets/spark_logo.png');
 const LOGO_DARK_BG = require('../../assets/spark_logo_dark.png');
+// Story card (social share) brand mark — transparent, works on any theme.
+const LOGO_SOCIAL = require('../../assets/spark_social.png');
 
 const StoryDetailScreen = ({ route, navigation }) => {
   const { story } = route.params;
@@ -80,7 +90,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
     pendingRewardedRef.current = null;
     showRewarded(p.ad, { onEarned: p.onEarned, onClosed: p.onClosed });
   };
-  const [recording, setRecording] = useState(null);
+  const audioRecorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
+  const recorderState = useAudioRecorderState(audioRecorder);
   const [isRecording, setIsRecording] = useState(false);
   const [recordingDuration, setRecordingDuration] = useState(0);
   // Up to 3 recordings per story: [{uri, durationMs, date}]
@@ -100,7 +111,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
   React.useEffect(() => {
     return soundObj
-      ? () => { soundObj.unloadAsync(); }
+      ? () => { soundObj.remove(); }
       : undefined;
   }, [soundObj]);
 
@@ -165,32 +176,21 @@ const StoryDetailScreen = ({ route, navigation }) => {
     if (audioRecordings.length >= MAX_RECORDINGS) return;
     try {
       if (soundObj) {
-        await soundObj.unloadAsync();
+        soundObj.remove();
         setSoundObj(null);
         setPlayingIndex(null);
       }
 
-      const permission = await Audio.requestPermissionsAsync();
-      if (permission.status === 'granted') {
-        await Audio.setAudioModeAsync({
-          allowsRecordingIOS: true,
-          playsInSilentModeIOS: true,
+      const permission = await AudioModule.requestRecordingPermissionsAsync();
+      if (permission.granted) {
+        await setAudioModeAsync({
+          allowsRecording: true,
+          playsInSilentMode: true,
         });
-        const { recording: newRecording } = await Audio.Recording.createAsync(
-          Audio.RecordingOptionsPresets.HIGH_QUALITY
-        );
-        setRecording(newRecording);
+        await audioRecorder.prepareToRecordAsync();
+        audioRecorder.record();
         setIsRecording(true);
         setRecordingDuration(0);
-
-        newRecording.setOnRecordingStatusUpdate((status) => {
-          if (status.isRecording) {
-            setRecordingDuration(status.durationMillis);
-            if (status.durationMillis >= MAX_DURATION_MS) {
-              stopRecording(newRecording, status.durationMillis);
-            }
-          }
-        });
       } else {
         Alert.alert(t('alert_error', lang) || 'Error', 'Mikrofon izni gereklidir.');
       }
@@ -199,13 +199,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
     }
   };
 
-  const stopRecording = async (currentRecording = recording, finalDuration = recordingDuration) => {
-    if (!currentRecording) return;
+  const stopRecording = async (finalDuration = recordingDuration) => {
+    if (!isRecording) return;
     try {
       setIsRecording(false);
-      await currentRecording.stopAndUnloadAsync();
-      const uri = currentRecording.getURI();
-      setRecording(null);
+      await audioRecorder.stop();
+      const uri = audioRecorder.uri;
 
       const newEntry = { uri, durationMs: finalDuration, date: new Date().toISOString() };
       const updated = [...audioRecordings, newEntry].slice(0, MAX_RECORDINGS);
@@ -219,6 +218,17 @@ const StoryDetailScreen = ({ route, navigation }) => {
     }
   };
 
+  // expo-audio reports recording progress via recorderState. Mirror it into
+  // recordingDuration and auto-stop when the max length is reached.
+  React.useEffect(() => {
+    if (!isRecording) return;
+    const ms = recorderState.durationMillis || 0;
+    setRecordingDuration(ms);
+    if (ms >= MAX_DURATION_MS) {
+      stopRecording(ms);
+    }
+  }, [recorderState.durationMillis, isRecording]);
+
   const toggleRecording = () => {
     if (isRecording) {
       stopRecording();
@@ -230,7 +240,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const playRecording = async (index) => {
     try {
       if (soundObj) {
-        await soundObj.unloadAsync();
+        soundObj.remove();
         setSoundObj(null);
       }
       // Tap same index while playing → stop
@@ -242,21 +252,21 @@ const StoryDetailScreen = ({ route, navigation }) => {
       const rec = audioRecordings[index];
       if (!rec?.uri) return;
 
-      await Audio.setAudioModeAsync({ playsInSilentModeIOS: true });
+      // allowsRecording:false routes playback to the loud speaker after a
+      // recording session (otherwise iOS keeps it quiet on the earpiece).
+      await setAudioModeAsync({ allowsRecording: false, playsInSilentMode: true });
 
-      const { sound: newSound } = await Audio.Sound.createAsync(
-        { uri: rec.uri },
-        { shouldPlay: true }
-      );
+      const newSound = createAudioPlayer({ uri: rec.uri });
       setSoundObj(newSound);
       setPlayingIndex(index);
 
-      newSound.setOnPlaybackStatusUpdate((status) => {
+      newSound.addListener('playbackStatusUpdate', (status) => {
         if (status.didJustFinish) {
           setPlayingIndex(null);
-          newSound.setPositionAsync(0);
+          newSound.seekTo(0);
         }
       });
+      newSound.play();
     } catch (error) {
       console.error('Failed to play audio', error);
     }
@@ -265,7 +275,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const deleteRecording = async (index) => {
     try {
       if (playingIndex === index && soundObj) {
-        await soundObj.unloadAsync();
+        soundObj.remove();
         setSoundObj(null);
         setPlayingIndex(null);
       }
@@ -456,7 +466,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       Speech.stop();
       setIsSpeaking(false);
     } else {
-      const cleanBody = (displayBody || '').replace(/##|\$\$|&&/g, '');
+      const cleanBody = (displayBody || '').replace(/##|\$\$|&&|~~/g, '').replace(/\s*::\s*/g, ' — ');
       const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
       setIsSpeaking(true);
       Speech.speak(textToRead, {
@@ -1062,6 +1072,69 @@ const StoryDetailScreen = ({ route, navigation }) => {
       color: colors.text,
       lineHeight: 28
     },
+    // ── Rich reading format (F7+) ──
+    takeawayCard: {
+      borderWidth: 1,
+      borderRadius: 14,
+      padding: 16,
+      marginVertical: 14,
+    },
+    takeawayLabelRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      marginBottom: 8,
+    },
+    takeawayLabel: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 11,
+      letterSpacing: 1.2,
+      textTransform: 'uppercase',
+    },
+    takeawayText: {
+      fontFamily: 'Inter_600SemiBold',
+      color: colors.text,
+    },
+    reflectionBox: {
+      borderWidth: 1,
+      borderStyle: 'dashed',
+      borderRadius: 14,
+      padding: 16,
+      marginTop: 4,
+      marginBottom: 18,
+    },
+    reflectionLabel: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 11,
+      letterSpacing: 1.2,
+    },
+    reflectionText: {
+      fontFamily: 'Inter_500Medium',
+      color: colors.text,
+      fontStyle: 'italic',
+    },
+    contrastRow: {
+      flexDirection: 'row',
+      gap: 10,
+      marginVertical: 12,
+    },
+    contrastCol: {
+      flex: 1,
+      borderRadius: 12,
+      padding: 12,
+    },
+    contrastLabel: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 10,
+      letterSpacing: 1,
+      color: colors.textSecondary,
+      marginBottom: 6,
+    },
+    contrastText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: typography.sizes.body - 1,
+      lineHeight: (typography.sizes.body - 1) * 1.45,
+    },
     premiumSeparator: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -1296,7 +1369,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
           {/* Header (Logo) — real brand mark, theme-aware */}
           <View style={{ alignSelf: 'flex-start', borderBottomWidth: 4, borderBottomColor: th.accent, paddingBottom: 16 }}>
             <Image
-              source={th.id === 'light' ? LOGO_LIGHT_BG : LOGO_DARK_BG}
+              source={LOGO_SOCIAL}
               style={{ width: 200, height: 200 }}
               resizeMode="contain"
             />
@@ -1700,7 +1773,15 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
           <View style={{ paddingHorizontal: layout.padding.horizontal }}>
             {(() => {
-              // Parse the body into segments based on ##, $$, && markers
+              // Rich reading format is opt-in per story version (F7+ or C series).
+              // Older stories (1/2/F5/F6) keep the legacy behaviour where the
+              // lesson/reflection markers are stripped from the reading flow.
+              const storyVersionKey = String(story?.version || '').trim().toUpperCase();
+              const fverMatch = /^F(\d+)$/.exec(storyVersionKey);
+              const cverMatch = /^C(\d+)$/.exec(storyVersionKey);
+              const richFormat = (!!fverMatch && Number(fverMatch[1]) >= 7) || !!cverMatch;
+
+              // Parse the body into segments based on ##, $$, &&, ~~ markers
               const rawBody = (displayBody || '').replace(/\r\n/g, '\n').replace(/\n{3,}/g, '\n\n');
               const segments = [];
               let remaining = rawBody;
@@ -1711,6 +1792,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   { marker: '##', type: 'highlight' },
                   { marker: '$$', type: 'lesson' },
                   { marker: '&&', type: 'reflection' },
+                  { marker: '~~', type: 'contrast' },
                 ];
 
                 let nearestIdx = remaining.length;
@@ -1782,8 +1864,70 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   );
                 }
 
-                if (seg.type === 'lesson' || seg.type === 'reflection') {
+                // Legacy stories: lesson/reflection stay hidden in the reading flow.
+                if (!richFormat && (seg.type === 'lesson' || seg.type === 'reflection')) {
                   return null;
+                }
+
+                // Rich format (F7+): the lesson becomes a visible takeaway card.
+                if (seg.type === 'lesson') {
+                  return (
+                    <View key={idx} style={[styles.takeawayCard, {
+                      backgroundColor: categoryTheme.backgroundColor,
+                      borderColor: categoryTheme.borderColor,
+                    }]}>
+                      <View style={styles.takeawayLabelRow}>
+                        <Ionicons name="bulb-outline" size={15} color={categoryTheme.accent} />
+                        <Text style={[styles.takeawayLabel, { color: categoryTheme.accent }]}>
+                          {t('takeawayLabel', lang)}
+                        </Text>
+                      </View>
+                      <Text style={[styles.takeawayText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * 1.5 }]}>
+                        {seg.content}
+                      </Text>
+                    </View>
+                  );
+                }
+
+                // Rich format (F7+): the reflection question becomes a tappable prompt.
+                if (seg.type === 'reflection') {
+                  return (
+                    <TouchableOpacity
+                      key={idx}
+                      activeOpacity={0.85}
+                      onPress={() => navigation.navigate('UseInConversation', { story })}
+                      style={[styles.reflectionBox, { borderColor: categoryTheme.borderColor }]}
+                    >
+                      <View style={styles.takeawayLabelRow}>
+                        <Ionicons name="chatbubble-ellipses-outline" size={15} color={categoryTheme.borderColor} />
+                        <Text style={[styles.reflectionLabel, { color: categoryTheme.borderColor }]}>
+                          {t('reflectionLabel', lang)}
+                        </Text>
+                      </View>
+                      <Text style={[styles.reflectionText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * 1.5 }]}>
+                        {seg.content}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                }
+
+                // Rich format (F7+): "~~before :: after~~" renders as a two-column contrast.
+                if (seg.type === 'contrast') {
+                  if (!richFormat) return null;
+                  const parts = seg.content.split('::').map(s => s.trim());
+                  if (parts.length < 2) return null;
+                  return (
+                    <View key={idx} style={styles.contrastRow}>
+                      <View style={[styles.contrastCol, { backgroundColor: isDark ? colors.backgroundDark : `${colors.border}55` }]}>
+                        <Text style={styles.contrastLabel}>{t('contrastBeforeLabel', lang)}</Text>
+                        <Text style={[styles.contrastText, { color: colors.textSecondary }]}>{parts[0]}</Text>
+                      </View>
+                      <View style={[styles.contrastCol, { backgroundColor: categoryTheme.backgroundColor, borderColor: categoryTheme.borderColor, borderWidth: 1 }]}>
+                        <Text style={[styles.contrastLabel, { color: categoryTheme.accent }]}>{t('contrastAfterLabel', lang)}</Text>
+                        <Text style={[styles.contrastText, { color: colors.text }]}>{parts[1]}</Text>
+                      </View>
+                    </View>
+                  );
                 }
 
                 return null;
@@ -1806,28 +1950,19 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   </Text>
                 ) : null}
 
-                <View style={{ flexDirection: 'row', gap: 10, marginTop: 12 }}>
-                  <TouchableOpacity
-                    onPress={() => Linking.openURL(`https://www.amazon.com.tr/s?k=${encodeURIComponent(displaySourceBook)}`)}
-                    style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flex: 1, justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
-                  >
-                    <Ionicons name="cart-outline" size={16} color={colors.text} style={{ marginRight: 6 }} />
-                    <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>{t('book', lang)}</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => Linking.openURL(`https://www.youtube.com/results?search_query=${encodeURIComponent(displaySourceBook)}`)}
-                    style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flex: 1, justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
-                  >
-                    <Ionicons name="logo-youtube" size={16} color="#FF0000" style={{ marginRight: 6 }} />
-                    <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>Youtube</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => Linking.openURL(`https://www.tiktok.com/search?q=${encodeURIComponent(displaySourceBook)}`)}
-                    style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flex: 1, justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
-                  >
-                    <Ionicons name="logo-tiktok" size={16} color={colors.text} style={{ marginRight: 6 }} />
-                    <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>Tiktok</Text>
-                  </TouchableOpacity>
+                {/* Region-aware book buy buttons — carry affiliate tokens.
+                    TR → Hepsiburada + Kitapyurdu, elsewhere → local Amazon. */}
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 12 }}>
+                  {getBookBuyLinks(displaySourceBook, story.author).map((link) => (
+                    <TouchableOpacity
+                      key={link.id}
+                      onPress={() => Linking.openURL(link.url)}
+                      style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flexGrow: 1, flexBasis: '30%', justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
+                    >
+                      <Ionicons name={link.icon} size={16} color={colors.text} style={{ marginRight: 6 }} />
+                      <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>{link.label}</Text>
+                    </TouchableOpacity>
+                  ))}
                 </View>
               </View>
             ) : null}

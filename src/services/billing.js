@@ -23,8 +23,16 @@ const PLATFORM_API_KEY =
   Platform.OS === 'ios' ? RC_CONFIG.iosApiKey : RC_CONFIG.androidApiKey;
 
 // A key counts as "live" only if it's a real, non-placeholder value.
+//
+// `test_...` keys are RevenueCat's *Test Store* API keys (Project Settings →
+// API Keys → Test Store) — they're for RevenueCat's own sandboxed purchase
+// testing, not for a real build on a physical device. Configuring the native
+// SDK with one on-device throws a native error ("this app is using a test API
+// key...") that isn't fully catchable from JS and crashes the app right after
+// startup. Treat them the same as an unset placeholder until real Apple App
+// Store / Google Play Store public SDK keys are pasted in here.
 const isPlaceholder = (key) =>
-  !key || typeof key !== 'string' || key.trim() === '' || key.startsWith('REPLACE_');
+  !key || typeof key !== 'string' || key.trim() === '' || key.startsWith('REPLACE_') || key.startsWith('test_');
 
 export const BILLING_LIVE = !isPlaceholder(PLATFORM_API_KEY);
 

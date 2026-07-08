@@ -1,0 +1,71 @@
+› Planning build
+› Executing react-native Pods/hermes-engine » [CP-User] [Hermes] Replace Hermes for the right configuration, if needed
+› Executing react-native Pods/ReactNativeDependencies » [CP-User] [RNDeps] Replace React Native Dependencies for the right configuration, if needed
+› Preparing Pods/ExpoDevice-ExpoDevice_privacy » ResourceBundle-ExpoDevice_privacy-ExpoDevice-Info.plist
+› Preparing Pods/EXApplication-ExpoApplication_privacy » ResourceBundle-ExpoApplication_privacy-EXApplication-Info.plist
+› Preparing Pods/RNSVG-RNSVGFilters » ResourceBundle-RNSVGFilters-RNSVG-Info.plist
+› Preparing react-native-purchases-ui Pods/PurchasesHybridCommon-PurchasesHybridCommon » ResourceBundle-PurchasesHybridCommon-PurchasesHybridCommon-Info.plist
+› Preparing Pods/GoogleUserMessagingPlatform-UserMessagingPlatformResources » ResourceBundle-UserMessagingPlatformResources-GoogleUserMessagingPlatform-Info.plist
+› Preparing Pods/Google-Mobile-Ads-SDK-GoogleMobileAdsResources » ResourceBundle-GoogleMobileAdsResources-Google-Mobile-Ads-SDK-Info.plist
+› Preparing Pods/ExpoNotifications-ExpoNotifications_privacy » ResourceBundle-ExpoNotifications_privacy-ExpoNotifications-Info.plist
+› Preparing Pods/ExpoMediaLibrary-ExpoMediaLibrary_privacy » ResourceBundle-ExpoMediaLibrary_privacy-ExpoMediaLibrary-Info.plist
+› Preparing Pods/ExpoLocalization-ExpoLocalization_privacy » ResourceBundle-ExpoLocalization_privacy-ExpoLocalization-Info.plist
+› Preparing Pods/ExpoFileSystem-ExpoFileSystem_privacy » ResourceBundle-ExpoFileSystem_privacy-ExpoFileSystem-Info.plist
+› Preparing react-native-purchases-ui Pods/RevenueCat-RevenueCat » ResourceBundle-RevenueCat-RevenueCat-Info.plist
+› Preparing Pods/React-cxxreact-React-cxxreact_privacy » ResourceBundle-React-cxxreact_privacy-React-cxxreact-Info.plist
+› Preparing Pods/React-Core-React-Core_privacy » ResourceBundle-React-Core_privacy-React-Core-Info.plist
+› Preparing Pods/RNCAsyncStorage-RNCAsyncStorage_resources » ResourceBundle-RNCAsyncStorage_resources-RNCAsyncStorage-Info.plist
+› Preparing expo-constants Pods/EXConstants-EXConstants » ResourceBundle-EXConstants-EXConstants-Info.plist
+› Preparing Pods/EXConstants-ExpoConstants_privacy » ResourceBundle-ExpoConstants_privacy-EXConstants-Info.plist
+› Preparing Pods/RevenueCatUI-RevenueCat_RevenueCatUI » ResourceBundle-RevenueCat_RevenueCatUI-RevenueCatUI-Info.plist
+› Executing react-native Pods/React-Core-prebuilt » [CP-User] [RNDeps] Replace React Native Core for the right configuration, if needed
+› Executing react-native Pods/React-RCTFBReactNativeSpec » [CP-User] [RN]Check FBReactNativeSpec
+› Executing expo-modules-jsi Pods/ExpoModulesJSI » [CP-User] Build ExpoModulesJSI xcframework
+
+❌  (node_modules/expo-modules-jsi/apple/Sources/ExpoModulesJSI/Protocols/JSIRepresentable.swift:146:29)
+
+  144 |       let jsiValue = expo.getProperty(runtime, object, key)
+  145 |       #else
+> 146 |       let jsiValue = object.getProperty(runtime, jsiKey)
+      |                             ^ no exact matches in call to instance method 'getProperty'
+  147 |       #endif
+  148 |
+  149 |       result[key] = Value.fromJSIValue(jsiValue, in: runtime)
+
+
+❌  (node_modules/expo-modules-jsi/apple/Sources/ExpoModulesJSI/Runtime/Values/JavaScriptObject.swift:310:13)
+
+  308 |       FatalError.runtimeLost()
+  309 |     }
+> 310 |     pointee.deleteProperty(runtime.pointee, name)
+      |             ^ value of type 'facebook.jsi.Object' has no member 'deleteProperty'
+  311 |   }
+  312 |   #endif
+  313 |
+
+› Compiling kivilcim Pods/ReactAppDependencyProvider » RCTAppDependencyProvider.mm
+› Compiling kivilcim Pods/ReactCodegen » EventEmitters.cpp
+› Compiling kivilcim Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling kivilcim Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling kivilcim Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling kivilcim Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling kivilcim Pods/ReactCodegen » RNGoogleMobileAdsSpecJSI-generated.cpp
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewComponentView.mm
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaProviderComponentView.mm
+› Compiling kivilcim Pods/ReactCodegen » RNGoogleMobileAdsSpec-generated.mm
+› Compiling kivilcim Pods/ReactCodegen » RCTUnstableModulesRequiringMainQueueSetupProvider.mm
+› Compiling kivilcim Pods/ReactCodegen » RCTThirdPartyComponentsProvider.mm
+› Compiling kivilcim Pods/ReactCodegen » RCTModulesConformingToProtocolsProvider.mm
+› Compiling kivilcim Pods/ReactCodegen » RCTModuleProviders.mm
+› Compiling kivilcim Pods/ReactCodegen » Props.cpp
+› Compiling kivilcim Pods/ReactCodegen » Props.cpp
+› Compiling kivilcim Pods/ReactCodegen » Props.cpp
+› Compiling kivilcim Pods/ReactCodegen » Props.cpp
+⚠️  Script has ambiguous dependencies causing it to run on every build.
+   To fix, go to: Xcode » Spark/Spark » Build Phases » '[CP-User] [RNGoogleMobileAds] Configuration'
+   Either: Uncheck "Based on dependency analysis", or select output files to trigger the script
+
+
+› 2 error(s), and 1 warning(s)
+
+CommandError: Failed to build iOS project. "xcodebuild" exited with error code 65.

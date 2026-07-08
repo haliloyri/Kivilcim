@@ -6,6 +6,17 @@ import { checkBadges } from '../utils/badges';
 import { scheduleDailyNotifications } from '../utils/notifications';
 import { ANALYTICS_EVENTS, trackEvent, setAnalyticsContext } from '../utils/analytics';
 import { BILLING_LIVE, purchasePackage, restorePurchases, getOfferingPackages, checkEntitlement } from '../services/billing';
+import {
+  SUPABASE_LIVE,
+  getCurrentUser,
+  getUserStatsFromServer,
+  getStreakFreezesFromServer,
+  recordVariantUsageOnServer,
+  removeVariantUsageOnServer,
+  getSeenBadgeIdsFromServer,
+  markBadgesSeenOnServer,
+} from '../services/supabase';
+import { enqueueAndSync } from '../services/offlineQueue';
 
 const UserDataContext = createContext();
 const SEEN_BADGES_STORAGE_KEY = '@kivilcim_seen_earned_badges';
@@ -205,7 +216,17 @@ export const UserDataProvider = ({ children }) => {
   const [preferences, setPreferences] = useState(EMPTY_PREFERENCES);
   const [userProfile, setUserProfile] = useState(EMPTY_USER_PROFILE);
   const [isOnboarded, setIsOnboarded] = useState(false);
-  const [isPremium, setIsPremium] = useState(false);
+  const [hasPaidPremium, setHasPaidPremium] = useState(false);
+  const [promotionalPremiumUntil, setPromotionalPremiumUntil] = useState(null);
+
+  const isPremium = useMemo(() => {
+    if (hasPaidPremium) return true;
+    if (promotionalPremiumUntil) {
+      const untilDate = new Date(promotionalPremiumUntil);
+      if (new Date() < untilDate) return true;
+    }
+    return false;
+  }, [hasPaidPremium, promotionalPremiumUntil]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Segment every analytics event by subscription + onboarding state so the
@@ -240,8 +261,49 @@ export const UserDataProvider = ({ children }) => {
     return () => clearTimeout(safetyTimer);
   }, [loadAttempt]);
 
-  // Okuma istatistiklerini yükle
+  // Fire-and-forget helper for the local→server double-write phase (see
+  // ToServerTasks.md §4/§5). Every mutation keeps writing to SQLite/
+  // AsyncStorage as the source of truth for now (offline safety); this
+  // additionally best-effort mirrors the write to Supabase so multi-device
+  // sync/backup starts working without changing local behavior on failure.
+  // Silently no-ops when Supabase isn't configured or there's no session yet.
+  const serverSync = useCallback((fn) => {
+    if (!SUPABASE_LIVE) return;
+    (async () => {
+      try {
+        const user = await getCurrentUser();
+        if (user?.id) await fn(user.id);
+      } catch (error) {
+        console.warn('[server sync] failed:', error?.message);
+      }
+    })();
+  }, []);
+
+  // Okuma istatistiklerini yükle — server-first (single get_user_stats RPC
+  // round trip) with a local SQLite fallback when offline/unconfigured/erroring.
   const refreshStats = useCallback(async () => {
+    try {
+      if (SUPABASE_LIVE) {
+        const user = await getCurrentUser();
+        if (user?.id) {
+          const serverStats = await getUserStatsFromServer();
+          if (serverStats) {
+            setTotalReads(serverStats.total_reads ?? 0);
+            setStreak(serverStats.streak ?? 0);
+            setLongestStreak(serverStats.longest_streak ?? 0);
+            setCategoryStats(serverStats.reads_per_category ?? {});
+            setReadCountsByStory(serverStats.read_counts_by_story ?? {});
+            setTodayReadsCount(serverStats.today_reads ?? 0);
+            const freezes = await getStreakFreezesFromServer(user.id);
+            setStreakFreezeDates(freezes.map((item) => item.day).filter(Boolean));
+            return;
+          }
+        }
+      }
+    } catch (error) {
+      console.warn('[server stats] falling back to local:', error?.message);
+    }
+
     try {
       const {
         getTotalReads,
@@ -288,6 +350,7 @@ export const UserDataProvider = ({ children }) => {
         const storedPreferences = await AsyncStorage.getItem('@kivilcim_preferences');
         const storedOnboarding = await AsyncStorage.getItem('@kivilcim_onboarded');
         const storedPremium = await AsyncStorage.getItem('@kivilcim_premium');
+        const storedPromoPremium = await AsyncStorage.getItem('@kivilcim_promotional_premium_until');
         const storedShareCount = await AsyncStorage.getItem('@kivilcim_share_count');
         const storedUserProfile = await AsyncStorage.getItem(USER_PROFILE_STORAGE_KEY);
         const storedCollections = await AsyncStorage.getItem(FAVORITE_COLLECTIONS_STORAGE_KEY);
@@ -307,7 +370,8 @@ export const UserDataProvider = ({ children }) => {
           }
         }
         if (storedOnboarding) setIsOnboarded(JSON.parse(storedOnboarding));
-        if (storedPremium) setIsPremium(JSON.parse(storedPremium));
+        if (storedPremium) setHasPaidPremium(JSON.parse(storedPremium));
+        if (storedPromoPremium) setPromotionalPremiumUntil(JSON.parse(storedPromoPremium));
         if (storedStreakFreezeCredits) {
           setStreakFreezeCredits(Math.max(0, Number(JSON.parse(storedStreakFreezeCredits)) || 0));
         } else if (storedPremium && JSON.parse(storedPremium)) {
@@ -366,16 +430,38 @@ export const UserDataProvider = ({ children }) => {
 
   useEffect(() => {
     const loadSeenBadges = async () => {
+      let local = [];
       try {
         const raw = await AsyncStorage.getItem(SEEN_BADGES_STORAGE_KEY);
         if (raw == null) setShouldBootstrapSeenBadges(true);
         const parsed = raw ? JSON.parse(raw) : [];
-        setSeenBadgeIds(Array.isArray(parsed) ? parsed : []);
+        local = Array.isArray(parsed) ? parsed : [];
+        setSeenBadgeIds(local);
       } catch (error) {
         console.error('Gorulen rozetler yuklenemedi:', error);
-        setSeenBadgeIds([]);
       } finally {
         setSeenBadgesReady(true);
+      }
+
+      // Merge in badges already marked "seen" on another device — union with
+      // whatever's local so a badge already seen server-side never re-pops
+      // as a new-badge modal here.
+      if (SUPABASE_LIVE) {
+        try {
+          const user = await getCurrentUser();
+          if (user?.id) {
+            const serverSeen = await getSeenBadgeIdsFromServer(user.id);
+            if (serverSeen.length) {
+              const merged = Array.from(new Set([...local, ...serverSeen]));
+              if (merged.length !== local.length) {
+                setSeenBadgeIds(merged);
+                await AsyncStorage.setItem(SEEN_BADGES_STORAGE_KEY, JSON.stringify(merged));
+              }
+            }
+          }
+        } catch (error) {
+          console.warn('[server badges] failed to fetch seen badges:', error?.message);
+        }
       }
     };
 
@@ -387,11 +473,13 @@ export const UserDataProvider = ({ children }) => {
     try {
       setFavorites((prev) => {
         const strId = String(storyId);
-        const newFavs = prev.some(id => String(id) === strId)
-          ? prev.filter(id => String(id) !== strId) 
+        const wasFavorite = prev.some(id => String(id) === strId);
+        const newFavs = wasFavorite
+          ? prev.filter(id => String(id) !== strId)
           : [...prev, strId];
-        
+
         AsyncStorage.setItem('@kivilcim_favorites', JSON.stringify(newFavs));
+        enqueueAndSync(wasFavorite ? 'remove_favorite' : 'add_favorite', { storyId: strId });
         return newFavs;
       });
     } catch (error) {
@@ -409,14 +497,16 @@ export const UserDataProvider = ({ children }) => {
 
     setFavoriteCollections((prev) => {
       const current = Array.isArray(prev?.[collectionId]) ? prev[collectionId] : [];
-      const nextList = current.includes(strId)
-        ? current.filter((id) => id !== strId)
-        : [...current, strId];
+      const willAdd = !current.includes(strId);
+      const nextList = willAdd
+        ? [...current, strId]
+        : current.filter((id) => id !== strId);
       const next = {
         ...prev,
         [collectionId]: [...new Set(nextList)],
       };
       AsyncStorage.setItem(FAVORITE_COLLECTIONS_STORAGE_KEY, JSON.stringify(next));
+      enqueueAndSync(willAdd ? 'add_to_collection' : 'remove_from_collection', { storyId: strId, collectionId });
       return next;
     });
   };
@@ -433,19 +523,22 @@ export const UserDataProvider = ({ children }) => {
       if (prev.some((id) => String(id) === strId)) return prev;
       const nextFavorites = [...prev, strId];
       AsyncStorage.setItem('@kivilcim_favorites', JSON.stringify(nextFavorites));
+      enqueueAndSync('add_favorite', { storyId: strId });
       return nextFavorites;
     });
 
     setFavoriteCollections((prev) => {
       const current = Array.isArray(prev?.saved_for_later) ? prev.saved_for_later : [];
-      const nextList = current.includes(strId)
-        ? current.filter((id) => id !== strId)
-        : [...current, strId];
+      const willAdd = !current.includes(strId);
+      const nextList = willAdd
+        ? [...current, strId]
+        : current.filter((id) => id !== strId);
       const next = {
         ...prev,
         saved_for_later: [...new Set(nextList)],
       };
       AsyncStorage.setItem(FAVORITE_COLLECTIONS_STORAGE_KEY, JSON.stringify(next));
+      enqueueAndSync(willAdd ? 'add_to_collection' : 'remove_from_collection', { storyId: strId, collectionId: 'saved_for_later' });
       return next;
     });
   };
@@ -460,7 +553,11 @@ export const UserDataProvider = ({ children }) => {
     try {
       // SQLite'a okuma kaydı ekle
       await recordRead(storyId);
-      
+      // Capture today's date now — if this ends up queued offline and
+      // flushed later, it must still record the day the read actually
+      // happened, not the day connectivity came back.
+      enqueueAndSync('record_read', { storyId, readAt: new Date().toISOString().split('T')[0] });
+
       setHistory((prev) => {
         const filtered = prev.filter(id => String(id) !== String(storyId));
         const newHist = [String(storyId), ...filtered].slice(0, 20); 
@@ -546,6 +643,9 @@ export const UserDataProvider = ({ children }) => {
       } catch (dbErr) {
         console.error('Onboarding SQLite sync error:', dbErr);
       }
+
+      enqueueAndSync('set_selected_categories', { categoryIds: prefs.categories });
+      enqueueAndSync('upsert_profile', { patch: { onboarded: true, preferences: prefs } });
     } catch (error) {
       console.error('Onboarding kaydetme hatası:', error);
     }
@@ -568,6 +668,7 @@ export const UserDataProvider = ({ children }) => {
       const nextPrefs = normalizePreferences(candidate);
       setPreferences(nextPrefs);
       await AsyncStorage.setItem('@kivilcim_preferences', JSON.stringify(nextPrefs));
+      enqueueAndSync('upsert_profile', { patch: { preferences: nextPrefs } });
 
       await scheduleDailyNotifications({
         lang,
@@ -601,7 +702,7 @@ export const UserDataProvider = ({ children }) => {
   // Grants Premium locally (persisted) once an entitlement is confirmed —
   // or, when real billing isn't connected, for the dev/local activation flow.
   const activatePremiumLocally = async () => {
-    setIsPremium(true);
+    setHasPaidPremium(true);
     setStreakFreezeCredits((prev) => {
       const next = Math.max(prev, 1);
       AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(next));
@@ -615,7 +716,7 @@ export const UserDataProvider = ({ children }) => {
   const devSetPremium = async (value) => {
     if (!__DEV__) return;
     const next = !!value;
-    setIsPremium(next);
+    setHasPaidPremium(next);
     try {
       await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(next));
     } catch (e) {
@@ -681,7 +782,7 @@ export const UserDataProvider = ({ children }) => {
     (async () => {
       const entitled = await checkEntitlement();
       if (cancelled || entitled === null) return;
-      setIsPremium(entitled);
+      setHasPaidPremium(entitled);
       AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(entitled)).catch(() => {});
     })();
     return () => { cancelled = true; };
@@ -728,6 +829,11 @@ export const UserDataProvider = ({ children }) => {
       const nextProfile = normalizeUserProfile(candidate);
       setUserProfile(nextProfile);
       await AsyncStorage.setItem(USER_PROFILE_STORAGE_KEY, JSON.stringify(nextProfile));
+      // Mirror both name and email to profiles.email/display_name (free-text
+      // fields from the Edit Profile modal — see schema.sql comment on
+      // profiles.email for why this is separate from Supabase Auth's own
+      // auth.users.email / linkEmailToDeviceAccount()).
+      enqueueAndSync('upsert_profile', { patch: { display_name: nextProfile.displayName, email: nextProfile.email } });
     } catch (error) {
       console.error('Profil bilgisi güncelleme hatası:', error);
     }
@@ -739,6 +845,7 @@ export const UserDataProvider = ({ children }) => {
       setShareCount(prev => {
         const next = prev + 1;
         AsyncStorage.setItem('@kivilcim_share_count', JSON.stringify(next));
+        enqueueAndSync('upsert_profile', { patch: { share_count: next } });
         return next;
       });
     } catch (error) {
@@ -759,12 +866,13 @@ export const UserDataProvider = ({ children }) => {
             )
         );
         AsyncStorage.setItem(VARIANT_USAGE_STORAGE_KEY, JSON.stringify(next));
+        serverSync((uid) => removeVariantUsageOnServer(uid, { storyId, variantId, variantKey }));
         return next;
       });
     } catch (error) {
       console.error('Varyant kullanım silme hatası:', error);
     }
-  }, []);
+  }, [serverSync]);
 
   // Varyant kullanım kaydı (copy / share / mark-used)
   const recordVariantUsage = useCallback(async ({ storyId, storyTitle, storyCategory, variantType, variantId, variantKey = null, action, feedbackRating = null }) => {
@@ -794,6 +902,20 @@ export const UserDataProvider = ({ children }) => {
         feedbackRating,
         lang,
       });
+
+      // Server-side write goes through the record_variant_usage RPC, which
+      // enforces the daily free-tier quota for 'mark_used' independent of
+      // this client (see supabase/schema.sql "Variant usage quota
+      // enforcement"). We don't block the optimistic local update on it —
+      // if the free quota is exhausted the RPC rejects with
+      // error.message === 'quota_exceeded'; surfacing that in the UI
+      // (e.g. bouncing to the paywall) is not wired up yet, just logged.
+      const { error: serverError } = await recordVariantUsageOnServer({
+        storyId, storyTitle, storyCategory, variantType, variantId, variantKey, action, feedbackRating,
+      });
+      if (serverError && serverError.message === 'quota_exceeded') {
+        console.warn('[variant usage] server-side daily quota exceeded for mark_used');
+      }
     } catch (error) {
       console.error('Varyant kullanım kayıt hatası:', error);
     }
@@ -824,7 +946,7 @@ export const UserDataProvider = ({ children }) => {
       setCompletedStories([]);
       setUserProfile(EMPTY_USER_PROFILE);
       setIsOnboarded(false);
-      setIsPremium(false);
+      setHasPaidPremium(false);
       setShareCount(0);
       setSeenBadgeIds([]);
       setActiveBadgeModal(null);
@@ -835,6 +957,7 @@ export const UserDataProvider = ({ children }) => {
       // Progress stats live in the user_reads DB table, not AsyncStorage — wipe
       // them too, then reset the derived in-memory state so the UI updates.
       await clearUserReads();
+      enqueueAndSync('reset_user_data', {});
       setTotalReads(0);
       setStreak(0);
       setLongestStreak(0);
@@ -874,7 +997,13 @@ export const UserDataProvider = ({ children }) => {
     } catch (error) {
       console.error('Rozet gorunme durumu kaydedilemedi:', error);
     }
-  }, [seenBadgeIds]);
+
+    // Mirror newly-seen badges to Supabase (user_badges) — best-effort, same
+    // fire-and-forget pattern as the rest of this file's serverSync() calls,
+    // so multi-device badge state and the "progress/achievements" data live
+    // server-side going forward (not just via the one-time local migration).
+    serverSync((uid) => markBadgesSeenOnServer(uid, badgeIds));
+  }, [seenBadgeIds, serverSync]);
 
   useEffect(() => {
     if (!seenBadgesReady || !earnedBadges.length) return;
@@ -920,9 +1049,24 @@ export const UserDataProvider = ({ children }) => {
     [earnedBadges, seenBadgeIds]
   );
 
+  const grantPromotionalPremium = useCallback(async (days = 7) => {
+    const untilDate = new Date();
+    untilDate.setDate(untilDate.getDate() + days);
+    const untilStr = untilDate.toISOString();
+    setPromotionalPremiumUntil(untilStr);
+    await AsyncStorage.setItem('@kivilcim_promotional_premium_until', JSON.stringify(untilStr));
+    
+    // Also grant a streak freeze credit
+    setStreakFreezeCredits((prev) => {
+      const next = prev + 1;
+      AsyncStorage.setItem('@kivilcim_streak_freeze_credits', JSON.stringify(next));
+      return next;
+    });
+  }, []);
+
   const useStreakFreeze = useCallback(async (dateStr = new Date().toISOString().split('T')[0]) => {
     if (!isPremium || streakFreezeCredits <= 0 || streakFreezeDates.includes(dateStr)) {
-      return false;
+      return { success: false };
     }
 
     try {
@@ -931,6 +1075,8 @@ export const UserDataProvider = ({ children }) => {
       setStreakFreezeCredits(nextCredits);
       setStreakFreezeDates(prev => Array.from(new Set([dateStr, ...prev])));
       await AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(nextCredits));
+      enqueueAndSync('record_streak_freeze', { dateStr });
+      enqueueAndSync('upsert_profile', { patch: { streak_freeze_credits: nextCredits } });
       await refreshStats();
       await trackEvent(ANALYTICS_EVENTS.STREAK_FREEZE_ACTIVATED, {
         date: dateStr,
@@ -938,10 +1084,10 @@ export const UserDataProvider = ({ children }) => {
         streak,
         lang,
       });
-      return true;
+      return { success: true };
     } catch (error) {
       console.error('Streak freeze kullanilamadi:', error);
-      return false;
+      return { success: false };
     }
   }, [isPremium, streakFreezeCredits, streakFreezeDates, refreshStats, streak, lang]);
 
@@ -987,6 +1133,7 @@ export const UserDataProvider = ({ children }) => {
     billingLive: BILLING_LIVE,
     updateUserProfile,
     incrementShareCount,
+    grantPromotionalPremium,
     recordVariantUsage,
     removeVariantUsage,
     variantUsage,
@@ -996,7 +1143,7 @@ export const UserDataProvider = ({ children }) => {
     closeBadgeModal,
     releasePendingBadge,
     useStreakFreeze,
-  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, removeVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge, useStreakFreeze]);
+  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, grantPromotionalPremium, recordVariantUsage, removeVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge, useStreakFreeze]);
 
   return (
     <UserDataContext.Provider value={value}>

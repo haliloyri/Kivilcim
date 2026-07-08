@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   View, Text, Modal, Pressable, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator, Image,
 } from 'react-native';
@@ -8,7 +8,7 @@ import * as Sharing from 'expo-sharing';
 import Constants from 'expo-constants';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
-import { BADGE_MAP } from './BadgeIcon';
+import { BADGE_MAP, BADGE_IMAGES } from './BadgeIcon';
 
 // First line per badge (TR). {ad} = user name. EN uses a generic fallback.
 const BADGE_LINE1_TR = {
@@ -68,9 +68,10 @@ const buildLines = (badge, name, lang) => {
 };
 
 // The shareable card. `tall` = story (9:16) — shows the quote; square hides it.
-const ShareCard = ({ badge, accent, theme, lang, name, quote, tall }) => {
+const ShareCard = ({ badge, accent, theme, lang, name, quote, tall, inviteUrl }) => {
   const dark = theme === 'dark';
   const meta = BADGE_MAP[badge.id] || { icon: 'trophy', colors: ['#C89B3C', '#8C701B'] };
+  const badgeImage = BADGE_IMAGES[badge.id];
   const { l1, hook, title } = buildLines(badge, name, lang);
 
   const bg = dark ? '#15171A' : mix(accent, '#FFFFFF', 0.88);
@@ -102,8 +103,12 @@ const ShareCard = ({ badge, accent, theme, lang, name, quote, tall }) => {
 
       {/* İçerik merkezi */}
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <View style={[s.circle, { backgroundColor: circleBg, borderWidth: dark ? 1 : 0, borderColor: '#3A3F46' }]}>
-          <Ionicons name={meta.icon} size={iconSize} color={iconC} />
+        <View style={[s.circle, { backgroundColor: circleBg, borderWidth: dark ? 1 : 0, borderColor: '#3A3F46', overflow: 'hidden' }]}>
+          {badgeImage ? (
+            <Image source={badgeImage} resizeMode="cover" style={{ width: '100%', height: '100%' }} />
+          ) : (
+            <Ionicons name={meta.icon} size={iconSize} color={iconC} />
+          )}
         </View>
         <Text
           style={[s.name, { color: nameC, fontSize: titleSize }]}
@@ -125,8 +130,8 @@ const ShareCard = ({ badge, accent, theme, lang, name, quote, tall }) => {
 
       {/* Alt: uygulama erişim adresi */}
       <View style={{ height: 40, alignItems: 'center', justifyContent: 'center' }}>
-        {SHARE_LINK ? (
-          <Text style={[s.link, { color: dark ? '#8C8579' : authorC }]}>{SHARE_LINK}</Text>
+        {inviteUrl ? (
+          <Text style={[s.link, { color: dark ? '#8C8579' : authorC }]}>{inviteUrl}</Text>
         ) : null}
       </View>
     </View>
@@ -140,6 +145,13 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
   const [capFmt, setCapFmt] = useState('square');
   const [busy, setBusy] = useState(false);
   const captureRefView = useRef(null);
+
+  const [inviteUrl, setInviteUrl] = useState(SHARE_LINK);
+  useEffect(() => {
+    require('../services/supabase').getCurrentUser().then(u => {
+      if (u?.id) setInviteUrl(`https://kivilcim.app/invite/${u.id}`);
+    }).catch(() => {});
+  }, []);
 
   if (!badge) return null;
 
@@ -190,7 +202,7 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
           <ScrollView showsVerticalScrollIndicator={false}>
             <View style={st.previewWrap}>
               <View style={{ width: capFmt === 'story' ? 226 : 268, height: capFmt === 'story' ? 402 : 335, borderRadius: 22, overflow: 'hidden' }}>
-                <ShareCard badge={badge} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} />
+                <ShareCard badge={badge} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} inviteUrl={inviteUrl} />
               </View>
             </View>
 

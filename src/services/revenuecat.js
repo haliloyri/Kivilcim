@@ -26,8 +26,11 @@ const API_KEY =
     ? (RC_CONFIG.iosApiKey ?? RC_CONFIG.apiKey)
     : (RC_CONFIG.androidApiKey ?? RC_CONFIG.apiKey);
 
+// `test_...` keys are RevenueCat's *Test Store* API keys — for RevenueCat's
+// own sandboxed testing, not for a real build on a physical device. See the
+// matching comment in billing.js for the crash this causes if treated as live.
 const isPlaceholder = (key) =>
-  !key || typeof key !== 'string' || key.trim() === '' || key.startsWith('REPLACE_');
+  !key || typeof key !== 'string' || key.trim() === '' || key.startsWith('REPLACE_') || key.startsWith('test_');
 
 export const RC_LIVE = !isPlaceholder(API_KEY);
 

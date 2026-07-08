@@ -1,7 +1,38 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
+
+// Hand-illustrated artwork for each badge (replaces the flat Ionicons glyphs
+// below). Each file is a square, already-tinted circular illustration —
+// clipped to a circle at render time via borderRadius + overflow: 'hidden'.
+export const BADGE_IMAGES = {
+  first_read:      require('../../assets/badges/first_read.png'),
+  explorer:        require('../../assets/badges/explorer.png'),
+  sage:            require('../../assets/badges/sage.png'),
+  bookworm:        require('../../assets/badges/bookworm.png'),
+  streak_7:        require('../../assets/badges/streak_7.png'),
+  cat_variety_3:   require('../../assets/badges/cat_variety_3.png'),
+  cat_variety_5:   require('../../assets/badges/cat_variety_5.png'),
+  cat_variety_10:  require('../../assets/badges/cat_variety_10.png'),
+  cat_master_5:    require('../../assets/badges/cat_master_5.png'),
+  cat_master_10:   require('../../assets/badges/cat_master_10.png'),
+  cat_master_25:   require('../../assets/badges/cat_master_25.png'),
+  cat_master_50:   require('../../assets/badges/cat_master_50.png'),
+  cat_master_100:  require('../../assets/badges/cat_master_100.png'),
+  philosopher:     require('../../assets/badges/philosopher.png'),
+  save_5:          require('../../assets/badges/save_5.png'),
+  save_10:         require('../../assets/badges/save_10.png'),
+  save_50:         require('../../assets/badges/save_50.png'),
+  save_100:        require('../../assets/badges/save_100.png'),
+  share_1:         require('../../assets/badges/share_1.png'),
+  share_10:        require('../../assets/badges/share_10.png'),
+  share_20:        require('../../assets/badges/share_20.png'),
+  share_30:        require('../../assets/badges/share_30.png'),
+  share_50:        require('../../assets/badges/share_50.png'),
+  storyteller:     require('../../assets/badges/storyteller.png'),
+  icebreaker:      require('../../assets/badges/icebreaker.png'),
+};
 
 export const BADGE_MAP = {
   first_read:      { icon: 'star',                colors: ['#E6A800', '#B38100'] },
@@ -43,52 +74,60 @@ const DEFAULT_COLORS = ['#D4AF37', '#8C701B'];
  */
 const BadgeIcon = ({ badge, earned, isDark, size = 60 }) => {
   const meta = BADGE_MAP[badge?.id] || { icon: 'trophy', colors: DEFAULT_COLORS };
-  const lockedColors = isDark ? ['#3A3A3A', '#1A1A1A'] : ['#E5E5E5', '#B0B0B0'];
+  const image = BADGE_IMAGES[badge?.id];
   const lockedBorder = isDark ? '#4A4A4A' : '#CCCCCC';
   const earnedBorder = isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)';
-  const gradientColors = earned ? meta.colors : lockedColors;
-  const iconColor = earned ? '#FFFFFF' : (isDark ? '#555555' : '#999999');
+
+  // Fallback for any badge id without artwork yet — keeps the old gradient +
+  // glyph treatment so nothing renders blank.
+  if (!image) {
+    const lockedColors = isDark ? ['#3A3A3A', '#1A1A1A'] : ['#E5E5E5', '#B0B0B0'];
+    const gradientColors = earned ? meta.colors : lockedColors;
+    const iconColor = earned ? '#FFFFFF' : (isDark ? '#555555' : '#999999');
+    return (
+      <View style={{ width: size, height: size, borderRadius: size / 2 }}>
+        <LinearGradient
+          colors={gradientColors}
+          start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+          style={{
+            width: '100%', height: '100%', borderRadius: size / 2,
+            justifyContent: 'center', alignItems: 'center',
+            borderWidth: 1.5, borderColor: earned ? earnedBorder : lockedBorder,
+          }}
+        >
+          <Ionicons name={earned ? meta.icon : 'lock-closed'} size={size * 0.45} color={iconColor} />
+        </LinearGradient>
+      </View>
+    );
+  }
 
   return (
     <View style={{
       width: size, height: size, borderRadius: size / 2,
+      overflow: 'hidden',
+      borderWidth: 1.5, borderColor: earned ? earnedBorder : lockedBorder,
       elevation: earned ? 4 : 0,
       shadowColor: earned ? meta.colors[0] : '#000',
       shadowOffset: { width: 0, height: 4 },
       shadowOpacity: 0.3, shadowRadius: 6,
     }}>
-      <LinearGradient
-        colors={gradientColors}
-        start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-        style={{
-          width: '100%', height: '100%', borderRadius: size / 2,
-          justifyContent: 'center', alignItems: 'center',
-          borderWidth: 1.5, borderColor: earned ? earnedBorder : lockedBorder,
-        }}
-      >
-        <View style={{
-          width: size - 8, height: size - 8, borderRadius: (size - 8) / 2,
-          justifyContent: 'center', alignItems: 'center',
-          backgroundColor: isDark ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)',
-        }}>
-          <Ionicons name={earned ? meta.icon : 'lock-closed'} size={size * 0.45} color={iconColor} />
+      <Image
+        source={image}
+        resizeMode="cover"
+        style={{ width: '100%', height: '100%', opacity: earned ? 1 : 0.32 }}
+      />
+      {!earned && (
+        <View
+          pointerEvents="none"
+          style={{
+            position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+            alignItems: 'center', justifyContent: 'center',
+            backgroundColor: isDark ? 'rgba(0,0,0,0.28)' : 'rgba(255,255,255,0.35)',
+          }}
+        >
+          <Ionicons name="lock-closed" size={size * 0.36} color={isDark ? '#D8D8D8' : '#8A8A8A'} />
         </View>
-        {earned && (
-          <LinearGradient
-            colors={['rgba(255,255,255,0.45)', 'rgba(255,255,255,0.02)']}
-            start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-            style={{
-              position: 'absolute',
-              top: 3, left: 3, right: 3,
-              height: size * 0.38,
-              borderTopLeftRadius: size / 2,
-              borderTopRightRadius: size / 2,
-              borderBottomLeftRadius: size / 3,
-              borderBottomRightRadius: size / 3,
-            }}
-          />
-        )}
-      </LinearGradient>
+      )}
     </View>
   );
 };

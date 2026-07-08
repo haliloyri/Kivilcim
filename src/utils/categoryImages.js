@@ -42,113 +42,116 @@ export const CAT_STYLES_DARK = {
 
 const CATEGORY_THEME_MAP = {
   // Home category palette
+  // "Tümü" (All) always fills with the app's brand navy, not a per-category
+  // colour — it represents the whole app, not one category.
   'Tümü': {
-    accent: '#C8A96B',
-    borderColor: '#E2C48C',
-    lightSoft: '#FFFBF5',
-    lightStrong: 'rgba(200, 169, 107, 0.14)',
-    darkSoft: 'rgba(200, 169, 107, 0.20)',
-    darkStrong: 'rgba(200, 169, 107, 0.30)',
-    darkAccent: '#C8A96B',
+    accent: '#142A4A',
+    borderColor: '#142A4A',
+    lightSoft: '#EDEFF3',
+    lightStrong: 'rgba(20, 42, 74, 0.14)',
+    darkSoft: 'rgba(20, 42, 74, 0.20)',
+    darkStrong: 'rgba(20, 42, 74, 0.30)',
+    darkAccent: '#8CA3C4',
   },
-  // Palette unified with regenerated category artwork (icon + banner + card all
-  // share one accent per category). Greens/blues deliberately spaced apart so
-  // adjacent categories never collide.
+  // Palette sourced from the "Kategori Görselleri Renk Kodları" reference sheet:
+  // accent = Ana Renk, borderColor = Detay/İkon (deep tone, also used for
+  // per-category text), lightSoft = Arka Plan. Dark-mode fields unchanged
+  // (reference sheet is light-mode only).
   'Finance': {
-    accent: '#9A6A2F',
-    borderColor: '#B98A55',
-    lightSoft: '#FBF1DE',
-    lightStrong: 'rgba(154, 106, 47, 0.14)',
+    accent: '#D4A23A',
+    borderColor: '#B8862B',
+    lightSoft: '#FFF6E3',
+    lightStrong: 'rgba(212, 162, 58, 0.14)',
     darkSoft: 'rgba(154, 106, 47, 0.20)',
     darkStrong: 'rgba(154, 106, 47, 0.30)',
     darkAccent: '#B98A55',
   },
   'Psychology': {
-    accent: '#6E6196',
-    borderColor: '#8E82AE',
-    lightSoft: '#F3EDF6',
-    lightStrong: 'rgba(110, 97, 150, 0.14)',
+    accent: '#9A8AC7',
+    borderColor: '#7B6AAE',
+    lightSoft: '#F4EFFA',
+    lightStrong: 'rgba(154, 138, 199, 0.14)',
     darkSoft: 'rgba(110, 97, 150, 0.20)',
     darkStrong: 'rgba(110, 97, 150, 0.30)',
     darkAccent: '#8E82AE',
   },
   'Leadership': {
-    accent: '#3F5A73',
-    borderColor: '#6E8198',
-    lightSoft: '#E8EFF8',
-    lightStrong: 'rgba(63, 90, 115, 0.14)',
+    accent: '#6A8FBE',
+    borderColor: '#4A6E97',
+    lightSoft: '#EAF1FA',
+    lightStrong: 'rgba(106, 143, 190, 0.14)',
     darkSoft: 'rgba(63, 90, 115, 0.20)',
     darkStrong: 'rgba(63, 90, 115, 0.30)',
     darkAccent: '#6E8198',
   },
   'Health': {
-    accent: '#2C8068',
-    borderColor: '#5AA08C',
-    lightSoft: '#E6F2EE',
-    lightStrong: 'rgba(44, 128, 104, 0.14)',
+    accent: '#5AA3A3',
+    borderColor: '#3D7F7F',
+    lightSoft: '#E6F3F2',
+    lightStrong: 'rgba(90, 163, 163, 0.14)',
     darkSoft: 'rgba(44, 128, 104, 0.20)',
     darkStrong: 'rgba(44, 128, 104, 0.30)',
     darkAccent: '#5AA08C',
   },
   'Growth': {
-    accent: '#C06A38',
-    borderColor: '#D08C64',
-    lightSoft: '#FBEFE4',
-    lightStrong: 'rgba(192, 106, 56, 0.14)',
+    accent: '#6BA17B',
+    borderColor: '#4D7F5D',
+    lightSoft: '#EAF4EA',
+    lightStrong: 'rgba(107, 161, 123, 0.14)',
     darkSoft: 'rgba(192, 106, 56, 0.20)',
     darkStrong: 'rgba(192, 106, 56, 0.30)',
     darkAccent: '#D08C64',
   },
   'Science': {
-    accent: '#3E6FA0',
-    borderColor: '#6B92BC',
-    lightSoft: '#E7F1FB',
-    lightStrong: 'rgba(62, 111, 160, 0.14)',
+    accent: '#4A7DBA',
+    borderColor: '#2F5E8E',
+    lightSoft: '#EAF1FB',
+    lightStrong: 'rgba(74, 125, 186, 0.14)',
     darkSoft: 'rgba(62, 111, 160, 0.20)',
     darkStrong: 'rgba(62, 111, 160, 0.30)',
     darkAccent: '#6B92BC',
   },
   'Philosophy': {
-    accent: '#7A6A4E',
-    borderColor: '#9A8C72',
-    lightSoft: '#F2EDE3',
-    lightStrong: 'rgba(122, 106, 78, 0.14)',
+    accent: '#7B6FB2',
+    borderColor: '#5A5290',
+    lightSoft: '#F2ECF9',
+    lightStrong: 'rgba(123, 111, 178, 0.14)',
     darkSoft: 'rgba(122, 106, 78, 0.20)',
     darkStrong: 'rgba(122, 106, 78, 0.30)',
     darkAccent: '#9A8C72',
   },
   'Communication': {
-    accent: '#C46A3C',
-    borderColor: '#D18B66',
-    lightSoft: '#FCEFE4',
-    lightStrong: 'rgba(196, 106, 60, 0.14)',
+    accent: '#F0A46B',
+    borderColor: '#C8733A',
+    lightSoft: '#FFEDE1',
+    lightStrong: 'rgba(240, 164, 107, 0.14)',
     darkSoft: 'rgba(196, 106, 60, 0.20)',
     darkStrong: 'rgba(196, 106, 60, 0.30)',
     darkAccent: '#D18B66',
   },
   'Productivity': {
-    accent: '#3E7D5E',
-    borderColor: '#6BA088',
-    lightSoft: '#E6F1EB',
-    lightStrong: 'rgba(62, 125, 94, 0.14)',
+    accent: '#6CA58D',
+    borderColor: '#507F69',
+    lightSoft: '#EAF5EF',
+    lightStrong: 'rgba(108, 165, 141, 0.14)',
     darkSoft: 'rgba(62, 125, 94, 0.20)',
     darkStrong: 'rgba(62, 125, 94, 0.30)',
     darkAccent: '#6BA088',
   },
   'History': {
-    accent: '#9C5238',
-    borderColor: '#B57C66',
-    lightSoft: '#F5EBE4',
-    lightStrong: 'rgba(156, 82, 56, 0.14)',
+    accent: '#C8A36D',
+    borderColor: '#A67F45',
+    lightSoft: '#F7EFE2',
+    lightStrong: 'rgba(200, 163, 109, 0.14)',
     darkSoft: 'rgba(156, 82, 56, 0.20)',
     darkStrong: 'rgba(156, 82, 56, 0.30)',
     darkAccent: '#B57C66',
   },
   'Business': {
-    accent: '#4F6475',
-    borderColor: '#768799',
-    lightSoft: '#EBEFF2',
-    lightStrong: 'rgba(79, 100, 117, 0.14)',
+    accent: '#6B7C93',
+    borderColor: '#475667',
+    lightSoft: '#ECEFF3',
+    lightStrong: 'rgba(107, 124, 147, 0.14)',
     darkSoft: 'rgba(79, 100, 117, 0.20)',
     darkStrong: 'rgba(79, 100, 117, 0.30)',
     darkAccent: '#768799',
@@ -524,7 +527,21 @@ const PILL_ICON_GROWTH = require('../../assets/categories/pill_icons/Growth.png'
 const PILL_ICON_PRODUCTIVITY = require('../../assets/categories/pill_icons/Productivity.png');
 const PILL_ICON_COMMUNICATION = require('../../assets/categories/pill_icons/Communication.png');
 const PILL_ICON_HISTORY = require('../../assets/categories/pill_icons/History.png');
-const PILL_ICON_BUSINESS = PILL_ICON_FINANCE;
+const PILL_ICON_BUSINESS = require('../../assets/categories/pill_icons/Business.png');
+
+// Dark mode pill icon variants — same artwork, lightness-inverted so the
+// line icon reads clearly against the app's dark filter-pill background.
+const PILL_ICON_FINANCE_DARK = require('../../assets/categories/pill_icons/Finance-dark.png');
+const PILL_ICON_PSYCHOLOGY_DARK = require('../../assets/categories/pill_icons/Psychology-dark.png');
+const PILL_ICON_LEADERSHIP_DARK = require('../../assets/categories/pill_icons/Leadership-dark.png');
+const PILL_ICON_HEALTH_DARK = require('../../assets/categories/pill_icons/Health-dark.png');
+const PILL_ICON_SCIENCE_DARK = require('../../assets/categories/pill_icons/Science-dark.png');
+const PILL_ICON_PHILOSOPHY_DARK = require('../../assets/categories/pill_icons/Philosophy-dark.png');
+const PILL_ICON_GROWTH_DARK = require('../../assets/categories/pill_icons/Growth-dark.png');
+const PILL_ICON_PRODUCTIVITY_DARK = require('../../assets/categories/pill_icons/Productivity-dark.png');
+const PILL_ICON_COMMUNICATION_DARK = require('../../assets/categories/pill_icons/Communication-dark.png');
+const PILL_ICON_HISTORY_DARK = require('../../assets/categories/pill_icons/History-dark.png');
+const PILL_ICON_BUSINESS_DARK = require('../../assets/categories/pill_icons/Business-dark.png');
 
 // Banner background artwork (soft category-tinted gradient + faint watermark).
 // Used behind the home "badge journey / next step" card so it adopts the
@@ -608,7 +625,64 @@ const CATEGORY_PILL_ICON_MAP = {
   'Personal Growth': PILL_ICON_GROWTH,
   'Büyüme': PILL_ICON_GROWTH,
   'Verimlilik': PILL_ICON_PRODUCTIVITY,
+  // Bare English sub-category names — these are what Supabase actually
+  // stores in `stories.parent_cat` for lang='en' (e.g. "Growth", not
+  // "Personal Growth"), so they need their own entries or the pill
+  // silently renders without an icon at all.
+  'Finance': PILL_ICON_FINANCE,
+  'Psychology': PILL_ICON_PSYCHOLOGY,
+  'Leadership': PILL_ICON_LEADERSHIP,
+  'Health': PILL_ICON_HEALTH,
+  'Science': PILL_ICON_SCIENCE,
+  'Philosophy': PILL_ICON_PHILOSOPHY,
+  'Communication': PILL_ICON_COMMUNICATION,
+  'Growth': PILL_ICON_GROWTH,
+  'Productivity': PILL_ICON_PRODUCTIVITY,
+  'History': PILL_ICON_HISTORY,
+  // Same gap, German/Spanish bare category names (as stored in
+  // `stories.parent_cat` for lang='de'/'es').
+  'Finanzen': PILL_ICON_FINANCE,
+  'Finanzas': PILL_ICON_FINANCE,
+  'Psychologie': PILL_ICON_PSYCHOLOGY,
+  'Psicología': PILL_ICON_PSYCHOLOGY,
+  'Führung': PILL_ICON_LEADERSHIP,
+  'Liderazgo': PILL_ICON_LEADERSHIP,
+  'Gesundheit': PILL_ICON_HEALTH,
+  'Salud': PILL_ICON_HEALTH,
+  'Wachstum': PILL_ICON_GROWTH,
+  'Crecimiento': PILL_ICON_GROWTH,
+  'Wissenschaft': PILL_ICON_SCIENCE,
+  'Ciencia': PILL_ICON_SCIENCE,
+  'Philosophie': PILL_ICON_PHILOSOPHY,
+  'Filosofía': PILL_ICON_PHILOSOPHY,
+  'Kommunikation': PILL_ICON_COMMUNICATION,
+  'Comunicación': PILL_ICON_COMMUNICATION,
+  'Produktivität': PILL_ICON_PRODUCTIVITY,
+  'Productividad': PILL_ICON_PRODUCTIVITY,
+  'Geschichte': PILL_ICON_HISTORY,
+  'Historia': PILL_ICON_HISTORY,
 };
+
+// Maps each light pill icon asset to its dark-mode counterpart, so the dark
+// variant of CATEGORY_PILL_ICON_MAP can be derived instead of duplicating
+// every locale key above a second time.
+const PILL_ICON_LIGHT_TO_DARK = new Map([
+  [PILL_ICON_FINANCE, PILL_ICON_FINANCE_DARK],
+  [PILL_ICON_PSYCHOLOGY, PILL_ICON_PSYCHOLOGY_DARK],
+  [PILL_ICON_LEADERSHIP, PILL_ICON_LEADERSHIP_DARK],
+  [PILL_ICON_HEALTH, PILL_ICON_HEALTH_DARK],
+  [PILL_ICON_SCIENCE, PILL_ICON_SCIENCE_DARK],
+  [PILL_ICON_PHILOSOPHY, PILL_ICON_PHILOSOPHY_DARK],
+  [PILL_ICON_GROWTH, PILL_ICON_GROWTH_DARK],
+  [PILL_ICON_PRODUCTIVITY, PILL_ICON_PRODUCTIVITY_DARK],
+  [PILL_ICON_COMMUNICATION, PILL_ICON_COMMUNICATION_DARK],
+  [PILL_ICON_HISTORY, PILL_ICON_HISTORY_DARK],
+  [PILL_ICON_BUSINESS, PILL_ICON_BUSINESS_DARK],
+]);
+
+const CATEGORY_PILL_ICON_MAP_DARK = Object.fromEntries(
+  Object.entries(CATEGORY_PILL_ICON_MAP).map(([key, val]) => [key, PILL_ICON_LIGHT_TO_DARK.get(val) || val])
+);
 
 const PARENT_CATEGORY_ALIASES = {
   'All': 'Tümü',
@@ -646,12 +720,26 @@ const PARENT_CATEGORY_ALIASES = {
   'Kariyer': 'Business',
 };
 
-const normalizeLookupKey = (value) => String(value || '').trim().toLowerCase();
+// Strips leading emoji/symbols and collapses whitespace. Source data (Supabase
+// `stories.parent_cat`) has occasionally shipped with emoji prefixes (e.g.
+// "📈 Growth"), which silently broke lookups below and fell back to the
+// default icon/image. Stripping defensively here keeps that from recurring
+// even if the upstream data gets dirty again.
+const stripDecorations = (value) =>
+  String(value || '')
+    .replace(/^[^\p{L}\p{N}]+/u, '')
+    .replace(/[^\p{L}\p{N}]+$/u, '')
+    .trim();
+
+const normalizeLookupKey = (value) => stripDecorations(value).toLowerCase();
 const CATEGORY_PILL_FAMILY_MAP_LOWER = Object.fromEntries(
   Object.entries(CATEGORY_PILL_FAMILY_MAP).map(([key, val]) => [normalizeLookupKey(key), val])
 );
 const CATEGORY_PILL_ICON_MAP_LOWER = Object.fromEntries(
   Object.entries(CATEGORY_PILL_ICON_MAP).map(([key, val]) => [normalizeLookupKey(key), val])
+);
+const CATEGORY_PILL_ICON_MAP_DARK_LOWER = Object.fromEntries(
+  Object.entries(CATEGORY_PILL_ICON_MAP_DARK).map(([key, val]) => [normalizeLookupKey(key), val])
 );
 const PARENT_CATEGORY_ALIASES_LOWER = Object.fromEntries(
   Object.entries(PARENT_CATEGORY_ALIASES).map(([key, val]) => [normalizeLookupKey(key), val])
@@ -877,7 +965,7 @@ const categoryImageMap = {
  * @param {boolean} isDark - Whether dark mode is active
  */
 export const normalizeCategoryKey = (catName) => {
-  const trimmed = String(catName || '').trim();
+  const trimmed = stripDecorations(catName);
   if (!trimmed) return '';
 
   return (
@@ -971,8 +1059,11 @@ export const getCategoryBanner = (catName) => {
   return { source: BANNER_MAP[family] || BANNER_DEFAULT };
 };
 
-export const getCategoryPillIcon = (catName) => {
+export const getCategoryPillIcon = (catName, isDark = false) => {
   if (!catName) return { source: PILL_ICON_ALL, name: CATEGORY_PILL_ICON_NAME_MAP.all };
+
+  const iconMap = isDark ? CATEGORY_PILL_ICON_MAP_DARK : CATEGORY_PILL_ICON_MAP;
+  const iconMapLower = isDark ? CATEGORY_PILL_ICON_MAP_DARK_LOWER : CATEGORY_PILL_ICON_MAP_LOWER;
 
   const normalizedKey = normalizeCategoryKey(catName);
   const family =
@@ -982,10 +1073,10 @@ export const getCategoryPillIcon = (catName) => {
     || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(catName)]
     || 'all';
   const source =
-    CATEGORY_PILL_ICON_MAP[normalizedKey]
-    || CATEGORY_PILL_ICON_MAP[String(catName || '').trim()]
-    || CATEGORY_PILL_ICON_MAP_LOWER[normalizeLookupKey(normalizedKey)]
-    || CATEGORY_PILL_ICON_MAP_LOWER[normalizeLookupKey(catName)]
+    iconMap[normalizedKey]
+    || iconMap[String(catName || '').trim()]
+    || iconMapLower[normalizeLookupKey(normalizedKey)]
+    || iconMapLower[normalizeLookupKey(catName)]
     || PILL_ICON_ALL;
   return { source, name: CATEGORY_PILL_ICON_NAME_MAP[family] || CATEGORY_PILL_ICON_NAME_MAP.all };
 };

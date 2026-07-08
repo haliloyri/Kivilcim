@@ -12,7 +12,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
-import { getCategoryImage } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryPillIcon } from '../utils/categoryImages';
 import { ensureNotificationPermission } from '../utils/notifications';
 
 const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
@@ -171,15 +171,14 @@ const OnboardingScreen = ({ navigation }) => {
     ? (colors.surfaceContainerHigh || colors.backgroundDark)
     : (colors.cardBackground || '#FFFDF9');
 
-  // CTA contrast & elevation differ per mode.
-  // Light: onPrimary (#FFFFFF) over gold (#C89B3C) fails WCAG AA, so use dark text token.
-  // Shadow: a gold "glow" reads well on dark, but on light a soft neutral shadow is cleaner.
-  const ctaTextColor = isDark ? colors.onPrimary : colors.text;
-  const ctaShadowColor = isDark ? colors.primary : colors.text;
+  // CTA contrast & elevation: primary is now Albor Navy (#142A4A), dark enough in
+  // both modes that white onPrimary text clears WCAG AA — no per-mode override needed.
+  const ctaTextColor = colors.onPrimary;
+  const ctaShadowColor = colors.primary;
   const ctaShadowOpacity = isDark ? 0.25 : 0.12;
-  // Gold-as-text fails WCAG AA on light surfaces (#C89B3C → 2.31:1). Use a deeper
-  // bronze-gold for small accent text in light mode; gold stays for fills/borders/icons.
-  const primaryText = isDark ? colors.primary : '#7A5E1C';
+  // Navy has plenty of contrast as small accent text on light surfaces too, unlike
+  // the old gold (#C89B3C → 2.31:1), so no bronze fallback is needed anymore.
+  const primaryText = colors.primary;
 
   const s = StyleSheet.create({
     safe: {
@@ -388,7 +387,6 @@ const OnboardingScreen = ({ navigation }) => {
       fontFamily: 'Inter_400Regular',
       fontSize: isSmallPhone ? 12 : isPhone ? 13 : 14,
       color: colors.text,
-      lineHeight: isSmallPhone ? 16 : 18,
     },
     catTileTextSelected: {
       fontFamily: 'Inter_500Medium',
@@ -537,10 +535,21 @@ const OnboardingScreen = ({ navigation }) => {
       marginTop: 8,
     },
     selCatPill: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
       backgroundColor: `${colors.primary}12`,
       borderRadius: 20,
-      paddingHorizontal: 14,
+      paddingLeft: 10,
+      paddingRight: 14,
       paddingVertical: 6,
+    },
+    selCatPillIcon: {
+      width: 18,
+      height: 18,
+      borderRadius: 9,
+      overflow: 'hidden',
+      transform: [{ scale: 1.3 }],
     },
 
     /* â”€â”€ Footer â”€â”€ */
@@ -707,7 +716,7 @@ const OnboardingScreen = ({ navigation }) => {
                   style={[s.catTileText, sel && s.catTileTextSelected, { flex: 1 }]}
                   numberOfLines={1}
                   adjustsFontSizeToFit
-                  minimumFontScale={0.75}
+                  minimumFontScale={0.85}
                 >
                   {catLabel}
                 </Text>
@@ -841,13 +850,20 @@ const OnboardingScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={s.selCats}>
-          {(selectedCats.length ? selectedCats : allCats.slice(0, 2)).map(c => (
-            <View key={c} style={s.selCatPill}>
-              <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: primaryText }}>
-                {(parentCategories.find((p) => Number(p.id) === Number(c))?.name) || ''}
-              </Text>
-            </View>
-          ))}
+          {(selectedCats.length ? selectedCats : allCats.slice(0, 2)).map(c => {
+            const catName = (parentCategories.find((p) => Number(p.id) === Number(c))?.name) || '';
+            const pillIcon = getCategoryPillIcon(catName, isDark);
+            return (
+              <View key={c} style={s.selCatPill}>
+                {pillIcon.source ? (
+                  <Image source={pillIcon.source} style={s.selCatPillIcon} resizeMode="cover" />
+                ) : null}
+                <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: primaryText }}>
+                  {catName}
+                </Text>
+              </View>
+            );
+          })}
         </View>
       </View>
 
@@ -900,7 +916,7 @@ const OnboardingScreen = ({ navigation }) => {
           <Image
             source={isDark
               ? require('../../assets/spark_logo_dark.png')
-              : require('../../assets/spark_shortcut_logo.png')}
+              : require('../../assets/spark_logo.png')}
             style={s.headerLogoImg}
             resizeMode="contain"
           />

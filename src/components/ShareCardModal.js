@@ -52,6 +52,8 @@ const SHARE_LINK =
 // wordmark for dark card backgrounds; light variant has the ink wordmark.
 const LOGO_LIGHT_BG = require('../../assets/spark_logo.png');
 const LOGO_DARK_BG = require('../../assets/spark_logo_dark.png');
+// Story card (social share) brand mark — transparent, works on any theme.
+const LOGO_SOCIAL = require('../../assets/spark_social.png');
 
 const CAROUSEL_ORDER = ['hook', 'lesson', 'quote', 'reflection'];
 
@@ -184,6 +186,13 @@ const ShareCardModal = ({
     return `#${catHashtag} ${generalHashtags}`;
   };
 
+  const [inviteUrl, setInviteUrl] = useState(SHARE_LINK);
+  useEffect(() => {
+    require('../services/supabase').getCurrentUser().then(u => {
+      if (u?.id) setInviteUrl(`https://kivilcim.app/invite/${u.id}`);
+    }).catch(() => {});
+  }, []);
+
   const buildSharePayload = () => {
     const selectedTexts = shareContent
       .map(type => {
@@ -199,14 +208,15 @@ const ShareCardModal = ({
 
     const ctas = getCTAByLang();
     const hashtags = buildHashtags();
-    const caption = `${displayTitle}\n\n${selectedTexts}\n\n${ctas[0]}\n${hashtags}`;
+    const linkStr = inviteUrl ? `\n🔗 ${inviteUrl}` : '';
+    const caption = `${displayTitle}\n\n${selectedTexts}\n\n${ctas[0]}${linkStr}\n${hashtags}`;
 
     const reelScript = `${displayTitle}\n\n` +
       `1) ${t('reel_label_hook', cLang)}: ${displayHook || getShareText('quote')}\n` +
       `2) ${t('reel_label_main', cLang)}: ${getShareText('lesson') || getShareText('quote')}\n` +
       `3) ${t('reel_label_question', cLang)}: ${getShareText('reflection') || t('share_realize', cLang)}\n` +
       `4) ${t('reel_label_cta', cLang)}: ${ctas[1]}\n` +
-      `5) ${t('reel_label_bonus', cLang)}: ${ctas[2]}`;
+      `5) ${t('reel_label_bonus', cLang)}: ${ctas[2]}${linkStr}`;
 
     return { caption, reelScript };
   };
@@ -222,11 +232,6 @@ const ShareCardModal = ({
         : caption;
       try {
         await Clipboard.setStringAsync(clipboardPayload);
-        Alert.alert(
-          t('share_copied_title', cLang),
-          t(shareFormat === 'reel' ? 'share_copied_body' : 'share_copied_body_story', cLang),
-          [{ text: t('alert_ok', cLang), style: 'default' }]
-        );
       } catch (err) {
         console.warn('Clipboard copy failed', err);
       }
@@ -319,7 +324,23 @@ const ShareCardModal = ({
     const fSrc = 32;
     const fFooter = 28;
     const padHorizontal = 80;
-    const paddingTop = isPost ? 90 : 140;
+    // Story/reel cards have a lot of headroom above the logo when there's
+    // little content. As the selected content grows (more pieces and/or
+    // longer text), the logo should float up toward the top edge instead of
+    // sitting at a fixed offset — otherwise long content gets cramped or
+    // clipped against the fixed-position footer.
+    const contentVolume = contentTypes.reduce(
+      (sum, type) => sum + (getShareText(type) || '').length,
+      0
+    ) + (contentTypes.length - 1) * 60;
+    const STORY_PADDING_TOP_MAX = 140;
+    const STORY_PADDING_TOP_MIN = 70;
+    const paddingTop = isPost
+      ? 90
+      : Math.round(Math.max(
+        STORY_PADDING_TOP_MIN,
+        STORY_PADDING_TOP_MAX - contentVolume * 0.25
+      ));
     const paddingBottom = isPost ? 90 : 160;
     const borderW = 10;
 
@@ -330,7 +351,7 @@ const ShareCardModal = ({
           {/* Header (Logo) — real brand mark, theme-aware */}
           <View style={{ alignSelf: 'flex-start', borderBottomWidth: 4, borderBottomColor: th.accent, paddingBottom: 16 }}>
             <Image
-              source={th.id === 'light' ? LOGO_LIGHT_BG : LOGO_DARK_BG}
+              source={LOGO_SOCIAL}
               style={{ width: 200, height: 200 }}
               resizeMode="contain"
             />

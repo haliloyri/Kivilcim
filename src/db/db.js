@@ -27,7 +27,7 @@ export const waitForData = () => _dataReadyPromise;
 //  on the next app launch. This deletes the old DB
 //  and copies the fresh one from assets/kivilcim.db.
 // ──────────────────────────────────────────────────────
-const DB_VERSION = 16;
+const DB_VERSION = 22;
 const DB_VERSION_KEY = 'db_version';
 
 const getVersionFilePath = () =>
@@ -54,39 +54,6 @@ const writeStoredVersion = async (v) => {
 // ──────────────────────────────────────────────────────
 const populateCategoryMappings = async (db) => {
   // Legacy category_mappings discarded. New schema uses categories, subcategories directly via the DB file.
-};
-
-// Matches any run of leading whitespace, emoji, pictographs, symbols and the
-// invisible joiners/variation-selectors that accompany them.
-const LEADING_SYMBOL_RE = /^[\s←-⇿⌀-➿⬀-⯿︀-️‍\u{1F000}-\u{1FAFF}]+/u;
-
-const stripLeadingSymbols = (value) =>
-  String(value || '').replace(LEADING_SYMBOL_RE, '').trim();
-
-/**
- * Removes emoji/symbol prefixes from category translations (e.g. the bundled
- * Admin DB ships English names like "💰 Finance"). Runs on every init — including
- * right after the DB is re-copied from assets on a force reset — so the emoji
- * never resurfaces. Keeps category labels consistent across all languages.
- */
-const sanitizeCategoryTranslations = async (db) => {
-  const rows = await db.getAllAsync(
-    `SELECT id, translation FROM categories_translations`
-  );
-  let cleaned = 0;
-  for (const row of rows) {
-    const next = stripLeadingSymbols(row.translation);
-    if (next && next !== row.translation) {
-      await db.runAsync(
-        `UPDATE categories_translations SET translation = ? WHERE id = ?`,
-        [next, row.id]
-      );
-      cleaned += 1;
-    }
-  }
-  if (cleaned > 0) {
-    console.log('sanitizeCategoryTranslations: cleaned ' + cleaned + ' category labels.');
-  }
 };
 
 const normalizeCategoryId = (value) => {
@@ -380,8 +347,6 @@ export const initDb = async () => {
     await ensureStoryConversationVariants(db);
 
     await populateCategoryMappings(db);
-
-    await sanitizeCategoryTranslations(db);
 
   } catch (error) {
     console.error('Database initialization error:', error);
@@ -994,5 +959,42 @@ export const getReadCountsByStory = async (userId = 'default') => {
   } catch (error) {
     console.error('getReadCountsByStory error:', error);
     return {};
+  }
+};
+
+// ─────────────────────────────────────────────
+//  Raw per-row dumps — used by migrateLocalToServer() (ToServerTasks.md §8)
+//  to push existing local data to Supabase. Unlike the aggregate helpers
+//  above, these return one row per story so the server-side read_at / liked
+//  state can be reproduced exactly instead of just a count.
+// ─────────────────────────────────────────────
+
+export const getAllUserReads = async (userId = 'default') => {
+  await waitForDb();
+  const db = getDb();
+  try {
+    const rows = await db.getAllAsync(
+      `SELECT story_id, read_at FROM user_reads WHERE user_id = ?`,
+      [userId]
+    );
+    return rows.map((r) => ({ storyId: r.story_id, readAt: r.read_at }));
+  } catch (error) {
+    console.error('getAllUserReads error:', error);
+    return [];
+  }
+};
+
+export const getAllUserLikes = async (userId = 'default') => {
+  await waitForDb();
+  const db = getDb();
+  try {
+    const rows = await db.getAllAsync(
+      `SELECT story_id, liked FROM user_likes WHERE user_id = ?`,
+      [userId]
+    );
+    return rows.map((r) => ({ storyId: r.story_id, liked: !!r.liked }));
+  } catch (error) {
+    console.error('getAllUserLikes error:', error);
+    return [];
   }
 };

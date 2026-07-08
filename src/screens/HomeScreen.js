@@ -162,6 +162,8 @@ const HomeScreen = ({ navigation }) => {
   const [profileEmailInput, setProfileEmailInput] = useState('');
   const [dailyClickedIds, setDailyClickedIds] = useState(new Set());
   const [isDailyPanelCollapsed, setIsDailyPanelCollapsed] = useState(false);
+  const [isFeaturedCollapsed, setIsFeaturedCollapsed] = useState(false);
+  const featuredAutoCollapsedRef = useRef(false);
   const isFetchingRef = useRef(false);  // ref to avoid stale closure
   const visibleCountRef = useRef(11);   // ref to read latest value in callbacks
   const badgeScrollRef = useRef(null);
@@ -395,13 +397,15 @@ const HomeScreen = ({ navigation }) => {
       let isActive = true;
       const todayKey = new Date().toISOString().split('T')[0];
       const DAILY_PANEL_KEY = `@spark_daily_panel_${todayKey}`;
+      const FEATURED_PANEL_KEY = `@spark_featured_panel_${todayKey}`;
 
       Promise.all([
         getSelectedCategories().catch(() => null),
         AsyncStorage.getItem(FIRST_SESSION_PROMPT_KEY).catch(() => null),
         AsyncStorage.getItem(PERSONALIZED_MODULE_SNOOZE_KEY).catch(() => null),
         AsyncStorage.getItem(DAILY_PANEL_KEY).catch(() => null),
-      ]).then(([list, promptFlag, moduleSnoozeUntil, dailyPanelData]) => {
+        AsyncStorage.getItem(FEATURED_PANEL_KEY).catch(() => null),
+      ]).then(([list, promptFlag, moduleSnoozeUntil, dailyPanelData, featuredPanelData]) => {
         if (!isActive) return;
 
         if (Array.isArray(list)) {
@@ -426,6 +430,19 @@ const HomeScreen = ({ navigation }) => {
           setDailyClickedIds(new Set());
           setIsDailyPanelCollapsed(false);
         }
+
+        if (featuredPanelData) {
+          try {
+            const parsed = JSON.parse(featuredPanelData);
+            setIsFeaturedCollapsed(Boolean(parsed.collapsed));
+            featuredAutoCollapsedRef.current = Boolean(parsed.auto);
+          } catch {
+            // ignore
+          }
+        } else {
+          setIsFeaturedCollapsed(false);
+          featuredAutoCollapsedRef.current = false;
+        }
       });
 
       return () => {
@@ -438,9 +455,19 @@ const HomeScreen = ({ navigation }) => {
   const todayStr = new Date().toISOString().split('T')[0];
 
   // 1. Profilde seçilen içerik sürümünü ve yayın tarihini uygula.
+  // 'F5' / 'F6' ve 'C1' / 'C2' gibi string sürümler Versiyon 2 koleksiyonunda gösterilir.
+  const normalizeStoryVersion = (v) =>
+    /^(F|C)\d+$/.test(String(v ?? '').trim().toUpperCase()) ? 2 : (Number(v) || 1);
   const selectedStoryVersion = Number(preferences?.storyVersion) === 2 ? 2 : 1;
-  const versionStories = (stories || []).filter((story) => Number(story.version || 1) === selectedStoryVersion);
-  const publishedStories = versionStories.filter(s => s.publishDate <= todayStr);
+  const versionStories = (stories || []).filter((story) => normalizeStoryVersion(story.version) === selectedStoryVersion);
+  // publishDate may be a full date string ("2018-01-01") or just a year integer (2018 from Supabase).
+  // Normalize to a 4-digit year string for safe comparison.
+  const publishedStories = versionStories.filter(s => {
+    const pd = s.publishDate;
+    if (pd == null) return true;
+    const yearStr = String(pd).slice(0, 4); // "2018-01-01" → "2018", 2018 → "2018"
+    return yearStr <= todayStr.slice(0, 4);
+  });
 
   // 2. Preferences Filter: Sadece takip edilen Ebeveyn kategorileri gösteririz.
   let prefFiltered = publishedStories;
@@ -962,6 +989,33 @@ const HomeScreen = ({ navigation }) => {
     })).catch(() => {});
   }, []);
 
+  const persistFeaturedPanelState = React.useCallback((collapsed, auto) => {
+    const todayKey = new Date().toISOString().split('T')[0];
+    AsyncStorage.setItem(`@spark_featured_panel_${todayKey}`, JSON.stringify({ collapsed, auto })).catch(() => {});
+  }, []);
+
+  // "Bugünün Fikri" bölümü: gösterilen hikayeler ve okunma durumu
+  const featuredStories = (personalizedStories.length > 0
+    ? personalizedStories
+    : sortedStories.slice(0, 4)
+  ).slice(0, 3);
+  const featuredReadCount = featuredStories.filter((s) => checkIfRead(s.story_id)).length;
+  const allFeaturedRead = featuredStories.length > 0 && featuredReadCount >= featuredStories.length;
+
+  // Tümü okununca bölümü bir kez otomatik katla (kullanıcı sonra açarsa tekrar kapatma)
+  useEffect(() => {
+    if (!allFeaturedRead || featuredAutoCollapsedRef.current) return;
+    featuredAutoCollapsedRef.current = true;
+    setIsFeaturedCollapsed(true);
+    persistFeaturedPanelState(true, true);
+  }, [allFeaturedRead, persistFeaturedPanelState]);
+
+  const toggleFeaturedCollapsed = () => {
+    const next = !isFeaturedCollapsed;
+    setIsFeaturedCollapsed(next);
+    persistFeaturedPanelState(next, featuredAutoCollapsedRef.current);
+  };
+
   // Daily panel: handle story tap
   const handleDailyStoryPress = (story, totalDailyCount) => {
     const newIds = new Set(dailyClickedIds);
@@ -1224,7 +1278,7 @@ const HomeScreen = ({ navigation }) => {
     featuredCardTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: 17,
-      color: isDark ? '#F6EDE1' : '#4A3A2C',
+      color: isDark ? '#F6EDE1' : colors.text,
       lineHeight: 22,
     },
     featuredCardMeta: {
@@ -1702,15 +1756,15 @@ const HomeScreen = ({ navigation }) => {
               label={item.label}
               categoryName={item.rawName || item.label}
               active={item.key === activeFilter}
-              compact
+              vertical
               isDark={isDark}
               onPress={() => setActiveFilter(item.key)}
             />
           )}
           keyExtractor={(item) => String(item.key)}
-          contentContainerStyle={{ gap: 10, paddingHorizontal: layout.padding.horizontal }}
+          contentContainerStyle={{ gap: 8, paddingHorizontal: layout.padding.horizontal }}
           showsHorizontalScrollIndicator={false}
-          style={{ marginTop: 20, marginBottom: 8 }}
+          style={{ marginTop: 12, marginBottom: 4 }}
           scrollToOverflowEnabled={true}
         />
 
@@ -1769,23 +1823,21 @@ const HomeScreen = ({ navigation }) => {
           const bannerInner = (
             <>
               <View style={styles.primaryActionTop}>
-                <View style={[styles.primaryActionIconWrap, { backgroundColor: iconWrapBg }]}>
-                  {primaryHomeAction.isBadgeCard ? (
-                    <BadgeIcon badge={primaryHomeAction.badge} earned isDark={isDark} size={44} />
-                  ) : (
+                {!primaryHomeAction.isBadgeCard && (
+                  <View style={[styles.primaryActionIconWrap, { backgroundColor: iconWrapBg }]}>
                     <Ionicons name={primaryHomeAction.icon} size={26} color={iconColor} />
-                  )}
-                </View>
-                <View style={styles.primaryActionTextWrap}>
+                  </View>
+                )}
+                <View style={[styles.primaryActionTextWrap, isBadge && { maxWidth: '50%' }]}>
                   <Text style={[styles.primaryActionEyebrow, { color: eyebrowColor }]}>{primaryHomeAction.eyebrow}</Text>
                   <Text style={[styles.primaryActionTitle, { color: titleColor }]}>{primaryHomeAction.title}</Text>
                 </View>
               </View>
-              <Text style={[styles.primaryActionSub, { color: subColor }]} numberOfLines={2}>{primaryHomeAction.sub}</Text>
+              <Text style={[styles.primaryActionSub, { color: subColor }, isBadge && { maxWidth: '50%' }]} numberOfLines={2}>{primaryHomeAction.sub}</Text>
 
               {primaryHomeAction.isBadgeCard ? (
-                <View style={[styles.primaryActionFooter, { alignItems: 'center' }]}>
-                  <View style={{ flex: 1, marginRight: 16 }}>
+                <View style={[styles.primaryActionFooter, { alignItems: 'center', justifyContent: 'flex-start' }]}>
+                  <View style={{ width: '50%', marginRight: 6 }}>
                     <View style={{ height: 6, backgroundColor: progressTrackBg, borderRadius: 3, overflow: 'hidden' }}>
                       <View style={{ width: `${primaryHomeAction.badge.ratio * 100}%`, height: '100%', backgroundColor: progressColor }} />
                     </View>
@@ -1838,16 +1890,48 @@ const HomeScreen = ({ navigation }) => {
 
         {/* Featured Story Cards (Horizontal Scroll) */}
         {!loading && sortedStories.length > 0 && (() => {
-          const featuredStories = personalizedStories.length > 0
-            ? personalizedStories
-            : sortedStories.slice(0, 4);
+          const featuredHidden = allFeaturedRead && isFeaturedCollapsed;
           return (
             <>
-              <View style={styles.sectionHeadingRow}>
+              <TouchableOpacity
+                style={styles.sectionHeadingRow}
+                onPress={allFeaturedRead ? toggleFeaturedCollapsed : undefined}
+                activeOpacity={allFeaturedRead ? 0.7 : 1}
+                disabled={!allFeaturedRead}
+                accessibilityRole={allFeaturedRead ? 'button' : undefined}
+                accessibilityLabel={t('home_featured_section_title', lang).replace('{{count}}', String(personalizedTarget))}
+                accessibilityState={allFeaturedRead ? { expanded: !featuredHidden } : undefined}
+              >
                  <Text style={[styles.sectionHeading, { marginHorizontal: 0, marginTop: 0, marginBottom: 0 }]}>{t('home_featured_section_title', lang).replace('{{count}}', String(personalizedTarget))}</Text>
-              </View>
+                 {allFeaturedRead && (
+                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                     <View style={{
+                       flexDirection: 'row',
+                       alignItems: 'center',
+                       gap: 4,
+                       backgroundColor: `${colors.success}1A`,
+                       borderRadius: 999,
+                       paddingHorizontal: 10,
+                       paddingVertical: 4,
+                     }}>
+                       <Ionicons name="checkmark-circle" size={16} color={colors.success} />
+                       <Text style={{
+                         fontFamily: 'Inter_600SemiBold',
+                         fontSize: 13,
+                         color: colors.success,
+                       }}>{featuredReadCount}/{featuredStories.length}</Text>
+                     </View>
+                     <Ionicons
+                       name={featuredHidden ? 'chevron-down' : 'chevron-up'}
+                       size={18}
+                       color={colors.textSecondary}
+                     />
+                   </View>
+                 )}
+              </TouchableOpacity>
+              {!featuredHidden && (
               <View style={{ paddingHorizontal: layout.padding.horizontal, gap: 10 }}>
-                {featuredStories.slice(0, 3).map((story, idx) => {
+                {featuredStories.map((story, idx) => {
                   const catTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                   const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                   const displayCat = toPascalCase(t(story.parent_cat || story.cat, lang) || '');
@@ -1901,6 +1985,7 @@ const HomeScreen = ({ navigation }) => {
                   );
                 })}
               </View>
+              )}
             </>
           );
         })()}
@@ -1918,7 +2003,7 @@ const HomeScreen = ({ navigation }) => {
             </>
           ) : sortedStories.length === 0 ? (
             <View style={{ alignItems: 'center', paddingVertical: 48, paddingHorizontal: 24 }}>
-              <Text style={{ fontSize: 48, marginBottom: 16 }}>­şô¡</Text>
+              <Text style={{ fontSize: 48, marginBottom: 16 }}>✨</Text>
               <Text style={{
                 fontFamily: 'PlayfairDisplay_600SemiBold',
                 fontSize: typography.sizes.headingSmall,

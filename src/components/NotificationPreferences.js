@@ -47,7 +47,7 @@ const NotificationPreferences = ({
                     ? `${colors.primary}15`
                     : isDark
                     ? '#1F1F1F'
-                    : '#F8F3EA',
+                    : colors.background,
                 },
               ]}
             >

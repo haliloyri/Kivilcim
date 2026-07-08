@@ -1,25 +1,25 @@
 export const colors = {
   // Light: Premium warm – DESIGN_AI 2026 spec
   light: {
-    background: '#F8F3EA',
+    background: '#FAF8F3',
     backgroundDark: '#EFE9DF',
     surfaceContainerLowest: '#FFFFFF',
     surfaceContainerHigh: '#E6DFD4',
     cardBackground: '#FFFDF9',
-    text: '#1E1E1E',
-    textSecondary: '#6B6B6B',
-    primary: '#C89B3C',                  // Primary Gold
-    primaryContainer: '#E8D3A8',         // Secondary Gold
+    text: '#142A4A',                     // Albor Navy — headings, logo, titles
+    textSecondary: '#6B7280',
+    primary: '#142A4A',                  // Albor Navy — buttons/CTAs
+    primaryContainer: '#D9E2EC',         // Pale navy container
     onPrimary: '#FFFFFF',
     danger: '#B3261E',
     success: '#3A5F3C',
     border: '#E7DFD4',
-    activeNav: '#9D846D',
+    activeNav: '#142A4A',
     quoteHighlight: '#FFD166',
     overlaySoft: 'rgba(0,0,0,0.03)',
     overlayDark: 'rgba(0,0,0,0.24)',
-    ctaGradientStart: '#C89B3C',
-    ctaGradientEnd: '#E8D3A8',
+    ctaGradientStart: '#2C4A73',
+    ctaGradientEnd: '#142A4A',
   },
   // Dark: OLED-friendly – DESIGN_AI 2026 spec
   dark: {
@@ -73,6 +73,26 @@ export const readableTextOn = (background) => {
   const contrastDark = (L + 0.05) / (0.0103 + 0.05);
   const contrastWhite = (1 + 0.05) / (L + 0.05);
   return contrastDark >= contrastWhite ? '#1A1A1A' : '#FFFFFF';
+};
+
+// Returns a darker shade of a hex colour by the given fraction (0-1).
+// Used to nudge a too-light filled background a shade richer so that
+// readableTextOn() reliably resolves to white instead of landing on the
+// black/white tie-break line — keeps text colour contrast-driven rather
+// than hardcoded.
+export const darkenHex = (hex, amount = 0.35) => {
+  if (!hex || typeof hex !== 'string' || hex[0] !== '#') return hex;
+  let h = hex.slice(1);
+  if (h.length === 3) h = h.split('').map((c) => c + c).join('');
+  if (h.length !== 6) return hex;
+
+  const factor = 1 - amount;
+  const clamp = (v) => Math.max(0, Math.min(255, Math.round(v)));
+  const toHex = (v) => clamp(v).toString(16).padStart(2, '0');
+  const r = parseInt(h.slice(0, 2), 16) * factor;
+  const g = parseInt(h.slice(2, 4), 16) * factor;
+  const b = parseInt(h.slice(4, 6), 16) * factor;
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`.toUpperCase();
 };
 
 export const typography = {

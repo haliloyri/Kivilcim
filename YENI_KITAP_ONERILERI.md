@@ -1,6 +1,6 @@
 # Kitap Kataloğu ve Yeni Öneriler
 
-Bu katalog, uygulama veritabanındaki 227 kitabı ve içerik üretimi için seçilen 73 yeni kitabı tek listede birleştirir.
+Bu katalog, uygulama veritabanındaki 276 kitabı ve içerik üretimi için seçilen 24 yeni kitabı tek listede birleştirir.
 
 Hikâye bazındaki mevcut süre, olası süre ve `±` paylı kelime hedefleri `HIKAYE_BASLIKLARI.md` dosyasında tutulur.
 
@@ -212,72 +212,72 @@ Hikâye bazındaki mevcut süre, olası süre ve `±` paylı kelime hedefleri `H
 | 198 | *Emotional Agility* | Susan David | Psikoloji | **DB'DE KAYITLI** | 198 | 2 |
 | 199 | *The Happiness Trap* | Russ Harris | Psikoloji | **DB'DE KAYITLI** | 199 | 2 |
 | 200 | *Emotional Intelligence 2.0* | Travis Bradberry | Psikoloji | **DB'DE KAYITLI** | 200 | 3 |
-| 201 | *Guns, Germs, and Steel* | Jared Diamond | Tarih | **YENİ ÖNERİ** | — | 0 |
-| 202 | *Collapse* | Jared Diamond | Tarih | **YENİ ÖNERİ** | — | 0 |
-| 203 | *The Silk Roads* | Peter Frankopan | Tarih | **YENİ ÖNERİ** | — | 0 |
-| 204 | *SPQR* | Mary Beard | Tarih | **YENİ ÖNERİ** | — | 0 |
+| 201 | *Guns, Germs, and Steel* | Jared Diamond | Tarih | **DB'DE KAYITLI / V2** | 228 | 1 |
+| 202 | *Collapse* | Jared Diamond | Tarih | **DB'DE KAYITLI / V2** | 229 | 1 |
+| 203 | *The Silk Roads* | Peter Frankopan | Tarih | **DB'DE KAYITLI / V2** | 230 | 1 |
+| 204 | *SPQR* | Mary Beard | Tarih | **DB'DE KAYITLI / V2** | 231 | 1 |
 | 205 | *Rubicon* | Tom Holland | Tarih | **DB'DE KAYITLI / V2** | 215 | 1 |
 | 206 | *Team of Rivals* | Doris Kearns Goodwin | Tarih | **DB'DE KAYITLI / V2** | 201 | 1 |
-| 207 | *The Wright Brothers* | David McCullough | Tarih | **YENİ ÖNERİ** | — | 0 |
+| 207 | *The Wright Brothers* | David McCullough | Tarih | **DB'DE KAYITLI / V2** | 232 | 1 |
 | 208 | *Endurance* | Alfred Lansing | Tarih | **DB'DE KAYITLI / V2** | 202 | 1 |
-| 209 | *Into Thin Air* | Jon Krakauer | Tarih | **YENİ ÖNERİ** | — | 0 |
-| 210 | *Unbroken* | Laura Hillenbrand | Tarih | **YENİ ÖNERİ** | — | 0 |
+| 209 | *Into Thin Air* | Jon Krakauer | Tarih | **DB'DE KAYITLI / V2** | 233 | 1 |
+| 210 | *Unbroken* | Laura Hillenbrand | Tarih | **DB'DE KAYITLI / V2** | 234 | 1 |
 | 211 | *The Boys in the Boat* | Daniel James Brown | Tarih | **DB'DE KAYITLI / V2** | 212 | 1 |
-| 212 | *Hidden Figures* | Margot Lee Shetterly | Tarih | **YENİ ÖNERİ** | — | 0 |
+| 212 | *Hidden Figures* | Margot Lee Shetterly | Tarih | **DB'DE KAYITLI / V2** | 235 | 1 |
 | 213 | *Seabiscuit* | Laura Hillenbrand | Tarih | **DB'DE KAYITLI / V2** | 203 | 1 |
-| 214 | *The Splendid and the Vile* | Erik Larson | Tarih | **YENİ ÖNERİ** | — | 0 |
+| 214 | *The Splendid and the Vile* | Erik Larson | Tarih | **DB'DE KAYITLI / V2** | 236 | 1 |
 | 215 | *The Devil in the White City* | Erik Larson | Tarih | **DB'DE KAYITLI / V2** | 221 | 1 |
 | 216 | *Midnight in Chernobyl* | Adam Higginbotham | Tarih | **DB'DE KAYITLI / V2** | 204 | 1 |
-| 217 | *Say Nothing* | Patrick Radden Keefe | Tarih | **YENİ ÖNERİ** | — | 0 |
-| 218 | *The Wager* | David Grann | Tarih | **YENİ ÖNERİ** | — | 0 |
-| 219 | *Killers of the Flower Moon* | David Grann | Tarih | **YENİ ÖNERİ** | — | 0 |
-| 220 | *The Lost City of Z* | David Grann | Tarih | **YENİ ÖNERİ** | — | 0 |
+| 217 | *Say Nothing* | Patrick Radden Keefe | Tarih | **DB'DE KAYITLI / V2** | 237 | 1 |
+| 218 | *The Wager* | David Grann | Tarih | **DB'DE KAYITLI / V2** | 238 | 1 |
+| 219 | *Killers of the Flower Moon* | David Grann | Tarih | **DB'DE KAYITLI / V2** | 239 | 1 |
+| 220 | *The Lost City of Z* | David Grann | Tarih | **DB'DE KAYITLI / V2** | 240 | 1 |
 | 221 | *A Short History of Nearly Everything* | Bill Bryson | Bilim | **DB'DE KAYITLI / V2** | 216 | 1 |
-| 222 | *Cosmos* | Carl Sagan | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 223 | *A Brief History of Time* | Stephen Hawking | Bilim | **YENİ ÖNERİ** | — | 0 |
+| 222 | *Cosmos* | Carl Sagan | Bilim | **DB'DE KAYITLI / V2** | 241 | 1 |
+| 223 | *A Brief History of Time* | Stephen Hawking | Bilim | **DB'DE KAYITLI / V2** | 242 | 1 |
 | 224 | *The Gene* | Siddhartha Mukherjee | Bilim | **DB'DE KAYITLI / V2** | 222 | 1 |
-| 225 | *The Code Breaker* | Walter Isaacson | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 226 | *The Immortal Life of Henrietta Lacks* | Rebecca Skloot | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 227 | *The Hidden Life of Trees* | Peter Wohlleben | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 228 | *Entangled Life* | Merlin Sheldrake | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 229 | *Longitude* | Dava Sobel | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 230 | *The Disappearing Spoon* | Sam Kean | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 231 | *The Poisoner's Handbook* | Deborah Blum | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 232 | *The Radium Girls* | Kate Moore | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 233 | *The Butchering Art* | Lindsey Fitzharris | Bilim | **YENİ ÖNERİ** | — | 0 |
-| 234 | *Surely You're Joking, Mr. Feynman!* | Richard P. Feynman ve Ralph Leighton | Bilim | **YENİ ÖNERİ** | — | 0 |
+| 225 | *The Code Breaker* | Walter Isaacson | Bilim | **DB'DE KAYITLI / V2** | 243 | 1 |
+| 226 | *The Immortal Life of Henrietta Lacks* | Rebecca Skloot | Bilim | **DB'DE KAYITLI / V2** | 244 | 1 |
+| 227 | *The Hidden Life of Trees* | Peter Wohlleben | Bilim | **DB'DE KAYITLI / V2** | 245 | 1 |
+| 228 | *Entangled Life* | Merlin Sheldrake | Bilim | **DB'DE KAYITLI / V2** | 246 | 1 |
+| 229 | *Longitude* | Dava Sobel | Bilim | **DB'DE KAYITLI / V2** | 247 | 1 |
+| 230 | *The Disappearing Spoon* | Sam Kean | Bilim | **DB'DE KAYITLI / V2** | 248 | 1 |
+| 231 | *The Poisoner's Handbook* | Deborah Blum | Bilim | **DB'DE KAYITLI / V2** | 249 | 1 |
+| 232 | *The Radium Girls* | Kate Moore | Bilim | **DB'DE KAYITLI / V2** | 250 | 1 |
+| 233 | *The Butchering Art* | Lindsey Fitzharris | Bilim | **DB'DE KAYITLI / V2** | 251 | 1 |
+| 234 | *Surely You're Joking, Mr. Feynman!* | Richard P. Feynman ve Ralph Leighton | Bilim | **DB'DE KAYITLI / V2** | 252 | 1 |
 | 235 | *An Immense World* | Ed Yong | Bilim | **DB'DE KAYITLI / V2** | 223 | 1 |
 | 236 | *Predictably Irrational* | Dan Ariely | Psikoloji | **DB'DE KAYITLI / V2** | 205 | 1 |
 | 237 | *The Righteous Mind* | Jonathan Haidt | Psikoloji | **DB'DE KAYITLI / V2** | 226 | 1 |
-| 238 | *The Anxious Generation* | Jonathan Haidt | Psikoloji | **YENİ ÖNERİ** | — | 0 |
-| 239 | *Behave* | Robert M. Sapolsky | Psikoloji | **YENİ ÖNERİ** | — | 0 |
-| 240 | *The Lucifer Effect* | Philip Zimbardo | Psikoloji | **YENİ ÖNERİ** | — | 0 |
-| 241 | *The Man Who Mistook His Wife for a Hat* | Oliver Sacks | Psikoloji | **YENİ ÖNERİ** | — | 0 |
-| 242 | *Incognito* | David Eagleman | Psikoloji | **YENİ ÖNERİ** | — | 0 |
-| 243 | *The Happiness Hypothesis* | Jonathan Haidt | Psikoloji | **YENİ ÖNERİ** | — | 0 |
-| 244 | *The Confidence Game* | Maria Konnikova | Psikoloji | **YENİ ÖNERİ** | — | 0 |
+| 238 | *The Anxious Generation* | Jonathan Haidt | Psikoloji | **DB'DE KAYITLI / V2** | 253 | 1 |
+| 239 | *Behave* | Robert M. Sapolsky | Psikoloji | **DB'DE KAYITLI / V2** | 254 | 1 |
+| 240 | *The Lucifer Effect* | Philip Zimbardo | Psikoloji | **DB'DE KAYITLI / V2** | 255 | 1 |
+| 241 | *The Man Who Mistook His Wife for a Hat* | Oliver Sacks | Psikoloji | **DB'DE KAYITLI / V2** | 256 | 1 |
+| 242 | *Incognito* | David Eagleman | Psikoloji | **DB'DE KAYITLI / V2** | 257 | 1 |
+| 243 | *The Happiness Hypothesis* | Jonathan Haidt | Psikoloji | **DB'DE KAYITLI / V2** | 258 | 1 |
+| 244 | *The Confidence Game* | Maria Konnikova | Psikoloji | **DB'DE KAYITLI / V2** | 259 | 1 |
 | 245 | *The Undoing Project* | Michael Lewis | Psikoloji | **DB'DE KAYITLI / V2** | 225 | 1 |
 | 246 | *Noise* | Daniel Kahneman, Olivier Sibony ve Cass R. Sunstein | Psikoloji | **DB'DE KAYITLI / V2** | 224 | 1 |
-| 247 | *Scarcity* | Sendhil Mullainathan ve Eldar Shafir | Psikoloji | **YENİ ÖNERİ** | — | 0 |
+| 247 | *Scarcity* | Sendhil Mullainathan ve Eldar Shafir | Psikoloji | **DB'DE KAYITLI / V2** | 260 | 1 |
 | 248 | *The Power of Regret* | Daniel H. Pink | Psikoloji | **DB'DE KAYITLI / V2** | 206 | 1 |
 | 249 | *Chatter* | Ethan Kross | Psikoloji | **DB'DE KAYITLI / V2** | 217 | 1 |
-| 250 | *The Marshmallow Test* | Walter Mischel | Psikoloji | **YENİ ÖNERİ** | — | 0 |
-| 251 | *Shoe Dog* | Phil Knight | Liderlik | **YENİ ÖNERİ** | — | 0 |
+| 250 | *The Marshmallow Test* | Walter Mischel | Psikoloji | **DB'DE KAYITLI / V2** | 261 | 1 |
+| 251 | *Shoe Dog* | Phil Knight | Liderlik | **DB'DE KAYITLI / V2** | 262 | 1 |
 | 252 | *Creativity, Inc.* | Ed Catmull ve Amy Wallace | Liderlik | **DB'DE KAYITLI / V2** | 218 | 1 |
-| 253 | *The Everything Store* | Brad Stone | Liderlik | **YENİ ÖNERİ** | — | 0 |
+| 253 | *The Everything Store* | Brad Stone | Liderlik | **DB'DE KAYITLI / V2** | 263 | 1 |
 | 254 | *Steve Jobs* | Walter Isaacson | Liderlik | **DB'DE KAYITLI / V2** | 207 | 1 |
-| 255 | *The Ride of a Lifetime* | Robert Iger | Liderlik | **YENİ ÖNERİ** | — | 0 |
-| 256 | *No Rules Rules* | Reed Hastings ve Erin Meyer | Liderlik | **YENİ ÖNERİ** | — | 0 |
-| 257 | *Bad Blood* | John Carreyrou | Liderlik | **YENİ ÖNERİ** | — | 0 |
-| 258 | *The Hard Thing About Hard Things* | Ben Horowitz | Liderlik | **YENİ ÖNERİ** | — | 0 |
+| 255 | *The Ride of a Lifetime* | Robert Iger | Liderlik | **DB'DE KAYITLI / V2** | 264 | 1 |
+| 256 | *No Rules Rules* | Reed Hastings ve Erin Meyer | Liderlik | **DB'DE KAYITLI / V2** | 265 | 1 |
+| 257 | *Bad Blood* | John Carreyrou | Liderlik | **DB'DE KAYITLI / V2** | 266 | 1 |
+| 258 | *The Hard Thing About Hard Things* | Ben Horowitz | Liderlik | **DB'DE KAYITLI / V2** | 267 | 1 |
 | 259 | *The Founders* | Jimmy Soni | Liderlik | **DB'DE KAYITLI / V2** | 208 | 1 |
-| 260 | *Delivering Happiness* | Tony Hsieh | Liderlik | **YENİ ÖNERİ** | — | 0 |
+| 260 | *Delivering Happiness* | Tony Hsieh | Liderlik | **DB'DE KAYITLI / C1** | 274 | 5 |
 | 261 | *Pour Your Heart Into It* | Howard Schultz ve Dori Jones Yang | Liderlik | **DB'DE KAYITLI / V2** | 227 | 1 |
-| 262 | *Grinding It Out* | Ray Kroc | Liderlik | **YENİ ÖNERİ** | — | 0 |
+| 262 | *Grinding It Out* | Ray Kroc | Liderlik | **DB'DE KAYITLI / C2** | 276 | 5 |
 | 263 | *Made in America* | Sam Walton ve John Huey | Liderlik | **YENİ ÖNERİ** | — | 0 |
-| 264 | *The Culture Map* | Erin Meyer | Liderlik | **YENİ ÖNERİ** | — | 0 |
+| 264 | *The Culture Map* | Erin Meyer | Liderlik | **DB'DE KAYITLI / C2** | 275 | 5 |
 | 265 | *Turn the Ship Around!* | L. David Marquet | Liderlik | **YENİ ÖNERİ** | — | 0 |
-| 266 | *The Intelligent Investor* | Benjamin Graham | Finans | **YENİ ÖNERİ** | — | 0 |
+| 266 | *The Intelligent Investor* | Benjamin Graham | Finans | **DB'DE KAYITLI / F5 + F7** | 268 | 2 |
 | 267 | *A Random Walk Down Wall Street* | Burton G. Malkiel | Finans | **DB'DE KAYITLI / V2** | 209 | 1 |
 | 268 | *One Up On Wall Street* | Peter Lynch ve John Rothchild | Finans | **YENİ ÖNERİ** | — | 0 |
 | 269 | *Common Stocks and Uncommon Profits* | Philip A. Fisher | Finans | **YENİ ÖNERİ** | — | 0 |
@@ -287,17 +287,17 @@ Hikâye bazındaki mevcut süre, olası süre ve `±` paylı kelime hedefleri `H
 | 273 | *Die with Zero* | Bill Perkins | Finans | **YENİ ÖNERİ** | — | 0 |
 | 274 | *Misbehaving* | Richard H. Thaler | Finans | **YENİ ÖNERİ** | — | 0 |
 | 275 | *Against the Gods* | Peter L. Bernstein | Finans | **YENİ ÖNERİ** | — | 0 |
-| 276 | *Being Mortal* | Atul Gawande | Sağlık | **YENİ ÖNERİ** | — | 0 |
+| 276 | *Being Mortal* | Atul Gawande | Sağlık | **DB'DE KAYITLI / F5** | 269 | 1 |
 | 277 | *Complications* | Atul Gawande | Sağlık | **DB'DE KAYITLI / V2** | 219 | 1 |
 | 278 | *The Checklist Manifesto* | Atul Gawande | Sağlık | **DB'DE KAYITLI / V2** | 210 | 1 |
 | 279 | *When Breath Becomes Air* | Paul Kalanithi | Sağlık | **YENİ ÖNERİ** | — | 0 |
-| 280 | *Why Zebras Don't Get Ulcers* | Robert M. Sapolsky | Sağlık | **YENİ ÖNERİ** | — | 0 |
+| 280 | *Why Zebras Don't Get Ulcers* | Robert M. Sapolsky | Sağlık | **DB'DE KAYITLI / F6** | 273 | 5 |
 | 281 | *The Blue Zones* | Dan Buettner | Sağlık | **YENİ ÖNERİ** | — | 0 |
 | 282 | *Exercised* | Daniel E. Lieberman | Sağlık | **YENİ ÖNERİ** | — | 0 |
 | 283 | *The Comfort Crisis* | Michael Easter | Sağlık | **DB'DE KAYITLI / V2** | 211 | 1 |
 | 284 | *How Not to Die* | Michael Greger ve Gene Stone | Sağlık | **YENİ ÖNERİ** | — | 0 |
 | 285 | *The Noonday Demon* | Andrew Solomon | Sağlık | **YENİ ÖNERİ** | — | 0 |
-| 286 | *Nonviolent Communication* | Marshall B. Rosenberg | İletişim | **YENİ ÖNERİ** | — | 0 |
+| 286 | *Nonviolent Communication* | Marshall B. Rosenberg | İletişim | **DB'DE KAYITLI / F5** | 270 | 1 |
 | 287 | *Difficult Conversations* | Douglas Stone, Bruce Patton ve Sheila Heen | İletişim | **YENİ ÖNERİ** | — | 0 |
 | 288 | *Thanks for the Feedback* | Douglas Stone ve Sheila Heen | İletişim | **YENİ ÖNERİ** | — | 0 |
 | 289 | *Supercommunicators* | Charles Duhigg | İletişim | **YENİ ÖNERİ** | — | 0 |
@@ -308,7 +308,7 @@ Hikâye bazındaki mevcut süre, olası süre ve `±` paylı kelime hedefleri `H
 | 294 | *Discourses and Selected Writings* | Epictetus | Felsefe | **YENİ ÖNERİ** | — | 0 |
 | 295 | *The Republic* | Plato | Felsefe | **DB'DE KAYITLI / V2** | 214 | 1 |
 | 296 | *Nicomachean Ethics* | Aristotle | Felsefe | **YENİ ÖNERİ** | — | 0 |
-| 297 | *Tao Te Ching* | Lao Tzu | Felsefe | **YENİ ÖNERİ** | — | 0 |
+| 297 | *Tao Te Ching* | Lao Tzu | Felsefe | **DB'DE KAYITLI / F5** | 272 | 1 |
 | 298 | *The Consolations of Philosophy* | Alain de Botton | Felsefe | **YENİ ÖNERİ** | — | 0 |
-| 299 | *Four Thousand Weeks* | Oliver Burkeman | Verimlilik | **YENİ ÖNERİ** | — | 0 |
+| 299 | *Four Thousand Weeks* | Oliver Burkeman | Verimlilik | **DB'DE KAYITLI / F5** | 271 | 1 |
 | 300 | *The Antidote* | Oliver Burkeman | Büyüme | **YENİ ÖNERİ** | — | 0 |

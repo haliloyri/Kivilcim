@@ -327,10 +327,7 @@ const LibraryScreen = ({ navigation }) => {
     },
     segment: {
       flexDirection: 'row',
-      gap: 4,
-      backgroundColor: neutral.background,
-      borderRadius: 14,
-      padding: 4,
+      gap: 3,
       marginHorizontal: layout.padding.horizontal,
       marginTop: 4,
       marginBottom: 12,
@@ -339,19 +336,37 @@ const LibraryScreen = ({ navigation }) => {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      paddingVertical: 9,
-      borderRadius: 11,
+      paddingVertical: 10,
+      paddingHorizontal: 4,
+      borderRadius: 14,
+      backgroundColor: colors.surfaceContainerLowest,
+      borderWidth: 1,
+      borderColor: colors.border,
     },
     segmentItemActive: {
       backgroundColor: colors.primary,
+      borderColor: colors.primary,
     },
     segmentText: {
-      fontFamily: 'Inter_500Medium',
+      fontFamily: 'Inter_600SemiBold',
       fontSize: 13,
-      color: neutral.text,
+      color: colors.textSecondary,
+      textAlign: 'center',
     },
     segmentTextActive: {
       color: colors.onPrimary,
+    },
+    segmentCount: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.textSecondary,
+      textAlign: 'center',
+      marginTop: 2,
+      opacity: 0.8,
+    },
+    segmentCountActive: {
+      color: colors.onPrimary,
+      opacity: 0.85,
     },
     filterRow: {
       flexDirection: 'row',
@@ -483,14 +498,38 @@ const LibraryScreen = ({ navigation }) => {
               >
                 <Text numberOfLines={1} style={[styles.segmentText, active && styles.segmentTextActive]}>
                   {item.label}
-                  {count > 0 ? <Text style={{ opacity: active ? 0.85 : 0.6 }}>{`  ${count}`}</Text> : null}
                 </Text>
+                {count > 0 ? (
+                  <Text style={[styles.segmentCount, active && styles.segmentCountActive]}>
+                    {count}
+                  </Text>
+                ) : null}
               </TouchableOpacity>
             );
           })}
         </View>
 
-        {/* ── İkincil filtre satırı: kategori + ses + sırala ───── */}
+        {/* ── Kategori kartları: Ana ekrandaki dikey kart tasarımı/UX'i ── */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ gap: 8, paddingHorizontal: layout.padding.horizontal }}
+          style={{ marginBottom: 10 }}
+        >
+          {categoryOptions.map((item) => (
+            <CategoryPill
+              key={String(item.id)}
+              label={item.label}
+              categoryName={item.rawName || item.label}
+              active={activeCategory === item.id}
+              vertical
+              isDark={isDark}
+              onPress={() => setActiveCategory(item.id)}
+            />
+          ))}
+        </ScrollView>
+
+        {/* ── İkincil filtre satırı: ses + sırala ───── */}
         <View style={styles.filterRow}>
           <ScrollView
             horizontal
@@ -498,17 +537,6 @@ const LibraryScreen = ({ navigation }) => {
             style={{ flex: 1 }}
             contentContainerStyle={{ gap: 8, alignItems: 'center', paddingRight: 4 }}
           >
-            {categoryOptions.map((item) => (
-              <CategoryPill
-                key={String(item.id)}
-                label={item.label}
-                categoryName={item.rawName || item.label}
-                active={activeCategory === item.id}
-                compact
-                isDark={isDark}
-                onPress={() => setActiveCategory(item.id)}
-              />
-            ))}
             {recordedStoryIds.size > 0 && (
               <TouchableOpacity
                 onPress={() => setFilterRecorded(f => !f)}

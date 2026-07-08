@@ -32,6 +32,14 @@
       "expo-sqlite",
       "expo-asset",
       [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.4"
+          }
+        }
+      ],
+      [
         "expo-media-library",
         {
           "photosPermission": "Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.",
@@ -48,7 +56,14 @@
           "skAdNetworkItems": []
         }
       ],
-      "expo-localization"
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Albor, hikayeleri sesli olarak kaydedip dinleyebilmen için mikrofona erişmek ister."
+        }
+      ],
+      "expo-localization",
+      "expo-splash-screen"
     ],
     "extra": {
       "eas": {
@@ -74,7 +89,25 @@
         "apiKey": "phc_xGTa3Jhe9VUdbLnaDE3Y9bPoWMApSTyNrTNZDn3ukDe8",
         "host": "https://us.i.posthog.com"
       },
-      "shareLink": "kivilcim.app"
+      "shareLink": "kivilcim.app",
+      "affiliate": {
+        "amazon": {
+          "amazon.com.tr": "SET_AMAZON_TR_TAG-21",
+          "amazon.com": "SET_AMAZON_US_TAG-20",
+          "amazon.de": "SET_AMAZON_DE_TAG-21",
+          "amazon.co.uk": "SET_AMAZON_UK_TAG-21",
+          "amazon.es": "SET_AMAZON_ES_TAG-21"
+        },
+        "amazonDefaultTag": "SET_AMAZON_US_TAG-20",
+        "hepsiburada": {
+          "param": "wt_mc",
+          "token": "SET_HEPSIBURADA_TOKEN"
+        },
+        "kitapyurdu": {
+          "param": "affiliate",
+          "token": "SET_KITAPYURDU_TOKEN"
+        }
+      }
     },
     "owner": "hoyri"
   }

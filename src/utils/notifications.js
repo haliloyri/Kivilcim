@@ -36,7 +36,11 @@ const WEEKDAYS = [2, 3, 4, 5, 6]; // Mon–Fri
 const WEEKEND_DAYS = [7, 1]; // Sat, Sun
 
 const getReminderHour = (windowKey, explicitHour, isWeekend = false) => {
-  const parsedHour = Number(explicitHour);
+  // NOTE: `Number(null)` is 0, not NaN — so a null/undefined/'' explicitHour must
+  // be rejected *before* coercion, otherwise every reminder collapses to hour 0
+  // (midnight) and only the minute varies.
+  const hasExplicit = explicitHour !== null && explicitHour !== undefined && explicitHour !== '';
+  const parsedHour = hasExplicit ? Number(explicitHour) : NaN;
   if (!Number.isNaN(parsedHour) && parsedHour >= 0 && parsedHour <= 23) {
     return parsedHour;
   }
@@ -192,6 +196,9 @@ export async function scheduleDailyNotifications(options = 'tr') {
     ? normalized.reminderWindows.filter(w => ['morning', 'noon', 'evening'].includes(w))
     : [normalized.reminderWindow || 'evening'];
   const reminderWindow = reminderWindows[0];
+  // Explicit hour preference (0-23), if the user set one — overrides the
+  // window's default weekday/weekend hours. Validated inside getReminderHour.
+  const reminderHour = normalized.reminderHour;
   const dailyStoryTarget = Number(normalized.dailyStoryTarget) || 2;
   const totalReads = Number(normalized.totalReads) || 0;
   const streak = Number(normalized.streak) || 0;
@@ -222,8 +229,8 @@ export async function scheduleDailyNotifications(options = 'tr') {
         platform: Platform.OS,
         lang,
         reminderWindow,
-        reminderHourWeekday: getReminderHour(reminderWindow, null, false),
-        reminderHourWeekend: getReminderHour(reminderWindow, null, true),
+        reminderHourWeekday: getReminderHour(reminderWindow, reminderHour, false),
+        reminderHourWeekend: getReminderHour(reminderWindow, reminderHour, true),
         dailyStoryTarget,
         segment,
         bodyKey,
@@ -256,9 +263,9 @@ export async function scheduleDailyNotifications(options = 'tr') {
 
   // Schedule weekday (Mon–Fri) and weekend (Sat–Sun) notifications per window
   for (const window of reminderWindows) {
-    const weekdayHour = getReminderHour(window, null, false);
+    const weekdayHour = getReminderHour(window, reminderHour, false);
     const weekdayMinute = getReminderMinute(window, false);
-    const weekendHour = getReminderHour(window, null, true);
+    const weekendHour = getReminderHour(window, reminderHour, true);
     const weekendMinute = getReminderMinute(window, true);
 
     await scheduleWeeklyForDays({
@@ -309,8 +316,8 @@ export async function scheduleDailyNotifications(options = 'tr') {
     lang,
     reminderWindows,
     reminderWindow,
-    reminderHourWeekday: getReminderHour(reminderWindow, null, false),
-    reminderHourWeekend: getReminderHour(reminderWindow, null, true),
+    reminderHourWeekday: getReminderHour(reminderWindow, reminderHour, false),
+    reminderHourWeekend: getReminderHour(reminderWindow, reminderHour, true),
     dailyStoryTarget,
     totalReads,
     streak,

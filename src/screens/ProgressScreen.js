@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { 
+import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  StatusBar, Dimensions
+  StatusBar, Dimensions, Image
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,7 +11,7 @@ import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import { getReadHistory } from '../db/db';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import BadgeIcon, { BADGE_MAP, GradientIcon, ACTION_ICON_COLORS } from '../components/BadgeIcon';
+import BadgeIcon, { BADGE_MAP, BADGE_IMAGES, GradientIcon, ACTION_ICON_COLORS } from '../components/BadgeIcon';
 
 const { width } = Dimensions.get('window');
 const DAILY_TARGET_COMPLETED_KEY = '@kivilcim_analytics_daily_target_completed_day';
@@ -608,20 +608,21 @@ const ProgressScreen = ({ navigation }) => {
       paddingHorizontal: layout.padding.horizontal, marginTop: 16,
     },
     statCard: {
-      flex: 1, backgroundColor: colors.backgroundDark,
+      flex: 1, backgroundColor: colors.surfaceContainerLowest,
+      borderWidth: 1, borderColor: colors.border,
       borderRadius: 14, paddingVertical: 12, paddingHorizontal: 4, alignItems: 'center',
     },
     statCardNum: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 20, color: colors.text },
-    statCardLabel: { fontFamily: 'Inter_400Regular', fontSize: 10.5, color: colors.textSecondary, marginTop: 2 },
+    statCardLabel: { fontFamily: 'Inter_400Regular', fontSize: 10.5, color: colors.text, marginTop: 2 },
 
     // ── Redesign: heatmap (week-aligned) ──────────────────────────
     hmCard: {
-      backgroundColor: colors.background, borderWidth: layout.borderWidth, borderColor: colors.border,
+      backgroundColor: colors.surfaceContainerLowest, borderWidth: 1, borderColor: colors.border,
       borderRadius: layout.radius.card, marginHorizontal: layout.padding.horizontal, padding: 16,
     },
-    hmDay: { fontFamily: 'Inter_400Regular', fontSize: 9, color: colors.textSecondary },
+    hmDay: { fontFamily: 'Inter_400Regular', fontSize: 9, color: colors.text },
     hmLegend: { flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', gap: 4, marginTop: 12 },
-    hmLegendText: { fontFamily: 'Inter_400Regular', fontSize: 10, color: colors.textSecondary },
+    hmLegendText: { fontFamily: 'Inter_400Regular', fontSize: 10, color: colors.text },
     hmLegendCell: { width: 11, height: 11, borderRadius: 3 },
 
     // ── Redesign: flat badge tile ─────────────────────────────────
@@ -653,6 +654,7 @@ const ProgressScreen = ({ navigation }) => {
   // Flat badge tile (replaces glossy 3D BadgeIcon to match the soft design)
   const renderBadgeItem = (badge, progressMeta) => {
     const meta = BADGE_MAP[badge.id] || { icon: 'trophy', colors: ['#C89B3C', '#8C701B'] };
+    const image = BADGE_IMAGES[badge.id];
     const accent = meta.colors[0];
     const earned = badge.earned;
     const iconBg = earned ? `${accent}1F` : (isDark ? 'rgba(255,255,255,0.06)' : '#ECE6DA');
@@ -665,8 +667,19 @@ const ProgressScreen = ({ navigation }) => {
         style={styles.flatBadge}
       >
         <View style={styles.flatBadgeRow}>
-          <View style={[styles.flatBadgeIcon, { backgroundColor: iconBg }]}>
-            <Ionicons name={earned ? meta.icon : 'lock-closed'} size={20} color={earned ? accent : colors.textSecondary} />
+          <View style={[styles.flatBadgeIcon, { backgroundColor: iconBg, overflow: 'hidden' }]}>
+            {image ? (
+              <>
+                <Image source={image} resizeMode="cover" style={{ width: '100%', height: '100%', opacity: earned ? 1 : 0.32 }} />
+                {!earned && (
+                  <View pointerEvents="none" style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: isDark ? 'rgba(0,0,0,0.28)' : 'rgba(255,255,255,0.35)' }}>
+                    <Ionicons name="lock-closed" size={16} color={isDark ? '#D8D8D8' : '#8A8A8A'} />
+                  </View>
+                )}
+              </>
+            ) : (
+              <Ionicons name={earned ? meta.icon : 'lock-closed'} size={20} color={earned ? accent : colors.textSecondary} />
+            )}
           </View>
           <View style={{ flex: 1, minWidth: 0 }}>
             <Text numberOfLines={1} style={styles.flatBadgeTitle}>{t(badge.titleKey, lang) || badge.titleKey}</Text>
@@ -738,7 +751,7 @@ const ProgressScreen = ({ navigation }) => {
           <View style={styles.statCard}>
             <Text style={styles.statCardNum}>
               {earnedBadgesList.length}
-              <Text style={{ fontSize: 12, color: colors.textSecondary }}>{`/${totalBadges}`}</Text>
+              <Text style={{ fontSize: 12, color: colors.text }}>{`/${totalBadges}`}</Text>
             </Text>
             <Text style={styles.statCardLabel}>{t('statEarned', lang)}</Text>
           </View>
@@ -956,6 +969,16 @@ const ProgressScreen = ({ navigation }) => {
               <View style={styles.badgeContainer}>
                 {lockedBadges.map(b => renderBadgeItem(b, badgeProgressMeta[b.id] || null))}
               </View>
+              <TouchableOpacity
+                style={styles.seeAllBtn}
+                activeOpacity={0.8}
+                onPress={() => setShowAllBadges(false)}
+                accessibilityRole="button"
+              >
+                <Text style={styles.seeAllText}>
+                  {lang === 'tr' ? 'Kilitli rozetleri kapat' : 'Hide locked badges'}
+                </Text>
+              </TouchableOpacity>
             </>
           ) : (
             <TouchableOpacity

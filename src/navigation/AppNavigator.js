@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Platform, Modal, View, Text, Pressable, TouchableOpacity, StyleSheet, Animated, Easing } from 'react-native';
+import { Platform, Modal, View, Text, Pressable, TouchableOpacity, StyleSheet, Animated, Easing, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Haptics from 'expo-haptics';
-import { Audio } from 'expo-av';
+import { createAudioPlayer, setAudioModeAsync } from 'expo-audio';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -13,7 +13,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
-import BadgeIcon, { BADGE_MAP } from '../components/BadgeIcon';
+import BadgeIcon, { BADGE_MAP, BADGE_IMAGES } from '../components/BadgeIcon';
 import BadgeShareSheet from '../components/BadgeShareSheet';
 
 import OnboardingScreen from '../screens/OnboardingScreen';
@@ -25,6 +25,7 @@ import LibraryScreen from '../screens/LibraryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SearchScreen from '../screens/SearchScreen';
 import UseInConversationScreen from '../screens/UseInConversationScreen';
+import InviteFriendsScreen from '../screens/InviteFriendsScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -179,7 +180,7 @@ function TabBarIcon({ focused, color, name, badge }) {
           width: 58,
           height: 32,
           borderRadius: 16,
-          backgroundColor: isDark ? `${colors.primary}26` : `${colors.primary}22`,
+          backgroundColor: isDark ? `${colors.primary}26` : `${colors.activeNav}1A`,
           opacity: anim,
           transform: [{ scale: pillScale }],
         }}
@@ -209,8 +210,8 @@ function MainTabs() {
           paddingTop: 8,
           marginBottom: Platform.OS === 'android' ? 4 : 0,
         },
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: isDark ? '#9A9AA2' : '#8A7E6B',
+        tabBarActiveTintColor: isDark ? colors.primary : colors.activeNav,
+        tabBarInactiveTintColor: isDark ? '#9A9AA2' : colors.textSecondary,
         tabBarLabelStyle: {
           fontFamily: 'Inter_500Medium',
           fontSize: 11.5,
@@ -296,7 +297,8 @@ export default function AppNavigator() {
   useEffect(() => {
     return () => {
       if (soundRef.current) {
-        soundRef.current.unloadAsync().catch(() => {});
+        soundRef.current.remove();
+        soundRef.current = null;
       }
     };
   }, []);
@@ -310,29 +312,27 @@ export default function AppNavigator() {
       }
 
       try {
-        await Audio.setAudioModeAsync({
-          playsInSilentModeIOS: true,
-          staysActiveInBackground: false,
+        await setAudioModeAsync({
+          playsInSilentMode: true,
+          shouldPlayInBackground: false,
         });
 
         if (soundRef.current) {
-          await soundRef.current.unloadAsync();
+          soundRef.current.remove();
           soundRef.current = null;
         }
 
-        const { sound } = await Audio.Sound.createAsync(
-          BADGE_SOUND_ASSET,
-          { shouldPlay: true, volume: 0.35 }
-        );
-
+        const sound = createAudioPlayer(BADGE_SOUND_ASSET);
+        sound.volume = 0.35;
         soundRef.current = sound;
-        sound.setOnPlaybackStatusUpdate((status) => {
+        sound.addListener('playbackStatusUpdate', (status) => {
           if (!status.isLoaded) return;
           if (status.didJustFinish) {
-            sound.unloadAsync().catch(() => {});
+            sound.remove();
             if (soundRef.current === sound) soundRef.current = null;
           }
         });
+        sound.play();
       } catch (error) {
         console.warn('Badge sound playback failed:', error);
       }
@@ -539,6 +539,7 @@ export default function AppNavigator() {
               <Stack.Screen name="StoryDetail" component={StoryDetailScreen} />
               <Stack.Screen name="UseInConversation" component={UseInConversationScreen} />
               <Stack.Screen name="Search" component={SearchScreen} />
+              <Stack.Screen name="InviteFriends" component={InviteFriendsScreen} />
               <Stack.Screen 
                 name="Paywall" 
                 component={PaywallScreen} 
@@ -600,13 +601,28 @@ export default function AppNavigator() {
               <Animated.View style={[{ marginBottom: 16 }, { transform: [{ scale: iconAnim }] }]}>
                 <View style={[
                   styles.modalBadgeIcon,
-                  { backgroundColor: activeBadgeModal.earned ? `${modalMeta.colors[0]}1F` : colors.backgroundDark },
+                  { backgroundColor: activeBadgeModal.earned ? `${modalMeta.colors[0]}1F` : colors.backgroundDark, overflow: 'hidden' },
                 ]}>
-                  <Ionicons
-                    name={activeBadgeModal.earned ? modalMeta.icon : 'lock-closed'}
-                    size={38}
-                    color={activeBadgeModal.earned ? modalMeta.colors[0] : colors.textSecondary}
-                  />
+                  {BADGE_IMAGES[activeBadgeModal.id] ? (
+                    <>
+                      <Image
+                        source={BADGE_IMAGES[activeBadgeModal.id]}
+                        resizeMode="cover"
+                        style={{ width: '100%', height: '100%', opacity: activeBadgeModal.earned ? 1 : 0.32 }}
+                      />
+                      {!activeBadgeModal.earned && (
+                        <View pointerEvents="none" style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: isDark ? 'rgba(0,0,0,0.28)' : 'rgba(255,255,255,0.35)' }}>
+                          <Ionicons name="lock-closed" size={30} color={isDark ? '#D8D8D8' : '#8A8A8A'} />
+                        </View>
+                      )}
+                    </>
+                  ) : (
+                    <Ionicons
+                      name={activeBadgeModal.earned ? modalMeta.icon : 'lock-closed'}
+                      size={38}
+                      color={activeBadgeModal.earned ? modalMeta.colors[0] : colors.textSecondary}
+                    />
+                  )}
                 </View>
               </Animated.View>
               <Text style={styles.modalTitle}>{t(activeBadgeModal.titleKey, lang) || activeBadgeModal.titleKey}</Text>

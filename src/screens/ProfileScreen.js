@@ -263,7 +263,7 @@ const ProfileScreen = ({ navigation }) => {
 
     // ── Settings card ────────────────────────────────────────────────────
     card: {
-      backgroundColor: isDark ? colors.cardBackground : '#FFFFFF',
+      backgroundColor: colors.surfaceContainerLowest,
       borderRadius: 18,
       borderWidth: 1, borderColor: colors.border,
       overflow: 'hidden',
@@ -304,7 +304,7 @@ const ProfileScreen = ({ navigation }) => {
 
     // ── Destructive ──────────────────────────────────────────────────────
     dangerCard: {
-      backgroundColor: isDark ? colors.cardBackground : '#FFFFFF',
+      backgroundColor: colors.surfaceContainerLowest,
       borderRadius: 18, borderWidth: 1, borderColor: colors.border,
       overflow: 'hidden', marginTop: 8,
     },
@@ -421,9 +421,6 @@ const ProfileScreen = ({ navigation }) => {
                   active={selectedCategories.includes(cat)}
                   isDark={isDark}
                   compact
-                  activeColor={colors.primary}
-                  activeTextColor={colors.onPrimary}
-                  showIcon={false}
                   onPress={() => toggleSelectedCategory(cat)}
                 />
               );
@@ -439,8 +436,22 @@ const ProfileScreen = ({ navigation }) => {
 
           <View style={s.card}>
 
+            {/* Arkadaşını Davet Et */}
+            <TouchableOpacity style={s.row} onPress={() => navigation.navigate('InviteFriends')}>
+              <View style={rowIconStyle('purple')}>
+                <Ionicons name="gift-outline" size={18} color={iconColor.purple} />
+              </View>
+              <View style={s.rowContent}>
+                <Text style={s.rowTitle}>{t('invite_friends', lang, { defaultValue: 'Arkadaşını Davet Et' })}</Text>
+                <Text style={s.rowSub}>{t('invite_friends_sub', lang, { defaultValue: '1 Hafta Premium Kazan' })}</Text>
+              </View>
+              <View style={s.rowRight}>
+                <Ionicons name="chevron-forward" size={16} color={colors.textSecondary} />
+              </View>
+            </TouchableOpacity>
+
             {/* Okuma planı */}
-            <View>
+            <View style={s.rowDivider}>
               <View style={s.row}>
                 <View style={rowIconStyle('gold')}>
                   <Ionicons name="book-outline" size={18} color={iconColor.gold} />

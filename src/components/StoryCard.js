@@ -9,8 +9,15 @@ import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 const { width } = Dimensions.get('window');
 
 export const getCatIcon = (catName) => {
-  if (catName === 'Tümü' || catName === 'All') return 'grid-outline';
-  switch (catName) {
+  // Defensive: strip stray leading/trailing emoji/symbols so dirty source
+  // data (e.g. "📈 Growth") still matches below instead of falling through
+  // to the generic default icon.
+  const cleanName = String(catName || '')
+    .replace(/^[^\p{L}\p{N}]+/u, '')
+    .replace(/[^\p{L}\p{N}]+$/u, '')
+    .trim();
+  if (cleanName === 'Tümü' || cleanName === 'All') return 'grid-outline';
+  switch (cleanName) {
     case 'Finans': case 'Finance': return 'wallet-outline';
     case 'Psikoloji': case 'Psychology': return 'heart-outline';
     case 'Tarih': case 'History': return 'hourglass-outline';
@@ -169,7 +176,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: isVerySmallPhone ? 16 : 18,
       lineHeight: isVerySmallPhone ? 22 : 24,
-      color: isDark ? '#F6EDE1' : '#3E2F24',
+      color: isDark ? '#F6EDE1' : colors.text,
       marginBottom: 6,
     },
     readyMeta: {
@@ -247,7 +254,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     cardTitle: {
       fontFamily: 'PlayfairDisplay_600SemiBold',
       fontSize: 20,
-      color: '#4A3A2C',
+      color: colors.text,
       lineHeight: 26,
     },
     cardTitleHero: {
