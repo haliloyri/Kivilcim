@@ -3,7 +3,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { 
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  StatusBar, Platform, Dimensions, Animated, Modal, TextInput, Image, ImageBackground, useWindowDimensions, FlatList
+  StatusBar, Platform, Animated, Modal, TextInput, Image, ImageBackground, useWindowDimensions, FlatList, ActivityIndicator
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
@@ -32,16 +32,73 @@ const MODULE_TYPES = {
   FALLBACK: 'fallback',
 };
 
-const SkeletonCard = ({ colors, layout, isHero }) => (
-  <View style={{
-    width: isHero ? '100%' : (Dimensions.get('window').width - (layout.padding.horizontal * 2) - 12) / 2,
-    height: isHero ? 200 : 160,
-    backgroundColor: colors.backgroundDark,
-    borderRadius: 12,
-    marginBottom: 16,
-    opacity: 0.5
-  }} />
-);
+const HomeLoadingState = ({ colors, layout, isDark }) => {
+  const cardBg = isDark ? colors.cardBackground : colors.surfaceContainerLowest;
+  const lineBg = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)';
+  const softLineBg = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.045)';
+
+  return (
+    <View style={{
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 18,
+      marginBottom: 14,
+      padding: 18,
+      borderRadius: layout.radius.card,
+      backgroundColor: cardBg,
+      borderWidth: 1,
+      borderColor: colors.border,
+      minHeight: 260,
+      justifyContent: 'space-between',
+    }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+        <View style={{
+          width: 48,
+          height: 48,
+          borderRadius: 24,
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)',
+        }}>
+          <ActivityIndicator size="small" color={colors.primary} />
+        </View>
+        <View style={{ flex: 1, gap: 8 }}>
+          <View style={{ width: '62%', height: 14, borderRadius: 999, backgroundColor: lineBg }} />
+          <View style={{ width: '82%', height: 10, borderRadius: 999, backgroundColor: softLineBg }} />
+        </View>
+      </View>
+
+      <View style={{ gap: 12 }}>
+        <View style={{ height: 96, borderRadius: 16, backgroundColor: lineBg }} />
+        <View style={{ flexDirection: 'row', gap: 12 }}>
+          <View style={{ flex: 1, height: 82, borderRadius: 14, backgroundColor: softLineBg }} />
+          <View style={{ flex: 1, height: 82, borderRadius: 14, backgroundColor: softLineBg }} />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const normalizeSearchValue = (value = '') =>
+  String(value || '').toLocaleLowerCase('tr-TR').trim();
+
+const storyMatchesSearch = (story, query) => {
+  const normalizedQuery = normalizeSearchValue(query);
+  if (!normalizedQuery) return true;
+
+  const searchable = [
+    story?.title,
+    story?.body,
+    story?.quote,
+    story?.lesson,
+    story?.source_book,
+    story?.cat,
+    story?.cat_display,
+    story?.parent_cat,
+    story?.parent_cat_raw,
+  ].map(normalizeSearchValue).join(' ');
+
+  return searchable.includes(normalizedQuery);
+};
 
 const toPascalCase = (value = '') => {
   const normalized = String(value || '').trim();
@@ -91,6 +148,42 @@ const getBadgeColors = (badgeId, isDark) => {
     };
   }
   return { start: base.start, end: base.end, text: '#FFFFFF' };
+};
+
+// Relative luminance (WCAG) for a hex colour — used to pick which gradient
+// stop a card's on-fill text colour should be derived from. Same formula the
+// primary action card uses for its own contrast derivation.
+const relLum = (hex) => {
+  if (typeof hex !== 'string' || hex[0] !== '#') return 1;
+  let h = hex.slice(1);
+  if (h.length === 3) h = h.split('').map((c) => c + c).join('');
+  if (h.length !== 6) return 1;
+  const ch = (s) => {
+    const v = parseInt(s, 16) / 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  };
+  return 0.2126 * ch(h.slice(0, 2)) + 0.7152 * ch(h.slice(2, 4)) + 0.0722 * ch(h.slice(4, 6));
+};
+
+// Per-card text-contrast derivation for the badge carousel (and its "See all"
+// card). Never hardcode white/black text on a filled gold or accent surface —
+// always derive it from the fill via readableTextOn(), same rule the single
+// badge card used to apply once for the whole card, now computed per card.
+const getBadgeCardTextColors = (startColor, endColor, useBannerImage, accentColor) => {
+  const fillRef = relLum(startColor) >= relLum(endColor) ? startColor : endColor;
+  const onFill = readableTextOn(fillRef);
+  const isDarkText = onFill === '#1A1A1A';
+  const onFillSoft = isDarkText ? 'rgba(26,26,26,0.72)' : 'rgba(255,255,255,0.85)';
+  const onFillFaint = isDarkText ? 'rgba(26,26,26,0.6)' : 'rgba(255,255,255,0.8)';
+
+  return {
+    isDarkText,
+    titleColor: useBannerImage ? '#2E2A22' : onFill,
+    eyebrowColor: useBannerImage ? accentColor : onFillSoft,
+    subColor: useBannerImage ? '#5A5246' : onFillSoft,
+    progressColor: useBannerImage ? accentColor : onFillFaint,
+    progressTrackBg: useBannerImage ? 'rgba(0,0,0,0.08)' : (isDarkText ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.2)'),
+  };
 };
 
 /** Circular daily progress ring shown in the home header */
@@ -145,11 +238,12 @@ const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) 
 
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
-  const { isPremium, isOnboarded, history, earnedBadges, totalReads, todayReadsCount, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted } = useUserData();
+  const { isPremium, isOnboarded, history, earnedBadges, totalReads, todayReadsCount, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted, openBadgeModal } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const insets = useSafeAreaInsets();
   const { width: viewportWidth } = useWindowDimensions();
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
   const [visibleCount, setVisibleCount] = useState(11);
   const [isFetchingMore, setIsFetchingMore] = useState(false);
@@ -180,6 +274,11 @@ const HomeScreen = ({ navigation }) => {
   const featuredCardColumns = isTablet ? 3.1 : isSmallPhone ? 2.05 : 2.25;
   const featuredCardGap = 12;
   const featuredCardWidth = (screenWidth - (layout.padding.horizontal * 2) - featuredCardGap) / featuredCardColumns;
+  // Badge carousel: card is ~88% of screen width so the next card's edge
+  // peeks in; height is fixed so swiping never jumps the vertical ScrollView.
+  const badgeCardGap = 12;
+  const badgeCardWidth = Math.round(screenWidth * 0.88);
+  const badgeCardHeight = 200;
 
   useEffect(() => {
     if (isFetchingMore) {
@@ -318,18 +417,30 @@ const HomeScreen = ({ navigation }) => {
     };
   }, [earnedBadges, totalReads, streak, longestStreak, categoryStats, shareCount, favorites.length]);
 
-  const progressSegments = 7;
-  const activeSegments = Math.max(1, Math.round(badgeProgressInfo.completionRatio * progressSegments));
-  const completionLine = t('home_badge_completion_line', lang)
-    .replace('{{earned}}', String(badgeProgressInfo.earned))
-    .replace('{{total}}', String(badgeProgressInfo.total));
-  const badgeCarouselItems = badgeProgressInfo.nextCandidates.length > 0
-    ? badgeProgressInfo.nextCandidates
-    : [null]; // null = "all completed" card
-  const nextBadgeCandidate = badgeProgressInfo.nextCandidates[0] || null;
-  const badgeLeadLine = nextBadgeCandidate
-    ? t('home_badge_next_close', lang).replace('{{badge}}', t(nextBadgeCandidate.titleKey, lang))
-    : t('home_badge_all_completed', lang);
+  // Badge carousel data: first 3 next-closest candidates + a trailing
+  // "See all" card (max 4 cards total).
+  const badgeCarouselItems = React.useMemo(() => {
+    const items = badgeProgressInfo.nextCandidates.slice(0, 3).map((badge) => ({
+      type: 'badge',
+      key: `badge-${badge.id}`,
+      badge,
+    }));
+    items.push({ type: 'seeAll', key: 'badge-see-all' });
+    return items;
+  }, [badgeProgressInfo.nextCandidates]);
+
+  // Tracks the active dot live while dragging (not just once momentum ends)
+  // so the indicator keeps up with the swipe instead of lagging until the
+  // card settles. scrollEventThrottle={16} (~60fps) makes onScroll cheap
+  // enough to drive this; the functional setState form compares against the
+  // latest committed index so a frame that lands on the same card is a no-op
+  // (no redundant re-render every frame).
+  const handleBadgeScroll = ({ nativeEvent }) => {
+    const offsetX = nativeEvent?.contentOffset?.x || 0;
+    const index = Math.round(offsetX / (badgeCardWidth + badgeCardGap));
+    const clampedIndex = Math.max(0, Math.min(index, badgeCarouselItems.length - 1));
+    setBadgeCardIndex((prev) => (prev === clampedIndex ? prev : clampedIndex));
+  };
 
   const handleLoadMore = (nativeEvent) => {
     const paddingToBottom = 200;
@@ -478,14 +589,18 @@ const HomeScreen = ({ navigation }) => {
   }
 
   // 3. UI Filter: Ekranda tıklanan ebeveyn kategoriye göre filtreleme
-  const categoryFiltered = activeFilter === 'all'
+  const isSearchActive = searchQuery.trim().length > 0;
+  const categoryFiltered = isSearchActive || activeFilter === 'all'
     ? prefFiltered
     : prefFiltered.filter((s) => Number(s.parent_cat_id) === Number(activeFilter));
+  const searchFiltered = isSearchActive
+    ? categoryFiltered.filter((story) => storyMatchesSearch(story, searchQuery))
+    : categoryFiltered;
 
   const storiesReadToday = new Set((history || []).slice(0, Math.max(0, todayReadsCount || 0)).map(String));
 
   // 3. Sıralama
-  const sortedStories = [...categoryFiltered].sort((a, b) => {
+  const sortedStories = [...searchFiltered].sort((a, b) => {
     const aReadToday = storiesReadToday.has(String(a.story_id));
     const bReadToday = storiesReadToday.has(String(b.story_id));
 
@@ -591,9 +706,11 @@ const HomeScreen = ({ navigation }) => {
   const doneCount = Math.min(todayReadsCount || 0, personalizedTarget);
   const historySet = React.useMemo(() => new Set((history || []).map(id => String(id))), [history]);
 
-  const remainingStories = sortedStories.filter((story) => 
-    !personalizedStoryIds.has(story.story_id) && !historySet.has(String(story.story_id))
-  );
+  const remainingStories = isSearchActive
+    ? sortedStories
+    : sortedStories.filter((story) =>
+      !personalizedStoryIds.has(story.story_id) && !historySet.has(String(story.story_id))
+    );
 
   const firstSessionFocusCategories = React.useMemo(() => {
     const preferred = (selectedCategories || []).filter(Boolean);
@@ -1102,6 +1219,57 @@ const HomeScreen = ({ navigation }) => {
     },
     headerLeftSpacer: {
       width: 8,
+    },
+    searchWrap: {
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 8,
+      marginBottom: 4,
+      minHeight: 46,
+      borderRadius: 18,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surfaceContainerLowest,
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingLeft: 14,
+      paddingRight: 6,
+    },
+    searchInput: {
+      flex: 1,
+      minHeight: 46,
+      paddingHorizontal: 10,
+      fontFamily: 'Inter_400Regular',
+      fontSize: 15,
+      color: colors.text,
+    },
+    searchClearBtn: {
+      width: 34,
+      height: 34,
+      borderRadius: 17,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    searchResultLine: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 6,
+      marginBottom: 4,
+    },
+    searchEmptyButton: {
+      marginTop: 16,
+      minHeight: 44,
+      borderRadius: 12,
+      paddingHorizontal: 16,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.primary,
+    },
+    searchEmptyButtonText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.onPrimary,
     },
     streakCard: { 
       flexDirection: 'row', 
@@ -1659,6 +1827,51 @@ const HomeScreen = ({ navigation }) => {
       fontSize: 14,
       color: colors.primary,
     },
+    badgeCarouselWrap: {
+      marginTop: 12,
+      marginBottom: 20,
+    },
+    badgeCarouselCard: {
+      width: badgeCardWidth,
+      height: badgeCardHeight,
+      borderRadius: layout.radius.card,
+      overflow: 'hidden',
+      marginRight: badgeCardGap,
+      shadowColor: colors.primary,
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.15,
+      shadowRadius: 16,
+      elevation: 6,
+    },
+    badgeCarouselCardFill: {
+      flex: 1,
+      padding: 20,
+    },
+    badgeCarouselSeeAllFill: {
+      flex: 1,
+      padding: 20,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    badgeSeeAllIconWrap: {
+      width: 48,
+      height: 48,
+      borderRadius: 24,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: 12,
+    },
+    badgeCarouselDotsRow: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: 6,
+      marginTop: 12,
+    },
+    badgeCarouselDot: {
+      height: 6,
+      borderRadius: 3,
+    },
     dailyPanelCard: {
       marginBottom: 20,
       borderRadius: layout.radius.card,
@@ -1742,33 +1955,68 @@ const HomeScreen = ({ navigation }) => {
           )}
         </View>
 
-        {/* Category Pills */}
-        <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
-          {categoriesLabel}
-        </Text>
-        <FlatList
-          ref={categoryScrollRef}
-          horizontal
-          scrollEnabled
-          data={visibleCategoriesList}
-          renderItem={({ item }) => (
-            <CategoryPill
-              label={item.label}
-              categoryName={item.rawName || item.label}
-              active={item.key === activeFilter}
-              vertical
-              isDark={isDark}
-              onPress={() => setActiveFilter(item.key)}
-            />
+        <View style={styles.searchWrap}>
+          <Ionicons name="search" size={18} color={colors.textSecondary} />
+          <TextInput
+            style={styles.searchInput}
+            placeholder={t('searchPlaceholder', lang)}
+            placeholderTextColor={colors.textSecondary}
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            returnKeyType="search"
+            accessibilityLabel={t('searchInputAccessibility', lang)}
+          />
+          {searchQuery.trim().length > 0 && (
+            <TouchableOpacity
+              style={styles.searchClearBtn}
+              onPress={() => setSearchQuery('')}
+              accessibilityRole="button"
+              accessibilityLabel={t('searchClearAccessibility', lang)}
+            >
+              <Ionicons name="close-circle" size={20} color={colors.textSecondary} />
+            </TouchableOpacity>
           )}
-          keyExtractor={(item) => String(item.key)}
-          contentContainerStyle={{ gap: 8, paddingHorizontal: layout.padding.horizontal }}
-          showsHorizontalScrollIndicator={false}
-          style={{ marginTop: 12, marginBottom: 4 }}
-          scrollToOverflowEnabled={true}
-        />
+        </View>
 
-        {!loading && sortedStories.length > 0 && (() => {
+        {!loading && isSearchActive && (
+          <Text style={styles.searchResultLine}>
+            {`${sortedStories.length} ${t('foundStories', lang)}`}
+          </Text>
+        )}
+
+        {loading && <HomeLoadingState colors={colors} layout={layout} isDark={isDark} />}
+
+        {/* Category Pills */}
+        {!loading && !isSearchActive && (
+          <>
+            <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
+              {categoriesLabel}
+            </Text>
+            <FlatList
+              ref={categoryScrollRef}
+              horizontal
+              scrollEnabled
+              data={visibleCategoriesList}
+              renderItem={({ item }) => (
+                <CategoryPill
+                  label={item.label}
+                  categoryName={item.rawName || item.label}
+                  active={item.key === activeFilter}
+                  vertical
+                  isDark={isDark}
+                  onPress={() => setActiveFilter(item.key)}
+                />
+              )}
+              keyExtractor={(item) => String(item.key)}
+              contentContainerStyle={{ gap: 8, paddingHorizontal: layout.padding.horizontal }}
+              showsHorizontalScrollIndicator={false}
+              style={{ marginTop: 12, marginBottom: 4 }}
+              scrollToOverflowEnabled={true}
+            />
+          </>
+        )}
+
+        {!loading && !isSearchActive && sortedStories.length > 0 && !primaryHomeAction.isBadgeCard && (() => {
           // Banner takes the active category colour (B2). On "All" it keeps the
           // brand gold; on a category it shifts from a lighter tone (top-left)
           // to the accent (bottom-right) for soft depth.
@@ -1888,8 +2136,151 @@ const HomeScreen = ({ navigation }) => {
           );
         })()}
 
+        {/* Badge journey carousel — replaces the single primary card once the
+            daily goal is complete. Peek carousel: each card is ~88% of the
+            screen width so the next card's edge shows, inviting a swipe. */}
+        {!loading && !isSearchActive && sortedStories.length > 0 && primaryHomeAction.isBadgeCard && (() => {
+          const safeBadgeIndex = Math.min(badgeCardIndex, badgeCarouselItems.length - 1);
+          return (
+          <View style={styles.badgeCarouselWrap}>
+            <ScrollView
+              ref={badgeScrollRef}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              snapToInterval={badgeCardWidth + badgeCardGap}
+              decelerationRate="fast"
+              onScroll={handleBadgeScroll}
+              scrollEventThrottle={16}
+              contentContainerStyle={{ paddingHorizontal: layout.padding.horizontal }}
+            >
+              {badgeCarouselItems.map((item, index) => {
+                const isLast = index === badgeCarouselItems.length - 1;
+                const cardStyle = [styles.badgeCarouselCard, isLast && { marginRight: 0 }];
+
+                if (item.type === 'seeAll') {
+                  const seeAllStart = colors.ctaGradientStart || colors.primary;
+                  const seeAllEnd = colors.ctaGradientEnd || colors.primaryContainer;
+                  const seeAllTextColors = getBadgeCardTextColors(seeAllStart, seeAllEnd, false, seeAllEnd);
+                  const seeAllIconBg = seeAllTextColors.isDarkText ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.25)';
+                  return (
+                    <TouchableOpacity
+                      key={item.key}
+                      style={cardStyle}
+                      activeOpacity={0.86}
+                      onPress={() => navigation.navigate('ProgressTab')}
+                      accessibilityRole="button"
+                      accessibilityLabel={t('home_badge_see_all_title', lang)}
+                    >
+                      <LinearGradient
+                        colors={[seeAllStart, seeAllEnd]}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        style={styles.badgeCarouselSeeAllFill}
+                      >
+                        <View style={[styles.badgeSeeAllIconWrap, { backgroundColor: seeAllIconBg }]}>
+                          <Ionicons name="arrow-forward" size={24} color={seeAllTextColors.titleColor} />
+                        </View>
+                        <Text style={[styles.primaryActionTitle, { color: seeAllTextColors.titleColor, fontSize: isSmallPhone ? 18 : 20, textAlign: 'center' }]}>
+                          {t('home_badge_see_all_title', lang)}
+                        </Text>
+                        <Text style={[styles.primaryActionSub, { color: seeAllTextColors.subColor, textAlign: 'center', marginBottom: 0 }]} numberOfLines={2}>
+                          {t('home_badge_see_all_sub', lang)}
+                        </Text>
+                      </LinearGradient>
+                    </TouchableOpacity>
+                  );
+                }
+
+                const { badge } = item;
+                const badgeCardColors = getBadgeColors(badge.id, isDark);
+                const badgeCardAccent = badgeCardColors.end || colors.primary;
+                const useBannerImageForCard = !isDark;
+                const badgeCardBannerSource = getBadgeBanner(badge.id).source;
+                const cardTextColors = getBadgeCardTextColors(badgeCardColors.start, badgeCardColors.end, useBannerImageForCard, badgeCardAccent);
+
+                const cardInner = (
+                  <>
+                    <View style={styles.primaryActionTop}>
+                      <View style={[styles.primaryActionTextWrap, { maxWidth: '50%' }]}>
+                        <Text style={[styles.primaryActionEyebrow, { color: cardTextColors.eyebrowColor }]}>{t('home_badge_journey_label', lang)}</Text>
+                        <Text style={[styles.primaryActionTitle, { color: cardTextColors.titleColor }]}>{t(badge.titleKey, lang)}</Text>
+                      </View>
+                    </View>
+                    <Text style={[styles.primaryActionSub, { color: cardTextColors.subColor, maxWidth: '50%' }]} numberOfLines={2}>
+                      {t(badge.descKey, lang)}
+                    </Text>
+                    <View style={[styles.primaryActionFooter, { alignItems: 'center', justifyContent: 'flex-start' }]}>
+                      <View style={{ width: '50%', marginRight: 6 }}>
+                        <View style={{ height: 6, backgroundColor: cardTextColors.progressTrackBg, borderRadius: 3, overflow: 'hidden' }}>
+                          <View style={{ width: `${badge.ratio * 100}%`, height: '100%', backgroundColor: cardTextColors.progressColor }} />
+                        </View>
+                      </View>
+                      <Text style={[styles.primaryActionProgress, { color: cardTextColors.progressColor }]}>
+                        {badge.current} / {badge.target}
+                      </Text>
+                    </View>
+                  </>
+                );
+
+                return (
+                  <TouchableOpacity
+                    key={item.key}
+                    style={cardStyle}
+                    activeOpacity={0.86}
+                    onPress={() => openBadgeModal(badge)}
+                    accessibilityRole="button"
+                    accessibilityLabel={t(badge.titleKey, lang)}
+                  >
+                    {useBannerImageForCard ? (
+                      <ImageBackground
+                        source={badgeCardBannerSource}
+                        resizeMode="cover"
+                        style={styles.badgeCarouselCardFill}
+                        imageStyle={{ borderRadius: layout.radius.card }}
+                      >
+                        {cardInner}
+                      </ImageBackground>
+                    ) : (
+                      <LinearGradient
+                        colors={[badgeCardColors.start, badgeCardColors.end]}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        style={styles.badgeCarouselCardFill}
+                      >
+                        {cardInner}
+                      </LinearGradient>
+                    )}
+                  </TouchableOpacity>
+                );
+              })}
+            </ScrollView>
+
+            {badgeCarouselItems.length > 1 && (
+              <View style={styles.badgeCarouselDotsRow}>
+                {badgeCarouselItems.map((item, idx) => {
+                  const isActive = idx === safeBadgeIndex;
+                  const activeColor = item.type === 'badge'
+                    ? (getBadgeColors(item.badge.id, isDark).end || colors.primary)
+                    : colors.primary;
+                  const inactiveColor = isDark ? 'rgba(255,255,255,0.24)' : 'rgba(0,0,0,0.16)';
+                  return (
+                    <View
+                      key={`dot-${item.key}`}
+                      style={[
+                        styles.badgeCarouselDot,
+                        { width: isActive ? 18 : 6, backgroundColor: isActive ? activeColor : inactiveColor },
+                      ]}
+                    />
+                  );
+                })}
+              </View>
+            )}
+          </View>
+          );
+        })()}
+
         {/* Featured Story Cards (Horizontal Scroll) */}
-        {!loading && sortedStories.length > 0 && (() => {
+        {!loading && !isSearchActive && sortedStories.length > 0 && (() => {
           const featuredHidden = allFeaturedRead && isFeaturedCollapsed;
           return (
             <>
@@ -1990,18 +2381,10 @@ const HomeScreen = ({ navigation }) => {
           );
         })()}
 
-        <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>{todayLabel}</Text>
+        {!loading && !isSearchActive && <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>{todayLabel}</Text>}
         
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
-          {loading ? (
-            <>
-              <SkeletonCard colors={colors} layout={layout} isHero />
-              <View style={styles.storyGrid}>
-                <SkeletonCard colors={colors} layout={layout} />
-                <SkeletonCard colors={colors} layout={layout} />
-              </View>
-            </>
-          ) : sortedStories.length === 0 ? (
+          {loading ? null : sortedStories.length === 0 ? (
             <View style={{ alignItems: 'center', paddingVertical: 48, paddingHorizontal: 24 }}>
               <Text style={{ fontSize: 48, marginBottom: 16 }}>✨</Text>
               <Text style={{
@@ -2011,7 +2394,7 @@ const HomeScreen = ({ navigation }) => {
                 textAlign: 'center',
                 marginBottom: 8,
               }}>
-                {t('noStoriesTitle', lang)}
+                {isSearchActive ? t('searchNoResultsTitle', lang) : t('noStoriesTitle', lang)}
               </Text>
               <Text style={{
                 fontFamily: 'Inter_400Regular',
@@ -2020,8 +2403,18 @@ const HomeScreen = ({ navigation }) => {
                 textAlign: 'center',
                 lineHeight: 22,
               }}>
-                {t('noStoriesBody', lang)}
+                {isSearchActive ? t('searchNoResultsSub', lang) : t('noStoriesBody', lang)}
               </Text>
+              {isSearchActive ? (
+                <TouchableOpacity
+                  style={styles.searchEmptyButton}
+                  onPress={() => setSearchQuery('')}
+                  accessibilityRole="button"
+                  accessibilityLabel={t('searchClearAccessibility', lang)}
+                >
+                  <Text style={styles.searchEmptyButtonText}>{t('searchClearAccessibility', lang)}</Text>
+                </TouchableOpacity>
+              ) : null}
             </View>
           ) : (
             <>
@@ -2174,7 +2567,7 @@ const HomeScreen = ({ navigation }) => {
                 );
               })()}
 
-              {(free.length > 0 || locked.length > 0 || teaserStory || weeklyBonusStory) ? (
+              {!isSearchActive && (free.length > 0 || locked.length > 0 || teaserStory || weeklyBonusStory) ? (
                 <Text style={styles.readyTitle}>{t('home_ready_section_title', lang)}</Text>
               ) : null}
 
@@ -2284,12 +2677,12 @@ const HomeScreen = ({ navigation }) => {
       >
         <View style={{
           flex: 1,
-          backgroundColor: colors.overlayDark,
+          backgroundColor: colors.modalOverlay,
           justifyContent: 'center',
           paddingHorizontal: layout.padding.horizontal,
         }}>
           <View style={{
-            backgroundColor: colors.background,
+            backgroundColor: colors.modalSurface,
             borderRadius: 16,
             borderWidth: 1,
             borderColor: colors.border,

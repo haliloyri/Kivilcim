@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   View, Text, Modal, Pressable, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator, Image,
 } from 'react-native';
@@ -68,7 +68,7 @@ const buildLines = (badge, name, lang) => {
 };
 
 // The shareable card. `tall` = story (9:16) — shows the quote; square hides it.
-const ShareCard = ({ badge, accent, theme, lang, name, quote, tall, inviteUrl }) => {
+const ShareCard = ({ badge, accent, theme, lang, name, quote, tall, shareLink }) => {
   const dark = theme === 'dark';
   const meta = BADGE_MAP[badge.id] || { icon: 'trophy', colors: ['#C89B3C', '#8C701B'] };
   const badgeImage = BADGE_IMAGES[badge.id];
@@ -130,8 +130,8 @@ const ShareCard = ({ badge, accent, theme, lang, name, quote, tall, inviteUrl })
 
       {/* Alt: uygulama erişim adresi */}
       <View style={{ height: 40, alignItems: 'center', justifyContent: 'center' }}>
-        {inviteUrl ? (
-          <Text style={[s.link, { color: dark ? '#8C8579' : authorC }]}>{inviteUrl}</Text>
+        {shareLink ? (
+          <Text style={[s.link, { color: dark ? '#8C8579' : authorC }]}>{shareLink}</Text>
         ) : null}
       </View>
     </View>
@@ -145,13 +145,6 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
   const [capFmt, setCapFmt] = useState('square');
   const [busy, setBusy] = useState(false);
   const captureRefView = useRef(null);
-
-  const [inviteUrl, setInviteUrl] = useState(SHARE_LINK);
-  useEffect(() => {
-    require('../services/supabase').getCurrentUser().then(u => {
-      if (u?.id) setInviteUrl(`https://kivilcim.app/invite/${u.id}`);
-    }).catch(() => {});
-  }, []);
 
   if (!badge) return null;
 
@@ -188,9 +181,9 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <View style={st.overlay}>
+      <View style={[st.overlay, { backgroundColor: colors.modalOverlay }]}>
         <Pressable style={StyleSheet.absoluteFill} onPress={onClose} />
-        <View style={[st.sheet, { backgroundColor: colors.background }]}>
+        <View style={[st.sheet, { backgroundColor: colors.modalSurface }]}>
           <View style={st.handle} />
           <View style={st.headerRow}>
             <Text style={[st.title, { color: colors.text }]}>{lang === 'tr' ? 'Rozetini paylaş' : 'Share your badge'}</Text>
@@ -202,7 +195,7 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
           <ScrollView showsVerticalScrollIndicator={false}>
             <View style={st.previewWrap}>
               <View style={{ width: capFmt === 'story' ? 226 : 268, height: capFmt === 'story' ? 402 : 335, borderRadius: 22, overflow: 'hidden' }}>
-                <ShareCard badge={badge} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} inviteUrl={inviteUrl} />
+                <ShareCard badge={badge} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} shareLink={SHARE_LINK} />
               </View>
             </View>
 
@@ -271,7 +264,7 @@ const s = StyleSheet.create({
 });
 
 const st = StyleSheet.create({
-  overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.45)', justifyContent: 'flex-end' },
+  overlay: { flex: 1, justifyContent: 'flex-end' },
   sheet: { borderTopLeftRadius: 24, borderTopRightRadius: 24, paddingHorizontal: 18, paddingTop: 10, paddingBottom: 28, maxHeight: '92%' },
   handle: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: 'rgba(128,128,128,0.35)', marginBottom: 10 },
   headerRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 },

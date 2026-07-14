@@ -420,7 +420,9 @@ const ProfileScreen = ({ navigation }) => {
                   categoryName={p.raw_name || p.name}
                   active={selectedCategories.includes(cat)}
                   isDark={isDark}
-                  vertical
+                  compact
+                  showIcon={false}
+                  useCategoryTextColor
                   onPress={() => toggleSelectedCategory(cat)}
                 />
               );
@@ -436,22 +438,8 @@ const ProfileScreen = ({ navigation }) => {
 
           <View style={s.card}>
 
-            {/* Arkadaşını Davet Et */}
-            <TouchableOpacity style={s.row} onPress={() => navigation.navigate('InviteFriends')}>
-              <View style={rowIconStyle('purple')}>
-                <Ionicons name="gift-outline" size={18} color={iconColor.purple} />
-              </View>
-              <View style={s.rowContent}>
-                <Text style={s.rowTitle}>{t('invite_friends', lang, { defaultValue: 'Arkadaşını Davet Et' })}</Text>
-                <Text style={s.rowSub}>{t('invite_friends_sub', lang, { defaultValue: '1 Hafta Premium Kazan' })}</Text>
-              </View>
-              <View style={s.rowRight}>
-                <Ionicons name="chevron-forward" size={16} color={colors.textSecondary} />
-              </View>
-            </TouchableOpacity>
-
             {/* Okuma planı */}
-            <View style={s.rowDivider}>
+            <View>
               <View style={s.row}>
                 <View style={rowIconStyle('gold')}>
                   <Ionicons name="book-outline" size={18} color={iconColor.gold} />
@@ -646,12 +634,12 @@ const ProfileScreen = ({ navigation }) => {
       >
         <View style={{
           flex: 1,
-          backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.24)',
+          backgroundColor: colors.modalOverlay,
           justifyContent: 'center',
           paddingHorizontal: layout.padding.horizontal,
         }}>
           <View style={{
-            backgroundColor: colors.background,
+            backgroundColor: colors.modalSurface,
             borderRadius: 16, borderWidth: 1, borderColor: colors.border,
             padding: 18, gap: 10,
           }}>

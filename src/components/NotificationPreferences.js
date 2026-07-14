@@ -26,7 +26,7 @@ const NotificationPreferences = ({
       </View>
 
       <Text style={[styles.subtitle, { color: colors.textSecondary }]}>
-        {t('reminderTimeHint', lang) || 'Select when you'd like to receive daily reminders:'}
+        {t('reminderTimeHint', lang) || "Select when you'd like to receive daily reminders:"}
       </Text>
 
       <View style={styles.optionsContainer}>

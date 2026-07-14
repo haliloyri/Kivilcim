@@ -30,7 +30,6 @@ const ProgressScreen = ({ navigation }) => {
   const dailyProgress = Math.min(todayReads, dailyTarget);
   const isDailyGoalComplete = dailyProgress >= dailyTarget;
   const todayKey = new Date().toISOString().split('T')[0];
-  const storiesLeftToday = Math.max(0, dailyTarget - dailyProgress);
   const isStreakAtRisk = streak > 0 && todayReads === 0;
   const isStreakProtectedToday = (streakFreezeDates || []).includes(todayKey);
 
@@ -187,46 +186,6 @@ const ProgressScreen = ({ navigation }) => {
 
   // Spotlight = top near badge
   const closestBadge = nearBadges[0] || null;
-
-  const nextBestAction = useMemo(() => {
-    if (!isDailyGoalComplete) {
-      return {
-        icon: 'book-outline',
-        title: storiesLeftToday === 1 ? t('progressNextDailyOneTitle', lang) : t('progressNextDailyManyTitle', lang).replace('{{count}}', String(storiesLeftToday)),
-        subtitle: t('progressNextDailySub', lang),
-        cta: t('progressActionOpenHome', lang),
-        action: () => navigation.navigate('HomeTab'),
-      };
-    }
-
-    if (isStreakProtectedToday) {
-      return {
-        icon: 'shield-checkmark-outline',
-        title: t('progressNextProtectedTitle', lang),
-        subtitle: t('progressNextProtectedSub', lang),
-        cta: t('progressActionTomorrowCta', lang),
-        action: null,
-      };
-    }
-
-    if (closestBadge) {
-      return {
-        icon: 'trophy-outline',
-        title: t('progressNextBadgeTitle', lang),
-        subtitle: t('progressNextBadgeSub', lang).replace('{{badge}}', t(closestBadge.titleKey, lang)),
-        cta: t('progressViewBadgeCta', lang),
-        action: () => openBadgeModal(closestBadge),
-      };
-    }
-
-    return {
-      icon: 'checkmark-circle-outline',
-      title: t('progressNextCompleteTitle', lang),
-      subtitle: t('progressNextCompleteSub', lang),
-      cta: t('progressActionTomorrowCta', lang),
-      action: null,
-    };
-  }, [closestBadge, isDailyGoalComplete, isStreakProtectedToday, lang, navigation, openBadgeModal, storiesLeftToday]);
 
   // Active reading days count for heatmap KPI
   const activeDaysCount = useMemo(() => heatmapDays.filter(d => d.level > 0).length, [heatmapDays]);
@@ -574,34 +533,6 @@ const ProgressScreen = ({ navigation }) => {
     badgeItemTitle: { fontFamily: 'PlayfairDisplay_600SemiBold', fontSize: 16, color: colors.text },
     badgeItemSub: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary },
 
-    // ── Redesign: focus card ──────────────────────────────────────
-    focusCard: {
-      flexDirection: 'row', alignItems: 'center', gap: 13,
-      marginHorizontal: layout.padding.horizontal,
-      backgroundColor: `${colors.primary}14`,
-      borderWidth: layout.borderWidth, borderColor: `${colors.primary}33`,
-      borderRadius: 20, padding: 16,
-    },
-    focusIcon: {
-      width: 50, height: 50, borderRadius: 16,
-      backgroundColor: colors.surfaceContainerLowest,
-      alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-    },
-    focusEyebrow: {
-      fontFamily: 'Inter_600SemiBold', fontSize: 11, letterSpacing: 0.8,
-      color: colors.primary, textTransform: 'uppercase',
-    },
-    focusTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold', fontSize: 19, color: colors.text, marginTop: 1,
-    },
-    focusSub: { fontFamily: 'Inter_400Regular', fontSize: 12.5, color: colors.textSecondary, marginTop: 2 },
-    focusTrack: {
-      height: 8, borderRadius: 999, backgroundColor: isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.07)',
-      overflow: 'hidden', marginTop: 10,
-    },
-    focusFill: { height: '100%', borderRadius: 999, backgroundColor: colors.primary },
-    focusPct: { fontFamily: 'Inter_600SemiBold', fontSize: 16, color: colors.primary, flexShrink: 0 },
-
     // ── Redesign: stat strip ──────────────────────────────────────
     statStrip: {
       flexDirection: 'row', gap: 8,
@@ -709,35 +640,6 @@ const ProgressScreen = ({ navigation }) => {
           <Text style={styles.greetName}>{t('tabProgress', lang)}</Text>
         </View>
 
-        {/* ── Focus card: the single "next step" (merges 3 old cards) ── */}
-        <TouchableOpacity
-          style={styles.focusCard}
-          activeOpacity={0.85}
-          onPress={nextBestAction.action || (closestBadge ? () => openBadgeModal(closestBadge) : undefined)}
-          disabled={!nextBestAction.action && !closestBadge}
-          accessibilityRole="button"
-          accessibilityLabel={nextBestAction.title}
-        >
-          <View style={styles.focusIcon}>
-            <Ionicons name={nextBestAction.icon} size={24} color={colors.primary} />
-          </View>
-          <View style={{ flex: 1, minWidth: 0 }}>
-            <Text style={styles.focusEyebrow}>{t('progressNextBestLabel', lang)}</Text>
-            <Text style={styles.focusTitle} numberOfLines={1}>{nextBestAction.title}</Text>
-            <Text style={styles.focusSub} numberOfLines={2}>{nextBestAction.subtitle}</Text>
-            {closestBadge && (
-              <View style={styles.focusTrack}>
-                <View style={[styles.focusFill, { width: `${Math.round(closestBadge.ratio * 100)}%` }]} />
-              </View>
-            )}
-          </View>
-          {closestBadge ? (
-            <Text style={styles.focusPct}>{`${Math.round(closestBadge.ratio * 100)}%`}</Text>
-          ) : nextBestAction.action ? (
-            <Ionicons name="chevron-forward" size={18} color={colors.primary} />
-          ) : null}
-        </TouchableOpacity>
-
         {/* ── Stat strip (one row, no duplicated streak/reads) ──────── */}
         <View style={styles.statStrip}>
           <View style={styles.statCard}>
@@ -767,7 +669,7 @@ const ProgressScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* legacy hidden block kept out — replaced by focus card + stat strip */}
+        {/* legacy hidden block kept out — current layout uses the stat strip and sections below */}
         {false && (
         <View style={styles.heroCard}>
           <View style={styles.heroTilesRow}>
@@ -1001,4 +903,3 @@ const ProgressScreen = ({ navigation }) => {
 };
 
 export default ProgressScreen;
-

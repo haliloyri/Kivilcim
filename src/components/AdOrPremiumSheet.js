@@ -150,10 +150,10 @@ const makeStyles = (colors) => StyleSheet.create({
   },
   backdrop: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.55)',
+    backgroundColor: colors.modalOverlay,
   },
   sheet: {
-    backgroundColor: colors.surfaceContainerLowest,
+    backgroundColor: colors.modalSurface,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     paddingHorizontal: 24,

@@ -149,36 +149,6 @@ function Main() {
     };
   }, []);
 
-  const { grantPromotionalPremium } = require('./src/context/UserDataContext').useUserData();
-
-  useEffect(() => {
-    const handleDeepLink = async (event) => {
-      if (!event.url) return;
-      const { path } = require('expo-linking').parse(event.url);
-      if (path && path.startsWith('invite/')) {
-        const inviterId = path.split('/')[1];
-        if (inviterId) {
-           const alreadyClaimed = await AsyncStorage.getItem('@kivilcim_invite_claimed');
-           if (!alreadyClaimed) {
-             await grantPromotionalPremium(7);
-             await AsyncStorage.setItem('@kivilcim_invite_claimed', 'true');
-             trackEvent('invite_link_claimed', { inviterId });
-             // Optionally show an alert or toast here
-           }
-        }
-      }
-    };
-
-    require('expo-linking').getInitialURL().then((url) => {
-      if (url) handleDeepLink({ url });
-    });
-
-    const subscription = require('expo-linking').addEventListener('url', handleDeepLink);
-    return () => {
-      subscription.remove();
-    };
-  }, [grantPromotionalPremium]);
-
   const [fontsLoaded] = useFonts({
     PlayfairDisplay_400Regular,
     PlayfairDisplay_600SemiBold,

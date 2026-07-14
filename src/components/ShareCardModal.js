@@ -186,13 +186,6 @@ const ShareCardModal = ({
     return `#${catHashtag} ${generalHashtags}`;
   };
 
-  const [inviteUrl, setInviteUrl] = useState(SHARE_LINK);
-  useEffect(() => {
-    require('../services/supabase').getCurrentUser().then(u => {
-      if (u?.id) setInviteUrl(`https://kivilcim.app/invite/${u.id}`);
-    }).catch(() => {});
-  }, []);
-
   const buildSharePayload = () => {
     const selectedTexts = shareContent
       .map(type => {
@@ -208,7 +201,7 @@ const ShareCardModal = ({
 
     const ctas = getCTAByLang();
     const hashtags = buildHashtags();
-    const linkStr = inviteUrl ? `\n🔗 ${inviteUrl}` : '';
+    const linkStr = SHARE_LINK ? `\n🔗 ${SHARE_LINK}` : '';
     const caption = `${displayTitle}\n\n${selectedTexts}\n\n${ctas[0]}${linkStr}\n${hashtags}`;
 
     const reelScript = `${displayTitle}\n\n` +
@@ -282,7 +275,7 @@ const ShareCardModal = ({
         const ref = carouselRefs.current[type];
         if (!ref) continue;
         const uri = await captureRef(ref, { format: 'png', quality: 1 });
-        await MediaLibrary.saveToLibraryAsync(uri);
+        await MediaLibrary.Asset.create(uri);
         saved += 1;
       }
       try {
@@ -575,11 +568,11 @@ const ShareCardModal = ({
 const makeStyles = ({ colors, isDark, layout, typography, insets }) => StyleSheet.create({
   modalOverlay: {
     flex: 1,
-    backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.28)',
+    backgroundColor: colors.modalOverlay,
     justifyContent: 'flex-end',
   },
   modalContent: {
-    backgroundColor: colors.background,
+    backgroundColor: colors.modalSurface,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     padding: 20,

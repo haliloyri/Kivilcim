@@ -217,16 +217,10 @@ export const UserDataProvider = ({ children }) => {
   const [userProfile, setUserProfile] = useState(EMPTY_USER_PROFILE);
   const [isOnboarded, setIsOnboarded] = useState(false);
   const [hasPaidPremium, setHasPaidPremium] = useState(false);
-  const [promotionalPremiumUntil, setPromotionalPremiumUntil] = useState(null);
 
   const isPremium = useMemo(() => {
-    if (hasPaidPremium) return true;
-    if (promotionalPremiumUntil) {
-      const untilDate = new Date(promotionalPremiumUntil);
-      if (new Date() < untilDate) return true;
-    }
-    return false;
-  }, [hasPaidPremium, promotionalPremiumUntil]);
+    return hasPaidPremium;
+  }, [hasPaidPremium]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Segment every analytics event by subscription + onboarding state so the
@@ -281,27 +275,38 @@ export const UserDataProvider = ({ children }) => {
 
   // Okuma istatistiklerini yükle — server-first (single get_user_stats RPC
   // round trip) with a local SQLite fallback when offline/unconfigured/erroring.
-  const refreshStats = useCallback(async () => {
-    try {
-      if (SUPABASE_LIVE) {
-        const user = await getCurrentUser();
-        if (user?.id) {
-          const serverStats = await getUserStatsFromServer();
-          if (serverStats) {
-            setTotalReads(serverStats.total_reads ?? 0);
-            setStreak(serverStats.streak ?? 0);
-            setLongestStreak(serverStats.longest_streak ?? 0);
-            setCategoryStats(serverStats.reads_per_category ?? {});
-            setReadCountsByStory(serverStats.read_counts_by_story ?? {});
-            setTodayReadsCount(serverStats.today_reads ?? 0);
-            const freezes = await getStreakFreezesFromServer(user.id);
-            setStreakFreezeDates(freezes.map((item) => item.day).filter(Boolean));
-            return;
+  //
+  // `preferLocal` skips the server round trip entirely and reads straight
+  // from SQLite. addToHistory() passes this right after recordRead() writes
+  // the just-completed read locally: recordRead() is awaited (so SQLite is
+  // already current), but the server write only happens via the async
+  // enqueueAndSync() queue, which hasn't reached Supabase yet. If we asked
+  // the server here, it would reply with the pre-read (stale) today_reads
+  // and stomp the local count we just earned. All other callers (initial
+  // mount, useStreakFreeze) keep the default server-first behavior.
+  const refreshStats = useCallback(async ({ preferLocal = false } = {}) => {
+    if (!preferLocal) {
+      try {
+        if (SUPABASE_LIVE) {
+          const user = await getCurrentUser();
+          if (user?.id) {
+            const serverStats = await getUserStatsFromServer();
+            if (serverStats) {
+              setTotalReads(serverStats.total_reads ?? 0);
+              setStreak(serverStats.streak ?? 0);
+              setLongestStreak(serverStats.longest_streak ?? 0);
+              setCategoryStats(serverStats.reads_per_category ?? {});
+              setReadCountsByStory(serverStats.read_counts_by_story ?? {});
+              setTodayReadsCount(serverStats.today_reads ?? 0);
+              const freezes = await getStreakFreezesFromServer(user.id);
+              setStreakFreezeDates(freezes.map((item) => item.day).filter(Boolean));
+              return;
+            }
           }
         }
+      } catch (error) {
+        console.warn('[server stats] falling back to local:', error?.message);
       }
-    } catch (error) {
-      console.warn('[server stats] falling back to local:', error?.message);
     }
 
     try {
@@ -350,7 +355,6 @@ export const UserDataProvider = ({ children }) => {
         const storedPreferences = await AsyncStorage.getItem('@kivilcim_preferences');
         const storedOnboarding = await AsyncStorage.getItem('@kivilcim_onboarded');
         const storedPremium = await AsyncStorage.getItem('@kivilcim_premium');
-        const storedPromoPremium = await AsyncStorage.getItem('@kivilcim_promotional_premium_until');
         const storedShareCount = await AsyncStorage.getItem('@kivilcim_share_count');
         const storedUserProfile = await AsyncStorage.getItem(USER_PROFILE_STORAGE_KEY);
         const storedCollections = await AsyncStorage.getItem(FAVORITE_COLLECTIONS_STORAGE_KEY);
@@ -371,7 +375,6 @@ export const UserDataProvider = ({ children }) => {
         }
         if (storedOnboarding) setIsOnboarded(JSON.parse(storedOnboarding));
         if (storedPremium) setHasPaidPremium(JSON.parse(storedPremium));
-        if (storedPromoPremium) setPromotionalPremiumUntil(JSON.parse(storedPromoPremium));
         if (storedStreakFreezeCredits) {
           setStreakFreezeCredits(Math.max(0, Number(JSON.parse(storedStreakFreezeCredits)) || 0));
         } else if (storedPremium && JSON.parse(storedPremium)) {
@@ -565,8 +568,14 @@ export const UserDataProvider = ({ children }) => {
         return newHist;
       });
 
-      // İstatistikleri güncelle
-      await refreshStats();
+      // İstatistikleri güncelle — recordRead() above already awaited the
+      // SQLite write, so read the fresh counts straight from local (SQLite
+      // COUNT is naturally dedup'd via the user_reads (user_id, story_id)
+      // PK + INSERT OR REPLACE, so a same-day re-read doesn't double count).
+      // Deliberately NOT server-first here: the server write is only queued
+      // (enqueueAndSync above), so an immediate server refresh would read
+      // back today's PRE-read count and clobber the local update we just made.
+      await refreshStats({ preferLocal: true });
     } catch (error) {
       console.error('Okuma geçmişi kaydetme hatası:', error);
     }
@@ -1049,21 +1058,6 @@ export const UserDataProvider = ({ children }) => {
     [earnedBadges, seenBadgeIds]
   );
 
-  const grantPromotionalPremium = useCallback(async (days = 7) => {
-    const untilDate = new Date();
-    untilDate.setDate(untilDate.getDate() + days);
-    const untilStr = untilDate.toISOString();
-    setPromotionalPremiumUntil(untilStr);
-    await AsyncStorage.setItem('@kivilcim_promotional_premium_until', JSON.stringify(untilStr));
-    
-    // Also grant a streak freeze credit
-    setStreakFreezeCredits((prev) => {
-      const next = prev + 1;
-      AsyncStorage.setItem('@kivilcim_streak_freeze_credits', JSON.stringify(next));
-      return next;
-    });
-  }, []);
-
   const useStreakFreeze = useCallback(async (dateStr = new Date().toISOString().split('T')[0]) => {
     if (!isPremium || streakFreezeCredits <= 0 || streakFreezeDates.includes(dateStr)) {
       return { success: false };
@@ -1133,7 +1127,6 @@ export const UserDataProvider = ({ children }) => {
     billingLive: BILLING_LIVE,
     updateUserProfile,
     incrementShareCount,
-    grantPromotionalPremium,
     recordVariantUsage,
     removeVariantUsage,
     variantUsage,
@@ -1143,7 +1136,7 @@ export const UserDataProvider = ({ children }) => {
     closeBadgeModal,
     releasePendingBadge,
     useStreakFreeze,
-  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, grantPromotionalPremium, recordVariantUsage, removeVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge, useStreakFreeze]);
+  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, removeVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge, useStreakFreeze]);
 
   return (
     <UserDataContext.Provider value={value}>

@@ -25,7 +25,6 @@ import LibraryScreen from '../screens/LibraryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SearchScreen from '../screens/SearchScreen';
 import UseInConversationScreen from '../screens/UseInConversationScreen';
-import InviteFriendsScreen from '../screens/InviteFriendsScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -411,13 +410,13 @@ export default function AppNavigator() {
   const styles = StyleSheet.create({
     modalOverlay: {
       flex: 1,
-      backgroundColor: 'rgba(0,0,0,0.5)',
+      backgroundColor: colors.modalOverlay,
       justifyContent: 'center',
       alignItems: 'center',
       padding: 24,
     },
     modalCard: {
-      backgroundColor: colors.background,
+      backgroundColor: colors.modalSurface,
       borderRadius: layout.radius.card,
       padding: 28,
       width: '100%',
@@ -539,7 +538,6 @@ export default function AppNavigator() {
               <Stack.Screen name="StoryDetail" component={StoryDetailScreen} />
               <Stack.Screen name="UseInConversation" component={UseInConversationScreen} />
               <Stack.Screen name="Search" component={SearchScreen} />
-              <Stack.Screen name="InviteFriends" component={InviteFriendsScreen} />
               <Stack.Screen 
                 name="Paywall" 
                 component={PaywallScreen} 

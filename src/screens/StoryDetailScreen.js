@@ -43,6 +43,12 @@ const SHARE_LINK =
   Constants.manifest?.extra?.shareLink ??
   '';
 
+// A story only counts toward the daily reading target once the reader has
+// actually scrolled through this much of it (or the whole thing fits on
+// screen without scrolling at all). Prevents "0/2 -> 1/2" just from tapping
+// into a story and immediately backing out.
+const READ_COMPLETE_RATIO = 0.9;
+
 // Brand logo (book + star + "Albor" wordmark). Dark variant has the cream
 // wordmark for dark card backgrounds; light variant has the ink wordmark.
 const LOGO_LIGHT_BG = require('../../assets/spark_logo.png');
@@ -65,6 +71,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const scrollY = useRef(new Animated.Value(0)).current;
   const titleEnterAnim = useRef(new Animated.Value(0)).current;
   const hasReachedBottom = useRef(false);
+  const hasMarkedRead = useRef(false);
+  const scrollViewportHeight = useRef(0);
+  const scrollContentHeight = useRef(0);
   const viewShotRef = useRef();
   const carouselRefs = useRef({});
   const insets = useSafeAreaInsets();
@@ -447,7 +456,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
   React.useEffect(() => {
     if (story) {
-      addToHistory(story.story_id);
       Speech.stop();
       setIsSpeaking(false);
     }
@@ -460,6 +468,30 @@ const StoryDetailScreen = ({ route, navigation }) => {
       Speech.stop();
     };
   }, [story, titleEnterAnim]);
+
+  // Marks the story as "read" for the daily focus counter/history. Only
+  // fires once per screen visit, and only once the reader has genuinely
+  // gotten through most of the story (see READ_COMPLETE_RATIO) rather than
+  // the moment the story screen is opened.
+  const markStoryReadIfNeeded = React.useCallback(() => {
+    if (hasMarkedRead.current || !story) return;
+    hasMarkedRead.current = true;
+    addToHistory(story.story_id);
+  }, [story, addToHistory]);
+
+  // Some stories are short enough to fit on screen with no scrolling at
+  // all — onScroll never fires for those, so we also check layout/content
+  // size directly and treat a fully-visible story as fully read.
+  const evaluateShortStoryReadState = React.useCallback(() => {
+    if (hasReachedBottom.current) return;
+    const viewportHeight = scrollViewportHeight.current;
+    const contentHeight = scrollContentHeight.current;
+    if (viewportHeight > 0 && contentHeight > 0 && contentHeight <= viewportHeight + 1) {
+      hasReachedBottom.current = true;
+      markStoryReadIfNeeded();
+      releasePendingBadge();
+    }
+  }, [markStoryReadIfNeeded, releasePendingBadge]);
 
   const toggleSpeech = async () => {
     if (isSpeaking) {
@@ -719,7 +751,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
         const ref = carouselRefs.current[type];
         if (!ref) continue;
         const uri = await captureRef(ref, { format: 'png', quality: 1 });
-        await MediaLibrary.saveToLibraryAsync(uri);
+        await MediaLibrary.Asset.create(uri);
         saved += 1;
       }
 
@@ -793,11 +825,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     modalOverlay: {
       flex: 1,
-      backgroundColor: isDark ? colors.overlayDark : 'rgba(18,17,15,0.28)',
+      backgroundColor: colors.modalOverlay,
       justifyContent: 'flex-end',
     },
     modalContent: {
-      backgroundColor: colors.background,
+      backgroundColor: colors.modalSurface,
       borderTopLeftRadius: 24,
       borderTopRightRadius: 24,
       padding: 20,
@@ -1704,6 +1736,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
         <Animated.ScrollView
           showsVerticalScrollIndicator={false}
+          onLayout={(event) => {
+            scrollViewportHeight.current = event.nativeEvent.layout.height;
+            evaluateShortStoryReadState();
+          }}
+          onContentSizeChange={(contentWidth, contentHeight) => {
+            scrollContentHeight.current = contentHeight;
+            evaluateShortStoryReadState();
+          }}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { y: scrollY } } }],
             {
@@ -1711,8 +1751,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
               listener: (event) => {
                 if (!hasReachedBottom.current) {
                   const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
-                  if (contentOffset.y + layoutMeasurement.height >= contentSize.height - 60) {
+                  const readRatio = contentSize.height > 0
+                    ? (contentOffset.y + layoutMeasurement.height) / contentSize.height
+                    : 0;
+                  if (readRatio >= READ_COMPLETE_RATIO) {
                     hasReachedBottom.current = true;
+                    markStoryReadIfNeeded();
                     // Completion now triggered by navigating to UseInConversation
                     releasePendingBadge();
                   }

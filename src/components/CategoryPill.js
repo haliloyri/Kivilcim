@@ -16,6 +16,7 @@ const CategoryPill = ({
   activeColor,
   activeTextColor,
   showIcon = true,
+  useCategoryTextColor = false,
 }) => {
   const displayLabel = label || categoryName || '';
   const pillIcon = showIcon
@@ -51,7 +52,10 @@ const CategoryPill = ({
   // Callers using a single shared accent (e.g. Profile's gold pills) can pass an
   // explicit `activeTextColor` (typically the theme's onPrimary token) to force it.
   const onActiveColor = activeTextColor || readableTextOn(resolvedActiveColor);
-  const labelColor = active ? onActiveColor : neutral.text;
+  const inactiveLabelColor = useCategoryTextColor
+    ? (catTheme.borderColor || neutral.text)
+    : neutral.text;
+  const labelColor = active ? onActiveColor : inactiveLabelColor;
   const iconWrapBg = active
     ? (onActiveColor === '#FFFFFF' ? 'rgba(255,255,255,0.20)' : 'rgba(0,0,0,0.12)')
     : 'transparent';

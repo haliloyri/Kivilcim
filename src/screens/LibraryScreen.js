@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  StatusBar, Modal, FlatList
+  StatusBar, Modal, TextInput
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,6 +12,28 @@ import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import StoryCard from '../components/StoryCard';
 import CategoryPill from '../components/CategoryPill';
+
+const normalizeSearchValue = (value = '') =>
+  String(value || '').toLocaleLowerCase('tr-TR').trim();
+
+const storyMatchesSearch = (story, query) => {
+  const normalizedQuery = normalizeSearchValue(query);
+  if (!normalizedQuery) return true;
+
+  const searchable = [
+    story?.title,
+    story?.body,
+    story?.quote,
+    story?.lesson,
+    story?.source_book,
+    story?.cat,
+    story?.cat_display,
+    story?.parent_cat,
+    story?.parent_cat_raw,
+  ].map(normalizeSearchValue).join(' ');
+
+  return searchable.includes(normalizedQuery);
+};
 
 const LibraryScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
@@ -26,6 +48,7 @@ const LibraryScreen = ({ navigation }) => {
   const [sortBy, setSortBy] = useState('recent');
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeCollection, setActiveCollection] = useState('read');
+  const [searchQuery, setSearchQuery] = useState('');
   const [sortModalVisible, setSortModalVisible] = useState(false);
   const [filterRecorded, setFilterRecorded] = useState(false);
   const [recordedStoryIds, setRecordedStoryIds] = useState(new Set());
@@ -207,19 +230,35 @@ const LibraryScreen = ({ navigation }) => {
     [baseCollectionStories, activeCategory, sortBy, historyIndexMap, favoriteOrderMap, readCountsByStory, activeCollection, filterRecorded, recordedStoryIds]
   );
 
+  const visibleCollectionStories = useMemo(
+    () => searchQuery.trim()
+      ? collectionStories.filter((story) => storyMatchesSearch(story, searchQuery))
+      : collectionStories,
+    [collectionStories, searchQuery]
+  );
+
   const dynamicTitle = useMemo(() => {
     const active = collectionItems.find((item) => item.id === activeCollection);
     return active?.title || t('recentRead', lang);
   }, [collectionItems, activeCollection, lang]);
 
   const emptyText = useMemo(() => {
+    if (searchQuery.trim()) return t('searchNoResultsTitle', lang);
     if (activeCategory !== 'all') return t('libraryFilteredEmptyTitle', lang);
     if (activeCollection === 'favorites') return t('noFavs', lang);
     if (activeCollection === 'used') return t('libraryNoUsedStories', lang);
     return t('noHistory', lang);
-  }, [activeCollection, lang]);
+  }, [activeCategory, activeCollection, lang, searchQuery]);
 
   const emptyStateMeta = useMemo(() => {
+    if (searchQuery.trim()) {
+      return {
+        subtitle: t('searchNoResultsSub', lang),
+        cta: t('searchClearAccessibility', lang),
+        action: () => setSearchQuery(''),
+      };
+    }
+
     if (activeCategory !== 'all') {
       return {
         subtitle: t('libraryFilteredEmptySub', lang),
@@ -249,7 +288,7 @@ const LibraryScreen = ({ navigation }) => {
       cta: t('libraryEmptyReadCta', lang),
       action: () => navigation.navigate('HomeTab'),
     };
-  }, [activeCategory, activeCollection, lang, navigation]);
+  }, [activeCategory, activeCollection, lang, navigation, searchQuery]);
 
   // Shared neutral tokens — match CategoryPill's passive (B2) look so the
   // collection / sort / recording chips read as one calm system.
@@ -275,6 +314,35 @@ const LibraryScreen = ({ navigation }) => {
       fontSize: 28, 
       color: colors.text,
       letterSpacing: 0.2,
+    },
+    searchWrap: {
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 4,
+      marginBottom: 12,
+      minHeight: 46,
+      borderRadius: 18,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surfaceContainerLowest,
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingLeft: 14,
+      paddingRight: 6,
+    },
+    searchInput: {
+      flex: 1,
+      minHeight: 46,
+      paddingHorizontal: 10,
+      fontFamily: 'Inter_400Regular',
+      fontSize: 15,
+      color: colors.text,
+    },
+    searchClearBtn: {
+      width: 34,
+      height: 34,
+      borderRadius: 17,
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     sectionHeading: {
       fontFamily: 'PlayfairDisplay_700Bold',
@@ -436,11 +504,11 @@ const LibraryScreen = ({ navigation }) => {
     },
     sortOverlay: {
       flex: 1,
-      backgroundColor: isDark ? 'rgba(0,0,0,0.5)' : 'rgba(20,15,10,0.28)',
+      backgroundColor: colors.modalOverlay,
       justifyContent: 'flex-end',
     },
     sortSheet: {
-      backgroundColor: colors.background,
+      backgroundColor: colors.modalSurface,
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
       paddingHorizontal: 18,
@@ -477,6 +545,29 @@ const LibraryScreen = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
         <View style={styles.header}>
           <Text style={styles.title}>{t('tabLibrary', lang)}</Text>
+        </View>
+
+        <View style={styles.searchWrap}>
+          <Ionicons name="search" size={18} color={colors.textSecondary} />
+          <TextInput
+            style={styles.searchInput}
+            placeholder={t('searchPlaceholder', lang)}
+            placeholderTextColor={colors.textSecondary}
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            returnKeyType="search"
+            accessibilityLabel={t('searchInputAccessibility', lang)}
+          />
+          {searchQuery.trim().length > 0 && (
+            <TouchableOpacity
+              style={styles.searchClearBtn}
+              onPress={() => setSearchQuery('')}
+              accessibilityRole="button"
+              accessibilityLabel={t('searchClearAccessibility', lang)}
+            >
+              <Ionicons name="close-circle" size={20} color={colors.textSecondary} />
+            </TouchableOpacity>
+          )}
         </View>
 
         {/* ── Koleksiyon segment kontrolü (birincil eksen) ─────── */}
@@ -573,11 +664,11 @@ const LibraryScreen = ({ navigation }) => {
         </View>
 
         <Text style={styles.countLine}>
-          {`${collectionStories.length} ${lang === 'tr' ? 'hikaye' : 'stories'}`}
+          {`${visibleCollectionStories.length} ${lang === 'tr' ? 'hikaye' : 'stories'}`}
         </Text>
 
         <View style={styles.listWrap}>
-          {collectionStories.length > 0 ? collectionStories.map(story => (
+          {visibleCollectionStories.length > 0 ? visibleCollectionStories.map(story => (
             <StoryCard
               key={`${activeCollection}-${story.story_id}`}
               story={story}
