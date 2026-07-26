@@ -1,0 +1,188 @@
+{
+  "batch_id": "A1-002-markers",
+  "kind": "marker_repair",
+  "version": "A1",
+  "created": "2026-07-25",
+  "notes": "Agent 1 · isaret onarimi. Onarimlar DB metninden hesaplandi (propose-marker-repair.mjs); script yalnizca isaret karakteri ekler/siler/tasir, harfe dokunmaz. validate-batch.mjs stripMarkers(yeni)==stripMarkers(eski) invaryantini ayrica dogrular.",
+  "items": [
+    {
+      "story": {
+        "story_id": 1065,
+        "queue_title": "Steve Jobs'ın yıkıcı eleştirisi",
+        "repair": "$$ acilisi cumle ortasindaydi, paragraf basina tasindi"
+      },
+      "lang": {
+        "de": {
+          "content": "1997. Steve Jobs kehrte zu Apple zurück und versuchte, das Unternehmen zu retten. \r\n\r\nBei einem Designtreffen stellte ein junger Ingenieur ein Produkt vor, an dem er monatelang gearbeitet hatte. Die Präsentation ist beendet. \r\n\r\nJobs betrachtete es einen Moment lang und sagte: „Das ist scheiße.“ \r\n\r\nStille breitete sich im Raum aus. Der Ingenieur war am Boden zerstört. \r\n\r\nAber Jobs machte weiter. Er erklärte Schritt für Schritt, warum es scheiße ist. Er erklärte, welcher Teil des Designs nicht funktionierte, was der Benutzer empfinden würde und welches Problem das Produkt eigentlich lösen sollte. \r\n\r\n##Jahre später sagte dieser Ingenieur: „Dieser Tag war der schwerste Moment meines Lebens. Aber es war auch der Moment, in dem ich am meisten gelernt habe. Wenn Jobs sich nicht um mich gekümmert hätte, hätte er nichts gesagt.“##\r\n\r\nDestruktive Empathie besteht darin, die Wahrheit zu verbergen, um die Person zu schützen. Auf kurze Sicht erscheint es freundlich, auf lange Sicht jedoch grausam. \r\n\r\n$$Die Hartnäckigkeit von Jobs spiegelte einen tiefen Glauben wider: Diese Person kann es besser machen.$$\r\n\r\n&&Denken Sie an die Person, die Ihnen das härteste Feedback gegeben hat. Hat dir dieser Moment wehgetan? Wenn Sie zurückblicken, was hat Ihnen diese Ehrlichkeit gebracht?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1111,
+        "queue_title": "Mor inek metaforu",
+        "repair": "$$ acilisi cumle ortasindaydi, paragraf basina tasindi"
+      },
+      "lang": {
+        "de": {
+          "content": "Eines Tages fuhr Godin mit seiner Familie eine Landstraße entlang, als er begann, aus dem Fenster auf die Kühe zu schauen. \r\n\r\nDie ersten paar Minuten: „Wow, was für schöne Kühe.“ \r\nZehn Minuten später: Niemand kümmerte sich um die Kühe. \r\n\r\nDenn wenn man eine Kuh sieht, sieht man eine Kuh – das ist einfach so. \r\n\r\n##Aber wenn eine dieser Kühe lila wäre, würde das Auto angehalten und ein Foto gemacht.##\r\n\r\nMit dieser einfachen Metapher stellt Godin die tiefgreifendste Frage des Marketings: Ist Ihr Produkt, Ihre Dienstleistung, Ihre Karriere – lila oder beige? \r\n\r\n„Gut“ reicht nicht mehr aus. Zuverlässig, hochwertig, erschwinglich – das ist zum Standard geworden. Und Standard bedeutet unsichtbar. \r\n\r\nGodin beweist dies anhand der erfolgreichsten Marken der Geschichte: Starbucks fragte zunächst: „Dieses Geld für eine Tasse Kaffee?“ ließ mich sagen. Zuerst sagte Cirque du Soleil: „Zirkus, meinst du das ernst?“ ließ mich sagen. Amazon fragte zunächst: „Buch aus dem Internet?“ ließ mich sagen. \r\n\r\nWas sie alle gemeinsam haben: Die erste Reaktion war meist Misstrauen oder Verachtung. Weil sie wirklich anders waren. \r\n\r\nUnd anders zu sein birgt Risiken. Aber gewöhnlich zu sein birgt ein viel größeres Risiko – Unsichtbarkeit. \r\n\r\n$$Bei Safe geht es nicht darum, gewöhnlich zu sein; Gewöhnlich zu sein ist das größte Risiko.$$\r\n\r\n&&Ist die Arbeit, die Sie jetzt leisten, oder der Wert, den Sie bieten, wirklich lila? Oder ist es eine Kuh, die unter vielen ähnlichen verloren gegangen ist?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1117,
+        "queue_title": "Yeterince zengin olmak — tatminsizlik tuzağı",
+        "repair": "$$ kapanisi vardi, acilisi yoktu; paragraf basina $$ eklendi"
+      },
+      "lang": {
+        "de": {
+          "content": "Rajat Gupta war der CEO von McKinsey. Er war an die Spitze eines der renommiertesten Beratungsunternehmen der Welt aufgestiegen. \r\n\r\nEr besaß Hunderte Millionen Dollar. \r\n\r\nAber es war nicht genug. \r\n\r\nWährend seiner Zeit im Vorstand von Goldman Sachs begann er, Insiderinformationen preiszugeben. Er wurde schließlich von der SEC untersucht, verurteilt und zu einer Gefängnisstrafe verurteilt. \r\n\r\n##Morgan Housels Frage lautet: Warum ist der Mann mit hundert Millionen das Risiko eingegangen?##\r\n\r\nDie Antwort ist überraschend: Er hatte den Begriff „reich genug“ verloren. \r\n\r\nUm ihn herum waren Milliardäre. Die Vergleichsreferenz stieg stetig an. Einhundert Millionen Dollar fühlten sich jetzt „wenig“ an. \r\n\r\nHousel nennt dies die „Unzufriedenheitsfalle“. Und diese Falle ist nicht nur etwas für die Reichen. Es funktioniert auf allen Einkommensniveaus und in jedem Alter. \r\n\r\nDenn „genug“ ist keine Zahl, sondern eine Denkweise. \r\n\r\nUm „genug“ zu finden, stellen Sie diese Frage: Welche Dinge würden Sie heute nicht aufgeben, um nicht Ihr Leben zu verlieren? Familie, Gesundheit, Freiheit, Schlaf. Lohnt es sich wirklich, das Risiko einzugehen, diese zu gefährden? \r\n\r\n$$Bei „Genug“ geht es nicht darum, wie viel oder wie wenig, sondern darum, zu wissen, wann man aufhören muss.$$\r\n\r\n&&Was ist in Ihrem aktuellen Leben „genug“? Und welche Risiken haben Sie beschlossen, nicht einzugehen oder könnten Sie eingehen, um „genug“ zu bewahren?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1160,
+        "queue_title": "Hikayelerden gerçeklere dönmek",
+        "repair": "$$ ile acilip && ile kapatilan blok soru icerdigi icin && olarak duzeltildi; hikayede artik $$ ders blogu YOK (ayri icerik gorevi)"
+      },
+      "lang": {
+        "tr": {
+          "content": "İki kişi aynı toplantıdaydı.\r\n\r\nBirincisi: \"Müdür beni toplantıda görmezden geldi. Beni dışlamak istiyor. Belki işten çıkarmayı planlıyor.\"\r\n\r\nİkincisi: Aynı toplantı. \"Müdür çok meşgul görünüyordu, belki bir problemi vardı.\"\r\n\r\n##Aynı olay. İki tamamen farklı hikaye. Ve Patterson'ın araştırması şunu gösteriyor: İnsanlar olay ile hikayeyi neredeyse anında birleştiriyor.##\r\n\r\nBeyin boşluğu dolduruyor. Gözlemlenen gerçek veriyle, üretilen hikaye arasında hiç zaman geçmiyor.\r\n\r\nVe kritik konuşmalarda bu hikayeler yıkıcı oluyor. \"O böyle düşünüyor\" sanılarak konuşma başlıyor. Ama o \"böyle düşünüyor\" tamamen uydurulmuş bir hikaye.\r\n\r\nPatterson'ın çözümü: Hikayeni gerçeğe ayır.\r\n\r\n\"Müdür beni görmezden geldi\" — gözlemlenen gerçek.\r\n\"Beni dışlamak istiyor\" — üretilen hikaye.\r\n\r\nKritik konuşmaya hikayeleri değil, gerçekleri taşı. \"Toplantıda söz hakkı alamadım — bunun nedenini merak ediyorum\" çok daha dürüst ve etkili bir başlangıç.\r\n\r\n&&Olaylarla ilgili hikayelerin ne kadarı gerçek, ne kadarı beyninin doldurmalarıdır?&&"
+        },
+        "en": {
+          "content": "Two people were at the same meeting. \r\n\r\nFirst: \"The manager ignored me in the meeting. He wants to exclude me. Maybe he's planning to fire me.\" \r\n\r\nSecond: Same meeting. \"The manager seemed very busy, maybe he had a problem.\" \r\n\r\n##Same incident. Two completely different stories. And Patterson's research shows that people connect event and story almost instantly.## \r\n\r\nThe brain fills the gap. No time passes between the actual data observed and the story produced. \r\n\r\nAnd in critical conversations, these stories are devastating. The conversation begins with the thought that \"he thinks this way\". But he \"thinks that way\" is a completely made up story. \r\n\r\nPatterson's solution: Reserve your story for the truth. \r\n\r\n“The manager ignored me” — observed fact. \r\n“He wants to exclude me” — the fabricated story. \r\n\r\nBring facts, not stories, to critical conversation. “I didn't get a chance to speak at the meeting — I wonder why” is a much more honest and effective start. \r\n\r\n&&How much of your stories about events are real and how much are just brain stuffing?&&"
+        },
+        "es": {
+          "content": "Dos personas estaban en la misma reunión. \r\n\r\nPrimero: \"El gerente me ignoró en la reunión. Quiere excluirme. Tal vez esté planeando despedirme\". \r\n\r\nSegundo: Misma reunión. \"El gerente parecía muy ocupado, tal vez tuvo un problema\". \r\n\r\n##Mismo incidente. Dos historias completamente diferentes. Y la investigación de Patterson muestra que las personas conectan el evento y la historia casi instantáneamente.##\r\n\r\nEl cerebro llena el vacío. No pasa tiempo entre los datos reales observados y la historia producida. \r\n\r\nY en las conversaciones críticas, estas historias son devastadoras. La conversación comienza con el pensamiento de que \"él piensa así\". Pero él \"piensa así\" es una historia completamente inventada. \r\n\r\nLa solución de Patterson: reserve su historia para la verdad. \r\n\r\n“El gerente me ignoró” – hecho observado. \r\n“Quiere excluirme”: la historia inventada. \r\n\r\nTraiga hechos, no historias, a una conversación crítica. “No tuve la oportunidad de hablar en la reunión; me pregunto por qué” es un comienzo mucho más honesto y eficaz. \r\n\r\n&&¿Cuántas de tus historias sobre eventos son reales y cuántas son simplemente rellenos cerebrales?&&"
+        },
+        "de": {
+          "content": "Zwei Personen waren beim selben Treffen. \r\n\r\nErstens: „Der Manager hat mich in der Besprechung ignoriert. Er will mich ausschließen. Vielleicht hat er vor, mich zu entlassen.“ \r\n\r\nZweitens: Gleiches Treffen. „Der Manager schien sehr beschäftigt zu sein, vielleicht hatte er ein Problem.“ \r\n\r\n##Gleicher Vorfall. Zwei völlig unterschiedliche Geschichten. Und Pattersons Forschung zeigt, dass Menschen Ereignis und Geschichte fast augenblicklich miteinander verbinden.##\r\n\r\nDas Gehirn füllt die Lücke. Zwischen den tatsächlich beobachteten Daten und der produzierten Geschichte vergeht keine Zeit. \r\n\r\nUnd in kritischen Gesprächen sind diese Geschichten verheerend. Das Gespräch beginnt mit dem Gedanken, dass „er so denkt“. Aber dass er „so denkt“, ist eine völlig erfundene Geschichte. \r\n\r\nPattersons Lösung: Reservieren Sie Ihre Geschichte der Wahrheit. \r\n\r\n„Der Manager hat mich ignoriert“ – beobachtete Tatsache. \r\n„Er will mich ausschließen“ – die erfundene Geschichte. \r\n\r\nBringen Sie Fakten und keine Geschichten in kritische Gespräche ein. „Ich hatte keine Gelegenheit, bei dem Treffen zu sprechen – ich frage mich, warum“ ist ein viel ehrlicherer und effektiverer Anfang. \r\n\r\n&&Wie viele Ihrer Geschichten über Ereignisse sind real und wie viele sind nur Hirngespinst?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1227,
+        "queue_title": "Geçmiş ve şimdiki an",
+        "repair": "$$ acilisi vardi, kapanisi yoktu; paragraf sonuna $$ eklendi"
+      },
+      "lang": {
+        "en": {
+          "content": "Kishimi asks the question: “Does your past determine your current life?” \r\n\r\nFreud's answer: Yes. Childhood experiences shape personality. \r\n\r\nAdler's answer is radically different. \r\n\r\n##\"The past is not the cause of your present situation. You are assigning meaning to the past to explain your present situation.\"## \r\n\r\nThis is a big difference. \r\n\r\nFreudian view: \"I am like this because of what happened in my childhood.\" \r\n\r\nAdlerian view: \"I choose to be this way now and I explain it with the past.\" \r\n\r\nKishimi describes the practical power of this view: The past cannot be changed. But the meaning you attach to the past can be changed. And when that meaning changes, current choices may change. \r\n\r\nInstead of “this is why I am this way,” ask “what do I want to do?” question. \r\n\r\nThis is not an accusation. An invitation to liberation. \r\n\r\n$$Your past doesn't imprison you. The meaning you give to the past imprisons you.$$ \r\n\r\n&&Is there an area where you say \"this is why I can't do it\" about something that happened in the past? Can you give a different meaning to that event?&&"
+        },
+        "es": {
+          "content": "Kishimi hace la pregunta: \"¿Tu pasado determina tu vida actual?\" \r\n\r\nLa respuesta de Freud: Sí. Las experiencias de la infancia moldean la personalidad. \r\n\r\nLa respuesta de Adler es radicalmente diferente. \r\n\r\n##\"El pasado no es la causa de tu situación presente. Le estás asignando significado al pasado para explicar tu situación presente.\"##\r\n\r\nÉsta es una gran diferencia. \r\n\r\nVisión freudiana: \"Soy así por lo que pasó en mi infancia\". \r\n\r\nVisión adleriana: \"Elijo ser así ahora y lo explico con el pasado\". \r\n\r\nKishimi describe el poder práctico de esta visión: El pasado no se puede cambiar. Pero el significado que le atribuyes al pasado se puede cambiar. Y cuando ese significado cambie, las opciones actuales pueden cambiar. \r\n\r\nEn lugar de “por eso soy así”, pregunte “¿qué quiero hacer?” pregunta. \r\n\r\nEsto no es una acusación. Una invitación a la liberación. \r\n\r\n$$Tu pasado no te aprisiona. El significado que le das al pasado te aprisiona.$$\r\n\r\n&&¿Hay algún área en la que dices \"por eso no puedo hacerlo\" sobre algo que sucedió en el pasado? ¿Puedes darle un significado diferente a ese evento?&&"
+        },
+        "de": {
+          "content": "Kishimi stellt die Frage: „Bestimmt Ihre Vergangenheit Ihr aktuelles Leben?“ \r\n\r\nFreuds Antwort: Ja. Kindheitserlebnisse prägen die Persönlichkeit. \r\n\r\nAdlers Antwort ist radikal anders. \r\n\r\n##„Die Vergangenheit ist nicht die Ursache Ihrer gegenwärtigen Situation. Sie weisen der Vergangenheit eine Bedeutung zu, um Ihre gegenwärtige Situation zu erklären.“##\r\n\r\nDas ist ein großer Unterschied. \r\n\r\nFreudsche Sichtweise: „Ich bin so wegen dem, was in meiner Kindheit passiert ist.“ \r\n\r\nAdlerianische Sichtweise: „Ich entscheide mich jetzt dafür, so zu sein, und ich erkläre es mit der Vergangenheit.“ \r\n\r\nKishimi beschreibt die praktische Kraft dieser Sichtweise: Die Vergangenheit kann nicht geändert werden. Aber die Bedeutung, die Sie der Vergangenheit beimessen, kann geändert werden. Und wenn sich diese Bedeutung ändert, können sich auch die aktuellen Entscheidungen ändern. \r\n\r\nAnstelle von „Deshalb bin ich so“ fragen Sie: „Was möchte ich tun?“ Frage. \r\n\r\nDas ist kein Vorwurf. Eine Einladung zur Befreiung. \r\n\r\n$$Deine Vergangenheit hält dich nicht gefangen. Die Bedeutung, die du der Vergangenheit gibst, hält dich gefangen.$$\r\n\r\n&&Gibt es einen Bereich, in dem Sie über etwas, das in der Vergangenheit passiert ist, sagen: „Deshalb kann ich es nicht tun“? Können Sie diesem Ereignis eine andere Bedeutung geben?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1359,
+        "queue_title": "Pazarlama empati işidir",
+        "repair": "$$ kapanisi vardi, acilisi yoktu; paragraf basina $$ eklendi"
+      },
+      "lang": {
+        "de": {
+          "content": "Seth Godin definiert Marketing neu. \r\n\r\nTraditionelles Marketing: Menschen zum Kauf überreden. Werbung, Druck, Manipulation. \r\n\r\nGodins Marketing: „Für wen mache ich dieses Produkt? Was will diese Person? Was fehlt in ihrer Welt?“ \r\n\r\n##Marketing macht ein Versprechen. Und dieses Versprechen zu erfüllen.##\r\n\r\nGodin fährt fort: Marketing ohne Empathie ist Lärm. Mit Empathie betriebenes Marketing ist ein Geschenk. \r\n\r\nWenn jemand versteht, woran ein Kunde denkt, wenn er aufwacht, worüber er sich Sorgen macht, was seine Träume sind – wenn er ein Produkt oder eine Dienstleistung anbietet, die den Bedürfnissen dieser Person entspricht – dann ist das kein Marketing, sondern eine echte Hilfe. \r\n\r\nUnd die Menschen teilen echte Hilfe. Weil Menschen den Instinkt haben, anderen zu erzählen, was sie finden. \r\n\r\nGodins Marketingrezept: Verstehen Sie, was Ihrem Kunden wichtig ist. Lernen Sie das kennen. Versprechen. Halten Sie Ihr Wort. Und warten Sie – die Leute werden es finden. \r\n\r\n$$Beim Marketing geht es nicht um Überzeugungsarbeit, sondern darum, der richtigen Person das anzubieten, was sie sucht.$$\r\n\r\n&&Verstehen Sie den Wert, den Sie jetzt bieten, klar, wer was wirklich löst und wie Sie wem dienen?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1478,
+        "queue_title": "Veri dini ve algoritmik otorite",
+        "repair": "$$ blogu &&&& ile kapatilmisti; &&&& -> $$ (kapanis duzeldi, bos && blogu kalkti)"
+      },
+      "lang": {
+        "tr": {
+          "content": "Yuval Noah Harari şöyle bir soru soruyor.\n\n\"Kendinizi kim daha iyi tanır? Siz mi, Google mu?\"\n\nKulağa provokasyon gibi geliyor. Ama Harari ciddi.\n\nGoogle sizin her aramanızı, her tıklamanızı, her satın alımınızı, her konumunuzu biliyor. Yıllarca.\n\nSiz kendi davranışlarınızı bu kadar sistematik izliyor musunuz?\n\n##\"Dataizm\" diyor Harari — insanlığın giderek kararları ve otoriteyi algoritmalara bıraktığı yeni bir din gibi sistem.##\n\nTıp alanında: Bir doktor sizi muayene eder. Ama yapay zeka radyologları zaten bazı kanserleri doktordan daha erken ve daha doğru tespit ediyor.\n\nMüzik alanında: Spotify sizin dinleme alışkanlıklarınızı analiz ederek beğeneceğiniz şeyleri tahmin ediyor. Çoğu zaman doğru.\n\nEvlilik alanında: Matching algoritmaları büyük ölçekte partner önerisi yapıyor.\n\nHarari şunu soruyor: Algoritmalara ne kadar güvenmeliyiz? Ve güvendiğimizde, özgür irade ne anlama geliyor?\n\nBu bir teknoloji eleştirisi değil. Bir uyanış daveti.\n\n$$Kararlarınızı kim veriyor — sizin değerleriniz mi, algoritmanın önerileri mi?$$\n\n&&Son önemli kararınızı düşünün — kariyer, ilişki, satın alma. Algoritmalar ya da veriler ne kadar rol oynadı?&&"
+        },
+        "en": {
+          "content": "Yuval Noah Harari asks a question like this. \n\n\"Who knows you better? You or Google?\" \n\nIt sounds like a provocation. But Harari is serious. \n\nGoogle knows your every search, every click, every purchase, every location. For years. \n\nDo you monitor your own behavior so systematically? \n\n##\"Dataism,\" says Harari — a new religion-like system in which humanity increasingly cedes decisions and authority to algorithms.## \n\nIn the medical field: A doctor examines you. But artificial intelligence radiologists are already detecting some cancers earlier and more accurately than doctors. \n\nIn the field of music: Spotify analyzes your listening habits and predicts what you'll like. Most of the time it's true. \n\nIn the field of marriage: Matching algorithms recommend partners on a large scale. \n\nHarari asks: How much should we trust algorithms? And what does free will mean when we trust? \n\nThis is not a criticism of technology. An invitation to awakening. \n\n$$Who makes your decisions—your values or the algorithm's recommendations?$$ \n\n&&Think about your last big decision — career, relationship, purchase. How much of a role did algorithms or data play?&&"
+        },
+        "es": {
+          "content": "Yuval Noah Harari hace una pregunta como esta. \n\n\"¿Quién te conoce mejor? ¿Tú o Google?\" \n\nSuena como una provocación. Pero Harari habla en serio. \n\nGoogle conoce cada una de tus búsquedas, cada clic, cada compra y cada ubicación. Durante años. \n\n¿Controlas tu propio comportamiento de forma tan sistemática? \n\n##\"Dataísmo\", dice Harari: un nuevo sistema parecido a una religión en el que la humanidad cede cada vez más decisiones y autoridad a los algoritmos.##\n\nEn el ámbito médico: Un médico te examina. Pero los radiólogos con inteligencia artificial ya están detectando algunos cánceres antes y con mayor precisión que los médicos. \n\nEn el campo de la música: Spotify analiza tus hábitos de escucha y predice lo que te gustará. La mayoría de las veces es verdad. \n\nEn el ámbito del matrimonio: los algoritmos de emparejamiento recomiendan parejas a gran escala. \n\nHarari pregunta: ¿Cuánto deberíamos confiar en los algoritmos? ¿Y qué significa libre albedrío cuando confiamos? \n\nEsta no es una crítica a la tecnología. Una invitación al despertar. \n\n$$¿Quién toma tus decisiones: tus valores o las recomendaciones del algoritmo?$$\n\n&&Piense en su última gran decisión: carrera, relación, compra. ¿Qué papel desempeñaron los algoritmos o los datos?&&"
+        },
+        "de": {
+          "content": "Yuval Noah Harari stellt eine Frage wie diese. \n\n„Wer kennt dich besser? Du oder Google?“ \n\nEs klingt wie eine Provokation. Aber Harari meint es ernst. \n\nGoogle kennt jede Ihrer Suchanfragen, jeden Klick, jeden Kauf, jeden Standort. Jahrelang. \n\nÜberwachen Sie Ihr eigenes Verhalten so systematisch? \n\n##„Dataismus“, sagt Harari – ein neues religionsähnliches System, in dem die Menschheit zunehmend Entscheidungen und Autorität an Algorithmen überlässt.##\n\nIm medizinischen Bereich: Ein Arzt untersucht Sie. Aber Radiologen mit künstlicher Intelligenz erkennen einige Krebsarten bereits früher und genauer als Ärzte. \n\nIm Bereich Musik: Spotify analysiert Ihre Hörgewohnheiten und sagt voraus, was Ihnen gefallen wird. Meistens ist es wahr. \n\nIm Bereich der Ehe: Matching-Algorithmen empfehlen in großem Umfang Partner. \n\nHarari fragt: Wie sehr sollten wir Algorithmen vertrauen? Und was bedeutet freier Wille, wenn wir vertrauen? \n\nDas ist keine Kritik an der Technik. Eine Einladung zum Erwachen. \n\n$$Wer trifft Ihre Entscheidungen – Ihre Werte oder die Empfehlungen des Algorithmus?$$\n\n&&Denken Sie über Ihre letzte große Entscheidung nach – Karriere, Beziehung, Kauf. Welche Rolle spielten Algorithmen oder Daten?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1496,
+        "queue_title": "Akış anı ve yetenek işareti",
+        "repair": "$$ blogu &&&& ile kapatilmisti; &&&& -> $$ (kapanis duzeldi, bos && blogu kalkti)"
+      },
+      "lang": {
+        "tr": {
+          "content": "Marcus Buckingham güçlü yönleri bulmak için basit bir yöntem öneriyor.\n\nŞu soruyu sorun: \"Bu işi yaparken zaman geçtiğini fark etmiyor muyum?\"\n\nBu akış anı. Ve Buckingham'a göre bu an, yeteneğinizin en güçlü sinyali.\n\n##\"Akış anınızda yaptığınız şey, doğal olarak iyi olduğunuz şeyin göstergesidir\" diyor.##\n\nAma dikkat: Güçlü yön yalnızca \"iyi olduğunuz şey\" değil. \"İyi olduğunuz ve size enerji veren şey.\"\n\nBirisi mükemmel hesap yapabilir ama muhasebe yaparken tükenir. Bu onun güçlü yönü değil — teknik bir beceri.\n\nGüçlü yön hem yetkinlik hem enerji vermeli.\n\nBuckingham şu egzersizi öneriyor: Bir hafta boyunca dikkat edin. Hangi görevleri bitirmek istemiyor musunuz? Hangi görevleri yaparken saatler nasıl geçiyor?\n\nO liste, güçlü yönlerinizin haritası.\n\nVe o haritayı görmek hem kariyer hem de günlük enerji yönetimi için kritik.\n\n$$Akış anlarınız güçlü yönlerinizin haritasıdır — o haritayı çizdiniz mi?$$\n\n&&Son bir haftada zaman geçtiğini fark etmeden yaptığınız bir şey ne oldu? O şey kariyerinizde ya da hayatınızda ne kadar yer kaplıyor?&&"
+        },
+        "en": {
+          "content": "Marcus Buckingham suggests a simple method for finding strengths. \n\nAsk the question: \"Do I not notice time passing while I'm doing this?\" \n\nThis is the moment of flow. And according to Buckingham, this moment is the strongest signal of your talent. \n\n##“What you do in your flow moment is indicative of what you are naturally good at,” he says.## \n\nBut beware: A strength isn't just \"what you're good at.\" “What you are good at and what gives you energy.” \n\nSomeone can do perfect calculations but gets burned out on accounting. This isn't his strong suit — it's a technical skill. \n\nA strength should provide both competence and energy. \n\nBuckingham suggests this exercise: Pay attention for a week. Which tasks do you not want to finish? How do the hours pass while you are doing which tasks? \n\nThat list is a map of your strengths. \n\nAnd seeing that map is critical for both career and daily energy management. \n\n$$Your flow moments are a map of your strengths — have you drawn that map?$$ \n\n&&What's something you've done in the last week without realizing that time has passed? How much space does that thing take up in your career or life?&&"
+        },
+        "es": {
+          "content": "Marcus Buckingham sugiere un método sencillo para encontrar fortalezas. \n\nHaga la pregunta: \"¿No noto que pasa el tiempo mientras hago esto?\" \n\nEste es el momento del flujo. Y según Buckingham, este momento es la señal más fuerte de su talento. \n\n##“Lo que haces en tu momento de fluidez es indicativo de aquello en lo que eres naturalmente bueno”, dice.##\n\nPero cuidado: una fortaleza no es sólo \"en lo que eres bueno\". \"En qué eres bueno y qué te da energía\". \n\nAlguien puede hacer cálculos perfectos pero se cansa de la contabilidad. Este no es su fuerte, es una habilidad técnica. \n\nUna fortaleza debe proporcionar tanto competencia como energía. \n\nBuckingham sugiere este ejercicio: presta atención durante una semana. ¿Qué tareas no quieres terminar? ¿Cómo pasan las horas mientras realizas qué tareas? \n\nEsa lista es un mapa de tus puntos fuertes. \n\nY ver ese mapa es fundamental tanto para la gestión profesional como para la gestión energética diaria. \n\n$$Tus momentos de fluidez son un mapa de tus fortalezas: ¿has dibujado ese mapa?$$\n\n&&¿Qué has hecho en la última semana sin darte cuenta de que ha pasado el tiempo? ¿Cuánto espacio ocupa esa cosa en tu carrera o en tu vida?&&"
+        },
+        "de": {
+          "content": "Marcus Buckingham schlägt eine einfache Methode zum Finden von Stärken vor. \n\nStellen Sie die Frage: „Bemerke ich nicht, wie die Zeit vergeht, während ich das tue?“ \n\nDies ist der Moment des Flusses. Und laut Buckingham ist dieser Moment das stärkste Signal Ihres Talents. \n\n##„Was Sie in Ihrem Flow-Moment tun, ist ein Hinweis darauf, worin Sie von Natur aus gut sind“, sagt er.##\n\nAber Vorsicht: Eine Stärke ist nicht nur „das, worin man gut ist“. „Was du gut kannst und was dir Energie gibt.“ \n\nJemand kann perfekte Berechnungen durchführen, ist aber bei der Buchhaltung ausgebrannt. Das ist nicht seine Stärke – es ist eine technische Fähigkeit. \n\nEine Stärke sollte sowohl Kompetenz als auch Energie bieten. \n\nBuckingham schlägt diese Übung vor: Seien Sie eine Woche lang aufmerksam. Welche Aufgaben möchten Sie nicht erledigen? Wie vergehen die Stunden, während Sie welche Aufgaben erledigen? \n\nDiese Liste ist eine Karte Ihrer Stärken. \n\nUnd die Kenntnis dieser Karte ist sowohl für die Karriere als auch für das tägliche Energiemanagement von entscheidender Bedeutung. \n\n$$Ihre Flow-Momente sind eine Karte Ihrer Stärken – haben Sie diese Karte gezeichnet?$$\n\n&&Was haben Sie in der letzten Woche getan, ohne zu merken, dass Zeit vergangen ist? Wie viel Platz nimmt dieses Ding in Ihrer Karriere oder Ihrem Leben ein?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1529,
+        "queue_title": "Günlük stand-up ve şeffaflık",
+        "repair": "$$ kapanisi vardi, acilisi yoktu; paragraf basina $$ eklendi"
+      },
+      "lang": {
+        "de": {
+          "content": "Jeff Sutherland sah ein Problem. \n\nDie Teammitglieder arbeiteten am selben Projekt. Aber sie wussten nicht, was der andere tat. \n\nJemand stieß auf ein Hindernis. Er versuchte stundenlang, es zu lösen. Allerdings hatte jemand anderes dieses Hindernis bereits gelöst. \n\nDer Koordinationsaufwand ist enorm. \n\nSutherland entwickelte eine einfache Lösung: jeden Morgen 15 Minuten. Zu Fuß. Drei Fragen. \n\n##„Was habe ich gestern gemacht? Was werde ich heute tun? Welche Hindernisse liegen vor mir?“##\n\nStehen ist wichtig: Lange Gespräche werden verhindert. Die Leute sind kurz und prägnant. \n\nDiese Routine hat mehrere kritische Auswirkungen. \n\nDie erste ist die Synchronisierung: Jeder kennt den Status jedes Einzelnen. Konflikte werden sichtbar. Es ergeben sich Hilfsmöglichkeiten. \n\nZweitens die Sichtbarkeit von Hindernissen: Wenn man sagt: „Vor mir liegt ein Hindernis“, erhöht sich die Wahrscheinlichkeit, dass dieses Hindernis im Laufe des Tages gelöst wird. \n\nDrittens, Verantwortung: Sagen Sie: „Ich wollte das gestern tun, habe es aber nicht getan“ – eine Prozessnotiz, keine persönliche. \n\nSutherland sagt: Diese 15 Minuten machen Hunderte von sekundenschnellen Koordinationssitzungen pro Tag überflüssig. \n\n$$15 Minuten Transparenz vermeiden tagelange Unsicherheit.$$\n\n&&Was ist das kleinste Ritual, das Sie durchführen können, um mehr Transparenz in Ihrem Team oder Ihrem unmittelbaren Umfeld zu schaffen?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1583,
+        "queue_title": "Tasarım — işlevselliğin ötesinde anlam yaratmak",
+        "repair": "$$ kapanisi vardi, acilisi yoktu; paragraf basina $$ eklendi"
+      },
+      "lang": {
+        "de": {
+          "content": "Daniel Pink markiert einen Unterschied zwischen den 1990er und den frühen 2000er Jahren. \n\nIn den 1990er Jahren gewann das beste Produkt. \n\nIn den 2000er Jahren begann sich das am besten gestaltete Produkt durchzusetzen. \n\nApple hat das vor allen anderen gesehen. Als der iPod auf den Markt kam, gab es Konkurrenten, die viel mehr Funktionen boten. Aber nichts davon war so schön, es war nicht so intuitiv, es fühlte sich nicht so bedeutungsvoll an. \n\n##Pink sagt: Design ist nicht mehr nur eine auf das Produkt geklebte Dekoration – es ist die Essenz des Produkts. Und die Kraft des Designs liegt in der Schaffung von Bedeutung und nicht in der Ästhetik.##\n\nBetrachten Sie eine Oxo-Sojabohne. Entwickelt für ältere Menschen oder Menschen mit Arthritis. Breiter, bequemer, rutschfester Griff. Aber jeder hat es gekauft – weil es sich besser anfühlte. \n\nDesign beginnt mit Empathie: Wer nutzt dieses Produkt? Was fühlt er in diesem Moment? Was erscheint schwierig? \n\nPink wendet dies auf jeden Aspekt des Geschäfts an. Servicedesign, Erlebnisdesign, Prozessdesign. \n\nUnd es stellt die Frage: Wo ist das Design Thinking in der Arbeit, die Sie jetzt machen? Ob Sie das Kunden- oder Benutzererlebnis wirklich spüren. \n\n$$Beim Design geht es nicht darum, hübsch auszusehen – es geht darum, die Benutzererfahrung tiefgreifend zu verstehen und aus diesem Verständnis etwas aufzubauen.$$\n\n&&Hat Ihnen ein Produkt oder eine Dienstleistung, die Sie zuletzt genutzt haben, ein wirklich gutes Gefühl gegeben? Was könnte dieses Wohlgefühl auslösen?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1642,
+        "queue_title": "Arenada olmak — düşme cesareti",
+        "repair": "$$ kapanisi vardi, acilisi yoktu; paragraf basina $$ eklendi"
+      },
+      "lang": {
+        "de": {
+          "content": "Brené Brown las eine Rede von Theodore Roosevelt aus dem Jahr 1910.\n\nRoosevelt sagte: „Kredit; Es gehört dem Mann, dessen Gesicht mit Staub bedeckt und schmutzig von Schweiß und Blut ist, der sich tapfer anstrengt, Fehler macht, immer wieder fällt, aber die Anstrengung kennt. Bestenfalls erkennt es den Triumph einer großen Leistung an; Im schlimmsten Fall scheitert er an Mut und Tapferkeit. Aber sein Platz ist gewiss nicht bei kalten und schüchternen Seelen – jenen Seelen, die weder Sieg noch Niederlage kennen.“ \n\n##Brown machte diese Passage zum Kompass seines Lebens. Und er sagt: Die Arena betreten, sich zeigen, verletzlich sein – das ist Mut. Es ist leicht, von der Tribüne aus Kritik zu üben.##\n\nSeiner Forschung zufolge waren die mutigsten Menschen auch diejenigen, die am härtesten fielen. Die meiste Kritik erhielten diejenigen, die die Arena am häufigsten betraten. \n\nBrown fragt: Ist Ihr Kritiker auch in der Arena? Zeigt es seine eigene Arbeit, zeigt es seine eigene Verletzlichkeit?\n\nWenn nicht, geben Sie dieser Kritik nicht zu viel Raum.\n\nUnd er fügt hinzu: Ein Sturz ist kein Versagen – es ist ein Beweis dafür, dass man sich in der Arena befindet. Diejenigen, die niemals fallen, sind diejenigen, die die Arena nicht betreten.\n\n$$Bei Mut geht es nicht darum, nicht zu fallen – es geht darum, trotz eines Sturzes weiterhin die Arena zu betreten.$$\n\n&&Gibt es einen Bereich in Ihrem Leben, in dem Sie Angst haben, die Arena zu betreten – Angst davor, gesehen, geprüft oder kritisiert zu werden?&&"
+        }
+      }
+    }
+  ],
+  "ingested_at": "2026-07-25T13:38:55.522Z",
+  "ingested_story_ids": [
+    1065,
+    1111,
+    1117,
+    1160,
+    1227,
+    1359,
+    1478,
+    1496,
+    1529,
+    1583,
+    1642
+  ]
+}

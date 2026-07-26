@@ -1,78 +1,52 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
-  View, Text, Modal, Pressable, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator, Image,
+  AccessibilityInfo, findNodeHandle, View, Text, Modal, Pressable, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator, Image,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { captureRef } from 'react-native-view-shot';
 import * as Sharing from 'expo-sharing';
-import Constants from 'expo-constants';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
 import { BADGE_MAP, BADGE_IMAGES } from './BadgeIcon';
-
-// First line per badge (TR). {ad} = user name. EN uses a generic fallback.
-const BADGE_LINE1_TR = {
-  first_read:     '{ad} ilk hikâyesini okudu.',
-  explorer:       '{ad} 10 hikâye okuyup Kaşif oldu.',
-  sage:           '{ad} 25 hikâyeyle Bilge oldu.',
-  bookworm:       '{ad} 50 hikâye devirdi.',
-  streak_7:       '{ad} 7 gün hiç aksatmadı.',
-  cat_variety_3:  '{ad} 3 farklı konuya daldı.',
-  cat_variety_5:  '{ad} 5 farklı alanı keşfetti.',
-  cat_variety_10: '{ad} 10 farklı konuda ufkunu açtı.',
-  cat_master_5:   '{ad} bir konuda derinleşti.',
-  cat_master_10:  '{ad} bir konuda ustalaştı.',
-  cat_master_25:  '{ad} bir konunun otoritesi oldu.',
-  cat_master_50:  '{ad} bir konuda usta oldu.',
-  cat_master_100: '{ad} bir konuda efsane oldu.',
-  philosopher:    '{ad} derin sorular sormaya başladı.',
-  save_5:         '{ad} en sevdiği fikirleri biriktirdi.',
-  save_10:        '{ad} bir fikir koleksiyonu kurdu.',
-  save_50:        '{ad} koca bir arşiv oluşturdu.',
-  save_100:       '{ad} dev bir kütüphane kurdu.',
-  share_1:        '{ad} öğrendiğini paylaştı.',
-  share_10:       '{ad} fikirleri yaymaya başladı.',
-  share_20:       '{ad} ilhamı başkalarına taşıdı.',
-  share_30:       '{ad} bir fikir yayıcısı oldu.',
-  share_50:       '{ad} ışığı çoğalttı.',
-  storyteller:    '{ad} bir fikri gerçek sohbete taşıdı.',
-  icebreaker:     '{ad} buzları tek soruyla kırdı.',
-};
+import { getCareerVisual } from '../constants/careerVisuals';
+import { getShareLabel } from '../utils/share';
+import useReducedMotion from '../hooks/useReducedMotion';
 
 // Shared accent language with the card creator (gold / slate / teal / plum)
 const ACCENTS = ['#C89B3C', '#3F5A73', '#2C8068', '#6E3B52'];
 const LOGO_LIGHT = require('../../assets/spark_logo.png');
 const LOGO_DARK = require('../../assets/spark_logo_dark.png');
 
-// Where people who see a shared card can find the app.
-// Set in app.json -> expo.extra.shareLink (store URL, landing page, or @handle).
-const SHARE_LINK =
-  Constants.expoConfig?.extra?.shareLink ??
-  Constants.manifest?.extra?.shareLink ??
-  '';
-
 const hx = (h) => { h = h.replace('#', ''); return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; };
 const mix = (c1, c2, t2) => { const a = hx(c1), b = hx(c2); return `rgb(${Math.round(a[0] + (b[0] - a[0]) * t2)},${Math.round(a[1] + (b[1] - a[1]) * t2)},${Math.round(a[2] + (b[2] - a[2]) * t2)})`; };
 
-const buildLines = (badge, name, lang) => {
-  const title = t(badge.titleKey, lang) || badge.titleKey;
-  const nameStr = (name || '').trim() || (lang === 'tr' ? 'Bir okur' : 'A reader');
-  let l1;
-  if (lang === 'tr') l1 = (BADGE_LINE1_TR[badge.id] || '{ad} bir rozet kazandı.').replace('{ad}', nameStr);
-  else l1 = `${nameStr} earned the ${title} badge.`;
-  let hook;
-  if (badge.id === 'first_read') hook = lang === 'tr' ? 'İlk kıvılcımı sen çak.' : 'Spark yours now.';
-  else if (badge.id === 'streak_7') hook = lang === 'tr' ? 'Seriyi sen başlat.' : 'Start your streak.';
-  else hook = lang === 'tr' ? `Sıradaki ${title} sensin.` : `You're next.`;
-  return { l1, hook, title };
+const buildLines = ({ badge, achievement }, name, lang) => {
+  const title = achievement?.rankTitle || t(badge.titleKey, lang) || badge.titleKey;
+  const safeName = String(name || '').trim().slice(0, 30);
+  const nameStr = safeName || t('badgeShareReaderFallback', lang);
+  const l1 = achievement
+    ? t('career.share.line', lang, { name: nameStr, title, path: achievement.pathLabel })
+    : t('badgeShare.legacyLine', lang, { name: nameStr, title });
+  const hook = safeName
+    ? t('badgeShareMilestoneNamed', lang, { name: safeName })
+    : t('badgeShareMilestoneFallback', lang);
+  return { l1, hook: achievement?.evidenceSummary || hook, title };
+};
+
+const getShareVisual = ({ badge, achievement }) => {
+  if (achievement) {
+    const visual = getCareerVisual(achievement.visualKey);
+    return { meta: { icon: visual.icon, colors: visual.light, shareBackground: visual.shareBackground }, image: null };
+  }
+  return { meta: BADGE_MAP[badge.id] || { icon: 'trophy', colors: ['#C89B3C', '#8C701B'] }, image: BADGE_IMAGES[badge.id] };
 };
 
 // The shareable card. `tall` = story (9:16) — shows the quote; square hides it.
-const ShareCard = ({ badge, accent, theme, lang, name, quote, tall, shareLink }) => {
+const ShareCard = ({ badge, achievement, accent, theme, lang, name, quote, tall, shareLink }) => {
   const dark = theme === 'dark';
-  const meta = BADGE_MAP[badge.id] || { icon: 'trophy', colors: ['#C89B3C', '#8C701B'] };
-  const badgeImage = BADGE_IMAGES[badge.id];
-  const { l1, hook, title } = buildLines(badge, name, lang);
+  const { meta, image: badgeImage } = getShareVisual({ badge, achievement });
+  const { l1, hook, title } = buildLines({ badge, achievement }, name, lang);
+  const earnedDate = achievement?.earnedDate ? String(achievement.earnedDate).slice(0, 10) : null;
 
   const bg = dark ? '#15171A' : mix(accent, '#FFFFFF', 0.88);
   const nameC = dark ? '#FFFFFF' : '#2E2A22';
@@ -119,7 +93,9 @@ const ShareCard = ({ badge, accent, theme, lang, name, quote, tall, shareLink })
           {title}
         </Text>
         <Text style={[s.l1, { color: l1C }]}>{l1}</Text>
+        {achievement?.pathLabel ? <Text style={[s.path, { color: l1C }]}>{t('career.share.path', lang, { path: achievement.pathLabel })}</Text> : null}
         <Text style={[s.hook, { color: accStrong, fontSize: hookSize }]}>{hook}</Text>
+        {earnedDate ? <Text style={[s.earnedDate, { color: authorC }]}>{t('career.share.earnedDate', lang, { date: earnedDate })}</Text> : null}
         {tall && quote ? (
           <View style={{ marginTop: 18, paddingHorizontal: 4 }}>
             <Text style={[s.quote, { color: quoteC }]}>{`”${quote.q}”`}</Text>
@@ -138,15 +114,28 @@ const ShareCard = ({ badge, accent, theme, lang, name, quote, tall, shareLink })
   );
 };
 
-const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
+const BadgeShareSheet = ({ visible, badge, achievement = null, name, quote, onClose }) => {
   const { colors, lang, isDark } = useTheme();
   const [theme, setTheme] = useState('light');
   const [accent, setAccent] = useState('#C89B3C');
   const [capFmt, setCapFmt] = useState('square');
   const [busy, setBusy] = useState(false);
   const captureRefView = useRef(null);
+  const titleRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+  const shareLink = getShareLabel(lang);
 
-  if (!badge) return null;
+  useEffect(() => {
+    if (!visible) return undefined;
+    const timeout = setTimeout(() => {
+      const nodeHandle = findNodeHandle(titleRef.current);
+      if (nodeHandle) AccessibilityInfo.setAccessibilityFocus(nodeHandle);
+    }, 250);
+    return () => clearTimeout(timeout);
+  }, [visible]);
+
+  if (!badge && !achievement) return null;
+  const shareTitle = achievement?.rankTitle || (badge ? t(badge.titleKey, lang) : t('career.title', lang));
 
   const neutral = isDark
     ? { bg: '#232326', border: '#34343A', text: '#B7B9BE' }
@@ -161,7 +150,7 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
       const dims = format === 'story' ? { width: 1080, height: 1920 } : { width: 1080, height: 1350 };
       const uri = await captureRef(captureRefView, { format: 'png', quality: 1, ...dims });
       if (await Sharing.isAvailableAsync()) {
-        await Sharing.shareAsync(uri, { mimeType: 'image/png', dialogTitle: t(badge.titleKey, lang) || badge.titleKey });
+        await Sharing.shareAsync(uri, { mimeType: 'image/png', dialogTitle: shareTitle });
       }
     } catch (e) {
       console.warn('Badge share failed:', e?.message);
@@ -173,21 +162,24 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
   const Chip = ({ active, label, onPress }) => (
     <TouchableOpacity
       onPress={onPress}
-      style={{ flex: 1, alignItems: 'center', borderRadius: 10, paddingVertical: 9, backgroundColor: active ? colors.primary : neutral.bg }}
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      accessibilityState={{ selected: active }}
+      style={{ flex: 1, minHeight: 44, justifyContent: 'center', alignItems: 'center', borderRadius: 10, paddingVertical: 9, backgroundColor: active ? colors.primary : neutral.bg }}
     >
       <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12.5, color: active ? colors.onPrimary : neutral.text }}>{label}</Text>
     </TouchableOpacity>
   );
 
   return (
-    <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <View style={[st.overlay, { backgroundColor: colors.modalOverlay }]}>
-        <Pressable style={StyleSheet.absoluteFill} onPress={onClose} />
+    <Modal visible={visible} transparent animationType={reduceMotion ? 'fade' : 'slide'} onRequestClose={onClose} accessibilityViewIsModal>
+      <View style={[st.overlay, { backgroundColor: colors.modalOverlay }]} testID="badge-share-overlay">
+        <Pressable accessible={false} style={StyleSheet.absoluteFill} onPress={onClose} />
         <View style={[st.sheet, { backgroundColor: colors.modalSurface }]}>
           <View style={st.handle} />
           <View style={st.headerRow}>
-            <Text style={[st.title, { color: colors.text }]}>{lang === 'tr' ? 'Rozetini paylaş' : 'Share your badge'}</Text>
-            <TouchableOpacity onPress={onClose} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Text ref={titleRef} accessible accessibilityRole="header" style={[st.title, { color: colors.text }]}>{t(achievement ? 'career.share.title' : 'badgeShare.title', lang)}</Text>
+            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.close', lang)} onPress={onClose} style={st.closeButton}>
               <Ionicons name="close" size={22} color={colors.textSecondary} />
             </TouchableOpacity>
           </View>
@@ -195,42 +187,44 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
           <ScrollView showsVerticalScrollIndicator={false}>
             <View style={st.previewWrap}>
               <View style={{ width: capFmt === 'story' ? 226 : 268, height: capFmt === 'story' ? 402 : 335, borderRadius: 22, overflow: 'hidden' }}>
-                <ShareCard badge={badge} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} shareLink={SHARE_LINK} />
+                <ShareCard badge={badge} achievement={achievement} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} shareLink={shareLink} />
               </View>
             </View>
 
-            <Text style={[st.label, { color: colors.textSecondary }]}>{lang === 'tr' ? 'FORMAT' : 'FORMAT'}</Text>
+            <Text style={[st.label, { color: colors.textSecondary }]}>{t('badgeShare.format', lang)}</Text>
             <View style={st.row}>
-              <Chip active={capFmt === 'square'} label={lang === 'tr' ? 'Gönderi' : 'Post'} onPress={() => setCapFmt('square')} />
-              <Chip active={capFmt === 'story'} label={lang === 'tr' ? 'Hikaye' : 'Story'} onPress={() => setCapFmt('story')} />
+              <Chip active={capFmt === 'square'} label={t('badgeShare.post', lang)} onPress={() => setCapFmt('square')} />
+              <Chip active={capFmt === 'story'} label={t('badgeShare.story', lang)} onPress={() => setCapFmt('story')} />
             </View>
 
             <View style={{ flexDirection: 'row', gap: 16, marginTop: 14 }}>
               <View style={{ flex: 1 }}>
-                <Text style={[st.label, { color: colors.textSecondary }]}>{lang === 'tr' ? 'TEMA' : 'THEME'}</Text>
+                <Text style={[st.label, { color: colors.textSecondary }]}>{t('badgeShare.theme', lang)}</Text>
                 <View style={st.row}>
-                  <Chip active={theme === 'light'} label={lang === 'tr' ? 'Açık' : 'Light'} onPress={() => setTheme('light')} />
-                  <Chip active={theme === 'dark'} label={lang === 'tr' ? 'Koyu' : 'Dark'} onPress={() => setTheme('dark')} />
+                  <Chip active={theme === 'light'} label={t('badgeShare.light', lang)} onPress={() => setTheme('light')} />
+                  <Chip active={theme === 'dark'} label={t('badgeShare.dark', lang)} onPress={() => setTheme('dark')} />
                 </View>
               </View>
               <View style={{ flex: 1 }}>
-                <Text style={[st.label, { color: colors.textSecondary }]}>{lang === 'tr' ? 'RENK' : 'COLOR'}</Text>
+                <Text style={[st.label, { color: colors.textSecondary }]}>{t('badgeShare.color', lang)}</Text>
                 <View style={[st.row, { gap: 10, paddingTop: 4 }]}>
-                  {ACCENTS.map((c) => (
+                  {ACCENTS.map((c, index) => (
                     <TouchableOpacity
                       key={c}
                       onPress={() => setAccent(c)}
                       style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: c, borderWidth: accent === c ? 2 : 0, borderColor: colors.text }}
                       accessibilityRole="button"
+                      accessibilityLabel={`${t('badgeShare.color', lang)} ${index + 1}`}
+                      accessibilityState={{ selected: accent === c }}
                     />
                   ))}
                 </View>
               </View>
             </View>
 
-            <TouchableOpacity style={[st.shareBtn, { backgroundColor: colors.primary, marginTop: 22, marginBottom: 8 }, busy && { opacity: 0.6 }]} onPress={() => share(capFmt)} disabled={busy}>
+            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('badgeShare.share', lang)} accessibilityState={{ disabled: busy }} style={[st.shareBtn, { backgroundColor: colors.primary, marginTop: 22, marginBottom: 8 }, busy && { opacity: 0.6 }]} onPress={() => share(capFmt)} disabled={busy}>
               <Ionicons name="share-social-outline" size={16} color={colors.onPrimary} />
-              <Text style={[st.shareText, { color: colors.onPrimary }]}>{lang === 'tr' ? 'Paylaş' : 'Share'}</Text>
+              <Text style={[st.shareText, { color: colors.onPrimary }]}>{t('badgeShare.share', lang)}</Text>
             </TouchableOpacity>
             {busy ? <ActivityIndicator color={colors.primary} style={{ marginTop: 6 }} /> : null}
           </ScrollView>
@@ -243,7 +237,7 @@ const BadgeShareSheet = ({ visible, badge, name, quote, onClose }) => {
           collapsable={false}
           style={capFmt === 'story' ? { width: 360, height: 640 } : { width: 360, height: 450 }}
         >
-          <ShareCard badge={badge} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} />
+          <ShareCard badge={badge} achievement={achievement} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} shareLink={shareLink} />
         </View>
       </View>
     </Modal>
@@ -255,7 +249,9 @@ const s = StyleSheet.create({
   circle: { width: 90, height: 90, borderRadius: 45, alignItems: 'center', justifyContent: 'center' },
   name: { fontFamily: 'PlayfairDisplay_700Bold', marginTop: 14, textAlign: 'center', paddingHorizontal: 4 },
   l1: { fontFamily: 'Inter_400Regular', fontSize: 13.5, lineHeight: 19, textAlign: 'center', marginTop: 10, paddingHorizontal: 6 },
+  path: { fontFamily: 'Inter_600SemiBold', fontSize: 11.5, lineHeight: 17, textAlign: 'center', marginTop: 4, paddingHorizontal: 8 },
   hook: { fontFamily: 'PlayfairDisplay_700Bold', lineHeight: 24, textAlign: 'center', marginTop: 6 },
+  earnedDate: { fontFamily: 'Inter_500Medium', fontSize: 10.5, marginTop: 7, textAlign: 'center' },
   quote: { fontFamily: 'PlayfairDisplay_400Regular_Italic', fontSize: 13, lineHeight: 19, textAlign: 'center' },
   author: { fontFamily: 'Inter_500Medium', fontSize: 11, textAlign: 'center', marginTop: 6 },
   sigRow: { alignSelf: 'flex-end', flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 20 },
@@ -269,6 +265,7 @@ const st = StyleSheet.create({
   handle: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: 'rgba(128,128,128,0.35)', marginBottom: 10 },
   headerRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 },
   title: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 20 },
+  closeButton: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   previewWrap: { alignItems: 'center', marginVertical: 14 },
   label: { fontFamily: 'Inter_500Medium', fontSize: 11, letterSpacing: 0.5, marginBottom: 6 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 8 },

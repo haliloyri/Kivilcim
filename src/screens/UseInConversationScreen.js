@@ -26,6 +26,7 @@ import {
   StatusBar,
   Share,
   Animated,
+  Modal,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -139,9 +140,9 @@ const buildNativeShareText = ({ story, variant, lang, categoryLabel }) => {
 const mapVariantToPreset = (variant) => {
   switch (variant?.type) {
     case 'PUNCHLINE':  return 'quote';
-    case 'THIRTY_SEC': return 'story';
-    case 'QUESTION':   return 'post';
-    default:           return 'post';
+    case 'THIRTY_SEC': return 'lesson';
+    case 'QUESTION':   return 'reflection';
+    default:           return 'quote';
   }
 };
 
@@ -216,7 +217,7 @@ const platformFitLabel = (len, lang) => {
 const UseInConversationScreen = ({ route, navigation }) => {
   const { story } = route.params;
   const { colors, layout, isDark, lang } = useTheme();
-  const { isPremium, recordVariantUsage, removeVariantUsage, variantUsage, incrementShareCount } = useUserData();
+  const { isPremium, recordVariantUsage, removeVariantUsage, recordPrivateCareerApplication, variantUsage, incrementShareCount, isStoryCompleted, setBadgePresentationBlocked } = useUserData();
   const insets = useSafeAreaInsets();
 
   const variants = useMemo(() => buildMicroVariants(story, lang), [story, lang]);
@@ -244,6 +245,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
   const [copyToastVisible, setCopyToastVisible] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
   const [showStorytellerFor, setShowStorytellerFor] = useState(null);
+  const [privatePlanVisible, setPrivatePlanVisible] = useState(false);
   const [markedUsedIds, setMarkedUsedIds] = useState(() => {
     const storyId = String(story?.story_id);
     return new Set(
@@ -266,10 +268,18 @@ const UseInConversationScreen = ({ route, navigation }) => {
   // Use-in-Conversation screen instead of navigating to StoryDetail.
   const [shareCardVisible, setShareCardVisible] = React.useState(false);
   const [shareCardContent, setShareCardContent] = React.useState(['quote']);
+  const [shareCardOverride, setShareCardOverride] = React.useState('');
   // Holds a loaded rewarded ad to show only after the sheet Modal is fully
   // dismissed — showing it while the Modal is still presented makes iOS throw
   // "already presenting another view controller" and Android freeze.
   const pendingRewardedRef = React.useRef(null);
+
+  useEffect(() => {
+    const blocked = Boolean(showStorytellerFor || privatePlanVisible || shareGate || adSheet || shareCardVisible);
+    setBadgePresentationBlocked('conversation_overlay', blocked);
+    return () => setBadgePresentationBlocked('conversation_overlay', false);
+  }, [showStorytellerFor, privatePlanVisible, shareGate, adSheet, shareCardVisible, setBadgePresentationBlocked]);
+
   const flushPendingRewarded = () => {
     const p = pendingRewardedRef.current;
     if (!p) return;
@@ -329,6 +339,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
   // the Use-in-Conversation screen stays in the background (no navigation).
   const openShareCard = (variant) => {
     setShareCardContent([mapVariantToPreset(variant)]);
+    setShareCardOverride(variant?.body || '');
     setShareCardVisible(true);
   };
 
@@ -419,8 +430,9 @@ const UseInConversationScreen = ({ route, navigation }) => {
       categoryLabel: displayCat,
     });
 
+    setBadgePresentationBlocked('conversation_native_share', true);
     try {
-      await Share.share({
+      const result = await Share.share({
         message: payload,
         title: story?.title || t('mv_screen_title', lang),
       });
@@ -430,10 +442,13 @@ const UseInConversationScreen = ({ route, navigation }) => {
         variantType: variant.type,
         lang,
       });
-      incrementShareCount?.();
+      const wasDismissed = Share.dismissedAction && result?.action === Share.dismissedAction;
+      if (!wasDismissed) incrementShareCount?.();
     } catch (error) {
       if (error?.message && /cancel|dismiss/i.test(error.message)) return;
       console.warn('Native share failed', error);
+    } finally {
+      setTimeout(() => setBadgePresentationBlocked('conversation_native_share', false), 450);
     }
 
     recordVariantUsage({
@@ -444,24 +459,37 @@ const UseInConversationScreen = ({ route, navigation }) => {
       variantId: variant.id,
       action: 'share_native',
     });
-  }, [selected, story, displayCat, lang, navigation, recordVariantUsage, incrementShareCount, isPremium]);
+  }, [selected, story, displayCat, lang, navigation, recordVariantUsage, incrementShareCount, isPremium, setBadgePresentationBlocked]);
 
   const handleToggleUsed = useCallback(async () => {
     if (!selected) return;
+    if (!isStoryCompleted(story?.story_id)) {
+      showToast(t('career.application.completeFirst', lang));
+      return;
+    }
     const variantKey = getUsageVariantKey(story?.story_id, selected.id);
     const wasMarked = markedUsedIds.has(variantKey);
 
     if (!wasMarked) {
       setMarkedUsedIds(prev => new Set([...prev, variantKey]));
-      await recordVariantUsage({
+      const result = await recordVariantUsage({
         storyId: story?.story_id,
         storyTitle: story?.title,
         storyCategory: story?.parent_cat || story?.cat || null,
+        categoryId: story?.parent_cat_id ?? null,
         variantType: selected.type,
         variantId: selected.id,
         variantKey,
         action: 'mark_used',
       });
+      if (!result?.saved) {
+        setMarkedUsedIds(prev => {
+          const next = new Set(prev);
+          next.delete(variantKey);
+          return next;
+        });
+        showToast(t(result?.reason === 'quota_exceeded' ? 'career.application.limitReached' : 'career.application.syncFailed', lang));
+      }
     } else {
       setMarkedUsedIds(prev => {
         const next = new Set(prev);
@@ -474,7 +502,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
         variantKey,
       });
     }
-  }, [markedUsedIds, selected, story, recordVariantUsage, removeVariantUsage]);
+  }, [markedUsedIds, selected, story, isStoryCompleted, recordVariantUsage, removeVariantUsage, showToast, lang]);
 
   const handleStorytellerOpen = useCallback(() => {
     if (!selected) return;
@@ -488,25 +516,52 @@ const UseInConversationScreen = ({ route, navigation }) => {
 
   const handleStorytellerDone = useCallback(async () => {
     if (!showStorytellerFor) return;
+    if (!isStoryCompleted(story?.story_id)) {
+      setShowStorytellerFor(null);
+      showToast(t('career.application.completeFirst', lang));
+      return;
+    }
     const variant = showStorytellerFor;
     const variantKey = getUsageVariantKey(story?.story_id, variant.id);
     setMarkedUsedIds(prev => new Set([...prev, variantKey]));
-    await recordVariantUsage({
+    const result = await recordVariantUsage({
       storyId: story?.story_id,
       storyTitle: story?.title,
       storyCategory: story?.parent_cat || story?.cat || null,
+      categoryId: story?.parent_cat_id ?? null,
       variantType: variant.type,
       variantId: variant.id,
       variantKey,
       action: 'mark_used',
+      careerEventSubtype: 'practice_completed',
     });
+    if (!result?.saved) {
+      setMarkedUsedIds(prev => {
+        const next = new Set(prev);
+        next.delete(variantKey);
+        return next;
+      });
+      showToast(t(result?.reason === 'quota_exceeded' ? 'career.application.limitReached' : 'career.application.syncFailed', lang));
+      setShowStorytellerFor(null);
+      return;
+    }
     trackEvent(ANALYTICS_EVENTS.STORYTELLER_PRACTICE_COMPLETED, {
       storyId: story?.story_id,
       variantType: variant.type,
       lang,
     });
     setShowStorytellerFor(null);
-  }, [showStorytellerFor, story, recordVariantUsage, lang]);
+  }, [showStorytellerFor, story, isStoryCompleted, recordVariantUsage, lang, showToast]);
+
+  const handlePrivatePlan = useCallback(async (context) => {
+    setPrivatePlanVisible(false);
+    const result = await recordPrivateCareerApplication({
+      storyId: story?.story_id,
+      categoryId: story?.parent_cat_id ?? null,
+      context,
+    });
+    showToast(t(result?.reason === 'story_not_completed' ? 'career.privatePlan.completeFirst' : 'career.privatePlan.saved', lang));
+  }, [recordPrivateCareerApplication, showToast, story, lang]);
 
   // AI rewrite — UI present; backend not wired yet (gentle "coming soon").
   const handleAiRewrite = useCallback(() => {
@@ -743,6 +798,10 @@ const UseInConversationScreen = ({ route, navigation }) => {
             </Text>
           </TouchableOpacity>
         </View>
+        <TouchableOpacity style={styles.privatePlanButton} onPress={() => setPrivatePlanVisible(true)} activeOpacity={0.85} accessibilityRole="button" accessibilityLabel={t('career.privatePlan.open', lang)}>
+          <Ionicons name="shield-checkmark-outline" size={17} color={colors.textSecondary} />
+          <Text style={styles.privatePlanText}>{t('career.privatePlan.open', lang)}</Text>
+        </TouchableOpacity>
       </View>
 
       {/* ── Copy / info toast ───────────────────────────────────────────── */}
@@ -776,6 +835,20 @@ const UseInConversationScreen = ({ route, navigation }) => {
         isDark={isDark}
         lang={lang}
       />
+
+      <Modal visible={privatePlanVisible} transparent animationType="fade" onRequestClose={() => setPrivatePlanVisible(false)} accessibilityViewIsModal>
+        <View style={styles.privatePlanBackdrop}>
+          <View style={styles.privatePlanSheet}>
+            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.close', lang)} onPress={() => setPrivatePlanVisible(false)} style={styles.privatePlanClose}><Ionicons name="close" size={20} color={colors.text} /></TouchableOpacity>
+            <Ionicons name="shield-checkmark-outline" size={27} color={colors.primary} />
+            <Text selectable style={styles.privatePlanTitle}>{t('career.privatePlan.title', lang)}</Text>
+            <Text selectable style={styles.privatePlanCopy}>{t('career.privatePlan.copy', lang)}</Text>
+            <View style={styles.privatePlanOptions}>
+              {['workStudy', 'social', 'personal'].map((context) => <TouchableOpacity key={context} accessibilityRole="button" accessibilityLabel={t(`career.privatePlan.${context}`, lang)} onPress={() => handlePrivatePlan(context)} style={styles.privatePlanOption}><Text selectable style={styles.privatePlanOptionText}>{t(`career.privatePlan.${context}`, lang)}</Text><Ionicons name="arrow-forward" size={18} color={colors.primary} /></TouchableOpacity>)}
+            </View>
+          </View>
+        </View>
+      </Modal>
 
       {/* Ad or Premium Sheet */}
       <AdOrPremiumSheet
@@ -830,6 +903,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
         localLang={lang}
         initialContent={shareCardContent}
         initialFormat="post"
+        initialOverrideText={shareCardOverride}
         shareSource="use_in_conversation"
       />
     </SafeAreaView>
@@ -1124,6 +1198,71 @@ const buildStyles = (colors, isDark, insets) => {
       fontFamily: 'Inter_500Medium',
       fontSize: 14,
       color: colors.textSecondary,
+    },
+    privatePlanButton: {
+      minHeight: 44,
+      marginTop: 8,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+    },
+    privatePlanText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.textSecondary,
+    },
+    privatePlanBackdrop: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      backgroundColor: 'rgba(0,0,0,0.46)',
+    },
+    privatePlanSheet: {
+      backgroundColor: colors.background,
+      borderTopLeftRadius: 26,
+      borderTopRightRadius: 26,
+      padding: 24,
+      paddingBottom: Math.max(insets.bottom + 24, 32),
+      gap: 12,
+    },
+    privatePlanClose: {
+      position: 'absolute',
+      top: 14,
+      right: 16,
+      width: 44,
+      height: 44,
+      borderRadius: 22,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    privatePlanTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 26,
+      color: colors.text,
+      paddingRight: 42,
+    },
+    privatePlanCopy: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 14,
+      lineHeight: 20,
+      color: colors.textSecondary,
+    },
+    privatePlanOptions: { gap: 9, marginTop: 4 },
+    privatePlanOption: {
+      minHeight: 52,
+      borderRadius: 15,
+      paddingHorizontal: 15,
+      backgroundColor: colors.backgroundDark,
+      borderWidth: 1,
+      borderColor: colors.border,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+    privatePlanOptionText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 15,
+      color: colors.text,
     },
 
     // Toast

@@ -425,7 +425,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
     -- Book Translations
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
-    ORDER BY s.sort_order ASC
+    ORDER BY COALESCE(s.current_read_minutes, 1) DESC, s.id DESC
   `, [lang, lang, lang, lang]);
 
   return rows.map(r => ({
@@ -554,7 +554,8 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
       OR LOWER(COALESCE(NULLIF(bt.title, ''), bt_tr.title, '')) LIKE ?
       OR LOWER(COALESCE(ct.translation, ct_tr.translation, c.category_name, '')) LIKE ?
       OR LOWER(COALESCE(sub.subcategory_name, '')) LIKE ?
-    ORDER BY rank_title ASC, rank_body ASC, rank_source ASC, s.sort_order ASC
+    ORDER BY rank_title ASC, rank_body ASC, rank_source ASC,
+             COALESCE(s.current_read_minutes, 1) DESC, s.id DESC
     LIMIT ${safeLimit}
   `, [
     likeQuery,

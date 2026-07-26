@@ -1,6 +1,7 @@
 // StoriesContext — loads stories from Supabase (Supabase-first, SQLite fallback).
 // Refreshes automatically when the language changes.
 import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
+import NetInfo from '@react-native-community/netinfo';
 import { useTheme } from './ThemeContext';
 import { getStoriesForLang, getCategoriesFromDb, getParentCategories, waitForData } from '../db/db';
 import { SUPABASE_LIVE, fetchStoriesFromSupabase } from '../services/supabase';
@@ -40,48 +41,39 @@ export const StoriesProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
   const [storiesSource, setStoriesSource] = useState('sqlite'); // 'supabase' | 'cache' | 'sqlite'
+  const [isOffline, setIsOffline] = useState(false);
 
   const refresh = useCallback(async () => {
     setLoading(true);
     setErrorMsg(null);
 
-    // 1. Try Supabase first
-    if (SUPABASE_LIVE) {
-      try {
-        const sbStories = await fetchStoriesFromSupabase(lang);
-        if (sbStories && sbStories.length > 0) {
-          // Save to cache in the background — don't block the render
-          saveStoriesToCache(lang, sbStories).catch(() => {});
-          const { categories: cats, parentCategories: parents } = deriveCategories(sbStories);
-          setStories(sbStories);
-          setCategories(cats);
-          setParentCategories(parents);
-          setStoriesSource('supabase');
-          setLoading(false);
-          return;
-        }
-      } catch (e) {
-        console.warn('[StoriesContext] Supabase fetch failed:', e.message);
-      }
-    }
+    const applyStories = (nextStories, source) => {
+      const orderedStories = [...nextStories].sort(
+        (a, b) =>
+          Number(b.min ?? b.possible_read_minutes ?? 1) - Number(a.min ?? a.possible_read_minutes ?? 1) ||
+          Number(b.story_id ?? b.id) - Number(a.story_id ?? a.id)
+      );
+      const { categories: cats, parentCategories: parents } = deriveCategories(orderedStories);
+      setStories(orderedStories);
+      setCategories(cats);
+      setParentCategories(parents);
+      setStoriesSource(source);
+    };
 
-    // 2. Try AsyncStorage cache (populated by a previous Supabase fetch)
+    // Render the latest local content first. This deliberately accepts a stale
+    // cache: readers should still be able to browse on a flight or weak signal.
+    let hasLocalStories = false;
     try {
-      const cached = await loadStoriesFromCache(lang);
-      if (cached && cached.length > 0) {
-        const { categories: cats, parentCategories: parents } = deriveCategories(cached);
-        setStories(cached);
-        setCategories(cats);
-        setParentCategories(parents);
-        setStoriesSource('cache');
-        setLoading(false);
-        return;
+      const cached = await loadStoriesFromCache(lang, { allowStale: true });
+      if (cached?.length) {
+        applyStories(cached, 'cache');
+        hasLocalStories = true;
       }
     } catch (e) {
       console.warn('[StoriesContext] Cache load failed:', e.message);
     }
 
-    // 3. SQLite fallback
+    let sqliteStories = [];
     try {
       await waitForData();
       const [storiesList, catsList, parents] = await Promise.all([
@@ -89,15 +81,48 @@ export const StoriesProvider = ({ children }) => {
         getCategoriesFromDb(lang),
         getParentCategories(lang),
       ]);
-      setStories(storiesList);
-      setCategories(catsList);
-      setParentCategories(parents);
-      setStoriesSource('sqlite');
+      sqliteStories = storiesList;
+      if (!hasLocalStories) {
+        setStories(storiesList);
+        setCategories(catsList);
+        setParentCategories(parents);
+        setStoriesSource('sqlite');
+        hasLocalStories = storiesList.length > 0;
+      }
     } catch (e) {
-      console.error('[StoriesContext] SQLite fallback error (all sources failed):', e);
-      setErrorMsg(e.message || String(e));
-    } finally {
-      setLoading(false);
+      console.error('[StoriesContext] SQLite fallback error:', e);
+    }
+    setLoading(false);
+
+    let online = true;
+    try {
+      const state = await NetInfo.fetch();
+      online = Boolean(state.isConnected) && state.isInternetReachable !== false;
+    } catch (e) {
+      // If the reachability check is unavailable, let the fetch decide.
+      online = true;
+    }
+    setIsOffline(!online);
+    if (!online || !SUPABASE_LIVE) {
+      if (!hasLocalStories) setErrorMsg('No local stories available.');
+      return;
+    }
+
+    // Refresh in the background once local content is already visible.
+    try {
+      const sbStories = await fetchStoriesFromSupabase(lang);
+      if (sbStories?.length) {
+        // Supabase updates matching stories, but does not hide collection
+        // entries that exist only in the bundled SQLite database.
+        const mergedStories = new Map(sqliteStories.map((story) => [String(story.story_id ?? story.id), story]));
+        sbStories.forEach((story) => mergedStories.set(String(story.story_id ?? story.id), story));
+        const nextStories = [...mergedStories.values()];
+        saveStoriesToCache(lang, nextStories).catch(() => {});
+        applyStories(nextStories, 'supabase');
+      }
+    } catch (e) {
+      console.warn('[StoriesContext] Supabase refresh failed:', e.message);
+      if (!hasLocalStories) setErrorMsg(e.message || String(e));
     }
   }, [lang]);
 
@@ -114,7 +139,8 @@ export const StoriesProvider = ({ children }) => {
     errorMsg,
     refreshStories: refresh,
     storiesSource,
-  }), [stories, categories, parentCategories, loading, errorMsg, refresh, storiesSource]);
+    isOffline,
+  }), [stories, categories, parentCategories, loading, errorMsg, refresh, storiesSource, isOffline]);
 
   return (
     <StoriesContext.Provider value={value}>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hikâyeden Instagram Videosu"
+  short_description: "Hikâyeyi onaylı Reels paketine dönüştürür"
+  default_prompt: "$create-video becerisini kullanarak 'Ertelemenin gerçek kökü: korku' hikâyesi için önce görselleri ve Türkçe metinleri hazırla."

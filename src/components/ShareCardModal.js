@@ -33,20 +33,13 @@ import * as Sharing from 'expo-sharing';
 import * as Clipboard from 'expo-clipboard';
 import * as MediaLibrary from 'expo-media-library';
 import { Ionicons } from '@expo/vector-icons';
-import Constants from 'expo-constants';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import { getShareLabel, getShareUrl } from '../utils/share';
 
 const { width } = Dimensions.get('window');
-
-// Where people who see a share card can find the app. Set in
-// app.json -> expo.extra.shareLink (store URL, landing page, or @handle).
-const SHARE_LINK =
-  Constants.expoConfig?.extra?.shareLink ??
-  Constants.manifest?.extra?.shareLink ??
-  '';
 
 // Brand logo (book + star + "Albor" wordmark). Dark variant has the cream
 // wordmark for dark card backgrounds; light variant has the ink wordmark.
@@ -56,6 +49,14 @@ const LOGO_DARK_BG = require('../../assets/spark_logo_dark.png');
 const LOGO_SOCIAL = require('../../assets/spark_social.png');
 
 const CAROUSEL_ORDER = ['hook', 'lesson', 'quote', 'reflection'];
+const CARD_TEXT_MAX_LENGTH = 280;
+
+const shortenForCard = (value, maxLength = CARD_TEXT_MAX_LENGTH) => {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (text.length <= maxLength) return text;
+  const boundary = text.lastIndexOf(' ', maxLength - 1);
+  return `${text.slice(0, boundary > 0 ? boundary : maxLength - 1).trimEnd()}…`;
+};
 
 const ShareCardModal = ({
   visible,
@@ -69,9 +70,11 @@ const ShareCardModal = ({
   shareSource = 'story_detail',
 }) => {
   const { colors, typography, layout, isDark } = useTheme();
-  const { incrementShareCount } = useUserData();
+  const { incrementShareCount, setBadgePresentationBlocked } = useUserData();
   const insets = useSafeAreaInsets();
   const cLang = localLang || lang;
+  const shareLink = getShareUrl(cLang);
+  const shareLabel = getShareLabel(cLang);
 
   const [shareTheme, setShareTheme] = useState('dark');
   const [shareContent, setShareContent] = useState(initialContent || ['quote']);
@@ -91,6 +94,11 @@ const ShareCardModal = ({
     setShareTextOverride(initialOverrideText || '');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible]);
+
+  useEffect(() => {
+    setBadgePresentationBlocked('story_card_share', visible);
+    return () => setBadgePresentationBlocked('story_card_share', false);
+  }, [visible, setBadgePresentationBlocked]);
 
   // --- Derived display fields ------------------------------------------
   const displayTitle = story?.title || '';
@@ -144,6 +152,10 @@ const ShareCardModal = ({
     if (type === 'hook') return displayHook;
     return '';
   };
+
+  // Cards are intentionally concise so the selected thought stays readable
+  // in a social preview. The complete text remains available in the caption.
+  const getCardText = (type) => shortenForCard(getShareText(type));
 
   const getCTAByLang = () => {
     if (cLang === 'en') {
@@ -201,7 +213,7 @@ const ShareCardModal = ({
 
     const ctas = getCTAByLang();
     const hashtags = buildHashtags();
-    const linkStr = SHARE_LINK ? `\n🔗 ${SHARE_LINK}` : '';
+    const linkStr = `\n🔗 ${shareLink}`;
     const caption = `${displayTitle}\n\n${selectedTexts}\n\n${ctas[0]}${linkStr}\n${hashtags}`;
 
     const reelScript = `${displayTitle}\n\n` +
@@ -289,7 +301,6 @@ const ShareCardModal = ({
         `${saved} ${t('carousel_saved_body', cLang)}`,
         [{ text: t('alert_ok', cLang), style: 'default' }]
       );
-      incrementShareCount?.();
       trackEvent(ANALYTICS_EVENTS.STORY_SHARED, {
         source: `${shareSource}_carousel`,
         storyId: story?.story_id,
@@ -323,7 +334,7 @@ const ShareCardModal = ({
     // sitting at a fixed offset — otherwise long content gets cramped or
     // clipped against the fixed-position footer.
     const contentVolume = contentTypes.reduce(
-      (sum, type) => sum + (getShareText(type) || '').length,
+      (sum, type) => sum + (getCardText(type) || '').length,
       0
     ) + (contentTypes.length - 1) * 60;
     const STORY_PADDING_TOP_MAX = 140;
@@ -356,7 +367,7 @@ const ShareCardModal = ({
               const label = type === 'lesson' ? t('share_key_takeaway', cLang) :
                 type === 'reflection' ? t('share_reflect', cLang) :
                   type === 'hook' ? '' : displayTitle;
-              const textContent = getShareText(type);
+              const textContent = getCardText(type);
               const dynTitle = contentTypes.length > 1 ? fTitle * 0.8 : fTitle;
               const dynQuote = contentTypes.length > 1 ? fQuote * 0.8 : fQuote;
 
@@ -400,11 +411,9 @@ const ShareCardModal = ({
                 <Text style={{ fontFamily: 'Inter_500Medium', fontSize: fSrc, color: th.accent, letterSpacing: 1 }}>
                   {t('card_cta_short', cLang)} ✦
                 </Text>
-                {SHARE_LINK ? (
-                  <Text style={{ fontFamily: 'Inter_500Medium', fontSize: fFooter, color: th.sub, letterSpacing: 1, marginTop: 8 }}>
-                    {SHARE_LINK}
-                  </Text>
-                ) : null}
+                <Text style={{ fontFamily: 'Inter_500Medium', fontSize: fFooter, color: th.sub, letterSpacing: 1, marginTop: 8 }}>
+                  {shareLabel}
+                </Text>
               </View>
             </View>
           </View>

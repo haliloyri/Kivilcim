@@ -1,0 +1,53 @@
+{
+  "batch_id": "example",
+  "kind": "variants_only",
+  "version": 1,
+  "created": "2026-07-25",
+  "notes": "Ornek batch — hattin calistigini gostermek icin. story_id:1059 (Atomic Habits, Britanya bisiklet takimi) icin 4 dilde sohbet varyanti. Bu dosya sablon olarak durur, ingest edilmez.",
+  "items": [
+    {
+      "book": { "list_no": 1 },
+      "story": {
+        "story_id": 1059,
+        "queue_title": "Britanya bisiklet takımının yüzde iki felsefesi",
+        "sources": [
+          "https://hbr.org/2015/10/how-1-performance-improvements-led-to-olympic-gold",
+          "https://www.bbc.com/sport/olympics/19144173"
+        ],
+        "verification_status": "verified",
+        "fact_pack": [
+          "Dave Brailsford 2003'te British Cycling'in performans direktoru oldu.",
+          "Takim 1908'den 2003'e kadar yalnizca bir olimpiyat altin madalyasi kazanmisti.",
+          "Brailsford'un yaklasimi 'marginal gains': her alanda yuzde 1 iyilesme.",
+          "2008 Pekin Olimpiyatlari'nda takim bisiklet madalyalarinin yuzde 60'ini aldi."
+        ]
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Bir takımı şampiyon yapan şey büyük bir buluş değil, kimsenin saymadığı yüzlerce küçük ayardı.",
+          "thirty_sec": "Britanya bisiklet takımı yüz yıl boyunca neredeyse hiç kazanmamıştı. Sonra Dave Brailsford geldi ve tuhaf bir şey yaptı: büyük bir buluş aramak yerine yastık seçiminden tekerlek temizliğine kadar her ayrıntıda yüzde bir iyileşme aradı. Tek başına hiçbiri fark yaratacak gibi görünmüyordu. Ama beş yıl sonra takım Pekin'de bisiklet madalyalarının çoğunu topladı. Kazandıran hamle, hiç kimsenin önemli bulmadığı ayrıntıların toplamıydı.",
+          "question": "Senin işinde kimsenin ölçmediği ama toplamda fark yaratabilecek küçük ayrıntı ne olurdu?",
+          "key_contrast": "Tek büyük hamle değil, yüz küçük ayar"
+        },
+        "en": {
+          "punchline": "No single change mattered; the sum of a hundred unglamorous ones produced Olympic gold.",
+          "thirty_sec": "Here is a strange way to win. British cycling had almost no history of victory, so their new director stopped hunting for a breakthrough. Instead he chased one percent improvements everywhere, down to which pillow riders slept on and how mechanics washed the bikes. None of it looked decisive on its own. Five years later the team dominated the velodrome in Beijing.",
+          "question": "Where in your own work would a one percent improvement be too small to notice?",
+          "key_contrast": "Breakthrough versus accumulation"
+        },
+        "es": {
+          "punchline": "El oro olímpico no llegó por una gran idea, sino por cien ajustes que nadie consideraba importantes.",
+          "thirty_sec": "El ciclismo británico apenas había ganado nada en un siglo. Su nuevo director no buscó una idea brillante: persiguió mejoras del uno por ciento en todo, incluso en la almohada donde dormían los ciclistas y en cómo se lavaban las bicicletas. Ninguna decisión parecía importante por separado. Cinco años después, el equipo arrasó en el velódromo de Pekín. La suma resultó imbatible.",
+          "question": "¿Qué detalle diminuto de tu trabajo nadie mide aunque podría cambiar el resultado?",
+          "key_contrast": "Idea brillante frente a suma paciente"
+        },
+        "de": {
+          "punchline": "Nicht eine große Idee brachte das Gold, sondern hundert Kleinigkeiten, die niemand zählte.",
+          "thirty_sec": "Ein Jahrhundert lang gewann der britische Radsport fast nichts. Dann kam ein Direktor, der bewusst nicht nach dem großen Durchbruch suchte. Er verbesserte alles um ein Prozent: sogar die Kissen der Fahrer und die Reinigung der Räder. Einzeln wirkte keine Maßnahme entscheidend. Fünf Jahre später beherrschte das Team das Velodrom in Peking. Die Summe des Unscheinbaren entschied das Rennen.",
+          "question": "Welches winzige Detail in deiner Arbeit misst niemand, obwohl es alles verändern könnte?",
+          "key_contrast": "Durchbruch gegen Summe"
+        }
+      }
+    }
+  ]
+}

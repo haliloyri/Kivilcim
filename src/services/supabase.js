@@ -643,6 +643,9 @@ export const resetUserDataOnServer = async (userId) => {
     supabase.from('user_collections').delete().eq('user_id', userId),
     supabase.from('user_variant_usage').delete().eq('user_id', userId),
     supabase.from('user_badges').delete().eq('user_id', userId),
+    supabase.from('user_career_events').delete().eq('user_id', userId),
+    supabase.from('user_career_state').delete().eq('user_id', userId),
+    supabase.from('user_career_nodes').delete().eq('user_id', userId),
   ];
   const results = await Promise.allSettled(deletes);
   results.forEach((r) => {
@@ -655,6 +658,42 @@ export const resetUserDataOnServer = async (userId) => {
     streak_freeze_credits: 0,
     share_count: 0,
   });
+};
+
+// ── Career Path (server snapshot) ──────────────────────────────────────────
+// Returns null on an unavailable network/configuration so callers can retain
+// their local SQLite projection without treating an offline session as empty.
+export const getCareerSnapshotFromServer = async () => {
+  if (!SUPABASE_LIVE) return null;
+  try {
+    const [eventsResult, stateResult, nodesResult, legacyBadgesResult] = await Promise.all([
+      supabase.from('user_career_events').select('*').order('occurred_at', { ascending: true }).order('event_id', { ascending: true }),
+      supabase.from('user_career_state').select('*').maybeSingle(),
+      supabase.from('user_career_nodes').select('*').order('earned_at', { ascending: true }),
+      supabase.from('user_legacy_badges').select('badge_id').order('badge_id', { ascending: true }),
+    ]);
+    const error = eventsResult.error || stateResult.error || nodesResult.error || legacyBadgesResult.error;
+    if (error) {
+      console.warn('[supabase] getCareerSnapshotFromServer:', error.message);
+      return null;
+    }
+    const events = (eventsResult.data || []).map((row) => ({
+      eventId: row.event_id, creditKey: row.credit_key, creditType: row.credit_type,
+      eventSubtype: row.event_subtype, storyId: row.story_id, categoryId: row.category_id,
+      completionMethod: row.completion_method, occurredAt: row.occurred_at,
+      localDay: row.local_day, timezoneOffsetMinutes: row.timezone_offset_minutes,
+      ruleVersion: row.rule_version, metadata: row.metadata_json,
+    }));
+    const nodes = (nodesResult.data || []).map((row) => ({
+      nodeId: row.node_id, pathId: row.path_id, ruleVersion: row.rule_version,
+      earnedAt: row.earned_at, seenAt: row.seen_at, awardSource: row.award_source,
+      requirementsSnapshot: row.requirements_snapshot_json,
+    }));
+    return { events, state: stateResult.data || null, nodes, legacyBadgeIds: (legacyBadgesResult.data || []).map((row) => String(row.badge_id)).filter(Boolean) };
+  } catch (error) {
+    console.warn('[supabase] getCareerSnapshotFromServer exception:', error?.message);
+    return null;
+  }
 };
 
 // ─── Stories (online) ────────────────────────────────────────────────────────
@@ -712,7 +751,8 @@ export const fetchStoriesFromSupabase = async (lang) => {
         'conv_question, conv_key_contrast, sort_order'
       )
       .eq('lang', lang)
-      .order('sort_order', { ascending: true });
+      .order('read_time_minutes', { ascending: false })
+      .order('story_id', { ascending: false });
 
     if (error) {
       console.warn('[supabase] fetchStoriesFromSupabase:', error.message);

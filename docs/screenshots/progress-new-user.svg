@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="2340" viewBox="0 0 1080 2340">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fcf9f4"/>
+      <stop offset="100%" stop-color="#f7f2e8"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#D8C08F"/>
+      <stop offset="100%" stop-color="#BE9347"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.12" flood-color="#6e5f4f"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect x="0" y="0" width="100%" height="120" fill="#fcf9f4"/>
+  <text x="60" y="78" font-family="Georgia, serif" font-size="42" fill="#823b18">Spark ✦</text>
+  <text x="60" y="130" font-family="Arial, sans-serif" font-size="30" fill="#7D6F5E">Kıvılcım Yolu</text>
+
+  
+  <text x="60" y="230" font-family="Georgia, serif" font-size="64" fill="#1A1A1A">Kıvılcım Yolu</text>
+  <text x="60" y="276" font-family="Arial, sans-serif" font-size="30" fill="#7D6F5E">Okumaktan fikirleri hayata taşımaya sakin bir yol</text>
+
+  <defs>
+    <linearGradient id="journeyHero" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#071634"/><stop offset="100%" stop-color="#27214d"/></linearGradient>
+    <linearGradient id="journeyPath" x1="0" x2="1"><stop offset="0%" stop-color="#9E6642"/><stop offset="55%" stop-color="#F8D47C"/><stop offset="100%" stop-color="#FFF0B5"/></linearGradient>
+  </defs>
+  <rect x="60" y="320" rx="32" ry="32" width="960" height="430" fill="url(#journeyHero)"/>
+  <circle cx="896" cy="424" r="138" fill="#E8B85C" opacity="0.11"/>
+  <circle cx="914" cy="444" r="80" fill="none" stroke="#F9D783" stroke-width="3" opacity="0.54"/>
+  <path d="M300,750 C520,684 540,744 720,638 C826,576 824,476 1010,406" fill="none" stroke="url(#journeyPath)" stroke-width="21" opacity="0.94"/>
+  <path d="M300,750 C520,684 540,744 720,638 C826,576 824,476 1010,406" fill="none" stroke="#fff8d8" stroke-width="3" opacity="0.85"/>
+  <circle cx="176" cy="388" r="4" fill="#F8D47C"/><circle cx="240" cy="436" r="3" fill="#8FC8FF"/><circle cx="576" cy="378" r="4" fill="#F8D47C"/><circle cx="734" cy="428" r="3" fill="#F8D47C"/>
+  <rect x="100" y="360" rx="18" ry="18" width="220" height="38" fill="#0B1B40" opacity="0.68" stroke="#F9D783" stroke-opacity="0.56"/>
+  <text x="122" y="386" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1" fill="#fff">ORTAK BAŞLANGIÇ</text>
+  <text x="100" y="478" font-family="Georgia, serif" font-size="62" fill="#fff">Yolunu seç</text>
+  <text x="100" y="528" font-family="Arial, sans-serif" font-size="27" fill="#F1F4FF">Küçük ve anlamlı adımlar kalıcı bir bilgelik biriktirir.</text>
+  <rect x="100" y="564" rx="18" ry="18" width="310" height="43" fill="#0B1B40" opacity="0.7"/>
+  <text x="124" y="592" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">⌁  3/6 · YOLCULUĞUN</text>
+
+  <text x="60" y="828" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="1" fill="#7D6F5E">SIRADAKİ ADIMIN</text>
+  <rect x="60" y="862" rx="28" ry="28" width="960" height="310" fill="#ffffff" stroke="#E8E3DA"/>
+  <rect x="60" y="862" rx="28" ry="28" width="12" height="310" fill="#C89B3C"/>
+  <text x="100" y="940" font-family="Georgia, serif" font-size="50" fill="#1A1A1A">İlk Kıvılcım</text>
+  <text x="100" y="986" font-family="Arial, sans-serif" font-size="27" fill="#7D6F5E">İlk hikâyeni tamamlayarak başla</text>
+  <rect x="100" y="1030" rx="16" ry="16" width="820" height="76" fill="#823b18"/>
+  <text x="390" y="1078" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#fff">Sıradaki adımı at  →</text>
+
+  <text x="60" y="1248" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="1" fill="#7D6F5E">YOLCULUĞUN</text>
+  <rect x="60" y="1280" rx="28" ry="28" width="960" height="408" fill="#ffffff" stroke="#E8E3DA"/>
+  <line x1="114" y1="1354" x2="114" y2="1622" stroke="#D8C08F" stroke-width="3"/>
+  <circle cx="114" cy="1352" r="16" fill="#C89B3C"/><text x="106" y="1359" font-family="Arial" font-size="18" fill="#fff">✓</text>
+  <text x="154" y="1348" font-family="Georgia, serif" font-size="37" fill="#1A1A1A">İlk Kıvılcım</text><text x="154" y="1386" font-family="Arial" font-size="23" fill="#7D6F5E">Kazanıldı</text>
+  <circle cx="114" cy="1444" r="16" fill="#C89B3C"/><text x="106" y="1451" font-family="Arial" font-size="18" fill="#fff">✓</text>
+  <text x="154" y="1440" font-family="Georgia, serif" font-size="37" fill="#1A1A1A">Yolcu</text><text x="154" y="1478" font-family="Arial" font-size="23" fill="#7D6F5E">Kazanıldı</text>
+  <circle cx="114" cy="1536" r="16" fill="#fff" stroke="#C89B3C" stroke-width="4"/><text x="154" y="1532" font-family="Georgia, serif" font-size="37" fill="#1A1A1A">Düşünür</text><text x="154" y="1570" font-family="Arial" font-size="23" fill="#7D6F5E">Devam ediyor</text>
+  <circle cx="114" cy="1628" r="16" fill="#fff" stroke="#E8E3DA" stroke-width="3"/><text x="154" y="1624" font-family="Georgia, serif" font-size="37" fill="#1A1A1A">Sentezci</text><text x="154" y="1662" font-family="Arial" font-size="23" fill="#7D6F5E">Sıradaki</text>
+
+  <rect x="60" y="1734" rx="24" ry="24" width="960" height="150" fill="#F7F2E9" stroke="#E8E3DA"/>
+  <circle cx="116" cy="1809" r="28" fill="#E9D6A7"/><text x="104" y="1818" font-family="Arial" font-size="25" fill="#823b18">⌁</text>
+  <text x="164" y="1800" font-family="Georgia, serif" font-size="40" fill="#1A1A1A">Yol araçları</text>
+  <text x="164" y="1842" font-family="Arial, sans-serif" font-size="25" fill="#7D6F5E">İçgörü Rafını ve düşünme pratiğini aç  ›</text>
+
+  <text x="60" y="1966" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="1" fill="#7D6F5E">OKUMA RİTMİ</text>
+  <rect x="60" y="1992" rx="24" ry="24" width="960" height="272" fill="#ffffff" stroke="#E8E3DA"/>
+  <text x="96" y="2050" font-family="Georgia, serif" font-size="34" fill="#823b18">5</text><text x="96" y="2080" font-family="Arial" font-size="19" fill="#7D6F5E">GÜN SERİ</text>
+  <text x="360" y="2050" font-family="Georgia, serif" font-size="34" fill="#1A1A1A">12</text><text x="360" y="2080" font-family="Arial" font-size="19" fill="#7D6F5E">EN UZUN SERİ</text>
+  <text x="690" y="2050" font-family="Georgia, serif" font-size="34" fill="#1A1A1A">17</text><text x="690" y="2080" font-family="Arial" font-size="19" fill="#7D6F5E">AKTİF GÜN</text>
+  <text x="96" y="2132" font-family="Arial" font-size="20" fill="#7D6F5E">8 hafta · 17 aktif gün</text>
+  <g><circle cx="96" cy="2160" r="5" fill="#8B6A30"/><circle cx="96" cy="2173" r="5" fill="#ECE6DA"/><circle cx="96" cy="2186" r="5" fill="#ECE6DA"/><circle cx="96" cy="2199" r="5" fill="#C5A059"/><circle cx="96" cy="2212" r="5" fill="#F0D9A8"/><circle cx="96" cy="2225" r="5" fill="#ECE6DA"/><circle cx="96" cy="2238" r="5" fill="#8B6A30"/><circle cx="154" cy="2160" r="5" fill="#ECE6DA"/><circle cx="154" cy="2173" r="5" fill="#F0D9A8"/><circle cx="154" cy="2186" r="5" fill="#C5A059"/><circle cx="154" cy="2199" r="5" fill="#ECE6DA"/><circle cx="154" cy="2212" r="5" fill="#ECE6DA"/><circle cx="154" cy="2225" r="5" fill="#8B6A30"/><circle cx="154" cy="2238" r="5" fill="#ECE6DA"/><circle cx="212" cy="2160" r="5" fill="#ECE6DA"/><circle cx="212" cy="2173" r="5" fill="#C5A059"/><circle cx="212" cy="2186" r="5" fill="#F0D9A8"/><circle cx="212" cy="2199" r="5" fill="#ECE6DA"/><circle cx="212" cy="2212" r="5" fill="#8B6A30"/><circle cx="212" cy="2225" r="5" fill="#ECE6DA"/><circle cx="212" cy="2238" r="5" fill="#F0D9A8"/><circle cx="270" cy="2160" r="5" fill="#C5A059"/><circle cx="270" cy="2173" r="5" fill="#ECE6DA"/><circle cx="270" cy="2186" r="5" fill="#ECE6DA"/><circle cx="270" cy="2199" r="5" fill="#8B6A30"/><circle cx="270" cy="2212" r="5" fill="#ECE6DA"/><circle cx="270" cy="2225" r="5" fill="#ECE6DA"/><circle cx="270" cy="2238" r="5" fill="#C5A059"/><circle cx="328" cy="2160" r="5" fill="#F0D9A8"/><circle cx="328" cy="2173" r="5" fill="#ECE6DA"/><circle cx="328" cy="2186" r="5" fill="#8B6A30"/><circle cx="328" cy="2199" r="5" fill="#ECE6DA"/><circle cx="328" cy="2212" r="5" fill="#F0D9A8"/><circle cx="328" cy="2225" r="5" fill="#C5A059"/><circle cx="328" cy="2238" r="5" fill="#ECE6DA"/><circle cx="386" cy="2160" r="5" fill="#ECE6DA"/><circle cx="386" cy="2173" r="5" fill="#8B6A30"/><circle cx="386" cy="2186" r="5" fill="#ECE6DA"/><circle cx="386" cy="2199" r="5" fill="#ECE6DA"/><circle cx="386" cy="2212" r="5" fill="#C5A059"/><circle cx="386" cy="2225" r="5" fill="#F0D9A8"/><circle cx="386" cy="2238" r="5" fill="#ECE6DA"/><circle cx="444" cy="2160" r="5" fill="#8B6A30"/><circle cx="444" cy="2173" r="5" fill="#ECE6DA"/><circle cx="444" cy="2186" r="5" fill="#F0D9A8"/><circle cx="444" cy="2199" r="5" fill="#C5A059"/><circle cx="444" cy="2212" r="5" fill="#ECE6DA"/><circle cx="444" cy="2225" r="5" fill="#ECE6DA"/><circle cx="444" cy="2238" r="5" fill="#8B6A30"/><circle cx="502" cy="2160" r="5" fill="#ECE6DA"/><circle cx="502" cy="2173" r="5" fill="#ECE6DA"/><circle cx="502" cy="2186" r="5" fill="#C5A059"/><circle cx="502" cy="2199" r="5" fill="#F0D9A8"/><circle cx="502" cy="2212" r="5" fill="#ECE6DA"/><circle cx="502" cy="2225" r="5" fill="#8B6A30"/><circle cx="502" cy="2238" r="5" fill="#ECE6DA"/></g>
+</svg>

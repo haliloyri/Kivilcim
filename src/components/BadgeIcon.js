@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
+import { CAREER_VISUALS } from '../constants/careerVisuals';
 
 // Hand-illustrated artwork for each badge (replaces the flat Ionicons glyphs
 // below). Each file is a square, already-tinted circular illustration —
@@ -61,6 +62,11 @@ export const BADGE_MAP = {
   storyteller:     { icon: 'mic',                 colors: ['#D97706', '#92400E'] },
   icebreaker:      { icon: 'chatbubble-ellipses', colors: ['#2563EB', '#1E3A8A'] },
 };
+
+// Career ranks have no bitmap badge assets yet. This map gives the generic
+// achievement share card a stable visual treatment without pretending they
+// are legacy badges.
+export const CAREER_VISUAL_MAP = Object.freeze(Object.fromEntries(Object.entries(CAREER_VISUALS).map(([key, visual]) => [key, { icon: visual.icon, colors: visual.light, shareBackground: visual.shareBackground }])));
 
 const DEFAULT_COLORS = ['#D4AF37', '#8C701B'];
 

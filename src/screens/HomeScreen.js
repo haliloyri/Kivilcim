@@ -9,6 +9,9 @@ import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
+import { useCareerPath } from '../context/CareerPathContext';
+import { FEATURE_FLAGS } from '../config/featureFlags';
+import { resolveCareerActionDestination } from '../utils/careerNavigation';
 import { getSelectedCategories } from '../db/db';
 import StoryCard from '../components/StoryCard';
 import CategoryPill from '../components/CategoryPill';
@@ -36,9 +39,19 @@ const HomeLoadingState = ({ colors, layout, isDark }) => {
   const cardBg = isDark ? colors.cardBackground : colors.surfaceContainerLowest;
   const lineBg = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)';
   const softLineBg = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.045)';
+  const shimmer = useRef(new Animated.Value(0.5)).current;
+
+  useEffect(() => {
+    const animation = Animated.loop(Animated.sequence([
+      Animated.timing(shimmer, { toValue: 1, duration: 720, useNativeDriver: true }),
+      Animated.timing(shimmer, { toValue: 0.5, duration: 720, useNativeDriver: true }),
+    ]));
+    animation.start();
+    return () => animation.stop();
+  }, [shimmer]);
 
   return (
-    <View style={{
+    <Animated.View style={{
       marginHorizontal: layout.padding.horizontal,
       marginTop: 18,
       marginBottom: 14,
@@ -49,6 +62,7 @@ const HomeLoadingState = ({ colors, layout, isDark }) => {
       borderColor: colors.border,
       minHeight: 260,
       justifyContent: 'space-between',
+      opacity: shimmer,
     }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
         <View style={{
@@ -59,7 +73,7 @@ const HomeLoadingState = ({ colors, layout, isDark }) => {
           justifyContent: 'center',
           backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)',
         }}>
-          <ActivityIndicator size="small" color={colors.primary} />
+          <Ionicons name="book-outline" size={21} color={colors.primary} />
         </View>
         <View style={{ flex: 1, gap: 8 }}>
           <View style={{ width: '62%', height: 14, borderRadius: 999, backgroundColor: lineBg }} />
@@ -74,7 +88,7 @@ const HomeLoadingState = ({ colors, layout, isDark }) => {
           <View style={{ flex: 1, height: 82, borderRadius: 14, backgroundColor: softLineBg }} />
         </View>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 
@@ -236,10 +250,21 @@ const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) 
   );
 };
 
+const getStoryCollectionId = (version) => {
+  const value = String(version ?? '').trim().toUpperCase();
+  if (value === '1') return 'classic';
+  if (value === '2') return 'new';
+  if (/^F\d+$/.test(value)) return 'focus';
+  if (/^C\d+$/.test(value)) return 'conversation';
+  if (value === 'OH') return 'originals';
+  return 'new';
+};
+
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
   const { isPremium, isOnboarded, history, earnedBadges, totalReads, todayReadsCount, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted, openBadgeModal } = useUserData();
-  const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
+  const { stories, storiesLoading, categories, parentCategories, errorMsg, isOffline } = useStories();
+  const { career } = useCareerPath();
   const insets = useSafeAreaInsets();
   const { width: viewportWidth } = useWindowDimensions();
   const [loading, setLoading] = useState(true);
@@ -358,6 +383,9 @@ const HomeScreen = ({ navigation }) => {
   const getMaxCatReads = (stats) => (stats && typeof stats === 'object' ? Math.max(0, ...Object.values(stats)) : 0);
 
   const badgeProgressInfo = React.useMemo(() => {
+    if (FEATURE_FLAGS.careerPathV1) {
+      return { total: 0, earned: 0, completionRatio: 0, nextCandidates: [] };
+    }
     const badges = earnedBadges || [];
     const total = badges.length;
     const earned = badges.filter((b) => b.earned).length;
@@ -420,6 +448,7 @@ const HomeScreen = ({ navigation }) => {
   // Badge carousel data: first 3 next-closest candidates + a trailing
   // "See all" card (max 4 cards total).
   const badgeCarouselItems = React.useMemo(() => {
+    if (FEATURE_FLAGS.careerPathV1) return [];
     const items = badgeProgressInfo.nextCandidates.slice(0, 3).map((badge) => ({
       type: 'badge',
       key: `badge-${badge.id}`,
@@ -566,11 +595,12 @@ const HomeScreen = ({ navigation }) => {
   const todayStr = new Date().toISOString().split('T')[0];
 
   // 1. Profilde seçilen içerik sürümünü ve yayın tarihini uygula.
-  // 'F5' / 'F6' ve 'C1' / 'C2' gibi string sürümler Versiyon 2 koleksiyonunda gösterilir.
-  const normalizeStoryVersion = (v) =>
-    /^(F|C)\d+$/.test(String(v ?? '').trim().toUpperCase()) ? 2 : (Number(v) || 1);
-  const selectedStoryVersion = Number(preferences?.storyVersion) === 2 ? 2 : 1;
-  const versionStories = (stories || []).filter((story) => normalizeStoryVersion(story.version) === selectedStoryVersion);
+  const selectedStoryCollections = preferences?.storyCollections?.length
+    ? preferences.storyCollections
+    : ['new'];
+  const versionStories = (stories || []).filter((story) =>
+    selectedStoryCollections.includes(getStoryCollectionId(story.version))
+  );
   // publishDate may be a full date string ("2018-01-01") or just a year integer (2018 from Supabase).
   // Normalize to a 4-digit year string for safe comparison.
   const publishedStories = versionStories.filter(s => {
@@ -597,48 +627,12 @@ const HomeScreen = ({ navigation }) => {
     ? categoryFiltered.filter((story) => storyMatchesSearch(story, searchQuery))
     : categoryFiltered;
 
-  const storiesReadToday = new Set((history || []).slice(0, Math.max(0, todayReadsCount || 0)).map(String));
-
-  // 3. Sıralama
-  const sortedStories = [...searchFiltered].sort((a, b) => {
-    const aReadToday = storiesReadToday.has(String(a.story_id));
-    const bReadToday = storiesReadToday.has(String(b.story_id));
-
-    // Bugün okunanlar her zaman en üstte kalsın (Ekranda listelensin)
-    if (aReadToday !== bReadToday) {
-      return aReadToday ? -1 : 1;
-    }
-    
-    // Eğer ikisi de bugün okunmuşsa, en son okunan (history'de üstte olan) önce gelsin
-    if (aReadToday && bReadToday) {
-      const idxA = (history || []).findIndex(id => String(id) === String(a.story_id));
-      const idxB = (history || []).findIndex(id => String(id) === String(b.story_id));
-      return idxA - idxB;
-    }
-
-    // Sınırsız üyeler için eskiden okunanları (bugün okunmayanları) en sona at
-    if (isPremium) {
-      const aRead = checkIfRead(a.story_id);
-      const bRead = checkIfRead(b.story_id);
-      if (aRead !== bRead) {
-        return aRead ? 1 : -1; // Okunanları sona at
-      }
-    }
-
-    // Tümü seçiliyse okunmamış hikayeleri pseudo-random sırala 
-    // Okunmayanlar değişsin diye seed'e okuma sayısını ekliyoruz
-    if (activeFilter === 'all') {
-      const seed = parseInt(todayStr.replace(/-/g, ''), 10) + (todayReadsCount || 0);
-      const pseudoRandom = (id) => {
-        const val = parseInt(id, 10) * seed;
-        return (val * 9301 + 49297) % 233280;
-      };
-      return pseudoRandom(b.story_id) - pseudoRandom(a.story_id);
-    }
-
-    // Geri kalan durumlar için id büyüktan küçüğe sırala (en son eklenen ilk)
-    return parseInt(b.story_id, 10) - parseInt(a.story_id, 10);
-  });
+  // Uzun hikâyeler önce, aynı sürede olanlarda yeni hikâyeler önce görünsün.
+  const sortedStories = [...searchFiltered].sort(
+    (a, b) =>
+      Number(b.min || b.possible_read_minutes || 1) - Number(a.min || a.possible_read_minutes || 1) ||
+      Number(b.story_id) - Number(a.story_id)
+  );
 
   const personalizedModule = React.useMemo(() => {
     const storyById = new Map(sortedStories.map((s) => [String(s.story_id), s]));
@@ -665,7 +659,9 @@ const HomeScreen = ({ navigation }) => {
       ? sortedStories.filter((s) => Number(s.parent_cat_id) === Number(dominantCategory)).slice(0, moduleStoryCount)
       : [];
 
-    if (continueStory) {
+    const topReadMinutes = Number(sortedStories[0]?.min || sortedStories[0]?.possible_read_minutes || 1);
+
+    if (continueStory && Number(continueStory.min || continueStory.possible_read_minutes || 1) === topReadMinutes) {
       const merged = [
         continueStory,
         ...sortedStories.filter((s) => String(s.story_id) !== String(continueStory.story_id)),
@@ -680,7 +676,7 @@ const HomeScreen = ({ navigation }) => {
       };
     }
 
-    if (pickedStories.length > 0) {
+    if (pickedStories.length > 0 && Number(pickedStories[0].min || pickedStories[0].possible_read_minutes || 1) === topReadMinutes) {
       return {
         type: MODULE_TYPES.PICKED,
         stories: pickedStories,
@@ -704,6 +700,7 @@ const HomeScreen = ({ navigation }) => {
 
   // Count actually-read stories today from DB directly
   const doneCount = Math.min(todayReadsCount || 0, personalizedTarget);
+  const careerHomeEnabled = FEATURE_FLAGS.careerPathV1 && Boolean(career);
   const historySet = React.useMemo(() => new Set((history || []).map(id => String(id))), [history]);
 
   const remainingStories = isSearchActive
@@ -871,6 +868,20 @@ const HomeScreen = ({ navigation }) => {
     const isComplete = doneCount >= personalizedTarget;
 
     if (isComplete) {
+      if (careerHomeEnabled) {
+        const nextAction = career.nextAction;
+        return {
+          isCareerCard: true,
+          eyebrow: t('career.home.eyebrow', lang),
+          title: t(nextAction?.titleKey || 'career.pathComplete', lang),
+          sub: t(nextAction?.bodyKey || 'career.home.completeCopy', lang),
+          cta: t(nextAction?.ctaKey || 'career.home.openPathCta', lang),
+          progressLabel: nextAction?.type === 'advance' && career.nextNode ? t(career.nextNode.titleKey, lang) : t('career.title', lang),
+          icon: 'sparkles-outline',
+          source: 'home_career_next_action',
+        };
+      }
+
       if (badgeProgressInfo.nextCandidates.length > 0) {
         const nextBadge = badgeProgressInfo.nextCandidates[0];
         return {
@@ -917,7 +928,7 @@ const HomeScreen = ({ navigation }) => {
       story: nextStory,
       source: 'home_primary_new',
     };
-  }, [personalizedStories, sortedStories, historySet, doneCount, lang, badgeProgressInfo, personalizedTarget]);
+  }, [personalizedStories, sortedStories, historySet, doneCount, lang, badgeProgressInfo, personalizedTarget, careerHomeEnabled, career]);
 
   const dismissFirstSessionPrompt = async () => {
     setShowFirstSessionPrompt(false);
@@ -949,6 +960,12 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const openPrimaryHomeAction = () => {
+    if (primaryHomeAction.isCareerCard) {
+      const destination = resolveCareerActionDestination({ nextAction: career?.nextAction });
+      if (destination) navigation.navigate(destination.route);
+      return;
+    }
+
     if (primaryHomeAction.story) {
       trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
         storyId: primaryHomeAction.story.story_id,
@@ -1941,7 +1958,20 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.brandLogo}>
             <Text style={styles.brandLogoText}>Albor</Text>
           </View>
-          {doneCount < personalizedTarget && (
+          {careerHomeEnabled ? (
+            <TouchableOpacity
+              style={styles.headerBadgeWrap}
+              onPress={() => navigation.navigate('ProgressTab')}
+              activeOpacity={0.85}
+              accessibilityRole="button"
+              accessibilityLabel={t(career.activePath ? career.profileTitle : 'career.choosePathTitle', lang)}
+            >
+              <View style={{ width: 42, height: 42, borderRadius: 21, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surfaceContainerHigh }}>
+                <Ionicons name="sparkles-outline" size={20} color={colors.primary} />
+              </View>
+              <Text style={styles.headerBadgeSub} numberOfLines={1}>{t(career.activePath ? career.profileTitle : 'career.choosePathTitle', lang)}</Text>
+            </TouchableOpacity>
+          ) : doneCount < personalizedTarget && (
             <TouchableOpacity
               style={styles.headerBadgeWrap}
               onPress={() => navigation.navigate('ProgressTab')}
@@ -1977,6 +2007,20 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           )}
         </View>
+
+        {isOffline && stories.length > 0 && (
+          <View style={{
+            flexDirection: 'row', alignItems: 'center', gap: 8,
+            marginHorizontal: layout.padding.horizontal, marginBottom: 12,
+            paddingHorizontal: 12, paddingVertical: 10, borderRadius: 12,
+            backgroundColor: isDark ? 'rgba(229, 194, 122, 0.14)' : 'rgba(168, 106, 28, 0.10)',
+          }}>
+            <Ionicons name="cloud-offline-outline" size={17} color={colors.primary} />
+            <Text style={{ flex: 1, fontFamily: 'Inter_500Medium', fontSize: 12.5, color: colors.text }}>
+              {t('homeOfflineStoriesNotice', lang)}
+            </Text>
+          </View>
+        )}
 
         {!loading && isSearchActive && (
           <Text style={styles.searchResultLine}>
@@ -2024,6 +2068,7 @@ const HomeScreen = ({ navigation }) => {
           const activeCatItem = visibleCategoriesList.find((item) => item.key === activeFilter);
           const activeCatTheme = getCategoryTheme(activeCatItem?.rawName || activeCatItem?.label, isDark);
           const isBadge = primaryHomeAction.isBadgeCard;
+          const isCareer = primaryHomeAction.isCareerCard;
           // Soft light banner artwork in light mode (badge or category); dark
           // mode falls back to a coloured gradient.
           const useBannerImage = !isDark;
@@ -2093,6 +2138,14 @@ const HomeScreen = ({ navigation }) => {
                   <Text style={[styles.primaryActionProgress, { color: progressColor }]}>
                     {primaryHomeAction.badge.current} / {primaryHomeAction.badge.target}
                   </Text>
+                </View>
+              ) : isCareer ? (
+                <View style={styles.primaryActionFooter}>
+                  <Text style={[styles.primaryActionProgress, { color: progressColor }]}>{primaryHomeAction.progressLabel}</Text>
+                  <View style={[styles.primaryActionCta, isDark && { backgroundColor: '#1A1A1A' }]}>
+                    <Text style={[styles.primaryActionCtaText, { color: bannerCtaColor }]}>{primaryHomeAction.cta}</Text>
+                    <Ionicons name="arrow-forward" size={16} color={bannerCtaColor} />
+                  </View>
                 </View>
               ) : (
                 <View style={styles.primaryActionFooter}>

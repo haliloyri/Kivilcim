@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Notifications from 'expo-notifications';
-import { View, Text, Image, ActivityIndicator, Dimensions } from 'react-native';
+import { View, Image } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
 import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { t } from './src/locales/i18n';
 
-import { setupNotificationHandler, scheduleDailyNotifications, registerAndSavePushToken } from './src/utils/notifications';
+import { setupNotificationHandler, registerAndSavePushToken } from './src/utils/notifications';
 import { ANALYTICS_EVENTS, trackEvent, initAnalytics, setAnalyticsContext } from './src/utils/analytics';
 import { initAds } from './src/utils/ads';
 
@@ -37,26 +37,28 @@ import {
 import { ThemeProvider } from './src/context/ThemeContext';
 import { UserDataProvider } from './src/context/UserDataContext';
 import { StoriesProvider } from './src/context/StoriesContext';
+import { CareerPathProvider } from './src/context/CareerPathContext';
+import CareerPromotionModal from './src/components/career/CareerPromotionModal';
+import CareerMigrationSummary from './src/components/career/CareerMigrationSummary';
 
 // Splash screen'i dondur
 SplashScreen.preventAutoHideAsync();
 import { initDb, seedData } from './src/db/db';
+import { initUserDb } from './src/db/userDb';
 import { ensureDeviceSession } from './src/services/supabase';
 import { migrateLocalToServer } from './src/services/migrateLocalToServer';
 import { initOfflineQueueFlush } from './src/services/offlineQueue';
 
-// Splash designer component (in-app splash screen)
+// Keep the JS hand-off visually identical to the native splash. The mark has
+// no baked-in tile, so the launch no longer flashes a blue rounded square.
 const SplashDesign = () => {
   return (
     <View style={stylesSplash.container}>
       <Image
-        source={require('./assets/spark_logo_dark.png')}
+        source={require('./assets/splash/albor-splash-mark.png')}
         style={stylesSplash.launchImage}
         resizeMode="contain"
       />
-      <View style={stylesSplash.loaderContainer}>
-        <ActivityIndicator size="small" color="#FFD700" />
-      </View>
     </View>
   );
 };
@@ -69,12 +71,8 @@ const stylesSplash = {
     alignItems: 'center',
   },
   launchImage: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-  },
-  loaderContainer: {
-    position: 'absolute',
-    bottom: 100,
+    width: 184,
+    height: 184,
   },
 };
 
@@ -97,6 +95,7 @@ function Main() {
       setAnalyticsContext({ lang: savedLang });
       await initDb();
       await seedData();
+      await initUserDb();
       initAds().catch(e => console.warn('initAds error:', e?.message));
 
       // Online membership: reuse the device session or create an anonymous one.
@@ -118,18 +117,9 @@ function Main() {
         })
         .catch((e) => console.warn('ensureDeviceSession error:', e?.message));
 
-      let savedPreferences = null;
-      try {
-        const storedPreferences = await AsyncStorage.getItem('@kivilcim_preferences');
-        savedPreferences = storedPreferences ? JSON.parse(storedPreferences) : null;
-      } catch (e) {}
-
-      await scheduleDailyNotifications({
-        lang: savedLang,
-        reminderWindow: savedPreferences?.reminderWindow,
-        reminderHour: savedPreferences?.reminderHour,
-        dailyStoryTarget: savedPreferences?.time?.dailyStoryTarget || 2,
-      });
+      // UserDataProvider schedules reminders after preferences and reading
+      // statistics have loaded. Keeping scheduling there prevents a second,
+      // incomplete startup pass that can cancel and recreate notifications.
     };
     startup().catch(e => console.error('App.js startup error:', e));
   }, []);
@@ -195,7 +185,11 @@ export default function App() {
       <ThemeProvider>
         <UserDataProvider>
           <StoriesProvider>
-            <Main />
+            <CareerPathProvider>
+              <Main />
+              <CareerPromotionModal />
+              <CareerMigrationSummary />
+            </CareerPathProvider>
           </StoriesProvider>
         </UserDataProvider>
       </ThemeProvider>

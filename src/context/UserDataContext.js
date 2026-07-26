@@ -17,16 +17,30 @@ import {
   markBadgesSeenOnServer,
 } from '../services/supabase';
 import { enqueueAndSync } from '../services/offlineQueue';
+import { FEATURE_FLAGS } from '../config/featureFlags';
+import { clearCareerData } from '../db/userDb';
+import { notifyCareerDataChanged, recordCareerApplication, recordCareerInsightSaved, recordCareerStoryCompletion } from '../services/careerEvents';
+import { migrateLegacyCareerPath } from '../services/migrateCareerPath';
+import { updateCareerSparkPackage } from '../utils/careerSparkPackage';
 
 const UserDataContext = createContext();
 const SEEN_BADGES_STORAGE_KEY = '@kivilcim_seen_earned_badges';
+const PENDING_BADGES_STORAGE_KEY = '@kivilcim_pending_badges';
+const BADGE_COLLECTION_COMPLETION_STORAGE_KEY = '@kivilcim_badge_collection_completion_seen';
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const USER_PROFILE_STORAGE_KEY = '@kivilcim_user_profile';
 const FAVORITE_COLLECTIONS_STORAGE_KEY = '@kivilcim_favorite_collections';
 const COMPLETED_STORIES_STORAGE_KEY = '@kivilcim_completed_stories';
 const VARIANT_USAGE_STORAGE_KEY = '@kivilcim_variant_usage';
+const CAREER_TAKEAWAYS_STORAGE_KEY = '@kivilcim_career_takeaways';
+const CAREER_SPARK_PACKAGE_STORAGE_KEY = '@kivilcim_career_spark_package';
 const STREAK_FREEZE_CREDITS_STORAGE_KEY = '@kivilcim_streak_freeze_credits';
-const EMPTY_PREFERENCES = { categories: [], time: null, reminderWindow: 'evening', reminderHour: 21, reminderWindows: ['evening'], storyVersion: 1 };
+const STORY_COLLECTION_IDS = ['classic', 'new', 'focus', 'conversation', 'originals'];
+const DEFAULT_STORY_COLLECTIONS = ['new'];
+const EMPTY_PREFERENCES = {
+  categories: [], time: null, reminderWindow: 'evening', reminderHour: 21,
+  reminderWindows: ['evening'], storyVersion: 2, storyCollections: DEFAULT_STORY_COLLECTIONS,
+};
 const EMPTY_USER_PROFILE = { displayName: null, email: null };
 const EMPTY_FAVORITE_COLLECTIONS = { saved_for_later: [] };
 
@@ -162,7 +176,14 @@ const normalizePreferences = (storedPreferences) => {
     reminderWindows = [reminder.reminderWindow];
   }
   const primary = buildReminderPreference({ reminderWindow: reminderWindows[0] });
-  const storyVersion = Number(storedPreferences.storyVersion) === 2 ? 2 : 1;
+  const storyCollections = Array.isArray(storedPreferences.storyCollections)
+    ? storedPreferences.storyCollections.filter((id) => STORY_COLLECTION_IDS.includes(id))
+    : [];
+  // This preference did not previously have a visible control. Existing users
+  // therefore move to the current collection instead of being trapped in V1.
+  const selectedStoryCollections = storyCollections.length > 0
+    ? [...new Set(storyCollections)]
+    : DEFAULT_STORY_COLLECTIONS;
 
   return {
     categories: normalizeCategoryIds(storedPreferences.categories),
@@ -170,7 +191,8 @@ const normalizePreferences = (storedPreferences) => {
     reminderWindow: primary.reminderWindow,
     reminderHour: primary.reminderHour,
     reminderWindows,
-    storyVersion,
+    storyVersion: selectedStoryCollections.includes('new') ? 2 : 1,
+    storyCollections: selectedStoryCollections,
   };
 };
 
@@ -242,8 +264,14 @@ export const UserDataProvider = ({ children }) => {
   const [seenBadgesReady, setSeenBadgesReady] = useState(false);
   const [shouldBootstrapSeenBadges, setShouldBootstrapSeenBadges] = useState(false);
   const [activeBadgeModal, setActiveBadgeModal] = useState(null);
-  const [pendingBadges, setPendingBadges] = useState([]);
+  const [pendingBadgeIds, setPendingBadgeIds] = useState([]);
+  const [pendingBadgesReady, setPendingBadgesReady] = useState(false);
+  const [badgePresentationBlockers, setBadgePresentationBlockers] = useState({});
+  const [badgeCollectionCompletionSeen, setBadgeCollectionCompletionSeen] = useState(false);
+  const [isBadgeCollectionCompletionVisible, setIsBadgeCollectionCompletionVisible] = useState(false);
   const [variantUsage, setVariantUsage] = useState([]);
+  const [careerTakeaways, setCareerTakeaways] = useState({});
+  const [careerSparkPackage, setCareerSparkPackage] = useState([]);
   const [streakFreezeCredits, setStreakFreezeCredits] = useState(0);
   const [streakFreezeDates, setStreakFreezeDates] = useState([]);
   const [loadErrorMsg, setLoadErrorMsg] = useState(null);
@@ -344,6 +372,15 @@ export const UserDataProvider = ({ children }) => {
     refreshStats();
   }, [refreshStats]);
 
+  useEffect(() => {
+    if (isLoading) return;
+    migrateLegacyCareerPath({
+      variantUsage,
+      badgeInput: { totalReads, streak, longestStreak, categoryStats, favoritesCount: favorites.length, shareCount },
+      lang,
+    }).catch((error) => console.warn('[careerMigration] failed:', error?.message));
+  }, [isLoading, variantUsage, totalReads, streak, longestStreak, categoryStats, favorites.length, shareCount, lang]);
+
   // Verileri yükle
   useEffect(() => {
     const loadData = async () => {
@@ -406,6 +443,28 @@ export const UserDataProvider = ({ children }) => {
           const parsed = JSON.parse(storedVariantUsage);
           setVariantUsage(Array.isArray(parsed) ? parsed : []);
         }
+        const storedCareerTakeaways = await AsyncStorage.getItem(CAREER_TAKEAWAYS_STORAGE_KEY);
+        if (storedCareerTakeaways) {
+          const parsed = JSON.parse(storedCareerTakeaways);
+          const restoredTakeaways = parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
+          setCareerTakeaways(restoredTakeaways);
+          // Repair a save that happened while its completion event was still
+          // being written. This is safe on every launch because D credits are
+          // idempotent per story.
+          Object.entries(restoredTakeaways).forEach(([storyId, takeaway]) => {
+            recordCareerInsightSaved({
+              storyId,
+              categoryId: takeaway?.categoryId ?? null,
+              eventSubtype: takeaway?.reference === 'story_reflection' ? 'story_saved' : 'takeaway_saved',
+              metadata: { reference: takeaway?.reference || 'takeaway' },
+            }).catch(() => {});
+          });
+        }
+        const storedSparkPackage = await AsyncStorage.getItem(CAREER_SPARK_PACKAGE_STORAGE_KEY);
+        if (storedSparkPackage) {
+          const parsed = JSON.parse(storedSparkPackage);
+          setCareerSparkPackage(Array.isArray(parsed) ? [...new Set(parsed.map((id) => String(id)).filter(Boolean))].slice(0, 5) : []);
+        }
       } catch (error) {
         console.error('AsyncStorage veri yükleme hatası:', error);
         setLoadErrorMsg(error?.message || String(error));
@@ -434,16 +493,14 @@ export const UserDataProvider = ({ children }) => {
   useEffect(() => {
     const loadSeenBadges = async () => {
       let local = [];
+      let shouldBootstrap = false;
       try {
         const raw = await AsyncStorage.getItem(SEEN_BADGES_STORAGE_KEY);
-        if (raw == null) setShouldBootstrapSeenBadges(true);
+        shouldBootstrap = raw == null;
         const parsed = raw ? JSON.parse(raw) : [];
         local = Array.isArray(parsed) ? parsed : [];
-        setSeenBadgeIds(local);
       } catch (error) {
         console.error('Gorulen rozetler yuklenemedi:', error);
-      } finally {
-        setSeenBadgesReady(true);
       }
 
       // Merge in badges already marked "seen" on another device — union with
@@ -457,18 +514,42 @@ export const UserDataProvider = ({ children }) => {
             if (serverSeen.length) {
               const merged = Array.from(new Set([...local, ...serverSeen]));
               if (merged.length !== local.length) {
-                setSeenBadgeIds(merged);
                 await AsyncStorage.setItem(SEEN_BADGES_STORAGE_KEY, JSON.stringify(merged));
               }
+              local = merged;
             }
           }
         } catch (error) {
           console.warn('[server badges] failed to fetch seen badges:', error?.message);
         }
       }
+
+      setSeenBadgeIds(local);
+      setShouldBootstrapSeenBadges(shouldBootstrap && local.length === 0);
+      setSeenBadgesReady(true);
     };
 
     loadSeenBadges();
+  }, []);
+
+  useEffect(() => {
+    const loadPendingBadgeState = async () => {
+      try {
+        const [pendingRaw, completionRaw] = await AsyncStorage.multiGet([
+          PENDING_BADGES_STORAGE_KEY,
+          BADGE_COLLECTION_COMPLETION_STORAGE_KEY,
+        ]);
+        const pending = pendingRaw?.[1] ? JSON.parse(pendingRaw[1]) : [];
+        setPendingBadgeIds(Array.isArray(pending) ? [...new Set(pending.map(String))] : []);
+        setBadgeCollectionCompletionSeen(completionRaw?.[1] === 'true');
+      } catch (error) {
+        console.warn('Bekleyen rozetler yuklenemedi:', error?.message);
+      } finally {
+        setPendingBadgesReady(true);
+      }
+    };
+
+    loadPendingBadgeState();
   }, []);
 
   // Favoriler
@@ -552,10 +633,36 @@ export const UserDataProvider = ({ children }) => {
   };
 
   // Okuma Geçmişi (Son 20 Hikaye)
-  const addToHistory = async (storyId) => {
+  const addToHistory = async (storyOrId, { completionMethod = 'read' } = {}) => {
     try {
+      const storyId = typeof storyOrId === 'object' ? storyOrId?.story_id ?? storyOrId?.id : storyOrId;
+      const categoryId = typeof storyOrId === 'object' ? storyOrId?.parent_cat_id : null;
       // SQLite'a okuma kaydı ekle
       await recordRead(storyId);
+      await recordCareerStoryCompletion({
+        storyId,
+        categoryId,
+        completionMethod,
+        skipRevisit: Boolean(careerTakeaways[String(storyId)]),
+      }).catch(() => {});
+      // A save may happen while the H completion write above is in flight. Read
+      // the durable value now (rather than the render-time state captured at
+      // the start of this async function) so that order cannot lose the D
+      // credit. The D event itself is idempotent per story.
+      let savedTakeaway = careerTakeaways[String(storyId)];
+      if (!savedTakeaway) {
+        const storedTakeaways = await AsyncStorage.getItem(CAREER_TAKEAWAYS_STORAGE_KEY);
+        const parsedTakeaways = storedTakeaways ? JSON.parse(storedTakeaways) : null;
+        savedTakeaway = parsedTakeaways?.[String(storyId)] || null;
+      }
+      if (savedTakeaway) {
+        await recordCareerInsightSaved({
+          storyId,
+          categoryId,
+          eventSubtype: 'takeaway_saved',
+          metadata: { reference: savedTakeaway.reference || 'takeaway' },
+        }).catch(() => {});
+      }
       // Capture today's date now — if this ends up queued offline and
       // flushed later, it must still record the day the read actually
       // happened, not the day connectivity came back.
@@ -672,6 +779,7 @@ export const UserDataProvider = ({ children }) => {
         reminderWindow: partialPrefs.reminderWindow ?? preferences.reminderWindow,
         reminderHour: partialPrefs.reminderHour ?? preferences.reminderHour,
         storyVersion: partialPrefs.storyVersion ?? preferences.storyVersion ?? 1,
+        storyCollections: partialPrefs.storyCollections ?? preferences.storyCollections ?? DEFAULT_STORY_COLLECTIONS,
       };
 
       const nextPrefs = normalizePreferences(candidate);
@@ -884,7 +992,7 @@ export const UserDataProvider = ({ children }) => {
   }, [serverSync]);
 
   // Varyant kullanım kaydı (copy / share / mark-used)
-  const recordVariantUsage = useCallback(async ({ storyId, storyTitle, storyCategory, variantType, variantId, variantKey = null, action, feedbackRating = null }) => {
+  const recordVariantUsage = useCallback(async ({ storyId, storyTitle, storyCategory, categoryId = null, variantType, variantId, variantKey = null, action, feedbackRating = null, careerEventSubtype = 'conversation_mark_used' }) => {
     try {
       const entry = {
         storyId: String(storyId),
@@ -897,11 +1005,40 @@ export const UserDataProvider = ({ children }) => {
         feedbackRating,
         usedAt: new Date().toISOString(),
       };
+      // `mark_used` is quota-controlled by the server. Do not create a local
+      // U credit until that user-visible action was accepted remotely.
+      if (action === 'mark_used') {
+        const { error: serverError } = await recordVariantUsageOnServer({
+          storyId, storyTitle, storyCategory, variantType, variantId, variantKey, action, feedbackRating,
+        });
+        if (serverError) {
+          return { saved: false, reason: serverError.message === 'quota_exceeded' ? 'quota_exceeded' : 'sync_failed' };
+        }
+      }
       setVariantUsage(prev => {
         const next = [entry, ...prev].slice(0, 2000); // keep last 2000
         AsyncStorage.setItem(VARIANT_USAGE_STORAGE_KEY, JSON.stringify(next));
         return next;
       });
+      if (action === 'mark_used') {
+        recordCareerApplication({
+          storyId,
+          categoryId,
+          completionMethod: 'use_in_conversation',
+          eventSubtype: careerEventSubtype,
+          metadata: { variantType, variantId, variantKey: variantKey || null },
+        }).catch(() => {});
+        // Using a story in a real conversation is both an application and a
+        // meaningful way of processing it. D remains one credit per story,
+        // so this cannot inflate the path by repeating variants.
+        recordCareerInsightSaved({
+          storyId,
+          categoryId,
+          completionMethod: 'use_in_conversation',
+          eventSubtype: 'conversation_used',
+          metadata: { source: 'conversation' },
+        }).catch(() => {});
+      }
       trackEvent(ANALYTICS_EVENTS.STORY_VARIANT_USED, {
         storyId: String(storyId),
         storyCategory: storyCategory || null,
@@ -912,23 +1049,63 @@ export const UserDataProvider = ({ children }) => {
         lang,
       });
 
-      // Server-side write goes through the record_variant_usage RPC, which
-      // enforces the daily free-tier quota for 'mark_used' independent of
-      // this client (see supabase/schema.sql "Variant usage quota
-      // enforcement"). We don't block the optimistic local update on it —
-      // if the free quota is exhausted the RPC rejects with
-      // error.message === 'quota_exceeded'; surfacing that in the UI
-      // (e.g. bouncing to the paywall) is not wired up yet, just logged.
-      const { error: serverError } = await recordVariantUsageOnServer({
-        storyId, storyTitle, storyCategory, variantType, variantId, variantKey, action, feedbackRating,
-      });
-      if (serverError && serverError.message === 'quota_exceeded') {
-        console.warn('[variant usage] server-side daily quota exceeded for mark_used');
+      if (action !== 'mark_used') {
+        recordVariantUsageOnServer({
+          storyId, storyTitle, storyCategory, variantType, variantId, variantKey, action, feedbackRating,
+        }).catch(() => {});
       }
+      return { saved: true };
     } catch (error) {
       console.error('Varyant kullanım kayıt hatası:', error);
+      return { saved: false, reason: 'sync_failed' };
     }
   }, [lang]);
+
+  const isCareerTakeawaySaved = useCallback((storyId) => Boolean(careerTakeaways[String(storyId)]), [careerTakeaways]);
+
+  const saveCareerTakeaway = useCallback(async ({ storyId, categoryId = null, reference = 'takeaway' }) => {
+    const normalizedStoryId = String(storyId ?? '').trim();
+    if (!normalizedStoryId) return { saved: false, reason: 'invalid_story' };
+    if (careerTakeaways[normalizedStoryId]) return { saved: false, reason: 'already_saved' };
+
+    const takeaway = { categoryId, reference, savedAt: new Date().toISOString() };
+    const next = { ...careerTakeaways, [normalizedStoryId]: takeaway };
+    setCareerTakeaways(next);
+    await AsyncStorage.setItem(CAREER_TAKEAWAYS_STORAGE_KEY, JSON.stringify(next));
+    const credit = await recordCareerInsightSaved({
+      storyId: normalizedStoryId,
+      categoryId,
+      eventSubtype: 'takeaway_saved',
+      metadata: { reference },
+    });
+    return { saved: true, credit };
+  }, [careerTakeaways]);
+
+  // This shared entry point keeps future insight composers on the same
+  // idempotent credit path without sending free-form user text to analytics.
+  const recordCareerInsight = useCallback(({ storyId, categoryId = null, eventSubtype = 'insight_saved', metadata = null }) => (
+    recordCareerInsightSaved({ storyId, categoryId, completionMethod: 'insight_saved', eventSubtype, metadata })
+  ), []);
+
+  const recordPrivateCareerApplication = useCallback(({ storyId, categoryId = null, context }) => (
+    recordCareerApplication({
+      storyId,
+      categoryId,
+      completionMethod: 'private_application',
+      eventSubtype: 'private_application_plan',
+      metadata: { context },
+    })
+  ), []);
+
+  // A private, local-only collection for the Spark Carrier tool. This is a
+  // presentation preference, deliberately independent from career events.
+  const toggleCareerSparkPackageStory = useCallback((storyId) => {
+    setCareerSparkPackage((prev) => {
+      const result = updateCareerSparkPackage(prev, storyId);
+      if (result.changed) AsyncStorage.setItem(CAREER_SPARK_PACKAGE_STORAGE_KEY, JSON.stringify(result.package));
+      return result.package;
+    });
+  }, []);
 
   // Verileri Sıfırla (Debug ve Çıkış için)
   const clearUserData = async () => {
@@ -945,7 +1122,11 @@ export const UserDataProvider = ({ children }) => {
         USER_PROFILE_STORAGE_KEY,
         FIRST_SESSION_PROMPT_KEY,
         SEEN_BADGES_STORAGE_KEY,
+        PENDING_BADGES_STORAGE_KEY,
+        BADGE_COLLECTION_COMPLETION_STORAGE_KEY,
         VARIANT_USAGE_STORAGE_KEY,
+        CAREER_TAKEAWAYS_STORAGE_KEY,
+        CAREER_SPARK_PACKAGE_STORAGE_KEY,
         STREAK_FREEZE_CREDITS_STORAGE_KEY,
       ]);
       setFavorites([]);
@@ -959,13 +1140,22 @@ export const UserDataProvider = ({ children }) => {
       setShareCount(0);
       setSeenBadgeIds([]);
       setActiveBadgeModal(null);
+      setPendingBadgeIds([]);
+      setBadgeCollectionCompletionSeen(false);
+      setIsBadgeCollectionCompletionVisible(false);
       setVariantUsage([]);
+      setCareerTakeaways({});
+      setCareerSparkPackage([]);
       setStreakFreezeCredits(0);
       setStreakFreezeDates([]);
       await clearStreakFreezes();
       // Progress stats live in the user_reads DB table, not AsyncStorage — wipe
       // them too, then reset the derived in-memory state so the UI updates.
       await clearUserReads();
+      // Career events live in their own durable user DB, so reset them
+      // explicitly instead of relying on the content DB reset mechanism.
+      await clearCareerData('default');
+      notifyCareerDataChanged();
       enqueueAndSync('reset_user_data', {});
       setTotalReads(0);
       setStreak(0);
@@ -981,8 +1171,9 @@ export const UserDataProvider = ({ children }) => {
   };
 
   // Rozetleri hesapla
-  const earnedBadges = useMemo(() => 
-    checkBadges({
+  const earnedBadges = useMemo(() => {
+    if (FEATURE_FLAGS.careerPathV1) return [];
+    return checkBadges({
       totalReads,
       streak,
       longestStreak,
@@ -990,7 +1181,8 @@ export const UserDataProvider = ({ children }) => {
       favoritesCount: favorites.length,
       shareCount,
       variantUsage,
-    }),
+    });
+  },
     [totalReads, streak, longestStreak, categoryStats, favorites.length, shareCount, variantUsage]
   );
 
@@ -1014,8 +1206,47 @@ export const UserDataProvider = ({ children }) => {
     serverSync((uid) => markBadgesSeenOnServer(uid, badgeIds));
   }, [seenBadgeIds, serverSync]);
 
+  const enqueuePendingBadges = useCallback((badgeIds) => {
+    const normalizedIds = [...new Set((badgeIds || []).map(String).filter(Boolean))];
+    if (!normalizedIds.length) return;
+
+    setPendingBadgeIds((previous) => {
+      const next = [...new Set([...previous, ...normalizedIds])];
+      if (next.length !== previous.length) {
+        AsyncStorage.setItem(PENDING_BADGES_STORAGE_KEY, JSON.stringify(next)).catch((error) => {
+          console.warn('Bekleyen rozetler kaydedilemedi:', error?.message);
+        });
+      }
+      return next;
+    });
+  }, []);
+
+  const removePendingBadge = useCallback((badgeId) => {
+    if (!badgeId) return;
+    setPendingBadgeIds((previous) => {
+      const next = previous.filter((id) => id !== String(badgeId));
+      if (next.length !== previous.length) {
+        AsyncStorage.setItem(PENDING_BADGES_STORAGE_KEY, JSON.stringify(next)).catch((error) => {
+          console.warn('Bekleyen rozetler guncellenemedi:', error?.message);
+        });
+      }
+      return next;
+    });
+  }, []);
+
+  const setBadgePresentationBlocked = useCallback((key, blocked) => {
+    if (!key) return;
+    setBadgePresentationBlockers((previous) => {
+      const next = { ...previous };
+      if (blocked) next[key] = true;
+      else delete next[key];
+      return next;
+    });
+  }, []);
+
   useEffect(() => {
-    if (!seenBadgesReady || !earnedBadges.length) return;
+    if (FEATURE_FLAGS.careerPathV1) return;
+    if (!seenBadgesReady || !pendingBadgesReady || !earnedBadges.length) return;
 
     if (shouldBootstrapSeenBadges) {
       const alreadyEarnedIds = earnedBadges.filter((badge) => badge.earned).map((badge) => badge.id);
@@ -1024,32 +1255,78 @@ export const UserDataProvider = ({ children }) => {
       return;
     }
 
-    const newlyEarned = earnedBadges.filter((badge) => badge.earned && !seenBadgeIds.includes(badge.id));
+    const newlyEarned = earnedBadges.filter((badge) => (
+      badge.earned
+      && !seenBadgeIds.includes(badge.id)
+      && !pendingBadgeIds.includes(badge.id)
+    ));
     if (!newlyEarned.length) return;
 
-    // Rozetleri bekletme kuyruğuna ekle; hikaye okunup scroll tamamlandığında gösterilecek
-    setPendingBadges(prev => [...prev, ...newlyEarned]);
-    markBadgesAsSeen(newlyEarned.map((badge) => badge.id));
-  }, [earnedBadges, seenBadgeIds, seenBadgesReady, markBadgesAsSeen, shouldBootstrapSeenBadges]);
+    enqueuePendingBadges(newlyEarned.map((badge) => badge.id));
+  }, [earnedBadges, seenBadgeIds, pendingBadgeIds, seenBadgesReady, pendingBadgesReady, enqueuePendingBadges, markBadgesAsSeen, shouldBootstrapSeenBadges]);
 
   const openBadgeModal = useCallback((badge) => {
+    if (FEATURE_FLAGS.careerPathV1) return;
     if (!badge) return;
-    setActiveBadgeModal(badge);
-    if (badge.earned) {
-      markBadgesAsSeen([badge.id]);
-    }
-  }, [markBadgesAsSeen]);
-
-  const closeBadgeModal = useCallback(() => {
-    setActiveBadgeModal(null);
+    setActiveBadgeModal({ ...badge, presentation: 'manual' });
   }, []);
 
-  // Bekleyen ilk rozeti modal olarak göster (hikaye scroll tamamlandığında çağrılır)
+  const closeBadgeModal = useCallback(() => {
+    const closedBadge = activeBadgeModal;
+    setActiveBadgeModal(null);
+    if (closedBadge?.presentation === 'earned') {
+      markBadgesAsSeen([closedBadge.id]);
+      removePendingBadge(closedBadge.id);
+    }
+  }, [activeBadgeModal, markBadgesAsSeen, removePendingBadge]);
+
+  // Legacy call-sites still invoke this after a read. Presentation is now
+  // coordinated below so share sheets and other overlays can safely block it.
   const releasePendingBadge = useCallback(() => {
-    setPendingBadges(prev => {
-      if (prev.length === 0) return prev;
-      setActiveBadgeModal(prev[0]);
-      return prev.slice(1);
+  }, []);
+
+  const isBadgePresentationBlocked = Object.keys(badgePresentationBlockers).length > 0;
+
+  useEffect(() => {
+    if (FEATURE_FLAGS.careerPathV1) return;
+    if (!pendingBadgesReady || !seenBadgesReady || activeBadgeModal || isBadgeCollectionCompletionVisible || isBadgePresentationBlocked) return;
+    const nextId = pendingBadgeIds[0];
+    if (!nextId) return;
+
+    const nextBadge = earnedBadges.find((badge) => badge.id === nextId);
+    if (!nextBadge?.earned) {
+      removePendingBadge(nextId);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setActiveBadgeModal({ ...nextBadge, presentation: 'earned' });
+    }, 400);
+    return () => clearTimeout(timer);
+  }, [pendingBadgeIds, pendingBadgesReady, seenBadgesReady, earnedBadges, activeBadgeModal, isBadgeCollectionCompletionVisible, isBadgePresentationBlocked, removePendingBadge]);
+
+  const allBadgesCompleted = earnedBadges.length > 0 && earnedBadges.every((badge) => badge.earned);
+
+  useEffect(() => {
+    if (FEATURE_FLAGS.careerPathV1) return;
+    if (
+      !allBadgesCompleted
+      || badgeCollectionCompletionSeen
+      || isBadgeCollectionCompletionVisible
+      || activeBadgeModal
+      || pendingBadgeIds.length > 0
+      || isBadgePresentationBlocked
+    ) return;
+
+    const timer = setTimeout(() => setIsBadgeCollectionCompletionVisible(true), 400);
+    return () => clearTimeout(timer);
+  }, [allBadgesCompleted, badgeCollectionCompletionSeen, isBadgeCollectionCompletionVisible, activeBadgeModal, pendingBadgeIds.length, isBadgePresentationBlocked]);
+
+  const closeBadgeCollectionCompletionModal = useCallback(() => {
+    setIsBadgeCollectionCompletionVisible(false);
+    setBadgeCollectionCompletionSeen(true);
+    AsyncStorage.setItem(BADGE_COLLECTION_COMPLETION_STORAGE_KEY, 'true').catch((error) => {
+      console.warn('Rozet koleksiyonu durumu kaydedilemedi:', error?.message);
     });
   }, []);
 
@@ -1106,6 +1383,7 @@ export const UserDataProvider = ({ children }) => {
     shareCount,
     earnedBadges,
     activeBadgeModal,
+    isBadgeCollectionCompletionVisible,
     unseenEarnedBadgeCount,
     streakFreezeCredits,
     streakFreezeDates,
@@ -1128,15 +1406,24 @@ export const UserDataProvider = ({ children }) => {
     updateUserProfile,
     incrementShareCount,
     recordVariantUsage,
+    saveCareerTakeaway,
+    isCareerTakeawaySaved,
+    recordCareerInsight,
+    recordPrivateCareerApplication,
     removeVariantUsage,
     variantUsage,
+    careerTakeaways,
+    careerSparkPackage,
+    toggleCareerSparkPackageStory,
     clearUserData,
     refreshStats,
     openBadgeModal,
     closeBadgeModal,
     releasePendingBadge,
+    setBadgePresentationBlocked,
+    closeBadgeCollectionCompletionModal,
     useStreakFreeze,
-  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, removeVariantUsage, openBadgeModal, closeBadgeModal, releasePendingBadge, useStreakFreeze]);
+  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, isBadgeCollectionCompletionVisible, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, careerTakeaways, careerSparkPackage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight, recordPrivateCareerApplication, removeVariantUsage, toggleCareerSparkPackageStory, openBadgeModal, closeBadgeModal, releasePendingBadge, setBadgePresentationBlocked, closeBadgeCollectionCompletionModal, useStreakFreeze]);
 
   return (
     <UserDataContext.Provider value={value}>

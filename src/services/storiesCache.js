@@ -33,23 +33,20 @@ export const saveStoriesToCache = async (lang, stories) => {
 
 /**
  * Load cached stories for a language.
- * Returns null if cache is missing, corrupt, or older than TTL.
+ * Returns null if cache is missing, corrupt, or older than TTL unless a caller
+ * explicitly asks to use stale content while offline.
  *
  * @param {string} lang
  * @returns {Promise<object[]|null>}
  */
-export const loadStoriesFromCache = async (lang) => {
+export const loadStoriesFromCache = async (lang, { allowStale = false } = {}) => {
   try {
     const raw = await AsyncStorage.getItem(CACHE_PREFIX + lang);
     if (!raw) return null;
 
     const { ts, stories } = JSON.parse(raw);
     if (!stories || !Array.isArray(stories) || stories.length === 0) return null;
-    if (Date.now() - ts > CACHE_TTL_MS) {
-      // Expired — remove silently so we don't keep re-checking a stale key
-      AsyncStorage.removeItem(CACHE_PREFIX + lang).catch(() => {});
-      return null;
-    }
+    if (Date.now() - ts > CACHE_TTL_MS && !allowStale) return null;
     return stories;
   } catch (e) {
     console.warn('[storiesCache] load failed:', e.message);

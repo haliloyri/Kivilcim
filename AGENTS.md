@@ -79,6 +79,7 @@ Custom agents in `.github/agents/`:
 | **Explore** | Fast read-only codebase exploration and Q&A |
 | **RN UI Developer** | Create/modify screens, components, navigation with proper patterns |
 | **i18n Manager** | Add/update/audit translation keys across all 4 languages (en, tr, es, de) |
+| **Kıvılcım Phase Runner** | Execute Kıvılcım Yolu phases 0–10 in a persistent implement-test-checkpoint loop |
 
 ## Available Skills
 Custom skills in `.github/skills/`:
@@ -95,6 +96,7 @@ Custom skills in `.github/skills/`:
 | **run-ios** | `ios çalıştır`, `simulatörde aç`, `run ios` |
 | **expo-prebuild** | `prebuild yap`, `native güncelle`, `expo prebuild` |
 | **db-migration** | `veritabanı değiştir`, `tablo ekle`, `schema güncelle` |
+| **proofread-stories** | `hikayeleri kontrol et`, `dil dil kontrol et`, `parça parça kontrol et`, `yazım yanlışı var mı`, `onaylı düzeltmeleri uygula` |
 
 ## Prefer Links, Not Duplication
 This file is intentionally concise. For detailed operational steps and troubleshooting:

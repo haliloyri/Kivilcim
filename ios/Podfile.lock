@@ -1538,6 +1538,28 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - react-native-netinfo (12.0.1):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
   - react-native-safe-area-context (5.7.0):
     - hermes-engine
     - RCTRequired
@@ -2354,18 +2376,18 @@ DEPENDENCIES:
   - ExpoClipboard (from `../node_modules/expo-clipboard/ios`)
   - ExpoDevice (from `../node_modules/expo-device/ios`)
   - "ExpoDomWebView (from `../node_modules/@expo/dom-webview/ios`)"
-  - ExpoFileSystem (from `../node_modules/expo-file-system/ios`)
-  - ExpoFont (from `../node_modules/expo-font/ios`)
+  - ExpoFileSystem (from `../node_modules/expo-file-system/ios/ExpoFileSystem.podspec`)
+  - ExpoFont (from `../node_modules/expo-font/ios/ExpoFont.podspec`)
   - ExpoHaptics (from `../node_modules/expo-haptics/ios`)
   - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
   - ExpoLinearGradient (from `../node_modules/expo-linear-gradient/ios`)
   - ExpoLinking (from `../node_modules/expo-linking/ios`)
   - ExpoLocalization (from `../node_modules/expo-localization/ios`)
   - "ExpoLogBox (from `../node_modules/@expo/log-box`)"
-  - ExpoMediaLibrary (from `../node_modules/expo-media-library/ios`)
-  - ExpoModulesCore (from `../node_modules/expo-modules-core`)
+  - ExpoMediaLibrary (from `../node_modules/expo-media-library/ios/ExpoMediaLibrary.podspec`)
+  - ExpoModulesCore (from `../node_modules/expo-modules-core/ExpoModulesCore.podspec`)
   - ExpoModulesJSI (from `../node_modules/expo-modules-jsi/apple`)
-  - ExpoModulesWorklets (from `../node_modules/expo-modules-core`)
+  - ExpoModulesWorklets (from `../node_modules/expo-modules-core/ExpoModulesWorklets.podspec`)
   - ExpoModulesWorkletsAdapter (from `../node_modules/expo-modules-core`)
   - ExpoNotifications (from `../node_modules/expo-notifications/ios`)
   - ExpoSharing (from `../node_modules/expo-sharing/ios`)
@@ -2412,6 +2434,7 @@ DEPENDENCIES:
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - React-mutationobservernativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/mutationobserver`)
+  - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-view-shot (from `../node_modules/react-native-view-shot`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -2486,9 +2509,9 @@ EXTERNAL SOURCES:
   ExpoDomWebView:
     :path: "../node_modules/@expo/dom-webview/ios"
   ExpoFileSystem:
-    :path: "../node_modules/expo-file-system/ios"
+    :podspec: "../node_modules/expo-file-system/ios/ExpoFileSystem.podspec"
   ExpoFont:
-    :path: "../node_modules/expo-font/ios"
+    :podspec: "../node_modules/expo-font/ios/ExpoFont.podspec"
   ExpoHaptics:
     :path: "../node_modules/expo-haptics/ios"
   ExpoKeepAwake:
@@ -2502,13 +2525,13 @@ EXTERNAL SOURCES:
   ExpoLogBox:
     :path: "../node_modules/@expo/log-box"
   ExpoMediaLibrary:
-    :path: "../node_modules/expo-media-library/ios"
+    :podspec: "../node_modules/expo-media-library/ios/ExpoMediaLibrary.podspec"
   ExpoModulesCore:
-    :path: "../node_modules/expo-modules-core"
+    :podspec: "../node_modules/expo-modules-core/ExpoModulesCore.podspec"
   ExpoModulesJSI:
     :path: "../node_modules/expo-modules-jsi/apple"
   ExpoModulesWorklets:
-    :path: "../node_modules/expo-modules-core"
+    :podspec: "../node_modules/expo-modules-core/ExpoModulesWorklets.podspec"
   ExpoModulesWorkletsAdapter:
     :path: "../node_modules/expo-modules-core"
   ExpoNotifications:
@@ -2600,6 +2623,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
   React-mutationobservernativemodule:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/mutationobserver"
+  react-native-netinfo:
+    :path: "../node_modules/@react-native-community/netinfo"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-view-shot:
@@ -2711,7 +2736,7 @@ SPEC CHECKSUMS:
   ExpoLocalization: 543cb852ec9d4a6c732344f94ebd96d18897eaab
   ExpoLogBox: b39a76aab749833d58111c3be1264bb90f3b92d4
   ExpoMediaLibrary: 2fa3d1b3a7681a010602c36c547819e0e83970b9
-  ExpoModulesCore: 747a01dfe7af61ad2e869f80bf983af1caa63378
+  ExpoModulesCore: 298f821b29e9220eef4ff771727261eba3bba266
   ExpoModulesJSI: ef7f197a8e7eeb245557f560ade794bfc1abdc79
   ExpoModulesWorklets: 0340ed9a30017f8597b90a1ef9aa210c43e44c4b
   ExpoModulesWorkletsAdapter: 7f3e892ebc321917cbea2612efdcce8ecb6b0a3b
@@ -2763,6 +2788,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: ce449ccdf3b80384415b925606be8a4bdcfc65d3
   React-microtasksnativemodule: 2eb3f49d0d8e77b5343455eccd057010b8d38b6b
   React-mutationobservernativemodule: f0a0d5ae9b51caf7becbeabf836d716cfedb6bf2
+  react-native-netinfo: 2f906d5d9a639090ed1c079135d6485a95f749f1
   react-native-safe-area-context: 6b4966397ada0f7dd481e4486a2ef936834861a1
   react-native-view-shot: 5bf17256c542d46c02a6f2d2752fe88eb3a8d058
   React-NativeModulesApple: a092d89b58f635ebfab88048b0eda9fb516819fd
@@ -2812,6 +2838,6 @@ SPEC CHECKSUMS:
   RNWorklets: ae7f2b95d75b903387e6359583f2fd67bc9a93ff
   Yoga: fe50ab299e578f397fef753cf309c6703a4db29b
 
-PODFILE CHECKSUM: 0b573e7ebac52555f2c554904994beb93df1aad1
+PODFILE CHECKSUM: 4bff007195c36a91c7da7f61351e173ca0ca9a5c
 
 COCOAPODS: 1.16.2

@@ -1,0 +1,140 @@
+{
+  "batch_id": "A1-003-content",
+  "kind": "content_fix",
+  "version": "A1",
+  "created": "2026-07-25",
+  "notes": "Agent 1 · icerik duzeltmeleri. 5 riskli terim, 1160 icin eksik $$ ders blogu (4 dil), 1537 kirpilmis yuklem, 1601 eksik nokta, 2 cevrilmemis Turkce parca. Duzeltmeler nokta hedefli find/replace ile uygulandi; her kalip tam bir kez eslesti. Diller bagimsiz yazildi, birbirinin cevirisi degil.",
+  "items": [
+    {
+      "story": {
+        "story_id": 1059,
+        "queue_title": "Britanya bisiklet takımının yüzde iki felsefesi",
+        "reason": "terim: Turkce oznesiz cumleye (\"zaferlerini pes pese dizdi\") yanlis ozne eklenmis — \"he piled up\""
+      },
+      "lang": {
+        "en": {
+          "content": "Until 1998, the British national cycling team had achieved almost no significant success. For 76 years, the team had won only one gold medal at the Olympics. \r\n\r\nThen Dave Brailsford came on stage. \r\n\r\nBrailsford's approach was wildly simple: Improve everything by two percent. The ergonomics of the bike seat, the hardness of the pillow used by the athletes, warm-up rituals, nutrition patterns... Even which gel the athletes wash their hands with. \r\n\r\nEach improvement seemed insignificant on its own. But when dozens of small gains came together, the miracle happened. \r\n\r\n##5 years later, at the 2008 Beijing Olympics, the British cycling team won 8 gold medals.## \r\n\r\nIn the 2012 London Olympics, this number was 7. Then came a run of Tour de France victories, one after another. \r\n\r\nBrailsford gave this philosophy a name: \"Combination of marginal gains.\" \r\n\r\nMost of us are expecting big changes. We want to go from zero to a hundred, we want to turn from morning to evening. \r\n\r\n$$But big results always come from the accumulation of small, invisible improvements.$$ \r\n\r\n&&What is one thing you could do two percent better in your life today—in your work, relationships, or health? Write it down.&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1061,
+        "queue_title": "Fotoğraf öğrencilerinin kalite vs miktar deneyi",
+        "reason": "terim: \"her gun cekmis\" (fotograf cekmek) -> \"suffered every day\" (aci cekmek) olarak cevrilmis"
+      },
+      "lang": {
+        "en": {
+          "content": "A photography instructor divides the class into two at the beginning of the semester. \r\n\r\nHe says to the first group: \"At the end of the semester, you will deliver only one photo to me. But that photo must be perfect.\" \r\n\r\nHe tells the second group: \"You will take as many photos as possible throughout the semester. I will grade them according to weight.\" \r\n\r\nAt the end of the semester, the teacher examines the photos and is surprised. \r\n\r\n##Almost all of the best, most striking, most impressive photographs came from the \"quantity\" group.## \r\n\r\nWhy? Because the quality group has created the perfect plan in its mind without wasting any time. The quantity group shot every day, made mistakes every day, learned something from every mistake and started to get really good over time. \r\n\r\n$$Perfectionism is often the polite name for inactivity.$$ \r\n\r\n&&Is there anything you haven't started right now because you're \"not ready\"? What happens if you start doing that thing tomorrow, not perfectly, but just \"started\"?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1062,
+        "queue_title": "Çevre tasarımı ile alışkanlık",
+        "reason": "terim: Almanca \"Koks\" kokain demek; Ispanyolca \"la coca\" ayni riski tasiyor. Ayrica Almanca cumlede ozne \"Es\" (o/sey) yerine Anne Thorndike icin \"Sie\" olmali"
+      },
+      "lang": {
+        "de": {
+          "content": "Anne Thorndike war Ernährungsberaterin im Krankenhaus und fragte sich, warum die Leute in der Cafeteria des Krankenhauses so viel Limonade konsumierten. \r\n\r\nDas Menü wurde nicht geändert. Er hat die Preise nicht erhöht. Er hat keine Plakate angebracht, die zu gesunden Entscheidungen auffordern. \r\n\r\nSie tat nur eines: Sie machte Cola schwerer erreichbar und Wasser leichter erreichbar. \r\n\r\nEr stellte Wasser neben die Cola-Automaten. Er stellte Wasserflaschen neben die Kassen. Er organisierte die Cafeteria neu und platzierte gesunde Getränke an besser sichtbaren Orten. \r\n\r\n##Drei Monate später ging der Cola-Verkauf in der Kantine um elf Prozent zurück, während der Wasserverkauf um 25 Prozent stieg. Zu niemandem wurde ein einziges Wort gesagt.##\r\n\r\nJames Clear bringt es auf den Punkt: „Verlassen Sie sich nicht auf Motivation. Gestalten Sie die Umgebung.“ \r\n\r\nWenn Sie sich gesund ernähren möchten, stellen Sie die Früchte vor sich hin und nicht hinten in den Kühlschrank. Wenn Sie ein Buch lesen möchten, legen Sie das Telefon weg und legen Sie das Buch neben Ihr Kissen. \r\n\r\n$$Die Umgebung lässt Sie die richtige Wahl treffen, auch wenn Sie nicht den Willen dazu haben.$$\r\n\r\n&&Gibt es in Ihrem Zuhause oder am Arbeitsplatz einen Gegenstand oder eine Einrichtung, die Sie zu einer schlechten Angewohnheit verleitet? Was ändert sich, wenn Sie dieses Objekt oder diese Anordnung heute ändern?&&"
+        },
+        "es": {
+          "content": "Anne Thorndike era dietista de un hospital y se preguntaba por qué la gente consumía tantos refrescos en la cafetería del hospital. \r\n\r\nNo cambié el menú. No aumentó los precios. No colocó carteles que alentaran las opciones saludables. \r\n\r\nSimplemente hizo esto: hizo que el refresco fuera menos accesible y el agua más accesible. \r\n\r\nPuso agua al lado de las máquinas de cola. Colocó botellas de agua al lado de las cajas registradoras. Reorganizó la cafetería, poniendo bebidas saludables en lugares más visibles. \r\n\r\n##Tres meses después, las ventas de cola en la cafetería disminuyeron un once por ciento, mientras que las ventas de agua aumentaron un veinticinco por ciento. No se dijo ni una sola palabra a nadie.##\r\n\r\nJames Clear lo resume de esta manera: \"No confíes en la motivación. Diseña el entorno\". \r\n\r\nSi quieres comer sano, pon las frutas delante de ti, no en la parte trasera del frigorífico. Si quieres leer un libro, guarda el teléfono y pon el libro junto a tu almohada. \r\n\r\n$$El entorno te obliga a tomar la decisión correcta incluso si no tienes la voluntad.$$\r\n\r\n&&¿Hay algún objeto o arreglo en su hogar o lugar de trabajo que lo lleve a adquirir un mal hábito? ¿Qué cambia si cambias ese objeto o ese arreglo hoy?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1160,
+        "queue_title": "Hikayelerden gerçeklere dönmek",
+        "reason": "isaret onariminda $$ ders blogu kalmadi (metin soruydu, && oldu); dort dile ders blogu eklendi. Ayrica en'de \"brain stuffing\" birebir ceviri"
+      },
+      "lang": {
+        "tr": {
+          "content": "İki kişi aynı toplantıdaydı.\r\n\r\nBirincisi: \"Müdür beni toplantıda görmezden geldi. Beni dışlamak istiyor. Belki işten çıkarmayı planlıyor.\"\r\n\r\nİkincisi: Aynı toplantı. \"Müdür çok meşgul görünüyordu, belki bir problemi vardı.\"\r\n\r\n##Aynı olay. İki tamamen farklı hikaye. Ve Patterson'ın araştırması şunu gösteriyor: İnsanlar olay ile hikayeyi neredeyse anında birleştiriyor.##\r\n\r\nBeyin boşluğu dolduruyor. Gözlemlenen gerçek veriyle, üretilen hikaye arasında hiç zaman geçmiyor.\r\n\r\nVe kritik konuşmalarda bu hikayeler yıkıcı oluyor. \"O böyle düşünüyor\" sanılarak konuşma başlıyor. Ama o \"böyle düşünüyor\" tamamen uydurulmuş bir hikaye.\r\n\r\nPatterson'ın çözümü: Hikayeni gerçeğe ayır.\r\n\r\n\"Müdür beni görmezden geldi\" — gözlemlenen gerçek.\r\n\"Beni dışlamak istiyor\" — üretilen hikaye.\r\n\r\nKritik konuşmaya hikayeleri değil, gerçekleri taşı. \"Toplantıda söz hakkı alamadım — bunun nedenini merak ediyorum\" çok daha dürüst ve etkili bir başlangıç.\r\n\r\n$$Çatışma çoğu zaman olaydan değil, olayın üstüne kurduğun hikâyeden doğar.$$\r\n\r\n&&Olaylarla ilgili hikayelerin ne kadarı gerçek, ne kadarı beyninin doldurmalarıdır?&&"
+        },
+        "en": {
+          "content": "Two people were at the same meeting. \r\n\r\nFirst: \"The manager ignored me in the meeting. He wants to exclude me. Maybe he's planning to fire me.\" \r\n\r\nSecond: Same meeting. \"The manager seemed very busy, maybe he had a problem.\" \r\n\r\n##Same incident. Two completely different stories. And Patterson's research shows that people connect event and story almost instantly.## \r\n\r\nThe brain fills the gap. No time passes between the actual data observed and the story produced. \r\n\r\nAnd in critical conversations, these stories are devastating. The conversation begins with the thought that \"he thinks this way\". But he \"thinks that way\" is a completely made up story. \r\n\r\nPatterson's solution: Reserve your story for the truth. \r\n\r\n“The manager ignored me” — observed fact. \r\n“He wants to exclude me” — the fabricated story. \r\n\r\nBring facts, not stories, to critical conversation. “I didn't get a chance to speak at the meeting — I wonder why” is a much more honest and effective start. \r\n\r\n$$Conflict rarely starts with what happened; it starts with the story you built on top of it.$$\r\n\r\n&&How much of your stories about events are real and how much did your brain fill in?&&"
+        },
+        "es": {
+          "content": "Dos personas estaban en la misma reunión. \r\n\r\nPrimero: \"El gerente me ignoró en la reunión. Quiere excluirme. Tal vez esté planeando despedirme\". \r\n\r\nSegundo: Misma reunión. \"El gerente parecía muy ocupado, tal vez tuvo un problema\". \r\n\r\n##Mismo incidente. Dos historias completamente diferentes. Y la investigación de Patterson muestra que las personas conectan el evento y la historia casi instantáneamente.##\r\n\r\nEl cerebro llena el vacío. No pasa tiempo entre los datos reales observados y la historia producida. \r\n\r\nY en las conversaciones críticas, estas historias son devastadoras. La conversación comienza con el pensamiento de que \"él piensa así\". Pero él \"piensa así\" es una historia completamente inventada. \r\n\r\nLa solución de Patterson: reserve su historia para la verdad. \r\n\r\n“El gerente me ignoró” – hecho observado. \r\n“Quiere excluirme”: la historia inventada. \r\n\r\nTraiga hechos, no historias, a una conversación crítica. “No tuve la oportunidad de hablar en la reunión; me pregunto por qué” es un comienzo mucho más honesto y eficaz. \r\n\r\n$$El conflicto casi nunca nace de lo ocurrido, sino de la historia que construiste encima.$$\r\n\r\n&&¿Cuántas de tus historias sobre eventos son reales y cuántas son simplemente rellenos cerebrales?&&"
+        },
+        "de": {
+          "content": "Zwei Personen waren beim selben Treffen. \r\n\r\nErstens: „Der Manager hat mich in der Besprechung ignoriert. Er will mich ausschließen. Vielleicht hat er vor, mich zu entlassen.“ \r\n\r\nZweitens: Gleiches Treffen. „Der Manager schien sehr beschäftigt zu sein, vielleicht hatte er ein Problem.“ \r\n\r\n##Gleicher Vorfall. Zwei völlig unterschiedliche Geschichten. Und Pattersons Forschung zeigt, dass Menschen Ereignis und Geschichte fast augenblicklich miteinander verbinden.##\r\n\r\nDas Gehirn füllt die Lücke. Zwischen den tatsächlich beobachteten Daten und der produzierten Geschichte vergeht keine Zeit. \r\n\r\nUnd in kritischen Gesprächen sind diese Geschichten verheerend. Das Gespräch beginnt mit dem Gedanken, dass „er so denkt“. Aber dass er „so denkt“, ist eine völlig erfundene Geschichte. \r\n\r\nPattersons Lösung: Reservieren Sie Ihre Geschichte der Wahrheit. \r\n\r\n„Der Manager hat mich ignoriert“ – beobachtete Tatsache. \r\n„Er will mich ausschließen“ – die erfundene Geschichte. \r\n\r\nBringen Sie Fakten und keine Geschichten in kritische Gespräche ein. „Ich hatte keine Gelegenheit, bei dem Treffen zu sprechen – ich frage mich, warum“ ist ein viel ehrlicherer und effektiverer Anfang. \r\n\r\n$$Konflikte entstehen selten aus dem Geschehen, sondern aus der Geschichte, die du darüber legst.$$\r\n\r\n&&Wie viele Ihrer Geschichten über Ereignisse sind real und wie viele sind nur Hirngespinst?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1537,
+        "queue_title": "10.000 saat efsanesi ve Anders Ericsson'un gerçek bulgusu",
+        "reason": "kirpilma: $$ ders blogu yuklemsiz kesilmis (\"...repetition creates\" / \"...crea\" / \"...schafft\")"
+      },
+      "lang": {
+        "en": {
+          "content": "1993. Psychologist Anders Ericsson conducted a study at the Berlin Academy of Music. \n\nHe divided his violin students into three groups: Those who have the potential to become world class, those who are good but ordinary, and those who aim to become teachers. \n\nWhat was the difference? Practice time. \n\nThe best had worked 10,000 hours by age 20. Mids 8,000. Teachers 4,000. \n\nMalcolm Gladwell took this data and made the \"10,000 hour rule\". Message: Practice enough and become a master. \n\n##But Ericsson objected: I didn't say that. Practice, not time, determines quality.## \n\nMatthew Syed puts this distinction at the heart of Leaping. Ordinary practice and conscious practice. \n\nOrdinary practice: Repeat the same thing every day. Don't get out of your comfort zone. Do \"what I already know.\" \n\nConscious practice: Choose the challenge right at your limit. Get feedback now. Analyze the error systematically. Fix it next try. \n\nA musician can play the same piece for 10 years and remain of middling quality. Or, with 3 years of conscious practice, you can step onto the world stage. \n\n$$Repetition doesn't create mastery — conscious, analytical, challenging repetition creates it.$$ \n\n&&Is there a skill you're practicing right now? Is that practice really pushing your limits, or are you staying in your comfort zone?&&"
+        },
+        "es": {
+          "content": "1993. El psicólogo Anders Ericsson realizó un estudio en la Academia de Música de Berlín. \n\nDividió a sus estudiantes de violín en tres grupos: los que tienen el potencial de llegar a ser de clase mundial, los que son buenos pero ordinarios y los que aspiran a convertirse en profesores. \n\n¿Cuál fue la diferencia? Tiempo de práctica. \n\nLos mejores habían trabajado 10.000 horas a los 20 años. Mediados de 8.000. Maestros 4.000. \n\nMalcolm Gladwell tomó estos datos e hizo la \"regla de las 10.000 horas\". Mensaje: Practica lo suficiente y conviértete en un maestro. \n\n##Pero Ericsson objetó: Yo no dije eso. La práctica, no el tiempo, determina la calidad.##\n\nMatthew Syed sitúa esta distinción en el centro de Leaping. Práctica ordinaria y práctica consciente. \n\nPráctica habitual: Repetir lo mismo todos los días. No salgas de tu zona de confort. Haz \"lo que ya sé\". \n\nPráctica consciente: elige el desafío justo en tu límite. Obtenga comentarios ahora. Analizar el error sistemáticamente. Arréglalo en el próximo intento. \n\nUn músico puede tocar la misma pieza durante 10 años y mantener una calidad media. O, con 3 años de práctica consciente, podrás subir al escenario mundial. \n\n$$La repetición no crea dominio: la repetición consciente, analítica y desafiante sí lo crea.$$\n\n&&¿Hay alguna habilidad que estés practicando en este momento? ¿Esa práctica realmente supera tus límites o te quedas en tu zona de confort?&&"
+        },
+        "de": {
+          "content": "1993. Der Psychologe Anders Ericsson führte eine Studie an der Berliner Musikhochschule durch. \n\nEr teilte seine Geigenschüler in drei Gruppen ein: Diejenigen, die das Potenzial haben, Weltklasse zu werden, diejenigen, die gut, aber gewöhnlich sind, und diejenigen, die Lehrer werden wollen. \n\nWas war der Unterschied? Übungszeit. \n\nDie besten hatten im Alter von 20 Jahren 10.000 Stunden gearbeitet, die mittleren 8.000. Lehrer 4.000. \n\nMalcolm Gladwell nahm diese Daten und stellte die „10.000-Stunden-Regel“ auf. Botschaft: Übe genug und werde ein Meister. \n\n##Aber Ericsson widersprach: Das habe ich nicht gesagt. Übung, nicht Zeit, bestimmt die Qualität.##\n\nMatthew Syed stellt diese Unterscheidung in den Mittelpunkt von „Leaping“. Gewöhnliche Praxis und bewusste Praxis. \n\nGewöhnliche Praxis: Wiederholen Sie jeden Tag das Gleiche. Verlassen Sie nicht Ihre Komfortzone. Tue „was ich bereits weiß.“ \n\nBewusstes Üben: Wählen Sie die Herausforderung genau an Ihrem Limit. Holen Sie sich jetzt Feedback. Analysieren Sie den Fehler systematisch. Beheben Sie das Problem beim nächsten Versuch. \n\nEin Musiker kann 10 Jahre lang dasselbe Stück spielen und dabei von mittelmäßiger Qualität bleiben. Oder Sie können mit drei Jahren bewusster Praxis die Weltbühne betreten. \n\n$$Wiederholung schafft keine Meisterschaft – bewusste, analytische, herausfordernde Wiederholung schafft sie.$$\n\n&&Gibt es eine Fähigkeit, die Sie gerade üben? Geht diese Praxis wirklich an Ihre Grenzen oder bleiben Sie in Ihrer Komfortzone?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1601,
+        "queue_title": "Dakikada beş nefes — kalp ritmi ve sinir sistemi uyumu",
+        "reason": "noktalama: $$ ders blogu tam ama nokta yok; paylas kartinda cumle yarim gorunuyor"
+      },
+      "lang": {
+        "en": {
+          "content": "James Nestor researched dozens of breathing techniques. \n\nYoga pranayama. Buddhist meditation. Shamanic rituals. Modern medical protocols. \n\nAnd he found a surprising overlap. \n\n##Although culture and tradition may differ, the breathing rate that creates the strongest effect is always the same: five to six breaths per minute. Each breath is approximately five and a half seconds in, five and a half seconds out.## \n\nWhy is this tempo so strong? \n\nHeart rhythm variability — the natural fluctuation in the time between heartbeats — is one of the most important indicators of health. High variability indicates the plasticity of the nervous system. \n\nFive breaths per minute maximizes this variability. The sympathetic and parasympathetic systems enter into perfect vibration. Blood pressure drops. Anxiety is decreasing. The focus becomes sharper. Performance increases. \n\nNestor also attributes this to prayer practices in many religions. The Catholic Ave Maria prayer, the Buddhist Om Mani Padme Hum guide, yogic pranayama—all fall approximately at this pace. Our ancestors found out what works by intuition. \n\n$$Breathing rate is the nervous system's remote control—five breaths per minute alone restores balance.$$ \n\n&&How does your breathing change when you feel anxious or stressed? Have you tried consciously slowing it down?&&"
+        },
+        "es": {
+          "content": "James Nestor investigó decenas de técnicas de respiración. \n\nPranayama de yoga. Meditación budista. Rituales chamánicos. Protocolos médicos modernos. \n\nY encontró una sorprendente superposición. \n\n##Aunque la cultura y la tradición pueden diferir, la frecuencia respiratoria que crea el efecto más fuerte es siempre la misma: de cinco a seis respiraciones por minuto. Cada respiración dura aproximadamente cinco segundos y medio de entrada y cinco segundos y medio de exhalación.##\n\n¿Por qué este ritmo es tan fuerte? \n\nLa variabilidad del ritmo cardíaco (la fluctuación natural del tiempo entre latidos) es uno de los indicadores de salud más importantes. La alta variabilidad indica la plasticidad del sistema nervioso. \n\nCinco respiraciones por minuto maximizan esta variabilidad. Los sistemas simpático y parasimpático entran en perfecta vibración. La presión arterial baja. La ansiedad está disminuyendo. El enfoque se vuelve más nítido. El rendimiento aumenta. \n\nNéstor también atribuye esto a las prácticas de oración en muchas religiones. La oración católica del Ave María, la guía budista Om Mani Padme Hum, el pranayama yóguico, todos caen aproximadamente a este ritmo. Nuestros antepasados ​​descubrieron lo que funciona por intuición. \n\n$$La frecuencia respiratoria es el control remoto del sistema nervioso: solo cinco respiraciones por minuto restablecen el equilibrio.$$\n\n&&¿Cómo cambia tu respiración cuando te sientes ansioso o estresado? ¿Has intentado ralentizarlo conscientemente?&&"
+        },
+        "de": {
+          "content": "James Nestor erforschte Dutzende Atemtechniken. \n\nYoga-Pranayama. Buddhistische Meditation. Schamanische Rituale. Moderne medizinische Protokolle. \n\nUnd er fand eine überraschende Überschneidung. \n\n##Obwohl Kultur und Tradition unterschiedlich sein können, ist die Atemfrequenz, die die stärkste Wirkung erzeugt, immer dieselbe: fünf bis sechs Atemzüge pro Minute. Jeder Atemzug dauert etwa fünfeinhalb Sekunden ein und fünfeinhalb Sekunden aus.##\n\nWarum ist dieses Tempo so stark? \n\nDie Herzrhythmusvariabilität – die natürliche Schwankung der Zeit zwischen den Herzschlägen – ist einer der wichtigsten Indikatoren für die Gesundheit. Eine hohe Variabilität weist auf die Plastizität des Nervensystems hin. \n\nFünf Atemzüge pro Minute maximieren diese Variabilität. Das sympathische und parasympathische System geraten in perfekte Schwingung. Der Blutdruck sinkt. Die Angst nimmt ab. Der Fokus wird schärfer. Die Leistung steigt. \n\nNestor führt dies auch auf Gebetspraktiken in vielen Religionen zurück. Das katholische Ave-Maria-Gebet, der buddhistische Om Mani Padme Hum-Leitfaden und das yogische Pranayama fallen alle ungefähr in diesem Tempo. Unsere Vorfahren haben durch Intuition herausgefunden, was funktioniert. \n\n$$Die Atemfrequenz ist die Fernbedienung des Nervensystems – allein fünf Atemzüge pro Minute stellen das Gleichgewicht wieder her.$$\n\n&&Wie verändert sich Ihre Atmung, wenn Sie sich ängstlich oder gestresst fühlen? Haben Sie versucht, es bewusst zu verlangsamen?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1508,
+        "queue_title": "Güçlendirici koalisyon",
+        "reason": "sizinti: bir cumle hic cevrilmemis, Turkce kalmis. Ayrica sonraki cumlenin basindaki kacak bosluk temizlendi"
+      },
+      "lang": {
+        "en": {
+          "content": "John Kotter sees the following error. \n\nThe CEO announces a big change. It announces to the entire organization. And then he waits. \n\nWhy doesn't it work? \n\n##\"Big change is not carried by the energy of a single person,\" says Kotter. “Without a strong change coalition, resistance defeats change.”## \n\nWho should this coalition be? \n\nKotter identifies four characteristics. \n\nFirst, enough positional power: people in roles that can actually put the change into practice.\n\nSecond, expertise: People who understand the technical and human dimensions of change. \n\nThird, reliability: Names that the organization respects. \n\nFourth, leadership capacity: Not just management, but real leadership. \n\nAnd this coalition should not consist only of duty. Must have true faith. \n\nKotter adds: The strongest coalitions involve the most believers, not the highest-ranking ones. \n\n$$Change requires coalition — no single hero can carry change.$$ \n\n&&Do you have a coalition for a change you want to make in your life or business?&&"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1677,
+        "queue_title": "Yüzde bir daha iyi — bileşik büyümenin alışkanlık versiyonu",
+        "reason": "sizinti: iki ic alinti Turkce kalmis; Ispanyolca tirnak isaretleri de tutarsizdi"
+      },
+      "lang": {
+        "es": {
+          "content": "James Clear hace algunos cálculos simples. \n\nIf you could get one percent better every day. Los 365 días del año. \n\nDespués de un año: 1,01 elevado a 365 = 37,78 veces mejor. \n\nIncluso si empeoraras un uno por ciento cada día. \n\nAl final de un año: 0,99 elevado a 365 = 0,03. Casi cero. \n\n##Claro dice: Los pequeños hábitos momentáneamente parecen insignificantes. «Hoy no hice ejercicio, ¿qué más da?» «Esta semana no leí nada, mi vida no va a cambiar.» Así es, momentáneamente. Pero el crecimiento compuesto es revolucionario a largo plazo.##\n\nLo contrario también es cierto: dormir un poco menos cada día, comer un poco más de azúcar, moverse un poco menos... no se nota al instante. Pero el lugar donde nos encontramos un año después es dramáticamente diferente. \n\nClaro dice: Los resultados son un reflejo tardío de los hábitos. Los buenos hábitos no te recompensan de inmediato. No pagas el precio por los malos hábitos de inmediato. Este retraso engaña a la gente. \n\nPero las matemáticas requieren paciencia. Los pequeños avances en la dirección correcta se convierten con el tiempo en grandes transformaciones. \n\n$$Los pequeños hábitos parecen insignificantes en este momento, pero el crecimiento compuesto los hace revolucionarios a largo plazo.$$\n\n&&¿Hay algún área en tu vida en este momento en la que hayas logrado una mejora del 1 por ciento? ¿Y un área en la que has empeorado un uno por ciento sin siquiera darte cuenta?&&"
+        }
+      }
+    }
+  ],
+  "ingested_at": "2026-07-25T21:54:11.237Z",
+  "ingested_story_ids": [
+    1059,
+    1061,
+    1062,
+    1160,
+    1537,
+    1601,
+    1508,
+    1677
+  ]
+}

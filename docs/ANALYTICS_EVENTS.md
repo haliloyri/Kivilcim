@@ -113,6 +113,51 @@ Payload:
 - todayReads: number
 - lang: string
 
+## career_path_selected
+When: User selects an initial Kıvılcım Yolu path or switches the active path.
+
+Payload:
+- pathId: string (exploration | depth | transfer)
+- selectionSource: string (user | user_switch)
+
+## career_promotion_shown
+When: The user is shown the highest newly earned Kıvılcım Yolu rank.
+
+Payload:
+- nodeId: string
+- additionalPromotionCount: number
+
+## Kıvılcım Yolu ek olayları
+
+Tüm kariyer payload’ları `careerVersion` (number) taşır; isteğe göre `pathId`,
+`nodeId`, `nodeState`, `actionType`, `missingRequirement` ve `source` eklenir.
+Display name, email, hikâye gövdesi ve serbest kullanıcı metni gönderilmez.
+
+- `career_path_exposure`: Yeni yol deneyimi gerçekten görünür olduğunda.
+- `career_path_viewed`: Yolum sekmesi bir oturumda ilk kez açıldığında.
+- `career_path_intro_viewed`: Yol seçimi gerektiğinde intro görünür olduğunda.
+- `career_path_selected`: İlk yol kalıcı olarak seçildiğinde (`pathId`, `selectionSource`).
+- `career_path_focus_changed`: Aktif yol değiştirildiğinde (`pathId`, `source`).
+- `career_node_opened`: Timeline’dan düğüm ayrıntısı açıldığında.
+- `career_next_action_clicked`: Sıradaki aksiyon CTA’sına basıldığında.
+- `career_node_completed`: Yerel award transaction düğümü ilk kez yazdığında
+  (`pathId`, `nodeId`, `source`, `backfilled`).
+- `career_promotion_seen`, `career_promotion_dismissed`, `career_promotion_shared`:
+  promotion yaşam döngüsü için ayrılmış olaylar.
+- `career_path_completed`: Aktif yol capstone’a ulaştığında.
+- `career_migration_completed`, `career_migration_summary_seen`: Legacy geçişinin
+  kalıcı tamamlanması ve özetin görülmesi.
+
+### Kıvılcım Yolu kredi sözlüğü ve gizlilik
+
+- `H` (hikâye): Okuma veya sesli dinleme ile anlamlı biçimde tamamlanan benzersiz hikâye.
+- `K` (kategori): Günlük kredi sınırı sonrası kabul edilen `H` olaylarının farklı ana kategorileri.
+- `D` (derin etkileşim): Bir çıkarımı kaydetme veya ilk tamamlamadan en az 24 saat sonra anlamlı yeniden tamamlama.
+- `U` (uygulama): Sohbette Kullan, prova veya sabit seçenekli özel uygulama planı.
+- `G` (aktif gün): En az bir anlamlı `H`, `D` veya `U` içeren yerel gün; streak değildir.
+
+Ham olaylar analitik kullanıcı profiline değil, yerel kariyer deposuna yazılır. Analytics payload’ı display name, e-posta, hikâye gövdesi veya serbest çıkarım/uygulama metni içermez. Özel uygulama planı yalnız sabit bağlam seçeneği gönderir.
+
 ## streak_freeze_activated
 When: Premium user spends a streak-freeze credit from Progress while their streak is at risk.
 

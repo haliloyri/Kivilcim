@@ -170,59 +170,96 @@ function makeLibrary() {
 }
 
 function makeProgress() {
-  const squares = [];
-  const startX = 80;
-  const startY = 330;
-  const size = 54;
-  const gap = 10;
-  const palette = ['#EFE8D9', '#E0D0B3', '#D0B084', '#B8894A'];
-  for (let r = 0; r < 7; r++) {
-    for (let c = 0; c < 13; c++) {
-      const level = (r * 13 + c * 5) % 4;
-      squares.push(`<rect x="${startX + c * (size + gap)}" y="${startY + r * (size + gap)}" width="${size}" height="${size}" rx="10" fill="${palette[level]}"/>`);
-    }
-  }
-
-  const defs = `
-  <defs>
-    <linearGradient id="badge-grad-1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#FFD700" />
-      <stop offset="100%" stop-color="#FF8C00" />
-    </linearGradient>
-    <linearGradient id="badge-grad-2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#00C9FF" />
-      <stop offset="100%" stop-color="#92FE9D" />
-    </linearGradient>
-    <linearGradient id="badge-grad-3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#b1b1b1" />
-      <stop offset="100%" stop-color="#e0e0e0" />
-    </linearGradient>
-  </defs>`;
-
-  const badgeItem = (x, y, title, status, grad) => {
-    return `
-    <g filter="url(#shadow)">
-      <rect x="${x}" y="${y}" rx="28" ry="28" width="470" height="260" fill="${theme.card}" stroke="${theme.border}"/>
-      <circle cx="${x + 235}" cy="${y + 100}" r="45" fill="url(#${grad})"/>
-      <text x="${x + 235}" y="${y + 185}" font-family="Georgia, serif" font-size="32" fill="${theme.text}" text-anchor="middle">${escapeXml(title)}</text>
-      <rect x="${x + 160}" y="${y + 205}" rx="14" ry="14" width="150" height="34" fill="${status === 'Kazanıldı' ? theme.primaryDeep : theme.surface}" />
-      <text x="${x + 235}" y="${y + 228}" font-family="Arial, sans-serif" font-size="18" fill="${status === 'Kazanıldı' ? '#fff' : theme.sub}" text-anchor="middle">${escapeXml(status)}</text>
-    </g>`;
-  };
-
   const body = `
-  ${defs}
-  <text x="60" y="230" font-family="Georgia, serif" font-size="64" fill="${theme.text}">İlerlemen</text>
-  <text x="60" y="276" font-family="Arial, sans-serif" font-size="30" fill="${theme.sub}">Son 90 günlük okuma yoğunluğu</text>
-  <rect x="60" y="300" rx="28" ry="28" width="960" height="560" fill="${theme.card}" stroke="${theme.border}"/>
-  ${squares.join('')}
+  <text x="60" y="230" font-family="Georgia, serif" font-size="64" fill="${theme.text}">Kıvılcım Yolu</text>
+  <text x="60" y="276" font-family="Arial, sans-serif" font-size="30" fill="${theme.sub}">Okumaktan fikirleri hayata taşımaya sakin bir yol</text>
 
-  <text x="60" y="940" font-family="Arial, sans-serif" font-size="30" fill="${theme.sub}">Rozetler</text>
-  ${badgeItem(60, 970, '7 Gün Seri', 'Kazanıldı', 'badge-grad-1')}
-  ${badgeItem(550, 970, 'Keşifçi', 'Kazanıldı', 'badge-grad-2')}
-  ${badgeItem(60, 1250, 'Filozof', 'Kilidi Açılmadı', 'badge-grad-3')}
-  ${badgeItem(550, 1250, 'Bilge', 'Kilidi Açılmadı', 'badge-grad-3')}`;
-  return wrapScreen('İstatistik', body);
+  <defs>
+    <linearGradient id="journeyHero" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#071634"/><stop offset="100%" stop-color="#27214d"/></linearGradient>
+    <linearGradient id="journeyPath" x1="0" x2="1"><stop offset="0%" stop-color="#9E6642"/><stop offset="55%" stop-color="#F8D47C"/><stop offset="100%" stop-color="#FFF0B5"/></linearGradient>
+  </defs>
+  <rect x="60" y="320" rx="32" ry="32" width="960" height="430" fill="url(#journeyHero)"/>
+  <circle cx="896" cy="424" r="138" fill="#E8B85C" opacity="0.11"/>
+  <circle cx="914" cy="444" r="80" fill="none" stroke="#F9D783" stroke-width="3" opacity="0.54"/>
+  <path d="M300,750 C520,684 540,744 720,638 C826,576 824,476 1010,406" fill="none" stroke="url(#journeyPath)" stroke-width="21" opacity="0.94"/>
+  <path d="M300,750 C520,684 540,744 720,638 C826,576 824,476 1010,406" fill="none" stroke="#fff8d8" stroke-width="3" opacity="0.85"/>
+  <circle cx="176" cy="388" r="4" fill="#F8D47C"/><circle cx="240" cy="436" r="3" fill="#8FC8FF"/><circle cx="576" cy="378" r="4" fill="#F8D47C"/><circle cx="734" cy="428" r="3" fill="#F8D47C"/>
+  <rect x="100" y="360" rx="18" ry="18" width="220" height="38" fill="#0B1B40" opacity="0.68" stroke="#F9D783" stroke-opacity="0.56"/>
+  <text x="122" y="386" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1" fill="#fff">DERİNLİK YOLU</text>
+  <text x="100" y="478" font-family="Georgia, serif" font-size="62" fill="#fff">Düşünür</text>
+  <text x="100" y="528" font-family="Arial, sans-serif" font-size="27" fill="#F1F4FF">Küçük ve anlamlı adımlar kalıcı bir bilgelik biriktirir.</text>
+  <rect x="100" y="564" rx="18" ry="18" width="310" height="43" fill="#0B1B40" opacity="0.7"/>
+  <text x="124" y="592" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">⌁  3/6 · YOLCULUĞUN</text>
+
+  <text x="60" y="828" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="1" fill="${theme.sub}">SIRADAKİ ADIMIN</text>
+  <rect x="60" y="862" rx="28" ry="28" width="960" height="310" fill="${theme.card}" stroke="${theme.border}"/>
+  <rect x="60" y="862" rx="28" ry="28" width="12" height="310" fill="#C89B3C"/>
+  <text x="100" y="940" font-family="Georgia, serif" font-size="50" fill="${theme.text}">Sentezci</text>
+  <text x="100" y="986" font-family="Arial, sans-serif" font-size="27" fill="${theme.sub}">Derin etkileşim 3/5  ·  Aktif gün 6/8</text>
+  <rect x="100" y="1030" rx="16" ry="16" width="820" height="76" fill="#823b18"/>
+  <text x="390" y="1078" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#fff">Sıradaki adımı at  →</text>
+
+  <text x="60" y="1248" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="1" fill="${theme.sub}">YOLCULUĞUN</text>
+  <rect x="60" y="1280" rx="28" ry="28" width="960" height="408" fill="${theme.card}" stroke="${theme.border}"/>
+  <line x1="114" y1="1354" x2="114" y2="1622" stroke="#D8C08F" stroke-width="3"/>
+  <circle cx="114" cy="1352" r="16" fill="#C89B3C"/><text x="106" y="1359" font-family="Arial" font-size="18" fill="#fff">✓</text>
+  <text x="154" y="1348" font-family="Georgia, serif" font-size="37" fill="${theme.text}">İlk Kıvılcım</text><text x="154" y="1386" font-family="Arial" font-size="23" fill="${theme.sub}">Kazanıldı</text>
+  <circle cx="114" cy="1444" r="16" fill="#C89B3C"/><text x="106" y="1451" font-family="Arial" font-size="18" fill="#fff">✓</text>
+  <text x="154" y="1440" font-family="Georgia, serif" font-size="37" fill="${theme.text}">Yolcu</text><text x="154" y="1478" font-family="Arial" font-size="23" fill="${theme.sub}">Kazanıldı</text>
+  <circle cx="114" cy="1536" r="16" fill="#fff" stroke="#C89B3C" stroke-width="4"/><text x="154" y="1532" font-family="Georgia, serif" font-size="37" fill="${theme.text}">Düşünür</text><text x="154" y="1570" font-family="Arial" font-size="23" fill="${theme.sub}">Devam ediyor</text>
+  <circle cx="114" cy="1628" r="16" fill="#fff" stroke="${theme.border}" stroke-width="3"/><text x="154" y="1624" font-family="Georgia, serif" font-size="37" fill="${theme.text}">Sentezci</text><text x="154" y="1662" font-family="Arial" font-size="23" fill="${theme.sub}">Sıradaki</text>
+
+  <rect x="60" y="1734" rx="24" ry="24" width="960" height="150" fill="#F7F2E9" stroke="${theme.border}"/>
+  <circle cx="116" cy="1809" r="28" fill="#E9D6A7"/><text x="104" y="1818" font-family="Arial" font-size="25" fill="#823b18">⌁</text>
+  <text x="164" y="1800" font-family="Georgia, serif" font-size="40" fill="${theme.text}">Yol araçları</text>
+  <text x="164" y="1842" font-family="Arial, sans-serif" font-size="25" fill="${theme.sub}">İçgörü Rafını ve düşünme pratiğini aç  ›</text>
+
+  <text x="60" y="1966" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="1" fill="${theme.sub}">OKUMA RİTMİ</text>
+  <rect x="60" y="1992" rx="24" ry="24" width="960" height="272" fill="${theme.card}" stroke="${theme.border}"/>
+  <text x="96" y="2050" font-family="Georgia, serif" font-size="34" fill="${theme.primaryDeep}">5</text><text x="96" y="2080" font-family="Arial" font-size="19" fill="${theme.sub}">GÜN SERİ</text>
+  <text x="360" y="2050" font-family="Georgia, serif" font-size="34" fill="${theme.text}">12</text><text x="360" y="2080" font-family="Arial" font-size="19" fill="${theme.sub}">EN UZUN SERİ</text>
+  <text x="690" y="2050" font-family="Georgia, serif" font-size="34" fill="${theme.text}">17</text><text x="690" y="2080" font-family="Arial" font-size="19" fill="${theme.sub}">AKTİF GÜN</text>
+  <text x="96" y="2132" font-family="Arial" font-size="20" fill="${theme.sub}">8 hafta · 17 aktif gün</text>
+  <g>${Array.from({ length: 56 }, (_, index) => { const x = 96 + Math.floor(index / 7) * 58; const y = 2160 + (index % 7) * 13; const fills = ['#ECE6DA', '#F0D9A8', theme.primary, '#8B6A30']; return `<circle cx="${x}" cy="${y}" r="5" fill="${fills[index % 6 === 0 ? 3 : index % 3 === 0 ? 2 : index % 4 === 0 ? 1 : 0]}"/>`; }).join('')}</g>`;
+  return wrapScreen('Kıvılcım Yolu', body);
+}
+
+function makeToolkit(pathId = 'exploration') {
+  const isTransfer = pathId === 'transfer';
+  const palette = isTransfer
+    ? { start: '#5C3149', end: '#A45B42', glow: '#FFD28A', icon: '✦', title: 'Aktarım Yolu', caption: 'Hikâyeleri gerçek hayata taşı' }
+    : { start: '#202D62', end: '#59418C', glow: '#F5C96B', icon: '⌁', title: 'Keşif Yolu', caption: 'Merakının seni nereye götürdüğünü gör' };
+  const routeTitle = isTransfer ? 'Kişisel deste' : 'Bu haftanın rotası';
+  const routeSub = isTransfer ? 'Kullandığın sohbet başlangıçları' : 'Üç erişilebilir kategoriden sakin bir rota';
+  const packageCard = isTransfer ? `
+  <rect x="60" y="1550" rx="28" ry="28" width="960" height="230" fill="#F7F2E9" stroke="${theme.border}"/>
+  <text x="96" y="1624" font-family="Georgia, serif" font-size="42" fill="${theme.text}">Kıvılcım Paketi</text>
+  <text x="96" y="1672" font-family="Arial, sans-serif" font-size="27" fill="${theme.sub}">3/5 hikâye seçili · yalnızca sana ait</text>
+  <rect x="96" y="1714" rx="18" ry="18" width="334" height="46" fill="${theme.primaryDeep}"/>
+  <text x="154" y="1746" font-family="Arial, sans-serif" font-size="23" fill="#fff">Paketi düzenle</text>` : `
+  <rect x="60" y="1550" rx="28" ry="28" width="960" height="230" fill="#F7F2E9" stroke="${theme.border}"/>
+  <text x="96" y="1624" font-family="Georgia, serif" font-size="42" fill="${theme.text}">Bilgelik Atlası</text>
+  <text x="96" y="1672" font-family="Arial, sans-serif" font-size="27" fill="${theme.sub}">4 kategori · 12 tamamlanan hikâye</text>
+  <text x="96" y="1738" font-family="Arial, sans-serif" font-size="25" fill="${theme.primaryDeep}">Psikoloji  ·  Bilim  ·  Liderlik  ·  Tarih</text>`;
+  const body = `
+  <rect x="60" y="190" rx="32" ry="32" width="960" height="420" fill="url(#hero)"/>
+  <rect x="60" y="190" rx="32" ry="32" width="960" height="420" fill="${palette.start}" opacity="0.88"/>
+  <circle cx="865" cy="330" r="170" fill="${palette.glow}" opacity="0.14"/>
+  <circle cx="855" cy="420" r="74" fill="none" stroke="${palette.glow}" stroke-width="3" opacity="0.72"/>
+  <path d="M610,520 C700,392 812,580 962,360" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.44"/>
+  <circle cx="855" cy="420" r="40" fill="${palette.glow}" opacity="0.25"/>
+  <text x="100" y="294" font-family="Arial, sans-serif" font-size="30" fill="#fff" opacity="0.78">YOL ARAÇLARI</text>
+  <text x="100" y="374" font-family="Georgia, serif" font-size="62" fill="#fff">${escapeXml(palette.title)}</text>
+  <text x="100" y="430" font-family="Arial, sans-serif" font-size="29" fill="#fff" opacity="0.84">${escapeXml(palette.caption)}</text>
+  <text x="836" y="438" font-family="Georgia, serif" font-size="70" fill="${palette.glow}">${palette.icon}</text>
+
+  <text x="60" y="700" font-family="Georgia, serif" font-size="44" fill="${theme.text}">${escapeXml(routeTitle)}</text>
+  <text x="60" y="744" font-family="Arial, sans-serif" font-size="26" fill="${theme.sub}">${escapeXml(routeSub)}</text>
+  ${card(60, 780, 960, 150, isTransfer ? 'İkna Sanatı' : 'Hızlı Düşün, Yavaş Karar Ver', isTransfer ? 'Sohbette kullanıldı  ·  Sosyal Beceriler' : '○  Psikoloji')}
+  ${card(60, 950, 960, 150, isTransfer ? 'Derin İş' : 'İş Modeli Tasarımı', isTransfer ? 'Sohbette kullanıldı  ·  Verimlilik' : '✓  Kariyer ve Başarı')}
+  ${card(60, 1120, 960, 150, isTransfer ? 'Büyüme Zihniyeti' : 'Bilinçli Dikkat', isTransfer ? 'Sohbette kullanıldı  ·  Liderlik' : '○  Bilim')}
+  ${packageCard}`;
+  return wrapScreen(`Kıvılcım Yolu · ${palette.title}`, body);
 }
 
 function makeProfile() {
@@ -317,6 +354,32 @@ const outputs = {
 outputs.onboarding = makeOnboarding();
 outputs.library = makeLibrary();
 outputs.progress = makeProgress();
+outputs['progress-new-user'] = makeProgress()
+  .replace('DERİNLİK YOLU', 'ORTAK BAŞLANGIÇ')
+  .replace('Düşünür', 'Yolunu seç')
+  .replace('Sentezci', 'İlk Kıvılcım')
+  .replace('Derin etkileşim 3/5  ·  Aktif gün 6/8', 'İlk hikâyeni tamamlayarak başla');
+outputs['progress-common-path'] = makeProgress()
+  .replace('DERİNLİK YOLU', 'ORTAK YOL')
+  .replace('Düşünür', 'Yolcu')
+  .replace('Sentezci', 'Yolunu seç');
+outputs['progress-capstone'] = makeProgress()
+  .replace('DERİNLİK YOLU', 'AKTARIM YOLU')
+  .replace('Düşünür', 'Kıvılcım Taşıyıcısı')
+  .replace('Sentezci', 'Bu yol tamamlandı')
+  .replace('Sıradaki adımı at', 'Başka bir yola odaklan');
+outputs['progress-legacy'] = makeProgress()
+  .replace('Kıvılcım Yolu', 'Kıvılcım Yolu · Miras')
+  .replace('Küçük ve anlamlı adımlar kalıcı bir bilgelik biriktirir.', 'Geçmiş okumaların bu yolculuğa güvenle dahil edildi.');
+outputs['progress-dark-de'] = makeProgress()
+  .replace(/#fcf9f4/g, '#15171A')
+  .replace(/#1A1A1A/g, '#F7F4EE')
+  .replace('Kıvılcım Yolu', 'Funkenweg')
+  .replace('Okumaktan fikirleri hayata taşımaya sakin bir yol', 'Ein ruhiger Weg vom Lesen zum Anwenden von Ideen')
+  .replace('Sıradaki adımın', 'Dein nächster Schritt')
+  .replace('YOLCULUĞUN', 'DEINE REISE');
+outputs['toolkit-exploration'] = makeToolkit('exploration');
+outputs['toolkit-transfer'] = makeToolkit('transfer');
 outputs.profile = makeProfile();
 // outputs['story-detail'] = makeStoryDetail();
 

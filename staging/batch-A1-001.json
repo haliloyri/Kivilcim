@@ -1,0 +1,435 @@
+{
+  "batch_id": "A1-001",
+  "kind": "variants_only",
+  "version": "A1",
+  "created": "2026-07-25",
+  "notes": "Agent 1 · ilk parti. Varyanti hic olmayan en ustteki 10 hikaye (story_id 1059-1068). Ana metne dokunulmadi; variants_only modunda stories.version degismez, 'A1' etiketi bu dosyada provenance olarak durur. Varyantlar her dilde bagimsiz yazildi; mevcut en/es/de ana metinleri makine cevirisi oldugu icin kaynak olarak alinmadi, olgu cekirdegi kullanildi. 1064 ve 1065'te dogrulanamayan ayrintilar (geri bildirimi kimin verdigi, muhendisin yillar sonraki alintisi) varyantlara tasinmadi.",
+  "items": [
+    {
+      "book": {
+        "list_no": 1
+      },
+      "story": {
+        "story_id": 1059,
+        "queue_title": "Britanya bisiklet takımının yüzde iki felsefesi",
+        "sources": [
+          "https://hbr.org/2015/10/how-1-performance-improvements-led-to-olympic-gold",
+          "https://www.bbc.com/sport/olympics/19144173"
+        ],
+        "verification_status": "verified"
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Takımı şampiyon yapan şey büyük bir buluş değil, kimsenin saymaya değer bulmadığı yüzlerce küçük ayardı.",
+          "thirty_sec": "Britanya bisiklet takımı yetmiş yılı aşkın sürede tek bir olimpiyat altını kazanmıştı. Sonra gelen yeni direktör tuhaf bir yöntem denedi: büyük bir buluş aramak yerine her ayrıntıyı biraz iyileştirdi. Koltuk ergonomisi, yastık sertliği, ısınma ritüeli, hatta ellerin hangi jelle yıkandığı. Tek başına hiçbiri fark yaratmıyordu. Beş yıl sonra takım Pekin'de sekiz altın madalya aldı. Kazandıran şey, kimsenin önemli bulmadığı ayrıntıların toplamıydı.",
+          "question": "Senin işinde kimsenin ölçmediği ama toplamda fark yaratabilecek küçük bir ayrıntı ne olurdu?",
+          "key_contrast": "Tek büyük hamle değil, yüz küçük ayar"
+        },
+        "en": {
+          "punchline": "Nothing they changed looked decisive on its own, which is exactly why it worked.",
+          "thirty_sec": "Here is a strange way to win. British cycling had almost no history of victory, so the incoming director stopped hunting for a breakthrough. Instead he improved everything slightly: seat ergonomics, pillow firmness, warm-up routines, even the gel riders washed their hands with. Any one of those sounds trivial, and that was the point. Five years later the team took eight golds in the velodrome at Beijing.",
+          "question": "Where in your own work would a tiny improvement feel too small to bother measuring?",
+          "key_contrast": "Breakthrough versus accumulation"
+        },
+        "es": {
+          "punchline": "Ocho medallas de oro salieron de decisiones que nadie consideraba dignas de anotar.",
+          "thirty_sec": "Ocho oros en un velódromo. Eso consiguió un equipo británico que llevaba setenta años sin ganar casi nada. Su nuevo director no buscó una idea brillante: mejoró un poco cada detalle, desde el sillín hasta la firmeza de la almohada, los rituales de calentamiento y hasta el gel con que los ciclistas se lavaban las manos. Ninguna decisión parecía importante por separado. La suma, cinco años después, resultó imbatible.",
+          "question": "¿Qué detalle diminuto de tu trabajo nadie mide aunque podría cambiar el resultado final?",
+          "key_contrast": "Idea brillante frente a suma paciente"
+        },
+        "de": {
+          "punchline": "Siebzig Jahre ohne Erfolg, dann entschied die Summe von Kleinigkeiten das Rennen.",
+          "thirty_sec": "Siebzig Jahre lang gewann der britische Radsport so gut wie nichts. Dann kam ein Direktor, der bewusst nicht nach dem großen Durchbruch suchte. Er verbesserte alles ein wenig: Sitzergonomie, Kissenhärte, Aufwärmroutinen, sogar das Gel, mit dem die Fahrer sich die Hände waschen. Einzeln wirkte keine Maßnahme entscheidend, und genau darin lag der Punkt. Fünf Jahre später holte das Team acht Goldmedaillen im Velodrom von Peking.",
+          "question": "Welches winzige Detail in deiner Arbeit misst niemand, obwohl es am Ende entscheiden könnte?",
+          "key_contrast": "Durchbruch gegen Anhäufung"
+        }
+      }
+    },
+    {
+      "book": {
+        "list_no": 1
+      },
+      "story": {
+        "story_id": 1060,
+        "queue_title": "Kimlik temelli alışkanlık",
+        "sources": [
+          "https://jamesclear.com/identity-based-habits"
+        ],
+        "verification_status": "verified"
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Aynı sigarayı reddeden iki cümleden biri savaşıyor, diğeri artık savaşmak zorunda değil.",
+          "thirty_sec": "İki kişiye sigara ikram ediliyor. Biri \"hayır, bırakmaya çalışıyorum\" diyor, diğeri \"hayır, sigara içmiyorum\". Kulağa aynı geliyor ama aralarında dağ kadar fark var. Birincisi kendini hâlâ içen biri olarak görüyor ve her seferinde direnmek zorunda. İkincisi ise alışkanlığı kimliğinin parçası yapmış. James Clear bunu şöyle anlatıyor: her davranış, kim olduğun sorusuna attığın bir oydur. Oylar birikince direnç ortadan kalkar.",
+          "question": "Kendini nasıl tanımlıyorsun: bir şeyi denemeye çalışan biri mi, yoksa o kişi mi?",
+          "key_contrast": "Direnmek değil, olmak"
+        },
+        "en": {
+          "punchline": "One refusal is a struggle, the other is just a fact about who you are.",
+          "thirty_sec": "Two people turn down a cigarette. One says he is trying to quit, the other says he does not smoke. Same refusal, completely different mechanics. The first still identifies as a smoker, so he has to win the fight again tomorrow. The second has folded the behaviour into his identity, and there is nothing left to resist. James Clear's framing: every action is a vote for the person you believe you are.",
+          "question": "Do you describe yourself as someone trying to change, or as the person already changed?",
+          "key_contrast": "Fighting a habit versus being someone"
+        },
+        "es": {
+          "punchline": "La frase que usas para rechazar algo revela si todavía tienes que luchar contra ello.",
+          "thirty_sec": "Dos personas rechazan un cigarrillo. Una dice que está intentando dejarlo; la otra dice que no fuma. La diferencia parece de palabras y es de fondo. El primero sigue viéndose como fumador, así que mañana tendrá que ganar la misma batalla. El segundo ya incorporó el hábito a su identidad y no queda nada que resistir. Cada acción, según James Clear, es un voto sobre quién crees que eres.",
+          "question": "¿Te describes como alguien que intenta cambiar o como la persona que ya cambió?",
+          "key_contrast": "Resistir frente a ser"
+        },
+        "de": {
+          "punchline": "Wer sagt \"ich rauche nicht\", muss den Kampf morgen nicht erneut gewinnen.",
+          "thirty_sec": "Zwei Menschen lehnen eine Zigarette ab. Der eine sagt, er versuche aufzuhören, der andere sagt, er rauche nicht. Dieselbe Ablehnung, völlig andere Mechanik. Der Erste sieht sich weiter als Raucher und muss morgen erneut widerstehen. Der Zweite hat das Verhalten in seine Identität aufgenommen, und es bleibt nichts zu bekämpfen. Jede Handlung ist laut James Clear eine Stimme für die Person, für die du dich hältst.",
+          "question": "Beschreibst du dich als jemanden, der sich ändern will, oder als den geänderten Menschen?",
+          "key_contrast": "Widerstehen gegen Sein"
+        }
+      }
+    },
+    {
+      "book": {
+        "list_no": 1
+      },
+      "story": {
+        "story_id": 1061,
+        "queue_title": "Fotoğraf öğrencilerinin kalite vs miktar deneyi",
+        "sources": [
+          "https://jamesclear.com/repetitions"
+        ],
+        "verification_status": "verified"
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Tek mükemmel kareyi hedefleyen grup kaybetti; her gün çeken grup kazandı.",
+          "thirty_sec": "Bir fotoğraf hocası sınıfı ikiye böler. Birinci gruba tek bir fotoğraf teslim edeceksiniz ama kusursuz olacak der. İkinci gruba mümkün olduğunca çok çekin, notu adede göre vereceğim der. Dönem sonunda en çarpıcı kareler neredeyse tamamen ikinci gruptan çıkar. Sebep basit: miktar grubu her gün çekti, her gün hata yaptı ve her hatadan bir şey öğrendi. Kalite grubu ise mükemmel planı yalnızca zihninde kurdu.",
+          "question": "Hazır olmadığını düşündüğün için başlamadığın şeyi bugün kötü haliyle yapsan ne olurdu?",
+          "key_contrast": "Tek kusursuz kare, yüz sıradan kare"
+        },
+        "en": {
+          "punchline": "The students graded on volume produced the better photographs, and it was not close.",
+          "thirty_sec": "A photography teacher split his class in two. One group had to submit a single flawless print at the end of term. The other was graded purely on how many photographs they took. The strongest images came almost entirely from the second group. The reason is unglamorous: they shot daily, failed daily, and adjusted. The perfectionists spent the term composing an ideal picture they never actually took.",
+          "question": "What would you attempt today if a bad first version counted as progress?",
+          "key_contrast": "One perfect frame, a hundred rough ones"
+        },
+        "es": {
+          "punchline": "Quien buscaba la foto perfecta terminó sin foto; quien disparaba a diario aprendió a mirar.",
+          "thirty_sec": "Casi todas las mejores fotografías salieron del grupo equivocado. Un profesor había dividido la clase: unos entregarían una sola imagen impecable al final del curso, otros serían calificados por la cantidad de fotos tomadas. Los segundos ganaron con claridad. La explicación no es romántica: disparaban cada día, se equivocaban cada día y corregían. Los perfeccionistas dedicaron el semestre a imaginar una foto que nunca llegaron a hacer.",
+          "question": "¿Qué empezarías hoy si una primera versión mediocre ya contara como avance?",
+          "key_contrast": "Una toma perfecta, cien tomas torpes"
+        },
+        "de": {
+          "punchline": "Die nach Menge bewertete Gruppe machte die besseren Bilder, und zwar deutlich.",
+          "thirty_sec": "Ein Fotolehrer teilte seine Klasse. Die eine Gruppe sollte am Semesterende ein einziges perfektes Bild abgeben, die andere wurde allein nach der Anzahl der Aufnahmen bewertet. Die stärksten Fotos kamen fast ausschließlich aus der zweiten Gruppe. Der Grund ist unspektakulär: Sie fotografierten täglich, scheiterten täglich und korrigierten. Die Perfektionisten komponierten ein Semester lang ein ideales Bild, das sie nie aufnahmen.",
+          "question": "Was würdest du heute anfangen, wenn eine schlechte erste Version schon zählte?",
+          "key_contrast": "Ein perfektes Bild, hundert rohe"
+        }
+      }
+    },
+    {
+      "book": {
+        "list_no": 1
+      },
+      "story": {
+        "story_id": 1062,
+        "queue_title": "Çevre tasarımı ile alışkanlık",
+        "sources": [
+          "https://pubmed.ncbi.nlm.nih.gov/22420807/",
+          "https://jamesclear.com/environment-design"
+        ],
+        "verification_status": "verified"
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Kimseye tek kelime söylemeden davranışı değiştirdi; sadece rafların yerini değiştirdi.",
+          "thirty_sec": "Bir hastane diyetisyeni, kafeteryada neden bu kadar çok gazlı içecek tüketildiğini merak etti. Menüyü değiştirmedi, fiyat artırmadı, uyarı afişi asmadı. Yalnızca suyu kolay ulaşılır hale getirdi: makinelerin yanına, kasaların önüne, göz hizasına su koydu. Üç ay sonra gazlı içecek satışı düştü, su satışı belirgin biçimde arttı. Kimseye sağlıklı beslenmesi gerektiği söylenmemişti. Ortam değişti, tercih onunla birlikte değişti.",
+          "question": "Evinde ya da masanda, kötü bir alışkanlığı kolaylaştıran hangi nesne duruyor?",
+          "key_contrast": "İrade değil, yerleşim"
+        },
+        "en": {
+          "punchline": "She never told a single person to drink less soda, and they drank less soda.",
+          "thirty_sec": "A hospital dietitian wanted to know why the cafeteria sold so much soda. She left the menu alone, kept prices the same, and put up no signs. All she did was make water easy to reach: beside the machines, in front of the registers, at eye level. Three months later soda sales had fallen and water sales had climbed sharply. Nobody had been persuaded of anything. The room had simply been rearranged.",
+          "question": "Which object on your desk quietly makes your worst habit the easiest option?",
+          "key_contrast": "Willpower versus layout"
+        },
+        "es": {
+          "punchline": "Nadie recibió un consejo de salud; solo cambiaron de sitio las botellas de agua.",
+          "thirty_sec": "Sin una sola advertencia, el consumo de refrescos cayó. Una dietista de hospital se preguntaba por qué se vendían tantos en la cafetería. No tocó el menú, no subió precios, no colgó carteles. Únicamente puso el agua al alcance: junto a las máquinas, delante de las cajas, a la altura de los ojos. Tres meses después el refresco bajaba y el agua subía con claridad. Cambió la sala, no las personas.",
+          "question": "¿Qué objeto de tu escritorio vuelve más fácil justo el hábito que quieres dejar?",
+          "key_contrast": "Voluntad frente a colocación"
+        },
+        "de": {
+          "punchline": "Niemand wurde überzeugt, weniger Limonade zu trinken, und trotzdem sank der Verkauf.",
+          "thirty_sec": "Eine Krankenhaus-Ernährungsberaterin wollte wissen, warum in der Cafeteria so viel Limonade verkauft wurde. Sie ließ die Speisekarte unverändert, erhöhte keine Preise und hängte keine Plakate auf. Sie stellte lediglich Wasser in Reichweite: neben die Automaten, vor die Kassen, auf Augenhöhe. Drei Monate später sank der Limonadenverkauf, der Wasserverkauf stieg deutlich. Überzeugt wurde niemand. Umgestellt wurde nur der Raum.",
+          "question": "Welcher Gegenstand auf deinem Schreibtisch macht ausgerechnet die schlechte Gewohnheit am leichtesten?",
+          "key_contrast": "Willenskraft gegen Anordnung"
+        }
+      }
+    },
+    {
+      "book": {
+        "list_no": 1
+      },
+      "story": {
+        "story_id": 1063,
+        "queue_title": "İki dakika kuralı",
+        "sources": [
+          "https://jamesclear.com/how-to-stop-procrastinating"
+        ],
+        "verification_status": "verified"
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Hedef koşmak değil, ayakkabıyı giymek olduğunda çoğu insan zaten koşuya çıkıyor.",
+          "thirty_sec": "James Clear bir soruyla başlıyor: bir alışkanlığa başlamak neden bu kadar zor? Cevabı, beynin başlangıç maliyetini olduğundan büyük görmesi. Bu yüzden her yeni alışkanlığı iki dakikadan kısa bir eyleme indiriyor. Otuz dakika koş yerine koşu ayakkabılarını giy. Her gece meditasyon yap yerine mindere otur. Ayakkabıyı giyen insan genellikle dışarı çıkıyor. Kapı küçük, ama içinden geçtikten sonra yol kendiliğinden uzuyor.",
+          "question": "Uzun süredir ertelediğin işin iki dakikalık ilk hali tam olarak neye benzerdi?",
+          "key_contrast": "Bitirmek değil, kapıdan geçmek"
+        },
+        "en": {
+          "punchline": "Aim to put on the shoes, not to run, and you will usually end up running.",
+          "thirty_sec": "Why is starting so much harder than continuing? James Clear's answer is that the brain badly overestimates the cost of the first move. So he shrinks every new habit to something under two minutes. Not run for half an hour, but put on your running shoes. Not meditate nightly, but sit down on the cushion. People who lace up tend to go outside anyway. The door is small; the road extends itself.",
+          "question": "What is the two-minute version of the thing you have been avoiding for months?",
+          "key_contrast": "Finishing versus beginning"
+        },
+        "es": {
+          "punchline": "Propón ponerte las zapatillas en lugar de salir a correr y acabarás corriendo.",
+          "thirty_sec": "Empezar cuesta más que seguir, y James Clear explica por qué: el cerebro exagera enormemente el precio del primer paso. Por eso reduce cada hábito nuevo a una acción de menos de dos minutos. No corras media hora; ponte las zapatillas. No medites cada noche; siéntate en el cojín. Quien se ata los cordones suele terminar saliendo. La puerta es pequeña y el camino se alarga solo.",
+          "question": "¿Cómo sería la versión de dos minutos de eso que llevas meses evitando?",
+          "key_contrast": "Terminar frente a empezar"
+        },
+        "de": {
+          "punchline": "Nimm dir vor, die Schuhe anzuziehen, nicht zu laufen, dann läufst du meistens.",
+          "thirty_sec": "Anfangen ist schwerer als Weitermachen, und James Clear nennt den Grund: Das Gehirn überschätzt den Preis des ersten Schritts massiv. Deshalb schrumpft er jede neue Gewohnheit auf eine Handlung unter zwei Minuten. Nicht eine halbe Stunde laufen, sondern die Laufschuhe anziehen. Nicht jeden Abend meditieren, sondern sich aufs Kissen setzen. Wer die Schuhe schnürt, geht meist ohnehin hinaus. Die Tür ist klein, der Weg verlängert sich allein.",
+          "question": "Wie sieht die Zwei-Minuten-Version der Sache aus, die du seit Monaten aufschiebst?",
+          "key_contrast": "Beenden gegen Beginnen"
+        }
+      }
+    },
+    {
+      "book": {
+        "list_no": 2
+      },
+      "story": {
+        "story_id": 1064,
+        "queue_title": "Google çalışanına verilen dürüst geri bildirim",
+        "sources": [
+          "https://www.radicalcandor.com/our-approach/",
+          "https://review.firstround.com/radical-candor-the-surprising-secret-to-being-a-good-boss/"
+        ],
+        "verification_status": "verified",
+        "fact_pack": [
+          "DIKKAT: DB'deki ana metin geri bildirimi 'Google kurucularindan biri'nin verdigini soyluyor. Kim Scott'in kendi anlatiminda bu kisi patronu Sheryl Sandberg'dir. Celiski cozulmedigi icin varyantlarda kisi adi kullanilmadi."
+        ]
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Kötü bir sunumu övmek çalışanı korumak değil, gelişme şansını sessizce elinden almaktır.",
+          "thirty_sec": "Kim Scott Google'da yöneticiydi. Ekibinden biri vasat bir sunum yaptı, Scott yine de tebrik etti. Kırmak istemiyordu. Toplantıdan sonra kıdemli biri onu kenara çekti ve tek bir soru sordu: neden ona gerçeği söylemedin? Scott savunmaya geçti. Karşısındaki ısrar etti: iyi niyet yetmez, susmak korumak değildir. O an Scott'ın liderlik anlayışını değiştirdi ve radikal dürüstlük fikrinin çekirdeği oldu.",
+          "question": "Kırmamak için birine söylemediğin bir şey var mı; susmak gerçekten ona yardım ediyor mu?",
+          "key_contrast": "Nezaket kılığında engelleme"
+        },
+        "en": {
+          "punchline": "Praising weak work protects your own comfort, not the person receiving the praise.",
+          "thirty_sec": "Kim Scott was managing a team at Google when someone delivered a mediocre presentation. She congratulated him anyway, because saying otherwise felt unkind. Afterwards a senior colleague pulled her aside with one question: why didn't you tell him the truth? Scott got defensive. The reply stayed with her — good intentions are not enough, and silence is not protection. That conversation became the seed of radical candor.",
+          "question": "What have you left unsaid to spare someone, and who is that silence really serving?",
+          "key_contrast": "Kindness that quietly blocks growth"
+        },
+        "es": {
+          "punchline": "Elogiar un trabajo flojo protege tu incomodidad, no a la persona que lo hizo.",
+          "thirty_sec": "Una sola pregunta cambió su forma de dirigir. Kim Scott felicitó a alguien de su equipo por una presentación mediocre, porque decir la verdad le parecía cruel. Al salir, un colega veterano la apartó y preguntó por qué no le había dicho la verdad. Scott se puso a la defensiva. La respuesta se le quedó grabada: la buena intención no basta y callar no es proteger. De ahí nació la sinceridad radical.",
+          "question": "¿Qué le callas a alguien para no herirlo, y a quién protege realmente ese silencio?",
+          "key_contrast": "Amabilidad que frena el crecimiento"
+        },
+        "de": {
+          "punchline": "Lob für schwache Arbeit schützt die eigene Bequemlichkeit, nicht die gelobte Person.",
+          "thirty_sec": "Kim Scott führte ein Team bei Google, als jemand eine mittelmäßige Präsentation hielt. Sie gratulierte trotzdem, weil ihr Ehrlichkeit unfreundlich erschien. Danach nahm eine erfahrene Kollegin sie beiseite und stellte eine Frage: Warum hast du ihm nicht die Wahrheit gesagt? Scott ging in die Verteidigung. Der Satz blieb: Gute Absicht genügt nicht, und Schweigen ist kein Schutz. Daraus entstand der Kern von radikaler Ehrlichkeit.",
+          "question": "Was sagst du jemandem nicht, um ihn zu schonen, und wem dient dieses Schweigen?",
+          "key_contrast": "Freundlichkeit, die Entwicklung blockiert"
+        }
+      }
+    },
+    {
+      "book": {
+        "list_no": 2
+      },
+      "story": {
+        "story_id": 1065,
+        "queue_title": "Steve Jobs'ın yıkıcı eleştirisi",
+        "sources": [
+          "https://www.radicalcandor.com/blog/obnoxious-aggression/",
+          "https://www.radicalcandor.com/our-approach/"
+        ],
+        "verification_status": "unverified",
+        "fact_pack": [
+          "DIKKAT: DB'deki ana metin adsiz bir muhendisin yillar sonra soyledigi bir alintiya dayaniyor; bu alinti bagimsiz kaynakla dogrulanamadi. Varyantlar alintiyi tasimiyor, yalnizca Kim Scott'in kadran cercevesine dayaniyor. Ana metin yeniden uretilirken bu anekdot ya kaynaklanmali ya cikarilmali."
+        ]
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Sert eleştiri de umursamamak da mümkün; ikisini birbirinden ayıran şey söylenenin ardındaki niyettir.",
+          "thirty_sec": "Kim Scott'ın çerçevesinde sert bir eleştiri birbirinden çok farklı iki şey olabilir. Birincisi yalnızca saldırıdır: eleştiren kişi karşısındakinin gelişmesiyle hiç ilgilenmiyordur. İkincisi ise umursamanın en açık halidir: hatayı adlandırır, nedenini adım adım gösterir ve kişinin daha iyisini yapabileceğine gerçekten inanır. Aynı cümle bu iki kutuptan da çıkabilir. Ayırt eden şey tonun sertliği değil, hükümden sonra bir açıklamanın gelip gelmediğidir.",
+          "question": "Sana en sert geri bildirimi veren kişi seni gerçekten umursuyor muydu; nasıl anladın?",
+          "key_contrast": "Saldırı değil, umursayan netlik"
+        },
+        "en": {
+          "punchline": "Harsh feedback and honest feedback can sound identical; only one comes with an explanation.",
+          "thirty_sec": "In Kim Scott's framework, a blunt criticism can be one of two very different things. It might be pure aggression, where the critic has no stake in your improvement. Or it might be care at its most direct: naming the flaw, then walking through exactly why it fails and what better would look like. The words can match. What separates them is whether anything follows the verdict.",
+          "question": "Think of the harshest feedback you received: did the person explain, or just judge?",
+          "key_contrast": "Aggression versus care made direct"
+        },
+        "es": {
+          "punchline": "La crítica dura y la crítica útil suenan igual; solo una viene acompañada de explicación.",
+          "thirty_sec": "Una misma frase puede salir de dos lugares opuestos. En el marco de Kim Scott, una crítica tajante es agresión cuando a quien la lanza no le importa tu mejora. Y es cuidado en su forma más directa cuando nombra el fallo y luego recorre por qué no funciona y cómo sería mejor. Las palabras coinciden. Lo que las distingue es si después del veredicto llega algo más.",
+          "question": "La crítica más dura que recibiste: ¿venía con explicación o solo con juicio?",
+          "key_contrast": "Agresión frente a franqueza que cuida"
+        },
+        "de": {
+          "punchline": "Harte und hilfreiche Kritik klingen gleich; nur eine bringt eine Erklärung mit.",
+          "thirty_sec": "In Kim Scotts Modell kann eine schroffe Kritik zwei völlig verschiedene Dinge sein. Sie ist reine Aggression, wenn den Kritiker deine Entwicklung nicht interessiert. Und sie ist Fürsorge in ihrer direktesten Form, wenn sie den Fehler benennt und danach zeigt, warum er nicht funktioniert und wie es besser aussähe. Die Worte können identisch sein. Entscheidend ist, ob nach dem Urteil noch etwas folgt.",
+          "question": "Die härteste Kritik, die du bekamst: kam eine Erklärung oder nur ein Urteil?",
+          "key_contrast": "Aggression gegen fürsorgliche Klarheit"
+        }
+      }
+    },
+    {
+      "book": {
+        "list_no": 2
+      },
+      "story": {
+        "story_id": 1066,
+        "queue_title": "Kötü haber veremeyen yöneticinin bedeli",
+        "sources": [
+          "https://www.radicalcandor.com/blog/ruinous-empathy/",
+          "https://www.radicalcandor.com/our-approach/"
+        ],
+        "verification_status": "verified",
+        "fact_pack": [
+          "Ana metindeki proje yoneticisi belirli bir kisi degil, temsili bir ornek. Varyantlar da isim ve sirket iddiasi tasimiyor."
+        ]
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Erken söylenen kötü haber bir ders, geciktirilmiş kötü haber genellikle bir faturadır.",
+          "thirty_sec": "Bir proje yöneticisi altı ayın sonunda işlerin yürümediğini görüyor. Veriler tartışmasız açık, kullanıcılar ürünü sevmiyor, teknik borç her hafta büyüyor. Ama bunu üstlerine söylemiyor. Belki kendiliğinden düzelir diye düşünüp toplantılarda ilerliyoruz demeye devam ediyor. Proje aylar sonra bütünüyle çöküyor. Kim Scott bunu yıkıcı empati diye adlandırıyor: kötü haber vermekten kaçınmak nezaket sanılıyor, oysa fatura sessizce büyümeye devam ediyor.",
+          "question": "Şu an düzelmesini umarak paylaşmadığın bir durum var mı; bir hafta daha beklemenin bedeli ne?",
+          "key_contrast": "Küçük ders, büyük fatura"
+        },
+        "en": {
+          "punchline": "Bad news delivered early is a lesson; the same news delayed becomes an invoice.",
+          "thirty_sec": "Six months in, a project manager can see it is not working. The data is unambiguous, users dislike the product, technical debt keeps growing. He says nothing upward. Maybe it turns around, he thinks, and reports progress every week. Then the project collapses outright. Kim Scott calls this ruinous empathy: avoiding bad news feels considerate, while the bill quietly compounds.",
+          "question": "What are you not escalating right now, hoping it resolves before anyone has to know?",
+          "key_contrast": "Cheap lesson, expensive invoice"
+        },
+        "es": {
+          "punchline": "La mala noticia temprana es una lección; la misma noticia tardía es una factura.",
+          "thirty_sec": "El proyecto se hundió del todo, y nadie lo vio venir arriba. A los seis meses el responsable ya sabía que no funcionaba: los datos eran claros, el producto no gustaba, la deuda técnica crecía. No lo dijo. Pensó que quizá se arreglaría y cada semana informó de avances. Kim Scott llama a esto empatía ruinosa: evitar la mala noticia parece delicadeza mientras la cuenta sigue creciendo.",
+          "question": "¿Qué problema no estás comunicando ahora, esperando que se resuelva antes de contarlo?",
+          "key_contrast": "Lección barata, factura carísima"
+        },
+        "de": {
+          "punchline": "Früh gesagte schlechte Nachrichten sind eine Lektion, spät gesagte eine Rechnung.",
+          "thirty_sec": "Nach sechs Monaten sieht ein Projektleiter, dass es nicht funktioniert. Die Daten sind eindeutig, das Produkt gefällt den Nutzern nicht, die technischen Schulden wachsen. Nach oben sagt er nichts. Vielleicht dreht es sich noch, denkt er, und meldet jede Woche Fortschritt. Dann bricht das Projekt vollständig zusammen. Kim Scott nennt das ruinöse Empathie: Das Vermeiden wirkt rücksichtsvoll, während die Rechnung still wächst.",
+          "question": "Welches Problem meldest du gerade nicht, in der Hoffnung, es löst sich vorher selbst?",
+          "key_contrast": "Billige Lektion, teure Rechnung"
+        }
+      }
+    },
+    {
+      "book": {
+        "list_no": 3
+      },
+      "story": {
+        "story_id": 1067,
+        "queue_title": "Ertelemenin gerçek kökü: korku",
+        "sources": [
+          "https://www.apa.org/topics/behavioral-health/procrastination",
+          "https://neilfiore.com/the-now-habit/"
+        ],
+        "verification_status": "verified",
+        "fact_pack": [
+          "Erteleme-korku baglantisi Fiore'nin klinik cercevesidir; genel bir psikoloji yasasi olarak sunulmadi.",
+          "Icerik kisisel tavsiye vermemeli; varyantlar tani veya tedavi onerisi tasimiyor."
+        ]
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Denemedim demek, denedim ve yetmedi demekten çok daha az acıtır.",
+          "thirty_sec": "Neil Fiore terapide yıllarca tembel denen danışanlarla çalıştı ve zamanla farklı bir örüntü gördü. Doktora tezini aylardır yazamayan zeki bir danışanına sordu: tezi bitirdiğinde ne olacak? Danışan bir süre düşündü ve yeterince iyi olmayabileceğini, herkesin onu sandıkları kadar zeki bulmayabileceğini söyledi. Fiore'ye göre erteleme burada tembellik değil, koruma. Hiç denememek, en iyisini yapıp yetmemekten daha az acıtıyor.",
+          "question": "Uzun süredir ertelediğin şeyde eksik olan gerçekten zaman mı, yoksa başka bir şey mi?",
+          "key_contrast": "Tembellik değil, korunma"
+        },
+        "en": {
+          "punchline": "I never really tried hurts far less than I gave everything and fell short.",
+          "thirty_sec": "Neil Fiore spent years with clients everyone called lazy, and eventually saw something else. One capable client could not write his doctoral thesis. Fiore asked what would happen once he finished it. After a pause the client said it might not be good enough, and people might discover he was not as clever as they assumed. In Fiore's reading, the delay was protection rather than laziness.",
+          "question": "With the thing you keep postponing, is time genuinely the missing ingredient?",
+          "key_contrast": "Not laziness, self-protection"
+        },
+        "es": {
+          "punchline": "No lo intenté de verdad duele mucho menos que lo di todo y no bastó.",
+          "thirty_sec": "Neil Fiore pasó años atendiendo a pacientes a quienes todos llamaban perezosos, hasta que vio otra cosa. Un cliente brillante no lograba escribir su tesis doctoral. Fiore le preguntó qué ocurriría cuando la terminara. Tras una pausa, el hombre dijo que quizá no fuera lo bastante buena y que todos descubrirían que no era tan inteligente. Para Fiore, ese retraso era protección, no pereza.",
+          "question": "En eso que sigues aplazando, ¿de verdad lo que falta es tiempo?",
+          "key_contrast": "No pereza, protección"
+        },
+        "de": {
+          "punchline": "Ich habe es nie ernsthaft versucht schmerzt weit weniger als gescheitert zu sein.",
+          "thirty_sec": "Neil Fiore arbeitete jahrelang mit Klienten, die alle faul nannten, und erkannte mit der Zeit etwas anderes. Ein fähiger Klient brachte seine Doktorarbeit nicht zu Papier. Fiore fragte, was passieren würde, wenn sie fertig wäre. Nach einer Pause sagte der Mann, sie sei vielleicht nicht gut genug und alle würden merken, dass er nicht so klug ist. Für Fiore war das Aufschieben Schutz, nicht Faulheit.",
+          "question": "Fehlt bei der Sache, die du aufschiebst, wirklich nur die Zeit?",
+          "key_contrast": "Keine Faulheit, Selbstschutz"
+        }
+      }
+    },
+    {
+      "book": {
+        "list_no": 3
+      },
+      "story": {
+        "story_id": 1068,
+        "queue_title": "İtalyan ressam ve gevşeme paradoksu",
+        "sources": [
+          "https://neilfiore.com/the-now-habit/",
+          "https://www.apa.org/monitor/2011/07-08/mind-wandering"
+        ],
+        "verification_status": "verified",
+        "fact_pack": [
+          "Ressam anekdotu Fiore'nin kitabindaki bir vaka anlatimidir; ressamin kimligi kitapta verilmiyor, varyantlarda da isim iddia edilmiyor."
+        ]
+      },
+      "lang": {
+        "tr": {
+          "punchline": "Stüdyoda on iki saat hiçbir fikir gelmedi; bir haftalık boşlukta not tutmaya yetişemedi.",
+          "thirty_sec": "Fiore'nin anlattığı ressam günde on iki saat çalışıyor, stüdyosundan çıkmıyor ama işlerinden memnun değil ve giderek tükeniyor. Fiore tuhaf bir şey öneriyor: bu hafta hiç çalışma, sadece gez ve dinlen. Ressam itiraz ediyor, sonra deniyor. Bir hafta sonra şaşkın dönüyor; gezerken aklına o kadar çok fikir gelmiş ki not almaya yetişememiş. Fiore buna yapılandırılmış oyun zamanı diyor.",
+          "question": "En iyi fikirlerin masa başında mı geliyor, yoksa masadan kalktığın anlarda mı?",
+          "key_contrast": "Dolu saat, boş zihin"
+        },
+        "en": {
+          "punchline": "Twelve hours in the studio produced nothing; one idle week produced more than he could write down.",
+          "thirty_sec": "Fiore describes a painter working twelve-hour days without leaving his studio, increasingly drained and unhappy with the results. Fiore's prescription was strange: do no work this week, just walk around and rest. The painter argued, then complied. He came back startled. Ideas had arrived while wandering faster than he could note them, and none had arrived at the easel. Fiore calls the practice structured playtime.",
+          "question": "Do your best ideas arrive at your desk, or in the moments you step away?",
+          "key_contrast": "Full hours, empty mind"
+        },
+        "es": {
+          "punchline": "Doce horas ante el lienzo no dieron nada; una semana sin trabajar desbordó su cuaderno.",
+          "thirty_sec": "Volvió desconcertado de una semana sin pintar. Fiore describe a un pintor que trabajaba doce horas diarias sin salir del estudio, cada vez más agotado y descontento con su obra. La receta fue extraña: esta semana no trabajes, solo pasea y descansa. El pintor protestó y luego obedeció. Caminando le llegaron tantas ideas que no alcanzaba a anotarlas, y ante el lienzo no llegaba ninguna.",
+          "question": "¿Tus mejores ideas llegan en el escritorio o justo cuando te levantas de él?",
+          "key_contrast": "Horas llenas, mente vacía"
+        },
+        "de": {
+          "punchline": "Zwölf Stunden im Atelier brachten nichts; eine untätige Woche brachte mehr als notierbar war.",
+          "thirty_sec": "Fiore beschreibt einen Maler, der zwölf Stunden täglich arbeitete, sein Atelier nicht verließ, zunehmend erschöpfte und mit seinen Werken unzufrieden war. Die Verordnung war seltsam: Arbeite diese Woche nicht, geh spazieren und ruhe dich aus. Der Maler widersprach und fügte sich. Verblüfft kam er zurück. Beim Umherlaufen kamen so viele Ideen, dass er kaum mitschreiben konnte, an der Leinwand keine einzige.",
+          "question": "Kommen deine besten Ideen am Schreibtisch oder in dem Moment, wenn du aufstehst?",
+          "key_contrast": "Volle Stunden, leerer Kopf"
+        }
+      }
+    }
+  ],
+  "ingested_at": "2026-07-25T10:45:05.565Z",
+  "ingested_story_ids": [
+    1059,
+    1060,
+    1061,
+    1062,
+    1063,
+    1064,
+    1065,
+    1066,
+    1067,
+    1068
+  ]
+}

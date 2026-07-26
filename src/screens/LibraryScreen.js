@@ -50,7 +50,6 @@ const LibraryScreen = ({ navigation }) => {
   const [activeCollection, setActiveCollection] = useState('read');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortModalVisible, setSortModalVisible] = useState(false);
-  const [filterRecorded, setFilterRecorded] = useState(false);
   const [recordedStoryIds, setRecordedStoryIds] = useState(new Set());
 
   // Ses kaydı olan hikayeleri AsyncStorage'dan yükle
@@ -151,7 +150,7 @@ const LibraryScreen = ({ navigation }) => {
 
   const categoryOptions = useMemo(() => {
     const map = new Map();
-    [...favoriteStoriesRaw, ...historyStoriesRaw, ...recentlyUsedStories].forEach((story) => {
+    [...favoriteStoriesRaw, ...historyStoriesRaw, ...recentlyUsedStories, ...(stories || []).filter((story) => recordedStoryIds.has(String(story.story_id)))].forEach((story) => {
       const catId = Number(story.parent_cat_id);
       if (!catId) return;
       if (!map.has(catId)) {
@@ -163,7 +162,7 @@ const LibraryScreen = ({ navigation }) => {
       }
     });
     return [{ id: 'all', label: t('libraryFilterAll', lang), rawName: 'Tümü' }, ...Array.from(map.values())];
-  }, [favoriteStoriesRaw, historyStoriesRaw, recentlyUsedStories, lang]);
+  }, [favoriteStoriesRaw, historyStoriesRaw, recentlyUsedStories, stories, recordedStoryIds, lang]);
 
   const applyCategoryFilter = (list) => {
     if (!Array.isArray(list)) return [];
@@ -212,22 +211,24 @@ const LibraryScreen = ({ navigation }) => {
     { id: 'read', label: t('libraryCollectionRead', lang), title: t('recentRead', lang) },
     { id: 'favorites', label: t('libraryCollectionFavorites', lang), title: t('favStories', lang) },
     { id: 'used', label: t('libraryCollectionUsed', lang), title: t('libraryRecentlyUsed', lang) },
+    { id: 'recordings', label: t('libraryCollectionRecordings', lang), title: t('libraryRecordingsTitle', lang) },
   ], [lang]);
+
+  const recordedStories = useMemo(
+    () => (stories || []).filter((story) => recordedStoryIds.has(String(story.story_id))),
+    [stories, recordedStoryIds]
+  );
 
   const baseCollectionStories = useMemo(() => {
     if (activeCollection === 'favorites') return favoriteStoriesRaw;
     if (activeCollection === 'used') return recentlyUsedStories;
+    if (activeCollection === 'recordings') return recordedStories;
     return historyStoriesRaw;
-  }, [activeCollection, favoriteStoriesRaw, historyStoriesRaw, recentlyUsedStories]);
-
-  const applyRecordedFilter = (list) => {
-    if (!filterRecorded) return list;
-    return list.filter(s => recordedStoryIds.has(String(s.story_id)));
-  };
+  }, [activeCollection, favoriteStoriesRaw, historyStoriesRaw, recentlyUsedStories, recordedStories]);
 
   const collectionStories = useMemo(
-    () => applySort(applyRecordedFilter(applyCategoryFilter(baseCollectionStories)), activeCollection),
-    [baseCollectionStories, activeCategory, sortBy, historyIndexMap, favoriteOrderMap, readCountsByStory, activeCollection, filterRecorded, recordedStoryIds]
+    () => applySort(applyCategoryFilter(baseCollectionStories), activeCollection),
+    [baseCollectionStories, activeCategory, sortBy, historyIndexMap, favoriteOrderMap, readCountsByStory, activeCollection]
   );
 
   const visibleCollectionStories = useMemo(
@@ -247,6 +248,7 @@ const LibraryScreen = ({ navigation }) => {
     if (activeCategory !== 'all') return t('libraryFilteredEmptyTitle', lang);
     if (activeCollection === 'favorites') return t('noFavs', lang);
     if (activeCollection === 'used') return t('libraryNoUsedStories', lang);
+    if (activeCollection === 'recordings') return t('libraryNoRecordings', lang);
     return t('noHistory', lang);
   }, [activeCategory, activeCollection, lang, searchQuery]);
 
@@ -279,6 +281,14 @@ const LibraryScreen = ({ navigation }) => {
       return {
         subtitle: t('libraryEmptyUsedSub', lang),
         cta: t('libraryEmptyUsedCta', lang),
+        action: () => navigation.navigate('HomeTab'),
+      };
+    }
+
+    if (activeCollection === 'recordings') {
+      return {
+        subtitle: t('libraryEmptyRecordingsSub', lang),
+        cta: t('libraryEmptyRecordingsCta', lang),
         action: () => navigation.navigate('HomeTab'),
       };
     }
@@ -578,6 +588,8 @@ const LibraryScreen = ({ navigation }) => {
               ? favoriteStoriesRaw.length
               : item.id === 'used'
                 ? recentlyUsedStories.length
+                : item.id === 'recordings'
+                  ? recordedStories.length
                 : historyStoriesRaw.length;
             return (
               <TouchableOpacity
@@ -620,39 +632,9 @@ const LibraryScreen = ({ navigation }) => {
           ))}
         </ScrollView>
 
-        {/* ── İkincil filtre satırı: ses + sırala ───── */}
+        {/* ── İkincil işlem satırı: sıralama ───── */}
         <View style={styles.filterRow}>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            style={{ flex: 1 }}
-            contentContainerStyle={{ gap: 8, alignItems: 'center', paddingRight: 4 }}
-          >
-            {recordedStoryIds.size > 0 && (
-              <TouchableOpacity
-                onPress={() => setFilterRecorded(f => !f)}
-                style={{
-                  flexDirection: 'row', alignItems: 'center', gap: 5, flexShrink: 0,
-                  paddingHorizontal: 13, paddingVertical: 8, borderRadius: 999, borderWidth: 1,
-                  borderColor: filterRecorded ? colors.primary : neutral.border,
-                  backgroundColor: filterRecorded ? `${colors.primary}18` : neutral.background,
-                }}
-                accessibilityRole="button"
-                accessibilityState={{ selected: filterRecorded }}
-                accessibilityLabel={lang === 'tr' ? 'Ses kaydı olanlar' : 'With recordings'}
-              >
-                <Ionicons name="mic" size={14} color={filterRecorded ? colors.primary : neutral.text} />
-                <Text style={{
-                  fontFamily: filterRecorded ? 'Inter_600SemiBold' : 'Inter_500Medium',
-                  fontSize: 12.5,
-                  color: filterRecorded ? colors.primary : neutral.text,
-                }}>
-                  {lang === 'tr' ? 'Sesli' : 'Audio'}{` ${recordedStoryIds.size}`}
-                </Text>
-                {filterRecorded && <Ionicons name="close" size={13} color={colors.primary} />}
-              </TouchableOpacity>
-            )}
-          </ScrollView>
+          <View style={{ flex: 1 }} />
           <TouchableOpacity
             style={styles.sortBtn}
             onPress={() => setSortModalVisible(true)}

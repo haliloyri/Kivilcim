@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "provider": "elevenlabs",
+  "description": "Spark video üretiminde kullanılan Türkçe ElevenLabs seslendirme kütüphanesi. create-voiceover.mjs, hikâyenin kitap kategorisine (source.json -> story.book.category) göre categoryMap üzerinden otomatik bir ses seçer. Eşleşme yoksa defaultVoiceId kullanılır. --voice-id parametresi her zaman önceliklidir.",
+  "defaultVoiceId": "sqN4QwtcnanCCWx6TTYj",
+  "voices": [
+    {
+      "id": "17lijyP1BHYcM7ld0Rg",
+      "name": "Adam",
+      "style": "Deep, Professional and Serious",
+      "description": "Bir Pare Sound - Türk male with a thick and strong voice.",
+      "useCase": "Ciddi, kurumsal ve otoriter anlatım gerektiren stratejik/iş odaklı hikâyeler."
+    },
+    {
+      "id": "vhKOmda0rMxo3o60S4G5",
+      "name": "Serhat",
+      "style": "Sincere, Honest, Warm-hearted",
+      "description": "Sincere, honest, and warm. A voice with a fluid, natural, and energetic delivery.",
+      "useCase": "İlişki, empati ve topluluk temalı, samimi ve sıcak anlatım gerektiren hikâyeler."
+    },
+    {
+      "id": "UpM1SC0tOQ73AkE88QP4",
+      "name": "Deniz S.",
+      "style": "Baritone, İstanbul aksanlı",
+      "description": "Baritone British - Turkish voice with a natural Istanbul accent. Broadcast-quality audio; corporate, industrial narration, commercials, audiobooks, medical/technical videos, explainer videos, documentary narration, e-learning, training videos.",
+      "useCase": "Teknik, bilimsel ve açıklayıcı (explainer) içerik gerektiren hikâyeler."
+    },
+    {
+      "id": "vaEnYHWYjRyVpJdI8PJT",
+      "name": "Kemal Ozgen",
+      "style": "Natural, confident, regional",
+      "description": "Natural Turkish male voice from Istanbul with a clear, confident delivery and an authentic regional accent.",
+      "useCase": "Güncel, toplumsal ve girişimcilik temalı, otantik ve güvenilir anlatım gerektiren hikâyeler."
+    },
+    {
+      "id": "84vR5lT8vWD68RuPLWmO",
+      "name": "İrgi (John)",
+      "style": "Deep, Calm and Soft",
+      "description": "A warm, expressive male voice with a calm, clear tone. Ideal for narration, meditations, storytelling, and emotionally engaging content.",
+      "useCase": "Farkındalık, felsefe ve iç dünya temalı, sakin ve düşündürücü anlatım gerektiren hikâyeler."
+    },
+    {
+      "id": "sqN4QwtcnanCCWx6TTYj",
+      "name": "Eyyup Okan",
+      "style": "Dynamic and Authentic",
+      "description": "Warm, resonant tone with dynamic range and natural expressiveness. Ideal for social media, e-books, and storytelling; suits both informative narrations and character-driven pieces.",
+      "useCase": "Genel amaçlı, çok yönlü hikâye anlatımı; kategori eşleşmesi bulunamadığında varsayılan ses."
+    },
+    {
+      "id": "i8Jufpy1xhR8l79QgGse",
+      "name": "Feronia",
+      "style": "Energetic, Enthusiastic",
+      "description": "High energy. High impact!",
+      "useCase": "Motivasyon, başarı ve pazarlama temalı, enerjik ve yüksek tempolu anlatım gerektiren hikâyeler."
+    },
+    {
+      "id": "d4mBiAx6EANE3h8cZN5a",
+      "name": "Engin Daglı",
+      "style": "Rich baritone, polished",
+      "description": "Rich baritone male voice with trained diction, emotional depth, and a polished, expressive delivery suited for professional narration and performance.",
+      "useCase": "Tarihsel, felsefi ve duygusal derinlik gerektiren dramatik anlatım."
+    }
+  ],
+  "categoryMap": {
+    "Strateji": "17lijyP1BHYcM7ld0Rg",
+    "Finans": "17lijyP1BHYcM7ld0Rg",
+    "Yönetim": "17lijyP1BHYcM7ld0Rg",
+    "Müzakere": "17lijyP1BHYcM7ld0Rg",
+    "Güvenlik": "17lijyP1BHYcM7ld0Rg",
+    "İş Dünyası": "17lijyP1BHYcM7ld0Rg",
+    "Satış": "17lijyP1BHYcM7ld0Rg",
+    "Liderlik": "17lijyP1BHYcM7ld0Rg",
+    "Verimlilik": "17lijyP1BHYcM7ld0Rg",
+
+    "İlişkiler": "vhKOmda0rMxo3o60S4G5",
+    "Mutluluk": "vhKOmda0rMxo3o60S4G5",
+    "İletişim": "vhKOmda0rMxo3o60S4G5",
+    "Topluluk": "vhKOmda0rMxo3o60S4G5",
+    "Toplum": "vhKOmda0rMxo3o60S4G5",
+
+    "Teknoloji": "UpM1SC0tOQ73AkE88QP4",
+    "Bilim": "UpM1SC0tOQ73AkE88QP4",
+    "Nörobilim": "UpM1SC0tOQ73AkE88QP4",
+    "Ürün": "UpM1SC0tOQ73AkE88QP4",
+    "Tasarım": "UpM1SC0tOQ73AkE88QP4",
+    "Öğrenme": "UpM1SC0tOQ73AkE88QP4",
+
+    "Sosyoloji": "vaEnYHWYjRyVpJdI8PJT",
+    "Kariyer": "vaEnYHWYjRyVpJdI8PJT",
+    "Girişimcilik": "vaEnYHWYjRyVpJdI8PJT",
+    "Güncel": "vaEnYHWYjRyVpJdI8PJT",
+    "Gelecek": "vaEnYHWYjRyVpJdI8PJT",
+    "Değişim": "vaEnYHWYjRyVpJdI8PJT",
+
+    "Farkındalık": "84vR5lT8vWD68RuPLWmO",
+    "Düşünme": "84vR5lT8vWD68RuPLWmO",
+    "Kişisel Gelişim": "84vR5lT8vWD68RuPLWmO",
+    "Bağımlılık": "84vR5lT8vWD68RuPLWmO",
+    "Sağlık": "84vR5lT8vWD68RuPLWmO",
+    "Psikoloji": "84vR5lT8vWD68RuPLWmO",
+
+    "İlham": "sqN4QwtcnanCCWx6TTYj",
+    "Yaratıcılık": "sqN4QwtcnanCCWx6TTYj",
+    "Yazarlık": "sqN4QwtcnanCCWx6TTYj",
+    "Alışkanlıklar": "sqN4QwtcnanCCWx6TTYj",
+    "Büyüme": "sqN4QwtcnanCCWx6TTYj",
+
+    "Motivasyon": "i8Jufpy1xhR8l79QgGse",
+    "Başarı": "i8Jufpy1xhR8l79QgGse",
+    "Pazarlama": "i8Jufpy1xhR8l79QgGse",
+    "Hedefler": "i8Jufpy1xhR8l79QgGse",
+    "Dayanıklılık": "i8Jufpy1xhR8l79QgGse",
+
+    "Tarih": "d4mBiAx6EANE3h8cZN5a",
+    "Felsefe": "d4mBiAx6EANE3h8cZN5a",
+    "Duygular": "d4mBiAx6EANE3h8cZN5a"
+  }
+}

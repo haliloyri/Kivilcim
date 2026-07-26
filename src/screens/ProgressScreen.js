@@ -12,11 +12,16 @@ import { t } from '../locales/i18n';
 import { getReadHistory } from '../db/db';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import BadgeIcon, { BADGE_MAP, BADGE_IMAGES, GradientIcon, ACTION_ICON_COLORS } from '../components/BadgeIcon';
+import { FEATURE_FLAGS } from '../config/featureFlags';
+import CareerPathExperience from '../components/career/CareerPathExperience';
 
 const { width } = Dimensions.get('window');
 const DAILY_TARGET_COMPLETED_KEY = '@kivilcim_analytics_daily_target_completed_day';
 
 const ProgressScreen = ({ navigation }) => {
+  if (FEATURE_FLAGS.careerPathV1) {
+    return <CareerPathExperience navigation={navigation} />;
+  }
   const { colors, layout, isDark, lang } = useTheme();
   const {
     streak, totalReads, longestStreak, earnedBadges, openBadgeModal,

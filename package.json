@@ -5,14 +5,24 @@
   "scripts": {
     "kill-port": "lsof -ti:8081 | xargs kill -9 2>/dev/null || true",
     "start": "npm run kill-port && expo start --port 8081",
-    "android": "npm run kill-port && expo run:android --port 8081",
-    "ios": "npm run kill-port && expo run:ios --port 8081",
-    "web": "expo start --web",
+    "android": "npm run kill-port && RCT_METRO_PORT=8081 expo run:android --port 8081",
+    "ios": "npm run kill-port && RCT_METRO_PORT=8081 expo run:ios --port 8081",
+    "web": "npm run kill-port && expo start --web --port 8081",
+    "story:gap": "node scripts/story-pipeline/gap-report.mjs",
+    "story:sync": "node scripts/story-pipeline/sync-inventory.mjs",
+    "story:validate": "node scripts/story-pipeline/validate-batch.mjs",
+    "story:audit": "node scripts/story-pipeline/audit-translations.mjs",
+    "story:audit-facts": "node scripts/story-pipeline/audit-facts.mjs",
+    "story:propose-markers": "node scripts/story-pipeline/propose-marker-repair.mjs",
+    "story:build-content-fix": "node scripts/story-pipeline/build-content-fix-A1-003.mjs",
+    "story:ingest": "node scripts/story-pipeline/ingest-batch.mjs",
     "build:apk:dev": "eas build --platform android --profile development",
     "build:apk": "eas build --platform android --profile apk",
     "build:apk:local": "eas build --platform android --profile apk --local",
     "screenshots": "node scripts/generate-screenshots.mjs",
-    "merge": "node scripts/merge.mjs"
+    "merge": "node scripts/merge.mjs",
+    "test": "jest --runInBand",
+    "test:career": "jest --runInBand src/config/__tests__/featureFlags.test.js src/utils/__tests__/careerProgress.test.js src/utils/__tests__/careerNextAction.test.js src/utils/__tests__/careerNavigation.test.js src/utils/__tests__/careerSync.test.js src/utils/__tests__/localDate.test.js src/utils/__tests__/storyCompletion.test.js src/utils/__tests__/careerToolkit.test.js src/utils/__tests__/careerSparkPackage.test.js src/services/__tests__/careerEvents.test.js src/services/__tests__/careerSchema.test.js src/services/__tests__/migrateCareerPath.test.js src/services/__tests__/offlineQueue.test.js src/locales/__tests__/careerCopy.test.js"
   },
   "dependencies": {
     "@expo-google-fonts/dm-sans": "^0.4.2",
@@ -20,6 +30,7 @@
     "@expo-google-fonts/playfair-display": "^0.4.2",
     "@expo/vector-icons": "^15.0.2",
     "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-community/netinfo": "12.0.1",
     "@react-navigation/bottom-tabs": "^7.15.5",
     "@react-navigation/native": "^7.1.33",
     "@react-navigation/native-stack": "^7.14.5",
@@ -67,8 +78,13 @@
     "@react-native-community/cli": "^20.2.0",
     "@types/react": "~19.2.4",
     "@types/react-native": "^0.72.8",
+    "jest": "^29.7.0",
+    "jest-expo": "^57.0.2",
     "sql.js": "^1.14.1",
     "typescript": "~6.0.3"
+  },
+  "jest": {
+    "preset": "jest-expo"
   },
   "private": true
 }

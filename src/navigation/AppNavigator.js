@@ -21,13 +21,17 @@ import HomeScreen from '../screens/HomeScreen';
 import StoryDetailScreen from '../screens/StoryDetailScreen';
 import PaywallScreen from '../screens/PaywallScreen';
 import ProgressScreen from '../screens/ProgressScreen';
+import { FEATURE_FLAGS } from '../config/featureFlags';
 import LibraryScreen from '../screens/LibraryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SearchScreen from '../screens/SearchScreen';
 import UseInConversationScreen from '../screens/UseInConversationScreen';
+import CareerPathSelectionScreen from '../screens/CareerPathSelectionScreen';
+import CareerToolkitScreen from '../screens/CareerToolkitScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+export const appNavigationRef = React.createRef();
 const CONFETTI_COLORS = ['#FFD166', '#FF6B6B', '#06D6A0', '#4D96FF', '#F4A261', '#B8E1FF'];
 const BADGE_SOUND_ASSET = require('../../assets/sounds/badge.wav');
 
@@ -247,7 +251,7 @@ function MainTabs() {
         name="ProgressTab" 
         component={ProgressScreen} 
         options={{ 
-          tabBarLabel: t('tabProgress', lang),
+          tabBarLabel: t(FEATURE_FLAGS.careerPathV1 ? 'tabMyPath' : 'tabProgress', lang),
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
               focused={focused}
@@ -282,16 +286,37 @@ function MainTabs() {
 import LaunchScreen from '../screens/LaunchScreen';
 
 export default function AppNavigator() {
-  const { isOnboarded, isPremium, isLoadingUserData, userDataErrorMsg, retryUserDataLoad, activeBadgeModal, closeBadgeModal, userProfile } = useUserData();
+  const {
+    isOnboarded,
+    isPremium,
+    isLoadingUserData,
+    loadErrorMsg,
+    retryUserDataLoad,
+    activeBadgeModal,
+    closeBadgeModal,
+    userProfile,
+    isBadgeCollectionCompletionVisible,
+    closeBadgeCollectionCompletionModal,
+    setBadgePresentationBlocked,
+  } = useUserData();
   const { errorMsg, refreshStories } = useStories();
   const { colors, layout, lang, isDark } = useTheme();
   const [isNavigationReady, setIsNavigationReady] = useState(false);
-  const navigationRef = useRef(null);
   const modalAnim = useRef(new Animated.Value(0)).current;
   const iconAnim = useRef(new Animated.Value(0.7)).current;
   const confettiAnim = useRef(new Animated.Value(0)).current;
   const soundRef = useRef(null);
   const [shareSheetBadge, setShareSheetBadge] = useState(null);
+
+  useEffect(() => {
+    setBadgePresentationBlocked('navigation', !isNavigationReady);
+    return () => setBadgePresentationBlocked('navigation', false);
+  }, [isNavigationReady, setBadgePresentationBlocked]);
+
+  useEffect(() => {
+    setBadgePresentationBlocked('badge_share_sheet', !!shareSheetBadge);
+    return () => setBadgePresentationBlocked('badge_share_sheet', false);
+  }, [shareSheetBadge, setBadgePresentationBlocked]);
 
   useEffect(() => {
     return () => {
@@ -344,7 +369,8 @@ export default function AppNavigator() {
       return;
     }
 
-    triggerCelebrationFeedback();
+    const isEarnedCelebration = activeBadgeModal.presentation === 'earned';
+    if (isEarnedCelebration) triggerCelebrationFeedback();
 
     Animated.parallel([
       Animated.timing(modalAnim, {
@@ -368,8 +394,8 @@ export default function AppNavigator() {
         }),
       ]),
       Animated.timing(confettiAnim, {
-        toValue: 1,
-        duration: 1000,
+        toValue: isEarnedCelebration ? 1 : 0,
+        duration: isEarnedCelebration ? 1000 : 1,
         easing: Easing.out(Easing.quad),
         useNativeDriver: true,
       }),
@@ -390,7 +416,7 @@ export default function AppNavigator() {
     return (
       <LaunchScreen
         status="user"
-        errorMessage={userDataErrorMsg || errorMsg}
+        errorMessage={loadErrorMsg || errorMsg}
         onRetry={() => {
           retryUserDataLoad?.();
           refreshStories?.();
@@ -525,7 +551,7 @@ export default function AppNavigator() {
   return (
     <>
       <NavigationContainer
-        ref={navigationRef}
+        ref={appNavigationRef}
         theme={navTheme}
         onReady={() => setIsNavigationReady(true)}
       >
@@ -537,6 +563,8 @@ export default function AppNavigator() {
               <Stack.Screen name="MainTabs" component={MainTabs} />
               <Stack.Screen name="StoryDetail" component={StoryDetailScreen} />
               <Stack.Screen name="UseInConversation" component={UseInConversationScreen} />
+              <Stack.Screen name="CareerPathSelection" component={CareerPathSelectionScreen} />
+              <Stack.Screen name="CareerToolkit" component={CareerToolkitScreen} />
               <Stack.Screen name="Search" component={SearchScreen} />
               <Stack.Screen 
                 name="Paywall" 
@@ -655,6 +683,7 @@ export default function AppNavigator() {
                     style={[styles.modalShareBtn, { flex: 1 }]}
                     onPress={() => {
                       const b = activeBadgeModal;
+                      setBadgePresentationBlocked('badge_share_sheet', true);
                       closeBadgeModal();
                       setTimeout(() => setShareSheetBadge(b), 320);
                     }}
@@ -677,12 +706,41 @@ export default function AppNavigator() {
         </View>
       </Modal>
 
+      <Modal
+        visible={isBadgeCollectionCompletionVisible}
+        transparent
+        animationType="fade"
+        onRequestClose={closeBadgeCollectionCompletionModal}
+      >
+        <View style={styles.modalOverlay}>
+          <Pressable style={StyleSheet.absoluteFill} onPress={closeBadgeCollectionCompletionModal} />
+          <View style={styles.modalCard}>
+            <View style={[styles.modalBadgeIcon, { backgroundColor: `${colors.primary}22`, marginBottom: 16 }]}>
+              <Ionicons name="trophy" size={38} color={colors.primary} />
+            </View>
+            <Text style={styles.modalTitle}>{t('badgeCollectionCompleteTitle', lang)}</Text>
+            <Text style={styles.modalSub}>{t('badgeCollectionCompleteSub', lang)}</Text>
+            <Text style={styles.modalDesc}>{t('badgeCollectionCompleteDesc', lang)}</Text>
+            <TouchableOpacity
+              style={[styles.modalShareBtn, { alignSelf: 'stretch', marginTop: 4 }]}
+              onPress={closeBadgeCollectionCompletionModal}
+              accessibilityRole="button"
+            >
+              <Text style={styles.modalShareText}>{t('badgeCollectionCompleteClose', lang)}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
       <BadgeShareSheet
         visible={!!shareSheetBadge}
         badge={shareSheetBadge}
         name={userProfile?.displayName}
         quote={getBadgeQuote(shareSheetBadge?.id, lang)}
-        onClose={() => setShareSheetBadge(null)}
+        onClose={() => {
+          setShareSheetBadge(null);
+          setBadgePresentationBlocked('badge_share_sheet', false);
+        }}
       />
     </>
   );

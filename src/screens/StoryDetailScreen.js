@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import {
   View, Text, TouchableOpacity, StyleSheet,
-  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Image, Platform, ActivityIndicator
+  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Image, Platform, ActivityIndicator, Share, AppState
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { captureRef } from 'react-native-view-shot';
@@ -9,7 +9,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Speech from 'expo-speech';
 import * as Sharing from 'expo-sharing';
 import * as Clipboard from 'expo-clipboard';
-import * as MediaLibrary from 'expo-media-library';
 import {
   useAudioRecorder,
   useAudioRecorderState,
@@ -20,10 +19,10 @@ import {
 } from 'expo-audio';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
-import Constants from 'expo-constants';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
+import { FEATURE_FLAGS } from '../config/featureFlags';
 import { t } from '../locales/i18n';
 import { getStoryByLang } from '../db/db';
 import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
@@ -32,23 +31,15 @@ import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import { shouldShowAd, loadRewarded, showRewarded, loadInterstitial, showInterstitial, recordStoryRead } from '../utils/ads';
 import { getBookBuyLinks } from '../utils/bookLinks';
+import { getShareLabel, getShareUrl } from '../utils/share';
+import { hasReachedReadingCompletion, isShortStoryFullyVisible, SHORT_STORY_DWELL_MS } from '../utils/storyCompletion';
 
 const { width, height } = Dimensions.get('window');
 
 // Where people who see a share card can find the app. Set this in
-// app.json -> expo.extra.shareLink (store URL, landing page, or @handle)
+// app.json -> expo.extra.shareBaseUrl (the localized landing URL is derived
+// at share time from the reader's active language).
 // once the app is live.
-const SHARE_LINK =
-  Constants.expoConfig?.extra?.shareLink ??
-  Constants.manifest?.extra?.shareLink ??
-  '';
-
-// A story only counts toward the daily reading target once the reader has
-// actually scrolled through this much of it (or the whole thing fits on
-// screen without scrolling at all). Prevents "0/2 -> 1/2" just from tapping
-// into a story and immediately backing out.
-const READ_COMPLETE_RATIO = 0.9;
-
 // Brand logo (book + star + "Albor" wordmark). Dark variant has the cream
 // wordmark for dark card backgrounds; light variant has the ink wordmark.
 const LOGO_LIGHT_BG = require('../../assets/spark_logo.png');
@@ -59,7 +50,7 @@ const LOGO_SOCIAL = require('../../assets/spark_social.png');
 const StoryDetailScreen = ({ route, navigation }) => {
   const { story } = route.params;
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount, releasePendingBadge, isStorySavedForLater, toggleReadLater, isStoryCompleted, markStoryCompleted, variantUsage } = useUserData();
+  const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount, releasePendingBadge, isStorySavedForLater, toggleReadLater, isStoryCompleted, markStoryCompleted, variantUsage, setBadgePresentationBlocked, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight } = useUserData();
   const { stories } = useStories();
   const [fontSize, setFontSize] = useState(typography.sizes.body);
   const [shareModalVisible, setShareModalVisible] = useState(false);
@@ -72,14 +63,20 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const titleEnterAnim = useRef(new Animated.Value(0)).current;
   const hasReachedBottom = useRef(false);
   const hasMarkedRead = useRef(false);
+  const storyCompletionPromiseRef = useRef(Promise.resolve());
+  const speechStartedAt = useRef(null);
   const scrollViewportHeight = useRef(0);
   const scrollContentHeight = useRef(0);
+  const shortStoryDwellTimer = useRef(null);
+  const shortStoryFitsViewport = useRef(false);
+  const isReaderActive = useRef(true);
   const viewShotRef = useRef();
   const carouselRefs = useRef({});
   const insets = useSafeAreaInsets();
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [localLang, setLocalLang] = useState(lang);
   const [localStory, setLocalStory] = useState(story);
+  const [isTakeawaySaved, setIsTakeawaySaved] = useState(false);
   const [adSheet, setAdSheet] = useState(false);
   const [isAdLoading, setIsAdLoading] = useState(false);
   const [adUnavailable, setAdUnavailable] = useState(false);
@@ -102,6 +99,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const audioRecorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
   const recorderState = useAudioRecorderState(audioRecorder);
   const [isRecording, setIsRecording] = useState(false);
+  const isRecordingRef = useRef(false);
+  const recordingStopTimeoutRef = useRef(null);
   const [recordingDuration, setRecordingDuration] = useState(0);
   // Up to 3 recordings per story: [{uri, durationMs, date}]
   const [audioRecordings, setAudioRecordings] = useState([]);
@@ -113,16 +112,31 @@ const StoryDetailScreen = ({ route, navigation }) => {
     shouldShowAd({ isPremium, isOnboarded: true })
   );
 
+  React.useEffect(() => {
+    const blocked = Boolean(shareModalVisible || cardGate || adSheet || storyAdGate);
+    setBadgePresentationBlocked('story_detail_overlay', blocked);
+    return () => setBadgePresentationBlocked('story_detail_overlay', false);
+  }, [shareModalVisible, cardGate, adSheet, storyAdGate, setBadgePresentationBlocked]);
+
   const AUDIO_LIST_KEY = `story_audio_list_${story?.story_id}`;
   const MAX_RECORDINGS = 3;
-  // Maksimum kayıt süresi (otomatik durur). 60.000 ms = 1 dk.
-  const MAX_DURATION_MS = 60000;
+  // Maksimum kayıt süresi (otomatik durur). 90 sn = 1,5 dk.
+  const MAX_DURATION_SECONDS = 90;
+  const MAX_DURATION_MS = MAX_DURATION_SECONDS * 1000;
+
+  React.useEffect(() => () => {
+    if (recordingStopTimeoutRef.current) clearTimeout(recordingStopTimeoutRef.current);
+  }, []);
 
   React.useEffect(() => {
     return soundObj
       ? () => { soundObj.remove(); }
       : undefined;
   }, [soundObj]);
+
+  React.useEffect(() => {
+    setIsTakeawaySaved(isCareerTakeawaySaved(story?.story_id));
+  }, [story?.story_id, isCareerTakeawaySaved]);
 
   React.useEffect(() => {
     const loadSavedAudio = async () => {
@@ -198,8 +212,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
         });
         await audioRecorder.prepareToRecordAsync();
         audioRecorder.record();
+        isRecordingRef.current = true;
         setIsRecording(true);
         setRecordingDuration(0);
+        if (recordingStopTimeoutRef.current) clearTimeout(recordingStopTimeoutRef.current);
+        recordingStopTimeoutRef.current = setTimeout(() => {
+          stopRecording(MAX_DURATION_MS);
+        }, MAX_DURATION_MS);
       } else {
         Alert.alert(t('alert_error', lang) || 'Error', 'Mikrofon izni gereklidir.');
       }
@@ -209,8 +228,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
   };
 
   const stopRecording = async (finalDuration = recordingDuration) => {
-    if (!isRecording) return;
+    if (!isRecordingRef.current) return;
     try {
+      isRecordingRef.current = false;
+      if (recordingStopTimeoutRef.current) clearTimeout(recordingStopTimeoutRef.current);
+      recordingStopTimeoutRef.current = null;
       setIsRecording(false);
       await audioRecorder.stop();
       const uri = audioRecorder.uri;
@@ -221,6 +243,16 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
       if (story?.story_id) {
         await AsyncStorage.setItem(AUDIO_LIST_KEY, JSON.stringify(updated));
+      }
+
+      const activeStory = localStory || story;
+      if (uri && finalDuration >= 3000 && activeStory?.story_id) {
+        await recordCareerInsight({
+          storyId: activeStory.story_id,
+          categoryId: activeStory.parent_cat_id ?? null,
+          eventSubtype: 'voice_recording',
+          metadata: { source: 'voice_recording' },
+        });
       }
     } catch (error) {
       console.error('Failed to stop recording', error);
@@ -234,7 +266,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     const ms = recorderState.durationMillis || 0;
     setRecordingDuration(ms);
     if (ms >= MAX_DURATION_MS) {
-      stopRecording(ms);
+      stopRecording(MAX_DURATION_MS);
     }
   }, [recorderState.durationMillis, isRecording]);
 
@@ -473,25 +505,95 @@ const StoryDetailScreen = ({ route, navigation }) => {
   // fires once per screen visit, and only once the reader has genuinely
   // gotten through most of the story (see READ_COMPLETE_RATIO) rather than
   // the moment the story screen is opened.
-  const markStoryReadIfNeeded = React.useCallback(() => {
-    if (hasMarkedRead.current || !story) return;
+  const markStoryReadIfNeeded = React.useCallback((completionMethod = 'read') => {
+    if (hasMarkedRead.current || !story) return storyCompletionPromiseRef.current;
     hasMarkedRead.current = true;
-    addToHistory(story.story_id);
-  }, [story, addToHistory]);
+    storyCompletionPromiseRef.current = addToHistory(localStory || story, { completionMethod })
+      .catch((error) => console.warn('[story] completion capture failed:', error?.message));
+    return storyCompletionPromiseRef.current;
+  }, [story, localStory, addToHistory]);
 
-  // Some stories are short enough to fit on screen with no scrolling at
-  // all — onScroll never fires for those, so we also check layout/content
-  // size directly and treat a fully-visible story as fully read.
+  const saveTakeaway = React.useCallback(async () => {
+    const activeStory = localStory || story;
+    const result = await saveCareerTakeaway({
+      storyId: activeStory?.story_id,
+      categoryId: activeStory?.parent_cat_id ?? null,
+      reference: 'lesson',
+    });
+    if (result.saved || result.reason === 'already_saved') setIsTakeawaySaved(true);
+  }, [localStory, story, saveCareerTakeaway]);
+
+  const saveStoryReflection = React.useCallback(async () => {
+    // This control is at the end of the reader. Waiting for its completion
+    // write prevents a fast tap from reaching the insight capture before H.
+    await markStoryReadIfNeeded();
+    const activeStory = localStory || story;
+    const result = await saveCareerTakeaway({
+      storyId: activeStory?.story_id,
+      categoryId: activeStory?.parent_cat_id ?? null,
+      reference: 'story_reflection',
+    });
+    if (result.saved || result.reason === 'already_saved') setIsTakeawaySaved(true);
+  }, [localStory, markStoryReadIfNeeded, story, saveCareerTakeaway]);
+
+  const openConversation = React.useCallback(() => {
+    const activeStory = localStory || story;
+    trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
+      storyId: activeStory?.story_id,
+      source: 'story_detail_engagement',
+      lang,
+    });
+    if (isPremium && activeStory?.story_id && !isStoryCompleted(activeStory.story_id)) {
+      markStoryCompleted(activeStory.story_id);
+    }
+    navigation.navigate('UseInConversation', { story: activeStory });
+  }, [isPremium, isStoryCompleted, lang, localStory, markStoryCompleted, navigation, story]);
+
+  const cancelShortStoryDwell = React.useCallback(() => {
+    if (shortStoryDwellTimer.current) clearTimeout(shortStoryDwellTimer.current);
+    shortStoryDwellTimer.current = null;
+  }, []);
+
+  React.useEffect(() => {
+    hasReachedBottom.current = false;
+    hasMarkedRead.current = false;
+    storyCompletionPromiseRef.current = Promise.resolve();
+    shortStoryFitsViewport.current = false;
+    cancelShortStoryDwell();
+  }, [story?.story_id, cancelShortStoryDwell]);
+
+  // A short story has no scroll event, but opening it alone must not create H.
+  // It needs five foreground seconds while the complete content is visible.
   const evaluateShortStoryReadState = React.useCallback(() => {
     if (hasReachedBottom.current) return;
     const viewportHeight = scrollViewportHeight.current;
     const contentHeight = scrollContentHeight.current;
-    if (viewportHeight > 0 && contentHeight > 0 && contentHeight <= viewportHeight + 1) {
+    shortStoryFitsViewport.current = isShortStoryFullyVisible({ contentHeight, viewportHeight });
+    if (!shortStoryFitsViewport.current) {
+      cancelShortStoryDwell();
+      return;
+    }
+    if (!isReaderActive.current || shortStoryDwellTimer.current) return;
+    shortStoryDwellTimer.current = setTimeout(() => {
+      shortStoryDwellTimer.current = null;
+      if (!isReaderActive.current || !shortStoryFitsViewport.current || hasReachedBottom.current) return;
       hasReachedBottom.current = true;
       markStoryReadIfNeeded();
       releasePendingBadge();
-    }
-  }, [markStoryReadIfNeeded, releasePendingBadge]);
+    }, SHORT_STORY_DWELL_MS);
+  }, [cancelShortStoryDwell, markStoryReadIfNeeded, releasePendingBadge]);
+
+  React.useEffect(() => {
+    const subscription = AppState.addEventListener('change', (nextState) => {
+      isReaderActive.current = nextState === 'active';
+      if (isReaderActive.current) evaluateShortStoryReadState();
+      else cancelShortStoryDwell();
+    });
+    return () => {
+      cancelShortStoryDwell();
+      subscription.remove();
+    };
+  }, [cancelShortStoryDwell, evaluateShortStoryReadState]);
 
   const toggleSpeech = async () => {
     if (isSpeaking) {
@@ -501,14 +603,59 @@ const StoryDetailScreen = ({ route, navigation }) => {
       const cleanBody = (displayBody || '').replace(/##|\$\$|&&|~~/g, '').replace(/\s*::\s*/g, ' — ');
       const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
       setIsSpeaking(true);
+      speechStartedAt.current = Date.now();
       Speech.speak(textToRead, {
         language: lang === 'en' ? 'en-US' : lang === 'es' ? 'es-ES' : lang === 'de' ? 'de-DE' : 'tr-TR',
         rate: 0.95,
         pitch: 1.0,
-        onDone: () => setIsSpeaking(false),
-        onStopped: () => setIsSpeaking(false),
-        onError: () => setIsSpeaking(false),
+        onDone: () => {
+          setIsSpeaking(false);
+          // onDone means the entire narration completed; early stop/error use
+          // their dedicated callbacks and must not create H.
+          markStoryReadIfNeeded('audio');
+          speechStartedAt.current = null;
+        },
+        onStopped: () => { setIsSpeaking(false); speechStartedAt.current = null; },
+        onError: () => { setIsSpeaking(false); speechStartedAt.current = null; },
       });
+    }
+  };
+
+  const buildStoryTextSharePayload = () => {
+    const cleanBody = String(displayBody || '')
+      .replace(/##|\$\$|&&|~~/g, '')
+      .replace(/\s*::\s*/g, ' — ')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+    const sourceParts = [displaySourceBook, localStory?.author].filter(Boolean).join(' — ');
+    const sourceLine = sourceParts ? `\n\n${t('share_source', localLang)}${sourceParts}` : '';
+    return `${displayTitle}\n\n${cleanBody}${sourceLine}\n\n${getShareUrl(localLang)}`.trim();
+  };
+
+  const shareStoryAsText = async () => {
+    setBadgePresentationBlocked('story_text_share', true);
+    try {
+      const result = await Share.share({
+        title: displayTitle || t('brandText', localLang),
+        message: buildStoryTextSharePayload(),
+      });
+      const wasDismissed = Share.dismissedAction && result?.action === Share.dismissedAction;
+      if (!wasDismissed) {
+        await incrementShareCount?.();
+        trackEvent(ANALYTICS_EVENTS.STORY_SHARED, {
+          source: 'story_detail_header',
+          shareType: 'text',
+          storyId: story?.story_id,
+          lang: localLang,
+        });
+      }
+    } catch (error) {
+      if (!/cancel|dismiss/i.test(error?.message || '')) {
+        console.warn('Metin paylasimi basarisiz:', error?.message);
+        Alert.alert(t('alert_error', localLang), t('alert_share_error', localLang));
+      }
+    } finally {
+      setTimeout(() => setBadgePresentationBlocked('story_text_share', false), 450);
     }
   };
 
@@ -733,6 +880,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
     if (isCapturing || isSavingCarousel) return;
     setIsSavingCarousel(true);
     try {
+      // expo-media-library has no web native module. Loading it only for native
+      // gallery saves keeps the Story screen available in the web preview too.
+      if (Platform.OS === 'web') {
+        Alert.alert(t('alert_error', lang), t('alert_share_unavailable', lang));
+        return;
+      }
+      const MediaLibrary = require('expo-media-library');
+
       // 1. Ask only for write access (least intrusive)
       const perm = await MediaLibrary.requestPermissionsAsync(true);
       if (!perm.granted) {
@@ -1127,6 +1282,54 @@ const StoryDetailScreen = ({ route, navigation }) => {
       fontFamily: 'Inter_600SemiBold',
       color: colors.text,
     },
+    takeawaySaveButton: {
+      alignSelf: 'flex-start',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      marginTop: 14,
+      paddingHorizontal: 11,
+      paddingVertical: 8,
+      borderWidth: 1,
+      borderRadius: 10,
+    },
+    takeawaySaveText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+    },
+    storyEngagementCard: {
+      borderWidth: 1,
+      borderRadius: 16,
+      padding: 16,
+      marginTop: 16,
+      marginBottom: 8,
+    },
+    storyEngagementCopy: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 13,
+      lineHeight: 19,
+      color: colors.textSecondary,
+      marginBottom: 13,
+    },
+    storyEngagementActions: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 8,
+    },
+    storyEngagementAction: {
+      minHeight: 38,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      borderWidth: 1,
+      borderRadius: 10,
+      paddingHorizontal: 10,
+      paddingVertical: 8,
+    },
+    storyEngagementActionText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+    },
     reflectionBox: {
       borderWidth: 1,
       borderStyle: 'dashed',
@@ -1505,17 +1708,15 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 }}>
                   {t('card_cta_short', localLang)} ✦
                 </Text>
-                {SHARE_LINK ? (
-                  <Text style={{
-                    fontFamily: 'Inter_500Medium',
-                    fontSize: fFooter,
-                    color: th.sub,
-                    letterSpacing: 1,
-                    marginTop: 8,
-                  }}>
-                    {SHARE_LINK}
-                  </Text>
-                ) : null}
+                <Text style={{
+                  fontFamily: 'Inter_500Medium',
+                  fontSize: fFooter,
+                  color: th.sub,
+                  letterSpacing: 1,
+                  marginTop: 8,
+                }}>
+                  {getShareLabel(localLang)}
+                </Text>
               </View>
             </View>
           </View>
@@ -1723,7 +1924,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 <Text style={styles.fontSizeBtnText}>A+</Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={openShareModalGated}>
+            <TouchableOpacity onPress={shareStoryAsText} accessibilityRole="button" accessibilityLabel={t('shareBtn', lang)}>
               <Ionicons name="share-social" size={22} color={colors.text} />
             </TouchableOpacity>
             <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
@@ -1751,10 +1952,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
               listener: (event) => {
                 if (!hasReachedBottom.current) {
                   const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
-                  const readRatio = contentSize.height > 0
-                    ? (contentOffset.y + layoutMeasurement.height) / contentSize.height
-                    : 0;
-                  if (readRatio >= READ_COMPLETE_RATIO) {
+                  if (hasReachedReadingCompletion({
+                    contentOffsetY: contentOffset.y,
+                    contentHeight: contentSize.height,
+                    viewportHeight: layoutMeasurement.height,
+                  })) {
                     hasReachedBottom.current = true;
                     markStoryReadIfNeeded();
                     // Completion now triggered by navigating to UseInConversation
@@ -1823,7 +2025,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
               const storyVersionKey = String(story?.version || '').trim().toUpperCase();
               const fverMatch = /^F(\d+)$/.exec(storyVersionKey);
               const cverMatch = /^C(\d+)$/.exec(storyVersionKey);
-              const richFormat = (!!fverMatch && Number(fverMatch[1]) >= 7) || !!cverMatch;
+              // 'OH' = yeni üretim (rich) formatı: $$, &&, ~~ görünür kartlar olarak render edilir.
+              const richFormat = (!!fverMatch && Number(fverMatch[1]) >= 7) || !!cverMatch || storyVersionKey === 'OH';
 
               // Parse the body into segments based on ##, $$, &&, ~~ markers
               const rawBody = (displayBody || '').replace(/\r\n/g, '\n').replace(/\n{3,}/g, '\n\n');
@@ -1929,6 +2132,21 @@ const StoryDetailScreen = ({ route, navigation }) => {
                       <Text style={[styles.takeawayText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * 1.5 }]}>
                         {seg.content}
                       </Text>
+                      {FEATURE_FLAGS.careerPathV1 ? (
+                        <TouchableOpacity
+                          style={[styles.takeawaySaveButton, { borderColor: categoryTheme.borderColor, backgroundColor: isTakeawaySaved ? `${categoryTheme.accent}18` : colors.background }]}
+                          onPress={saveTakeaway}
+                          disabled={isTakeawaySaved}
+                          accessibilityRole="button"
+                          accessibilityState={{ disabled: isTakeawaySaved }}
+                          accessibilityLabel={t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
+                        >
+                          <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={16} color={categoryTheme.accent} />
+                          <Text style={[styles.takeawaySaveText, { color: categoryTheme.accent }]}>
+                            {t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
+                          </Text>
+                        </TouchableOpacity>
+                      ) : null}
                     </View>
                   );
                 }
@@ -1994,8 +2212,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   </Text>
                 ) : null}
 
-                {/* Region-aware book buy buttons — carry affiliate tokens.
+                {/* Region-aware book buy buttons — geçici olarak kaldırıldı,
+                    anlaşma sağlanınca tekrar açılacak.
                     TR → Hepsiburada + Kitapyurdu, elsewhere → local Amazon. */}
+                {false && (
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 12 }}>
                   {getBookBuyLinks(displaySourceBook, story.author).map((link) => (
                     <TouchableOpacity
@@ -2007,6 +2227,45 @@ const StoryDetailScreen = ({ route, navigation }) => {
                       <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>{link.label}</Text>
                     </TouchableOpacity>
                   ))}
+                </View>
+                )}
+              </View>
+            ) : null}
+
+            {FEATURE_FLAGS.careerPathV1 ? (
+              <View style={[styles.storyEngagementCard, { backgroundColor: categoryTheme.backgroundColor, borderColor: categoryTheme.borderColor }]}>
+                <View style={styles.takeawayLabelRow}>
+                  <Ionicons name="sparkles-outline" size={16} color={categoryTheme.accent} />
+                  <Text style={[styles.takeawayLabel, { color: categoryTheme.accent }]}>{t('career.engagement.title', lang)}</Text>
+                </View>
+                <Text style={styles.storyEngagementCopy}>{t('career.engagement.copy', lang)}</Text>
+                <View style={styles.storyEngagementActions}>
+                  <TouchableOpacity
+                    style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: isTakeawaySaved ? `${categoryTheme.accent}18` : colors.background }]}
+                    onPress={saveStoryReflection}
+                    disabled={isTakeawaySaved}
+                    accessibilityRole="button"
+                    accessibilityState={{ disabled: isTakeawaySaved }}
+                  >
+                    <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={17} color={categoryTheme.accent} />
+                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.accent }]}>{t(isTakeawaySaved ? 'career.engagement.saved' : 'career.engagement.save', lang)}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: colors.background }]}
+                    onPress={() => setRecPanelVisible(true)}
+                    accessibilityRole="button"
+                  >
+                    <Ionicons name="mic-outline" size={17} color={categoryTheme.accent} />
+                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.accent }]}>{t('career.engagement.voice', lang)}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: colors.background }]}
+                    onPress={openConversation}
+                    accessibilityRole="button"
+                  >
+                    <Ionicons name="chatbubbles-outline" size={17} color={categoryTheme.accent} />
+                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.accent }]}>{t('career.engagement.conversation', lang)}</Text>
+                  </TouchableOpacity>
                 </View>
               </View>
             ) : null}
@@ -2135,18 +2394,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
           {/* PRIMARY: Sohbette Kullan — main CTA with micro-copy */}
           <View style={{ flex: 1 }}>
             <TouchableOpacity
-              onPress={() => {
-                trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
-                  storyId: story?.story_id,
-                  source: 'story_detail_footer',
-                  lang,
-                });
-                // Only premium users get completion; free users stay "incomplete"
-                if (isPremium && !isStoryCompleted(localStory.story_id)) {
-                  markStoryCompleted(localStory.story_id);
-                }
-                navigation.navigate('UseInConversation', { story: localStory });
-              }}
+              onPress={openConversation}
               accessibilityRole="button"
               accessibilityLabel={t('story_detail_use_cta', lang)}
               activeOpacity={0.9}

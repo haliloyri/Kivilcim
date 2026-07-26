@@ -21,7 +21,7 @@
  * "happened" or "failed for a real (non-network) reason, don't retry."
  *
  * Persistence: operations are stored as plain serializable
- * `{ type, payload }` descriptors in AsyncStorage (not closures), so the
+ * `{ type, payload, ownerUserId }` descriptors in AsyncStorage (not closures), so the
  * queue survives an app kill/restart while offline — the common real-world
  * case for a mobile app, not just a flaky-request retry.
  *
@@ -34,7 +34,6 @@
  */
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { AppState } from 'react-native';
 import { SUPABASE_LIVE, supabase, getCurrentUser } from './supabase';
 
 const QUEUE_KEY = '@kivilcim_offline_queue_v1';
@@ -87,6 +86,58 @@ const HANDLERS = {
     if (error) throw error;
   },
 
+  record_career_event: async (uid, { event }) => {
+    if (!event) return;
+    const { error } = await supabase.rpc('record_career_event', {
+      p_event_id: event.eventId,
+      p_credit_key: event.creditKey,
+      p_credit_type: event.creditType,
+      p_event_subtype: event.eventSubtype,
+      p_story_id: String(event.storyId),
+      p_category_id: event.categoryId ?? null,
+      p_completion_method: event.completionMethod ?? null,
+      p_occurred_at: event.occurredAt,
+      p_local_day: event.localDay,
+      p_timezone_offset_minutes: event.timezoneOffsetMinutes,
+      p_rule_version: event.ruleVersion,
+      p_metadata_json: event.metadata ?? null,
+    });
+    if (error) throw error;
+  },
+
+  upsert_career_state: async (uid, { patch }) => {
+    const { error } = await supabase.rpc('upsert_career_state', {
+      p_active_path: patch?.activePath ?? null,
+      p_rule_version: patch?.ruleVersion ?? 1,
+      p_selected_at: patch?.selectedAt ?? null,
+      p_selection_source: patch?.selectionSource ?? null,
+    });
+    if (error) throw error;
+  },
+
+  upsert_career_migration_state: async (uid, { migrationVersion, migrationSummarySeenAt }) => {
+    const { error } = await supabase.rpc('upsert_career_migration_state', {
+      p_migration_version: migrationVersion ?? null,
+      p_migration_summary_seen_at: migrationSummarySeenAt ?? null,
+    });
+    if (error) throw error;
+  },
+
+  award_career_nodes: async (uid, { nodes }) => {
+    const { error } = await supabase.rpc('award_career_nodes', { p_nodes: nodes || [] });
+    if (error) throw error;
+  },
+
+  mark_career_node_seen: async (uid, { nodeId }) => {
+    const { error } = await supabase.rpc('mark_career_node_seen', { p_node_id: nodeId });
+    if (error) throw error;
+  },
+
+  upsert_legacy_badges: async (uid, { badgeIds }) => {
+    const { error } = await supabase.rpc('upsert_legacy_badges', { p_badge_ids: badgeIds || [] });
+    if (error) throw error;
+  },
+
   set_selected_categories: async (uid, { categoryIds }) => {
     const { error: deleteError } = await supabase.from('user_selected_categories').delete().eq('user_id', uid);
     if (deleteError) throw deleteError;
@@ -114,6 +165,7 @@ const HANDLERS = {
     const tables = [
       'user_reads', 'user_likes', 'user_selected_categories', 'user_streak_freezes',
       'user_favorites', 'user_collections', 'user_variant_usage', 'user_badges',
+      'user_career_events', 'user_career_state', 'user_career_nodes', 'user_legacy_badges',
     ];
     for (const table of tables) {
       const { error } = await supabase.from(table).delete().eq('user_id', uid);
@@ -182,16 +234,19 @@ export const enqueueAndSync = async (type, payload = {}) => {
     console.warn('[offlineQueue] unknown operation type:', type);
     return;
   }
+  let user;
   try {
-    const user = await getCurrentUser();
+    user = await getCurrentUser();
     if (!user?.id) return; // no session yet — nothing to sync or queue
     await handler(user.id, payload);
   } catch (error) {
-    if (isNetworkError(error)) {
+    if (isNetworkError(error) && user?.id) {
       const queue = await readQueue();
-      queue.push({ type, payload, queuedAt: new Date().toISOString() });
+      queue.push({ type, payload, ownerUserId: user.id, queuedAt: new Date().toISOString() });
       await writeQueue(queue);
       console.warn('[offlineQueue] offline — queued for later:', type);
+    } else if (isNetworkError(error)) {
+      console.warn('[offlineQueue] offline before a session was available:', type);
     } else {
       console.warn('[offlineQueue] failed (not retried):', type, error?.message);
     }
@@ -217,23 +272,29 @@ export const flushOfflineQueue = async () => {
     const user = await getCurrentUser();
     if (!user?.id) return;
 
-    let stoppedAt = -1;
+    const remaining = [];
     for (let i = 0; i < queue.length; i++) {
       const item = queue[i];
       const handler = HANDLERS[item.type];
       if (!handler) continue; // drop unknown (e.g. leftover from an older app version)
+      // Never replay an operation captured under another authenticated user.
+      // Older queue rows without an owner are also retained for manual/session
+      // recovery instead of guessing who should receive them.
+      if (!item.ownerUserId || item.ownerUserId !== user.id) {
+        remaining.push(item);
+        continue;
+      }
       try {
         await handler(user.id, item.payload);
       } catch (error) {
         if (isNetworkError(error)) {
-          stoppedAt = i;
+          remaining.push(...queue.slice(i));
           break;
         }
         console.warn('[offlineQueue] dropping failed item:', item.type, error?.message);
       }
     }
 
-    const remaining = stoppedAt === -1 ? [] : queue.slice(stoppedAt);
     await writeQueue(remaining);
     if (remaining.length === 0 && queue.length > 0) {
       console.log('[offlineQueue] flushed', queue.length, 'queued write(s)');
@@ -258,6 +319,9 @@ let appStateSubscription = null;
 export const initOfflineQueueFlush = () => {
   flushOfflineQueue();
   if (appStateSubscription) return; // already listening
+  // AppState is only needed when startup wiring is enabled. Deferring this
+  // require keeps the durable queue usable by non-UI consumers and tests.
+  const { AppState } = require('react-native');
   appStateSubscription = AppState.addEventListener('change', (state) => {
     if (state === 'active') flushOfflineQueue();
   });

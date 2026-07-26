@@ -13,6 +13,7 @@ Kıvılcım, her gün size farklı kategorilerden (Finans, Psikoloji, Felsefe, L
 - **Kişisel Koleksiyon:** Beğendiğiniz hikayeleri favorilere ekleme ve okuma geçmişine erişim.
 - **Premium Erişim:** Sınırsız hikaye, reklamız deneyim ve tüm temalara erişim sağlayan abonelik sistemi.
 - **Karanlık Mod:** Göz yormayan, şık "Mürekkep" (Dark) mod seçeneği.
+- **Kıvılcım Yolu:** Okuma, derinleşme ve uygulama davranışlarını 12 kalıcı rütbeden oluşan, seçilebilir bir gelişim yoluna dönüştürür. Ayrıntılar: [teknik rehber](docs/KIVILCIM_YOLU_TEKNIK_REHBER.md).
 
 ## 🛠 Teknoloji Yığını
 
@@ -78,6 +79,7 @@ Kıvılcım (meaning "Spark") is a mobile application that provides short, conci
 - **Personal Collection:** Favorite stories and access your reading history.
 - **Premium Access:** Subscription system providing unlimited stories, ad-free experience, and access to all themes.
 - **Dark Mode:** Sleek "Ink" (Dark) mode option for comfortable reading.
+- **Kıvılcım Path:** Turns reading, reflection, and application into a selectable path of 12 persistent ranks. See the [technical guide](docs/KIVILCIM_YOLU_TEKNIK_REHBER.md).
 
 ## 🛠 Tech Stack
 

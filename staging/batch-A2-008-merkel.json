@@ -1,0 +1,35 @@
+{
+  "batch_id": "A2-008-merkel",
+  "kind": "content_fix",
+  "version": "A2",
+  "created": "2026-07-26",
+  "notes": "Orta riskli atifli alintilardan biri dogrulanamadi. story_id 1192 (Ego Is the Enemy) Angela Merkel'e dogrudan bir alinti atfediyordu: 'Her toplantiya not defterle giriyorum. Ogrenecegim bir sey var.' Merkel kitapta alcakgonulluluk ornegi olarak GECIYOR ve not defterine dusunce yazma aliskanligi belgeli, ama tirnak icindeki cumle Merkel'in sozu olarak hicbir kaynakta yok. YASAYAN BIR SIYASI FIGURE atfedilen dogrulanmamis alinti, uretim-kurallari.md bolum 5 geregi en yuksek dikkat gerektiren siniftir. Dogrudan alinti kaldirildi; belgeli aliskanlik ve Holiday'in cercevesi birakildi. Diger 4 orta riskli vaka incelendi ve temiz bulundu: 1432 (Grove/Doerr), 1455 (Tutu-Dalai Lama, Book of Joy'da gecen diyalog), 1123 (Phelps gozluk olayi, Duhigg'de belgeli), 1358 (Godin kendi kitabindan).",
+  "items": [
+    {
+      "story": {
+        "story_id": 1192,
+        "queue_title": "Öğrenci zihniyeti",
+        "reason": "dogrulanamayan atifli alinti: Merkel'e atfedilen dogrudan soz kaynakta yok; belgeli aliskanliga cevrildi",
+        "allow_overflow": "Atif duzeltmesi cumleyi birkac kelime uzatiyor. Dogrulanmamis alintiyi yasayan bir siyasetciye atfetmeye devam etmek, kelime hedefini asmaktan cok daha kotu."
+      },
+      "lang": {
+        "tr": {
+          "content": "Ryan Holiday, tarihin en başarılı insanlarını inceledi ve ortak bir özellik buldu.\r\n\r\nHoliday, Angela Merkel'i bu tavrın örneği olarak anlatır; şansölyeliği boyunca küçük bir deftere düzenli not tuttuğu biliniyordu.\r\n\r\nWarren Buffett zamanının yüzde seksenini okuyarak geçiriyor. Hâlâ.\r\n\r\nLeonardo da Vinci not defterlerini ölümüne kadar tuttu.\r\n\r\n##Ortak nokta: Uzman olmalarına rağmen, öğrenci gibi yaklaşıyorlar.##\r\n\r\nHoliday bunu \"Ego Düşmanı\"nın merkezine koyuyor. Ego şunu söylüyor: \"Artık öğrenmem gerekmez. Zaten biliyorum.\" Öğrenci zihniyeti ise şunu söylüyor: \"Her zaman bilmediğim bir şey var.\"\r\n\r\nJapon Zen geleneğinde buna \"Shoshin\" — yeni başlayanın zihni — deniyor. Uzmanlık geldikçe olasılıklar azalır. Yeni başlayanın zihninde ise sonsuz olasılık vardır.\r\n\r\nEgosuz büyük insanların sırrı bu. Başarı onları kapamıyor, açıyor. Her zirve, yeni ufuklar görmeyi sağlıyor.\r\n\r\n$$Bilmek sizi kapatır — öğrenmek açar.$$\r\n\r\n&&Son bir yılda gerçekten yeni bir şey öğrendin mi? \"Bunu zaten biliyorum\" dediğin ama aslında yüzeysel kaldığın bir alan var mı?&&"
+        },
+        "en": {
+          "content": "Ryan Holiday studied the most successful people in history and found one common trait. \r\n\r\nHoliday points to Angela Merkel as an example of that posture; throughout her chancellorship she was known for keeping regular notes in a small notebook. \r\n\r\nWarren Buffett spends eighty percent of his time reading. Still. \r\n\r\nLeonardo da Vinci kept his notebooks until his death. \r\n\r\n##Common point: Although they are experts, they approach like students.## \r\n\r\nHoliday puts this at the center of \"The Ego Enemy.\" The ego says: \"I don't need to learn anymore. I already know.\" The student mentality says: \"There is always something I don't know.\" \r\n\r\nIn the Japanese Zen tradition, this is called \"Shoshin\" — the beginner's mind. As expertise comes, the possibilities decrease. In the beginner's mind, there are endless possibilities. \r\n\r\nThis is the secret of great people without ego. Success doesn't close them, it opens them. Every summit allows us to see new horizons. \r\n\r\n$$Knowing closes you — learning opens you.$$ \r\n\r\n&&Have you really learned anything new in the last year? Is there an area where you say \"I already know this\" but you actually remain superficial?&&"
+        },
+        "es": {
+          "content": "Ryan Holiday estudió a las personas más exitosas de la historia y encontró un rasgo común. \r\n\r\nHoliday señala a Angela Merkel como ejemplo de esa actitud; durante su cancillería era conocida por anotar con regularidad en una libreta pequeña. \r\n\r\nWarren Buffett pasa el ochenta por ciento de su tiempo leyendo. Aún. \r\n\r\nLeonardo da Vinci conservó sus cuadernos hasta su muerte. \r\n\r\n##Punto en común: aunque son expertos, se acercan como estudiantes.##\r\n\r\nHoliday sitúa esto en el centro de \"The Ego Enemy\". El ego dice: \"Ya no necesito aprender. Ya lo sé\". La mentalidad estudiantil dice: \"Siempre hay algo que no sé\". \r\n\r\nEn la tradición zen japonesa, esto se llama \"Shoshin\": la mente del principiante. A medida que llega la experiencia, las posibilidades disminuyen. En la mente del principiante, existen infinitas posibilidades. \r\n\r\nÉste es el secreto de las grandes personas sin ego. El éxito no los cierra, los abre. Cada cumbre nos permite ver nuevos horizontes. \r\n\r\n$$Saber te cierra, aprender te abre.$$\r\n\r\n&&¿Realmente has aprendido algo nuevo durante el último año? ¿Hay algún área en la que dices \"ya sé esto\" pero en realidad sigues siendo superficial?&&"
+        },
+        "de": {
+          "content": "Ryan Holiday untersuchte die erfolgreichsten Menschen der Geschichte und fand ein gemeinsames Merkmal. \r\n\r\nHoliday nennt Angela Merkel als Beispiel für diese Haltung; während ihrer Kanzlerschaft war bekannt, dass sie regelmäßig Notizen in ein kleines Notizbuch schrieb. \r\n\r\nWarren Buffett verbringt achtzig Prozent seiner Zeit mit Lesen. Trotzdem. \r\n\r\nLeonardo da Vinci bewahrte seine Notizbücher bis zu seinem Tod auf. \r\n\r\n##Gemeinsamkeit: Obwohl sie Experten sind, gehen sie wie Studenten vor.##\r\n\r\nHoliday stellt dies in den Mittelpunkt von „The Ego Enemy“. Das Ego sagt: „Ich muss nicht mehr lernen. Ich weiß es bereits.“ Die Studentenmentalität sagt: „Es gibt immer etwas, das ich nicht weiß.“ \r\n\r\nIn der japanischen Zen-Tradition wird dies „Shoshin“ genannt – der Geist des Anfängers. Je mehr Fachwissen vorhanden ist, desto geringer werden die Möglichkeiten. Für den Anfänger gibt es endlose Möglichkeiten. \r\n\r\nDas ist das Geheimnis großartiger Menschen ohne Ego. Erfolg schließt sie nicht, er öffnet sie. Jeder Gipfel ermöglicht uns, neue Horizonte zu sehen. \r\n\r\n$$Wissen schließt dich – Lernen öffnet dich.$$\r\n\r\n&&Haben Sie im letzten Jahr wirklich etwas Neues gelernt? Gibt es einen Bereich, in dem Sie sagen „Das weiß ich schon“, in Wirklichkeit aber oberflächlich bleiben?&&"
+        }
+      }
+    }
+  ],
+  "ingested_at": "2026-07-26T20:14:36.221Z",
+  "ingested_story_ids": [
+    1192
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "4 Dilde Hikâye Yazım Kontrolü"
+  short_description: "Hikâyeleri dil dil, parça parça denetler"
+  default_prompt: "Use $proofread-stories to audit the story catalog language by language in resumable 100-story chunks and record fixes without applying them."

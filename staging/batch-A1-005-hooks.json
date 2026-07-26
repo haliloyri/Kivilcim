@@ -1,0 +1,222 @@
+{
+  "batch_id": "A1-005-hooks",
+  "kind": "hook_only",
+  "version": "A1",
+  "created": "2026-07-25",
+  "notes": "Is plani Adim 1. story_id 1059-1068: A1-001 partisi hook destegi eklenmeden once uretildigi icin tr/en/es hook bos kalmisti, de hook ise eski jenerik sablondu (\"Das hat mein Denken...\", \"Dieses Buch verandert alles...\"). Dort dile reel acilisi yazildi: somut, merak boslugu kuran, reflection sorusundan bagimsiz. Varyantlara DOKUNULMADI.",
+  "items": [
+    {
+      "story": {
+        "story_id": 1059,
+        "reason": "tr/en/es bos, de sablon"
+      },
+      "lang": {
+        "tr": {
+          "hook": "Yetmiş yıl boyunca kazanamayan takım, yastık sertliğini değiştirmeye başladı."
+        },
+        "en": {
+          "hook": "A team that never won started auditing pillow firmness and hand gel."
+        },
+        "es": {
+          "hook": "Un equipo que nunca ganaba empezó revisando la dureza de las almohadas."
+        },
+        "de": {
+          "hook": "Ein Team ohne Siege begann, die Härte der Kissen zu prüfen."
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1060,
+        "reason": "tr/en/es bos, de sablon"
+      },
+      "lang": {
+        "tr": {
+          "hook": "İki kişi sigarayı reddetti; sadece biri yarın tekrar direnmek zorunda."
+        },
+        "en": {
+          "hook": "Two people refuse a cigarette; only one has to win again tomorrow."
+        },
+        "es": {
+          "hook": "Dos personas rechazan un cigarrillo; solo una tendrá que resistir mañana."
+        },
+        "de": {
+          "hook": "Zwei Menschen lehnen eine Zigarette ab; nur einer muss morgen erneut kämpfen."
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1061,
+        "reason": "tr/en/es bos, de jenerik"
+      },
+      "lang": {
+        "tr": {
+          "hook": "Bir grup tek kusursuz kareyi hedefledi, diğeri her gün çekti. Kim kazandı?"
+        },
+        "en": {
+          "hook": "One group chased a single perfect photograph; the other just kept shooting."
+        },
+        "es": {
+          "hook": "Un grupo buscó la foto perfecta; el otro simplemente disparó cada día."
+        },
+        "de": {
+          "hook": "Eine Gruppe jagte das perfekte Foto, die andere fotografierte einfach täglich."
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1062,
+        "reason": "tr/en/es bos, de sablon"
+      },
+      "lang": {
+        "tr": {
+          "hook": "Kimseye tek kelime söylemedi; kafeteryada gazlı içecek satışı düştü."
+        },
+        "en": {
+          "hook": "She said nothing to anyone, and soda sales fell in the cafeteria."
+        },
+        "es": {
+          "hook": "No dijo una palabra a nadie y las ventas de refrescos cayeron."
+        },
+        "de": {
+          "hook": "Sie sagte niemandem ein Wort, und der Limonadenverkauf ging zurück."
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1063,
+        "reason": "tr/en/es bos, de jenerik"
+      },
+      "lang": {
+        "tr": {
+          "hook": "Hedefi koşmak değil, sadece ayakkabıyı giymek olursa ne olur?"
+        },
+        "en": {
+          "hook": "What happens when the goal is lacing your shoes, not running?"
+        },
+        "es": {
+          "hook": "¿Qué pasa si la meta es atarte las zapatillas y nada más?"
+        },
+        "de": {
+          "hook": "Was passiert, wenn das Ziel nur ist, die Laufschuhe anzuziehen?"
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1064,
+        "reason": "tr/en/es bos, de sablon"
+      },
+      "lang": {
+        "tr": {
+          "hook": "Vasat sunumu tebrik etti; sonra kıdemli biri tek bir soru sordu."
+        },
+        "en": {
+          "hook": "She praised a mediocre presentation, then a senior colleague asked one question."
+        },
+        "es": {
+          "hook": "Felicitó una presentación mediocre y después llegó una sola pregunta."
+        },
+        "de": {
+          "hook": "Sie lobte eine mittelmäßige Präsentation, dann kam eine einzige Frage."
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1065,
+        "reason": "tr/en/es bos, de sablon"
+      },
+      "lang": {
+        "tr": {
+          "hook": "Aynı sert cümle iki farklı yerden çıkabilir; ayıran şey sonrasıdır."
+        },
+        "en": {
+          "hook": "The same blunt sentence can come from two opposite places entirely."
+        },
+        "es": {
+          "hook": "La misma frase tajante puede salir de dos lugares opuestos."
+        },
+        "de": {
+          "hook": "Derselbe schroffe Satz kann aus zwei gegensätzlichen Haltungen kommen."
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1066,
+        "reason": "tr/en/es bos, de sablon"
+      },
+      "lang": {
+        "tr": {
+          "hook": "Altı ay boyunca her hafta ilerliyoruz dedi; proje tamamen çöktü."
+        },
+        "en": {
+          "hook": "He reported progress every week for six months, then it collapsed."
+        },
+        "es": {
+          "hook": "Informó avances cada semana durante seis meses; luego todo se hundió."
+        },
+        "de": {
+          "hook": "Sechs Monate lang meldete er Fortschritt, dann brach alles zusammen."
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1067,
+        "reason": "tr/en/es bos, de jenerik"
+      },
+      "lang": {
+        "tr": {
+          "hook": "Tezi bitince ne olacak sorusuna verdiği cevap, ertelemeyi açıkladı."
+        },
+        "en": {
+          "hook": "Asked what happens once the thesis is done, he finally told the truth."
+        },
+        "es": {
+          "hook": "Le preguntaron qué pasaría al terminar la tesis y dijo la verdad."
+        },
+        "de": {
+          "hook": "Gefragt, was nach der fertigen Arbeit käme, sagte er die Wahrheit."
+        }
+      }
+    },
+    {
+      "story": {
+        "story_id": 1068,
+        "reason": "tr/en/es bos, de jenerik"
+      },
+      "lang": {
+        "tr": {
+          "hook": "Bir hafta hiç çalışmaması söylendi; not almaya yetişemeden döndü."
+        },
+        "en": {
+          "hook": "Told to do no work for a week, he returned unable to keep up."
+        },
+        "es": {
+          "hook": "Le dijeron que no trabajara una semana y volvió sin poder anotar todo."
+        },
+        "de": {
+          "hook": "Er sollte eine Woche nicht arbeiten und kam mit zu vielen Ideen zurück."
+        }
+      }
+    }
+  ],
+  "ingested_at": "2026-07-26T09:39:32.118Z",
+  "ingested_story_ids": [
+    1059,
+    1060,
+    1061,
+    1062,
+    1063,
+    1064,
+    1065,
+    1066,
+    1067,
+    1068
+  ]
+}

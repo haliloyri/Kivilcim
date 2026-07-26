@@ -10,6 +10,8 @@ import * as Notifications from 'expo-notifications';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
+import { useCareerPath } from '../context/CareerPathContext';
+import { FEATURE_FLAGS } from '../config/featureFlags';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
 import CategoryPill from '../components/CategoryPill';
@@ -27,6 +29,7 @@ const ProfileScreen = ({ navigation }) => {
   } = useTheme();
 
   const { parentCategories } = useStories();
+  const { career } = useCareerPath();
   const {
     clearUserData, isPremium, preferences,
     updatePreferences, userProfile, updateUserProfile, devSetPremium,
@@ -47,9 +50,19 @@ const ProfileScreen = ({ navigation }) => {
     { label: t('reminder_noon', lang), value: 'noon', icon: '☀️', ionIcon: 'sunny-outline', reminderHour: 13 },
     { label: t('reminder_evening', lang), value: 'evening', icon: '🌙', ionIcon: 'moon-outline', reminderHour: 21 },
   ];
+  const storyCollectionOptions = [
+    { value: 'classic', label: t('storyCollectionClassic', lang), icon: 'book-outline' },
+    { value: 'new', label: t('storyCollectionNew', lang), icon: 'sparkles-outline' },
+    { value: 'focus', label: t('storyCollectionFocus', lang), icon: 'bulb-outline' },
+    { value: 'conversation', label: t('storyCollectionConversation', lang), icon: 'chatbubbles-outline' },
+    { value: 'originals', label: t('storyCollectionOriginals', lang), icon: 'color-wand-outline' },
+  ];
 
   const selectedMinutes = preferences?.time?.minutes || 6;
   const selectedReminders = preferences?.reminderWindows || [preferences?.reminderWindow || 'evening'];
+  const selectedStoryCollections = preferences?.storyCollections?.length
+    ? preferences.storyCollections
+    : ['new'];
   const selectedReminderLabel = reminderOptions
     .filter(o => selectedReminders.includes(o.value))
     .map(o => o.label)
@@ -65,6 +78,9 @@ const ProfileScreen = ({ navigation }) => {
     .join('')
     .toUpperCase();
   const isGuest = !userProfile?.displayName;
+  const careerTitle = FEATURE_FLAGS.careerPathV1 && career
+    ? t(career.profileTitle, lang)
+    : null;
   const langName = lang === 'tr' ? 'Turkish' : lang === 'en' ? 'English' : lang === 'es' ? 'Spanish' : 'German';
 
   const handleReadingPlanChange = async (minutes) => {
@@ -87,6 +103,14 @@ const ProfileScreen = ({ navigation }) => {
       ? current.filter(w => w !== windowValue)
       : [...current, windowValue];
     await updatePreferences({ reminderWindows: next });
+  };
+
+  const handleStoryCollectionToggle = async (collectionId) => {
+    const next = selectedStoryCollections.includes(collectionId)
+      ? selectedStoryCollections.filter((id) => id !== collectionId)
+      : [...selectedStoryCollections, collectionId];
+    if (next.length === 0) return;
+    await updatePreferences({ storyCollections: next });
   };
 
   const openPrivacyPolicy = async () => {
@@ -208,6 +232,17 @@ const ProfileScreen = ({ navigation }) => {
       borderWidth: 1, borderColor: `${colors.primary}40`,
     },
     memberBadgeText: {
+      fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.primary,
+    },
+    careerTitleBadge: {
+      marginTop: 6, alignSelf: 'flex-start',
+      flexDirection: 'row', alignItems: 'center', gap: 4,
+      paddingHorizontal: 10, paddingVertical: 4,
+      borderRadius: 20,
+      backgroundColor: `${colors.primary}12`,
+      borderWidth: 1, borderColor: `${colors.primary}32`,
+    },
+    careerTitleText: {
       fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.primary,
     },
     guestCta: {
@@ -339,6 +374,17 @@ const ProfileScreen = ({ navigation }) => {
           <View style={s.headerInfo}>
             <Text style={s.userName} numberOfLines={1}>{profileDisplayName}</Text>
             <Text style={s.userEmail} numberOfLines={1}>{profileEmail}</Text>
+            {careerTitle ? (
+              <TouchableOpacity
+                style={s.careerTitleBadge}
+                onPress={() => navigation.navigate('ProgressTab')}
+                accessibilityRole="button"
+                accessibilityLabel={t('career.profileTitleLabel', lang)}
+              >
+                <Ionicons name="ribbon-outline" size={12} color={colors.primary} />
+                <Text style={s.careerTitleText}>{`${t('career.profileTitleLabel', lang)}: ${careerTitle}`}</Text>
+              </TouchableOpacity>
+            ) : null}
             {isPremium ? (
               <View style={s.memberBadge}>
                 <Ionicons name="sparkles" size={11} color={colors.primary} />
@@ -466,6 +512,36 @@ const ProfileScreen = ({ navigation }) => {
                         <Text style={[s.prefPillText, isSelected && s.prefPillActiveText]}>
                           {option.label}
                         </Text>
+                      </TouchableOpacity>
+                    );
+                  })}
+                </View>
+              </View>
+            </View>
+
+            {/* Hikâye koleksiyonları */}
+            <View style={s.rowDivider}>
+              <View style={s.row}>
+                <View style={rowIconStyle('blue')}>
+                  <Ionicons name="albums-outline" size={18} color={iconColor.blue} />
+                </View>
+                <View style={s.rowContent}>
+                  <Text style={s.rowTitle}>{t('storyVersionSetting', lang)}</Text>
+                  <Text style={s.rowSub}>{t('storyVersionSettingSub', lang)}</Text>
+                </View>
+              </View>
+              <View style={s.expandedRow}>
+                <View style={s.pillGroup}>
+                  {storyCollectionOptions.map((option) => {
+                    const isSelected = selectedStoryCollections.includes(option.value);
+                    return (
+                      <TouchableOpacity
+                        key={option.value}
+                        onPress={() => handleStoryCollectionToggle(option.value)}
+                        style={[s.prefPill, isSelected && s.prefPillActive]}
+                      >
+                        <Ionicons name={option.icon} size={15} color={isSelected ? colors.onPrimary : iconColor.blue} />
+                        <Text style={[s.prefPillText, isSelected && s.prefPillActiveText]}>{option.label}</Text>
                       </TouchableOpacity>
                     );
                   })}
