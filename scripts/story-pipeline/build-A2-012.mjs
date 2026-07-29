@@ -1,0 +1,770 @@
+#!/usr/bin/env node
+/**
+ * build-A2-012.mjs — Is plani Adim 2, altinci parti. Kitap 33 (Outliers /
+ * 10.000 Saat Kurali, Malcolm Gladwell). Uc hikayenin hepsi yeniden yazildi;
+ * kitap tamamlaniyor.
+ *
+ * NEDEN SCRIPT: A2-009'da JSON'i elle yazdim ve en/es icerigindeki kacirilmamis
+ * " karakterleri sozdizimi hatasi verdi. Icerik JS dizesi olarak yazilip
+ * JSON.stringify ile serilestirilince kacis sorunu yapisal olarak ortadan
+ * kalkiyor. Sablon dizesinde $$ guvenli (yalnizca ${ ozel).
+ *
+ * UC OLGUSAL HATA DUZELTILDI:
+ *
+ * 1164 — TARTISMALI TEZ KESIN SUNULMUS (audit-facts `contested` bulgusu) VE
+ *        HIKAYENIN ARITMETIGI TUTMUYOR.
+ *        (a) Eski metin "Ericsson'in arastirmasi ... 10.000 saat gerektigini
+ *            ORTAYA KOYDU" diyordu. Ericsson tam bunu reddetti: 1993 Berlin
+ *            keman calismasi bir ESIK degil ORTALAMA buldu; en iyilerin yarisi
+ *            yirmi yasinda o saatin ALTINDAYDI; o kisiler henuz uzman degil
+ *            akademi ogrencisiydi; ve belirleyici olan sure degil "bilincli
+ *            pratik"ti.
+ *        (b) Beatles hic 10.000 saate ulasmadi. Gladwell 1964'e kadar ~1.200
+ *            PERFORMANS sayisini saat sayisiyla karistiriyor; Mark Lewisohn
+ *            Tune In'de Hamburg donemini sayip ~1.100 SAAT buluyor.
+ *        Eski aciklama alani da yanlisti ("10.000 saatlik pratiklerini
+ *        tamamladigini anlatiyor") — degistirildi.
+ *
+ * 1165 — YANLIS OLGU: "yedinci siniftayken" deniyordu; Gladwell'in anlatiminda
+ *        Gates 1968'de SEKIZINCI siniftaydi (13 yasinda). Ayrica okul
+ *        "bilgisayar satin alacakti" denmisti; gercekte Anneler Kulubu bir
+ *        bit pazarindan 3.000 dolar toplayip BILGISAYAR ZAMANI aldi — sehir
+ *        merkezindeki bir ana bilgisayara bagli ASR-33 teletype terminali.
+ *        O donemde okulun kendi bilgisayarini almasi soz konusu degildi.
+ *
+ * 1166 — YANLIS KAYNAK KURUM: "Kanada'nin MILLI hokey takimina bakiyorsunuz"
+ *        deniyordu. Gladwell'in ornegi milli takim degil, bir GENCLIK LIGI
+ *        takimi: Medicine Hat Tigers (WHL), 2007 Memorial Cup kadrosu.
+ *        Arastirma Roger Barnsley'e ait (1980'lerin ortasi, WHL).
+ *        Ayrica "oyuncularin BUYUK COGUNLUGU" abartiydi: seckin genclik
+ *        kadrolarinda ilk ceyrek payi ~%40 (beklenen %25); Medicine Hat 2007
+ *        kadrosunda %56, rakip Vancouver Giants'ta %44.
+ *        CEKINCE EKLENDI: etki NHL duzeyinde TERSINE doner — gec dogup yine
+ *        de yukari cikanlar orada daha iyi performans gosteriyor. Kumulatif
+ *        avantaj tezinin siniri bu ve metinde hic yoktu.
+ */
+import { writeFileSync } from 'fs';
+import { resolve } from 'path';
+import { ROOT } from './lib/store.mjs';
+
+const OUT = resolve(ROOT, 'staging/batch-A2-012.json');
+
+/* ================================================================== 1164 */
+
+const S1164 = {
+  tr: {
+    title: "Hamburg'da geçen saatler",
+    description:
+      "Gladwell Hamburg'u 10.000 Saat Kuralı'nın en iyi örneği sayıyor. Sayım tutmuyor — ve Hamburg'un gerçekte verdiği şey daha ilginç.",
+    hook: 'Beatles Hamburg\'da on bin saat çalışmadı. Yaklaşık bin yüz saat çalıştı.',
+    content: `1960 yazı. The Beatles'ı henüz kimse tanımıyordu.
+
+Hamburg'dan bir teklif geldi. Bruno Koschmider adlı bir kulüp işletmecisi onları Indra'da sahneye çıkaracaktı. Koşullar ağırdı: uzun setler, haftanın her günü, çok az para. Kaldıkları yer bir sinemanın perdesinin arkasındaki depoydu — beton duvarlar, ısıtma yok, iki ranza.
+
+Indra'da kırk sekiz gece çaldılar. Ardından Kaiserkeller'de elli altı gece.
+
+Koşmider'in her gece bağırdığı iki kelime vardı: "Mach Schau!" Yani şov yap.
+
+##Hamburg'un verdiği şey saat sayısı değildi. Kimsenin onları dinlemek zorunda olmadığı bir salonu, her gece yeniden kazanmak zorunda olmaktı.##
+
+Malcolm Gladwell bu hikâyeyi 10.000 Saat Kuralı'nın en iyi örneği olarak sunuyor. Hesabı şöyle: Amerika'yı fethettikleri 1964'e gelindiğinde grup yaklaşık bin iki yüz kez sahneye çıkmıştı ve setler sekiz saate kadar uzuyordu.
+
+Burada bir aritmetik sorunu var. Bin iki yüzü sekizle çarparsanız on bine yakın bir sayı elde edersiniz; on binin nereden geldiği bu. Ama o bin iki yüz performansın hepsi Hamburg gecesi değildi. Aralarında Liverpool'daki Cavern'in öğle arası setleri, kısa kulüp çıkışları, yarım saatlik sahneler var. Sekiz saatlik gece Hamburg'a özgüydü ve Hamburg o bin iki yüzün küçük bir bölümüydü.
+
+Beatles tarihçisi Mark Lewisohn, Tune In'de Hamburg dönemini kayıt kayıt sayıyor ve toplamı yaklaşık bin yüz saat buluyor. On binin çok altında. Gladwell'in rakamı, performans sayısını saat sayısıyla karıştırmış görünüyor.
+
+Kuralın kendisi de sahibi tarafından reddedildi. Psikolog Anders Ericsson'ın 1993'teki Berlin keman çalışması bir eşik bulmadı, bir ortalama buldu: akademinin en iyi öğrencileri yirmi yaşına kadar ortalama on bin saat çalışmıştı. Ericsson sonradan üç noktayı düzeltti. Ortalama eşik değildir; en iyilerin yarısı o saatin altındaydı. O gençler henüz uzman değildi, uluslararası yarışma kazanmamış öğrencilerdi. Ve belirleyici olan sürenin uzunluğu değil, "bilinçli pratik" denen şeydi: sınırı sürekli zorlayan, geri bildirimle yönlendirilen, tasarlanmış çalışma. Bir enstrümanın başında geçen on bin saat, aynı parçayı on bin kez çalmakla geçtiyse hiçbir şey ifade etmiyor.
+
+Bu, Hamburg'u önemsizleştirmiyor. Tersine daha ilginç hale getiriyor. O geceler gruba bir sayaç doldurmadı; başka şeyler verdi.
+
+Bir gecede beş altı saati doldurmak, ellerindeki parça sayısıyla mümkün değildi. Repertuvarı genişletmek zorunda kaldılar — sevmedikleri şarkıları da öğrenerek, bildiklerini uzatarak, doğaçlama yaparak. Bir kalabalığın ne zaman sıkıldığını yüzlerden okumayı öğrendiler, çünkü sıkılan kalabalık gidiyordu ve gidince para kesiliyordu. Birbirlerinin bir sonraki hamlesini duymadan bilmeye başladılar, çünkü yüzlerce gece aynı dört kişiyle aynı sahnede durdular.
+
+Fark şurada. On bin saat bir sayaçtır; ne kadar geçtiğini söyler. Hamburg bir koşuldur; neyin öğrenilmek zorunda olduğunu söyler. İkisini karıştırınca, pratiğin miktarı niteliğinin yerine geçiyor — ve ölçmesi kolay olan şey, önemli olan şeyin yerini alıyor.
+
+$$Saatler kendiliğinden ustalık üretmez — o saatlerde neyi zorladığın üretir.$$
+
+&&İyi olmak istediğin alanda geçirdiğin zamanın ne kadarı gerçekten sınırını zorluyor, ne kadarı bildiğini tekrar etmek?&&`,
+    punchline:
+      'Beatles Hamburg\'da on bin saat çalışmadı; Lewisohn\'un sayımı yaklaşık bin yüz saat.',
+    thirty_sec:
+      'Gladwell, Beatles\'ın Hamburg yıllarını 10.000 Saat Kuralı\'nın en iyi örneği sayıyor: 1964\'e kadar bin iki yüz kez sahne, setler sekiz saate kadar. Ama tarihçi Mark Lewisohn Hamburg\'u saat saat sayıyor ve yaklaşık bin yüz saat buluyor; Gladwell performans sayısını saatle karıştırmış görünüyor. Kuralı Ericsson\'ın kendisi de reddetti: 1993 çalışması bir eşik değil ortalama buldu ve en iyilerin yarısı o saatin altındaydı.',
+    question:
+      'Bir alanda geçirdiğin saatlerin kaçı sınırını zorluyor, kaçı bildiğini tekrar ediyor?',
+    key_contrast: 'Sayaç değil, koşul',
+  },
+  en: {
+    title: 'The hours that Hamburg actually bought',
+    description:
+      'Gladwell treats Hamburg as the best case for the 10,000-hour rule. The arithmetic does not hold — and what Hamburg really gave them is more interesting.',
+    hook: 'The Beatles did not put in ten thousand hours in Hamburg. They put in about eleven hundred.',
+    content: `Summer 1960. Nobody knew the Beatles.
+
+An offer came from Hamburg. A club operator named Bruno Koschmider would put them on at the Indra: long sets, every night of the week, very little money. They slept in a storeroom behind a cinema screen — concrete walls, no heating, two sets of bunk beds.
+
+Forty-eight nights at the Indra. Then fifty-six more at the Kaiserkeller.
+
+Koschmider had two words he shouted at them every night: "Mach Schau!" Put on a show.
+
+##What Hamburg gave them was not a number of hours. It was having to win back a room, every single night, that had no obligation to listen.##
+
+Malcolm Gladwell presents this story as the best illustration of the 10,000-hour rule. His arithmetic runs like this: by 1964, the year they took America, the band had performed live an estimated twelve hundred times, with sets running up to eight hours.
+
+There is a problem with that sum. Multiply twelve hundred by eight and you land near ten thousand; that is where the number comes from. But those twelve hundred performances were not all Hamburg nights. They include lunchtime sets at the Cavern in Liverpool and half-hour club slots. The eight-hour night was particular to Hamburg, and Hamburg was a small fraction of the twelve hundred.
+
+The Beatles historian Mark Lewisohn counts the Hamburg period booking by booking in Tune In and arrives at roughly eleven hundred hours. Far short of ten thousand. Gladwell's figure appears to have conflated the number of performances with the number of hours.
+
+The rule itself was disowned by the man whose work produced it. Anders Ericsson's 1993 study of violinists in Berlin did not find a threshold; it found an average — the academy's best students had accumulated about ten thousand hours by age twenty. Ericsson later corrected three things. An average is not a threshold — half of the best were below it. Those students were not yet experts; they had won no international competitions. And what mattered was not the quantity of time but deliberate practice: designed work that keeps pushing past the edge of current ability, steered by feedback. Ten thousand hours mean nothing if they were spent playing the same piece ten thousand times.
+
+None of this makes Hamburg trivial. Those nights did not fill a counter; they gave the band other things.
+
+Filling six hours a night was not possible with the songs they had. They widened the repertoire — learning material they disliked, stretching what they knew, improvising. They learned to read a crowd's boredom off its faces, because a bored crowd left and the money stopped with it. And they came to know each other's next move without hearing it, after hundreds of nights on the same stage.
+
+Here is the distinction. Ten thousand hours is a counter — it tells you how much time went by. Hamburg was a condition — it tells you what had to be learned. Confuse the two and the easy-to-measure quantity of practice quietly takes the place of its quality.
+
+$$Hours do not produce mastery on their own — what you push against during them does.$$
+
+&&In the field you want to be good at, how much of your time is spent past your edge, and how much repeating what you already know?&&`,
+    punchline:
+      'The Beatles never hit ten thousand hours in Hamburg; Lewisohn counts about eleven hundred.',
+    thirty_sec:
+      'Gladwell treats the Beatles in Hamburg as the best case for the 10,000-hour rule: twelve hundred performances by 1964, sets running up to eight hours. But the historian Mark Lewisohn counts Hamburg booking by booking and arrives at roughly eleven hundred hours; Gladwell appears to have conflated performances with hours. Ericsson himself disowned the rule: his 1993 study found an average, not a threshold, and half the best players were below it.',
+    question:
+      'How many of your hours in a field push past your edge, and how many repeat what you know?',
+    key_contrast: 'A counter, not a condition',
+  },
+  es: {
+    title: 'Las horas que Hamburgo compró de verdad',
+    description:
+      'Gladwell considera Hamburgo el mejor ejemplo de la regla de las 10.000 horas. La cuenta no cuadra, y lo que Hamburgo dio de verdad es más interesante.',
+    hook: 'Los Beatles no hicieron diez mil horas en Hamburgo. Hicieron unas mil cien.',
+    content: `Verano de 1960. Nadie conocía a los Beatles.
+
+Llegó una oferta de Hamburgo. Un empresario de clubes llamado Bruno Koschmider los pondría en el Indra: sesiones largas, todas las noches, muy poco dinero. Dormían en un almacén detrás de la pantalla de un cine: paredes de hormigón, sin calefacción, dos literas.
+
+Cuarenta y ocho noches en el Indra. Después cincuenta y seis más en el Kaiserkeller.
+
+Koschmider tenía dos palabras que les gritaba cada noche: "Mach Schau!" Haz espectáculo.
+
+##Lo que Hamburgo les dio no fue un número de horas. Fue tener que ganarse una sala, noche tras noche, que no tenía ninguna obligación de escucharlos.##
+
+Malcolm Gladwell presenta esta historia como la mejor ilustración de la regla de las 10.000 horas. Su cuenta es así: para 1964, el año en que conquistaron América, el grupo había actuado en directo unas mil doscientas veces, con sesiones que llegaban a ocho horas.
+
+Hay un problema con esa suma. Multiplica mil doscientas por ocho y te acercas a diez mil; de ahí sale la cifra. Pero esas mil doscientas actuaciones no eran todas noches de Hamburgo. Incluyen las sesiones de mediodía en el Cavern de Liverpool y turnos de media hora en clubes. La noche de ocho horas era propia de Hamburgo, y Hamburgo era una fracción pequeña de esas mil doscientas.
+
+El historiador de los Beatles Mark Lewisohn cuenta el periodo de Hamburgo contrato por contrato en Tune In y llega a unas mil cien horas. Muy lejos de diez mil. La cifra de Gladwell parece haber confundido el número de actuaciones con el número de horas.
+
+La regla fue desautorizada por el investigador cuyo trabajo la originó. El estudio de Anders Ericsson de 1993 sobre violinistas en Berlín no encontró un umbral, sino un promedio: los mejores estudiantes de la academia acumulaban unas diez mil horas a los veinte años. Ericsson corrigió después tres cosas. Un promedio no es un umbral: la mitad de los mejores estaba por debajo. Esos estudiantes aún no eran expertos; no habían ganado ninguna competición internacional. Y lo decisivo no era la cantidad de tiempo sino la práctica deliberada: trabajo diseñado que empuja más allá del límite actual, guiado por la retroalimentación. Diez mil horas no significan nada si se pasaron tocando la misma pieza diez mil veces.
+
+Nada de esto vuelve trivial a Hamburgo. Esas noches no llenaron un contador; le dieron al grupo otras cosas.
+
+Llenar seis horas en una noche no era posible con las canciones que tenían. Ampliaron el repertorio: aprendiendo material que no les gustaba, alargando lo que sabían, improvisando. Aprendieron a leer el aburrimiento del público en las caras: un público aburrido se iba y con él el dinero. Y llegaron a saber el siguiente movimiento del otro sin oírlo, tras cientos de noches juntos.
+
+La distinción: diez mil horas es un contador, dice cuánto tiempo pasó. Hamburgo fue una condición: dice qué había que aprender. Al confundirlas, la cantidad de práctica, fácil de medir, ocupa en silencio el lugar de su calidad.
+
+$$Las horas no producen maestría por sí solas: lo produce aquello contra lo que empujas durante ellas.$$
+
+&&En el campo en el que quieres ser bueno, ¿cuánto de tu tiempo se pasa más allá de tu límite y cuánto repitiendo lo que ya sabes?&&`,
+    punchline:
+      'Los Beatles nunca llegaron a diez mil horas en Hamburgo; Lewisohn cuenta unas mil cien.',
+    thirty_sec:
+      'Gladwell considera a los Beatles en Hamburgo el mejor ejemplo de la regla de las 10.000 horas: mil doscientas actuaciones para 1964, sesiones de hasta ocho horas. Pero el historiador Mark Lewisohn cuenta Hamburgo contrato por contrato y llega a unas mil cien horas; Gladwell parece haber confundido actuaciones con horas. Ericsson mismo desautorizó la regla: su estudio de 1993 encontró un promedio, no un umbral, y la mitad de los mejores estaba por debajo.',
+    question:
+      '¿Cuántas de tus horas en un campo van más allá de tu límite y cuántas repiten lo que ya sabes?',
+    key_contrast: 'Un contador, no una condición',
+  },
+  de: {
+    title: 'Die Stunden, die Hamburg wirklich brachte',
+    description:
+      'Gladwell hält Hamburg für das beste Beispiel der 10.000-Stunden-Regel. Die Rechnung stimmt nicht — und was Hamburg wirklich gab, ist interessanter.',
+    hook: 'Die Beatles spielten in Hamburg keine zehntausend Stunden. Es waren etwa elfhundert.',
+    content: `Sommer 1960. Niemand kannte die Beatles.
+
+Aus Hamburg kam ein Angebot. Ein Klubbetreiber namens Bruno Koschmider wollte sie im Indra auf die Bühne stellen. Die Bedingungen waren hart: lange Sets, jeden Abend der Woche, sehr wenig Geld. Sie schliefen in einem Lagerraum hinter der Leinwand eines Kinos – Betonwände, keine Heizung, zwei Etagenbetten.
+
+Im Indra spielten sie achtundvierzig Nächte. Danach sechsundfünfzig weitere im Kaiserkeller.
+
+Koschmider hatte zwei Worte, die er ihnen jeden Abend zurief: „Mach Schau!“
+
+##Was Hamburg ihnen gab, war keine Stundenzahl. Es war die Pflicht, einen Saal jeden Abend neu zu gewinnen, der sie überhaupt nicht hören musste.##
+
+Malcolm Gladwell führt diese Geschichte als beste Illustration der 10.000-Stunden-Regel an. Seine Rechnung: Bis 1964, dem Jahr ihrer Eroberung Amerikas, war die Band schätzungsweise zwölfhundert Mal live aufgetreten, mit Sets von bis zu acht Stunden.
+
+Mit dieser Summe gibt es ein Problem. Multipliziert man zwölfhundert mit acht, landet man nahe zehntausend; daher kommt die Zahl. Aber diese zwölfhundert Auftritte waren nicht alle Hamburger Nächte. Darunter sind die Mittagssets im Cavern in Liverpool, kurze Klubauftritte, halbstündige Slots. Die achtstündige Nacht war eine Hamburger Besonderheit, und Hamburg war ein kleiner Teil dieser zwölfhundert.
+
+Der Beatles-Historiker Mark Lewisohn zählt die Hamburger Zeit in Tune In Engagement für Engagement und kommt auf rund elfhundert Stunden. Weit unter zehntausend. Gladwells Zahl scheint die Anzahl der Auftritte mit der Anzahl der Stunden verwechselt zu haben.
+
+Auch die Regel selbst wurde von dem Forscher zurückgewiesen, aus dessen Arbeit sie stammt. Anders Ericssons Studie über Berliner Geigenstudierende von 1993 fand keine Schwelle, sondern einen Durchschnitt: Die besten Studierenden der Akademie hatten mit zwanzig Jahren im Mittel zehntausend Übungsstunden angesammelt. Ericsson korrigierte später drei Punkte. Ein Durchschnitt ist keine Schwelle – die Hälfte der Besten lag darunter. Diese Studierenden waren noch keine Expertinnen und Experten; sie hatten keinen internationalen Wettbewerb gewonnen. Und entscheidend war nicht die Menge der Zeit, sondern was er bewusstes Üben nannte: gestaltete Arbeit, die ständig über die aktuelle Grenze hinausdrängt und von Rückmeldung gesteuert wird. Zehntausend Stunden an einem Instrument bedeuten nichts, wenn dabei zehntausend Mal dasselbe Stück gespielt wurde.
+
+Das macht Hamburg nicht unwichtig. Es macht Hamburg interessanter. Diese Nächte füllten keinen Zähler; sie gaben der Band anderes.
+
+Fünf oder sechs Stunden in einer Nacht zu füllen war mit den Liedern, die sie hatten, nicht möglich. Sie mussten das Repertoire erweitern – Material lernen, das sie nicht mochten, Bekanntes ausdehnen, improvisieren. Sie lernten, die Langeweile eines Publikums von den Gesichtern zu lesen, denn ein gelangweiltes Publikum ging, und wenn es ging, blieb das Geld aus. Sie begannen, den nächsten Schritt des anderen zu kennen, ohne ihn zu hören, weil sie hunderte Nächte mit denselben drei Leuten auf derselben Bühne standen.
+
+Der Unterschied liegt hier. Zehntausend Stunden sind ein Zähler – er sagt, wie viel Zeit verging. Hamburg war eine Bedingung – sie sagt, was gelernt werden musste. Wer beides verwechselt, lässt die Menge des Übens stillschweigend an die Stelle seiner Qualität treten – und das leicht Messbare tritt an die Stelle des Wichtigen.
+
+$$Stunden erzeugen keine Meisterschaft von selbst – das tut, wogegen man in ihnen andrückt.$$
+
+&&Wie viel Ihrer Zeit in dem Feld, in dem Sie gut werden wollen, liegt jenseits Ihrer Grenze, und wie viel wiederholt, was Sie schon können?&&`,
+    punchline:
+      'Die Beatles kamen in Hamburg nie auf zehntausend Stunden; Lewisohn zählt etwa elfhundert.',
+    thirty_sec:
+      'Gladwell hält die Beatles in Hamburg für das beste Beispiel der 10.000-Stunden-Regel: zwölfhundert Auftritte bis 1964, Sets von bis zu acht Stunden. Doch der Historiker Mark Lewisohn zählt Hamburg Engagement für Engagement und kommt auf rund elfhundert Stunden; Gladwell scheint Auftritte mit Stunden verwechselt zu haben. Ericsson selbst wies die Regel zurück: Seine Studie von 1993 fand einen Durchschnitt, keine Schwelle, und die Hälfte der Besten lag darunter.',
+    question:
+      'Wie viele Ihrer Stunden in einem Feld gehen über Ihre Grenze hinaus, und wie viele wiederholen Bekanntes?',
+    key_contrast: 'Zähler, nicht Bedingung',
+  },
+};
+
+/* ================================================================== 1165 */
+
+const S1165 = {
+  tr: {
+    title: 'Lakeside ve bit pazarından çıkan terminal',
+    description:
+      "1968'de Lakeside'ın anneleri bir bit pazarından 3.000 dolar toplayıp bilgisayar zamanı satın aldı. Sekizinci sınıftaki Gates o terminalin başına yerleşti.",
+    hook: 'Okul bilgisayar almadı. Bir terminal kiraladı — ve 13 yaşındaki Gates başından kalkmadı.',
+    content: `1968. Seattle'daki Lakeside School adlı özel okulda anneler bir bit pazarı düzenledi.
+
+Topladıkları para üç bin dolardı. Bu parayla okula bilgisayar almadılar — o yıllarda bir okulun bilgisayar sahibi olması söz konusu değildi. Aldıkları şey bilgisayar zamanıydı: şehir merkezindeki bir ana bilgisayara telefon hattıyla bağlanan bir ASR-33 teletype terminali.
+
+Fark küçük görünüyor ama değildi. O yılların standart yöntemi delikli karttı: programını kartlara yazıyor, kartları teslim ediyor, sonucu bir gün sonra alıyordun. Bir hata varsa bir gün kaybetmiş oluyordun.
+
+Terminal bunu ortadan kaldırdı. Öğrenciler artık bir makineye komut yazıp cevabını aynı anda görebiliyordu. Yani deneyip yanılmak saatler değil saniyeler alıyordu.
+
+##Bill Gates o sırada sekizinci sınıftaydı. On üç yaşında. Ve o terminalin başından kalkmadı.##
+
+Malcolm Gladwell bunu olağanüstü bir fırsat olarak anlatıyor. 1968'de üniversitelerin çoğunda bile böyle bir erişim yoktu. Zaman paylaşımlı bir terminale sınırsız erişimi olan on üç yaşındakilerin sayısı dünyada bir elin parmaklarını geçmiyordu.
+
+Ama Gladwell'in anlattığı hikâyenin ikinci yarısı genelde atlanıyor. Gates fırsatı beklemedi, peşine düştü.
+
+Terminalin ücretli süresi kısa sürede tükendi. Gates ve arkadaşları başka kapılar aradı.
+
+Şehirdeki bir bilgisayar şirketinde, sistemin çökmesine yol açan hataları bulmak karşılığında makineye erişim buldular. Şirket kapanınca o kapı da kapandı. Washington Üniversitesi'nin bilgisayar merkezinde gece üçle altı arası kimsenin kullanmadığı saatleri keşfettiler; Gates o saatlerde çalışmak için evden gizlice çıkıyordu. Bir maaş bordro programı yazma işi için okul yönetiminden derslere girmeme izni kopardı.
+
+Yani ortada iki ayrı şey var: kendisine verilen erişim ve kendisinin kovaladığı erişim. İkincisi daha uzun sürdü.
+
+On altı yaşına geldiğinde arkasında binlerce saatlik programlama vardı. Yaşıtlarının çoğu bir bilgisayarı henüz görmemişti.
+
+Sonra 1975 geldi. Kişisel bilgisayar devrimi patladığında Gates hazırdı — çünkü yedi yıl boyunca hazırlanmıştı. Gates yıllar sonra Lakeside olmasaydı Microsoft'un da olmayacağını söyledi.
+
+Gladwell'in sorusu şu: her büyük başarının arkasında bu tür bir olağanüstü fırsat var mı?
+
+Cevabı "evet" ama iki katmanlı bir evet. Fırsat gerekli, yeterli değil. 1968'de o terminalin başına oturan tek çocuk Gates değildi; Lakeside'da bir bilgisayar kulübü vardı ve içinde başka öğrenciler de vardı. Onların çoğu bir yazılım imparatorluğu kurmadı. Aynı okul, aynı terminal, aynı yıl.
+
+Fark, fırsatın kendisinde değil, fırsatın önüne çıktığı kişide ne bulduğundadır. Aynı terminal birine bir ders saatiydi, birine yedi yıllık bir saplantı.
+
+Buradan çıkan sonuç rahatsız edici olabilir. Gladwell'in tezi "çalışmak önemli değil" demiyor; "yalnızca çalışmak yetmez" diyor. Gates'in binlerce saati gerçekti ve o saatleri kimse ona hediye etmedi. Ama o saatleri toplayabileceği bir yerde bulunması bir tercih değildi. On üç yaşındaki bir çocuğun 1968'de Seattle'ın o okulunda olması ile Ankara'nın herhangi bir okulunda olması arasındaki fark, çabayla kapatılabilecek bir fark değil.
+
+$$Şans kapıyı açar — o kapıdan kaç kez geçtiğin sana kalır.$$
+
+&&Hayatındaki en büyük fırsatı düşün: onu değerlendirebilmeni sağlayan birikimi öncesinde nasıl toplamıştın?&&`,
+    punchline:
+      "Lakeside'ın anneleri bit pazarında üç bin dolar topladı; parayla bilgisayar değil, bilgisayar zamanı aldılar.",
+    thirty_sec:
+      "1968'de Lakeside School'da anneler bir bit pazarından üç bin dolar topladı ve okula bilgisayar zamanı aldı: şehir merkezindeki bir ana bilgisayara bağlı bir teletype terminali. Sekizinci sınıftaki Bill Gates o terminalin başından kalkmadı. Gladwell bunu olağanüstü bir fırsat sayıyor — 1968'de böyle erişimi olan on üç yaşındakiler bir elin parmakları kadardı. Ama Gates fırsatı beklemedi; ücretli süre bitince gece saatlerini kovaladı.",
+    question:
+      'En büyük fırsatını değerlendirmeni sağlayan birikimi öncesinde nasıl toplamıştın?',
+    key_contrast: 'Bilgisayar değil, zaman',
+  },
+  en: {
+    title: 'Lakeside and the terminal a rummage sale paid for',
+    description:
+      "In 1968 the Lakeside mothers raised $3,000 at a rummage sale and bought computer time. Gates, in eighth grade, never left the terminal.",
+    hook: 'The school did not buy a computer. It rented a terminal — and a thirteen-year-old never left it.',
+    content: `1968. At a private school called Lakeside in Seattle, the mothers ran a rummage sale.
+
+They raised three thousand dollars. They did not buy the school a computer with it — a school owning a computer was out of the question in those years. What they bought was computer time: an ASR-33 Teletype, a terminal that dialled into a mainframe downtown over a phone line.
+
+Students could now type a command into a machine and watch it answer in the same moment.
+
+##Bill Gates was in eighth grade. Thirteen years old. And he never left that terminal.##
+
+Malcolm Gladwell tells this as an extraordinary piece of luck. In 1968 most universities had no such access. The number of thirteen-year-olds anywhere in the world with unlimited time on a time-sharing terminal could be counted on one hand.
+
+But the second half of Gladwell's story usually gets dropped. Gates did not wait for opportunity; he chased it.
+
+The paid time ran out quickly. Gates and his friends went looking for other doors.
+
+At a computer company in the city they got machine access in exchange for finding the bugs that crashed the system. When the company folded, that door closed too. At the University of Washington computer centre they discovered the hours between three and six in the morning when nobody was using it, and Gates slipped out of the house to work then. He talked the school administration into excusing him from classes to write a payroll program.
+
+So there are two separate things here: the access he was handed, and the access he chased. The second lasted longer.
+
+By sixteen he had thousands of hours of programming behind him. Most of his contemporaries had not yet seen a computer.
+
+Then 1975 arrived. When the personal computer revolution broke, Gates was ready — because he had spent seven years getting ready. Years later he said that without Lakeside there would have been no Microsoft.
+
+Gladwell's question is whether every great success has an extraordinary opportunity behind it.
+
+His answer is yes, but a yes with two layers. Opportunity is necessary and not sufficient. Gates was not the only child who sat at that terminal in 1968; Lakeside had a computer club and there were other students in it. Most of them did not build a software empire. Same school, same terminal, same year.
+
+The difference lies not in the opportunity but in what the opportunity finds when it arrives. The same terminal was one period of the timetable to one boy and a seven-year obsession to another.
+
+The conclusion can be uncomfortable. Gladwell's thesis is not that effort does not matter; it is that effort alone is not enough. Gates's thousands of hours were real, and nobody made him a gift of them. But being somewhere he could accumulate those hours was not a choice he made. The gap between being thirteen at that particular school in Seattle in 1968 and being thirteen at almost any other school on earth is not a gap effort closes.
+
+$$Luck opens the door — how many times you walk through it is yours.$$
+
+&&Think of the largest opportunity in your life: how had you accumulated, beforehand, what it took to use it?&&`,
+    punchline:
+      'The Lakeside mothers raised three thousand dollars at a rummage sale — and bought computer time, not a computer.',
+    thirty_sec:
+      "In 1968 the mothers at Lakeside School raised three thousand dollars at a rummage sale and bought the school computer time: a Teletype terminal dialling into a mainframe downtown. Bill Gates, in eighth grade, never left it. Gladwell calls this extraordinary luck — in 1968 you could count on one hand the thirteen-year-olds with that kind of access. But Gates did not wait for opportunity; when the paid hours ran out he went hunting for the ones nobody wanted.",
+    question:
+      'How had you accumulated, beforehand, whatever it took to use your biggest opportunity?',
+    key_contrast: 'Not a computer, time',
+  },
+  es: {
+    title: 'Lakeside y el terminal que pagó un mercadillo',
+    description:
+      'En 1968 las madres de Lakeside recaudaron 3.000 dólares en un mercadillo y compraron tiempo de computación. Gates, en octavo curso, no se levantó del terminal.',
+    hook: 'La escuela no compró un ordenador. Alquiló un terminal, y un chico de trece años no se levantó de él.',
+    content: `1968. En una escuela privada llamada Lakeside, en Seattle, las madres organizaron un mercadillo.
+
+Recaudaron tres mil dólares. No compraron un ordenador para la escuela: que un colegio tuviera un ordenador era impensable en esos años. Lo que compraron fue tiempo de computación: un ASR-33 Teletype, un terminal que se conectaba por línea telefónica a un ordenador central en el centro de la ciudad.
+
+Los estudiantes ya podían escribir una orden en una máquina y ver la respuesta en el mismo instante.
+
+##Bill Gates estaba en octavo curso. Trece años. Y no se levantó de ese terminal.##
+
+Malcolm Gladwell lo cuenta como una suerte extraordinaria. En 1968 la mayoría de las universidades no tenía ese acceso. Los chicos de trece años con tiempo ilimitado en un terminal de tiempo compartido se contaban con los dedos de una mano en todo el mundo.
+
+Pero la segunda mitad de la historia de Gladwell suele omitirse. Gates no esperó la oportunidad; la persiguió.
+
+El tiempo pagado se agotó pronto. Gates y sus amigos buscaron otras puertas.
+
+En una empresa de informática de la ciudad consiguieron acceso a la máquina a cambio de encontrar los errores que hacían caer el sistema. Cuando la empresa cerró, esa puerta se cerró también. En el centro de cálculo de la Universidad de Washington descubrieron las horas entre las tres y las seis de la mañana en que nadie lo usaba, y Gates salía de casa a escondidas para trabajar entonces. Convenció a la dirección del colegio de que lo dispensara de clases para escribir un programa de nóminas.
+
+Hay entonces dos cosas distintas: el acceso que le dieron y el acceso que persiguió. El segundo duró más.
+
+A los dieciséis tenía miles de horas de programación detrás. La mayoría de sus contemporáneos aún no había visto un ordenador.
+
+Luego llegó 1975. Cuando estalló la revolución del ordenador personal, Gates estaba listo, porque llevaba siete años preparándose. Años más tarde dijo que sin Lakeside no habría existido Microsoft.
+
+La pregunta de Gladwell es si detrás de todo gran éxito hay una oportunidad extraordinaria.
+
+Su respuesta es sí, pero un sí de dos capas. La oportunidad es necesaria y no suficiente. Gates no fue el único niño que se sentó a ese terminal en 1968; Lakeside tenía un club de informática y había otros estudiantes en él. La mayoría no construyó un imperio de software. Mismo colegio, mismo terminal, mismo año.
+
+La diferencia no está en la oportunidad, sino en lo que la oportunidad encuentra al llegar. El mismo terminal fue una hora del horario para uno y una obsesión de siete años para otro.
+
+La conclusión puede resultar incómoda. La tesis de Gladwell no es que el esfuerzo no importe, sino que el esfuerzo solo no basta. Las miles de horas de Gates fueron reales y nadie se las regaló. Pero estar en un lugar donde podía acumularlas no fue una decisión suya. La distancia entre tener trece años en ese colegio de Seattle en 1968 y tenerlos en casi cualquier otro colegio del mundo no es una distancia que cierre el esfuerzo.
+
+$$La suerte abre la puerta; cuántas veces la cruzas es cosa tuya.$$
+
+&&Piensa en la mayor oportunidad de tu vida: ¿cómo habías acumulado antes lo que hacía falta para aprovecharla?&&`,
+    punchline:
+      'Las madres de Lakeside recaudaron tres mil dólares en un mercadillo y compraron tiempo de computación, no un ordenador.',
+    thirty_sec:
+      'En 1968 las madres de Lakeside School recaudaron tres mil dólares en un mercadillo y compraron tiempo de computación: un terminal Teletype conectado a un ordenador central de la ciudad. Bill Gates, en octavo curso, no se levantó de allí. Gladwell lo llama suerte extraordinaria: en 1968 los chicos de trece años con ese acceso cabían en una mano. Pero Gates no esperó la oportunidad; cuando acabaron las horas pagadas fue a buscar las que nadie quería.',
+    question:
+      '¿Cómo habías acumulado antes lo que hacía falta para aprovechar tu mayor oportunidad?',
+    key_contrast: 'No un ordenador, tiempo',
+  },
+  de: {
+    title: 'Lakeside und das Terminal aus dem Flohmarkt',
+    description:
+      ' 1968 sammelten die Mütter von Lakeside auf einem Flohmarkt 3.000 Dollar und kauften Rechenzeit. Gates, in der achten Klasse, ging nicht mehr weg.',
+    hook: 'Die Schule kaufte keinen Computer. Sie mietete ein Terminal – und ein Dreizehnjähriger ging nicht mehr weg.',
+    content: `1968. An einer Privatschule namens Lakeside in Seattle richteten die Mütter einen Flohmarkt aus.
+
+Sie nahmen dreitausend Dollar ein. Davon kauften sie der Schule keinen Computer – dass eine Schule einen Computer besitzt, war in jenen Jahren ausgeschlossen. Was sie kauften, war Rechenzeit: ein ASR-33 Teletype, ein Terminal, das sich über eine Telefonleitung in einen Großrechner in der Innenstadt einwählte.
+
+Die Schülerinnen und Schüler konnten nun einen Befehl in eine Maschine tippen und im selben Moment die Antwort sehen.
+
+##Bill Gates war in der achten Klasse. Dreizehn Jahre alt. Und er ging von diesem Terminal nicht mehr weg.##
+
+Malcolm Gladwell erzählt das als außergewöhnliches Glück. 1968 hatten die meisten Universitäten keinen solchen Zugang. Die Zahl der Dreizehnjährigen weltweit mit unbegrenzter Zeit an einem Time-Sharing-Terminal ließ sich an einer Hand abzählen.
+
+Die zweite Hälfte von Gladwells Geschichte wird meist weggelassen. Gates wartete nicht auf die Gelegenheit; er verfolgte sie.
+
+Die bezahlte Zeit war schnell aufgebraucht. Gates und seine Freunde suchten andere Türen.
+
+Bei einem Computerunternehmen in der Stadt bekamen sie Maschinenzugang dafür, dass sie die Fehler fanden, die das System abstürzen ließen. Als das Unternehmen schloss, fiel auch diese Tür zu. Im Rechenzentrum der University of Washington entdeckten sie die Stunden zwischen drei und sechs Uhr morgens, in denen es niemand benutzte, und Gates schlich sich nachts aus dem Haus, um dann zu arbeiten. Er überredete die Schulleitung, ihn vom Unterricht zu befreien, damit er ein Lohnabrechnungsprogramm schreiben konnte.
+
+Es sind also zwei verschiedene Dinge: der Zugang, den man ihm gab, und der Zugang, den er sich holte. Der zweite hielt länger.
+
+Mit sechzehn lagen Tausende Programmierstunden hinter ihm. Die meisten Gleichaltrigen hatten noch keinen Computer gesehen.
+
+Dann kam 1975. Als die Revolution des Personal Computers losbrach, war Gates bereit – weil er sich sieben Jahre lang vorbereitet hatte. Jahre später sagte er, ohne Lakeside hätte es Microsoft nicht gegeben.
+
+Gladwells Frage lautet, ob hinter jedem großen Erfolg eine außergewöhnliche Gelegenheit steht.
+
+Seine Antwort ist ja, aber ein Ja mit zwei Schichten. Gelegenheit ist notwendig und nicht ausreichend. Gates war nicht das einzige Kind, das 1968 an diesem Terminal saß; Lakeside hatte einen Computerklub, und darin waren andere Schüler. Die meisten bauten kein Softwareimperium. Dieselbe Schule, dasselbe Terminal, dasselbe Jahr.
+
+Der Unterschied liegt nicht in der Gelegenheit, sondern darin, was die Gelegenheit vorfindet, wenn sie kommt. Dasselbe Terminal war für einen eine Schulstunde und für einen anderen eine siebenjährige Obsession.
+
+Der Schluss kann unangenehm sein. Gladwells These lautet nicht, Anstrengung sei unwichtig, sondern Anstrengung allein genüge nicht. Gates' Tausende Stunden waren echt, und niemand hat sie ihm geschenkt. Doch dass er an einem Ort war, an dem er sie ansammeln konnte, war keine Entscheidung von ihm. Der Abstand zwischen einem Dreizehnjährigen an genau dieser Schule in Seattle im Jahr 1968 und einem Dreizehnjährigen an fast jeder anderen Schule der Welt ist kein Abstand, den Anstrengung schließt.
+
+$$Das Glück öffnet die Tür – wie oft man hindurchgeht, liegt bei einem selbst.$$
+
+&&Denken Sie an die größte Gelegenheit Ihres Lebens: Wie hatten Sie vorher angesammelt, was nötig war, um sie zu nutzen?&&`,
+    punchline:
+      'Die Mütter von Lakeside sammelten dreitausend Dollar auf einem Flohmarkt – und kauften Rechenzeit, keinen Computer.',
+    thirty_sec:
+      '1968 sammelten die Mütter der Lakeside School auf einem Flohmarkt dreitausend Dollar und kauften der Schule Rechenzeit: ein Teletype-Terminal, das sich in einen Großrechner in der Innenstadt einwählte. Bill Gates, in der achten Klasse, ging nicht mehr weg. Gladwell nennt das außergewöhnliches Glück – 1968 ließen sich die Dreizehnjährigen mit solchem Zugang an einer Hand abzählen. Doch Gates wartete nicht; als die bezahlten Stunden endeten, jagte er die, die niemand wollte.',
+    question:
+      'Wie hatten Sie vorher angesammelt, was nötig war, um Ihre größte Gelegenheit zu nutzen?',
+    key_contrast: 'Kein Computer, Zeit',
+  },
+};
+
+/* ================================================================== 1166 */
+
+const S1166 = {
+  tr: {
+    title: 'Ocak doğanların ligi',
+    description:
+      "Gladwell'in hokey örneği bir kesim tarihinin nasıl yetenek gibi göründüğünü anlatıyor. Etki gerçek — ve profesyonel düzeyde tersine dönüyor.",
+    hook: 'Bir gençlik ligi kadrosunun yarısı yılın ilk üç ayında doğmuşsa, ortada yetenek yoktur; takvim vardır.',
+    content: `Kanada'da bir gençlik hokeyi takımının kadro listesine bakıyorsunuz. Medicine Hat Tigers, 2007 Memorial Cup finalisti. Ülkenin en iyi genç oyuncularının bir araya geldiği yer.
+
+Doğum tarihlerine bakıyorsunuz.
+
+Ve garip bir örüntü görüyorsunuz: oyuncuların çok büyük bir bölümü Ocak, Şubat ya da Mart'ta doğmuş.
+
+Tesadüf değil. Ve yeteneğin doğum ayına göre dağıldığını düşünmek için elimizde hiçbir sebep yok.
+
+##Kanada'da gençlik hokeyinde yaş kesim tarihi 1 Ocak. Yani Ocak'ta doğan çocuk, Aralık'ta doğanla aynı yaş grubunda oynuyor. Ama aralarında neredeyse bir yıl var.##
+
+Dokuz yaşındaki bir çocuk için bir yıl uzun bir süredir. Ergenlik öncesinde on iki ayın getirdiği boy, kilo ve koordinasyon farkı gözle görülür. Ocak çocuğu daha iri, daha koordineli, daha hızlı.
+
+Antrenör kadroyu seçerken yetenek görüyor. Aslında olgunluk görüyor. Ve arada bir fark olduğunu anlamasının kolay bir yolu yok, çünkü ikisi sahada aynı şeye benziyor.
+
+Sonrası kendi kendini besliyor. Seçilen çocuk daha iyi takıma giriyor. Daha iyi koçlarla çalışıyor. Sezonda iki kat maç oynuyor, iki kat antrenman yapıyor. Yanındaki oyuncular daha iyi olduğu için daha hızlı gelişiyor. Bir sonraki seçmede daha iyi görünüyor ve yeniden seçiliyor.
+
+Birkaç yıl içinde gerçekten daha iyi oluyor. Ama artık daha iyi olmasının sebebi Ocak'ta doğması değil; sistemin ona sistematik olarak daha fazla fırsat vermiş olması.
+
+Bu örüntüyü ilk kez psikolog Roger Barnsley 1980'lerin ortasında gösterdi. Bir maçta eline aldığı kadro programındaki doğum tarihlerini fark etti, sonra oturup Batı Kanada Hokey Ligi'nin kadrolarını saydı.
+
+Rakamlar şöyle: seçkin gençlik kadrolarında yılın ilk çeyreğinde doğanların payı yaklaşık yüzde kırk. Doğumlar rastgele dağılsaydı yüzde yirmi beş olurdu. Medicine Hat'in 2007 kadrosunda oran yüzde elli altıya, rakipleri Vancouver Giants'ta yüzde kırk dörde çıkıyor.
+
+Gladwell buna "kümülatif avantaj" diyor. Küçük bir başlangıç farkı, sistem onu her adımda ödüllendirdiği için zamanla bir uçuruma dönüşüyor.
+
+Ve bu sadece hokeyde değil.
+
+Aynı mekanizma okulda çalışıyor. Birinci sınıfın en büyük çocuğu, en küçüğünden on bir ay daha fazla yaşamış. Harfleri daha kolay tanıyor, sırasında daha uzun oturabiliyor, daha az huzursuz görünüyor. Öğretmen onu hazır sayıyor. İleri gruba alınıyor, daha zor kitap veriliyor, daha çok soru soruluyor. Yıl sonunda gerçekten öndedir. Ve bu fark ilkokul boyunca kapanmak yerine büyür.
+
+İşe alımda çalışıyor. Bir kez yüksek potansiyelli listesine girenler daha zor projeler, daha görünür işler ve daha iyi yöneticiler alıyor. Liste bir tahmin olarak başlıyor, birkaç yıl içinde kendini doğrulayan bir kehanete dönüşüyor. Üç yıl sonra listenin doğru çıktığı görülüyor ve bu, listenin iyi hazırlandığının kanıtı sayılıyor.
+
+Mekanizmanın sinsi tarafı burası. Sistem kendi tahminini besliyor, sonra tahmininin tuttuğunu görüp kendine güveniyor.
+
+Burada bir çekince gerekiyor, çünkü hikâye genelde tam burada kesiliyor.
+
+Etki gençlik liglerinde güçlü, ama en üst profesyonel düzeyde tersine dönüyor. Kanada doğumlu NHL oyuncuları üzerine yapılan çalışmalar, yılın sonunda doğup yine de yukarı çıkanların orada daha iyi performans gösterdiğini ve daha uzun kariyer sürdürdüğünü buluyor.
+
+Açıklama makul. Aralık'ta doğan çocuk, küçüklüğü boyunca sahadaki en küçük ve en yavaş oyuncuydu. Ayakta kalmak için fiziğine güvenemedi; beceri geliştirmek zorunda kaldı. Pas okumayı, pozisyon almayı, boşluk bulmayı öğrendi. Fiziksel olgunluk avantajı yirmi yaş civarında biter. O beceri bitmez.
+
+Bir de ayıklama var. Ocak'ta doğup yukarı çıkanlar arasında, oraya yalnızca iriliği sayesinde gelmiş oyuncular da bulunuyor. Aralık'ta doğup çıkanlar için bu mümkün değil; onlar her basamakta dezavantajlıyken seçildiler, yani gerçekten iyi olmasalar seçilmezlerdi.
+
+Yani sistem gençlik düzeyinde elerken, en dirençli oyuncularını da eliyor. Ocak'ta doğan orta düzey bir oyuncuyu ilerletirken, Aralık'ta doğan üst düzey bir oyuncuyu kaybediyor. Ve bu kaybı hiçbir yerde göremiyor, çünkü kaybettiği oyuncu on iki yaşında bırakmıştı.
+
+Kesim tarihi kimin görüldüğünü belirliyor. Kimin en iyi olduğunu belirlemiyor. Bunlar iki farklı şey ve sistem yıllardır ikisini birbirine karıştırıyor.
+
+Gladwell'in önerisi basit: kesim tarihine göre ayrı ligler kurmak. Ocak-Mart doğanlar bir lig, Nisan-Haziran bir başkası. Maliyeti yok, kimseyi dışarıda bırakmıyor ve avantajı ortadan kaldırıyor. Uygulanmamasının sebebi teknik zorluk değil; kimsenin ortada bir sorun olduğunu düşünmemesi.
+
+Çünkü sistem içinden bakıldığında her şey adil görünüyor. Seçmeler herkese açık, ölçüt performans, karar antrenörün. Hiçbir adımda kimse kimseye haksızlık etmiyor. Haksızlık adımlarda değil, takvimde duruyor — ve takvimi kimse bir karar olarak görmüyor.
+
+##Sistem yetenek ölçtüğünü sanırken çoğu zaman doğum ayını ölçüyor — ve elemekle en dirençli olanları da eliyor.##
+
+$$Başarı çoğu zaman yeteneği değil, hangi eşiğin hangi tarihte çizildiğini ölçer.$$
+
+&&Hayatında farkında olmadan avantajlı ya da dezavantajlı başladığın bir alan var mı; o başlangıç noktası bugün ne kadarını açıklıyor?&&`,
+    punchline:
+      "Medicine Hat'in 2007 kadrosunun yüzde elli altısı yılın ilk çeyreğinde doğmuştu; rastgele olsaydı yüzde yirmi beş olurdu.",
+    thirty_sec:
+      "Kanada gençlik hokeyinde yaş kesim tarihi 1 Ocak, yani Ocak'ta doğan çocuk Aralık'ta doğanla aynı grupta oynuyor — aralarında neredeyse bir yıl var. Küçük yaşta bu fark iriliğe dönüşüyor, antrenör onu yetenek sanıyor ve seçiyor. Barnsley'nin sayımında seçkin kadrolarda ilk çeyrek payı yüzde kırk civarında. Ama etki NHL düzeyinde tersine dönüyor: geç doğup yine de çıkanlar orada daha iyi performans gösteriyor.",
+    question:
+      'Farkında olmadan avantajlı ya da dezavantajlı başladığın bir alan bugün ne kadarını açıklıyor?',
+    key_contrast: 'Yetenek değil, takvim',
+  },
+  en: {
+    title: 'The league of January births',
+    description:
+      "Gladwell's hockey example shows how a cutoff date comes to look like talent. The effect is real — and at the professional level it reverses.",
+    hook: 'Half a junior roster born between January and March is not talent. It is a calendar.',
+    content: `You look at the roster of a Canadian junior hockey team. The Medicine Hat Tigers, Memorial Cup finalists in 2007.
+
+You look at the birthdays.
+
+And you see a strange pattern: a very large share of the players were born in January, February or March.
+
+It is not a coincidence.
+
+##The age cutoff in Canadian junior hockey is 1 January. A child born in January plays in the same age group as one born in December. But there is nearly a year between them.##
+
+For a nine-year-old, a year is a long time. Before puberty, twelve months of difference in height, weight and coordination is visible to the eye. The January child is bigger, better coordinated, faster.
+
+The coach picking the squad thinks he is seeing talent. He is seeing maturity. And he has no easy way of telling the difference, because on the ice the two look the same.
+
+What follows feeds itself. The chosen child goes to the better team. He works with better coaches. He plays twice the games in a season and trains twice the hours. He improves faster because the players around him are better. At the next selection he looks better still, and he is chosen again.
+
+Within a few years he really is better. But by then the reason he is better is not that he was born in January; it is that the system handed him more opportunity at every gate.
+
+The psychologist Roger Barnsley first demonstrated this pattern in the mid-1980s. He noticed the birthdays in a team programme he picked up at a game, then sat down and counted the rosters of the Western Hockey League.
+
+The numbers run like this: in elite junior squads, the share of players born in the first quarter of the year sits around forty percent. If birthdays fell at random it would be twenty-five. On Medicine Hat's 2007 roster the figure reaches fifty-six percent, and on their opponents' — the Vancouver Giants — forty-four.
+
+Gladwell calls this cumulative advantage. A small difference at the start turns into a chasm over time, because the system rewards it at every step.
+
+And it is not only hockey.
+
+The same mechanism runs in school. The oldest child in a first-grade class has lived eleven months longer than the youngest. She recognises letters more easily, sits still longer, seems less restless. The teacher reads her as ready. She goes into the advanced group, gets the harder book, is asked more questions. By the end of the year she genuinely is ahead. And through primary school that gap widens rather than closing.
+
+It runs in hiring. Once someone is on the high-potential list they get the harder projects, the visible work, the better managers. The list begins as a prediction and becomes, within a few years, a self-fulfilling one.
+
+A caveat is needed here, because the story usually gets cut at exactly this point.
+
+The effect is strong in junior leagues but it reverses at the top professional level. Studies of Canadian-born NHL players find that those born late in the year who make it anyway perform better there and last longer in their careers.
+
+The explanation is plausible. The child born in December was, all through his youth, the smallest and slowest player on the ice. He could not lean on his body to survive; he had to build skill. He learned to read a pass, to take position, to find space. The advantage of physical maturity runs out somewhere around twenty. That skill does not.
+
+So in filtering at junior level the system also filters out its most resilient players. It promotes a mid-level player born in January and loses a top-level player born in December.
+
+The cutoff date determines who gets seen. It does not determine who is best. Two different things, and the system confuses them.
+
+Gladwell's remedy is simple: run separate leagues by birth quarter. January to March in one, April to June in another. It costs nothing, excludes nobody, and dissolves the advantage. It is not done because it is technically hard. It is not done because nobody thinks there is a problem.
+
+##A system that thinks it is measuring talent is often measuring a birth month — and in filtering, it filters out the most resilient too.##
+
+$$Success often measures not ability but where the line was drawn and on what date.$$
+
+&&Is there a field where you started advantaged or disadvantaged without noticing, and how much of today does that starting point explain?&&`,
+    punchline:
+      "Fifty-six percent of Medicine Hat's 2007 roster was born in the year's first quarter; at random it would be twenty-five.",
+    thirty_sec:
+      'The age cutoff in Canadian junior hockey is 1 January, so a child born in January plays against one born in December — nearly a year apart. Young, that gap shows up as size, and the coach mistakes it for talent and picks him. In Barnsley\'s counts, elite rosters run around forty percent first-quarter births. But the effect reverses in the NHL: late-born players who make it anyway perform better there.',
+    question:
+      'How much of today does a starting point you never noticed still explain?',
+    key_contrast: 'Not talent, a calendar',
+  },
+  es: {
+    title: 'La liga de los nacidos en enero',
+    description:
+      'El ejemplo de hockey de Gladwell muestra cómo una fecha de corte acaba pareciendo talento. El efecto es real, y en el nivel profesional se invierte.',
+    hook: 'Media plantilla juvenil nacida entre enero y marzo no es talento. Es un calendario.',
+    content: `Mira la plantilla de un equipo juvenil de hockey canadiense. Los Medicine Hat Tigers, finalistas de la Memorial Cup en 2007.
+
+Mira las fechas de nacimiento.
+
+Y ves un patrón extraño: una parte muy grande de los jugadores nació en enero, febrero o marzo.
+
+No es casualidad.
+
+##La fecha de corte por edad en el hockey juvenil canadiense es el 1 de enero. Un niño nacido en enero juega en el mismo grupo que uno nacido en diciembre. Pero entre ellos hay casi un año.##
+
+Para un niño de nueve años, un año es mucho tiempo. Antes de la pubertad, doce meses de diferencia en altura, peso y coordinación se ven a simple vista. El niño de enero es más grande, más coordinado, más rápido.
+
+El entrenador que elige la plantilla cree ver talento. Está viendo madurez. Y no tiene una forma fácil de distinguirlas, porque sobre el hielo las dos se parecen.
+
+Lo que sigue se alimenta a sí mismo. El elegido pasa al mejor equipo. Trabaja con mejores entrenadores. Juega el doble de partidos por temporada y entrena el doble de horas. Mejora más rápido porque los jugadores a su lado son mejores. En la siguiente selección parece aún mejor, y vuelve a ser elegido.
+
+En pocos años es realmente mejor. Pero a esas alturas la razón ya no es haber nacido en enero: es que el sistema le dio más oportunidades en cada puerta.
+
+El psicólogo Roger Barnsley demostró primero este patrón a mediados de la década de 1980. Se fijó en las fechas de nacimiento de un programa de equipo que recogió en un partido, y luego se sentó a contar las plantillas de la Western Hockey League.
+
+Las cifras son así: en las plantillas juveniles de élite, la proporción de nacidos en el primer trimestre del año ronda el cuarenta por ciento. Si los nacimientos se repartieran al azar sería el veinticinco. En la plantilla de Medicine Hat de 2007 la cifra llega al cincuenta y seis por ciento, y en la de sus rivales, los Vancouver Giants, al cuarenta y cuatro.
+
+Gladwell llama a esto ventaja acumulativa. Una pequeña diferencia inicial se convierte con el tiempo en un abismo, porque el sistema la premia en cada paso.
+
+Y no ocurre solo en el hockey.
+
+El mismo mecanismo funciona en la escuela. El niño mayor de una clase de primero ha vivido once meses más que el menor. Reconoce las letras con más facilidad, aguanta más sentado, parece menos inquieto. La maestra lo lee como preparado. Pasa al grupo avanzado, recibe el libro más difícil, se le hacen más preguntas. Al final del curso va realmente por delante. Y a lo largo de la primaria esa brecha se ensancha en vez de cerrarse.
+
+Funciona en la contratación. Quien entra una vez en la lista de alto potencial recibe los proyectos más difíciles, el trabajo más visible, los mejores jefes. La lista empieza como una predicción y en pocos años se vuelve una profecía que se cumple sola.
+
+Aquí hace falta una advertencia, porque la historia suele cortarse justo en este punto.
+
+El efecto es fuerte en las ligas juveniles, pero se invierte en el nivel profesional más alto. Los estudios sobre jugadores de la NHL nacidos en Canadá encuentran que los nacidos a final de año que llegan de todos modos rinden mejor allí y tienen carreras más largas.
+
+La explicación es plausible. El niño nacido en diciembre fue, durante toda su infancia, el jugador más pequeño y más lento del hielo. No pudo apoyarse en su cuerpo para sobrevivir; tuvo que construir destreza. Aprendió a leer un pase, a colocarse, a encontrar el espacio. La ventaja de la madurez física se agota en algún punto cerca de los veinte. Esa destreza no.
+
+Así que al filtrar en el nivel juvenil, el sistema también filtra a sus jugadores más resistentes. Promociona a un jugador medio nacido en enero y pierde a un jugador excelente nacido en diciembre.
+
+La fecha de corte determina a quién se ve. No determina quién es mejor. Dos cosas distintas, y el sistema las confunde.
+
+El remedio de Gladwell es sencillo: crear ligas separadas por trimestre de nacimiento. De enero a marzo en una, de abril a junio en otra. No cuesta nada, no excluye a nadie y disuelve la ventaja. No se hace porque sea técnicamente difícil. No se hace porque nadie cree que haya un problema.
+
+##Un sistema que cree medir talento a menudo mide un mes de nacimiento, y al filtrar también filtra a los más resistentes.##
+
+$$El éxito mide muchas veces no la capacidad, sino dónde se trazó la línea y en qué fecha.$$
+
+&&¿Hay algún terreno en el que empezaste con ventaja o desventaja sin darte cuenta, y cuánto de tu presente explica ese punto de partida?&&`,
+    punchline:
+      'En Medicine Hat 2007, el cincuenta y seis por ciento nació en el primer trimestre; al azar, veinticinco.',
+    thirty_sec:
+      'La fecha de corte en el hockey juvenil canadiense es el 1 de enero: un niño de enero juega contra uno de diciembre, casi un año de diferencia. De pequeños esa brecha se ve como tamaño y el entrenador la confunde con talento. En los recuentos de Barnsley de la década de 1980, las plantillas de élite rondan el cuarenta por ciento de nacidos en el primer trimestre. Pero en la NHL el efecto se invierte.',
+    question:
+      '¿Cuánto de tu presente explica todavía un punto de partida del que nunca te diste cuenta?',
+    key_contrast: 'No talento, calendario',
+  },
+  de: {
+    title: 'Die Liga der Januargeborenen',
+    description:
+      'Gladwells Hockeybeispiel zeigt, wie ein Stichtag wie Talent aussieht. Der Effekt ist echt – und auf Profiniveau kehrt er sich um.',
+    hook: 'Halber Juniorenkader zwischen Januar und März geboren: Das ist kein Talent, das ist ein Kalender.',
+    content: `Sie schauen auf die Kaderliste einer kanadischen Juniorenmannschaft im Eishockey. Die Medicine Hat Tigers, 2007 Finalist im Memorial Cup.
+
+Sie schauen auf die Geburtsdaten.
+
+Und Sie sehen ein seltsames Muster: Ein sehr großer Teil der Spieler ist im Januar, Februar oder März geboren.
+
+Das ist kein Zufall.
+
+##Der Altersstichtag im kanadischen Juniorenhockey ist der 1. Januar. Ein im Januar geborenes Kind spielt in derselben Altersgruppe wie ein im Dezember geborenes. Zwischen ihnen liegt aber fast ein Jahr.##
+
+Für einen Neunjährigen ist ein Jahr lang. Vor der Pubertät sieht man zwölf Monate Unterschied in Größe, Gewicht und Koordination mit dem Auge. Das Januarkind ist größer, koordinierter, schneller.
+
+Der Trainer, der den Kader zusammenstellt, glaubt Talent zu sehen. Er sieht Reife. Und er hat keinen einfachen Weg, das eine vom anderen zu unterscheiden, denn auf dem Eis sehen beide gleich aus.
+
+Was folgt, nährt sich selbst. Das ausgewählte Kind kommt in die bessere Mannschaft. Es arbeitet mit besseren Trainern. Es spielt in einer Saison doppelt so viele Spiele und trainiert doppelt so viele Stunden. Es entwickelt sich schneller, weil die Mitspieler besser sind. Bei der nächsten Auswahl wirkt es noch besser und wird wieder genommen.
+
+In wenigen Jahren ist es tatsächlich besser. Aber der Grund dafür ist dann nicht mehr die Geburt im Januar; es ist, dass das System ihm an jeder Schwelle mehr Gelegenheit gab.
+
+Der Psychologe Roger Barnsley zeigte dieses Muster Mitte der 1980er-Jahre zuerst. Ihm fielen die Geburtsdaten in einem Mannschaftsprogramm auf, das er bei einem Spiel mitnahm, und dann setzte er sich hin und zählte die Kader der Western Hockey League aus.
+
+Die Zahlen sehen so aus: In Elite-Juniorenkadern liegt der Anteil der im ersten Jahresquartal Geborenen bei etwa vierzig Prozent. Bei zufälliger Verteilung wären es fünfundzwanzig. Im Kader von Medicine Hat von 2007 erreicht der Wert sechsundfünfzig Prozent, bei den Gegnern – den Vancouver Giants – vierundvierzig.
+
+Gladwell nennt das kumulativen Vorteil. Ein kleiner Unterschied am Anfang wird über die Zeit zu einer Kluft, weil das System ihn bei jedem Schritt belohnt.
+
+Und das gilt nicht nur im Eishockey.
+
+Derselbe Mechanismus wirkt in der Schule. Das älteste Kind einer ersten Klasse hat elf Monate länger gelebt als das jüngste. Es erkennt Buchstaben leichter, sitzt länger still, wirkt weniger unruhig. Die Lehrkraft liest es als bereit. Es kommt in die Fördergruppe, bekommt das schwerere Buch, wird häufiger gefragt. Am Jahresende ist es wirklich voraus. Und über die Grundschule hinweg wächst dieser Abstand, statt sich zu schließen.
+
+Er wirkt bei Einstellungen. Wer einmal auf der Liste der Hochpotenziale steht, bekommt die schwierigeren Projekte, die sichtbare Arbeit, die besseren Vorgesetzten. Die Liste beginnt als Prognose und wird in wenigen Jahren zu einer sich selbst erfüllenden.
+
+Hier braucht es einen Vorbehalt, denn die Geschichte wird meist genau an dieser Stelle abgeschnitten.
+
+Der Effekt ist in den Juniorenligen stark, kehrt sich aber auf höchstem Profiniveau um. Studien zu in Kanada geborenen NHL-Spielern finden, dass spät im Jahr Geborene, die es dennoch nach oben schaffen, dort besser abschneiden und längere Karrieren haben.
+
+Die Erklärung ist plausibel. Das im Dezember geborene Kind war seine ganze Jugend über der kleinste und langsamste Spieler auf dem Eis. Es konnte sich nicht auf seinen Körper stützen, um zu bestehen; es musste Können aufbauen. Es lernte, einen Pass zu lesen, sich zu positionieren, Räume zu finden. Der Vorteil körperlicher Reife läuft irgendwo um die zwanzig aus. Dieses Können nicht.
+
+Indem das System auf Juniorenniveau aussiebt, siebt es also auch seine widerstandsfähigsten Spieler aus. Es befördert einen mittelmäßigen Spieler, der im Januar geboren ist, und verliert einen herausragenden, der im Dezember geboren ist.
+
+Der Stichtag bestimmt, wer gesehen wird. Er bestimmt nicht, wer der Beste ist. Zwei verschiedene Dinge, und das System verwechselt sie.
+
+Gladwells Vorschlag ist einfach: getrennte Ligen nach Geburtsquartal. Januar bis März in einer, April bis Juni in einer anderen. Das kostet nichts, schließt niemanden aus und löst den Vorteil auf. Es wird nicht getan, weil es technisch schwierig wäre. Es wird nicht getan, weil niemand darin ein Problem sieht.
+
+##Ein System, das glaubt, Talent zu messen, misst oft einen Geburtsmonat – und siebt beim Aussortieren auch die Widerstandsfähigsten aus.##
+
+$$Erfolg misst oft nicht das Können, sondern wo die Linie gezogen wurde und an welchem Datum.$$
+
+&&Gibt es ein Feld, in dem Sie unbemerkt im Vorteil oder Nachteil gestartet sind, und wie viel von heute erklärt dieser Startpunkt?&&`,
+    punchline:
+      'Sechsundfünfzig Prozent des Medicine-Hat-Kaders von 2007 waren im ersten Jahresquartal geboren; zufällig wären es fünfundzwanzig.',
+    thirty_sec:
+      'Der Altersstichtag im kanadischen Juniorenhockey ist der 1. Januar, ein Januarkind spielt also gegen ein Dezemberkind – fast ein Jahr Unterschied. Früh zeigt sich diese Lücke als Körpergröße, der Trainer verwechselt sie mit Talent und wählt ihn. In Barnsleys Auszählungen liegen Elitekader bei etwa vierzig Prozent Erstquartalsgeburten. Doch in der NHL kehrt sich der Effekt um: Spät Geborene, die es schaffen, schneiden dort besser ab.',
+    question:
+      'Wie viel von heute erklärt ein Startpunkt, den Sie nie bemerkt haben?',
+    key_contrast: 'Kein Talent, Kalender',
+  },
+};
+
+/* ================================================================== batch */
+
+const LANG_KEYS = ['title', 'description', 'hook', 'content', 'punchline', 'thirty_sec', 'question', 'key_contrast'];
+
+const build = (sid, queueTitle, cur, pos, target, tol, sources, factPack, data) => ({
+  book: { list_no: 33 },
+  story: {
+    story_id: sid,
+    queue_title: queueTitle,
+    current_read_minutes: pos,
+    possible_read_minutes: pos,
+    target_word_count: target,
+    target_word_tolerance: tol,
+    verification_status: 'verified',
+    sources,
+    fact_pack: factPack,
+  },
+  lang: Object.fromEntries(
+    Object.entries(data).map(([l, d]) => [l, Object.fromEntries(LANG_KEYS.map((k) => [k, d[k]]))])
+  ),
+});
+
+const batch = {
+  batch_id: 'A2-012',
+  kind: 'new_story',
+  version: 'A2',
+  created: new Date().toISOString().slice(0, 10),
+  notes:
+    'Is plani Adim 2, altinci parti. Kitap 33 (Outliers / 10.000 Saat Kurali, Malcolm Gladwell) — ' +
+    'uc hikayenin hepsi 1 dk\'dan yukari cikiyor (1164 ve 1165 -> 3 dk, 1166 -> 5 dk), kitap tamamlaniyor. ' +
+    'Varyantlar ve hook\'lar dort dilde SIFIRDAN uretildi; bu uc hikayede hicbiri yoktu. ' +
+    'UC OLGUSAL HATA DUZELTILDI. (1) 1164 audit-facts\'in `contested` bulgusuydu ve iki katmanli ' +
+    'sorunu vardi: metin "Ericsson\'in arastirmasi 10.000 saat GEREKTIGINI ortaya koydu" diyordu, ' +
+    'oysa Ericsson tam bu formulasyonu reddetti (1993 Berlin keman calismasi bir ESIK degil ORTALAMA ' +
+    'buldu; en iyilerin YARISI yirmi yasinda o saatin altindaydi; o kisiler uzman degil ogrenciydi; ' +
+    'belirleyici olan sure degil bilincli pratikti). Ustelik Beatles hic 10.000 saate ULASMADI: ' +
+    'Gladwell 1964\'e kadarki ~1.200 PERFORMANS sayisini saat sayisiyla karistiriyor, Mark Lewisohn ' +
+    'Tune In\'de Hamburg\'u sayip ~1.100 SAAT buluyor. Eski aciklama alani da bu yanlisi tasiyordu. ' +
+    '(2) 1165 "yedinci siniftayken" diyordu; Gates 1968\'de SEKIZINCI siniftaydi (13). Ayrica okul ' +
+    '"bilgisayar satin alacakti" denmisti; gercekte Anneler Kulubu bit pazarinda 3.000 dolar toplayip ' +
+    'BILGISAYAR ZAMANI aldi — sehir merkezindeki ana bilgisayara bagli bir ASR-33 teletype terminali. ' +
+    '(3) 1166 "Kanada\'nin MILLI hokey takimi" diyordu; Gladwell\'in ornegi bir GENCLIK LIGI takimi, ' +
+    'Medicine Hat Tigers (WHL) 2007 Memorial Cup kadrosu, arastirma ise Roger Barnsley\'e ait. ' +
+    '"Oyuncularin buyuk cogunlugu" abartisi gercek oranlarla degistirildi (ilk ceyrek ~%40, beklenen ' +
+    '%25; Medicine Hat 2007\'de %56, Vancouver Giants\'ta %44). AYRICA CEKINCE EKLENDI: etki NHL ' +
+    'duzeyinde TERSINE doner — gec dogup yine de cikanlar orada daha iyi performans gosteriyor. ' +
+    'Kumulatif avantaj tezinin siniri buydu ve metinde hic yoktu.',
+  items: [
+    build(1164, "Beatles'ın Hamburg günleri", 1, 3, 475, 75,
+      [
+        'https://www.salon.com/2016/04/10/malcolm_gladwell_got_us_wrong_our_research_was_key_to_the_10000_hour_rule_but_heres_what_got_oversimplified/',
+        'https://www.beatlesbible.com/1960/08/17/live-indra-club-hamburg/',
+        'https://www.beatlesbible.com/1960/10/04/live-kaiserkeller-hamburg/',
+      ],
+      [
+        '1960: Bruno Koschmider Beatles\'i Hamburg\'da Indra kulubune cikardi.',
+        'Indra: 48 gece (17 Agustos – 3 Ekim 1960). Kaiserkeller: 56 gece (4 Ekim – 30 Kasim 1960).',
+        'Kaldiklari yer Bambi-Filmkunsttheater\'in perdesi arkasindaki depoydu: beton duvar, isitma yok, iki ranza.',
+        'Koschmider\'in her gece bagirdigi soz: "Mach Schau!"',
+        'Gladwell\'in hesabi: 1964\'e kadar ~1.200 canli performans, setler 8 saate kadar.',
+        'DUZELTME: Mark Lewisohn (Tune In) Hamburg toplamini ~1.100 SAAT buluyor. On binin cok altinda.',
+        'DUZELTME: Gladwell performans SAYISINI saat sayisiyla karistirmis gorunuyor.',
+        'DUZELTME: Ericsson 1993 Berlin keman calismasi bir ORTALAMA buldu, esik degil.',
+        'Ericsson\'in uc itirazi: (1) ortalama esik degil, en iyilerin yarisi altinda; (2) o kisiler ogrenciydi, uluslararasi yarisma kazanmamislardi; (3) belirleyici olan sure degil bilincli pratik.',
+        'DIKKAT: Metin Hamburg\'u onemsizlestirmiyor; sayaç ile kosul ayrimini kuruyor.',
+      ],
+      S1164),
+    build(1165, 'Bill Gates ve nadir fırsat', 1, 3, 475, 75,
+      [
+        'https://www.seattletimes.com/entertainment/books/malcolm-gladwell-dissects-success-in-outliers/',
+        'https://lanekenworthy.net/wp-content/uploads/2020/03/reading-gladwell2008ch1.pdf',
+      ],
+      [
+        '1968: Seattle\'daki Lakeside School\'da Anneler Kulubu bir bit pazarindan 3.000 dolar topladi.',
+        'DUZELTME: Bu parayla BILGISAYAR alinmadi, BILGISAYAR ZAMANI alindi — sehir merkezindeki ana bilgisayara telefon hattiyla baglanan ASR-33 teletype terminali.',
+        'DUZELTME: Gates o sirada SEKIZINCI siniftaydi ve 13 yasindaydi. Eski metin "yedinci sinif" diyordu.',
+        'Gladwell: 1968\'de zaman paylasimli terminale sinirsiz erisimi olan 13 yasindakiler dunyada bir elin parmagi kadardi.',
+        'Gates ucretli sure bitince baska erisimler buldu: sehirdeki bir bilgisayar sirketinde hata bulma karsiligi, Washington Universitesi bilgisayar merkezinde gece 03-06 arasi.',
+        'On alti yasinda binlerce saatlik programlama deneyimi vardi.',
+        '1975: kisisel bilgisayar devrimi patladiginda hazirdi.',
+        'DIKKAT: Lakeside\'da bir bilgisayar KULUBU vardi; Gates o terminaldeki tek ogrenci degildi. Metin firsatin gerekli ama yeterli olmadigini bu yolla kuruyor.',
+      ],
+      S1165),
+    build(1166, 'Doğum tarihi ve Kanada hokeyi', 1, 5, 800, 100,
+      [
+        'https://onlinelibrary.wiley.com/doi/full/10.1111/coep.12114',
+        'https://www.researchgate.net/publication/257333561_The_Rise_of_the_Underdog_The_Relative_Age_Effect_Reversal_Among_Canadian-born_NHL_Hockey_Players_A_Reply_to_Nolan_and_Howell',
+        'https://lanekenworthy.net/wp-content/uploads/2020/03/reading-gladwell2008ch1.pdf',
+      ],
+      [
+        'DUZELTME: Gladwell\'in ornegi MILLI TAKIM degil; Medicine Hat Tigers, WHL genclik ligi, 2007 Memorial Cup finalisti. Eski metin "Kanada\'nin milli hokey takimi" diyordu.',
+        'Kanada genclik hokeyinde yas kesim tarihi 1 Ocak.',
+        'Aritmetigi Roger Barnsley 1980\'lerin ortasinda WHL kadrolarini sayarak gosterdi.',
+        'DUZELTME: "Oyuncularin buyuk cogunlugu" abartiydi. Seckin genclik kadrolarinda ilk ceyrek payi ~%40; rastgele dagilimda %25 olurdu.',
+        'Medicine Hat 2007 kadrosu: %56. Rakip Vancouver Giants: %44.',
+        'Gladwell bunu "kumulatif avantaj" (Matthew etkisi) olarak adlandiriyor.',
+        'CEKINCE (metne eklendi): Etki NHL duzeyinde TERSINE doner. Kanada dogumlu NHL oyuncularinda gec dogup yine de cikanlar daha iyi performans gosteriyor ve daha uzun kariyer suruyor.',
+        'DIKKAT: Bu yuzden kesim tarihi kimin GORULDUGUNU belirliyor, kimin EN IYI oldugunu belirlemiyor. Metin bu ayrimi acikca kuruyor.',
+        '5 dk hikayesi: iki ## blogu var (kesim tarihi ve sistemin ne olctugu).',
+      ],
+      S1166),
+  ],
+};
+
+writeFileSync(OUT, `${JSON.stringify(batch, null, 2)}\n`, 'utf8');
+
+const words = (t) => t.trim().split(/\s+/).filter(Boolean).length;
+console.log(`[A2-012] ${batch.items.length} hikaye -> ${OUT}\n`);
+for (const it of batch.items) {
+  const parts = Object.entries(it.lang).map(([l, d]) => `${l}:${words(d.content)}`).join('  ');
+  console.log(`  ${it.story.story_id} (${it.story.possible_read_minutes} dk, hedef ${it.story.target_word_count}±${it.story.target_word_tolerance})  ${parts}`);
+}

@@ -6,6 +6,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
+import { LEGAL_URLS } from '../constants/externalLinks';
 import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
@@ -205,9 +206,9 @@ const PaywallScreen = ({ navigation, route }) => {
   }, [billingLive, getPremiumOfferings]);
 
   const legalLinks = [
-    { label: t('paywallLegalPrivacy', lang), url: 'https://sparkapp.co/privacy' },
-    { label: t('paywallLegalTerms', lang), url: 'https://sparkapp.co/terms' },
-    { label: t('paywallLegalRefund', lang), url: 'https://sparkapp.co/refund' },
+    { label: t('paywallLegalPrivacy', lang), url: LEGAL_URLS.privacy },
+    { label: t('paywallLegalTerms', lang), url: LEGAL_URLS.terms },
+    { label: t('paywallLegalRefund', lang), url: LEGAL_URLS.refund },
   ];
 
   const handleSelectPlan = (nextPlan) => {

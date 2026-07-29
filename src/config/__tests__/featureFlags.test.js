@@ -20,8 +20,8 @@ describe('career feature flags', () => {
     expect(loadFlags({ careerPathV1: '1', careerEventCaptureV1: 'yes' })).toEqual({ careerPathV1: false, careerEventCaptureV1: false });
   });
 
-  it('enables shadow capture separately from the visible Yolum experience', () => {
+  it('allows shadow capture separately and always captures when Yolum is visible', () => {
     expect(loadFlags({ careerPathV1: 'false', careerEventCaptureV1: 'TRUE' })).toEqual({ careerPathV1: false, careerEventCaptureV1: true });
-    expect(loadFlags({ careerPathV1: 'true', careerEventCaptureV1: 'true' })).toEqual({ careerPathV1: true, careerEventCaptureV1: true });
+    expect(loadFlags({ careerPathV1: 'true' })).toEqual({ careerPathV1: true, careerEventCaptureV1: true });
   });
 });

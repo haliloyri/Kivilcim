@@ -144,6 +144,50 @@ function markerBlocks(text = '', m) {
   return { pairs, count: at.length, dangling: at.length % 2 ? at[at.length - 1] : null };
 }
 
+/**
+ * BOSLUKSUZ YAPISMA — cumle sonundan sonra bosluk yok, hemen buyuk harf var:
+ *   "...gecen bir yil?Canfield'in aktardigina gore..."
+ *
+ * NEDEN VAR: A2-006 partisi cumleleri regex ile degistiriyordu ve kalibin
+ * bastaki `[^.!?\n#$&~]*` kismi geriye dogru onceki cumle sonuna kadar yiyordu.
+ * Cumle sonundan SONRAKI BOSLUK da o sinifin icinde oldugu icin yenildi.
+ * 18 hikayenin 7'sinde olustu ve HICBIR KAPI ARAMADIGI ICIN fark edilmedi;
+ * ancak sonradan elle tarama yapildiginda ortaya cikti (A2-011 onardi).
+ *
+ * DIKKAT — kapanis tirnagi noktanin IKI YANINDA da olabilir:
+ *   tr/en/de tirnagi noktanin ICINE alir : "... gecmeyecek."  / „... verschwinden.“
+ *   es      DISINDA birakir              : "... desaparecera".
+ * Ilk yazimda yalnizca noktadan SONRAKI tirnagi kabul etmisim ve 1364/es'i
+ * kacirmisim. Ikisi de kabul edilmeli.
+ *
+ * En az iki kucuk harf on kosulu, bas harf kisaltmalarini (J.K., M.R., H.M.)
+ * ve a.m./p.m. gibi bicimleri yanlis yakalamamak icin.
+ */
+const GLUE_Q = `[»”"'’)\\]]?`;
+const GLUE_RE = new RegExp(
+  `[a-zçğıöşüäöüßáéíóúñ]{2,}${GLUE_Q}[.!?]${GLUE_Q}[A-ZÇĞİÖŞÜÄÖÜÁÉÍÓÚÑ]`, 'g'
+);
+
+/**
+ * Yapisma denetimi. Onceki metin de biliniyorsa (content_fix) yalnizca YENI
+ * olusanlar hata sayilir; eski metinde zaten varsa uyari verilir, cunku o
+ * ayri bir onarim gorevidir ve bu batch'i bloklamasi yanlis olur.
+ */
+function checkGlue(at, text, before, err, warn) {
+  const now = [...text.matchAll(GLUE_RE)].map((m) => m[0]);
+  if (!now.length) return;
+  const had = before ? [...before.matchAll(GLUE_RE)].map((m) => m[0]) : [];
+  const hadSet = new Set(had);
+  const fresh = now.filter((h) => !hadSet.has(h));
+  for (const h of fresh) {
+    err(at, `bosluksuz yapisma olustu: "${h}" — cumle sonundan sonra bosluk yok`);
+  }
+  const stale = now.filter((h) => hadSet.has(h));
+  if (stale.length) {
+    warn(at, `${stale.length} eski bosluksuz yapisma duruyor (${stale.join(', ')}) — bu duzeltmenin urunu degil, ayri gorev`);
+  }
+}
+
 /* ------------------------------------------------------------------ */
 /* marker_repair: yalnizca isaret konumu degisir                       */
 /*                                                                     */
@@ -222,6 +266,7 @@ if (batch.kind === 'marker_repair') {
       }
       const refl = markerBlocks(d.content, '&&').pairs[0]?.content.trim();
       if (refl && !/\?\s*$/.test(refl)) warn(at, '&& blogu soru isaretiyle bitmiyor');
+      checkGlue(at, d.content, existingContent.get(`${sid}|${l}`), err, warn);
     }
   }
 }
@@ -297,6 +342,8 @@ if (batch.kind === 'content_fix') {
           warn(at, `## blok sayisi ${n} — ${minutes} dk icin ${spec.emphasisMin}-${spec.emphasisMax}`);
         }
       }
+
+      checkGlue(at, d.content, before, err, warn);
 
       /* --- uzunluk ---
          ONEMLI: Aralik disi olmak tek basina bu duzeltmenin sucu degil. Cogu

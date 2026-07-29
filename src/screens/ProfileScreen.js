@@ -9,6 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Notifications from 'expo-notifications';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
+import { LEGAL_URLS } from '../constants/externalLinks';
 import { useStories } from '../context/StoriesContext';
 import { useCareerPath } from '../context/CareerPathContext';
 import { FEATURE_FLAGS } from '../config/featureFlags';
@@ -53,6 +54,7 @@ const ProfileScreen = ({ navigation }) => {
   const storyCollectionOptions = [
     { value: 'classic', label: t('storyCollectionClassic', lang), icon: 'book-outline' },
     { value: 'new', label: t('storyCollectionNew', lang), icon: 'sparkles-outline' },
+    { value: 'agent', label: t('storyCollectionAgent', lang), icon: 'person-outline' },
     { value: 'focus', label: t('storyCollectionFocus', lang), icon: 'bulb-outline' },
     { value: 'conversation', label: t('storyCollectionConversation', lang), icon: 'chatbubbles-outline' },
     { value: 'originals', label: t('storyCollectionOriginals', lang), icon: 'color-wand-outline' },
@@ -114,7 +116,7 @@ const ProfileScreen = ({ navigation }) => {
   };
 
   const openPrivacyPolicy = async () => {
-    const url = 'https://sparkapp.co/privacy';
+    const url = LEGAL_URLS.privacy;
     try {
       const canOpen = await Linking.canOpenURL(url);
       if (!canOpen) { Alert.alert(t('alert_error', lang), t('profileExternalLinkError', lang)); return; }

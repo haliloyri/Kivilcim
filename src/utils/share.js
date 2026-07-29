@@ -1,7 +1,8 @@
 import Constants from 'expo-constants';
+import { WEBSITE_URL } from '../constants/externalLinks';
 
 const config = Constants.expoConfig?.extra ?? Constants.manifest?.extra ?? {};
-const DEFAULT_SHARE_BASE_URL = 'https://alborapp.com';
+const DEFAULT_SHARE_BASE_URL = WEBSITE_URL;
 const SUPPORTED_LANGUAGES = new Set(['tr', 'en', 'de', 'es']);
 
 export const normalizeShareLanguage = (lang) => {

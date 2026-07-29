@@ -16,7 +16,7 @@ import { searchStoriesForLang } from '../db/db';
 const RECENT_SEARCHES_KEY = '@kivilcim_recent_searches';
 const MAX_RECENT_SEARCHES = 8;
 
-const SearchScreen = ({ navigation }) => {
+const SearchScreen = ({ navigation, route }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
   const { parentCategories } = useStories();
   const [query, setQuery] = useState('');
@@ -37,6 +37,7 @@ const SearchScreen = ({ navigation }) => {
       .map((suffix) => t(`searchSuggestion${suffix}`, lang))
       .filter(Boolean);
   }, [lang]);
+  const careerAction = route?.params?.careerAction;
 
   useEffect(() => {
     const loadRecentSearches = async () => {
@@ -228,6 +229,8 @@ const SearchScreen = ({ navigation }) => {
       fontSize: 12,
       color: colors.onPrimary,
     },
+    careerGuide: { marginHorizontal: layout.padding.horizontal, marginBottom: 4, borderWidth: 1, borderRadius: 14, padding: 12, flexDirection: 'row', alignItems: 'flex-start', gap: 8 },
+    careerGuideText: { flex: 1, fontFamily: 'Inter_500Medium', fontSize: 13, lineHeight: 19 },
   });
 
   return (
@@ -270,6 +273,7 @@ const SearchScreen = ({ navigation }) => {
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
+        {careerAction ? <View style={[styles.careerGuide, { borderColor: `${colors.primary}55`, backgroundColor: `${colors.primary}12` }]}><Ionicons name={careerAction === 'application' ? 'chatbubbles-outline' : careerAction === 'connection' ? 'bulb-outline' : 'compass-outline'} size={18} color={colors.primary} /><Text style={styles.careerGuideText}>{t(`career.searchGuide.${careerAction}`, lang)}</Text></View> : null}
         {showIdleState ? (
           <>
             {recentSearches.length > 0 && (

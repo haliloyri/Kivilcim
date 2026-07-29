@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Notifications from 'expo-notifications';
-import { View, Image } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
-import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { t } from './src/locales/i18n';
 
 import { setupNotificationHandler, registerAndSavePushToken } from './src/utils/notifications';
 import { ANALYTICS_EVENTS, trackEvent, initAnalytics, setAnalyticsContext } from './src/utils/analytics';
@@ -41,44 +39,15 @@ import { CareerPathProvider } from './src/context/CareerPathContext';
 import CareerPromotionModal from './src/components/career/CareerPromotionModal';
 import CareerMigrationSummary from './src/components/career/CareerMigrationSummary';
 
-// Splash screen'i dondur
-SplashScreen.preventAutoHideAsync();
+// Keep the native launch screen visible until the bundled fonts are ready.
+SplashScreen.preventAutoHideAsync().catch(() => {});
 import { initDb, seedData } from './src/db/db';
 import { initUserDb } from './src/db/userDb';
 import { ensureDeviceSession } from './src/services/supabase';
 import { migrateLocalToServer } from './src/services/migrateLocalToServer';
 import { initOfflineQueueFlush } from './src/services/offlineQueue';
 
-// Keep the JS hand-off visually identical to the native splash. The mark has
-// no baked-in tile, so the launch no longer flashes a blue rounded square.
-const SplashDesign = () => {
-  return (
-    <View style={stylesSplash.container}>
-      <Image
-        source={require('./assets/splash/albor-splash-mark.png')}
-        style={stylesSplash.launchImage}
-        resizeMode="contain"
-      />
-    </View>
-  );
-};
-
-const stylesSplash = {
-  container: {
-    flex: 1,
-    backgroundColor: '#131311',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  launchImage: {
-    width: 184,
-    height: 184,
-  },
-};
-
-
 function Main() {
-  const [splashLang, setSplashLang] = React.useState('tr');
   // Initialize DB and seed data on first run
   useEffect(() => {
     const startup = async () => {
@@ -87,7 +56,6 @@ function Main() {
         const stored = await AsyncStorage.getItem('lang');
         if (stored) {
           savedLang = stored;
-          setSplashLang(stored);
         }
       } catch (e) {}
       // Analytics: init as early as possible, then tag every event with lang.
@@ -168,8 +136,7 @@ function Main() {
   }, [appReady]);
 
   if (!appReady) {
-    // Splash design while fonts load
-    return <SplashDesign lang={splashLang} />;
+    return null;
   }
 
   return (

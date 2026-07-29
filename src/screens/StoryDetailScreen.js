@@ -33,6 +33,7 @@ import { shouldShowAd, loadRewarded, showRewarded, loadInterstitial, showInterst
 import { getBookBuyLinks } from '../utils/bookLinks';
 import { getShareLabel, getShareUrl } from '../utils/share';
 import { hasReachedReadingCompletion, isShortStoryFullyVisible, SHORT_STORY_DWELL_MS } from '../utils/storyCompletion';
+import { getStoryAudioAsset } from '../utils/storyAudio';
 
 const { width, height } = Dimensions.get('window');
 
@@ -65,6 +66,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const hasMarkedRead = useRef(false);
   const storyCompletionPromiseRef = useRef(Promise.resolve());
   const speechStartedAt = useRef(null);
+  const storyAudioPlayerRef = useRef(null);
+  const storyAudioSubscriptionRef = useRef(null);
   const scrollViewportHeight = useRef(0);
   const scrollContentHeight = useRef(0);
   const shortStoryDwellTimer = useRef(null);
@@ -111,6 +114,29 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [storyAdGate, setStoryAdGate] = useState(
     shouldShowAd({ isPremium, isOnboarded: true })
   );
+
+  const releaseStoryAudioPlayer = React.useCallback(() => {
+    storyAudioSubscriptionRef.current?.remove?.();
+    storyAudioSubscriptionRef.current = null;
+
+    const player = storyAudioPlayerRef.current;
+    storyAudioPlayerRef.current = null;
+    if (!player) return;
+
+    try {
+      player.pause();
+    } catch {
+      // The player may already have completed or been released by the platform.
+    }
+    player.remove();
+  }, []);
+
+  const stopStoryNarration = React.useCallback(() => {
+    Speech.stop();
+    releaseStoryAudioPlayer();
+    setIsSpeaking(false);
+    speechStartedAt.current = null;
+  }, [releaseStoryAudioPlayer]);
 
   React.useEffect(() => {
     const blocked = Boolean(shareModalVisible || cardGate || adSheet || storyAdGate);
@@ -198,6 +224,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const startRecording = async () => {
     if (audioRecordings.length >= MAX_RECORDINGS) return;
     try {
+      stopStoryNarration();
       if (soundObj) {
         soundObj.remove();
         setSoundObj(null);
@@ -280,6 +307,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
   const playRecording = async (index) => {
     try {
+      stopStoryNarration();
       if (soundObj) {
         soundObj.remove();
         setSoundObj(null);
@@ -488,8 +516,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
   React.useEffect(() => {
     if (story) {
-      Speech.stop();
-      setIsSpeaking(false);
+      stopStoryNarration();
     }
     Animated.timing(titleEnterAnim, {
       toValue: 1,
@@ -498,8 +525,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
     }).start();
     return () => {
       Speech.stop();
+      releaseStoryAudioPlayer();
     };
-  }, [story, titleEnterAnim]);
+  }, [story, localLang, titleEnterAnim, stopStoryNarration, releaseStoryAudioPlayer]);
 
   // Marks the story as "read" for the daily focus counter/history. Only
   // fires once per screen visit, and only once the reader has genuinely
@@ -596,29 +624,71 @@ const StoryDetailScreen = ({ route, navigation }) => {
   }, [cancelShortStoryDwell, evaluateShortStoryReadState]);
 
   const toggleSpeech = async () => {
-    if (isSpeaking) {
-      Speech.stop();
-      setIsSpeaking(false);
-    } else {
-      const cleanBody = (displayBody || '').replace(/##|\$\$|&&|~~/g, '').replace(/\s*::\s*/g, ' — ');
-      const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
-      setIsSpeaking(true);
-      speechStartedAt.current = Date.now();
-      Speech.speak(textToRead, {
-        language: lang === 'en' ? 'en-US' : lang === 'es' ? 'es-ES' : lang === 'de' ? 'de-DE' : 'tr-TR',
-        rate: 0.95,
-        pitch: 1.0,
-        onDone: () => {
+    if (isSpeaking || storyAudioPlayerRef.current) {
+      stopStoryNarration();
+      return;
+    }
+
+    if (soundObj) {
+      soundObj.remove();
+      setSoundObj(null);
+      setPlayingIndex(null);
+    }
+
+    const storyAudioAsset = localLang === 'tr'
+      ? getStoryAudioAsset((localStory || story)?.story_id)
+      : null;
+
+    if (storyAudioAsset) {
+      try {
+        await setAudioModeAsync({
+          allowsRecording: false,
+          playsInSilentMode: true,
+          shouldPlayInBackground: false,
+        });
+
+        const player = createAudioPlayer(storyAudioAsset, { updateInterval: 250 });
+        storyAudioPlayerRef.current = player;
+        setIsSpeaking(true);
+        speechStartedAt.current = Date.now();
+
+        storyAudioSubscriptionRef.current = player.addListener('playbackStatusUpdate', (status) => {
+          if (!status.didJustFinish || storyAudioPlayerRef.current !== player) return;
+
+          releaseStoryAudioPlayer();
           setIsSpeaking(false);
-          // onDone means the entire narration completed; early stop/error use
-          // their dedicated callbacks and must not create H.
           markStoryReadIfNeeded('audio');
           speechStartedAt.current = null;
-        },
-        onStopped: () => { setIsSpeaking(false); speechStartedAt.current = null; },
-        onError: () => { setIsSpeaking(false); speechStartedAt.current = null; },
-      });
+        });
+
+        player.play();
+        return;
+      } catch (error) {
+        releaseStoryAudioPlayer();
+        setIsSpeaking(false);
+        speechStartedAt.current = null;
+        console.warn('[story] packaged narration playback failed, using device speech:', error?.message);
+      }
     }
+
+    const cleanBody = (displayBody || '').replace(/##|\$\$|&&|~~/g, '').replace(/\s*::\s*/g, ' — ');
+    const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
+    setIsSpeaking(true);
+    speechStartedAt.current = Date.now();
+    Speech.speak(textToRead, {
+      language: localLang === 'en' ? 'en-US' : localLang === 'es' ? 'es-ES' : localLang === 'de' ? 'de-DE' : 'tr-TR',
+      rate: 0.95,
+      pitch: 1.0,
+      onDone: () => {
+        setIsSpeaking(false);
+        // onDone means the entire narration completed; early stop/error use
+        // their dedicated callbacks and must not create H.
+        markStoryReadIfNeeded('audio');
+        speechStartedAt.current = null;
+      },
+      onStopped: () => { setIsSpeaking(false); speechStartedAt.current = null; },
+      onError: () => { setIsSpeaking(false); speechStartedAt.current = null; },
+    });
   };
 
   const buildStoryTextSharePayload = () => {

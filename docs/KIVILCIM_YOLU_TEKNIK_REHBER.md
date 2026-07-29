@@ -27,7 +27,7 @@ Kredi türleri:
 `src/config/featureFlags.js` tek flag kaynağıdır.
 
 - `careerPathV1`: Yeni Yolum UI, provider ve promotion deneyimini açar.
-- `careerEventCaptureV1`: UI kapalıyken H/D/U olaylarının gölge yakalamasını açabilir.
+- `careerEventCaptureV1`: UI kapalıyken H/D/U olaylarının gölge yakalamasını açabilir. `careerPathV1` açık olduğunda olay yakalama otomatik olarak açıktır; görünür ilerlemenin sayılabilmesi için iki bayrağın ayrıca eşleşmesi gerekmez.
 
 Flag kapanınca kariyer verisi silinmez. Bu repoda uzaktan yüzdesel flag ataması yoktur; kontrollü rollout, canlı ortamda ayrı release/staff build ve gerçek flag altyapısıyla yapılmalıdır.
 

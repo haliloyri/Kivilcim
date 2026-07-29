@@ -28,6 +28,8 @@ const emptyValue = {
   activePromotion: null,
   showMigrationSummary: false,
   pathSwitchRequested: false,
+  conditionsRequested: false,
+  conditionsNodeId: null,
   refreshCareer: async () => null,
   selectPath: async () => null,
   switchPath: async () => null,
@@ -37,6 +39,8 @@ const emptyValue = {
   markMigrationSummarySeen: async () => null,
   requestPathSwitch: () => null,
   consumePathSwitchRequest: () => null,
+  requestConditions: () => null,
+  consumeConditionsRequest: () => null,
 };
 
 const eligibleNodes = (viewModel) => {
@@ -194,6 +198,17 @@ export const CareerPathProvider = ({ children }) => {
     setState((previous) => ({ ...previous, pathSwitchRequested: false }));
   }, []);
 
+  // Navigation to Yolum is sometimes an instruction (from Home), not just a
+  // destination. Keep that instruction in the provider so it survives the tab
+  // transition, then let the screen consume it exactly once.
+  const requestConditions = useCallback((nodeId = null) => {
+    setState((previous) => ({ ...previous, conditionsRequested: true, conditionsNodeId: nodeId }));
+  }, []);
+
+  const consumeConditionsRequest = useCallback(() => {
+    setState((previous) => ({ ...previous, conditionsRequested: false, conditionsNodeId: null }));
+  }, []);
+
   const activePromotion = state.unseenPromotions[state.unseenPromotions.length - 1] || null;
   const closePromotion = useCallback(async () => {
     if (!activePromotion?.nodeId) return null;
@@ -215,7 +230,9 @@ export const CareerPathProvider = ({ children }) => {
     markMigrationSummarySeen,
     requestPathSwitch,
     consumePathSwitchRequest,
-  }), [state, activePromotion, loadCareer, selectPath, switchPath, markPromotionSeen, markPromotionsSeen, closePromotion, markMigrationSummarySeen, requestPathSwitch, consumePathSwitchRequest]);
+    requestConditions,
+    consumeConditionsRequest,
+  }), [state, activePromotion, loadCareer, selectPath, switchPath, markPromotionSeen, markPromotionsSeen, closePromotion, markMigrationSummarySeen, requestPathSwitch, consumePathSwitchRequest, requestConditions, consumeConditionsRequest]);
 
   return <CareerPathContext.Provider value={value}>{children}</CareerPathContext.Provider>;
 };

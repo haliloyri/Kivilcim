@@ -4,12 +4,12 @@
 > elle degistirilmez. `[ ]` satirlar uretim kuyrugudur; elle eklenip cikarilabilir.
 > Yeniden uretmek icin: `node scripts/story-pipeline/sync-inventory.mjs`
 
-- Senkron: **2026-07-26 20:42**
+- Senkron: **2026-07-27 00:07**
 - Kuyruk kaynagi: KITAP_HIKAYE_ENVANTERI.md
 - DB'de kitap: **278**
 - DB'de hikaye: **770**
 - 4 dili tam hikaye: **750**
-- Sohbet varyanti tam hikaye: **149**
+- Sohbet varyanti tam hikaye: **152**
 - Uretim kuyrugu: **2305** (2065 kayitli kitapta + 240 sistemde olmayan kitapta)
 - Incelemede: **0**
 - Sisteme eklenmemis kitap: **24**
@@ -598,9 +598,9 @@
 **Yil:** 2008  
 **Durum:** DB'DE KAYITLI · `list_no:33` · 3/10 hikaye · 4/4 dil
 
-1. [x] **DB'DE KAYITLI** — Beatles'ın Hamburg günleri — **Sure:** 1 dk · **Kelime:** 475 ±75 — `story_id:1164` · `v:1` — **Diller:** de,en,es,tr — **Varyant:** yok — ⚠ eksik varyant: tr/en/es/de · sure uyumsuz: 1→3
-2. [x] **DB'DE KAYITLI** — Bill Gates ve nadir fırsat — **Sure:** 1 dk · **Kelime:** 475 ±75 — `story_id:1165` · `v:1` — **Diller:** de,en,es,tr — **Varyant:** yok — ⚠ eksik varyant: tr/en/es/de · sure uyumsuz: 1→3
-3. [x] **DB'DE KAYITLI** — Doğum tarihi ve Kanada hokeyi — **Sure:** 1 dk · **Kelime:** 800 ±100 — `story_id:1166` · `v:1` — **Diller:** de,en,es,tr — **Varyant:** yok — ⚠ eksik varyant: tr/en/es/de · sure uyumsuz: 1→5
+1. [x] **DB'DE KAYITLI** — Hamburg'da geçen saatler — **Sure:** 3 dk · **Kelime:** 475 ±75 — `story_id:1164` · `v:A2` — **Diller:** de,en,es,tr — **Varyant:** de,en,es,tr
+2. [x] **DB'DE KAYITLI** — Lakeside ve bit pazarından çıkan terminal — **Sure:** 3 dk · **Kelime:** 475 ±75 — `story_id:1165` · `v:A2` — **Diller:** de,en,es,tr — **Varyant:** de,en,es,tr
+3. [x] **DB'DE KAYITLI** — Ocak doğanların ligi — **Sure:** 5 dk · **Kelime:** 800 ±100 — `story_id:1166` · `v:A2` — **Diller:** de,en,es,tr — **Varyant:** de,en,es,tr
 4. [ ] **URETILECEK** — Outliers: Yazarın Fikrini Değiştiren Kırılma Anı — **Sure:** 3 dk · **Kelime:** 475 ±75 — **Puan:** 83/100
 5. [ ] **URETILECEK** — Malcolm Gladwell Bu Kitabı Yazmaya Hangi Soruyla Başladı? — Outliers — **Sure:** 3 dk · **Kelime:** 475 ±75 — **Puan:** 84/100
 6. [ ] **URETILECEK** — Outliers İçindeki En Şaşırtıcı Gerçek Hayat Deneyi — **Sure:** 1 dk · **Kelime:** 160 ±40 — **Puan:** 89/100

@@ -254,6 +254,7 @@ const getStoryCollectionId = (version) => {
   const value = String(version ?? '').trim().toUpperCase();
   if (value === '1') return 'classic';
   if (value === '2') return 'new';
+  if (value === 'A2') return 'agent';
   if (/^F\d+$/.test(value)) return 'focus';
   if (/^C\d+$/.test(value)) return 'conversation';
   if (value === 'OH') return 'originals';
@@ -264,7 +265,7 @@ const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
   const { isPremium, isOnboarded, history, earnedBadges, totalReads, todayReadsCount, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted, openBadgeModal } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg, isOffline } = useStories();
-  const { career } = useCareerPath();
+  const { career, requestConditions } = useCareerPath();
   const insets = useSafeAreaInsets();
   const { width: viewportWidth } = useWindowDimensions();
   const [loading, setLoading] = useState(true);
@@ -961,8 +962,13 @@ const HomeScreen = ({ navigation }) => {
 
   const openPrimaryHomeAction = () => {
     if (primaryHomeAction.isCareerCard) {
+      if (career?.nextAction?.type === 'advance') {
+        requestConditions(career.nextAction.targetNodeId);
+        navigation.navigate('ProgressTab');
+        return;
+      }
       const destination = resolveCareerActionDestination({ nextAction: career?.nextAction });
-      if (destination) navigation.navigate(destination.route);
+      if (destination) navigation.navigate(destination.route, destination.params);
       return;
     }
 
@@ -2123,7 +2129,14 @@ const HomeScreen = ({ navigation }) => {
                 )}
                 <View style={[styles.primaryActionTextWrap, isBadge && { maxWidth: '50%' }]}>
                   <Text style={[styles.primaryActionEyebrow, { color: eyebrowColor }]}>{primaryHomeAction.eyebrow}</Text>
-                  <Text style={[styles.primaryActionTitle, { color: titleColor }]}>{primaryHomeAction.title}</Text>
+                  <Text
+                    style={[styles.primaryActionTitle, { color: titleColor }]}
+                    numberOfLines={2}
+                    adjustsFontSizeToFit
+                    minimumFontScale={0.88}
+                  >
+                    {primaryHomeAction.title}
+                  </Text>
                 </View>
               </View>
               <Text style={[styles.primaryActionSub, { color: subColor }, isBadge && { maxWidth: '50%' }]} numberOfLines={2}>{primaryHomeAction.sub}</Text>

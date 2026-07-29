@@ -21,7 +21,7 @@ _Oluşturulma: 3 Temmuz 2026 · Kaynak: app.json, eas.json, src/utils/ads.js, BI
 - [ ] `app-ads.txt` dosyasını yayıncı sitesine koy.
 
 ## 4. Privacy / Terms / Refund sayfaları
-- [ ] `https://sparkapp.co/privacy`, `/terms`, `/refund` sayfalarının canlı ve güncel olduğunu doğrula (App Review kontrol ediyor).
+- [ ] `https://alborapp.com/privacy`, `/terms`, `/refund` sayfalarının canlı ve güncel olduğunu doğrula (App Review kontrol ediyor).
 
 ## 5. Satın alma / free trial testi
 - [ ] Sandbox test kullanıcısıyla aylık + yıllık satın alma dene.

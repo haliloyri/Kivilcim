@@ -184,11 +184,54 @@ başlıkta toplandı ve her biri için dedektör yazıldı (`audit-facts.mjs`):
 doğrulaması gereken yeri sonlu bir listeye indirmektir. Her bulgu bir hata
 değil, bir doğrulama görevidir.
 
-**Sonuç (ilk tam tur):** 34 hata → **3**. Düzeltilen: 8 çekincesiz tez (A2-005),
-18 kaynaksız iddia (A2-006). Kalan 3 çekince Adım 2 kuyruğundaki hikâyelerde;
-onlar baştan yazılırken çözülecek. `misfiled` denetimi iki kez sıkılaştırıldıktan
-sonra sıfır gerçek bulgu verdi — tek gerçek yanlış kitap vakası (1113) elle
-okurken bulunmuştu, dedektör onu yapısal olarak yakalayamazdı.
+**Sonuç:** 34 hata → **3**. Düzeltilen: 8 çekincesiz tez (A2-005), **29** kaynaksız
+iddia (A2-006 + A2-010). Kalan 3 çekince Adım 2 kuyruğundaki hikâyelerde; onlar
+baştan yazılırken çözülecek. `misfiled` denetimi iki kez sıkılaştırıldıktan sonra
+sıfır gerçek bulgu verdi — tek gerçek yanlış kitap vakası (1113) elle okurken
+bulunmuştu, dedektör onu yapısal olarak yakalayamazdı.
+
+**Dedektör kendi kör noktasını sakladı — 18 değil 29.** İlk tarama 18 kaynaksız
+iddia bildirdi. Gerçek sayı 29'du. Sebep: JavaScript'te `\w` **yalnızca ASCII**
+eşleşir, bu yüzden "**ş**unu" kelimesindeki `ş` kalıbı kırıyordu. Kalıp
+`[\wçğıöşüÇĞİÖŞÜ]+` yapılınca 11 gizli bulgu ortaya çıktı — dedektör bulguların
+%38'ini kaçırıyormuş. **Türkçe metin üzerinde çalışan her yeni kalıpta Türkçe
+harfler açıkça yazılmalı; `\w`, `\b` ve `i` bayrağı Türkçe için yeterli değil.**
+
+İkisi yalnızca kaynaksız değil **olgusal olarak yanlıştı**: 1081 "satış hızı iki
+katına çıkıyor" diye ölçülmemiş bir istatistik veriyordu (Worchel/Lee/Adewole
+1975 algılanan değeri ölçtü, satış hızını değil); 1437 "ilk yedi saniye" rakamını
+araştırma olarak sunuyordu, oysa o rakamın kaynağı yok — dolaşan "NYU / Michael
+Solomon" atfı diye bir çalışma yok, Solomon'un kendisi bunun şehir efsanesi
+olduğunu söylüyor. Ölçülmüş bulgu Willis & Todorov 2006: yüz milisaniye.
+
+### Düzeltme partisinin kendisi hasar verebilir — A2-006 dersi
+
+A2-006 cümleleri **regex ile** değiştiriyordu. Üretilen 18 hikâyenin 7'sinde
+bozulma oldu ve **hiçbir kapı aramadığı için** parti onaylanıp yazıldı:
+
+| Ne oldu | Nerede | Kök neden |
+|---|---|---|
+| Boşluksuz yapışma (`bir yıl?Canfield`) | 1092 1158 1405 1610 1630 1679 | Kalıbın başındaki `[^.!?\n#$&~]*` geriye doğru önceki cümle sonuna kadar yiyor; **cümle sonundan sonraki boşluk da bu sınıfın içinde** olduğu için yenildi |
+| Kapanış tırnağı da yendi | 1364 tr/en/de | tr/en/de tırnağı noktanın **içine** alır (`gecmeyecek."`), regex ikisini birden yuttu. es noktayı tırnağın **dışında** bıraktığı için kurtuldu |
+| Çekince paylaş kartının içine düştü | 1351 1405 1679 1684 | İddia bir `##` bloğunun içindeyse, yerine konan çekince de paylaş kartına giriyor |
+| Dillerde **farklı** cümleler değişti | 1684 | Regex her dilde ilk eşleşmeyi alır; tr/es/de'de geç cümle, en'de blok içi cümle değişti. İki dilde öznesiz parça kaldı (`Ve amigdalayı küçültüyor`, `Just like muscles.`) |
+
+Onarım: A2-010 (1351, 1405, 1684) ve A2-011 (1092, 1158, 1364, 1610, 1630, 1679).
+
+**Üç kalıcı kural çıktı:**
+
+1. **Metin düzeltmelerinde regex kullanma.** Her değişiklik açık `FIND → REPLACE`
+   çifti olmalı ve FIND metinde **tam olarak bir kez** bulunmalı. A2-010/A2-011
+   böyle yazıldı; dört sert kontrolden geçiyor (FIND tekliği, işaret sayılarının
+   sabitliği, yapışma oluşmaması, metnin gerçekten değişmesi).
+2. **Çekince paylaş kartına yazılmaz.** İddia `##` bloğunun içindeyse kart kısa ve
+   savunulabilir bir cümle taşır; kaynak ve çekince hemen ardındaki gövde
+   paragrafına gider. Kimse metodoloji çekincesi paylaşmaz.
+3. **Boşluksuz yapışma artık `validate-batch` kapısında.** Kapının kanıtı var:
+   bilerek bozulmuş bir batch'e karşı çalıştırıldı ve iki sınıfı da (nokta+harf,
+   ve tırnak-noktadan-önce) yakaladı, çıkış kodu 1 verdi. **Bu kapıyı yazarken de
+   aynı hatayı yaptım:** ilk yazımda tırnağı yalnızca noktadan *sonra* kabul ettim
+   ve 1364/es'i kaçırdım. Tırnak noktanın iki yanında da olabilir.
 
 ### Atıflı alıntı doğrulaması — risk sıralaması
 
@@ -208,10 +251,25 @@ atfedildiği ve nerede göründüğüyle ölçülür. Kitabın yazarının kendi
 alıntılanması düşük risk; tarihî bir figüre atfedilip paylaş kartında
 gösterilmesi en yüksek risk.
 
-**Tekrarlanan tuzak:** `contested` denetimi, metinde çekince dili ararken bir
-kelime listesine bakar. Yeni bir çekince ifadesi yazarsan onu `HEDGE` listesine
-de eklemelisin; yoksa düzelttiğin hikâye hatalı görünmeye devam eder. Bu iki kez
-yaşandı (story 1537 ve A2-005 partisinin tamamı).
+**Tekrarlanan tuzak — üç kez:** `contested` denetimi, metinde çekince dili
+ararken bir kelime listesine bakar. Yeni bir çekince ifadesi yazarsan onu `HEDGE`
+listesine de eklemelisin; yoksa düzelttiğin hikâye hatalı görünmeye devam eder.
+Bu iki kez yaşandı (story 1537 ve A2-005 partisinin tamamı), sonra üçüncü kez —
+ve üçüncüsünün sebebi kelime eksiği değil **biçim** eksiğiydi:
+
+> Liste etken fiil gövdeleriyle yazılmış, Türkçe **edilgen çatıyı** kaçırıyordu.
+> `reddett` kalıbı "reddetti"yi tutar, **"reddedildi"yi tutmaz** — edilgenlik
+> gövdeyi değiştiriyor (`reddet-` → `reddedil-`). A2-012'de 1164'e *"Kuralın
+> kendisi de sahibi tarafından **reddedildi**"* yazdım ve denetim hikâyeyi hâlâ
+> hatalı gösterdi.
+>
+> **Kural:** `HEDGE`'e fiil eklerken etken **ve** edilgen gövdesini birlikte yaz.
+> Bu, `\w`'nin ASCII-only olmasıyla aynı sınıfta bir hata: Türkçe'yi İngilizce
+> gibi ele alan bir kalıp sessizce eksik çalışır.
+
+Genişletmenin bedeli de kayda geçsin: `karıştırm` gibi gündelik kelimeler listeye
+girdi. Yanlış negatif riski var ama düşük, çünkü çekince kontrolü yalnızca zaten
+tartışmalı-tez kalıbına takılmış hikâyelerde çalışıyor.
 
 ---
 
@@ -257,7 +315,7 @@ node scripts/story-pipeline/audit-translations.mjs --severity error  # 0 kalmali
 | Adım | Kapsam | Tamamlanan | Kalan |
 |---|---:|---:|---:|
 | 1 · hook artakalanı | 10 | **10** | 0 ✅ |
-| 2 · uzunluk | 124 | **15** | 109 (~30 parti) · 1164/1403/1427 çekince bekliyor |
+| 2 · uzunluk | 124 | **18** | 106 (~28 parti) · 1403/1427 çekince bekliyor |
 | 3 · çeviri | 20 | 0 | 20 |
 | 4 · varyant + hook | 633 | 0 | 633 |
 | 5 · başlık çeşitlendirme | 1313 | 0 | 1313 |
@@ -266,4 +324,11 @@ node scripts/story-pipeline/audit-translations.mjs --severity error  # 0 kalmali
 
 Tamamlanmış işler: hat kurulumu, envanter senkronu, 34 işaret onarımı, 13 içerik
 düzeltmesi, 20 hikâyenin varyantı (A1-001, A1-004), Adım 1 tamam (A1-005),
-Adım 2 başladı — kitap 2 (A2-001), kitap 8 (A2-002) ve kitap 14 (A2-003) tamamlandı; A2-004 ile Purple Cow ve Leaders Eat Last kayıtları düzeltildi.
+Adım 2 başladı — kitap 2 (A2-001), kitap 8 (A2-002), kitap 14 (A2-003) ve kitap 24
+(A2-009) tamamlandı; A2-004 ile Purple Cow ve Leaders Eat Last kayıtları düzeltildi.
+
+**Olgusal temizlik tamam.** `unsourced` 29 → **0** (A2-006 + A2-010). `contested` 3 → **2** (A2-012, kitap 33).
+`audit-translations` 0 hata. Boşluksuz yapışma DB genelinde 0 ve artık kapıda.
+Kalan 2 bulgu (`contested`: 1403, 1427) bilinçli olarak Adım 2'ye bırakıldı;
+o hikâyeler baştan yazılırken çekince zaten metne girecek, şimdi ayrı bir
+düzeltme partisi açmak aynı metni iki kez yazmak olur.

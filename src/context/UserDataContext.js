@@ -35,7 +35,7 @@ const VARIANT_USAGE_STORAGE_KEY = '@kivilcim_variant_usage';
 const CAREER_TAKEAWAYS_STORAGE_KEY = '@kivilcim_career_takeaways';
 const CAREER_SPARK_PACKAGE_STORAGE_KEY = '@kivilcim_career_spark_package';
 const STREAK_FREEZE_CREDITS_STORAGE_KEY = '@kivilcim_streak_freeze_credits';
-const STORY_COLLECTION_IDS = ['classic', 'new', 'focus', 'conversation', 'originals'];
+const STORY_COLLECTION_IDS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals'];
 const DEFAULT_STORY_COLLECTIONS = ['new'];
 const EMPTY_PREFERENCES = {
   categories: [], time: null, reminderWindow: 'evening', reminderHour: 21,

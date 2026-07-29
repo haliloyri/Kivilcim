@@ -22,7 +22,7 @@
     "screenshots": "node scripts/generate-screenshots.mjs",
     "merge": "node scripts/merge.mjs",
     "test": "jest --runInBand",
-    "test:career": "jest --runInBand src/config/__tests__/featureFlags.test.js src/utils/__tests__/careerProgress.test.js src/utils/__tests__/careerNextAction.test.js src/utils/__tests__/careerNavigation.test.js src/utils/__tests__/careerSync.test.js src/utils/__tests__/localDate.test.js src/utils/__tests__/storyCompletion.test.js src/utils/__tests__/careerToolkit.test.js src/utils/__tests__/careerSparkPackage.test.js src/services/__tests__/careerEvents.test.js src/services/__tests__/careerSchema.test.js src/services/__tests__/migrateCareerPath.test.js src/services/__tests__/offlineQueue.test.js src/locales/__tests__/careerCopy.test.js"
+    "test:career": "jest --runInBand src/config/__tests__/featureFlags.test.js src/utils/__tests__/careerProgress.test.js src/utils/__tests__/careerNextAction.test.js src/utils/__tests__/careerNavigation.test.js src/utils/__tests__/careerSync.test.js src/utils/__tests__/localDate.test.js src/utils/__tests__/storyCompletion.test.js src/utils/__tests__/careerToolkit.test.js src/utils/__tests__/careerSparkPackage.test.js src/utils/__tests__/careerPreview.test.js src/services/__tests__/careerEvents.test.js src/services/__tests__/careerSchema.test.js src/services/__tests__/migrateCareerPath.test.js src/services/__tests__/offlineQueue.test.js src/locales/__tests__/careerCopy.test.js"
   },
   "dependencies": {
     "@expo-google-fonts/dm-sans": "^0.4.2",

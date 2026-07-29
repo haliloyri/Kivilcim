@@ -93,8 +93,18 @@ const CONTESTED = [
 const HEDGE = new RegExp([
   'tart[ıi][sş]mal[ıi]', 'ele[sş]tiril', 'kabul g[oö]rm[uü]yor', 'apokrif', 'kesin de[gğ]il',
   'replikasyon', 'yinelenemedi', 'do[gğ]rulanamad[ıi]', 'basitle[sş]tirme', 'iddia edil',
-  'itiraz et', 'reddett', 'efsane', 'yanl[ıi][sş] anla[sş][ıi]l', 's[oö]ylemedim', 'abart[ıi]l',
+  'efsane', 'yanl[ıi][sş] anla[sş][ıi]l', 's[oö]ylemedim', 'abart[ıi]l',
   'ancak', 'oysa', 'ne var ki', 'atfedil',
+
+  /* TURKCE EDILGEN CATI — UCUNCU KEZ AYNI TUZAK.
+     Liste etken fiil govdeleriyle yazilmis ve edilgen bicimleri kacirdi:
+       'reddett' -> "reddetti" tutar, "reddedil-di" TUTMAZ (govde d ile degisiyor)
+       'itiraz et' -> "itiraz etti" tutar, "itiraz edildi" TUTMAZ
+     A2-012'de 1164'e "Kuralin kendisi de sahibi tarafindan REDDEDILDI" yazdim ve
+     denetim hikayeyi hala hatali gosterdi. Sorun kelime eksigi degil, BICIM
+     eksigi. Bundan sonra bir fiil eklerken etken VE edilgen govdesini birlikte
+     yaz; Turkce'de edilgenlik govdeyi degistirir. */
+  'reddet', 'reddedil', 'itiraz et', 'itiraz edil', 'kar[sş][ıi] c[ıi]k',
   /* A2-005 cekincelerinde fiilen kullanilan ifadeler. Bunlar listede yoktu ve
      eklenen cekinceler taninmadi; kural: yeni cekince yazarken kelimesini
      buraya da ekle, yoksa denetim duzeltilmis hikayeyi hatali gostermeye devam eder. */
@@ -106,6 +116,14 @@ const HEDGE = new RegExp([
   'myth', 'pushed back', 'objected', 'misread', 'overstat',
   'cuestionad', 'criticad', 'no se acepta', 'mito', 'refut', 'matiz',
   'umstritten', 'kritisiert', 'nicht anerkannt', 'vereinfach', 'Mythos', 'widersprach',
+
+  /* A2-012 cekincelerinde fiilen kullanilan ifadeler. Ayni kural: yeni cekince
+     yazdikca buraya ekle. Bu grup "esik degil / ortalama" ve "karistirmis"
+     kaliplarini kapsiyor — 10.000 saat kuralinin dogru cerceveleme bicimi bu. */
+  'd[uü]zeltt', 'e[sş]ik de[gğ]il', 'kar[ıi][sş]t[ıi]rm', 'esik bulmad', 'e[sş]ik bulmad',
+  'corrected', 'not a threshold', 'conflat', 'disowned',
+  'corrigi[oó]', 'no es un umbral', 'no encontr[oó] un umbral', 'confundi', 'desautoriz',
+  'korrigierte', 'keine Schwelle', 'verwechselt', 'zur[uü]ckgewiesen',
 ].join('|'), 'i');
 
 /** Nedensellik baglaclari — iki tarihle birlikte sira hatasi riski. */

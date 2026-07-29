@@ -45,7 +45,11 @@ const CareerNodeSheet = ({ node, onClose }) => {
             </TouchableOpacity>
           </View>
           <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.content}>
-            <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t('career.nodeDetailsCopy', lang)}</Text>
+            <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t(node.descriptionKey, lang)}</Text>
+            <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t(node.identityKey, lang)}</Text>
+            <View style={[styles.reward, { backgroundColor: colors.backgroundDark }]}><Ionicons name="sparkles-outline" size={17} color={colors.primary} /><Text selectable style={[styles.rewardCopy, { color: colors.primary }]}>{t('career.rankReward', lang, { reward: t(node.unlockKey, lang), identity: t(node.identityKey, lang) })}</Text></View>
+            <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t('career.conditionsAllRequired', lang)}</Text>
+            <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t('career.conditionsSaved', lang)}</Text>
             <Text selectable style={[styles.requirementsTitle, { color: colors.text }]}>{t('career.requirements', lang)}</Text>
             {node.requirementRows.map((requirement) => (
               <View key={requirement.type} accessibilityLabel={`${t(requirement.labelKey, lang)} ${requirement.current}/${requirement.target}`} style={[styles.requirement, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}>
@@ -54,6 +58,7 @@ const CareerNodeSheet = ({ node, onClose }) => {
                 <Text selectable style={[styles.requirementValue, { color: requirement.completed ? colors.primary : colors.textSecondary }]}>{`${requirement.current}/${requirement.target}`}</Text>
               </View>
             ))}
+            {node.requirementRows.map((requirement) => <Text key={`${requirement.type}-how`} selectable style={[styles.requirementHow, { color: colors.textSecondary }]}>{t(`career.requirementHow.${requirement.type}`, lang)}</Text>)}
             {node.requirementRows.some((requirement) => requirement.type === 'deepInteractions') ? (
               <View style={[styles.requirementHelp, { backgroundColor: colors.backgroundDark }]}> 
                 <Ionicons name="bulb-outline" size={17} color={colors.primary} />
@@ -83,6 +88,9 @@ const styles = StyleSheet.create({
   requirementValue: { fontFamily: 'Inter_700Bold', fontSize: 14, fontVariant: ['tabular-nums'] },
   requirementHelp: { borderRadius: 13, padding: 12, flexDirection: 'row', alignItems: 'flex-start', gap: 9 },
   requirementHelpCopy: { flex: 1, fontFamily: 'Inter_400Regular', fontSize: 13, lineHeight: 19 },
+  reward: { borderRadius: 13, padding: 12, flexDirection: 'row', alignItems: 'flex-start', gap: 9 },
+  rewardCopy: { flex: 1, fontFamily: 'Inter_600SemiBold', fontSize: 13, lineHeight: 19 },
+  requirementHow: { fontFamily: 'Inter_400Regular', fontSize: 12, lineHeight: 18 },
 });
 
 export default CareerNodeSheet;

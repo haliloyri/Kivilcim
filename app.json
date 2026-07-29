@@ -7,11 +7,6 @@
     "userInterfaceStyle": "light",
     "backgroundColor": "#131311",
     "icon": "./assets/spark_shortcut_logo.png",
-    "splash": {
-      "image": "./assets/splash/albor-splash-mark.png",
-      "backgroundColor": "#131311",
-      "resizeMode": "contain"
-    },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.kivilcim.app",

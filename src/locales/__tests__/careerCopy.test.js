@@ -2,8 +2,15 @@ import { translations } from '../i18n';
 
 const requiredCareerKeys = [
   'tabMyPath', 'career.title', 'career.subtitle', 'career.loading', 'career.unavailable', 'career.offline', 'career.retry',
-  'career.choosePathTitle', 'career.choosePathCopy', 'career.nextStep', 'career.timeline',
+  'career.choosePathTitle', 'career.choosePathCopy', 'career.nextStep', 'career.timeline', 'career.heroProgress.common', 'career.heroProgress.path',
   'career.requirementHelp.deepInteractions',
+  'career.showConditions', 'career.hideConditions', 'career.conditionsForRank', 'career.conditionsAllRequired', 'career.conditionsSaved',
+  'career.requirementHow.stories', 'career.requirementHow.categories', 'career.requirementHow.deepInteractions', 'career.requirementHow.applications', 'career.requirementHow.activeDays',
+  'career.primaryAction.stories', 'career.primaryAction.categories', 'career.primaryAction.deepInteractions', 'career.primaryAction.applications', 'career.primaryAction.activeDays',
+  'career.selectedPath', 'career.pathsAhead', 'career.pathsAheadCopy', 'career.rankReward',
+  'career.searchGuide.category', 'career.searchGuide.connection', 'career.searchGuide.application',
+  'career.preview.toggle', 'career.preview.copy', 'career.preview.activeNotice', 'career.preview.exit',
+  'career.preview.newUser', 'career.preview.commonProgress', 'career.preview.pathSelection', 'career.preview.activePath', 'career.preview.finalRank',
   'career.selection.title', 'career.selection.subtitle', 'career.selection.free',
   'career.selection.recommendationTitle', 'career.selection.recommended',
   'career.selection.behaviorLabel', 'career.selection.rankPreviewLabel',
@@ -47,6 +54,18 @@ describe('career path translations', () => {
     requiredCareerKeys.forEach((key) => {
       expect(translations[lang][key]).toEqual(expect.any(String));
       expect(translations[lang][key].trim()).not.toBe('');
+    });
+  });
+
+  it.each(['en', 'tr', 'es', 'de'])('%s includes explanation, meaning, and reward copy for every rank', (lang) => {
+    [
+      'firstSpark', 'curious', 'traveler', 'routeSeeker', 'horizonTraveler', 'wisdomCartographer',
+      'thinker', 'synthesizer', 'insightCurator', 'storyteller', 'connector', 'sparkCarrier',
+    ].forEach((node) => {
+      ['description', 'identity', 'unlock'].forEach((field) => {
+        expect(translations[lang][`careerNode.${node}.${field}`]).toEqual(expect.any(String));
+        expect(translations[lang][`careerNode.${node}.${field}`].trim()).not.toBe('');
+      });
     });
   });
 
