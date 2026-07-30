@@ -233,4 +233,3 @@ Uygulamanın 2–3 yerinde aynı cümle geçsin:
 Eğer cevaplar **EVET** ise:
 👉 fiyat **psikolojik olarak savunulabiliyor** demektir.
 
-
