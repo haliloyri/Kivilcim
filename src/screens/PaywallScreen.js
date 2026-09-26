@@ -6,24 +6,47 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
-import { LEGAL_URLS } from '../constants/externalLinks';
+import { getLegalUrls } from '../constants/externalLinks';
 import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import { revenueAttrs } from '../services/billing';
+import { formatCurrency } from '../utils/locale';
 
-// Single source of truth for pricing. Update these and every derived label
-// (monthly-equivalent, savings %, months-free) recomputes automatically.
 const SPARK_LOGO = require('../../assets/spark_logo.png');
 const SPARK_LOGO_DARK = require('../../assets/spark_logo_dark.png');
 
-const PRICING = { currency: '₺', monthly: 49, annual: 349 };
-const formatPrice = (amount) => `${amount}${PRICING.currency}`;
-const ANNUAL_MONTHLY_EQUIVALENT = Math.round(PRICING.annual / 12);
-const ANNUAL_SAVINGS_PCT = Math.floor((1 - PRICING.annual / (PRICING.monthly * 12)) * 100);
-const ANNUAL_MONTHS_FREE = Math.round((PRICING.monthly * 12 - PRICING.annual) / PRICING.monthly);
+// Prices come from the store, always — never from a constant in here.
+//
+// A hardcoded price is wrong in every market but the one it was written for,
+// and Apple/Google already return the correct localized amount and currency
+// for the user's storefront. When the store hasn't answered yet (or billing
+// isn't connected) we show a placeholder rather than inventing a number.
+const PLAN_ORDER = ['monthly', 'yearly', 'lifetime'];
+const DEFAULT_PLAN_ID = 'yearly';
+
+const PLAN_SPECS = {
+  monthly: {
+    nameKey: 'planMonthly',
+    perKey: 'perMo',
+    detailKey: 'paywallMonthlyDetail',
+  },
+  yearly: {
+    nameKey: 'planAnnual',
+    perKey: 'perYr',
+    detailKey: 'paywallAnnualDetail',
+    popular: true,
+    badgeKey: 'paywallAnnualBestValue',
+  },
+  lifetime: {
+    nameKey: 'planLifetime',
+    perKey: 'perLifetime',
+    detailKey: 'paywallLifetimeDetail',
+  },
+};
 
 const PaywallScreen = ({ navigation, route }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const [plan, setPlan] = useState(1);
+  const [planId, setPlanId] = useState(DEFAULT_PLAN_ID);
   const [purchaseConfirmed, setPurchaseConfirmed] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [livePackages, setLivePackages] = useState(null);
@@ -40,6 +63,8 @@ const PaywallScreen = ({ navigation, route }) => {
     'story_detail_next',
   ].includes(paywallSource);
   const isStorytellerSource = paywallReason === 'storyteller_mode' || paywallSource === 'use_in_conversation';
+  const isImageCardSource = paywallReason === 'image_card' || paywallSource === 'story_detail_card';
+  const isOneMinuteSummarySource = paywallReason === 'one_minute_summary' || paywallSource === 'story_detail_one_minute_summary';
   const isProfileSource = paywallSource === 'profile_upsell';
   const isStreakFreezeSource = paywallReason === 'streak_freeze' || paywallSource === 'progress_streak_freeze';
   const paywallVariant = React.useMemo(() => {
@@ -52,6 +77,30 @@ const PaywallScreen = ({ navigation, route }) => {
         whyTitleKey: 'paywallWhyNowTrialTitle',
         whySubKey: 'paywallWhyNowTrialSub',
         valueKeys: ['paywallTrialValue1', 'paywallTrialValue2', 'paywallTrialValue3'],
+      };
+    }
+
+    if (isOneMinuteSummarySource) {
+      return {
+        bannerTitleKey: 'paywallOneMinuteTitle',
+        bannerSubKey: 'paywallOneMinuteSub',
+        titleKey: 'paywallOneMinuteHeroTitle',
+        subKey: 'paywallOneMinuteHeroSub',
+        whyTitleKey: 'paywallWhyNowOneMinuteTitle',
+        whySubKey: 'paywallWhyNowOneMinuteSub',
+        valueKeys: ['paywallOneMinuteValue1', 'paywallOneMinuteValue2', 'paywallOneMinuteValue3'],
+      };
+    }
+
+    if (isImageCardSource) {
+      return {
+        bannerTitleKey: 'paywallImageCardTitle',
+        bannerSubKey: 'paywallImageCardSub',
+        titleKey: 'paywallImageCardHeroTitle',
+        subKey: 'paywallImageCardHeroSub',
+        whyTitleKey: 'paywallWhyNowImageCardTitle',
+        whySubKey: 'paywallWhyNowImageCardSub',
+        valueKeys: ['paywallImageCardValue1', 'paywallImageCardValue2', 'paywallImageCardValue3'],
       };
     }
 
@@ -112,67 +161,70 @@ const PaywallScreen = ({ navigation, route }) => {
       whySubKey: 'paywallWhyNowSub',
       valueKeys: ['paywallValue1', 'paywallValue2', 'paywallValue3'],
     };
-  }, [isEarlyTrial, isLockedStorySource, isProfileSource, isStorytellerSource, isStreakFreezeSource]);
-  // When live billing is connected, prices/currency come from the store
-  // (localized, regionally correct). Otherwise fall back to the built-in values.
-  const livePriceString = (planId, fallback) =>
-    livePackages?.[planId]?.product?.priceString || fallback;
+  }, [isEarlyTrial, isImageCardSource, isLockedStorySource, isOneMinuteSummarySource, isProfileSource, isStorytellerSource, isStreakFreezeSource]);
+  const priceUnavailable = t('paywallPriceUnavailable', lang);
 
-  // Derived labels (monthly-equivalent, savings %, months-free) must reflect the
-  // LIVE store prices/currency when billing is connected — otherwise other
-  // markets would see absurd ₺-derived numbers. Fall back to built-in values.
+  // The store's own localized price string ("49,99 €", "$49.99", "₺349") —
+  // already formatted for the user's storefront, so never re-format it.
+  const livePriceString = (id) =>
+    livePackages?.[id]?.product?.priceString || priceUnavailable;
+
+  // Savings %, months-free and the monthly-equivalent are all derived from the
+  // LIVE store amounts. They can only be shown once both the monthly and the
+  // yearly package have arrived — a percentage computed from a placeholder
+  // would be a made-up claim next to a real price.
   const priceMeta = React.useMemo(() => {
     const m = livePackages?.monthly?.product;
-    const a = livePackages?.annual?.product;
-    if (typeof m?.price === 'number' && typeof a?.price === 'number' && m.price > 0) {
-      const currency = a.currencyCode || m.currencyCode;
-      const fmt = (num) => {
-        try {
-          return new Intl.NumberFormat(undefined, {
-            style: 'currency',
-            currency,
-            maximumFractionDigits: 2,
-          }).format(num);
-        } catch (e) {
-          return `${num.toFixed(2)} ${currency || ''}`.trim();
-        }
-      };
-      return {
-        savingsPct: Math.max(0, Math.floor((1 - a.price / (m.price * 12)) * 100)),
-        monthsFree: Math.max(0, Math.round((m.price * 12 - a.price) / m.price)),
-        monthlyEquivalent: fmt(a.price / 12),
-      };
+    const y = livePackages?.yearly?.product;
+    if (typeof m?.price !== 'number' || typeof y?.price !== 'number' || m.price <= 0) {
+      return { savingsPct: null, monthsFree: null, monthlyEquivalent: null };
     }
+    const currency = y.currencyCode || m.currencyCode;
     return {
-      savingsPct: ANNUAL_SAVINGS_PCT,
-      monthsFree: ANNUAL_MONTHS_FREE,
-      monthlyEquivalent: formatPrice(ANNUAL_MONTHLY_EQUIVALENT),
+      savingsPct: Math.max(0, Math.floor((1 - y.price / (m.price * 12)) * 100)),
+      monthsFree: Math.max(0, Math.round((m.price * 12 - y.price) / m.price)),
+      monthlyEquivalent: formatCurrency(y.price / 12, currency, lang),
     };
-  }, [livePackages]);
+  }, [livePackages, lang]);
 
-  const plans = [
-    {
-      id: 'monthly',
-      name: t('planMonthly', lang),
-      price: livePriceString('monthly', formatPrice(PRICING.monthly)),
-      per: t('perMo', lang),
-      save: null,
-      detail: t('paywallMonthlyDetail', lang),
-      package: livePackages?.monthly || null,
-    },
-    {
-      id: 'annual',
-      name: t('planAnnual', lang),
-      price: livePriceString('annual', formatPrice(PRICING.annual)),
-      per: t('perYr', lang),
-      save: t('save40', lang).replace('{{pct}}', String(priceMeta.savingsPct)),
-      popular: true,
-      badge: t('paywallAnnualBestValue', lang),
-      detail: t('paywallAnnualDetail', lang),
-      effectivePrice: t('paywallAnnualMonthlyEquivalent', lang).replace('{{price}}', priceMeta.monthlyEquivalent),
-      package: livePackages?.annual || null,
-    },
-  ];
+  // Only render plans the store actually offers. Before the offering loads (or
+  // when billing isn't connected) show monthly + yearly as priceless shells so
+  // the layout doesn't jump; `lifetime` appears only once it's really there.
+  const plans = React.useMemo(() => {
+    const available = livePackages
+      ? PLAN_ORDER.filter((id) => livePackages[id])
+      : ['monthly', 'yearly'];
+
+    return available.map((id) => {
+      const spec = PLAN_SPECS[id];
+      const plan = {
+        id,
+        name: t(spec.nameKey, lang),
+        price: livePriceString(id),
+        per: t(spec.perKey, lang),
+        detail: t(spec.detailKey, lang),
+        popular: !!spec.popular,
+        badge: spec.badgeKey ? t(spec.badgeKey, lang) : null,
+        save: null,
+        effectivePrice: null,
+        package: livePackages?.[id] || null,
+      };
+      if (id === 'yearly' && priceMeta.savingsPct !== null) {
+        plan.save = t('save40', lang).replace('{{pct}}', String(priceMeta.savingsPct));
+        plan.effectivePrice = t('paywallAnnualMonthlyEquivalent', lang)
+          .replace('{{price}}', priceMeta.monthlyEquivalent);
+      }
+      return plan;
+    });
+  }, [livePackages, lang, priceMeta]);
+
+  // Keep the selection valid when the offering loads and changes the plan set.
+  const selectedPlan = plans.find((p) => p.id === planId) || plans[0] || null;
+  useEffect(() => {
+    if (plans.length && !plans.some((p) => p.id === planId)) {
+      setPlanId(plans.some((p) => p.id === DEFAULT_PLAN_ID) ? DEFAULT_PLAN_ID : plans[0].id);
+    }
+  }, [plans, planId]);
   const features = [
     t('feat1', lang),
     t('feat2', lang),
@@ -183,16 +235,24 @@ const PaywallScreen = ({ navigation, route }) => {
   const { buyPremium, restorePremium, getPremiumOfferings, billingLive } = useUserData();
 
   const valuePoints = paywallVariant.valueKeys.map((key) => t(key, lang));
-  // Trust1 (social proof) always shows. Trust2/3 explain that billing isn't
-  // connected yet — only relevant in dev/local builds.
-  const trustPoints = billingLive
-    ? [t('paywallTrust1', lang)]
-    : [t('paywallTrust1', lang), t('paywallTrust2', lang), t('paywallTrust3', lang)];
+  // Store-payment and restore reassurance belong on every build — they describe
+  // how the purchase works, not whether this build can take one.
+  const trustPoints = [
+    t('paywallTrust1', lang),
+    t('paywallTrust2', lang),
+    t('paywallTrust3', lang),
+  ];
 
   // App Store / Play require auto-renewable subscription terms next to the CTA.
   const autoRenewDisclosure = t('paywallAutoRenewDisclosure', lang)
-    .replace('{{monthlyPrice}}', plans[0].price)
-    .replace('{{annualPrice}}', plans[1].price);
+    .replace('{{monthlyPrice}}', livePriceString('monthly'))
+    .replace('{{annualPrice}}', livePriceString('yearly'));
+
+  // A trial only applies to the auto-renewing plans; `lifetime` is a one-off.
+  const showsTrial = billingLive && selectedPlan?.id !== 'lifetime';
+  const trialBadge = showsTrial
+    ? t('paywallTrialBadge', lang).replace('{{price}}', selectedPlan?.price || priceUnavailable)
+    : null;
 
   // Load live store prices when billing is connected.
   useEffect(() => {
@@ -206,26 +266,28 @@ const PaywallScreen = ({ navigation, route }) => {
   }, [billingLive, getPremiumOfferings]);
 
   const legalLinks = [
-    { label: t('paywallLegalPrivacy', lang), url: LEGAL_URLS.privacy },
-    { label: t('paywallLegalTerms', lang), url: LEGAL_URLS.terms },
-    { label: t('paywallLegalRefund', lang), url: LEGAL_URLS.refund },
+    { label: t('paywallLegalPrivacy', lang), url: getLegalUrls(lang).privacy },
+    { label: t('paywallLegalTerms', lang), url: getLegalUrls(lang).terms },
+    { label: t('paywallLegalRefund', lang), url: getLegalUrls(lang).refund },
   ];
 
-  const handleSelectPlan = (nextPlan) => {
-    if (nextPlan === plan) return;
+  const handleSelectPlan = (nextId) => {
+    if (nextId === planId) return;
+    const next = plans.find((p) => p.id === nextId);
 
     trackEvent(ANALYTICS_EVENTS.PAYWALL_PLAN_SELECTED, {
-      previousPlan: plans[plan]?.name,
-      previousPlanId: plans[plan]?.id,
-      selectedPlan: plans[nextPlan]?.name,
-      selectedPlanId: plans[nextPlan]?.id,
-      selectedPrice: plans[nextPlan]?.price,
+      previousPlan: selectedPlan?.name,
+      previousPlanId: selectedPlan?.id,
+      selectedPlan: next?.name,
+      selectedPlanId: next?.id,
+      selectedPrice: next?.price,
+      ...revenueAttrs(next?.package),
       source: paywallSource,
       reason: paywallReason,
       lang,
     });
 
-    setPlan(nextPlan);
+    setPlanId(nextId);
   };
 
   useEffect(() => {
@@ -235,43 +297,61 @@ const PaywallScreen = ({ navigation, route }) => {
     trackEvent(ANALYTICS_EVENTS.PAYWALL_VIEWED, {
       reason: paywallReason,
       source: paywallSource,
-      selectedPlan: plans[plan]?.name,
-      selectedPlanId: plans[plan]?.id,
+      selectedPlan: selectedPlan?.name,
+      selectedPlanId: selectedPlan?.id,
+      billing_live: billingLive,
       lang,
     });
 
     if (isFreeLimitReached) {
       trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
         source: paywallSource,
-        selectedPlan: plans[plan]?.name,
+        selectedPlan: selectedPlan?.name,
         lang,
       });
     }
-  }, [isFreeLimitReached, lang, paywallReason, paywallSource, plan, plans]);
+  }, [billingLive, isFreeLimitReached, lang, paywallReason, paywallSource, selectedPlan]);
 
   const handlePurchase = async () => {
-    const selectedPlan = plans[plan];
-    await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_STARTED, {
+    if (isProcessing) return;
+
+    // Billing not connected: say so and record it. Granting Premium here would
+    // ship a free app and report purchases that never happened.
+    if (!billingLive) {
+      await trackEvent(ANALYTICS_EVENTS.PAYWALL_UNAVAILABLE, {
+        source: paywallSource,
+        reason: paywallReason,
+        selectedPlanId: selectedPlan?.id,
+        lang,
+      });
+      Alert.alert(t('paywallUnavailableTitle', lang), t('paywallUnavailableSub', lang));
+      return;
+    }
+
+    // Revenue attributes are numeric (`revenue` + ISO `currency` + `product_id`).
+    // A display string like "349₺" can't be summed, so LTV and ROAS would be
+    // impossible to compute downstream.
+    const planProps = {
       selectedPlan: selectedPlan?.name,
       selectedPlanId: selectedPlan?.id,
       selectedPrice: selectedPlan?.price,
+      ...revenueAttrs(selectedPlan?.package),
       source: paywallSource,
       reason: paywallReason,
       lang,
-    });
+    };
 
-    if (isProcessing) return;
+    await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_STARTED, planProps);
+
     setIsProcessing(true);
     try {
       const result = await buyPremium(selectedPlan?.package || null);
       if (result?.success) {
         await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_SUCCEEDED, {
-          selectedPlan: selectedPlan?.name,
-          selectedPlanId: selectedPlan?.id,
-          selectedPrice: selectedPlan?.price,
-          source: paywallSource,
-          reason: paywallReason,
-          lang,
+          ...planProps,
+          period_type: result?.entitlement?.periodType,
+          is_trial_conversion: !!result?.entitlement?.isTrial,
+          expires_at: result?.entitlement?.expiresAt,
         });
         setPurchaseConfirmed(true);
         return;
@@ -281,12 +361,7 @@ const PaywallScreen = ({ navigation, route }) => {
       if (result?.userCancelled) return;
 
       await trackEvent(ANALYTICS_EVENTS.PAYWALL_PURCHASE_FAILED, {
-        selectedPlan: selectedPlan?.name,
-        selectedPlanId: selectedPlan?.id,
-        selectedPrice: selectedPlan?.price,
-        source: paywallSource,
-        reason: paywallReason,
-        lang,
+        ...planProps,
         failureReason: result?.error || 'buy_premium_failed',
       });
       Alert.alert(t('alert_error', lang), t('paywallPurchaseFailed', lang));
@@ -448,7 +523,7 @@ const PaywallScreen = ({ navigation, route }) => {
       marginTop: 6,
     },
     whyNowBullet: {
-      color: colors.primary,
+      color: colors.primaryText,
       marginTop: 1,
       fontSize: 12,
     },
@@ -518,7 +593,7 @@ const PaywallScreen = ({ navigation, route }) => {
     planEffectivePrice: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: typography.sizes.badge + 1,
-      color: colors.primary,
+      color: colors.primaryText,
       marginTop: 6,
       textAlign: 'center',
     },
@@ -647,6 +722,13 @@ const PaywallScreen = ({ navigation, route }) => {
       textAlign: 'center',
       lineHeight: 16,
     },
+    trialBadgeText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: typography.sizes.badge + 1,
+      color: colors.primaryText,
+      textAlign: 'center',
+      marginTop: 10,
+    },
     disclosureText: {
       fontFamily: 'Inter_400Regular',
       fontSize: typography.sizes.badge - 1,
@@ -739,14 +821,14 @@ const PaywallScreen = ({ navigation, route }) => {
         </View>
 
         <View style={{ flexDirection: 'row', gap: 10, marginBottom: 20 }}>
-          {plans.map((p, i) => (
+          {plans.map((p) => (
             <TouchableOpacity
-              key={i}
-              style={[styles.planCard, plan === i && styles.planCardSelected]}
-              onPress={() => handleSelectPlan(i)}
+              key={p.id}
+              style={[styles.planCard, planId === p.id && styles.planCardSelected]}
+              onPress={() => handleSelectPlan(p.id)}
               accessibilityRole="button"
               accessibilityLabel={`${p.name} ${p.price}${p.per}`}
-              accessibilityState={{ selected: plan === i }}
+              accessibilityState={{ selected: planId === p.id }}
             >
               {p.popular && (
                 <View style={styles.popularBadge}>
@@ -754,7 +836,7 @@ const PaywallScreen = ({ navigation, route }) => {
                 </View>
               )}
               {!p.popular && <View style={{ height: 22 }} />}
-              <Text style={[styles.planName, plan === i && { fontFamily: 'Inter_500Medium' }]}>{p.name}</Text>
+              <Text style={[styles.planName, planId === p.id && { fontFamily: 'Inter_500Medium' }]}>{p.name}</Text>
               <Text style={styles.planPrice}>{p.price}</Text>
               <Text style={styles.planPer}>{p.per}</Text>
               {p.effectivePrice && <Text style={styles.planEffectivePrice}>{p.effectivePrice}</Text>}
@@ -764,7 +846,7 @@ const PaywallScreen = ({ navigation, route }) => {
           ))}
         </View>
 
-        {plans[plan]?.id === 'annual' && (
+        {selectedPlan?.id === 'yearly' && priceMeta.monthsFree !== null && (
           <View style={styles.annualNudge}>
             <Text style={styles.annualNudgeText}>
               {t('paywallAnnualNudge', lang)
@@ -806,6 +888,10 @@ const PaywallScreen = ({ navigation, route }) => {
           )}
         </TouchableOpacity>
 
+        {trialBadge && !purchaseConfirmed && (
+          <Text style={styles.trialBadgeText}>{trialBadge}</Text>
+        )}
+
         {billingLive && !purchaseConfirmed && (
           <Text style={styles.disclosureText}>{autoRenewDisclosure}</Text>
         )}
@@ -822,17 +908,13 @@ const PaywallScreen = ({ navigation, route }) => {
         </View>
 
         <View style={styles.policyCard}>
-          {billingLive ? (
+          <Text style={styles.policyTitle}>{t('paywallTrialTitle', lang)}</Text>
+          <Text style={styles.policyText}>{t('paywallTrialSub', lang)}</Text>
+          <Text style={styles.policyText}>{t('paywallRefundText', lang)}</Text>
+          {billingLive && (
             <>
-              <Text style={styles.policyTitle}>{t('paywallManageTitle', lang)}</Text>
               <Text style={styles.policyText}>{t('paywallManageSub', lang)}</Text>
               <Text style={styles.policyText}>{t('paywallManageCancel', lang)}</Text>
-            </>
-          ) : (
-            <>
-              <Text style={styles.policyTitle}>{t('paywallTrialTitle', lang)}</Text>
-              <Text style={styles.policyText}>{t('paywallTrialSub', lang)}</Text>
-              <Text style={styles.policyText}>{t('paywallRefundText', lang)}</Text>
             </>
           )}
         </View>

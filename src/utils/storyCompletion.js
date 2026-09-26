@@ -3,6 +3,7 @@
 // cannot quietly alter the meaning of an H evidence event.
 export const READ_COMPLETE_RATIO = 0.9;
 export const SHORT_STORY_DWELL_MS = 5_000;
+export const ONE_MINUTE_SUMMARY_DWELL_MS = 20_000;
 
 export const hasReachedReadingCompletion = ({ contentOffsetY = 0, contentHeight = 0, viewportHeight = 0 } = {}) => {
   const safeContentHeight = Number(contentHeight) || 0;

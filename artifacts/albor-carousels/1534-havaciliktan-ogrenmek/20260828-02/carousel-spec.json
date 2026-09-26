@@ -1,0 +1,126 @@
+{
+  "category": "Felsefe",
+  "distinct_art": true,
+  "source": {
+    "book": "Black Box Thinking",
+    "author": "Matthew Syed"
+  },
+  "slides": [
+    {
+      "main_lines": [
+        "Tarihin en büyük",
+        "havacılık felaketi",
+        "havada yaşanmadı.",
+        "Sonrası, hataya bakışı",
+        "değiştirdi."
+      ],
+      "support_lines": [],
+      "accent_focus": { "block": "illustration" },
+      "art_path": "illustrations/scene-01.png",
+      "art_crop": [0.0, 0.28, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "1977’de Tenerife’de",
+        "iki Boeing 747",
+        "aynı pistte çarpıştı.",
+        "583 kişi hayatını kaybetti."
+      ],
+      "support_lines": [],
+      "accent_focus": { "block": "illustration" },
+      "art_path": "illustrations/scene-02.png",
+      "art_crop": [0.0, 0.32, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Felaketten sonra",
+        "havacılık bir seçim yaptı:",
+        "hatayı saklamak",
+        "ya da kayda geçirmek."
+      ],
+      "support_lines": [],
+      "accent_focus": { "block": "illustration" },
+      "art_path": "illustrations/scene-03.png",
+      "art_crop": [0.0, 0.33, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Her kazayı, her hatayı,",
+        "her neredeyse-kazayı",
+        "kaydetti, analiz etti",
+        "ve sektörle paylaştı."
+      ],
+      "support_lines": [],
+      "accent_focus": { "block": "illustration" },
+      "art_path": "illustrations/scene-04.png",
+      "art_crop": [0.0, 0.30, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Havacılıkta hata bildirimi",
+        "saklanacak bir itiraf değil,",
+        "öğrenme sistemine giren",
+        "bir kayıt oldu."
+      ],
+      "support_lines": [],
+      "accent_focus": { "block": "illustration" },
+      "art_path": "illustrations/scene-05.png",
+      "art_crop": [0.0, 0.30, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Bir kültür hatayı örter.",
+        "Diğeri onu kayda alır.",
+        "Kara kutunun gücü,",
+        "öğrenmeyi mümkün kılar."
+      ],
+      "support_lines": [],
+      "accent_focus": { "block": "illustration" },
+      "art_path": "illustrations/scene-06.png",
+      "art_crop": [0.0, 0.31, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Bugün tek bir hatanı seç.",
+        "Nerede başladığını yaz.",
+        "Bir daha olmaması için",
+        "tek bir sistemi değiştir."
+      ],
+      "support_lines": [],
+      "accent_focus": { "block": "illustration" },
+      "art_path": "illustrations/scene-07.png",
+      "art_crop": [0.0, 0.29, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Geçen ay yaptığın bir hata",
+        "sisteminde neyi değiştirdi?",
+        "Onu paylaşabildin mi?"
+      ],
+      "support_lines": [
+        "Deneyimini yorumlarda anlat.",
+        "Kaynak: Black Box Thinking — Matthew Syed",
+        "Albor’da tam hikâyeyi oku."
+      ],
+      "accent_focus": { "block": "illustration" },
+      "art_path": "illustrations/scene-08.png",
+      "art_crop": [0.0, 0.31, 1.0, 1.0],
+      "art_box": [0, 850, 1080, 1350],
+      "art_opacity": 0.98
+    }
+  ]
+}

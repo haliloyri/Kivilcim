@@ -52,7 +52,7 @@ Uygulamayı ilk kez açan kullanıcıya gösterilen kurulum akışı. Üst kıs�
 | 2 | **Kategori Seçimi** — İlgi alanları (min. 2 seçim zorunlu) |
 | 3 | **Günlük Süre** — 3dk / 6dk / 9dk okuma planı seçimi |
 | 4 | **Hatırlatma Zamanı** — Sabah / Öğle / Akşam (çoklu seçim) |
-| 5 | **Profil Bilgisi** — Ad ve e-posta (opsiyonel, atlanabilir) |
+| 5 | **Profil Bilgisi** — Sadece ad (opsiyonel, atlanabilir; paylaşım kartlarında görünür) |
 | 6 | **Özet** — Seçilen plan, kategoriler ve hatırlatma özeti |
 
 **Özellikler:**
@@ -211,39 +211,44 @@ Kullanıcının okuma istatistiklerini ve başarımlarını gösteren ekran. (Al
 
 ## 9. ProfileScreen — Profil & Ayarlar
 
-Kullanıcı ayarlarının yönetildiği ekran. (Alt sekme: 👤 Profil)
+Kimlik, okuma ritmi, tercihler, abonelik ve destek. (Alt sekme: 👤 Profil)
+İlerleme ve rozetler burada değil, **Yolum** sekmesinde. Uygulamada hesap sistemi olmadığı için e-posta ve "Çıkış yap" yok.
 
-**Bölümler:**
+**Yukarıdan aşağı:**
 
-### Profil Kartı
-- Avatar (ad baş harfleri)
-- Ad ve e-posta gösterimi
-- Profil düzenleme (ad, e-posta güncelleme)
-- Misafir kullanıcı için giriş teşviki
+### 1. Kimlik başlığı
+- Baş harfli düz avatar (yumuşak `primary` zemin), serif ad, Premium ise küçük "Premium" etiketi
+- Adın altında Kıvılcım Yolu unvanı → dokununca Yolum sekmesi
+- Misafirde: "Misafir kullanıcı" + "Adını ekle →" + "Paylaştığın kartlarda görünür."
+- Başlığın tamamı dokunulabilir → ad düzenleme paneli (alttan açılır)
 
-### Okuma Planı
-- Günlük süre seçimi (3/6/9 dk)
-- Hatırlatma zamanı seçimi (Sabah/Öğle/Akşam, çoklu)
+### 2. Premium şeridi (sadece ücretsiz kullanıcı)
+- Tek satır: "Albor Premium · Tüm hikâyeler, reklamsız ›" → Paywall
 
-### Görünüm & Dil
-- Tema: Açık / Koyu mod
-- Dil: Türkçe / İngilizce / İspanyolca / Almanca
-- İlgi alanı kategorileri yönetimi
+### 3. Okuma ritmi
+- **Günlük hedef:** 3'lü seçim — 1 hikâye (~3 dk) / 2 (~6 dk) / 3 (~9 dk)
+- **Hatırlatmalar:** Ana açma/kapama anahtarı; açıkken Sabah / Öğle / Akşam (çoklu). Son saati kapatmak = hatırlatmaları kapatmak.
+- Bildirim izni reddedildiyse: "Bildirimler kapalı — Ayarlar'dan aç" satırı (sistem ayarlarını açar)
 
-### Son Hikayeler
-- Son 3 okunan hikayenin özeti
+### 4. İçerik
+- **İlgi alanları · N konu ›** → alttan açılan panelde kategori seçimi (Keşfet'te önce bunlar gösterilir; hiçbiri seçili değilse hepsi)
+- **Dil · Türkçe ›** → alttan açılan panelde EN / TR / ES / DE
 
-### İstatistikler
-- Streak, toplam okuma sayısı, en uzun streak
+### 5. Görünüm
+- Tema: Aydınlık / Koyu / Sistem (Sistem = telefonun temasını takip eder)
 
-### Rozetler
-- Kazanılan en son rozet gösterimi
+### 6. Abonelik ve destek
+- Premium'a geç (ücretsiz) veya Aboneliği yönet (premium → mağazanın abonelik sayfası)
+- Satın alımları geri yükle
+- Geri bildirim gönder (`info@alborapp.com`, e-postaya sürüm/cihaz bilgisi eklenir)
+- Albor'u değerlendir (mağaza puanlama penceresi; yoksa mağaza sayfası; o da yoksa alborapp.com/{dil})
+- Gizlilik Politikası / Kullanım Koşulları → `alborapp.com/privacy/{dil}`, `alborapp.com/terms/{dil}`
 
-### Hesap İşlemleri
-- Gizlilik politikası bağlantısı
-- Test bildirimi gönderme
-- **Çıkış yap** (profil bilgilerini temizler)
-- **Tüm verileri sıfırla** (tehlikeli işlem, onay ister)
+### 7. Alt kısım
+- Kırmızı "Uygulama verilerini sıfırla" (onaylı) ve sürüm: "Albor 1.x.x"
+
+### 8. Developer (sadece `__DEV__`)
+- Premium anahtarı, Hikâye koleksiyonu seçimi, Bildirim testi
 
 ---
 

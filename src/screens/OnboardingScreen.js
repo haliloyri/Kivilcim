@@ -14,8 +14,11 @@ import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import { getCategoryImage, getCategoryPillIcon } from '../utils/categoryImages';
 import { ensureNotificationPermission } from '../utils/notifications';
+import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
 const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
+// Read and cleared once by AppNavigator, right after the main stack mounts.
+export const PENDING_ONBOARDING_PAYWALL_KEY = '@albor_pending_onboarding_paywall';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -45,7 +48,6 @@ const OnboardingScreen = ({ navigation }) => {
   const [selectedTime, setSelectedTime] = useState(1);
   const [selectedReminders, setSelectedReminders] = useState(['evening']);
   const [userName, setUserName] = useState('');
-  const [userEmail, setUserEmail] = useState('');
   const [focusedField, setFocusedField] = useState(null);
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
@@ -80,8 +82,9 @@ const OnboardingScreen = ({ navigation }) => {
     .replace('{{minutes}}', selectedTimeOption.label)
     .replace('{{stories}}', `${selectedTimeOption.dailyStoryTarget} ${storyWord}`);
 
-  // Step 0: Welcome, 1: How it works, 2: Categories, 3: Time, 4: Reminders, 5: Name, 6: Summary
-  const TOTAL_STEPS = 7;
+  // Step 0: Welcome, 1: How it works, 2: Categories, 3: First value (real story
+  // preview), 4: Time, 5: Reminders, 6: Name, 7: Summary
+  const TOTAL_STEPS = 8;
   const isPhone = SCREEN_WIDTH < 768;
   const isSmallPhone = SCREEN_WIDTH < 390;
   const catGridGap = isPhone ? 8 : 10;
@@ -105,9 +108,9 @@ const OnboardingScreen = ({ navigation }) => {
 
   const next = async () => {
     Haptics.selectionAsync().catch(() => {});
-    // Reminder step (4): prime the OS notification permission in-context, right after
+    // Reminder step (5): prime the OS notification permission in-context, right after
     // the user has chosen when to be nudged — higher opt-in than a cold prompt at the end.
-    if (step === 4) {
+    if (step === 5) {
       ensureNotificationPermission().catch(() => {});
     }
     if (step < TOTAL_STEPS - 1) {
@@ -130,6 +133,8 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const skip = async () => {
+    // Deliberately does NOT arm the trial paywall: a user who skipped has seen
+    // no value yet, and a paywall without context reads as an ambush.
     await saveOnboarding([], timeOptions[1], reminderOptions[2]);
     await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
   };
@@ -155,13 +160,15 @@ const OnboardingScreen = ({ navigation }) => {
 
   const handleFinish = async () => {
     const name = userName.trim();
-    const email = userEmail.trim();
-    if (name || email) {
-      await updateUserProfile({
-        ...(name ? { displayName: name } : {}),
-        ...(email ? { email } : {}),
-      });
+    if (name) {
+      await updateUserProfile({ displayName: name });
     }
+    // Arm the post-onboarding trial offer before completing onboarding.
+    //
+    // It can't be pushed from here: `saveOnboarding` flips `isOnboarded`, which
+    // swaps the navigator's screen set and unmounts this component. AppNavigator
+    // picks the flag up once the main stack is mounted.
+    await AsyncStorage.setItem(PENDING_ONBOARDING_PAYWALL_KEY, 'true').catch(() => {});
     await saveOnboarding(selectedCats, timeOptions[selectedTime], selectedReminders);
     await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
   };
@@ -216,7 +223,7 @@ const OnboardingScreen = ({ navigation }) => {
     headerBrand: {
       fontFamily: 'PlayfairDisplay_400Regular_Italic',
       fontSize: 22,
-      color: colors.primary,
+      color: colors.primaryText,
       letterSpacing: -0.5,
     },
     headerAction: {
@@ -359,6 +366,41 @@ const OnboardingScreen = ({ navigation }) => {
       lineHeight: 18,
     },
 
+    /* â”€â”€ Step 3: First value â€” real story preview â”€â”€ */
+    firstValueCard: {
+      padding: 20,
+      borderRadius: 16,
+      backgroundColor: cardBg,
+      borderWidth: 1,
+      borderColor: colors.border,
+      shadowColor: colors.text,
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.04,
+      shadowRadius: 8,
+      elevation: 1,
+    },
+    firstValueCategory: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+      color: colors.primaryText,
+      textTransform: 'uppercase',
+      letterSpacing: 0.4,
+      marginBottom: 8,
+    },
+    firstValueTitle: {
+      fontFamily: 'PlayfairDisplay_600SemiBold',
+      fontSize: 19,
+      color: colors.text,
+      lineHeight: 26,
+      marginBottom: 10,
+    },
+    firstValuePunchline: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 15,
+      color: colors.textSecondary,
+      lineHeight: 22,
+    },
+
     /* â”€â”€ Step 2: Category Selection â”€â”€ */
     catGrid: {
       flexDirection: 'row',
@@ -467,7 +509,7 @@ const OnboardingScreen = ({ navigation }) => {
       backgroundColor: colors.primary,
     },
 
-    /* â”€â”€ Step 5: Name â”€â”€ */
+    /* â”€â”€ Step 6: Name â”€â”€ */
     nameInput: {
       backgroundColor: colors.surfaceContainerHigh || cardBg,
       borderRadius: 16,
@@ -483,15 +525,6 @@ const OnboardingScreen = ({ navigation }) => {
     nameInputFocused: {
       borderColor: colors.primary,
     },
-    emailNote: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      color: colors.textSecondary,
-      lineHeight: 17,
-      marginTop: 2,
-      marginBottom: 4,
-      paddingHorizontal: 4,
-    },
     nameSkipHint: {
       fontFamily: 'Inter_400Regular',
       fontSize: 13,
@@ -500,7 +533,7 @@ const OnboardingScreen = ({ navigation }) => {
       marginTop: 8,
     },
 
-    /* â”€â”€ Step 6: Summary â”€â”€ */
+    /* â”€â”€ Step 7: Summary â”€â”€ */
     readyArt: {
       backgroundColor: cardBg,
       borderRadius: 20,
@@ -617,6 +650,31 @@ const OnboardingScreen = ({ navigation }) => {
     },
   });
 
+  // First-value moment (step 3): a real story from the categories the user just
+  // picked, punchline first — trust before the paywall ever shows up. Picked
+  // fresh whenever the category selection changes (e.g. the user goes back
+  // and re-picks), falling back to any story with a punchline, then to any
+  // story at all so the step never renders empty.
+  const firstValueStory = React.useMemo(() => {
+    if (!Array.isArray(stories) || !stories.length) return null;
+    const inSelectedCats = (st) => selectedCats.includes(Number(st.parent_cat_id));
+    const hasPunchline = (st) => !!st.conversation_punchline;
+    const matchingWithPunchline = stories.filter((st) => inSelectedCats(st) && hasPunchline(st));
+    const anyWithPunchline = stories.filter(hasPunchline);
+    const pool = matchingWithPunchline.length ? matchingWithPunchline
+      : (anyWithPunchline.length ? anyWithPunchline : stories);
+    return pool[Math.floor(Math.random() * pool.length)] || null;
+  }, [selectedCats, stories]);
+
+  useEffect(() => {
+    if (step !== 3 || !firstValueStory) return;
+    trackEvent(ANALYTICS_EVENTS.ONBOARDING_FIRST_STORY_SHOWN, {
+      storyId: firstValueStory.story_id,
+      lang,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step, firstValueStory?.story_id]);
+
   /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ STEP CONTENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   const steps = [
     /* â”€â”€ Step 0: Welcome â”€â”€ */
@@ -646,21 +704,21 @@ const OnboardingScreen = ({ navigation }) => {
       </Text>
       <Text style={s.sectionSubtitle}>{t('onboarding_how_it_works_sub', lang)}</Text>
       <View style={s.hiwCard}>
-        <View style={s.hiwIconBox}><Ionicons name="book-outline" size={22} color={colors.primary} style={s.hiwIcon} /></View>
+        <View style={s.hiwIconBox}><Ionicons name="book-outline" size={22} color={colors.primaryText} style={s.hiwIcon} /></View>
         <View style={{ flex: 1 }}>
           <Text style={s.hiwCardTitle}>{t('onboarding_hiw_stories_title', lang)}</Text>
           <Text style={s.hiwCardSub}>{t('onboarding_hiw_stories_sub', lang)}</Text>
         </View>
       </View>
       <View style={s.hiwCard}>
-        <View style={s.hiwIconBox}><Ionicons name="flame-outline" size={22} color={colors.primary} style={s.hiwIcon} /></View>
+        <View style={s.hiwIconBox}><Ionicons name="flame-outline" size={22} color={colors.primaryText} style={s.hiwIcon} /></View>
         <View style={{ flex: 1 }}>
           <Text style={s.hiwCardTitle}>{t('onboarding_hiw_spark_title', lang)}</Text>
           <Text style={s.hiwCardSub}>{t('onboarding_hiw_spark_sub', lang)}</Text>
         </View>
       </View>
       <View style={s.hiwCard}>
-        <View style={s.hiwIconBox}><Ionicons name="notifications-outline" size={22} color={colors.primary} style={s.hiwIcon} /></View>
+        <View style={s.hiwIconBox}><Ionicons name="notifications-outline" size={22} color={colors.primaryText} style={s.hiwIcon} /></View>
         <View style={{ flex: 1 }}>
           <Text style={s.hiwCardTitle}>{t('onboarding_hiw_reminder_title', lang)}</Text>
           <Text style={s.hiwCardSub}>{t('onboarding_hiw_reminder_sub', lang)}</Text>
@@ -739,7 +797,28 @@ const OnboardingScreen = ({ navigation }) => {
       </Text>
     </View>,
 
-    /* â”€â”€ Step 3: Time Selection â”€â”€ */
+    /* â”€â”€ Step 3: First value â€” a real story from what they just picked â”€â”€ */
+    <View style={{ flex: 1, justifyContent: 'center' }} key="s2b">
+      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
+        {t('onboarding_first_value_title', lang)}
+      </Text>
+      <Text style={s.sectionSubtitle}>{t('onboarding_first_value_sub', lang)}</Text>
+      {firstValueStory ? (
+        <View style={s.firstValueCard}>
+          {firstValueStory.parent_cat ? (
+            <Text style={s.firstValueCategory} numberOfLines={1}>
+              {splitLeadingEmoji(firstValueStory.parent_cat).text}
+            </Text>
+          ) : null}
+          <Text style={s.firstValueTitle} numberOfLines={2}>{firstValueStory.title}</Text>
+          <Text style={s.firstValuePunchline} numberOfLines={5}>
+            {firstValueStory.conversation_punchline || firstValueStory.hook || firstValueStory.description}
+          </Text>
+        </View>
+      ) : null}
+    </View>,
+
+    /* â”€â”€ Step 4: Time Selection â”€â”€ */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s3">
       <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
         {t('onboarding_how_long', lang)}
@@ -764,7 +843,7 @@ const OnboardingScreen = ({ navigation }) => {
       ))}
     </View>,
 
-    /* â”€â”€ Step 4: Reminder Selection â”€â”€ */
+    /* â”€â”€ Step 5: Reminder Selection â”€â”€ */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s4">
       <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
         {t('onboarding_when_remind', lang)}
@@ -793,7 +872,7 @@ const OnboardingScreen = ({ navigation }) => {
       <Text style={s.catHint}>{t('onboarding_reminder_permission_note', lang)}</Text>
     </View>,
 
-    /* â”€â”€ Step 5: Name (optional) â”€â”€ */
+    /* â”€â”€ Step 6: Name (optional) â”€â”€ */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s5">
       <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
         {t('onboarding_name_title', lang)}
@@ -809,26 +888,13 @@ const OnboardingScreen = ({ navigation }) => {
         onBlur={() => setFocusedField(null)}
         autoCapitalize="words"
         autoCorrect={false}
-        returnKeyType="next"
-      />
-      <TextInput
-        style={[s.nameInput, focusedField === 'email' && s.nameInputFocused]}
-        placeholder={t('onboarding_email_placeholder', lang)}
-        placeholderTextColor={colors.mutedText || colors.textSecondary}
-        value={userEmail}
-        onChangeText={setUserEmail}
-        onFocus={() => setFocusedField('email')}
-        onBlur={() => setFocusedField(null)}
-        autoCapitalize="none"
-        autoCorrect={false}
-        keyboardType="email-address"
+        maxLength={40}
         returnKeyType="done"
       />
-      <Text style={s.emailNote}>{t('onboarding_email_note', lang)}</Text>
       <Text style={s.nameSkipHint}>{t('onboarding_name_skip_hint', lang)}</Text>
     </View>,
 
-    /* â”€â”€ Step 6: Summary / Ready â”€â”€ */
+    /* â”€â”€ Step 7: Summary / Ready â”€â”€ */
     <View style={{ flex: 1, justifyContent: 'center' }} key="s6">
       <Text style={[s.sectionTitle, { textAlign: 'center', marginBottom: 6 }]}>
         {userName.trim()
@@ -923,8 +989,8 @@ const OnboardingScreen = ({ navigation }) => {
           <Text style={s.headerBrand}>Albor</Text>
         </View>
 
-        {/* Right: Skip (steps 0 & 5) or Back chevron (other steps) */}
-        {(step === 0 || step === 5) ? (
+        {/* Right: Skip (steps 0 & 6) or Back chevron (other steps) */}
+        {(step === 0 || step === 6) ? (
           <TouchableOpacity onPress={step === 0 ? skip : next} activeOpacity={0.7}>
             <Text style={s.headerAction}>{t('onboarding_skip', lang)}</Text>
           </TouchableOpacity>

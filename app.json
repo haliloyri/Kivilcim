@@ -2,11 +2,18 @@
   "expo": {
     "name": "Albor",
     "slug": "spark",
+    "scheme": "albor",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "backgroundColor": "#131311",
+    "backgroundColor": "#1D4A47",
     "icon": "./assets/spark_shortcut_logo.png",
+    "locales": {
+      "en": "./ios-locales/en.json",
+      "es": "./ios-locales/es.json",
+      "de": "./ios-locales/de.json",
+      "tr": "./ios-locales/tr.json"
+    },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.kivilcim.app",
@@ -45,6 +52,7 @@
       [
         "react-native-google-mobile-ads",
         {
+          "_comment": "PLACEHOLDER — Google's public SAMPLE app IDs, not Albor's. Ads earn nothing until real AdMob app IDs replace them AND src/utils/ads.js PROD_* unit IDs are filled in with USE_TEST_ADS=false. Ads stay off in the EEA/UK regardless — see src/utils/adRegion.js.",
           "androidAppId": "ca-app-pub-3940256099942544~3347511713",
           "iosAppId": "ca-app-pub-3940256099942544~1458002511",
           "userTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you.",
@@ -61,9 +69,9 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/splash/albor-splash-mark.png",
-          "backgroundColor": "#131311",
-          "imageWidth": 184,
+          "image": "./assets/splash/albor-splash-book.png",
+          "backgroundColor": "#1D4A47",
+          "imageWidth": 200,
           "resizeMode": "contain"
         }
       ]
@@ -73,6 +81,7 @@
         "projectId": "73e8e4f4-f966-42cd-9c4e-3ffb9799314e"
       },
       "revenuecat": {
+        "_comment": "PLACEHOLDER — a RevenueCat Test Store key. src/services/billing.js treats any test_* key as unset, so BILLING_LIVE is false and the paywall cannot take money (it shows paywallUnavailable* instead of granting Premium). Replace with the real appl_*/goog_* public SDK keys. See BILLING_SETUP.md.",
         "apiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
         "iosApiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
         "androidApiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
@@ -89,8 +98,9 @@
         "anonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5aHJtam1hZmZhem9heXJ1cmxzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1NjgwNjYsImV4cCI6MjA5ODE0NDA2Nn0.9DaH852ymGEBUYmtfk-JAnNTxCuWxlMlTl7eMG3NbZ0"
       },
       "posthog": {
-        "apiKey": "phc_xGTa3Jhe9VUdbLnaDE3Y9bPoWMApSTyNrTNZDn3ukDe8",
-        "host": "https://us.i.posthog.com"
+        "_comment": "PostHog deliberately OFF for now — apiKey is a placeholder, so src/utils/analytics.js never initializes the client (ANALYTICS_LIVE=false): no init, no network calls, no autocapture. To turn analytics back on later, create a PostHog EU Cloud project (not this old US-host key/project) and put its real key + https://eu.i.posthog.com here.",
+        "apiKey": "REPLACE_WITH_POSTHOG_EU_KEY",
+        "host": "https://eu.i.posthog.com"
       },
       "shareBaseUrl": "https://alborapp.com",
       "affiliate": {

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew install *)",
+      "Bash(node scripts/story-pipeline/gap-report.mjs*)",
+      "Bash(node scripts/story-pipeline/sync-inventory.mjs*)",
+      "Bash(node scripts/story-pipeline/validate-batch.mjs*)",
+      "Bash(node scripts/story-pipeline/audit-translations.mjs*)",
+      "Bash(node scripts/story-pipeline/propose-marker-repair.mjs*)",
+      "Bash(npm run story:gap*)",
+      "Bash(npm run story:sync*)",
+      "Bash(npm run story:validate*)",
+      "Bash(npm run story:audit*)",
+      "Bash(npm run story:propose-markers*)"
+    ],
+    "ask": [
+      "Bash(node scripts/story-pipeline/ingest-batch.mjs*)",
+      "Bash(npm run story:ingest*)"
+    ]
+  }
+}

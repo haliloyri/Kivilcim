@@ -29,11 +29,15 @@ import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
 import { readableTextOn } from '../theme/theme';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
-import { shouldShowAd, loadRewarded, showRewarded, loadInterstitial, showInterstitial, recordStoryRead } from '../utils/ads';
+import { ShareCardCanvas, ShareCardPreview } from '../components/ShareCardCanvas';
+import { shouldShowAd, rewardedGate, loadRewarded, showRewarded, loadInterstitial, showInterstitial, recordStoryRead } from '../utils/ads';
 import { getBookBuyLinks } from '../utils/bookLinks';
 import { getShareLabel, getShareUrl } from '../utils/share';
-import { hasReachedReadingCompletion, isShortStoryFullyVisible, SHORT_STORY_DWELL_MS } from '../utils/storyCompletion';
+import { hasReachedReadingCompletion, isShortStoryFullyVisible, ONE_MINUTE_SUMMARY_DWELL_MS, SHORT_STORY_DWELL_MS } from '../utils/storyCompletion';
 import { getStoryAudioAsset } from '../utils/storyAudio';
+import { intlLocaleFor } from '../utils/locale';
+import StoryBody from '../components/story/StoryBody';
+import { parseStoryMarkup, toPlainText, extractShareParts } from '../utils/storyMarkup';
 
 const { width, height } = Dimensions.get('window');
 
@@ -41,17 +45,13 @@ const { width, height } = Dimensions.get('window');
 // app.json -> expo.extra.shareBaseUrl (the localized landing URL is derived
 // at share time from the reader's active language).
 // once the app is live.
-// Brand logo (book + star + "Albor" wordmark). Dark variant has the cream
-// wordmark for dark card backgrounds; light variant has the ink wordmark.
-const LOGO_LIGHT_BG = require('../../assets/spark_logo.png');
-const LOGO_DARK_BG = require('../../assets/spark_logo_dark.png');
-// Story card (social share) brand mark — transparent, works on any theme.
-const LOGO_SOCIAL = require('../../assets/spark_social.png');
+// The share card itself (logo, layout, text fitting) lives in
+// components/ShareCardCanvas.js, shared with ShareCardModal.
 
 const StoryDetailScreen = ({ route, navigation }) => {
   const { story } = route.params;
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount, releasePendingBadge, isStorySavedForLater, toggleReadLater, isStoryCompleted, markStoryCompleted, variantUsage, setBadgePresentationBlocked, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight } = useUserData();
+  const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount, releasePendingBadge, isStorySavedForLater, toggleReadLater, isStoryCompleted, markStoryCompleted, variantUsage, setBadgePresentationBlocked, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight, updateStoryProgress } = useUserData();
   const { stories } = useStories();
   const [fontSize, setFontSize] = useState(typography.sizes.body);
   const [shareModalVisible, setShareModalVisible] = useState(false);
@@ -71,15 +71,23 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const scrollViewportHeight = useRef(0);
   const scrollContentHeight = useRef(0);
   const shortStoryDwellTimer = useRef(null);
+  const oneMinuteSummaryDwellTimer = useRef(null);
   const shortStoryFitsViewport = useRef(false);
   const isReaderActive = useRef(true);
+  const oneMinuteSummarySeenKey = useRef(null);
+  const oneMinuteSummaryCompleted = useRef(false);
   const viewShotRef = useRef();
   const carouselRefs = useRef({});
   const insets = useSafeAreaInsets();
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [localLang, setLocalLang] = useState(lang);
   const [localStory, setLocalStory] = useState(story);
+  const [oneMinuteSummaryOpen, setOneMinuteSummaryOpen] = useState(false);
+  const [readerIsActive, setReaderIsActive] = useState(AppState.currentState === 'active');
   const [isTakeawaySaved, setIsTakeawaySaved] = useState(false);
+  // Last scroll ratio reported to the Library "Kaldığın yerden" tracker.
+  const lastProgressReport = React.useRef(0);
+  React.useEffect(() => { lastProgressReport.current = 0; }, [story?.story_id]);
   const [adSheet, setAdSheet] = useState(false);
   const [isAdLoading, setIsAdLoading] = useState(false);
   const [adUnavailable, setAdUnavailable] = useState(false);
@@ -376,9 +384,18 @@ const StoryDetailScreen = ({ route, navigation }) => {
     setAdUnavailable(false);
     // Queue the ad and close the sheet. Shown from the Modal's onDismiss (iOS)
     // or a fallback timer (Android) — never while the Modal is presented.
+    // The reward is the next story: before, nothing listened for the ad to
+    // finish, so the user watched the whole ad and stayed on the same story.
+    let earned = false;
     pendingRewardedRef.current = {
       ad,
-      onEarned: () => trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_next' }),
+      onEarned: () => {
+        earned = true;
+        trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_next' });
+      },
+      onClosed: () => {
+        if (earned) goToNextStory();
+      },
     };
     setAdSheet(false);
     setTimeout(flushPendingRewarded, 600);
@@ -387,17 +404,28 @@ const StoryDetailScreen = ({ route, navigation }) => {
   // --- Visual card gate: premium-only, free users unlock via rewarded ad ---
   const openShareModalGated = () => {
     setShareTextOverride('');
-    if (isPremium || cardUnlocked || !shouldShowAd({ isPremium, isOnboarded: true })) {
+    const gate = rewardedGate({ isPremium, alreadyUnlocked: cardUnlocked });
+
+    if (gate === 'allow') {
       setShareModalVisible(true);
       return;
     }
-    setCardAdUnavailable(false);
-    setCardGate(true);
+
     trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
       source: 'story_detail_card',
       storyId: story?.story_id,
       lang,
     });
+
+    // No rewarded inventory in this region — Premium is the only way in. Never
+    // fall through to the share modal: that would give the paid card away.
+    if (gate === 'paywall') {
+      navigation.navigate('Paywall', { reason: 'image_card', source: 'story_detail_card' });
+      return;
+    }
+
+    setCardAdUnavailable(false);
+    setCardGate(true);
   };
 
   const handleWatchAdForCard = async () => {
@@ -433,15 +461,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
   React.useEffect(() => {
     let active = true;
-    if (localLang !== lang) {
-      const fetchTranslation = async () => {
-        const tr = await getStoryByLang(story.story_id, localLang);
-        if (active && tr) setLocalStory(old => ({ ...old, title: tr.title, body: tr.body, source_book: tr.source_book, cat_display: tr.cat_display, cat: tr.cat }));
-      };
-      fetchTranslation();
-    } else {
-      setLocalStory(story);
-    }
+    const fetchTranslation = async () => {
+      const translatedStory = await getStoryByLang(story.story_id, localLang);
+      if (active && translatedStory) setLocalStory({ ...story, ...translatedStory });
+    };
+    fetchTranslation();
     return () => { active = false; };
   }, [localLang, story, lang]);
 
@@ -462,16 +486,24 @@ const StoryDetailScreen = ({ route, navigation }) => {
     // Same premium/ad gate as the top-menu share entry: free users who would
     // otherwise see an ad must pass the card gate before the share modal opens.
     // If the caller already ran the gate (e.g. Use-in-Conversation), open directly.
-    if (route.params?.shareGatePassed || isPremium || cardUnlocked || !shouldShowAd({ isPremium, isOnboarded: true })) {
+    const presetGate = route.params?.shareGatePassed
+      ? 'allow'
+      : rewardedGate({ isPremium, alreadyUnlocked: cardUnlocked });
+
+    if (presetGate === 'allow') {
       setShareModalVisible(true);
     } else {
-      setCardAdUnavailable(false);
-      setCardGate(true);
       trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
         source: 'story_detail_card',
         storyId: story?.story_id,
         lang,
       });
+      if (presetGate === 'paywall') {
+        navigation.navigate('Paywall', { reason: 'image_card', source: 'story_detail_card' });
+      } else {
+        setCardAdUnavailable(false);
+        setCardGate(true);
+      }
     }
 
     navigation.setParams({
@@ -501,12 +533,21 @@ const StoryDetailScreen = ({ route, navigation }) => {
   // DB already returns translated content for the active language
   const displayTitle = localStory.title || '';
   const displayBody = localStory.body || '';
+  const parsedBody = React.useMemo(() => parseStoryMarkup(displayBody), [displayBody]);
+  const storySectionHeadings = React.useMemo(() => ({
+    story: t('storySectionStory', localLang),
+    lessons: t('storySectionLessons', localLang),
+    reflect: t('storySectionReflect', localLang),
+    use: t('storySectionUse', localLang),
+    pocket: t('storySectionPocket', localLang),
+  }), [localLang]);
   const displayQuote = localStory.quote || '';
   const displayLesson = localStory.lesson || '';
   const displaySrc = localStory.source_book || '';
   const displaySourceBook = localStory.source_book || '';
   const displayCat = t(localStory.cat_display || localStory.cat || story.cat, localLang);
   const displayHook = localStory.hook || story.hook || '';
+  const oneMinuteSummary = String(localStory.one_minute_summary || '').trim();
   const categoryKey = story.parent_cat_raw || story.parent_cat || localStory.cat || story.cat;
   const categoryImage = getCategoryImage(categoryKey, isDark);
   const categoryTheme = getCategoryTheme(categoryKey, isDark);
@@ -577,9 +618,59 @@ const StoryDetailScreen = ({ route, navigation }) => {
     navigation.navigate('UseInConversation', { story: activeStory });
   }, [isPremium, isStoryCompleted, lang, localStory, markStoryCompleted, navigation, story]);
 
+  const handleOneMinuteSummaryPress = React.useCallback(() => {
+    const activeStory = localStory || story;
+    trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_CLICKED, {
+      storyId: activeStory?.story_id,
+      lang: localLang,
+      isPremium,
+      source: 'story_detail',
+      contentLength: oneMinuteSummary.length,
+    });
+
+    if (!isPremium) {
+      trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_PAYWALL_VIEWED, {
+        storyId: activeStory?.story_id,
+        lang: localLang,
+        source: 'story_detail',
+      });
+      navigation.navigate('Paywall', {
+        reason: 'one_minute_summary',
+        source: 'story_detail_one_minute_summary',
+      });
+      return;
+    }
+
+    const nextOpen = !oneMinuteSummaryOpen;
+    setOneMinuteSummaryOpen(nextOpen);
+    if (nextOpen) {
+      trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_OPENED, {
+        storyId: activeStory?.story_id,
+        lang: localLang,
+        source: 'story_detail',
+        contentLength: oneMinuteSummary.length,
+      });
+    }
+  }, [isPremium, localLang, localStory, navigation, oneMinuteSummary, oneMinuteSummaryOpen, story]);
+
+  const handleReadFullStory = React.useCallback(() => {
+    const activeStory = localStory || story;
+    setOneMinuteSummaryOpen(false);
+    trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_FULL_STORY_CLICKED, {
+      storyId: activeStory?.story_id,
+      lang: localLang,
+      source: 'story_detail',
+    });
+  }, [localLang, localStory, story]);
+
   const cancelShortStoryDwell = React.useCallback(() => {
     if (shortStoryDwellTimer.current) clearTimeout(shortStoryDwellTimer.current);
     shortStoryDwellTimer.current = null;
+  }, []);
+
+  const cancelOneMinuteSummaryDwell = React.useCallback(() => {
+    if (oneMinuteSummaryDwellTimer.current) clearTimeout(oneMinuteSummaryDwellTimer.current);
+    oneMinuteSummaryDwellTimer.current = null;
   }, []);
 
   React.useEffect(() => {
@@ -587,8 +678,30 @@ const StoryDetailScreen = ({ route, navigation }) => {
     hasMarkedRead.current = false;
     storyCompletionPromiseRef.current = Promise.resolve();
     shortStoryFitsViewport.current = false;
+    oneMinuteSummaryCompleted.current = false;
+    setOneMinuteSummaryOpen(false);
     cancelShortStoryDwell();
-  }, [story?.story_id, cancelShortStoryDwell]);
+    cancelOneMinuteSummaryDwell();
+  }, [story?.story_id, cancelOneMinuteSummaryDwell, cancelShortStoryDwell]);
+
+  React.useEffect(() => {
+    setOneMinuteSummaryOpen(false);
+    cancelOneMinuteSummaryDwell();
+  }, [localLang, cancelOneMinuteSummaryDwell]);
+
+  React.useEffect(() => {
+    if (!oneMinuteSummary) return;
+    const exposureKey = `${story?.story_id}:${localLang}`;
+    if (oneMinuteSummarySeenKey.current === exposureKey) return;
+    oneMinuteSummarySeenKey.current = exposureKey;
+    trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_CTA_VIEWED, {
+      storyId: story?.story_id,
+      lang: localLang,
+      isPremium,
+      source: 'story_detail',
+      contentLength: oneMinuteSummary.length,
+    });
+  }, [isPremium, localLang, oneMinuteSummary, story?.story_id]);
 
   // A short story has no scroll event, but opening it alone must not create H.
   // It needs five foreground seconds while the complete content is visible.
@@ -614,14 +727,64 @@ const StoryDetailScreen = ({ route, navigation }) => {
   React.useEffect(() => {
     const subscription = AppState.addEventListener('change', (nextState) => {
       isReaderActive.current = nextState === 'active';
+      setReaderIsActive(isReaderActive.current);
       if (isReaderActive.current) evaluateShortStoryReadState();
-      else cancelShortStoryDwell();
+      else {
+        cancelShortStoryDwell();
+        cancelOneMinuteSummaryDwell();
+      }
     });
     return () => {
       cancelShortStoryDwell();
+      cancelOneMinuteSummaryDwell();
       subscription.remove();
     };
-  }, [cancelShortStoryDwell, evaluateShortStoryReadState]);
+  }, [cancelOneMinuteSummaryDwell, cancelShortStoryDwell, evaluateShortStoryReadState]);
+
+  React.useEffect(() => {
+    cancelOneMinuteSummaryDwell();
+    if (
+      !oneMinuteSummaryOpen ||
+      !oneMinuteSummary ||
+      !isPremium ||
+      !readerIsActive ||
+      oneMinuteSummaryCompleted.current
+    ) return undefined;
+
+    oneMinuteSummaryDwellTimer.current = setTimeout(async () => {
+      oneMinuteSummaryDwellTimer.current = null;
+      if (!isReaderActive.current || !oneMinuteSummaryOpen || oneMinuteSummaryCompleted.current) return;
+      oneMinuteSummaryCompleted.current = true;
+      await markStoryReadIfNeeded('one_minute_summary');
+      const activeStory = localStory || story;
+      if (activeStory?.story_id && !isStoryCompleted(activeStory.story_id)) {
+        await markStoryCompleted(activeStory.story_id);
+      }
+      trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_COMPLETED, {
+        storyId: activeStory?.story_id,
+        lang: localLang,
+        source: 'story_detail',
+        contentLength: oneMinuteSummary.length,
+        dwellMs: ONE_MINUTE_SUMMARY_DWELL_MS,
+      });
+      releasePendingBadge();
+    }, ONE_MINUTE_SUMMARY_DWELL_MS);
+
+    return cancelOneMinuteSummaryDwell;
+  }, [
+    cancelOneMinuteSummaryDwell,
+    isPremium,
+    isStoryCompleted,
+    localLang,
+    localStory,
+    markStoryCompleted,
+    markStoryReadIfNeeded,
+    oneMinuteSummary,
+    oneMinuteSummaryOpen,
+    readerIsActive,
+    releasePendingBadge,
+    story,
+  ]);
 
   const toggleSpeech = async () => {
     if (isSpeaking || storyAudioPlayerRef.current) {
@@ -635,7 +798,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
       setPlayingIndex(null);
     }
 
-    const storyAudioAsset = localLang === 'tr'
+    // Packaged narrations were recorded for the legacy text; P1 bodies use device speech.
+    const storyAudioAsset = localLang === 'tr' && parsedBody.format !== 'p1'
       ? getStoryAudioAsset((localStory || story)?.story_id)
       : null;
 
@@ -671,7 +835,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       }
     }
 
-    const cleanBody = (displayBody || '').replace(/##|\$\$|&&|~~/g, '').replace(/\s*::\s*/g, ' — ');
+    const cleanBody = toPlainText(displayBody, { headings: storySectionHeadings });
     const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
     setIsSpeaking(true);
     speechStartedAt.current = Date.now();
@@ -692,14 +856,22 @@ const StoryDetailScreen = ({ route, navigation }) => {
   };
 
   const buildStoryTextSharePayload = () => {
-    const cleanBody = String(displayBody || '')
-      .replace(/##|\$\$|&&|~~/g, '')
-      .replace(/\s*::\s*/g, ' — ')
-      .replace(/\n{3,}/g, '\n\n')
-      .trim();
+    const cleanBody = toPlainText(displayBody, { headings: storySectionHeadings });
     const sourceParts = [displaySourceBook, localStory?.author].filter(Boolean).join(' — ');
     const sourceLine = sourceParts ? `\n\n${t('share_source', localLang)}${sourceParts}` : '';
-    return `${displayTitle}\n\n${cleanBody}${sourceLine}\n\n${getShareUrl(localLang)}`.trim();
+    return `${displayTitle}\n\n${cleanBody}${sourceLine}\n\n${getShareUrl(localLang, { storyId: story?.story_id })}`.trim();
+  };
+
+  const sharePocketLine = async (line) => {
+    try {
+      const source = [displayTitle, displaySourceBook].filter(Boolean).join(' — ');
+      await Share.share({
+        message: `“${line}”\n\n${source}\n${getShareUrl(localLang, { storyId: story?.story_id })}`.trim(),
+      });
+      trackEvent(ANALYTICS_EVENTS.STORY_SHARED, { source: 'story_pocket', storyId: story?.story_id, lang: localLang });
+    } catch (e) {
+      console.warn('[story] pocket share failed:', e?.message);
+    }
   };
 
   const shareStoryAsText = async () => {
@@ -741,6 +913,13 @@ const StoryDetailScreen = ({ route, navigation }) => {
     toggleReadLater(story.story_id);
   };
 
+  const goToNextStory = () => {
+    if (!stories?.length) return;
+    const currentIndex = stories.findIndex(s => s.story_id === story.story_id);
+    const nextIndex = (currentIndex + 1) % stories.length;
+    navigation.replace('StoryDetail', { story: stories[nextIndex] });
+  };
+
   const handleNext = () => {
     if (!isPremium) {
       trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
@@ -751,9 +930,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       handleNextWithAd();
       return;
     }
-    const currentIndex = stories.findIndex(s => s.story_id === story.story_id);
-    const nextIndex = (currentIndex + 1) % stories.length;
-    navigation.replace('StoryDetail', { story: stories[nextIndex] });
+    goToNextStory();
   };
 
   // --- Share card theme configs ---
@@ -771,17 +948,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
   const extractContent = (markerStr) => {
     if (!displayBody) return '';
-    const startIdx = displayBody.indexOf(markerStr);
-    if (startIdx === -1) return '';
-    const bodySegment = displayBody.substring(startIdx + markerStr.length);
-    let nextMarkerIdx = bodySegment.length;
-    ['##', '$$', '&&'].forEach(m => {
-      const id = bodySegment.indexOf(m);
-      if (id !== -1 && id < nextMarkerIdx) {
-        nextMarkerIdx = id;
-      }
-    });
-    return bodySegment.substring(0, nextMarkerIdx).trim();
+    const parts = extractShareParts(displayBody);
+    if (markerStr === '##') return parts.quote;
+    if (markerStr === '$$') return parts.lesson;
+    if (markerStr === '&&') return parts.reflection;
+    return '';
   };
 
   const getShareText = (type) => {
@@ -1145,7 +1316,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       color: colors.textSecondary,
     },
     formatBtnTextActive: {
-      color: colors.primary,
+      color: colors.primaryText,
     },
     reelBadge: {
       marginTop: 3,
@@ -1157,7 +1328,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     reelBadgeText: {
       fontFamily: 'Inter_500Medium',
       fontSize: 9,
-      color: colors.primary,
+      color: colors.primaryText,
       letterSpacing: 0.3,
     },
     // --- Buttons ---
@@ -1177,7 +1348,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     btnPrimaryText: {
       fontFamily: 'Inter_500Medium',
-      color: '#F7F3EB',
+      color: colors.onPrimary,
       fontSize: typography.sizes.ui + 1
     },
     carouselBtn: {
@@ -1229,7 +1400,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     headerPillLeft: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: isDark ? colors.backgroundDark : '#F3EFE9',
+      backgroundColor: colors.backgroundDark,
       paddingHorizontal: 16,
       paddingVertical: 6,
       borderRadius: 20,
@@ -1246,14 +1417,126 @@ const StoryDetailScreen = ({ route, navigation }) => {
       overflow: 'hidden',
       marginBottom: 16,
       borderWidth: 1,
-      borderColor: isDark ? colors.border : '#DED5C4',
-      backgroundColor: isDark ? colors.backgroundDark : '#EBE2D3',
+      borderColor: colors.border,
+      backgroundColor: colors.backgroundDark,
+    },
+    oneMinuteSummaryCard: {
+      borderWidth: 1,
+      borderRadius: 16,
+      marginBottom: 18,
+      overflow: 'hidden',
+    },
+    oneMinuteSummaryHeader: {
+      minHeight: 82,
+      paddingHorizontal: 14,
+      paddingVertical: 13,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 11,
+    },
+    oneMinuteSummaryIcon: {
+      width: 42,
+      height: 42,
+      borderRadius: 21,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    oneMinuteSummaryHeading: {
+      flex: 1,
+      gap: 3,
+    },
+    oneMinuteSummaryCta: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 15,
+      lineHeight: 20,
+      color: colors.text,
+    },
+    oneMinuteSummarySubtitle: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      lineHeight: 17,
+      color: colors.textSecondary,
+    },
+    oneMinuteSummaryTrailing: {
+      alignItems: 'flex-end',
+      justifyContent: 'center',
+      gap: 8,
+    },
+    oneMinuteSummaryPremiumBadge: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      paddingHorizontal: 7,
+      paddingVertical: 4,
+      borderWidth: 1,
+      borderRadius: 999,
+      backgroundColor: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.62)',
+    },
+    oneMinuteSummaryPremiumText: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 9,
+      letterSpacing: 0.65,
+    },
+    oneMinuteSummaryBody: {
+      borderTopWidth: 1,
+      paddingHorizontal: 16,
+      paddingTop: 16,
+      paddingBottom: 15,
+      backgroundColor: isDark ? 'rgba(255,255,255,0.025)' : 'rgba(255,255,255,0.48)',
+    },
+    oneMinuteSummaryMetaRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12,
+      marginBottom: 12,
+    },
+    oneMinuteSummaryLabel: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 11,
+      letterSpacing: 1,
+      textTransform: 'uppercase',
+    },
+    oneMinuteSummaryDurationPill: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      paddingHorizontal: 8,
+      paddingVertical: 4,
+      borderRadius: 999,
+      backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.045)',
+    },
+    oneMinuteSummaryDurationText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.textSecondary,
+    },
+    oneMinuteSummaryText: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.body,
+      lineHeight: Math.round(typography.sizes.body * 1.55),
+      color: colors.text,
+    },
+    oneMinuteSummaryFullStoryButton: {
+      alignSelf: 'flex-start',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      marginTop: 15,
+      paddingHorizontal: 11,
+      paddingVertical: 8,
+      borderWidth: 1,
+      borderRadius: 10,
+    },
+    oneMinuteSummaryFullStoryText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
     },
     badge: {
       paddingHorizontal: 10,
       paddingVertical: 4,
       borderRadius: 16,
-      backgroundColor: isDark ? colors.backgroundDark : '#EBDCCC',
+      backgroundColor: isDark ? colors.backgroundDark : colors.surfaceContainerHigh,
       marginBottom: 8,
       flexDirection: 'row',
       alignItems: 'center',
@@ -1453,7 +1736,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     separatorIcon: {
       marginHorizontal: 16,
-      color: colors.primary,
+      color: colors.primaryText,
       fontSize: 16,
     },
     lessonBox: {
@@ -1463,7 +1746,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       borderTopLeftRadius: 4,
       borderBottomLeftRadius: 4,
       borderLeftWidth: 5,
-      borderLeftColor: isDark ? colors.primary : '#594238',
+      borderLeftColor: colors.primary,
     },
     lessonLabel: {
       fontFamily: 'Inter_500Medium',
@@ -1484,8 +1767,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
       padding: 20,
       marginBottom: 20,
       borderWidth: 1,
-      borderColor: isDark ? colors.border : '#EBDCCA',
-      shadowColor: '#D4AF37',
+      borderColor: colors.border,
+      shadowColor: colors.primary,
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.1,
       shadowRadius: 8,
@@ -1515,7 +1798,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       borderRadius: 14,
       borderWidth: 1.5,
       borderColor: colors.border,
-      backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+      backgroundColor: isDark ? colors.backgroundDark : colors.surfaceContainerLowest,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -1540,7 +1823,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     recInlinePanel: {
       marginHorizontal: layout.padding.horizontal,
       marginBottom: 10,
-      backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+      backgroundColor: isDark ? colors.backgroundDark : colors.surfaceContainerLowest,
       borderRadius: 18,
       borderWidth: 1,
       borderColor: colors.border,
@@ -1585,7 +1868,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     fontSizeControls: {
       flexDirection: 'row',
-      backgroundColor: isDark ? colors.backgroundDark : '#F3EFE9',
+      backgroundColor: colors.backgroundDark,
       borderRadius: 20,
       paddingHorizontal: 8,
       paddingVertical: 4,
@@ -1640,161 +1923,27 @@ const StoryDetailScreen = ({ route, navigation }) => {
   });
 
   // --- Helper: Render the share card (identical in both preview & capture) ---
-  const renderShareCard = (contentTypes = shareContent) => {
-    const th = currentTheme;
-    const isPost = shareFormat === 'post';
-
-    // Always use exact capture sizes
-    const cardW = 1080;
-    const cardH = isPost ? 1080 : 1920;
-
-    const fTitle = 68;
-    const fQuote = 50;
-    const fSrc = 32;
-    const fLogo = 42;
-    const fFooter = 28;
-
-    const padHorizontal = 80;
-    const paddingTop = isPost ? 90 : 140;
-    const paddingBottom = isPost ? 90 : 160;
-    const borderW = 10;
-
-    return (
-      <View style={{ width: cardW, height: cardH, overflow: 'hidden', backgroundColor: th.bg[0], flexDirection: 'column' }}>
-        <LinearGradient
-          colors={th.bg}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={[StyleSheet.absoluteFill]}
-        />
-
-        {/* Three-zone layout: brand / centered content / footer strip */}
-        <View style={{ flex: 1, justifyContent: 'space-between', paddingHorizontal: padHorizontal, paddingTop, paddingBottom }}>
-
-          {/* Header (Logo) — real brand mark, theme-aware */}
-          <View style={{ alignSelf: 'flex-start', borderBottomWidth: 4, borderBottomColor: th.accent, paddingBottom: 16 }}>
-            <Image
-              source={LOGO_SOCIAL}
-              style={{ width: 200, height: 200 }}
-              resizeMode="contain"
-            />
-          </View>
-
-          {/* Content zone — vertically centered */}
-          <View style={{ flex: 1, justifyContent: 'center', paddingVertical: 60 }}>
-          {contentTypes.map((type, index) => {
-            const label = type === 'lesson' ? t('share_key_takeaway', localLang) :
-              type === 'reflection' ? t('share_reflect', localLang) :
-                type === 'hook' ? '' :
-                  displayTitle;
-            const textContent = getShareText(type);
-
-            // dynamically scale text if multiple are selected
-            const dynTitle = contentTypes.length > 1 ? fTitle * 0.8 : fTitle;
-            const dynQuote = contentTypes.length > 1 ? fQuote * 0.8 : fQuote;
-
-            // Hook: büyük, cesur, tam ekran hook cümlesi
-            if (type === 'hook') {
-              return (
-                <View key={type} style={{ marginBottom: index === contentTypes.length - 1 ? 0 : 80 }}>
-                  <Text style={{
-                    fontFamily: 'PlayfairDisplay_700Bold',
-                    fontSize: dynQuote * 1.1,
-                    color: th.text,
-                    lineHeight: dynQuote * 1.7,
-                    textAlign: 'center',
-                    letterSpacing: 1,
-                  }}>
-                    {textContent}
-                  </Text>
-                  <View style={{
-                    width: 120,
-                    height: 4,
-                    backgroundColor: th.accent,
-                    alignSelf: 'center',
-                    marginTop: 40,
-                    borderRadius: 2,
-                  }} />
-                </View>
-              );
-            }
-
-            return (
-              <View key={type} style={{ marginBottom: index === contentTypes.length - 1 ? 0 : 80 }}>
-                <Text style={{
-                  fontFamily: 'PlayfairDisplay_700Bold',
-                  fontSize: dynTitle,
-                  color: th.text,
-                  lineHeight: dynTitle * 1.4,
-                  marginBottom: 32,
-                }}>
-                  {label}
-                </Text>
-
-                <View style={{
-                  borderLeftWidth: borderW,
-                  borderLeftColor: th.accent,
-                  paddingLeft: 30,
-                  marginBottom: 20,
-                }}>
-                  <Text style={{
-                    fontFamily: 'PlayfairDisplay_600SemiBold',
-                    fontSize: dynQuote,
-                    color: th.sub,
-                    lineHeight: dynQuote * 1.6,
-                  }}>
-                    "{textContent}"
-                  </Text>
-                </View>
-              </View>
-            );
-          })}
-          </View>
-
-          {/* Footer strip — source + single CTA (replaces duplicate watermark) */}
-          <View>
-            <View style={{ height: 3, backgroundColor: th.accent, opacity: 0.45, borderRadius: 2, marginBottom: 28 }} />
-            <View style={{ flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between' }}>
-              <View style={{ flexDirection: 'row', alignItems: 'flex-start', flex: 1, marginRight: 24 }}>
-                <Ionicons name="book-outline" size={fSrc + 2} color={th.sub} style={{ marginTop: 4 }} />
-                <Text style={{
-                  fontFamily: 'Inter_500Medium',
-                  fontSize: fSrc,
-                  color: th.sub,
-                  textTransform: 'uppercase',
-                  letterSpacing: 2,
-                  marginLeft: 10,
-                  flexShrink: 1,
-                }} numberOfLines={2}>
-                  {t('share_source', localLang)}{displaySourceBook}
-                </Text>
-              </View>
-              <View style={{ alignItems: 'flex-end' }}>
-                <Text style={{
-                  fontFamily: 'Inter_500Medium',
-                  fontSize: fSrc,
-                  color: th.accent,
-                  letterSpacing: 1,
-                }}>
-                  {t('card_cta_short', localLang)} ✦
-                </Text>
-                <Text style={{
-                  fontFamily: 'Inter_500Medium',
-                  fontSize: fFooter,
-                  color: th.sub,
-                  letterSpacing: 1,
-                  marginTop: 8,
-                }}>
-                  {getShareLabel(localLang)}
-                </Text>
-              </View>
-            </View>
-          </View>
-
-        </View>
-      </View>
-    );
+  // Cards stay concise so the thought is readable in a social preview; the
+  // full text still goes into the copied caption.
+  const getCardText = (type) => {
+    const text = String(getShareText(type) || '').replace(/\s+/g, ' ').trim();
+    if (text.length <= 280) return text;
+    const boundary = text.lastIndexOf(' ', 279);
+    return `${text.slice(0, boundary > 0 ? boundary : 279).trimEnd()}…`;
   };
+  const shareCardProps = (contentTypes = shareContent) => ({
+    theme: currentTheme,
+    format: shareFormat,
+    contentTypes,
+    getText: getCardText,
+    title: displayTitle,
+    sourceBook: displaySourceBook,
+    lang: localLang,
+    shareLabel: getShareLabel(localLang),
+  });
+  const renderShareCard = (contentTypes = shareContent) => (
+    <ShareCardCanvas {...shareCardProps(contentTypes)} />
+  );
 
   return (
     <>
@@ -1819,21 +1968,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
               <ScrollView showsVerticalScrollIndicator={false} style={{ flexShrink: 1, marginBottom: 16 }}>
                 {/* Card Preview (visible to user exactly as captured) */}
-                <View style={[styles.shareCardWrapper, {
-                  width: width - 80,
-                  height: (shareFormat === 'post' ? 1080 : 1920) * ((width - 80) / 1080),
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  backgroundColor: 'transparent'
-                }]}>
-                  <View style={{
-                    width: 1080,
-                    height: shareFormat === 'post' ? 1080 : 1920,
-                    transform: [{ scale: (width - 80) / 1080 }]
-                  }}>
-                    {renderShareCard()}
-                  </View>
-                </View>
+                <ShareCardPreview
+                  previewWidth={width - 80}
+                  style={styles.shareCardWrapper}
+                  {...shareCardProps()}
+                />
 
                 {/* Content type pills */}
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.contentPillsRow}>
@@ -1921,7 +2060,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   style={[styles.btnPrimaryGradient, (isCapturing || isSavingCarousel) && { opacity: 0.7 }]}
                 >
                   <View style={[styles.btnPrimary, { flexDirection: 'row', gap: 10 }]}>
-                    {isCapturing && <ActivityIndicator size="small" color="#F7F3EB" />}
+                    {isCapturing && <ActivityIndicator size="small" color={colors.onPrimary} />}
                     <Text style={styles.btnPrimaryText}>{t('saveAndShare', lang)}</Text>
                   </View>
                 </LinearGradient>
@@ -2022,6 +2161,16 @@ const StoryDetailScreen = ({ route, navigation }) => {
               listener: (event) => {
                 if (!hasReachedBottom.current) {
                   const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
+                  // Report reading progress in 10% steps for Library's
+                  // "Kaldığın yerden" row (cleared once the read completes).
+                  const scrollable = contentSize.height - layoutMeasurement.height;
+                  if (scrollable > 0 && story?.story_id && updateStoryProgress) {
+                    const ratio = Math.min(1, Math.max(0, contentOffset.y / scrollable));
+                    if (ratio >= 0.1 && ratio - lastProgressReport.current >= 0.1) {
+                      lastProgressReport.current = ratio;
+                      updateStoryProgress(story.story_id, ratio);
+                    }
+                  }
                   if (hasReachedReadingCompletion({
                     contentOffsetY: contentOffset.y,
                     contentHeight: contentSize.height,
@@ -2070,7 +2219,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   <View style={{ backgroundColor: isDark ? `${categoryTheme.accent}26` : '#FFFFFF', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6, flexDirection: 'row', alignItems: 'center', gap: 4, borderWidth: 1, borderColor: `${categoryTheme.accent}40` }}>
                     <Ionicons name="checkmark-done" size={14} color={categoryTheme.accent} />
                     <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12, color: categoryTheme.accent }}>
-                      {localLang === 'tr' ? `Daha önce kurgulandı (${new Date(usageDate).toLocaleDateString('tr-TR')})` : `Crafted previously (${new Date(usageDate).toLocaleDateString()})`}
+                      {t('storyCraftedPreviouslyLabel', localLang, { date: new Date(usageDate).toLocaleDateString(intlLocaleFor(localLang)) })}
                     </Text>
                   </View>
                 </View>
@@ -2088,7 +2237,107 @@ const StoryDetailScreen = ({ route, navigation }) => {
           </View>
 
           <View style={{ paddingHorizontal: layout.padding.horizontal }}>
-            {(() => {
+            {oneMinuteSummary ? (
+              <View style={[
+                styles.oneMinuteSummaryCard,
+                {
+                  borderColor: categoryTheme.borderColor,
+                  backgroundColor: isDark ? colors.backgroundDark : categoryTheme.backgroundColor,
+                },
+              ]}>
+                <TouchableOpacity
+                  onPress={handleOneMinuteSummaryPress}
+                  activeOpacity={0.86}
+                  accessibilityRole="button"
+                  accessibilityState={{ expanded: isPremium ? oneMinuteSummaryOpen : false }}
+                  accessibilityLabel={t('oneMinuteSummaryCta', localLang)}
+                  style={styles.oneMinuteSummaryHeader}
+                >
+                  <View style={[styles.oneMinuteSummaryIcon, { backgroundColor: `${categoryTheme.accent}1F` }]}>
+                    <Ionicons name="sparkles" size={20} color={categoryTheme.accent} />
+                  </View>
+                  <View style={styles.oneMinuteSummaryHeading}>
+                    <Text style={styles.oneMinuteSummaryCta}>{t('oneMinuteSummaryCta', localLang)}</Text>
+                    <Text style={styles.oneMinuteSummarySubtitle}>{t('oneMinuteSummarySubtitle', localLang)}</Text>
+                  </View>
+                  <View style={styles.oneMinuteSummaryTrailing}>
+                    {!isPremium ? (
+                      <View style={[styles.oneMinuteSummaryPremiumBadge, { borderColor: `${categoryTheme.accent}66` }]}>
+                        <Ionicons name="lock-closed" size={10} color={categoryTheme.accent} />
+                        <Text style={[styles.oneMinuteSummaryPremiumText, { color: categoryTheme.accent }]}>
+                          {t('oneMinuteSummaryPremium', localLang)}
+                        </Text>
+                      </View>
+                    ) : null}
+                    <Ionicons
+                      name={oneMinuteSummaryOpen && isPremium ? 'chevron-up' : 'chevron-down'}
+                      size={18}
+                      color={colors.textSecondary}
+                    />
+                  </View>
+                </TouchableOpacity>
+
+                {oneMinuteSummaryOpen && isPremium ? (
+                  <View style={[styles.oneMinuteSummaryBody, { borderTopColor: `${categoryTheme.borderColor}66` }]}>
+                    <View style={styles.oneMinuteSummaryMetaRow}>
+                      <Text style={[styles.oneMinuteSummaryLabel, { color: categoryTheme.accent }]}>
+                        {t('oneMinuteSummaryTitle', localLang)}
+                      </Text>
+                      <View style={styles.oneMinuteSummaryDurationPill}>
+                        <Ionicons name="time-outline" size={13} color={colors.textSecondary} />
+                        <Text style={styles.oneMinuteSummaryDurationText}>
+                          {t('oneMinuteSummaryDuration', localLang)}
+                        </Text>
+                      </View>
+                    </View>
+                    <Text style={styles.oneMinuteSummaryText}>{oneMinuteSummary}</Text>
+                    <TouchableOpacity
+                      onPress={handleReadFullStory}
+                      accessibilityRole="button"
+                      accessibilityLabel={t('oneMinuteSummaryFullStory', localLang)}
+                      style={[styles.oneMinuteSummaryFullStoryButton, { borderColor: categoryTheme.borderColor }]}
+                    >
+                      <Text style={[styles.oneMinuteSummaryFullStoryText, { color: categoryTheme.accent }]}>
+                        {t('oneMinuteSummaryFullStory', localLang)}
+                      </Text>
+                      <Ionicons name="arrow-down" size={15} color={categoryTheme.accent} />
+                    </TouchableOpacity>
+                  </View>
+                ) : null}
+              </View>
+            ) : null}
+
+            {parsedBody.format === 'p1' ? (
+              <StoryBody
+                segments={parsedBody.segments}
+                fontSize={fontSize}
+                categoryTheme={categoryTheme}
+                lang={localLang}
+                onReflectionPress={() => navigation.navigate('UseInConversation', { story: localStory || story })}
+                onSharePocket={sharePocketLine}
+                onTryUseCase={(seg) => navigation.navigate('UseInConversation', {
+                  story: localStory || story,
+                  initialContext: seg?.context || undefined,
+                  entrySource: 'story_use_case',
+                })}
+                renderLessonFooter={FEATURE_FLAGS.careerPathV1 ? (seg) => (seg.index !== 1 ? null : (
+                  <TouchableOpacity
+                    style={[styles.takeawaySaveButton, { borderColor: categoryTheme.borderColor, backgroundColor: isTakeawaySaved ? `${categoryTheme.accent}18` : colors.background }]}
+                    onPress={saveTakeaway}
+                    disabled={isTakeawaySaved}
+                    accessibilityRole="button"
+                    accessibilityState={{ disabled: isTakeawaySaved }}
+                    accessibilityLabel={t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
+                  >
+                    <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={16} color={categoryTheme.accent} />
+                    <Text style={[styles.takeawaySaveText, { color: categoryTheme.accent }]}>
+                      {t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
+                    </Text>
+                  </TouchableOpacity>
+                )) : undefined}
+              />
+            ) : null}
+            {parsedBody.format !== 'p1' && (() => {
               // Rich reading format is opt-in per story version (F7+ or C series).
               // Older stories (1/2/F5/F6) keep the legacy behaviour where the
               // lesson/reflection markers are stripped from the reading flow.
@@ -2098,58 +2347,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
               // 'OH' = yeni üretim (rich) formatı: $$, &&, ~~ görünür kartlar olarak render edilir.
               const richFormat = (!!fverMatch && Number(fverMatch[1]) >= 7) || !!cverMatch || storyVersionKey === 'OH';
 
-              // Parse the body into segments based on ##, $$, &&, ~~ markers
-              const rawBody = (displayBody || '').replace(/\r\n/g, '\n').replace(/\n{3,}/g, '\n\n');
-              const segments = [];
-              let remaining = rawBody;
-
-              while (remaining.length > 0) {
-                // Find the next marker
-                const markers = [
-                  { marker: '##', type: 'highlight' },
-                  { marker: '$$', type: 'lesson' },
-                  { marker: '&&', type: 'reflection' },
-                  { marker: '~~', type: 'contrast' },
-                ];
-
-                let nearestIdx = remaining.length;
-                let nearestMarker = null;
-
-                for (const m of markers) {
-                  const openIdx = remaining.indexOf(m.marker);
-                  if (openIdx !== -1 && openIdx < nearestIdx) {
-                    const closeIdx = remaining.indexOf(m.marker, openIdx + m.marker.length);
-                    if (closeIdx !== -1) {
-                      nearestIdx = openIdx;
-                      nearestMarker = { ...m, open: openIdx, close: closeIdx };
-                    }
-                  }
-                }
-
-                if (!nearestMarker) {
-                  // No more markers, push remaining as plain text
-                  if (remaining.trim()) {
-                    segments.push({ type: 'text', content: remaining });
-                  }
-                  break;
-                }
-
-                // Push text before the marker
-                const before = remaining.substring(0, nearestMarker.open);
-                if (before.trim()) {
-                  segments.push({ type: 'text', content: before });
-                }
-
-                // Extract content between markers
-                const markerContent = remaining.substring(
-                  nearestMarker.open + nearestMarker.marker.length,
-                  nearestMarker.close
-                );
-                segments.push({ type: nearestMarker.type, content: markerContent.trim() });
-
-                // Move past the closing marker
-                remaining = remaining.substring(nearestMarker.close + nearestMarker.marker.length);
-              }
+              const segments = parsedBody.segments;
 
               return segments.map((seg, idx) => {
                 if (seg.type === 'text') {
@@ -2349,10 +2547,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
         {recPanelVisible ? (
           <View style={styles.recInlinePanel}>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
-                <Text style={styles.modalTitle}>{lang === 'tr' ? 'Ses Kaydım' : 'My Recordings'}</Text>
+                <Text style={styles.modalTitle}>{t('voiceRecordingPanelTitle', lang)}</Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
                   <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary }}>
-                    {`${audioRecordings.length}/${MAX_RECORDINGS} ${lang === 'tr' ? 'kayıt' : 'recordings'}`}
+                    {t('voiceRecordingCountLabel', lang, { count: audioRecordings.length, max: MAX_RECORDINGS })}
                   </Text>
                   <TouchableOpacity onPress={() => { if (!isRecording) setRecPanelVisible(false); }} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
                     <Ionicons name="chevron-down" size={22} color={colors.textSecondary} />
@@ -2380,15 +2578,15 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 16, color: categoryTheme.accent }}>
                     {isRecording
-                      ? (lang === 'tr' ? 'Kaydı durdur' : 'Stop recording')
-                      : (lang === 'tr' ? 'Yeni kayıt al' : 'New recording')}
+                      ? t('voiceRecordingStop', lang)
+                      : t('voiceRecordingNew', lang)}
                   </Text>
                   <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: isRecording ? categoryTheme.accent : colors.textSecondary, marginTop: 2 }}>
                     {isRecording
                       ? `● ${formatDuration(recordingDuration)} / ${formatDuration(MAX_DURATION_MS)}`
                       : audioRecordings.length >= MAX_RECORDINGS
-                        ? (lang === 'tr' ? 'Maksimum 3 kayıt doldu' : 'Max 3 recordings reached')
-                        : (lang === 'tr' ? `Bas ve konuş · en fazla ${formatDuration(MAX_DURATION_MS)}` : `Tap and speak · up to ${formatDuration(MAX_DURATION_MS)}`)}
+                        ? t('voiceRecordingMaxReached', lang, { max: MAX_RECORDINGS })
+                        : t('voiceRecordingHint', lang, { duration: formatDuration(MAX_DURATION_MS) })}
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -2417,14 +2615,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   </TouchableOpacity>
                   <View style={{ flex: 1 }}>
                     <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
-                      {lang === 'tr' ? `Kayıt ${index + 1}` : `Take ${index + 1}`}
+                      {t('voiceRecordingTakeLabel', lang, { n: index + 1 })}
                       {' · '}
                       <Text style={{ fontFamily: 'Inter_400Regular', color: colors.textSecondary }}>
                         {formatDuration(rec.durationMs)}
                       </Text>
                     </Text>
                     <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginTop: 1 }}>
-                      {new Date(rec.date).toLocaleDateString(lang === 'tr' ? 'tr-TR' : 'en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                      {new Date(rec.date).toLocaleDateString(intlLocaleFor(lang), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
                     </Text>
                   </View>
                   <TouchableOpacity onPress={() => deleteRecording(index)} style={{ padding: 6 }}>
@@ -2435,7 +2633,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
               {audioRecordings.length === 0 && !isRecording ? (
                 <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary, textAlign: 'center', marginTop: 6 }}>
-                  {lang === 'tr' ? 'Henüz kayıt yok. Hikâyeyi sesli prova et.' : 'No recordings yet. Rehearse the story aloud.'}
+                  {t('voiceRecordingEmpty', lang)}
                 </Text>
               ) : null}
           </View>
@@ -2447,7 +2645,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
             onPress={() => setRecPanelVisible(v => !v)}
             activeOpacity={0.85}
             accessibilityRole="button"
-            accessibilityLabel={lang === 'tr' ? 'Ses kayıtları' : 'Voice recordings'}
+            accessibilityLabel={t('voiceRecordingsAccessibilityLabel', lang)}
             style={[styles.footerMicBtn, {
               borderColor: categoryTheme.borderColor,
               backgroundColor: recPanelVisible ? categoryTheme.backgroundColor : (isDark ? colors.backgroundDark : '#FFFFFF'),
@@ -2470,7 +2668,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
               activeOpacity={0.9}
             >
               <LinearGradient
-                colors={[colors.ctaGradientStart, colors.ctaGradientEnd, '#7A2A00']}
+                colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={[
@@ -2478,7 +2676,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   {
                     height: 58,
                     borderWidth: 1,
-                    borderColor: isDark ? 'rgba(255,255,255,0.14)' : 'rgba(122,42,0,0.18)',
+                    borderColor: isDark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.08)',
                     shadowColor: colors.ctaGradientEnd,
                     shadowOpacity: 0.35,
                     shadowRadius: 14,
@@ -2488,11 +2686,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 ]}
               >
                 <View style={[styles.btnPrimary, { height: 58, flexDirection: 'row', gap: 8 }]}>
-                  <Ionicons name="sparkles" size={18} color="#F7F3EB" />
-                  <Text style={[styles.btnPrimaryText, { color: '#F7F3EB', fontSize: typography.sizes.ui + 3, letterSpacing: 0.2 }]}>
+                  <Ionicons name="sparkles" size={18} color={colors.onPrimary} />
+                  <Text style={[styles.btnPrimaryText, { color: colors.onPrimary, fontSize: typography.sizes.ui + 3, letterSpacing: 0.2 }]}>
                     {t('story_detail_use_cta', lang)}
                   </Text>
-                  <Ionicons name="arrow-forward" size={17} color="#F7F3EB" />
+                  <Ionicons name="arrow-forward" size={17} color={colors.onPrimary} />
                 </View>
               </LinearGradient>
             </TouchableOpacity>
@@ -2554,7 +2752,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       {/* Cover the story until the interstitial is shown (or fails) */}
       {storyAdGate && (
         <View style={styles.adGateOverlay} pointerEvents="auto">
-          <ActivityIndicator size="large" color={colors.primary} />
+          <ActivityIndicator size="large" color={colors.primaryText} />
         </View>
       )}
     </>

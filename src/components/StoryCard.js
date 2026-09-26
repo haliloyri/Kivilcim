@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
 import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import { intlLocaleFor } from '../utils/locale';
 
 const { width } = Dimensions.get('window');
 
@@ -276,7 +277,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       fontFamily: 'Inter_500Medium',
       fontSize: 12,
       lineHeight: 18,
-      color: locked ? colors.primary : colors.textSecondary,
+      color: locked ? colors.primaryText : colors.textSecondary,
       marginTop: 8,
     },
     cardMeta: {
@@ -286,7 +287,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
     },
     cardArrow: {
       fontSize: 18,
-      color: colors.primary,
+      color: colors.primaryText,
     },
     lockIcon: {
       fontSize: 16,
@@ -376,7 +377,7 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
             fontFamily: 'PlayfairDisplay_700Bold',
             fontSize: isVerySmallPhone ? 15 : 16,
             lineHeight: isVerySmallPhone ? 20 : 21,
-            color: isDark ? '#F6EDE1' : colors.text,
+            color: colors.text,
           }}>
             {displayTitle}
           </Text>
@@ -384,13 +385,13 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 4, gap: 4 }}>
               <Ionicons name="checkmark-done" size={13} color={categoryTheme.accent} />
               <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary }}>
-                {lang === 'tr' ? `Kurgulandı: ${new Date(usageDate).toLocaleDateString('tr-TR')}` : `Crafted: ${new Date(usageDate).toLocaleDateString()}`}
+                {t('storyCraftedLabel', lang, { date: new Date(usageDate).toLocaleDateString(intlLocaleFor(lang)) })}
               </Text>
             </View>
           ) : (
             <Text numberOfLines={1} style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginTop: 3 }}>
-              <Text style={{ color: categoryTheme.accent, fontFamily: 'Inter_600SemiBold' }}>{displayCat}</Text>
-              {readMins ? `  ·  ${readMins} ${lang === 'tr' ? 'dk' : 'min'}` : ''}
+              <Text style={{ color: categoryTheme.textColor, fontFamily: 'Inter_600SemiBold' }}>{displayCat}</Text>
+              {readMins ? `  ·  ${readMins} ${t('minLabel', lang)}` : ''}
             </Text>
           )}
         </View>
@@ -515,8 +516,8 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
                 borderColor: `${colors.primary}45`,
               }}
             >
-              <Ionicons name="chatbubbles" size={12} color={colors.primary} />
-              <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 11, color: colors.primary }}>
+              <Ionicons name="chatbubbles" size={12} color={colors.primaryText} />
+              <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 11, color: colors.primaryText }}>
                 {t('story_detail_use_cta', lang)}
               </Text>
             </TouchableOpacity>

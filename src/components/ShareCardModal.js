@@ -23,7 +23,7 @@
  */
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  View, Text, TouchableOpacity, StyleSheet, ScrollView, Image,
+  View, Text, TouchableOpacity, StyleSheet, ScrollView,
   ActivityIndicator, Alert, Modal, Dimensions,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -38,15 +38,10 @@ import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import { getShareLabel, getShareUrl } from '../utils/share';
+import { extractShareParts } from '../utils/storyMarkup';
+import { ShareCardCanvas, ShareCardPreview } from './ShareCardCanvas';
 
 const { width } = Dimensions.get('window');
-
-// Brand logo (book + star + "Albor" wordmark). Dark variant has the cream
-// wordmark for dark card backgrounds; light variant has the ink wordmark.
-const LOGO_LIGHT_BG = require('../../assets/spark_logo.png');
-const LOGO_DARK_BG = require('../../assets/spark_logo_dark.png');
-// Story card (social share) brand mark — transparent, works on any theme.
-const LOGO_SOCIAL = require('../../assets/spark_social.png');
 
 const CAROUSEL_ORDER = ['hook', 'lesson', 'quote', 'reflection'];
 const CARD_TEXT_MAX_LENGTH = 280;
@@ -73,7 +68,7 @@ const ShareCardModal = ({
   const { incrementShareCount, setBadgePresentationBlocked } = useUserData();
   const insets = useSafeAreaInsets();
   const cLang = localLang || lang;
-  const shareLink = getShareUrl(cLang);
+  const shareLink = getShareUrl(cLang, { storyId: story?.story_id });
   const shareLabel = getShareLabel(cLang);
 
   const [shareTheme, setShareTheme] = useState('dark');
@@ -122,15 +117,11 @@ const ShareCardModal = ({
 
   const extractContent = (markerStr) => {
     if (!displayBody) return '';
-    const startIdx = displayBody.indexOf(markerStr);
-    if (startIdx === -1) return '';
-    const bodySegment = displayBody.substring(startIdx + markerStr.length);
-    let nextMarkerIdx = bodySegment.length;
-    ['##', '$$', '&&'].forEach(m => {
-      const id = bodySegment.indexOf(m);
-      if (id !== -1 && id < nextMarkerIdx) nextMarkerIdx = id;
-    });
-    return bodySegment.substring(0, nextMarkerIdx).trim();
+    const parts = extractShareParts(displayBody);
+    if (markerStr === '##') return parts.quote;
+    if (markerStr === '$$') return parts.lesson;
+    if (markerStr === '&&') return parts.reflection;
+    return '';
   };
 
   const getShareText = (type) => {
@@ -318,109 +309,19 @@ const ShareCardModal = ({
   };
 
   // --- Render the share card (identical in preview & capture) -----------
-  const renderShareCard = (contentTypes = shareContent) => {
-    const th = currentTheme;
-    const isPost = shareFormat === 'post';
-    const cardW = 1080;
-    const cardH = isPost ? 1080 : 1920;
-    const fTitle = 68;
-    const fQuote = 50;
-    const fSrc = 32;
-    const fFooter = 28;
-    const padHorizontal = 80;
-    // Story/reel cards have a lot of headroom above the logo when there's
-    // little content. As the selected content grows (more pieces and/or
-    // longer text), the logo should float up toward the top edge instead of
-    // sitting at a fixed offset — otherwise long content gets cramped or
-    // clipped against the fixed-position footer.
-    const contentVolume = contentTypes.reduce(
-      (sum, type) => sum + (getCardText(type) || '').length,
-      0
-    ) + (contentTypes.length - 1) * 60;
-    const STORY_PADDING_TOP_MAX = 140;
-    const STORY_PADDING_TOP_MIN = 70;
-    const paddingTop = isPost
-      ? 90
-      : Math.round(Math.max(
-        STORY_PADDING_TOP_MIN,
-        STORY_PADDING_TOP_MAX - contentVolume * 0.25
-      ));
-    const paddingBottom = isPost ? 90 : 160;
-    const borderW = 10;
-
-    return (
-      <View style={{ width: cardW, height: cardH, overflow: 'hidden', backgroundColor: th.bg[0], flexDirection: 'column' }}>
-        <LinearGradient colors={th.bg} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={[StyleSheet.absoluteFill]} />
-        <View style={{ flex: 1, justifyContent: 'space-between', paddingHorizontal: padHorizontal, paddingTop, paddingBottom }}>
-          {/* Header (Logo) — real brand mark, theme-aware */}
-          <View style={{ alignSelf: 'flex-start', borderBottomWidth: 4, borderBottomColor: th.accent, paddingBottom: 16 }}>
-            <Image
-              source={LOGO_SOCIAL}
-              style={{ width: 200, height: 200 }}
-              resizeMode="contain"
-            />
-          </View>
-
-          {/* Content zone — vertically centered */}
-          <View style={{ flex: 1, justifyContent: 'center', paddingVertical: 60 }}>
-            {contentTypes.map((type, index) => {
-              const label = type === 'lesson' ? t('share_key_takeaway', cLang) :
-                type === 'reflection' ? t('share_reflect', cLang) :
-                  type === 'hook' ? '' : displayTitle;
-              const textContent = getCardText(type);
-              const dynTitle = contentTypes.length > 1 ? fTitle * 0.8 : fTitle;
-              const dynQuote = contentTypes.length > 1 ? fQuote * 0.8 : fQuote;
-
-              if (type === 'hook') {
-                return (
-                  <View key={type} style={{ marginBottom: index === contentTypes.length - 1 ? 0 : 80 }}>
-                    <Text style={{ fontFamily: 'PlayfairDisplay_700Bold', fontSize: dynQuote * 1.1, color: th.text, lineHeight: dynQuote * 1.7, textAlign: 'center', letterSpacing: 1 }}>
-                      {textContent}
-                    </Text>
-                    <View style={{ width: 120, height: 4, backgroundColor: th.accent, alignSelf: 'center', marginTop: 40, borderRadius: 2 }} />
-                  </View>
-                );
-              }
-
-              return (
-                <View key={type} style={{ marginBottom: index === contentTypes.length - 1 ? 0 : 80 }}>
-                  <Text style={{ fontFamily: 'PlayfairDisplay_700Bold', fontSize: dynTitle, color: th.text, lineHeight: dynTitle * 1.4, marginBottom: 32 }}>
-                    {label}
-                  </Text>
-                  <View style={{ borderLeftWidth: borderW, borderLeftColor: th.accent, paddingLeft: 30, marginBottom: 20 }}>
-                    <Text style={{ fontFamily: 'PlayfairDisplay_600SemiBold', fontSize: dynQuote, color: th.sub, lineHeight: dynQuote * 1.6 }}>
-                      "{textContent}"
-                    </Text>
-                  </View>
-                </View>
-              );
-            })}
-          </View>
-
-          {/* Footer strip — source + CTA + access link */}
-          <View>
-            <View style={{ height: 3, backgroundColor: th.accent, opacity: 0.45, borderRadius: 2, marginBottom: 28 }} />
-            <View style={{ flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between' }}>
-              <View style={{ flexDirection: 'row', alignItems: 'flex-start', flex: 1, marginRight: 24 }}>
-                <Ionicons name="book-outline" size={fSrc + 2} color={th.sub} style={{ marginTop: 4 }} />
-                <Text style={{ fontFamily: 'Inter_500Medium', fontSize: fSrc, color: th.sub, textTransform: 'uppercase', letterSpacing: 2, marginLeft: 10, flexShrink: 1 }} numberOfLines={2}>
-                  {t('share_source', cLang)}{displaySourceBook}
-                </Text>
-              </View>
-              <View style={{ alignItems: 'flex-end' }}>
-                <Text style={{ fontFamily: 'Inter_500Medium', fontSize: fSrc, color: th.accent, letterSpacing: 1 }}>
-                  {t('card_cta_short', cLang)} ✦
-                </Text>
-                <Text style={{ fontFamily: 'Inter_500Medium', fontSize: fFooter, color: th.sub, letterSpacing: 1, marginTop: 8 }}>
-                  {shareLabel}
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
-      </View>
-    );
-  };
+  const cardProps = (contentTypes = shareContent) => ({
+    theme: currentTheme,
+    format: shareFormat,
+    contentTypes,
+    getText: getCardText,
+    title: displayTitle,
+    sourceBook: displaySourceBook,
+    lang: cLang,
+    shareLabel,
+  });
+  const renderShareCard = (contentTypes = shareContent) => (
+    <ShareCardCanvas {...cardProps(contentTypes)} />
+  );
 
   const styles = makeStyles({ colors, isDark, layout, typography, insets });
 
@@ -439,17 +340,11 @@ const ShareCardModal = ({
 
             <ScrollView showsVerticalScrollIndicator={false} style={{ flexShrink: 1, marginBottom: 16 }}>
               {/* Card preview */}
-              <View style={[styles.shareCardWrapper, {
-                width: width - 80,
-                height: (shareFormat === 'post' ? 1080 : 1920) * ((width - 80) / 1080),
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: 'transparent',
-              }]}>
-                <View style={{ width: 1080, height: shareFormat === 'post' ? 1080 : 1920, transform: [{ scale: (width - 80) / 1080 }] }}>
-                  {renderShareCard()}
-                </View>
-              </View>
+              <ShareCardPreview
+                previewWidth={width - 80}
+                style={styles.shareCardWrapper}
+                {...cardProps()}
+              />
 
               {/* Content type pills */}
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.contentPillsRow}>
@@ -617,12 +512,12 @@ const makeStyles = ({ colors, isDark, layout, typography, insets }) => StyleShee
     backgroundColor: isDark ? 'rgba(181,83,16,0.15)' : 'rgba(181,83,16,0.08)',
   },
   formatBtnText: { fontFamily: 'Inter_500Medium', fontSize: 12, color: colors.textSecondary },
-  formatBtnTextActive: { color: colors.primary },
+  formatBtnTextActive: { color: colors.primaryText },
   reelBadge: {
     marginTop: 3, paddingHorizontal: 6, paddingVertical: 1, borderRadius: 6,
     backgroundColor: isDark ? 'rgba(181,83,16,0.22)' : 'rgba(181,83,16,0.10)',
   },
-  reelBadgeText: { fontFamily: 'Inter_500Medium', fontSize: 9, color: colors.primary, letterSpacing: 0.3 },
+  reelBadgeText: { fontFamily: 'Inter_500Medium', fontSize: 9, color: colors.primaryText, letterSpacing: 0.3 },
   btnPrimary: {
     borderRadius: layout.radius.button, height: layout.heights.buttonPrimary,
     justifyContent: 'center', alignItems: 'center', width: '100%',

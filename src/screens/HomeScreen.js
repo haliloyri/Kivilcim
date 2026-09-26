@@ -23,7 +23,11 @@ import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import { getCategoryImage, getCategoryTheme, getCategoryBanner, getBadgeBanner } from '../utils/categoryImages';
 import { shouldShowAd, loadRewarded, showRewarded } from '../utils/ads';
 import BadgeIcon, { BADGE_MAP } from '../components/BadgeIcon';
-import { readableTextOn } from '../theme/theme';
+import { readableTextOn, colors as brandColors } from '../theme/theme';
+
+// Ink colours for text placed on light category/badge artwork (light mode only).
+const NEUTRAL_INK = brandColors.light.text;
+const NEUTRAL_INK_SOFT = brandColors.light.textSecondary;
 
 const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
 const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
@@ -73,7 +77,7 @@ const HomeLoadingState = ({ colors, layout, isDark }) => {
           justifyContent: 'center',
           backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)',
         }}>
-          <Ionicons name="book-outline" size={21} color={colors.primary} />
+          <Ionicons name="book-outline" size={21} color={colors.primaryText} />
         </View>
         <View style={{ flex: 1, gap: 8 }}>
           <View style={{ width: '62%', height: 14, borderRadius: 999, backgroundColor: lineBg }} />
@@ -192,9 +196,9 @@ const getBadgeCardTextColors = (startColor, endColor, useBannerImage, accentColo
 
   return {
     isDarkText,
-    titleColor: useBannerImage ? '#2E2A22' : onFill,
+    titleColor: useBannerImage ? NEUTRAL_INK : onFill,
     eyebrowColor: useBannerImage ? accentColor : onFillSoft,
-    subColor: useBannerImage ? '#5A5246' : onFillSoft,
+    subColor: useBannerImage ? NEUTRAL_INK_SOFT : onFillSoft,
     progressColor: useBannerImage ? accentColor : onFillFaint,
     progressTrackBg: useBannerImage ? 'rgba(0,0,0,0.08)' : (isDarkText ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.2)'),
   };
@@ -242,7 +246,7 @@ const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) 
         alignItems: 'center', justifyContent: 'center',
       }}>
         {isDone
-          ? <Ionicons name="checkmark" size={inner * 0.52} color={colors.primary} />
+          ? <Ionicons name="checkmark" size={inner * 0.52} color={colors.primaryText} />
           : <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: size * 0.19, color: colors.text, textAlign: 'center', lineHeight: size * 0.22 }}>{`${done}\n${total}`}</Text>
         }
       </View>
@@ -263,7 +267,7 @@ const getStoryCollectionId = (version) => {
 
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
-  const { isPremium, isOnboarded, history, earnedBadges, totalReads, todayReadsCount, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted, openBadgeModal } = useUserData();
+  const { isPremium, isOnboarded, history, earnedBadges, totalReads, todayReadsCount, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted, openBadgeModal, freeDailyQuota, freeQuotaRemaining, isStoryUnlockedToday, canOpenStoryFree, consumeFreeRead } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg, isOffline } = useStories();
   const { career, requestConditions } = useCareerPath();
   const insets = useSafeAreaInsets();
@@ -279,7 +283,6 @@ const HomeScreen = ({ navigation }) => {
   const [isPersonalizedModuleSnoozed, setIsPersonalizedModuleSnoozed] = useState(false);
   const [showProfilePrompt, setShowProfilePrompt] = useState(false);
   const [profileNameInput, setProfileNameInput] = useState('');
-  const [profileEmailInput, setProfileEmailInput] = useState('');
   const [dailyClickedIds, setDailyClickedIds] = useState(new Set());
   const [isDailyPanelCollapsed, setIsDailyPanelCollapsed] = useState(false);
   const [isFeaturedCollapsed, setIsFeaturedCollapsed] = useState(false);
@@ -503,10 +506,10 @@ const HomeScreen = ({ navigation }) => {
       try {
         const hasSeenPrompt = await AsyncStorage.getItem(PROFILE_INFO_PROMPT_SEEN_KEY);
         const hasName = Boolean(userProfile?.displayName);
-        const hasEmail = Boolean(userProfile?.email);
-        if (!active || hasSeenPrompt === 'true' || (hasName && hasEmail)) return;
+        // Only the name is asked now (the e-mail field was removed), so a
+        // missing e-mail must not keep re-opening the prompt.
+        if (!active || hasSeenPrompt === 'true' || hasName) return;
         setProfileNameInput(userProfile?.displayName || '');
-        setProfileEmailInput(userProfile?.email || '');
         setShowProfilePrompt(true);
       } catch {
         // no-op
@@ -519,10 +522,7 @@ const HomeScreen = ({ navigation }) => {
   }, [userProfile?.displayName, userProfile?.email]);
 
   const saveProfilePrompt = async () => {
-    await updateUserProfile({
-      displayName: profileNameInput,
-      email: profileEmailInput,
-    });
+    await updateUserProfile({ displayName: profileNameInput.trim() || null });
     await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true');
     setShowProfilePrompt(false);
   };
@@ -746,7 +746,30 @@ const HomeScreen = ({ navigation }) => {
     });
   }, [personalizedStories, personalizedTarget, activeFilter, lang, personalizedModule]);
 
-  const openPersonalizedStory = (story, position) => {
+  /**
+   * The one place a story is opened from Home.
+   *
+   * Spends a unit of the free daily quota when needed and routes to the paywall
+   * when there is none left. Every entry point must go through here — a direct
+   * `navigate('StoryDetail')` is a hole in the free tier.
+   *
+   * `bypassQuota` is for the deliberate weekly bonus story, which is exactly one
+   * extra story per week and is meant to be a gift, not a leak.
+   */
+  const openStory = async (story, { source, bypassQuota = false } = {}) => {
+    if (!story) return false;
+    if (!bypassQuota) {
+      const allowed = await consumeFreeRead(story.story_id);
+      if (!allowed) {
+        openPaywallFromFreeLimit(source || 'home_feed_locked', story.story_id);
+        return false;
+      }
+    }
+    navigation.navigate('StoryDetail', { story });
+    return true;
+  };
+
+  const openPersonalizedStory = async (story, position) => {
     trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, {
       storyId: story?.story_id,
       position,
@@ -754,7 +777,7 @@ const HomeScreen = ({ navigation }) => {
       dailyStoryTarget: personalizedTarget,
       lang,
     });
-    navigation.navigate('StoryDetail', { story });
+    await openStory(story, { source: 'home_for_you_locked' });
   };
 
   // ─── Ad / Premium sheet state ──────────────────────────────────────────────
@@ -805,7 +828,9 @@ const HomeScreen = ({ navigation }) => {
           const story = sortedStories.find(s => String(s.story_id) === String(pendingStoryId));
           if (story) {
             trackEvent(ANALYTICS_EVENTS.PERSONALIZED_STORY_OPENED, { storyId: pendingStoryId, source: 'ad_unlocked', lang });
-            navigation.navigate('StoryDetail', { story });
+            // The rewarded ad is the payment for this open, so it doesn't also
+            // spend a free-quota unit.
+            openStory(story, { source: 'ad_unlocked', bypassQuota: true });
           }
         }
       },
@@ -825,29 +850,49 @@ const HomeScreen = ({ navigation }) => {
 
   const paginatedStories = remainingStories.slice(0, visibleCount);
 
-  // Free üyelikte 3 farklı kategoride 3 hikaye hakkı
-  const selectFreeDailyStories = (stories, categoryCount = 3, storyCount = 3) => {
-    if (isPremium) return stories;
-    
-    const categoryMap = new Map();
-    const selected = [];
-    
+  // Free tier: FREE_DAILY_STORY_QUOTA stories a day, spread across distinct
+  // categories so the free slice still feels varied.
+  //
+  // The split is driven by the *persisted, date-keyed* quota in UserDataContext,
+  // not by position in the list. Picking "the first 3 of the unread pool" looks
+  // identical on screen but is not a limit: reading them drops them out of the
+  // pool and the next three become free, forever.
+  const pickAcrossCategories = (stories, count) => {
+    if (count <= 0) return [];
+    const seenCategories = new Set();
+    const picked = [];
+    // First pass: one per category, for variety.
     for (const story of stories) {
       const catId = story.parent_cat_id;
-      if (!categoryMap.has(catId)) {
-        categoryMap.set(catId, true);
-        selected.push(story);
-        if (selected.length >= storyCount) break;
-      }
+      if (seenCategories.has(catId)) continue;
+      seenCategories.add(catId);
+      picked.push(story);
+      if (picked.length >= count) return picked;
     }
-    
-    return selected;
+    // Second pass: top up from whatever is left if categories ran out.
+    for (const story of stories) {
+      if (picked.includes(story)) continue;
+      picked.push(story);
+      if (picked.length >= count) break;
+    }
+    return picked;
   };
 
-  const freeDaily = selectFreeDailyStories(paginatedStories);
-  const remainingFreeQuota = isPremium ? paginatedStories.length : freeDaily.length;
-  const free = isPremium ? paginatedStories : freeDaily;
-  const lockedRaw = isPremium ? [] : paginatedStories.slice(remainingFreeQuota);
+  const { free, lockedRaw } = React.useMemo(() => {
+    if (isPremium) return { free: paginatedStories, lockedRaw: [] };
+
+    // Stories the user already spent quota on today (or has read before) stay
+    // open — the cap gates new material, it never revokes what was given.
+    const unlocked = paginatedStories.filter((story) => isStoryUnlockedToday(story.story_id));
+    const candidates = paginatedStories.filter((story) => !isStoryUnlockedToday(story.story_id));
+    const newlyFree = pickAcrossCategories(candidates, freeQuotaRemaining);
+    const newlyFreeIds = new Set(newlyFree.map((story) => String(story.story_id)));
+
+    return {
+      free: [...unlocked, ...newlyFree],
+      lockedRaw: candidates.filter((story) => !newlyFreeIds.has(String(story.story_id))),
+    };
+  }, [isPremium, paginatedStories, isStoryUnlockedToday, freeQuotaRemaining]);
 
   const today = new Date();
   const yearStart = new Date(today.getFullYear(), 0, 1);
@@ -953,7 +998,7 @@ const HomeScreen = ({ navigation }) => {
         dailyStoryTarget: personalizedTarget,
         lang,
       });
-      navigation.navigate('StoryDetail', { story: firstStory });
+      openStory(firstStory, { source: 'home_first_session_locked' });
       return;
     }
 
@@ -980,7 +1025,7 @@ const HomeScreen = ({ navigation }) => {
         dailyStoryTarget: personalizedTarget,
         lang,
       });
-      navigation.navigate('StoryDetail', { story: primaryHomeAction.story });
+      openStory(primaryHomeAction.story, { source: 'home_primary_action_locked' });
       return;
     }
 
@@ -1076,7 +1121,7 @@ const HomeScreen = ({ navigation }) => {
         dailyStoryTarget: personalizedTarget,
         lang,
       });
-      navigation.navigate('StoryDetail', { story: personalizedModuleCard.story });
+      openStory(personalizedModuleCard.story, { source: 'home_module_card_locked' });
       return;
     }
 
@@ -1157,7 +1202,12 @@ const HomeScreen = ({ navigation }) => {
   };
 
   // Daily panel: handle story tap
-  const handleDailyStoryPress = (story, totalDailyCount) => {
+  const handleDailyStoryPress = async (story, totalDailyCount) => {
+    // Mark as clicked only after the open succeeds — otherwise a story the
+    // paywall blocked would still be recorded as consumed and shown as read.
+    const opened = await openStory(story, { source: 'home_daily_panel_locked' });
+    if (!opened) return;
+
     const newIds = new Set(dailyClickedIds);
     newIds.add(String(story.story_id));
     setDailyClickedIds(newIds);
@@ -1172,7 +1222,6 @@ const HomeScreen = ({ navigation }) => {
       dailyStoryTarget: personalizedTarget,
       lang,
     });
-    navigation.navigate('StoryDetail', { story });
   };
 
   useEffect(() => {
@@ -1336,6 +1385,8 @@ const HomeScreen = ({ navigation }) => {
     },
     sectionHeading: {
       fontFamily: 'PlayfairDisplay_700Bold',
+      // Playfair's old-style "1" reads as "ı" in Turkish — force lining figures.
+      fontVariant: ['lining-nums'],
       fontSize: sectionHeadingFontSize,
       color: colors.text,
       marginHorizontal: layout.padding.horizontal,
@@ -1469,7 +1520,7 @@ const HomeScreen = ({ navigation }) => {
     featuredCardTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: 17,
-      color: isDark ? '#F6EDE1' : colors.text,
+      color: colors.text,
       lineHeight: 22,
     },
     featuredCardMeta: {
@@ -1593,7 +1644,7 @@ const HomeScreen = ({ navigation }) => {
     editorialUseCtaText: {
       fontFamily: 'Inter_500Medium',
       fontSize: 13,
-      color: colors.primary,
+      color: colors.primaryText,
     },
     sectionTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
@@ -1619,7 +1670,7 @@ const HomeScreen = ({ navigation }) => {
     firstSessionIntro: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 12,
-      color: colors.primary,
+      color: colors.primaryText,
       letterSpacing: 0.7,
       textTransform: 'uppercase',
       marginBottom: 8,
@@ -1686,7 +1737,7 @@ const HomeScreen = ({ navigation }) => {
     firstSessionCatText: {
       fontFamily: 'Inter_500Medium',
       fontSize: 12,
-      color: colors.primary,
+      color: colors.primaryText,
     },
     firstSessionClose: {
       width: 30,
@@ -1848,7 +1899,7 @@ const HomeScreen = ({ navigation }) => {
     primaryActionCtaText: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 14,
-      color: colors.primary,
+      color: colors.primaryText,
     },
     badgeCarouselWrap: {
       marginTop: 12,
@@ -1973,7 +2024,7 @@ const HomeScreen = ({ navigation }) => {
               accessibilityLabel={t(career.activePath ? career.profileTitle : 'career.choosePathTitle', lang)}
             >
               <View style={{ width: 42, height: 42, borderRadius: 21, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surfaceContainerHigh }}>
-                <Ionicons name="sparkles-outline" size={20} color={colors.primary} />
+                <Ionicons name="sparkles-outline" size={20} color={colors.primaryText} />
               </View>
               <Text style={styles.headerBadgeSub} numberOfLines={1}>{t(career.activePath ? career.profileTitle : 'career.choosePathTitle', lang)}</Text>
             </TouchableOpacity>
@@ -1984,7 +2035,7 @@ const HomeScreen = ({ navigation }) => {
               activeOpacity={0.85}
             >
               <View style={{ width: 42, height: 42, borderRadius: 21, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surfaceContainerHigh }}>
-                <Text style={{ fontSize: 24 }}>🏆</Text>
+                <Ionicons name="trophy-outline" size={20} color={colors.rewardText} />
               </View>
               <Text style={styles.headerBadgeSub}>{badgeProgressInfo.earned}/{badgeProgressInfo.total}</Text>
             </TouchableOpacity>
@@ -2019,9 +2070,9 @@ const HomeScreen = ({ navigation }) => {
             flexDirection: 'row', alignItems: 'center', gap: 8,
             marginHorizontal: layout.padding.horizontal, marginBottom: 12,
             paddingHorizontal: 12, paddingVertical: 10, borderRadius: 12,
-            backgroundColor: isDark ? 'rgba(229, 194, 122, 0.14)' : 'rgba(168, 106, 28, 0.10)',
+            backgroundColor: colors.primaryContainer,
           }}>
-            <Ionicons name="cloud-offline-outline" size={17} color={colors.primary} />
+            <Ionicons name="cloud-offline-outline" size={17} color={colors.primaryText} />
             <Text style={{ flex: 1, fontFamily: 'Inter_500Medium', fontSize: 12.5, color: colors.text }}>
               {t('homeOfflineStoriesNotice', lang)}
             </Text>
@@ -2054,6 +2105,8 @@ const HomeScreen = ({ navigation }) => {
                   active={item.key === activeFilter}
                   vertical
                   isDark={isDark}
+                  activeColor={item.key === 'all' ? colors.primary : undefined}
+                  activeTextColor={item.key === 'all' ? colors.onPrimary : undefined}
                   onPress={() => setActiveFilter(item.key)}
                 />
               )}
@@ -2077,13 +2130,19 @@ const HomeScreen = ({ navigation }) => {
           const isCareer = primaryHomeAction.isCareerCard;
           // Soft light banner artwork in light mode (badge or category); dark
           // mode falls back to a coloured gradient.
-          const useBannerImage = !isDark;
+          // "All" and the career card sit on the brand accent's soft container
+          // (both modes): calm tinted surface, dark text and one filled CTA.
+          // Category filters keep their category artwork / gradient.
+          const useAccentSurface = !isBadge && (isAllFilter || isCareer);
+          const useBannerImage = !isDark && !useAccentSurface;
           const badgeAccent = getBadgeColors(primaryHomeAction.badge?.id, isDark).end || colors.primary;
           const accentColor = isBadge
             ? badgeAccent
             : (isAllFilter ? (colors.ctaGradientStart || colors.primary) : activeCatTheme.accent);
           const bannerCtaColor = accentColor;
-          const bannerColors = isBadge
+          const bannerColors = useAccentSurface
+            ? [colors.primaryContainer, mixHex(colors.primaryContainer, colors.primary, isDark ? 0.14 : 0.1)]
+            : isBadge
             ? [getBadgeColors(primaryHomeAction.badge?.id, isDark).start, getBadgeColors(primaryHomeAction.badge?.id, isDark).end]
             : isAllFilter
               ? [colors.ctaGradientStart || colors.primary, colors.ctaGradientEnd || colors.primaryContainer]
@@ -2111,13 +2170,19 @@ const HomeScreen = ({ navigation }) => {
           const onFillSoft = isDarkText ? 'rgba(26,26,26,0.72)' : 'rgba(255,255,255,0.85)';
           const onFillFaint = isDarkText ? 'rgba(26,26,26,0.6)' : 'rgba(255,255,255,0.8)';
 
-          const titleColor = useBannerImage ? '#2E2A22' : onFill;
-          const eyebrowColor = useBannerImage ? accentColor : onFillSoft;
-          const subColor = useBannerImage ? '#5A5246' : onFillSoft;
-          const progressColor = useBannerImage ? accentColor : onFillFaint;
-          const progressTrackBg = useBannerImage ? 'rgba(0,0,0,0.08)' : (isDarkText ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.2)');
-          const iconWrapBg = useBannerImage ? '#FFFFFF' : (isDarkText ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.25)');
-          const iconColor = useBannerImage ? accentColor : onFill;
+          const onLightSurface = useBannerImage || useAccentSurface;
+          const titleColor = onLightSurface ? colors.text : onFill;
+          const eyebrowColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFillSoft);
+          const subColor = onLightSurface ? colors.textSecondary : onFillSoft;
+          const progressColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFillFaint);
+          const progressTrackBg = onLightSurface ? (isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.08)') : (isDarkText ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.2)');
+          const iconWrapBg = useAccentSurface
+            ? (isDark ? 'rgba(255,255,255,0.08)' : colors.surfaceContainerLowest)
+            : (useBannerImage ? colors.surfaceContainerLowest : (isDarkText ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.25)'));
+          const iconColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFill);
+          // CTA: filled accent on the accent surface; white pill on artwork.
+          const ctaBg = useAccentSurface ? colors.primary : (isDark ? colors.background : colors.surfaceContainerLowest);
+          const ctaTextColor = useAccentSurface ? colors.onPrimary : bannerCtaColor;
 
           const bannerInner = (
             <>
@@ -2155,17 +2220,17 @@ const HomeScreen = ({ navigation }) => {
               ) : isCareer ? (
                 <View style={styles.primaryActionFooter}>
                   <Text style={[styles.primaryActionProgress, { color: progressColor }]}>{primaryHomeAction.progressLabel}</Text>
-                  <View style={[styles.primaryActionCta, isDark && { backgroundColor: '#1A1A1A' }]}>
-                    <Text style={[styles.primaryActionCtaText, { color: bannerCtaColor }]}>{primaryHomeAction.cta}</Text>
-                    <Ionicons name="arrow-forward" size={16} color={bannerCtaColor} />
+                  <View style={[styles.primaryActionCta, { backgroundColor: ctaBg }]}>
+                    <Text style={[styles.primaryActionCtaText, { color: ctaTextColor }]}>{primaryHomeAction.cta}</Text>
+                    <Ionicons name="arrow-forward" size={16} color={ctaTextColor} />
                   </View>
                 </View>
               ) : (
                 <View style={styles.primaryActionFooter}>
                   <Text style={[styles.primaryActionProgress, { color: progressColor }]}>{doneCount} / {Math.max(personalizedTarget, 1)}</Text>
-                  <View style={[styles.primaryActionCta, isDark && { backgroundColor: '#1A1A1A' }]}>
-                    <Text style={[styles.primaryActionCtaText, { color: bannerCtaColor }]}>{primaryHomeAction.cta}</Text>
-                    <Ionicons name="arrow-forward" size={16} color={bannerCtaColor} />
+                  <View style={[styles.primaryActionCta, { backgroundColor: ctaBg }]}>
+                    <Text style={[styles.primaryActionCtaText, { color: ctaTextColor }]}>{primaryHomeAction.cta}</Text>
+                    <Ionicons name="arrow-forward" size={16} color={ctaTextColor} />
                   </View>
                 </View>
               )}
@@ -2356,10 +2421,10 @@ const HomeScreen = ({ navigation }) => {
                 activeOpacity={allFeaturedRead ? 0.7 : 1}
                 disabled={!allFeaturedRead}
                 accessibilityRole={allFeaturedRead ? 'button' : undefined}
-                accessibilityLabel={t('home_featured_section_title', lang).replace('{{count}}', String(personalizedTarget))}
+                accessibilityLabel={(personalizedTarget === 1 ? t('home_featured_section_title_one', lang) : t('home_featured_section_title', lang).replace('{{count}}', String(personalizedTarget)))}
                 accessibilityState={allFeaturedRead ? { expanded: !featuredHidden } : undefined}
               >
-                 <Text style={[styles.sectionHeading, { marginHorizontal: 0, marginTop: 0, marginBottom: 0 }]}>{t('home_featured_section_title', lang).replace('{{count}}', String(personalizedTarget))}</Text>
+                 <Text style={[styles.sectionHeading, { marginHorizontal: 0, marginTop: 0, marginBottom: 0 }]}>{(personalizedTarget === 1 ? t('home_featured_section_title_one', lang) : t('home_featured_section_title', lang).replace('{{count}}', String(personalizedTarget)))}</Text>
                  {allFeaturedRead && (
                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
                      <View style={{
@@ -2393,7 +2458,7 @@ const HomeScreen = ({ navigation }) => {
                   const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                   const displayCat = toPascalCase(t(story.parent_cat || story.cat, lang) || '');
                   const isRead = checkIfRead(story.story_id);
-                  const isLocked = !isPremium && !free.some(freeStory => String(freeStory.story_id) === String(story.story_id));
+                  const isLocked = !canOpenStoryFree(story.story_id);
                   const mins = Number(story.min || story.possible_read_minutes) || personalizedMinutes;
                   return (
                     <TouchableOpacity
@@ -2418,8 +2483,8 @@ const HomeScreen = ({ navigation }) => {
                       <View style={{ flex: 1, minWidth: 0 }}>
                         <Text numberOfLines={2} style={styles.insightTitle}>{story.title}</Text>
                         <Text numberOfLines={1} style={styles.insightMeta}>
-                          <Text style={{ color: catTheme.accent, fontFamily: 'Inter_600SemiBold' }}>{displayCat}</Text>
-                          {`  ·  ${mins} ${lang === 'tr' ? 'dk' : 'min'}`}
+                          <Text style={{ color: catTheme.textColor, fontFamily: 'Inter_600SemiBold' }}>{displayCat}</Text>
+                          {`  ·  ${mins} ${t('minLabel', lang)}`}
                         </Text>
                       </View>
                       {isLocked ? (
@@ -2541,7 +2606,7 @@ const HomeScreen = ({ navigation }) => {
                                 styles.dailyStoryRowClicked,
                                 { borderWidth: 1, borderColor: storyTheme.borderColor, backgroundColor: storyTheme.backgroundColor },
                               ]}
-                              onPress={() => navigation.navigate('StoryDetail', { story })}
+                              onPress={() => openStory(story, { source: 'home_daily_panel_locked' })}
                               activeOpacity={0.75}
                             >
                               <Ionicons name="book-outline" size={16} color={storyTheme.accent} />
@@ -2559,7 +2624,9 @@ const HomeScreen = ({ navigation }) => {
                       <View style={styles.dailyPanelStoriesWrap}>
                         {panelStories.map((story, storyIdx) => {
                           const isClicked = dailyClickedIds.has(String(story.story_id)) || historySet.has(String(story.story_id));
-                          const isLocked = !isPremium && !isClicked && personalizedStories.indexOf(story) >= 2;
+                          // Locked purely by the persisted daily quota. Tapping a
+                          // locked row must not unlock it — it opens the paywall.
+                          const isLocked = !canOpenStoryFree(story.story_id);
                           const isFirst = storyIdx === 0;
                           const dailyStoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
                           return (
@@ -2582,7 +2649,7 @@ const HomeScreen = ({ navigation }) => {
                                     {story.title}
                                   </Text>
                                   <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 11, color: colors.textSecondary, marginTop: 2 }}>
-                                    <Text style={{ color: dailyStoryTheme.accent, fontFamily: 'Inter_600SemiBold' }}>{t(story.parent_cat, lang)}</Text>
+                                    <Text style={{ color: dailyStoryTheme.textColor, fontFamily: 'Inter_600SemiBold' }}>{t(story.parent_cat, lang)}</Text>
                                     {` · ${story.min} ${t('minLabel', lang)}`}
                                   </Text>
                                 </View>
@@ -2663,7 +2730,7 @@ const HomeScreen = ({ navigation }) => {
                     type="hero" 
                     hideCategory={activeFilter !== 'all'}
                     isRead={checkIfRead(free[0].story_id)}
-                    onPress={() => navigation.navigate('StoryDetail', { story: free[0] })}
+                    onPress={() => openStory(free[0], { source: 'home_featured_story_locked' })}
                     onUseInConversation={() => navigation.navigate('UseInConversation', { story: free[0] })}
                   />
                 </>
@@ -2677,7 +2744,7 @@ const HomeScreen = ({ navigation }) => {
                     type="ready"
                     hideCategory={activeFilter !== 'all'}
                     isRead={checkIfRead(story.story_id)}
-                    onPress={() => navigation.navigate('StoryDetail', { story })}
+                    onPress={() => openStory(story, { source: 'home_feed_locked' })}
                     onUseInConversation={() => navigation.navigate('UseInConversation', { story })}
                   />
                 ))}
@@ -2689,7 +2756,7 @@ const HomeScreen = ({ navigation }) => {
                     hideCategory={activeFilter !== 'all'}
                     supportText={t('homeFreemiumWeeklyBonusHint', lang)}
                     isRead={checkIfRead(weeklyBonusStory.story_id)}
-                    onPress={() => navigation.navigate('StoryDetail', { story: weeklyBonusStory })}
+                    onPress={() => openStory(weeklyBonusStory, { source: 'home_weekly_bonus', bypassQuota: true })}
                   />
                 ) : null}
                 {teaserStory ? (
@@ -2722,7 +2789,7 @@ const HomeScreen = ({ navigation }) => {
         {isFetchingMore && (
           <View style={{ alignItems: 'center', paddingVertical: 20 }}>
              <Animated.View style={{ transform: [{ rotateY: spin }] }}>
-               <Ionicons name="book-outline" size={32} color={colors.primary} />
+               <Ionicons name="book-outline" size={32} color={colors.primaryText} />
              </Animated.View>
           </View>
         )}
@@ -2735,14 +2802,15 @@ const HomeScreen = ({ navigation }) => {
           null
         )}
 
-        <Modal
-        visible={showProfilePrompt}
-        transparent
-        animationType="fade"
-        onRequestClose={skipProfilePrompt}
-      >
+      {/* Profile prompt: rendered in-screen instead of a native <Modal>. On iOS the
+          native Modal could end up "presented" but never drawn (e.g. when another
+          modal was on screen at the same time), leaving an invisible layer that
+          swallowed every touch and scroll on this tab. */}
+      {showProfilePrompt && (
         <View style={{
-          flex: 1,
+          ...StyleSheet.absoluteFillObject,
+          zIndex: 10,
+          elevation: 10,
           backgroundColor: colors.modalOverlay,
           justifyContent: 'center',
           paddingHorizontal: layout.padding.horizontal,
@@ -2779,24 +2847,6 @@ const HomeScreen = ({ navigation }) => {
               }}
             />
 
-            <TextInput
-              value={profileEmailInput}
-              onChangeText={setProfileEmailInput}
-              placeholder="E-posta"
-              placeholderTextColor={colors.textSecondary}
-              autoCapitalize="none"
-              keyboardType="email-address"
-              style={{
-                borderWidth: 1,
-                borderColor: colors.border,
-                borderRadius: 10,
-                paddingHorizontal: 12,
-                paddingVertical: 10,
-                color: colors.text,
-                fontFamily: 'Inter_400Regular',
-                backgroundColor: colors.backgroundDark,
-              }}
-            />
 
             <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 10, marginTop: 4 }}>
               <TouchableOpacity onPress={skipProfilePrompt} style={{ paddingHorizontal: 12, paddingVertical: 10 }}>
@@ -2812,7 +2862,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
           </View>
         </View>
-      </Modal>
+      )}
 
       {/* Ad or Premium Sheet */}
       <AdOrPremiumSheet

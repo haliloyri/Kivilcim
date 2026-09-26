@@ -1,0 +1,161 @@
+{
+  "category": "Felsefe",
+  "source": {
+    "book": "Dört Anlaşma",
+    "author": "Don Miguel Ruiz"
+  },
+  "slides": [
+    {
+      "main_lines": [
+        "Birinin, söylemeden",
+        "ne istediğini bilmeni",
+        "beklediği o gergin anı hatırla.",
+        "Ruiz’in örneğinde,",
+        "bir akşam tam böyle başladı."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 0,
+        "text": "söylemeden",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.24, 0.42, 1.0, 1.0],
+      "art_box": [250, 785, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Adam eve geldi.",
+        "Eşi öfkeliydi.",
+        "Ama ne istediğini",
+        "ona hiç söylememişti.",
+        "O da nedenini bilmiyordu."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "illustration"
+      },
+      "art_crop": [0.28, 0.43, 1.0, 1.0],
+      "art_box": [250, 770, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Kadın,",
+        "eşinin onu çok iyi tanıdığına",
+        "inanıyordu.",
+        "Bu yüzden isteğini",
+        "zaten bilmesini bekledi."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "zaten bilmesini",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.67, 0.42, 1.0, 1.0],
+      "art_box": [470, 775, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Ama adam",
+        "ne beklendiğini bilmiyordu.",
+        "Söylenmeyen beklenti",
+        "karşılanmayınca,",
+        "çatışma büyüdü."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "çatışma büyüdü.",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.28, 0.40, 1.0, 1.0],
+      "art_box": [245, 775, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "İlk bakışta sorun,",
+        "ilgisizlik gibi görünüyordu.",
+        "Oysa gerilimi büyüten,",
+        "söylenmeyen bir istek",
+        "ve zihin okuma beklentisiydi."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "zihin okuma",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.58, 0.32, 0.80, 0.55],
+      "art_box": [520, 800, 980, 1240],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Varsayım,",
+        "söylenmeyeni bildiğini sanır.",
+        "Açıklık ise",
+        "bilmediğini kabul eder",
+        "ve açıkça sorar."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "açıkça sorar.",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.28, 0.42, 1.0, 1.0],
+      "art_box": [260, 780, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Bugün bir yorumunu seç.",
+        "Onu hemen doğru sayma.",
+        "Küçük bir soruya çevir:",
+        "Bunu doğru mu anladım?",
+        "Sonra cevabı dinle."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "Bunu doğru mu anladım?",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.34, 0.46, 1.0, 1.0],
+      "art_box": [270, 790, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Birinin, isteğini söylemeden",
+        "bilmeni beklediği anı düşün:",
+        "Neyi yanlış okudun?",
+        "Hangi cümle açıklık getirdi?"
+      ],
+      "support_lines": [
+        "Deneyimini yorumlarda anlat.",
+        "Kaynak: Dört Anlaşma — Don Miguel Ruiz",
+        "Albor’da tam hikâyeyi oku."
+      ],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "Hangi cümle açıklık getirdi?",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.26, 0.43, 1.0, 1.0],
+      "art_box": [310, 835, 1080, 1350],
+      "art_opacity": 0.94
+    }
+  ]
+}

@@ -2,6 +2,8 @@ import * as SQLite from 'expo-sqlite'
 import * as FileSystem from 'expo-file-system/legacy';
 import { Asset } from 'expo-asset';
 
+const ONE_MINUTE_SUMMARY_SEED = require('../../assets/one-minute-summaries.json');
+
 let dbInstance = null;
 export const getDb = () => {
   if (!dbInstance) {
@@ -27,7 +29,7 @@ export const waitForData = () => _dataReadyPromise;
 //  on the next app launch. This deletes the old DB
 //  and copies the fresh one from assets/kivilcim.db.
 // ──────────────────────────────────────────────────────
-const DB_VERSION = 22;
+const DB_VERSION = 24; // 24: P1 use-case context tags + conversation_variants rewrite (1707, 1731 pilot)
 const DB_VERSION_KEY = 'db_version';
 
 const getVersionFilePath = () =>
@@ -124,6 +126,55 @@ const migrateThirtySecColumn = async (db) => {
   await db.execAsync(`ALTER TABLE stories ADD COLUMN thirty_sec TEXT;`);
 
   console.log('migrateThirtySecColumn: thirty_sec column added.');
+};
+
+const migrateOneMinuteSummaryContent = async (db) => {
+  try {
+    const columns = await db.getAllAsync(`PRAGMA table_info(story_translations)`);
+    const hasSummary = columns.some((column) => column.name === 'one_minute_summary');
+    if (!hasSummary) {
+      await db.execAsync(`ALTER TABLE story_translations ADD COLUMN one_minute_summary TEXT;`);
+    }
+
+    await db.execAsync(`
+      CREATE TABLE IF NOT EXISTS content_seed_versions (
+        seed_key TEXT PRIMARY KEY,
+        version INTEGER NOT NULL,
+        applied_at TEXT NOT NULL
+      );
+    `);
+
+    const applied = await db.getFirstAsync(
+      `SELECT version FROM content_seed_versions WHERE seed_key = 'one_minute_summaries'`
+    );
+    const seedVersion = Number(ONE_MINUTE_SUMMARY_SEED?.version || 0);
+    if (Number(applied?.version || 0) >= seedVersion) return;
+
+    await db.withTransactionAsync(async () => {
+      const statement = await db.prepareAsync(`
+        UPDATE story_translations
+           SET one_minute_summary = ?
+         WHERE story_id = ? AND lang_code = ?
+      `);
+      try {
+        for (const [storyId, localized] of Object.entries(ONE_MINUTE_SUMMARY_SEED?.summaries || {})) {
+          for (const [langCode, summary] of Object.entries(localized || {})) {
+            await statement.executeAsync([summary, Number(storyId), langCode]);
+          }
+        }
+      } finally {
+        await statement.finalizeAsync();
+      }
+
+      await db.runAsync(`
+        INSERT OR REPLACE INTO content_seed_versions (seed_key, version, applied_at)
+        VALUES ('one_minute_summaries', ?, ?)
+      `, [seedVersion, new Date().toISOString()]);
+    });
+  } catch (error) {
+    console.error('migrateOneMinuteSummaryContent failed:', error);
+    throw error;
+  }
 };
 
 const migrateStoryVersion = async (db) => {
@@ -340,6 +391,8 @@ export const initDb = async () => {
 
     await migrateThirtySecColumn(db);
 
+    await migrateOneMinuteSummaryContent(db);
+
     await migrateStoryVersion(db);
 
     await migrateStoryDuration(db);
@@ -403,6 +456,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
       COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
+      COALESCE(NULLIF(st.one_minute_summary, ''), st_tr.one_minute_summary, '') AS one_minute_summary,
       COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
       COALESCE(NULLIF(scv.punchline, ''),    scv_tr.punchline,    '') AS conversation_punchline,
       COALESCE(NULLIF(scv.thirty_sec, ''),   scv_tr.thirty_sec,   '') AS conversation_thirty_sec,
@@ -425,8 +479,9 @@ export const getStoriesForLang = async (lang = 'tr') => {
     -- Book Translations
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
+    WHERE (s.version != 'OH' OR ? = 'tr')
     ORDER BY COALESCE(s.current_read_minutes, 1) DESC, s.id DESC
-  `, [lang, lang, lang, lang]);
+  `, [lang, lang, lang, lang, lang]);
 
   return rows.map(r => ({
     ...r,
@@ -434,6 +489,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
     title: r.title || '',
     body: r.body || '',
     hook: r.hook || '',
+    one_minute_summary: r.one_minute_summary || '',
     thirty_sec: r.thirty_sec || '',
   }));
 };
@@ -460,6 +516,7 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
       COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
+      COALESCE(NULLIF(st.one_minute_summary, ''), st_tr.one_minute_summary, '') AS one_minute_summary,
       COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
       COALESCE(NULLIF(scv.punchline, ''),    scv_tr.punchline,    '') AS conversation_punchline,
       COALESCE(NULLIF(scv.thirty_sec, ''),   scv_tr.thirty_sec,   '') AS conversation_thirty_sec,
@@ -482,8 +539,8 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
     -- Book Translations
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
-    WHERE s.id = ?
-  `, [lang, lang, lang, lang, storyId]);
+    WHERE s.id = ? AND (s.version != 'OH' OR ? = 'tr')
+  `, [lang, lang, lang, lang, storyId, lang]);
 
   if (!r) return null;
   return {
@@ -492,6 +549,7 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
     title: r.title || '',
     body: r.body || '',
     hook: r.hook || '',
+    one_minute_summary: r.one_minute_summary || '',
     thirty_sec: r.thirty_sec || '',
   }
 };
@@ -524,6 +582,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
       COALESCE(NULLIF(st.description, ''),   st_tr.description,   '') AS description,
       COALESCE(NULLIF(st.content, ''),       st_tr.content,       '') AS body,
       COALESCE(NULLIF(st.hook, ''),          st_tr.hook,          '') AS hook,
+      COALESCE(NULLIF(st.one_minute_summary, ''), st_tr.one_minute_summary, '') AS one_minute_summary,
       COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
       COALESCE(NULLIF(scv.punchline, ''),    scv_tr.punchline,    '') AS conversation_punchline,
       COALESCE(NULLIF(scv.thirty_sec, ''),   scv_tr.thirty_sec,   '') AS conversation_thirty_sec,
@@ -546,7 +605,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
     LEFT JOIN story_conversation_variants scv_tr ON scv_tr.story_id = s.id AND scv_tr.lang_code = 'tr'
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
-    WHERE
+    WHERE (
       LOWER(COALESCE(NULLIF(st.title, ''), st_tr.title, '')) LIKE ?
       OR LOWER(COALESCE(NULLIF(st.content, ''), st_tr.content, '')) LIKE ?
       OR LOWER(COALESCE(NULLIF(st.description, ''), st_tr.description, '')) LIKE ?
@@ -554,6 +613,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
       OR LOWER(COALESCE(NULLIF(bt.title, ''), bt_tr.title, '')) LIKE ?
       OR LOWER(COALESCE(ct.translation, ct_tr.translation, c.category_name, '')) LIKE ?
       OR LOWER(COALESCE(sub.subcategory_name, '')) LIKE ?
+    ) AND (s.version != 'OH' OR ? = 'tr')
     ORDER BY rank_title ASC, rank_body ASC, rank_source ASC,
              COALESCE(s.current_read_minutes, 1) DESC, s.id DESC
     LIMIT ${safeLimit}
@@ -572,6 +632,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
     likeQuery,
     likeQuery,
     likeQuery,
+    lang,
   ]);
 
   return rows.map((r) => ({
@@ -580,6 +641,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
     title: r.title || '',
     body: r.body || '',
     hook: r.hook || '',
+    one_minute_summary: r.one_minute_summary || '',
     thirty_sec: r.thirty_sec || '',
   }));
 };

@@ -205,16 +205,16 @@ function MainTabs() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: isDark ? 'rgba(20,20,22,0.92)' : '#FBF7F0',
+          backgroundColor: colors.tabBarBackground,
           borderTopWidth: isDark ? StyleSheet.hairlineWidth : layout.borderWidth,
-          borderTopColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
+          borderTopColor: colors.tabBarBorder,
           height: 84 + androidBottomInset,
           paddingBottom: androidBottomInset + 6,
           paddingTop: 8,
           marginBottom: Platform.OS === 'android' ? 4 : 0,
         },
-        tabBarActiveTintColor: isDark ? colors.primary : colors.activeNav,
-        tabBarInactiveTintColor: isDark ? '#9A9AA2' : colors.textSecondary,
+        tabBarActiveTintColor: colors.primaryText,
+        tabBarInactiveTintColor: colors.tabInactive,
         tabBarLabelStyle: {
           fontFamily: 'Inter_500Medium',
           fontSize: 11.5,
@@ -262,7 +262,7 @@ function MainTabs() {
                   position: 'absolute', top: 4, right: 14,
                   width: 9, height: 9, borderRadius: 5,
                   backgroundColor: colors.primary,
-                  borderWidth: 1.5, borderColor: isDark ? 'rgba(20,20,22,0.88)' : '#FBF7F0',
+                  borderWidth: 1.5, borderColor: colors.tabBarBackground,
                 }} />
               ) : null}
             />
@@ -284,6 +284,7 @@ function MainTabs() {
 }
 
 import LaunchScreen from '../screens/LaunchScreen';
+import { PENDING_ONBOARDING_PAYWALL_KEY } from '../screens/OnboardingScreen';
 
 export default function AppNavigator() {
   const {
@@ -317,6 +318,44 @@ export default function AppNavigator() {
     setBadgePresentationBlocked('badge_share_sheet', !!shareSheetBadge);
     return () => setBadgePresentationBlocked('badge_share_sheet', false);
   }, [shareSheetBadge, setBadgePresentationBlocked]);
+
+  // Post-onboarding trial offer.
+  //
+  // This is the highest-intent moment in the whole funnel — the user has just
+  // told us what they care about and how much time they have — and it was going
+  // unmonetized. OnboardingScreen arms a flag rather than navigating, because
+  // completing onboarding swaps the navigator's screen set out from under it.
+  //
+  // Fires once per install, only for a non-premium user, and never for someone
+  // who skipped onboarding.
+  const onboardingPaywallHandledRef = useRef(false);
+  useEffect(() => {
+    if (!isOnboarded || !isNavigationReady || isLoadingUserData) return;
+    if (onboardingPaywallHandledRef.current) return;
+
+    let cancelled = false;
+    (async () => {
+      let pending = null;
+      try {
+        pending = await AsyncStorage.getItem(PENDING_ONBOARDING_PAYWALL_KEY);
+      } catch (e) {
+        return;
+      }
+      if (cancelled || pending !== 'true') return;
+
+      onboardingPaywallHandledRef.current = true;
+      // Clear first: a crash while the paywall is up must not re-offer forever.
+      await AsyncStorage.removeItem(PENDING_ONBOARDING_PAYWALL_KEY).catch(() => {});
+
+      if (isPremium) return;
+      appNavigationRef.current?.navigate('Paywall', {
+        reason: 'early_trial',
+        source: 'onboarding_complete',
+      });
+    })();
+
+    return () => { cancelled = true; };
+  }, [isOnboarded, isNavigationReady, isLoadingUserData, isPremium]);
 
   useEffect(() => {
     return () => {
@@ -651,9 +690,9 @@ export default function AppNavigator() {
                   )}
                 </View>
               </Animated.View>
-              <Text style={styles.modalTitle}>{t(activeBadgeModal.titleKey, lang) || activeBadgeModal.titleKey}</Text>
-              <Text style={styles.modalSub}>{t(activeBadgeModal.subKey, lang) || activeBadgeModal.subKey}</Text>
-              <Text style={styles.modalDesc}>{t(activeBadgeModal.descKey, lang) || ''}</Text>
+              <Text style={styles.modalTitle}>{t(activeBadgeModal.titleKey, lang)}</Text>
+              <Text style={styles.modalSub}>{t(activeBadgeModal.subKey, lang)}</Text>
+              <Text style={styles.modalDesc}>{t(activeBadgeModal.descKey, lang)}</Text>
               <View
                 style={[
                   styles.modalStatusBadge,
@@ -690,7 +729,7 @@ export default function AppNavigator() {
                     accessibilityRole="button"
                   >
                     <Ionicons name="share-social-outline" size={16} color={colors.onPrimary} />
-                    <Text style={styles.modalShareText}>{lang === 'tr' ? 'Paylaş' : 'Share'}</Text>
+                    <Text style={styles.modalShareText}>{t('shareBtn', lang)}</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={[styles.modalCloseBtn, { flex: 1 }]} onPress={closeBadgeModal}>
                     <Text style={styles.modalCloseText}>{t('badgeModalClose', lang)}</Text>
@@ -716,7 +755,7 @@ export default function AppNavigator() {
           <Pressable style={StyleSheet.absoluteFill} onPress={closeBadgeCollectionCompletionModal} />
           <View style={styles.modalCard}>
             <View style={[styles.modalBadgeIcon, { backgroundColor: `${colors.primary}22`, marginBottom: 16 }]}>
-              <Ionicons name="trophy" size={38} color={colors.primary} />
+              <Ionicons name="trophy" size={38} color={colors.primaryText} />
             </View>
             <Text style={styles.modalTitle}>{t('badgeCollectionCompleteTitle', lang)}</Text>
             <Text style={styles.modalSub}>{t('badgeCollectionCompleteSub', lang)}</Text>

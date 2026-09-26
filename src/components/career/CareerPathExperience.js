@@ -1,11 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ANALYTICS_EVENTS, trackEvent } from '../../utils/analytics';
 import { AccessibilityInfo, findNodeHandle, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
 import { useUserData } from '../../context/UserDataContext';
 import { useCareerPath } from '../../context/CareerPathContext';
-import { PATH_DEFINITIONS } from '../../constants/careerPath';
+import { CAREER_NODES, PATH_DEFINITIONS } from '../../constants/careerPath';
+import { useStories } from '../../context/StoriesContext';
+import { buildLearningSummary } from '../../utils/careerLearning';
 import { getLegacyBadgeIds } from '../../db/userDb';
 import { t } from '../../locales/i18n';
 import { resolveCareerActionDestination } from '../../utils/careerNavigation';
@@ -15,6 +17,9 @@ import CareerNodeSheet from './CareerNodeSheet';
 import CareerPathSwitchSheet from './CareerPathSwitchSheet';
 import CareerNodeMark from './CareerNodeMark';
 import CareerRhythmSection from './CareerRhythmSection';
+import CareerLearnedSection from './CareerLearnedSection';
+import BadgeShareSheet from '../BadgeShareSheet';
+import { buildRankShare, buildWeeklyShare } from '../../utils/careerShare';
 
 const KIVILCIM_HERO = require('../../../assets/career/kivilcim-yolu-hero-v1.png');
 
@@ -26,15 +31,28 @@ const REQUIREMENT_ICONS = {
   activeDays: 'calendar-outline',
 };
 
-const CareerPathExperience = ({ navigation }) => {
+const REMAINING_PRIORITY = ['stories', 'categories', 'deepInteractions', 'applications', 'activeDays'];
+const IDENTITY_BY_TITLE = Object.fromEntries(CAREER_NODES.map((node) => [node.titleKey, node.identityKey]));
+const NODE_BY_TITLE = Object.fromEntries(CAREER_NODES.map((node) => [node.titleKey, node]));
+IDENTITY_BY_TITLE['careerTitle.renaissance'] = 'careerTitle.renaissanceIdentity';
+
+const nodeProgress = (node) => {
+  const rows = node?.requirementRows || [];
+  if (!rows.length) return 0;
+  return rows.reduce((sum, row) => sum + Math.min(1, row.target > 0 ? row.current / row.target : 1), 0) / rows.length;
+};
+
+const CareerPathExperience = ({ navigation, route }) => {
   const { colors, layout, isDark, lang } = useTheme();
-  const { todayReadsCount, streak, totalReads, longestStreak, isPremium, streakFreezeCredits, streakFreezeDates, useStreakFreeze } = useUserData();
-  const { loading, error, isOffline, career: persistedCareer, refreshCareer, selectPath, switchPath, pathSwitchRequested, consumePathSwitchRequest, conditionsRequested, consumeConditionsRequest } = useCareerPath();
+  const { userProfile, todayReadsCount, streak, totalReads, longestStreak, isPremium, streakFreezeCredits, streakFreezeDates, useStreakFreeze } = useUserData();
+  const { stories } = useStories();
+  const { loading, error, isOffline, careerEvents, career: persistedCareer, refreshCareer, selectPath, switchPath, pathSwitchRequested, consumePathSwitchRequest, conditionsRequested, consumeConditionsRequest } = useCareerPath();
   const [showPathChoices, setShowPathChoices] = useState(false);
   const [selectedNode, setSelectedNode] = useState(null);
   const [pendingPath, setPendingPath] = useState(null);
   const [legacyBadgeIds, setLegacyBadgeIds] = useState([]);
   const [showLegacyBadges, setShowLegacyBadges] = useState(false);
+  const [shareAchievement, setShareAchievement] = useState(null);
   const [showConditions, setShowConditions] = useState(false);
   const [showPreviewControls, setShowPreviewControls] = useState(false);
   const [previewScenarioId, setPreviewScenarioId] = useState(null);
@@ -47,6 +65,32 @@ const CareerPathExperience = ({ navigation }) => {
   const previewCareer = __DEV__ ? buildCareerPreview(previewScenarioId) : null;
   const isPreviewing = Boolean(previewCareer);
   const career = previewCareer || persistedCareer;
+  const learning = useMemo(() => buildLearningSummary({ events: careerEvents, stories }), [careerEvents, stories]);
+  const openTitleShare = () => {
+    if (isPreviewing || !career?.displayedTitle) return;
+    const node = NODE_BY_TITLE[career.displayedTitle];
+    const share = buildRankShare({ titleKey: career.displayedTitle, pathId: node?.pathId, visualKey: node?.visualKey, learning, name: userProfile?.displayName, lang });
+    if (!node) share.icon = 'trophy-outline';
+    trackEvent(ANALYTICS_EVENTS.CAREER_TITLE_SHARE_OPENED, { careerVersion: 1, pathId: node?.pathId || null, nodeId: node?.id || 'capstone', source: 'progress_hero', hasStats: Boolean(share.stats) });
+    setShareAchievement(share);
+  };
+  const openWeeklyShare = () => {
+    if (isPreviewing) return;
+    trackEvent(ANALYTICS_EVENTS.WEEKLY_RECAP_SHARE_OPENED, { source: 'progress_week', stories: learning.week.stories, books: learning.week.books, minutes: learning.week.minutes });
+    setShareAchievement(buildWeeklyShare({ learning, currentTitleKey: career?.displayedTitle, name: userProfile?.displayName, lang }));
+  };
+  const weeklyRecapRequest = route?.params?.openWeeklyRecap;
+  useEffect(() => {
+    if (!weeklyRecapRequest || !career) return;
+    navigation.setParams?.({ openWeeklyRecap: undefined });
+    trackEvent(ANALYTICS_EVENTS.WEEKLY_RECAP_NOTIFICATION_OPENED, { stories: learning.week.stories, hasRecap: learning.week.stories > 0 });
+    if (learning.week.stories > 0) trackEvent(ANALYTICS_EVENTS.WEEKLY_RECAP_SHARE_OPENED, { source: 'notification', stories: learning.week.stories, books: learning.week.books, minutes: learning.week.minutes });
+    if (learning.week.stories > 0) setShareAchievement(buildWeeklyShare({ learning, currentTitleKey: career.displayedTitle, name: userProfile?.displayName, lang }));
+  }, [weeklyRecapRequest, career]);
+  const openStoryById = (storyId) => {
+    const story = (stories || []).find((item) => String(item?.story_id ?? item?.id) === String(storyId));
+    if (story) navigation.navigate('StoryDetail', { story });
+  };
 
   useEffect(() => navigation.addListener('blur', () => {
     setPreviewScenarioId(null);
@@ -120,23 +164,16 @@ const CareerPathExperience = ({ navigation }) => {
   if (loading || !career) {
     return (
       <View style={[styles.centered, { backgroundColor: colors.background }]}> 
-        <Ionicons name="sparkles-outline" size={28} color={colors.primary} />
+        <Ionicons name="sparkles-outline" size={28} color={colors.primaryText} />
         <Text selectable style={[styles.loading, { color: colors.textSecondary }]}>{t('career.loading', lang)}</Text>
         {error ? <Text selectable style={[styles.error, { color: colors.textSecondary }]}>{t('career.unavailable', lang)}</Text> : null}
-        {error ? <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.retry', lang)} onPress={() => refreshCareer()} style={[styles.retryButton, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Ionicons name="refresh-outline" size={17} color={colors.primary} /><Text selectable style={[styles.retryText, { color: colors.text }]}>{t('career.retry', lang)}</Text></TouchableOpacity> : null}
+        {error ? <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.retry', lang)} onPress={() => refreshCareer()} style={[styles.retryButton, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Ionicons name="refresh-outline" size={17} color={colors.primaryText} /><Text selectable style={[styles.retryText, { color: colors.text }]}>{t('career.retry', lang)}</Text></TouchableOpacity> : null}
       </View>
     );
   }
 
   const activePathDefinition = PATH_DEFINITIONS.find((path) => path.id === career.activePath);
   const timeline = [...career.commonNodes, ...(career.activePath ? career.paths[career.activePath] : [])];
-  const journeySummary = [
-    ['career.summary.stories', career.metrics?.stories],
-    ['career.summary.categories', career.metrics?.categories],
-    ['career.summary.insights', career.metrics?.deepInteractions],
-    ['career.summary.applications', career.metrics?.applications],
-    ['career.summary.activeDays', career.metrics?.activeDays],
-  ];
   const actionLabel = career.nextAction?.type === 'path_complete'
       ? t('career.pathComplete', lang)
       : career.nextAction?.type === 'advance'
@@ -147,6 +184,24 @@ const CareerPathExperience = ({ navigation }) => {
   const heroProgressLabel = career.activePath && completedCommonNodes === career.commonNodes.length
     ? t('career.heroProgress.path', lang, { path: t(activePathDefinition.titleKey, lang), completed: completedActiveNodes, total: career.paths[career.activePath].length })
     : t('career.heroProgress.common', lang, { completed: completedCommonNodes, total: career.commonNodes.length });
+  const heroTitle = career.displayedTitle ? t(career.displayedTitle, lang) : t('career.hero.startTitle', lang);
+  const heroIdentity = career.isPathSelectionDue
+    ? t('career.choosePathCopy', lang)
+    : career.displayedTitle
+      ? t(IDENTITY_BY_TITLE[career.displayedTitle] || 'career.heroCopy', lang)
+      : t('career.hero.startCopy', lang);
+  const nextProgress = career.nextNode ? nodeProgress(career.nextNode) : 1;
+  const remainingItems = (career.nextNode?.requirementRows || [])
+    .filter((row) => !row.completed)
+    .sort((a, b) => REMAINING_PRIORITY.indexOf(a.type) - REMAINING_PRIORITY.indexOf(b.type))
+    .slice(0, 2)
+    .map((row) => t(`career.remaining.${row.type}`, lang, { count: row.remaining }));
+  const instantUnlocks = (pathId) => (career.paths[pathId] || []).filter((node) => node.status !== 'completed' && node.isEligible).length;
+  const summitLabel = career.capstone?.earned
+    ? t('career.hero.summitEarned', lang)
+    : career.activePath
+      ? t('career.hero.summit', lang, { title: t(career.capstone?.titleKey || 'careerTitle.renaissance', lang), done: career.capstone?.completedPaths || 0, total: career.capstone?.requiredPaths || 2 })
+      : null;
   const showsDeepInteractionHelp = career.nextNode?.requirementRows?.some((requirement) => requirement.type === 'deepInteractions');
 
   return (
@@ -165,7 +220,7 @@ const CareerPathExperience = ({ navigation }) => {
 
       {__DEV__ ? <View style={[styles.previewPanel, { borderColor: `${colors.primary}66`, backgroundColor: `${colors.primary}10` }]}>
         <TouchableOpacity accessibilityRole="button" accessibilityState={{ expanded: showPreviewControls }} accessibilityLabel={t('career.preview.toggle', lang)} onPress={() => setShowPreviewControls((visible) => !visible)} style={styles.previewToggle}>
-          <View style={{ flex: 1 }}><Text selectable style={[styles.previewTitle, { color: colors.text }]}>{t('career.preview.toggle', lang)}</Text><Text selectable style={[styles.previewCopy, { color: colors.textSecondary }]}>{t(isPreviewing ? 'career.preview.activeNotice' : 'career.preview.copy', lang)}</Text></View><Ionicons name={showPreviewControls ? 'chevron-up' : 'chevron-down'} size={20} color={colors.primary} />
+          <View style={{ flex: 1 }}><Text selectable style={[styles.previewTitle, { color: colors.text }]}>{t('career.preview.toggle', lang)}</Text><Text selectable style={[styles.previewCopy, { color: colors.textSecondary }]}>{t(isPreviewing ? 'career.preview.activeNotice' : 'career.preview.copy', lang)}</Text></View><Ionicons name={showPreviewControls ? 'chevron-up' : 'chevron-down'} size={20} color={colors.primaryText} />
         </TouchableOpacity>
         {showPreviewControls ? <View style={styles.previewChoices}>
           {CAREER_PREVIEW_SCENARIOS.map((scenario) => <TouchableOpacity key={scenario.id} accessibilityRole="button" accessibilityState={{ selected: previewScenarioId === scenario.id }} accessibilityLabel={t(scenario.labelKey, lang)} onPress={() => { setPreviewScenarioId(scenario.id); setShowConditions(false); setShowPathChoices(false); setSelectedNode(null); }} style={[styles.previewChoice, { borderColor: previewScenarioId === scenario.id ? colors.primary : colors.border, backgroundColor: previewScenarioId === scenario.id ? `${colors.primary}18` : colors.background }]}><Text selectable style={[styles.previewChoiceText, { color: previewScenarioId === scenario.id ? colors.primary : colors.text }]}>{t(scenario.labelKey, lang)}</Text></TouchableOpacity>)}
@@ -173,19 +228,38 @@ const CareerPathExperience = ({ navigation }) => {
         </View> : null}
       </View> : null}
 
-      {isOffline ? <View accessibilityRole="alert" style={[styles.offlineBanner, { borderColor: `${colors.primary}55`, backgroundColor: `${colors.primary}12` }]}><Ionicons name="cloud-offline-outline" size={18} color={colors.primary} /><Text selectable style={[styles.offlineCopy, { color: colors.textSecondary }]}>{t('career.offline', lang)}</Text></View> : null}
+      {isOffline ? <View accessibilityRole="alert" style={[styles.offlineBanner, { borderColor: `${colors.primary}55`, backgroundColor: `${colors.primary}12` }]}><Ionicons name="cloud-offline-outline" size={18} color={colors.primaryText} /><Text selectable style={[styles.offlineCopy, { color: colors.textSecondary }]}>{t('career.offline', lang)}</Text></View> : null}
 
       <ImageBackground source={KIVILCIM_HERO} imageStyle={styles.heroImage} style={styles.hero}>
         <View style={styles.heroScrim} />
         <View style={styles.heroContent}>
           <View style={styles.heroKicker}><Ionicons name="sparkles-outline" size={14} color="#F9D783" /><Text selectable style={styles.heroKickerText}>{activePathDefinition ? t(activePathDefinition.titleKey, lang) : t('career.sharedPath', lang)}</Text></View>
-          <Text selectable style={styles.rank}>{t(career.displayedTitle, lang)}</Text>
-          <Text selectable style={styles.heroCopy}>{career.isPathSelectionDue ? t('career.choosePathCopy', lang) : t('career.heroCopy', lang)}</Text>
-          <View style={styles.heroProgress}><Ionicons name="map-outline" size={15} color="#F9D783" /><Text selectable style={styles.heroProgressText}>{heroProgressLabel}</Text></View>
+          <Text selectable style={styles.rank}>{heroTitle}</Text>
+          <Text selectable style={styles.heroCopy}>{heroIdentity}</Text>
+          {career.nextNode ? (
+            <View style={styles.heroNext}>
+              <View style={styles.heroNextHeader}>
+                <Text selectable numberOfLines={1} style={styles.heroNextTitle}>{t('career.hero.nextTitle', lang, { title: t(career.nextNode.titleKey, lang) })}</Text>
+                <Text selectable style={styles.heroNextPct}>{`${Math.round(nextProgress * 100)}%`}</Text>
+              </View>
+              <View style={styles.heroTrack}><View style={[styles.heroFill, { width: `${Math.max(4, Math.round(nextProgress * 100))}%` }]} /></View>
+              {remainingItems.length ? <Text selectable style={styles.heroRemaining}>{t('career.remaining.lead', lang, { items: remainingItems.join(' · ') })}</Text> : null}
+            </View>
+          ) : null}
+          <View style={styles.heroChips}>
+            <View style={styles.heroProgress}><Ionicons name="map-outline" size={15} color="#F9D783" /><Text selectable style={styles.heroProgressText}>{heroProgressLabel}</Text></View>
+            {summitLabel ? <View style={styles.heroProgress}><Ionicons name="trophy-outline" size={14} color="#F9D783" /><Text selectable style={styles.heroProgressText}>{summitLabel}</Text></View> : null}
+          </View>
+          {career.displayedTitle ? (
+            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.share.title', lang)} onPress={openTitleShare} style={styles.heroShare}>
+              <Ionicons name="share-social-outline" size={15} color="#2E2A22" />
+              <Text style={styles.heroShareText}>{t('career.share.title', lang)}</Text>
+            </TouchableOpacity>
+          ) : null}
         </View>
       </ImageBackground>
 
-      {career.activePath ? <TouchableOpacity accessibilityRole="button" accessibilityState={{ disabled: isPreviewing }} accessibilityLabel={t('career.toolkit.open', lang)} onPress={() => { if (!isPreviewing) navigation.navigate('CareerToolkit', { pathId: career.activePath }); }} style={[styles.toolkitLink, { borderColor: colors.border, backgroundColor: colors.background, opacity: isPreviewing ? 0.55 : 1 }]}><Ionicons name="construct-outline" size={18} color={colors.primary} /><Text selectable style={[styles.smallAction, { color: colors.text }]}>{t('career.toolkit.open', lang)}</Text><Ionicons name="chevron-forward" size={17} color={colors.textSecondary} /></TouchableOpacity> : null}
+      {career.activePath ? <TouchableOpacity accessibilityRole="button" accessibilityState={{ disabled: isPreviewing }} accessibilityLabel={t('career.toolkit.open', lang)} onPress={() => { if (!isPreviewing) navigation.navigate('CareerToolkit', { pathId: career.activePath }); }} style={[styles.toolkitLink, { borderColor: colors.border, backgroundColor: colors.background, opacity: isPreviewing ? 0.55 : 1 }]}><Ionicons name="construct-outline" size={18} color={colors.primaryText} /><Text selectable style={[styles.smallAction, { color: colors.text }]}>{t('career.toolkit.open', lang)}</Text><Ionicons name="chevron-forward" size={17} color={colors.textSecondary} /></TouchableOpacity> : null}
 
       {career.isPathSelectionDue ? (
         <View style={styles.section}>
@@ -213,11 +287,14 @@ const CareerPathExperience = ({ navigation }) => {
               style={[styles.pathOption, { borderColor: colors.border, backgroundColor: colors.background }]}
             >
               <View style={[styles.pathIcon, { backgroundColor: `${colors.primary}18` }]}>
-                <Ionicons name={path.id === 'exploration' ? 'compass-outline' : path.id === 'depth' ? 'bulb-outline' : 'chatbubbles-outline'} size={19} color={colors.primary} />
+                <Ionicons name={path.id === 'exploration' ? 'compass-outline' : path.id === 'depth' ? 'bulb-outline' : 'chatbubbles-outline'} size={19} color={colors.primaryText} />
               </View>
               <View style={{ flex: 1 }}>
                 <Text selectable style={[styles.pathName, { color: colors.text }]}>{t(path.titleKey, lang)}</Text>
                 <Text selectable style={[styles.pathDescription, { color: colors.textSecondary }]}>{t(path.descriptionKey, lang)}</Text>
+                {path.id !== career.activePath && instantUnlocks(path.id) > 0 ? (
+                  <Text selectable style={[styles.pathInstant, { color: colors.primaryText }]}>{t('career.selection.instantUnlock', lang, { count: instantUnlocks(path.id) })}</Text>
+                ) : null}
               </View>
               <Ionicons name="chevron-forward" size={18} color={colors.textSecondary} />
             </TouchableOpacity>
@@ -228,11 +305,11 @@ const CareerPathExperience = ({ navigation }) => {
           <Text selectable style={[styles.sectionTitle, { color: colors.text }]}>{t('career.nextStep', lang)}</Text>
           <View style={[styles.nextCard, { backgroundColor: colors.background, borderColor: colors.border }]}> 
             <Text selectable style={[styles.nextTitle, { color: colors.text }]}>{career.nextNode ? t(career.nextNode.titleKey, lang) : t('career.pathComplete', lang)}</Text>
-            <TouchableOpacity accessibilityRole="button" accessibilityState={{ expanded: showConditions }} accessibilityLabel={t(showConditions ? 'career.hideConditions' : 'career.showConditions', lang)} onPress={toggleConditions} style={[styles.conditionsToggle, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}>
-              <Ionicons name={showConditions ? 'chevron-up' : 'information-circle-outline'} size={17} color={colors.primary} />
+            {career.nextNode ? <TouchableOpacity accessibilityRole="button" accessibilityState={{ expanded: showConditions }} accessibilityLabel={t(showConditions ? 'career.hideConditions' : 'career.showConditions', lang)} onPress={toggleConditions} style={[styles.conditionsToggle, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}>
+              <Ionicons name={showConditions ? 'chevron-up' : 'information-circle-outline'} size={17} color={colors.primaryText} />
               <Text selectable style={[styles.smallAction, { color: colors.text }]}>{t(showConditions ? 'career.hideConditions' : 'career.showConditions', lang)}</Text>
-            </TouchableOpacity>
-            {showConditions ? <View style={styles.conditionsContent}>
+            </TouchableOpacity> : null}
+            {showConditions && career.nextNode ? <View style={styles.conditionsContent}>
               <Text ref={conditionsTitleRef} accessible accessibilityRole="header" selectable style={[styles.conditionsTitle, { color: colors.text }]}>{t('career.conditionsForRank', lang, { rank: t(career.nextNode?.titleKey, lang) })}</Text>
               <Text selectable style={[styles.conditionsCopy, { color: colors.textSecondary }]}>{t('career.conditionsAllRequired', lang)}</Text>
               <Text selectable style={[styles.conditionsCopy, { color: colors.textSecondary }]}>{t('career.conditionsSaved', lang)}</Text>
@@ -246,7 +323,7 @@ const CareerPathExperience = ({ navigation }) => {
                 </View>
               ))}
               {showsDeepInteractionHelp ? <Text selectable style={[styles.requirementHelpCopy, { color: colors.textSecondary }]}>{t('career.requirementHelp.deepInteractions', lang)}</Text> : null}
-              {career.nextNode?.identityKey ? <Text selectable style={[styles.rankReward, { color: colors.primary }]}>{t('career.rankReward', lang, { reward: t(career.nextNode.unlockKey, lang), identity: t(career.nextNode.identityKey, lang) })}</Text> : null}
+              {career.nextNode?.identityKey ? <Text selectable style={[styles.rankReward, { color: colors.primaryText }]}>{t('career.rankReward', lang, { reward: t(career.nextNode.unlockKey, lang), identity: t(career.nextNode.identityKey, lang) })}</Text> : null}
             </View> : null}
             {!['path_complete', 'today_complete'].includes(career.nextAction?.type) ? (
               <TouchableOpacity accessibilityRole="button" accessibilityState={{ disabled: isPreviewing }} accessibilityLabel={actionLabel} onPress={openNextAction} style={[styles.cta, { backgroundColor: colors.primary, opacity: isPreviewing ? 0.55 : 1 }]}>
@@ -258,20 +335,22 @@ const CareerPathExperience = ({ navigation }) => {
         </View>
       )}
 
+      <CareerLearnedSection summary={learning} onOpenStory={isPreviewing ? null : openStoryById} />
+
       <View style={styles.section}>
         <View style={styles.sectionHeading}>
           <Text selectable style={[styles.sectionTitle, { color: colors.text }]}>{t('career.timeline', lang)}</Text>
           {career.activePath ? (
             <TouchableOpacity accessibilityRole="button" accessibilityState={{ disabled: isPreviewing }} accessibilityLabel={t('career.switchPath', lang)} onPress={() => { if (!isPreviewing) setShowPathChoices(true); }}>
-              <Text selectable style={[styles.smallAction, { color: colors.primary }]}>{t('career.switchPath', lang)}</Text>
+              <Text selectable style={[styles.smallAction, { color: colors.primaryText }]}>{t('career.switchPath', lang)}</Text>
             </TouchableOpacity>
           ) : null}
         </View>
         <View style={[styles.timeline, { borderColor: colors.border, backgroundColor: colors.background }]}> 
-          <Text selectable style={[styles.pathGroupLabel, { color: colors.primary }]}>{t('career.sharedPath', lang)}</Text>
+          <Text selectable style={[styles.pathGroupLabel, { color: colors.primaryText }]}>{t('career.sharedPath', lang)}</Text>
           {timeline.map((node, index) => (
             <React.Fragment key={node.id}>
-              {career.activePath && index === career.commonNodes.length ? <Text selectable style={[styles.pathGroupLabel, { color: colors.primary }]}>{t('career.selectedPath', lang)}</Text> : null}
+              {career.activePath && index === career.commonNodes.length ? <Text selectable style={[styles.pathGroupLabel, { color: colors.primaryText }]}>{t('career.selectedPath', lang)}</Text> : null}
               <TouchableOpacity ref={(instance) => { if (instance) nodeButtonRefs.current.set(node.id, instance); else nodeButtonRefs.current.delete(node.id); }} accessibilityRole="button" accessibilityLabel={`${t(node.titleKey, lang)}. ${t(`career.nodeState.${node.status}`, lang)}.`} accessibilityHint={`${t(node.descriptionKey, lang)} ${node.requirementRows?.map((requirement) => `${t(requirement.labelKey, lang)} ${requirement.current}/${requirement.target}`).join(', ')}`} onPress={() => { if (!isPreviewing) trackEvent(ANALYTICS_EVENTS.CAREER_NODE_OPENED, { careerVersion: 1, pathId: node.pathId, nodeId: node.id, nodeState: node.status, source: 'timeline' }); setSelectedNode(node); }} style={styles.timelineRow}>
                 <View style={styles.nodeRail}>{index < timeline.length - 1 ? <View style={[styles.nodeLine, { backgroundColor: node.status === 'completed' ? colors.primary : colors.border }]} /> : null}<CareerNodeMark node={node} status={node.status} isDark={isDark} size={28} /></View>
                 <View style={{ flex: 1 }}>
@@ -289,14 +368,7 @@ const CareerPathExperience = ({ navigation }) => {
         <Text selectable style={[styles.sectionCopy, { color: colors.textSecondary }]}>{t('career.pathsAheadCopy', lang)}</Text>
         {PATH_DEFINITIONS.map((path) => <TouchableOpacity key={path.id} accessibilityRole="button" accessibilityLabel={t(path.titleKey, lang)} onPress={() => setShowPathChoices(true)} style={[styles.pathPreview, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Ionicons name="lock-closed-outline" size={16} color={colors.textSecondary} /><View style={{ flex: 1 }}><Text selectable style={[styles.pathName, { color: colors.textSecondary }]}>{t(path.titleKey, lang)}</Text><Text selectable numberOfLines={1} style={[styles.pathDescription, { color: colors.textSecondary }]}>{career.paths[path.id].map((node) => t(node.titleKey, lang)).join(' · ')}</Text></View></TouchableOpacity>)}
       </View> : null}
-      <View style={styles.section}>
-        <Text selectable style={[styles.sectionTitle, { color: colors.text }]}>{t('career.summary.title', lang)}</Text>
-        <Text selectable style={[styles.sectionCopy, { color: colors.textSecondary }]}>{t('career.summary.copy', lang)}</Text>
-        <View style={[styles.summaryGrid, { borderColor: colors.border, backgroundColor: colors.background }]}> 
-          {journeySummary.map(([labelKey, value]) => <View key={labelKey} style={styles.summaryItem}><Text selectable style={[styles.summaryValue, { color: colors.primary }]}>{String(value || 0)}</Text><Text selectable style={[styles.summaryLabel, { color: colors.textSecondary }]}>{t(labelKey, lang)}</Text></View>)}
-        </View>
-      </View>
-      <CareerRhythmSection totalReads={totalReads} streak={streak} longestStreak={longestStreak} todayReadsCount={todayReadsCount} isPremium={isPremium} streakFreezeCredits={streakFreezeCredits} streakFreezeDates={streakFreezeDates} onUseFreeze={(date) => { if (!isPreviewing) useStreakFreeze(date); }} onOpenPaywall={() => { if (!isPreviewing) navigation.navigate('Paywall', { source: 'career_rhythm_streak_freeze', reason: 'streak_freeze' }); }} />
+      <CareerRhythmSection onShareWeek={learning.week.stories > 0 ? openWeeklyShare : null} shareWeekLabel={t('career.share.weekCta', lang)} weekLine={t('career.rhythm.week', lang, { stories: learning.week.stories, minutes: learning.week.minutes })} totalReads={totalReads} streak={streak} longestStreak={longestStreak} todayReadsCount={todayReadsCount} isPremium={isPremium} streakFreezeCredits={streakFreezeCredits} streakFreezeDates={streakFreezeDates} onUseFreeze={(date) => { if (!isPreviewing) useStreakFreeze(date); }} onOpenPaywall={() => { if (!isPreviewing) navigation.navigate('Paywall', { source: 'career_rhythm_streak_freeze', reason: 'streak_freeze' }); }} />
       {legacyBadgeIds.length ? <View style={styles.section}>
         <TouchableOpacity accessibilityRole="button" accessibilityState={{ expanded: showLegacyBadges }} accessibilityLabel={t('career.legacy.title', lang)} onPress={() => setShowLegacyBadges((visible) => !visible)} style={[styles.legacyHeader, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}>
           <View style={{ flex: 1 }}><Text selectable style={[styles.sectionTitle, { color: colors.text }]}>{t('career.legacy.title', lang)}</Text><Text selectable style={[styles.sectionCopy, { color: colors.textSecondary }]}>{t('career.legacy.copy', lang, { count: legacyBadgeIds.length })}</Text></View><Ionicons name={showLegacyBadges ? 'chevron-up' : 'chevron-down'} size={20} color={colors.textSecondary} />
@@ -304,6 +376,7 @@ const CareerPathExperience = ({ navigation }) => {
         {showLegacyBadges ? <View style={[styles.legacyGrid, { borderColor: colors.border, backgroundColor: colors.background }]}>{legacyBadgeIds.map((id) => <View key={id} accessible accessibilityLabel={t('career.legacy.badgeLabel', lang)} style={styles.legacyBadge}><BadgeIcon badge={{ id }} earned isDark={isDark} size={44} /></View>)}</View> : null}
       </View> : null}
       <CareerNodeSheet node={selectedNode} onClose={closeNodeSheet} />
+      <BadgeShareSheet visible={!!shareAchievement} achievement={shareAchievement} name={userProfile?.displayName} onClose={() => setShareAchievement(null)} />
       <CareerPathSwitchSheet path={pendingPath} currentTitleKey={career.profileTitle} nextTitleKey={career.paths[pendingPath?.id]?.filter((node) => node.status === 'completed').slice(-1)[0]?.titleKey || 'careerNode.traveler.title'} onCancel={() => setPendingPath(null)} onConfirm={async () => { if (isPreviewing) return; await switchPath(pendingPath.id); setPendingPath(null); setShowPathChoices(false); }} />
     </ScrollView>
   );
@@ -337,7 +410,18 @@ const styles = StyleSheet.create({
   heroKickerText: { color: '#FFFFFF', fontFamily: 'Inter_700Bold', fontSize: 10, letterSpacing: 0.7, textTransform: 'uppercase' },
   rank: { color: '#FFFFFF', fontFamily: 'PlayfairDisplay_700Bold', fontSize: 31 },
   heroCopy: { color: 'rgba(255,255,255,0.87)', fontFamily: 'Inter_400Regular', fontSize: 14, lineHeight: 20, maxWidth: '93%' },
-  heroProgress: { alignSelf: 'flex-start', minHeight: 29, paddingHorizontal: 10, borderRadius: 15, backgroundColor: 'rgba(8, 18, 45, 0.52)', flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 3 },
+  heroProgress: { alignSelf: 'flex-start', minHeight: 29, paddingHorizontal: 10, borderRadius: 15, backgroundColor: 'rgba(8, 18, 45, 0.52)', flexDirection: 'row', alignItems: 'center', gap: 6 },
+  heroNext: { marginTop: 4, gap: 6 },
+  heroNextHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
+  heroNextTitle: { flex: 1, color: '#FFFFFF', fontFamily: 'Inter_600SemiBold', fontSize: 13 },
+  heroNextPct: { color: '#F9D783', fontFamily: 'Inter_700Bold', fontSize: 12, fontVariant: ['tabular-nums'] },
+  heroTrack: { height: 6, borderRadius: 999, overflow: 'hidden', backgroundColor: 'rgba(255,255,255,0.22)' },
+  heroFill: { height: '100%', borderRadius: 999, backgroundColor: '#F9D783' },
+  heroRemaining: { color: 'rgba(255,255,255,0.87)', fontFamily: 'Inter_500Medium', fontSize: 12 },
+  heroShare: { alignSelf: 'flex-start', minHeight: 36, marginTop: 6, paddingHorizontal: 14, borderRadius: 999, backgroundColor: '#F9D783', flexDirection: 'row', alignItems: 'center', gap: 6 },
+  heroShareText: { color: '#2E2A22', fontFamily: 'Inter_600SemiBold', fontSize: 13 },
+  heroChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 3 },
+  pathInstant: { fontFamily: 'Inter_600SemiBold', fontSize: 12, marginTop: 4 },
   heroProgressText: { color: '#FFFFFF', fontFamily: 'Inter_600SemiBold', fontSize: 11, fontVariant: ['tabular-nums'] },
   toolkitLink: { minHeight: 50, borderRadius: 15, borderWidth: 1, paddingHorizontal: 14, flexDirection: 'row', alignItems: 'center', gap: 9 },
   section: { gap: 10 },

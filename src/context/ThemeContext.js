@@ -1,12 +1,14 @@
 import React, { createContext, useContext, useState, useMemo } from 'react';
 import { useColorScheme } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { colors, typography, layout } from '../theme/theme';
+import * as Localization from 'expo-localization';
+import { typography, layout, buildPalette, ACCENTS, DEFAULT_ACCENT } from '../theme/theme';
 
 const ThemeContext = createContext();
 const THEME_MODE_STORAGE_KEY = 'themeMode';
 const LANGUAGE_STORAGE_KEY = 'lang';
 const SELECTED_CATEGORIES_STORAGE_KEY = 'selectedCategories';
+const ACCENT_STORAGE_KEY = 'accentColor';
 
 const normalizeCategoryIds = (list) => {
   if (!Array.isArray(list)) return [];
@@ -21,11 +23,12 @@ const normalizeCategoryIds = (list) => {
 export const ThemeProvider = ({ children }) => {
   const systemColorScheme = useColorScheme();
   const getSystemThemeMode = () => (systemColorScheme === 'dark' ? 'dark' : 'light');
-  // Determine default language from device locale using Intl
+  // Determine default language from device locale using expo-localization
+  // (Intl.DateTimeFormat().resolvedOptions().locale is unreliable on Hermes/Android).
   const getDeviceLang = () => {
     try {
-      const locale = Intl.DateTimeFormat().resolvedOptions().locale || '';
-      const prefix = locale.substring(0, 2).toLowerCase();
+      const locales = Localization.getLocales?.() || [];
+      const prefix = (locales[0]?.languageCode || '').toLowerCase();
       if (['tr', 'es', 'de'].includes(prefix)) return prefix;
       return 'en';
     } catch {
@@ -35,6 +38,8 @@ export const ThemeProvider = ({ children }) => {
 
   // Start as null — render nothing until AsyncStorage preferences are loaded
   const [themeMode, setThemeModeState] = useState(null);
+  // What the user chose: 'light' | 'dark' | 'system' (follow the device).
+  const [themePreference, setThemePreferenceState] = useState('system');
   const [lang, setLangState] = useState(null);
 
   React.useEffect(() => {
@@ -43,11 +48,14 @@ export const ThemeProvider = ({ children }) => {
         const savedThemeMode = await AsyncStorage.getItem(THEME_MODE_STORAGE_KEY);
         if (savedThemeMode === 'light' || savedThemeMode === 'dark') {
           setThemeModeState(savedThemeMode);
+          setThemePreferenceState(savedThemeMode);
         } else {
           setThemeModeState(getSystemThemeMode());
+          setThemePreferenceState('system');
         }
       } catch (e) {
         setThemeModeState(getSystemThemeMode());
+        setThemePreferenceState('system');
       }
     })();
   }, [systemColorScheme]);
@@ -73,6 +81,20 @@ export const ThemeProvider = ({ children }) => {
       setLangState(l);
       AsyncStorage.setItem(LANGUAGE_STORAGE_KEY, l).catch(() => { });
     }
+  };
+
+  // --- Accent colour (brand default: Petrol). The picker UI is not built yet;
+  // setAccent() is the single entry point it will call.
+  const [accent, setAccentState] = useState(DEFAULT_ACCENT);
+  React.useEffect(() => {
+    AsyncStorage.getItem(ACCENT_STORAGE_KEY)
+      .then((saved) => { if (saved && ACCENTS[saved]) setAccentState(saved); })
+      .catch(() => {});
+  }, []);
+  const setAccent = (next) => {
+    if (!ACCENTS[next]) return;
+    setAccentState(next);
+    AsyncStorage.setItem(ACCENT_STORAGE_KEY, next).catch(() => {});
   };
 
   // --- Category selections (multi-select) ---
@@ -131,6 +153,7 @@ export const ThemeProvider = ({ children }) => {
   const setThemeMode = (nextMode) => {
     if (!['light', 'dark'].includes(nextMode)) return;
     setThemeModeState(nextMode);
+    setThemePreferenceState(nextMode);
     AsyncStorage.setItem(THEME_MODE_STORAGE_KEY, nextMode).catch(() => { });
   };
 
@@ -141,11 +164,20 @@ export const ThemeProvider = ({ children }) => {
   const resetThemePreference = async () => {
     const systemThemeMode = getSystemThemeMode();
     setThemeModeState(systemThemeMode);
+    setThemePreferenceState('system');
     try {
       await AsyncStorage.removeItem(THEME_MODE_STORAGE_KEY);
     } catch {
       // ignore
     }
+  };
+
+  const setThemePreference = (pref) => {
+    if (pref === 'system') {
+      resetThemePreference();
+      return;
+    }
+    setThemeMode(pref);
   };
 
   const resetAppSettings = async () => {
@@ -154,17 +186,23 @@ export const ThemeProvider = ({ children }) => {
         AsyncStorage.removeItem(THEME_MODE_STORAGE_KEY),
         AsyncStorage.removeItem(LANGUAGE_STORAGE_KEY),
         AsyncStorage.removeItem(SELECTED_CATEGORIES_STORAGE_KEY),
+        AsyncStorage.removeItem(ACCENT_STORAGE_KEY),
       ]);
     } catch {
       // ignore
     }
 
     setThemeModeState(getSystemThemeMode());
+    setThemePreferenceState('system');
     setLangState(getDeviceLang());
+    setAccentState(DEFAULT_ACCENT);
     await updateSelectedCategories([]);
   };
 
-  const activeColors = themeMode === 'light' ? colors.light : colors.dark;
+  const activeColors = useMemo(
+    () => buildPalette(themeMode === 'dark' ? 'dark' : 'light', accent),
+    [themeMode, accent]
+  );
 
   const themeValue = useMemo(() => ({
     colors: activeColors,
@@ -172,10 +210,15 @@ export const ThemeProvider = ({ children }) => {
     layout,
     isDark: themeMode === 'dark',
     themeMode,
+    themePreference,
+    setThemePreference,
     toggleTheme,
     setThemeMode,
     resetThemePreference,
     resetAppSettings,
+    // accent colour
+    accent,
+    setAccent,
     // language controls
     lang,
     setLang,
@@ -183,7 +226,7 @@ export const ThemeProvider = ({ children }) => {
     selectedCategories,
     setSelectedCategories: updateSelectedCategories,
     toggleSelectedCategory,
-  }), [themeMode, activeColors, lang, selectedCategories]);
+  }), [themeMode, themePreference, activeColors, accent, lang, selectedCategories]);
 
   // Don't render children until both theme and language are loaded from storage
   // This prevents a flash of wrong theme/language on startup

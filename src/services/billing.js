@@ -2,11 +2,12 @@
 //
 // This wraps `react-native-purchases` so the rest of the app never imports the
 // SDK directly. Until real API keys are added in app.json -> extra.revenuecat,
-// `BILLING_LIVE` stays false and the app uses local (dev) Premium activation.
+// `BILLING_LIVE` stays false and the paywall runs in a read-only state (it does
+// NOT hand out Premium — see UserDataContext.buyPremium).
 //
 // SETUP (see BILLING_SETUP.md):
 //   1. Create products in App Store Connect + Google Play Console.
-//   2. Create an entitlement (e.g. "premium") in RevenueCat and attach products.
+//   2. Create the entitlement in RevenueCat and attach the products.
 //   3. Paste the RevenueCat public SDK keys + product/entitlement IDs into
 //      app.json -> expo.extra.revenuecat.
 //   4. Rebuild the native app (expo prebuild / EAS build). RevenueCat needs
@@ -31,14 +32,25 @@ const PLATFORM_API_KEY =
 // key...") that isn't fully catchable from JS and crashes the app right after
 // startup. Treat them the same as an unset placeholder until real Apple App
 // Store / Google Play Store public SDK keys are pasted in here.
-const isPlaceholder = (key) =>
+export const isPlaceholderKey = (key) =>
   !key || typeof key !== 'string' || key.trim() === '' || key.startsWith('REPLACE_') || key.startsWith('test_');
 
-export const BILLING_LIVE = !isPlaceholder(PLATFORM_API_KEY);
+export const BILLING_LIVE = !isPlaceholderKey(PLATFORM_API_KEY);
 
 export const ENTITLEMENT_ID = RC_CONFIG.entitlementId || 'premium';
 export const OFFERING_ID = RC_CONFIG.offeringId || 'default';
 export const PRODUCT_IDS = RC_CONFIG.products || {};
+
+// Plan keys the paywall renders, in display order. `yearly` is the canonical
+// key (it matches app.json -> extra.revenuecat.products); `annual` is accepted
+// as an alias so older configs and RevenueCat's `offering.annual` package type
+// both keep resolving.
+export const PLAN_KEYS = ['monthly', 'yearly', 'lifetime'];
+
+const productIdFor = (planKey) =>
+  planKey === 'yearly'
+    ? (PRODUCT_IDS.yearly || PRODUCT_IDS.annual)
+    : PRODUCT_IDS[planKey];
 
 // Lazy-load the native SDK. Returns null if the module isn't available
 // (e.g. Expo Go or before the native rebuild), so callers can fall back safely.
@@ -76,11 +88,53 @@ export const initBilling = async () => {
   }
 };
 
-const hasEntitlement = (customerInfo) =>
-  !!customerInfo?.entitlements?.active?.[ENTITLEMENT_ID];
+const activeEntitlement = (customerInfo) =>
+  customerInfo?.entitlements?.active?.[ENTITLEMENT_ID] || null;
 
-// Returns the available packages for the active offering, mapped by plan id
-// ('monthly' / 'annual') so the paywall can read live localized prices.
+const hasEntitlement = (customerInfo) => !!activeEntitlement(customerInfo);
+
+/**
+ * Normalized entitlement snapshot. Everything the app needs to reason about
+ * Premium — including expiry, renewal intent and trial state — without any
+ * caller having to know RevenueCat's shape.
+ *
+ * Returns null when the entitlement isn't active.
+ */
+export const entitlementSnapshot = (customerInfo) => {
+  const ent = activeEntitlement(customerInfo);
+  if (!ent) return null;
+  return {
+    active: true,
+    productId: ent.productIdentifier || null,
+    expiresAt: ent.expirationDate || null,   // null for lifetime / non-expiring
+    willRenew: !!ent.willRenew,
+    periodType: ent.periodType || null,      // NORMAL | TRIAL | INTRO
+    isTrial: ent.periodType === 'TRIAL',
+    store: ent.store || null,
+    latestPurchaseAt: ent.latestPurchaseDate || null,
+  };
+};
+
+/**
+ * Revenue attributes for analytics, read off a RevenueCat product. PostHog
+ * needs a NUMERIC amount and an ISO currency code — a display string like
+ * "349₺" makes LTV and ROAS impossible to compute.
+ */
+export const revenueAttrs = (pkg) => {
+  const product = pkg?.product;
+  if (!product) return {};
+  const amount = typeof product.price === 'number' ? product.price : null;
+  return {
+    ...(amount !== null ? { revenue: amount } : {}),
+    ...(product.currencyCode ? { currency: product.currencyCode } : {}),
+    ...(product.identifier ? { product_id: product.identifier } : {}),
+    ...(product.priceString ? { price_string: product.priceString } : {}),
+  };
+};
+
+// Returns the available packages for the active offering, mapped by plan key
+// ('monthly' / 'yearly' / 'lifetime') so the paywall can read live localized
+// prices. Returns null when billing isn't live or the offering is empty.
 export const getOfferingPackages = async () => {
   if (!(await initBilling())) return null;
   const Purchases = getPurchases();
@@ -92,27 +146,36 @@ export const getOfferingPackages = async () => {
     const byPlan = {};
     for (const pkg of offering.availablePackages) {
       const productId = pkg.product?.identifier;
-      if (productId === PRODUCT_IDS.monthly) byPlan.monthly = pkg;
-      else if (productId === PRODUCT_IDS.annual) byPlan.annual = pkg;
+      const match = PLAN_KEYS.find((key) => productIdFor(key) === productId);
+      if (match) byPlan[match] = pkg;
     }
-    // Fallbacks via RevenueCat's standard package types.
+    // Fallbacks via RevenueCat's standard package types, for configs whose
+    // store product IDs don't match `extra.revenuecat.products`.
     if (!byPlan.monthly && offering.monthly) byPlan.monthly = offering.monthly;
-    if (!byPlan.annual && offering.annual) byPlan.annual = offering.annual;
-    return byPlan;
+    if (!byPlan.yearly && (offering.annual || offering.yearly)) {
+      byPlan.yearly = offering.annual || offering.yearly;
+    }
+    if (!byPlan.lifetime && offering.lifetime) byPlan.lifetime = offering.lifetime;
+
+    return Object.keys(byPlan).length ? byPlan : null;
   } catch (e) {
     console.error('[billing] getOfferings failed:', e);
     return null;
   }
 };
 
-// Purchases a package. Returns { success, entitled, userCancelled, error }.
+// Purchases a package. Returns { success, entitled, entitlement, userCancelled, error }.
 export const purchasePackage = async (pkg) => {
   if (!(await initBilling())) return { success: false, error: 'billing_not_live' };
   const Purchases = getPurchases();
   if (!pkg) return { success: false, error: 'no_package' };
   try {
     const { customerInfo } = await Purchases.purchasePackage(pkg);
-    return { success: true, entitled: hasEntitlement(customerInfo) };
+    return {
+      success: true,
+      entitled: hasEntitlement(customerInfo),
+      entitlement: entitlementSnapshot(customerInfo),
+    };
   } catch (e) {
     if (e?.userCancelled) return { success: false, userCancelled: true };
     console.error('[billing] purchase failed:', e);
@@ -120,29 +183,57 @@ export const purchasePackage = async (pkg) => {
   }
 };
 
-// Restores previous purchases. Returns { success, entitled, error }.
+// Restores previous purchases. Returns { success, entitled, entitlement, error }.
 export const restorePurchases = async () => {
   if (!(await initBilling())) return { success: false, error: 'billing_not_live' };
   const Purchases = getPurchases();
   try {
     const customerInfo = await Purchases.restorePurchases();
-    return { success: true, entitled: hasEntitlement(customerInfo) };
+    return {
+      success: true,
+      entitled: hasEntitlement(customerInfo),
+      entitlement: entitlementSnapshot(customerInfo),
+    };
   } catch (e) {
     console.error('[billing] restore failed:', e);
     return { success: false, error: e?.message || 'restore_failed' };
   }
 };
 
-// Current entitlement status from cached customer info. Returns boolean | null
-// (null = couldn't determine).
-export const checkEntitlement = async () => {
+// Full entitlement snapshot from cached customer info, or null when it can't
+// be determined. Carries expiry, trial and renewal state alongside the boolean.
+export const fetchEntitlement = async () => {
   if (!(await initBilling())) return null;
   const Purchases = getPurchases();
   try {
     const customerInfo = await Purchases.getCustomerInfo();
-    return hasEntitlement(customerInfo);
+    return { entitled: hasEntitlement(customerInfo), entitlement: entitlementSnapshot(customerInfo) };
   } catch (e) {
     console.error('[billing] getCustomerInfo failed:', e);
     return null;
   }
+};
+
+/**
+ * Listen for CustomerInfo updates — a renewal, a cancellation, a refund, or a
+ * purchase made on another device. This is the only way the app learns about a
+ * subscription state change it didn't itself initiate.
+ *
+ * Returns an unsubscribe function (a no-op when billing isn't live).
+ */
+export const addCustomerInfoListener = (callback) => {
+  if (!BILLING_LIVE) return () => {};
+  const Purchases = getPurchases();
+  if (!Purchases || typeof Purchases.addCustomerInfoUpdateListener !== 'function') {
+    return () => {};
+  }
+  const listener = Purchases.addCustomerInfoUpdateListener((customerInfo) => {
+    callback({
+      entitled: hasEntitlement(customerInfo),
+      entitlement: entitlementSnapshot(customerInfo),
+    });
+  });
+  return () => {
+    if (listener && typeof listener.remove === 'function') listener.remove();
+  };
 };

@@ -47,7 +47,7 @@ const CareerNodeSheet = ({ node, onClose }) => {
           <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.content}>
             <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t(node.descriptionKey, lang)}</Text>
             <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t(node.identityKey, lang)}</Text>
-            <View style={[styles.reward, { backgroundColor: colors.backgroundDark }]}><Ionicons name="sparkles-outline" size={17} color={colors.primary} /><Text selectable style={[styles.rewardCopy, { color: colors.primary }]}>{t('career.rankReward', lang, { reward: t(node.unlockKey, lang), identity: t(node.identityKey, lang) })}</Text></View>
+            <View style={[styles.reward, { backgroundColor: colors.backgroundDark }]}><Ionicons name="sparkles-outline" size={17} color={colors.primaryText} /><Text selectable style={[styles.rewardCopy, { color: colors.primaryText }]}>{t('career.rankReward', lang, { reward: t(node.unlockKey, lang), identity: t(node.identityKey, lang) })}</Text></View>
             <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t('career.conditionsAllRequired', lang)}</Text>
             <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t('career.conditionsSaved', lang)}</Text>
             <Text selectable style={[styles.requirementsTitle, { color: colors.text }]}>{t('career.requirements', lang)}</Text>
@@ -61,7 +61,7 @@ const CareerNodeSheet = ({ node, onClose }) => {
             {node.requirementRows.map((requirement) => <Text key={`${requirement.type}-how`} selectable style={[styles.requirementHow, { color: colors.textSecondary }]}>{t(`career.requirementHow.${requirement.type}`, lang)}</Text>)}
             {node.requirementRows.some((requirement) => requirement.type === 'deepInteractions') ? (
               <View style={[styles.requirementHelp, { backgroundColor: colors.backgroundDark }]}> 
-                <Ionicons name="bulb-outline" size={17} color={colors.primary} />
+                <Ionicons name="bulb-outline" size={17} color={colors.primaryText} />
                 <Text selectable style={[styles.requirementHelpCopy, { color: colors.textSecondary }]}>{t('career.requirementHelp.deepInteractions', lang)}</Text>
               </View>
             ) : null}

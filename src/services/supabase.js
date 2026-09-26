@@ -185,7 +185,10 @@ export const ensureDeviceSession = async () => {
   try {
     // Reuse the persisted session — this is the device token.
     const { data: { session } } = await supabase.auth.getSession();
-    if (session?.user) return session.user;
+    if (session?.user) {
+      _cachedDeviceUserId = session.user.id;
+      return session.user;
+    }
 
     // No session yet → create an anonymous membership for this device.
     const deviceId = await getDeviceId();
@@ -199,6 +202,7 @@ export const ensureDeviceSession = async () => {
 
     const user = data?.user ?? null;
     if (user) {
+      _cachedDeviceUserId = user.id;
       // Stamp device id so server data can always be matched to this device.
       await upsertProfile(user.id, { device_id: deviceId });
     }
@@ -206,6 +210,44 @@ export const ensureDeviceSession = async () => {
   } catch (e) {
     console.warn('[supabase] ensureDeviceSession exception:', e?.message);
     return null;
+  }
+};
+
+// Set by ensureDeviceSession once the device's (anonymous) auth session is
+// known. Lets plain utility modules (e.g. share.js) tag a link with the
+// current user's id without threading auth state through every call site.
+let _cachedDeviceUserId = null;
+export const getCachedDeviceUserId = () => _cachedDeviceUserId;
+
+/**
+ * Claims a referral: the invited (current) user reports the referrer's id
+ * from a share link they opened. Server-side (see `claim_referral` RPC)
+ * validates the referrer isn't the same user, that this user hasn't already
+ * claimed a referral, and grants both accounts a `premium_bonus_until`
+ * extension — never trust a client-computed bonus for this.
+ *
+ * @returns {Promise<{ claimed: boolean, premiumBonusUntil: string|null }>}
+ */
+export const claimReferral = async ({ referrerId, storyId = null, lang = null }) => {
+  if (!SUPABASE_LIVE || !referrerId) return { claimed: false, premiumBonusUntil: null };
+  try {
+    const { data, error } = await supabase.rpc('claim_referral', {
+      p_referrer_id: referrerId,
+      p_story_id: storyId != null ? Number(storyId) : null,
+      p_lang: lang,
+    });
+    if (error) {
+      console.warn('[supabase] claimReferral:', error.message);
+      return { claimed: false, premiumBonusUntil: null };
+    }
+    const row = Array.isArray(data) ? data[0] : data;
+    return {
+      claimed: !!row?.claimed,
+      premiumBonusUntil: row?.premium_bonus_until ?? null,
+    };
+  } catch (e) {
+    console.warn('[supabase] claimReferral exception:', e?.message);
+    return { claimed: false, premiumBonusUntil: null };
   }
 };
 

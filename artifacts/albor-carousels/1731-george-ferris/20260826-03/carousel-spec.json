@@ -1,0 +1,147 @@
+{
+  "category": "Tarih",
+  "source": {
+    "book": "The Devil in the White City",
+    "author": "Erik Larson"
+  },
+  "slides": [
+    {
+      "main_lines": [
+        "İmkânsız denilen bir fikir",
+        "neyle ilerler?",
+        "Daha çok ısrarla mı,",
+        "daha iyi kanıtla mı?"
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "daha iyi kanıtla"
+      },
+      "art_crop": [0.0, 0.28, 1.0, 1.0],
+      "art_box": [230, 650, 1080, 1350],
+      "art_opacity": 0.9
+    },
+    {
+      "main_lines": [
+        "1893 Chicago Dünya Fuarı,",
+        "Eiffel Kulesi kadar çarpıcı",
+        "ama onun kopyası olmayan",
+        "bir simge arıyordu."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "illustration"
+      },
+      "art_crop": [0.36, 0.3, 1.0, 0.94],
+      "art_box": [300, 640, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "George Ferris,",
+        "yolcu kabinleri taşıyan",
+        "dev bir çelik tekerlek önerdi.",
+        "Komite fikri uygulanamaz buldu."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "uygulanamaz"
+      },
+      "art_crop": [0.0, 0.55, 0.66, 1.0],
+      "art_box": [250, 690, 1080, 1350],
+      "art_opacity": 0.92
+    },
+    {
+      "main_lines": [
+        "Ferris birkaç hafta sonra",
+        "mühendis desteği ve",
+        "yerel yatırımcılarla geri döndü.",
+        "Plan kabul edildi.",
+        "Tekerlek fuarın simgesi oldu."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "illustration"
+      },
+      "art_crop": [0.32, 0.36, 1.0, 1.0],
+      "art_box": [280, 645, 1080, 1350],
+      "art_opacity": 0.95
+    },
+    {
+      "main_lines": [
+        "Yanlış inanış:",
+        "Büyük fikre inanmak yeter.",
+        "Doğru bakış:",
+        "En büyük itirazı",
+        "kanıtla küçült."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "kanıtla küçült"
+      },
+      "art_crop": [0.05, 0.55, 0.7, 1.0],
+      "art_box": [260, 700, 1080, 1350],
+      "art_opacity": 0.88
+    },
+    {
+      "main_lines": [
+        "Bir yaklaşım, itirazı",
+        "kişisel bir red sayar.",
+        "Diğeri, itirazı",
+        "sınanacak bir soruya çevirir."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "sınanacak bir soruya"
+      },
+      "art_crop": [0.44, 0.42, 1.0, 0.9],
+      "art_box": [330, 680, 1080, 1350],
+      "art_opacity": 0.9
+    },
+    {
+      "main_lines": [
+        "Bugün reddedilen bir fikrini seç.",
+        "Karşındaki en büyük riski yaz.",
+        "Sonra o riski küçültecek",
+        "tek küçük kanıt tasarla."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "tek küçük kanıt"
+      },
+      "art_crop": [0.0, 0.59, 0.65, 1.0],
+      "art_box": [240, 710, 1080, 1350],
+      "art_opacity": 0.9
+    },
+    {
+      "main_lines": [
+        "Sana imkânsız denilen",
+        "bir fikri anlat:",
+        "İtiraz neydi,",
+        "hangi kanıt fark yarattı?"
+      ],
+      "support_lines": [
+        "Deneyimini yorumlarda paylaş.",
+        "Kaynak: The Devil in the White City — Erik Larson",
+        "Albor’da tam hikâyeyi oku."
+      ],
+      "accent_focus": {
+        "block": "support",
+        "line": 2,
+        "text": "Albor’da tam hikâyeyi oku."
+      },
+      "art_crop": [0.3, 0.35, 1.0, 1.0],
+      "art_box": [330, 735, 1080, 1350],
+      "art_opacity": 0.85
+    }
+  ]
+}

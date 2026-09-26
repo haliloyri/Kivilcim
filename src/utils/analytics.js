@@ -122,6 +122,7 @@ export const flushAnalytics = async () => {
 const ANALYTICS_EVENTS = {
   ONBOARDING_TIME_BUDGET_SELECTED: 'onboarding_time_budget_selected',
   ONBOARDING_NOTIFICATION_TIME_SELECTED: 'onboarding_notification_time_selected',
+  ONBOARDING_FIRST_STORY_SHOWN: 'onboarding_first_story_shown',
   PERSONALIZED_FEED_SHOWN: 'personalized_feed_shown',
   PERSONALIZED_STORY_OPENED: 'personalized_story_opened',
   PAYWALL_VIEWED: 'paywall_viewed',
@@ -129,7 +130,16 @@ const ANALYTICS_EVENTS = {
   PAYWALL_PURCHASE_STARTED: 'paywall_purchase_started',
   PAYWALL_PURCHASE_SUCCEEDED: 'paywall_purchase_succeeded',
   PAYWALL_PURCHASE_FAILED: 'paywall_purchase_failed',
+  PAYWALL_UNAVAILABLE: 'paywall_unavailable',
   FREE_LIMIT_TO_PAYWALL: 'free_limit_to_paywall',
+  // Subscription lifecycle. Emitted from the RevenueCat customer-info listener
+  // in UserDataContext — `paywall_purchase_succeeded` on its own can measure
+  // acquisition but not retention, churn or realized revenue.
+  TRIAL_STARTED: 'trial_started',
+  TRIAL_CONVERTED: 'trial_converted',
+  SUBSCRIPTION_RENEWED: 'subscription_renewed',
+  SUBSCRIPTION_CANCELLED: 'subscription_cancelled',
+  SUBSCRIPTION_EXPIRED: 'subscription_expired',
   DAILY_TARGET_COMPLETED: 'daily_target_completed',
   STREAK_FREEZE_ACTIVATED: 'streak_freeze_activated',
   STREAK_FREEZE_UPSELL_CLICKED: 'streak_freeze_upsell_clicked',
@@ -148,6 +158,13 @@ const ANALYTICS_EVENTS = {
   STORYTELLER_MODE_OPENED: 'storyteller_mode_opened',
   STORYTELLER_PRACTICE_COMPLETED: 'storyteller_practice_completed',
   SOCIAL_SHARE_PLATFORM: 'social_share_platform',
+  // Premium one-minute story reader
+  ONE_MINUTE_SUMMARY_CTA_VIEWED: 'one_minute_summary_cta_viewed',
+  ONE_MINUTE_SUMMARY_CLICKED: 'one_minute_summary_clicked',
+  ONE_MINUTE_SUMMARY_PAYWALL_VIEWED: 'one_minute_summary_paywall_viewed',
+  ONE_MINUTE_SUMMARY_OPENED: 'one_minute_summary_opened',
+  ONE_MINUTE_SUMMARY_COMPLETED: 'one_minute_summary_completed',
+  ONE_MINUTE_SUMMARY_FULL_STORY_CLICKED: 'one_minute_summary_full_story_clicked',
   // Kıvılcım Yolu
   CAREER_PATH_SELECTED: 'career_path_selected',
   CAREER_PROMOTION_SHOWN: 'career_promotion_shown',
@@ -164,12 +181,25 @@ const ANALYTICS_EVENTS = {
   CAREER_PATH_COMPLETED: 'career_path_completed',
   CAREER_MIGRATION_COMPLETED: 'career_migration_completed',
   CAREER_MIGRATION_SUMMARY_SEEN: 'career_migration_summary_seen',
+  // İlerleme: paylaşım ve küçük kutlamalar
+  CAREER_TITLE_SHARE_OPENED: 'career_title_share_opened',
+  WEEKLY_RECAP_SHARE_OPENED: 'weekly_recap_share_opened',
+  WEEKLY_RECAP_NOTIFICATION_OPENED: 'weekly_recap_notification_opened',
+  LEARNING_MILESTONE_SHOWN: 'learning_milestone_shown',
+  LEARNING_MILESTONE_SHARE_OPENED: 'learning_milestone_share_opened',
+  SHARE_CARD_EXPORTED: 'share_card_exported',
   // Ads
   AD_IMPRESSION: 'ad_impression',
   AD_CLICKED: 'ad_clicked',
   AD_FAILED_TO_LOAD: 'ad_failed_to_load',
   REWARDED_AD_COMPLETED: 'rewarded_ad_completed',
   AD_OR_PREMIUM_CHOICE: 'ad_or_premium_choice',
+  // Rating funnel
+  REVIEW_PROMPT_SHOWN: 'review_prompt_shown',
+  // Share attribution / referral funnel
+  SHARE_LINK_OPENED: 'share_link_opened',
+  INSTALL_FROM_SHARE: 'install_from_share',
+  REFERRAL_REWARD_GRANTED: 'referral_reward_granted',
 };
 
 const sanitizePayload = (payload) => {

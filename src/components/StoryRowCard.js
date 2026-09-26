@@ -50,7 +50,7 @@ const StoryRowCard = ({
   const isCompleted = isStoryCompleted ? isStoryCompleted(story.story_id) : isRead;
   const isSaved = isFavorite(story.story_id);
 
-  const cardBg = isDark ? colors.cardBackground : '#F8F6F2';
+  const cardBg = colors.cardBackground;
 
   const handlePressIn = () =>
     Animated.timing(scale, { toValue: 0.985, duration: 100, useNativeDriver: true }).start();

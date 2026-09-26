@@ -1,4 +1,4 @@
-import { hasReachedReadingCompletion, isShortStoryFullyVisible, READ_COMPLETE_RATIO, SHORT_STORY_DWELL_MS } from '../storyCompletion';
+import { hasReachedReadingCompletion, isShortStoryFullyVisible, ONE_MINUTE_SUMMARY_DWELL_MS, READ_COMPLETE_RATIO, SHORT_STORY_DWELL_MS } from '../storyCompletion';
 
 describe('story completion guards', () => {
   it('requires 90% of a scrollable story before an H can be created', () => {
@@ -11,5 +11,9 @@ describe('story completion guards', () => {
     expect(SHORT_STORY_DWELL_MS).toBe(5_000);
     expect(isShortStoryFullyVisible({ contentHeight: 500, viewportHeight: 500 })).toBe(true);
     expect(isShortStoryFullyVisible({ contentHeight: 502, viewportHeight: 500 })).toBe(false);
+  });
+
+  it('keeps the Premium one-minute reader completion dwell explicit', () => {
+    expect(ONE_MINUTE_SUMMARY_DWELL_MS).toBe(20_000);
   });
 });

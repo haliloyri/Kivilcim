@@ -42,21 +42,23 @@ export const CAT_STYLES_DARK = {
 
 const CATEGORY_THEME_MAP = {
   // Home category palette
-  // "Tümü" (All) always fills with the app's brand navy, not a per-category
+  // "Tümü" (All) always fills with the app's brand accent, not a per-category
   // colour — it represents the whole app, not one category.
   'Tümü': {
-    accent: '#142A4A',
-    borderColor: '#142A4A',
-    lightSoft: '#EDEFF3',
-    lightStrong: 'rgba(20, 42, 74, 0.14)',
-    darkSoft: 'rgba(20, 42, 74, 0.20)',
-    darkStrong: 'rgba(20, 42, 74, 0.30)',
-    darkAccent: '#8CA3C4',
+    // Brand default (Petrol). Screens that know the user's accent pass
+    // colors.primary to CategoryPill explicitly for "All".
+    accent: '#1F5F5B',
+    borderColor: '#1F5F5B',
+    lightSoft: '#E2EDEA',
+    lightStrong: 'rgba(31, 95, 91, 0.14)',
+    darkSoft: 'rgba(107, 161, 123, 0.20)',
+    darkStrong: 'rgba(107, 161, 123, 0.30)',
+    darkAccent: '#8CBF98',
   },
   // Palette sourced from the "Kategori Görselleri Renk Kodları" reference sheet:
   // accent = Ana Renk, borderColor = Detay/İkon (deep tone, also used for
-  // per-category text), lightSoft = Arka Plan. Dark-mode fields unchanged
-  // (reference sheet is light-mode only).
+  // per-category text), lightSoft = Arka Plan. Dark-mode fields are lighter tones of
+  // the SAME hue so a category keeps its identity across themes.
   'Finance': {
     accent: '#D4A23A',
     borderColor: '#B8862B',
@@ -85,13 +87,14 @@ const CATEGORY_THEME_MAP = {
     darkAccent: '#6E8198',
   },
   'Health': {
-    accent: '#5AA3A3',
-    borderColor: '#3D7F7F',
-    lightSoft: '#E6F3F2',
-    lightStrong: 'rgba(90, 163, 163, 0.14)',
-    darkSoft: 'rgba(44, 128, 104, 0.20)',
-    darkStrong: 'rgba(44, 128, 104, 0.30)',
-    darkAccent: '#5AA08C',
+    // Warm heart-red (was teal, which clashed with the Petrol brand accent).
+    accent: '#C0645A',
+    borderColor: '#9A4A42',
+    lightSoft: '#F8ECEA',
+    lightStrong: 'rgba(192, 100, 90, 0.14)',
+    darkSoft: 'rgba(192, 100, 90, 0.20)',
+    darkStrong: 'rgba(192, 100, 90, 0.30)',
+    darkAccent: '#D08A80',
   },
   'Growth': {
     accent: '#6BA17B',
@@ -116,9 +119,9 @@ const CATEGORY_THEME_MAP = {
     borderColor: '#5A5290',
     lightSoft: '#F2ECF9',
     lightStrong: 'rgba(123, 111, 178, 0.14)',
-    darkSoft: 'rgba(122, 106, 78, 0.20)',
-    darkStrong: 'rgba(122, 106, 78, 0.30)',
-    darkAccent: '#9A8C72',
+    darkSoft: 'rgba(123, 111, 178, 0.20)',
+    darkStrong: 'rgba(123, 111, 178, 0.30)',
+    darkAccent: '#A499D6',
   },
   'Communication': {
     accent: '#F0A46B',
@@ -143,9 +146,9 @@ const CATEGORY_THEME_MAP = {
     borderColor: '#A67F45',
     lightSoft: '#F7EFE2',
     lightStrong: 'rgba(200, 163, 109, 0.14)',
-    darkSoft: 'rgba(156, 82, 56, 0.20)',
-    darkStrong: 'rgba(156, 82, 56, 0.30)',
-    darkAccent: '#B57C66',
+    darkSoft: 'rgba(200, 163, 109, 0.20)',
+    darkStrong: 'rgba(200, 163, 109, 0.30)',
+    darkAccent: '#D6B684',
   },
   'Business': {
     accent: '#6B7C93',
@@ -164,229 +167,6 @@ const CATEGORY_THEME_MAP = {
     darkSoft: 'rgba(229, 194, 122, 0.12)',
     darkStrong: 'rgba(229, 194, 122, 0.20)',
     darkAccent: '#E5C27A',
-  },
-};
-
-const CATEGORY_PILL_PALETTE_MAP = {
-  all: {
-    light: {
-      background: '#F8F5F1',
-      border: '#E8DDD0',
-      text: '#8A7E72',
-      icon: '#9C8F83',
-      iconBackground: 'rgba(255,255,255,0.55)',
-      gradient: ['#F8F5F1', '#F1ECE5'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#34343A',
-      text: '#B7B9BE',
-      icon: '#8E9197',
-      iconBackground: 'rgba(255,255,255,0.04)',
-      gradient: ['#2A2A2E', '#202024'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  finance: {
-    light: {
-      background: '#F8F5F1',
-      border: '#C58B22',
-      text: '#FFFFFF',
-      icon: '#FFF4D6',
-      iconBackground: 'rgba(255,244,214,0.18)',
-      gradient: ['#D8A53A', '#B97A16'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#B9852C',
-      text: '#FFF8EC',
-      icon: '#FFD978',
-      iconBackground: 'rgba(255,217,120,0.12)',
-      gradient: ['#8E6513', '#6E4C0A'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  psychology: {
-    light: {
-      background: '#F8F5F1',
-      border: '#5F9C68',
-      text: '#FFFFFF',
-      icon: '#E8FFF0',
-      iconBackground: 'rgba(232,255,240,0.18)',
-      gradient: ['#7DBB87', '#4F8C5A'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#4F8A5E',
-      text: '#F1FFF5',
-      icon: '#9AE6B4',
-      iconBackground: 'rgba(154,230,180,0.14)',
-      gradient: ['#356B42', '#24492D'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  leadership: {
-    light: {
-      background: '#F8F5F1',
-      border: '#3D6EA8',
-      text: '#FFFFFF',
-      icon: '#EAF3FF',
-      iconBackground: 'rgba(234,243,255,0.18)',
-      gradient: ['#4D82C3', '#2F5F9C'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#537AB5',
-      text: '#F2F7FF',
-      icon: '#8CB8FF',
-      iconBackground: 'rgba(140,184,255,0.14)',
-      gradient: ['#2D4E7C', '#1D3352'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  health: {
-    light: {
-      background: '#F8F5F1',
-      border: '#29B487',
-      text: '#FFFFFF',
-      icon: '#E9FFF7',
-      iconBackground: 'rgba(233,255,247,0.18)',
-      gradient: ['#3CCB9B', '#1C9C73'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#29A17D',
-      text: '#F0FFF9',
-      icon: '#7DFFD0',
-      iconBackground: 'rgba(125,255,208,0.14)',
-      gradient: ['#17785B', '#0D5741'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  growth: {
-    light: {
-      background: '#F8F5F1',
-      border: '#7456E8',
-      text: '#FFFFFF',
-      icon: '#F0EBFF',
-      iconBackground: 'rgba(240,235,255,0.18)',
-      gradient: ['#8B6DFF', '#6448D9'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#826FFF',
-      text: '#F7F4FF',
-      icon: '#C1B4FF',
-      iconBackground: 'rgba(193,180,255,0.14)',
-      gradient: ['#5A46B8', '#3C2F7C'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  science: {
-    light: {
-      background: '#F8F5F1',
-      border: '#2F8CC3',
-      text: '#FFFFFF',
-      icon: '#EAF8FF',
-      iconBackground: 'rgba(234,248,255,0.18)',
-      gradient: ['#3FA7D6', '#2176AE'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#4095C7',
-      text: '#F2FAFF',
-      icon: '#84D8FF',
-      iconBackground: 'rgba(132,216,255,0.14)',
-      gradient: ['#215E7D', '#14384B'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  philosophy: {
-    light: {
-      background: '#F8F5F1',
-      border: '#77553B',
-      text: '#FFFFFF',
-      icon: '#FFF1E5',
-      iconBackground: 'rgba(255,241,229,0.18)',
-      gradient: ['#8C6A4A', '#5F4530'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#8E6B4D',
-      text: '#FFF6EF',
-      icon: '#D9B08C',
-      iconBackground: 'rgba(217,176,140,0.14)',
-      gradient: ['#5E4734', '#3D2D20'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  communication: {
-    light: {
-      background: '#F8F5F1',
-      border: '#E38716',
-      text: '#FFFFFF',
-      icon: '#FFF4E8',
-      iconBackground: 'rgba(255,244,232,0.18)',
-      gradient: ['#F39C34', '#D87400'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#D97A15',
-      text: '#FFF8F2',
-      icon: '#FFBE78',
-      iconBackground: 'rgba(255,190,120,0.14)',
-      gradient: ['#A45700', '#733B00'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  productivity: {
-    light: {
-      background: '#F8F5F1',
-      border: '#4C5AB8',
-      text: '#FFFFFF',
-      icon: '#EEF1FF',
-      iconBackground: 'rgba(238,241,255,0.18)',
-      gradient: ['#5C6BC0', '#3949AB'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#6677E0',
-      text: '#F4F6FF',
-      icon: '#A7B6FF',
-      iconBackground: 'rgba(167,182,255,0.14)',
-      gradient: ['#3E4D9E', '#29326B'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
-  },
-  history: {
-    light: {
-      background: '#F8F5F1',
-      border: '#925A31',
-      text: '#FFFFFF',
-      icon: '#FFF2E7',
-      iconBackground: 'rgba(255,242,231,0.18)',
-      gradient: ['#A76B3C', '#7A4B27'],
-      shadowColor: 'rgba(0,0,0,0.08)',
-    },
-    dark: {
-      background: '#232326',
-      border: '#A56A3A',
-      text: '#FFF7F0',
-      icon: '#E1A97A',
-      iconBackground: 'rgba(225,169,122,0.14)',
-      gradient: ['#714423', '#4D2E17'],
-      shadowColor: 'rgba(0,0,0,0.35)',
-    },
   },
 };
 
@@ -975,23 +755,46 @@ export const normalizeCategoryKey = (catName) => {
   );
 };
 
+// Category text must stay readable on white cards / paper (WCAG AA 4.5:1).
+// The light "Ana Renk" accents are 2–3:1 on white, so text uses the deep
+// "Detay" tone, darkened further only where that still falls short.
+const _lum = (hex) => {
+  let h = String(hex || '').replace('#', '');
+  if (h.length === 3) h = h.split('').map((c) => c + c).join('');
+  if (h.length !== 6) return 0;
+  const ch = (i) => {
+    const v = parseInt(h.slice(i, i + 2), 16) / 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  };
+  return 0.2126 * ch(0) + 0.7152 * ch(2) + 0.0722 * ch(4);
+};
+const _darken = (hex, f) => {
+  const h = String(hex).replace('#', '');
+  const c = (i) => Math.round(parseInt(h.slice(i, i + 2), 16) * (1 - f)).toString(16).padStart(2, '0');
+  return `#${c(0)}${c(2)}${c(4)}`.toUpperCase();
+};
+const readableCategoryText = (hex, minRatio = 4.6) => {
+  if (!hex || hex[0] !== '#' || hex.length !== 7) return hex;
+  let out = hex;
+  for (let i = 0; i < 12 && (1.05 / (_lum(out) + 0.05)) < minRatio; i += 1) {
+    out = _darken(out, 0.08);
+  }
+  return out;
+};
+
 export const getCategoryTheme = (catName, isDark = false) => {
   const normalizedKey = normalizeCategoryKey(catName);
   const palette = CATEGORY_THEME_MAP[normalizedKey] || CATEGORY_THEME_MAP.default;
-  const pillFamily =
-    CATEGORY_PILL_FAMILY_MAP[normalizedKey]
-    || CATEGORY_PILL_FAMILY_MAP[String(catName || '').trim()]
-    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(normalizedKey)]
-    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(catName)]
-    || 'finance';
-  const pillPalette = CATEGORY_PILL_PALETTE_MAP[pillFamily]?.[isDark ? 'dark' : 'light'];
-
   return {
     key: normalizedKey,
     accent: isDark ? (palette.darkAccent || palette.accent) : palette.accent,
     borderColor: isDark ? (palette.borderColor || palette.darkAccent || palette.accent) : (palette.borderColor || palette.accent),
     backgroundColor: isDark ? palette.darkSoft : palette.lightSoft,
     strongBackgroundColor: isDark ? palette.darkStrong : palette.lightStrong,
+    // Readable category label colour (use for text, not fills).
+    textColor: isDark
+      ? (palette.darkAccent || palette.accent)
+      : readableCategoryText(palette.borderColor || palette.accent),
   };
 };
 

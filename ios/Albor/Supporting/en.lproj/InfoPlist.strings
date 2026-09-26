@@ -1,0 +1,3 @@
+NSPhotoLibraryAddUsageDescription = "Albor asks for permission to save the share cards you create to your photo library.";
+NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
+NSMicrophoneUsageDescription = "Albor asks for microphone access so you can record and play back stories aloud.";

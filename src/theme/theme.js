@@ -1,55 +1,150 @@
-export const colors = {
-  // Light: Premium warm – DESIGN_AI 2026 spec
+// ─── Colour system ──────────────────────────────────────────────────────────
+// Neutrals (paper, ink, surfaces) are shared by every accent. The accent is the
+// brand colour: Deep Petrol is Albor's identity and the default. Navy and Ochre
+// are optional accents a user can pick later (theme picker) — the brand itself
+// (store assets, share cards, notifications) always stays Petrol.
+//
+// Every accent defines the same four roles per mode so any accent works in
+// every component:
+//   primary          – filled surfaces (buttons, selected pill, active states)
+//   onPrimary        – text/icons on `primary` (contrast-checked, ≥ 4.5:1)
+//   primaryText      – accent-coloured text/icons on the page background
+//                      (≥ 4.5:1 on background; differs from primary when the
+//                      fill is too light to be read as text, e.g. Ochre)
+//   primaryContainer – soft tinted surface; `primaryText` must read on it
+// Gold is no longer a brand colour: it is the `reward` role (streaks, badges,
+// goal completed) so those moments stand out.
+
+const NEUTRALS = {
   light: {
-    background: '#FAF8F3',
-    backgroundDark: '#EFE9DF',
+    background: '#F7F3EC',               // paper
+    backgroundDark: '#EDE7DD',
     surfaceContainerLowest: '#FFFFFF',
-    surfaceContainerHigh: '#E6DFD4',
+    surfaceContainerHigh: '#E4DDD2',
     cardBackground: '#FFFDF9',
-    text: '#142A4A',                     // Albor Navy — headings, logo, titles
-    textSecondary: '#6B7280',
-    primary: '#142A4A',                  // Albor Navy — buttons/CTAs
-    primaryContainer: '#D9E2EC',         // Pale navy container
-    onPrimary: '#FFFFFF',
+    text: '#24211E',                     // warm ink (14.5:1 on paper)
+    textSecondary: '#6B625A',            // warm grey (5.4:1 on paper)
+    mutedText: '#8C837A',
     danger: '#B3261E',
     success: '#3A5F3C',
-    border: '#E7DFD4',
-    activeNav: '#142A4A',
+    border: '#E6DED3',
+    divider: '#E6DED3',
     quoteHighlight: '#FFD166',
+    reward: '#C89B3C',
+    rewardText: '#8A6418',               // reward as text on paper (5.4:1)
     overlaySoft: 'rgba(0,0,0,0.03)',
     overlayDark: 'rgba(0,0,0,0.24)',
     modalOverlay: 'rgba(18,17,15,0.26)',
     modalSurface: '#FFFDF9',
-    ctaGradientStart: '#2C4A73',
-    ctaGradientEnd: '#142A4A',
+    tabBarBackground: '#FBF8F2',
+    tabBarBorder: 'rgba(0,0,0,0.06)',
+    tabInactive: '#6B625A',
   },
-  // Dark: OLED-friendly – DESIGN_AI 2026 spec
   dark: {
-    background: '#121212',
-    backgroundDark: '#1C1C1E',
-    surfaceContainerLowest: '#1C1C1E',
-    surfaceContainerHigh: '#2A2B2F',
-    cardBackground: '#202124',
-    elevatedSurface: '#2A2B2F',
-    text: '#F5F5F5',
-    textSecondary: '#A1A1AA',
-    mutedText: '#7B7B84',
-    primary: '#E5C27A',                  // Dark mode gold
-    primaryContainer: '#D9B15F',
-    onPrimary: '#1A1A1A',
+    background: '#141413',
+    backgroundDark: '#1C1B1A',
+    surfaceContainerLowest: '#1C1B1A',
+    surfaceContainerHigh: '#2A2927',
+    cardBackground: '#201F1D',
+    elevatedSurface: '#2A2927',
+    text: '#F2EEE8',
+    textSecondary: '#A8A29A',            // 6.5:1 on card
+    mutedText: '#7E7870',
     danger: '#F06A4A',
     success: '#6FBF73',
-    border: '#2F2F33',
-    divider: '#3A3A3F',
-    activeNav: '#E5C27A',
+    border: '#2F2E2B',
+    divider: '#3A3936',
     quoteHighlight: '#FFD166',
+    reward: '#E5C27A',
+    rewardText: '#E5C27A',
     overlaySoft: 'rgba(0,0,0,0.06)',
     overlayDark: 'rgba(0,0,0,0.4)',
     modalOverlay: 'rgba(0,0,0,0.4)',
-    modalSurface: '#1C1C1E',
-    ctaGradientStart: '#E5C27A',
-    ctaGradientEnd: '#D9B15F',
+    modalSurface: '#1C1B1A',
+    tabBarBackground: 'rgba(20,20,19,0.94)',
+    tabBarBorder: 'rgba(255,255,255,0.06)',
+    tabInactive: '#9C968E',
   },
+};
+
+export const ACCENTS = {
+  petrol: {
+    id: 'petrol',
+    light: {
+      primary: '#1F5F5B',                // 7.4:1 with white, 6.7:1 on paper
+      onPrimary: '#FFFFFF',
+      primaryText: '#1F5F5B',
+      primaryContainer: '#E2EDEA',
+      ctaGradientStart: '#2A716C',
+      ctaGradientEnd: '#1F5F5B',
+    },
+    dark: {
+      primary: '#7CC0B6',                // 8.8:1 on background
+      onPrimary: '#1A1A1A',
+      primaryText: '#7CC0B6',
+      primaryContainer: '#1F3634',
+      ctaGradientStart: '#8CCBC1',
+      ctaGradientEnd: '#6DB3A8',
+    },
+  },
+  navy: {
+    id: 'navy',
+    light: {
+      primary: '#1F3A5C',
+      onPrimary: '#FFFFFF',
+      primaryText: '#1F3A5C',
+      primaryContainer: '#E3E9F1',
+      ctaGradientStart: '#2C4A73',
+      ctaGradientEnd: '#1F3A5C',
+    },
+    dark: {
+      primary: '#8FB0D9',
+      onPrimary: '#1A1A1A',
+      primaryText: '#8FB0D9',
+      primaryContainer: '#1E2A3A',
+      ctaGradientStart: '#9DBCE2',
+      ctaGradientEnd: '#7FA2CF',
+    },
+  },
+  ochre: {
+    id: 'ochre',
+    light: {
+      primary: '#D4952A',                // light fill → dark label (6.5:1)
+      onPrimary: '#221C14',
+      primaryText: '#8A5A0E',            // text variant (5.3:1 on paper)
+      primaryContainer: '#F6E7C8',
+      ctaGradientStart: '#DDA343',
+      ctaGradientEnd: '#C98A1E',
+    },
+    dark: {
+      primary: '#E0A53C',
+      onPrimary: '#1A1A1A',
+      primaryText: '#E0A53C',
+      primaryContainer: '#35291A',
+      ctaGradientStart: '#E8B458',
+      ctaGradientEnd: '#D4952A',
+    },
+  },
+};
+
+export const DEFAULT_ACCENT = 'petrol';
+
+export const buildPalette = (mode = 'light', accentId = DEFAULT_ACCENT) => {
+  const m = mode === 'dark' ? 'dark' : 'light';
+  const accent = (ACCENTS[accentId] || ACCENTS[DEFAULT_ACCENT])[m];
+  return {
+    ...NEUTRALS[m],
+    ...accent,
+    // Legacy aliases kept so existing screens keep working.
+    activeNav: accent.primaryText,
+  };
+};
+
+// Default (brand) palettes. Prefer useTheme().colors in components — it follows
+// the user's chosen accent.
+export const colors = {
+  light: buildPalette('light', DEFAULT_ACCENT),
+  dark: buildPalette('dark', DEFAULT_ACCENT),
 };
 
 // Picks the most readable text colour (#1A1A1A vs #FFFFFF) for a given filled

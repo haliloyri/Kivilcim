@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.spark.storypipeline</string>
+
+  <!-- Giriş kabuğuyla (bash -l) çalıştırılıyor ki nvm/homebrew PATH'i
+       (dolayısıyla `node`) launchd'nin kısıtlı ortamında da bulunsun. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-l</string>
+    <string>__REPO_ROOT__/otomatize-batch/run-pipeline.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__REPO_ROOT__</string>
+
+  <!-- Her gün 03:00'te çalışsın. Bilgisayar o saatte kapalı/uykudaysa
+       launchd bir sonraki açılışta telafi eder. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>3</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <!-- Kurulduğu anda hemen bir kere de çalışsın istemiyorsanız false yapın
+       (varsayılan: false — ilk denemeyi elle yapmanız önerilir). -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>__REPO_ROOT__/otomatize-batch/logs/launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__REPO_ROOT__/otomatize-batch/logs/launchd.err.log</string>
+</dict>
+</plist>

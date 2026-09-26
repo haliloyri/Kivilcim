@@ -32,6 +32,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
+import { preloadRewarded } from '../utils/ads';
 
 const AdOrPremiumSheet = ({
   visible,
@@ -48,6 +49,12 @@ const AdOrPremiumSheet = ({
 }) => {
   const { colors } = useTheme();
   const styles = makeStyles(colors);
+
+  // Start fetching the ad as soon as the sheet appears, so it is usually ready
+  // by the time the user taps "Watch ad".
+  React.useEffect(() => {
+    if (visible) preloadRewarded();
+  }, [visible]);
 
   const resolvedTitle    = title    || t('adSheetTitle', lang);
   const resolvedSubtitle = subtitle || t('adSheetSubtitle', lang);
@@ -80,7 +87,7 @@ const AdOrPremiumSheet = ({
         {/* Lock icon */}
         <View style={styles.iconRow}>
           <View style={styles.iconCircle}>
-            <Ionicons name="lock-closed" size={28} color={colors.primary} />
+            <Ionicons name="lock-closed" size={28} color={colors.primaryText} />
           </View>
         </View>
 

@@ -10,6 +10,9 @@ import { appNavigationRef } from '../../navigation/AppNavigator';
 import { t } from '../../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../../utils/analytics';
 import BadgeShareSheet from '../BadgeShareSheet';
+import { useStories } from '../../context/StoriesContext';
+import { buildLearningSummary } from '../../utils/careerLearning';
+import { buildRankShare } from '../../utils/careerShare';
 import useReducedMotion from '../../hooks/useReducedMotion';
 import CareerNodeMark from './CareerNodeMark';
 import GuideLight from './GuideLight';
@@ -18,7 +21,8 @@ const nodeIndex = new Map(CAREER_NODES.map((node, index) => [node.id, index]));
 
 const CareerPromotionModal = () => {
   const { colors, isDark, lang } = useTheme();
-  const { career, unseenPromotions, markPromotionsSeen, requestPathSwitch } = useCareerPath();
+  const { career, careerEvents, unseenPromotions, markPromotionsSeen, requestPathSwitch, milestoneVisible } = useCareerPath();
+  const { stories } = useStories();
   const { isLoadingUserData, activeBadgeModal, setBadgePresentationBlocked, userProfile } = useUserData();
   const [shareAchievement, setShareAchievement] = useState(null);
   const reduceMotion = useReducedMotion();
@@ -26,7 +30,7 @@ const CareerPromotionModal = () => {
   const promotion = promotions[promotions.length - 1] || null;
   const node = promotion ? CAREER_NODES.find((item) => item.id === promotion.nodeId) : null;
   const isCapstone = Boolean(node?.pathId && node.pathId !== 'common' && node.order === 3 && node.pathId === career?.activePath);
-  const visible = Boolean(node) && !isLoadingUserData && !activeBadgeModal;
+  const visible = Boolean(node) && !isLoadingUserData && !activeBadgeModal && !milestoneVisible;
 
   useEffect(() => {
     setBadgePresentationBlocked('career_promotion', visible || !!shareAchievement);
@@ -56,16 +60,18 @@ const CareerPromotionModal = () => {
 
   const openShare = async () => {
     if (!node) return;
-    const evidenceCount = Array.isArray(promotion?.requirementsSnapshot) ? promotion.requirementsSnapshot.length : 0;
-    const achievement = {
-      rankTitle: t(node.titleKey, lang),
-      pathLabel: t(`careerPath.${node.pathId}.title`, lang),
-      evidenceSummary: evidenceCount ? t('career.share.evidenceCount', lang, { count: evidenceCount }) : t('career.share.evidence', lang),
+    const achievement = buildRankShare({
+      titleKey: node.titleKey,
+      pathId: node.pathId,
       visualKey: node.visualKey,
-      earnedDate: promotion?.earnedAt,
-    };
+      learning: buildLearningSummary({ events: careerEvents, stories }),
+      name: userProfile?.displayName,
+      lang,
+      earnedAt: promotion?.earnedAt,
+    });
     await dismiss();
     trackEvent(ANALYTICS_EVENTS.CAREER_PROMOTION_SHARED, { careerVersion: 1, pathId: node.pathId, nodeId: node.id });
+    trackEvent(ANALYTICS_EVENTS.CAREER_TITLE_SHARE_OPENED, { careerVersion: 1, pathId: node.pathId, nodeId: node.id, source: 'promotion', hasStats: Boolean(achievement.stats) });
     setShareAchievement(achievement);
   };
 

@@ -145,6 +145,11 @@ export const buildRequirementRows = (node, metrics, availableCategoryCount) => {
     });
 };
 
+// Summit title: finishing two of the three paths. Derived, not a stored node,
+// so the 12-node schema and server sync stay untouched.
+export const CAPSTONE_TITLE_KEY = 'careerTitle.renaissance';
+export const CAPSTONE_REQUIRED_PATHS = 2;
+
 const asEarnedNodeIds = (earnedNodes) => new Set((earnedNodes || []).map((node) => typeof node === 'string' ? node : node?.nodeId).filter(Boolean));
 
 const buildPathNodes = ({ pathId, metrics, earnedNodeIds, availableCategoryCount, meaningfulActivityToday }) => {
@@ -198,6 +203,9 @@ export const buildCareerViewModel = ({
   const commonTitleNode = highestCompletedNode(commonNodes);
   const travelerEarned = earnedNodeIds.has('common_traveler');
   const completedPathIds = Object.entries(paths).filter(([, nodes]) => nodes.length > 0 && nodes.every((node) => node.status === 'completed')).map(([pathId]) => pathId);
+  const earnedTitleKey = completedPathIds.length >= CAPSTONE_REQUIRED_PATHS
+    ? CAPSTONE_TITLE_KEY
+    : activeTitleNode?.titleKey || commonTitleNode?.titleKey || null;
   const nextAction = buildCareerNextAction({ commonNodes, pathNodes: activePathNodes, activePath: safeActivePath });
 
   return {
@@ -209,10 +217,16 @@ export const buildCareerViewModel = ({
     activePath: safeActivePath,
     currentNode,
     nextNode,
-    displayedTitle: activeTitleNode?.titleKey || (travelerEarned ? 'careerNode.traveler.title' : commonTitleNode?.titleKey || 'careerNode.traveler.title'),
-    // Profile identity intentionally reflects only the selected route. Common
-    // progress is still visible on the path itself, but never becomes a title.
-    profileTitle: activeTitleNode?.titleKey || 'careerNode.traveler.title',
+    // Only titles the reader has actually earned are shown. A brand-new reader
+    // has no title yet (null) and the UI shows a "start your path" state.
+    displayedTitle: earnedTitleKey,
+    profileTitle: earnedTitleKey,
+    capstone: {
+      titleKey: CAPSTONE_TITLE_KEY,
+      earned: completedPathIds.length >= CAPSTONE_REQUIRED_PATHS,
+      completedPaths: completedPathIds.length,
+      requiredPaths: CAPSTONE_REQUIRED_PATHS,
+    },
     nextAction,
     unseenPromotionCount: Math.max(0, Number(unseenPromotionCount) || 0),
     isPathSelectionDue: travelerEarned && !safeActivePath,

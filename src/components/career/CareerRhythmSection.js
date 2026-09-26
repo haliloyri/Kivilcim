@@ -7,7 +7,7 @@ import { t } from '../../locales/i18n';
 
 const HEATMAP_WEEKS = 8;
 
-const CareerRhythmSection = ({ totalReads, streak, longestStreak, todayReadsCount, isPremium, streakFreezeCredits, streakFreezeDates, onUseFreeze, onOpenPaywall }) => {
+const CareerRhythmSection = ({ weekLine, onShareWeek, shareWeekLabel, totalReads, streak, longestStreak, todayReadsCount, isPremium, streakFreezeCredits, streakFreezeDates, onUseFreeze, onOpenPaywall }) => {
   const { colors, isDark, lang } = useTheme();
   const { width } = useWindowDimensions();
   const [days, setDays] = useState([]);
@@ -62,10 +62,24 @@ const CareerRhythmSection = ({ totalReads, streak, longestStreak, todayReadsCoun
   return (
     <View style={styles.section}>
       <Text selectable style={[styles.title, { color: colors.text }]}>{t('career.rhythm.title', lang)}</Text>
-      <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t('career.rhythm.copy', lang)}</Text>
+      {weekLine ? (
+        <View style={[styles.weekPill, { backgroundColor: `${colors.primary}14` }]}>
+          <Ionicons name="calendar-outline" size={14} color={colors.primaryText} />
+          <Text selectable style={[styles.weekText, { color: colors.text }]}>{weekLine}</Text>
+        </View>
+      ) : null}
+      {weekLine && onShareWeek ? (
+        <TouchableOpacity accessibilityRole="button" accessibilityLabel={shareWeekLabel} onPress={onShareWeek} style={[styles.weekShare, { borderColor: colors.border }]}>
+          <Ionicons name="share-social-outline" size={15} color={colors.primaryText} />
+          <Text style={[styles.weekShareText, { color: colors.text }]}>{shareWeekLabel}</Text>
+        </TouchableOpacity>
+      ) : null}
+      {weekLine ? null : (
+        <Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t('career.rhythm.copy', lang)}</Text>
+      )}
       <View style={[styles.card, { borderColor: colors.border, backgroundColor: colors.background }]}> 
         <View style={styles.stats}>
-          <View style={styles.stat}><Text selectable style={[styles.value, { color: colors.primary }]}>{String(streak || 0)}</Text><Text selectable style={[styles.label, { color: colors.textSecondary }]}>{t('streakDays', lang)}</Text></View>
+          <View style={styles.stat}><Text selectable style={[styles.value, { color: colors.primaryText }]}>{String(streak || 0)}</Text><Text selectable style={[styles.label, { color: colors.textSecondary }]}>{t('streakDays', lang)}</Text></View>
           <View style={styles.stat}><Text selectable style={[styles.value, { color: colors.text }]}>{String(longestStreak || 0)}</Text><Text selectable style={[styles.label, { color: colors.textSecondary }]}>{t('longestStreak', lang)}</Text></View>
           <View style={styles.stat}><Text selectable style={[styles.value, { color: colors.text }]}>{String(activeDays)}</Text><Text selectable style={[styles.label, { color: colors.textSecondary }]}>{t('career.summary.activeDays', lang)}</Text></View>
         </View>
@@ -75,7 +89,7 @@ const CareerRhythmSection = ({ totalReads, streak, longestStreak, todayReadsCoun
         </ScrollView>
         <View style={styles.legend}><Text selectable style={[styles.legendText, { color: colors.textSecondary }]}>{t('career.rhythm.less', lang)}</Text>{[0, 1, 2, 3].map((level) => <View key={level} style={[styles.legendDot, { backgroundColor: colorFor({ level }) }]} />)}<Text selectable style={[styles.legendText, { color: colors.textSecondary }]}>{t('career.rhythm.more', lang)}</Text></View>
       </View>
-      {showFreeze ? <View style={[styles.freeze, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Ionicons name={protectedToday ? 'shield-checkmark-outline' : 'shield-outline'} size={20} color={colors.primary} /><View style={{ flex: 1 }}><Text selectable style={[styles.freezeTitle, { color: colors.text }]}>{t(protectedToday ? 'streakFreezeProtectedTitle' : 'streakFreezeTitle', lang)}</Text><Text selectable style={[styles.freezeCopy, { color: colors.textSecondary }]}>{t(protectedToday ? 'streakFreezeProtectedSub' : isPremium ? 'streakFreezePremiumSub' : 'streakFreezeLockedSub', lang).replace('{{credits}}', String(streakFreezeCredits || 0))}</Text></View>{!protectedToday ? <TouchableOpacity accessibilityRole="button" accessibilityLabel={t(isPremium ? 'streakFreezeUseCta' : 'streakFreezePremiumCta', lang)} onPress={freezeAction} style={[styles.freezeButton, { borderColor: colors.border }]}><Text selectable style={[styles.freezeButtonText, { color: colors.primary }]}>{t(isPremium ? 'streakFreezeUseCta' : 'streakFreezePremiumCta', lang)}</Text></TouchableOpacity> : null}</View> : null}
+      {showFreeze ? <View style={[styles.freeze, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Ionicons name={protectedToday ? 'shield-checkmark-outline' : 'shield-outline'} size={20} color={colors.primaryText} /><View style={{ flex: 1 }}><Text selectable style={[styles.freezeTitle, { color: colors.text }]}>{t(protectedToday ? 'streakFreezeProtectedTitle' : 'streakFreezeTitle', lang)}</Text><Text selectable style={[styles.freezeCopy, { color: colors.textSecondary }]}>{t(protectedToday ? 'streakFreezeProtectedSub' : isPremium ? 'streakFreezePremiumSub' : 'streakFreezeLockedSub', lang).replace('{{credits}}', String(streakFreezeCredits || 0))}</Text></View>{!protectedToday ? <TouchableOpacity accessibilityRole="button" accessibilityLabel={t(isPremium ? 'streakFreezeUseCta' : 'streakFreezePremiumCta', lang)} onPress={freezeAction} style={[styles.freezeButton, { borderColor: colors.border }]}><Text selectable style={[styles.freezeButtonText, { color: colors.primaryText }]}>{t(isPremium ? 'streakFreezeUseCta' : 'streakFreezePremiumCta', lang)}</Text></TouchableOpacity> : null}</View> : null}
     </View>
   );
 };
@@ -84,6 +98,10 @@ const styles = StyleSheet.create({
   section: { gap: 10 },
   title: { fontFamily: 'Inter_700Bold', fontSize: 17 },
   copy: { fontFamily: 'Inter_400Regular', fontSize: 14, lineHeight: 20 },
+  weekShare: { alignSelf: 'flex-start', minHeight: 40, borderWidth: 1, borderRadius: 999, paddingHorizontal: 14, flexDirection: 'row', alignItems: 'center', gap: 6 },
+  weekShareText: { fontFamily: 'Inter_600SemiBold', fontSize: 13 },
+  weekPill: { alignSelf: 'flex-start', minHeight: 32, borderRadius: 999, paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center', gap: 6 },
+  weekText: { fontFamily: 'Inter_500Medium', fontSize: 13, fontVariant: ['tabular-nums'] },
   card: { borderWidth: 1, borderRadius: 18, padding: 15, gap: 12 },
   stats: { flexDirection: 'row' },
   stat: { width: '33.333%', gap: 2 },

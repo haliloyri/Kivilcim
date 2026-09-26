@@ -208,7 +208,7 @@ const StorytellerOverlay = ({
                 {talkingPoints.map((point, idx) => (
                   <View key={idx} style={[styles.pointRow, idx > 0 && styles.pointDivider]}>
                     <View style={[styles.pointBadge, { backgroundColor: `${colors.primary}22` }]}>
-                      <Text style={[styles.pointBadgeText, { color: colors.primary }]}>{idx + 1}</Text>
+                      <Text style={[styles.pointBadgeText, { color: colors.primaryText }]}>{idx + 1}</Text>
                     </View>
                     <Text style={styles.pointText}>{point}</Text>
                   </View>
@@ -222,27 +222,27 @@ const StorytellerOverlay = ({
               <Animated.View style={[styles.timerCircle, { transform: [{ scale: pulseAnim }] },
                 timerDone && { borderColor: colors.primary },
               ]}>
-                <Text style={[styles.timerNum, timerDone && { color: colors.primary }]}>
+                <Text style={[styles.timerNum, timerDone && { color: colors.primaryText }]}>
                   {timerDone ? '✓' : String(timeLeft)}
                 </Text>
                 <Text style={styles.timerSec}>{timerDone ? '' : 's'}</Text>
               </Animated.View>
               {!timerActive && !timerDone && (
                 <TouchableOpacity style={styles.timerStartBtn} onPress={handleStartTimer}>
-                  <Ionicons name="play" size={16} color={colors.primary} />
-                  <Text style={[styles.timerBtnText, { color: colors.primary }]}>Başla</Text>
+                  <Ionicons name="play" size={16} color={colors.primaryText} />
+                  <Text style={[styles.timerBtnText, { color: colors.primaryText }]}>{t('mv_storyteller_start', lang)}</Text>
                 </TouchableOpacity>
               )}
               {timerActive && (
                 <TouchableOpacity style={styles.timerStartBtn} onPress={() => setTimerActive(false)}>
                   <Ionicons name="stop" size={16} color={colors.textSecondary} />
-                  <Text style={[styles.timerBtnText, { color: colors.textSecondary }]}>Dur</Text>
+                  <Text style={[styles.timerBtnText, { color: colors.textSecondary }]}>{t('mv_storyteller_stop', lang)}</Text>
                 </TouchableOpacity>
               )}
               {timerDone && (
                 <TouchableOpacity style={styles.timerStartBtn} onPress={handleRestart}>
                   <Ionicons name="refresh" size={16} color={colors.textSecondary} />
-                  <Text style={[styles.timerBtnText, { color: colors.textSecondary }]}>Tekrar</Text>
+                  <Text style={[styles.timerBtnText, { color: colors.textSecondary }]}>{t('mv_storyteller_again', lang)}</Text>
                 </TouchableOpacity>
               )}
             </View>
@@ -324,14 +324,14 @@ const buildStyles = (colors, layout, isDark) =>
       borderRadius: 999,
       borderWidth: 1,
       borderColor: colors.border,
-      backgroundColor: isDark ? colors.backgroundDark : '#F7F3EC',
+      backgroundColor: isDark ? colors.backgroundDark : colors.background,
     },
     contextChipText: {
       fontFamily: 'Inter_500Medium',
       fontSize: 12,
     },
     pointsCard: {
-      backgroundColor: isDark ? colors.backgroundDark : '#FAFAF8',
+      backgroundColor: isDark ? colors.backgroundDark : colors.cardBackground,
       borderRadius: layout.radius.card,
       borderWidth: 1,
       borderColor: colors.border,
@@ -412,7 +412,7 @@ const buildStyles = (colors, layout, isDark) =>
       borderRadius: 999,
       borderWidth: 1,
       borderColor: colors.border,
-      backgroundColor: isDark ? colors.backgroundDark : '#F7F3EC',
+      backgroundColor: isDark ? colors.backgroundDark : colors.background,
     },
     timerBtnText: {
       fontFamily: 'Inter_500Medium',

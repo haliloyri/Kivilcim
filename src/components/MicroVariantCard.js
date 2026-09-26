@@ -208,7 +208,7 @@ const MicroVariantCard = ({
               accessibilityRole="button"
               accessibilityLabel={t('mv_mark_used', lang)}
             >
-              {isMarkedUsed && <Ionicons name="checkmark" size={16} color={colors.primary} />}
+              {isMarkedUsed && <Ionicons name="checkmark" size={16} color={colors.primaryText} />}
               <Text style={[styles.actionBtnText, { color: isMarkedUsed ? colors.primary : accent }]}>
                 {t('mv_mark_used', lang)}
               </Text>

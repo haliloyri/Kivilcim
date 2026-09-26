@@ -15,9 +15,9 @@ const loadFlags = ({ careerPathV1, careerEventCaptureV1 } = {}) => {
 };
 
 describe('career feature flags', () => {
-  it('keeps the control experience active when build-time values are absent or malformed', () => {
-    expect(loadFlags()).toEqual({ careerPathV1: false, careerEventCaptureV1: false });
-    expect(loadFlags({ careerPathV1: '1', careerEventCaptureV1: 'yes' })).toEqual({ careerPathV1: false, careerEventCaptureV1: false });
+  it('shows Kıvılcım Yolu by default and only disables it on an explicit false', () => {
+    expect(loadFlags()).toEqual({ careerPathV1: true, careerEventCaptureV1: true });
+    expect(loadFlags({ careerPathV1: 'FALSE', careerEventCaptureV1: 'yes' })).toEqual({ careerPathV1: false, careerEventCaptureV1: false });
   });
 
   it('allows shadow capture separately and always captures when Yolum is visible', () => {

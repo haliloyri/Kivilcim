@@ -8,10 +8,38 @@ Bu rehber kodda zaten yazılı olan RevenueCat + AdMob + PostHog entegrasyonunu 
 
 | Şey | Değer | Nerede tanımlı |
 |---|---|---|
-| Aylık ürün ID | `spark_premium_monthly` | `app.json → extra.revenuecat.products.monthly` |
-| Yıllık ürün ID | `spark_premium_annual` | `app.json → extra.revenuecat.products.annual` |
-| Entitlement ID | `premium` | `app.json → extra.revenuecat.entitlementId` |
+| Aylık ürün ID | `monthly` | `app.json → extra.revenuecat.products.monthly` |
+| Yıllık ürün ID | `yearly` | `app.json → extra.revenuecat.products.yearly` |
+| Ömür boyu ürün ID | `lifetime` | `app.json → extra.revenuecat.products.lifetime` |
+| Entitlement ID | `Albor Pro` | `app.json → extra.revenuecat.entitlementId` |
 | Offering ID | `default` | `app.json → extra.revenuecat.offeringId` |
+
+> ⚠️ Bu rehberin önceki sürümü `spark_premium_monthly` / `spark_premium_annual`
+> ve `premium` yazıyordu — `app.json` ile uyuşmuyordu. **`app.json` kanonik
+> kaynaktır**; store ve RevenueCat tarafını yukarıdaki tabloya göre kur.
+> Ayrıntılı akış için `BILLING_SETUP.md`.
+
+**Fiyatlandırma — TL bazından otomatik dönüşüme bırakma.** Almanya/İspanya
+lansmanında TL bazlı dönüşüm ~€2/€10 üretir; hem neredeyse hiç kazandırmaz hem
+de düşük kalite sinyali verir. Ülke fiyatlarını **elle** gir (auto-convert
+kapalı):
+
+| Pazar | Yıllık | Aylık |
+|---|---|---|
+| DE / AT / NL | €49,99 | €8,99 |
+| ES / IT / PT | €39,99 | €7,99 |
+| US / UK / CA / AU | $49.99 | $9.99 |
+| TR | ₺ mevcut seviye | ₺ |
+
+**Free trial: 7 gün** (`monthly` ve `yearly` için Introductory Offer → Free).
+`lifetime`'a deneme yok. Paywall kopyası (4 dilde) denemenin var olduğunu
+varsayıyor — store'da tanımlamadan yayına çıkarsan bu kopya yanlış beyan olur.
+
+**Reklamlar AB'de kapalı.** `src/utils/adRegion.js` EEA + UK'de hiç reklam
+isteği yapmıyor: Google sertifikalı CMP (IAB TCF v2.2) olmadan bu bölgede reklam
+servis edilemez, ve premium içerik ürününde reklam fiyat gücünü düşürür.
+Aşağıdaki **4. AdMob** bölümü yalnızca TR ve AB dışı pazarlar için geçerlidir;
+AB'de reklam açılacaksa CMP + ATT aynı değişiklikte gelmek zorunda.
 
 > `BILLING_LIVE` otomatik olarak `true` olur (gerçek RevenueCat anahtarı girilince). `ANALYTICS_LIVE` ise gerçek `phc_...` PostHog anahtarı varsa `true`. Kodda elle bayrak değiştirmene gerek yok.
 
@@ -30,32 +58,32 @@ Canlı ortamda App Store / Google Play satın alımları RevenueCat üzerinden y
    - Uygulamanız → **App In-Purchase / Subscriptions**.
    - Bir **Subscription Group** oluştur (ör. "Albor Subscriptions").
    - 2 Ürün ekle:
-     - `spark_premium_monthly`: Aylık abonelik.
-     - `spark_premium_annual`: Yıllık abonelik.
+     - `monthly`: Aylık abonelik (auto-renewable).
+     - `yearly`: Yıllık abonelik (auto-renewable). Ayrıca `lifetime`: tek seferlik (non-consumable).
 2. **Google Play Console:**
    - Uygulamanız → **Monetize** → **Subscriptions**.
-   - Aynı ürün ID'leri ile (`spark_premium_monthly`, `spark_premium_annual`) abonelikleri tanımla.
+   - Aynı ürün ID'leri ile (`monthly`, `yearly`) abonelikleri ve `lifetime` in-app ürününü tanımla.
 
 ### Adım 1.3: RevenueCat Entitlement & Offering Yapılandırması
 1. RevenueCat Dashboard → **Entitlements** → **+ New entitlement**:
-   - Identifier: `premium`.
+   - Identifier: `Albor Pro`.
 2. Sol menü → **Subscriptions** → bir **Subscription Group** oluştur (ör. "Albor Premium").
 3. [ ] Grup içine 2 **auto-renewable** abonelik ekle — Product ID'ler birebir:
-   - [ ] `spark_premium_monthly` (1 ay)
-   - [ ] `spark_premium_annual` (1 yıl)
+   - [ ] `monthly` (1 ay)
+   - [ ] `yearly` (1 yıl)
 4. [ ] Her ürün için **fiyatları** ayarla. Apple'ın fiyat matrisinden bir baz fiyat seç; Apple diğer ülkelere otomatik bölgesel fiyat üretir (Madde 3'ün mağaza tarafı budur).
 5. [ ] Her ürüne yerelleştirilmiş ad/açıklama gir (tr/en/es/de).
-6. [ ] **Free trial (Madde 4):** her ürüne **Introductory Offer → Free** (ör. 3 gün) ekle.
+6. [ ] **Free trial:** `monthly` ve `yearly` için **Introductory Offer → Free, 7 gün** ekle (`lifetime`'a deneme yok).
 7. [ ] Ürünler "Ready to Submit" durumuna gelsin (ilk app review ile birlikte onaylanır).
 
 ## 2. Play Console — abonelikler (Android)
 
 1. [ ] Play Console → uygulamayı oluştur (paket: `com.kivilcim.app`).
 2. [ ] **Monetize → Products → Subscriptions** → 2 abonelik:
-   - [ ] `spark_premium_monthly` → bir **base plan** (aylık, auto-renewing)
-   - [ ] `spark_premium_annual` → bir **base plan** (yıllık, auto-renewing)
+   - [ ] `monthly` → bir **base plan** (aylık, auto-renewing)
+   - [ ] `yearly` → bir **base plan** (yıllık, auto-renewing)
 3. [ ] Base plan'lara fiyat ata (bölgeler için Play otomatik dönüştürür).
-4. [ ] **Free trial (Madde 4):** her base plan'a bir **offer → free trial** (ör. 3 gün) ekle.
+4. [ ] **Free trial:** her abonelik base plan'ına bir **offer → free trial (7 gün)** ekle.
 5. [ ] Abonelikleri **activate** et.
 
 > İpucu: iOS ve Android'de Product ID'leri **birebir aynı** tuttuğun için RevenueCat eşleştirmesi sorunsuz olur.
@@ -66,20 +94,21 @@ Canlı ortamda App Store / Google Play satın alımları RevenueCat üzerinden y
 2. [ ] **Project Settings → Apps**: iki uygulama ekle
    - [ ] Apple App Store app (App Store Connect shared secret / in-app purchase key'i iste).
    - [ ] Google Play app (Play service account JSON bağla).
-3. [ ] **Products**: `spark_premium_monthly` ve `spark_premium_annual`'ı her iki platformdan import et.
-4. [ ] **Entitlements**: `premium` adında entitlement oluştur → iki ürünü de ona bağla.
-5. [ ] **Offerings**: `default` adında offering oluştur → içine 2 **package** ekle:
-   - [ ] Monthly package → `spark_premium_monthly`
-   - [ ] Annual package → `spark_premium_annual`
+3. [ ] **Products**: `monthly`, `yearly` ve `lifetime`'ı her iki platformdan import et.
+4. [ ] **Entitlements**: `Albor Pro` adında entitlement oluştur → üç ürünü de ona bağla.
+5. [ ] **Offerings**: `default` adında offering oluştur → içine 3 **package** ekle:
+   - [ ] Monthly package → `monthly`
+   - [ ] Annual package → `yearly`
+   - [ ] Lifetime package → `lifetime`
 6. [ ] **API Keys → Public SDK keys**: iOS anahtarı `appl_...`, Android anahtarı `goog_...` ile başlar. Bunları kopyala.
 7. [ ] `app.json` içine yapıştır:
    ```json
    "revenuecat": {
      "iosApiKey": "appl_XXXXXXXXXXXXXXXX",
      "androidApiKey": "goog_XXXXXXXXXXXXXXXX",
-     "entitlementId": "premium",
+     "entitlementId": "Albor Pro",
      "offeringId": "default",
-     "products": { "monthly": "spark_premium_monthly", "annual": "spark_premium_annual" }
+     "products": { "monthly": "monthly", "yearly": "yearly", "lifetime": "lifetime" }
    }
    ```
    > Gerçek anahtar girilince `BILLING_LIVE` otomatik `true` olur; paywall canlı yerel fiyatları (`priceString`) gösterir.
@@ -126,9 +155,9 @@ RevenueCat, AdMob ve PostHog native modüldür — **Expo Go'da çalışmaz**.
 
 ## Kabul kriterleri (bittiğinde işaretle)
 
-- [ ] **Madde 2:** Test cihazında gerçek (sandbox) satın alma başarılı + gerçek reklam gösterimi doğrulandı.
-- [ ] **Madde 3:** Farklı App Store bölgesinde yerel para/fiyat görünüyor (örn. ABD'de `$…`, Almanya'da `€…`).
-- [ ] **Madde 4:** 3 günlük free trial tanımlı; trial→ücretli dönüşümü analytics'te izlenebiliyor.
+- [ ] **Madde 2:** Test cihazında gerçek (sandbox) satın alma başarılı; `paywall_purchase_succeeded` sayısal `revenue` + ISO `currency` + `product_id` taşıyor. `test_` anahtarla ise satın alma **Premium açmıyor** ve success eventi **atmıyor**.
+- [ ] **Madde 3:** DE `49,99 €`, ES `39,99 €`, US `$49.99`, TR `₺…` — hiçbir yerde sabit ₺ yok.
+- [ ] **Madde 4:** 7 günlük free trial tanımlı; `trial_started` → `trial_converted` analytics'te akıyor.
 - [ ] **Madde 1:** 8 metrik PostHog dashboard'unda görünüyor (onboarding tamamlama, ilk okuma, 3/7 gün retention, paywall→premium funnel).
 
 ## Sıra (en hızlı gelir yolu)

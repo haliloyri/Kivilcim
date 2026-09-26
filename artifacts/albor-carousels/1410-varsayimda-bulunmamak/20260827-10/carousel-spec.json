@@ -1,0 +1,157 @@
+{
+  "category": "Felsefe",
+  "source": {
+    "book": "Dört Anlaşma",
+    "author": "Don Miguel Ruiz"
+  },
+  "slides": [
+    {
+      "main_lines": [
+        "Tek bir istek bile",
+        "söylenmemişti.",
+        "Yine de biri öfkeliydi.",
+        "Daha da tuhafı:",
+        "Diğeri bunu bilmeliydi."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "illustration"
+      },
+      "art_path": "opening-illustration.png",
+      "art_crop": [0.14, 0.27, 1.0, 1.0],
+      "art_box": [100, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Adam eve geldi.",
+        "Eşi öfkeliydi.",
+        "Ama ne istediğini",
+        "ona hiç söylememişti.",
+        "Adam nedenini bilmiyordu."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "illustration"
+      },
+      "art_crop": [0.28, 0.28, 1.0, 1.0],
+      "art_box": [250, 770, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Kadın",
+        "eşinin onu çok iyi tanıdığına",
+        "inanıyordu.",
+        "Bu yüzden isteğini",
+        "zaten bilmesini bekledi."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "zaten bilmesini",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.24, 0.28, 1.0, 1.0],
+      "art_box": [340, 775, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Ama adam",
+        "ne beklendiğini bilmiyordu.",
+        "Söylenmeyen beklenti",
+        "karşılanmayınca,",
+        "çatışma büyüdü."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "çatışma büyüdü.",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.28, 0.28, 1.0, 1.0],
+      "art_box": [245, 775, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "İlk bakışta sorun",
+        "adamın anlayamamasıydı.",
+        "Oysa gerilimi büyüten",
+        "söylenmeyen bir istek",
+        "ve zihin okuma beklentisiydi."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "zihin okuma",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.24, 0.28, 1.0, 1.0],
+      "art_box": [300, 805, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Ruiz burada",
+        "iki yolu ayırdı:",
+        "cevabı varsaymak",
+        "ya da bilmediğini kabul edip",
+        "açıkça sormak."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "açıkça sormak.",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.28, 0.28, 1.0, 1.0],
+      "art_box": [260, 780, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Bugün bir yorumunu seç.",
+        "Onu hemen doğru sayma.",
+        "Küçük bir soruya çevir:",
+        "Bunu doğru mu anladım?",
+        "Sonra cevabı dinle."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "Bunu doğru mu anladım?",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.24, 0.28, 1.0, 1.0],
+      "art_box": [270, 790, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Söylenmeyen bir beklenti",
+        "bir ilişkini nasıl etkiledi?",
+        "Sonra ne oldu?",
+        "Bugün neyi farklı yapardın?"
+      ],
+      "support_lines": [
+        "Deneyimini yorumlarda anlat.",
+        "Kaynak: Dört Anlaşma — Don Miguel Ruiz",
+        "Albor’da tam hikâyeyi oku."
+      ],
+      "accent_focus": {
+        "block": "illustration"
+      },
+      "art_path": "ending-illustration.png",
+      "art_crop": [0.0, 0.35, 1.0, 1.0],
+      "art_box": [160, 785, 1080, 1350],
+      "art_opacity": 0.98
+    }
+  ]
+}

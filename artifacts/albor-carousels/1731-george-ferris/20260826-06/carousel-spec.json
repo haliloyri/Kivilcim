@@ -1,0 +1,155 @@
+{
+  "category": "Tarih",
+  "source": {
+    "book": "The Devil in the White City",
+    "author": "Erik Larson"
+  },
+  "slides": [
+    {
+      "main_lines": [
+        "Sana “bu olmaz” denilen",
+        "o fikri hatırla.",
+        "George Ferris de bunu duydu.",
+        "Daha çok konuşmadı;",
+        "daha güçlü kanıtla geri döndü."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 0,
+        "text": "“bu olmaz”",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.0, 0.28, 1.0, 1.0],
+      "art_box": [230, 770, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Chicago, 1893 Dünya Fuarı’na",
+        "hazırlanıyordu.",
+        "Yöneticiler Eiffel Kulesi’ne rakip,",
+        "ama onun kopyası olmayan",
+        "bir simge arıyordu."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "illustration"
+      },
+      "art_crop": [0.55, 0.25, 1.0, 0.88],
+      "art_box": [300, 760, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "İtirazlar ağırdı:",
+        "Zemin bu yükü taşımazdı.",
+        "Dev aks güvenli değildi.",
+        "Üstelik kimse projeye",
+        "para vermek istemiyordu."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 0,
+        "text": "İtirazlar ağırdı:",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.0, 0.55, 0.66, 1.0],
+      "art_box": [250, 780, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Ferris bu kez destekle döndü.",
+        "Yanında onay veren mühendisler",
+        "ve para koyan yatırımcılar vardı.",
+        "Plan kabul edildi.",
+        "Tekerlek fuarın simgesi oldu."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "illustration"
+      },
+      "art_crop": [0.0, 0.4, 1.0, 1.0],
+      "art_box": [240, 760, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Dışarıdan bakınca",
+        "kazanan şey Ferris’in inadıydı.",
+        "Oysa fikri ilerleten",
+        "daha yüksek bir ses değil,",
+        "daha güçlü kanıttı."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "daha güçlü kanıttı.",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.05, 0.55, 0.7, 1.0],
+      "art_box": [260, 780, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Bir yaklaşım",
+        "insanlardan inanç ister.",
+        "Diğeri, korktukları riski",
+        "görünür bir kanıtla küçültür.",
+        "Ferris’in yaptığı buydu."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "görünür bir kanıtla"
+      },
+      "art_crop": [0.52, 0.38, 1.0, 0.9],
+      "art_box": [330, 780, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Bugün senden şüphe duyulan",
+        "tek bir fikri seç.",
+        "En büyük itirazı yaz.",
+        "Onu sınayacak küçük bir kanıt üret.",
+        "İşe yaramazsa geri dön."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "küçük bir kanıt"
+      },
+      "art_crop": [0.0, 0.59, 0.65, 1.0],
+      "art_box": [240, 790, 1080, 1350],
+      "art_opacity": 0.94
+    },
+    {
+      "main_lines": [
+        "Senin hayatında",
+        "“bu olmaz” denilen hangi fikir",
+        "küçük bir kanıtla yön değiştirdi?",
+        "O anı yorumlarda anlat."
+      ],
+      "support_lines": [
+        "Kaynak: The Devil in the White City — Erik Larson",
+        "Albor’da tam hikâyeyi oku."
+      ],
+      "accent_focus": {
+        "block": "main",
+        "line": 2,
+        "text": "küçük bir kanıtla",
+        "font_style": "bold_italic"
+      },
+      "art_crop": [0.0, 0.5, 0.62, 1.0],
+      "art_box": [330, 810, 1080, 1350],
+      "art_opacity": 0.94
+    }
+  ]
+}

@@ -67,13 +67,13 @@ const CareerPathSelectionScreen = ({ navigation }) => {
       </ImageBackground>
 
       <View style={[styles.eligibility, { backgroundColor: `${colors.primary}12`, borderColor: `${colors.primary}42` }]}>
-        <Ionicons name="information-circle-outline" size={19} color={colors.primary} />
+        <Ionicons name="information-circle-outline" size={19} color={colors.primaryText} />
         <Text selectable style={[styles.eligibilityCopy, { color: colors.textSecondary }]}>{t('career.selection.eligibility', lang)}</Text>
       </View>
 
       {recommendedPathId ? (
         <View style={[styles.recommendation, { backgroundColor: `${colors.primary}14`, borderColor: `${colors.primary}52` }]}>
-          <Ionicons name="sparkles-outline" size={18} color={colors.primary} />
+          <Ionicons name="sparkles-outline" size={18} color={colors.primaryText} />
           <View style={{ flex: 1 }}>
             <Text selectable style={[styles.recommendationTitle, { color: colors.text }]}>{t('career.selection.recommendationTitle', lang)}</Text>
             <Text selectable style={[styles.recommendationCopy, { color: colors.textSecondary }]}>{t(recommendation.reasonKey, lang)}</Text>
@@ -117,7 +117,7 @@ const CareerPathSelectionScreen = ({ navigation }) => {
                 </View>
               </View>
 
-              {isRecommended ? <Text selectable style={[styles.recommendedLabel, { color: colors.primary }]}>{t('career.selection.recommended', lang)}</Text> : null}
+              {isRecommended ? <Text selectable style={[styles.recommendedLabel, { color: colors.primaryText }]}>{t('career.selection.recommended', lang)}</Text> : null}
 
               <View style={[styles.detailBlock, { borderColor: colors.border }]}>
                 <Text selectable style={[styles.detailLabel, { color: colors.textSecondary }]}>{t('career.selection.behaviorLabel', lang)}</Text>
@@ -129,7 +129,7 @@ const CareerPathSelectionScreen = ({ navigation }) => {
                 <View style={styles.rankList}>
                   {nodes.map((node, index) => (
                     <View key={node.id} style={[styles.rankPill, { backgroundColor: isDark ? `${colors.border}6E` : colors.backgroundDark }]}>
-                      <Text selectable style={[styles.rankNumber, { color: colors.primary }]}>{index + 1}</Text>
+                      <Text selectable style={[styles.rankNumber, { color: colors.primaryText }]}>{index + 1}</Text>
                       <Text selectable style={[styles.rankName, { color: colors.text }]}>{t(node.titleKey, lang)}</Text>
                     </View>
                   ))}
@@ -137,7 +137,7 @@ const CareerPathSelectionScreen = ({ navigation }) => {
               </View>
 
               <View style={[styles.toolkit, { backgroundColor: `${colors.primary}10` }]}>
-                <Ionicons name="construct-outline" size={16} color={colors.primary} />
+                <Ionicons name="construct-outline" size={16} color={colors.primaryText} />
                 <Text selectable style={[styles.toolkitCopy, { color: colors.textSecondary }]}>{t(`careerPath.${path.id}.toolkit`, lang)}</Text>
               </View>
             </TouchableOpacity>

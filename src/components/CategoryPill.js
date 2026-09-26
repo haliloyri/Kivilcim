@@ -2,7 +2,8 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { getCategoryPillIcon, getCategoryTheme } from '../utils/categoryImages';
-import { colors as themeColors, readableTextOn, darkenHex } from '../theme/theme';
+import { readableTextOn, darkenHex } from '../theme/theme';
+import { useTheme } from '../context/ThemeContext';
 
 const CategoryPill = ({
   label,
@@ -18,6 +19,7 @@ const CategoryPill = ({
   showIcon = true,
   useCategoryTextColor = false,
 }) => {
+  const { colors: themePalette } = useTheme();
   const displayLabel = label || categoryName || '';
   const pillIcon = showIcon
     ? getCategoryPillIcon(categoryName || label, isDark)
@@ -60,15 +62,14 @@ const CategoryPill = ({
     ? (onActiveColor === '#FFFFFF' ? 'rgba(255,255,255,0.20)' : 'rgba(0,0,0,0.12)')
     : 'transparent';
 
-  // Vertical (home category) cards: selected card fills with the category's
-  // own Ana Renk (resolvedActiveColor); unselected cards use that same
-  // category's Arka Plan tint as background and Detay/İkon tone as text —
-  // per the "Kategori Görselleri Renk Kodları" reference sheet, so every
-  // card (active or not) reads in its own category colour.
-  const themePalette = isDark ? themeColors.dark : themeColors.light;
-  const verticalBackground = active ? resolvedActiveColor : (catTheme.backgroundColor || themePalette.cardBackground);
-  const verticalBorder = active ? resolvedActiveColor : `${catTheme.borderColor || themePalette.border}40`;
-  const verticalTextColor = active ? onActiveColor : (catTheme.borderColor || themePalette.text);
+  // Vertical (home category) cards: only the selected card carries colour
+  // (filled with the category's own Ana Renk). Unselected cards stay neutral —
+  // paper surface, hairline border, secondary text — and keep just their
+  // coloured icon, so a row of categories doesn't compete with the page's
+  // primary action.
+  const verticalBackground = active ? resolvedActiveColor : (isDark ? themePalette.cardBackground : themePalette.surfaceContainerLowest);
+  const verticalBorder = active ? resolvedActiveColor : themePalette.border;
+  const verticalTextColor = active ? onActiveColor : themePalette.textSecondary;
 
   if (vertical) {
     return (
@@ -76,6 +77,9 @@ const CategoryPill = ({
         activeOpacity={0.82}
         disabled={disabled}
         onPress={onPress}
+        accessibilityRole="button"
+        accessibilityState={{ selected: active }}
+        accessibilityLabel={displayLabel}
         style={[
           styles.verticalBase,
           { borderColor: verticalBorder, backgroundColor: verticalBackground },

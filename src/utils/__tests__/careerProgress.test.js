@@ -34,13 +34,30 @@ describe('career view model', () => {
     expect(viewModel.profileTitle).toBe('careerNode.traveler.title');
   });
 
-  it('uses only the active route for the profile title', () => {
+  it('uses the highest earned title and never shows an unearned one', () => {
     const viewModel = buildCareerViewModel({
       metrics: {},
       activePath: 'exploration',
       earnedNodes: ['common_first_spark', 'common_curious', 'common_traveler'],
     });
     expect(viewModel.profileTitle).toBe('careerNode.traveler.title');
+    const fresh = buildCareerViewModel({ metrics: {} });
+    expect(fresh.displayedTitle).toBeNull();
+    expect(fresh.profileTitle).toBeNull();
+    const spark = buildCareerViewModel({ metrics: {}, earnedNodes: ['common_first_spark'] });
+    expect(spark.displayedTitle).toBe('careerNode.firstSpark.title');
+  });
+
+  it('awards the derived summit title after two completed paths', () => {
+    const viewModel = buildCareerViewModel({
+      metrics: {},
+      activePath: 'depth',
+      earnedNodes: ['common_first_spark', 'common_curious', 'common_traveler',
+        'exploration_route_seeker', 'exploration_horizon_traveler', 'exploration_wisdom_cartographer',
+        'depth_thinker', 'depth_synthesizer', 'depth_insight_curator'],
+    });
+    expect(viewModel.capstone.earned).toBe(true);
+    expect(viewModel.displayedTitle).toBe('careerTitle.renaissance');
   });
 
   it('uses an effective category target when the inventory is smaller', () => {

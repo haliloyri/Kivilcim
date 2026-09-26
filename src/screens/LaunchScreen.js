@@ -1,9 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { View, StyleSheet, ActivityIndicator, Image, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, Text, TouchableOpacity } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
+import AnimatedLogo, { LOGO_BACKGROUND } from '../components/AnimatedLogo';
 
-const LAUNCH_MARK = require('../../assets/splash/albor-splash-mark.png');
+// Must match expo-splash-screen imageWidth in app.json so the native splash
+// (book only) hands over seamlessly to the animated mark.
+const LOGO_SIZE = 200;
 const FEEDBACK_DELAY_MS = 1500;
 
 const LaunchScreen = ({ status = 'stories', errorMessage = null, onRetry }) => {
@@ -31,32 +34,27 @@ const LaunchScreen = ({ status = 'stories', errorMessage = null, onRetry }) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Image
-          source={LAUNCH_MARK}
-          style={styles.launchMark}
-          resizeMode="contain"
-          accessible={false}
-        />
+        <AnimatedLogo size={LOGO_SIZE} />
       </View>
 
       {showFeedback ? (
         <View style={styles.feedbackContainer}>
-          {showRetry ? null : <ActivityIndicator size="small" color={colors.primary || '#FFD700'} />}
+          {showRetry ? null : <ActivityIndicator size="small" color={colors.primary || '#C89B3C'} />}
           <Text
-            style={[styles.statusText, { color: colors.textSecondary || '#D8D1C7' }]}
+            style={[styles.statusText, { color: 'rgba(253, 239, 208, 0.72)' }]}
             accessibilityLiveRegion="polite"
           >
             {phaseMessage}
           </Text>
           {showRetry ? (
             <TouchableOpacity
-              style={[styles.retryButton, { backgroundColor: colors.primary || '#FFD700' }]}
+              style={[styles.retryButton, { backgroundColor: colors.primary || '#C89B3C' }]}
               onPress={onRetry}
               activeOpacity={0.85}
               accessibilityRole="button"
               accessibilityLabel={t('launch_try_again', lang)}
             >
-              <Text style={[styles.retryButtonText, { color: colors.onPrimary || '#131311' }]}>
+              <Text style={[styles.retryButtonText, { color: colors.onPrimary || '#FFFFFF' }]}>
                 {t('launch_try_again', lang)}
               </Text>
             </TouchableOpacity>
@@ -70,7 +68,7 @@ const LaunchScreen = ({ status = 'stories', errorMessage = null, onRetry }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#131311',
+    backgroundColor: LOGO_BACKGROUND,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -78,10 +76,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  launchMark: {
-    width: 184,
-    height: 184,
   },
   feedbackContainer: {
     position: 'absolute',

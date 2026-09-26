@@ -1,11 +1,19 @@
-import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from './ThemeContext';
 import { recordRead, getTotalReads, getStreak, getLongestStreak, getReadsPerCategory, getReadCountsByStory, recordStreakFreeze, getStreakFreezes, clearStreakFreezes, clearUserReads } from '../db/db';
 import { checkBadges } from '../utils/badges';
 import { scheduleDailyNotifications } from '../utils/notifications';
 import { ANALYTICS_EVENTS, trackEvent, setAnalyticsContext } from '../utils/analytics';
-import { BILLING_LIVE, purchasePackage, restorePurchases, getOfferingPackages, checkEntitlement } from '../services/billing';
+import { maybeRequestReview } from '../utils/review';
+import {
+  BILLING_LIVE,
+  purchasePackage,
+  restorePurchases,
+  getOfferingPackages,
+  fetchEntitlement,
+  addCustomerInfoListener,
+} from '../services/billing';
 import {
   SUPABASE_LIVE,
   getCurrentUser,
@@ -18,6 +26,15 @@ import {
 } from '../services/supabase';
 import { enqueueAndSync } from '../services/offlineQueue';
 import { FEATURE_FLAGS } from '../config/featureFlags';
+import { toLocalDay } from '../utils/localDate';
+import {
+  FREE_DAILY_STORY_QUOTA,
+  normalizeRecord as normalizeFreeQuota,
+  quotaUsed as freeQuotaUsedFor,
+  quotaRemaining as freeQuotaRemainingFor,
+  isUnlocked as isFreeUnlocked,
+  spend as spendFreeQuota,
+} from '../utils/freeQuota';
 import { clearCareerData } from '../db/userDb';
 import { notifyCareerDataChanged, recordCareerApplication, recordCareerInsightSaved, recordCareerStoryCompletion } from '../services/careerEvents';
 import { migrateLegacyCareerPath } from '../services/migrateCareerPath';
@@ -34,12 +51,39 @@ const COMPLETED_STORIES_STORAGE_KEY = '@kivilcim_completed_stories';
 const VARIANT_USAGE_STORAGE_KEY = '@kivilcim_variant_usage';
 const CAREER_TAKEAWAYS_STORAGE_KEY = '@kivilcim_career_takeaways';
 const CAREER_SPARK_PACKAGE_STORAGE_KEY = '@kivilcim_career_spark_package';
+// Library "Kaldığın yerden": stories the reader scrolled into but hasn't
+// finished yet. [{ id, progress (0..1), updatedAt }], most recent first.
+const IN_PROGRESS_STORAGE_KEY = '@albor_in_progress_stories';
+const IN_PROGRESS_MAX = 12;
 const STREAK_FREEZE_CREDITS_STORAGE_KEY = '@kivilcim_streak_freeze_credits';
+// Tracks the last calendar month ('YYYY-MM') a subscriber was granted their
+// monthly streak-freeze credit, so the credit renews once a month instead of
+// only once at the moment Premium first activates.
+const STREAK_FREEZE_LAST_GRANT_MONTH_KEY = '@albor_streak_freeze_last_grant_month';
+const STREAK_FREEZE_MAX_CREDITS = 3;
+// Full entitlement snapshot (product, expiry, renewal intent, trial state).
+// `@kivilcim_premium` stays as the boolean so existing installs keep Premium.
+const ENTITLEMENT_STORAGE_KEY = '@albor_entitlement';
+// A temporary, non-purchase Premium window granted by the referral reward
+// (see claimReferral in supabase.js) — stored separately from the real
+// subscription entitlement above so it can never be mistaken for one.
+// Value is an ISO timestamp string, or null.
+const PREMIUM_BONUS_STORAGE_KEY = '@albor_premium_bonus_until';
+
+// The free tier's real daily cap.
+//
+// Stored as { day: 'YYYY-MM-DD', storyIds: [...] } rather than a bare number so
+// that (a) it resets on the local calendar day, and (b) re-opening a story the
+// user already spent quota on today doesn't spend it twice. Without a persisted,
+// date-keyed record the "3 free stories" limit is not a limit at all — reading
+// them just moves them out of the candidate pool and three more become free.
+const FREE_READS_STORAGE_KEY = '@albor_free_reads';
 const STORY_COLLECTION_IDS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals'];
 const DEFAULT_STORY_COLLECTIONS = ['new'];
 const EMPTY_PREFERENCES = {
   categories: [], time: null, reminderWindow: 'evening', reminderHour: 21,
   reminderWindows: ['evening'], storyVersion: 2, storyCollections: DEFAULT_STORY_COLLECTIONS,
+  remindersEnabled: true,
 };
 const EMPTY_USER_PROFILE = { displayName: null, email: null };
 const EMPTY_FAVORITE_COLLECTIONS = { saved_for_later: [] };
@@ -193,7 +237,27 @@ const normalizePreferences = (storedPreferences) => {
     reminderWindows,
     storyVersion: selectedStoryCollections.includes('new') ? 2 : 1,
     storyCollections: selectedStoryCollections,
+    // Master reminder switch (Profile). Missing = on, so existing users keep reminders.
+    remindersEnabled: storedPreferences.remindersEnabled !== false,
   };
+};
+
+// Grants one streak-freeze credit per calendar month to an active subscriber,
+// capped at STREAK_FREEZE_MAX_CREDITS. Idempotent within a month: calling it
+// repeatedly (e.g. on every app launch) only ever grants once per month key.
+const grantMonthlyStreakFreezeCredit = async (currentCredits) => {
+  const monthKey = new Date().toISOString().slice(0, 7); // 'YYYY-MM'
+  try {
+    const lastGrantMonth = await AsyncStorage.getItem(STREAK_FREEZE_LAST_GRANT_MONTH_KEY);
+    if (lastGrantMonth === monthKey) return currentCredits;
+    const next = Math.min(STREAK_FREEZE_MAX_CREDITS, Math.max(currentCredits, 0) + 1);
+    await AsyncStorage.setItem(STREAK_FREEZE_LAST_GRANT_MONTH_KEY, monthKey);
+    await AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(next));
+    return next;
+  } catch (e) {
+    console.warn('[streak freeze] monthly grant failed:', e?.message);
+    return currentCredits;
+  }
 };
 
 const normalizeUserProfile = (storedProfile) => {
@@ -239,10 +303,30 @@ export const UserDataProvider = ({ children }) => {
   const [userProfile, setUserProfile] = useState(EMPTY_USER_PROFILE);
   const [isOnboarded, setIsOnboarded] = useState(false);
   const [hasPaidPremium, setHasPaidPremium] = useState(false);
+  // Null when Premium came from a legacy boolean-only install or a dev
+  // activation; otherwise the store's own view of the subscription.
+  const [entitlement, setEntitlement] = useState(null);
+
+  // Mirrors of the two values above. The customer-info listener needs to compare
+  // the incoming state against the previous one, but must not re-subscribe every
+  // time Premium changes — so it reads the latest values through these refs.
+  // { day, storyIds } — see FREE_READS_STORAGE_KEY.
+  const [freeReadsToday, setFreeReadsToday] = useState({ day: null, storyIds: [] });
+
+  const hasPaidPremiumRef = useRef(false);
+  const entitlementRef = useRef(null);
+  useEffect(() => { hasPaidPremiumRef.current = hasPaidPremium; }, [hasPaidPremium]);
+  useEffect(() => { entitlementRef.current = entitlement; }, [entitlement]);
+
+  // Referral reward window (see applyReferralBonus / claimReferral). Distinct
+  // from `hasPaidPremium` on purpose — it's a capped, server-granted
+  // promotional unlock, never the "free premium" shortcut removed in Faz 0.
+  const [premiumBonusUntil, setPremiumBonusUntil] = useState(null);
 
   const isPremium = useMemo(() => {
-    return hasPaidPremium;
-  }, [hasPaidPremium]);
+    if (hasPaidPremium) return true;
+    return !!premiumBonusUntil && Date.now() < premiumBonusUntil;
+  }, [hasPaidPremium, premiumBonusUntil]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Segment every analytics event by subscription + onboarding state so the
@@ -272,7 +356,10 @@ export const UserDataProvider = ({ children }) => {
   const [variantUsage, setVariantUsage] = useState([]);
   const [careerTakeaways, setCareerTakeaways] = useState({});
   const [careerSparkPackage, setCareerSparkPackage] = useState([]);
+  const [inProgressStories, setInProgressStories] = useState([]);
   const [streakFreezeCredits, setStreakFreezeCredits] = useState(0);
+  const streakFreezeCreditsRef = useRef(0);
+  useEffect(() => { streakFreezeCreditsRef.current = streakFreezeCredits; }, [streakFreezeCredits]);
   const [streakFreezeDates, setStreakFreezeDates] = useState([]);
   const [loadErrorMsg, setLoadErrorMsg] = useState(null);
   const [loadAttempt, setLoadAttempt] = useState(0);
@@ -282,6 +369,22 @@ export const UserDataProvider = ({ children }) => {
     const safetyTimer = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(safetyTimer);
   }, [loadAttempt]);
+
+  // Store-review prompt at another positive moment: a completed 3-day streak.
+  // Fires once per streak crossing (not on every read while streak stays >=3);
+  // `maybeRequestReview` itself caps this to once a year regardless.
+  const reviewStreakPromptedRef = useRef(false);
+  useEffect(() => {
+    if (isLoading) return;
+    if (streak >= 3) {
+      if (!reviewStreakPromptedRef.current) {
+        reviewStreakPromptedRef.current = true;
+        maybeRequestReview({ isPremium, totalReads }).catch(() => {});
+      }
+    } else {
+      reviewStreakPromptedRef.current = false;
+    }
+  }, [isLoading, streak, isPremium, totalReads]);
 
   // Fire-and-forget helper for the local→server double-write phase (see
   // ToServerTasks.md §4/§5). Every mutation keeps writing to SQLite/
@@ -397,6 +500,9 @@ export const UserDataProvider = ({ children }) => {
         const storedCollections = await AsyncStorage.getItem(FAVORITE_COLLECTIONS_STORAGE_KEY);
         const storedCompletedStories = await AsyncStorage.getItem(COMPLETED_STORIES_STORAGE_KEY);
         const storedStreakFreezeCredits = await AsyncStorage.getItem(STREAK_FREEZE_CREDITS_STORAGE_KEY);
+        const storedEntitlement = await AsyncStorage.getItem(ENTITLEMENT_STORAGE_KEY);
+        const storedFreeReads = await AsyncStorage.getItem(FREE_READS_STORAGE_KEY);
+        const storedPremiumBonusUntil = await AsyncStorage.getItem(PREMIUM_BONUS_STORAGE_KEY);
 
         const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
         if (storedFavorites) setFavorites(parsedFavorites);
@@ -412,11 +518,29 @@ export const UserDataProvider = ({ children }) => {
         }
         if (storedOnboarding) setIsOnboarded(JSON.parse(storedOnboarding));
         if (storedPremium) setHasPaidPremium(JSON.parse(storedPremium));
-        if (storedStreakFreezeCredits) {
-          setStreakFreezeCredits(Math.max(0, Number(JSON.parse(storedStreakFreezeCredits)) || 0));
-        } else if (storedPremium && JSON.parse(storedPremium)) {
-          setStreakFreezeCredits(1);
-          await AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(1));
+        if (storedEntitlement) {
+          try { setEntitlement(JSON.parse(storedEntitlement)); } catch (e) { /* corrupt cache, ignore */ }
+        }
+        if (storedFreeReads) {
+          try {
+            setFreeReadsToday(normalizeFreeQuota(JSON.parse(storedFreeReads)));
+          } catch (e) { /* corrupt cache, ignore */ }
+        }
+        if (storedPremiumBonusUntil) {
+          const parsedBonusUntil = Number(storedPremiumBonusUntil);
+          if (Number.isFinite(parsedBonusUntil) && parsedBonusUntil > Date.now()) {
+            setPremiumBonusUntil(parsedBonusUntil);
+          } else {
+            await AsyncStorage.removeItem(PREMIUM_BONUS_STORAGE_KEY);
+          }
+        }
+        const parsedStreakFreezeCredits = storedStreakFreezeCredits
+          ? Math.max(0, Number(JSON.parse(storedStreakFreezeCredits)) || 0)
+          : 0;
+        if (storedPremium && JSON.parse(storedPremium)) {
+          setStreakFreezeCredits(await grantMonthlyStreakFreezeCredit(parsedStreakFreezeCredits));
+        } else if (storedStreakFreezeCredits) {
+          setStreakFreezeCredits(parsedStreakFreezeCredits);
         }
         if (storedShareCount) setShareCount(JSON.parse(storedShareCount));
         const parsedCollections = storedCollections ? JSON.parse(storedCollections) : EMPTY_FAVORITE_COLLECTIONS;
@@ -459,6 +583,13 @@ export const UserDataProvider = ({ children }) => {
               metadata: { reference: takeaway?.reference || 'takeaway' },
             }).catch(() => {});
           });
+        }
+        const storedInProgress = await AsyncStorage.getItem(IN_PROGRESS_STORAGE_KEY);
+        if (storedInProgress) {
+          const parsed = JSON.parse(storedInProgress);
+          setInProgressStories(Array.isArray(parsed)
+            ? parsed.filter((e) => e && e.id).map((e) => ({ id: String(e.id), progress: Number(e.progress) || 0, updatedAt: e.updatedAt || null }))
+            : []);
         }
         const storedSparkPackage = await AsyncStorage.getItem(CAREER_SPARK_PACKAGE_STORAGE_KEY);
         if (storedSparkPackage) {
@@ -674,6 +805,7 @@ export const UserDataProvider = ({ children }) => {
         AsyncStorage.setItem('@kivilcim_history', JSON.stringify(newHist));
         return newHist;
       });
+      clearStoryProgress(storyId);
 
       // İstatistikleri güncelle — recordRead() above already awaited the
       // SQLite write, so read the fresh counts straight from local (SQLite
@@ -701,6 +833,36 @@ export const UserDataProvider = ({ children }) => {
   const isStoryCompleted = useCallback((storyId) => {
     return completedStories.includes(String(storyId));
   }, [completedStories]);
+
+  // Library "Kaldığın yerden": remember how far the reader got in a story they
+  // haven't finished. Only ever moves forward; a finished read (addToHistory)
+  // clears the entry.
+  const updateStoryProgress = useCallback((storyId, progress) => {
+    const strId = String(storyId || '');
+    if (!strId) return;
+    const ratio = Math.max(0, Math.min(1, Number(progress) || 0));
+    setInProgressStories((prev) => {
+      const existing = prev.find((e) => e.id === strId);
+      if (existing && existing.progress >= ratio) return prev;
+      const next = [
+        { id: strId, progress: ratio, updatedAt: new Date().toISOString() },
+        ...prev.filter((e) => e.id !== strId),
+      ].slice(0, IN_PROGRESS_MAX);
+      AsyncStorage.setItem(IN_PROGRESS_STORAGE_KEY, JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+  }, []);
+
+  const clearStoryProgress = useCallback((storyId) => {
+    const strId = String(storyId || '');
+    if (!strId) return;
+    setInProgressStories((prev) => {
+      if (!prev.some((e) => e.id === strId)) return prev;
+      const next = prev.filter((e) => e.id !== strId);
+      AsyncStorage.setItem(IN_PROGRESS_STORAGE_KEY, JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+  }, []);
 
   // Onboarding Tamamlama
   const saveOnboarding = async (userCategories, userTimeObj, userReminderParam = null) => {
@@ -731,6 +893,7 @@ export const UserDataProvider = ({ children }) => {
         reminderWindows: prefs.reminderWindows,
         reminderWindow: prefs.reminderWindow,
         reminderHour: prefs.reminderHour,
+        remindersEnabled: prefs.remindersEnabled,
         dailyStoryTarget: prefs.time?.dailyStoryTarget || 2,
         totalReads,
         streak,
@@ -771,7 +934,8 @@ export const UserDataProvider = ({ children }) => {
     try {
       const reminderChanged = Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderWindows')
         || Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderWindow')
-        || Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderHour');
+        || Object.prototype.hasOwnProperty.call(partialPrefs, 'reminderHour')
+        || Object.prototype.hasOwnProperty.call(partialPrefs, 'remindersEnabled');
       const candidate = {
         categories: partialPrefs.categories ?? preferences.categories,
         time: partialPrefs.time ?? preferences.time,
@@ -780,6 +944,7 @@ export const UserDataProvider = ({ children }) => {
         reminderHour: partialPrefs.reminderHour ?? preferences.reminderHour,
         storyVersion: partialPrefs.storyVersion ?? preferences.storyVersion ?? 1,
         storyCollections: partialPrefs.storyCollections ?? preferences.storyCollections ?? DEFAULT_STORY_COLLECTIONS,
+        remindersEnabled: partialPrefs.remindersEnabled ?? preferences.remindersEnabled ?? true,
       };
 
       const nextPrefs = normalizePreferences(candidate);
@@ -792,6 +957,7 @@ export const UserDataProvider = ({ children }) => {
         reminderWindows: nextPrefs.reminderWindows,
         reminderWindow: nextPrefs.reminderWindow,
         reminderHour: nextPrefs.reminderHour,
+        remindersEnabled: nextPrefs.remindersEnabled,
         dailyStoryTarget: nextPrefs.time?.dailyStoryTarget || 2,
         totalReads,
         streak,
@@ -815,45 +981,133 @@ export const UserDataProvider = ({ children }) => {
     }
   };
 
-  // Abonelik Satın Al (Mock)
-  // Grants Premium locally (persisted) once an entitlement is confirmed —
-  // or, when real billing isn't connected, for the dev/local activation flow.
-  const activatePremiumLocally = async () => {
-    setHasPaidPremium(true);
-    setStreakFreezeCredits((prev) => {
-      const next = Math.max(prev, 1);
-      AsyncStorage.setItem(STREAK_FREEZE_CREDITS_STORAGE_KEY, JSON.stringify(next));
-      return next;
+  // ─── Free daily quota ─────────────────────────────────────────────────────
+  // Premium is unlimited. For everyone else, opening a story that isn't already
+  // read and isn't already in today's set spends one of FREE_DAILY_STORY_QUOTA.
+
+  // The rules themselves live in utils/freeQuota.js so a UI change can't
+  // silently redefine what "3 free stories a day" means.
+  // Must never be null: `spentToday` treats an unknown day as "nothing spent",
+  // so a null key would turn the cap into an unlimited tier. `toLocalDay` only
+  // fails if Intl throws, and a UTC day is a correct-enough fallback (it is
+  // already what db.js uses for read bookkeeping).
+  const todayKey = () => toLocalDay(new Date(), {
+    fallback: new Date().toISOString().split('T')[0],
+  });
+
+  const freeQuotaUsed = isPremium ? 0 : freeQuotaUsedFor(freeReadsToday, todayKey());
+  const freeQuotaRemaining = isPremium
+    ? Infinity
+    : freeQuotaRemainingFor(freeReadsToday, todayKey());
+
+  const isStoryUnlockedToday = useCallback((storyId) => {
+    if (isPremium) return true;
+    return isFreeUnlocked({
+      record: freeReadsToday,
+      today: todayKey(),
+      history: history || [],
+      storyId,
     });
-    await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(true));
-  };
+  }, [isPremium, freeReadsToday, history]);
+
+  /** True when the story can be opened right now without hitting the paywall. */
+  const canOpenStoryFree = useCallback((storyId) => {
+    if (isPremium) return true;
+    if (isStoryUnlockedToday(storyId)) return true;
+    return freeQuotaRemaining > 0;
+  }, [isPremium, isStoryUnlockedToday, freeQuotaRemaining]);
+
+  /**
+   * Spends one unit of today's quota for `storyId`. Returns true when the story
+   * may be opened, false when the caller should show the paywall instead.
+   */
+  const consumeFreeRead = useCallback(async (storyId) => {
+    if (isPremium) return true;
+
+    const result = spendFreeQuota({
+      record: freeReadsToday,
+      today: todayKey(),
+      history: history || [],
+      storyId,
+    });
+
+    if (result.spent) {
+      setFreeReadsToday(result.record);
+      try {
+        await AsyncStorage.setItem(FREE_READS_STORAGE_KEY, JSON.stringify(result.record));
+      } catch (e) {
+        console.warn('[free quota] persist failed:', e?.message);
+      }
+    }
+    return result.allowed;
+  }, [isPremium, freeReadsToday, history]);
+
+  // Applies a subscription state confirmed by the store. `snapshot` is the
+  // normalized entitlement from billing.js (null for a legacy/dev unlock).
+  //
+  // This is the ONLY path that turns Premium on. It is never reachable from a
+  // user tap unless the store confirmed an entitlement — see `buyPremium`.
+  const applyEntitlement = useCallback(async (isEntitled, snapshot = null) => {
+    setHasPaidPremium(isEntitled);
+    setEntitlement(isEntitled ? snapshot : null);
+
+    if (isEntitled) {
+      const next = await grantMonthlyStreakFreezeCredit(streakFreezeCreditsRef.current);
+      setStreakFreezeCredits(next);
+    }
+
+    try {
+      await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(isEntitled));
+      if (isEntitled && snapshot) {
+        await AsyncStorage.setItem(ENTITLEMENT_STORAGE_KEY, JSON.stringify(snapshot));
+      } else {
+        await AsyncStorage.removeItem(ENTITLEMENT_STORAGE_KEY);
+      }
+    } catch (e) {
+      console.warn('[billing] persisting entitlement failed:', e?.message);
+    }
+  }, []);
+
+  // Applies a referral reward window confirmed by the `claim_referral` server
+  // RPC (see supabase.js#claimReferral). Never called with a client-guessed
+  // value — the caller must have a `premiumBonusUntil` ISO string straight
+  // from that RPC's response.
+  const applyReferralBonus = useCallback(async (premiumBonusUntilIso, meta = {}) => {
+    const untilMs = premiumBonusUntilIso ? new Date(premiumBonusUntilIso).getTime() : NaN;
+    if (!Number.isFinite(untilMs) || untilMs <= Date.now()) return;
+
+    setPremiumBonusUntil(untilMs);
+    try {
+      await AsyncStorage.setItem(PREMIUM_BONUS_STORAGE_KEY, String(untilMs));
+    } catch (e) {
+      console.warn('[referral] persisting bonus failed:', e?.message);
+    }
+    trackEvent(ANALYTICS_EVENTS.REFERRAL_REWARD_GRANTED, { ...meta, premiumBonusUntil: premiumBonusUntilIso });
+  }, []);
 
   // DEV-ONLY: force Premium on/off locally to test free vs premium flows
   // (e.g. ads). No-op in production builds.
   const devSetPremium = async (value) => {
     if (!__DEV__) return;
-    const next = !!value;
-    setHasPaidPremium(next);
-    try {
-      await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(next));
-    } catch (e) {
-      console.warn('[dev] devSetPremium failed:', e?.message);
-    }
+    await applyEntitlement(!!value, null);
   };
 
-  // Purchases Premium. With live billing, runs the store purchase via RevenueCat
-  // and only unlocks on a confirmed entitlement. Without it, falls back to local
-  // activation (dev builds). `pkg` is the RevenueCat package for the chosen plan.
+  // Purchases Premium through the store and unlocks ONLY on a confirmed
+  // entitlement. `pkg` is the RevenueCat package for the chosen plan.
+  //
+  // When billing isn't connected (`BILLING_LIVE === false`) this must NOT grant
+  // anything: a dev-build convenience that unlocks the paid tier would ship as
+  // a free app in production and would report fake purchases to analytics.
+  // Dev builds get the local unlock explicitly via `devSetPremium`.
   const buyPremium = async (pkg = null) => {
     try {
       if (!BILLING_LIVE) {
-        await activatePremiumLocally();
-        return { success: true, live: false };
+        return { success: false, live: false, error: 'billing_not_live' };
       }
       const result = await purchasePackage(pkg);
       if (result.success && result.entitled) {
-        await activatePremiumLocally();
-        return { success: true, live: true };
+        await applyEntitlement(true, result.entitlement);
+        return { success: true, live: true, entitlement: result.entitlement };
       }
       return {
         success: false,
@@ -874,8 +1128,8 @@ export const UserDataProvider = ({ children }) => {
     try {
       const result = await restorePurchases();
       if (result.success && result.entitled) {
-        await activatePremiumLocally();
-        return { success: true, live: true, entitled: true };
+        await applyEntitlement(true, result.entitlement);
+        return { success: true, live: true, entitled: true, entitlement: result.entitlement };
       }
       return { success: result.success, live: true, entitled: false, error: result.error };
     } catch (error) {
@@ -897,22 +1151,94 @@ export const UserDataProvider = ({ children }) => {
     if (!BILLING_LIVE || isLoading) return;
     let cancelled = false;
     (async () => {
-      const entitled = await checkEntitlement();
-      if (cancelled || entitled === null) return;
-      setHasPaidPremium(entitled);
-      AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(entitled)).catch(() => {});
+      const result = await fetchEntitlement();
+      if (cancelled || !result) return;
+      await applyEntitlement(result.entitled, result.entitlement);
     })();
     return () => { cancelled = true; };
-  }, [isLoading]);
+  }, [isLoading, applyEntitlement]);
 
+  // Subscription state can change without the user touching the paywall — a
+  // renewal, a cancellation, a refund, or a purchase on another device. Without
+  // this listener the app would keep showing Premium until the next cold start.
+  //
+  // Also the only place renewal / cancellation / refund telemetry can come from
+  // on-device: `paywall_purchase_succeeded` alone can't tell churn from growth.
+  useEffect(() => {
+    if (!BILLING_LIVE || isLoading) return;
+    const prevRef = { entitled: hasPaidPremiumRef.current, snapshot: entitlementRef.current };
+
+    const unsubscribe = addCustomerInfoListener(({ entitled, entitlement: snapshot }) => {
+      const was = prevRef.entitled;
+      const wasSnapshot = prevRef.snapshot;
+      prevRef.entitled = entitled;
+      prevRef.snapshot = snapshot;
+
+      applyEntitlement(entitled, snapshot).catch(() => {});
+
+      const eventProps = {
+        product_id: snapshot?.productId || wasSnapshot?.productId,
+        period_type: snapshot?.periodType || wasSnapshot?.periodType,
+        expires_at: snapshot?.expiresAt || wasSnapshot?.expiresAt,
+        lang,
+      };
+
+      if (!was && entitled) {
+        // Gained access outside the paywall flow (cross-device, or a trial that
+        // converted while the app was backgrounded).
+        trackEvent(
+          snapshot?.isTrial ? ANALYTICS_EVENTS.TRIAL_STARTED : ANALYTICS_EVENTS.SUBSCRIPTION_RENEWED,
+          eventProps,
+        );
+      } else if (was && !entitled) {
+        trackEvent(ANALYTICS_EVENTS.SUBSCRIPTION_EXPIRED, eventProps);
+      } else if (was && entitled) {
+        if (wasSnapshot?.isTrial && !snapshot?.isTrial) {
+          trackEvent(ANALYTICS_EVENTS.TRIAL_CONVERTED, eventProps);
+        } else if (wasSnapshot?.willRenew && !snapshot?.willRenew) {
+          // Cancelled but still inside the paid period — the earliest churn signal.
+          trackEvent(ANALYTICS_EVENTS.SUBSCRIPTION_CANCELLED, eventProps);
+        } else if (wasSnapshot?.expiresAt && snapshot?.expiresAt
+          && snapshot.expiresAt !== wasSnapshot.expiresAt) {
+          trackEvent(ANALYTICS_EVENTS.SUBSCRIPTION_RENEWED, eventProps);
+        }
+      }
+    });
+
+    return unsubscribe;
+  }, [isLoading, applyEntitlement, lang]);
+
+  // Reschedules the OS notifications at most once per day (or immediately
+  // when a setting the copy/time actually depends on changes) instead of on
+  // every read — `cancelAllScheduledNotificationsAsync` + a full reschedule
+  // on every single read event needlessly hammers the OS scheduler.
+  // `totalReads`/`streak`/`shareCount` still refresh the notification copy,
+  // just only once the day (or the relevant settings) actually changes.
+  const lastNotificationScheduleRef = useRef({ day: null, signature: null });
   useEffect(() => {
     if (!isOnboarded || isLoading) return;
     if (!preferences?.time?.dailyStoryTarget) return;
 
-    scheduleDailyNotifications({
+    const day = todayKey();
+    const signature = JSON.stringify({
       lang,
+      reminderWindows: preferences.reminderWindows,
       reminderWindow: preferences.reminderWindow,
       reminderHour: preferences.reminderHour,
+      remindersEnabled: preferences.remindersEnabled,
+      dailyStoryTarget: preferences.time.dailyStoryTarget,
+      isPremium,
+    });
+    const last = lastNotificationScheduleRef.current;
+    if (last.day === day && last.signature === signature) return;
+    lastNotificationScheduleRef.current = { day, signature };
+
+    scheduleDailyNotifications({
+      lang,
+      reminderWindows: preferences.reminderWindows,
+      reminderWindow: preferences.reminderWindow,
+      reminderHour: preferences.reminderHour,
+      remindersEnabled: preferences.remindersEnabled,
       dailyStoryTarget: preferences.time.dailyStoryTarget,
       totalReads,
       streak,
@@ -965,6 +1291,7 @@ export const UserDataProvider = ({ children }) => {
         enqueueAndSync('upsert_profile', { patch: { share_count: next } });
         return next;
       });
+      maybeRequestReview({ isPremium, totalReads }).catch(() => {});
     } catch (error) {
       console.error('Paylaşım sayacı hatası:', error);
     }
@@ -1128,6 +1455,8 @@ export const UserDataProvider = ({ children }) => {
         CAREER_TAKEAWAYS_STORAGE_KEY,
         CAREER_SPARK_PACKAGE_STORAGE_KEY,
         STREAK_FREEZE_CREDITS_STORAGE_KEY,
+        ENTITLEMENT_STORAGE_KEY,
+        FREE_READS_STORAGE_KEY,
       ]);
       setFavorites([]);
       setHistory([]);
@@ -1137,6 +1466,8 @@ export const UserDataProvider = ({ children }) => {
       setUserProfile(EMPTY_USER_PROFILE);
       setIsOnboarded(false);
       setHasPaidPremium(false);
+      setEntitlement(null);
+      setFreeReadsToday({ day: null, storyIds: [] });
       setShareCount(0);
       setSeenBadgeIds([]);
       setActiveBadgeModal(null);
@@ -1277,8 +1608,9 @@ export const UserDataProvider = ({ children }) => {
     if (closedBadge?.presentation === 'earned') {
       markBadgesAsSeen([closedBadge.id]);
       removePendingBadge(closedBadge.id);
+      maybeRequestReview({ isPremium, totalReads }).catch(() => {});
     }
-  }, [activeBadgeModal, markBadgesAsSeen, removePendingBadge]);
+  }, [activeBadgeModal, markBadgesAsSeen, removePendingBadge, isPremium, totalReads]);
 
   // Legacy call-sites still invoke this after a read. Presentation is now
   // coordinated below so share sheets and other overlays can safely block it.
@@ -1380,6 +1712,9 @@ export const UserDataProvider = ({ children }) => {
     readCountsByStory,
     favoriteCollections,
     completedStories,
+    inProgressStories,
+    updateStoryProgress,
+    clearStoryProgress,
     shareCount,
     earnedBadges,
     activeBadgeModal,
@@ -1403,6 +1738,15 @@ export const UserDataProvider = ({ children }) => {
     devSetPremium,
     getPremiumOfferings,
     billingLive: BILLING_LIVE,
+    entitlement,
+    premiumBonusUntil,
+    applyReferralBonus,
+    freeDailyQuota: FREE_DAILY_STORY_QUOTA,
+    freeQuotaUsed,
+    freeQuotaRemaining,
+    isStoryUnlockedToday,
+    canOpenStoryFree,
+    consumeFreeRead,
     updateUserProfile,
     incrementShareCount,
     recordVariantUsage,
@@ -1421,9 +1765,11 @@ export const UserDataProvider = ({ children }) => {
     closeBadgeModal,
     releasePendingBadge,
     setBadgePresentationBlocked,
+    badgePresentationBlockers,
     closeBadgeCollectionCompletionModal,
     useStreakFreeze,
-  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, shareCount, earnedBadges, activeBadgeModal, isBadgeCollectionCompletionVisible, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, careerTakeaways, careerSparkPackage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight, recordPrivateCareerApplication, removeVariantUsage, toggleCareerSparkPackageStory, openBadgeModal, closeBadgeModal, releasePendingBadge, setBadgePresentationBlocked, closeBadgeCollectionCompletionModal, useStreakFreeze]);
+  }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, entitlement, premiumBonusUntil,
+    freeQuotaUsed, freeQuotaRemaining, isStoryUnlockedToday, canOpenStoryFree, consumeFreeRead, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, inProgressStories, updateStoryProgress, clearStoryProgress, shareCount, earnedBadges, activeBadgeModal, isBadgeCollectionCompletionVisible, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, careerTakeaways, careerSparkPackage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight, recordPrivateCareerApplication, removeVariantUsage, toggleCareerSparkPackageStory, openBadgeModal, closeBadgeModal, releasePendingBadge, setBadgePresentationBlocked, badgePresentationBlockers, closeBadgeCollectionCompletionModal, useStreakFreeze]);
 
   return (
     <UserDataContext.Provider value={value}>

@@ -6,6 +6,8 @@ import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from './analytics';
 import { upsertPushToken, removePushToken } from '../services/supabase';
 
+export const WEEKLY_RECAP_NOTIFICATION_TYPE = 'weekly_recap';
+
 const REMINDER_WINDOW_HOURS = {
   morning: 7,
   noon: 12,
@@ -191,6 +193,11 @@ const buildNotificationBody = ({
 export async function scheduleDailyNotifications(options = 'tr') {
   const normalized = typeof options === 'string' ? { lang: options } : (options || {});
   const lang = normalized.lang || 'tr';
+  // Master switch off (Profile → Hatırlatmalar): clear everything, schedule nothing.
+  if (normalized.remindersEnabled === false) {
+    await Notifications.cancelAllScheduledNotificationsAsync().catch(() => {});
+    return;
+  }
   // Support multi-window array or legacy single window
   const reminderWindows = Array.isArray(normalized.reminderWindows) && normalized.reminderWindows.length > 0
     ? normalized.reminderWindows.filter(w => ['morning', 'noon', 'evening'].includes(w))
@@ -310,6 +317,21 @@ export async function scheduleDailyNotifications(options = 'tr') {
     });
   }
 
+  // Weekly recap ("Haftam"): Sunday 18:30, only for readers with something to
+  // look back on. Tapping it deep-links to İlerleme and opens the share card.
+  if (totalReads > 0) {
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: t('career.notif.weeklyTitle', lang),
+        body: t('career.notif.weeklyBody', lang),
+        sound: true,
+        data: { type: WEEKLY_RECAP_NOTIFICATION_TYPE },
+        ...(Platform.OS === 'android' ? { channelId: 'default' } : {}),
+      },
+      trigger: { type: 'weekly', weekday: 1, hour: 18, minute: 30 },
+    });
+  }
+
   await trackEvent(ANALYTICS_EVENTS.NOTIFICATION_SCHEDULED, {
     success: true,
     platform: Platform.OS,
@@ -422,6 +444,8 @@ export const getNotificationWindowLabel = (window, lang = 'tr') => {
   const labels = {
     tr: { morning: 'Sabah', noon: 'Öğlen', evening: 'Akşam' },
     en: { morning: 'Morning', noon: 'Noon', evening: 'Evening' },
+    es: { morning: 'Mañana', noon: 'Mediodía', evening: 'Tarde' },
+    de: { morning: 'Morgen', noon: 'Mittag', evening: 'Abend' },
   };
 
   const langLabels = labels[lang] || labels.en;

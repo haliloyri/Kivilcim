@@ -1,11 +1,17 @@
-// StoriesContext — loads stories from Supabase (Supabase-first, SQLite fallback).
+// StoriesContext — loads stories from the bundled SQLite DB. The Supabase
+// refresh only runs when EXPO_PUBLIC_STORIES_SOURCE=supabase (see featureFlags).
 // Refreshes automatically when the language changes.
 import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 import NetInfo from '@react-native-community/netinfo';
 import { useTheme } from './ThemeContext';
 import { getStoriesForLang, getCategoriesFromDb, getParentCategories, waitForData } from '../db/db';
 import { SUPABASE_LIVE, fetchStoriesFromSupabase } from '../services/supabase';
-import { saveStoriesToCache, loadStoriesFromCache } from '../services/storiesCache';
+import { saveStoriesToCache, loadStoriesFromCache, clearStoriesCache } from '../services/storiesCache';
+import { STORIES_SOURCE } from '../config/featureFlags';
+
+const USE_REMOTE_STORIES = STORIES_SOURCE === 'supabase';
+// In local mode the AsyncStorage cache only holds stale Supabase copies; drop it once.
+let staleCacheCleared = false;
 
 const StoriesContext = createContext();
 
@@ -63,14 +69,20 @@ export const StoriesProvider = ({ children }) => {
     // Render the latest local content first. This deliberately accepts a stale
     // cache: readers should still be able to browse on a flight or weak signal.
     let hasLocalStories = false;
-    try {
-      const cached = await loadStoriesFromCache(lang, { allowStale: true });
-      if (cached?.length) {
-        applyStories(cached, 'cache');
-        hasLocalStories = true;
+    if (!USE_REMOTE_STORIES && !staleCacheCleared) {
+      staleCacheCleared = true;
+      clearStoriesCache().catch(() => {});
+    }
+    if (USE_REMOTE_STORIES) {
+      try {
+        const cached = await loadStoriesFromCache(lang, { allowStale: true });
+        if (cached?.length) {
+          applyStories(cached, 'cache');
+          hasLocalStories = true;
+        }
+      } catch (e) {
+        console.warn('[StoriesContext] Cache load failed:', e.message);
       }
-    } catch (e) {
-      console.warn('[StoriesContext] Cache load failed:', e.message);
     }
 
     let sqliteStories = [];
@@ -93,6 +105,11 @@ export const StoriesProvider = ({ children }) => {
       console.error('[StoriesContext] SQLite fallback error:', e);
     }
     setLoading(false);
+
+    if (!USE_REMOTE_STORIES) {
+      if (!hasLocalStories) setErrorMsg('No local stories available.');
+      return;
+    }
 
     let online = true;
     try {

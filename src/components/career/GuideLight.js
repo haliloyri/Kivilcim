@@ -41,7 +41,7 @@ const GuideLight = ({ state = 'idle', size = 48, style }) => {
     <Animated.View accessible={false} importantForAccessibility="no-hide-descendants" style={[styles.wrap, { width: size, height: size, borderRadius: size / 2, backgroundColor: `${colors.primary}${Math.round(config.intensity * 255).toString(16).padStart(2, '0')}`, borderColor: `${colors.primary}70`, transform: [{ scale }] }, style]}>
       <View style={[styles.halo, { width: size * 0.58, height: size * 0.58, borderRadius: size / 2, borderColor: `${colors.primary}58` }]} />
       <View style={[styles.core, { width: coreSize, height: coreSize, borderRadius: coreSize / 2, backgroundColor: colors.primary }]} />
-      <Ionicons name={config.icon} size={Math.round(size * 0.42)} color={colors.primary} style={styles.icon} />
+      <Ionicons name={config.icon} size={Math.round(size * 0.42)} color={colors.primaryText} style={styles.icon} />
     </Animated.View>
   );
 };

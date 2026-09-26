@@ -1,0 +1,2749 @@
+import React, { useState, useRef } from 'react';
+import {
+  View, Text, TouchableOpacity, StyleSheet,
+  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Image, Platform, ActivityIndicator, Share, AppState
+} from 'react-native';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { captureRef } from 'react-native-view-shot';
+import { LinearGradient } from 'expo-linear-gradient';
+import * as Speech from 'expo-speech';
+import * as Sharing from 'expo-sharing';
+import * as Clipboard from 'expo-clipboard';
+import {
+  useAudioRecorder,
+  useAudioRecorderState,
+  RecordingPresets,
+  AudioModule,
+  setAudioModeAsync,
+  createAudioPlayer,
+} from 'expo-audio';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from '../context/ThemeContext';
+import { useUserData } from '../context/UserDataContext';
+import { useStories } from '../context/StoriesContext';
+import { FEATURE_FLAGS } from '../config/featureFlags';
+import { t } from '../locales/i18n';
+import { getStoryByLang } from '../db/db';
+import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import { readableTextOn } from '../theme/theme';
+import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
+import { ShareCardCanvas, ShareCardPreview } from '../components/ShareCardCanvas';
+import { shouldShowAd, rewardedGate, loadRewarded, showRewarded, loadInterstitial, showInterstitial, recordStoryRead } from '../utils/ads';
+import { getBookBuyLinks } from '../utils/bookLinks';
+import { getShareLabel, getShareUrl } from '../utils/share';
+import { hasReachedReadingCompletion, isShortStoryFullyVisible, ONE_MINUTE_SUMMARY_DWELL_MS, SHORT_STORY_DWELL_MS } from '../utils/storyCompletion';
+import { getStoryAudioAsset } from '../utils/storyAudio';
+import { intlLocaleFor } from '../utils/locale';
+import StoryBody from '../components/story/StoryBody';
+import { parseStoryMarkup, toPlainText, extractShareParts } from '../utils/storyMarkup';
+
+const { width, height } = Dimensions.get('window');
+
+// Where people who see a share card can find the app. Set this in
+// app.json -> expo.extra.shareBaseUrl (the localized landing URL is derived
+// at share time from the reader's active language).
+// once the app is live.
+// The share card itself (logo, layout, text fitting) lives in
+// components/ShareCardCanvas.js, shared with ShareCardModal.
+
+const StoryDetailScreen = ({ route, navigation }) => {
+  const { story } = route.params;
+  const { colors, typography, layout, isDark, lang } = useTheme();
+  const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount, releasePendingBadge, isStorySavedForLater, toggleReadLater, isStoryCompleted, markStoryCompleted, variantUsage, setBadgePresentationBlocked, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight } = useUserData();
+  const { stories } = useStories();
+  const [fontSize, setFontSize] = useState(typography.sizes.body);
+  const [shareModalVisible, setShareModalVisible] = useState(false);
+  const [shareTheme, setShareTheme] = useState('dark');
+  const [shareContent, setShareContent] = useState(['quote']);
+  const [shareFormat, setShareFormat] = useState('post');
+  const [shareTextOverride, setShareTextOverride] = useState('');
+  const scaleAnim = useRef(new Animated.Value(1)).current;
+  const scrollY = useRef(new Animated.Value(0)).current;
+  const titleEnterAnim = useRef(new Animated.Value(0)).current;
+  const hasReachedBottom = useRef(false);
+  const hasMarkedRead = useRef(false);
+  const storyCompletionPromiseRef = useRef(Promise.resolve());
+  const speechStartedAt = useRef(null);
+  const storyAudioPlayerRef = useRef(null);
+  const storyAudioSubscriptionRef = useRef(null);
+  const scrollViewportHeight = useRef(0);
+  const scrollContentHeight = useRef(0);
+  const shortStoryDwellTimer = useRef(null);
+  const oneMinuteSummaryDwellTimer = useRef(null);
+  const shortStoryFitsViewport = useRef(false);
+  const isReaderActive = useRef(true);
+  const oneMinuteSummarySeenKey = useRef(null);
+  const oneMinuteSummaryCompleted = useRef(false);
+  const viewShotRef = useRef();
+  const carouselRefs = useRef({});
+  const insets = useSafeAreaInsets();
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [localLang, setLocalLang] = useState(lang);
+  const [localStory, setLocalStory] = useState(story);
+  const [oneMinuteSummaryOpen, setOneMinuteSummaryOpen] = useState(false);
+  const [readerIsActive, setReaderIsActive] = useState(AppState.currentState === 'active');
+  const [isTakeawaySaved, setIsTakeawaySaved] = useState(false);
+  const [adSheet, setAdSheet] = useState(false);
+  const [isAdLoading, setIsAdLoading] = useState(false);
+  const [adUnavailable, setAdUnavailable] = useState(false);
+  const [isCapturing, setIsCapturing] = useState(false);
+  const [isSavingCarousel, setIsSavingCarousel] = useState(false);
+  const [cardUnlocked, setCardUnlocked] = useState(false);
+  const [cardGate, setCardGate] = useState(false);
+  const [cardAdLoading, setCardAdLoading] = useState(false);
+  const [cardAdUnavailable, setCardAdUnavailable] = useState(false);
+  // Holds a loaded rewarded ad to show only after the gate Modal is fully
+  // dismissed — showing it while the Modal is still presented makes iOS throw
+  // "already presenting another view controller" and Android freeze.
+  const pendingRewardedRef = useRef(null);
+  const flushPendingRewarded = () => {
+    const p = pendingRewardedRef.current;
+    if (!p) return;
+    pendingRewardedRef.current = null;
+    showRewarded(p.ad, { onEarned: p.onEarned, onClosed: p.onClosed });
+  };
+  const audioRecorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
+  const recorderState = useAudioRecorderState(audioRecorder);
+  const [isRecording, setIsRecording] = useState(false);
+  const isRecordingRef = useRef(false);
+  const recordingStopTimeoutRef = useRef(null);
+  const [recordingDuration, setRecordingDuration] = useState(0);
+  // Up to 3 recordings per story: [{uri, durationMs, date}]
+  const [audioRecordings, setAudioRecordings] = useState([]);
+  const [playingIndex, setPlayingIndex] = useState(null);
+  const [soundObj, setSoundObj] = useState(null);
+  const [recPanelVisible, setRecPanelVisible] = useState(false);
+  // Full-screen interstitial gate: free users see an ad before the story.
+  const [storyAdGate, setStoryAdGate] = useState(
+    shouldShowAd({ isPremium, isOnboarded: true })
+  );
+
+  const releaseStoryAudioPlayer = React.useCallback(() => {
+    storyAudioSubscriptionRef.current?.remove?.();
+    storyAudioSubscriptionRef.current = null;
+
+    const player = storyAudioPlayerRef.current;
+    storyAudioPlayerRef.current = null;
+    if (!player) return;
+
+    try {
+      player.pause();
+    } catch {
+      // The player may already have completed or been released by the platform.
+    }
+    player.remove();
+  }, []);
+
+  const stopStoryNarration = React.useCallback(() => {
+    Speech.stop();
+    releaseStoryAudioPlayer();
+    setIsSpeaking(false);
+    speechStartedAt.current = null;
+  }, [releaseStoryAudioPlayer]);
+
+  React.useEffect(() => {
+    const blocked = Boolean(shareModalVisible || cardGate || adSheet || storyAdGate);
+    setBadgePresentationBlocked('story_detail_overlay', blocked);
+    return () => setBadgePresentationBlocked('story_detail_overlay', false);
+  }, [shareModalVisible, cardGate, adSheet, storyAdGate, setBadgePresentationBlocked]);
+
+  const AUDIO_LIST_KEY = `story_audio_list_${story?.story_id}`;
+  const MAX_RECORDINGS = 3;
+  // Maksimum kayıt süresi (otomatik durur). 90 sn = 1,5 dk.
+  const MAX_DURATION_SECONDS = 90;
+  const MAX_DURATION_MS = MAX_DURATION_SECONDS * 1000;
+
+  React.useEffect(() => () => {
+    if (recordingStopTimeoutRef.current) clearTimeout(recordingStopTimeoutRef.current);
+  }, []);
+
+  React.useEffect(() => {
+    return soundObj
+      ? () => { soundObj.remove(); }
+      : undefined;
+  }, [soundObj]);
+
+  React.useEffect(() => {
+    setIsTakeawaySaved(isCareerTakeawaySaved(story?.story_id));
+  }, [story?.story_id, isCareerTakeawaySaved]);
+
+  React.useEffect(() => {
+    const loadSavedAudio = async () => {
+      try {
+        if (story?.story_id) {
+          const raw = await AsyncStorage.getItem(AUDIO_LIST_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed)) setAudioRecordings(parsed);
+          }
+        }
+      } catch (e) {
+        console.warn('Failed to load saved audio list', e);
+      }
+    };
+    loadSavedAudio();
+  }, [story?.story_id]);
+
+
+  // On open, show a full-screen (interstitial) ad every 3 stories with a
+  // minimum 3-minute cooldown between ads. Premium users skip entirely.
+  React.useEffect(() => {
+    let cancelled = false;
+    // Skip the on-open interstitial when this screen was opened solely to show
+    // the share card (e.g. from "Use in conversation"). The share itself is
+    // already gated by its own rewarded-ad / premium sheet, so a second ad here
+    // would pop over the share modal and disrupt the flow.
+    if (route.params?.openShareModal || !shouldShowAd({ isPremium, isOnboarded: true })) {
+      setStoryAdGate(false);
+      return;
+    }
+    const adDue = recordStoryRead();
+    if (!adDue) {
+      setStoryAdGate(false);
+      return;
+    }
+    (async () => {
+      const ad = await loadInterstitial({ ignoreCap: true });
+      if (cancelled) return;
+      if (ad) {
+        showInterstitial(ad, () => { if (!cancelled) setStoryAdGate(false); });
+      } else {
+        setStoryAdGate(false);
+      }
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleNextWithAd = () => {
+    setAdUnavailable(false);
+    if (shouldShowAd({ isPremium, isOnboarded: true })) {
+      setAdSheet(true);
+    } else {
+      navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
+    }
+  };
+
+  const startRecording = async () => {
+    if (audioRecordings.length >= MAX_RECORDINGS) return;
+    try {
+      stopStoryNarration();
+      if (soundObj) {
+        soundObj.remove();
+        setSoundObj(null);
+        setPlayingIndex(null);
+      }
+
+      const permission = await AudioModule.requestRecordingPermissionsAsync();
+      if (permission.granted) {
+        await setAudioModeAsync({
+          allowsRecording: true,
+          playsInSilentMode: true,
+        });
+        await audioRecorder.prepareToRecordAsync();
+        audioRecorder.record();
+        isRecordingRef.current = true;
+        setIsRecording(true);
+        setRecordingDuration(0);
+        if (recordingStopTimeoutRef.current) clearTimeout(recordingStopTimeoutRef.current);
+        recordingStopTimeoutRef.current = setTimeout(() => {
+          stopRecording(MAX_DURATION_MS);
+        }, MAX_DURATION_MS);
+      } else {
+        Alert.alert(t('alert_error', lang) || 'Error', 'Mikrofon izni gereklidir.');
+      }
+    } catch (err) {
+      console.error('Failed to start recording', err);
+    }
+  };
+
+  const stopRecording = async (finalDuration = recordingDuration) => {
+    if (!isRecordingRef.current) return;
+    try {
+      isRecordingRef.current = false;
+      if (recordingStopTimeoutRef.current) clearTimeout(recordingStopTimeoutRef.current);
+      recordingStopTimeoutRef.current = null;
+      setIsRecording(false);
+      await audioRecorder.stop();
+      const uri = audioRecorder.uri;
+
+      const newEntry = { uri, durationMs: finalDuration, date: new Date().toISOString() };
+      const updated = [...audioRecordings, newEntry].slice(0, MAX_RECORDINGS);
+      setAudioRecordings(updated);
+
+      if (story?.story_id) {
+        await AsyncStorage.setItem(AUDIO_LIST_KEY, JSON.stringify(updated));
+      }
+
+      const activeStory = localStory || story;
+      if (uri && finalDuration >= 3000 && activeStory?.story_id) {
+        await recordCareerInsight({
+          storyId: activeStory.story_id,
+          categoryId: activeStory.parent_cat_id ?? null,
+          eventSubtype: 'voice_recording',
+          metadata: { source: 'voice_recording' },
+        });
+      }
+    } catch (error) {
+      console.error('Failed to stop recording', error);
+    }
+  };
+
+  // expo-audio reports recording progress via recorderState. Mirror it into
+  // recordingDuration and auto-stop when the max length is reached.
+  React.useEffect(() => {
+    if (!isRecording) return;
+    const ms = recorderState.durationMillis || 0;
+    setRecordingDuration(ms);
+    if (ms >= MAX_DURATION_MS) {
+      stopRecording(MAX_DURATION_MS);
+    }
+  }, [recorderState.durationMillis, isRecording]);
+
+  const toggleRecording = () => {
+    if (isRecording) {
+      stopRecording();
+    } else {
+      startRecording();
+    }
+  };
+
+  const playRecording = async (index) => {
+    try {
+      stopStoryNarration();
+      if (soundObj) {
+        soundObj.remove();
+        setSoundObj(null);
+      }
+      // Tap same index while playing → stop
+      if (playingIndex === index) {
+        setPlayingIndex(null);
+        return;
+      }
+
+      const rec = audioRecordings[index];
+      if (!rec?.uri) return;
+
+      // allowsRecording:false routes playback to the loud speaker after a
+      // recording session (otherwise iOS keeps it quiet on the earpiece).
+      await setAudioModeAsync({ allowsRecording: false, playsInSilentMode: true });
+
+      const newSound = createAudioPlayer({ uri: rec.uri });
+      setSoundObj(newSound);
+      setPlayingIndex(index);
+
+      newSound.addListener('playbackStatusUpdate', (status) => {
+        if (status.didJustFinish) {
+          setPlayingIndex(null);
+          newSound.seekTo(0);
+        }
+      });
+      newSound.play();
+    } catch (error) {
+      console.error('Failed to play audio', error);
+    }
+  };
+
+  const deleteRecording = async (index) => {
+    try {
+      if (playingIndex === index && soundObj) {
+        soundObj.remove();
+        setSoundObj(null);
+        setPlayingIndex(null);
+      }
+      const updated = audioRecordings.filter((_, i) => i !== index);
+      setAudioRecordings(updated);
+      await AsyncStorage.setItem(AUDIO_LIST_KEY, JSON.stringify(updated));
+    } catch (error) {
+      console.error('Failed to delete recording', error);
+    }
+  };
+
+  const formatDuration = (ms) => {
+    const totalSec = Math.floor((ms || 0) / 1000);
+    const m = Math.floor(totalSec / 60);
+    const s = totalSec % 60;
+    return `${m}:${s.toString().padStart(2, '0')}`;
+  };
+
+  const handleWatchAdNext = async () => {
+    setIsAdLoading(true);
+    trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_next', choice: 'ad' });
+    const ad = await loadRewarded();
+    setIsAdLoading(false);
+    if (!ad) {
+      setAdUnavailable(true);
+      trackEvent(ANALYTICS_EVENTS.AD_FAILED_TO_LOAD, { source: 'story_detail_next', lang });
+      return;
+    }
+    setAdUnavailable(false);
+    // Queue the ad and close the sheet. Shown from the Modal's onDismiss (iOS)
+    // or a fallback timer (Android) — never while the Modal is presented.
+    // The reward is the next story: before, nothing listened for the ad to
+    // finish, so the user watched the whole ad and stayed on the same story.
+    let earned = false;
+    pendingRewardedRef.current = {
+      ad,
+      onEarned: () => {
+        earned = true;
+        trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_next' });
+      },
+      onClosed: () => {
+        if (earned) goToNextStory();
+      },
+    };
+    setAdSheet(false);
+    setTimeout(flushPendingRewarded, 600);
+  };
+
+  // --- Visual card gate: premium-only, free users unlock via rewarded ad ---
+  const openShareModalGated = () => {
+    setShareTextOverride('');
+    const gate = rewardedGate({ isPremium, alreadyUnlocked: cardUnlocked });
+
+    if (gate === 'allow') {
+      setShareModalVisible(true);
+      return;
+    }
+
+    trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
+      source: 'story_detail_card',
+      storyId: story?.story_id,
+      lang,
+    });
+
+    // No rewarded inventory in this region — Premium is the only way in. Never
+    // fall through to the share modal: that would give the paid card away.
+    if (gate === 'paywall') {
+      navigation.navigate('Paywall', { reason: 'image_card', source: 'story_detail_card' });
+      return;
+    }
+
+    setCardAdUnavailable(false);
+    setCardGate(true);
+  };
+
+  const handleWatchAdForCard = async () => {
+    setCardAdLoading(true);
+    trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_card', choice: 'ad' });
+    const ad = await loadRewarded();
+    setCardAdLoading(false);
+    if (!ad) {
+      setCardAdUnavailable(true);
+      trackEvent(ANALYTICS_EVENTS.AD_FAILED_TO_LOAD, { source: 'story_detail_card', lang });
+      return;
+    }
+    setCardAdUnavailable(false);
+    // Queue the ad and close the gate sheet. It is shown from the Modal's
+    // onDismiss (iOS) or a fallback timer (Android). We unlock + open the share
+    // modal only after the ad closes (another modal over the ad also conflicts).
+    let earned = false;
+    pendingRewardedRef.current = {
+      ad,
+      onEarned: () => {
+        earned = true;
+        trackEvent(ANALYTICS_EVENTS.REWARDED_AD_COMPLETED, { source: 'story_detail_card' });
+      },
+      onClosed: () => {
+        if (!earned) return;
+        setCardUnlocked(true);
+        setShareModalVisible(true);
+      },
+    };
+    setCardGate(false);
+    setTimeout(flushPendingRewarded, 600);
+  };
+
+  React.useEffect(() => {
+    let active = true;
+    const fetchTranslation = async () => {
+      const translatedStory = await getStoryByLang(story.story_id, localLang);
+      if (active && translatedStory) setLocalStory({ ...story, ...translatedStory });
+    };
+    fetchTranslation();
+    return () => { active = false; };
+  }, [localLang, story, lang]);
+
+  React.useEffect(() => {
+    if (!route.params?.openShareModal) return;
+
+    const preset = route.params?.sharePreset;
+    const overrideText = typeof route.params?.shareOverrideText === 'string'
+      ? route.params.shareOverrideText.trim()
+      : '';
+
+    if (preset) {
+      setShareContent([preset]);
+    }
+    setShareTextOverride(overrideText);
+    setShareFormat('post');
+
+    // Same premium/ad gate as the top-menu share entry: free users who would
+    // otherwise see an ad must pass the card gate before the share modal opens.
+    // If the caller already ran the gate (e.g. Use-in-Conversation), open directly.
+    const presetGate = route.params?.shareGatePassed
+      ? 'allow'
+      : rewardedGate({ isPremium, alreadyUnlocked: cardUnlocked });
+
+    if (presetGate === 'allow') {
+      setShareModalVisible(true);
+    } else {
+      trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
+        source: 'story_detail_card',
+        storyId: story?.story_id,
+        lang,
+      });
+      if (presetGate === 'paywall') {
+        navigation.navigate('Paywall', { reason: 'image_card', source: 'story_detail_card' });
+      } else {
+        setCardAdUnavailable(false);
+        setCardGate(true);
+      }
+    }
+
+    navigation.setParams({
+      openShareModal: false,
+      sharePreset: undefined,
+      shareOverrideText: undefined,
+      shareSource: undefined,
+      shareVariantType: undefined,
+      shareGatePassed: undefined,
+    });
+  }, [
+    navigation,
+    route.params?.openShareModal,
+    route.params?.sharePreset,
+    route.params?.shareOverrideText,
+    isPremium,
+    cardUnlocked,
+  ]);
+
+  const closeShareModal = () => {
+    setShareModalVisible(false);
+    setShareTextOverride('');
+  };
+
+  const liked = isFavorite(story.story_id);
+  const savedForLater = isStorySavedForLater(story.story_id);
+  // DB already returns translated content for the active language
+  const displayTitle = localStory.title || '';
+  const displayBody = localStory.body || '';
+  const parsedBody = React.useMemo(() => parseStoryMarkup(displayBody), [displayBody]);
+  const storySectionHeadings = React.useMemo(() => ({
+    story: t('storySectionStory', localLang),
+    lessons: t('storySectionLessons', localLang),
+    reflect: t('storySectionReflect', localLang),
+    use: t('storySectionUse', localLang),
+    pocket: t('storySectionPocket', localLang),
+  }), [localLang]);
+  const displayQuote = localStory.quote || '';
+  const displayLesson = localStory.lesson || '';
+  const displaySrc = localStory.source_book || '';
+  const displaySourceBook = localStory.source_book || '';
+  const displayCat = t(localStory.cat_display || localStory.cat || story.cat, localLang);
+  const displayHook = localStory.hook || story.hook || '';
+  const oneMinuteSummary = String(localStory.one_minute_summary || '').trim();
+  const categoryKey = story.parent_cat_raw || story.parent_cat || localStory.cat || story.cat;
+  const categoryImage = getCategoryImage(categoryKey, isDark);
+  const categoryTheme = getCategoryTheme(categoryKey, isDark);
+
+  const storyUsage = Array.isArray(variantUsage) ? variantUsage.find(u => String(u.storyId) === String(story.story_id)) : null;
+  const usageDate = storyUsage?.usedAt;
+
+  React.useEffect(() => {
+    if (story) {
+      stopStoryNarration();
+    }
+    Animated.timing(titleEnterAnim, {
+      toValue: 1,
+      duration: 360,
+      useNativeDriver: true,
+    }).start();
+    return () => {
+      Speech.stop();
+      releaseStoryAudioPlayer();
+    };
+  }, [story, localLang, titleEnterAnim, stopStoryNarration, releaseStoryAudioPlayer]);
+
+  // Marks the story as "read" for the daily focus counter/history. Only
+  // fires once per screen visit, and only once the reader has genuinely
+  // gotten through most of the story (see READ_COMPLETE_RATIO) rather than
+  // the moment the story screen is opened.
+  const markStoryReadIfNeeded = React.useCallback((completionMethod = 'read') => {
+    if (hasMarkedRead.current || !story) return storyCompletionPromiseRef.current;
+    hasMarkedRead.current = true;
+    storyCompletionPromiseRef.current = addToHistory(localStory || story, { completionMethod })
+      .catch((error) => console.warn('[story] completion capture failed:', error?.message));
+    return storyCompletionPromiseRef.current;
+  }, [story, localStory, addToHistory]);
+
+  const saveTakeaway = React.useCallback(async () => {
+    const activeStory = localStory || story;
+    const result = await saveCareerTakeaway({
+      storyId: activeStory?.story_id,
+      categoryId: activeStory?.parent_cat_id ?? null,
+      reference: 'lesson',
+    });
+    if (result.saved || result.reason === 'already_saved') setIsTakeawaySaved(true);
+  }, [localStory, story, saveCareerTakeaway]);
+
+  const saveStoryReflection = React.useCallback(async () => {
+    // This control is at the end of the reader. Waiting for its completion
+    // write prevents a fast tap from reaching the insight capture before H.
+    await markStoryReadIfNeeded();
+    const activeStory = localStory || story;
+    const result = await saveCareerTakeaway({
+      storyId: activeStory?.story_id,
+      categoryId: activeStory?.parent_cat_id ?? null,
+      reference: 'story_reflection',
+    });
+    if (result.saved || result.reason === 'already_saved') setIsTakeawaySaved(true);
+  }, [localStory, markStoryReadIfNeeded, story, saveCareerTakeaway]);
+
+  const openConversation = React.useCallback(() => {
+    const activeStory = localStory || story;
+    trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
+      storyId: activeStory?.story_id,
+      source: 'story_detail_engagement',
+      lang,
+    });
+    if (isPremium && activeStory?.story_id && !isStoryCompleted(activeStory.story_id)) {
+      markStoryCompleted(activeStory.story_id);
+    }
+    navigation.navigate('UseInConversation', { story: activeStory });
+  }, [isPremium, isStoryCompleted, lang, localStory, markStoryCompleted, navigation, story]);
+
+  const handleOneMinuteSummaryPress = React.useCallback(() => {
+    const activeStory = localStory || story;
+    trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_CLICKED, {
+      storyId: activeStory?.story_id,
+      lang: localLang,
+      isPremium,
+      source: 'story_detail',
+      contentLength: oneMinuteSummary.length,
+    });
+
+    if (!isPremium) {
+      trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_PAYWALL_VIEWED, {
+        storyId: activeStory?.story_id,
+        lang: localLang,
+        source: 'story_detail',
+      });
+      navigation.navigate('Paywall', {
+        reason: 'one_minute_summary',
+        source: 'story_detail_one_minute_summary',
+      });
+      return;
+    }
+
+    const nextOpen = !oneMinuteSummaryOpen;
+    setOneMinuteSummaryOpen(nextOpen);
+    if (nextOpen) {
+      trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_OPENED, {
+        storyId: activeStory?.story_id,
+        lang: localLang,
+        source: 'story_detail',
+        contentLength: oneMinuteSummary.length,
+      });
+    }
+  }, [isPremium, localLang, localStory, navigation, oneMinuteSummary, oneMinuteSummaryOpen, story]);
+
+  const handleReadFullStory = React.useCallback(() => {
+    const activeStory = localStory || story;
+    setOneMinuteSummaryOpen(false);
+    trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_FULL_STORY_CLICKED, {
+      storyId: activeStory?.story_id,
+      lang: localLang,
+      source: 'story_detail',
+    });
+  }, [localLang, localStory, story]);
+
+  const cancelShortStoryDwell = React.useCallback(() => {
+    if (shortStoryDwellTimer.current) clearTimeout(shortStoryDwellTimer.current);
+    shortStoryDwellTimer.current = null;
+  }, []);
+
+  const cancelOneMinuteSummaryDwell = React.useCallback(() => {
+    if (oneMinuteSummaryDwellTimer.current) clearTimeout(oneMinuteSummaryDwellTimer.current);
+    oneMinuteSummaryDwellTimer.current = null;
+  }, []);
+
+  React.useEffect(() => {
+    hasReachedBottom.current = false;
+    hasMarkedRead.current = false;
+    storyCompletionPromiseRef.current = Promise.resolve();
+    shortStoryFitsViewport.current = false;
+    oneMinuteSummaryCompleted.current = false;
+    setOneMinuteSummaryOpen(false);
+    cancelShortStoryDwell();
+    cancelOneMinuteSummaryDwell();
+  }, [story?.story_id, cancelOneMinuteSummaryDwell, cancelShortStoryDwell]);
+
+  React.useEffect(() => {
+    setOneMinuteSummaryOpen(false);
+    cancelOneMinuteSummaryDwell();
+  }, [localLang, cancelOneMinuteSummaryDwell]);
+
+  React.useEffect(() => {
+    if (!oneMinuteSummary) return;
+    const exposureKey = `${story?.story_id}:${localLang}`;
+    if (oneMinuteSummarySeenKey.current === exposureKey) return;
+    oneMinuteSummarySeenKey.current = exposureKey;
+    trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_CTA_VIEWED, {
+      storyId: story?.story_id,
+      lang: localLang,
+      isPremium,
+      source: 'story_detail',
+      contentLength: oneMinuteSummary.length,
+    });
+  }, [isPremium, localLang, oneMinuteSummary, story?.story_id]);
+
+  // A short story has no scroll event, but opening it alone must not create H.
+  // It needs five foreground seconds while the complete content is visible.
+  const evaluateShortStoryReadState = React.useCallback(() => {
+    if (hasReachedBottom.current) return;
+    const viewportHeight = scrollViewportHeight.current;
+    const contentHeight = scrollContentHeight.current;
+    shortStoryFitsViewport.current = isShortStoryFullyVisible({ contentHeight, viewportHeight });
+    if (!shortStoryFitsViewport.current) {
+      cancelShortStoryDwell();
+      return;
+    }
+    if (!isReaderActive.current || shortStoryDwellTimer.current) return;
+    shortStoryDwellTimer.current = setTimeout(() => {
+      shortStoryDwellTimer.current = null;
+      if (!isReaderActive.current || !shortStoryFitsViewport.current || hasReachedBottom.current) return;
+      hasReachedBottom.current = true;
+      markStoryReadIfNeeded();
+      releasePendingBadge();
+    }, SHORT_STORY_DWELL_MS);
+  }, [cancelShortStoryDwell, markStoryReadIfNeeded, releasePendingBadge]);
+
+  React.useEffect(() => {
+    const subscription = AppState.addEventListener('change', (nextState) => {
+      isReaderActive.current = nextState === 'active';
+      setReaderIsActive(isReaderActive.current);
+      if (isReaderActive.current) evaluateShortStoryReadState();
+      else {
+        cancelShortStoryDwell();
+        cancelOneMinuteSummaryDwell();
+      }
+    });
+    return () => {
+      cancelShortStoryDwell();
+      cancelOneMinuteSummaryDwell();
+      subscription.remove();
+    };
+  }, [cancelOneMinuteSummaryDwell, cancelShortStoryDwell, evaluateShortStoryReadState]);
+
+  React.useEffect(() => {
+    cancelOneMinuteSummaryDwell();
+    if (
+      !oneMinuteSummaryOpen ||
+      !oneMinuteSummary ||
+      !isPremium ||
+      !readerIsActive ||
+      oneMinuteSummaryCompleted.current
+    ) return undefined;
+
+    oneMinuteSummaryDwellTimer.current = setTimeout(async () => {
+      oneMinuteSummaryDwellTimer.current = null;
+      if (!isReaderActive.current || !oneMinuteSummaryOpen || oneMinuteSummaryCompleted.current) return;
+      oneMinuteSummaryCompleted.current = true;
+      await markStoryReadIfNeeded('one_minute_summary');
+      const activeStory = localStory || story;
+      if (activeStory?.story_id && !isStoryCompleted(activeStory.story_id)) {
+        await markStoryCompleted(activeStory.story_id);
+      }
+      trackEvent(ANALYTICS_EVENTS.ONE_MINUTE_SUMMARY_COMPLETED, {
+        storyId: activeStory?.story_id,
+        lang: localLang,
+        source: 'story_detail',
+        contentLength: oneMinuteSummary.length,
+        dwellMs: ONE_MINUTE_SUMMARY_DWELL_MS,
+      });
+      releasePendingBadge();
+    }, ONE_MINUTE_SUMMARY_DWELL_MS);
+
+    return cancelOneMinuteSummaryDwell;
+  }, [
+    cancelOneMinuteSummaryDwell,
+    isPremium,
+    isStoryCompleted,
+    localLang,
+    localStory,
+    markStoryCompleted,
+    markStoryReadIfNeeded,
+    oneMinuteSummary,
+    oneMinuteSummaryOpen,
+    readerIsActive,
+    releasePendingBadge,
+    story,
+  ]);
+
+  const toggleSpeech = async () => {
+    if (isSpeaking || storyAudioPlayerRef.current) {
+      stopStoryNarration();
+      return;
+    }
+
+    if (soundObj) {
+      soundObj.remove();
+      setSoundObj(null);
+      setPlayingIndex(null);
+    }
+
+    // Packaged narrations were recorded for the legacy text; P1 bodies use device speech.
+    const storyAudioAsset = localLang === 'tr' && parsedBody.format !== 'p1'
+      ? getStoryAudioAsset((localStory || story)?.story_id)
+      : null;
+
+    if (storyAudioAsset) {
+      try {
+        await setAudioModeAsync({
+          allowsRecording: false,
+          playsInSilentMode: true,
+          shouldPlayInBackground: false,
+        });
+
+        const player = createAudioPlayer(storyAudioAsset, { updateInterval: 250 });
+        storyAudioPlayerRef.current = player;
+        setIsSpeaking(true);
+        speechStartedAt.current = Date.now();
+
+        storyAudioSubscriptionRef.current = player.addListener('playbackStatusUpdate', (status) => {
+          if (!status.didJustFinish || storyAudioPlayerRef.current !== player) return;
+
+          releaseStoryAudioPlayer();
+          setIsSpeaking(false);
+          markStoryReadIfNeeded('audio');
+          speechStartedAt.current = null;
+        });
+
+        player.play();
+        return;
+      } catch (error) {
+        releaseStoryAudioPlayer();
+        setIsSpeaking(false);
+        speechStartedAt.current = null;
+        console.warn('[story] packaged narration playback failed, using device speech:', error?.message);
+      }
+    }
+
+    const cleanBody = toPlainText(displayBody, { headings: storySectionHeadings });
+    const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
+    setIsSpeaking(true);
+    speechStartedAt.current = Date.now();
+    Speech.speak(textToRead, {
+      language: localLang === 'en' ? 'en-US' : localLang === 'es' ? 'es-ES' : localLang === 'de' ? 'de-DE' : 'tr-TR',
+      rate: 0.95,
+      pitch: 1.0,
+      onDone: () => {
+        setIsSpeaking(false);
+        // onDone means the entire narration completed; early stop/error use
+        // their dedicated callbacks and must not create H.
+        markStoryReadIfNeeded('audio');
+        speechStartedAt.current = null;
+      },
+      onStopped: () => { setIsSpeaking(false); speechStartedAt.current = null; },
+      onError: () => { setIsSpeaking(false); speechStartedAt.current = null; },
+    });
+  };
+
+  const buildStoryTextSharePayload = () => {
+    const cleanBody = toPlainText(displayBody, { headings: storySectionHeadings });
+    const sourceParts = [displaySourceBook, localStory?.author].filter(Boolean).join(' — ');
+    const sourceLine = sourceParts ? `\n\n${t('share_source', localLang)}${sourceParts}` : '';
+    return `${displayTitle}\n\n${cleanBody}${sourceLine}\n\n${getShareUrl(localLang, { storyId: story?.story_id })}`.trim();
+  };
+
+  const sharePocketLine = async (line) => {
+    try {
+      const source = [displayTitle, displaySourceBook].filter(Boolean).join(' — ');
+      await Share.share({
+        message: `“${line}”\n\n${source}\n${getShareUrl(localLang, { storyId: story?.story_id })}`.trim(),
+      });
+      trackEvent(ANALYTICS_EVENTS.STORY_SHARED, { source: 'story_pocket', storyId: story?.story_id, lang: localLang });
+    } catch (e) {
+      console.warn('[story] pocket share failed:', e?.message);
+    }
+  };
+
+  const shareStoryAsText = async () => {
+    setBadgePresentationBlocked('story_text_share', true);
+    try {
+      const result = await Share.share({
+        title: displayTitle || t('brandText', localLang),
+        message: buildStoryTextSharePayload(),
+      });
+      const wasDismissed = Share.dismissedAction && result?.action === Share.dismissedAction;
+      if (!wasDismissed) {
+        await incrementShareCount?.();
+        trackEvent(ANALYTICS_EVENTS.STORY_SHARED, {
+          source: 'story_detail_header',
+          shareType: 'text',
+          storyId: story?.story_id,
+          lang: localLang,
+        });
+      }
+    } catch (error) {
+      if (!/cancel|dismiss/i.test(error?.message || '')) {
+        console.warn('Metin paylasimi basarisiz:', error?.message);
+        Alert.alert(t('alert_error', localLang), t('alert_share_error', localLang));
+      }
+    } finally {
+      setTimeout(() => setBadgePresentationBlocked('story_text_share', false), 450);
+    }
+  };
+
+  const handleLike = () => {
+    Animated.sequence([
+      Animated.timing(scaleAnim, { toValue: 1.3, duration: 100, useNativeDriver: true }),
+      Animated.timing(scaleAnim, { toValue: 1, duration: 100, useNativeDriver: true }),
+    ]).start();
+    toggleFavorite(story.story_id);
+  };
+
+  const handleReadLater = () => {
+    toggleReadLater(story.story_id);
+  };
+
+  const goToNextStory = () => {
+    if (!stories?.length) return;
+    const currentIndex = stories.findIndex(s => s.story_id === story.story_id);
+    const nextIndex = (currentIndex + 1) % stories.length;
+    navigation.replace('StoryDetail', { story: stories[nextIndex] });
+  };
+
+  const handleNext = () => {
+    if (!isPremium) {
+      trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
+        source: 'story_detail_next',
+        storyId: story?.story_id,
+        lang,
+      });
+      handleNextWithAd();
+      return;
+    }
+    goToNextStory();
+  };
+
+  // --- Share card theme configs ---
+  // Unified palette — shares gold/slate/teal/plum accents with BadgeShareSheet
+  const SHARE_THEMES = [
+    { id: 'dark', label: t('themeInk', lang), bg: ['#14120E', '#211C14'], text: '#F2EAD8', accent: '#E5C27A', sub: '#A6977C' },
+    { id: 'light', label: t('themePaper', lang), bg: ['#F7F2E8', '#ECE4D5'], text: '#1A1208', accent: '#A86A1C', sub: '#6B5A48' },
+    { id: 'gold', label: t('themeGold', lang), bg: ['#4A3A16', '#6B5320'], text: '#FFF7E6', accent: '#F0D9A0', sub: 'rgba(255,247,230,0.78)' },
+    { id: 'slate', label: t('themeSlate', lang), bg: ['#29384A', '#41566E'], text: '#FFFFFF', accent: '#B8C8D8', sub: 'rgba(255,255,255,0.8)' },
+    { id: 'forest', label: t('themeForest', lang), bg: ['#1C3F35', '#2C6E5A'], text: '#FFFFFF', accent: '#A8D8C5', sub: 'rgba(255,255,255,0.8)' },
+    { id: 'plum', label: t('themePlum', lang), bg: ['#3E2433', '#6E3B52'], text: '#FFFFFF', accent: '#E6B8CC', sub: 'rgba(255,255,255,0.8)' },
+  ];
+
+  const currentTheme = SHARE_THEMES.find(th => th.id === shareTheme) || SHARE_THEMES[0];
+
+  const extractContent = (markerStr) => {
+    if (!displayBody) return '';
+    const parts = extractShareParts(displayBody);
+    if (markerStr === '##') return parts.quote;
+    if (markerStr === '$$') return parts.lesson;
+    if (markerStr === '&&') return parts.reflection;
+    return '';
+  };
+
+  const getShareText = (type) => {
+    if (shareTextOverride && shareContent.length === 1 && shareContent[0] === type) {
+      return shareTextOverride;
+    }
+
+    if (type === 'quote') {
+      const ext = extractContent('##');
+      return ext || displayQuote || displayBody.substring(0, 150) + '...';
+    }
+    if (type === 'lesson') {
+      const ext = extractContent('$$');
+      return ext || displayLesson || t('keyTakeaway', localLang);
+    }
+    if (type === 'reflection') {
+      const ext = extractContent('&&');
+      return ext || t('share_realize', localLang);
+    }
+    if (type === 'hook') {
+      return displayHook;
+    }
+    return '';
+  };
+
+  const getCTAByLang = () => {
+    if (localLang === 'en') {
+      return [
+        'Save this and tag a friend who needs this today.',
+        'Follow Albor for daily actionable wisdom.',
+        'Try this insight today and share your result.',
+      ];
+    }
+    if (localLang === 'es') {
+      return [
+        'Guarda esto y etiqueta a alguien que lo necesite hoy.',
+        'Sigue a Albor para sabiduria diaria accionable.',
+        'Prueba esta idea hoy y comparte tu resultado.',
+      ];
+    }
+    if (localLang === 'de') {
+      return [
+        'Speichere das und markiere jemanden, der das heute braucht.',
+        'Folge Albor fur tagliche, umsetzbare Impulse.',
+        'Teste diese Erkenntnis heute und teile dein Ergebnis.',
+      ];
+    }
+    return [
+      'Bunu kaydet ve bugun ihtiyaci olan birini etiketle.',
+      'Her gun uygulanabilir bilgelik icin Albor\'u takip et.',
+      'Bu fikri bugun dene, sonucunu paylas.',
+    ];
+  };
+
+  const buildHashtags = () => {
+    const catHashtag = displayCat.replace(/[^\p{L}\p{N}]/gu, '');
+    const generalHashtags = localLang === 'en'
+      ? '#Albor #DailyInspiration #BookWisdom #Mindset'
+      : localLang === 'es'
+        ? '#Albor #InspiracionDiaria #Sabiduria #Mentalidad'
+        : localLang === 'de'
+          ? '#Albor #TaeglicheInspiration #Buchimpulse #Mindset'
+          : '#Albor #gununilhami #kitapbilgeligi #farkindalik';
+
+    return `#${catHashtag} ${generalHashtags}`;
+  };
+
+  const buildSharePayload = () => {
+    const selectedTexts = shareContent
+      .map(type => {
+        const text = getShareText(type);
+        if (!text) return '';
+        if (type === 'lesson') return `${t('share_key_takeaway', localLang)}\n${text}`;
+        if (type === 'reflection') return `${t('share_reflect', localLang)}\n${text}`;
+        if (type === 'hook') return `🎬 Hook\n${text}`;
+        return text;
+      })
+      .filter(Boolean)
+      .join('\n\n');
+
+    const ctas = getCTAByLang();
+    const primaryCta = ctas[0];
+    const secondaryCta = ctas[1];
+    const actionCta = ctas[2];
+    const hashtags = buildHashtags();
+
+    const caption = `${displayTitle}\n\n${selectedTexts}\n\n${primaryCta}\n${hashtags}`;
+
+    const reelScript = `${displayTitle}\n\n` +
+      `1) ${t('reel_label_hook', localLang)}: ${displayHook || getShareText('quote')}\n` +
+      `2) ${t('reel_label_main', localLang)}: ${getShareText('lesson') || getShareText('quote')}\n` +
+      `3) ${t('reel_label_question', localLang)}: ${getShareText('reflection') || t('share_realize', localLang)}\n` +
+      `4) ${t('reel_label_cta', localLang)}: ${secondaryCta}\n` +
+      `5) ${t('reel_label_bonus', localLang)}: ${actionCta}`;
+
+    return { caption, reelScript };
+  };
+
+  const onShare = async () => {
+    if (isCapturing || isSavingCarousel) return;
+    setIsCapturing(true);
+    try {
+      // 1. Capture the off-screen card as PNG
+      const uri = await captureRef(viewShotRef, {
+        format: 'png',
+        quality: 1,
+      });
+
+      // 2. Construct the text to be included as caption
+      const { caption, reelScript } = buildSharePayload();
+      const clipboardPayload = shareFormat === 'reel'
+        ? `${caption}\n\n----- ${t('reel_script_divider', localLang)} -----\n${reelScript}`
+        : caption;
+
+      // 3. Copy caption to clipboard so user can paste it on Instagram
+      try {
+        await Clipboard.setStringAsync(clipboardPayload);
+        Alert.alert(
+          t('share_copied_title', localLang),
+          t(shareFormat === 'reel' ? 'share_copied_body' : 'share_copied_body_story', localLang),
+          [{ text: t('alert_ok', localLang), style: "default" }]
+        );
+      } catch (err) {
+        console.warn("Clipboard copy failed", err);
+      }
+
+      // 4. Open native share sheet with the image
+      const canShare = await Sharing.isAvailableAsync();
+      if (canShare) {
+        await Sharing.shareAsync(uri, {
+          mimeType: 'image/png',
+          dialogTitle: `${displayTitle} — ${t('brandText', lang)}`,
+        });
+        incrementShareCount();
+        trackEvent(ANALYTICS_EVENTS.STORY_SHARED, {
+          source: 'story_detail',
+          storyId: story?.story_id,
+          shareFormat,
+          shareContent,
+          lang: localLang,
+        });
+      } else {
+        Alert.alert(
+          t('alert_error', lang),
+          t('alert_share_unavailable', lang),
+        );
+      }
+    } catch (error) {
+      console.error('Paylaşım hatası:', error);
+      Alert.alert(
+        t('alert_error', lang),
+        t('alert_share_error', lang),
+      );
+    } finally {
+      setIsCapturing(false);
+    }
+  };
+
+  // Canonical carousel order so frames always read hook → quote → lesson → reflection
+  const CAROUSEL_ORDER = ['hook', 'lesson', 'quote', 'reflection'];
+  const getCarouselFrames = () =>
+    [...shareContent].sort((a, b) => CAROUSEL_ORDER.indexOf(a) - CAROUSEL_ORDER.indexOf(b));
+
+  // Save each selected message as its own card to the gallery → Instagram carousel
+  const onSaveCarousel = async () => {
+    if (isCapturing || isSavingCarousel) return;
+    setIsSavingCarousel(true);
+    try {
+      // expo-media-library has no web native module. Loading it only for native
+      // gallery saves keeps the Story screen available in the web preview too.
+      if (Platform.OS === 'web') {
+        Alert.alert(t('alert_error', lang), t('alert_share_unavailable', lang));
+        return;
+      }
+      const MediaLibrary = require('expo-media-library');
+
+      // 1. Ask only for write access (least intrusive)
+      const perm = await MediaLibrary.requestPermissionsAsync(true);
+      if (!perm.granted) {
+        Alert.alert(
+          t('alert_error', lang),
+          t('alert_media_permission', localLang),
+          [{ text: t('alert_ok', localLang), style: 'default' }]
+        );
+        return;
+      }
+
+      // 2. Capture each frame in canonical order and save to gallery
+      const frames = getCarouselFrames();
+      let saved = 0;
+      for (const type of frames) {
+        const ref = carouselRefs.current[type];
+        if (!ref) continue;
+        const uri = await captureRef(ref, { format: 'png', quality: 1 });
+        await MediaLibrary.Asset.create(uri);
+        saved += 1;
+      }
+
+      // 3. Copy caption so the user can paste it on the carousel post
+      try {
+        const { caption } = buildSharePayload();
+        await Clipboard.setStringAsync(caption);
+      } catch (err) {
+        console.warn('Clipboard copy failed', err);
+      }
+
+      // 4. Tell the user how to assemble the carousel in Instagram
+      Alert.alert(
+        t('carousel_saved_title', localLang),
+        `${saved} ${t('carousel_saved_body', localLang)}`,
+        [{ text: t('alert_ok', localLang), style: 'default' }]
+      );
+
+      incrementShareCount();
+      trackEvent(ANALYTICS_EVENTS.STORY_SHARED, {
+        source: 'story_detail_carousel',
+        storyId: story?.story_id,
+        shareFormat,
+        shareContent: frames,
+        frameCount: saved,
+        lang: localLang,
+      });
+    } catch (error) {
+      console.error('Carousel kaydetme hatası:', error);
+      Alert.alert(t('alert_error', lang), t('alert_share_error', lang));
+    } finally {
+      setIsSavingCarousel(false);
+    }
+  };
+
+  const progressBarWidth = scrollY.interpolate({
+    inputRange: [0, 500],
+    outputRange: [0, width],
+    extrapolate: 'clamp',
+  });
+
+  const titleEnterStyle = {
+    opacity: titleEnterAnim,
+    transform: [
+      {
+        translateY: titleEnterAnim.interpolate({
+          inputRange: [0, 1],
+          outputRange: [14, 0],
+        }),
+      },
+      {
+        scale: titleEnterAnim.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0.97, 1],
+        }),
+      },
+    ],
+  };
+
+  const styles = StyleSheet.create({
+    safe: {
+      flex: 1,
+      backgroundColor: colors.background
+    },
+    adGateOverlay: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: colors.background,
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 999,
+    },
+    modalOverlay: {
+      flex: 1,
+      backgroundColor: colors.modalOverlay,
+      justifyContent: 'flex-end',
+    },
+    modalContent: {
+      backgroundColor: colors.modalSurface,
+      borderTopLeftRadius: 24,
+      borderTopRightRadius: 24,
+      padding: 20,
+      paddingBottom: Math.max(insets.bottom, 20),
+      maxHeight: '92%',
+    },
+    modalHeader: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 4,
+    },
+    modalTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 20,
+      color: colors.text,
+    },
+    modalSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 13,
+      color: colors.textSecondary,
+      marginBottom: 16,
+    },
+    // --- Content type pills ---
+    contentPillsRow: {
+      flexDirection: 'row',
+      gap: 8,
+      marginBottom: 14,
+    },
+    contentPill: {
+      paddingHorizontal: 14,
+      paddingVertical: 7,
+      borderRadius: 20,
+      backgroundColor: colors.backgroundDark,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    contentPillActive: {
+      backgroundColor: colors.primary,
+      borderColor: colors.primary,
+    },
+    contentPillText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.textSecondary,
+    },
+    contentPillTextActive: {
+      color: colors.onPrimary,
+    },
+    // --- Theme swatches ---
+    themeToggle: {
+      flexDirection: 'row',
+      gap: 10,
+      marginBottom: 14,
+    },
+    themeSwatch: {
+      width: 36,
+      height: 36,
+      borderRadius: 18,
+      borderWidth: 2,
+      borderColor: 'transparent',
+    },
+    themeSwatchActive: {
+      borderColor: colors.primary,
+    },
+    // --- Format toggle ---
+    formatRow: {
+      flexDirection: 'row',
+      gap: 8,
+      marginBottom: 16,
+    },
+    formatBtn: {
+      flex: 1,
+      paddingVertical: 8,
+      borderRadius: 10,
+      alignItems: 'center',
+      backgroundColor: colors.backgroundDark,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    formatBtnActive: {
+      borderColor: colors.primary,
+      backgroundColor: isDark ? 'rgba(181,83,16,0.15)' : 'rgba(181,83,16,0.08)',
+    },
+    formatBtnText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.textSecondary,
+    },
+    formatBtnTextActive: {
+      color: colors.primary,
+    },
+    reelBadge: {
+      marginTop: 3,
+      paddingHorizontal: 6,
+      paddingVertical: 1,
+      borderRadius: 6,
+      backgroundColor: isDark ? 'rgba(181,83,16,0.22)' : 'rgba(181,83,16,0.10)',
+    },
+    reelBadgeText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 9,
+      color: colors.primary,
+      letterSpacing: 0.3,
+    },
+    // --- Buttons ---
+    btnPrimary: {
+      borderRadius: layout.radius.button,
+      height: layout.heights.buttonPrimary,
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+    },
+    btnPrimaryGradient: {
+      borderRadius: layout.radius.button,
+      height: layout.heights.buttonPrimary,
+      justifyContent: 'center',
+      alignItems: 'center',
+      overflow: 'hidden',
+    },
+    btnPrimaryText: {
+      fontFamily: 'Inter_500Medium',
+      color: '#F7F3EB',
+      fontSize: typography.sizes.ui + 1
+    },
+    carouselBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+      marginTop: 10,
+      height: layout.heights.buttonPrimary,
+      borderRadius: layout.radius.button,
+      borderWidth: 1.5,
+      borderColor: colors.border || 'rgba(0,0,0,0.12)',
+      backgroundColor: 'transparent',
+    },
+    carouselBtnText: {
+      fontFamily: 'Inter_500Medium',
+      color: colors.text,
+      fontSize: typography.sizes.ui,
+    },
+    // --- Share card (capture target) ---
+    shareCardWrapper: {
+      alignSelf: 'center',
+      marginBottom: 14,
+      borderRadius: 12,
+      overflow: 'hidden',
+      // shadow
+      shadowColor: '#000',
+      shadowOpacity: 0.3,
+      shadowRadius: 16,
+      shadowOffset: { width: 0, height: 8 },
+      elevation: 10,
+    },
+    readingProgressBarContainer: {
+      height: 3,
+      backgroundColor: colors.border,
+      width: '100%',
+    },
+    readingProgressBar: {
+      height: 3,
+      backgroundColor: colors.primary,
+    },
+    detailHeader: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingHorizontal: layout.padding.horizontal,
+      paddingVertical: 12
+    },
+    headerPillLeft: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: isDark ? colors.backgroundDark : '#F3EFE9',
+      paddingHorizontal: 16,
+      paddingVertical: 6,
+      borderRadius: 20,
+    },
+    backBtn: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 14,
+      color: colors.text,
+      marginLeft: 4,
+    },
+    storyHero: {
+      margin: layout.padding.horizontal,
+      borderRadius: 16,
+      overflow: 'hidden',
+      marginBottom: 16,
+      borderWidth: 1,
+      borderColor: isDark ? colors.border : '#DED5C4',
+      backgroundColor: isDark ? colors.backgroundDark : '#EBE2D3',
+    },
+    oneMinuteSummaryCard: {
+      borderWidth: 1,
+      borderRadius: 16,
+      marginBottom: 18,
+      overflow: 'hidden',
+    },
+    oneMinuteSummaryHeader: {
+      minHeight: 82,
+      paddingHorizontal: 14,
+      paddingVertical: 13,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 11,
+    },
+    oneMinuteSummaryIcon: {
+      width: 42,
+      height: 42,
+      borderRadius: 21,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    oneMinuteSummaryHeading: {
+      flex: 1,
+      gap: 3,
+    },
+    oneMinuteSummaryCta: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 15,
+      lineHeight: 20,
+      color: colors.text,
+    },
+    oneMinuteSummarySubtitle: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      lineHeight: 17,
+      color: colors.textSecondary,
+    },
+    oneMinuteSummaryTrailing: {
+      alignItems: 'flex-end',
+      justifyContent: 'center',
+      gap: 8,
+    },
+    oneMinuteSummaryPremiumBadge: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      paddingHorizontal: 7,
+      paddingVertical: 4,
+      borderWidth: 1,
+      borderRadius: 999,
+      backgroundColor: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.62)',
+    },
+    oneMinuteSummaryPremiumText: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 9,
+      letterSpacing: 0.65,
+    },
+    oneMinuteSummaryBody: {
+      borderTopWidth: 1,
+      paddingHorizontal: 16,
+      paddingTop: 16,
+      paddingBottom: 15,
+      backgroundColor: isDark ? 'rgba(255,255,255,0.025)' : 'rgba(255,255,255,0.48)',
+    },
+    oneMinuteSummaryMetaRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12,
+      marginBottom: 12,
+    },
+    oneMinuteSummaryLabel: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 11,
+      letterSpacing: 1,
+      textTransform: 'uppercase',
+    },
+    oneMinuteSummaryDurationPill: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      paddingHorizontal: 8,
+      paddingVertical: 4,
+      borderRadius: 999,
+      backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.045)',
+    },
+    oneMinuteSummaryDurationText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.textSecondary,
+    },
+    oneMinuteSummaryText: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: typography.sizes.body,
+      lineHeight: Math.round(typography.sizes.body * 1.55),
+      color: colors.text,
+    },
+    oneMinuteSummaryFullStoryButton: {
+      alignSelf: 'flex-start',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      marginTop: 15,
+      paddingHorizontal: 11,
+      paddingVertical: 8,
+      borderWidth: 1,
+      borderRadius: 10,
+    },
+    oneMinuteSummaryFullStoryText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+    },
+    badge: {
+      paddingHorizontal: 10,
+      paddingVertical: 4,
+      borderRadius: 16,
+      backgroundColor: isDark ? colors.backgroundDark : '#EBDCCC',
+      marginBottom: 8,
+      flexDirection: 'row',
+      alignItems: 'center',
+      alignSelf: 'flex-start',
+      gap: 4,
+    },
+    badgeText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.textSecondary,
+    },
+    detailTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 28,
+      color: colors.text,
+      lineHeight: 34,
+      marginBottom: 8,
+    },
+    categoryVisualCard: {
+      borderRadius: 16,
+      marginTop: 4,
+      marginBottom: 12,
+      height: 96,
+      overflow: 'hidden',
+      position: 'relative',
+    },
+    categoryVisualTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: '#FFFFFF',
+      textAlign: 'right',
+      letterSpacing: 0.3,
+      position: 'absolute',
+      bottom: 8,
+      right: 12,
+      zIndex: 2,
+    },
+    categoryVisualImageWrap: {
+      ...StyleSheet.absoluteFillObject,
+      borderRadius: 16,
+      backgroundColor: 'rgba(255,255,255,0.16)',
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
+    },
+    categoryVisualImage: {
+      width: '100%',
+      height: '100%',
+      opacity: 0.95,
+    },
+    metaItem: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 13,
+      color: colors.textSecondary,
+    },
+    detailBody: {
+      fontFamily: 'Inter_400Regular',
+      color: colors.text,
+      marginBottom: 16,
+    },
+    quoteBox: {
+      borderLeftWidth: 4,
+      borderLeftColor: colors.quoteHighlight,
+      backgroundColor: isDark ? colors.backgroundDark : `${colors.quoteHighlight}1A`,
+      padding: 16,
+      paddingLeft: 20,
+      marginVertical: 12,
+      borderRadius: 4,
+    },
+    quoteText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: typography.sizes.body + 1,
+      color: colors.text,
+      lineHeight: 28
+    },
+    // ── Rich reading format (F7+) ──
+    takeawayCard: {
+      borderWidth: 1,
+      borderRadius: 14,
+      padding: 16,
+      marginVertical: 14,
+    },
+    takeawayLabelRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      marginBottom: 8,
+    },
+    takeawayLabel: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 11,
+      letterSpacing: 1.2,
+      textTransform: 'uppercase',
+    },
+    takeawayText: {
+      fontFamily: 'Inter_600SemiBold',
+      color: colors.text,
+    },
+    takeawaySaveButton: {
+      alignSelf: 'flex-start',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      marginTop: 14,
+      paddingHorizontal: 11,
+      paddingVertical: 8,
+      borderWidth: 1,
+      borderRadius: 10,
+    },
+    takeawaySaveText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+    },
+    storyEngagementCard: {
+      borderWidth: 1,
+      borderRadius: 16,
+      padding: 16,
+      marginTop: 16,
+      marginBottom: 8,
+    },
+    storyEngagementCopy: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 13,
+      lineHeight: 19,
+      color: colors.textSecondary,
+      marginBottom: 13,
+    },
+    storyEngagementActions: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 8,
+    },
+    storyEngagementAction: {
+      minHeight: 38,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      borderWidth: 1,
+      borderRadius: 10,
+      paddingHorizontal: 10,
+      paddingVertical: 8,
+    },
+    storyEngagementActionText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+    },
+    reflectionBox: {
+      borderWidth: 1,
+      borderStyle: 'dashed',
+      borderRadius: 14,
+      padding: 16,
+      marginTop: 4,
+      marginBottom: 18,
+    },
+    reflectionLabel: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 11,
+      letterSpacing: 1.2,
+    },
+    reflectionText: {
+      fontFamily: 'Inter_500Medium',
+      color: colors.text,
+      fontStyle: 'italic',
+    },
+    contrastRow: {
+      flexDirection: 'row',
+      gap: 10,
+      marginVertical: 12,
+    },
+    contrastCol: {
+      flex: 1,
+      borderRadius: 12,
+      padding: 12,
+    },
+    contrastLabel: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 10,
+      letterSpacing: 1,
+      color: colors.textSecondary,
+      marginBottom: 6,
+    },
+    contrastText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: typography.sizes.body - 1,
+      lineHeight: (typography.sizes.body - 1) * 1.45,
+    },
+    premiumSeparator: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginVertical: 12,
+    },
+    separatorLine: {
+      height: 1,
+      backgroundColor: colors.border,
+      flex: 1,
+    },
+    separatorIcon: {
+      marginHorizontal: 16,
+      color: colors.primary,
+      fontSize: 16,
+    },
+    lessonBox: {
+      borderRadius: 16,
+      padding: 20,
+      marginBottom: 20,
+      borderTopLeftRadius: 4,
+      borderBottomLeftRadius: 4,
+      borderLeftWidth: 5,
+      borderLeftColor: isDark ? colors.primary : '#594238',
+    },
+    lessonLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.text,
+      letterSpacing: 1.5,
+      textTransform: 'uppercase',
+      marginBottom: 8
+    },
+    lessonText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 15,
+      color: colors.text,
+      lineHeight: 24
+    },
+    reflectionBox: {
+      borderRadius: 16,
+      padding: 20,
+      marginBottom: 20,
+      borderWidth: 1,
+      borderColor: isDark ? colors.border : '#EBDCCA',
+      shadowColor: '#D4AF37',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 8,
+      elevation: 2,
+    },
+    reflectionLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.text,
+      letterSpacing: 1.5,
+      textTransform: 'uppercase',
+    },
+    detailFooter: {
+      flexDirection: 'row',
+      gap: 12,
+      paddingHorizontal: layout.padding.horizontal,
+      paddingTop: 16,
+      paddingBottom: Math.max(insets.bottom + 6, 22),
+      borderTopWidth: 1,
+      borderTopColor: colors.border,
+      backgroundColor: colors.background,
+      marginBottom: Platform.OS === 'android' ? 4 : 0,
+    },
+    footerMicBtn: {
+      width: 58,
+      height: 58,
+      borderRadius: 14,
+      borderWidth: 1.5,
+      borderColor: colors.border,
+      backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    footerMicBadge: {
+      position: 'absolute',
+      top: -5,
+      right: -5,
+      minWidth: 20,
+      height: 20,
+      borderRadius: 10,
+      paddingHorizontal: 5,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 2,
+      borderColor: colors.background,
+    },
+    footerMicBadgeText: {
+      fontFamily: 'Inter_700Bold',
+      fontSize: 11,
+      color: '#FFFFFF',
+    },
+    recInlinePanel: {
+      marginHorizontal: layout.padding.horizontal,
+      marginBottom: 10,
+      backgroundColor: isDark ? colors.backgroundDark : '#FFFFFF',
+      borderRadius: 18,
+      borderWidth: 1,
+      borderColor: colors.border,
+      paddingVertical: 14,
+      paddingHorizontal: 16,
+      shadowColor: '#000',
+      shadowOpacity: 0.08,
+      shadowRadius: 12,
+      shadowOffset: { width: 0, height: 4 },
+      elevation: 4,
+    },
+    recordCardBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 14,
+      borderWidth: 1,
+      borderRadius: 16,
+      padding: 14,
+      marginBottom: 14,
+    },
+    recordCardMic: {
+      width: 48,
+      height: 48,
+      borderRadius: 24,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    btnSecondaryShare: {
+      flex: 1,
+      borderWidth: 1,
+      borderColor: colors.primary,
+      borderRadius: 12,
+      height: 48,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'transparent'
+    },
+    btnSecondaryShareText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 15,
+      color: colors.text
+    },
+    fontSizeControls: {
+      flexDirection: 'row',
+      backgroundColor: isDark ? colors.backgroundDark : '#F3EFE9',
+      borderRadius: 20,
+      paddingHorizontal: 8,
+      paddingVertical: 4,
+      alignItems: 'center',
+    },
+    fontSizeBtn: {
+      paddingHorizontal: 8,
+    },
+    fontSizeBtnText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: colors.text,
+    },
+    sourceSection: {
+      marginTop: 24,
+      padding: 16,
+      borderRadius: 12,
+      backgroundColor: isDark ? colors.backgroundDark : '#F7F3E8',
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    sourceLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.textSecondary,
+      marginBottom: 8,
+      textTransform: 'uppercase',
+      letterSpacing: 1,
+    },
+    bookTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 20,
+      color: colors.text,
+      marginBottom: 12,
+    },
+    linkBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingHorizontal: 12,
+      paddingVertical: 8,
+      borderRadius: 8,
+      backgroundColor: colors.background,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    linkBtnText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: colors.text,
+      marginLeft: 6,
+    },
+  });
+
+  // --- Helper: Render the share card (identical in both preview & capture) ---
+  // Cards stay concise so the thought is readable in a social preview; the
+  // full text still goes into the copied caption.
+  const getCardText = (type) => {
+    const text = String(getShareText(type) || '').replace(/\s+/g, ' ').trim();
+    if (text.length <= 280) return text;
+    const boundary = text.lastIndexOf(' ', 279);
+    return `${text.slice(0, boundary > 0 ? boundary : 279).trimEnd()}…`;
+  };
+  const shareCardProps = (contentTypes = shareContent) => ({
+    theme: currentTheme,
+    format: shareFormat,
+    contentTypes,
+    getText: getCardText,
+    title: displayTitle,
+    sourceBook: displaySourceBook,
+    lang: localLang,
+    shareLabel: getShareLabel(localLang),
+  });
+  const renderShareCard = (contentTypes = shareContent) => (
+    <ShareCardCanvas {...shareCardProps(contentTypes)} />
+  );
+
+  return (
+    <>
+      <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
+        {/* ===== SHARE MODAL ===== */}
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={shareModalVisible}
+          onRequestClose={closeShareModal}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
+              {/* Header */}
+              <View style={styles.modalHeader}>
+                <Text style={styles.modalTitle}>{t('createCard', lang)}</Text>
+                <TouchableOpacity onPress={closeShareModal}>
+                  <Ionicons name="close" size={22} color={colors.text} />
+                </TouchableOpacity>
+              </View>
+              <Text style={styles.modalSub}>{t('shareOnInstagram', lang)}</Text>
+
+              <ScrollView showsVerticalScrollIndicator={false} style={{ flexShrink: 1, marginBottom: 16 }}>
+                {/* Card Preview (visible to user exactly as captured) */}
+                <ShareCardPreview
+                  previewWidth={width - 80}
+                  style={styles.shareCardWrapper}
+                  {...shareCardProps()}
+                />
+
+                {/* Content type pills */}
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.contentPillsRow}>
+                  {[
+                    { id: 'quote', label: t('quote_label', lang), icon: 'chatbox-ellipses-outline' },
+                    { id: 'lesson', label: t('lesson_pill', lang), icon: 'bulb-outline' },
+                    { id: 'reflection', label: t('reflect_pill', lang), icon: 'help-circle-outline' },
+                    ...(displayHook ? [{ id: 'hook', label: '🎬 Hook', icon: 'videocam-outline' }] : []),
+                  ].map(ct => (
+                    <TouchableOpacity
+                      key={ct.id}
+                      style={[styles.contentPill, shareContent.includes(ct.id) && styles.contentPillActive]}
+                      onPress={() => {
+                        if (shareFormat === 'story' || shareFormat === 'reel') {
+                          setShareContent(prev => {
+                            if (prev.includes(ct.id)) {
+                              return prev.length > 1 ? prev.filter(id => id !== ct.id) : prev;
+                            }
+                            return [...prev, ct.id];
+                          });
+                        } else {
+                          setShareContent([ct.id]);
+                        }
+                      }}
+                    >
+                      <Text style={[styles.contentPillText, shareContent.includes(ct.id) && styles.contentPillTextActive]}>
+                        {ct.label}
+                      </Text>
+                    </TouchableOpacity>
+                  ))}
+                </ScrollView>
+
+                {/* Theme swatches */}
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.themeToggle}>
+                  {SHARE_THEMES.map(th => (
+                    <TouchableOpacity
+                      key={th.id}
+                      onPress={() => setShareTheme(th.id)}
+                    >
+                      <LinearGradient
+                        colors={th.bg}
+                        style={[styles.themeSwatch, shareTheme === th.id && styles.themeSwatchActive]}
+                      />
+                    </TouchableOpacity>
+                  ))}
+                </ScrollView>
+
+                {/* Format selector */}
+                <View style={styles.formatRow}>
+                  <TouchableOpacity
+                    style={[styles.formatBtn, shareFormat === 'post' && styles.formatBtnActive]}
+                    onPress={() => {
+                      setShareFormat('post');
+                      if (shareContent.length > 1) {
+                        setShareContent([shareContent[0]]);
+                      }
+                    }}
+                  >
+                    <Text style={[styles.formatBtnText, shareFormat === 'post' && styles.formatBtnTextActive]}>{t('format_post', lang)}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.formatBtn, shareFormat === 'story' && styles.formatBtnActive]}
+                    onPress={() => setShareFormat('story')}
+                  >
+                    <Text style={[styles.formatBtnText, shareFormat === 'story' && styles.formatBtnTextActive]}>{t('format_story', lang)}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.formatBtn, shareFormat === 'reel' && styles.formatBtnActive]}
+                    onPress={() => setShareFormat('reel')}
+                  >
+                    <Text style={[styles.formatBtnText, shareFormat === 'reel' && styles.formatBtnTextActive]}>{t('format_reel', lang)}</Text>
+                    <View style={styles.reelBadge}>
+                      <Text style={styles.reelBadgeText}>{t('reel_badge', lang)}</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              </ScrollView>
+
+              {/* Share button */}
+              <TouchableOpacity onPress={onShare} disabled={isCapturing || isSavingCarousel} activeOpacity={0.85}>
+                <LinearGradient
+                  colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 1 }}
+                  style={[styles.btnPrimaryGradient, (isCapturing || isSavingCarousel) && { opacity: 0.7 }]}
+                >
+                  <View style={[styles.btnPrimary, { flexDirection: 'row', gap: 10 }]}>
+                    {isCapturing && <ActivityIndicator size="small" color="#F7F3EB" />}
+                    <Text style={styles.btnPrimaryText}>{t('saveAndShare', lang)}</Text>
+                  </View>
+                </LinearGradient>
+              </TouchableOpacity>
+
+              {/* Carousel button — saves each message as its own frame to the gallery */}
+              {shareContent.length > 1 && (
+                <TouchableOpacity
+                  onPress={onSaveCarousel}
+                  disabled={isCapturing || isSavingCarousel}
+                  activeOpacity={0.85}
+                  style={[styles.carouselBtn, (isCapturing || isSavingCarousel) && { opacity: 0.6 }]}
+                >
+                  {isSavingCarousel
+                    ? <ActivityIndicator size="small" color={colors.text} />
+                    : <Ionicons name="images-outline" size={20} color={colors.text} />}
+                  <Text style={styles.carouselBtnText}>
+                    {t('saveCarousel', lang)} ({shareContent.length})
+                  </Text>
+                </TouchableOpacity>
+              )}
+            </View>
+          </View>
+        </Modal>
+
+        {/* ===== OFF-SCREEN CAPTURE TARGET ===== */}
+        <View style={{ position: 'absolute', left: -9999, top: -9999 }} pointerEvents="none">
+          <View ref={viewShotRef} collapsable={false}>
+            {renderShareCard()}
+          </View>
+        </View>
+
+        {/* ===== OFF-SCREEN CAROUSEL FRAMES (one card per message) ===== */}
+        <View style={{ position: 'absolute', left: -9999, top: -9999 }} pointerEvents="none">
+          {shareContent.map(type => (
+            <View
+              key={`frame-${type}`}
+              ref={el => { carouselRefs.current[type] = el; }}
+              collapsable={false}
+            >
+              {renderShareCard([type])}
+            </View>
+          ))}
+        </View>
+
+        <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
+
+        <View style={styles.readingProgressBarContainer}>
+          <Animated.View style={[styles.readingProgressBar, { width: progressBarWidth }]} />
+        </View>
+
+        <View style={styles.detailHeader}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <TouchableOpacity style={styles.headerPillLeft} onPress={() => navigation.goBack()}>
+              <Ionicons name="arrow-back" size={16} color={colors.text} />
+              <Text style={styles.backBtn}>{t('backBtn', lang).replace(/^[\u2190<-]+\s*/g, '')}</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ flexDirection: 'row', gap: 14, alignItems: 'center' }}>
+            <TouchableOpacity onPress={toggleSpeech}>
+              <Text style={{ fontSize: 24, color: isSpeaking ? colors.primary : colors.text }}>
+                {isSpeaking ? '⏸' : '▶'}
+              </Text>
+            </TouchableOpacity>
+            <View style={styles.fontSizeControls}>
+              <TouchableOpacity onPress={() => setFontSize(Math.max(12, fontSize - 1))} style={styles.fontSizeBtn}>
+                <Text style={styles.fontSizeBtnText}>A-</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setFontSize(Math.min(24, fontSize + 1))} style={styles.fontSizeBtn}>
+                <Text style={styles.fontSizeBtnText}>A+</Text>
+              </TouchableOpacity>
+            </View>
+            <TouchableOpacity onPress={shareStoryAsText} accessibilityRole="button" accessibilityLabel={t('shareBtn', lang)}>
+              <Ionicons name="share-social" size={22} color={colors.text} />
+            </TouchableOpacity>
+            <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
+              <TouchableOpacity onPress={handleLike}>
+                <Ionicons name={liked ? "heart" : "heart-outline"} size={26} color={liked ? categoryTheme.accent : colors.text} />
+              </TouchableOpacity>
+            </Animated.View>
+          </View>
+        </View>
+
+        <Animated.ScrollView
+          showsVerticalScrollIndicator={false}
+          onLayout={(event) => {
+            scrollViewportHeight.current = event.nativeEvent.layout.height;
+            evaluateShortStoryReadState();
+          }}
+          onContentSizeChange={(contentWidth, contentHeight) => {
+            scrollContentHeight.current = contentHeight;
+            evaluateShortStoryReadState();
+          }}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+            {
+              useNativeDriver: false,
+              listener: (event) => {
+                if (!hasReachedBottom.current) {
+                  const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
+                  if (hasReachedReadingCompletion({
+                    contentOffsetY: contentOffset.y,
+                    contentHeight: contentSize.height,
+                    viewportHeight: layoutMeasurement.height,
+                  })) {
+                    hasReachedBottom.current = true;
+                    markStoryReadIfNeeded();
+                    // Completion now triggered by navigating to UseInConversation
+                    releasePendingBadge();
+                  }
+                }
+              },
+            }
+          )}
+          scrollEventThrottle={16}
+        >
+          <View style={[styles.storyHero, {
+            backgroundColor: categoryTheme.backgroundColor,
+            borderColor: categoryTheme.borderColor,
+          }]}>
+            {(() => {
+              if (!categoryImage.source) return null;
+              return (
+                <>
+                  <Image
+                    source={categoryImage.source}
+                    style={[StyleSheet.absoluteFill, {
+                      width: '100%',
+                      height: '100%',
+                      opacity: isDark ? 0.22 : 0.40,
+                      transform: [
+                        { rotate: categoryImage.rotate },
+                        { scaleX: categoryImage.flip ? -1 : 1 }
+                      ]
+                    }]}
+                    resizeMode="cover"
+                  />
+                  <View style={[StyleSheet.absoluteFill, { backgroundColor: categoryImage.tint }]} />
+                </>
+              );
+            })()}
+            <View style={{ paddingVertical: 16, paddingHorizontal: 20 }}>
+              <Animated.Text style={[styles.detailTitle, titleEnterStyle]}>{displayTitle}</Animated.Text>
+              {usageDate ? (
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+                  <View style={{ backgroundColor: isDark ? `${categoryTheme.accent}26` : '#FFFFFF', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6, flexDirection: 'row', alignItems: 'center', gap: 4, borderWidth: 1, borderColor: `${categoryTheme.accent}40` }}>
+                    <Ionicons name="checkmark-done" size={14} color={categoryTheme.accent} />
+                    <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12, color: categoryTheme.accent }}>
+                      {t('storyCraftedPreviouslyLabel', localLang, { date: new Date(usageDate).toLocaleDateString(intlLocaleFor(localLang)) })}
+                    </Text>
+                  </View>
+                </View>
+              ) : null}
+              <View style={{ flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 1 }}>
+                  <Ionicons name="time-outline" size={16} color={colors.textSecondary} />
+                  <Text style={styles.metaItem}>{story.min} {t('minLabel', localLang)}</Text>
+                </View>
+                <Text numberOfLines={1} style={[styles.metaItem, { color: categoryTheme.borderColor, fontFamily: 'Inter_500Medium', textAlign: 'right', flexShrink: 1 }]}>
+                  {displayCat}
+                </Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={{ paddingHorizontal: layout.padding.horizontal }}>
+            {oneMinuteSummary ? (
+              <View style={[
+                styles.oneMinuteSummaryCard,
+                {
+                  borderColor: categoryTheme.borderColor,
+                  backgroundColor: isDark ? colors.backgroundDark : categoryTheme.backgroundColor,
+                },
+              ]}>
+                <TouchableOpacity
+                  onPress={handleOneMinuteSummaryPress}
+                  activeOpacity={0.86}
+                  accessibilityRole="button"
+                  accessibilityState={{ expanded: isPremium ? oneMinuteSummaryOpen : false }}
+                  accessibilityLabel={t('oneMinuteSummaryCta', localLang)}
+                  style={styles.oneMinuteSummaryHeader}
+                >
+                  <View style={[styles.oneMinuteSummaryIcon, { backgroundColor: `${categoryTheme.accent}1F` }]}>
+                    <Ionicons name="sparkles" size={20} color={categoryTheme.accent} />
+                  </View>
+                  <View style={styles.oneMinuteSummaryHeading}>
+                    <Text style={styles.oneMinuteSummaryCta}>{t('oneMinuteSummaryCta', localLang)}</Text>
+                    <Text style={styles.oneMinuteSummarySubtitle}>{t('oneMinuteSummarySubtitle', localLang)}</Text>
+                  </View>
+                  <View style={styles.oneMinuteSummaryTrailing}>
+                    {!isPremium ? (
+                      <View style={[styles.oneMinuteSummaryPremiumBadge, { borderColor: `${categoryTheme.accent}66` }]}>
+                        <Ionicons name="lock-closed" size={10} color={categoryTheme.accent} />
+                        <Text style={[styles.oneMinuteSummaryPremiumText, { color: categoryTheme.accent }]}>
+                          {t('oneMinuteSummaryPremium', localLang)}
+                        </Text>
+                      </View>
+                    ) : null}
+                    <Ionicons
+                      name={oneMinuteSummaryOpen && isPremium ? 'chevron-up' : 'chevron-down'}
+                      size={18}
+                      color={colors.textSecondary}
+                    />
+                  </View>
+                </TouchableOpacity>
+
+                {oneMinuteSummaryOpen && isPremium ? (
+                  <View style={[styles.oneMinuteSummaryBody, { borderTopColor: `${categoryTheme.borderColor}66` }]}>
+                    <View style={styles.oneMinuteSummaryMetaRow}>
+                      <Text style={[styles.oneMinuteSummaryLabel, { color: categoryTheme.accent }]}>
+                        {t('oneMinuteSummaryTitle', localLang)}
+                      </Text>
+                      <View style={styles.oneMinuteSummaryDurationPill}>
+                        <Ionicons name="time-outline" size={13} color={colors.textSecondary} />
+                        <Text style={styles.oneMinuteSummaryDurationText}>
+                          {t('oneMinuteSummaryDuration', localLang)}
+                        </Text>
+                      </View>
+                    </View>
+                    <Text style={styles.oneMinuteSummaryText}>{oneMinuteSummary}</Text>
+                    <TouchableOpacity
+                      onPress={handleReadFullStory}
+                      accessibilityRole="button"
+                      accessibilityLabel={t('oneMinuteSummaryFullStory', localLang)}
+                      style={[styles.oneMinuteSummaryFullStoryButton, { borderColor: categoryTheme.borderColor }]}
+                    >
+                      <Text style={[styles.oneMinuteSummaryFullStoryText, { color: categoryTheme.accent }]}>
+                        {t('oneMinuteSummaryFullStory', localLang)}
+                      </Text>
+                      <Ionicons name="arrow-down" size={15} color={categoryTheme.accent} />
+                    </TouchableOpacity>
+                  </View>
+                ) : null}
+              </View>
+            ) : null}
+
+            {parsedBody.format === 'p1' ? (
+              <StoryBody
+                segments={parsedBody.segments}
+                fontSize={fontSize}
+                categoryTheme={categoryTheme}
+                lang={localLang}
+                onReflectionPress={() => navigation.navigate('UseInConversation', { story: localStory || story })}
+                onSharePocket={sharePocketLine}
+                onTryUseCase={(seg) => navigation.navigate('UseInConversation', {
+                  story: localStory || story,
+                  initialContext: seg?.context || undefined,
+                  entrySource: 'story_use_case',
+                })}
+                renderLessonFooter={FEATURE_FLAGS.careerPathV1 ? (seg) => (seg.index !== 1 ? null : (
+                  <TouchableOpacity
+                    style={[styles.takeawaySaveButton, { borderColor: categoryTheme.borderColor, backgroundColor: isTakeawaySaved ? `${categoryTheme.accent}18` : colors.background }]}
+                    onPress={saveTakeaway}
+                    disabled={isTakeawaySaved}
+                    accessibilityRole="button"
+                    accessibilityState={{ disabled: isTakeawaySaved }}
+                    accessibilityLabel={t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
+                  >
+                    <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={16} color={categoryTheme.accent} />
+                    <Text style={[styles.takeawaySaveText, { color: categoryTheme.accent }]}>
+                      {t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
+                    </Text>
+                  </TouchableOpacity>
+                )) : undefined}
+              />
+            ) : null}
+            {parsedBody.format !== 'p1' && (() => {
+              // Rich reading format is opt-in per story version (F7+ or C series).
+              // Older stories (1/2/F5/F6) keep the legacy behaviour where the
+              // lesson/reflection markers are stripped from the reading flow.
+              const storyVersionKey = String(story?.version || '').trim().toUpperCase();
+              const fverMatch = /^F(\d+)$/.exec(storyVersionKey);
+              const cverMatch = /^C(\d+)$/.exec(storyVersionKey);
+              // 'OH' = yeni üretim (rich) formatı: $$, &&, ~~ görünür kartlar olarak render edilir.
+              const richFormat = (!!fverMatch && Number(fverMatch[1]) >= 7) || !!cverMatch || storyVersionKey === 'OH';
+
+              const segments = parsedBody.segments;
+
+              return segments.map((seg, idx) => {
+                if (seg.type === 'text') {
+                  const trimmedText = seg.content.trim().replace(/\n{2,}/g, '\n\n');
+                  if (!trimmedText) return null;
+                  return (
+                    <Text
+                      key={idx}
+                      style={[styles.detailBody, { fontSize, lineHeight: Math.round(fontSize * 1.55) }]}
+                    >
+                      {trimmedText}
+                    </Text>
+                  );
+                }
+
+                if (seg.type === 'highlight') {
+                  return (
+                    <View key={idx} style={[
+                      styles.quoteBox,
+                      {
+                        borderLeftColor: categoryTheme.borderColor,
+                        backgroundColor: categoryTheme.backgroundColor,
+                      },
+                    ]}>
+                      <Text style={[styles.quoteText, { fontSize: fontSize + 2, lineHeight: (fontSize + 2) * 1.5 }]}>
+                        "{seg.content}"
+                      </Text>
+                    </View>
+                  );
+                }
+
+                // Legacy stories: lesson/reflection stay hidden in the reading flow.
+                if (!richFormat && (seg.type === 'lesson' || seg.type === 'reflection')) {
+                  return null;
+                }
+
+                // Rich format (F7+): the lesson becomes a visible takeaway card.
+                if (seg.type === 'lesson') {
+                  return (
+                    <View key={idx} style={[styles.takeawayCard, {
+                      backgroundColor: categoryTheme.backgroundColor,
+                      borderColor: categoryTheme.borderColor,
+                    }]}>
+                      <View style={styles.takeawayLabelRow}>
+                        <Ionicons name="bulb-outline" size={15} color={categoryTheme.accent} />
+                        <Text style={[styles.takeawayLabel, { color: categoryTheme.accent }]}>
+                          {t('takeawayLabel', lang)}
+                        </Text>
+                      </View>
+                      <Text style={[styles.takeawayText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * 1.5 }]}>
+                        {seg.content}
+                      </Text>
+                      {FEATURE_FLAGS.careerPathV1 ? (
+                        <TouchableOpacity
+                          style={[styles.takeawaySaveButton, { borderColor: categoryTheme.borderColor, backgroundColor: isTakeawaySaved ? `${categoryTheme.accent}18` : colors.background }]}
+                          onPress={saveTakeaway}
+                          disabled={isTakeawaySaved}
+                          accessibilityRole="button"
+                          accessibilityState={{ disabled: isTakeawaySaved }}
+                          accessibilityLabel={t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
+                        >
+                          <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={16} color={categoryTheme.accent} />
+                          <Text style={[styles.takeawaySaveText, { color: categoryTheme.accent }]}>
+                            {t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
+                          </Text>
+                        </TouchableOpacity>
+                      ) : null}
+                    </View>
+                  );
+                }
+
+                // Rich format (F7+): the reflection question becomes a tappable prompt.
+                if (seg.type === 'reflection') {
+                  return (
+                    <TouchableOpacity
+                      key={idx}
+                      activeOpacity={0.85}
+                      onPress={() => navigation.navigate('UseInConversation', { story })}
+                      style={[styles.reflectionBox, { borderColor: categoryTheme.borderColor }]}
+                    >
+                      <View style={styles.takeawayLabelRow}>
+                        <Ionicons name="chatbubble-ellipses-outline" size={15} color={categoryTheme.borderColor} />
+                        <Text style={[styles.reflectionLabel, { color: categoryTheme.borderColor }]}>
+                          {t('reflectionLabel', lang)}
+                        </Text>
+                      </View>
+                      <Text style={[styles.reflectionText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * 1.5 }]}>
+                        {seg.content}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                }
+
+                // Rich format (F7+): "~~before :: after~~" renders as a two-column contrast.
+                if (seg.type === 'contrast') {
+                  if (!richFormat) return null;
+                  const parts = seg.content.split('::').map(s => s.trim());
+                  if (parts.length < 2) return null;
+                  return (
+                    <View key={idx} style={styles.contrastRow}>
+                      <View style={[styles.contrastCol, { backgroundColor: isDark ? colors.backgroundDark : `${colors.border}55` }]}>
+                        <Text style={styles.contrastLabel}>{t('contrastBeforeLabel', lang)}</Text>
+                        <Text style={[styles.contrastText, { color: colors.textSecondary }]}>{parts[0]}</Text>
+                      </View>
+                      <View style={[styles.contrastCol, { backgroundColor: categoryTheme.backgroundColor, borderColor: categoryTheme.borderColor, borderWidth: 1 }]}>
+                        <Text style={[styles.contrastLabel, { color: categoryTheme.accent }]}>{t('contrastAfterLabel', lang)}</Text>
+                        <Text style={[styles.contrastText, { color: colors.text }]}>{parts[1]}</Text>
+                      </View>
+                    </View>
+                  );
+                }
+
+                return null;
+              });
+            })()}
+            {/* Source & Book section */}
+            {displaySourceBook ? (
+              <View style={styles.sourceSection}>
+                <Text style={styles.sourceLabel}>{t('sourceExplore', lang)}</Text>
+                <Text style={styles.bookTitle}>{displaySourceBook.split(' — ')[0].trim()}</Text>
+                {story.author ? (
+                  <Text style={{
+                    fontFamily: 'Inter_400Regular',
+                    fontSize: 13,
+                    color: colors.textSecondary,
+                    marginTop: -10,
+                    marginBottom: 12,
+                  }}>
+                    ✍️ {story.author}
+                  </Text>
+                ) : null}
+
+                {/* Region-aware book buy buttons — geçici olarak kaldırıldı,
+                    anlaşma sağlanınca tekrar açılacak.
+                    TR → Hepsiburada + Kitapyurdu, elsewhere → local Amazon. */}
+                {false && (
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 12 }}>
+                  {getBookBuyLinks(displaySourceBook, story.author).map((link) => (
+                    <TouchableOpacity
+                      key={link.id}
+                      onPress={() => Linking.openURL(link.url)}
+                      style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flexGrow: 1, flexBasis: '30%', justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
+                    >
+                      <Ionicons name={link.icon} size={16} color={colors.text} style={{ marginRight: 6 }} />
+                      <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>{link.label}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+                )}
+              </View>
+            ) : null}
+
+            {FEATURE_FLAGS.careerPathV1 ? (
+              <View style={[styles.storyEngagementCard, { backgroundColor: categoryTheme.backgroundColor, borderColor: categoryTheme.borderColor }]}>
+                <View style={styles.takeawayLabelRow}>
+                  <Ionicons name="sparkles-outline" size={16} color={categoryTheme.accent} />
+                  <Text style={[styles.takeawayLabel, { color: categoryTheme.accent }]}>{t('career.engagement.title', lang)}</Text>
+                </View>
+                <Text style={styles.storyEngagementCopy}>{t('career.engagement.copy', lang)}</Text>
+                <View style={styles.storyEngagementActions}>
+                  <TouchableOpacity
+                    style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: isTakeawaySaved ? `${categoryTheme.accent}18` : colors.background }]}
+                    onPress={saveStoryReflection}
+                    disabled={isTakeawaySaved}
+                    accessibilityRole="button"
+                    accessibilityState={{ disabled: isTakeawaySaved }}
+                  >
+                    <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={17} color={categoryTheme.accent} />
+                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.accent }]}>{t(isTakeawaySaved ? 'career.engagement.saved' : 'career.engagement.save', lang)}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: colors.background }]}
+                    onPress={() => setRecPanelVisible(true)}
+                    accessibilityRole="button"
+                  >
+                    <Ionicons name="mic-outline" size={17} color={categoryTheme.accent} />
+                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.accent }]}>{t('career.engagement.voice', lang)}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: colors.background }]}
+                    onPress={openConversation}
+                    accessibilityRole="button"
+                  >
+                    <Ionicons name="chatbubbles-outline" size={17} color={categoryTheme.accent} />
+                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.accent }]}>{t('career.engagement.conversation', lang)}</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ) : null}
+
+            {/* ── "Sohbette Kullan" entry — removed from body, now in footer ─ */}
+          </View>
+          <View style={{ height: 100 }} />
+        </Animated.ScrollView>
+
+        {/* ── Ses Kaydı Paneli (satır içi — hikâye okunurken erişilebilir) ── */}
+        {recPanelVisible ? (
+          <View style={styles.recInlinePanel}>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+                <Text style={styles.modalTitle}>{t('voiceRecordingPanelTitle', lang)}</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                  <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary }}>
+                    {t('voiceRecordingCountLabel', lang, { count: audioRecordings.length, max: MAX_RECORDINGS })}
+                  </Text>
+                  <TouchableOpacity onPress={() => { if (!isRecording) setRecPanelVisible(false); }} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+                    <Ionicons name="chevron-down" size={22} color={colors.textSecondary} />
+                  </TouchableOpacity>
+                </View>
+              </View>
+
+              {/* Kayıt al / durdur — büyük buton */}
+              <TouchableOpacity
+                onPress={toggleRecording}
+                disabled={!isRecording && audioRecordings.length >= MAX_RECORDINGS}
+                activeOpacity={0.85}
+                style={[
+                  styles.recordCardBtn,
+                  {
+                    borderColor: isRecording ? categoryTheme.accent : categoryTheme.borderColor,
+                    backgroundColor: isRecording ? categoryTheme.strongBackgroundColor : categoryTheme.backgroundColor,
+                    opacity: (!isRecording && audioRecordings.length >= MAX_RECORDINGS) ? 0.4 : 1,
+                  },
+                ]}
+              >
+                <View style={[styles.recordCardMic, { backgroundColor: categoryTheme.accent }]}>
+                  <Ionicons name={isRecording ? 'stop' : 'mic'} size={24} color="#FFFFFF" />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 16, color: categoryTheme.accent }}>
+                    {isRecording
+                      ? t('voiceRecordingStop', lang)
+                      : t('voiceRecordingNew', lang)}
+                  </Text>
+                  <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: isRecording ? categoryTheme.accent : colors.textSecondary, marginTop: 2 }}>
+                    {isRecording
+                      ? `● ${formatDuration(recordingDuration)} / ${formatDuration(MAX_DURATION_MS)}`
+                      : audioRecordings.length >= MAX_RECORDINGS
+                        ? t('voiceRecordingMaxReached', lang, { max: MAX_RECORDINGS })
+                        : t('voiceRecordingHint', lang, { duration: formatDuration(MAX_DURATION_MS) })}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+
+              {/* Kayıt listesi */}
+              {audioRecordings.map((rec, index) => (
+                <View key={`rec-${index}`} style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  paddingVertical: 10,
+                  paddingHorizontal: 12,
+                  borderRadius: 14,
+                  backgroundColor: playingIndex === index
+                    ? `${categoryTheme.accent}18`
+                    : isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.04)',
+                  marginBottom: 8,
+                  borderWidth: playingIndex === index ? 1 : 0,
+                  borderColor: `${categoryTheme.accent}40`,
+                }}>
+                  <TouchableOpacity onPress={() => playRecording(index)} style={{ marginRight: 12 }}>
+                    <Ionicons
+                      name={playingIndex === index ? 'pause-circle' : 'play-circle'}
+                      size={36}
+                      color={categoryTheme.accent}
+                    />
+                  </TouchableOpacity>
+                  <View style={{ flex: 1 }}>
+                    <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
+                      {t('voiceRecordingTakeLabel', lang, { n: index + 1 })}
+                      {' · '}
+                      <Text style={{ fontFamily: 'Inter_400Regular', color: colors.textSecondary }}>
+                        {formatDuration(rec.durationMs)}
+                      </Text>
+                    </Text>
+                    <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginTop: 1 }}>
+                      {new Date(rec.date).toLocaleDateString(intlLocaleFor(lang), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                    </Text>
+                  </View>
+                  <TouchableOpacity onPress={() => deleteRecording(index)} style={{ padding: 6 }}>
+                    <Ionicons name="trash-outline" size={20} color={colors.textSecondary} />
+                  </TouchableOpacity>
+                </View>
+              ))}
+
+              {audioRecordings.length === 0 && !isRecording ? (
+                <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary, textAlign: 'center', marginTop: 6 }}>
+                  {t('voiceRecordingEmpty', lang)}
+                </Text>
+              ) : null}
+          </View>
+        ) : null}
+
+        <View style={[styles.detailFooter, { alignItems: 'flex-start' }]}>
+          {/* Ses kaydı — kompakt mikrofon butonu (paneli açar) */}
+          <TouchableOpacity
+            onPress={() => setRecPanelVisible(v => !v)}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityLabel={t('voiceRecordingsAccessibilityLabel', lang)}
+            style={[styles.footerMicBtn, {
+              borderColor: categoryTheme.borderColor,
+              backgroundColor: recPanelVisible ? categoryTheme.backgroundColor : (isDark ? colors.backgroundDark : '#FFFFFF'),
+            }]}
+          >
+            <Ionicons name={recPanelVisible ? 'mic' : 'mic-outline'} size={24} color={categoryTheme.accent} />
+            {audioRecordings.length > 0 ? (
+              <View style={[styles.footerMicBadge, { backgroundColor: categoryTheme.accent }]}>
+                <Text style={[styles.footerMicBadgeText, { color: readableTextOn(categoryTheme.accent) }]}>{audioRecordings.length}</Text>
+              </View>
+            ) : null}
+          </TouchableOpacity>
+
+          {/* PRIMARY: Sohbette Kullan — main CTA with micro-copy */}
+          <View style={{ flex: 1 }}>
+            <TouchableOpacity
+              onPress={openConversation}
+              accessibilityRole="button"
+              accessibilityLabel={t('story_detail_use_cta', lang)}
+              activeOpacity={0.9}
+            >
+              <LinearGradient
+                colors={[colors.ctaGradientStart, colors.ctaGradientEnd, '#7A2A00']}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={[
+                  styles.btnPrimaryGradient,
+                  {
+                    height: 58,
+                    borderWidth: 1,
+                    borderColor: isDark ? 'rgba(255,255,255,0.14)' : 'rgba(122,42,0,0.18)',
+                    shadowColor: colors.ctaGradientEnd,
+                    shadowOpacity: 0.35,
+                    shadowRadius: 14,
+                    shadowOffset: { width: 0, height: 8 },
+                    elevation: 8,
+                  },
+                ]}
+              >
+                <View style={[styles.btnPrimary, { height: 58, flexDirection: 'row', gap: 8 }]}>
+                  <Ionicons name="sparkles" size={18} color="#F7F3EB" />
+                  <Text style={[styles.btnPrimaryText, { color: '#F7F3EB', fontSize: typography.sizes.ui + 3, letterSpacing: 0.2 }]}>
+                    {t('story_detail_use_cta', lang)}
+                  </Text>
+                  <Ionicons name="arrow-forward" size={17} color="#F7F3EB" />
+                </View>
+              </LinearGradient>
+            </TouchableOpacity>
+            <Text style={{
+              fontFamily: 'Inter_400Regular',
+              fontSize: 12,
+              color: colors.textSecondary,
+              textAlign: 'center',
+              marginTop: 7,
+              opacity: 0.9,
+            }}>
+              {t('story_detail_use_cta_sub', lang)}
+            </Text>
+          </View>
+        </View>
+      </SafeAreaView>
+
+      <AdOrPremiumSheet
+        visible={adSheet}
+        onClose={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_next', choice: 'dismiss' });
+          setAdUnavailable(false);
+          setAdSheet(false);
+        }}
+        onDismiss={flushPendingRewarded}
+        onWatchAd={handleWatchAdNext}
+        onGoPremium={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_next', choice: 'premium' });
+          setAdSheet(false);
+          navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
+        }}
+        adUnavailable={adUnavailable}
+        isAdLoading={isAdLoading}
+        lang={lang}
+      />
+
+      {/* Visual card gate — free users unlock by ad or go Premium */}
+      <AdOrPremiumSheet
+        visible={cardGate}
+        onClose={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_card', choice: 'dismiss' });
+          setCardAdUnavailable(false);
+          setCardGate(false);
+        }}
+        onDismiss={flushPendingRewarded}
+        onWatchAd={handleWatchAdForCard}
+        onGoPremium={() => {
+          trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'story_detail_card', choice: 'premium' });
+          setCardGate(false);
+          navigation.navigate('Paywall', { reason: 'image_card', source: 'story_detail_card' });
+        }}
+        title={t('cardGateTitle', lang)}
+        subtitle={t('cardGateSubtitle', lang)}
+        adUnavailable={cardAdUnavailable}
+        isAdLoading={cardAdLoading}
+        lang={lang}
+      />
+
+      {/* Cover the story until the interstitial is shown (or fails) */}
+      {storyAdGate && (
+        <View style={styles.adGateOverlay} pointerEvents="auto">
+          <ActivityIndicator size="large" color={colors.primary} />
+        </View>
+      )}
+    </>
+  );
+};
+
+export default StoryDetailScreen;

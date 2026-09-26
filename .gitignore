@@ -42,3 +42,6 @@ android/app/build/
 # Story pipeline generated reports
 staging/reports/
 assets/kivilcim.db.bak_*
+assets/_db_backups/
+otomatize-batch/logs/
+otomatize-batch/.pipeline.lock

@@ -1,4 +1,4 @@
-# Yeni Kitaplardan İlk 5 Hikâye — 3 Dakika (Tek `##` + `$$`/`~~`/`&&`)
+# Yeni Kitaplardan İlk 6 Hikâye — 3 Dakika (Tek `##` + `$$`/`~~`/`&&`)
 
 Kaynak: *Kitap ve Hikâye Listesi* · Bölüm 2 · Kitap 277 — **Range** (David Epstein) · Tür: Büyüme · Hedef: ~3 dk / hikâye · Sürüm: **rich (F7+)** — `$$`, `&&`, `~~` görünür kart olarak render edilir.
 
@@ -144,3 +144,39 @@ Bunun bir bedeli de vardır: Geniş bir insan, tek bir konuda en derin uzman kad
 $$Bir merakı "işime yaramıyor" diye hemen elemek, geleceğin fikrini daha doğmadan kesmek olabilir.$$
 
 &&İşinle hiç ilgisi yokmuş gibi görünen bir merakın ya da hobin var mı? Onu bugünkü bir sorununla bilinçli olarak birleştirsen ortaya ne çıkabilir?&&
+
+---
+
+## 6. InnoCentive'de alan dışı çözücüler
+
+**Açıklama:** Şirketlerin kendi uzmanlarıyla yıllarca çözemediği bilimsel problemler, bazen bambaşka bir alandan gelen insanların taşıdığı sıradan bir fikirle çözülür.
+
+Uzun süredir çözemediğin bir sorunu, o işten hiç anlamayan birine vermeyi göze alır mıydın?
+
+Çoğu şirket bunu yapmazdı. En zor problemi, en kıdemli uzmana teslim etmek daha mantıklı görünür. Sonuçta bir konuyu yıllarca çalışan biri varken dışarıdan gelen bir yabancı ne bilebilir?
+
+InnoCentive adlı platform tam bu varsayımı sınadı. Şirketler, kendi araştırma ekiplerinin çözemediği bilimsel ve teknik problemleri platformda yayımlıyordu. Dünyanın farklı yerlerinden kimyagerler, fizikçiler, biyologlar, mühendisler ve hatta problemin alanıyla doğrudan ilgisi olmayan insanlar çözüm gönderebiliyordu.
+
+Platform alışılmış işe alım mantığını da tersine çeviriyordu. Normalde önce özgeçmişe bakılır, uygun unvanı taşıyan kişi seçilir ve problem ona verilir. Burada ise problem önce herkese açılıyor, kişinin kim olduğundan çok sunduğu çözüm değerlendiriliyordu. Böylece doğru fikrin yanlış kartvizitin arkasında kaldığı için elenmesi zorlaşıyordu.
+
+İlk bakışta bu, uzmanlığı küçümseyen bir fikir gibi görünüyordu. Oysa sonuçlar başka bir şeyi gösterdi.
+
+~~Sorunun içinde yıllardır çalışan ve denenmiş yolların hepsini bilen uzman :: Aynı soruna başka bir alanın araçlarıyla, kalıplarıyla ve diliyle bakan yabancı~~
+
+Çözüm kimi zaman problemin merkezindeki uzmandan değil, komşu hatta uzak bir disiplinden geliyordu. Kimyacıların tıkandığı yerde bir fizikçi, biyologların çözemediği yerde başka tür problemlerle uğraşan biri ilerleyebiliyordu.
+
+Üstelik dışarıdan bakan kişi, sorunun yıllardır çözülemediğini bilmediği için onun karşısında donup kalmıyordu. Uzmanların taşıdığı başarısız denemeler hafızası onda yoktu. Başkalarının imkânsız saydığı yolu, yalnızca tanıdık göründüğü için deneyebiliyordu.
+
+Bunun nedeni dışarıdan gelen kişinin daha zeki olması değildi. Tam tersine, çoğu zaman problemi bütün ayrıntılarıyla bilmiyordu. Fakat kendi alanında sıradan sayılan bir yöntemi yanında getiriyordu. O yöntem, problemin ait olduğu alanda kimsenin aklına gelmemişti.
+
+Uzmanlığın görünmez bir bedeli vardır: İnsan yalnızca neyin işe yaradığını değil, neyin "işe yaramayacağını" da öğrenir. Bu bilgi hız kazandırır; ama bazen düşünceyi daraltır. Aynı yollar tekrar tekrar denenir, aynı sorular farklı kelimelerle yeniden sorulur. Bir süre sonra problemin sınırları, gerçeğin değil alışkanlığın çizdiği sınırlar hâline gelir.
+
+Dışarıdan gelen kişi ise bu sınırları bilmez. Bu yüzden uzmanın sormaya değer bulmadığı soruyu sorabilir. Herkesin vazgeçtiği benzetmeyi ciddiye alabilir. Kendi dünyasında çoktan çözülmüş bir problemi, yeni bir bağlamda yeniden görebilir.
+
+David Epstein'ın vurguladığı şey, uzmanlığın değersiz olduğu değildir. Derin uzmanlık, zor bir soruyu doğru tanımlamak ve olası çözümü sınamak için hâlâ gereklidir. Fakat doğru cevabın hammaddesi her zaman aynı alanın içinde bulunmaz. Bazen ilerlemek için daha derine kazmak değil, başka bir kuyudan araç getirmek gerekir.
+
+##Bir alanda sıradan olan fikir, başka bir alanda yıllardır beklenen devrim olabilir.##
+
+$$Uzmanlık problemin derinliğini gösterir; genişlik ise daha önce görünmeyen çıkışları buldurur.$$
+
+&&Bugün takıldığın bir sorunu alan dışından birine anlatıp ondan çözüm değil, en "saf" sorusunu istesen sana neyi yeniden düşündürebilir?&&

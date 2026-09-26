@@ -1,0 +1,99 @@
+{
+  "status": "waiting_for_licensed_data_credentials_and_instrument_choice",
+  "period": {
+    "start_inclusive_utc": "2025-08-27T00:00:00Z",
+    "end_exclusive_utc": "2026-08-27T00:00:00Z"
+  },
+  "requested_timeframes": ["5m", "15m", "30m", "1h", "4h", "1d"],
+  "markets": [
+    {
+      "name": "DAX 40",
+      "venue": "Eurex",
+      "databento_dataset": "XEUR.EOBI",
+      "signal_symbol": "FDAX.v.0",
+      "smaller_contracts": ["FDXM.v.0", "FDXS.v.0"]
+    },
+    {
+      "name": "Nasdaq 100",
+      "venue": "CME Globex",
+      "databento_dataset": "GLBX.MDP3",
+      "signal_symbol": "NQ.v.0",
+      "smaller_contracts": ["MNQ.v.0"]
+    },
+    {
+      "name": "S&P 500",
+      "venue": "CME Globex",
+      "databento_dataset": "GLBX.MDP3",
+      "signal_symbol": "ES.v.0",
+      "smaller_contracts": ["MES.v.0"]
+    },
+    {
+      "name": "Gold",
+      "venue": "COMEX",
+      "databento_dataset": "GLBX.MDP3",
+      "signal_symbol": "GC.v.0",
+      "smaller_contracts": ["MGC.v.0"]
+    }
+  ],
+  "price_data_plan": {
+    "recommended_provider": "Databento",
+    "raw_schema": "ohlcv-1m",
+    "input_symbology": "continuous",
+    "roll_rule": "volume_leader_rank_0_unadjusted",
+    "raw_encoding": "json_lines",
+    "normalized_encoding": "json",
+    "timezone": "UTC",
+    "aggregation": {
+      "open": "first",
+      "high": "max",
+      "low": "min",
+      "close": "last",
+      "volume": "sum"
+    },
+    "daily_rule": "use_exchange_session_boundaries_not_calendar_midnight",
+    "credentials_required": ["DATABENTO_API_KEY"]
+  },
+  "news_data_plan": {
+    "recommended_provider": "Trading Economics economic calendar",
+    "countries": ["United States", "Germany", "Euro Area"],
+    "minimum_importance": 3,
+    "required_fields": [
+      "scheduled_at_utc",
+      "title",
+      "country",
+      "importance_ex_ante",
+      "actual",
+      "forecast",
+      "previous",
+      "revised_previous",
+      "source_url"
+    ],
+    "credentials_required": ["TRADING_ECONOMICS_API_KEY"],
+    "free_fallback": "Official Fed, BLS, BEA, ECB and Eurostat release calendars; forecast and vendor importance remain null"
+  },
+  "quality_requirements": [
+    "Do not forward-fill missing bars as trades.",
+    "Keep futures contract mappings and rollover timestamps.",
+    "Keep ex-ante event importance separate from ex-post price impact.",
+    "Model commissions, spread, slippage and session-specific fills.",
+    "If execution uses CFDs, replace futures prices with the same broker's bid/ask history."
+  ],
+  "rejected_sources": [
+    {
+      "source": "Installed tradingview-ta MCP",
+      "reason": "No raw historical OHLCV export; backtest supports only 1h and 1d; no historical news archive."
+    },
+    {
+      "source": "Yahoo Finance",
+      "reason": "Five-minute history is limited to roughly 60 days; DAX cash-index volume is not centralized."
+    },
+    {
+      "source": "HF Market Data",
+      "reason": "Approximately 20 days stale and redistribution/license provenance is unclear."
+    },
+    {
+      "source": "GDELT DOC bulk collection",
+      "reason": "Useful for unscheduled headlines but rate-limited and has no ex-ante importance, actual or forecast fields."
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "category": "Felsefe",
+  "distinct_art": true,
+  "source": {
+    "book": "Black Box Thinking",
+    "author": "Matthew Syed"
+  },
+  "slides": [
+    {
+      "main_lines": [
+        "Dünyanın en ölümcül",
+        "uçak kazası havada değil,",
+        "pistte oldu.",
+        "İki Boeing 747: 583 ölü.",
+        "Neden unutulmadı?"
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 2,
+        "text": "pistte oldu."
+      },
+      "art_path": "illustrations/scene-01.png",
+      "art_crop": [0.0, 0.28, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "27 Mart 1977, Tenerife.",
+        "Yoğun sis görüşü yuttu.",
+        "Bir uçak kalkışa başladı;",
+        "diğeri hâlâ aynı pistteydi."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 3,
+        "text": "aynı pistteydi."
+      },
+      "art_path": "illustrations/scene-02.png",
+      "art_crop": [0.0, 0.32, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Sis tek sorun değildi.",
+        "Belirsiz telsiz ifadeleri,",
+        "acele baskısı",
+        "ve kopuk koordinasyon",
+        "aynı pistte üst üste bindi."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "üst üste bindi."
+      },
+      "art_path": "illustrations/scene-03.png",
+      "art_crop": [0.0, 0.33, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Tenerife, Kokpit Kaynak",
+        "Yönetimi’ni doğuran başlıca",
+        "kazalardan biri oldu.",
+        "Pilotlar artık birbirini",
+        "durdurmayı da öğrenmeliydi."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "durdurmayı"
+      },
+      "art_path": "illustrations/scene-04.png",
+      "art_crop": [0.0, 0.30, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Kara kutu suçlu seçmez.",
+        "Ne oldu, hangi koşulda oldu,",
+        "tekrar nasıl önlenir —",
+        "bunu görünür kılar.",
+        "Sistem, açık hatadan öğrenir."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "açık hatadan öğrenir."
+      },
+      "art_path": "illustrations/scene-05.png",
+      "art_crop": [0.0, 0.30, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Suç kültürü hatayı susturur.",
+        "Öğrenen kültür raporu korur",
+        "kasıtlı ihlalle",
+        "insani yanlışı ayırır",
+        "ve riski kazadan önce görür."
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "kazadan önce"
+      },
+      "art_path": "illustrations/scene-06.png",
+      "art_crop": [0.0, 0.31, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Son hatanı 10 dakikada aç:",
+        "Ne oldu?",
+        "Hangi koşul ona izin verdi?",
+        "Bir daha olmaması için",
+        "tek neyi değiştireceksin?"
+      ],
+      "support_lines": [],
+      "accent_focus": {
+        "block": "main",
+        "line": 4,
+        "text": "tek neyi değiştireceksin?"
+      },
+      "art_path": "illustrations/scene-07.png",
+      "art_crop": [0.0, 0.29, 1.0, 1.0],
+      "art_box": [0, 720, 1080, 1350],
+      "art_opacity": 0.98
+    },
+    {
+      "main_lines": [
+        "Son hata konuşulduğunda",
+        "bir suçlu mu arandı,",
+        "yoksa sistem mi değişti?",
+        "Sen de yorumlarda anlat."
+      ],
+      "support_lines": [
+        "Kaynak: Black Box Thinking — Matthew Syed",
+        "Albor’da tam hikâyeyi oku."
+      ],
+      "accent_focus": {
+        "block": "main",
+        "line": 2,
+        "text": "sistem mi değişti?"
+      },
+      "art_path": "illustrations/scene-08.png",
+      "art_crop": [0.0, 0.31, 1.0, 1.0],
+      "art_box": [0, 850, 1080, 1350],
+      "art_opacity": 0.98
+    }
+  ]
+}

@@ -38,32 +38,22 @@ import StorytellerOverlay from '../components/StorytellerOverlay';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import ShareCardModal from '../components/ShareCardModal';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { shouldShowAd, loadRewarded, showRewarded } from '../utils/ads';
+import { shouldShowAd, rewardedGate, loadRewarded, showRewarded } from '../utils/ads';
 import { getCategoryTheme } from '../utils/categoryImages';
+import { extractShareParts, getNarrativeText } from '../utils/storyMarkup';
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
-/** Extract text between the first pair of `marker` occurrences in body */
+/** Marker extraction and clean body text come from the shared story markup module. */
 const extractMarker = (body, marker) => {
-  const start = body.indexOf(marker);
-  if (start === -1) return '';
-  const segment = body.substring(start + marker.length);
-  let end = segment.length;
-  ['##', '$$', '&&'].forEach(m => {
-    const idx = segment.indexOf(m);
-    if (idx !== -1 && idx < end) end = idx;
-  });
-  return segment.substring(0, end).trim();
+  const parts = extractShareParts(body);
+  if (marker === '##') return parts.quote;
+  if (marker === '$$') return parts.lesson;
+  if (marker === '&&') return parts.reflection;
+  return '';
 };
 
-/** Strip all marker-wrapped blocks and return clean body text */
-const cleanBodyText = (body) =>
-  body
-    .replace(/##[\s\S]*?##/g, '')
-    .replace(/\$\$[\s\S]*?\$\$/g, '')
-    .replace(/&&[\s\S]*?&&/g, '')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
+const cleanBodyText = (body) => getNarrativeText(body);
 
 const normalizeHashtag = (value = '') =>
   value
@@ -205,6 +195,19 @@ const buildMicroVariants = (story, lang) => {
   return candidates.filter(v => v.body.length > 0);
 };
 
+/** Context (from a story's [[use]] card) → the format that fits it best. */
+const CONTEXT_TO_VARIANT = {
+  meeting: 'thirty_sec',
+  oneonone: 'question',
+  family: 'punchline',
+  social: 'thirty_sec',
+  self: 'question',
+};
+
+/** Context slug → its display label. 'self' has no Storyteller practice context, so it uses its own key. */
+const contextLabel = (context, lang) =>
+  context === 'self' ? t('convoContextSelf', lang) : t(`mv_storyteller_context_${context}`, lang);
+
 /** Which platform a given length comfortably fits (for the char hint) */
 const platformFitLabel = (len, lang) => {
   if (len <= 280) return t('mv_share_on_x', lang);
@@ -215,7 +218,7 @@ const platformFitLabel = (len, lang) => {
 // ─── screen ─────────────────────────────────────────────────────────────────
 
 const UseInConversationScreen = ({ route, navigation }) => {
-  const { story } = route.params;
+  const { story, initialContext, entrySource } = route.params;
   const { colors, layout, isDark, lang } = useTheme();
   const { isPremium, recordVariantUsage, removeVariantUsage, recordPrivateCareerApplication, variantUsage, incrementShareCount, isStoryCompleted, setBadgePresentationBlocked } = useUserData();
   const insets = useSafeAreaInsets();
@@ -229,14 +232,20 @@ const UseInConversationScreen = ({ route, navigation }) => {
   useEffect(() => {
     trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
       storyId: story?.story_id,
-      source: 'screen_mount',
+      source: entrySource || 'screen_mount',
+      context: initialContext || undefined,
       lang,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Selected format (single-select)
-  const [selectedId, setSelectedId] = useState(() => variants[0]?.id ?? null);
+  // Selected format (single-select). Coming from a story's "Try it" card
+  // preselects the format that best matches the context it was tagged with.
+  const [selectedId, setSelectedId] = useState(() => {
+    const preferred = initialContext && CONTEXT_TO_VARIANT[initialContext];
+    if (preferred && variants.some(v => v.id === preferred)) return preferred;
+    return variants[0]?.id ?? null;
+  });
   const selected = useMemo(
     () => variants.find(v => v.id === selectedId) || variants[0] || null,
     [variants, selectedId],
@@ -408,17 +417,23 @@ const UseInConversationScreen = ({ route, navigation }) => {
         variantType: variant.type,
         lang,
       });
-      if (isPremium || !shouldShowAd({ isPremium, isOnboarded: true })) {
+      const gate = rewardedGate({ isPremium });
+      if (gate === 'allow') {
         openShareCard(variant);
       } else {
-        pendingShareVariantRef.current = variant;
-        setShareAdUnavailable(false);
-        setShareGate(true);
         trackEvent(ANALYTICS_EVENTS.FREE_LIMIT_TO_PAYWALL, {
           source: 'use_in_conversation_share',
           storyId: story?.story_id,
           lang,
         });
+        // Without rewarded inventory the visual card stays a paid feature.
+        if (gate === 'paywall') {
+          navigation.navigate('Paywall', { reason: 'image_card', source: 'use_in_conversation' });
+        } else {
+          pendingShareVariantRef.current = variant;
+          setShareAdUnavailable(false);
+          setShareGate(true);
+        }
       }
       return;
     }
@@ -639,6 +654,22 @@ const UseInConversationScreen = ({ route, navigation }) => {
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       >
+        {/* ── From-story banner ────────────────────────────────────────── */}
+        {entrySource === 'story_use_case' ? (
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            activeOpacity={0.8}
+            style={[styles.fromStoryBanner, { borderColor: categoryTheme.borderColor, backgroundColor: categoryTheme.backgroundColor }]}
+            accessibilityRole="button"
+          >
+            <Ionicons name="chevron-back" size={14} color={categoryTheme.accent} />
+            <Text style={[styles.fromStoryBannerText, { color: categoryTheme.accent }]} numberOfLines={1}>
+              {t('convoBackToStory', lang)}
+              {initialContext ? `  ·  ${contextLabel(initialContext, lang)}` : ''}
+            </Text>
+          </TouchableOpacity>
+        ) : null}
+
         {/* ── Story header ─────────────────────────────────────────────── */}
         <View style={styles.storyHeader}>
           <Text style={[styles.categoryLabel, { color: colors.textSecondary }]}>
@@ -698,7 +729,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
                 accessibilityRole="button"
                 accessibilityLabel={t('mv_ai_rewrite', lang)}
               >
-                <Ionicons name="sparkles" size={12} color={colors.primary} />
+                <Ionicons name="sparkles" size={12} color={colors.primaryText} />
                 <Text style={styles.aiPillText}>{t('mv_ai_rewrite', lang)}</Text>
               </TouchableOpacity>
             </View>
@@ -840,11 +871,11 @@ const UseInConversationScreen = ({ route, navigation }) => {
         <View style={styles.privatePlanBackdrop}>
           <View style={styles.privatePlanSheet}>
             <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.close', lang)} onPress={() => setPrivatePlanVisible(false)} style={styles.privatePlanClose}><Ionicons name="close" size={20} color={colors.text} /></TouchableOpacity>
-            <Ionicons name="shield-checkmark-outline" size={27} color={colors.primary} />
+            <Ionicons name="shield-checkmark-outline" size={27} color={colors.primaryText} />
             <Text selectable style={styles.privatePlanTitle}>{t('career.privatePlan.title', lang)}</Text>
             <Text selectable style={styles.privatePlanCopy}>{t('career.privatePlan.copy', lang)}</Text>
             <View style={styles.privatePlanOptions}>
-              {['workStudy', 'social', 'personal'].map((context) => <TouchableOpacity key={context} accessibilityRole="button" accessibilityLabel={t(`career.privatePlan.${context}`, lang)} onPress={() => handlePrivatePlan(context)} style={styles.privatePlanOption}><Text selectable style={styles.privatePlanOptionText}>{t(`career.privatePlan.${context}`, lang)}</Text><Ionicons name="arrow-forward" size={18} color={colors.primary} /></TouchableOpacity>)}
+              {['workStudy', 'social', 'personal'].map((context) => <TouchableOpacity key={context} accessibilityRole="button" accessibilityLabel={t(`career.privatePlan.${context}`, lang)} onPress={() => handlePrivatePlan(context)} style={styles.privatePlanOption}><Text selectable style={styles.privatePlanOptionText}>{t(`career.privatePlan.${context}`, lang)}</Text><Ionicons name="arrow-forward" size={18} color={colors.primaryText} /></TouchableOpacity>)}
             </View>
           </View>
         </View>
@@ -965,6 +996,24 @@ const buildStyles = (colors, isDark, insets) => {
       paddingBottom: 24,
     },
 
+    // From-story banner
+    fromStoryBanner: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      alignSelf: 'flex-start',
+      paddingVertical: 7,
+      paddingHorizontal: 12,
+      borderRadius: 999,
+      borderWidth: 1,
+      marginTop: 10,
+      marginBottom: 4,
+    },
+    fromStoryBannerText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+    },
+
     // Story header
     storyHeader: {
       paddingTop: 6,
@@ -1014,7 +1063,7 @@ const buildStyles = (colors, isDark, insets) => {
     gridCardActive: {
       borderColor: colors.primary,
       borderWidth: 1.5,
-      backgroundColor: isDark ? `${colors.primary}1A` : '#F4ECDA',
+      backgroundColor: colors.primaryContainer,
     },
     gridIconCircle: {
       width: 30,
@@ -1061,7 +1110,7 @@ const buildStyles = (colors, isDark, insets) => {
     previewLabel: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 11,
-      color: colors.primary,
+      color: colors.primaryText,
       letterSpacing: 1.2,
       flex: 1,
     },
@@ -1076,7 +1125,7 @@ const buildStyles = (colors, isDark, insets) => {
     aiPillText: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 12,
-      color: colors.primary,
+      color: colors.primaryText,
     },
     quoteRow: {
       flexDirection: 'row',

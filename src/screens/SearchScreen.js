@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useStories } from '../context/StoriesContext';
+import { useUserData } from '../context/UserDataContext';
 import StoryCard from '../components/StoryCard';
 import CategoryPill from '../components/CategoryPill';
 import { t } from '../locales/i18n';
@@ -19,6 +20,7 @@ const MAX_RECENT_SEARCHES = 8;
 const SearchScreen = ({ navigation, route }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
   const { parentCategories } = useStories();
+  const { consumeFreeRead } = useUserData();
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [recentSearches, setRecentSearches] = useState([]);
@@ -99,8 +101,15 @@ const SearchScreen = ({ navigation, route }) => {
     persistRecentSearch(term);
   };
 
-  const openStory = (story) => {
+  // Search was a hole in the free tier: any story could be opened from here
+  // without touching the daily quota. It goes through the same gate as Home.
+  const openStory = async (story) => {
     persistRecentSearch(query);
+    const allowed = await consumeFreeRead(story.story_id);
+    if (!allowed) {
+      navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'search_locked' });
+      return;
+    }
     navigation.navigate('StoryDetail', { story });
   };
 
@@ -273,7 +282,7 @@ const SearchScreen = ({ navigation, route }) => {
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        {careerAction ? <View style={[styles.careerGuide, { borderColor: `${colors.primary}55`, backgroundColor: `${colors.primary}12` }]}><Ionicons name={careerAction === 'application' ? 'chatbubbles-outline' : careerAction === 'connection' ? 'bulb-outline' : 'compass-outline'} size={18} color={colors.primary} /><Text style={styles.careerGuideText}>{t(`career.searchGuide.${careerAction}`, lang)}</Text></View> : null}
+        {careerAction ? <View style={[styles.careerGuide, { borderColor: `${colors.primary}55`, backgroundColor: `${colors.primary}12` }]}><Ionicons name={careerAction === 'application' ? 'chatbubbles-outline' : careerAction === 'connection' ? 'bulb-outline' : 'compass-outline'} size={18} color={colors.primaryText} /><Text style={styles.careerGuideText}>{t(`career.searchGuide.${careerAction}`, lang)}</Text></View> : null}
         {showIdleState ? (
           <>
             {recentSearches.length > 0 && (

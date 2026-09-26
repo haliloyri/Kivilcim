@@ -1,0 +1,39 @@
+{
+  "story_id": 1707,
+  "kind": "anecdote",
+  "book": { "title": "The 7 Habits of Highly Effective People", "author": "Stephen R. Covey", "year": 1989 },
+  "confidence": "high",
+  "confidence_note": "Covey tells this first-person anecdote in the 'Paradigms and Principles' part of the book to illustrate a paradigm shift. Retold in our own words; no long quotation from the book.",
+  "facts": [
+    "A Sunday morning on a New York subway car; passengers calm — reading newspapers, lost in thought, resting with eyes closed.",
+    "A man boards with his children; the children immediately get loud and rowdy, throwing things, even grabbing people's papers; the whole car is disturbed.",
+    "The man sits next to Covey with his eyes closed, apparently oblivious.",
+    "Covey is irritated and can't believe the man lets his children run wild and takes no responsibility.",
+    "With what he considered unusual patience and restraint, Covey asks the man whether he could control his children a little more because they are disturbing people.",
+    "The man looks up as if just becoming aware, and says softly that Covey is right, that he guesses he should do something; they have just come from the hospital where the children's mother died about an hour ago; he doesn't know what to think, and he guesses the children don't know how to handle it either.",
+    "Covey: in that instant he saw things differently, and because he saw differently he thought, felt and behaved differently; his irritation vanished; he didn't have to control his attitude — his heart filled with the man's pain; he asked about it and how he could help.",
+    "The children's behaviour had not changed; Covey's paradigm had."
+  ],
+  "tension": "The reader should first feel Covey's irritation, then have their own judgment overturned.",
+  "opening_idea": "Ask the listener to picture someone who annoyed them this week.",
+  "lessons": [
+    { "idea": "We react to the lens, not the behaviour: Covey didn't force himself calm; his view changed and feelings and behaviour followed.", "anchor": "children still loud, Covey's reaction transformed" },
+    { "idea": "Everyone in the car wrote the same story and no one asked; one question revealed the truth.", "anchor": "the whole car judging the 'careless father'" },
+    { "idea": "This is not a 'never say anything' story: Covey was right that the kids were disruptive; the point is to hold judgment loosely and leave room for the other person's story. Not every situation hides a tragedy.", "anchor": "Covey's polite request is what opened the truth" }
+  ],
+  "reflect": [
+    "What story did you write in your head about the person you pictured?",
+    "How much of that story do you actually know, and how much is a guess?",
+    "Have you asked them if everything is okay?",
+    "Have you ever been the father on the train — judged on a bad day by people who didn't know?"
+  ],
+  "reflect_final": "being the father on the train",
+  "use_cases": [
+    { "situation": "meeting, a teammate keeps missing deadlines and the room turns to blame", "move": "tell the subway story briefly and suggest talking first" },
+    { "situation": "manager's one-on-one with someone whose performance dropped", "move": "open with a question instead of a verdict" },
+    { "situation": "an angry customer email or tense message", "move": "before replying, ask what's happening in their 'train car'" },
+    { "situation": "at home, a partner or child snaps unexpectedly", "move": "ask 'did something happen today?' instead of 'why are you talking like that?'" },
+    { "situation": "to yourself when angry", "move": "am I reacting to what they did, or to the story I wrote?" }
+  ],
+  "pocket_idea": "The children didn't change; Covey's lens did. Ask before you judge."
+}

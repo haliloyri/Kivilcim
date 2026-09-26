@@ -1,0 +1,5 @@
+<resources>
+  <string name="NSPhotoLibraryAddUsageDescription">"Albor bittet um Erlaubnis, die von dir erstellten Share-Karten in deiner Fotomediathek zu speichern."</string>
+  <string name="NSUserTrackingUsageDescription">"Diese Kennung wird verwendet, um dir personalisierte Werbung anzuzeigen."</string>
+  <string name="NSMicrophoneUsageDescription">"Albor bittet um Mikrofonzugriff, damit du Geschichten laut aufnehmen und anhören kannst."</string>
+</resources>

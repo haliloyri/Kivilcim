@@ -9,6 +9,10 @@
       "distribution": "internal",
       "android": {
         "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_CAREER_PATH_V1": "true",
+        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true"
       }
     },
     "apk": {
@@ -16,10 +20,18 @@
       "android": {
         "buildType": "apk",
         "credentialsSource": "remote"
+      },
+      "env": {
+        "EXPO_PUBLIC_CAREER_PATH_V1": "true",
+        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true"
       }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_CAREER_PATH_V1": "true",
+        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true"
+      }
     },
     "production": {
       "ios": {
@@ -29,6 +41,10 @@
       "android": {
         "buildType": "apk",
         "credentialsSource": "remote"
+      },
+      "env": {
+        "EXPO_PUBLIC_CAREER_PATH_V1": "true",
+        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true"
       }
     }
   },

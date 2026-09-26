@@ -1,0 +1,5 @@
+<resources>
+  <string name="NSPhotoLibraryAddUsageDescription">"Albor solicita permiso para guardar en tu galería las tarjetas para compartir que creas."</string>
+  <string name="NSUserTrackingUsageDescription">"Este identificador se usará para ofrecerte anuncios personalizados."</string>
+  <string name="NSMicrophoneUsageDescription">"Albor solicita acceso al micrófono para que puedas grabar y escuchar historias en voz alta."</string>
+</resources>

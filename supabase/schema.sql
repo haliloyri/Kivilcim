@@ -707,6 +707,73 @@ grant execute on function public.award_career_nodes(jsonb) to authenticated;
 grant execute on function public.mark_career_node_seen(text) to authenticated;
 grant execute on function public.upsert_legacy_badges(jsonb) to authenticated;
 
+-- ─── Referral attribution (Plan Bölüm 3.1) ────────────────────────────────────
+-- Kept in sync with migrations/20260910000000_referral_attribution.sql for
+-- fresh Supabase projects.
+
+alter table public.profiles
+  add column if not exists premium_bonus_until timestamptz;
+
+create table if not exists public.referrals (
+  invited_id  uuid primary key references auth.users(id) on delete cascade,
+  referrer_id uuid not null references auth.users(id) on delete cascade,
+  story_id    bigint,
+  lang        text,
+  created_at  timestamptz not null default now()
+);
+
+create index if not exists referrals_referrer_idx on public.referrals(referrer_id);
+
+alter table public.referrals enable row level security;
+
+create policy "Users can read referrals they're part of"
+  on public.referrals for select
+  using (auth.uid() = invited_id or auth.uid() = referrer_id);
+
+create or replace function public.claim_referral(
+  p_referrer_id uuid,
+  p_story_id bigint default null,
+  p_lang text default null
+) returns table(claimed boolean, premium_bonus_until timestamptz)
+language plpgsql security definer set search_path = public as $$
+declare
+  v_invited uuid := auth.uid();
+  v_bonus timestamptz;
+  v_rows integer;
+begin
+  if v_invited is null then raise exception 'not_authenticated'; end if;
+  if p_referrer_id is null or p_referrer_id = v_invited
+    or not exists (select 1 from public.profiles where id = p_referrer_id) then
+    return query select false, null::timestamptz;
+    return;
+  end if;
+
+  insert into public.referrals (invited_id, referrer_id, story_id, lang)
+  values (v_invited, p_referrer_id, p_story_id, p_lang)
+  on conflict (invited_id) do nothing;
+  get diagnostics v_rows = row_count;
+  if v_rows = 0 then
+    return query select false, null::timestamptz;
+    return;
+  end if;
+
+  update public.profiles
+  set premium_bonus_until = greatest(now(), coalesce(premium_bonus_until, now())) + interval '7 days',
+      updated_at = now()
+  where id = v_invited
+  returning premium_bonus_until into v_bonus;
+
+  update public.profiles
+  set premium_bonus_until = greatest(now(), coalesce(premium_bonus_until, now())) + interval '7 days',
+      updated_at = now()
+  where id = p_referrer_id;
+
+  return query select true, v_bonus;
+end; $$;
+
+revoke all on function public.claim_referral(uuid, bigint, text) from public;
+grant execute on function public.claim_referral(uuid, bigint, text) to authenticated;
+
 -- ─── Done ────────────────────────────────────────────────────────────────────
 -- After running this schema:
 --   1. Copy your Supabase URL + anon key

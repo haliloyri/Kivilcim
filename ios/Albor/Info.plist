@@ -27,6 +27,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>albor</string>
 				<string>com.kivilcim.app</string>
 			</array>
 		</dict>
@@ -58,6 +59,8 @@
 	<string>Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>This identifier will be used to deliver personalized ads to you.</string>
+	<key>RCTMetroPort</key>
+	<string>$(RCT_METRO_PORT)</string>
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>SKAdNetworkItems</key>

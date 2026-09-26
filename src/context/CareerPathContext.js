@@ -21,6 +21,7 @@ const emptyValue = {
   error: null,
   isOffline: false,
   career: null,
+  careerEvents: [],
   careerViewModel: null,
   activePath: null,
   unseenPromotions: [],
@@ -41,6 +42,8 @@ const emptyValue = {
   consumePathSwitchRequest: () => null,
   requestConditions: () => null,
   consumeConditionsRequest: () => null,
+  milestoneVisible: false,
+  setMilestoneVisible: () => null,
 };
 
 const eligibleNodes = (viewModel) => {
@@ -55,6 +58,8 @@ export const CareerPathProvider = ({ children }) => {
   const { parentCategories, storiesLoading } = useStories();
   const [state, setState] = useState({ ...emptyValue, enabled: FEATURE_FLAGS.careerPathV1, loading: FEATURE_FLAGS.careerPathV1 });
   const loadVersionRef = useRef(0);
+  // A learning-milestone celebration is on screen; title promotions wait for it.
+  const [milestoneVisible, setMilestoneVisible] = useState(false);
 
   const loadCareer = useCallback(async ({ awardEligible = true, awardSource = 'live_event' } = {}) => {
     if (!FEATURE_FLAGS.careerPathV1) return null;
@@ -105,7 +110,7 @@ export const CareerPathProvider = ({ children }) => {
         return loadCareer({ awardEligible: false, awardSource });
       }
       // Never make a cached title/rank disappear while a server request is slow.
-      setState((previous) => ({ ...previous, enabled: true, loading: false, refreshing: true, error: null, career: viewModel, unseenPromotions: local.unseenPromotions, showMigrationSummary: localCareerState.migrationVersion >= 1 && !localCareerState.migrationSummarySeenAt }));
+      setState((previous) => ({ ...previous, enabled: true, loading: false, refreshing: true, error: null, career: viewModel, careerEvents: localEvents, unseenPromotions: local.unseenPromotions, showMigrationSummary: localCareerState.migrationVersion >= 1 && !localCareerState.migrationSummarySeenAt }));
 
       // The remote snapshot is additive. A newer local reload invalidates this
       // background result before it can replace the current projection.
@@ -126,7 +131,7 @@ export const CareerPathProvider = ({ children }) => {
         if (legacyBadgeIds.length !== localLegacyBadgeIds.length) await replaceLegacyBadgeIds(USER_ID, legacyBadgeIds);
         if (loadVersion !== loadVersionRef.current) return;
         const merged = makeViewModel(events, earnedNodes, careerState);
-        setState((previous) => ({ ...previous, enabled: true, loading: false, refreshing: false, error: null, career: merged.viewModel, unseenPromotions: merged.unseenPromotions, showMigrationSummary: careerState.migrationVersion >= 1 && !careerState.migrationSummarySeenAt }));
+        setState((previous) => ({ ...previous, enabled: true, loading: false, refreshing: false, error: null, career: merged.viewModel, careerEvents: events, unseenPromotions: merged.unseenPromotions, showMigrationSummary: careerState.migrationVersion >= 1 && !careerState.migrationSummarySeenAt }));
       }).catch((error) => {
         // Server sync is best-effort; the local projection remains usable.
         console.warn('[CareerPathContext] remote refresh failed:', error?.message);
@@ -232,7 +237,9 @@ export const CareerPathProvider = ({ children }) => {
     consumePathSwitchRequest,
     requestConditions,
     consumeConditionsRequest,
-  }), [state, activePromotion, loadCareer, selectPath, switchPath, markPromotionSeen, markPromotionsSeen, closePromotion, markMigrationSummarySeen, requestPathSwitch, consumePathSwitchRequest, requestConditions, consumeConditionsRequest]);
+    milestoneVisible,
+    setMilestoneVisible,
+  }), [milestoneVisible, state, activePromotion, loadCareer, selectPath, switchPath, markPromotionSeen, markPromotionsSeen, closePromotion, markMigrationSummarySeen, requestPathSwitch, consumePathSwitchRequest, requestConditions, consumeConditionsRequest]);
 
   return <CareerPathContext.Provider value={value}>{children}</CareerPathContext.Provider>;
 };

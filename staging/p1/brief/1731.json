@@ -1,0 +1,40 @@
+{
+  "story_id": 1731,
+  "kind": "anecdote",
+  "book": { "title": "The Devil in the White City", "author": "Erik Larson", "year": 2003 },
+  "confidence": "medium",
+  "confidence_note": "Event sequence is well documented in the book. Exact figures (date of approval, amount raised, frost depth, axle weight, first test date) should be checked against the book before publishing.",
+  "facts": [
+    "1889 Paris Exposition: Eiffel's iron tower, then the tallest structure built by people, humbled American engineers.",
+    "Chicago would host the 1893 World's Columbian Exposition; Daniel Burnham, the fair's chief of construction, publicly challenged American engineers to out-Eiffel Eiffel and said they had not yet risen to it.",
+    "Most proposals were taller or bigger towers; one proposed dropping visitors from a tall tower in cars tied to rubber cables.",
+    "George Washington Gale Ferris Jr., a Pittsburgh engineer in his early thirties whose firm inspected steel for bridges and railways, sketched a giant rotating steel wheel carrying passenger cars; by his own account the idea came at a dinner and he drew it before the meal ended.",
+    "The fair's committee rejected it: they believed a structure that large and that delicate-looking would collapse; some questioned his sanity.",
+    "Ferris spent his own money on engineering studies and engineers, kept refining the design, reapplied, and won the concession in late 1892 — with no money from the fair: he had to raise several hundred thousand dollars himself.",
+    "Construction began in the Chicago winter: ground frozen roughly three feet deep, broken with dynamite; below it quicksand; jets of steam used to thaw ground; pumps running constantly; foundations sunk deep.",
+    "The central axle was the largest single piece of steel forged up to that time.",
+    "The fair opened 1 May 1893 without the wheel. In early June the wheel turned for the first time without its cars; soon after, the first ride with cars — Margaret Ferris among the riders.",
+    "Opened to the public 21 June 1893: about 264 ft (80 m) tall, 36 cars, each holding up to 60 people, over 2,000 riders at once. It became the fair's signature attraction, and every such wheel still carries his name in English."
+  ],
+  "tension": "Everyone tried to beat Eiffel at Eiffel's own game; the expert answer to the outsider was 'it will collapse'.",
+  "opening_idea": "Ask the listener to remember the last time someone told them their idea would not work.",
+  "lessons": [
+    { "idea": "'Impossible' often means 'I have not seen the proof yet' — Ferris answered the committee's fear with calculations, not arguments.", "anchor": "rejection and self-funded engineering studies" },
+    { "idea": "Trying to beat a rival on their terms usually loses; change the question (a bigger tower vs. an experience of being carried into the sky).", "anchor": "tower proposals vs. the wheel" },
+    { "idea": "Ideas are born over dinner; they are finished in frozen ground — owning an idea includes the dull, hard part.", "anchor": "sketch at dinner vs. dynamite, quicksand, missed opening" }
+  ],
+  "reflect": [
+    "The last time you heard 'that won't work': did you argue, give up, or bring proof?",
+    "What was the real fear behind the 'no' — cost, risk, time? Did you ask?",
+    "Whose idea did you last dismiss? Would evidence have changed your mind?",
+    "What is the 'Eiffel Tower' in front of you now, and are you building a bigger copy of it?"
+  ],
+  "reflect_final": "the Eiffel question — copy or answer",
+  "use_cases": [
+    { "situation": "meeting, a proposal gets shot down", "move": "suggest a small pilot that answers the specific fear instead of debating" },
+    { "situation": "discussing a competitor's feature", "move": "ask what we can give users that they don't, instead of copying" },
+    { "situation": "a friend starting something everyone doubts", "move": "take the biggest fear and bring one small piece of proof" },
+    { "situation": "to yourself, avoiding the hard part", "move": "the sketch is done; now dig the frozen ground" }
+  ],
+  "pocket_idea": "They told Ferris it would collapse. He didn't argue; he brought the math."
+}

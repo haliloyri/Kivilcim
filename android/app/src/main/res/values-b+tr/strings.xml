@@ -1,0 +1,5 @@
+<resources>
+  <string name="NSPhotoLibraryAddUsageDescription">"Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister."</string>
+  <string name="NSUserTrackingUsageDescription">"Bu tanımlayıcı, sana kişiselleştirilmiş reklamlar sunmak için kullanılacaktır."</string>
+  <string name="NSMicrophoneUsageDescription">"Albor, hikayeleri sesli olarak kaydedip dinleyebilmen için mikrofona erişmek ister."</string>
+</resources>
