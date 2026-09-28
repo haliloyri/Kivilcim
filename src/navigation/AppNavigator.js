@@ -12,6 +12,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
+import { useCareerPath } from '../context/CareerPathContext';
 import { t } from '../locales/i18n';
 import BadgeIcon, { BADGE_MAP, BADGE_IMAGES } from '../components/BadgeIcon';
 import BadgeShareSheet from '../components/BadgeShareSheet';
@@ -33,6 +34,9 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 export const appNavigationRef = React.createRef();
 const CONFETTI_COLORS = ['#FFD166', '#FF6B6B', '#06D6A0', '#4D96FF', '#F4A261', '#B8E1FF'];
+// The trial offer may only land while the reader sits on a tab — never over the
+// reader, the paywall itself, or another full-screen route.
+const TAB_ROUTE_NAMES = ['HomeTab', 'LibraryTab', 'ProgressTab', 'ProfileTab'];
 const BADGE_SOUND_ASSET = require('../../assets/sounds/badge.wav');
 
 // Famous quote per badge — shown softly at the bottom of the badge modal and
@@ -188,7 +192,7 @@ function TabBarIcon({ focused, color, name, badge }) {
           transform: [{ scale: pillScale }],
         }}
       />
-      <Ionicons name={name} size={23} color={color} />
+      <Ionicons name={focused ? name : `${name}-outline`} size={23} color={color} />
       {badge}
     </View>
   );
@@ -197,6 +201,9 @@ function TabBarIcon({ focused, color, name, badge }) {
 function MainTabs() {
   const { colors, typography, layout, isDark, lang } = useTheme();
   const { unseenEarnedBadgeCount } = useUserData();
+  const { unseenPathNodeCount } = useCareerPath();
+  // With Yolum on, the dot means "a new rank since you last opened Yolum".
+  const showProgressDot = FEATURE_FLAGS.careerPathV1 ? unseenPathNodeCount > 0 : unseenEarnedBadgeCount > 0;
   const insets = useSafeAreaInsets();
   const androidBottomInset = Platform.OS === 'android' ? Math.max(insets.bottom, 12) : insets.bottom;
 
@@ -256,8 +263,8 @@ function MainTabs() {
             <TabBarIcon
               focused={focused}
               color={color}
-              name="stats-chart"
-              badge={unseenEarnedBadgeCount > 0 ? (
+              name="trail-sign"
+              badge={showProgressDot ? (
                 <View style={{
                   position: 'absolute', top: 4, right: 14,
                   width: 9, height: 9, borderRadius: 5,
@@ -290,6 +297,7 @@ export default function AppNavigator() {
   const {
     isOnboarded,
     isPremium,
+    totalReads,
     isLoadingUserData,
     loadErrorMsg,
     retryUserDataLoad,
@@ -303,6 +311,8 @@ export default function AppNavigator() {
   const { errorMsg, refreshStories } = useStories();
   const { colors, layout, lang, isDark } = useTheme();
   const [isNavigationReady, setIsNavigationReady] = useState(false);
+  const [activeRouteName, setActiveRouteName] = useState(null);
+  const readActiveRouteName = () => setActiveRouteName(appNavigationRef.current?.getCurrentRoute?.()?.name ?? null);
   const modalAnim = useRef(new Animated.Value(0)).current;
   const iconAnim = useRef(new Animated.Value(0.7)).current;
   const confettiAnim = useRef(new Animated.Value(0)).current;
@@ -319,19 +329,26 @@ export default function AppNavigator() {
     return () => setBadgePresentationBlocked('badge_share_sheet', false);
   }, [shareSheetBadge, setBadgePresentationBlocked]);
 
-  // Post-onboarding trial offer.
+  // First-story trial offer.
   //
-  // This is the highest-intent moment in the whole funnel — the user has just
-  // told us what they care about and how much time they have — and it was going
-  // unmonetized. OnboardingScreen arms a flag rather than navigating, because
-  // completing onboarding swaps the navigator's screen set out from under it.
+  // The highest-intent moment is not the end of setup — it is the moment the
+  // reader has just finished a story and liked it. Offering before that asks
+  // someone to pay for something they have not experienced, which is also why
+  // `skip` never arms this flag.
   //
-  // Fires once per install, only for a non-premium user, and never for someone
-  // who skipped onboarding.
+  // OnboardingScreen arms a flag rather than navigating, because completing
+  // onboarding swaps the navigator's screen set out from under it. We wait for
+  // two conditions: the first completed read (`totalReads`, written by
+  // addToHistory at the end of the story), and the reader being back on a tab —
+  // so the offer never covers the end of the story they are still reading.
+  //
+  // Fires once per install and only for a non-premium reader.
   const onboardingPaywallHandledRef = useRef(false);
   useEffect(() => {
     if (!isOnboarded || !isNavigationReady || isLoadingUserData) return;
     if (onboardingPaywallHandledRef.current) return;
+    if (totalReads < 1) return;
+    if (!TAB_ROUTE_NAMES.includes(activeRouteName)) return;
 
     let cancelled = false;
     (async () => {
@@ -350,12 +367,12 @@ export default function AppNavigator() {
       if (isPremium) return;
       appNavigationRef.current?.navigate('Paywall', {
         reason: 'early_trial',
-        source: 'onboarding_complete',
+        source: 'first_story_complete',
       });
     })();
 
     return () => { cancelled = true; };
-  }, [isOnboarded, isNavigationReady, isLoadingUserData, isPremium]);
+  }, [isOnboarded, isNavigationReady, isLoadingUserData, isPremium, totalReads, activeRouteName]);
 
   useEffect(() => {
     return () => {
@@ -592,7 +609,11 @@ export default function AppNavigator() {
       <NavigationContainer
         ref={appNavigationRef}
         theme={navTheme}
-        onReady={() => setIsNavigationReady(true)}
+        onReady={() => {
+          setIsNavigationReady(true);
+          readActiveRouteName();
+        }}
+        onStateChange={readActiveRouteName}
       >
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           {!isOnboarded ? (

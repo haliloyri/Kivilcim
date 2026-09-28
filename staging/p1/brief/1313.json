@@ -1,0 +1,39 @@
+{
+  "story_id": 1313,
+  "kind": "concept",
+  "book": { "title": "İşin Özü (The E-Myth Revisited)", "author": "Michael E. Gerber", "year": "1995" },
+  "confidence": "medium",
+  "confidence_note": "Gerber's use of Ray Kroc and McDonald's to illustrate the 'Turn-Key Revolution' and the Business Format Franchise, and his advice to build your business as a franchise prototype that could be replicated, are well attested in The E-Myth (1986) and The E-Myth Revisited (1995). The TR text's opening dialogue ('Does McDonald's sell good hamburgers?') and the line 'McDonald's sells a system, not hamburgers' are not confirmed as Gerber's wording and are paraphrased, not quoted. No sales, store-count, or ranking figures are included. The franchise-prototype rule of operating with the lowest possible level of skill is from the book.",
+  "facts": [
+    "Gerber uses Ray Kroc and McDonald's as his central example of what he calls the Turn-Key Revolution.",
+    "Kroc saw that the product was not only the hamburger but the business itself: a way of operating that could be replicated location after location.",
+    "Gerber calls this the Business Format Franchise, where the franchisor provides a complete, proven system for running the business.",
+    "He advises small business owners to work on their business as if it were the prototype for thousands more, even if they never franchise.",
+    "One of his franchise-prototype rules is that the model should be operated by people with the lowest possible level of skill, so results do not depend on rare talent.",
+    "The underlying test: if the business only works when the owner is present, it is a job the owner has built, not a business."
+  ],
+  "tension": "Most people assume a successful restaurant must make exceptional food, yet Gerber's example rests on something else: a way of operating that works predictably no matter who is behind the counter.",
+  "opening_idea": "Start with Ray Kroc looking at a hamburger stand and seeing not a menu but a method that could be copied from one location to the next.",
+  "lessons": [
+    { "idea": "The system that delivers a product can matter more than the product alone.", "anchor": "Kroc's Business Format Franchise approach at McDonald's." },
+    { "idea": "Designing as if for replication forces you to make the work explicit.", "anchor": "Gerber's advice to treat your business as a franchise prototype." },
+    { "idea": "A well-designed process lets ordinary skill produce reliable results.", "anchor": "The rule that the model should run with the lowest possible level of skill." }
+  ],
+  "reflect": [
+    "What part of your work lives only in your head?",
+    "If someone new took over your role tomorrow, what would break first?"
+  ],
+  "reflect_final": "Pick one task only you know how to do and write it down clearly enough that someone else could follow it next time. Afterward, notice where you had to make hidden judgment calls explicit.",
+  "use_cases": [
+    { "situation": "A team relies on one expert for every release.", "move": "Propose treating the release like Gerber's franchise prototype: write a checklist someone less experienced could run, then have them run the next one with the expert watching.", "context": "meeting" },
+    { "situation": "You are going on leave and worry things will fall apart.", "move": "Hand a colleague one routine task this week using only your written steps, and fix whatever they could not follow.", "context": "oneonone" },
+    { "situation": "Only one parent knows how the family's bills and paperwork are handled.", "move": "Sit down together and write a one-page 'how we run this' list so either person could handle it.", "context": "family" }
+  ],
+  "pocket_idea": "Ray Kroc's insight was that the business itself was the product: if your results walk out the door with you, you have built a job, not a system.",
+  "conversation_variants": {
+    "punchline_idea": "Gerber says a business should run well with people of the lowest possible skill level, and he means it as a design goal.",
+    "thirty_sec_idea": "Ray Kroc saw a hamburger stand and realized the real product was the way it was run; he built a complete system that anyone could operate the same way, and Gerber says every small business should be designed that way.",
+    "question_idea": "Is there something at work or at home that only you know how to do? What would happen if you were away for a month?",
+    "key_contrast_idea": "A business that depends on you versus a business that works because of how it is built."
+  }
+}

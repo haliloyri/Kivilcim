@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState, useMemo } from 'react';
 import { useColorScheme } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as Localization from 'expo-localization';
 import { typography, layout, buildPalette, ACCENTS, DEFAULT_ACCENT } from '../theme/theme';
+import { getDeviceLang } from '../utils/locale';
 
 const ThemeContext = createContext();
 const THEME_MODE_STORAGE_KEY = 'themeMode';
@@ -23,18 +23,6 @@ const normalizeCategoryIds = (list) => {
 export const ThemeProvider = ({ children }) => {
   const systemColorScheme = useColorScheme();
   const getSystemThemeMode = () => (systemColorScheme === 'dark' ? 'dark' : 'light');
-  // Determine default language from device locale using expo-localization
-  // (Intl.DateTimeFormat().resolvedOptions().locale is unreliable on Hermes/Android).
-  const getDeviceLang = () => {
-    try {
-      const locales = Localization.getLocales?.() || [];
-      const prefix = (locales[0]?.languageCode || '').toLowerCase();
-      if (['tr', 'es', 'de'].includes(prefix)) return prefix;
-      return 'en';
-    } catch {
-      return 'en';
-    }
-  };
 
   // Start as null — render nothing until AsyncStorage preferences are loaded
   const [themeMode, setThemeModeState] = useState(null);

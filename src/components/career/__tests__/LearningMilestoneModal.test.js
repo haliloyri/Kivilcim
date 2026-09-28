@@ -36,3 +36,14 @@ it('stays silent on first run and records a baseline', async () => {
   expect(saved.seen).toEqual(expect.arrayContaining(['books_5', 'books_10', 'cat_psychology']));
   await act(async () => { tree.unmount(); });
 });
+
+it('re-opens a reached milestone in review mode without writing seen state', async () => {
+  const { MilestoneReviewModal } = require('../LearningMilestoneModal');
+  const onClose = jest.fn();
+  let tree; await act(async () => { tree = TestRenderer.create(<MilestoneReviewModal milestone={{ id: 'cat_science', type: 'category', category: 'Bilim', categoryRaw: 'Science' }} onClose={onClose} />); });
+  expect(texts(tree)).toContain('Kilometre taşı');
+  expect(texts(tree)).toContain('İlk Bilim fikrin');
+  expect(texts(tree)).toContain('Kapat');
+  expect(texts(tree)).not.toContain('Yeni kilometre taşı');
+  await act(async () => { tree.unmount(); });
+});

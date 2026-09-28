@@ -49,7 +49,12 @@ for (const r of results) {
     failed += 1;
     continue;
   }
-  fs.writeFileSync(path.join(outDir, `${id}.md`), storyMatch[1].trim() + '\n');
+  // Models sometimes drop the "context:" prefix on use cards ("%%oneonone | …").
+  // The app parser (src/utils/storyMarkup.js) needs it, so restore it here.
+  const storyText = storyMatch[1]
+    .trim()
+    .replace(/%%\s*(meeting|oneonone|family|social|self)\s*\|/gi, (_, slug) => `%%context:${slug.toLowerCase()} |`);
+  fs.writeFileSync(path.join(outDir, `${id}.md`), storyText + '\n');
   fs.writeFileSync(path.join(outDir, `${id}.variants.json`), variantsMatch[1].trim() + '\n');
   writtenIds.push(id);
   ok += 1;

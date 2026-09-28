@@ -1,0 +1,60 @@
+{
+  "story_id": 1346,
+  "kind": "concept",
+  "book": { "title": "The Paradox of Choice", "author": "Barry Schwartz", "year": "2004" },
+  "confidence": "medium",
+  "confidence_note": "The maximizer–satisficer distinction is central to the book. Schwartz borrows the term 'satisficing' from Herbert Simon. He reports questionnaire research by himself and colleagues finding that people who score high as maximizers report less happiness and satisfaction, less optimism and more regret than satisficers. The TR text states flatly that 'maximizers' decisions are generally better'. Schwartz suggests maximizers may sometimes do better objectively while feeling worse, but the well-known supporting study was published in 2006, after this book: it followed graduating job-seekers and found maximizers got higher-paying jobs but felt worse. That study and its figures are therefore not included, and the claim is kept as a possibility the book raises rather than an established finding. The restaurant-menu and product-comparison examples in the TR text are illustrative, not cases from the book. Schwartz's advice to choose when to choose, and to satisfice more often while reserving careful search for decisions that matter, is well attested.",
+  "facts": [
+    "Schwartz distinguishes 'maximizers', who seek the best possible option, from 'satisficers', who settle for an option that is good enough by their own standards; he takes the term 'satisficing' from Herbert Simon.",
+    "A satisficer has criteria and standards, and stops searching once an option meets them.",
+    "Research by Schwartz and colleagues using a maximization questionnaire found that people who scored as maximizers reported lower happiness and satisfaction, less optimism, and more regret than satisficers.",
+    "Schwartz argues that maximizers are especially burdened by an abundance of options, because checking everything is impossible and every unexamined alternative leaves room for regret.",
+    "He suggests that maximizers may sometimes get objectively better results while feeling worse about them.",
+    "His recommendation is to choose when to choose: accept 'good enough' for most decisions and save extensive searching for the few that really matter to you."
+  ],
+  "tension": "The person who works hardest to make the best choice may end up less satisfied with their choices than the person who stops at 'good enough.'",
+  "opening_idea": "Put two shoppers side by side in front of the same shelf: one stops at the first option that meets her needs, the other keeps checking—and ask who goes home happier.",
+  "lessons": [
+    {
+      "idea": "'Good enough' is not the absence of standards but a decision to stop once they are met.",
+      "anchor": "Schwartz's definition of the satisficer, borrowed from Herbert Simon."
+    },
+    {
+      "idea": "Trying to find the best of everything tends to bring regret along with it.",
+      "anchor": "The questionnaire research linking maximizing with lower happiness and more regret."
+    },
+    {
+      "idea": "You can decide in advance which decisions deserve a full search.",
+      "anchor": "His advice to choose when to choose."
+    }
+  ],
+  "reflect": [
+    "In which areas of your life do you insist on the best, and where do you happily settle for good enough?",
+    "Think of a choice you made quickly and never regretted. What made that possible?"
+  ],
+  "reflect_final": "For one routine decision this week, write down your 'good enough' criteria beforehand and stop at the first option that meets them; afterward, notice whether you missed the options you didn't check.",
+  "use_cases": [
+    {
+      "situation": "Your team keeps evaluating one more vendor for a low-risk internal tool.",
+      "move": "In the next meeting, suggest setting three criteria and a deadline, and taking the first vendor that meets all three.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You have spent days comparing options for a minor purchase and still feel unsure.",
+      "move": "Following Schwartz's satisficer definition, write down what 'good enough' means for it, pick the first option that meets that, and stop browsing.",
+      "context": "self"
+    },
+    {
+      "situation": "Planning a family holiday turns into endless comparing of destinations.",
+      "move": "Agree as a family which two or three things matter most, shortlist a few places that meet them, and book one of those without reopening the search.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The maximizer keeps checking whether a better option exists; the satisficer knows her criteria and stops when they're met—and more often goes home content.",
+  "conversation_variants": {
+    "punchline_idea": "People who always hunt for the best option report being less happy than those who settle for good enough.",
+    "thirty_sec_idea": "Barry Schwartz split people into maximizers, who must find the best, and satisficers, who stop at good enough by their own standards; in his research maximizers reported less happiness and more regret, so he advises choosing which decisions deserve a full search.",
+    "question_idea": "What's one area of your life where you're a maximizer, and one where 'good enough' works just fine?",
+    "key_contrast_idea": "From 'I need the best option' to 'I need an option that meets my standards.'"
+  }
+}

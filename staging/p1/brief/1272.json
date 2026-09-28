@@ -1,0 +1,64 @@
+{
+  "story_id": 1272,
+  "kind": "concept",
+  "book": {
+    "title": "The Body Keeps the Score",
+    "author": "Bessel van der Kolk",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text claims abused children's brain scans were 'nearly identical' to those of children with physical head injuries and that the prefrontal cortex 'shrinks'; these specific claims are not confidently attributable to the book and are omitted. The brief instead uses the book's well-established material: the smoke detector (amygdala) and watchtower (medial prefrontal cortex) model of how trauma shifts brain balance, the Adverse Childhood Experiences (ACE) study, and van der Kolk's argument that such children's behavior is adaptation rather than moral failing. Neuroplasticity is part of the book's hopeful argument, stated here without a specific intervention outcome.",
+  "facts": [
+    "Van der Kolk describes the amygdala as the brain's smoke detector, which flags danger, and the medial prefrontal cortex as the watchtower, which puts the alarm in context.",
+    "In chronically traumatized people, he argues, the balance shifts: the smoke detector fires more easily and the watchtower's ability to calm it is weakened.",
+    "He discusses the Adverse Childhood Experiences study by Vincent Felitti and Kaiser Permanente, which surveyed more than 17,000 mostly middle-class adults about ten kinds of childhood adversity.",
+    "The study found that the more such experiences a person had, the higher their rates of problems in adulthood, such as depression, alcoholism, and physical illnesses like heart disease; adversity was also far more common than expected.",
+    "Van der Kolk argues that the reactions of such children, such as outbursts or distrust, are adaptations that once helped them survive, not signs that they are 'bad' or broken.",
+    "He stresses that the brain remains changeable, and that new experiences of safety and connection can build different responses."
+  ],
+  "tension": "Behavior that looks like a character flaw in an adult may be a survival strategy that worked in childhood and is now firing in the wrong setting.",
+  "opening_idea": "Start with the ACE questionnaire: ten yes-or-no questions about childhood, asked of more than 17,000 ordinary insured adults, with results no one expected.",
+  "lessons": [
+    {
+      "idea": "A strong reaction can be a calibration, not a flaw.",
+      "anchor": "Van der Kolk frames outbursts and distrust as adaptations to early danger."
+    },
+    {
+      "idea": "Early adversity has a dose-response link to later health.",
+      "anchor": "In the ACE study, more categories of childhood adversity went with higher rates of adult problems."
+    },
+    {
+      "idea": "The brain's alarm and brake can be rebalanced.",
+      "anchor": "He describes the smoke detector/watchtower balance and the brain's continued plasticity."
+    }
+  ],
+  "reflect": [
+    "Think of a reaction of yours that feels out of proportion. When might it have been useful?",
+    "Has someone's 'difficult' behavior made more sense to you once you learned their history?"
+  ],
+  "reflect_final": "The next time someone's reaction seems far bigger than the moment, ask yourself what it might once have protected them from before responding.",
+  "use_cases": [
+    {
+      "situation": "A team member reacts defensively to minor feedback.",
+      "move": "In your next one-on-one, ask how feedback was usually given in past jobs, and adjust how you deliver the next piece.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child has an outburst over something small.",
+      "move": "Recall van der Kolk's smoke detector image, wait until the alarm settles, then ask what felt scary rather than punishing the reaction first.",
+      "context": "family"
+    },
+    {
+      "situation": "You catch yourself distrusting someone for no clear reason.",
+      "move": "Note the moment and ask whether the feeling fits this person or someone from earlier in your life.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Van der Kolk's smoke detector goes off too easily in people hurt early on: the alarm was calibrated for a dangerous house, and it can be recalibrated.",
+  "conversation_variants": {
+    "punchline_idea": "A survey of over 17,000 ordinary insured adults found childhood adversity was common and tracked with later illness.",
+    "thirty_sec_idea": "The ACE study asked more than 17,000 adults about ten types of childhood adversity; more adversity meant more adult health problems, and van der Kolk explains why through the brain's alarm system.",
+    "question_idea": "Is there a reaction of yours that makes more sense when you think about where you grew up?",
+    "key_contrast_idea": "From 'what's wrong with them?' to 'what happened to them?'"
+  }
+}

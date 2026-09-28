@@ -1,0 +1,66 @@
+{
+  "story_id": 1161,
+  "kind": "anecdote",
+  "book": {
+    "title": "Blink: The Power of Thinking Without Thinking",
+    "author": "Malcolm Gladwell",
+    "year": "2005"
+  },
+  "confidence": "high",
+  "confidence_note": "The firefighter story comes from psychologist Gary Klein's research and is retold in Blink. Details kept to the well-documented version: a fire lieutenant and his crew went into a one-story house to fight what seemed to be a kitchen fire; water had little effect; the lieutenant felt something was wrong and ordered his men out; moments later the floor collapsed; the fire had been in the basement. Afterwards the lieutenant thought it was a kind of ESP; Klein's analysis showed he had picked up cues that the fire was unusually hot and unusually quiet and did not respond as expected. The reference TR text's 'sixty seconds' is omitted. Gladwell's term 'thin-slicing' and his caution that snap judgments can also be wrong are kept.",
+  "facts": [
+    "Psychologist Gary Klein interviewed firefighters about their decisions; Gladwell retells one of his cases in Blink.",
+    "A fire lieutenant and his crew entered a one-story house in a residential neighborhood where the fire seemed to be in the kitchen at the back.",
+    "They sprayed water on the fire, but it didn't die down as expected.",
+    "The lieutenant suddenly felt something was wrong and ordered his crew out of the house.",
+    "Moments after they left, the floor they had been standing on collapsed. The fire had actually been burning in the basement beneath them.",
+    "The lieutenant at first couldn't explain his decision and thought it might be a kind of sixth sense.",
+    "Klein's analysis: the room was hotter than a kitchen fire should make it, and the fire was unusually quiet; the fire didn't behave as it should. His experience registered the mismatch before he could explain it.",
+    "Gladwell calls this 'thin-slicing': finding patterns from narrow slices of experience."
+  ],
+  "tension": "A lieutenant pulls his crew out of a burning house without being able to say why.",
+  "opening_idea": "A fire crew is doing everything right, and their lieutenant suddenly shouts at them to get out.",
+  "lessons": [
+    {
+      "idea": "Expert intuition is compressed experience.",
+      "anchor": "Years of fires taught the lieutenant what 'normal' feels like"
+    },
+    {
+      "idea": "A mismatch with expectations is a signal.",
+      "anchor": "Too hot, too quiet, not responding to water"
+    },
+    {
+      "idea": "Intuition is reliable only where you have deep experience.",
+      "anchor": "Gladwell's thin-slicing, and its limits"
+    }
+  ],
+  "reflect": [
+    "In which area do you have enough experience for your gut to be trustworthy?",
+    "When did a feeling that 'something's off' turn out to be right?"
+  ],
+  "reflect_final": "Which of your gut feelings are experience, and which are just guesses?",
+  "use_cases": [
+    {
+      "situation": "An experienced colleague is uneasy about a deal but can't say why.",
+      "move": "Take the unease seriously and ask them what feels different from normal.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You have a nagging feeling about a project in your area of expertise.",
+      "move": "Pause and list what feels different from what you'd expect.",
+      "context": "self"
+    },
+    {
+      "situation": "A junior team member trusts their gut about something new to them.",
+      "move": "Encourage them to check the gut feeling with data until they have more experience.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Trust your gut where you've earned it; check it where you haven't.",
+  "conversation_variants": {
+    "punchline_idea": "A lieutenant's 'sixth sense' was really years of experience noticing that a fire was too hot and too quiet.",
+    "thirty_sec_idea": "The kitchen fire, the order to leave, the collapsing floor, and the explanation.",
+    "question_idea": "When has your gut been right before you could explain it?",
+    "key_contrast_idea": "Sixth sense or experience"
+  }
+}

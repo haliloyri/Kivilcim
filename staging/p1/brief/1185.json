@@ -1,0 +1,64 @@
+{
+  "story_id": 1185,
+  "kind": "concept",
+  "book": {
+    "title": "The Mind Map Book",
+    "author": "Tony Buzan",
+    "year": "1993"
+  },
+  "confidence": "medium",
+  "confidence_note": "Einstein's own description of his thinking is historical and well documented: in a letter to the mathematician Jacques Hadamard, he wrote that words did not seem to play any role in his thinking, which worked with 'signs and more or less clear images' that he could combine, and he described imagining himself riding alongside a beam of light as a young man. Buzan uses great thinkers who relied on images and associations to support his argument for 'radiant thinking', the idea that the brain works by association branching out from central ideas, and for Mind Maps as a note-taking method that matches it. The reference TR text's quoted Einstein answer ('images, feelings, music') is a paraphrase and is replaced by the Hadamard letter. Whether Buzan quotes the Hadamard letter specifically is not confirmed.",
+  "facts": [
+    "Einstein told the mathematician Jacques Hadamard that words, written or spoken, did not seem to play any role in his thinking. Instead he worked with signs and more or less clear images that he could reproduce and combine.",
+    "As a young man, Einstein imagined what it would be like to ride alongside a beam of light, a thought experiment that fed into his later work on relativity.",
+    "Tony Buzan argued that the brain naturally thinks by association, with ideas branching out from central concepts. He called this 'radiant thinking'.",
+    "He contrasted this with standard linear note-taking, lines and lists in one color, which he argued uses only part of the brain's abilities.",
+    "Buzan developed Mind Maps as a note-taking method that mirrors radiant thinking: a central image, branches radiating out, single key words, colors and pictures.",
+    "He drew on examples of great thinkers, including Leonardo da Vinci and Einstein, whose notes and thinking relied heavily on images."
+  ],
+  "tension": "The thinker behind relativity said words played almost no role in how he thought. Why do we take notes only in words?",
+  "opening_idea": "Einstein admitted that words barely featured in his thinking at all.",
+  "lessons": [
+    {
+      "idea": "Some of the best thinking happens in images and associations.",
+      "anchor": "Einstein's letter to Hadamard"
+    },
+    {
+      "idea": "Linear notes may use only part of how the brain works.",
+      "anchor": "Buzan's radiant thinking"
+    },
+    {
+      "idea": "Visual, branching notes can match how ideas connect.",
+      "anchor": "The Mind Map method"
+    }
+  ],
+  "reflect": [
+    "Do you think more in words or in images?",
+    "What happens to your ideas when you only write them in lists?"
+  ],
+  "reflect_final": "What problem could you draw instead of write about this week?",
+  "use_cases": [
+    {
+      "situation": "A brainstorming session keeps producing long bullet lists.",
+      "move": "Put the central problem in the middle of a whiteboard and branch ideas out from it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child struggles to revise for exams from linear notes.",
+      "move": "Help them turn one chapter into a colorful Mind Map.",
+      "context": "family"
+    },
+    {
+      "situation": "You're stuck planning a complex project.",
+      "move": "Sketch it as a central image with branches before writing any list.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Ideas connect like branches, not like lists; try taking notes that way.",
+  "conversation_variants": {
+    "punchline_idea": "Einstein said words barely played a role in his thinking.",
+    "thirty_sec_idea": "Einstein's images, riding a light beam, radiant thinking, Mind Maps.",
+    "question_idea": "Do you think in words or pictures?",
+    "key_contrast_idea": "Lists versus branches"
+  }
+}

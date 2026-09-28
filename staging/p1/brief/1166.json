@@ -1,0 +1,65 @@
+{
+  "story_id": 1166,
+  "kind": "anecdote",
+  "book": {
+    "title": "Outliers: The Story of Success",
+    "author": "Malcolm Gladwell",
+    "year": "2008"
+  },
+  "confidence": "high",
+  "confidence_note": "This is the opening chapter of Outliers. Kept: the Medicine Hat Tigers' roster from the 2007 Memorial Cup, where most players were born early in the year; the Canadian youth hockey eligibility cutoff of January 1; the observation by psychologist Roger Barnsley in the mid-1980s, first noticed at a junior hockey game in Lethbridge; Gladwell's figure that in elite groups of hockey players about 40 percent are born January to March; and the 'Matthew Effect' of accumulative advantage. The Medicine Hat roster is described without precise percentages. The TR text's other figures are omitted where not needed.",
+  "facts": [
+    "Gladwell opens Outliers with the Medicine Hat Tigers, a Canadian junior hockey team that played in the 2007 Memorial Cup final.",
+    "Looking at the roster, a striking number of players were born in January, February, March or April.",
+    "The pattern was first noticed by Canadian psychologist Roger Barnsley in the mid-1980s, when he was at a junior hockey game in Lethbridge and saw the players' birth dates in the program.",
+    "Barnsley found the same pattern across elite youth hockey: in any elite group of Canadian hockey players, about 40 percent are born between January and March.",
+    "The reason is the eligibility cutoff of January 1. A boy born in January plays against boys born as late as December, and at age nine or ten that gap in physical maturity is large.",
+    "Coaches pick the bigger, more coordinated boys for elite teams, where they get better coaching, more games and more practice. Over time they genuinely become better players.",
+    "Gladwell calls this accumulative advantage, or the 'Matthew Effect': small early differences grow into large ones."
+  ],
+  "tension": "The best young hockey players in Canada share a surprising trait that has nothing to do with talent: their birth month.",
+  "opening_idea": "Look at the birth dates on an elite hockey roster and a strange pattern jumps out.",
+  "lessons": [
+    {
+      "idea": "What looks like talent can be early maturity.",
+      "anchor": "January 1 cutoff"
+    },
+    {
+      "idea": "Small early advantages compound through selection.",
+      "anchor": "The Matthew Effect"
+    },
+    {
+      "idea": "Systems can be redesigned to reduce arbitrary advantage.",
+      "anchor": "Gladwell's argument about cutoff dates"
+    }
+  ],
+  "reflect": [
+    "Where did you get an early head start you didn't earn?",
+    "Who might be judged 'less talented' now just because they're early in their development?"
+  ],
+  "reflect_final": "Whose potential are you judging too early?",
+  "use_cases": [
+    {
+      "situation": "Your team is choosing interns for a fast-track program after one assessment.",
+      "move": "Suggest a second evaluation later, so late developers aren't locked out.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your younger-for-the-class child feels behind classmates.",
+      "move": "Explain that months matter at their age and focus on their own progress over time.",
+      "context": "family"
+    },
+    {
+      "situation": "You wrote yourself off in a field after an early setback.",
+      "move": "Ask whether you were judged too early, and try again with fresh practice.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "An early head start can look exactly like talent.",
+  "conversation_variants": {
+    "punchline_idea": "Canada's top junior hockey players are unusually likely to be born in January.",
+    "thirty_sec_idea": "Medicine Hat roster, Barnsley, January 1 cutoff, Matthew Effect.",
+    "question_idea": "Where did an early head start get mistaken for talent?",
+    "key_contrast_idea": "Maturity mistaken for talent"
+  }
+}

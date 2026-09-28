@@ -8,7 +8,7 @@
 
 ```
 LaunchScreen           → Yükleme ekranı (uygulama açılışında)
-OnboardingScreen       → İlk açılışta (7 adımlı kurulum)
+OnboardingScreen       → İlk açılışta (3 adımlı kurulum)
 └─ MainTabs (Alt sekme çubuğu)
    ├─ HomeTab          → Ana Sayfa
    ├─ LibraryTab       → Kütüphane
@@ -41,25 +41,41 @@ Uygulama açıldığında gösterilen splash ekranıdır.
 
 ---
 
-## 2. OnboardingScreen — İlk Kurulum (7 Adım)
+## 2. OnboardingScreen — İlk Kurulum (3 Adım)
 
 Uygulamayı ilk kez açan kullanıcıya gösterilen kurulum akışı. Üst kısımda ilerleme çubuğu ve adım noktaları bulunur.
 
 | Adım | İçerik |
 |------|--------|
-| 0 | **Hoş Geldin** — Logo animasyonu + karşılama metni |
-| 1 | **Nasıl Çalışır** — 3 kart: Hikayeler, Spark streaki, Hatırlatmalar |
-| 2 | **Kategori Seçimi** — İlgi alanları (min. 2 seçim zorunlu) |
-| 3 | **Günlük Süre** — 3dk / 6dk / 9dk okuma planı seçimi |
-| 4 | **Hatırlatma Zamanı** — Sabah / Öğle / Akşam (çoklu seçim) |
-| 5 | **Profil Bilgisi** — Sadece ad (opsiyonel, atlanabilir; paylaşım kartlarında görünür) |
-| 6 | **Özet** — Seçilen plan, kategoriler ve hatırlatma özeti |
+| 0 | **Hoş Geldin** — Logo animasyonu + karşılama metni + gerçek bir hikâye kartı (kullanıcının dilinde özeti olan hikâyelerden seçilir) |
+| 1 | **Kategori Seçimi** — İlgi alanları (min. 2 seçim zorunlu) |
+| 2 | **Günlük Plan** — Okuma planı (3dk / 6dk / 9dk, tek seçim) + hatırlatma zamanı (Sabah / Öğle / Akşam, çoklu seçim) |
+
+Son adımdaki "Okumaya Başla", bildirim iznini bağlam içinde ister ve cevabı bekler;
+izin verilirse push token'ı da o anda kaydedilir.
+
+**Neden 3 adım:** "Nasıl çalışır" ekranı anlattığı şeyi artık hoş geldin kartı
+gösteriyor; ad hiçbir şey okumak için gerekmediğinden Profil'e taşındı; özet ekranı
+bir önceki ekranda yapılan iki seçimi tekrar ediyordu.
 
 **Özellikler:**
-- Adımlar arası animasyonlu geçiş (fade + slide)
-- Haptic feedback (dokunsal geri bildirim)
-- Tamamlanan adım noktalarına tıklayarak geri gidebilme
-- Adım 0 ve 5'te "Atla" butonu
+- Üstte adım sayısı kadar parçalı ilerleme çubuğu (alttaki adım noktaları kaldırıldı)
+- Başlıkta geri oku her zaman solda, "Atla" her zaman sağda; logo yalnızca adım 1+ başlığında (adım 0'da hero'da)
+- Adımlar arası animasyonlu geçiş (fade + slide) ve logo nefes animasyonu — ikisi de sistemdeki
+  "hareketi azalt" ayarına uyar; nefes animasyonu sadece adım 0'da çalışır
+- Haptic feedback; kategori seçilmeden CTA'ya basılırsa uyarı titreşimi + ipucunun vurgulanması
+- Tek seçimli plan satırları yuvarlak radyo, çoklu seçimli hatırlatma satırları kare onay kutusu
+- Tüm hatırlatmalar kapatılabilir ("Hatırlatma gönderilmeyecek"); bu durumda bildirim izni hiç istenmez
+  ve kurulum `remindersEnabled: false` ile tamamlanır
+- Dokunulabilir öğelerde accessibilityRole/State/Label; ilerleme çubuğunda progressbar rolü
+
+**Ölçüm:** `onboarding_step_viewed` (her adım), `onboarding_skipped`, `onboarding_completed`,
+`notification_permission_result`, `onboarding_first_story_shown`, `onboarding_time_budget_selected`,
+`onboarding_notification_time_selected`.
+
+**Premium teklifi:** Kurulum bitince değil, kullanıcı **ilk hikâyesini bitirip bir
+sekmeye döndüğünde** gösterilir (`early_trial` / `first_story_complete`); okuma
+ekranının üstüne hiç düşmez. Kurulumu atlayan kullanıcıya hiç gösterilmez.
 
 ---
 

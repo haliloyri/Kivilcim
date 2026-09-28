@@ -1,0 +1,64 @@
+{
+  "story_id": 1269,
+  "kind": "concept",
+  "book": {
+    "title": "Why We Sleep",
+    "author": "Matthew Walker",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text is broadly faithful to Walker's 'overnight therapy' idea: REM sleep as a noradrenaline-free state in which emotional memories are reprocessed. It overstates by asserting insufficient REM causes PTSD, chronic anxiety and depression; Walker presents links and a proposed mechanism, not settled causation. The book's own case is his lab's emotional-image study; the prazosin/PTSD nightmare work by Murray Raskind is included as the author's account. Exact study numbers are omitted. The quoted 'Sleep is therapeutic' is not verified wording and is not used.",
+  "facts": [
+    "Walker describes REM (dream) sleep as the only time the brain is essentially free of noradrenaline, a stress-related chemical, while emotion and memory regions are highly active.",
+    "In his lab, participants viewed emotional images in an MRI scanner, then viewed them again 12 hours later, either after a night of sleep or after a day awake.",
+    "Those who slept between viewings reported the images felt less intense the second time, and their amygdala responded less while prefrontal regions re-engaged; the stay-awake group did not show this.",
+    "The amount of REM sleep and its specific brain activity tracked how much emotional intensity was reduced.",
+    "Walker's phrase for this is 'overnight therapy': the memory is kept, but its emotional charge is softened.",
+    "He connects the idea to PTSD, where recurring nightmares suggest the process fails; he describes work by Murray Raskind in which a drug lowering noradrenaline (prazosin) reduced nightmares in veterans."
+  ],
+  "tension": "We tend to credit time for making bad memories bearable, but Walker's data point to a specific stage of sleep doing the work, and to what happens when it can't.",
+  "opening_idea": "Begin with the scanner study: people see the same upsetting images twice, and whether they slept in between changes how their brain answers the second time.",
+  "lessons": [
+    {
+      "idea": "Memories can stay while their sting fades.",
+      "anchor": "Sleepers recalled the images but rated them less intense after the night."
+    },
+    {
+      "idea": "Stress chemistry matters to how memories are processed.",
+      "anchor": "REM sleep is described as the noradrenaline-free window, and blocking noradrenaline reduced veterans' nightmares."
+    },
+    {
+      "idea": "A night between an event and a response changes the response.",
+      "anchor": "Only the group that slept showed lower amygdala reactivity on second viewing."
+    }
+  ],
+  "reflect": [
+    "Think of something upsetting from a recent evening. Did it read differently to you the next morning?",
+    "When you're in a hard stretch, what usually happens to your sleep first?"
+  ],
+  "reflect_final": "The next time something stings late in the day, hold off on replying or deciding until after one night's sleep, then notice what the same message looks like in the morning.",
+  "use_cases": [
+    {
+      "situation": "An irritating email arrives from a manager at 9 p.m.",
+      "move": "Draft a reply if you must, but send it after sleeping on it, and reread it before sending.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is rattled after an argument and wants to settle it tonight.",
+      "move": "Mention that in Walker's scanner study the same images hit less hard after a night's sleep, and suggest talking it through tomorrow over coffee.",
+      "context": "social"
+    },
+    {
+      "situation": "A tense disagreement with your partner late at night.",
+      "move": "Agree out loud to pause and pick it up after breakfast, then check whether it still feels as big.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "In Walker's scanner study the upsetting pictures didn't change overnight, but the brain's reaction to them did: dream sleep keeps the memory and drains some of its charge.",
+  "conversation_variants": {
+    "punchline_idea": "Your brain spends REM sleep in a state almost free of a key stress chemical, and uses it to reprocess the day's emotions.",
+    "thirty_sec_idea": "Walker showed people upsetting images, then again twelve hours later; those who slept in between felt and showed less reaction, tied to their REM sleep.",
+    "question_idea": "Have you ever gone to bed furious and woken up seeing it differently? What changed?",
+    "key_contrast_idea": "From 'time heals' to 'time asleep, especially dreaming, does much of the healing.'"
+  }
+}

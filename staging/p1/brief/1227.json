@@ -1,0 +1,64 @@
+{
+  "story_id": 1227,
+  "kind": "concept",
+  "book": {
+    "title": "The Courage to Be Disliked",
+    "author": "Ichiro Kishimi and Fumitake Koga",
+    "year": "2013"
+  },
+  "confidence": "high",
+  "confidence_note": "The book contrasts etiology (explaining the present by past causes, associated here with Freud) with Adler's teleology (explaining behavior by present goals). The philosopher uses the example of the young man's friend who has shut himself in his room for years: the young man says anxiety keeps him from going out; the philosopher reverses it, saying he creates anxiety in order not to go out, because staying in serves a goal. He quotes Adler: 'No experience is in itself a cause of our success or failure... we determine ourselves by the meaning we give to our experiences.' The philosopher stresses that this is not denying that painful events happened. The quote is shortened.",
+  "facts": [
+    "The philosopher contrasts two ways of explaining behavior: etiology, which looks for causes in the past, and Adler's teleology, which looks at the goals a person is pursuing now.",
+    "The young man describes a friend who has stayed shut in his room for years. The young man believes anxiety about going outside causes this.",
+    "The philosopher reverses it: the friend doesn't stay in because of anxiety; he creates the anxiety in order to stay in, because staying in serves a goal, such as avoiding the risk of being hurt or judged.",
+    "He quotes Adler: no experience is in itself a cause of our success or failure; we are not determined by our experiences, but by the meaning we give them.",
+    "This does not mean past events don't matter or didn't hurt; it means the past doesn't have to decide the future.",
+    "The young man finds this idea harsh at first."
+  ],
+  "tension": "We usually believe our past explains who we are now. Adler's view says we choose what the past means.",
+  "opening_idea": "A young man is sure his friend stays inside because he's anxious. The philosopher says it's the other way round.",
+  "lessons": [
+    {
+      "idea": "Behavior often serves a present goal.",
+      "anchor": "Anxiety created in order not to go out"
+    },
+    {
+      "idea": "Meaning, not experience, shapes us.",
+      "anchor": "Adler's quote"
+    },
+    {
+      "idea": "The past is real, but not a sentence.",
+      "anchor": "The philosopher's caveat"
+    }
+  ],
+  "reflect": [
+    "What do you tell yourself your past prevents you from doing?",
+    "What might your hesitation be protecting you from?"
+  ],
+  "reflect_final": "What new meaning could you give to one experience that has held you back?",
+  "use_cases": [
+    {
+      "situation": "You say you can't speak up in meetings because you were shy as a child.",
+      "move": "Ask what staying quiet protects you from, and try one small contribution.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend says their upbringing makes them bad at relationships.",
+      "move": "Acknowledge the past, then ask what meaning they want to give it now.",
+      "context": "social"
+    },
+    {
+      "situation": "A team member says the last failure proves a new project will fail.",
+      "move": "Discuss what the past failure can teach rather than what it predicts.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Your past explains a lot, but it doesn't have to decide your next step.",
+  "conversation_variants": {
+    "punchline_idea": "He doesn't stay in because he's anxious; he's anxious so he can stay in.",
+    "thirty_sec_idea": "Etiology vs teleology, the shut-in friend, Adler's quote.",
+    "question_idea": "What might your hesitation be protecting you from?",
+    "key_contrast_idea": "Cause versus goal"
+  }
+}

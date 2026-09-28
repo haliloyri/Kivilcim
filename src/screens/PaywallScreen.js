@@ -254,6 +254,13 @@ const PaywallScreen = ({ navigation, route }) => {
     ? t('paywallTrialBadge', lang).replace('{{price}}', selectedPlan?.price || priceUnavailable)
     : null;
 
+  // The offer right after the first finished story leads with the free trial
+  // instead of "unlock Premium": that reader has seen one story, and the ask is
+  // 7 free days, not a purchase. Only when a trial really applies — `lifetime`
+  // is a one-off and an unreachable store has no trial to promise.
+  const heroTitleKey = isEarlyTrial && showsTrial ? 'paywallEarlyTrialTrialTitle' : paywallVariant.titleKey;
+  const heroSubKey = isEarlyTrial && showsTrial ? 'paywallEarlyTrialTrialSub' : paywallVariant.subKey;
+
   // Load live store prices when billing is connected.
   useEffect(() => {
     if (!billingLive) return;
@@ -791,8 +798,8 @@ const PaywallScreen = ({ navigation, route }) => {
           </View>
         )}
 
-        <Text style={styles.paywallTitle}>{t(paywallVariant.titleKey, lang)}</Text>
-        <Text style={styles.paywallSub}>{t(paywallVariant.subKey, lang)}</Text>
+        <Text style={styles.paywallTitle}>{t(heroTitleKey, lang)}</Text>
+        <Text style={styles.paywallSub}>{t(heroSubKey, lang)}</Text>
 
         <View style={styles.modelCard}>
           <Text style={styles.modelTitle}>{t('paywallModelTitle', lang)}</Text>

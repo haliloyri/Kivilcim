@@ -1,0 +1,65 @@
+{
+  "story_id": 1171,
+  "kind": "anecdote",
+  "book": {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "year": "2011"
+  },
+  "confidence": "high",
+  "confidence_note": "Corrections to the reference TR text: in Kahneman and Tversky's wheel-of-fortune experiment, the wheel was rigged to stop only at 10 or 65, and participants were asked for the percentage of African nations among UN members, not the number of countries in Africa; the average estimates were 25 percent and 45 percent. The TR text's house-price numbers are invented and replaced by the book's own examples: German judges influenced by rolling rigged dice (an average sentence of 8 months after rolling a 9 versus 5 months after rolling a 3), and real-estate agents whose valuations were affected by the listing price while they denied it.",
+  "facts": [
+    "Kahneman and Amos Tversky rigged a wheel of fortune to stop only at 10 or 65.",
+    "Participants, students at the University of Oregon, spun it, wrote down the number, and were then asked whether the percentage of African nations among UN members was higher or lower than that number, and then for their best guess.",
+    "Those who saw 10 guessed 25 percent on average; those who saw 65 guessed 45 percent, even though the wheel's number was obviously irrelevant.",
+    "Kahneman calls this the anchoring effect: an initial number, even an arbitrary one, pulls later estimates toward it.",
+    "In another study, experienced German judges read about a shoplifting case, rolled dice rigged to show 3 or 9, and then decided a sentence. Those who rolled 9 gave on average 8 months; those who rolled 3, 5 months.",
+    "Real-estate agents' valuations of a house were influenced by the listing price they were shown, although they insisted it hadn't affected them.",
+    "Kahneman advises resisting anchors in negotiation, for example by refusing to engage with an outrageous first offer and focusing on your own reasoning."
+  ],
+  "tension": "Everyone knew the number on the wheel meant nothing, and it still shaped their answers.",
+  "opening_idea": "A spinning wheel lands on a number that everyone knows is random, and then quietly steers their thinking.",
+  "lessons": [
+    {
+      "idea": "Even obviously irrelevant numbers anchor judgment.",
+      "anchor": "The wheel stopping at 10 or 65"
+    },
+    {
+      "idea": "Expertise doesn't make you immune.",
+      "anchor": "Judges and dice; real-estate agents and listing prices"
+    },
+    {
+      "idea": "In negotiation, the first number matters.",
+      "anchor": "Kahneman's advice on outrageous offers"
+    }
+  ],
+  "reflect": [
+    "Which first number shaped your last big purchase or negotiation?",
+    "Where do you let others set the anchor?"
+  ],
+  "reflect_final": "Before your next negotiation, what number will you decide on first, on your own terms?",
+  "use_cases": [
+    {
+      "situation": "A supplier opens with a very high price.",
+      "move": "Don't counter immediately; state that the number isn't a basis for discussion and propose your own reasoning.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're asking for a raise.",
+      "move": "Research and state your number first, with reasons, so your anchor sets the range.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're buying a car and the sticker price is high.",
+      "move": "Decide your fair price before seeing any listing, and write it down.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The first number you hear quietly shapes the last one you choose.",
+  "conversation_variants": {
+    "punchline_idea": "A random spin of a wheel changed people's estimates by twenty percentage points.",
+    "thirty_sec_idea": "Rigged wheel, UN question, 25 vs 45 percent, judges and dice.",
+    "question_idea": "Who set the anchor in your last negotiation?",
+    "key_contrast_idea": "Anchored versus independent"
+  }
+}

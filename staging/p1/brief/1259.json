@@ -1,0 +1,63 @@
+{
+  "story_id": 1259,
+  "kind": "concept",
+  "book": {
+    "title": "Stillness Is the Key",
+    "author": "Ryan Holiday",
+    "year": "2019"
+  },
+  "confidence": "low",
+  "confidence_note": "The tree-in-a-storm metaphor (a plane tree that stands because of its roots) in the existing TR text could not be attributed to Stillness Is the Key and is excluded; I also cannot confirm which Stoic source, if any, Holiday uses for a tree image in this book. What is supported is the book's general thesis: stillness as being steady amid external turbulence, drawn from Stoic and other traditions, with emphasis on separating what is in our control from what is not. No specific case from the book is attached to this story, so facts are limited to what the concept claims. The TR list of 'storms' (news, criticism, failure) is kept only as the kind of external input Holiday discusses, not as a quoted list.",
+  "facts": [
+    "Holiday defines stillness as the ability to be steady while the world spins around you: to act without frenzy and to hear only what needs to be heard.",
+    "He draws the idea from several traditions, including the Stoics, Epicureans and Buddhists, who each had a word for an undisturbed inner state.",
+    "A recurring Stoic element in his argument is distinguishing between what is within our control (our judgments and responses) and what is not (events, other people's actions).",
+    "Holiday argues this steadiness is not passivity: it is what allows clearer perception and better decisions in turbulent situations.",
+    "He treats external noise such as news, other people's opinions and constant inputs as things that shake people when they let their responses depend on them."
+  ],
+  "tension": "Staying steady while things go wrong can look like not caring; Holiday argues it is what makes useful action possible.",
+  "opening_idea": "Start with a common moment of being shaken, such as a critical comment or bad headline, and pose Holiday's question of what, in that moment, is actually in your control.",
+  "lessons": [
+    {
+      "idea": "Steadiness comes from where you anchor your attention, not from the absence of trouble.",
+      "anchor": "Holiday's definition: steady while the world spins around you"
+    },
+    {
+      "idea": "Sorting a situation into what you control and what you don't turns a vague storm into a smaller, workable task.",
+      "anchor": "The Stoic distinction between our responses and external events"
+    },
+    {
+      "idea": "Calm is a precondition for good action, not a substitute for it.",
+      "anchor": "Holiday's claim that stillness enables clearer perception and better decisions"
+    }
+  ],
+  "reflect": [
+    "What kind of outside event most reliably knocks you off balance?",
+    "In a recent upset, which part could you actually influence?"
+  ],
+  "reflect_final": "The next time something rattles you, write two short columns, 'mine' and 'not mine', and pick one item from the first to act on. Notice afterward whether the rest felt lighter.",
+  "use_cases": [
+    {
+      "situation": "A project is hit by an external delay and the meeting spirals into complaints.",
+      "move": "Holiday's steadiness rests on separating our responses from events, so ask: 'Which parts of this are ours to decide?' and list only those.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is anxious about news they can't influence.",
+      "move": "Ask what one thing within their reach they'd like to do about it today, and listen rather than debate the news.",
+      "context": "social"
+    },
+    {
+      "situation": "You've received harsh criticism and keep rehearsing a defense.",
+      "move": "Write down the one point in it you can use, then set the rest aside.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "When the world spins, sort it: what's mine to answer, and what is only noise.",
+  "conversation_variants": {
+    "punchline_idea": "Holiday says stillness isn't sitting still; it's staying steady while everything else moves.",
+    "thirty_sec_idea": "Ryan Holiday borrows from the Stoics and others to argue that stillness means staying steady amid chaos, by separating what you control, your responses, from what you don't, and that this steadiness is what makes clear action possible.",
+    "question_idea": "What's something that used to shake you that doesn't anymore, and what changed?",
+    "key_contrast_idea": "Being moved by every event versus choosing which ones get a response."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1092,
+  "kind": "concept",
+  "book": {
+    "title": "The Power of Focus (Turkish edition: Odaklanma Gücü)",
+    "author": "Jack Canfield, Mark Victor Hansen, Les Hewitt",
+    "year": "2000"
+  },
+  "confidence": "low",
+  "confidence_note": "The input lists the year as 1999, but the English original is generally dated 2000. It was co-authored by Canfield, Hansen and Hewitt, not Canfield alone. The book's core claim is reasonably certain: write goals down, and write many of them. Canfield has described a personal practice of writing a list of 101 goals. The reference text frames this as an experiment Hansen ran on other people, and that framing cannot be confirmed. Its figures cannot be verified as coming from the book: that most people achieved 70-80 of their 101 goals, and that people without a list reach only one or two goals a year. The reference text itself admits the second figure is anecdotal. These figures are left out of the facts. Writers should not present them as study results, and are safest omitting specific numbers entirely.",
+  "facts": [
+    "The book argues that clearly written goals are a foundation of focused, successful living. Vague intentions kept only in the head tend to stay wishes.",
+    "One exercise associated with the authors is writing a long list of goals, around 101, without first judging whether each one is realistic.",
+    "The stated mechanism is that putting a goal on paper turns a loose wish into a felt commitment, and commitment prompts action.",
+    "Being forced to write many goals pushes people past the obvious first items. The authors suggest that deeper, more genuine desires often surface later in a long list.",
+    "The book presents written, reviewed goals as far more likely to be achieved than unwritten ones. It says this as a claim from the authors' experience, not as a cited study."
+  ],
+  "tension": "Most people believe they know what they want, yet almost none write it down, and the book says that gap separates goals that happen from goals that stay dreams.",
+  "opening_idea": "Open with the odd request to write 101 goals without asking whether they are possible, and the natural reaction that this is far too many.",
+  "lessons": [
+    {
+      "idea": "Writing a goal down changes your relationship to it, from 'something I'd like' to 'something I've committed to'.",
+      "anchor": "The paper acts like a contract with yourself."
+    },
+    {
+      "idea": "Quantity forces honesty: the first easy goals run out, and what comes after is often what you truly want.",
+      "anchor": "The real goals tend to appear deep in a long list, not at the top."
+    },
+    {
+      "idea": "Suspending the 'is it realistic?' filter while listing lets ambitions surface that self-censorship would otherwise kill.",
+      "anchor": "Write first, judge later."
+    }
+  ],
+  "reflect": [
+    "Which of your current goals exist only in your head, never written anywhere?",
+    "If you had to keep listing goals past the obvious ones, what do you suspect would show up?",
+    "Which goal have you quietly ruled out as unrealistic before even writing it down?"
+  ],
+  "reflect_final": "If you spent five minutes right now writing ten goals for this year, which one would excite you most?",
+  "use_cases": [
+    {
+      "situation": "A team planning session where goals stay abstract and nobody owns them.",
+      "move": "Ask everyone to silently write five goals for the quarter on paper before any discussion, then read them aloud and pick which ones go on the shared board.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend or colleague says they feel stuck but can't name what they want.",
+      "move": "Suggest: 'Don't decide anything. Just write twenty things you'd want this year, even silly ones, and tell me which surprised you.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Starting a new year, month or project feeling vague about direction.",
+      "move": "Set a timer, write as many goals as you can without judging them, then circle the three that give you the strongest pull and put them where you'll see them daily.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A goal you've written down becomes a commitment; a goal you only think about stays a wish.",
+  "conversation_variants": {
+    "punchline_idea": "The book's trick: write so many goals that you run out of the fake ones and find the real ones.",
+    "thirty_sec_idea": "Canfield and co-authors push readers to write a long list of goals without judging feasibility, because writing creates commitment and a long list uncovers what you actually want.",
+    "question_idea": "Ask someone whether their most important goal for this year is written down anywhere, or only in their head.",
+    "key_contrast_idea": "Deciding something in your head versus putting it on paper: same goal, very different sense of obligation."
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "story_id": 1108,
+  "kind": "anecdote",
+  "book": {
+    "title": "Emotional Intelligence",
+    "author": "Daniel Goleman",
+    "year": "1995"
+  },
+  "confidence": "medium",
+  "confidence_note": "Goleman describes Walter Mischel's marshmallow study with four-year-olds at a Stanford preschool in the 1960s. The existing TR text has errors. It uses '1972' where the book frames the study as the 1960s. It says 'under 30% waited' and '30 years' of tracking, but the book reports a follow-up about 12-14 years later, around high-school graduation. It also claims higher income and less substance use, which is not in the book. Goleman does report a large SAT gap for the children who waited, commonly cited from the book as about 210 combined points, but that exact figure should be double-checked before stating it. The book says roughly a third grabbed the treat, but that proportion is also uncertain, so it is left out of the facts. Later, larger replications weakened the long-term link (for example, Watts et al., 2018). That work came after the book, so any mention should be framed as a later caveat, not as Goleman's claim.",
+  "facts": [
+    "In the 1960s, psychologist Walter Mischel ran a study with four-year-olds at a preschool on the Stanford University campus.",
+    "Each child was told they could eat one marshmallow now, or get two if they waited until the researcher came back from an errand.",
+    "Some children waited what must have felt like an endless 15–20 minutes, using tricks like covering their eyes, talking to themselves, or singing. Others grabbed the marshmallow within seconds of the researcher leaving.",
+    "When the children were tracked down again as adolescents, about 12–14 years later, those who had waited were described as more socially competent, self-assertive, and better able to cope with frustration and stress.",
+    "The children who had grabbed the marshmallow were more likely to be described as stubborn, indecisive, easily upset by frustration, and prone to envy or jealousy.",
+    "The children who had waited also scored substantially higher on the SAT than those who had grabbed.",
+    "Goleman calls impulse control a 'master aptitude.' He argues that this kind of emotional skill predicts life outcomes in ways IQ alone does not, and that it can be taught and strengthened."
+  ],
+  "tension": "A four-year-old alone with one marshmallow and a promise of two faces a choice that seems trivial, yet it hinted at how their teenage years would unfold.",
+  "opening_idea": "Open on the empty room: one child, one marshmallow, a closing door, and the long seconds that follow.",
+  "lessons": [
+    {
+      "idea": "The ability to delay gratification in pursuit of a goal is a foundational emotional skill.",
+      "anchor": "Goleman's phrase 'master aptitude' for impulse control"
+    },
+    {
+      "idea": "Children who waited did not rely on raw willpower; they used strategies to manage their attention.",
+      "anchor": "Covering eyes, singing, and talking to themselves while waiting"
+    },
+    {
+      "idea": "Emotional self-regulation can predict outcomes that IQ alone misses.",
+      "anchor": "The adolescent follow-up showing differences in coping and SAT scores"
+    },
+    {
+      "idea": "For Goleman, this capacity is not fixed at birth; it can be learned.",
+      "anchor": "The book's case for teaching emotional skills"
+    }
+  ],
+  "reflect": [
+    "What 'marshmallow' in your day do you usually grab within seconds?",
+    "What distraction or strategy helps you wait when you truly want to?"
+  ],
+  "reflect_final": "Think of a recent moment you gave in to an impulse: looking back, where did that choice actually take you?",
+  "use_cases": [
+    {
+      "situation": "A heated meeting where you feel the urge to fire back at criticism immediately.",
+      "move": "Say 'Let me think about that and come back to it after the meeting,' and write down your reaction instead of voicing it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child wants a treat or screen time right now.",
+      "move": "Offer a clear two-option trade ('one now, or two after dinner') and help them find something to do while they wait.",
+      "context": "family"
+    },
+    {
+      "situation": "You reach for your phone or snack out of boredom while working on something important.",
+      "move": "Put it out of sight for a set 20 minutes, the adult version of covering your eyes, then decide whether you still want it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Waiting works best when you stop staring at the marshmallow, not when you grit your teeth.",
+  "conversation_variants": {
+    "punchline_idea": "A marshmallow at age four turned out to hint at how teenage life would go.",
+    "thirty_sec_idea": "Summarize the test, the adolescent follow-up, and Goleman's claim that impulse control is a learnable 'master aptitude.'",
+    "question_idea": "Ask: if you'd been left alone with that marshmallow, would you have waited, and how?",
+    "key_contrast_idea": "Children who distracted themselves versus those who fixated on the treat."
+  }
+}

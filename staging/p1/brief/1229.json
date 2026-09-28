@@ -1,0 +1,64 @@
+{
+  "story_id": 1229,
+  "kind": "concept",
+  "book": {
+    "title": "High Performance Habits",
+    "author": "Brendon Burchard",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "'Generate energy' is one of the six habits in High Performance Habits. Burchard's specific practice is to 'release tension, set intention' during transitions between activities: close your eyes briefly, breathe deeply and relax, then set a clear intention for how you want to show up in the next activity. He argues that energy is managed through such small practices, along with sleep, exercise and nutrition, and that transitions are where energy often leaks. The reference TR text's broad statements about 'energy and intention' are consistent with this; details are paraphrased and no statistics are claimed.",
+  "facts": [
+    "Burchard lists 'generate energy' as one of the six habits of high performers.",
+    "He argues that high performers don't just have more energy by nature; they manage and renew it deliberately.",
+    "He focuses especially on transitions: the moments between activities, such as between meetings or when arriving home from work.",
+    "His practice, 'release tension, set intention': at each transition, close your eyes for a minute or so, breathe deeply and release tension from your body; then set an intention for the next activity: how you want to feel and show up, and what you want to achieve.",
+    "He links this to bringing positive energy into the next situation instead of carrying stress from the last one.",
+    "He also emphasizes basics like sleep, exercise and nutrition as foundations of energy."
+  ],
+  "tension": "Most of us move from one activity to the next without a pause, carrying the stress of the last one into the next.",
+  "opening_idea": "You walk from a tense meeting straight into the next one, or from work straight into dinner with your family. What comes with you?",
+  "lessons": [
+    {
+      "idea": "Transitions are where energy leaks.",
+      "anchor": "Moving between activities without pause"
+    },
+    {
+      "idea": "Release tension before starting anew.",
+      "anchor": "Breathing and relaxing at transitions"
+    },
+    {
+      "idea": "Set an intention for each new activity.",
+      "anchor": "How do I want to show up?"
+    }
+  ],
+  "reflect": [
+    "What do you usually carry from work into your home?",
+    "Which transition in your day drains you most?"
+  ],
+  "reflect_final": "Where in your day could a one-minute 'release and intend' pause make the biggest difference?",
+  "use_cases": [
+    {
+      "situation": "You arrive home still stressed from work and snap at your family.",
+      "move": "Sit in the car or on the stairs for a minute, breathe, and set an intention for the evening.",
+      "context": "family"
+    },
+    {
+      "situation": "You run from meeting to meeting all day.",
+      "move": "Take 60 seconds between meetings to breathe and decide how you want to show up in the next.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team starts meetings scattered and tense.",
+      "move": "Open with a one-minute pause and a shared intention for the meeting.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Release the last moment's tension before you step into the next one.",
+  "conversation_variants": {
+    "punchline_idea": "A one-minute pause between activities can change how you show up in the next one.",
+    "thirty_sec_idea": "Generate energy habit, transitions, release tension, set intention.",
+    "question_idea": "What do you carry from one part of your day into the next?",
+    "key_contrast_idea": "Carrying versus resetting"
+  }
+}

@@ -11,6 +11,21 @@ export const getReachedMilestoneIds = (summary) => {
 };
 
 /**
+ * Reached milestones as display items for the "Öğrendiklerin" shelf, so a
+ * reader can re-open a celebration later. Derived from the summary (not the
+ * seen-list in storage), so it stays correct across devices and reinstalls.
+ */
+export const listReachedMilestones = (summary) => {
+  if (!summary) return [];
+  const books = BOOK_MILESTONES
+    .filter((target) => summary.books >= target)
+    .map((target) => ({ id: `books_${target}`, type: 'books', count: target }));
+  const categories = (summary.allCategories || summary.categories || [])
+    .map((category) => ({ id: categoryKey(category), type: 'category', category: category.name, categoryRaw: category.rawName }));
+  return [...books, ...categories];
+};
+
+/**
  * Decides which of the newly reached milestones deserves a celebration.
  * The biggest new book milestone wins; otherwise the first new category.
  * A reader's very first category is never celebrated here because the

@@ -1,0 +1,65 @@
+{
+  "story_id": 1288,
+  "kind": "anecdote",
+  "book": {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The childhood circumstances (a violent father, forced nights working at the family's roller rink, the escape with his mother to small-town Indiana, racism and severe learning struggles there) are central to the book's first chapter. The reference TR text's single dark night when he said 'I choose to survive' does not match any scene I can attribute to the book and is excluded, as is its quoted explanation. The book's turning point came later and more gradually, when he stopped lying to himself in front of a mirror and set goals; that is covered in a separate story, so only a brief mention is kept here. The later achievements are listed qualitatively; exact figures such as the pull-up record count are omitted. Details were recalled, not re-checked against the text.",
+  "facts": [
+    "Goggins grew up in Buffalo, New York, with a father who was violent toward his mother and the children.",
+    "As a young boy he was made to work late nights at his father's roller-skating rink, often going to school exhausted.",
+    "His mother eventually fled with him and his brother; David ended up with her in a small town in Indiana with very little money.",
+    "There he faced open racism and fell far behind in school; he has written that he got by for years by copying other students' work rather than actually learning to read well.",
+    "The book's first chapter ends with a challenge: write down the 'bad cards' you were dealt and how they could become fuel rather than an excuse.",
+    "Goggins' point is not that the harm was deserved or minor; he treats it as real, then argues that dwelling on it as a victim kept him stuck.",
+    "He went on to become a Navy SEAL, complete Army Ranger School, run ultramarathons, and set a Guinness record for pull-ups."
+  ],
+  "tension": "The abuse, poverty and racism were real and not his fault, yet Goggins argues that continuing to tell his life as a victim's story was the one part he could change.",
+  "opening_idea": "Open with the boy working nights at his father's roller rink and falling asleep in class, then ask what someone does with a start like that.",
+  "lessons": [
+    {
+      "idea": "Naming the hard cards honestly is the first step to using them, rather than hiding them or hiding behind them.",
+      "anchor": "Challenge #1: write down the bad cards you were dealt."
+    },
+    {
+      "idea": "Unfairness can be both real and not the end of the story; acknowledging harm and refusing to let it define you can coexist.",
+      "anchor": "Violent father, poverty and racism are presented as real, while victimhood is rejected as a way of living."
+    },
+    {
+      "idea": "Hiding a weakness postpones the reckoning; he copied his way through school until the gap had to be faced.",
+      "anchor": "Getting by at school by copying others' work instead of learning."
+    }
+  ],
+  "reflect": [
+    "Which 'bad card' in your own past do you most often use to explain why something can't work for you?",
+    "Is there a skill you've been getting by without, the way Goggins copied his way through school?"
+  ],
+  "reflect_final": "Write down one card you were dealt that still shapes your choices, and next to it one concrete way it has made you stronger or could.",
+  "use_cases": [
+    {
+      "situation": "You catch yourself explaining a setback mainly by pointing at your background or circumstances.",
+      "move": "Write two columns: what was genuinely done to you, and what is still in your hands; pick one item from the second column to act on this week.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member keeps attributing missed goals to things outside their control.",
+      "move": "Agree that the constraints are real, then ask: 'Given those, what is the one part you can own?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A teenager in the family is struggling in school and hiding it.",
+      "move": "Share how Goggins copied his way through school until he had to face it, and ask which subject they'd like help with before the gap grows.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Goggins was dealt a violent home, poverty and racism; the move was not denying the cards but writing them down and turning them into fuel.",
+  "conversation_variants": {
+    "punchline_idea": "The man who later became a Navy SEAL spent his childhood nights working at his abusive father's roller rink.",
+    "thirty_sec_idea": "David Goggins grew up with a violent father, then poverty, racism and copying his way through school in Indiana; his book asks readers to list their own bad cards, because he found the real trap was living as a victim of them.",
+    "question_idea": "What's one hard thing from your past that turned out to give you something useful?",
+    "key_contrast_idea": "Treating a hard past as the explanation for everything, versus treating it as raw material you can use."
+  }
+}

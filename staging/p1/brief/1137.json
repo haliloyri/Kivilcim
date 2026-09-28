@@ -1,0 +1,65 @@
+{
+  "story_id": 1137,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Speed of Trust",
+    "author": "Stephen M. R. Covey",
+    "year": "2006"
+  },
+  "confidence": "high",
+  "confidence_note": "The McLane deal is one of the book's central examples and is also described in Warren Buffett's 2003 letter to Berkshire Hathaway shareholders. The book gives McLane Distribution as a roughly $23 billion business bought from Wal-Mart, agreed in a single two-hour meeting and a handshake, with no due diligence, and completed in less than a month (Buffett's letter says 29 days). The reference TR text says 'over twenty billion' in annual revenue; the brief uses the book's figure loosely as 'about $23 billion'. The TR text's claim that Covey 'took it from Buffett's letters rather than his father's book' is not needed and is left out. Covey's formula is from the book: when trust goes up, speed goes up and cost goes down; when trust goes down, speed goes down and cost goes up.",
+  "facts": [
+    "In 2003, Berkshire Hathaway, led by Warren Buffett, acquired McLane Distribution, a business of about $23 billion, from Wal-Mart.",
+    "A deal of that size would normally involve months of due diligence, auditors, lawyers and extensive verification.",
+    "Instead, the deal was made in one two-hour meeting and closed with a handshake.",
+    "Buffett's team did no due diligence. He trusted Wal-Mart's reputation and the information it provided, and it proved accurate.",
+    "Less than a month later (Buffett reported 29 days), the deal was complete.",
+    "Covey uses the example to show that trust is an economic driver, not just a soft virtue: high trust increases speed and lowers cost, low trust slows everything down and raises cost.",
+    "The trust was not created in the two-hour meeting. It rested on both parties' long track records."
+  ],
+  "tension": "How can one of the largest deals of the year be done in a two-hour meeting without the months of checking that normally protect both sides?",
+  "opening_idea": "Contrast a normal multibillion-dollar acquisition, with its armies of lawyers and months of audits, with a two-hour meeting and a handshake.",
+  "lessons": [
+    {
+      "idea": "Trust is an economic variable: it changes speed and cost.",
+      "anchor": "Months of due diligence replaced by two hours and a handshake"
+    },
+    {
+      "idea": "Fast trust is built slowly, over a long track record.",
+      "anchor": "The handshake worked because of decades of reputation on both sides"
+    },
+    {
+      "idea": "You can measure the cost of low trust by comparing how long things take with people you trust fully.",
+      "anchor": "The McLane timeline versus the normal one"
+    }
+  ],
+  "reflect": [
+    "Which process in your work takes much longer than it would with someone you fully trust?",
+    "Whose track record lets you move quickly with them, and why?"
+  ],
+  "reflect_final": "What would someone need to see from you, over years, for your handshake to be enough?",
+  "use_cases": [
+    {
+      "situation": "A cross-team approval keeps dragging on for weeks.",
+      "move": "Ask openly which step exists because of past mistrust, and whether a track record now exists that could replace it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A new report wants more autonomy immediately.",
+      "move": "Explain that trust is built by a track record and agree on a few small commitments they can deliver on first.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You want people to take your word without extra checks.",
+      "move": "Keep a small promise this week exactly as stated, and keep doing it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Trust is the fastest tool in business, and the slowest one to build.",
+  "conversation_variants": {
+    "punchline_idea": "A $23 billion deal was closed with a handshake because of decades of trust.",
+    "thirty_sec_idea": "Berkshire buys McLane from Wal-Mart in a two-hour meeting, no due diligence, done in under a month.",
+    "question_idea": "How much faster would your work go if you fully trusted the people involved?",
+    "key_contrast_idea": "Due diligence versus handshake"
+  }
+}

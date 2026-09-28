@@ -1,0 +1,59 @@
+{
+  "story_id": 1338,
+  "kind": "concept",
+  "book": { "title": "Beden Dili (What Every BODY Is Saying)", "author": "Joe Navarro", "year": "2008" },
+  "confidence": "low",
+  "confidence_note": "The experiment in the existing TR text does not come from this book. It describes the 'power posing' study by Carney, Cuddy and Yap, published in 2010, two years after Navarro's 2008 book. That study's two-minute poses and reported rises in testosterone and falls in cortisol are therefore excluded. Its hormonal findings also failed to replicate in later research, and one of its authors later said she no longer believed the effect was real. The claim that posture 'changes your chemistry within minutes' is therefore not supported and has been dropped. What Navarro's book does discuss is confidence and territorial displays: expansive postures such as hands on hips ('arms akimbo') and steepled fingers read as high confidence, while shrinking, withdrawing or hiding the hands and thumbs read as low confidence. He treats these as signals other people read, not as a self-help technique for changing hormones. The facts below keep to that, and the details are stated generally because exact wording and examples could not be checked.",
+  "facts": [
+    "Navarro describes posture and use of space as displays of comfort and confidence that other people read, often without realizing it.",
+    "He treats expansive, territorial displays, such as standing with hands on hips or spreading out to claim space, as signs of confidence or dominance.",
+    "He identifies steepling, meaning fingertips touching in a spire shape, as a high-confidence gesture.",
+    "Low confidence or discomfort, in his account, tends to show as the body making itself smaller: withdrawing, pulling in the arms, or hiding the hands or thumbs.",
+    "As elsewhere in the book, he frames these displays as meaningful in context and against a person's usual behavior, not as fixed signs."
+  ],
+  "tension": "A popular version of this story promises that two minutes of posing rewires your hormones; the book it is attributed to actually makes a narrower claim about what your posture tells other people.",
+  "opening_idea": "Begin with two people walking into the same room, one with hands on hips taking up space and one with shoulders drawn in, and ask what the room concludes about each before either speaks.",
+  "lessons": [
+    {
+      "idea": "Others form impressions of confidence from posture and use of space before any words are spoken.",
+      "anchor": "Navarro's description of territorial displays like hands on hips as signals of confidence or dominance."
+    },
+    {
+      "idea": "Small hand gestures can carry strong confidence signals, in either direction.",
+      "anchor": "Steepled fingers as a high-confidence display versus hidden hands or thumbs as a low-confidence one."
+    },
+    {
+      "idea": "An expansive display can read as confidence or as dominance depending on context, so it is worth noticing what yours is saying.",
+      "anchor": "His framing of arms akimbo and space-claiming as territorial behavior."
+    }
+  ],
+  "reflect": [
+    "When you are unsure of yourself in a group, what do your hands and shoulders tend to do?",
+    "Think of someone who seems confident the moment they enter a room: what is it about how they occupy space?"
+  ],
+  "reflect_final": "At your next meeting or presentation, notice where your hands are and how much space you take up; afterward, notice whether people responded to you any differently.",
+  "use_cases": [
+    {
+      "situation": "You are about to present in a meeting and tend to hunch behind your laptop with your hands out of sight.",
+      "move": "Since Navarro reads hidden hands and a shrunken posture as low-confidence signals, keep your hands visible on the table and your shoulders open while you speak, then notice how the room responds.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are giving feedback to a junior colleague while standing over them with hands on hips.",
+      "move": "Sit down at their level and drop the territorial stance before starting, so your posture does not add dominance to a message that is already hard to hear.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are about to walk into a networking event where you know few people.",
+      "move": "Before going in, check your own posture—hands out of pockets, shoulders not pulled in—and see whether people approach you any differently than usual.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Steepled fingers or hidden thumbs: your hands announce your confidence before you open your mouth, so check what they are saying.",
+  "conversation_variants": {
+    "punchline_idea": "Where your thumbs are may tell people more about your confidence than what you say.",
+    "thirty_sec_idea": "Navarro, a former FBI agent, noticed that confident people claim space—hands on hips, steepled fingers—while unsure people shrink and hide their hands; others read these signals instantly, in context.",
+    "question_idea": "Who do you know who looks confident before they say anything, and what exactly are they doing with their body?",
+    "key_contrast_idea": "Not 'strike a pose to change your hormones,' but 'notice what your posture is already telling everyone else.'"
+  }
+}

@@ -17,6 +17,9 @@
 
 const NEUTRALS = {
   light: {
+    readerAccent: '#C8733A',
+    readerAccentText: '#9A5220',
+    readerBorder: '#F0D9C8',
     background: '#F7F3EC',               // paper
     backgroundDark: '#EDE7DD',
     surfaceContainerLowest: '#FFFFFF',
@@ -41,6 +44,9 @@ const NEUTRALS = {
     tabInactive: '#6B625A',
   },
   dark: {
+    readerAccent: '#D18B66',
+    readerAccentText: '#F0B58B',
+    readerBorder: '#503C30',
     background: '#141413',
     backgroundDark: '#1C1B1A',
     surfaceContainerLowest: '#1C1B1A',

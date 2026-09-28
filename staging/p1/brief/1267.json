@@ -1,0 +1,64 @@
+{
+  "story_id": 1267,
+  "kind": "concept",
+  "book": {
+    "title": "Why We Sleep",
+    "author": "Matthew Walker",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text is built on an interview scene with Roger Federer ('twelve hours, every night') plus claims about LeBron James, Usain Bolt and Maria Sharapova; that dialogue and those athlete figures cannot be attributed to Walker's book and are omitted, as is the claim that Walker 'researched' elite athletes' sleep totals. The book's own case for sleep and physical skill is Walker's motor-skill learning research, used here. Walker does frame sleep as an underused legal performance enhancer, but the exact wording is not verified, so it is not quoted. Figures on endurance loss are kept as the book's reported range, not as a guaranteed effect.",
+  "facts": [
+    "Walker's lab taught right-handed people a typing sequence (a motor skill, like a piano run) with the left hand, then retested them after a night of sleep or after an equivalent span awake during the day.",
+    "People retested after a night of sleep performed the sequence faster and more accurately (Walker reports roughly 20–30 percent faster) than at the end of practice; those tested after the same hours awake showed no such boost.",
+    "The overnight gain tracked stage 2 NREM sleep and its sleep spindles, which are dense in the last hours of a full night, so cutting sleep short in the early morning trims exactly that window.",
+    "Walker's interpretation: practice builds the skill, but sleep is when the brain consolidates and automates it; the improvement arrives 'offline'.",
+    "Walker also reports that sleeping under about six hours, or less than eight, is linked to sharply lower time to physical exhaustion (a 10–30 percent range) and higher injury risk in athletes.",
+    "Walker says he has advised professional sports teams on sleep as part of performance."
+  ],
+  "tension": "Athletes train for hours to gain fractions of a second, yet much of the learning from that training is finished while they are doing nothing at all, and it is the part of the night most often cut short.",
+  "opening_idea": "Start with the typing test: two groups practise the same finger sequence, and one group gets better at it without touching a keyboard again.",
+  "lessons": [
+    {
+      "idea": "Skill is completed after practice, not only during it.",
+      "anchor": "Participants typed the sequence faster and more accurately after a night's sleep, with no extra practice."
+    },
+    {
+      "idea": "The last hours of a night matter disproportionately for motor learning.",
+      "anchor": "Gains tracked stage 2 NREM spindles, which cluster late in a full night of sleep."
+    },
+    {
+      "idea": "Cutting sleep can quietly erase effort already invested.",
+      "anchor": "The group retested after the same hours awake showed no overnight improvement."
+    }
+  ],
+  "reflect": [
+    "Think of a skill you practised hard, then found easier after a break. What had changed between sessions?",
+    "When you cut sleep, is it usually the start of the night or the early morning that goes?"
+  ],
+  "reflect_final": "Before your next session of learning something physical or technical, protect the full night after it, then notice whether the first attempt the next day feels different.",
+  "use_cases": [
+    {
+      "situation": "Planning a training day or workshop for a team that ends late and starts early.",
+      "move": "Mention that in Walker's typing study the gains appeared only after sleep, and propose moving the next morning's start back an hour so the practice has a night to settle.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A teenager wants to stay up late before a match or recital to practise more.",
+      "move": "Suggest one final run-through, then bed, and agree to compare how the piece feels in the morning.",
+      "context": "family"
+    },
+    {
+      "situation": "You are learning an instrument, a sport, or a keyboard shortcut set.",
+      "move": "After tonight's practice, skip the late alarm tomorrow and note on the first try whether speed or accuracy moved.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "In Walker's typing experiment the hands got faster overnight while they lay still: the last stretch of sleep is where practice turns into skill.",
+  "conversation_variants": {
+    "punchline_idea": "People got about a fifth faster at a typing sequence overnight, without practising it again.",
+    "thirty_sec_idea": "Walker's lab taught a finger sequence, retested people after sleep or after a day awake; only the sleepers improved, and the gain was tied to late-night stage 2 sleep spindles.",
+    "question_idea": "What's something you practised that suddenly clicked the next day, and how had you slept?",
+    "key_contrast_idea": "From 'more practice makes you better' to 'practice plus a full night makes you better.'"
+  }
+}

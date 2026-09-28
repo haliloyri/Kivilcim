@@ -1,0 +1,65 @@
+{
+  "story_id": 1235,
+  "kind": "anecdote",
+  "book": {
+    "title": "Made to Stick",
+    "author": "Chip Heath and Dan Heath",
+    "year": "2007"
+  },
+  "confidence": "high",
+  "confidence_note": "The 'Unexpected' chapter of Made to Stick includes the story of Nora Ephron's high school journalism teacher, who asked students to write the lead for a story about the faculty going to a conference; after students summarized the facts, he revealed the lead: 'There will be no school next Thursday.' The chapter also discusses surprise as a way to get attention and George Loewenstein's 'gap theory' of curiosity: curiosity arises when we feel a gap in our knowledge, and good communicators open such gaps and then fill them. Details are paraphrased; Ephron's recollection is well documented in the book.",
+  "facts": [
+    "Nora Ephron, later a famous screenwriter, remembered her first day of high school journalism class.",
+    "The teacher gave students a set of facts: the school's faculty would travel to a conference the next Thursday, with names of speakers including notable figures.",
+    "The students wrote leads that summarized the facts in order: who, what, where, when.",
+    "The teacher read them, then revealed the lead he wanted: 'There will be no school next Thursday.'",
+    "Ephron said it was a revelation: journalism was about figuring out the point, not repeating the facts.",
+    "The Heaths use surprise to show how to get attention, and describe George Loewenstein's 'gap theory' of curiosity: curiosity happens when we feel a gap in our knowledge, and it creates an itch we want to scratch.",
+    "To hold attention, they suggest opening knowledge gaps first, and then closing them."
+  ],
+  "tension": "A class of students gets every fact right and still misses the story completely.",
+  "opening_idea": "A teacher reads his students' carefully written news leads, then shows them the one sentence they all missed.",
+  "lessons": [
+    {
+      "idea": "Find the point, not just the facts.",
+      "anchor": "'There will be no school next Thursday'"
+    },
+    {
+      "idea": "Surprise breaks through attention.",
+      "anchor": "The teacher's reveal"
+    },
+    {
+      "idea": "Open a curiosity gap to hold attention.",
+      "anchor": "Loewenstein's gap theory"
+    }
+  ],
+  "reflect": [
+    "What's the real point of the message you're working on?",
+    "Where could you open a question before giving the answer?"
+  ],
+  "reflect_final": "What is the 'no school next Thursday' in your next announcement?",
+  "use_cases": [
+    {
+      "situation": "You're writing a long status update nobody reads.",
+      "move": "Lead with the one consequence people actually care about.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're teaching your child a new topic.",
+      "move": "Start with a puzzling question and let them want the answer.",
+      "context": "family"
+    },
+    {
+      "situation": "You're preparing a talk.",
+      "move": "Open with a surprising fact or question that creates a gap you'll fill.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Lead with what matters, and open a question people want answered.",
+  "conversation_variants": {
+    "punchline_idea": "A class wrote perfect summaries and all missed the real headline: no school next Thursday.",
+    "thirty_sec_idea": "Ephron's teacher, the lead, surprise, curiosity gap.",
+    "question_idea": "What's the real point hiding in your facts?",
+    "key_contrast_idea": "Facts versus point"
+  }
+}

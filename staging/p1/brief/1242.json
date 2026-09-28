@@ -1,0 +1,66 @@
+{
+  "story_id": 1242,
+  "kind": "anecdote",
+  "book": {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "year": "1936"
+  },
+  "confidence": "high",
+  "confidence_note": "This entry duplicates the theme of story 1175 (changing people without criticism). To avoid repeating Schwab's cigars, it uses Carnegie's well-known Lincoln example from the book's first principle, 'Don't criticize, condemn or complain': after Gettysburg in July 1863, General Meade failed to attack Lee's retreating army despite Lincoln's orders. Lincoln wrote Meade a letter expressing deep distress; the letter was never sent and was found among Lincoln's papers after his death. Carnegie suggests Lincoln had learned from bitter experience that sharp criticism accomplishes nothing. Lincoln's 'Judge not, that ye be not judged' attitude is also mentioned in the book. Details paraphrased.",
+  "facts": [
+    "Carnegie's first principle is 'Don't criticize, condemn or complain.'",
+    "He argues criticism is futile because it puts a person on the defensive and makes them justify themselves; it wounds pride and arouses resentment.",
+    "In July 1863, after the Battle of Gettysburg, Confederate General Lee's army was trapped by a flooded river. Lincoln ordered General Meade to attack at once.",
+    "Meade hesitated, held councils of war, and did not attack. The river receded and Lee escaped.",
+    "Lincoln was furious and wrote Meade a letter expressing his great distress and saying the opportunity had been lost.",
+    "The letter was never sent. It was found among Lincoln's papers after his death.",
+    "Carnegie suggests Lincoln had learned, partly from painful experience in his youth, that harsh criticism and ridicule almost never improve anyone, and often backfire.",
+    "Carnegie notes Lincoln's favorite line: 'Judge not, that ye be not judged.'"
+  ],
+  "tension": "The president had every reason to condemn his general, and he wrote the letter. Then he didn't send it.",
+  "opening_idea": "Among Abraham Lincoln's papers, found after his death, was a furious letter he never sent.",
+  "lessons": [
+    {
+      "idea": "Criticism makes people defend themselves, not change.",
+      "anchor": "Carnegie's first principle"
+    },
+    {
+      "idea": "Writing the angry letter can be enough.",
+      "anchor": "The unsent letter to Meade"
+    },
+    {
+      "idea": "Try to understand before judging.",
+      "anchor": "'Judge not, that ye be not judged'"
+    }
+  ],
+  "reflect": [
+    "What angry message did you send that you now wish you hadn't?",
+    "Whom are you tempted to criticize right now?"
+  ],
+  "reflect_final": "What would you write in your own unsent letter, and what would you say instead?",
+  "use_cases": [
+    {
+      "situation": "A colleague badly dropped the ball on a project.",
+      "move": "Write your angry reaction privately, then wait a day and address the issue calmly.",
+      "context": "self"
+    },
+    {
+      "situation": "Your teenager made a serious mistake.",
+      "move": "Start by asking what happened and what they'd do differently, not by condemning.",
+      "context": "family"
+    },
+    {
+      "situation": "Your team wants to publicly blame another department.",
+      "move": "Propose a private conversation focused on fixing the problem.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Write the angry letter if you must, then don't send it.",
+  "conversation_variants": {
+    "punchline_idea": "Lincoln's furious letter to General Meade was found unsent after his death.",
+    "thirty_sec_idea": "Gettysburg, Meade's hesitation, Lee's escape, the unsent letter.",
+    "question_idea": "What angry message should you leave unsent?",
+    "key_contrast_idea": "Condemn versus understand"
+  }
+}

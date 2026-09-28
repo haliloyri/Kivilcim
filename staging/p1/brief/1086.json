@@ -1,0 +1,70 @@
+{
+  "story_id": 1086,
+  "kind": "anecdote",
+  "book": {
+    "title": "Start With Why (Turkish edition: Başlangıç Noktası)",
+    "author": "Simon Sinek",
+    "year": "2009"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book's core use of this case is well established. Sinek says roughly 250,000 people came to the Mall in Washington in the summer of 1963 without invitations or a website. He says they came because King spoke about what he believed, and he notes it was the 'I Have a Dream' speech, not an 'I Have a Plan' speech. The exact date (28 August 1963) and the Lincoln Memorial setting are historically accurate but may not be spelled out in the book. The Mahalia Jackson prompt ('Tell them about the dream, Martin') and King's earlier use of the dream passage at other rallies are well-documented history. They are probably not part of Sinek's telling, so they should be framed as historical context, not as the book's claims. The TR text's point that the other speeches that day listed demands is not from the book and is omitted. The Apple 'Think Different' comparison is consistent with the book's broader argument.",
+  "facts": [
+    "In the summer of 1963, about 250,000 people gathered on the Mall in Washington, D.C. to hear Martin Luther King Jr. speak.",
+    "Sinek stresses that no invitations were sent and there was no website to announce the date. People came anyway.",
+    "Sinek's reading is that people did not come for King himself but for what they themselves believed. King gave voice to a belief they shared.",
+    "Sinek points out that King gave the 'I Have a Dream' speech, not the 'I Have a Plan' speech.",
+    "King talked about what he believed rather than listing what needed to be done, and people who shared that belief made his cause their own.",
+    "Historical context (not necessarily in the book): the gospel singer Mahalia Jackson reportedly called out 'Tell them about the dream, Martin', and King moved away from his prepared text.",
+    "Historical context (not necessarily in the book): King had used 'dream' passages in earlier speeches, so the moment drew on material he had already prepared.",
+    "Sinek applies the same pattern to organizations such as Apple, which communicates a belief ('Think Different') before talking about its products."
+  ],
+  "tension": "Plans and demands are necessary and reasonable, yet a list of steps alone rarely makes people choose to show up. What made a quarter of a million people come was a shared belief, not a plan.",
+  "opening_idea": "Start with the image of a huge crowd that gathered without invitations, and ask what actually brought them there.",
+  "lessons": [
+    {
+      "idea": "A plan tells people what to do. A belief tells them why they should care enough to do it.",
+      "anchor": "'I Have a Dream', not 'I Have a Plan'"
+    },
+    {
+      "idea": "People follow a leader for what they themselves believe, not for the leader personally.",
+      "anchor": "250,000 people came for themselves, without invitations"
+    },
+    {
+      "idea": "An inspiring 'why' works on top of preparation, not instead of it. You need material to fall back on when you put the notes down.",
+      "anchor": "King's dream passage had been rehearsed in earlier speeches (historical context)"
+    },
+    {
+      "idea": "When you only list features or tasks, people compare. When you state a belief, people choose sides.",
+      "anchor": "Apple speaking to those who think differently rather than listing specs"
+    }
+  ],
+  "reflect": [
+    "When you last tried to persuade someone, how much of what you said was steps and how much was the reason behind them?",
+    "Which cause or group have you joined because it matched something you already believed?"
+  ],
+  "reflect_final": "In something you want others to act on, are you telling them your plan or your dream?",
+  "use_cases": [
+    {
+      "situation": "Launching a new direction or project with your team",
+      "move": "Open with one sentence on why this direction matters to you before showing the task list, e.g. 'We're doing this because we believe customers deserve…'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A direct report is going through the motions on an assignment",
+      "move": "Ask them, 'What do you think this work is really for?' Then share your own reason, rather than restating deadlines.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Trying to get the family on board with a change such as saving money or moving",
+      "move": "Describe the life you're hoping for together first ('I want us to have weekends free'), then talk about the budget or logistics.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Plans coordinate people, but a reason is what moves them.",
+  "conversation_variants": {
+    "punchline_idea": "Nobody remembers the 'I Have a Plan' speech, because King never gave one.",
+    "thirty_sec_idea": "A quarter-million people came to Washington with no invitations, and Sinek says they came because King voiced what they already believed.",
+    "question_idea": "If you dropped your notes in your next pitch, what belief would you have left to say?",
+    "key_contrast_idea": "A feature list invites comparison, while a stated belief invites loyalty."
+  }
+}

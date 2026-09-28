@@ -1,0 +1,64 @@
+{
+  "story_id": 1236,
+  "kind": "concept",
+  "book": {
+    "title": "Building a StoryBrand",
+    "author": "Donald Miller",
+    "year": "2017"
+  },
+  "confidence": "high",
+  "confidence_note": "Miller's central argument in Building a StoryBrand is that in any marketing message the customer should be the hero, not the brand; the brand should play the role of the guide, the experienced mentor who helps the hero win. He illustrates the guide role with mentor characters from well-known stories (such as Yoda helping Luke Skywalker). He argues brands that position themselves as the hero compete with their customers for attention and lose. The guide shows empathy and authority. Details are paraphrased; the film reference is used briefly.",
+  "facts": [
+    "Miller argues that people are drawn to stories, and that customers see themselves as the hero of their own story.",
+    "Many companies make the mistake of casting themselves as the hero of their marketing, talking about their history, their greatness and their products.",
+    "This, he says, confuses customers: they are looking for a guide, not another hero.",
+    "In classic stories, the hero meets a guide who helps them win, like a wise mentor who trains a young hero.",
+    "The brand should play the guide, and demonstrate two qualities: empathy (we understand your problem) and authority (we're competent to help).",
+    "The guide is not the focus of the story; the hero's success is."
+  ],
+  "tension": "Companies spend fortunes telling their own story. Customers are only listening for theirs.",
+  "opening_idea": "In almost every great story, there's a hero and a wise guide. Miller asks which role your business is trying to play.",
+  "lessons": [
+    {
+      "idea": "The customer is the hero.",
+      "anchor": "Miller's central principle"
+    },
+    {
+      "idea": "Brands should be guides.",
+      "anchor": "The wise mentor role"
+    },
+    {
+      "idea": "Guides show empathy and authority.",
+      "anchor": "Two qualities of a guide"
+    }
+  ],
+  "reflect": [
+    "In your pitch or profile, who is the hero: you or your customer?",
+    "How do you show both empathy and authority?"
+  ],
+  "reflect_final": "How would your message change if your customer were the hero?",
+  "use_cases": [
+    {
+      "situation": "Your company website opens with your founding story.",
+      "move": "Rewrite the top section around the customer's problem and the success you help them reach.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're preparing a job interview pitch about your achievements.",
+      "move": "Frame it around the problems you'd help the employer solve.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend's small business posts only about itself.",
+      "move": "Suggest posts that tell customers' stories and show how the business helped.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Make your customer the hero; your job is to be the guide.",
+  "conversation_variants": {
+    "punchline_idea": "Brands that cast themselves as the hero lose; customers are looking for a guide.",
+    "thirty_sec_idea": "Customer as hero, brand as guide, empathy and authority.",
+    "question_idea": "Who is the hero in your story, you or your customer?",
+    "key_contrast_idea": "Hero versus guide"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-09-27T08:35:39.010Z",
+  "files": [
+    {
+      "file": "batch/prompts/brief-instructions.md",
+      "sha256": "33a300e01de5876c4e23091322c4da3945332b3e67e4bdddee50a5138619f23c"
+    },
+    {
+      "file": "batch/prompts/story-instructions.md",
+      "sha256": "6c5400615bc50c8862fc58e14a67a7e707d1e7ba2cc71019184bb149b5a79959"
+    },
+    {
+      "file": "staging/p1-codex/inputs/brief-system.md",
+      "sha256": "33a300e01de5876c4e23091322c4da3945332b3e67e4bdddee50a5138619f23c"
+    },
+    {
+      "file": "staging/p1-codex/inputs/story-system.en.md",
+      "sha256": "f95157cfdec506c1671d1a4b8c93bb5f913a5b792f759e9707491d65b182fc13"
+    }
+  ]
+}

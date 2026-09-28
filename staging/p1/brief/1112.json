@@ -1,0 +1,65 @@
+{
+  "story_id": 1112,
+  "kind": "anecdote",
+  "book": {
+    "title": "Purple Cow",
+    "author": "Seth Godin",
+    "year": "2003"
+  },
+  "confidence": "low",
+  "confidence_note": "The Michelin Guide story is well documented historically. It is not clearly one of the core case studies in Purple Cow, whose best-known examples include the Aeron chair, Krispy Kreme and JetBlue, so the attribution to this specific book is uncertain. The 'marketing that doesn't look like marketing' framing matches Godin's general thinking and the book's 'be remarkable' argument, but may paraphrase him rather than quote the book. Historical details are kept to widely cited points. The figure of roughly 3,000 cars in France in 1900 is the commonly repeated estimate, not an exact count. The date of the first restaurant stars (mid-1920s) is left out to avoid false precision.",
+  "facts": [
+    "Brothers André and Édouard Michelin ran a tire company in France around 1900.",
+    "At the time there were very few cars in France, commonly estimated at around 3,000.",
+    "Their business depended on people driving more, and more driving meant more tires wearing out.",
+    "In 1900 they published a free guide for motorists with practical information such as mechanics, fuel stops, hotels and places to eat.",
+    "Over the following decades the guide's restaurant ratings, later its star system, became one of the most respected references in fine dining.",
+    "Earning Michelin stars came to be seen as a career-defining achievement for chefs and restaurants.",
+    "The guide made the Michelin name stand for something far beyond tires, while never directly advertising tires."
+  ],
+  "tension": "A tire company needed people to drive more, but instead of advertising tires it made something seemingly unrelated. That 'off-topic' move ended up building the brand more than any tire ad could.",
+  "opening_idea": "Open with the odd image of a country with only a few thousand cars and a tire maker who responds by printing a free travel guide.",
+  "lessons": [
+    {
+      "idea": "The most effective marketing often doesn't look like marketing; it is something genuinely useful that people choose to keep and share.",
+      "anchor": "A free motorists' guide instead of a tire ad."
+    },
+    {
+      "idea": "Grow the reason people need you, not just your share of the current demand.",
+      "anchor": "More trips meant more worn tires, so Michelin gave people reasons to travel."
+    },
+    {
+      "idea": "Being remarkable, worth talking about, beats being loud; people attach meaning to what surprises and serves them.",
+      "anchor": "Michelin stars became a byword for excellence, far beyond rubber."
+    }
+  ],
+  "reflect": [
+    "What does the audience I want actually need that sits one step away from what I sell or do?",
+    "Is my current outreach something people would keep, or something they skip?"
+  ],
+  "reflect_final": "What could you offer your customers, followers or circle that is genuinely useful even if they never buy anything from you?",
+  "use_cases": [
+    {
+      "situation": "A marketing meeting where the team keeps proposing more ads for the same product.",
+      "move": "Ask: 'What would our customers use every week even if it never mentions our product?' Then list three such things before discussing ad spend.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Building a freelance or personal brand online and feeling pushy about self-promotion.",
+      "move": "Replace one promotional post this week with a free checklist, template or guide your ideal client would save.",
+      "context": "self"
+    },
+    {
+      "situation": "At a gathering, someone asks how to get people interested in their small business or side project.",
+      "move": "Share the Michelin example and ask them, 'What's your version of the guide, something your customers would thank you for?'",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Help people do the thing that makes them need you, and they'll remember your name.",
+  "conversation_variants": {
+    "punchline_idea": "The world's most famous food rating was started by a tire company.",
+    "thirty_sec_idea": "Michelin needed more driving to sell tires, so it gave drivers a free guide; decades later its stars define fine dining.",
+    "question_idea": "Ask the listener to guess which industry created the Michelin star, then reveal it was tires.",
+    "key_contrast_idea": "Shouting 'buy our tires' versus quietly giving people a reason to take the trip."
+  }
+}

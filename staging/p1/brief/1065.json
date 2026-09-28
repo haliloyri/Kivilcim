@@ -1,0 +1,74 @@
+{
+  "story_id": 1065,
+  "kind": "concept",
+  "book": {
+    "title": "Radical Candor (TR: Dürüst Olmak)",
+    "author": "Kim Scott",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core framework is central to the book: Care Personally and Challenge Directly, with four quadrants (Radical Candor, Obnoxious Aggression, Ruinous Empathy, Manipulative Insincerity). So is the advice to ask for criticism before giving it. The book does discuss Steve Jobs's blunt 'your work is bad' style while Scott taught at Apple University, and it references his comments on telling people their work isn't good enough. Exact wording, the setting of the questions, and the claim that his criticism went mainly to overconfident people are less certain and are left out. The example of the 'user doesn't know what to do at step three' is illustrative, not from the book.",
+  "facts": [
+    "Kim Scott's framework uses two dimensions: caring personally about someone and challenging them directly.",
+    "Criticism that challenges without caring is 'Obnoxious Aggression'. Caring without challenging is 'Ruinous Empathy'. Doing neither is 'Manipulative Insincerity'. Doing both is 'Radical Candor'.",
+    "Scott worked at Google and later taught at Apple University. Steve Jobs's harsh feedback style, such as bluntly telling people their work was bad, comes up in the book as a test case for the framework.",
+    "Scott argues that blunt criticism aimed at the work, not the person, and meant to make the work great can be Radical Candor rather than aggression.",
+    "Scott warns that harshness is not the goal. Blunt words without real care are still Obnoxious Aggression.",
+    "Her practical advice is to start by asking for criticism of yourself, receive it without defending, and reward the candor. Only then should you give it.",
+    "She notes that both uncaring bluntness and polite silence keep people from improving."
+  ],
+  "tension": "The same harsh sentence can be a gift that helps someone grow or a pointless attack. You can't tell which from the tone alone.",
+  "opening_idea": "Managers at Apple kept asking Scott where someone like Steve Jobs, famous for calling work bad, fit in a framework built on caring.",
+  "lessons": [
+    {
+      "idea": "Criticize the work, not the person's worth.",
+      "anchor": "Jobs attacked the output, not the person's competence."
+    },
+    {
+      "idea": "A verdict without an explanation closes a door. An explanation of why it fails and what better looks like opens one.",
+      "anchor": "'This is bad' versus 'this is bad because…'"
+    },
+    {
+      "idea": "Harshness is a side effect of caring, never a virtue in itself.",
+      "anchor": "Obnoxious Aggression mistakes bluntness for courage."
+    },
+    {
+      "idea": "Earn the right to criticize by first asking for and accepting criticism of yourself.",
+      "anchor": "Scott's advice to get feedback before you give it."
+    },
+    {
+      "idea": "Judge criticism by what happens after it: does the person know what to do, and does the critic follow up?",
+      "anchor": "The two-question test that skips arguing about tone."
+    }
+  ],
+  "reflect": [
+    "When did blunt feedback actually help you, and what came right after it?",
+    "Do you tend to drift toward Ruinous Empathy, staying nice but silent, or toward Obnoxious Aggression?",
+    "When did you last ask someone to criticize you, and how did you react?"
+  ],
+  "reflect_final": "Did the person who gave you your harshest criticism truly want you to do better, and how did you know?",
+  "use_cases": [
+    {
+      "situation": "Reviewing a teammate's weak deliverable in a group review",
+      "move": "Name one specific flaw, explain why it fails the user or goal, and describe what a good version would look like, all in the same breath.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You want your report to be more candid with you",
+      "move": "Ask: 'What is one thing I could do or stop doing that would make it easier to work with me?' Then wait through the silence and thank them for whatever they say.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You just gave someone blunt feedback and aren't sure it landed as care",
+      "move": "Check two things within a day: do they know their next concrete step, and have you followed up to see how it went?",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Criticism becomes care when it explains, points to better, and comes from believing the person can do better. Tone doesn't decide it.",
+  "conversation_variants": {
+    "punchline_idea": "Harshness without care isn't honesty. It's just harshness.",
+    "thirty_sec_idea": "Scott's two axes, caring and challenging, explain why Jobs's 'this is bad' could be candor while the same words from someone else are aggression.",
+    "question_idea": "Ask whether the person being criticized knows what to do next or just feels bad.",
+    "key_contrast_idea": "Offices where no one cares and everyone attacks versus offices where everyone is nice and no one tells the truth: both stop people from growing."
+  }
+}

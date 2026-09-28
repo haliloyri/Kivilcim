@@ -1,0 +1,63 @@
+{
+  "story_id": 1153,
+  "kind": "concept",
+  "book": {
+    "title": "Man's Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "year": "1946"
+  },
+  "confidence": "high",
+  "confidence_note": "The 'Sunday neurosis' and the 'existential vacuum' are both described in the logotherapy section of the book, as are the three ways of discovering meaning. One correction to the reference TR text: Frankl does not say meaning is 'chosen from within'. He argues the opposite: meaning is discovered in the world, through what he calls the self-transcendence of human existence, not invented inside one's own psyche. His link between the existential vacuum and depression, aggression and addiction appears in his later additions to the book; it is kept general. The TR text's small examples (growing a plant, a sparkle in someone's eyes) are illustrative, not from the book.",
+  "facts": [
+    "Frankl describes the 'existential vacuum': a widespread feeling of inner emptiness and meaninglessness, often showing up as boredom.",
+    "He describes 'Sunday neurosis': the depression that afflicts people who become aware of the lack of content in their lives when the rush of the busy week is over.",
+    "He argues that the existential vacuum can be masked by the pursuit of power, money or pleasure, and links it to depression, aggression and addiction.",
+    "He insists that meaning is to be discovered in the world rather than within one's own psyche; human existence points beyond itself, to something or someone other than oneself.",
+    "He names three ways to discover meaning: by creating a work or doing a deed; by experiencing something or encountering someone, especially through love; and by the attitude we take toward unavoidable suffering."
+  ],
+  "tension": "The weekend you've waited for all week arrives, and instead of relief you feel empty.",
+  "opening_idea": "Sunday afternoon: no meetings, no deadlines, and a strange low feeling creeping in.",
+  "lessons": [
+    {
+      "idea": "Busyness can hide an absence of meaning until the busyness stops.",
+      "anchor": "Sunday neurosis"
+    },
+    {
+      "idea": "Filling the vacuum with pleasure or power doesn't fill it.",
+      "anchor": "Frankl's link between the vacuum and compensations like pleasure, money and addiction"
+    },
+    {
+      "idea": "Meaning is found outside yourself, through work, love and attitude.",
+      "anchor": "The three ways of discovering meaning"
+    }
+  ],
+  "reflect": [
+    "When the week goes quiet, what feeling shows up?",
+    "Which of the three paths, work, love or attitude, is strongest in your life now?"
+  ],
+  "reflect_final": "What could you do this Sunday that points beyond yourself?",
+  "use_cases": [
+    {
+      "situation": "You feel flat and restless every Sunday evening.",
+      "move": "Plan one Sunday activity that involves creating something or doing something for someone else.",
+      "context": "self"
+    },
+    {
+      "situation": "A recently retired parent feels lost without work.",
+      "move": "Help them find a person or project that needs what they know.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend fills every free hour with shopping or scrolling and still feels empty.",
+      "move": "Invite them into something that involves others, like volunteering or a shared project.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Meaning isn't found by looking inward; it's found by reaching outward.",
+  "conversation_variants": {
+    "punchline_idea": "The Sunday blues may be your life asking what it's all for.",
+    "thirty_sec_idea": "Sunday neurosis, the existential vacuum, and the three paths to meaning.",
+    "question_idea": "What shows up in you when the week goes quiet?",
+    "key_contrast_idea": "Busy versus meaningful"
+  }
+}

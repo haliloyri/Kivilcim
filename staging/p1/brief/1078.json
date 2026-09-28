@@ -1,0 +1,64 @@
+{
+  "story_id": 1078,
+  "kind": "anecdote",
+  "book": {
+    "title": "Influence",
+    "author": "Robert Cialdini",
+    "year": "1984"
+  },
+  "confidence": "high",
+  "confidence_note": "Cialdini describes this experiment in his chapter on commitment and consistency. He credits psychologists Jonathan Freedman and Scott Fraser, whose study was published in 1966 and run in a California residential area. The 17% and 76% compliance figures and the roughly two-week gap are widely cited from his account. Wording details of the signs are reported from memory of the book and may vary slightly by edition, so the facts keep them general.",
+  "facts": [
+    "A researcher posing as a volunteer went door to door asking homeowners to let a large, rather unattractive 'Drive Carefully' billboard be installed on their front lawn.",
+    "Among residents who got only this big request, about 17% agreed.",
+    "Another group of residents had been asked about two weeks earlier to display a small, roughly three-inch 'Be a safe driver' sign in their window, and nearly all agreed.",
+    "When this second group later received the same billboard request, about 76% agreed.",
+    "Cialdini attributes the jump to a shift in self-image. After the small yes, people came to see themselves as civic-minded citizens who act on causes like this, and they behaved consistently with that view.",
+    "The approach of securing a small commitment first to win a larger one later is known as the foot-in-the-door technique."
+  ],
+  "tension": "The same big, unappealing request was refused by most people, yet accepted by most others. The only difference was a trivial yes they had given weeks earlier.",
+  "opening_idea": "Someone asks strangers to plant an ugly billboard on their lawn. Most refuse, until a tiny window sticker changes everything.",
+  "lessons": [
+    {
+      "idea": "Small commitments shape how people see themselves, and that self-image then drives later choices.",
+      "anchor": "The small window sign turned residents into 'people who support safe driving.'"
+    },
+    {
+      "idea": "The desire to appear consistent, to others and to ourselves, can outweigh how we judge a new request on its merits.",
+      "anchor": "Compliance rose from about 17% to about 76% for the identical billboard request."
+    },
+    {
+      "idea": "Knowing this mechanism lets you notice when a small yes is being used to set up a bigger one.",
+      "anchor": "Cialdini presents consistency as a lever that compliance professionals deliberately pull."
+    }
+  ],
+  "reflect": [
+    "Which small agreements have you made recently that quietly changed how you see yourself?",
+    "When you said yes to something big, was it because of the request itself, or because you had already said yes before?"
+  ],
+  "reflect_final": "Think of a time a small yes pulled you into something much bigger. Would you have agreed if the big request had come first?",
+  "use_cases": [
+    {
+      "situation": "You want a hesitant team to adopt a new process.",
+      "move": "Ask them to try one small piece of it for a week before proposing the full rollout.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Someone asks you for a big favor right after you agreed to a small one.",
+      "move": "Pause and ask yourself: 'If this were the first request, would I still say yes?' Then decide on that basis.",
+      "context": "self"
+    },
+    {
+      "situation": "You want a family member to build a healthier habit.",
+      "move": "Start with a request so small it is easy to accept, like a five-minute walk after dinner, and let it grow from there.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A small yes changes who you think you are, and that new identity keeps saying yes.",
+  "conversation_variants": {
+    "punchline_idea": "Refusals for an ugly billboard dropped sharply because of a sticker people had agreed to two weeks earlier.",
+    "thirty_sec_idea": "Summarize the two groups, the 17% versus 76% result, and the self-image explanation in three quick beats.",
+    "question_idea": "Ask the listener whether they would put a huge sign on their lawn, then ask whether their answer would change if they had already agreed to a small one.",
+    "key_contrast_idea": "Contrast the same request judged on its own merits with the same request judged in light of who you have already committed to being."
+  }
+}

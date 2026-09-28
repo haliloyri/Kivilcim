@@ -1,0 +1,65 @@
+{
+  "story_id": 1163,
+  "kind": "anecdote",
+  "book": {
+    "title": "Blink: The Power of Thinking Without Thinking",
+    "author": "Malcolm Gladwell",
+    "year": "2005"
+  },
+  "confidence": "high",
+  "confidence_note": "The Warren Harding Error is a chapter-level idea in Blink. Gladwell describes how the political operator Harry Daugherty met Harding around 1899 in Ohio and was struck by how presidential he looked; Harding's handsome appearance and resonant voice helped carry him to the presidency in 1920, and he is widely rated one of the worst presidents; he died in office in 1923. The reference TR text's summary is broadly correct. Gladwell's broader point is kept: snap judgments can be distorted by stereotypes and associations, as in the Harding case, and the book discusses studies showing tall men are overrepresented among CEOs; exact percentages are omitted.",
+  "facts": [
+    "Around 1899, Harry Daugherty, an ambitious Ohio political operator, met Warren Harding and was struck by how much he looked like a president.",
+    "Harding was tall, handsome, with a deep voice and a dignified manner. He was not especially intelligent or accomplished, but his appearance helped his political rise.",
+    "With Daugherty's backing, Harding became a senator and then won the presidency in 1920.",
+    "He is widely considered one of the worst presidents in American history. He died in office in 1923.",
+    "Gladwell calls this the Warren Harding Error: a snap judgment triggered by appearance or association rather than by the qualities that matter.",
+    "He contrasts it with expert thin-slicing: fast judgments can be brilliant, but they can also be corrupted by stereotypes and unconscious bias.",
+    "As another example, Gladwell notes that tall men are heavily overrepresented among the CEOs of large companies."
+  ],
+  "tension": "The same quick judgment that saves a fire crew can also put the wrong man in the White House.",
+  "opening_idea": "A man looks so much like a president that people make him one.",
+  "lessons": [
+    {
+      "idea": "Snap judgments can be hijacked by appearance.",
+      "anchor": "Harding 'looked like a president'"
+    },
+    {
+      "idea": "The difference is whether the cue is actually relevant.",
+      "anchor": "Expert thin-slicing versus the Harding error"
+    },
+    {
+      "idea": "Hidden biases show up in who gets chosen.",
+      "anchor": "Tall men overrepresented among CEOs"
+    }
+  ],
+  "reflect": [
+    "When did someone's appearance or confidence mislead you?",
+    "Which 'looks right' signals do you trust too much?"
+  ],
+  "reflect_final": "In your next quick judgment of a person, what will you check before you trust it?",
+  "use_cases": [
+    {
+      "situation": "Your team is excited about a candidate who 'looks like a leader'.",
+      "move": "Ask what evidence of the actual skills you've seen, beyond presence and appearance.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're quick to dismiss a quiet colleague's ideas.",
+      "move": "Evaluate the idea on paper, without the name attached.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is dazzled by a charming new business partner.",
+      "move": "Ask what track record the partner has, apart from the good impression.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Looking the part is not the same as being able to do it.",
+  "conversation_variants": {
+    "punchline_idea": "Warren Harding became president partly because he looked like one.",
+    "thirty_sec_idea": "Daugherty meets Harding, 1920 election, poor presidency, the error named.",
+    "question_idea": "When has looking right fooled you?",
+    "key_contrast_idea": "Looking versus being"
+  }
+}

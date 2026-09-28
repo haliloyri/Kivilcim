@@ -1,0 +1,63 @@
+{
+  "story_id": 1299,
+  "kind": "concept",
+  "book": {
+    "title": "Essentialism: The Disciplined Pursuit of Less",
+    "author": "Greg McKeown",
+    "year": "2014"
+  },
+  "confidence": "low",
+  "confidence_note": "McKeown devotes a chapter to sleep as protecting 'the asset' (yourself) and cites K. Anders Ericsson's study of violinists, in which the best performers practiced in focused sessions and slept more than less accomplished peers. Exact figures from the reference text (4-5 hours of practice, '8 hours of sleep enables 4 hours of deep work', 'six hours produces eight shallow hours') are not attributable to the book and are omitted; the specific hours reported in Ericsson's study could not be verified here, so no numbers are given. The reference text's claim that Ericsson 'rejected the popular formulation' is outside the book and omitted. The study shows an association, not that sleep alone caused excellence. Low confidence on the detail of how McKeown presents the study.",
+  "facts": [
+    "McKeown argues that the most valuable asset a person has for contributing to the world is themselves, and that neglecting sleep damages it.",
+    "He cites K. Anders Ericsson's research on violinists, best known for the idea that expertise comes from large amounts of deliberate practice.",
+    "A less-quoted detail of that study: the best violinists practiced in focused sessions rather than all day, and slept more than the less accomplished players.",
+    "McKeown treats sleep not as a reward for finished work but as what makes clear choices about essential work possible; a tired mind struggles to say no and to prioritize.",
+    "This is a correlation reported in a study of musicians, used by McKeown to make a broader argument; it does not show that sleep alone made them excellent."
+  ],
+  "tension": "The study famous for celebrating hours of practice also found the top performers were the ones sleeping more.",
+  "opening_idea": "In the violinist study behind the famous practice-hours idea, there is a detail people skip: what the best players did with the hours when they weren't practicing.",
+  "lessons": [
+    {
+      "idea": "Rest is part of high performance, not a break from it.",
+      "anchor": "The best violinists in Ericsson's study also slept more"
+    },
+    {
+      "idea": "Intensity matters more than sheer hours.",
+      "anchor": "Top players practiced in focused sessions rather than all day"
+    },
+    {
+      "idea": "Fatigue weakens the very judgment needed to choose what matters.",
+      "anchor": "McKeown's argument for protecting 'the asset'"
+    }
+  ],
+  "reflect": [
+    "When you last cut sleep to get more done, what happened to the quality of your decisions the next day?",
+    "Which part of your day is truly focused work, and which is just time spent?"
+  ],
+  "reflect_final": "Before your next heavy workday, choose to protect your sleep the night before, then notice whether your choices about what to work on feel clearer.",
+  "use_cases": [
+    {
+      "situation": "A team is planning a crunch with late nights to hit a deadline.",
+      "move": "Mention that in Ericsson's violinist study the top players practiced in focused sessions and slept more; propose planning the crunch around shorter, protected focus blocks instead of extra hours.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Someone at home keeps staying up late to finish work.",
+      "move": "Ask what one task could wait until morning so they can sleep and tackle it fresh.",
+      "context": "family"
+    },
+    {
+      "situation": "You're tempted to trade sleep for an extra hour of work tonight.",
+      "move": "Pick the one essential task for tomorrow, go to bed at your usual time, and compare how the task goes.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The practice study everyone quotes for its hours also shows the best players sleeping more: protect the asset that does the work.",
+  "conversation_variants": {
+    "punchline_idea": "The famous study behind '10,000 hours' found the best violinists were also the ones who slept more.",
+    "thirty_sec_idea": "McKeown points to Ericsson's study of violinists: the top performers didn't practice all day but in focused sessions, and they slept more than their peers, which he uses to argue that sleep protects the ability to choose what matters.",
+    "question_idea": "When do you do your best thinking: after a long night of work or after a full night's sleep?",
+    "key_contrast_idea": "Sleep as a luxury you earn versus sleep as the tool that makes good work possible."
+  }
+}

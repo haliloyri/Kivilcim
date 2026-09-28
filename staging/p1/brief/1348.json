@@ -1,0 +1,58 @@
+{
+  "story_id": 1348,
+  "kind": "concept",
+  "book": {
+    "title": "Öğrenmeyi Öğrenmek (Make It Stick)",
+    "author": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+    "year": "2014"
+  },
+  "confidence": "low",
+  "confidence_note": "Make It Stick does explain consolidation: new memory traces are fragile and are stabilised and reorganised over time, and the authors note that sleep appears to help this process. However, the specific study in the TR text (a morning group and an evening group tested 12 hours apart, with the sleep group remembering more) could not be confirmed as described in this book; it resembles sleep-research studies published elsewhere. It is therefore excluded, along with the claims about REM versus deep-sleep stages and the advice to study in the evening. The book gives no protagonist for this point, so facts are limited to what the concept claims. The Turkish title is taken from the input and is assumed to be the Turkish edition of Make It Stick.",
+  "facts": [
+    "The authors describe learning in stages: encoding a new experience, then consolidation, in which the brain strengthens and reorganises the fragile new trace into longer-term memory.",
+    "They note that consolidation continues after study ends and that sleep appears to play a role in it.",
+    "They argue that retrieving something after some time has passed, instead of repeating it immediately, makes memory more durable, because effortful retrieval helps re-consolidate the memory.",
+    "Their broader point is that much of what makes learning last happens between study sessions, not only during them."
+  ],
+  "tension": "Learning feels like it happens at the desk, while you are reading and repeating. The book argues that important work on the memory happens after you stop.",
+  "opening_idea": "Begin with the moment someone closes the book for the night, believing the learning is done, and suggest that the memory is only partly formed at that point.",
+  "lessons": [
+    {
+      "idea": "A new memory is fragile at first and is stabilised in the time after study.",
+      "anchor": "The book's description of consolidation."
+    },
+    {
+      "idea": "Coming back to retrieve something after a gap helps the memory more than immediate repetition.",
+      "anchor": "The authors' argument that effortful, delayed retrieval strengthens memory."
+    }
+  ],
+  "reflect": [
+    "Recall a time you studied late into the night and found little of it remained the next day.",
+    "When you learn something new, do you ever come back to it after a gap, or only repeat it in one sitting?"
+  ],
+  "reflect_final": "The next time you learn something that matters, stop, sleep on it, and the next day try to recall it before rereading. Notice what came back and what did not.",
+  "use_cases": [
+    {
+      "situation": "You are preparing for a presentation and plan to rehearse it many times the night before.",
+      "move": "Rehearse it once the day before, then the next morning try to deliver it from memory before looking at your notes.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child wants to stay up late cramming for a test.",
+      "move": "Tell them the book's point that memories keep settling after study stops, and suggest reviewing in the evening, sleeping, then quizzing themselves over breakfast.",
+      "context": "family"
+    },
+    {
+      "situation": "A team member has a lot to absorb during onboarding.",
+      "move": "Suggest they end each day by noting three key points, then recall them the next morning before opening their notes.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Closing the book is not the end of learning: the memory is still settling, so give it time and come back to recall it.",
+  "conversation_variants": {
+    "punchline_idea": "Some of the work of remembering happens after you have stopped studying.",
+    "thirty_sec_idea": "Brown and his co-authors explain that a new memory starts out fragile and is stabilised over time, with sleep appearing to help, so recalling it after a gap strengthens it more than repeating it at once.",
+    "question_idea": "Ask whether they have ever crammed the night before and found it was gone a few days later.",
+    "key_contrast_idea": "Not more hours at the desk, but time and a later attempt to recall."
+  }
+}

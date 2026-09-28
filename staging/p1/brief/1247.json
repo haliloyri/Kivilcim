@@ -1,0 +1,64 @@
+{
+  "story_id": 1247,
+  "kind": "concept",
+  "book": {
+    "title": "Big Magic: Creative Living Beyond Fear",
+    "author": "Elizabeth Gilbert",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "This entry duplicates the theme of story 1180 (fear riding along but not driving). To avoid repetition, it uses a different passage from Big Magic about how to relate to creative fear and suffering: Gilbert contrasts two creative attitudes, the Martyr and the Trickster. The Martyr believes creativity must involve suffering, sacrifice and seriousness; the Trickster approaches it with lightness, playfulness and trust, and is willing to play the game without needing it to be tragic. Gilbert says she chooses the Trickster. The database title (fear as a passenger) should be updated; flagged for the user. Details paraphrased.",
+  "facts": [
+    "Gilbert describes two archetypes of creative living: the Martyr and the Trickster.",
+    "Martyr energy is dark, solemn and heavy: it believes creativity requires suffering, and that pain is proof of seriousness and worth.",
+    "Trickster energy is light, sly and playful: it trusts that things can work out, doesn't take the stakes too seriously, and enjoys the game.",
+    "Gilbert says the Martyr expects the universe to reward suffering; the Trickster knows it doesn't have to be that way.",
+    "She believes many artists were taught that suffering is necessary for great work, and argues that this belief is not only unnecessary but harmful.",
+    "She says she deliberately chooses the Trickster's approach, while still working hard and caring deeply."
+  ],
+  "tension": "Many creators believe great work requires great suffering. Gilbert thinks that belief is a trap.",
+  "opening_idea": "Picture two artists. One suffers for every sentence and wears it like a badge. The other works just as hard and grins through it.",
+  "lessons": [
+    {
+      "idea": "Suffering isn't proof of seriousness.",
+      "anchor": "Martyr energy"
+    },
+    {
+      "idea": "Lightness can coexist with hard work.",
+      "anchor": "Trickster energy"
+    },
+    {
+      "idea": "You can choose your creative attitude.",
+      "anchor": "Gilbert choosing the Trickster"
+    }
+  ],
+  "reflect": [
+    "Do you believe good work must hurt?",
+    "Where does Martyr energy show up in your work?"
+  ],
+  "reflect_final": "What would your work feel like if you approached it more like a Trickster?",
+  "use_cases": [
+    {
+      "situation": "You feel guilty when creative work comes easily.",
+      "move": "Notice the Martyr belief and let yourself enjoy it without apology.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team treats burnout as a badge of honor.",
+      "move": "Challenge the idea that suffering equals commitment; celebrate good work done sustainably.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend says real art has to come from pain.",
+      "move": "Share Gilbert's Trickster idea and ask what would happen if it didn't have to.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "You can take your work seriously without making it suffering.",
+  "conversation_variants": {
+    "punchline_idea": "Gilbert says you can choose to create like a Trickster, not a Martyr.",
+    "thirty_sec_idea": "Martyr vs Trickster energy, suffering myth, choosing lightness.",
+    "question_idea": "Do you believe good work has to hurt?",
+    "key_contrast_idea": "Martyr versus Trickster"
+  }
+}

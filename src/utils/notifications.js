@@ -513,8 +513,16 @@ export async function registerAndSavePushToken(userId = null) {
       return null;
     }
 
-    const granted = await ensureNotificationPermission();
-    if (!granted) return null;
+    // Check only — never request here. This runs on every cold start, so a
+    // request would put the OS prompt over the welcome screen with no context,
+    // and an iOS denial is permanent (the in-context ask in onboarding would
+    // then never get a chance). Onboarding registers the token itself once the
+    // user grants permission there.
+    const { status } = await Notifications.getPermissionsAsync();
+    if (status !== 'granted') {
+      console.log('[push] Skipping push token — permission not granted yet');
+      return null;
+    }
 
     // Android requires a notification channel for push as well
     if (Platform.OS === 'android') {

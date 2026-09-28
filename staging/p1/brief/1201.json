@@ -1,0 +1,64 @@
+{
+  "story_id": 1201,
+  "kind": "concept",
+  "book": {
+    "title": "Zero to One",
+    "author": "Peter Thiel with Blake Masters",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "Thiel's argument that 'competition is for losers' and that great businesses build monopolies is central to Zero to One, as is his contrast between Google, which captures a large share of the value it creates, and U.S. airlines, which create enormous value but earn very thin profits because they compete intensely. He adapts Tolstoy: 'All happy companies are different: each one earns a monopoly by solving a unique problem. All failed companies are the same: they failed to escape competition.' He also notes that monopolies tend to understate their dominance and competitive firms tend to exaggerate their uniqueness. The reference TR text's opening question about important truths belongs to story 1202 and is not repeated here. Exact revenue and profit figures are omitted.",
+  "facts": [
+    "Thiel argues that in perfect competition, profits are competed away; in the long run no company makes much money.",
+    "He contrasts U.S. airlines, which carry huge numbers of passengers and create great value but earn very small profits, with Google, which creates less total value but captures much more of it as profit.",
+    "He calls companies like Google 'creative monopolies': they dominate by building something so much better that there is no close substitute.",
+    "He adapts Tolstoy: 'All happy companies are different: each one earns a monopoly by solving a unique problem. All failed companies are the same: they failed to escape competition.'",
+    "He argues that monopolies tend to downplay their dominance, while companies in fierce competition tend to exaggerate how unique they are.",
+    "His advice to founders: start with a small market you can dominate, then expand, rather than entering a huge, crowded market."
+  ],
+  "tension": "We're taught that competition is healthy. Thiel argues that for a business, it's often a trap.",
+  "opening_idea": "Airlines carry millions of people and create enormous value, yet they barely make money. Why?",
+  "lessons": [
+    {
+      "idea": "Creating value is not the same as capturing it.",
+      "anchor": "Airlines versus Google"
+    },
+    {
+      "idea": "Uniqueness, not rivalry, builds lasting businesses.",
+      "anchor": "Creative monopolies"
+    },
+    {
+      "idea": "Start small and dominate.",
+      "anchor": "Thiel's advice on markets"
+    }
+  ],
+  "reflect": [
+    "Where are you competing head-on when you could be doing something different?",
+    "What problem could you solve better than anyone else?"
+  ],
+  "reflect_final": "What small market, or niche, could you own completely?",
+  "use_cases": [
+    {
+      "situation": "Your team keeps copying a competitor's features.",
+      "move": "Ask what unique problem you could solve that they can't.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're thinking of opening a business in a crowded category.",
+      "move": "Look for a small, specific niche you could dominate first.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend's startup describes itself as 'better than X'.",
+      "move": "Ask what makes it different, not just better.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Don't try to win the race everyone is running; build the one only you can run.",
+  "conversation_variants": {
+    "punchline_idea": "Airlines create huge value but barely profit; Google keeps much more of what it creates.",
+    "thirty_sec_idea": "Competition kills profits, airlines vs Google, creative monopoly, Tolstoy line, start small.",
+    "question_idea": "What could you do that no one else is doing?",
+    "key_contrast_idea": "Competing versus unique"
+  }
+}

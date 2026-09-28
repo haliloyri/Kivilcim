@@ -1,0 +1,65 @@
+{
+  "story_id": 1062,
+  "kind": "anecdote",
+  "book": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "The cafeteria study is a well-known case in Chapter 6, 'Motivation Is Overrated; Environment Often Matters More.' The book describes Anne Thorndike as a primary care physician at Massachusetts General Hospital in Boston, not a dietitian as the reference text says. Clear reports soda sales falling 11.4% and bottled water sales rising 25.8% over three months. Rounded figures (about 11% and 25%) are safe to use. The book says water was added to the areas near the registers and around the food stations; it does not say soda was removed or hidden. So the reference text's claim that cola was made 'less accessible' goes beyond the source. The quote 'Don't rely on motivation, design your environment' paraphrases the chapter's theme and is not a verbatim line. One line that is close to the book's wording is 'Environment is the invisible hand that shapes human behavior.'",
+  "facts": [
+    "Anne Thorndike, a primary care physician at Massachusetts General Hospital in Boston, wanted to improve the eating and drinking habits of the hospital's staff and visitors without relying on their willpower or motivation.",
+    "She and her colleagues changed the 'choice architecture' of the hospital cafeteria, meaning how the drinks were placed and displayed.",
+    "They stocked water in the refrigerators next to the cash registers, which had previously held only soda. They also placed baskets of bottled water at food stations throughout the cafeteria, in addition to the main drink area.",
+    "Soda was still available. The main change was that water became more visible and easier to grab.",
+    "Over the next three months, soda sales dropped by about 11% and bottled water sales rose by about 26%.",
+    "Clear uses the case to argue that people often choose products because of where they are, not what they are. Obvious cues in the environment shape behavior more than motivation does.",
+    "Clear's own everyday applications include making cues visible: leaving a guitar stand in the middle of the living room to practice more, filling water bottles and placing them around the house, and putting fruit in a visible bowl rather than hiding it in a drawer."
+  ],
+  "tension": "People blame bad habits on weak willpower. Yet in a busy hospital cafeteria, simply moving water into sight changed what people chose, without any lecture, price change or campaign.",
+  "opening_idea": "Open with a hospital cafeteria where soda outsells water, and a doctor who decides not to convince anyone but only to move the drinks.",
+  "lessons": [
+    {
+      "idea": "Behavior follows visibility: the cue you see most often is the option you pick most often.",
+      "anchor": "Water placed in the fridges next to the registers"
+    },
+    {
+      "idea": "Changing the setting can beat changing minds: no persuasion was needed to shift thousands of choices.",
+      "anchor": "Soda sales down about 11%, water up about 26% in three months"
+    },
+    {
+      "idea": "To build a good habit, make its cue obvious in your space; to weaken a bad one, make its cue less visible.",
+      "anchor": "Clear's guitar stand in the middle of the living room"
+    }
+  ],
+  "reflect": [
+    "Which objects in your home or office are silently voting for a habit you want to quit?",
+    "Where could you place the cue for a habit you want so that it is the first thing you see?"
+  ],
+  "reflect_final": "If your environment made your choices for you today, what would it choose, and what one object would you move to change that?",
+  "use_cases": [
+    {
+      "situation": "Your team keeps skipping a shared process, such as updating the task board.",
+      "move": "Instead of sending another reminder email, put the board on the screen that opens at the start of every meeting, so it is the first thing everyone sees.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your family snacks on sweets but rarely touches fruit.",
+      "move": "Put a fruit bowl on the kitchen counter at eye level and move the sweets to a high, closed cupboard, without announcing any new rule.",
+      "context": "family"
+    },
+    {
+      "situation": "You want to read more in the evening but end up scrolling on your phone.",
+      "move": "Tonight, charge your phone in another room and leave the book open on your pillow.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "You don't need more willpower; you need the right thing within reach.",
+  "conversation_variants": {
+    "punchline_idea": "A hospital cut soda sales without saying a word; it just put water next to the cash register.",
+    "thirty_sec_idea": "Summarize: a Boston doctor added water near the registers and around the cafeteria, and within three months soda fell about 11% and water rose about 26%, showing that placement beats persuasion.",
+    "question_idea": "Ask: if someone rearranged your kitchen or desk overnight, which of your habits would change first?",
+    "key_contrast_idea": "Contrast trying to change people's minds (campaigns, rules, lectures) with simply changing what sits in front of their eyes."
+  }
+}

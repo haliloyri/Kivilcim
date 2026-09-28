@@ -1,0 +1,69 @@
+{
+  "story_id": 1127,
+  "kind": "concept",
+  "book": {
+    "title": "Liderlik Sanatı (likely a Turkish edition of 'Leaders Eat Last')",
+    "author": "Simon Sinek",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The title 'Liderlik Sanatı' does not match the usual Turkish title of Sinek's 2014 book 'Leaders Eat Last' ('Liderler En Son Yer'), so the exact edition is uncertain. The 'people leave managers, not companies' idea is widely linked to Gallup research, popularized in Buckingham & Coffman's 'First, Break All the Rules' (1999). That research drew on about a million employee interviews. It is not certain that Sinek cites this study or its figures directly, so the brief avoids specific percentages and treats the Gallup reference as background. The point that managers copy how they are treated by their own bosses fits Sinek's central argument that leaders set the environment and a 'Circle of Safety' flows downward. The exit-interview reasoning and the 'people leave cultures' counter-reading are interpretive framing, not a documented case from the book. No specific named case from the book is used.",
+  "facts": [
+    "A widely cited Gallup-linked finding says an employee's direct manager is a major factor in voluntary departures, more than the job itself.",
+    "The finding has become a slogan, 'people leave managers, not companies,' which many business authors repeat, Sinek among them.",
+    "Some commentators argue that 'people leave cultures' is more accurate, because the manager is the part of the culture closest to the employee. This is a different reading of the same data, not a refutation.",
+    "The two readings lead to different fixes: one suggests changing the person, the other changing the system.",
+    "The manager carries much of an employee's relationship with the organization: who gets visibility, who gets which work, how mistakes are handled, who gets credit.",
+    "Sinek's argument is that leaders shape the environment below them. Managers tend to treat their teams the way their own superiors treat them.",
+    "Many constraints that employees blame on managers, such as budget, pay bands, promotion quotas and workload, are set higher up. Often the manager only delivers the news."
+  ],
+  "tension": "People who leave usually say 'better offer, more money,' yet the evidence points to the person they report to. Even that answer may be incomplete, because the manager's behavior is often learned from one level further up.",
+  "opening_idea": "Ask departing employees why they left and you hear 'salary.' Ask the right way, later, and you often hear a name.",
+  "lessons": [
+    {
+      "idea": "The direct manager is where the organization touches the employee. Most of the day-to-day experience of the job passes through them.",
+      "anchor": "Visibility, assignments, how mistakes are handled and who gets credit are all decided by one person."
+    },
+    {
+      "idea": "Exit reasons are often softened, because naming your boss carries costs.",
+      "anchor": "'Money' is the safe answer when references and future encounters are at stake."
+    },
+    {
+      "idea": "Leadership behavior cascades downward. Managers reproduce how they are led.",
+      "anchor": "A manager led by pressure learns to lead by pressure."
+    },
+    {
+      "idea": "A low-engagement team often signals a problem one level up. Blaming individual managers backfires when they don't control the levers.",
+      "anchor": "Replacing the team fixes the score briefly. Fixing the level above keeps the pattern from repeating."
+    }
+  ],
+  "reflect": [
+    "When someone you know quit, was it really the company, or the person they spoke to every day?",
+    "If you manage people, how much of your style did you copy from your own boss?"
+  ],
+  "reflect_final": "When you left a job, or thought about leaving, was the reason really the organization?",
+  "use_cases": [
+    {
+      "situation": "A leadership meeting reviews a team with low engagement scores and high turnover.",
+      "move": "Before discussing the team, ask: 'How is this team's manager being managed? What pressures and constraints are coming from our level?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A direct report hints they are considering leaving and says it's about money.",
+      "move": "Ask one follow-up that makes the manager's role safe to discuss: 'Besides pay, what's one thing I do that makes this job harder than it needs to be?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're weighing whether to quit your own job.",
+      "move": "Write two columns, 'problems with my manager' and 'problems set above my manager.' Then check whether a transfer, rather than a resignation, would solve most of the list.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "An engagement problem in a team is often solved one level above the team.",
+  "conversation_variants": {
+    "punchline_idea": "People say they left for the money; they often left a person, and that person may have learned the behavior from their own boss.",
+    "thirty_sec_idea": "Research linked to Gallup made 'people leave managers, not companies' famous. Sinek adds that managers mirror how they're led, so turnover in a team usually points one level up.",
+    "question_idea": "Ask a senior leader who says 'I treat my employees well, why do they leave?' how they treat their managers.",
+    "key_contrast_idea": "'People leave managers' calls for replacing a person, while 'people leave cultures' calls for changing the system. It is the same data read two ways."
+  }
+}

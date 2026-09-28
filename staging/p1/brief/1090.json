@@ -1,0 +1,71 @@
+{
+  "story_id": 1090,
+  "kind": "concept",
+  "book": {
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "year": "2011"
+  },
+  "confidence": "medium",
+  "confidence_note": "The title given ('Büyük Sıçrayış') does not match the book's usual Turkish title, 'Yalın Girişim'. The content (Build-Measure-Learn, innovation accounting, Toyota's andon cord) matches Eric Ries's The Lean Startup, so the brief is based on that book. The reference text says Ries derived the Build-Measure-Learn loop directly from the andon cord. That is an overstatement. Ries credits lean manufacturing in general (the Toyota Production System) as his inspiration. He uses the andon cord mainly to argue for stopping work to fix quality problems, for example halting deployment when tests fail. No specific dates or figures are used.",
+  "facts": [
+    "Under the Toyota Production System, any worker who saw a defect could pull the andon cord, which stopped the production line until the problem was dealt with.",
+    "Ries argues that stopping to fix problems as they appear feels slower but produces faster, more reliable work over time. Problems that are left unfixed pile up and become costly.",
+    "Ries adapts ideas from lean manufacturing to startups, which operate under extreme uncertainty. His main unit of progress is 'validated learning', not output.",
+    "The Build-Measure-Learn feedback loop means building a minimum viable product, measuring how real customers respond, and learning whether to pivot or persevere. The goal is to get through the loop as fast as possible.",
+    "Ries suggests planning the loop in reverse: first decide what you need to learn, then what you must measure, then what you must build to measure it.",
+    "'Innovation accounting' is Ries's method for measuring progress when traditional revenue and cost figures say little. You set a baseline with an MVP, try to improve the growth engine, and then decide whether to pivot or persevere.",
+    "Ries contrasts 'vanity metrics', which make numbers look good, with 'actionable metrics', which show cause and effect and can guide decisions.",
+    "Ries treats a startup as an experiment: its strategy is a set of hypotheses to test, especially the value hypothesis and the growth hypothesis."
+  ],
+  "tension": "Stopping the whole line over one small problem, or building a crude product just to learn, looks like wasted speed. Ries argues that working fast without learning is the real waste.",
+  "opening_idea": "Open with the counterintuitive image of any worker at Toyota being allowed to halt the entire production line for a single defect, and why that made the factory faster, not slower.",
+  "lessons": [
+    {
+      "idea": "Progress for something new is measured in validated learning, not in how much you produced.",
+      "anchor": "Ries's concept of validated learning as the unit of startup progress"
+    },
+    {
+      "idea": "Decide what you need to learn first, then design the smallest build and measurement that will teach it.",
+      "anchor": "Planning the Build-Measure-Learn loop in reverse"
+    },
+    {
+      "idea": "Pausing to fix a problem at its source is faster over time than pushing through and letting problems pile up.",
+      "anchor": "Toyota's andon cord, as used in the book"
+    },
+    {
+      "idea": "Measure with actionable metrics that show cause and effect, not vanity numbers that only look good.",
+      "anchor": "Innovation accounting; vanity vs actionable metrics"
+    }
+  ],
+  "reflect": [
+    "What are you currently building mainly because it feels productive, without knowing what it will teach you?",
+    "Which number do you track that makes you feel good but never changes a decision?",
+    "Where are small problems in your work being noted 'for later' instead of stopped and fixed?"
+  ],
+  "reflect_final": "What did you actually learn in the past month, and how did it change your next decision?",
+  "use_cases": [
+    {
+      "situation": "A project status meeting that only lists features shipped or tasks completed.",
+      "move": "Add one standing agenda item: 'What assumption did we test this cycle, and what did the result tell us?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A team member proposes spending weeks building a full feature before showing it to anyone.",
+      "move": "Ask: 'What's the one thing we need to learn here, and what's the smallest thing we could put in front of users this week to learn it?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're starting a personal project or side business and tempted to perfect it before launching.",
+      "move": "Write down your riskiest assumption as a hypothesis, set a pass/fail threshold, and run the cheapest test of it within a few days.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Doing more is not the same as moving forward. For anything new, the real measure of progress is what you learned and whether it changed your next decision.",
+  "conversation_variants": {
+    "punchline_idea": "Toyota let any worker stop the whole line, because a defect you ignore now costs far more to fix later.",
+    "thirty_sec_idea": "Ries borrows from lean manufacturing: treat a startup as an experiment, run Build-Measure-Learn as fast as possible, and track learning with actionable metrics instead of vanity numbers.",
+    "question_idea": "If your team had to report what it learned this month instead of what it produced, what would the report say?",
+    "key_contrast_idea": "Vanity metrics make you feel successful; actionable metrics tell you what to do next."
+  }
+}

@@ -29,7 +29,7 @@ export const waitForData = () => _dataReadyPromise;
 //  on the next app launch. This deletes the old DB
 //  and copies the fresh one from assets/kivilcim.db.
 // ──────────────────────────────────────────────────────
-const DB_VERSION = 24; // 24: P1 use-case context tags + conversation_variants rewrite (1707, 1731 pilot)
+const DB_VERSION = 27; // 27: P1 publish 2026-09-28 (de 200, es 200, version Opus55) - de+es 200 (API batch)
 const DB_VERSION_KEY = 'db_version';
 
 const getVersionFilePath = () =>
@@ -459,6 +459,10 @@ export const getStoriesForLang = async (lang = 'tr') => {
       COALESCE(NULLIF(st.one_minute_summary, ''), st_tr.one_minute_summary, '') AS one_minute_summary,
       COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
       COALESCE(NULLIF(scv.punchline, ''),    scv_tr.punchline,    '') AS conversation_punchline,
+      -- Did the punchline come from the requested language, or from the Turkish
+      -- fallback above? Callers that must not show Turkish text to a non-Turkish
+      -- reader (onboarding's first-value card) filter on this.
+      CASE WHEN NULLIF(scv.punchline, '') IS NOT NULL THEN 1 ELSE 0 END AS conversation_punchline_localized,
       COALESCE(NULLIF(scv.thirty_sec, ''),   scv_tr.thirty_sec,   '') AS conversation_thirty_sec,
       COALESCE(NULLIF(scv.question, ''),     scv_tr.question,     '') AS conversation_question,
       COALESCE(NULLIF(scv.key_contrast, ''), scv_tr.key_contrast,'') AS conversation_key_contrast,
@@ -491,6 +495,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
     hook: r.hook || '',
     one_minute_summary: r.one_minute_summary || '',
     thirty_sec: r.thirty_sec || '',
+    conversation_punchline_localized: r.conversation_punchline_localized === 1,
   }));
 };
 

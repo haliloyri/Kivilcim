@@ -1,0 +1,63 @@
+{
+  "story_id": 1136,
+  "kind": "concept",
+  "book": {
+    "title": "The Social Animal",
+    "author": "David Brooks",
+    "year": "2011"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text builds the story on the trolley and footbridge dilemmas. These are real experiments in moral psychology (associated with philosophers Philippa Foot and Judith Jarvis Thomson, and researchers such as Joshua Greene), but it cannot be confirmed that Brooks presents them in The Social Animal, so they are described as research in the field rather than as a case from the book. Brooks's own argument is reasonably certain: moral judgments start as quick intuitions and emotions, reasoning often follows to justify them, and character is built through habits and repeated action, in the tradition of Aristotle. The Aristotle attribution is kept general.",
+  "facts": [
+    "Brooks argues that moral judgments usually begin as fast, emotional intuitions rather than slow logical reasoning.",
+    "In his account, reason often comes afterwards, to explain or justify a judgment the intuitive mind has already made.",
+    "He argues that character is not mainly a matter of knowing the right rules but of having trained the right emotional responses.",
+    "He draws on the older tradition, going back to Aristotle, that character is formed by habit: repeatedly doing the right thing makes it more automatic over time.",
+    "Moral psychology research, such as the widely studied trolley and footbridge dilemmas, shows that people give very different answers to choices with the same arithmetic when one feels personal and physical."
+  ],
+  "tension": "If our moral judgments come from gut feeling rather than logic, how does anyone become a better person?",
+  "opening_idea": "Two dilemmas with identical math get opposite answers, and people struggle to explain why.",
+  "lessons": [
+    {
+      "idea": "Moral judgment starts with intuition; reasoning often follows.",
+      "anchor": "Identical math, opposite answers in the two dilemmas"
+    },
+    {
+      "idea": "Character is trained emotion, not stored knowledge.",
+      "anchor": "Brooks on character as the right responses, not the right rules"
+    },
+    {
+      "idea": "Habits build character over time.",
+      "anchor": "The Aristotelian view Brooks draws on"
+    }
+  ],
+  "reflect": [
+    "Recall a time your gut said no before you had an argument for it.",
+    "Which small repeated action is quietly shaping your character right now?"
+  ],
+  "reflect_final": "What small right thing could you repeat until it no longer takes effort?",
+  "use_cases": [
+    {
+      "situation": "A team decision looks fine on paper but several people feel uneasy.",
+      "move": "Ask people to put the unease into words before overriding it with the numbers.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You want your child to be kind, not just know the rules.",
+      "move": "Create small, repeated chances to practice kindness, like helping a neighbor every week.",
+      "context": "family"
+    },
+    {
+      "situation": "You want to become more patient or honest.",
+      "move": "Choose one small daily action that expresses it and repeat it until it becomes automatic.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Character is what your habits have taught your feelings.",
+  "conversation_variants": {
+    "punchline_idea": "We don't reason our way to right and wrong as much as we feel our way there first.",
+    "thirty_sec_idea": "Trolley vs footbridge, Brooks's intuition-first view, and character as habit.",
+    "question_idea": "When did your gut refuse something that looked logical on paper?",
+    "key_contrast_idea": "Knowing versus becoming"
+  }
+}

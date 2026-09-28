@@ -1,19 +1,22 @@
 /**
- * UseInConversationScreen  (v2 — redesign)
+ * UseInConversationScreen  (v3 — context-first layout)
  *
- * "Use in Conversation" screen — redesigned around a single calm-premium flow:
- *   1. 2x2 format selector grid (Punchline / 30s / Question / Key Contrast)
- *   2. One large preview card for the selected format (quote-block styling)
- *   3. Fixed bottom action dock:
- *        · share row (Instagram first) — targeted one-tap shares
- *        · "Copy" gold primary CTA — the universal action
- *        · "Practice" + "Used" toggle — secondary
+ * "Use in Conversation" screen. Flow follows SOHBETTE_KULLAN_ENTEGRASYON_PLANI:
+ *   1. "Where will you tell it?" — context chips (meeting / 1-on-1 / family /
+ *      social / self). Preselected when the screen is opened from a story's
+ *      [[use]] card; picking one suggests the best-fitting length.
+ *   2. Length — 3-way segmented control (One line / 30 sec / As a question)
+ *      with a one-line "when to use it" hint.
+ *   3. One large preview card: the text, its key contrast ("In short"),
+ *      estimated speaking time, and an inline copy button.
+ *   4. One-row bottom dock: "Practice" (primary) + "I used it" (toggle).
  *
- * Design language: DESIGN_NEW (single gold accent, no per-category colors,
- * Playfair headings + Inter body). All variants are free.
+ * Sharing (Instagram card / other apps / copy) lives in a bottom sheet opened
+ * from the app bar's share icon, so it no longer eats the bottom of the screen.
+ *
  * Premium gates: Storyteller Mode + Instagram visual card.
- *
- * Receives: route.params.story  (same shape as StoryDetailScreen)
+ * Receives: route.params.story (same shape as StoryDetailScreen),
+ *           route.params.initialContext, route.params.entrySource
  */
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import {
@@ -22,11 +25,11 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  Platform,
   StatusBar,
   Share,
   Animated,
   Modal,
+  Pressable,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -71,7 +74,6 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       PUNCHLINE: 'Bugünün en vurucu çıkarımı:',
       QUESTION: 'Bugün kendine sor:',
       THIRTY_SEC: '30 saniyede anlatım:',
-      ONE_WORD: 'Tek kelime, büyük etki:',
       fallback: 'Bu hikayeyi sevdim:',
       engage: 'Sence bunun en kritik noktası ne?',
       tags: '#Albor #Farkındalık #KişiselGelişim #KitapNotları',
@@ -80,7 +82,6 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       PUNCHLINE: 'Today\'s sharpest takeaway:',
       QUESTION: 'Ask yourself this today:',
       THIRTY_SEC: 'This in 30 seconds:',
-      ONE_WORD: 'One word, big impact:',
       fallback: 'This story stayed with me:',
       engage: 'What part resonates with you most?',
       tags: '#Albor #Mindset #Growth #BookNotes',
@@ -89,7 +90,6 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       PUNCHLINE: 'La idea mas potente de hoy:',
       QUESTION: 'Preguntate esto hoy:',
       THIRTY_SEC: 'Esto en 30 segundos:',
-      ONE_WORD: 'Una palabra, gran impacto:',
       fallback: 'Esta historia me impacto:',
       engage: 'Que parte te resuena mas?',
       tags: '#Albor #Mentalidad #Crecimiento #NotasDeLibros',
@@ -98,7 +98,6 @@ const buildVariantShareMessage = ({ story, variant, lang, categoryLabel }) => {
       PUNCHLINE: 'Die kraftigste Erkenntnis heute:',
       QUESTION: 'Stell dir heute diese Frage:',
       THIRTY_SEC: 'In 30 Sekunden:',
-      ONE_WORD: 'Ein Wort, grosse Wirkung:',
       fallback: 'Diese Geschichte bleibt haengen:',
       engage: 'Welcher Teil spricht dich am meisten an?',
       tags: '#Albor #Mindset #Weiterentwicklung #BuchImpulse',
@@ -126,7 +125,7 @@ const buildNativeShareText = ({ story, variant, lang, categoryLabel }) => {
   return truncate(base, 280);
 };
 
-/** Map variant type → share preset name used by StoryDetailScreen's share modal */
+/** Map variant type → share preset name used by the share-card modal */
 const mapVariantToPreset = (variant) => {
   switch (variant?.type) {
     case 'PUNCHLINE':  return 'quote';
@@ -138,6 +137,17 @@ const mapVariantToPreset = (variant) => {
 
 const getUsageVariantKey = (storyId, variantId) => `${String(storyId)}:${String(variantId)}`;
 
+/** Average conversational pace ≈ 140 words/min → ~2.3 words/sec. */
+const estimateSpeakSeconds = (text = '') => {
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(2, Math.round(words / 2.3));
+};
+
+/**
+ * Three lengths, one axis ("how do you open it?"). The old 4th format
+ * (key contrast) is no longer a separate choice — it is shown as the
+ * "In short" line under the preview.
+ */
 const buildMicroVariants = (story, lang) => {
   const body = story.body || '';
   const quote       = extractMarker(body, '##');
@@ -146,56 +156,39 @@ const buildMicroVariants = (story, lang) => {
   const punchline   = (story.conversation_punchline || '').trim();
   const thirtySec   = (story.conversation_thirty_sec || story.thirty_sec || '').trim();
   const question    = (story.conversation_question || '').trim();
-  const keyContrast = (story.conversation_key_contrast || '').trim();
   const clean       = cleanBodyText(body);
 
   const candidates = [
     {
       id: 'punchline',
       type: 'PUNCHLINE',
-      title: t('mv_punchline', lang),
-      gridDesc: t('mv_grid_desc_punchline', lang),
-      icon: 'flame-outline',
-      iconActive: 'flame',
+      title: t('mv_len_punchline', lang),
+      hint: t('mv_hint_punchline', lang),
       body: punchline || lesson || quote,
-      toneTag: t('mv_tone_bold', lang),
     },
     {
       id: 'thirty_sec',
       type: 'THIRTY_SEC',
-      title: t('mv_thirty_sec', lang),
-      gridDesc: t('mv_grid_desc_thirty', lang),
-      icon: 'time-outline',
-      iconActive: 'time',
+      title: t('mv_len_thirty', lang),
+      hint: t('mv_hint_thirty', lang),
       body: thirtySec || (clean.length > 320 ? clean.substring(0, 320).trimEnd() + '…' : clean),
-      toneTag: t('mv_tone_story', lang),
     },
     {
       id: 'question',
       type: 'QUESTION',
-      title: t('mv_question', lang),
-      gridDesc: t('mv_grid_desc_question', lang),
-      icon: 'chatbubble-ellipses-outline',
-      iconActive: 'chatbubble-ellipses',
+      title: t('mv_len_question', lang),
+      hint: t('mv_hint_question', lang),
       body: question || reflection,
-      toneTag: t('mv_tone_curious', lang),
-    },
-    {
-      id: 'one_word',
-      type: 'ONE_WORD',
-      title: t('mv_one_word', lang),
-      gridDesc: t('mv_grid_desc_contrast', lang),
-      icon: 'key-outline',
-      iconActive: 'key',
-      body: keyContrast || (quote && quote !== lesson ? quote : ''),
-      toneTag: t('mv_tone_minimal', lang),
     },
   ];
 
   return candidates.filter(v => v.body.length > 0);
 };
 
-/** Context (from a story's [[use]] card) → the format that fits it best. */
+/** Context chips, same slugs as the story's [[use]] cards. */
+const CONTEXTS = ['meeting', 'oneonone', 'family', 'social', 'self'];
+
+/** Context → the length that fits it best (suggested when a chip is picked). */
 const CONTEXT_TO_VARIANT = {
   meeting: 'thirty_sec',
   oneonone: 'question',
@@ -208,25 +201,27 @@ const CONTEXT_TO_VARIANT = {
 const contextLabel = (context, lang) =>
   context === 'self' ? t('convoContextSelf', lang) : t(`mv_storyteller_context_${context}`, lang);
 
-/** Which platform a given length comfortably fits (for the char hint) */
-const platformFitLabel = (len, lang) => {
-  if (len <= 280) return t('mv_share_on_x', lang);
-  if (len <= 500) return t('mv_share_on_threads', lang);
-  return null;
-};
-
 // ─── screen ─────────────────────────────────────────────────────────────────
 
 const UseInConversationScreen = ({ route, navigation }) => {
   const { story, initialContext, entrySource } = route.params;
   const { colors, layout, isDark, lang } = useTheme();
-  const { isPremium, recordVariantUsage, removeVariantUsage, recordPrivateCareerApplication, variantUsage, incrementShareCount, isStoryCompleted, setBadgePresentationBlocked } = useUserData();
+  const { isPremium, recordVariantUsage, removeVariantUsage, variantUsage, incrementShareCount, isStoryCompleted, setBadgePresentationBlocked } = useUserData();
   const insets = useSafeAreaInsets();
 
   const variants = useMemo(() => buildMicroVariants(story, lang), [story, lang]);
+  const keyContrast = useMemo(() => {
+    const explicit = (story.conversation_key_contrast || '').trim();
+    if (explicit) return explicit;
+    const body = story.body || '';
+    const quote = extractMarker(body, '##');
+    const lesson = extractMarker(body, '$$');
+    return quote && quote !== lesson ? quote : '';
+  }, [story]);
 
   const displayCat = t(story.parent_cat || story.cat || '', lang);
   const categoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+  const storyCompleted = isStoryCompleted(story?.story_id);
 
   // Track screen open
   useEffect(() => {
@@ -239,8 +234,12 @@ const UseInConversationScreen = ({ route, navigation }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Selected format (single-select). Coming from a story's "Try it" card
-  // preselects the format that best matches the context it was tagged with.
+  const [selectedContext, setSelectedContext] = useState(
+    () => (CONTEXTS.includes(initialContext) ? initialContext : null),
+  );
+
+  // Selected length (single-select). A preselected context suggests the
+  // length that fits it best.
   const [selectedId, setSelectedId] = useState(() => {
     const preferred = initialContext && CONTEXT_TO_VARIANT[initialContext];
     if (preferred && variants.some(v => v.id === preferred)) return preferred;
@@ -254,7 +253,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
   const [copyToastVisible, setCopyToastVisible] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
   const [showStorytellerFor, setShowStorytellerFor] = useState(null);
-  const [privatePlanVisible, setPrivatePlanVisible] = useState(false);
+  const [shareSheetVisible, setShareSheetVisible] = useState(false);
   const [markedUsedIds, setMarkedUsedIds] = useState(() => {
     const storyId = String(story?.story_id);
     return new Set(
@@ -284,10 +283,10 @@ const UseInConversationScreen = ({ route, navigation }) => {
   const pendingRewardedRef = React.useRef(null);
 
   useEffect(() => {
-    const blocked = Boolean(showStorytellerFor || privatePlanVisible || shareGate || adSheet || shareCardVisible);
+    const blocked = Boolean(showStorytellerFor || shareSheetVisible || shareGate || adSheet || shareCardVisible);
     setBadgePresentationBlocked('conversation_overlay', blocked);
     return () => setBadgePresentationBlocked('conversation_overlay', false);
-  }, [showStorytellerFor, privatePlanVisible, shareGate, adSheet, shareCardVisible, setBadgePresentationBlocked]);
+  }, [showStorytellerFor, shareSheetVisible, shareGate, adSheet, shareCardVisible, setBadgePresentationBlocked]);
 
   const flushPendingRewarded = () => {
     const p = pendingRewardedRef.current;
@@ -383,6 +382,15 @@ const UseInConversationScreen = ({ route, navigation }) => {
     setSelectedId(id);
   }, []);
 
+  const handleSelectContext = useCallback((context) => {
+    setSelectedContext(prev => {
+      const next = prev === context ? null : context;
+      const preferred = next && CONTEXT_TO_VARIANT[next];
+      if (preferred && variants.some(v => v.id === preferred)) setSelectedId(preferred);
+      return next;
+    });
+  }, [variants]);
+
   const handleCopy = useCallback(async () => {
     if (!selected) return;
     const Clipboard = require('expo-clipboard');
@@ -408,8 +416,8 @@ const UseInConversationScreen = ({ route, navigation }) => {
     if (!selected) return;
     const variant = selected;
 
-    // Instagram → visual share card on StoryDetail. Gate premium/ad HERE first
-    // so the ad shows over this screen; only navigate once the gate is passed.
+    // Instagram → visual share card. Gate premium/ad HERE first so the ad
+    // shows over this screen.
     if (platform === 'instagram') {
       trackEvent(ANALYTICS_EVENTS.SOCIAL_SHARE_PLATFORM, {
         platform: 'instagram',
@@ -476,9 +484,22 @@ const UseInConversationScreen = ({ route, navigation }) => {
     });
   }, [selected, story, displayCat, lang, navigation, recordVariantUsage, incrementShareCount, isPremium, setBadgePresentationBlocked]);
 
+  /**
+   * Share-sheet rows run their action only after the sheet Modal has closed —
+   * presenting the native share sheet, the ad sheet or the card modal while
+   * another Modal is still up freezes Android and throws on iOS.
+   */
+  const handleShareSheetAction = useCallback((action) => {
+    setShareSheetVisible(false);
+    setTimeout(() => {
+      if (action === 'copy') handleCopy();
+      else handleSharePlatform(action);
+    }, 320);
+  }, [handleCopy, handleSharePlatform]);
+
   const handleToggleUsed = useCallback(async () => {
     if (!selected) return;
-    if (!isStoryCompleted(story?.story_id)) {
+    if (!storyCompleted) {
       showToast(t('career.application.completeFirst', lang));
       return;
     }
@@ -496,6 +517,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
         variantId: selected.id,
         variantKey,
         action: 'mark_used',
+        context: selectedContext,
       });
       if (!result?.saved) {
         setMarkedUsedIds(prev => {
@@ -517,7 +539,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
         variantKey,
       });
     }
-  }, [markedUsedIds, selected, story, isStoryCompleted, recordVariantUsage, removeVariantUsage, showToast, lang]);
+  }, [markedUsedIds, selected, selectedContext, story, storyCompleted, recordVariantUsage, removeVariantUsage, showToast, lang]);
 
   const handleStorytellerOpen = useCallback(() => {
     if (!selected) return;
@@ -549,6 +571,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
       variantKey,
       action: 'mark_used',
       careerEventSubtype: 'practice_completed',
+      context: selectedContext,
     });
     if (!result?.saved) {
       setMarkedUsedIds(prev => {
@@ -566,27 +589,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
       lang,
     });
     setShowStorytellerFor(null);
-  }, [showStorytellerFor, story, isStoryCompleted, recordVariantUsage, lang, showToast]);
-
-  const handlePrivatePlan = useCallback(async (context) => {
-    setPrivatePlanVisible(false);
-    const result = await recordPrivateCareerApplication({
-      storyId: story?.story_id,
-      categoryId: story?.parent_cat_id ?? null,
-      context,
-    });
-    showToast(t(result?.reason === 'story_not_completed' ? 'career.privatePlan.completeFirst' : 'career.privatePlan.saved', lang));
-  }, [recordPrivateCareerApplication, showToast, story, lang]);
-
-  // AI rewrite — UI present; backend not wired yet (gentle "coming soon").
-  const handleAiRewrite = useCallback(() => {
-    trackEvent(ANALYTICS_EVENTS.USE_IN_CONVO_OPENED, {
-      storyId: story?.story_id,
-      source: 'ai_rewrite_tap',
-      lang,
-    });
-    showToast(t('mv_ai_soon', lang));
-  }, [story?.story_id, lang, showToast]);
+  }, [showStorytellerFor, selectedContext, story, isStoryCompleted, recordVariantUsage, lang, showToast]);
 
   const styles = buildStyles(colors, isDark, insets);
 
@@ -594,30 +597,32 @@ const UseInConversationScreen = ({ route, navigation }) => {
     ? markedUsedIds.has(getUsageVariantKey(story?.story_id, selected.id))
     : false;
 
-  const charCount = selected ? selected.body.length : 0;
-  const fitLabel = platformFitLabel(charCount, lang);
-  const charLine = fitLabel
-    ? `${charCount} ${t('mv_chars', lang)} · ${t('mv_fits_platform', lang).replace('{{platform}}', fitLabel)}`
-    : `${charCount} ${t('mv_chars', lang)}`;
+  const bodyText = selected?.body || '';
+  const isLong = bodyText.length > 150;
+  const speakLine = t('mv_speak_time', lang, { sec: estimateSpeakSeconds(bodyText) });
+  const showEssence = Boolean(keyContrast) && keyContrast !== bodyText;
 
-  const tint = isDark ? `${colors.primary}26` : `${colors.primary}1F`;
-
-  // share targets — Instagram (featured visual card) + one generic native share
-  const shareTargets = [
-    { key: 'instagram', kind: 'instagram', premium: true },
-    { key: 'native', kind: 'native' },
+  const shareRows = [
+    {
+      key: 'instagram',
+      icon: 'logo-instagram',
+      title: t('mv_share_ig_card', lang),
+      sub: t('mv_share_ig_card_sub', lang),
+      premium: !isPremium,
+    },
+    {
+      key: 'native',
+      icon: 'share-outline',
+      title: t('mv_share_other_apps', lang),
+      sub: t('mv_share_other_sub', lang),
+    },
+    {
+      key: 'copy',
+      icon: 'copy-outline',
+      title: t('mv_copy', lang),
+      sub: t('mv_copy_sub', lang),
+    },
   ];
-
-  const renderShareGlyph = (kind) => {
-    switch (kind) {
-      case 'instagram':
-        return <Ionicons name="logo-instagram" size={22} color={colors.text} />;
-      case 'native':
-        return <Ionicons name="share-social-outline" size={22} color={colors.text} />;
-      default:
-        return null;
-    }
-  };
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
@@ -626,27 +631,29 @@ const UseInConversationScreen = ({ route, navigation }) => {
         backgroundColor={colors.background}
       />
 
-      {/* ── AppBar ─────────────────────────────────────────────────────── */}
+      {/* ── AppBar: back · title · share ─────────────────────────────────── */}
       <View style={styles.appBar}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
-          style={styles.backBtn}
-          accessibilityLabel={t('backBtn', lang)}
+          style={styles.iconBtn}
+          accessibilityLabel={entrySource === 'story_use_case' ? t('convoBackToStory', lang) : t('backBtn', lang)}
           accessibilityRole="button"
         >
-          <Ionicons name="chevron-back" size={18} color={colors.text} />
-          <Text style={styles.backBtnText}>
-            {t('backBtn', lang).replace(/^[←<\-]+\s*/g, '')}
-          </Text>
+          <Ionicons name="chevron-back" size={22} color={colors.text} />
         </TouchableOpacity>
 
-        <View style={styles.appBarCenter}>
-          <Text style={styles.appBarTitle} numberOfLines={1}>
-            {t('mv_screen_title', lang)}
-          </Text>
-        </View>
+        <Text style={styles.appBarTitle} numberOfLines={1}>
+          {t('mv_appbar_title', lang)}
+        </Text>
 
-        <View style={styles.appBarRightSpacer} />
+        <TouchableOpacity
+          onPress={() => setShareSheetVisible(true)}
+          style={styles.iconBtn}
+          accessibilityLabel={t('mv_share_sheet_title', lang)}
+          accessibilityRole="button"
+        >
+          <Ionicons name="share-outline" size={21} color={colors.text} />
+        </TouchableOpacity>
       </View>
 
       <ScrollView
@@ -654,160 +661,146 @@ const UseInConversationScreen = ({ route, navigation }) => {
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       >
-        {/* ── From-story banner ────────────────────────────────────────── */}
-        {entrySource === 'story_use_case' ? (
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            activeOpacity={0.8}
-            style={[styles.fromStoryBanner, { borderColor: categoryTheme.borderColor, backgroundColor: categoryTheme.backgroundColor }]}
-            accessibilityRole="button"
-          >
-            <Ionicons name="chevron-back" size={14} color={categoryTheme.accent} />
-            <Text style={[styles.fromStoryBannerText, { color: categoryTheme.accent }]} numberOfLines={1}>
-              {t('convoBackToStory', lang)}
-              {initialContext ? `  ·  ${contextLabel(initialContext, lang)}` : ''}
-            </Text>
-          </TouchableOpacity>
-        ) : null}
-
-        {/* ── Story header ─────────────────────────────────────────────── */}
+        {/* ── Story header (compact) ───────────────────────────────────── */}
         <View style={styles.storyHeader}>
-          <Text style={[styles.categoryLabel, { color: colors.textSecondary }]}>
+          <Text style={[styles.categoryLabel, { color: colors.textSecondary }]} numberOfLines={1}>
             <Text style={{ color: categoryTheme.accent }}>{displayCat ? displayCat.toUpperCase() : ''}</Text>
             {story.min ? `  ·  ${story.min} ${t('minLabel', lang)}` : ''}
           </Text>
-          <Text style={styles.storyTitle} numberOfLines={3}>
+          <Text style={styles.storyTitle} numberOfLines={2}>
             {story.title}
           </Text>
         </View>
 
-        {/* ── Format selector 2x2 grid ─────────────────────────────────── */}
-        <Text style={styles.sectionLabel}>{t('mv_format_label', lang)}</Text>
-        <View style={styles.grid}>
+        {/* ── 1. Where? — context chips ────────────────────────────────── */}
+        <Text style={styles.sectionLabel}>{t('mv_where_label', lang)}</Text>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.chipScroll}
+          contentContainerStyle={styles.chipRow}
+        >
+          {CONTEXTS.map(ctx => {
+            const active = selectedContext === ctx;
+            return (
+              <TouchableOpacity
+                key={ctx}
+                onPress={() => handleSelectContext(ctx)}
+                activeOpacity={0.85}
+                style={[styles.chip, active && styles.chipActive]}
+                accessibilityRole="button"
+                accessibilityState={{ selected: active }}
+              >
+                <Text style={[styles.chipText, active && styles.chipTextActive]} numberOfLines={1}>
+                  {contextLabel(ctx, lang)}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+
+        {/* ── 2. Length — segmented control ────────────────────────────── */}
+        <View style={styles.segment} accessibilityRole="tablist">
           {variants.map(v => {
             const active = v.id === selected?.id;
             return (
               <TouchableOpacity
                 key={v.id}
-                style={[styles.gridCard, active && styles.gridCardActive]}
+                style={[styles.segmentItem, active && styles.segmentItemActive]}
                 onPress={() => handleSelect(v.id)}
                 activeOpacity={0.85}
-                accessibilityRole="button"
+                accessibilityRole="tab"
                 accessibilityState={{ selected: active }}
                 accessibilityLabel={v.title}
               >
-                <View
-                  style={[
-                    styles.gridIconCircle,
-                    { backgroundColor: active ? colors.primary : tint },
-                  ]}
+                <Text
+                  style={[styles.segmentText, active && styles.segmentTextActive]}
+                  numberOfLines={1}
+                  adjustsFontSizeToFit
+                  minimumFontScale={0.85}
                 >
-                  <Ionicons
-                    name={active ? v.iconActive : v.icon}
-                    size={16}
-                    color={active ? colors.onPrimary : colors.primary}
-                  />
-                </View>
-                <View style={styles.gridTextCol}>
-                  <Text style={styles.gridName} numberOfLines={1}>{v.title}</Text>
-                  <Text style={styles.gridDesc} numberOfLines={1}>{v.gridDesc}</Text>
-                </View>
+                  {v.title}
+                </Text>
               </TouchableOpacity>
             );
           })}
         </View>
+        {selected ? <Text style={styles.hint}>{selected.hint}</Text> : null}
 
-        {/* ── Preview card ─────────────────────────────────────────────── */}
+        {/* ── 3. Preview card ──────────────────────────────────────────── */}
         {selected && (
           <View style={styles.previewCard}>
-            <View style={styles.previewHeader}>
-              <Text style={styles.previewLabel}>{selected.title.toUpperCase()}</Text>
-              <TouchableOpacity
-                style={[styles.aiPill, { backgroundColor: tint }]}
-                onPress={handleAiRewrite}
-                activeOpacity={0.8}
-                accessibilityRole="button"
-                accessibilityLabel={t('mv_ai_rewrite', lang)}
-              >
-                <Ionicons name="sparkles" size={12} color={colors.primaryText} />
-                <Text style={styles.aiPillText}>{t('mv_ai_rewrite', lang)}</Text>
-              </TouchableOpacity>
-            </View>
-
             <View style={styles.quoteRow}>
               <View style={styles.quoteBar} />
-              <Text
-                style={[
-                  styles.quoteText,
-                  charCount > 150 && styles.quoteTextLong,
-                ]}
-              >
-                {selected.body}
+              <Text selectable style={[styles.quoteText, isLong && styles.quoteTextLong]}>
+                {bodyText}
               </Text>
             </View>
 
-            <Text style={styles.charLine}>{charLine}</Text>
+            {showEssence ? (
+              <View style={styles.essenceRow}>
+                <Text style={styles.essenceLabel}>{t('mv_essence_label', lang).toUpperCase()}</Text>
+                <Text style={styles.essenceText}>{keyContrast}</Text>
+              </View>
+            ) : null}
+
+            <View style={styles.previewFooter}>
+              <View style={styles.speakRow}>
+                <Ionicons name="time-outline" size={13} color={colors.textSecondary} />
+                <Text style={styles.speakText}>{speakLine}</Text>
+              </View>
+              <TouchableOpacity
+                onPress={handleCopy}
+                style={styles.copyIconBtn}
+                accessibilityRole="button"
+                accessibilityLabel={t('mv_copy', lang)}
+              >
+                <Ionicons name="copy-outline" size={16} color={colors.primaryText} />
+                <Text style={styles.copyIconText}>{t('mv_copy', lang)}</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         )}
       </ScrollView>
 
-      {/* ── Bottom action dock ──────────────────────────────────────────── */}
+      {/* ── 4. Bottom dock: Practice (primary) + I used it ──────────────── */}
       <View style={styles.dock}>
-        <Text style={styles.dockLabel}>{t('mv_share_label', lang)}</Text>
-
-        <View style={styles.shareRow}>
-          {shareTargets.map(target => (
-            <TouchableOpacity
-              key={target.key}
-              style={styles.shareBtn}
-              onPress={() => handleSharePlatform(target.kind)}
-              activeOpacity={0.8}
-              accessibilityRole="button"
-              accessibilityLabel={target.kind === 'native' ? t('mv_share_native', lang) : t(`mv_share_on_${target.kind}`, lang)}
-            >
-              {renderShareGlyph(target.kind)}
-              {target.premium && !isPremium && (
-                <View style={styles.premiumBadge}>
-                  <Ionicons name="star" size={9} color="#FFFFFF" />
-                </View>
-              )}
-            </TouchableOpacity>
-          ))}
-        </View>
-
-        {/* Primary: Copy (universal action) */}
-        <TouchableOpacity
-          onPress={handleCopy}
-          activeOpacity={0.9}
-          accessibilityRole="button"
-          accessibilityLabel={t('mv_copy', lang)}
-        >
-          <LinearGradient
-            colors={[colors.ctaGradientEnd, colors.ctaGradientStart]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-            style={styles.copyBtn}
-          >
-            <Ionicons name="copy-outline" size={18} color={colors.onPrimary} />
-            <Text style={styles.copyBtnText}>{t('mv_copy', lang)}</Text>
-          </LinearGradient>
-        </TouchableOpacity>
-
-        {/* Secondary: Practice | Used toggle */}
-        <View style={styles.secondaryRow}>
+        {!storyCompleted ? (
+          <View style={styles.lockedHintRow}>
+            <Ionicons name="lock-closed-outline" size={12} color={colors.textSecondary} />
+            <Text style={styles.lockedHint}>{t('mv_used_locked_hint', lang)}</Text>
+          </View>
+        ) : null}
+        <View style={styles.dockRow}>
           <TouchableOpacity
-            style={styles.secondaryBtn}
             onPress={handleStorytellerOpen}
-            activeOpacity={0.85}
+            activeOpacity={0.9}
+            style={styles.dockPrimaryWrap}
             accessibilityRole="button"
-            accessibilityLabel={t('mv_practice_short', lang)}
+            accessibilityLabel={t('mv_practice_cta', lang)}
           >
-            <Ionicons name="mic-outline" size={17} color={colors.text} />
-            <Text style={styles.secondaryBtnText}>{t('mv_practice_short', lang)}</Text>
+            <LinearGradient
+              colors={[colors.ctaGradientEnd, colors.ctaGradientStart]}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+              style={styles.dockPrimary}
+            >
+              <Ionicons name="mic-outline" size={18} color={colors.onPrimary} />
+              <Text style={styles.dockPrimaryText} numberOfLines={1}>{t('mv_practice_cta', lang)}</Text>
+              {!isPremium ? (
+                <View style={styles.premiumDot}>
+                  <Ionicons name="star" size={8} color={colors.primary} />
+                </View>
+              ) : null}
+            </LinearGradient>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.secondaryBtn, isUsed && styles.secondaryBtnActive]}
+            style={[
+              styles.dockSecondary,
+              isUsed && styles.dockSecondaryActive,
+              !storyCompleted && styles.dockSecondaryLocked,
+            ]}
             onPress={handleToggleUsed}
             activeOpacity={0.85}
             accessibilityRole="button"
@@ -816,33 +809,27 @@ const UseInConversationScreen = ({ route, navigation }) => {
           >
             <Ionicons
               name={isUsed ? 'checkmark-circle' : 'checkmark-circle-outline'}
-              size={17}
-              color={isUsed ? colors.success : colors.textSecondary}
+              size={18}
+              color={isUsed ? colors.success : colors.text}
             />
             <Text
-              style={[
-                styles.secondaryBtnTextMuted,
-                isUsed && { color: colors.success },
-              ]}
+              style={[styles.dockSecondaryText, isUsed && { color: colors.success }]}
+              numberOfLines={1}
             >
-              {t('mv_used_short', lang)}
+              {t('mv_used_cta', lang)}
             </Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.privatePlanButton} onPress={() => setPrivatePlanVisible(true)} activeOpacity={0.85} accessibilityRole="button" accessibilityLabel={t('career.privatePlan.open', lang)}>
-          <Ionicons name="shield-checkmark-outline" size={17} color={colors.textSecondary} />
-          <Text style={styles.privatePlanText}>{t('career.privatePlan.open', lang)}</Text>
-        </TouchableOpacity>
       </View>
 
-      {/* ── Copy / info toast ───────────────────────────────────────────── */}
+      {/* ── Toast (top, so it never covers the dock) ────────────────────── */}
       {copyToastVisible && (
         <Animated.View
           style={[
             styles.copyToast,
             {
               opacity: toastAnim,
-              transform: [{ translateY: toastAnim.interpolate({ inputRange: [0, 1], outputRange: [14, 0] }) }],
+              transform: [{ translateY: toastAnim.interpolate({ inputRange: [0, 1], outputRange: [-10, 0] }) }],
             },
           ]}
           pointerEvents="none"
@@ -852,11 +839,53 @@ const UseInConversationScreen = ({ route, navigation }) => {
         </Animated.View>
       )}
 
+      {/* ── Share sheet ─────────────────────────────────────────────────── */}
+      <Modal
+        visible={shareSheetVisible}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setShareSheetVisible(false)}
+        accessibilityViewIsModal
+      >
+        <Pressable style={styles.sheetBackdrop} onPress={() => setShareSheetVisible(false)}>
+          <Pressable style={styles.sheet} onPress={() => {}}>
+            <View style={styles.sheetHandle} />
+            <Text style={styles.sheetTitle}>{t('mv_share_sheet_title', lang)}</Text>
+            {shareRows.map(row => (
+              <TouchableOpacity
+                key={row.key}
+                style={styles.sheetRow}
+                onPress={() => handleShareSheetAction(row.key)}
+                activeOpacity={0.85}
+                accessibilityRole="button"
+                accessibilityLabel={row.title}
+              >
+                <View style={styles.sheetIcon}>
+                  <Ionicons name={row.icon} size={20} color={colors.text} />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.sheetRowTitle}>{row.title}</Text>
+                  <Text style={styles.sheetRowSub}>{row.sub}</Text>
+                </View>
+                {row.premium ? (
+                  <View style={styles.sheetPremium}>
+                    <Ionicons name="star" size={10} color={colors.onPrimary} />
+                  </View>
+                ) : (
+                  <Ionicons name="chevron-forward" size={18} color={colors.textSecondary} />
+                )}
+              </TouchableOpacity>
+            ))}
+          </Pressable>
+        </Pressable>
+      </Modal>
+
       {/* ── Storyteller Overlay ──────────────────────────────────────────── */}
       <StorytellerOverlay
         visible={!!showStorytellerFor}
         story={story}
         variant={showStorytellerFor}
+        initialContext={selectedContext}
         isPremium={isPremium}
         onClose={() => setShowStorytellerFor(null)}
         onDone={handleStorytellerDone}
@@ -866,20 +895,6 @@ const UseInConversationScreen = ({ route, navigation }) => {
         isDark={isDark}
         lang={lang}
       />
-
-      <Modal visible={privatePlanVisible} transparent animationType="fade" onRequestClose={() => setPrivatePlanVisible(false)} accessibilityViewIsModal>
-        <View style={styles.privatePlanBackdrop}>
-          <View style={styles.privatePlanSheet}>
-            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.close', lang)} onPress={() => setPrivatePlanVisible(false)} style={styles.privatePlanClose}><Ionicons name="close" size={20} color={colors.text} /></TouchableOpacity>
-            <Ionicons name="shield-checkmark-outline" size={27} color={colors.primaryText} />
-            <Text selectable style={styles.privatePlanTitle}>{t('career.privatePlan.title', lang)}</Text>
-            <Text selectable style={styles.privatePlanCopy}>{t('career.privatePlan.copy', lang)}</Text>
-            <View style={styles.privatePlanOptions}>
-              {['workStudy', 'social', 'personal'].map((context) => <TouchableOpacity key={context} accessibilityRole="button" accessibilityLabel={t(`career.privatePlan.${context}`, lang)} onPress={() => handlePrivatePlan(context)} style={styles.privatePlanOption}><Text selectable style={styles.privatePlanOptionText}>{t(`career.privatePlan.${context}`, lang)}</Text><Ionicons name="arrow-forward" size={18} color={colors.primaryText} /></TouchableOpacity>)}
-            </View>
-          </View>
-        </View>
-      </Modal>
 
       {/* Ad or Premium Sheet */}
       <AdOrPremiumSheet
@@ -955,177 +970,149 @@ const buildStyles = (colors, isDark, insets) => {
     appBar: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingHorizontal: HPAD,
-      paddingVertical: 10,
-      gap: 8,
+      justifyContent: 'space-between',
+      paddingHorizontal: 8,
+      height: 52,
     },
-    backBtn: {
-      flexDirection: 'row',
+    iconBtn: {
+      width: 44,
+      height: 44,
+      borderRadius: 22,
       alignItems: 'center',
-      paddingHorizontal: 10,
-      paddingVertical: 7,
-      borderRadius: 18,
-      backgroundColor: colors.backgroundDark,
-      borderWidth: 1,
-      borderColor: colors.border,
-      gap: 2,
-    },
-    backBtnText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 13,
-      color: colors.text,
-    },
-    appBarCenter: {
-      flex: 1,
-      alignItems: 'center',
-      marginRight: 34,
+      justifyContent: 'center',
     },
     appBarTitle: {
+      flex: 1,
+      textAlign: 'center',
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 14,
+      fontSize: 16,
       color: colors.text,
-      letterSpacing: 1.2,
-    },
-    appBarRightSpacer: {
-      width: 0,
     },
 
     // Scroll
     scrollContent: {
       paddingHorizontal: HPAD,
-      paddingBottom: 24,
-    },
-
-    // From-story banner
-    fromStoryBanner: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 4,
-      alignSelf: 'flex-start',
-      paddingVertical: 7,
-      paddingHorizontal: 12,
-      borderRadius: 999,
-      borderWidth: 1,
-      marginTop: 10,
-      marginBottom: 4,
-    },
-    fromStoryBannerText: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 12,
+      paddingBottom: 20,
     },
 
     // Story header
     storyHeader: {
-      paddingTop: 6,
+      paddingTop: 4,
       paddingBottom: 18,
     },
     categoryLabel: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 11,
       letterSpacing: 1.4,
-      marginBottom: 8,
+      marginBottom: 6,
     },
     storyTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 25,
-      lineHeight: 31,
+      fontSize: 20,
+      lineHeight: 26,
       color: colors.text,
     },
 
     // Section label
     sectionLabel: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 11,
+      fontSize: 13,
       color: colors.textSecondary,
-      letterSpacing: 1.4,
-      marginBottom: 12,
-    },
-
-    // Grid
-    grid: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'space-between',
-    },
-    gridCard: {
-      width: '48.5%',
-      flexDirection: 'row',
-      alignItems: 'center',
-      paddingVertical: 11,
-      paddingHorizontal: 12,
-      borderRadius: 16,
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.surfaceContainerLowest,
       marginBottom: 10,
-      gap: 10,
-    },
-    gridCardActive: {
-      borderColor: colors.primary,
-      borderWidth: 1.5,
-      backgroundColor: colors.primaryContainer,
-    },
-    gridIconCircle: {
-      width: 30,
-      height: 30,
-      borderRadius: 15,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    gridTextCol: {
-      flex: 1,
-    },
-    gridName: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 13.5,
-      color: colors.text,
-    },
-    gridDesc: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 11,
-      color: colors.textSecondary,
-      marginTop: 1,
     },
 
-    // Preview card
-    previewCard: {
-      marginTop: 8,
+    // Context chips
+    chipScroll: {
+      marginHorizontal: -HPAD,
+      flexGrow: 0,
+    },
+    chipRow: {
+      paddingHorizontal: HPAD,
+      gap: 6,
+    },
+    chip: {
+      height: 36,
+      paddingHorizontal: 11,
       borderRadius: 18,
       borderWidth: 1,
       borderColor: colors.border,
       backgroundColor: colors.surfaceContainerLowest,
-      padding: 18,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    chipActive: {
+      borderColor: colors.primary,
+      backgroundColor: colors.primaryContainer,
+    },
+    chipText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: colors.text,
+    },
+    chipTextActive: {
+      fontFamily: 'Inter_600SemiBold',
+      color: colors.primaryText,
+    },
+
+    // Segmented control
+    segment: {
+      flexDirection: 'row',
+      marginTop: 18,
+      padding: 3,
+      borderRadius: 12,
+      backgroundColor: colors.backgroundDark,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    segmentItem: {
+      flex: 1,
+      height: 36,
+      borderRadius: 9,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingHorizontal: 4,
+    },
+    segmentItemActive: {
+      backgroundColor: isDark ? colors.primaryContainer : colors.surfaceContainerLowest,
+      shadowColor: '#000',
+      shadowOpacity: isDark ? 0 : 0.08,
+      shadowRadius: 4,
+      shadowOffset: { width: 0, height: 1 },
+      elevation: isDark ? 0 : 1,
+    },
+    segmentText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13.5,
+      color: colors.textSecondary,
+    },
+    segmentTextActive: {
+      fontFamily: 'Inter_600SemiBold',
+      color: isDark ? colors.primaryText : colors.text,
+    },
+    hint: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12.5,
+      lineHeight: 18,
+      color: colors.textSecondary,
+      marginTop: 8,
+      marginBottom: 14,
+      paddingHorizontal: 2,
+    },
+
+    // Preview card
+    previewCard: {
+      borderRadius: 18,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surfaceContainerLowest,
+      paddingTop: 18,
+      paddingHorizontal: 18,
+      paddingBottom: 8,
       shadowColor: '#000',
       shadowOpacity: isDark ? 0 : 0.05,
       shadowRadius: 10,
       shadowOffset: { width: 0, height: 4 },
       elevation: 2,
-    },
-    previewHeader: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      marginBottom: 14,
-    },
-    previewLabel: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 11,
-      color: colors.primaryText,
-      letterSpacing: 1.2,
-      flex: 1,
-    },
-    aiPill: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 5,
-      paddingHorizontal: 11,
-      paddingVertical: 6,
-      borderRadius: 15,
-    },
-    aiPillText: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 12,
-      color: colors.primaryText,
     },
     quoteRow: {
       flexDirection: 'row',
@@ -1139,179 +1126,207 @@ const buildStyles = (colors, isDark, insets) => {
     quoteText: {
       flex: 1,
       fontFamily: 'PlayfairDisplay_600SemiBold',
-      fontSize: 19,
-      lineHeight: 28,
+      fontSize: 20,
+      lineHeight: 29,
       color: colors.text,
     },
     quoteTextLong: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 15.5,
-      lineHeight: 25,
+      fontSize: 16,
+      lineHeight: 26,
     },
-    charLine: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 11,
-      color: colors.textSecondary,
+    essenceRow: {
       marginTop: 16,
+      paddingTop: 12,
+      borderTopWidth: StyleSheet.hairlineWidth,
+      borderTopColor: colors.border,
+      gap: 4,
+    },
+    essenceLabel: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 10.5,
+      letterSpacing: 1.2,
+      color: colors.primaryText,
+    },
+    essenceText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 14,
+      lineHeight: 20,
+      color: colors.text,
+    },
+    previewFooter: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginTop: 10,
+    },
+    speakRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 5,
+      flexShrink: 1,
+    },
+    speakText: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+    },
+    copyIconBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      minHeight: 44,
+      paddingHorizontal: 8,
+      marginRight: -8,
+    },
+    copyIconText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.primaryText,
     },
 
     // Dock
     dock: {
       paddingHorizontal: HPAD,
-      paddingTop: 14,
-      paddingBottom: Math.max(insets.bottom, 12) + 4,
-      backgroundColor: colors.backgroundDark,
+      paddingTop: 10,
+      paddingBottom: Math.max(insets.bottom, 12) + 2,
+      backgroundColor: colors.background,
       borderTopWidth: 1,
       borderTopColor: colors.border,
     },
-    dockLabel: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 11,
+    lockedHintRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 5,
+      marginBottom: 8,
+    },
+    lockedHint: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
       color: colors.textSecondary,
-      letterSpacing: 1.4,
-      marginBottom: 12,
     },
-    shareRow: {
-      flexDirection: 'row',
-      gap: 12,
-      marginBottom: 14,
-    },
-    shareBtn: {
-      width: 52,
-      height: 52,
-      borderRadius: 26,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: colors.surfaceContainerLowest,
-      borderWidth: 1,
-      borderColor: colors.border,
-    },
-    premiumBadge: {
-      position: 'absolute',
-      top: -2,
-      right: -2,
-      width: 18,
-      height: 18,
-      borderRadius: 9,
-      backgroundColor: colors.primary,
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderWidth: 2,
-      borderColor: colors.backgroundDark,
-    },
-    copyBtn: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 9,
-      height: 54,
-      borderRadius: 16,
-      shadowColor: colors.primary,
-      shadowOpacity: isDark ? 0 : 0.3,
-      shadowRadius: 10,
-      shadowOffset: { width: 0, height: 5 },
-      elevation: 3,
-    },
-    copyBtnText: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 17,
-      color: colors.onPrimary,
-    },
-    secondaryRow: {
+    dockRow: {
       flexDirection: 'row',
       gap: 10,
-      marginTop: 12,
     },
-    secondaryBtn: {
-      flex: 1,
+    dockPrimaryWrap: {
+      flex: 1.35,
+    },
+    dockPrimary: {
+      height: 52,
+      borderRadius: 16,
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
       gap: 8,
-      height: 46,
-      borderRadius: 14,
+      paddingHorizontal: 12,
+    },
+    dockPrimaryText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 16,
+      color: colors.onPrimary,
+      flexShrink: 1,
+    },
+    premiumDot: {
+      width: 16,
+      height: 16,
+      borderRadius: 8,
+      backgroundColor: colors.onPrimary,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    dockSecondary: {
+      flex: 1,
+      height: 52,
+      borderRadius: 16,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 7,
+      paddingHorizontal: 10,
       backgroundColor: colors.surfaceContainerLowest,
       borderWidth: 1,
       borderColor: colors.border,
     },
-    secondaryBtnActive: {
+    dockSecondaryActive: {
       borderColor: colors.success,
       backgroundColor: isDark ? `${colors.success}1A` : '#EAF4EB',
     },
-    secondaryBtnText: {
+    dockSecondaryLocked: {
+      opacity: 0.55,
+    },
+    dockSecondaryText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 14,
+      fontSize: 15,
       color: colors.text,
+      flexShrink: 1,
     },
-    secondaryBtnTextMuted: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 14,
-      color: colors.textSecondary,
-    },
-    privatePlanButton: {
-      minHeight: 44,
-      marginTop: 8,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 8,
-    },
-    privatePlanText: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
-      color: colors.textSecondary,
-    },
-    privatePlanBackdrop: {
+
+    // Share sheet
+    sheetBackdrop: {
       flex: 1,
       justifyContent: 'flex-end',
       backgroundColor: 'rgba(0,0,0,0.46)',
     },
-    privatePlanSheet: {
+    sheet: {
       backgroundColor: colors.background,
-      borderTopLeftRadius: 26,
-      borderTopRightRadius: 26,
-      padding: 24,
-      paddingBottom: Math.max(insets.bottom + 24, 32),
-      gap: 12,
+      borderTopLeftRadius: 24,
+      borderTopRightRadius: 24,
+      paddingHorizontal: 16,
+      paddingTop: 10,
+      paddingBottom: Math.max(insets.bottom + 12, 24),
     },
-    privatePlanClose: {
-      position: 'absolute',
-      top: 14,
-      right: 16,
-      width: 44,
-      height: 44,
-      borderRadius: 22,
+    sheetHandle: {
+      alignSelf: 'center',
+      width: 36,
+      height: 4,
+      borderRadius: 2,
+      backgroundColor: colors.border,
+      marginBottom: 12,
+    },
+    sheetTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 16,
+      color: colors.text,
+      paddingHorizontal: 4,
+      marginBottom: 8,
+    },
+    sheetRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+      minHeight: 60,
+      paddingHorizontal: 4,
+    },
+    sheetIcon: {
+      width: 40,
+      height: 40,
+      borderRadius: 20,
       alignItems: 'center',
       justifyContent: 'center',
-    },
-    privatePlanTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 26,
-      color: colors.text,
-      paddingRight: 42,
-    },
-    privatePlanCopy: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 14,
-      lineHeight: 20,
-      color: colors.textSecondary,
-    },
-    privatePlanOptions: { gap: 9, marginTop: 4 },
-    privatePlanOption: {
-      minHeight: 52,
-      borderRadius: 15,
-      paddingHorizontal: 15,
       backgroundColor: colors.backgroundDark,
       borderWidth: 1,
       borderColor: colors.border,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
     },
-    privatePlanOptionText: {
+    sheetRowTitle: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 15,
       color: colors.text,
+    },
+    sheetRowSub: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12.5,
+      color: colors.textSecondary,
+      marginTop: 1,
+    },
+    sheetPremium: {
+      width: 20,
+      height: 20,
+      borderRadius: 10,
+      backgroundColor: colors.primary,
+      alignItems: 'center',
+      justifyContent: 'center',
     },
 
     // Toast
@@ -1319,7 +1334,7 @@ const buildStyles = (colors, isDark, insets) => {
       position: 'absolute',
       left: HPAD,
       right: HPAD,
-      bottom: Math.max(insets.bottom + 14, 22),
+      top: insets.top + 56,
       borderRadius: 12,
       paddingHorizontal: 14,
       paddingVertical: 11,
@@ -1331,6 +1346,7 @@ const buildStyles = (colors, isDark, insets) => {
       gap: 8,
     },
     copyToastText: {
+      flex: 1,
       fontFamily: 'Inter_500Medium',
       fontSize: 12,
       color: isDark ? colors.text : '#2E5F37',

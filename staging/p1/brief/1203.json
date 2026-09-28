@@ -1,0 +1,64 @@
+{
+  "story_id": 1203,
+  "kind": "concept",
+  "book": {
+    "title": "Dare to Lead",
+    "author": "Brené Brown",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book title in the manifest ('Karanlığın Ötesi') is a Turkish rendering; the book is Dare to Lead (2018). Brown's research with leaders is the basis of the book, and two of its best-known ideas are used: courage is a collection of four teachable skill sets (rumbling with vulnerability, living into our values, braving trust, learning to rise), and 'Clear is kind. Unclear is unkind.' The reference TR text's summary of leaders' 'biggest regrets' ('I could have been braver') cannot be confirmed as a specific finding and is not presented as one. Brown's observation that many leaders avoid tough conversations, which leads to problems festering, is kept as a paraphrase.",
+  "facts": [
+    "Dare to Lead is based on Brown's research with leaders in organizations, asking what courageous leadership looks like.",
+    "She argues that courage is not a fixed personality trait but a set of skills that can be taught, observed and measured.",
+    "She identifies four skill sets of courage: rumbling with vulnerability, living into our values, braving trust, and learning to rise after failure.",
+    "One common barrier she found was avoiding tough conversations, including giving honest, productive feedback.",
+    "She puts it simply: 'Clear is kind. Unclear is unkind.' Feeding people half-truths or bullshit to make them feel better is unkind.",
+    "Brave leadership, in her view, means choosing courage over comfort."
+  ],
+  "tension": "Many leaders avoid hard conversations to be nice, and end up being unkind.",
+  "opening_idea": "You tell a struggling colleague their work is 'fine' to spare their feelings. Brown would call that unkind.",
+  "lessons": [
+    {
+      "idea": "Courage is a skill, not a trait.",
+      "anchor": "The four skill sets"
+    },
+    {
+      "idea": "Being unclear is not kindness.",
+      "anchor": "'Clear is kind. Unclear is unkind.'"
+    },
+    {
+      "idea": "Brave leaders choose courage over comfort.",
+      "anchor": "Avoiding tough conversations as a barrier"
+    }
+  ],
+  "reflect": [
+    "Which conversation are you avoiding to stay comfortable?",
+    "Where have you been vague to protect someone's feelings, or your own?"
+  ],
+  "reflect_final": "What clear thing could you say kindly this week that you've been avoiding?",
+  "use_cases": [
+    {
+      "situation": "A team member's work isn't meeting the standard and you've been hinting.",
+      "move": "State the gap clearly, with examples, and agree on next steps.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your team avoids naming a risk in a project review.",
+      "move": "Name it plainly and ask what support is needed.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You keep telling a friend their business plan is 'great' though you have doubts.",
+      "move": "Share your honest concerns with care.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Clear is kind. Unclear is unkind.",
+  "conversation_variants": {
+    "punchline_idea": "Being vague to protect feelings isn't kindness; it's avoidance.",
+    "thirty_sec_idea": "Courage as four skills, avoiding tough conversations, clear is kind.",
+    "question_idea": "Where are you being vague when you could be clear and kind?",
+    "key_contrast_idea": "Comfort versus courage"
+  }
+}

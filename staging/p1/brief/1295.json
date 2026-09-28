@@ -1,0 +1,64 @@
+{
+  "story_id": 1295,
+  "kind": "concept",
+  "book": {
+    "title": "The 4-Hour Workweek",
+    "author": "Timothy Ferriss",
+    "year": "2007"
+  },
+  "confidence": "medium",
+  "confidence_note": "The exercise is in the book as 'define your nightmare' (Ferriss later popularized the name 'fear-setting'). The reference TR text reduces it to three questions and adds a fixed 5-year question; the book's list is longer and asks where you will be in one, five and ten years if you don't act, so that is followed instead. The reference calls it a 'fears list' and says Ferriss 'discovered' inaction costs more; the book presents that as his argument. Ferriss's own example is from a period when he was overworked running his supplement company and afraid to leave for a trip; he did the exercise, found the worst cases were recoverable, and left. The length of the trip is omitted as I'm not fully certain of it. The line 'most people will choose unhappiness over uncertainty' is recalled from the book but not re-checked.",
+  "facts": [
+    "Ferriss describes being burned out running his own company, working very long hours, and afraid that stepping away would make it collapse.",
+    "He wrote out his fears in detail: what was the worst that could realistically happen if he left?",
+    "The book's exercise asks, among other questions: define the worst case; what could you do to repair the damage or get back on track; what are the likely benefits of more probable outcomes; and what is putting it off costing you, financially, emotionally and physically.",
+    "It also asks: if you don't pursue what excites you, where will you be in one year, five years and ten years?",
+    "Doing this, Ferriss concluded that the worst outcomes were temporary and recoverable, and he left for an extended trip abroad while the business kept running.",
+    "Ferriss argues that people tend to choose unhappiness over uncertainty, and that the cost of inaction is rarely written down."
+  ],
+  "tension": "Staying put feels safe because its costs are invisible, while the risks of acting are vivid, so people keep paying a price they have never actually calculated.",
+  "opening_idea": "Start with an exhausted company owner who can't imagine leaving for a trip, sitting down to write out, in detail, exactly what disaster he fears.",
+  "lessons": [
+    {
+      "idea": "Vague fear is bigger than written-down fear; defining the worst case often shrinks it.",
+      "anchor": "Ferriss writing out his nightmare and finding it recoverable."
+    },
+    {
+      "idea": "Inaction has a cost that deserves the same accounting as action.",
+      "anchor": "The question: what is putting this off costing you, financially, emotionally and physically?"
+    },
+    {
+      "idea": "Plan the repair, not just the risk.",
+      "anchor": "The question of what steps would get things back on track if the worst happened."
+    }
+  ],
+  "reflect": [
+    "What decision are you postponing because of a fear you've never actually written down?",
+    "If nothing changes, where will you be on it in one year?"
+  ],
+  "reflect_final": "Take one postponed decision and write three lines: the realistic worst case, how you'd recover from it, and what waiting another year would cost you.",
+  "use_cases": [
+    {
+      "situation": "You've been putting off a career move or a big request for months.",
+      "move": "Spend twenty minutes on Ferriss's questions on paper: worst case, how to repair it, and what one, five and ten more years of waiting would cost.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague is frozen about taking an overseas assignment or new role.",
+      "move": "Ask them what the realistic worst case is and what they'd do to recover from it, then ask what staying put costs.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your family keeps postponing a move or big change because 'it's risky'.",
+      "move": "Suggest listing the costs of not changing next to the risks of changing, the way Ferriss did, and deciding from both columns.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Ferriss wrote his nightmare down and found it fixable: put the cost of staying put on the same page as the risk of going.",
+  "conversation_variants": {
+    "punchline_idea": "Tim Ferriss says most people will choose unhappiness over uncertainty.",
+    "thirty_sec_idea": "Burned out and afraid to leave his company, Ferriss wrote out his worst case, how he'd fix it, and what staying was costing him; the nightmare turned out recoverable, so he left for a long trip, and the exercise became 'define your nightmare'.",
+    "question_idea": "What's something you've been putting off where you've never actually written down the worst case?",
+    "key_contrast_idea": "Counting only the risks of acting, versus also counting what not acting quietly costs."
+  }
+}

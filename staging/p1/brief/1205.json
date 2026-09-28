@@ -1,0 +1,66 @@
+{
+  "story_id": 1205,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "year": "1988"
+  },
+  "confidence": "high",
+  "confidence_note": "The manifest's Turkish title ('Kaybedilen Cennet') does not match the usual Turkish title, but the content is clearly The Alchemist (1988). The story's frame is well known: Santiago, a young Andalusian shepherd, has a recurring dream of treasure near the Egyptian pyramids, sells his sheep, travels across the desert, and at the pyramids is beaten by thieves; one of them mocks him by describing his own recurring dream of treasure buried under a sycamore tree in a ruined church in Spain, the very place where Santiago had slept with his flock. Santiago returns and finds the treasure there. The novel is fiction; the story is paraphrased without quotations.",
+  "facts": [
+    "The Alchemist is a novel. Its hero, Santiago, is a young shepherd in Andalusia, Spain.",
+    "He has a recurring dream, while sleeping in an abandoned church where a sycamore tree grows, that he will find treasure near the Egyptian pyramids.",
+    "Encouraged by a mysterious old king, he sells his sheep and sets out on a long journey through North Africa and across the desert.",
+    "On the way he works for a crystal merchant, crosses the desert with a caravan, falls in love, and learns from an alchemist.",
+    "At the pyramids he digs for treasure and is attacked and robbed by thieves.",
+    "One thief mocks him, saying he himself once dreamed of treasure buried under a sycamore in a ruined church in Spain, but was not foolish enough to cross a desert for a dream.",
+    "Santiago realizes the church is the one where he had slept. He returns to Spain and finds the treasure there.",
+    "The novel suggests that the journey itself, and what he learned along the way, was necessary to find what was close to home."
+  ],
+  "tension": "A shepherd crosses a desert chasing treasure, only to learn it was buried where he started.",
+  "opening_idea": "A shepherd sleeps under a sycamore in a ruined church and dreams of treasure far away.",
+  "lessons": [
+    {
+      "idea": "Sometimes you must travel far to see what's close.",
+      "anchor": "Treasure under the sycamore"
+    },
+    {
+      "idea": "The journey changes the traveler.",
+      "anchor": "The crystal merchant, the desert, the alchemist"
+    },
+    {
+      "idea": "Not following your dream has its own cost.",
+      "anchor": "The thief who never went"
+    }
+  ],
+  "reflect": [
+    "What did you learn on a journey that you couldn't have learned at home?",
+    "Is there a 'treasure' in your life that you've overlooked because it's close?"
+  ],
+  "reflect_final": "What journey, big or small, might help you see what's already near you?",
+  "use_cases": [
+    {
+      "situation": "You're thinking about a big change but fear it will be wasted if you return.",
+      "move": "Remember Santiago: the journey's lessons stay with you even if you come back.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend regrets years abroad because they ended up back home.",
+      "move": "Ask what they understand now that they wouldn't have without leaving.",
+      "context": "social"
+    },
+    {
+      "situation": "Your teenager wants to study far away and worries about being homesick.",
+      "move": "Encourage the journey; home will still be there, seen with new eyes.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Sometimes you have to go far to see what was always close.",
+  "conversation_variants": {
+    "punchline_idea": "Santiago crossed a desert to find treasure buried where he started.",
+    "thirty_sec_idea": "The dream, the journey, the thieves, the sycamore, the return.",
+    "question_idea": "What did you only understand after leaving?",
+    "key_contrast_idea": "Far away versus close by"
+  }
+}

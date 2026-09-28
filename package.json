@@ -18,6 +18,7 @@
     "story:build-summaries": "node scripts/story-pipeline/build-one-minute-summaries.mjs",
     "story:validate-summaries": "node scripts/story-pipeline/validate-one-minute-summaries.mjs",
     "story:ingest": "node scripts/story-pipeline/ingest-batch.mjs",
+    "story:publish": "node scripts/p1/publish-local.mjs",
     "build:apk:dev": "eas build --platform android --profile development",
     "build:apk": "eas build --platform android --profile apk",
     "build:apk:local": "eas build --platform android --profile apk --local",

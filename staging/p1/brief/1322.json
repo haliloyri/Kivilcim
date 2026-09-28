@@ -1,0 +1,65 @@
+{
+  "story_id": 1322,
+  "kind": "concept",
+  "book": {
+    "title": "A More Beautiful Question",
+    "author": "Warren Berger",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference text misstates the book's framework. Berger does not rank 'what, how, why' as a hierarchy; his questioning cycle is Why → What If → How: first understand the problem ('why'), then imagine possibilities ('what if'), then work out implementation ('how'). The brief follows the book. The reference's Toyota '5 Whys' machine example (fuse, overload, lubrication, pump, filter) is a well-known Taiichi Ohno illustration, but its presence in Berger's book could not be confirmed, so it is omitted. The Reed Hastings/Netflix late-fee story is used as a book case because Berger tells it as an example of a 'why' question leading to a 'what if'; the exact fee amount is left out. Not verified against the text.",
+  "facts": [
+    "Berger describes innovative questioning as a cycle of three stages: Why, What If, and How.",
+    "'Why' questions help you notice and understand a problem, including why it exists and why things are done the current way.",
+    "'What if' questions generate possible new approaches by combining ideas and imagining alternatives.",
+    "'How' questions turn the most promising possibility into something practical, through testing and iterating.",
+    "One of his cases is Reed Hastings, who, after being charged a late fee for an overdue video rental, asked why video rental had to work that way, which led to thinking about a subscription model: the start of Netflix.",
+    "Berger notes that 'why' questions can be uncomfortable because they challenge existing assumptions."
+  ],
+  "tension": "Most people jump straight to 'how do we fix this?', skipping the 'why' and 'what if' stages that could reveal a better problem to solve.",
+  "opening_idea": "Start with Hastings annoyed by a late fee on a rented movie, and the question he asked instead of just paying.",
+  "lessons": [
+    {
+      "idea": "Understanding why a problem exists comes before designing solutions.",
+      "anchor": "The 'Why' stage of Berger's cycle"
+    },
+    {
+      "idea": "'What if' creates the options that 'how' later tests.",
+      "anchor": "Why → What If → How"
+    },
+    {
+      "idea": "Everyday irritations can hide a question worth asking.",
+      "anchor": "Hastings' late fee leading to a subscription model"
+    }
+  ],
+  "reflect": [
+    "Which recurring irritation have you accepted instead of asking why it exists?",
+    "In your last problem-solving discussion, how quickly did the group move to 'how'?",
+    "Which way of doing things would you find hard to justify if a newcomer asked why?"
+  ],
+  "reflect_final": "Pick one task you're about to plan and write one 'why' and one 'what if' question before you write any 'how' steps. Notice whether the plan changes.",
+  "use_cases": [
+    {
+      "situation": "A team meeting jumps straight to action items for a recurring problem.",
+      "move": "Suggest spending the first minutes on Berger's order: 'Why does this keep happening?' then 'What if we…?' before assigning any 'how' steps.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A small annoyance at home keeps recurring, like the morning rush.",
+      "move": "Hastings' late fee made him ask why rentals worked that way. Ask the family 'why does this happen every day?' and collect a few 'what if…' ideas before agreeing on one to try.",
+      "context": "family"
+    },
+    {
+      "situation": "You're redesigning a process you've run for years.",
+      "move": "Write down three 'why do we do it this way?' questions and answer them honestly before changing anything.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A late fee became a question, and the question became a business. Ask why first, then what if, and only then how.",
+  "conversation_variants": {
+    "punchline_idea": "Netflix, in Berger's telling, grew out of one annoyed 'why' about a late fee.",
+    "thirty_sec_idea": "Berger says good questioning runs Why → What If → How. Reed Hastings, charged a late fee, asked why rentals worked that way, imagined a subscription alternative, and then worked out how to build it.",
+    "question_idea": "Ask which everyday annoyance they've accepted but never asked 'why' about.",
+    "key_contrast_idea": "Rushing to 'how do we fix it?' versus first asking 'why is it like this?'"
+  }
+}

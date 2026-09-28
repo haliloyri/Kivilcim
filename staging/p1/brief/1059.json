@@ -1,0 +1,68 @@
+{
+  "story_id": 1059,
+  "kind": "anecdote",
+  "book": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "This story opens Chapter 1 of the book, and its core details are well documented. The reference TR text has several errors that should not be carried over. (1) The book says Brailsford was hired in 2003, not 1998. (2) The book says British riders had won a single Olympic gold since 1908, not 'in 76 years'. (3) The book's principle is a 1 percent improvement, not 2 percent. (4) The book gives the 2008 result as roughly 60 percent of available cycling golds, not '8 gold medals'. (5) The book gives London 2012 as nine Olympic records and seven world records, not '7 golds'. (6) Hand-washing appears in the book as a surgeon hired to teach riders proper hand-washing to avoid illness. It is not a 'hand gel' choice. Keep to the book's figures.",
+  "facts": [
+    "In 2003 Dave Brailsford was hired as performance director of British Cycling, a team with a long record of mediocrity.",
+    "Since 1908, British riders had won just a single Olympic gold medal. In 110 years, no British cyclist had ever won the Tour de France.",
+    "Brailsford's strategy was 'the aggregation of marginal gains': look for a tiny margin of improvement, about 1 percent, in everything you do.",
+    "Examples from the book: redesigned, more comfortable bike seats; rubbing alcohol on tires for better grip; electrically heated overshorts to keep muscles warm; biofeedback sensors; wind-tunnel testing of fabrics; switching to lighter, more aerodynamic indoor racing suits outdoors.",
+    "Less obvious gains: testing massage gels, hiring a surgeon to teach riders the best way to wash their hands to avoid colds, choosing the best pillow and mattress for sleep, and painting the inside of the team truck white to spot dust that could degrade the bikes.",
+    "Just five years later, at the 2008 Beijing Olympics, British cycling won roughly 60 percent of the gold medals available.",
+    "At the 2012 London Olympics the team set nine Olympic records and seven world records.",
+    "In 2012 Bradley Wiggins became the first British cyclist to win the Tour de France. Chris Froome won it in 2013, 2015, 2016 and 2017.",
+    "Between 2007 and 2017, British cyclists won 178 world championships, 66 Olympic or Paralympic gold medals, and 5 Tour de France victories.",
+    "Clear adds the math: getting 1 percent better every day for a year makes you about 37 times better. Getting 1 percent worse every day brings you down nearly to zero."
+  ],
+  "tension": "A team with almost a century of failure had no single big fix available, so the question was whether hundreds of trivially small tweaks could add up to anything meaningful.",
+  "opening_idea": "Start with the absurdity: to beat the world, a coach cared about which pillow his riders slept on and what color the inside of the team truck was.",
+  "lessons": [
+    {
+      "idea": "Small improvements compound. The results lag behind the effort, then arrive disproportionately.",
+      "anchor": "Five years from near-zero golds to about 60 percent of Olympic cycling golds"
+    },
+    {
+      "idea": "Look for gains in overlooked places, not only the obvious ones.",
+      "anchor": "Surgeon-taught hand-washing, the best pillows, a white-painted truck interior"
+    },
+    {
+      "idea": "Tiny habits cut both ways. The same compounding that builds success also builds decline.",
+      "anchor": "1 percent better daily is about 37 times better in a year; 1 percent worse daily is near zero"
+    }
+  ],
+  "reflect": [
+    "Where are you waiting for one big breakthrough when a series of tiny adjustments would do the job?",
+    "Which small, 'unimportant' detail in your daily routine is quietly compounding against you?"
+  ],
+  "reflect_final": "What is one thing you could do just 1 percent better today, and how will you notice it tomorrow?",
+  "use_cases": [
+    {
+      "situation": "A team is stuck debating a major overhaul that never gets approved.",
+      "move": "Propose that each person names one 1 percent fix in their own area this week, and review them together next meeting.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague feels discouraged because their efforts show no visible results yet.",
+      "move": "Tell them about the British cycling team's five-year lag, and ask which small gain they have already made that simply hasn't paid out yet.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You want to get healthier but keep abandoning ambitious plans.",
+      "move": "Pick one tiny change, such as a better pillow, one glass of water, or ten minutes earlier to bed, and keep only that for two weeks before adding another.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Don't look for the one big fix; improve a hundred small things by 1 percent and let them compound.",
+  "conversation_variants": {
+    "punchline_idea": "Britain's cycling team started winning after its coach worried about pillows and hand-washing.",
+    "thirty_sec_idea": "A team with one Olympic gold in about a century improved everything by roughly 1 percent and, within five years, took about 60 percent of the Olympic cycling golds.",
+    "question_idea": "If you could only get 1 percent better at something each day, which thing would you pick?",
+    "key_contrast_idea": "Revolution versus accumulation: one dramatic change rarely comes, while hundreds of invisible tweaks quietly add up."
+  }
+}

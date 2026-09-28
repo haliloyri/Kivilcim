@@ -1,0 +1,63 @@
+{
+  "story_id": 1300,
+  "kind": "anecdote",
+  "book": {
+    "title": "Factfulness",
+    "author": "Hans Rosling (with Ola Rosling and Anna Rosling Rönnlund)",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "Rosling's fact questions, the chimpanzee comparison, and the systematic pessimism of answers are central to the book. The book's questions include the share of one-year-olds vaccinated, the change in extreme poverty over 20 years, and global life expectancy. The chimpanzee point is a thought experiment about random guessing, not a real test with chimpanzees. Rosling calls the underlying cause the 'overdramatic worldview' and breaks it into ten instincts; the reference text's single 'drama instinct' label is simplified. Specific percentages of correct answers per group are omitted.",
+  "facts": [
+    "Rosling and his team asked thousands of people in many countries, including highly educated audiences, experts, and leaders, multiple-choice questions about basic global trends, each with three answer options.",
+    "Questions included what share of the world's one-year-olds are vaccinated, whether extreme poverty has roughly halved, doubled, or stayed the same over 20 years, and what global life expectancy is today.",
+    "Because each question had three options, a chimpanzee picking at random would average about a third correct; most human groups scored worse than that.",
+    "The wrong answers were not random: people consistently picked the most negative option, believing the world is poorer, sicker, and more dangerous than it is.",
+    "Being better educated or more informed did not protect people; Rosling argues the cause is not a lack of knowledge but an 'overdramatic worldview' shaped by instincts and by news that favours the dramatic."
+  ],
+  "tension": "Educated, well-informed people did worse than random guessing, and always in the same gloomy direction.",
+  "opening_idea": "Rosling asks a room of experts a simple three-option question about vaccination rates, and then compares their score with what a chimpanzee would get by picking at random.",
+  "lessons": [
+    {
+      "idea": "Errors that all lean one way point to a bias, not a gap in knowledge.",
+      "anchor": "Answers were systematically too negative"
+    },
+    {
+      "idea": "Expertise and education don't automatically correct a distorted worldview.",
+      "anchor": "Highly educated audiences also scored below chance"
+    },
+    {
+      "idea": "A dramatic picture of the world pushes out slow, steady improvements.",
+      "anchor": "Rosling's 'overdramatic worldview'"
+    }
+  ],
+  "reflect": [
+    "When you last formed a view on how the world is doing, where did the information come from?",
+    "Which trend do you feel sure about but have never actually checked?"
+  ],
+  "reflect_final": "Next time you catch yourself saying 'things are getting worse', look up the actual trend once before repeating it, and notice whether your guess leaned negative.",
+  "use_cases": [
+    {
+      "situation": "A dinner conversation turns to how everything in the world is getting worse.",
+      "move": "Mention Rosling's chimpanzee comparison and ask the table to guess the share of the world's one-year-olds who are vaccinated before anyone looks it up.",
+      "context": "social"
+    },
+    {
+      "situation": "A team is making assumptions about customers or a market based on impressions.",
+      "move": "Ask which assumptions have been checked against data and pick one to verify before the next meeting.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You feel gloomy after reading the news.",
+      "move": "Choose one topic from the news and look up its long-term trend rather than the latest headline.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "If your mistakes all lean the same way, it isn't ignorance: it's a worldview tilted toward drama.",
+  "conversation_variants": {
+    "punchline_idea": "On Rosling's basic questions about the world, a chimpanzee picking at random would beat most experts.",
+    "thirty_sec_idea": "Rosling asked thousands of educated people three-option questions like how many of the world's children are vaccinated; most scored below random chance, and their mistakes all tilted toward a worse world than the real one.",
+    "question_idea": "Is there something about the world you were sure was getting worse, and then found out wasn't?",
+    "key_contrast_idea": "What people believe about the world versus what the numbers actually show."
+  }
+}

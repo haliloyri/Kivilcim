@@ -1,0 +1,64 @@
+{
+  "story_id": 1244,
+  "kind": "anecdote",
+  "book": {
+    "title": "The 80/20 Principle",
+    "author": "Richard Koch",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "This entry overlaps with story 1177 (80/20 and time). The reference TR text says Koch 'halved his working hours'; the exact figure cannot be confirmed. Koch does describe his own experience: as a student at Oxford, he realized he could do well in exams by concentrating on a limited number of key topics and past exam questions rather than trying to read everything, and he later applied the same selective thinking to consulting (where a few clients and projects generated most value) and to investing, allowing him to work less and live more freely. The story focuses on the Oxford exam example to avoid duplicating 1177. Details are paraphrased.",
+  "facts": [
+    "Koch describes discovering the 80/20 principle as a student at Oxford.",
+    "He noticed that exams tested only a limited range of topics, and that knowing a few areas deeply, and studying past papers, mattered more than reading everything on the reading list.",
+    "He concentrated his effort on what the exams actually rewarded, and did well while working less than many peers.",
+    "He later applied the same selective approach in business: in consulting, a small share of clients and a small share of projects produced most of the value.",
+    "He argues that most people could achieve more with less effort by identifying where results really come from.",
+    "His message is not laziness but selectivity: work intensely on the few things that matter and cut the rest."
+  ],
+  "tension": "Some students read everything and struggle; others read selectively and excel. What's the difference?",
+  "opening_idea": "A student at Oxford faces an impossible reading list and decides not to read most of it.",
+  "lessons": [
+    {
+      "idea": "Study where the results come from.",
+      "anchor": "Past papers and key topics"
+    },
+    {
+      "idea": "Depth in a few areas beats shallow coverage of all.",
+      "anchor": "Koch's exam strategy"
+    },
+    {
+      "idea": "Selectivity is not laziness.",
+      "anchor": "Working intensely on what matters"
+    }
+  ],
+  "reflect": [
+    "Where are you trying to cover everything instead of what matters most?",
+    "What is your 'past exam paper', the clearest signal of what is rewarded?"
+  ],
+  "reflect_final": "What could you stop doing if you focused only on what truly produces results?",
+  "use_cases": [
+    {
+      "situation": "Your child is overwhelmed revising for an exam.",
+      "move": "Look at past papers together and focus on the topics that come up most.",
+      "context": "family"
+    },
+    {
+      "situation": "You're preparing for a job interview with too much material.",
+      "move": "Focus deeply on the few skills the role actually requires.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team prepares every report in exhaustive detail.",
+      "move": "Ask which sections decision-makers actually read and focus there.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Don't cover everything; go deep on what's actually rewarded.",
+  "conversation_variants": {
+    "punchline_idea": "Koch did well at Oxford by deliberately not reading most of his reading list.",
+    "thirty_sec_idea": "Oxford, past papers, few topics deeply, later consulting.",
+    "question_idea": "What is your 'past exam paper'?",
+    "key_contrast_idea": "Coverage versus depth"
+  }
+}

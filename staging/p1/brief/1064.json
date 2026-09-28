@@ -1,0 +1,72 @@
+{
+  "story_id": 1064,
+  "kind": "anecdote",
+  "book": {
+    "title": "Dürüst Olmak (Radical Candor)",
+    "author": "Kim Scott",
+    "year": "2017"
+  },
+  "confidence": "high",
+  "confidence_note": "The Sandberg walk after the AdSense presentation is the book's well-known opening anecdote, and the framework (Care Personally / Challenge Directly, four quadrants) is its core. Sandberg's quotes are paraphrased and should not be presented as verbatim. The claim that Scott dropped the habit 'easily' and the claims about the book's spread in the tech industry are not reliably from the book and are omitted. Her later teaching at Apple University is mentioned in the book but is kept secondary.",
+  "facts": [
+    "Kim Scott had recently joined Google, where she led the AdSense team.",
+    "She presented the business's progress to Google's founders and CEO Eric Schmidt. Results were strong enough that Schmidt asked what resources the team needed.",
+    "Afterward, her boss Sheryl Sandberg suggested they walk together. Sandberg first praised the presentation and the team's results.",
+    "Sandberg then said Scott had said 'um' a lot and offered her a speech coach. Scott brushed the comment off with a dismissive gesture.",
+    "Sandberg responded roughly: 'I can tell I'm not getting through to you. I'll have to be more direct. When you say um every third word, it makes you sound stupid.'",
+    "The bluntness got through. Scott went to the speech coach and later saw the moment as a real kindness.",
+    "Reflecting on why Sandberg was a good boss, Scott identified two dimensions: caring personally and challenging directly.",
+    "From these two axes she built four quadrants: Radical Candor (care plus challenge), Obnoxious Aggression (challenge without care), Ruinous Empathy (care without challenge) and Manipulative Insincerity (neither).",
+    "Scott argues that most management mistakes happen in Ruinous Empathy, where people stay silent to be nice and the other person never learns what is wrong.",
+    "She advises starting by asking for criticism yourself, listening without defending and thanking the person, before giving criticism to others."
+  ],
+  "tension": "Scott had just triumphed in front of the CEO and brushed off a gentle critique. Only when her boss dropped the softening and said it plainly did the message land, which shows that the 'polite' version had failed her.",
+  "opening_idea": "Open with the moment after a triumph: a successful presentation to the CEO, then a quiet walk with the boss and a 'but' about to arrive.",
+  "lessons": [
+    {
+      "idea": "Vague, softened criticism can be dismissed. Clarity is what actually helps.",
+      "anchor": "Scott waved off the first 'um' comment and only heard the second, blunt version."
+    },
+    {
+      "idea": "Directness lands as help rather than attack when personal care is already established.",
+      "anchor": "Sandberg praised genuinely first and offered a coach, so the blunt line read as care."
+    },
+    {
+      "idea": "Staying silent to be nice (Ruinous Empathy) is the most common and most damaging failure.",
+      "anchor": "Scott's claim that most management mistakes fall in the care-without-challenge quadrant."
+    },
+    {
+      "idea": "Earn the right to criticize by first asking for and accepting criticism.",
+      "anchor": "Scott's advice: solicit feedback, listen without defending, thank the person."
+    }
+  ],
+  "reflect": [
+    "Is there something you've softened so much that the other person probably didn't hear it?",
+    "When someone criticizes you, do you brush it off the way Scott first did?"
+  ],
+  "reflect_final": "Was there a flaw you noticed late because nobody told you, and whose honest words would you have listened to?",
+  "use_cases": [
+    {
+      "situation": "A colleague's presentation had a distracting habit everyone noticed but nobody mentioned.",
+      "move": "Right after, privately: name one real strength, then state the issue plainly and concretely ('You said \"basically\" in almost every sentence, and it undercut your data'), and offer one specific fix.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You've hinted at a problem to a direct report twice and nothing has changed.",
+      "move": "Say it openly: 'I don't think I've been clear enough. Let me be more direct,' then state the specific behavior and its impact in one sentence.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You want your team to give you honest feedback.",
+      "move": "At the end of a meeting, ask 'What's one thing I did this week that made your job harder?' Wait through the silence and answer only 'Thank you.'",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Care personally and challenge directly, in the same conversation.",
+  "conversation_variants": {
+    "punchline_idea": "Sandberg's kindest act was calling Scott's 'ums' stupid-sounding after the polite version failed.",
+    "thirty_sec_idea": "Scott aced a presentation to Google's CEO, shrugged off her boss's gentle note about 'um', and only changed when the boss said it bluntly. That walk became the Radical Candor framework.",
+    "question_idea": "Which is worse: a harsh truth from someone who cares, or polite silence that lets you keep failing?",
+    "key_contrast_idea": "Ruinous Empathy feels kind in the moment. Radical Candor feels uncomfortable in the moment, yet only the second one helps the person grow."
+  }
+}

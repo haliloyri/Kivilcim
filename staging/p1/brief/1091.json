@@ -1,0 +1,66 @@
+{
+  "story_id": 1091,
+  "kind": "anecdote",
+  "book": {
+    "title": "Odaklanma Gücü (The Power of Focus)",
+    "author": "Jack Canfield (with Mark Victor Hansen and Les Hewitt)",
+    "year": "2000"
+  },
+  "confidence": "medium",
+  "confidence_note": "The original English book is usually listed as co-authored by Canfield, Hansen and Hewitt and dated 2000, so the metadata was adjusted from the provided 1999. Canfield tells the $100,000-goal story often, most fully in The Success Principles (2005). It may appear only briefly in The Power of Focus or not at all. In Canfield's own telling he displayed a mock $100,000 bill, often said to be on the ceiling above his bed. He was not writing on a real $100 note stuck to a bathroom mirror. Placement details are therefore kept generic. The figures ($8,000 a year before, about $92,000 that year) are consistent across his accounts but should be presented as approximate. The car example for the reticular activating system is a common Canfield illustration, not a specific incident.",
+  "facts": [
+    "Early in his career Canfield was earning roughly $8,000 a year.",
+    "He set a goal of earning $100,000 in one year, far beyond anything he had made before.",
+    "He made a mock $100,000 bill and put it where he would see it every day, so the goal stayed in front of him.",
+    "Over the following months, ideas and opportunities he had previously overlooked started to stand out to him.",
+    "That year he earned about $92,000. He fell short of the target but made more than ten times his previous income.",
+    "Canfield explains the effect through the reticular activating system (RAS), the brain's filter that decides which incoming information gets noticed.",
+    "His everyday illustration: once you consider buying a particular car, you suddenly see that model everywhere. The cars were always there, but your filter now flags them."
+  ],
+  "tension": "A man earning $8,000 commits to a $100,000 goal. It seems absurd, and the question is whether simply looking at a number every day can change anything real.",
+  "opening_idea": "Start with the gap: a modest yearly income beside a six-figure number taped up where he couldn't avoid it.",
+  "lessons": [
+    {
+      "idea": "A goal you see daily trains your attention to notice relevant opportunities that were already around you.",
+      "anchor": "Reticular activating system / the car you suddenly see everywhere"
+    },
+    {
+      "idea": "An ambitious target can pay off even when missed, because it stretches what you consider possible.",
+      "anchor": "Aimed for $100,000, reached about $92,000"
+    },
+    {
+      "idea": "Making a goal concrete and visible turns it from a vague wish into something the mind treats as real.",
+      "anchor": "The mock bill he looked at every day"
+    }
+  ],
+  "reflect": [
+    "Which of your goals exist only in your head, with nothing visible to remind you of them?",
+    "What opportunities might already be around you that your attention currently filters out?",
+    "Would you set a bigger target if missing it still left you far ahead of where you are now?"
+  ],
+  "reflect_final": "If your most important goal were written where you'd see it every morning, what would you start noticing that you miss today?",
+  "use_cases": [
+    {
+      "situation": "Setting a quarterly target with your team",
+      "move": "Write the single headline number on the team board or channel header and review it at the start of every meeting, instead of burying it in a slide deck.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Coaching someone who says their goal feels unrealistic",
+      "move": "Ask them to write the number down and put it somewhere they'll see daily for a month, then check in on what new options they've noticed.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your own big goal keeps slipping out of mind",
+      "move": "Tonight, write the goal as one concrete number or phrase on a note and stick it where you look first each morning.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Your brain notices what you tell it matters, so keep your goal where you'll see it.",
+  "conversation_variants": {
+    "punchline_idea": "He missed a $100,000 goal and still made more than ten times his old income.",
+    "thirty_sec_idea": "Canfield, earning about $8,000, looked at a mock $100,000 bill every day. His attention started catching opportunities, and he earned about $92,000 that year.",
+    "question_idea": "Ever decided on a car and then seen it everywhere? That's the same filter you can point at your goals.",
+    "key_contrast_idea": "A goal held vaguely in your head versus a goal you physically see every day."
+  }
+}

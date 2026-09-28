@@ -1,0 +1,65 @@
+{
+  "story_id": 1253,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Mind Map Book",
+    "author": "Tony Buzan",
+    "year": "1993"
+  },
+  "confidence": "medium",
+  "confidence_note": "Tony Buzan co-founded the World Memory Championships in 1991 with chess grandmaster Raymond Keene. Competitors memorize long sequences of cards, numbers, names and faces using techniques such as the method of loci (memory palace), which dates back to ancient Greek and Roman orators; the legend of Simonides identifying guests after a banquet hall collapse is the traditional origin story. Research on memory champions (e.g. a 2003 brain-imaging study) suggests they generally don't have unusual brains but use spatial memory strategies. Specific records are not quoted because they change frequently.",
+  "facts": [
+    "Tony Buzan co-founded the World Memory Championships in 1991 with chess grandmaster Raymond Keene.",
+    "Competitors memorize things like shuffled decks of cards, long strings of numbers, and names and faces, often at remarkable speed.",
+    "Many use the method of loci, or memory palace: placing vivid images of the items along a familiar route, then 'walking' it to recall them.",
+    "The technique is ancient. According to legend, the Greek poet Simonides identified the victims of a collapsed banquet hall by remembering where each guest had been sitting.",
+    "Roman orators used similar techniques to remember long speeches.",
+    "Brain-imaging research on memory champions has suggested they don't generally have unusual brains or IQs; they mainly use trained spatial and visual strategies.",
+    "Buzan's message: memory is a skill that can be trained, not just a fixed gift."
+  ],
+  "tension": "We think great memory is a gift you're born with. The champions say it's a technique anyone can learn.",
+  "opening_idea": "A competitor looks at a shuffled deck of cards for a short time, puts it down, and recites every card in order.",
+  "lessons": [
+    {
+      "idea": "Memory is a skill, not just a gift.",
+      "anchor": "Memory champions' ordinary brains"
+    },
+    {
+      "idea": "Images and places are memorable.",
+      "anchor": "The memory palace"
+    },
+    {
+      "idea": "Old techniques still work.",
+      "anchor": "Simonides and Roman orators"
+    }
+  ],
+  "reflect": [
+    "Where do you tell yourself you have a bad memory?",
+    "What familiar place could become your memory palace?"
+  ],
+  "reflect_final": "What would you try to remember if you believed your memory could be trained?",
+  "use_cases": [
+    {
+      "situation": "You need to remember the key points of a presentation.",
+      "move": "Place each point as a vivid image in a room of your home and walk through it.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child believes they have a terrible memory.",
+      "move": "Teach them a memory palace with a shopping list and show them it works.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague keeps forgetting names at networking events.",
+      "move": "Suggest linking each name to a vivid image connected to the person's face.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Memory isn't only a gift; it's a skill you can train.",
+  "conversation_variants": {
+    "punchline_idea": "Memory champions mostly don't have unusual brains; they use an ancient technique anyone can learn.",
+    "thirty_sec_idea": "Championships 1991, cards and numbers, memory palace, Simonides, research on ordinary brains.",
+    "question_idea": "Where do you tell yourself you have a bad memory?",
+    "key_contrast_idea": "Gift versus skill"
+  }
+}

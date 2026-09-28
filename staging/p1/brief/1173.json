@@ -1,0 +1,65 @@
+{
+  "story_id": 1173,
+  "kind": "anecdote",
+  "book": {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "year": "1936"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text tells of Theodore Roosevelt finding his runaway dog in a neighbour's garden and getting it back by listening. That story cannot be found in the book and is left out. The book does contain a well-known dog story of Carnegie's own: he often let his small Boston bull dog, Rex, run without a leash or muzzle in Forest Park; a mounted policeman warned him; when caught a second time, Carnegie admitted his fault fully before the officer could speak, and the officer softened and let him go. Carnegie uses it for the principle 'If you are wrong, admit it quickly and emphatically.' That story is used instead, keeping the TR text's theme of defusing conflict through understanding.",
+  "facts": [
+    "Carnegie lived near Forest Park, a wooded area where he walked his small Boston bull dog, Rex.",
+    "Because they rarely met anyone, he often let Rex run without a leash or muzzle.",
+    "One day a mounted policeman stopped him and told him sternly that letting the dog run loose without a muzzle was against the law, and that next time he'd have to see the judge.",
+    "Carnegie complied for a while, then let Rex run free again. The policeman caught him a second time.",
+    "This time Carnegie spoke first: he said the officer had caught him red-handed, he was guilty, he had no excuse, and he'd been warned.",
+    "The policeman's tone changed. He said he understood the temptation, that a little dog like that wouldn't harm anyone, and suggested Carnegie let the dog run somewhere out of sight.",
+    "Carnegie's principle: if you are wrong, admit it quickly and emphatically. Condemning yourself first leaves the other person little to do but be generous."
+  ],
+  "tension": "Caught breaking the same rule twice, Carnegie expected a fine. He got sympathy instead.",
+  "opening_idea": "A man is caught breaking the same rule twice by the same policeman. What he says first changes everything.",
+  "lessons": [
+    {
+      "idea": "Admitting a mistake first disarms the other person.",
+      "anchor": "The policeman softens"
+    },
+    {
+      "idea": "People want to feel important; letting them be generous does that.",
+      "anchor": "The officer chooses mercy"
+    },
+    {
+      "idea": "Defending yourself invites attack.",
+      "anchor": "Carnegie's contrast with making excuses"
+    }
+  ],
+  "reflect": [
+    "When did an excuse make a situation worse?",
+    "Which mistake could you admit this week before anyone raises it?"
+  ],
+  "reflect_final": "What would happen if you said 'I was wrong' before the other person had the chance?",
+  "use_cases": [
+    {
+      "situation": "You missed a deadline and your manager is about to raise it.",
+      "move": "Raise it first, own it fully and say what you'll do.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You forgot an important family commitment.",
+      "move": "Admit it plainly without excuses before the complaint comes.",
+      "context": "family"
+    },
+    {
+      "situation": "A neighbor is angry about noise you caused.",
+      "move": "Agree with them quickly and apologize fully.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Admit it before they say it, and they'll often forgive it.",
+  "conversation_variants": {
+    "punchline_idea": "Carnegie avoided a fine by condemning himself before the policeman could.",
+    "thirty_sec_idea": "Rex off-leash, the warning, being caught again, the confession and the officer's response.",
+    "question_idea": "What mistake could you admit before anyone asks?",
+    "key_contrast_idea": "Excuse versus admission"
+  }
+}

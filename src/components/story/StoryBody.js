@@ -34,12 +34,12 @@ const RichText = ({ text, style, boldStyle, ...rest }) => (
   </Text>
 );
 
-const UseCaseCard = ({ seg, styles, accent, border, fontSize, lang, onTry }) => (
+const UseCaseCard = ({ seg, styles, accent, textAccent, border, fontSize, lineSpacing, lang, onTry }) => (
   <View style={[styles.useCard, { borderColor: border }]}>
     {seg.label ? (
-      <Text style={[styles.useLabel, { color: accent }]}>{seg.label}</Text>
+      <Text style={[styles.useLabel, { color: textAccent }]}>{seg.label}</Text>
     ) : null}
-    <Text style={[styles.useLine, { fontSize, lineHeight: Math.round(fontSize * 1.5) }]}>
+    <Text style={[styles.useLine, { fontSize, lineHeight: Math.round(fontSize * lineSpacing) }]}>
       “{seg.line}”
     </Text>
     <TouchableOpacity
@@ -50,7 +50,7 @@ const UseCaseCard = ({ seg, styles, accent, border, fontSize, lang, onTry }) => 
       style={styles.useCopy}
       hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
     >
-      <Text style={[styles.useCopyText, { color: accent }]}>{t('useCaseTry', lang)}</Text>
+      <Text style={[styles.useCopyText, { color: textAccent }]}>{t('useCaseTry', lang)}</Text>
       <Ionicons name="arrow-forward" size={13} color={accent} />
     </TouchableOpacity>
   </View>
@@ -70,6 +70,7 @@ const UseCaseCard = ({ seg, styles, accent, border, fontSize, lang, onTry }) => 
 const StoryBody = ({
   segments,
   fontSize,
+  lineSpacing = 1.55,
   categoryTheme,
   lang,
   onReflectionPress,
@@ -79,10 +80,11 @@ const StoryBody = ({
 }) => {
   const { colors, isDark } = useTheme();
   const accent = categoryTheme?.accent || colors.primary;
+  const textAccent = categoryTheme?.textAccent || colors.primaryText;
   const border = categoryTheme?.borderColor || colors.border;
   const tint = categoryTheme?.backgroundColor || (isDark ? colors.backgroundDark : colors.background);
   const styles = makeStyles(colors, isDark);
-  const lh = (size, k = 1.55) => Math.round(size * k);
+  const lh = (size, k = lineSpacing) => Math.round(size * k);
 
   return (
     <View>
@@ -110,7 +112,7 @@ const StoryBody = ({
                 style={[
                   styles.body,
                   { fontSize, lineHeight: lh(fontSize) },
-                  seg.section === 'open' && styles.openText,
+                  seg.section === 'open' && [styles.openText, { borderLeftColor: accent }],
                 ]}
                 boldStyle={styles.bold}
               />
@@ -132,7 +134,7 @@ const StoryBody = ({
               <View key={key} style={[styles.highlight, { borderLeftColor: border, backgroundColor: tint }]}>
                 <RichText
                   text={seg.content}
-                  style={[styles.highlightText, { fontSize: fontSize + 2, lineHeight: lh(fontSize + 2, 1.5) }]}
+                  style={[styles.highlightText, { fontSize: fontSize + 2, lineHeight: lh(fontSize + 2) }]}
                   boldStyle={styles.bold}
                 />
               </View>
@@ -155,7 +157,7 @@ const StoryBody = ({
               <View key={key} style={[styles.lessonCard, { borderLeftColor: accent, backgroundColor: tint }]}>
                 <View style={styles.lessonHead}>
                   <View style={[styles.lessonBadge, { borderColor: accent }]}>
-                    <Text style={[styles.lessonBadgeText, { color: accent }]}>{seg.index}</Text>
+                    <Text style={[styles.lessonBadgeText, { color: textAccent }]}>{seg.index}</Text>
                   </View>
                   {seg.title ? (
                     <Text style={[styles.lessonTitle, { fontSize: fontSize + 1, lineHeight: lh(fontSize + 1, 1.4) }]}>
@@ -185,11 +187,11 @@ const StoryBody = ({
               >
                 <View style={styles.labelRow}>
                   <Ionicons name="chatbubble-ellipses-outline" size={15} color={accent} />
-                  <Text style={[styles.smallLabel, { color: accent }]}>{t('reflectionLabel', lang)}</Text>
+                  <Text style={[styles.smallLabel, { color: textAccent }]}>{t('reflectionLabel', lang)}</Text>
                 </View>
                 <RichText
                   text={seg.content}
-                  style={[styles.reflectionText, { fontSize: fontSize + 1, lineHeight: lh(fontSize + 1, 1.5) }]}
+                  style={[styles.reflectionText, { fontSize: fontSize + 1, lineHeight: lh(fontSize + 1) }]}
                   boldStyle={styles.bold}
                 />
               </TouchableOpacity>
@@ -202,8 +204,10 @@ const StoryBody = ({
                 seg={seg}
                 styles={styles}
                 accent={accent}
+                textAccent={textAccent}
                 border={border}
                 fontSize={fontSize}
+                lineSpacing={lineSpacing}
                 lang={lang}
                 onTry={onTryUseCase}
               />
@@ -226,7 +230,7 @@ const StoryBody = ({
                     hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
                   >
                     <Ionicons name="share-outline" size={15} color={accent} />
-                    <Text style={[styles.useCopyText, { color: accent }]}>{t('pocketShare', lang)}</Text>
+                    <Text style={[styles.useCopyText, { color: textAccent }]}>{t('pocketShare', lang)}</Text>
                   </TouchableOpacity>
                 ) : null}
               </View>
@@ -240,7 +244,7 @@ const StoryBody = ({
                   <Text style={[styles.contrastText, { color: colors.textSecondary }]}>{seg.before}</Text>
                 </View>
                 <View style={[styles.contrastCol, { backgroundColor: tint, borderColor: border, borderWidth: 1 }]}>
-                  <Text style={[styles.contrastLabel, { color: accent }]}>{t('contrastAfterLabel', lang)}</Text>
+                  <Text style={[styles.contrastLabel, { color: textAccent }]}>{t('contrastAfterLabel', lang)}</Text>
                   <Text style={[styles.contrastText, { color: colors.text }]}>{seg.after}</Text>
                 </View>
               </View>
@@ -265,7 +269,9 @@ const makeStyles = (colors, isDark) => StyleSheet.create({
     color: colors.text,
   },
   openText: {
-    fontFamily: 'Inter_500Medium_Italic',
+    fontFamily: 'Inter_400Regular',
+    borderLeftWidth: 3,
+    paddingLeft: 12,
     color: colors.textSecondary,
   },
   sectionHead: {

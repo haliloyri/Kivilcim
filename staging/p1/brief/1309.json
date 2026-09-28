@@ -1,0 +1,39 @@
+{
+  "story_id": 1309,
+  "kind": "concept",
+  "book": { "title": "Thinking in Systems: A Primer", "author": "Donella H. Meadows", "year": "2008" },
+  "confidence": "medium",
+  "confidence_note": "The TR text's central example (a playground where a new swing is compared with planting a tree) could not be traced to Thinking in Systems and appears to be invented; it is excluded. The company and personal-stress examples in the TR text are also not from the book. Instead, facts use examples that are in the book: the Slinky demonstration in the opening, where the bouncing comes from the Slinky's own structure rather than the hand, and the point that a system's behavior comes mostly from its interconnections and purpose rather than its individual elements (e.g., a football team stays recognizably the same when players change, but changing the rules changes the game). The general lesson 'change the system, not the symptoms' is consistent with Meadows.",
+  "facts": [
+    "Meadows opens with a Slinky: held from above and released from below, it bounces up and down. The hand only releases it; the bouncing is produced by the Slinky's own structure.",
+    "Her point is that a system largely causes its own behavior; outside events can trigger it, but the pattern comes from how the system is built.",
+    "She describes systems as elements, interconnections, and a function or purpose.",
+    "Changing elements usually matters least: a football team can replace all its players and still be recognizably the same team.",
+    "Changing interconnections or purpose can transform a system: change the rules, or play a different game, and it becomes a very different system.",
+    "Because behavior comes from structure, repeatedly swapping parts or blaming outside events tends to leave a recurring problem in place."
+  ],
+  "tension": "When a problem keeps coming back, it is natural to blame the latest trigger or replace a person, yet Meadows argues the pattern is produced by the system's own structure, which those fixes leave untouched.",
+  "opening_idea": "Start with the Slinky: a hand lets go, and the toy bounces. Ask who made it bounce, the hand or the Slinky?",
+  "lessons": [
+    { "idea": "Recurring behavior usually comes from structure, not from the most recent outside push.", "anchor": "The Slinky bounces because of its own structure; the hand merely releases it." },
+    { "idea": "Replacing parts is often the weakest intervention.", "anchor": "A football team with all-new players is still the same kind of team." },
+    { "idea": "Changing rules, connections, or purpose changes what the system does.", "anchor": "Change the rules and the same players are playing a different game." }
+  ],
+  "reflect": [
+    "Which problem in your work or home keeps returning even after you changed the people or tools involved?",
+    "What rule, incentive, or goal might be quietly producing that pattern?"
+  ],
+  "reflect_final": "Take one recurring problem and, before your next fix, write down one rule, connection, or goal that might be producing it. Afterward, notice whether changing that one element altered the pattern more than the last part you replaced.",
+  "use_cases": [
+    { "situation": "A team suggests replacing a vendor for the third time because deliveries keep slipping.", "move": "Ask: 'If we swap the vendor again, is that like changing players while keeping the same rules? What in our process makes every vendor slip?'", "context": "meeting" },
+    { "situation": "The same household argument keeps coming back every week.", "move": "Instead of debating who was wrong this time, suggest looking at the setup together: who decides, when, and what expectation keeps triggering it.", "context": "family" },
+    { "situation": "You keep blaming a busy week for missing your own goals.", "move": "List what the structure of your week rewards, such as what gets scheduled first and what gets dropped, and change one rule rather than trying harder.", "context": "self" }
+  ],
+  "pocket_idea": "The hand lets go, but the Slinky does the bouncing: when a pattern keeps repeating, look at how the thing is built, not at who touched it last.",
+  "conversation_variants": {
+    "punchline_idea": "You can replace every player on a football team and it is still the same team; change the rules and it is not.",
+    "thirty_sec_idea": "Meadows holds up a Slinky and lets the bottom drop; it bounces, and she asks what caused it. Not the hand; the Slinky's own structure. Systems mostly produce their own behavior.",
+    "question_idea": "Is there a problem you keep solving that keeps coming back? What stays the same every time it returns?",
+    "key_contrast_idea": "Stop asking who caused it this time and start asking what setup keeps producing it."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "story_id": 1339,
+  "kind": "anecdote",
+  "book": { "title": "Uyku Devrimi (The Sleep Revolution)", "author": "Arianna Huffington", "year": "2016" },
+  "confidence": "medium",
+  "confidence_note": "Huffington opens the book with her collapse from exhaustion and sleep deprivation in April 2007, about two years after co-founding The Huffington Post. She hit her head on her desk on the way down, broke her cheekbone and woke up in a pool of blood. She also describes going from doctor to doctor looking for an underlying illness and finding only exhaustion. She says she was working 18-hour days. The TR figure of '4-5 hours of sleep' could not be confirmed as her stated number and is omitted. The TR quotation 'If this is success, what does failure look like?' is not verified wording; she did question whether this was what success looked like, and that is kept only as a paraphrase. The 'third revolution' quotation is not verified wording from this book and is excluded; her related 'Third Metric' framing comes mainly from her earlier book Thrive (2014). The book's broader argument that sleep deprivation is treated as a badge of honor, especially among leaders, is well attested.",
+  "facts": [
+    "In 2007, about two years after co-founding The Huffington Post, Arianna Huffington collapsed at her desk from exhaustion and lack of sleep.",
+    "She hit her head as she fell, broke her cheekbone and woke up in a pool of blood.",
+    "At the time she was working 18-hour days to build the company, which was growing fast.",
+    "She went through a series of doctors' appointments to find what was wrong and found no underlying disease; the cause was exhaustion.",
+    "The episode made her question whether this was really what success looked like, and started her deep interest in sleep.",
+    "In the book she argues that sleep deprivation had become a badge of honor in work culture, with people boasting about how little they sleep, while research links sleep loss to worse judgment, mood and health."
+  ],
+  "tension": "The founder of one of the fastest-growing media companies of the time was, by every outward measure, succeeding at the very moment she was lying on the floor bleeding from exhaustion.",
+  "opening_idea": "Open on the desk: a successful media founder, 18-hour days behind her, and the moment her head hits it; hold back what the doctors eventually found.",
+  "lessons": [
+    {
+      "idea": "Outward success can hide a cost that the body eventually collects.",
+      "anchor": "Her collapse came two years into building a fast-growing company, not after a failure."
+    },
+    {
+      "idea": "Bragging about little sleep turns a warning sign into a status symbol.",
+      "anchor": "Her description of sleep deprivation as a badge of honor in work culture."
+    },
+    {
+      "idea": "Sometimes the diagnosis is not a hidden disease but the way we are living.",
+      "anchor": "The doctors' search for an illness that ended with exhaustion as the answer."
+    }
+  ],
+  "reflect": [
+    "Have you ever heard someone say 'I only slept four hours' with a hint of pride? How did you react?",
+    "What does your own schedule suggest you believe about rest and success?"
+  ],
+  "reflect_final": "The next time you are about to trade sleep for one more hour of work, ask whether that hour is truly worth what the next day will cost; notice how you feel the following afternoon.",
+  "use_cases": [
+    {
+      "situation": "In a team meeting, someone praises a colleague for pulling an all-nighter to finish a deliverable.",
+      "move": "Acknowledge the effort, then add: 'Let's plan it so nobody has to do that next time—Huffington built a hugely successful company and still ended up collapsing at her desk from exhaustion.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend boasts over coffee that they get by on very little sleep.",
+      "move": "Ask with curiosity rather than judgment: 'How do you actually feel by mid-afternoon?' and let the conversation go where it goes.",
+      "context": "social"
+    },
+    {
+      "situation": "You are about to answer work messages late at night again before an important day.",
+      "move": "Choose one evening this week to stop at a set time, and the next day notice whether your decisions feel clearer or not.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Huffington's broken cheekbone came at the height of her success: a status symbol of exhaustion can still end on the office floor.",
+  "conversation_variants": {
+    "punchline_idea": "The co-founder of The Huffington Post found out about her sleep problem when she woke up on the floor with a broken cheekbone.",
+    "thirty_sec_idea": "Two years into building The Huffington Post and working 18-hour days, Arianna Huffington collapsed at her desk, broke her cheekbone, and after many doctors learned the cause was simply exhaustion—which launched her crusade for sleep.",
+    "question_idea": "Where did you first learn that sleeping less was something to be proud of?",
+    "key_contrast_idea": "From 'little sleep proves I'm committed' to 'little sleep is a cost I'm quietly paying.'"
+  }
+}

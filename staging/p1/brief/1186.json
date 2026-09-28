@@ -1,0 +1,64 @@
+{
+  "story_id": 1186,
+  "kind": "concept",
+  "book": {
+    "title": "The Mind Map Book",
+    "author": "Tony Buzan",
+    "year": "1993"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text describes an experiment in which students who summarized a book as a Mind Map remembered about three times as much a month later. That study cannot be verified and the figure is left out. What is well established from Buzan's work: he presented Mind Maps as a way to summarize and review whole books or courses on a single page, using a central image, main branches for chapters or themes, key words rather than sentences, and color and images, and he argued this helps understanding and recall. Research on Mind Maps and memory exists but shows mixed and modest effects; the story does not claim a specific result.",
+  "facts": [
+    "Buzan recommended using Mind Maps to summarize entire books, lectures or courses on a single page.",
+    "The method: start with a central image representing the book's subject, draw a main branch for each major theme or chapter, and add smaller branches for key points.",
+    "He advised writing single key words on branches rather than full sentences, and using color, symbols and images to make the map memorable.",
+    "He argued that a one-page overview shows how ideas relate to each other, which linear notes often hide.",
+    "He also recommended reviewing Mind Maps at intervals to strengthen memory.",
+    "Buzan claimed Mind Maps improve understanding and recall; independent research suggests benefits for some learners, though results vary."
+  ],
+  "tension": "You finish a good book, and a month later you can barely remember what it said.",
+  "opening_idea": "Think of a book you loved last year. How much of it can you summarize right now?",
+  "lessons": [
+    {
+      "idea": "Seeing the whole on one page reveals connections.",
+      "anchor": "One-page book summary"
+    },
+    {
+      "idea": "Key words and images are easier to recall than sentences.",
+      "anchor": "Buzan's rules for branches"
+    },
+    {
+      "idea": "Review keeps what you learned.",
+      "anchor": "Reviewing maps at intervals"
+    }
+  ],
+  "reflect": [
+    "How much do you remember of the last book you read?",
+    "Where could a one-page map help you see the whole picture?"
+  ],
+  "reflect_final": "Which book could you turn into a one-page map this week?",
+  "use_cases": [
+    {
+      "situation": "You finish a useful work book and want to keep its ideas.",
+      "move": "Spend twenty minutes drawing a one-page Mind Map of it.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team needs to understand a long strategy document.",
+      "move": "Build a shared one-page map of its main themes together.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child has to study a long history chapter.",
+      "move": "Help them map it with one branch per period and a small drawing for each.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Put a whole book on one page, and you'll see how its ideas fit together.",
+  "conversation_variants": {
+    "punchline_idea": "A whole book can fit on one colorful page.",
+    "thirty_sec_idea": "One-page Mind Map of a book: central image, branches, key words, review.",
+    "question_idea": "What do you remember from the last book you read?",
+    "key_contrast_idea": "Pages versus one page"
+  }
+}

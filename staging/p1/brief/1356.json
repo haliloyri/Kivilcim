@@ -1,0 +1,58 @@
+{
+  "story_id": 1356,
+  "kind": "concept",
+  "book": {
+    "title": "Lider Yok Köle Yok (The Monk Who Sold His Ferrari)",
+    "author": "Robin Sharma",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kaizen, the Japanese idea of constant, never-ending improvement, is a central lesson in The Monk Who Sold His Ferrari (1997); the input title appears mismatched with this book. In the sages' fable, kaizen is symbolised by a sumo wrestler, and the book pairs it with practices such as confronting fears and the 'Ten Rituals of Radiant Living'. The TR text's Toyota example is not attributed to the book and is excluded. The quote '1% better every day makes you 37% better in a year' is not from this book and is mathematically wrong: 1.01 to the power of 365 is about 37.8 times, not 37 percent. That line and the 'revolution versus evolution' quote are excluded as unverified. The claim that the brain receives an 'I am growing' signal is also excluded.",
+  "facts": [
+    "In The Monk Who Sold His Ferrari, Julian passes on the sages' fable, in which a huge sumo wrestler represents kaizen, the Japanese idea of constant, never-ending improvement.",
+    "The book presents kaizen as self-mastery: improving yourself steadily, day by day, as the basis for improving everything else.",
+    "One kaizen practice the book stresses is deliberately doing the things you fear, because the fears you avoid limit you.",
+    "The book also offers the 'Ten Rituals of Radiant Living', daily practices such as solitude, physical activity, reading and early rising, as a way to put continuous improvement into practice."
+  ],
+  "tension": "Kaizen asks for improvement that is too small to notice on any given day, which makes it hard to keep believing it is working.",
+  "opening_idea": "Begin with the strange image the sages chose for improvement: a huge sumo wrestler in a garden.",
+  "lessons": [
+    {
+      "idea": "Lasting change comes from steady, small improvement rather than one dramatic overhaul.",
+      "anchor": "Kaizen, symbolised by the sumo wrestler in the sages' fable."
+    },
+    {
+      "idea": "Growth often lies in the specific thing you have been avoiding.",
+      "anchor": "The book's kaizen practice of doing what you fear."
+    }
+  ],
+  "reflect": [
+    "Where in your life are you waiting for a big change instead of making a small one?",
+    "What is one small thing you have avoided because it makes you uncomfortable?"
+  ],
+  "reflect_final": "Choose one small thing you have been avoiding out of discomfort, do it once this week, and notice whether it was as hard as you expected.",
+  "use_cases": [
+    {
+      "situation": "You want to get fitter but keep waiting for time to start a full programme.",
+      "move": "Make one small improvement this week, such as a short walk after lunch, and add another only once it holds.",
+      "context": "self"
+    },
+    {
+      "situation": "A retrospective produces a long list of big process changes nobody will implement.",
+      "move": "Suggest picking one small improvement to try in the next cycle and reviewing it at the next retrospective.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A team member avoids presenting because they dread it.",
+      "move": "Mention the book's kaizen practice of doing what you fear, and offer them a short, low-stakes slot to present in the next team meeting.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "The sages made a sumo wrestler the symbol of kaizen: improvement too small to see on any one day, done every day.",
+  "conversation_variants": {
+    "punchline_idea": "In Robin Sharma's fable, the symbol for self-improvement is a nearly naked sumo wrestler.",
+    "thirty_sec_idea": "In The Monk Who Sold His Ferrari, Julian learns from the Sages of Sivana that kaizen, constant small improvement, is the core of self-mastery, starting with doing the things you fear.",
+    "question_idea": "Ask what small improvement they have made recently that no one else would notice.",
+    "key_contrast_idea": "Waiting for one big transformation versus improving a little every day."
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import {
   View, Text, TouchableOpacity, StyleSheet,
-  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Image, Platform, ActivityIndicator, Share, AppState
+  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Platform, ActivityIndicator, Share, AppState
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { captureRef } from 'react-native-view-shot';
@@ -25,7 +25,7 @@ import { useStories } from '../context/StoriesContext';
 import { FEATURE_FLAGS } from '../config/featureFlags';
 import { t } from '../locales/i18n';
 import { getStoryByLang } from '../db/db';
-import { getCategoryImage, getCategoryTheme } from '../utils/categoryImages';
+import { getCategoryTheme } from '../utils/categoryImages';
 import { readableTextOn } from '../theme/theme';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
@@ -37,6 +37,9 @@ import { hasReachedReadingCompletion, isShortStoryFullyVisible, ONE_MINUTE_SUMMA
 import { getStoryAudioAsset } from '../utils/storyAudio';
 import { intlLocaleFor } from '../utils/locale';
 import StoryBody from '../components/story/StoryBody';
+import ReaderPanels from '../components/story/ReaderPanels';
+import ReaderActions from '../components/story/ReaderActions';
+import Reanimated, { useAnimatedRef, useScrollOffset, useSharedValue } from 'react-native-reanimated';
 import { parseStoryMarkup, toPlainText, extractShareParts } from '../utils/storyMarkup';
 
 const { width, height } = Dimensions.get('window');
@@ -50,7 +53,7 @@ const { width, height } = Dimensions.get('window');
 
 const StoryDetailScreen = ({ route, navigation }) => {
   const { story } = route.params;
-  const { colors, typography, layout, isDark, lang } = useTheme();
+  const { colors, typography, layout, isDark, lang, themePreference, setThemePreference } = useTheme();
   const { isFavorite, toggleFavorite, addToHistory, isPremium, incrementShareCount, releasePendingBadge, isStorySavedForLater, toggleReadLater, isStoryCompleted, markStoryCompleted, variantUsage, setBadgePresentationBlocked, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight, updateStoryProgress } = useUserData();
   const { stories } = useStories();
   const [fontSize, setFontSize] = useState(typography.sizes.body);
@@ -60,7 +63,12 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [shareFormat, setShareFormat] = useState('post');
   const [shareTextOverride, setShareTextOverride] = useState('');
   const scaleAnim = useRef(new Animated.Value(1)).current;
-  const scrollY = useRef(new Animated.Value(0)).current;
+  const readerScrollRef = useAnimatedRef();
+  const readerScrollOffset = useScrollOffset(readerScrollRef);
+  const readerViewport = useSharedValue(0);
+  const endActionsY = useSharedValue(Number.MAX_SAFE_INTEGER);
+  const [readerSettingsOpen, setReaderSettingsOpen] = useState(false);
+  const [lineSpacing, setLineSpacing] = useState(1.55);
   const titleEnterAnim = useRef(new Animated.Value(0)).current;
   const hasReachedBottom = useRef(false);
   const hasMarkedRead = useRef(false);
@@ -147,10 +155,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
   }, [releaseStoryAudioPlayer]);
 
   React.useEffect(() => {
-    const blocked = Boolean(shareModalVisible || cardGate || adSheet || storyAdGate);
+    const blocked = Boolean(shareModalVisible || cardGate || adSheet || storyAdGate || oneMinuteSummaryOpen || readerSettingsOpen);
     setBadgePresentationBlocked('story_detail_overlay', blocked);
     return () => setBadgePresentationBlocked('story_detail_overlay', false);
-  }, [shareModalVisible, cardGate, adSheet, storyAdGate, setBadgePresentationBlocked]);
+  }, [shareModalVisible, cardGate, adSheet, storyAdGate, oneMinuteSummaryOpen, readerSettingsOpen, setBadgePresentationBlocked]);
 
   const AUDIO_LIST_KEY = `story_audio_list_${story?.story_id}`;
   const MAX_RECORDINGS = 3;
@@ -549,8 +557,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const displayHook = localStory.hook || story.hook || '';
   const oneMinuteSummary = String(localStory.one_minute_summary || '').trim();
   const categoryKey = story.parent_cat_raw || story.parent_cat || localStory.cat || story.cat;
-  const categoryImage = getCategoryImage(categoryKey, isDark);
-  const categoryTheme = getCategoryTheme(categoryKey, isDark);
+  const baseCategoryTheme = getCategoryTheme(categoryKey, isDark);
+  // Reading uses one warm editorial accent; teal belongs to the main action.
+  const categoryTheme = {
+    ...baseCategoryTheme,
+    accent: colors.readerAccent,
+    textAccent: colors.readerAccentText,
+    borderColor: colors.readerBorder,
+  };
 
   const storyUsage = Array.isArray(variantUsage) ? variantUsage.find(u => String(u.storyId) === String(story.story_id)) : null;
   const usageDate = storyUsage?.usedAt;
@@ -1183,12 +1197,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
     }
   };
 
-  const progressBarWidth = scrollY.interpolate({
-    inputRange: [0, 500],
-    outputRange: [0, width],
-    extrapolate: 'clamp',
-  });
-
   const titleEnterStyle = {
     opacity: titleEnterAnim,
     transform: [
@@ -1381,17 +1389,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
       shadowOffset: { width: 0, height: 8 },
       elevation: 10,
     },
-    readingProgressBarContainer: {
-      height: 3,
-      backgroundColor: colors.border,
-      width: '100%',
-    },
-    readingProgressBar: {
-      height: 3,
-      backgroundColor: colors.primary,
-    },
     detailHeader: {
       flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 8,
       justifyContent: 'space-between',
       alignItems: 'center',
       paddingHorizontal: layout.padding.horizontal,
@@ -1401,9 +1402,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
       flexDirection: 'row',
       alignItems: 'center',
       backgroundColor: colors.backgroundDark,
-      paddingHorizontal: 16,
-      paddingVertical: 6,
-      borderRadius: 20,
+      paddingHorizontal: 10,
+      minHeight: 44,
+      borderRadius: 22,
     },
     backBtn: {
       fontFamily: 'Inter_500Medium',
@@ -1412,125 +1413,38 @@ const StoryDetailScreen = ({ route, navigation }) => {
       marginLeft: 4,
     },
     storyHero: {
-      margin: layout.padding.horizontal,
-      borderRadius: 16,
-      overflow: 'hidden',
-      marginBottom: 16,
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.backgroundDark,
+      paddingHorizontal: layout.padding.horizontal,
+      paddingTop: 8,
+      paddingBottom: 16,
     },
-    oneMinuteSummaryCard: {
-      borderWidth: 1,
-      borderRadius: 16,
-      marginBottom: 18,
-      overflow: 'hidden',
-    },
-    oneMinuteSummaryHeader: {
-      minHeight: 82,
-      paddingHorizontal: 14,
-      paddingVertical: 13,
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 11,
-    },
-    oneMinuteSummaryIcon: {
-      width: 42,
-      height: 42,
-      borderRadius: 21,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    oneMinuteSummaryHeading: {
-      flex: 1,
-      gap: 3,
-    },
-    oneMinuteSummaryCta: {
-      fontFamily: 'Inter_700Bold',
-      fontSize: 15,
-      lineHeight: 20,
-      color: colors.text,
-    },
-    oneMinuteSummarySubtitle: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      lineHeight: 17,
-      color: colors.textSecondary,
-    },
-    oneMinuteSummaryTrailing: {
-      alignItems: 'flex-end',
-      justifyContent: 'center',
-      gap: 8,
-    },
-    oneMinuteSummaryPremiumBadge: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 4,
-      paddingHorizontal: 7,
-      paddingVertical: 4,
-      borderWidth: 1,
-      borderRadius: 999,
-      backgroundColor: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.62)',
-    },
-    oneMinuteSummaryPremiumText: {
-      fontFamily: 'Inter_700Bold',
-      fontSize: 9,
-      letterSpacing: 0.65,
-    },
-    oneMinuteSummaryBody: {
-      borderTopWidth: 1,
-      paddingHorizontal: 16,
-      paddingTop: 16,
-      paddingBottom: 15,
-      backgroundColor: isDark ? 'rgba(255,255,255,0.025)' : 'rgba(255,255,255,0.48)',
-    },
-    oneMinuteSummaryMetaRow: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      gap: 12,
-      marginBottom: 12,
-    },
-    oneMinuteSummaryLabel: {
-      fontFamily: 'Inter_700Bold',
-      fontSize: 11,
-      letterSpacing: 1,
-      textTransform: 'uppercase',
-    },
-    oneMinuteSummaryDurationPill: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 4,
-      paddingHorizontal: 8,
-      paddingVertical: 4,
-      borderRadius: 999,
-      backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.045)',
-    },
-    oneMinuteSummaryDurationText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 11,
-      color: colors.textSecondary,
-    },
-    oneMinuteSummaryText: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.body,
-      lineHeight: Math.round(typography.sizes.body * 1.55),
-      color: colors.text,
-    },
-    oneMinuteSummaryFullStoryButton: {
+    summaryChip: {
       alignSelf: 'flex-start',
       flexDirection: 'row',
       alignItems: 'center',
-      gap: 6,
-      marginTop: 15,
-      paddingHorizontal: 11,
-      paddingVertical: 8,
-      borderWidth: 1,
-      borderRadius: 10,
+      gap: 8,
+      minHeight: 44,
+      paddingHorizontal: 12,
+      borderRadius: 22,
+      backgroundColor: colors.backgroundDark,
+      marginBottom: 16,
+      maxWidth: '100%',
     },
-    oneMinuteSummaryFullStoryText: {
+    summaryChipText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 12,
+      fontSize: 13,
+      color: colors.readerAccentText,
+      flexShrink: 1,
+    },
+    toolbarButton: {
+      minHeight: 44,
+      minWidth: 44,
+      paddingHorizontal: 8,
+      borderRadius: 22,
+      backgroundColor: colors.backgroundDark,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 5,
     },
     badge: {
       paddingHorizontal: 10,
@@ -1554,38 +1468,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
       color: colors.text,
       lineHeight: 34,
       marginBottom: 8,
-    },
-    categoryVisualCard: {
-      borderRadius: 16,
-      marginTop: 4,
-      marginBottom: 12,
-      height: 96,
-      overflow: 'hidden',
-      position: 'relative',
-    },
-    categoryVisualTitle: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
-      color: '#FFFFFF',
-      textAlign: 'right',
-      letterSpacing: 0.3,
-      position: 'absolute',
-      bottom: 8,
-      right: 12,
-      zIndex: 2,
-    },
-    categoryVisualImageWrap: {
-      ...StyleSheet.absoluteFillObject,
-      borderRadius: 16,
-      backgroundColor: 'rgba(255,255,255,0.16)',
-      alignItems: 'center',
-      justifyContent: 'center',
-      overflow: 'hidden',
-    },
-    categoryVisualImage: {
-      width: '100%',
-      height: '100%',
-      opacity: 0.95,
     },
     metaItem: {
       fontFamily: 'Inter_400Regular',
@@ -1781,45 +1663,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
       letterSpacing: 1.5,
       textTransform: 'uppercase',
     },
-    detailFooter: {
-      flexDirection: 'row',
-      gap: 12,
-      paddingHorizontal: layout.padding.horizontal,
-      paddingTop: 16,
-      paddingBottom: Math.max(insets.bottom + 6, 22),
-      borderTopWidth: 1,
-      borderTopColor: colors.border,
-      backgroundColor: colors.background,
-      marginBottom: Platform.OS === 'android' ? 4 : 0,
-    },
-    footerMicBtn: {
-      width: 58,
-      height: 58,
-      borderRadius: 14,
-      borderWidth: 1.5,
-      borderColor: colors.border,
-      backgroundColor: isDark ? colors.backgroundDark : colors.surfaceContainerLowest,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    footerMicBadge: {
-      position: 'absolute',
-      top: -5,
-      right: -5,
-      minWidth: 20,
-      height: 20,
-      borderRadius: 10,
-      paddingHorizontal: 5,
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderWidth: 2,
-      borderColor: colors.background,
-    },
-    footerMicBadgeText: {
-      fontFamily: 'Inter_700Bold',
-      fontSize: 11,
-      color: '#FFFFFF',
-    },
     recInlinePanel: {
       marginHorizontal: layout.padding.horizontal,
       marginBottom: 10,
@@ -1865,22 +1708,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
       fontFamily: 'Inter_500Medium',
       fontSize: 15,
       color: colors.text
-    },
-    fontSizeControls: {
-      flexDirection: 'row',
-      backgroundColor: colors.backgroundDark,
-      borderRadius: 20,
-      paddingHorizontal: 8,
-      paddingVertical: 4,
-      alignItems: 'center',
-    },
-    fontSizeBtn: {
-      paddingHorizontal: 8,
-    },
-    fontSizeBtnText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 13,
-      color: colors.text,
     },
     sourceSection: {
       marginTop: 24,
@@ -2108,209 +1935,96 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
         <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
 
-        <View style={styles.readingProgressBarContainer}>
-          <Animated.View style={[styles.readingProgressBar, { width: progressBarWidth }]} />
-        </View>
-
         <View style={styles.detailHeader}>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <TouchableOpacity style={styles.headerPillLeft} onPress={() => navigation.goBack()}>
-              <Ionicons name="arrow-back" size={16} color={colors.text} />
-              <Text style={styles.backBtn}>{t('backBtn', lang).replace(/^[\u2190<-]+\s*/g, '')}</Text>
+          <TouchableOpacity style={styles.toolbarButton} onPress={() => navigation.goBack()} accessibilityRole="button" accessibilityLabel={t('backBtn', lang)}>
+            <Ionicons name="arrow-back" size={20} color={colors.text} />
+          </TouchableOpacity>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, alignItems: 'center', flexShrink: 1 }}>
+            <TouchableOpacity style={styles.toolbarButton} onPress={toggleSpeech} accessibilityRole="button" accessibilityLabel={t(isSpeaking ? 'readerStop' : 'readerListen', localLang)}>
+              <Ionicons name={isSpeaking ? 'stop' : 'play'} size={16} color={colors.text} />
+              <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 13, color: colors.text }}>{t(isSpeaking ? 'readerStop' : 'readerListen', localLang)}</Text>
             </TouchableOpacity>
-          </View>
-          <View style={{ flexDirection: 'row', gap: 14, alignItems: 'center' }}>
-            <TouchableOpacity onPress={toggleSpeech}>
-              <Text style={{ fontSize: 24, color: isSpeaking ? colors.primary : colors.text }}>
-                {isSpeaking ? '⏸' : '▶'}
-              </Text>
+            <TouchableOpacity style={styles.toolbarButton} onPress={() => setReaderSettingsOpen(true)} accessibilityRole="button" accessibilityLabel={t('readerSettings', localLang)}>
+              <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 17, color: colors.text }}>Aa</Text>
             </TouchableOpacity>
-            <View style={styles.fontSizeControls}>
-              <TouchableOpacity onPress={() => setFontSize(Math.max(12, fontSize - 1))} style={styles.fontSizeBtn}>
-                <Text style={styles.fontSizeBtnText}>A-</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => setFontSize(Math.min(24, fontSize + 1))} style={styles.fontSizeBtn}>
-                <Text style={styles.fontSizeBtnText}>A+</Text>
-              </TouchableOpacity>
-            </View>
-            <TouchableOpacity onPress={shareStoryAsText} accessibilityRole="button" accessibilityLabel={t('shareBtn', lang)}>
-              <Ionicons name="share-social" size={22} color={colors.text} />
+            <TouchableOpacity style={styles.toolbarButton} onPress={shareStoryAsText} accessibilityRole="button" accessibilityLabel={t('shareBtn', lang)}>
+              <Ionicons name="share-social-outline" size={20} color={colors.text} />
             </TouchableOpacity>
             <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-              <TouchableOpacity onPress={handleLike}>
-                <Ionicons name={liked ? "heart" : "heart-outline"} size={26} color={liked ? categoryTheme.accent : colors.text} />
+              <TouchableOpacity style={styles.toolbarButton} onPress={handleLike} accessibilityRole="button" accessibilityLabel={t('readerFavorite', localLang)} accessibilityState={{ selected: liked }}>
+                <Ionicons name={liked ? 'heart' : 'heart-outline'} size={22} color={liked ? colors.readerAccent : colors.text} />
               </TouchableOpacity>
             </Animated.View>
           </View>
         </View>
 
-        <Animated.ScrollView
+        <Reanimated.ScrollView
+          ref={readerScrollRef}
+          contentContainerStyle={{ paddingBottom: Math.max(insets.bottom, 16) + 100 }}
           showsVerticalScrollIndicator={false}
           onLayout={(event) => {
             scrollViewportHeight.current = event.nativeEvent.layout.height;
+            readerViewport.set(event.nativeEvent.layout.height);
             evaluateShortStoryReadState();
           }}
           onContentSizeChange={(contentWidth, contentHeight) => {
             scrollContentHeight.current = contentHeight;
             evaluateShortStoryReadState();
           }}
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-            {
-              useNativeDriver: false,
-              listener: (event) => {
-                if (!hasReachedBottom.current) {
-                  const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
-                  // Report reading progress in 10% steps for Library's
-                  // "Kaldığın yerden" row (cleared once the read completes).
-                  const scrollable = contentSize.height - layoutMeasurement.height;
-                  if (scrollable > 0 && story?.story_id && updateStoryProgress) {
-                    const ratio = Math.min(1, Math.max(0, contentOffset.y / scrollable));
-                    if (ratio >= 0.1 && ratio - lastProgressReport.current >= 0.1) {
-                      lastProgressReport.current = ratio;
-                      updateStoryProgress(story.story_id, ratio);
-                    }
-                  }
-                  if (hasReachedReadingCompletion({
-                    contentOffsetY: contentOffset.y,
-                    contentHeight: contentSize.height,
-                    viewportHeight: layoutMeasurement.height,
-                  })) {
-                    hasReachedBottom.current = true;
-                    markStoryReadIfNeeded();
-                    // Completion now triggered by navigating to UseInConversation
-                    releasePendingBadge();
-                  }
+          onScroll={(event) => {
+            if (!hasReachedBottom.current) {
+              const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
+              // Report reading progress in 10% steps for Library's
+              // "Kaldığın yerden" row (cleared once the read completes).
+              const scrollable = contentSize.height - layoutMeasurement.height;
+              if (scrollable > 0 && story?.story_id && updateStoryProgress) {
+                const ratio = Math.min(1, Math.max(0, contentOffset.y / scrollable));
+                if (ratio >= 0.1 && ratio - lastProgressReport.current >= 0.1) {
+                  lastProgressReport.current = ratio;
+                  updateStoryProgress(story.story_id, ratio);
                 }
-              },
+              }
+              if (hasReachedReadingCompletion({
+                contentOffsetY: contentOffset.y,
+                contentHeight: contentSize.height,
+                viewportHeight: layoutMeasurement.height,
+              })) {
+                hasReachedBottom.current = true;
+                markStoryReadIfNeeded();
+                // Completion now triggered by navigating to UseInConversation
+                releasePendingBadge();
+              }
             }
-          )}
+          }}
           scrollEventThrottle={16}
         >
-          <View style={[styles.storyHero, {
-            backgroundColor: categoryTheme.backgroundColor,
-            borderColor: categoryTheme.borderColor,
-          }]}>
-            {(() => {
-              if (!categoryImage.source) return null;
-              return (
-                <>
-                  <Image
-                    source={categoryImage.source}
-                    style={[StyleSheet.absoluteFill, {
-                      width: '100%',
-                      height: '100%',
-                      opacity: isDark ? 0.22 : 0.40,
-                      transform: [
-                        { rotate: categoryImage.rotate },
-                        { scaleX: categoryImage.flip ? -1 : 1 }
-                      ]
-                    }]}
-                    resizeMode="cover"
-                  />
-                  <View style={[StyleSheet.absoluteFill, { backgroundColor: categoryImage.tint }]} />
-                </>
-              );
-            })()}
-            <View style={{ paddingVertical: 16, paddingHorizontal: 20 }}>
-              <Animated.Text style={[styles.detailTitle, titleEnterStyle]}>{displayTitle}</Animated.Text>
-              {usageDate ? (
-                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 }}>
-                  <View style={{ backgroundColor: isDark ? `${categoryTheme.accent}26` : '#FFFFFF', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6, flexDirection: 'row', alignItems: 'center', gap: 4, borderWidth: 1, borderColor: `${categoryTheme.accent}40` }}>
-                    <Ionicons name="checkmark-done" size={14} color={categoryTheme.accent} />
-                    <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12, color: categoryTheme.accent }}>
-                      {t('storyCraftedPreviouslyLabel', localLang, { date: new Date(usageDate).toLocaleDateString(intlLocaleFor(localLang)) })}
-                    </Text>
-                  </View>
-                </View>
-              ) : null}
-              <View style={{ flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 1 }}>
-                  <Ionicons name="time-outline" size={16} color={colors.textSecondary} />
-                  <Text style={styles.metaItem}>{story.min} {t('minLabel', localLang)}</Text>
-                </View>
-                <Text numberOfLines={1} style={[styles.metaItem, { color: categoryTheme.borderColor, fontFamily: 'Inter_500Medium', textAlign: 'right', flexShrink: 1 }]}>
-                  {displayCat}
-                </Text>
-              </View>
-            </View>
+          <View style={styles.storyHero}>
+            <Animated.Text style={[styles.detailTitle, titleEnterStyle]}>{displayTitle}</Animated.Text>
+            <Text style={styles.metaItem}>
+              {story.min} {t('minLabel', localLang)}{' · '}
+              <Text style={{ color: colors.readerAccentText }}>{displayCat}</Text>
+            </Text>
+            {usageDate ? (
+              <Text style={[styles.metaItem, { marginTop: 6 }]}>
+                {t('storyCraftedPreviouslyLabel', localLang, { date: new Date(usageDate).toLocaleDateString(intlLocaleFor(localLang)) })}
+              </Text>
+            ) : null}
           </View>
 
           <View style={{ paddingHorizontal: layout.padding.horizontal }}>
             {oneMinuteSummary ? (
-              <View style={[
-                styles.oneMinuteSummaryCard,
-                {
-                  borderColor: categoryTheme.borderColor,
-                  backgroundColor: isDark ? colors.backgroundDark : categoryTheme.backgroundColor,
-                },
-              ]}>
-                <TouchableOpacity
-                  onPress={handleOneMinuteSummaryPress}
-                  activeOpacity={0.86}
-                  accessibilityRole="button"
-                  accessibilityState={{ expanded: isPremium ? oneMinuteSummaryOpen : false }}
-                  accessibilityLabel={t('oneMinuteSummaryCta', localLang)}
-                  style={styles.oneMinuteSummaryHeader}
-                >
-                  <View style={[styles.oneMinuteSummaryIcon, { backgroundColor: `${categoryTheme.accent}1F` }]}>
-                    <Ionicons name="sparkles" size={20} color={categoryTheme.accent} />
-                  </View>
-                  <View style={styles.oneMinuteSummaryHeading}>
-                    <Text style={styles.oneMinuteSummaryCta}>{t('oneMinuteSummaryCta', localLang)}</Text>
-                    <Text style={styles.oneMinuteSummarySubtitle}>{t('oneMinuteSummarySubtitle', localLang)}</Text>
-                  </View>
-                  <View style={styles.oneMinuteSummaryTrailing}>
-                    {!isPremium ? (
-                      <View style={[styles.oneMinuteSummaryPremiumBadge, { borderColor: `${categoryTheme.accent}66` }]}>
-                        <Ionicons name="lock-closed" size={10} color={categoryTheme.accent} />
-                        <Text style={[styles.oneMinuteSummaryPremiumText, { color: categoryTheme.accent }]}>
-                          {t('oneMinuteSummaryPremium', localLang)}
-                        </Text>
-                      </View>
-                    ) : null}
-                    <Ionicons
-                      name={oneMinuteSummaryOpen && isPremium ? 'chevron-up' : 'chevron-down'}
-                      size={18}
-                      color={colors.textSecondary}
-                    />
-                  </View>
-                </TouchableOpacity>
-
-                {oneMinuteSummaryOpen && isPremium ? (
-                  <View style={[styles.oneMinuteSummaryBody, { borderTopColor: `${categoryTheme.borderColor}66` }]}>
-                    <View style={styles.oneMinuteSummaryMetaRow}>
-                      <Text style={[styles.oneMinuteSummaryLabel, { color: categoryTheme.accent }]}>
-                        {t('oneMinuteSummaryTitle', localLang)}
-                      </Text>
-                      <View style={styles.oneMinuteSummaryDurationPill}>
-                        <Ionicons name="time-outline" size={13} color={colors.textSecondary} />
-                        <Text style={styles.oneMinuteSummaryDurationText}>
-                          {t('oneMinuteSummaryDuration', localLang)}
-                        </Text>
-                      </View>
-                    </View>
-                    <Text style={styles.oneMinuteSummaryText}>{oneMinuteSummary}</Text>
-                    <TouchableOpacity
-                      onPress={handleReadFullStory}
-                      accessibilityRole="button"
-                      accessibilityLabel={t('oneMinuteSummaryFullStory', localLang)}
-                      style={[styles.oneMinuteSummaryFullStoryButton, { borderColor: categoryTheme.borderColor }]}
-                    >
-                      <Text style={[styles.oneMinuteSummaryFullStoryText, { color: categoryTheme.accent }]}>
-                        {t('oneMinuteSummaryFullStory', localLang)}
-                      </Text>
-                      <Ionicons name="arrow-down" size={15} color={categoryTheme.accent} />
-                    </TouchableOpacity>
-                  </View>
-                ) : null}
-              </View>
+              <TouchableOpacity onPress={handleOneMinuteSummaryPress} accessibilityRole="button" accessibilityLabel={t('oneMinuteSummaryCta', localLang)} accessibilityHint={t(isPremium ? 'oneMinuteSummarySubtitle' : 'readerSummaryLocked', localLang)} style={styles.summaryChip}>
+                <Ionicons name="sparkles" size={16} color={colors.readerAccent} />
+                <Text style={styles.summaryChipText}>{t('oneMinuteSummaryCta', localLang)}</Text>
+                {!isPremium ? <Ionicons name="lock-closed-outline" size={14} color={colors.readerAccentText} /> : null}
+              </TouchableOpacity>
             ) : null}
 
             {parsedBody.format === 'p1' ? (
               <StoryBody
                 segments={parsedBody.segments}
                 fontSize={fontSize}
+                lineSpacing={lineSpacing}
                 categoryTheme={categoryTheme}
                 lang={localLang}
                 onReflectionPress={() => navigation.navigate('UseInConversation', { story: localStory || story })}
@@ -2330,7 +2044,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                     accessibilityLabel={t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
                   >
                     <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={16} color={categoryTheme.accent} />
-                    <Text style={[styles.takeawaySaveText, { color: categoryTheme.accent }]}>
+                    <Text style={[styles.takeawaySaveText, { color: categoryTheme.textAccent }]}>
                       {t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
                     </Text>
                   </TouchableOpacity>
@@ -2356,7 +2070,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   return (
                     <Text
                       key={idx}
-                      style={[styles.detailBody, { fontSize, lineHeight: Math.round(fontSize * 1.55) }]}
+                      style={[styles.detailBody, { fontSize, lineHeight: Math.round(fontSize * lineSpacing) }]}
                     >
                       {trimmedText}
                     </Text>
@@ -2372,7 +2086,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                         backgroundColor: categoryTheme.backgroundColor,
                       },
                     ]}>
-                      <Text style={[styles.quoteText, { fontSize: fontSize + 2, lineHeight: (fontSize + 2) * 1.5 }]}>
+                      <Text style={[styles.quoteText, { fontSize: fontSize + 2, lineHeight: (fontSize + 2) * lineSpacing }]}>
                         "{seg.content}"
                       </Text>
                     </View>
@@ -2393,11 +2107,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
                     }]}>
                       <View style={styles.takeawayLabelRow}>
                         <Ionicons name="bulb-outline" size={15} color={categoryTheme.accent} />
-                        <Text style={[styles.takeawayLabel, { color: categoryTheme.accent }]}>
+                        <Text style={[styles.takeawayLabel, { color: categoryTheme.textAccent }]}>
                           {t('takeawayLabel', lang)}
                         </Text>
                       </View>
-                      <Text style={[styles.takeawayText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * 1.5 }]}>
+                      <Text style={[styles.takeawayText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * lineSpacing }]}>
                         {seg.content}
                       </Text>
                       {FEATURE_FLAGS.careerPathV1 ? (
@@ -2410,7 +2124,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                           accessibilityLabel={t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
                         >
                           <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={16} color={categoryTheme.accent} />
-                          <Text style={[styles.takeawaySaveText, { color: categoryTheme.accent }]}>
+                          <Text style={[styles.takeawaySaveText, { color: categoryTheme.textAccent }]}>
                             {t(isTakeawaySaved ? 'career.takeaway.saved' : 'career.takeaway.save', lang)}
                           </Text>
                         </TouchableOpacity>
@@ -2430,11 +2144,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
                     >
                       <View style={styles.takeawayLabelRow}>
                         <Ionicons name="chatbubble-ellipses-outline" size={15} color={categoryTheme.borderColor} />
-                        <Text style={[styles.reflectionLabel, { color: categoryTheme.borderColor }]}>
+                        <Text style={[styles.reflectionLabel, { color: categoryTheme.textAccent }]}>
                           {t('reflectionLabel', lang)}
                         </Text>
                       </View>
-                      <Text style={[styles.reflectionText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * 1.5 }]}>
+                      <Text style={[styles.reflectionText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * lineSpacing }]}>
                         {seg.content}
                       </Text>
                     </TouchableOpacity>
@@ -2453,7 +2167,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                         <Text style={[styles.contrastText, { color: colors.textSecondary }]}>{parts[0]}</Text>
                       </View>
                       <View style={[styles.contrastCol, { backgroundColor: categoryTheme.backgroundColor, borderColor: categoryTheme.borderColor, borderWidth: 1 }]}>
-                        <Text style={[styles.contrastLabel, { color: categoryTheme.accent }]}>{t('contrastAfterLabel', lang)}</Text>
+                        <Text style={[styles.contrastLabel, { color: categoryTheme.textAccent }]}>{t('contrastAfterLabel', lang)}</Text>
                         <Text style={[styles.contrastText, { color: colors.text }]}>{parts[1]}</Text>
                       </View>
                     </View>
@@ -2504,7 +2218,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
               <View style={[styles.storyEngagementCard, { backgroundColor: categoryTheme.backgroundColor, borderColor: categoryTheme.borderColor }]}>
                 <View style={styles.takeawayLabelRow}>
                   <Ionicons name="sparkles-outline" size={16} color={categoryTheme.accent} />
-                  <Text style={[styles.takeawayLabel, { color: categoryTheme.accent }]}>{t('career.engagement.title', lang)}</Text>
+                  <Text style={[styles.takeawayLabel, { color: categoryTheme.textAccent }]}>{t('career.engagement.title', lang)}</Text>
                 </View>
                 <Text style={styles.storyEngagementCopy}>{t('career.engagement.copy', lang)}</Text>
                 <View style={styles.storyEngagementActions}>
@@ -2516,7 +2230,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                     accessibilityState={{ disabled: isTakeawaySaved }}
                   >
                     <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={17} color={categoryTheme.accent} />
-                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.accent }]}>{t(isTakeawaySaved ? 'career.engagement.saved' : 'career.engagement.save', lang)}</Text>
+                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.textAccent }]}>{t(isTakeawaySaved ? 'career.engagement.saved' : 'career.engagement.save', lang)}</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: colors.background }]}
@@ -2524,7 +2238,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                     accessibilityRole="button"
                   >
                     <Ionicons name="mic-outline" size={17} color={categoryTheme.accent} />
-                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.accent }]}>{t('career.engagement.voice', lang)}</Text>
+                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.textAccent }]}>{t('career.engagement.voice', lang)}</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: colors.background }]}
@@ -2532,16 +2246,17 @@ const StoryDetailScreen = ({ route, navigation }) => {
                     accessibilityRole="button"
                   >
                     <Ionicons name="chatbubbles-outline" size={17} color={categoryTheme.accent} />
-                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.accent }]}>{t('career.engagement.conversation', lang)}</Text>
+                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.textAccent }]}>{t('career.engagement.conversation', lang)}</Text>
                   </TouchableOpacity>
                 </View>
               </View>
             ) : null}
 
-            {/* ── "Sohbette Kullan" entry — removed from body, now in footer ─ */}
           </View>
-          <View style={{ height: 100 }} />
-        </Animated.ScrollView>
+          <View onLayout={(event) => endActionsY.set(event.nativeEvent.layout.y)} style={{ paddingHorizontal: layout.padding.horizontal, paddingTop: 24 }}>
+            <ReaderActions onConversation={openConversation} onRecord={() => setRecPanelVisible(true)} lang={localLang} />
+          </View>
+        </Reanimated.ScrollView>
 
         {/* ── Ses Kaydı Paneli (satır içi — hikâye okunurken erişilebilir) ── */}
         {recPanelVisible ? (
@@ -2576,7 +2291,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                   <Ionicons name={isRecording ? 'stop' : 'mic'} size={24} color="#FFFFFF" />
                 </View>
                 <View style={{ flex: 1 }}>
-                  <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 16, color: categoryTheme.accent }}>
+                  <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 16, color: categoryTheme.textAccent }}>
                     {isRecording
                       ? t('voiceRecordingStop', lang)
                       : t('voiceRecordingNew', lang)}
@@ -2639,73 +2354,30 @@ const StoryDetailScreen = ({ route, navigation }) => {
           </View>
         ) : null}
 
-        <View style={[styles.detailFooter, { alignItems: 'flex-start' }]}>
-          {/* Ses kaydı — kompakt mikrofon butonu (paneli açar) */}
-          <TouchableOpacity
-            onPress={() => setRecPanelVisible(v => !v)}
-            activeOpacity={0.85}
-            accessibilityRole="button"
-            accessibilityLabel={t('voiceRecordingsAccessibilityLabel', lang)}
-            style={[styles.footerMicBtn, {
-              borderColor: categoryTheme.borderColor,
-              backgroundColor: recPanelVisible ? categoryTheme.backgroundColor : (isDark ? colors.backgroundDark : '#FFFFFF'),
-            }]}
-          >
-            <Ionicons name={recPanelVisible ? 'mic' : 'mic-outline'} size={24} color={categoryTheme.accent} />
-            {audioRecordings.length > 0 ? (
-              <View style={[styles.footerMicBadge, { backgroundColor: categoryTheme.accent }]}>
-                <Text style={[styles.footerMicBadgeText, { color: readableTextOn(categoryTheme.accent) }]}>{audioRecordings.length}</Text>
-              </View>
-            ) : null}
-          </TouchableOpacity>
-
-          {/* PRIMARY: Sohbette Kullan — main CTA with micro-copy */}
-          <View style={{ flex: 1 }}>
-            <TouchableOpacity
-              onPress={openConversation}
-              accessibilityRole="button"
-              accessibilityLabel={t('story_detail_use_cta', lang)}
-              activeOpacity={0.9}
-            >
-              <LinearGradient
-                colors={[colors.ctaGradientStart, colors.ctaGradientEnd]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-                style={[
-                  styles.btnPrimaryGradient,
-                  {
-                    height: 58,
-                    borderWidth: 1,
-                    borderColor: isDark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.08)',
-                    shadowColor: colors.ctaGradientEnd,
-                    shadowOpacity: 0.35,
-                    shadowRadius: 14,
-                    shadowOffset: { width: 0, height: 8 },
-                    elevation: 8,
-                  },
-                ]}
-              >
-                <View style={[styles.btnPrimary, { height: 58, flexDirection: 'row', gap: 8 }]}>
-                  <Ionicons name="sparkles" size={18} color={colors.onPrimary} />
-                  <Text style={[styles.btnPrimaryText, { color: colors.onPrimary, fontSize: typography.sizes.ui + 3, letterSpacing: 0.2 }]}>
-                    {t('story_detail_use_cta', lang)}
-                  </Text>
-                  <Ionicons name="arrow-forward" size={17} color={colors.onPrimary} />
-                </View>
-              </LinearGradient>
-            </TouchableOpacity>
-            <Text style={{
-              fontFamily: 'Inter_400Regular',
-              fontSize: 12,
-              color: colors.textSecondary,
-              textAlign: 'center',
-              marginTop: 7,
-              opacity: 0.9,
-            }}>
-              {t('story_detail_use_cta_sub', lang)}
-            </Text>
-          </View>
-        </View>
+        <ReaderActions
+          compact
+          scrollOffset={readerScrollOffset}
+          viewportHeight={readerViewport}
+          endActionsY={endActionsY}
+          hidden={recPanelVisible || storyAdGate}
+          onConversation={openConversation}
+          lang={localLang}
+        />
+        <ReaderPanels
+          settingsVisible={readerSettingsOpen}
+          onCloseSettings={() => setReaderSettingsOpen(false)}
+          summaryVisible={oneMinuteSummaryOpen && isPremium}
+          onCloseSummary={handleReadFullStory}
+          summary={oneMinuteSummary}
+          title={displayTitle}
+          fontSize={fontSize}
+          setFontSize={setFontSize}
+          lineSpacing={lineSpacing}
+          setLineSpacing={setLineSpacing}
+          themePreference={themePreference}
+          setThemePreference={setThemePreference}
+          lang={localLang}
+        />
       </SafeAreaView>
 
       <AdOrPremiumSheet

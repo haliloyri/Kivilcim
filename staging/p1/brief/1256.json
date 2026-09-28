@@ -1,0 +1,65 @@
+{
+  "story_id": 1256,
+  "kind": "concept",
+  "book": {
+    "title": "Feel the Fear and Do It Anyway",
+    "author": "Susan Jeffers",
+    "year": "1987"
+  },
+  "confidence": "medium",
+  "confidence_note": "Jeffers contrasts the 'No-Win' model of decision-making, in which you agonize over choosing the 'right' path because the other must be 'wrong', with the 'No-Lose' model, in which each path offers opportunities to learn and grow, so neither choice can truly be a loss. She suggests doing your homework before deciding, then trusting the choice, and afterwards letting go of the outcome and correcting course if needed. Her examples are paraphrased; a job-change scenario is used as an illustration.",
+  "facts": [
+    "Jeffers describes two ways of approaching decisions: the No-Win model and the No-Lose model.",
+    "In the No-Win model, one option is 'right' and the other 'wrong'. You agonize beforehand, fearing the wrong choice, and afterwards replay what might have happened.",
+    "In the No-Lose model, both options are seen as paths with opportunities to learn, grow and meet new experiences.",
+    "Whatever you choose, you ask what you can learn from it, rather than whether it was the 'right' one.",
+    "Before deciding, Jeffers suggests doing your homework, focusing on the No-Lose view, setting priorities and trusting your impulses.",
+    "After deciding, she suggests letting go of the picture of how it must turn out, accepting responsibility, and correcting course if needed, without self-blame.",
+    "She argues this makes decisions far less frightening, because no choice can destroy you."
+  ],
+  "tension": "Two good options, one decision, and the fear of choosing wrong keeps you frozen.",
+  "opening_idea": "Two job offers sit on the table. Each has something the other lacks. Weeks pass, and the fear of choosing wrong makes the choice impossible.",
+  "lessons": [
+    {
+      "idea": "Most decisions aren't right versus wrong.",
+      "anchor": "The No-Win model"
+    },
+    {
+      "idea": "Every path offers something.",
+      "anchor": "The No-Lose model"
+    },
+    {
+      "idea": "Decide, then let go and adjust.",
+      "anchor": "Jeffers's after-decision advice"
+    }
+  ],
+  "reflect": [
+    "Which decision are you stuck on because you fear choosing wrong?",
+    "What could you learn from each option?"
+  ],
+  "reflect_final": "What would change if you believed neither choice could truly be a loss?",
+  "use_cases": [
+    {
+      "situation": "You've been stuck for weeks between two options.",
+      "move": "List what you'd learn and gain on each path, then choose and commit.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member is paralyzed about which approach to take.",
+      "move": "Reframe: both routes teach us something; pick one and we'll adjust.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child agonizes over choosing a school or activity.",
+      "move": "Show them what's good about each, and that they can change course later.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Choose a path to learn from, not a test to pass.",
+  "conversation_variants": {
+    "punchline_idea": "Jeffers says most decisions aren't right-or-wrong; both paths can be wins.",
+    "thirty_sec_idea": "No-Win vs No-Lose, homework before, let go after, correct course.",
+    "question_idea": "Which decision are you stuck on right now?",
+    "key_contrast_idea": "No-Win versus No-Lose"
+  }
+}

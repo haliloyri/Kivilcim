@@ -1,0 +1,70 @@
+{
+  "story_id": 1098,
+  "kind": "concept",
+  "book": {
+    "title": "Mindset: The New Psychology of Success (Zihin Gücü)",
+    "author": "Carol S. Dweck",
+    "year": "2006"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core concept (fixed vs. growth mindset, praising effort or process rather than talent) is central to the book. The book's own examples, the children's puzzle reactions and the praise study with fifth-graders, are well documented in it. The reference text says Dweck 'followed the two groups for ten years.' That is not supported: the book describes a study following students through the transition to junior high over roughly two years, so the ten-year claim is omitted. Exact percentages from the praise study are left out to avoid imprecision. 'Largely learnable' is softened to 'can be changed or taught,' which is how the book frames it.",
+  "facts": [
+    "The book opens with Dweck's early research: she gave children increasingly hard puzzles, expecting them to cope with failure. Instead, some children welcomed the difficulty, saying things like 'I love a challenge.'",
+    "Dweck contrasts two beliefs. In a fixed mindset, ability is a set amount. In a growth mindset, ability can be developed through effort, strategy and help from others.",
+    "People with a fixed mindset tend to treat mistakes as proof of inadequacy, so they avoid challenges that might expose them. People with a growth mindset tend to treat mistakes as information for improving.",
+    "In a study described in the book, children were praised after solving problems, either for their intelligence ('you must be smart') or for their effort.",
+    "Children praised for intelligence more often chose easier tasks afterward, lost enjoyment and did worse after hard problems. Some even misreported their scores. Children praised for effort more often chose challenging tasks and kept improving.",
+    "The book reports that students who held a growth mindset when entering junior high tended to see their grades rise over the following years, while fixed-mindset students' grades tended to decline.",
+    "Dweck argues that mindsets can be changed, and that the feedback adults give children shapes which mindset they develop."
+  ],
+  "tension": "Two children face the same hard problem with the same ability. One concludes 'this isn't for me' and the other concludes 'I need to work more.' The difference is not intelligence but a belief about whether ability can grow.",
+  "opening_idea": "Start with the surprise in Dweck's early research: she gave children puzzles that were too hard for them, and some of them loved it.",
+  "lessons": [
+    {
+      "idea": "What separates people who persist from those who give up is often their belief about whether ability can grow, not the ability itself.",
+      "anchor": "The children who said 'I love a challenge' when puzzles got harder."
+    },
+    {
+      "idea": "A mistake means something different in each mindset: a threat to identity or a piece of information.",
+      "anchor": "The fixed-mindset thought 'if I fail, it shows I'm not smart' versus the growth-mindset question 'what can I change next time?'"
+    },
+    {
+      "idea": "Praising talent can backfire. Praising effort and strategy builds willingness to take on challenges.",
+      "anchor": "Children praised as 'smart' chose easier tasks afterward, while effort-praised children chose harder ones."
+    },
+    {
+      "idea": "Mindset can be taught and changed, so the way we give feedback matters.",
+      "anchor": "Dweck's argument that adult feedback shapes children's mindset."
+    }
+  ],
+  "reflect": [
+    "When you last failed at something, did you read it as evidence about who you are or as information about what to change?",
+    "What kind of praise do you usually give others: for being talented, or for how they worked?",
+    "Which area of your life have you quietly decided is 'just not for me'?"
+  ],
+  "reflect_final": "Think of your most recent failure. What did you tell yourself it meant, and where did that interpretation lead you?",
+  "use_cases": [
+    {
+      "situation": "A team member's project fell short and they're discouraged in a review meeting.",
+      "move": "Skip the verdict and ask: 'Which part of the approach would you change next time, and what did you learn about the problem?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child brings home a good grade or finishes a hard task.",
+      "move": "Replace 'You're so smart' with 'You kept at it even when it got hard, and that's why it worked.'",
+      "context": "family"
+    },
+    {
+      "situation": "You catch yourself thinking 'I'm just not good at this' after a setback.",
+      "move": "Add 'yet' to the sentence and write down one specific strategy to try differently on the next attempt.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Praise the effort and the strategy, not the talent, because praise for talent teaches people to avoid challenges.",
+  "conversation_variants": {
+    "punchline_idea": "Telling a kid 'you're smart' can make them pick easier problems.",
+    "thirty_sec_idea": "Dweck praised children either for intelligence or for effort. The 'smart' group then avoided hard tasks and did worse, while the effort group sought challenges.",
+    "question_idea": "Ask whether the other person believes talent is fixed or can be built, and how that belief affects what they try.",
+    "key_contrast_idea": "In one mindset a mistake is a verdict on who you are. In the other it's feedback on what you did."
+  }
+}

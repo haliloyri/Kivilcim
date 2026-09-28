@@ -1,0 +1,38 @@
+{
+  "story_id": 1310,
+  "kind": "concept",
+  "book": { "title": "Thinking in Systems: A Primer", "author": "Donella H. Meadows", "year": "2008" },
+  "confidence": "high",
+  "confidence_note": "Balancing and reinforcing feedback loops are core concepts of the book, with its own examples: a thermostat and a cooling cup of coffee for balancing loops, and money earning interest in a bank account (and population growth) for reinforcing loops. The TR text's social-network example and the 'debt spiral' framing are not from the book and are excluded; the book does note reinforcing loops can drive decline as well as growth. The claim that a small intervention can reverse a bad loop is kept only in the general form Meadows gives (looking for leverage in the loop structure), not as a guarantee.",
+  "facts": [
+    "Meadows distinguishes two basic feedback loops: balancing loops that push a stock toward a goal, and reinforcing loops that amplify whatever direction a stock is moving.",
+    "Her balancing examples include a thermostat that turns the heat on and off to keep a room near a setting, and a hot cup of coffee cooling toward room temperature.",
+    "Her reinforcing example is money in a bank account: the more money, the more interest earned, and the interest adds to the money.",
+    "Reinforcing loops produce exponential growth or runaway collapse; the same structure that compounds savings can compound decline.",
+    "She argues that a system's behavior over time reveals which loop is dominant, and that seeing the loop structure is the first step toward finding leverage."
+  ],
+  "tension": "The same loop that makes savings snowball can make a decline accelerate, and from inside it the direction often feels like luck rather than structure.",
+  "opening_idea": "Put a cup of hot coffee next to a bank account: one always drifts toward room temperature, the other keeps growing on itself. Ask what makes the difference.",
+  "lessons": [
+    { "idea": "Balancing loops pull things back toward a goal, whether or not that goal is the one you want.", "anchor": "The thermostat and the coffee cooling to room temperature." },
+    { "idea": "Reinforcing loops amplify direction, so small differences compound over time, up or down.", "anchor": "Interest earned on money adds to the money, which earns more interest." },
+    { "idea": "Recognizing which loop dominates is what makes an effective intervention possible.", "anchor": "Meadows's point that behavior over time reveals the dominant loop." }
+  ],
+  "reflect": [
+    "What in your life seems to grow on itself, for better or worse?",
+    "What keeps getting pulled back to the same level no matter how hard you push?"
+  ],
+  "reflect_final": "Pick one trend you care about, sketch in a sentence what feeds it and what it feeds back into, and ask whether it behaves more like the thermostat or the bank account. Afterward, notice whether that changes where you would push.",
+  "use_cases": [
+    { "situation": "A metric keeps drifting back to the same level despite repeated pushes.", "move": "Say: 'This looks like a thermostat, a balancing loop pulling back to some goal. What target is the system actually aiming at?'", "context": "meeting" },
+    { "situation": "A colleague is caught in a cycle where falling behind causes rushed work, which causes more rework.", "move": "Draw the cycle with them on paper and pick one link to weaken, such as protecting time for rework before new tasks.", "context": "oneonone" },
+    { "situation": "You notice a habit that feeds on itself, like skipping one workout making the next easier to skip.", "move": "Name it as a reinforcing loop and choose one point in the loop to interrupt next time it starts.", "context": "self" }
+  ],
+  "pocket_idea": "A cup of coffee always cools to the room; money in the bank grows on its own interest. Before pushing on a trend, ask which of the two you are looking at.",
+  "conversation_variants": {
+    "punchline_idea": "The loop that makes savings snowball is exactly the same loop that makes a decline speed up.",
+    "thirty_sec_idea": "Meadows compares a thermostat, which keeps pulling a room back to its setting, with a bank account, where interest earns more interest; one resists change, the other amplifies it.",
+    "question_idea": "Can you think of something in your life that got easier or harder the more it happened?",
+    "key_contrast_idea": "Some things pull back toward a set point; others run away in whatever direction they start."
+  }
+}

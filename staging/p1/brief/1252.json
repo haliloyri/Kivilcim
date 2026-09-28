@@ -1,0 +1,65 @@
+{
+  "story_id": 1252,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Mind Map Book",
+    "author": "Tony Buzan",
+    "year": "1993"
+  },
+  "confidence": "medium",
+  "confidence_note": "Buzan repeatedly points to Leonardo da Vinci's notebooks as an example of 'whole-brain' note-taking: pages that mix sketches, diagrams, arrows and words rather than linear text. Leonardo's surviving notebooks (thousands of pages, with his famous mirror writing) do combine drawings and text across anatomy, engineering, nature and art. Buzan uses them as inspiration for Mind Maps. The link between Leonardo's genius and his note-taking method is Buzan's interpretation, framed as such.",
+  "facts": [
+    "Leonardo da Vinci left thousands of pages of notebooks, many of which survive today.",
+    "They cover an astonishing range: anatomy, flight, water, machines, geology, painting, optics.",
+    "His pages are famously visual: sketches, diagrams, arrows and notes mixed together, often in mirror writing.",
+    "Buzan argues that great thinkers such as Leonardo used images, connections and words together, rather than only linear lists.",
+    "He contrasts this with standard school note-taking, which is mostly linear text in one color.",
+    "Buzan's Mind Map was designed partly as a way for anyone to take notes in a more visual, connected way.",
+    "The claim that Leonardo's note style explains his genius is Buzan's interpretation, not established fact."
+  ],
+  "tension": "We're taught to take notes in straight lines of text. One of history's greatest minds didn't.",
+  "opening_idea": "Open a page of Leonardo's notebooks and you won't find neat lines of text. You'll find a flying machine, a whirlpool, a face and arrows connecting them.",
+  "lessons": [
+    {
+      "idea": "Mix images and words.",
+      "anchor": "Leonardo's notebooks"
+    },
+    {
+      "idea": "Connections matter as much as content.",
+      "anchor": "Arrows and links on the page"
+    },
+    {
+      "idea": "Linear notes aren't the only way.",
+      "anchor": "Buzan's critique of school notes"
+    }
+  ],
+  "reflect": [
+    "What do your notes look like right now?",
+    "When have you understood something by drawing it?"
+  ],
+  "reflect_final": "What would change if your next page of notes looked more like Leonardo's?",
+  "use_cases": [
+    {
+      "situation": "You're studying something complex and your notes feel lifeless.",
+      "move": "Rewrite one page with sketches, arrows and key words instead of sentences.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team is exploring a messy problem in a meeting.",
+      "move": "Map it visually on a whiteboard with images and connections.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child struggles to remember what they read.",
+      "move": "Encourage them to draw what they learned, with little pictures and labels.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Think on paper the way your mind works: images, words and connections.",
+  "conversation_variants": {
+    "punchline_idea": "Leonardo da Vinci's notebooks look less like essays and more like Mind Maps.",
+    "thirty_sec_idea": "Thousands of pages, sketches plus words, Buzan's inspiration, linear notes contrast.",
+    "question_idea": "What do your notes look like?",
+    "key_contrast_idea": "Lines of text versus images and connections"
+  }
+}

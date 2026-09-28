@@ -1,0 +1,71 @@
+{
+  "story_id": 1082,
+  "kind": "concept",
+  "book": {
+    "title": "Good to Great",
+    "author": "Jim Collins",
+    "year": "2001"
+  },
+  "confidence": "high",
+  "confidence_note": "The Hedgehog Concept, its source in Isaiah Berlin's essay 'The Hedgehog and the Fox', the three circles, and the contrast between good-to-great companies (hedgehogs) and comparison companies (foxes) are central to the book and well documented. The Walgreens case is also firmly in the book: convenient drugstores, the economic denominator 'profit per customer visit', and leaving the restaurant business. Precise performance multiples and research-hour totals are left out to avoid misquoting figures.",
+  "facts": [
+    "Collins's research team compared companies that made a sustained jump from good to great results with comparison companies in the same industries that did not.",
+    "Collins borrowed the hedgehog-and-fox metaphor from Isaiah Berlin's essay 'The Hedgehog and the Fox'. The fox knows many things and keeps devising new attacks. The hedgehog knows one big thing: it rolls into a spiky ball every time, and the fox always loses.",
+    "The book found that the good-to-great companies were hedgehogs. Their strategy was built on one simple, deeply understood concept. The comparison companies behaved like foxes, scattered and inconsistent.",
+    "The Hedgehog Concept sits at the intersection of three circles: what you can be the best in the world at, what drives your economic engine, and what you are deeply passionate about.",
+    "Collins stresses that the concept is an understanding of what you CAN be best at, not a goal or intention to be best. Equally important is knowing what you cannot be best at, even if it is your current core business.",
+    "The economic circle is framed as a single 'economic denominator', a 'profit per X' metric that most drives the business.",
+    "In the Walgreens example, the company focused on being the best, most convenient drugstore. It tracked profit per customer visit and exited its restaurant business to concentrate on that focus.",
+    "Collins reports that arriving at a Hedgehog Concept was an iterative process that took the good-to-great companies years of discussion, not a single brainstorming session."
+  ],
+  "tension": "Clever, adaptable 'fox' strategies feel smarter and more exciting, yet Collins's data showed that the companies that won were the ones that stubbornly did one simple thing they could truly be best at.",
+  "opening_idea": "Open with the fable: a fox with endless clever plans loses every time to a hedgehog that knows only one move.",
+  "lessons": [
+    {
+      "idea": "Greatness came from simplicity and focus, not from chasing many opportunities.",
+      "anchor": "Good-to-great companies were hedgehogs; comparison companies were foxes."
+    },
+    {
+      "idea": "Find the overlap of three circles: best in the world at, economic engine, deep passion.",
+      "anchor": "The three-circle Hedgehog Concept."
+    },
+    {
+      "idea": "It's an understanding of what you can be best at, not a wish or goal. It also requires admitting what you can't be best at.",
+      "anchor": "Collins's distinction between intention and understanding."
+    },
+    {
+      "idea": "Pick one economic denominator that sharpens every decision.",
+      "anchor": "Walgreens: profit per customer visit, and leaving restaurants behind."
+    }
+  ],
+  "reflect": [
+    "Which of your activities are 'fox moves', clever and new but shallow?",
+    "What might you be doing well that you could never be the best at?",
+    "If you had to track just one 'profit per X' in your work or life, what would X be?"
+  ],
+  "reflect_final": "Where do your three circles overlap, and how much of your week actually goes there?",
+  "use_cases": [
+    {
+      "situation": "A strategy meeting where the team keeps adding new initiatives.",
+      "move": "Ask: 'Of these, which one could we honestly be best in the world at, and which one should we stop doing to fund it?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A direct report is spread across many projects and feels mediocre at all of them.",
+      "move": "Draw three circles with them (strength, value to the business, energy) and pick one project to double down on and one to hand off.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Planning your own year or career moves.",
+      "move": "Write one 'profit per X' metric for yourself, then drop one commitment that doesn't move it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Be the hedgehog: find the one thing where talent, economics and passion overlap, and keep doing it.",
+  "conversation_variants": {
+    "punchline_idea": "The fox is smarter, but the hedgehog wins every single time.",
+    "thirty_sec_idea": "Collins found that great companies weren't the cleverest. They were the ones that found the overlap of three circles and stayed there, like Walgreens with its convenient drugstores.",
+    "question_idea": "What's one thing you do well that you should stop doing because you'll never be the best at it?",
+    "key_contrast_idea": "Wanting to be the best versus understanding what you can actually be best at."
+  }
+}

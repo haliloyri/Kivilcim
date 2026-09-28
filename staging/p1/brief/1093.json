@@ -1,0 +1,63 @@
+{
+  "story_id": 1093,
+  "kind": "concept",
+  "book": {
+    "title": "Odaklanma Gücü (The Power of Focus)",
+    "author": "Jack Canfield (with Mark Victor Hansen and Les Hewitt)",
+    "year": "1999"
+  },
+  "confidence": "low",
+  "confidence_note": "The 'eat the frog' metaphor for doing your hardest task first is best known from Brian Tracy's 'Eat That Frog!' (2001), not from Canfield's 'The Power of Focus'. It cannot be confirmed that Canfield's book builds a chapter around it. The Mark Twain quote is widely considered apocryphal, and the book does not reliably use it. The existing text also says Canfield 'studied hundreds of successful people and found this pattern', and that claim is unverified, so it is left out here. Canfield's book broadly argues for focusing on your most important priorities and building productive habits. The brief keeps to that general concept and gives no book-specific case. The English original is usually dated 2000, and the given year of 1999 may not match.",
+  "facts": [
+    "The concept: pick the one task you most need to do and most want to avoid, and do it first, before easier work.",
+    "The popular image for this is 'eating the frog'. It is commonly credited to Mark Twain, but that attribution is doubtful.",
+    "The claimed mechanism: an avoided task keeps running in the back of your mind. That drains energy and scatters focus until the task is done.",
+    "The common opposite habit: starting the day with email and easy tasks, then leaving the hard task for the evening, when energy is low.",
+    "This fits Canfield's broader theme that results come from focusing on your top priorities rather than on whatever is convenient or urgent."
+  ],
+  "tension": "The task that matters most is often the one we push to the end of the day, and carrying it around all day costs more than doing it would.",
+  "opening_idea": "Picture having to do one unpleasant thing today and deciding whether it happens at 9 a.m. or hangs over you until 6 p.m.",
+  "lessons": [
+    {
+      "idea": "An avoided task drains you even while you are not doing it.",
+      "anchor": "The silent 'I still have to do that' loop running in the background."
+    },
+    {
+      "idea": "Order matters: energy and willpower are highest early, so spend them on the hardest item.",
+      "anchor": "Morning email feels productive but uses up your best hours."
+    },
+    {
+      "idea": "Clearing the hardest thing first makes the rest of the day feel lighter and move faster.",
+      "anchor": "Small tasks flow once the big one is gone."
+    }
+  ],
+  "reflect": [
+    "Which task on your list has waited the longest, and why do you keep avoiding it?",
+    "What do you usually do first in the morning, and is it actually your most important work?"
+  ],
+  "reflect_final": "If you did your most-avoided task first thing tomorrow, what would the rest of your day feel like?",
+  "use_cases": [
+    {
+      "situation": "Planning your workday the night before.",
+      "move": "Write one 'first thing' task on a sticky note, the one you least want to do, and don't open email until it's done.",
+      "context": "self"
+    },
+    {
+      "situation": "A team keeps postponing a hard decision from one meeting to the next.",
+      "move": "Propose: 'Let's take the decision we've been avoiding as item one, before status updates.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A difficult conversation with your partner or a family member keeps getting delayed.",
+      "move": "Suggest having it in the morning or early in the day: 'Can we talk about this first, before the day gets away from us?'",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Do the thing you're dreading first, and the dread doesn't get to follow you all day.",
+  "conversation_variants": {
+    "punchline_idea": "The hardest task only gets heavier the longer you carry it.",
+    "thirty_sec_idea": "An avoided task quietly drains focus all day. Doing it first, while your energy is high, frees the rest of the day.",
+    "question_idea": "Ask someone what they did first today, and whether it was the thing they most needed to do.",
+    "key_contrast_idea": "Easy-first gives you a busy morning and an unfinished evening. Hard-first gives you one tough hour and then a light day."
+  }
+}

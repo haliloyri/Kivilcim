@@ -1,0 +1,64 @@
+{
+  "story_id": 1150,
+  "kind": "concept",
+  "book": {
+    "title": "Grit: The Power of Passion and Perseverance",
+    "author": "Angela Duckworth",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The two equations are central to the book: talent x effort = skill, and skill x effort = achievement, so effort counts twice. The reference TR text's 'two swimmers' example (a gifted one overtaken by a hard-working one after ten years) cannot be found in the book and is left out. The book's own swimming case is sociologist Dan Chambliss's study of competitive swimmers, 'The Mundanity of Excellence', which concluded that top performance is made of many small, ordinary acts done consistently, not mysterious talent; that case is used instead. Duckworth's caution that the equations are a simplified model, not a precise formula, is kept.",
+  "facts": [
+    "Duckworth proposes two simple equations: talent x effort = skill, and skill x effort = achievement.",
+    "Talent is how quickly your skills improve when you invest effort. Achievement is what happens when you take your acquired skills and use them.",
+    "Effort therefore counts twice: it builds skill, and it makes skill productive.",
+    "She notes that these equations are a simplified model rather than a complete theory.",
+    "She draws on sociologist Dan Chambliss's study of competitive swimmers, 'The Mundanity of Excellence'. Chambliss concluded that excellence at the highest level is made of dozens of small skills and ordinary actions, practiced consistently and correctly until they add up.",
+    "Duckworth argues that we tend to overvalue visible talent and undervalue the effort behind it, partly because effort is less impressive to watch."
+  ],
+  "tension": "If some people really are more talented, why doesn't talent alone decide who achieves the most?",
+  "opening_idea": "Write two short equations on a whiteboard and notice that one word appears twice.",
+  "lessons": [
+    {
+      "idea": "Effort counts twice: it turns talent into skill and skill into achievement.",
+      "anchor": "The two equations"
+    },
+    {
+      "idea": "Excellence is made of many ordinary actions done consistently.",
+      "anchor": "Chambliss's 'Mundanity of Excellence' swimmers"
+    },
+    {
+      "idea": "We overrate talent because effort is less dramatic to watch.",
+      "anchor": "Duckworth on why 'naturals' impress us"
+    }
+  ],
+  "reflect": [
+    "Where are you waiting for talent to do work that only effort can do?",
+    "Which ordinary action, repeated, would make you excellent at something you care about?"
+  ],
+  "reflect_final": "What skill do you already have that isn't producing anything because it isn't being used?",
+  "use_cases": [
+    {
+      "situation": "A team member says they're 'just not naturally good' at presenting.",
+      "move": "Break presenting into a few small, ordinary skills and practice one each week.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child admires a 'naturally gifted' classmate.",
+      "move": "Talk about the hidden hours of ordinary practice behind anything that looks effortless.",
+      "context": "family"
+    },
+    {
+      "situation": "You've learned a skill but never use it.",
+      "move": "Pick one small project this month that forces you to use the skill you already have.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Effort counts twice: once to build skill, and again to put it to work.",
+  "conversation_variants": {
+    "punchline_idea": "In Duckworth's math, talent appears once but effort appears twice.",
+    "thirty_sec_idea": "The two equations and Chambliss's swimmers.",
+    "question_idea": "Which of your skills is sitting unused, waiting for effort?",
+    "key_contrast_idea": "Gift versus practice"
+  }
+}

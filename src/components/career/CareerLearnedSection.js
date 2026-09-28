@@ -1,19 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
 import { t } from '../../locales/i18n';
 import { getCategoryTheme } from '../../utils/categoryImages';
+import { listReachedMilestones } from '../../utils/learningMilestones';
 
 /**
  * "Öğrendiklerin" — answers "what did I actually get from this?" with books,
  * ideas, minutes, the strongest area, a small mind map and the latest ideas.
  */
-const CareerLearnedSection = ({ summary, onOpenStory }) => {
+const CareerLearnedSection = ({ summary, onOpenStory, onOpenMilestone }) => {
   const { colors, isDark, lang } = useTheme();
   if (!summary) return null;
   const isEmpty = summary.ideas === 0;
   const maxCount = Math.max(1, ...summary.categories.map((category) => category.count));
+  const reachedMilestones = listReachedMilestones(summary);
   const kpis = [
     [summary.books, 'career.learned.books'],
     [summary.ideas, 'career.learned.ideas'],
@@ -50,6 +52,48 @@ const CareerLearnedSection = ({ summary, onOpenStory }) => {
                 <Text style={[styles.caption, { color: colors.textSecondary }]}>
                   {t('career.learned.nextBooks', lang, { target: summary.nextBookMilestone.target, remaining: summary.nextBookMilestone.remaining })}
                 </Text>
+              </View>
+            ) : null}
+
+            {reachedMilestones.length ? (
+              <View style={styles.block}>
+                <Text style={[styles.eyebrow, { color: colors.textSecondary }]}>{t('career.learned.milestones', lang)}</Text>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipRow}>
+                  {reachedMilestones.map((milestone) => {
+                    const isBooks = milestone.type === 'books';
+                    const accent = isBooks ? colors.primary : getCategoryTheme(milestone.categoryRaw || milestone.category, isDark).accent;
+                    const label = isBooks ? t('career.milestone.booksChip', lang, { count: milestone.count }) : milestone.category;
+                    const a11y = isBooks
+                      ? t('career.milestone.booksTitle', lang, { count: milestone.count })
+                      : t('career.milestone.categoryTitle', lang, { category: milestone.category });
+                    return (
+                      <TouchableOpacity
+                        key={milestone.id}
+                        accessibilityRole="button"
+                        accessibilityLabel={a11y}
+                        activeOpacity={0.75}
+                        disabled={!onOpenMilestone}
+                        onPress={() => onOpenMilestone?.(milestone)}
+                        style={styles.chip}
+                      >
+                        <View style={[styles.chipIcon, { backgroundColor: `${accent}1F`, borderColor: `${accent}59` }]}>
+                          <Ionicons name={isBooks ? 'library-outline' : 'compass-outline'} size={22} color={accent} />
+                        </View>
+                        <Text numberOfLines={1} style={[styles.chipLabel, { color: colors.text }]}>{label}</Text>
+                      </TouchableOpacity>
+                    );
+                  })}
+                  {summary.nextBookMilestone ? (
+                    <View accessible accessibilityLabel={t('career.milestone.lockedChip', lang, { count: summary.nextBookMilestone.target })} style={styles.chip}>
+                      <View style={[styles.chipIcon, styles.chipLocked, { borderColor: colors.border }]}>
+                        <Ionicons name="lock-closed-outline" size={18} color={colors.textSecondary} />
+                      </View>
+                      <Text numberOfLines={1} style={[styles.chipLabel, { color: colors.textSecondary }]}>
+                        {t('career.milestone.booksChip', lang, { count: summary.nextBookMilestone.target })}
+                      </Text>
+                    </View>
+                  ) : null}
+                </ScrollView>
               </View>
             ) : null}
 
@@ -136,6 +180,11 @@ const styles = StyleSheet.create({
   barLabel: { width: 96, fontFamily: 'Inter_500Medium', fontSize: 12 },
   barTrack: { flex: 1, height: 8, borderRadius: 999, overflow: 'hidden' },
   barValue: { width: 22, textAlign: 'right', fontFamily: 'Inter_500Medium', fontSize: 12, fontVariant: ['tabular-nums'] },
+  chipRow: { gap: 12, paddingRight: 4 },
+  chip: { width: 68, alignItems: 'center', gap: 6 },
+  chipIcon: { width: 52, height: 52, borderRadius: 26, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
+  chipLocked: { borderStyle: 'dashed' },
+  chipLabel: { fontFamily: 'Inter_500Medium', fontSize: 11, textAlign: 'center', alignSelf: 'stretch' },
   recentRow: { flexDirection: 'row', alignItems: 'center', gap: 10, minHeight: 44 },
   recentDot: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
   recentTitle: { fontFamily: 'Inter_500Medium', fontSize: 14, lineHeight: 19 },

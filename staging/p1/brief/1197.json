@@ -1,0 +1,64 @@
+{
+  "story_id": 1197,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Body Keeps the Score",
+    "author": "Bessel van der Kolk",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "The book opens with van der Kolk's early work at a Veterans Administration clinic in Boston in the late 1970s, including his first patient, a Vietnam veteran he calls Tom, who could not stop reliving the war and felt unable to be present with his family. Van der Kolk also describes giving Rorschach inkblot tests to veterans, many of whom saw scenes from the war in the cards or saw nothing at all. His central argument is that trauma is not just remembered as a story from the past; it is re-experienced in the body and brain as if it were happening now. The reference TR text's examples of door slams and exhaust noises are typical symptoms and are kept general. Details are paraphrased; no graphic war content is included.",
+  "facts": [
+    "In the late 1970s, as a young psychiatrist, Bessel van der Kolk began working at a Veterans Administration clinic in Boston.",
+    "His first patient there, a Vietnam veteran he calls Tom, was a successful lawyer and father, but was tormented by memories of the war and felt he couldn't be emotionally present with his family.",
+    "Many veterans reacted to ordinary sights and sounds as if they were back in combat, with their bodies responding to danger that was no longer there.",
+    "When van der Kolk showed veterans Rorschach inkblot cards, many saw scenes from the war in the ambiguous shapes; others saw nothing at all, as if their imagination had shut down.",
+    "He concluded that trauma is not simply a bad memory of the past. It is re-experienced in the present, in the body and brain, as though it were still happening.",
+    "This observation shaped his later work and the book's title: the body keeps the score."
+  ],
+  "tension": "The war was over and the men were home, yet their bodies kept acting as if the danger were still here.",
+  "opening_idea": "A young psychiatrist meets a veteran who is home, safe and successful, and can't stop living in the past.",
+  "lessons": [
+    {
+      "idea": "Trauma is re-lived, not just remembered.",
+      "anchor": "Veterans reacting as if still in combat"
+    },
+    {
+      "idea": "The body can stay on alert long after danger ends.",
+      "anchor": "Reactions to ordinary sights and sounds"
+    },
+    {
+      "idea": "Understanding reactions reduces shame.",
+      "anchor": "Van der Kolk's shift in how he saw his patients"
+    }
+  ],
+  "reflect": [
+    "When has your body reacted before your mind understood why?",
+    "How might you respond differently to someone whose reactions seem 'too much'?"
+  ],
+  "reflect_final": "What would change if you saw some strong reactions as the body protecting against an old danger?",
+  "use_cases": [
+    {
+      "situation": "A colleague reacts strongly to raised voices in meetings.",
+      "move": "Keep the tone calm and check in privately without asking them to explain.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family member who went through something hard avoids certain places.",
+      "move": "Respect the avoidance and ask what would help them feel safe.",
+      "context": "family"
+    },
+    {
+      "situation": "You notice your body tensing in certain situations for no clear reason.",
+      "move": "Notice it without judgment and consider talking to a qualified professional.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Trauma isn't only remembered; the body can keep living it.",
+  "conversation_variants": {
+    "punchline_idea": "For many veterans, the war wasn't a memory; their bodies were still living it.",
+    "thirty_sec_idea": "VA clinic, Tom, Rorschach cards, trauma re-experienced in body.",
+    "question_idea": "How could you respond more kindly to reactions that seem out of proportion?",
+    "key_contrast_idea": "Remembered versus relived"
+  }
+}

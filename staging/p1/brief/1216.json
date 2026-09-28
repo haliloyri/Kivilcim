@@ -1,0 +1,63 @@
+{
+  "story_id": 1216,
+  "kind": "concept",
+  "book": {
+    "title": "Essentialism: The Disciplined Pursuit of Less",
+    "author": "Greg McKeown",
+    "year": "2014"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text frames this story around military history: armies spread across many fronts lose, while those concentrating force on one point win, and calls it a 'single-ship fleet'. This historical framing cannot be confirmed in Essentialism and is not used. The book's own image for the same idea is a simple diagram: energy spread across many directions produces a little progress in each, while the same energy focused in one essential direction produces much greater progress. McKeown also discusses the 'essential intent', a single clear, inspiring and concrete decision that makes many future decisions easier. Both are described without direct quotation.",
+  "facts": [
+    "McKeown uses a simple image: the same amount of energy, split across many activities, produces a millimeter of progress in a hundred directions.",
+    "When that energy is focused on a few essential things, or one, it produces much greater progress in the direction that matters.",
+    "He argues many people and organizations feel busy and exhausted but make little real progress because their energy is scattered.",
+    "He describes an 'essential intent': a single, concrete and inspiring goal that makes a thousand later decisions simpler, because anything that doesn't serve it can be declined.",
+    "He argues that clarity of purpose is what makes focus possible."
+  ],
+  "tension": "Why do busy people and busy teams often make so little progress?",
+  "opening_idea": "Draw arrows pointing in a dozen directions, each tiny. Now draw one long arrow. Same energy, very different result.",
+  "lessons": [
+    {
+      "idea": "Scattered energy produces little progress.",
+      "anchor": "Arrows in many directions"
+    },
+    {
+      "idea": "Focused energy goes much further.",
+      "anchor": "One long arrow"
+    },
+    {
+      "idea": "A clear intent simplifies decisions.",
+      "anchor": "Essential intent"
+    }
+  ],
+  "reflect": [
+    "In how many directions is your energy going right now?",
+    "What would your essential intent be for this year?"
+  ],
+  "reflect_final": "If you could move only one arrow forward this quarter, which would it be?",
+  "use_cases": [
+    {
+      "situation": "Your team has ten 'top priorities'.",
+      "move": "Agree on one essential intent for the quarter and drop or pause what doesn't serve it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're juggling several side projects with little progress.",
+      "move": "Choose one and pause the others for three months.",
+      "context": "self"
+    },
+    {
+      "situation": "A report is spread thin across many initiatives.",
+      "move": "Help them pick the one where they can make the biggest contribution.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "The same energy goes much further in one direction than in a hundred.",
+  "conversation_variants": {
+    "punchline_idea": "A hundred small efforts in different directions add up to almost nothing.",
+    "thirty_sec_idea": "Scattered versus focused energy, essential intent.",
+    "question_idea": "In how many directions is your energy going?",
+    "key_contrast_idea": "Scattered versus focused"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "story_id": 1097,
+  "kind": "concept",
+  "book": {
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "year": "1989"
+  },
+  "confidence": "high",
+  "confidence_note": "The concept of Habit 5, 'Seek First to Understand, Then to Be Understood', and its core claims are central to the book and well documented. The facts below use the book's own examples: the optometrist who hands over his own glasses, the parent who says 'I can't understand my kid, he just won't listen to me', the 'psychological air' metaphor, the five levels of listening, and the four autobiographical responses. The arguing-couple dialogue in the reference TR text is not a scene I can attribute to the book, so it is excluded. The idea that most people listen to reply rather than to understand is Covey's observation, not a measured statistic.",
+  "facts": [
+    "Habit 5 in the book is 'Seek First to Understand, Then to Be Understood.'",
+    "Covey writes that most people do not listen with the intent to understand; they listen with the intent to reply, filtering what they hear through their own experience.",
+    "Covey's optometrist example: an eye doctor hears a patient's complaint, takes off his own glasses and hands them over, saying they have worked well for him for years. They only make the patient's vision worse. The point is to diagnose before you prescribe.",
+    "Covey describes a parent who says, 'I just can't understand my kid. He just won't listen to me.' The contradiction shows the parent wants to be understood without first understanding.",
+    "Covey's 'psychological air' metaphor: if the air were suddenly sucked out of the room, nothing would matter except getting air. Next to physical survival, the greatest human need is psychological survival, which means being understood, affirmed, validated and appreciated.",
+    "When a person feels deeply understood, that need is met, and they can then turn to influencing or problem-solving.",
+    "Covey lists levels of listening: ignoring, pretending, selective listening, attentive listening, and empathic listening. Only the last means listening with the intent to understand.",
+    "Covey names four 'autobiographical responses' people fall into: evaluating (agree or disagree), probing (asking questions from their own frame of reference), advising, and interpreting (explaining others by their own motives).",
+    "The second half of the habit, being understood, involves presenting your ideas clearly and in the context of a deep understanding of the other person's view."
+  ],
+  "tension": "We believe we are listening while we are really loading our reply, and then we are puzzled that the other person won't hear us.",
+  "opening_idea": "Start with the optometrist who hands his own glasses to a patient: a helpful gesture that fails because he prescribed before he diagnosed.",
+  "lessons": [
+    {
+      "idea": "Diagnose before you prescribe: advice given before understanding is rarely trusted.",
+      "anchor": "The optometrist handing over his own glasses"
+    },
+    {
+      "idea": "Listening to reply is not listening; empathic listening means entering the other person's frame of reference.",
+      "anchor": "The five levels of listening, from ignoring to empathic"
+    },
+    {
+      "idea": "Our default responses (evaluate, probe, advise, interpret) are autobiographical and pull the conversation back to us.",
+      "anchor": "Covey's four autobiographical responses"
+    },
+    {
+      "idea": "Feeling understood is like getting air; once the need is met, people open up to solutions and influence.",
+      "anchor": "The 'psychological air' metaphor"
+    },
+    {
+      "idea": "Understanding first is what earns you the right to be understood.",
+      "anchor": "The parent who says 'my kid won't listen to me'"
+    }
+  ],
+  "reflect": [
+    "In your last disagreement, which autobiographical response did you use first: evaluating, probing, advising, or interpreting?",
+    "Whom do you complain 'won't listen to me', and how well could you state their view in their own words?"
+  ],
+  "reflect_final": "In your last important conversation, how much of the time were you trying to understand, and how much were you preparing your answer?",
+  "use_cases": [
+    {
+      "situation": "A colleague pushes back hard on your proposal in a team meeting.",
+      "move": "Before defending the proposal, restate their concern in your own words ('So your worry is X because Y. Is that right?') and wait until they say yes.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A teenager or partner says 'You never understand me.'",
+      "move": "Hold back all advice and questions for the first few minutes. Only reflect back the content and the feeling you hear, such as 'You're frustrated because it feels like no one's on your side.'",
+      "context": "family"
+    },
+    {
+      "situation": "A direct report brings you a problem and you already know the fix.",
+      "move": "Ask 'What have you tried, and what's making it hard?' and listen fully before offering any solution. Diagnose before you prescribe.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Diagnose before you prescribe: understand first, and you earn the right to be understood.",
+  "conversation_variants": {
+    "punchline_idea": "Most people don't listen to understand; they listen to reply.",
+    "thirty_sec_idea": "Covey's eye doctor hands you his own glasses because they work for him. Much of our advice is like that, prescribed before we diagnosed.",
+    "question_idea": "Could you explain the other side's view so well that they'd say 'yes, exactly'?",
+    "key_contrast_idea": "Listening to reply fills the gaps with your own story; listening to understand gives the other person air."
+  }
+}

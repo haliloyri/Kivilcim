@@ -1,0 +1,66 @@
+{
+  "story_id": 1123,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Power of Habit (Alışkanlıkların Gücü)",
+    "author": "Charles Duhigg",
+    "year": "2012"
+  },
+  "confidence": "high",
+  "confidence_note": "The core anecdote appears in the book's chapter on keystone habits and small wins. This includes Bowman's 'videotape' visualization routine, Phelps's goggles filling with water at Beijing 2008, his counting of strokes, and his gold medal with a world record. Several details from the reference TR text are left out on purpose. The '28 medals, 23 gold' career total postdates the 2012 book. The claim that mental rehearsal builds neural pathways similar to physical practice is not part of Duhigg's Phelps account. The 'count the last 50 meters' wording is inaccurate, because the book says he counted his strokes. Exact stroke counts are omitted because they are not reliably recalled.",
+  "facts": [
+    "Bob Bowman, Michael Phelps's coach, deliberately built a set of small routines for Phelps rather than only drilling physical technique.",
+    "Duhigg notes that Phelps had physical advantages, but that Bowman focused on building habits and mental routines to prepare him to race.",
+    "Bowman told Phelps to 'watch the videotape' every night before sleep and every morning after waking. This meant vividly imagining a perfect race in detail, from the dive to the final touch, rather than watching an actual tape.",
+    "Phelps also rehearsed things going wrong in his mind, so a setback would already have a planned response.",
+    "On race days Phelps followed a fixed pre-race sequence of stretching, warm-up laps and music. Bowman would cue him with 'put in the videotape', so the race felt like carrying out a plan he had already rehearsed.",
+    "At the 2008 Beijing Olympics, in the 200-meter butterfly final, Phelps's goggles filled with water and he could barely see.",
+    "Phelps stayed calm and counted his strokes, relying on how many strokes he knew each length required, and touched the wall first.",
+    "He won the gold medal and set a world record in that race, then said the swim had felt the way he had imagined it."
+  ],
+  "tension": "The world's best swimmer goes blind mid-race in an Olympic final. The expected response is panic, yet he wins and breaks a world record.",
+  "opening_idea": "Open on the moment in Beijing when Phelps's goggles fill with water and the pool goes blurry. Then ask what could possibly keep a swimmer calm there.",
+  "lessons": [
+    {
+      "idea": "Mental rehearsal turns a high-pressure moment into the replay of a familiar script.",
+      "anchor": "Bowman's nightly and morning 'watch the videotape' routine"
+    },
+    {
+      "idea": "Rehearsing what might go wrong gives you a ready response instead of panic.",
+      "anchor": "Phelps counting strokes when his goggles filled with water"
+    },
+    {
+      "idea": "Small, fixed pre-performance routines put you on autopilot so willpower isn't spent under stress.",
+      "anchor": "The identical race-day sequence of stretching, warm-up and music cued by 'put in the videotape'"
+    }
+  ],
+  "reflect": [
+    "Which upcoming high-stakes moment do you usually just 'hope goes well' instead of rehearsing?",
+    "What is the most likely thing to go wrong in it, and what would your calm first move be?"
+  ],
+  "reflect_final": "If you replayed that moment in your head tonight, including the part where something breaks, how differently would you walk into it?",
+  "use_cases": [
+    {
+      "situation": "You have an important presentation to leadership tomorrow.",
+      "move": "Before bed, close your eyes and run the whole presentation from walking in to the last slide. Then run one 'goggles fill' version, such as the projector failing or a hostile question, and say your first sentence for it out loud.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You need to give your manager or a direct report difficult feedback.",
+      "move": "Script your opening line. Imagine their most defensive reaction and decide in advance on a calm reply, such as 'I hear you — can I finish the example first?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You freeze or rush under pressure in exams, interviews or performances.",
+      "move": "Build a fixed three-step pre-start routine, for example one deep breath, reviewing your first step, and a cue word. Use it every single time so it becomes automatic.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Rehearse the moment, including the moment it goes wrong, and the real thing becomes a replay.",
+  "conversation_variants": {
+    "punchline_idea": "Phelps won Olympic gold blind because he'd already swum that race in his head many times.",
+    "thirty_sec_idea": "Summarize Bowman's nightly 'videotape' ritual, the flooded goggles in Beijing, the stroke counting, and the world record.",
+    "question_idea": "Ask the listener whether they ever mentally rehearse the version of an important event where things go wrong.",
+    "key_contrast_idea": "Contrast two ideas of preparation: training your body to perform versus training your mind so that surprises are already familiar."
+  }
+}

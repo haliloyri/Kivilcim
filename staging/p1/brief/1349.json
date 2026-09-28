@@ -1,0 +1,59 @@
+{
+  "story_id": 1349,
+  "kind": "concept",
+  "book": {
+    "title": "Öğrenmeyi Öğrenmek (Make It Stick)",
+    "author": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core ideas are central to Make It Stick: rereading creates fluency with the text that is mistaken for mastery (an 'illusion of knowing'), and retrieval practice, such as low-stakes quizzing, produces more durable learning. The book reports that most students surveyed name rereading as their main study strategy, and describes research in which quizzed material was remembered better than material that was only reviewed. The TR text's specific claim that 'reading once and testing twice beats reading three times' could not be verified as the book's wording or design and is excluded, along with exact percentages. The TR framing of a single 'shocked' student group is a dramatisation and is not used.",
+  "facts": [
+    "The authors report that rereading is the most common study strategy students name, and that it often gives little lasting benefit.",
+    "Rereading makes the text feel familiar and fluent, and learners mistake this familiarity for mastery. The book calls this an illusion of knowing.",
+    "Recognising material while it is in front of you is easier than retrieving it from memory without cues.",
+    "Retrieval practice means recalling facts or ideas from memory, for example by self-quizzing or low-stakes tests. The effort of retrieval strengthens memory and shows what you do not yet know.",
+    "The book describes classroom research in which material covered by frequent low-stakes quizzes was remembered better on later exams than material that was only reviewed."
+  ],
+  "tension": "The strategy that feels most productive, reading the text again, is the one that gives the least. The strategy that feels harder and exposes gaps is the one that works.",
+  "opening_idea": "Begin with a student highlighting and rereading a chapter until every line looks familiar, and ask what would happen if the book were closed.",
+  "lessons": [
+    {
+      "idea": "Familiarity with a text is not the same as being able to use or recall it.",
+      "anchor": "The book's 'illusion of knowing' created by rereading."
+    },
+    {
+      "idea": "Trying to recall without cues both strengthens memory and shows the gaps.",
+      "anchor": "Retrieval practice through self-quizzing and low-stakes tests."
+    }
+  ],
+  "reflect": [
+    "Think of material you felt sure you knew until someone asked you to explain it.",
+    "How do you usually check whether you have learned something: by reading it again or by trying to recall it?"
+  ],
+  "reflect_final": "After the next chapter or article you want to remember, close it and write down what you can recall before looking again. Notice which parts were missing.",
+  "use_cases": [
+    {
+      "situation": "You have just finished reading an important report before a decision.",
+      "move": "Close it and write down the three main points from memory, then check the report to fill in what you missed.",
+      "context": "self"
+    },
+    {
+      "situation": "At the end of a training session, the team feels they have understood everything.",
+      "move": "Mention that the book calls this feeling an illusion of knowing, and suggest everyone spends two minutes writing the key points without slides, then compare.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child says they are done studying because they have read the chapter twice.",
+      "move": "Offer to ask them three questions with the book closed, and let the answers show what to revisit.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Rereading makes a page look familiar; closing the book shows what you can actually recall.",
+  "conversation_variants": {
+    "punchline_idea": "The most popular way to study is one of the weakest: rereading mostly teaches you that the page looks familiar.",
+    "thirty_sec_idea": "Brown and his co-authors found students relied on rereading, which creates familiarity mistaken for mastery, while quizzing yourself from memory, though harder, makes learning last and exposes the gaps.",
+    "question_idea": "Ask them about a time they were sure they knew something until they had to explain it without notes.",
+    "key_contrast_idea": "Recognising something on the page versus being able to recall it with the page closed."
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "story_id": 1103,
+  "kind": "concept",
+  "book": {
+    "title": "The Miracle Morning (Turkish edition: Sabah Rutini)",
+    "author": "Hal Elrod",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book's core points are well established: the snooze button as resisting your day, the '5-Step Snooze-Proof Wake-Up Strategy', and early rising as a way to invest in yourself. The existing TR text gets two things wrong. First, it gives Elrod a 'wake up within five seconds' rule. That rule belongs to Mel Robbins's 'The 5 Second Rule' (2017), not this book. Second, it says Robbins and Robin Sharma's 'The 5AM Club' (2018) reached the same conclusion. Both books came out after 2012, so this one cannot cite them. These claims are left out of the facts. The '5 a.m.' time in the TR text is illustrative only. Elrod does not require one specific hour.",
+  "facts": [
+    "Elrod argues that how you wake up each morning affects how you live the rest of your day.",
+    "He treats hitting snooze as resisting your own life: you start the day by putting off the thing you said you wanted.",
+    "He offers a '5-Step Snooze-Proof Wake-Up Strategy'. First, set your intention for waking up before you go to bed. Second, put the alarm across the room so you have to get up to turn it off. Third, brush your teeth. Fourth, drink a full glass of water. Fifth, get dressed or put on workout clothes.",
+    "He suggests that how rested you feel in the morning depends partly on what you tell yourself about your sleep the night before.",
+    "In his framing, getting up early is not the goal. It is a means to spend time on your own growth before the day's demands begin."
+  ],
+  "tension": "When the alarm rings, the promise you made to yourself the night before meets a groggy brain that wants to renegotiate, and in that moment the snooze button nearly always wins.",
+  "opening_idea": "Open inside the moment the alarm goes off, when a hand reaches for snooze and a half-asleep inner voice argues for 'just a few more minutes'.",
+  "lessons": [
+    {
+      "idea": "Snoozing is not neutral rest. It is a small, repeated act of putting off your own day.",
+      "anchor": "Elrod's framing of the snooze button as resisting your life"
+    },
+    {
+      "idea": "Don't count on willpower in a groggy moment. Decide the night before and set up your environment for it.",
+      "anchor": "Step 1 (set intention before bed) and Step 2 (alarm across the room)"
+    },
+    {
+      "idea": "Small physical actions carry you from half-asleep to awake before the urge to go back to bed takes over.",
+      "anchor": "Steps 3–5: brush teeth, drink water, get dressed"
+    },
+    {
+      "idea": "Early rising matters because of what you do with the time, not because of the hour itself.",
+      "anchor": "Elrod's view that waking early is a means for self-investment, not the goal"
+    }
+  ],
+  "reflect": [
+    "What do you usually tell yourself in the first seconds after the alarm rings?",
+    "Which part of your bedroom or evening routine makes snoozing easier than getting up?",
+    "What would you actually do with a protected hour before everyone else needs you?"
+  ],
+  "reflect_final": "If how you wake up shapes how you live your day, what is your current morning saying about how you want to live?",
+  "use_cases": [
+    {
+      "situation": "You keep promising yourself you'll start a morning routine and keep hitting snooze.",
+      "move": "Tonight, put the alarm across the room and a glass of water beside it. Before sleeping, say out loud one reason you want to get up.",
+      "context": "self"
+    },
+    {
+      "situation": "Your partner or teenager struggles to get up and mornings at home become a battle.",
+      "move": "Suggest a shared 'first three moves' ritual, such as teeth, water and clothes, done right after the alarm, instead of repeated wake-up calls.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend says they're 'just not a morning person' while complaining they never have time for themselves.",
+      "move": "Ask: 'What if you decided the night before why you're getting up, and put your alarm where you have to stand to reach it?'",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Beat the snooze button the night before: set your reason and your alarm's location before you sleep.",
+  "conversation_variants": {
+    "punchline_idea": "Hitting snooze means your first decision of the day is to put off the day.",
+    "thirty_sec_idea": "Elrod says the wake-up moment shapes the whole day. His fix is a five-step routine: set your intention at night, put the alarm across the room, then brush your teeth, drink water and get dressed.",
+    "question_idea": "Ask someone what the first thing they do after the alarm says about the kind of day they're starting.",
+    "key_contrast_idea": "Relying on morning willpower versus designing the wake-up the night before so willpower isn't needed."
+  }
+}

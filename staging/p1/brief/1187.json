@@ -1,0 +1,66 @@
+{
+  "story_id": 1187,
+  "kind": "concept",
+  "book": {
+    "title": "Feel the Fear and Do It Anyway",
+    "author": "Susan Jeffers",
+    "year": "1987"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text says Jeffers decided to go skydiving after a friend did, and drew the book's thesis from the jump. That story cannot be verified in the book and is left out. The book's core content is well established: Jeffers describes 'Five Truths About Fear', including that the fear will never go away as long as you continue to grow; that the only way to get rid of the fear of doing something is to go out and do it; that everyone feels fear when on unfamiliar territory; and that pushing through fear is less frightening than living with the underlying fear that comes from a feeling of helplessness. She also traces most fears to one core fear: 'I can't handle it.' The book grew out of a course she taught on fear.",
+  "facts": [
+    "Jeffers argues that at the bottom of every fear is one simple belief: 'I can't handle it.'",
+    "She lists five truths about fear.",
+    "One: the fear will never go away as long as I continue to grow.",
+    "Two: the only way to get rid of the fear of doing something is to go out and do it.",
+    "Three: the only way to feel better about myself is to go out and do it.",
+    "Four: not only am I going to experience fear whenever I'm on unfamiliar territory, but so is everyone else.",
+    "Five: pushing through fear is less frightening than living with the underlying fear that comes from a feeling of helplessness.",
+    "Her message is not to wait for fear to disappear, but to build trust that you can handle whatever happens."
+  ],
+  "tension": "Most people wait to feel ready before they act. Jeffers says that moment never comes.",
+  "opening_idea": "Many people are waiting for the day they stop feeling afraid. Jeffers's first truth is that it won't come.",
+  "lessons": [
+    {
+      "idea": "Fear accompanies growth; waiting for it to vanish means waiting forever.",
+      "anchor": "Truth one"
+    },
+    {
+      "idea": "Action shrinks fear.",
+      "anchor": "Truths two and three"
+    },
+    {
+      "idea": "Helplessness is worse than fear.",
+      "anchor": "Truth five"
+    }
+  ],
+  "reflect": [
+    "What are you waiting to feel ready for?",
+    "What would change if you believed 'I'll handle it'?"
+  ],
+  "reflect_final": "What would you do this month if you accepted that the fear will come along?",
+  "use_cases": [
+    {
+      "situation": "You keep postponing a career change until you feel ready.",
+      "move": "Take one small real step this week while the fear is still there.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is anxious about a new role and thinks they're alone in it.",
+      "move": "Share that everyone feels fear on unfamiliar ground.",
+      "context": "social"
+    },
+    {
+      "situation": "A team member avoids presenting because they're nervous.",
+      "move": "Remind them the fear won't go away first; offer a short, low-stakes first presentation.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Don't wait for fear to leave; trust that you'll handle it, and go.",
+  "conversation_variants": {
+    "punchline_idea": "Fear never goes away as long as you keep growing.",
+    "thirty_sec_idea": "'I can't handle it' and the five truths about fear.",
+    "question_idea": "What are you waiting to feel ready for?",
+    "key_contrast_idea": "Waiting versus doing"
+  }
+}

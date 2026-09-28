@@ -1,0 +1,63 @@
+{
+  "story_id": 1151,
+  "kind": "concept",
+  "book": {
+    "title": "Grit: The Power of Passion and Perseverance",
+    "author": "Angela Duckworth",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "Duckworth does argue that passion is rarely found in a sudden moment of discovery; interests are triggered by interaction with the outside world, then developed and deepened over years. The reference TR text describes three stages (curiosity, practice, purpose). The book actually describes four psychological assets that gritty people develop in roughly this order: interest, practice, purpose and hope. The four-part version is used. The TR claim that 'almost none' of the people she studied had a childhood-calling story is softened: she reports that many paragons of grit spent years exploring before settling on a passion. No specific named example is used.",
+  "facts": [
+    "Duckworth argues that the advice 'follow your passion' can mislead, because it implies passion already exists fully formed, waiting to be found.",
+    "In her account, interests are triggered through interaction with the outside world, often by chance, and must then be developed and deepened over time.",
+    "Many of the gritty high achievers she interviewed spent years exploring different interests before one took hold.",
+    "She describes four psychological assets that mature over time in gritty people: interest (enjoying what you do), practice (the discipline to get better), purpose (the conviction that your work matters to others), and hope (the belief you can keep going when things get hard).",
+    "She notes that early interests are fragile and need encouragement and time before they grow into passion."
+  ],
+  "tension": "People wait to 'find their passion' and feel like failures when it doesn't arrive, but it may not work that way.",
+  "opening_idea": "'Find your passion' sounds encouraging, but it quietly suggests passion is buried somewhere, fully formed, waiting to be dug up.",
+  "lessons": [
+    {
+      "idea": "Passion is developed, not discovered fully formed.",
+      "anchor": "Interests triggered, then developed and deepened"
+    },
+    {
+      "idea": "Early interests are fragile and need time.",
+      "anchor": "Years of exploration before settling"
+    },
+    {
+      "idea": "Interest leads to practice, purpose and hope.",
+      "anchor": "The four psychological assets"
+    }
+  ],
+  "reflect": [
+    "Which small interest have you dismissed because it didn't feel like a 'calling'?",
+    "At which stage do you usually stop: interest, practice, purpose or hope?"
+  ],
+  "reflect_final": "What would happen if you gave one current curiosity a full month of regular attention?",
+  "use_cases": [
+    {
+      "situation": "A young person says they have no passion and feel lost.",
+      "move": "Encourage them to try a few interests with low stakes and notice which ones they keep thinking about.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague is bored in their role but can't name what they'd prefer.",
+      "move": "Suggest they try one small side project related to something they're curious about.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel you've never found your calling.",
+      "move": "Pick one mild interest and schedule regular time for it for a month before judging it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Passion isn't found; it's built by staying with an interest long enough.",
+  "conversation_variants": {
+    "punchline_idea": "'Find your passion' is misleading; passion is grown, not found.",
+    "thirty_sec_idea": "Duckworth's view of interests being triggered and developed, and the four assets.",
+    "question_idea": "Which small curiosity might grow if you gave it time?",
+    "key_contrast_idea": "Finding versus growing"
+  }
+}

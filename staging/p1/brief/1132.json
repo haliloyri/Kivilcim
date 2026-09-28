@@ -1,0 +1,63 @@
+{
+  "story_id": 1132,
+  "kind": "concept",
+  "book": {
+    "title": "The Power of Now",
+    "author": "Eckhart Tolle",
+    "year": "1997"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text presents a dialogue between Tolle and a woman with chronic back pain, and attributes to him the line 'pain may be unavoidable, but the story on top of it is where suffering comes from'. That dialogue cannot be found in the book, and the pain/suffering saying is a common proverb rather than a Tolle quotation, so both are left out. The book does make the underlying argument: much of our pain is created by non-acceptance, by resistance to what is. In the chapter on surrender, Tolle addresses illness and physical pain directly, advising that you accept the present situation fully, including the illness, instead of labelling and fighting it, while still taking practical action. The book is largely written as questions and answers, but no specific person or case is cited here.",
+  "facts": [
+    "Tolle argues that most human pain is unnecessary: it is self-created as long as the unobserved mind runs your life.",
+    "He writes that the pain you create now is always some form of non-acceptance, some form of unconscious resistance to what is.",
+    "In the chapter on surrender, he addresses illness and physical pain: surrender does not mean doing nothing, but fully accepting the present moment, including the illness, while taking whatever practical action is needed.",
+    "He suggests not labelling the situation with mental stories like 'illness' and the long history attached to it, and instead bringing attention to the sensation in the present moment.",
+    "The book is written largely in a question-and-answer format with an unnamed questioner."
+  ],
+  "tension": "When something genuinely hurts, can you do anything about the part of the hurt that your own resistance adds?",
+  "opening_idea": "Pain arrives with two layers: the sensation, and everything the mind says about it. Only one of them is happening right now.",
+  "lessons": [
+    {
+      "idea": "Resistance to what is adds its own layer of pain on top of the original.",
+      "anchor": "'The pain you create now is always some form of non-acceptance'"
+    },
+    {
+      "idea": "Acceptance is not passivity; you can accept a situation and still act.",
+      "anchor": "Surrender to illness while taking practical action"
+    },
+    {
+      "idea": "Labels and stories stretch pain across the past and future.",
+      "anchor": "Attend to the sensation now instead of the story of 'my illness'"
+    }
+  ],
+  "reflect": [
+    "Pick something painful in your life. Which part is happening now, and which part is the story about it?",
+    "Where are you arguing with a fact that has already happened?"
+  ],
+  "reflect_final": "What would you still do about it if you stopped fighting that it happened?",
+  "use_cases": [
+    {
+      "situation": "You are frustrated by a recurring physical ache or illness.",
+      "move": "Spend one minute noticing the sensation itself, without the words 'always' or 'never', then decide the next practical step.",
+      "context": "self"
+    },
+    {
+      "situation": "A family member keeps asking 'why did this happen to me?' after a setback.",
+      "move": "Acknowledge the pain, then ask what they can do today, separating the fact from the story.",
+      "context": "family"
+    },
+    {
+      "situation": "A team is stuck complaining about a decision that can't be reversed.",
+      "move": "Name it as a fact to accept, then move the discussion to the practical next step.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Accept what is happening; then you have your energy back to act on it.",
+  "conversation_variants": {
+    "punchline_idea": "Fighting a fact adds a second pain to the first.",
+    "thirty_sec_idea": "Tolle's claim that non-acceptance creates pain, and his advice on surrendering to illness while still acting.",
+    "question_idea": "Which part of your problem is the fact, and which part is the fight?",
+    "key_contrast_idea": "Resistance versus acceptance"
+  }
+}

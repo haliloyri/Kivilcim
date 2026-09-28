@@ -1,0 +1,64 @@
+{
+  "story_id": 1223,
+  "kind": "concept",
+  "book": {
+    "title": "The Charisma Myth",
+    "author": "Olivia Fox Cabane",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "Cabane breaks charisma into three core elements: presence, power and warmth, and treats presence as the foundation of the other two. She argues that people can detect even small lapses in presence, because a distracted mind shows in delayed facial reactions and glazed eyes. She illustrates presence with people who met Bill Clinton and described feeling as if they were the only person in the room. The reference TR text says she 'researched thousands of people'; that framing is not used. Specific timing figures for facial reactions are omitted. The practice of briefly focusing on physical sensations, such as breathing or the feeling in your toes, to return to the present is from the book.",
+  "facts": [
+    "Cabane describes charisma as made up of three elements: presence, power and warmth.",
+    "Power is the perception that someone can affect the world around them; warmth is the perception that they will use that power for our benefit.",
+    "Presence, being fully in the moment with the person in front of you, is the foundation; without it, power and warmth don't come across.",
+    "She argues that people can tell when you're not fully present: your eyes glaze slightly and your facial reactions lag, and people sense it even if they don't consciously notice.",
+    "She cites accounts of people who met Bill Clinton and said he made them feel as if they were the only person in the room.",
+    "To regain presence, she suggests briefly focusing on a physical sensation, such as your breathing or the feeling of your toes, which pulls attention back into the present moment."
+  ],
+  "tension": "You can say all the right words and still leave people cold. What's missing?",
+  "opening_idea": "People who met Bill Clinton often said the same thing: he made them feel like the only person in the room.",
+  "lessons": [
+    {
+      "idea": "Presence is the base of charisma.",
+      "anchor": "Presence, power, warmth"
+    },
+    {
+      "idea": "People notice when you're not really there.",
+      "anchor": "Delayed reactions and glazed eyes"
+    },
+    {
+      "idea": "Presence can be trained through the body.",
+      "anchor": "Focusing on breath or toes"
+    }
+  ],
+  "reflect": [
+    "When did someone make you feel like the only person in the room?",
+    "How often are you mentally elsewhere during conversations?"
+  ],
+  "reflect_final": "In your next conversation, what will you do to be fully present?",
+  "use_cases": [
+    {
+      "situation": "You catch yourself planning your reply while a colleague is talking.",
+      "move": "Notice your breathing for a second and return your full attention to them.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child talks to you while you're on your phone.",
+      "move": "Put the phone down, turn toward them and give them your full attention for a minute.",
+      "context": "family"
+    },
+    {
+      "situation": "You're about to walk into an important meeting distracted.",
+      "move": "Take a few seconds to feel your feet on the floor before you enter.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Charisma starts with being fully here, with the person in front of you.",
+  "conversation_variants": {
+    "punchline_idea": "People said Bill Clinton made them feel like the only person in the room.",
+    "thirty_sec_idea": "Presence, power, warmth; lapses show; the toe/breath technique.",
+    "question_idea": "Who makes you feel like the only person in the room?",
+    "key_contrast_idea": "Present versus elsewhere"
+  }
+}

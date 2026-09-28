@@ -1,0 +1,71 @@
+{
+  "story_id": 1087,
+  "kind": "concept",
+  "book": {
+    "title": "Start With Why (Turkish edition: Başlangıç Noktası)",
+    "author": "Simon Sinek",
+    "year": "2009"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Golden Circle (Why, How, What), the Apple messaging contrast, and Sinek's limbic-brain/neocortex argument are central, well-known parts of the book. The neuroscience critique (limbic-system concept outdated, neocortex not uniquely human, emotion and reason not cleanly localized) comes from outside commentators, not from the book, and should be framed that way. The existing text's claim that Sinek himself is open to this criticism is not verifiable from the book and is omitted. The three self-test questions come from the story, not from Sinek. Present them as the story's own practical addition.",
+  "facts": [
+    "Sinek's Golden Circle has three concentric rings: Why at the center, How in the middle, What on the outside.",
+    "He argues most organizations communicate from the outside in: they state what they make, then how it is better, and rarely why they exist.",
+    "His signature example is Apple. Its message starts with a belief in challenging the status quo and thinking differently, then names beautifully designed, easy-to-use products, and only then says it happens to make computers.",
+    "He contrasts this with a hypothetical ordinary computer company that leads with 'we make great computers', which invites comparison on features and price.",
+    "His core claim is that people don't buy what you do; they buy why you do it.",
+    "He grounds the model in biology: the Why and How map to the limbic brain, which he describes as governing feelings, trust and decisions but having no capacity for language. The What maps to the neocortex, the seat of rational, analytical thought and language.",
+    "From this he concludes that people decide on feeling and then rationalize, so starting with Why speaks to what drives decisions.",
+    "Critics outside the book call this brain account oversimplified. The idea of a sharply bounded 'limbic system' is considered dated, other mammals also have neocortex, and decision-making involves widely distributed networks rather than separate emotion and logic zones."
+  ],
+  "tension": "A communication idea that many find useful is propped up by a neuroscience explanation that experts consider oversimplified. Does the idea fall with its justification, or does it stand on other ground?",
+  "opening_idea": "Two companies sell the same computer. One says 'we make computers', the other says 'we believe in challenging the status quo'. Sinek says only the order is different.",
+  "lessons": [
+    {
+      "idea": "Leading with purpose rather than product changes what the listener evaluates: a 'what' invites comparison, a 'why' invites allegiance.",
+      "anchor": "Apple's belief-first message versus the feature-first 'we make great computers'."
+    },
+    {
+      "idea": "The model's weakest part is its most scientific-looking part. The brain explanation is the piece experts reject.",
+      "anchor": "The limbic-system/neocortex mapping that critics call an outdated simplification."
+    },
+    {
+      "idea": "The idea can survive on a different foundation: observations from marketing and organizational behavior rather than brain anatomy.",
+      "anchor": "Belief-led organizations building loyal followings while feature-led ones get pulled into price competition."
+    },
+    {
+      "idea": "Attaching a working idea to an unverified explanation makes the idea fragile, not stronger.",
+      "anchor": "When the brain story is questioned, the whole Golden Circle gets questioned with it."
+    }
+  ],
+  "reflect": [
+    "When you explain your work, which comes first in your sentences: what you do, or why?",
+    "Have you ever defended a good idea with a weak reason that ended up discrediting it?",
+    "Which of your convictions still stands if the most impressive-sounding argument for it is removed?"
+  ],
+  "reflect_final": "Can you write your own why in one sentence, leaving money and career out of it?",
+  "use_cases": [
+    {
+      "situation": "Presenting a product or project to stakeholders who have heard many similar pitches.",
+      "move": "Open with one sentence about the problem you believe needs fixing, then how you approach it, and name the deliverable last.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague is justifying an idea with a trendy 'the brain works like this' claim.",
+      "move": "Ask: 'Would this still hold if that brain fact turned out to be wrong? What have we actually observed?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Clarifying your own or your team's purpose without buzzwords.",
+      "move": "Answer three questions in writing: What would be missing if we didn't do this? What would change if a customer left us? At which sentence do we hesitate when explaining why we do this?",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A good idea resting on a false explanation doesn't become stronger. It becomes easier to knock down.",
+  "conversation_variants": {
+    "punchline_idea": "Sinek's Golden Circle works; his brain science behind it doesn't.",
+    "thirty_sec_idea": "Sinek says start with why, as Apple does, and backs it with a limbic-brain story that neuroscientists call oversimplified. The communication insight holds on marketing evidence alone.",
+    "question_idea": "If the scientific reason behind your favorite idea turned out to be false, would you still believe the idea?",
+    "key_contrast_idea": "'We make great computers' invites a price comparison; 'we challenge the status quo' invites people to take sides."
+  }
+}

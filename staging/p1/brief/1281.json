@@ -1,0 +1,59 @@
+{
+  "story_id": 1281,
+  "kind": "concept",
+  "book": {
+    "title": "Dare to Lead",
+    "author": "Brené Brown",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Supported by the book: the 'Living into Our Values' section, where Brown asks readers to choose from a long list of values and narrow them to one or two core values, argues that if we have too many values we effectively have none, and asks readers to define behaviors that support each value and 'slippery behaviors' that go against it. She names her own two values as faith and courage. The reference's claim that 'research shows the strongest leaders have two or three core values' and the specific question 'which value overrides the other' are not the book's framing and are omitted. The size of the values list was not re-checked, so no number is given. Turkish title in the input does not appear to match this book.",
+  "facts": [
+    "Brown asks leaders to pick their core values from a long list, then narrow down to just one or two.",
+    "She argues that when we have a long list of values, we don't really have any, because a long list can't guide hard choices.",
+    "Her own two core values are faith and courage.",
+    "For each value she asks readers to write down what behaviors support it, and what 'slippery behaviors' show them they are drifting away from it.",
+    "She says values have to be translated into specific, observable behaviors; stating a value is not the same as living it."
+  ],
+  "tension": "Most people can recite a list of admirable values, yet the list itself is the problem: when everything is a priority, nothing guides you in a hard moment.",
+  "opening_idea": "Start with the exercise: a long list of good words, and the instruction to cross out all but two.",
+  "lessons": [
+    {
+      "idea": "Fewer values are more useful; one or two you truly hold can guide a hard decision where ten cannot.",
+      "anchor": "Brown's instruction to narrow a long values list to one or two core values; her own are faith and courage."
+    },
+    {
+      "idea": "A value becomes real only when it's defined in behavior, including the behaviors that show you slipping.",
+      "anchor": "Her exercise asking for supporting behaviors and 'slippery behaviors' for each value."
+    }
+  ],
+  "reflect": [
+    "If you had to keep only two values, which would survive?",
+    "Think of a recent hard decision: which value actually drove it?"
+  ],
+  "reflect_final": "Choose your two values, and for one of them write a single behavior that would show you're living it and one that would show you're slipping; check it against your next hard decision.",
+  "use_cases": [
+    {
+      "situation": "Your team's values poster lists eight words nobody refers to.",
+      "move": "Propose an exercise: each person picks the two values that matter most in daily work and names one behavior that would show it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're unsure whether to accept a new opportunity.",
+      "move": "Like Brown narrowing her list to faith and courage, write your two core values and ask which option lets you act on both.",
+      "context": "self"
+    },
+    {
+      "situation": "Your partner and you keep disagreeing about how to spend weekends.",
+      "move": "Each name your top two values for family time, then look for one plan that honors one value from each list.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A list of ten values is a poster; two values with written behaviors are a compass.",
+  "conversation_variants": {
+    "punchline_idea": "Brené Brown says if you have a long list of values, you effectively have none, and asks people to narrow it to two.",
+    "thirty_sec_idea": "Brown hands leaders a long list of values, makes them cut to one or two (hers are faith and courage), then asks them to write the behaviors that show they're living them and the ones that show they're slipping.",
+    "question_idea": "If you could keep only two values, which two would you choose?",
+    "key_contrast_idea": "Naming many values versus living by a few."
+  }
+}

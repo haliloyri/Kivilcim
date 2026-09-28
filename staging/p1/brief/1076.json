@@ -1,0 +1,73 @@
+{
+  "story_id": 1076,
+  "kind": "anecdote",
+  "book": {
+    "title": "Think and Grow Rich (Düşün ve Zengin Ol)",
+    "author": "Napoleon Hill",
+    "year": "1937"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core story is well documented in Chapter 1 ('Thoughts Are Things'): the freight-train arrival, the stated goal of partnership, the low-paid job, the roughly five-year wait and the dictating-machine opportunity. Three details in the existing TR text are not reliably in the book and are left out of the facts. First, the exact year 1905: Hill only says 'more than thirty years ago' or similar. Second, 'hired as a janitor': the book says he got a job in Edison's office at a nominal wage doing unimportant work. Third, staff laughing at him: this does not appear in the book. The arrival place is given as (West) Orange, New Jersey.",
+  "facts": [
+    "Edwin C. Barnes had a burning desire to become a business associate (partner) of Thomas A. Edison, not merely to work for him.",
+    "He had no personal acquaintance with Edison and not enough money to pay his railroad fare.",
+    "He travelled to Edison's laboratory in (West) Orange, New Jersey, arriving on a freight train.",
+    "He presented himself to Edison and said plainly that he had come to go into business with him.",
+    "Edison later recalled that Barnes looked like an ordinary tramp. Yet something in his expression showed he was determined to get what he had come for.",
+    "Barnes did not get a partnership at that first meeting. He got a job in Edison's offices at a very nominal wage.",
+    "For about five years he did work unrelated to his goal. Outwardly nothing seemed to change, but he kept his desire alive.",
+    "Edison invented a dictating machine (later sold as the Ediphone), and his salesmen had little enthusiasm for it. Barnes said he could sell it.",
+    "He was given the chance and sold it so successfully that Edison gave him a contract to distribute and market the machine nationwide. This became the business association he had wanted.",
+    "Hill uses the story to show that a definite purpose, backed by a decision that leaves no route of retreat ('burning bridges'), can turn a thought into a reality."
+  ],
+  "tension": "A man with no money, no connections and no credentials announces he will be partner to the most famous inventor alive, then spends years in a minor job where nothing seems to happen.",
+  "opening_idea": "Open on the image of a man climbing off a freight car, penniless, about to tell Thomas Edison he has come to be his partner.",
+  "lessons": [
+    {
+      "idea": "A definite, specific desire is the real starting capital. Resources come after the decision, not before it.",
+      "anchor": "Barnes had no fare money and no introduction, only an exact goal: to be Edison's associate."
+    },
+    {
+      "idea": "Take the entry that is available, even if it looks far from the goal, and keep the goal in view while you do it.",
+      "anchor": "He accepted a low-paid office job without dropping the partnership aim."
+    },
+    {
+      "idea": "Persistence through years of invisible progress is what lets you recognise the opportunity when it arrives, often in a form nobody else wants.",
+      "anchor": "The dictating machine that Edison's salesmen doubted became Barnes's breakthrough."
+    },
+    {
+      "idea": "Removing your own escape routes makes commitment visible to others.",
+      "anchor": "Edison read the determination in Barnes's face before Barnes had proven anything."
+    }
+  ],
+  "reflect": [
+    "Which goal have you shelved because you are waiting to have 'enough' resources first?",
+    "Is there an unglamorous position near your goal that you could step into now?",
+    "What opportunity around you are others dismissing that you could volunteer for?"
+  ],
+  "reflect_final": "If you stated your goal as plainly as Barnes did, what would be your freight-train first step this week?",
+  "use_cases": [
+    {
+      "situation": "A new product or project at work that colleagues are unenthusiastic about.",
+      "move": "Say in the meeting: 'I'll take this one and bring results in 30 days.' Volunteering for the neglected opportunity is how Barnes got his chance.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Talking with a manager or mentor about a role you want but don't yet qualify for.",
+      "move": "State the destination explicitly ('In two years I want to lead X'), then ask which current task would let you prove it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Feeling stuck in a job that seems unrelated to your real ambition.",
+      "move": "Write your specific goal on a card. Each week, list one thing from the current job that moves you toward it or brings you closer to the people who matter.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Barnes arrived with no money and no connections, only a decision. Five years later that decision made him Edison's partner.",
+  "conversation_variants": {
+    "punchline_idea": "He arrived by freight car and left with a nationwide Edison contract. The ticket was a decision, not money.",
+    "thirty_sec_idea": "A penniless man tells Edison he'll be his partner, gets a low-paid office job instead, waits about five years, then offers to sell the dictating machine nobody else believes in, and wins the partnership.",
+    "question_idea": "Would you take a minor job next to your goal and keep believing for five years with no visible progress?",
+    "key_contrast_idea": "Most people wait for resources before committing. Barnes committed first and let the resources follow."
+  }
+}

@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  StatusBar, Animated, Platform, Dimensions, Image, TextInput,
-  KeyboardAvoidingView,
+  StatusBar, Animated, Platform, Dimensions, Image,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -12,15 +11,21 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
-import { getCategoryImage, getCategoryPillIcon } from '../utils/categoryImages';
-import { ensureNotificationPermission } from '../utils/notifications';
+import { getCategoryImage } from '../utils/categoryImages';
+import { ensureNotificationPermission, registerAndSavePushToken } from '../utils/notifications';
+import { getCachedDeviceUserId } from '../services/supabase';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import useReducedMotion from '../hooks/useReducedMotion';
 
 const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
-// Read and cleared once by AppNavigator, right after the main stack mounts.
+// Read and cleared once by AppNavigator, after the reader finishes their first
+// story (not when the main stack mounts).
 export const PENDING_ONBOARDING_PAYWALL_KEY = '@albor_pending_onboarding_paywall';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
+// Readable names in the funnel, so a step index change doesn't silently
+// reinterpret historical events.
+const STEP_NAMES = ['welcome', 'categories', 'plan'];
 
 // Category names arrive from the DB with a leading emoji (e.g. "💰 Finance").
 // Split it so we can render a single icon slot + a clean, non-truncating label.
@@ -40,21 +45,29 @@ const splitLeadingEmoji = (label = '') => {
 
 const OnboardingScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
-  const { isPremium, saveOnboarding, updateUserProfile } = useUserData();
+  const { saveOnboarding } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
   const insets = useSafeAreaInsets();
+  const reduceMotion = useReducedMotion();
   const [step, setStep] = useState(0);
   const [selectedCats, setSelectedCats] = useState([]);
   const [selectedTime, setSelectedTime] = useState(1);
   const [selectedReminders, setSelectedReminders] = useState(['evening']);
-  const [userName, setUserName] = useState('');
-  const [focusedField, setFocusedField] = useState(null);
+  // Set when the reader taps a CTA that can't advance yet, so the requirement
+  // hint can answer the tap instead of the screen looking broken.
+  const [hintAlert, setHintAlert] = useState(false);
+  const hintTimerRef = useRef(null);
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
   const breatheAnim = useRef(new Animated.Value(1.0)).current;
 
-  // Logo breathe animation on welcome screen
+  // Logo breathe animation, welcome step only: it used to keep looping behind
+  // every other step, and ignored the system "reduce motion" preference.
   useEffect(() => {
+    if (reduceMotion || step !== 0) {
+      breatheAnim.setValue(1);
+      return undefined;
+    }
     const loop = Animated.loop(
       Animated.sequence([
         Animated.timing(breatheAnim, { toValue: 1.04, duration: 1300, useNativeDriver: true }),
@@ -63,7 +76,19 @@ const OnboardingScreen = ({ navigation }) => {
     );
     loop.start();
     return () => loop.stop();
-  }, []);
+  }, [reduceMotion, step, breatheAnim]);
+
+  // Step-level funnel + the hint timer's cleanup.
+  useEffect(() => {
+    trackEvent(ANALYTICS_EVENTS.ONBOARDING_STEP_VIEWED, {
+      step,
+      stepName: STEP_NAMES[step] || String(step),
+      lang,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
+
+  useEffect(() => () => clearTimeout(hintTimerRef.current), []);
 
   const allCats = parentCategories.map((p) => Number(p.id));
   const timeOptions = [
@@ -76,21 +101,25 @@ const OnboardingScreen = ({ navigation }) => {
     { label: t('reminder_noon', lang), sub: t('reminder_noon_sub', lang), iconName: 'partly-sunny-outline', icon: '\u2600\uFE0F', reminderWindow: 'noon', reminderHour: 13 },
     { label: t('reminder_evening', lang), sub: t('reminder_evening_sub', lang), iconName: 'moon-outline', icon: '\uD83C\uDF19', reminderWindow: 'evening', reminderHour: 21 },
   ];
-  const selectedTimeOption = timeOptions[selectedTime];
-  const storyWord = t(selectedTimeOption.dailyStoryTarget === 1 ? 'onboarding_story' : 'onboarding_stories', lang);
-  const readyPlanSummary = t('onboarding_ready_plan', lang)
-    .replace('{{minutes}}', selectedTimeOption.label)
-    .replace('{{stories}}', `${selectedTimeOption.dailyStoryTarget} ${storyWord}`);
-
-  // Step 0: Welcome, 1: How it works, 2: Categories, 3: First value (real story
-  // preview), 4: Time, 5: Reminders, 6: Name, 7: Summary
-  const TOTAL_STEPS = 8;
+  // Step 0: Welcome + one real story, 1: Categories, 2: Daily plan (time budget
+  // + reminder window).
+  //
+  // Down from 8. The separate "how it works" step described what the welcome
+  // card now simply shows; the name was never needed to read anything (Profile
+  // still takes it); and the summary only restated two choices the reader had
+  // made one screen earlier. Ten screens before the first story is a funnel, not
+  // a setup.
+  const TOTAL_STEPS = 3;
   const isPhone = SCREEN_WIDTH < 768;
   const isSmallPhone = SCREEN_WIDTH < 390;
   const catGridGap = isPhone ? 8 : 10;
   const catTileWidth = (SCREEN_WIDTH - 64 - catGridGap) / 2;
 
   const animateStep = (direction, cb) => {
+    if (reduceMotion) {
+      cb();
+      return;
+    }
     const outOffset = direction === 'forward' ? -30 : 30;
     const inOffset = direction === 'forward' ? 30 : -30;
     Animated.parallel([
@@ -108,16 +137,30 @@ const OnboardingScreen = ({ navigation }) => {
 
   const next = async () => {
     Haptics.selectionAsync().catch(() => {});
-    // Reminder step (5): prime the OS notification permission in-context, right after
-    // the user has chosen when to be nudged — higher opt-in than a cold prompt at the end.
-    if (step === 5) {
-      ensureNotificationPermission().catch(() => {});
-    }
     if (step < TOTAL_STEPS - 1) {
       animateStep('forward', () => setStep(s => s + 1));
-    } else {
-      await handleFinish();
+      return;
     }
+    // The last step is the plan step, so this tap is the in-context moment for
+    // the OS notification prompt: the reader has just said when to nudge them.
+    // Awaited, so saveOnboarding below schedules the reminders with permission
+    // already decided instead of racing it. Skipped entirely when every window
+    // is off — there is nothing to deliver, so there is nothing to ask for.
+    if (selectedReminders.length) {
+      const granted = await ensureNotificationPermission().catch(() => false);
+      trackEvent(ANALYTICS_EVENTS.NOTIFICATION_PERMISSION_RESULT, {
+        granted,
+        source: 'onboarding_plan_step',
+        lang,
+      });
+      if (granted) {
+        // Startup only registers a device that already had permission, so the
+        // token has to be claimed here — otherwise this install gets no
+        // server-side push until the next cold start.
+        registerAndSavePushToken(getCachedDeviceUserId()).catch(() => {});
+      }
+    }
+    await handleFinish();
   };
 
   const goBack = () => {
@@ -126,13 +169,12 @@ const OnboardingScreen = ({ navigation }) => {
     animateStep('back', () => setStep(s => s - 1));
   };
 
-  const goToStep = (targetStep) => {
-    if (targetStep >= step) return;
-    Haptics.selectionAsync().catch(() => {});
-    animateStep('back', () => setStep(targetStep));
-  };
-
   const skip = async () => {
+    trackEvent(ANALYTICS_EVENTS.ONBOARDING_SKIPPED, {
+      step,
+      stepName: STEP_NAMES[step] || String(step),
+      lang,
+    });
     // Deliberately does NOT arm the trial paywall: a user who skipped has seen
     // no value yet, and a paywall without context reads as an ambush.
     await saveOnboarding([], timeOptions[1], reminderOptions[2]);
@@ -149,27 +191,35 @@ const OnboardingScreen = ({ navigation }) => {
 
   const toggleReminder = (windowValue) => {
     Haptics.selectionAsync().catch(() => {});
-    setSelectedReminders(prev => {
-      if (prev.includes(windowValue)) {
-        if (prev.length === 1) return prev;
-        return prev.filter(w => w !== windowValue);
-      }
-      return [...prev, windowValue];
-    });
+    // Deselecting the last window used to be silently ignored, which left no way
+    // to say "don't remind me" — the reader had to accept a reminder to finish
+    // setup. An empty selection is a valid answer; saveOnboarding turns reminders
+    // off for it.
+    setSelectedReminders(prev => (
+      prev.includes(windowValue)
+        ? prev.filter(w => w !== windowValue)
+        : [...prev, windowValue]
+    ));
   };
 
   const handleFinish = async () => {
-    const name = userName.trim();
-    if (name) {
-      await updateUserProfile({ displayName: name });
-    }
-    // Arm the post-onboarding trial offer before completing onboarding.
+    // Arm the trial offer before completing onboarding.
     //
     // It can't be pushed from here: `saveOnboarding` flips `isOnboarded`, which
     // swaps the navigator's screen set and unmounts this component. AppNavigator
-    // picks the flag up once the main stack is mounted.
+    // picks the flag up once the reader has finished their first story.
     await AsyncStorage.setItem(PENDING_ONBOARDING_PAYWALL_KEY, 'true').catch(() => {});
     await saveOnboarding(selectedCats, timeOptions[selectedTime], selectedReminders);
+    trackEvent(ANALYTICS_EVENTS.ONBOARDING_COMPLETED, {
+      categoryCount: selectedCats.length,
+      minutes: timeOptions[selectedTime]?.minutes,
+      dailyStoryTarget: timeOptions[selectedTime]?.dailyStoryTarget,
+      reminderWindows: selectedReminders,
+      lang,
+    });
+    // Setup no longer asks for a name, so mark the profile prompt seen: Home
+    // must not open a name modal over the reader's first session. Profile still
+    // takes it whenever they want.
     await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
   };
 
@@ -193,14 +243,21 @@ const OnboardingScreen = ({ navigation }) => {
       backgroundColor: colors.background,
     },
 
-    /* â”€â”€ Reading progress bar (top 2px line) â”€â”€ */
-    readingProgress: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      height: 2,
+    /* -- Progress: one segment per step -- */
+    progressRow: {
+      flexDirection: 'row',
+      gap: 6,
+      paddingHorizontal: 32,
+      paddingTop: 10,
+    },
+    progressSegment: {
+      flex: 1,
+      height: 3,
+      borderRadius: 2,
+      backgroundColor: colors.border,
+    },
+    progressSegmentDone: {
       backgroundColor: colors.primary,
-      zIndex: 60,
     },
 
     /* â”€â”€ Header â”€â”€ */
@@ -210,6 +267,14 @@ const OnboardingScreen = ({ navigation }) => {
       justifyContent: 'space-between',
       paddingHorizontal: 24,
       height: 56,
+    },
+    headerSide: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+    },
+    headerBackBtn: {
+      padding: 4,
     },
     headerLogoRow: {
       flexDirection: 'row',
@@ -241,9 +306,12 @@ const OnboardingScreen = ({ navigation }) => {
 
     /* â”€â”€ Step 0: Welcome hero â”€â”€ */
     heroContainer: {
-      width: '100%',
+      // Smaller than the old full-width mark: the welcome step now also carries
+      // a real story card, which must not fall below the fold behind it.
+      width: isSmallPhone ? '52%' : '58%',
+      alignSelf: 'center',
       aspectRatio: 1,
-      marginBottom: 40,
+      marginBottom: 24,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -288,19 +356,19 @@ const OnboardingScreen = ({ navigation }) => {
     },
     welcomeTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 36,
+      fontSize: 32,
       color: colors.text,
       textAlign: 'center',
-      lineHeight: 44,
+      lineHeight: 40,
       letterSpacing: -0.5,
-      marginBottom: 20,
+      marginBottom: 14,
     },
     welcomeSubtitle: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 17,
+      fontSize: 16,
       color: colors.textSecondary,
       textAlign: 'center',
-      lineHeight: 26,
+      lineHeight: 24,
       maxWidth: 320,
       alignSelf: 'center',
     },
@@ -322,51 +390,7 @@ const OnboardingScreen = ({ navigation }) => {
       marginBottom: 28,
     },
 
-    /* â”€â”€ Step 1: How it works cards â”€â”€ */
-    hiwCard: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      paddingVertical: 16,
-      paddingHorizontal: 18,
-      borderRadius: 16,
-      backgroundColor: cardBg,
-      borderWidth: 1,
-      borderColor: colors.border,
-      marginBottom: 10,
-      shadowColor: colors.text,
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.04,
-      shadowRadius: 8,
-      elevation: 1,
-    },
-    hiwIconBox: {
-      width: 44,
-      height: 44,
-      borderRadius: 12,
-      backgroundColor: `${colors.primary}12`,
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginRight: 16,
-      flexShrink: 0,
-    },
-    hiwIcon: {
-      width: 24,
-      textAlign: 'center',
-    },
-    hiwCardTitle: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 14,
-      color: colors.text,
-      marginBottom: 2,
-    },
-    hiwCardSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      color: colors.textSecondary,
-      lineHeight: 18,
-    },
-
-    /* â”€â”€ Step 3: First value â€” real story preview â”€â”€ */
+    /* -- Step 0: the welcome step's story card -- */
     firstValueCard: {
       padding: 20,
       borderRadius: 16,
@@ -401,7 +425,7 @@ const OnboardingScreen = ({ navigation }) => {
       lineHeight: 22,
     },
 
-    /* â”€â”€ Step 2: Category Selection â”€â”€ */
+    /* -- Step 1: Category selection -- */
     catGrid: {
       flexDirection: 'row',
       flexWrap: 'wrap',
@@ -457,18 +481,24 @@ const OnboardingScreen = ({ navigation }) => {
       textAlign: 'center',
       marginTop: 8,
     },
+    catHintAlert: {
+      fontFamily: 'Inter_500Medium',
+      color: colors.primary,
+    },
 
-    /* â”€â”€ Steps 3 & 4: Time / Reminder tiles â”€â”€ */
+    /* -- Step 2: Plan tiles (time budget + reminder window) -- */
     timeTile: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingVertical: 18,
+      // Tighter than before: the time budget and the reminder window are six
+      // tiles on one screen now, not three on each of two.
+      paddingVertical: 14,
       paddingHorizontal: 18,
       borderRadius: 16,
       backgroundColor: cardBg,
       borderWidth: 1,
       borderColor: colors.border,
-      marginBottom: 10,
+      marginBottom: 8,
     },
     timeTileSelected: {
       backgroundColor: `${colors.primary}1F`,
@@ -508,81 +538,29 @@ const OnboardingScreen = ({ navigation }) => {
       borderRadius: 6,
       backgroundColor: colors.primary,
     },
-
-    /* â”€â”€ Step 6: Name â”€â”€ */
-    nameInput: {
-      backgroundColor: colors.surfaceContainerHigh || cardBg,
-      borderRadius: 16,
-      paddingVertical: 16,
-      paddingHorizontal: 18,
-      fontFamily: 'Inter_400Regular',
-      fontSize: 16,
-      color: colors.text,
-      marginBottom: 10,
-      borderWidth: 1,
+    // Square + tick for the reminder rows: they are multi-select and now share a
+    // screen with the single-select time rows, so they must not look identical.
+    timeCheck: {
+      width: 22,
+      height: 22,
+      borderRadius: 6,
+      borderWidth: 2,
       borderColor: colors.border,
-    },
-    nameInputFocused: {
-      borderColor: colors.primary,
-    },
-    nameSkipHint: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 13,
-      color: colors.textSecondary,
-      textAlign: 'center',
-      marginTop: 8,
-    },
-
-    /* â”€â”€ Step 7: Summary â”€â”€ */
-    readyArt: {
-      backgroundColor: cardBg,
-      borderRadius: 20,
-      borderWidth: 1,
-      borderColor: colors.border,
-      paddingVertical: 16,
-      paddingHorizontal: 20,
-      marginBottom: 12,
-      shadowColor: colors.text,
-      shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.04,
-      shadowRadius: 16,
-      elevation: 1,
-    },
-    readyArtHeaderRow: {
-      flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'space-between',
-      marginBottom: 12,
-    },
-    editLink: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 12,
-      color: primaryText,
-      letterSpacing: 0.2,
-    },
-    selCats: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 8,
       justifyContent: 'center',
-      marginTop: 8,
     },
-    selCatPill: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 4,
-      backgroundColor: `${colors.primary}12`,
-      borderRadius: 20,
-      paddingLeft: 10,
-      paddingRight: 14,
-      paddingVertical: 6,
+    timeCheckSelected: {
+      borderColor: colors.primary,
+      backgroundColor: colors.primary,
     },
-    selCatPillIcon: {
-      width: 18,
-      height: 18,
-      borderRadius: 9,
-      overflow: 'hidden',
-      transform: [{ scale: 1.3 }],
+
+    groupLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 11,
+      color: colors.textSecondary,
+      letterSpacing: 1,
+      textTransform: 'uppercase',
+      marginBottom: 10,
     },
 
     /* â”€â”€ Footer â”€â”€ */
@@ -592,31 +570,6 @@ const OnboardingScreen = ({ navigation }) => {
       paddingTop: 16,
       alignItems: 'center',
       gap: 20,
-    },
-
-    /* â”€â”€ Step Dots â”€â”€ */
-    stepDots: {
-      flexDirection: 'row',
-      gap: 8,
-      alignItems: 'center',
-    },
-    stepDot: {
-      width: 6,
-      height: 6,
-      borderRadius: 3,
-      backgroundColor: colors.border,
-    },
-    stepDotActive: {
-      width: 32,
-      height: 6,
-      borderRadius: 3,
-      backgroundColor: colors.primary,
-    },
-    stepDotCompleted: {
-      width: 6,
-      height: 6,
-      borderRadius: 3,
-      backgroundColor: `${colors.primary}55`,
     },
 
     /* â”€â”€ Primary Button â”€â”€ */
@@ -650,24 +603,33 @@ const OnboardingScreen = ({ navigation }) => {
     },
   });
 
-  // First-value moment (step 3): a real story from the categories the user just
-  // picked, punchline first — trust before the paywall ever shows up. Picked
-  // fresh whenever the category selection changes (e.g. the user goes back
-  // and re-picks), falling back to any story with a punchline, then to any
-  // story at all so the step never renders empty.
+  // First-value moment, now on the welcome step (0): one real story, punchline
+  // first — value before we ask for anything. It can't be personalized there
+  // (nothing is picked yet), and depending on `stories` alone also keeps the
+  // card from reshuffling every time the reader steps back to the welcome.
   const firstValueStory = React.useMemo(() => {
     if (!Array.isArray(stories) || !stories.length) return null;
-    const inSelectedCats = (st) => selectedCats.includes(Number(st.parent_cat_id));
-    const hasPunchline = (st) => !!st.conversation_punchline;
-    const matchingWithPunchline = stories.filter((st) => inSelectedCats(st) && hasPunchline(st));
-    const anyWithPunchline = stories.filter(hasPunchline);
-    const pool = matchingWithPunchline.length ? matchingWithPunchline
-      : (anyWithPunchline.length ? anyWithPunchline : stories);
+    // A punchline the DB filled in from the Turkish fallback is worse than no
+    // punchline: 163 of 318 have no es/de copy yet, and this card is the first
+    // real content a new reader sees. `!== false` keeps the Supabase path (which
+    // has no such flag) working.
+    const hasPunchline = (st) => !!st.conversation_punchline && st.conversation_punchline_localized !== false;
+    const withPunchline = stories.filter(hasPunchline);
+    const pool = withPunchline.length ? withPunchline : stories;
     return pool[Math.floor(Math.random() * pool.length)] || null;
-  }, [selectedCats, stories]);
+  }, [stories]);
+
+  // The fallback pool above can still hand back a story whose punchline only
+  // exists in Turkish; fall through to the localized hook/description then.
+  const firstValueText = firstValueStory
+    ? ((firstValueStory.conversation_punchline_localized !== false && firstValueStory.conversation_punchline)
+      || firstValueStory.hook
+      || firstValueStory.description
+      || '')
+    : '';
 
   useEffect(() => {
-    if (step !== 3 || !firstValueStory) return;
+    if (step !== 0 || !firstValueStory) return;
     trackEvent(ANALYTICS_EVENTS.ONBOARDING_FIRST_STORY_SHOWN, {
       storyId: firstValueStory.story_id,
       lang,
@@ -677,8 +639,8 @@ const OnboardingScreen = ({ navigation }) => {
 
   /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ STEP CONTENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   const steps = [
-    /* â”€â”€ Step 0: Welcome â”€â”€ */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s0">
+    /* -- Step 0: Welcome + one real story as proof of value -- */
+    <View style={{ flex: 1, justifyContent: 'center' }} key="step0">
       <Animated.View style={[s.heroContainer, { transform: [{ scale: breatheAnim }] }]}>
         <View style={s.heroOuterRing} />
         <View style={s.heroInnerRing} />
@@ -695,39 +657,22 @@ const OnboardingScreen = ({ navigation }) => {
       </Animated.View>
       <Text style={s.welcomeTitle}>{t('onboarding_welcome', lang)}</Text>
       <Text style={s.welcomeSubtitle}>{t('onboarding_welcome_sub', lang)}</Text>
+      {/* This card is what the separate "how it works" step used to claim in
+          words: a real story, in the reader's language, before we ask for
+          anything. */}
+      {firstValueStory ? (
+        <View style={[s.firstValueCard, { marginTop: 28 }]}>
+          <Text style={s.firstValueCategory} numberOfLines={1}>
+            {t('onboarding_first_value_title', lang)}
+          </Text>
+          <Text style={s.firstValueTitle} numberOfLines={2}>{firstValueStory.title}</Text>
+          <Text style={s.firstValuePunchline} numberOfLines={4}>{firstValueText}</Text>
+        </View>
+      ) : null}
     </View>,
 
-    /* â”€â”€ Step 1: How it works â”€â”€ */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s1">
-      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
-        {t('onboarding_how_it_works', lang)}
-      </Text>
-      <Text style={s.sectionSubtitle}>{t('onboarding_how_it_works_sub', lang)}</Text>
-      <View style={s.hiwCard}>
-        <View style={s.hiwIconBox}><Ionicons name="book-outline" size={22} color={colors.primaryText} style={s.hiwIcon} /></View>
-        <View style={{ flex: 1 }}>
-          <Text style={s.hiwCardTitle}>{t('onboarding_hiw_stories_title', lang)}</Text>
-          <Text style={s.hiwCardSub}>{t('onboarding_hiw_stories_sub', lang)}</Text>
-        </View>
-      </View>
-      <View style={s.hiwCard}>
-        <View style={s.hiwIconBox}><Ionicons name="flame-outline" size={22} color={colors.primaryText} style={s.hiwIcon} /></View>
-        <View style={{ flex: 1 }}>
-          <Text style={s.hiwCardTitle}>{t('onboarding_hiw_spark_title', lang)}</Text>
-          <Text style={s.hiwCardSub}>{t('onboarding_hiw_spark_sub', lang)}</Text>
-        </View>
-      </View>
-      <View style={s.hiwCard}>
-        <View style={s.hiwIconBox}><Ionicons name="notifications-outline" size={22} color={colors.primaryText} style={s.hiwIcon} /></View>
-        <View style={{ flex: 1 }}>
-          <Text style={s.hiwCardTitle}>{t('onboarding_hiw_reminder_title', lang)}</Text>
-          <Text style={s.hiwCardSub}>{t('onboarding_hiw_reminder_sub', lang)}</Text>
-        </View>
-      </View>
-    </View>,
-
-    /* â”€â”€ Step 2: Category Selection â”€â”€ */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s2">
+    /* -- Step 1: Category selection (min. 2) -- */
+    <View style={{ flex: 1, justifyContent: 'center' }} key="step1">
       <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
         {t('onboarding_why', lang)}
       </Text>
@@ -746,6 +691,9 @@ const OnboardingScreen = ({ navigation }) => {
               style={[s.catTile, sel && s.catTileSelected]}
               onPress={() => toggleCat(cat)}
               activeOpacity={0.7}
+              accessibilityRole="checkbox"
+              accessibilityState={{ checked: sel }}
+              accessibilityLabel={catLabel}
             >
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: isSmallPhone ? 6 : 8, flex: 1 }}>
                 {(imgSource || catEmoji) ? (
@@ -790,46 +738,32 @@ const OnboardingScreen = ({ navigation }) => {
           );
         })}
       </View>
-      <Text style={s.catHint}>
+      <Text style={[s.catHint, hintAlert && s.catHintAlert]}>
         {selectedCats.length >= 2
           ? `${selectedCats.length} ${t('onboarding_cat_selected', lang)}`
           : t('onboarding_cat_more', lang).replace('{{count}}', 2 - selectedCats.length)}
       </Text>
     </View>,
 
-    /* â”€â”€ Step 3: First value â€” a real story from what they just picked â”€â”€ */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s2b">
+    /* -- Step 2: Daily plan - time budget and reminder window on one screen.
+       Two taps that used to be two screens; neither needs a screen of its own,
+       and the summary step that restated them is gone. -- */
+    <View style={{ flex: 1, justifyContent: 'center' }} key="step2">
       <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
-        {t('onboarding_first_value_title', lang)}
+        {t('onboarding_plan_title', lang)}
       </Text>
-      <Text style={s.sectionSubtitle}>{t('onboarding_first_value_sub', lang)}</Text>
-      {firstValueStory ? (
-        <View style={s.firstValueCard}>
-          {firstValueStory.parent_cat ? (
-            <Text style={s.firstValueCategory} numberOfLines={1}>
-              {splitLeadingEmoji(firstValueStory.parent_cat).text}
-            </Text>
-          ) : null}
-          <Text style={s.firstValueTitle} numberOfLines={2}>{firstValueStory.title}</Text>
-          <Text style={s.firstValuePunchline} numberOfLines={5}>
-            {firstValueStory.conversation_punchline || firstValueStory.hook || firstValueStory.description}
-          </Text>
-        </View>
-      ) : null}
-    </View>,
+      <Text style={[s.sectionSubtitle, { marginBottom: 18 }]}>{t('onboarding_how_long_sub', lang)}</Text>
 
-    /* â”€â”€ Step 4: Time Selection â”€â”€ */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s3">
-      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
-        {t('onboarding_how_long', lang)}
-      </Text>
-      <Text style={s.sectionSubtitle}>{t('onboarding_how_long_sub', lang)}</Text>
+      <Text style={s.groupLabel}>{t('readingPlan', lang)}</Text>
       {timeOptions.map((option, i) => (
         <TouchableOpacity
           key={i}
           style={[s.timeTile, selectedTime === i && s.timeTileSelected]}
           onPress={() => { Haptics.selectionAsync().catch(() => {}); setSelectedTime(i); }}
           activeOpacity={0.7}
+          accessibilityRole="radio"
+          accessibilityState={{ checked: selectedTime === i }}
+          accessibilityLabel={`${option.label} — ${option.sub}`}
         >
           <Ionicons name={option.iconName} size={24} color={selectedTime === i ? colors.primary : colors.textSecondary} style={s.timeTileIcon} />
           <View style={{ flex: 1 }}>
@@ -841,14 +775,8 @@ const OnboardingScreen = ({ navigation }) => {
           </View>
         </TouchableOpacity>
       ))}
-    </View>,
 
-    /* â”€â”€ Step 5: Reminder Selection â”€â”€ */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s4">
-      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
-        {t('onboarding_when_remind', lang)}
-      </Text>
-      <Text style={s.sectionSubtitle}>{t('onboarding_when_remind_sub', lang)}</Text>
+      <Text style={[s.groupLabel, { marginTop: 18 }]}>{t('reminderTime', lang)}</Text>
       {reminderOptions.map((option, i) => {
         const isSelected = selectedReminders.includes(option.reminderWindow);
         return (
@@ -857,113 +785,43 @@ const OnboardingScreen = ({ navigation }) => {
             style={[s.timeTile, isSelected && s.timeTileSelected]}
             onPress={() => toggleReminder(option.reminderWindow)}
             activeOpacity={0.7}
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: isSelected }}
+            accessibilityLabel={`${option.label} — ${option.sub}`}
           >
             <Ionicons name={option.iconName} size={24} color={isSelected ? colors.primary : colors.textSecondary} style={s.timeTileIcon} />
             <View style={{ flex: 1 }}>
               <Text style={s.timeTileName}>{option.label}</Text>
               <Text style={s.timeTileSub}>{option.sub}</Text>
             </View>
-            <View style={[s.timeRadio, isSelected && s.timeRadioSelected]}>
-              {isSelected && <View style={s.timeRadioInner} />}
+            <View style={[s.timeCheck, isSelected && s.timeCheckSelected]}>
+              {isSelected && <Ionicons name="checkmark" size={14} color={colors.onPrimary} />}
             </View>
           </TouchableOpacity>
         );
       })}
-      <Text style={s.catHint}>{t('onboarding_reminder_permission_note', lang)}</Text>
-    </View>,
-
-    /* â”€â”€ Step 6: Name (optional) â”€â”€ */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s5">
-      <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
-        {t('onboarding_name_title', lang)}
+      <Text style={s.catHint}>
+        {selectedReminders.length
+          ? t('onboarding_reminder_permission_note', lang)
+          : t('profileRemindersDisabledSub', lang)}
       </Text>
-      <Text style={s.sectionSubtitle}>{t('onboarding_name_sub', lang)}</Text>
-      <TextInput
-        style={[s.nameInput, focusedField === 'name' && s.nameInputFocused]}
-        placeholder={t('onboarding_name_placeholder', lang)}
-        placeholderTextColor={colors.mutedText || colors.textSecondary}
-        value={userName}
-        onChangeText={setUserName}
-        onFocus={() => setFocusedField('name')}
-        onBlur={() => setFocusedField(null)}
-        autoCapitalize="words"
-        autoCorrect={false}
-        maxLength={40}
-        returnKeyType="done"
-      />
-      <Text style={s.nameSkipHint}>{t('onboarding_name_skip_hint', lang)}</Text>
-    </View>,
-
-    /* â”€â”€ Step 7: Summary / Ready â”€â”€ */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="s6">
-      <Text style={[s.sectionTitle, { textAlign: 'center', marginBottom: 6 }]}>
-        {userName.trim()
-          ? t('onboarding_ready_greeting', lang).replace('{{name}}', userName.trim())
-          : t('onboarding_ready', lang)}
-      </Text>
-      <Text style={[s.sectionSubtitle, { textAlign: 'center', marginBottom: 24 }]}>
-        {readyPlanSummary}
-      </Text>
-
-      {/* Selected categories */}
-      <View style={s.readyArt}>
-        <View style={s.readyArtHeaderRow}>
-          <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.textSecondary, letterSpacing: 1, textTransform: 'uppercase' }}>
-            {t('onboarding_cat', lang)} ({(selectedCats.length || 2)})
-          </Text>
-          <TouchableOpacity onPress={() => goToStep(2)} activeOpacity={0.6} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-            <Text style={s.editLink}>{t('onboarding_edit', lang)}</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={s.selCats}>
-          {(selectedCats.length ? selectedCats : allCats.slice(0, 2)).map(c => {
-            const catName = (parentCategories.find((p) => Number(p.id) === Number(c))?.name) || '';
-            const pillIcon = getCategoryPillIcon(catName, isDark);
-            return (
-              <View key={c} style={s.selCatPill}>
-                {pillIcon.source ? (
-                  <Image source={pillIcon.source} style={s.selCatPillIcon} resizeMode="cover" />
-                ) : null}
-                <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: primaryText }}>
-                  {catName}
-                </Text>
-              </View>
-            );
-          })}
-        </View>
-      </View>
-
-      {/* Reading plan + reminder */}
-      <View style={s.readyArt}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <View style={{ flex: 1 }}>
-            <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginBottom: 4 }}>
-              {t('readingPlan', lang)}
-            </Text>
-            <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
-              {selectedTimeOption.label} - {selectedTimeOption.dailyStoryTarget} {t(selectedTimeOption.dailyStoryTarget === 1 ? 'onboarding_story' : 'onboarding_stories', lang)}
-            </Text>
-            <TouchableOpacity onPress={() => goToStep(3)} activeOpacity={0.6} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} style={{ marginTop: 6 }}>
-              <Text style={s.editLink}>{t('onboarding_edit', lang)}</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={{ flex: 1, paddingLeft: 12 }}>
-            <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginBottom: 4 }}>
-              {t('reminderTime', lang)}
-            </Text>
-            <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
-              {reminderOptions.filter(o => selectedReminders.includes(o.reminderWindow)).map(o => o.label).join(', ')}
-            </Text>
-            <TouchableOpacity onPress={() => goToStep(4)} activeOpacity={0.6} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} style={{ marginTop: 6 }}>
-              <Text style={s.editLink}>{t('onboarding_edit', lang)}</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
     </View>,
   ];
 
-  const canNext = step === 2 ? selectedCats.length >= 2 : true;
+  const canNext = step === 1 ? selectedCats.length >= 2 : true;
+
+  // A CTA that does nothing on press reads as a broken screen, so an unmet
+  // requirement gets a warning tap and pushes the hint below the grid.
+  const onPrimaryPress = () => {
+    if (canNext) {
+      next();
+      return;
+    }
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning).catch(() => {});
+    setHintAlert(true);
+    clearTimeout(hintTimerRef.current);
+    hintTimerRef.current = setTimeout(() => setHintAlert(false), 1800);
+  };
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={s.safe}>
@@ -972,74 +830,81 @@ const OnboardingScreen = ({ navigation }) => {
         backgroundColor={colors.background}
       />
 
-      {/* â”€â”€ Reading Progress Bar â”€â”€ */}
-      <View style={[s.readingProgress, { width: `${((step + 1) / TOTAL_STEPS) * 100}%` }]} />
+      {/* One segment per step. The footer dots are gone: two progress
+          indicators for three steps was one indicator too many. */}
+      <View
+        style={s.progressRow}
+        accessibilityRole="progressbar"
+        accessibilityValue={{ min: 1, max: TOTAL_STEPS, now: step + 1 }}
+      >
+        {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
+          <View key={i} style={[s.progressSegment, i <= step && s.progressSegmentDone]} />
+        ))}
+      </View>
 
-      {/* â”€â”€ Header â”€â”€ */}
+      {/* Header: Back always on the left (platform convention), Skip always on
+          the right — they used to swap sides between steps. */}
       <View style={s.header}>
-        {/* Left: logo + brand name */}
-        <View style={s.headerLogoRow}>
-          <Image
-            source={isDark
-              ? require('../../assets/spark_logo_dark.png')
-              : require('../../assets/spark_logo.png')}
-            style={s.headerLogoImg}
-            resizeMode="contain"
-          />
-          <Text style={s.headerBrand}>Albor</Text>
+        <View style={s.headerSide}>
+          {step > 0 ? (
+            <>
+              <TouchableOpacity
+                onPress={goBack}
+                activeOpacity={0.7}
+                style={s.headerBackBtn}
+                hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                accessibilityRole="button"
+                accessibilityLabel={t('back', lang)}
+              >
+                <Ionicons name="chevron-back" size={22} color={colors.textSecondary} />
+              </TouchableOpacity>
+              {/* Only after the welcome step: there the hero already carries the
+                  mark, and showing it twice on one screen just read as clutter. */}
+              <View style={s.headerLogoRow}>
+                <Image
+                  source={isDark
+                    ? require('../../assets/spark_logo_dark.png')
+                    : require('../../assets/spark_logo.png')}
+                  style={s.headerLogoImg}
+                  resizeMode="contain"
+                />
+                <Text style={s.headerBrand}>Albor</Text>
+              </View>
+            </>
+          ) : null}
         </View>
 
-        {/* Right: Skip (steps 0 & 6) or Back chevron (other steps) */}
-        {(step === 0 || step === 6) ? (
-          <TouchableOpacity onPress={step === 0 ? skip : next} activeOpacity={0.7}>
+        {step === 0 ? (
+          <TouchableOpacity
+            onPress={skip}
+            activeOpacity={0.7}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+            accessibilityRole="button"
+          >
             <Text style={s.headerAction}>{t('onboarding_skip', lang)}</Text>
           </TouchableOpacity>
-        ) : (
-          <TouchableOpacity onPress={goBack} activeOpacity={0.7} style={{ padding: 4 }}>
-            <Ionicons name="chevron-back" size={22} color={colors.textSecondary} />
-          </TouchableOpacity>
-        )}
+        ) : null}
       </View>
 
       {/* â”€â”€ Animated Content â”€â”€ */}
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      >
-        <Animated.View style={{ flex: 1, opacity: fadeAnim, transform: [{ translateY: slideAnim }] }}>
-          <ScrollView
-            contentContainerStyle={s.contentScroll}
-            showsVerticalScrollIndicator={false}
-            bounces={false}
-            keyboardShouldPersistTaps="handled"
-          >
-            {steps[step]}
-          </ScrollView>
-        </Animated.View>
-      </KeyboardAvoidingView>
+      <Animated.View style={{ flex: 1, opacity: fadeAnim, transform: [{ translateY: slideAnim }] }}>
+        <ScrollView
+          contentContainerStyle={s.contentScroll}
+          showsVerticalScrollIndicator={false}
+          bounces={false}
+        >
+          {steps[step]}
+        </ScrollView>
+      </Animated.View>
 
       {/* â”€â”€ Footer â”€â”€ */}
       <View style={s.footer}>
-        {/* Step Dots â€” tap completed dots to navigate back */}
-        <View style={s.stepDots}>
-          {Array.from({ length: TOTAL_STEPS }).map((_, i) => {
-            if (i === step) return <View key={i} style={s.stepDotActive} />;
-            if (i < step) {
-              return (
-                <TouchableOpacity key={i} onPress={() => goToStep(i)} activeOpacity={0.6}>
-                  <View style={s.stepDotCompleted} />
-                </TouchableOpacity>
-              );
-            }
-            return <View key={i} style={s.stepDot} />;
-          })}
-        </View>
-
-        {/* Primary CTA Button */}
         <TouchableOpacity
           style={[s.btnPrimary, !canNext && s.btnDisabled]}
-          onPress={canNext ? next : null}
+          onPress={onPrimaryPress}
           activeOpacity={0.85}
+          accessibilityRole="button"
+          accessibilityState={{ disabled: !canNext }}
         >
           <Text style={s.btnPrimaryText}>
             {step < TOTAL_STEPS - 1

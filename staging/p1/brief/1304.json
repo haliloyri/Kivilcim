@@ -1,0 +1,63 @@
+{
+  "story_id": 1304,
+  "kind": "concept",
+  "book": {
+    "title": "The Black Swan",
+    "author": "Nassim Nicholas Taleb",
+    "year": "2007"
+  },
+  "confidence": "medium",
+  "confidence_note": "In 'The Scandal of Prediction', Taleb cites Philip Tetlock's study of expert political and economic forecasts (experts did little better than chance and were overconfident), Spyros Makridakis's forecasting competitions (sophisticated methods did not beat simple ones), and calibration experiments in which people asked for a 98 percent confidence range missed far more often than 2 percent. He advises investing in preparedness rather than prediction. The reference text's 'dart-throwing MBA' line and weather-forecast claims are not from the book and are omitted; exact miss rates are omitted.",
+  "facts": [
+    "Taleb reviews research on forecasting, including Philip Tetlock's study of expert forecasters, which found their predictions did little better than chance and that experts were overconfident.",
+    "He also cites forecasting competitions run by Spyros Makridakis, in which sophisticated statistical methods did not outperform simple ones.",
+    "He describes calibration experiments: people asked to give a range they were 98 percent sure contained the true answer were wrong far more often than 2 percent of the time. Taleb calls this epistemic arrogance.",
+    "He argues that we keep relying on forecasts because we underestimate uncertainty and overestimate what we know.",
+    "His advice is to invest in preparedness rather than prediction: focus on the consequences you can handle rather than trying to know exactly what will happen."
+  ],
+  "tension": "People who say they are 98 percent sure are wrong far more often than 2 percent of the time, and experts are no exception.",
+  "opening_idea": "Taleb describes a simple test: give a range you're 98 percent sure contains the right answer. The ranges people choose are far too narrow.",
+  "lessons": [
+    {
+      "idea": "Confidence and accuracy are different things.",
+      "anchor": "Calibration experiments with 98 percent ranges"
+    },
+    {
+      "idea": "Expertise doesn't guarantee better forecasts.",
+      "anchor": "Tetlock's study of expert forecasts"
+    },
+    {
+      "idea": "Prepare for a range of outcomes rather than betting on one forecast.",
+      "anchor": "'Invest in preparedness, not in prediction'"
+    }
+  ],
+  "reflect": [
+    "Which plan of yours depends on a single forecast being right?",
+    "How often have your confident estimates of time or cost actually held?"
+  ],
+  "reflect_final": "For your next plan, write down what you'd do if the key estimate were badly wrong, and notice whether that changes what you prepare.",
+  "use_cases": [
+    {
+      "situation": "Project planning where the whole schedule rests on one estimate.",
+      "move": "Mention that in Taleb's calibration tests people's '98 percent sure' ranges missed far too often, and ask the team to widen the range and plan for the far end.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague in a one-on-one is certain about how a reorganization will play out.",
+      "move": "Ask what they would do if the opposite happened, and agree on one step that works either way.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're making a financial or career decision based on a prediction.",
+      "move": "Before deciding, write your best guess as a range and check whether you could live with the worst end.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Your '98 percent sure' range is narrower than you think, so build for what you can survive, not what you predict.",
+  "conversation_variants": {
+    "punchline_idea": "When people say they're 98 percent sure, they're wrong far more often than 2 percent of the time.",
+    "thirty_sec_idea": "Taleb gathers the evidence against forecasting: experts barely beat chance, fancy models don't beat simple ones, and people's '98 percent sure' ranges miss far too often, so he says invest in preparedness, not prediction.",
+    "question_idea": "What's a prediction you were sure about that turned out completely wrong?",
+    "key_contrast_idea": "Knowing what will happen versus being ready for whatever happens."
+  }
+}

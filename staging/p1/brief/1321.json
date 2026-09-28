@@ -1,0 +1,64 @@
+{
+  "story_id": 1321,
+  "kind": "anecdote",
+  "book": {
+    "title": "A More Beautiful Question",
+    "author": "Warren Berger",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "Berger tells the Edwin Land story in A More Beautiful Question: on a 1943 family vacation Land's young daughter (Jennifer, about three years old) asked why she couldn't see the picture he had just taken, and Land took the question seriously and worked out the concept of instant photography; the Polaroid instant camera reached the market in 1948. These details are widely documented and consistent with Berger's account. The reference text's scene of Land 'stopping' and the rival phrasing 'How can we make better film?' are not book details and are omitted. Berger's broader argument that schools and workplaces reward answers over questions is used as his interpretation. Details were not verified against the book's text.",
+  "facts": [
+    "In 1943, while on a family vacation, Edwin Land photographed his young daughter, who was about three.",
+    "She asked why she couldn't see the picture right away.",
+    "The obvious answer was that film has to be developed. Land instead treated her question as a real problem and began working out how a camera could produce the picture immediately.",
+    "Polaroid brought its instant camera to market in 1948.",
+    "Berger uses the story to show how a naive 'why' question can open a path an expert had not considered, and argues that children ask many questions but schools and workplaces tend to reward answers rather than questions."
+  ],
+  "tension": "The child's question had a perfectly reasonable answer ready, and the invention depended on Land not being satisfied with it.",
+  "opening_idea": "Start with the three-year-old asking why she can't see the photo right now, and the sensible adult answer everyone already knew.",
+  "lessons": [
+    {
+      "idea": "A naive question can reveal an assumption experts have stopped seeing.",
+      "anchor": "Land's daughter asked why she couldn't see the photo right away"
+    },
+    {
+      "idea": "The same question can be dismissed with an explanation or taken up as a problem.",
+      "anchor": "'Film must be developed' versus Land working on instant development"
+    },
+    {
+      "idea": "Environments that reward quick answers can train questions out of people.",
+      "anchor": "Berger's argument about schools and workplaces"
+    }
+  ],
+  "reflect": [
+    "When did a child or newcomer ask you a question you answered too quickly?",
+    "Which 'that's just how it works' explanation do you give most often?",
+    "Where are you rewarded for fast answers rather than good questions?"
+  ],
+  "reflect_final": "The next time someone asks 'why can't we just…?', before explaining why not, ask yourself what it would take for the answer to be yes. Notice what you would have missed.",
+  "use_cases": [
+    {
+      "situation": "A new hire asks why the team does something in a slow, roundabout way.",
+      "move": "Recall that Land took his daughter's 'why can't I see it now?' seriously. Instead of explaining the reason, write the question on the board and ask the team what would have to be true to make it possible.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child asks a 'why' question about something everyday.",
+      "move": "Before giving the standard answer, ask back: 'What do you think? How could it be different?' and explore it together for a few minutes.",
+      "context": "family"
+    },
+    {
+      "situation": "You're stuck on a familiar problem at work.",
+      "move": "Rewrite it as a simple question a three-year-old might ask, and list two answers other than the usual explanation.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Everyone knew film had to be developed. A three-year-old's 'why can't I see it now?' was the question that led to instant photography.",
+  "conversation_variants": {
+    "punchline_idea": "Instant photography started with a three-year-old asking why she couldn't see the picture yet.",
+    "thirty_sec_idea": "On vacation in 1943, Edwin Land's daughter asked why she couldn't see the photo he'd just taken. Rather than explaining film development, Land took the question seriously, and the Polaroid instant camera reached the market in 1948.",
+    "question_idea": "Ask what question a child or newcomer has asked them that turned out to be sharper than it sounded.",
+    "key_contrast_idea": "Answering a naive question versus taking it seriously as a problem to solve."
+  }
+}

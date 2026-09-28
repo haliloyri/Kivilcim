@@ -1,0 +1,71 @@
+{
+  "story_id": 1110,
+  "kind": "concept",
+  "book": {
+    "title": "Emotional Intelligence",
+    "author": "Daniel Goleman",
+    "year": "1995"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core concept is central to the book: an 'emotional hijacking' driven by the amygdala, built on Joseph LeDoux's neural shortcut research, with the thinking brain temporarily overridden. The book illustrates it with real cases. These include Richard Robles, a burglar in 1960s Manhattan whose break-in escalated into a double murder and who later said his head 'just went bananas'. Another is a father who shot his teenage daughter after mistaking her prank for an intruder. Those case details are given without extra specifics, to avoid misremembering. The advice on cooling down draws on research the book cites on anger, notably Dolf Zillmann's work. Exact recovery times are deliberately omitted. The book says cooling takes real time and that stepping away works better than venting, but the existing TR text's 'a few minutes' figure should not be stated as the book's number.",
+  "facts": [
+    "Goleman calls the moment an emotion overwhelms rational thought an 'emotional hijacking', with the amygdala acting as the brain's alarm or sentinel for threats.",
+    "Drawing on neuroscientist Joseph LeDoux's work, the book explains that sensory signals can reach the amygdala by a fast shortcut before the neocortex has fully processed them. This lets us react before we fully think.",
+    "The prefrontal cortex acts as the brain's manager of emotion, but during a hijacking the amygdala's alarm can override it.",
+    "The book opens its hijacking discussion with a real case: Richard Robles, a burglar in 1960s Manhattan whose break-in escalated into killing two young women. He later described his mind as having 'just gone bananas'.",
+    "The book also recounts a father who shot his teenage daughter after she jumped out to startle him as a prank and he mistook her for an intruder. It shows how the fast alarm system can misfire.",
+    "In evolutionary terms, this rapid reaction helped survival against physical dangers. Today it fires in response to insults, frustrations and perceived slights.",
+    "Citing research on anger (including Dolf Zillmann), the book argues that anger builds on itself through angry thoughts. It also argues that venting tends to prolong it rather than release it.",
+    "According to the book, cooling down requires time away from the trigger. Leaving the situation, distraction, and questioning the angry thoughts help physiological arousal subside."
+  ],
+  "tension": "The part of the brain that reacts fastest in a heated moment is the part least able to judge. When we feel most certain we must respond right now, we are least capable of responding wisely.",
+  "opening_idea": "Ask the reader to recall their last real outburst and notice that, in the moment, they weren't thinking clearly. Afterwards they wondered why they said what they said.",
+  "lessons": [
+    {
+      "idea": "A hijacking is a neural shortcut: the amygdala can trigger a reaction before the thinking brain has weighed in.",
+      "anchor": "LeDoux's thalamus-to-amygdala shortcut described in the book"
+    },
+    {
+      "idea": "The alarm evolved for physical threats, but it fires the same way for modern social ones like criticism or frustration.",
+      "anchor": "The book's evolutionary framing of the amygdala as a sentinel"
+    },
+    {
+      "idea": "Venting doesn't drain anger. Angry rumination fuels it, and stepping away with time to cool lets the arousal fade.",
+      "anchor": "The anger research the book cites (Zillmann) and its critique of venting"
+    },
+    {
+      "idea": "The goal is not to suppress emotion but to create a gap so the prefrontal 'manager' can come back online before you act.",
+      "anchor": "The book's account of the prefrontal cortex as emotional manager"
+    }
+  ],
+  "reflect": [
+    "Which situations most reliably set off your alarm: criticism, being interrupted, feeling ignored, time pressure?",
+    "What physical signs tell you a hijacking is starting, such as heat, tight jaw, faster speech?",
+    "When you've vented in the past, did it calm you down or keep the anger going?"
+  ],
+  "reflect_final": "What is your most frequent trigger? And the next time you catch yourself in the middle of it, what single step will you take before you respond?",
+  "use_cases": [
+    {
+      "situation": "A colleague publicly criticizes your work in a meeting and you feel the heat rising.",
+      "move": "Say: 'That's worth discussing properly. Let me come back to you on it after the meeting.' Then write your reply only once you've cooled down.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family argument is escalating and both of you are raising your voices.",
+      "move": "Name it and step out: 'I'm too heated to talk well right now. Let's pick this up after a walk.' Then actually leave the room.",
+      "context": "family"
+    },
+    {
+      "situation": "An infuriating email or message arrives and you start drafting a sharp reply.",
+      "move": "Don't hit send. Save it as a draft, do something unrelated, and reread it only once your body has calmed.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "When anger is at its strongest is when it's most dangerous to let it make your decisions.",
+  "conversation_variants": {
+    "punchline_idea": "Your brain can react before it thinks, so the smartest move in a heated moment is often to wait.",
+    "thirty_sec_idea": "Goleman's 'emotional hijacking': the amygdala's fast shortcut can override the thinking brain. Venting keeps it going, and time away lets it fade.",
+    "question_idea": "Have you ever noticed that you literally couldn't think straight in the middle of an argument?",
+    "key_contrast_idea": "Venting feels like releasing anger but actually feeds it, while stepping away feels like avoidance but actually defuses it."
+  }
+}

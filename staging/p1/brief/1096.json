@@ -1,0 +1,73 @@
+{
+  "story_id": 1096,
+  "kind": "anecdote",
+  "book": {
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "year": "1989"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core Frankl material is solidly in the book's Habit 1 chapter: Frankl's imprisonment in Nazi death camps, the loss of his family, and his realization about 'the last of the human freedoms.' The reference text adds details that should not be carried over. First, Covey's story of finding the 'space between stimulus and response' passage in a library comes from his later writing, not this book. Second, Covey said he could not recall that passage's author, so it should not be attributed to Frankl's 'Man's Search for Meaning.' Third, Frankl did not write his account inside Auschwitz; he wrote it after liberation. The brief keeps to what 7 Habits itself says. The exact wording of quotes should be treated as paraphrase.",
+  "facts": [
+    "Covey tells Viktor Frankl's story to open Habit 1, 'Be Proactive.'",
+    "Frankl was a psychiatrist trained in a deterministic (Freudian) view that early conditioning shapes a person for life.",
+    "Frankl was imprisoned in Nazi death camps. His parents, his brother and his wife died there; of his family, only his sister survived.",
+    "He was subjected to extreme deprivation and humiliation, with no control over what was done to him.",
+    "In that 'naked' condition Frankl became aware of what he called 'the last of the human freedoms': his captors could control his environment and his body, but not how he chose to respond inwardly.",
+    "Covey frames this as a gap between stimulus and response, where a person's freedom to choose the response lies.",
+    "Covey describes Frankl using that inner freedom to imagine himself after the camps, lecturing to students about what he had learned. By doing so, Frankl helped others find meaning in their suffering.",
+    "From this Covey builds his definition of proactivity: taking responsibility ('response-ability') for one's own responses instead of blaming circumstances, conditions or conditioning.",
+    "Covey contrasts reactive people, who are driven by feelings, circumstances and other people's behavior, with proactive people, who are driven by values they have chosen.",
+    "His weather image: reactive people feel good when the weather is good and bad when it isn't. Proactive people 'carry their own weather with them.'"
+  ],
+  "tension": "A man stripped of family, freedom and dignity by a system built to crush him should, by any deterministic logic, be nothing but a product of his circumstances. Yet he found one thing they could not take.",
+  "opening_idea": "Start with everything the camps took from Frankl, list by list. Then turn to the one thing that stayed out of their reach.",
+  "lessons": [
+    {
+      "idea": "There is a gap between what happens to you and how you respond, and your freedom lives in that gap.",
+      "anchor": "Frankl's 'last of the human freedoms' in the death camps"
+    },
+    {
+      "idea": "Responsibility means 'response-ability': owning your response instead of blaming conditions or conditioning.",
+      "anchor": "Covey's reframing of the word as the basis of Habit 1"
+    },
+    {
+      "idea": "Reactive people let outside conditions set their inner state. Proactive people act from chosen values.",
+      "anchor": "The 'carry your own weather' image"
+    },
+    {
+      "idea": "Using that inner freedom can create purpose even in the worst conditions.",
+      "anchor": "Frankl imagining himself teaching students after the camps"
+    }
+  ],
+  "reflect": [
+    "Which situation reliably triggers an automatic response in you?",
+    "Where do you currently blame circumstances or other people for how you feel?",
+    "What value would you want to guide your response instead of the trigger?"
+  ],
+  "reflect_final": "If you paused for one breath in that gap next time, what response would you choose on purpose?",
+  "use_cases": [
+    {
+      "situation": "A colleague criticizes your work sharply in front of others.",
+      "move": "Pause before replying and say: 'Let me think about that and come back to you with a clear answer,' instead of firing back.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your teenager slams a door after an argument.",
+      "move": "Wait until you're calm, then open with 'I want to understand what happened' rather than matching their volume.",
+      "context": "family"
+    },
+    {
+      "situation": "A bad commute or bad weather sours your mood before the day starts.",
+      "move": "Name it silently ('this is weather, not my day') and pick one deliberate action to set your own tone.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "They can control what happens to you, but not how you choose to respond.",
+  "conversation_variants": {
+    "punchline_idea": "The camps took everything from Frankl except the one freedom that mattered most.",
+    "thirty_sec_idea": "Covey opens Habit 1 with Frankl, who lost his family and freedom in the Nazi camps but realized no one could take his power to choose his inner response.",
+    "question_idea": "If someone controlled every circumstance of your life, what would still be yours to decide?",
+    "key_contrast_idea": "Reactive people's mood follows the weather, while proactive people carry their own weather."
+  }
+}

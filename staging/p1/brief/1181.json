@@ -1,0 +1,65 @@
+{
+  "story_id": 1181,
+  "kind": "anecdote",
+  "book": {
+    "title": "Big Magic: Creative Living Beyond Fear",
+    "author": "Elizabeth Gilbert",
+    "year": "2015"
+  },
+  "confidence": "high",
+  "confidence_note": "Gilbert's theory that ideas are disembodied energies seeking human collaborators is central to Big Magic, and she illustrates it with a well-known story: she began a novel about a woman from Minnesota drawn into a doomed highway project in the Amazon jungle in the 1960s, set it aside for a long time because of life events, and when she returned the idea was gone. Later she learned her friend Ann Patchett was writing a novel set in the Amazon with strikingly similar elements (which became State of Wonder). The two had met at a public event and shared a kiss on the cheek, which Gilbert playfully suggests is when the idea passed from her to Patchett. Details are paraphrased.",
+  "facts": [
+    "Gilbert proposes that ideas are a kind of disembodied life form, seeking a human collaborator to bring them into the world.",
+    "If you are not available, an idea may eventually move on and look for someone else.",
+    "She once began a novel about a middle-aged woman from Minnesota, in love with her married boss, who gets drawn into a doomed highway project in the Amazon jungle in the 1960s.",
+    "Life circumstances pulled her away from the book for a long time. When she returned, the idea had gone cold; she couldn't bring it back to life.",
+    "Around then she became friends with the novelist Ann Patchett. They had first met at a public event, where they shared a kiss on the cheek.",
+    "Later Gilbert learned that Patchett was writing a novel set in the Amazon, about a Minnesotan woman in love with her married boss, with strikingly similar elements. It became State of Wonder.",
+    "Gilbert jokes that the idea passed to Patchett with that kiss. Her point: when an idea comes to you, treat it seriously and give it your attention while it's there."
+  ],
+  "tension": "An idea you neglect may not wait for you forever.",
+  "opening_idea": "Two novelists meet and exchange a kiss on the cheek. Later, one of them writes the other's abandoned novel.",
+  "lessons": [
+    {
+      "idea": "Ideas come with a kind of invitation that expires.",
+      "anchor": "The Amazon novel that went cold"
+    },
+    {
+      "idea": "An idea is best honored by working on it.",
+      "anchor": "Patchett gave the idea her full attention"
+    },
+    {
+      "idea": "Holding ideas lightly makes you generous rather than jealous.",
+      "anchor": "Gilbert's playful response to Patchett's novel"
+    }
+  ],
+  "reflect": [
+    "Which idea have you been carrying without acting on?",
+    "What would it take to give it one hour this week?"
+  ],
+  "reflect_final": "If an idea of yours were looking for someone else to bring it to life, which one would leave first?",
+  "use_cases": [
+    {
+      "situation": "You have a side-project idea you keep postponing.",
+      "move": "Give it a regular weekly slot now, before it goes cold.",
+      "context": "self"
+    },
+    {
+      "situation": "A teammate's idea keeps getting parked in meetings.",
+      "move": "Assign an owner and a first small step before the meeting ends.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is upset that someone else launched 'their' idea.",
+      "move": "Share Gilbert's story and ask which idea they'll commit to now.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "When an idea visits, give it your attention, or it may find someone who will.",
+  "conversation_variants": {
+    "punchline_idea": "Gilbert's abandoned novel idea turned up in Ann Patchett's book.",
+    "thirty_sec_idea": "Ideas seeking collaborators, the Amazon novel, the kiss, State of Wonder.",
+    "question_idea": "Which idea have you been neglecting?",
+    "key_contrast_idea": "Kept versus neglected"
+  }
+}

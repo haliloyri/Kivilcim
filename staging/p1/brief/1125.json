@@ -1,0 +1,70 @@
+{
+  "story_id": 1125,
+  "kind": "anecdote",
+  "book": {
+    "title": "Leaders Eat Last (Turkish edition given as \"Liderlik Sanatı\")",
+    "author": "Simon Sinek",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book does describe the US Marine Corps mess-line custom (juniors eat first, officers last). It does credit retired Lieutenant General George Flynn with the idea 'officers eat last.' It also develops the Circle of Safety concept. The exact wording of Sinek's question to Flynn, and whether it happened in one conversation, is less certain, so treat it as a paraphrase. The Turkish title supplied ('Liderlik Sanatı') does not match the original English title and may be a mislabel. The critique that military analogies transfer poorly to offices is outside commentary, not the book's own claim.",
+  "facts": [
+    "Sinek discusses the US Marine Corps with retired Lieutenant General George Flynn and asks, in essence, what makes the Marines so effective.",
+    "Flynn's answer points to a simple custom: officers eat last.",
+    "In the Marine mess line, the most junior Marines are served first and the most senior last.",
+    "The practice is not an order or a written regulation. It is simply how Marines do things.",
+    "Sinek uses this to argue that leadership is a responsibility, not a rank. It means giving up privileges and comfort for the people in your care.",
+    "He ties it to his 'Circle of Safety' idea. When people feel safe inside a group, they spend their energy on outside threats and challenges. When they don't, they spend it protecting themselves from each other, hiding mistakes and shifting blame.",
+    "In an unsafe culture people are not lazy or malicious. They work hard, but much of that effort goes into self-protection inside the organization."
+  ],
+  "tension": "Sinek expected a big secret, like training or selection. The answer was a small, unwritten habit about who gets fed first.",
+  "opening_idea": "Ask what makes an elite organization great. The answer you get is not a program but a lunch line.",
+  "lessons": [
+    {
+      "idea": "Leadership understood as rank collects privilege. Leadership understood as responsibility gives it away: eat last, leave last, answer first.",
+      "anchor": "Officers eat last"
+    },
+    {
+      "idea": "An unwritten habit that everyone follows reveals an organization's real self-image better than any written policy.",
+      "anchor": "No regulation requires it"
+    },
+    {
+      "idea": "When people feel safe inside the group, their energy goes outward to real challenges. When they don't, it turns inward to self-protection.",
+      "anchor": "Circle of Safety"
+    },
+    {
+      "idea": "Leaders build safety through concrete acts. They take the blame outwardly, protect the bearer of bad news and stay predictable under pressure.",
+      "anchor": "Who pays when things go wrong"
+    }
+  ],
+  "reflect": [
+    "In your team, who gets the comfort first, and who absorbs the cost when things go badly?",
+    "Which unwritten habit in your workplace says more about its values than the posters on the wall?",
+    "Where does your team's energy go: toward the outside challenge, or toward protecting itself internally?"
+  ],
+  "reflect_final": "In a hard moment where you work, whose comfort gets protected: the team's or the manager's?",
+  "use_cases": [
+    {
+      "situation": "A project failed and senior management is asking who is responsible.",
+      "move": "Say 'That's on me as the lead. Here's what we're changing,' and deal with individual mistakes privately afterward.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A team member hesitates to bring you bad news.",
+      "move": "Open with 'Thanks for telling me early. What do you need from me?' before asking anything about fault.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Serving a family meal or sharing something scarce at home.",
+      "move": "As the parent or host, take your portion last, and say out loud why you do it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "You learn what an organization values not from its announcements but from who ends up with the privileges.",
+  "conversation_variants": {
+    "punchline_idea": "The Marines' secret isn't a training manual; it's who stands at the back of the lunch line.",
+    "thirty_sec_idea": "Sinek asked a Marine general what makes the Corps great and got 'officers eat last': an unwritten custom showing leadership as responsibility, which builds the safety that lets teams face outward.",
+    "question_idea": "If you watched only the lunch line in your company, what would you conclude about its leaders?",
+    "key_contrast_idea": "Rank-as-privilege means eating first and risking least. Responsibility means eating last and answering first."
+  }
+}

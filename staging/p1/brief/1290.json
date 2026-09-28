@@ -1,0 +1,64 @@
+{
+  "story_id": 1290,
+  "kind": "concept",
+  "book": {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The concept is Goggins' 'Cookie Jar': a mental store of past hardships overcome and wins earned, named after the cookie jar his mother kept at home. The reference TR text calls it a 'ledger' and sets it in front of a bathroom mirror while he was overweight and jobless; that mixes it up with other parts of the book (the Accountability Mirror and his weight-loss period) and is not how the book introduces the Cookie Jar, so that scene is excluded. As I recall, he describes reaching into the jar during his punishing first 100-mile race, recalling earlier struggles he had survived; the exact list of memories he drew on is kept general. Recalled, not re-checked against the text.",
+  "facts": [
+    "Goggins names the idea after a cookie jar his mother kept at home when he was a child.",
+    "His 'Cookie Jar' is a mental collection of hard things he had already survived and small and large wins he had earned.",
+    "It includes not only triumphs but also hardships endured, such as a childhood with a violent father and teaching himself to learn after years of faking his way through school.",
+    "He describes reaching into the jar in the middle of a brutal 24-hour race, when his body was breaking down and he wanted to stop, recalling what he had already come through.",
+    "The point is evidence, not cheerleading: remembering specific things you did makes the current difficulty feel less impossible.",
+    "The book turns it into a challenge: write down your past victories and obstacles overcome so you can draw on them when you need them."
+  ],
+  "tension": "In the moment of crisis the mind remembers every failure and forgets every survival, and Goggins had to deliberately go looking for the evidence that he could keep going.",
+  "opening_idea": "Begin with the image of a child's cookie jar in his mother's kitchen, and the adult who turned it into a jar of memories he could reach into mid-race.",
+  "lessons": [
+    {
+      "idea": "Confidence under pressure can be based on evidence you already have, not on hype.",
+      "anchor": "Recalling specific past struggles survived while breaking down in the 24-hour race."
+    },
+    {
+      "idea": "Hardships count as deposits too, not only victories.",
+      "anchor": "The jar includes surviving his childhood and learning after years of copying schoolwork."
+    },
+    {
+      "idea": "The jar only helps if it's filled deliberately before you need it.",
+      "anchor": "The book's challenge to write your victories and obstacles down."
+    }
+  ],
+  "reflect": [
+    "What hard thing did you get through that you almost never think about now?",
+    "When you face a new challenge, which do you remember first: past failures or past survivals?"
+  ],
+  "reflect_final": "Write three specific things you've already come through, and the next time a hard moment hits, read one of them before deciding what to do.",
+  "use_cases": [
+    {
+      "situation": "You're about to give a presentation and your mind is replaying every past stumble.",
+      "move": "Take one 'cookie' out: remind yourself of a specific time you handled a tougher audience, and name it to yourself before you start.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member is doubting they can handle a big new responsibility.",
+      "move": "Help them fill their jar: list together two concrete hard situations they already handled, and ask what they did then that they could reuse.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child is scared before an exam or a match.",
+      "move": "Tell them about Goggins' mother's cookie jar and how he filled his own with memories, then ask them to name one hard thing they already managed.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Goggins turned his mother's cookie jar into a jar of survived hardships; in a crisis, reach in for proof rather than pep talk.",
+  "conversation_variants": {
+    "punchline_idea": "One of the toughest men alive gets through his worst moments by thinking about a cookie jar.",
+    "thirty_sec_idea": "Mid-race, body failing, Goggins reached into what he calls his Cookie Jar, named after his mother's, and pulled out memories of what he had already survived; he uses them as evidence that he can take the next step.",
+    "question_idea": "What would be the first memory in your own 'cookie jar' of hard things you got through?",
+    "key_contrast_idea": "Trying to feel confident through positive thinking, versus pulling up proof of what you've already done."
+  }
+}

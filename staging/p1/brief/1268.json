@@ -1,0 +1,64 @@
+{
+  "story_id": 1268,
+  "kind": "concept",
+  "book": {
+    "title": "Why We Sleep",
+    "author": "Matthew Walker",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text states that a surgeon awake 24 hours performs like one at 0.08 blood alcohol and builds the story on that line; Walker does compare sleep loss with legal intoxication (notably in drowsy-driving contexts), but the exact surgeon/0.08 framing is not confidently attributable and is left out. Its list of disease risks is broadly in the book but is compressed and not the core. The brief uses the book's clearest case for the 'you can't feel it' insight: David Dinges's chronic sleep restriction study. Walker also cites errors among medical residents on long shifts; exact percentages are omitted here as not verified.",
+  "facts": [
+    "Walker describes a study by David Dinges in which healthy adults were restricted to different nightly sleep amounts over about two weeks, including a six-hour group, a four-hour group, a full eight-hour group, and a group kept awake entirely.",
+    "Their concentration was measured with a simple attention task: press a button when a light appears, counting the lapses.",
+    "After about ten days on six hours a night, the six-hour group was as impaired as people who had gone a full 24 hours without sleep.",
+    "When asked, participants in the restricted groups consistently underestimated how impaired they were; they felt they had adapted while their performance kept declining.",
+    "Walker adds that performance did not bounce back fully even after several nights of recovery sleep.",
+    "He extends the point to professions where lapses cost lives, including doctors on long shifts and drowsy drivers."
+  ],
+  "tension": "Six hours a night feels like enough to most people who try it, but the measured results say otherwise, and the sense of feeling fine is part of the impairment.",
+  "opening_idea": "Open on the button-and-light test: a simple task where the six-hour sleepers kept missing lights while telling researchers they were doing all right.",
+  "lessons": [
+    {
+      "idea": "Self-assessment is unreliable under sleep loss.",
+      "anchor": "Restricted sleepers underestimated their impairment while lapses accumulated."
+    },
+    {
+      "idea": "Moderate short sleep, repeated, can match a full night without sleep.",
+      "anchor": "Ten days of six hours produced impairment equal to 24 hours awake."
+    },
+    {
+      "idea": "The damage isn't instantly repaid.",
+      "anchor": "Recovery nights did not fully restore performance in the study."
+    }
+  ],
+  "reflect": [
+    "When have you insisted you were fine after a short night, and later found a mistake you'd made?",
+    "Who in your life works long shifts where a lapse would matter?"
+  ],
+  "reflect_final": "After your next short night, do not trust how you feel; before one important decision or drive, ask someone to check it or wait until after rest.",
+  "use_cases": [
+    {
+      "situation": "A colleague coming off a late deploy or overnight shift says they're fine to present.",
+      "move": "Mention that Dinges's six-hour sleepers said the same while their lapses piled up, and offer to take the first half or push the decision to tomorrow.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Deciding who drives home after a long day.",
+      "move": "Let the person who slept more last night drive, regardless of who claims to feel alert.",
+      "context": "family"
+    },
+    {
+      "situation": "A week of short nights before a deadline.",
+      "move": "Pick one high-stakes piece of work and schedule its review for after a full night, then compare what you catch.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The six-hour sleepers in Dinges's study kept missing the light while telling researchers they felt fine: sleep loss switches off the gauge that would warn you.",
+  "conversation_variants": {
+    "punchline_idea": "Ten nights of six hours' sleep left people as impaired as staying awake for a full day, and they didn't notice.",
+    "thirty_sec_idea": "Dinges restricted people to six hours for about two weeks; by day ten their attention lapses matched a night without sleep, yet they rated themselves as coping.",
+    "question_idea": "What's the shortest you regularly sleep, and have you ever caught a mistake from that week?",
+    "key_contrast_idea": "From 'I feel fine, so I am fine' to 'feeling fine is exactly what sleep loss hides.'"
+  }
+}

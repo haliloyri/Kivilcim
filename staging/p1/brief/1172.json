@@ -1,0 +1,65 @@
+{
+  "story_id": 1172,
+  "kind": "anecdote",
+  "book": {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "year": "2011"
+  },
+  "confidence": "high",
+  "confidence_note": "The Linda problem is described in detail in the book. Linda is described as 31, single, outspoken and very bright, a philosophy major deeply concerned with discrimination and social justice, who took part in anti-nuclear demonstrations. The reference TR text's 'honest' is replaced by the book's 'outspoken'. Kahneman reports that 85 to 90 percent of undergraduates at several major universities chose 'feminist bank teller' as more probable than 'bank teller', and that doctoral students in the decision-science program at Stanford's Graduate School of Business, who had advanced training in probability, did the same at a similar rate. The TR text's claim about 'medical doctors' is replaced by the book's own example. Stephen Jay Gould's reaction is also from the book.",
+  "facts": [
+    "Kahneman and Tversky described Linda: 31 years old, single, outspoken and very bright. She majored in philosophy. As a student she was deeply concerned with discrimination and social justice, and took part in anti-nuclear demonstrations.",
+    "Participants were asked which was more probable: that Linda is a bank teller, or that Linda is a bank teller and is active in the feminist movement.",
+    "About 85 to 90 percent of undergraduates at several major universities chose the second option.",
+    "This is logically impossible: every feminist bank teller is a bank teller, so the combination can never be more probable than one of its parts.",
+    "Kahneman calls this the conjunction fallacy. System 1 judges by how well the description fits a story (representativeness), not by probability.",
+    "Doctoral students in decision science at Stanford, with extensive training in probability, made the same error at a similar rate.",
+    "The biologist Stephen Jay Gould wrote that even knowing the right answer, a 'little homunculus' in his head kept insisting she couldn't just be a bank teller."
+  ],
+  "tension": "A more detailed story feels more likely, even when logic says it must be less likely.",
+  "opening_idea": "Meet Linda through a short description, then face a question most people get wrong.",
+  "lessons": [
+    {
+      "idea": "A good story can beat simple logic in our minds.",
+      "anchor": "Feminist bank teller chosen over bank teller"
+    },
+    {
+      "idea": "More detail makes a scenario feel likelier but makes it less probable.",
+      "anchor": "The conjunction rule"
+    },
+    {
+      "idea": "Knowing the rule doesn't switch off the intuition.",
+      "anchor": "Stanford students and Gould's homunculus"
+    }
+  ],
+  "reflect": [
+    "Which vivid story about the future are you treating as likely?",
+    "Where does extra detail make you more confident than you should be?"
+  ],
+  "reflect_final": "In your next forecast, what detail could you strip away to see the real odds?",
+  "use_cases": [
+    {
+      "situation": "A business plan relies on a detailed chain of events all going right.",
+      "move": "Count the steps and point out that each one lowers the overall probability.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're worrying about a very specific disaster scenario.",
+      "move": "Ask how many separate things would have to happen for it to come true.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is convinced by a detailed rumor about someone.",
+      "move": "Gently note that more details make a story more convincing, not more likely.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "A more detailed story feels more likely but is always less probable.",
+  "conversation_variants": {
+    "punchline_idea": "Most people think Linda is more likely to be a feminist bank teller than a bank teller, which is impossible.",
+    "thirty_sec_idea": "Linda's description, the choice, 85-90 percent wrong, the conjunction fallacy, Gould.",
+    "question_idea": "Which detailed story about your future are you treating as likely?",
+    "key_contrast_idea": "Plausible versus probable"
+  }
+}

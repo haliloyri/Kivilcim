@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-09-27T08:10:52.904Z",
+  "files": [
+    {
+      "file": "batch/prompts/brief-instructions.md",
+      "sha256": "d965be4f52fcb088b565ced369dd4d8e455bf44cfaab5a715755d0eb974c413d"
+    },
+    {
+      "file": "batch/prompts/story-instructions.md",
+      "sha256": "425cf37c9b8376728be771dba3c6295ae64433d1ad7d30d356f20adec9ffc9b4"
+    },
+    {
+      "file": "staging/p1-codex/inputs/brief-system.md",
+      "sha256": "d965be4f52fcb088b565ced369dd4d8e455bf44cfaab5a715755d0eb974c413d"
+    },
+    {
+      "file": "staging/p1-codex/inputs/story-system.en.md",
+      "sha256": "c4673192f0b750549e7d052a9ce36fd6016d783ccf121a08b50dfea81596671d"
+    },
+    {
+      "file": "staging/p1-codex/brief/1059.json",
+      "sha256": "c279d4368b7e7608a99ef6aef0fc61bc1c09d9092e586fa7b99176d13a399e8b"
+    },
+    {
+      "file": "staging/p1-codex/en/1059.md",
+      "sha256": "eb6b200f9df363d8d716213d05226016b59923516e12d971563118aa693c084f"
+    },
+    {
+      "file": "staging/p1-codex/en/1059.variants.json",
+      "sha256": "bfd6edf5a1ad862d0efa84906ef746e7522a8d17529db66ead4764ff8220f0df"
+    }
+  ]
+}

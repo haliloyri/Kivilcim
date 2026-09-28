@@ -1,0 +1,64 @@
+{
+  "story_id": 1249,
+  "kind": "concept",
+  "book": {
+    "title": "Money: Master the Game",
+    "author": "Tony Robbins",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "This entry duplicates story 1182 (Theodore Johnson). To avoid repetition, it uses another major theme from the same book: hidden fees. Robbins, drawing heavily on Vanguard founder John Bogle, argues that high fees in actively managed funds and retirement plans can quietly consume a large share of an investor's lifetime returns, because fees compound just like returns. Bogle's phrase 'the tyranny of compounding costs' and his estimate that high fees can take a very large portion of long-term returns are cited in the book. Robbins also reports that most actively managed funds fail to beat their benchmark index over time, supporting low-cost index funds. The database title (Johnson) should be updated; flagged for the user. Exact percentages are kept approximate.",
+  "facts": [
+    "Robbins argues that one of the biggest threats to ordinary investors is fees they barely notice.",
+    "Actively managed mutual funds and many retirement plans charge annual fees that can seem small, often a percentage point or two.",
+    "Because fees are taken every year, they compound against you, just as returns compound for you.",
+    "Robbins cites John Bogle, founder of Vanguard, who spoke of 'the tyranny of compounding costs': over decades, seemingly small fees can consume a large share of an investor's total returns.",
+    "He also reports that most actively managed funds fail to beat their benchmark index over long periods.",
+    "His advice: know exactly what fees you're paying, and consider low-cost index funds, which aim to match the market at minimal cost."
+  ],
+  "tension": "A fee of 'just' one or two percent a year sounds harmless. Over a working life, it can quietly take a large part of your savings.",
+  "opening_idea": "Your investment statement shows a small annual fee. Robbins argues it may be one of the most expensive numbers in your life.",
+  "lessons": [
+    {
+      "idea": "Fees compound against you.",
+      "anchor": "The tyranny of compounding costs"
+    },
+    {
+      "idea": "Most active funds don't beat the index.",
+      "anchor": "Robbins and Bogle's evidence"
+    },
+    {
+      "idea": "Know what you're paying.",
+      "anchor": "Robbins's advice to check fees"
+    }
+  ],
+  "reflect": [
+    "Do you know exactly what fees your savings or pension pay?",
+    "Where else do small recurring costs add up in your life?"
+  ],
+  "reflect_final": "What would you gain by checking and reducing the fees on your investments this month?",
+  "use_cases": [
+    {
+      "situation": "You've never looked at your pension or fund fees.",
+      "move": "Find the annual fee on each account and compare with low-cost index options.",
+      "context": "self"
+    },
+    {
+      "situation": "Your partner and you are choosing a savings plan.",
+      "move": "Compare the total annual fees, not just past performance.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague is excited about a fund with strong recent returns.",
+      "move": "Suggest checking its fees and long-term record against a simple index fund.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Small fees compound too, and they compound against you.",
+  "conversation_variants": {
+    "punchline_idea": "A 'small' annual fund fee can quietly eat a large part of a lifetime's returns.",
+    "thirty_sec_idea": "Fees compound, Bogle's tyranny of compounding costs, index funds.",
+    "question_idea": "Do you know what fees your savings pay?",
+    "key_contrast_idea": "Visible returns, hidden costs"
+  }
+}

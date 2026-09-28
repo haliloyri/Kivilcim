@@ -1,0 +1,64 @@
+{
+  "story_id": 1264,
+  "kind": "anecdote",
+  "book": {
+    "title": "Engel Yolu Açar (The Obstacle Is the Way)",
+    "author": "Ryan Holiday",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The December 1914 fire at Edison's West Orange, New Jersey, complex, Edison's age of 67, and his remark to his son to bring his mother and her friends because they would never see a fire like this again are in Holiday's account. Dollar figures for the damage and insurance vary by source and inflation adjustment (the TR '23 million dollars' is likely a modern-dollar conversion), so no figure is included beyond 'underinsured'. The next-morning quote ('Thank God all our mistakes burned') is widely attributed but not confirmed as in the book and is excluded. The TR claim that the fire directly produced some of his most important inventions is not supported and is excluded; only a quick return to work and rebuilding is kept.",
+  "facts": [
+    "In December 1914, a fire broke out at Thomas Edison's research and manufacturing complex in West Orange, New Jersey, and spread through several buildings.",
+    "Years of work, including records, prototypes and equipment, were destroyed, and the buildings were insured for far less than the loss.",
+    "Edison was 67 years old.",
+    "Watching the blaze, he told his son Charles to go get his mother and her friends, because they would never see a fire like this again.",
+    "Rather than despair, Edison turned almost immediately to rebuilding and getting the operation running again.",
+    "Holiday presents the story in the book's final part as an example of accepting, and even embracing, what happens rather than fighting it."
+  ],
+  "tension": "As his life's work burned, a 67-year-old Edison's first instinct was to invite people to watch.",
+  "opening_idea": "Open with Edison's son running to find his father as the flames spread, and the unexpected thing his father told him to do.",
+  "lessons": [
+    {
+      "idea": "How you meet a loss shapes what happens next more than the loss itself.",
+      "anchor": "Edison's calm remark to his son at the fire"
+    },
+    {
+      "idea": "Acceptance can be the fastest route back to action.",
+      "anchor": "Edison turning quickly to rebuilding"
+    },
+    {
+      "idea": "Age and scale of loss don't have to decide whether you start again.",
+      "anchor": "Edison was 67 and underinsured"
+    }
+  ],
+  "reflect": [
+    "When something you worked hard on fell apart, what was your first reaction?",
+    "Is there a loss you're still arguing with, rather than building from?"
+  ],
+  "reflect_final": "The next time a plan or project breaks, name one thing you can salvage or start within a day, and notice whether acting early changes how the loss feels.",
+  "use_cases": [
+    {
+      "situation": "A product release fails badly and the team is demoralized.",
+      "move": "Edison turned to rebuilding almost at once after the fire; open the debrief with 'What do we rebuild first?' before assigning any blame.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family trip is cancelled at the last minute.",
+      "move": "Ask the family to pick one thing you can still do together this week instead.",
+      "context": "family"
+    },
+    {
+      "situation": "You lose a significant amount of work to a technical failure.",
+      "move": "Before reconstructing, list what you'd do better if you rebuilt it from scratch.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Edison's response to the fire: first call people to see it, then start rebuilding.",
+  "conversation_variants": {
+    "punchline_idea": "As his lab burned, Edison told his son to fetch his mother: she'd never see a fire like this again.",
+    "thirty_sec_idea": "In December 1914 Edison's West Orange complex burned, destroying years of work, and it was underinsured. Edison, 67, told his son to bring his mother to watch, then turned straight to rebuilding. Holiday uses it to show acceptance as a starting point.",
+    "question_idea": "What's a setback that looked like an ending at the time but turned out to be a restart?",
+    "key_contrast_idea": "Mourning what burned versus calling people to watch and then rebuilding."
+  }
+}

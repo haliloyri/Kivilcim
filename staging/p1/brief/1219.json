@@ -1,0 +1,65 @@
+{
+  "story_id": 1219,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Good Life",
+    "author": "Robert Waldinger and Marc Schulz",
+    "year": "2023"
+  },
+  "confidence": "high",
+  "confidence_note": "The Good Life is written by Robert Waldinger, director of the Harvard Study of Adult Development, and associate director Marc Schulz. The study began in 1938 with 268 Harvard sophomores (the Grant Study) and was later combined with a study of 456 boys from disadvantaged Boston neighborhoods (the Glueck Study); it later expanded to include participants' spouses and children. Its central finding is that good relationships keep people happier and healthier. The authors report that relationship satisfaction at age 50 predicted physical health at 80 better than cholesterol levels did. The reference TR text mentions only the 268 Harvard students; the inner-city group is added.",
+  "facts": [
+    "The Harvard Study of Adult Development began in 1938. It started with 268 Harvard sophomores.",
+    "A separate study of 456 boys from disadvantaged neighborhoods in Boston, begun around the same time, was later combined with it.",
+    "Researchers followed participants for their entire lives, with questionnaires, interviews, medical records and eventually brain scans, and later included their spouses and children. The study has run for more than 85 years.",
+    "Robert Waldinger is its fourth director; he and associate director Marc Schulz wrote The Good Life.",
+    "Their central finding: good relationships keep people happier and healthier. The quality of close relationships was a stronger predictor of long, happy lives than wealth, fame or social class.",
+    "People who were most satisfied in their relationships at age 50 were the healthiest at age 80; relationship satisfaction at 50 predicted physical health at 80 better than cholesterol levels did.",
+    "Loneliness was associated with poorer health and earlier decline."
+  ],
+  "tension": "Researchers spent more than 85 years asking what makes a good life. The answer surprised many of the participants themselves.",
+  "opening_idea": "In 1938, researchers started following a group of young men and never stopped.",
+  "lessons": [
+    {
+      "idea": "Relationships matter more than wealth or fame.",
+      "anchor": "The study's central finding"
+    },
+    {
+      "idea": "Relationships affect physical health.",
+      "anchor": "Satisfaction at 50 predicting health at 80"
+    },
+    {
+      "idea": "Relationships need ongoing care.",
+      "anchor": "The authors' idea of 'social fitness'"
+    }
+  ],
+  "reflect": [
+    "Which relationships in your life most need your attention?",
+    "Who would you want around you at 80?"
+  ],
+  "reflect_final": "What one relationship could you invest in this week as if your health depended on it?",
+  "use_cases": [
+    {
+      "situation": "You've been too busy to see close friends for months.",
+      "move": "Schedule one regular meet-up and treat it as a health appointment.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team talks about wellbeing but never about connection.",
+      "move": "Create space for real conversation, like a monthly team lunch without agenda.",
+      "context": "meeting"
+    },
+    {
+      "situation": "An aging parent seems lonely.",
+      "move": "Set a regular call or visit and help them connect with others nearby.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Good relationships keep us happier and healthier than money or fame.",
+  "conversation_variants": {
+    "punchline_idea": "An 85-year Harvard study found relationships predict health better than cholesterol.",
+    "thirty_sec_idea": "1938 start, two groups, lifelong tracking, relationships as the key finding.",
+    "question_idea": "Who would you want around you at 80?",
+    "key_contrast_idea": "Achievement versus connection"
+  }
+}

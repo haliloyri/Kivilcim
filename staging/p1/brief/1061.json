@@ -1,0 +1,66 @@
+{
+  "story_id": 1061,
+  "kind": "anecdote",
+  "book": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "Clear tells this story in Chapter 11 ('Walk Slowly, but Never Backward') and attributes it to Jerry Uelsmann, a photography professor at the University of Florida. Clear says he adapted it from the book 'Art & Fear' by David Bayles and Ted Orland. In that original version the class made ceramics and the quantity group was graded by weight. In Clear's version the class takes photographs, so the reference TR text's 'graded by the kilo' detail is wrong and should be replaced with grading by number of photos. The grade thresholds (100 photos for an A, 90 for a B, and so on) are as I recall Clear's wording, not verified, so avoid stating them as exact figures. Treat the photography version as Clear's retelling of a teaching anecdote, not a documented study. The line 'perfectionism is the polite name for inaction' comes from the TR text, not from the book.",
+  "facts": [
+    "On the first day of class, University of Florida film photography professor Jerry Uelsmann divided his students into two groups.",
+    "The 'quantity' group would be graded only on how many photographs they produced. More photos meant a higher grade.",
+    "The 'quality' group only had to turn in one photograph by the end of the term. To earn an A, it had to be nearly perfect.",
+    "At the end of the term, the best photos all came from the quantity group.",
+    "The quantity group spent the term taking photos, experimenting with composition and lighting, trying different methods and learning from their mistakes.",
+    "The quality group spent much of the term theorizing and speculating about the perfect photo, and ended up with little to show for it beyond unverified ideas and mediocre work.",
+    "Clear uses the story to separate 'motion' (planning, strategizing, researching) from 'action' (the behavior that actually produces a result).",
+    "His conclusion is that habits and skills form through repetition. The key is to start with repetition, not perfection."
+  ],
+  "tension": "The group told to aim for perfection did worse than the group told to simply produce a lot, because chasing the perfect plan kept them from ever doing the reps.",
+  "opening_idea": "A professor splits his class in two: one group is graded on a single perfect photo, the other only on how many photos they take.",
+  "lessons": [
+    {
+      "idea": "Planning feels like progress but is only motion. Only action produces results.",
+      "anchor": "The quality group theorized all term and produced little."
+    },
+    {
+      "idea": "Skill and habits come from the number of repetitions, not from waiting for the ideal approach.",
+      "anchor": "The quantity group's constant shooting and experimenting made them better."
+    },
+    {
+      "idea": "Motion is often a way to delay failure: it lets us feel productive without risking a bad result.",
+      "anchor": "Clear's point that we stay in motion because action exposes us to criticism and failure."
+    }
+  ],
+  "reflect": [
+    "Where am I researching or planning in a way that is really a way to avoid starting?",
+    "What would one 'rep' of this thing look like today, even a bad one?"
+  ],
+  "reflect_final": "If you were graded only on how many times you did it, not how well, what would you start doing tomorrow?",
+  "use_cases": [
+    {
+      "situation": "A team keeps refining a plan or spec and never ships a first version.",
+      "move": "Propose a 'quantity round': everyone produces three rough drafts or prototypes by Friday, and quality is judged only after that.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague you mentor is stuck polishing one piece of work out of fear it isn't good enough.",
+      "move": "Ask: 'What if this week counts only as reps? Send me five rough versions instead of one perfect one.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You've been reading about starting to run (or write, or draw) for weeks without doing it.",
+      "move": "Set a count goal instead of a quality goal, such as '20 sessions this month, any length,' and tally each one.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Start with repetition, not perfection: the reps make you good, not the plan.",
+  "conversation_variants": {
+    "punchline_idea": "The students graded on quantity ended up taking the best photos.",
+    "thirty_sec_idea": "Summarize the photo-class split, the surprising result, and Clear's motion-vs-action distinction.",
+    "question_idea": "Ask the listener which group they'd join, and whether that choice is what's keeping them stuck.",
+    "key_contrast_idea": "One group theorized about the perfect photo while the other kept shooting and learning from mistakes."
+  }
+}

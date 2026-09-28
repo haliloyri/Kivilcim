@@ -1,0 +1,65 @@
+{
+  "story_id": 1175,
+  "kind": "anecdote",
+  "book": {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "year": "1936"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text describes an unnamed factory manager who asked an employee questions instead of scolding him. That case cannot be confirmed in the book and is replaced by two of Carnegie's own examples for the same principle. Charles Schwab, walking through a steel mill, found men smoking under a 'No Smoking' sign; instead of pointing at the sign, he handed each a cigar and said he'd appreciate it if they smoked them outside. And, citing Ida Tarbell, Carnegie says Owen D. Young never gave direct orders but made suggestions and asked questions such as 'You might consider this' or 'Do you think that would work?'. Carnegie's principles here include 'Call attention to people's mistakes indirectly' and 'Ask questions instead of giving direct orders'.",
+  "facts": [
+    "Carnegie's book includes a section on how to change people without giving offense or arousing resentment.",
+    "Charles Schwab was walking through one of his steel mills at noon when he found some employees smoking directly under a 'No Smoking' sign.",
+    "He did not point to the sign and ask whether they could read. He walked over, handed each man a cigar and said, 'I'll appreciate it, boys, if you will smoke these on the outside.'",
+    "The men knew they had broken a rule, and they admired him for not saying anything about it.",
+    "Carnegie cites journalist Ida Tarbell, who said that in the time she spent with Owen D. Young, she never heard him give a direct order. He gave suggestions, saying things like 'You might consider this' or 'Do you think that would work?'",
+    "Carnegie argues that asking questions lets people correct themselves, saves their pride, and makes them more willing to cooperate.",
+    "Principles from the book: call attention to people's mistakes indirectly; ask questions instead of giving direct orders."
+  ],
+  "tension": "Men caught breaking a safety rule expect a reprimand. Their boss hands them cigars instead.",
+  "opening_idea": "A steel boss finds workers smoking under a 'No Smoking' sign and pulls out his own cigars.",
+  "lessons": [
+    {
+      "idea": "Pointing at a mistake indirectly preserves pride.",
+      "anchor": "Schwab's cigars"
+    },
+    {
+      "idea": "Questions invite people to reach the right answer themselves.",
+      "anchor": "Owen Young's suggestions"
+    },
+    {
+      "idea": "People own conclusions they reach themselves.",
+      "anchor": "Carnegie on cooperation vs resentment"
+    }
+  ],
+  "reflect": [
+    "When was the last time you corrected someone directly? How did they react?",
+    "What order could you turn into a question this week?"
+  ],
+  "reflect_final": "How could you point out someone's mistake so they can fix it without losing face?",
+  "use_cases": [
+    {
+      "situation": "A team member keeps skipping a required process step.",
+      "move": "Ask what makes the step hard to follow and how they'd improve it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your teenager leaves the kitchen messy.",
+      "move": "Ask what would make cleaning up easier rather than lecturing.",
+      "context": "family"
+    },
+    {
+      "situation": "You want a colleague to rethink their proposal.",
+      "move": "Ask 'Do you think this will hold up if the budget is cut?' instead of saying it won't.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Ask the question that lets them find the mistake themselves.",
+  "conversation_variants": {
+    "punchline_idea": "Schwab corrected rule-breakers by handing them cigars.",
+    "thirty_sec_idea": "Schwab's cigars and Owen Young's questions.",
+    "question_idea": "Which instruction could you turn into a question?",
+    "key_contrast_idea": "Order versus question"
+  }
+}

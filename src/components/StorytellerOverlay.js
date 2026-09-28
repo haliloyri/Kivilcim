@@ -66,6 +66,7 @@ const StorytellerOverlay = ({
   visible,
   story,
   variant,
+  initialContext,
   isPremium,
   onClose,
   onDone,
@@ -83,12 +84,12 @@ const StorytellerOverlay = ({
   // Reset state on open
   useEffect(() => {
     if (visible) {
-      setSelectedContext('social');
+      setSelectedContext(CONTEXT_KEYS.some(c => c.key === initialContext) ? initialContext : 'social');
       setTimerActive(false);
       setTimeLeft(TIMER_SECONDS);
       setTimerDone(false);
     }
-  }, [visible]);
+  }, [visible, initialContext]);
 
   // Timer logic
   useEffect(() => {

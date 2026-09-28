@@ -1,0 +1,59 @@
+{
+  "story_id": 1344,
+  "kind": "concept",
+  "book": { "title": "Meditasyon (10% Happier)", "author": "Dan Harris", "year": "2014" },
+  "confidence": "medium",
+  "confidence_note": "The 'voice in the head' is a central theme of the book. Harris met the idea through Eckhart Tolle while covering religion for ABC News. Tolle equated the ego with the incessant internal voice and said we are not that voice but the awareness of it. Harris found this diagnosis compelling but thought Tolle's prescription vague, and later found practical methods in mindfulness meditation through teachers such as Mark Epstein and Joseph Goldstein. The TR quotation 'The greatest gift of meditation is the discovery that I am not that voice…' is not verified as Harris's wording; the idea is kept, attributed to Tolle's teaching as Harris relays it. The line 'You are an old habit' as something Harris says to his 'not good enough' thought is also not verified and is excluded. The example inner-voice sentences in the TR text are illustrative, not quotations from the book.",
+  "facts": [
+    "While covering religion for ABC News, Dan Harris encountered Eckhart Tolle's idea that the ego is essentially the incessant voice in our heads.",
+    "Tolle's claim, as Harris relays it, is that most people identify completely with this voice, but we are not the voice—we are the one who can be aware of it.",
+    "Harris found the diagnosis strikingly accurate for his own relentless, ambitious, anxious inner narration.",
+    "But he found Tolle vague about how to actually stop being run by the voice.",
+    "He found the practical method in mindfulness meditation, which trains you to notice thoughts as they arise instead of automatically believing and acting on them."
+  ],
+  "tension": "Harris became convinced that the chattering voice in his head was the problem, yet the teacher who convinced him could not give him a clear way to do anything about it.",
+  "opening_idea": "Begin with a skeptical reporter sent to cover spirituality who reads a line about 'the voice in your head' and recognizes his own mind uncomfortably well.",
+  "lessons": [
+    {
+      "idea": "Most of us mistake the running commentary in our heads for who we are.",
+      "anchor": "Tolle's equation of the ego with the voice in the head, as Harris relays it."
+    },
+    {
+      "idea": "Seeing a problem clearly is not the same as having a method to deal with it.",
+      "anchor": "Harris found Tolle's diagnosis compelling but his prescription vague."
+    },
+    {
+      "idea": "A practical, repeated exercise can turn an insight into a skill.",
+      "anchor": "His turn to mindfulness meditation as the method for noticing thoughts."
+    }
+  ],
+  "reflect": [
+    "What does your inner voice say most often when things go wrong?",
+    "Can you remember a moment when you noticed a thought instead of simply believing it?"
+  ],
+  "reflect_final": "The next time a familiar harsh thought shows up, try labeling it ('there's the not-good-enough thought') instead of arguing with it; afterward, notice whether it lost any of its pull.",
+  "use_cases": [
+    {
+      "situation": "Before a performance review, your mind keeps replaying 'they're going to find out I'm not good enough.'",
+      "move": "Recognize it as the kind of voice-in-the-head narration Harris describes, write the sentence down once, and label it 'a thought, not a verdict' before walking in.",
+      "context": "self"
+    },
+    {
+      "situation": "In a one-on-one, a team member keeps saying 'I'm just bad at this.'",
+      "move": "Ask gently, 'Is that a fact, or is that the voice in your head talking?' and then look together at what actually happened.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A family member spirals over what others might be thinking of them.",
+      "move": "Say, 'Sounds like the commentary in your head is loud today—want to tell me what it's saying?' and just listen.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The voice in your head narrates constantly, but you are the one listening to it; hearing it is the first step to not obeying it.",
+  "conversation_variants": {
+    "punchline_idea": "A TV newsman realized the most relentless reporter in his life was the voice in his own head.",
+    "thirty_sec_idea": "Covering religion for ABC, Dan Harris met Eckhart Tolle's idea that the ego is the endless voice in your head and that you are not that voice; Harris bought the diagnosis but not the vague cure, and found the practical method in mindfulness meditation.",
+    "question_idea": "If your inner voice had a catchphrase, what would it be?",
+    "key_contrast_idea": "From 'this thought is me' to 'this is a thought I'm noticing.'"
+  }
+}

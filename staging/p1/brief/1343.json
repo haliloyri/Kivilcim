@@ -1,0 +1,59 @@
+{
+  "story_id": 1343,
+  "kind": "concept",
+  "book": { "title": "Meditasyon (10% Happier)", "author": "Dan Harris", "year": "2014" },
+  "confidence": "medium",
+  "confidence_note": "The title's modest figure is central to the book. Harris used '10% happier' as his deliberately unglamorous answer to people who asked why he meditates, and he contrasts it with the grand promises of the self-help industry he was skeptical of. His point that meditation does not solve every problem but improves how he responds is also well attested. The TR quotations are not verified wording and are excluded: 'I distrust anything that promises 1000%', 'an email used to keep me angry for hours, now it passes in 20 minutes' and 'life stays hard but my capacity grew'. The '20 minutes' figure in particular has no support. The TR paragraph on cortisol meta-analyses is outside research, not from the 2014 book, and is left out. So is the '10 minutes in the morning' suggestion. Harris does describe responding rather than reacting, especially to his own anger and anxiety, and that is kept in general terms.",
+  "facts": [
+    "Dan Harris titled his book '10% Happier', a figure he used when people asked him why he meditates.",
+    "The modest number was deliberate: he was skeptical of self-help promises of total transformation and wanted a claim a skeptic could accept.",
+    "In his account, meditation did not remove his anxiety, anger or ambition; it made him more able to notice them before acting on them.",
+    "He describes the shift as learning to respond rather than simply react when a strong thought or feeling arrives.",
+    "He presents meditation as a practical exercise for the mind, not a spiritual cure-all."
+  ],
+  "tension": "A book selling meditation openly promises only a small improvement, and that modesty is exactly what made it convincing to skeptics.",
+  "opening_idea": "Start with the question Harris kept being asked—why does a TV newsman meditate?—and his oddly precise, oddly small answer.",
+  "lessons": [
+    {
+      "idea": "A modest, honest claim can be more persuasive than a grand one.",
+      "anchor": "The '10% happier' title as a deliberate contrast to self-help hype."
+    },
+    {
+      "idea": "Real progress may look like a shorter gap between feeling and choosing, not the disappearance of the feeling.",
+      "anchor": "His description of responding rather than reacting to anxiety and anger."
+    },
+    {
+      "idea": "A practice can be worth keeping even if it doesn't fix everything.",
+      "anchor": "His framing of meditation as a practical mental exercise, not a cure-all."
+    }
+  ],
+  "reflect": [
+    "What would a 10% improvement in how you handle stress actually look like on an ordinary day?",
+    "Have you ever given up on something because it didn't transform everything at once?"
+  ],
+  "reflect_final": "The next time something irritates you, notice the moment between the feeling and your reaction, and try to take one breath in that gap; afterward, note whether your response was any different.",
+  "use_cases": [
+    {
+      "situation": "Someone on your team proposes a new practice promising to 'transform' how the team works.",
+      "move": "Ask, in Harris's spirit, 'What would a realistic 10% improvement look like, and how would we notice it?' and agree on that as the test.",
+      "context": "meeting"
+    },
+    {
+      "situation": "An email makes you angry and you are about to reply immediately.",
+      "move": "Notice the urge to react, name it to yourself, and wait before writing so the reply is a response, not a reaction.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend says they tried meditating once and it 'didn't work.'",
+      "move": "Mention that Harris only promised 10% happier, and ask what small change they were hoping for rather than what big one.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Harris put a humble 10% on the cover: a real change you can defend is worth more than a transformation you can't.",
+  "conversation_variants": {
+    "punchline_idea": "Dan Harris's pitch for meditation was refreshingly unimpressive: it makes you about 10% happier.",
+    "thirty_sec_idea": "When people asked Dan Harris, a skeptical news anchor, why he meditated, he said it made him about 10% happier—it didn't erase his anxiety or anger, but it helped him respond instead of react, and that small, honest claim became the book's title.",
+    "question_idea": "What's one small, real improvement in your life you'd be proud of, even if it's not dramatic?",
+    "key_contrast_idea": "From 'this will change everything' to 'this makes me a bit better at the hard moments.'"
+  }
+}

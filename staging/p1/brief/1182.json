@@ -1,0 +1,64 @@
+{
+  "story_id": 1182,
+  "kind": "anecdote",
+  "book": {
+    "title": "Money: Master the Game",
+    "author": "Tony Robbins",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Robbins tells the story of Theodore Johnson, an early UPS employee who never earned more than about $14,000 a year but saved 20 percent of every paycheck and bonus, largely in company stock, and was worth around $70 million by the time he was 90. The story is widely reported and appears in the book; the figures are kept as Robbins gives them, rounded. The reference TR text says it opens the book; its exact position is not confirmed and is not claimed. Robbins's broader point is that compounding, not income, builds wealth; he also stresses that Johnson's result depended heavily on UPS stock performing extremely well.",
+  "facts": [
+    "Theodore Johnson worked for UPS from its early years. Robbins says he never made more than about $14,000 a year.",
+    "Johnson had one rigid rule: he set aside 20 percent of every paycheck and every bonus he received, largely in company stock.",
+    "By the time he was 90, his savings had grown to around $70 million.",
+    "He gave much of the money away, including large donations for education.",
+    "Robbins uses the story to show the power of compounding: returns earning further returns over long periods.",
+    "His point: it's not how much you earn that makes you wealthy, but how much you consistently save and invest, and for how long."
+  ],
+  "tension": "A man who never earned a big salary ended his life with a fortune most executives never reach.",
+  "opening_idea": "A delivery-company employee with a modest salary dies a multimillionaire, and it wasn't luck at the lottery.",
+  "lessons": [
+    {
+      "idea": "Savings rate and time matter more than income.",
+      "anchor": "20 percent of every paycheck on a modest salary"
+    },
+    {
+      "idea": "Compounding is slow, then sudden.",
+      "anchor": "Decades of growth to $70 million"
+    },
+    {
+      "idea": "A rigid rule beats good intentions.",
+      "anchor": "Every paycheck, every bonus"
+    }
+  ],
+  "reflect": [
+    "What percentage of your income do you save automatically?",
+    "What would a fixed rule change in your finances?"
+  ],
+  "reflect_final": "What percentage could you commit to saving from your very next paycheck?",
+  "use_cases": [
+    {
+      "situation": "You feel you can't build wealth on your current salary.",
+      "move": "Set a fixed percentage that leaves your account automatically every payday.",
+      "context": "self"
+    },
+    {
+      "situation": "Your young adult child just got their first job.",
+      "move": "Share the Johnson story and help them set up an automatic savings rule.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend says investing is only for the rich.",
+      "move": "Explain that consistency and time drive compounding more than the amount.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Wealth grows from what you keep and how long you let it grow.",
+  "conversation_variants": {
+    "punchline_idea": "A UPS employee who never earned more than $14,000 a year built a $70 million fortune.",
+    "thirty_sec_idea": "Johnson's salary, 20 percent rule, $70 million at 90, compounding.",
+    "question_idea": "What fixed rule could you set for your savings?",
+    "key_contrast_idea": "Income versus consistency"
+  }
+}

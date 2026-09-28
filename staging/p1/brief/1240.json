@@ -1,0 +1,66 @@
+{
+  "story_id": 1240,
+  "kind": "anecdote",
+  "book": {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "year": "1936"
+  },
+  "confidence": "medium",
+  "confidence_note": "This entry duplicates the theme of story 1173 (a dog and a neighbour); the dog-theft story in the reference TR text is not found in the book. To avoid repeating 1173 (Carnegie and his dog Rex), this story uses a different Carnegie example of the same principle, seeing things from the other person's point of view: Carnegie rented a hotel ballroom in New York for a series of lectures; the manager informed him the rent would triple. Instead of arguing, Carnegie went to see the manager, calmly laid out on paper the advantages and disadvantages of the increase from the hotel's point of view (including the free publicity of thousands of educated people coming to the hotel), and left the decision to him. The rent was raised by 50 percent instead of 300 percent. The database title should be updated; flagged for the user.",
+  "facts": [
+    "Carnegie rented the grand ballroom of a New York hotel for a series of lectures each season.",
+    "At the start of one season, he was told the rent would be nearly three times higher; tickets had already been printed and announcements made.",
+    "Instead of arguing, he went to see the manager and said he understood; if he were in the manager's position, he might have written a similar letter, because it was the manager's job to make the hotel profitable.",
+    "He drew a line down a sheet of paper and listed the advantages and disadvantages of the increase from the hotel's point of view.",
+    "Advantage: the ballroom would be free to rent for dances and conventions at higher rates. Disadvantage: the hotel would lose his income, and lose the publicity of thousands of educated, cultured people coming to the hotel for his courses.",
+    "He left the paper with the manager and asked him to consider it. The next day the manager said the rent would go up 50 percent instead of 300 percent.",
+    "Carnegie notes he didn't say one word about what he wanted; he talked all the time about what the other person wanted and how he could get it.",
+    "Principle: try honestly to see things from the other person's point of view."
+  ],
+  "tension": "A hotel triples the rent at the last moment. Carnegie could fight, or he could think like the hotel.",
+  "opening_idea": "Tickets are printed, announcements made, and then the landlord triples the rent.",
+  "lessons": [
+    {
+      "idea": "Arguing triggers defense; understanding opens doors.",
+      "anchor": "Carnegie's calm visit"
+    },
+    {
+      "idea": "Frame your case in the other person's interests.",
+      "anchor": "The advantages/disadvantages sheet"
+    },
+    {
+      "idea": "Let people decide for themselves.",
+      "anchor": "Leaving the paper with the manager"
+    }
+  ],
+  "reflect": [
+    "In your current disagreement, what does the other side want?",
+    "How could you state your case entirely in their interests?"
+  ],
+  "reflect_final": "What would you write on their side of the sheet?",
+  "use_cases": [
+    {
+      "situation": "Your landlord announces a big rent increase.",
+      "move": "Outline, from their view, the costs of losing a reliable tenant versus finding a new one.",
+      "context": "self"
+    },
+    {
+      "situation": "A client wants to cut your fee.",
+      "move": "Discuss what they'd gain and lose from switching, focusing on their goals.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A neighbor complains about your parking.",
+      "move": "Start by acknowledging their point of view before proposing a solution.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Talk about what they want, and you'll often get what you need.",
+  "conversation_variants": {
+    "punchline_idea": "Carnegie cut a 300 percent rent increase to 50 percent by arguing entirely from the hotel's side.",
+    "thirty_sec_idea": "Rent tripled, the calm visit, the two-column sheet, 50 percent.",
+    "question_idea": "What would your opponent write on their side of the sheet?",
+    "key_contrast_idea": "My side versus their side"
+  }
+}

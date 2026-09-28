@@ -1,0 +1,63 @@
+{
+  "story_id": 1336,
+  "kind": "concept",
+  "book": {
+    "title": "Beden Dili (What Every BODY Is Saying)",
+    "author": "Joe Navarro",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "Navarro, a former FBI counterintelligence agent, argues in What Every BODY Is Saying that the limbic brain drives freeze, flight and fight reactions that show in the body, and that the feet and legs are the most honest part of the body; he also cautions that body language reveals comfort and discomfort, not lies, and that no single cue proves deception. The TR text's specific interrogation (a suspect pulling his feet together before every dangerous question) could not be verified and is excluded. The TR's list including 'pushing the belly forward' is excluded as unverified. The note that the emotion/reason split is a simplification is kept as the author's framework, not established neuroscience. Not checked against the text.",
+  "facts": [
+    "Navarro spent a career as an FBI agent interviewing suspects and bases the book on observing nonverbal behavior.",
+    "He attributes many revealing behaviors to the 'limbic brain', which reacts to threat with freeze, flight or fight responses before conscious control catches up; this is his simplified model.",
+    "He argues the feet and legs are the most honest part of the body, because people learn to control their faces but rarely their feet; for example, feet turning toward an exit can signal a wish to leave.",
+    "Other cues he describes include shoulders rising and the neck seeming to shrink (a 'turtle' effect) under discomfort, and touching the neck as self-soothing.",
+    "He stresses that these cues show comfort or discomfort, not lying, and must be read against a person's baseline and in clusters rather than as single signs."
+  ],
+  "tension": "People carefully manage their words and faces, yet their feet may be pointing at the door, and even then, Navarro warns, that signals discomfort, not a lie.",
+  "opening_idea": "Open with a conversation where someone smiles and nods while their feet slowly turn toward the exit, and ask which part to believe.",
+  "lessons": [
+    {
+      "idea": "The parts of the body we don't think to control reveal more than the face.",
+      "anchor": "Navarro's claim that feet are the most honest part of the body"
+    },
+    {
+      "idea": "Nonverbal cues signal comfort or discomfort, not deception.",
+      "anchor": "Navarro's caution that there is no single sign of lying"
+    },
+    {
+      "idea": "Reading someone well means comparing against their baseline and looking for clusters.",
+      "anchor": "Navarro's emphasis on baseline behavior"
+    }
+  ],
+  "reflect": [
+    "When did someone's words say yes while their body said no?",
+    "What do your own feet usually do when you want a conversation to end?"
+  ],
+  "reflect_final": "In your next conversation, glance at where the other person's feet point when a hard topic comes up, and treat any change as a cue to ask, not a conclusion.",
+  "use_cases": [
+    {
+      "situation": "A stakeholder agrees to a plan in a meeting but seems uneasy.",
+      "move": "Notice discomfort cues like shoulders rising or neck touching, then ask 'What part of this worries you?' instead of assuming agreement.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A direct report says everything is fine in a one-on-one.",
+      "move": "Navarro says feet turning to the exit can signal wanting to leave; if you see that, pause and say 'We can come back to this later if that's easier.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "At a gathering, you're talking to someone whose feet point away from you.",
+      "move": "Offer an easy exit, like 'I won't keep you', and notice whether they take it.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "The face is managed, the feet usually aren't; but Navarro's feet show discomfort, never proof of a lie.",
+  "conversation_variants": {
+    "punchline_idea": "An ex-FBI agent says the most honest part of your body is your feet.",
+    "thirty_sec_idea": "Joe Navarro, who spent years interviewing suspects for the FBI, found that people control their faces but not their feet, so feet turning toward the door can reveal discomfort; he warns it's a sign of unease, not lying.",
+    "question_idea": "Have you ever noticed someone's body saying something their words didn't?",
+    "key_contrast_idea": "Reading body language as a lie detector versus reading it as a comfort gauge."
+  }
+}

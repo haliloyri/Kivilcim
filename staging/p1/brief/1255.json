@@ -1,0 +1,65 @@
+{
+  "story_id": 1255,
+  "kind": "concept",
+  "book": {
+    "title": "Feel the Fear and Do It Anyway",
+    "author": "Susan Jeffers",
+    "year": "1987"
+  },
+  "confidence": "medium",
+  "confidence_note": "Jeffers describes a 'Whole Life Grid': a box divided into areas such as career, family, relationship, friends, personal growth, leisure, contribution, alone time and hobbies. She contrasts it with a life built around a single area (often a relationship or a job): if that one area collapses, the whole life feels destroyed. When life is spread across many areas, a loss in one hurts but doesn't leave you empty. Her example of a woman whose whole life was her marriage is paraphrased; the exact list of areas is simplified.",
+  "facts": [
+    "Jeffers noticed that many people build their lives around one central thing, often a relationship or a job.",
+    "When that one thing is threatened or lost, it feels as if their entire life is gone, which makes the fear enormous.",
+    "She proposes the Whole Life Grid: draw a large square divided into several boxes representing different parts of life.",
+    "Typical boxes include relationship, family, work, friends, personal growth, leisure, hobbies, contribution to others, and time alone.",
+    "The aim is to invest real commitment in every box, not just one.",
+    "If one area falls apart, it still hurts, but much of your life remains full.",
+    "Jeffers argues that this reduces fear, because no single loss can destroy everything, and makes people more free and less clingy in each area."
+  ],
+  "tension": "If your whole life is built on one pillar, every threat to that pillar feels like a threat to your whole life.",
+  "opening_idea": "A woman's marriage ends, and she feels she has lost everything. Jeffers asks: why did one box hold her entire life?",
+  "lessons": [
+    {
+      "idea": "Don't build your life on one pillar.",
+      "anchor": "The single-box life"
+    },
+    {
+      "idea": "Commit fully to many areas.",
+      "anchor": "The Whole Life Grid"
+    },
+    {
+      "idea": "A fuller life means less fear.",
+      "anchor": "No single loss destroys everything"
+    }
+  ],
+  "reflect": [
+    "Which area of your life holds too much weight?",
+    "Which boxes in your grid are nearly empty?"
+  ],
+  "reflect_final": "Which empty box in your life could you start filling this week?",
+  "use_cases": [
+    {
+      "situation": "Your job has become your entire identity.",
+      "move": "Draw your grid and commit one real hour this week to an empty box.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is devastated after a breakup.",
+      "move": "Help them reconnect with the other boxes: friends, hobbies, growth.",
+      "context": "social"
+    },
+    {
+      "situation": "Your partner feels you rely on them for everything.",
+      "move": "Invest in your own friendships and interests, which also strengthens the relationship.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Spread your life across many boxes, so no single loss takes everything.",
+  "conversation_variants": {
+    "punchline_idea": "Jeffers says fear shrinks when your life stands on many pillars, not one.",
+    "thirty_sec_idea": "One-box life, Whole Life Grid, areas listed, loss hurts but doesn't destroy.",
+    "question_idea": "Which area of your life holds too much weight?",
+    "key_contrast_idea": "One pillar versus many"
+  }
+}

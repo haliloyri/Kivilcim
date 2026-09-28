@@ -1,0 +1,63 @@
+{
+  "story_id": 1330,
+  "kind": "anecdote",
+  "book": {
+    "title": "Özgür Olmak (The Subtle Art of Not Giving a F*ck)",
+    "author": "Mark Manson",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "Manson's question 'What pain do you want in your life?' / 'What are you willing to struggle for?' and his own story of dreaming of being a rock star without wanting the work it required are well attested in The Subtle Art of Not Giving a F*ck (the title is given here as 'Özgür Olmak'). The TR text's examples of athletes training six hours a day and people staying in hard relationships are not attributed to the book and are excluded. The claim that 'the great majority' who want results without process never get them is an unsupported generalization and is excluded. Not checked against the text.",
+  "facts": [
+    "Manson argues that asking what you want (happiness, success, a good body) is useless because nearly everyone wants the same pleasant results.",
+    "The more revealing question, he says, is: what pain do you want in your life, what struggle are you willing to sustain?",
+    "He tells of his own years fantasizing about being a rock star, imagining himself on stage, while never actually pursuing it.",
+    "He concluded that he loved the result but did not want the struggle: the practice, finding bandmates, playing small gigs and lugging gear.",
+    "His point is that people are defined not by the rewards they want but by the struggles they are willing to choose."
+  ],
+  "tension": "Manson spent years sure he wanted to be a rock star, yet never did the work, and only later realized he had wanted the stage, not the struggle.",
+  "opening_idea": "Start with young Mark Manson picturing himself on stage in front of a roaring crowd, and ask why that picture never turned into a single rehearsal.",
+  "lessons": [
+    {
+      "idea": "Wanting the reward tells you little; almost everyone wants the same rewards.",
+      "anchor": "Manson's claim that everyone wants happiness and success"
+    },
+    {
+      "idea": "A goal you won't struggle for may be a fantasy about the outcome, not a real goal.",
+      "anchor": "Manson's rock-star daydream without practice or gigs"
+    },
+    {
+      "idea": "Choosing a goal means choosing its specific pain.",
+      "anchor": "the question 'What pain do you want in your life?'"
+    }
+  ],
+  "reflect": [
+    "Is there something you've said for years that you want, yet never started the unglamorous part of?",
+    "Which hard, boring parts of your current work do you not mind at all?"
+  ],
+  "reflect_final": "For one goal you keep mentioning, write the three least glamorous tasks it would demand, and notice honestly whether you want to do them.",
+  "use_cases": [
+    {
+      "situation": "A team is excited about an ambitious initiative in planning.",
+      "move": "Before voting, ask: 'What's the grind this will require for six months, and who actually wants to do it?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague says they want a promotion into management.",
+      "move": "Recall Manson loving the stage but not the practice, then ask which parts of the manager's day, like difficult conversations and admin, they'd be happy doing.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You keep talking about starting something on the side.",
+      "move": "Do the most tedious first task of it once this week and notice whether you'd willingly do it again.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Manson wanted the stage lights, not the rehearsals; ask which rehearsals you'd show up for.",
+  "conversation_variants": {
+    "punchline_idea": "Manson dreamed of being a rock star for years and never practiced, because he wanted the applause, not the struggle.",
+    "thirty_sec_idea": "Mark Manson fantasized about rock stardom but never did the practice, gigs or gear-hauling; he realized he loved the result, not the struggle, and argues the real question is what pain you're willing to choose.",
+    "question_idea": "What's a hard, boring part of your life you actually don't mind, and what does that say about what you want?",
+    "key_contrast_idea": "Asking what you want versus asking what struggle you're willing to live with."
+  }
+}

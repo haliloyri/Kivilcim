@@ -1,0 +1,63 @@
+{
+  "story_id": 1157,
+  "kind": "concept",
+  "book": {
+    "title": "Positive Intelligence",
+    "author": "Shirzad Chamine",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Sage perspective, that any circumstance can be turned into a gift and opportunity, is a core idea of the book, and Chamine suggests a concrete exercise: take a bad situation and come up with at least three ways it could turn into a gift or opportunity. The reference TR text's claim about 'PQ leaders' Chamine researched doing this in real time is a paraphrase and is kept general. The book stresses that this is not denial: the Sage accepts that something bad happened and then asks how to make the most of it.",
+  "facts": [
+    "Chamine describes the Sage perspective: every outcome or circumstance can be converted into a gift and opportunity.",
+    "He contrasts this with the Saboteurs' reaction, which treats setbacks as threats and reasons for blame or anxiety.",
+    "The Sage perspective is not denial or forced positivity; it accepts that something unwanted happened.",
+    "He suggests a practical exercise: when something bad happens, think of at least three ways it could become a gift or an opportunity.",
+    "Most people can recognize the gifts in past difficulties in hindsight; the Sage aims to look for them while the difficulty is still happening."
+  ],
+  "tension": "Looking back, most hardships taught us something. Could we see that while they're still happening?",
+  "opening_idea": "Everyone can name a disaster that later turned out useful. Almost nobody says so in the middle of it.",
+  "lessons": [
+    {
+      "idea": "Hindsight finds gifts; the Sage looks for them in real time.",
+      "anchor": "The past-difficulty exercise"
+    },
+    {
+      "idea": "Reframing isn't denial.",
+      "anchor": "The Sage accepts what happened first"
+    },
+    {
+      "idea": "A concrete exercise makes the shift practical.",
+      "anchor": "Find three possible gifts"
+    }
+  ],
+  "reflect": [
+    "Which past difficulty are you now glad happened?",
+    "What current problem could you run through the three-gifts exercise?"
+  ],
+  "reflect_final": "What are three ways the hardest thing in your week could turn into a gift?",
+  "use_cases": [
+    {
+      "situation": "A project you led was cancelled.",
+      "move": "Write down three ways the cancellation could become an opportunity before deciding what to feel about it.",
+      "context": "self"
+    },
+    {
+      "situation": "A client loss has the team discouraged.",
+      "move": "Ask the team for three possible gifts in the loss, then act on the best one.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child didn't make the team.",
+      "move": "Acknowledge the disappointment, then ask together what this might open up.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Ask for three possible gifts before you decide it's only a loss.",
+  "conversation_variants": {
+    "punchline_idea": "You can look for the gift in a setback before hindsight hands it to you.",
+    "thirty_sec_idea": "The Sage perspective and the three-gifts exercise.",
+    "question_idea": "What bad thing are you glad happened?",
+    "key_contrast_idea": "Threat versus gift"
+  }
+}

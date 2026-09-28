@@ -83,7 +83,7 @@ const requests = targetIds.map((id) => {
   return {
     customId: `story-${lang}-${id}`,
     model,
-    maxTokens: 4096,
+    maxTokens: 8000,
     system: instructions,
     messages: [{ role: 'user', content: `Content brief:\n\`\`\`json\n${JSON.stringify(brief, null, 2)}\n\`\`\`` }],
   };

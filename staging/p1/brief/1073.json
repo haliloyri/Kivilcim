@@ -1,0 +1,64 @@
+{
+  "story_id": 1073,
+  "kind": "anecdote",
+  "book": {
+    "title": "Deep Work (Turkish edition: Derin Çalışma)",
+    "author": "Cal Newport",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book supports several points: Newport says he has never had a social media account, he is a computer science professor at Georgetown, and he still built a writing career and an audience. The book's core argument against social media is the 'any-benefit approach' versus the 'craftsman approach' to choosing tools. The reference text's scene of journalists hunting for his accounts, and its direct quote, do not appear to come from the book, so both are left out. Newport was an associate professor when the book came out, so no rank is stated here.",
+  "facts": [
+    "Cal Newport, the author of Deep Work, says in the book that he has never had a social media account, including Facebook and Twitter.",
+    "He is a computer science professor at Georgetown University and an author whose books reach a wide audience. He makes the point that he built both without social media.",
+    "The book argues that the ability to focus without distraction on cognitively demanding work is becoming rarer and more valuable.",
+    "Newport criticizes the 'any-benefit approach': using a network tool simply because it offers some possible benefit or because you might miss something without it.",
+    "He proposes the 'craftsman approach' instead. First identify the core factors behind your professional and personal success and happiness. Then adopt a tool only if its positive impact on those factors substantially outweighs its negative impact.",
+    "One of the book's rules is titled 'Quit Social Media'. Newport presents it as a deliberate choice to protect attention, not as a rejection of technology in general."
+  ],
+  "tension": "A widely read author and professor writes a book about the costs of distraction, and people assume he must use the platforms everyone relies on to build an audience. He has never had a single account, and his career suggests the supposed necessity was an assumption.",
+  "opening_idea": "Picture someone looking up a bestselling author online and finding no profile of any kind, not even an old one.",
+  "lessons": [
+    {
+      "idea": "A tool having some benefit is not enough reason to adopt it. The benefit has to clearly outweigh the cost to your attention.",
+      "anchor": "any-benefit approach vs. craftsman approach"
+    },
+    {
+      "idea": "Start from what actually drives your success, then judge each tool against that list, not against what everyone else uses.",
+      "anchor": "identify core factors first"
+    },
+    {
+      "idea": "Protected attention is itself a competitive advantage, because it is becoming rare.",
+      "anchor": "deep work as rare and valuable"
+    }
+  ],
+  "reflect": [
+    "Which of your digital tools did you adopt because it offered 'some benefit' rather than a clear, large one?",
+    "If you listed the two or three things that most drive your work, which apps would directly serve them?"
+  ],
+  "reflect_final": "If you judged every app on your phone the way a craftsman judges a tool, which ones would you keep?",
+  "use_cases": [
+    {
+      "situation": "The team proposes adding yet another channel or collaboration tool.",
+      "move": "Ask: 'Which of our top two goals does this clearly advance, and what attention does it cost us?' Adopt it only if the answer is concrete.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You feel you must be on a platform because 'everyone in my field is'.",
+      "move": "Write down your two or three core success factors. Score the platform's impact on each, plus and minus, and drop it for 30 days if the net result isn't clearly positive.",
+      "context": "self"
+    },
+    {
+      "situation": "A teenager at home says they can't quit an app because they'd miss out.",
+      "move": "Ask together: 'What would you actually lose, and what would you gain in time and focus?' Agree on a trial period without it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "'It has some benefit' is not a reason. A tool earns its place only if it clearly serves what matters most.",
+  "conversation_variants": {
+    "punchline_idea": "The author of a bestseller on focus has never had a social media account, and his career didn't suffer.",
+    "thirty_sec_idea": "Newport contrasts adopting tools for any possible benefit with a craftsman's rule: keep a tool only if its benefits to your core goals far outweigh its costs.",
+    "question_idea": "Would you still sign up for your most-used app today if you had to prove it serves your top goals?",
+    "key_contrast_idea": "Any-benefit thinking asks whether a tool could help. Craftsman thinking asks whether it helps enough to be worth the attention it takes."
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "story_id": 1104,
+  "kind": "anecdote",
+  "book": {
+    "title": "Güç Yasaları (The 48 Laws of Power)",
+    "author": "Robert Greene",
+    "year": "1998"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text does not match the book well. In the book, Law 3 is 'Conceal Your Intentions', and its Bismarck case is his 1850 parliamentary speech, not the 1860s unification campaign. The claims that 'Bismarck didn't fight' and 'his army was weaker' are historically wrong: Prussia fought Denmark (1864), Austria (1866) and France (1870–71). Playing rivals against each other belongs to other laws, not Law 3. The quoted Greene reply to critics could not be verified and was dropped. The exact post Bismarck received after the speech (the book frames it as ministerial favor; historically he became Prussia's envoy to the Frankfurt Diet) is kept vague. Confidence is medium because the 1850 speech is recalled as Law 3's Bismarck example, but its wording and details are not verified word for word.",
+  "facts": [
+    "Law 3 of the book is 'Conceal Your Intentions': keep people off balance and in the dark by never revealing the purpose behind your actions, and use decoys and smoke screens.",
+    "In 1850 Otto von Bismarck was a deputy in the Prussian parliament, known as an ardent nationalist and supporter of the army.",
+    "Many deputies were pushing for war with Austria, and Bismarck was expected to join them.",
+    "Instead he gave a speech arguing against war and in favor of peace, which surprised his colleagues.",
+    "The Prussian king was reluctant to go to war, and the speech won Bismarck royal favor. He was soon given an important post.",
+    "Greene's point is that Bismarck's words hid his real aim: advancing his own position. Years later, as prime minister, Bismarck led Prussia into war against Austria."
+  ],
+  "tension": "The most hawkish man in the room publicly argues for peace, and nobody realizes the speech is a move toward a war he will wage himself.",
+  "opening_idea": "Open on the 1850 parliament: everyone expects the fiery nationalist to call for war with Austria, and he stands up and pleads for peace.",
+  "lessons": [
+    {
+      "idea": "Stated positions are often tools, not beliefs. What someone says can serve a goal they don't mention.",
+      "anchor": "Bismarck's peace speech while privately intending to confront Austria later"
+    },
+    {
+      "idea": "Aligning your words with what the decision-maker wants to hear can buy access and trust.",
+      "anchor": "The reluctant king rewarded the deputy who echoed his own caution"
+    },
+    {
+      "idea": "Watch actions over time, not declarations in the moment, to read someone's real intentions.",
+      "anchor": "Years later the 'peace' speaker led Prussia into war with Austria"
+    },
+    {
+      "idea": "Understanding concealment is also a defense: knowing the tactic helps you spot it being used on you.",
+      "anchor": "Greene presents the laws as dynamics to recognize, whether or not you use them"
+    }
+  ],
+  "reflect": [
+    "When has someone said exactly what you wanted to hear, and later acted in the opposite direction?",
+    "Do you reveal your full goals too early in negotiations or career moves?",
+    "Where is the line between strategic discretion and deception for you?"
+  ],
+  "reflect_final": "If you judged the people around you by their track record instead of their speeches, whose intentions would suddenly look different?",
+  "use_cases": [
+    {
+      "situation": "A colleague suddenly backs your proposal in a meeting after opposing it for months.",
+      "move": "Before accepting the support at face value, ask: 'What would you want to see as the next step after this?' Their answer shows what they actually want.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're in salary or role talks and are tempted to lay out your whole plan and your walk-away point.",
+      "move": "Share only the next concrete ask, e.g. 'I'd like to discuss the scope of this role first', and keep your longer-term goal to yourself.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You notice you trust people mainly by how agreeable they sound.",
+      "move": "For one week, write down one promise and one action for each key person, and compare them at the end.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Judge intentions by the track record, not the speech: Bismarck argued for peace on the road to war.",
+  "conversation_variants": {
+    "punchline_idea": "Prussia's biggest hawk won his promotion by giving a speech for peace.",
+    "thirty_sec_idea": "In 1850 everyone expected Bismarck to demand war with Austria. He argued for peace, pleased a cautious king, gained power, and later led that very war. Greene uses it for Law 3: conceal your intentions.",
+    "question_idea": "If someone's words and later actions contradicted each other, which would you have trusted at the time?",
+    "key_contrast_idea": "Public words aimed at the king's ear versus a private goal that took years to show."
+  }
+}

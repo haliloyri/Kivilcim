@@ -1,0 +1,64 @@
+{
+  "story_id": 1347,
+  "kind": "concept",
+  "book": {
+    "title": "The Paradox of Choice",
+    "author": "Barry Schwartz",
+    "year": "2004"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core argument is well attested: Schwartz contrasts material abundance with rising depression and declining reported happiness, and argues that more options raise expectations, so good outcomes can still disappoint. His advice to 'satisfice more and maximize less', lower expectations and curb social comparison is from the book. His own example of shopping for jeans is the book's best-known case of this. The quote in the TR text ('disappointment comes from the expectation-outcome gap') could not be verified verbatim and is excluded. The social-media point is anachronistic for a 2004 book and is excluded; Schwartz discusses social comparison in general. No depression statistics are included because exact figures were not verified.",
+  "facts": [
+    "Schwartz opens with a personal errand: he went to buy a pair of jeans and was asked which fit, cut, wash and style he wanted, where once there had simply been 'jeans'.",
+    "After trying many options he left with jeans that fit better than any he had owned, yet he felt worse about the purchase.",
+    "His explanation: the wide choice had raised his expectations, so a better result still fell short of what he now thought was possible, and he blamed himself for choosing wrongly.",
+    "He sets this against a wider contrast: people in affluent societies have more material comfort and choice than ever, yet depression has risen and reported happiness has not kept pace.",
+    "He distinguishes 'maximizers', who seek the best possible option, from 'satisficers', who choose what is good enough by their own standard, and reports that maximizers tend to be less satisfied with their choices.",
+    "His remedies include satisficing more often, deliberately controlling expectations, and paying less attention to what others have."
+  ],
+  "tension": "Schwartz got objectively better jeans than ever before and still walked out feeling worse. More choice improved the result and lowered the satisfaction at the same time.",
+  "opening_idea": "Start with a professor standing at a clothing counter who only wants 'regular jeans' and is asked which of many fits he means.",
+  "lessons": [
+    {
+      "idea": "Satisfaction depends on the gap between outcome and expectation, not on the outcome alone.",
+      "anchor": "The better-fitting jeans that still left Schwartz disappointed."
+    },
+    {
+      "idea": "Having a personal 'good enough' standard protects against endless comparison with an imagined best option.",
+      "anchor": "Schwartz's maximizer versus satisficer distinction."
+    },
+    {
+      "idea": "The comparison point you choose shapes how an ordinary result feels.",
+      "anchor": "His advice to pay less attention to what others have."
+    }
+  ],
+  "reflect": [
+    "Think of a purchase or decision that was fine in itself but felt disappointing because you had seen many alternatives.",
+    "Which choices in your life deserve a careful search, and which only need to meet a clear standard?"
+  ],
+  "reflect_final": "Before your next routine purchase, write down in one line what 'good enough' means for it, choose the first option that meets that line, and notice afterward whether you keep comparing.",
+  "use_cases": [
+    {
+      "situation": "A team keeps adding vendor options to a comparison and cannot decide.",
+      "move": "Propose agreeing three must-have criteria first, then picking the first option that meets all three instead of hunting for the best on the market.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are about to buy something ordinary, like a kettle or a pair of jeans, and have ten tabs open.",
+      "move": "Remember Schwartz leaving the store with better jeans and a worse feeling; set your 'good enough' line before looking, and close the tabs once one option meets it.",
+      "context": "self"
+    },
+    {
+      "situation": "A partner or family member is anxious about choosing a holiday destination because every option looks slightly better than the last.",
+      "move": "Ask together: 'What would make this trip good for us?' Then choose the first place that meets it and stop searching.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The jeans fit better and felt worse: when options multiply, set your own 'good enough' line before you look, or the options will set it for you.",
+  "conversation_variants": {
+    "punchline_idea": "A psychologist bought the best-fitting jeans of his life and walked out feeling worse about it.",
+    "thirty_sec_idea": "Schwartz goes to buy jeans, faces a wall of fits and washes, finds a better pair than ever, and feels worse, because all that choice had raised what he expected.",
+    "question_idea": "Ask which recent choice felt worse than it should have because there were too many alternatives to compare.",
+    "key_contrast_idea": "More options made the result better and the feeling worse."
+  }
+}

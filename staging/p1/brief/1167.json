@@ -1,0 +1,65 @@
+{
+  "story_id": 1167,
+  "kind": "concept",
+  "book": {
+    "title": "Flow: The Psychology of Optimal Experience",
+    "author": "Mihaly Csikszentmihalyi",
+    "year": "1990"
+  },
+  "confidence": "medium",
+  "confidence_note": "Csikszentmihalyi did interview rock climbers, along with chess players, dancers, surgeons and many others, about their best moments, and climbers' descriptions of total absorption and altered time appear in the book. The specific quotation in the reference TR text ('just the rock and me') cannot be verified and is replaced by a paraphrase. The core findings are well established: flow happens when challenge and skill are in balance, with clear goals and immediate feedback; it involves deep concentration, loss of self-consciousness and a changed sense of time; too little challenge leads to boredom, too much to anxiety.",
+  "facts": [
+    "Csikszentmihalyi and his colleagues interviewed many people who spent long hours on activities they loved, including rock climbers, chess players, dancers and surgeons, asking what their best moments felt like.",
+    "Descriptions across very different activities were strikingly similar. He called the state 'flow', a word many interviewees used themselves.",
+    "In flow, people are so absorbed that nothing else seems to matter; self-consciousness disappears and the sense of time changes, often passing much faster.",
+    "Rock climbers described being so focused on the next move that worries and even physical discomfort faded from awareness.",
+    "Flow tends to happen when the challenge of a task matches a person's skills, the goals are clear and feedback is immediate.",
+    "When challenge is too low relative to skill, people feel bored; when it's too high, they feel anxious.",
+    "Csikszentmihalyi argues these moments are among the most enjoyable and meaningful in people's lives."
+  ],
+  "tension": "Why would people describe hanging from a cliff face as the best moments of their lives?",
+  "opening_idea": "A climber clings to a rock face, fingers aching, and later calls it one of the happiest moments of their life.",
+  "lessons": [
+    {
+      "idea": "Deep enjoyment often comes from effort, not rest.",
+      "anchor": "Climbers' best moments on hard rock"
+    },
+    {
+      "idea": "Flow lives between boredom and anxiety.",
+      "anchor": "Challenge matched to skill"
+    },
+    {
+      "idea": "Clear goals and quick feedback make absorption possible.",
+      "anchor": "The next hold, the next move"
+    }
+  ],
+  "reflect": [
+    "When did you last lose track of time doing something hard?",
+    "Is your work currently too easy, too hard, or about right?"
+  ],
+  "reflect_final": "How could you raise or lower the challenge of your day to land closer to flow?",
+  "use_cases": [
+    {
+      "situation": "A skilled team member seems bored and disengaged.",
+      "move": "Give them a stretch assignment slightly beyond their current skill.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel anxious and overwhelmed by a huge task.",
+      "move": "Break it into one clear, immediate goal with fast feedback.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child is bored with a hobby they used to love.",
+      "move": "Help them find the next level of challenge in it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The best moments are rarely relaxing; they're the ones that ask exactly enough of you.",
+  "conversation_variants": {
+    "punchline_idea": "People's happiest moments often come while doing something difficult.",
+    "thirty_sec_idea": "Interviews, flow's features, and the balance between challenge and skill.",
+    "question_idea": "When did you last lose track of time doing something hard?",
+    "key_contrast_idea": "Bored, anxious, absorbed"
+  }
+}

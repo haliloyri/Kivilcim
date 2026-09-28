@@ -1,0 +1,65 @@
+{
+  "story_id": 1176,
+  "kind": "anecdote",
+  "book": {
+    "title": "The 80/20 Principle",
+    "author": "Richard Koch",
+    "year": "1997"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text centres on Pareto noticing that 20 percent of pea pods in his garden produced 80 percent of the peas. This garden story is widely repeated but is not reliably documented and is not the origin Koch gives; it is mentioned only as a popular legend. Koch's book describes Vilfredo Pareto, an Italian economist, discovering in 1897 a consistent imbalance in the distribution of income and wealth in England and other countries, which he expressed mathematically; later, the quality pioneer Joseph Juran popularized the idea as the 'Pareto Principle' or the principle of the 'vital few and trivial many'. The '80/20' label is a rule of thumb; Koch stresses the ratio is not always exactly 80/20.",
+  "facts": [
+    "Vilfredo Pareto was an Italian economist working at the end of the nineteenth century.",
+    "In 1897, studying patterns of wealth and income in nineteenth-century England, he found that a small minority of people held most of the income and wealth.",
+    "He found a similar predictable imbalance in data from other countries and periods, and expressed it mathematically.",
+    "A popular story says Pareto first noticed the pattern in his garden, where a small share of pea pods produced most of the peas; the story is widely repeated but not well documented.",
+    "Decades later, Joseph Juran, a pioneer of quality management, applied the idea to quality problems and popularized it as the Pareto Principle, or the rule of the 'vital few and trivial many'.",
+    "Koch's argument: in many areas, a minority of causes, inputs or effort usually leads to a majority of results. The numbers are not always exactly 80 and 20; the point is the imbalance.",
+    "He advises identifying the vital few and focusing energy on them."
+  ],
+  "tension": "Most people assume effort and results are roughly balanced. Pareto's data said they almost never are.",
+  "opening_idea": "An economist looks at tables of income and finds the same lopsided pattern everywhere he looks.",
+  "lessons": [
+    {
+      "idea": "Inputs and outputs are rarely balanced.",
+      "anchor": "Pareto's wealth data"
+    },
+    {
+      "idea": "The ratio matters less than the imbalance.",
+      "anchor": "Koch: not always exactly 80/20"
+    },
+    {
+      "idea": "Find the vital few.",
+      "anchor": "Juran's 'vital few and trivial many'"
+    }
+  ],
+  "reflect": [
+    "Which few activities produce most of your results?",
+    "Which effort produces almost nothing?"
+  ],
+  "reflect_final": "If you could keep only your top 20 percent of activities, which would they be?",
+  "use_cases": [
+    {
+      "situation": "Your team treats every customer request as equally important.",
+      "move": "Look at which customers generate most revenue or problems and prioritize accordingly.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your to-do list feels endless.",
+      "move": "Circle the two items that would create the most value and do them first.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend says they're busy but getting nowhere.",
+      "move": "Ask which few activities actually move their goals forward.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "A few causes create most of the results; find them first.",
+  "conversation_variants": {
+    "punchline_idea": "Results are almost never distributed evenly across effort.",
+    "thirty_sec_idea": "Pareto 1897, the imbalance, Juran's vital few, Koch's point.",
+    "question_idea": "Which 20 percent of your effort creates most of your results?",
+    "key_contrast_idea": "Vital few, trivial many"
+  }
+}

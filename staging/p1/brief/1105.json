@@ -1,0 +1,72 @@
+{
+  "story_id": 1105,
+  "kind": "anecdote",
+  "book": {
+    "title": "The 48 Laws of Power (Güç Yasaları)",
+    "author": "Robert Greene",
+    "year": "1998"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core facts are well documented: Talleyrand's lifespan, his service across successive French regimes, Napoleon's January 1809 tirade after learning of the Talleyrand–Fouché plotting, Talleyrand's calm reply, and his later London ambassadorship. Greene uses Talleyrand in several laws and tells the 1809 scene as an example of keeping one's composure. The claim that Greene's reading has exactly 'two parts' (never outshine the master, serve each regime's need) comes from the reference text, not a certain quote from the book. The exact regime count depends on how you divide the period; the July Monarchy is often counted separately from the Restoration. The phrase 'shit in a silk stocking' is widely attributed to this scene, but its wording varies across sources. Keep it hedged rather than asserting it was invented later.",
+  "facts": [
+    "Charles-Maurice de Talleyrand lived from 1754 to 1838, spanning the old monarchy, the Revolution, the Directory, Napoleon's rule, the Bourbon Restoration and the July Monarchy.",
+    "He held high office, above all running foreign affairs, under several of these successive regimes, while many contemporaries were executed or exiled.",
+    "In January 1809 (commonly dated 28 January) Napoleon, back from Spain, learned that Talleyrand and Fouché had been discussing his succession. In front of other dignitaries he denounced Talleyrand as a thief, a coward and a traitor, then stormed out.",
+    "Talleyrand stayed composed and reportedly remarked to those present that it was a pity such a great man was so badly brought up.",
+    "A crude insult ('dirt/shit in a silk stocking') is widely attributed to Napoleon in this scene, though accounts differ on the wording.",
+    "Talleyrand lost his court post of Grand Chamberlain but was not arrested or destroyed.",
+    "After Napoleon's fall he played a leading role in the new regime and represented France at the Congress of Vienna.",
+    "Under Louis-Philippe he served as ambassador in London until 1834, around age 80.",
+    "Greene presents Talleyrand as a master of power, not a moral model. He was widely condemned in his own time for bribery, betrayal and switching sides, and Greene describes how power works, not how it should work."
+  ],
+  "tension": "A man publicly humiliated by the most powerful ruler in Europe, whom he had in fact been plotting around, should have been finished. Instead he outlasted that ruler and served the next regimes at the top.",
+  "opening_idea": "Open on the 1809 room: Napoleon screaming insults at his former foreign minister in front of witnesses. The man being insulted does not flinch.",
+  "lessons": [
+    {
+      "idea": "Staying calm under a public attack shifts the loss of face onto the attacker.",
+      "anchor": "Talleyrand's one-line remark after Napoleon stormed out"
+    },
+    {
+      "idea": "People tied to a person tend to fall with that person; people tied to a function the system needs tend to survive changes of leadership.",
+      "anchor": "Talleyrand kept running foreign affairs regime after regime"
+    },
+    {
+      "idea": "Being indispensable means supplying what each new power actually needs, not being loyal to whoever held power before.",
+      "anchor": "His role after Napoleon's fall and at the Congress of Vienna"
+    },
+    {
+      "idea": "Effective and admirable are different things. The survival skill here came with real ethical costs.",
+      "anchor": "Contemporary accusations of bribery and betrayal; Greene's non-moral framing"
+    }
+  ],
+  "reflect": [
+    "When you have been criticized in front of others, did your reaction help you or the critic?",
+    "If your current boss left tomorrow, what would still make you necessary?",
+    "Where does adaptability end and opportunism begin for you?"
+  ],
+  "reflect_final": "Is what keeps you valuable where you are a relationship, or work that others genuinely cannot do?",
+  "use_cases": [
+    {
+      "situation": "A senior person criticizes you sharply in front of the team.",
+      "move": "Don't defend yourself in the moment. Say calmly, 'I hear the concern; I'll come back with specifics by tomorrow,' and let the heat stay with them.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A new manager takes over and you were close to the previous one.",
+      "move": "In your first 1:1, ask 'What problem do you most need solved in the next 90 days?' and offer to own one concrete piece of it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel secure at work mainly because a key sponsor likes you.",
+      "move": "List the tasks only you can currently do. Pick one skill or responsibility to deepen so your value doesn't depend on that single relationship.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Attach yourself to a person and you last as long as they do; attach yourself to a function and you can outlast the institution.",
+  "conversation_variants": {
+    "punchline_idea": "Napoleon screamed at him and slammed the door; Talleyrand calmly remarked on the Emperor's manners, then outlasted him.",
+    "thirty_sec_idea": "Talleyrand served one French regime after another, survived a public dressing-down by Napoleon in 1809, and was still an ambassador at 80, because every regime needed the job he did.",
+    "question_idea": "If the person who hired you left, would you still be needed, and why?",
+    "key_contrast_idea": "Those loyal to a leader fell with that leader; the one who kept serving what each regime needed kept surviving."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "story_id": 1355,
+  "kind": "concept",
+  "book": {
+    "title": "Lider Yok Köle Yok (The Monk Who Sold His Ferrari)",
+    "author": "Robin Sharma",
+    "year": "1997"
+  },
+  "confidence": "low",
+  "confidence_note": "The list of deathbed regrets in the TR text (living others' expectations, working too much, not expressing feelings, losing touch with friends, not letting yourself be happier) matches Bronnie Ware's later work (2009-2012), which postdates this 1997 book. It is not attributed to Sharma and is excluded, as is the 'research' framing and the quotes. The input title appears mismatched; the 1997 book by Sharma is The Monk Who Sold His Ferrari. What can be attributed to that book is its theme that time is the most precious and non-renewable resource, symbolised in the fable by a gold stopwatch, and the idea of living with the end in mind. The facts are limited to that concept. The writer should consider whether this story needs replacing, as it no longer matches the TR text.",
+  "facts": [
+    "In The Monk Who Sold His Ferrari, the sages' fable includes a gold stopwatch, which stands for time as the most precious and non-renewable resource.",
+    "The book urges readers to treat time with urgency and to live as though their time is limited, instead of postponing what matters to 'someday'.",
+    "Julian Mantle's own story shows the cost of postponing: he put health and meaning aside for career success until a heart attack forced him to stop.",
+    "The book presents this as a call to reorder present priorities, not as a research finding about regret."
+  ],
+  "tension": "Everyone knows time is limited, yet most people still act as if what matters can wait. The stopwatch symbol is meant to make that limit feel real now.",
+  "opening_idea": "Begin with the gold stopwatch in the sages' fable and ask why they chose a stopwatch, not a clock.",
+  "lessons": [
+    {
+      "idea": "Time differs from money or possessions because it cannot be earned back.",
+      "anchor": "The gold stopwatch symbol in the fable."
+    },
+    {
+      "idea": "Putting what matters off until 'later' is a choice whose cost appears only afterward.",
+      "anchor": "Julian's postponed health and meaning, ending in a heart attack."
+    }
+  ],
+  "reflect": [
+    "What have you been telling yourself you will get to 'when things calm down'?",
+    "If your time were visibly counting down, which item on this week's calendar would you drop?"
+  ],
+  "reflect_final": "Choose one thing you have postponed to 'someday', such as a call, a visit or a conversation, and put a specific time for it in your calendar this week.",
+  "use_cases": [
+    {
+      "situation": "You keep saying you will call an old friend 'when things calm down'.",
+      "move": "Remember the gold stopwatch in Sharma's fable, time does not wait for things to calm down, and send the message today to fix a time.",
+      "context": "social"
+    },
+    {
+      "situation": "Family time keeps getting pushed back by work deadlines.",
+      "move": "Pick one evening this week, tell the family it is fixed, and treat it like a meeting you cannot move.",
+      "context": "family"
+    },
+    {
+      "situation": "You are reviewing your weekly calendar.",
+      "move": "Ask which one item you would drop if you took seriously that time cannot be earned back, and drop it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The sages chose a stopwatch, not a clock: time is always counting down, so 'someday' is a choice with a cost.",
+  "conversation_variants": {
+    "punchline_idea": "In Sharma's fable, the reminder of what matters most is a gold stopwatch.",
+    "thirty_sec_idea": "In The Monk Who Sold His Ferrari, the sages use a gold stopwatch to show that time is the one resource you cannot earn back, a lesson Julian learned only after a heart attack.",
+    "question_idea": "Ask what they have been saving for 'someday' and what is stopping them from setting a date.",
+    "key_contrast_idea": "Treating time as endless versus treating it as a stopwatch counting down."
+  }
+}

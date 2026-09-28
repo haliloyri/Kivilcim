@@ -1,0 +1,68 @@
+{
+  "story_id": 1099,
+  "kind": "anecdote",
+  "book": {
+    "title": "Mindset: The New Psychology of Success (TR: Zihin Gücü)",
+    "author": "Carol S. Dweck",
+    "year": "2006"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core anecdote is in the book's sports chapter: Jordan was cut from his high school varsity team, went home, shut himself in his room and cried, then trained with extreme discipline. The book also has him leaving the house early to practice before school, and Dweck credits his mother's encouragement to discipline himself. The year 1978 and the town (Wilmington, North Carolina) come from public biography, not clearly from the book, so they are omitted. Historically he was placed on the junior varsity team rather than cut from basketball entirely, so 'cut from the varsity team' is the safe wording. The 'not yet' framing is closely tied to Dweck's later work (her 'power of yet' talk and the updated edition). It fits the book's growth-mindset thesis, but it should not be presented as a word Jordan himself used. The fixed-mindset counterfactual ('basketball isn't for me') is an illustrative contrast in Dweck's spirit, not a quoted passage.",
+  "facts": [
+    "As a high school student, Michael Jordan was left off his school's varsity basketball team.",
+    "He went home, shut himself in his room and cried.",
+    "He then committed to relentless practice, getting up early to train before school.",
+    "Dweck notes that his mother encouraged him to go back and discipline himself.",
+    "Dweck uses Jordan as a star athlete whose greatness she attributes to effort and to the way he responded to setbacks, rather than to natural talent alone.",
+    "Dweck's central claim is that in a fixed mindset, failure is read as a verdict on who you are. In a growth mindset, failure is read as information about what to work on."
+  ],
+  "tension": "A rejection that could have become a permanent label ('I'm not good enough') instead became a starting point, depending entirely on how he interpreted it.",
+  "opening_idea": "Open on the moment a teenager scans a team list and doesn't find his name, then reveal who he was.",
+  "lessons": [
+    {
+      "idea": "The same failure can be read as a statement about identity or as a statement about effort, and that reading shapes what you do next.",
+      "anchor": "Jordan tied the cut to how hard he worked, not to who he was."
+    },
+    {
+      "idea": "A fixed-mindset belief can fulfil itself: deciding 'this isn't for me' leads you to stop, which then makes it true.",
+      "anchor": "The imagined peer who quits after the same cut."
+    },
+    {
+      "idea": "Feeling the pain of failure is not the problem. What matters is what you do after it.",
+      "anchor": "He cried in his room, then got up early to train."
+    },
+    {
+      "idea": "Adding 'yet' turns a verdict about a person into a temporary state that can change.",
+      "anchor": "'I'm not good enough' versus 'I'm not good enough yet.'"
+    }
+  ],
+  "reflect": [
+    "Which recent setback have you quietly turned into a statement about who you are?",
+    "When you fail, what is your first sentence to yourself? Is it about your identity or about your effort?"
+  ],
+  "reflect_final": "Is there an area where you say 'this isn't for me' or 'I can't do this'? What changes if you add 'yet' to that sentence?",
+  "use_cases": [
+    {
+      "situation": "A team member's proposal is rejected and they say they're 'just not a strategy person.'",
+      "move": "Reply: 'Not yet. What was the one weakest part? Let's rework that piece for next week.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child comes home upset after not making a team or failing a test.",
+      "move": "Let them be upset first, then ask: 'What could you practice every day for the next month?' and agree on a small daily routine together.",
+      "context": "family"
+    },
+    {
+      "situation": "You catch yourself thinking 'I'm bad at public speaking' before a presentation.",
+      "move": "Rewrite the thought on paper as 'I'm not a strong speaker yet,' then schedule two rehearsals before the talk.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A failure becomes a turning point the moment you treat it as 'not yet' instead of 'not me.'",
+  "conversation_variants": {
+    "punchline_idea": "The greatest basketball player of his era started out as a kid who wasn't picked for the team.",
+    "thirty_sec_idea": "Jordan was cut, cried in his room, then trained before school every day. Dweck says the difference was reading failure as effort rather than identity.",
+    "question_idea": "Ask the listener what they would have told themselves at fifteen if their name wasn't on the list.",
+    "key_contrast_idea": "'This isn't for me' ends the story, while 'I'm not there yet' starts the practice."
+  }
+}

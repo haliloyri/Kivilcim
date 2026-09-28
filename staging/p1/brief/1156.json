@@ -1,0 +1,65 @@
+{
+  "story_id": 1156,
+  "kind": "concept",
+  "book": {
+    "title": "Positive Intelligence",
+    "author": "Shirzad Chamine",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The PQ concept is central to the book: Positive Intelligence Quotient, the percentage of time your mind is serving you rather than sabotaging you. Chamine describes a tipping point around a PQ score of 75, above which your mind tends to lift you and below which it tends to drag you down; this figure is recalled with reasonable confidence. The reference TR text's research numbers (people and countries) are garbled and are left out. The three strategies are from the book: weaken the Saboteurs, strengthen the Sage, and strengthen your 'PQ brain' through short 'PQ reps' of focused attention on physical sensations. The Sage's five powers (Empathize, Explore, Innovate, Navigate, Activate) are included. The TR text's 'wise mind' is rendered as the book's term, the Sage.",
+  "facts": [
+    "Chamine defines PQ, the Positive Intelligence Quotient, as the percentage of time your mind is serving you rather than sabotaging you.",
+    "He describes a tipping point around a PQ of 75: above it, your mind tends to lift you up; below it, it tends to pull you down.",
+    "He contrasts the Saboteur mode with the Sage mode, a calmer, clearer, more curious and creative part of the mind.",
+    "The Sage has five powers: Empathize, Explore, Innovate, Navigate and Activate.",
+    "He proposes three strategies to raise PQ: weaken the Saboteurs, strengthen the Sage, and strengthen the 'PQ brain' muscles.",
+    "PQ brain muscles are strengthened through 'PQ reps': brief moments, about ten seconds, of focused attention on physical sensations such as breathing, touch or sounds, repeated through the day.",
+    "Chamine presents PQ as trainable, like a muscle, rather than a fixed trait."
+  ],
+  "tension": "IQ and EQ explain part of why some people thrive under pressure, but not all of it. What's missing?",
+  "opening_idea": "Two equally smart, equally emotionally aware people face the same bad day. One recovers in an hour, the other is dragged down for a week.",
+  "lessons": [
+    {
+      "idea": "What matters is how much of the time your mind works for you.",
+      "anchor": "PQ as a percentage and the 75 tipping point"
+    },
+    {
+      "idea": "There's a calmer, wiser mode available beneath the Saboteurs.",
+      "anchor": "The Sage and its five powers"
+    },
+    {
+      "idea": "Small, frequent reps build the mental muscle.",
+      "anchor": "Ten-second PQ reps"
+    }
+  ],
+  "reflect": [
+    "Roughly what share of today did your mind spend helping you versus sabotaging you?",
+    "Which Sage power do you use least?"
+  ],
+  "reflect_final": "Where could you slip three ten-second PQ reps into your day tomorrow?",
+  "use_cases": [
+    {
+      "situation": "You're about to walk into a tense meeting feeling anxious.",
+      "move": "Do a ten-second PQ rep, noticing your breath and your feet on the floor, before you enter.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member is stuck complaining about a problem.",
+      "move": "Invite them into Sage mode by asking how this situation could turn into an opportunity.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your partner comes home stressed and spiralling about work.",
+      "move": "Lead with empathy first, then gently explore together what's actually within their control.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Ten seconds of attention, repeated often, is how the calmer mind gets stronger.",
+  "conversation_variants": {
+    "punchline_idea": "Your PQ is how much of the time your own mind is on your side.",
+    "thirty_sec_idea": "PQ definition, 75 tipping point, Sage powers, and PQ reps.",
+    "question_idea": "How much of today was your mind on your side?",
+    "key_contrast_idea": "Saboteur versus Sage"
+  }
+}

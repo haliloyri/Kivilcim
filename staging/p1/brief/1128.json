@@ -1,0 +1,63 @@
+{
+  "story_id": 1128,
+  "kind": "anecdote",
+  "book": {
+    "title": "Mindset: The New Psychology of Success (TR: Büyüme Zihniyeti)",
+    "author": "Carol S. Dweck",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "Dweck reliably tells the Chicago 'Not Yet' grade anecdote (as an example she heard about) in her work and her 'Power of Yet' talk, and it fits the updated 2016 edition. She does not present a controlled study of that school's students. The existing TR text says she 'researched this practice' and found specific results, which likely conflates the anecdote with her separate studies: fixed-mindset students saying they would cheat or compare themselves downward after failure, and brain-activity studies showing growth-mindset students engage more with their errors. Keep those as separate, general findings. Do not attribute outcome numbers to the Chicago school. Do not overstate the 'neurological change' claim.",
+  "facts": [
+    "Dweck describes a high school in Chicago where students who did not pass a required course received the grade 'Not Yet' instead of a failing grade.",
+    "Dweck contrasts the two labels: a failing grade signals you are nowhere, while 'Not Yet' signals you are on a learning curve with a path forward.",
+    "In Dweck's own research (separate from the Chicago school), students with a fixed mindset who faced failure said they might cheat next time or look for someone who did worse to feel better.",
+    "Also in her research, students with a growth mindset engaged more deeply with errors, including processing and correcting their mistakes, rather than avoiding them.",
+    "Dweck's core claim is that framing ability as developable (process) rather than fixed (identity) changes how people respond to difficulty and setbacks."
+  ],
+  "tension": "A single word on a report card can tell a student either 'you are a failure' or 'you are not there yet.' That label shapes whether the student keeps trying or gives up.",
+  "opening_idea": "Open with the image of a report card where the failing grade has been replaced by two words: 'Not Yet.'",
+  "lessons": [
+    {
+      "idea": "Labels that judge identity ('failure') invite avoidance, while labels that describe process ('not yet') invite continued effort.",
+      "anchor": "The Chicago school's 'Not Yet' grade"
+    },
+    {
+      "idea": "A fixed-mindset response to failure often looks for escape routes such as giving up, cheating or downward comparison, instead of learning.",
+      "anchor": "Dweck's findings that fixed-mindset students considered cheating or comparing themselves to worse performers"
+    },
+    {
+      "idea": "Mistakes are information to engage with, not a verdict to hide from.",
+      "anchor": "Growth-mindset students attending to and correcting their errors in Dweck's studies"
+    }
+  ],
+  "reflect": [
+    "Which of your current setbacks do you describe with an identity word ('I'm bad at this') rather than a process word?",
+    "When someone you lead or care about fails, what label does your reaction give them?"
+  ],
+  "reflect_final": "Take one thing you'd call a failure and restate it with 'not yet.' What changes in what you'd do next?",
+  "use_cases": [
+    {
+      "situation": "A team member's project missed its target, and the review is turning into blame.",
+      "move": "Say: 'This isn't a fail, it's a not-yet. What did we learn, and what's the next attempt?' Then list one concrete next step.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child comes home upset about a bad test result and says 'I'm just stupid at math.'",
+      "move": "Reply: 'You haven't mastered this yet. Let's look at which problems tripped you up and pick one strategy to try.'",
+      "context": "family"
+    },
+    {
+      "situation": "You abandon a new skill (a language, an instrument, coding) after a frustrating session.",
+      "move": "Write in your notes 'Not yet: [skill]' plus the specific thing to practice next, instead of quitting.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "'Failed' closes the door; 'not yet' keeps it open.",
+  "conversation_variants": {
+    "punchline_idea": "One school swapped its failing grade for 'Not Yet,' turning a verdict into a direction.",
+    "thirty_sec_idea": "Summarize the Chicago 'Not Yet' grade, then connect it to Dweck's finding that people who see failure as identity tend to quit or cut corners.",
+    "question_idea": "Ask: if your worst recent setback had been graded 'not yet,' what would you be doing differently today?",
+    "key_contrast_idea": "Contrast a label that describes who you are with one that describes where you are on the path."
+  }
+}

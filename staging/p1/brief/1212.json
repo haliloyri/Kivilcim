@@ -1,0 +1,65 @@
+{
+  "story_id": 1212,
+  "kind": "anecdote",
+  "book": {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kiyosaki tells this story in the book: Ray Kroc, the founder of McDonald's, was invited to speak to an MBA class at the University of Texas at Austin, and afterwards, over drinks with some students, asked them what business he was in. When they said hamburgers, he said his business was real estate. Kiyosaki says a friend who was one of the students told him the story. It is secondhand and difficult to verify independently, so it's presented as Kiyosaki tells it. The factual core, that McDonald's owns or controls much of the land and buildings its restaurants use and earns substantial income from franchise rents, is broadly accurate. The book's lesson is 'Mind your own business': build your asset column, not just your job.",
+  "facts": [
+    "Kiyosaki writes that Ray Kroc, founder of McDonald's, was invited to speak to an MBA class at the University of Texas at Austin.",
+    "After the talk, Kroc joined some students for a drink and asked them: 'What business am I in?'",
+    "The students answered: hamburgers.",
+    "Kroc said no: his business was real estate.",
+    "Kiyosaki explains that Kroc's focus was on buying the land and locations under his franchises; McDonald's owns or controls much of the valuable real estate its restaurants sit on.",
+    "Kiyosaki says a friend who was in the class told him the story; it is secondhand.",
+    "He uses it to make a point he calls 'Mind your own business': your profession is what you do for income; your business is your asset column, the things that produce income for you."
+  ],
+  "tension": "Everyone thinks they know what McDonald's sells. Its founder said they were wrong.",
+  "opening_idea": "A founder asks a room of business students what his company sells, and they get it wrong.",
+  "lessons": [
+    {
+      "idea": "What a business appears to sell may not be what builds its wealth.",
+      "anchor": "Hamburgers versus real estate"
+    },
+    {
+      "idea": "Your job is not the same as your business.",
+      "anchor": "'Mind your own business'"
+    },
+    {
+      "idea": "Build assets that pay you.",
+      "anchor": "The asset column"
+    }
+  ],
+  "reflect": [
+    "What is your profession, and what is your 'business' in Kiyosaki's sense?",
+    "Which of your assets actually produces income?"
+  ],
+  "reflect_final": "What is one asset you could start building alongside your job?",
+  "use_cases": [
+    {
+      "situation": "Your team defines its product only by what customers see.",
+      "move": "Ask where the company's real long-term value is created.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You've only ever focused on your salary.",
+      "move": "Start one small asset: savings invested, a side project or a skill that earns.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is starting a café.",
+      "move": "Ask whether owning the location might matter as much as the coffee.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Know what your business really is, not just what it sells.",
+  "conversation_variants": {
+    "punchline_idea": "Ray Kroc told business students McDonald's was in real estate, not hamburgers.",
+    "thirty_sec_idea": "Kroc's question, the students' answer, real estate, 'mind your own business'.",
+    "question_idea": "What's your real business, beyond your job?",
+    "key_contrast_idea": "Profession versus business"
+  }
+}

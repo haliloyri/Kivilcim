@@ -1,0 +1,64 @@
+{
+  "story_id": 1184,
+  "kind": "concept",
+  "book": {
+    "title": "Money: Master the Game",
+    "author": "Tony Robbins",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Robbins describes asymmetric risk/reward as a principle shared by the investors he interviewed, highlighting Paul Tudor Jones's rule of looking for trades where the potential reward is at least five times the risk (5-to-1). He also stresses the math of losses: after a 50 percent loss, you need a 100 percent gain just to get back to even; and he cites Warren Buffett's famous rule: 'Rule No. 1: Never lose money. Rule No. 2: Never forget rule No. 1.' The reference TR text's direct quote from Ray Dalio ('I optimize for not losing') cannot be verified and is not used; Dalio appears only as the designer of a diversified 'All Weather' approach meant to reduce the risk of large losses.",
+  "facts": [
+    "Robbins found that the best investors he interviewed focused first on not losing money.",
+    "He cites Warren Buffett's rule: 'Rule No. 1: Never lose money. Rule No. 2: Never forget rule No. 1.'",
+    "He explains the math of losses: if you lose 50 percent, you need a 100 percent gain just to get back to where you started.",
+    "Paul Tudor Jones told Robbins he looks for asymmetric risk/reward: investments where the potential upside is at least five times the potential downside, so he can be wrong most of the time and still come out ahead.",
+    "Ray Dalio's 'All Weather' approach, described in the book, spreads investments across assets that do well in different economic conditions, to reduce the chance of large losses.",
+    "Robbins's advice to ordinary investors: protect against big losses and look for opportunities where the upside greatly outweighs the downside."
+  ],
+  "tension": "Most people think investing is about big wins. The people Robbins interviewed talked more about avoiding big losses.",
+  "opening_idea": "Lose half your money, and you need to double what's left just to be back where you started.",
+  "lessons": [
+    {
+      "idea": "Big losses are harder to recover from than they look.",
+      "anchor": "50 percent down needs 100 percent up"
+    },
+    {
+      "idea": "Seek asymmetric bets.",
+      "anchor": "Tudor Jones's 5-to-1"
+    },
+    {
+      "idea": "Protect the downside first.",
+      "anchor": "Buffett's rules; Dalio's All Weather"
+    }
+  ],
+  "reflect": [
+    "Where are you risking a lot for a small possible gain?",
+    "What asymmetric opportunity in your life could you take?"
+  ],
+  "reflect_final": "Before your next big decision, what's the worst case, and is the upside worth five times that?",
+  "use_cases": [
+    {
+      "situation": "A friend wants to put all their savings into one hot stock.",
+      "move": "Walk through the math of a 50 percent loss before they decide.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team is weighing a risky project.",
+      "move": "Estimate the realistic downside and upside and ask whether the ratio is clearly in your favor.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're considering a career move.",
+      "move": "List what you could lose and gain, and look for ways to cap the downside.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Protect against big losses first; then look for bets where the upside dwarfs the downside.",
+  "conversation_variants": {
+    "punchline_idea": "Lose 50 percent and you need to gain 100 percent just to break even.",
+    "thirty_sec_idea": "Buffett's rules, loss math, Tudor Jones's 5-to-1, All Weather.",
+    "question_idea": "What's the real downside of your next big bet?",
+    "key_contrast_idea": "Upside versus downside"
+  }
+}

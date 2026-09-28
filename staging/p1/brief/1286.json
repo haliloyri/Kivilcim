@@ -1,0 +1,59 @@
+{
+  "story_id": 1286,
+  "kind": "concept",
+  "book": {
+    "title": "As a Man Thinketh",
+    "author": "James Allen",
+    "year": "1903"
+  },
+  "confidence": "medium",
+  "confidence_note": "Supported by the book: 'Circumstance does not make the man; it reveals him to himself'; people are anxious to improve their circumstances but unwilling to improve themselves; and Allen's illustrative cases (a poor man who wants better circumstances yet shirks his work; a rich man suffering a painful illness caused by gluttony who wants a cure without giving up the gluttony; an employer who cuts wages to increase profit and then fails). These are Allen's hypothetical illustrations, not reported events. The reference text softens Allen: it says he doesn't mean illness is anyone's fault, but Allen does tie health and circumstances to thought; that strong claim is his philosophical assertion, not established causation, and should be presented as his view. The reference's 'two people in the same conditions' framing and its claim that modern psychology research confirms this are not from the book and are omitted.",
+  "facts": [
+    "Allen's central claim is that circumstance does not make a person; it reveals them to themselves.",
+    "He observes that people are anxious to improve their circumstances but unwilling to improve themselves, and so they remain bound.",
+    "His illustrations: a poor man who wants better surroundings but shirks his work; a rich man suffering from an illness brought on by gluttony who will pay anything for a cure but won't give up gluttony; an employer who cuts wages to raise profits and ends up failing.",
+    "Allen argues that thoughts shape character and character tends, over time, to show up in circumstances, including health; he presents this as a moral law, not as research.",
+    "His hopeful point is that a person cannot always choose circumstances directly but can choose thoughts, and so indirectly shape them."
+  ],
+  "tension": "People want their circumstances to change, but in each of Allen's examples the person wants the outcome without changing the behavior that produces it.",
+  "opening_idea": "Start with Allen's rich man who would pay any doctor to cure an illness, on one condition: he won't give up the gluttony causing it.",
+  "lessons": [
+    {
+      "idea": "Wanting a different outcome while refusing to change yourself keeps you stuck.",
+      "anchor": "The rich man wants a cure but won't give up gluttony."
+    },
+    {
+      "idea": "Circumstances reveal a person as much as they shape them.",
+      "anchor": "Allen's line: 'Circumstance does not make the man; it reveals him to himself.'"
+    }
+  ],
+  "reflect": [
+    "Is there a situation you'd like to change where you're hoping for the result without changing your part in it?",
+    "When has a hard circumstance revealed something about you that you didn't know?"
+  ],
+  "reflect_final": "Pick one circumstance you complain about, and name one behavior of your own that feeds it; change that one behavior at your next opportunity and notice what shifts, while remembering that not everything is in your control.",
+  "use_cases": [
+    {
+      "situation": "Your team complains about constant firefighting but keeps skipping planning.",
+      "move": "Like Allen's rich man who wants a cure but won't change his diet, ask which of your own habits keeps producing the fires, and pick one to change this sprint.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You wish your evenings were calmer but keep taking work calls late.",
+      "move": "Choose one evening this week to leave work calls unanswered after a set time, and see how the evening feels.",
+      "context": "self"
+    },
+    {
+      "situation": "A family member complains about being tired but stays up late every night.",
+      "move": "Rather than lecturing, ask what one change they'd be willing to try and offer to do it with them.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Allen's rich man wanted the cure without giving up the feast: changing circumstances usually starts with the habit you'd rather keep.",
+  "conversation_variants": {
+    "punchline_idea": "James Allen: 'Circumstance does not make the man; it reveals him to himself.'",
+    "thirty_sec_idea": "Allen describes a rich man who would pay any price to cure his illness but won't give up the gluttony causing it, and argues that people want better circumstances without wanting to become better themselves.",
+    "question_idea": "What's a situation that showed you something about yourself you didn't expect?",
+    "key_contrast_idea": "Wanting your circumstances to change versus being willing to change yourself."
+  }
+}

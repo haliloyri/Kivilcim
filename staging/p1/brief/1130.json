@@ -1,0 +1,65 @@
+{
+  "story_id": 1130,
+  "kind": "anecdote",
+  "book": {
+    "title": "Mindset: The New Psychology of Success",
+    "author": "Carol S. Dweck",
+    "year": "2006 (updated edition 2016)"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text quotes an interview in which Dweck asked world-class athletes how they feel facing a tough opponent, with neat 'fixed' and 'growth' answers. That interview cannot be traced to the book and is left out. The book opens with its own well-known scene of loving difficulty: as a young researcher, Dweck gave children a series of increasingly hard puzzles to see how they coped with failure, and some children welcomed the hard ones. One ten-year-old boy pulled up his chair, rubbed his hands together and said 'I love a challenge!'; another said 'You know, I was hoping this would be informative!' Dweck writes that she had expected to study coping and instead found children who did not see failure as failure at all. Exact puzzle details and sample sizes are omitted.",
+  "facts": [
+    "Early in her career, Dweck gave children a series of puzzles that became harder and harder, to observe how they dealt with difficulty and failure.",
+    "She expected to see who coped with failure and who didn't.",
+    "Instead, some children seemed to welcome the hard puzzles. One ten-year-old boy pulled up his chair, rubbed his hands together, smacked his lips and cried out: 'I love a challenge!'",
+    "Another child, sweating over the puzzles, looked up and said: 'You know, I was hoping this would be informative!'",
+    "Dweck writes that these children didn't think they were failing. They thought they were learning.",
+    "She describes wondering what was wrong with them, and then realizing she needed to learn from them. This set the direction of her research on fixed and growth mindsets.",
+    "In a fixed mindset, a hard problem threatens your sense of being smart. In a growth mindset, it is a chance to get better."
+  ],
+  "tension": "A researcher set out to watch children struggle with failure, and some of them refused to treat it as failure at all.",
+  "opening_idea": "A ten-year-old facing a puzzle he cannot solve rubs his hands together and shouts that he loves a challenge. The researcher watching him is the one who is confused.",
+  "lessons": [
+    {
+      "idea": "The same hard problem can feel like a threat or a chance, depending on what you think it says about you.",
+      "anchor": "Identical puzzles; some children shrank, some leaned in"
+    },
+    {
+      "idea": "If you think you're learning, difficulty stops counting as failure.",
+      "anchor": "'I was hoping this would be informative!'"
+    },
+    {
+      "idea": "Being willing to learn from surprising people can change your whole direction.",
+      "anchor": "Dweck set out to study coping and ended up learning from the children"
+    }
+  ],
+  "reflect": [
+    "Recall the last task that got harder than expected. What did the difficulty seem to say about you?",
+    "Where do you avoid hard problems because you'd rather keep looking capable?"
+  ],
+  "reflect_final": "What would change if you treated your next hard problem as information rather than a verdict?",
+  "use_cases": [
+    {
+      "situation": "A team project hits an unexpectedly hard technical problem and morale drops.",
+      "move": "Ask the team what this problem is teaching you, and name one thing you now know that you didn't last week.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child comes home upset after failing a hard test.",
+      "move": "Ask what the test showed them they don't yet know, and treat that as the useful part.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel dread before a difficult conversation or task.",
+      "move": "Name what you could learn from it, and decide in advance what 'informative' would look like even if it goes badly.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Hard problems feel different once you stop asking what they say about you.",
+  "conversation_variants": {
+    "punchline_idea": "Some kids facing impossible puzzles thought they were learning, not failing.",
+    "thirty_sec_idea": "Dweck's puzzle study and the two children's reactions.",
+    "question_idea": "What hard thing recently turned out to be informative?",
+    "key_contrast_idea": "Threat versus information"
+  }
+}

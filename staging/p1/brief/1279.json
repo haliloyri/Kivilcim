@@ -1,0 +1,59 @@
+{
+  "story_id": 1279,
+  "kind": "concept",
+  "book": {
+    "title": "Dare to Lead",
+    "author": "Brené Brown",
+    "year": "2018"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference text's central scene (a CEO complaining that his team won't tell him the truth, Brown's question, and the reply 'a leader can't look weak') could not be attributed to the book and is omitted; the brief is therefore a concept brief. Supported by the book: its contrast between 'armored leadership' and 'daring leadership', Brown's claim that the greatest barrier to courage is armor rather than fear, vulnerability defined as uncertainty, risk and emotional exposure, and research with senior leaders (the book cites interviews with about 150 global C-level leaders; 'thousands of interviews with leaders' in the reference is not used). The Turkish title 'Karanlığın Ötesi' in the input does not appear to match this book; treat title as uncertain. Specific armor types named in the reference ('always look strong', 'never doubt') are not the book's wording; only perfectionism is kept as a book example.",
+  "facts": [
+    "Brown's research for the book asked senior leaders about what courageous leadership requires; she reports interviews with around 150 global C-level leaders among her data.",
+    "She defines vulnerability as the emotion we experience during times of uncertainty, risk and emotional exposure, and argues there is no courage without vulnerability.",
+    "She argues the biggest barrier to courage is not fear itself but the armor people put on to protect themselves when they feel vulnerable.",
+    "The book contrasts 'armored leadership' with 'daring leadership'; perfectionism is one of the forms of armor she describes.",
+    "Her point is that armor protects the leader but also blocks the trust, honest feedback and connection that teams need."
+  ],
+  "tension": "The self-protection that makes a leader feel safe is the same thing that makes others feel unsafe to be honest with them.",
+  "opening_idea": "Start with Brown's claim that the greatest barrier to courage isn't fear but armor, and ask what 'armor' looks like in an ordinary office.",
+  "lessons": [
+    {
+      "idea": "Courage and vulnerability are not opposites; you cannot act bravely without accepting uncertainty and exposure.",
+      "anchor": "Brown's definition of vulnerability as uncertainty, risk and emotional exposure."
+    },
+    {
+      "idea": "Self-protection has a cost: the same armor that shields you also keeps honesty and connection out.",
+      "anchor": "The book's contrast between armored and daring leadership, with perfectionism as an example of armor."
+    }
+  ],
+  "reflect": [
+    "When you feel exposed at work or at home, what do you usually do to protect yourself?",
+    "Can you remember someone whose honesty about not knowing something made you trust them more?"
+  ],
+  "reflect_final": "In your next conversation where you're unsure of the answer, try saying 'I don't know yet' out loud, and notice how the other person responds.",
+  "use_cases": [
+    {
+      "situation": "You lead a meeting and someone asks a question you can't answer.",
+      "move": "Say 'I don't know yet, let me find out,' instead of improvising a confident-sounding answer.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A team member keeps giving you only good news.",
+      "move": "Brown describes armor as protection that also shuts out honesty; start by naming one of your own recent mistakes, then ask what's not going well on their side.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child is afraid to show you a bad grade.",
+      "move": "Share a time you made a mistake and how you handled it before asking about the grade.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Armor keeps you from getting hurt, but it also keeps the truth from reaching you.",
+  "conversation_variants": {
+    "punchline_idea": "Brené Brown says the greatest barrier to courage isn't fear; it's the armor we put on to avoid feeling it.",
+    "thirty_sec_idea": "After interviewing senior leaders, Brown concluded that courage requires vulnerability, and that the armor leaders wear, such as perfectionism, blocks the trust their teams need.",
+    "question_idea": "What's your go-to 'armor' when you feel exposed?",
+    "key_contrast_idea": "Looking invulnerable versus being trustworthy."
+  }
+}

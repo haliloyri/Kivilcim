@@ -1,0 +1,72 @@
+{
+  "story_id": 1116,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "year": "2020"
+  },
+  "confidence": "high",
+  "confidence_note": "The Gates, Lakeside and Kent Evans story opens the book's 'Luck & Risk' chapter and is well documented. Housel gives rough odds for both Gates's access to a computer and Evans's accident, framing each as a 'one in a million' event. Those numerical estimates are left out here so no precise figure is misstated. Lakeside's computer is described only generally as a terminal linked to a time-sharing computer, with no cost or funding details.",
+  "facts": [
+    "In 1968 Bill Gates was a student at Lakeside School in Seattle.",
+    "Lakeside was one of very few high schools in the world with access to a computer, which was extraordinarily rare for teenagers at the time.",
+    "Gates and friends from the school, including Paul Allen, spent enormous time on the machine. That access was decisive for what became Microsoft.",
+    "Speaking to Lakeside's graduating class in 2005, Gates said that if there had been no Lakeside, there would have been no Microsoft.",
+    "Housel stresses that Gates had exceptional talent and drive, and that those qualities met an exceedingly rare opportunity.",
+    "Kent Evans was Gates's close friend at Lakeside and his early computing partner, described as just as smart and driven. Gates believed they would have kept working together.",
+    "Evans died in a mountaineering accident before graduating from high school.",
+    "Housel presents Gates's story as luck and Evans's as its flip side: risk. Both are forces outside individual effort that can be just as powerful as effort.",
+    "His conclusion is that success is not as good as it seems and failure is not as bad as it seems. We should be careful whom we praise and admire, and careful whom we look down on. It is wiser to learn from broad patterns than from individual extreme cases."
+  ],
+  "tension": "Two boys at the same rare school had the same brilliance and the same passion. One became one of the richest people in history. The other died on a mountain before he could graduate. If talent and effort were equal, what made the difference?",
+  "opening_idea": "Open in 1968: a teenager sits at one of the only school computers in the world. He has no idea how unlikely his seat is.",
+  "lessons": [
+    {
+      "idea": "Luck and risk are the same force working in opposite directions. Both are outcomes shaped by things beyond individual effort.",
+      "anchor": "Gates's rare access to a computer, set against Evans's fatal accident"
+    },
+    {
+      "idea": "Extreme success usually needs talent and very unlikely circumstances together. Neither alone is enough.",
+      "anchor": "Gates himself saying 'no Lakeside, no Microsoft'"
+    },
+    {
+      "idea": "Be careful whom you praise and admire, and careful whom you look down on. Outcomes do not map neatly onto decisions.",
+      "anchor": "Evans was as capable as Gates, yet his name is almost unknown"
+    },
+    {
+      "idea": "Learn from broad patterns rather than one-off extreme cases, because the most extreme stories are the ones most shaped by luck.",
+      "anchor": "Housel's warning against copying the playbooks of outliers"
+    }
+  ],
+  "reflect": [
+    "Which of your advantages did you not choose, such as your school, your timing, or the people around you?",
+    "Whose failure have you judged harshly without knowing what risks they faced?",
+    "Which famous success story are you trying to copy that might be mostly luck?"
+  ],
+  "reflect_final": "Think of your biggest achievement. How much of it came from skill, and how much from timing and circumstances you never chose?",
+  "use_cases": [
+    {
+      "situation": "In a meeting, the team credits a quarter's win entirely to one strategy or person.",
+      "move": "Ask: 'What conditions outside our control helped here, and would this still work without them?' Separate what is repeatable from what was lucky.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague's project failed and people are quick to call it bad judgment.",
+      "move": "In a one-on-one, ask them to walk you through the decisions they made with the information they had, before drawing any conclusion about their ability.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel tempted to copy a famous entrepreneur's or investor's exact path.",
+      "move": "Write down which parts of their story depended on rare timing or access. Base your plan only on the broad habits many successful people share.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Luck and risk are twins. Neither shows up on the scoreboard, but both decide the score.",
+  "conversation_variants": {
+    "punchline_idea": "Gates's best friend was just as brilliant. The difference was a mountain, not a mindset.",
+    "thirty_sec_idea": "Gates had a school computer in 1968, and even he says Microsoft wouldn't exist without it. His equally talented partner died young in a climbing accident, so success is talent multiplied by luck, and failure is sometimes just risk.",
+    "question_idea": "If your most capable friend had had your exact luck, where would they be now?",
+    "key_contrast_idea": "Same school, same talent, same drive: one became a billionaire and the other is barely remembered."
+  }
+}

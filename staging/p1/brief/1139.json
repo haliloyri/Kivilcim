@@ -1,0 +1,66 @@
+{
+  "story_id": 1139,
+  "kind": "concept",
+  "book": {
+    "title": "The Speed of Trust",
+    "author": "Stephen M. R. Covey",
+    "year": "2006"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Four Cores of Credibility (integrity, intent, capabilities, results) are central to the book, as is the split into character (integrity, intent) and competence (capabilities, results). Covey illustrates the cores with a tree (integrity as roots, intent as trunk, capabilities as branches, results as fruit) and with the way lawyers in court try to discredit an expert witness by attacking one of these four areas. The expert-witness framing is recalled with reasonable but not complete certainty. The reference TR text's claim that the cores are 'multiplicative' is a reasonable paraphrase of the book's argument that one missing core undermines credibility, but no formula from the book is quoted.",
+  "facts": [
+    "Covey breaks credibility into four cores: integrity, intent, capabilities and results.",
+    "Integrity and intent are about character; capabilities and results are about competence. Both character and competence are needed for trust.",
+    "Integrity means congruence between what you say and what you do, and being honest.",
+    "Intent concerns your motives and agenda: whether others believe you genuinely care about their interests.",
+    "Capabilities are the talents, skills and knowledge that make you able to do the job.",
+    "Results are your track record: getting the right things done, and doing what you said you'd do.",
+    "Covey uses a tree as a metaphor: integrity is the roots, intent is the trunk, capabilities are the branches and results are the fruit.",
+    "He compares the four cores to how an attorney tries to discredit an expert witness in court, by questioning their honesty, their motives, their qualifications or their track record."
+  ],
+  "tension": "People can be honest, well-meaning and talented, and still not be trusted. Why?",
+  "opening_idea": "In a courtroom, a lawyer who wants to destroy an expert witness has only four places to attack.",
+  "lessons": [
+    {
+      "idea": "Trust needs both character and competence.",
+      "anchor": "Integrity and intent versus capabilities and results"
+    },
+    {
+      "idea": "Breaking 'I don't trust them' into four cores makes the problem fixable.",
+      "anchor": "The expert witness can be attacked in only four ways"
+    },
+    {
+      "idea": "Results are the fruit: without delivery, the other cores go unseen.",
+      "anchor": "The tree metaphor"
+    }
+  ],
+  "reflect": [
+    "Think of someone you don't fully trust. Which of the four cores is missing?",
+    "Which core would a skeptical colleague attack first if they questioned you?"
+  ],
+  "reflect_final": "Of integrity, intent, capabilities and results, which one is your weakest right now?",
+  "use_cases": [
+    {
+      "situation": "You're deciding whether to give a colleague a high-stakes task.",
+      "move": "Check the four cores separately rather than going on a general feeling.",
+      "context": "self"
+    },
+    {
+      "situation": "A report asks why they weren't given a key project.",
+      "move": "Name the specific core that was the concern, such as experience rather than honesty, and agree how to build it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Two teams keep blaming each other and trust is low.",
+      "move": "Ask each team which of the four cores worries them about the other, then address that core explicitly.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Trust stands on four legs; kick out one and it falls.",
+  "conversation_variants": {
+    "punchline_idea": "Being honest and talented isn't enough if people doubt your motives or your delivery.",
+    "thirty_sec_idea": "The four cores, character vs competence, and the expert-witness test.",
+    "question_idea": "Which of the four cores would people question about you?",
+    "key_contrast_idea": "Character and competence"
+  }
+}

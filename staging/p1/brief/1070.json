@@ -1,0 +1,64 @@
+{
+  "story_id": 1070,
+  "kind": "anecdote",
+  "book": {
+    "title": "Deep Work (Derin Çalışma)",
+    "author": "Cal Newport",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core anecdote is well established as the opening of Deep Work: Carl Jung built a stone retreat called the Tower near the village of Bollingen on the shore of Lake Zurich, and Newport presents it as a deliberate space for deep work. Two details in the reference TR text are uncertain. The quote attributed to Jung reads as a paraphrase or invention, so it is omitted. The claim that Jung stayed 'weeks' at a time is unverified, so it is left out. The 1922 start date and the Tower's primitive conditions (no electricity or phone) are commonly reported but are not treated here as confirmed book details. The brief also corrects one framing: Newport stresses that Jung did not abandon his busy Zurich life. He alternated between it and the Tower.",
+  "facts": [
+    "Carl Jung built a stone house he called the Tower on the shore of Lake Zurich, near the Swiss village of Bollingen.",
+    "Newport places the Tower in the period after Jung's break with Freud, when Jung was trying to develop his own ideas, which later became analytical psychology.",
+    "Jung used the Tower as a deliberate retreat for focused writing and thinking. He kept it private and largely free of visitors and distractions.",
+    "Jung did not become a hermit. He kept a demanding clinical practice and a public life in Zurich and went to Bollingen regularly to do his deepest intellectual work.",
+    "Newport uses Jung as the first example of a pattern he sees in influential thinkers: they deliberately build conditions for undistracted, cognitively demanding work.",
+    "Newport argues that in knowledge work, visible busyness often serves as a proxy for productivity, even though the most valuable output comes from deep, uninterrupted concentration."
+  ],
+  "tension": "Jung was one of the busiest, most in-demand minds of his era. Yet he kept walking away from all that demand to sit alone in a stone house, and that is where his most important work took shape.",
+  "opening_idea": "Open with the contrast: a famous psychologist with packed days in Zurich keeps disappearing to a stone tower he built on a lakeshore.",
+  "lessons": [
+    {
+      "idea": "Deep work rarely happens by accident. It needs a deliberately protected space or ritual.",
+      "anchor": "Jung built a physical place whose only purpose was focused thinking."
+    },
+    {
+      "idea": "Being busy and being productive are different things. Constant availability pushes out valuable work.",
+      "anchor": "Newport's point that busyness is a poor proxy for productivity."
+    },
+    {
+      "idea": "Depth does not require quitting ordinary life. It requires alternating between the two on purpose.",
+      "anchor": "Jung kept his Zurich practice and still retreated to Bollingen regularly."
+    }
+  ],
+  "reflect": [
+    "When did you last spend several unbroken hours on one hard problem?",
+    "Which of your daily activities feel productive but mostly keep you reachable?"
+  ],
+  "reflect_final": "If you set up your own version of Jung's Tower, even a small one, where and when would it be, and what would you finally think through there?",
+  "use_cases": [
+    {
+      "situation": "Your calendar is fragmented by meetings and you can't finish a strategic piece of work.",
+      "move": "Propose a recurring meeting-free block for the team, e.g. 'Can we keep Tuesday mornings free of meetings and chat so we each get three hours of deep work?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your manager expects instant replies, but your main project needs concentration.",
+      "move": "Say it directly: 'I'd like to go offline from 9 to 12 on project days and batch my replies after that. Would that work for you?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You want to think about a big personal decision or creative project but never find the time.",
+      "move": "Book a half-day 'tower session' in your calendar at a specific place, such as a library or a room with your phone left elsewhere, and write down the one question you will work on.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Great minds don't find focus. They build a place for it.",
+  "conversation_variants": {
+    "punchline_idea": "Jung's most original ideas came from a stone tower with no one around, not from his crowded office.",
+    "thirty_sec_idea": "Summarize Jung's pattern of a busy Zurich life plus regular retreats to his Bollingen tower, then Newport's conclusion that depth has to be engineered.",
+    "question_idea": "Ask the listener what their 'tower' would be, the place or time when nobody could reach them.",
+    "key_contrast_idea": "Contrast reachable-all-day busyness with Jung's alternating rhythm of engagement and deliberate withdrawal."
+  }
+}

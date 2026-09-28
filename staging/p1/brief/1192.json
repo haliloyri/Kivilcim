@@ -1,0 +1,64 @@
+{
+  "story_id": 1192,
+  "kind": "anecdote",
+  "book": {
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "year": "2016"
+  },
+  "confidence": "high",
+  "confidence_note": "The chapter 'Always Stay a Student' in Ego Is the Enemy is built around the mixed martial arts fighter and trainer Frank Shamrock and his system of 'plus, minus, equal': to become great, each fighter needs someone better to learn from (plus), someone less skilled to teach (minus), and someone of equal skill to challenge them (equal). The reference TR text's claims about Angela Merkel's notebook and Warren Buffett spending 80 percent of his time reading are not from this chapter and are left out.",
+  "facts": [
+    "Holiday describes Frank Shamrock, a champion in mixed martial arts and a respected trainer.",
+    "Shamrock developed a system he called 'plus, minus, and equal'.",
+    "Each fighter needs someone better than them to learn from (the plus), someone less skilled whom they can teach (the minus), and someone of roughly equal ability to test themselves against (the equal).",
+    "The plus keeps you humble and shows you what you don't know. Teaching the minus forces you to understand your craft well enough to explain it. The equal pushes you through real competition.",
+    "Holiday argues that ego resists being a student, because it wants to feel it already knows. The student mindset is the antidote.",
+    "His message: however accomplished you become, always stay a student."
+  ],
+  "tension": "The more you know, the more tempting it is to stop learning.",
+  "opening_idea": "A champion fighter says every fighter needs three people in their life: one better, one worse, one equal.",
+  "lessons": [
+    {
+      "idea": "Learn from someone better to stay humble.",
+      "anchor": "The plus"
+    },
+    {
+      "idea": "Teaching deepens mastery.",
+      "anchor": "The minus"
+    },
+    {
+      "idea": "Peers keep you honest.",
+      "anchor": "The equal"
+    }
+  ],
+  "reflect": [
+    "Who is your plus, minus and equal right now?",
+    "Where have you stopped being a student?"
+  ],
+  "reflect_final": "Which of the three is missing in your life, and how could you find them?",
+  "use_cases": [
+    {
+      "situation": "You're the most experienced person on your team.",
+      "move": "Find an outside mentor who is clearly better than you in your field.",
+      "context": "self"
+    },
+    {
+      "situation": "A strong performer on your team has plateaued.",
+      "move": "Pair them with a junior to teach and a peer to challenge them.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your team only learns from its own experience.",
+      "move": "Invite someone from a stronger team to review your work.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "However good you get, keep someone ahead of you, beside you and behind you.",
+  "conversation_variants": {
+    "punchline_idea": "Every fighter needs someone better, someone worse and someone equal.",
+    "thirty_sec_idea": "Frank Shamrock's plus/minus/equal and the student mindset.",
+    "question_idea": "Who is your plus, minus and equal?",
+    "key_contrast_idea": "Expert versus student"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "story_id": 1289,
+  "kind": "anecdote",
+  "book": {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The race is the San Diego One Day, a 24-hour event where Goggins tried to cover 100 miles to qualify for Badwater with little running preparation; the physical breakdown (injured legs and feet, kidney trouble, blood in his urine) is described in the book. The reference TR text's line 'if I were really finished I'd be dying now' could not be matched to the book and is excluded. The 40% rule is Goggins' own rule of thumb, not a measured physiological fact; it should be presented as his interpretation. Exact finishing time, the mile at which he nearly quit, and the dollar amount of the charity fundraising are omitted because I am not certain of them. The reference's claim that the rule applies equally to intellectual and emotional domains is a broad extension and kept only as his general message.",
+  "facts": [
+    "Goggins entered a 24-hour race in San Diego, aiming to run 100 miles to qualify for the Badwater ultramarathon and raise money for the families of fallen special-operations soldiers.",
+    "He had done little real running preparation; he had been focused on lifting weights rather than distance.",
+    "As the hours went on his body broke down: badly hurting legs and feet, and kidney trouble that left blood in his urine.",
+    "His mind kept producing convincing reasons to stop, and at points he was barely moving.",
+    "He kept going and reached 100 miles within the 24 hours, then was in poor physical shape for a while afterwards.",
+    "From experiences like this he draws the '40% rule': when your mind says you are done, you have, in his estimate, used only about 40 percent of what you have.",
+    "He presents the rule as a way to question the first 'I can't', not as permission to ignore real medical danger."
+  ],
+  "tension": "His body was sending genuine alarm signals, including blood in his urine, and yet he argues that the mind's 'stop' comes long before the true limit.",
+  "opening_idea": "Start with a man who has barely trained for distance lining up to run 100 miles in a single day, for a charity, to qualify for one of the world's hardest races.",
+  "lessons": [
+    {
+      "idea": "The first 'I'm done' is often a protective estimate, not a measured limit.",
+      "anchor": "The 40% rule drawn from pushing through the breakdown in San Diego."
+    },
+    {
+      "idea": "A clear reason to continue changes what you can tolerate.",
+      "anchor": "He was running to qualify for Badwater and raise money for fallen special-operations soldiers' families."
+    },
+    {
+      "idea": "Pushing past limits has costs; preparation matters, and ignoring it is expensive.",
+      "anchor": "Almost no running preparation, followed by kidney trouble and a long recovery."
+    }
+  ],
+  "reflect": [
+    "When did you last stop at the first 'I can't', and later suspect you had more left?",
+    "Where is the line in your life between a mental 'stop' worth questioning and a real warning worth obeying?"
+  ],
+  "reflect_final": "The next time a task makes you think 'I'm done', ask whether that's your limit or your mind's first warning, go one small step further if it's safe, and notice what happens.",
+  "use_cases": [
+    {
+      "situation": "Late in a long work session, you feel you can't write another line.",
+      "move": "Recall Goggins' point that the first 'done' signal is only about 40 percent in; commit to one more concrete step (one paragraph, one test) and then decide.",
+      "context": "self"
+    },
+    {
+      "situation": "A team wants to drop a hard goal halfway through.",
+      "move": "Ask the group to separate real blockers from 'this feels too hard' reasons, and list them in two columns before deciding.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend training for their first long race asks how to handle the tough stretch.",
+      "move": "Tell them about Goggins' underprepared 100 miles, both the 40% idea and the kidney damage, and suggest planning in advance which signals mean 'push' and which mean 'stop'.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Goggins' 40% rule came from a 100-mile run with almost no training: the mind's first 'stop' arrives early, but the kidney damage is the reminder that it is not always wrong.",
+  "conversation_variants": {
+    "punchline_idea": "David Goggins ran 100 miles in a day after training mainly by lifting weights.",
+    "thirty_sec_idea": "Needing to qualify for Badwater and raise money for fallen soldiers' families, Goggins took on a 24-hour race with little running preparation; his body broke down, yet he reached 100 miles, and he built his '40% rule' from it: your mind quits long before your body.",
+    "question_idea": "What's the hardest thing you finished after you were sure you couldn't?",
+    "key_contrast_idea": "Treating 'I can't go on' as a fact, versus treating it as your mind's early estimate."
+  }
+}

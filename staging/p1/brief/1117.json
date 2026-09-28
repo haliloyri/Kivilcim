@@ -1,0 +1,70 @@
+{
+  "story_id": 1117,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "year": "2020"
+  },
+  "confidence": "high",
+  "confidence_note": "The core story is well known from the chapter 'Never Enough': Gupta's rise to lead McKinsey, his seat on Goldman Sachs's board, a reported fortune of about $100 million, his tip to Raj Rajaratnam about Buffett's Goldman investment in 2008, his insider-trading conviction and prison sentence, and Housel's list of things never worth risking. The claim that Gupta wanted to join billionaire circles is Housel's interpretation, drawn from reporting. The exact timing of the tip (the book cites a few seconds after the board call) is left out to avoid false precision. The term 'dissatisfaction trap' in the TR reference is not Housel's wording and should not be attributed to him. The book's phrasing is about goalposts that keep moving and about social comparison.",
+  "facts": [
+    "Rajat Gupta was born in Kolkata and orphaned as a teenager. He rose to become head (managing director) of McKinsey, one of the world's most prestigious consulting firms.",
+    "He later sat on the boards of major companies, including Goldman Sachs, and was reportedly worth around $100 million by 2008.",
+    "During the 2008 financial crisis, Goldman's board learned that Warren Buffett would invest $5 billion in the bank. Shortly after the board call, Gupta phoned hedge fund manager Raj Rajaratnam, whose firm traded on the information.",
+    "Gupta was convicted of insider trading and sentenced to prison. Housel suggests Gupta wanted to be a billionaire, not merely very rich.",
+    "Housel frames this as a man who already had everything risking it all for more he did not need. He argues that social comparison sets a ceiling so high that almost no one ever reaches it.",
+    "Housel lists things never worth risking for more money: reputation, freedom and independence, family and friends, being loved by those you want to love you, and happiness.",
+    "The chapter also recalls Kurt Vonnegut and Joseph Heller at a billionaire's party. Heller says he has something the host can never have: enough."
+  ],
+  "tension": "A man with more money than he could ever spend risked his freedom and reputation for a gain he did not need. Why would anyone do that?",
+  "opening_idea": "Open with the contrast. Gupta was an orphan who reached the top of McKinsey and held a fortune of about $100 million, then threw it all away with a single phone call.",
+  "lessons": [
+    {
+      "idea": "The hardest financial skill is making the goalpost stop moving.",
+      "anchor": "Gupta's $100 million stopped feeling like success once he compared himself to billionaires."
+    },
+    {
+      "idea": "Social comparison has no ceiling, so it is a game you cannot win.",
+      "anchor": "Housel's point that there is always someone richer, so 'more' never arrives."
+    },
+    {
+      "idea": "Some things are never worth risking for money you don't need.",
+      "anchor": "Housel's list: reputation, freedom, family, love, happiness. Gupta lost several of them at once."
+    },
+    {
+      "idea": "'Enough' is not too little. It means recognizing when an appetite for more will lead to regret.",
+      "anchor": "Heller's line at the billionaire's party: 'I've got something he can never have: enough.'"
+    }
+  ],
+  "reflect": [
+    "Who is the reference point you quietly measure your income or success against?",
+    "Has something you once longed for started to feel ordinary once you had it?",
+    "Which of Housel's 'never worth risking' items are you currently trading away, even a little, for more?"
+  ],
+  "reflect_final": "What would 'enough' concretely look like in your life, and which risks are you willing to rule out today to protect it?",
+  "use_cases": [
+    {
+      "situation": "Your team debates an aggressive plan with big upside but a small chance of reputational damage.",
+      "move": "Ask the room: 'If the downside hits, do we lose something we can't rebuild, like trust or reputation? If yes, what upside justifies it?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "You feel restless after seeing a friend's promotion, house or vacation.",
+      "move": "Write down three things you already have that you would not trade for their gain. Then name the goalpost you just moved.",
+      "context": "self"
+    },
+    {
+      "situation": "Your family is considering a bigger house or more debt to keep up with peers.",
+      "move": "Suggest agreeing together on a number or lifestyle that counts as 'enough' before looking at options, and decide that anything beyond it must not cost sleep or time together.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Enough is knowing when to stop, because the goalpost will never stop on its own.",
+  "conversation_variants": {
+    "punchline_idea": "Gupta had $100 million and lost his freedom chasing the next zero.",
+    "thirty_sec_idea": "Tell the arc from orphan to McKinsey chief to $100 million to insider-trading prison, then give Housel's explanation: comparing yourself to billionaires makes a fortune feel small.",
+    "question_idea": "Ask the listener at what point they would say 'I have enough', and whether that point has already moved.",
+    "key_contrast_idea": "Contrast Heller, a novelist content at a billionaire's party, with Gupta, a multimillionaire who felt poor among billionaires."
+  }
+}

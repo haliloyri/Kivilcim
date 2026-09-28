@@ -1,0 +1,64 @@
+{
+  "story_id": 1158,
+  "kind": "concept",
+  "book": {
+    "title": "Crucial Conversations",
+    "author": "Kerry Patterson, Joseph Grenny, Ron McMillan and Al Switzler",
+    "year": "2002"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text says the book opens with a plane crash in which a co-pilot saw the danger but stayed silent. That opening cannot be confirmed in Crucial Conversations; well-known cockpit-silence cases are discussed elsewhere (for example in Malcolm Gladwell's Outliers), so the crash is left out. The book's own core is well established: a crucial conversation is one where stakes are high, opinions vary and emotions run strong; under pressure people tend to fall into silence or violence; and they often believe they face a 'Fool's Choice' between being honest and being kind. The book was written by four co-authors, not Patterson alone.",
+  "facts": [
+    "Crucial Conversations was written by Kerry Patterson, Joseph Grenny, Ron McMillan and Al Switzler.",
+    "The authors define a crucial conversation as a discussion between two or more people where the stakes are high, opinions vary and emotions run strong.",
+    "They argue that when these conversations matter most, people tend to handle them worst.",
+    "Under pressure, people typically move to silence (withholding, avoiding, masking) or violence (controlling, labeling, attacking).",
+    "Many people believe they must make a 'Fool's Choice': either tell the truth and hurt the relationship, or keep the peace and stay quiet.",
+    "The authors argue skilled people reject that choice and find a way to be both honest and respectful."
+  ],
+  "tension": "The conversations with the most at stake are the ones we are most likely to avoid or wreck.",
+  "opening_idea": "Think of the sentence you didn't say in a meeting, and what it cost later.",
+  "lessons": [
+    {
+      "idea": "High stakes, differing opinions and strong emotions make a conversation crucial.",
+      "anchor": "The book's definition"
+    },
+    {
+      "idea": "Silence and violence both fail.",
+      "anchor": "The two reactions under pressure"
+    },
+    {
+      "idea": "You don't have to choose between honesty and kindness.",
+      "anchor": "The Fool's Choice"
+    }
+  ],
+  "reflect": [
+    "Which conversation are you avoiding right now?",
+    "Under pressure, do you tend toward silence or violence?"
+  ],
+  "reflect_final": "What would you say if you didn't believe you had to choose between honest and kind?",
+  "use_cases": [
+    {
+      "situation": "You see a serious risk in a plan your boss is excited about.",
+      "move": "Raise it as a shared goal: 'I want this to succeed, and I see one risk we should check.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend's behavior keeps hurting you and you've said nothing.",
+      "move": "Tell them honestly and respectfully instead of drifting away.",
+      "context": "social"
+    },
+    {
+      "situation": "You notice you go quiet when you disagree.",
+      "move": "Before your next hard conversation, write the one sentence you must say.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Honest and kind is not a choice; it's a skill.",
+  "conversation_variants": {
+    "punchline_idea": "The conversations that matter most are the ones we handle worst.",
+    "thirty_sec_idea": "Definition, silence vs violence, Fool's Choice.",
+    "question_idea": "What's the conversation you've been postponing?",
+    "key_contrast_idea": "Silence, violence, dialogue"
+  }
+}

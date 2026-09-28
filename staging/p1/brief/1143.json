@@ -1,0 +1,65 @@
+{
+  "story_id": 1143,
+  "kind": "anecdote",
+  "book": {
+    "title": "Make Your Bed",
+    "author": "William H. McRaven",
+    "year": "2017"
+  },
+  "confidence": "high",
+  "confidence_note": "The book grew out of Admiral McRaven's commencement speech at the University of Texas at Austin in May 2014, and 'Start your day with a task completed' (making your bed) is its first chapter. The core lines are well documented: in SEAL training, instructors inspected the trainees' beds each morning; if you make your bed every morning you will have accomplished the first task of the day, which encourages you to do another task and another; and if you have a miserable day, you will come home to a bed that is made, which gives you encouragement that tomorrow will be better. The reference TR text's note that the audience laughed is not confirmed and is left out. Audience size is kept vague.",
+  "facts": [
+    "In May 2014, Admiral William H. McRaven, a former Navy SEAL and commander, gave the commencement address at the University of Texas at Austin. The speech was widely shared and later became the book Make Your Bed (2017).",
+    "His first piece of advice: if you want to change the world, start off by making your bed.",
+    "In SEAL basic training, instructors inspected the trainees' barracks every morning, and the bed had to be made perfectly: corners square, covers pulled tight, pillow centered, extra blanket folded at the foot of the rack.",
+    "McRaven admits the task seemed simple, even ridiculous, for men training to be warriors.",
+    "His explanation: making your bed accomplishes the first task of the day, gives a small sense of pride, and encourages you to do another task, and another.",
+    "And if you have a miserable day, you come home to a bed that is made, which you made, and it gives you encouragement that tomorrow will be better.",
+    "He summarizes: if you can't do the little things right, you will never do the big things right."
+  ],
+  "tension": "Why would a man who commanded elite special forces tell graduates that changing the world starts with bedsheets?",
+  "opening_idea": "An admiral with a career of dangerous missions stands before graduates and gives them his first piece of advice: make your bed.",
+  "lessons": [
+    {
+      "idea": "A small completed task starts a chain of momentum.",
+      "anchor": "The first task of the day encouraging another and another"
+    },
+    {
+      "idea": "Small disciplines prepare you for big ones.",
+      "anchor": "'If you can't do the little things right, you will never do the big things right'"
+    },
+    {
+      "idea": "A small act of order can be comfort on a bad day.",
+      "anchor": "Coming home to a bed you made"
+    }
+  ],
+  "reflect": [
+    "What is the first thing you complete each morning, if anything?",
+    "Which little thing do you skip because it seems too small to matter?"
+  ],
+  "reflect_final": "What small task could you finish first tomorrow to start the day with a win?",
+  "use_cases": [
+    {
+      "situation": "Your teenager says daily chores are pointless.",
+      "move": "Tell the McRaven story and agree on one small morning task done properly every day for a month.",
+      "context": "family"
+    },
+    {
+      "situation": "Your team feels overwhelmed at the start of a big project.",
+      "move": "Start each day with one small task everyone can finish before noon.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You wake up already behind and scrolling.",
+      "move": "Make your bed or finish one tiny task before touching your phone.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Finish one small thing first; let the day build on it.",
+  "conversation_variants": {
+    "punchline_idea": "An admiral's first advice for changing the world was to make your bed.",
+    "thirty_sec_idea": "The 2014 speech, SEAL bed inspections, the first-task logic and the bad-day comfort.",
+    "question_idea": "What's the first small thing you finish every morning?",
+    "key_contrast_idea": "Small task, big day"
+  }
+}

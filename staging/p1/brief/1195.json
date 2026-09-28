@@ -1,0 +1,64 @@
+{
+  "story_id": 1195,
+  "kind": "concept",
+  "book": {
+    "title": "Why We Sleep",
+    "author": "Matthew Walker",
+    "year": "2017"
+  },
+  "confidence": "high",
+  "confidence_note": "Walker describes the discovery, led by Maiken Nedergaard and colleagues at the University of Rochester, of the glymphatic system, a waste-clearance system in the brain that becomes much more active during sleep; in their 2013 mouse study, the space between brain cells expanded during sleep, allowing cerebrospinal fluid to flush out metabolic waste, including beta-amyloid, a protein associated with Alzheimer's disease. Walker also discusses how deep non-REM sleep and amyloid are linked in a two-way relationship. The reference TR text says glial cells 'shrink the brain'; more precisely, glial cells shrink, widening the spaces between cells. Exact percentages are omitted. Walker's broader claims about sleep and Alzheimer's risk are presented as associations and ongoing research.",
+  "facts": [
+    "Walker describes research led by neuroscientist Maiken Nedergaard at the University of Rochester, published in 2013.",
+    "They found that the brain has a waste-clearance system, called the glymphatic system, that uses cerebrospinal fluid to wash away metabolic waste.",
+    "In mice, this system was far more active during sleep. Glial cells shrank during sleep, widening the space between brain cells so fluid could flow through more freely.",
+    "Among the waste products cleared is beta-amyloid, a protein that forms the sticky plaques associated with Alzheimer's disease.",
+    "Walker describes a two-way relationship: poor deep sleep is associated with more amyloid buildup, and amyloid buildup in certain brain regions can impair deep sleep.",
+    "He argues that sleep is not passive downtime but an active process of repair and maintenance for the brain."
+  ],
+  "tension": "We treat sleep as time lost. Research suggests it's when the brain does essential housekeeping it can't do awake.",
+  "opening_idea": "While you sleep, your brain is running a night shift you never see.",
+  "lessons": [
+    {
+      "idea": "Sleep is active maintenance, not idle time.",
+      "anchor": "The glymphatic system"
+    },
+    {
+      "idea": "Short sleep may let waste build up.",
+      "anchor": "Beta-amyloid clearance"
+    },
+    {
+      "idea": "Poor sleep and brain health can feed each other.",
+      "anchor": "The two-way relationship"
+    }
+  ],
+  "reflect": [
+    "How do you usually think of sleep: as time lost or as maintenance?",
+    "What steals your sleep most often?"
+  ],
+  "reflect_final": "What would you change this week if you treated sleep as your brain's cleaning shift?",
+  "use_cases": [
+    {
+      "situation": "You regularly cut sleep to finish work.",
+      "move": "Set a fixed shutdown time and protect a consistent seven to nine hours.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team celebrates late-night work sessions.",
+      "move": "Share the research and stop praising sleep sacrifice.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your teenager stays on their phone past midnight.",
+      "move": "Explain the brain's night shift and agree on a phone-free hour before bed.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Sleep isn't time off for your brain; it's when it cleans house.",
+  "conversation_variants": {
+    "punchline_idea": "During sleep, your brain flushes out waste linked to Alzheimer's.",
+    "thirty_sec_idea": "Nedergaard 2013, glymphatic system, glial cells shrink, beta-amyloid.",
+    "question_idea": "What would you change if you saw sleep as brain maintenance?",
+    "key_contrast_idea": "Downtime versus maintenance"
+  }
+}

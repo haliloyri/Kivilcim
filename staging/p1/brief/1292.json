@@ -1,0 +1,64 @@
+{
+  "story_id": 1292,
+  "kind": "anecdote",
+  "book": {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book relays this anecdote secondhand: Ray Kroc speaks to an MBA class at the University of Texas at Austin, then over drinks asks the students what business he is in, and says he is in real estate. Kiyosaki says a friend of his was present; it is not his own firsthand account, and historically the real-estate strategy is usually credited to Kroc's finance chief rather than Kroc himself. The reference TR text's framing of Kiyosaki putting the question to students at a conference, and its claim that burger profits only cover land maintenance, are not in the book and are excluded. The year of the talk is omitted because I'm not certain of it. Kiyosaki's lesson ('mind your own business') is his interpretation.",
+  "facts": [
+    "Kiyosaki tells a story he heard from a friend who was an MBA student at the University of Texas at Austin, where McDonald's founder Ray Kroc had come to speak.",
+    "After the talk, the students went for drinks with Kroc, who asked them, 'What business am I in?'",
+    "The students laughed and answered that he was in the hamburger business.",
+    "Kroc replied that he was not in the hamburger business; his business was real estate.",
+    "Kiyosaki explains that the franchise business was used to buy the best locations and street corners, and that McDonald's became one of the largest owners of real estate in the world.",
+    "He uses the story to separate your profession, what you do for a paycheck, from your business, the assets you own; his advice is to keep your job but 'mind your own business' by building an asset column."
+  ],
+  "tension": "The world's most famous hamburger company, in its founder's words as Kiyosaki retells them, was really a property company, and the obvious answer turned out to be the wrong one.",
+  "opening_idea": "Open with the students' laughter at a question with an obvious answer: Ray Kroc asking a room of MBAs what business he is in.",
+  "lessons": [
+    {
+      "idea": "What a business sells and what builds its wealth can be two different things.",
+      "anchor": "Kroc: not the hamburger business, the real estate business."
+    },
+    {
+      "idea": "Your profession is not the same as your business.",
+      "anchor": "Kiyosaki's point that a paycheck job differs from the assets you own, 'mind your own business'."
+    },
+    {
+      "idea": "The obvious answer deserves a second look.",
+      "anchor": "The MBA students all answered 'hamburgers' and were wrong."
+    }
+  ],
+  "reflect": [
+    "If someone asked 'What business are you in?', would your answer be your job title or something you own?",
+    "What product or company do you know whose real engine is something other than what it sells?"
+  ],
+  "reflect_final": "Ask Kroc's question about your own finances this week: apart from your job, what are you building that you own?",
+  "use_cases": [
+    {
+      "situation": "A strategy meeting keeps focusing on the product while margins stay thin.",
+      "move": "Ask Kroc's question to the room, 'What business are we really in?', and list what we own that grows in value no matter what we sell.",
+      "context": "meeting"
+    },
+    {
+      "situation": "At dinner with friends, someone says they want to start a café.",
+      "move": "Tell the Kroc real-estate story and ask what, besides the coffee, the café would let them own.",
+      "context": "social"
+    },
+    {
+      "situation": "You've been thinking of your career as your only financial plan.",
+      "move": "Write your profession on one line and 'my business' on another, and fill in at least one asset you own or want to start building.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "McDonald's sold hamburgers, but Kroc said he was in real estate: before judging a business, ask what it quietly owns.",
+  "conversation_variants": {
+    "punchline_idea": "Ray Kroc reportedly told MBA students that McDonald's wasn't in the hamburger business at all.",
+    "thirty_sec_idea": "Kroc asked a group of MBA students what business he was in; they laughed and said hamburgers, and he said real estate, because the franchises were a way to own prime corners; Kiyosaki uses it to argue your job is your profession, not your business.",
+    "question_idea": "Which company do you know that makes its real money from something other than what it's famous for?",
+    "key_contrast_idea": "What a business sells versus what it owns."
+  }
+}

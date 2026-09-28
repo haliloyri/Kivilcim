@@ -1,0 +1,64 @@
+{
+  "story_id": 1208,
+  "kind": "concept",
+  "book": {
+    "title": "As a Man Thinketh",
+    "author": "James Allen",
+    "year": "1903"
+  },
+  "confidence": "high",
+  "confidence_note": "The public-domain essay contains the line 'Circumstance does not make the man; it reveals him to himself.' Allen argues that a person's circumstances are bound up with their inner state of thought, and that men are anxious to improve their circumstances but unwilling to improve themselves, which keeps them bound. He is careful to say that thought works gradually and that circumstances are complex. The reference TR text's paraphrase ('in reality people choose their circumstances') overstates Allen's position; his claims are kept closer to the text, and the story notes that this is a strong view that many readers find too harsh in cases of poverty or injustice.",
+  "facts": [
+    "Allen writes that a person's outer conditions are always found to be harmoniously related to their inner state.",
+    "He writes: 'Circumstance does not make the man; it reveals him to himself.'",
+    "He observes that people are anxious to improve their circumstances but unwilling to improve themselves; they therefore remain bound.",
+    "He argues that the person who does not shrink from self-crucifixion, working on their own character, will accomplish the object on which their heart is set.",
+    "He stresses that thought acts over time: good thoughts bear good fruit and bad thoughts bad fruit, but not always immediately.",
+    "Many modern readers find his view too absolute, especially where poverty, illness or injustice shape a life; the story acknowledges this."
+  ],
+  "tension": "We usually wait for our circumstances to change so that we can change. Allen argues it usually runs the other way.",
+  "opening_idea": "A hard situation doesn't just happen to you. Allen says it shows you who you are.",
+  "lessons": [
+    {
+      "idea": "Circumstances reveal character.",
+      "anchor": "'It reveals him to himself'"
+    },
+    {
+      "idea": "Changing yourself comes before changing your situation.",
+      "anchor": "Anxious to improve circumstances, unwilling to improve themselves"
+    },
+    {
+      "idea": "Hold the idea with humility.",
+      "anchor": "Modern critique of Allen's absolutism"
+    }
+  ],
+  "reflect": [
+    "What has a recent difficulty revealed about you?",
+    "Where are you waiting for circumstances to change before you do?"
+  ],
+  "reflect_final": "What would you work on in yourself if you stopped waiting for your situation to change first?",
+  "use_cases": [
+    {
+      "situation": "You blame your job for your lack of motivation.",
+      "move": "Identify one habit you could change regardless of the job.",
+      "context": "self"
+    },
+    {
+      "situation": "A team keeps saying they can't improve until they get more resources.",
+      "move": "Ask what they could improve now with what they have.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is going through a hard time and feels defined by it.",
+      "move": "Ask what the situation is showing them about their strengths.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Circumstances don't make you; they show you who you are.",
+  "conversation_variants": {
+    "punchline_idea": "Circumstance doesn't make a person; it reveals them.",
+    "thirty_sec_idea": "Allen's line, improving self vs circumstances, the modern critique.",
+    "question_idea": "What has a hard situation revealed about you?",
+    "key_contrast_idea": "Waiting versus changing"
+  }
+}

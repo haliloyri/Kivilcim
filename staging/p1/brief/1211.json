@@ -1,0 +1,65 @@
+{
+  "story_id": 1211,
+  "kind": "anecdote",
+  "book": {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "The two-dads framing is the core of the book: Kiyosaki's own father ('poor dad'), highly educated and a government employee, and his best friend's father ('rich dad'), who left school early and built businesses and wealth. The contrast between 'I can't afford it' and 'How can I afford it?' is one of the book's best-known passages. Note: the existence of 'rich dad' as a real single individual has been questioned by critics, and Kiyosaki has described him in ways that are hard to verify; the story presents the two dads as the book tells them. The reference TR text calls rich dad 'the neighbour's father'; in the book he is the father of Robert's best friend, Mike.",
+  "facts": [
+    "Kiyosaki writes that he grew up with two father figures: his own father, whom he calls 'poor dad', and the father of his best friend Mike, whom he calls 'rich dad'.",
+    "Poor dad was highly educated and worked in government; he believed in good grades, a secure job and a steady paycheck.",
+    "Rich dad left school early and built businesses and investments that made him wealthy.",
+    "Poor dad would say 'I can't afford it.' Rich dad forbade that phrase and asked instead: 'How can I afford it?'",
+    "Kiyosaki writes that the first is a statement that shuts the brain down; the second is a question that forces the brain to think.",
+    "The book's message is that attitudes toward money are learned, and that financial education matters as much as academic education.",
+    "Critics have questioned whether rich dad was a single real person and have criticized some of the book's financial advice."
+  ],
+  "tension": "Two fathers, both hardworking, gave a boy opposite lessons about money. Which one would he follow?",
+  "opening_idea": "One father says 'I can't afford it.' The other says 'How can I afford it?' The difference turns out to be enormous.",
+  "lessons": [
+    {
+      "idea": "A question keeps the mind working; a statement stops it.",
+      "anchor": "'How can I afford it?'"
+    },
+    {
+      "idea": "Money habits are learned.",
+      "anchor": "Two dads, two lessons"
+    },
+    {
+      "idea": "Financial education is its own subject.",
+      "anchor": "Kiyosaki's core message"
+    }
+  ],
+  "reflect": [
+    "Which money phrases did you learn at home?",
+    "Where do you say 'I can't afford it' and stop thinking?"
+  ],
+  "reflect_final": "What would you plan differently if you asked 'How can I afford it?' about one goal?",
+  "use_cases": [
+    {
+      "situation": "You want to take a course but think 'I can't afford it'.",
+      "move": "Ask 'How can I afford it?' and list three possible ways.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child asks for something expensive.",
+      "move": "Instead of 'we can't afford it', ask together how they might earn or save toward it.",
+      "context": "family"
+    },
+    {
+      "situation": "Your team dismisses a good idea as too costly.",
+      "move": "Ask how it could be made affordable before rejecting it.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "'I can't afford it' ends the thinking; 'How can I afford it?' starts it.",
+  "conversation_variants": {
+    "punchline_idea": "One phrase shuts the mind down; the other makes it start working.",
+    "thirty_sec_idea": "Two dads, their views, can't vs how can, critics' caveat.",
+    "question_idea": "Where do you say 'I can't afford it' and stop thinking?",
+    "key_contrast_idea": "Statement versus question"
+  }
+}

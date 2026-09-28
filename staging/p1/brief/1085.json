@@ -1,0 +1,71 @@
+{
+  "story_id": 1085,
+  "kind": "anecdote",
+  "book": {
+    "title": "Start With Why (Turkish edition: Başlangıç Noktası)",
+    "author": "Simon Sinek",
+    "year": "2009"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core contrast is firmly in the book. Sinek describes Langley as well-funded and well-connected, with a $50,000 War Department grant and a Smithsonian post, and chasing fame and wealth. He describes the Wright brothers as unfunded bicycle-shop owners from Dayton with no college education, driven by a belief. The dates are well documented historically: Langley's Great Aerodrome crashed into the Potomac on 8 December 1903, and the Wrights flew at Kitty Hawk on 17 December 1903. However, Sinek's own telling suggests Langley quit after hearing of the Wrights' success rather than improving on their work. Historically, his crash came first, so writers should not claim he gave up in reaction to their flight. The engineering details (control vs. power, wing-warping, wind tunnel, faulty lift tables) are well-established history but are largely not in Sinek's text. Use them only as light background, not as the book's argument. Omit the exact Wright budget figure (~$1,000), because it is uncertain whether the book states it.",
+  "facts": [
+    "Around 1903, several people in America were trying to build the first powered, piloted airplane. Sinek focuses on Samuel Pierpont Langley and Wilbur and Orville Wright.",
+    "Langley was a senior officer at the Smithsonian Institution and a prominent, well-connected scientist.",
+    "The U.S. War Department gave Langley $50,000 to build his flying machine. He had money, a strong team and heavy press attention.",
+    "The Wright brothers ran a bicycle shop in Dayton, Ohio. They had no college degrees, no outside funding and no press following. They paid for their work with proceeds from the shop.",
+    "Sinek says the people around the Wrights were inspired by a shared belief. He notes the brothers took several sets of parts out each day, because they expected to crash several times before coming home.",
+    "On 8 December 1903, Langley's Great Aerodrome was launched from a houseboat on the Potomac and crashed into the water. The press ridiculed it.",
+    "On 17 December 1903, the Wrights achieved the first sustained, controlled, powered flight at Kitty Hawk.",
+    "Sinek's reading: Langley was pursuing fame and fortune (a WHAT/result), while the Wrights were driven by a WHY, a belief that flight would change the world.",
+    "Sinek says Langley did not keep going after the Wrights succeeded, while the Wrights and their team persisted through repeated failure."
+  ],
+  "tension": "Langley had every visible advantage (money, credentials, a team, the press), and the underfunded bicycle-shop brothers still beat him.",
+  "opening_idea": "Two teams race for the sky: one has government money and the newspapers watching, the other has a bicycle shop and a belief.",
+  "lessons": [
+    {
+      "idea": "Resources and credentials do not guarantee the breakthrough; what drives the team matters.",
+      "anchor": "$50,000 and the Smithsonian vs. a Dayton bicycle shop"
+    },
+    {
+      "idea": "A team held together by a shared belief treats failure as part of the path rather than the end.",
+      "anchor": "The Wrights took out several sets of parts, expecting several crashes a day"
+    },
+    {
+      "idea": "Chasing the result (fame, money) makes you fragile when the result doesn't come.",
+      "anchor": "Langley's project collapsed after the public Potomac crash"
+    },
+    {
+      "idea": "Get the story straight before drawing the lesson: Langley's crash came before the Wrights' flight.",
+      "anchor": "8 December vs. 17 December 1903"
+    }
+  ],
+  "reflect": [
+    "If your funding or recognition disappeared tomorrow, would you still be working on this?",
+    "Does your team come back after a failure because they're paid to, or because they believe in the goal?"
+  ],
+  "reflect_final": "What is the belief behind your work that would make you show up again the day after a crash?",
+  "use_cases": [
+    {
+      "situation": "A project team is demoralized after a failed launch or pilot.",
+      "move": "Open the retro by restating the why in one sentence, then ask: 'What did this crash teach us for tomorrow's attempt?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A report complains that a rival team has more budget and headcount.",
+      "move": "Ask them: 'If we had their budget, what would we actually do differently? And which of that can we do now?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel behind peers who seem better resourced or credentialed.",
+      "move": "Write down why you are doing this, apart from recognition or money, and plan one cheap test you can run this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Money bought Langley a machine; belief gave the Wrights a team that kept coming back.",
+  "conversation_variants": {
+    "punchline_idea": "The best-funded man in America lost the race to the sky to two bicycle mechanics.",
+    "thirty_sec_idea": "Langley had $50,000, a Smithsonian title and the press; the Wrights had a bike shop. Langley crashed into the Potomac, and nine days later the Wrights flew. Sinek credits their why.",
+    "question_idea": "Why do you think the team with every advantage didn't get there first?",
+    "key_contrast_idea": "Langley chased the result of flight; the Wrights chased the belief in it, and only one of those survives a crash."
+  }
+}

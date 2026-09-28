@@ -1,0 +1,72 @@
+{
+  "story_id": 1115,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "year": "2020"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core contrast between Ronald Read and Richard Fuscone opens the book's Introduction and is reliable. Read's death in 2014 at age 92, his estate of more than $8 million, and the bequests to his local library and hospital are well documented in the book. The existing TR text has several errors that this brief does not carry forward. Read worked as a janitor at J.C. Penney, a department store, not a supermarket. Fuscone did not die the same year; the book describes his bankruptcy and the loss of his mansion, not his death. The shoe-nail and pinned-coat details come from press coverage, not clearly from the book, so they are omitted. Exact bequest splits (about $2M to stepchildren, $4.8M to the library, $1.2M to the hospital) are left out of the facts to avoid overprecision.",
+  "facts": [
+    "Ronald Read lived in Vermont and was the first in his family to graduate from high school.",
+    "He worked for about 25 years fixing cars at a gas station and then about 17 years as a janitor at J.C. Penney.",
+    "He lived modestly and quietly, and nobody around him saw him as wealthy.",
+    "He died in 2014 at age 92, leaving more than $8 million.",
+    "Most of his estate went to his local library and hospital.",
+    "He had no special skill or luck. He saved what he could, invested in blue-chip stocks and held them for decades, letting compounding work.",
+    "Richard Fuscone was Harvard-educated and became a senior executive at Merrill Lynch. He was so successful he retired early to focus on philanthropy.",
+    "Fuscone borrowed heavily to expand and maintain a very large mansion in Greenwich, Connecticut.",
+    "The 2008 financial crisis hit his heavily leveraged finances hard. He declared personal bankruptcy and the mansion was later sold in foreclosure.",
+    "Housel uses the pair to argue that financial outcomes depend more on behavior than on intelligence, education or income. He notes that in few other fields could a janitor so clearly outperform a top professional."
+  ],
+  "tension": "A janitor with no financial training ends up far wealthier than a Harvard-educated Wall Street executive. How can that happen, when we assume money success follows expertise and income?",
+  "opening_idea": "Two men: one fixed cars and mopped floors, the other ran money on Wall Street. Only one of them died a quiet multimillionaire, and it wasn't the one you'd guess.",
+  "lessons": [
+    {
+      "idea": "Doing well with money is more about behavior than about knowledge or intelligence.",
+      "anchor": "Read had no finance background but outperformed an elite Merrill Lynch executive."
+    },
+    {
+      "idea": "Patience plus compounding can turn a small income into large wealth.",
+      "anchor": "Read's decades of holding blue-chip stocks grew into more than $8 million."
+    },
+    {
+      "idea": "High income is not protection. Spending beyond your means and borrowing heavily can erase it.",
+      "anchor": "Fuscone's leverage and costly mansion collapsed into bankruptcy after 2008."
+    },
+    {
+      "idea": "Real wealth is often invisible, the money not spent.",
+      "anchor": "No one around Read suspected he was rich."
+    }
+  ],
+  "reflect": [
+    "Which of my money habits would still make sense if I held them for 30 years?",
+    "Where am I relying on income or cleverness instead of on consistent behavior?"
+  ],
+  "reflect_final": "If your finances had to survive a bad year, would you look more like Read or like Fuscone?",
+  "use_cases": [
+    {
+      "situation": "A team debates a risky, leveraged growth plan because 'we're smart enough to manage it.'",
+      "move": "Ask: 'What happens to this plan if the next two years go badly? Can we survive without being forced to sell?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A young relative feels they can't build wealth because their salary is small.",
+      "move": "Tell them the Ronald Read story. Then suggest they set up an automatic monthly investment, however small, and not touch it.",
+      "context": "family"
+    },
+    {
+      "situation": "You get a raise and feel the urge to upgrade your lifestyle right away.",
+      "move": "Before changing any spending, send at least half of the raise straight into savings or investments for the next year.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Wealth depends less on what you earn than on how you behave: spend below your means, stay patient and avoid getting wiped out.",
+  "conversation_variants": {
+    "punchline_idea": "A janitor beat a Wall Street executive at money because behavior beats brilliance.",
+    "thirty_sec_idea": "Summarize Read's quiet saving and decades of investing, leading to $8 million, next to Fuscone's leveraged mansion and his bankruptcy in 2008.",
+    "question_idea": "Why is personal finance one of the few fields where an amateur can routinely beat a professional?",
+    "key_contrast_idea": "Modest income with patient, frugal behavior compounds, while high income with heavy leverage and spending can collapse."
+  }
+}

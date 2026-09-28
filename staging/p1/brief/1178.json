@@ -1,0 +1,63 @@
+{
+  "story_id": 1178,
+  "kind": "concept",
+  "book": {
+    "title": "The 80/20 Principle",
+    "author": "Richard Koch",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Koch applies the 80/20 principle to relationships in the book, arguing that a small number of relationships account for most of their value in our lives and that we should invest more in these few. He suggests listing your most important relationships and asking where your time and attention actually go. The reference TR text's claim that Koch 'studied people's social networks' and found that 5 to 10 people provide 80 percent of happiness is not a finding from the book and is left out; the numbers are not used. Koch's own account of cutting social obligations is kept general.",
+  "facts": [
+    "Koch applies the 80/20 principle to relationships: a small number of relationships usually account for most of the value, support and happiness they bring.",
+    "He argues that most people spread their time and attention thinly across many relationships, often by habit or obligation rather than choice.",
+    "His advice is to identify the relationships that matter most and to invest more time and care in them.",
+    "He suggests making a list of your most important relationships and comparing it with where your time actually goes.",
+    "He frames this not as coldness but as giving your best to the people who matter most."
+  ],
+  "tension": "We have more connections than ever, yet often feel we don't have enough time for the people who matter most.",
+  "opening_idea": "Look at your last month of social time and ask how much of it went to the people you'd call first in a crisis.",
+  "lessons": [
+    {
+      "idea": "A few relationships provide most of the value.",
+      "anchor": "80/20 applied to relationships"
+    },
+    {
+      "idea": "Time often follows habit, not importance.",
+      "anchor": "Thinly spread attention"
+    },
+    {
+      "idea": "Investing deeply is generosity, not coldness.",
+      "anchor": "Giving your best to the people who matter most"
+    }
+  ],
+  "reflect": [
+    "Who are the few people you'd call first in a crisis?",
+    "How much of last month's social time went to them?"
+  ],
+  "reflect_final": "Which important relationship deserves more of your time starting this week?",
+  "use_cases": [
+    {
+      "situation": "Your weekends are filled with obligations you don't enjoy.",
+      "move": "Politely decline one and use the time for someone close to you.",
+      "context": "social"
+    },
+    {
+      "situation": "You rarely have real conversations with your family.",
+      "move": "Set a regular one-on-one time with each person who matters most.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel spread thin across many acquaintances.",
+      "move": "List your top ten relationships and plan one meaningful contact with each this month.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Give your best time to the few people who give your life the most.",
+  "conversation_variants": {
+    "punchline_idea": "A handful of relationships provide most of what we get from all of them.",
+    "thirty_sec_idea": "80/20 in relationships, thin attention, invest in the few.",
+    "question_idea": "Who gets your best time, and who deserves it?",
+    "key_contrast_idea": "Many shallow, few deep"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "story_id": 1341,
+  "kind": "concept",
+  "book": { "title": "Uyku Devrimi (The Sleep Revolution)", "author": "Arianna Huffington", "year": "2016" },
+  "confidence": "low",
+  "confidence_note": "The redefinition of success in the TR text comes mainly from Huffington's earlier book Thrive (2014), not The Sleep Revolution. It is her 'Third Metric' idea: money and power are two legs of a stool, and a two-legged stool eventually tips over. The third metric is made up of four pillars: well-being, wisdom, wonder and giving. The TR text misstates this as a sequence of fourth, fifth and sixth legs, and that structure is corrected here. The Sleep Revolution continues the argument, and the framing is kept because it fits the book's theme, but it may not appear there in this exact form. The pencil quotation ('a company that lets employees work with sleep debt is writing letters with a blunt pencil') could not be verified and is excluded. So are the generic claims that sleep-conscious companies report higher productivity, fewer errors and less absenteeism, since no figures are supported. The Sleep Revolution does describe companies starting to treat employee sleep as a business concern, but no specific company or figure is given here.",
+  "facts": [
+    "Huffington argues that the usual definition of success rests on two things: money and power.",
+    "She compares this to a stool with only two legs: sooner or later, you fall off.",
+    "Her proposed 'third metric' of success includes well-being, wisdom, wonder and giving.",
+    "In The Sleep Revolution she treats sleep as a foundation of well-being and argues that sacrificing it undermines the judgment and health that success depends on.",
+    "She extends the argument to workplaces, describing a shift in which some companies began to treat employees' sleep as a business concern rather than a private matter."
+  ],
+  "tension": "Money and power are usually treated as proof that life is going well; Huffington says that without a third leg, the same achievements leave you on a stool that is about to tip.",
+  "opening_idea": "Start with the image of someone trying to balance on a two-legged stool, and ask which two legs most people build their lives on.",
+  "lessons": [
+    {
+      "idea": "A definition of success built only on money and power is structurally unstable.",
+      "anchor": "The two-legged stool metaphor."
+    },
+    {
+      "idea": "Success can be measured on more than one scale, including well-being, wisdom, wonder and giving.",
+      "anchor": "Huffington's 'third metric' and its four elements."
+    },
+    {
+      "idea": "Rest is not a reward for success but part of what sustains it.",
+      "anchor": "Her treatment of sleep as the foundation of well-being in The Sleep Revolution."
+    }
+  ],
+  "reflect": [
+    "If you judged last month only by money and status, how would it look? And if you added well-being, wisdom, wonder and giving?",
+    "Which of the four elements of her third metric gets the least of your time right now?"
+  ],
+  "reflect_final": "Pick one of the four—well-being, wisdom, wonder or giving—and give it one concrete slot in your calendar this week; afterward, notice whether it changed how you judged that week.",
+  "use_cases": [
+    {
+      "situation": "Your team's goals for the quarter are only about output and revenue.",
+      "move": "In the planning meeting, borrow Huffington's two-legged stool image and propose adding one sustainability measure, such as protecting evenings before deadlines.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are weighing a promotion that would add pay but eat your evenings and sleep.",
+      "move": "Write down how the offer scores on money and power, then on well-being, wisdom, wonder and giving, and bring both lists to the decision.",
+      "context": "self"
+    },
+    {
+      "situation": "At a family dinner the talk turns to who is 'doing well' based on job titles and income.",
+      "move": "Ask one question that widens the measure, such as 'Who do we know who seems genuinely well, whatever their job?'",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Money and power are only two legs of the stool; before chasing more of either, check whether there is a third leg to stand on.",
+  "conversation_variants": {
+    "punchline_idea": "Huffington says success built only on money and power is a two-legged stool—you will fall off eventually.",
+    "thirty_sec_idea": "Huffington argues that money and power are just two legs of a stool; she adds a third metric—well-being, wisdom, wonder and giving—and in The Sleep Revolution puts sleep at the base of well-being.",
+    "question_idea": "Who do you know who seems genuinely successful, and what would you measure if you tried to explain why?",
+    "key_contrast_idea": "From 'how much and how high' to 'how well, how wisely, and for whom.'"
+  }
+}

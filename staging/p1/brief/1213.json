@@ -1,0 +1,65 @@
+{
+  "story_id": 1213,
+  "kind": "anecdote",
+  "book": {
+    "title": "The 4-Hour Workweek",
+    "author": "Timothy Ferriss",
+    "year": "2007"
+  },
+  "confidence": "high",
+  "confidence_note": "Ferriss describes in the book how, overwhelmed by running his sports-nutrition supplement company (BrainQUICKEN) and working very long hours, he applied Pareto's 80/20 principle to his customers: he found that a handful of his roughly 120 wholesale customers produced about 95 percent of his revenue, while a few produced most of his headaches. He stopped chasing the unproductive customers, 'fired' the most difficult ones, and focused on and cloned the best ones; his income rose while his hours fell. He also writes 'Doing something unimportant well does not make it important.' The reference TR text's '14 hours a day, 7 days a week' is broadly consistent with his account of working very long hours; exact figures are softened.",
+  "facts": [
+    "Ferriss ran a sports-nutrition supplement company and describes working extremely long hours and feeling overwhelmed.",
+    "He came across Pareto's 80/20 principle and applied it to his business.",
+    "Analyzing his wholesale customers, he found that about 5 of roughly 120 accounted for around 95 percent of his revenue.",
+    "A small number of customers also accounted for most of his problems, complaints and wasted time.",
+    "He stopped spending effort on the low-value customers, politely 'fired' the most demanding ones, and focused on the best, looking for more customers like them.",
+    "His revenue increased while his working hours dropped dramatically.",
+    "He writes: 'Doing something unimportant well does not make it important.' Being busy is not the same as being productive."
+  ],
+  "tension": "A founder working himself to exhaustion discovers most of his effort was going to customers who barely mattered.",
+  "opening_idea": "An exhausted founder runs the numbers and finds that five customers are carrying his entire business.",
+  "lessons": [
+    {
+      "idea": "A few customers or tasks usually drive most results.",
+      "anchor": "5 of 120 customers, 95 percent of revenue"
+    },
+    {
+      "idea": "Some customers cost more than they're worth.",
+      "anchor": "Firing the most demanding ones"
+    },
+    {
+      "idea": "Doing unimportant things well doesn't make them important.",
+      "anchor": "Ferriss's line on elimination"
+    }
+  ],
+  "reflect": [
+    "Which few clients, tasks or people produce most of your results?",
+    "Which ones produce most of your stress?"
+  ],
+  "reflect_final": "What could you stop doing, or who could you stop serving, to free your best hours?",
+  "use_cases": [
+    {
+      "situation": "Your small business is swamped by demanding low-value clients.",
+      "move": "Rank clients by revenue and hassle, and gently let go of the worst few.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team spends most time on minor requests.",
+      "move": "Analyze which tasks drive most results and deprioritize the rest.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is burning out running their freelance business.",
+      "move": "Suggest they look at which clients bring most income versus most stress.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Doing something unimportant well doesn't make it important.",
+  "conversation_variants": {
+    "punchline_idea": "Five of Ferriss's 120 customers produced about 95 percent of his revenue.",
+    "thirty_sec_idea": "Overwork, 80/20 analysis, firing bad customers, more income, fewer hours.",
+    "question_idea": "Which of your customers or tasks cost more than they're worth?",
+    "key_contrast_idea": "Busy versus productive"
+  }
+}

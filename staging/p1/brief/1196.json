@@ -1,0 +1,64 @@
+{
+  "story_id": 1196,
+  "kind": "concept",
+  "book": {
+    "title": "Why We Sleep",
+    "author": "Matthew Walker",
+    "year": "2017"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text lists specific sleep hours for Roger Federer, LeBron James, Usain Bolt and Venus Williams and attributes the list to Walker. These figures come from media reports and interviews, cannot be confirmed as appearing in the book, and are not used; athletes are mentioned only generally. Walker's chapter on sleep and physical performance does make the core points: sleep deprivation reduces time to physical exhaustion, impairs recovery, and is associated with higher injury risk; a study of young athletes found those sleeping less had a markedly higher chance of injury; and sleep after training helps consolidate motor skills. Exact percentages are omitted or kept approximate.",
+  "facts": [
+    "Walker argues that sleep is one of the most powerful legal performance enhancers available to athletes.",
+    "He describes research showing that when people get less sleep than they need, their time to physical exhaustion drops and their performance declines.",
+    "He cites a study of young athletes in which those who regularly slept less had a much higher risk of injury than those who slept more.",
+    "Sleep after practice helps consolidate motor skills: the brain rehearses and strengthens movements learned during the day, particularly during certain stages of non-REM sleep.",
+    "Sleep also supports physical recovery, including muscle repair and the body's inflammatory and hormonal balance.",
+    "Walker notes that many professional sports teams have begun to treat sleep as part of training rather than as downtime."
+  ],
+  "tension": "Athletes spend enormous effort on training and diet, yet one of the biggest influences on performance happens with their eyes closed.",
+  "opening_idea": "Top athletes obsess over every detail of training. Walker argues the most powerful one happens after they go to bed.",
+  "lessons": [
+    {
+      "idea": "Sleep is a performance enhancer.",
+      "anchor": "Time to exhaustion and performance"
+    },
+    {
+      "idea": "Skills are consolidated during sleep.",
+      "anchor": "Motor skill rehearsal in non-REM sleep"
+    },
+    {
+      "idea": "Short sleep raises injury risk.",
+      "anchor": "Young athletes study"
+    }
+  ],
+  "reflect": [
+    "Where do you trade sleep for more practice or work?",
+    "How does your performance change after a short night?"
+  ],
+  "reflect_final": "What skill are you learning that would benefit from a full night's sleep after practice?",
+  "use_cases": [
+    {
+      "situation": "Your child plays sports and stays up late on their phone.",
+      "move": "Explain that skills and muscles are built during sleep and set a consistent bedtime.",
+      "context": "family"
+    },
+    {
+      "situation": "You're training for a race while sleeping six hours a night.",
+      "move": "Add sleep to your training plan as seriously as runs.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team schedules intense work sprints with late nights before big launches.",
+      "move": "Plan the sprint so people can sleep; argue it improves performance.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Practice builds the skill; sleep locks it in.",
+  "conversation_variants": {
+    "punchline_idea": "Sleep may be the most powerful legal performance enhancer there is.",
+    "thirty_sec_idea": "Exhaustion, skill consolidation, injury risk, teams treating sleep as training.",
+    "question_idea": "What are you practicing that needs a full night's sleep?",
+    "key_contrast_idea": "More practice versus more sleep"
+  }
+}

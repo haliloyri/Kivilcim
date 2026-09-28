@@ -1,0 +1,64 @@
+{
+  "story_id": 1228,
+  "kind": "anecdote",
+  "book": {
+    "title": "High Performance Habits",
+    "author": "Brendon Burchard",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "Brendon Burchard has told in several of his books and talks the story of a serious car accident he survived at 19 in the Dominican Republic, after which three questions stayed with him: Did I live? Did I love? Did I matter? Whether High Performance Habits tells this story in detail is not certain; it is well documented in his other writing (for example The Charge). The reference TR text places the questions 'in the ambulance'; accounts place them in the aftermath of the crash, so the setting is kept general. High Performance Habits itself is based on his research and coaching, and identifies six habits of high performers: seek clarity, generate energy, raise necessity, increase productivity, develop influence and demonstrate courage.",
+  "facts": [
+    "At 19, Brendon Burchard was in a serious car accident in the Dominican Republic while a friend was driving.",
+    "He has described how, in the aftermath, three questions came to him: Did I live? Did I love? Did I matter?",
+    "He survived, and he describes those questions as a turning point that shaped his life and work.",
+    "He later became a coach and author focused on personal development and performance.",
+    "In High Performance Habits, he identifies six habits he says distinguish people who succeed consistently over the long term: seek clarity, generate energy, raise necessity, increase productivity, develop influence and demonstrate courage.",
+    "He argues these are habits, not fixed traits, and can be practiced."
+  ],
+  "tension": "A teenager, badly hurt and unsure if he'll survive, finds himself asking three questions about his life.",
+  "opening_idea": "After a crash that could have killed him, a 19-year-old asks himself whether he really lived.",
+  "lessons": [
+    {
+      "idea": "Big questions clarify what matters.",
+      "anchor": "Did I live? Did I love? Did I matter?"
+    },
+    {
+      "idea": "A near miss can become a compass.",
+      "anchor": "The questions shaping his work"
+    },
+    {
+      "idea": "Performance comes from habits, not traits.",
+      "anchor": "The six habits"
+    }
+  ],
+  "reflect": [
+    "How would you answer his three questions today?",
+    "Which of the three needs the most attention in your life?"
+  ],
+  "reflect_final": "What one change would help you answer 'yes' to one of those questions a year from now?",
+  "use_cases": [
+    {
+      "situation": "You feel busy but empty.",
+      "move": "Answer the three questions honestly in a journal this week.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is at a crossroads in their career.",
+      "move": "Ask which option would help them feel they truly lived, loved and mattered.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team is stuck in routine work.",
+      "move": "Ask how the work matters to someone, and make that visible.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Live so that 'Did I live, love and matter?' has an honest yes.",
+  "conversation_variants": {
+    "punchline_idea": "After a crash at 19, Burchard was left with three questions: Did I live? Did I love? Did I matter?",
+    "thirty_sec_idea": "The accident, the three questions, the six habits.",
+    "question_idea": "How would you answer 'Did I live? Did I love? Did I matter?'",
+    "key_contrast_idea": "Existing versus living"
+  }
+}

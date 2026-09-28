@@ -1,0 +1,65 @@
+{
+  "story_id": 1326,
+  "kind": "concept",
+  "book": {
+    "title": "The Artist's Way",
+    "author": "Julia Cameron",
+    "year": "1992"
+  },
+  "confidence": "high",
+  "confidence_note": "The artist date and the idea of 'filling the well' are core tools of The Artist's Way alongside morning pages: a block of time each week, done alone, to nurture your creative self with activities that delight you. Cameron describes creativity as drawing on an inner reservoir that must be restocked, and notes that people resist artist dates. Her suggested outings include things like a junk store, a museum, a walk, or a concert. The reference text's quoted line about creativity 'giving and receiving' is a paraphrase and is not used as a quote. Not verified against the text.",
+  "facts": [
+    "Cameron describes creative work as drawing from an inner well or reservoir that needs to be refilled.",
+    "Her tool for filling the well is the weekly 'artist date': a block of time, spent alone, doing something that delights or interests you.",
+    "The artist date is about taking in, not producing: looking, listening and exploring.",
+    "Examples she gives include visiting an art gallery or museum, a junk shop, a walk, or a concert.",
+    "She notes that people often resist or avoid artist dates, saying they are too busy, even though the dates are easier than the work they feed.",
+    "The artist date pairs with morning pages: the pages send out, the date takes in."
+  ],
+  "tension": "The artist date asks for nothing to be produced, yet Cameron treats it as essential, and it is often the tool people skip.",
+  "opening_idea": "Start with Cameron's image of the well and a person who keeps drawing water from it without ever letting it refill.",
+  "lessons": [
+    {
+      "idea": "Creative output depends on regular input.",
+      "anchor": "The well that must be refilled"
+    },
+    {
+      "idea": "Taking in images, sounds and experiences is a separate task from producing.",
+      "anchor": "The artist date's purpose: taking in, not producing"
+    },
+    {
+      "idea": "The easiest-sounding practice can be the most resisted.",
+      "anchor": "People avoid artist dates, saying they are too busy"
+    }
+  ],
+  "reflect": [
+    "When did you last do something alone just because it interested you?",
+    "What do you usually take in before a period of good creative work?",
+    "Which excuse do you use most for skipping things that recharge you?"
+  ],
+  "reflect_final": "Put one short solo outing on your calendar this week with no goal of producing anything. Afterwards, notice whether any idea or image from it turns up in your work.",
+  "use_cases": [
+    {
+      "situation": "You feel drained after weeks of delivering creative or problem-solving work.",
+      "move": "Cameron's well needs refilling. Book one solo outing this week, like a gallery, a market or an unfamiliar neighborhood, and don't take notes for work.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member seems creatively flat after a long delivery cycle.",
+      "move": "Ask what they've taken in lately, not just what they've produced, and suggest protecting a couple of hours for something that simply interests them.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A friend says they're too busy for anything but work.",
+      "move": "Mention Cameron's point that the artist date is the tool people most often skip, and suggest one small solo outing they'd actually enjoy.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "You can't keep drawing from a well you never refill. The artist date is the refill, and nothing has to come out of it.",
+  "conversation_variants": {
+    "punchline_idea": "Julia Cameron prescribes a weekly date with yourself where you're not allowed to produce anything.",
+    "thirty_sec_idea": "Cameron compares creativity to a well. Morning pages draw from it; the weekly solo 'artist date', a museum, a junk shop or a walk, refills it.",
+    "question_idea": "Ask where they'd go on a solo outing that is just for their own curiosity.",
+    "key_contrast_idea": "Always giving out versus deliberately taking in."
+  }
+}

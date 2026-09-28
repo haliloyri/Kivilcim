@@ -11,11 +11,11 @@ MODEL="claude-opus-5-5"
 
 # Bir seferde en fazla kaç hikâye işlensin. Boş bırakırsanız (kaldırırsanız)
 # kalan her şeyi işler. İlk denemede küçük tutun (ör. 5-10).
-LIMIT="10"
+LIMIT="60"
 
 # Doğrulamadan geçen hikâyeleri otomatik olarak yerel SQLite'a yazsın mı?
 # "true" ya da "false".
-APPLY="true"
+APPLY="false"
 
 # Batch durumunu kaç saniyede bir yoklasın.
 POLL_SECONDS="30"

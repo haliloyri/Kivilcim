@@ -1,0 +1,64 @@
+{
+  "story_id": 1188,
+  "kind": "concept",
+  "book": {
+    "title": "Feel the Fear and Do It Anyway",
+    "author": "Susan Jeffers",
+    "year": "1987"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text says Jeffers researched clients' fear of saying no and found that people who could say no gave a more valuable yes. That framing cannot be confirmed as a finding of the book and is not presented as one. The book does address people-pleasing, taking responsibility for your own life instead of blaming others, and, notably, the language of powerlessness. Jeffers suggests replacing 'pain' words with 'power' words: 'I can't' becomes 'I won't', 'I should' becomes 'I could', 'It's not my fault' becomes 'I'm totally responsible', 'It's a problem' becomes 'It's an opportunity', 'Life's a struggle' becomes 'Life's an adventure'. The story builds on the 'I can't' to 'I won't' shift as it applies to saying no.",
+  "facts": [
+    "Jeffers argues that the words we use shape how powerful or powerless we feel.",
+    "She contrasts a vocabulary of pain with a vocabulary of power.",
+    "Examples she gives: replace 'I can't' with 'I won't'; replace 'I should' with 'I could'; replace 'It's not my fault' with 'I'm totally responsible'; replace 'It's a problem' with 'It's an opportunity'; replace 'Life's a struggle' with 'Life's an adventure'.",
+    "'I can't' presents you as a victim of circumstances; 'I won't' presents you as making a choice.",
+    "'I should' carries guilt and pressure; 'I could' opens options.",
+    "She argues that taking responsibility for your choices, rather than blaming others, is the foundation of moving past fear."
+  ],
+  "tension": "People who can't say no often explain it as 'I couldn't refuse.' Jeffers asks whether that's true.",
+  "opening_idea": "Listen to the words people use when they agree to things they don't want: 'I can't say no.'",
+  "lessons": [
+    {
+      "idea": "'I can't' hides a choice.",
+      "anchor": "Can't versus won't"
+    },
+    {
+      "idea": "'Should' brings guilt; 'could' brings options.",
+      "anchor": "Should versus could"
+    },
+    {
+      "idea": "Owning your choices restores power.",
+      "anchor": "Totally responsible"
+    }
+  ],
+  "reflect": [
+    "Where do you say 'I can't' when you mean 'I won't'?",
+    "Which 'should' in your life is really a 'could'?"
+  ],
+  "reflect_final": "What request could you answer this week with an honest 'I won't'?",
+  "use_cases": [
+    {
+      "situation": "A colleague asks you to take on extra work you don't have time for.",
+      "move": "Say 'I won't be able to take this on this week' as a clear choice, not an excuse.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel guilty about all the things you 'should' do on the weekend.",
+      "move": "Rewrite the list as 'I could' and choose two.",
+      "context": "self"
+    },
+    {
+      "situation": "A relative keeps pressing you to attend every family event.",
+      "move": "Answer kindly but clearly: 'I won't make it this time, but I'll come next month.'",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Say 'I won't' instead of 'I can't,' and you'll notice who's choosing.",
+  "conversation_variants": {
+    "punchline_idea": "'I can't' makes you a victim; 'I won't' makes you the one choosing.",
+    "thirty_sec_idea": "Pain vs power vocabulary: can't/won't, should/could, problem/opportunity.",
+    "question_idea": "Where do you say 'I can't' when you mean 'I won't'?",
+    "key_contrast_idea": "Can't versus won't"
+  }
+}

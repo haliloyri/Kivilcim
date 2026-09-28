@@ -1,0 +1,67 @@
+{
+  "story_id": 1067,
+  "kind": "concept",
+  "book": {
+    "title": "The Now Habit (Şimdi Başla)",
+    "author": "Neil Fiore",
+    "year": "1988"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book's central claim, that procrastination is a defense against fear of failure, judgment and perfectionism rather than laziness, is well established in The Now Habit. Fiore, a psychologist, draws on his work with procrastinators, including graduate students struggling with dissertations. The specific client dialogue in the existing TR text ('Maybe it won't be good enough; everyone will see I'm not as smart as they think') cannot be verified as a quoted case from the book. It is treated here as an illustration of the concept, not a documented anecdote. No names, dates or figures are asserted.",
+  "facts": [
+    "Neil Fiore is a psychologist who worked extensively with chronic procrastinators, including graduate students stuck on dissertations and theses.",
+    "Fiore argues that procrastinators are usually not lazy. Procrastination is a way of coping with the anxiety of starting or finishing a task.",
+    "At the root he identifies fear of failure, fear of judgment and perfectionism, often tied to the belief that one's worth equals one's performance.",
+    "Delay protects self-esteem. Saying 'I didn't really try' hurts less than saying 'I gave it my best and it wasn't good enough.'",
+    "Because the underlying fear is never addressed, the avoidance repeats and the fear stays hidden behind excuses like lack of time."
+  ],
+  "tension": "A capable, ambitious person keeps failing to start important work. It looks like laziness, but the real obstacle is the fear that their best effort will be judged insufficient.",
+  "opening_idea": "Many 'lazy' people turn out not to be lazy at all. They are protecting themselves from a verdict they fear.",
+  "lessons": [
+    {
+      "idea": "Procrastination is a coping strategy for anxiety, not a character flaw of laziness.",
+      "anchor": "Fiore's reframe of the 'lazy' procrastinator"
+    },
+    {
+      "idea": "When self-worth is fused with performance, every task becomes a test of who you are, so avoiding the task avoids the test.",
+      "anchor": "worth = performance belief"
+    },
+    {
+      "idea": "Not trying leaves a comforting excuse ('I could have done better'). Trying fully removes that shield.",
+      "anchor": "delay as self-protection"
+    },
+    {
+      "idea": "Naming the fear behind the delay is more useful than blaming yourself for the delay.",
+      "anchor": "fear beneath the excuse"
+    }
+  ],
+  "reflect": [
+    "What would it mean about you if the thing you keep postponing turned out imperfect?",
+    "Is 'I have no time' a fact, or a cover for 'it won't be good enough'?"
+  ],
+  "reflect_final": "Which task are you avoiding, and what verdict about yourself are you actually afraid of hearing?",
+  "use_cases": [
+    {
+      "situation": "A team member keeps missing the deadline on a high-visibility deliverable.",
+      "move": "Instead of pushing harder, ask privately: 'What worries you most about handing this in?' Then offer to review a rough draft early.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You've postponed a personal project for months, claiming lack of time.",
+      "move": "Write down the sentence 'If I finish this and it's mediocre, it means ___' and fill in the blank. Then separate that meaning from your worth.",
+      "context": "self"
+    },
+    {
+      "situation": "Your teenager avoids starting an important application or exam prep and gets labeled lazy at home.",
+      "move": "Say: 'I don't think you're lazy. I think this feels like a big judgment on you. Whatever the result, it won't change what I think of you.'",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Procrastination is often a shield against being judged, not a lack of will.",
+  "conversation_variants": {
+    "punchline_idea": "It's safer to fail by not trying than to fail after trying your best, and that's why we delay.",
+    "thirty_sec_idea": "A psychologist who worked with procrastinators found that most weren't lazy. They were afraid their best work would prove them inadequate, so delay kept that verdict away.",
+    "question_idea": "If you knew the result couldn't change how anyone valued you, would you still be putting it off?",
+    "key_contrast_idea": "Laziness means not caring about the outcome. Procrastination often means caring so much that the outcome feels like a judgment on you."
+  }
+}

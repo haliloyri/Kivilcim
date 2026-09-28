@@ -1,0 +1,69 @@
+{
+  "story_id": 1107,
+  "kind": "concept",
+  "book": {
+    "title": "The 48 Laws of Power (Güç Yasaları)",
+    "author": "Robert Greene",
+    "year": "1998"
+  },
+  "confidence": "medium",
+  "confidence_note": "Law 6 ('Court Attention at All Cost') and its core claim are firmly from the book. The book illustrates it with figures such as P.T. Barnum. The court-jester material is not the book's own case. It is a general historical framing the story uses as a contrast, and jester privileges varied widely between courts. The applications (retrospectives, red teams, named dissent slots) are the story's extension, not Greene's.",
+  "facts": [
+    "Law 6 of Greene's book is 'Court Attention at All Cost.'",
+    "Greene argues that invisibility amounts to powerlessness: a person who is not noticed is not even weighed or considered.",
+    "He advises making oneself stand out, even through controversy or scandal, rather than fading into obscurity.",
+    "Among the book's illustrations of this law is the showman P.T. Barnum, who deliberately cultivated public attention.",
+    "Greene frames attention as a personal strategy that an individual uses to create room for their own power.",
+    "Contrast used by the story, not from the book: in some European courts, jesters could mock the king or his decisions and often went unpunished. Their protection came from an institutionally recognized role, not from their personal wit, and it was never true immunity."
+  ],
+  "tension": "Greene says you earn the right to be heard by making yourself impossible to ignore. Yet the court jester could say what no courtier dared, and he did it through a role the court had created, not through personal attention-seeking. Which mechanism actually lets hard truths be spoken?",
+  "opening_idea": "Open with the jester who mocks the king's war plan and walks away unharmed. Then ask what really protected him, since it wasn't the joke.",
+  "lessons": [
+    {
+      "idea": "Greene's route to influence is personal visibility: being noticed is the precondition for being taken seriously.",
+      "anchor": "Law 6: the unnoticed person isn't even evaluated."
+    },
+    {
+      "idea": "There is a second route: an institution can define a sanctioned place or role for dissent, so speaking up is expected rather than brave.",
+      "anchor": "The jester's privilege belonged to the office, not the person."
+    },
+    {
+      "idea": "Visibility-based courage leaves when the person leaves. Role-based permission to speak survives independent of who fills it.",
+      "anchor": "Durability: personal vs. institutional."
+    },
+    {
+      "idea": "Vague openness ('anyone can say anything') produces silence. Narrow, named slots for dissent produce candor.",
+      "anchor": "Fifteen minutes of this meeting are for objections."
+    }
+  ],
+  "reflect": [
+    "When bad news gets delivered where you work, is it because someone was brave or because it was their job?",
+    "Have you relied on your own visibility to be heard in a situation that really needed a defined channel?",
+    "If the most outspoken person on your team left tomorrow, would the hard truths still get said?"
+  ],
+  "reflect_final": "Is there a named place where hard truths can be spoken where you work, or does everyone depend on their own courage?",
+  "use_cases": [
+    {
+      "situation": "Planning a project kickoff where risks usually go unspoken.",
+      "move": "Put a fixed agenda item on the invite: 'Last 15 minutes: what could make this fail?' Assign one person to argue the counter-case.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A team member hints at a problem but never says it outright.",
+      "move": "Give them the role explicitly: 'For this review, your job is to find what's wrong with my plan. Don't be polite.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Family decisions where one relative always stays quiet and resents it later.",
+      "move": "Before deciding, say: 'Everyone gets one turn to name what worries them, no rebuttals until all have spoken.'",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Speaking hard truths depends less on personal courage than on having a defined place where that truth is allowed to be said.",
+  "conversation_variants": {
+    "punchline_idea": "The jester wasn't brave. He just had a job description that included insulting the king.",
+    "thirty_sec_idea": "Greene says grab attention so you'll be heard. The jester shows a sturdier option: a role built for saying the unsayable, and that role outlasts any one person.",
+    "question_idea": "Ask: when someone on your team delivers bad news, are they being brave or just doing their job?",
+    "key_contrast_idea": "Attention is a personal strategy that fades when you leave. A sanctioned role is an institutional design that stays."
+  }
+}

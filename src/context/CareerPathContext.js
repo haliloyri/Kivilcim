@@ -1,5 +1,6 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import NetInfo from '@react-native-community/netinfo';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FEATURE_FLAGS } from '../config/featureFlags';
 import { COMMON_PATH_ID, PATH_IDS } from '../constants/careerPath';
 import { awardCareerNodes, getCareerEvents, getCareerState, getEarnedCareerNodes, getLegacyBadgeIds, markCareerNodeSeen, replaceLegacyBadgeIds, upsertCareerState } from '../db/userDb';
@@ -13,6 +14,10 @@ import { useStories } from './StoriesContext';
 
 const CareerPathContext = createContext(null);
 const USER_ID = 'default';
+// Node ids the reader had earned the last time the Yolum tab was open. The tab
+// dot lights for any node earned since then — independent of the promotion
+// modal, which marks nodes seen as soon as the celebration is dismissed.
+const PATH_TAB_SEEN_KEY = 'career_path_tab_seen_node_ids_v1';
 
 const emptyValue = {
   enabled: false,
@@ -44,6 +49,14 @@ const emptyValue = {
   consumeConditionsRequest: () => null,
   milestoneVisible: false,
   setMilestoneVisible: () => null,
+  unseenPathNodeCount: 0,
+  markPathTabSeen: () => null,
+};
+
+const completedNodeIds = (viewModel) => {
+  if (!viewModel) return [];
+  const nodes = [...(viewModel.commonNodes || []), ...Object.values(viewModel.paths || {}).flat()];
+  return [...new Set(nodes.filter((node) => node.status === 'completed').map((node) => node.id))].sort();
 };
 
 const eligibleNodes = (viewModel) => {
@@ -110,7 +123,7 @@ export const CareerPathProvider = ({ children }) => {
         return loadCareer({ awardEligible: false, awardSource });
       }
       // Never make a cached title/rank disappear while a server request is slow.
-      setState((previous) => ({ ...previous, enabled: true, loading: false, refreshing: true, error: null, career: viewModel, careerEvents: localEvents, unseenPromotions: local.unseenPromotions, showMigrationSummary: localCareerState.migrationVersion >= 1 && !localCareerState.migrationSummarySeenAt }));
+      setState((previous) => ({ ...previous, enabled: true, loading: false, refreshing: true, error: null, career: viewModel, careerEvents: localEvents, unseenPromotions: local.unseenPromotions, showMigrationSummary: false }));
 
       // The remote snapshot is additive. A newer local reload invalidates this
       // background result before it can replace the current projection.
@@ -131,7 +144,7 @@ export const CareerPathProvider = ({ children }) => {
         if (legacyBadgeIds.length !== localLegacyBadgeIds.length) await replaceLegacyBadgeIds(USER_ID, legacyBadgeIds);
         if (loadVersion !== loadVersionRef.current) return;
         const merged = makeViewModel(events, earnedNodes, careerState);
-        setState((previous) => ({ ...previous, enabled: true, loading: false, refreshing: false, error: null, career: merged.viewModel, careerEvents: events, unseenPromotions: merged.unseenPromotions, showMigrationSummary: careerState.migrationVersion >= 1 && !careerState.migrationSummarySeenAt }));
+        setState((previous) => ({ ...previous, enabled: true, loading: false, refreshing: false, error: null, career: merged.viewModel, careerEvents: events, unseenPromotions: merged.unseenPromotions, showMigrationSummary: false }));
       }).catch((error) => {
         // Server sync is best-effort; the local projection remains usable.
         console.warn('[CareerPathContext] remote refresh failed:', error?.message);
@@ -214,6 +227,44 @@ export const CareerPathProvider = ({ children }) => {
     setState((previous) => ({ ...previous, conditionsRequested: false, conditionsNodeId: null }));
   }, []);
 
+  const earnedNodeIds = useMemo(() => completedNodeIds(state.career), [state.career]);
+  // undefined = not read yet, null = never stored (first run on this install).
+  const [pathTabSeenIds, setPathTabSeenIds] = useState(undefined);
+
+  useEffect(() => {
+    let cancelled = false;
+    AsyncStorage.getItem(PATH_TAB_SEEN_KEY)
+      .then((raw) => { if (!cancelled) setPathTabSeenIds(raw ? JSON.parse(raw) : null); })
+      .catch(() => { if (!cancelled) setPathTabSeenIds(null); });
+    return () => { cancelled = true; };
+  }, []);
+
+  const persistPathTabSeen = useCallback((ids) => {
+    setPathTabSeenIds(ids);
+    AsyncStorage.setItem(PATH_TAB_SEEN_KEY, JSON.stringify(ids)).catch((error) => {
+      console.warn('[CareerPathContext] path tab seen state could not be saved:', error?.message);
+    });
+  }, []);
+
+  // Baseline: ranks earned before this feature shipped should not light the dot.
+  useEffect(() => {
+    if (pathTabSeenIds !== null || !state.career || state.loading) return;
+    persistPathTabSeen(earnedNodeIds);
+  }, [pathTabSeenIds, state.career, state.loading, earnedNodeIds, persistPathTabSeen]);
+
+  const unseenPathNodeCount = useMemo(() => {
+    if (!Array.isArray(pathTabSeenIds)) return 0;
+    const seen = new Set(pathTabSeenIds);
+    return earnedNodeIds.filter((id) => !seen.has(id)).length;
+  }, [pathTabSeenIds, earnedNodeIds]);
+
+  const markPathTabSeen = useCallback(() => {
+    if (!state.career) return;
+    const seen = Array.isArray(pathTabSeenIds) ? pathTabSeenIds : [];
+    if (earnedNodeIds.every((id) => seen.includes(id))) return;
+    persistPathTabSeen([...new Set([...seen, ...earnedNodeIds])].sort());
+  }, [state.career, earnedNodeIds, pathTabSeenIds, persistPathTabSeen]);
+
   const activePromotion = state.unseenPromotions[state.unseenPromotions.length - 1] || null;
   const closePromotion = useCallback(async () => {
     if (!activePromotion?.nodeId) return null;
@@ -239,7 +290,9 @@ export const CareerPathProvider = ({ children }) => {
     consumeConditionsRequest,
     milestoneVisible,
     setMilestoneVisible,
-  }), [milestoneVisible, state, activePromotion, loadCareer, selectPath, switchPath, markPromotionSeen, markPromotionsSeen, closePromotion, markMigrationSummarySeen, requestPathSwitch, consumePathSwitchRequest, requestConditions, consumeConditionsRequest]);
+    unseenPathNodeCount,
+    markPathTabSeen,
+  }), [unseenPathNodeCount, markPathTabSeen, milestoneVisible, state, activePromotion, loadCareer, selectPath, switchPath, markPromotionSeen, markPromotionsSeen, closePromotion, markMigrationSummarySeen, requestPathSwitch, consumePathSwitchRequest, requestConditions, consumeConditionsRequest]);
 
   return <CareerPathContext.Provider value={value}>{children}</CareerPathContext.Provider>;
 };

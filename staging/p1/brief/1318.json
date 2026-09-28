@@ -1,0 +1,65 @@
+{
+  "story_id": 1318,
+  "kind": "concept",
+  "book": {
+    "title": "Indistractable: How to Control Your Attention and Choose Your Life",
+    "author": "Nir Eyal",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Core ideas are from Indistractable Part 1 ('Master Internal Triggers'): distraction usually starts from within; the drive to relieve discomfort is the root of motivation; 'time management is pain management'; and tactics such as noticing and writing down the internal trigger, 'surfing the urge', and the 10-minute rule. The reference text's scene (checking email, then a news site) is a generic illustration, not a specific case from the book, and its quote is a paraphrase, so neither is used as a book fact. The reference claim that simply naming the feeling 'deflates' the urge is softened: Eyal recommends noticing, labeling and waiting out the urge, not a guaranteed effect. Not verified against the text.",
+  "facts": [
+    "Eyal argues that most distraction starts from internal triggers, uncomfortable feelings such as boredom, anxiety, fatigue or uncertainty, rather than from phones or notifications.",
+    "He writes that the drive to escape discomfort is the root of human motivation, and so 'time management is pain management.'",
+    "Removing technology alone doesn't solve the problem, because people will find another way to escape the discomfort.",
+    "His first step is to identify the internal trigger: notice the feeling that precedes the distraction and write it down, including the time and what you were doing.",
+    "He suggests 'surfing the urge': observe the craving with curiosity until it passes, instead of acting on it or fighting it.",
+    "His '10-minute rule': when tempted, tell yourself you can give in, but only after waiting ten minutes."
+  ],
+  "tension": "You can switch off every notification and still find yourself reaching for something else, because what you're escaping is a feeling, not a ping.",
+  "opening_idea": "Start at the moment a hard task gets uncomfortable and the hand moves toward the phone. Ask what the reader was feeling one second before.",
+  "lessons": [
+    {
+      "idea": "Distraction is usually an escape from an internal feeling, not a response to an outside interruption.",
+      "anchor": "'Time management is pain management'"
+    },
+    {
+      "idea": "You can't manage an urge you haven't noticed, so noticing the feeling comes first.",
+      "anchor": "Eyal's advice to write down the internal trigger and the moment it arrived"
+    },
+    {
+      "idea": "An urge can be waited out rather than obeyed or suppressed.",
+      "anchor": "Surfing the urge and the 10-minute rule"
+    }
+  ],
+  "reflect": [
+    "When a task gets hard, which feeling shows up first: boredom, anxiety, uncertainty or fatigue?",
+    "Have you ever blocked one distraction only to find another one?",
+    "What happened the last time you waited out an urge instead of acting on it?"
+  ],
+  "reflect_final": "The next time you feel the pull away from a hard task, name the feeling on paper and wait ten minutes before switching. Notice whether the urge is still there.",
+  "use_cases": [
+    {
+      "situation": "Working on a difficult document and repeatedly opening email or chat.",
+      "move": "Keep a sticky note by the keyboard. Each time you reach for email, write the feeling (bored, stuck, anxious) and the time, then try Eyal's 10-minute rule before switching.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member says notifications keep derailing their focus.",
+      "move": "Ask not only 'what interrupts you?' but 'what are you usually working on when you go look?' Eyal's point that distraction often starts internally may reveal the hard task behind it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A child keeps leaving homework to grab a tablet.",
+      "move": "Ask what felt hard just before they got up, and agree they can have the tablet after ten more minutes of trying, not right now.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Before the phone, there's a feeling. Catch the feeling and you can decide what to do with the phone.",
+  "conversation_variants": {
+    "punchline_idea": "Eyal says time management is really pain management: we reach for distractions to escape a feeling.",
+    "thirty_sec_idea": "Eyal argues distraction mostly starts inside, with boredom or anxiety. His fix is to notice and write down that feeling, then wait ten minutes before giving in.",
+    "question_idea": "Ask what feeling usually comes right before they check their phone during hard work.",
+    "key_contrast_idea": "Blaming the phone versus noticing the feeling that sent you to it."
+  }
+}

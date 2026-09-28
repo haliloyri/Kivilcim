@@ -1,0 +1,58 @@
+{
+  "story_id": 1334,
+  "kind": "concept",
+  "book": {
+    "title": "Her Şey Yolunda (Everything Is F*cked: A Book About Hope)",
+    "author": "Mark Manson",
+    "year": "2019"
+  },
+  "confidence": "low",
+  "confidence_note": "Attribution is doubtful. Manson's most developed discussion of mortality (Ernest Becker's 'The Denial of Death', memento mori, and his account of a friend's death when he was young) is in The Subtle Art of Not Giving a F*ck, not clearly in Everything Is F*cked; those details are therefore not used as facts for this book. The TR quote ('facing death clears away the most meaningless parts of life') could not be verified and is excluded, as are the TR's examples about social media and arguments. Facts are limited to the general idea of mortality awareness clarifying priorities, which is consistent with Manson's work but not verified for this specific book. Not checked against the text.",
+  "facts": [
+    "The idea attributed to Manson is that remembering you will die clarifies what matters and what doesn't.",
+    "The practice draws on the Stoic phrase 'memento mori', 'remember that you will die'.",
+    "The claim is that facing mortality, rather than avoiding the thought, helps people drop trivial concerns and choose what they value.",
+    "The source does not supply a specific case here; no example is attributed to this book."
+  ],
+  "tension": "Thinking about death sounds like a way to feel worse, yet the claim is that it is one of the clearest ways to decide what deserves your time.",
+  "opening_idea": "Open with the two words 'memento mori' and the idea of carrying a reminder of death as a tool for choosing, not a source of gloom.",
+  "lessons": [
+    {
+      "idea": "Mortality puts a limit on time, which forces priorities into view.",
+      "anchor": "memento mori"
+    },
+    {
+      "idea": "Avoiding the thought of death lets trivial worries take up room.",
+      "anchor": "the claim that facing mortality clears trivial concerns"
+    }
+  ],
+  "reflect": [
+    "What worry from last month would look small if you remembered time is limited?",
+    "Who or what do you keep postponing as if there will always be time?"
+  ],
+  "reflect_final": "Before your next free evening, ask which use of it you'd still endorse if time were short, and notice whether you choose differently.",
+  "use_cases": [
+    {
+      "situation": "A team is spending hours on a minor dispute over naming conventions.",
+      "move": "Ask 'In a year, will this matter?' and timebox the decision to ten minutes.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You keep postponing a visit to an older relative.",
+      "move": "Put a specific date for the visit in the calendar this week.",
+      "context": "family"
+    },
+    {
+      "situation": "You're stuck choosing between two commitments for the weekend.",
+      "move": "Use the memento mori question, 'which would I regret skipping if time were short?', and pick that one.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Memento mori works like a filter: remembering the time is finite sorts what matters from what only feels urgent.",
+  "conversation_variants": {
+    "punchline_idea": "The Stoics carried a reminder that they would die, not to feel gloomy, but to decide what mattered.",
+    "thirty_sec_idea": "The Stoic practice of memento mori, remembering you'll die, is offered as a way to strip away trivial worries and clarify which choices really matter.",
+    "question_idea": "What would you stop doing this month if you took seriously that your time is limited?",
+    "key_contrast_idea": "Avoiding the thought of death versus using it to decide what matters."
+  }
+}

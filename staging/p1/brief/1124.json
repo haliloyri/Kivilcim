@@ -1,0 +1,70 @@
+{
+  "story_id": 1124,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Power of Habit (Alışkanlıkların Gücü)",
+    "author": "Charles Duhigg",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core Lisa Allen story from the book's prologue is well established: a chaotic life, a trip to Cairo, a decision to quit smoking tied to a desert trek, then running, then a cascade of changes studied by researchers. The existing TR text departs from the book in several ways. In the book the first keystone change was quitting smoking, not a vow to run every day; running came afterward. The researchers' observations cover several years, not one. The claims about meditation, journaling and early rising, and the identity framing ('I am a runner'), are not Duhigg's; the identity framing is closer to later habit writers. Duhigg's own keystone examples are exercise, family dinners, making your bed, and Alcoa's focus on worker safety. Specific figures such as her age, pounds lost and exact years are omitted because they are not certain enough to state.",
+  "facts": [
+    "Before the change, Lisa Allen smoked, drank, struggled with her weight, was in debt, and her marriage had ended.",
+    "On a trip to Cairo, at a low point, she decided she would come back and trek across the desert. To do that she would have to quit smoking.",
+    "Focusing on that one habit, quitting smoking, led her to take up running. Running in turn reshaped how she ate, worked, slept and managed money.",
+    "Over the following years she stopped smoking, lost a lot of weight, ran a marathon, got her finances in order and rebuilt her life. She did not set out to fix each of these separately.",
+    "Researchers studying habit change scanned her brain. They saw that new habit patterns had overridden the old ones, though the old neural patterns were still present.",
+    "Duhigg calls such habits 'keystone habits': changing one habit sets off a chain reaction in other habits and routines.",
+    "Among his examples of keystone habits are regular exercise, family dinners, and Alcoa's organization-wide focus on worker safety."
+  ],
+  "tension": "Her life had failed in many areas at once. The way out was not a plan to fix all of them. It was one narrow commitment that quietly pulled everything else along.",
+  "opening_idea": "Open with the list of everything going wrong in her life, then reveal that the turnaround began with a single decision in a Cairo hotel room.",
+  "lessons": [
+    {
+      "idea": "Some habits are keystones: change them and other habits reorganize around them.",
+      "anchor": "Quitting smoking led to running, and running reshaped her eating, sleep, work and money."
+    },
+    {
+      "idea": "Attacking every problem at once tends to fail. Picking one leverage point is more effective.",
+      "anchor": "Allen did not set out to fix her debt or her diet. She committed to one goal: quit smoking to make the desert trek."
+    },
+    {
+      "idea": "Old habits are not erased. They are overridden by new routines, so vigilance still matters.",
+      "anchor": "Brain scans showed her old patterns still present, with new patterns layered over them."
+    },
+    {
+      "idea": "A concrete, meaningful goal gives a single habit change its pull.",
+      "anchor": "The desert trek gave her quitting a reason bigger than 'being healthier'."
+    }
+  ],
+  "reflect": [
+    "Which area of your life, if it improved, would make several other areas easier almost automatically?",
+    "Are you trying to fix too many habits at the same time right now?",
+    "What old habit of yours is only 'dormant' and could return under stress?"
+  ],
+  "reflect_final": "If you could change only one habit this month, which one would pull the most others along with it?",
+  "use_cases": [
+    {
+      "situation": "Your team has a long list of process problems and wants to tackle all of them this quarter.",
+      "move": "Propose picking one metric or routine to obsess over, the way Alcoa did with safety, and ask: 'Which one fix would force the others to improve?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "Family evenings are chaotic, with screens, no shared time and late bedtimes.",
+      "move": "Suggest a single fixed family dinner a few nights a week, instead of a set of new rules.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel stuck and keep writing long self-improvement lists that you abandon.",
+      "move": "Cross out everything except one habit tied to a concrete goal you care about, and track only that for 30 days.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Don't fix everything. Find the one habit that drags the rest along with it.",
+  "conversation_variants": {
+    "punchline_idea": "A woman who was failing at nearly everything rebuilt her life by focusing on just one habit.",
+    "thirty_sec_idea": "In Cairo, Lisa Allen decided to quit smoking so she could trek the desert. That led to running, and running changed her diet, sleep, work and finances. Duhigg calls this a keystone habit.",
+    "question_idea": "Ask the listener which single habit in their life they suspect is secretly driving many others.",
+    "key_contrast_idea": "Overhauling ten habits at once usually collapses. Changing one keystone habit can quietly change ten."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1237,
+  "kind": "concept",
+  "book": {
+    "title": "Building a StoryBrand",
+    "author": "Donald Miller",
+    "year": "2017"
+  },
+  "confidence": "high",
+  "confidence_note": "Miller's StoryBrand 7-part framework (SB7) is the core of the book: a Character who wants something encounters a Problem, meets a Guide who understands their fear, gives them a Plan, Calls them to action, which helps them avoid Failure and ends in Success. He calls the resulting message a BrandScript, and repeatedly stresses that if you confuse, you'll lose: customers won't spend energy trying to understand an unclear message. Details paraphrased.",
+  "facts": [
+    "Miller argues that most marketing fails because it is confusing: companies say too much, in too complicated a way.",
+    "His rule: 'If you confuse, you'll lose.' Customers won't burn mental energy figuring out what you offer.",
+    "He proposes a seven-part story framework (SB7): a Character (the customer) wants something; they have a Problem; they meet a Guide (the brand); who gives them a Plan; and Calls them to action; that helps them avoid Failure; and ends in Success.",
+    "The Problem has external, internal and philosophical levels; companies often address only the external one, while customers buy solutions to internal frustrations.",
+    "A clear Plan, often just a few simple steps, reduces customers' fear of taking action.",
+    "The completed framework, which he calls a BrandScript, guides a company's website, emails and pitches."
+  ],
+  "tension": "Companies with good products lose to competitors with clearer messages.",
+  "opening_idea": "A customer lands on a website and has about five seconds to understand what it offers. Most sites fail the test.",
+  "lessons": [
+    {
+      "idea": "Clarity beats cleverness.",
+      "anchor": "'If you confuse, you'll lose'"
+    },
+    {
+      "idea": "Tell a simple story with the customer at the center.",
+      "anchor": "SB7 framework"
+    },
+    {
+      "idea": "Address the internal problem, not just the external one.",
+      "anchor": "Levels of the Problem"
+    }
+  ],
+  "reflect": [
+    "Could a stranger explain what you offer after five seconds?",
+    "What internal problem does your work actually solve?"
+  ],
+  "reflect_final": "How would your message read if you wrote it as a simple seven-part story?",
+  "use_cases": [
+    {
+      "situation": "Your website is full of features and jargon.",
+      "move": "Rewrite the top section as problem, plan and success in three sentences.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You struggle to explain your freelance services.",
+      "move": "Write your one-paragraph BrandScript: the client, their problem, your plan, their success.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend's startup pitch confuses investors.",
+      "move": "Help them tell it as a simple story about one customer's problem and success.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "If you confuse, you'll lose; tell a simple story instead.",
+  "conversation_variants": {
+    "punchline_idea": "Great products lose to clear messages.",
+    "thirty_sec_idea": "If you confuse, you'll lose; the seven parts; internal problems; BrandScript.",
+    "question_idea": "Could a stranger understand what you offer in five seconds?",
+    "key_contrast_idea": "Clever versus clear"
+  }
+}

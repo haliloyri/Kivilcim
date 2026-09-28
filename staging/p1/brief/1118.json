@@ -1,0 +1,65 @@
+{
+  "story_id": 1118,
+  "kind": "anecdote",
+  "book": {
+    "title": "Beyin Fırtınası (The Brain: The Story of You)",
+    "author": "David Eagleman",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core H.M. facts are well established: Henry Molaison, surgery in 1953 at about age 27 for severe epilepsy, removal of medial temporal lobe tissue including much of the hippocampus, seizures reduced, profound inability to form new long-term memories, death in 2008, and one of neuroscience's most studied patients. Three points are uncertain. First, it is not fully certain how much detail Eagleman gives on H.M. in this book. Second, the line that memory 'builds the future' matches his broader discussion that amnesic patients struggle to imagine future scenarios, but the exact wording should not be attributed to him as a quote. Third, 'waking up in 1953 every day' and greeting a long-time researcher as a stranger are popular dramatizations. They are consistent with the case but should be phrased loosely. The Turkish title given may not match the published Turkish edition's title.",
+  "facts": [
+    "Henry Molaison, known in the literature as H.M., suffered severe, disabling epileptic seizures as a young man.",
+    "In 1953, at about age 27, surgeons removed parts of his medial temporal lobes, including much of the hippocampus, to stop the seizures.",
+    "The operation substantially reduced his seizures.",
+    "Afterward he could no longer form new lasting memories. People he met repeatedly, including researchers who studied him for decades, remained strangers to him.",
+    "His older memories, personality and intelligence stayed largely intact, which showed that memory depends on specific brain structures.",
+    "He was studied extensively until his death in 2008 and became one of the most famous cases in neuroscience.",
+    "Eagleman uses such amnesia cases to argue that memory is not a fixed archive. People with hippocampal damage also have trouble imagining future scenarios, which suggests the brain uses the past to simulate the future."
+  ],
+  "tension": "A surgery that cured his seizures silently took away his ability to form new memories, and with them his ability to picture a tomorrow.",
+  "opening_idea": "Imagine meeting the same person for decades and greeting them as a stranger every single time.",
+  "lessons": [
+    {
+      "idea": "Memory is handled by specific brain structures. Removing the hippocampus blocked new long-term memories while leaving old ones and intelligence largely intact.",
+      "anchor": "H.M.'s 1953 surgery and its aftermath"
+    },
+    {
+      "idea": "The brain uses stored past experience as raw material to imagine and plan the future.",
+      "anchor": "Amnesic patients' difficulty imagining future scenarios"
+    },
+    {
+      "idea": "Without new memories, time effectively stops. Identity gets frozen at the last point memories could be recorded.",
+      "anchor": "H.M. meeting familiar researchers as strangers for decades"
+    }
+  ],
+  "reflect": [
+    "Which past experience do you lean on most when you make plans?",
+    "If you couldn't remember yesterday, what would change about how you choose today?"
+  ],
+  "reflect_final": "Which of your memories is quietly drafting your next decision?",
+  "use_cases": [
+    {
+      "situation": "A team is planning a new project without looking at what went wrong last time.",
+      "move": "Open the planning meeting with a 10-minute 'what did we learn last time' round before anyone proposes a plan.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You feel stuck and can't picture where you want to be in a year.",
+      "move": "Write down three concrete past moments when you felt most capable, then build one future goal directly from each.",
+      "context": "self"
+    },
+    {
+      "situation": "An aging parent is losing touch with daily events and seems anxious about the future.",
+      "move": "Keep a shared weekly notebook or photo log together and review it at each visit, giving them a 'yesterday' to plan from.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Memory isn't only a record of the past. It's the material the brain uses to sketch the future.",
+  "conversation_variants": {
+    "punchline_idea": "A man who couldn't remember yesterday couldn't really imagine tomorrow either.",
+    "thirty_sec_idea": "Summarize H.M.: epilepsy surgery in 1953, seizures eased, no new memories afterward, studied until 2008, which revealed that the past fuels our ability to imagine the future.",
+    "question_idea": "Ask whether they think they could plan a vacation if they couldn't form any new memories.",
+    "key_contrast_idea": "Contrast memory seen as a filing cabinet of the past with memory seen as a workshop for building the future."
+  }
+}

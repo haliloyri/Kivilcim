@@ -1,0 +1,63 @@
+{
+  "story_id": 1068,
+  "kind": "concept",
+  "book": {
+    "title": "Şimdi Başla (The Now Habit)",
+    "author": "Neil Fiore",
+    "year": "1988"
+  },
+  "confidence": "medium",
+  "confidence_note": "The concept is well attested in the book. Fiore's 'guilt-free play' and the 'Unschedule' (planning leisure and fixed commitments first, then fitting in short blocks of quality work) are central to The Now Habit. The specific anecdote in the existing TR text cannot be verified as coming from the book and may be invented or embellished: an Italian painter working 12 hours a day, told to stop working for a week, who came back with too many ideas to write down. That anecdote is therefore excluded. The facts below describe only what the concept claims. The TR label 'Yapılandırılmış Oyun Zamanı' is a loose rendering. Fiore's own term is 'guilt-free play'.",
+  "facts": [
+    "Fiore argues that procrastinators and overworkers often deny themselves leisure until work is 'finished'. This makes work feel like an endless sentence that they come to resent and avoid.",
+    "His remedy is to schedule guilt-free play first: recreation, time with friends and exercise are committed in advance, not earned afterward.",
+    "The 'Unschedule' is a weekly plan built from existing commitments and leisure first. Work is then logged in short blocks of focused 'quality time' (around 30 minutes) after it is done.",
+    "The claim is that protected play makes work time scarcer and more valuable, which lowers resistance to starting and improves the quality of the work.",
+    "Fiore presents rest and play as part of a productive system, not as a reward for productivity or a sign of laziness."
+  ],
+  "tension": "Working longer and denying yourself rest feels like the responsible cure for falling behind. Fiore says that very deprivation feeds the avoidance and burnout it is meant to fix.",
+  "opening_idea": "Open with the familiar picture of someone who is always 'working' yet rarely produces anything they are proud of. Then reveal Fiore's counterintuitive prescription: put play on the calendar before work.",
+  "lessons": [
+    {
+      "idea": "Leisure postponed until 'after the work is done' turns work into a resented prison, which breeds procrastination.",
+      "anchor": "guilt-free play"
+    },
+    {
+      "idea": "Scheduling fun and fixed commitments first makes remaining work time feel limited and precious, so starting becomes easier.",
+      "anchor": "the Unschedule"
+    },
+    {
+      "idea": "Short, focused blocks of quality work count for more than long, distracted hours.",
+      "anchor": "30-minute quality blocks"
+    }
+  ],
+  "reflect": [
+    "Do you treat rest as something you have to earn, or as something you plan?",
+    "When did long hours last produce less than a short, focused session?"
+  ],
+  "reflect_final": "If you put one guilt-free thing you enjoy on this week's calendar before any work, what would it be, and how might it change how you face the work?",
+  "use_cases": [
+    {
+      "situation": "A team is pushing late nights to catch up on a stalled project.",
+      "move": "Propose a fixed hard stop each evening plus two protected focus blocks per day, and track output in those blocks instead of hours logged.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague says they can't take a weekend off until the backlog is cleared.",
+      "move": "Ask: 'What's one thing you'd enjoy this weekend? Book it first, and plan work around it.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You keep putting off a big task while feeling you never get a break.",
+      "move": "Write next week's leisure and commitments into your calendar first, then record each finished 30-minute work block afterward.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Schedule the play first; the work gets easier to start when it isn't standing between you and your life.",
+  "conversation_variants": {
+    "punchline_idea": "Fiore's cure for procrastination is to plan your fun before your work.",
+    "thirty_sec_idea": "Fiore saw that people who deny themselves leisure end up resenting and avoiding work, so he has them book guilt-free play first and count only short focused blocks of real work.",
+    "question_idea": "What would happen to your to-do list if your free time were non-negotiable?",
+    "key_contrast_idea": "Rest as a reward you earn versus rest as a commitment you schedule first."
+  }
+}

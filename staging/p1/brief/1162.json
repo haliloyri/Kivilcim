@@ -1,0 +1,65 @@
+{
+  "story_id": 1162,
+  "kind": "anecdote",
+  "book": {
+    "title": "Blink: The Power of Thinking Without Thinking",
+    "author": "Malcolm Gladwell",
+    "year": "2005"
+  },
+  "confidence": "high",
+  "confidence_note": "The Getty kouros is the opening story of Blink. Corrections to the reference TR text: Federico Zeri was an Italian art historian, not Greek; and the kouros was never definitively proven fake. Gladwell reports that the museum's documentation turned out to be forged and that doubts grew, and the Getty's label still describes it as ancient Greek or a modern forgery. The sale price is given in the book as just under $10 million, and the investigation lasted about fourteen months. Experts' reactions are paraphrased: Zeri noticed something wrong with the fingernails; Evelyn Harrison felt an 'intuitive repulsion'; Thomas Hoving's first thought was the word 'fresh'.",
+  "facts": [
+    "In 1983 an art dealer offered the J. Paul Getty Museum a marble statue said to be a kouros, a Greek statue of a standing youth from the 6th century BC, for just under $10 million.",
+    "The Getty investigated for about fourteen months. A geologist analysed the marble with scientific tests, and the museum's lawyers checked documentation of the statue's history. The Getty concluded it was genuine and bought it.",
+    "When the Italian art historian Federico Zeri saw it, he found himself staring at the statue's fingernails; something seemed wrong.",
+    "Evelyn Harrison, an expert on Greek sculpture, felt an immediate sense that something was off. Thomas Hoving, former director of the Metropolitan Museum of Art, said the first word that came to mind was 'fresh'.",
+    "Greek experts who saw it described an intuitive sense of revulsion or of seeing something that wasn't right.",
+    "Later investigation found that some of the documents supporting its history were forged. The kouros remains disputed; the Getty labels it as ancient Greek or a modern forgery.",
+    "Gladwell uses the story to open the book: experts' snap judgments in the first two seconds sometimes captured something that months of analysis missed."
+  ],
+  "tension": "Fourteen months of science said the statue was real. A few seconds of looking said otherwise.",
+  "opening_idea": "A museum spends over a year proving a statue is genuine, and an expert looks at its fingernails and frowns.",
+  "lessons": [
+    {
+      "idea": "Deep expertise can see what formal analysis misses.",
+      "anchor": "Zeri and the fingernails"
+    },
+    {
+      "idea": "Experts often feel before they can explain.",
+      "anchor": "Harrison's revulsion, Hoving's 'fresh'"
+    },
+    {
+      "idea": "Wanting something to be true can blind careful analysis.",
+      "anchor": "The museum's eagerness to own a rare kouros"
+    }
+  ],
+  "reflect": [
+    "When has a quick expert impression beaten a long analysis in your field?",
+    "Where might wanting a result have shaped how you checked it?"
+  ],
+  "reflect_final": "What first impression in your work have you been talking yourself out of?",
+  "use_cases": [
+    {
+      "situation": "Your team has done a thorough analysis, but a senior expert feels uneasy.",
+      "move": "Ask the expert to look again and name what jumps out before signing off.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You really want a new hire or deal to work out.",
+      "move": "Ask someone neutral for their first impression before relying on your own analysis.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague's instant reaction contradicts your data.",
+      "move": "Treat their reaction as a lead to investigate, not an insult to your work.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Sometimes two seconds of expertise sees what fourteen months of analysis missed.",
+  "conversation_variants": {
+    "punchline_idea": "Science said the statue was real; an expert's glance at its fingernails said otherwise.",
+    "thirty_sec_idea": "The Getty kouros, 14 months of tests, experts' snap reactions, forged papers.",
+    "question_idea": "What first impression have you argued yourself out of?",
+    "key_contrast_idea": "Analysis versus eye"
+  }
+}

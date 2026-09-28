@@ -98,6 +98,31 @@ Custom skills in `.github/skills/`:
 | **db-migration** | `veritabanı değiştir`, `tablo ekle`, `schema güncelle` |
 | **proofread-stories** | `hikayeleri kontrol et`, `dil dil kontrol et`, `parça parça kontrol et`, `yazım yanlışı var mı`, `onaylı düzeltmeleri uygula` |
 
+## Story Content Pipeline (P1 rewrite) — rules for every agent
+The 770 book stories are being rewritten into the "P1" podcast-style format.
+Plan: [HIKAYE_DONUSUM_PLANI.md](HIKAYE_DONUSUM_PLANI.md) · conversation cards:
+[SOHBETTE_KULLAN_ENTEGRASYON_PLANI.md](SOHBETTE_KULLAN_ENTEGRASYON_PLANI.md) ·
+automated (Anthropic Batch) pipeline: [batch/README.md](batch/README.md).
+
+**Where things live**
+- Source per story: `staging/p1/manifest.json` (one entry per `story_id`; read only the entries you need — the file is ~1.3 MB).
+- Official outputs: `staging/p1/brief/<id>.json`, `staging/p1/<lang>/<id>.md`, `staging/p1/<lang>/<id>.variants.json`.
+- Progress report (free, no API): `node batch/07-status.mjs en --list`.
+
+**Hard rules**
+1. **Never create, edit or overwrite anything in `staging/p1/brief/` or `staging/p1/<lang>/`** unless the user explicitly asks. These are the production outputs of the Batch pipeline (Claude Opus), which skips any id whose file already exists.
+2. Never write to `assets/kivilcim.db` and never run `scripts/p1/apply-to-db.mjs` or anything that touches Supabase — the user applies content to the DB by hand after review.
+3. Agent-made stories go to a **separate folder**: `staging/p1-<agent>/` (e.g. `staging/p1-codex/brief/`, `staging/p1-codex/en/`).
+4. Use cards in `[[use]]` MUST start with `%%context:<meeting|oneonone|family|social|self> | ` — the app parser (`src/utils/storyMarkup.js`) needs the literal `context:` prefix.
+5. Validate before reporting: `node scripts/p1/validate-dir.mjs en staging/p1-codex/en <ids>` must print `N/N passed`.
+
+**Producing a story by hand (same inputs the Batch pipeline uses)**
+1. `node batch/08-export-agent-inputs.mjs en <ids>` → writes `staging/p1-codex/inputs/`:
+   `brief-system.md`, `story-system.en.md`, `<id>.brief-user.md`.
+2. Brief step: follow `brief-system.md` as your system instructions, `<id>.brief-user.md` as the request → save the JSON object (no code fences) to `staging/p1-codex/brief/<id>.json`.
+3. Story step: follow `story-system.en.md`, with your own brief as the input → save the ```story block body to `staging/p1-codex/en/<id>.md` and the ```variants block body to `staging/p1-codex/en/<id>.variants.json`.
+4. Stay faithful to the BOOK: do not invent anecdotes, quotes, numbers or names the book does not contain; set `confidence` honestly in the brief.
+
 ## Prefer Links, Not Duplication
 This file is intentionally concise. For detailed operational steps and troubleshooting:
 - Android build details: [ANDROID_APK_REHBERI.md](ANDROID_APK_REHBERI.md)

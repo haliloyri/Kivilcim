@@ -1,0 +1,72 @@
+{
+  "story_id": 1100,
+  "kind": "anecdote",
+  "book": {
+    "title": "Mindset: The New Psychology of Success (Turkish edition title as given: Zihin Gücü)",
+    "author": "Carol S. Dweck",
+    "year": "2006"
+  },
+  "confidence": "high",
+  "confidence_note": "The praise study is a central, well-documented example in the book (based on Mueller & Dweck's research). The core design and outcomes are reliable. The book gives specific percentages for task choice and for students misreporting their scores, but they are omitted here to avoid misquoting exact figures. The reference text has the sequence wrong in one place. In the book, children chose between an easy and a challenging task right after the praise, before the hard problems. It was not after the failure. The brief follows the book's order.",
+  "facts": [
+    "Dweck's team gave hundreds of students, mostly early adolescents, a set of fairly challenging problems from a nonverbal IQ test. Most did quite well.",
+    "Afterward, one group was praised for ability ('You must be smart at this'). The other was praised for effort ('You must have worked really hard').",
+    "The two groups started out equal in performance.",
+    "Right after the praise, the students were offered a choice: an easier task they would surely do well on, or a challenging task they could learn from.",
+    "Most ability-praised students picked the safe, easy task. A large majority of effort-praised students picked the challenging one.",
+    "All students were then given much harder problems, and nobody did well on them.",
+    "After the difficulty, ability-praised students concluded they weren't smart after all and stopped enjoying the problems. Effort-praised students saw the struggle as a sign they needed to try harder, and many said they liked the hard problems best.",
+    "On a final set of problems as easy as the first, ability-praised students performed worse than they had at the start. Effort-praised students performed better.",
+    "Many ability-praised students also inflated their scores when reporting them to peers. Dweck notes that a single line of praise led ordinary children to lie.",
+    "Dweck concludes that praising intelligence pushes children toward a fixed mindset. Praising effort and process supports a growth mindset."
+  ],
+  "tension": "Telling a child 'you're smart' feels like the kindest, most confidence-building thing a parent or teacher can say. Yet in the experiment, that single sentence made children avoid challenges, lose enjoyment, perform worse, and even lie.",
+  "opening_idea": "Two groups of children did equally well on the same test. The only difference was one sentence of praise, and it sent them in opposite directions.",
+  "lessons": [
+    {
+      "idea": "Praise for ability teaches children that their worth depends on looking smart, so they avoid anything that might expose them.",
+      "anchor": "Ability-praised students chose the easy task over the one they could learn from."
+    },
+    {
+      "idea": "Praise for effort frames difficulty as part of learning rather than a verdict on who you are.",
+      "anchor": "Effort-praised students enjoyed the hard problems and kept trying."
+    },
+    {
+      "idea": "The kind of praise changes more than feelings. It changes actual later performance.",
+      "anchor": "On the final easy set, the effort group improved and the ability group declined."
+    },
+    {
+      "idea": "When identity is tied to being smart, failure becomes something to hide.",
+      "anchor": "Many ability-praised children misreported their scores."
+    }
+  ],
+  "reflect": [
+    "When you were growing up, were you mostly praised for being talented or for trying hard?",
+    "When did you last choose the easy option mainly to avoid looking incapable?"
+  ],
+  "reflect_final": "What sentence of praise do you most often use with others, and is it about who they are or what they did?",
+  "use_cases": [
+    {
+      "situation": "Your child brings home a good grade or finishes a hard puzzle.",
+      "move": "Instead of 'You're so smart,' name the process: 'You kept trying different ways until one worked. That's why you got it.'",
+      "context": "family"
+    },
+    {
+      "situation": "A team member delivers strong work and you're giving feedback.",
+      "move": "Point to the specific choices and effort: 'The way you tested three versions before picking one made this work.' Avoid a blanket 'You're a natural.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're about to decline a stretch assignment because you might look bad if you struggle.",
+      "move": "Ask yourself, 'Am I choosing the easy task to protect an image?' Then take the one you'll learn more from.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Praise the effort and strategy, not the talent. Talent praise makes people protect an image, while effort praise makes them seek challenge.",
+  "conversation_variants": {
+    "punchline_idea": "One sentence, 'you're smart' versus 'you worked hard,' made children either avoid challenges or embrace them.",
+    "thirty_sec_idea": "Dweck praised kids for either intelligence or effort after an easy test. The 'smart' kids chose easy tasks, fell apart on hard ones, and scored worse later, while the 'hard-working' kids sought challenge and improved.",
+    "question_idea": "Would you guess that calling a child smart could make them perform worse and even lie about their scores?",
+    "key_contrast_idea": "Same children, same starting scores: ability praise led to retreat and decline, while effort praise led to challenge-seeking and improvement."
+  }
+}

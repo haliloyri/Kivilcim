@@ -1,0 +1,65 @@
+{
+  "story_id": 1199,
+  "kind": "concept",
+  "book": {
+    "title": "When: The Scientific Secrets of Perfect Timing",
+    "author": "Daniel H. Pink",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text centres on Ernest Hemingway's morning writing routine and a contrast with F. Scott Fitzgerald, attributing to Pink a finding that 'mornings are for analysis, afternoons for creativity, evenings for connection'. Those details cannot be confirmed in the book and are left out. The book's core timing findings are well established: most people's mood and performance follow a daily pattern of peak, trough and recovery (rebound); chronotypes differ, with larks, owls and 'third birds' (the majority, in between); for most people, analytic tasks go best in the morning peak, while insight tasks can go better in the recovery period when inhibition is lower; and a Danish study found students scored lower on standardized tests taken later in the day.",
+  "facts": [
+    "Pink describes a daily pattern for most people: a peak (usually morning), a trough (early to mid-afternoon) and a recovery or rebound (late afternoon and early evening).",
+    "Owls, people with late chronotypes, experience the pattern roughly in reverse.",
+    "He describes three chronotypes: larks (early risers), owls (night people) and 'third birds', the majority in between.",
+    "Analytic tasks that require focus and vigilance tend to go best during the peak.",
+    "Insight or creative tasks can go better during the recovery period, when we are a bit less focused and less inhibited, which helps new connections form.",
+    "He cites a study of Danish schoolchildren: those who took standardized tests later in the day scored lower than those who took them in the morning; breaks helped offset the decline.",
+    "His advice: know your type, and match the task to the time."
+  ],
+  "tension": "We schedule our days around meetings and habits, not around when our minds actually work best.",
+  "opening_idea": "Your brain at 9 a.m. and your brain at 3 p.m. are, in important ways, not the same brain.",
+  "lessons": [
+    {
+      "idea": "Your day has a pattern of peak, trough and recovery.",
+      "anchor": "Pink's daily cycle"
+    },
+    {
+      "idea": "Different tasks suit different times.",
+      "anchor": "Analytic tasks at the peak, insight tasks in the recovery"
+    },
+    {
+      "idea": "Timing affects outcomes, not just mood.",
+      "anchor": "Danish test scores later in the day"
+    }
+  ],
+  "reflect": [
+    "Are you a lark, an owl or a third bird?",
+    "When do you currently do your most demanding work?"
+  ],
+  "reflect_final": "What one task could you move to a better time of day starting tomorrow?",
+  "use_cases": [
+    {
+      "situation": "Your team schedules important decisions late in the afternoon.",
+      "move": "Move key analytical decisions to morning slots.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You do email in your best morning hours and deep work in the afternoon slump.",
+      "move": "Swap them: deep work at your peak, email in the trough.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child struggles with homework right after a long school day.",
+      "move": "Schedule a break or snack first, and do the hardest subject at their best time.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Don't just decide what to do; decide when to do it.",
+  "conversation_variants": {
+    "punchline_idea": "The same brain performs very differently at 9 a.m. and 3 p.m.",
+    "thirty_sec_idea": "Peak-trough-recovery, chronotypes, analytic vs insight timing, Danish tests.",
+    "question_idea": "Are you a lark, an owl or a third bird?",
+    "key_contrast_idea": "What versus when"
+  }
+}

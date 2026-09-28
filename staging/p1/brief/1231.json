@@ -1,0 +1,63 @@
+{
+  "story_id": 1231,
+  "kind": "concept",
+  "book": {
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "year": "5th century BC (traditional dating)"
+  },
+  "confidence": "high",
+  "confidence_note": "The passage comes from the chapter on attack by stratagem (chapter 3). In Lionel Giles's public-domain translation: in the practical art of war, the best thing of all is to take the enemy's country whole and intact; to shatter and destroy it is not so good; hence to fight and conquer in all your battles is not supreme excellence; supreme excellence consists in breaking the enemy's resistance without fighting. The highest form of generalship is to balk the enemy's plans; next, to prevent the junction of the enemy's forces; next, to attack the enemy's army in the field; and the worst policy of all is to besiege walled cities. Quotations are from Giles (1910).",
+  "facts": [
+    "In the chapter on attack by stratagem, Sun Tzu says the best outcome is to take the enemy's country whole and intact; destroying it is less good.",
+    "He writes that fighting and winning every battle is not supreme excellence; supreme excellence consists in breaking the enemy's resistance without fighting.",
+    "He ranks strategies: the highest form of generalship is to balk (thwart) the enemy's plans; next is to prevent the joining of the enemy's forces; next is to attack the enemy's army in the field; the worst is to besiege walled cities.",
+    "Sieges are the worst because they are slow, costly and destroy what you might have gained.",
+    "The underlying idea: the most skillful victory is the one that costs least, often achieved before open conflict begins."
+  ],
+  "tension": "We tend to admire people who win every fight. Sun Tzu admired those who never needed to fight.",
+  "opening_idea": "Winning a hundred battles sounds like the peak of success. Sun Tzu says it isn't.",
+  "lessons": [
+    {
+      "idea": "The best win avoids the fight.",
+      "anchor": "'Breaking the enemy's resistance without fighting'"
+    },
+    {
+      "idea": "Address plans before they become battles.",
+      "anchor": "Thwarting the enemy's plans"
+    },
+    {
+      "idea": "Costly victories can be defeats in disguise.",
+      "anchor": "Besieging walled cities as the worst option"
+    }
+  ],
+  "reflect": [
+    "Which conflict in your life could be resolved before it becomes a fight?",
+    "Where are you winning battles but losing more than you gain?"
+  ],
+  "reflect_final": "What would it look like to get what you need here without a fight?",
+  "use_cases": [
+    {
+      "situation": "Two departments are heading toward an open conflict over a project.",
+      "move": "Meet both leads early and address the underlying plan before positions harden.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You and your partner keep having the same argument.",
+      "move": "Talk about the root issue at a calm moment, before the next fight starts.",
+      "context": "family"
+    },
+    {
+      "situation": "You're about to fight hard over a minor issue at work.",
+      "move": "Ask whether winning is worth what the fight will cost.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The greatest victory is the one you win without having to fight.",
+  "conversation_variants": {
+    "punchline_idea": "For Sun Tzu, winning every battle wasn't the highest skill; not needing to fight was.",
+    "thirty_sec_idea": "Take it whole, supreme excellence without fighting, the ranking of strategies.",
+    "question_idea": "Which fight could you avoid by addressing it earlier?",
+    "key_contrast_idea": "Winning battles versus avoiding them"
+  }
+}

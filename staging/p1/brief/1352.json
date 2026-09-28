@@ -1,0 +1,58 @@
+{
+  "story_id": 1352,
+  "kind": "concept",
+  "book": {
+    "title": "Bir Sonraki Seviye (The 5AM Club)",
+    "author": "Robin Sharma",
+    "year": "2018"
+  },
+  "confidence": "low",
+  "confidence_note": "The '1-3-5 rule' (one big, three medium, five small tasks) in the TR text is a widely circulated productivity technique that could not be attributed to Robin Sharma, and the claim that he studied leaders' morning routines and found this pattern, plus the quote about 9 versus 50 tasks, could not be verified. They are excluded. The closest verified idea in The 5AM Club (the assumed source; its usual Turkish title differs from the input) is the 'Daily 5': each morning, write down five small targets you want to achieve that day, which the book says adds up to 1,825 small wins over a year. The facts below describe that concept. The writer should consider whether this story needs replacing, as it no longer matches the TR text.",
+  "facts": [
+    "In The 5AM Club, Sharma proposes the 'Daily 5': each morning, list five small goals you want to complete that day.",
+    "The book's arithmetic is that five small wins a day adds up to 1,825 over a year, presented as an illustration of compounding, not as a measured outcome.",
+    "The idea is to decide in the morning what the day's small victories will be, rather than letting incoming demands decide.",
+    "It fits the book's broader theme of protecting a morning block for planning and focus before the day's distractions begin."
+  ],
+  "tension": "Writing down only five small targets seems too modest to matter, yet the book's point is that a short, clear list chosen in advance adds up where a vague intention does not.",
+  "opening_idea": "Begin with someone writing just five small targets on a card at dawn, and ask what that short list can do that a long list cannot.",
+  "lessons": [
+    {
+      "idea": "A short list chosen in the morning puts your priorities ahead of the day's interruptions.",
+      "anchor": "The Daily 5, written each morning."
+    },
+    {
+      "idea": "Small daily wins add up to something large only over a long time, which the book shows with simple arithmetic.",
+      "anchor": "Five a day becomes 1,825 in a year."
+    }
+  ],
+  "reflect": [
+    "At the end of an ordinary day, how many of the things you did were ones you chose yourself?",
+    "What would be on your list if it could only hold five small items?"
+  ],
+  "reflect_final": "Tomorrow morning, write down five small things you want to finish that day and check them in the evening. Notice whether the short list changed what you did first.",
+  "use_cases": [
+    {
+      "situation": "Your to-do list has grown so long that you start each day not knowing what to do first.",
+      "move": "Borrow Sharma's Daily 5: before opening email, pick just five small items for today and set the rest aside.",
+      "context": "self"
+    },
+    {
+      "situation": "A team's daily stand-up lists far more work than anyone can finish.",
+      "move": "Suggest each person names at most five concrete things they will finish today, and review them the next day.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A direct report feels overwhelmed and unproductive despite long hours.",
+      "move": "Ask them to name five small things they could finish today, then check in at the end of the day on which ones got done.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Five small targets written at dawn: a short list you chose beats a long one the day chooses for you.",
+  "conversation_variants": {
+    "punchline_idea": "Robin Sharma counts five small wins a day as 1,825 in a year.",
+    "thirty_sec_idea": "In The 5AM Club, Sharma asks readers to write five small goals every morning, arguing that deciding the day's small victories first, before other demands, adds up to 1,825 of them a year.",
+    "question_idea": "Ask how many items are on their to-do list right now, and which five they would keep if they could only keep five.",
+    "key_contrast_idea": "A long list the day fills for you versus five targets you choose in the morning."
+  }
+}

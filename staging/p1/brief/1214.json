@@ -1,0 +1,64 @@
+{
+  "story_id": 1214,
+  "kind": "concept",
+  "book": {
+    "title": "The 4-Hour Workweek",
+    "author": "Timothy Ferriss",
+    "year": "2007"
+  },
+  "confidence": "high",
+  "confidence_note": "In the book, Ferriss describes a fear-defining exercise ('Define your nightmare'), drawing on Stoic practices such as Seneca's advice to rehearse misfortune. He asks readers to write out the worst case of a decision they're afraid of, how likely it is, what they could do to repair the damage, what the benefits of even partial success would be, and what the cost of inaction is. He later developed this into what he calls 'fear-setting'. He applied it himself before taking an extended trip away from his business. The reference TR text calls it 'negative visualization', which is a related Stoic term; both are mentioned. Question wording is paraphrased.",
+  "facts": [
+    "Ferriss describes feeling paralyzed by big decisions, such as leaving a job or traveling for a long time, because of vague fear of what could go wrong.",
+    "He drew on the Stoics, including Seneca, who recommended rehearsing possible misfortunes so they lose their power to frighten.",
+    "His exercise, 'Define your nightmare', asks you to write out: the absolute worst that could happen if you did what you're considering; how likely it is; what you could do to repair the damage or get back on track; the benefits of more probable outcomes; and what inaction is costing you.",
+    "Ferriss found that most worst cases were temporary and fixable, and much less likely than his fear suggested.",
+    "He emphasizes the cost of inaction: staying put has its own financial, emotional and physical costs, which people rarely write down.",
+    "He used this process before taking an extended trip abroad and stepping back from daily management of his business. He later called the method 'fear-setting'."
+  ],
+  "tension": "Vague fear stops big decisions. What happens when you write the fear down in detail?",
+  "opening_idea": "Most people's worst fears have never been written down. Ferriss suggests that's why they're so powerful.",
+  "lessons": [
+    {
+      "idea": "Defining fear shrinks it.",
+      "anchor": "'Define your nightmare'"
+    },
+    {
+      "idea": "Most worst cases are temporary and repairable.",
+      "anchor": "Ferriss's own findings"
+    },
+    {
+      "idea": "Inaction has a cost too.",
+      "anchor": "The cost-of-inaction question"
+    }
+  ],
+  "reflect": [
+    "What decision are you avoiding because of a fear you've never written down?",
+    "What is staying put costing you?"
+  ],
+  "reflect_final": "If you wrote down your worst case and how you'd recover, would the decision still feel impossible?",
+  "use_cases": [
+    {
+      "situation": "You're afraid to ask for a sabbatical.",
+      "move": "Write the worst case, its likelihood and your repair plan before deciding.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team fears a bold product change.",
+      "move": "Run the define-your-nightmare questions together, including the cost of doing nothing.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is stuck deciding whether to move abroad.",
+      "move": "Walk through the exercise with them over coffee.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Write your worst case down; most fears shrink when they're specific.",
+  "conversation_variants": {
+    "punchline_idea": "Fears lose most of their power once you write the worst case down in detail.",
+    "thirty_sec_idea": "Stoic rehearsal, define-your-nightmare questions, cost of inaction, fear-setting.",
+    "question_idea": "What is staying where you are costing you?",
+    "key_contrast_idea": "Vague fear versus defined risk"
+  }
+}

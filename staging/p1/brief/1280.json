@@ -1,0 +1,59 @@
+{
+  "story_id": 1280,
+  "kind": "concept",
+  "book": {
+    "title": "Dare to Lead",
+    "author": "Brené Brown",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Supported by the book: Brown asked senior leaders what, if anything, about the way people lead today needs to change to be successful in a complex, rapidly changing environment, and the top barrier reported was avoiding tough conversations, including giving honest, productive feedback. Her maxim 'clear is kind, unclear is unkind' is from the book. The reference text's 'seven-year study' and the quoted line about a 'time and trust cost' are not verified and are omitted. The number of leaders (about 150 C-level leaders) is as recalled from the book and not re-checked. Turkish title in input ('Karanlığın Ötesi') appears not to match this book.",
+  "facts": [
+    "Brown asked senior leaders what, if anything, about the way people lead today needs to change for organizations to succeed in a complex, fast-changing world.",
+    "The most frequently named problem was that people avoid tough conversations, including giving honest, productive feedback.",
+    "Leaders described the reasons as a lack of courage and a norm of 'nice and polite' that is really used to avoid discomfort.",
+    "Brown links this avoidance to consequences such as passive-aggressive behavior, talking behind people's backs, and problems getting worse.",
+    "Her guiding line is 'clear is kind, unclear is unkind': being vague to spare someone's feelings is actually unkind."
+  ],
+  "tension": "Leaders avoid hard conversations in the name of being nice, but the avoidance is what creates the gossip and confusion they are trying to prevent.",
+  "opening_idea": "Open with the question Brown asked senior leaders about what needs to change, and hold back the answer for a moment: it wasn't strategy or technology.",
+  "lessons": [
+    {
+      "idea": "Politeness can be a cover for avoidance; staying vague spares you discomfort, not the other person.",
+      "anchor": "Brown's maxim 'clear is kind, unclear is unkind.'"
+    },
+    {
+      "idea": "The unsaid doesn't disappear; it leaks out as indirect behavior.",
+      "anchor": "Brown links avoided conversations to talking behind backs and passive-aggressive behavior."
+    }
+  ],
+  "reflect": [
+    "Is there someone you're being 'nice' to when being clear would actually help them more?",
+    "When has someone's clear, honest feedback helped you, even though it stung at first?"
+  ],
+  "reflect_final": "Pick one conversation you've been postponing, write the first clear sentence you'd say, and at your next natural opportunity say it; afterward, notice whether the relief or the fallout was bigger than you expected.",
+  "use_cases": [
+    {
+      "situation": "A project is clearly failing, but everyone in the status meeting reports 'on track.'",
+      "move": "Say plainly: 'I don't think this is working, and I'd rather say it now than in three months,' then invite others to name what they see.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A team member's work keeps missing the mark and you've only hinted at it.",
+      "move": "Remembering Brown's 'unclear is unkind,' open with one specific example and what 'good' would look like, instead of another vague hint.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A family member keeps doing something that bothers you and you've been silently resentful.",
+      "move": "Say 'There's something I've been avoiding bringing up,' and name the one specific behavior, not a list.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Clear is kind: the vague, 'nice' version of feedback protects your comfort, not the other person.",
+  "conversation_variants": {
+    "punchline_idea": "When Brené Brown asked senior leaders what needs to change about leadership, the top answer was simply: we avoid tough conversations.",
+    "thirty_sec_idea": "Brown asked leaders what needs to change in how people lead; they said people avoid hard conversations and honest feedback, often in the name of being polite, and she answers with 'clear is kind, unclear is unkind.'",
+    "question_idea": "What's the kindest piece of hard feedback anyone ever gave you?",
+    "key_contrast_idea": "Being nice versus being kind: nice avoids discomfort, kind tells the truth clearly."
+  }
+}

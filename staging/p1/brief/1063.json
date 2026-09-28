@@ -1,0 +1,70 @@
+{
+  "story_id": 1063,
+  "kind": "concept",
+  "book": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Two-Minute Rule and its core examples come from the book's chapter on stopping procrastination (the 'Make It Easy' law). Examples recalled with reasonable certainty are 'read one page', 'take out my yoga mat', 'open my notes', 'fold one pair of socks' and 'tie my running shoes'. The reference text includes a meditation-cushion example and a claim that 'the brain overestimates the energy needed to start'. Neither can be confirmed as the book's wording, so both are left out. The book instead frames this through the Law of Least Effort and the idea that starting should feel easy. The book also describes a reader who went to the gym but was not allowed to stay longer than five minutes. That case is kept, but his weight-loss figure is left out because it is not certain.",
+  "facts": [
+    "The Two-Minute Rule says that when you start a new habit, it should take less than two minutes to do.",
+    "Clear scales habits down to a tiny first step. 'Read before bed each night' becomes 'Read one page.' 'Do thirty minutes of yoga' becomes 'Take out my yoga mat.' 'Study for class' becomes 'Open my notes.' 'Fold the laundry' becomes 'Fold one pair of socks.' 'Run three miles' becomes 'Tie my running shoes.'",
+    "Clear calls these small starting actions 'gateway habits'. Once you have started, it is much easier to keep going.",
+    "He argues that a habit must be established before it can be improved: the point is to master the habit of showing up.",
+    "The book describes a man who went to the gym regularly but was not allowed to stay longer than five minutes. The aim was to build the identity of someone who never misses a workout, even before the workouts themselves were long.",
+    "Clear links the rule to identity. Each small action casts a vote for the kind of person you want to become.",
+    "He suggests building the habit step by step, moving from a very easy version toward the full habit over time."
+  ],
+  "tension": "Ambitious habits fail at the start, not in the middle. Yet people keep defining their habits by the full, effortful goal instead of the first small step.",
+  "opening_idea": "Most habits die in the first minute, before any real effort begins.",
+  "lessons": [
+    {
+      "idea": "Shrink any new habit to a version that takes under two minutes.",
+      "anchor": "'Read one page' instead of 'read every night.'"
+    },
+    {
+      "idea": "The first small action works as a gateway. Starting is the hard part, and continuing follows more easily.",
+      "anchor": "Tie your running shoes, and the run becomes likely."
+    },
+    {
+      "idea": "Showing up must become automatic before you try to optimize or expand the habit.",
+      "anchor": "The gym-goer who was not allowed to stay more than five minutes."
+    },
+    {
+      "idea": "Tiny repetitions build identity: each one is a vote for who you are becoming.",
+      "anchor": "Becoming 'the type of person who doesn't miss workouts.'"
+    }
+  ],
+  "reflect": [
+    "Which habit have you postponed because its full version feels too big?",
+    "What would the two-minute gateway version of that habit look like, physically?",
+    "Are you trying to optimize a habit you haven't yet made automatic?"
+  ],
+  "reflect_final": "What is the one two-minute action you could do today that casts a vote for the person you want to be?",
+  "use_cases": [
+    {
+      "situation": "A team keeps postponing a big project because it feels overwhelming.",
+      "move": "Propose that everyone does one two-minute starter action today, such as opening the file or writing a single outline line, and reports back tomorrow.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child resists doing homework or practicing an instrument.",
+      "move": "Ask only for the gateway step: 'Just open the book and read the first problem' or 'just take out the violin and play one note.'",
+      "context": "family"
+    },
+    {
+      "situation": "You want to start exercising but keep skipping it.",
+      "move": "Set the rule 'put on my workout clothes and go outside for two minutes'. You are allowed to stop afterward, but only after you have shown up.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Make the start so small you can't say no. The habit of showing up comes before everything else.",
+  "conversation_variants": {
+    "punchline_idea": "You don't need motivation to tie your shoes, and tying your shoes is how the run begins.",
+    "thirty_sec_idea": "Clear's rule: shrink any habit to under two minutes ('read one page'), because starting is the bottleneck, and showing up must become automatic before it can grow.",
+    "question_idea": "What's the smallest physical action that would count as having started the habit you keep postponing?",
+    "key_contrast_idea": "Aiming at the full goal versus aiming at the gateway action: one relies on willpower, the other on an easy first step."
+  }
+}

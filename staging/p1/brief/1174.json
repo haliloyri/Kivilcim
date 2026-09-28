@@ -1,0 +1,65 @@
+{
+  "story_id": 1174,
+  "kind": "anecdote",
+  "book": {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "year": "1936"
+  },
+  "confidence": "high",
+  "confidence_note": "Carnegie's Roosevelt stories are well known from the book. He cites James E. Amos, Roosevelt's valet, who described how Roosevelt, after his wife asked about a bobwhite quail, phoned their cottage to tell her one was outside the window. Carnegie also describes Roosevelt, after leaving office, visiting the White House and greeting the old staff by name, including a kitchen maid named Alice. The principle 'a person's name is to that person the sweetest and most important sound in any language' is from the book. The reference TR text's quoted butler line ('he saw me as a person') is not in the book and is left out.",
+  "facts": [
+    "Carnegie describes Theodore Roosevelt's remarkable interest in ordinary people.",
+    "James E. Amos, Roosevelt's valet, wrote that his wife once asked Roosevelt what a bobwhite was, since she had never seen one. Later Roosevelt phoned their cottage to tell her there was a bobwhite outside her window.",
+    "Amos wrote that whenever Roosevelt passed their cottage, even out of sight, he would call out a greeting to them.",
+    "After leaving the presidency, Roosevelt visited the White House when the Tafts were away. He greeted all the old servants by name, including the kitchen maids.",
+    "When he saw Alice, a kitchen maid, he asked if she still made corn bread. She said she sometimes made it for the servants, but no one ate it upstairs. Roosevelt said they showed bad taste and he would tell the president so; she gave him a piece and he ate it walking to the office.",
+    "One old employee said, with tears in his eyes, that it was the only happy day they'd had in nearly two years.",
+    "Carnegie's principle: remember that a person's name is to that person the sweetest and most important sound in any language."
+  ],
+  "tension": "A former president returns to the White House and spends his visit greeting the kitchen staff.",
+  "opening_idea": "A phone rings in a servant's cottage. It's the President, calling to say there's a bird outside the window.",
+  "lessons": [
+    {
+      "idea": "Remembering names signals that people matter.",
+      "anchor": "Roosevelt greeting the old staff by name"
+    },
+    {
+      "idea": "Small details remembered carry huge weight.",
+      "anchor": "The bobwhite call; Alice's corn bread"
+    },
+    {
+      "idea": "Genuine interest in others creates loyalty.",
+      "anchor": "'The only happy day in nearly two years'"
+    }
+  ],
+  "reflect": [
+    "Whose name do you use rarely, even though you see them often?",
+    "What small detail about someone could you remember and mention?"
+  ],
+  "reflect_final": "Who in your daily life deserves to hear their own name from you tomorrow?",
+  "use_cases": [
+    {
+      "situation": "You meet many new people at an event.",
+      "move": "Repeat each name when introduced and use it once later in the conversation.",
+      "context": "social"
+    },
+    {
+      "situation": "You lead a large team and rarely talk to junior members.",
+      "move": "Learn one personal detail about each person and follow up on it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You often forget names right after hearing them.",
+      "move": "Write new names down with one detail at the end of each day.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Remember someone's name, and you tell them they matter.",
+  "conversation_variants": {
+    "punchline_idea": "A president phoned his valet's cottage just to point out a bird.",
+    "thirty_sec_idea": "The bobwhite call, the White House visit, Alice's corn bread, the name principle.",
+    "question_idea": "Whose name have you been forgetting to use?",
+    "key_contrast_idea": "Staff versus people"
+  }
+}

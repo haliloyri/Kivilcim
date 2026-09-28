@@ -1,0 +1,64 @@
+{
+  "story_id": 1277,
+  "kind": "concept",
+  "book": {
+    "title": "Zero to One",
+    "author": "Peter Thiel (with Blake Masters)",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core argument ('competition is for losers'; perfect competition competes profits away; monopoly profits come from creating something new) and the airlines-versus-Google comparison are in the book. From memory, the book's figures are about 37 cents profit per US airline passenger trip versus Google keeping about 21% of $50 billion revenue as profit in 2012, 'more than 100 times' the airline margin; these were not re-checked against the text, so the brief keeps only the qualitative contrast. The reference text's Apple example (phone + music player + internet device creating a new category) is not the book's framing and is omitted. The input lists the Turkish title 'Sıfır'dan Bir'e'; English title used here.",
+  "facts": [
+    "Thiel argues that competition is not a sign of a healthy business but a trap: in perfect competition, rivals compete profits away and no company earns much in the long run.",
+    "His example: US airlines carry huge numbers of passengers and create enormous value, yet the industry keeps only a tiny profit per passenger trip.",
+    "By contrast, Google, with far less revenue than the airlines in the same year, kept a large share of its revenue as profit, because it had no close rival in search.",
+    "Thiel notes that monopolies tend to downplay their dominance (e.g. describing themselves as one player in a vast market), while competitive firms exaggerate their uniqueness.",
+    "He distinguishes 'going from 0 to 1' (vertical progress: creating something new) from 'going from 1 to n' (horizontal progress: copying what already works). Copying pulls you into competition; creating something new can let you escape it.",
+    "His advice to founders is to start small and dominate a narrow market, rather than fight for a sliver of a large, crowded one."
+  ],
+  "tension": "Airlines create enormous value for millions of travelers yet keep almost none of it, while a search company keeps a large share of what it earns: being useful and being profitable turn out to be different things.",
+  "opening_idea": "Put an airline and Google side by side: one moves huge numbers of people every day, the other answers search queries, so why does the second one keep far more profit?",
+  "lessons": [
+    {
+      "idea": "Creating value is not the same as capturing value; in a crowded market, the value leaks away to customers and rivals.",
+      "anchor": "Airlines create massive value but earn only a tiny profit per passenger trip."
+    },
+    {
+      "idea": "The goal is to build something so different that direct comparison stops making sense, not to fight rivals head-on.",
+      "anchor": "Google's lack of a close search rival let it keep a large share of its revenue as profit."
+    },
+    {
+      "idea": "Copying what works (1 to n) feels safe but leads straight into competition; creating something new (0 to 1) is how you escape it.",
+      "anchor": "Thiel's distinction between horizontal and vertical progress."
+    }
+  ],
+  "reflect": [
+    "When you describe your work, do you mostly compare it to what others do, or explain what only you do?",
+    "Is there a place where you are fighting hard for a small edge in a crowded field?"
+  ],
+  "reflect_final": "Next time you plan a project or pitch, write one sentence about what it does that nothing nearby does, and notice whether you can finish that sentence without naming a competitor.",
+  "use_cases": [
+    {
+      "situation": "Your team's roadmap is mostly features copied from competitors.",
+      "move": "Ask: 'Airlines copy each other and keep pennies per passenger. Which item on this list is something no one else offers?' and put that item first for discussion.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are preparing for a performance review or job application.",
+      "move": "Instead of listing how you outperform peers on the same tasks, name one problem you solve that nobody else on the team currently owns.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend wants to open a business in a crowded niche, like yet another café on a busy street.",
+      "move": "Ask them which small, specific group of customers they could serve better than anyone else before they compete for everyone.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "An airline carries crowds and keeps pennies; don't ask how to beat the rivals, ask what you could offer that makes the comparison pointless.",
+  "conversation_variants": {
+    "punchline_idea": "Airlines move huge numbers of people and keep only a tiny profit per trip; Google answers searches and keeps a big slice of every dollar.",
+    "thirty_sec_idea": "Thiel compares airlines, which create enormous value but compete it away, with Google, which had no real rival in search and kept a large share of its revenue, and concludes that competition is for losers.",
+    "question_idea": "What is one thing you do that people couldn't easily get from someone else?",
+    "key_contrast_idea": "Being better than others at the same thing versus being the only one doing a different thing."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1217,
+  "kind": "anecdote",
+  "book": {
+    "title": "Digital Minimalism",
+    "author": "Cal Newport",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "The manifest title ('Hiçbir Şeye Bakmamak') is unusual, but the book is Digital Minimalism (2019). The reference TR text says Newport stopped using email entirely for a month; that experiment cannot be confirmed and is not used. The book's central experiment is the 'digital declutter': Newport invited readers to take a 30-day break from optional technologies, and more than 1,600 people volunteered. During the 30 days, participants explored meaningful offline activities, and at the end reintroduced only the technologies that served something they deeply valued, with rules for how to use them. Many were surprised how little they missed, and how much time and attention they regained. Figures are kept as Newport reports them.",
+  "facts": [
+    "Newport proposed a 'digital declutter': step away from optional technologies in your personal life for 30 days.",
+    "He invited readers of his blog to try it, and over 1,600 people signed up.",
+    "Optional technologies are those whose temporary removal won't cause serious harm to your professional or personal life; necessary work tools can stay.",
+    "During the 30 days, participants were encouraged to rediscover activities and behaviors they found satisfying and meaningful.",
+    "At the end, they reintroduced only technologies that served something they deeply valued, and decided how and when they would use them.",
+    "Many participants reported that they missed much less than expected and regained time and attention for things that mattered."
+  ],
+  "tension": "People feel they can't live without their apps. What happens when over a thousand of them try for a month?",
+  "opening_idea": "More than 1,600 people agree to put most of their apps away for a month.",
+  "lessons": [
+    {
+      "idea": "Distance shows what you actually value.",
+      "anchor": "The 30-day break"
+    },
+    {
+      "idea": "Fill the space with meaningful activity.",
+      "anchor": "Rediscovering offline pursuits"
+    },
+    {
+      "idea": "Reintroduce technology deliberately.",
+      "anchor": "Only what serves a deep value, with rules"
+    }
+  ],
+  "reflect": [
+    "Which app would you miss least if it disappeared for a month?",
+    "What would you do with the time you got back?"
+  ],
+  "reflect_final": "What would a 30-day declutter reveal about your own habits?",
+  "use_cases": [
+    {
+      "situation": "You feel your phone controls your evenings.",
+      "move": "Try a 30-day break from optional apps and plan offline activities.",
+      "context": "self"
+    },
+    {
+      "situation": "Your family spends dinners on screens.",
+      "move": "Propose a month of screen-free dinners and see what you notice together.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend says they could never quit social media.",
+      "move": "Suggest a 30-day experiment rather than quitting forever.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Step away for a month; only let back in what truly earns its place.",
+  "conversation_variants": {
+    "punchline_idea": "Over 1,600 people took a month off optional apps, and most missed far less than they expected.",
+    "thirty_sec_idea": "The digital declutter: 30 days, 1,600 volunteers, rediscover, reintroduce deliberately.",
+    "question_idea": "Which app would you miss least?",
+    "key_contrast_idea": "Default versus deliberate"
+  }
+}

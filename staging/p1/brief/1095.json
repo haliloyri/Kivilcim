@@ -1,0 +1,71 @@
+{
+  "story_id": 1095,
+  "kind": "concept",
+  "book": {
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "year": "1989"
+  },
+  "confidence": "high",
+  "confidence_note": "The funeral visualization, the four speakers, the 'ladder against the wrong wall' image, the 'all things are created twice' principle and the personal mission statement are all central to Covey's chapter on Habit 2 and are well known. I left out the exact time frame the book gives for the imagined funeral because I cannot confirm it with certainty. The book's case is a guided thought experiment, not a real event, so this is treated as a concept.",
+  "facts": [
+    "Habit 2 in the book is 'Begin with the End in Mind.'",
+    "Covey asks the reader to imagine entering a funeral, seeing grieving friends and family, and realizing it is their own funeral.",
+    "Four people will speak: one from the family, one friend, one from work or profession, and one from the reader's church or community organization.",
+    "The reader is asked what they would want each speaker to say about their character, contributions and achievements, and what difference they made in others' lives.",
+    "Covey argues that the honest answers reveal the reader's deepest values, which often differ from what fills their daily schedule.",
+    "He warns that people can climb the 'ladder of success' faster and faster, only to find it is leaning against the wrong wall.",
+    "He states that all things are created twice: first mentally, then physically. Beginning with the end in mind means taking charge of that first creation.",
+    "He recommends writing a personal mission statement that sets out what one wants to be and do, and the principles those rest on."
+  ],
+  "tension": "People often work hard at goals they never chose deliberately. Imagining their own funeral exposes the gap between what they would want said about them and how they actually spend their days.",
+  "opening_idea": "Invite the reader to picture walking into a funeral and discovering that the person in the casket is themselves, with four people about to speak about their life.",
+  "lessons": [
+    {
+      "idea": "Your imagined eulogies reveal your real values more honestly than your to-do list does.",
+      "anchor": "The four funeral speakers: family, friend, colleague, community member."
+    },
+    {
+      "idea": "Effort without direction can be wasted. Speed matters less than whether you are aiming at the right target.",
+      "anchor": "The ladder of success leaning against the wrong wall."
+    },
+    {
+      "idea": "Every outcome is created in the mind before it happens, so define the end deliberately or others will define it for you.",
+      "anchor": "'All things are created twice': mental creation, then physical creation."
+    },
+    {
+      "idea": "Turn the vision into a written, principle-based guide for daily choices.",
+      "anchor": "The personal mission statement."
+    }
+  ],
+  "reflect": [
+    "Which of the four speakers would struggle most to say something true and good about you today?",
+    "What took up most of your time this past week, and would any of it appear in a eulogy?",
+    "Whose expectations are you currently fulfilling, and are they also your own?"
+  ],
+  "reflect_final": "If one sentence were said about you by those who knew you best, what would you want it to be, and does your life today support it?",
+  "use_cases": [
+    {
+      "situation": "A team is busy with many tasks but unsure why they matter.",
+      "move": "Open the meeting by asking: 'A year from now, what do we want our clients to say about this project?' Then drop any task that doesn't serve that answer.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend or mentee feels stuck, successful on paper but unfulfilled.",
+      "move": "Ask them what they would want a close friend to say about them at the end of their life, then ask which part of their current week reflects that.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your weekly schedule is full, but nothing on it involves the people you love.",
+      "move": "Write the one sentence you'd want your family speaker to say, then block one specific hour this week that makes that sentence truer.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Decide what you want said at your funeral, then live today as if that is the brief.",
+  "conversation_variants": {
+    "punchline_idea": "Most of us are climbing the ladder fast without checking which wall it leans on.",
+    "thirty_sec_idea": "Covey has you imagine four people speaking at your funeral. Their ideal words reveal your true values, and Habit 2 is about aligning your days with them.",
+    "question_idea": "Ask someone what they'd want a coworker versus a family member to say about them, and whether those two answers conflict.",
+    "key_contrast_idea": "Contrast being efficient at climbing with being effective at choosing the right wall."
+  }
+}

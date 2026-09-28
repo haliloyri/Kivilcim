@@ -1,0 +1,64 @@
+{
+  "story_id": 1225,
+  "kind": "concept",
+  "book": {
+    "title": "Limitless",
+    "author": "Jim Kwik",
+    "year": "2020"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kwik's reading advice in Limitless includes reducing subvocalization (silently 'saying' each word in your head), avoiding unnecessary regression (going back over words already read), and using a visual pacer such as a finger or pen to guide the eyes. The reference TR text implies that dramatically faster reading follows automatically; independent reading research suggests that large speed gains usually trade off against comprehension, and that some inner speech is normal and helpful for understanding. The story presents Kwik's techniques while noting this caveat. No specific words-per-minute figures are claimed.",
+  "facts": [
+    "Kwik argues that most people read the way they learned as young children and never updated their technique.",
+    "He identifies subvocalization, silently pronouncing each word in your head, as one factor that limits reading speed to roughly speaking speed.",
+    "He also points to regression: the habit of skipping back to reread words and lines, often unnecessarily.",
+    "His main practical tool is a visual pacer: moving a finger or pen under the line as you read, which guides the eyes and reduces regression.",
+    "He suggests practicing with the pacer at a speed slightly faster than comfortable, then checking comprehension.",
+    "Reading researchers caution that very large speed increases usually come at the cost of comprehension, and that some inner voice is a normal part of understanding text."
+  ],
+  "tension": "Most adults still read the way they learned at six. Could a finger on the page change that?",
+  "opening_idea": "Notice the voice in your head as you read this sentence. It may be setting your speed limit.",
+  "lessons": [
+    {
+      "idea": "Reading habits can be updated.",
+      "anchor": "Most people read as they learned in childhood"
+    },
+    {
+      "idea": "A pacer guides the eyes and cuts rereading.",
+      "anchor": "Finger or pen under the line"
+    },
+    {
+      "idea": "Speed must be balanced with understanding.",
+      "anchor": "The comprehension caveat"
+    }
+  ],
+  "reflect": [
+    "When did you last think about how you read?",
+    "How often do your eyes jump back to reread?"
+  ],
+  "reflect_final": "What would you read more of if reading took less effort?",
+  "use_cases": [
+    {
+      "situation": "You have a pile of work reports to get through.",
+      "move": "Try a pen as a pacer and summarize each report in one sentence afterwards.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child reads slowly and loses their place.",
+      "move": "Let them use a finger to guide their eyes along the line.",
+      "context": "family"
+    },
+    {
+      "situation": "Your team is overwhelmed by long documents.",
+      "move": "Agree to skim with a pacer first, then read key sections carefully.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Guide your eyes, cut the rereading, and check you still understand.",
+  "conversation_variants": {
+    "punchline_idea": "Many adults still read exactly the way they learned as small children.",
+    "thirty_sec_idea": "Subvocalization, regression, visual pacer, comprehension caveat.",
+    "question_idea": "How often do your eyes skip back when you read?",
+    "key_contrast_idea": "Habit versus technique"
+  }
+}

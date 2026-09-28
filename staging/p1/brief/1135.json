@@ -1,0 +1,63 @@
+{
+  "story_id": 1135,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Social Animal",
+    "author": "David Brooks",
+    "year": "2011"
+  },
+  "confidence": "medium",
+  "confidence_note": "Brooks discusses attachment research, including the long-running Minnesota longitudinal study led by L. Alan Sroufe and colleagues, which followed children born into poverty from before birth into adulthood, beginning in the mid-1970s. He uses it to argue that the quality of early relationships predicts much about later life, including how children handle stress, relationships and school. The reference TR text's claim that 'IQ did not explain the difference' is an oversimplification and is left out; specific percentages sometimes quoted from the study are also omitted. The quoted belief ('the world is safe and I am valued') is presented as a paraphrase of attachment theory, not as a quotation from Brooks.",
+  "facts": [
+    "In The Social Animal, Brooks draws on attachment research to explain how Harold's early relationship with his mother shapes him.",
+    "He discusses the Minnesota longitudinal study led by L. Alan Sroufe and colleagues, which began in the mid-1970s and followed children born into poverty from before birth into adulthood.",
+    "Researchers observed the children's attachment to their caregivers in infancy, classifying it as secure or as various forms of insecure attachment.",
+    "Early attachment turned out to predict a great deal about later life, including how children coped with stress, formed relationships and got on at school.",
+    "Brooks's broader point is that emotional bonds formed in early relationships become a model the child carries for how the world and other people work."
+  ],
+  "tension": "Researchers watched babies with their mothers and wondered whether something so early could still matter decades later.",
+  "opening_idea": "In the 1970s, researchers started watching babies with their mothers and kept watching for decades.",
+  "lessons": [
+    {
+      "idea": "Early relationships become a model for how the world works.",
+      "anchor": "Attachment in infancy predicting later coping and relationships"
+    },
+    {
+      "idea": "How we relate to children can matter as much as what we teach them.",
+      "anchor": "Brooks on Harold's early bond with his mother"
+    },
+    {
+      "idea": "Security makes exploration possible.",
+      "anchor": "Securely attached children cope better with stress and new situations"
+    }
+  ],
+  "reflect": [
+    "Which early relationship taught you what to expect from other people?",
+    "Where in your adult life do you still act out that early model?"
+  ],
+  "reflect_final": "Who in your life right now might need to feel safe with you before they can grow?",
+  "use_cases": [
+    {
+      "situation": "Your child is anxious before starting something new.",
+      "move": "Focus first on making them feel safe and seen, then talk about the task.",
+      "context": "family"
+    },
+    {
+      "situation": "A new hire is hesitant to take risks or ask questions.",
+      "move": "Show them explicitly that questions and small mistakes are safe with you before expecting boldness.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You notice you expect people to let you down.",
+      "move": "Ask where you first learned that expectation, and test it against someone who has proven reliable.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Children learn how the world works from how they are held.",
+  "conversation_variants": {
+    "punchline_idea": "A baby's bond with a caregiver can shape how they handle life decades later.",
+    "thirty_sec_idea": "The Minnesota study and what early attachment predicted.",
+    "question_idea": "What did your first relationships teach you to expect from people?",
+    "key_contrast_idea": "Safe base, bold explorer"
+  }
+}

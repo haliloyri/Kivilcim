@@ -10,6 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { setupNotificationHandler, registerAndSavePushToken, WEEKLY_RECAP_NOTIFICATION_TYPE } from './src/utils/notifications';
 import { ANALYTICS_EVENTS, trackEvent, initAnalytics, setAnalyticsContext } from './src/utils/analytics';
 import { initAds } from './src/utils/ads';
+import { getDeviceLang } from './src/utils/locale';
 
 setupNotificationHandler();
 
@@ -43,7 +44,6 @@ import { CareerPathProvider } from './src/context/CareerPathContext';
 import CareerPromotionModal from './src/components/career/CareerPromotionModal';
 import LearningMilestoneModal from './src/components/career/LearningMilestoneModal';
 import { appNavigationRef } from './src/navigation/AppNavigator';
-import CareerMigrationSummary from './src/components/career/CareerMigrationSummary';
 
 // Keep the native launch screen visible until the bundled fonts are ready.
 SplashScreen.preventAutoHideAsync().catch(() => {});
@@ -130,7 +130,10 @@ function Main() {
   // Initialize DB and seed data on first run
   useEffect(() => {
     const startup = async () => {
-      let savedLang = 'tr';
+      // Device language, not 'tr': until the user picks one, ThemeContext also
+      // starts from the device locale, so a 'tr' default here mislabels the
+      // language on every first-run event (onboarding included).
+      let savedLang = getDeviceLang();
       try {
         const stored = await AsyncStorage.getItem('lang');
         if (stored) {
@@ -253,7 +256,6 @@ export default function App() {
               <Main />
               <CareerPromotionModal />
               <LearningMilestoneModal />
-              <CareerMigrationSummary />
             </CareerPathProvider>
           </StoriesProvider>
         </UserDataProvider>

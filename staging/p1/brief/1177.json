@@ -1,0 +1,64 @@
+{
+  "story_id": 1177,
+  "kind": "concept",
+  "book": {
+    "title": "The 80/20 Principle",
+    "author": "Richard Koch",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Koch's 'time revolution' is a core chapter of the book. He argues that most of what we achieve comes from a small portion of our time, that the rest is spent on low-value activities, and that we should identify our most productive time and multiply it, while cutting or delegating the rest. He also offers his own experience: as a student and later a consultant, he found focusing on the few things that mattered let him work less and achieve more. The reference TR text's detailed breakdown of Koch's own time audit (a small share of meetings, 25 percent of projects) cannot be verified and is left out. Koch's suggestion to make a list of low-value activities to stop doing is kept as a paraphrase.",
+  "facts": [
+    "Koch argues that about 80 percent of what we achieve comes from about 20 percent of the time we spend.",
+    "This means most of our time goes on activities of little value.",
+    "He calls for a 'time revolution': rather than managing time better in the usual sense, identify the small portion of time that produces most value and increase it.",
+    "He suggests cutting, reducing or delegating low-value activities, including many meetings and tasks done because they are expected rather than useful.",
+    "Koch says the principle helped him personally, from studying selectively as a student to building a consulting career, allowing him to work less and achieve more.",
+    "He argues that being busy is not the same as being effective, and that doing less of the wrong things matters as much as doing more of the right ones."
+  ],
+  "tension": "Most people try to manage time by squeezing in more. Koch says most of that time wasn't worth much in the first place.",
+  "opening_idea": "Imagine you could see which hours of last week actually produced results. Most would be empty.",
+  "lessons": [
+    {
+      "idea": "A small portion of time produces most achievement.",
+      "anchor": "Koch's 80/20 of time"
+    },
+    {
+      "idea": "Doing less of the low-value work is the lever.",
+      "anchor": "Cut or delegate"
+    },
+    {
+      "idea": "Busy is not the same as effective.",
+      "anchor": "The time revolution"
+    }
+  ],
+  "reflect": [
+    "Which hours last week produced your best results?",
+    "What task do you do mainly because it's expected?"
+  ],
+  "reflect_final": "What would your week look like if you doubled your most valuable 20 percent of time?",
+  "use_cases": [
+    {
+      "situation": "Your calendar is full of recurring meetings.",
+      "move": "Review each meeting's value and cancel or shorten the lowest ones.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You feel busy every day but achieve little.",
+      "move": "Track one week of time and circle the hours that produced real results.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member is overloaded with low-value reporting.",
+      "move": "Agree together which reports nobody uses and stop them.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Busy is not the same as effective; protect the few hours that matter.",
+  "conversation_variants": {
+    "punchline_idea": "Most of your results come from a small slice of your time.",
+    "thirty_sec_idea": "80/20 of time, the time revolution, cut and delegate.",
+    "question_idea": "Which few hours of your week produce most of your results?",
+    "key_contrast_idea": "Busy versus effective"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "story_id": 1254,
+  "kind": "research",
+  "book": {
+    "title": "The Mind Map Book",
+    "author": "Tony Buzan",
+    "year": "1993"
+  },
+  "confidence": "low",
+  "confidence_note": "Buzan builds part of his case for Mind Maps on Roger Sperry's split-brain research (Nobel Prize in Physiology or Medicine, 1981), which showed that the two hemispheres have some specialized functions. Buzan popularized the idea that the left brain handles words, logic and lists while the right handles images, color and rhythm, and that Mind Maps engage both. Modern neuroscience considers the strict 'left-brain/right-brain' personality idea an oversimplification: most tasks involve both hemispheres working together, and large studies have not found people to be 'left-brained' or 'right-brained'. The story presents Sperry's research accurately, reports Buzan's interpretation, and adds the scientific caveat. Buzan's practical advice (combine words and images) is retained as useful independently of the hemisphere theory.",
+  "facts": [
+    "Roger Sperry studied patients whose corpus callosum, the bundle connecting the two brain hemispheres, had been cut to treat severe epilepsy.",
+    "His experiments showed that each hemisphere had some specialized abilities; for example, language was mainly handled by the left hemisphere in most people.",
+    "Sperry shared the 1981 Nobel Prize in Physiology or Medicine for this work.",
+    "Buzan drew on this research to argue that the left side deals with words, logic, numbers and lists, and the right with images, color, rhythm and imagination, and that traditional notes use mainly the 'left' skills.",
+    "He designed Mind Maps to combine both: key words and logic along with images, color and spatial layout.",
+    "Modern neuroscience considers the popular idea of 'left-brained' and 'right-brained' people an oversimplification; the hemispheres constantly work together, and large brain-imaging studies have not found individuals to be dominated by one side.",
+    "The practical advice to combine words with images and color can still be helpful, independent of the hemisphere theory."
+  ],
+  "tension": "A Nobel-winning discovery inspired a popular idea about 'two brains'. The discovery was real; the popular version went too far.",
+  "opening_idea": "In the 1960s, a scientist studied patients whose brain hemispheres had been surgically separated, and found that each side seemed to know different things.",
+  "lessons": [
+    {
+      "idea": "Combine words and images.",
+      "anchor": "Buzan's Mind Map design"
+    },
+    {
+      "idea": "Be careful with neat brain myths.",
+      "anchor": "Left-brain/right-brain oversimplification"
+    },
+    {
+      "idea": "Useful advice can outlive the theory behind it.",
+      "anchor": "Mind Maps still helpful without the myth"
+    }
+  ],
+  "reflect": [
+    "Have you ever called yourself left-brained or right-brained?",
+    "How do you combine words and images when you think?"
+  ],
+  "reflect_final": "Which label about how your brain works could you let go of?",
+  "use_cases": [
+    {
+      "situation": "You describe yourself as 'not creative, just logical'.",
+      "move": "Drop the label and try adding sketches and color to your next plan.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague divides the team into 'creative' and 'analytical' brains.",
+      "move": "Gently point out that everyone uses both, and invite each person to contribute to both.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child says they're 'just not a math brain'.",
+      "move": "Explain that brains don't split that neatly, and that skills grow with practice.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "You're not half a brain; use words and images together.",
+  "conversation_variants": {
+    "punchline_idea": "Sperry's split-brain research was real; the 'left-brained vs right-brained people' idea is a myth.",
+    "thirty_sec_idea": "Sperry, Nobel 1981, Buzan's interpretation, modern caveat, combine words and images.",
+    "question_idea": "Have you ever called yourself left-brained or right-brained?",
+    "key_contrast_idea": "Real science versus popular myth"
+  }
+}

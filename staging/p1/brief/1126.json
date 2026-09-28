@@ -1,0 +1,69 @@
+{
+  "story_id": 1126,
+  "kind": "concept",
+  "book": {
+    "title": "Liderlik Sanatı (likely the Turkish edition of 'Leaders Eat Last')",
+    "author": "Simon Sinek",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core idea is well established in Sinek's 2014 book 'Leaders Eat Last' and his talks from that period. These ideas are that leadership is a choice and not a rank, and that leaders give up their own comfort for their people. However, the title 'Liderlik Sanatı' does not clearly match the known Turkish edition, so the book identification is somewhat uncertain. The 'Who is the leader in the room?' speech scene in the existing text could not be verified as a scene from the book and should not be presented as a quoted event. The book's own supporting cases are included only in general terms, without dates or figures. These cases are the US Marine Corps custom of officers eating last and a company choosing shared sacrifice over layoffs in a downturn.",
+  "facts": [
+    "Sinek argues that leadership is a choice, not a rank. Someone can hold a senior position without leading, and someone with no formal authority can lead.",
+    "In his view, real leaders give up their own comfort, and sometimes their own interests, so that the people in their care feel safe and can grow.",
+    "He contrasts this with people who use their position to protect themselves, sacrificing others' security for their own advancement.",
+    "Sinek describes a 'Circle of Safety'. When people trust that their leader will protect them, they cooperate and take initiative instead of guarding themselves against each other.",
+    "The book's title comes from a US Marine Corps custom. In the chow line, the most junior Marines eat first and the senior officers eat last. This is a small, visible sign that leaders put their people first.",
+    "Sinek also presents a business case. During an economic downturn, a manufacturing company's leadership chose shared sacrifice, such as spreading unpaid time off across everyone, instead of laying people off. He uses it as an example of putting people before numbers."
+  ],
+  "tension": "We instinctively point to the highest title as 'the leader', yet the person people actually follow is often someone else. It is whoever steps up, takes the blame, or protects others when it costs them something.",
+  "opening_idea": "Ask the reader who the leader is in a room, then show how the answer shifts the moment someone owns a mistake or protects a colleague.",
+  "lessons": [
+    {
+      "idea": "Leadership is a decision made in moments, not a position granted by a promotion.",
+      "anchor": "Sinek's line that leadership is a choice, not a rank."
+    },
+    {
+      "idea": "Real leaders absorb the cost so that others feel safe.",
+      "anchor": "Marine officers eating last, after their juniors."
+    },
+    {
+      "idea": "People sense whether a leader protects them or uses them, and that feeling decides whether they commit.",
+      "anchor": "The Circle of Safety: trust grows when people don't have to protect themselves from inside threats."
+    },
+    {
+      "idea": "Putting people before numbers is a visible, testable choice.",
+      "anchor": "The company that chose shared sacrifice over layoffs in a downturn."
+    }
+  ],
+  "reflect": [
+    "Think of someone you would follow without being told to. What did they do, not what title did they hold?",
+    "When did you last protect your own comfort at a moment when someone else needed cover?",
+    "In your team, who makes people feel safe to speak up, and is it the person in charge?"
+  ],
+  "reflect_final": "What is one moment this week where you could lead without having the title for it?",
+  "use_cases": [
+    {
+      "situation": "A project slips in a team meeting and the room starts looking for someone to blame.",
+      "move": "Speak first and say, 'Part of this is on me. Here's what I missed.' Then turn the discussion toward the fix.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague or report seems overwhelmed but hasn't asked for help.",
+      "move": "In a private chat, ask, 'What's the heaviest thing on your plate right now?' Then take one concrete item off it yourself.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel you can't make a difference at work because you're not senior enough.",
+      "move": "Pick one small act of cover for someone this week, such as crediting them publicly or shielding them from an unfair request, and do it without waiting for permission.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Don't wait for a promotion to lead. Leadership is a choice you can make in any moment.",
+  "conversation_variants": {
+    "punchline_idea": "The title tells you who's in charge. The moment of sacrifice tells you who the leader is.",
+    "thirty_sec_idea": "Sinek says leadership isn't rank. It's choosing to protect others at a cost to yourself, like Marine officers who eat last.",
+    "question_idea": "Who would you follow into a hard situation, and do they actually have the highest title?",
+    "key_contrast_idea": "Leaders give up their comfort for others' growth. Position-holders give up others' comfort for their own growth."
+  }
+}

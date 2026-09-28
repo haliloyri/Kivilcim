@@ -1,4 +1,4 @@
-import { getReachedMilestoneIds, nextMilestoneState, pickMilestoneCelebration } from '../learningMilestones';
+import { getReachedMilestoneIds, listReachedMilestones, nextMilestoneState, pickMilestoneCelebration } from '../learningMilestones';
 
 const summary = (books, ideas, cats) => ({ books, ideas, allCategories: cats.map((name) => ({ name, rawName: name, count: 1 })) });
 
@@ -21,5 +21,13 @@ describe('learning milestones', () => {
   it('never celebrates the very first category', () => {
     expect(pickMilestoneCelebration(['cat_psychology'], summary(1, 1, ['Psychology']))).toBeNull();
     expect(getReachedMilestoneIds(null)).toEqual([]);
+  });
+
+  it('lists every reached milestone for the review shelf', () => {
+    const items = listReachedMilestones(summary(12, 30, ['Psychology', 'Finance']));
+    expect(items.map((item) => item.id)).toEqual(['books_5', 'books_10', 'cat_psychology', 'cat_finance']);
+    expect(items[1]).toMatchObject({ type: 'books', count: 10 });
+    expect(items[2]).toMatchObject({ type: 'category', category: 'Psychology', categoryRaw: 'Psychology' });
+    expect(listReachedMilestones(null)).toEqual([]);
   });
 });

@@ -1,0 +1,65 @@
+{
+  "story_id": 1193,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Obstacle Is the Way",
+    "author": "Ryan Holiday",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "The Edison fire is a well-documented story told in The Obstacle Is the Way. In December 1914, a fire broke out at Thomas Edison's laboratory and factory complex in West Orange, New Jersey. Edison, then 67, told his son Charles to go get his mother and her friends because they would never see a fire like this again. The reference TR text says Edison was 77 ('seventy-seven years'); he was 67, and that is corrected. Edison began rebuilding almost immediately. Exact damage and revenue figures are omitted.",
+  "facts": [
+    "In December 1914, a fire broke out at Thomas Edison's research and manufacturing complex in West Orange, New Jersey.",
+    "Many buildings were destroyed, along with equipment, prototypes and records. Much of the damage was not covered by insurance.",
+    "Edison was 67 years old.",
+    "His son Charles, then 24, went looking for his father, worried about how he'd take it. He found him calmly watching the fire.",
+    "Edison told Charles to go get his mother and her friends, because they would never see a fire like this again.",
+    "Edison started rebuilding almost immediately and the company was producing again within weeks.",
+    "Holiday uses the story to show how acceptance and immediate action can turn a disaster into a new start."
+  ],
+  "tension": "A lifetime's work is burning, and the man who built it seems almost delighted.",
+  "opening_idea": "A son runs through the night to find his father as the family business burns, expecting despair.",
+  "lessons": [
+    {
+      "idea": "Acceptance frees energy for action.",
+      "anchor": "Edison calmly watching the fire"
+    },
+    {
+      "idea": "Perspective can turn a disaster into an event.",
+      "anchor": "'They'll never see a fire like this again'"
+    },
+    {
+      "idea": "Start rebuilding immediately.",
+      "anchor": "Production resumed within weeks"
+    }
+  ],
+  "reflect": [
+    "What recent setback are you still fighting instead of accepting?",
+    "How quickly do you usually move from shock to action?"
+  ],
+  "reflect_final": "What would 'start rebuilding tomorrow' look like for the setback you're facing?",
+  "use_cases": [
+    {
+      "situation": "A major project your team worked on for months is cancelled.",
+      "move": "Acknowledge the loss, then ask what the team can salvage and start rebuilding this week.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You lose an important client.",
+      "move": "Allow yourself one evening of disappointment, then list the first three rebuilding steps.",
+      "context": "self"
+    },
+    {
+      "situation": "Your family's plans collapse unexpectedly.",
+      "move": "Find the unusual or memorable side of the situation and plan the next step together.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Accept what burned, then start building before the ashes cool.",
+  "conversation_variants": {
+    "punchline_idea": "As his factory burned, Edison told his son to fetch his mother because she'd never see a fire like it again.",
+    "thirty_sec_idea": "1914 fire, Edison at 67, the words to Charles, rebuilding within weeks.",
+    "question_idea": "What setback could you start rebuilding from tomorrow?",
+    "key_contrast_idea": "Loss versus fresh start"
+  }
+}

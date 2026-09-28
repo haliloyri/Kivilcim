@@ -1,0 +1,65 @@
+{
+  "story_id": 1296,
+  "kind": "concept",
+  "book": {
+    "title": "The 4-Hour Workweek",
+    "author": "Timothy Ferriss",
+    "year": "2007"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text presents this as the true story of a specific Ferriss client who ended up working from Portugal; I cannot attribute that case, its two-month duration or the Portugal detail to the book, so none of it is used. What the book does contain is a step-by-step method for negotiating remote work: increase your employer's investment in you, demonstrate that you are more productive out of the office, prepare the business case, propose a short, revocable trial, and then expand it. The book explicitly suggests 'calling in sick' to create a first remote-work proof, which is deceptive; the brief reports it as the book's suggestion but the reader applications do not endorse it. The book includes real reader case studies on remote work, but I can't confidently recall a specific one, so the kind is set to concept. Step names and order are recalled, not re-checked.",
+  "facts": [
+    "In the section on escaping the office, Ferriss lays out a gradual method for getting permission to work remotely.",
+    "First, increase the company's investment in you, for example through training, so that losing you would be costly.",
+    "Second, prove you are more productive outside the office; the book even suggests calling in sick for a couple of days and working hard remotely to show the output.",
+    "Third, prepare a case framed around the business benefit, with measurable results, rather than your personal wishes.",
+    "Fourth, propose a small, revocable trial, such as one or two days a week for a limited period, which is easy for a manager to say yes to.",
+    "Fifth, expand the arrangement step by step as the results hold up.",
+    "Ferriss's broader argument is that many rules people assume are fixed have simply never been tested with a well-framed request."
+  ],
+  "tension": "Asking outright for full remote work is easy to refuse, yet the same freedom becomes easy to grant when it arrives as a small, reversible trial backed by results.",
+  "opening_idea": "Start with the difference between two requests: 'Can I work remotely?' and 'Can I try working from home two days a week for a month, and if my numbers drop, we stop?'",
+  "lessons": [
+    {
+      "idea": "Small, reversible requests get approved where big, permanent ones get refused.",
+      "anchor": "The proposed short, revocable remote trial."
+    },
+    {
+      "idea": "Frame a request around the other side's benefit and evidence, not your preference.",
+      "anchor": "Preparing the business case with measurable productivity."
+    },
+    {
+      "idea": "Many limits are untested assumptions, not rules.",
+      "anchor": "Ferriss's claim that many constraints have simply never been asked about."
+    }
+  ],
+  "reflect": [
+    "Which rule at work or at home have you never actually asked to change?",
+    "How could you make a request you care about smaller and easier to reverse?"
+  ],
+  "reflect_final": "Choose one constraint you've assumed is fixed, and draft a small, time-limited, reversible version of the request you could make at your next suitable opportunity.",
+  "use_cases": [
+    {
+      "situation": "You want more flexibility at work but expect your manager to say no.",
+      "move": "Borrow Ferriss's reversible-trial step, minus the fake sick day: propose one remote day a week for a month, with agreed measures, and offer to stop if results drop.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your team keeps a meeting or process everyone thinks is fixed.",
+      "move": "Propose a two-week experiment without it, with a clear metric and a promise to bring it back if things slip.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You want to change a household routine but past attempts turned into arguments.",
+      "move": "Suggest a small trial for a set period and agree together how you'll judge whether to keep it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Ferriss's route to remote work runs through a small, revocable trial: turn a big 'no' into an easy 'let's try'.",
+  "conversation_variants": {
+    "punchline_idea": "Ferriss's advice for getting remote work literally includes pretending to have a cough.",
+    "thirty_sec_idea": "Instead of asking to work remotely, Ferriss says make yourself valuable, show you produce more outside the office, then propose a short trial you'll end if results drop, and expand from there.",
+    "question_idea": "What's a rule at your workplace that everyone follows but nobody has ever asked to change?",
+    "key_contrast_idea": "One big request that's easy to refuse, versus a small reversible trial that's easy to approve."
+  }
+}

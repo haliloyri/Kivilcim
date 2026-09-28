@@ -1,0 +1,64 @@
+{
+  "story_id": 1224,
+  "kind": "anecdote",
+  "book": {
+    "title": "Limitless",
+    "author": "Jim Kwik",
+    "year": "2020"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kwik tells his own story in Limitless: at about five years old he suffered a head injury at school, after which he struggled with learning, focus and reading; he describes an adult referring to him as 'the boy with the broken brain', a label that stayed with him. In college, overwhelmed, he began studying how learning itself works and developed methods that later became his career. Details of the injury and the exact circumstances are simplified. The reference TR text says it was his teacher who made the comment in front of other children; Kwik's own tellings vary slightly, so the speaker is kept as 'an adult at school'. The story avoids medical claims.",
+  "facts": [
+    "Jim Kwik writes that when he was about five, he had a head injury at school.",
+    "Afterwards, he struggled at school with focus, memory and reading; he says it took him years longer than classmates to learn to read well.",
+    "He recalls hearing an adult refer to him as 'the boy with the broken brain', a label he carried for years.",
+    "In college, struggling to keep up, he realized he had never been taught how to learn, only what to learn.",
+    "He began studying memory, speed reading and learning techniques, and his results improved dramatically.",
+    "He went on to teach these methods to others. His message is that the brain can learn and change, and that labels about our abilities are often wrong."
+  ],
+  "tension": "A child labeled as having a 'broken brain' grows up to teach others how to learn.",
+  "opening_idea": "A five-year-old overhears an adult call him 'the boy with the broken brain'.",
+  "lessons": [
+    {
+      "idea": "Labels can stick for decades.",
+      "anchor": "'The boy with the broken brain'"
+    },
+    {
+      "idea": "Learning how to learn is a skill of its own.",
+      "anchor": "Kwik's college realization"
+    },
+    {
+      "idea": "A setback can become a mission.",
+      "anchor": "Teaching others"
+    }
+  ],
+  "reflect": [
+    "What label about your abilities have you carried since childhood?",
+    "Were you ever taught how to learn, or only what to learn?"
+  ],
+  "reflect_final": "Which label about yourself are you ready to test again?",
+  "use_cases": [
+    {
+      "situation": "Your child calls themselves 'stupid' after a bad grade.",
+      "move": "Replace the label with a learning question: what method could we try next?",
+      "context": "family"
+    },
+    {
+      "situation": "A new team member thinks they're 'bad at numbers'.",
+      "move": "Offer a new way to learn the material rather than accepting the label.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You've believed for years that you have a bad memory.",
+      "move": "Learn one memory technique this week and test it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A label about your brain is a guess, not a sentence.",
+  "conversation_variants": {
+    "punchline_idea": "A boy called 'the boy with the broken brain' grew up to teach the world how to learn.",
+    "thirty_sec_idea": "Injury at five, the label, college crisis, learning how to learn.",
+    "question_idea": "What label about your abilities are you still carrying?",
+    "key_contrast_idea": "Label versus method"
+  }
+}

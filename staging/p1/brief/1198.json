@@ -1,0 +1,64 @@
+{
+  "story_id": 1198,
+  "kind": "concept",
+  "book": {
+    "title": "The Body Keeps the Score",
+    "author": "Bessel van der Kolk",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text describes a single patient who, after body-based therapy, said 'I got my body back'. That patient and quote cannot be verified and are not used. The book does argue that talking alone is often not enough for trauma survivors, because trauma is held in the body; that many survivors are disconnected from their bodily sensations (interoception); and that approaches such as yoga, breathing and movement can help people feel safe in their bodies again. Van der Kolk describes a study his team ran of a trauma-sensitive yoga program for women with chronic PTSD, which showed meaningful improvement compared with a control group. Exact numbers are omitted. The story avoids medical advice and encourages professional help.",
+  "facts": [
+    "Van der Kolk argues that many trauma survivors feel unsafe inside their own bodies and become disconnected from their physical sensations.",
+    "He calls the ability to sense what is happening inside the body interoception, and argues that trauma often disrupts it.",
+    "Because of this, talking about the trauma, though valuable, is often not enough on its own.",
+    "He describes approaches that work through the body, including yoga, breathing practices, movement, theater and other methods, to help people feel safe and in control of their bodies again.",
+    "His team studied a trauma-sensitive yoga program for women with chronic PTSD who hadn't improved with other treatments; the yoga group showed meaningful reductions in symptoms compared with a control group.",
+    "He emphasizes that recovery involves learning that it is safe to feel what is happening inside, at a pace the person can tolerate."
+  ],
+  "tension": "Some trauma survivors can tell their story again and again, and still not feel better. What's missing?",
+  "opening_idea": "Telling the story of what happened is one kind of healing. Van der Kolk argues there's another kind that happens below words.",
+  "lessons": [
+    {
+      "idea": "Healing trauma often needs the body, not just words.",
+      "anchor": "Talking alone is often not enough"
+    },
+    {
+      "idea": "Reconnecting with sensation builds safety.",
+      "anchor": "Interoception"
+    },
+    {
+      "idea": "Gentle body practices can help alongside therapy.",
+      "anchor": "The trauma-sensitive yoga study"
+    }
+  ],
+  "reflect": [
+    "How connected do you feel to what's happening in your body right now?",
+    "Which activities help you feel safe and settled in your body?"
+  ],
+  "reflect_final": "What small, gentle practice could help you feel more at home in your body?",
+  "use_cases": [
+    {
+      "situation": "You feel constantly tense but disconnected from your body.",
+      "move": "Try a few minutes of slow breathing or gentle movement daily, noticing sensations without judgment.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend who went through a hard experience says talking about it doesn't help.",
+      "move": "Gently mention that body-based approaches exist and that a trauma-informed professional can guide them.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team faces a stressful period.",
+      "move": "Build in short movement or breathing breaks rather than only discussing the stress.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Healing sometimes starts not with words, but with feeling safe in your own body.",
+  "conversation_variants": {
+    "punchline_idea": "For many trauma survivors, healing needs the body as well as words.",
+    "thirty_sec_idea": "Disconnection from the body, interoception, body-based approaches, yoga study.",
+    "question_idea": "What helps you feel at home in your body?",
+    "key_contrast_idea": "Words versus body"
+  }
+}

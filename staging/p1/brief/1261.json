@@ -1,0 +1,63 @@
+{
+  "story_id": 1261,
+  "kind": "anecdote",
+  "book": {
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "Holiday does use Howard Hughes in the success section of Ego Is the Enemy, chiefly as a cautionary example of someone who could not manage: a brilliant aviator and ambitious businessman who insisted on controlling everything, would not delegate, and whose ventures suffered serious losses. The existing TR text's vivid ending (years shut in a darkened luxury hotel room, long nails, dirty hair, dehydration) reflects widely reported history of Hughes' final years, but I cannot confirm Holiday includes those details, so they are excluded. Specific company names, dollar figures and the TR text's quoted Holiday lines are not included. The framing 'success, not failure, ruined him' is kept only as the book's general argument about ego in success, not as a quote.",
+  "facts": [
+    "Howard Hughes inherited a fortune and became famous in the 1930s and 1940s as an aviator, record-setting pilot, film producer and businessman.",
+    "Holiday presents him as someone whose talent and wealth let him insist on personal control over everything in his companies.",
+    "Hughes, in Holiday's account, did not delegate, ignored or overruled the people around him, and fixated on details, leaving his businesses poorly run and costing them heavily.",
+    "Holiday uses the contrast between Hughes' brilliance as a doer and his failure as a manager to argue that success requires a shift: from doing everything yourself to building systems and trusting others.",
+    "The book's broader claim is that ego in success makes people stop listening and try to control more, which cuts them off from reality."
+  ],
+  "tension": "Hughes' gifts and fortune were the very things that let him avoid learning to rely on anyone else.",
+  "opening_idea": "Start with Hughes at his peak, the pilot and producer the whole country watched, and ask why the man who could do everything could not run what he built.",
+  "lessons": [
+    {
+      "idea": "The skills that bring early success can become obstacles when the job changes from doing to leading.",
+      "anchor": "Hughes the brilliant aviator versus Hughes the manager who wouldn't delegate"
+    },
+    {
+      "idea": "Controlling every detail feels like strength but often signals ego and costs the organization.",
+      "anchor": "His insistence on personal control over his companies"
+    },
+    {
+      "idea": "Success can reduce the feedback you seek, just when you need it most.",
+      "anchor": "Overruling the people around him"
+    }
+  ],
+  "reflect": [
+    "Is there something you still do yourself mainly because you've always been the best at it?",
+    "When did you last change your mind because of someone who reports to you?"
+  ],
+  "reflect_final": "Choose one decision this week that you would normally make alone and hand it to someone capable, with a clear goal; afterward, notice what they did differently and whether it worked.",
+  "use_cases": [
+    {
+      "situation": "As a lead, you keep rewriting your team's work late at night.",
+      "move": "Hughes could fly any plane yet ran his companies into trouble by controlling everything; pick one area and agree with its owner on the standard, then stop reviewing every line.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A planning meeting where everyone defers to the most senior person.",
+      "move": "If you're that person, ask others to state their recommendation first and speak last.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A recent win makes you feel you don't need outside opinions on your next move.",
+      "move": "Before committing, ask one person who disagrees with you what they would change.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Hughes could do everything himself; that was the problem.",
+  "conversation_variants": {
+    "punchline_idea": "Howard Hughes could fly record-breaking planes but couldn't let anyone else run his companies.",
+    "thirty_sec_idea": "Howard Hughes was a famed pilot, film producer and tycoon who insisted on controlling every detail and wouldn't delegate; his businesses paid for it. Holiday uses him to show that success demands shifting from doing everything to trusting others.",
+    "question_idea": "What's one task you've held onto because you're good at it, even though someone else could learn it?",
+    "key_contrast_idea": "Being the best doer in the room versus building a team that doesn't need you for everything."
+  }
+}

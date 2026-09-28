@@ -1,0 +1,63 @@
+{
+  "story_id": 1298,
+  "kind": "concept",
+  "book": {
+    "title": "Essentialism: The Disciplined Pursuit of Less",
+    "author": "Greg McKeown",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kept: McKeown's argument that every choice is a trade-off, his use of Derek Sivers's 'hell yeah or no' idea, and his rule that if the answer isn't a clear yes it is a clear no (his 90 percent rule for applying selective criteria). The speaking-invitation example in the reference text is an illustration, not from the book, and is omitted; the quoted line 'saying yes to good opportunities means missing excellent ones' is paraphrase, not a verified quote. Paraphrased from recall; not checked against the text.",
+  "facts": [
+    "McKeown argues that trade-offs are unavoidable: choosing one thing always means not choosing something else, whether we admit it or not.",
+    "He asks the reader to stop asking 'How can I do both?' and instead ask 'Which problem do I want?' when options compete.",
+    "He cites entrepreneur Derek Sivers's rule: if you are not saying 'Hell yeah!' about something, say no.",
+    "McKeown turns this into a selection rule: if the answer isn't a clear yes, it's a clear no. He also describes it as a 90 percent rule: score an option against your most important criterion, and if it falls below about 90, treat it as a zero.",
+    "The point is that mostly-fine opportunities, accepted automatically, take the time and energy that the rare excellent ones need."
+  ],
+  "tension": "A good opportunity is hardest to refuse precisely because nothing is wrong with it.",
+  "opening_idea": "An offer arrives that is decent on every count. McKeown's test does not ask whether it is good, only whether your first reaction is an unmistakable 'Hell yeah!'",
+  "lessons": [
+    {
+      "idea": "Every yes is also a no to something you may not yet see.",
+      "anchor": "McKeown's point that trade-offs cannot be avoided"
+    },
+    {
+      "idea": "Raising the bar for yes protects room for the best options.",
+      "anchor": "The 'clear yes or clear no' / 90 percent rule"
+    },
+    {
+      "idea": "Hesitation is information about how much you really want something.",
+      "anchor": "Derek Sivers's 'Hell yeah or no'"
+    }
+  ],
+  "reflect": [
+    "Which recent yes did you give because the offer was fine rather than because you wanted it?",
+    "What did that yes quietly take time away from?"
+  ],
+  "reflect_final": "The next time you receive an invitation or request, give it an honest score against your main priority before answering, and notice how many fall short of a clear yes.",
+  "use_cases": [
+    {
+      "situation": "A stakeholder asks your team to take on a reasonable extra project.",
+      "move": "Ask the room what current work would be dropped to make space, so the trade-off is named before anyone agrees.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend invites you to join a group commitment that sounds pleasant but not exciting.",
+      "move": "Use Sivers's test on yourself: since your reaction isn't a 'hell yeah', thank them warmly and decline this one.",
+      "context": "social"
+    },
+    {
+      "situation": "You're weighing an offer that looks good on paper.",
+      "move": "Score it from 0 to 100 against the one criterion that matters most to you; if it lands below about 90, treat it as a no and see how that feels.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "If it isn't 'Hell yeah!', it's no: a lukewarm yes spends the space an excellent option would need.",
+  "conversation_variants": {
+    "punchline_idea": "McKeown's rule for opportunities: anything that scores 89 out of 100 counts as zero.",
+    "thirty_sec_idea": "McKeown borrows Derek Sivers's rule, 'if it's not hell yeah, it's no', and sharpens it: rate an option against your top criterion and if it isn't a clear yes, it's a clear no, because every yes is a trade-off against something better.",
+    "question_idea": "What's something you said yes to because it was 'fine', and what would you have done with that time instead?",
+    "key_contrast_idea": "Saying yes because nothing is wrong versus saying yes only when you really want it."
+  }
+}

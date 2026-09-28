@@ -1,0 +1,63 @@
+{
+  "story_id": 1273,
+  "kind": "concept",
+  "book": {
+    "title": "When: The Scientific Secrets of Perfect Timing",
+    "author": "Daniel H. Pink",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text builds on Ernest Hemingway's morning writing routine and says Pink 'reviewed thousands of studies' and found Hemingway 'instinctively right'; the Hemingway framing and that claim cannot be confidently attributed to When and are omitted. The book's own evidence for the daily pattern is used instead: the Twitter mood study and the Wieth and Zacks insight-problem study. Pink's pattern (peak, trough, recovery) applies to most people but reverses for night owls; the reference text's claim of a fixed morning peak for everyone is corrected. Chronotype percentages are omitted.",
+  "facts": [
+    "Pink describes a study of hundreds of millions of tweets from many countries in which positive mood rose in the morning, dipped in the afternoon and rose again in the evening.",
+    "He summarizes the day as peak, trough and recovery for most people; for night owls the order runs roughly in reverse.",
+    "During the peak, people are best at analytical work that needs focus and ignoring distractions.",
+    "In a study by Mareike Wieth and Rose Zacks, people solved insight problems better at their non-optimal time of day, when they were a little less focused and more open to unexpected connections.",
+    "Pink's advice: find your chronotype, then match task type to time, analytical work in the peak and insight work in the recovery, and avoid important work in the trough when possible."
+  ],
+  "tension": "The same person can be sharp at 9 a.m. and a better creative thinker at 7 p.m., so 'when am I most productive?' has no single answer.",
+  "opening_idea": "Begin with the tweets: millions of people across the world, without meaning to, left a record of their mood rising and falling at the same times of day.",
+  "lessons": [
+    {
+      "idea": "Timing affects different kinds of work differently.",
+      "anchor": "Analytical tasks favored the peak; insight problems favored the off-peak."
+    },
+    {
+      "idea": "A slightly unfocused mind can see new connections.",
+      "anchor": "Wieth and Zacks found insight improved when people were less alert."
+    },
+    {
+      "idea": "The daily pattern depends on chronotype.",
+      "anchor": "Pink notes the peak-trough-recovery order roughly reverses for night owls."
+    }
+  ],
+  "reflect": [
+    "When during the day do you do your most careful work, and is that by choice or by habit?",
+    "Have you had a good idea at a time you weren't trying to work?"
+  ],
+  "reflect_final": "Tomorrow, move one analytical task into your peak and one open-ended problem into your recovery period, then compare how each went.",
+  "use_cases": [
+    {
+      "situation": "Scheduling a budget review and a brainstorm in the same week.",
+      "move": "Put the budget review in the morning and, citing Pink's insight-problem study, suggest the brainstorm late afternoon.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend who's a night owl apologizes for late messages about work.",
+      "move": "Tell them Pink says owls' peak runs later, and ask when their clearest thinking actually happens.",
+      "context": "social"
+    },
+    {
+      "situation": "Planning your own day.",
+      "move": "Block your first two focused hours for your hardest analytical task this week, and notice if afternoons suit other work.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Pink's tweet data show a daily mood curve most of us share, and the insight study shows the dip isn't only wasted: the slightly foggy hours suit different work.",
+  "conversation_variants": {
+    "punchline_idea": "People solved creative puzzles better when they were slightly tired, not at their sharpest.",
+    "thirty_sec_idea": "Pink uses a massive tweet study to show mood peaks, dips and recovers daily; then an insight study shows that the off-peak hours actually help creative problem solving.",
+    "question_idea": "When in the day does your best idea usually show up?",
+    "key_contrast_idea": "From 'find your most productive hour' to 'find the right hour for each kind of work.'"
+  }
+}

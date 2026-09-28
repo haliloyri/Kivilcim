@@ -1,0 +1,64 @@
+{
+  "story_id": 1140,
+  "kind": "concept",
+  "book": {
+    "title": "Daring Greatly",
+    "author": "Brené Brown",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text says Brown began with the hypothesis that connected people are not vulnerable and spent six years interviewing people. Neither the hypothesis nor the six-year figure can be confirmed from the book, so both are left out. What the book clearly says: Brown's research on connection and shame led her to people she calls 'wholehearted', who embrace vulnerability rather than avoid it. She defines vulnerability as uncertainty, risk and emotional exposure, argues it is not weakness, and calls it the birthplace of love, belonging, joy, courage, empathy and creativity. She also describes the paradox that vulnerability is the first thing we look for in others and the last thing we want them to see in us.",
+  "facts": [
+    "Brown is a researcher who studied connection, shame and vulnerability through many interviews.",
+    "She defines vulnerability as uncertainty, risk and emotional exposure.",
+    "She argues vulnerability is not weakness; it is our most accurate measure of courage.",
+    "She calls vulnerability the birthplace of love, belonging, joy, courage, empathy and creativity.",
+    "She describes people who live 'wholeheartedly', with a strong sense of worthiness and connection, and finds that they embrace vulnerability rather than armoring against it.",
+    "She names a paradox: vulnerability is the first thing we look for in you and the last thing I'm willing to show you. In you it looks like courage; in me it feels like inadequacy."
+  ],
+  "tension": "We want deep connection, yet we avoid the one thing connection requires: being seen as we are.",
+  "opening_idea": "When a friend admits they're struggling, we call it brave. When we are the ones struggling, it feels like weakness.",
+  "lessons": [
+    {
+      "idea": "Connection requires being seen, and being seen requires vulnerability.",
+      "anchor": "Wholehearted people embrace vulnerability"
+    },
+    {
+      "idea": "We judge vulnerability differently in others and in ourselves.",
+      "anchor": "'The first thing I look for in you and the last thing I want you to see in me'"
+    },
+    {
+      "idea": "Armor protects us from hurt but also from love and belonging.",
+      "anchor": "Vulnerability as the birthplace of love, belonging and joy"
+    }
+  ],
+  "reflect": [
+    "When did someone's honesty about a struggle make you respect them more?",
+    "What armor do you put on when you feel exposed?"
+  ],
+  "reflect_final": "With whom could you take off one piece of armor this week?",
+  "use_cases": [
+    {
+      "situation": "You're leading a team and pretend everything is under control during a hard project.",
+      "move": "Name one real uncertainty openly and ask for the team's input on it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A close friend asks how you are, and you're not fine.",
+      "move": "Answer honestly in one or two sentences instead of 'fine, busy'.",
+      "context": "social"
+    },
+    {
+      "situation": "You want a closer relationship with your partner.",
+      "move": "Share one small fear or hope you haven't said out loud before.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Armor keeps out the hurt, and it keeps out the love too.",
+  "conversation_variants": {
+    "punchline_idea": "We call vulnerability courage in others and weakness in ourselves.",
+    "thirty_sec_idea": "Brown's definition of vulnerability, the wholehearted, and the first/last paradox.",
+    "question_idea": "Where do you see courage in others that you'd call weakness in yourself?",
+    "key_contrast_idea": "Armor versus connection"
+  }
+}

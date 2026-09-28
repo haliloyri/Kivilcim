@@ -1,0 +1,60 @@
+{
+  "story_id": 1340,
+  "kind": "anecdote",
+  "book": { "title": "Uyku Devrimi (The Sleep Revolution)", "author": "Arianna Huffington", "year": "2016" },
+  "confidence": "medium",
+  "confidence_note": "In the book Huffington describes her own bedtime ritual. She switches off her devices and takes them out of the bedroom so they are not charging beside her bed. She takes a hot bath, puts on dedicated sleepwear instead of gym clothes, and reads physical books rather than screens. She also covers why screen light is a problem, namely blue light suppressing melatonin, and that point is kept. The exact '30 minutes before bed' timing in the TR text could not be confirmed as her personal routine, so no specific interval is given. The TR quotation calling the bath a 'transition ritual between day and night' is not verified wording, though the idea of the ritual as a transition out of the day fits her account. The warm-bath body-temperature mechanism is general sleep science and is not attributed to the book. The TR claim that 'eight hours of poor sleep is less useful than six hours of deep sleep' is not from the book and conflicts with its emphasis on getting enough sleep, so it is excluded. The claim that 'the hour before bed determines sleep quality' is also dropped as an overstatement.",
+  "facts": [
+    "After her collapse from exhaustion, Huffington built a nightly routine to wind down, which she describes in the book.",
+    "She switches off her phone and other devices and takes them out of the bedroom, so they are not charging next to her bed.",
+    "She takes a hot bath as part of the ritual of ending the day.",
+    "She changes into clothes meant only for sleeping, rather than going to bed in workout clothes, as a signal that it is time to sleep.",
+    "She reads real, printed books at bedtime—not work material and not on a screen.",
+    "She explains that the blue light from screens suppresses melatonin, the hormone that helps signal sleep."
+  ],
+  "tension": "One of the most connected media figures of her era made the most important part of her routine the moment she sends her phone out of the room.",
+  "opening_idea": "Start with a phone being carried out of a bedroom each night by someone who built a business around the always-on news cycle.",
+  "lessons": [
+    {
+      "idea": "Physically removing the device works better than promising yourself not to check it.",
+      "anchor": "Huffington charges her devices outside the bedroom."
+    },
+    {
+      "idea": "Small, repeated cues tell the body the day is over.",
+      "anchor": "The hot bath and the change into dedicated sleepwear rather than gym clothes."
+    },
+    {
+      "idea": "What you look at before sleep matters, not only when you go to bed.",
+      "anchor": "Her point that screen light suppresses melatonin, and her switch to printed books."
+    }
+  ],
+  "reflect": [
+    "Where does your phone spend the night, and what is the last thing you look at before sleeping?",
+    "What, if anything, currently marks the end of your day?"
+  ],
+  "reflect_final": "Tonight, charge your phone in a different room from where you sleep; tomorrow morning, notice whether falling asleep or waking felt any different.",
+  "use_cases": [
+    {
+      "situation": "You keep scrolling in bed long after you meant to sleep.",
+      "move": "Tonight, do what Huffington does and plug your phone in outside the bedroom, with a paper book on the nightstand instead.",
+      "context": "self"
+    },
+    {
+      "situation": "Your household drifts to bed with every screen still on.",
+      "move": "Propose one shared rule at dinner, such as 'phones charge in the kitchen overnight,' and try it for a few nights before deciding whether to keep it.",
+      "context": "family"
+    },
+    {
+      "situation": "Your manager or team is used to late-night message exchanges.",
+      "move": "In your next one-on-one, say that you are switching your phone off at night and ask how truly urgent issues should reach you instead.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Huffington's phone sleeps in another room: the easiest way to end the day is to put the day's main device where you cannot reach it.",
+  "conversation_variants": {
+    "punchline_idea": "Arianna Huffington's bedtime secret is almost comically simple: her phone isn't allowed to sleep in her bedroom.",
+    "thirty_sec_idea": "After collapsing from exhaustion, Huffington built a nightly ritual: devices off and out of the bedroom, a hot bath, real pajamas instead of gym clothes, and a printed book—because screen light suppresses melatonin.",
+    "question_idea": "What's the last thing you do before you fall asleep, and would you want to change it?",
+    "key_contrast_idea": "From falling asleep with the phone in hand to leaving the phone outside the door."
+  }
+}

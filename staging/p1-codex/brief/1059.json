@@ -1,0 +1,63 @@
+{
+  "story_id": 1059,
+  "kind": "anecdote",
+  "book": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "High confidence in the retained elements of Clear's account from book knowledge; no primary-source verification was performed in this run. The reference's two-percent target is corrected to one percent. Retained the 2003 appointment and the book's reported roughly 60 percent of available cycling gold medals at Beijing 2008. Omitted the reference's historical dates and duration, its exact medal counts, massage-gel specifics, later records, named Tour de France winners, and the compounding calculation. The anecdote illustrates Clear's argument; it does not establish that these adjustments alone caused success, that each detail had a measured effect, or that nothing improved before 2008.",
+  "facts": [
+    "James Clear opens Atomic Habits with an account of British cycling's poor record and Dave Brailsford's appointment as performance director in 2003.",
+    "Brailsford's approach, called the aggregation of marginal gains, sought a one-percent improvement in each component of cycling, with the intention of combining those improvements.",
+    "The team redesigned bicycle saddles to improve comfort and rubbed alcohol on the tires for better grip.",
+    "The search extended to riders' health and recovery. A surgeon taught the riders handwashing techniques to reduce the chance of catching a cold.",
+    "The team identified pillows and mattresses that helped riders sleep and took that bedding to hotels while traveling.",
+    "The interior of the team truck was painted white to make dust that might affect the bicycles easier to see.",
+    "In Clear's account, British cycling won roughly 60 percent of the cycling gold medals available at the 2008 Beijing Olympics, five years after Brailsford's appointment.",
+    "Clear uses the account to illustrate the cumulative importance of small improvements, including improvements in conditions surrounding the central activity."
+  ],
+  "tension": "A team pursuing Olympic success devoted attention to things as ordinary as a pillow and visible dust; those details appear too small beside the ambition until the full approach comes into view.",
+  "opening_idea": "Lead with the cycling team packing riders' bedding for travel, then establish the unexpected connection to the pursuit of racing performance without revealing the result.",
+  "lessons": [
+    {
+      "idea": "Make a recurring obstacle easier to notice and address.",
+      "anchor": "Painting the truck interior white made dust more visible; redesigning saddles addressed discomfort in an ordinary part of riding."
+    },
+    {
+      "idea": "Include recovery and preparation within the work of improving performance.",
+      "anchor": "Travel bedding and handwashing made sleep and health part of the team's search for improvements."
+    }
+  ],
+  "reflect": [
+    "Locate a familiar inconvenience that you routinely compensate for while pursuing a goal.",
+    "Consider what would make the inconvenience easier to notice or address.",
+    "Identify one condition around the task that makes the effort harder than it needs to be."
+  ],
+  "reflect_final": "Before you do that task again, which overlooked condition could you change, and what would tell you it helped?",
+  "use_cases": [
+    {
+      "situation": "A team repeatedly loses information during handoffs.",
+      "move": "Mention that the cycling team's white truck made dust visible; propose making missing handoff information visible before the next handoff is completed.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A household keeps rushing through the same morning preparations.",
+      "move": "Ask which one recurring preparation can be handled beforehand, and offer to take care of it for the next morning.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel you can improve a recurring task only by pushing harder.",
+      "move": "Examine the setup or recovery around that task and choose one avoidable difficulty to address before increasing the effort.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Connect the riders' travel bedding to permission to include recovery in one's own plans for effort.",
+  "conversation_variants": {
+    "punchline_idea": "The riders' pillows were taken seriously enough to travel with the team.",
+    "thirty_sec_idea": "Start with Brailsford seeking one-percent gains, give a few surprising adjustments, and end with the book's reported Beijing cycling-gold share.",
+    "question_idea": "Invite someone to describe a small practical change whose usefulness surprised them.",
+    "key_contrast_idea": "Pair the ordinary scale of the details with the Olympic scale of the ambition."
+  }
+}

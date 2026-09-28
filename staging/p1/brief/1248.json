@@ -1,0 +1,65 @@
+{
+  "story_id": 1248,
+  "kind": "anecdote",
+  "book": {
+    "title": "Big Magic: Creative Living Beyond Fear",
+    "author": "Elizabeth Gilbert",
+    "year": "2015"
+  },
+  "confidence": "high",
+  "confidence_note": "Gilbert argues in Big Magic that when passion feels out of reach, you should follow your curiosity instead: small, gentle interests that act like clues in a scavenger hunt. She tells how, during a period without a clear passion, she became curious about gardening; that interest led her to the history of plants and botanical exploration, which eventually became her novel The Signature of All Things. She also describes 'jackhammer' people (single-minded passion) and 'hummingbirds' (who move from interest to interest), and says both are valid. Details paraphrased.",
+  "facts": [
+    "Gilbert says that advice to 'follow your passion' can be unhelpful when you don't feel any clear passion.",
+    "She suggests following curiosity instead: small, quiet interests that make you want to look a little closer.",
+    "She compares curiosity to a scavenger hunt, where each clue leads to the next.",
+    "At one point, without a clear creative direction, she became curious about gardening and began growing plants.",
+    "That curiosity led her to wonder about where her plants came from, and to the history of botanical exploration.",
+    "Years of following that thread eventually became her novel The Signature of All Things.",
+    "She describes 'jackhammers', people with a single consuming passion, and 'hummingbirds', who move between many interests; both can lead to meaningful creative lives."
+  ],
+  "tension": "What do you do when everyone says 'follow your passion' and you can't find one?",
+  "opening_idea": "A novelist with no idea what to write next finds herself in the garden, curious about a few plants.",
+  "lessons": [
+    {
+      "idea": "Curiosity is gentler and more reliable than passion.",
+      "anchor": "Gilbert's scavenger hunt"
+    },
+    {
+      "idea": "Small interests can lead to big work.",
+      "anchor": "Gardening to The Signature of All Things"
+    },
+    {
+      "idea": "There's more than one creative temperament.",
+      "anchor": "Jackhammers and hummingbirds"
+    }
+  ],
+  "reflect": [
+    "What are you mildly curious about right now?",
+    "Are you more of a jackhammer or a hummingbird?"
+  ],
+  "reflect_final": "What small curiosity could you follow one step further this week?",
+  "use_cases": [
+    {
+      "situation": "You feel stuck because you don't have a passion.",
+      "move": "Follow one small curiosity for a week, like reading about it or trying it.",
+      "context": "self"
+    },
+    {
+      "situation": "Your teenager worries they don't know what to study.",
+      "move": "Encourage them to follow what they're curious about now, without committing to a lifelong passion.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend jumps between hobbies and feels scattered.",
+      "move": "Tell them about hummingbirds: moving between interests can be its own path.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "If passion won't show up, follow your curiosity one small step.",
+  "conversation_variants": {
+    "punchline_idea": "Gilbert's curiosity about her garden turned into a whole novel.",
+    "thirty_sec_idea": "Passion vs curiosity, the garden, botanical history, The Signature of All Things, hummingbirds.",
+    "question_idea": "What are you mildly curious about right now?",
+    "key_contrast_idea": "Passion versus curiosity"
+  }
+}

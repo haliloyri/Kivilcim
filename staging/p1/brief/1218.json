@@ -1,0 +1,64 @@
+{
+  "story_id": 1218,
+  "kind": "concept",
+  "book": {
+    "title": "Digital Minimalism",
+    "author": "Cal Newport",
+    "year": "2019"
+  },
+  "confidence": "high",
+  "confidence_note": "Newport defines digital minimalism as a philosophy of technology use in which you focus your online time on a small number of carefully selected and optimized activities that strongly support things you value, and then happily miss out on everything else. He criticizes the 'any-benefit' mindset: adopting a tool if it offers any benefit at all, ignoring its costs. He illustrates a more deliberate approach with the Amish, who, contrary to stereotype, don't reject all technology but ask whether a new technology will serve or harm their community's values before adopting it. The reference TR text's framing of the two questions is consistent with this.",
+  "facts": [
+    "Newport defines digital minimalism as a philosophy in which you focus your online time on a small number of carefully selected and optimized activities that strongly support things you value, and happily miss out on everything else.",
+    "He criticizes the 'any-benefit' approach: justifying a tool because it offers some benefit, without weighing its costs in time and attention.",
+    "The better question is whether a tool is the best way to support something you deeply value.",
+    "He uses the Amish as an example: they don't reject all technology, but carefully evaluate whether each new tool will strengthen or weaken the values of their community before adopting it, sometimes with restrictions.",
+    "He argues that clutter is costly: many small tools, each with small benefits, together take a large share of our time and attention.",
+    "Minimalists are comfortable missing out on small benefits in exchange for protecting what matters most."
+  ],
+  "tension": "Almost every app has some benefit. So why do so many people feel worse with all of them combined?",
+  "opening_idea": "Ask whether an app has any benefit, and the answer is almost always yes. Newport says that's the wrong question.",
+  "lessons": [
+    {
+      "idea": "Some benefit isn't enough.",
+      "anchor": "The any-benefit mindset"
+    },
+    {
+      "idea": "Ask whether it's the best way to serve a deep value.",
+      "anchor": "Newport's definition"
+    },
+    {
+      "idea": "Evaluate before adopting.",
+      "anchor": "The Amish approach"
+    }
+  ],
+  "reflect": [
+    "Which tool do you use just because it has 'some' benefit?",
+    "What deep value is each of your main apps supposed to serve?"
+  ],
+  "reflect_final": "Which app would you keep if it had to prove it's the best way to serve something you truly value?",
+  "use_cases": [
+    {
+      "situation": "You're about to install another productivity app.",
+      "move": "Ask what value it serves and whether it's the best way to serve it.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team adopts every new tool someone suggests.",
+      "move": "Agree on a rule: new tools must replace something or clearly serve a core goal.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your teenager wants a new social app.",
+      "move": "Talk together about what it would add and what it might cost.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Don't ask if a tool has any benefit; ask if it's the best way to serve what you value.",
+  "conversation_variants": {
+    "punchline_idea": "Almost every app has some benefit, which is exactly why 'any benefit' is the wrong test.",
+    "thirty_sec_idea": "Definition of digital minimalism, any-benefit mindset, the Amish example.",
+    "question_idea": "What value is each of your apps supposed to serve?",
+    "key_contrast_idea": "Any benefit versus best benefit"
+  }
+}

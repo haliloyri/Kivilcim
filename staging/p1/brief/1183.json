@@ -1,0 +1,64 @@
+{
+  "story_id": 1183,
+  "kind": "concept",
+  "book": {
+    "title": "Money: Master the Game",
+    "author": "Tony Robbins",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Robbins built the book on interviews with around fifty financial experts and investors, including Ray Dalio, John Bogle and Carl Icahn (Warren Buffett is referenced but was not a sit-down interviewee in the same way; he is not named here as an interviewee). The reference TR text says the book has 'five steps'; the book is organized around seven simple steps to financial freedom, and the first is making the most important financial decision of your life: to save and invest a portion of every paycheck automatically, i.e. pay yourself first. He also discusses Shlomo Benartzi's 'Save More Tomorrow' approach of committing future raises to savings.",
+  "facts": [
+    "Robbins interviewed about fifty of the world's leading financial experts and investors for the book.",
+    "He organizes the book around seven simple steps to financial freedom.",
+    "The first step is to make the most important financial decision of your life: commit to saving a percentage of your income and investing it, before spending anything.",
+    "He argues the key is to automate it: set up the transfer so it happens before you see the money.",
+    "He stresses that most people spend first and save what's left, which usually means saving nothing.",
+    "He discusses economist Shlomo Benartzi's 'Save More Tomorrow' idea: commit now to save a portion of future raises, which people find much easier than cutting today's spending."
+  ],
+  "tension": "Almost everyone intends to save. Almost no one has anything left at the end of the month.",
+  "opening_idea": "Ask fifty top investors for one piece of advice for ordinary people and notice where they start.",
+  "lessons": [
+    {
+      "idea": "Save before you spend.",
+      "anchor": "Step one: the most important financial decision"
+    },
+    {
+      "idea": "Automation beats willpower.",
+      "anchor": "Transfer before you see the money"
+    },
+    {
+      "idea": "Commit future raises, not current pain.",
+      "anchor": "Save More Tomorrow"
+    }
+  ],
+  "reflect": [
+    "Do you save first or spend first?",
+    "What part of your next raise could you commit today?"
+  ],
+  "reflect_final": "What would you have to set up this week so saving happens without your willpower?",
+  "use_cases": [
+    {
+      "situation": "You say you'll save 'what's left' each month.",
+      "move": "Set up an automatic transfer on payday instead.",
+      "context": "self"
+    },
+    {
+      "situation": "You and your partner argue about money.",
+      "move": "Agree on an automatic savings percentage together first, then budget the rest.",
+      "context": "family"
+    },
+    {
+      "situation": "Your team manages an employee savings plan.",
+      "move": "Suggest defaulting people into automatic increases with each raise.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Pay yourself first, automatically, before life decides for you.",
+  "conversation_variants": {
+    "punchline_idea": "The first step to financial freedom is deciding to save before you spend.",
+    "thirty_sec_idea": "Fifty experts, seven steps, pay yourself first, automate, Save More Tomorrow.",
+    "question_idea": "Do you save first or spend first?",
+    "key_contrast_idea": "Leftovers versus first"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1060,
+  "kind": "concept",
+  "book": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "High confidence in the book's cigarette illustration, three layers of behavior change, reader example, and votes-for-identity comparison. Confidence reflects book knowledge, not independent source verification. The cigarette exchange is an illustrative contrast, not a documented experiment, and no later success is reported here. The short dialogue is the familiar book example. Omitted the reference's claim that identity change removes effort; changing a self-description alone does not establish a changed habit.",
+  "facts": [
+    "In Atomic Habits, James Clear asks readers to imagine two people resisting a cigarette to illustrate identity-based habits.",
+    "The first imagined reply is 'No thanks. I'm trying to quit.' The second is 'No thanks. I'm not a smoker.'",
+    "Both people refuse the cigarette. Clear uses the first reply to illustrate retaining the identity of a smoker while trying to change behavior, and the second to illustrate a changed identity.",
+    "Clear distinguishes three layers of change: outcomes, processes, and identity. These concern desired results, habits and systems, and beliefs about oneself, respectively.",
+    "He proposes starting with the kind of person one wants to become and building evidence through small actions.",
+    "The book contrasts reading a book as an outcome with becoming a reader as an identity. The act of reading can supply evidence for the latter.",
+    "Clear compares actions to votes for the person one becomes. Repeated behavior supplies evidence that can change one's self-beliefs.",
+    "The influence works in both directions: identity shapes habits, and habits shape identity.",
+    "The voting comparison allows an imperfect record. A majority is enough; one does not need every vote to point the same way. One lapse does not have to erase the significance of earlier actions."
+  ],
+  "tension": "Two identical refusals express different ideas about who the person is, but a believable new identity requires more than a different sentence.",
+  "opening_idea": "Introduce two people declining the same cigarette offer and the contrast in their responses, without framing the exchange as an experiment or assuming which person will succeed.",
+  "lessons": [
+    {
+      "idea": "Let a chosen identity suggest a behavior that supplies evidence for it.",
+      "anchor": "The book's reader example moves from the result of finishing a book to the identity supported by actually reading."
+    },
+    {
+      "idea": "Treat a missed action as one piece of evidence rather than an entire identity.",
+      "anchor": "The book's voting comparison calls for a majority, not a perfect or unanimous record."
+    }
+  ],
+  "reflect": [
+    "Notice an old self-description you still use despite some actions that contradict it.",
+    "Recall a specific action that gives a more useful description some support.",
+    "Separate the identity you want to practice from the demand to act perfectly every time."
+  ],
+  "reflect_final": "What small action could you take today that your old description of yourself leaves out?",
+  "use_cases": [
+    {
+      "situation": "A friend treats a missed reading session as proof of permanent failure.",
+      "move": "Use Clear's comparison of actions to votes to acknowledge the lapse without erasing previous reading, then invite an easy return to the book.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A family member dismisses a completed household task because they think of themselves as disorganized.",
+      "move": "Recognize the actual completed task without assigning a new identity to them, and ask whether they want to repeat the helpful action next time.",
+      "context": "family"
+    },
+    {
+      "situation": "You hesitate to read because you do not think of yourself as a reader.",
+      "move": "Read a page now and count the completed behavior as evidence without requiring an immediate change in how the label feels.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Use the concrete act of reading a page to challenge the label of not being a reader.",
+  "conversation_variants": {
+    "punchline_idea": "The identity-voting comparison makes a unanimous record unnecessary.",
+    "thirty_sec_idea": "Begin with two refusals of a cigarette, explain the different self-descriptions, and connect identity to evidence from repeated action.",
+    "question_idea": "Ask about an activity that changed someone's view of what kind of person they were.",
+    "key_contrast_idea": "Show a self-description being revised through experience."
+  }
+}

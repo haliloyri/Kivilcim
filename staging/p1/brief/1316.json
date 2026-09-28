@@ -1,0 +1,38 @@
+{
+  "story_id": 1316,
+  "kind": "concept",
+  "book": { "title": "Müşteriyi Anlamak (Hooked: How to Build Habit-Forming Products)", "author": "Nir Eyal", "year": "2014" },
+  "confidence": "medium",
+  "confidence_note": "External vs internal triggers, the role of negative emotions such as boredom, loneliness, frustration, and uncertainty as internal triggers, and Eyal's ethics discussion (the Manipulation Matrix) are well attested. The TR text's specific pairings ('lonely, so Facebook; worried, so news') resemble Eyal's examples but exact wording and pairings are not verified, so they are given generally rather than as quotes. The TR text's claim that external triggers are 'expensive and temporary' is simplified; Eyal says external triggers are needed at first and that the aim is to link the product to an internal trigger through repeated use. No research figures are included.",
+  "facts": [
+    "Eyal divides triggers into external ones, such as ads, emails, notifications, or a friend's recommendation, and internal ones, which are feelings, routines, or situations inside the user.",
+    "He names negative emotions such as boredom, loneliness, frustration, confusion, and indecision as especially powerful internal triggers.",
+    "Products often start with external triggers; through repeated use, the product becomes associated with an internal trigger, and the user returns without a prompt.",
+    "Eyal suggests designers find the internal trigger by repeatedly asking why a user would want the product, until they reach an emotion.",
+    "He addresses ethics with a 'Manipulation Matrix', asking whether the maker would use the product themselves and whether it materially improves users' lives."
+  ],
+  "tension": "The same link between a feeling and a product that makes a habit valuable can leave a person reaching for an app that never actually resolves the feeling.",
+  "opening_idea": "Start with an ordinary moment of boredom, and a thumb already opening an app before any notification arrives. Ask what trained that reach.",
+  "lessons": [
+    { "idea": "Lasting habits are cued by feelings, not by reminders.", "anchor": "Products become associated with internal triggers such as boredom or loneliness through repeated use." },
+    { "idea": "Finding the emotion behind a behavior requires asking why more than once.", "anchor": "Eyal's method of repeatedly asking why until an emotion appears." },
+    { "idea": "Knowing how to build a habit brings a duty to ask whether it helps the user.", "anchor": "The Manipulation Matrix questions about using the product yourself and improving users' lives." }
+  ],
+  "reflect": [
+    "When you feel bored, uncertain, or alone, what do you reach for first?",
+    "Does it usually leave you better or just distracted?"
+  ],
+  "reflect_final": "The next time you reach for your phone without a notification, pause for a moment and name the feeling that came just before. Afterward, notice whether what you opened actually eased it.",
+  "use_cases": [
+    { "situation": "Your team is designing notifications to increase engagement.", "move": "Ask Eyal's Manipulation Matrix questions in the room: would we use this ourselves, and does it materially improve our users' lives?", "context": "meeting" },
+    { "situation": "You open the same app every evening when you feel restless.", "move": "Name the feeling before opening it, and once this week try another response to that same feeling to compare.", "context": "self" },
+    { "situation": "A family member reaches for their phone whenever conversation lulls.", "move": "Without criticizing, ask what the lull feels like to them, and share your own go-to app for the same feeling.", "context": "family" }
+  ],
+  "pocket_idea": "The strongest trigger is not the buzz in your pocket but the feeling right before it: learn which feeling sends you to which app, and you can decide whether it deserves the job.",
+  "conversation_variants": {
+    "punchline_idea": "Eyal says the most powerful notifications are not on your phone at all; they are feelings like boredom and loneliness.",
+    "thirty_sec_idea": "A product first gets your attention with notifications and ads; after enough repetition, a feeling like boredom or uncertainty is enough to send you there, and Eyal says that is when a habit is formed.",
+    "question_idea": "What is the first thing you open when you feel bored, and does it actually help?",
+    "key_contrast_idea": "From a product that has to remind you, to a product your mood reminds you of."
+  }
+}

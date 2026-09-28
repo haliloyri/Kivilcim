@@ -1,0 +1,58 @@
+{
+  "story_id": 1350,
+  "kind": "concept",
+  "book": {
+    "title": "Öğrenmeyi Öğrenmek (Make It Stick)",
+    "author": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Spaced practice and 'desirable difficulties' (a term from Robert Bjork, used in the book) are central to Make It Stick: immediate, massed repetition feels productive but produces weaker long-term memory than practice spaced out so that some forgetting occurs. The quote attributed to Brown in the TR text ('a little difficulty is good...') could not be verified verbatim and is excluded. Anki is not attributed to the book and is excluded. The specific schedule in the TR text (three days, one week, one month) is the TR writer's suggestion, not a verified prescription from the book.",
+  "facts": [
+    "The book contrasts massed practice, which means repeating something again and again in one session as in cramming, with spaced practice, which means returning to it after time has passed.",
+    "Massed practice produces quick gains and feels productive, but the authors say those gains fade quickly.",
+    "Spacing lets a little forgetting set in, so retrieval takes more effort; the authors argue this effort strengthens the memory and makes it more durable.",
+    "The book calls such helpful obstacles 'desirable difficulties' and warns that learners tend to misjudge which methods work, because the easier method feels more successful."
+  ],
+  "tension": "Repetition that feels smooth and fluent gives weak results, while practice after some forgetting feels clumsy yet makes memory last.",
+  "opening_idea": "Begin with a learner repeating the same list again and again in one sitting until it feels effortless, and question what that ease really tells them.",
+  "lessons": [
+    {
+      "idea": "How easy practice feels is a poor guide to how much it will last.",
+      "anchor": "Massed practice feels productive but its gains fade quickly."
+    },
+    {
+      "idea": "Letting some forgetting happen before you practise again makes retrieval effortful and memory stronger.",
+      "anchor": "Spaced practice and 'desirable difficulties'."
+    }
+  ],
+  "reflect": [
+    "Think of something you once drilled intensively and had largely forgotten a few weeks later.",
+    "When practice starts to feel hard, do you take it as a sign of failure or of learning?"
+  ],
+  "reflect_final": "Pick one thing you are learning now and, instead of reviewing it again today, schedule one attempt to recall it a few days from now. Notice how much effort it takes and what stays afterward.",
+  "use_cases": [
+    {
+      "situation": "You are learning vocabulary in a new language and tend to review the same words every evening.",
+      "move": "Leave a gap of a few days before testing yourself on a batch, and treat the struggle to remember as part of the work.",
+      "context": "self"
+    },
+    {
+      "situation": "Planning a training programme that packs everything into one intensive day.",
+      "move": "Point out that the book finds massed practice fades fast, and propose a short follow-up quiz session a week later.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is frustrated that they forget things they already studied.",
+      "move": "Share the idea of desirable difficulties: some forgetting before the next review is useful, so spacing reviews out is not falling behind.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "When recall feels like a struggle after a gap, that effort is what makes the memory last, not a sign it failed.",
+  "conversation_variants": {
+    "punchline_idea": "Forgetting a little before you review it again helps you remember it longer.",
+    "thirty_sec_idea": "Make It Stick contrasts cramming, which feels productive but fades fast, with spaced practice, where you let some forgetting set in so that the effort of recalling makes the memory durable.",
+    "question_idea": "Ask them what they once crammed for and how much of it they still remember.",
+    "key_contrast_idea": "Smooth repetition that fades versus effortful recall that lasts."
+  }
+}

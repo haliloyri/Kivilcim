@@ -1,0 +1,63 @@
+{
+  "story_id": 1301,
+  "kind": "concept",
+  "book": {
+    "title": "Factfulness",
+    "author": "Hans Rosling (with Ola Rosling and Anna Rosling Rönnlund)",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "The four income levels and their approximate population sizes (about 1, 3, 2 and 1 billion people) and daily income thresholds ($2, $8, $32, in the book's dollar terms) are from the book, rounded as Rosling rounds them. The reference text's comparison between a Level 1 and Level 2 mother and its '3-billion-person market that companies ignore' claim are not from the book as stated and are omitted. The water-fetching and transport examples are paraphrased.",
+  "facts": [
+    "Rosling says the most common misconception is that the world is split into two groups, 'developed' and 'developing', rich and poor, with a gap between them. He calls this the gap instinct.",
+    "Instead he divides humanity into four income levels: Level 1 below about $2 a day (about 1 billion people), Level 2 about $2 to $8 (about 3 billion), Level 3 about $8 to $32 (about 2 billion), and Level 4 above $32 (about 1 billion).",
+    "Most people, around 5 billion, live on Levels 2 and 3, in the middle where the supposed gap is.",
+    "He illustrates the levels with everyday life: at Level 1 people walk barefoot to fetch water; at Level 2 they may afford shoes and a bicycle; at Level 3 they may have running water and a motorbike; at Level 4 they have hot and cold water at home and cars.",
+    "His advice is to look for the majority in the middle and to be wary of comparisons of averages or extremes that make a gap look bigger than it is."
+  ],
+  "tension": "The picture of 'rich us versus poor them' leaves out where most people actually live.",
+  "opening_idea": "Rosling asks how a family fetches water. Barefoot with a bucket, on a bicycle, from a tap, or from a hot-water tap: four answers, not two.",
+  "lessons": [
+    {
+      "idea": "Two boxes hide the majority in the middle.",
+      "anchor": "About 5 billion people on Levels 2 and 3"
+    },
+    {
+      "idea": "Concrete daily details make abstract categories real.",
+      "anchor": "How water and transport change across the four levels"
+    },
+    {
+      "idea": "Averages and extremes can exaggerate a gap.",
+      "anchor": "Rosling's advice on spotting misleading comparisons"
+    }
+  ],
+  "reflect": [
+    "Where do you sort people or situations into just two groups?",
+    "What would change if you added the middle categories you're skipping?"
+  ],
+  "reflect_final": "Next time you hear or say 'there are two kinds of...', ask what the middle looks like and who is in it, and notice how the picture shifts.",
+  "use_cases": [
+    {
+      "situation": "A strategy discussion divides customers into 'premium' and 'budget'.",
+      "move": "Mention Rosling's four income levels, where most people sit in the middle two, and ask the team to sketch what a middle group would look like before choosing a target.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child asks why some countries are 'poor'.",
+      "move": "Describe Rosling's four ways of getting water, from walking barefoot to a hot-water tap, and ask which level they think most people live at.",
+      "context": "family"
+    },
+    {
+      "situation": "You catch yourself framing a debate as two opposite sides.",
+      "move": "Write down at least two positions in between before deciding where you stand.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Not two worlds but four levels, and most people live in the middle the 'gap' was hiding.",
+  "conversation_variants": {
+    "punchline_idea": "Most of humanity lives exactly where the 'gap' between rich and poor countries is supposed to be.",
+    "thirty_sec_idea": "Rosling replaces 'developed versus developing' with four income levels, from under $2 a day to over $32, and shows about 5 billion of the world's 7 billion live in the middle two.",
+    "question_idea": "Which topic do you usually see as two sides, and what might sit in between?",
+    "key_contrast_idea": "Rich versus poor, or four steps with most people in the middle."
+  }
+}

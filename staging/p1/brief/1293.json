@@ -1,0 +1,65 @@
+{
+  "story_id": 1293,
+  "kind": "concept",
+  "book": {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "The sequence comparison (corporation owners earn, spend, then pay tax on what's left; employees earn, are taxed, then spend) is Kiyosaki's own, in the chapter on taxes and corporations. It is his simplified interpretation, framed in US rules of the 1990s; tax professionals have criticized it, and it does not apply the same way in every country or for every expense. The reference TR text's claim that the 'wealth gap becomes enormous over decades' has no figure in the book and is kept only as his general claim. The book gives no worked numerical example that I can confirm, so none is included. It should not be presented as tax advice.",
+  "facts": [
+    "Kiyosaki contrasts two sequences. An employee earns, is taxed, and spends what is left.",
+    "A business owner using a corporation, as he describes it, earns, spends on business expenses, and is taxed on what remains.",
+    "He tells a short history: income tax was sold to the public as a tax on the rich, but, in his account, it came to fall most heavily on the middle class and salaried workers.",
+    "His recurring argument is that the rich use legal structures and financial knowledge, not only harder work, to keep more of what they earn.",
+    "He calls this 'financial IQ' and describes it as knowledge of accounting, investing, markets and the law.",
+    "He complains that schools teach many subjects but not how money works, so people learn it only by accident, if at all.",
+    "This is the author's interpretation; it depends heavily on local tax law, and which expenses are legitimately deductible is set by that law, not by the book."
+  ],
+  "tension": "Two people with the same income can end up with very different amounts to spend and save, just because of the order in which money flows, and most people never learn that the order exists.",
+  "opening_idea": "Put two short sequences side by side, earn-tax-spend and earn-spend-tax, and ask the reader to spot the only thing that moved.",
+  "lessons": [
+    {
+      "idea": "The structure through which money passes can matter as much as how much you earn.",
+      "anchor": "Employee: earn, taxed, spend; corporation owner: earn, spend, taxed."
+    },
+    {
+      "idea": "Financial knowledge is a specific skill set, not a vague virtue.",
+      "anchor": "Kiyosaki's 'financial IQ': accounting, investing, markets and law."
+    },
+    {
+      "idea": "What no one teaches you, you learn late or not at all.",
+      "anchor": "His complaint that schools don't teach how money works."
+    }
+  ],
+  "reflect": [
+    "Do you know, roughly, how much of your gross income reaches you, and where the rest goes?",
+    "Which of Kiyosaki's four areas (accounting, investing, markets, law) do you know least about?"
+  ],
+  "reflect_final": "Pick one gap in your own money knowledge, such as how your income is taxed, and get one clear answer to it this month from a reliable local source.",
+  "use_cases": [
+    {
+      "situation": "You're considering freelancing or starting a side business.",
+      "move": "Remember Kiyosaki's earn-spend-tax sequence, then ask a local accountant which structure and expenses actually apply in your country before you start.",
+      "context": "self"
+    },
+    {
+      "situation": "Your teenager asks why their first paycheck is smaller than expected.",
+      "move": "Draw the two sequences for them on paper and walk through where their money went before they could spend it.",
+      "context": "family"
+    },
+    {
+      "situation": "Friends are joking that taxes are just something that happens to them.",
+      "move": "Share Kiyosaki's contrast as one author's view, and suggest each person find out one concrete fact about how their own income is taxed.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Earn-tax-spend versus earn-spend-tax: Kiyosaki's point is that the order money flows in, not just its amount, shapes what's left.",
+  "conversation_variants": {
+    "punchline_idea": "Kiyosaki says the difference between employees and owners comes down to the order of three words: earn, spend, tax.",
+    "thirty_sec_idea": "In Rich Dad Poor Dad, employees earn, get taxed, then spend, while corporation owners earn, spend on business costs, then are taxed on what's left; Kiyosaki's point is that knowing the rules of money matters, though the details depend on each country's tax law.",
+    "question_idea": "When did you first learn how taxes actually work, and who taught you?",
+    "key_contrast_idea": "Being taxed before you can spend, versus spending first and being taxed on what remains."
+  }
+}

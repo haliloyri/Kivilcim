@@ -1,0 +1,63 @@
+{
+  "story_id": 1303,
+  "kind": "concept",
+  "book": {
+    "title": "The Black Swan",
+    "author": "Nassim Nicholas Taleb",
+    "year": "2007"
+  },
+  "confidence": "high",
+  "confidence_note": "The turkey fed for a thousand days until the Wednesday before Thanksgiving is Taleb's central illustration of the problem of induction (adapted from Bertrand Russell's chicken). It is a thought experiment, not a real event. Taleb also notes that the turkey's surprise is not a surprise to the butcher. The reference text's 2008 example postdates the 2007 book and is omitted; the Amazon and iPhone examples are not from the book and are omitted.",
+  "facts": [
+    "Taleb describes a turkey that is fed every day. Each feeding confirms its belief that humans are friendly and look after its interests.",
+    "After a thousand days, its confidence is at its highest, just as the risk is greatest: on the Wednesday before Thanksgiving, something unexpected happens to it.",
+    "He adapts the story from Bertrand Russell's chicken to show the problem of induction: past observations cannot prove what will happen next.",
+    "Taleb points out that the event is a Black Swan for the turkey but not for the butcher: surprise depends on what you know.",
+    "Black Swans can be positive as well as negative; what they share is rarity, large impact, and explanations that seem obvious only afterward."
+  ],
+  "tension": "The turkey's confidence peaks on the very day its danger peaks.",
+  "opening_idea": "A turkey has been fed every single day for a thousand days. By its own evidence, the farmer has never been kinder.",
+  "lessons": [
+    {
+      "idea": "A long record of safety can build confidence exactly when risk is growing.",
+      "anchor": "Confidence highest on day 1,000"
+    },
+    {
+      "idea": "Whether something is a surprise depends on who is looking.",
+      "anchor": "A Black Swan for the turkey, not for the butcher"
+    },
+    {
+      "idea": "Past data cannot prove the future.",
+      "anchor": "Russell's chicken and the problem of induction"
+    }
+  ],
+  "reflect": [
+    "What in your life do you trust mainly because it has always worked so far?",
+    "Who might see a risk there that you don't?"
+  ],
+  "reflect_final": "Pick one arrangement you rely on because 'it has always been fine', ask someone with a different view what could break it, and notice what you hadn't considered.",
+  "use_cases": [
+    {
+      "situation": "A team says a supplier or system is safe because it has never failed.",
+      "move": "Mention Taleb's turkey, whose confidence peaked on day 1,000, and ask the group what a 'butcher's view' of the supplier would reveal.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Friends talk about an investment that has only ever gone up.",
+      "move": "Ask what information someone on the other side of the trade might have that you don't.",
+      "context": "social"
+    },
+    {
+      "situation": "You rely on a single income source or routine that has always worked.",
+      "move": "Write down what would happen if it stopped next month, and choose one small safeguard.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Every good day raised the turkey's confidence; the butcher knew the date all along.",
+  "conversation_variants": {
+    "punchline_idea": "For a turkey, the thousandth friendly feeding is the strongest evidence of safety, the day before Thanksgiving.",
+    "thirty_sec_idea": "Taleb's turkey is fed daily for a thousand days, each meal confirming that humans are its friends; then comes the Wednesday before Thanksgiving, a total surprise to the turkey but not to the butcher.",
+    "question_idea": "What have you trusted just because it always worked, until one day it didn't?",
+    "key_contrast_idea": "The same event: a shock for the turkey, a plan for the butcher."
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "story_id": 1113,
+  "kind": "anecdote",
+  "book": {
+    "title": "Purple Cow",
+    "author": "Seth Godin",
+    "year": "2003"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Dutch Boy 'Twist & Pour' container is a well-known case in Purple Cow, and so is the idea of building remarkability into the product. The book also uses the Japanese term 'otaku' for passionate enthusiasts. Two points are less certain. First, the exact wording of the results, including whether Godin specifically cites more shelf space or more distribution. Second, the specific pains of the old can, such as the rim filling with paint. These are kept general. No figures, dates or sales numbers are given because none can be confirmed.",
+  "facts": [
+    "Godin's core claim in Purple Cow is that a boring product cannot be rescued by advertising. The remarkable thing must be the product itself.",
+    "For decades, house paint was sold in round metal cans. They were awkward to carry, needed a tool to pry open, and were messy to pour and reseal.",
+    "Dutch Boy redesigned the container rather than the paint. It launched Twist & Pour, a plastic container with a real handle, a twist-off lid and a pouring spout.",
+    "Godin reports that the new container led to increased sales and better distribution and retail support. The change in the product itself did the marketing work.",
+    "Godin argues that remarkability must be designed into the product from the start. It cannot be added afterward as a marketing layer.",
+    "The book describes 'otaku': a small group of people passionate about a topic who seek out new things and spread the word. Remarkable products reach them first."
+  ],
+  "tension": "Everyone disliked the old paint can, but no one questioned it because 'a paint can is a paint can.' The opportunity was not hidden. It was simply normalized.",
+  "opening_idea": "Start with the ordinary annoyance of opening a metal paint can with a screwdriver. Ask why nobody fixed it for decades.",
+  "lessons": [
+    {
+      "idea": "Remarkability belongs inside the product. You cannot bolt it on with advertising later.",
+      "anchor": "Dutch Boy changed the container, not the slogan."
+    },
+    {
+      "idea": "When marketing's job is defined as 'describe what we already have,' the only remaining option is shouting louder.",
+      "anchor": "The split between product and marketing teams in most companies."
+    },
+    {
+      "idea": "Big opportunities often hide in complaints so common that people stopped voicing them.",
+      "anchor": "The universally tolerated metal paint can."
+    },
+    {
+      "idea": "Even the most boring categories can produce something worth talking about, as long as the product fixes a felt annoyance.",
+      "anchor": "No one is a paint-can fan, but a painter notices a lid that opens without a screwdriver and tells a friend."
+    }
+  ],
+  "reflect": [
+    "What in your field does everyone dislike but no one questions?",
+    "Is your team trying to describe the product better when it should be changing the product?"
+  ],
+  "reflect_final": "What do your customers or users complain about that you have come to treat as normal?",
+  "use_cases": [
+    {
+      "situation": "A team is brainstorming a bigger campaign to boost a flat product.",
+      "move": "Ask: 'Before we spend on ads, what would we change in the product itself so people would mention it unprompted?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "Coaching a colleague who says their product is 'just a commodity.'",
+      "move": "Ask them to list three things customers grumble about when using it, then pick one to redesign like the paint can.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Reviewing your own work or service habits.",
+      "move": "Write down one annoyance your clients tolerate silently, and fix that before polishing how you present yourself.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "If the product isn't worth talking about, no ad budget will make it so. Put the remarkable part inside.",
+  "conversation_variants": {
+    "punchline_idea": "Dutch Boy didn't sell better paint. It sold a better can.",
+    "thirty_sec_idea": "Everyone hated metal paint cans. Dutch Boy made a plastic one with a handle and spout, sales and distribution grew, and Godin's point is that the fix was the marketing.",
+    "question_idea": "What's the 'paint can' in your industry, the thing everyone complains about but treats as unchangeable?",
+    "key_contrast_idea": "Marketing as telling people about the product versus marketing as designing something people will tell each other about."
+  }
+}

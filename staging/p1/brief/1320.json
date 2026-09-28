@@ -1,0 +1,65 @@
+{
+  "story_id": 1320,
+  "kind": "concept",
+  "book": {
+    "title": "Indistractable: How to Control Your Attention and Choose Your Life",
+    "author": "Nir Eyal",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Precommitment and the three 'pacts' (effort, price and identity) are from Indistractable Part 4 ('Prevent Distraction with Pacts'); rearranging or removing phone apps and turning off notifications are among his 'hack back' tactics for external triggers. The reference text's '40% fewer impulsive opens' figure has no known source in the book and is omitted. The reference also says willpower is a limited resource that each decision depletes; Eyal actually questions the ego-depletion idea and argues that believing willpower runs out is itself the problem, so that claim is dropped. 'Book beside the pillow' is the reference's illustration, not a book detail. Not verified against the text.",
+  "facts": [
+    "Eyal describes precommitment: deciding in advance, while calm, how you will act later, to guard against a future moment of weakness.",
+    "An effort pact makes an unwanted behavior harder, for example using an app or tool that blocks distracting sites during set hours.",
+    "A price pact attaches a cost to getting distracted, such as money you forfeit if you don't follow through.",
+    "An identity pact ties behavior to a self-image; he uses the example that people who call themselves vegetarians don't agonize over meat.",
+    "Separately, he recommends 'hacking back' external triggers on the phone: removing unneeded apps, moving tempting ones off the home screen, and turning off notifications.",
+    "Eyal questions the popular claim that willpower is a limited resource that gets used up, arguing that believing it runs out makes people give up sooner."
+  ],
+  "tension": "The common story says you fail because your willpower ran out, but Eyal questions that story and suggests shaping the situation in advance instead.",
+  "opening_idea": "Start with the phone's home screen and the tempting app one tap away. Ask what would change if it took several steps to reach.",
+  "lessons": [
+    {
+      "idea": "Decisions made in advance protect you from decisions made in the moment.",
+      "anchor": "Precommitment and effort pacts"
+    },
+    {
+      "idea": "Friction and cost can be designed in deliberately.",
+      "anchor": "Effort pacts and price pacts"
+    },
+    {
+      "idea": "How you describe yourself can settle choices before they start.",
+      "anchor": "The identity pact and the vegetarian example"
+    }
+  ],
+  "reflect": [
+    "Which unwanted habit is currently the easiest thing to do?",
+    "Have you ever told yourself 'I'm out of willpower' and then stopped?",
+    "Is there a label ('I'm someone who…') that already makes some choices easy for you?"
+  ],
+  "reflect_final": "Choose one habit you want less of and add one step between you and it today, such as moving the app off the home screen. Notice how often you still go looking for it.",
+  "use_cases": [
+    {
+      "situation": "You open a social app dozens of times a day without meaning to.",
+      "move": "Move the app into a folder off the home screen and turn off its notifications, one of Eyal's 'hack back' moves, and see whether the extra taps interrupt the automatic reach.",
+      "context": "self"
+    },
+    {
+      "situation": "A team keeps getting pulled into chat during planned focus time.",
+      "move": "Propose a shared effort pact: during agreed focus hours, everyone sets status to do-not-disturb and chat notifications are off.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend keeps saying they have no willpower for a goal.",
+      "move": "Mention that Eyal questions the 'willpower runs out' idea and ask which pact would suit them: more effort, a price, or a label like 'I'm someone who…'.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Don't wait to be strong in the moment. Make the promise earlier, while you're calm, and build the obstacle then.",
+  "conversation_variants": {
+    "punchline_idea": "Eyal argues that believing willpower runs out may be what makes us give up.",
+    "thirty_sec_idea": "Eyal suggests deciding before temptation arrives: effort pacts make distraction harder, price pacts make it costly, and identity pacts make it 'not who I am'.",
+    "question_idea": "Ask what one step they could put between themselves and their most unwanted habit.",
+    "key_contrast_idea": "Fighting temptation in the moment versus setting up the obstacle beforehand."
+  }
+}

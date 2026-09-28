@@ -18,8 +18,9 @@ import CareerPathSwitchSheet from './CareerPathSwitchSheet';
 import CareerNodeMark from './CareerNodeMark';
 import CareerRhythmSection from './CareerRhythmSection';
 import CareerLearnedSection from './CareerLearnedSection';
+import { MilestoneReviewModal } from './LearningMilestoneModal';
 import BadgeShareSheet from '../BadgeShareSheet';
-import { buildRankShare, buildWeeklyShare } from '../../utils/careerShare';
+import { buildBooksMilestoneShare, buildRankShare, buildWeeklyShare } from '../../utils/careerShare';
 
 const KIVILCIM_HERO = require('../../../assets/career/kivilcim-yolu-hero-v1.png');
 
@@ -44,7 +45,7 @@ const nodeProgress = (node) => {
 
 const CareerPathExperience = ({ navigation, route }) => {
   const { colors, layout, isDark, lang } = useTheme();
-  const { userProfile, todayReadsCount, streak, totalReads, longestStreak, isPremium, streakFreezeCredits, streakFreezeDates, useStreakFreeze } = useUserData();
+  const { userProfile, todayReadsCount, streak, totalReads, longestStreak, isPremium, streakFreezeCredits, streakFreezeDates, useStreakFreeze, setBadgePresentationBlocked } = useUserData();
   const { stories } = useStories();
   const { loading, error, isOffline, careerEvents, career: persistedCareer, refreshCareer, selectPath, switchPath, pathSwitchRequested, consumePathSwitchRequest, conditionsRequested, consumeConditionsRequest } = useCareerPath();
   const [showPathChoices, setShowPathChoices] = useState(false);
@@ -53,6 +54,8 @@ const CareerPathExperience = ({ navigation, route }) => {
   const [legacyBadgeIds, setLegacyBadgeIds] = useState([]);
   const [showLegacyBadges, setShowLegacyBadges] = useState(false);
   const [shareAchievement, setShareAchievement] = useState(null);
+  const [reviewMilestone, setReviewMilestone] = useState(null);
+  const reviewShareTimer = useRef(null);
   const [showConditions, setShowConditions] = useState(false);
   const [showPreviewControls, setShowPreviewControls] = useState(false);
   const [previewScenarioId, setPreviewScenarioId] = useState(null);
@@ -87,6 +90,21 @@ const CareerPathExperience = ({ navigation, route }) => {
     if (learning.week.stories > 0) trackEvent(ANALYTICS_EVENTS.WEEKLY_RECAP_SHARE_OPENED, { source: 'notification', stories: learning.week.stories, books: learning.week.books, minutes: learning.week.minutes });
     if (learning.week.stories > 0) setShareAchievement(buildWeeklyShare({ learning, currentTitleKey: career.displayedTitle, name: userProfile?.displayName, lang }));
   }, [weeklyRecapRequest, career]);
+  // Re-opening a milestone from "Öğrendiklerin" must hold back the live
+  // celebration queue so two RN modals never stack.
+  useEffect(() => {
+    setBadgePresentationBlocked('milestone_review', !!reviewMilestone);
+    return () => setBadgePresentationBlocked('milestone_review', false);
+  }, [reviewMilestone, setBadgePresentationBlocked]);
+  useEffect(() => () => clearTimeout(reviewShareTimer.current), []);
+  const shareReviewedMilestone = () => {
+    if (isPreviewing || reviewMilestone?.type !== 'books') return;
+    const { id, type, count } = reviewMilestone;
+    trackEvent(ANALYTICS_EVENTS.LEARNING_MILESTONE_SHARE_OPENED, { milestoneId: id, type, count });
+    setReviewMilestone(null);
+    // Never stack two RN modals: open the share sheet after this one closes.
+    reviewShareTimer.current = setTimeout(() => setShareAchievement(buildBooksMilestoneShare({ count, learning, name: userProfile?.displayName, lang })), 320);
+  };
   const openStoryById = (storyId) => {
     const story = (stories || []).find((item) => String(item?.story_id ?? item?.id) === String(storyId));
     if (story) navigation.navigate('StoryDetail', { story });
@@ -335,7 +353,7 @@ const CareerPathExperience = ({ navigation, route }) => {
         </View>
       )}
 
-      <CareerLearnedSection summary={learning} onOpenStory={isPreviewing ? null : openStoryById} />
+      <CareerLearnedSection summary={learning} onOpenStory={isPreviewing ? null : openStoryById} onOpenMilestone={setReviewMilestone} />
 
       <View style={styles.section}>
         <View style={styles.sectionHeading}>
@@ -376,6 +394,7 @@ const CareerPathExperience = ({ navigation, route }) => {
         {showLegacyBadges ? <View style={[styles.legacyGrid, { borderColor: colors.border, backgroundColor: colors.background }]}>{legacyBadgeIds.map((id) => <View key={id} accessible accessibilityLabel={t('career.legacy.badgeLabel', lang)} style={styles.legacyBadge}><BadgeIcon badge={{ id }} earned isDark={isDark} size={44} /></View>)}</View> : null}
       </View> : null}
       <CareerNodeSheet node={selectedNode} onClose={closeNodeSheet} />
+      <MilestoneReviewModal milestone={reviewMilestone} onClose={() => setReviewMilestone(null)} onShare={isPreviewing ? null : shareReviewedMilestone} />
       <BadgeShareSheet visible={!!shareAchievement} achievement={shareAchievement} name={userProfile?.displayName} onClose={() => setShareAchievement(null)} />
       <CareerPathSwitchSheet path={pendingPath} currentTitleKey={career.profileTitle} nextTitleKey={career.paths[pendingPath?.id]?.filter((node) => node.status === 'completed').slice(-1)[0]?.titleKey || 'careerNode.traveler.title'} onCancel={() => setPendingPath(null)} onConfirm={async () => { if (isPreviewing) return; await switchPath(pendingPath.id); setPendingPath(null); setShowPathChoices(false); }} />
     </ScrollView>

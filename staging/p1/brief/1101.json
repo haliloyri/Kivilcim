@@ -1,0 +1,66 @@
+{
+  "story_id": 1101,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Miracle Morning (Sabah Rutini / Mucize Sabah)",
+    "author": "Hal Elrod",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book describes two separate crises. At about age 20, a drunk driver hit Elrod head-on at roughly 70 mph (about 110–115 km/h). He was clinically dead for about six minutes, had brain damage, and doctors warned he might never walk again. Years later, around the 2008 economic downturn, he fell into debt, lost income and became depressed. That second low point is what led to the Miracle Morning. The reference TR text merges the two crises and says 130 km/h, which is not supported. It also claims 'debts cleared, new business founded' within two months. The book reports that his income more than doubled within about two months and that he began training for an ultramarathon. Exact debt and income figures are omitted as uncertain. The 60-minute, 10-minutes-each format is the book's suggested template, not a rigid rule.",
+  "facts": [
+    "At about 20, Hal Elrod was hit head-on by a drunk driver and was clinically dead for roughly six minutes.",
+    "He suffered broken bones and brain damage. Doctors warned he might never walk again, but he recovered and walked.",
+    "Years later, during an economic downturn, he faced debt, falling income and depression.",
+    "Looking for a way out, he studied the habits of highly successful people and combined six practices into one morning routine.",
+    "The six practices, known as SAVERS, are Silence (meditation/prayer), Affirmations, Visualization, Exercise, Reading and Scribing (journaling).",
+    "The book suggests about 10 minutes per practice, roughly an hour, done early before the day's demands begin. Shorter versions are also offered.",
+    "Elrod reports that within about two months his income more than doubled, his energy returned, and he took on a physical challenge (ultramarathon training).",
+    "The core argument is that a proactive, self-invested morning shapes the rest of the day, while a reactive morning (phone, email, news) hands the day to others' agendas."
+  ],
+  "tension": "Someone who survived a near-fatal crash still found his life stalled. What changed things was not a dramatic event but a quiet hour every morning.",
+  "opening_idea": "He came back from six minutes of clinical death, and years later the thing that saved him again was an alarm clock set an hour earlier.",
+  "lessons": [
+    {
+      "idea": "How you start the morning sets who controls the day: you or other people's demands.",
+      "anchor": "Reactive start: phone, email, news, versus a proactive start with SAVERS."
+    },
+    {
+      "idea": "Small, stacked daily practices can shift a stuck life faster than waiting for circumstances to change.",
+      "anchor": "Six practices of about 10 minutes each, and a reported doubling of income within about two months."
+    },
+    {
+      "idea": "Surviving a crisis is different from building the life you want. The second needs a system, not just resilience.",
+      "anchor": "Recovering from the crash did not prevent the later slump of debt and depression."
+    }
+  ],
+  "reflect": [
+    "What are the first three things you do after waking, and whose agenda do they serve?",
+    "Which one of the six SAVERS practices do you already do, even occasionally?"
+  ],
+  "reflect_final": "If your first 30 minutes belonged entirely to you, what would you do with them, and what would you stop doing?",
+  "use_cases": [
+    {
+      "situation": "You notice you reach for your phone the moment you wake up.",
+      "move": "Leave the phone outside the bedroom tonight and spend the first 10 minutes on silence and journaling before checking anything.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member says they feel constantly behind and overwhelmed.",
+      "move": "Ask: 'What's the first thing you do each morning? What if you protected 20 minutes for your own priorities before opening email?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Mornings at home are rushed and chaotic for everyone.",
+      "move": "Suggest a shared 15-minute quiet block before screens: reading or stretching together, with devices off until it ends.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Yourself first, then the world: the morning decides who runs your day.",
+  "conversation_variants": {
+    "punchline_idea": "He survived six minutes of death, but it took an extra hour each morning to actually start living the life he wanted.",
+    "thirty_sec_idea": "In a slump of debt and depression, Elrod built a one-hour routine of six practices (silence, affirmations, visualization, exercise, reading, journaling) and says his life turned around within months.",
+    "question_idea": "Do you start your day with your own goals, or with someone else's notifications?",
+    "key_contrast_idea": "A reactive morning shaped by inboxes and news, versus a proactive morning invested in yourself before the world gets in."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "story_id": 1168,
+  "kind": "concept",
+  "book": {
+    "title": "Flow: The Psychology of Optimal Experience",
+    "author": "Mihaly Csikszentmihalyi",
+    "year": "1990"
+  },
+  "confidence": "low",
+  "confidence_note": "Csikszentmihalyi does discuss surgeons among the people who experience flow in their work, and describes how some surgeons find operations deeply enjoyable. The reference TR text's quoted interview with a brain surgeon ('only hand, eye and brain') cannot be verified and is not used; no surgeon is quoted. The story is built on well-established ideas from the book: flow requires a balance of challenge and skill; flow makes consciousness ordered rather than scattered; self-consciousness disappears during flow but the self emerges stronger afterwards; and work, not only leisure, can be a source of flow. Surgery is presented as an illustration of these principles.",
+  "facts": [
+    "Csikszentmihalyi includes surgeons among the professionals who reported flow in their work.",
+    "He argues that flow requires a demanding task that matches a person's skills; tasks that ask nothing of us rarely produce it.",
+    "In flow, attention is fully invested in the task; he describes this as order in consciousness, as opposed to the 'psychic entropy' of a scattered, worried mind.",
+    "During flow, self-consciousness disappears. Paradoxically, he writes, the self emerges stronger after a flow experience.",
+    "He argues that work, when it has clear goals, feedback and the right level of challenge, can be as rich a source of flow as any hobby."
+  ],
+  "tension": "The most demanding hours of a surgeon's job can also be the ones they find most satisfying.",
+  "opening_idea": "Hours into a long operation, a surgeon suddenly notices their aching legs for the first time.",
+  "lessons": [
+    {
+      "idea": "Demanding work can be the most satisfying work.",
+      "anchor": "Surgeons finding flow in operations"
+    },
+    {
+      "idea": "Flow is order in consciousness.",
+      "anchor": "Psychic entropy versus focused attention"
+    },
+    {
+      "idea": "Losing yourself in a task can make you stronger afterwards.",
+      "anchor": "Self emerges stronger after flow"
+    }
+  ],
+  "reflect": [
+    "Which part of your work fully captures your attention?",
+    "What scatters your attention most in an ordinary workday?"
+  ],
+  "reflect_final": "Which task at work could become your 'operation', demanding enough to absorb you completely?",
+  "use_cases": [
+    {
+      "situation": "You dread a complex task that's been sitting on your list.",
+      "move": "Clear two hours, remove distractions, and treat it as a focused operation.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team spends its days in constant interruptions.",
+      "move": "Agree on protected focus blocks for the hardest work.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague says their job has become mindless.",
+      "move": "Help them identify the most skilled part of their work and give it more of their time.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "The work that demands all of you can also give the most back.",
+  "conversation_variants": {
+    "punchline_idea": "A surgeon's hardest hours can also be their most satisfying.",
+    "thirty_sec_idea": "Flow at work, order in consciousness, and the stronger self afterwards.",
+    "question_idea": "Which part of your work absorbs you completely?",
+    "key_contrast_idea": "Scattered versus absorbed"
+  }
+}

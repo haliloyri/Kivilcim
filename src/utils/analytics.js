@@ -120,6 +120,12 @@ export const flushAnalytics = async () => {
 };
 
 const ANALYTICS_EVENTS = {
+  // Setup funnel: step_viewed is what makes a drop-off visible at all — without
+  // it, "opened the app" and "finished setup" are the only two known states.
+  ONBOARDING_STEP_VIEWED: 'onboarding_step_viewed',
+  ONBOARDING_SKIPPED: 'onboarding_skipped',
+  ONBOARDING_COMPLETED: 'onboarding_completed',
+  NOTIFICATION_PERMISSION_RESULT: 'notification_permission_result',
   ONBOARDING_TIME_BUDGET_SELECTED: 'onboarding_time_budget_selected',
   ONBOARDING_NOTIFICATION_TIME_SELECTED: 'onboarding_notification_time_selected',
   ONBOARDING_FIRST_STORY_SHOWN: 'onboarding_first_story_shown',

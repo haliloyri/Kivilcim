@@ -1,0 +1,65 @@
+{
+  "story_id": 1234,
+  "kind": "concept",
+  "book": {
+    "title": "Made to Stick",
+    "author": "Chip Heath and Dan Heath",
+    "year": "2007"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text centres on Subway's Jared Fogle campaign, which Made to Stick did discuss as an example of a concrete, credible story beating abstract nutrition claims. However, Fogle was later convicted in 2015 of serious crimes involving minors, and Subway ended its relationship with him; presenting him as a positive example is inappropriate, so the case is not used. The story instead uses the book's own opening contrast: the vivid 'kidney heist' urban legend (a traveler wakes in an ice-filled bathtub missing a kidney) versus a dull, abstract paragraph of corporate-style language, to explain why concrete stories stick and abstractions don't, and introduces the SUCCESs principles (Simple, Unexpected, Concrete, Credible, Emotional, Stories). The database story title should be changed to match; flagged for the user.",
+  "facts": [
+    "Made to Stick opens by contrasting two pieces of text.",
+    "The first is a famous urban legend: a business traveler has a drink with a stranger, blacks out, and wakes up in a hotel bathtub full of ice with a note telling him to call 911, and discovers one of his kidneys has been removed. The story is false, but people remember and retell it.",
+    "The second is an abstract paragraph written in dry, vague language about goals and value; almost nobody remembers it.",
+    "The Heaths ask why some ideas stick and others don't, and argue that sticky ideas share six traits.",
+    "Their six principles spell SUCCESs: Simple, Unexpected, Concrete, Credible, Emotional, Stories.",
+    "They argue that abstraction is the enemy of memorable communication, and that concrete details, images and stories help ideas stick.",
+    "They name a key obstacle: the 'Curse of Knowledge', once we know something, it's hard to imagine not knowing it, so experts tend to speak abstractly."
+  ],
+  "tension": "A false story about a stolen kidney is remembered for years; a carefully written corporate message is forgotten in minutes.",
+  "opening_idea": "Most people who've heard the stolen-kidney legend can still retell it. Almost no one can repeat their company's mission statement.",
+  "lessons": [
+    {
+      "idea": "Concrete beats abstract.",
+      "anchor": "The kidney legend versus the vague paragraph"
+    },
+    {
+      "idea": "Sticky ideas share common traits.",
+      "anchor": "SUCCESs"
+    },
+    {
+      "idea": "Experts must fight the Curse of Knowledge.",
+      "anchor": "Why experts speak abstractly"
+    }
+  ],
+  "reflect": [
+    "Which of your messages is too abstract to remember?",
+    "What concrete example could replace it?"
+  ],
+  "reflect_final": "What story or concrete image could make your most important idea stick?",
+  "use_cases": [
+    {
+      "situation": "Your presentation is full of abstract goals.",
+      "move": "Replace one abstract claim with a concrete example or short story.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're explaining your job to relatives who don't get it.",
+      "move": "Describe one specific person you helped last week.",
+      "context": "family"
+    },
+    {
+      "situation": "You write a lot of jargon in emails.",
+      "move": "Rewrite one email so a 12-year-old could picture what you mean.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "If people can picture it, they can remember it.",
+  "conversation_variants": {
+    "punchline_idea": "A false story about a stolen kidney sticks better than most true corporate messages.",
+    "thirty_sec_idea": "Kidney legend vs abstract paragraph, SUCCESs, Curse of Knowledge.",
+    "question_idea": "Which of your messages is too abstract to remember?",
+    "key_contrast_idea": "Abstract versus concrete"
+  }
+}

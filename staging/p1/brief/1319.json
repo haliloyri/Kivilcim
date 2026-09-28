@@ -1,0 +1,65 @@
+{
+  "story_id": 1319,
+  "kind": "concept",
+  "book": {
+    "title": "Indistractable: How to Control Your Attention and Choose Your Life",
+    "author": "Nir Eyal",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Timeboxing, 'turn your values into time', the idea that you can't call something a distraction unless you know what it distracted you from, and the three life domains (you, relationships, work) are from Indistractable Part 2 ('Make Time for Traction'). Eyal does say to-do lists lack a time dimension, but the reference's hard line that they are 'the enemy' of attention and the quote about 'deceiving yourself' are not confirmed wording and are omitted. The reference's 'Tuesday 9–11' is an illustration, not a book detail. Eyal also recommends regularly reviewing the calendar (a 'schedule sync' with manager and family); the exact cadence is left out. Not verified against the text.",
+  "facts": [
+    "Eyal argues you can't call something a distraction unless you know what it is distracting you from, so the first step is planning your time.",
+    "He notes that a to-do list says what to do but not when, and proposes timeboxing: deciding in advance what you'll do and when, and putting it on the calendar.",
+    "He frames this as 'turning values into time': the calendar should reflect what you care about.",
+    "He splits life into three domains: you, relationships, and work. He says to schedule time for yourself first (for example sleep, exercise, reflection), because without you the other domains suffer.",
+    "Relationship time, with family and friends, should also be scheduled rather than left to whatever time is left over.",
+    "He treats the result as success if you did what you planned for the time you planned, regardless of the outcome; the schedule is revised as you learn."
+  ],
+  "tension": "Most people plan work carefully and hope time for themselves and their family appears on its own, yet in Eyal's view that time rarely does.",
+  "opening_idea": "Start with a to-do list full of items and no times beside them. Ask when any of those items will actually happen.",
+  "lessons": [
+    {
+      "idea": "A distraction only exists relative to a plan, so planning comes before resisting.",
+      "anchor": "'You can't call something a distraction unless you know what it's distracting you from'"
+    },
+    {
+      "idea": "Personal and relationship time needs the same calendar protection as work.",
+      "anchor": "The three domains: you, relationships, work, with 'you' scheduled first"
+    },
+    {
+      "idea": "Success is doing what you planned when you planned it, not finishing everything.",
+      "anchor": "Eyal's measure of timeboxing success"
+    }
+  ],
+  "reflect": [
+    "Which things that matter to you have no time on your calendar this week?",
+    "Does your calendar show your priorities or only other people's requests?",
+    "When did you last schedule time for a relationship instead of fitting it in?"
+  ],
+  "reflect_final": "Pick one thing from outside work you care about and put it on this week's calendar with a start and end time. Afterwards, notice whether it happened.",
+  "use_cases": [
+    {
+      "situation": "A packed week where your own focus work keeps getting eaten by meetings.",
+      "move": "Block one time slot for your most important task and name it clearly on the shared calendar. At the end of the week check: did you do it when you planned?",
+      "context": "self"
+    },
+    {
+      "situation": "Reviewing priorities with your manager.",
+      "move": "Bring your planned calendar week and ask: 'Does how I've scheduled my time match what you think matters most?' Eyal suggests this kind of regular schedule sync.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Evenings with your partner or kids keep being swallowed by leftovers from work.",
+      "move": "Eyal says relationship time belongs on the calendar too. Agree on one fixed evening slot this week and put it in both calendars.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A to-do list says what; a calendar says when. Priorities that never get a 'when' tend to disappear.",
+  "conversation_variants": {
+    "punchline_idea": "Eyal says you can't call something a distraction unless you know what it's distracting you from.",
+    "thirty_sec_idea": "Eyal replaces the to-do list with timeboxing: put tasks on the calendar with times, starting with time for yourself, then relationships, then work.",
+    "question_idea": "Ask what they care about that never actually appears on their calendar.",
+    "key_contrast_idea": "Fitting life around work's leftovers versus giving yourself and your relationships a time slot first."
+  }
+}

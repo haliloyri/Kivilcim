@@ -1,0 +1,63 @@
+{
+  "story_id": 1327,
+  "kind": "concept",
+  "book": {
+    "title": "The Success Principles",
+    "author": "Jack Canfield",
+    "year": "2004"
+  },
+  "confidence": "medium",
+  "confidence_note": "Canfield does recommend writing a long list of goals (he suggests 101) and uses John Goddard, who wrote a list of 127 life goals as a teenager, as his example; he also links written goals to the reticular activating system. The TR text's 'experiment' by Canfield and Mark Victor Hansen, and the claim that most participants achieved over 70% of 101 goals within a year, cannot be attributed to the book and are excluded. The exact number of Goddard's goals later achieved is omitted because the figure could not be verified here; only the qualitative outcome is kept. Not checked against the text.",
+  "facts": [
+    "Canfield urges readers to write down a large number of goals, suggesting a list of 101, each specific and measurable, rather than keeping vague wishes in their heads.",
+    "His example is John Goddard, who as a 15-year-old wrote a 'life list' of 127 goals, including ambitious items such as exploring the Nile.",
+    "According to Canfield, Goddard went on to accomplish a large share of that list over his life.",
+    "Canfield argues that writing a goal down turns a wish into a commitment and keeps it in front of you.",
+    "He explains that a clearly defined goal primes the brain's reticular activating system to notice information and opportunities relevant to it that would otherwise be filtered out."
+  ],
+  "tension": "A list of 101 goals sounds absurdly long, yet Canfield argues that the sheer act of writing so many down is what forces people to find out what they actually want.",
+  "opening_idea": "Start with a 15-year-old John Goddard sitting down to write 127 things he wanted to do with his life, from exploring the Nile onward, and ask what a list like that does to the person who writes it.",
+  "lessons": [
+    {
+      "idea": "Writing a goal down changes it from a passing wish into something you have committed to and can check against.",
+      "anchor": "Canfield's instruction to write goals as specific, measurable items"
+    },
+    {
+      "idea": "A long list pushes you past obvious answers toward what you genuinely want.",
+      "anchor": "the 101-goal list and Goddard's 127-item life list"
+    },
+    {
+      "idea": "A clearly named goal makes you notice relevant opportunities you would otherwise filter out.",
+      "anchor": "the reticular activating system"
+    }
+  ],
+  "reflect": [
+    "Which of your goals exists only as a thought you've never written down?",
+    "Have you ever started noticing something everywhere right after deciding you wanted it?"
+  ],
+  "reflect_final": "Next time you have ten quiet minutes, write down as many specific goals as you can before stopping, then notice which item surprised you by being on the list.",
+  "use_cases": [
+    {
+      "situation": "A team's quarterly planning keeps producing the same three safe objectives.",
+      "move": "Ask everyone to silently write fifteen possible goals for the quarter before discussing, then compare which ones appeared only after the first five.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your family talks about 'someday' trips and projects that never happen.",
+      "move": "Mention that Goddard's 127-item list began as a teenager's written list, then suggest each person write five 'someday' items on a shared sheet on the fridge.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel stuck but can't name what you want next.",
+      "move": "Write a numbered list of goals and keep going past the point where it feels easy; circle the one that makes you most uneasy or excited.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Goddard's list worked like a lens: once 127 goals were written down, he had something concrete to look for every day.",
+  "conversation_variants": {
+    "punchline_idea": "At 15, John Goddard wrote down 127 things he wanted to do with his life, including exploring the Nile.",
+    "thirty_sec_idea": "Canfield tells how teenage John Goddard wrote a life list of 127 goals and went on to accomplish many of them; Canfield's point is that writing a long list forces clarity and trains your attention on opportunities.",
+    "question_idea": "If you had to write 101 goals, what would appear after number thirty that you've never said out loud?",
+    "key_contrast_idea": "A wish kept in your head versus a goal written where you can see it."
+  }
+}

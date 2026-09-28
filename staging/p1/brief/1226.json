@@ -1,0 +1,64 @@
+{
+  "story_id": 1226,
+  "kind": "concept",
+  "book": {
+    "title": "The Courage to Be Disliked",
+    "author": "Ichiro Kishimi and Fumitake Koga",
+    "year": "2013"
+  },
+  "confidence": "high",
+  "confidence_note": "The book is written as a dialogue between a philosopher and a young man, presenting the ideas of psychologist Alfred Adler. Its central points used here are well established: all problems are interpersonal relationship problems; we should not live to satisfy others' expectations or seek their recognition; the 'separation of tasks' (ask whose task this is, and don't intrude on others' tasks or let them intrude on yours); and freedom is being disliked by other people, in the sense of being willing to accept that some people will dislike you. The reference TR text's dialogue is paraphrased; the book has two authors, Kishimi and Koga.",
+  "facts": [
+    "The book is a conversation over five nights between a philosopher and a young man who is unhappy and skeptical, and it presents the ideas of Alfred Adler.",
+    "The philosopher says that all problems are interpersonal relationship problems.",
+    "He argues that seeking recognition from others means living according to their expectations, which makes you unfree.",
+    "He introduces the 'separation of tasks': for any issue, ask whose task it is, meaning who will ultimately bear the consequences. Don't intrude on other people's tasks, and don't let them intrude on yours.",
+    "How others judge you is their task, not yours.",
+    "He concludes that freedom is being disliked by other people: being willing to be disliked by some, rather than trying to be liked by everyone."
+  ],
+  "tension": "A young man wants to be happy, yet organizes his whole life around what others think of him.",
+  "opening_idea": "A philosopher tells an unhappy young man that the root of his problems is a single wish: to be liked.",
+  "lessons": [
+    {
+      "idea": "Seeking recognition makes you live someone else's life.",
+      "anchor": "Living to satisfy others' expectations"
+    },
+    {
+      "idea": "Separate your tasks from theirs.",
+      "anchor": "The separation of tasks"
+    },
+    {
+      "idea": "Freedom includes being disliked by some.",
+      "anchor": "'Freedom is being disliked by other people'"
+    }
+  ],
+  "reflect": [
+    "Whose approval do you most want right now?",
+    "Which of your worries is really someone else's task?"
+  ],
+  "reflect_final": "What would you do differently if you accepted that some people won't like it?",
+  "use_cases": [
+    {
+      "situation": "You're agonizing over whether a colleague will approve of your decision.",
+      "move": "Ask whose task it is: your decision is yours; their reaction is theirs.",
+      "context": "self"
+    },
+    {
+      "situation": "Your teenager is stressed about what classmates think.",
+      "move": "Talk about separating what they control from what others decide to think.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend constantly changes plans to please everyone.",
+      "move": "Ask gently what they would choose if nobody's opinion mattered.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Freedom means accepting that not everyone will like you.",
+  "conversation_variants": {
+    "punchline_idea": "Freedom, says Adler's philosopher, is being disliked by other people.",
+    "thirty_sec_idea": "The dialogue, interpersonal problems, separation of tasks, courage to be disliked.",
+    "question_idea": "Whose approval are you living for?",
+    "key_contrast_idea": "Approval versus freedom"
+  }
+}

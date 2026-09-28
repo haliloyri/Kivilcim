@@ -1,0 +1,60 @@
+{
+  "story_id": 1342,
+  "kind": "anecdote",
+  "book": { "title": "Meditasyon (10% Happier)", "author": "Dan Harris", "year": "2014" },
+  "confidence": "medium",
+  "confidence_note": "Harris opens the book with his on-air panic attack in 2004 while reading news headlines on ABC's Good Morning America in front of millions of viewers. The book gives a precise audience figure, which is omitted here because it could not be checked. The TR text gets the cause wrong. It says he had used antidepressants and alcohol; in the book, after reporting from war zones, he had been using recreational drugs, including cocaine, and a doctor linked that to the panic attack. That correction is kept in general terms. His route to meditation ran through his assignment to the religion beat, through Eckhart Tolle's ideas and then more practical teachers, and ended at a meditation retreat. His initial skepticism, seeing meditation as the domain of gurus and hippies, is well attested, but the TR quotation is not his exact wording. The quotation about his 'first successful session' ('I am not my thoughts…') is not verified and is excluded. The outcome that anxiety did not disappear but he became better at not being carried away by it is consistent with the book.",
+  "facts": [
+    "Dan Harris was an ABC News correspondent and anchor; in 2004 he had a panic attack live on Good Morning America while reading the news in front of millions of viewers.",
+    "He later traced it back to how he had been living: after reporting from war zones, he had been using recreational drugs, and a doctor pointed to that as a likely factor.",
+    "Assigned to cover religion, he encountered ideas about 'the voice in the head' and eventually meditation, which he initially dismissed as something for gurus and hippies.",
+    "What changed his mind was the growing scientific research on meditation, and teachers who presented it in practical, non-mystical terms.",
+    "He began practicing and went on a silent meditation retreat.",
+    "His result was not the end of anxiety, but a better ability to notice it and not be swept along by it, which he later summed up as being about '10% happier'."
+  ],
+  "tension": "A professional skeptic whose job was to stay calm on live TV fell apart on air, and the fix he found was a practice he had considered too soft to take seriously.",
+  "opening_idea": "Open on a news anchor mid-sentence on live morning television, suddenly unable to get the next words out, without yet revealing what led there or where it took him.",
+  "lessons": [
+    {
+      "idea": "A visible breakdown can be the start of an honest look at what caused it.",
+      "anchor": "Harris traced the on-air panic attack to his post-war-zone habits with the help of a doctor."
+    },
+    {
+      "idea": "Skepticism can lead to a practice instead of away from it, if you test it on evidence.",
+      "anchor": "He dismissed meditation as a thing for gurus until the scientific research and practical teachers changed his view."
+    },
+    {
+      "idea": "The goal can be a different relationship with anxiety rather than its elimination.",
+      "anchor": "His modest '10% happier' result: anxiety remained, but it carried him away less."
+    }
+  ],
+  "reflect": [
+    "Is there a practice you have dismissed because of the kind of people you associate with it?",
+    "When stress hits, do you usually notice it building, or only after it has taken over?"
+  ],
+  "reflect_final": "The next time you feel anxiety rising, pause for a few breaths and simply name it to yourself ('this is worry'); afterward, notice whether it had quite the same grip.",
+  "use_cases": [
+    {
+      "situation": "Before a high-stakes presentation you feel your chest tighten and your thoughts race.",
+      "move": "Take three slow breaths and silently label what is happening ('nerves, racing thoughts') instead of fighting it, then start.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend rolls their eyes when meditation comes up.",
+      "move": "Tell them Harris was a skeptical TV newsman who thought it was for hippies until a panic attack on live TV, and that he promises only about 10% happier—then ask what they do when stress spikes.",
+      "context": "social"
+    },
+    {
+      "situation": "You keep reaching for the same quick escape when stress builds.",
+      "move": "Next time, before reaching for it, sit for two minutes and just watch the urge and the thoughts around it; notice whether the urge changes.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Harris's panic attack happened on live TV; the lesson he took from it was not to silence anxiety but to see it coming before it takes the microphone.",
+  "conversation_variants": {
+    "punchline_idea": "A news anchor had a panic attack on live national TV—and it led him, a total skeptic, to meditation.",
+    "thirty_sec_idea": "Dan Harris froze in panic while reading the news on Good Morning America; a doctor linked it to how he'd been living, and a skeptical search led him to meditation, which didn't remove his anxiety but made him better at not being swept away by it.",
+    "question_idea": "What's something you were sure was nonsense until you actually tried it?",
+    "key_contrast_idea": "From 'meditation is for gurus and hippies' to 'this is a practical tool a skeptic can use.'"
+  }
+}

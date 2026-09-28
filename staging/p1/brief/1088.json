@@ -1,0 +1,70 @@
+{
+  "story_id": 1088,
+  "kind": "anecdote",
+  "book": {
+    "title": "Büyük Sıçrayış (The Lean Startup)",
+    "author": "Eric Ries",
+    "year": "2011"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Zappos/Nick Swinmurn story is a well-known example in The Lean Startup, where it illustrates running an experiment to test a business hypothesis. Three points are less certain. First, the Turkish title given ('Büyük Sıçrayış') does not match the commonly known Turkish edition ('Yalın Girişim'). Second, the ~$1.2 billion Amazon acquisition figure is widely reported and very likely cited by Ries, but it is kept approximate. Third, the book says he bought the shoes at full retail price. That he 'lost money' on each order is an inference, not a quoted claim.",
+  "facts": [
+    "Around 1999, Nick Swinmurn wanted to sell shoes online but did not know whether customers would buy shoes over the internet.",
+    "Instead of building warehouses, inventory, and distribution systems first, he asked local shoe stores if he could photograph their inventory.",
+    "He posted the photos on a simple website and planned to fulfill orders by buying the shoes from the store at full price and shipping them himself.",
+    "Customers did place orders, which showed there was real demand for buying shoes online.",
+    "Ries notes the experiment tested more than a survey could. It revealed real customer behavior, such as how people paid and handled returns.",
+    "Ries uses the case to illustrate validated learning and treating a startup as a series of experiments that test key hypotheses.",
+    "Zappos grew into a large business and was later acquired by Amazon in a deal valued at roughly $1.2 billion (2009)."
+  ],
+  "tension": "Would anyone actually buy shoes they could not try on, and was it worth building a whole company before knowing?",
+  "opening_idea": "Open with a founder facing a big, uncertain idea (selling shoes online) who skips the expensive build-out and instead photographs shoes in someone else's store.",
+  "lessons": [
+    {
+      "idea": "Test your riskiest assumption with a real, small experiment before investing heavily.",
+      "anchor": "Photographing store shoes instead of building a warehouse"
+    },
+    {
+      "idea": "Validated learning comes from observing what customers actually do, not what they say they would do.",
+      "anchor": "Real orders placed on a simple website"
+    },
+    {
+      "idea": "An experiment can be unprofitable and still be a success if it answers the key question.",
+      "anchor": "Buying shoes at full retail price to fulfill each order"
+    },
+    {
+      "idea": "Real interaction with customers reveals details a plan or survey would miss.",
+      "anchor": "Learning about payments and returns by actually serving customers"
+    }
+  ],
+  "reflect": [
+    "Which assumption in your current idea, if wrong, would make everything else irrelevant?",
+    "Are you planning in detail something you could simply try on a small scale first?",
+    "What would count as real evidence of demand, as opposed to polite encouragement?"
+  ],
+  "reflect_final": "What is the smallest, cheapest experiment you could run this week to find out whether your idea's core assumption is true?",
+  "use_cases": [
+    {
+      "situation": "A team is about to commit months of budget to building a new product or feature.",
+      "move": "Ask: 'What is our riskiest assumption, and how could we test it with real users in two weeks before we build anything?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague shares an ambitious idea but is stuck writing a perfect plan.",
+      "move": "Suggest they do a manual, 'fake-it' version first: serve three real customers by hand and see if anyone pays.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are thinking about a side business or career change but keep postponing it.",
+      "move": "Pick one concrete test, such as a simple landing page, one paid gig, or a single pre-sale, and run it before quitting or investing anything big.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Before you build it, find out whether anyone actually wants it, with the smallest real test you can run.",
+  "conversation_variants": {
+    "punchline_idea": "Zappos started with photos of shoes someone else owned.",
+    "thirty_sec_idea": "Swinmurn didn't know if people would buy shoes online, so he posted photos of a local store's shoes and bought them at full price when orders came in. The real orders proved the demand, and the company later sold to Amazon.",
+    "question_idea": "If you had to prove your idea works without building it, what would you fake by hand first?",
+    "key_contrast_idea": "Big plan first, then launch and hope, versus a tiny real test first, then build on proven demand."
+  }
+}

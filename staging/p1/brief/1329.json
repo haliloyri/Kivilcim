@@ -1,0 +1,63 @@
+{
+  "story_id": 1329,
+  "kind": "concept",
+  "book": {
+    "title": "The Success Principles",
+    "author": "Jack Canfield",
+    "year": "2004"
+  },
+  "confidence": "medium",
+  "confidence_note": "Canfield does have a principle on using feedback and illustrates it with a guided-flight image: a plane (not, as far as recalled, a missile as in the TR text) that is off course much of the time yet reaches its destination by continually correcting. The exact percentage sometimes quoted for time off course is omitted because it could not be verified. The '1 to 10' feedback question ('How would you rate...? What would it take to make it a 10?') is attributed to the book with reasonable confidence. The TR claim that feedback makes success 'inevitable' is the text's overstatement and is excluded. Not checked against the text.",
+  "facts": [
+    "Canfield compares pursuing a goal to an airplane flying to its destination: it is off course much of the time but keeps correcting based on instrument feedback until it arrives.",
+    "He argues that success depends less on getting things right the first time than on responding to feedback, including negative feedback.",
+    "He warns against reacting to negative feedback by quitting, getting angry at the source, or ignoring it.",
+    "He recommends actively asking for feedback, for example: 'On a scale of 1 to 10, how would you rate our work together?' followed by 'What would it take to make it a 10?'",
+    "In his view, an unsuccessful attempt is information about what to adjust, not a verdict on the person."
+  ],
+  "tension": "A plane that is off course much of its flight still lands where it should, while many people treat a single wrong heading as proof they should turn back.",
+  "opening_idea": "Open with the pilot's instruments constantly telling the plane it is off course, and ask why nobody on board panics about it.",
+  "lessons": [
+    {
+      "idea": "Being off course is normal; what matters is how quickly you correct.",
+      "anchor": "the airplane that is off course much of the flight"
+    },
+    {
+      "idea": "Feedback you don't ask for is feedback you mostly don't get.",
+      "anchor": "the '1 to 10' question and 'What would it take to make it a 10?'"
+    },
+    {
+      "idea": "Quitting, blaming the messenger, or ignoring the signal all waste the information.",
+      "anchor": "Canfield's list of poor responses to negative feedback"
+    }
+  ],
+  "reflect": [
+    "When a recent attempt fell short, did you treat it as a verdict or as a reading on the instruments?",
+    "Whose honest feedback have you been avoiding asking for?"
+  ],
+  "reflect_final": "After your next meeting, project or conversation that matters, ask one person the 1-to-10 question and 'what would make it a 10?', and notice what you hear that you wouldn't otherwise have known.",
+  "use_cases": [
+    {
+      "situation": "A project retrospective is drifting into blame.",
+      "move": "Ask each person to rate the sprint from 1 to 10 and name what would have made it a 10, then pick one correction.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You want to know how a direct report experiences your management.",
+      "move": "Canfield's plane corrects by reading its instruments, so ask: 'From 1 to 10, how useful have our one-on-ones been, and what would make them a 10?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're about to abandon something after one disappointing result.",
+      "move": "Write down what the result told you and one adjustment to try, before deciding whether to stop.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The plane isn't on course most of the time; it's correcting most of the time, and that's why it lands.",
+  "conversation_variants": {
+    "punchline_idea": "A plane spends much of its flight off course and still arrives, because it never stops correcting.",
+    "thirty_sec_idea": "Canfield points out that planes are constantly off course yet land on target by reading feedback and correcting, and he suggests asking people 'from 1 to 10, how am I doing, and what would make it a 10?'",
+    "question_idea": "What's the most useful piece of criticism you ever got, and did you ask for it?",
+    "key_contrast_idea": "Treating a miss as the end versus treating it as a reading on the dashboard."
+  }
+}

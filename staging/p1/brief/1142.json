@@ -1,0 +1,64 @@
+{
+  "story_id": 1142,
+  "kind": "anecdote",
+  "book": {
+    "title": "Daring Greatly",
+    "author": "Brené Brown",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book takes its title from Theodore Roosevelt's 1910 speech 'Citizenship in a Republic', delivered at the Sorbonne in Paris, and quotes the 'Man in the Arena' passage. Brown describes coming across the quote at a painful time, after her TEDx talk on vulnerability spread widely and she read harsh online comments about her, and says it changed her thinking. The reference TR text's detail that she 'closed the page and sat for a while' and the quote 'my whole research is in this paragraph' cannot be confirmed verbatim and are left out; her sense that the passage captured what her research had taught her is kept as a paraphrase. The Roosevelt quote is reproduced in part.",
+  "facts": [
+    "In April 1910, Theodore Roosevelt gave a speech at the Sorbonne in Paris, later known as 'Citizenship in a Republic'.",
+    "It includes the passage: 'It is not the critic who counts... The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again...' and ends with the line that if he fails, 'at least fails while daring greatly'.",
+    "Brown's book takes its title, Daring Greatly, from this passage.",
+    "Brown describes finding the quote after her TEDx talk on vulnerability went viral and she was hurt by cruel anonymous online comments about her.",
+    "She describes the passage as capturing what she had learned: vulnerability is not about winning or losing, but about having the courage to show up and be seen when you can't control the outcome.",
+    "She contrasts people in the arena with critics in the cheap seats who never risk anything themselves."
+  ],
+  "tension": "A researcher who had just told the world to be vulnerable was hurt by strangers mocking her online; did their opinions deserve a place?",
+  "opening_idea": "A researcher finds her own talk about vulnerability ridiculed by strangers, and then finds a century-old speech that answers them.",
+  "lessons": [
+    {
+      "idea": "Critics who aren't taking risks don't get the final say.",
+      "anchor": "'It is not the critic who counts'"
+    },
+    {
+      "idea": "Showing up without controlling the outcome is the courage.",
+      "anchor": "'At least fails while daring greatly'"
+    },
+    {
+      "idea": "Everyday arenas count as much as grand ones.",
+      "anchor": "Brown applying the quote to ordinary vulnerable acts"
+    }
+  ],
+  "reflect": [
+    "Whose criticism do you give weight to even though they never take the risks you take?",
+    "Where are you sitting in the stands of your own life?"
+  ],
+  "reflect_final": "What arena have you been avoiding, and what would it mean to step in this week?",
+  "use_cases": [
+    {
+      "situation": "You're about to share a project that anonymous people online might criticize.",
+      "move": "Decide in advance whose feedback counts: people who are also in the arena.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague is crushed by criticism from someone who never contributes.",
+      "move": "Share the 'man in the arena' idea and ask whose opinion they actually want to weigh.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your team keeps critiquing a pilot project without offering to help.",
+      "move": "Invite critics to join the next iteration so their input comes from inside the arena.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Courage is showing up when you can't control the outcome.",
+  "conversation_variants": {
+    "punchline_idea": "If you're not in the arena, your critique shouldn't carry much weight.",
+    "thirty_sec_idea": "Brown's hurt after viral talk, finding Roosevelt's 1910 quote, and the book's title.",
+    "question_idea": "Whose criticism would you ignore if you remembered they're not in the arena?",
+    "key_contrast_idea": "Stands versus arena"
+  }
+}

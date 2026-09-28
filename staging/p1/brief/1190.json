@@ -1,0 +1,64 @@
+{
+  "story_id": 1190,
+  "kind": "anecdote",
+  "book": {
+    "title": "Stillness Is the Key",
+    "author": "Ryan Holiday",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Epictetus appears throughout Holiday's books, including Stillness Is the Key, as an example of Stoic inner freedom. The leg-breaking anecdote in the reference TR text is an ancient story, preserved through the early Christian writer Origen quoting the philosopher Celsus: Epictetus's master twisted his leg, Epictetus calmly warned that it would break, and when it did, said 'Didn't I tell you it would break?' Its historical accuracy is uncertain, and it is presented as a traditional story. Epictetus was lame, and his teaching of the dichotomy of control, that some things are up to us and some are not, opens his Enchiridion. Whether Holiday tells the leg story in this specific book is not confirmed.",
+  "facts": [
+    "Epictetus was born a slave in the first century AD and later became one of the most influential Stoic teachers.",
+    "He was lame for most of his life.",
+    "An ancient story, preserved by Origen quoting the philosopher Celsus, says his master once twisted his leg. Epictetus calmly said it would break if he continued. When it broke, Epictetus said only: 'Didn't I tell you it would break?' The story's accuracy is uncertain.",
+    "Epictetus's teaching begins with the idea that some things are up to us and some are not: our judgments, choices and desires are up to us; our body, reputation and external circumstances are not.",
+    "He taught that freedom comes from focusing on what is up to us and accepting the rest.",
+    "Holiday uses Epictetus as an example of stillness: a calm mind that isn't controlled by what happens to it."
+  ],
+  "tension": "A man with no legal freedom at all became famous for teaching freedom.",
+  "opening_idea": "An enslaved man's leg is being twisted, and he responds with a calm warning.",
+  "lessons": [
+    {
+      "idea": "Separate what's up to you from what isn't.",
+      "anchor": "The dichotomy of control"
+    },
+    {
+      "idea": "Inner freedom doesn't depend on outer circumstances.",
+      "anchor": "A slave teaching freedom"
+    },
+    {
+      "idea": "Calm is a choice about judgment, not a lack of pain.",
+      "anchor": "The leg story"
+    }
+  ],
+  "reflect": [
+    "What is worrying you that isn't actually up to you?",
+    "What part of it is up to you?"
+  ],
+  "reflect_final": "If you focused only on your own judgments and actions today, what would you let go of?",
+  "use_cases": [
+    {
+      "situation": "You're anxious about a decision someone else will make.",
+      "move": "List what's up to you and put your energy only there.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team is frustrated about a market change.",
+      "move": "Split a whiteboard into 'in our control' and 'not in our control' and plan only from the first column.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is consumed by anger at how someone treated them.",
+      "move": "Ask gently what response is theirs to choose now.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "You can't control what happens; you can control what you make of it.",
+  "conversation_variants": {
+    "punchline_idea": "A man with no legal freedom became famous for teaching freedom.",
+    "thirty_sec_idea": "Epictetus's life, the leg story as tradition, dichotomy of control.",
+    "question_idea": "What are you worrying about that isn't up to you?",
+    "key_contrast_idea": "Up to you, not up to you"
+  }
+}

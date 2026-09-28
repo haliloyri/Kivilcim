@@ -1,0 +1,64 @@
+{
+  "story_id": 1317,
+  "kind": "concept",
+  "book": {
+    "title": "Hooked: How to Build Habit-Forming Products",
+    "author": "Nir Eyal",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The input labels the book 'Müşteriyi Anlamak'; the content (variable rewards; rewards of the tribe, the hunt and the self) matches Eyal's Hooked, so the brief uses that title. Eyal does cite B.F. Skinner's operant-conditioning work to introduce variable rewards: animals rewarded on an unpredictable schedule responded more often than those rewarded every time. The reference text's specific setup (a single rat that lost interest because rewards were predictable, then pressed 'obsessively') is not reliably from the book; Eyal's retelling is commonly given with pigeons, and the exact animal and wording could not be checked, so the brief keeps only the general finding. The '3 likes or 300 likes' line is the reference text's illustration, not a book figure. The three reward types are from the book. Not verified against the text.",
+  "facts": [
+    "Eyal introduces variable rewards through B.F. Skinner's operant-conditioning experiments: animals that received food on an unpredictable schedule pressed the lever more often than animals rewarded every time.",
+    "Eyal's point is that unpredictability itself raises engagement: the uncertainty of what comes next keeps people checking.",
+    "In the Hook Model, variable reward is the third step, after a trigger and an action, and before investment.",
+    "He sorts variable rewards into three types. Rewards of the tribe are social: approval, likes, being noticed. Rewards of the hunt are the search for resources or information, like scrolling a feed for the next interesting item. Rewards of the self are mastery, competence and completion, like clearing an inbox or finishing a level.",
+    "Eyal presents this as a design tool and also discusses the ethics of using it, asking designers whether they would use the product themselves and whether it improves users' lives."
+  ],
+  "tension": "A reward you can count on eventually becomes boring, while a reward that may or may not arrive keeps you coming back, even when most checks turn up nothing.",
+  "opening_idea": "Start with Skinner's lever: one group of animals gets food every time, another only sometimes. Ask which group presses more.",
+  "lessons": [
+    {
+      "idea": "Uncertainty, not the reward itself, is what drives repeated checking.",
+      "anchor": "Skinner's animals on an unpredictable schedule pressed the lever more often"
+    },
+    {
+      "idea": "Different products hook different needs: belonging, searching, or mastery.",
+      "anchor": "Rewards of the tribe, the hunt and the self"
+    },
+    {
+      "idea": "Knowing the mechanism lets you decide whether a checking habit is serving you.",
+      "anchor": "Eyal's ethics questions for designers: would you use it, and does it improve lives?"
+    }
+  ],
+  "reflect": [
+    "Which app do you open 'just to see if something's there'?",
+    "When you check and find nothing, what makes you check again later?",
+    "Is the pull you feel social approval, new information, or the feeling of finishing something?"
+  ],
+  "reflect_final": "Next time you reach for your most-checked app, name which reward you're hoping for (tribe, hunt or self) and notice whether you actually got it.",
+  "use_cases": [
+    {
+      "situation": "Designing a feature or notification for your own product team.",
+      "move": "Ask the team which of Eyal's three reward types the feature offers, and then his ethics question: 'Would we use this ourselves, and does it improve users' lives?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "You catch yourself refreshing email or a feed many times an hour.",
+      "move": "Skinner's animals kept pressing because the food came only sometimes. Batch your email into a few set check times today and notice whether anything urgent was actually missed.",
+      "context": "self"
+    },
+    {
+      "situation": "A teenager or partner can't put down a game or feed.",
+      "move": "Instead of criticizing, ask together: 'Is it the likes, the next thing in the feed, or finishing a level?' Naming the reward type makes the pull easier to discuss.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The lever that pays out only sometimes is the one you can't stop pressing. When you keep checking, ask what uncertain reward you're chasing.",
+  "conversation_variants": {
+    "punchline_idea": "In Skinner's experiments, the animals that got food only sometimes pressed the lever more than the ones fed every time.",
+    "thirty_sec_idea": "Skinner found unpredictable rewards drive more lever-pressing than reliable ones. Eyal shows apps use the same variable rewards: social approval, the hunt for information, and the feeling of mastery.",
+    "question_idea": "Ask which app they check most without a reason, and what they hope to find when they open it.",
+    "key_contrast_idea": "A sure reward gets used; an uncertain one gets checked again and again."
+  }
+}

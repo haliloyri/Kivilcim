@@ -1,0 +1,63 @@
+{
+  "story_id": 1191,
+  "kind": "anecdote",
+  "book": {
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "Holiday discusses Howard Hughes in Ego Is the Enemy as an example of how ego and the need for control can undo a gifted, wealthy person; he argues that Hughes's public image as a brilliant businessman hid enormous losses and mismanagement, and that his need to control everything, refusal to listen and growing isolation cost him dearly. The reference TR text's vivid description of Hughes's final years (long nails, unwashed) is widely reported biography and is kept brief and factual, without diagnosis. Specific dollar figures are omitted.",
+  "facts": [
+    "Howard Hughes inherited a successful tool company and became famous as an aviator, film producer and businessman, and one of the richest men of his time.",
+    "Holiday argues that behind the glamorous image, many of Hughes's ventures were badly managed and lost huge amounts of money; much of his fortune depended on the inherited tool business.",
+    "He describes Hughes's need to control everything, his refusal to delegate or listen to advice, and his tendency to interfere in details.",
+    "Over time Hughes withdrew from public life. In his later years he lived as a recluse, largely confined to hotel suites, including in Las Vegas.",
+    "Holiday uses him to illustrate how success can feed ego, and how ego, through entitlement, control and paranoia, can destroy what talent built."
+  ],
+  "tension": "A man who seemed to have everything, talent, money and fame, ended his life isolated and diminished.",
+  "opening_idea": "Aviator, film producer, billionaire: Howard Hughes looked like the definition of success. Holiday argues the picture was misleading.",
+  "lessons": [
+    {
+      "idea": "A glamorous image can hide poor results.",
+      "anchor": "Hughes's losses behind the legend"
+    },
+    {
+      "idea": "Needing to control everything is a symptom of ego.",
+      "anchor": "Refusal to delegate or listen"
+    },
+    {
+      "idea": "Success can make you more vulnerable to ego, not less.",
+      "anchor": "Entitlement, control, paranoia"
+    }
+  ],
+  "reflect": [
+    "Where does your need for control slow others down?",
+    "Whose honest advice have you stopped listening to?"
+  ],
+  "reflect_final": "What part of your success might be feeding your ego rather than your work?",
+  "use_cases": [
+    {
+      "situation": "You find yourself redoing your team's work because 'nobody does it right'.",
+      "move": "Hand one piece of work over fully and resist the urge to interfere.",
+      "context": "self"
+    },
+    {
+      "situation": "A successful colleague has stopped taking feedback.",
+      "move": "Offer honest, specific feedback privately, framed around shared goals.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your leadership team reviews a project mainly on how it looks externally.",
+      "move": "Ask for the real numbers and results behind the public image.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Ego can destroy what talent built.",
+  "conversation_variants": {
+    "punchline_idea": "Howard Hughes's legend hid how much his ego cost him.",
+    "thirty_sec_idea": "Hughes's image, hidden losses, control and isolation, Holiday's point.",
+    "question_idea": "Where is your need for control getting in the way?",
+    "key_contrast_idea": "Image versus reality"
+  }
+}

@@ -262,6 +262,7 @@ const getStoryCollectionId = (version) => {
   if (/^F\d+$/.test(value)) return 'focus';
   if (/^C\d+$/.test(value)) return 'conversation';
   if (value === 'OH') return 'originals';
+  if (value === 'OPUS55') return 'opus55';
   return 'new';
 };
 
@@ -598,7 +599,7 @@ const HomeScreen = ({ navigation }) => {
   // 1. Profilde seçilen içerik sürümünü ve yayın tarihini uygula.
   const selectedStoryCollections = preferences?.storyCollections?.length
     ? preferences.storyCollections
-    : ['new'];
+    : ['new', 'opus55'];
   const versionStories = (stories || []).filter((story) =>
     selectedStoryCollections.includes(getStoryCollectionId(story.version))
   );
@@ -2126,30 +2127,23 @@ const HomeScreen = ({ navigation }) => {
           const isAllFilter = activeFilter === 'all';
           const activeCatItem = visibleCategoriesList.find((item) => item.key === activeFilter);
           const activeCatTheme = getCategoryTheme(activeCatItem?.rawName || activeCatItem?.label, isDark);
-          const isBadge = primaryHomeAction.isBadgeCard;
           const isCareer = primaryHomeAction.isCareerCard;
-          // Soft light banner artwork in light mode (badge or category); dark
-          // mode falls back to a coloured gradient.
+          // Soft light banner artwork in light mode (category); dark mode
+          // falls back to a coloured gradient. The badge card has its own block
+          // further down, so this card never renders a badge.
           // "All" and the career card sit on the brand accent's soft container
           // (both modes): calm tinted surface, dark text and one filled CTA.
           // Category filters keep their category artwork / gradient.
-          const useAccentSurface = !isBadge && (isAllFilter || isCareer);
+          const useAccentSurface = isAllFilter || isCareer;
           const useBannerImage = !isDark && !useAccentSurface;
-          const badgeAccent = getBadgeColors(primaryHomeAction.badge?.id, isDark).end || colors.primary;
-          const accentColor = isBadge
-            ? badgeAccent
-            : (isAllFilter ? (colors.ctaGradientStart || colors.primary) : activeCatTheme.accent);
+          // Only read when the card is not on the accent surface, i.e. a
+          // category filter is active.
+          const accentColor = activeCatTheme.accent;
           const bannerCtaColor = accentColor;
           const bannerColors = useAccentSurface
             ? [colors.primaryContainer, mixHex(colors.primaryContainer, colors.primary, isDark ? 0.14 : 0.1)]
-            : isBadge
-            ? [getBadgeColors(primaryHomeAction.badge?.id, isDark).start, getBadgeColors(primaryHomeAction.badge?.id, isDark).end]
-            : isAllFilter
-              ? [colors.ctaGradientStart || colors.primary, colors.ctaGradientEnd || colors.primaryContainer]
-              : [activeCatTheme.borderColor, activeCatTheme.accent];
-          const bannerSource = isBadge
-            ? getBadgeBanner(primaryHomeAction.badge?.id).source
-            : getCategoryBanner(isAllFilter ? 'Tümü' : (activeCatItem?.rawName || activeCatItem?.label)).source;
+            : [activeCatTheme.borderColor, activeCatTheme.accent];
+          const bannerSource = getCategoryBanner(activeCatItem?.rawName || activeCatItem?.label).source;
           // Dark mode fills the card with a gradient (no banner image). The gold/
           // accent fills are light, so hardcoded white text fails contrast. Derive
           // the text colour from the lighter gradient stop via readableTextOn().
@@ -2175,7 +2169,6 @@ const HomeScreen = ({ navigation }) => {
           const eyebrowColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFillSoft);
           const subColor = onLightSurface ? colors.textSecondary : onFillSoft;
           const progressColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFillFaint);
-          const progressTrackBg = onLightSurface ? (isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.08)') : (isDarkText ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.2)');
           const iconWrapBg = useAccentSurface
             ? (isDark ? 'rgba(255,255,255,0.08)' : colors.surfaceContainerLowest)
             : (useBannerImage ? colors.surfaceContainerLowest : (isDarkText ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.25)'));
@@ -2187,12 +2180,10 @@ const HomeScreen = ({ navigation }) => {
           const bannerInner = (
             <>
               <View style={styles.primaryActionTop}>
-                {!primaryHomeAction.isBadgeCard && (
-                  <View style={[styles.primaryActionIconWrap, { backgroundColor: iconWrapBg }]}>
-                    <Ionicons name={primaryHomeAction.icon} size={26} color={iconColor} />
-                  </View>
-                )}
-                <View style={[styles.primaryActionTextWrap, isBadge && { maxWidth: '50%' }]}>
+                <View style={[styles.primaryActionIconWrap, { backgroundColor: iconWrapBg }]}>
+                  <Ionicons name={primaryHomeAction.icon} size={26} color={iconColor} />
+                </View>
+                <View style={styles.primaryActionTextWrap}>
                   <Text style={[styles.primaryActionEyebrow, { color: eyebrowColor }]}>{primaryHomeAction.eyebrow}</Text>
                   <Text
                     style={[styles.primaryActionTitle, { color: titleColor }]}
@@ -2204,20 +2195,9 @@ const HomeScreen = ({ navigation }) => {
                   </Text>
                 </View>
               </View>
-              <Text style={[styles.primaryActionSub, { color: subColor }, isBadge && { maxWidth: '50%' }]} numberOfLines={2}>{primaryHomeAction.sub}</Text>
+              <Text style={[styles.primaryActionSub, { color: subColor }]} numberOfLines={2}>{primaryHomeAction.sub}</Text>
 
-              {primaryHomeAction.isBadgeCard ? (
-                <View style={[styles.primaryActionFooter, { alignItems: 'center', justifyContent: 'flex-start' }]}>
-                  <View style={{ width: '50%', marginRight: 6 }}>
-                    <View style={{ height: 6, backgroundColor: progressTrackBg, borderRadius: 3, overflow: 'hidden' }}>
-                      <View style={{ width: `${primaryHomeAction.badge.ratio * 100}%`, height: '100%', backgroundColor: progressColor }} />
-                    </View>
-                  </View>
-                  <Text style={[styles.primaryActionProgress, { color: progressColor }]}>
-                    {primaryHomeAction.badge.current} / {primaryHomeAction.badge.target}
-                  </Text>
-                </View>
-              ) : isCareer ? (
+              {isCareer ? (
                 <View style={styles.primaryActionFooter}>
                   <Text style={[styles.primaryActionProgress, { color: progressColor }]}>{primaryHomeAction.progressLabel}</Text>
                   <View style={[styles.primaryActionCta, { backgroundColor: ctaBg }]}>
@@ -2240,7 +2220,7 @@ const HomeScreen = ({ navigation }) => {
           return (
           <TouchableOpacity
             style={styles.primaryActionCard}
-            onPress={primaryHomeAction.isBadgeCard ? () => navigation.navigate('ProgressTab') : openPrimaryHomeAction}
+            onPress={openPrimaryHomeAction}
             activeOpacity={0.86}
             accessibilityRole="button"
           >

@@ -1,0 +1,64 @@
+{
+  "story_id": 1294,
+  "kind": "concept",
+  "book": {
+    "title": "The 4-Hour Workweek",
+    "author": "Timothy Ferriss",
+    "year": "2007"
+  },
+  "confidence": "medium",
+  "confidence_note": "BrainQUICKEN was Ferriss's real supplement company, but the reference TR text's story of launching it with a fake product page, $200 of Google ads and a 48-hour result could not be matched to the book and is excluded. The book does teach testing product demand cheaply with Google AdWords and a simple web page before making the product, with visitors who try to order told the item is unavailable; and it describes Ferriss choosing the book's own title by testing candidate titles as AdWords ads and comparing click-through rates. Specific budgets, durations and the list of rejected titles are omitted because I'm not certain of the exact numbers. The reference's claim about how standard this became in startup culture is historical commentary, not from the book.",
+  "facts": [
+    "Ferriss argues you should test whether people will pay for a product before manufacturing it.",
+    "His method: create a simple web page describing the product, buy small search ads on Google AdWords, and measure how many people click and try to order.",
+    "Visitors who try to buy are not charged; they are told the item is unavailable, so the test measures real intent without selling something that doesn't exist yet.",
+    "The book stresses keeping the test small in money and time, so a bad idea costs little.",
+    "Ferriss used the same approach for the book itself: he ran candidate titles as Google search ads and picked the one people clicked most, which became 'The 4-Hour Workweek'.",
+    "The underlying idea is to replace opinion, including friends' polite enthusiasm, with measured behavior from strangers."
+  ],
+  "tension": "Everyone who hears an idea says it sounds great, yet the only reliable signal is whether strangers act on it, and finding that out usually seems to require building the thing first.",
+  "opening_idea": "Start with the title on the cover: 'The 4-Hour Workweek' was chosen not by an editor's instinct but by which search ad strangers clicked most.",
+  "lessons": [
+    {
+      "idea": "Measure what strangers do, not what friends say.",
+      "anchor": "Clicks and attempted orders from AdWords visitors, not survey answers."
+    },
+    {
+      "idea": "Test before you build, and keep the test cheap enough that failing doesn't hurt.",
+      "anchor": "A simple page and small ad budget before any manufacturing."
+    },
+    {
+      "idea": "The same test works on words as well as products.",
+      "anchor": "The book's title chosen by comparing ad click-through rates."
+    }
+  ],
+  "reflect": [
+    "Which idea of yours has been validated only by people who like you?",
+    "What would be the cheapest way to see whether a stranger would act on it?"
+  ],
+  "reflect_final": "Take one idea you've been sitting on and design the smallest test that would show whether strangers take a real action on it; decide in advance what result would make you stop.",
+  "use_cases": [
+    {
+      "situation": "The team is about to spend a quarter building a feature because stakeholders like it.",
+      "move": "Point out that Ferriss tested demand with a simple page and ads before making anything, and propose a one-week landing-page or fake-door test first.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You can't decide between two names for a project, event or product.",
+      "move": "Run both as small ads or two versions of a post and let strangers' clicks decide, as Ferriss did with his book title.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is about to invest savings into inventory for a new product idea.",
+      "move": "Ask whether they could first put up a simple page and see if strangers try to order before buying stock.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Even 'The 4-Hour Workweek' got its name from strangers' clicks: let a cheap test answer before you build.",
+  "conversation_variants": {
+    "punchline_idea": "Tim Ferriss picked the title of his bestseller by running it as a Google ad.",
+    "thirty_sec_idea": "Ferriss tells readers to test products with a simple page and small Google ads before making anything, measuring who tries to buy; he did the same with his book, running candidate titles as ads and keeping the one people clicked most.",
+    "question_idea": "What's an idea you've been sure about that you've never actually tested on strangers?",
+    "key_contrast_idea": "Building first and hoping people want it, versus checking cheaply that they want it before you build."
+  }
+}

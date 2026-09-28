@@ -1,0 +1,63 @@
+{
+  "story_id": 1306,
+  "kind": "concept",
+  "book": {
+    "title": "Antifragile",
+    "author": "Nassim Nicholas Taleb",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "Taleb uses forest fires as an example of suppressed volatility: preventing small fires lets flammable material accumulate, making later fires far worse. He applies the same logic to economies, criticizing attempts (associated with Alan Greenspan) to smooth out the business cycle, and to overprotection more generally. The reference text's mention of the 1988 Yellowstone fire and the claim of 'decades' of a single US policy are not confidently attributable to the book and are omitted. Taleb presents these as illustrations of a mechanism, not measured case studies.",
+  "facts": [
+    "Taleb argues that many systems need small stresses and shocks to stay healthy; he calls things that gain from disorder 'antifragile'.",
+    "His forest example: small, periodic fires burn away the most flammable material. When every small fire is suppressed, that material builds up, and the eventual fire is much larger.",
+    "He applies the same pattern to economies: trying to eliminate every small downturn, as he says policymakers under Alan Greenspan tried to do, lets hidden risks accumulate until a much bigger crisis.",
+    "He extends the logic to other systems, arguing that overprotection, whether of bodies, children, or institutions, removes the small stresses that make them stronger.",
+    "His term for artificially removing volatility is suppression of randomness, and he argues it makes a system look stable while making it more fragile."
+  ],
+  "tension": "The effort to prevent every small fire is what makes the big one possible.",
+  "opening_idea": "Every small fire in the forest is put out quickly. On the ground, dead wood and dry brush keep piling up.",
+  "lessons": [
+    {
+      "idea": "Small stresses clear away what would feed a big failure.",
+      "anchor": "Small fires burning the most flammable material"
+    },
+    {
+      "idea": "Apparent stability can hide growing fragility.",
+      "anchor": "Smoothing economic downturns lets hidden risks accumulate"
+    },
+    {
+      "idea": "Overprotection can weaken what it means to protect.",
+      "anchor": "Taleb's point about removing small stresses from people and institutions"
+    }
+  ],
+  "reflect": [
+    "Where are you preventing every small problem in a way that lets a bigger one build?",
+    "Which small setback in your past made you better prepared later?"
+  ],
+  "reflect_final": "Choose one small problem you'd normally rush to fix for someone else, let them handle it this time, and notice what they learn.",
+  "use_cases": [
+    {
+      "situation": "A team hides minor failures so the dashboard always looks green.",
+      "move": "Mention Taleb's forest, where putting out every small fire lets fuel build for a huge one, and propose sharing small failures openly at the next review.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child faces a small difficulty you'd usually solve for them.",
+      "move": "Stay nearby but let them work it out, then talk about what they tried.",
+      "context": "family"
+    },
+    {
+      "situation": "A direct report asks you to step in on every minor conflict.",
+      "move": "Ask them how they'd handle this one and offer to review it afterward rather than taking it over.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Put out every small fire and the forest stores fuel for a giant one: small shocks clear the brush.",
+  "conversation_variants": {
+    "punchline_idea": "The safest-looking forest, where no fire is ever allowed, is the one waiting for the worst fire.",
+    "thirty_sec_idea": "Taleb describes forests where every small fire is suppressed: flammable material builds up and the eventual fire is far bigger, the same pattern he sees when policymakers try to eliminate every economic downturn.",
+    "question_idea": "Have you ever protected someone from a small problem only to see a bigger one later?",
+    "key_contrast_idea": "Preventing every small shock versus letting small shocks keep the system healthy."
+  }
+}

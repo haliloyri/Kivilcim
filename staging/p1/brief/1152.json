@@ -1,0 +1,66 @@
+{
+  "story_id": 1152,
+  "kind": "anecdote",
+  "book": {
+    "title": "Man's Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "year": "1946"
+  },
+  "confidence": "high",
+  "confidence_note": "The core of the story is well documented in the book. Two details in the reference TR text are corrected. First, Frankl's examples of prisoners held back from suicide by a 'why' are two men: one had a child he adored waiting for him in a foreign country, the other was a scientist with a series of books still to finish. The TR text's 'mother waiting for her child' is not from the book. Second, Frankl lost his wife, parents and brother in the camps; the TR text's 'lost his mother' is correct but incomplete, and the list is kept general. The Nietzsche line and the 'last of the human freedoms' passage are both quoted in the book. Frankl also observes that some physically frail but inwardly rich prisoners seemed to endure better than some robust ones.",
+  "facts": [
+    "Viktor Frankl was a Viennese psychiatrist and neurologist. During the Second World War he was deported and held in several Nazi concentration camps, including Auschwitz and Dachau.",
+    "His wife, his parents and his brother died in the camps.",
+    "At Auschwitz, the manuscript of a book he had been working on was taken from him. He later wrote that the wish to reconstruct it helped keep him going.",
+    "He observed that some sensitive, physically frail prisoners with a rich inner life seemed to endure the camps better than some physically robust ones.",
+    "He describes two prisoners who spoke of suicide. One had a child he adored waiting for him in a foreign country. The other was a scientist who had a series of books still to finish. Knowing someone or something was waiting helped each of them keep going.",
+    "Frankl quotes Nietzsche: 'He who has a why to live for can bear with almost any how.'",
+    "He writes that everything can be taken from a person but one thing: the last of the human freedoms, to choose one's attitude in any given set of circumstances.",
+    "These observations shaped logotherapy, his approach to psychotherapy centered on the search for meaning."
+  ],
+  "tension": "In a place designed to strip people of everything, what made some prisoners able to endure?",
+  "opening_idea": "In the camps, strength didn't always decide who endured. Something less visible did.",
+  "lessons": [
+    {
+      "idea": "A reason to live makes almost any hardship more bearable.",
+      "anchor": "The child waiting abroad; the unfinished books"
+    },
+    {
+      "idea": "The last freedom is choosing your attitude.",
+      "anchor": "'The last of the human freedoms'"
+    },
+    {
+      "idea": "Inner life can matter more than physical strength in extreme hardship.",
+      "anchor": "Frail prisoners with rich inner lives enduring"
+    }
+  ],
+  "reflect": [
+    "What is your 'why' right now: a person, a task, something unfinished?",
+    "In a situation you can't change, what attitude are you choosing?"
+  ],
+  "reflect_final": "Who or what is waiting for you, and how could remembering it change how you carry today?",
+  "use_cases": [
+    {
+      "situation": "A friend going through a long illness says they don't see the point anymore.",
+      "move": "Ask gently who or what they are looking forward to, and help them keep that in view.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team is exhausted during a long, hard project.",
+      "move": "Remind everyone concretely who the work is for and what it will make possible.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're in a situation you can't change and feel powerless.",
+      "move": "Name one thing you still control, your response, and decide how you'll use it today.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A strong enough why makes almost any how bearable.",
+  "conversation_variants": {
+    "punchline_idea": "In the camps, a reason to live mattered more than physical strength.",
+    "thirty_sec_idea": "Frankl's losses, the two prisoners with a why, Nietzsche's line, and the last freedom.",
+    "question_idea": "What's the why that keeps you going when the how gets hard?",
+    "key_contrast_idea": "Strength versus meaning"
+  }
+}

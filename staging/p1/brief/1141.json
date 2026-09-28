@@ -1,0 +1,64 @@
+{
+  "story_id": 1141,
+  "kind": "concept",
+  "book": {
+    "title": "Daring Greatly",
+    "author": "Brené Brown",
+    "year": "2012"
+  },
+  "confidence": "high",
+  "confidence_note": "The shame/guilt distinction ('I am bad' versus 'I did something bad'), the culture of 'never enough', the idea that shame grows in secrecy, silence and judgment and is dissolved by empathy, and the concept of shame resilience are central, well-documented ideas in Daring Greatly. The reference TR text's closing line about 'learning that I do enough' is not a book quotation and is left out. The four elements of shame resilience are recalled with reasonable certainty: recognizing shame and its triggers, practicing critical awareness, reaching out, and speaking shame.",
+  "facts": [
+    "Brown describes a culture of scarcity summed up as 'never enough': never good enough, thin enough, successful enough, smart enough.",
+    "She distinguishes shame from guilt: guilt says 'I did something bad'; shame says 'I am bad'.",
+    "Guilt is focused on behavior and can motivate change and repair. Shame is focused on the self and is more likely to lead to hiding, blaming and destructive behavior.",
+    "Brown writes that shame needs three things to grow: secrecy, silence and judgment. Empathy is its antidote.",
+    "Everyone experiences shame, but people can build 'shame resilience'. Its elements include recognizing shame and its triggers, practicing critical awareness, reaching out, and speaking shame.",
+    "She treats shame resilience as a learnable practice rather than a fixed trait."
+  ],
+  "tension": "Two people make the same mistake. One fixes it; the other hides. The difference is one small word in what they tell themselves.",
+  "opening_idea": "Contrast 'I made a mistake' with 'I am a mistake' and let the reader feel the difference.",
+  "lessons": [
+    {
+      "idea": "Guilt is about behavior and can motivate repair; shame is about the self and drives hiding.",
+      "anchor": "'I did something bad' versus 'I am bad'"
+    },
+    {
+      "idea": "Shame grows in secrecy and shrinks when spoken to someone empathetic.",
+      "anchor": "Secrecy, silence and judgment; empathy as antidote"
+    },
+    {
+      "idea": "Shame resilience can be practiced.",
+      "anchor": "Recognizing triggers, critical awareness, reaching out, speaking shame"
+    }
+  ],
+  "reflect": [
+    "In which area of life does 'never enough' speak loudest to you?",
+    "After your last mistake, did your inner voice say 'I did' or 'I am'?"
+  ],
+  "reflect_final": "Who could you tell about something you've been keeping silent, so shame has less room to grow?",
+  "use_cases": [
+    {
+      "situation": "Your child breaks something and says 'I'm so stupid'.",
+      "move": "Separate the behavior from the child: name what happened and how to fix it, and reject the label.",
+      "context": "family"
+    },
+    {
+      "situation": "A team member made a costly mistake and has gone quiet.",
+      "move": "Talk privately about the action and the fix, and make clear the mistake doesn't define them.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're replaying an embarrassing moment and calling yourself names.",
+      "move": "Rephrase the thought from 'I am' to 'I did', and tell one trusted person about it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Guilt says 'I did something bad.' Shame says 'I am bad.' Only one helps you change.",
+  "conversation_variants": {
+    "punchline_idea": "Shame grows in silence and shrinks when you say it out loud to someone kind.",
+    "thirty_sec_idea": "Brown's shame vs guilt distinction, 'never enough', and empathy as antidote.",
+    "question_idea": "After your last mistake, did you think 'I did' or 'I am'?",
+    "key_contrast_idea": "I did versus I am"
+  }
+}

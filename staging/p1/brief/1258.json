@@ -1,0 +1,64 @@
+{
+  "story_id": 1258,
+  "kind": "anecdote",
+  "book": {
+    "title": "Stillness Is the Key",
+    "author": "Ryan Holiday",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Alexander the Great anecdote in the existing TR text (ordering his army to wait for days before a great victory, then saying 'Now') could not be attributed to the book or to a known historical account and is excluded. Holiday's Alexander material in this book concerns Diogenes and unchecked desire, not a waiting tactic. To keep the story's idea (stillness before a big decision) faithful to the book, the facts use the book's own opening case: John F. Kennedy during the Cuban Missile Crisis. Exact quotes, meeting counts and day-by-day details are omitted; only the broad, well-documented outline Holiday relies on is kept. This is a substantive replacement of the reference anecdote and should be reviewed.",
+  "facts": [
+    "In October 1962, U.S. reconnaissance photos revealed Soviet nuclear missile sites being built in Cuba.",
+    "Many of Kennedy's military and political advisers pressed for an immediate air strike or invasion.",
+    "Holiday describes Kennedy deliberately slowing the process: he gathered a group of advisers, let them debate options over several days, and resisted reacting on the first impulse.",
+    "Holiday notes Kennedy had read Barbara Tuchman's 'The Guns of August', about how the great powers blundered into the First World War, and was wary of repeating that kind of escalation.",
+    "Kennedy chose a naval blockade, called a 'quarantine', over an attack, which gave both sides time; the crisis ended with the Soviets agreeing to remove the missiles.",
+    "Holiday uses the episode to open his argument that stillness, the ability to be steady and think clearly under pressure, is what makes good decisions possible."
+  ],
+  "tension": "With missiles minutes from American cities and advisers urging a strike, waiting looked like weakness; Holiday argues the pause was the decisive act.",
+  "opening_idea": "Begin with the photographs on Kennedy's desk and the room full of advisers urging him to strike first, and ask what he did instead.",
+  "lessons": [
+    {
+      "idea": "Under pressure, the first available option is often the one most people push for, not the best one.",
+      "anchor": "Advisers pressing for an immediate air strike or invasion"
+    },
+    {
+      "idea": "Slowing down can create options that urgency hides.",
+      "anchor": "Days of deliberation that produced the blockade as a middle path"
+    },
+    {
+      "idea": "Knowing how others blundered under pressure can keep you from repeating it.",
+      "anchor": "Kennedy's reading of 'The Guns of August'"
+    }
+  ],
+  "reflect": [
+    "When you feel pushed to decide quickly, who or what is doing the pushing?",
+    "Can you recall a decision that turned out better because you slept on it?"
+  ],
+  "reflect_final": "Before your next significant decision, set a specific moment to decide, and use the time until then to list one option besides the obvious one. Afterward, notice whether that option changed your choice.",
+  "use_cases": [
+    {
+      "situation": "Your team wants to commit immediately to the loudest proposal in a tense meeting.",
+      "move": "Kennedy's advisers wanted to strike at once, yet a few days of debate surfaced the blockade; suggest: 'Let's each bring one alternative tomorrow before we commit.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague asks you to approve an urgent change on the spot.",
+      "move": "Say: 'I want to get this right. I'll give you a decision by 3pm,' and use that time to check one risk.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel the urge to reply instantly to a provocative message.",
+      "move": "Draft the reply, don't send it, and reread it after a pause before deciding whether it's needed.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Kennedy's blockade was not on the table in the first hour; the pause made room for it.",
+  "conversation_variants": {
+    "punchline_idea": "During the Cuban Missile Crisis, the bravest thing Kennedy did was not strike first.",
+    "thirty_sec_idea": "In 1962, with Soviet missiles spotted in Cuba and advisers urging an attack, Kennedy slowed everything down, let his team debate for days, and chose a blockade instead; the missiles were removed. Holiday opens his book with it as a case for stillness.",
+    "question_idea": "What's a decision you're glad you didn't make in the first hour?",
+    "key_contrast_idea": "Acting fast to look strong versus pausing long enough to see more options."
+  }
+}

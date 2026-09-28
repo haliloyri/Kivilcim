@@ -1,0 +1,63 @@
+{
+  "story_id": 1260,
+  "kind": "anecdote",
+  "book": {
+    "title": "Stillness Is the Key",
+    "author": "Ryan Holiday",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Holiday uses Napoleon's practice of delaying his correspondence in his discussion of limiting inputs. The historical source is the memoirs of Napoleon's secretary, Louis Antoine Fauvelet de Bourrienne, popularized by Emerson's 1850 essay on Napoleon in 'Representative Men'; the existing TR text's claim that Napoleon describes it in his own memoirs is not supported and is excluded. The 'three weeks' figure comes from that tradition; whether Holiday uses exactly that figure is not verified. The TR exercise (wait 24 hours before replying, a night before an angry message, a week before a big decision) could not be attributed to the book and is excluded, as is any direct quote from Napoleon.",
+  "facts": [
+    "According to the account of his secretary Bourrienne, later retold by Emerson in 1850, Napoleon instructed that incoming letters be left unopened for about three weeks.",
+    "When the letters were finally read, a large share of the matters had resolved themselves and no longer needed a reply.",
+    "Holiday uses the practice to argue that much of what arrives as urgent is not actually important, and that responding to everything immediately fills a mind with other people's priorities.",
+    "His broader point in this part of the book is to limit inputs so there is room to think about what really matters.",
+    "Holiday does not suggest ignoring genuinely important matters; the delay acts as a filter that lets the truly important resurface."
+  ],
+  "tension": "The man running an empire, where letters could carry real news, chose to leave his mail unopened for weeks, and found that most of it had answered itself.",
+  "opening_idea": "Open on a pile of sealed letters on Napoleon's desk that his secretary has been told not to open yet.",
+  "lessons": [
+    {
+      "idea": "Time is a filter: many 'urgent' matters shrink or resolve if left alone briefly.",
+      "anchor": "Much of Napoleon's correspondence no longer needed an answer after the delay"
+    },
+    {
+      "idea": "Answering every input immediately lets other people set your priorities.",
+      "anchor": "Holiday's argument for limiting inputs"
+    },
+    {
+      "idea": "What is truly important tends to come back; delay reveals it rather than hides it.",
+      "anchor": "Letters that still mattered after three weeks were the ones that got answers"
+    }
+  ],
+  "reflect": [
+    "Which messages do you answer instantly out of habit rather than need?",
+    "Can you recall something that felt urgent last week and turned out not to matter?"
+  ],
+  "reflect_final": "Pick one category of non-critical messages and deliberately answer it later today instead of on arrival; afterward, note how many still needed you by then.",
+  "use_cases": [
+    {
+      "situation": "Your team is expected to respond to every chat ping within minutes.",
+      "move": "Propose trying set times for non-urgent channels, with a clear route for genuine emergencies, and review afterward what was actually urgent.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague forwards you a heated thread asking for your view right away.",
+      "move": "Napoleon's letters often settled themselves while unopened; reply that you'll weigh in tomorrow if it's still open, and see if it is.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your phone buzzes constantly while you try to do focused work.",
+      "move": "Turn off notifications for one app during your next work block and check it only when the block ends.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Napoleon's unopened letters: what still needs you after the wait is what truly needs you.",
+  "conversation_variants": {
+    "punchline_idea": "Napoleon reportedly left his letters unopened for three weeks, and most of them answered themselves.",
+    "thirty_sec_idea": "Napoleon's secretary recorded that he had letters left unopened for about three weeks; by then much of the correspondence no longer needed a reply. Holiday uses it to show how delay filters out false urgency.",
+    "question_idea": "If you waited a day to answer everything that isn't an emergency, what do you think would happen?",
+    "key_contrast_idea": "Answering everything as it arrives versus letting time show what still matters."
+  }
+}

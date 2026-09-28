@@ -37,7 +37,7 @@ const instructions = fs.readFileSync(path.join(ROOT, 'batch/prompts/brief-instru
 const requests = targets.map((m) => ({
   customId: `brief-${m.story_id}`,
   model,
-  maxTokens: 2000,
+  maxTokens: 8000,
   system: instructions,
   messages: [{
     role: 'user',

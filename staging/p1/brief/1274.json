@@ -1,0 +1,64 @@
+{
+  "story_id": 1274,
+  "kind": "concept",
+  "book": {
+    "title": "When: The Scientific Secrets of Perfect Timing",
+    "author": "Daniel H. Pink",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text claims a 10–20 minute nap brings afternoon performance close to morning peak and that NASA, Google and Japanese companies made napping official policy; those specific claims are not verified from the book and are omitted. Pink does describe the afternoon trough with several data sets, including an anesthesia-error study at Duke and a large study of Danish schoolchildren's test scores; exact multipliers are omitted and kept qualitative. The 'nappuccino' recipe is Pink's, but the reference's '5 minutes' punchline contradicts his own nap timing and is dropped. Calling the trough 'evolutionary programming' is not Pink's stated claim and is omitted.",
+  "facts": [
+    "Pink calls the early-to-mid afternoon the trough, when attention and mood dip for most people.",
+    "He cites a Duke Medical Center study finding that anesthesia errors and adverse events were considerably more likely in procedures starting in the 3 p.m. hour than in the morning.",
+    "He describes a study of about two million standardized tests taken by Danish schoolchildren, whose scores declined as the day went on.",
+    "In the same data, a break of 20 to 30 minutes before a test raised scores, more than offsetting the afternoon decline.",
+    "Pink recommends short breaks and naps against the trough; ideal nap length is about 10 to 20 minutes, which avoids deeper sleep and grogginess.",
+    "His 'nappuccino': drink a cup of coffee, then lie down right away; caffeine takes roughly 25 minutes to take effect, so set an alarm for about 25 minutes and wake as it kicks in."
+  ],
+  "tension": "The hours we treat as ordinary working time carry measurably more mistakes, even in operating rooms, yet the fix Pink found is almost embarrassingly small.",
+  "opening_idea": "Open on the Danish test data: schoolchildren's scores slipping hour by hour, until a short break before the test changed the pattern.",
+  "lessons": [
+    {
+      "idea": "The afternoon dip is measurable, not a matter of discipline.",
+      "anchor": "Anesthesia errors and Danish test scores both worsened in the afternoon."
+    },
+    {
+      "idea": "Breaks work as a fix, not an indulgence.",
+      "anchor": "A 20–30 minute break before testing raised children's scores."
+    },
+    {
+      "idea": "Timing a nap and caffeine together can avoid grogginess.",
+      "anchor": "Pink's nappuccino pairs coffee with a nap of about 25 minutes, as caffeine starts working."
+    }
+  ],
+  "reflect": [
+    "What time of afternoon does your attention usually slip?",
+    "What kind of decisions do you tend to make in that window?"
+  ],
+  "reflect_final": "Look at tomorrow's calendar for a demanding task scheduled around mid-afternoon, and either move it earlier or take a short real break just before it; notice how it goes.",
+  "use_cases": [
+    {
+      "situation": "Your team's code review or approval meeting is always at 3 p.m.",
+      "move": "Mention the Duke study on afternoon anesthesia errors and propose moving reviews to the morning for a few weeks to compare.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child has homework or exams in the afternoon.",
+      "move": "Suggest a 20-minute break away from screens before starting, like the Danish test study, and ask how focused it felt.",
+      "context": "family"
+    },
+    {
+      "situation": "You hit an afternoon slump on a heavy workday.",
+      "move": "Try Pink's nappuccino once: coffee, then a nap with a 25-minute alarm, and note how the next hour goes.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "In Pink's Danish data a short break before the exam outweighed the afternoon slide: the trough is real, and so is a small, well-timed pause.",
+  "conversation_variants": {
+    "punchline_idea": "Pink's recipe for an afternoon slump: drink coffee, then immediately take a nap.",
+    "thirty_sec_idea": "Afternoon errors rise in data from anesthesia to children's test scores; Pink found breaks help, and suggests coffee right before a nap of about 25 minutes.",
+    "question_idea": "When is the worst time of day for you to make an important decision?",
+    "key_contrast_idea": "From 'push through the afternoon' to 'schedule around it, or take a real break.'"
+  }
+}

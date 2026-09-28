@@ -1,0 +1,68 @@
+{
+  "story_id": 1069,
+  "kind": "concept",
+  "book": {
+    "title": "The Now Habit (Turkish edition: Şimdi Başla)",
+    "author": "Neil Fiore",
+    "year": "1988"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core ideas are well established in the book. It treats perfectionism and fear of failure or judgment as drivers of procrastination. It recommends short, 30-minute blocks of quality work and a focus on starting rather than finishing. Fiore drew on his work with procrastinating clients, including graduate students. However, the specific 'Sarah' case in the reference text cannot be verified: the name, the five-year dissertation, the 9 a.m. instruction and the claim of 'two pages equal to half of five years' output'. It is treated as illustrative, not factual, so this brief is framed as a concept and avoids those specifics.",
+  "facts": [
+    "Fiore argues that procrastination is often a way of coping with anxiety about failure, judgment or imperfection, not a sign of laziness.",
+    "Perfectionism makes every task feel like a final verdict on one's worth, so avoiding the task feels safer than starting it.",
+    "His remedy is to shift attention from finishing to starting: commit to a short, focused work period of about 30 minutes, then stop.",
+    "In his 'Unschedule' system, you block out leisure and fixed commitments first, then record completed 30-minute periods of quality work as they happen, rewarding yourself for time actually worked.",
+    "Fiore encourages giving yourself permission to produce imperfect first efforts, because improvement happens after something exists, not before.",
+    "He presents 'keep starting' as the habit that matters most: repeated small starts carry a project to completion."
+  ],
+  "tension": "The more a task matters, the more the demand for perfection makes starting feel dangerous, so the most important work is the work most likely to be postponed indefinitely.",
+  "opening_idea": "Open on someone who is always 'getting ready' to work on a big project. They gather sources, make lists and plan the plan, yet they never produce the actual thing. Reveal that the preparation itself is a form of avoidance.",
+  "lessons": [
+    {
+      "idea": "Procrastination is often protection from the fear of doing something imperfectly, not a lack of discipline.",
+      "anchor": "Endless preparation that never becomes actual output"
+    },
+    {
+      "idea": "Lower the stakes of starting: a short, bounded work period is far less threatening than 'the whole project'.",
+      "anchor": "A 30-minute block of focused work"
+    },
+    {
+      "idea": "Allow a rough first version; quality comes through revision, not through waiting for the right moment.",
+      "anchor": "Permission to write something 'bad' first"
+    },
+    {
+      "idea": "Track and reward time actually worked, rather than punishing yourself for what is unfinished.",
+      "anchor": "The Unschedule's log of completed work periods"
+    }
+  ],
+  "reflect": [
+    "Which of your 'preparation' activities might actually be ways of not starting?",
+    "What would you have to believe about a rough first attempt to let yourself make one today?"
+  ],
+  "reflect_final": "If you only had to start, not finish or get it right, what would you begin in the next 30 minutes?",
+  "use_cases": [
+    {
+      "situation": "A team keeps refining the plan for a deliverable and no draft exists yet.",
+      "move": "Propose: 'Let's each spend 30 minutes producing a rough version today and review what exists tomorrow, instead of planning further.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague or report is stuck on a report they want to be perfect.",
+      "move": "Ask them to share only a deliberately rough outline by the end of the day, and state explicitly that it will not be judged.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You have avoided a personal project for weeks because you want to do it properly.",
+      "move": "Set a timer for 30 minutes and work on it with the rule 'messy is allowed'. Afterwards, log the session as a win regardless of the result.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "You don't have to finish or be perfect; you only have to start for 30 minutes.",
+  "conversation_variants": {
+    "punchline_idea": "Waiting for the perfect moment is just a polite way of not starting.",
+    "thirty_sec_idea": "Fiore saw that people procrastinate to avoid the fear of imperfection, so he shrank the task to a 30-minute start and let rough work be acceptable.",
+    "question_idea": "Ask the listener what they are 'preparing' for that they could simply start today.",
+    "key_contrast_idea": "'Start when it can be perfect' versus 'start now, improve later'."
+  }
+}

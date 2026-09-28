@@ -135,6 +135,7 @@ okumanızla karşılaştırmanızı öneririm.
 | `prompts/story-instructions.md` | P1 yazım kuralları + "Sohbette kullan" metni talimatı (dil başına doldurulur). |
 | `05-submit-stories.mjs` | Belirli bir dil için hikâye+variants batch'ini gönderir. |
 | `06-fetch-stories.mjs` | Bitmiş batch'i indirir, `.md` + `.variants.json` yazar, `validate.mjs`'i otomatik çalıştırır. |
+| `07-status.mjs` | **İlerleme raporu** (API çağrısı yok, ücretsiz): dil başına kaç hikâye yazıldı / DB'de / kaldı; `--list` ile id'ler, ayrıntı `staging/p1/status-<lang>.csv`. |
 
 Sonrası zaten var olan hat: `scripts/p1/validate.mjs` (kural kontrolü) →
 `scripts/p1/apply-to-db.mjs` (yerel SQLite'a yedekli yazım). Supabase'e

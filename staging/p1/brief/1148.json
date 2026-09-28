@@ -1,0 +1,63 @@
+{
+  "story_id": 1148,
+  "kind": "concept",
+  "book": {
+    "title": "Set Boundaries, Find Peace",
+    "author": "Nedra Glover Tawwab",
+    "year": "2021"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text quotes Tawwab saying boundaries don't break relationships but reveal ones that were already broken, and describes a typical client exchange. Those exact quotations cannot be verified and are left out; the dialogue is not used. The book does argue that people fear boundaries will damage relationships, that others may push back, test or ignore a boundary, that you are not responsible for how others react, and that healthy relationships can accommodate boundaries. It also describes boundary-setting in two parts: communicating the boundary clearly, and then backing it up with action. These points are paraphrased, not quoted.",
+  "facts": [
+    "Tawwab writes that a common reason people avoid setting boundaries is fear: fear that the other person will be angry, leave or think badly of them.",
+    "She describes setting a boundary in two steps: communicate it clearly, then act on it by following through when it is crossed.",
+    "People may react to a new boundary with pushback, testing it, ignoring it, rationalizing, or giving the silent treatment.",
+    "She stresses that you are responsible for stating your boundary kindly and clearly, not for managing the other person's reaction.",
+    "She argues that healthy relationships can accommodate boundaries, and that people who respect you will adjust; a relationship that can only survive without any boundaries is not a healthy one."
+  ],
+  "tension": "The fear that a boundary will ruin a relationship keeps people inside relationships that already feel exhausting.",
+  "opening_idea": "People often say they want to set a boundary but don't want to damage the relationship. It's worth asking how the relationship feels right now.",
+  "lessons": [
+    {
+      "idea": "A boundary is two steps: saying it and doing it.",
+      "anchor": "Communicate, then act"
+    },
+    {
+      "idea": "Other people's reactions are information, not your responsibility.",
+      "anchor": "Pushback, testing, silent treatment"
+    },
+    {
+      "idea": "Healthy relationships survive boundaries; unhealthy ones get exposed.",
+      "anchor": "People who respect you will adjust"
+    }
+  ],
+  "reflect": [
+    "Which boundary have you avoided setting because you fear the reaction?",
+    "How does that relationship feel to you right now, without the boundary?"
+  ],
+  "reflect_final": "If this person truly respects you, how would you expect them to respond to a clear, kind boundary?",
+  "use_cases": [
+    {
+      "situation": "A friend regularly cancels plans at the last minute.",
+      "move": "Say kindly that you'll stop holding the evening if it happens again, and then follow through.",
+      "context": "social"
+    },
+    {
+      "situation": "A parent comments on your parenting in front of your kids.",
+      "move": "State the boundary privately and clearly, then leave the room calmly if it continues.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague keeps messaging you late at night about non-urgent work.",
+      "move": "Tell them when you're available and respond only during those hours.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "A kind, clear boundary doesn't break a healthy relationship; it shows what kind of relationship it is.",
+  "conversation_variants": {
+    "punchline_idea": "You're responsible for stating the boundary, not for how others react to it.",
+    "thirty_sec_idea": "Fear of damaging relationships, the two steps, common reactions, and what they reveal.",
+    "question_idea": "What boundary have you been avoiding because of the reaction you fear?",
+    "key_contrast_idea": "Saying versus doing"
+  }
+}

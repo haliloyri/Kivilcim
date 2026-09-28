@@ -1,0 +1,63 @@
+{
+  "story_id": 1328,
+  "kind": "concept",
+  "book": {
+    "title": "The Success Principles",
+    "author": "Jack Canfield",
+    "year": "2004"
+  },
+  "confidence": "low",
+  "confidence_note": "Canfield's book does argue that beliefs and expectations shape effort and results ('Believe it's possible', and the idea that you are responsible for your response to events). However, the TR text's two-networkers example (ten clients versus zero in three months) cannot be attributed to the book and appears to be an illustration, not a reported case; it is excluded. The quoted line about the outer world mirroring inner beliefs and the specific framing of the Pygmalion/teacher-expectation research as presented in the book could not be verified, so they are left out. No book case is used; facts describe only the concept's mechanism. Not checked against the text.",
+  "facts": [
+    "Canfield argues that what people believe is possible shapes whether they try, how hard they try, and how long they persist.",
+    "In his account, a limiting belief ('this won't work for me') leads to half-hearted action, which produces weak results that then seem to confirm the belief.",
+    "He treats results as feedback about one's own thinking and behavior, not only about outside circumstances.",
+    "His remedy is to notice and replace limiting beliefs with ones that support action, rather than waiting for circumstances to change first.",
+    "This is the author's interpretation of how belief influences behavior; it does not claim belief alone causes outcomes."
+  ],
+  "tension": "Two people can face the same situation, yet a belief held before they act quietly decides how much effort they will give it, and then the result seems to prove the belief right.",
+  "opening_idea": "Begin with the sentence 'this won't work for me' and follow what it does to the very next action a person takes.",
+  "lessons": [
+    {
+      "idea": "Beliefs work upstream: they set the effort and persistence that outcomes depend on.",
+      "anchor": "Canfield's 'Believe it's possible' principle"
+    },
+    {
+      "idea": "A limiting belief can create the evidence that seems to confirm it.",
+      "anchor": "the loop from belief to half-hearted action to weak result"
+    },
+    {
+      "idea": "Results are information about your own approach, not only about the world.",
+      "anchor": "Canfield's treatment of results as feedback"
+    }
+  ],
+  "reflect": [
+    "Where have you already decided something won't work before really trying it?",
+    "Can you recall a time a result seemed to prove what you expected all along?"
+  ],
+  "reflect_final": "Before your next attempt at something you've been doubting, write the belief you're carrying into it, then afterward notice whether it changed how much you actually did.",
+  "use_cases": [
+    {
+      "situation": "A team has written off a client or market as 'never going to buy'.",
+      "move": "Ask: 'What would we do differently this week if we assumed they could say yes?' and list one action you have been skipping.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A report keeps saying a stretch task 'isn't for people like me'.",
+      "move": "Point out that a belief like that can shrink the effort before it shrinks the result, then agree on one small, full-effort attempt to test it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're about to go into a situation you expect to go badly.",
+      "move": "Write the expectation down in one line, replace it with a belief you could act on, and note after how your behavior differed.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A belief is a verdict delivered before the trial; it quietly decides how hard you'll argue the case.",
+  "conversation_variants": {
+    "punchline_idea": "The belief 'this won't work' often makes sure it doesn't, by shrinking the effort first.",
+    "thirty_sec_idea": "Canfield argues that beliefs shape how much we try and how long we persist, so a limiting belief produces weak action, weak results, and apparent proof that the belief was right.",
+    "question_idea": "What's one thing you stopped trying because you'd already decided how it would end?",
+    "key_contrast_idea": "Waiting for results to change your beliefs versus changing the belief so your actions change."
+  }
+}

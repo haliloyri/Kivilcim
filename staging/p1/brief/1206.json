@@ -1,0 +1,65 @@
+{
+  "story_id": 1206,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "year": "1988"
+  },
+  "confidence": "high",
+  "confidence_note": "The Alchemist centres on the idea of a 'Personal Legend', what a person has always wanted to accomplish. Melchizedek, the old king of Salem, introduces the idea to Santiago and tells him that when you want something, all the universe conspires in helping you achieve it; the line recurs later in the book. The reference TR text puts the line in the alchemist's mouth in response to Santiago wanting to give up; its first appearance is with the king, so that is used. The crystal merchant, who dreams of going on pilgrimage to Mecca but deliberately never goes because he fears having nothing left to live for, is a well-known episode and illustrates what happens when people abandon their Personal Legend. The novel is fiction; the famous line is quoted briefly.",
+  "facts": [
+    "Early in the novel, Santiago meets Melchizedek, who says he is the king of Salem.",
+    "The king tells him about the 'Personal Legend': what a person has always wanted to accomplish. Everyone, when young, knows what theirs is, but over time a mysterious force convinces them it's impossible.",
+    "He tells Santiago that when you want something, all the universe conspires in helping you to achieve it.",
+    "Santiago later works for a crystal merchant in Tangier who dreams of making the pilgrimage to Mecca.",
+    "The merchant has had the means to go for years, but chooses not to. He fears that if he fulfilled his dream, he would have nothing left to live for.",
+    "The merchant's life grows stale; he admits he is afraid of change.",
+    "The novel contrasts Santiago's decision to pursue his Personal Legend with the merchant's decision to keep his dream safely unfulfilled."
+  ],
+  "tension": "A merchant keeps his greatest dream alive by never letting himself live it.",
+  "opening_idea": "A crystal merchant dreams all his life of a pilgrimage to Mecca, and chooses never to go.",
+  "lessons": [
+    {
+      "idea": "Most people know their dream when young, then talk themselves out of it.",
+      "anchor": "The king's explanation"
+    },
+    {
+      "idea": "Keeping a dream unfulfilled can feel safe but empties life.",
+      "anchor": "The crystal merchant and Mecca"
+    },
+    {
+      "idea": "Wholehearted pursuit tends to attract help.",
+      "anchor": "'All the universe conspires'"
+    }
+  ],
+  "reflect": [
+    "What did you want to do when you were young, before you were told it was impossible?",
+    "Is there a dream you're keeping safe by not pursuing it?"
+  ],
+  "reflect_final": "What would be the first small step toward your own 'Mecca'?",
+  "use_cases": [
+    {
+      "situation": "You've postponed a lifelong dream 'until the time is right' for years.",
+      "move": "Set one concrete step and date for this year.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend keeps talking about a dream but never acts on it.",
+      "move": "Ask gently what they fear would happen if they achieved it.",
+      "context": "social"
+    },
+    {
+      "situation": "Your child has a big dream you're tempted to call unrealistic.",
+      "move": "Ask what excites them about it and help them take a first step.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A dream kept safe from failure is also kept safe from life.",
+  "conversation_variants": {
+    "punchline_idea": "The crystal merchant never went to Mecca because he feared having nothing left to dream of.",
+    "thirty_sec_idea": "Personal Legend, the king's line, the merchant's choice.",
+    "question_idea": "Which dream are you keeping safe by not pursuing it?",
+    "key_contrast_idea": "Dreaming versus living"
+  }
+}

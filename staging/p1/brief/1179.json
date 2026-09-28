@@ -1,0 +1,64 @@
+{
+  "story_id": 1179,
+  "kind": "anecdote",
+  "book": {
+    "title": "Big Magic: Creative Living Beyond Fear",
+    "author": "Elizabeth Gilbert",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Gilbert discusses in Big Magic (and earlier in her TED talk) the pressure after the huge success of Eat Pray Love and the fear she'd never match it. She draws on the ancient Roman idea that a person had a 'genius', a guardian spirit of creativity, rather than being one, and the Greek idea of a 'daemon'. She tells the story of the American poet Ruth Stone, who described feeling poems coming toward her across the landscape and running to find paper to catch them. These are kept as paraphrases. The reference TR text's quoted line ('the genius isn't mine; I just work') is condensed and reworded.",
+  "facts": [
+    "After Eat Pray Love became a huge success, Gilbert faced the fear that she would never write anything as successful again.",
+    "She describes the ancient Roman belief that a person had a 'genius', a creative spirit that visited them, rather than being a genius; the Greeks spoke of a 'daemon'.",
+    "In that view, if the work was brilliant, credit was shared with the genius; if it failed, the failure wasn't entirely yours either.",
+    "Gilbert finds this a healthier way to live creatively than believing all brilliance and all failure come from the artist alone.",
+    "She tells the story of the poet Ruth Stone, who grew up in rural Virginia and described feeling a poem coming toward her across the landscape like a rush of air. She would run to the house to find paper and a pencil to catch it before it passed.",
+    "Gilbert's practice: show up and do the work every day, so that inspiration, if it comes, finds you working."
+  ],
+  "tension": "After a massive success, how do you keep creating without being crushed by the pressure to repeat it?",
+  "opening_idea": "An author has written a book millions loved, and now faces the terrifying blank page of the next one.",
+  "lessons": [
+    {
+      "idea": "Holding creativity a little outside yourself eases the pressure.",
+      "anchor": "Having a genius versus being one"
+    },
+    {
+      "idea": "Inspiration still needs you to be ready.",
+      "anchor": "Ruth Stone running for a pencil"
+    },
+    {
+      "idea": "Show up regardless of how the last work went.",
+      "anchor": "Gilbert's daily practice"
+    }
+  ],
+  "reflect": [
+    "Where does fear of not matching past success stop you?",
+    "How would you work differently if you didn't take full credit or blame?"
+  ],
+  "reflect_final": "What creative work could you show up for tomorrow, whether or not inspiration arrives?",
+  "use_cases": [
+    {
+      "situation": "You're paralyzed after a big success, afraid the next project won't measure up.",
+      "move": "Treat the next project as a new collaboration and commit to showing up daily, not to matching the last one.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is crushed by harsh reviews of their work.",
+      "move": "Share the idea of having a genius rather than being one, so the failure isn't all theirs.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team fears their next launch can't beat the last.",
+      "move": "Refocus on the daily craft rather than the comparison.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Show up and do the work, so inspiration finds you ready.",
+  "conversation_variants": {
+    "punchline_idea": "The Romans believed you had a genius, not that you were one.",
+    "thirty_sec_idea": "Pressure after success, Roman genius idea, Ruth Stone.",
+    "question_idea": "What would you create if success and failure weren't all on you?",
+    "key_contrast_idea": "Being versus having genius"
+  }
+}

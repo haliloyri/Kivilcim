@@ -1,0 +1,64 @@
+{
+  "story_id": 1270,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Body Keeps the Score",
+    "author": "Bessel van der Kolk",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text builds its peak on a quote from an unnamed veteran ('my mind is in 2003 but my body is still in 1968') and on van der Kolk asking him what he feels; that dialogue and those dates are not in the book and are dropped. The book's opening case is Tom, a Vietnam veteran van der Kolk saw at the Boston VA clinic in 1978, who had built a civilian life with a law career and family yet dreaded the Fourth of July and was flooded by war memories. Graphic details of Tom's war experience are omitted deliberately. The Rorschach observation is from the same early chapter; exact counts are omitted.",
+  "facts": [
+    "In 1978 van der Kolk, early in his career at the Boston Veterans Administration clinic, met Tom, a Vietnam veteran who had returned to civilian life, become a lawyer and started a family.",
+    "Despite that outwardly successful life, Tom dreaded the Fourth of July: fireworks, summer heat and lush greenery pulled him back to the war, and he was tormented by nightmares and flashbacks.",
+    "He felt emotionally shut off from his family and at times overwhelmed by rage he could not explain.",
+    "Van der Kolk gave veterans Rorschach inkblot tests; many saw scenes from the war in the ambiguous blots, while others saw nothing at all, as if unable to imagine anything new.",
+    "From cases like these he drew his central idea: trauma is not only a memory of the past but is re-lived in the body, which keeps reacting as if the danger were still present.",
+    "Talk alone often did not change these bodily reactions, which led him to look at approaches that work through the body."
+  ],
+  "tension": "Tom had rebuilt everything a life is supposed to contain, yet a summer holiday's fireworks could still put his body back in the war.",
+  "opening_idea": "Start with Tom, a lawyer and new father in Boston, who dreaded one day of the year: the Fourth of July.",
+  "lessons": [
+    {
+      "idea": "A trauma response can outlast the circumstances that caused it.",
+      "anchor": "Tom had a career and family years later, yet ordinary summer cues brought the war back."
+    },
+    {
+      "idea": "The body can respond to a cue before the mind interprets it.",
+      "anchor": "Fireworks, heat and greenery triggered reactions Tom could not reason away."
+    },
+    {
+      "idea": "Some people fill ambiguity with the past; others shut down entirely.",
+      "anchor": "Many veterans saw war scenes in inkblots, while others saw nothing at all."
+    }
+  ],
+  "reflect": [
+    "Is there a sound, smell or season that changes your mood before you've thought about why?",
+    "Have you seen someone react strongly to something that seemed minor to you?"
+  ],
+  "reflect_final": "Next time someone near you reacts far more strongly than a situation seems to warrant, ask about it later, calmly, rather than arguing with the reaction in the moment.",
+  "use_cases": [
+    {
+      "situation": "A relative flinches or goes silent at loud noises during a celebration.",
+      "move": "Mention quietly that for the veteran Tom it was fireworks, and ask whether they'd like to step somewhere quieter, without asking them to explain.",
+      "context": "family"
+    },
+    {
+      "situation": "A teammate shuts down in a heated meeting.",
+      "move": "Pause the discussion, and check in with them one-on-one afterward about what would help next time.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You notice your own body tensing at a particular trigger.",
+      "move": "Name the cue to yourself when it happens, and afterward write down where you were and what you noticed in your body.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Tom's body answered the Fourth of July fireworks as if it were still in Vietnam: the past can live on as a reaction, not only as a memory.",
+  "conversation_variants": {
+    "punchline_idea": "A lawyer with a young family dreaded one day of the year more than any other: the Fourth of July.",
+    "thirty_sec_idea": "Tom came home from Vietnam, built a law career and a family, but summer fireworks pulled him back to war; van der Kolk concluded trauma lives on in the body's reactions.",
+    "question_idea": "Is there an ordinary thing, a sound or a smell, that instantly takes you back somewhere?",
+    "key_contrast_idea": "From 'trauma is a bad memory' to 'trauma is the body still reacting as if it's happening now.'"
+  }
+}

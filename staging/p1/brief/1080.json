@@ -1,0 +1,70 @@
+{
+  "story_id": 1080,
+  "kind": "anecdote",
+  "book": {
+    "title": "Influence",
+    "author": "Robert Cialdini",
+    "year": "1984"
+  },
+  "confidence": "medium",
+  "confidence_note": "Social proof is a core chapter of the 1984 original, but the hotel towel study (Goldstein, Cialdini & Griskevicius) was published around 2008. It appears in later expanded editions of Influence and in 'Yes!', not in the 1984 text. The reported figure, roughly 26% more towel reuse for the 'most guests reuse their towels' message versus the standard environmental appeal, matches published accounts. The TR text's '75% of guests in THIS room' wording blends two conditions: the general-guest norm message cited about 75% participation, and a separate same-room variant performed even better. Writers should keep the room detail and the exact numbers loose. The 1984 edition's own social-proof examples include canned laughter, bartenders 'salting' tip jars, and bystander inaction in emergencies.",
+  "facts": [
+    "Researchers working with a hotel placed cards in guest bathrooms asking guests to reuse their towels.",
+    "The standard card appealed to protecting the environment.",
+    "An alternative card told guests that most other guests at the hotel reused their towels.",
+    "The social-norm card produced noticeably higher towel reuse than the environmental appeal, reported as about 26% more.",
+    "A version referring to guests who had stayed in the same room did even better, suggesting that the more similar the 'others' are, the stronger the effect.",
+    "Cialdini calls this principle social proof: when people are uncertain, they decide what is correct by looking at what others like them are doing.",
+    "Cialdini warns that social proof can backfire. Messages that stress how many people do the wrong thing can normalize that behavior."
+  ],
+  "tension": "A good cause stated plainly barely moved people. One sentence about what other guests did moved them far more, which is uncomfortable evidence that we follow the crowd more than our values.",
+  "opening_idea": "Open in a hotel bathroom: two small cards on the mirror asking the same thing, and only one of them really works.",
+  "lessons": [
+    {
+      "idea": "Under uncertainty, people treat others' behavior as evidence of the right action.",
+      "anchor": "The 'most guests reuse their towels' card beating the environmental appeal."
+    },
+    {
+      "idea": "Similarity amplifies social proof: 'people like you, here' persuades more than 'people in general'.",
+      "anchor": "The same-room variant outperforming the general-guest message."
+    },
+    {
+      "idea": "Social proof cuts both ways, and advertising how common a bad behavior is can spread it.",
+      "anchor": "Cialdini's warning about messages that highlight widespread wrongdoing."
+    },
+    {
+      "idea": "Following the crowd is usually an automatic shortcut, not a reasoned judgment.",
+      "anchor": "Choosing the busy restaurant over the empty one without thinking."
+    }
+  ],
+  "reflect": [
+    "When did you last pick something mainly because many others had picked it?",
+    "Which 'everyone does it' norm around you is actually a minority behavior that just gets talked about a lot?",
+    "When you ask others to change, do you appeal to principle or show them peers who already changed?"
+  ],
+  "reflect_final": "What are you doing only because everyone around you does it, and would you still choose it if no one else did?",
+  "use_cases": [
+    {
+      "situation": "Pushing a new process that the team is slow to adopt.",
+      "move": "Replace 'this is best practice' with a concrete peer fact: 'Four of the six teams on our floor already switched last month.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "Trying to get kids to clear their plates or do chores.",
+      "move": "Name a real, similar example ('Your cousins clear the table right after dinner') and avoid complaining that 'nobody in this house ever helps'.",
+      "context": "family"
+    },
+    {
+      "situation": "About to buy or join something because it's popular.",
+      "move": "Pause and ask yourself: 'If I couldn't see how many others chose this, would I still want it?'",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "When people aren't sure what to do, they copy people like them, so show the crowd that is doing the right thing.",
+  "conversation_variants": {
+    "punchline_idea": "Saving the planet lost to 'other guests do it.'",
+    "thirty_sec_idea": "A hotel tested towel-reuse cards: the environmental appeal did modestly, while 'most guests here reuse their towels' did clearly better, and 'guests in this room' did better still.",
+    "question_idea": "Ask the listener whether they'd trust an empty restaurant or a packed one, and why they think that is.",
+    "key_contrast_idea": "Telling people why they should act versus showing them who already acts, and how 'everyone does the bad thing' messages backfire."
+  }
+}

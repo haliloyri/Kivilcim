@@ -1,0 +1,64 @@
+{
+  "story_id": 1220,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Gratitude Diaries",
+    "author": "Janice Kaplan",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Janice Kaplan's book describes her year-long experiment of living gratefully, starting with a New Year's resolution, focusing month by month on different areas of life such as marriage, family, money, work and health, while consulting researchers. She discusses the work of psychologist Robert Emmons, whose studies with Michael McCullough found that people who regularly wrote down things they were grateful for reported feeling better about their lives, more optimistic, and in some studies exercised more and reported fewer physical complaints. The reference TR text's specific neurochemical claims (prefrontal cortex activation, dopamine and serotonin release) are not clearly from the book and are left out. Findings are presented modestly.",
+  "facts": [
+    "Janice Kaplan, a journalist, made a New Year's resolution to spend a year being grateful and to write about it.",
+    "She focused on different areas of her life across the year, starting with her marriage, and later family, money, work and health.",
+    "She kept a gratitude diary and interviewed researchers about the science of gratitude.",
+    "She discusses psychologist Robert Emmons, a leading gratitude researcher. In studies with Michael McCullough, people who kept weekly gratitude lists felt better about their lives overall and were more optimistic about the coming week than comparison groups; in one study they also exercised more and reported fewer physical complaints.",
+    "Kaplan describes how deliberately noticing what went right, including in her marriage, changed her mood and how she treated her husband.",
+    "Her conclusion was that gratitude is a practice and a choice, not just a feeling that happens to you."
+  ],
+  "tension": "Nothing in her life changed much that year, yet she felt much happier. How?",
+  "opening_idea": "A journalist makes an unusual New Year's resolution: not to lose weight or earn more, but to be grateful.",
+  "lessons": [
+    {
+      "idea": "Gratitude can be practiced.",
+      "anchor": "Kaplan's year-long experiment"
+    },
+    {
+      "idea": "Writing things down strengthens the effect.",
+      "anchor": "Emmons and McCullough's gratitude lists"
+    },
+    {
+      "idea": "Gratitude changes how you treat others.",
+      "anchor": "Kaplan's marriage month"
+    }
+  ],
+  "reflect": [
+    "What three things went right today?",
+    "Whom do you take most for granted?"
+  ],
+  "reflect_final": "What would change if you wrote down three things you're grateful for each week?",
+  "use_cases": [
+    {
+      "situation": "You notice mostly what goes wrong in your day.",
+      "move": "Write three specific things that went right before bed, weekly or daily.",
+      "context": "self"
+    },
+    {
+      "situation": "You and your partner mostly talk about problems.",
+      "move": "Tell them one specific thing you appreciated today.",
+      "context": "family"
+    },
+    {
+      "situation": "Your team only reviews failures.",
+      "move": "Start meetings by naming one thing that went well and who made it happen.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Gratitude isn't just a feeling you wait for; it's a practice you choose.",
+  "conversation_variants": {
+    "punchline_idea": "A year of deliberate gratitude made one writer happier without changing her circumstances.",
+    "thirty_sec_idea": "Kaplan's resolution, monthly focus, Emmons's research, gratitude as practice.",
+    "question_idea": "What three things went right for you today?",
+    "key_contrast_idea": "Noticing wrong versus noticing right"
+  }
+}

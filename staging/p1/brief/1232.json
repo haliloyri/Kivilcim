@@ -1,0 +1,65 @@
+{
+  "story_id": 1232,
+  "kind": "concept",
+  "book": {
+    "title": "Switch: How to Change Things When Change Is Hard",
+    "author": "Chip Heath and Dan Heath",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text uses the parable of a circus elephant chained to a small stake, which cannot hold it but which it no longer tries to escape. That parable is a popular motivational story and is not how Switch uses the elephant; it is left out. Switch's central image, borrowed from psychologist Jonathan Haidt, is the Rider (the rational, planning mind) on the Elephant (the emotional, instinctive side), moving along a Path (the environment). To change behavior you must direct the Rider, motivate the Elephant and shape the Path. The 1% milk campaign in West Virginia, led by researchers including Steve Booth-Butterfield, is a Switch example of 'scripting the critical moves' for the Rider. Note: the story title in the database ('elephant and stake') should be updated to match.",
+  "facts": [
+    "The Heath brothers borrow a metaphor from psychologist Jonathan Haidt: our emotional side is an Elephant and our rational side is its Rider.",
+    "The Rider seems to be in charge, holding the reins, but it is small compared with the Elephant. When they disagree for long, the Elephant usually wins.",
+    "The Rider is good at planning and thinking long-term but tends to overanalyze and spin its wheels. The Elephant provides energy and drive but wants quick rewards.",
+    "They add a third element: the Path, the environment the Elephant and Rider move through.",
+    "Their framework for change: direct the Rider (give clear direction), motivate the Elephant (engage feelings) and shape the Path (change the situation).",
+    "Example of directing the Rider: researchers in West Virginia wanted people to eat healthier. Instead of a vague message, they campaigned for one specific switch: buy 1% milk instead of whole milk. Market share of low-fat milk rose significantly in the campaign area.",
+    "Their point: what looks like resistance is often lack of clarity."
+  ],
+  "tension": "We know what we should do and still don't do it. Why does change feel so hard?",
+  "opening_idea": "Picture a small rider sitting on top of a six-ton elephant, holding the reins and believing he's in control.",
+  "lessons": [
+    {
+      "idea": "Change needs both reason and emotion.",
+      "anchor": "The Rider and the Elephant"
+    },
+    {
+      "idea": "Clear, specific direction beats vague goals.",
+      "anchor": "The 1% milk campaign"
+    },
+    {
+      "idea": "Changing the environment makes change easier.",
+      "anchor": "Shape the Path"
+    }
+  ],
+  "reflect": [
+    "Where does your Rider know what to do while your Elephant refuses?",
+    "Which change in your life lacks a clear first step?"
+  ],
+  "reflect_final": "What is one specific, concrete behavior that would move your change forward?",
+  "use_cases": [
+    {
+      "situation": "Your team keeps failing to adopt a new process.",
+      "move": "Replace the general instruction with one specific behavior to change first.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You want to eat healthier but never stick with it.",
+      "move": "Pick one concrete switch and change your kitchen to make it easy.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child resists doing homework.",
+      "move": "Make the first step tiny and specific, and set up the desk so it's easy to start.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "To change, give the Rider a clear direction, give the Elephant a reason, and smooth the Path.",
+  "conversation_variants": {
+    "punchline_idea": "Your rational mind is a small rider on a huge emotional elephant.",
+    "thirty_sec_idea": "Rider, Elephant, Path; 1% milk; resistance as lack of clarity.",
+    "question_idea": "Where does your Rider know the way but your Elephant won't move?",
+    "key_contrast_idea": "Knowing versus doing"
+  }
+}

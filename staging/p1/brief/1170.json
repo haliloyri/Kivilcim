@@ -1,0 +1,64 @@
+{
+  "story_id": 1170,
+  "kind": "concept",
+  "book": {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "year": "2011"
+  },
+  "confidence": "high",
+  "confidence_note": "The bat-and-ball puzzle and the System 1 / System 2 framework are central to the book. Kahneman reports that more than 50 percent of students at Harvard, MIT and Princeton gave the intuitive, incorrect answer, and more than 80 percent at less selective universities. He describes System 2 as 'lazy', often endorsing System 1's suggestions without checking. The reference TR text's account is accurate; percentages are kept as in the book.",
+  "facts": [
+    "Kahneman poses a puzzle: a bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+    "The answer that comes to mind immediately is 10 cents. It is wrong: then the bat would cost $1.10 and the total $1.20. The correct answer is 5 cents.",
+    "More than 50 percent of students at Harvard, MIT and Princeton gave the intuitive wrong answer; at less selective universities, more than 80 percent did.",
+    "Kahneman describes two modes of thinking. System 1 operates automatically and quickly, with little effort. System 2 is slow, effortful and deliberate, used for complex calculations and careful reasoning.",
+    "System 2 is 'lazy': it tends to accept System 1's suggestions without checking them, unless something forces it to engage.",
+    "System 1 is usually very good at what it does, but it is prone to systematic errors, or biases, in predictable situations."
+  ],
+  "tension": "A puzzle a child could solve trips up most students at the world's best universities. Why?",
+  "opening_idea": "Give the reader the bat-and-ball puzzle and let them feel the wrong answer arrive.",
+  "lessons": [
+    {
+      "idea": "Fast answers feel right even when they're wrong.",
+      "anchor": "10 cents arrives instantly"
+    },
+    {
+      "idea": "Intelligence doesn't protect you if you don't check.",
+      "anchor": "Majorities at Harvard, MIT and Princeton got it wrong"
+    },
+    {
+      "idea": "Know when to call in System 2.",
+      "anchor": "Lazy System 2 endorsing System 1"
+    }
+  ],
+  "reflect": [
+    "What decision did you make quickly this week that deserved a second look?",
+    "In which situations do you most trust your first answer?"
+  ],
+  "reflect_final": "Which recurring decision in your life would benefit from a deliberate 'check the math' moment?",
+  "use_cases": [
+    {
+      "situation": "A team reaches quick agreement on a number or estimate.",
+      "move": "Ask someone to deliberately recalculate it before you commit.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're about to reply to an email in anger.",
+      "move": "Wait and reread it later, letting slow thinking check the fast reaction.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child rushes through homework answers.",
+      "move": "Teach a habit of checking one answer backwards before moving on.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The answer that arrives first isn't always the one to trust.",
+  "conversation_variants": {
+    "punchline_idea": "Most students at top universities get a simple bat-and-ball puzzle wrong.",
+    "thirty_sec_idea": "The puzzle, the wrong answer, the two systems, lazy System 2.",
+    "question_idea": "What quick answer have you been trusting without checking?",
+    "key_contrast_idea": "Fast versus slow"
+  }
+}

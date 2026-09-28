@@ -1,0 +1,65 @@
+{
+  "story_id": 1102,
+  "kind": "concept",
+  "book": {
+    "title": "The Miracle Morning (Turkish edition: Mucize Sabah; listed here as \"Sabah Rutini\")",
+    "author": "Hal Elrod",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book was supplied as \"Sabah Rutini\". It is almost certainly Hal Elrod's \"The Miracle Morning\" (2012), whose Turkish edition is \"Mucize Sabah\". The six practices (SAVERS) and the short 6-minute version are central to the book. The book also describes a fuller routine of about 10 minutes per practice. The reference text's specific physiology claims (meditation lowering cortisol, exercise raising BDNF, visualization activating the brain like real experience) are not reliably traceable to the book. They are left out of the facts. The book does recommend doing the practices together as one routine, but the reference text's framing of synergy as Elrod's 'strongest discovery' is an interpretation. It is kept mild here.",
+  "facts": [
+    "Elrod's Miracle Morning is built around six daily practices, remembered with the acronym SAVERS.",
+    "SAVERS stands for Silence (e.g. meditation, prayer, breathing), Affirmations, Visualization, Exercise, Reading, and Scribing (journaling/writing).",
+    "Elrod presents the routine as something he built for himself during a personal low point, when he was struggling financially and emotionally around the 2008 recession. He credits it with turning his life around.",
+    "His approach was to combine several proven self-development practices into one morning routine instead of relying on any single one.",
+    "The book offers a fuller version of roughly 10 minutes per practice.",
+    "The book also offers a 'six-minute Miracle Morning' for busy days: about one minute per practice.",
+    "Elrod's position is that a very short version done consistently beats skipping the routine entirely."
+  ],
+  "tension": "Most people believe a life-changing morning routine needs an hour they don't have. So they do nothing at all.",
+  "opening_idea": "Six habits, one acronym, and a version so short it fits in the time it takes the coffee to brew.",
+  "lessons": [
+    {
+      "idea": "Bundling several small self-development practices into one routine makes them easier to sustain than scattered habits.",
+      "anchor": "SAVERS: Silence, Affirmations, Visualization, Exercise, Reading, Scribing"
+    },
+    {
+      "idea": "A routine's length can shrink without the routine disappearing. Keeping the habit alive matters more than doing the full version.",
+      "anchor": "The six-minute Miracle Morning: one minute per practice"
+    },
+    {
+      "idea": "Deliberately starting the day with your own growth, before the world's demands arrive, changes how the rest of the day feels.",
+      "anchor": "Elrod building the routine during his own low point"
+    }
+  ],
+  "reflect": [
+    "Which of the six practices do you already do without calling it a routine?",
+    "Is 'I don't have time' really about time, or about believing it only counts if it's long?"
+  ],
+  "reflect_final": "Which one practice would you try for a single minute tomorrow morning, and what would make it easy to actually do?",
+  "use_cases": [
+    {
+      "situation": "You keep skipping your planned hour-long morning routine and feel guilty about it.",
+      "move": "Set a six-minute timer tomorrow. Do one minute of silence, then a spoken affirmation, a picture of the day going well, jumping jacks, one page of a book, and one line in a notebook.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague in a one-on-one says they're overwhelmed and have no time for themselves.",
+      "move": "Suggest they pick just one SAVERS practice for one minute before opening email, and check in with them next week about how it went.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Mornings at home are rushed and everyone starts the day stressed.",
+      "move": "Propose a two-minute family ritual before breakfast: one quiet minute together, then each person says one thing they're looking forward to that day.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A one-minute version done every day beats the perfect routine you never start.",
+  "conversation_variants": {
+    "punchline_idea": "Elrod's 'Miracle Morning' can be done in six minutes: one per habit.",
+    "thirty_sec_idea": "SAVERS names six morning practices. Elrod built them into a routine during a rough period of his life and offers a one-minute-each version for busy days.",
+    "question_idea": "If your morning routine had to fit in six minutes, which six things would you keep?",
+    "key_contrast_idea": "Waiting for time to do the full routine versus shrinking it so it never gets skipped."
+  }
+}

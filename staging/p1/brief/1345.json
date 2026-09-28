@@ -1,0 +1,60 @@
+{
+  "story_id": 1345,
+  "kind": "anecdote",
+  "book": { "title": "The Paradox of Choice", "author": "Barry Schwartz", "year": "2004" },
+  "confidence": "high",
+  "confidence_note": "The jeans-shopping story opens the book. Schwartz went to buy jeans, and the salesperson asked him whether he wanted slim fit, easy fit, relaxed fit, baggy or extra baggy, along with washes and button-fly versus zipper; he used to buy jeans that came in essentially one kind. He tried them all and ended up with jeans that fit better than any he had owned, but felt worse about the purchase, and concluded that buying pants should not be such a long project. The TR text says he 'spent hours' and 'left unhappy'. These are kept only qualitatively: he says it took a long time and that he felt worse despite doing better. The three-problem list in the TR text (paralysis, reduced satisfaction via regret, escalating expectations) is a fair condensation of costs the book discusses, which also include opportunity costs and self-blame, but the book does not present them as a numbered list of exactly three. The TR line 'more options is not more freedom but more unhappiness' overstates Schwartz: he argues that some choice is valuable and that beyond a point more choice brings diminishing and then negative returns.",
+  "facts": [
+    "Schwartz went to a store to replace his jeans; he was used to jeans essentially coming in one kind.",
+    "The salesperson asked whether he wanted slim fit, easy fit, relaxed fit, baggy or extra baggy, and then about wash, and button-fly or zipper.",
+    "Stunned, he tried them all, and the process took far longer than buying jeans ever had.",
+    "He walked out with the best-fitting jeans he had ever owned—and yet felt worse about the purchase: he did better, but felt worse.",
+    "He uses the story to open his argument that, beyond a certain point, more choice can bring paralysis, regret about options not taken, higher expectations, and self-blame when a choice disappoints.",
+    "He does not argue that choice is bad; his claim is that some choice is essential, but that too much can undermine satisfaction."
+  ],
+  "tension": "Schwartz got objectively better jeans than ever before and still left the store feeling worse than when buying the old one-style kind.",
+  "opening_idea": "Start with a man who only wants to replace a worn-out pair of jeans, and the salesperson's innocent question: 'Slim fit, easy fit, relaxed fit, baggy or extra baggy?'",
+  "lessons": [
+    {
+      "idea": "A better outcome does not guarantee a better feeling about it.",
+      "anchor": "Best-fitting jeans ever, yet he felt worse—'did better, felt worse.'"
+    },
+    {
+      "idea": "Every extra option raises the bar for what the final choice must be.",
+      "anchor": "With so many fits available, the chosen jeans had to be perfect rather than simply good."
+    },
+    {
+      "idea": "Simple decisions can quietly become expensive in time and attention.",
+      "anchor": "A routine jeans purchase turned into a long project of trying every style."
+    }
+  ],
+  "reflect": [
+    "Think of a recent purchase where you compared many options. How did you feel about it a week later?",
+    "When have fewer options made a decision feel easier and more satisfying?"
+  ],
+  "reflect_final": "For your next small purchase, decide on two or three criteria in advance and buy the first option that meets them; afterward, notice how much you think about the alternatives.",
+  "use_cases": [
+    {
+      "situation": "Your team is about to present stakeholders with eight design options.",
+      "move": "Cut it to two or three strong options, remembering Schwartz leaving with his best jeans ever yet feeling worse, and ask the group to pick between those.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are about to spend another evening comparing reviews for a household appliance.",
+      "move": "Write down your three must-haves, buy the first model that meets them, and stop reading reviews once you have ordered.",
+      "context": "self"
+    },
+    {
+      "situation": "Friends can't decide on a restaurant after scrolling through dozens of options.",
+      "move": "Offer to shortlist three places and have everyone vote once, then go without revisiting the list.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Slim, easy, relaxed, baggy or extra baggy: every extra fit on the shelf raises the bar the jeans you finally buy have to clear.",
+  "conversation_variants": {
+    "punchline_idea": "Barry Schwartz bought the best-fitting jeans of his life—and felt worse about it than ever.",
+    "thirty_sec_idea": "Barry Schwartz went to replace his jeans and was asked: slim, easy, relaxed, baggy or extra baggy? He tried them all, left with the best-fitting pair he'd ever owned, and felt worse—which launched his argument that too much choice can undermine satisfaction.",
+    "question_idea": "What's a decision you made harder than it needed to be because there were simply too many options?",
+    "key_contrast_idea": "From 'more options means a better choice' to 'more options can mean a better choice that feels worse.'"
+  }
+}

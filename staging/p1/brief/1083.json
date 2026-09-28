@@ -1,0 +1,71 @@
+{
+  "story_id": 1083,
+  "kind": "concept",
+  "book": {
+    "title": "Good to Great",
+    "author": "Jim Collins",
+    "year": "2001"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Flywheel versus the Doom Loop is a core concept of the book (its own chapter), and the claims below are well grounded. The reference text uses Walmart as the example, but Walmart is not among the book's good-to-great companies, and its specific 'ten years of quiet small-town stores' framing cannot be confidently tied to this book, so it has been left out. No specific dates, figures or direct quotes are included.",
+  "facts": [
+    "Collins's research team studied companies that went from good results to sustained great results and compared them with similar companies that did not make that leap.",
+    "When executives of the good-to-great companies were asked to name the single defining moment or program behind their transformation, they generally could not point to one.",
+    "The book states that these transformations never happened in one fell swoop. There was no single defining action, grand program, killer innovation, lucky break or miracle moment.",
+    "Collins uses the image of a huge, heavy flywheel. Early pushes barely move it, but consistent pushes in the same direction build momentum until a breakthrough point, after which the momentum works in your favor.",
+    "From the outside, and in the press, the breakthrough often looked like a sudden, dramatic change. Insiders experienced it as an organic, cumulative process.",
+    "Collins calls the cumulative pattern 'buildup, then breakthrough'.",
+    "The comparison companies often fell into a 'Doom Loop'. They launched new programs with fanfare, chased fads, made reactive changes of direction and tried to leap to breakthrough without the buildup. Momentum stalled, and the cycle repeated.",
+    "The book observes that the good-to-great leaders spent little energy trying to 'create alignment' or 'manage change'. Once visible momentum came from results, people tended to align on their own."
+  ],
+  "tension": "Everyone wants to find the one dramatic turning point behind a great success, yet the leaders who lived through these transformations say no such moment existed.",
+  "opening_idea": "Start with the question outsiders kept asking, 'When exactly did it all change?', and reveal that the people inside couldn't answer it.",
+  "lessons": [
+    {
+      "idea": "Great results usually come from many consistent pushes in one direction, not one dramatic act.",
+      "anchor": "The heavy flywheel that barely moves at first, then turns on its own momentum."
+    },
+    {
+      "idea": "Overnight success is usually an illusion created by viewing from the outside.",
+      "anchor": "Insiders called the change organic and cumulative, while outsiders saw a sudden breakthrough."
+    },
+    {
+      "idea": "Frequent changes of direction and flashy new programs destroy momentum.",
+      "anchor": "The Doom Loop of the comparison companies: launch, disappoint, reverse, relaunch."
+    },
+    {
+      "idea": "Visible results build commitment better than persuasion campaigns.",
+      "anchor": "The good-to-great leaders spent little effort on 'alignment', because momentum aligned people on its own."
+    }
+  ],
+  "reflect": [
+    "Where are you waiting for a breakthrough moment instead of making the next consistent push?",
+    "Which effort did you abandon, or change direction on, before it had time to build momentum?",
+    "When have you mistaken someone else's long buildup for an overnight success?"
+  ],
+  "reflect_final": "What flywheel are you already pushing that deserves another hundred pushes in the same direction?",
+  "use_cases": [
+    {
+      "situation": "A team meeting where someone proposes a brand-new initiative to replace one that started only a few months ago.",
+      "move": "Ask: 'Before we launch something new, what would it take to push the current effort consistently for another quarter, and what early signs of momentum should we look for?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A direct report is discouraged because their steady work isn't producing visible results yet.",
+      "move": "Show them the specific small gains so far, and agree on one consistent action to repeat every week rather than a big new plan.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel tempted to switch fitness, study or savings plans because the current one feels too slow.",
+      "move": "Write down the one habit you'll keep repeating for a set period, and track the pushes rather than the results until that period ends.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "There is rarely a single turning point. Momentum comes from pushing the same flywheel in the same direction until it starts to turn itself.",
+  "conversation_variants": {
+    "punchline_idea": "The 'overnight success' was just the moment outsiders noticed a flywheel that had been turning for years.",
+    "thirty_sec_idea": "Collins found that the leaders of great companies couldn't name the moment everything changed, because it came from steady pushes on a heavy flywheel. Their rivals kept launching new programs and lost momentum.",
+    "question_idea": "If you had to name the single moment your biggest achievement happened, could you, or was it really a hundred small pushes?",
+    "key_contrast_idea": "Flywheel: patient, consistent pushes that build momentum. Doom Loop: dramatic launches and constant reversals that kill it."
+  }
+}

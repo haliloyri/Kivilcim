@@ -1,0 +1,71 @@
+{
+  "story_id": 1084,
+  "kind": "concept",
+  "book": {
+    "title": "Good to Great",
+    "author": "Jim Collins",
+    "year": "2001"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core principle ('First Who, Then What', the bus metaphor, and the 'genius with a thousand helpers' pattern in comparison companies) is central to the book and certain. However, the reference text presents a direct quote from a named CEO. In the book, the 'I don't know where we should take this bus...' line is Collins's own paraphrase of how good-to-great leaders thought, not a verified quote from one executive. So it is treated here as the book's characterization. The Wells Fargo vs. Bank of America contrast is the book's own case. Specific dates, headcounts and figures are deliberately omitted.",
+  "facts": [
+    "Collins's research team expected good-to-great leaders to begin by setting a new vision and strategy. Instead, the team found they first got the right people on the bus, the wrong people off, and the right people in the right seats. Only then did they decide where to drive.",
+    "Collins frames the leaders' stance roughly as: 'I don't know where we should take this bus, but if we get the right people on it, we'll figure out how to take it someplace great.'",
+    "The book argues that people are not your most important asset; the right people are.",
+    "Right people make direction changes easier. If people are on the bus because of who else is on it, rather than where it is going, they adapt when the destination must change.",
+    "Many comparison companies followed a 'genius with a thousand helpers' model. A strong leader set the vision and hired helpers to execute it, and the company often faltered once that leader left.",
+    "The book's case: Wells Fargo, under Dick Cooley and then Carl Reichardt, kept hiring outstanding people even without specific jobs for them. That bench of talent helped it handle banking deregulation well. Bank of America followed a 'weak generals, strong lieutenants' approach and struggled.",
+    "Collins stresses being 'rigorous, not ruthless'. The point is disciplined people decisions, not mass layoffs.",
+    "The book offers practical disciplines: when in doubt, don't hire and keep looking; when you know a people change is needed, act; put your best people on your biggest opportunities, not your biggest problems."
+  ],
+  "tension": "Conventional wisdom says a leader should start with a bold vision and recruit people to fit it. Collins's data showed the lasting companies did the reverse.",
+  "opening_idea": "Open with the surprise. The researchers went looking for brilliant strategies and found that the best leaders postponed strategy until they had the right people.",
+  "lessons": [
+    {
+      "idea": "Decide 'who' before 'what'. The right team can find and change direction; the wrong team can't execute even a great plan.",
+      "anchor": "The bus: right people on, wrong people off, right seats, then choose the destination."
+    },
+    {
+      "idea": "A vision that lives in one person's head leaves when that person leaves.",
+      "anchor": "The 'genius with a thousand helpers' pattern in comparison companies."
+    },
+    {
+      "idea": "Build talent ahead of need, and point your best people at opportunities rather than problems.",
+      "anchor": "Wells Fargo hiring great people before it had jobs for them, versus Bank of America's 'weak generals, strong lieutenants'."
+    },
+    {
+      "idea": "Rigor about people is not cruelty. It means not letting doubt or delay decide who stays and where they sit.",
+      "anchor": "'Rigorous, not ruthless' and 'when in doubt, don't hire'."
+    }
+  ],
+  "reflect": [
+    "In your current project, did you choose the plan first and then look for people to carry it?",
+    "Who on your team would you enthusiastically rehire today, and who would you not?",
+    "Are your strongest people working on your biggest opportunity or on your biggest fire?"
+  ],
+  "reflect_final": "If you left tomorrow, would your people keep going? Is it because they believe in the work, or only because they were following you?",
+  "use_cases": [
+    {
+      "situation": "A planning meeting where everyone wants to jump straight to strategy for a new initiative.",
+      "move": "Ask: 'Before we pick the route, who are the three people this cannot succeed without, and are they actually on board?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're about to fill an open role quickly with a 'good enough' candidate because the team is overloaded.",
+      "move": "Apply 'when in doubt, don't hire'. Tell your manager you'd rather extend the search two more weeks than seat the wrong person.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're launching a personal goal, such as a side business or a training plan, and have mapped every step but not who will support you.",
+      "move": "Write down the two or three people whose involvement or honesty would most change your odds, and talk to them before finalizing the plan.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Get the right people on the bus first; the right destination becomes much easier to find.",
+  "conversation_variants": {
+    "punchline_idea": "Great companies didn't start with where to go; they started with who was going.",
+    "thirty_sec_idea": "Collins expected vision-first leaders but found people-first ones. Wells Fargo stockpiled talent while Bank of America relied on strong lieutenants, and the talent-first bank handled deregulation far better.",
+    "question_idea": "If your plan had to change tomorrow, would your current team adapt with you, or only follow the original script?",
+    "key_contrast_idea": "A 'genius with a thousand helpers' builds a company that depends on the genius; a 'first who' leader builds one that outlasts them."
+  }
+}

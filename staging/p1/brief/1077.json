@@ -1,0 +1,71 @@
+{
+  "story_id": 1077,
+  "kind": "concept",
+  "book": {
+    "title": "Think and Grow Rich (Düşün ve Zengin Ol)",
+    "author": "Napoleon Hill",
+    "year": "1937"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference text's story of an unnamed man who turned $500 into millions despite ridicule does not match any single identifiable case in the book, and its details look generic or conflated. The book's closest $500 story is the old country doctor who sold a kettle, a wooden paddle and a formula (later Coca-Cola) to a young drug clerk for about $500. That story is about the value of an idea, not about ignoring ridicule. This brief therefore treats the story as the concept it points to: holding faith in a definite idea against doubters and the fear of criticism. It uses Hill's well-known Ford V-8 case as the book's own example of pressing on after experts called something impossible. Exact wording and time spans in the Ford story are paraphrased. The Master Mind advice reflects Hill's general guidance, not a quote.",
+  "facts": [
+    "Hill tells how Henry Ford wanted an eight-cylinder engine with all cylinders cast in a single block.",
+    "Ford's engineers told him it was impossible. Ford told them to produce it anyway.",
+    "The engineers worked for months without success. Each time they reported failure, Ford told them to keep going.",
+    "Eventually they found a way, and the engine was built. Hill uses this as proof of what a definite, persistent desire can do.",
+    "Hill names the fear of criticism as one of the basic fears. He argues it kills initiative, imagination and ambition.",
+    "Hill observes that relatives and close friends often do the most damage. They discourage ambition through criticism, sometimes disguised as joking or concern.",
+    "Hill advises sharing plans only with a small, harmonious 'Master Mind' group of trusted allies, not with everyone.",
+    "Separately, Hill tells of a formula bought for about $500 that grew into a fortune. He uses it to show that the idea plus imagination mattered more than the money."
+  ],
+  "tension": "Experts and people close to you say the idea can't work. Their doubt feels louder and more credible than your own belief.",
+  "opening_idea": "Open with the moment Ford's engineers say 'impossible' and he answers, 'Produce it anyway.'",
+  "lessons": [
+    {
+      "idea": "A definite idea held with persistence can outlast expert doubt.",
+      "anchor": "Ford told his engineers to keep going after every failed attempt at the one-block V-8."
+    },
+    {
+      "idea": "Fear of criticism quietly kills more ideas than real obstacles do.",
+      "anchor": "Hill lists fear of criticism among the basic fears that destroy initiative."
+    },
+    {
+      "idea": "Choose carefully who hears your plans.",
+      "anchor": "Hill's Master Mind: a small group of trusted allies, not everyone around you."
+    },
+    {
+      "idea": "The size of your starting money matters less than the idea and the imagination behind it.",
+      "anchor": "The formula bought for about $500 that grew into a fortune."
+    }
+  ],
+  "reflect": [
+    "Which of your ideas did you drop because of someone's doubt, not because of evidence?",
+    "Whose criticism affects you most, and are they actually informed about what you want to do?",
+    "When someone says 'impossible', do you ask 'why' or simply stop?"
+  ],
+  "reflect_final": "If you shared a quieted idea with just one person you truly trust, who would it be, and what would you ask them?",
+  "use_cases": [
+    {
+      "situation": "In a meeting, the team dismisses a proposal as unworkable.",
+      "move": "Ask, 'What would have to be true for this to work?' and propose one small test instead of dropping it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family member laughs off your plan to start a side project.",
+      "move": "Say, 'I hear the worry. I'm going to try a small version for three months,' then stop discussing it until you have results.",
+      "context": "family"
+    },
+    {
+      "situation": "You notice you are shelving an idea because of imagined judgment.",
+      "move": "Write the idea down and pick one trusted person as your 'Master Mind' ally. Book a talk with them this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "'Impossible' is often just the first answer, not the final one.",
+  "conversation_variants": {
+    "punchline_idea": "Ford's engineers said it couldn't be done. He said, 'Do it anyway,' and they eventually did.",
+    "thirty_sec_idea": "Hill argues that most ideas die from fear of criticism, not from real obstacles, and that you should share plans only with a trusted few.",
+    "question_idea": "Ask: which of your ideas is waiting only on someone else's approval?",
+    "key_contrast_idea": "The evidence against an idea is different from the opinion against it."
+  }
+}

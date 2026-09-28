@@ -1,0 +1,65 @@
+{
+  "story_id": 1149,
+  "kind": "anecdote",
+  "book": {
+    "title": "Grit: The Power of Passion and Perseverance",
+    "author": "Angela Duckworth",
+    "year": "2016"
+  },
+  "confidence": "high",
+  "confidence_note": "This is the opening story of Grit and is well documented. The reference TR text says 'Beast Week' lasts the first seven days; in the book, Beast Barracks is a demanding seven-week summer training program at the start of a cadet's time at West Point, and the brief uses that. The book describes West Point's admissions measure, the Whole Candidate Score (combining SAT or ACT scores, high school rank, leadership potential and physical aptitude), and reports that it did not predict who would drop out during Beast, while Duckworth's short Grit Scale did. Exact numbers of cadets and dropouts are omitted.",
+  "facts": [
+    "Getting into the United States Military Academy at West Point is extremely competitive. Applicants need strong grades and test scores, a nomination, and demonstrated leadership and athletic ability.",
+    "West Point combines these into a Whole Candidate Score: weighted measures of SAT or ACT scores, high school rank adjusted for class size, expert appraisals of leadership potential, and physical fitness.",
+    "Even so, some admitted cadets drop out, many of them during Beast Barracks, an intense seven-week training program in their first summer.",
+    "Beast is designed to test cadets' limits physically, mentally and socially, starting before dawn each day.",
+    "The Whole Candidate Score, the admissions office's best predictor, did not predict who would make it through Beast.",
+    "Duckworth gave incoming cadets her short Grit Scale, which measures passion and perseverance for long-term goals. Grit scores predicted who would complete Beast, in a way that the Whole Candidate Score did not.",
+    "Grit was also unrelated, or even slightly inversely related, to the talent-oriented measures in the Whole Candidate Score."
+  ],
+  "tension": "West Point spends enormous effort picking the most talented applicants, and still can't tell which of them will quit in the first summer.",
+  "opening_idea": "The most carefully selected young people in the country arrive at West Point, and some of them quit within weeks. The admissions data can't say who.",
+  "lessons": [
+    {
+      "idea": "Talent measures predict who gets in, not who stays.",
+      "anchor": "The Whole Candidate Score failed to predict who finished Beast"
+    },
+    {
+      "idea": "Passion and perseverance for long-term goals are a separate ingredient.",
+      "anchor": "Grit scores predicted completion"
+    },
+    {
+      "idea": "Grit and talent aren't the same thing and may not come together.",
+      "anchor": "Grit unrelated to the Whole Candidate Score"
+    }
+  ],
+  "reflect": [
+    "Where have you relied on talent and stopped when it got hard?",
+    "Who do you know who isn't the most gifted but always finishes?"
+  ],
+  "reflect_final": "What would you finish if you measured yourself by staying power rather than talent?",
+  "use_cases": [
+    {
+      "situation": "You're hiring and debating between a brilliant candidate and one with a long record of finishing hard things.",
+      "move": "Ask both candidates about something difficult they stuck with for years and weigh that alongside skills.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child is talented but gives up when things get hard.",
+      "move": "Praise finishing and sticking with it more than natural ability.",
+      "context": "family"
+    },
+    {
+      "situation": "You're thinking of quitting a course in the first difficult weeks.",
+      "move": "Commit to finishing the first 'Beast' stretch before judging whether you belong.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Talent gets you through the door; grit keeps you in the room.",
+  "conversation_variants": {
+    "punchline_idea": "West Point's best talent measure couldn't predict who would quit; a short grit questionnaire could.",
+    "thirty_sec_idea": "Whole Candidate Score, Beast Barracks, Grit Scale results.",
+    "question_idea": "What have you finished purely because you refused to quit?",
+    "key_contrast_idea": "Talent versus staying power"
+  }
+}

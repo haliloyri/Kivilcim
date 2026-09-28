@@ -1,0 +1,64 @@
+{
+  "story_id": 1200,
+  "kind": "concept",
+  "book": {
+    "title": "When: The Scientific Secrets of Perfect Timing",
+    "author": "Daniel H. Pink",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "Pink's chapter on afternoons and breaks is well documented. Kept: the afternoon trough as a dangerous time, with examples from medicine (a Duke University study of anesthesia errors, more likely in the mid-afternoon); the study of Israeli parole judges, who ruled favorably far more often early in the day and after food breaks, with favorable rulings dropping sharply before breaks; and his prescriptions: restorative breaks (movement, social, outside, fully detached) and the 'nappuccino', a cup of coffee followed immediately by a 10 to 20 minute nap. The reference TR text's term 'lunch drunkenness' is not Pink's and is replaced by 'the trough'. Specific percentages are omitted.",
+  "facts": [
+    "Pink describes the afternoon trough as a hidden danger zone in the day.",
+    "A study at Duke University Medical Center found anesthesia-related errors were significantly more likely in procedures starting in the mid-afternoon than in the morning.",
+    "A study of Israeli parole judges found that favorable rulings were most likely early in the day and right after meal breaks, and fell steeply as time passed without a break.",
+    "Pink recommends 'restorative breaks': short, frequent breaks, ideally involving movement, other people, time outdoors, and fully detaching from work rather than checking a phone.",
+    "He describes the 'nappuccino': drink a cup of coffee, then immediately take a short nap of 10 to 20 minutes. The caffeine kicks in around the time you wake, and the short nap avoids grogginess.",
+    "He argues breaks are not a sign of laziness but a performance tool."
+  ],
+  "tension": "Doctors, judges and students all perform worse at certain hours, and a well-timed break can make a real difference.",
+  "opening_idea": "Whether a prisoner is granted parole can depend partly on whether the judge has just eaten.",
+  "lessons": [
+    {
+      "idea": "The afternoon trough is a real risk.",
+      "anchor": "Anesthesia errors in the mid-afternoon"
+    },
+    {
+      "idea": "Breaks restore judgment.",
+      "anchor": "Israeli judges after meal breaks"
+    },
+    {
+      "idea": "Design breaks well.",
+      "anchor": "Restorative breaks and the nappuccino"
+    }
+  ],
+  "reflect": [
+    "When is your afternoon trough, and what do you usually do in it?",
+    "What kind of break actually restores you?"
+  ],
+  "reflect_final": "What break could you schedule tomorrow, as seriously as a meeting?",
+  "use_cases": [
+    {
+      "situation": "Your team makes high-stakes decisions in long afternoon sessions with no breaks.",
+      "move": "Build in a short break before every major decision.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You power through lunch at your desk every day.",
+      "move": "Take a 15-minute walk outside without your phone.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague is exhausted by mid-afternoon.",
+      "move": "Suggest trying a nappuccino before their next important afternoon task.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "A good break isn't lost time; it's how you win back your judgment.",
+  "conversation_variants": {
+    "punchline_idea": "Parole decisions changed depending on whether judges had just taken a food break.",
+    "thirty_sec_idea": "Afternoon errors, Israeli judges, restorative breaks, nappuccino.",
+    "question_idea": "What break actually restores you?",
+    "key_contrast_idea": "Pushing through versus pausing"
+  }
+}

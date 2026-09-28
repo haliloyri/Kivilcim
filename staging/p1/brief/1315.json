@@ -1,0 +1,40 @@
+{
+  "story_id": 1315,
+  "kind": "concept",
+  "book": { "title": "Müşteriyi Anlamak (Hooked: How to Build Habit-Forming Products)", "author": "Nir Eyal", "year": "2014" },
+  "confidence": "low",
+  "confidence_note": "The Hook Model (Trigger, Action, Variable Reward, Investment) is the core of the book and is well attested, and Eyal does use Instagram as an example, including its internal trigger being the fear of losing a special moment. However, the TR text's main narrative, the pivot from the check-in app Burbn to Instagram after data showed only photo sharing was used, could not be confirmed as told in Hooked; it is a widely reported founding story, but it is excluded here to avoid attributing it to the book. Dates, founders' names, and acquisition figures are therefore omitted. Because the TR text's anecdote is not usable, confidence is low and the facts describe the model and Eyal's Instagram illustration only.",
+  "facts": [
+    "Eyal's Hook Model has four phases: a Trigger, an Action, a Variable Reward, and an Investment.",
+    "Triggers can be external (a notification, an ad, a friend's message) or internal (a feeling or situation the user already has).",
+    "For Instagram, Eyal describes the internal trigger as the fear of losing a special moment, which prompts taking and sharing a photo.",
+    "The Action is the simplest behavior done in anticipation of a reward; Eyal stresses reducing effort so the action is easy.",
+    "Variable Rewards, such as not knowing what responses or content will appear, keep users coming back more than predictable ones.",
+    "Investment is when users put something in, such as content, followers, or preferences, which makes the product more valuable to them and loads the next trigger.",
+    "Eyal presents repeated passes through the hook as the way a product becomes a habit."
+  ],
+  "tension": "A photo app seems to compete on filters and features, yet Eyal traces its pull to something the user already feels: the fear that a moment will be lost.",
+  "opening_idea": "Start with a person seeing a moment they do not want to lose and reaching for their phone before thinking, and ask what built that reflex.",
+  "lessons": [
+    { "idea": "The strongest triggers are feelings users already have, not notifications.", "anchor": "Instagram's internal trigger: fear of losing a special moment." },
+    { "idea": "Uncertainty in the reward is what keeps people checking.", "anchor": "Variable Rewards in the Hook Model." },
+    { "idea": "What users put into a product makes them more likely to return.", "anchor": "The Investment phase: content, followers, and preferences that load the next trigger." }
+  ],
+  "reflect": [
+    "Which app do you open before you have decided to open it?",
+    "What have you put into that app that would be hard to leave behind?"
+  ],
+  "reflect_final": "The next time you reach for a favorite app, pause and name which part of the hook brought you there: a trigger, an expected reward, or something you invested. Afterward, notice whether naming it changed what you did.",
+  "use_cases": [
+    { "situation": "Your product team is adding features to boost retention.", "move": "Ask the team to name the internal trigger first, the way Eyal ties Instagram to the fear of losing a moment, and only then decide which feature supports it.", "context": "meeting" },
+    { "situation": "You keep checking an app for reactions after posting.", "move": "Notice the variable reward at work, and decide on one fixed time to check responses instead of refreshing.", "context": "self" },
+    { "situation": "Friends are talking about which apps they cannot stop using.", "move": "Ask each person what feeling usually comes right before they open it, and compare answers.", "context": "social" }
+  ],
+  "pocket_idea": "Instagram's hook is not the camera but the fear of losing a moment: a habit forms when a product answers a feeling you already have.",
+  "conversation_variants": {
+    "punchline_idea": "Eyal says Instagram's real trigger is not a notification but the fear of losing a special moment.",
+    "thirty_sec_idea": "You see a moment worth keeping and reach for Instagram; Eyal breaks this down into a trigger, an easy action, an unpredictable reward, and an investment that brings you back.",
+    "question_idea": "What app do you open almost without thinking, and what are you usually feeling right before you do?",
+    "key_contrast_idea": "Not a product you remember to use, but a product your feelings remind you to use."
+  }
+}

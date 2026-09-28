@@ -1,0 +1,41 @@
+{
+  "story_id": 1059,
+  "kind": "anecdote",
+  "book": { "title": "Atomic Habits", "author": "James Clear", "year": "2018" },
+  "confidence": "high",
+  "confidence_note": "High confidence in Clear's account of Dave Brailsford, the one-percent approach, and the saddle, tire, handwashing, and sleep examples. Omitted appointment dates, the length of Britain's earlier poor performance, medal counts, race statistics, and named winners. The reference's two-percent figure is corrected to one percent. Later successes are described broadly as outcomes in Clear's narrative, without claiming these changes alone explain them.",
+  "facts": [
+    "Clear opens the book with British cycling's poor record and the improvements associated with performance director Dave Brailsford.",
+    "Brailsford's approach was to break cycling down into its component parts, seek a one-percent improvement in each, and combine those small improvements; Clear calls this the aggregation of marginal gains.",
+    "The team redesigned bicycle saddles for comfort and rubbed alcohol on tires for better grip.",
+    "The search extended beyond the bicycles and training to recovery and health.",
+    "A surgeon taught riders how to wash their hands to reduce the chance of catching a cold.",
+    "The team identified pillows and mattresses that suited riders' sleep and took them to hotels during travel.",
+    "Clear's account goes on to describe major British cycling successes at the Olympics and the Tour de France.",
+    "Clear uses the account to introduce how small improvements can accumulate over time, even when an individual change seems too slight to matter."
+  ],
+  "tension": "The team wanted exceptional race results, but much of the work involved ordinary details that would never look exceptional on their own.",
+  "opening_idea": "Ask the reader to notice the mismatch between the scale of a desired breakthrough and the humble adjustments they might dismiss.",
+  "lessons": [
+    { "idea": "Break an ambitious result into parts you can actually adjust.", "anchor": "Brailsford's one-percent approach made saddle comfort and tire grip concrete areas for improvement." },
+    { "idea": "Include the conditions that support performance in your search for improvements.", "anchor": "Handwashing and familiar bedding addressed health and sleep beyond the bicycle itself." }
+  ],
+  "reflect": [
+    "Name a recurring task whose results you want to improve and separate it into preparation, execution, and recovery.",
+    "Choose one small source of discomfort or friction in those parts that you normally accept.",
+    "Decide what you could observe on the next attempt to judge whether your adjustment helped."
+  ],
+  "reflect_final": "Which overlooked detail could you improve before the next time you do that task?",
+  "use_cases": [
+    { "situation": "A team wants better results but has only proposed a large overhaul.", "move": "Choose one recurring handoff, identify where information goes missing, and test a small fix before redesigning everything.", "context": "meeting" },
+    { "situation": "Someone close to you feels they must push harder to improve.", "move": "Offer to look at preparation and recovery together and choose one small adjustment to try.", "context": "oneonone" },
+    { "situation": "You keep postponing a task until you can reorganize your entire routine.", "move": "Make the setup for the next attempt a little easier and check whether the change helps.", "context": "self" }
+  ],
+  "pocket_idea": "Look for small improvements in the ordinary details that your performance depends on.",
+  "conversation_variants": {
+    "punchline_idea": "A cycling team's search for speed reached all the way to its riders' pillows.",
+    "thirty_sec_idea": "Retell Brailsford's one-percent approach through saddle comfort, handwashing, and travel bedding, followed by British cycling's later success.",
+    "question_idea": "Ask what small adjustment made a familiar task noticeably easier for someone.",
+    "key_contrast_idea": "Move from overhaul to adjustments."
+  }
+}

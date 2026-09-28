@@ -1,0 +1,65 @@
+{
+  "story_id": 1325,
+  "kind": "concept",
+  "book": {
+    "title": "The Artist's Way",
+    "author": "Julia Cameron",
+    "year": "1992"
+  },
+  "confidence": "medium",
+  "confidence_note": "Cameron's 'Censor' (the internal critic) is a central concept of The Artist's Way. She traces negative beliefs about creativity to past messages, from family, teachers and others, and suggests not arguing with the Censor but letting it talk while you keep going, even imagining it as a cartoon character to reduce its power; she also has readers write down negative beliefs ('blurts') and answer them with affirmations. The reference text's painter-at-the-canvas scene is its own illustration, and its long Cameron quote about 'old wounds' is not confirmed wording; both are omitted as book facts. The reference's 'recognize it and say: oh, it's you' is a paraphrase and is kept only in general form. Not verified against the text.",
+  "facts": [
+    "Cameron describes an internal critic she calls the Censor, a voice that tells you your creative work is no good and that you are not a real artist.",
+    "She argues that many of these negative beliefs were learned from others, including family members, teachers and early critics, rather than being accurate assessments.",
+    "Her advice is not to argue with the Censor or wait for it to go quiet, but to acknowledge it and keep working.",
+    "She suggests picturing the Censor as a cartoon character so its comments feel less authoritative.",
+    "She has readers list negative beliefs about their creativity, trace where they came from, and answer them with positive affirmations.",
+    "Morning pages give practice in writing while the Censor keeps talking."
+  ],
+  "tension": "The voice that stops you from creating sounds like your own judgment, but Cameron suggests it is often repeating what others once said.",
+  "opening_idea": "Start with the sentence the inner critic says just as someone is about to begin, and ask whose voice it originally was.",
+  "lessons": [
+    {
+      "idea": "The inner critic often repeats old outside messages rather than giving a current assessment.",
+      "anchor": "Cameron tracing negative beliefs to family, teachers and early critics"
+    },
+    {
+      "idea": "You don't have to win the argument with the critic to keep working.",
+      "anchor": "Acknowledging the Censor and continuing anyway"
+    },
+    {
+      "idea": "Making the critic look less serious can reduce its authority.",
+      "anchor": "Picturing the Censor as a cartoon character"
+    }
+  ],
+  "reflect": [
+    "What exact words does your inner critic use when you start something creative?",
+    "Does that sentence remind you of anyone who once said something similar?",
+    "When have you finished something while that voice was still talking?"
+  ],
+  "reflect_final": "Next time the critic speaks as you start something, write down its exact words and a guess at where they first came from, then do five more minutes of the work. Notice whether the voice changes.",
+  "use_cases": [
+    {
+      "situation": "You're about to start a creative project and hear 'this won't be any good.'",
+      "move": "Write that sentence down, note whose voice it resembles, as Cameron suggests tracing it, and then keep going with the first rough version anyway.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child tears up a drawing, saying 'I'm bad at drawing.'",
+      "move": "Ask gently where they heard that, and suggest the critic can talk while they keep drawing. Praise the doing, not the result.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend keeps delaying a hobby project because 'real artists are better.'",
+      "move": "Share Cameron's idea of picturing that critic as a cartoon character, and ask what the character would say about their next small step.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "The Censor's voice may not be yours but a copy of an old comment. Let it talk and keep the brush moving.",
+  "conversation_variants": {
+    "punchline_idea": "Julia Cameron suggests picturing your inner critic as a cartoon character.",
+    "thirty_sec_idea": "Cameron calls the inner critic the Censor and traces much of what it says to what parents, teachers and others once said. Her advice: don't argue with it; acknowledge it and keep working.",
+    "question_idea": "Ask what their inner critic says when they try something creative, and whether it sounds like anyone they know.",
+    "key_contrast_idea": "Treating the critic's words as the truth versus recognizing them as old echoes."
+  }
+}

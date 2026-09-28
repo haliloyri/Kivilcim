@@ -1,0 +1,64 @@
+{
+  "story_id": 1276,
+  "kind": "anecdote",
+  "book": {
+    "title": "Zero to One",
+    "author": "Peter Thiel",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text calls PayPal 'the biggest startup exit in history', claims the alumni created a 'trillion-dollar ecosystem', lists SpaceX and early Facebook/Airbnb investments as part of the same set, and asks whether great startups are an accident; these framings are not from the book and are omitted. Thiel does describe the 2002 sale to eBay for $1.5 billion and the alumni ('PayPal Mafia') who went on to start Tesla, LinkedIn, YouTube, Yelp, Yammer and Palantir; he attributes this to how the early team was chosen and organized, not to a vague 'zero to one' mindset. Valuation totals are omitted.",
+  "facts": [
+    "In 2002 PayPal was sold to eBay for $1.5 billion.",
+    "Many early PayPal employees and founders went on to start other major companies, including Tesla, LinkedIn, YouTube, Yelp, Yammer and Palantir; the press called the group the 'PayPal Mafia'.",
+    "Thiel argues the reason lies in how the original team was assembled: they recruited people who genuinely liked working together and shared a similar outlook, and the bonds lasted beyond the company.",
+    "He describes the early team as all the same kind of nerd, bound by shared interests, so they didn't need long periods to build trust.",
+    "Thiel also describes a management rule: each person was made responsible for one clearly defined thing and evaluated only on it, which reduced internal conflict over overlapping roles.",
+    "His conclusion is that a startup's early culture is a deliberate choice about people and roles, not a slogan."
+  ],
+  "tension": "A company that was sold after a few years produced a surprising number of other major companies, and Thiel credits not the product but how the people were chosen and organized.",
+  "opening_idea": "Open with the list: Tesla, LinkedIn, YouTube, Yelp, Yammer, Palantir, all started by people who had once worked at the same payments company.",
+  "lessons": [
+    {
+      "idea": "Who you work with can outlast what you build.",
+      "anchor": "The early PayPal team's bonds carried into many later companies."
+    },
+    {
+      "idea": "Shared outlook speeds trust.",
+      "anchor": "Thiel says the team were the same kind of nerds, so they didn't need to build trust slowly."
+    },
+    {
+      "idea": "Clear single ownership reduces conflict.",
+      "anchor": "Each PayPal employee was responsible for one defined thing."
+    }
+  ],
+  "reflect": [
+    "Which past team of yours would you want to work with again, and why?",
+    "Where does overlapping responsibility create friction in your work now?"
+  ],
+  "reflect_final": "In your next planning conversation, make sure each person leaves with one thing that is clearly and only theirs, then see whether handoffs get easier.",
+  "use_cases": [
+    {
+      "situation": "Two teammates keep stepping on each other's work.",
+      "move": "Mention Thiel's rule that each PayPal employee owned one defined thing, and propose splitting their responsibilities so each owns one outcome.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A hiring decision between a slightly stronger résumé and someone the team clicks with.",
+      "move": "Ask the team in a one-on-one debrief whether they'd want to work with this person on a hard problem, and weigh that answer explicitly.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Thinking about your next move.",
+      "move": "Write down two people you'd want to build something with again, and contact one of them this week just to reconnect.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Thiel's PayPal gave each person one thing to own and hired people who wanted to work together: the company sold, the team kept building.",
+  "conversation_variants": {
+    "punchline_idea": "People from one payments startup went on to found Tesla, LinkedIn, YouTube, Yelp, Yammer and Palantir.",
+    "thirty_sec_idea": "PayPal sold to eBay for $1.5 billion in 2002, but its alumni then started a string of major companies; Thiel credits hiring for fit and giving everyone one clear job.",
+    "question_idea": "Who's someone you worked with once and would start something with tomorrow?",
+    "key_contrast_idea": "From 'build a great product' to 'build the right team, and the products may follow.'"
+  }
+}

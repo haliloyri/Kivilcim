@@ -1,0 +1,64 @@
+{
+  "story_id": 1278,
+  "kind": "concept",
+  "book": {
+    "title": "Zero to One",
+    "author": "Peter Thiel (with Blake Masters)",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The contrarian interview question ('What important truth do very few people agree with you on?') and the chapter on secrets are in the book, including the idea that there are secrets of nature and secrets about people, and that Airbnb, Uber and Lyft built on unnoticed opportunities (Airbnb seeing untapped supply and unaddressed demand). The reference text's specific claims about what Airbnb 'knew' (people aren't afraid of strangers' homes) and its examples of DoorDash and SpaceX as 'secrets' are not from the book and are omitted. Exact phrasing of Thiel's secret examples was not re-checked.",
+  "facts": [
+    "Thiel says his favorite interview question is: 'What important truth do very few people agree with you on?'",
+    "He finds it hard to answer: it requires knowledge that is not common, and courage to say something unpopular. Most people answer by repeating a conventional view.",
+    "He argues there are still 'secrets': important truths that are unknown or unappreciated, and that great companies are built on them.",
+    "He describes two kinds: secrets of nature (about the physical world) and secrets about people (things people don't know about themselves or hide).",
+    "He says people stopped believing in secrets partly from incrementalism, risk aversion, complacency and 'flatness' (the belief that if it were possible, someone smarter would already have done it).",
+    "Among his examples, Airbnb saw untapped supply and unaddressed demand where others saw nothing, and Uber and Lyft built businesses on connecting riders with private drivers."
+  ],
+  "tension": "The question that best reveals original thinking is one most people cannot answer, because saying a true but unpopular thing feels riskier than repeating the consensus.",
+  "opening_idea": "Open with Thiel's interview question itself and let the reader try to answer it before anything else.",
+  "lessons": [
+    {
+      "idea": "Big opportunities often sit in truths most people don't yet accept, not in ideas everyone already agrees on.",
+      "anchor": "Airbnb saw untapped supply and unaddressed demand where others saw nothing."
+    },
+    {
+      "idea": "The assumption 'someone smarter would have done it already' quietly stops people from looking.",
+      "anchor": "Thiel's list of why people stopped believing in secrets, including 'flatness'."
+    },
+    {
+      "idea": "Secrets are not only technical; some are about what people want but don't say.",
+      "anchor": "Thiel's split between secrets of nature and secrets about people."
+    }
+  ],
+  "reflect": [
+    "Have you ever held back an idea because you assumed someone must have already tried it?",
+    "What is something you believe from direct experience that most people around you would doubt?"
+  ],
+  "reflect_final": "Write down one belief you hold that most people around you would disagree with, then name one small, cheap way to check whether it's true.",
+  "use_cases": [
+    {
+      "situation": "A brainstorming session keeps producing ideas everyone nods at.",
+      "move": "Ask Thiel's question to the room: 'What important truth do very few people agree with us on?' and give everyone two minutes to write an answer before discussing.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague mentions an unusual idea and then dismisses it themselves.",
+      "move": "Ask what they've seen that makes them think it could work, and whether 'someone would've done it already' is a fact or an assumption.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Dinner conversation with friends drifts into agreeing about everything.",
+      "move": "Ask each person for one thing they believe that most people don't, and follow up on the most surprising answer.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "If your answer to 'what true thing do few people agree with?' is something everyone agrees with, you haven't found a secret yet.",
+  "conversation_variants": {
+    "punchline_idea": "Peter Thiel's favorite interview question is one most candidates can't answer: what important truth do very few people agree with you on?",
+    "thirty_sec_idea": "Thiel asks job candidates what important truth few people agree with them on, and argues great companies like Airbnb started from exactly that kind of overlooked truth.",
+    "question_idea": "What do you believe from your own experience that most people would doubt?",
+    "key_contrast_idea": "Assuming everything worth doing has been done versus looking for what others haven't noticed."
+  }
+}

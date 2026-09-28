@@ -38,10 +38,11 @@ const LANGUAGES = [
   { code: 'es', label: 'Español' },
   { code: 'de', label: 'Deutsch' },
 ];
-const STORY_COLLECTIONS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals'];
+const STORY_COLLECTIONS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55'];
 const STORY_COLLECTION_LABEL = {
   classic: 'storyCollectionClassic', new: 'storyCollectionNew', agent: 'storyCollectionAgent',
   focus: 'storyCollectionFocus', conversation: 'storyCollectionConversation', originals: 'storyCollectionOriginals',
+  opus55: 'storyCollectionOpus55',
 };
 
 const ProfileScreen = ({ navigation }) => {
@@ -59,7 +60,9 @@ const ProfileScreen = ({ navigation }) => {
 
   const [sheet, setSheet] = useState(null); // 'name' | 'interests' | 'language' | null
   const [editName, setEditName] = useState('');
-  const [notifPermission, setNotifPermission] = useState('undetermined');
+  // null until the real OS status has been read, so the switch below doesn't
+  // flicker off for a reader who has already granted permission.
+  const [notifPermission, setNotifPermission] = useState(null);
   const [restoring, setRestoring] = useState(false);
   const testNotifIndex = React.useRef(0);
 
@@ -74,7 +77,7 @@ const ProfileScreen = ({ navigation }) => {
   const selectedMinutes = preferences?.time?.minutes || 6;
   const remindersEnabled = preferences?.remindersEnabled !== false;
   const selectedReminders = preferences?.reminderWindows || [preferences?.reminderWindow || 'evening'];
-  const selectedStoryCollections = preferences?.storyCollections?.length ? preferences.storyCollections : ['new'];
+  const selectedStoryCollections = preferences?.storyCollections?.length ? preferences.storyCollections : ['new', 'opus55'];
   const themeValue = themePreference || themeMode || 'system';
   const langLabel = (LANGUAGES.find((l) => l.code === lang) || LANGUAGES[0]).label;
   const interestCount = selectedCategories.length;
@@ -397,7 +400,12 @@ const ProfileScreen = ({ navigation }) => {
   );
 
   const permissionDenied = notifPermission === 'denied';
-  const remindersOn = remindersEnabled && !permissionDenied;
+  // Setup no longer asks for permission unless the reader reaches the last step,
+  // so someone who skipped it sits at 'undetermined': reminders are enabled in
+  // preferences but the OS will never deliver them. Show that honestly — toggling
+  // the switch on from here is what asks for permission (handleRemindersEnabled).
+  const permissionMissing = notifPermission === 'undetermined';
+  const remindersOn = remindersEnabled && !permissionDenied && !permissionMissing;
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={s.safe}>

@@ -1,0 +1,64 @@
+{
+  "story_id": 1145,
+  "kind": "anecdote",
+  "book": {
+    "title": "Make Your Bed",
+    "author": "William H. McRaven",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text centres on an instructor whispering 'This will pass, keep going' to an exhausted McRaven. That scene cannot be found in the book and is left out. The book's own chapter on this theme is 'Never, ever quit', built around the brass bell in SEAL training: a bell hangs in the center of the training compound, and any trainee who wants to quit only has to ring it three times. Ringing it means no more cold swims, no more runs, no more hardship. McRaven describes watching trainees ring it, and his advice is simple: if you want to change the world, don't ever, ever ring the bell. Specific numbers of dropouts are omitted.",
+  "facts": [
+    "In SEAL training, a brass bell hangs in the center of the compound where the trainees can see it.",
+    "All a trainee has to do to quit is ring the bell three times.",
+    "Ringing the bell means no more getting up at 5 a.m., no more freezing cold swims, no more long runs, obstacle courses or hardships of training.",
+    "McRaven describes how many trainees rang the bell over the course of training.",
+    "His lesson: if you want to change the world, don't ever, ever ring the bell.",
+    "He connects it to life beyond the military: hard moments come for everyone, and quitting is always one easy step away."
+  ],
+  "tension": "The way out of the hardest training in the military is always in plain sight and takes three seconds.",
+  "opening_idea": "At the worst moment of SEAL training, relief is only three rings of a bell away.",
+  "lessons": [
+    {
+      "idea": "Quitting is always easy and visible; that's what makes it dangerous.",
+      "anchor": "The bell in the center of the compound"
+    },
+    {
+      "idea": "The hardest moment is often temporary, but quitting is permanent.",
+      "anchor": "Trainees who rang the bell to end one miserable night"
+    },
+    {
+      "idea": "Deciding in advance that you won't quit makes hard moments easier.",
+      "anchor": "'Don't ever, ever ring the bell'"
+    }
+  ],
+  "reflect": [
+    "What does your 'bell' look like, the easy exit you keep in sight?",
+    "Is the thing you want to quit genuinely finished, or just very hard right now?"
+  ],
+  "reflect_final": "How will you tell the difference between 'this is over' and 'this is hard' next time you want to ring the bell?",
+  "use_cases": [
+    {
+      "situation": "A team member wants to drop a hard project halfway through.",
+      "move": "Ask whether the project is truly failing or just painful at this stage, and agree on one more milestone before deciding.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child wants to quit a sport after a bad week.",
+      "move": "Agree to finish the season, then decide calmly when it's not the worst moment.",
+      "context": "family"
+    },
+    {
+      "situation": "You're tempted to abandon a goal on a particularly bad day.",
+      "move": "Make a rule not to quit on your worst day; decide on a normal day instead.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Never make the decision to quit on your worst day.",
+  "conversation_variants": {
+    "punchline_idea": "In SEAL training, quitting takes three rings of a bell, which is exactly why it's dangerous.",
+    "thirty_sec_idea": "The brass bell, three rings, what it ends, and McRaven's rule.",
+    "question_idea": "What's your bell, and how close are you to ringing it?",
+    "key_contrast_idea": "Hard versus over"
+  }
+}

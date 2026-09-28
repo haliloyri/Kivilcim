@@ -1,0 +1,65 @@
+{
+  "story_id": 1210,
+  "kind": "concept",
+  "book": {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The '40% Rule' is one of Goggins's best-known ideas in the book: when your mind tells you you're done, you've typically only tapped about 40 percent of your capacity. It is presented as his experience-based rule of thumb, not a scientific measurement. The 'Cookie Jar', recalling past victories and hardships overcome to fuel you in hard moments, is also from the book. Goggins does run ultramarathons, including 100-mile races. The reference TR text claims Goggins 'researched and discovered' the brain stops you early; Goggins presents it as lived insight, and the story reflects that, noting briefly that exercise scientists have proposed related ideas about the brain regulating effort. Safety caveat added: the rule concerns mental limits, not ignoring genuine injury.",
+  "facts": [
+    "Goggins has run many ultramarathons, including races of 100 miles and more.",
+    "He describes repeatedly reaching points where his mind insisted he couldn't continue, and then continuing.",
+    "His '40% Rule': when your mind tells you you're done, you're really only about 40 percent done. The mind quits long before the body's true limit.",
+    "He presents the 40 percent figure as a rule of thumb from experience, not a scientific measurement.",
+    "He describes the 'Cookie Jar': a mental store of past victories and hardships you've overcome, which you can draw on in hard moments as proof that you can keep going.",
+    "He also talks about 'callusing your mind': deliberately doing hard things to build mental toughness over time.",
+    "The idea applies to mental barriers, not to ignoring genuine injury or medical warning signs."
+  ],
+  "tension": "Your mind says 'I'm done' long before you actually are. How do you know the difference?",
+  "opening_idea": "Deep into a 100-mile race, a voice says 'stop'. Goggins says it's usually lying.",
+  "lessons": [
+    {
+      "idea": "The first 'I'm done' is rarely the real limit.",
+      "anchor": "The 40% Rule"
+    },
+    {
+      "idea": "Past victories are fuel.",
+      "anchor": "The Cookie Jar"
+    },
+    {
+      "idea": "Toughness is built deliberately.",
+      "anchor": "Callusing the mind"
+    }
+  ],
+  "reflect": [
+    "When did you last quit at your first 'I'm done'?",
+    "What would you put in your cookie jar?"
+  ],
+  "reflect_final": "Where could you push just past your first urge to quit this week, safely?",
+  "use_cases": [
+    {
+      "situation": "You always stop studying the moment it gets tiring.",
+      "move": "When the urge to stop hits, do ten more minutes before deciding.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child wants to quit piano when a piece gets hard.",
+      "move": "Remind them of a past piece they thought was impossible and mastered.",
+      "context": "family"
+    },
+    {
+      "situation": "A team is ready to abandon a tough project midway.",
+      "move": "List what the team has already overcome together before deciding.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "When your mind says you're done, you're probably not even halfway.",
+  "conversation_variants": {
+    "punchline_idea": "When your mind says you're finished, you've likely used only about 40 percent.",
+    "thirty_sec_idea": "Ultramarathons, the 40% rule, cookie jar, callusing the mind, safety caveat.",
+    "question_idea": "Where did you quit at your first 'I'm done'?",
+    "key_contrast_idea": "Felt limit versus real limit"
+  }
+}

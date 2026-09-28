@@ -1,0 +1,65 @@
+{
+  "story_id": 1291,
+  "kind": "anecdote",
+  "book": {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "The two-dads framing, the 'work for money' versus 'money works for you' lesson, the asset/liability definitions and the claim that your home is not an asset are central to the book. The reference TR text's detail that the poor dad 'retired and his salary was cut' is not how the book tells it (the book describes him struggling financially after losing his government job), so it is replaced with the qualitative contrast only. Critics have questioned whether the 'rich dad' existed as a single real person; the book presents him as real, and this brief reports the book's account without verifying it. The exact wage in the store episode is omitted because I'm not certain of the figure. The 'hamster wheel' label is the reference's; the book uses 'rat race'.",
+  "facts": [
+    "Kiyosaki describes growing up with two father figures: his own highly educated father, who worked in Hawaii's state education system, and the father of his best friend Mike, who had left school early but was building businesses.",
+    "His real father advised studying hard to get a secure job; his best friend's father taught that the rich don't work for money, they make money work for them.",
+    "At about nine years old, Robert and Mike asked the rich dad to teach them how to make money; he had them dust shelves in one of his stores for a very small wage, and then, when Robert complained, for nothing at all.",
+    "The lesson, as Kiyosaki tells it, was that fear and desire keep people chasing paychecks, and that he should look for opportunities instead of a raise.",
+    "The boys then noticed that the store threw away comic books, and started a comic-book reading library for other kids that brought them income while they were not personally working in it.",
+    "The book's core definitions: an asset puts money in your pocket; a liability takes money out. By that definition, Kiyosaki argues, the home you live in is usually a liability.",
+    "By the book's account, the rich dad became one of the wealthiest men in Hawaii, while the educated dad struggled financially later in life."
+  ],
+  "tension": "The better educated, harder working father ended up struggling with money, while the man who had left school early built wealth, which cuts against everything children are taught about success.",
+  "opening_idea": "Open with two nine-year-olds dusting cans in a store for almost nothing, and the man who then took even that pay away.",
+  "lessons": [
+    {
+      "idea": "Working for a paycheck and owning something that earns are different games.",
+      "anchor": "The comic-book library earned money while the boys weren't personally working in it."
+    },
+    {
+      "idea": "Label things by cash flow, not by how they feel.",
+      "anchor": "Asset puts money in your pocket, liability takes it out; the home you live in is usually a liability."
+    },
+    {
+      "idea": "Complaining about pay can hide an opportunity you haven't noticed.",
+      "anchor": "After losing their wage, the boys spotted the discarded comic books."
+    }
+  ],
+  "reflect": [
+    "Which things you own do you call 'investments' that actually take money out every month?",
+    "Is there something around you, like the discarded comics, that could earn without your time?"
+  ],
+  "reflect_final": "List what you own and mark each item by whether it puts money in or takes money out each month; notice which answers surprise you.",
+  "use_cases": [
+    {
+      "situation": "You're about to make a big purchase and calling it an 'investment'.",
+      "move": "Apply Kiyosaki's test before buying: write down how much money it will put in your pocket each month versus take out.",
+      "context": "self"
+    },
+    {
+      "situation": "Family members are debating a larger house as 'the best investment'.",
+      "move": "Suggest listing its monthly costs next to any income it produces, and discuss it with Kiyosaki's asset/liability definition on the table.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend says they just need a raise to finally feel secure.",
+      "move": "Share the story of the boys losing their wage and then starting the comic-book library, and ask what they own that earns without their hours.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Two boys lost even their tiny wage, then found discarded comic books: Kiyosaki's line between working for money and owning something that works for you.",
+  "conversation_variants": {
+    "punchline_idea": "Rich dad's first money lesson for two nine-year-olds was to cut their pay to zero.",
+    "thirty_sec_idea": "Young Robert Kiyosaki and his friend dusted shelves for a tiny wage, lost even that, then turned the store's discarded comic books into a kids' reading library that earned without them; it became the book's lesson that the rich make money work for them.",
+    "question_idea": "Is there something you own that you've always called an asset but that actually costs you money every month?",
+    "key_contrast_idea": "Trading hours for a paycheck, versus owning things that bring money in while you're not working."
+  }
+}

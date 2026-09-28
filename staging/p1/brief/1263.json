@@ -1,0 +1,64 @@
+{
+  "story_id": 1263,
+  "kind": "anecdote",
+  "book": {
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book's chapter 'To Be or To Do?' is built around military strategist John Boyd's talk to young officers. The existing TR text reverses the book's meaning: it presents 'What am I doing?' as ego and 'What do I want to be?' as the better path, whereas in the book 'to be somebody' (rank, recognition) is the ego trap and 'to do something' (meaningful work) is the better path. The TR framing, its 'career crisis' claim and 'I want to be a just person' example are excluded. Boyd's speech is paraphrased, not quoted verbatim. His technical achievements are kept at a general level.",
+  "facts": [
+    "John Boyd was a U.S. Air Force fighter pilot and strategist whose ideas on aerial combat and aircraft design influenced a generation of American fighter planes.",
+    "Holiday describes Boyd telling promising young officers that they would reach a fork in the road.",
+    "One path is 'to be somebody': compromising, going along with the system and getting promotions and good assignments.",
+    "The other is 'to do something': working for what matters even if it costs you promotions and makes superiors unhappy.",
+    "Boyd himself chose to do: his ideas had a large impact, but he made enemies in the establishment and did not rise beyond the rank of colonel.",
+    "Holiday's point is that ego pulls us toward recognition and status, while purpose asks what we actually want to accomplish."
+  ],
+  "tension": "Boyd shaped the fighters an entire air force flew, yet chose a path that kept him from the rank and recognition his peers pursued.",
+  "opening_idea": "Open with Boyd sitting a young officer down and telling him he would soon reach a fork in the road.",
+  "lessons": [
+    {
+      "idea": "Ambition can aim at status or at work; the two often pull in different directions.",
+      "anchor": "Boyd's fork: to be somebody or to do something"
+    },
+    {
+      "idea": "Choosing the work has real costs, and it helps to accept them knowingly.",
+      "anchor": "Boyd's impact came with enemies and a career that stopped at colonel"
+    },
+    {
+      "idea": "Clarifying what you want to do makes compromises for status easier to spot.",
+      "anchor": "Holiday's contrast between recognition and purpose"
+    }
+  ],
+  "reflect": [
+    "In your current work, what would 'being somebody' look like, and what would 'doing something' look like?",
+    "Have you ever traded the work you cared about for approval or a title?"
+  ],
+  "reflect_final": "At your next decision about a project, role or opportunity, ask yourself Boyd's question: does this help me be somebody or do something? Notice which answer you hoped for.",
+  "use_cases": [
+    {
+      "situation": "You're offered a more visible role that would take you away from the work you find meaningful.",
+      "move": "Write down what you'd do in each role, not what you'd be called, and decide from that list.",
+      "context": "self"
+    },
+    {
+      "situation": "A talented team member asks your advice on chasing a promotion.",
+      "move": "Share Boyd's fork, 'to be somebody or to do something', and ask which one this promotion serves for them.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A team debate drifts toward who gets credit for a launch.",
+      "move": "Redirect: 'What do we actually want this to change for users?' and plan around that answer.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "At Boyd's fork, one road leads to a title and the other to the work; you rarely get both.",
+  "conversation_variants": {
+    "punchline_idea": "John Boyd told young officers they'd have to choose between being somebody and doing something.",
+    "thirty_sec_idea": "Air Force strategist John Boyd warned protégés of a fork: go along and get promoted, or do work that matters and pay for it. Boyd chose the work; his ideas shaped fighter jets, but he never rose past colonel.",
+    "question_idea": "Have you ever had to choose between the recognition and the work itself?",
+    "key_contrast_idea": "Wanting to be someone versus wanting to do something."
+  }
+}

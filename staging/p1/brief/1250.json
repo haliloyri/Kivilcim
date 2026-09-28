@@ -1,0 +1,64 @@
+{
+  "story_id": 1250,
+  "kind": "concept",
+  "book": {
+    "title": "Money: Master the Game",
+    "author": "Tony Robbins",
+    "year": "2014"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference TR text's title calls compounding 'the most powerful force of the free market' and invokes a quote often attributed to Einstein about compound interest; that attribution is widely considered apocryphal and is not used. Robbins's book strongly emphasizes compounding and the importance of starting early. To illustrate the principle, the story uses a classic hypothetical comparison of an early saver and a late saver; it is presented as an illustration of Robbins's point, not as a specific example from the book, since its exact form in the book cannot be confirmed. The numbers in the illustration are round and approximate, using an assumed steady return.",
+  "facts": [
+    "Robbins argues that compounding, returns earning further returns over time, is the key force that turns modest savings into significant wealth.",
+    "He stresses that time is the most important ingredient: the earlier you start, the more years compounding has to work.",
+    "A classic illustration: one person invests a fixed amount each year from about age 19 to 27 and then stops; another starts at 27 and invests the same yearly amount until 65. With a steady high return, the early starter can end up with a comparable or even larger sum despite contributing for far fewer years.",
+    "The exact result depends on the assumed rate of return; the pattern, that early years are extremely valuable, holds across reasonable assumptions.",
+    "Robbins's message: don't wait until you earn more to start; start with what you have, and let time work.",
+    "Real returns vary year to year; illustrations use steady averages for simplicity."
+  ],
+  "tension": "Waiting until you earn more seems sensible. Compounding makes waiting expensive.",
+  "opening_idea": "Two friends save the same amount each year. One starts at 19 and stops at 27. The other starts at 27 and never stops. Guess who ends up with more.",
+  "lessons": [
+    {
+      "idea": "Time matters more than amount.",
+      "anchor": "Early saver vs late saver"
+    },
+    {
+      "idea": "Early years are the most valuable.",
+      "anchor": "Compounding's accelerating curve"
+    },
+    {
+      "idea": "Start with what you have.",
+      "anchor": "Robbins's advice not to wait"
+    }
+  ],
+  "reflect": [
+    "What are you waiting for before you start saving or investing?",
+    "Who in your life could benefit from starting early?"
+  ],
+  "reflect_final": "What small amount could you start putting to work today?",
+  "use_cases": [
+    {
+      "situation": "You're in your twenties and think saving can wait.",
+      "move": "Start a small automatic monthly investment now, even a tiny one.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child gets their first summer job.",
+      "move": "Help them invest a small part of it and show them how time grows it.",
+      "context": "family"
+    },
+    {
+      "situation": "A young colleague says investing is for later.",
+      "move": "Share the early-versus-late saver illustration.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "In compounding, the best time to start was yesterday; the next best is today.",
+  "conversation_variants": {
+    "punchline_idea": "Someone who invests for just eight early years can end up ahead of someone who invests for forty later ones.",
+    "thirty_sec_idea": "Compounding, early vs late saver illustration, start now.",
+    "question_idea": "What are you waiting for before you start?",
+    "key_contrast_idea": "Early versus late"
+  }
+}

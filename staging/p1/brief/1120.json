@@ -1,0 +1,66 @@
+{
+  "story_id": 1120,
+  "kind": "anecdote",
+  "book": {
+    "title": "Beyin Fırtınası",
+    "author": "David Eagleman",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core material is well established and fits Eagleman's writing: split-brain patients, the talking left hemisphere, and confabulated explanations. But the reference TR text has the anatomy wrong. The split-brain setup works by visual field, not by covering one eye, and each eye feeds both hemispheres. An image flashed to the left visual field reaches the right hemisphere, which controls the left hand. The brief follows the correct version. The 'interpreter' concept comes from Michael Gazzaniga's split-brain research, which Eagleman discusses; do not present Eagleman as its originator. The Turkish title 'Beyin Fırtınası' and its match to a specific English original (2015 suggests 'The Brain: The Story of You') are not verified. The exact example objects in the book are uncertain, so writers should not name specific items.",
+  "facts": [
+    "In some patients with severe, drug-resistant epilepsy, surgeons cut the corpus callosum, the fiber bundle that connects the two brain hemispheres, to stop seizures from spreading.",
+    "In everyday life these 'split-brain' patients seem largely normal: they walk, talk, and carry on with their lives.",
+    "In laboratory tests, an image is flashed briefly to only one visual field, so the information reaches only one hemisphere.",
+    "When an image goes to the right hemisphere (the left visual field), the patient's left hand, which that hemisphere controls, can correctly pick the matching object.",
+    "Speech is mainly handled by the left hemisphere, which never saw the image, so the patient cannot say verbally why the hand made that choice.",
+    "Instead of saying 'I don't know', the verbal left hemisphere often produces a fluent, plausible but false explanation for the choice.",
+    "Researchers (notably Michael Gazzaniga) call this left-hemisphere tendency the 'interpreter': a system that builds a coherent story even without the real information.",
+    "Eagleman uses this to argue that much of our behavior is driven by unconscious processes, and that the conscious mind often writes the justification afterward."
+  ],
+  "tension": "The patient's hand clearly knows what it is doing, yet the speaking part of the brain confidently explains the action with a reason that is completely made up.",
+  "opening_idea": "Start with the image of someone confidently explaining a choice their brain never actually told them about.",
+  "lessons": [
+    {
+      "idea": "The part of the brain that explains a behavior is not necessarily the part that caused it.",
+      "anchor": "The left hand chooses correctly; the talking hemisphere invents the reason."
+    },
+    {
+      "idea": "The mind prefers a coherent story to admitting ignorance, and it makes one up smoothly and sincerely.",
+      "anchor": "Split-brain patients do not say 'I don't know'; they give a plausible, wrong reason."
+    },
+    {
+      "idea": "This interpreter works in everyone, so our reasons for decisions are often reconstructions after the fact.",
+      "anchor": "Eagleman's claim that unconscious processes drive much of behavior while consciousness narrates."
+    }
+  ],
+  "reflect": [
+    "When did you last explain a choice fluently, only to realize later the real driver was something else?",
+    "How confident would you be that your stated reason is the actual cause, and what would count as evidence?"
+  ],
+  "reflect_final": "Think of your last big decision: was your reason the real cause, or a story written afterward?",
+  "use_cases": [
+    {
+      "situation": "A team is quickly agreeing on a rationale for a decision that was really made on gut feeling.",
+      "move": "Ask: 'If this reason turned out to be false, would we still choose the same? If yes, let's name what's actually driving us.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are about to justify an impulsive purchase or a snap reaction to yourself.",
+      "move": "Write down your reason, then add one line: 'What else might really be going on?' Answer it before acting.",
+      "context": "self"
+    },
+    {
+      "situation": "A partner or child gives a confident explanation for behavior that doesn't quite add up.",
+      "move": "Instead of challenging the logic, say: 'Sometimes we find the reason after we've already acted. How did it feel in the moment?'",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The brain that makes the decision and the brain that explains it are not the same.",
+  "conversation_variants": {
+    "punchline_idea": "Our brain would rather invent a good reason than admit it doesn't know.",
+    "thirty_sec_idea": "In split-brain patients, the non-verbal hemisphere steers the hand while the verbal hemisphere invents a confident but false reason, and Eagleman argues we all do this.",
+    "question_idea": "Ask the listener how sure they are that the reason they give for a choice is what actually caused it.",
+    "key_contrast_idea": "Contrast the hand that acts on real information with the voice that explains it from none."
+  }
+}

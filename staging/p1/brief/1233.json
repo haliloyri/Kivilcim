@@ -1,0 +1,66 @@
+{
+  "story_id": 1233,
+  "kind": "anecdote",
+  "book": {
+    "title": "Switch: How to Change Things When Change Is Hard",
+    "author": "Chip Heath and Dan Heath",
+    "year": "2010"
+  },
+  "confidence": "high",
+  "confidence_note": "The glove story is a well-known example from Switch under 'motivate the Elephant'. Jon Stegner, at a large manufacturing company, believed the company could save a great deal by consolidating purchasing. He had a summer intern collect every type of work glove the company's factories bought, with price tags: 424 different kinds, with the same glove sometimes bought at very different prices. He piled them on the boardroom table and invited division presidents to look. The display created a strong emotional reaction and led to change. The Heaths use it to show the 'see-feel-change' sequence rather than 'analyze-think-change'. They also note that 'what looks like laziness is often exhaustion'. Figures kept as in the book; the price examples ($5 vs $17) are omitted.",
+  "facts": [
+    "Jon Stegner worked at a large manufacturing company and believed it was wasting a lot of money through uncoordinated purchasing.",
+    "He knew that a spreadsheet presentation would not persuade the executives.",
+    "He asked a summer intern to find every type of work glove used in the company's factories, along with the price paid for each.",
+    "The intern found 424 different kinds of gloves. The same glove was sometimes bought at very different prices by different factories.",
+    "Stegner piled all the gloves, tagged with their prices, on the boardroom table and invited the division presidents to see them.",
+    "The executives were shocked; the display became a traveling exhibit and helped push the company to change its purchasing.",
+    "The Heaths describe this as 'see-feel-change': people change more readily when they see something that makes them feel, not just analyze.",
+    "They also note that what looks like laziness is often exhaustion: self-control is a limited resource."
+  ],
+  "tension": "Data alone couldn't convince the executives. A pile of gloves did.",
+  "opening_idea": "Executives walk into a boardroom and find the table buried under hundreds of work gloves.",
+  "lessons": [
+    {
+      "idea": "Feelings drive change more than analysis.",
+      "anchor": "See-feel-change"
+    },
+    {
+      "idea": "Make the problem visible and concrete.",
+      "anchor": "424 gloves on a table"
+    },
+    {
+      "idea": "Resistance may be exhaustion.",
+      "anchor": "'What looks like laziness is often exhaustion'"
+    }
+  ],
+  "reflect": [
+    "What change have you tried to argue for with data alone?",
+    "How could you make that problem visible?"
+  ],
+  "reflect_final": "What is your 'pile of gloves', the thing that would make people feel the problem?",
+  "use_cases": [
+    {
+      "situation": "Your team ignores your spreadsheet about wasted resources.",
+      "move": "Bring a concrete, physical example of the waste to the next meeting.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your family ignores requests to reduce food waste.",
+      "move": "Collect one week's thrown-away food in a bag and show it.",
+      "context": "family"
+    },
+    {
+      "situation": "You struggle to stick to a change and call yourself lazy.",
+      "move": "Consider whether you're exhausted, and make the change easier rather than blaming yourself.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "People change when they feel the problem, not just when they understand it.",
+  "conversation_variants": {
+    "punchline_idea": "424 different gloves piled on a boardroom table did what a spreadsheet couldn't.",
+    "thirty_sec_idea": "Stegner, the intern, the glove pile, see-feel-change.",
+    "question_idea": "What would make people feel the problem you're trying to fix?",
+    "key_contrast_idea": "Analyze versus feel"
+  }
+}

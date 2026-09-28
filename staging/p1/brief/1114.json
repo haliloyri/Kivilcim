@@ -1,0 +1,64 @@
+{
+  "story_id": 1114,
+  "kind": "concept",
+  "book": {
+    "title": "Purple Cow",
+    "author": "Seth Godin",
+    "year": "2003"
+  },
+  "confidence": "low",
+  "confidence_note": "The reference text's central examples cannot be reliably traced to Purple Cow and are left out of the facts. These are the 'best pizza on Brooklyn's 5th Avenue' scenario, the 'left-handed, 35–50, jazz-loving guitarists' teacher, and the claim that 'Google makes every niche global'. The 'be the best in the world, where the customer defines the world' framing is more closely tied to Godin's later book The Dip (2007). The brief keeps only the core argument Purple Cow is known for. That argument is: be remarkable rather than 'very good', and aim at the small group of early adopters and 'sneezers' who care, not the average mass market. Purple Cow does use product cases, such as the Aeron chair or Dutch Boy's twist-and-pour paint can, but none is cited here as a niche example, to avoid misattribution.",
+  "facts": [
+    "The book's title comes from Godin's image of a drive through the countryside: after a while, ordinary brown cows become boring, but a purple cow would be worth noticing and talking about.",
+    "Godin argues that 'very good' products are invisible in crowded markets. The opposite of remarkable is 'very good', not 'bad'.",
+    "He argues that trying to appeal to the average, mass-market customer is a losing strategy, because that customer ignores new things.",
+    "Instead, he recommends designing for the small group of early adopters who actively want something new and will spread it. He calls the people who spread ideas 'sneezers'.",
+    "He argues that playing it safe by being bland and broadly acceptable is actually the risky choice, because it guarantees being overlooked.",
+    "Being remarkable to a specific, interested group matters more than being acceptable to everyone."
+  ],
+  "tension": "The instinct is to widen your appeal so nobody is excluded. But in a crowded market, broad and 'very good' means unnoticed. Only something remarkable to a specific group gets talked about.",
+  "opening_idea": "Picture a field of brown cows: pleasant, fine, and completely forgettable. Then picture one purple cow and ask which one you would tell a friend about.",
+  "lessons": [
+    {
+      "idea": "'Very good' is the new invisible. In a crowded market, competence alone doesn't earn attention.",
+      "anchor": "The opposite of remarkable is very good."
+    },
+    {
+      "idea": "Aim at the people who care, not the average customer. Early adopters and sneezers are the ones who notice and spread what's new.",
+      "anchor": "Design for the sneezers, not the masses."
+    },
+    {
+      "idea": "Safe is risky. Blending in to avoid rejection guarantees being ignored.",
+      "anchor": "Being boring is the riskiest strategy."
+    }
+  ],
+  "reflect": [
+    "Is the thing you offer merely 'very good', or would someone actually go out of their way to tell others about it?",
+    "Who are the few people most likely to care intensely about what you do, and are you designing for them or for everyone?"
+  ],
+  "reflect_final": "What would you have to change to become remarkable to a specific group, even if it made you less appealing to everyone else?",
+  "use_cases": [
+    {
+      "situation": "A team is polishing a product or proposal so it offends no one and fits every audience.",
+      "move": "Ask the room: 'Who is the one group that would rave about this? Let's cut whatever dilutes it for them.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague asks for feedback on a solid but forgettable plan.",
+      "move": "Tell them: 'This is very good, and that's the problem. What's the one thing here people would talk about?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're describing your own work, CV, or side project in generic, cover-all-bases terms.",
+      "move": "Rewrite your pitch for one specific person who would love it, and drop the lines aimed at everyone.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "In a field of brown cows, 'very good' is invisible. Be the purple cow for the people who care.",
+  "conversation_variants": {
+    "punchline_idea": "Godin's jab: the opposite of remarkable isn't bad, it's very good.",
+    "thirty_sec_idea": "Describe the brown-cows-then-purple-cow drive and explain why markets ignore the merely good and reward the remarkable.",
+    "question_idea": "Ask: if you had to be remarkable to just one group, which group would you pick?",
+    "key_contrast_idea": "Being safe and acceptable to everyone versus being remarkable to the few who will spread the word."
+  }
+}

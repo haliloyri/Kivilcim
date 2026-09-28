@@ -1,0 +1,71 @@
+{
+  "story_id": 1060,
+  "kind": "concept",
+  "book": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "The two-smokers example, 'every action is a vote for the type of person you wish to become,' the three layers of change (outcomes, processes, identity) and the two-step method (decide who you want to be, prove it with small wins) all come from Chapter 2, 'How Your Habits Shape Your Identity (and Vice Versa).' The reference text overstates one point: Clear does not claim that behavior change becomes effortless once identity shifts. He says it becomes easier and less dependent on willpower or motivation, because you are acting in line with who you believe you are. The brief keeps that softer framing.",
+  "facts": [
+    "The book's case: two people resisting a cigarette are each offered one.",
+    "The first says, 'No thanks, I'm trying to quit.' The second says, 'No thanks, I'm not a smoker.'",
+    "Clear argues the first still sees himself as a smoker who is trying to act differently. The second has shifted his identity and no longer treats smoking as part of himself.",
+    "Clear describes three layers of change. Outcomes are what you get. Processes are what you do. Identity is what you believe about yourself.",
+    "Most people start with outcomes. Clear argues that durable habits start with identity.",
+    "Each action is a vote for the type of person you wish to become. No single vote decides it, but evidence accumulates, and you only need a majority, not a unanimous vote.",
+    "He proposes two steps: decide the type of person you want to be, then prove it to yourself with small wins.",
+    "He notes that 'identity' derives from Latin roots meaning 'being' and 'repeatedly.' Identity is repeated beingness."
+  ],
+  "tension": "Two refusals that sound almost identical reveal opposite self-images. One person is fighting a habit, and the other has stopped belonging to it.",
+  "opening_idea": "Start with the moment the cigarette is offered and put the two nearly identical answers side by side. Ask the reader to guess which person is more likely to stay smoke-free.",
+  "lessons": [
+    {
+      "idea": "Lasting change begins with who you believe you are, not with the result you want.",
+      "anchor": "The three layers: outcomes, processes, identity"
+    },
+    {
+      "idea": "Every small action is a vote for an identity. You need a majority of votes, not perfection.",
+      "anchor": "'Every action you take is a vote for the type of person you wish to become'"
+    },
+    {
+      "idea": "The words you use about yourself reveal whether a behavior is something you resist or something you are.",
+      "anchor": "'I'm trying to quit' vs. 'I'm not a smoker'"
+    },
+    {
+      "idea": "Identity is built through repetition, so small wins are the proof that makes a new self-image believable.",
+      "anchor": "Decide who you want to be, then prove it with small wins"
+    }
+  ],
+  "reflect": [
+    "Which goal do you describe with 'I'm trying to…' rather than 'I am someone who…'?",
+    "What did your actions this week vote for, even if you didn't intend them to?",
+    "Which identity do you still carry that no longer matches who you want to be?"
+  ],
+  "reflect_final": "If you swapped 'I'm trying to' for 'I'm the kind of person who' in one area of your life, what small action tomorrow would prove it true?",
+  "use_cases": [
+    {
+      "situation": "Setting a team goal that keeps slipping, such as better documentation or on-time delivery.",
+      "move": "Reframe it as identity: 'We're a team that ships with docs.' Then agree on one tiny recurring action that counts as a vote, for example one paragraph of docs per pull request.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Starting a new habit like exercise or reading that you've abandoned before.",
+      "move": "Write one sentence, 'I am someone who ___,' and each day do a version of the habit so small you can't skip it. Mark it as a vote cast.",
+      "context": "self"
+    },
+    {
+      "situation": "A child or partner says 'I'm bad at math' or 'I'm not a morning person.'",
+      "move": "Point to one recent piece of evidence against the label, such as 'You solved that yesterday.' Ask what one small action would add another vote for the identity they'd prefer.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Don't aim to quit something. Aim to become someone who doesn't do it, and let each small action cast the vote.",
+  "conversation_variants": {
+    "punchline_idea": "'I'm trying to quit' and 'I'm not a smoker' differ by a few words and a whole identity.",
+    "thirty_sec_idea": "Clear's example of two people refusing a cigarette shows that habits stick when they become part of who you are, and each action is a small vote for that self.",
+    "question_idea": "Ask the other person how they'd finish the sentence 'I'm the kind of person who…' about a habit they're working on.",
+    "key_contrast_idea": "Outcome-based change asks 'What do I want to achieve?' Identity-based change asks 'Who do I want to become?'"
+  }
+}

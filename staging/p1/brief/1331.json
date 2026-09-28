@@ -1,0 +1,63 @@
+{
+  "story_id": 1331,
+  "kind": "anecdote",
+  "book": {
+    "title": "Özgür Olmak (The Subtle Art of Not Giving a F*ck)",
+    "author": "Mark Manson",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The distinction between fault and responsibility ('fault is past tense, responsibility is present tense') and the example of a baby left on your doorstep are in The Subtle Art of Not Giving a F*ck (title given here as 'Özgür Olmak'), as is the story of William James deciding, after years of failure and despair, to take full responsibility for his life as an experiment. The TR text's Viktor Frankl passage could not be attributed to this book and is excluded; exact durations and dates in the James story are omitted. Not checked against the text.",
+  "facts": [
+    "Manson distinguishes fault from responsibility: fault looks back at who caused something, responsibility concerns what you choose to do now.",
+    "His illustration: if someone leaves a baby on your doorstep, it isn't your fault, but it is now your responsibility, because whatever you do next is a choice.",
+    "He tells of William James, who as a young man had failed at several paths, including painting and medicine, was frequently ill, and fell into deep despair.",
+    "After reading the philosopher Charles Renouvier on free will, James decided to run an experiment: for a period he would act as if he were fully responsible for everything in his life.",
+    "James went on to become one of the founders of American psychology; Manson presents the decision as the turning point, which is the author's interpretation, not proven causation."
+  ],
+  "tension": "William James had failed repeatedly through no single clear fault of his own, and his way out was to take on responsibility for a life he didn't feel he had caused.",
+  "opening_idea": "Open with a baby left on your doorstep: you didn't cause it, but the next move is entirely yours.",
+  "lessons": [
+    {
+      "idea": "Fault and responsibility are different questions; confusing them keeps people stuck.",
+      "anchor": "the baby left on the doorstep"
+    },
+    {
+      "idea": "Taking responsibility can be tried as an experiment, not a lifelong vow.",
+      "anchor": "William James's decision after reading Renouvier"
+    },
+    {
+      "idea": "You always choose your response, even when you didn't choose the situation.",
+      "anchor": "Manson's 'fault is past tense, responsibility is present tense'"
+    }
+  ],
+  "reflect": [
+    "Is there a problem you've avoided solving because it wasn't your fault?",
+    "When have you felt more in control simply by deciding the next step was yours?"
+  ],
+  "reflect_final": "Pick one situation you've been blaming on someone else, and decide on one next step that's within your control; afterward, notice whether it felt heavier or lighter.",
+  "use_cases": [
+    {
+      "situation": "An incident review is stuck on which team caused the outage.",
+      "move": "Split the discussion: five minutes on cause, then ask 'Regardless of fault, what will each of us own from here?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A team member inherited a messy codebase and is frustrated.",
+      "move": "Mention Manson's baby-on-the-doorstep image, agree the mess isn't their fault, and ask which one part they want to take ownership of first.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A sibling's decision has left you handling a family obligation.",
+      "move": "Say 'This isn't how I'd have chosen it, but here's what I'll handle,' and name one concrete task.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The baby on the doorstep isn't your fault, but the next hour is your choice.",
+  "conversation_variants": {
+    "punchline_idea": "If a baby is left on your doorstep, it's not your fault, but it is your responsibility.",
+    "thirty_sec_idea": "William James failed at painting and medicine and sank into despair, then decided to act as if he were fully responsible for his life; Manson uses the story to separate fault, which looks back, from responsibility, which looks forward.",
+    "question_idea": "What's something you took charge of even though it wasn't your fault, and how did that change it?",
+    "key_contrast_idea": "Asking whose fault it is versus asking what's mine to do now."
+  }
+}

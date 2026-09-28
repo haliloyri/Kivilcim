@@ -1,0 +1,39 @@
+{
+  "story_id": 1311,
+  "kind": "concept",
+  "book": { "title": "Thinking in Systems: A Primer", "author": "Donella H. Meadows", "year": "2008" },
+  "confidence": "medium",
+  "confidence_note": "Delays in balancing feedback loops causing oscillation are a central, well-attested point of the book. The book's main worked example is a car dealership managing its inventory, with perception, response, and delivery delays; Meadows shows that reacting faster makes oscillations worse and reacting more slowly damps them. The TR text's shower story is a widely used systems-thinking image, but it could not be confirmed as the book's own example, so it is left out of facts. The TR text's central-bank '12-18 months' figure and the company-strategy scenario are not from the book and are excluded.",
+  "facts": [
+    "Meadows explains that the information in a feedback loop arrives with a delay, so a system responds to the past, not the present.",
+    "Her main example is a car dealership trying to keep a steady inventory of cars on its lot.",
+    "The dealer faces three delays: a perception delay (averaging sales before believing a change is real), a response delay (spreading orders out over time), and a delivery delay (the factory takes time to ship).",
+    "When demand rises slightly and stays there, these delays make inventory swing up and down in oscillations instead of settling smoothly.",
+    "Counterintuitively, when the dealer reacts faster, the oscillations get worse; when the dealer reacts more slowly, the oscillations shrink.",
+    "Meadows's conclusion is that delays strongly shape behavior, and changing the length of a delay, or how we respond to it, can change the whole pattern."
+  ],
+  "tension": "Reacting quickly feels like good management, yet in Meadows's car dealership, reacting faster is exactly what makes the swings worse.",
+  "opening_idea": "Start with a car dealer watching sales tick up and placing a bigger order, not knowing the cars will arrive days later into a changed situation.",
+  "lessons": [
+    { "idea": "In a system with delays, you are always responding to old information.", "anchor": "The dealer's perception, response, and delivery delays." },
+    { "idea": "Faster reaction to a delayed signal can amplify swings instead of fixing them.", "anchor": "In the model, reacting faster made the inventory oscillations worse; reacting more slowly calmed them." },
+    { "idea": "Know the length of a delay before you judge whether an action is working.", "anchor": "The factory's delivery delay means orders show up long after they are placed." }
+  ],
+  "reflect": [
+    "Where did you change course recently before the effect of your first decision could have arrived?",
+    "Which of your decisions take the longest to show results, and do you usually wait that long?"
+  ],
+  "reflect_final": "Before your next adjustment to something you already changed, write down how long its effect realistically takes to show, and hold the next change until then. Afterward, notice whether the swings got smaller.",
+  "use_cases": [
+    { "situation": "Leadership wants to change a process again two weeks after the last change.", "move": "Remind the room of Meadows's car dealer, who made swings worse by reacting faster, and propose agreeing on when the first change's effect should be visible before adding another.", "context": "meeting" },
+    { "situation": "A team member keeps rewriting their plan because early results look flat.", "move": "Ask: 'What is the delay between doing this and seeing it in the numbers?' and set a review date that matches it.", "context": "oneonone" },
+    { "situation": "You are adjusting something in your own routine, such as sleep or diet, every few days.", "move": "Make one change, note the date, and wait for a realistic delay before changing anything else.", "context": "self" }
+  ],
+  "pocket_idea": "Meadows's car dealer made the swings worse by ordering faster; when results arrive late, the quickest correction can be the one that shakes the system most.",
+  "conversation_variants": {
+    "punchline_idea": "In Meadows's model, the car dealer who reacted faster to sales made the inventory swings worse, not better.",
+    "thirty_sec_idea": "A car dealer sees sales rise and orders more, but the cars arrive days later, into a changed situation; with three delays in the loop, inventory swings up and down, and reacting faster only amplifies it.",
+    "question_idea": "Have you ever given up on something just before it would have started working?",
+    "key_contrast_idea": "Not 'react quickly', but 'react at the speed the system can actually answer'."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "story_id": 1222,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Charisma Myth",
+    "author": "Olivia Fox Cabane",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "Cabane opens The Charisma Myth with a story about Marilyn Monroe: to show that charisma could be switched on and off, Monroe walked through a New York subway station and rode the train with a magazine editor and a photographer, and no one recognized her; then, back on the street, she asked something like 'Do you want to see her?', changed her posture and manner, and was soon surrounded by people. Accounts differ on the exact people present (often described as a Redbook editor and photographer); the brief keeps them generic. The reference TR text sets it in a dressing room and with a 'journalist friend' only; the subway-and-street version is used. Monroe's line is paraphrased.",
+  "facts": [
+    "Cabane opens her book with a story about Marilyn Monroe.",
+    "Monroe wanted to show a magazine editor and a photographer that she could switch her glamorous persona on and off.",
+    "Dressed ordinarily, she walked through a busy New York subway station and rode the train. No one recognized her.",
+    "Back on the street, she reportedly asked whether they wanted to see her become 'Marilyn'.",
+    "She changed her body language and manner: fluffed her hair, struck a pose, and projected her presence outward.",
+    "Within moments people noticed her and a crowd gathered.",
+    "Cabane uses the story to argue that charisma is not an innate magic quality but the result of specific behaviors that can be learned."
+  ],
+  "tension": "One of the most famous women in the world rode the subway unnoticed. Then, in a moment, she wasn't.",
+  "opening_idea": "Marilyn Monroe stands on a subway platform, and nobody looks twice.",
+  "lessons": [
+    {
+      "idea": "Charisma is behavior, not magic.",
+      "anchor": "Monroe switching it on and off"
+    },
+    {
+      "idea": "Presence and body language are powerful signals.",
+      "anchor": "Her change of posture"
+    },
+    {
+      "idea": "Charisma can be learned.",
+      "anchor": "Cabane's central argument"
+    }
+  ],
+  "reflect": [
+    "When do you 'switch on' and when do you fade into the background?",
+    "What signals do you send without realizing it?"
+  ],
+  "reflect_final": "What one behavior could you change to be more present in your next important conversation?",
+  "use_cases": [
+    {
+      "situation": "You're about to give a presentation and feel invisible.",
+      "move": "Adjust your posture, slow down and make eye contact before you speak.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A shy team member believes charisma is something you're born with.",
+      "move": "Share the Monroe story and suggest one small behavior to practice.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You tend to disappear in social gatherings.",
+      "move": "Choose one conversation and give it your full attention and open body language.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Charisma isn't something you have; it's something you do.",
+  "conversation_variants": {
+    "punchline_idea": "Marilyn Monroe could ride the subway unnoticed, then turn heads in seconds.",
+    "thirty_sec_idea": "Monroe unnoticed on the subway, switching on 'Marilyn', Cabane's point.",
+    "question_idea": "When do you switch on, and when do you fade out?",
+    "key_contrast_idea": "Invisible versus magnetic"
+  }
+}

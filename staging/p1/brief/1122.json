@@ -1,0 +1,72 @@
+{
+  "story_id": 1122,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Power of Habit (Turkish edition: Alışkanlıkların Gücü)",
+    "author": "Charles Duhigg",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Hopkins/Pepsodent story is a core case in the book's chapter on the 'craving brain,' and its outline is well established. The book reports that about 7% of Americans had toothpaste at home before the campaign and about 65% a decade later. Those figures are included here, but they should be stated as approximate and attributed to the book. No exact campaign year is given, so none is used. The reference TR text differs from the book in two ways. First, it quotes an ad line ('feel the clean feeling') that the book does not report; Hopkins's ads actually focused on the tooth 'film' as the cue. Second, it frames the lesson as 'understand the reward,' but the book's point here is that a craving linking cue and reward is what makes a habit stick. The advice to keep the cue and reward and swap the routine belongs to a later chapter.",
+  "facts": [
+    "In the early 1900s, tooth brushing was uncommon in the US, even as national concern about poor dental health grew.",
+    "Claude Hopkins, a famous advertising man, was persuaded to promote a toothpaste called Pepsodent.",
+    "While reading dental literature, Hopkins found material about the mucin film that naturally coats teeth. He made that film the cue: ads told people to run their tongue across their teeth and feel the film.",
+    "The ads promised a reward, beautiful teeth, and said Pepsodent removed the film.",
+    "According to the book, only about 7% of Americans had toothpaste at home before the campaign, and roughly 65% did about a decade later. Hopkins became wealthy from it.",
+    "Hopkins credited his success to finding a simple cue and a clear reward.",
+    "Duhigg argues that cue and reward were not enough. Pepsodent contained ingredients such as citric acid and mint oil that left a cool, tingling sensation.",
+    "People came to expect and crave that tingle as proof the paste was working. Without it, their mouths felt 'not clean.' This craving is what turned brushing into an automatic habit.",
+    "Duhigg notes that competing toothpastes without such irritants did poorly, and that most toothpastes today include ingredients whose main job is to produce the tingle.",
+    "The book's general claim: habits run on a cue-routine-reward loop, but they become powerful only when the brain starts anticipating the reward. That anticipation is a craving."
+  ],
+  "tension": "Dentists and experts could not get Americans to brush, and even the famous ad man thought his cue-plus-reward formula explained his success. The real driver was an unplanned tingle that made people crave the feeling of clean.",
+  "opening_idea": "Start with the puzzle: a whole nation ignored dentists' warnings about brushing. Then an ad man got them to change, and the reason had little to do with health.",
+  "lessons": [
+    {
+      "idea": "A habit forms as a loop: a cue triggers a routine, which delivers a reward.",
+      "anchor": "Tongue feels the film (cue) → brush with Pepsodent (routine) → clean, beautiful teeth (reward)."
+    },
+    {
+      "idea": "Cue and reward alone don't lock in a habit. The brain has to start anticipating and craving the reward.",
+      "anchor": "The tingle made people feel something was missing when they skipped brushing."
+    },
+    {
+      "idea": "A small sensory signal that the reward is arriving can power the craving, even if it does nothing useful itself.",
+      "anchor": "Citric acid and mint oil clean nothing. They only make the paste feel like it works, and competitors without them struggled."
+    },
+    {
+      "idea": "The people who build a habit may misunderstand why it worked.",
+      "anchor": "Hopkins credited his cue and reward. Duhigg points to the craving created by the tingle."
+    }
+  ],
+  "reflect": [
+    "Which of your daily habits would feel 'wrong' or incomplete if you skipped it? What exactly would you miss?",
+    "What small sensation or signal tells you a habit has 'worked'? Examples: a notification sound, a checkmark, a taste."
+  ],
+  "reflect_final": "Think of a good habit you keep failing to build. What could you crave at the end of it, so that skipping it would feel like something is missing?",
+  "use_cases": [
+    {
+      "situation": "You're launching a new team practice, such as a daily update, and people forget it after a week.",
+      "move": "Attach an immediate, felt signal of completion: a visible board that turns green or a quick shout-out when everyone has posted. Finishing then gives a small reward people start to expect.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You want to start exercising in the mornings but keep skipping it.",
+      "move": "Choose one clear cue, such as shoes by the bed, and one small reward you actually enjoy right after, such as a favorite drink or a tracker streak. Repeat it until skipping it feels like something is missing.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child resists a routine like tidying up or brushing teeth.",
+      "move": "Add a sensory 'it worked' moment at the end: a fun-flavored toothpaste, a sticker, a song that only plays when the room is done. The child then anticipates that moment instead of just being told the routine is good for them.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Habits stick when your brain starts craving the reward. Build the craving, not just the routine.",
+  "conversation_variants": {
+    "punchline_idea": "America didn't start brushing because of dentists. It started because toothpaste tingled.",
+    "thirty_sec_idea": "Ad man Claude Hopkins sold Pepsodent by pointing out the film on teeth. Ownership of toothpaste went from about 7% to about 65% in a decade, but Duhigg says the secret was the minty tingle people came to crave.",
+    "question_idea": "If your toothpaste didn't tingle, would you still feel your teeth were clean?",
+    "key_contrast_idea": "Hopkins believed a cue and a reward did the job. Duhigg shows it was the craving, a signal people missed when it was gone, that made the habit automatic."
+  }
+}

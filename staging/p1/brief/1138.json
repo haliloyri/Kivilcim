@@ -1,0 +1,64 @@
+{
+  "story_id": 1138,
+  "kind": "concept",
+  "book": {
+    "title": "The Speed of Trust",
+    "author": "Stephen M. R. Covey",
+    "year": "2006"
+  },
+  "confidence": "medium",
+  "confidence_note": "The trust tax and trust dividend are core ideas of the book, as is Covey's amendment to the usual formula: strategy times execution equals results, but trust multiplies both, (S x E) T = R. The book also names seven taxes of low trust inside organizations: redundancy, bureaucracy, politics, disengagement, turnover, churn and fraud; this list is recalled with reasonable but not perfect certainty. The reference TR text's merger statistics are explicitly hedged and are left out, as is its claim about bureaucracy being 'fossilized' breaches, which is a paraphrase rather than a book quotation. The manager-who-checks-every-email scenario is illustrative, not a case from the book.",
+  "facts": [
+    "The common formula for results is strategy multiplied by execution.",
+    "Covey adds a hidden variable: trust. His version is (Strategy x Execution) x Trust = Results. Low trust can undermine a good strategy that is well executed.",
+    "He calls the extra cost of low trust a 'tax': it slows everything down and makes it more expensive, and it never appears as a line on the income statement.",
+    "Covey lists the taxes of low trust inside organizations: redundancy, bureaucracy, politics, disengagement, turnover, churn and fraud.",
+    "The opposite is a 'trust dividend': high trust speeds up decisions, improves collaboration and lowers cost.",
+    "Covey argues these taxes and dividends are present in every relationship, whether or not anyone measures them."
+  ],
+  "tension": "A team can have the right strategy and work hard, and still be slow and expensive for a reason nobody records anywhere.",
+  "opening_idea": "Every organization pays a tax that never appears in any budget, and most people pay it without knowing.",
+  "lessons": [
+    {
+      "idea": "Trust multiplies strategy and execution; low trust shrinks the results of both.",
+      "anchor": "(S x E) T = R"
+    },
+    {
+      "idea": "The trust tax is paid in hidden forms like extra checks, politics and disengagement.",
+      "anchor": "Covey's seven low-trust taxes"
+    },
+    {
+      "idea": "High trust pays a dividend in speed and candor.",
+      "anchor": "The trust dividend"
+    }
+  ],
+  "reflect": [
+    "Which step in your weekly work exists only so someone can feel reassured?",
+    "Where are you paying a trust tax you have never named?"
+  ],
+  "reflect_final": "Which relationship at work, if trust went up, would give you back the most time?",
+  "use_cases": [
+    {
+      "situation": "Your team complains about approval layers and double checks.",
+      "move": "List each step and ask whether it produces information or only reassurance; question the reassurance steps openly.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You notice you re-check a capable person's work every time.",
+      "move": "Tell them you want to stop double-checking and agree on what they'll flag to you proactively instead.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel slowed down by constant proof-giving.",
+      "move": "Ask what past problem the checks are protecting against, and what would show it's solved.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Every relationship pays a trust tax or earns a trust dividend.",
+  "conversation_variants": {
+    "punchline_idea": "Low trust is a tax that never shows up on the budget but shows up everywhere else.",
+    "thirty_sec_idea": "Covey's (S x E) T = R and the list of low-trust taxes.",
+    "question_idea": "Where are you paying a trust tax right now?",
+    "key_contrast_idea": "Trust tax versus trust dividend"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "story_id": 1134,
+  "kind": "concept",
+  "book": {
+    "title": "The Social Animal",
+    "author": "David Brooks",
+    "year": "2011"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book's central argument is that the unconscious mind, not conscious reason, does most of the work of shaping our choices, character and relationships. Brooks tells this through two fictional characters, Harold and Erica, whose lives he follows from birth, weaving research into their story. He presents the unconscious not as a dark Freudian basement but as intelligent and emotional, and argues that reason often builds justifications after the fact. The reference TR text already flags that popular 'ninety percent' figures are weakly supported; the brief uses no percentages. Any specific numbers about bits of information processed per second are omitted.",
+  "facts": [
+    "The Social Animal follows two fictional characters, Harold and Erica, from birth through adulthood, using their lives to illustrate research about the mind.",
+    "Brooks argues that the unconscious mind does most of the work of perception, decision and judgment.",
+    "He describes the unconscious not as a primitive or shameful place but as intelligent, emotional and highly social.",
+    "In his account, conscious reason is slower and more limited, and often explains or justifies choices that were largely shaped beneath awareness.",
+    "Brooks argues that environment, relationships and habits shape the unconscious, and so shape the choices we think we make rationally."
+  ],
+  "tension": "If most of our choices are shaped beneath awareness, what does it mean that we feel like the ones deciding?",
+  "opening_idea": "Count your decisions today, then ask how many you actually thought through.",
+  "lessons": [
+    {
+      "idea": "Most choices are made beneath awareness; reason often explains them afterwards.",
+      "anchor": "Brooks's picture of reason as a slower narrator"
+    },
+    {
+      "idea": "The unconscious is smart, not just primitive.",
+      "anchor": "Brooks's rejection of the Freudian basement"
+    },
+    {
+      "idea": "Shape your surroundings, and you shape your unconscious choices.",
+      "anchor": "Harold and Erica formed by their relationships and environments"
+    }
+  ],
+  "reflect": [
+    "Pick a recent decision. What reason did you give, and what might have actually driven it?",
+    "Which environments or people most shape your automatic choices?"
+  ],
+  "reflect_final": "If you can't directly choose most of your choices, what can you choose about your surroundings?",
+  "use_cases": [
+    {
+      "situation": "You keep making the same unhealthy evening choices despite good intentions.",
+      "move": "Change the environment, like what's in the kitchen or where the phone charges, rather than relying on willpower in the moment.",
+      "context": "self"
+    },
+    {
+      "situation": "A team feels confident about a hiring decision after a very short interview.",
+      "move": "Ask everyone to name what they felt before listing their reasons, then check the reasons against evidence.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend insists they chose a partner or job purely rationally.",
+      "move": "Ask what it felt like the first time, and what their gut said before they built the case.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Most of your mind works where you can't see it, so shape what feeds it.",
+  "conversation_variants": {
+    "punchline_idea": "Reason often writes the press release for decisions the unconscious already made.",
+    "thirty_sec_idea": "Brooks's Harold and Erica device and his case that the smart unconscious drives most choices.",
+    "question_idea": "What recent decision did you explain better than you actually made it?",
+    "key_contrast_idea": "Narrator versus decider"
+  }
+}

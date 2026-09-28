@@ -1,0 +1,63 @@
+{
+  "story_id": 1297,
+  "kind": "concept",
+  "book": {
+    "title": "Essentialism: The Disciplined Pursuit of Less",
+    "author": "Greg McKeown",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference text's naval battle (five ships against dozens) could not be attributed to the book and is omitted, as is its claim that McKeown observed the most successful employees were the most selective 'no' sayers. Kept: McKeown's two-diagram image of energy spread across many directions versus energy pushed in one direction, his description of 'a millimeter of progress in a million directions', and his 'clarity paradox' (success leads to options that dilute the focus that produced it), which he links to Jim Collins's 'undisciplined pursuit of more'. Paraphrased; not checked against the text.",
+  "facts": [
+    "McKeown draws two images of the same amount of energy: in one it is split into many arrows pointing in different directions; in the other it all goes in one direction.",
+    "Spread across many activities, the effort produces what he calls a millimeter of progress in a million directions; concentrated on what is essential, it goes much further in one.",
+    "He describes a 'clarity paradox': clarity of purpose leads to success; success brings more options and opportunities; pursuing them diffuses effort; and the diffusion undermines the clarity that led to success.",
+    "He connects this to Jim Collins's observation that successful companies can decline through an 'undisciplined pursuit of more'.",
+    "His answer is essentialism, the disciplined pursuit of less: deliberately choosing fewer things so the vital few get full effort."
+  ],
+  "tension": "The same success that comes from focus produces the extra options that break the focus.",
+  "opening_idea": "Picture a person's energy drawn as arrows: in one drawing they scatter in every direction, in the other they all point one way. The amount of effort is identical.",
+  "lessons": [
+    {
+      "idea": "Spreading effort evenly means making tiny progress everywhere and real progress nowhere.",
+      "anchor": "The two arrow diagrams and 'a millimeter of progress in a million directions'"
+    },
+    {
+      "idea": "Success creates its own threat: new opportunities quietly scatter the focus that earned them.",
+      "anchor": "The four-step clarity paradox"
+    },
+    {
+      "idea": "Choosing less has to be deliberate, because 'more' arrives on its own.",
+      "anchor": "Collins's 'undisciplined pursuit of more'"
+    }
+  ],
+  "reflect": [
+    "Where did a recent success bring requests or options that now compete with the work that made it possible?",
+    "If your current commitments were drawn as arrows, how many directions would they point?"
+  ],
+  "reflect_final": "Before the next new request lands, name the one direction your effort should point this month, and notice which commitment stops fitting it.",
+  "use_cases": [
+    {
+      "situation": "Planning meeting after a strong quarter, with several new initiatives proposed.",
+      "move": "Point out that the win came from a clear focus, and ask the group to pick the one initiative that serves it before adding the rest.",
+      "context": "meeting"
+    },
+    {
+      "situation": "One-on-one with a capable team member who has taken on side projects since a recent success.",
+      "move": "Mention McKeown's picture of arrows scattered in many directions versus pushed in one, then ask them to name which of their projects moves the main goal and which could be handed off.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your own week feels full but nothing important is moving.",
+      "move": "List your current commitments, mark the single one that matters most this month, and choose one other to pause.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Same energy, different arrows: a millimeter in a million directions, or real distance in one.",
+  "conversation_variants": {
+    "punchline_idea": "Success can undo itself: clarity brings success, success brings options, and the options dissolve the clarity.",
+    "thirty_sec_idea": "McKeown draws one person's energy twice: scattered as arrows in many directions, and all pointed one way; the scattered version makes a millimeter of progress in a million directions, which is why he argues for the disciplined pursuit of less.",
+    "question_idea": "Has a success ever brought you so many new opportunities that the thing you were good at got less of your attention?",
+    "key_contrast_idea": "Doing a bit of everything versus pushing hard on the few things that matter."
+  }
+}

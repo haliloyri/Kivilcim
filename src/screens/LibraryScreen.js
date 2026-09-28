@@ -596,7 +596,7 @@ const LibraryScreen = ({ navigation }) => {
       </View>
 
       <Text style={styles.countLine}>
-        {`${visibleArchive.length} ${t('onboarding_stories', lang)}`}
+        {`${visibleArchive.length} ${t(visibleArchive.length === 1 ? 'onboarding_story' : 'onboarding_stories', lang)}`}
       </Text>
     </View>
   );

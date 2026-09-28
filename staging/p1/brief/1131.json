@@ -1,0 +1,64 @@
+{
+  "story_id": 1131,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Power of Now",
+    "author": "Eckhart Tolle",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text describes Tolle on a London bench watching an old man argue with himself and realizing he does the same inside his head. A scene of a stranger talking to herself appears in Tolle's later book A New Earth (2005), not in The Power of Now, so it is left out. The Power of Now opens instead with Tolle's own turning point: after years of anxiety and depression, around age 29, he woke one night thinking 'I cannot live with myself any longer', then was struck by the question of who the 'I' and the 'self' were, if there were two of him. He describes a deep inner shift that followed, and afterwards spending time sitting on park benches in a state of great peace. The book's practice of 'watching the thinker' follows from this. Precise dates and durations are kept vague.",
+  "facts": [
+    "In the introduction to The Power of Now, Tolle writes that until his thirtieth year he lived in almost continuous anxiety interspersed with periods of suicidal depression.",
+    "Shortly after his twenty-ninth birthday, he woke in the early hours with a feeling of absolute dread and the thought kept repeating: 'I cannot live with myself any longer.'",
+    "He was suddenly struck by how strange the thought was: if he could not live with himself, there must be two of him, the 'I' and the 'self' that 'I' could not live with. Maybe only one of them was real.",
+    "His mind stopped. He describes being drawn into a vortex of energy and then losing consciousness.",
+    "He woke to birdsong and a sense of deep peace that stayed with him. He describes then spending a long period with little to do, often sitting on park benches in a state of intense joy.",
+    "The core practice of the book follows: start listening to the voice in your head as often as you can, and 'watch the thinker'. You are not the voice; you are the one who is aware of it."
+  ],
+  "tension": "A man trapped in constant anxiety hears his own despairing thought and notices that it assumes there are two of him.",
+  "opening_idea": "Open on the sentence 'I cannot live with myself any longer' and the odd question hidden inside it: who is the 'I', and who is the 'self'?",
+  "lessons": [
+    {
+      "idea": "Noticing a thought puts a small distance between you and it.",
+      "anchor": "The question 'which one of me is real?' stopped the spiral"
+    },
+    {
+      "idea": "The voice in your head is not the whole of you.",
+      "anchor": "The book's practice of 'watching the thinker'"
+    },
+    {
+      "idea": "Peace can come from stepping back from thinking, not from solving everything.",
+      "anchor": "The calm that followed, with nothing in his circumstances changed"
+    }
+  ],
+  "reflect": [
+    "Which sentence does the voice in your head repeat most often?",
+    "What happens when you listen to that voice as if it belonged to someone else?"
+  ],
+  "reflect_final": "If you are the one noticing your thoughts, who have you been taking orders from?",
+  "use_cases": [
+    {
+      "situation": "You are spiralling on a harsh thought about yourself late at night.",
+      "move": "Say the thought back to yourself as 'I notice I'm thinking...' and watch what it does next instead of arguing with it.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend keeps repeating 'I can't stand myself right now'.",
+      "move": "Gently point out that the sentence has two people in it and ask which one is talking.",
+      "context": "social"
+    },
+    {
+      "situation": "A colleague is caught in anxious 'what if' thinking before a deadline.",
+      "move": "Suggest a short pause to just notice the thoughts before deciding what to do.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "You are the one who hears the voice, not the voice.",
+  "conversation_variants": {
+    "punchline_idea": "One despairing sentence contained the question that changed Tolle's life.",
+    "thirty_sec_idea": "The night thought, the 'two of me' question, the peace and the park benches.",
+    "question_idea": "Who is listening when your inner voice talks?",
+    "key_contrast_idea": "Thinker and watcher"
+  }
+}

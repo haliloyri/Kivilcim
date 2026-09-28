@@ -1,0 +1,71 @@
+{
+  "story_id": 1066,
+  "kind": "anecdote",
+  "book": {
+    "title": "Radical Candor (Turkish edition: Dürüst Olmak)",
+    "author": "Kim Scott",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Bob story is a well-known anecdote from the book. In it, Scott is a well-liked manager who avoids telling an underperforming employee the truth, fires him about ten months later, and he asks why nobody told him. That core story, and the term 'ruinous empathy', are high confidence. The exact duration ('about ten months') and the precise wording of Bob's question are recalled approximately. The specific advice that she should have spoken in the 'first week' is an interpretation, not a quote. The book's broader point is that feedback should be given early, small and immediately.",
+  "facts": [
+    "Kim Scott, early in her management career, had an employee she calls Bob in the book. He was likable, charming and well-liked by the team.",
+    "Bob's work was consistently below the standard the team needed.",
+    "Scott didn't want to hurt his feelings. So she softened or skipped criticism and kept praising and encouraging him instead.",
+    "Other team members began redoing or working around Bob's output. Resentment grew, and the team's trust in Scott's judgment eroded.",
+    "After roughly ten months, the situation was beyond repair and Scott had to fire Bob.",
+    "During that conversation, Bob asked some version of 'Why didn't you tell me? Why didn't anybody tell me?'",
+    "Scott uses this experience to define 'ruinous empathy': caring about someone personally but failing to challenge them directly.",
+    "In her framework, the alternative is 'radical candor': caring personally while also challenging directly."
+  ],
+  "tension": "A manager who is kind and liked keeps quiet about poor work to spare someone's feelings. That silence is what finally costs the person their job, and the question 'why didn't anyone tell me?' has no good answer.",
+  "opening_idea": "Start with the loved employee whose work wasn't good enough, and the manager who was too nice to say so.",
+  "lessons": [
+    {
+      "idea": "Withholding criticism to be kind is 'ruinous empathy'. It feels caring but takes away the person's chance to improve.",
+      "anchor": "Bob's question at the firing: why didn't anyone tell me?"
+    },
+    {
+      "idea": "Delayed feedback compounds. Every missed chance makes the next conversation bigger and harder, so it gets delayed again.",
+      "anchor": "Roughly ten months of softened reviews ending in a firing instead of a correction"
+    },
+    {
+      "idea": "The cost of silence spreads to the whole team, not just the one person, through extra work, a lowered bar and lost trust in the manager.",
+      "anchor": "Colleagues quietly redoing Bob's work and questioning Scott's judgment"
+    },
+    {
+      "idea": "Real care means challenging directly, not only caring personally.",
+      "anchor": "Scott's radical candor framework: care personally plus challenge directly"
+    }
+  ],
+  "reflect": [
+    "When have you softened feedback mainly to protect your own comfort rather than the other person's growth?",
+    "Is there someone whose work others are quietly compensating for, and who may not know it?",
+    "What small, specific thing could you have said early that would have prevented a bigger conversation later?"
+  ],
+  "reflect_final": "Is there something you're avoiding telling someone right now, and who pays if you wait another month?",
+  "use_cases": [
+    {
+      "situation": "A direct report's work keeps missing the mark, and you've been only praising their effort.",
+      "move": "This week, name one specific, fixable gap: 'This part of the report isn't at the level we need. Here's what good looks like.' Then agree on a check-in date.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "In a team review, everyone knows a deliverable is weak but the discussion stays vague and polite.",
+      "move": "Say plainly: 'I think this section isn't ready yet, and here's why.' Then ask the owner what support they need to fix it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You notice you've been saying 'it's fine' to someone whose habit is really bothering you.",
+      "move": "Write down the one sentence you're avoiding and say it within 48 hours, calmly and specifically, before it grows into resentment.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Keeping quiet to be kind isn't kindness. It quietly takes away someone's chance to fix things.",
+  "conversation_variants": {
+    "punchline_idea": "The employee's last question, 'Why didn't anyone tell me?', is the whole lesson in one line.",
+    "thirty_sec_idea": "Kim Scott protected a well-liked employee from criticism for months, fired him, and realized her 'niceness' had been the real harm. She called it ruinous empathy.",
+    "question_idea": "Ask: if someone on your team were failing, would you rather hear it in month one or month ten?",
+    "key_contrast_idea": "Feedback given early is a small correction. The same feedback given late becomes a firing."
+  }
+}

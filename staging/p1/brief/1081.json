@@ -1,0 +1,72 @@
+{
+  "story_id": 1081,
+  "kind": "concept",
+  "book": {
+    "title": "Influence: The Psychology of Persuasion",
+    "author": "Robert B. Cialdini",
+    "year": "1984"
+  },
+  "confidence": "high",
+  "confidence_note": "The cookie-jar study by Worchel, Lee and Adewole (1975) is a well-known case in Cialdini's scarcity chapter, and its core finding is reliably reported. The Amazon 'only 3 left in stock' example in the reference text is modern and does not appear in the 1984 book. It can only be framed as a present-day illustration, never as Cialdini's example. Cialdini explains scarcity through two ideas: 'hard-to-get things are usually better' as a mental shortcut, and psychological reactance to losing freedoms. He also stresses the power of potential loss. He does not frame it as an evolutionary survival mechanism, so that claim is left out. The number of participants is left out as not reliably certain.",
+  "facts": [
+    "Cialdini names 'scarcity' as one of his core principles of influence: opportunities seem more valuable to us when they are less available.",
+    "He argues that the thought of potential loss weighs heavily in human decisions, often more than the thought of gaining something of equal value.",
+    "His evidence includes a 1975 experiment by Stephen Worchel, Jerry Lee and Akanbi Adewole. Participants tasted and rated chocolate chip cookies taken from a jar.",
+    "Some participants got a jar holding ten cookies. Others got an identical jar holding only two cookies of the same kind.",
+    "The cookies from the two-cookie jar were rated as more desirable and more valuable, even though the cookies were identical.",
+    "In a variation, some jars went from ten cookies down to two in front of the participants. These newly scarce cookies were rated higher than cookies that had been scarce all along.",
+    "Cookies that became scarce because other people had wanted them (high demand) were rated highest of all.",
+    "Cialdini gives two explanations. First, we use availability as a shortcut for judging quality. Second, losing access triggers 'psychological reactance', a push to regain the threatened freedom.",
+    "He points to 'limited number' and 'deadline' sales tactics as everyday uses of the scarcity principle."
+  ],
+  "tension": "The cookie never changed, yet people's judgment of it did. What moved them was a signal about availability, not anything about the product itself.",
+  "opening_idea": "Two identical jars hold the same cookies. One holds ten and one holds two, and people swear the two-cookie jar tastes better.",
+  "lessons": [
+    {
+      "idea": "Scarcity changes how valuable something seems, not how valuable it actually is.",
+      "anchor": "Identical cookies were rated higher simply because the jar held fewer."
+    },
+    {
+      "idea": "Scarcity that has just appeared hits harder than scarcity that was always there.",
+      "anchor": "Cookies that dropped from ten to two in front of participants were rated higher than cookies that were always scarce."
+    },
+    {
+      "idea": "Competition for a scarce item makes it more intense still.",
+      "anchor": "Cookies that became scarce because others wanted them earned the highest ratings."
+    },
+    {
+      "idea": "Fear of losing an option can drive a decision more than wanting the thing itself.",
+      "anchor": "Cialdini's point that potential loss weighs heavily, and that reactance pushes us to grab threatened freedoms."
+    }
+  ],
+  "reflect": [
+    "When did an item's 'limited' status change how much you wanted it?",
+    "Would you still want this thing if there were plenty of it and no deadline?",
+    "Do you feel the pull harder when something has just become scarce, or when others are competing for it?"
+  ],
+  "reflect_final": "Think of a recent purchase. Did you buy it because you needed it, or because you feared missing out?",
+  "use_cases": [
+    {
+      "situation": "A vendor in a meeting says the discounted price expires Friday.",
+      "move": "Say: 'Let's set the deadline aside. Would this still be the right choice at full price next month?' Then judge the offer on its own merits.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You feel a 'last chance' urge while shopping online.",
+      "move": "Ask yourself the cookie question: 'If there were ten of these instead of two, would I still want it?' Wait a day if the answer is no.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child suddenly wants a toy badly because a sibling just grabbed it.",
+      "move": "Name the pattern out loud: 'You want it more because it just got taken, right?' Then offer a calm choice instead of a scramble.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Scarcity changes the price tag in your head, not the thing in your hand.",
+  "conversation_variants": {
+    "punchline_idea": "Same cookie, smaller pile, better taste. That is scarcity at work.",
+    "thirty_sec_idea": "A 1975 study gave people identical cookies from a jar of ten or a jar of two. The two-cookie jar won, and it won even more when the jar had just been emptied or others had wanted the cookies.",
+    "question_idea": "Would you still want it if there were plenty left and no deadline?",
+    "key_contrast_idea": "Always-scarce versus suddenly-scarce: losing access feels worse than never having had plenty."
+  }
+}

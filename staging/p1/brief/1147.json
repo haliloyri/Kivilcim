@@ -1,0 +1,64 @@
+{
+  "story_id": 1147,
+  "kind": "concept",
+  "book": {
+    "title": "Set Boundaries, Find Peace",
+    "author": "Nedra Glover Tawwab",
+    "year": "2021"
+  },
+  "confidence": "high",
+  "confidence_note": "Tawwab's three levels of boundaries are a well-known framework from the book: porous, rigid and healthy. The reference TR text calls the third kind 'flexible'; the book's term is 'healthy', and it is used here. Her examples are paraphrased: porous boundaries include oversharing, difficulty saying no and people-pleasing; rigid boundaries include never sharing, building walls, not asking for help and strict rules; healthy boundaries include being clear about your values, sharing appropriately and saying no when needed. The book also lists types of boundaries (physical, sexual, intellectual, emotional, material and time), mentioned briefly.",
+  "facts": [
+    "Tawwab describes boundaries on a spectrum with three levels: porous, rigid and healthy.",
+    "Porous boundaries are weak or loosely defined: oversharing, codependency, difficulty saying no, people-pleasing and fear of rejection.",
+    "Rigid boundaries involve building walls: never sharing, not asking for help, avoiding vulnerability, keeping people at a distance and holding strict rules.",
+    "Healthy boundaries are in between: being clear about your values, listening to your own opinions, sharing with the right people in the right amount, and being able to say no and accept hearing no.",
+    "The same person can have porous boundaries in one relationship and rigid ones in another.",
+    "Tawwab also describes types of boundaries: physical, sexual, intellectual, emotional, material and time."
+  ],
+  "tension": "Someone who never lets anyone in and someone who lets everyone in both struggle, just in opposite directions.",
+  "opening_idea": "Two people, one who tells everyone everything and one who tells no one anything, turn out to have the same problem.",
+  "lessons": [
+    {
+      "idea": "Boundaries can fail by being too loose or too tight.",
+      "anchor": "Porous versus rigid"
+    },
+    {
+      "idea": "Healthy boundaries are chosen, not automatic.",
+      "anchor": "Sharing the right amount with the right people"
+    },
+    {
+      "idea": "Your boundaries differ by relationship.",
+      "anchor": "Porous with family, rigid at work, for example"
+    }
+  ],
+  "reflect": [
+    "Where are your boundaries porous?",
+    "Where have you built a wall that might be keeping out help or closeness?"
+  ],
+  "reflect_final": "In which relationship would moving one step toward 'healthy' change the most?",
+  "use_cases": [
+    {
+      "situation": "You overshare with a new colleague and regret it afterwards.",
+      "move": "Decide in advance what you'll share at work, and practice a friendly deflection line.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend never asks for help and seems to be struggling alone.",
+      "move": "Offer one specific, small form of help rather than a general 'let me know'.",
+      "context": "social"
+    },
+    {
+      "situation": "Your teenager shares everything online without limits.",
+      "move": "Discuss together what's for everyone, what's for friends, and what's just for them.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Healthy boundaries aren't walls or open doors; they're doors you choose when to open.",
+  "conversation_variants": {
+    "punchline_idea": "Oversharing and never sharing are the same problem pointing in opposite directions.",
+    "thirty_sec_idea": "The three levels: porous, rigid, healthy, with examples.",
+    "question_idea": "Where are your boundaries too loose, and where are they too tight?",
+    "key_contrast_idea": "Wall, open door, gate"
+  }
+}

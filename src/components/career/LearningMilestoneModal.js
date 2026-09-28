@@ -24,7 +24,7 @@ const STORAGE_KEY = '@albor_learning_milestones_v1';
  * RN modals are never open at once.
  */
 const LearningMilestoneModal = () => {
-  const { colors, isDark, lang } = useTheme();
+  const { lang } = useTheme();
   const { career, careerEvents, unseenPromotionCount, showMigrationSummary, setMilestoneVisible } = useCareerPath();
   const { stories, storiesLoading } = useStories();
   const { isLoadingUserData, activeBadgeModal, setBadgePresentationBlocked, badgePresentationBlockers, userProfile } = useUserData();
@@ -89,49 +89,61 @@ const LearningMilestoneModal = () => {
     shareTimer.current = setTimeout(() => setShareAchievement(achievement), 320);
   };
 
-  const isBooks = celebration?.type === 'books';
-  const accent = isBooks ? colors.primary : getCategoryTheme(celebration?.categoryRaw || celebration?.category, isDark).accent;
-
   return (
     <>
-      {celebration ? (
-        <Modal visible={visible} transparent animationType="fade" onRequestClose={dismiss} accessibilityViewIsModal>
-          <View style={styles.backdrop}>
-            <View style={[styles.card, { backgroundColor: colors.background, borderColor: colors.border }]}>
-              <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.close', lang)} onPress={dismiss} style={[styles.closeButton, { backgroundColor: colors.backgroundDark, borderColor: colors.border }]}>
-                <Ionicons name="close" size={18} color={colors.text} />
-              </TouchableOpacity>
-              <View style={[styles.icon, { backgroundColor: `${accent}1F` }]}>
-                <Ionicons name={isBooks ? 'library-outline' : 'compass-outline'} size={34} color={accent} />
-              </View>
-              <Text style={[styles.kicker, { color: colors.textSecondary }]}>{t('career.milestone.kicker', lang)}</Text>
-              <Text style={[styles.title, { color: colors.text }]}>
-                {isBooks
-                  ? t('career.milestone.booksTitle', lang, { count: celebration.count })
-                  : t('career.milestone.categoryTitle', lang, { category: celebration.category })}
-              </Text>
-              <Text style={[styles.body, { color: colors.textSecondary }]}>
-                {isBooks
-                  ? t('career.milestone.booksBody', lang, { count: celebration.count })
-                  : t('career.milestone.categoryBody', lang)}
-              </Text>
-              <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.continue', lang)} onPress={dismiss} style={[styles.button, { backgroundColor: colors.primary }]}>
-                <Text style={[styles.buttonText, { color: isDark ? colors.backgroundDark : '#FFFFFF' }]}>{t('career.continue', lang)}</Text>
-              </TouchableOpacity>
-              {isBooks ? (
-                <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('badgeShare.share', lang)} onPress={share} style={[styles.secondaryButton, { borderColor: colors.border }]}>
-                  <Ionicons name="share-social-outline" size={16} color={colors.text} />
-                  <Text style={[styles.secondaryButtonText, { color: colors.text }]}>{t('badgeShare.share', lang)}</Text>
-                </TouchableOpacity>
-              ) : null}
-            </View>
-          </View>
-        </Modal>
-      ) : null}
+      <MilestoneModalView milestone={celebration} kickerKey="career.milestone.kicker" primaryKey="career.continue" onClose={dismiss} onShare={share} />
       <BadgeShareSheet visible={!!shareAchievement} achievement={shareAchievement} name={userProfile?.displayName} onClose={() => setShareAchievement(null)} />
     </>
   );
 };
+
+/** The milestone card itself; shared by the live celebration and the review from "Öğrendiklerin". */
+export const MilestoneModalView = ({ milestone, kickerKey, primaryKey, onClose, onShare }) => {
+  const { colors, isDark, lang } = useTheme();
+  if (!milestone) return null;
+  const isBooks = milestone.type === 'books';
+  const accent = isBooks ? colors.primary : getCategoryTheme(milestone.categoryRaw || milestone.category, isDark).accent;
+
+  return (
+    <Modal visible transparent animationType="fade" onRequestClose={onClose} accessibilityViewIsModal>
+      <View style={styles.backdrop}>
+        <View style={[styles.card, { backgroundColor: colors.background, borderColor: colors.border }]}>
+          <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.close', lang)} onPress={onClose} style={[styles.closeButton, { backgroundColor: colors.backgroundDark, borderColor: colors.border }]}>
+            <Ionicons name="close" size={18} color={colors.text} />
+          </TouchableOpacity>
+          <View style={[styles.icon, { backgroundColor: `${accent}1F` }]}>
+            <Ionicons name={isBooks ? 'library-outline' : 'compass-outline'} size={34} color={accent} />
+          </View>
+          <Text style={[styles.kicker, { color: colors.textSecondary }]}>{t(kickerKey, lang)}</Text>
+          <Text style={[styles.title, { color: colors.text }]}>
+            {isBooks
+              ? t('career.milestone.booksTitle', lang, { count: milestone.count })
+              : t('career.milestone.categoryTitle', lang, { category: milestone.category })}
+          </Text>
+          <Text style={[styles.body, { color: colors.textSecondary }]}>
+            {isBooks
+              ? t('career.milestone.booksBody', lang, { count: milestone.count })
+              : t('career.milestone.categoryBody', lang)}
+          </Text>
+          <TouchableOpacity accessibilityRole="button" accessibilityLabel={t(primaryKey, lang)} onPress={onClose} style={[styles.button, { backgroundColor: colors.primary }]}>
+            <Text style={[styles.buttonText, { color: isDark ? colors.backgroundDark : '#FFFFFF' }]}>{t(primaryKey, lang)}</Text>
+          </TouchableOpacity>
+          {isBooks && onShare ? (
+            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('badgeShare.share', lang)} onPress={onShare} style={[styles.secondaryButton, { borderColor: colors.border }]}>
+              <Ionicons name="share-social-outline" size={16} color={colors.text} />
+              <Text style={[styles.secondaryButtonText, { color: colors.text }]}>{t('badgeShare.share', lang)}</Text>
+            </TouchableOpacity>
+          ) : null}
+        </View>
+      </View>
+    </Modal>
+  );
+};
+
+/** Re-opens an already reached milestone. No haptics, no "shown" analytics, no seen-state writes. */
+export const MilestoneReviewModal = ({ milestone, onClose, onShare }) => (
+  <MilestoneModalView milestone={milestone} kickerKey="career.milestone.reviewKicker" primaryKey="career.close" onClose={onClose} onShare={onShare} />
+);
 
 const styles = StyleSheet.create({
   backdrop: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24, backgroundColor: 'rgba(0,0,0,0.5)' },

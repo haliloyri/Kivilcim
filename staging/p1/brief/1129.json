@@ -1,0 +1,66 @@
+{
+  "story_id": 1129,
+  "kind": "anecdote",
+  "book": {
+    "title": "Mindset: The New Psychology of Success",
+    "author": "Carol S. Dweck",
+    "year": "2006 (updated edition 2016)"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text centres on the London taxi-driver brain study. That study is real neuroscience, but it is not a case Dweck builds her argument on in Mindset, so it is left out. The book's own brain-plasticity case is the junior-high workshop run by Dweck and Lisa Blackwell: students in the growth-mindset group were taught that the brain forms new connections and grows stronger when you learn hard things, while a control group got study skills only. Dweck reports that the growth-mindset students' motivation and math grades improved compared with the control group, and quotes a turned-off student, Jimmy, who asked with tears in his eyes, 'You mean I don't have to be dumb?' Exact session counts and grade figures are omitted.",
+  "facts": [
+    "In Mindset, Dweck describes a workshop for junior high school students that she ran with Lisa Blackwell.",
+    "Both groups of students got useful study skills. The growth-mindset group was also taught that the brain is like a muscle: every time you stretch to learn something hard, it forms new connections and grows stronger.",
+    "The control group learned study skills and some material on memory, but not the growth-mindset lesson.",
+    "Teachers, who did not know which group each student was in, singled out students from the growth-mindset group as showing clear changes in motivation.",
+    "The growth-mindset students' math grades improved compared with the control group, whose grades kept declining.",
+    "Dweck recounts a student, Jimmy, described as one of the most turned-off students, who looked up with tears in his eyes during the lesson and said: 'You mean I don't have to be dumb?'",
+    "Dweck reports that afterwards Jimmy began working late on assignments and handing them in early so he could get feedback.",
+    "Dweck's point: believing that ability can be developed changes how students approach effort and difficulty."
+  ],
+  "tension": "Students who had decided they were simply 'not smart' had stopped trying; would learning how the brain actually works change what they did?",
+  "opening_idea": "Start with the sentence a boy said with tears in his eyes during a science lesson about neurons: 'You mean I don't have to be dumb?'",
+  "lessons": [
+    {
+      "idea": "What you believe about your brain shapes how hard you try with it.",
+      "anchor": "Same study skills in both groups; only the growth group's grades rose"
+    },
+    {
+      "idea": "'I'm not good at this' is often a conclusion drawn too early, not a fact.",
+      "anchor": "Jimmy had already filed himself under 'dumb' until the lesson"
+    },
+    {
+      "idea": "Effort needs a reason to make sense before people will spend it.",
+      "anchor": "Teachers noticed the motivation change before anyone looked at grades"
+    }
+  ],
+  "reflect": [
+    "Name one area where you've quietly decided you're 'just not a ___ person'.",
+    "When did you last treat a struggle as proof of a limit rather than as the moment learning happens?"
+  ],
+  "reflect_final": "If you believed your brain could genuinely change in that area, what would you try this month?",
+  "use_cases": [
+    {
+      "situation": "A child says they are 'bad at math' and wants to give up.",
+      "move": "Explain that the brain forms new connections when something feels hard, and ask which step feels hardest so you can practice just that step together.",
+      "context": "family"
+    },
+    {
+      "situation": "A team member avoids a new tool because they think they're 'not technical'.",
+      "move": "Reframe the struggle as the learning itself and agree on a small first task with support.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You've written yourself off in some skill years ago.",
+      "move": "Pick one small, hard practice session this week and note what got easier afterwards.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "'I'm not good at this' is usually a prediction, not a verdict.",
+  "conversation_variants": {
+    "punchline_idea": "Teaching kids how their brains grow did more than teaching them study tricks alone.",
+    "thirty_sec_idea": "The Blackwell and Dweck workshop, the two groups, the grade difference and Jimmy's question.",
+    "question_idea": "What did you decide you were bad at, and when did you decide it?",
+    "key_contrast_idea": "Fixed label to growing brain"
+  }
+}

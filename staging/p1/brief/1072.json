@@ -1,0 +1,63 @@
+{
+  "story_id": 1072,
+  "kind": "anecdote",
+  "book": {
+    "title": "Deep Work (Derin Çalışma)",
+    "author": "Cal Newport",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "In the book, Newport uses J.K. Rowling checking into the Balmoral Hotel in Edinburgh to finish 'Harry Potter and the Deathly Hallows' as an example of his 'grand gesture' strategy. Several details in the existing TR text are not reliably from the book: not using Wi-Fi, turning off the phone, the breakfast routine, and '8–10 hours a day'. They are omitted here. The exact cost of the suite and her room number are also left out because the figures are uncertain. The book's lesson is less 'talent needs the right environment' and more that a costly, deliberate change of setting raises the psychological stakes and makes deep focus easier.",
+  "facts": [
+    "While working on the final Harry Potter book, J.K. Rowling found it hard to concentrate at home because of everyday distractions (household activity, children, interruptions).",
+    "She checked into a suite at the Balmoral, a luxury hotel in Edinburgh, to write.",
+    "She finished 'Harry Potter and the Deathly Hallows' while working there.",
+    "Newport presents this as a 'grand gesture': a radical, often costly change to one's normal environment made in support of a deep work task.",
+    "Newport's argument is that the investment of money and effort makes the task feel more important. That raised sense of importance reduces the mind's tendency to procrastinate and helps unlock focus."
+  ],
+  "tension": "One of the world's best-selling authors, with every resource available, still could not write her most anticipated book in her own home.",
+  "opening_idea": "Start with the image of a famous author who could write anywhere and yet could not write at her own kitchen table.",
+  "lessons": [
+    {
+      "idea": "Deep focus rarely happens by accident. It has to be deliberately designed.",
+      "anchor": "Rowling did not wait for home to get quieter. She changed the setting."
+    },
+    {
+      "idea": "A bold, costly change of environment signals to your own mind that the task matters.",
+      "anchor": "Newport's 'grand gesture': the expensive hotel suite raised the stakes of the work."
+    },
+    {
+      "idea": "Distraction problems are often solved by redesigning the environment rather than by relying on willpower.",
+      "anchor": "The same writer and the same talent produced in a different place."
+    }
+  ],
+  "reflect": [
+    "Which of your important tasks keeps getting postponed in your usual environment?",
+    "What change, big or small, would tell you and others that this work is serious?"
+  ],
+  "reflect_final": "Think about the place where you did your best work. What deliberate gesture could you make today to recreate those conditions?",
+  "use_cases": [
+    {
+      "situation": "A team is struggling to finish a critical strategy document amid constant meetings and messages.",
+      "move": "Propose booking an off-site room for a full day with devices away and the document as the only agenda item.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You have a personal project (a thesis, book, or course) that you keep failing to advance at home.",
+      "move": "Book a library room or co-working desk for a fixed block, and treat paying for it as a commitment to the work.",
+      "context": "self"
+    },
+    {
+      "situation": "A direct report says they cannot get focused work done in the open office.",
+      "move": "Ask: 'Where would you go if this task were the only thing that mattered this week?' Then help them arrange that place or time.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "When your environment keeps defeating your focus, don't fight harder. Make a bold move to a place that tells your mind the work matters.",
+  "conversation_variants": {
+    "punchline_idea": "Rowling didn't find more willpower. She found a hotel room.",
+    "thirty_sec_idea": "Explain the story briefly: Rowling couldn't write at home, checked into an Edinburgh hotel, and finished the final Harry Potter book. Newport calls this a 'grand gesture' that raises the stakes of the work.",
+    "question_idea": "Ask the listener what they would do differently if an important task felt worth spending real money on to get done.",
+    "key_contrast_idea": "Contrast trying to focus through willpower in a distracting place with redesigning the place so that focus becomes the default."
+  }
+}

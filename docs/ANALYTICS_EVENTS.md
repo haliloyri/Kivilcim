@@ -173,7 +173,7 @@ captured.
 - `one_minute_summary_cta_viewed`: CTA is rendered for an available summary.
 - `one_minute_summary_clicked`: CTA is tapped (`isPremium`, `contentLength`).
 - `one_minute_summary_paywall_viewed`: A free reader is routed to the dedicated paywall.
-- `one_minute_summary_opened`: A Premium reader expands the short retelling.
+- `one_minute_summary_opened`: A Premium reader opens the short retelling modal.
 - `one_minute_summary_completed`: The retelling stays visible in foreground for 20 seconds (`dwellMs`).
 - `one_minute_summary_full_story_clicked`: The reader returns to the full story.
 

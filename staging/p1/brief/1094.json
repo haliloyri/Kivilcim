@@ -1,0 +1,75 @@
+{
+  "story_id": 1094,
+  "kind": "concept",
+  "book": {
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "year": "1989"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core idea is Habit 3, 'Put First Things First', and it is solidly in the book. The jar-with-big-rocks demonstration in the reference text is not a reliable case from this 1989 book. It is associated with Covey's later 'First Things First' (1994, with A. Roger and Rebecca Merrill), and retellings vary in their details. In Covey's version the instructor starts with the rocks and asks 'Is it full?'. The 'sand first, then retry' sequence and the 'university professor' framing come from popular retellings. So facts are kept to what 7 Habits itself claims: the urgent/important matrix, Quadrant II, weekly planning by roles, and saying no. If writers use the jar image, they should present it as a later Covey illustration or popular parable, not as a scene from this book.",
+  "facts": [
+    "Habit 3 is 'Put First Things First'. It is the practical execution of the priorities defined in Habit 2 ('Begin with the End in Mind').",
+    "Covey sorts activities on two axes, urgent vs. not urgent and important vs. not important, which gives four quadrants (the Time Management Matrix).",
+    "Quadrant I (urgent and important) holds crises, pressing problems and deadline-driven projects. Quadrant III (urgent, not important) holds interruptions, some calls, some mail and some meetings. Quadrant IV (neither) holds trivia and time-wasters.",
+    "Quadrant II (important, not urgent) holds prevention, relationship building, planning, recognizing new opportunities and recreation or renewal. Covey argues that effective people concentrate here.",
+    "Covey argues that neglecting Quadrant II lets Quadrant I crises grow, because many crises come from important things that were postponed until they became urgent.",
+    "Covey's key line is that the key is not to prioritize what's on your schedule, but to schedule your priorities.",
+    "He recommends planning weekly rather than daily. You identify your roles (e.g., parent, partner, manager), choose a few important goals for each role, and block time for them before other things fill the week.",
+    "He stresses that saying 'yes' to Quadrant II requires saying 'no' to other, often urgent-seeming, things. That means deciding your highest priorities and having the courage to decline other things pleasantly and without apology."
+  ],
+  "tension": "Urgent things shout and important things wait quietly. So a week can feel completely full and still leave untouched the things that matter most.",
+  "opening_idea": "Open with an ordinary busy day of emails, pings and meetings that ends exhausted, and ask what important-but-not-urgent thing got pushed to 'tomorrow' yet again.",
+  "lessons": [
+    {
+      "idea": "Sort by importance, not urgency. Urgency is how loudly something demands attention, not how much it matters.",
+      "anchor": "The four-quadrant matrix: urgent/important on two axes."
+    },
+    {
+      "idea": "The highest-leverage work lives in Quadrant II: planning, prevention, relationships and renewal.",
+      "anchor": "Covey's claim that effective people concentrate on important-but-not-urgent activities."
+    },
+    {
+      "idea": "Put priorities into the calendar first. Don't hope they fit between other tasks.",
+      "anchor": "'Don't prioritize your schedule; schedule your priorities.'"
+    },
+    {
+      "idea": "Plan by the week and by your roles, so no key area of life is silently starved.",
+      "anchor": "Weekly planning: roles, then goals per role, then time blocks."
+    },
+    {
+      "idea": "Every yes to what matters needs a clear, guilt-free no to something else.",
+      "anchor": "Covey on saying no pleasantly, smilingly, nonapologetically."
+    }
+  ],
+  "reflect": [
+    "Which activities in your last week were urgent but not really important?",
+    "What Quadrant II activity have you been postponing that would prevent future crises if you did it now?",
+    "Which of your roles got almost no time last week?"
+  ],
+  "reflect_final": "What are the few important-but-not-urgent things in your life, and how much of last week's calendar did they actually get?",
+  "use_cases": [
+    {
+      "situation": "A team meeting keeps getting consumed by today's fires, and strategic work never gets discussed.",
+      "move": "Propose a fixed, protected 20-minute slot at the start of each weekly meeting for one important-not-urgent topic before anything urgent is raised.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Sunday evening, before a busy week starts.",
+      "move": "List your roles, write one meaningful goal for each, and block time for those goals in the calendar first. Only then open your inbox.",
+      "context": "self"
+    },
+    {
+      "situation": "Family time keeps getting sacrificed to work messages and errands.",
+      "move": "Agree on one recurring weekly family block, put it in everyone's calendar, and treat it like an unmissable appointment, with phones away.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Schedule your priorities before the urgent stuff schedules you.",
+  "conversation_variants": {
+    "punchline_idea": "Urgent things are loud and important things are quiet, so listen for the quiet ones.",
+    "thirty_sec_idea": "Covey splits tasks into urgent/important quadrants and says real effectiveness comes from blocking time for the important-but-not-urgent ones first, every week.",
+    "question_idea": "If you looked only at your calendar, what would someone guess your priorities are?",
+    "key_contrast_idea": "Fitting priorities into leftover time versus building your week around them from the start."
+  }
+}

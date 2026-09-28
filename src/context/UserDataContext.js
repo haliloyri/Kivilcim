@@ -78,8 +78,8 @@ const PREMIUM_BONUS_STORAGE_KEY = '@albor_premium_bonus_until';
 // date-keyed record the "3 free stories" limit is not a limit at all — reading
 // them just moves them out of the candidate pool and three more become free.
 const FREE_READS_STORAGE_KEY = '@albor_free_reads';
-const STORY_COLLECTION_IDS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals'];
-const DEFAULT_STORY_COLLECTIONS = ['new'];
+const STORY_COLLECTION_IDS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55'];
+const DEFAULT_STORY_COLLECTIONS = ['new', 'opus55'];
 const EMPTY_PREFERENCES = {
   categories: [], time: null, reminderWindow: 'evening', reminderHour: 21,
   reminderWindows: ['evening'], storyVersion: 2, storyCollections: DEFAULT_STORY_COLLECTIONS,
@@ -209,9 +209,10 @@ const normalizePreferences = (storedPreferences) => {
 
   // Normalize reminderWindows: new array format or migrate from legacy single
   let reminderWindows;
-  if (Array.isArray(storedPreferences.reminderWindows) && storedPreferences.reminderWindows.length > 0) {
+  if (Array.isArray(storedPreferences.reminderWindows)
+    && (storedPreferences.reminderWindows.length > 0 || storedPreferences.remindersEnabled === false)) {
     reminderWindows = storedPreferences.reminderWindows.filter(w => ['morning', 'noon', 'evening'].includes(w));
-    if (reminderWindows.length === 0) reminderWindows = ['evening'];
+    if (reminderWindows.length === 0 && storedPreferences.remindersEnabled !== false) reminderWindows = ['evening'];
   } else {
     const reminder = buildReminderPreference(storedPreferences.reminderWindow ? {
       reminderWindow: storedPreferences.reminderWindow,
@@ -768,6 +769,11 @@ export const UserDataProvider = ({ children }) => {
     try {
       const storyId = typeof storyOrId === 'object' ? storyOrId?.story_id ?? storyOrId?.id : storyOrId;
       const categoryId = typeof storyOrId === 'object' ? storyOrId?.parent_cat_id : null;
+      // Reaching the end of a story is what "completed" means everywhere in
+      // the UI (row ✓, Use-in-Conversation gate). Mark it before the async
+      // writes so the next screen sees it immediately — previously only the
+      // premium-only paths wrote this list, so free readers stayed "unfinished".
+      if (storyId != null) markStoryCompleted(storyId);
       // SQLite'a okuma kaydı ekle
       await recordRead(storyId);
       await recordCareerStoryCompletion({
@@ -831,8 +837,13 @@ export const UserDataProvider = ({ children }) => {
   };
 
   const isStoryCompleted = useCallback((storyId) => {
-    return completedStories.includes(String(storyId));
-  }, [completedStories]);
+    const strId = String(storyId);
+    if (completedStories.includes(strId)) return true;
+    // Stories read before completion was tied to the read event only exist
+    // in read counts / history — treat those as completed too.
+    return Number(readCountsByStory?.[strId] ?? readCountsByStory?.[storyId] ?? 0) > 0
+      || (history || []).some((id) => String(id) === strId);
+  }, [completedStories, readCountsByStory, history]);
 
   // Library "Kaldığın yerden": remember how far the reader got in a story they
   // haven't finished. Only ever moves forward; a finished read (addToHistory)
@@ -871,7 +882,6 @@ export const UserDataProvider = ({ children }) => {
       let reminderWindows;
       if (Array.isArray(userReminderParam)) {
         reminderWindows = userReminderParam.filter(w => ['morning', 'noon', 'evening'].includes(w));
-        if (reminderWindows.length === 0) reminderWindows = ['evening'];
       } else {
         const reminder = buildReminderPreference(userReminderParam);
         reminderWindows = [reminder.reminderWindow];
@@ -880,6 +890,9 @@ export const UserDataProvider = ({ children }) => {
         categories: normalizeCategoryIds(userCategories),
         time: userTimeObj,
         reminderWindows,
+        // Save opt-out before scheduling or publishing the completed setup.
+        // Otherwise the scheduler can request permission for a default window.
+        remindersEnabled: reminderWindows.length > 0,
       });
       setPreferences(prefs);
       setIsOnboarded(true);
@@ -1319,7 +1332,7 @@ export const UserDataProvider = ({ children }) => {
   }, [serverSync]);
 
   // Varyant kullanım kaydı (copy / share / mark-used)
-  const recordVariantUsage = useCallback(async ({ storyId, storyTitle, storyCategory, categoryId = null, variantType, variantId, variantKey = null, action, feedbackRating = null, careerEventSubtype = 'conversation_mark_used' }) => {
+  const recordVariantUsage = useCallback(async ({ storyId, storyTitle, storyCategory, categoryId = null, variantType, variantId, variantKey = null, action, feedbackRating = null, careerEventSubtype = 'conversation_mark_used', context = null }) => {
     try {
       const entry = {
         storyId: String(storyId),
@@ -1353,7 +1366,7 @@ export const UserDataProvider = ({ children }) => {
           categoryId,
           completionMethod: 'use_in_conversation',
           eventSubtype: careerEventSubtype,
-          metadata: { variantType, variantId, variantKey: variantKey || null },
+          metadata: { variantType, variantId, variantKey: variantKey || null, ...(context ? { context } : {}) },
         }).catch(() => {});
         // Using a story in a real conversation is both an application and a
         // meaningful way of processing it. D remains one credit per story,

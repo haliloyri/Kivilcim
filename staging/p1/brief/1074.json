@@ -1,0 +1,64 @@
+{
+  "story_id": 1074,
+  "kind": "anecdote",
+  "book": {
+    "title": "Think and Grow Rich (Düşün ve Zengin Ol)",
+    "author": "Napoleon Hill",
+    "year": "1937"
+  },
+  "confidence": "medium",
+  "confidence_note": "Andrew Carnegie is central to the book. Hill credits Carnegie with passing on the 'secret' and with urging him to organize a philosophy of achievement. Hill also presents Carnegie as a model of a definite purpose and of the Master Mind principle, meaning his results came through a group of associates rather than his own technical knowledge. The biographical details in the reference text are well-established history but are probably not recounted step by step in the book: emigrating from Scotland in 1848 as a boy, then working in a cotton mill, as a telegraph operator and on the railroad. Treat them as background. Several details are omitted as unverified or invented: 'not even five cents in his pocket', the self-question 'what will people need most?', the $480 million sale figure and the '~$14 billion today' conversion. The reference text says his secret was not intelligence, luck or privilege, only a single goal. That reading is a simplification. Hill stresses definiteness of purpose combined with the Master Mind alliance.",
+  "facts": [
+    "Andrew Carnegie was a Scottish-born immigrant who arrived in America as a boy from a poor family (historical background).",
+    "He worked his way up through ordinary jobs before building one of the largest steel businesses of his era (historical background).",
+    "Hill says Carnegie shared with him the 'secret' of achievement and encouraged him to organize a philosophy of success for others.",
+    "Hill presents Carnegie as an example of a definite major purpose, pursued persistently and focused on steel.",
+    "Hill attributes much of Carnegie's fortune to a 'Master Mind' group of associates working in harmony. Hill says Carnegie relied on these people's knowledge rather than his own expertise in steel making.",
+    "Carnegie's steel interests became part of the formation of United States Steel in 1901."
+  ],
+  "tension": "A poor immigrant boy with no special advantages ends up among the richest men in the world. What actually made the difference?",
+  "opening_idea": "Open on the boy arriving in a new country with nothing. Then ask what separated him from thousands of other poor immigrants who arrived the same way.",
+  "lessons": [
+    {
+      "idea": "A single definite major purpose concentrates effort that would otherwise scatter.",
+      "anchor": "Carnegie committed himself to steel rather than chasing many ventures."
+    },
+    {
+      "idea": "You don't need to know everything. You need the right people around a clear aim.",
+      "anchor": "Hill's Master Mind point: Carnegie's associates supplied the steel expertise he lacked."
+    },
+    {
+      "idea": "Humble starting points are not the deciding factor. Decision and persistence are.",
+      "anchor": "The move from ordinary early jobs to steel magnate."
+    }
+  ],
+  "reflect": [
+    "If you had to name one definite aim for the next few years, could you say it in one sentence?",
+    "Who are the two or three people whose knowledge would most advance that aim, and do you work with them?"
+  ],
+  "reflect_final": "What would you have to stop doing so you could give real time to your one main aim?",
+  "use_cases": [
+    {
+      "situation": "A team meeting where priorities keep multiplying and nothing gets finished.",
+      "move": "Ask: 'If we could only deliver one thing this quarter, which one?' Then park the rest in writing.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A mentoring conversation with someone who says they lack the skills to pursue a goal.",
+      "move": "Ask them to list the people who already have those skills and how they could team up with one of them this month.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Planning your own week while feeling pulled in many directions.",
+      "move": "Write your one definite aim at the top of the week's plan and block the first hour of each day for it before anything else.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Pick one definite aim, then surround it with people who know what you don't.",
+  "conversation_variants": {
+    "punchline_idea": "Carnegie reportedly didn't know much about making steel; he knew who did.",
+    "thirty_sec_idea": "A poor Scottish immigrant boy commits to one industry, gathers a group of capable associates and becomes a steel titan. Hill uses him to argue for definite purpose plus a 'Master Mind' alliance.",
+    "question_idea": "Is your biggest obstacle a lack of skill, or a lack of one clear aim and the people to pursue it with?",
+    "key_contrast_idea": "Scattered effort with solo expertise, versus one fixed aim powered by other people's knowledge."
+  }
+}

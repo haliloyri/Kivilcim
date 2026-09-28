@@ -1,0 +1,64 @@
+{
+  "story_id": 1215,
+  "kind": "anecdote",
+  "book": {
+    "title": "Essentialism: The Disciplined Pursuit of Less",
+    "author": "Greg McKeown",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "The manifest calls the book 'Minimalizm'; it is Essentialism (2014). McKeown opens the book with a personal story: the day after his daughter was born, he felt pressure to attend a client meeting and went, instead of staying with his wife and newborn; the client wasn't even grateful, and he realized he had traded something essential for something trivial. The book's core ideas include 'less but better' (a phrase he takes from designer Dieter Rams, 'Weniger aber besser'), and the observation that if you don't prioritize your life, someone else will. The reference TR text's calendar-audit framing is kept as a light illustration without attributing a specific study.",
+  "facts": [
+    "McKeown describes the day after his daughter was born: he was in the hospital with his wife and newborn but felt pressure to attend a client meeting.",
+    "He went to the meeting. The client wasn't especially grateful, and the meeting didn't matter much.",
+    "He realized he had made a bad trade: he had exchanged something truly important for something trivial because he couldn't say no.",
+    "His conclusion: if you don't prioritize your life, someone else will.",
+    "He calls the disciplined pursuit of less 'Essentialism', and borrows designer Dieter Rams's principle 'less but better'.",
+    "The Essentialist asks: what is essential? and eliminates everything else, rather than trying to do everything."
+  ],
+  "tension": "A new father leaves his wife and baby the day after the birth for a meeting that didn't matter.",
+  "opening_idea": "The day after his daughter was born, a man sat in a client meeting instead of the hospital room.",
+  "lessons": [
+    {
+      "idea": "If you don't prioritize, others will.",
+      "anchor": "The client meeting"
+    },
+    {
+      "idea": "Every yes is a trade-off.",
+      "anchor": "Trading the essential for the trivial"
+    },
+    {
+      "idea": "Less but better.",
+      "anchor": "Dieter Rams's principle"
+    }
+  ],
+  "reflect": [
+    "What did you say yes to recently that cost something essential?",
+    "Who is currently setting your priorities?"
+  ],
+  "reflect_final": "What is the one essential thing you'll protect this week, even if it means saying no?",
+  "use_cases": [
+    {
+      "situation": "A meeting is scheduled over your child's school event.",
+      "move": "Decline the meeting and offer an alternative time.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team takes on every request.",
+      "move": "Ask which few projects are truly essential and pause the rest.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your manager keeps adding priorities.",
+      "move": "Ask which one is most important so you can put your best effort there.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "If you don't prioritize your life, someone else will.",
+  "conversation_variants": {
+    "punchline_idea": "McKeown left his newborn daughter for a meeting that didn't matter, and wrote a book about why.",
+    "thirty_sec_idea": "The meeting after the birth, the bad trade, less but better.",
+    "question_idea": "What essential thing did you trade for something trivial?",
+    "key_contrast_idea": "Essential versus trivial"
+  }
+}

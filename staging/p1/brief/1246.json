@@ -1,0 +1,64 @@
+{
+  "story_id": 1246,
+  "kind": "anecdote",
+  "book": {
+    "title": "Big Magic: Creative Living Beyond Fear",
+    "author": "Elizabeth Gilbert",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "This entry overlaps with story 1179 (inspiration as a visitor). To avoid repeating the Ruth Stone story, it uses another anecdote Gilbert tells about the musician Tom Waits: driving on a Los Angeles freeway, he felt a fragment of a song arrive, had no way to write it down, and at first panicked; then he spoke to the song, saying something like 'Can't you see I'm driving?' and suggesting it come back at a better time or go bother someone else, such as Leonard Cohen. The anxiety eased; he felt the creative process was a collaboration, not his sole burden. The story is widely told, including in Gilbert's TED talk; wording is paraphrased.",
+  "facts": [
+    "Gilbert tells a story about the musician Tom Waits.",
+    "Waits was driving on a Los Angeles freeway when he heard a fragment of a melody in his head, the beginning of a song.",
+    "He had no paper, no pen, no recorder. He felt the familiar panic of an artist who is about to lose an idea.",
+    "Then he did something unusual. He looked up and spoke to the song, telling it he was driving and couldn't take it down right now; if it wanted to exist, it could come back at a better moment, or go and bother someone else, like Leonard Cohen.",
+    "His anxiety eased. He realized that the creative process didn't have to be a torment he carried alone; it could be a strange, even humorous collaboration.",
+    "Gilbert uses this to argue that creators can relate to inspiration more lightly, without letting it rule them through fear."
+  ],
+  "tension": "A song arrives at the worst possible moment. Panic, or conversation?",
+  "opening_idea": "Tom Waits is driving on the freeway when a song arrives in his head, and he has nothing to write it down with.",
+  "lessons": [
+    {
+      "idea": "You don't have to carry creativity alone.",
+      "anchor": "Waits speaking to the song"
+    },
+    {
+      "idea": "Lightness reduces creative anxiety.",
+      "anchor": "Telling it to go bother someone else"
+    },
+    {
+      "idea": "Set terms with inspiration.",
+      "anchor": "'Come back at a better time'"
+    }
+  ],
+  "reflect": [
+    "What happens in you when an idea arrives at the wrong moment?",
+    "Where could you take your creative work a little less anxiously?"
+  ],
+  "reflect_final": "How would you treat your ideas if they were collaborators, not bosses?",
+  "use_cases": [
+    {
+      "situation": "Ideas come to you at inconvenient moments and you panic about losing them.",
+      "move": "Keep a simple capture tool, and when you can't, trust that good ideas return.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member is anxious about producing a brilliant idea on demand.",
+      "move": "Take the pressure off: ideas often arrive in their own time.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child gets frustrated when inspiration for a drawing won't come.",
+      "move": "Suggest they tell the idea to come back later and go play for a while.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Treat inspiration as a collaborator, not a tyrant.",
+  "conversation_variants": {
+    "punchline_idea": "Tom Waits told a song that arrived while he was driving to go bother Leonard Cohen instead.",
+    "thirty_sec_idea": "Freeway, song fragment, panic, talking to the song, lighter creative life.",
+    "question_idea": "What happens when an idea arrives at the wrong moment?",
+    "key_contrast_idea": "Tyrant versus collaborator"
+  }
+}

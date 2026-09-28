@@ -1,0 +1,68 @@
+{
+  "story_id": 1089,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "year": "2011"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core anecdote about Ries's IMVU team building a product customers did not want, and the Build-Measure-Learn, MVP and pivot ideas, are central to the book. Several details in the reference TR text are not reliable. IMVU was not Ries's first company. The Instagram pivot example is not from this 2011 book and is omitted; the book's own pivot examples include Groupon starting as The Point. The claim that the word 'pivot' 'entered business' through this book is overstated; the book popularized it in the startup context. Exact durations and user numbers are omitted. The given title 'Büyük Sıçrayış' does not match the usual Turkish edition title ('Yalın Girişim'), so the original English title is used.",
+  "facts": [
+    "At IMVU, Ries and his co-founders spent months building an instant-messaging add-on with 3D avatars that was designed to work with existing IM networks.",
+    "The team worked hard and shipped. The launch drew very little interest, because customers did not want the product as it had been conceived.",
+    "Talking to real users showed that the team's core strategic assumptions were wrong. Customers did not want an add-on to their existing networks, and much of the work had to be thrown away.",
+    "Ries concluded that being on time, on budget and technically excellent means little if you are building something nobody wants.",
+    "From this and similar experiences he developed the Lean Startup approach. You ship a minimum viable product, measure real customer behavior, and learn through the Build-Measure-Learn feedback loop.",
+    "The book frames the key decision as 'pivot or persevere.' A pivot is a structured change of strategy based on validated learning, not a failure. The book's examples include Groupon, which began as a collective-action platform called The Point."
+  ],
+  "tension": "A strong, hardworking team executed well and still failed, because the effort was aimed at something customers did not want.",
+  "opening_idea": "A talented team works for months, launches proudly, and discovers almost no one wants what they built.",
+  "lessons": [
+    {
+      "idea": "Hard work in the wrong direction takes you further from the goal.",
+      "anchor": "IMVU's carefully built add-on that customers rejected"
+    },
+    {
+      "idea": "Release a minimum viable product early to test assumptions with real people.",
+      "anchor": "Build-Measure-Learn loop"
+    },
+    {
+      "idea": "Progress is measured by validated learning, not by output or effort.",
+      "anchor": "Thrown-away code that was polished but unwanted"
+    },
+    {
+      "idea": "Changing course based on evidence is a disciplined move, not a defeat.",
+      "anchor": "Pivot or persevere; Groupon starting as The Point"
+    }
+  ],
+  "reflect": [
+    "Which assumption in your current project have you never tested with a real user?",
+    "Are you measuring how busy you are, or what you have learned?"
+  ],
+  "reflect_final": "What is the smallest version of your current work you could put in front of someone this week to find out if it matters to them?",
+  "use_cases": [
+    {
+      "situation": "The team is planning a long build before anyone outside sees it.",
+      "move": "Ask: 'What's the smallest version we could show five real users in two weeks, and what would we need to see to keep going?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A report is polishing a deliverable for weeks without feedback.",
+      "move": "Suggest they share a rough draft with the end recipient tomorrow and bring back one surprise they heard.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are sinking evenings into a side project you assume people will want.",
+      "move": "Write down your riskiest assumption and test it this week with a simple page, a message or a conversation before building more.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Before building more, prove someone wants it: build small, measure, learn.",
+  "conversation_variants": {
+    "punchline_idea": "Doing the wrong thing on time and on budget is still doing the wrong thing.",
+    "thirty_sec_idea": "Ries's IMVU team spent months perfecting an IM add-on that customers didn't want, which led him to build-measure-learn and the pivot.",
+    "question_idea": "When did you last let a real customer see your work before it was finished?",
+    "key_contrast_idea": "Effort and output versus validated learning as the measure of progress."
+  }
+}

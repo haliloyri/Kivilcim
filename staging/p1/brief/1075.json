@@ -1,0 +1,63 @@
+{
+  "story_id": 1075,
+  "kind": "anecdote",
+  "book": {
+    "title": "Think and Grow Rich (Düşün ve Zengin Ol)",
+    "author": "Napoleon Hill",
+    "year": "1937"
+  },
+  "confidence": "medium",
+  "confidence_note": "Hill does cite Edison's more than ten thousand failed attempts before perfecting the incandescent electric lamp. He uses it to show persistence and his idea that defeat is only temporary. However, the journalist scene and the quote 'I found 10,000 ways that don't work' are popular attributions of doubtful origin and do not appear in this form in the book. The 'notebook of why each attempt failed' detail is also not from Hill. Both are left out of the facts. The figure 'ten thousand' is Hill's round number, not a verified count.",
+  "facts": [
+    "Hill presents Thomas A. Edison as a man who dreamed of a lamp that could be operated by electricity.",
+    "According to Hill, Edison failed more than ten thousand times before he perfected the incandescent electric lamp.",
+    "Hill stresses that Edison held on to his dream through all those failures until he made it a physical reality.",
+    "Hill uses the case to argue that most people quit at the first sign of temporary defeat, and that persistence is what separates achievers from others.",
+    "A core claim of the book tied to this idea: every failure or adversity carries within it the seed of an equivalent or greater benefit."
+  ],
+  "tension": "Ten thousand failed attempts would make almost anyone conclude the idea is impossible. Edison kept going because he did not read those failures as a verdict on the dream.",
+  "opening_idea": "Start with the sheer number: more than ten thousand failed attempts at one lamp. Ask how many attempts the reader would allow before calling it a failure.",
+  "lessons": [
+    {
+      "idea": "Defeat is temporary unless you accept it as permanent by quitting.",
+      "anchor": "Edison's failed attempts only became 'failure' at the point he would have stopped, and he never stopped."
+    },
+    {
+      "idea": "Persistence is anchored in a definite goal, not in optimism about each attempt.",
+      "anchor": "Hill frames Edison as standing by a clear dream, an electric lamp, rather than hoping each trial would work."
+    },
+    {
+      "idea": "Every setback holds the seed of an equivalent or greater benefit.",
+      "anchor": "Each unsuccessful attempt narrowed the path toward the working lamp."
+    }
+  ],
+  "reflect": [
+    "Where did you recently treat a single setback as a final verdict?",
+    "Is the goal behind your current effort definite enough to justify persisting through repeated defeat?"
+  ],
+  "reflect_final": "Think of the last thing you gave up on. Was it truly impossible, or did you just stop at the attempt before the one that might have worked?",
+  "use_cases": [
+    {
+      "situation": "A project review where the team wants to scrap an initiative after a few failed trials.",
+      "move": "Ask: 'Before we kill this, what did each failed attempt rule out, and what is the next variation we haven't tried?'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague is discouraged after being rejected or failing at something for the third time.",
+      "move": "Say: 'Three attempts isn't a verdict, it's data. What would the fourth try do differently?'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel like quitting a personal goal after repeated setbacks.",
+      "move": "Write the goal in one definite sentence, list what each setback taught you, and commit to one concrete next attempt before deciding to stop.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A failure only becomes final at the moment you stop trying.",
+  "conversation_variants": {
+    "punchline_idea": "Edison's lamp needed thousands of attempts, and the world only remembers the one that worked.",
+    "thirty_sec_idea": "Hill says Edison failed over ten thousand times on the electric lamp and kept going because he treated each defeat as temporary, not final.",
+    "question_idea": "How many failed attempts would you tolerate before calling your idea impossible?",
+    "key_contrast_idea": "Most people quit at the first temporary defeat, while Edison treated thousands of defeats as steps toward a definite goal."
+  }
+}

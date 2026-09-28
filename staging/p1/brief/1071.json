@@ -1,0 +1,64 @@
+{
+  "story_id": 1071,
+  "kind": "anecdote",
+  "book": {
+    "title": "Deep Work (Derin Çalışma)",
+    "author": "Cal Newport",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "In Deep Work, Newport presents Adam Grant as Wharton's youngest full professor. He credits Grant's output to batching demanding intellectual work into long, uninterrupted stretches: teaching concentrated in one semester, and multi-day research periods behind an email out-of-office auto-responder. The reference TR text claims Grant answered email in weekly batches and thereby 'doubled his productivity' and improved reply quality. That is not how the book tells it, and no doubling figure is given, so those claims are excluded. The exact length of Grant's isolation periods (roughly a few days) is kept vague on purpose.",
+  "facts": [
+    "Adam Grant became the youngest full professor at the Wharton School, with a notably high output of papers in top academic journals.",
+    "Newport credits Grant's productivity to batching hard intellectual work into long, uninterrupted blocks rather than spreading it thin across his days.",
+    "At the semester level, Grant concentrated his teaching into one semester, which freed the other for focused research.",
+    "During research periods he would withdraw for several days at a time. He put an out-of-office auto-responder on his email and cut himself off from students and colleagues to work in isolation.",
+    "Grant is also known for being generous and helpful to others. The book notes he kept his door open at other times, so the isolation was deliberately scheduled rather than permanent.",
+    "Newport uses Grant to illustrate a formula: high-quality work produced = time spent × intensity of focus."
+  ],
+  "tension": "A professor famous for helping everyone was also among the most productive in his field. The book's answer is that he stopped being constantly available. He boxed his availability and his hard work into separate, concentrated blocks.",
+  "opening_idea": "Open with the paradox: the most generous, helpful professor at Wharton regularly set his email to say he wasn't reading it for days.",
+  "lessons": [
+    {
+      "idea": "Output depends on intensity of focus as well as hours. Uninterrupted blocks multiply what the same time produces.",
+      "anchor": "Newport's formula: work produced = time spent × intensity of focus."
+    },
+    {
+      "idea": "Batch at multiple scales: whole semesters for one type of work, whole days for deep research.",
+      "anchor": "Grant putting all his teaching into one semester and taking multi-day research retreats."
+    },
+    {
+      "idea": "Being unavailable for a while can be arranged openly and politely. It does not have to mean being unhelpful.",
+      "anchor": "The out-of-office auto-responder, from a man known for his generosity."
+    }
+  ],
+  "reflect": [
+    "Which type of demanding work in your life keeps getting chopped into small, interrupted pieces?",
+    "What would it take to make yourself unreachable for one block of time, and who would actually be harmed by it?"
+  ],
+  "reflect_final": "If your results are time multiplied by focus, which factor are you actually trying to grow?",
+  "use_cases": [
+    {
+      "situation": "Your team expects instant replies, and your key project keeps stalling.",
+      "move": "Propose in the meeting that each person claim one protected half-day per week, visible on the shared calendar, with response expectations paused during it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your manager wonders why you're slow to reply on Thursday mornings.",
+      "move": "Say: 'Thursday mornings are my deep block for the report. I'll answer everything by noon, and if something is urgent, call me.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You have a big piece of writing or study that never gets real attention.",
+      "move": "Set an auto-reply or status saying you're offline until a specific time, then work on that single task until the time is up.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Generosity and deep focus can coexist if you schedule them separately instead of mixing them all day.",
+  "conversation_variants": {
+    "punchline_idea": "Wharton's youngest full professor got there partly by telling his inbox to wait.",
+    "thirty_sec_idea": "Adam Grant packed his teaching into one semester and disappeared behind an auto-responder for days to do research, turning focus into a multiplier on his time.",
+    "question_idea": "When did you last work on one hard thing for several hours with no way for anyone to reach you?",
+    "key_contrast_idea": "Constant availability spreads your effort thin, while scheduled unavailability concentrates it."
+  }
+}

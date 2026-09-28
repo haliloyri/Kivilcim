@@ -1,0 +1,64 @@
+{
+  "story_id": 1160,
+  "kind": "concept",
+  "book": {
+    "title": "Crucial Conversations",
+    "author": "Kerry Patterson, Joseph Grenny, Ron McMillan and Al Switzler",
+    "year": "2002"
+  },
+  "confidence": "high",
+  "confidence_note": "The 'Path to Action' (see and hear, tell a story, feel, act) and the advice to separate facts from stories are core to the book's chapter on mastering your stories, as is the STATE method for speaking persuasively: Share your facts, Tell your story, Ask for others' paths, Talk tentatively, Encourage testing. The reference TR text's two-colleagues-in-a-meeting example is illustrative, not a case from the book, and is presented as such.",
+  "facts": [
+    "The authors describe a 'Path to Action': we see and hear something, we tell ourselves a story about it, the story creates a feeling, and the feeling drives our action.",
+    "The step people miss is the story: we interpret facts so quickly that we experience our interpretation as if it were the fact itself.",
+    "They argue that it is our stories, not the other person's actions, that generate most of our emotions.",
+    "Their advice is to retrace the path: separate the observable facts from the story you've added, and ask whether other stories could explain the same facts.",
+    "When speaking up, they recommend the STATE method: Share your facts, Tell your story, Ask for others' paths, Talk tentatively, Encourage testing.",
+    "Starting with facts is the least controversial and most persuasive way to open a hard conversation."
+  ],
+  "tension": "Two people sit in the same meeting and walk out believing completely different things happened.",
+  "opening_idea": "Your manager doesn't look at you once during a meeting. Within seconds, you know why. Except you don't.",
+  "lessons": [
+    {
+      "idea": "Feelings come from the stories we tell about facts.",
+      "anchor": "The Path to Action"
+    },
+    {
+      "idea": "Separate what you saw from what you concluded.",
+      "anchor": "Retracing the path"
+    },
+    {
+      "idea": "Open hard conversations with facts, then offer your story tentatively.",
+      "anchor": "The STATE method"
+    }
+  ],
+  "reflect": [
+    "What story have you told yourself this week that you've treated as fact?",
+    "What other story could explain the same facts?"
+  ],
+  "reflect_final": "If you only told the facts, what would you actually be able to say?",
+  "use_cases": [
+    {
+      "situation": "You feel your manager ignored you in a meeting.",
+      "move": "Open with the fact and ask, rather than accusing: describe what happened and ask what was going on.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your teenager came home late and you're furious.",
+      "move": "Share the facts, your story tentatively, and then ask for theirs.",
+      "context": "family"
+    },
+    {
+      "situation": "You're stewing over a friend's short reply.",
+      "move": "Write down the facts and three different stories that could explain them.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Most conflict starts in the story you add, not the thing that happened.",
+  "conversation_variants": {
+    "punchline_idea": "It's not what they did that makes you angry; it's the story you told about it.",
+    "thirty_sec_idea": "Path to Action, separating facts from stories, and STATE.",
+    "question_idea": "What story are you telling yourself that might not be true?",
+    "key_contrast_idea": "Fact versus story"
+  }
+}

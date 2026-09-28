@@ -1,0 +1,65 @@
+{
+  "story_id": 1189,
+  "kind": "anecdote",
+  "book": {
+    "title": "Stillness Is the Key",
+    "author": "Ryan Holiday",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text describes Alexander the Great patiently waiting for hours or days while his generals urged action. That scene cannot be found in Stillness Is the Key and is left out. The book opens with a different, well-documented example of stillness under pressure: John F. Kennedy during the Cuban Missile Crisis in October 1962. Holiday describes how Kennedy, who had been rushed into the Bay of Pigs fiasco the year before, resisted pressure from military advisers for an immediate strike, took time to deliberate, sought out different views, and chose a naval blockade ('quarantine'), leaving room for Khrushchev to back down. He also notes Kennedy had been influenced by Barbara Tuchman's The Guns of August, about how the great powers stumbled into World War I. Details are kept general.",
+  "facts": [
+    "In October 1962, U.S. surveillance discovered Soviet nuclear missiles being installed in Cuba. The Cuban Missile Crisis lasted thirteen days.",
+    "Many of Kennedy's military advisers urged immediate air strikes or an invasion.",
+    "Holiday notes that Kennedy had learned from the Bay of Pigs invasion the year before, a disaster he'd been rushed into by confident experts.",
+    "Kennedy deliberately slowed down. He gathered a group of advisers, encouraged debate, and took time before deciding.",
+    "He had read Barbara Tuchman's The Guns of August, about how European leaders stumbled into World War I through a series of rushed decisions, and did not want to repeat that.",
+    "He chose a naval blockade, called a quarantine, rather than an attack, which gave Khrushchev time and room to back down.",
+    "The crisis ended with the Soviets removing the missiles. Holiday uses it to show stillness: the ability to be steady, deliberate and calm when everything pushes you to react."
+  ],
+  "tension": "With nuclear war possible, everyone around the president demanded fast, forceful action.",
+  "opening_idea": "In October 1962, the most dangerous thing a president could have done was act quickly.",
+  "lessons": [
+    {
+      "idea": "Under pressure, slowing down can be the strongest move.",
+      "anchor": "Kennedy resisting immediate strikes"
+    },
+    {
+      "idea": "Past mistakes can teach patience.",
+      "anchor": "The Bay of Pigs lesson"
+    },
+    {
+      "idea": "Leave the other side room to step back.",
+      "anchor": "The quarantine gave Khrushchev an exit"
+    }
+  ],
+  "reflect": [
+    "When did acting quickly make things worse for you?",
+    "Where are you being pushed to react right now?"
+  ],
+  "reflect_final": "What decision in front of you would be better made slowly?",
+  "use_cases": [
+    {
+      "situation": "Your team wants to respond immediately to a competitor's move.",
+      "move": "Ask for 48 hours to gather views and consider options before committing.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You receive an angry message and want to reply instantly.",
+      "move": "Wait, reread it later, and choose a response that leaves room for de-escalation.",
+      "context": "self"
+    },
+    {
+      "situation": "A family argument is escalating.",
+      "move": "Suggest a pause and give the other person a way to step back without losing face.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "When everything pushes you to react, stillness can be the strongest move.",
+  "conversation_variants": {
+    "punchline_idea": "In the Cuban Missile Crisis, Kennedy's greatest strength was slowing down.",
+    "thirty_sec_idea": "13 days, pressure to strike, Bay of Pigs lesson, Guns of August, the quarantine.",
+    "question_idea": "What decision are you rushing that deserves more time?",
+    "key_contrast_idea": "React versus respond"
+  }
+}

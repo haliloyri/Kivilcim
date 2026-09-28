@@ -1,0 +1,64 @@
+{
+  "story_id": 1271,
+  "kind": "concept",
+  "book": {
+    "title": "The Body Keeps the Score",
+    "author": "Bessel van der Kolk",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text says a 20-week yoga program gave 'most' chronic PTSD patients relief that drugs and talk therapy couldn't; the book describes an NIH-funded study of trauma-sensitive yoga for women with chronic, treatment-resistant PTSD, compared against a control group, with the yoga group improving significantly more. The program length and exact percentages are not verified here and are omitted; 'most participants' and 'couldn't be achieved by drugs' are overstatements. The framing that van der Kolk noticed a common factor in non-recovering patients is a simplification of his broader argument that insight alone doesn't calm the nervous system.",
+  "facts": [
+    "Van der Kolk argues that understanding why you feel threatened does not by itself stop the body from reacting as if it is under threat.",
+    "His Trauma Center studied trauma-sensitive yoga for women with chronic PTSD who had not improved with other treatments, comparing a weekly yoga class with a control group.",
+    "The yoga group showed significantly greater reductions in PTSD symptoms than the control group.",
+    "He explains the mechanism as learning to notice internal sensations safely (interoception), to regulate breathing, and to tolerate feelings in the body without being overwhelmed.",
+    "He also measured heart rate variability, a sign of how flexibly the nervous system responds, and presents yoga as one way to improve it.",
+    "The book describes other body-based and action-based approaches too, including theater programs, neurofeedback and EMDR, rather than presenting yoga as a single cure."
+  ],
+  "tension": "People can gain real insight into their trauma in talk therapy and still have a nervous system that doesn't believe them.",
+  "opening_idea": "Open with a room of women who had tried other treatments without relief, now asked simply to notice their breath and where they feel their feet.",
+  "lessons": [
+    {
+      "idea": "Insight and regulation are different kinds of change.",
+      "anchor": "Van der Kolk argues understanding the cause does not stop the body's alarm."
+    },
+    {
+      "idea": "Noticing sensation safely is itself a skill.",
+      "anchor": "The yoga work centered on interoception, breathing and tolerating sensations."
+    },
+    {
+      "idea": "Recovery can come from repeated experiences, not only explanations.",
+      "anchor": "A weekly practice, not a single insight, produced improvement in the study."
+    }
+  ],
+  "reflect": [
+    "Have you ever fully understood why something upset you, and still felt it just as strongly?",
+    "Where in your body do you tend to notice stress first?"
+  ],
+  "reflect_final": "The next time you feel tension build, spend a few breaths just noticing where it sits in your body before deciding what to do, and see whether anything shifts.",
+  "use_cases": [
+    {
+      "situation": "Before a difficult presentation, your chest tightens despite knowing you're prepared.",
+      "move": "Take a slow breath and notice your feet on the floor before the first slide, then check whether your voice feels steadier.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend says they've 'talked it all out' in therapy but still feel on edge.",
+      "move": "Mention that van der Kolk found understanding didn't always calm the body, and ask whether they'd want to try a gentle movement class together.",
+      "context": "social"
+    },
+    {
+      "situation": "At the end of a stressful workday.",
+      "move": "Before opening your phone, pause for a minute to notice where you're holding tension, and note what you find.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The women in van der Kolk's yoga study had already been told why they felt unsafe; what helped was learning, week by week, to feel their own body without alarm.",
+  "conversation_variants": {
+    "punchline_idea": "For women with chronic PTSD who hadn't responded to other treatment, a weekly yoga class did better than the comparison group.",
+    "thirty_sec_idea": "Van der Kolk's team offered trauma-sensitive yoga to women whose PTSD hadn't improved; focusing on breath and sensation, they improved significantly more than controls.",
+    "question_idea": "Have you ever noticed a physical activity calm you more than talking something through?",
+    "key_contrast_idea": "From 'if I understand it, I'll feel better' to 'my body has to learn it's safe, too.'"
+  }
+}

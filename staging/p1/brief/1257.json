@@ -1,0 +1,63 @@
+{
+  "story_id": 1257,
+  "kind": "concept",
+  "book": {
+    "title": "Korkusuzluk (Feel the Fear and Do It Anyway)",
+    "author": "Susan Jeffers",
+    "year": "1987"
+  },
+  "confidence": "medium",
+  "confidence_note": "The concept is well attested: Jeffers devotes a chapter to moving from a victim stance to taking responsibility, defines responsibility as neither blaming others nor blaming yourself, and offers a 'Pain-to-Power Vocabulary' of word swaps. The specific exercise in the existing TR text (writing 'I chose this' under every complaint, with the job/relationship/money examples) could not be attributed to the book and is excluded. The TR claim that circumstances begin to change as attitude changes is not kept as a factual promise. Only the vocabulary pairs I am confident about are listed; the book's full list is longer.",
+  "facts": [
+    "Jeffers argues that much fear is sustained by a 'victim' stance, in which what happens to us is someone or something else's doing.",
+    "She defines taking responsibility as never blaming anyone else for what you are being, doing, having or feeling, and also never blaming yourself.",
+    "In her framing, responsibility is about reclaiming power, not accepting guilt: blaming yourself is simply another way of staying a victim.",
+    "Her concrete tool is the 'Pain-to-Power Vocabulary', a set of word swaps: 'I can't' becomes 'I won't', 'I should' becomes 'I could', 'It's a problem' becomes 'It's an opportunity', 'It's not my fault' becomes 'I'm totally responsible', and 'It's terrible' becomes 'It's a learning experience'.",
+    "Jeffers' point is that the words we use shape how powerless or capable we feel about the same situation."
+  ],
+  "tension": "Taking full responsibility sounds like signing up for blame. Jeffers insists that blaming yourself is exactly as disempowering as blaming others.",
+  "opening_idea": "Start with a single phrase most people say several times a day, 'I can't', and Jeffers' suggestion to replace it with 'I won't', then ask what changes.",
+  "lessons": [
+    {
+      "idea": "Responsibility is the opposite of blame in both directions: not pointing at others, and not punishing yourself.",
+      "anchor": "Jeffers' definition: never blaming anyone else, and never blaming yourself"
+    },
+    {
+      "idea": "Swapping a single word can reveal a choice that the old word was hiding.",
+      "anchor": "'I can't' becomes 'I won't'; 'I should' becomes 'I could'"
+    },
+    {
+      "idea": "Naming a setback as a learning experience keeps it from becoming a verdict on you.",
+      "anchor": "'It's terrible' becomes 'It's a learning experience'"
+    }
+  ],
+  "reflect": [
+    "When you say 'I can't' about something, how often would 'I won't' be the more honest sentence?",
+    "Do you tend to blame circumstances, other people, or yourself when something goes wrong?"
+  ],
+  "reflect_final": "The next time you hear yourself say 'I can't' or 'I should', try saying the Jeffers swap out loud and notice whether it reveals a choice you actually want to make, or one you want to decline.",
+  "use_cases": [
+    {
+      "situation": "In a meeting, someone says a task 'can't' be done this sprint.",
+      "move": "Ask gently: 'Is it can't, or won't given our other priorities?' then decide openly which item to drop.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You catch yourself saying 'I should call my parents more.'",
+      "move": "Jeffers' swap turns 'should' into 'could', so rephrase it as 'I could call them on Sunday' and decide whether you will.",
+      "context": "family"
+    },
+    {
+      "situation": "A plan of yours fell apart and you are replaying whose fault it was.",
+      "move": "Write one line naming what you will do differently next time, without assigning blame to anyone, including yourself.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "'I can't' often means 'I won't'. Say the honest word, and the choice becomes yours again.",
+  "conversation_variants": {
+    "punchline_idea": "Jeffers says blaming yourself is just another way of being a victim.",
+    "thirty_sec_idea": "Susan Jeffers noticed how our words keep us powerless, so she offered a swap list: 'I can't' becomes 'I won't', 'I should' becomes 'I could', 'It's terrible' becomes 'It's a learning experience'. Responsibility, she says, means no blame in either direction.",
+    "question_idea": "What's something you say you 'can't' do that is really something you've decided not to do?",
+    "key_contrast_idea": "Things that happen to me versus choices I am making about them."
+  }
+}

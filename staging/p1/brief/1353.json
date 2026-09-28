@@ -1,0 +1,58 @@
+{
+  "story_id": 1353,
+  "kind": "concept",
+  "book": {
+    "title": "Bir Sonraki Seviye (The 5AM Club)",
+    "author": "Robin Sharma",
+    "year": "2018"
+  },
+  "confidence": "low",
+  "confidence_note": "The TR text's 'two loops' of winning and learning, the quote 'winning moves you forward, learning makes you grow', and the claim that Sharma studied top leaders' daily routines could not be attributed to The 5AM Club (the assumed source; its usual Turkish title differs from the input) or to other Sharma books, and are excluded. The 365 and 1,825 lessons arithmetic is the TR writer's. The closest verified two-part model in The 5AM Club is the 'Twin Cycles of Elite Performance': periods of intense, focused output must alternate with genuine recovery, which the book says is where growth happens. The facts below describe that concept. The writer should consider whether this story needs replacing, as it no longer matches the TR text.",
+  "facts": [
+    "The 5AM Club presents the 'Twin Cycles of Elite Performance': a cycle of high excellence, meaning intense and focused work, followed by a cycle of deep recovery.",
+    "Sharma argues that constant output without recovery leads to exhaustion, and that recovery is part of performance, not a break from it.",
+    "He draws the idea from how high performers in different fields alternate hard effort with rest, and presents it as a principle rather than a measured study.",
+    "The book suggests building recovery into the day and week deliberately, instead of waiting until you are exhausted."
+  ],
+  "tension": "People trying to achieve more usually cut rest first, yet the book says the recovery half of the cycle is where capacity is rebuilt.",
+  "opening_idea": "Begin with someone who works flat out every day without real breaks, and ask what the book says is missing from the cycle.",
+  "lessons": [
+    {
+      "idea": "Sustained high performance needs alternating effort and recovery, not constant effort.",
+      "anchor": "The Twin Cycles of Elite Performance."
+    },
+    {
+      "idea": "Recovery works best when it is planned in advance, not taken only after burnout.",
+      "anchor": "Sharma's advice to build deep-recovery periods into the schedule deliberately."
+    }
+  ],
+  "reflect": [
+    "When did you last take a break that genuinely restored you rather than just filling time?",
+    "Which part of your week is intense output, and where, if anywhere, is the recovery?"
+  ],
+  "reflect_final": "After your next demanding block of work, plan a short real recovery break, away from screens, before starting the next task. Notice how the next block goes.",
+  "use_cases": [
+    {
+      "situation": "You have back-to-back demanding work and plan to push through without a pause.",
+      "move": "Finish one focused block, then take a short break away from the screen before the next, treating it as part of the work.",
+      "context": "self"
+    },
+    {
+      "situation": "A high-performing team member is visibly tired but refuses time off.",
+      "move": "Mention Sharma's Twin Cycles, where recovery is half of performance, and agree together when their next real recovery period will be.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A family weekend has been filled entirely with errands and obligations.",
+      "move": "Propose keeping one half-day free of plans so everyone can actually rest.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "In Sharma's Twin Cycles, the recovery half is part of the performance, not a break from it.",
+  "conversation_variants": {
+    "punchline_idea": "Robin Sharma says half of elite performance is recovery.",
+    "thirty_sec_idea": "In The 5AM Club, Sharma describes twin cycles: intense, focused work followed by deliberate deep recovery, arguing that people who skip the second cycle wear themselves down instead of getting further.",
+    "question_idea": "Ask what actually restores them after a hard week, and when they last did it.",
+    "key_contrast_idea": "Constant output that runs you down versus effort and recovery taken in turns."
+  }
+}

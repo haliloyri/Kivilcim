@@ -1,0 +1,62 @@
+{
+  "story_id": 1333,
+  "kind": "concept",
+  "book": {
+    "title": "Her Şey Yolunda (Everything Is F*cked: A Book About Hope)",
+    "author": "Mark Manson",
+    "year": "2019"
+  },
+  "confidence": "low",
+  "confidence_note": "Everything Is F*cked is a book about hope; Manson discusses the 'paradox of progress' (lives are objectively better yet people feel worse), argues that hope depends on believing something is lacking, and closes with the line 'Don't hope for better. Just be better.' The TR text's term 'umut paradoksu', its specific claim that hope creates a settled habit of 'not good enough', and the sentences about meaning being found in present pain could not be verified as the book's wording and are excluded or softened. The book's opening case of Witold Pilecki is not used because it does not illustrate this specific point. Facts are kept to the concept as recalled; not checked against the text.",
+  "facts": [
+    "Manson observes a paradox of progress: by many measures life has never been safer or more prosperous, yet many people feel more anxious and hopeless.",
+    "He argues that hope requires believing that something valuable is missing now and that the future could supply it.",
+    "He warns that hope aimed only at a better future can make the present feel permanently insufficient.",
+    "His closing message is not to wait on hope for a better future but to act better now: 'Don't hope for better. Just be better.'"
+  ],
+  "tension": "The same hope that keeps people going also tells them, every day, that where they are now isn't good enough.",
+  "opening_idea": "Start with the familiar sentence 'things will be better once...' and point out what it quietly says about today.",
+  "lessons": [
+    {
+      "idea": "Objective improvement doesn't automatically bring a sense of wellbeing.",
+      "anchor": "the paradox of progress"
+    },
+    {
+      "idea": "Hope rests on a felt lack in the present, so it can deepen dissatisfaction.",
+      "anchor": "Manson's claim that hope requires something missing"
+    },
+    {
+      "idea": "Acting well now can replace waiting for a better future.",
+      "anchor": "'Don't hope for better. Just be better.'"
+    }
+  ],
+  "reflect": [
+    "What's something you've told yourself you'll enjoy only once a future condition is met?",
+    "Has reaching a long-hoped-for goal ever felt smaller than expected?"
+  ],
+  "reflect_final": "Next time you catch yourself saying 'once X happens, then...', name one way to act better today in that same area, and notice how the waiting feels afterward.",
+  "use_cases": [
+    {
+      "situation": "A team keeps saying morale will improve after the big release.",
+      "move": "Ask what one thing could make this sprint better now instead of pinning it on the release.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your partner says life will be good once you move house.",
+      "move": "Agree on one thing you'll enjoy together this week in the current home.",
+      "context": "family"
+    },
+    {
+      "situation": "You're postponing satisfaction until a promotion.",
+      "move": "Recall Manson's 'just be better' and pick one piece of this week's work to do to the standard you'd want after the promotion.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "'It'll be better later' also means 'it's lacking now'; Manson's answer is to be better now rather than wait for better.",
+  "conversation_variants": {
+    "punchline_idea": "We've never had it so good, and many of us have never felt so hopeless: Manson calls it the paradox of progress.",
+    "thirty_sec_idea": "Manson notes that life keeps improving while people feel worse, argues that hope depends on something feeling missing, and ends with a blunt fix: don't hope for better, just be better.",
+    "question_idea": "What's a 'once this happens, I'll be happy' you've held for a while?",
+    "key_contrast_idea": "Waiting for a better future versus acting better in the present."
+  }
+}

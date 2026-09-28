@@ -1,0 +1,64 @@
+{
+  "story_id": 1245,
+  "kind": "concept",
+  "book": {
+    "title": "The 80/20 Principle",
+    "author": "Richard Koch",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Koch applies the 80/20 principle to happiness, suggesting that most of our happiness comes from a small part of our time and activities. He proposes identifying 'happiness islands', the small number of times and activities that make you happiest, and 'unhappiness islands', the times and situations that make you least happy, and then expanding the first while shrinking or eliminating the second. The reference TR text's title ('the 20 percent sources of happiness') fits this. The specific exercises are paraphrased; no statistics are claimed.",
+  "facts": [
+    "Koch argues that happiness, like most things, is unevenly distributed: a large share of our happiness occurs in a small share of our time.",
+    "He suggests identifying your 'happiness islands': the small periods and activities in which you're consistently happiest.",
+    "He also suggests identifying your 'unhappiness islands': the times, places, people or tasks that reliably make you least happy.",
+    "His advice is to spend more time on the happiness islands and to reduce, avoid or eliminate the unhappiness islands wherever possible.",
+    "He argues that people often accept unhappiness islands out of habit or obligation, without realizing how much they could change.",
+    "He treats happiness partly as a matter of deliberate choice and design, not just luck."
+  ],
+  "tension": "Most people's happiness comes from a few moments, but their schedule is built around everything else.",
+  "opening_idea": "Look back over last month and ask: in which moments were you truly happy? The list is probably short, and revealing.",
+  "lessons": [
+    {
+      "idea": "Happiness is concentrated in a few moments.",
+      "anchor": "80/20 of happiness"
+    },
+    {
+      "idea": "Expand happiness islands.",
+      "anchor": "Spend more time where you're happiest"
+    },
+    {
+      "idea": "Shrink unhappiness islands.",
+      "anchor": "Reduce or eliminate what reliably drains you"
+    }
+  ],
+  "reflect": [
+    "When were you happiest in the last month?",
+    "Which situations reliably make you unhappy?"
+  ],
+  "reflect_final": "What one happiness island could you expand, and what one unhappiness island could you shrink this month?",
+  "use_cases": [
+    {
+      "situation": "Sunday evenings always feel miserable because of work dread.",
+      "move": "Identify what causes it and change one thing, like preparing Monday on Friday.",
+      "context": "self"
+    },
+    {
+      "situation": "Family weekends feel full but joyless.",
+      "move": "Ask everyone which moments they enjoyed most and plan more of those.",
+      "context": "family"
+    },
+    {
+      "situation": "A recurring meeting drains your whole team.",
+      "move": "Propose redesigning or dropping it.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Find where your happiness lives, and spend more of your life there.",
+  "conversation_variants": {
+    "punchline_idea": "Most of your happiness comes from a small slice of your time.",
+    "thirty_sec_idea": "Happiness islands, unhappiness islands, expand and shrink.",
+    "question_idea": "Where are your happiness islands?",
+    "key_contrast_idea": "Happiness islands, unhappiness islands"
+  }
+}

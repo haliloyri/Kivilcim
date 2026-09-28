@@ -1,0 +1,63 @@
+{
+  "story_id": 1154,
+  "kind": "concept",
+  "book": {
+    "title": "Man's Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "year": "1946"
+  },
+  "confidence": "high",
+  "confidence_note": "Frankl's proposal of a Statue of Responsibility on the West Coast to complement the Statue of Liberty on the East Coast appears in the logotherapy section of the book. The reference TR text frames it as a remark he made on first seeing the Statue of Liberty; that scene cannot be confirmed and is left out. Also from the book: freedom is only part of the story and half of the truth, and it threatens to degenerate into arbitrariness unless lived in terms of responsibleness; man should not ask what the meaning of his life is but recognize that it is he who is asked; and his maxim 'Live as if you were living already for the second time and as if you had acted the first time as wrongly as you are about to act now!'",
+  "facts": [
+    "Frankl writes that freedom is not the last word. Freedom is only part of the story and half of the truth; it is the negative aspect of a whole whose positive aspect is responsibleness.",
+    "He warns that freedom can degenerate into mere arbitrariness unless it is lived in terms of responsibleness.",
+    "That is why, he writes, he recommends that the Statue of Liberty on the East Coast be supplemented by a Statue of Responsibility on the West Coast.",
+    "He argues that we should not ask what the meaning of our life is; instead, we should recognize that we are the ones being asked, and answer by being responsible.",
+    "He offers a maxim: 'Live as if you were living already for the second time and as if you had acted the first time as wrongly as you are about to act now!'"
+  ],
+  "tension": "A world that celebrates freedom above all may find that freedom alone leaves people empty.",
+  "opening_idea": "One of the most famous statues in the world stands for liberty. Frankl thought it needed a partner on the other coast.",
+  "lessons": [
+    {
+      "idea": "Freedom without responsibility slides into arbitrariness.",
+      "anchor": "The Statue of Responsibility proposal"
+    },
+    {
+      "idea": "Life asks the questions; we answer by how we act.",
+      "anchor": "'It is he who is asked'"
+    },
+    {
+      "idea": "Imagining a second chance sharpens responsibility now.",
+      "anchor": "'Live as if you were living already for the second time'"
+    }
+  ],
+  "reflect": [
+    "Where do you use your freedom mainly to avoid commitments?",
+    "What is life asking of you right now?"
+  ],
+  "reflect_final": "If this were your second time living today, what would you do differently?",
+  "use_cases": [
+    {
+      "situation": "A teenager argues that freedom means doing whatever they want.",
+      "move": "Talk about the Statue of Responsibility idea and agree on one freedom paired with one responsibility.",
+      "context": "family"
+    },
+    {
+      "situation": "A team wants more autonomy.",
+      "move": "Grant it explicitly alongside a clear ownership of outcomes.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're about to make a choice you might regret.",
+      "move": "Apply Frankl's maxim: imagine you've already lived this once and chose wrongly, then choose.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Freedom is half the truth; responsibility is the other half.",
+  "conversation_variants": {
+    "punchline_idea": "Frankl wanted a Statue of Responsibility to balance the Statue of Liberty.",
+    "thirty_sec_idea": "Freedom as half the truth, the statue proposal, and the second-time maxim.",
+    "question_idea": "What is your life asking you right now?",
+    "key_contrast_idea": "Liberty and responsibility"
+  }
+}

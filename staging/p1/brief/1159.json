@@ -1,0 +1,64 @@
+{
+  "story_id": 1159,
+  "kind": "concept",
+  "book": {
+    "title": "Crucial Conversations",
+    "author": "Kerry Patterson, Joseph Grenny, Ron McMillan and Al Switzler",
+    "year": "2002"
+  },
+  "confidence": "high",
+  "confidence_note": "Two ideas from the book are combined here, both well established. 'Start with Heart' asks what you really want for yourself, for the other person and for the relationship. 'Make It Safe' says that when people feel unsafe they move to silence or violence, and that safety depends on two conditions: Mutual Purpose (the other person believes you care about their goals) and Mutual Respect (they believe you respect them). The reference TR text calls this 'common ground' and says the team studied 'thousands of conversations'; the book's terms are used and no numbers are given.",
+  "facts": [
+    "The authors observe that when people stop talking openly or start attacking, it is usually because they don't feel safe.",
+    "They name two conditions for safety in a conversation: Mutual Purpose and Mutual Respect.",
+    "Mutual Purpose means the other person believes you are working toward a common outcome and care about their goals and interests.",
+    "Mutual Respect means the other person believes you respect them as a person; when respect is violated, the conversation turns into a defense of dignity.",
+    "They advise stepping out of the content when safety is at risk, restoring safety, and then returning to the topic.",
+    "They also advise 'starting with heart': before a hard conversation, ask what you really want for yourself, for the other person and for the relationship."
+  ],
+  "tension": "The same words that land well in one conversation cause a fight in another. What's different?",
+  "opening_idea": "When someone goes quiet or gets defensive, the problem is rarely the topic.",
+  "lessons": [
+    {
+      "idea": "Silence and attacks are signs people feel unsafe.",
+      "anchor": "The authors' observation"
+    },
+    {
+      "idea": "Safety rests on mutual purpose and mutual respect.",
+      "anchor": "The two conditions"
+    },
+    {
+      "idea": "Deciding what you really want changes your tone.",
+      "anchor": "Start with Heart questions"
+    }
+  ],
+  "reflect": [
+    "In your last tense conversation, which was missing: purpose or respect?",
+    "What do you really want for the relationship you're about to have a hard talk in?"
+  ],
+  "reflect_final": "Before your next difficult conversation, what do you truly want for the other person?",
+  "use_cases": [
+    {
+      "situation": "A colleague gets defensive the moment you raise a problem.",
+      "move": "Step out of the content and state your mutual purpose before continuing.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your partner feels criticized during a money discussion.",
+      "move": "Affirm your respect for them explicitly, then return to the topic.",
+      "context": "family"
+    },
+    {
+      "situation": "You're preparing for a tense conversation.",
+      "move": "Write down what you want for yourself, for them and for the relationship.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "When a conversation turns ugly, fix the safety before the content.",
+  "conversation_variants": {
+    "punchline_idea": "People don't get defensive about the content; they get defensive about feeling unsafe.",
+    "thirty_sec_idea": "Mutual purpose, mutual respect, step out and restore safety, start with heart.",
+    "question_idea": "What do you really want from your next hard conversation?",
+    "key_contrast_idea": "Content versus safety"
+  }
+}

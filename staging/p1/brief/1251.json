@@ -1,0 +1,66 @@
+{
+  "story_id": 1251,
+  "kind": "concept",
+  "book": {
+    "title": "Money: Master the Game",
+    "author": "Tony Robbins",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Robbins describes five levels of financial dreams: financial security, financial vitality, financial independence, financial freedom and absolute financial freedom. He asks readers to put numbers on each level, arguing that many people find security or independence far more reachable than they imagined once they calculate it, and that a clear number motivates action. Definitions are paraphrased; the exact expense categories in each level are simplified.",
+  "facts": [
+    "Robbins argues that most people have a vague sense of wanting 'more money' but have never defined what they actually need.",
+    "He lays out five financial dreams, each a higher level than the last.",
+    "Financial security: your investment income covers essential costs such as housing, food, utilities, transportation and insurance, without working.",
+    "Financial vitality: your investment income covers those essentials plus about half of your current wants and luxuries.",
+    "Financial independence: your investment income sustains your current lifestyle without working.",
+    "Financial freedom: you can live the lifestyle you'd like, including some upgrades, without working.",
+    "Absolute financial freedom: you can do almost anything you want, whenever you want.",
+    "Robbins encourages readers to calculate the actual number for each level, arguing that many people discover security is much closer than they thought, and that a concrete target makes a plan possible."
+  ],
+  "tension": "'I want to be rich' is too vague to act on. A specific number changes everything.",
+  "opening_idea": "Ask most people how much money they need to feel secure, and they have no idea. Robbins thinks that's the real problem.",
+  "lessons": [
+    {
+      "idea": "Vague goals don't motivate action.",
+      "anchor": "'More money' versus a defined number"
+    },
+    {
+      "idea": "Break the dream into levels.",
+      "anchor": "Security, vitality, independence, freedom, absolute freedom"
+    },
+    {
+      "idea": "The first level may be closer than you think.",
+      "anchor": "Calculating financial security"
+    }
+  ],
+  "reflect": [
+    "Do you know what number would give you financial security?",
+    "Which level would genuinely change your life?"
+  ],
+  "reflect_final": "What would it take to calculate your first financial level this week?",
+  "use_cases": [
+    {
+      "situation": "You feel anxious about money but have never defined a goal.",
+      "move": "Add up your essential yearly costs to find your financial security number.",
+      "context": "self"
+    },
+    {
+      "situation": "You and your partner argue about saving versus spending.",
+      "move": "Work through the five levels together and agree which one you're aiming for first.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend says they'll never be able to retire.",
+      "move": "Suggest calculating just the security level first; it's often more reachable.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "You can't reach a financial goal you've never defined.",
+  "conversation_variants": {
+    "punchline_idea": "Robbins says most people have never calculated what financial security would actually cost them.",
+    "thirty_sec_idea": "Five levels, calculate each, security closer than expected.",
+    "question_idea": "Do you know your financial security number?",
+    "key_contrast_idea": "Vague wish versus concrete number"
+  }
+}

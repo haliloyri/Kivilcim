@@ -1,0 +1,39 @@
+{
+  "story_id": 1312,
+  "kind": "anecdote",
+  "book": { "title": "İşin Özü (The E-Myth Revisited)", "author": "Michael E. Gerber", "year": "1995" },
+  "confidence": "medium",
+  "confidence_note": "The Sarah pie-shop story appears in The E-Myth Revisited (1995), the expanded edition of The E-Myth (1986); the year here reflects the edition containing Sarah, while the input listed 1986. Sarah is a woman (the TR text wrongly calls her 'adam'). The TR text's specific figures ('20 hours baking, 60 hours managing' after six months) and the week-by-week list of problems are not from the book and are excluded; the book depicts her as overwhelmed and working long hours without giving such a breakdown. Gerber's 'Fatal Assumption' and the Entrepreneur/Manager/Technician split, including his rough 10%/20%/70% profile of the typical small business owner, are from the book.",
+  "facts": [
+    "Sarah loved baking pies, a craft she had learned as a child in her aunt's kitchen, and she opened her own pie shop.",
+    "Running the shop, she found herself buried in work that was not baking, working long hours, and coming to resent the business she had started.",
+    "Gerber calls the trigger an 'Entrepreneurial Seizure': a technician decides to stop working for someone else and start a business.",
+    "The 'Fatal Assumption' behind it: if you understand the technical work of a business, you understand a business that does that technical work.",
+    "Gerber says everyone who goes into business is three people in one: the Entrepreneur (the visionary), the Manager (the organizer), and the Technician (the doer).",
+    "He describes the typical small business owner as roughly 10% Entrepreneur, 20% Manager, and 70% Technician."
+  ],
+  "tension": "Sarah's love and skill for baking were the reasons she opened the shop, yet the shop turned her craft into a small part of an exhausting job she had not trained for.",
+  "opening_idea": "Open with Sarah, who learned to bake pies in her aunt's kitchen and decided to turn that gift into her own shop, and hint that the shop asked for something baking never had.",
+  "lessons": [
+    { "idea": "Being excellent at the work is not the same as knowing how to run a business that does that work.", "anchor": "Gerber's 'Fatal Assumption' behind Sarah's pie shop." },
+    { "idea": "Every business owner has three roles competing for attention, and the doer usually wins by default.", "anchor": "The Entrepreneur, Manager, Technician split and the 10/20/70 profile." },
+    { "idea": "Turning a passion into a business can crowd out the passion itself unless the business is designed for it.", "anchor": "Sarah coming to resent the shop she opened to bake pies." }
+  ],
+  "reflect": [
+    "Is there something you are good at that others keep telling you to 'turn into a business' or a bigger role?",
+    "In your current work, how much of your week goes to doing the work, versus organizing it, versus deciding its direction?"
+  ],
+  "reflect_final": "Look at last week and label each major block as Technician, Manager, or Entrepreneur work. Pick one Technician task you could hand off or standardize, and notice what you do with the time it frees.",
+  "use_cases": [
+    { "situation": "Your best engineer is being promoted to lead a team.", "move": "Talk openly about Gerber's point that doing the work and running the work are different skills, and agree on one management habit they will practise in the first month.", "context": "oneonone" },
+    { "situation": "A friend wants to turn their hobby into a business.", "move": "Ask them about Sarah's trap before encouraging them: 'Who will do the books, the hiring, and the supplier calls, and do you want that part of the job?'", "context": "social" },
+    { "situation": "You notice you fill your days with hands-on tasks you enjoy and avoid planning.", "move": "Block one hour this week for Entrepreneur work only: what the work should look like a year from now.", "context": "self" }
+  ],
+  "pocket_idea": "Sarah could bake a perfect pie, but a pie shop is not a pie: the skill that starts a business is rarely the skill that runs it.",
+  "conversation_variants": {
+    "punchline_idea": "Gerber's 'Fatal Assumption': knowing how to do the work does not mean you know how to run a business that does it.",
+    "thirty_sec_idea": "Sarah learned to bake pies in her aunt's kitchen and opened a pie shop; soon she was overwhelmed by everything that was not baking and came to resent the shop, a classic case of a technician owning a business.",
+    "question_idea": "Have you ever turned something you loved into a job, and did you still love it afterward?",
+    "key_contrast_idea": "Being great at the work versus building the thing that does the work."
+  }
+}

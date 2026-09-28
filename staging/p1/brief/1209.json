@@ -1,0 +1,64 @@
+{
+  "story_id": 1209,
+  "kind": "anecdote",
+  "book": {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Goggins describes a very difficult childhood, including a violent father, poverty, racism and learning difficulties; these are mentioned only briefly and without detail. The reference TR text's quoted daily mantra ('Today I will survive') cannot be verified and is not used. The book's well-known turning point is used instead: in his twenties, overweight at close to 300 pounds and working as a pest-control exterminator, Goggins saw a documentary about Navy SEAL training and decided to try; to qualify, he lost over 100 pounds in under three months. The 'Accountability Mirror', sticky notes on his bathroom mirror naming his goals and insecurities, is also from the book. Weight figures are rounded.",
+  "facts": [
+    "Goggins describes a childhood marked by abuse from his father, poverty, racism and struggles at school.",
+    "As a young adult he was overweight, weighing close to 300 pounds, and working nights spraying for pests, feeling his life was going nowhere.",
+    "After seeing a television documentary about Navy SEAL training, he decided he wanted to become a SEAL.",
+    "Recruiters told him he'd need to lose over 100 pounds in less than three months to qualify. He did it through extreme daily discipline.",
+    "He describes the 'Accountability Mirror': writing his goals and his insecurities on sticky notes and putting them on his bathroom mirror, facing them honestly every day.",
+    "He argues that facing uncomfortable truths about yourself, rather than making excuses, is where change begins."
+  ],
+  "tension": "An overweight exterminator with a painful past decides to become one of the toughest soldiers in the world.",
+  "opening_idea": "A man working nights killing cockroaches sees a documentary and decides to become a Navy SEAL.",
+  "lessons": [
+    {
+      "idea": "Honesty with yourself is the start of change.",
+      "anchor": "The Accountability Mirror"
+    },
+    {
+      "idea": "A hard past doesn't have to decide your future.",
+      "anchor": "Goggins's childhood and turnaround"
+    },
+    {
+      "idea": "Daily discipline can do what seemed impossible.",
+      "anchor": "Losing over 100 pounds in under three months"
+    }
+  ],
+  "reflect": [
+    "What would you write on your own accountability mirror?",
+    "Which excuse do you rely on most?"
+  ],
+  "reflect_final": "What one uncomfortable truth about yourself could you face this week?",
+  "use_cases": [
+    {
+      "situation": "You keep making excuses about a goal you care about.",
+      "move": "Write the goal and your main excuse on a sticky note and put it on your mirror.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend says their past makes change impossible.",
+      "move": "Acknowledge the past, then ask what one small step is still in their control.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team keeps missing targets with plausible excuses.",
+      "move": "Run an honest review: what did we control, and what did we choose?",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Change starts with the truth you're willing to look at in the mirror.",
+  "conversation_variants": {
+    "punchline_idea": "An overweight exterminator lost over 100 pounds in under three months to become a Navy SEAL.",
+    "thirty_sec_idea": "Hard childhood, near-300 pounds, SEAL documentary, weight loss, accountability mirror.",
+    "question_idea": "What would you write on your accountability mirror?",
+    "key_contrast_idea": "Excuses versus honesty"
+  }
+}

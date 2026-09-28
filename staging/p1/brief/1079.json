@@ -1,0 +1,64 @@
+{
+  "story_id": 1079,
+  "kind": "anecdote",
+  "book": {
+    "title": "Influence",
+    "author": "Robert Cialdini",
+    "year": "1984"
+  },
+  "confidence": "medium",
+  "confidence_note": "The restaurant-mint experiment is Strohmetz et al. (2002), so it cannot appear in the 1984 first edition. Cialdini discusses it in later work: revised editions of Influence and 'Yes! 50 Scientifically Proven Ways to Be Persuasive' (2008). The commonly cited figures are approximate: about +3% tips for one mint, about +14% for two, and about +23% when the server left one mint, walked away, then came back with a second 'for you nice people.' The reference text's single waiter earning '30% more every month' and its '25%' figure are not supported and should not be used. Reciprocity as a deeply ingrained, cross-cultural norm is core to the 1984 book.",
+  "facts": [
+    "In a restaurant study, servers varied what they did when they delivered the bill.",
+    "With no mint, tips were the baseline. One mint per diner raised tips only slightly, roughly 3%.",
+    "Two mints per diner raised tips more, roughly 14%.",
+    "The biggest effect came when the server left one mint, started to walk away, then turned back and offered a second mint as if just for this table. Tips rose roughly 23%.",
+    "The mints cost almost nothing. What changed was how significant, unexpected and personal the gesture felt.",
+    "Cialdini calls the underlying force the reciprocity principle: people feel obliged to repay what others give them. He describes it as a norm found across human societies, and it works largely automatically."
+  ],
+  "tension": "The same tiny gift, a mint, barely moved tips when handed over routinely. The same mint changed behavior sharply when it seemed chosen for these particular people.",
+  "opening_idea": "A mint with the bill is a throwaway. The same mint, delivered as a deliberate second thought, nearly doubled a restaurant's tip effect.",
+  "lessons": [
+    {
+      "idea": "Receiving something creates a felt obligation to give back, even when the gift is small.",
+      "anchor": "One mint with the bill nudged tips upward."
+    },
+    {
+      "idea": "Reciprocity grows when a gift feels significant, unexpected and personalized, not when it is merely bigger in cost.",
+      "anchor": "The walk-away-and-return second mint outperformed simply handing over two."
+    },
+    {
+      "idea": "The obligation runs largely on automatic pilot, which is why it is powerful and also exploitable.",
+      "anchor": "Diners didn't reason about mint value. They responded to the feeling of being singled out."
+    }
+  ],
+  "reflect": [
+    "When did a small, unexpected gesture from someone make you want to do something for them in return?",
+    "Do your usual favors feel routine to the other person, or chosen for them?"
+  ],
+  "reflect_final": "What small, unexpected, personal gesture could you offer someone this week, with no strings attached?",
+  "use_cases": [
+    {
+      "situation": "Opening a working session with a colleague you need cooperation from",
+      "move": "Send one specific resource you found for their current problem before asking for anything: 'Saw this and thought of your project.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "Check-in with a direct report or teammate",
+      "move": "End with an unprompted, specific thank-you for one concrete thing they did, naming it exactly, rather than a generic 'thanks for everything.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Noticing someone giving you a 'free gift' before a sales pitch",
+      "move": "Silently label it: 'This is a reciprocity move.' Accept it if you like, and decide on the pitch as if the gift didn't exist.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "It isn't the size of the gift but the sense that it was meant for you that makes people want to give back.",
+  "conversation_variants": {
+    "punchline_idea": "The mint didn't change, only the turn-back moment did, and that was worth several times more in tips.",
+    "thirty_sec_idea": "Researchers compared no mint, one mint, two mints, and one mint plus a 'just for you' second. The personal, unexpected version won by far.",
+    "question_idea": "Why would a second mint delivered as an afterthought beat two mints handed over at once?",
+    "key_contrast_idea": "A routine gift triggers a weak obligation. A gift that feels chosen for you triggers a strong one."
+  }
+}

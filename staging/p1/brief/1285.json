@@ -1,0 +1,59 @@
+{
+  "story_id": 1285,
+  "kind": "concept",
+  "book": {
+    "title": "As a Man Thinketh",
+    "author": "James Allen",
+    "year": "1903"
+  },
+  "confidence": "high",
+  "confidence_note": "The garden metaphor is in the book, close to the text: a man's mind may be likened to a garden, which may be intelligently cultivated or allowed to run wild; either way it will bring forth, and if no useful seeds are put in, useless weed-seeds will fall in and grow. Allen's link from thought to character and circumstances is also his. The reference's claim that Allen called it 'habit, not magic' is a paraphrase and not quoted. The book gives no concrete case study for this idea beyond the garden image. The input gives the title as 'İnsan Nasıl Düşünür'; English original used. The book's publication is usually dated 1903 (sometimes 1902).",
+  "facts": [
+    "Allen compares a person's mind to a garden that can be intelligently cultivated or allowed to run wild.",
+    "Whether cultivated or neglected, it will produce something: if no useful seeds are planted, an abundance of weed-seeds will fall in and keep growing.",
+    "Just as a gardener weeds out what is useless and grows the flowers and fruit he wants, a person can tend their mind by weeding out wrong and impure thoughts and cultivating right ones.",
+    "Allen argues that in doing so a person discovers they are the 'master-gardener' of their soul and the director of their life.",
+    "He claims thoughts shape character, and that character in turn shows up in a person's circumstances; this is his philosophical claim, not a study."
+  ],
+  "tension": "Doing nothing with your mind feels neutral, but in Allen's garden neglect isn't empty; it fills with weeds.",
+  "opening_idea": "Begin with an untended garden plot: nobody planted anything, yet it's full.",
+  "lessons": [
+    {
+      "idea": "An untended mind is not blank; it fills with whatever drifts in.",
+      "anchor": "If no useful seeds are planted, weed-seeds fall in and grow."
+    },
+    {
+      "idea": "You can act as the gardener: noticing and removing some thoughts, deliberately planting others.",
+      "anchor": "Allen's image of the person as 'master-gardener' of their own soul."
+    }
+  ],
+  "reflect": [
+    "What thought keeps growing in your mind that you never chose to plant?",
+    "What 'seed' have you deliberately planted lately, if any?"
+  ],
+  "reflect_final": "Tonight, notice one recurring thought and ask whether you planted it or it drifted in; pick one thought you'd like to plant instead and return to it tomorrow morning.",
+  "use_cases": [
+    {
+      "situation": "You scroll news and social media first thing every morning and feel drained.",
+      "move": "Allen says unplanted ground fills with weeds; decide the first thing you'll read or think about tomorrow before you pick up the phone.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child keeps repeating 'I'm bad at math.'",
+      "move": "Use the garden image: ask which thought they'd like to grow instead, and help them word it.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend keeps replaying a critical comment someone made.",
+      "move": "Ask whether they chose that thought or it just blew in, and what they'd rather be thinking about.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Your mind is a garden that never stays empty: if you don't plant, the wind does.",
+  "conversation_variants": {
+    "punchline_idea": "James Allen wrote in 1903 that a neglected mind isn't empty; it's a garden full of weeds.",
+    "thirty_sec_idea": "Allen compares the mind to a garden: cultivate it or let it run wild, it will grow something, and if you plant nothing, weeds will seed themselves; so be the gardener.",
+    "question_idea": "What's one thought that has been growing in your head without your permission?",
+    "key_contrast_idea": "A mind left alone versus a mind tended."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "story_id": 1241,
+  "kind": "anecdote",
+  "book": {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "year": "1936"
+  },
+  "confidence": "high",
+  "confidence_note": "This entry duplicates the theme of story 1174 (Theodore Roosevelt remembering names). To avoid repetition, it uses another example Carnegie gives for the same principle: Andrew Carnegie, the steel magnate, understood the importance of names. As a boy in Scotland, he got friends to gather food for his rabbits by promising to name the baby rabbits after them. Later, when he wanted to sell steel rails to the Pennsylvania Railroad, headed by J. Edgar Thomson, he named his new steel mill the Edgar Thomson Steel Works. Carnegie also mentions Jim Farley, who was said to remember the first names of 50,000 people. The database title (Roosevelt) should be updated; flagged for the user.",
+  "facts": [
+    "Dale Carnegie tells stories about Andrew Carnegie, the steel industrialist (no relation), to illustrate the power of names.",
+    "As a boy in Scotland, Andrew had a pair of rabbits that soon had a litter, and he had nothing to feed them.",
+    "He told the neighbourhood boys that if they gathered enough clover and dandelions to feed the rabbits, he would name the bunnies after them. It worked.",
+    "Years later, he wanted to sell steel rails to the Pennsylvania Railroad, whose president was J. Edgar Thomson.",
+    "He built a steel mill in Pittsburgh and named it the Edgar Thomson Steel Works.",
+    "When the Pennsylvania Railroad needed rails, it bought them from Carnegie.",
+    "Dale Carnegie also mentions Jim Farley, a political organizer said to know the first names of 50,000 people.",
+    "Principle: remember that a person's name is to that person the sweetest and most important sound in any language."
+  ],
+  "tension": "A boy with hungry rabbits and no food discovers a principle that later helps him sell steel.",
+  "opening_idea": "A Scottish boy needs food for his rabbits, and offers the neighbourhood kids something money can't buy.",
+  "lessons": [
+    {
+      "idea": "People care deeply about their own names.",
+      "anchor": "Boys gathering food for rabbits named after them"
+    },
+    {
+      "idea": "Honoring someone's name builds goodwill.",
+      "anchor": "The Edgar Thomson Steel Works"
+    },
+    {
+      "idea": "Remembering names is a learnable discipline.",
+      "anchor": "Jim Farley's 50,000 names"
+    }
+  ],
+  "reflect": [
+    "Whose name could you honor or use more often?",
+    "How do you feel when someone remembers your name?"
+  ],
+  "reflect_final": "What could you do to make someone feel their name matters to you this week?",
+  "use_cases": [
+    {
+      "situation": "You're leading a project with many contributors.",
+      "move": "Name each contributor specifically in the final presentation.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child is starting at a new school.",
+      "move": "Encourage them to learn and use classmates' names.",
+      "context": "family"
+    },
+    {
+      "situation": "You meet your neighbors only in passing.",
+      "move": "Learn their names and greet them by name next time.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Honor someone's name, and you honor them.",
+  "conversation_variants": {
+    "punchline_idea": "Andrew Carnegie named his steel mill after the railroad president he wanted as a customer.",
+    "thirty_sec_idea": "Rabbits named after friends, Edgar Thomson Steel Works, Jim Farley.",
+    "question_idea": "Whose name could you honor more often?",
+    "key_contrast_idea": "Anonymous versus named"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "story_id": 1165,
+  "kind": "anecdote",
+  "book": {
+    "title": "Outliers: The Story of Success",
+    "author": "Malcolm Gladwell",
+    "year": "2008"
+  },
+  "confidence": "high",
+  "confidence_note": "Gladwell's account of Bill Gates's early access to computers is a central Outliers example. Kept: in 1968, the Mothers' Club at Lakeside School in Seattle used money from a rummage sale to pay for a computer terminal linked to a mainframe; it was time-sharing, far faster to use than punch cards; Gates was in eighth grade. Gates and his friends then found more computer time: at a company called C-Cubed, in exchange for finding bugs; at another company, ISI, in exchange for writing a payroll program; and at the University of Washington, where he slipped out at night to use a computer free between about 3 and 6 a.m. Gladwell's list of lucky opportunities is kept, as is the point that Gates also seized them. The rummage sale's exact amount is omitted.",
+  "facts": [
+    "In 1968, the Mothers' Club at Lakeside School, a private school in Seattle, used proceeds from a rummage sale to buy computer time: a terminal connected to a mainframe computer downtown.",
+    "At the time, most programming was done with punch cards, which could mean waiting hours or a day to learn whether a program worked. Time-sharing let students type and see results almost immediately.",
+    "Bill Gates was in eighth grade when the terminal arrived, and he became obsessed with it.",
+    "When the money ran out, Gates and his friends found other ways in: a company called C-Cubed gave them free time in exchange for finding bugs in its software; later, a firm called ISI gave them time in exchange for writing a payroll program.",
+    "Gates also discovered a computer at the University of Washington that was free between about 3 and 6 a.m., and would slip out of his house at night to use it.",
+    "Gladwell lists the extraordinary series of opportunities Gates had, and estimates that by the time he dropped out of Harvard to start Microsoft, he had been programming nonstop for about seven years, well past 10,000 hours.",
+    "Gladwell's point is that Gates was talented and driven, but also had access very few people in the world had."
+  ],
+  "tension": "A thirteen-year-old gets access to a machine that most universities didn't have. Is that the story, or what he did next?",
+  "opening_idea": "A group of school mothers hold a rummage sale, and with the money they change the history of software.",
+  "lessons": [
+    {
+      "idea": "Opportunity is part of every success story.",
+      "anchor": "The Lakeside terminal in 1968"
+    },
+    {
+      "idea": "Fast feedback accelerates learning.",
+      "anchor": "Time-sharing versus punch cards"
+    },
+    {
+      "idea": "Access given is only half; access pursued matters too.",
+      "anchor": "C-Cubed, ISI, the 3 a.m. university computer"
+    }
+  ],
+  "reflect": [
+    "What opportunity did you receive that you rarely credit?",
+    "Where could you chase access instead of waiting for it?"
+  ],
+  "reflect_final": "What is your version of the 3 a.m. computer, the access nobody else is using?",
+  "use_cases": [
+    {
+      "situation": "Your team celebrates a star performer as a 'natural'.",
+      "move": "Also name the opportunities that helped, and ask how to give others similar access.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child is fascinated by something the school doesn't offer.",
+      "move": "Help them find a club, mentor or free resource where they can practice with fast feedback.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel blocked from learning a skill.",
+      "move": "List three unusual ways to get practice time, such as trading your help for access.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Success needs a door someone opened and a person who kept walking through.",
+  "conversation_variants": {
+    "punchline_idea": "Bill Gates's story starts with a school rummage sale.",
+    "thirty_sec_idea": "Lakeside terminal, time-sharing, C-Cubed, ISI, the 3 a.m. university computer.",
+    "question_idea": "What lucky access shaped you, and did you make the most of it?",
+    "key_contrast_idea": "Given access, pursued access"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "story_id": 1238,
+  "kind": "concept",
+  "book": {
+    "title": "The Singularity Is Near",
+    "author": "Ray Kurzweil",
+    "year": "2005"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kurzweil's central argument in The Singularity Is Near is the 'law of accelerating returns': information technologies improve exponentially, while human intuition is linear, so we systematically underestimate future change. He illustrates the difference between linear and exponential growth: thirty linear steps take you to 30, while thirty doublings take you to about a billion. He also tells a parable about a lake owner and lily pads doubling each day, where the lake seems nearly clear until the last few days. The reference TR text uses a pond filling with algae on day 30; the lily-pad version is used. Kurzweil's specific predictions are presented as his forecasts, not established facts.",
+  "facts": [
+    "Kurzweil argues that information technologies tend to improve exponentially, doubling in capability at regular intervals.",
+    "He calls this the 'law of accelerating returns'.",
+    "Human intuition, he says, is linear: we expect the future to change at about the same pace as the recent past.",
+    "He illustrates: if you take thirty linear steps, you get to 30. If you take thirty exponential steps (doublings), you get to about a billion.",
+    "He tells a parable of a lake owner who wants to stay home to protect the lake's fish from lily pads that double every day. The lake seems mostly clear for a long time, then covers suddenly in the final days.",
+    "Early in exponential growth, changes look small and are easy to dismiss; later, they become explosive.",
+    "Kurzweil uses this to argue that the coming decades will bring far more change than most people expect; these are his forecasts and are debated."
+  ],
+  "tension": "Why do experts keep underestimating how fast technology changes?",
+  "opening_idea": "Take thirty normal steps and you're thirty meters away. Take thirty doubling steps and you've gone around the world many times.",
+  "lessons": [
+    {
+      "idea": "Our intuition is linear; many changes are exponential.",
+      "anchor": "Thirty steps vs thirty doublings"
+    },
+    {
+      "idea": "Exponential change looks slow, then sudden.",
+      "anchor": "The lily-pad lake"
+    },
+    {
+      "idea": "Plan for acceleration, while staying humble about forecasts.",
+      "anchor": "Kurzweil's debated predictions"
+    }
+  ],
+  "reflect": [
+    "Which trend in your field are you judging with linear expectations?",
+    "What seemed trivial five years ago but is huge now?"
+  ],
+  "reflect_final": "What would you do differently if a change you're watching were doubling, not adding?",
+  "use_cases": [
+    {
+      "situation": "Your team dismisses a new technology as a niche toy.",
+      "move": "Ask how fast it's improving, not how good it is today.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're deciding what skills to learn for the next decade.",
+      "move": "Look for areas improving exponentially and learn how to work with them.",
+      "context": "self"
+    },
+    {
+      "situation": "Your teenager is discouraged that their savings grow slowly.",
+      "move": "Explain that compounding looks slow early, and encourage them to keep going.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Exponential change looks tiny at first, then arrives all at once.",
+  "conversation_variants": {
+    "punchline_idea": "Thirty doublings take you to about a billion; thirty steps take you to thirty.",
+    "thirty_sec_idea": "Law of accelerating returns, linear intuition, lily pads, caveat.",
+    "question_idea": "Which trend are you underestimating because it looks small now?",
+    "key_contrast_idea": "Linear versus exponential"
+  }
+}

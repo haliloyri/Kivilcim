@@ -1,0 +1,65 @@
+{
+  "story_id": 1243,
+  "kind": "anecdote",
+  "book": {
+    "title": "The 80/20 Principle",
+    "author": "Richard Koch",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "This entry duplicates story 1176 (Pareto's pea pods). To avoid repetition, it uses another part of Koch's history of the principle: after Pareto, the idea was largely neglected until quality expert Joseph Juran applied the 'rule of the vital few' to quality problems. Juran found little interest in the United States, took his ideas to Japan after the Second World War, and his quality methods, focusing on the few causes behind most defects, contributed to the Japanese quality revolution; American industry later took notice. Koch presents Juran as the person who made the principle practical. The pea-pod legend is not repeated. Dates are kept approximate.",
+  "facts": [
+    "Koch writes that Pareto's discovery of imbalance was largely ignored for decades.",
+    "Joseph Juran, an American quality engineer, began applying what he called the 'rule of the vital few' to quality control: a small number of causes produced most defects.",
+    "Juran named the idea after Pareto, calling it the Pareto Principle.",
+    "In the United States his ideas initially attracted little attention.",
+    "After the Second World War, Juran worked with Japanese industry, which embraced his quality methods, focusing on the few critical causes of defects.",
+    "Koch credits this approach as part of the Japanese quality revolution, after which American companies began to adopt the same ideas.",
+    "Koch's point: the principle becomes powerful when used to find the vital few causes and fix them first."
+  ],
+  "tension": "An idea ignored at home became part of an industrial revolution abroad.",
+  "opening_idea": "An engineer with an idea about defects can't get American managers to listen, so he goes to Japan.",
+  "lessons": [
+    {
+      "idea": "Find the vital few causes.",
+      "anchor": "Juran's quality work"
+    },
+    {
+      "idea": "Good ideas can be ignored for a long time.",
+      "anchor": "Neglect in the US"
+    },
+    {
+      "idea": "Focus on the few problems that cause most failures.",
+      "anchor": "The Japanese quality revolution"
+    }
+  ],
+  "reflect": [
+    "Which few problems cause most of your frustrations?",
+    "Which good idea around you is being ignored?"
+  ],
+  "reflect_final": "What is the one 'vital few' cause you could fix first?",
+  "use_cases": [
+    {
+      "situation": "Your team fights dozens of small bugs every week.",
+      "move": "Rank bugs by frequency and fix the top few causes first.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Household chores cause constant arguments.",
+      "move": "Identify the two chores behind most conflict and solve those first.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel your work is full of small problems.",
+      "move": "Track problems for a week and look for the few that recur most.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Find the few causes behind most problems, and fix those first.",
+  "conversation_variants": {
+    "punchline_idea": "An American engineer's ignored idea helped spark Japan's quality revolution.",
+    "thirty_sec_idea": "Juran, vital few, ignored at home, embraced in Japan.",
+    "question_idea": "Which few problems cause most of your trouble?",
+    "key_contrast_idea": "Vital few, trivial many"
+  }
+}

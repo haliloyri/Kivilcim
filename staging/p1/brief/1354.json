@@ -1,0 +1,64 @@
+{
+  "story_id": 1354,
+  "kind": "anecdote",
+  "book": {
+    "title": "Lider Yok Köle Yok (The Monk Who Sold His Ferrari)",
+    "author": "Robin Sharma",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Julian Mantle's story is from The Monk Who Sold His Ferrari (1997); the input title appears to be mismatched with this book. The book is a fable. Well-attested details: Julian is a celebrated, hard-driving trial lawyer with a red Ferrari; he collapses from a heart attack in a courtroom; he sells his possessions and travels to India and the Himalayas, where he learns from the Sages of Sivana; he returns transformed to share their wisdom with the narrator, a former colleague. The TR text's 'monastery' is loose; he found the sages in the mountains. The exact duration of his absence is omitted because it was not verified. The 'true leadership starts with leading yourself' framing is a summary of the book's theme of self-mastery, not a quote.",
+  "facts": [
+    "Julian Mantle is a famous, highly paid trial lawyer with a mansion and a red Ferrari, working punishing hours.",
+    "In the middle of a courtroom he collapses from a heart attack.",
+    "He gives up his law practice, sells his possessions including the Ferrari, and travels to India in search of a different way to live.",
+    "In the Himalayas he finds the Sages of Sivana and learns their teachings on mastering the mind, purpose and living well.",
+    "Julian later reappears in the office of the narrator, a former colleague, looking so changed and youthful that he is not recognised at first, and passes the sages' teachings on to him.",
+    "Sharma presents the story as a fable: the lesson is that outward success without inner mastery and balance proved hollow."
+  ],
+  "tension": "Julian had everything that looks like success, and it took a collapse in the courtroom to show him that it was not working.",
+  "opening_idea": "Open on a star lawyer in full flow before a packed courtroom, and pause just before his body stops cooperating.",
+  "lessons": [
+    {
+      "idea": "External markers of success can hide a way of living that is not sustainable.",
+      "anchor": "The Ferrari and the fame, ending in a courtroom heart attack."
+    },
+    {
+      "idea": "Real change often needs a deliberate break from the setting that sustained the old habits.",
+      "anchor": "Julian selling his possessions and travelling to the Himalayas."
+    },
+    {
+      "idea": "What someone learns about living well becomes more valuable once it is passed on.",
+      "anchor": "Julian returning to teach the narrator what the sages taught him."
+    }
+  ],
+  "reflect": [
+    "Is there something in your life that looks good from the outside but is costing you more than you admit?",
+    "What warning signs do you tend to ignore until something forces you to stop?"
+  ],
+  "reflect_final": "This week, name one thing you have been putting off because of work, such as sleep, a check-up or time with someone, and book one concrete time for it.",
+  "use_cases": [
+    {
+      "situation": "A colleague is proud of working every weekend and brushes off tiredness.",
+      "move": "Ask them, without lecturing, what their week would look like if they had to protect their health first.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are about to accept one more big commitment on top of an already full load.",
+      "move": "Remember that Julian's success only looked complete until the courtroom collapse; before saying yes, write down what you would have to give up to make room, and decide based on that list.",
+      "context": "self"
+    },
+    {
+      "situation": "Friends are comparing cars, promotions and holidays over dinner.",
+      "move": "Share Julian Mantle's story and ask what each person would keep if they had to sell their own 'Ferrari'.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Julian sold the Ferrari only after a courtroom collapse: notice what your own 'Ferrari' is costing you before your body sends the bill.",
+  "conversation_variants": {
+    "punchline_idea": "A star lawyer had a heart attack in court and then sold his Ferrari to go and look for sages in the Himalayas.",
+    "thirty_sec_idea": "Julian Mantle, a wealthy trial lawyer with a red Ferrari, collapses in court, sells everything, finds the Sages of Sivana in the Himalayas and returns so changed his old colleague barely recognises him.",
+    "question_idea": "Ask whether they have ever had a moment when something that looked like success suddenly felt wrong.",
+    "key_contrast_idea": "A life that looked perfect from outside versus one that was actually working."
+  }
+}

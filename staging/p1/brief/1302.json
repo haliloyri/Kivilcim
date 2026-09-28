@@ -1,0 +1,63 @@
+{
+  "story_id": 1302,
+  "kind": "concept",
+  "book": {
+    "title": "Factfulness",
+    "author": "Hans Rosling (with Ola Rosling and Anna Rosling Rönnlund)",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference text says Rosling names four dangerous instincts; the book actually describes ten (gap, negativity, straight line, fear, size, generalization, destiny, single perspective, blame, urgency). This brief focuses on the fear instinct and the book's rule of thumb that risk depends on both danger and exposure. The Fukushima example (no deaths attributed to radiation, many deaths among elderly evacuees linked to the evacuation) is recalled from the book; the exact death figure is omitted. The plane-versus-car comparison and the 'feeling or data?' questions in the reference text are simplifications, and aviation statistics are omitted.",
+  "facts": [
+    "Rosling lists ten instincts that distort our view of the world; the fear instinct is one of them.",
+    "He argues that fear makes us pay attention to what is frightening rather than what is actually dangerous, so real risks can be neglected while vivid ones dominate.",
+    "His rule of thumb: the risk something poses depends on both how dangerous it is and how much you are exposed to it (risk = danger × exposure).",
+    "He describes Fukushima in 2011: no one was reported killed by the radiation, but the fear-driven evacuation itself is linked to many deaths, especially among elderly people.",
+    "His advice is to calm down first and calculate the risk before deciding, especially when frightened."
+  ],
+  "tension": "In Fukushima, the fear of radiation proved deadlier than the radiation itself.",
+  "opening_idea": "After the 2011 Fukushima accident, Rosling points to a surprising count: who died from the radiation, and who died during the escape from it.",
+  "lessons": [
+    {
+      "idea": "Frightening is not the same as dangerous.",
+      "anchor": "The fear instinct"
+    },
+    {
+      "idea": "Risk needs two numbers: how bad it is and how exposed you are.",
+      "anchor": "Rosling's risk = danger × exposure rule"
+    },
+    {
+      "idea": "Reactions driven by fear can cause their own harm.",
+      "anchor": "Deaths linked to the Fukushima evacuation"
+    }
+  ],
+  "reflect": [
+    "Which risk in your life gets a lot of your worry but very little of your exposure?",
+    "When did a fearful reaction cost more than the thing you feared?"
+  ],
+  "reflect_final": "The next time something frightens you into a quick decision, pause to estimate both the danger and your actual exposure, then see whether the decision changes.",
+  "use_cases": [
+    {
+      "situation": "A team wants to react quickly to an alarming incident report.",
+      "move": "Ask two questions before acting: how serious is the harm, and how many cases are actually exposed to it?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family member is anxious about a rare but scary danger.",
+      "move": "Mention Rosling's Fukushima example, where the evacuation caused more harm than the radiation, and suggest looking together at how often the danger actually occurs.",
+      "context": "family"
+    },
+    {
+      "situation": "You're about to make a big decision while feeling afraid.",
+      "move": "Write down the danger and your exposure separately, sleep on it, then decide.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Fukushima's lesson: measure danger times exposure before you run, because the escape can hurt more than the threat.",
+  "conversation_variants": {
+    "punchline_idea": "At Fukushima, no one was reported killed by the radiation, but the rushed evacuation is linked to many deaths.",
+    "thirty_sec_idea": "Rosling describes Fukushima: fear of radiation drove a hasty evacuation that is linked to many deaths among elderly people, while the radiation itself killed no one reported, which is why he says risk equals danger times exposure.",
+    "question_idea": "What's something you used to fear a lot that turned out to be much less risky than it felt?",
+    "key_contrast_idea": "What scares us versus what actually harms us."
+  }
+}

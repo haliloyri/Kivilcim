@@ -1,0 +1,69 @@
+{
+  "story_id": 1111,
+  "kind": "anecdote",
+  "book": {
+    "title": "Purple Cow: Transform Your Business by Being Remarkable",
+    "author": "Seth Godin",
+    "year": "2003"
+  },
+  "confidence": "medium",
+  "confidence_note": "The opening anecdote is reliable: Godin and his family were driving through France, first marveled at the cows beside the road, then within about twenty minutes stopped noticing them. A purple cow, he says, would have been worth a look. The core ideas are also well established: 'very good' is now boring, safe is risky, and marketing belongs inside the product. The existing TR text places the drive vaguely 'in the countryside' and says ten minutes, so the brief follows the book instead. The TR text also cites Starbucks, Cirque du Soleil and Amazon as examples. Starbucks does appear in the book's discussion. Examples such as the Aeron chair and Dutch Boy's redesigned paint can are more characteristic of the book. Whether Cirque du Soleil and Amazon are presented in the TR's 'first reaction was doubt' framing is not certain, so the brief does not rely on specific brand claims.",
+  "facts": [
+    "Godin and his family were driving through France and were charmed by the many picture-book cows grazing beside the road.",
+    "At first everyone watched out the window and admired them; within about twenty minutes they were ignoring the cows entirely.",
+    "The cows had not changed. Once familiar, they had simply become boring, because a new cow looks like the last cow.",
+    "Godin's point is that a purple cow would have made them look again, because it is remarkable, literally worth remarking on.",
+    "The book argues that 'very good' products are now so common they are invisible, and that being boring and safe is the real risk.",
+    "Godin says remarkability should be built into the product itself, not added afterward through advertising, and that it spreads when enthusiastic early users tell others."
+  ],
+  "tension": "Good cows are pleasant, and pleasant is exactly why nobody sees them anymore. Playing it safe feels responsible, but it guarantees you'll be ignored.",
+  "opening_idea": "A family is delighted by cows along a French road, and twenty minutes later nobody even glances at them.",
+  "lessons": [
+    {
+      "idea": "Familiarity erases attention: what is merely good soon becomes invisible.",
+      "anchor": "The family stopped looking at the cows within twenty minutes."
+    },
+    {
+      "idea": "Remarkable means worth talking about, which makes it different from being better on paper.",
+      "anchor": "A purple cow would make you stop the car."
+    },
+    {
+      "idea": "Safe and ordinary is the riskier choice, because it leads to being ignored.",
+      "anchor": "Godin's claim that being very safe is risky and boring leads to failure."
+    },
+    {
+      "idea": "Remarkability belongs in the product or work itself, not in louder promotion afterward.",
+      "anchor": "Godin's argument that marketing should be designed into the product."
+    }
+  ],
+  "reflect": [
+    "Which part of your work do people now pass by the way the family passed the cows?",
+    "When you describe what you offer, is anything in it actually worth someone repeating to a friend?",
+    "Where are you choosing 'safe' because it feels responsible rather than because it works?"
+  ],
+  "reflect_final": "If someone drove past your work today, would they slow down, or would it just be another cow?",
+  "use_cases": [
+    {
+      "situation": "A team is polishing a proposal that is solid but indistinguishable from competitors'.",
+      "move": "Ask the room: 'What's the one thing in this that someone would tell a colleague about? If there isn't one, let's pick a feature and make it outrageous.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A direct report is doing reliable, competent work but is overlooked for opportunities.",
+      "move": "Say: 'Your work is good, and that's the problem. Nobody notices good. Pick one project this quarter where you do something people will mention without being asked.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You're updating your CV or profile and it reads like everyone else's list of competencies.",
+      "move": "Delete one generic line ('team player', 'detail-oriented') and replace it with a single specific, unusual result only you could claim.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Nobody stops the car for a nice brown cow; they stop for a purple one.",
+  "conversation_variants": {
+    "punchline_idea": "Being boring feels safe, but it's the most reliable way to be ignored.",
+    "thirty_sec_idea": "Godin describes loving the cows on a French drive, forgetting them twenty minutes later, and realizing only a purple one would have kept anyone looking.",
+    "question_idea": "Ask: what's the thing about your work that someone would actually bother telling a friend about?",
+    "key_contrast_idea": "'Very good' gets approval and is forgotten; 'remarkable' gets talked about."
+  }
+}

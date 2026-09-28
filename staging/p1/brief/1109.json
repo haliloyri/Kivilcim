@@ -1,0 +1,68 @@
+{
+  "story_id": 1109,
+  "kind": "concept",
+  "book": {
+    "title": "Emotional Intelligence",
+    "author": "Daniel Goleman",
+    "year": "1995"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core concept is well established in the book: IQ explains only a limited share of life success, and emotional skills account for much of the rest. The book states that IQ contributes 'at best about 20 percent'. The reference text's framing is not supported and should not be used. It describes a 'Harvard Business School' cohort followed for 20 years, shows EQ as the 'strongest correlation', and uses a two-employee contrast. The book instead cites a long-term follow-up of Harvard men, in which top test scorers were not notably more successful or happier in midlife, and the Bell Labs study of star engineers. Facts are therefore drawn from those cases, with no exact sample sizes or years. The 1995 book frames five domains, following Salovey: knowing one's emotions, managing them, motivating oneself, recognizing emotions in others, and handling relationships. The familiar list of self-awareness, self-regulation, motivation, empathy and social skills comes mainly from Goleman's later workplace writing. The claim that EQ matters more than IQ remains debated among psychologists.",
+  "facts": [
+    "Goleman argues that IQ contributes at best about 20 percent to the factors that determine life success, leaving most of the outcome to other factors, including emotional skills.",
+    "He cites a long-term study of Harvard men followed into middle age. Those with the highest test scores in college were not particularly more successful than lower-scoring peers in salary, productivity or status, and were not happier or more satisfied in their relationships.",
+    "In the Bell Labs case, engineers in the same division had similar intellectual ability, yet some were rated stars while others were average.",
+    "What set the Bell Labs stars apart was not IQ but interpersonal strategies. They had built reliable networks of colleagues before they needed help, so their questions got fast answers.",
+    "The book organizes emotional intelligence into five domains: knowing one's emotions, managing emotions, motivating oneself, recognizing emotions in others, and handling relationships.",
+    "Goleman presents these as learnable skills rather than fixed traits."
+  ],
+  "tension": "If intelligence is what gets people admitted, hired and credentialed, why don't the smartest people reliably end up the most successful or the happiest?",
+  "opening_idea": "Two engineers at the same lab have the same brainpower. One becomes a star and the other stays average, and the difference has nothing to do with how smart they are.",
+  "lessons": [
+    {
+      "idea": "Raw intelligence predicts much less of life success than people assume.",
+      "anchor": "IQ contributes at best about 20 percent to the factors behind life success, per Goleman."
+    },
+    {
+      "idea": "Top academic performance does not guarantee a better career or a happier life.",
+      "anchor": "In the Harvard follow-up, the highest scorers were not clearly ahead in midlife success or satisfaction."
+    },
+    {
+      "idea": "Relationships are built before they are needed, and that preparation separates stars from peers.",
+      "anchor": "Bell Labs stars had cultivated networks in advance, so help came quickly when a problem hit."
+    },
+    {
+      "idea": "Emotional competence is a set of trainable skills, starting with noticing what you feel.",
+      "anchor": "The five domains begin with knowing one's own emotions, the base the others rest on."
+    }
+  ],
+  "reflect": [
+    "Which of the five domains comes most naturally to you, and which do you most often skip?",
+    "Who in your work or personal life would you call on in a crisis, and have you invested in that relationship before needing it?"
+  ],
+  "reflect_final": "Think of a recent moment when your emotions, not your knowledge, decided how things went. What would one small change in how you handled that feeling have altered?",
+  "use_cases": [
+    {
+      "situation": "You are frustrated in a meeting where your technically correct idea is being dismissed.",
+      "move": "Pause, name the feeling to yourself ('I'm irritated'), then ask one person what concern is driving their pushback before you restate your point.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You have a quiet week and no urgent problems.",
+      "move": "Send a short, genuine check-in to two colleagues you rarely talk to. Build the network the Bell Labs stars had before you need it.",
+      "context": "self"
+    },
+    {
+      "situation": "A family member snaps at you after a hard day.",
+      "move": "Before responding, say 'Sounds like today was rough. What happened?' Name their emotion instead of defending yourself.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Being smart gets you in the room; handling emotions, both yours and others', decides what happens once you're there.",
+  "conversation_variants": {
+    "punchline_idea": "At Bell Labs, the stars weren't smarter. They just had friends to call before the crisis.",
+    "thirty_sec_idea": "Goleman says IQ explains maybe a fifth of success. Harvard's top scorers weren't clearly ahead in midlife, and the lab stars won through relationships, not brains.",
+    "question_idea": "If two people are equally smart, what do you think actually decides which one thrives?",
+    "key_contrast_idea": "Test scores measure what you can solve alone; emotional skills measure what you can accomplish with and through people."
+  }
+}

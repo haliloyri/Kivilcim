@@ -1,0 +1,65 @@
+{
+  "story_id": 1169,
+  "kind": "concept",
+  "book": {
+    "title": "Flow: The Psychology of Optimal Experience",
+    "author": "Mihaly Csikszentmihalyi",
+    "year": "1990"
+  },
+  "confidence": "high",
+  "confidence_note": "The Experience Sampling Method (ESM) and its findings are central to Flow. Participants carried pagers that signaled at random times, about eight times a day, and they wrote down what they were doing and how they felt. Findings kept: passive leisure such as watching television was associated with low concentration and a flat mood; flow was reported more often at work than in leisure; yet people still said they would rather be somewhere other than work, which Csikszentmihalyi calls the paradox of work. His conclusion that happiness must be cultivated rather than waited for is also from the book.",
+  "facts": [
+    "Csikszentmihalyi and his colleagues developed the Experience Sampling Method (ESM).",
+    "Participants carried pagers or watches that signaled at random moments, about eight times a day, for a week. At each signal they recorded where they were, what they were doing and how they felt.",
+    "Passive leisure, especially watching television, was associated with low concentration, low skill use and often a flat or apathetic mood.",
+    "Surprisingly, people reported flow more often at work than during free time.",
+    "Yet when asked, many said they wished they were doing something else while at work, and looked forward to leisure. He called this the paradox of work.",
+    "He concluded that people often misjudge what makes them feel good, and that the quality of life depends on how we invest our attention.",
+    "His view: happiness is not something that happens to us; it has to be prepared for and cultivated."
+  ],
+  "tension": "People look forward all week to free time, yet their free time often makes them feel worse than the work they complain about.",
+  "opening_idea": "A pager goes off at a random moment and asks: what are you doing, and how do you feel?",
+  "lessons": [
+    {
+      "idea": "Passive leisure feels restful but rarely satisfies.",
+      "anchor": "Low mood during TV watching"
+    },
+    {
+      "idea": "Work often contains more flow than we admit.",
+      "anchor": "The paradox of work"
+    },
+    {
+      "idea": "Quality of life depends on where attention goes.",
+      "anchor": "Happiness cultivated, not waited for"
+    }
+  ],
+  "reflect": [
+    "How do you actually feel after an evening of scrolling or TV?",
+    "When during your week do you feel most engaged?"
+  ],
+  "reflect_final": "If a pager went off right now, what would you want to be doing when it did?",
+  "use_cases": [
+    {
+      "situation": "You spend most evenings scrolling and feel drained afterwards.",
+      "move": "Replace one evening a week with an active hobby that demands skill.",
+      "context": "self"
+    },
+    {
+      "situation": "Your family's weekends drift into everyone on screens.",
+      "move": "Plan one shared activity with a clear challenge, like a hike or building something.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague complains about work but lights up when solving hard problems.",
+      "move": "Point out when they seem most engaged, and help them find more of it.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Free time isn't automatically good time; how you spend attention decides that.",
+  "conversation_variants": {
+    "punchline_idea": "People feel flow more at work than in leisure, yet still wish they weren't at work.",
+    "thirty_sec_idea": "ESM pagers, TV findings, paradox of work, cultivating happiness.",
+    "question_idea": "How do you really feel after an evening of TV?",
+    "key_contrast_idea": "Passive versus engaged"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1230,
+  "kind": "concept",
+  "book": {
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "year": "5th century BC (traditional dating)"
+  },
+  "confidence": "high",
+  "confidence_note": "The water passage comes from the chapter on weak points and strong (chapter 6). In Lionel Giles's public-domain translation: military tactics are like water, for water in its natural course runs away from high places and hastens downwards; so in war, the way is to avoid what is strong and to strike at what is weak; water shapes its course according to the nature of the ground over which it flows; the soldier works out his victory in relation to the foe; just as water retains no constant shape, so in warfare there are no constant conditions. The book's exact date and authorship are uncertain; it is traditionally attributed to Sun Tzu. Quotations are from Giles (1910), which is in the public domain.",
+  "facts": [
+    "The Art of War is an ancient Chinese text on strategy traditionally attributed to Sun Tzu; its exact date and authorship are uncertain.",
+    "In the chapter on weak points and strong, it compares military tactics to water.",
+    "Water flows away from high places and down toward low ones; likewise, the way in war is to avoid what is strong and to strike at what is weak.",
+    "Water shapes its course according to the ground it flows over; the soldier shapes his approach according to the enemy he faces.",
+    "Just as water keeps no constant shape, in warfare there are no constant conditions.",
+    "The text says that the one who can modify tactics in relation to the opponent, and so succeed, may be called heaven-born."
+  ],
+  "tension": "Rigid plans break against changing conditions. What would it mean to be as adaptable as water?",
+  "opening_idea": "Pour water onto uneven ground and it never argues with the shape of the land.",
+  "lessons": [
+    {
+      "idea": "Avoid strength; flow toward weakness.",
+      "anchor": "Water runs from high to low"
+    },
+    {
+      "idea": "Adapt to the terrain.",
+      "anchor": "Water shapes its course to the ground"
+    },
+    {
+      "idea": "No fixed formula survives changing conditions.",
+      "anchor": "Water retains no constant shape"
+    }
+  ],
+  "reflect": [
+    "Where are you pushing against strength instead of finding an easier path?",
+    "Which plan are you holding too rigidly?"
+  ],
+  "reflect_final": "If you approached your biggest challenge like water, where would you flow first?",
+  "use_cases": [
+    {
+      "situation": "Your team keeps competing head-on with a stronger rival.",
+      "move": "Identify a niche or weakness the rival ignores and focus there.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A negotiation is stuck on one point.",
+      "move": "Shift to other terms where agreement is easier, then return.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your plan for the year has hit unexpected obstacles.",
+      "move": "Keep the goal but redesign the route around the new conditions.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Be like water: avoid what is strong, flow around what blocks you.",
+  "conversation_variants": {
+    "punchline_idea": "Sun Tzu compared good strategy to water, which never fights the shape of the land.",
+    "thirty_sec_idea": "Water runs to low ground, avoid strength, strike weakness, no constant shape.",
+    "question_idea": "Where are you pushing against strength?",
+    "key_contrast_idea": "Rigid versus fluid"
+  }
+}

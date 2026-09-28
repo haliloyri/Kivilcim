@@ -1,0 +1,64 @@
+{
+  "story_id": 1061,
+  "kind": "anecdote",
+  "book": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "High confidence in Clear's account of Jerry Uelsmann's photography class and its quantity-versus-quality assignments, based on book knowledge rather than independent verification. Corrected grading by weight to grading by photograph count. Omitted precise numerical grade thresholds, university, dates, daily practice schedules, the teacher's emotions, and earlier versions of the anecdote. The story is a book anecdote, not presented here as a controlled experiment or evidence that quantity alone guarantees excellence.",
+  "facts": [
+    "In Atomic Habits, James Clear recounts photography teacher Jerry Uelsmann dividing students into quantity and quality groups.",
+    "The quantity group's grade depended on the number of photographs produced; more photographs earned higher grades.",
+    "The quality group needed to submit only one photograph, but it had to be nearly perfect to earn a top grade.",
+    "The quantity students spent their time taking photographs, experimenting with composition and lighting, trying darkroom methods, and learning from mistakes.",
+    "The quality students spent their time speculating about perfection and had little work to show for it.",
+    "At the end of the course, the best photographs came from the quantity group.",
+    "Clear uses this account to distinguish motion from action. Planning, strategizing, and learning can prepare for an outcome; action directly produces an outcome.",
+    "Preparation can feel productive while postponing the risk of doing something imperfectly. Its usefulness depends on whether it leads to the work.",
+    "In the photography account, repeated attempts gave students opportunities to develop skill by encountering results and learning from their choices."
+  ],
+  "tension": "The students assigned a nearly perfect image spent time thinking about perfection, while the students assigned many images gained the practice that produced the best work.",
+  "opening_idea": "Introduce the teacher's two grading rules as an immediate contrast, leaving the result unresolved.",
+  "lessons": [
+    {
+      "idea": "Make attempts that leave you something specific to examine.",
+      "anchor": "The quantity students could learn from the effects of their decisions about light, composition, and darkroom methods."
+    },
+    {
+      "idea": "Give preparation a clear connection to the work it is supposed to enable.",
+      "anchor": "The quality group considered perfection while the quantity group actually made photographs."
+    }
+  ],
+  "reflect": [
+    "Identify a project where preparation has outlasted the most recent actual attempt.",
+    "Name a question that making a rough version could answer better than further speculation.",
+    "Choose one feature to inspect in that version, leaving room to learn other things later."
+  ],
+  "reflect_final": "What could you make today that would answer a question your planning has left open?",
+  "use_cases": [
+    {
+      "situation": "A team keeps discussing how good an unwritten draft needs to be.",
+      "move": "Briefly refer to the photography students learning by making pictures, then offer a rough section for the team to review against one question.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend keeps preparing for a creative project but has not tried making anything.",
+      "move": "Invite them to try one small piece using current knowledge and offer to discuss the experience without expecting a polished result.",
+      "context": "social"
+    },
+    {
+      "situation": "You are about to look for another tutorial before practicing.",
+      "move": "Make a small attempt first, identify a difficulty it reveals, and use that difficulty to choose what to learn next.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A real photograph reveals the consequences of an attempt in a way an imagined perfect photograph cannot.",
+  "conversation_variants": {
+    "punchline_idea": "The best photographs came from students whose grades rewarded the number they produced.",
+    "thirty_sec_idea": "Lead with the two assignments, describe practice versus speculation, and finish with the quantity group's stronger photographs.",
+    "question_idea": "Ask about a lesson someone could only learn by making an actual attempt.",
+    "key_contrast_idea": "Contrast imagining the perfect picture with taking pictures."
+  }
+}

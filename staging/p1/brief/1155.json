@@ -1,0 +1,64 @@
+{
+  "story_id": 1155,
+  "kind": "concept",
+  "book": {
+    "title": "Positive Intelligence",
+    "author": "Shirzad Chamine",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Saboteurs are the core idea of the book: the Judge as the master Saboteur, plus nine accomplice Saboteurs (Stickler, Pleaser, Hyper-Achiever, Victim, Hyper-Rational, Hyper-Vigilant, Restless, Controller and Avoider). The reference TR text lists only five with loose Turkish names; the brief uses the book's English names for the ones mentioned. The practice of noticing and labeling a Saboteur ('Oh, that's the Judge') is from the book. Chamine's background as an executive coach who worked with many CEOs and executives is kept general; no numbers are used. The TR text's framing that he 'noticed it in the smartest leaders' is a reasonable paraphrase of the book's premise.",
+  "facts": [
+    "Shirzad Chamine is an executive coach who has worked with many CEOs and senior leaders. Positive Intelligence was published in 2012.",
+    "He argues that even highly capable people are held back by internal 'Saboteurs': automatic, self-defeating patterns of thought and emotion.",
+    "The master Saboteur is the Judge, which constantly finds fault with yourself, with others and with circumstances.",
+    "The Judge has nine accomplice Saboteurs: the Stickler (perfectionism), the Pleaser, the Hyper-Achiever, the Victim, the Hyper-Rational, the Hyper-Vigilant (constant anxiety about danger), the Restless, the Controller and the Avoider.",
+    "Saboteurs often began as survival strategies in childhood, which is why they feel like they are protecting you.",
+    "A key practice is to notice and label a Saboteur when it shows up, for example 'That's my Judge talking', which weakens its hold."
+  ],
+  "tension": "Smart, experienced people often trip themselves up at the worst moments, and the voice doing it sounds like their own good judgment.",
+  "opening_idea": "You make a small mistake, and within seconds a voice in your head delivers a full verdict on your character.",
+  "lessons": [
+    {
+      "idea": "The Judge is the master Saboteur, and it disguises itself as helpful.",
+      "anchor": "The Judge criticizing self, others and circumstances"
+    },
+    {
+      "idea": "Saboteurs were once protective strategies; that's why they feel right.",
+      "anchor": "Their origin in childhood survival"
+    },
+    {
+      "idea": "Naming a Saboteur weakens it.",
+      "anchor": "'That's my Judge talking'"
+    }
+  ],
+  "reflect": [
+    "Which Saboteur on the list feels most familiar?",
+    "When does your Judge speak loudest?"
+  ],
+  "reflect_final": "What would you do differently tomorrow if you caught your strongest Saboteur in the act?",
+  "use_cases": [
+    {
+      "situation": "You're berating yourself after a small mistake at work.",
+      "move": "Label it: 'That's my Judge.' Then ask what you'd actually tell a colleague who made the same mistake.",
+      "context": "self"
+    },
+    {
+      "situation": "A perfectionist team member keeps missing deadlines polishing work.",
+      "move": "Talk about the Stickler Saboteur and agree on what 'good enough' means for this deliverable.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your team spirals into blame after a setback.",
+      "move": "Name the Judge in the room and redirect to one thing you can learn and do next.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "You don't have to silence your Saboteurs; you only have to recognize them.",
+  "conversation_variants": {
+    "punchline_idea": "The harshest voice in your head isn't wisdom; Chamine calls it the Judge.",
+    "thirty_sec_idea": "The Judge, the nine accomplices, their origins, and labeling.",
+    "question_idea": "Which Saboteur runs your inner commentary most often?",
+    "key_contrast_idea": "Judge versus observer"
+  }
+}

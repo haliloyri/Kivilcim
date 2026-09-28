@@ -1,0 +1,39 @@
+{
+  "story_id": 1314,
+  "kind": "concept",
+  "book": { "title": "İşin Özü (The E-Myth Revisited)", "author": "Michael E. Gerber", "year": "1995" },
+  "confidence": "medium",
+  "confidence_note": "Gerber's three phases (Infancy, Adolescence, Maturity) and the distinction between working ON versus IN your business are central and well attested. The TR text's claim that 'more than 80% of businesses close in the adolescent phase' is a misattribution: Gerber cites general small-business failure statistics (roughly 40% failing in the first year and 80% within five years), dated figures he quotes rather than his own research, and does not tie them to one phase. That figure is therefore excluded from facts. Details of Adolescence such as 'Management by Abdication' and retreating to a 'Comfort Zone' are from the book.",
+  "facts": [
+    "Gerber describes three phases of a business: Infancy, Adolescence, and Maturity.",
+    "In Infancy the owner and the business are the same thing; the owner does everything, and it ends when the owner realizes the business cannot keep running that way.",
+    "Adolescence begins when the owner gets help, but often through 'Management by Abdication': handing work off without a system, then rushing back in when things go wrong.",
+    "Many owners respond to the chaos of Adolescence by shrinking back to a 'Comfort Zone', a size they can personally control, or by trying to grow without systems.",
+    "Maturity is not simply a later stage but a way of thinking: a business built from the start with a perspective of how it should work, not only how to get through the day.",
+    "Gerber's key distinction is between working IN your business (doing the daily tasks) and working ON it (designing the systems that do those tasks)."
+  ],
+  "tension": "Getting help should free the owner, yet in Gerber's Adolescence handing work off without a system often creates more chaos and pulls the owner back in.",
+  "opening_idea": "Start with an owner who finally hires help, hands over a pile of tasks, and a few weeks later is back doing them personally, and ask why.",
+  "lessons": [
+    { "idea": "Delegating without a system is abdication, and it usually boomerangs back to you.", "anchor": "Management by Abdication in the Adolescence phase." },
+    { "idea": "Retreating to a size you can control can feel safe but freezes growth.", "anchor": "The owner's Comfort Zone in Adolescence." },
+    { "idea": "Time spent designing how the work runs is different in kind from time spent doing it.", "anchor": "Working ON versus IN the business." }
+  ],
+  "reflect": [
+    "When did you hand off a task, see it go wrong, and simply take it back?",
+    "How much of your week is working in your responsibilities, and how much working on them?"
+  ],
+  "reflect_final": "Next time you delegate something, hand over a short written 'how we do this' along with the task, and check in once instead of taking it back. Afterward, notice what the written version was missing.",
+  "use_cases": [
+    { "situation": "A new hire made mistakes on a task you delegated, and you are tempted to do it yourself again.", "move": "Recognize Gerber's Management by Abdication pattern, then sit with them for thirty minutes to write down the steps together instead of taking the task back.", "context": "oneonone" },
+    { "situation": "Your team spends every sprint firefighting.", "move": "Propose reserving one slot per sprint for working ON the team: fixing the one process that caused the most fires.", "context": "meeting" },
+    { "situation": "You feel busy all week but nothing improves.", "move": "Choose one hour this week to work on your routine rather than in it: redesign one recurring task so it takes less of you next time.", "context": "self" }
+  ],
+  "pocket_idea": "In Gerber's Adolescence, the owner hands work off and then rushes back to rescue it: help without a system is only a longer route back to doing it yourself.",
+  "conversation_variants": {
+    "punchline_idea": "Gerber has a name for delegating without a system: Management by Abdication.",
+    "thirty_sec_idea": "Gerber says businesses start in Infancy, where the owner does everything; in Adolescence the owner hires help, hands work off without a system, then rushes back when it fails, until they learn to work on the business rather than in it.",
+    "question_idea": "Have you ever delegated something, watched it go wrong, and just taken it back? What would you do differently?",
+    "key_contrast_idea": "Doing the work every day versus building the way the work gets done."
+  }
+}

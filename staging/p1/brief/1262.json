@@ -1,0 +1,63 @@
+{
+  "story_id": 1262,
+  "kind": "concept",
+  "book": {
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The idea that ego shuts down learning is central to the book's chapter 'Always Stay a Student'. The existing TR text's quoted Holiday line ('Ego closes the capacity to learn, because learning requires saying I don't know'), its line about wisdom becoming visible 'when ego goes quiet', and the claim that Holiday deliberately seeks out experts and critics before every book could not be attributed to the book and are excluded. Instead, facts use the book's own examples as I recall them: Epictetus' remark that it is impossible to learn what one thinks one already knows, and MMA fighter Frank Shamrock's 'plus, minus, equal' training system. The vague TR claim about 'generals, artists and scientists who burned out early' is not kept.",
+  "facts": [
+    "Holiday quotes Epictetus: it is impossible for a person to learn what they think they already know.",
+    "He describes mixed martial arts champion Frank Shamrock's 'plus, minus, equal' system for training fighters.",
+    "In that system, each fighter needs someone better to learn from (plus), someone less skilled to teach (minus), and someone of equal skill to challenge them (equal).",
+    "The point is that each role keeps ego in check: the plus humbles you, teaching the minus forces you to understand what you know, and the equal keeps you honest.",
+    "Holiday's argument is that early success tempts people to stop being students, and that the ones who keep improving treat themselves as learners no matter how far they get."
+  ],
+  "tension": "The moment you start to succeed is the moment you are most tempted to stop learning.",
+  "opening_idea": "Start with Frank Shamrock's rule that every fighter needs three people: one better, one worse, and one equal, and ask why.",
+  "lessons": [
+    {
+      "idea": "Believing you already know closes the door to learning it better.",
+      "anchor": "Epictetus: impossible to learn what you think you already know"
+    },
+    {
+      "idea": "Someone better than you keeps you humble; someone equal keeps you honest.",
+      "anchor": "The plus and equal in Shamrock's system"
+    },
+    {
+      "idea": "Teaching someone less experienced exposes gaps in your own understanding.",
+      "anchor": "The minus in Shamrock's system"
+    }
+  ],
+  "reflect": [
+    "Who in your life right now is clearly better than you at something you care about?",
+    "When did explaining something to a beginner show you that you understood it less than you thought?"
+  ],
+  "reflect_final": "Look at one skill you care about and ask which of Shamrock's three people you are missing: plus, minus or equal. At your next chance, reach out to someone who could fill that gap.",
+  "use_cases": [
+    {
+      "situation": "You have become the go-to expert in your team and rarely hear anything new.",
+      "move": "Shamrock's fighters always trained with someone better; ask a peer from another team to review your work and point out one thing they'd do differently.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A junior colleague joins your area and needs onboarding.",
+      "move": "Offer to walk them through your approach, and note any step you find hard to explain.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You've improved at a hobby and your usual partners no longer challenge you.",
+      "move": "Look for one person at your level to practice or compare notes with regularly.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Keep a plus, a minus and an equal: someone to learn from, someone to teach, someone to test you.",
+  "conversation_variants": {
+    "punchline_idea": "Frank Shamrock said every fighter needs someone better, someone worse and someone equal to train with.",
+    "thirty_sec_idea": "Holiday quotes Epictetus: you can't learn what you think you already know. Then he gives Frank Shamrock's system: train with someone better, teach someone weaker, spar with an equal, so ego never gets comfortable.",
+    "question_idea": "Who is your 'plus' right now, the person who is better than you at something you care about?",
+    "key_contrast_idea": "Acting like the expert versus staying the student."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1239,
+  "kind": "concept",
+  "book": {
+    "title": "The Singularity Is Near",
+    "author": "Ray Kurzweil",
+    "year": "2005"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text lists Kurzweil predictions with dates that are partly wrong (for example, a computer beat the world chess champion in 1997, not 2009) and claims 'AI reached human-level language understanding by 2023' as a fulfilled prediction; these are left out. The book's own central forecasts are kept, clearly framed as predictions: computers passing a Turing test by about 2029, and a 'Singularity' around 2045 when nonbiological intelligence vastly exceeds human intelligence and humans increasingly merge with technology, through genetics, nanotechnology and robotics/AI (GNR). He imagines nanobots in the bloodstream and brain interfacing with computers. These forecasts are controversial; the story notes criticism.",
+  "facts": [
+    "Kurzweil predicts that computers will pass a Turing test, being indistinguishable from humans in conversation, by around 2029.",
+    "He predicts a 'Singularity' around 2045: a point when technological change becomes so rapid and profound that it transforms human life, as nonbiological intelligence vastly exceeds unaided human intelligence.",
+    "He describes three overlapping revolutions: genetics (G), nanotechnology (N) and robotics, including artificial intelligence (R).",
+    "He imagines nanobots traveling through the bloodstream to repair the body, and interfacing with the brain to extend memory and thinking.",
+    "In his view, humans will increasingly merge with their technology rather than being replaced by it.",
+    "Many scientists and philosophers dispute his timelines and some of his assumptions about the brain and consciousness."
+  ],
+  "tension": "If technology keeps accelerating, where does it lead, and what does it mean to be human then?",
+  "opening_idea": "Imagine tiny machines in your bloodstream repairing cells and connecting your brain to the cloud. Kurzweil says it's coming sooner than you think.",
+  "lessons": [
+    {
+      "idea": "Kurzweil sees humans merging with technology.",
+      "anchor": "GNR and nanobots"
+    },
+    {
+      "idea": "Bold forecasts can be useful even if wrong in detail.",
+      "anchor": "2029 and 2045 predictions"
+    },
+    {
+      "idea": "Hold big predictions with humility.",
+      "anchor": "Critics' objections"
+    }
+  ],
+  "reflect": [
+    "How much has technology already become part of how you think and remember?",
+    "Which prediction about the future do you find most exciting, or worrying?"
+  ],
+  "reflect_final": "How do you want to relate to technology as it becomes more and more a part of you?",
+  "use_cases": [
+    {
+      "situation": "Your team debates whether to prepare for AI in your industry.",
+      "move": "Plan for significant change, while testing assumptions regularly instead of betting on exact dates.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You feel anxious about technology changing everything.",
+      "move": "Focus on what you value most and how technology could serve it.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend treats a futurist's predictions as certain.",
+      "move": "Discuss which parts are likely and which are speculation.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Take the direction of the future seriously, and its exact dates lightly.",
+  "conversation_variants": {
+    "punchline_idea": "Kurzweil predicts that humans won't be replaced by technology but will merge with it.",
+    "thirty_sec_idea": "2029 Turing test, 2045 Singularity, GNR, nanobots, criticism.",
+    "question_idea": "How much of your thinking already happens with technology?",
+    "key_contrast_idea": "Replace versus merge"
+  }
+}

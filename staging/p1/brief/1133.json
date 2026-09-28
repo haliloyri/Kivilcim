@@ -1,0 +1,63 @@
+{
+  "story_id": 1133,
+  "kind": "concept",
+  "book": {
+    "title": "The Power of Now",
+    "author": "Eckhart Tolle",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core idea is central to the book: past and future exist only as thought, and the present moment is all there is. Tolle writes that nothing ever happened in the past and nothing will ever happen in the future; it happened, and will happen, in the Now. He distinguishes clock time (useful for practical matters) from psychological time (identification with past and future), and suggests asking whether you have a problem right now, this moment, rather than in the imagined future. The reference TR text's musician, 'flow' and 'inspiration' comparisons are not from the book and are left out as attributions.",
+  "facts": [
+    "Tolle argues that the present moment is all you ever have; past and future exist only as mental constructs.",
+    "He writes that nothing ever happened in the past; it happened in the Now. Nothing will ever happen in the future; it will happen in the Now.",
+    "He distinguishes clock time, used for practical things like making appointments and learning from mistakes, from psychological time, the habit of living in memories and anticipation.",
+    "He suggests that most problems exist only in psychological time, and invites the reader to ask: do you have a problem right now, at this moment? Not tomorrow or in ten minutes, but now.",
+    "Worry, anxiety and regret, in his view, come from too much past and future and not enough presence."
+  ],
+  "tension": "If the present moment is the only time anything ever happens, why do we spend so little of our attention there?",
+  "opening_idea": "Ask the reader a simple question and let them notice where their mind has already gone.",
+  "lessons": [
+    {
+      "idea": "Everything you experience happens in the present; past and future are thoughts.",
+      "anchor": "'Nothing ever happened in the past; it happened in the Now'"
+    },
+    {
+      "idea": "Planning is fine; living in imagined futures is the problem.",
+      "anchor": "Clock time versus psychological time"
+    },
+    {
+      "idea": "Most problems don't exist in this exact moment.",
+      "anchor": "'Do you have a problem right now?'"
+    }
+  ],
+  "reflect": [
+    "Where did your mind go in the last five minutes: backward, forward, or here?",
+    "Which worry would disappear if you only looked at this moment?"
+  ],
+  "reflect_final": "Right now, this second, is there actually a problem, or only a thought about one?",
+  "use_cases": [
+    {
+      "situation": "You're overwhelmed by everything that might go wrong next week.",
+      "move": "Ask yourself whether you have a problem this minute; if not, schedule planning time and return to the task in front of you.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is spiralling about a future outcome they can't control yet.",
+      "move": "Ask gently what, right now, needs doing, and help with that one thing.",
+      "context": "social"
+    },
+    {
+      "situation": "A planning meeting keeps drifting into rehashing past failures.",
+      "move": "Separate 'what we learn from the past' from 'what we decide now' and steer back to today's decision.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Everything that ever happens to you happens now.",
+  "conversation_variants": {
+    "punchline_idea": "Nothing has ever happened to you anywhere but in the present moment.",
+    "thirty_sec_idea": "Tolle's point about past and future as thought, clock vs psychological time, and 'do you have a problem now?'",
+    "question_idea": "Do you have a problem right this minute, or only a thought about later?",
+    "key_contrast_idea": "Clock time versus mind time"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1204,
+  "kind": "concept",
+  "book": {
+    "title": "Dare to Lead",
+    "author": "Brené Brown",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "In Dare to Lead, Brown contrasts 'armored leadership' with 'daring leadership' and lists behaviors on each side, such as being a knower versus being a learner, using power over versus power with, perfectionism versus healthy striving, and zigzagging around issues versus rumbling with them. She argues that armor develops to protect people from vulnerability but prevents trust and connection. The reference TR text's framing that thousands of leaders named 'fear of looking weak' as the hardest part of leadership is not confirmed as a specific finding and is not used. Examples are paraphrased from the book's lists.",
+  "facts": [
+    "Brown describes 'armor' as the self-protection people put on to avoid feeling vulnerable, exposed or uncertain.",
+    "She contrasts armored leadership with daring leadership.",
+    "Examples of armored leadership include being a knower and being right versus being a learner and getting it right; using power over people versus power with them; perfectionism and fear of failure versus healthy striving; and zigzagging around hard issues versus facing them.",
+    "Armor is understandable: it usually develops to protect us. But it prevents trust, creativity and real connection in teams.",
+    "Brown argues that leaders who take off their armor model courage and make it safer for others to do the same.",
+    "She describes vulnerability, uncertainty, risk and emotional exposure, as unavoidable in leadership."
+  ],
+  "tension": "Leaders armor up to look strong, and the armor keeps the team from trusting them.",
+  "opening_idea": "A leader who always has the answer, never admits a mistake and controls every detail looks strong. Brown sees armor.",
+  "lessons": [
+    {
+      "idea": "Armor protects but isolates.",
+      "anchor": "Armor prevents trust and connection"
+    },
+    {
+      "idea": "Learners lead better than knowers.",
+      "anchor": "Knower versus learner"
+    },
+    {
+      "idea": "Leaders who drop armor make it safe for others.",
+      "anchor": "Modeling courage"
+    }
+  ],
+  "reflect": [
+    "What kind of armor do you reach for at work?",
+    "Where are you trying to be the knower when you could be a learner?"
+  ],
+  "reflect_final": "What piece of armor could you set down in your next meeting?",
+  "use_cases": [
+    {
+      "situation": "You lead a team and feel you must always have the answer.",
+      "move": "Say 'I don't know yet; let's figure it out together' in your next meeting.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You notice you micromanage when stressed.",
+      "move": "Name it to yourself as armor and hand one decision back to the team.",
+      "context": "self"
+    },
+    {
+      "situation": "A new manager on your team seems defensive about every question.",
+      "move": "Share Brown's knower-versus-learner idea privately and model it yourself.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Armor protects you and keeps everyone else out.",
+  "conversation_variants": {
+    "punchline_idea": "The leader who always has the answer may be wearing armor, not strength.",
+    "thirty_sec_idea": "Armored vs daring leadership, knower vs learner, power over vs with.",
+    "question_idea": "What armor do you wear at work?",
+    "key_contrast_idea": "Knower versus learner"
+  }
+}

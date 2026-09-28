@@ -1,0 +1,71 @@
+{
+  "story_id": 1121,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Power of Habit (Alışkanlıkların Gücü)",
+    "author": "Charles Duhigg",
+    "year": "2012"
+  },
+  "confidence": "high",
+  "confidence_note": "The O'Neill/Alcoa story is a central, well-documented case in the book's chapter on keystone habits. The book ties the financial results to O'Neill's retirement in 2000, not to 'ten years later' as the reference text says. It states that annual net income was about five times higher by then and that the stock value of an early investment had grown about fivefold. Exact injury statistics are best kept qualitative ('among the safest companies'), because the precise ratios vary by retelling.",
+  "facts": [
+    "In October 1987 Paul O'Neill, newly named CEO of Alcoa, gave his first presentation to investors and stock analysts in a Manhattan hotel.",
+    "Instead of talking about profits, margins or growth, he talked about worker safety. He said he intended to make Alcoa the safest company in America and to aim for zero injuries.",
+    "He even pointed out the room's emergency exits to the audience.",
+    "The audience was confused. One investor left the room, called his clients and told them to sell because the board had put 'a crazy hippie' in charge who would kill the company.",
+    "O'Neill required that any worker injury be reported to him within 24 hours, together with a plan to make sure it never happened again.",
+    "Meeting that rule forced new communication patterns. Unit presidents had to stay in constant contact with floor managers, workers were encouraged to suggest improvements, and processes were redesigned. This raised quality and efficiency along the way.",
+    "Within a year Alcoa's profits hit a record high.",
+    "By the time O'Neill retired in 2000, annual net income was roughly five times larger than when he arrived, and Alcoa had become one of the safest companies in the world.",
+    "Duhigg uses the case to illustrate 'keystone habits': habits that, when changed, set off chain reactions that reshape other habits across an organization or a life."
+  ],
+  "tension": "A new CEO facing Wall Street ignores the numbers everyone wants and bets the company on worker safety, a choice investors read as madness.",
+  "opening_idea": "Open in the hotel ballroom as analysts wait for profit talk and the new CEO starts pointing out the fire exits.",
+  "lessons": [
+    {
+      "idea": "Some habits are 'keystones': changing them forces many other habits to change.",
+      "anchor": "Improving safety required new reporting, communication and process habits across all of Alcoa."
+    },
+    {
+      "idea": "Pick a focus everyone can rally around, even people who disagree on other goals.",
+      "anchor": "Unions and managers could both support 'nobody gets hurt', while profit targets divided them."
+    },
+    {
+      "idea": "A simple, strict routine can rewire how information flows.",
+      "anchor": "The 24-hour injury-report-plus-plan rule made plant floors and executives talk constantly."
+    },
+    {
+      "idea": "Indirect goals can deliver the direct results people demand.",
+      "anchor": "O'Neill never targeted profit first, yet earnings reached records and grew about fivefold by 2000."
+    }
+  ],
+  "reflect": [
+    "Which single change in my routine would force several other changes to happen automatically?",
+    "Where am I trying to fix many things at once instead of finding the one lever that moves the rest?"
+  ],
+  "reflect_final": "What is your keystone habit, the one change that would quietly pull everything else along with it?",
+  "use_cases": [
+    {
+      "situation": "A team meeting where the group has a long list of problems to fix at once.",
+      "move": "Ask: 'If we could change only one routine this quarter, which one would force the others to improve?' Then commit to that one with a simple reporting rule.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A one-on-one with a direct report who feels overwhelmed by too many improvement goals.",
+      "move": "Help them pick one small daily habit, such as a 10-minute end-of-day review, and agree to check only that for the next month.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Personal goals like better health, money and focus all feel stuck.",
+      "move": "Choose one keystone habit, such as regular exercise or tracking what you eat, and deliberately ignore the other goals for 30 days to see what shifts on its own.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Don't change everything; change the one habit that changes everything else.",
+  "conversation_variants": {
+    "punchline_idea": "An investor called him a crazy hippie for talking safety, and by his retirement Alcoa's earnings were about five times larger.",
+    "thirty_sec_idea": "O'Neill focused Alcoa on zero injuries and required every injury reported to him within a day. That rule rewired communication, and profits followed.",
+    "question_idea": "Ask what one habit, if fixed, would drag your other problems along with it.",
+    "key_contrast_idea": "Wall Street wanted profit targets and got a safety obsession, and the safety obsession produced the profits."
+  }
+}

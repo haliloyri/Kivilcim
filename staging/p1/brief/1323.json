@@ -1,0 +1,64 @@
+{
+  "story_id": 1323,
+  "kind": "concept",
+  "book": {
+    "title": "A More Beautiful Question",
+    "author": "Warren Berger",
+    "year": "2014"
+  },
+  "confidence": "low",
+  "confidence_note": "Berger does discuss how expertise can make questioning harder and recommends adopting a beginner's or outsider's perspective (he draws on the Zen idea of 'beginner's mind'). However, the exact term 'expert blindness' and the reference's quote could not be confirmed as Berger's wording, so they are not used. The reference's Airbnb example, with its quoted founding question, could not be confirmed as told this way in the book and is omitted; no book case is used. Facts are kept to the concept's general claims. Not verified against the text.",
+  "facts": [
+    "Berger argues that as people gain expertise in a field, they tend to ask fewer basic questions about it, because they already 'know' how things work.",
+    "Experts' knowledge comes with assumptions that can make certain possibilities hard to see.",
+    "Newcomers and outsiders often ask questions that insiders consider naive, and these can expose assumptions the insiders stopped noticing.",
+    "Berger recommends deliberately stepping back to look at your own field as a beginner would, including asking how other fields have solved a similar problem.",
+    "Berger does not claim expertise is worthless; the point is that knowledge and questioning have to be kept in balance."
+  ],
+  "tension": "The more you know about a field, the more you should be able to improve it, yet that same knowledge can stop you from asking the questions that would.",
+  "opening_idea": "Start with the question an outsider asks about your field that you'd normally answer with 'it just doesn't work that way.'",
+  "lessons": [
+    {
+      "idea": "Expertise can quietly turn assumptions into things that seem obvious.",
+      "anchor": "Berger's point that experts ask fewer basic questions"
+    },
+    {
+      "idea": "A newcomer's naive question is a source of insight, not a waste of time.",
+      "anchor": "Outsiders expose assumptions insiders stopped noticing"
+    },
+    {
+      "idea": "You can deliberately borrow a beginner's view of your own field.",
+      "anchor": "Berger's advice to adopt a beginner's mind and look at other fields"
+    }
+  ],
+  "reflect": [
+    "Which assumption in your field would you struggle to explain to an outsider?",
+    "When did a newcomer's question last make you pause?",
+    "Where do you answer 'that's how it's done' without checking whether it's still true?"
+  ],
+  "reflect_final": "The next time a newcomer or outsider asks a basic question about your work, write it down before answering and ask yourself whether the usual answer still holds.",
+  "use_cases": [
+    {
+      "situation": "Onboarding a new team member.",
+      "move": "Ask them to keep a list of every 'why do you do it this way?' question in their first weeks, then review it together rather than just answering on the spot.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A planning meeting where everyone is an experienced insider.",
+      "move": "Berger argues experts stop asking basic questions. Propose a round where each person asks one 'naive' question about a practice everyone takes for granted.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Stuck on a problem in your area of expertise.",
+      "move": "Ask how a completely different field would handle a similar problem, and write down one idea you'd normally dismiss.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Knowing how things work can be what stops you asking whether they have to work that way. Borrow a newcomer's eyes.",
+  "conversation_variants": {
+    "punchline_idea": "The more of an expert you become, the harder it can be to ask a basic question about your own field.",
+    "thirty_sec_idea": "Berger notes that expertise builds assumptions that make experts ask fewer basic questions. His remedy is to look at your field like a beginner and ask how others solved similar problems.",
+    "question_idea": "Ask what assumption in their line of work everyone accepts but nobody questions.",
+    "key_contrast_idea": "Answering from what you know versus asking as if you knew nothing."
+  }
+}

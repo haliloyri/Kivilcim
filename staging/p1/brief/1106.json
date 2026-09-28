@@ -1,0 +1,68 @@
+{
+  "story_id": 1106,
+  "kind": "concept",
+  "book": {
+    "title": "Güç Yasaları (The 48 Laws of Power)",
+    "author": "Robert Greene",
+    "year": "1998"
+  },
+  "confidence": "medium",
+  "confidence_note": "The law's wording and its two-part summary (protect your own reputation, open holes in rivals' reputations and let public opinion finish them) are core to Law 5 and highly certain. The Zhuge Liang (Chuko Liang) 'empty fort' story is a well-known example in this chapter. The P.T. Barnum example, in which he used press attacks to cast doubt on a rival (the Peale group) over the American Museum purchase, is plausibly in the chapter, but the precise details are less certain and should be kept general. The Nixon/Watergate reference in the existing TR text is not reliably from the book and is omitted. The critique that describing manipulation risks legitimizing it, and the point that attackers also pay a credibility cost, are interpretive framing. They are not claims made by Greene.",
+  "facts": [
+    "Law 5 of The 48 Laws of Power is: 'So much depends on reputation — guard it with your life.'",
+    "Greene calls reputation the cornerstone of power: with it alone you can intimidate and win, but once it slips you become vulnerable and are attacked from all sides.",
+    "The law's summary goes beyond defense. It says to make your reputation unassailable, stay alert to attacks and thwart them early, and learn to destroy enemies by opening holes in their reputations, then stand aside and let public opinion hang them.",
+    "Book example: the Chinese strategist Zhuge Liang (Chuko Liang), caught with a tiny force before a large army, opened his city gates and sat calmly on the wall playing a lute. His rival, knowing his reputation for cunning, suspected a trap and withdrew. The reputation did the work that soldiers could not.",
+    "Book example (details general): P.T. Barnum undermined a rival's standing through doubts planted in the press rather than direct confrontation, which helped him secure the museum he wanted.",
+    "Greene presents the book as a description of how power operates in practice, not a manual of virtue."
+  ],
+  "tension": "Most summaries treat Law 5 as harmless advice to protect your good name, but Greene's full law is two-edged. It also tells you to quietly wreck other people's reputations and let the crowd do the damage.",
+  "opening_idea": "Everyone quotes the first half of Law 5, 'guard your reputation.' Almost no one quotes the second half, which is about sinking someone else's.",
+  "lessons": [
+    {
+      "idea": "Reputation is an asset that can win battles on its own. A strong one makes opponents hesitate before they act.",
+      "anchor": "Zhuge Liang's open gates and lute: the enemy retreated from a reputation, not an army."
+    },
+    {
+      "idea": "Greene's law is both defense and offense. You protect your own standing while targeting weak points in a rival's.",
+      "anchor": "The summary's 'open holes in their reputations, then stand aside.'"
+    },
+    {
+      "idea": "The 'stand aside' step admits that a visible attacker pays a price. Even Greene's method depends on hiding who started the doubt.",
+      "anchor": "Barnum working through the press rather than openly."
+    },
+    {
+      "idea": "Attacking a person's competence, rather than their decision, tends to turn a debate into a feud and spends your own credibility.",
+      "anchor": "Interpretive: people judge the accuser as well as the accused."
+    }
+  ],
+  "reflect": [
+    "When you have criticized someone, were you targeting their decision or their character?",
+    "What would your reputation 'win for you' today without you saying a word?"
+  ],
+  "reflect_final": "How do the people who know you describe you, and does that match the person you want to be?",
+  "use_cases": [
+    {
+      "situation": "In a meeting, a colleague's proposal seems weak and you are tempted to question their competence.",
+      "move": "Critique only the proposal: 'The cost estimate here worries me. Can we check it against last quarter?' Leave their ability out of it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Someone privately passes you a damaging rumor about a coworker.",
+      "move": "Ask, 'Have you raised this with them directly?' and don't forward it. You won't become the carrier people remember.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You wonder what your reputation actually is, as opposed to what you think it is.",
+      "move": "Ask two trusted people for three words that describe you at work, and compare them with the three you would choose.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Greene's Law 5 has a hidden second half: guard your reputation, and quietly puncture your rival's. Its own advice to 'stand aside' shows how costly it is to be seen attacking.",
+  "conversation_variants": {
+    "punchline_idea": "Zhuge Liang won a battle with open gates and a lute, because his reputation was the army.",
+    "thirty_sec_idea": "Law 5 is not just 'protect your name.' It also says to open holes in enemies' reputations and let the public finish them, and to stay hidden while you do.",
+    "question_idea": "If you had to attack someone's credibility, why would Greene insist you step back and let others finish it?",
+    "key_contrast_idea": "Criticizing a decision opens a debate; attacking the person ends it and leaves a feud behind."
+  }
+}

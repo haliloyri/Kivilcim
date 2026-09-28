@@ -1,0 +1,64 @@
+{
+  "story_id": 1144,
+  "kind": "anecdote",
+  "book": {
+    "title": "Make Your Bed",
+    "author": "William H. McRaven",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "The reference TR text describes a 'shark night' in a dark pool with real sharks, lasting two hours. That is not what the book describes, and those details are left out. In the book's chapter on not backing down from the sharks, McRaven describes the long open-water night swims of SEAL training off San Clemente Island. The instructors warned trainees that the waters were full of sharks, including great whites, and told them that if a shark began circling, they should stand their ground, not swim away and not act afraid; if it came in for a bite, punch it in the snout. He says no trainee had ever been eaten, as far as he knew. He uses this to talk about facing the 'sharks' of life with courage. The swim's distance and the claim that all trainees felt afraid are kept general.",
+  "facts": [
+    "SEAL training includes a series of long open-water swims, including a night swim off San Clemente Island, California.",
+    "Before the swim, instructors told the trainees about the many species of sharks in those waters, including great whites.",
+    "They assured the trainees that no student had ever been eaten, at least not recently.",
+    "Their advice: if a shark begins circling you, stand your ground. Don't swim away. Don't act afraid. If it darts toward you for a bite, summon all your strength and punch it in the snout, and it will turn and swim away.",
+    "McRaven writes that there are a lot of sharks in the world, and if you hope to complete the swim, you will have to deal with them.",
+    "His lesson: to change the world, don't back down from the sharks."
+  ],
+  "tension": "Trainees are sent into dark water they've been told is full of sharks, with only one instruction: don't swim away.",
+  "opening_idea": "Instructors calmly list the shark species in the water, then send trainees into it at night.",
+  "lessons": [
+    {
+      "idea": "Courage is acting with fear, not without it.",
+      "anchor": "Swimming into shark water at night anyway"
+    },
+    {
+      "idea": "Running from a threat often invites it; standing firm deters it.",
+      "anchor": "'Stand your ground... don't act afraid'"
+    },
+    {
+      "idea": "Every goal worth reaching has sharks along the way.",
+      "anchor": "'If you hope to complete the swim, you will have to deal with them'"
+    }
+  ],
+  "reflect": [
+    "Which 'shark' is circling one of your goals right now?",
+    "When did backing away from a threat make it bigger?"
+  ],
+  "reflect_final": "What would standing your ground look like with the shark you're facing now?",
+  "use_cases": [
+    {
+      "situation": "A hostile stakeholder keeps attacking your team's proposal.",
+      "move": "Stay calm and firm, restate your case clearly, and don't retreat just to end the discomfort.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child is being teased at school and wants to avoid it.",
+      "move": "Practice a calm, confident response together instead of teaching them to run.",
+      "context": "family"
+    },
+    {
+      "situation": "You're avoiding a hard conversation because you're afraid of the reaction.",
+      "move": "Name the fear, then schedule the conversation within a week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "There are sharks in every worthwhile swim. Don't swim away.",
+  "conversation_variants": {
+    "punchline_idea": "The instructors' advice for sharks: don't swim away, and punch them in the snout.",
+    "thirty_sec_idea": "The night swim off San Clemente, the shark briefing, stand your ground.",
+    "question_idea": "What shark in your life have you been swimming away from?",
+    "key_contrast_idea": "Retreat versus stand"
+  }
+}

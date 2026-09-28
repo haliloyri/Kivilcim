@@ -1,0 +1,64 @@
+{
+  "story_id": 1275,
+  "kind": "concept",
+  "book": {
+    "title": "When: The Scientific Secrets of Perfect Timing",
+    "author": "Daniel H. Pink",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "The reference TR text says people aged 29, 39 or 49 signed up for marathons at nearly twice the rate of those a year younger, and calls the phenomenon the 'last-step effect'. Pink reports research by Adam Alter and Hal Hershfield finding '9-enders' overrepresented among first-time marathoners by 48 percent, not double; the term 'last-step effect' is not Pink's, and the idea is omitted as a label. Pink's midpoint material ('uh-oh effect', basketball halftime data, Connie Gersick's project-team research) is used for the second half. Pink's discussion of 9-enders' other behaviours is not included.",
+  "facts": [
+    "Adam Alter and Hal Hershfield found that people whose age ends in 9 (29, 39, 49 and so on), whom Pink calls '9-enders', were overrepresented among first-time marathon runners by 48 percent.",
+    "Among repeat marathoners, 9-enders also tended to run faster at those ages than in the years before or after.",
+    "Pink's explanation: approaching a symbolic ending, like the end of a decade, energizes people to act.",
+    "On midpoints, Pink cites Connie Gersick's research on project teams, which often did little in the first half, then had a burst of activity near their deadline's midpoint.",
+    "He also cites a study of basketball games in which teams trailing by one point at halftime were more likely to win than teams leading by one.",
+    "Pink describes midpoints as a moment that can slump us or spark us, and suggests setting interim goals and treating the midpoint as a wake-up call."
+  ],
+  "tension": "The same stretch of a project can drain people or energize them depending on whether they notice they're halfway, or that an ending is close.",
+  "opening_idea": "Start with the marathon sign-up data: an unusual number of first-time runners were 29, 39 or 49.",
+  "lessons": [
+    {
+      "idea": "Symbolic endings drive action, even when nothing real changes.",
+      "anchor": "9-enders were 48 percent overrepresented among first-time marathoners."
+    },
+    {
+      "idea": "Being slightly behind at the midpoint can motivate.",
+      "anchor": "Basketball teams trailing by one point at halftime won more often."
+    },
+    {
+      "idea": "Midpoints can be used as deliberate checkpoints.",
+      "anchor": "Gersick's teams often surged into action around their midpoint."
+    }
+  ],
+  "reflect": [
+    "Have you ever made a big decision because a birthday or year-end was approaching?",
+    "In a long project, where do you usually lose momentum?"
+  ],
+  "reflect_final": "For one project that's drifting, name its halfway point on the calendar and plan a short check-in for that day, then notice whether the check-in changes the pace.",
+  "use_cases": [
+    {
+      "situation": "A quarterly project is at week six of twelve and the team seems flat.",
+      "move": "Mention Gersick's teams that surged at their midpoint, and ask the group to name what must be true by the end of next week.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is turning 39 and talking about 'doing something before 40'.",
+      "move": "Share the marathon data, and ask which one thing they'd want to sign up for this year.",
+      "context": "social"
+    },
+    {
+      "situation": "You're stuck in the middle of a personal goal.",
+      "move": "Set one near-term finish line, a specific date for one piece, and notice whether effort picks up as it approaches.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The marathon data show a birthday ending in 9 pushes people to the starting line: a visible end, even a symbolic one, gets people moving.",
+  "conversation_variants": {
+    "punchline_idea": "People aged 29, 39 or 49 were 48 percent overrepresented among first-time marathon runners.",
+    "thirty_sec_idea": "Pink shows endings energize: '9-enders' sign up for marathons far more often; midpoints can spark too, as when basketball teams down by one at halftime win more often.",
+    "question_idea": "Did a birthday or year ending ever push you to start something?",
+    "key_contrast_idea": "From 'the middle is where things slow down' to 'the middle is a chance to wake up.'"
+  }
+}

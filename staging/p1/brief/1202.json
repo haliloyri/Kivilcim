@@ -1,0 +1,65 @@
+{
+  "story_id": 1202,
+  "kind": "concept",
+  "book": {
+    "title": "Zero to One",
+    "author": "Peter Thiel with Blake Masters",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "Thiel's favorite interview question, 'What important truth do very few people agree with you on?', opens Zero to One, and his chapter on secrets argues that great companies are built on secrets: important truths that are not yet widely recognized. He describes three kinds of things: easy (conventions), hard (secrets) and impossible (mysteries), and argues that people stopped looking for secrets because of incrementalism, risk aversion, complacency and 'flatness'. He cites Airbnb and Uber/Lyft as companies built on secrets hidden in plain sight: underused resources people didn't think to use. The reference TR text's specific PayPal anecdote is not confirmed in this form and is kept general.",
+  "facts": [
+    "Thiel's favorite interview question is: 'What important truth do very few people agree with you on?'",
+    "He says it is hard to answer: it takes knowledge to find such a truth and courage to say it out loud.",
+    "He argues that every great business is built around a secret: an important truth that others haven't recognized yet.",
+    "He distinguishes conventions (easy truths everyone knows), secrets (hard but achievable truths) and mysteries (impossible to know).",
+    "He argues many people stopped believing in secrets, because of incrementalism, risk aversion, complacency and the belief that everything worth knowing is already known.",
+    "He points to companies like Airbnb and Uber as examples: they saw value in underused resources, spare rooms and idle cars, that were in plain sight.",
+    "His advice: look for secrets in places no one else is looking."
+  ],
+  "tension": "If a big opportunity were obvious, someone would already have taken it. So where do new ones come from?",
+  "opening_idea": "An investor asks every candidate one question most people can't answer well.",
+  "lessons": [
+    {
+      "idea": "Big opportunities hide in unpopular truths.",
+      "anchor": "The contrarian question"
+    },
+    {
+      "idea": "Secrets are hard, not impossible.",
+      "anchor": "Conventions, secrets and mysteries"
+    },
+    {
+      "idea": "Some secrets are in plain sight.",
+      "anchor": "Airbnb and Uber"
+    }
+  ],
+  "reflect": [
+    "What important truth do you believe that most people around you don't?",
+    "Which 'obvious' assumption in your field might be wrong?"
+  ],
+  "reflect_final": "What underused resource around you might be hiding a secret?",
+  "use_cases": [
+    {
+      "situation": "Your team only generates ideas everyone already agrees with.",
+      "move": "Ask each person to share one belief about your industry that most people would disagree with.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You're looking for a business or career idea.",
+      "move": "List underused resources you see daily and ask who could benefit from them.",
+      "context": "self"
+    },
+    {
+      "situation": "You're interviewing a candidate for a strategic role.",
+      "move": "Ask Thiel's question and listen for a thoughtful, specific answer.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "The best opportunities hide in important truths most people don't yet believe.",
+  "conversation_variants": {
+    "punchline_idea": "Every great company starts with a truth most people don't yet believe.",
+    "thirty_sec_idea": "The interview question, secrets vs conventions and mysteries, Airbnb/Uber.",
+    "question_idea": "What important truth do very few people agree with you on?",
+    "key_contrast_idea": "Consensus versus secret"
+  }
+}

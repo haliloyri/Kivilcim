@@ -1,0 +1,64 @@
+{
+  "story_id": 1119,
+  "kind": "concept",
+  "book": {
+    "title": "Beyin Fırtınası (likely the Turkish edition of 'The Brain: The Story of You')",
+    "author": "David Eagleman",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Turkish title given does not clearly match Eagleman's 2015 book 'The Brain: The Story of You', which contains a chapter on how the brain constructs reality. The core ideas fit Eagleman's writing well: the brain builds our perceived reality, fills in gaps, and our eyes make jerky saccades while vision still feels seamless. The blind-spot demonstration is a standard illustration of this idea, but I can't confirm it appears in this exact form in the book. No precise saccade rate is stated here, because the book's exact figure is uncertain.",
+  "facts": [
+    "Each eye has a blind spot where the optic nerve leaves the retina. That spot has no photoreceptors, so it detects no light.",
+    "A simple test shows it. Close one eye, fix your gaze straight ahead, and slowly move a small object sideways. At one point the object vanishes, then reappears.",
+    "In everyday life we never notice a hole in our vision. The brain fills the missing area using the surrounding visual information.",
+    "The eyes do not take in a smooth stream. They jump in rapid movements (saccades) several times a second, yet we experience a continuous, stable picture.",
+    "Eagleman's broader claim is that the brain actively builds our experience of color, sound and the world. It works from limited sensory signals plus its own expectations.",
+    "On this view, we don't experience the outside world directly. We experience the brain's constructed model of it."
+  ],
+  "tension": "We feel completely sure about what we see and hear. Yet part of every perception is the brain's guess, delivered with the same vividness as real data.",
+  "opening_idea": "Invite the reader to find their own blind spot right now with one eye and a pen. Let the vanishing pen make the point before any explanation.",
+  "lessons": [
+    {
+      "idea": "The brain fills gaps in sensory data so smoothly that the invented parts feel as real as the sensed parts.",
+      "anchor": "blind spot filled in by surrounding information"
+    },
+    {
+      "idea": "Perception is a continuous construction, not a live camera feed.",
+      "anchor": "jerky saccades experienced as a seamless image"
+    },
+    {
+      "idea": "Certainty about what we perceived is not proof that it matched reality.",
+      "anchor": "'I definitely saw it' is still the brain's interpretation"
+    }
+  ],
+  "reflect": [
+    "When have you been sure you saw or heard something, and later found it was different?",
+    "Which details in your memory of a recent conversation might your brain have filled in?"
+  ],
+  "reflect_final": "Is there a 'fact' you are certain about that might actually be your brain filling in a gap?",
+  "use_cases": [
+    {
+      "situation": "A meeting disagreement over what a client or colleague 'clearly said'",
+      "move": "Say: 'We may each be filling in gaps. Let's check the email or notes before we argue about it.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A partner or family member insists you said something you don't remember saying",
+      "move": "Instead of 'That's not what happened,' try: 'My brain may have filled that in differently. Tell me what you heard.'",
+      "context": "family"
+    },
+    {
+      "situation": "You feel certain about a first impression of someone",
+      "move": "Write down the observable facts separately from what you assumed. Look for one piece of missing data before judging.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "You don't see the world. You see your brain's best model of it.",
+  "conversation_variants": {
+    "punchline_idea": "You have a hole in your vision right now, and your brain is covering it up so well you'll never notice.",
+    "thirty_sec_idea": "Explain the blind spot and saccades in two lines, then land on this: if the brain invents that smoothly, our certainty deserves some humility.",
+    "question_idea": "Ask: 'Want to see a hole in your vision in ten seconds?' Then walk them through the pen test.",
+    "key_contrast_idea": "Contrast what the eye actually delivers (gappy, jerky signals) with what we experience (a complete, steady world)."
+  }
+}

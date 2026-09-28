@@ -1,0 +1,64 @@
+{
+  "story_id": 1221,
+  "kind": "concept",
+  "book": {
+    "title": "The Gratitude Diaries",
+    "author": "Janice Kaplan",
+    "year": "2015"
+  },
+  "confidence": "low",
+  "confidence_note": "Kaplan's book discusses how comparing ourselves with others undermines gratitude, especially around money and success, and how gratitude shifts attention to what we have. The reference TR text states that 'people are unhappiest when comparing'; that general claim is kept as her theme rather than a specific finding. To illustrate the psychology of comparison, the story uses a well-known 1995 study by Victoria Medvec, Scott Madey and Thomas Gilovich showing Olympic bronze medalists often appeared happier than silver medalists; it is not confirmed that Kaplan cites this study, so it is presented as research on comparison, not attributed to her. No numbers are claimed.",
+  "facts": [
+    "Kaplan argues that comparing ourselves with others, especially people who seem richer or more successful, is one of the biggest obstacles to feeling grateful.",
+    "She writes about how, when she compared her life with others', she noticed what was missing rather than what she had.",
+    "Gratitude, in her account, shifts attention from what others have to what you have.",
+    "A well-known study by psychologists Victoria Medvec, Scott Madey and Thomas Gilovich analyzed Olympic medalists' expressions and found that bronze medalists often appeared happier than silver medalists.",
+    "The researchers' explanation: silver medalists tended to compare themselves with the gold they narrowly missed, while bronze medalists compared themselves with finishing without a medal at all.",
+    "The comparison point, not the outcome itself, shaped how people felt."
+  ],
+  "tension": "The athlete who finishes second can feel worse than the one who finishes third.",
+  "opening_idea": "Watch Olympic medalists on the podium, and the one in second place often looks the least happy.",
+  "lessons": [
+    {
+      "idea": "Comparison shapes feelings more than outcomes do.",
+      "anchor": "Silver vs bronze medalists"
+    },
+    {
+      "idea": "Upward comparison erodes gratitude.",
+      "anchor": "Kaplan on comparing with others"
+    },
+    {
+      "idea": "Choose your comparison deliberately.",
+      "anchor": "Gratitude shifts attention to what you have"
+    }
+  ],
+  "reflect": [
+    "Whom do you compare yourself with most often?",
+    "What would you feel if you compared your situation with where you started?"
+  ],
+  "reflect_final": "Which comparison could you replace with gratitude this week?",
+  "use_cases": [
+    {
+      "situation": "You feel bad after scrolling through friends' holiday photos.",
+      "move": "Write down three things you're grateful for in your own week.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child is upset about coming second in a competition.",
+      "move": "Help them compare with where they started, not only with the winner.",
+      "context": "family"
+    },
+    {
+      "situation": "Your team is disappointed at missing a stretch target.",
+      "move": "Compare results with last year before comparing with the target.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "What you compare yourself with decides how you feel about what you have.",
+  "conversation_variants": {
+    "punchline_idea": "Olympic bronze medalists often look happier than silver medalists.",
+    "thirty_sec_idea": "Comparison erodes gratitude; the silver-bronze study; choosing the comparison.",
+    "question_idea": "Whom do you compare yourself with most often?",
+    "key_contrast_idea": "Looking up versus looking back"
+  }
+}

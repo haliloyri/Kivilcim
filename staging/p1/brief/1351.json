@@ -1,0 +1,63 @@
+{
+  "story_id": 1351,
+  "kind": "concept",
+  "book": {
+    "title": "Bir Sonraki Seviye (The 5AM Club)",
+    "author": "Robin Sharma",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The content matches Robin Sharma's The 5AM Club (2018), whose usual Turkish title differs from the input title; the source is assumed to be that book. The 'Victory Hour' from 5 to 6 a.m. and the 20/20/20 formula (Move, Reflect, Grow) are central to it, and the book is written as a fable in which a billionaire mentor teaches an entrepreneur and an artist. The TR text's reference to a three-hour 5-8 a.m. block conflicts with the book's one-hour formula and is excluded. The quote 'nobody is born a night owl' and the line about hours not being stolen could not be verified verbatim and are excluded. Sharma's physiological claims (e.g. about cortisol) are his interpretation and are not presented as established findings; the TR text itself flags this.",
+  "facts": [
+    "The book is a fable: an eccentric billionaire mentor teaches an entrepreneur and an artist, both struggling, to rise at 5 a.m.",
+    "Sharma calls the first hour, from 5 to 6 a.m., the 'Victory Hour' and argues it is valuable because the world is quiet and there are few demands or distractions.",
+    "He divides that hour with the 20/20/20 formula: 20 minutes of intense exercise (Move), 20 minutes of reflection such as journaling or planning (Reflect), and 20 minutes of learning such as reading (Grow).",
+    "He argues that rising early is a habit that can be installed, not a fixed trait, and describes an adjustment period in which the change feels hard before it becomes automatic.",
+    "His explanations of why the early hour works partly rest on his own interpretation of brain and hormone effects rather than on measured results presented in the book."
+  ],
+  "tension": "The claim is not that waking up earlier is inherently virtuous but that one quiet hour, before anyone else needs you, can be protected in a way the rest of the day cannot. The cost is going against people's sense that they are simply not morning people.",
+  "opening_idea": "Begin with the fable's two struggling characters being told by a strange billionaire that the fix starts at 5 a.m.",
+  "lessons": [
+    {
+      "idea": "Time before others make demands is easier to protect than time you try to carve out later.",
+      "anchor": "The Victory Hour from 5 to 6 a.m., when the world is still quiet."
+    },
+    {
+      "idea": "A structured hour with separate parts for body, reflection and learning is easier to use than vague 'me time'.",
+      "anchor": "The 20/20/20 formula: Move, Reflect, Grow."
+    },
+    {
+      "idea": "A new routine feels hardest at first, before it becomes automatic.",
+      "anchor": "Sharma's claim that rising early is an installable habit, not a fixed trait."
+    }
+  ],
+  "reflect": [
+    "When during your day is there a stretch nobody else claims?",
+    "Which of the three parts, moving, reflecting or learning, is missing most from your current days?"
+  ],
+  "reflect_final": "Pick one morning this week and use only the first 20 minutes after you wake for one of Move, Reflect or Grow before checking your phone. Notice how the rest of the day starts.",
+  "use_cases": [
+    {
+      "situation": "You never find time to read or plan because the day fills up with other people's requests.",
+      "move": "Take one of Sharma's three 20-minute blocks, such as Grow, and do it before you open messages tomorrow morning.",
+      "context": "self"
+    },
+    {
+      "situation": "Your household mornings are rushed and noisy.",
+      "move": "Suggest one person gets up a little earlier to have a quiet, uninterrupted block, and agree how to keep that time free.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague says they have no time for their own development.",
+      "move": "Share the 20/20/20 idea and ask which one 20-minute block they could protect before work starts.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "The early hour works because nobody has claimed it yet: split it into Move, Reflect and Grow before the world wakes up.",
+  "conversation_variants": {
+    "punchline_idea": "Robin Sharma divides one hour before sunrise into exactly three blocks of 20 minutes.",
+    "thirty_sec_idea": "In Sharma's fable, a billionaire tells two struggling people to rise at 5 a.m. and spend the quiet first hour on 20 minutes of exercise, 20 of reflection and 20 of learning before the day's demands arrive.",
+    "question_idea": "Ask whether they have a part of the day that truly belongs to them, and what they would do with 20 more minutes of it.",
+    "key_contrast_idea": "Time you carve out once others are awake versus time you claim before anyone else wakes."
+  }
+}

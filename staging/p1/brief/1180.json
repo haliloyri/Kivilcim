@@ -1,0 +1,64 @@
+{
+  "story_id": 1180,
+  "kind": "concept",
+  "book": {
+    "title": "Big Magic: Creative Living Beyond Fear",
+    "author": "Elizabeth Gilbert",
+    "year": "2015"
+  },
+  "confidence": "high",
+  "confidence_note": "The road-trip letter to fear is one of the best-known passages in Big Magic: before starting a new project, Gilbert addresses her fear, acknowledges that it will come along, gives it a seat and a voice, but tells it it isn't allowed to drive, touch the road maps or suggest detours. Also from the book: her view that perfectionism is 'just fear in fancy shoes and a mink coat', and her mother's motto 'Done is better than good'. Wording is paraphrased; the fear letter is summarized rather than quoted in full.",
+  "facts": [
+    "Gilbert argues that fear is a necessary survival instinct, but it is boring and has only one message: stop.",
+    "She says creativity always triggers fear because it asks you to enter uncertainty.",
+    "Before starting a new project, she speaks to her fear directly, as if to a companion on a road trip.",
+    "She tells fear it is welcome to come along, have a seat and have a voice, because she knows it will come anyway. But it is not allowed to drive, not allowed to touch the road maps, not allowed to suggest detours, and not allowed to fiddle with the temperature.",
+    "She describes perfectionism as fear in fancy shoes and a mink coat, pretending to be elegant.",
+    "She quotes her mother's saying: 'Done is better than good.'"
+  ],
+  "tension": "Fear shows up every time you create something. You can't get rid of it, so what do you do with it?",
+  "opening_idea": "Before every project, a bestselling author gives a little speech to her fear, like a passenger climbing into the car.",
+  "lessons": [
+    {
+      "idea": "Fear will come along; the question is who drives.",
+      "anchor": "The road-trip letter"
+    },
+    {
+      "idea": "Perfectionism is fear in disguise.",
+      "anchor": "'Fear in fancy shoes and a mink coat'"
+    },
+    {
+      "idea": "Finishing matters more than perfecting.",
+      "anchor": "'Done is better than good'"
+    }
+  ],
+  "reflect": [
+    "What does your fear say when you start something new?",
+    "Where is perfectionism keeping your work unfinished?"
+  ],
+  "reflect_final": "What project would you finish if fear had a seat but no steering wheel?",
+  "use_cases": [
+    {
+      "situation": "You're about to start a creative project and feel dread.",
+      "move": "Write a short note to your fear: it can come, but it doesn't decide.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague keeps polishing a report and never sends it.",
+      "move": "Share 'done is better than good' and agree on a send date.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child won't show a drawing because it isn't perfect.",
+      "move": "Praise finishing, and share one of your own imperfect attempts.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Let fear ride along. Just don't hand it the wheel.",
+  "conversation_variants": {
+    "punchline_idea": "Gilbert lets fear ride along on every project, but never lets it drive.",
+    "thirty_sec_idea": "The letter to fear, perfectionism as fear, done is better than good.",
+    "question_idea": "What would you do if fear had a seat but no say?",
+    "key_contrast_idea": "Passenger versus driver"
+  }
+}

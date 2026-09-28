@@ -1,0 +1,65 @@
+{
+  "story_id": 1324,
+  "kind": "concept",
+  "book": {
+    "title": "The Artist's Way",
+    "author": "Julia Cameron",
+    "year": "1992"
+  },
+  "confidence": "medium",
+  "confidence_note": "Morning pages are the central tool of The Artist's Way: three pages of longhand, stream-of-consciousness writing done first thing in the morning, with no right or wrong way to do them; Cameron says they are not meant to be art and describes them as a way to get past the inner Censor and clear the mind ('brain drain' is her phrasing). She also advises not rereading them early on and not showing them to anyone. The reference text's claim that 'most participants reported surprising changes within a few weeks' is not a figure from the book and is omitted, as is 'before making coffee' as a specific instruction. Cameron's claims about effects are her interpretation and her students' reports, not a controlled finding. Not verified against the text.",
+  "facts": [
+    "Cameron's core practice is 'morning pages': three pages of longhand writing done first thing in the morning.",
+    "The pages are stream of consciousness. They can be petty, whiny, repetitive or boring; she says they are not art and there is no wrong way to do them.",
+    "She describes them as a way to clear the mind of the worries and clutter that sit between you and your creative work.",
+    "Writing quickly without editing is meant to get past the inner Censor, the critical voice that judges creative work.",
+    "She advises not showing the pages to anyone and not rereading them in the early weeks.",
+    "Cameron developed the practice while teaching creativity workshops to people who felt blocked, and presents it as the basic tool of her twelve-week program."
+  ],
+  "tension": "The tool Cameron offers for creative block is writing that is explicitly not supposed to be good.",
+  "opening_idea": "Start with a blank page first thing in the morning and Cameron's only rule for it: three pages, by hand, and it doesn't have to be good.",
+  "lessons": [
+    {
+      "idea": "Creative block is often clutter rather than an empty mind.",
+      "anchor": "Morning pages as a way to clear worries and clutter"
+    },
+    {
+      "idea": "Lowering the standard to zero can get past the inner critic.",
+      "anchor": "'Morning pages are not art', written quickly without editing"
+    },
+    {
+      "idea": "A private practice frees you from performing for an audience.",
+      "anchor": "Not showing the pages to anyone or rereading them early on"
+    }
+  ],
+  "reflect": [
+    "What's on your mind first thing in the morning before you've done anything?",
+    "Where does the need to write or make something good stop you from starting?",
+    "What would you write if you knew no one, including you, would read it?"
+  ],
+  "reflect_final": "Tomorrow morning, before anything else, write three longhand pages of whatever comes up. Afterwards, notice whether anything in the day feels a little clearer.",
+  "use_cases": [
+    {
+      "situation": "You're stuck before a creative or writing task and keep polishing the first sentence.",
+      "move": "Cameron's morning pages are allowed to be bad by design. Before the real task, write one fast page of whatever is on your mind, then start the draft.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend says they'd love to write or paint but 'have no ideas.'",
+      "move": "Mention Cameron's view that the ideas may be buried under clutter, and suggest trying three pages of longhand, unedited, first thing one morning.",
+      "context": "social"
+    },
+    {
+      "situation": "A team brainstorm stalls because everyone self-censors.",
+      "move": "Start with a few minutes of silent, private writing where nothing will be shared or judged, and only then ask for ideas.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Three pages that are allowed to be bad clear the way for the work you actually want to do.",
+  "conversation_variants": {
+    "punchline_idea": "Julia Cameron's cure for creative block is three pages a day that are explicitly not supposed to be good.",
+    "thirty_sec_idea": "Cameron has blocked artists write three longhand pages every morning, whatever comes to mind, unread and unshared. The pages clear mental clutter and get past the inner critic so creative work can start.",
+    "question_idea": "Ask what they'd find on the page if they wrote three pages of whatever was on their mind tomorrow morning.",
+    "key_contrast_idea": "Waiting for a good idea versus writing badly until the clutter clears."
+  }
+}

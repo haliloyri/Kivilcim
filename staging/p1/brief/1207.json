@@ -1,0 +1,64 @@
+{
+  "story_id": 1207,
+  "kind": "concept",
+  "book": {
+    "title": "As a Man Thinketh",
+    "author": "James Allen",
+    "year": "1903"
+  },
+  "confidence": "high",
+  "confidence_note": "The garden metaphor is the best-known passage of As a Man Thinketh, which is in the public domain. Allen writes that a man's mind may be likened to a garden, which may be intelligently cultivated or allowed to run wild; if no useful seeds are put into it, useless weed-seeds will fall there. A man tends the garden of his mind, weeding out wrong and useless thoughts and cultivating right and useful ones. The reference TR text adds that the gardener can't control the soil or weather; that idea is not in Allen's passage and is kept only as a mild narrator's observation, not attributed to him.",
+  "facts": [
+    "As a Man Thinketh is a short essay published by James Allen in 1903. Its title echoes the Proverbs line 'As a man thinketh in his heart, so is he.'",
+    "Allen compares the mind to a garden that can be intelligently cultivated or allowed to run wild.",
+    "He writes that whether cultivated or neglected, it must and will bring forth: if no useful seeds are put into it, useless weed-seeds will fall into it and grow.",
+    "Just as a gardener weeds and cultivates, a person can tend their mind by removing wrong, useless and impure thoughts and cultivating right, useful and pure ones.",
+    "Allen argues that by doing this, a person gradually discovers that they are the master-gardener of their soul, the director of their life.",
+    "His broader claim is that thought shapes character, and character in turn shapes circumstances."
+  ],
+  "tension": "A mind left alone doesn't stay empty. Something always grows.",
+  "opening_idea": "Leave a patch of earth untouched for a season and see what grows. Allen says the mind works the same way.",
+  "lessons": [
+    {
+      "idea": "A neglected mind fills with weeds.",
+      "anchor": "Weed-seeds fall where nothing useful is planted"
+    },
+    {
+      "idea": "Tending thoughts is ongoing work.",
+      "anchor": "Weeding and cultivating"
+    },
+    {
+      "idea": "You are the gardener.",
+      "anchor": "The master-gardener of the soul"
+    }
+  ],
+  "reflect": [
+    "What thoughts have grown in your mind without being planted on purpose?",
+    "What are you feeding your mind each day?"
+  ],
+  "reflect_final": "What one 'seed' could you plant in your mind this week, and what weed could you pull?",
+  "use_cases": [
+    {
+      "situation": "You start each morning scrolling negative news.",
+      "move": "Replace the first 15 minutes with reading or reflecting on something useful.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child keeps repeating 'I'm stupid'.",
+      "move": "Talk about the garden idea and help them plant a truer thought.",
+      "context": "family"
+    },
+    {
+      "situation": "A team's conversations have become constant complaining.",
+      "move": "Start meetings with one thing that's working, to plant a different habit.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Your mind is a garden; if you don't plant, weeds will.",
+  "conversation_variants": {
+    "punchline_idea": "A mind left untended doesn't stay empty; weeds grow.",
+    "thirty_sec_idea": "Allen's garden metaphor, weeding and cultivating, master-gardener.",
+    "question_idea": "What are you planting in your mind each day?",
+    "key_contrast_idea": "Cultivated versus wild"
+  }
+}

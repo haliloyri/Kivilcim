@@ -1,0 +1,63 @@
+{
+  "story_id": 1332,
+  "kind": "concept",
+  "book": {
+    "title": "Özgür Olmak (The Subtle Art of Not Giving a F*ck)",
+    "author": "Mark Manson",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The chapter on being wrong ('You're wrong about everything, but so am I') in The Subtle Art of Not Giving a F*ck (title given here as 'Özgür Olmak') argues that certainty is the enemy of growth, introduces 'Manson's law of avoidance', and offers self-questions such as 'What if I'm wrong?'. The TR text's claims that alcohol, overwork and compulsive relationships are all attempts to suppress uncertainty, and that tolerating uncertainty makes them unnecessary, could not be attributed to the book and are excluded. Not checked against the text.",
+  "facts": [
+    "Manson argues that we are wrong about many things, and that growth happens by becoming a little less wrong, not by reaching certainty.",
+    "He calls certainty the enemy of growth: once you are sure, you stop questioning and stop learning.",
+    "His 'law of avoidance' holds that the more something threatens your identity, the more you will avoid it, even if it could improve your life.",
+    "He suggests questions to loosen certainty: What if I'm wrong? What would it mean if I were wrong? Would being wrong create a better or worse problem than my current one?",
+    "He frames admitting possible error as a strength that opens room to change, not as indecision."
+  ],
+  "tension": "The beliefs that feel most solid are often the ones guarding our identity, which is exactly why we avoid testing them.",
+  "opening_idea": "Start with Manson's simple question, 'What if I'm wrong?', and aim it at a belief the listener would defend without thinking.",
+  "lessons": [
+    {
+      "idea": "Certainty stops the questions that learning depends on.",
+      "anchor": "Manson's claim that certainty is the enemy of growth"
+    },
+    {
+      "idea": "We resist most the evidence that threatens who we think we are.",
+      "anchor": "Manson's law of avoidance"
+    },
+    {
+      "idea": "Being wrong can be weighed practically, not just feared.",
+      "anchor": "the question 'Would being wrong create a better or worse problem?'"
+    }
+  ],
+  "reflect": [
+    "Which belief about yourself would be hardest to discover was wrong?",
+    "When did changing your mind last make your life better?"
+  ],
+  "reflect_final": "Before your next firm decision, ask yourself Manson's three questions about it and notice whether any answer changes what you do.",
+  "use_cases": [
+    {
+      "situation": "An architecture debate has hardened into two camps.",
+      "move": "Ask each side to state what evidence would prove them wrong, then agree on a quick test.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A heated disagreement with a friend over dinner.",
+      "move": "Say 'I might be wrong here; what would change your mind, and what would change mine?'",
+      "context": "social"
+    },
+    {
+      "situation": "You're certain a colleague is acting in bad faith.",
+      "move": "Apply Manson's law of avoidance: ask whether being wrong would threaten how you see yourself, then list one alternative explanation.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The belief you'd least like to test is usually the one holding up your identity; that's the one worth asking 'what if I'm wrong?'",
+  "conversation_variants": {
+    "punchline_idea": "Manson says we're wrong about almost everything, and the goal is just to be a little less wrong tomorrow.",
+    "thirty_sec_idea": "Manson argues certainty stops growth, and that we avoid most fiercely the truths that threaten our identity, so he proposes asking: What if I'm wrong, what would it mean, and would being wrong be a better problem?",
+    "question_idea": "What's something you were completely sure about a few years ago and now see differently?",
+    "key_contrast_idea": "Defending a belief because it's yours versus testing it because it might be wrong."
+  }
+}
