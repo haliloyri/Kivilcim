@@ -240,19 +240,6 @@ const CATEGORY_PILL_FAMILY_MAP = {
   Geschichte: 'history',
 };
 
-const CATEGORY_PILL_ICON_NAME_MAP = {
-  all: 'apps-outline',
-  finance: 'cash-outline',
-  psychology: 'bulb-outline',
-  leadership: 'people-outline',
-  health: 'heart-outline',
-  growth: 'trending-up-outline',
-  science: 'flask-outline',
-  philosophy: 'book-outline',
-  communication: 'chatbubbles-outline',
-  productivity: 'checkmark-circle-outline',
-  history: 'time-outline',
-};
 
 // Base images
 const IMG_FINANCE = require('../../assets/categories/Finance.png');
@@ -510,6 +497,10 @@ const stripDecorations = (value) =>
     .replace(/^[^\p{L}\p{N}]+/u, '')
     .replace(/[^\p{L}\p{N}]+$/u, '')
     .trim();
+
+// Display labels may come from the database with a leading emoji or symbol.
+// Keep the stored/raw key intact for lookups, and use this helper for copy.
+export const cleanCategoryLabel = stripDecorations;
 
 const normalizeLookupKey = (value) => stripDecorations(value).toLowerCase();
 const CATEGORY_PILL_FAMILY_MAP_LOWER = Object.fromEntries(
@@ -862,26 +853,20 @@ export const getCategoryBanner = (catName) => {
   return { source: BANNER_MAP[family] || BANNER_DEFAULT };
 };
 
-export const getCategoryPillIcon = (catName, isDark = false) => {
-  if (!catName) return { source: PILL_ICON_ALL, name: CATEGORY_PILL_ICON_NAME_MAP.all };
+export const getCategoryPillImage = (catName, isDark = false) => {
+  if (!catName) return { source: PILL_ICON_ALL };
 
   const iconMap = isDark ? CATEGORY_PILL_ICON_MAP_DARK : CATEGORY_PILL_ICON_MAP;
   const iconMapLower = isDark ? CATEGORY_PILL_ICON_MAP_DARK_LOWER : CATEGORY_PILL_ICON_MAP_LOWER;
 
   const normalizedKey = normalizeCategoryKey(catName);
-  const family =
-    CATEGORY_PILL_FAMILY_MAP[normalizedKey]
-    || CATEGORY_PILL_FAMILY_MAP[String(catName || '').trim()]
-    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(normalizedKey)]
-    || CATEGORY_PILL_FAMILY_MAP_LOWER[normalizeLookupKey(catName)]
-    || 'all';
   const source =
     iconMap[normalizedKey]
     || iconMap[String(catName || '').trim()]
     || iconMapLower[normalizeLookupKey(normalizedKey)]
     || iconMapLower[normalizeLookupKey(catName)]
     || PILL_ICON_ALL;
-  return { source, name: CATEGORY_PILL_ICON_NAME_MAP[family] || CATEGORY_PILL_ICON_NAME_MAP.all };
+  return { source };
 };
 
 export default getCategoryImage;

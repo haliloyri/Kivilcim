@@ -205,7 +205,13 @@ function MainTabs() {
   // With Yolum on, the dot means "a new rank since you last opened Yolum".
   const showProgressDot = FEATURE_FLAGS.careerPathV1 ? unseenPathNodeCount > 0 : unseenEarnedBadgeCount > 0;
   const insets = useSafeAreaInsets();
-  const androidBottomInset = Platform.OS === 'android' ? Math.max(insets.bottom, 12) : insets.bottom;
+  // React Navigation already reserves the device safe area for the tab bar.
+  // Cap the custom inset used for sizing so devices with a large home-indicator
+  // inset (for example iPhone 17) do not get an oversized empty band below the
+  // labels. Android keeps a small minimum for gesture/navigation-bar devices.
+  const tabBarInset = Platform.OS === 'android'
+    ? Math.max(Math.min(insets.bottom, 12), 8)
+    : Math.min(insets.bottom, 12);
 
   return (
     <Tab.Navigator
@@ -215,10 +221,10 @@ function MainTabs() {
           backgroundColor: colors.tabBarBackground,
           borderTopWidth: isDark ? StyleSheet.hairlineWidth : layout.borderWidth,
           borderTopColor: colors.tabBarBorder,
-          height: 84 + androidBottomInset,
-          paddingBottom: androidBottomInset + 6,
-          paddingTop: 8,
-          marginBottom: Platform.OS === 'android' ? 4 : 0,
+          height: 78 + tabBarInset,
+          paddingBottom: tabBarInset + 2,
+          paddingTop: 6,
+          marginBottom: 0,
         },
         tabBarActiveTintColor: colors.primaryText,
         tabBarInactiveTintColor: colors.tabInactive,

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  StatusBar, Animated, Platform, Dimensions, Image,
+  StatusBar, Animated, Platform, Image, TextInput, useWindowDimensions,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -16,47 +16,45 @@ import { ensureNotificationPermission, registerAndSavePushToken } from '../utils
 import { getCachedDeviceUserId } from '../services/supabase';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import useReducedMotion from '../hooks/useReducedMotion';
+import { getStoryByLang } from '../db/db';
+import { SUPPORTED_LANGS } from '../utils/locale';
 
 const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
 // Read and cleared once by AppNavigator, after the reader finishes their first
 // story (not when the main stack mounts).
 export const PENDING_ONBOARDING_PAYWALL_KEY = '@albor_pending_onboarding_paywall';
 
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
 // Readable names in the funnel, so a step index change doesn't silently
 // reinterpret historical events.
 const STEP_NAMES = ['welcome', 'categories', 'plan'];
-
-// Category names arrive from the DB with a leading emoji (e.g. "💰 Finance").
-// Split it so we can render a single icon slot + a clean, non-truncating label.
-const splitLeadingEmoji = (label = '') => {
-  const cps = Array.from(String(label).trim());
-  let i = 0;
-  while (i < cps.length) {
-    const cp = cps[i].codePointAt(0);
-    if (cps[i] === ' ' || cp >= 0x2000) { i++; continue; } // emoji/symbols/VS/ZWJ + spaces
-    break;
-  }
-  return {
-    emoji: cps.slice(0, i).join('').trim(),
-    text: cps.slice(i).join('').trim() || String(label).trim(),
-  };
-};
+const LANGUAGE_OPTIONS = [
+  { code: 'tr', label: 'Türkçe' },
+  { code: 'en', label: 'English' },
+  { code: 'es', label: 'Español' },
+  { code: 'de', label: 'Deutsch' },
+];
 
 const OnboardingScreen = ({ navigation }) => {
-  const { colors, typography, layout, isDark, lang } = useTheme();
-  const { saveOnboarding } = useUserData();
-  const { stories, storiesLoading, categories, parentCategories, errorMsg } = useStories();
+  const { colors, typography, layout, isDark, lang, setLang } = useTheme();
+  const { saveOnboarding, updateUserProfile, userProfile } = useUserData();
+  const { stories, storiesLoading, categories, parentCategories, errorMsg, contentLang } = useStories();
   const insets = useSafeAreaInsets();
+  const { width: screenWidth, height: screenHeight } = useWindowDimensions();
   const reduceMotion = useReducedMotion();
   const [step, setStep] = useState(0);
   const [selectedCats, setSelectedCats] = useState([]);
   const [selectedTime, setSelectedTime] = useState(1);
   const [selectedReminders, setSelectedReminders] = useState(['evening']);
+  const [name, setName] = useState(userProfile?.displayName || '');
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const [languageChangePending, setLanguageChangePending] = useState(false);
+  const [storyVariants, setStoryVariants] = useState({});
+  const [storyVariantsLoading, setStoryVariantsLoading] = useState(false);
   // Set when the reader taps a CTA that can't advance yet, so the requirement
   // hint can answer the tap instead of the screen looking broken.
   const [hintAlert, setHintAlert] = useState(false);
   const hintTimerRef = useRef(null);
+  const firstValueStoryIdRef = useRef(null);
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
   const breatheAnim = useRef(new Animated.Value(1.0)).current;
@@ -90,6 +88,14 @@ const OnboardingScreen = ({ navigation }) => {
 
   useEffect(() => () => clearTimeout(hintTimerRef.current), []);
 
+  useEffect(() => {
+    if (!name && userProfile?.displayName) setName(userProfile.displayName);
+  }, [name, userProfile?.displayName]);
+
+  useEffect(() => {
+    if (contentLang === lang) setLanguageChangePending(false);
+  }, [contentLang, lang]);
+
   const allCats = parentCategories.map((p) => Number(p.id));
   const timeOptions = [
     { label: t('time_3min', lang), sub: t('time_3min_sub', lang), iconName: 'cafe-outline', icon: '\u2615', minutes: 3, dailyStoryTarget: 1 },
@@ -110,10 +116,11 @@ const OnboardingScreen = ({ navigation }) => {
   // made one screen earlier. Ten screens before the first story is a funnel, not
   // a setup.
   const TOTAL_STEPS = 3;
-  const isPhone = SCREEN_WIDTH < 768;
-  const isSmallPhone = SCREEN_WIDTH < 390;
+  const isPhone = screenWidth < 768;
+  const isSmallPhone = screenWidth < 390;
+  const isCompactPhone = isSmallPhone || screenHeight < 740;
   const catGridGap = isPhone ? 8 : 10;
-  const catTileWidth = (SCREEN_WIDTH - 64 - catGridGap) / 2;
+  const catTileWidth = (screenWidth - (isCompactPhone ? 40 : 64) - catGridGap) / 2;
 
   const animateStep = (direction, cb) => {
     if (reduceMotion) {
@@ -137,6 +144,15 @@ const OnboardingScreen = ({ navigation }) => {
 
   const next = async () => {
     Haptics.selectionAsync().catch(() => {});
+    // A language change causes StoriesContext to reload categories and the
+    // following setup screen. Keep the transition behind that reload so the
+    // reader never sees the previous language's category labels.
+    if (step === 0 && (languageChangePending || storiesLoading || (contentLang && contentLang !== lang))) {
+      setHintAlert(true);
+      clearTimeout(hintTimerRef.current);
+      hintTimerRef.current = setTimeout(() => setHintAlert(false), 1800);
+      return;
+    }
     if (step < TOTAL_STEPS - 1) {
       animateStep('forward', () => setStep(s => s + 1));
       return;
@@ -169,18 +185,6 @@ const OnboardingScreen = ({ navigation }) => {
     animateStep('back', () => setStep(s => s - 1));
   };
 
-  const skip = async () => {
-    trackEvent(ANALYTICS_EVENTS.ONBOARDING_SKIPPED, {
-      step,
-      stepName: STEP_NAMES[step] || String(step),
-      lang,
-    });
-    // Deliberately does NOT arm the trial paywall: a user who skipped has seen
-    // no value yet, and a paywall without context reads as an ambush.
-    await saveOnboarding([], timeOptions[1], reminderOptions[2]);
-    await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
-  };
-
   const toggleCat = (cat) => {
     Haptics.selectionAsync().catch(() => {});
     setSelectedCats(prev => {
@@ -209,6 +213,7 @@ const OnboardingScreen = ({ navigation }) => {
     // swaps the navigator's screen set and unmounts this component. AppNavigator
     // picks the flag up once the reader has finished their first story.
     await AsyncStorage.setItem(PENDING_ONBOARDING_PAYWALL_KEY, 'true').catch(() => {});
+    await updateUserProfile({ displayName: name.trim() || null });
     await saveOnboarding(selectedCats, timeOptions[selectedTime], selectedReminders);
     trackEvent(ANALYTICS_EVENTS.ONBOARDING_COMPLETED, {
       categoryCount: selectedCats.length,
@@ -296,22 +301,99 @@ const OnboardingScreen = ({ navigation }) => {
       fontSize: 14,
       color: colors.textSecondary,
     },
+    headerRight: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+    },
+    languageButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      paddingVertical: 7,
+      paddingHorizontal: 9,
+      borderRadius: 999,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: cardBg,
+    },
+    languageButtonText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      color: colors.text,
+    },
+    languageMenu: {
+      position: 'absolute',
+      top: 66,
+      right: 24,
+      zIndex: 30,
+      minWidth: 150,
+      paddingVertical: 6,
+      borderRadius: 14,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.modalSurface || cardBg,
+      shadowColor: colors.text,
+      shadowOffset: { width: 0, height: 5 },
+      shadowOpacity: 0.12,
+      shadowRadius: 12,
+      elevation: 5,
+    },
+    languageMenuRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingVertical: 11,
+      paddingHorizontal: 14,
+    },
+    nameBlock: {
+      marginTop: isCompactPhone ? 10 : 20,
+      gap: isCompactPhone ? 4 : 7,
+    },
+    nameLabel: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: isCompactPhone ? 12 : 13,
+      color: colors.text,
+    },
+    nameHint: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: isCompactPhone ? 10 : 12,
+      color: colors.textSecondary,
+    },
+    nameInput: {
+      minHeight: isCompactPhone ? 46 : 54,
+      borderRadius: 14,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: cardBg,
+      color: colors.text,
+      paddingHorizontal: isCompactPhone ? 13 : 16,
+      paddingVertical: isCompactPhone ? 8 : 12,
+      fontFamily: 'Inter_400Regular',
+      fontSize: isCompactPhone ? 15 : 16,
+    },
 
     /* â”€â”€ Content area â”€â”€ */
     contentScroll: {
       flexGrow: 1,
-      paddingHorizontal: 32,
+      paddingHorizontal: isCompactPhone ? 20 : 32,
       justifyContent: 'center',
+    },
+    welcomeStep: {
+      flex: 1,
+      justifyContent: 'flex-start',
+      paddingTop: isCompactPhone ? 4 : 8,
     },
 
     /* â”€â”€ Step 0: Welcome hero â”€â”€ */
     heroContainer: {
-      // Smaller than the old full-width mark: the welcome step now also carries
-      // a real story card, which must not fall below the fold behind it.
-      width: isSmallPhone ? '52%' : '58%',
+      // The logo is a compact brand mark on the welcome step. The story card,
+      // name field, and CTA are the content that must remain visible on small
+      // phones, so the old full-width hero ring no longer owns the screen.
+      width: isCompactPhone ? 68 : 78,
+      height: isCompactPhone ? 68 : 78,
       alignSelf: 'center',
-      aspectRatio: 1,
-      marginBottom: 24,
+      marginBottom: isCompactPhone ? 10 : 14,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -356,19 +438,20 @@ const OnboardingScreen = ({ navigation }) => {
     },
     welcomeTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 32,
+      fontSize: isCompactPhone ? 27 : 32,
       color: colors.text,
       textAlign: 'center',
-      lineHeight: 40,
+      height: isCompactPhone ? 66 : 80,
+      lineHeight: isCompactPhone ? 33 : 40,
       letterSpacing: -0.5,
-      marginBottom: 14,
+      marginBottom: isCompactPhone ? 8 : 14,
     },
     welcomeSubtitle: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 16,
+      fontSize: isCompactPhone ? 14 : 16,
       color: colors.textSecondary,
       textAlign: 'center',
-      lineHeight: 24,
+      lineHeight: isCompactPhone ? 20 : 24,
       maxWidth: 320,
       alignSelf: 'center',
     },
@@ -392,7 +475,7 @@ const OnboardingScreen = ({ navigation }) => {
 
     /* -- Step 0: the welcome step's story card -- */
     firstValueCard: {
-      padding: 20,
+      padding: isCompactPhone ? 13 : 20,
       borderRadius: 16,
       backgroundColor: cardBg,
       borderWidth: 1,
@@ -405,24 +488,24 @@ const OnboardingScreen = ({ navigation }) => {
     },
     firstValueCategory: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 12,
+      fontSize: isCompactPhone ? 10 : 12,
       color: colors.primaryText,
       textTransform: 'uppercase',
       letterSpacing: 0.4,
-      marginBottom: 8,
+      marginBottom: isCompactPhone ? 5 : 8,
     },
     firstValueTitle: {
       fontFamily: 'PlayfairDisplay_600SemiBold',
-      fontSize: 19,
+      fontSize: isCompactPhone ? 16 : 19,
       color: colors.text,
-      lineHeight: 26,
-      marginBottom: 10,
+      lineHeight: isCompactPhone ? 21 : 26,
+      marginBottom: isCompactPhone ? 6 : 10,
     },
     firstValuePunchline: {
       fontFamily: 'Inter_400Regular',
-      fontSize: 15,
+      fontSize: isCompactPhone ? 13 : 15,
       color: colors.textSecondary,
-      lineHeight: 22,
+      lineHeight: isCompactPhone ? 18 : 22,
     },
 
     /* -- Step 1: Category selection -- */
@@ -615,16 +698,58 @@ const OnboardingScreen = ({ navigation }) => {
     // has no such flag) working.
     const hasPunchline = (st) => !!st.conversation_punchline && st.conversation_punchline_localized !== false;
     const withPunchline = stories.filter(hasPunchline);
-    const pool = withPunchline.length ? withPunchline : stories;
-    return pool[Math.floor(Math.random() * pool.length)] || null;
+    // OH-only stories are intentionally Turkish-only in the data layer, so do
+    // not choose one for a card that promises a four-language preview.
+    const crossLanguageStories = stories.filter((story) => String(story.version) !== 'OH');
+    const eligibleStories = crossLanguageStories.length ? crossLanguageStories : stories;
+    const localizedPool = eligibleStories.filter(hasPunchline);
+    const pool = localizedPool.length ? localizedPool : eligibleStories;
+    const preferredId = firstValueStoryIdRef.current;
+    const existing = preferredId && stories.find((story) => String(story.story_id) === String(preferredId));
+    if (existing) return existing;
+    const selected = pool[Math.floor(Math.random() * pool.length)] || null;
+    firstValueStoryIdRef.current = selected?.story_id || null;
+    return selected;
   }, [stories]);
+
+  // The welcome card is deliberately independent from StoriesContext's active
+  // language reload. We prepare the same story in every supported language once,
+  // then render only the selected language's ready variant.
+  useEffect(() => {
+    const storyId = firstValueStory?.story_id;
+    if (!storyId) return undefined;
+    let active = true;
+    setStoryVariantsLoading(true);
+    Promise.all(SUPPORTED_LANGS.map(async (language) => {
+      try {
+        return [language, await getStoryByLang(storyId, language)];
+      } catch (error) {
+        return [language, null];
+      }
+    })).then((entries) => {
+      if (!active) return;
+      setStoryVariants(Object.fromEntries(entries));
+    }).finally(() => {
+      if (active) setStoryVariantsLoading(false);
+    });
+    return () => { active = false; };
+  }, [firstValueStory?.story_id]);
 
   // The fallback pool above can still hand back a story whose punchline only
   // exists in Turkish; fall through to the localized hook/description then.
-  const firstValueText = firstValueStory
-    ? ((firstValueStory.conversation_punchline_localized !== false && firstValueStory.conversation_punchline)
-      || firstValueStory.hook
-      || firstValueStory.description
+  const localizedFirstValueStory = storyVariants[lang];
+  const hasLocalizedFirstValue = Boolean(
+    localizedFirstValueStory?.title_localized
+      && (localizedFirstValueStory?.conversation_punchline_localized
+        || localizedFirstValueStory?.hook_localized
+        || localizedFirstValueStory?.description_localized
+        || localizedFirstValueStory?.body_localized)
+  );
+  const firstValueText = hasLocalizedFirstValue
+    ? (localizedFirstValueStory.conversation_punchline
+      || localizedFirstValueStory.hook
+      || localizedFirstValueStory.description
+      || localizedFirstValueStory.body
       || '')
     : '';
 
@@ -640,7 +765,7 @@ const OnboardingScreen = ({ navigation }) => {
   /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ STEP CONTENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   const steps = [
     /* -- Step 0: Welcome + one real story as proof of value -- */
-    <View style={{ flex: 1, justifyContent: 'center' }} key="step0">
+    <View style={s.welcomeStep} key="step0">
       <Animated.View style={[s.heroContainer, { transform: [{ scale: breatheAnim }] }]}>
         <View style={s.heroOuterRing} />
         <View style={s.heroInnerRing} />
@@ -660,15 +785,37 @@ const OnboardingScreen = ({ navigation }) => {
       {/* This card is what the separate "how it works" step used to claim in
           words: a real story, in the reader's language, before we ask for
           anything. */}
-      {firstValueStory ? (
-        <View style={[s.firstValueCard, { marginTop: 28 }]}>
+      <View style={s.nameBlock}>
+        <Text style={s.nameLabel}>{t('onboarding_name_label', lang)}</Text>
+        <TextInput
+          value={name}
+          onChangeText={setName}
+          placeholder={t('onboarding_name_placeholder', lang)}
+          placeholderTextColor={colors.textSecondary}
+          style={s.nameInput}
+          maxLength={40}
+          returnKeyType="done"
+          accessibilityLabel={t('onboarding_name_label', lang)}
+        />
+        <Text style={s.nameHint}>{t('onboarding_name_hint', lang)}</Text>
+      </View>
+      <View style={[s.firstValueCard, { marginTop: isCompactPhone ? 12 : 28 }]}>
           <Text style={s.firstValueCategory} numberOfLines={1}>
             {t('onboarding_first_value_title', lang)}
           </Text>
-          <Text style={s.firstValueTitle} numberOfLines={2}>{firstValueStory.title}</Text>
-          <Text style={s.firstValuePunchline} numberOfLines={4}>{firstValueText}</Text>
-        </View>
-      ) : null}
+          {firstValueStory && hasLocalizedFirstValue ? (
+            <>
+              <Text style={s.firstValueTitle} numberOfLines={2}>{localizedFirstValueStory.title}</Text>
+              <Text style={s.firstValuePunchline} numberOfLines={isCompactPhone ? 3 : 4}>{firstValueText}</Text>
+            </>
+          ) : (
+            <Text style={s.firstValuePunchline}>
+              {!firstValueStory || storyVariantsLoading || storiesLoading
+                ? t('onboarding_story_loading', lang)
+                : t('onboarding_story_unavailable', lang)}
+            </Text>
+          )}
+      </View>
     </View>,
 
     /* -- Step 1: Category selection (min. 2) -- */
@@ -680,10 +827,9 @@ const OnboardingScreen = ({ navigation }) => {
       <View style={s.catGrid}>
         {allCats.map(cat => {
           const category = parentCategories.find((p) => Number(p.id) === Number(cat));
-          const categoryRawName = category?.raw_name || '';
-          const { emoji: catEmoji, text: catLabel } = splitLeadingEmoji(category?.name || '');
-          const imgSource = getCategoryImage(categoryRawName, isDark).source;
-          const iconTileSize = isSmallPhone ? 28 : 32;
+          const imgSource = getCategoryImage(category?.raw_name || '', isDark).source;
+          const imageSize = isSmallPhone ? 28 : 32;
+          const catLabel = String(category?.name || '').replace(/^[^\p{L}\p{N}]+/u, '').trim();
           const sel = selectedCats.includes(cat);
           return (
             <TouchableOpacity
@@ -696,10 +842,10 @@ const OnboardingScreen = ({ navigation }) => {
               accessibilityLabel={catLabel}
             >
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: isSmallPhone ? 6 : 8, flex: 1 }}>
-                {(imgSource || catEmoji) ? (
+                {imgSource ? (
                   <View style={{
-                    width: iconTileSize,
-                    height: iconTileSize,
+                    width: imageSize,
+                    height: imageSize,
                     borderRadius: 8,
                     backgroundColor: sel ? `${colors.primary}16` : `${colors.primary}08`,
                     alignItems: 'center',
@@ -707,15 +853,11 @@ const OnboardingScreen = ({ navigation }) => {
                     overflow: 'hidden',
                     flexShrink: 0,
                   }}>
-                    {imgSource ? (
-                      <Image
-                        source={imgSource}
-                        style={{ width: '100%', height: '100%' }}
-                        resizeMode="cover"
-                      />
-                    ) : (
-                      <Text style={{ fontSize: isSmallPhone ? 15 : 17 }}>{catEmoji}</Text>
-                    )}
+                    <Image
+                      source={imgSource}
+                      style={{ width: '100%', height: '100%' }}
+                      resizeMode="cover"
+                    />
                   </View>
                 ) : null}
                 <Text
@@ -808,7 +950,8 @@ const OnboardingScreen = ({ navigation }) => {
     </View>,
   ];
 
-  const canNext = step === 1 ? selectedCats.length >= 2 : true;
+  const contentReady = !(step === 0 && (languageChangePending || storiesLoading || (contentLang && contentLang !== lang)));
+  const canNext = contentReady && (step === 1 ? selectedCats.length >= 2 : true);
 
   // A CTA that does nothing on press reads as a broken screen, so an unmet
   // requirement gets a warning tap and pushes the hint below the grid.
@@ -842,8 +985,7 @@ const OnboardingScreen = ({ navigation }) => {
         ))}
       </View>
 
-      {/* Header: Back always on the left (platform convention), Skip always on
-          the right — they used to swap sides between steps. */}
+      {/* Header: Back stays on the left; language selection stays on the right. */}
       <View style={s.header}>
         <View style={s.headerSide}>
           {step > 0 ? (
@@ -874,17 +1016,45 @@ const OnboardingScreen = ({ navigation }) => {
           ) : null}
         </View>
 
-        {step === 0 ? (
+        <View style={s.headerRight}>
           <TouchableOpacity
-            onPress={skip}
+            onPress={() => setShowLanguageMenu((visible) => !visible)}
             activeOpacity={0.7}
-            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
             accessibilityRole="button"
+            accessibilityLabel={t('languageLabel', lang)}
+            style={s.languageButton}
           >
-            <Text style={s.headerAction}>{t('onboarding_skip', lang)}</Text>
+            <Ionicons name="globe-outline" size={15} color={colors.textSecondary} />
+            <Text style={s.languageButtonText}>
+              {LANGUAGE_OPTIONS.find((option) => option.code === lang)?.label || 'English'}
+            </Text>
+            <Ionicons name={showLanguageMenu ? 'chevron-up' : 'chevron-down'} size={13} color={colors.textSecondary} />
           </TouchableOpacity>
-        ) : null}
+        </View>
       </View>
+
+      {showLanguageMenu ? (
+        <View style={s.languageMenu}>
+          {LANGUAGE_OPTIONS.map((option) => (
+            <TouchableOpacity
+              key={option.code}
+              style={s.languageMenuRow}
+              onPress={() => {
+                if (option.code !== lang) setLanguageChangePending(true);
+                setLang(option.code);
+                setShowLanguageMenu(false);
+              }}
+              accessibilityRole="radio"
+              accessibilityState={{ selected: lang === option.code }}
+            >
+              <Text style={[s.languageButtonText, lang === option.code && { color: colors.primaryText }]}>
+                {option.label}
+              </Text>
+              {lang === option.code ? <Ionicons name="checkmark" size={18} color={colors.primaryText} /> : null}
+            </TouchableOpacity>
+          ))}
+        </View>
+      ) : null}
 
       {/* â”€â”€ Animated Content â”€â”€ */}
       <Animated.View style={{ flex: 1, opacity: fadeAnim, transform: [{ translateY: slideAnim }] }}>
@@ -892,6 +1062,7 @@ const OnboardingScreen = ({ navigation }) => {
           contentContainerStyle={s.contentScroll}
           showsVerticalScrollIndicator={false}
           bounces={false}
+          scrollEnabled={step !== 0}
         >
           {steps[step]}
         </ScrollView>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { getCategoryPillIcon, getCategoryTheme } from '../utils/categoryImages';
+import { getCategoryPillImage, getCategoryTheme } from '../utils/categoryImages';
 import { readableTextOn, darkenHex } from '../theme/theme';
 import { useTheme } from '../context/ThemeContext';
 
@@ -16,14 +15,14 @@ const CategoryPill = ({
   disabled = false,
   activeColor,
   activeTextColor,
-  showIcon = true,
+  showImage = true,
   useCategoryTextColor = false,
 }) => {
   const { colors: themePalette } = useTheme();
-  const displayLabel = label || categoryName || '';
-  const pillIcon = showIcon
-    ? getCategoryPillIcon(categoryName || label, isDark)
-    : { source: null, name: null };
+  const displayLabel = String(label || categoryName || '').replace(/^[^\p{L}\p{N}]+/u, '').trim();
+  const pillImage = showImage
+    ? getCategoryPillImage(categoryName || label, isDark)
+    : { source: null };
 
   // Each category carries its own accent. When selected, the pill is filled
   // with that category's colour instead of a single shared gold. An explicit
@@ -90,13 +89,11 @@ const CategoryPill = ({
           },
         ]}
       >
-        <View style={styles.verticalIconWrap}>
-          {pillIcon.source ? (
-            <Image source={pillIcon.source} style={styles.verticalIconImage} resizeMode="contain" />
-          ) : (
-            <Ionicons name={pillIcon.name || 'apps-outline'} size={20} color={verticalTextColor} />
-          )}
-        </View>
+        {pillImage.source ? (
+          <View style={styles.verticalIconWrap}>
+            <Image source={pillImage.source} style={styles.verticalIconImage} resizeMode="contain" />
+          </View>
+        ) : null}
         <Text
           numberOfLines={2}
           style={[styles.verticalLabel, { color: verticalTextColor }]}
@@ -123,7 +120,7 @@ const CategoryPill = ({
         },
       ]}
     >
-      {pillIcon.source ? (
+      {pillImage.source ? (
         <View
           style={[
             styles.iconWrap,
@@ -131,7 +128,7 @@ const CategoryPill = ({
             { backgroundColor: iconWrapBg },
           ]}
         >
-          <Image source={pillIcon.source} style={styles.iconImage} resizeMode="cover" />
+          <Image source={pillImage.source} style={styles.iconImage} resizeMode="cover" />
         </View>
       ) : null}
       <Text

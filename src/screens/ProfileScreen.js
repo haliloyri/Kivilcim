@@ -639,7 +639,7 @@ const ProfileScreen = ({ navigation }) => {
                         active={selectedCategories.includes(id)}
                         isDark={isDark}
                         compact
-                        showIcon={false}
+                        showImage={false}
                         useCategoryTextColor
                         onPress={() => toggleSelectedCategory(id)}
                       />

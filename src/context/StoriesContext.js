@@ -8,6 +8,7 @@ import { getStoriesForLang, getCategoriesFromDb, getParentCategories, waitForDat
 import { SUPABASE_LIVE, fetchStoriesFromSupabase } from '../services/supabase';
 import { saveStoriesToCache, loadStoriesFromCache, clearStoriesCache } from '../services/storiesCache';
 import { STORIES_SOURCE } from '../config/featureFlags';
+import { cleanCategoryLabel } from '../utils/categoryImages';
 
 const USE_REMOTE_STORIES = STORIES_SOURCE === 'supabase';
 // In local mode the AsyncStorage cache only holds stale Supabase copies; drop it once.
@@ -39,11 +40,18 @@ const deriveCategories = (stories) => {
   return { categories, parentCategories };
 };
 
+const cleanStoryCategoryLabels = (stories = []) => stories.map((story) => ({
+  ...story,
+  parent_cat: cleanCategoryLabel(story.parent_cat),
+  cat: cleanCategoryLabel(story.cat),
+}));
+
 export const StoriesProvider = ({ children }) => {
   const { lang } = useTheme();
   const [stories, setStories] = useState([]);
   const [categories, setCategories] = useState([]);
   const [parentCategories, setParentCategories] = useState([]);
+  const [contentLang, setContentLang] = useState(null);
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
   const [storiesSource, setStoriesSource] = useState('sqlite'); // 'supabase' | 'cache' | 'sqlite'
@@ -54,7 +62,8 @@ export const StoriesProvider = ({ children }) => {
     setErrorMsg(null);
 
     const applyStories = (nextStories, source) => {
-      const orderedStories = [...nextStories].sort(
+      const cleanedStories = cleanStoryCategoryLabels(nextStories);
+      const orderedStories = [...cleanedStories].sort(
         (a, b) =>
           Number(b.min ?? b.possible_read_minutes ?? 1) - Number(a.min ?? a.possible_read_minutes ?? 1) ||
           Number(b.story_id ?? b.id) - Number(a.story_id ?? a.id)
@@ -93,14 +102,18 @@ export const StoriesProvider = ({ children }) => {
         getCategoriesFromDb(lang),
         getParentCategories(lang),
       ]);
-      sqliteStories = storiesList;
+      sqliteStories = cleanStoryCategoryLabels(storiesList);
       if (!hasLocalStories) {
-        setStories(storiesList);
-        setCategories(catsList);
-        setParentCategories(parents);
+        setStories(sqliteStories);
+        setCategories(catsList.map((category) => cleanCategoryLabel(category)));
+        setParentCategories(parents.map((category) => ({
+          ...category,
+          name: cleanCategoryLabel(category.name),
+        })));
         setStoriesSource('sqlite');
         hasLocalStories = storiesList.length > 0;
       }
+      setContentLang(lang);
     } catch (e) {
       console.error('[StoriesContext] SQLite fallback error:', e);
     }
@@ -152,12 +165,13 @@ export const StoriesProvider = ({ children }) => {
     stories,
     categories,
     parentCategories,
+    contentLang,
     storiesLoading: loading,
     errorMsg,
     refreshStories: refresh,
     storiesSource,
     isOffline,
-  }), [stories, categories, parentCategories, loading, errorMsg, refresh, storiesSource, isOffline]);
+  }), [stories, categories, parentCategories, contentLang, loading, errorMsg, refresh, storiesSource, isOffline]);
 
   return (
     <StoriesContext.Provider value={value}>

@@ -4,6 +4,22 @@ import { Asset } from 'expo-asset';
 
 const ONE_MINUTE_SUMMARY_SEED = require('../../assets/one-minute-summaries.json');
 
+// Category labels in the bundled database may contain decorative leading
+// emoji/symbols. Clean them at the data-access boundary so every screen gets
+// a consistent label without changing category ids or lookup keys.
+const cleanCategoryLabel = (value) => String(value || '')
+  .replace(/^[^\p{L}\p{N}]+/u, '')
+  .replace(/[^\p{L}\p{N}]+$/u, '')
+  .trim();
+
+const cleanStoryCategoryFields = (row) => ({
+  ...row,
+  cat: cleanCategoryLabel(row.cat),
+  cat_display: cleanCategoryLabel(row.cat_display),
+  parent_cat: cleanCategoryLabel(row.parent_cat),
+  parent_cat_raw: cleanCategoryLabel(row.parent_cat_raw),
+});
+
 let dbInstance = null;
 export const getDb = () => {
   if (!dbInstance) {
@@ -488,7 +504,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
   `, [lang, lang, lang, lang, lang]);
 
   return rows.map(r => ({
-    ...r,
+    ...cleanStoryCategoryFields(r),
     story_id: String(r.id),
     title: r.title || '',
     body: r.body || '',
@@ -524,6 +540,11 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
       COALESCE(NULLIF(st.one_minute_summary, ''), st_tr.one_minute_summary, '') AS one_minute_summary,
       COALESCE(NULLIF(s.thirty_sec, ''),     '')                  AS thirty_sec,
       COALESCE(NULLIF(scv.punchline, ''),    scv_tr.punchline,    '') AS conversation_punchline,
+      CASE WHEN NULLIF(st.title, '') IS NOT NULL THEN 1 ELSE 0 END AS title_localized,
+      CASE WHEN NULLIF(st.description, '') IS NOT NULL THEN 1 ELSE 0 END AS description_localized,
+      CASE WHEN NULLIF(st.hook, '') IS NOT NULL THEN 1 ELSE 0 END AS hook_localized,
+      CASE WHEN NULLIF(st.content, '') IS NOT NULL THEN 1 ELSE 0 END AS body_localized,
+      CASE WHEN NULLIF(scv.punchline, '') IS NOT NULL THEN 1 ELSE 0 END AS conversation_punchline_localized,
       COALESCE(NULLIF(scv.thirty_sec, ''),   scv_tr.thirty_sec,   '') AS conversation_thirty_sec,
       COALESCE(NULLIF(scv.question, ''),     scv_tr.question,     '') AS conversation_question,
       COALESCE(NULLIF(scv.key_contrast, ''), scv_tr.key_contrast,'') AS conversation_key_contrast,
@@ -549,8 +570,13 @@ export const getStoryByLang = async (storyId, lang = 'tr') => {
 
   if (!r) return null;
   return {
-    ...r,
+    ...cleanStoryCategoryFields(r),
     story_id: String(r.id),
+    title_localized: r.title_localized === 1,
+    description_localized: r.description_localized === 1,
+    hook_localized: r.hook_localized === 1,
+    body_localized: r.body_localized === 1,
+    conversation_punchline_localized: r.conversation_punchline_localized === 1,
     title: r.title || '',
     body: r.body || '',
     hook: r.hook || '',
@@ -641,7 +667,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
   ]);
 
   return rows.map((r) => ({
-    ...r,
+    ...cleanStoryCategoryFields(r),
     story_id: String(r.id),
     title: r.title || '',
     body: r.body || '',
@@ -664,7 +690,7 @@ export const getCategoriesFromDb = async (lang = 'tr') => {
     INNER JOIN books b ON b.category_id = sub.id
     ORDER BY cat
   `);
-  return rows.map(r => r.cat);
+  return rows.map(r => cleanCategoryLabel(r.cat));
 };
 
 /**
@@ -673,7 +699,7 @@ export const getCategoriesFromDb = async (lang = 'tr') => {
 export const getParentCategories = async (lang = 'tr') => {
   await waitForData();
   const db = getDb();
-  return await db.getAllAsync(`
+  const rows = await db.getAllAsync(`
     SELECT 
       c.id,
       COALESCE(ct.translation, ct_tr.translation, c.category_name) AS name,
@@ -687,6 +713,11 @@ export const getParentCategories = async (lang = 'tr') => {
     GROUP BY c.id
     ORDER BY c.[order] ASC
   `, [lang]);
+  return rows.map((row) => ({
+    ...row,
+    name: cleanCategoryLabel(row.name),
+    raw_name: cleanCategoryLabel(row.raw_name),
+  }));
 };
 
 /**
