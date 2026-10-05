@@ -135,7 +135,7 @@
       "revenuecat": {
         "_comment": "testStoreApiKey: RevenueCat Test Store, used only in debug (__DEV__) builds for demo purchases. iosApiKey/androidApiKey: real appl_*/goog_* public SDK keys, used only when MONETIZATION_LIVE (src/config/monetization.js). Preview/simulator release builds have no billing. See BILLING_SETUP.md.",
         "testStoreApiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
-        "iosApiKey": "REPLACE_WITH_APPL_KEY",
+        "iosApiKey": "appl_IVEnLayWTEUdvyanutlnrFjXvgQ",
         "androidApiKey": "REPLACE_WITH_GOOG_KEY",
         "entitlementId": "Albor Pro",
         "offeringId": "default",
