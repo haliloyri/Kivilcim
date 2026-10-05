@@ -7,7 +7,7 @@
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "backgroundColor": "#1D4A47",
-    "icon": "./assets/spark_shortcut_logo.png",
+    "icon": "./assets/albor_shortcut_logo.png",
     "locales": {
       "en": "./ios-locales/en.json",
       "es": "./ios-locales/es.json",
@@ -16,7 +16,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.kivilcim.app",
+      "bundleIdentifier": "com.albor.app",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "NSPhotoLibraryAddUsageDescription": "Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister."
@@ -24,10 +24,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/spark_shortcut_logo.png",
+        "foregroundImage": "./assets/albor_shortcut_logo.png",
         "backgroundColor": "#131311"
       },
-      "package": "com.kivilcim.app"
+      "package": "com.albor.app"
     },
     "plugins": [
       "expo-font",
@@ -52,11 +52,62 @@
       [
         "react-native-google-mobile-ads",
         {
-          "_comment": "PLACEHOLDER — Google's public SAMPLE app IDs, not Albor's. Ads earn nothing until real AdMob app IDs replace them AND src/utils/ads.js PROD_* unit IDs are filled in with USE_TEST_ADS=false. Ads stay off in the EEA/UK regardless — see src/utils/adRegion.js.",
+          "_comment": "Only used if `expo prebuild` regenerates ios/ and android/. The committed native projects are the source of truth: Debug uses Google's sample app ID, Release uses the real iOS one (ca-app-pub-1087148522890227~7920022425) (ios: GAD_APPLICATION_IDENTIFIER build setting in project.pbxproj; android: manifestPlaceholders in android/app/build.gradle). Ad UNIT ids live in extra.admob.",
           "androidAppId": "ca-app-pub-3940256099942544~3347511713",
-          "iosAppId": "ca-app-pub-3940256099942544~1458002511",
+          "iosAppId": "ca-app-pub-1087148522890227~7920022425",
           "userTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you.",
-          "skAdNetworkItems": []
+          "skAdNetworkItems": [
+            "cstr6suwn9.skadnetwork",
+            "4fzdc2evr5.skadnetwork",
+            "2fnua5tdw4.skadnetwork",
+            "ydx93a7ass.skadnetwork",
+            "p78axxw29g.skadnetwork",
+            "v72qych5uu.skadnetwork",
+            "ludvb6z3bs.skadnetwork",
+            "cp8zw746q7.skadnetwork",
+            "3sh42y64q3.skadnetwork",
+            "c6k4g5qg8m.skadnetwork",
+            "s39g8k73mm.skadnetwork",
+            "wg4vff78zm.skadnetwork",
+            "3qy4746246.skadnetwork",
+            "f38h382jlk.skadnetwork",
+            "hs6bdukanm.skadnetwork",
+            "mlmmfzh3r3.skadnetwork",
+            "v4nxqhlyqp.skadnetwork",
+            "wzmmz9fp6w.skadnetwork",
+            "su67r6k2v3.skadnetwork",
+            "yclnxrl5pm.skadnetwork",
+            "t38b2kh725.skadnetwork",
+            "7ug5zh24hu.skadnetwork",
+            "gta9lk7p23.skadnetwork",
+            "vutu7akeur.skadnetwork",
+            "y5ghdn5j9k.skadnetwork",
+            "v9wttpbfk9.skadnetwork",
+            "n38lu8286q.skadnetwork",
+            "47vhws6wlr.skadnetwork",
+            "kbd757ywx3.skadnetwork",
+            "9t245vhmpl.skadnetwork",
+            "a2p9lx4jpn.skadnetwork",
+            "22mmun2rn5.skadnetwork",
+            "44jx6755aq.skadnetwork",
+            "k674qkevps.skadnetwork",
+            "4468km3ulz.skadnetwork",
+            "2u9pt9hc89.skadnetwork",
+            "8s468mfl3y.skadnetwork",
+            "klf5c3l5u5.skadnetwork",
+            "ppxm28t8ap.skadnetwork",
+            "kbmxgpxpgc.skadnetwork",
+            "uw77j35x4d.skadnetwork",
+            "578prtvx9j.skadnetwork",
+            "4dzt52r2t5.skadnetwork",
+            "tl55sbb4fm.skadnetwork",
+            "c3frkrj4fj.skadnetwork",
+            "e5fvkxwrpn.skadnetwork",
+            "8c4e2ghe7u.skadnetwork",
+            "3rd42ekr43.skadnetwork",
+            "97r2b46745.skadnetwork",
+            "3qcr597p9d.skadnetwork"
+          ]
         }
       ],
       [
@@ -74,23 +125,38 @@
           "imageWidth": 200,
           "resizeMode": "contain"
         }
-      ]
+      ],
+      "expo-tracking-transparency"
     ],
     "extra": {
       "eas": {
         "projectId": "73e8e4f4-f966-42cd-9c4e-3ffb9799314e"
       },
       "revenuecat": {
-        "_comment": "PLACEHOLDER — a RevenueCat Test Store key. src/services/billing.js treats any test_* key as unset, so BILLING_LIVE is false and the paywall cannot take money (it shows paywallUnavailable* instead of granting Premium). Replace with the real appl_*/goog_* public SDK keys. See BILLING_SETUP.md.",
-        "apiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
-        "iosApiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
-        "androidApiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
+        "_comment": "testStoreApiKey: RevenueCat Test Store, used only in debug (__DEV__) builds for demo purchases. iosApiKey/androidApiKey: real appl_*/goog_* public SDK keys, used only when MONETIZATION_LIVE (src/config/monetization.js). Preview/simulator release builds have no billing. See BILLING_SETUP.md.",
+        "testStoreApiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
+        "iosApiKey": "REPLACE_WITH_APPL_KEY",
+        "androidApiKey": "REPLACE_WITH_GOOG_KEY",
         "entitlementId": "Albor Pro",
         "offeringId": "default",
         "products": {
           "monthly": "monthly",
           "yearly": "yearly",
           "lifetime": "lifetime"
+        }
+      },
+      "admob": {
+        "_comment": "Real AdMob ad unit IDs, used only when MONETIZATION_LIVE. Demo builds always use Google test units. blockRestrictedRegions: keep ads fully off in EEA/UK/CH (true) or serve them after UMP consent (false).",
+        "blockRestrictedRegions": true,
+        "ios": {
+          "rewarded": "ca-app-pub-1087148522890227/6356668477",
+          "interstitial": "ca-app-pub-1087148522890227/8687318342",
+          "banner": "REPLACE_WITH_IOS_BANNER_UNIT"
+        },
+        "android": {
+          "rewarded": "REPLACE_WITH_ANDROID_REWARDED_UNIT",
+          "interstitial": "REPLACE_WITH_ANDROID_INTERSTITIAL_UNIT",
+          "banner": "REPLACE_WITH_ANDROID_BANNER_UNIT"
         }
       },
       "supabase": {

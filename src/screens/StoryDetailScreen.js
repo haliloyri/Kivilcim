@@ -128,7 +128,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const [recPanelVisible, setRecPanelVisible] = useState(false);
   // Full-screen interstitial gate: free users see an ad before the story.
   const [storyAdGate, setStoryAdGate] = useState(
-    shouldShowAd({ isPremium, isOnboarded: true })
+    shouldShowAd({ isPremium, isOnboarded: true, kind: 'interstitial' })
   );
 
   const releaseStoryAudioPlayer = React.useCallback(() => {
@@ -206,7 +206,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     // the share card (e.g. from "Use in conversation"). The share itself is
     // already gated by its own rewarded-ad / premium sheet, so a second ad here
     // would pop over the share modal and disrupt the flow.
-    if (route.params?.openShareModal || !shouldShowAd({ isPremium, isOnboarded: true })) {
+    if (route.params?.openShareModal || !shouldShowAd({ isPremium, isOnboarded: true, kind: 'interstitial' })) {
       setStoryAdGate(false);
       return;
     }

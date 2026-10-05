@@ -7,15 +7,21 @@
  *   loadRewarded(source)    → returns a loaded RewardedAd (or null on error)
  *   loadInterstitial()      → returns a loaded InterstitialAd (or null on error)
  *
- * Test Ad Unit IDs are used automatically in __DEV__ mode.
- * Replace PROD_* constants with real AdMob unit IDs from console.
- * Native app IDs are configured in app.json through the
- * react-native-google-mobile-ads config plugin. Debug builds intentionally use
- * Google's sample app IDs there so the native SDK can initialize safely.
+ * Demo builds (dev, preview, simulator — see config/monetization.js) always
+ * use Google's TEST ad units. Live builds use the real unit IDs from
+ * app.json → extra.admob; a kind whose unit is still a placeholder shows no ads
+ * in live builds.
+ * Native app IDs: Debug = Google's sample ID, Release = the real one (set in
+ * the committed ios/ and android/ projects).
+ * No ad is requested before consent (utils/adsConsent.js: UMP, then ATT).
  */
 import { Platform } from 'react-native';
 import Constants from 'expo-constants';
 import { isRestrictedRegion, resolveRewardedGate } from './adRegion';
+import { MONETIZATION_LIVE } from '../config/monetization';
+import { gatherAdsConsent, adRequestOptions, canRequestAds } from './adsConsent';
+
+const ADMOB_CONFIG = Constants.expoConfig?.extra?.admob ?? {};
 
 // react-native-google-mobile-ads is a native module — not available in Expo Go.
 // We provide no-op stubs so the app doesn't crash during development.
@@ -47,13 +53,8 @@ if (isExpoGo || Platform.OS === 'web') {
 }
 
 // ─── Ad Unit IDs ─────────────────────────────────────────────────────────────
-// Replace these with real IDs obtained from AdMob console.
-const PROD_ANDROID_REWARDED  = 'ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX';
-const PROD_IOS_REWARDED      = 'ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX';
-const PROD_ANDROID_INTERSTITIAL = 'ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX';
-const PROD_IOS_INTERSTITIAL  = 'ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX';
-const PROD_ANDROID_BANNER    = 'ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX';
-const PROD_IOS_BANNER        = 'ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX';
+// Real IDs come from app.json → extra.admob.{ios,android}.{rewarded,interstitial,banner}.
+const isRealUnitId = (id) => typeof id === 'string' && /^ca-app-pub-\d+\/\d+$/.test(id);
 
 const isAndroid = Platform.OS === 'android';
 
@@ -79,27 +80,31 @@ const getRegionCode = () => {
   return _regionCode;
 };
 
-/** True when ads must not be requested on this device. */
-export const isAdRestrictedRegion = () => isRestrictedRegion(getRegionCode());
+/**
+ * True when ads must not be requested on this device. The EEA/UK/CH block can
+ * be lifted with extra.admob.blockRestrictedRegions=false — UMP consent then
+ * covers those regions.
+ */
+export const isAdRestrictedRegion = () =>
+  ADMOB_CONFIG.blockRestrictedRegions !== false && isRestrictedRegion(getRegionCode());
 
-// ⚠️ TEMPORARY: force Google sample test ads even in release builds so ads can be
-// verified on a physical device before real AdMob unit IDs exist.
-// Set to false (and fill in the PROD_* constants above) before shipping real ads.
-const USE_TEST_ADS = true;
-
-const useTest = __DEV__ || USE_TEST_ADS;
+// Demo builds → Google test units. Live builds → real units from app.json.
+const useTest = !MONETIZATION_LIVE;
+const platformUnits = (isAndroid ? ADMOB_CONFIG.android : ADMOB_CONFIG.ios) || {};
 
 export const AD_UNITS = {
-  rewarded: useTest
-    ? TestIds.REWARDED
-    : (isAndroid ? PROD_ANDROID_REWARDED : PROD_IOS_REWARDED),
-  interstitial: useTest
-    ? TestIds.INTERSTITIAL
-    : (isAndroid ? PROD_ANDROID_INTERSTITIAL : PROD_IOS_INTERSTITIAL),
-  banner: useTest
-    ? TestIds.BANNER
-    : (isAndroid ? PROD_ANDROID_BANNER : PROD_IOS_BANNER),
+  rewarded: useTest ? TestIds.REWARDED : platformUnits.rewarded,
+  interstitial: useTest ? TestIds.INTERSTITIAL : platformUnits.interstitial,
+  banner: useTest ? TestIds.BANNER : platformUnits.banner,
 };
+
+// A live build without a real unit ID shows no ad of that kind (never test ads).
+// Interstitial and rewarded are configured independently: a real interstitial
+// unit is enough to run interstitials while the rewarded unit is still a
+// placeholder (rewarded-gated features then fall back to the paywall).
+const INTERSTITIAL_CONFIGURED = useTest || isRealUnitId(AD_UNITS.interstitial);
+const REWARDED_CONFIGURED = useTest || isRealUnitId(AD_UNITS.rewarded);
+const ANY_AD_CONFIGURED = INTERSTITIAL_CONFIGURED || REWARDED_CONFIGURED;
 
 export { BannerAdSize };
 
@@ -127,7 +132,7 @@ export const recordStoryRead = () => {
 
 // ─── Init ────────────────────────────────────────────────────────────────────
 export const initAds = async () => {
-  if (isAdRestrictedRegion()) return;
+  if (isAdRestrictedRegion() || !ANY_AD_CONFIGURED) return;
   if (!hasNativeAds) {
     // Expo Go / web: the AdMob native module isn't there, every request would
     // just time out. Ads need a development or release build.
@@ -135,9 +140,13 @@ export const initAds = async () => {
     return;
   }
   try {
+    // Consent first (UMP, then ATT); the SDK starts only if ads may be requested.
+    const consent = await gatherAdsConsent();
+    if (__DEV__) console.log('[ads] consent', JSON.stringify(consent));
+    if (!consent.canRequestAds) return;
     const statuses = await MobileAds().initialize();
     if (__DEV__) console.log('[ads] initialized', JSON.stringify(statuses));
-    preloadRewarded();
+    if (REWARDED_CONFIGURED) preloadRewarded();
   } catch (e) {
     console.warn('[ads] initAds failed:', e?.message);
   }
@@ -146,12 +155,17 @@ export const initAds = async () => {
 // ─── Gating ──────────────────────────────────────────────────────────────────
 /**
  * Returns true if ads should be shown for this user.
- * @param {{ isPremium: boolean, isOnboarded: boolean }} opts
+ * @param {{ isPremium: boolean, isOnboarded: boolean, kind?: 'rewarded' | 'interstitial' }} opts
+ *   kind defaults to 'rewarded' (the ad-or-Premium gates); pass 'interstitial'
+ *   for the full-screen ad between stories.
  */
-export const shouldShowAd = ({ isPremium, isOnboarded }) => {
+export const shouldShowAd = ({ isPremium, isOnboarded, kind = 'rewarded' }) => {
   if (isPremium) return false;
   if (!isOnboarded) return false;
+  const configured = kind === 'interstitial' ? INTERSTITIAL_CONFIGURED : REWARDED_CONFIGURED;
+  if (!configured || !hasNativeAds) return false;
   if (isAdRestrictedRegion()) return false;
+  if (!canRequestAds()) return false;
   return true;
 };
 
@@ -196,9 +210,7 @@ const requestRewarded = () => new Promise((resolve) => {
   };
 
   try {
-    const ad = RewardedAd.createForAdRequest(AD_UNITS.rewarded, {
-      requestNonPersonalizedAdsOnly: false,
-    });
+    const ad = RewardedAd.createForAdRequest(AD_UNITS.rewarded, adRequestOptions());
     const startedAt = Date.now();
     unsubscribeLoaded = ad.addAdEventListener(RewardedAdEventType.LOADED, () => {
       if (__DEV__) console.log(`[ads] rewarded loaded in ${Date.now() - startedAt} ms`);
@@ -221,7 +233,7 @@ const requestRewarded = () => new Promise((resolve) => {
 
 /** Start loading a rewarded ad in the background if none is ready or loading. */
 export const preloadRewarded = () => {
-  if (isAdRestrictedRegion()) return null;
+  if (isAdRestrictedRegion() || !REWARDED_CONFIGURED) return null;
   if (_rewardedReady && Date.now() - _rewardedReady.loadedAt < REWARDED_MAX_AGE_MS) return null;
   _rewardedReady = null;
   if (_rewardedInFlight) return _rewardedInFlight;
@@ -238,7 +250,7 @@ export const preloadRewarded = () => {
  * Uses the preloaded ad when there is one; otherwise waits for the request.
  */
 export const loadRewarded = async () => {
-  if (isAdRestrictedRegion()) return null;
+  if (isAdRestrictedRegion() || !REWARDED_CONFIGURED) return null;
   if (!_rewardedReady) await preloadRewarded();
   const ready = _rewardedReady;
   _rewardedReady = null;
@@ -253,7 +265,7 @@ export const loadRewarded = async () => {
  */
 export const loadInterstitial = ({ ignoreCap = false } = {}) => {
   return new Promise((resolve) => {
-    if (isAdRestrictedRegion()) {
+    if (isAdRestrictedRegion() || !INTERSTITIAL_CONFIGURED) {
       resolve(null);
       return;
     }
@@ -280,9 +292,7 @@ export const loadInterstitial = ({ ignoreCap = false } = {}) => {
     };
 
     try {
-      const ad = InterstitialAd.createForAdRequest(AD_UNITS.interstitial, {
-        requestNonPersonalizedAdsOnly: false,
-      });
+      const ad = InterstitialAd.createForAdRequest(AD_UNITS.interstitial, adRequestOptions());
 
       const unsubscribeLoaded = ad.addAdEventListener(AdEventType.LOADED, () => {
         unsubscribeLoaded();
