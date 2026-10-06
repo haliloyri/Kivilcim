@@ -22,7 +22,7 @@ import { MilestoneReviewModal } from './LearningMilestoneModal';
 import BadgeShareSheet from '../BadgeShareSheet';
 import { buildBooksMilestoneShare, buildRankShare, buildWeeklyShare } from '../../utils/careerShare';
 
-const KIVILCIM_HERO = require('../../../assets/career/kivilcim-yolu-hero-v1.png');
+const CAREER_HERO = require('../../../assets/career/albor-yolu-hero-v1.png');
 
 const REQUIREMENT_ICONS = {
   stories: 'book-outline',
@@ -248,7 +248,7 @@ const CareerPathExperience = ({ navigation, route }) => {
 
       {isOffline ? <View accessibilityRole="alert" style={[styles.offlineBanner, { borderColor: `${colors.primary}55`, backgroundColor: `${colors.primary}12` }]}><Ionicons name="cloud-offline-outline" size={18} color={colors.primaryText} /><Text selectable style={[styles.offlineCopy, { color: colors.textSecondary }]}>{t('career.offline', lang)}</Text></View> : null}
 
-      <ImageBackground source={KIVILCIM_HERO} imageStyle={styles.heroImage} style={styles.hero}>
+      <ImageBackground source={CAREER_HERO} imageStyle={styles.heroImage} style={styles.hero}>
         <View style={styles.heroScrim} />
         <View style={styles.heroContent}>
           <View style={styles.heroKicker}><Ionicons name="sparkles-outline" size={14} color="#F9D783" /><Text selectable style={styles.heroKickerText}>{activePathDefinition ? t(activePathDefinition.titleKey, lang) : t('career.sharedPath', lang)}</Text></View>

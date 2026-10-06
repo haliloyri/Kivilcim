@@ -1,6 +1,6 @@
 # ToServerTasks — Local'den Server'a (Supabase) Taşıma Planı
 
-> Amaç: Şu an yalnızca cihazda (SQLite `kivilcim.db` + AsyncStorage) tutulan kullanıcı verisini, davranışlarını ve aksiyonlarını Supabase'e taşımak. Böylece cihaz değişiminde/yeniden kurulumda veri kaybı olmaz, çoklu cihaz senkronizasyonu, yedekleme ve analitik mümkün hale gelir.
+> Amaç: Şu an yalnızca cihazda (SQLite `albor.db` + AsyncStorage) tutulan kullanıcı verisini, davranışlarını ve aksiyonlarını Supabase'e taşımak. Böylece cihaz değişiminde/yeniden kurulumda veri kaybı olmaz, çoklu cihaz senkronizasyonu, yedekleme ve analitik mümkün hale gelir.
 
 Son güncelleme: 2026-07-01
 
@@ -14,7 +14,7 @@ Son güncelleme: 2026-07-01
 - `stories` — server tarafı içerik kaynağı (RLS: aktif hikâyeler herkese okunur)
 
 **Yalnızca cihazda olan — taşınacak** içerik iki yerde:
-1. **SQLite (`src/db/db.js` → `kivilcim.db`)**: `user_reads`, `user_likes`, `user_selected_categories(_new)`, `user_streak_freezes`
+1. **SQLite (`src/db/db.js` → `albor.db`)**: `user_reads`, `user_likes`, `user_selected_categories(_new)`, `user_streak_freezes`
 2. **AsyncStorage (`src/context/*`, `src/screens/*`)**: favoriler, geçmiş, tercihler, profil, premium durumu, streak freeze kredileri, varyant kullanımı, rozet durumları vb.
 
 İçerik tabloları (`categories`, `subcategories`, `books`, `stories` çevirileri) cihazda asset olarak bundle'lanıyor — bunlar **cache** niteliğinde, server (`stories`) zaten kaynak. Kullanıcı verisinden ayrı değerlendirilmeli.
@@ -48,12 +48,12 @@ Kaynak: `src/context/UserDataContext.js`, `ThemeContext.js`, ekranlar.
 
 | AsyncStorage anahtarı | İçerik | Öneri |
 |---|---|---|
-| `@kivilcim_favorites` / `FAVORITE_COLLECTIONS_STORAGE_KEY` | Favoriler ve koleksiyonlar | `user_favorites` + `user_collections` tablosu |
-| `@kivilcim_history` / `COMPLETED_STORIES_STORAGE_KEY` | Okuma geçmişi / tamamlanan hikâyeler | `user_reads` ile birleştirilebilir |
-| `@kivilcim_preferences` | Kullanıcı tercihleri | `profiles`'a JSONB kolon ya da `user_preferences` |
-| `@kivilcim_onboarded` / `PROFILE_INFO_PROMPT_SEEN_KEY` | Onboarding tamamlandı bayrağı | `profiles.onboarded` |
-| `@kivilcim_premium` | Premium durumu | **Server kaynaklı olmalı** — RevenueCat webhook → `profiles.is_premium` (cihazdaki kopya yalnız cache) |
-| `@kivilcim_share_count` | Paylaşım sayacı | `profiles` / analitik tablo |
+| `@albor_favorites` / `FAVORITE_COLLECTIONS_STORAGE_KEY` | Favoriler ve koleksiyonlar | `user_favorites` + `user_collections` tablosu |
+| `@albor_history` / `COMPLETED_STORIES_STORAGE_KEY` | Okuma geçmişi / tamamlanan hikâyeler | `user_reads` ile birleştirilebilir |
+| `@albor_preferences` | Kullanıcı tercihleri | `profiles`'a JSONB kolon ya da `user_preferences` |
+| `@albor_onboarded` / `PROFILE_INFO_PROMPT_SEEN_KEY` | Onboarding tamamlandı bayrağı | `profiles.onboarded` |
+| `@albor_premium` | Premium durumu | **Server kaynaklı olmalı** — RevenueCat webhook → `profiles.is_premium` (cihazdaki kopya yalnız cache) |
+| `@albor_share_count` | Paylaşım sayacı | `profiles` / analitik tablo |
 | `USER_PROFILE_STORAGE_KEY` | Kullanıcı profili (isim vb.) | Zaten `profiles` var → senkronla |
 | `STREAK_FREEZE_CREDITS_STORAGE_KEY` | Streak freeze kredisi | `user_streak_credits` (premium ile bağlı) |
 | `VARIANT_USAGE_STORAGE_KEY` | "Sohbette kullan" varyant kullanımı / kota | `user_variant_usage` — kota kötüye kullanımı server'da denetlenmeli |
@@ -168,7 +168,7 @@ Kullanıcıya kayıt zorunluluğu olmadan her cihaza online üyelik açan akış
 
 ## 6. Cihazda Kalacaklar (taşınmayacak)
 
-- Hikâye/kategori/kitap içeriği bundle'ı (`kivilcim.db` asset) — offline okuma cache'i; kaynak zaten server `stories`.
+- Hikâye/kategori/kitap içeriği bundle'ı (`albor.db` asset) — offline okuma cache'i; kaynak zaten server `stories`.
 - `RECENT_SEARCHES_KEY` (son aramalar) — yerel UX.
 - `THEME_MODE` (tema) — cihaz tercihi. Dil (`LANGUAGE`) ise `profiles.lang` ile senkronlanabilir ama yerelde de tutulabilir.
 

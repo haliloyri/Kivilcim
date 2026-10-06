@@ -30,7 +30,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(P1, 'manifest.json'), 'utf
 let db = null;
 try {
   const { DatabaseSync } = await import('node:sqlite');
-  db = new DatabaseSync(path.join(ROOT, 'assets/kivilcim.db'), { readOnly: true });
+  db = new DatabaseSync(path.join(ROOT, 'assets/albor.db'), { readOnly: true });
 } catch {
   console.log('(node:sqlite unavailable — "in_db" cannot be detected; needs Node >= 22.5)\n');
 }

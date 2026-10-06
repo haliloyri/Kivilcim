@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.kivilcim.app'
+    namespace 'com.albor.app'
     defaultConfig {
-        applicationId 'com.kivilcim.app'
+        applicationId 'com.albor.app'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -108,8 +108,12 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            // AdMob app ID: Google's sample ID in debug builds.
+            manifestPlaceholders = [admobAppId: "ca-app-pub-3940256099942544~3347511713"]
         }
         release {
+            // AdMob app ID for release builds — replace with Albor's real Android app ID.
+            manifestPlaceholders = [admobAppId: "ca-app-pub-3940256099942544~3347511713"]
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug

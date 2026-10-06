@@ -42,7 +42,7 @@ for (const row of scores) {
 }
 
 const SQL = await initSqlJs();
-const db = new SQL.Database(readFileSync(resolve(root, 'assets/kivilcim.db')));
+const db = new SQL.Database(readFileSync(resolve(root, 'assets/albor.db')));
 const result = db.exec(`
   SELECT
     s.id,

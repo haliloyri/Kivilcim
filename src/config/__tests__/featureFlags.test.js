@@ -15,7 +15,7 @@ const loadFlags = ({ careerPathV1, careerEventCaptureV1 } = {}) => {
 };
 
 describe('career feature flags', () => {
-  it('shows Kıvılcım Yolu by default and only disables it on an explicit false', () => {
+  it('shows Albor Yolu by default and only disables it on an explicit false', () => {
     expect(loadFlags()).toEqual({ careerPathV1: true, careerEventCaptureV1: true });
     expect(loadFlags({ careerPathV1: 'FALSE', careerEventCaptureV1: 'yes' })).toEqual({ careerPathV1: false, careerEventCaptureV1: false });
   });

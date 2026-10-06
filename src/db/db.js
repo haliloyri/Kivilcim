@@ -23,7 +23,7 @@ const cleanStoryCategoryFields = (row) => ({
 let dbInstance = null;
 export const getDb = () => {
   if (!dbInstance) {
-    dbInstance = SQLite.openDatabaseSync('kivilcim.db')
+    dbInstance = SQLite.openDatabaseSync('albor.db')
   }
   return dbInstance;
 }
@@ -43,7 +43,7 @@ export const waitForData = () => _dataReadyPromise;
 // ──────────────────────────────────────────────────────
 //  DB VERSION - Bump this number to force a DB reset
 //  on the next app launch. This deletes the old DB
-//  and copies the fresh one from assets/kivilcim.db.
+//  and copies the fresh one from assets/albor.db.
 // ──────────────────────────────────────────────────────
 const DB_VERSION = 27; // 27: P1 publish 2026-09-28 (de 200, es 200, version Opus55) - de+es 200 (API batch)
 const DB_VERSION_KEY = 'db_version';
@@ -204,6 +204,20 @@ const migrateStoryVersion = async (db) => {
   await db.execAsync(`UPDATE stories SET version = 1 WHERE version IS NULL;`);
 };
 
+// is_active: which stories the app shows. Supabase owns it (see
+// services/contentSync.js); until the first sync only the bundled Opus55
+// stories are active, so the offline first launch matches the server.
+const ACTIVE_STORY_VERSION = 'Opus55';
+const migrateStoryActive = async (db) => {
+  const columns = await db.getAllAsync(`PRAGMA table_info(stories)`);
+  if (columns.some((c) => c.name === 'is_active')) return;
+  await db.execAsync(`ALTER TABLE stories ADD COLUMN is_active INTEGER DEFAULT 0;`);
+  await db.runAsync(
+    `UPDATE stories SET is_active = CASE WHEN version = ? THEN 1 ELSE 0 END`,
+    [ACTIVE_STORY_VERSION]
+  );
+};
+
 const migrateStoryDuration = async (db) => {
   const columns = await db.getAllAsync(`PRAGMA table_info(stories)`);
   const names = new Set(columns.map((column) => column.name));
@@ -298,7 +312,7 @@ const migrateUserSelectedCategoriesToIds = async (db) => {
 export const initDb = async () => {
   try {
     const dbDir = FileSystem.documentDirectory + 'SQLite';
-    const dbPath = dbDir + '/kivilcim.db';
+    const dbPath = dbDir + '/albor.db';
 
     // Ensure directory exists
     const dirInfo = await FileSystem.getInfoAsync(dbDir);
@@ -329,7 +343,7 @@ export const initDb = async () => {
     // -- Copy from assets if DB does not exist --
     const copyAssetDb = async () => {
       console.log('Copying Admin DB from assets...');
-      const asset = Asset.fromModule(require('../../assets/kivilcim.db'));
+      const asset = Asset.fromModule(require('../../assets/albor.db'));
       await asset.downloadAsync();
       console.log('Asset localUri:', asset.localUri, 'uri:', asset.uri);
       await FileSystem.copyAsync({
@@ -412,6 +426,8 @@ export const initDb = async () => {
     await migrateStoryVersion(db);
 
     await migrateStoryDuration(db);
+
+    await migrateStoryActive(db);
 
     await ensureStoryConversationVariants(db);
 
@@ -499,7 +515,7 @@ export const getStoriesForLang = async (lang = 'tr') => {
     -- Book Translations
     LEFT JOIN book_translations bt    ON bt.book_id = b.id AND bt.lang_code = ?
     LEFT JOIN book_translations bt_tr ON bt_tr.book_id = b.id AND bt_tr.lang_code = 'tr'
-    WHERE (s.version != 'OH' OR ? = 'tr')
+    WHERE COALESCE(s.is_active, 1) = 1 AND (s.version != 'OH' OR ? = 'tr')
     ORDER BY COALESCE(s.current_read_minutes, 1) DESC, s.id DESC
   `, [lang, lang, lang, lang, lang]);
 
@@ -644,7 +660,7 @@ export const searchStoriesForLang = async (query, lang = 'tr', limit = 40) => {
       OR LOWER(COALESCE(NULLIF(bt.title, ''), bt_tr.title, '')) LIKE ?
       OR LOWER(COALESCE(ct.translation, ct_tr.translation, c.category_name, '')) LIKE ?
       OR LOWER(COALESCE(sub.subcategory_name, '')) LIKE ?
-    ) AND (s.version != 'OH' OR ? = 'tr')
+    ) AND COALESCE(s.is_active, 1) = 1 AND (s.version != 'OH' OR ? = 'tr')
     ORDER BY rank_title ASC, rank_body ASC, rank_source ASC,
              COALESCE(s.current_read_minutes, 1) DESC, s.id DESC
     LIMIT ${safeLimit}

@@ -45,7 +45,7 @@ function wrapScreen(title, body) {
 
   <rect width="100%" height="100%" fill="url(#bg)"/>
   <rect x="0" y="0" width="100%" height="120" fill="${theme.background}"/>
-  <text x="60" y="78" font-family="Georgia, serif" font-size="42" fill="${theme.primaryDeep}">Spark ✦</text>
+  <text x="60" y="78" font-family="Georgia, serif" font-size="42" fill="${theme.primaryDeep}">Albor ✦</text>
   <text x="60" y="130" font-family="Arial, sans-serif" font-size="30" fill="${theme.sub}">${escapeXml(title)}</text>
 
   ${body}
@@ -171,7 +171,7 @@ function makeLibrary() {
 
 function makeProgress() {
   const body = `
-  <text x="60" y="230" font-family="Georgia, serif" font-size="64" fill="${theme.text}">Kıvılcım Yolu</text>
+  <text x="60" y="230" font-family="Georgia, serif" font-size="64" fill="${theme.text}">Albor Yolu</text>
   <text x="60" y="276" font-family="Arial, sans-serif" font-size="30" fill="${theme.sub}">Okumaktan fikirleri hayata taşımaya sakin bir yol</text>
 
   <defs>
@@ -203,7 +203,7 @@ function makeProgress() {
   <rect x="60" y="1280" rx="28" ry="28" width="960" height="408" fill="${theme.card}" stroke="${theme.border}"/>
   <line x1="114" y1="1354" x2="114" y2="1622" stroke="#D8C08F" stroke-width="3"/>
   <circle cx="114" cy="1352" r="16" fill="#C89B3C"/><text x="106" y="1359" font-family="Arial" font-size="18" fill="#fff">✓</text>
-  <text x="154" y="1348" font-family="Georgia, serif" font-size="37" fill="${theme.text}">İlk Kıvılcım</text><text x="154" y="1386" font-family="Arial" font-size="23" fill="${theme.sub}">Kazanıldı</text>
+  <text x="154" y="1348" font-family="Georgia, serif" font-size="37" fill="${theme.text}">İlk Işık</text><text x="154" y="1386" font-family="Arial" font-size="23" fill="${theme.sub}">Kazanıldı</text>
   <circle cx="114" cy="1444" r="16" fill="#C89B3C"/><text x="106" y="1451" font-family="Arial" font-size="18" fill="#fff">✓</text>
   <text x="154" y="1440" font-family="Georgia, serif" font-size="37" fill="${theme.text}">Yolcu</text><text x="154" y="1478" font-family="Arial" font-size="23" fill="${theme.sub}">Kazanıldı</text>
   <circle cx="114" cy="1536" r="16" fill="#fff" stroke="#C89B3C" stroke-width="4"/><text x="154" y="1532" font-family="Georgia, serif" font-size="37" fill="${theme.text}">Düşünür</text><text x="154" y="1570" font-family="Arial" font-size="23" fill="${theme.sub}">Devam ediyor</text>
@@ -221,7 +221,7 @@ function makeProgress() {
   <text x="690" y="2050" font-family="Georgia, serif" font-size="34" fill="${theme.text}">17</text><text x="690" y="2080" font-family="Arial" font-size="19" fill="${theme.sub}">AKTİF GÜN</text>
   <text x="96" y="2132" font-family="Arial" font-size="20" fill="${theme.sub}">8 hafta · 17 aktif gün</text>
   <g>${Array.from({ length: 56 }, (_, index) => { const x = 96 + Math.floor(index / 7) * 58; const y = 2160 + (index % 7) * 13; const fills = ['#ECE6DA', '#F0D9A8', theme.primary, '#8B6A30']; return `<circle cx="${x}" cy="${y}" r="5" fill="${fills[index % 6 === 0 ? 3 : index % 3 === 0 ? 2 : index % 4 === 0 ? 1 : 0]}"/>`; }).join('')}</g>`;
-  return wrapScreen('Kıvılcım Yolu', body);
+  return wrapScreen('Albor Yolu', body);
 }
 
 function makeToolkit(pathId = 'exploration') {
@@ -233,7 +233,7 @@ function makeToolkit(pathId = 'exploration') {
   const routeSub = isTransfer ? 'Kullandığın sohbet başlangıçları' : 'Üç erişilebilir kategoriden sakin bir rota';
   const packageCard = isTransfer ? `
   <rect x="60" y="1550" rx="28" ry="28" width="960" height="230" fill="#F7F2E9" stroke="${theme.border}"/>
-  <text x="96" y="1624" font-family="Georgia, serif" font-size="42" fill="${theme.text}">Kıvılcım Paketi</text>
+  <text x="96" y="1624" font-family="Georgia, serif" font-size="42" fill="${theme.text}">Fikir Paketi</text>
   <text x="96" y="1672" font-family="Arial, sans-serif" font-size="27" fill="${theme.sub}">3/5 hikâye seçili · yalnızca sana ait</text>
   <rect x="96" y="1714" rx="18" ry="18" width="334" height="46" fill="${theme.primaryDeep}"/>
   <text x="154" y="1746" font-family="Arial, sans-serif" font-size="23" fill="#fff">Paketi düzenle</text>` : `
@@ -259,7 +259,7 @@ function makeToolkit(pathId = 'exploration') {
   ${card(60, 950, 960, 150, isTransfer ? 'Derin İş' : 'İş Modeli Tasarımı', isTransfer ? 'Sohbette kullanıldı  ·  Verimlilik' : '✓  Kariyer ve Başarı')}
   ${card(60, 1120, 960, 150, isTransfer ? 'Büyüme Zihniyeti' : 'Bilinçli Dikkat', isTransfer ? 'Sohbette kullanıldı  ·  Liderlik' : '○  Bilim')}
   ${packageCard}`;
-  return wrapScreen(`Kıvılcım Yolu · ${palette.title}`, body);
+  return wrapScreen(`Albor Yolu · ${palette.title}`, body);
 }
 
 function makeProfile() {
@@ -322,7 +322,7 @@ function buildIndex(files) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Spark Screenshots</title>
+  <title>Albor Screenshots</title>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background: #f4efe6; color: #1A1A1A; }
     .wrap { max-width: 1280px; margin: 0 auto; padding: 24px; }
@@ -335,7 +335,7 @@ function buildIndex(files) {
 </head>
 <body>
   <div class="wrap">
-    <h1>Spark App Screenshots</h1>
+    <h1>Albor App Screenshots</h1>
     <div class="grid">${cards}
     </div>
   </div>
@@ -357,7 +357,7 @@ outputs.progress = makeProgress();
 outputs['progress-new-user'] = makeProgress()
   .replace('DERİNLİK YOLU', 'ORTAK BAŞLANGIÇ')
   .replace('Düşünür', 'Yolunu seç')
-  .replace('Sentezci', 'İlk Kıvılcım')
+  .replace('Sentezci', 'İlk Işık')
   .replace('Derin etkileşim 3/5  ·  Aktif gün 6/8', 'İlk hikâyeni tamamlayarak başla');
 outputs['progress-common-path'] = makeProgress()
   .replace('DERİNLİK YOLU', 'ORTAK YOL')
@@ -365,16 +365,16 @@ outputs['progress-common-path'] = makeProgress()
   .replace('Sentezci', 'Yolunu seç');
 outputs['progress-capstone'] = makeProgress()
   .replace('DERİNLİK YOLU', 'AKTARIM YOLU')
-  .replace('Düşünür', 'Kıvılcım Taşıyıcısı')
+  .replace('Düşünür', 'Meşale Taşıyan')
   .replace('Sentezci', 'Bu yol tamamlandı')
   .replace('Sıradaki adımı at', 'Başka bir yola odaklan');
 outputs['progress-legacy'] = makeProgress()
-  .replace('Kıvılcım Yolu', 'Kıvılcım Yolu · Miras')
+  .replace('Albor Yolu', 'Albor Yolu · Miras')
   .replace('Küçük ve anlamlı adımlar kalıcı bir bilgelik biriktirir.', 'Geçmiş okumaların bu yolculuğa güvenle dahil edildi.');
 outputs['progress-dark-de'] = makeProgress()
   .replace(/#fcf9f4/g, '#15171A')
   .replace(/#1A1A1A/g, '#F7F4EE')
-  .replace('Kıvılcım Yolu', 'Funkenweg')
+  .replace('Albor Yolu', 'Albor-Weg')
   .replace('Okumaktan fikirleri hayata taşımaya sakin bir yol', 'Ein ruhiger Weg vom Lesen zum Anwenden von Ideen')
   .replace('Sıradaki adımın', 'Dein nächster Schritt')
   .replace('YOLCULUĞUN', 'DEINE REISE');

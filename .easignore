@@ -1,0 +1,78 @@
+node_modules/
+.expo/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# Generated social-video working files
+artifacts/story-videos/
+
+# macOS
+.DS_Store
+
+# Local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Expo directories
+.preview/
+
+# Build logs
+build_log*.txt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Android build
+android/app/build/
+
+# Story pipeline generated reports
+staging/reports/
+assets/albor.db.bak_*
+# legacy backups from before the Albor rename
+assets/kivilcim.db.bak_*
+assets/_db_backups/
+otomatize-batch/logs/
+otomatize-batch/.pipeline.lock
+
+# Supabase backups (contain user data)
+supabase/_backups/
+
+# ---- EAS upload exclusions (.easignore replaces .gitignore for EAS) ----
+.git/
+ios/Pods/
+ios/build/
+artifacts/
+outputs/
+staging/
+assets/_db_backups/
+assets/_brand_backup/
+assets/*.bak*
+.claude/
+.claude-backup/
+.agents/
+.idea/
+.vscode/
+.tmp_story_scores/
+.health-recolor-backup/
+.library-redesign-backup/
+otomatize-batch/
+batch/
+docs/
+TODO/
+Delete/
+*.md
+!README.md

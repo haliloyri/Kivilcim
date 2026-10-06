@@ -1,19 +1,19 @@
-# Kıvılcım ✦ - Günlük Bilgelik ve İlham Uygulaması
+# Albor ✦ - Günlük Bilgelik ve İlham Uygulaması
 
 [English Version Below](#english-version)
 
-Kıvılcım, her gün size farklı kategorilerden (Finans, Psikoloji, Felsefe, Liderlik vb.) kısa, öz ve etkileyici hikayeler sunan bir mobil uygulamadır. Karmaşık bilgileri sadeleştirerek günlük hayatınıza uygulanabilir "kıvılcımlar" (ilhamlar) bırakmayı amaçlar.
+Albor, her gün size farklı kategorilerden (Finans, Psikoloji, Felsefe, Liderlik vb.) kısa, öz ve etkileyici hikayeler sunan bir mobil uygulamadır. Karmaşık bilgileri sadeleştirerek günlük hayatınıza uygulanabilir ilhamlar bırakmayı amaçlar. Adı İspanyolcada "şafak, ilk ışık" anlamına gelir.
 
 ## 🚀 Özellikler
 
-- **Günün Kıvılcımı:** Her gün yenilenen, özenle seçilmiş hikayeler.
+- **Günün Fikri:** Her gün yenilenen, özenle seçilmiş hikayeler.
 - **Sesli Anlatım:** Hikayeleri okumak yerine profesyonel seslendirme (TTS) ile dinleme imkanı.
 - **Kategoriler:** Finans'tan Psikoloji'ye, Tarih'ten Liderlik'e geniş yelpazede içerik.
 - **Gelişmiş Paylaşım:** Beğendiğiniz hikayeleri estetik kart tasarımlarıyla (Instagram uyumlu) anında paylaşma.
 - **Kişisel Koleksiyon:** Beğendiğiniz hikayeleri favorilere ekleme ve okuma geçmişine erişim.
 - **Premium Erişim:** Sınırsız hikaye, reklamız deneyim ve tüm temalara erişim sağlayan abonelik sistemi.
 - **Karanlık Mod:** Göz yormayan, şık "Mürekkep" (Dark) mod seçeneği.
-- **Kıvılcım Yolu:** Okuma, derinleşme ve uygulama davranışlarını 12 kalıcı rütbeden oluşan, seçilebilir bir gelişim yoluna dönüştürür. Ayrıntılar: [teknik rehber](docs/KIVILCIM_YOLU_TEKNIK_REHBER.md).
+- **Albor Yolu:** Okuma, derinleşme ve uygulama davranışlarını 12 kalıcı rütbeden oluşan, seçilebilir bir gelişim yoluna dönüştürür. Ayrıntılar: [teknik rehber](docs/ALBOR_YOLU_TEKNIK_REHBER.md).
 
 ## 🛠 Teknoloji Yığını
 
@@ -66,20 +66,20 @@ Kıvılcım, her gün size farklı kategorilerden (Finans, Psikoloji, Felsefe, L
 
 <a name="english-version"></a>
 
-# Kıvılcım ✦ - Daily Wisdom & Inspiration App
+# Albor ✦ - Daily Wisdom & Inspiration App
 
-Kıvılcım (meaning "Spark") is a mobile application that provides short, concise, and impactful stories from various categories (Finance, Psychology, Philosophy, Leadership, etc.) every day. It aims to leave applicable "sparks" of inspiration in your daily life by simplifying complex information.
+Albor (Spanish for "dawn, first light") is a mobile application that provides short, concise, and impactful stories from various categories (Finance, Psychology, Philosophy, Leadership, etc.) every day. It aims to leave applicable inspiration in your daily life by simplifying complex information.
 
 ## 🚀 Features
 
-- **Spark of the Day:** Carefully curated stories refreshed daily.
+- **Idea of the Day:** Carefully curated stories refreshed daily.
 - **Audio Mode:** Listen to stories instead of reading with professional Text-to-Speech (TTS).
 - **Categories:** Wide range of content from Finance to Psychology, History to Leadership.
 - **Advanced Sharing:** Instantly share your favorite stories with aesthetic card designs (Instagram optimized).
 - **Personal Collection:** Favorite stories and access your reading history.
 - **Premium Access:** Subscription system providing unlimited stories, ad-free experience, and access to all themes.
 - **Dark Mode:** Sleek "Ink" (Dark) mode option for comfortable reading.
-- **Kıvılcım Path:** Turns reading, reflection, and application into a selectable path of 12 persistent ranks. See the [technical guide](docs/KIVILCIM_YOLU_TEKNIK_REHBER.md).
+- **Albor Path:** Turns reading, reflection, and application into a selectable path of 12 persistent ranks. See the [technical guide](docs/ALBOR_YOLU_TEKNIK_REHBER.md).
 
 ## 🛠 Tech Stack
 

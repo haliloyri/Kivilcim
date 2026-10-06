@@ -1,6 +1,6 @@
 # GPT-5.5 UX Tasks
 
-Bu dosya, Spark / Kivilcim mobil uygulamasi icin yapilan UX ve kullanici akisi analizindeki gorusleri uygulanabilir is paketlerine cevirir. Gorevler kritik etki, kullanici riski ve gelistirme maliyetine gore fazlara ayrilmistir.
+Bu dosya, Albor mobil uygulamasi icin yapilan UX ve kullanici akisi analizindeki gorusleri uygulanabilir is paketlerine cevirir. Gorevler kritik etki, kullanici riski ve gelistirme maliyetine gore fazlara ayrilmistir.
 
 ## Genel Hedefler
 

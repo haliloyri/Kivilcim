@@ -9,6 +9,8 @@ jest.mock('../../../context/StoriesContext', () => ({ useStories: () => ({ stori
 jest.mock('../../../db/userDb', () => ({ getLegacyBadgeIds: () => Promise.resolve([]) }));
 jest.mock('../../../db/db', () => ({ getReadHistory: () => Promise.resolve([]) }));
 jest.mock('../../../utils/analytics', () => ({ ANALYTICS_EVENTS: {}, trackEvent: jest.fn() }));
+// First render pays the cold-start transform cost; give the file headroom.
+jest.setTimeout(20000);
 import React from 'react';
 import TestRenderer, { act } from 'react-test-renderer';
 import CareerPathExperience from '../CareerPathExperience';
@@ -18,8 +20,8 @@ import { buildCareerViewModel } from '../../../utils/careerProgress';
 const texts = (tree) => [...new Set(tree.root.findAll((n) => typeof n.props.children === 'string' && n.type === 'Text').map((n) => n.props.children))];
 const nav = { addListener: () => () => {}, navigate: jest.fn() };
 const all = [...CAREER_PREVIEW_SCENARIOS.map((s) => [s.id, buildCareerPreview(s.id)]),
-  ['summit', buildCareerViewModel({ metrics: {}, activePath: 'depth', earnedNodes: ['common_first_spark','common_curious','common_traveler','exploration_route_seeker','exploration_horizon_traveler','exploration_wisdom_cartographer','depth_thinker','depth_synthesizer','depth_insight_curator'] })],
-  ['switch_hint', buildCareerViewModel({ metrics: { stories: 20, categories: 4, deepInteractions: 12, applications: 2, activeDays: 18 }, activePath: 'exploration', earnedNodes: ['common_first_spark','common_curious','common_traveler'] })]];
+  ['summit', buildCareerViewModel({ metrics: {}, activePath: 'depth', earnedNodes: ['common_first_light','common_curious','common_traveler','exploration_route_seeker','exploration_horizon_traveler','exploration_wisdom_cartographer','depth_thinker','depth_synthesizer','depth_insight_curator'] })],
+  ['switch_hint', buildCareerViewModel({ metrics: { stories: 20, categories: 4, deepInteractions: 12, applications: 2, activeDays: 18 }, activePath: 'exploration', earnedNodes: ['common_first_light','common_curious','common_traveler'] })]];
 it.each(all)('renders %s', async (id, vm) => {
   mockCareer = vm;
   let tree; await act(async () => { tree = TestRenderer.create(<CareerPathExperience navigation={nav} />); });
@@ -30,7 +32,7 @@ it.each(all)('renders %s', async (id, vm) => {
 
 const EXPECTED_TITLE = {
   new_user: 'Yolun başındasın',
-  common_progress: 'İlk Kıvılcım',
+  common_progress: 'İlk Işık',
   path_selection: 'Fikir Avcısı',
   active_path: 'Derin Düşünür',
   final_rank: 'Bilgelik Haritacısı',
@@ -39,7 +41,7 @@ const EXPECTED_TITLE = {
 };
 
 it('opens title and weekly share cards with real numbers', async () => {
-  mockCareer = buildCareerViewModel({ metrics: {}, activePath: 'exploration', earnedNodes: ['common_first_spark','common_curious','common_traveler','exploration_route_seeker'] });
+  mockCareer = buildCareerViewModel({ metrics: {}, activePath: 'exploration', earnedNodes: ['common_first_light','common_curious','common_traveler','exploration_route_seeker'] });
   let tree; await act(async () => { tree = TestRenderer.create(<CareerPathExperience navigation={nav} />); });
   const press = async (label) => { const btn = tree.root.findAll((n) => n.props.accessibilityLabel === label && typeof n.props.onPress === 'function')[0]; await act(async () => { btn.props.onPress(); }); };
   await press('Unvanını paylaş');

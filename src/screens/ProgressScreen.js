@@ -3,7 +3,7 @@ import { useIsFocused } from '@react-navigation/native';
 import CareerPathExperience from '../components/career/CareerPathExperience';
 import { useCareerPath } from '../context/CareerPathContext';
 
-// The İlerleme tab is Kıvılcım Yolu. The legacy badge/heatmap screen was
+// The İlerleme tab is Albor Yolu. The legacy badge/heatmap screen was
 // retired; its badges live on as the "Miras" collection inside the path.
 const ProgressScreen = ({ navigation, route }) => {
   const isFocused = useIsFocused();

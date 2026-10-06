@@ -1,6 +1,6 @@
 ---
 name: proofread-stories
-description: Audit Spark story text language by language and in resumable chunks—Turkish, English, Spanish, then German—for spelling, capitalization, diacritic, and clear punctuation mistakes; persist progress and exact proposals in STORY_YAZIM_KONTROLU.md; and apply only explicitly approved items. Use when asked to check, proofread, spell-check, or correct stories, especially requests such as "hikayeleri kontrol et", "dil dil kontrol et", "parça parça kontrol et", "yazım yanlışı var mı", or "onayladığım düzeltmeleri uygula".
+description: Audit Albor story text language by language and in resumable chunks—Turkish, English, Spanish, then German—for spelling, capitalization, diacritic, and clear punctuation mistakes; persist progress and exact proposals in STORY_YAZIM_KONTROLU.md; and apply only explicitly approved items. Use when asked to check, proofread, spell-check, or correct stories, especially requests such as "hikayeleri kontrol et", "dil dil kontrol et", "parça parça kontrol et", "yazım yanlışı var mı", or "onayladığım düzeltmeleri uygula".
 ---
 
 # Proofread Stories
@@ -10,7 +10,7 @@ Audit stories conservatively in small, persistent units: finish one language in 
 ## Non-negotiable approval gate
 
 - During an audit, write or update only `STORY_YAZIM_KONTROLU.md` and temporary files under `/tmp`.
-- Do not modify `assets/kivilcim.db`, batch data, generation scripts, or other app files before explicit user approval.
+- Do not modify `assets/albor.db`, batch data, generation scripts, or other app files before explicit user approval.
 - Do not apply approved fixes while unfinished chunks remain in the requested audit scope. Finish that scope first so database changes do not invalidate the remaining review.
 - Treat an unqualified approval such as `onaylıyorum` as approval of every item whose status is `Bekliyor`. Treat an approval naming IDs as approval of only those IDs.
 - If approval is ambiguous, ask which `YK-...` IDs are approved. Do not infer approval from silence, thanks, or a request to explain findings.
@@ -18,7 +18,7 @@ Audit stories conservatively in small, persistent units: finish one language in 
 
 ## Scope
 
-Use `assets/kivilcim.db` as the runtime catalog. Audit exactly `tr`, `en`, `es`, and `de` in:
+Use `assets/albor.db` as the runtime catalog. Audit exactly `tr`, `en`, `es`, and `de` in:
 
 - `story_translations`: `title`, `description`, `content`, `hook`
 - `story_conversation_variants`: `punchline`, `thirty_sec`, `question`, `key_contrast`
@@ -53,7 +53,7 @@ For a new full audit:
 2. Export the first Turkish chunk:
 
    ```bash
-   node .github/skills/proofread-stories/scripts/extract-story-texts.mjs --langs tr --after-story-id 0 --limit 100 --output /tmp/spark-story-proofread-tr.json
+   node .github/skills/proofread-stories/scripts/extract-story-texts.mjs --langs tr --after-story-id 0 --limit 100 --output /tmp/albor-story-proofread-tr.json
    ```
 
 3. Check only the exported language and inspect every populated text field. Treat empty optional legacy fields as coverage notes, not spelling findings.
@@ -64,7 +64,7 @@ For a new full audit:
 8. If `metadata.batch.hasMore` is true, export the next chunk using the returned ID. For example:
 
    ```bash
-   node .github/skills/proofread-stories/scripts/extract-story-texts.mjs --langs tr --after-story-id 1108 --limit 100 --output /tmp/spark-story-proofread-tr.json
+   node .github/skills/proofread-stories/scripts/extract-story-texts.mjs --langs tr --after-story-id 1108 --limit 100 --output /tmp/albor-story-proofread-tr.json
    ```
 
 9. When `hasMore` is false, mark the language `Tamamlandı`, set the next language to `Devam ediyor`, and restart `--after-story-id` at `0`.
@@ -82,7 +82,7 @@ Use this structure so the review and approval remain unambiguous:
 # Dört Dilde Hikâye Yazım Kontrolü
 
 - Denetim zamanı: YYYY-MM-DD HH:mm TZ
-- Veri kaynağı: `assets/kivilcim.db`
+- Veri kaynağı: `assets/albor.db`
 - Veri tabanı SHA-256: `...`
 - Diller: `tr`, `en`, `es`, `de`
 - Dil sırası: `tr → en → es → de`

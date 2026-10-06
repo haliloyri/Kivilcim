@@ -539,7 +539,7 @@ if (emitSql) {
   const L = [
     '-- audit-translations.mjs --emit-sql',
     '-- YALNIZCA MEKANIK DUZELTMELER. Insan onayi olmadan calistirmayin.',
-    '-- Once yedek alin:  cp assets/kivilcim.db assets/kivilcim.db.bak_manual',
+    '-- Once yedek alin:  cp assets/albor.db assets/albor.db.bak_manual',
     '',
     'BEGIN TRANSACTION;',
     '',

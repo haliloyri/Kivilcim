@@ -52,6 +52,7 @@ import { initUserDb } from './src/db/userDb';
 import { ensureDeviceSession, claimReferral, getCachedDeviceUserId } from './src/services/supabase';
 import { migrateLocalToServer } from './src/services/migrateLocalToServer';
 import { initOfflineQueueFlush } from './src/services/offlineQueue';
+import { isOnline, onReconnect } from './src/services/connectivity';
 
 // Share links (see src/utils/share.js) carry `?s={referrerDeviceId}&st={storyId}&l={lang}`.
 // A universal-link tap while the app is installed — or a custom `albor://`
@@ -149,23 +150,44 @@ function Main() {
       initAds().catch(e => console.warn('initAds error:', e?.message));
 
       // Online membership: reuse the device session or create an anonymous one.
-      // Non-blocking — local data still works if Supabase is offline/unconfigured.
-      ensureDeviceSession()
-        .then((user) => {
+      // Non-blocking — the app runs on local data while Supabase is offline or
+      // unreachable, and retries on every reconnect until it succeeds.
+      let sessionStarted = false;
+      let backfillDone = false;
+      let connecting = false;
+      const connectToServer = async () => {
+        if (backfillDone || connecting) return;
+        connecting = true;
+        try {
+          // Offline: wait for the reconnect. Writes made meanwhile are kept
+          // in the offline queue.
+          if (!(await isOnline())) return;
+          const user = await ensureDeviceSession();
           if (!user) return;
-          setAnalyticsContext({ userId: user.id });
-          // One-time backfill of pre-existing local data (favorites, reads,
-          // streak, preferences, ...) up to Supabase. No-ops after the first
-          // successful run (see migrateLocalToServer.js). Non-blocking.
-          migrateLocalToServer().catch((e) => console.warn('migrateLocalToServer error:', e?.message));
-          // Retry any writes that got stranded offline last session, then
-          // again every time the app comes back to the foreground.
-          initOfflineQueueFlush();
-          // Register this device for server-side (Supabase) push notifications
-          // and save the Expo push token — no-ops on simulator/Expo Go.
-          registerAndSavePushToken(user.id).catch((e) => console.warn('registerAndSavePushToken error:', e?.message));
-        })
-        .catch((e) => console.warn('ensureDeviceSession error:', e?.message));
+          if (!sessionStarted) {
+            sessionStarted = true;
+            setAnalyticsContext({ userId: user.id });
+            // Send writes marked pending while offline, then again on every
+            // foreground / reconnect.
+            initOfflineQueueFlush();
+            // Register this device for server-side (Supabase) push notifications
+            // and save the Expo push token — no-ops on simulator/Expo Go.
+            registerAndSavePushToken(user.id).catch((e) => console.warn('registerAndSavePushToken error:', e?.message));
+          }
+          // One-time, all-or-nothing backfill of pre-existing local data
+          // (favorites, reads, streak, preferences, ...). If it doesn't
+          // finish (e.g. the connection drops), the next reconnect retries it.
+          const result = await migrateLocalToServer();
+          backfillDone = result.migrated || result.reason === 'already_migrated' || result.reason === 'not_live';
+          if (backfillDone) stopReconnectWatch();
+        } catch (e) {
+          console.warn('connectToServer error:', e?.message);
+        } finally {
+          connecting = false;
+        }
+      };
+      const stopReconnectWatch = onReconnect(connectToServer);
+      connectToServer();
 
       // UserDataProvider schedules reminders after preferences and reading
       // statistics have loaded. Keeping scheduling there prevents a second,

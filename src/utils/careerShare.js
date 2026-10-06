@@ -28,7 +28,7 @@ export const buildRankShare = ({ titleKey, pathId = null, visualKey = null, lear
       { value: ideas, label: t('career.learned.ideas', lang) },
       { value: Number(learning?.minutes) || 0, label: t('career.learned.minutes', lang) },
     ] : null,
-    visualKey: visualKey || 'first_spark',
+    visualKey: visualKey || 'first_light',
     earnedDate: earnedAt,
   };
 };

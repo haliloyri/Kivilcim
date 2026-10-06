@@ -10,7 +10,7 @@ SRC = '/Users/hoyri/Downloads/hf_20260706_202316_eca78661-9e92-478a-a0c5-caa731c
 BADGES_DIR = '/Users/hoyri/Documents/Projects/Spark/assets/badges'
 
 BADGE_GRID = [
-    ('first_read',     'İlk Kıvılcım'),
+    ('first_read',     'İlk Işık'),
     ('explorer',       'Kaşif'),
     ('sage',           'Bilge'),
     ('bookworm',       'Kitap Kurdu'),

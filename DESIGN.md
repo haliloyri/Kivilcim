@@ -1,4 +1,4 @@
-# Spark Tasarim Tanimlari (Acik + Koyu Mod)
+# Albor Tasarim Tanimlari (Acik + Koyu Mod)
 
 Bu dokuman, uygulamadaki mevcut tema token'larini tek bir yerde toplar ve yeni tasarim calismasi icin referans verir.
 

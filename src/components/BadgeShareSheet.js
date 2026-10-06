@@ -15,8 +15,8 @@ import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 
 // Shared accent language with the card creator (gold / slate / teal / plum)
 const ACCENTS = ['#C89B3C', '#3F5A73', '#2C8068', '#6E3B52'];
-const LOGO_LIGHT = require('../../assets/spark_logo.png');
-const LOGO_DARK = require('../../assets/spark_logo_dark.png');
+const LOGO_LIGHT = require('../../assets/albor_logo.png');
+const LOGO_DARK = require('../../assets/albor_logo_dark.png');
 
 const hx = (h) => { h = h.replace('#', ''); return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; };
 const mix = (c1, c2, t2) => { const a = hx(c1), b = hx(c2); return `rgb(${Math.round(a[0] + (b[0] - a[0]) * t2)},${Math.round(a[1] + (b[1] - a[1]) * t2)},${Math.round(a[2] + (b[2] - a[2]) * t2)})`; };

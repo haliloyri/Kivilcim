@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Publish the finished P1 stories (staging/p1/<lang>/) into the app's bundled
-// local database (assets/kivilcim.db) and save it as a new content version.
+// local database (assets/albor.db) and save it as a new content version.
 //
 //   npm run story:publish                 # en + tr, only changed stories
 //   npm run story:publish -- --dry-run    # show what would change, write nothing
@@ -11,7 +11,7 @@
 //   1. Reads staging/p1/<lang>/<id>.md (+ <id>.variants.json) for each language.
 //   2. Validates every story with scripts/p1/validate.mjs; invalid ones are skipped.
 //   3. Compares with what the DB already holds; unchanged stories are skipped.
-//   4. Backs up the DB to assets/_db_backups/kivilcim.db.<timestamp>
+//   4. Backs up the DB to assets/_db_backups/albor.db.<timestamp>
 //      (keeps the 10 newest timestamped backups).
 //   5. Writes story text, reading minutes and conversation variants in ONE transaction.
 //   6. Bumps DB_VERSION in src/db/db.js, so on next launch the app deletes its old
@@ -41,7 +41,7 @@ const opt = (name, def = null) => {
   return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[i + 1] : def;
 };
 const dryRun = argv.includes('--dry-run');
-const DB = path.resolve(ROOT, opt('db', 'assets/kivilcim.db'));
+const DB = path.resolve(ROOT, opt('db', 'assets/albor.db'));
 const DBJS = path.resolve(ROOT, opt('dbjs', 'src/db/db.js'));
 const note = opt('note', '');
 const onlyIds = opt('ids') ? new Set(opt('ids').split(',').map((s) => s.trim())) : null;
@@ -140,9 +140,9 @@ const stamp = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 14);
 const backupDir = path.join(path.dirname(DB), '_db_backups');
 fs.mkdirSync(backupDir, { recursive: true });
 db.exec('PRAGMA wal_checkpoint(TRUNCATE);');
-const backupFile = path.join(backupDir, `kivilcim.db.${stamp}`);
+const backupFile = path.join(backupDir, `albor.db.${stamp}`);
 fs.copyFileSync(DB, backupFile);
-const old = fs.readdirSync(backupDir).filter((f) => /^kivilcim\.db\.\d{14}$/.test(f)).sort();
+const old = fs.readdirSync(backupDir).filter((f) => /^albor\.db\.\d{14}$/.test(f)).sort();
 old.slice(0, Math.max(0, old.length - KEEP_BACKUPS)).forEach((f) => fs.unlinkSync(path.join(backupDir, f)));
 
 // ── 5: write in one transaction ────────────────────────

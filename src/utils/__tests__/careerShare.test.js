@@ -12,8 +12,8 @@ describe('career share copy', () => {
   });
 
   it('falls back to a number-free line and hides the common path', () => {
-    const share = buildRankShare({ titleKey: 'careerNode.firstSpark.title', pathId: 'common', learning: { ideas: 0, books: 0 }, name: '', lang: 'en' });
-    expect(share.line).toBe('An Albor reader just earned a new title: First Spark.');
+    const share = buildRankShare({ titleKey: 'careerNode.firstLight.title', pathId: 'common', learning: { ideas: 0, books: 0 }, name: '', lang: 'en' });
+    expect(share.line).toBe('An Albor reader just earned a new title: First Light.');
     expect(share.stats).toBeNull();
     expect(share.pathLabel).toBeNull();
   });

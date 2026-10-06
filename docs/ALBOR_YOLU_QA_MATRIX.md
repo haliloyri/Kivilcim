@@ -1,4 +1,4 @@
-# Kıvılcım Yolu — QA ve rollout matrisi
+# Albor Yolu — QA ve rollout matrisi
 
 ## Repo içinde doğrulanır
 
@@ -16,7 +16,7 @@
 - [x] U guard: tamamlanmamış hikâyede Sohbette Kullan/prova başlamaz; `conversation_mark_used` ve `practice_completed` sunucu kota kabulünden sonra yerel duruma yazılır
 - [x] Event alt türü sözleşmesi: `revisit_24h`, `conversation_mark_used` ve `practice_completed` migration/bootstrap statik testinde doğrulanır
 - [x] Babel/Expo bundle smoke: Home, StoryDetail, UseInConversation, Yolum, Profile
-- [x] Kıvılcım Yolu 12 düğüm görsel sözleşmesi: light/dark, completed/future fallback ve share kimliği
+- [x] Albor Yolu 12 düğüm görsel sözleşmesi: light/dark, completed/future fallback ve share kimliği
 - [x] Local/server merge: immutable credit key, monotonic seen node ve son path seçimi
 - [x] Context: yerel snapshot önce yayınlanır; geç gelen server snapshot eski yüklemeyi ezemez
 - [x] Supabase migration/bootstrap schema/RLS/RPC ve owner-bound queue statik sözleşmesi

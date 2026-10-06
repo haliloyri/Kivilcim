@@ -14,8 +14,8 @@ yansıtacak şekilde güncellendi.
 ### Uygulama hikâyeleri nereden çekiyor?
 `src/context/StoriesContext.js` şu sırayla çalışıyor:
 
-1. **AsyncStorage önbelleği** (`@kivilcim_stories_cache_<lang>`). Varsa ve süresi geçmiş olsa bile ilk olarak bu gösteriliyor.
-2. **Yerel SQLite** (`assets/kivilcim.db`, uygulamayla birlikte paketleniyor, `DB_VERSION = 22`).
+1. **AsyncStorage önbelleği** (`@albor_stories_cache_<lang>`). Varsa ve süresi geçmiş olsa bile ilk olarak bu gösteriliyor.
+2. **Yerel SQLite** (`assets/albor.db`, uygulamayla birlikte paketleniyor, `DB_VERSION = 22`).
 3. **Supabase** (`fetchStoriesFromSupabase`). İnternet varsa arka planda çekiliyor ve aynı `story_id`'li yerel hikâyelerin **üzerine yazıyor**. Sonuç tekrar AsyncStorage'a kaydediliyor.
 
 Hikâye detayı (`getStoryByLang`) zaten SQLite'tan geliyor. Ama liste Supabase'den geldiği için ekranda Supabase içeriği görünüyor.
@@ -47,7 +47,7 @@ Parser `StoryDetailScreen.js` içinde satır içi yazılmış (~satır 2427). Ay
 
 | # | Karar | Öneri |
 |---|---|---|
-| K1 | "Local" kaynak ne olsun? | **Paketlenmiş SQLite (`assets/kivilcim.db`)** tek kaynak olsun. Supabase'den hikâye çekme bir bayrakla kapatılsın (`EXPO_PUBLIC_STORIES_SOURCE=local`, varsayılan). AsyncStorage önbelleği temizlensin, yoksa eski Supabase metni ilk açılışta görünmeye devam eder. |
+| K1 | "Local" kaynak ne olsun? | **Paketlenmiş SQLite (`assets/albor.db`)** tek kaynak olsun. Supabase'den hikâye çekme bir bayrakla kapatılsın (`EXPO_PUBLIC_STORIES_SOURCE=local`, varsayılan). AsyncStorage önbelleği temizlensin, yoksa eski Supabase metni ilk açılışta görünmeye devam eder. |
 | K2 | Diller nasıl üretilsin? | **Çeviri yok.** Her hikâye için önce dilden bağımsız bir **içerik özeti** çıkarılır (kitaptaki olaylar, isim/tarih/sayılar, 2–3 dersin fikri, kullanım durumları, cebe konacak cümlenin fikri). Olaylar bu özet üzerinde bir kez kontrol edilir. Sonra TR, EN, ES ve DE metinleri **bu özetten, her biri kendi dilinde sıfırdan** yazılır. Hiçbir dil başka bir dilin metnini görmez. Böylece olaylar dört dilde aynı kalır, ama metin çeviri gibi durmaz. |
 | K2a | Dil sırası (2026-09-23 kararı) | **İlk pazar global, ilk dil İngilizce.** 1. aşamada sadece içerik özeti + EN metin yazılır (750 hikâye, Batch API ile ~90 $). TR, ES ve DE daha sonra aynı özetlerden yazılır; özetler bir kez hazırlandığı için tekrar maliyeti olmaz. Pilot da EN yapılır. |
 | K2b | Hitap | TR: "siz" · EN: "you" · ES: "tú", bölgesel kalıplardan kaçınan tarafsız İspanyolca · DE: "du" (Almanca uygulama ve podcast dilinde yaygın) |

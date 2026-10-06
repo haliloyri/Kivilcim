@@ -1,4 +1,4 @@
-# Spark Analytics Events
+# Albor Analytics Events
 
 This document defines analytics event names and payload fields implemented in the app.
 
@@ -194,20 +194,20 @@ Payload:
 - lang: string
 
 ## career_path_selected
-When: User selects an initial Kıvılcım Yolu path or switches the active path.
+When: User selects an initial Albor Yolu path or switches the active path.
 
 Payload:
 - pathId: string (exploration | depth | transfer)
 - selectionSource: string (user | user_switch)
 
 ## career_promotion_shown
-When: The user is shown the highest newly earned Kıvılcım Yolu rank.
+When: The user is shown the highest newly earned Albor Yolu rank.
 
 Payload:
 - nodeId: string
 - additionalPromotionCount: number
 
-## Kıvılcım Yolu ek olayları
+## Albor Yolu ek olayları
 
 Tüm kariyer payload’ları `careerVersion` (number) taşır; isteğe göre `pathId`,
 `nodeId`, `nodeState`, `actionType`, `missingRequirement` ve `source` eklenir.
@@ -240,7 +240,7 @@ Paylaşım hunisi iki adımdır: kart **açıldı** (`*_share_opened`) → kart 
 - `learning_milestone_share_opened`: Kitap kilometre taşı penceresinden "Paylaş"a basıldığında. Alanlar: `milestoneId`, `type`, `count`.
 - `share_card_exported`: Herhangi bir paylaşım kartı (unvan, haftalık, kilometre taşı, eski rozet) görsele dönüştürülüp sistem paylaşım menüsü gösterildiğinde. Alanlar: `kind` (`rank` | `weekly` | `milestone` | `badge`), `format` (`square` | `story`), `theme`, `accent`, `hasStats`, `badgeId`.
 
-### Kıvılcım Yolu kredi sözlüğü ve gizlilik
+### Albor Yolu kredi sözlüğü ve gizlilik
 
 - `H` (hikâye): Okuma veya sesli dinleme ile anlamlı biçimde tamamlanan benzersiz hikâye.
 - `K` (kategori): Günlük kredi sınırı sonrası kabul edilen `H` olaylarının farklı ana kategorileri.

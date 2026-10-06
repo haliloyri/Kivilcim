@@ -9,11 +9,14 @@ import { useUserData } from '../context/UserDataContext';
 import { getLegalUrls } from '../constants/externalLinks';
 import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { revenueAttrs } from '../services/billing';
+import { revenueAttrs, getTrialEligibility } from '../services/billing';
 import { formatCurrency } from '../utils/locale';
 
-const SPARK_LOGO = require('../../assets/spark_logo.png');
-const SPARK_LOGO_DARK = require('../../assets/spark_logo_dark.png');
+// Trial copy (paywallTrial*, paywallEarlyTrialTrial*) says "7 days".
+const TRIAL_COPY_DAYS = 7;
+
+const ALBOR_LOGO = require('../../assets/albor_logo.png');
+const ALBOR_LOGO_DARK = require('../../assets/albor_logo_dark.png');
 
 // Prices come from the store, always — never from a constant in here.
 //
@@ -21,7 +24,7 @@ const SPARK_LOGO_DARK = require('../../assets/spark_logo_dark.png');
 // and Apple/Google already return the correct localized amount and currency
 // for the user's storefront. When the store hasn't answered yet (or billing
 // isn't connected) we show a placeholder rather than inventing a number.
-const PLAN_ORDER = ['monthly', 'yearly', 'lifetime'];
+const PLAN_ORDER = ['monthly', 'yearly'];
 const DEFAULT_PLAN_ID = 'yearly';
 
 const PLAN_SPECS = {
@@ -50,6 +53,8 @@ const PaywallScreen = ({ navigation, route }) => {
   const [purchaseConfirmed, setPurchaseConfirmed] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [livePackages, setLivePackages] = useState(null);
+  // Plans with a free trial this user can really get from the store: { plan: { days } }.
+  const [trialPlans, setTrialPlans] = useState({});
   const paywallReason = route?.params?.reason || 'none';
   const isFreeLimitReached = paywallReason === 'free_limit_reached';
   const isEarlyTrial = paywallReason === 'early_trial';
@@ -248,8 +253,9 @@ const PaywallScreen = ({ navigation, route }) => {
     .replace('{{monthlyPrice}}', livePriceString('monthly'))
     .replace('{{annualPrice}}', livePriceString('yearly'));
 
-  // A trial only applies to the auto-renewing plans; `lifetime` is a one-off.
-  const showsTrial = billingLive && selectedPlan?.id !== 'lifetime';
+  // Promise a trial only when the store has a free intro offer on this plan, the
+  // user is still eligible for it, and its length matches the copy (7 days).
+  const showsTrial = billingLive && trialPlans[selectedPlan?.id]?.days === TRIAL_COPY_DAYS;
   const trialBadge = showsTrial
     ? t('paywallTrialBadge', lang).replace('{{price}}', selectedPlan?.price || priceUnavailable)
     : null;
@@ -267,7 +273,10 @@ const PaywallScreen = ({ navigation, route }) => {
     let cancelled = false;
     (async () => {
       const pkgs = await getPremiumOfferings();
-      if (!cancelled && pkgs) setLivePackages(pkgs);
+      if (cancelled || !pkgs) return;
+      setLivePackages(pkgs);
+      const trials = await getTrialEligibility(pkgs);
+      if (!cancelled) setTrialPlans(trials);
     })();
     return () => { cancelled = true; };
   }, [billingLive, getPremiumOfferings]);
@@ -783,7 +792,7 @@ const PaywallScreen = ({ navigation, route }) => {
         </TouchableOpacity>
 
         <Image
-          source={isDark ? SPARK_LOGO_DARK : SPARK_LOGO}
+          source={isDark ? ALBOR_LOGO_DARK : ALBOR_LOGO}
           style={styles.brandLogo}
           resizeMode="contain"
           accessibilityRole="image"
@@ -916,7 +925,7 @@ const PaywallScreen = ({ navigation, route }) => {
 
         <View style={styles.policyCard}>
           <Text style={styles.policyTitle}>{t('paywallTrialTitle', lang)}</Text>
-          <Text style={styles.policyText}>{t('paywallTrialSub', lang)}</Text>
+          {showsTrial && <Text style={styles.policyText}>{t('paywallTrialSub', lang)}</Text>}
           <Text style={styles.policyText}>{t('paywallRefundText', lang)}</Text>
           {billingLive && (
             <>

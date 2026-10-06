@@ -1,6 +1,6 @@
 ---
 name: build-apk
-description: 'Build a release APK for the Spark Android app. Use when the user says apk build et, apk üret, release apk al, android build yap, or similar.'
+description: 'Build a release APK for the Albor Android app. Use when the user says apk build et, apk üret, release apk al, android build yap, or similar.'
 argument-hint: 'No arguments needed'
 user-invocable: true
 ---

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet, View, AccessibilityInfo } from 'react-native';
 import Svg, { Circle, Defs, G, Line, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
 
-// Vector version of the Albor/Spark mark (book + rising sun), split into layers
+// Vector version of the Albor mark (book + rising sun), split into layers
 // so each part can be animated independently. The viewBox is centred on the sun
 // (512, 540) so scale transforms pivot around it.
 const VIEW_BOX = '112 140 800 800';

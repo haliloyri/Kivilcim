@@ -1,6 +1,6 @@
-# Spark Hikâyeleri İçin Instagram Video Rehberi
+# Albor Hikâyeleri İçin Instagram Video Rehberi
 
-Bu belge, `assets/kivilcim.db` içindeki bütün Türkçe hikâyeleri aynı kalite standardıyla Instagram Reels videosuna dönüştürmek için ortak üretim sistemidir. Her hikâyede konu değişebilir; marka hissi, anlatı ritmi, teknik format ve onay süreci değişmez.
+Bu belge, `assets/albor.db` içindeki bütün Türkçe hikâyeleri aynı kalite standardıyla Instagram Reels videosuna dönüştürmek için ortak üretim sistemidir. Her hikâyede konu değişebilir; marka hissi, anlatı ritmi, teknik format ve onay süreci değişmez.
 
 Bu rehberin güncel üretim ilkesi şudur: kullanıcı tek bir sesli ve altyazılı video alır; fakat yayın kalitesini korumak için görüntü, Türkçe seslendirme ve tipografi içeride ayrı katmanlarda üretilir. Seedance temiz hareketli görüntü ve ortam sesini, ElevenLabs Türkçe anlatımı, yerel render ise doğrulanmış altyazı ve açılış/kapanış tipografisini sağlar.
 
@@ -33,7 +33,7 @@ Başarı ölçütü yalnızca izlenme değildir. Tamamlama oranı, yeniden izlem
 | Sahne sayısı | 7–8 |
 | Seslendirme | Hedef 38–47 sn; 90–120 kelime yalnız planlama aralığıdır |
 | Altyazı | Videoya gömülü ve ayrıca `.srt` |
-| Marka görünümü | Yalnızca son 1–2 saniyede sade Spark/Kıvılcım imzası |
+| Marka görünümü | Yalnızca son 1–2 saniyede sade Albor imzası |
 
 Videonun merkez bölgesini metin için güvenli tut. Arayüz öğeleriyle çakışmaması için önemli yazıları üstten yaklaşık yüzde 12, alttan yüzde 20 içeri taşı.
 
@@ -65,7 +65,7 @@ Nihai karar her zaman üretilmiş sesin gerçek süresine göre verilir. Sesi s�
 
 ## 3. Veritabanını kullanma
 
-Tek doğruluk kaynağı `assets/kivilcim.db` dosyasıdır. Üretimde öncelikle şu alanları kullan:
+Tek doğruluk kaynağı `assets/albor.db` dosyasıdır. Üretimde öncelikle şu alanları kullan:
 
 - `story_translations.title`: hikâye kimliği ve konu.
 - `story_translations.description`: tek cümlelik özet.
@@ -192,7 +192,7 @@ Altyazı, seslendirme metnini anlam bakımından izler fakat her kelimeyi tek bl
 Varsayılan stil:
 
 - Yazı: beyaz veya sıcak kırık beyaz.
-- Vurgu: Spark'ın sıcak turuncu/altın tonu.
+- Vurgu: Albor'un sıcak turuncu/altın tonu.
 - Zemin: yüzde 55–70 opak koyu gölge veya yumuşak kontur.
 - Hizalama: orta-alt, güvenli alanın içinde.
 - Font: okunaklı, kalın sans serif; uygulamadaki Inter/DM Sans ailesiyle uyumlu.
@@ -203,7 +203,7 @@ Altyazının bütün videoda aynı büyüklükte ve aynı kutuda kalması, en g�
 
 | Bölüm | Uygulama | Kaçınılacak şey |
 |---|---|---|
-| 0–2 sn: kanca | Metni üst-orta güvenli alanda 2–3 kısa satıra böl. En yüklü kelimeyi diğerlerinden yaklaşık yüzde 35–45 daha büyük, Spark'ın sıcak vurgu rengiyle göster. Satırlar ardışık, hızlı ama okunabilir biçimde gelsin. | Kancayı küçük bir altyazı ya da geniş, koyu bir kutunun içine sıkıştırmak. |
+| 0–2 sn: kanca | Metni üst-orta güvenli alanda 2–3 kısa satıra böl. En yüklü kelimeyi diğerlerinden yaklaşık yüzde 35–45 daha büyük, Albor'un sıcak vurgu rengiyle göster. Satırlar ardışık, hızlı ama okunabilir biçimde gelsin. | Kancayı küçük bir altyazı ya da geniş, koyu bir kutunun içine sıkıştırmak. |
 | Orta bölüm | Tek seferde 3–7 kelime; beyaz/kırık beyaz, sakin hareket, mümkünse görselin boş alanına yerleşim. | Her kelimeyi zıplatmak, aynı anda birden çok renk veya sürekli efekt kullanmak. |
 | Son 1,5–2 sn: ana ders | Son kısa cümleyi ekranın merkezinde iki satıra ayır. İlk satır koyu zeminde açık renk, ikinci satır vurgu renginde ya da vurgu renkli bir şerit üzerinde görünür. Son kelime ekranda en az 0,8 sn tek başına nefes alır. | Son dersi orta-alt altyazı kutusunda, önceki cümlelerle aynı ağırlıkta bırakmak. |
 
@@ -429,7 +429,7 @@ Instagram açıklaması videoyu kelimesi kelimesine tekrar etmemelidir. Şu yap�
 4. Doğal kaydetme veya paylaşma çağrısı.
 5. Konuyla ilgili 3–6 hashtag.
 
-Genel ve kalabalık hashtag listeleri yerine hikâyenin konusuna yakın etiketler kullan. Marka etiketi sabit olabilir: `#Kıvılcım` veya yayın hesabında kullanılan karşılığı.
+Genel ve kalabalık hashtag listeleri yerine hikâyenin konusuna yakın etiketler kullan. Marka etiketi sabit olabilir: `#Albor` veya yayın hesabında kullanılan karşılığı.
 
 ## 11. İki aşamalı üretim ve onay
 

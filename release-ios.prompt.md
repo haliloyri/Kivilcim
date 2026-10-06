@@ -1,6 +1,6 @@
 ---
 name: "Release iOS"
-description: "iOS release build oluştur. Spark veya başka bir React Native / Expo projesi için .ipa veya archive build üretir."
+description: "iOS release build oluştur. Albor veya başka bir React Native / Expo projesi için .ipa veya archive build üretir."
 argument-hint: "Proje yolu (varsayılan: d:\\CL\\Projects\\Spark)"
 agent: "agent"
 ---
@@ -26,9 +26,9 @@ pod install --repo-update
 
 ```bash
 PROJECT_DIR="/path/to/project/ios"
-SCHEME="Spark"            # app.json içindeki "name" ile eşleşmeli
-WORKSPACE="$PROJECT_DIR/Spark.xcworkspace"
-ARCHIVE_PATH="$PROJECT_DIR/build/Spark.xcarchive"
+SCHEME="Albor"            # app.json içindeki "name" ile eşleşmeli
+WORKSPACE="$PROJECT_DIR/Albor.xcworkspace"
+ARCHIVE_PATH="$PROJECT_DIR/build/Albor.xcarchive"
 IPA_DIR="$PROJECT_DIR/build/ipa"
 
 xcodebuild \

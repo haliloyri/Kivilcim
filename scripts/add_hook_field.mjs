@@ -3,7 +3,7 @@
  * - story_translations tablosuna `hook` TEXT sütunu ekler (yoksa)
  * - lang_code='de' olan tüm satırları story title & content'a göre
  *   Almanca Instagram Reel hook cümlesiyle doldurur
- * - Sonucu assets/kivilcim.db dosyasına yazar
+ * - Sonucu assets/albor.db dosyasına yazar
  */
 
 import { createRequire } from 'module';
@@ -15,7 +15,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 const initSqlJs = require('sql.js');
 
-const DB_PATH = resolve(__dirname, '../assets/kivilcim.db');
+const DB_PATH = resolve(__dirname, '../assets/albor.db');
 
 // ── Deutsche Hook-Generator ──────────────────────────────────────────────────
 // Kategoriye ve hikaye başlığına göre Instagram Reel hook cümlesi üretir.
@@ -236,4 +236,4 @@ console.log(`\n✅ ${updated} satır güncellendi.`);
 const savedBuffer = db.export();
 writeFileSync(DB_PATH, Buffer.from(savedBuffer));
 db.close();
-console.log(`💾 assets/kivilcim.db kaydedildi.`);
+console.log(`💾 assets/albor.db kaydedildi.`);

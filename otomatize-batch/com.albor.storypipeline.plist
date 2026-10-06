@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.spark.storypipeline</string>
+  <string>com.albor.storypipeline</string>
 
   <!-- Giriş kabuğuyla (bash -l) çalıştırılıyor ki nvm/homebrew PATH'i
        (dolayısıyla `node`) launchd'nin kısıtlı ortamında da bulunsun. -->

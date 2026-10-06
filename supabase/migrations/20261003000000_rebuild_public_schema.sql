@@ -1,0 +1,945 @@
+-- Rebuild the whole public schema (2026-10-03).
+-- 1) Drops EVERY table, view, sequence and function in `public` — including
+--    user data (profiles, user_*, push_tokens). Back up first:
+--    node scripts/supabase/backup-public.mjs
+--    (applied 2026-10-03; the pre-drop copy lives in schema backup_20261003)
+-- 2) Recreates everything from supabase/schema.sql, with the content catalogue
+--    now mirroring the bundled SQLite DB (stories, story_translations, books…).
+-- 3) Content rows are loaded afterwards: node scripts/supabase/import-content.mjs --apply
+-- auth.users (anonymous device accounts) is NOT touched.
+
+do $$
+declare r record;
+begin
+  for r in select viewname from pg_views where schemaname = 'public' loop
+    execute format('drop view if exists public.%I cascade', r.viewname);
+  end loop;
+  for r in select tablename from pg_tables where schemaname = 'public' loop
+    execute format('drop table if exists public.%I cascade', r.tablename);
+  end loop;
+  for r in select sequencename from pg_sequences where schemaname = 'public' loop
+    execute format('drop sequence if exists public.%I cascade', r.sequencename);
+  end loop;
+  for r in select p.oid::regprocedure as sig from pg_proc p
+           where p.pronamespace = 'public'::regnamespace and p.prokind in ('f', 'p') loop
+    execute format('drop routine if exists %s cascade', r.sig);
+  end loop;
+end $$;
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Albor — Supabase Database Schema
+-- Run this in: Supabase Dashboard → SQL Editor → New query → Run
+-- ─────────────────────────────────────────────────────────────────────────────
+
+-- ─── Extensions ──────────────────────────────────────────────────────────────
+create extension if not exists "uuid-ossp" with schema extensions;
+
+-- ─── Profiles ────────────────────────────────────────────────────────────────
+-- One row per auth.users entry. Created automatically on sign-up via trigger.
+
+create table if not exists public.profiles (
+  id            uuid        primary key references auth.users(id) on delete cascade,
+  display_name  text,
+  email         text,
+  lang          text        not null default 'tr',
+  is_premium    boolean     not null default false,
+  device_id     text,
+  created_at    timestamptz not null default now(),
+  updated_at    timestamptz not null default now()
+);
+
+-- email: free-text profile field the user types in the Edit Profile modal
+-- (ProfileScreen). Not linked to Supabase Auth's own auth.users.email /
+-- linkEmailToDeviceAccount() — this is just "what the user typed for their
+-- profile", mirrored the same way display_name already was. Added separately
+-- for existing DBs, same pattern as device_id above.
+alter table public.profiles add column if not exists email text;
+
+-- device_id: stable per-install id stamped by ensureDeviceSession() so a
+-- profile can be matched back to its device. Added separately for existing DBs.
+alter table public.profiles add column if not exists device_id text;
+create index if not exists profiles_device_id_idx on public.profiles(device_id);
+
+-- Auto-create profile on new user sign-up
+create or replace function public.handle_new_user()
+returns trigger language plpgsql security definer as $$
+begin
+  insert into public.profiles (id, display_name, lang)
+  values (
+    new.id,
+    new.raw_user_meta_data->>'display_name',
+    coalesce(new.raw_user_meta_data->>'lang', 'tr')
+  )
+  on conflict (id) do nothing;
+  return new;
+end;
+$$;
+
+drop trigger if exists on_auth_user_created on auth.users;
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute procedure public.handle_new_user();
+
+-- RLS
+alter table public.profiles enable row level security;
+
+create policy "Users can read their own profile"
+  on public.profiles for select
+  using (auth.uid() = id);
+
+create policy "Users can update their own profile"
+  on public.profiles for update
+  using (auth.uid() = id);
+
+-- SECURITY: found via ToServerTasks.md §10 end-to-end testing — the policy
+-- above has no explicit WITH CHECK, so (per Postgres RLS rules) it defaults
+-- to the same USING expression, which only constrains auth.uid() = id and
+-- says nothing about *which columns* change. That means any client could
+-- previously do `update profiles set is_premium = true where id = auth.uid()`
+-- directly via the REST API and grant themselves Premium, completely
+-- bypassing the RevenueCat webhook (supabase/functions/revenuecat-webhook)
+-- that's supposed to be the sole source of truth. Confirmed exploitable,
+-- then fixed with this trigger, which silently reverts any client-driven
+-- change to is_premium — only a genuine service_role write (the webhook)
+-- can move it.
+create or replace function public.protect_is_premium()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if new.is_premium is distinct from old.is_premium and auth.role() <> 'service_role' then
+    new.is_premium := old.is_premium;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists protect_is_premium_trigger on public.profiles;
+create trigger protect_is_premium_trigger
+  before update on public.profiles
+  for each row execute function public.protect_is_premium();
+
+-- Trigger functions don't need EXECUTE granted to any role to fire (they run
+-- as the trigger, not via RPC) — revoke it so this isn't callable directly
+-- via /rest/v1/rpc/protect_is_premium.
+revoke all on function public.protect_is_premium() from public;
+revoke all on function public.protect_is_premium() from anon;
+revoke all on function public.protect_is_premium() from authenticated;
+
+-- ─── Push tokens ─────────────────────────────────────────────────────────────
+-- Stores Expo push tokens per device. `token` is unique (one row per device).
+
+create table if not exists public.push_tokens (
+  id          bigserial   primary key,
+  token       text        not null unique,
+  user_id     uuid        references auth.users(id) on delete set null,
+  platform    text        check (platform in ('ios', 'android')),
+  created_at  timestamptz not null default now(),
+  updated_at  timestamptz not null default now()
+);
+
+create index if not exists push_tokens_user_id_idx on public.push_tokens(user_id);
+
+-- RLS: users can manage their own tokens; Edge Functions use service role (bypasses RLS)
+alter table public.push_tokens enable row level security;
+
+create policy "Users can upsert their own push tokens"
+  on public.push_tokens for insert
+  with check (auth.uid() = user_id or user_id is null);
+
+create policy "Users can delete their own push tokens"
+  on public.push_tokens for delete
+  using (auth.uid() = user_id);
+
+create policy "Users can read their own push tokens"
+  on public.push_tokens for select
+  using (auth.uid() = user_id);
+
+-- ─── Content catalogue (mirror of the bundled SQLite DB) ─────────────────────
+-- Same tables/columns as assets/albor.db so the app can sync rows 1:1 into
+-- its local SQLite copy (src/services/contentSync.js). Loaded with
+-- scripts/supabase/import-content.mjs (service role). Extra columns vs SQLite:
+-- stories.is_active / updated_at. Readers see only active stories and their
+-- children; writes are service-role only (no insert/update/delete policies).
+-- Bump content_seed_versions('catalog') after every content change so devices
+-- re-sync.
+
+create table if not exists public.main_categories (
+  id       bigint generated by default as identity primary key,
+  name_tr  text unique,
+  name_en  text,
+  name_de  text,
+  name_es  text
+);
+
+create table if not exists public.sub_categories (
+  id                bigint generated by default as identity primary key,
+  main_category_id  bigint references public.main_categories(id),
+  name_tr           text unique,
+  name_en           text,
+  name_de           text,
+  name_es           text
+);
+
+create table if not exists public.categories (
+  id             bigint generated by default as identity primary key,
+  category_name  text not null,
+  "order"        int
+);
+
+create table if not exists public.categories_translations (
+  id           bigint generated by default as identity primary key,
+  category_id  bigint references public.categories(id) on delete cascade,
+  language     text,
+  translation  text
+);
+
+create table if not exists public.subcategories (
+  id                bigint generated by default as identity primary key,
+  categori_id       bigint not null references public.categories(id) on delete cascade,
+  subcategory_name  text not null
+);
+
+create table if not exists public.books (
+  id               bigint generated by default as identity primary key,
+  list_no          int unique,
+  author           text,
+  publish_year     text,
+  category_id      int,
+  sub_category_id  bigint references public.sub_categories(id)
+);
+
+create table if not exists public.book_translations (
+  id             bigint generated by default as identity primary key,
+  book_id        bigint references public.books(id) on delete cascade,
+  lang_code      text,
+  title          text,
+  category_name  text,
+  unique (book_id, lang_code)
+);
+
+create table if not exists public.stories (
+  id                     bigint generated by default as identity primary key,
+  book_no                int,
+  version                text default '1',
+  current_read_minutes   int default 1,
+  possible_read_minutes  int default 1,
+  target_word_count      int default 160,
+  target_word_tolerance  int default 40,
+  is_active              boolean not null default true,
+  updated_at             timestamptz not null default now()
+);
+
+create index if not exists stories_active_idx on public.stories(is_active);
+
+create table if not exists public.story_translations (
+  id                  bigint generated by default as identity primary key,
+  story_id            bigint references public.stories(id) on delete cascade,
+  lang_code           text,
+  title               text,
+  description         text,
+  content             text,
+  hook                text,
+  one_minute_summary  text,
+  unique (story_id, lang_code)
+);
+
+create table if not exists public.story_conversation_variants (
+  story_id      bigint not null references public.stories(id) on delete cascade,
+  lang_code     text not null,
+  punchline     text,
+  thirty_sec    text,
+  question      text,
+  key_contrast  text,
+  primary key (story_id, lang_code)
+);
+
+create index if not exists idx_story_conversation_variants_lang
+  on public.story_conversation_variants(lang_code);
+
+create table if not exists public.content_seed_versions (
+  seed_key    text primary key,
+  version     int not null,
+  applied_at  timestamptz not null default now()
+);
+
+alter table public.main_categories             enable row level security;
+alter table public.sub_categories              enable row level security;
+alter table public.categories                  enable row level security;
+alter table public.categories_translations     enable row level security;
+alter table public.subcategories               enable row level security;
+alter table public.books                       enable row level security;
+alter table public.book_translations           enable row level security;
+alter table public.stories                     enable row level security;
+alter table public.story_translations          enable row level security;
+alter table public.story_conversation_variants enable row level security;
+alter table public.content_seed_versions       enable row level security;
+
+create policy "Anyone can read main categories"  on public.main_categories         for select using (true);
+create policy "Anyone can read sub categories"   on public.sub_categories          for select using (true);
+create policy "Anyone can read categories"       on public.categories              for select using (true);
+create policy "Anyone can read category labels"  on public.categories_translations for select using (true);
+create policy "Anyone can read subcategories"    on public.subcategories           for select using (true);
+create policy "Anyone can read books"            on public.books                   for select using (true);
+create policy "Anyone can read book translations" on public.book_translations      for select using (true);
+create policy "Anyone can read content versions" on public.content_seed_versions   for select using (true);
+
+create policy "Anyone can read active stories"
+  on public.stories for select
+  using (is_active = true);
+
+create policy "Anyone can read active story translations"
+  on public.story_translations for select
+  using (exists (select 1 from public.stories s where s.id = story_id and s.is_active));
+
+create policy "Anyone can read active story variants"
+  on public.story_conversation_variants for select
+  using (exists (select 1 from public.stories s where s.id = story_id and s.is_active));
+
+-- ─── Profile extensions (local → server migration) ────────────────────────────
+-- onboarded/preferences/streak_freeze_credits/share_count used to live only in
+-- AsyncStorage. See ToServerTasks.md §2.
+
+alter table public.profiles
+  add column if not exists onboarded boolean not null default false,
+  add column if not exists preferences jsonb not null default '{}'::jsonb,
+  add column if not exists streak_freeze_credits int not null default 0,
+  add column if not exists share_count int not null default 0;
+
+-- ─── User reads ──────────────────────────────────────────────────────────────
+-- One row per (user, story): last read date. Mirrors SQLite's
+-- `INSERT OR REPLACE` semantics in db.js#recordRead, since streak/today's-count
+-- are derived from distinct read_at days, not a full read log.
+
+create table if not exists public.user_reads (
+  user_id    uuid not null references auth.users(id) on delete cascade,
+  story_id   bigint not null,
+  read_at    date not null default current_date,
+  primary key (user_id, story_id)
+);
+
+create index if not exists user_reads_user_date_idx on public.user_reads(user_id, read_at);
+
+alter table public.user_reads enable row level security;
+
+create policy "Users can read their own reads"
+  on public.user_reads for select
+  using (auth.uid() = user_id);
+
+create policy "Users can upsert their own reads"
+  on public.user_reads for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can update their own reads"
+  on public.user_reads for update
+  using (auth.uid() = user_id);
+
+create policy "Users can delete their own reads"
+  on public.user_reads for delete
+  using (auth.uid() = user_id);
+
+-- ─── User likes ──────────────────────────────────────────────────────────────
+
+create table if not exists public.user_likes (
+  user_id    uuid not null references auth.users(id) on delete cascade,
+  story_id   bigint not null,
+  liked      boolean not null default true,
+  liked_at   timestamptz not null default now(),
+  primary key (user_id, story_id)
+);
+
+alter table public.user_likes enable row level security;
+
+create policy "Users can read their own likes"
+  on public.user_likes for select
+  using (auth.uid() = user_id);
+
+create policy "Users can upsert their own likes"
+  on public.user_likes for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can update their own likes"
+  on public.user_likes for update
+  using (auth.uid() = user_id);
+
+create policy "Users can delete their own likes"
+  on public.user_likes for delete
+  using (auth.uid() = user_id);
+
+-- ─── User selected categories ────────────────────────────────────────────────
+-- category_id matches the bundled SQLite `categories.id` — there is no
+-- server-side categories table yet (content is still asset-bundled), so no FK.
+
+create table if not exists public.user_selected_categories (
+  user_id      uuid not null references auth.users(id) on delete cascade,
+  category_id  int not null,
+  primary key (user_id, category_id)
+);
+
+alter table public.user_selected_categories enable row level security;
+
+create policy "Users can read their own selected categories"
+  on public.user_selected_categories for select
+  using (auth.uid() = user_id);
+
+create policy "Users can upsert their own selected categories"
+  on public.user_selected_categories for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can delete their own selected categories"
+  on public.user_selected_categories for delete
+  using (auth.uid() = user_id);
+
+-- ─── User streak freezes ─────────────────────────────────────────────────────
+
+create table if not exists public.user_streak_freezes (
+  user_id      uuid not null references auth.users(id) on delete cascade,
+  freeze_date  date not null,
+  used_at      timestamptz not null default now(),
+  primary key (user_id, freeze_date)
+);
+
+alter table public.user_streak_freezes enable row level security;
+
+create policy "Users can read their own streak freezes"
+  on public.user_streak_freezes for select
+  using (auth.uid() = user_id);
+
+create policy "Users can insert their own streak freezes"
+  on public.user_streak_freezes for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can delete their own streak freezes"
+  on public.user_streak_freezes for delete
+  using (auth.uid() = user_id);
+
+-- ─── User favorites ──────────────────────────────────────────────────────────
+
+create table if not exists public.user_favorites (
+  user_id     uuid not null references auth.users(id) on delete cascade,
+  story_id    bigint not null,
+  created_at  timestamptz not null default now(),
+  primary key (user_id, story_id)
+);
+
+alter table public.user_favorites enable row level security;
+
+create policy "Users can read their own favorites"
+  on public.user_favorites for select
+  using (auth.uid() = user_id);
+
+create policy "Users can insert their own favorites"
+  on public.user_favorites for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can delete their own favorites"
+  on public.user_favorites for delete
+  using (auth.uid() = user_id);
+
+-- ─── User favorite collections ───────────────────────────────────────────────
+-- Generalizes beyond "saved_for_later" — collection_id is a free-form key.
+
+create table if not exists public.user_collections (
+  user_id        uuid not null references auth.users(id) on delete cascade,
+  collection_id  text not null default 'saved_for_later',
+  story_id       bigint not null,
+  created_at     timestamptz not null default now(),
+  primary key (user_id, collection_id, story_id)
+);
+
+alter table public.user_collections enable row level security;
+
+create policy "Users can read their own collections"
+  on public.user_collections for select
+  using (auth.uid() = user_id);
+
+create policy "Users can insert into their own collections"
+  on public.user_collections for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can delete from their own collections"
+  on public.user_collections for delete
+  using (auth.uid() = user_id);
+
+-- ─── User variant usage ──────────────────────────────────────────────────────
+-- "Sohbette kullan" copy/share/mark-used log. Server-side so quota abuse can
+-- be checked independent of the client.
+
+create table if not exists public.user_variant_usage (
+  id               bigserial   primary key,
+  user_id          uuid        not null references auth.users(id) on delete cascade,
+  story_id         bigint,
+  story_title      text,
+  story_category   text,
+  variant_type     text,
+  variant_id       text,
+  variant_key      text,
+  action           text check (action in ('copy', 'share', 'mark_used')),
+  feedback_rating  int,
+  used_at          timestamptz not null default now()
+);
+
+create index if not exists user_variant_usage_user_idx on public.user_variant_usage(user_id, used_at desc);
+
+alter table public.user_variant_usage enable row level security;
+
+create policy "Users can read their own variant usage"
+  on public.user_variant_usage for select
+  using (auth.uid() = user_id);
+
+create policy "Users can insert their own variant usage"
+  on public.user_variant_usage for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can delete their own variant usage"
+  on public.user_variant_usage for delete
+  using (auth.uid() = user_id);
+
+-- ─── Variant usage quota enforcement (server-side RPC) ──────────────────────
+-- ToServerTasks.md item 7: "Varyant kullanım kotasını server'da denet
+-- (kötüye kullanım/jailbreak'e karşı)". Previously user_variant_usage allowed
+-- any authenticated client to INSERT freely (RLS only checked user_id =
+-- auth.uid()), so a modified/jailbroken client could bypass the client-side
+-- AsyncStorage quota and claim unlimited free "mark_used" actions. This makes
+-- the SECURITY DEFINER RPC below the only write path, and it enforces the
+-- daily free-tier quota in the database itself.
+
+create or replace function public.record_variant_usage(
+  p_story_id        bigint,
+  p_story_title     text,
+  p_story_category  text,
+  p_variant_type    text,
+  p_variant_id      text,
+  p_variant_key     text,
+  p_action          text,
+  p_feedback_rating int default null
+)
+returns bigint
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_user_id    uuid := auth.uid();
+  v_is_premium boolean;
+  v_used_count int;
+  v_new_id     bigint;
+  -- Free (non-premium) tier: max "mark_used" actions per rolling 24h.
+  -- Rationale: this is a "read a few stories a day" habit app; "Sohbette
+  -- kullan" is a bonus/sharing action layered on top of normal reading, not
+  -- the core loop, so a small daily allowance (enough to try the feature and
+  -- use it for a couple of favorite stories) while still pushing frequent
+  -- users toward premium feels right. Tune by changing this one constant.
+  c_free_daily_mark_used_limit constant int := 3;
+begin
+  if v_user_id is null then
+    raise exception 'not_authenticated';
+  end if;
+
+  if p_action = 'mark_used' then
+    select coalesce(is_premium, false) into v_is_premium
+    from public.profiles
+    where id = v_user_id;
+
+    if not coalesce(v_is_premium, false) then
+      select count(*) into v_used_count
+      from public.user_variant_usage
+      where user_id = v_user_id
+        and action = 'mark_used'
+        and used_at > now() - interval '24 hours';
+
+      if v_used_count >= c_free_daily_mark_used_limit then
+        raise exception 'quota_exceeded';
+      end if;
+    end if;
+  end if;
+
+  insert into public.user_variant_usage (
+    user_id, story_id, story_title, story_category,
+    variant_type, variant_id, variant_key, action, feedback_rating
+  ) values (
+    v_user_id, p_story_id, p_story_title, p_story_category,
+    p_variant_type, p_variant_id, p_variant_key, p_action, p_feedback_rating
+  )
+  returning id into v_new_id;
+
+  return v_new_id;
+end;
+$$;
+
+-- Lock down direct table writes: clients must go through the RPC above
+-- (which runs as SECURITY DEFINER and bypasses RLS for its own insert).
+-- SELECT and DELETE policies on user_variant_usage are left untouched so
+-- users can still read/delete their own usage history.
+drop policy if exists "Users can insert their own variant usage" on public.user_variant_usage;
+
+-- Only authenticated sessions may call the RPC (this app's device-token flow
+-- always has an authenticated, possibly-anonymous, session by the time
+-- variant usage is recorded). Explicitly do NOT grant to anon.
+revoke all on function public.record_variant_usage(bigint, text, text, text, text, text, text, int) from public;
+revoke all on function public.record_variant_usage(bigint, text, text, text, text, text, text, int) from anon;
+grant execute on function public.record_variant_usage(bigint, text, text, text, text, text, text, int) to authenticated;
+
+-- ─── User badges (seen state) ────────────────────────────────────────────────
+
+create table if not exists public.user_badges (
+  user_id   uuid not null references auth.users(id) on delete cascade,
+  badge_id  text not null,
+  seen_at   timestamptz not null default now(),
+  primary key (user_id, badge_id)
+);
+
+alter table public.user_badges enable row level security;
+
+create policy "Users can read their own badges"
+  on public.user_badges for select
+  using (auth.uid() = user_id);
+
+create policy "Users can insert their own badges"
+  on public.user_badges for insert
+  with check (auth.uid() = user_id);
+
+-- ─── Stats RPC (streak / totals / per-category / per-story) ─────────────────
+-- ToServerTasks.md item: "Streak/istatistik için Postgres RPC ya da view yaz
+-- (get_streak, get_stats, get_reads_per_category)". Single round trip that
+-- mirrors db.js's getTotalReads/getTodayReadsCount/getStreak/getLongestStreak/
+-- getReadsPerCategory/getReadCountsByStory exactly (including the streak
+-- freeze "protected days" logic), so the server becomes the one source of
+-- truth instead of client-side SQLite arithmetic.
+--
+-- SECURITY INVOKER (the default) is intentional here, unlike
+-- record_variant_usage: this function only reads rows the caller's own RLS
+-- policies already let them see (user_reads/user_streak_freezes filtered to
+-- auth.uid(); the catalogue tables are world-readable), so there's no need to
+-- escalate privilege and no risk of leaking another user's stats.
+
+create or replace function public.get_user_stats()
+returns jsonb
+language plpgsql
+security invoker
+set search_path = public
+as $$
+declare
+  v_user_id               uuid := auth.uid();
+  v_total_reads           int;
+  v_today_reads           int;
+  v_days_desc             date[];
+  v_days_asc              date[];
+  v_streak                int := 0;
+  v_longest               int := 0;
+  v_current               int := 1;
+  v_reads_per_category    jsonb;
+  v_read_counts_by_story  jsonb;
+  i                       int;
+begin
+  if v_user_id is null then
+    raise exception 'not_authenticated';
+  end if;
+
+  select count(*) into v_total_reads
+  from public.user_reads
+  where user_id = v_user_id;
+
+  select count(*) into v_today_reads
+  from public.user_reads
+  where user_id = v_user_id and read_at = current_date;
+
+  -- Distinct read days ∪ streak-freeze "protected" days, most recent first —
+  -- same union db.js#getStreak/getLongestStreak build client-side.
+  select array_agg(day order by day desc) into v_days_desc
+  from (
+    select read_at as day from public.user_reads where user_id = v_user_id
+    union
+    select freeze_date as day from public.user_streak_freezes where user_id = v_user_id
+  ) d;
+
+  if v_days_desc is not null and array_length(v_days_desc, 1) > 0 then
+    -- Streak only counts if the most recent protected/read day is today or
+    -- yesterday (matches db.js: `if (firstDay < yesterday) return 0;`).
+    if v_days_desc[1] >= current_date - 1 then
+      v_streak := 1;
+      for i in 2 .. array_length(v_days_desc, 1) loop
+        if v_days_desc[i - 1] - v_days_desc[i] = 1 then
+          v_streak := v_streak + 1;
+        else
+          exit;
+        end if;
+      end loop;
+    end if;
+
+    select array_agg(day order by day asc) into v_days_asc
+    from unnest(v_days_desc) as day;
+
+    v_longest := 1;
+    v_current := 1;
+    for i in 2 .. array_length(v_days_asc, 1) loop
+      if v_days_asc[i] - v_days_asc[i - 1] = 1 then
+        v_current := v_current + 1;
+        if v_current > v_longest then
+          v_longest := v_current;
+        end if;
+      else
+        v_current := 1;
+      end if;
+    end loop;
+  end if;
+
+  -- Keyed by category_name to match db.js#getReadsPerCategory's
+  -- map[categoryName] = count shape (checkBadges() consumes that shape).
+  select coalesce(jsonb_object_agg(cat, cnt), '{}'::jsonb) into v_reads_per_category
+  from (
+    select coalesce(c.category_name, 'Tümü') as cat, count(*) as cnt
+    from public.user_reads ur
+    left join public.stories s on s.id = ur.story_id
+    left join public.books b on b.list_no = s.book_no
+    left join public.subcategories sub on sub.id = b.category_id
+    left join public.categories c on c.id = sub.categori_id
+    where ur.user_id = v_user_id
+    group by coalesce(c.category_name, 'Tümü')
+  ) t;
+
+  select coalesce(jsonb_object_agg(story_id::text, cnt), '{}'::jsonb) into v_read_counts_by_story
+  from (
+    select story_id, count(*) as cnt
+    from public.user_reads
+    where user_id = v_user_id
+    group by story_id
+  ) t;
+
+  return jsonb_build_object(
+    'total_reads',          v_total_reads,
+    'today_reads',          v_today_reads,
+    'streak',                v_streak,
+    'longest_streak',        v_longest,
+    'reads_per_category',    v_reads_per_category,
+    'read_counts_by_story',  v_read_counts_by_story
+  );
+end;
+$$;
+
+revoke all on function public.get_user_stats() from public;
+grant execute on function public.get_user_stats() to authenticated;
+
+-- ─── Albor Yolu V1 ───────────────────────────────────────────────────────
+-- Kept in sync with migrations/20260725000000_career_path_v1.sql for fresh
+-- Supabase projects. Client events are trusted at the same level as user_reads;
+-- if ranks gain monetary value, move award validation to a server-authoritative
+-- rules engine before using them as entitlement evidence.
+create table if not exists public.user_career_events (
+  event_id text not null, user_id uuid not null references auth.users(id) on delete cascade,
+  credit_key text not null, credit_type text not null check (credit_type in ('H', 'D', 'U')),
+  event_subtype text not null, story_id text not null, category_id bigint, completion_method text,
+  occurred_at timestamptz not null, local_day date not null, timezone_offset_minutes integer not null,
+  rule_version integer not null check (rule_version >= 1), metadata_json jsonb,
+  created_at timestamptz not null default now(), primary key (user_id, event_id), unique (user_id, credit_key)
+);
+create index if not exists user_career_events_user_occurred_idx on public.user_career_events (user_id, occurred_at, event_id);
+
+create table if not exists public.user_career_state (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  active_path text check (active_path in ('exploration', 'depth', 'transfer')),
+  rule_version integer not null default 1 check (rule_version >= 1), selected_at timestamptz,
+  selection_source text, intro_seen_at timestamptz, migration_version integer not null default 0,
+  migration_summary_seen_at timestamptz, updated_at timestamptz not null default now()
+);
+
+create table if not exists public.user_career_nodes (
+  user_id uuid not null references auth.users(id) on delete cascade, node_id text not null, path_id text not null,
+  rule_version integer not null check (rule_version >= 1), earned_at timestamptz not null, seen_at timestamptz,
+  award_source text not null, requirements_snapshot_json jsonb not null, primary key (user_id, node_id)
+);
+
+create table if not exists public.user_legacy_badges (
+  user_id uuid not null references auth.users(id) on delete cascade, badge_id text not null,
+  earned_at timestamptz, primary key (user_id, badge_id)
+);
+
+alter table public.user_career_events enable row level security;
+alter table public.user_career_state enable row level security;
+alter table public.user_career_nodes enable row level security;
+alter table public.user_legacy_badges enable row level security;
+
+create policy "Users can read their own career events" on public.user_career_events for select using (auth.uid() = user_id);
+create policy "Users can read their own career state" on public.user_career_state for select using (auth.uid() = user_id);
+create policy "Users can read their own career nodes" on public.user_career_nodes for select using (auth.uid() = user_id);
+create policy "Users can read their own legacy badges" on public.user_legacy_badges for select using (auth.uid() = user_id);
+create policy "Users can delete their own career events" on public.user_career_events for delete using (auth.uid() = user_id);
+create policy "Users can delete their own career state" on public.user_career_state for delete using (auth.uid() = user_id);
+create policy "Users can delete their own career nodes" on public.user_career_nodes for delete using (auth.uid() = user_id);
+create policy "Users can delete their own legacy badges" on public.user_legacy_badges for delete using (auth.uid() = user_id);
+
+create or replace function public.record_career_event(
+  p_event_id text, p_credit_key text, p_credit_type text, p_event_subtype text,
+  p_story_id text, p_category_id bigint, p_completion_method text, p_occurred_at timestamptz,
+  p_local_day date, p_timezone_offset_minutes integer, p_rule_version integer, p_metadata_json jsonb default null
+) returns boolean language plpgsql security definer set search_path = public as $$
+declare v_rows integer;
+begin
+  if auth.uid() is null then raise exception 'not_authenticated'; end if;
+  if p_credit_type not in ('H', 'D', 'U') then raise exception 'invalid_credit_type'; end if;
+  if p_event_subtype is null or length(trim(p_event_subtype)) = 0 then raise exception 'invalid_event_subtype'; end if;
+  if (p_credit_type = 'H' and p_event_subtype not in ('story_completed', 'legacy_read'))
+    or (p_credit_type = 'D' and p_event_subtype not in ('revisit_24h', 'takeaway_saved', 'insight_saved'))
+    or (p_credit_type = 'U' and p_event_subtype not in ('conversation_mark_used', 'practice_completed', 'private_application_plan', 'legacy_mark_used')) then raise exception 'invalid_event_subtype'; end if;
+  if p_occurred_at > now() + interval '10 minutes' or p_local_day > current_date + 1 then raise exception 'invalid_event_time'; end if;
+  insert into public.user_career_events (event_id, user_id, credit_key, credit_type, event_subtype, story_id, category_id, completion_method, occurred_at, local_day, timezone_offset_minutes, rule_version, metadata_json)
+  values (p_event_id, auth.uid(), p_credit_key, p_credit_type, p_event_subtype, p_story_id, p_category_id, p_completion_method, p_occurred_at, p_local_day, p_timezone_offset_minutes, p_rule_version, p_metadata_json)
+  on conflict (user_id, credit_key) do nothing;
+  get diagnostics v_rows = row_count; return v_rows = 1;
+end; $$;
+
+create or replace function public.upsert_career_state(p_active_path text default null, p_rule_version integer default 1, p_selected_at timestamptz default null, p_selection_source text default null)
+returns void language plpgsql security definer set search_path = public as $$
+begin
+  if auth.uid() is null then raise exception 'not_authenticated'; end if;
+  if p_active_path is not null and p_active_path not in ('exploration', 'depth', 'transfer') then raise exception 'invalid_active_path'; end if;
+  insert into public.user_career_state (user_id, active_path, rule_version, selected_at, selection_source) values (auth.uid(), p_active_path, p_rule_version, p_selected_at, p_selection_source)
+  on conflict (user_id) do update set active_path = excluded.active_path, rule_version = excluded.rule_version, selected_at = excluded.selected_at, selection_source = excluded.selection_source, updated_at = now();
+end; $$;
+
+create or replace function public.upsert_career_migration_state(p_migration_version integer default null, p_migration_summary_seen_at timestamptz default null)
+returns void language plpgsql security definer set search_path = public as $$
+begin
+  if auth.uid() is null then raise exception 'not_authenticated'; end if;
+  if p_migration_version is not null and p_migration_version < 0 then raise exception 'invalid_migration_version'; end if;
+  insert into public.user_career_state (user_id, migration_version, migration_summary_seen_at)
+  values (auth.uid(), coalesce(p_migration_version, 0), p_migration_summary_seen_at)
+  on conflict (user_id) do update set
+    migration_version = greatest(public.user_career_state.migration_version, excluded.migration_version),
+    migration_summary_seen_at = coalesce(public.user_career_state.migration_summary_seen_at, excluded.migration_summary_seen_at),
+    updated_at = now();
+end; $$;
+
+create or replace function public.award_career_nodes(p_nodes jsonb)
+returns void language plpgsql security definer set search_path = public as $$
+begin
+  if auth.uid() is null then raise exception 'not_authenticated'; end if;
+  if jsonb_typeof(p_nodes) <> 'array' then raise exception 'invalid_nodes'; end if;
+  insert into public.user_career_nodes (user_id, node_id, path_id, rule_version, earned_at, award_source, requirements_snapshot_json)
+  select auth.uid(), item->>'nodeId', item->>'pathId', coalesce((item->>'ruleVersion')::integer, 1), coalesce((item->>'earnedAt')::timestamptz, now()), coalesce(item->>'awardSource', 'live_event'), coalesce(item->'requirementsSnapshot', '[]'::jsonb)
+  from jsonb_array_elements(p_nodes) item where coalesce(item->>'nodeId', '') <> '' and coalesce(item->>'pathId', '') <> ''
+  on conflict (user_id, node_id) do nothing;
+end; $$;
+
+create or replace function public.mark_career_node_seen(p_node_id text)
+returns void language plpgsql security definer set search_path = public as $$
+begin
+  if auth.uid() is null then raise exception 'not_authenticated'; end if;
+  update public.user_career_nodes set seen_at = coalesce(seen_at, now()) where user_id = auth.uid() and node_id = p_node_id;
+end; $$;
+
+create or replace function public.upsert_legacy_badges(p_badge_ids jsonb)
+returns void language plpgsql security definer set search_path = public as $$
+begin
+  if auth.uid() is null then raise exception 'not_authenticated'; end if;
+  if jsonb_typeof(p_badge_ids) <> 'array' then raise exception 'invalid_badge_ids'; end if;
+  insert into public.user_legacy_badges (user_id, badge_id, earned_at)
+  select auth.uid(), value, now() from jsonb_array_elements_text(p_badge_ids) value where length(value) > 0
+  on conflict (user_id, badge_id) do nothing;
+end; $$;
+
+revoke all on function public.record_career_event(text, text, text, text, text, bigint, text, timestamptz, date, integer, integer, jsonb) from public;
+revoke all on function public.upsert_career_state(text, integer, timestamptz, text) from public;
+revoke all on function public.upsert_career_migration_state(integer, timestamptz) from public;
+revoke all on function public.award_career_nodes(jsonb) from public;
+revoke all on function public.mark_career_node_seen(text) from public;
+revoke all on function public.upsert_legacy_badges(jsonb) from public;
+grant execute on function public.record_career_event(text, text, text, text, text, bigint, text, timestamptz, date, integer, integer, jsonb) to authenticated;
+grant execute on function public.upsert_career_state(text, integer, timestamptz, text) to authenticated;
+grant execute on function public.upsert_career_migration_state(integer, timestamptz) to authenticated;
+grant execute on function public.award_career_nodes(jsonb) to authenticated;
+grant execute on function public.mark_career_node_seen(text) to authenticated;
+grant execute on function public.upsert_legacy_badges(jsonb) to authenticated;
+
+-- ─── Referral attribution (Plan Bölüm 3.1) ────────────────────────────────────
+-- Kept in sync with migrations/20260910000000_referral_attribution.sql for
+-- fresh Supabase projects.
+
+alter table public.profiles
+  add column if not exists premium_bonus_until timestamptz;
+
+create table if not exists public.referrals (
+  invited_id  uuid primary key references auth.users(id) on delete cascade,
+  referrer_id uuid not null references auth.users(id) on delete cascade,
+  story_id    bigint,
+  lang        text,
+  created_at  timestamptz not null default now()
+);
+
+create index if not exists referrals_referrer_idx on public.referrals(referrer_id);
+
+alter table public.referrals enable row level security;
+
+create policy "Users can read referrals they're part of"
+  on public.referrals for select
+  using (auth.uid() = invited_id or auth.uid() = referrer_id);
+
+create or replace function public.claim_referral(
+  p_referrer_id uuid,
+  p_story_id bigint default null,
+  p_lang text default null
+) returns table(claimed boolean, premium_bonus_until timestamptz)
+language plpgsql security definer set search_path = public as $$
+declare
+  v_invited uuid := auth.uid();
+  v_bonus timestamptz;
+  v_rows integer;
+begin
+  if v_invited is null then raise exception 'not_authenticated'; end if;
+  if p_referrer_id is null or p_referrer_id = v_invited
+    or not exists (select 1 from public.profiles where id = p_referrer_id) then
+    return query select false, null::timestamptz;
+    return;
+  end if;
+
+  insert into public.referrals (invited_id, referrer_id, story_id, lang)
+  values (v_invited, p_referrer_id, p_story_id, p_lang)
+  on conflict (invited_id) do nothing;
+  get diagnostics v_rows = row_count;
+  if v_rows = 0 then
+    return query select false, null::timestamptz;
+    return;
+  end if;
+
+  update public.profiles
+  set premium_bonus_until = greatest(now(), coalesce(premium_bonus_until, now())) + interval '7 days',
+      updated_at = now()
+  where id = v_invited
+  returning premium_bonus_until into v_bonus;
+
+  update public.profiles
+  set premium_bonus_until = greatest(now(), coalesce(premium_bonus_until, now())) + interval '7 days',
+      updated_at = now()
+  where id = p_referrer_id;
+
+  return query select true, v_bonus;
+end; $$;
+
+revoke all on function public.claim_referral(uuid, bigint, text) from public;
+grant execute on function public.claim_referral(uuid, bigint, text) to authenticated;
+
+-- ─── In-app account deletion (App Store 5.1.1(v)) ──────────────────────────
+-- Kept in sync with migrations/20261002000000_delete_my_account.sql.
+create or replace function public.delete_my_account()
+returns void
+language plpgsql security definer set search_path = public, auth as $$
+declare
+  v_uid uuid := auth.uid();
+begin
+  if v_uid is null then
+    raise exception 'not authenticated';
+  end if;
+  delete from auth.users where id = v_uid;
+end;
+$$;
+
+revoke all on function public.delete_my_account() from public, anon;
+grant execute on function public.delete_my_account() to authenticated;
+
+-- ─── Done ────────────────────────────────────────────────────────────────────
+-- After running this schema:
+--   1. Copy your Supabase URL + anon key
+--   2. Add them to app.json → expo.extra.supabase
+--   3. Deploy the Edge Function: supabase functions deploy notify-new-story

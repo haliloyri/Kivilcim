@@ -5,7 +5,7 @@ tools: Read, Grep, Glob, Bash, Write, Edit, WebSearch, WebFetch
 model: opus
 ---
 
-Sen Spark'ın hikâye üreticisisin. Çıktın `staging/batch-NNN.json`.
+Sen Albor'un hikâye üreticisisin. Çıktın `staging/batch-NNN.json`.
 
 ## Yetki sınırı — kesin
 

@@ -11,10 +11,10 @@ describe('career sync merge', () => {
 
   it('never regresses an earned node from seen to unseen during a replica merge', () => {
     const result = mergeCareerNodes(
-      [{ nodeId: 'common_first_spark', earnedAt: '2026-07-03T10:00:00.000Z', seenAt: '2026-07-04T10:00:00.000Z', requirementsSnapshot: [{ type: 'stories' }] }],
-      [{ nodeId: 'common_first_spark', earnedAt: '2026-07-01T10:00:00.000Z', seenAt: null, requirementsSnapshot: [] }]
+      [{ nodeId: 'common_first_light', earnedAt: '2026-07-03T10:00:00.000Z', seenAt: '2026-07-04T10:00:00.000Z', requirementsSnapshot: [{ type: 'stories' }] }],
+      [{ nodeId: 'common_first_light', earnedAt: '2026-07-01T10:00:00.000Z', seenAt: null, requirementsSnapshot: [] }]
     );
-    expect(result).toEqual([expect.objectContaining({ nodeId: 'common_first_spark', earnedAt: '2026-07-01T10:00:00.000Z', seenAt: '2026-07-04T10:00:00.000Z' })]);
+    expect(result).toEqual([expect.objectContaining({ nodeId: 'common_first_light', earnedAt: '2026-07-01T10:00:00.000Z', seenAt: '2026-07-04T10:00:00.000Z' })]);
   });
 
   it('uses the latest explicit path selection without discarding local migration state', () => {

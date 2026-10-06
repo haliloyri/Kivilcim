@@ -10,12 +10,12 @@ const loadSource = (value) => {
 };
 
 describe('stories source flag', () => {
-  it('defaults to the bundled local database', () => {
-    expect(loadSource()).toBe('local');
-    expect(loadSource('anything')).toBe('local');
+  it('defaults to the Supabase catalogue sync', () => {
+    expect(loadSource()).toBe('supabase');
+    expect(loadSource('anything')).toBe('supabase');
   });
-  it('only enables Supabase when asked explicitly', () => {
-    expect(loadSource('supabase')).toBe('supabase');
-    expect(loadSource(' SUPABASE ')).toBe('supabase');
+  it('only falls back to the bundled database when asked explicitly', () => {
+    expect(loadSource('local')).toBe('local');
+    expect(loadSource(' LOCAL ')).toBe('local');
   });
 });

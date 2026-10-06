@@ -213,7 +213,7 @@ Premium = *aksiyon sırasında* gerekli hissettirmek
 
 Uygulamanın 2–3 yerinde aynı cümle geçsin:
 
-> **“Kıvılcım Premium, daha çok okuman için değil;  
+> **“Albor Premium, daha çok okuman için değil;  
 > konuşurken daha az düşünüp daha çok etki bırakman için.”**
 
 👉 Bu cümle **fiyatın özeti**dir.

@@ -16,11 +16,11 @@
 
   <rect width="100%" height="100%" fill="url(#bg)"/>
   <rect x="0" y="0" width="100%" height="120" fill="#fcf9f4"/>
-  <text x="60" y="78" font-family="Georgia, serif" font-size="42" fill="#823b18">Spark ✦</text>
-  <text x="60" y="130" font-family="Arial, sans-serif" font-size="30" fill="#7D6F5E">Kıvılcım Yolu</text>
+  <text x="60" y="78" font-family="Georgia, serif" font-size="42" fill="#823b18">Albor ✦</text>
+  <text x="60" y="130" font-family="Arial, sans-serif" font-size="30" fill="#7D6F5E">Albor Yolu</text>
 
   
-  <text x="60" y="230" font-family="Georgia, serif" font-size="64" fill="#1A1A1A">Kıvılcım Yolu</text>
+  <text x="60" y="230" font-family="Georgia, serif" font-size="64" fill="#1A1A1A">Albor Yolu</text>
   <text x="60" y="276" font-family="Arial, sans-serif" font-size="30" fill="#7D6F5E">Okumaktan fikirleri hayata taşımaya sakin bir yol</text>
 
   <defs>
@@ -35,7 +35,7 @@
   <circle cx="176" cy="388" r="4" fill="#F8D47C"/><circle cx="240" cy="436" r="3" fill="#8FC8FF"/><circle cx="576" cy="378" r="4" fill="#F8D47C"/><circle cx="734" cy="428" r="3" fill="#F8D47C"/>
   <rect x="100" y="360" rx="18" ry="18" width="220" height="38" fill="#0B1B40" opacity="0.68" stroke="#F9D783" stroke-opacity="0.56"/>
   <text x="122" y="386" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1" fill="#fff">AKTARIM YOLU</text>
-  <text x="100" y="478" font-family="Georgia, serif" font-size="62" fill="#fff">Kıvılcım Taşıyıcısı</text>
+  <text x="100" y="478" font-family="Georgia, serif" font-size="62" fill="#fff">Meşale Taşıyan</text>
   <text x="100" y="528" font-family="Arial, sans-serif" font-size="27" fill="#F1F4FF">Küçük ve anlamlı adımlar kalıcı bir bilgelik biriktirir.</text>
   <rect x="100" y="564" rx="18" ry="18" width="310" height="43" fill="#0B1B40" opacity="0.7"/>
   <text x="124" y="592" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">⌁  3/6 · YOLCULUĞUN</text>
@@ -52,7 +52,7 @@
   <rect x="60" y="1280" rx="28" ry="28" width="960" height="408" fill="#ffffff" stroke="#E8E3DA"/>
   <line x1="114" y1="1354" x2="114" y2="1622" stroke="#D8C08F" stroke-width="3"/>
   <circle cx="114" cy="1352" r="16" fill="#C89B3C"/><text x="106" y="1359" font-family="Arial" font-size="18" fill="#fff">✓</text>
-  <text x="154" y="1348" font-family="Georgia, serif" font-size="37" fill="#1A1A1A">İlk Kıvılcım</text><text x="154" y="1386" font-family="Arial" font-size="23" fill="#7D6F5E">Kazanıldı</text>
+  <text x="154" y="1348" font-family="Georgia, serif" font-size="37" fill="#1A1A1A">İlk Işık</text><text x="154" y="1386" font-family="Arial" font-size="23" fill="#7D6F5E">Kazanıldı</text>
   <circle cx="114" cy="1444" r="16" fill="#C89B3C"/><text x="106" y="1451" font-family="Arial" font-size="18" fill="#fff">✓</text>
   <text x="154" y="1440" font-family="Georgia, serif" font-size="37" fill="#1A1A1A">Yolcu</text><text x="154" y="1478" font-family="Arial" font-size="23" fill="#7D6F5E">Kazanıldı</text>
   <circle cx="114" cy="1536" r="16" fill="#fff" stroke="#C89B3C" stroke-width="4"/><text x="154" y="1532" font-family="Georgia, serif" font-size="37" fill="#1A1A1A">Düşünür</text><text x="154" y="1570" font-family="Arial" font-size="23" fill="#7D6F5E">Devam ediyor</text>

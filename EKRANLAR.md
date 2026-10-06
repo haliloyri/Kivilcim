@@ -1,6 +1,6 @@
-# Spark — Ekran & Özellik Dokümantasyonu
+# Albor — Ekran & Özellik Dokümantasyonu
 
-> **Spark**, kişisel gelişim ve farkındalık hikayeleri sunan bir React Native (Expo) mobil uygulamasıdır. Kullanıcılar kısa hikayeler okur, ilerleme takip eder ve hikayeleri sosyal ortamlarda kullanmak için kısa versiyonlarına dönüştürür.
+> **Albor**, kişisel gelişim ve farkındalık hikayeleri sunan bir React Native (Expo) mobil uygulamasıdır. Kullanıcılar kısa hikayeler okur, ilerleme takip eder ve hikayeleri sosyal ortamlarda kullanmak için kısa versiyonlarına dönüştürür.
 
 ---
 
@@ -234,7 +234,7 @@ Kimlik, okuma ritmi, tercihler, abonelik ve destek. (Alt sekme: 👤 Profil)
 
 ### 1. Kimlik başlığı
 - Baş harfli düz avatar (yumuşak `primary` zemin), serif ad, Premium ise küçük "Premium" etiketi
-- Adın altında Kıvılcım Yolu unvanı → dokununca Yolum sekmesi
+- Adın altında Albor Yolu unvanı → dokununca Yolum sekmesi
 - Misafirde: "Misafir kullanıcı" + "Adını ekle →" + "Paylaştığın kartlarda görünür."
 - Başlığın tamamı dokunulabilir → ad düzenleme paneli (alttan açılır)
 

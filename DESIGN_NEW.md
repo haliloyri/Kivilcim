@@ -1,4 +1,4 @@
-# Spark Tasarım Tanımları (Açık + Koyu Mod) — Güncellenmiş
+# Albor Tasarım Tanımları (Açık + Koyu Mod) — Güncellenmiş
 
 Bu versiyon, mevcut yapıyı bozmadan daha premium, daha modern ve daha bağımlılık yaratan bir okuma deneyimi hedefler.
 

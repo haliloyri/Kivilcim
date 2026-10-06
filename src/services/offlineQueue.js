@@ -21,9 +21,20 @@
  * "happened" or "failed for a real (non-network) reason, don't retry."
  *
  * Persistence: operations are stored as plain serializable
- * `{ type, payload, ownerUserId }` descriptors in AsyncStorage (not closures), so the
- * queue survives an app kill/restart while offline — the common real-world
- * case for a mobile app, not just a flaky-request retry.
+ * `{ id, type, payload, ownerUserId, queuedAt }` descriptors in AsyncStorage
+ * (not closures), so the queue survives an app kill/restart while offline —
+ * the common real-world case for a mobile app, not just a flaky-request retry.
+ * A queued item IS the "pending sync" mark: it stays until the server accepts
+ * it (see getPendingSyncCount / hasPendingSync).
+ *
+ * Offline behavior: when the device is known to be offline, or this user
+ * already has queued items, a write goes straight to the queue (no network
+ * timeout, and the server sees operations in the order they happened). The
+ * queue flushes on startup, on foreground and on every reconnect.
+ *
+ * Writes made before this device has any Supabase session (first launch
+ * offline) are not queued: migrateLocalToServer backfills the local data once
+ * the first session is created.
  *
  * Deliberately NOT queued: variant usage ("Sohbette kullan" copy/share/
  * mark-used). It goes through the quota-enforcing `record_variant_usage`
@@ -34,9 +45,10 @@
  */
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { SUPABASE_LIVE, supabase, getCurrentUser } from './supabase';
+import { SUPABASE_LIVE, supabase } from './supabase';
+import { isOnline, onReconnect } from './connectivity';
 
-const QUEUE_KEY = '@kivilcim_offline_queue_v1';
+const QUEUE_KEY = '@albor_offline_queue_v1';
 
 // type -> (userId, payload) => Promise<void>. Must throw on failure.
 const HANDLERS = {
@@ -221,11 +233,51 @@ const writeQueue = async (queue) => {
   }
 };
 
+// Serializes every read-modify-write of the stored queue, so two writes fired
+// back to back (or a write landing mid-flush) can't overwrite each other.
+let queueLock = Promise.resolve();
+const withQueue = (fn) => {
+  const run = queueLock.then(fn, fn);
+  queueLock = run.catch(() => {});
+  return run;
+};
+
+let itemSeq = 0;
+const newItemId = () => `${Date.now().toString(36)}-${(itemSeq++).toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+
+// Local session only — no network call, so it works offline. (getCurrentUser
+// in supabase.js calls auth.getUser(), which needs the server.)
+const getSessionUserId = async () => {
+  const { data } = await supabase.auth.getSession();
+  return data?.session?.user?.id ?? null;
+};
+
+const queueItem = (type, payload, ownerUserId) => withQueue(async () => {
+  const queue = await readQueue();
+  queue.push({ id: newItemId(), type, payload, ownerUserId, queuedAt: new Date().toISOString() });
+  await writeQueue(queue);
+});
+
+/** Number of writes still waiting to reach Supabase (all owners). */
+export const getPendingSyncCount = async () => (await readQueue()).length;
+
+/** True while the current session has writes that haven't reached Supabase. */
+export const hasPendingSync = async () => {
+  if (!SUPABASE_LIVE) return false;
+  try {
+    const uid = await getSessionUserId();
+    if (!uid) return false;
+    return (await readQueue()).some((item) => item.ownerUserId === uid);
+  } catch {
+    return false;
+  }
+};
+
 /**
- * Attempts a write immediately. On a connectivity-looking failure, persists
- * `{ type, payload }` to the durable queue for `flushOfflineQueue()` to
- * retry later. On any other failure, logs and drops it (retrying wouldn't
- * help). Safe to call without awaiting — never throws.
+ * Sends a write to Supabase, or marks it pending in the durable queue when
+ * the device is offline, the request fails for a connectivity reason, or
+ * earlier writes are still pending. Other failures are logged and dropped
+ * (retrying wouldn't help). Safe to call without awaiting — never throws.
  */
 export const enqueueAndSync = async (type, payload = {}) => {
   if (!SUPABASE_LIVE) return;
@@ -234,90 +286,121 @@ export const enqueueAndSync = async (type, payload = {}) => {
     console.warn('[offlineQueue] unknown operation type:', type);
     return;
   }
-  let user;
+  let uid = null;
   try {
-    user = await getCurrentUser();
-    if (!user?.id) return; // no session yet — nothing to sync or queue
-    await handler(user.id, payload);
+    uid = await getSessionUserId();
+    if (!uid) return; // no session yet — migrateLocalToServer backfills later
+
+    const queue = await readQueue();
+    const hasPending = queue.some((item) => item.ownerUserId === uid);
+    const online = await isOnline();
+    if (hasPending || !online) {
+      await queueItem(type, payload, uid);
+      if (online) flushOfflineQueue();
+      return;
+    }
+    await handler(uid, payload);
   } catch (error) {
-    if (isNetworkError(error) && user?.id) {
-      const queue = await readQueue();
-      queue.push({ type, payload, ownerUserId: user.id, queuedAt: new Date().toISOString() });
-      await writeQueue(queue);
+    if (isNetworkError(error) && uid) {
+      await queueItem(type, payload, uid);
       console.warn('[offlineQueue] offline — queued for later:', type);
-    } else if (isNetworkError(error)) {
-      console.warn('[offlineQueue] offline before a session was available:', type);
     } else {
       console.warn('[offlineQueue] failed (not retried):', type, error?.message);
     }
   }
 };
 
-let flushing = false;
+let flushPromise = null;
+let flushAgain = false;
 
 /**
  * Replays queued operations in order (oldest first). Stops at the first
  * item that still fails with a connectivity-looking error — keeps it and
  * everything after it queued, since we're probably still offline — but
  * drops individual items that fail for a different reason so one bad item
- * can't block the rest forever.
+ * can't block the rest forever. A call made while a flush is running waits
+ * for it and schedules one more pass for items queued in the meantime.
  */
-export const flushOfflineQueue = async () => {
-  if (!SUPABASE_LIVE || flushing) return;
-  flushing = true;
+export const flushOfflineQueue = () => {
+  if (!SUPABASE_LIVE) return Promise.resolve();
+  if (flushPromise) {
+    flushAgain = true;
+    return flushPromise;
+  }
+  flushPromise = runFlush().then((stillOffline) => {
+    flushPromise = null;
+    if (flushAgain) {
+      flushAgain = false;
+      if (!stillOffline) return flushOfflineQueue();
+    }
+    return undefined;
+  });
+  return flushPromise;
+};
+
+// Returns true when it stopped because the network is still down.
+const runFlush = async () => {
+  let stillOffline = false;
   try {
-    const queue = await readQueue();
+    const uid = await getSessionUserId();
+    if (!uid) return;
+
+    // Snapshot (giving ids to items queued by older app versions).
+    const queue = await withQueue(async () => {
+      const stored = await readQueue();
+      let changed = false;
+      stored.forEach((item) => {
+        if (!item.id) { item.id = newItemId(); changed = true; }
+      });
+      if (changed) await writeQueue(stored);
+      return stored;
+    });
     if (!queue.length) return;
 
-    const user = await getCurrentUser();
-    if (!user?.id) return;
-
-    const remaining = [];
-    for (let i = 0; i < queue.length; i++) {
-      const item = queue[i];
+    const done = new Set();
+    for (const item of queue) {
       const handler = HANDLERS[item.type];
-      if (!handler) continue; // drop unknown (e.g. leftover from an older app version)
+      if (!handler) { done.add(item.id); continue; } // leftover from an older app version
       // Never replay an operation captured under another authenticated user.
       // Older queue rows without an owner are also retained for manual/session
       // recovery instead of guessing who should receive them.
-      if (!item.ownerUserId || item.ownerUserId !== user.id) {
-        remaining.push(item);
-        continue;
-      }
+      if (!item.ownerUserId || item.ownerUserId !== uid) continue;
       try {
-        await handler(user.id, item.payload);
+        await handler(uid, item.payload);
+        done.add(item.id);
       } catch (error) {
         if (isNetworkError(error)) {
-          remaining.push(...queue.slice(i));
+          stillOffline = true;
           break;
         }
         console.warn('[offlineQueue] dropping failed item:', item.type, error?.message);
+        done.add(item.id);
       }
     }
 
-    await writeQueue(remaining);
-    if (remaining.length === 0 && queue.length > 0) {
-      console.log('[offlineQueue] flushed', queue.length, 'queued write(s)');
-    }
+    // Remove only what was handled; keep anything queued during the flush.
+    await withQueue(async () => {
+      const stored = await readQueue();
+      await writeQueue(stored.filter((item) => !done.has(item.id)));
+    });
+    if (done.size > 0) console.log('[offlineQueue] synced', done.size, 'pending write(s)');
   } catch (error) {
     console.warn('[offlineQueue] flush failed:', error?.message);
-  } finally {
-    flushing = false;
   }
+  return stillOffline;
 };
 
 let appStateSubscription = null;
+let reconnectUnsubscribe = null;
 
 /**
  * Call once at app startup (after a session exists). Flushes immediately,
- * then again every time the app comes back to the foreground — the
- * pragmatic proxy for "we might have reconnected" without adding a native
- * connectivity-detection dependency (no NetInfo/expo-network in this repo
- * yet). A future upgrade could subscribe to real connectivity change
- * events for instant flushing instead of foreground-triggered polling.
+ * then again every time the app comes back to the foreground or the device
+ * reconnects.
  */
 export const initOfflineQueueFlush = () => {
   flushOfflineQueue();
+  if (!reconnectUnsubscribe) reconnectUnsubscribe = onReconnect(() => flushOfflineQueue());
   if (appStateSubscription) return; // already listening
   // AppState is only needed when startup wiring is enabled. Deferring this
   // require keeps the durable queue usable by non-UI consumers and tests.

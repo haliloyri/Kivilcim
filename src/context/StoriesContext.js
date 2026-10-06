@@ -1,44 +1,23 @@
-// StoriesContext — loads stories from the bundled SQLite DB. The Supabase
-// refresh only runs when EXPO_PUBLIC_STORIES_SOURCE=supabase (see featureFlags).
+// StoriesContext — renders stories from the local SQLite DB, then (when
+// STORIES_SOURCE is 'supabase', the default) syncs the catalogue from Supabase
+// into SQLite and reloads if anything changed. Supabase decides which stories
+// are active; the bundled DB is the offline fallback.
 // Refreshes automatically when the language changes.
-import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
-import NetInfo from '@react-native-community/netinfo';
+import React, { createContext, useContext, useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { useTheme } from './ThemeContext';
 import { getStoriesForLang, getCategoriesFromDb, getParentCategories, waitForData } from '../db/db';
-import { SUPABASE_LIVE, fetchStoriesFromSupabase } from '../services/supabase';
-import { saveStoriesToCache, loadStoriesFromCache, clearStoriesCache } from '../services/storiesCache';
+import { SUPABASE_LIVE } from '../services/supabase';
+import { syncContentFromSupabase } from '../services/contentSync';
+import { isOnline, onConnectivityChange } from '../services/connectivity';
+import { clearStoriesCache } from '../services/storiesCache';
 import { STORIES_SOURCE } from '../config/featureFlags';
 import { cleanCategoryLabel } from '../utils/categoryImages';
 
 const USE_REMOTE_STORIES = STORIES_SOURCE === 'supabase';
-// In local mode the AsyncStorage cache only holds stale Supabase copies; drop it once.
+// The old AsyncStorage story cache is superseded by the SQLite sync; drop it once.
 let staleCacheCleared = false;
 
 const StoriesContext = createContext();
-
-/**
- * Derive categories and parentCategories from a flat mapped stories array.
- * Used when stories come from Supabase (which has no separate category tables).
- */
-const deriveCategories = (stories) => {
-  const catsSet = new Set();
-  const parentMap = {};
-
-  for (const s of stories) {
-    if (s.cat) catsSet.add(s.cat);
-    const pid = s.parent_cat_id;
-    if (pid != null) {
-      if (!parentMap[pid]) {
-        parentMap[pid] = { id: pid, name: s.parent_cat ?? '', raw_name: s.parent_cat_raw ?? '', count: 0 };
-      }
-      parentMap[pid].count++;
-    }
-  }
-
-  const categories = Array.from(catsSet).sort();
-  const parentCategories = Object.values(parentMap).sort((a, b) => a.id - b.id);
-  return { categories, parentCategories };
-};
 
 const cleanStoryCategoryLabels = (stories = []) => stories.map((story) => ({
   ...story,
@@ -56,110 +35,99 @@ export const StoriesProvider = ({ children }) => {
   const [errorMsg, setErrorMsg] = useState(null);
   const [storiesSource, setStoriesSource] = useState('sqlite'); // 'supabase' | 'cache' | 'sqlite'
   const [isOffline, setIsOffline] = useState(false);
+  // Set while the catalogue still has to be pulled (offline at launch or a
+  // failed sync); the reconnect listener below retries it.
+  const remoteSyncPending = useRef(false);
+  const syncingRef = useRef(false);
+  const loadFromSqliteRef = useRef(null);
+
+  // Pull the catalogue into SQLite in the background; reload only on change.
+  const syncRemote = useCallback(async () => {
+    if (!USE_REMOTE_STORIES || !SUPABASE_LIVE || syncingRef.current) return;
+    syncingRef.current = true;
+    try {
+      const { changed } = await syncContentFromSupabase();
+      remoteSyncPending.current = false;
+      if (changed && loadFromSqliteRef.current && (await loadFromSqliteRef.current())) setErrorMsg(null);
+      setStoriesSource('supabase');
+    } catch (e) {
+      remoteSyncPending.current = true;
+      throw e;
+    } finally {
+      syncingRef.current = false;
+    }
+  }, []);
 
   const refresh = useCallback(async () => {
     setLoading(true);
     setErrorMsg(null);
-
-    const applyStories = (nextStories, source) => {
-      const cleanedStories = cleanStoryCategoryLabels(nextStories);
-      const orderedStories = [...cleanedStories].sort(
-        (a, b) =>
-          Number(b.min ?? b.possible_read_minutes ?? 1) - Number(a.min ?? a.possible_read_minutes ?? 1) ||
-          Number(b.story_id ?? b.id) - Number(a.story_id ?? a.id)
-      );
-      const { categories: cats, parentCategories: parents } = deriveCategories(orderedStories);
-      setStories(orderedStories);
-      setCategories(cats);
-      setParentCategories(parents);
-      setStoriesSource(source);
-    };
-
-    // Render the latest local content first. This deliberately accepts a stale
-    // cache: readers should still be able to browse on a flight or weak signal.
-    let hasLocalStories = false;
-    if (!USE_REMOTE_STORIES && !staleCacheCleared) {
+    if (!staleCacheCleared) {
       staleCacheCleared = true;
       clearStoriesCache().catch(() => {});
     }
-    if (USE_REMOTE_STORIES) {
-      try {
-        const cached = await loadStoriesFromCache(lang, { allowStale: true });
-        if (cached?.length) {
-          applyStories(cached, 'cache');
-          hasLocalStories = true;
-        }
-      } catch (e) {
-        console.warn('[StoriesContext] Cache load failed:', e.message);
-      }
-    }
 
-    let sqliteStories = [];
-    try {
+    const loadFromSqlite = async () => {
       await waitForData();
       const [storiesList, catsList, parents] = await Promise.all([
         getStoriesForLang(lang),
         getCategoriesFromDb(lang),
         getParentCategories(lang),
       ]);
-      sqliteStories = cleanStoryCategoryLabels(storiesList);
-      if (!hasLocalStories) {
-        setStories(sqliteStories);
-        setCategories(catsList.map((category) => cleanCategoryLabel(category)));
-        setParentCategories(parents.map((category) => ({
-          ...category,
-          name: cleanCategoryLabel(category.name),
-        })));
-        setStoriesSource('sqlite');
-        hasLocalStories = storiesList.length > 0;
-      }
+      setStories(cleanStoryCategoryLabels(storiesList));
+      setCategories(catsList.map((category) => cleanCategoryLabel(category)));
+      setParentCategories(parents.map((category) => ({
+        ...category,
+        name: cleanCategoryLabel(category.name),
+      })));
       setContentLang(lang);
+      return storiesList.length > 0;
+    };
+
+    loadFromSqliteRef.current = loadFromSqlite;
+
+    // Render local content first so readers can browse offline / on weak signal.
+    let hasLocalStories = false;
+    try {
+      hasLocalStories = await loadFromSqlite();
+      setStoriesSource('sqlite');
     } catch (e) {
-      console.error('[StoriesContext] SQLite fallback error:', e);
+      console.error('[StoriesContext] SQLite load error:', e);
     }
     setLoading(false);
 
-    if (!USE_REMOTE_STORIES) {
+    if (!USE_REMOTE_STORIES || !SUPABASE_LIVE) {
       if (!hasLocalStories) setErrorMsg('No local stories available.');
       return;
     }
 
-    let online = true;
-    try {
-      const state = await NetInfo.fetch();
-      online = Boolean(state.isConnected) && state.isInternetReachable !== false;
-    } catch (e) {
-      // If the reachability check is unavailable, let the fetch decide.
-      online = true;
-    }
+    const online = await isOnline();
     setIsOffline(!online);
-    if (!online || !SUPABASE_LIVE) {
+    if (!online) {
+      remoteSyncPending.current = true;
       if (!hasLocalStories) setErrorMsg('No local stories available.');
       return;
     }
 
-    // Refresh in the background once local content is already visible.
     try {
-      const sbStories = await fetchStoriesFromSupabase(lang);
-      if (sbStories?.length) {
-        // Supabase updates matching stories, but does not hide collection
-        // entries that exist only in the bundled SQLite database.
-        const mergedStories = new Map(sqliteStories.map((story) => [String(story.story_id ?? story.id), story]));
-        sbStories.forEach((story) => mergedStories.set(String(story.story_id ?? story.id), story));
-        const nextStories = [...mergedStories.values()];
-        saveStoriesToCache(lang, nextStories).catch(() => {});
-        applyStories(nextStories, 'supabase');
-      }
+      await syncRemote();
     } catch (e) {
-      console.warn('[StoriesContext] Supabase refresh failed:', e.message);
+      console.warn('[StoriesContext] Supabase sync failed:', e.message);
       if (!hasLocalStories) setErrorMsg(e.message || String(e));
     }
-  }, [lang]);
+  }, [lang, syncRemote]);
 
   // Reload when language changes
   useEffect(() => {
     refresh();
   }, [refresh]);
+
+  // Keep isOffline current and pull the catalogue as soon as we reconnect.
+  useEffect(() => onConnectivityChange((online) => {
+    setIsOffline(!online);
+    if (online && remoteSyncPending.current) {
+      syncRemote().catch((e) => console.warn('[StoriesContext] Supabase sync failed:', e.message));
+    }
+  }), [syncRemote]);
 
   const value = useMemo(() => ({
     stories,

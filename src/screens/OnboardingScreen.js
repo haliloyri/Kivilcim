@@ -19,7 +19,7 @@ import useReducedMotion from '../hooks/useReducedMotion';
 import { getStoryByLang } from '../db/db';
 import { SUPPORTED_LANGS } from '../utils/locale';
 
-const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
+const PROFILE_INFO_PROMPT_SEEN_KEY = '@albor_profile_info_prompt_seen';
 // Read and cleared once by AppNavigator, after the reader finishes their first
 // story (not when the main stack mounts).
 export const PENDING_ONBOARDING_PAYWALL_KEY = '@albor_pending_onboarding_paywall';
@@ -214,6 +214,10 @@ const OnboardingScreen = ({ navigation }) => {
     // picks the flag up once the reader has finished their first story.
     await AsyncStorage.setItem(PENDING_ONBOARDING_PAYWALL_KEY, 'true').catch(() => {});
     await updateUserProfile({ displayName: name.trim() || null });
+    // Mark the profile prompt seen BEFORE saveOnboarding: that call flips
+    // `isOnboarded`, unmounts this screen and mounts Home, which reads this flag
+    // on mount. Writing it afterwards races Home and the name modal reappears.
+    await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
     await saveOnboarding(selectedCats, timeOptions[selectedTime], selectedReminders);
     trackEvent(ANALYTICS_EVENTS.ONBOARDING_COMPLETED, {
       categoryCount: selectedCats.length,
@@ -222,10 +226,6 @@ const OnboardingScreen = ({ navigation }) => {
       reminderWindows: selectedReminders,
       lang,
     });
-    // Setup no longer asks for a name, so mark the profile prompt seen: Home
-    // must not open a name modal over the reader's first session. Profile still
-    // takes it whenever they want.
-    await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
   };
 
   /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ STYLES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -773,8 +773,8 @@ const OnboardingScreen = ({ navigation }) => {
         <View style={s.heroLogoWrapper}>
           <Image
             source={isDark
-              ? require('../../assets/spark_logo_dark.png')
-              : require('../../assets/spark_logo.png')}
+              ? require('../../assets/albor_logo_dark.png')
+              : require('../../assets/albor_logo.png')}
             style={s.heroLogoImg}
             resizeMode="contain"
           />
@@ -1005,8 +1005,8 @@ const OnboardingScreen = ({ navigation }) => {
               <View style={s.headerLogoRow}>
                 <Image
                   source={isDark
-                    ? require('../../assets/spark_logo_dark.png')
-                    : require('../../assets/spark_logo.png')}
+                    ? require('../../assets/albor_logo_dark.png')
+                    : require('../../assets/albor_logo.png')}
                   style={s.headerLogoImg}
                   resizeMode="contain"
                 />

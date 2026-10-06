@@ -102,7 +102,7 @@ it('completes with no reminders or permission prompt and preserves opt-out after
     remindersEnabled: false, reminderWindows: [],
   });
   const writes = AsyncStorage.setItem.mock.calls
-    .filter(([key]) => key === '@kivilcim_preferences')
+    .filter(([key]) => key === '@albor_preferences')
     .map(([, value]) => JSON.parse(value));
   expect(writes.length).toBeGreaterThan(0);
   expect(writes.every((prefs) => prefs.remindersEnabled === false)).toBe(true);

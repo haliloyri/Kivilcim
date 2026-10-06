@@ -1,6 +1,6 @@
-export const SPARK_PACKAGE_LIMIT = 5;
+export const IDEA_PACKAGE_LIMIT = 5;
 
-export const updateCareerSparkPackage = (currentIds, storyId, limit = SPARK_PACKAGE_LIMIT) => {
+export const updateCareerIdeaPackage = (currentIds, storyId, limit = IDEA_PACKAGE_LIMIT) => {
   const normalizedStoryId = String(storyId ?? '').trim();
   const current = [...new Set((currentIds || []).map((id) => String(id)).filter(Boolean))].slice(0, limit);
   if (!normalizedStoryId) return { changed: false, reason: 'invalid_story', package: current };

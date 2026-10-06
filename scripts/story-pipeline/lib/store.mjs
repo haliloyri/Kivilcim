@@ -1,7 +1,7 @@
 /**
  * story-pipeline/lib/store.mjs
  *
- * kivilcim.db icin paylasilan okuma/yazma yardimcilari.
+ * albor.db icin paylasilan okuma/yazma yardimcilari.
  * Tum pipeline scriptleri DB'ye SADECE buradan erisir.
  */
 import { createRequire } from 'module';
@@ -16,7 +16,7 @@ export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../..')
 export const LANGS = ['tr', 'en', 'es', 'de'];
 
 export const PATHS = {
-  db: resolve(ROOT, 'assets/kivilcim.db'),
+  db: resolve(ROOT, 'assets/albor.db'),
   inventory: resolve(ROOT, 'KITAP_HIKAYE_ENVANTERI.md'),
   staging: resolve(ROOT, 'staging'),
   reports: resolve(ROOT, 'staging/reports'),

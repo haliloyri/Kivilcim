@@ -28,5 +28,5 @@ export const SUPPORT_EMAIL = 'info@alborapp.com';
 // Mağazanın kendi abonelik yönetim sayfaları (iptal/değişiklik burada yapılır).
 export const SUBSCRIPTION_URLS = Object.freeze({
   ios: 'https://apps.apple.com/account/subscriptions',
-  android: 'https://play.google.com/store/account/subscriptions?package=com.kivilcim.app',
+  android: 'https://play.google.com/store/account/subscriptions?package=com.albor.app',
 });

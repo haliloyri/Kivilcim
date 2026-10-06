@@ -8,7 +8,7 @@ const initSqlJs = require('sql.js');
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const paths = {
-  db: resolve(root, 'assets/kivilcim.db'),
+  db: resolve(root, 'assets/albor.db'),
   catalog: resolve(root, 'YENI_KITAP_ONERILERI.md'),
   batch: resolve(root, 'HIKAYE_URETIM_BATCH_011.md'),
 };
@@ -441,7 +441,7 @@ const lines = [
   '- **Version:** F5 (Claude Fable 5 ile üretildi)',
   '- **Kelime hedefi:** 160 ±40 (içerik), 55–80 (30 sn özet)',
   '- **Writing method:** Her dilde doğrudan ve bağımsız yazım; çeviri kullanılmadı.',
-  '- **Depolama:** Local storage (assets/kivilcim.db); Supabase’e gönderilmedi.',
+  '- **Depolama:** Local storage (assets/albor.db); Supabase’e gönderilmedi.',
   '- **Status:** DB’YE EKLENDİ',
   '',
   '| Katalog | Kitap | Yazar | Kategori | DB No | Story ID | Kaynak |',

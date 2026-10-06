@@ -1,7 +1,7 @@
 # Dört Dilde Hikâye Yazım Kontrolü
 
 - Denetim zamanı: 2026-07-17 23:39 +03
-- Veri kaynağı: `assets/kivilcim.db`
+- Veri kaynağı: `assets/albor.db`
 - Veri tabanı SHA-256: `5ca451052986d774faee47156b659a0935107b6d317279e7674f915e570596c8`
 - Diller: `tr`, `en`, `es`, `de`
 - Dil sırası: `tr → en → es → de`

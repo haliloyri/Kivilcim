@@ -23,8 +23,10 @@ import {
   removeVariantUsageOnServer,
   getSeenBadgeIdsFromServer,
   markBadgesSeenOnServer,
+  deleteAccountOnServer,
 } from '../services/supabase';
-import { enqueueAndSync } from '../services/offlineQueue';
+import { enqueueAndSync, hasPendingSync } from '../services/offlineQueue';
+import { isOnline } from '../services/connectivity';
 import { FEATURE_FLAGS } from '../config/featureFlags';
 import { toLocalDay } from '../utils/localDate';
 import {
@@ -38,31 +40,31 @@ import {
 import { clearCareerData } from '../db/userDb';
 import { notifyCareerDataChanged, recordCareerApplication, recordCareerInsightSaved, recordCareerStoryCompletion } from '../services/careerEvents';
 import { migrateLegacyCareerPath } from '../services/migrateCareerPath';
-import { updateCareerSparkPackage } from '../utils/careerSparkPackage';
+import { updateCareerIdeaPackage } from '../utils/careerIdeaPackage';
 
 const UserDataContext = createContext();
-const SEEN_BADGES_STORAGE_KEY = '@kivilcim_seen_earned_badges';
-const PENDING_BADGES_STORAGE_KEY = '@kivilcim_pending_badges';
-const BADGE_COLLECTION_COMPLETION_STORAGE_KEY = '@kivilcim_badge_collection_completion_seen';
-const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
-const USER_PROFILE_STORAGE_KEY = '@kivilcim_user_profile';
-const FAVORITE_COLLECTIONS_STORAGE_KEY = '@kivilcim_favorite_collections';
-const COMPLETED_STORIES_STORAGE_KEY = '@kivilcim_completed_stories';
-const VARIANT_USAGE_STORAGE_KEY = '@kivilcim_variant_usage';
-const CAREER_TAKEAWAYS_STORAGE_KEY = '@kivilcim_career_takeaways';
-const CAREER_SPARK_PACKAGE_STORAGE_KEY = '@kivilcim_career_spark_package';
+const SEEN_BADGES_STORAGE_KEY = '@albor_seen_earned_badges';
+const PENDING_BADGES_STORAGE_KEY = '@albor_pending_badges';
+const BADGE_COLLECTION_COMPLETION_STORAGE_KEY = '@albor_badge_collection_completion_seen';
+const FIRST_SESSION_PROMPT_KEY = '@albor_first_session_prompt';
+const USER_PROFILE_STORAGE_KEY = '@albor_user_profile';
+const FAVORITE_COLLECTIONS_STORAGE_KEY = '@albor_favorite_collections';
+const COMPLETED_STORIES_STORAGE_KEY = '@albor_completed_stories';
+const VARIANT_USAGE_STORAGE_KEY = '@albor_variant_usage';
+const CAREER_TAKEAWAYS_STORAGE_KEY = '@albor_career_takeaways';
+const CAREER_IDEA_PACKAGE_STORAGE_KEY = '@albor_career_idea_package';
 // Library "Kaldığın yerden": stories the reader scrolled into but hasn't
 // finished yet. [{ id, progress (0..1), updatedAt }], most recent first.
 const IN_PROGRESS_STORAGE_KEY = '@albor_in_progress_stories';
 const IN_PROGRESS_MAX = 12;
-const STREAK_FREEZE_CREDITS_STORAGE_KEY = '@kivilcim_streak_freeze_credits';
+const STREAK_FREEZE_CREDITS_STORAGE_KEY = '@albor_streak_freeze_credits';
 // Tracks the last calendar month ('YYYY-MM') a subscriber was granted their
 // monthly streak-freeze credit, so the credit renews once a month instead of
 // only once at the moment Premium first activates.
 const STREAK_FREEZE_LAST_GRANT_MONTH_KEY = '@albor_streak_freeze_last_grant_month';
 const STREAK_FREEZE_MAX_CREDITS = 3;
 // Full entitlement snapshot (product, expiry, renewal intent, trial state).
-// `@kivilcim_premium` stays as the boolean so existing installs keep Premium.
+// `@albor_premium` stays as the boolean so existing installs keep Premium.
 const ENTITLEMENT_STORAGE_KEY = '@albor_entitlement';
 // A temporary, non-purchase Premium window granted by the referral reward
 // (see claimReferral in supabase.js) — stored separately from the real
@@ -356,7 +358,7 @@ export const UserDataProvider = ({ children }) => {
   const [isBadgeCollectionCompletionVisible, setIsBadgeCollectionCompletionVisible] = useState(false);
   const [variantUsage, setVariantUsage] = useState([]);
   const [careerTakeaways, setCareerTakeaways] = useState({});
-  const [careerSparkPackage, setCareerSparkPackage] = useState([]);
+  const [careerIdeaPackage, setCareerIdeaPackage] = useState([]);
   const [inProgressStories, setInProgressStories] = useState([]);
   const [streakFreezeCredits, setStreakFreezeCredits] = useState(0);
   const streakFreezeCreditsRef = useRef(0);
@@ -417,6 +419,11 @@ export const UserDataProvider = ({ children }) => {
   // and stomp the local count we just earned. All other callers (initial
   // mount, useStreakFreeze) keep the default server-first behavior.
   const refreshStats = useCallback(async ({ preferLocal = false } = {}) => {
+    // Offline, or reads still waiting in the offline queue: the server copy is
+    // unreachable or behind this device, so local SQLite is the truth.
+    if (!preferLocal && SUPABASE_LIVE && (!(await isOnline()) || (await hasPendingSync()))) {
+      preferLocal = true;
+    }
     if (!preferLocal) {
       try {
         if (SUPABASE_LIVE) {
@@ -491,12 +498,12 @@ export const UserDataProvider = ({ children }) => {
       setIsLoading(true);
       setLoadErrorMsg(null);
       try {
-        const storedFavorites = await AsyncStorage.getItem('@kivilcim_favorites');
-        const storedHistory = await AsyncStorage.getItem('@kivilcim_history');
-        const storedPreferences = await AsyncStorage.getItem('@kivilcim_preferences');
-        const storedOnboarding = await AsyncStorage.getItem('@kivilcim_onboarded');
-        const storedPremium = await AsyncStorage.getItem('@kivilcim_premium');
-        const storedShareCount = await AsyncStorage.getItem('@kivilcim_share_count');
+        const storedFavorites = await AsyncStorage.getItem('@albor_favorites');
+        const storedHistory = await AsyncStorage.getItem('@albor_history');
+        const storedPreferences = await AsyncStorage.getItem('@albor_preferences');
+        const storedOnboarding = await AsyncStorage.getItem('@albor_onboarded');
+        const storedPremium = await AsyncStorage.getItem('@albor_premium');
+        const storedShareCount = await AsyncStorage.getItem('@albor_share_count');
         const storedUserProfile = await AsyncStorage.getItem(USER_PROFILE_STORAGE_KEY);
         const storedCollections = await AsyncStorage.getItem(FAVORITE_COLLECTIONS_STORAGE_KEY);
         const storedCompletedStories = await AsyncStorage.getItem(COMPLETED_STORIES_STORAGE_KEY);
@@ -514,7 +521,7 @@ export const UserDataProvider = ({ children }) => {
           setPreferences(normalizedPreferences);
 
           if (JSON.stringify(parsedPreferences) !== JSON.stringify(normalizedPreferences)) {
-            await AsyncStorage.setItem('@kivilcim_preferences', JSON.stringify(normalizedPreferences));
+            await AsyncStorage.setItem('@albor_preferences', JSON.stringify(normalizedPreferences));
           }
         }
         if (storedOnboarding) setIsOnboarded(JSON.parse(storedOnboarding));
@@ -592,10 +599,10 @@ export const UserDataProvider = ({ children }) => {
             ? parsed.filter((e) => e && e.id).map((e) => ({ id: String(e.id), progress: Number(e.progress) || 0, updatedAt: e.updatedAt || null }))
             : []);
         }
-        const storedSparkPackage = await AsyncStorage.getItem(CAREER_SPARK_PACKAGE_STORAGE_KEY);
-        if (storedSparkPackage) {
-          const parsed = JSON.parse(storedSparkPackage);
-          setCareerSparkPackage(Array.isArray(parsed) ? [...new Set(parsed.map((id) => String(id)).filter(Boolean))].slice(0, 5) : []);
+        const storedIdeaPackage = await AsyncStorage.getItem(CAREER_IDEA_PACKAGE_STORAGE_KEY);
+        if (storedIdeaPackage) {
+          const parsed = JSON.parse(storedIdeaPackage);
+          setCareerIdeaPackage(Array.isArray(parsed) ? [...new Set(parsed.map((id) => String(id)).filter(Boolean))].slice(0, 5) : []);
         }
       } catch (error) {
         console.error('AsyncStorage veri yükleme hatası:', error);
@@ -694,7 +701,7 @@ export const UserDataProvider = ({ children }) => {
           ? prev.filter(id => String(id) !== strId)
           : [...prev, strId];
 
-        AsyncStorage.setItem('@kivilcim_favorites', JSON.stringify(newFavs));
+        AsyncStorage.setItem('@albor_favorites', JSON.stringify(newFavs));
         enqueueAndSync(wasFavorite ? 'remove_favorite' : 'add_favorite', { storyId: strId });
         return newFavs;
       });
@@ -738,7 +745,7 @@ export const UserDataProvider = ({ children }) => {
     setFavorites((prev) => {
       if (prev.some((id) => String(id) === strId)) return prev;
       const nextFavorites = [...prev, strId];
-      AsyncStorage.setItem('@kivilcim_favorites', JSON.stringify(nextFavorites));
+      AsyncStorage.setItem('@albor_favorites', JSON.stringify(nextFavorites));
       enqueueAndSync('add_favorite', { storyId: strId });
       return nextFavorites;
     });
@@ -808,7 +815,7 @@ export const UserDataProvider = ({ children }) => {
       setHistory((prev) => {
         const filtered = prev.filter(id => String(id) !== String(storyId));
         const newHist = [String(storyId), ...filtered].slice(0, 20); 
-        AsyncStorage.setItem('@kivilcim_history', JSON.stringify(newHist));
+        AsyncStorage.setItem('@albor_history', JSON.stringify(newHist));
         return newHist;
       });
       clearStoryProgress(storyId);
@@ -897,8 +904,8 @@ export const UserDataProvider = ({ children }) => {
       setPreferences(prefs);
       setIsOnboarded(true);
 
-      await AsyncStorage.setItem('@kivilcim_preferences', JSON.stringify(prefs));
-      await AsyncStorage.setItem('@kivilcim_onboarded', JSON.stringify(true));
+      await AsyncStorage.setItem('@albor_preferences', JSON.stringify(prefs));
+      await AsyncStorage.setItem('@albor_onboarded', JSON.stringify(true));
       await AsyncStorage.setItem(FIRST_SESSION_PROMPT_KEY, JSON.stringify(true));
 
       await scheduleDailyNotifications({
@@ -962,7 +969,7 @@ export const UserDataProvider = ({ children }) => {
 
       const nextPrefs = normalizePreferences(candidate);
       setPreferences(nextPrefs);
-      await AsyncStorage.setItem('@kivilcim_preferences', JSON.stringify(nextPrefs));
+      await AsyncStorage.setItem('@albor_preferences', JSON.stringify(nextPrefs));
       enqueueAndSync('upsert_profile', { patch: { preferences: nextPrefs } });
 
       await scheduleDailyNotifications({
@@ -1070,7 +1077,7 @@ export const UserDataProvider = ({ children }) => {
     }
 
     try {
-      await AsyncStorage.setItem('@kivilcim_premium', JSON.stringify(isEntitled));
+      await AsyncStorage.setItem('@albor_premium', JSON.stringify(isEntitled));
       if (isEntitled && snapshot) {
         await AsyncStorage.setItem(ENTITLEMENT_STORAGE_KEY, JSON.stringify(snapshot));
       } else {
@@ -1300,7 +1307,7 @@ export const UserDataProvider = ({ children }) => {
     try {
       setShareCount(prev => {
         const next = prev + 1;
-        AsyncStorage.setItem('@kivilcim_share_count', JSON.stringify(next));
+        AsyncStorage.setItem('@albor_share_count', JSON.stringify(next));
         enqueueAndSync('upsert_profile', { patch: { share_count: next } });
         return next;
       });
@@ -1437,12 +1444,12 @@ export const UserDataProvider = ({ children }) => {
     })
   ), []);
 
-  // A private, local-only collection for the Spark Carrier tool. This is a
+  // A private, local-only collection for the Light Carrier tool. This is a
   // presentation preference, deliberately independent from career events.
-  const toggleCareerSparkPackageStory = useCallback((storyId) => {
-    setCareerSparkPackage((prev) => {
-      const result = updateCareerSparkPackage(prev, storyId);
-      if (result.changed) AsyncStorage.setItem(CAREER_SPARK_PACKAGE_STORAGE_KEY, JSON.stringify(result.package));
+  const toggleCareerIdeaPackageStory = useCallback((storyId) => {
+    setCareerIdeaPackage((prev) => {
+      const result = updateCareerIdeaPackage(prev, storyId);
+      if (result.changed) AsyncStorage.setItem(CAREER_IDEA_PACKAGE_STORAGE_KEY, JSON.stringify(result.package));
       return result.package;
     });
   }, []);
@@ -1451,12 +1458,12 @@ export const UserDataProvider = ({ children }) => {
   const clearUserData = async () => {
     try {
       await AsyncStorage.multiRemove([
-        '@kivilcim_favorites',
-        '@kivilcim_history',
-        '@kivilcim_preferences',
-        '@kivilcim_onboarded',
-        '@kivilcim_premium',
-        '@kivilcim_share_count',
+        '@albor_favorites',
+        '@albor_history',
+        '@albor_preferences',
+        '@albor_onboarded',
+        '@albor_premium',
+        '@albor_share_count',
         FAVORITE_COLLECTIONS_STORAGE_KEY,
         COMPLETED_STORIES_STORAGE_KEY,
         USER_PROFILE_STORAGE_KEY,
@@ -1466,7 +1473,7 @@ export const UserDataProvider = ({ children }) => {
         BADGE_COLLECTION_COMPLETION_STORAGE_KEY,
         VARIANT_USAGE_STORAGE_KEY,
         CAREER_TAKEAWAYS_STORAGE_KEY,
-        CAREER_SPARK_PACKAGE_STORAGE_KEY,
+        CAREER_IDEA_PACKAGE_STORAGE_KEY,
         STREAK_FREEZE_CREDITS_STORAGE_KEY,
         ENTITLEMENT_STORAGE_KEY,
         FREE_READS_STORAGE_KEY,
@@ -1489,7 +1496,7 @@ export const UserDataProvider = ({ children }) => {
       setIsBadgeCollectionCompletionVisible(false);
       setVariantUsage([]);
       setCareerTakeaways({});
-      setCareerSparkPackage([]);
+      setCareerIdeaPackage([]);
       setStreakFreezeCredits(0);
       setStreakFreezeDates([]);
       await clearStreakFreezes();
@@ -1512,6 +1519,15 @@ export const UserDataProvider = ({ children }) => {
     } catch (error) {
       console.error('Veri silme hatası:', error);
     }
+  };
+
+  // Hesabı sunucudan kalıcı sil, ardından yerel veriyi temizle.
+  // Sunucu silme başarısız olursa yerel veriye dokunulmaz (false döner).
+  const deleteAccount = async () => {
+    const ok = await deleteAccountOnServer();
+    if (!ok) return false;
+    await clearUserData();
+    return true;
   };
 
   // Rozetleri hesapla
@@ -1770,9 +1786,10 @@ export const UserDataProvider = ({ children }) => {
     removeVariantUsage,
     variantUsage,
     careerTakeaways,
-    careerSparkPackage,
-    toggleCareerSparkPackageStory,
+    careerIdeaPackage,
+    toggleCareerIdeaPackageStory,
     clearUserData,
+    deleteAccount,
     refreshStats,
     openBadgeModal,
     closeBadgeModal,
@@ -1782,7 +1799,7 @@ export const UserDataProvider = ({ children }) => {
     closeBadgeCollectionCompletionModal,
     useStreakFreeze,
   }), [favorites, history, preferences, userProfile, isOnboarded, isPremium, entitlement, premiumBonusUntil,
-    freeQuotaUsed, freeQuotaRemaining, isStoryUnlockedToday, canOpenStoryFree, consumeFreeRead, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, inProgressStories, updateStoryProgress, clearStoryProgress, shareCount, earnedBadges, activeBadgeModal, isBadgeCollectionCompletionVisible, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, careerTakeaways, careerSparkPackage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight, recordPrivateCareerApplication, removeVariantUsage, toggleCareerSparkPackageStory, openBadgeModal, closeBadgeModal, releasePendingBadge, setBadgePresentationBlocked, badgePresentationBlockers, closeBadgeCollectionCompletionModal, useStreakFreeze]);
+    freeQuotaUsed, freeQuotaRemaining, isStoryUnlockedToday, canOpenStoryFree, consumeFreeRead, isLoading, loadErrorMsg, retryUserDataLoad, streak, totalReads, todayReadsCount, longestStreak, categoryStats, readCountsByStory, favoriteCollections, completedStories, inProgressStories, updateStoryProgress, clearStoryProgress, shareCount, earnedBadges, activeBadgeModal, isBadgeCollectionCompletionVisible, unseenEarnedBadgeCount, streakFreezeCredits, streakFreezeDates, variantUsage, careerTakeaways, careerIdeaPackage, isStorySavedForLater, toggleReadLater, isStoryCompleted, recordVariantUsage, saveCareerTakeaway, isCareerTakeawaySaved, recordCareerInsight, recordPrivateCareerApplication, removeVariantUsage, toggleCareerIdeaPackageStory, openBadgeModal, closeBadgeModal, releasePendingBadge, setBadgePresentationBlocked, badgePresentationBlockers, closeBadgeCollectionCompletionModal, useStreakFreeze]);
 
   return (
     <UserDataContext.Provider value={value}>

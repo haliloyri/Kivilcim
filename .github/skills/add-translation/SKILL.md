@@ -1,6 +1,6 @@
 ---
 name: add-translation
-description: 'Add or update translation keys in all 4 language blocks (en, tr, es, de) in the Spark app. Use when the user says çeviri ekle, translation ekle, metin ekle, i18n key ekle, add translation, localize text, or similar.'
+description: 'Add or update translation keys in all 4 language blocks (en, tr, es, de) in the Albor app. Use when the user says çeviri ekle, translation ekle, metin ekle, i18n key ekle, add translation, localize text, or similar.'
 argument-hint: 'Key name and text in at least one language (e.g. settingsTitle: Ayarlar / Settings)'
 user-invocable: true
 ---

@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const require = createRequire(import.meta.url);
 const initSqlJs = require('sql.js');
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const dbPath = resolve(root, 'assets/kivilcim.db');
+const dbPath = resolve(root, 'assets/albor.db');
 const titlesPath = resolve(root, 'HIKAYE_BASLIKLARI.md');
 const catalogPath = resolve(root, 'YENI_KITAP_ONERILERI.md');
 const taskPath = resolve(root, 'HIKAYE_URETIM_TASK.md');

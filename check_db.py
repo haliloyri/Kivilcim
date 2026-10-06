@@ -1,9 +1,9 @@
 import sqlite3
 
-conn = sqlite3.connect('assets/kivilcim.db')
+conn = sqlite3.connect('assets/albor.db')
 cursor = conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
 tables = [r[0] for r in cursor.fetchall()]
-print("Tables in assets/kivilcim.db:", tables)
+print("Tables in assets/albor.db:", tables)
 
 for t in tables:
     count = conn.execute(f"SELECT COUNT(*) FROM [{t}]").fetchone()[0]

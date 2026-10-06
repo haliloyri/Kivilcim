@@ -1,4 +1,4 @@
-Spark – Üst Yatay Kategori Barı Tasarım Dokümanı
+Albor – Üst Yatay Kategori Barı Tasarım Dokümanı
 ## Genel Yapı
 - Bileşen tipi: Horizontal Scrollable Category Pills
 - Kullanım amacı: İçerikleri kategoriye göre filtrelemek

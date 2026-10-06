@@ -1,6 +1,6 @@
 ---
 name: add-component
-description: 'Add a new reusable component to the Spark React Native app with proper theming and patterns. Use when the user says bileşen ekle, component ekle, component oluştur, create component, yeni component, or similar.'
+description: 'Add a new reusable component to the Albor React Native app with proper theming and patterns. Use when the user says bileşen ekle, component ekle, component oluştur, create component, yeni component, or similar.'
 argument-hint: 'Component name and purpose (e.g. BadgeCard - displays user badges)'
 user-invocable: true
 ---

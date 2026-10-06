@@ -1,6 +1,6 @@
 ---
 name: run-ios
-description: 'Run the Spark app on an iOS simulator. Use when the user says ios çalıştır, ios aç, simulatörde aç, run ios, start ios, test on ios, or similar.'
+description: 'Run the Albor app on an iOS simulator. Use when the user says ios çalıştır, ios aç, simulatörde aç, run ios, start ios, test on ios, or similar.'
 argument-hint: 'No arguments needed'
 user-invocable: true
 ---

@@ -43,7 +43,7 @@ describe('legacy career migration', () => {
     expect(enqueueAndSync).toHaveBeenCalledWith('upsert_legacy_badges', { badgeIds: ['first_read'] });
     expect(enqueueAndSync).toHaveBeenCalledWith('upsert_career_migration_state', { migrationVersion: 1 });
     expect(enqueueAndSync).toHaveBeenCalledWith('award_career_nodes', {
-      nodes: [expect.objectContaining({ nodeId: 'common_first_spark', pathId: 'common', ruleVersion: 1, awardSource: 'legacy_migration_v1' })],
+      nodes: [expect.objectContaining({ nodeId: 'common_first_light', pathId: 'common', ruleVersion: 1, awardSource: 'legacy_migration_v1' })],
     });
   });
 });

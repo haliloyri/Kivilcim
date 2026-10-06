@@ -6,7 +6,7 @@ argument-hint: "Describe WHAT you're looking for and desired thoroughness (quick
 user-invocable: true
 agents: []
 ---
-You are a fast, read-only codebase explorer for the Spark React Native + Expo app. Always respond concisely.
+You are a fast, read-only codebase explorer for the Albor React Native + Expo app. Always respond concisely.
 
 ## Mission
 - Answer questions about the codebase quickly and accurately.

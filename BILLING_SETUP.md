@@ -102,8 +102,8 @@ without configuring it in the stores, that copy becomes a false claim.
    (for RevenueCat).
 
 ### 3. RevenueCat
-1. Create a project; add an **iOS app** (bundle `com.kivilcim.app`) and an
-   **Android app** (package `com.kivilcim.app`).
+1. Create a project; add an **iOS app** (bundle `com.albor.app`) and an
+   **Android app** (package `com.albor.app`).
 2. Paste the App Store shared secret and upload the Google service account JSON.
 3. Create the entitlement **`Albor Pro`**.
 4. Import `monthly`, `yearly`, `lifetime` from both stores and attach all three

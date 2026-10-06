@@ -17,6 +17,7 @@ import { FEATURE_FLAGS } from '../config/featureFlags';
 import { getLegalUrls, localizedHomeUrl, SUPPORT_EMAIL, SUBSCRIPTION_URLS } from '../constants/externalLinks';
 import { t } from '../locales/i18n';
 import CategoryPill from '../components/CategoryPill';
+import { isPrivacyOptionsRequired, showPrivacyOptions } from '../utils/adsConsent';
 
 // Profil = kimlik + okuma ritmi + tercihler + abonelik/destek.
 // İlerleme/rozetler İlerleme sekmesinde; gerçek bir hesap sistemi olmadığı
@@ -54,7 +55,7 @@ const ProfileScreen = ({ navigation }) => {
   const { parentCategories } = useStories();
   const { career } = useCareerPath();
   const {
-    clearUserData, isPremium, preferences, updatePreferences,
+    clearUserData, deleteAccount, isPremium, preferences, updatePreferences,
     userProfile, updateUserProfile, devSetPremium, restorePremium,
   } = useUserData();
 
@@ -206,6 +207,21 @@ const ProfileScreen = ({ navigation }) => {
         onPress: async () => {
           await Notifications.cancelAllScheduledNotificationsAsync().catch(() => {});
           await clearUserData();
+          await resetAppSettings();
+        },
+      },
+    ]);
+  };
+
+  const handleDeleteAccount = () => {
+    Alert.alert(t('profileDeleteAccountTitle', lang), t('profileDeleteAccountSub', lang), [
+      { text: t('profileCancel', lang), style: 'cancel' },
+      {
+        text: t('profileDeleteAccountCta', lang), style: 'destructive',
+        onPress: async () => {
+          const ok = await deleteAccount();
+          if (!ok) { Alert.alert(t('profileDeleteAccountFailed', lang)); return; }
+          await Notifications.cancelAllScheduledNotificationsAsync().catch(() => {});
           await resetAppSettings();
         },
       },
@@ -550,6 +566,9 @@ const ProfileScreen = ({ navigation }) => {
           ) : null}
           <Row icon="star-outline" title={t('profileRateApp', lang)} onPress={rateApp} />
           <Row icon="shield-checkmark-outline" title={t('privacy', lang)} onPress={() => openUrl(getLegalUrls(lang).privacy)} />
+          {isPrivacyOptionsRequired() ? (
+            <Row icon="options-outline" title={t('profileAdPrivacy', lang)} onPress={showPrivacyOptions} />
+          ) : null}
           <Row icon="document-text-outline" title={t('profileTerms', lang)} onPress={() => openUrl(getLegalUrls(lang).terms)} />
         </Section>
 
@@ -557,6 +576,9 @@ const ProfileScreen = ({ navigation }) => {
         <View style={s.footer}>
           <TouchableOpacity onPress={handleResetData} hitSlop={10}>
             <Text style={s.resetText}>{t('profileResetDataLabel', lang)}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleDeleteAccount} hitSlop={10}>
+            <Text style={s.resetText}>{t('profileDeleteAccountLabel', lang)}</Text>
           </TouchableOpacity>
           <Text style={s.versionText}>{`Albor ${appVersion}`}</Text>
         </View>

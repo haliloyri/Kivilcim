@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # otomatize-batch/uninstall-launchd.sh — günlük otomatik çalışmayı kaldırır.
 set -euo pipefail
-LABEL="com.spark.storypipeline"
+LABEL="com.albor.storypipeline"
 DEST="$HOME/Library/LaunchAgents/$LABEL.plist"
 
 launchctl unload "$DEST" >/dev/null 2>&1 || true

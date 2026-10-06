@@ -1,4 +1,4 @@
-# Spark Task Checklist
+# Albor Task Checklist
 
 Bu task setinin mantigi:
 - [ ] Tum hikayelerin yaklasik 3 dakikalik oldugu varsayimini netlestir
@@ -138,7 +138,7 @@ Kod yuzeyi:
 • [x] Rozet (Badge) Tasarımları: Rozetleri daha değerli hissettirmek için üzerlerine hafif bir cam efekti (glassmorphism) veya 3D dokunuş ekle.
 • [x] İlerleme Çubukları: Kilitli rozetlerin altına, kullanıcının hedefe ne kadar yaklaştığını gösteren (örn: 22/25) çok ince progress bar'lar ekle.
 • [x] Sohbet İstatistikleri: Sayfaya sadece "okuma" değil, "kaç hikaye anlatıldığına" dair yeni bir sayaç veya kart ekle.
-• [x] Boş Durum (Empty State) Tasarımı: "Active Stories" alanı boşken görünecek daha ilham verici bir ikon ve metin (örn: "İlk kıvılcımı çakmaya hazır mısın?") hazırla.
+• [x] Boş Durum (Empty State) Tasarımı: "Active Stories" alanı boşken görünecek daha ilham verici bir ikon ve metin (örn: "İlk ışığı yakmaya hazır mısın?") hazırla.
 4. Genel UX ve Oyunlaştırma (Gamification)
 • [x] Yeni Rozet Tanımları: Sadece okumaya değil, anlatmaya dayalı "Storyteller" (10 Anlatım), "Icebreaker" (İlk Sohbet Başlatıcı) gibi yeni başarımlar oluştur.
 • [x] Kullanım Sonrası Geri Bildirim: "Anlattım" butonuna basıldıktan sonra, çok kısa bir mikro-anketle ("Nasıl geçti? ⭐") deneyimi puanlat.
@@ -184,7 +184,7 @@ Kod yuzeyi:
 
 ## Görsel İyileştirmeler
 [] 23. İlerleme ekranında Sıradaki en iyi adımlar dinamik olsun. Bu kısmı analiz edelim. ***
-[] 11. Spark logosu ekranda şu an baklava dilimi gibi. Ateşli bir S şeklinde kitap ayracı olsun.
+[] 11. Albor logosu ekranda şu an baklava dilimi gibi. Ateşli bir S şeklinde kitap ayracı olsun.
 [] 12. Rozet görsellerini gözden geçir.
 [] 13. Kategori görsellerini gözden geçir.
 

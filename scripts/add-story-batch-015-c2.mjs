@@ -9,7 +9,7 @@ const initSqlJs = require('sql.js');
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const paths = {
-  db: resolve(root, 'assets/kivilcim.db'),
+  db: resolve(root, 'assets/albor.db'),
   catalog: resolve(root, 'YENI_KITAP_ONERILERI.md'),
   batch: resolve(root, 'HIKAYE_URETIM_BATCH_015.md'),
 };
@@ -136,7 +136,7 @@ const lines = [
   '- **Version:** C2 (zengin okuma formatı)',
   '- **Format:** C serisi; `~~önce :: sonra~~` zıtlık bloğu, görünür `$$ders$$` ve dokunulabilir `&&soru&&`.',
   '- **Diller:** tr/en/es/de — her biri bağımsız yazıldı.',
-  '- **Depolama:** Local storage (assets/kivilcim.db); Supabase’e gönderilmedi.',
+  '- **Depolama:** Local storage (assets/albor.db); Supabase’e gönderilmedi.',
   '- **Status:** DB’YE EKLENDİ',
   '',
   '| # | Hikâye (TR) | Story ID | Kaynak |',

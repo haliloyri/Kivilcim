@@ -4,7 +4,7 @@ Bu katalog, uygulama veritabanındaki 276 kitabı ve içerik üretimi için seç
 
 Hikâye bazındaki mevcut süre, olası süre ve `±` paylı kelime hedefleri `HIKAYE_BASLIKLARI.md` dosyasında tutulur.
 
-- `DB'DE KAYITLI`: Kitap ve en az bir Türkçe hikâyesi `assets/kivilcim.db` içinde bulunur.
+- `DB'DE KAYITLI`: Kitap ve en az bir Türkçe hikâyesi `assets/albor.db` içinde bulunur.
 - `YENİ ÖNERİ`: Kitap henüz veritabanında bulunmaz; hikâye üretimi ve editoryal onay bekler.
 - Veritabanında ayrı bir özgün başlık alanı olmadığı için kayıtlı kitaplarda İngilizce (`en`) başlık kullanılmıştır.
 

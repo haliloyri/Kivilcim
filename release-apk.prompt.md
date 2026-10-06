@@ -1,6 +1,6 @@
 ---
 name: "Release APK"
-description: "Android release APK oluştur. Spark veya başka bir React Native / Expo projesi için test amaçlı APK build komutu üretir."
+description: "Android release APK oluştur. Albor veya başka bir React Native / Expo projesi için test amaçlı APK build komutu üretir."
 argument-hint: "Proje yolu (varsayılan: d:\\CL\\Projects\\Spark)"
 agent: "agent"
 ---

@@ -1,4 +1,4 @@
-# Spark (Kıvılcım) — Öncelikli Aksiyon Planı
+# Albor — Öncelikli Aksiyon Planı
 
 _Hazırlanma tarihi: 24 Haziran 2026 · Kaynak: kod tabanı, veritabanı ve akışların incelenmesi_
 _Hedefler: (1) gelir, (2) indirilme, (3) düzenli kullanım_
@@ -62,9 +62,9 @@ _Hedefler: (1) gelir, (2) indirilme, (3) düzenli kullanım_
 ## P1 — İndirilme (acquisition)
 
 ### 5. Paylaşım kartında viral döngüyü kapat — ✅ Tamamlandı (25 Haz 2026)
-- **Sorun:** Kart altında "Spark'ı keşfet ✦" yazıyor ama gerçek indirme linki / @handle yok. Kartı gören kullanıcı uygulamayı bulamıyor.
+- **Sorun:** Kart altında "Albor'u keşfet ✦" yazıyor ama gerçek indirme linki / @handle yok. Kartı gören kullanıcı uygulamayı bulamıyor.
 - **Yapılan:**
-  - Hikaye paylaşım kartı footer'ına erişim linki eklendi (`app.json → extra.shareLink`, şu an `kivilcim.app`). Link boşsa hiç gösterilmiyor.
+  - Hikaye paylaşım kartı footer'ına erişim linki eklendi (`app.json → extra.shareBaseUrl`, şu an `https://alborapp.com`). Link boşsa hiç gösterilmiyor.
   - Rozet paylaşım kartına da (`BadgeShareSheet.js`) aynı erişim linki eklendi.
   - Hikaye kartındaki metin logo (`✦ Albor`) gerçek marka logosuyla değiştirildi (tema duyarlı: koyu/açık).
   - Sosyal paylaşıma premium/reklam kapısı eklendi (önceden sadece üst menüde vardı).
@@ -90,7 +90,7 @@ _Hedefler: (1) gelir, (2) indirilme, (3) düzenli kullanım_
 - **Yapılacak:** Sunucu taraflı push (Expo Push / FCM) ekle; mevcut segment metinlerini bağla.
 
 ### 9. İçerik üretim kadansı
-- **Sorun:** "Günün Kıvılcımı" 684 hikayeyi döndürüyor; ağır kullanıcı birkaç ayda tüketir → churn.
+- **Sorun:** "Günün Fikri" 684 hikayeyi döndürüyor; ağır kullanıcı birkaç ayda tüketir → churn.
 - **Yapılacak:** Haftalık düzenli yeni hikaye yayını planı (mevcut batch üretim script'leri kullanılabilir).
 
 ### 10. Freemium dengesini test et

@@ -1,6 +1,6 @@
 # Kitaplar
 
-Bu liste `assets/kivilcim.db` veritabanındaki 200 kitap kaydından oluşturulmuştur. Veritabanında ayrı bir "orijinal isim" alanı bulunmadığı için `book_translations.lang_code = 'en'` başlığı kullanılmıştır.
+Bu liste `assets/albor.db` veritabanındaki 200 kitap kaydından oluşturulmuştur. Veritabanında ayrı bir "orijinal isim" alanı bulunmadığı için `book_translations.lang_code = 'en'` başlığı kullanılmıştır.
 
 1. **Atomic Habits** — James Clear
 2. **Radical Candor** — Kim Scott

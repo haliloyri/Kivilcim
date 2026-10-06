@@ -105,6 +105,8 @@ PODS:
     - ExpoModulesCore
   - ExpoStoreReview (57.0.3):
     - ExpoModulesCore
+  - ExpoTrackingTransparency (57.0.2):
+    - ExpoModulesCore
   - FBLazyVector (0.86.3)
   - Google-Mobile-Ads-SDK (13.5.0):
     - GoogleUserMessagingPlatform (>= 1.1)
@@ -2389,6 +2391,7 @@ DEPENDENCIES:
   - ExpoSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - ExpoSQLite (from `../node_modules/expo-sqlite/ios`)
   - ExpoStoreReview (from `../node_modules/expo-store-review/ios`)
+  - ExpoTrackingTransparency (from `../node_modules/expo-tracking-transparency/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
@@ -2538,6 +2541,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-sqlite/ios"
   ExpoStoreReview:
     :path: "../node_modules/expo-store-review/ios"
+  ExpoTrackingTransparency:
+    :path: "../node_modules/expo-tracking-transparency/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   hermes-engine:
@@ -2738,6 +2743,7 @@ SPEC CHECKSUMS:
   ExpoSplashScreen: e771da4f26d550ea4fd067d8fb942657e47bb846
   ExpoSQLite: 72e6ada0504a27cd043eb1bf172db70485a761b6
   ExpoStoreReview: a70a18f8ec77262d6c63a6578ce4de3b3ee8ddf0
+  ExpoTrackingTransparency: 233f97aced6da78301e74e1d9cff2bc3763b40fe
   FBLazyVector: 2138c6c2ab66c31bf5754dc18097fbc498a49c7f
   Google-Mobile-Ads-SDK: 2171620c6497804b57dc88b95644cc82e7dfb5b0
   GoogleUserMessagingPlatform: befe603da6501006420c206222acd449bba45a9c

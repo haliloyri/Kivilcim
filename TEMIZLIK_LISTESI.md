@@ -31,7 +31,7 @@ Arayüzden e-posta girişi tamamen kalktı ama veri katmanı hâlâ taşıyor:
 
 - `docs/screenshots/profile.svg`: Eski profil tasarımını gösteriyor, yeni ekran görüntüsüyle değiştirilmeli.
 - `docs/screenshots/progress-legacy.svg`: Eski rozet/ısı haritası ekranı artık yok.
-- `EKRANLAR.md` §8 (ProgressScreen): Hâlâ eski rozet/istatistik ekranını anlatıyor; İlerleme sekmesi artık Kıvılcım Yolu (`CareerPathExperience`).
+- `EKRANLAR.md` §8 (ProgressScreen): Hâlâ eski rozet/istatistik ekranını anlatıyor; İlerleme sekmesi artık Albor Yolu (`CareerPathExperience`).
 
 ## 5. Sonra yapılacak (silme değil)
 

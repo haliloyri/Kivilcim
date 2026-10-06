@@ -8,7 +8,7 @@ const initSqlJs = require('sql.js');
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const paths = {
-  db: resolve(root, 'assets/kivilcim.db'),
+  db: resolve(root, 'assets/albor.db'),
   titles: resolve(root, 'HIKAYE_BASLIKLARI.md'),
   catalog: resolve(root, 'YENI_KITAP_ONERILERI.md'),
   task: resolve(root, 'HIKAYE_URETIM_TASK.md'),
@@ -344,7 +344,7 @@ const items = [
         'Atmak ve seçmek'
       ),
       en: locale(
-        'Why Marie Kondo Asked, “Does This Spark Joy?”',
+        'Why Marie Kondo Asked, “Does This Albor Joy?”',
         'Marie Kondo has described testing tidying methods since childhood, yet for a long time the question began in the wrong place. “What should I throw away?” turned possessions into opponents. “Does this spark joy?” moved attention from loss to relationship. Tidying became less a contest to own less and more a practice of choosing what deserved to travel with you.',
         'A better question can change your relationship with the problem before it solves the problem.',
         'Choosing what stays can feel very different from hunting for what must disappear.',
