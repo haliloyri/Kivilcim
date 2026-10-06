@@ -159,10 +159,10 @@ onaylarsa uygulanır.
 ## Faz 5 — Görsel Sistem ve İçerik Sunumu
 
 - [ ] Progress ekranındaki `Sıradaki en iyi adımlar` bölümünü gerçek kullanıcı
-  durumuna göre dinamik hale getir veya mevcut Kıvılcım Yolu karşılığını doğrula.
+  durumuna göre dinamik hale getir veya mevcut Albor Yolu karşılığını doğrula.
 - [ ] Güncel Albor logosunu gözden geçir; eski “ateşli S biçimli kitap ayracı”
   talebinin marka sistemiyle hâlâ geçerli olup olmadığına karar ver.
-- [ ] Rozet/Kıvılcım Yolu görsellerini açık-koyu tema, farklı durumlar ve paylaşım
+- [ ] Rozet/Albor Yolu görsellerini açık-koyu tema, farklı durumlar ve paylaşım
   yüzeylerinde gözden geçir.
 - [ ] Kategori görsellerini ve ikonlarını dört dilde, açık-koyu temada ve
   erişilebilirlik açısından gözden geçir.

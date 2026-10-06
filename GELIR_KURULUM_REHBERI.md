@@ -78,7 +78,7 @@ Canlı ortamda App Store / Google Play satın alımları RevenueCat üzerinden y
 
 ## 2. Play Console — abonelikler (Android)
 
-1. [ ] Play Console → uygulamayı oluştur (paket: `com.kivilcim.app`).
+1. [ ] Play Console → uygulamayı oluştur (paket: `com.albor.app`).
 2. [ ] **Monetize → Products → Subscriptions** → 2 abonelik:
    - [ ] `monthly` → bir **base plan** (aylık, auto-renewing)
    - [ ] `yearly` → bir **base plan** (yıllık, auto-renewing)

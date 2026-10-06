@@ -12,7 +12,8 @@
       },
       "env": {
         "EXPO_PUBLIC_CAREER_PATH_V1": "true",
-        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true"
+        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true",
+        "EXPO_PUBLIC_APP_ENV": "development"
       }
     },
     "apk": {
@@ -23,17 +24,20 @@
       },
       "env": {
         "EXPO_PUBLIC_CAREER_PATH_V1": "true",
-        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true"
+        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true",
+        "EXPO_PUBLIC_APP_ENV": "preview"
       }
     },
     "preview": {
       "distribution": "internal",
       "env": {
         "EXPO_PUBLIC_CAREER_PATH_V1": "true",
-        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true"
+        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true",
+        "EXPO_PUBLIC_APP_ENV": "preview"
       }
     },
     "production": {
+      "autoIncrement": true,
       "ios": {
         "buildConfiguration": "Release",
         "credentialsSource": "remote"
@@ -44,7 +48,8 @@
       },
       "env": {
         "EXPO_PUBLIC_CAREER_PATH_V1": "true",
-        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true"
+        "EXPO_PUBLIC_CAREER_EVENT_CAPTURE_V1": "true",
+        "EXPO_PUBLIC_APP_ENV": "production"
       }
     }
   },

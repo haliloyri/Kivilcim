@@ -669,6 +669,30 @@ export const markBadgesSeenOnServer = async (userId, badgeIds = []) => {
 };
 
 /**
+ * Permanently deletes the device's (anonymous) account and all server data via
+ * the `delete_my_account` RPC, then drops the local session.
+ * @returns {Promise<boolean>} true when nothing is left on the server.
+ */
+export const deleteAccountOnServer = async () => {
+  if (!SUPABASE_LIVE) return true;
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session?.user) return true; // no server account to delete
+    const { error } = await supabase.rpc('delete_my_account');
+    if (error) {
+      console.error('[supabase] deleteAccountOnServer:', error.message);
+      return false;
+    }
+    _cachedDeviceUserId = null;
+    await supabase.auth.signOut({ scope: 'local' }).catch(() => {});
+    return true;
+  } catch (e) {
+    console.error('[supabase] deleteAccountOnServer exception:', e?.message);
+    return false;
+  }
+};
+
+/**
  * Full reset — mirrors UserDataContext#clearUserData (debug / logout / data
  * reset). Wipes every per-user table plus the profile fields that used to
  * live only in AsyncStorage. Best-effort: logs but doesn't throw, since this
@@ -738,97 +762,6 @@ export const getCareerSnapshotFromServer = async () => {
   }
 };
 
-// ─── Stories (online) ────────────────────────────────────────────────────────
-
-/**
- * Maps a raw Supabase stories row to the shape that StoriesContext consumers
- * expect — same shape as getStoriesForLang() from SQLite.
- */
-const mapSupabaseStory = (r) => ({
-  id:                        r.story_id,
-  story_id:                  String(r.story_id),
-  version:                   r.version ?? 1,
-  source_book_id:            r.book_id ?? null,
-  author:                    r.author ?? '',
-  publishDate:               r.publish_year ?? null,
-  min:                       r.read_time_minutes ?? 1,
-  possible_read_minutes:     1,
-  target_word_count:         160,
-  target_word_tolerance:     40,
-  cat:                       r.parent_cat ?? '',
-  cat_display:               r.parent_cat ?? '',
-  parent_cat_id:             r.parent_cat_id ?? null,
-  source_book:               r.source_book ?? '',
-  title:                     r.title ?? '',
-  description:               r.description ?? '',
-  body:                      r.content ?? '',
-  hook:                      r.hook ?? '',
-  thirty_sec:                '',
-  conversation_punchline:    r.conv_punchline ?? '',
-  conversation_thirty_sec:   r.conv_thirty_sec ?? '',
-  conversation_question:     r.conv_question ?? '',
-  conversation_key_contrast: r.conv_key_contrast ?? '',
-  parent_cat:                r.parent_cat ?? '',
-  parent_cat_raw:            r.parent_cat ?? '',
-  sort_order:                r.sort_order ?? 0,
-});
-
-/**
- * Fetch all stories from Supabase for a given language.
- * Returns a mapped array on success, or null on failure/offline
- * so the caller can fall back to SQLite.
- *
- * @param {string} lang — e.g. 'tr' | 'en' | 'de' | 'es'
- * @returns {Promise<object[]|null>}
- */
-export const fetchStoriesFromSupabase = async (lang) => {
-  if (!SUPABASE_LIVE) return null;
-  try {
-    const { data, error } = await supabase
-      .from('stories')
-      .select(
-        'story_id, lang, title, description, content, hook, ' +
-        'parent_cat_id, parent_cat, book_id, author, publish_year, source_book, ' +
-        'read_time_minutes, version, conv_punchline, conv_thirty_sec, ' +
-        'conv_question, conv_key_contrast, sort_order'
-      )
-      .eq('lang', lang)
-      .order('read_time_minutes', { ascending: false })
-      .order('story_id', { ascending: false });
-
-    if (error) {
-      console.warn('[supabase] fetchStoriesFromSupabase:', error.message);
-      return null;
-    }
-    return (data ?? []).map(mapSupabaseStory);
-  } catch (e) {
-    console.warn('[supabase] fetchStoriesFromSupabase exception:', e.message);
-    return null;
-  }
-};
-
-/**
- * Realtime subscription — calls `callback` whenever a new story is inserted.
- * Returns an unsubscribe function.
- *
- * @param {string} lang
- * @param {(story: object) => void} callback
- */
-export const subscribeToNewStories = (lang, callback) => {
-  if (!SUPABASE_LIVE) return () => {};
-  const channel = supabase
-    .channel('new-stories')
-    .on(
-      'postgres_changes',
-      {
-        event:  'INSERT',
-        schema: 'public',
-        table:  'stories',
-        filter: `lang=eq.${lang}`,
-      },
-      (payload) => callback(mapSupabaseStory(payload.new))
-    )
-    .subscribe();
-
-  return () => supabase.removeChannel(channel);
-};
+// ─── Content catalogue ───────────────────────────────────────────────────────
+// Stories, books and categories are synced from Supabase into the local SQLite
+// DB by src/services/contentSync.js; screens keep reading SQLite.

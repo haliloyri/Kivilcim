@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { DatabaseSync } from 'node:sqlite';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const DB = path.join(ROOT, 'assets/kivilcim.db');
+const DB = path.join(ROOT, 'assets/albor.db');
 const srcLang = (process.argv.includes('--lang') ? process.argv[process.argv.indexOf('--lang') + 1] : 'tr');
 
 const db = new DatabaseSync(DB);

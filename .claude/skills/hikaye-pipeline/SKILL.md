@@ -1,11 +1,11 @@
 ---
 name: hikaye-pipeline
-description: Spark/Kıvılcım hikâye üretim hattını çalıştırır. Kullan when: yeni hikâye üret, bekleyen hikâye var mı, sohbet varyantı eksik, yeni kitap ekle, kitap bul, batch doğrula, envanteri senkronla, hikâye kuyruğu, 4 dilde hikâye, paylaş içeriği, sohbette kullan içeriği. kivilcim.db ve KITAP_HIKAYE_ENVANTERI.md ile çalışır.
+description: Albor hikâye üretim hattını çalıştırır. Kullan when: yeni hikâye üret, bekleyen hikâye var mı, sohbet varyantı eksik, yeni kitap ekle, kitap bul, batch doğrula, envanteri senkronla, hikâye kuyruğu, 4 dilde hikâye, paylaş içeriği, sohbette kullan içeriği. albor.db ve KITAP_HIKAYE_ENVANTERI.md ile çalışır.
 ---
 
 # Hikâye Üretim Hattı
 
-Spark uygulamasının kitap → hikâye → 4 dil → paylaş/sohbet içeriği zincirini yönetir.
+Albor uygulamasının kitap → hikâye → 4 dil → paylaş/sohbet içeriği zincirini yönetir.
 
 ## Temel kural: DB'ye yazma yetkin yok
 
@@ -17,7 +17,7 @@ DB'ye dokunulmaz. Dry-run ve doğrulama serbesttir.
 
 | Soru | Kaynak |
 |---|---|
-| Ne **var**? | `assets/kivilcim.db` |
+| Ne **var**? | `assets/albor.db` |
 | Ne **üretilecek**? | `KITAP_HIKAYE_ENVANTERI.md` (`[ ]` satırlar) |
 | Kurallar ne? | `references/uretim-kurallari.md` |
 | Çıktı biçimi ne? | `references/batch-semasi.md` |

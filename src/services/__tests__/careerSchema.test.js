@@ -35,8 +35,8 @@ describe('career Supabase contract', () => {
   });
 
   it('binds queued career writes to the session that created them', () => {
-    expect(queue).toContain('ownerUserId: user.id');
-    expect(queue).toContain('item.ownerUserId !== user.id');
+    expect(queue).toContain('queueItem(type, payload, uid)');
+    expect(queue).toContain('item.ownerUserId !== uid');
     expect(queue).toContain('upsert_legacy_badges');
     expect(queue).toContain('upsert_career_migration_state');
   });

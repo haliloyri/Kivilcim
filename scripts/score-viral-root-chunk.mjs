@@ -7,7 +7,7 @@ const initSqlJs = require('sql.js');
 
 const root = resolve(import.meta.dirname, '..');
 const SQL = await initSqlJs();
-const db = new SQL.Database(readFileSync(resolve(root, 'assets/kivilcim.db')));
+const db = new SQL.Database(readFileSync(resolve(root, 'assets/albor.db')));
 
 const rows = db.exec(`
   SELECT s.id, CAST(s.version AS TEXT), st.title, st.description, st.content,

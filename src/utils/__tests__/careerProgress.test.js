@@ -38,21 +38,21 @@ describe('career view model', () => {
     const viewModel = buildCareerViewModel({
       metrics: {},
       activePath: 'exploration',
-      earnedNodes: ['common_first_spark', 'common_curious', 'common_traveler'],
+      earnedNodes: ['common_first_light', 'common_curious', 'common_traveler'],
     });
     expect(viewModel.profileTitle).toBe('careerNode.traveler.title');
     const fresh = buildCareerViewModel({ metrics: {} });
     expect(fresh.displayedTitle).toBeNull();
     expect(fresh.profileTitle).toBeNull();
-    const spark = buildCareerViewModel({ metrics: {}, earnedNodes: ['common_first_spark'] });
-    expect(spark.displayedTitle).toBe('careerNode.firstSpark.title');
+    const spark = buildCareerViewModel({ metrics: {}, earnedNodes: ['common_first_light'] });
+    expect(spark.displayedTitle).toBe('careerNode.firstLight.title');
   });
 
   it('awards the derived summit title after two completed paths', () => {
     const viewModel = buildCareerViewModel({
       metrics: {},
       activePath: 'depth',
-      earnedNodes: ['common_first_spark', 'common_curious', 'common_traveler',
+      earnedNodes: ['common_first_light', 'common_curious', 'common_traveler',
         'exploration_route_seeker', 'exploration_horizon_traveler', 'exploration_wisdom_cartographer',
         'depth_thinker', 'depth_synthesizer', 'depth_insight_curator'],
     });
@@ -71,7 +71,7 @@ describe('career view model', () => {
     const viewModel = buildCareerViewModel({
       metrics: {},
       activePath: 'exploration',
-      earnedNodes: ['common_first_spark', 'common_curious', 'common_traveler', 'exploration_route_seeker'],
+      earnedNodes: ['common_first_light', 'common_curious', 'common_traveler', 'exploration_route_seeker'],
     });
     expect(viewModel.paths.exploration[0].status).toBe('completed');
   });

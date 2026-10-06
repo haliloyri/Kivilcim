@@ -25,7 +25,7 @@
     "screenshots": "node scripts/generate-screenshots.mjs",
     "merge": "node scripts/merge.mjs",
     "test": "jest --runInBand",
-    "test:career": "jest --runInBand src/config/__tests__/featureFlags.test.js src/utils/__tests__/careerProgress.test.js src/utils/__tests__/careerLearning.test.js src/utils/__tests__/careerShare.test.js src/utils/__tests__/learningMilestones.test.js src/utils/__tests__/careerNextAction.test.js src/utils/__tests__/careerNavigation.test.js src/utils/__tests__/careerSync.test.js src/utils/__tests__/localDate.test.js src/utils/__tests__/storyCompletion.test.js src/utils/__tests__/careerToolkit.test.js src/utils/__tests__/careerSparkPackage.test.js src/utils/__tests__/careerPreview.test.js src/services/__tests__/careerEvents.test.js src/services/__tests__/careerSchema.test.js src/services/__tests__/migrateCareerPath.test.js src/services/__tests__/offlineQueue.test.js src/locales/__tests__/careerCopy.test.js src/components/career/__tests__/CareerPathExperience.smoke.test.js src/components/career/__tests__/LearningMilestoneModal.test.js"
+    "test:career": "jest --runInBand src/config/__tests__/featureFlags.test.js src/utils/__tests__/careerProgress.test.js src/utils/__tests__/careerLearning.test.js src/utils/__tests__/careerShare.test.js src/utils/__tests__/learningMilestones.test.js src/utils/__tests__/careerNextAction.test.js src/utils/__tests__/careerNavigation.test.js src/utils/__tests__/careerSync.test.js src/utils/__tests__/localDate.test.js src/utils/__tests__/storyCompletion.test.js src/utils/__tests__/careerToolkit.test.js src/utils/__tests__/careerIdeaPackage.test.js src/utils/__tests__/careerPreview.test.js src/services/__tests__/careerEvents.test.js src/services/__tests__/careerSchema.test.js src/services/__tests__/migrateCareerPath.test.js src/services/__tests__/offlineQueue.test.js src/locales/__tests__/careerCopy.test.js src/components/career/__tests__/CareerPathExperience.smoke.test.js src/components/career/__tests__/LearningMilestoneModal.test.js"
   },
   "dependencies": {
     "@expo-google-fonts/dm-sans": "^0.4.2",
@@ -61,6 +61,7 @@
     "expo-sqlite": "~57.0.3",
     "expo-status-bar": "~57.0.1",
     "expo-store-review": "~57.0.3",
+    "expo-tracking-transparency": "~57.0.2",
     "posthog-react-native": "^4.52.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",

@@ -27,7 +27,7 @@ const valueOf = (flag) => {
 const planArg = valueOf('--plan');
 if (!planArg) throw new Error('Usage: --plan <approved-fixes.json> [--db <path>] [--apply]');
 const planPath = resolve(planArg);
-const dbPath = resolve(valueOf('--db') || resolve(repoRoot, 'assets/kivilcim.db'));
+const dbPath = resolve(valueOf('--db') || resolve(repoRoot, 'assets/albor.db'));
 const shouldApply = args.includes('--apply');
 const plan = JSON.parse(readFileSync(planPath, 'utf8'));
 if (!plan || typeof plan !== 'object' || !Array.isArray(plan.fixes) || !plan.fixes.length) {

@@ -35,7 +35,7 @@ export const listReachedMilestones = (summary) => {
  * Decides which of the newly reached milestones deserves a celebration.
  * The biggest new book milestone wins; otherwise the first new category.
  * A reader's very first category is never celebrated here because the
- * "İlk Kıvılcım" title promotion already marks that moment.
+ * "İlk Işık" title promotion already marks that moment.
  */
 export const pickMilestoneCelebration = (newIds = [], summary) => {
   if (!newIds.length || !summary) return null;

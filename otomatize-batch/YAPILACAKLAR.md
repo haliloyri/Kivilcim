@@ -10,7 +10,7 @@ katmanıdır.
 otomatize-batch/
   config.sh                     ← tek ayar dosyası (dil, model, limit, apply)
   run-pipeline.sh                ← .env.local'ı yükler, kilitler, loglar, pipeline'ı çalıştırır
-  com.spark.storypipeline.plist  ← macOS launchd tanımı (günlük otomatik tetikleme)
+  com.albor.storypipeline.plist  ← macOS launchd tanımı (günlük otomatik tetikleme)
   install-launchd.sh             ← plist'i kurar ve etkinleştirir
   uninstall-launchd.sh           ← otomatik tetiklemeyi kaldırır
   logs/                          ← her çalışmanın zaman damgalı logu (git'e girmez)

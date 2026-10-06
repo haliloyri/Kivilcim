@@ -8,7 +8,7 @@ Compare afterwards:
 
 ---
 
-You are working in the Spark repo. First read `AGENTS.md`, especially the section
+You are working in the Albor repo. First read `AGENTS.md`, especially the section
 "Story Content Pipeline (P1 rewrite)". Follow its hard rules.
 
 ## Task

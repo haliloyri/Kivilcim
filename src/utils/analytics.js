@@ -171,7 +171,7 @@ const ANALYTICS_EVENTS = {
   ONE_MINUTE_SUMMARY_OPENED: 'one_minute_summary_opened',
   ONE_MINUTE_SUMMARY_COMPLETED: 'one_minute_summary_completed',
   ONE_MINUTE_SUMMARY_FULL_STORY_CLICKED: 'one_minute_summary_full_story_clicked',
-  // Kıvılcım Yolu
+  // Albor Yolu
   CAREER_PATH_SELECTED: 'career_path_selected',
   CAREER_PROMOTION_SHOWN: 'career_promotion_shown',
   CAREER_PATH_EXPOSURE: 'career_path_exposure',

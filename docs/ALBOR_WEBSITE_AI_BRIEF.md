@@ -49,7 +49,7 @@ Tüm sayfalarda alt bilgi içinde `/privacy`, `/terms`, `/refund` ve `/support` 
 - **Günün seçkisi:** Her güne uygun, kısa ve odaklı hikayeler.
 - **Sesli anlatım:** Okumak yerine dinleme seçeneği.
 - **Kişisel kütüphane:** Kaydedilen hikayeler, okuma geçmişi ve kişisel notlar.
-- **Kıvılcım Yolu:** Okuma, derinleşme ve uygulama davranışlarını kalıcı ilerleme adımlarına dönüştüren gelişim deneyimi.
+- **Albor Yolu:** Okuma, derinleşme ve uygulama davranışlarını kalıcı ilerleme adımlarına dönüştüren gelişim deneyimi.
 - **Sohbette Kullan:** Bir fikri toplantıda, bire bir konuşmada, aile içinde veya sosyal ortamda daha doğal anlatmak için anlatım varyasyonları ve pratik.
 - **Paylaşılabilir kartlar:** Hikayeleri estetik dikey kartlarla paylaşma.
 - **Premium:** Sınırsız hikaye, tüm kategoriler, sesli anlatım, kişisel öğrenme araçları ve reklamsız deneyim.

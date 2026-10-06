@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * ingest-batch.mjs — Onaylanmis staging batch'ini kivilcim.db'ye yazar.
+ * ingest-batch.mjs — Onaylanmis staging batch'ini albor.db'ye yazar.
  *
  * GUVENLIK KAPILARI
  *  1. validate-batch.mjs otomatik calisir; hata varsa yazma yapilmaz.
  *  2. --confirm bayragi olmadan calismaz (varsayilan: dry-run).
- *  3. Yazmadan once assets/kivilcim.db.bak_<zaman> alinir.
+ *  3. Yazmadan once assets/albor.db.bak_<zaman> alinir.
  *
  * Kullanim:
  *   node scripts/story-pipeline/ingest-batch.mjs staging/batch-018.json            # dry-run
@@ -252,7 +252,7 @@ if (!confirm) {
 
 saveDb(db, { backup: true });
 db.close();
-console.log(`[ingest] ${log.length} kayit yazildi -> assets/kivilcim.db (yedek alindi)`);
+console.log(`[ingest] ${log.length} kayit yazildi -> assets/albor.db (yedek alindi)`);
 
 /* Batch dosyasini isaretle */
 const stamp = new Date().toISOString();

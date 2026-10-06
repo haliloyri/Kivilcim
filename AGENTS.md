@@ -3,7 +3,7 @@
 ## Purpose
 This file helps AI coding agents become productive fast in this repository.
 
-- App type: React Native + Expo mobile app (Spark / Kivilcim)
+- App type: React Native + Expo mobile app (Albor)
 - Main goal: implement safe UI/data changes without breaking Android/iOS builds
 
 ## First Commands To Run
@@ -75,11 +75,11 @@ Custom agents in `.github/agents/`:
 
 | Agent | Purpose |
 |-------|---------|
-| **Spark Bugfix Specialist** | Fix TODO_BUGS items: UI polish, localization, state/persistence, Android behavior |
+| **Albor Bugfix Specialist** | Fix TODO_BUGS items: UI polish, localization, state/persistence, Android behavior |
 | **Explore** | Fast read-only codebase exploration and Q&A |
 | **RN UI Developer** | Create/modify screens, components, navigation with proper patterns |
 | **i18n Manager** | Add/update/audit translation keys across all 4 languages (en, tr, es, de) |
-| **Kıvılcım Phase Runner** | Execute Kıvılcım Yolu phases 0–10 in a persistent implement-test-checkpoint loop |
+| **Albor Yolu Phase Runner** | Execute Albor Yolu phases 0–10 in a persistent implement-test-checkpoint loop |
 
 ## Available Skills
 Custom skills in `.github/skills/`:
@@ -111,7 +111,7 @@ automated (Anthropic Batch) pipeline: [batch/README.md](batch/README.md).
 
 **Hard rules**
 1. **Never create, edit or overwrite anything in `staging/p1/brief/` or `staging/p1/<lang>/`** unless the user explicitly asks. These are the production outputs of the Batch pipeline (Claude Opus), which skips any id whose file already exists.
-2. Never write to `assets/kivilcim.db` and never run `scripts/p1/apply-to-db.mjs` or anything that touches Supabase — the user applies content to the DB by hand after review.
+2. Never write to `assets/albor.db` and never run `scripts/p1/apply-to-db.mjs` or anything that touches Supabase — the user applies content to the DB by hand after review.
 3. Agent-made stories go to a **separate folder**: `staging/p1-<agent>/` (e.g. `staging/p1-codex/brief/`, `staging/p1-codex/en/`).
 4. Use cards in `[[use]]` MUST start with `%%context:<meeting|oneonone|family|social|self> | ` — the app parser (`src/utils/storyMarkup.js`) needs the literal `context:` prefix.
 5. Validate before reporting: `node scripts/p1/validate-dir.mjs en staging/p1-codex/en <ids>` must print `N/N passed`.

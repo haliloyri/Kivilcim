@@ -13,7 +13,7 @@ const PATH_ICONS = {
   transfer: 'chatbubbles-outline',
 };
 
-const KIVILCIM_HERO = require('../../assets/career/kivilcim-yolu-hero-v1.png');
+const CAREER_HERO = require('../../assets/career/albor-yolu-hero-v1.png');
 
 const CareerPathSelectionScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
@@ -57,7 +57,7 @@ const CareerPathSelectionScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <ImageBackground source={KIVILCIM_HERO} imageStyle={styles.introImage} style={styles.intro}>
+      <ImageBackground source={CAREER_HERO} imageStyle={styles.introImage} style={styles.intro}>
         <View style={styles.introScrim} />
         <View style={styles.introContent}>
           <View style={styles.introKicker}><Ionicons name="sparkles-outline" size={15} color="#F9D783" /><Text selectable style={styles.introKickerText}>{t('career.selection.free', lang)}</Text></View>

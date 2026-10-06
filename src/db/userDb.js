@@ -1,7 +1,7 @@
 import * as SQLite from 'expo-sqlite';
 import { PATH_IDS, COMMON_PATH_ID, RULE_VERSION, getCareerNode } from '../constants/careerPath';
 
-const USER_DB_NAME = 'kivilcim_user.db';
+const USER_DB_NAME = 'albor_user.db';
 const USER_SCHEMA_VERSION = 1;
 const CREDIT_TYPES = new Set(['H', 'D', 'U']);
 const VALID_PATH_IDS = new Set([COMMON_PATH_ID, ...Object.values(PATH_IDS)]);

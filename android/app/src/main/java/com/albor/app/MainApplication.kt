@@ -1,4 +1,4 @@
-package com.kivilcim.app
+package com.albor.app
 
 import android.app.Application
 import android.content.res.Configuration

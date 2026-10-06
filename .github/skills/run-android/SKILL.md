@@ -1,6 +1,6 @@
 ---
 name: run-android
-description: 'Run the Spark app on an Android device or emulator. Use when the user says android çalıştır, android aç, android emülatöre yükle, run android, start android, test on android, or similar.'
+description: 'Run the Albor app on an Android device or emulator. Use when the user says android çalıştır, android aç, android emülatöre yükle, run android, start android, test on android, or similar.'
 argument-hint: 'No arguments needed'
 user-invocable: true
 ---

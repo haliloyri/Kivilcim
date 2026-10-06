@@ -1,6 +1,6 @@
-# Kıvılcım Yolu — Uygulama Durumu
+# Albor Yolu — Uygulama Durumu
 
-Bu dosya, `.github/agents/kivilcim-phase-runner.agent.md` için kalıcı checkpoint’tir.
+Bu dosya, `.github/agents/albor-yolu-phase-runner.agent.md` için kalıcı checkpoint’tir.
 Durumlar kod ve test kanıtına göre güncellenir:
 
 - `todo`: başlanmadı
@@ -20,7 +20,7 @@ Durumlar kod ve test kanıtına göre güncellenir:
 | 5 — Görsel sistem | partial | `careerVisuals` 12 düğümün light/dark, durum ve share kimliğini tek kaynaktan sağlıyor; timeline, düğüm sheet’i, promotion ve share aynı sembolü kullanıyor. Yeni görsel yol hero’su ve seçim/ilerleme ekranlarının UX turu uygulandı; cihazda görsel QA eksik. |
 | 6 — Yolum ekranı | partial | Yol görselli hero, next card, timeline, node sheet, özet, sekiz haftalık okuma ritmi/heatmap, risk/koruma durumundaki streak-freeze ve miras mevcut. Loading/error retry/offline cached state uygulandı; kapsamlı state/motion cihaz denetimi eksik. |
 | 7 — Seçim ve capstone | partial | KY-700 tam ekran ilk seçim, KY-704 capstone finali ve KY-705 geriye uyumlu rank/path paylaşımı tamam. KY-706 legacy cleanup rollout sonrası yapılacağından güvenli biçimde flag arkasında korunuyor. |
-| 8 — Home ve yardımcı deneyimler | partial | CareerToolkit artık yol kimlikli görsel hero, kategori illüstrasyonları, haftaya göre deterministik/free-safe rota, Atlas, Sentez/Dosya, sohbet kısayolları ve cihazda saklanan beş hikâyelik özel Kıvılcım Paketi sunuyor. Araçlar ilgili 1/2/3. yol node’u kazanılmadan route üzerinden de açılmıyor. Home career treatment’ta legacy earned/total hesapları çalışmıyor; legacy kodun fiziksel temizliği rollout sonrası KY-1005 kapsamındadır. |
+| 8 — Home ve yardımcı deneyimler | partial | CareerToolkit artık yol kimlikli görsel hero, kategori illüstrasyonları, haftaya göre deterministik/free-safe rota, Atlas, Sentez/Dosya, sohbet kısayolları ve cihazda saklanan beş hikâyelik özel Fikir Paketi sunuyor. Araçlar ilgili 1/2/3. yol node’u kazanılmadan route üzerinden de açılmıyor. Home career treatment’ta legacy earned/total hesapları çalışmıyor; legacy kodun fiziksel temizliği rollout sonrası KY-1005 kapsamındadır. |
 | 9 — i18n, analytics, a11y, performans | partial | Dört dil key/placeholder parity testi, genişletilmiş kariyer analytics kataloğu/call-site’ları, 2.000 olay engine performans fixture’ı, merkezi runtime Reduce Motion dinleme, node/switch/share/migration modal ilk-focus, node-sheet focus dönüşü ve 44 px kontroller mevcut; ekranların tam a11y/perf cihaz denetimi eksik. |
 | 10 — QA ve rollout | partial | QA matrisi ve yeni Yolum statik preview’ları eklendi: yeni kullanıcı, ortak yol, aktif yol, capstone, legacy, dark/uzun Almanca ve okuma ritmi. Teknik rehber/README/analytics sözleşmesi güncel; cihaz ve canlı Supabase/shadow/rollout kanıtı bekliyor. |
 

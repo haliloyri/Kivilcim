@@ -8,7 +8,7 @@ const initSqlJs = require('sql.js');
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const paths = {
-  db: resolve(root, 'assets/kivilcim.db'),
+  db: resolve(root, 'assets/albor.db'),
   catalog: resolve(root, 'YENI_KITAP_ONERILERI.md'),
   batch: resolve(root, 'HIKAYE_URETIM_BATCH_008.md'),
 };

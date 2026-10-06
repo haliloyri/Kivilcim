@@ -1,6 +1,6 @@
 ---
 name: add-screen
-description: 'Add a new screen to the Spark React Native app with proper navigation, theming, i18n, and analytics. Use when the user says yeni ekran ekle, yeni sayfa ekle, ekran oluştur, create new screen, add screen, or similar.'
+description: 'Add a new screen to the Albor React Native app with proper navigation, theming, i18n, and analytics. Use when the user says yeni ekran ekle, yeni sayfa ekle, ekran oluştur, create new screen, add screen, or similar.'
 argument-hint: 'Screen name and purpose (e.g. SettingsScreen - user settings page)'
 user-invocable: true
 ---

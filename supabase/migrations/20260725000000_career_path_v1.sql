@@ -1,4 +1,4 @@
--- Kıvılcım Yolu V1: user-owned, idempotent career data.
+-- Albor Yolu V1: user-owned, idempotent career data.
 -- Apply with the Supabase CLI before enabling server-backed career sync.
 
 create table if not exists public.user_career_events (

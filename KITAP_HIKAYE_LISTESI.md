@@ -1,6 +1,6 @@
 # Kitap ve Hikâye Listesi
 
-Bu liste `assets/kivilcim.db` veritabanındaki kayıtlı kitaplardan üretilmiştir. Her kitabın altında mevcut hikâye başlıkları, yanlarında açıklayıcı birer cümleyle verilir.
+Bu liste `assets/albor.db` veritabanındaki kayıtlı kitaplardan üretilmiştir. Her kitabın altında mevcut hikâye başlıkları, yanlarında açıklayıcı birer cümleyle verilir.
 
 ---
 

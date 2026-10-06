@@ -1,6 +1,6 @@
-# Kıvılcım Yolu — Fazlı Uygulama Görev Planı
+# Albor Yolu — Fazlı Uygulama Görev Planı
 
-> Bu dosya, Kıvılcım Yolu ve kariyer rozetleri özelliğini önceki ürün yazışmalarını okumadan geliştirebilmek için hazırlanmış bağımsız uygulama spesifikasyonudur.
+> Bu dosya, Albor Yolu ve kariyer rozetleri özelliğini önceki ürün yazışmalarını okumadan geliştirebilmek için hazırlanmış bağımsız uygulama spesifikasyonudur.
 
 ## 1. Belgenin amacı
 
@@ -10,7 +10,7 @@ Bu aşamada amaç kod yazmak değildir. Aşağıdaki görevler uygulama sırası
 
 ## 2. Değişmez ürün kararları
 
-- Kullanıcı arayüzünde “kariyer” yerine **Kıvılcım Yolu** adı kullanılacaktır.
+- Kullanıcı arayüzünde “kariyer” yerine **Albor Yolu** adı kullanılacaktır.
 - İlk sürümde toplam **12 kariyer düğümü** bulunacaktır:
   - 3 ortak başlangıç rütbesi
   - Keşif Yolu’nda 3 rütbe
@@ -27,7 +27,7 @@ Bu aşamada amaç kod yazmak değildir. Aşağıdaki görevler uygulama sırası
 - Temel hikâyeler, erişilebilirlik özellikleri veya tamamlanabilirlik Premium arkasına konmaz.
 - Global `12/12` tamamlama baskısı gösterilmez. Kullanıcının seçtiği yolun son rütbesi geçerli finaldir.
 - V1’de yüzü, adı ve konuşan kişiliği olan tam maskot yapılmaz.
-- Yalnızca Kıvılcım Yolu ekranında ve kariyer/rozet modallarında soyut, sessiz bir **Rehber Işık** kullanılabilir.
+- Yalnızca Albor Yolu ekranında ve kariyer/rozet modallarında soyut, sessiz bir **Rehber Işık** kullanılabilir.
 - Kullanıcıyı suçlayan, korkutan veya seri kaybıyla tehdit eden metin kullanılmaz.
 - “Uzman”, “usta”, “otorite” gibi doğrulanmamış yeterlilik unvanları kullanılmaz.
 
@@ -85,7 +85,7 @@ Kod kimlikleri kalıcı sözleşme kabul edilmelidir. Kullanıcıya gösterilen 
 
 | Sıra | Kalıcı `nodeId` | Yol | Türkçe rütbe | Koşullar | Açılan yardımcı deneyim |
 |---:|---|---|---|---|---|
-| 1 | `common_first_spark` | Ortak | İlk Kıvılcım | H1 | Kıvılcım Yolu haritası |
+| 1 | `common_first_light` | Ortak | İlk Işık | H1 | Albor Yolu haritası |
 | 2 | `common_curious` | Ortak | Meraklı | H3, K2, D1, G3 | Üç yolun ön izlemesi |
 | 3 | `common_traveler` | Ortak | Yolcu | H7, K3, D2, U1, G5 | Yol seçimi ve profil unvanı |
 | 4 | `exploration_route_seeker` | Keşif | Rota Arayıcısı | H12, K4, D3, U1, G8 | Kişisel kategori pusulası |
@@ -96,7 +96,7 @@ Kod kimlikleri kalıcı sözleşme kabul edilmelidir. Kullanıcıya gösterilen 
 | 9 | `depth_insight_curator` | Derinlik | İçgörü Küratörü | H40, K5, D25, U5, G35 | Bilgelik Dosyası, profil amblemi ve dönem özeti |
 | 10 | `transfer_storyteller` | Aktarım | Anlatıcı | H10, K3, D3, U3, G8 | Kişiselleştirilmiş sohbet başlangıçları |
 | 11 | `transfer_connector` | Aktarım | Bağ Kurucu | H20, K4, D7, U8, G18 | Kullanılan/kaydedilen sohbet kartları destesi |
-| 12 | `transfer_spark_carrier` | Aktarım | Kıvılcım Taşıyıcısı | H40, K5, D15, U18, G35 | Beş hikâyelik Kıvılcım Paketi, profil amblemi ve dönem özeti |
+| 12 | `transfer_light_carrier` | Aktarım | Meşale Taşıyan | H40, K5, D15, U18, G35 | Beş hikâyelik Fikir Paketi, profil amblemi ve dönem özeti |
 
 Dinamik kategori kuralı:
 
@@ -131,7 +131,7 @@ Dinamik kategori kuralı:
 
 ## 7. Önerilen kaynak yapısı
 
-Mevcut route ve dosya isimlerini gereksiz yere kırmamak için `ProgressTab` ve `src/screens/ProgressScreen.js` ilk sürümde korunmalıdır. Yalnızca kullanıcıya görünen sekme etiketi “Yolum”, ekran başlığı “Kıvılcım Yolu” olur.
+Mevcut route ve dosya isimlerini gereksiz yere kırmamak için `ProgressTab` ve `src/screens/ProgressScreen.js` ilk sürümde korunmalıdır. Yalnızca kullanıcıya görünen sekme etiketi “Yolum”, ekran başlığı “Albor Yolu” olur.
 
 Yeni modüller için önerilen yapı:
 
@@ -170,7 +170,7 @@ Notlar:
 - Kesin dosya sayısı gerektiğinde azaltılabilir; ancak Home ve Progress içinde ayrı ilerleme hesapları yazılmamalıdır.
 - Saf hesaplama fonksiyonları React bileşenlerinden ve depolama kodundan bağımsız olmalıdır.
 - `CareerPathContext`, `UserDataContext` ve `StoriesContext` verilerini okuyabilmesi için provider sırası `UserDataProvider → StoriesProvider → CareerPathProvider` olacak şekilde kurulmalıdır.
-- Kariyerin kalıcı kullanıcı tabloları, asset tabanlı içerik veritabanından ayrı `kivilcim_user.db` içinde tutulmalıdır. Mevcut içerik DB’sinin sürüm mekanizması dosyayı silebildiği için yeni kariyer tabloları bu dosyaya bağlanmamalıdır.
+- Kariyerin kalıcı kullanıcı tabloları, asset tabanlı içerik veritabanından ayrı `albor_user.db` içinde tutulmalıdır. Mevcut içerik DB’sinin sürüm mekanizması dosyayı silebildiği için yeni kariyer tabloları bu dosyaya bağlanmamalıdır.
 - Eski badge sistemi yeni sistem doğrulanana kadar özellik bayrağının arkasında tutulmalı; erken ve geri dönüşü zor silme yapılmamalıdır.
 
 ## 8. Ana TODO kontrol listesi
@@ -473,7 +473,7 @@ Mevcut `user_reads` tablosunun birincil anahtarı `(user_id, story_id)` ve `reco
 - günlük kredi sınırları doğru uygulanamaz.
 - içerik DB’si yenilendiğinde kariyer olayları kaybolabilir.
 
-Bu tablo mevcut streak/heatmap davranışını kırmamak için ilk adımda değiştirilmemeli; kariyer için ayrı `kivilcim_user.db` dosyasında eklemeli olay günlüğü kullanılmalıdır.
+Bu tablo mevcut streak/heatmap davranışını kırmamak için ilk adımda değiştirilmemeli; kariyer için ayrı `albor_user.db` dosyasında eklemeli olay günlüğü kullanılmalıdır.
 
 ## Görevler
 
@@ -507,7 +507,7 @@ Bu tablo mevcut streak/heatmap davranışını kırmamak için ilk adımda deği
 
 **Yapılacaklar**
 
-- `kivilcim_user.db` adlı ayrı kullanıcı veritabanını açan `initUserDb()` fonksiyonu oluştur.
+- `albor_user.db` adlı ayrı kullanıcı veritabanını açan `initUserDb()` fonksiyonu oluştur.
 - İçerik DB’sini asset’ten yeniden kopyalayan `DB_VERSION` mekanizmasını kullanma.
 - Kullanıcı DB’si için eklemeli ve transaction-safe bir `user_schema_version` migration runner oluştur.
 - `App.js` başlangıç sırasını `initDb → seedData → initUserDb → provider load` olacak şekilde düzenle.
@@ -1275,7 +1275,7 @@ Kazanım, görülme ve overlay sıralamasını tek state katmanında yönetmek; 
 
 ## Görsel yön
 
-- Ortak yol: büyüyen altın kıvılcım
+- Ortak yol: büyüyen altın ışık
 - Keşif: turkuaz/lacivert pusuladan haritaya gelişen sembol
 - Derinlik: mor/gece mavisi mercekten katmanlı prizmaya gelişen sembol
 - Aktarım: mercan/kehribar ses halkasından köprü veya yayılan ışığa gelişen sembol
@@ -1333,7 +1333,7 @@ Kazanım, görülme ve overlay sıralamasını tek state katmanında yönetmek; 
   - `celebrate`
   - `gentleReturn`
 - Yalnız şu yüzeylerde kullanılmasına izin ver:
-  - Kıvılcım Yolu hero
+  - Albor Yolu hero
   - aktif kariyer düğümü
   - Yolum içindeki sıradaki adım göstergesi
   - yeni rütbe/capstone modalı
@@ -1405,7 +1405,7 @@ Kazanım, görülme ve overlay sıralamasını tek state katmanında yönetmek; 
 
 ---
 
-# FAZ 6 — “Yolum / Kıvılcım Yolu” ekranını yeniden kurma
+# FAZ 6 — “Yolum / Albor Yolu” ekranını yeniden kurma
 
 ## Fazın amacı
 
@@ -1415,7 +1415,7 @@ Mevcut yakın/kazanılan/kilitli rozet ızgarasını kimlik, sıradaki anlamlı 
 
 Ekran sırası:
 
-1. Header: “Kıvılcım Yolu” + bilgi butonu
+1. Header: “Albor Yolu” + bilgi butonu
 2. Aktif kimlik hero
 3. Tek “Sıradaki adım” kartı
 4. Keşif / Derinlik / Aktarım selector
@@ -1457,7 +1457,7 @@ Ekran sırası:
 
 **Yapılacaklar**
 
-- User-facing ekran başlığı “Kıvılcım Yolu” olsun.
+- User-facing ekran başlığı “Albor Yolu” olsun.
 - Bilgi butonu açıklama sheet’i açsın.
 - Bilgi metninin anlamı:
   - yolun uygulama içi davranış gelişimini gösterdiği,
@@ -1560,7 +1560,7 @@ Ekran sırası:
 - Loading: skeleton veya cached state; sıfır unvan göstermeme
 - Error: retry + son bilinen data
 - Offline: cached harita + sakin offline banner
-- Hiç okuma yok: “İlk kıvılcımını yak” + ilk story CTA
+- Hiç okuma yok: “İlk ışığını yak” + ilk story CTA
 - Ortak yol ilerliyor
 - Yolcu kazanıldı, yol seçilmedi
 - Aktif yol normal ilerleme
@@ -1918,7 +1918,7 @@ Kariyer yolunu günlük okuma davranışını bozmadan Home’a bağlamak ve rü
 - Benzersiz `U` aldığı story/variant kartlarını listele.
 - Toggle silinmiş olsa bile kazanılmış career event’in geçmişi kaybolmaz; kart görünürlüğü için ayrı tercih tutulabilir.
 
-**Kıvılcım Taşıyıcısı — Kıvılcım Paketi**
+**Meşale Taşıyan — Fikir Paketi**
 
 - Kullanıcının geçmişinden beş hikâyelik özel paket oluşturmasına izin ver.
 - Paket private kalabilir; paylaşmak isteğe bağlıdır.
@@ -2004,7 +2004,7 @@ Yeni deneyimin dört dilde, ölçülebilir, gizlilik güvenli, erişilebilir ve 
 - Modal/sheet/share/migration
 - Rehber Işık için yalnız kısa nötr copy:
   - “Yeni bir yol açıldı.”
-  - “Bugünkü kıvılcım yerini buldu.”
+  - “Bugünkü ışık yerini buldu.”
   - “İlerlemen burada. Kaldığın yerden devam edebilirsin.”
 
 **Yapılacaklar**
@@ -2168,7 +2168,7 @@ Migration, offline, modal koordinasyonu ve platform farklarını doğrulamak; ye
 
 **Yapılacaklar**
 
-- `makeProgress()` içeriğini Kıvılcım Yolu IA’sına güncelle.
+- `makeProgress()` içeriğini Albor Yolu IA’sına güncelle.
 - Dosya/output adı docs linklerini kırmamak için `progress` olarak kalabilir.
 - En az şu preview’ları üret:
   - yeni kullanıcı
@@ -2330,7 +2330,7 @@ Migration, offline, modal koordinasyonu ve platform farklarını doğrulamak; ye
 
 **Yapılacaklar**
 
-- Kullanıcı-facing marka ayrımını açıkla: uygulama markası ile “Kıvılcım Yolu” özellik adı.
+- Kullanıcı-facing marka ayrımını açıkla: uygulama markası ile “Albor Yolu” özellik adı.
 - H/K/D/U/G tanımlarını teknik dokümana ekle.
 - Career schema version, migration version ve feature flag davranışını belgele.
 - Yeni context/service/component sorumluluklarını Source Map’e ekle.
@@ -2415,7 +2415,7 @@ Aşağıdaki maddelerden biri başarısızsa `careerPathV1` production’da aç�
 
 # 11. Nihai Definition of Done
 
-Kıvılcım Yolu aşağıdaki koşulların tamamı sağlandığında bitmiş kabul edilir:
+Albor Yolu aşağıdaki koşulların tamamı sağlandığında bitmiş kabul edilir:
 
 - 12 düğümlü sürümlü kariyer tanımı tek kaynaktadır.
 - Ayrı kullanıcı DB’sindeki olay günlüğü kalıcı ve idempotenttir.

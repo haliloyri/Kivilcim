@@ -8,11 +8,11 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-LABEL="com.spark.storypipeline"
+LABEL="com.albor.storypipeline"
 DEST="$HOME/Library/LaunchAgents/$LABEL.plist"
 
 mkdir -p "$HOME/Library/LaunchAgents"
-sed "s|__REPO_ROOT__|$REPO_ROOT|g" "$SCRIPT_DIR/com.spark.storypipeline.plist" > "$DEST"
+sed "s|__REPO_ROOT__|$REPO_ROOT|g" "$SCRIPT_DIR/com.albor.storypipeline.plist" > "$DEST"
 chmod +x "$SCRIPT_DIR/run-pipeline.sh"
 
 launchctl unload "$DEST" >/dev/null 2>&1 || true

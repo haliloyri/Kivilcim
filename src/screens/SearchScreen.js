@@ -14,7 +14,7 @@ import CategoryPill from '../components/CategoryPill';
 import { t } from '../locales/i18n';
 import { searchStoriesForLang } from '../db/db';
 
-const RECENT_SEARCHES_KEY = '@kivilcim_recent_searches';
+const RECENT_SEARCHES_KEY = '@albor_recent_searches';
 const MAX_RECENT_SEARCHES = 8;
 
 const SearchScreen = ({ navigation, route }) => {

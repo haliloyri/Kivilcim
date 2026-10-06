@@ -27,7 +27,7 @@ const requiredCareerKeys = [
   'careerPath.transfer.behavior', 'careerPath.transfer.toolkit',
   'careerRecommendation.insufficientData', 'careerRecommendation.balanced',
   'careerRecommendation.exploration', 'careerRecommendation.depth', 'careerRecommendation.transfer',
-  'careerNode.firstSpark.title', 'careerNode.sparkCarrier.title',
+  'careerNode.firstLight.title', 'careerNode.lightCarrier.title',
   'career.promotion.title', 'career.promotion.body', 'career.promotion.more', 'career.promotion.continue',
   'career.capstone.title', 'career.capstone.body', 'career.capstone.periodSummary',
   'career.capstone.stay', 'career.capstone.focusAnother', 'career.capstone.profileBadge',
@@ -63,8 +63,8 @@ describe('career path translations', () => {
 
   it.each(['en', 'tr', 'es', 'de'])('%s includes explanation, meaning, and reward copy for every rank', (lang) => {
     [
-      'firstSpark', 'curious', 'traveler', 'routeSeeker', 'horizonTraveler', 'wisdomCartographer',
-      'thinker', 'synthesizer', 'insightCurator', 'storyteller', 'connector', 'sparkCarrier',
+      'firstLight', 'curious', 'traveler', 'routeSeeker', 'horizonTraveler', 'wisdomCartographer',
+      'thinker', 'synthesizer', 'insightCurator', 'storyteller', 'connector', 'lightCarrier',
     ].forEach((node) => {
       ['description', 'identity', 'unlock'].forEach((field) => {
         expect(translations[lang][`careerNode.${node}.${field}`]).toEqual(expect.any(String));

@@ -20,7 +20,7 @@ const valueOf = (flag) => {
   return args[index + 1];
 };
 
-const dbPath = resolve(valueOf('--db') || resolve(repoRoot, 'assets/kivilcim.db'));
+const dbPath = resolve(valueOf('--db') || resolve(repoRoot, 'assets/albor.db'));
 const outputPath = valueOf('--output');
 const requestedLangs = (valueOf('--langs') || LANGS.join(','))
   .split(',')

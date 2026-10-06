@@ -2,7 +2,7 @@
 
 _Hazırlanma: 25 Haziran 2026 · Aksiyon Planı Madde 7_
 
-**Varsayım:** Uygulamanın halka açık adı **Albor** (uygulama içi marka, logo ve `#Albor` etiketleriyle uyumlu). Eski "Spark / Kıvılcım" adını kullanacaksan başlıkları ona göre değiştir.
+**Varsayım:** Uygulamanın halka açık adı **Albor** (uygulama içi marka, logo ve `#Albor` etiketleriyle uyumlu).
 
 **Tek cümlelik değer önerisi:** _Her gün birkaç dakikada, kitaplardan damıtılmış uygulanabilir fikirler, hikâyeler ve ilham._
 
@@ -49,7 +49,7 @@ Her gün birkaç dakika. Kalıcı bir fikir.
 Albor, kitaplardan damıtılmış uygulanabilir bilgeliği günlük, kısa ve okunması kolay hikâyelere dönüştürür. Uzun kitaplara saatler ayırmana gerek yok — özünü dakikalar içinde al, bugün uygula.
 
 NELER VAR
-• Günün Kıvılcımı: Her gün senin için seçilen bir fikir
+• Günün Fikri: Her gün senin için seçilen bir fikir
 • Yüzlerce hikâye: Kişisel gelişim, felsefe, alışkanlıklar ve daha fazlası
 • Sohbette Kullan: Fikri gerçek konuşmalara taşıyacak hazır cümleler
 • Sesli dinleme: Yürürken, işe giderken kulağına
@@ -59,7 +59,7 @@ NELER VAR
 NEDEN ALBOR
 Bilgi yığını değil, uygulanabilir tek bir adım. Her hikâye; bir alıntı, bir ders ve bir soruyla biter — okuduğunu hayata geçirmen için.
 
-Bugün bir kıvılcım çak. Albor'u indir.
+Güne yeni bir ışıkla başla. Albor'u indir.
 ```
 
 ---
@@ -80,7 +80,7 @@ A few minutes a day. One idea that sticks.
 Albor turns actionable wisdom from books into short, daily, easy-to-read stories. No need to spend hours on long books — get the essence in minutes and apply it today.
 
 WHAT'S INSIDE
-• Daily Spark: one hand-picked idea every day
+• Idea of the Day: one hand-picked idea every day
 • Hundreds of stories: growth, philosophy, habits and more
 • Use in Conversation: ready-made lines to bring ideas into real talks
 • Listen on the go: audio for your walk or commute
@@ -90,7 +90,7 @@ WHAT'S INSIDE
 WHY ALBOR
 Not an information dump — one step you can actually take. Every story ends with a quote, a lesson and a question, so you turn reading into doing.
 
-Spark something today. Download Albor.
+Start your day with new light. Download Albor.
 ```
 
 ---
@@ -111,7 +111,7 @@ Unos minutos al día. Una idea que se queda contigo.
 Albor convierte la sabiduría práctica de los libros en historias diarias, cortas y fáciles de leer. No necesitas horas con libros largos: capta la esencia en minutos y aplícala hoy.
 
 QUÉ INCLUYE
-• Chispa del día: una idea elegida para ti cada día
+• Idea del día: una idea elegida para ti cada día
 • Cientos de historias: crecimiento, filosofía, hábitos y más
 • Usar en conversación: frases listas para llevar las ideas a charlas reales
 • Escucha donde sea: audio para caminar o ir al trabajo
@@ -121,7 +121,7 @@ QUÉ INCLUYE
 POR QUÉ ALBOR
 No es información de sobra, sino un paso que sí puedes dar. Cada historia termina con una cita, una lección y una pregunta, para convertir la lectura en acción.
 
-Enciende una chispa hoy. Descarga Albor.
+Empieza el día con una nueva luz. Descarga Albor.
 ```
 
 ---
@@ -142,7 +142,7 @@ Ein paar Minuten am Tag. Eine Idee, die bleibt.
 Albor verwandelt anwendbare Weisheit aus Büchern in kurze, tägliche und leicht lesbare Geschichten. Du brauchst keine Stunden für dicke Bücher — erfasse den Kern in Minuten und setze ihn heute um.
 
 WAS DICH ERWARTET
-• Funke des Tages: jeden Tag eine handverlesene Idee
+• Idee des Tages: jeden Tag eine handverlesene Idee
 • Hunderte Geschichten: Entwicklung, Philosophie, Gewohnheiten und mehr
 • Im Gespräch nutzen: fertige Sätze, um Ideen in echte Gespräche zu bringen
 • Unterwegs hören: Audio für Spaziergang oder Arbeitsweg
@@ -152,7 +152,7 @@ WAS DICH ERWARTET
 WARUM ALBOR
 Keine Informationsflut, sondern ein Schritt, den du wirklich gehen kannst. Jede Geschichte endet mit einem Zitat, einer Lektion und einer Frage — damit aus Lesen Handeln wird.
 
-Entzünde heute einen Funken. Lade Albor herunter.
+Starte den Tag mit neuem Licht. Lade Albor herunter.
 ```
 
 ---
@@ -160,7 +160,7 @@ Entzünde heute einen Funken. Lade Albor herunter.
 ## Sonraki adımlar
 
 1. App Store Connect ve Play Console'a yukarıdaki metinleri gir (her dil için ayrı yerelleştirme).
-2. Her dil için ekran görüntüsü seti hazırla; ilk 2 görselde değer önerisini ve "Sohbette Kullan" / "Günün Kıvılcımı" ekranlarını öne çıkar.
+2. Her dil için ekran görüntüsü seti hazırla; ilk 2 görselde değer önerisini ve "Sohbette Kullan" / "Günün Fikri" ekranlarını öne çıkar.
 3. Yayından 2–4 hafta sonra PostHog + mağaza arama verisiyle anahtar kelimeleri revize et (madde 1 ile bağlantılı).
 4. A/B: iOS'ta alt başlık ve Play'de kısa açıklama varyantlarını test et.
 

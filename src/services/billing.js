@@ -1,9 +1,9 @@
 // RevenueCat billing service.
 //
 // This wraps `react-native-purchases` so the rest of the app never imports the
-// SDK directly. Until real API keys are added in app.json -> extra.revenuecat,
-// `BILLING_LIVE` stays false and the paywall runs in a read-only state (it does
-// NOT hand out Premium — see UserDataContext.buyPremium).
+// SDK directly. Which key is used depends on the build (see PLATFORM_API_KEY);
+// with no usable key `BILLING_LIVE` stays false and the paywall runs in a
+// read-only state (it does NOT hand out Premium — see UserDataContext.buyPremium).
 //
 // SETUP (see BILLING_SETUP.md):
 //   1. Create products in App Store Connect + Google Play Console.
@@ -15,27 +15,40 @@
 
 import { Platform } from 'react-native';
 import Constants from 'expo-constants';
+import { MONETIZATION_LIVE } from '../config/monetization';
 
 const RC_CONFIG = Constants.expoConfig?.extra?.revenuecat
   ?? Constants.manifest?.extra?.revenuecat
   ?? {};
 
-const PLATFORM_API_KEY =
+const STORE_API_KEY =
   Platform.OS === 'ios' ? RC_CONFIG.iosApiKey : RC_CONFIG.androidApiKey;
 
-// A key counts as "live" only if it's a real, non-placeholder value.
+// A store key counts only if it's a real, non-placeholder appl_/goog_ value.
 //
 // `test_...` keys are RevenueCat's *Test Store* API keys (Project Settings →
-// API Keys → Test Store) — they're for RevenueCat's own sandboxed purchase
-// testing, not for a real build on a physical device. Configuring the native
-// SDK with one on-device throws a native error ("this app is using a test API
-// key...") that isn't fully catchable from JS and crashes the app right after
-// startup. Treat them the same as an unset placeholder until real Apple App
-// Store / Google Play Store public SDK keys are pasted in here.
+// API Keys → Test Store). They work in debug builds (simulator or device), but
+// configuring the SDK with one in a RELEASE build throws a native error ("this
+// app is using a test API key...") that isn't catchable from JS and crashes the
+// app right after startup — so they are only ever used when __DEV__.
 export const isPlaceholderKey = (key) =>
   !key || typeof key !== 'string' || key.trim() === '' || key.startsWith('REPLACE_') || key.startsWith('test_');
 
-export const BILLING_LIVE = !isPlaceholderKey(PLATFORM_API_KEY);
+const isTestStoreKey = (key) => typeof key === 'string' && key.startsWith('test_');
+
+// LIVE (production, real device) → real store key.
+// Debug build (Metro / dev client, incl. simulator) → Test Store demo purchases.
+// Anything else (preview/apk release builds, simulators) → no billing.
+const PLATFORM_API_KEY = (() => {
+  if (MONETIZATION_LIVE) return isPlaceholderKey(STORE_API_KEY) ? null : STORE_API_KEY;
+  if (__DEV__ && isTestStoreKey(RC_CONFIG.testStoreApiKey)) return RC_CONFIG.testStoreApiKey;
+  return null;
+})();
+
+// True when this build can run purchases (real or Test Store).
+export const BILLING_LIVE = !!PLATFORM_API_KEY;
+// True when purchases are Test Store demos, not real money.
+export const BILLING_DEMO = BILLING_LIVE && !MONETIZATION_LIVE;
 
 export const ENTITLEMENT_ID = RC_CONFIG.entitlementId || 'premium';
 export const OFFERING_ID = RC_CONFIG.offeringId || 'default';
@@ -162,6 +175,43 @@ export const getOfferingPackages = async () => {
     console.error('[billing] getOfferings failed:', e);
     return null;
   }
+};
+
+// Free trials the store will really give THIS user, per plan: only plans whose
+// product has a FREE introductory phase the user is still eligible for.
+// iOS asks RevenueCat (Apple decides eligibility on-device); Google Play only
+// returns offers the user is eligible for, so a free intro phase is enough.
+// Returns { [planKey]: { days } } — empty when no trial applies.
+const PERIOD_DAYS = { DAY: 1, WEEK: 7, MONTH: 30, YEAR: 365 };
+export const getTrialEligibility = async (packagesByPlan) => {
+  if (!packagesByPlan || !(await initBilling())) return {};
+  const Purchases = getPurchases();
+  const candidates = Object.entries(packagesByPlan).filter(([plan, pkg]) =>
+    plan !== 'lifetime' && pkg?.product?.introPrice && Number(pkg.product.introPrice.price) === 0);
+  if (!candidates.length) return {};
+
+  let eligibility = null;
+  if (Platform.OS === 'ios') {
+    if (typeof Purchases.checkTrialOrIntroductoryPriceEligibility !== 'function') return {};
+    try {
+      eligibility = await Purchases.checkTrialOrIntroductoryPriceEligibility(
+        candidates.map(([, pkg]) => pkg.product.identifier)
+      );
+    } catch (e) {
+      console.warn('[billing] trial eligibility check failed:', e?.message);
+      return {}; // unknown → never promise a trial
+    }
+  }
+  const ELIGIBLE = Purchases.INTRO_ELIGIBILITY_STATUS?.INTRO_ELIGIBILITY_STATUS_ELIGIBLE ?? 2;
+
+  const trials = {};
+  for (const [plan, pkg] of candidates) {
+    if (eligibility && eligibility[pkg.product.identifier]?.status !== ELIGIBLE) continue;
+    const intro = pkg.product.introPrice;
+    const days = (Number(intro.periodNumberOfUnits) || 0) * (PERIOD_DAYS[intro.periodUnit] || 0);
+    if (days > 0) trials[plan] = { days };
+  }
+  return trials;
 };
 
 // Purchases a package. Returns { success, entitled, entitlement, userCancelled, error }.

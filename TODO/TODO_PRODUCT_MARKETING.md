@@ -1,4 +1,4 @@
-# Kivilcim Todo List
+# Albor Todo List
 ## Eksik Gorulen Alanlar Icin Oncelikli Backlog
 
 Bu liste, uygulamanin mevcut ekranlari ve kullanici beklentileri incelenerek hazirlanmistir.

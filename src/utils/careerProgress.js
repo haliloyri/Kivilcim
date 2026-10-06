@@ -175,7 +175,7 @@ const buildPathNodes = ({ pathId, metrics, earnedNodeIds, availableCategoryCount
 const highestCompletedNode = (nodes) => [...nodes].reverse().find((node) => node.status === 'completed') || null;
 
 /**
- * Pure UI model shared by Home and Kıvılcım Yolu. Callers can pass raw career
+ * Pure UI model shared by Home and Albor Yolu. Callers can pass raw career
  * events or a persisted metric snapshot; components never calculate credits.
  */
 export const buildCareerViewModel = ({

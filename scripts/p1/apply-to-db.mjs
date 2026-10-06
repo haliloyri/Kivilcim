@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Write validated P1 stories into the bundled SQLite DB (assets/kivilcim.db).
+// Write validated P1 stories into the bundled SQLite DB (assets/albor.db).
 // Usage: node scripts/p1/apply-to-db.mjs <lang> [storyId ...] [--dry-run]
 //
 // - Refuses stories that fail validation.
@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 import { validateP1 } from './validate.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const DB = path.join(ROOT, 'assets/kivilcim.db');
+const DB = path.join(ROOT, 'assets/albor.db');
 const WPM = 200;
 
 const args = process.argv.slice(2);
@@ -84,7 +84,7 @@ if (dryRun) {
 const backupDir = path.join(ROOT, 'assets/_db_backups');
 fs.mkdirSync(backupDir, { recursive: true });
 const stamp = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 14);
-fs.copyFileSync(DB, path.join(backupDir, `kivilcim.db.${stamp}`));
+fs.copyFileSync(DB, path.join(backupDir, `albor.db.${stamp}`));
 
 const script = statements.join('\n');
 let nodeSqlite = null;
@@ -109,4 +109,4 @@ if (nodeSqlite?.DatabaseSync) {
     fs.unlinkSync(tmp);
   }
 }
-console.log(`\nApplied ${applied} stor${applied === 1 ? 'y' : 'ies'} to ${path.relative(ROOT, DB)} (backup: kivilcim.db.${stamp}).`);
+console.log(`\nApplied ${applied} stor${applied === 1 ? 'y' : 'ies'} to ${path.relative(ROOT, DB)} (backup: albor.db.${stamp}).`);

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * create-voiceover.mjs — Spark hikayelerini doğrudan ElevenLabs ile seslendirir.
+ * create-voiceover.mjs — Albor hikayelerini doğrudan ElevenLabs ile seslendirir.
  *
  * Kaynak metin: proje kökündeki "Elevenlabs-seslendirme.md" dosyası.
  *   Başlıklar "## [ID] Baslik" biçiminde; o ID'nin altındaki metin seslendirilir.

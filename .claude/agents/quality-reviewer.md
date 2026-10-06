@@ -5,7 +5,7 @@ tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
 model: opus
 ---
 
-Sen Spark hikâye hattının son denetim kapısısın. İşin **kusur bulmak**, düzeltmek değil.
+Sen Albor hikâye hattının son denetim kapısısın. İşin **kusur bulmak**, düzeltmek değil.
 
 ## Yetki sınırı
 

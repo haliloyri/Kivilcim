@@ -1,6 +1,6 @@
 ---
 name: db-migration
-description: 'Safely modify the SQLite database schema or seed data in the Spark app. Use when the user says veritabanı değiştir, tablo ekle, schema güncelle, db migration, add table, modify database, seed data, or similar.'
+description: 'Safely modify the SQLite database schema or seed data in the Albor app. Use when the user says veritabanı değiştir, tablo ekle, schema güncelle, db migration, add table, modify database, seed data, or similar.'
 argument-hint: 'Describe the schema change (e.g. add bookmarks table, add column to stories)'
 user-invocable: true
 ---
@@ -19,7 +19,7 @@ Use this skill to safely modify the SQLite database schema or seed data.
 
 - **File**: `src/db/db.js`
 - **Engine**: `expo-sqlite` (synchronous API via `openDatabaseSync`)
-- **DB Name**: `kivilcim.db`
+- **DB Name**: `albor.db`
 - **Version Control**: `DB_VERSION` constant — bump to force full DB reset on next launch
 - **Readiness Guards**: `waitForDb()` and `waitForData()` — must be respected by consumers
 

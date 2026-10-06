@@ -1,5 +1,5 @@
 import sqlite3
-c = sqlite3.connect('assets/kivilcim.db')
+c = sqlite3.connect('assets/albor.db')
 q = """
     SELECT 
       c.id,

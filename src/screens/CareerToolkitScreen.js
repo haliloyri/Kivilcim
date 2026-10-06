@@ -46,7 +46,7 @@ const CareerToolkitScreen = ({ navigation, route }) => {
   const { career } = useCareerPath();
   const {
     categoryStats, careerTakeaways, variantUsage, completedStories, history, isPremium,
-    careerSparkPackage, toggleCareerSparkPackageStory, consumeFreeRead,
+    careerIdeaPackage, toggleCareerIdeaPackageStory, consumeFreeRead,
   } = useUserData();
   const { stories, parentCategories } = useStories();
   const pathId = route.params?.pathId || PATH_IDS.EXPLORATION;
@@ -67,7 +67,7 @@ const CareerToolkitScreen = ({ navigation, route }) => {
     const source = completedStoryList.length ? completedStoryList : (history || []).map((id) => storyById.get(String(id))).filter(Boolean);
     return [...new Map(source.map((story) => [storyIdFor(story), story])).values()];
   }, [completedStoryList, history, storyById]);
-  const sparkPackageStories = useMemo(() => (careerSparkPackage || []).map((id) => storyById.get(String(id))).filter(Boolean), [careerSparkPackage, storyById]);
+  const ideaPackageStories = useMemo(() => (careerIdeaPackage || []).map((id) => storyById.get(String(id))).filter(Boolean), [careerIdeaPackage, storyById]);
   const synthesisPair = useMemo(() => {
     const first = completedStoryList[0];
     if (!first) return null;
@@ -143,13 +143,13 @@ const CareerToolkitScreen = ({ navigation, route }) => {
       {data.notes?.map((note) => <View key={note.titleKey} style={[styles.note, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Text selectable style={[styles.sectionTitle, { color: colors.text }]}>{t(note.titleKey, lang)}</Text><Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t(note.copyKey, lang, note.values)}</Text>{note.rows?.map((item, index) => <Text key={`${item.title}-${index}`} selectable style={[styles.rowMeta, { color: colors.textSecondary }]}>{`• ${item.title} · ${item.meta}`}</Text>)}</View>)}
       {pathId === PATH_IDS.DEPTH ? <View style={styles.section}>{data.dossier ? <View style={[styles.note, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Text selectable style={[styles.sectionTitle, { color: colors.text }]}>{t(data.dossier.titleKey, lang)}</Text><Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t(data.dossier.copyKey, lang, data.dossier.values)}</Text></View> : <ToolkitLock colors={colors} lang={lang} title={t('career.toolkit.thirdTool', lang)} />}</View> : null}
       {pathId === PATH_IDS.TRANSFER ? <View style={styles.section}>
-        <View style={[styles.note, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Text selectable style={[styles.sectionTitle, { color: colors.text }]}>{t('career.toolkit.transfer.packageTitle', lang)}</Text><Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t('career.toolkit.transfer.packageCopy', lang, { count: sparkPackageStories.length })}</Text></View>
+        <View style={[styles.note, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Text selectable style={[styles.sectionTitle, { color: colors.text }]}>{t('career.toolkit.transfer.packageTitle', lang)}</Text><Text selectable style={[styles.copy, { color: colors.textSecondary }]}>{t('career.toolkit.transfer.packageCopy', lang, { count: ideaPackageStories.length })}</Text></View>
         {!hasUnlocked(3) ? <ToolkitLock colors={colors} lang={lang} title={t('career.toolkit.thirdTool', lang)} /> : packageCandidates.length ? packageCandidates.map((story) => {
           const id = storyIdFor(story);
-          const selected = (careerSparkPackage || []).includes(id);
-          const atLimit = !selected && (careerSparkPackage || []).length >= 5;
+          const selected = (careerIdeaPackage || []).includes(id);
+          const atLimit = !selected && (careerIdeaPackage || []).length >= 5;
           const row = { story, title: story.title || story.name, category: categoryFor(story), meta: selected ? t('career.toolkit.transfer.packageSelected', lang) : atLimit ? t('career.toolkit.transfer.packageLimit', lang) : t('career.toolkit.transfer.packageAdd', lang) };
-          return <ToolkitRow key={id} row={row} colors={colors} isDark={isDark} trailingIcon={selected ? 'checkmark-circle' : 'add-circle-outline'} onPress={atLimit ? undefined : () => toggleCareerSparkPackageStory(id)} />;
+          return <ToolkitRow key={id} row={row} colors={colors} isDark={isDark} trailingIcon={selected ? 'checkmark-circle' : 'add-circle-outline'} onPress={atLimit ? undefined : () => toggleCareerIdeaPackageStory(id)} />;
         }) : <View style={[styles.empty, { borderColor: colors.border }]}><Text selectable style={[styles.rowMeta, { color: colors.textSecondary }]}>{t('career.toolkit.transfer.packageEmpty', lang)}</Text></View>}
       </View> : null}
     </ScrollView>

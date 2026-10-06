@@ -1,6 +1,6 @@
 # GPT-5.5 UX Tasks
 
-This file turns the UX and user-flow analysis for the Spark / Kivilcim mobile app into actionable work packages. Tasks are grouped into phases based on critical impact, user risk, and development cost.
+This file turns the UX and user-flow analysis for the Albor mobile app into actionable work packages. Tasks are grouped into phases based on critical impact, user risk, and development cost.
 
 ## Overall Goals
 

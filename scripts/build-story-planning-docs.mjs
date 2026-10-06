@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const require = createRequire(import.meta.url);
 const initSqlJs = require('sql.js');
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const dbPath = resolve(rootDir, 'assets/kivilcim.db');
+const dbPath = resolve(rootDir, 'assets/albor.db');
 const catalogPath = resolve(rootDir, 'YENI_KITAP_ONERILERI.md');
 const titlesPath = resolve(rootDir, 'HIKAYE_BASLIKLARI.md');
 const taskPath = resolve(rootDir, 'HIKAYE_URETIM_TASK.md');
@@ -378,7 +378,7 @@ const catalogLines = [
   '',
   'Bu katalog, uygulama veritabanındaki 200 kitabı ve içerik üretimi için seçilen 100 yeni kitabı tek listede birleştirir.',
   '',
-  '- `DB\'DE KAYITLI`: Kitap ve en az bir Türkçe hikâyesi `assets/kivilcim.db` içinde bulunur.',
+  '- `DB\'DE KAYITLI`: Kitap ve en az bir Türkçe hikâyesi `assets/albor.db` içinde bulunur.',
   '- `YENİ ÖNERİ`: Kitap henüz veritabanında bulunmaz; hikâye üretimi ve editoryal onay bekler.',
   '- Veritabanında ayrı bir özgün başlık alanı olmadığı için kayıtlı kitaplarda İngilizce (`en`) başlık kullanılmıştır.',
   '',
@@ -460,13 +460,13 @@ const taskContent = `# Hikâye Üretim Görevi
 
 ## Amaç
 
-\`HIKAYE_BASLIKLARI.md\` içindeki \`[ ] ÜRETİLECEK\` başlıkları araştırarak Spark mobil uygulamasının mevcut biçim ve uzunluk kurallarına uygun Türkçe hikâyelere dönüştürmek.
+\`HIKAYE_BASLIKLARI.md\` içindeki \`[ ] ÜRETİLECEK\` başlıkları araştırarak Albor mobil uygulamasının mevcut biçim ve uzunluk kurallarına uygun Türkçe hikâyelere dönüştürmek.
 
 ## Kapsam
 
 - Girdi kataloğu: \`YENI_KITAP_ONERILERI.md\`
 - İş kuyruğu: \`HIKAYE_BASLIKLARI.md\` içindeki \`[ ] ÜRETİLECEK / DOĞRULANACAK\` satırları
-- Mevcut biçim referansı: \`assets/kivilcim.db\` içindeki Türkçe \`story_translations.content\` kayıtları
+- Mevcut biçim referansı: \`assets/albor.db\` içindeki Türkçe \`story_translations.content\` kayıtları
 - Toplam plan: **300 kitap için 3.000 hikâye başlığı**
 - İlk üretim kapsamı: **${productionTopicCount} yeni Türkçe hikâye**
 - DB’de kayıtlı **${dbStories.length}** hikâye yeniden üretilmeyecek.

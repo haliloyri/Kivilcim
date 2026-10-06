@@ -41,7 +41,18 @@ android/app/build/
 
 # Story pipeline generated reports
 staging/reports/
+assets/albor.db.bak_*
+# legacy backups from before the Albor rename
 assets/kivilcim.db.bak_*
 assets/_db_backups/
 otomatize-batch/logs/
 otomatize-batch/.pipeline.lock
+
+# Supabase backups (contain user data)
+supabase/_backups/
+
+# Carousel working files
+artifacts/albor-carousels/
+
+# Build artifacts
+*.ipa

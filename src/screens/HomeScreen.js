@@ -29,9 +29,9 @@ import { readableTextOn, colors as brandColors } from '../theme/theme';
 const NEUTRAL_INK = brandColors.light.text;
 const NEUTRAL_INK_SOFT = brandColors.light.textSecondary;
 
-const FIRST_SESSION_PROMPT_KEY = '@kivilcim_first_session_prompt';
-const PERSONALIZED_MODULE_SNOOZE_KEY = '@kivilcim_personalized_module_snooze_until';
-const PROFILE_INFO_PROMPT_SEEN_KEY = '@kivilcim_profile_info_prompt_seen';
+const FIRST_SESSION_PROMPT_KEY = '@albor_first_session_prompt';
+const PERSONALIZED_MODULE_SNOOZE_KEY = '@albor_personalized_module_snooze_until';
+const PROFILE_INFO_PROMPT_SEEN_KEY = '@albor_profile_info_prompt_seen';
 
 const MODULE_TYPES = {
   CONTINUE: 'continue',
@@ -538,8 +538,8 @@ const HomeScreen = ({ navigation }) => {
     React.useCallback(() => {
       let isActive = true;
       const todayKey = new Date().toISOString().split('T')[0];
-      const DAILY_PANEL_KEY = `@spark_daily_panel_${todayKey}`;
-      const FEATURED_PANEL_KEY = `@spark_featured_panel_${todayKey}`;
+      const DAILY_PANEL_KEY = `@albor_daily_panel_${todayKey}`;
+      const FEATURED_PANEL_KEY = `@albor_featured_panel_${todayKey}`;
 
       Promise.all([
         getSelectedCategories().catch(() => null),
@@ -600,9 +600,12 @@ const HomeScreen = ({ navigation }) => {
   const selectedStoryCollections = preferences?.storyCollections?.length
     ? preferences.storyCollections
     : ['new', 'opus55'];
-  const versionStories = (stories || []).filter((story) =>
+  const collectionStories = (stories || []).filter((story) =>
     selectedStoryCollections.includes(getStoryCollectionId(story.version))
   );
+  // Supabase decides which stories are active; never let a stale collection
+  // preference hide all of them.
+  const versionStories = collectionStories.length ? collectionStories : (stories || []);
   // publishDate may be a full date string ("2018-01-01") or just a year integer (2018 from Supabase).
   // Normalize to a 4-digit year string for safe comparison.
   const publishedStories = versionStories.filter(s => {
@@ -1168,7 +1171,7 @@ const HomeScreen = ({ navigation }) => {
 
   const persistDailyPanelState = React.useCallback((clickedIds, collapsed) => {
     const todayKey = new Date().toISOString().split('T')[0];
-    const DAILY_PANEL_KEY = `@spark_daily_panel_${todayKey}`;
+    const DAILY_PANEL_KEY = `@albor_daily_panel_${todayKey}`;
     AsyncStorage.setItem(DAILY_PANEL_KEY, JSON.stringify({
       clickedIds: [...clickedIds],
       collapsed,
@@ -1177,7 +1180,7 @@ const HomeScreen = ({ navigation }) => {
 
   const persistFeaturedPanelState = React.useCallback((collapsed, auto) => {
     const todayKey = new Date().toISOString().split('T')[0];
-    AsyncStorage.setItem(`@spark_featured_panel_${todayKey}`, JSON.stringify({ collapsed, auto })).catch(() => {});
+    AsyncStorage.setItem(`@albor_featured_panel_${todayKey}`, JSON.stringify({ collapsed, auto })).catch(() => {});
   }, []);
 
   // "Bugünün Fikri" bölümü: gösterilen hikayeler ve okunma durumu

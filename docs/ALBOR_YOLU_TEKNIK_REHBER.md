@@ -1,6 +1,6 @@
-# Kıvılcım Yolu — Teknik Rehber
+# Albor Yolu — Teknik Rehber
 
-Kıvılcım uygulamanın markasıdır; **Kıvılcım Yolu**, okuma davranışını kalıcı rütbelerle görünür yapan isteğe bağlı gelişim özelliğidir. Kullanıcı arayüzünde “kariyer” sözcüğü kullanılmaz.
+Albor uygulamanın markasıdır; **Albor Yolu**, okuma davranışını kalıcı rütbelerle görünür yapan isteğe bağlı gelişim özelliğidir. Kullanıcı arayüzünde “kariyer” sözcüğü kullanılmaz.
 
 ## Ürün sözleşmesi
 
@@ -39,7 +39,7 @@ Flag kapanınca kariyer verisi silinmez. Bu repoda uzaktan yüzdesel flag atamas
 | Düğüm renk/sembol/durum/share kimliği | `src/constants/careerVisuals.js` |
 | Saf H/K/D/U/G hesabı ve next action | `src/utils/careerProgress.js`, `src/utils/careerNextAction.js` |
 | Yerel gün hesabı | `src/utils/localDate.js` |
-| Ayrı kullanıcı SQLite deposu | `src/db/userDb.js` (`kivilcim_user.db`) |
+| Ayrı kullanıcı SQLite deposu | `src/db/userDb.js` (`albor_user.db`) |
 | Davranış event koordinasyonu | `src/services/careerEvents.js` |
 | Legacy backfill | `src/services/migrateCareerPath.js` |
 | Local-first view model ve award/promotion | `src/context/CareerPathContext.js` |
@@ -52,11 +52,11 @@ Flag kapanınca kariyer verisi silinmez. Bu repoda uzaktan yüzdesel flag atamas
 ## Görsel ve erişilebilirlik kuralları
 
 - `CareerNodeMark`, timeline, node sheet, terfi ve paylaşımda aynı `visualKey` kimliğini kullanır.
-- `GuideLight` soyut ve sessizdir; yalnız Kıvılcım Yolu hero’su ile promotion yüzeylerinde kullanılabilir.
+- `GuideLight` soyut ve sessizdir; yalnız Albor Yolu hero’su ile promotion yüzeylerinde kullanılabilir.
 - Career modal’ları sistem Reduce Motion tercihini canlı dinler; node sheet kapanınca odak açan timeline düğümüne döner.
 - Yeni kullanıcı metinleri `src/locales/i18n.js` içindeki `en`, `tr`, `es`, `de` nesnelerinin tümünde bulunmalıdır.
 
-`assets/career/kivilcim-yolu-hero-v1.png` 941×1672 piksel, yaklaşık 2.1 MB olan tek raster yol arka planıdır. On iki rank için ayrı raster seti yerine `CareerNodeMark` vektör/gradient fallback’i kullanılır; böylece asset bütçesi 12 ayrı arka planla büyütülmez.
+`assets/career/albor-yolu-hero-v1.png` 941×1672 piksel, yaklaşık 2.1 MB olan tek raster yol arka planıdır. On iki rank için ayrı raster seti yerine `CareerNodeMark` vektör/gradient fallback’i kullanılır; böylece asset bütçesi 12 ayrı arka planla büyütülmez.
 
 ## Doğrulama ve canlı çalışma
 
@@ -66,7 +66,7 @@ Repo içi doğrulama:
 npm run test:career
 npm test
 npm run screenshots
-npx expo export --platform web --output-dir /tmp/spark-career-web
+npx expo export --platform web --output-dir /tmp/albor-career-web
 ```
 
 Senkron sözleşmesi, `user_career_events`, `user_career_state`, `user_career_nodes` ve `user_legacy_badges` tablolarını; kullanıcıya bağlı offline kuyruğu; kimlikli olay/RPC doğrulamasını kapsar. Eski rozetler ilk açılışta yerel depodan okunur, sunucu snapshot’ı ile birleşir ve güvenli biçimde tekrar kuyruğa alınır.

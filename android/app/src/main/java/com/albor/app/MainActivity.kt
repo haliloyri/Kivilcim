@@ -1,4 +1,4 @@
-package com.kivilcim.app
+package com.albor.app
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build
