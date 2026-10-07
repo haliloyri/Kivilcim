@@ -15,7 +15,6 @@ import { buildLearningSummary } from '../../utils/careerLearning';
 import { buildRankShare } from '../../utils/careerShare';
 import useReducedMotion from '../../hooks/useReducedMotion';
 import CareerNodeMark from './CareerNodeMark';
-import GuideLight from './GuideLight';
 
 const nodeIndex = new Map(CAREER_NODES.map((node, index) => [node.id, index]));
 
@@ -84,8 +83,7 @@ const CareerPromotionModal = () => {
             <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.close', lang)} onPress={dismiss} style={[styles.closeButton, { backgroundColor: colors.backgroundDark, borderColor: colors.border }]}>
               <Ionicons name="close" size={18} color={colors.text} />
             </TouchableOpacity>
-            <CareerNodeMark node={node} status="completed" isDark={isDark} size={72} style={styles.light} />
-            <GuideLight state={isCapstone ? "celebrate" : "idle"} size={32} style={styles.guideLight} />
+            <CareerNodeMark node={node} status="completed" isDark={isDark} size={72} showCheck={false} style={styles.light} />
             <Text selectable style={[styles.kicker, { color: colors.textSecondary }]}>{t(isCapstone ? 'career.capstone.title' : 'career.promotion.title', lang)}</Text>
             <Text selectable style={[styles.rank, { color: colors.text }]}>{t(node.titleKey, lang)}</Text>
             <Text selectable style={[styles.body, { color: colors.textSecondary }]}>{t(isCapstone ? 'career.capstone.body' : 'career.promotion.body', lang)}</Text>
@@ -111,7 +109,6 @@ const styles = StyleSheet.create({
   card: { width: '100%', maxWidth: 380, alignItems: 'center', padding: 24, borderRadius: 24, borderWidth: 1, gap: 10 },
   closeButton: { position: 'absolute', top: 13, right: 13, width: 44, height: 44, borderRadius: 22, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
   light: { marginBottom: 4 },
-  guideLight: { marginTop: -20, marginBottom: 1, marginLeft: 52 },
   kicker: { fontFamily: 'Inter_600SemiBold', fontSize: 11, textTransform: 'uppercase', letterSpacing: 1 },
   rank: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 29, textAlign: 'center' },
   body: { fontFamily: 'Inter_400Regular', fontSize: 14, textAlign: 'center', lineHeight: 20 },
