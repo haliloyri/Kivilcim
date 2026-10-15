@@ -137,7 +137,7 @@
         "testStoreApiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
         "iosApiKey": "appl_IVEnLayWTEUdvyanutlnrFjXvgQ",
         "androidApiKey": "REPLACE_WITH_GOOG_KEY",
-        "entitlementId": "Albor Pro",
+        "entitlementId": "albor_pro",
         "offeringId": "default",
         "products": {
           "monthly": "monthly",
