@@ -42,8 +42,8 @@ const CategoryPill = ({
     : baseActiveColor;
 
   const neutral = isDark
-    ? { background: '#232326', border: '#34343A', text: '#B7B9BE' }
-    : { background: '#F1ECE1', border: '#E4DBCB', text: '#857E6E' };
+    ? { background: '#232326', border: '#34343A', text: themePalette.textSecondary }
+    : { background: '#F1ECE1', border: '#E4DBCB', text: themePalette.textSecondary };
 
   const backgroundColor = active ? resolvedActiveColor : neutral.background;
   const borderColor = active ? resolvedActiveColor : neutral.border;

@@ -299,7 +299,7 @@ const HomeScreen = ({ navigation }) => {
   const isTablet = screenWidth >= 768;
   const isSmallPhone = screenWidth < 380;
   const brandLogoSize = isTablet ? 32 : isSmallPhone ? 24 : 26;
-  const sectionHeadingFontSize = 22;
+  const sectionHeadingFontSize = 20;
   const readyTitleFontSize = 20;
   const featuredCardColumns = isTablet ? 3.1 : isSmallPhone ? 2.05 : 2.25;
   const featuredCardGap = 12;
@@ -912,6 +912,14 @@ const HomeScreen = ({ navigation }) => {
   const dailyDeck = (personalizedStories.length > 0 ? personalizedStories : sortedStories).slice(0, 3);
   const primaryHomeAction = React.useMemo(() => {
     const nextStory = personalizedStories.find((story) => !historySet.has(String(story.story_id))) || personalizedStories[0] || sortedStories[0] || null;
+    // The story title already appears in the "today" list below, so the card
+    // only shows its category and reading time instead of repeating it.
+    const nextStoryMeta = nextStory
+      ? [
+          toPascalCase(t(nextStory.parent_cat || nextStory.cat, lang) || ''),
+          `${Number(nextStory.min || nextStory.possible_read_minutes) || personalizedMinutes} ${t('minLabel', lang)}`,
+        ].filter(Boolean).join('  ·  ')
+      : '';
     const isComplete = doneCount >= personalizedTarget;
 
     if (isComplete) {
@@ -958,7 +966,7 @@ const HomeScreen = ({ navigation }) => {
       return {
         eyebrow: t('home_primary_continue_eyebrow', lang),
         title: t('home_primary_continue_title', lang),
-        sub: nextStory?.title || t('home_primary_empty_sub', lang),
+        sub: nextStoryMeta || t('home_primary_empty_sub', lang),
         cta: t('home_primary_continue_cta', lang),
         icon: 'play-circle',
         story: nextStory,
@@ -969,13 +977,13 @@ const HomeScreen = ({ navigation }) => {
     return {
       eyebrow: t('home_primary_new_eyebrow', lang),
       title: t('home_primary_new_title', lang),
-      sub: nextStory?.title || t('home_primary_empty_sub', lang),
+      sub: nextStoryMeta || t('home_primary_empty_sub', lang),
       cta: t('home_primary_new_cta', lang),
       icon: 'sparkles',
       story: nextStory,
       source: 'home_primary_new',
     };
-  }, [personalizedStories, sortedStories, historySet, doneCount, lang, badgeProgressInfo, personalizedTarget, careerHomeEnabled, career]);
+  }, [personalizedStories, sortedStories, historySet, doneCount, lang, badgeProgressInfo, personalizedTarget, personalizedMinutes, careerHomeEnabled, career]);
 
   const dismissFirstSessionPrompt = async () => {
     setShowFirstSessionPrompt(false);
@@ -1266,6 +1274,11 @@ const HomeScreen = ({ navigation }) => {
       alignItems: 'center',
       justifyContent: 'flex-end',
       gap: 8,
+      backgroundColor: colors.primaryContainer,
+      borderRadius: 999,
+      paddingVertical: 4,
+      paddingLeft: 4,
+      paddingRight: 14,
     },
     headerBadgeIcon: {
       width: 42,
@@ -1284,11 +1297,10 @@ const HomeScreen = ({ navigation }) => {
       lineHeight: 18,
     },
     headerBadgeSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 12,
-      color: colors.textSecondary,
-      lineHeight: 15,
-      marginTop: 1,
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.primaryText,
+      lineHeight: 16,
     },
     headerLeftSpacer: {
       width: 8,
@@ -1385,22 +1397,22 @@ const HomeScreen = ({ navigation }) => {
       display: 'none',
     },
     sectionHeading: {
-      fontFamily: 'PlayfairDisplay_700Bold',
+      fontFamily: 'PlayfairDisplay_600SemiBold',
       // Playfair's old-style "1" reads as "ı" in Turkish — force lining figures.
       fontVariant: ['lining-nums'],
       fontSize: sectionHeadingFontSize,
       color: colors.text,
       marginHorizontal: layout.padding.horizontal,
-      marginTop: 16,
-      marginBottom: 16,
+      marginTop: 24,
+      marginBottom: 12,
     },
     sectionHeadingRow: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
       marginHorizontal: layout.padding.horizontal,
-      marginTop: 16,
-      marginBottom: 16,
+      marginTop: 24,
+      marginBottom: 12,
       gap: 8,
     },
     miniProgressTrack: {
@@ -1622,11 +1634,11 @@ const HomeScreen = ({ navigation }) => {
       justifyContent: 'center',
     },
     readyTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold',
+      fontFamily: 'PlayfairDisplay_600SemiBold',
       fontSize: readyTitleFontSize,
       color: colors.text,
       marginBottom: 12,
-      marginTop: 14,
+      marginTop: 24,
     },
     editorialUseCta: {
       flexDirection: 'row',
@@ -1844,7 +1856,13 @@ const HomeScreen = ({ navigation }) => {
       flexDirection: 'row',
       alignItems: 'center',
       gap: 16,
-      marginBottom: 16,
+      marginBottom: 8,
+    },
+    primaryActionEyebrowRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: 6,
     },
     primaryActionIconWrap: {
       width: 48,
@@ -2024,8 +2042,8 @@ const HomeScreen = ({ navigation }) => {
               accessibilityRole="button"
               accessibilityLabel={t(career.activePath ? career.profileTitle : 'career.choosePathTitle', lang)}
             >
-              <View style={{ width: 42, height: 42, borderRadius: 21, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surfaceContainerHigh }}>
-                <Ionicons name="sparkles-outline" size={20} color={colors.primaryText} />
+              <View style={{ width: 36, height: 36, borderRadius: 18, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.primary }}>
+                <Ionicons name="sparkles-outline" size={18} color={colors.onPrimary} />
               </View>
               <Text style={styles.headerBadgeSub} numberOfLines={1}>{t(career.activePath ? career.profileTitle : 'career.choosePathTitle', lang)}</Text>
             </TouchableOpacity>
@@ -2035,8 +2053,8 @@ const HomeScreen = ({ navigation }) => {
               onPress={() => navigation.navigate('ProgressTab')}
               activeOpacity={0.85}
             >
-              <View style={{ width: 42, height: 42, borderRadius: 21, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surfaceContainerHigh }}>
-                <Ionicons name="trophy-outline" size={20} color={colors.rewardText} />
+              <View style={{ width: 36, height: 36, borderRadius: 18, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surfaceContainerLowest }}>
+                <Ionicons name="trophy-outline" size={18} color={colors.rewardText} />
               </View>
               <Text style={styles.headerBadgeSub}>{badgeProgressInfo.earned}/{badgeProgressInfo.total}</Text>
             </TouchableOpacity>
@@ -2104,7 +2122,6 @@ const HomeScreen = ({ navigation }) => {
                   label={item.label}
                   categoryName={item.rawName || item.label}
                   active={item.key === activeFilter}
-                  vertical
                   isDark={isDark}
                   activeColor={item.key === 'all' ? colors.primary : undefined}
                   activeTextColor={item.key === 'all' ? colors.onPrimary : undefined}
@@ -2169,10 +2186,6 @@ const HomeScreen = ({ navigation }) => {
           const eyebrowColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFillSoft);
           const subColor = onLightSurface ? colors.textSecondary : onFillSoft;
           const progressColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFillFaint);
-          const iconWrapBg = useAccentSurface
-            ? (isDark ? 'rgba(255,255,255,0.08)' : colors.surfaceContainerLowest)
-            : (useBannerImage ? colors.surfaceContainerLowest : (isDarkText ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.25)'));
-          const iconColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFill);
           // CTA: filled accent on the accent surface; white pill on artwork.
           const ctaBg = useAccentSurface ? colors.primary : (isDark ? colors.background : colors.surfaceContainerLowest);
           const ctaTextColor = useAccentSurface ? colors.onPrimary : bannerCtaColor;
@@ -2180,11 +2193,15 @@ const HomeScreen = ({ navigation }) => {
           const bannerInner = (
             <>
               <View style={styles.primaryActionTop}>
-                <View style={[styles.primaryActionIconWrap, { backgroundColor: iconWrapBg }]}>
-                  <Ionicons name={primaryHomeAction.icon} size={26} color={iconColor} />
-                </View>
                 <View style={styles.primaryActionTextWrap}>
-                  <Text style={[styles.primaryActionEyebrow, { color: eyebrowColor }]}>{primaryHomeAction.eyebrow}</Text>
+                  <View style={styles.primaryActionEyebrowRow}>
+                    <Text style={[styles.primaryActionEyebrow, { color: eyebrowColor, marginBottom: 0 }]}>{primaryHomeAction.eyebrow}</Text>
+                    {!isCareer && (
+                      <Text style={[styles.primaryActionProgress, { color: progressColor }]}>
+                        {`${doneCount}/${Math.max(personalizedTarget, 1)}`}
+                      </Text>
+                    )}
+                  </View>
                   <Text
                     style={[styles.primaryActionTitle, { color: titleColor }]}
                     numberOfLines={2}
@@ -2206,8 +2223,7 @@ const HomeScreen = ({ navigation }) => {
                   </View>
                 </View>
               ) : (
-                <View style={styles.primaryActionFooter}>
-                  <Text style={[styles.primaryActionProgress, { color: progressColor }]}>{doneCount} / {Math.max(personalizedTarget, 1)}</Text>
+                <View style={[styles.primaryActionFooter, { justifyContent: 'flex-start' }]}>
                   <View style={[styles.primaryActionCta, { backgroundColor: ctaBg }]}>
                     <Text style={[styles.primaryActionCtaText, { color: ctaTextColor }]}>{primaryHomeAction.cta}</Text>
                     <Ionicons name="arrow-forward" size={16} color={ctaTextColor} />
