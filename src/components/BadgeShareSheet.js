@@ -12,14 +12,9 @@ import { getCareerVisual } from '../constants/careerVisuals';
 import { getShareLabel } from '../utils/share';
 import useReducedMotion from '../hooks/useReducedMotion';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-
-// Shared accent language with the card creator (gold / slate / teal / plum)
-const ACCENTS = ['#C89B3C', '#3F5A73', '#2C8068', '#6E3B52'];
-const LOGO_LIGHT = require('../../assets/albor_logo.png');
-const LOGO_DARK = require('../../assets/albor_logo_dark.png');
-
-const hx = (h) => { h = h.replace('#', ''); return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; };
-const mix = (c1, c2, t2) => { const a = hx(c1), b = hx(c2); return `rgb(${Math.round(a[0] + (b[0] - a[0]) * t2)},${Math.round(a[1] + (b[1] - a[1]) * t2)},${Math.round(a[2] + (b[2] - a[2]) * t2)})`; };
+import { getLogo } from '../constants/logos';
+import { buildPalette } from '../theme/theme';
+import Svg, { Circle, Line } from 'react-native-svg';
 
 const buildLines = ({ badge, achievement }, name, lang) => {
   const title = achievement?.rankTitle || t(badge.titleKey, lang);
@@ -36,109 +31,126 @@ const buildLines = ({ badge, achievement }, name, lang) => {
   return { l1, hook: achievement?.hook || achievement?.evidenceSummary || hook, title };
 };
 
-const getShareVisual = ({ badge, achievement }) => {
-  if (achievement) {
-    const visual = getCareerVisual(achievement.visualKey);
-    return { meta: { icon: achievement.icon || visual.icon, colors: visual.light, shareBackground: visual.shareBackground }, image: null };
-  }
-  return { meta: BADGE_MAP[badge.id] || { icon: 'trophy', colors: ['#C89B3C', '#8C701B'] }, image: BADGE_IMAGES[badge.id] };
-};
-
 // Design size of the shareable card. The preview renders the exact same card
 // at this size and scales it down, so preview and exported PNG always match
 // (fixed font sizes on a smaller preview box used to overflow and overlap).
 const CARD_W = 360;
 const CARD_H = { square: 450, story: 640 };
 
-// The shareable card — three fixed zones, so nothing can collide:
-//   header : eyebrow (path) left · Albor logo pinned top-right
-//   body   : small icon chip, big serif title, line, stats panel (+quote in story)
-//   footer : hairline, accent hook (max 2 lines), link — own reserved space
-const ShareCard = ({ badge, achievement, accent, theme, lang, name, quote, tall, shareLink }) => {
+// The shareable card follows the in-app celebration card (DESIGN.md): petrol
+// band with the dawn sun, paper body, emblem ring overlapping the band.
+//   band   : Albor logo (top-left) · sun
+//   body   : emblem, kicker, serif title, path, line, stats panel (+quote in story)
+//   footer : hairline, hook (max 2 lines), link — own reserved space
+// Brand rule: share cards are always petrol, light or dark only.
+const SUN_DOTS = [[34, 56, 7], [78, 40, 5], [124, 62, 7], [22, 94, 5], [170, 44, 7]];
+
+const Sun = ({ color }) => (
+  <Svg width={168} height={130} viewBox="0 0 168 130" style={s.sun} pointerEvents="none">
+    <Circle cx={96} cy={26} r={84} fill={color} opacity={0.08} />
+    <Circle cx={96} cy={26} r={62} fill={color} opacity={0.14} />
+    <Circle cx={96} cy={26} r={40} fill={color} opacity={0.95} />
+    {[[96, 90, 96, 108], [60, 78, 50, 90], [132, 78, 142, 90], [40, 52, 24, 58], [152, 52, 168, 58]].map(([x1, y1, x2, y2], i) => (
+      <Line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    ))}
+  </Svg>
+);
+
+const ShareCard = ({ badge, achievement, theme, lang, name, quote, tall, shareLink }) => {
   const dark = theme === 'dark';
-  const { meta, image: badgeImage } = getShareVisual({ badge, achievement });
+  const c = buildPalette(dark ? 'dark' : 'light');
   const { l1, hook, title } = buildLines({ badge, achievement }, name, lang);
+  const visual = achievement ? getCareerVisual(achievement.visualKey) : null;
+  const emblemImage = achievement ? (achievement.icon ? null : visual.image) : BADGE_IMAGES[badge?.id];
+  const emblemIcon = achievement ? (achievement.icon || visual.icon) : (BADGE_MAP[badge?.id]?.icon || 'trophy');
   const earnedDate = achievement?.earnedDate ? String(achievement.earnedDate).slice(0, 10) : null;
   const stats = (achievement?.stats || []).filter((stat) => Number(stat.value) > 0);
-  const eyebrow = achievement ? (achievement.pathLabel || t('career.title', lang)) : null;
-
-  const bg = dark ? '#15171A' : mix(accent, '#FFFFFF', 0.9);
-  const ink = dark ? '#F4F1EA' : '#2E2A22';
-  const soft = dark ? '#B9B3A8' : '#6B5A48';
-  const faint = dark ? '#7D7870' : '#8C8172';
-  const accStrong = dark ? mix(accent, '#FFFFFF', 0.4) : mix(accent, '#000000', 0.12);
-  const chipBg = dark ? '#23262B' : '#FFFFFF';
-  const iconC = dark ? mix(accent, '#FFFFFF', 0.25) : accent;
-  const panelBg = dark ? '#1E2125' : 'rgba(255,255,255,0.62)';
-  const hairline = dark ? '#2C3036' : mix(accent, '#FFFFFF', 0.68);
+  const kicker = achievement?.kicker || null;
+  const emblemSize = tall ? 108 : 92;
+  const bandH = tall ? 120 : 92;
+  const upper = (v) => String(v).toLocaleUpperCase(lang === 'tr' ? 'tr-TR' : undefined);
 
   return (
-    <View style={[s.card, { backgroundColor: bg, height: tall ? CARD_H.story : CARD_H.square }]}>
-      {/* Header */}
-      <View style={s.header}>
-        <Text style={[s.eyebrow, { color: accStrong }]} numberOfLines={1}>
-          {eyebrow ? eyebrow.toLocaleUpperCase(lang === 'tr' ? 'tr-TR' : undefined) : ''}
-        </Text>
+    <View style={[s.card, { backgroundColor: c.modalSurface, height: tall ? CARD_H.story : CARD_H.square }]}>
+      <View style={[s.band, { backgroundColor: c.heroSurface, height: bandH }]}>
+        <Sun color={c.dawn} />
+        {SUN_DOTS.map(([left, top, size], i) => (
+          <View
+            key={i}
+            style={{
+              position: 'absolute', left, top: top - (tall ? 24 : 40), width: size, height: size,
+              borderRadius: i % 2 ? size / 2 : 2,
+              backgroundColor: i % 2 ? '#F5F1E8' : c.dawn, opacity: i % 2 ? 0.5 : 0.75,
+            }}
+          />
+        ))}
         <View style={s.brand}>
-          <Image source={dark ? LOGO_DARK : LOGO_LIGHT} style={s.brandLogo} resizeMode="contain" />
-          <Text style={[s.brandText, { color: ink }]}>Albor</Text>
+          <Image source={getLogo(true)} style={s.brandLogo} resizeMode="contain" />
+          <Text style={s.brandText}>Albor</Text>
         </View>
       </View>
 
-      {/* Body */}
-      <View style={[s.body, tall && { justifyContent: 'center' }]}>
-        <View style={[s.chip, tall && s.chipTall, { backgroundColor: chipBg, borderWidth: dark ? 1 : 0, borderColor: '#3A3F46' }]}>
-          {badgeImage ? (
-            <Image source={badgeImage} resizeMode="cover" style={{ width: '100%', height: '100%' }} />
-          ) : (
-            <Ionicons name={meta.icon} size={26} color={iconC} />
-          )}
-        </View>
+      <View
+        style={[
+          s.emblem,
+          { width: emblemSize, height: emblemSize, borderRadius: emblemSize / 2, marginTop: -emblemSize / 2, backgroundColor: c.modalSurface, borderColor: `${c.dawn}8C` },
+        ]}
+      >
+        {emblemImage ? (
+          <Image source={emblemImage} resizeMode="cover" style={{ width: '100%', height: '100%', borderRadius: emblemSize / 2 }} />
+        ) : (
+          <View style={[s.emblemIcon, { backgroundColor: c.heroSurface }]}>
+            <Ionicons name={emblemIcon} size={emblemSize * 0.42} color={c.dawn} />
+          </View>
+        )}
+      </View>
 
+      <View style={[s.body, tall && { justifyContent: 'center' }]}>
+        {kicker ? <Text style={[s.kicker, { color: c.dawnText }]} numberOfLines={1}>{upper(kicker)}</Text> : null}
         <Text
-          style={[s.title, { color: ink }]}
+          style={[s.title, { color: c.text }]}
           numberOfLines={2}
           adjustsFontSizeToFit
           minimumFontScale={0.7}
         >
           {title}
         </Text>
-        {achievement?.subLabel ? <Text style={[s.sub, { color: soft }]} numberOfLines={1}>{achievement.subLabel}</Text> : null}
+        {achievement?.pathLabel ? <Text style={[s.sub, { color: c.primaryText }]} numberOfLines={1}>{achievement.pathLabel}</Text> : null}
+        {achievement?.subLabel ? <Text style={[s.sub, { color: c.textSecondary }]} numberOfLines={1}>{achievement.subLabel}</Text> : null}
 
-        <Text style={[s.line, { color: soft }]} numberOfLines={stats.length ? 2 : 3}>{l1}</Text>
+        <Text style={[s.line, { color: c.textSecondary }]} numberOfLines={stats.length ? 2 : 3}>{l1}</Text>
 
         {stats.length ? (
-          <View style={[s.panel, { backgroundColor: panelBg }]}>
+          <View style={[s.panel, { backgroundColor: c.primaryContainer }]}>
             {stats.map((stat, index) => (
-              <View key={stat.label} style={[s.stat, index > 0 && { borderLeftWidth: 1, borderLeftColor: hairline }]}>
-                <Text style={[s.statValue, { color: ink }]}>{String(stat.value)}</Text>
-                <Text style={[s.statLabel, { color: faint }]} numberOfLines={1}>{stat.label}</Text>
+              <View key={stat.label} style={[s.stat, index > 0 && { borderLeftWidth: 1, borderLeftColor: c.border }]}>
+                <Text style={[s.statValue, { color: c.text }]}>{String(stat.value)}</Text>
+                <Text style={[s.statLabel, { color: c.textSecondary }]} numberOfLines={1}>{stat.label}</Text>
               </View>
             ))}
           </View>
         ) : earnedDate ? (
-          <Text style={[s.date, { color: faint }]}>{t('career.share.earnedDate', lang, { date: earnedDate })}</Text>
+          <Text style={[s.date, { color: c.textSecondary }]}>{t('career.share.earnedDate', lang, { date: earnedDate })}</Text>
         ) : null}
 
         {tall && quote ? (
-          <View style={[s.quoteWrap, { borderLeftColor: accent }]}>
-            <Text style={[s.quote, { color: soft }]} numberOfLines={4}>{`“${quote.q}”`}</Text>
-            <Text style={[s.author, { color: faint }]}>{`— ${quote.a}`}</Text>
+          <View style={[s.quoteWrap, { backgroundColor: c.primaryContainer, borderLeftColor: c.primary }]}>
+            <Text style={[s.quote, { color: c.text }]} numberOfLines={4}>{`“${quote.q}”`}</Text>
+            <Text style={[s.author, { color: c.textSecondary }]}>{`— ${quote.a}`}</Text>
           </View>
         ) : null}
       </View>
 
-      {/* Footer */}
-      <View style={[s.footer, { borderTopColor: hairline }]}>
+      <View style={[s.footer, { borderTopColor: c.border }]}>
         <Text
-          style={[s.hook, { color: accStrong }]}
+          style={[s.hook, { color: c.primaryText }]}
           numberOfLines={2}
           adjustsFontSizeToFit
           minimumFontScale={0.8}
         >
           {hook}
         </Text>
-        {shareLink ? <Text style={[s.link, { color: faint }]}>{shareLink}</Text> : null}
+        {shareLink ? <Text style={[s.link, { color: c.textSecondary }]}>{shareLink}</Text> : null}
       </View>
     </View>
   );
@@ -149,7 +161,7 @@ const ScaledCard = ({ boxWidth, tall, ...props }) => {
   const h = tall ? CARD_H.story : CARD_H.square;
   const scale = boxWidth / CARD_W;
   return (
-    <View style={{ width: boxWidth, height: h * scale, borderRadius: 22, overflow: 'hidden' }}>
+    <View style={{ width: boxWidth, height: h * scale, borderRadius: 22, overflow: 'hidden', borderWidth: 1, borderColor: 'rgba(36,33,30,0.14)' }}>
       <View
         style={{
           position: 'absolute', width: CARD_W, height: h,
@@ -166,7 +178,6 @@ const ScaledCard = ({ boxWidth, tall, ...props }) => {
 const BadgeShareSheet = ({ visible, badge, achievement = null, name, quote, onClose }) => {
   const { colors, lang, isDark } = useTheme();
   const [theme, setTheme] = useState('light');
-  const [accent, setAccent] = useState('#C89B3C');
   const [capFmt, setCapFmt] = useState('square');
   const [busy, setBusy] = useState(false);
   const captureRefView = useRef(null);
@@ -186,9 +197,7 @@ const BadgeShareSheet = ({ visible, badge, achievement = null, name, quote, onCl
   if (!badge && !achievement) return null;
   const shareTitle = achievement?.rankTitle || (badge ? t(badge.titleKey, lang) : t('career.title', lang));
 
-  const neutral = isDark
-    ? { bg: '#232326', border: '#34343A', text: '#B7B9BE' }
-    : { bg: '#F1ECE1', border: '#E4DBCB', text: '#857E6E' };
+  const neutral = { bg: colors.surfaceContainerHigh, text: colors.textSecondary };
 
   const share = async (format) => {
     if (busy) return;
@@ -204,7 +213,6 @@ const BadgeShareSheet = ({ visible, badge, achievement = null, name, quote, onCl
           kind: achievement?.kind || (achievement ? 'rank' : 'badge'),
           format,
           theme,
-          accent,
           hasStats: Boolean(achievement?.stats),
           badgeId: badge?.id,
         });
@@ -222,15 +230,15 @@ const BadgeShareSheet = ({ visible, badge, achievement = null, name, quote, onCl
       accessibilityRole="button"
       accessibilityLabel={label}
       accessibilityState={{ selected: active }}
-      style={{ flex: 1, minHeight: 44, justifyContent: 'center', alignItems: 'center', borderRadius: 10, paddingVertical: 9, backgroundColor: active ? colors.primary : neutral.bg }}
+      style={{ flex: 1, minHeight: 44, justifyContent: 'center', alignItems: 'center', borderRadius: 12, paddingVertical: 9, backgroundColor: active ? colors.primary : neutral.bg }}
     >
-      <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12.5, color: active ? colors.onPrimary : neutral.text }}>{label}</Text>
+      <Text style={{ fontFamily: active ? 'Inter_600SemiBold' : 'Inter_500Medium', fontSize: 14, color: active ? colors.onPrimary : neutral.text }}>{label}</Text>
     </TouchableOpacity>
   );
 
   return (
     <Modal visible={visible} transparent animationType={reduceMotion ? 'fade' : 'slide'} onRequestClose={onClose} accessibilityViewIsModal>
-      <View style={[st.overlay, { backgroundColor: colors.modalOverlay }]} testID="badge-share-overlay">
+      <View style={[st.overlay, { backgroundColor: isDark ? 'rgba(0,0,0,0.66)' : 'rgba(36,33,30,0.56)' }]} testID="badge-share-overlay">
         <Pressable accessible={false} style={StyleSheet.absoluteFill} onPress={onClose} />
         <View style={[st.sheet, { backgroundColor: colors.modalSurface }]}>
           <View style={st.handle} />
@@ -242,8 +250,8 @@ const BadgeShareSheet = ({ visible, badge, achievement = null, name, quote, onCl
           </View>
 
           <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={st.previewWrap}>
-<ScaledCard boxWidth={capFmt === 'story' ? 226 : 268} badge={badge} achievement={achievement} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} shareLink={shareLink} />
+            <View style={[st.previewWrap, { backgroundColor: colors.surfaceContainerHigh }]}>
+<ScaledCard boxWidth={capFmt === 'story' ? 226 : 268} badge={badge} achievement={achievement} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} shareLink={shareLink} />
             </View>
 
             <Text style={[st.label, { color: colors.textSecondary }]}>{t('badgeShare.format', lang)}</Text>
@@ -252,34 +260,15 @@ const BadgeShareSheet = ({ visible, badge, achievement = null, name, quote, onCl
               <Chip active={capFmt === 'story'} label={t('badgeShare.story', lang)} onPress={() => setCapFmt('story')} />
             </View>
 
-            <View style={{ flexDirection: 'row', gap: 16, marginTop: 14 }}>
-              <View style={{ flex: 1 }}>
-                <Text style={[st.label, { color: colors.textSecondary }]}>{t('badgeShare.theme', lang)}</Text>
-                <View style={st.row}>
-                  <Chip active={theme === 'light'} label={t('badgeShare.light', lang)} onPress={() => setTheme('light')} />
-                  <Chip active={theme === 'dark'} label={t('badgeShare.dark', lang)} onPress={() => setTheme('dark')} />
-                </View>
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={[st.label, { color: colors.textSecondary }]}>{t('badgeShare.color', lang)}</Text>
-                <View style={[st.row, { gap: 10, paddingTop: 4 }]}>
-                  {ACCENTS.map((c, index) => (
-                    <TouchableOpacity
-                      key={c}
-                      onPress={() => setAccent(c)}
-                      style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: c, borderWidth: accent === c ? 2 : 0, borderColor: colors.text }}
-                      accessibilityRole="button"
-                      accessibilityLabel={`${t('badgeShare.color', lang)} ${index + 1}`}
-                      accessibilityState={{ selected: accent === c }}
-                    />
-                  ))}
-                </View>
-              </View>
+            <Text style={[st.label, { color: colors.textSecondary, marginTop: 14 }]}>{t('badgeShare.theme', lang)}</Text>
+            <View style={st.row}>
+              <Chip active={theme === 'light'} label={t('badgeShare.light', lang)} onPress={() => setTheme('light')} />
+              <Chip active={theme === 'dark'} label={t('badgeShare.dark', lang)} onPress={() => setTheme('dark')} />
             </View>
 
-            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('badgeShare.share', lang)} accessibilityState={{ disabled: busy }} style={[st.shareBtn, { backgroundColor: colors.primary, marginTop: 22, marginBottom: 8 }, busy && { opacity: 0.6 }]} onPress={() => share(capFmt)} disabled={busy}>
-              <Ionicons name="share-social-outline" size={16} color={colors.onPrimary} />
-              <Text style={[st.shareText, { color: colors.onPrimary }]}>{t('badgeShare.share', lang)}</Text>
+            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('badgeShare.share', lang)} accessibilityState={{ disabled: busy }} style={[st.shareBtn, { backgroundColor: colors.dawn, marginTop: 22, marginBottom: 8 }, busy && { opacity: 0.6 }]} onPress={() => share(capFmt)} disabled={busy}>
+              <Ionicons name="share-social-outline" size={17} color="#2A1E08" />
+              <Text style={[st.shareText, { color: '#2A1E08' }]}>{t('badgeShare.share', lang)}</Text>
             </TouchableOpacity>
             {busy ? <ActivityIndicator color={colors.primaryText} style={{ marginTop: 6 }} /> : null}
           </ScrollView>
@@ -292,7 +281,7 @@ const BadgeShareSheet = ({ visible, badge, achievement = null, name, quote, onCl
           collapsable={false}
           style={{ width: CARD_W, height: capFmt === 'story' ? CARD_H.story : CARD_H.square }}
         >
-          <ShareCard badge={badge} achievement={achievement} accent={accent} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} shareLink={shareLink} />
+          <ShareCard badge={badge} achievement={achievement} theme={theme} lang={lang} name={name} quote={quote} tall={capFmt === 'story'} shareLink={shareLink} />
         </View>
       </View>
     </Modal>
@@ -300,43 +289,44 @@ const BadgeShareSheet = ({ visible, badge, achievement = null, name, quote, onCl
 };
 
 const s = StyleSheet.create({
-  card: { width: CARD_W, paddingHorizontal: 28, paddingTop: 26, paddingBottom: 22 },
-  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 22 },
-  eyebrow: { flex: 1, fontFamily: 'Inter_500Medium', fontSize: 11, letterSpacing: 1.4, marginRight: 12 },
-  brand: { flexDirection: 'row', alignItems: 'center', gap: 5 },
-  brandLogo: { width: 17, height: 17 },
-  brandText: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 15 },
-  body: { flex: 1, justifyContent: 'center', paddingVertical: 12, overflow: 'hidden' },
-  chipTall: { width: 56, height: 56, borderRadius: 18 },
-  chip: { width: 44, height: 44, borderRadius: 14, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
-  title: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 36, lineHeight: 42, marginTop: 16 },
-  sub: { fontFamily: 'Inter_500Medium', fontSize: 12, marginTop: 4 },
-  line: { fontFamily: 'Inter_400Regular', fontSize: 14, lineHeight: 20, marginTop: 10 },
-  panel: { flexDirection: 'row', borderRadius: 16, paddingVertical: 12, marginTop: 18 },
+  card: { width: CARD_W, overflow: 'hidden' },
+  band: { overflow: 'hidden' },
+  sun: { position: 'absolute', right: -30, top: -34 },
+  brand: { position: 'absolute', left: 22, top: 18, flexDirection: 'row', alignItems: 'center', gap: 6 },
+  brandLogo: { width: 18, height: 18 },
+  brandText: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 16, color: '#F5F1E8' },
+  emblem: { alignSelf: 'center', borderWidth: 1, padding: 4, overflow: 'hidden', alignItems: 'center', justifyContent: 'center' },
+  emblemIcon: { width: '100%', height: '100%', borderRadius: 999, alignItems: 'center', justifyContent: 'center' },
+  body: { flex: 1, paddingHorizontal: 26, paddingTop: 10, paddingBottom: 8, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
+  kicker: { fontFamily: 'Inter_600SemiBold', fontSize: 11, letterSpacing: 1.2, textAlign: 'center' },
+  title: { alignSelf: 'stretch', fontFamily: 'PlayfairDisplay_700Bold', fontSize: 30, lineHeight: 36, textAlign: 'center', marginTop: 6 },
+  sub: { fontFamily: 'Inter_600SemiBold', fontSize: 13, textAlign: 'center', marginTop: 3 },
+  line: { fontFamily: 'Inter_400Regular', fontSize: 13, lineHeight: 19, textAlign: 'center', marginTop: 8 },
+  panel: { flexDirection: 'row', alignSelf: 'stretch', borderRadius: 14, paddingVertical: 10, marginTop: 12 },
   stat: { flex: 1, alignItems: 'center' },
-  statValue: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 24, lineHeight: 28, fontVariant: ['tabular-nums'] },
+  statValue: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, lineHeight: 26, fontVariant: ['tabular-nums'] },
   statLabel: { fontFamily: 'Inter_500Medium', fontSize: 11, marginTop: 2 },
-  date: { fontFamily: 'Inter_500Medium', fontSize: 11, marginTop: 12 },
-  quoteWrap: { marginTop: 22, borderLeftWidth: 2, paddingLeft: 12 },
+  date: { fontFamily: 'Inter_500Medium', fontSize: 11, marginTop: 10 },
+  quoteWrap: { alignSelf: 'stretch', marginTop: 18, paddingVertical: 12, paddingHorizontal: 14, borderRadius: 14, borderLeftWidth: 3 },
   quote: { fontFamily: 'PlayfairDisplay_400Regular_Italic', fontSize: 14, lineHeight: 20 },
   author: { fontFamily: 'Inter_500Medium', fontSize: 11, marginTop: 6 },
-  footer: { borderTopWidth: 1, paddingTop: 14 },
-  hook: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 19, lineHeight: 24 },
-  link: { fontFamily: 'Inter_500Medium', fontSize: 11, letterSpacing: 0.6, marginTop: 8 },
+  footer: { borderTopWidth: 1, marginHorizontal: 26, paddingTop: 12, paddingBottom: 18, alignItems: 'center' },
+  hook: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 17, lineHeight: 22, textAlign: 'center' },
+  link: { fontFamily: 'Inter_500Medium', fontSize: 11, letterSpacing: 0.6, marginTop: 6 },
 });
 
 const st = StyleSheet.create({
   overlay: { flex: 1, justifyContent: 'flex-end' },
-  sheet: { borderTopLeftRadius: 24, borderTopRightRadius: 24, paddingHorizontal: 18, paddingTop: 10, paddingBottom: 28, maxHeight: '92%' },
-  handle: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: 'rgba(128,128,128,0.35)', marginBottom: 10 },
+  sheet: { borderTopLeftRadius: 28, borderTopRightRadius: 28, paddingHorizontal: 18, paddingTop: 10, paddingBottom: 28, maxHeight: '92%' },
+  handle: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: 'rgba(128,128,128,0.45)', marginBottom: 10 },
   headerRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 },
-  title: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 20 },
+  title: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22 },
   closeButton: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
-  previewWrap: { alignItems: 'center', marginVertical: 14 },
-  label: { fontFamily: 'Inter_500Medium', fontSize: 11, letterSpacing: 0.5, marginBottom: 6 },
+  previewWrap: { alignItems: 'center', marginVertical: 14, paddingVertical: 18, borderRadius: 20 },
+  label: { fontFamily: 'Inter_600SemiBold', fontSize: 11, letterSpacing: 0.9, marginBottom: 8 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  shareBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, borderRadius: 14, paddingVertical: 13 },
-  shareText: { fontFamily: 'Inter_600SemiBold', fontSize: 14 },
+  shareBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, borderRadius: 14, minHeight: 52 },
+  shareText: { fontFamily: 'Inter_700Bold', fontSize: 16 },
   captureHost: { position: 'absolute', top: -10000, left: 0 },
 });
 

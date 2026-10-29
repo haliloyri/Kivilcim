@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Albor — Kütüphane, uzun ekran</title>
+<style>
+  /* Referans: iPhone 17 Pro, 402 pt genişlik. Tüm içerik tek uzun sayfada. Kaynak ekran: LibraryScreen (kod değişmedi). Tasarım dili: DESIGN.md. */
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #E9E4DA; font-family: -apple-system, "SF Pro Text", Inter, system-ui, sans-serif; padding-bottom: 40px; }
+  body[data-mode="dark"] { background: #0A0A09; }
+  .switch { position: sticky; top: 0; z-index: 50; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 10px; background: rgba(233,228,218,.94); backdrop-filter: blur(8px); }
+  body[data-mode="dark"] .switch { background: rgba(10,10,9,.94); }
+  .switch button { min-height: 40px; padding: 0 14px; border-radius: 20px; border: 1px solid #8884; background: #fff; color: #24211E; font: 600 13px/1 inherit; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: #1F5F5B; color: #fff; border-color: #1F5F5B; }
+  svg.i { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.15em; flex: none; }
+  p, h1, h2, h3, h4 { margin: 0; }
+
+  .phone { --serif: "Playfair Display", Georgia, serif; width: 402px; margin: 16px auto 0; background: var(--bg); color: var(--ink); border-radius: 48px; overflow: clip; position: relative; box-shadow: 0 0 0 10px #111, 0 30px 80px rgba(0,0,0,.35); }
+  .phone[data-m="light"] { --bg:#F7F3EC; --card:#FFFDF9; --low:#FFFFFF; --bd:#E6DED3; --ink:#24211E; --t2:#6B625A; --mut:#8C837A; --pet:#1F5F5B; --onpet:#fff; --pc:#E2EDEA; --gold:#E9A94B; --goldtx:#8A5A0E; --hero:#1B4B48; --herobd:#1B4B48; --glow:rgba(233,169,75,.26); --tab:#FBF8F2; --track:#E4DDD2; --tile:rgba(36,33,30,.05); --danger:#B3261E; --fin:#2F7D5B; --psi:#5B5FB5; --fel:#5B5FB5; --his:#A5623A; --lea:#A5623A; --sci:#8650A8; --hea:#C0507A; --com:#1F7FA8; --bus:#4C5B7A; --pro:#4C5B7A; --gro:#2F7D5B; --ico:#857E6E; --seg:rgba(36,33,30,.05); --segbd:#E6DED3; --sh:0 1px 2px rgba(36,33,30,.04); }
+  .phone[data-m="dark"]  { --bg:#141413; --card:#201F1D; --low:#1C1B1A; --bd:#2F2E2B; --ink:#F2EEE8; --t2:#A8A29A; --mut:#7E7870; --pet:#7CC0B6; --onpet:#1A1A1A; --pc:#1F3634; --gold:#F0C170; --goldtx:#F0C170; --hero:#1F3A37; --herobd:#2E5A55; --glow:rgba(240,193,112,.18); --tab:#141413; --track:#2A2927; --tile:rgba(255,255,255,.06); --danger:#F06A4A; --fin:#6FCB9F; --psi:#A5A9F0; --fel:#A5A9F0; --his:#E0A27C; --lea:#E0A27C; --sci:#CFA0E8; --hea:#F29AB8; --com:#7CC3E3; --bus:#A9B7D6; --pro:#A9B7D6; --gro:#6FCB9F; --ico:#B7B9BE; --seg:rgba(255,255,255,.06); --segbd:#2F2E2B; --sh:none; }
+  .island { position: absolute; top: 11px; left: 50%; width: 126px; height: 37px; margin-left: -63px; background: #000; border-radius: 20px; z-index: 40; }
+  .badge { flex: none; border-radius: 10px; overflow: hidden; display: grid; place-items: center; background: color-mix(in srgb, var(--c) 14%, var(--card)); width: 28px; height: 28px; }
+  .badge img { width: 100%; height: 100%; object-fit: contain; padding: 2px; display: block; }
+
+  /* ── Tepe ── */
+  .head { position: relative; padding: 0 20px 6px; background: radial-gradient(120% 80% at 90% -20%, var(--glow) 0%, transparent 60%); }
+  .status { height: 62px; padding: 20px 14px 0; display: flex; justify-content: space-between; font-size: 16px; font-weight: 600; }
+  .head h1 { margin-top: 6px; font-family: var(--serif); font-size: 30px; line-height: 1.1; font-weight: 700; }
+  .head .sub { margin-top: 4px; font-size: 13px; color: var(--t2); }
+  .search { display: flex; align-items: center; gap: 10px; min-height: 48px; margin-top: 16px; padding: 0 14px; border-radius: 18px; background: var(--low); border: 1px solid var(--bd); color: var(--mut); font-size: 15px; }
+  .search svg { font-size: 18px; color: var(--t2); }
+
+  /* ── Bölüm başlığı ── */
+  .sec { margin-top: 28px; }
+  .sh { display: flex; align-items: baseline; justify-content: space-between; margin: 0 20px 12px; }
+  .sh h2 { font-family: var(--serif); font-size: 22px; line-height: 1.15; font-weight: 700; }
+  .sh h2 small { font-family: -apple-system, Inter, sans-serif; font-size: 13px; font-weight: 500; color: var(--t2); margin-left: 8px; }
+  .sh a { min-height: 44px; display: inline-flex; align-items: center; font-size: 14px; font-weight: 600; color: var(--pet); }
+  .hs { display: flex; gap: 12px; padding: 0 20px 4px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; scrollbar-width: none; }
+  .hs::-webkit-scrollbar { display: none; }
+  .hs > * { scroll-snap-align: start; flex: none; }
+
+  /* ── 1 · Kaldığın yerden ── */
+  .resume { position: relative; width: 330px; padding: 20px; border-radius: 24px; background: var(--hero); border: .5px solid var(--herobd); color: #F5F1E8; overflow: hidden; box-shadow: 0 14px 30px rgba(20,60,56,.22); }
+  .resume .sun { position: absolute; right: -30px; top: -26px; width: 150px; height: 116px; pointer-events: none; }
+  .resume > *:not(.sun) { position: relative; }
+  .eyebrow { font-size: 12px; letter-spacing: .08em; font-weight: 600; color: var(--gold); text-transform: uppercase; }
+  .resume h3 { margin: 10px 0 6px; max-width: 76%; font-family: var(--serif); font-size: 22px; line-height: 1.2; font-weight: 700; }
+  .resume .by { font-size: 13px; color: #D5E4E0; }
+  .resume .prog { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 12px; color: #D5E4E0; }
+  .bar { flex: 1; height: 6px; border-radius: 3px; background: rgba(255,255,255,.18); overflow: hidden; } .bar i { display: block; height: 100%; border-radius: 3px; background: var(--gold); }
+  .resume .cta { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; margin-top: 16px; border-radius: 24px; background: #F5F1E8; color: #1B4B48; font-size: 16px; font-weight: 700; }
+  /* ── Hikâye satırı ── */
+  .stack { display: grid; gap: 10px; margin: 0 20px; }
+  .story { display: flex; gap: 12px; padding: 12px; border-radius: 18px; background: var(--card); border: .5px solid var(--bd); box-shadow: var(--sh); min-height: 92px; }
+  .story .th { flex: none; width: 68px; height: 68px; border-radius: 14px; overflow: hidden; align-self: center; background: var(--tile); }
+  .story .th img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .story .mid { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+  .story .cat { font-size: 11.5px; }
+  .story h4 { margin: 4px 0 3px; font-family: var(--serif); font-size: 16px; line-height: 1.25; font-weight: 700; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .story .meta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12px; color: var(--t2); align-items: center; }
+  .story .meta span { display: inline-flex; align-items: center; gap: 4px; }
+  .story .act { flex: none; align-self: center; width: 44px; height: 44px; border-radius: 22px; display: grid; place-items: center; background: var(--pc); color: var(--pet); font-size: 19px; }
+  .story .act.off { background: transparent; color: var(--mut); }
+
+  /* ── 3 · Cebindekiler ── */
+  .quote { width: 286px; min-height: 200px; padding: 18px; border-radius: 20px; background: var(--card); border: .5px solid var(--bd); box-shadow: var(--sh); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  .quote::before { content: "“"; position: absolute; right: 14px; top: -6px; font-family: var(--serif); font-size: 96px; line-height: 1; color: var(--c); opacity: .12; }
+  .quote .qt { margin-top: 12px; font-family: var(--serif); font-style: italic; font-size: 17px; line-height: 1.4; }
+  .quote .ft { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 14px; }
+  .quote .src { flex: 1; min-width: 0; font-size: 12px; color: var(--t2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .quote .act { flex: none; width: 44px; height: 44px; border-radius: 22px; display: grid; place-items: center; background: var(--pc); color: var(--pet); font-size: 19px; }
+
+  /* ── 4 · Arşiv ── */
+  .seg { display: flex; gap: 3px; padding: 3px; margin: 0 20px 14px; border-radius: 18px; background: var(--seg); border: 1px solid var(--segbd); }
+  .seg span { flex: 1; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 15px; font-size: 14px; font-weight: 500; color: var(--ico); }
+  .seg span em { font-style: normal; font-size: 12px; opacity: .85; }
+  .seg .on { background: var(--pet); color: var(--onpet); }
+  .frow { display: flex; align-items: center; margin-bottom: 12px; }
+  .pills { flex: 1; display: flex; gap: 8px; padding-left: 20px; padding-right: 8px; overflow-x: auto; scrollbar-width: none; }
+  .pills::-webkit-scrollbar { display: none; }
+  .cp { flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 8px; border-radius: 22px; font-size: 14px; font-weight: 500; background: var(--card); border: .5px solid var(--bd); color: var(--ink); }
+  .cp.on { background: var(--pet); border-color: var(--pet); color: var(--onpet); }
+  .cp .badge { background: var(--tile); }
+  .sortb { flex: none; width: 44px; height: 44px; margin-right: 20px; border-radius: 22px; display: grid; place-items: center; background: var(--seg); border: 1px solid var(--segbd); color: var(--ico); font-size: 18px; }
+  .count { margin: 0 20px 10px 24px; font-size: 12px; color: var(--t2); }
+  .tagrow { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+  .tag { display: inline-flex; align-items: center; gap: 4px; min-height: 22px; padding: 0 8px; border-radius: 11px; font-size: 11px; font-weight: 600; background: var(--tile); color: var(--t2); }
+  .tag.pet { background: var(--pc); color: var(--pet); }
+  .more { margin: 14px 20px 0; min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 24px; border: 1px solid var(--bd); background: var(--card); color: var(--t2); font-size: 14px; font-weight: 600; }
+  .end { margin: 22px 20px 0; text-align: center; font-size: 12px; color: var(--mut); }
+
+  /* ── Boş durumlar ve sıralama paneli ── */
+  .panels { max-width: 1280px; margin: 44px auto 0; padding: 0 20px; }
+  .panels h2 { text-align: center; font-family: "Playfair Display", Georgia, serif; font-size: 22px; color: #24211E; margin-bottom: 18px; }
+  body[data-mode="dark"] .panels h2 { color: #F2EEE8; }
+  .pg { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: flex-start; }
+  .sheetwrap { width: 402px; }
+  .sheetwrap > p { text-align: center; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #6B625A; margin-bottom: 8px; }
+  body[data-mode="dark"] .sheetwrap > p { color: #A8A29A; }
+  .mini { --serif: "Playfair Display", Georgia, serif; border-radius: 28px; overflow: hidden; background: var(--bg); color: var(--ink); box-shadow: 0 10px 30px rgba(0,0,0,.2); }
+  .empty { padding: 40px 36px 44px; text-align: center; display: grid; justify-items: center; }
+  .empty .ring { width: 72px; height: 72px; border-radius: 36px; display: grid; place-items: center; background: var(--pc); color: var(--pet); font-size: 32px; }
+  .empty h3 { margin-top: 18px; font-family: var(--serif); font-size: 21px; font-weight: 700; }
+  .empty p { margin-top: 8px; font-size: 14px; line-height: 1.45; color: var(--t2); }
+  .empty .btn { margin-top: 20px; min-height: 48px; padding: 0 24px; display: inline-flex; align-items: center; border-radius: 24px; background: var(--pet); color: var(--onpet); font-size: 15px; font-weight: 600; }
+  .sortov { background: rgba(0,0,0,.45); padding-top: 90px; }
+  .sheet { background: var(--card); border-radius: 24px 24px 0 0; padding: 10px 20px 34px; }
+  .sheet .gr { width: 36px; height: 4px; border-radius: 2px; background: var(--bd); margin: 0 auto 14px; }
+  .sheet h3 { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .opt { display: flex; align-items: center; min-height: 52px; font-size: 16px; font-weight: 500; } .opt + .opt { border-top: .5px solid var(--bd); }
+  .opt span { flex: 1; } .opt svg { color: var(--pet); font-size: 20px; } .opt.on { color: var(--pet); }
+
+  /* ── Tab bar ── */
+  .tabbar { position: sticky; bottom: 0; z-index: 25; display: flex; height: 92px; padding: 8px 12px 34px; background: var(--tab); border-top: .5px solid var(--bd); margin-top: 32px; }
+  .tab { flex: 1; display: grid; place-items: center; align-content: center; gap: 2px; font-size: 11px; color: var(--t2); } .tab svg { width: 24px; height: 24px; } .tab.on { color: var(--pet); font-weight: 600; }
+</style>
+</head>
+<body data-mode="light">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></symbol>
+  <symbol id="mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="repeat" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5.3L20 9M20 4v5h-5M20 12a8 8 0 01-14 5.3L4 15M4 20v-5h5"/></symbol>
+  <symbol id="sort" viewBox="0 0 24 24"><path d="M8 4v16M4 16l4 4 4-4M16 20V4M12 8l4-4 4 4"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+  <symbol id="book" viewBox="0 0 24 24"><path d="M5 4h9a4 4 0 014 4v12H9a4 4 0 01-4-4zM5 16a4 4 0 014-4h9"/></symbol>
+  <symbol id="heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 018-2.5A4.5 4.5 0 0120 9c0 6-8 11-8 11z"/></symbol>
+  <symbol id="lib" viewBox="0 0 24 24"><path d="M5 4v16M10 4v16M15 5l4 15"/></symbol>
+  <symbol id="down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+</defs></svg>
+
+<div class="switch">
+  <button type="button" data-m="light" aria-pressed="true">Açık</button>
+  <button type="button" data-m="dark" aria-pressed="false">Koyu</button>
+</div>
+
+<main class="phone" id="phone" data-m="light" aria-label="Albor Kütüphane ekranı">
+  <div class="island"></div>
+
+  <!-- Tepe: başlık + arama -->
+  <section class="head">
+    <div class="status"><span>9:41</span><span>5G ▮▮▮</span></div>
+    <h1>Kütüphane</h1>
+    <p class="sub">Okuduklarının ve sakladıklarının evi</p>
+    <div class="search"><svg class="i"><use href="#search"/></svg>Hikâye veya kategori ara…</div>
+  </section>
+
+  <!-- 1 · Kaldığın yerden (tek birincil eylem: ilk kartın CTA'sı) -->
+  <section class="sec">
+    <div class="sh"><h2>Kaldığın yerden</h2></div>
+    <div class="hs">
+      <article class="resume">
+        <svg class="sun" viewBox="0 0 168 130" fill="none" aria-hidden="true" style="transform:scaleY(-1)">
+          <circle cx="96" cy="104" r="40" fill="#E9A94B" opacity=".95"/><circle cx="96" cy="104" r="62" fill="#E9A94B" opacity=".14"/><circle cx="96" cy="104" r="84" fill="#E9A94B" opacity=".08"/>
+          <g stroke="#F3C877" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M96 40V22"/><path d="M60 52l-10-12"/><path d="M132 52l10-12"/><path d="M40 78l-16-6"/><path d="M152 78l16-6"/></g>
+        </svg>
+        <p class="eyebrow">Finans · 6 dk</p>
+        <h3>Bileşik faizin sessiz gücü</h3>
+        <p class="by">Yarısını okudun</p>
+        <div class="prog"><div class="bar"><i style="width:62%"></i></div><span>%62 okundu</span></div>
+        <div class="cta">Devam et <svg class="i"><use href="#arrow"/></svg></div>
+      </article>
+      <article class="resume">
+        <svg class="sun" viewBox="0 0 168 130" fill="none" aria-hidden="true" style="transform:scaleY(-1)">
+          <circle cx="96" cy="104" r="40" fill="#E9A94B" opacity=".95"/><circle cx="96" cy="104" r="62" fill="#E9A94B" opacity=".14"/><circle cx="96" cy="104" r="84" fill="#E9A94B" opacity=".08"/>
+          <g stroke="#F3C877" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M96 40V22"/><path d="M60 52l-10-12"/><path d="M132 52l10-12"/><path d="M40 78l-16-6"/><path d="M152 78l16-6"/></g>
+        </svg>
+        <p class="eyebrow">Psikoloji · 5 dk</p>
+        <h3>Neden erteleriz, neden başlamak zor?</h3>
+        <p class="by">Dün 21:40'ta bıraktın</p>
+        <div class="prog"><div class="bar"><i style="width:28%"></i></div><span>%28 okundu</span></div>
+        <div class="cta">Devam et <svg class="i"><use href="#arrow"/></svg></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 2 · Sonra oku -->
+  <section class="sec">
+    <div class="sh"><h2>Sonra oku<small>5</small></h2><a>Tümünü gör</a></div>
+    <div class="stack" id="later"></div>
+  </section>
+
+  <!-- 3 · Cebindekiler -->
+  <section class="sec">
+    <div class="sh"><h2>Cebindekiler<small>4</small></h2></div>
+    <div class="hs">
+      <article class="quote" style="--c:var(--fin)">
+        <span class="cat" style="--c:var(--fin)"><span class="badge" style="--c:var(--fin)"><img data-c="Finans" alt=""></span>Finans</span>
+        <p class="qt">Zenginlik, harcamadığın paranın zamanla büyümesidir.</p>
+        <div class="ft"><span class="src">Bileşik faizin sessiz gücü</span><span class="act" aria-label="Sohbette kullan"><svg class="i"><use href="#chat"/></svg></span></div>
+      </article>
+      <article class="quote" style="--c:var(--fel)">
+        <span class="cat" style="--c:var(--fel)"><span class="badge" style="--c:var(--fel)"><img data-c="Felsefe" alt=""></span>Felsefe</span>
+        <p class="qt">Kontrol edebildiklerin ile edemediklerini ayır; enerjini yalnızca birincisine ver.</p>
+        <div class="ft"><span class="src">Stoacı sakinlik</span><span class="act" aria-label="Sohbette kullan"><svg class="i"><use href="#chat"/></svg></span></div>
+      </article>
+      <article class="quote" style="--c:var(--lea)">
+        <span class="cat" style="--c:var(--lea)"><span class="badge" style="--c:var(--lea)"><img data-c="Liderlik" alt=""></span>Liderlik</span>
+        <p class="qt">İyi lider cevap vermez, doğru soruyu sorar.</p>
+        <div class="ft"><span class="src">Soru soran yönetici</span><span class="act" aria-label="Sohbette kullan"><svg class="i"><use href="#chat"/></svg></span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4 · Arşiv -->
+  <section class="sec">
+    <div class="sh"><h2>Arşiv</h2></div>
+    <div class="seg" role="tablist">
+      <span class="on">Okunanlar <em>38</em></span>
+      <span>Favoriler <em>12</em></span>
+      <span>Kayıtlar <em>3</em></span>
+    </div>
+    <div class="frow">
+      <div class="pills" id="pills"></div>
+      <span class="sortb" aria-label="Sırala"><svg class="i"><use href="#sort"/></svg></span>
+    </div>
+    <p class="count">38 hikâye</p>
+    <div class="stack" id="archive"></div>
+    <div class="more">Daha fazla göster <svg class="i"><use href="#down"/></svg></div>
+    <p class="end">Hepsi bu kadar. Yeni hikâyeler Keşfet'te seni bekliyor.</p>
+  </section>
+
+  <nav class="tabbar">
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Keşfet</span>
+    <span class="tab on"><svg class="i" viewBox="0 0 24 24"><use href="#lib"/></svg>Kütüphane</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14"/></svg>Yolum</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>Profil</span>
+  </nav>
+</main>
+
+<!-- Durumlar: boş arşiv, boş filtre, sıralama paneli -->
+<section class="panels">
+  <h2>Diğer durumlar</h2>
+  <div class="pg">
+    <div class="sheetwrap"><p>Okunanlar boş</p>
+      <div class="mini phone" data-m="light"><div class="empty">
+        <span class="ring"><svg class="i"><use href="#book"/></svg></span>
+        <h3>Henüz hikâye okumadın</h3><p>Okuduğun her hikâye burada birikir. İlkini bugün aç.</p>
+        <span class="btn">Hikâyelere göz at</span>
+      </div></div></div>
+    <div class="sheetwrap"><p>Favoriler boş</p>
+      <div class="mini phone" data-m="light"><div class="empty">
+        <span class="ring"><svg class="i"><use href="#heart"/></svg></span>
+        <h3>Favorin yok</h3><p>Beğendiğin hikâyeyi kalp ile işaretle, hep elinin altında dursun.</p>
+        <span class="btn">Hikâyelere göz at</span>
+      </div></div></div>
+    <div class="sheetwrap"><p>Filtre / arama sonuçsuz</p>
+      <div class="mini phone" data-m="light"><div class="empty">
+        <span class="ring"><svg class="i"><use href="#search"/></svg></span>
+        <h3>Sonuç bulunamadı</h3><p>Bu kategoride ya da aramanda eşleşen hikâye yok.</p>
+        <span class="btn">Filtreyi temizle</span>
+      </div></div></div>
+    <div class="sheetwrap"><p>Sırala</p>
+      <div class="mini phone sortov" data-m="light"><div class="sheet">
+        <div class="gr"></div><h3>Sırala</h3>
+        <div class="opt on"><span>Eklenme sırası</span><svg class="i"><use href="#check"/></svg></div>
+        <div class="opt"><span>En çok okunan</span></div>
+      </div></div></div>
+  </div>
+</section>
+
+<script>
+  const phone = document.getElementById('phone');
+  const EN = { Finans: 'Finance', Gelişim: 'Growth', Psikoloji: 'Psychology', Felsefe: 'Philosophy', Bilim: 'Science', İletişim: 'Communication', Tarih: 'History', Liderlik: 'Leadership', Sağlık: 'Health', İş: 'Business', Üretkenlik: 'Productivity' };
+  const CK = { Finans: 'fin', Psikoloji: 'psi', Felsefe: 'fel', Tarih: 'his', Liderlik: 'lea', Bilim: 'sci', Sağlık: 'hea', Gelişim: 'gro', İletişim: 'com', İş: 'bus', Üretkenlik: 'pro' };
+  const dark = () => phone.dataset.m === 'dark';
+  const pill = (c) => `../assets/categories/pill_icons/${EN[c]}${dark() ? '-dark' : ''}.png`;
+  const card = (c) => `../assets/categories/${EN[c]}${dark() ? '-dark' : ''}.png`;
+  const badge = (c) => `<span class="badge" style="--c:var(--${CK[c]})"><img data-c="${c}" src="${pill(c)}" alt=""></span>`;
+  const ico = (n) => `<svg class="i"><use href="#${n}"/></svg>`;
+
+  // [kategori, başlık, dk, etiketler[{t,ic,cls}], eylem: 'chat' | 'off']
+  const later = [
+    ['Tarih', 'Roma neden çöktü? Sessiz çürümenin anatomisi', 7, []],
+    ['Sağlık', 'Uykunun görünmeyen gücü', 5, []],
+    ['Bilim', 'Merakın biyolojisi: beyin yeniyi nasıl sever', 6, []],
+    ['Liderlik', 'Soru soran yönetici', 6, []],
+    ['İletişim', 'Zor konuşmayı yumuşatmanın üç cümlesi', 4, []],
+  ];
+  const arch = [
+    ['Finans', 'Bileşik faizin sessiz gücü', 6, [['3 kez okundu', 'repeat', 'pet'], ['Kayıt', 'mic', '']], 'chat'],
+    ['Felsefe', 'Stoacı sakinlik: kontrol çemberin', 5, [['2 kez okundu', 'repeat', 'pet'], ['Sohbette kullandın · 12 Eki', 'chat', '']], 'chat'],
+    ['Psikoloji', 'Çerçeveleme etkisi: aynı bilgi, farklı karar', 6, [['1 kez okundu', 'repeat', '']], 'chat'],
+    ['Gelişim', 'Küçük alışkanlıkların bileşik etkisi', 5, [['4 kez okundu', 'repeat', 'pet'], ['Kayıt', 'mic', '']], 'chat'],
+    ['Üretkenlik', 'Derin çalışma için ilk 20 dakika', 5, [['1 kez okundu', 'repeat', '']], 'chat'],
+    ['İş', 'Müzakerede ilk teklifi kim vermeli?', 7, [['1 kez okundu', 'repeat', '']], 'chat'],
+  ];
+  const row = ([c, title, min, tags, act]) => `
+    <article class="story" style="--c:var(--${CK[c]})">
+      <span class="th"><img data-k="${c}" src="${card(c)}" alt=""></span>
+      <div class="mid">
+        <span class="cat">${c}</span>
+        <h4>${title}</h4>
+        <div class="meta"><span>${ico('clock')}${min} dk</span></div>
+        ${tags && tags.length ? `<div class="tagrow">${tags.map(([t, i, k]) => `<span class="tag ${k}">${ico(i)}${t}</span>`).join('')}</div>` : ''}
+      </div>
+      ${act ? `<span class="act" aria-label="Sohbette kullan">${ico('chat')}</span>` : ''}
+    </article>`;
+  document.getElementById('later').innerHTML = later.map((s) => row([...s, 'chat'])).join('');
+  document.getElementById('archive').innerHTML = arch.map(row).join('');
+
+  const pills = ['Tümü', ...Object.keys(EN)];
+  document.getElementById('pills').innerHTML = pills.map((c, i) => c === 'Tümü'
+    ? `<span class="cp on"><span class="badge"><img data-all src="../assets/categories/pill_icons/All.png" alt=""></span>Tümü</span>`
+    : `<span class="cp">${badge(c)}${c}</span>`).join('');
+
+  const refresh = () => {
+    document.querySelectorAll('img[data-c]').forEach((im) => { im.src = pill(im.dataset.c); });
+    document.querySelectorAll('img[data-k]').forEach((im) => { im.src = card(im.dataset.k); });
+    document.querySelectorAll('img[data-all]').forEach((im) => { im.src = `../assets/categories/pill_icons/All${dark() ? '-dark' : ''}.png`; });
+  };
+  refresh();
+
+  document.querySelectorAll('.switch button').forEach((b) => b.addEventListener('click', () => {
+    const m = b.dataset.m;
+    document.body.dataset.mode = m;
+    document.querySelectorAll('.phone').forEach((p) => { p.dataset.m = m; });
+    document.querySelectorAll('.switch button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    refresh();
+  }));
+</script>
+</body>
+</html>

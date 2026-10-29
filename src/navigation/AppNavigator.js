@@ -15,7 +15,9 @@ import { useStories } from '../context/StoriesContext';
 import { useCareerPath } from '../context/CareerPathContext';
 import { t } from '../locales/i18n';
 import BadgeIcon, { BADGE_MAP, BADGE_IMAGES } from '../components/BadgeIcon';
+import { BADGE_DEFINITIONS } from '../utils/badges';
 import BadgeShareSheet from '../components/BadgeShareSheet';
+import { CelebrationCard, CelebrationButton, CelebrationChip, CelebrationQuote, celebrationBackdrop } from '../components/CelebrationCard';
 
 import OnboardingScreen from '../screens/OnboardingScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -33,7 +35,8 @@ import CareerToolkitScreen from '../screens/CareerToolkitScreen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 export const appNavigationRef = React.createRef();
-const CONFETTI_COLORS = ['#FFD166', '#FF6B6B', '#06D6A0', '#4D96FF', '#F4A261', '#B8E1FF'];
+// Intro ends at ~2050 ms (tagline fade-in) + 1 s hold so the effect is seen in full.
+const LAUNCH_MIN_MS = 3050;
 // The trial offer may only land while the reader sits on a tab — never over the
 // reader, the paywall itself, or another full-screen route.
 const TAB_ROUTE_NAMES = ['HomeTab', 'LibraryTab', 'ProgressTab', 'ProfileTab'];
@@ -304,6 +307,7 @@ export default function AppNavigator() {
     isOnboarded,
     isPremium,
     totalReads,
+    categoryStats,
     isLoadingUserData,
     loadErrorMsg,
     retryUserDataLoad,
@@ -315,8 +319,15 @@ export default function AppNavigator() {
     setBadgePresentationBlocked,
   } = useUserData();
   const { errorMsg, refreshStories } = useStories();
-  const { colors, layout, lang, isDark } = useTheme();
+  const { colors, lang, isDark } = useTheme();
   const [isNavigationReady, setIsNavigationReady] = useState(false);
+  // Native splash is a static image; keep the animated launch screen up long
+  // enough for its intro to play even when data loads instantly.
+  const [launchHold, setLaunchHold] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLaunchHold(false), LAUNCH_MIN_MS);
+    return () => clearTimeout(timer);
+  }, []);
   const [activeRouteName, setActiveRouteName] = useState(null);
   const readActiveRouteName = () => setActiveRouteName(appNavigationRef.current?.getCurrentRoute?.()?.name ?? null);
   const modalAnim = useRef(new Animated.Value(0)).current;
@@ -474,7 +485,7 @@ export default function AppNavigator() {
     outputRange: [0, 1],
   });
 
-  if (isLoadingUserData) {
+  if (isLoadingUserData || launchHold) {
     return (
       <LaunchScreen
         status="user"
@@ -497,22 +508,7 @@ export default function AppNavigator() {
 
   const styles = StyleSheet.create({
     modalOverlay: {
-      flex: 1,
-      backgroundColor: colors.modalOverlay,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 24,
-    },
-    modalCard: {
-      backgroundColor: colors.modalSurface,
-      borderRadius: layout.radius.card,
-      padding: 28,
-      width: '100%',
-      maxWidth: 340,
-      alignItems: 'center',
-      borderWidth: layout.borderWidth,
-      borderColor: colors.border,
-      overflow: 'hidden',
+      ...celebrationBackdrop(isDark),
     },
     confettiLayer: {
       ...StyleSheet.absoluteFillObject,
@@ -524,83 +520,6 @@ export default function AppNavigator() {
       width: 8,
       height: 14,
       borderRadius: 2,
-    },
-    modalTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 22,
-      color: colors.text,
-      marginBottom: 4,
-      textAlign: 'center',
-    },
-    modalSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 13,
-      color: colors.textSecondary,
-      marginBottom: 16,
-      textAlign: 'center',
-    },
-    modalDesc: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 14,
-      color: colors.text,
-      textAlign: 'center',
-      lineHeight: 20,
-      marginBottom: 16,
-    },
-    modalStatusBadge: {
-      paddingHorizontal: 16,
-      paddingVertical: 6,
-      borderRadius: 20,
-      marginBottom: 20,
-    },
-    modalStatusText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 12,
-      textTransform: 'uppercase',
-      letterSpacing: 0.5,
-    },
-    modalBadgeIcon: {
-      width: 80, height: 80, borderRadius: 40,
-      alignItems: 'center', justifyContent: 'center',
-    },
-    modalQuoteWrap: {
-      marginTop: 18, paddingTop: 16, width: '100%',
-      borderTopWidth: layout.borderWidth, borderTopColor: colors.border,
-      alignItems: 'center',
-    },
-    modalQuoteText: {
-      fontFamily: 'PlayfairDisplay_400Regular_Italic',
-      fontSize: 14, lineHeight: 21, color: colors.text,
-      textAlign: 'center',
-    },
-    modalQuoteAuthor: {
-      fontFamily: 'Inter_500Medium', fontSize: 12,
-      color: colors.textSecondary, marginTop: 6,
-    },
-    modalBtnRow: {
-      flexDirection: 'row', alignItems: 'center', gap: 10,
-      alignSelf: 'stretch',
-    },
-    modalShareBtn: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
-      paddingHorizontal: 20, paddingVertical: 12, borderRadius: layout.radius.card,
-      backgroundColor: colors.primary,
-    },
-    modalShareText: {
-      fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.onPrimary,
-    },
-    modalCloseBtn: {
-      paddingHorizontal: 32,
-      paddingVertical: 12,
-      borderRadius: layout.radius.card,
-      borderWidth: 1,
-      borderColor: colors.border,
-      alignItems: 'center',
-    },
-    modalCloseText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 14,
-      color: colors.text,
     },
   });
 
@@ -635,7 +554,7 @@ export default function AppNavigator() {
               <Stack.Screen 
                 name="Paywall" 
                 component={PaywallScreen} 
-                options={{ presentation: 'modal' }}
+                options={{ presentation: 'transparentModal', animation: 'fade', contentStyle: { backgroundColor: 'transparent' } }}
               />
             </>
           )}
@@ -651,122 +570,93 @@ export default function AppNavigator() {
         <View style={styles.modalOverlay}>
           <Pressable style={StyleSheet.absoluteFill} onPress={closeBadgeModal} />
           {activeBadgeModal && (
-            <Animated.View style={[styles.modalCard, { opacity: cardOpacity, transform: [{ scale: cardScale }] }]}> 
-              <View style={styles.confettiLayer}>
-                {[0, 1, 2, 3, 4, 5].map((i) => {
-                  const startX = 26 + i * 44;
-                  const drift = (i % 2 === 0 ? -1 : 1) * (10 + i * 2);
-                  const translateY = confettiAnim.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [-18, 130 + i * 8],
-                  });
-                  const translateX = confettiAnim.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, drift],
-                  });
-                  const rotate = confettiAnim.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: ['0deg', i % 2 === 0 ? '-190deg' : '190deg'],
-                  });
-                  const opacity = confettiAnim.interpolate({
-                    inputRange: [0, 0.7, 1],
-                    outputRange: [0, 1, 0],
-                  });
-
-                  return (
-                    <Animated.View
-                      key={`confetti-${i}`}
-                      style={[
-                        styles.confettiPiece,
-                        {
-                          left: startX,
-                          backgroundColor: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
-                          opacity,
-                          transform: [{ translateY }, { translateX }, { rotate }],
-                        },
-                      ]}
+            <Animated.View style={{ width: '100%', alignItems: 'center', opacity: cardOpacity, transform: [{ scale: cardScale }] }}>
+              <CelebrationCard
+                locked={!activeBadgeModal.earned}
+                onClose={closeBadgeModal}
+                closeLabel={t('badgeModalClose', lang)}
+                bandChildren={activeBadgeModal.earned ? (
+                  <View style={styles.confettiLayer}>
+                    {[0, 1, 2, 3, 4, 5].map((i) => {
+                      const startX = 26 + i * 44;
+                      const drift = (i % 2 === 0 ? -1 : 1) * (10 + i * 2);
+                      const translateY = confettiAnim.interpolate({ inputRange: [0, 1], outputRange: [-18, 130 + i * 8] });
+                      const translateX = confettiAnim.interpolate({ inputRange: [0, 1], outputRange: [0, drift] });
+                      const rotate = confettiAnim.interpolate({ inputRange: [0, 1], outputRange: ['0deg', i % 2 === 0 ? '-190deg' : '190deg'] });
+                      const opacity = confettiAnim.interpolate({ inputRange: [0, 0.7, 1], outputRange: [0, 1, 0] });
+                      return (
+                        <Animated.View
+                          key={`confetti-${i}`}
+                          style={[
+                            styles.confettiPiece,
+                            {
+                              left: startX,
+                              backgroundColor: i % 2 ? '#F5F1E8' : colors.dawn,
+                              opacity,
+                              transform: [{ translateY }, { translateX }, { rotate }],
+                            },
+                          ]}
+                        />
+                      );
+                    })}
+                  </View>
+                ) : undefined}
+                emblem={(
+                  <Animated.View style={{ width: '100%', height: '100%', transform: [{ scale: iconAnim }] }}>
+                    {BADGE_IMAGES[activeBadgeModal.id] ? (
+                      <>
+                        <Image
+                          source={BADGE_IMAGES[activeBadgeModal.id]}
+                          resizeMode="cover"
+                          style={{ width: '100%', height: '100%', borderRadius: 55, opacity: activeBadgeModal.earned ? 1 : 0.34 }}
+                        />
+                        {!activeBadgeModal.earned && (
+                          <View pointerEvents="none" style={[StyleSheet.absoluteFill, { alignItems: 'center', justifyContent: 'center' }]}>
+                            <Ionicons name="lock-closed-outline" size={30} color={colors.textSecondary} />
+                          </View>
+                        )}
+                      </>
+                    ) : (
+                      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', borderRadius: 55, backgroundColor: colors.heroSurface }}>
+                        <Ionicons
+                          name={activeBadgeModal.earned ? modalMeta.icon : 'lock-closed-outline'}
+                          size={44}
+                          color={activeBadgeModal.earned ? colors.dawn : colors.textSecondary}
+                        />
+                      </View>
+                    )}
+                  </Animated.View>
+                )}
+                kicker={activeBadgeModal.earned ? t('badgeModalKickerEarned', lang) : t('badgeModalKicker', lang)}
+                title={t(activeBadgeModal.titleKey, lang)}
+                subtitle={t(activeBadgeModal.subKey, lang)}
+                description={t(activeBadgeModal.descKey, lang)}
+                actions={activeBadgeModal.earned ? (
+                  <>
+                    <CelebrationButton
+                      variant="primary"
+                      icon="share-social-outline"
+                      label={t('shareBtn', lang)}
+                      onPress={() => {
+                        const b = activeBadgeModal;
+                        setBadgePresentationBlocked('badge_share_sheet', true);
+                        closeBadgeModal();
+                        setTimeout(() => setShareSheetBadge(b), 320);
+                      }}
                     />
-                  );
-                })}
-              </View>
-
-              <Animated.View style={[{ marginBottom: 16 }, { transform: [{ scale: iconAnim }] }]}>
-                <View style={[
-                  styles.modalBadgeIcon,
-                  { backgroundColor: activeBadgeModal.earned ? `${modalMeta.colors[0]}1F` : colors.backgroundDark, overflow: 'hidden' },
-                ]}>
-                  {BADGE_IMAGES[activeBadgeModal.id] ? (
-                    <>
-                      <Image
-                        source={BADGE_IMAGES[activeBadgeModal.id]}
-                        resizeMode="cover"
-                        style={{ width: '100%', height: '100%', opacity: activeBadgeModal.earned ? 1 : 0.32 }}
-                      />
-                      {!activeBadgeModal.earned && (
-                        <View pointerEvents="none" style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: isDark ? 'rgba(0,0,0,0.28)' : 'rgba(255,255,255,0.35)' }}>
-                          <Ionicons name="lock-closed" size={30} color={isDark ? '#D8D8D8' : '#8A8A8A'} />
-                        </View>
-                      )}
-                    </>
-                  ) : (
-                    <Ionicons
-                      name={activeBadgeModal.earned ? modalMeta.icon : 'lock-closed'}
-                      size={38}
-                      color={activeBadgeModal.earned ? modalMeta.colors[0] : colors.textSecondary}
-                    />
-                  )}
-                </View>
-              </Animated.View>
-              <Text style={styles.modalTitle}>{t(activeBadgeModal.titleKey, lang)}</Text>
-              <Text style={styles.modalSub}>{t(activeBadgeModal.subKey, lang)}</Text>
-              <Text style={styles.modalDesc}>{t(activeBadgeModal.descKey, lang)}</Text>
-              <View
-                style={[
-                  styles.modalStatusBadge,
-                  { backgroundColor: activeBadgeModal.earned ? '#2E7D3220' : colors.backgroundDark },
-                ]}
+                    <CelebrationButton variant="text" label={t('badgeModalClose', lang)} onPress={closeBadgeModal} />
+                  </>
+                ) : (
+                  <CelebrationButton variant="secondary" tone="primary" label={t('badgeModalClose', lang)} onPress={closeBadgeModal} />
+                )}
               >
-                <Text
-                  style={[
-                    styles.modalStatusText,
-                    { color: activeBadgeModal.earned ? '#2E7D32' : colors.textSecondary },
-                  ]}
-                >
-                  {activeBadgeModal.earned ? t('badgeModalEarned', lang) : t('badgeModalLocked', lang)}
-                </Text>
-              </View>
-
-              {modalQuote && (
-                <View style={styles.modalQuoteWrap}>
-                  <Text style={styles.modalQuoteText}>{`“${modalQuote.q}”`}</Text>
-                  <Text style={styles.modalQuoteAuthor}>{`— ${modalQuote.a}`}</Text>
-                </View>
-              )}
-
-              {activeBadgeModal.earned ? (
-                <View style={[styles.modalBtnRow, { marginTop: 20 }]}>
-                  <TouchableOpacity
-                    style={[styles.modalShareBtn, { flex: 1 }]}
-                    onPress={() => {
-                      const b = activeBadgeModal;
-                      setBadgePresentationBlocked('badge_share_sheet', true);
-                      closeBadgeModal();
-                      setTimeout(() => setShareSheetBadge(b), 320);
-                    }}
-                    accessibilityRole="button"
-                  >
-                    <Ionicons name="share-social-outline" size={16} color={colors.onPrimary} />
-                    <Text style={styles.modalShareText}>{t('shareBtn', lang)}</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={[styles.modalCloseBtn, { flex: 1 }]} onPress={closeBadgeModal}>
-                    <Text style={styles.modalCloseText}>{t('badgeModalClose', lang)}</Text>
-                  </TouchableOpacity>
-                </View>
-              ) : (
-                <TouchableOpacity style={[styles.modalCloseBtn, { alignSelf: 'stretch', marginTop: 20 }]} onPress={closeBadgeModal}>
-                  <Text style={styles.modalCloseText}>{t('badgeModalClose', lang)}</Text>
-                </TouchableOpacity>
-              )}
+                <CelebrationChip
+                  tone={activeBadgeModal.earned ? 'success' : 'muted'}
+                  icon={activeBadgeModal.earned ? 'checkmark' : 'lock-closed-outline'}
+                  label={activeBadgeModal.earned ? t('badgeModalEarned', lang) : t('badgeModalLocked', lang)}
+                />
+                {modalQuote ? <CelebrationQuote quote={modalQuote.q} author={modalQuote.a} /> : null}
+              </CelebrationCard>
             </Animated.View>
           )}
         </View>
@@ -780,21 +670,27 @@ export default function AppNavigator() {
       >
         <View style={styles.modalOverlay}>
           <Pressable style={StyleSheet.absoluteFill} onPress={closeBadgeCollectionCompletionModal} />
-          <View style={styles.modalCard}>
-            <View style={[styles.modalBadgeIcon, { backgroundColor: `${colors.primary}22`, marginBottom: 16 }]}>
-              <Ionicons name="trophy" size={38} color={colors.primaryText} />
-            </View>
-            <Text style={styles.modalTitle}>{t('badgeCollectionCompleteTitle', lang)}</Text>
-            <Text style={styles.modalSub}>{t('badgeCollectionCompleteSub', lang)}</Text>
-            <Text style={styles.modalDesc}>{t('badgeCollectionCompleteDesc', lang)}</Text>
-            <TouchableOpacity
-              style={[styles.modalShareBtn, { alignSelf: 'stretch', marginTop: 4 }]}
-              onPress={closeBadgeCollectionCompletionModal}
-              accessibilityRole="button"
-            >
-              <Text style={styles.modalShareText}>{t('badgeCollectionCompleteClose', lang)}</Text>
-            </TouchableOpacity>
-          </View>
+          <CelebrationCard
+            onClose={closeBadgeCollectionCompletionModal}
+            closeLabel={t('badgeModalClose', lang)}
+            emblem={(
+              <View style={{ flex: 1, alignSelf: 'stretch', alignItems: 'center', justifyContent: 'center', borderRadius: 55, backgroundColor: colors.heroSurface }}>
+                <Ionicons name="trophy-outline" size={46} color={colors.dawn} />
+              </View>
+            )}
+            kicker={t('badgeCollectionCompleteKicker', lang)}
+            title={t('badgeCollectionCompleteTitle', lang)}
+            subtitle={t('badgeCollectionCompleteSub', lang)}
+            description={t('badgeCollectionCompleteDesc', lang)}
+            stats={[
+              { value: BADGE_DEFINITIONS.length, label: t('badgeStatBadges', lang) },
+              { value: totalReads, label: t('badgeStatStories', lang) },
+              { value: Object.keys(categoryStats || {}).length, label: t('badgeStatCategories', lang) },
+            ]}
+            actions={(
+              <CelebrationButton variant="primary" label={t('badgeCollectionCompleteClose', lang)} onPress={closeBadgeCollectionCompletionModal} />
+            )}
+          />
         </View>
       </Modal>
 

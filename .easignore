@@ -59,7 +59,7 @@ artifacts/
 outputs/
 staging/
 assets/_db_backups/
-assets/_brand_backup/
+arsiv/marka-eski/
 assets/*.bak*
 .claude/
 .claude-backup/

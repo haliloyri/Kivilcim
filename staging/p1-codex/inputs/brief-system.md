@@ -23,6 +23,23 @@ Rules:
   actual per-language text is written later from these ideas, so keep them
   short and distinct from each other and from `pocket_idea`.
 
+## Book metadata and size
+
+- `book.title`, `book.author`, `book.year` must be exactly what you can
+  confidently attribute. Leave `year` empty rather than guess, and never add
+  translated titles, editions, or "published in <language> as…" details.
+  Check that the story's central claim actually comes from THAT book (a topic
+  can appear in several books by one author); if unsure, say so in
+  `confidence_note` and lower `confidence`.
+- The finished entry is a 3–5 minute read with the story as its main part.
+  Give the writer enough supported material for that: for an anecdote about
+  6–10 distinct `facts` (situation, stakes, action, outcome, 2–3 vivid
+  details). If the book supports fewer, keep `facts` short and say so in
+  `confidence_note`; a shorter faithful story beats padding.
+- Make `lessons` genuinely different implications, not three restatements of
+  the facts, and keep `reflect` to 2–3 items from different situations.
+  Do not copy a lesson's wording into `reflect`, `use_cases` or `pocket_idea`.
+
 ## Select material that can carry a story
 
 This brief feeds a mobile library of many different book stories. Preserve

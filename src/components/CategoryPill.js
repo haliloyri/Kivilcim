@@ -11,6 +11,7 @@ const CategoryPill = ({
   isDark = false,
   compact = false,
   vertical = false,
+  inline = false,
   onPress,
   disabled = false,
   activeColor,
@@ -70,6 +71,30 @@ const CategoryPill = ({
   const verticalBorder = active ? resolvedActiveColor : themePalette.border;
   const verticalTextColor = active ? onActiveColor : themePalette.textSecondary;
 
+  if (inline) {
+    const inlineBackground = active ? themePalette.primary : themePalette.cardBackground;
+    const inlineBorder = active ? themePalette.primary : themePalette.border;
+    const inlineText = active ? themePalette.onPrimary : themePalette.text;
+    return (
+      <TouchableOpacity
+        activeOpacity={0.82}
+        disabled={disabled}
+        onPress={onPress}
+        accessibilityRole="button"
+        accessibilityState={{ selected: active }}
+        accessibilityLabel={displayLabel}
+        style={[styles.inlineBase, { borderColor: inlineBorder, backgroundColor: inlineBackground }]}
+      >
+        {pillImage.source ? (
+          <View style={[styles.inlineIconWrap, { backgroundColor: active ? (isDark ? 'rgba(20,20,19,0.55)' : 'rgba(255,255,255,0.9)') : (isDark && /^#[0-9a-f]{6}$/i.test(catTheme.accent || '') ? `${catTheme.accent}4D` : isDark ? 'rgba(255,255,255,0.12)' : 'rgba(36,33,30,0.05)') }]}>
+            <Image source={pillImage.source} style={styles.inlineIconImage} resizeMode="contain" />
+          </View>
+        ) : null}
+        <Text numberOfLines={1} style={[styles.inlineLabel, { color: inlineText }]}>{displayLabel}</Text>
+      </TouchableOpacity>
+    );
+  }
+
   if (vertical) {
     return (
       <TouchableOpacity
@@ -128,7 +153,7 @@ const CategoryPill = ({
             { backgroundColor: iconWrapBg },
           ]}
         >
-          <Image source={pillImage.source} style={styles.iconImage} resizeMode="cover" />
+          <Image source={pillImage.source} style={styles.iconImage} resizeMode="contain" />
         </View>
       ) : null}
       <Text
@@ -184,7 +209,6 @@ const styles = StyleSheet.create({
   iconImage: {
     width: '100%',
     height: '100%',
-    transform: [{ scale: 1.3 }],
   },
   label: {
     fontFamily: 'Inter_600SemiBold',
@@ -192,6 +216,32 @@ const styles = StyleSheet.create({
   },
   labelCompact: {
     fontSize: 12,
+  },
+  inlineBase: {
+    minHeight: 44,
+    borderWidth: 1,
+    borderRadius: 22,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    paddingLeft: 8,
+    paddingRight: 16,
+  },
+  inlineIconWrap: {
+    width: 28,
+    height: 28,
+    borderRadius: 9,
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+  },
+  inlineIconImage: {
+    width: '100%',
+    height: '100%',
+  },
+  inlineLabel: {
+    fontFamily: 'Inter_600SemiBold',
+    fontSize: 14,
   },
   verticalBase: {
     minWidth: 72,

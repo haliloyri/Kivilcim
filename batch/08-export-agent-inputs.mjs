@@ -44,7 +44,8 @@ const storySystem = fs.readFileSync(path.join(ROOT, 'batch/prompts/story-instruc
   .replaceAll('{LEN_STORY}', cfg.len.story)
   .replaceAll('{LEN_LESSONS}', cfg.len.lessons)
   .replaceAll('{LEN_REFLECT}', cfg.len.reflect)
-  .replaceAll('{LEN_USE}', cfg.len.use);
+  .replaceAll('{LEN_USE}', cfg.len.use)
+  .replaceAll('{LEN_TOTAL}', cfg.len.total);
 fs.writeFileSync(path.join(inDir, `story-system.${lang}.md`), storySystem);
 
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'staging/p1/manifest.json'), 'utf8'));

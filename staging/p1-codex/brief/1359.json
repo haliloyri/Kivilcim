@@ -1,0 +1,67 @@
+{
+  "story_id": 1359,
+  "kind": "concept",
+  "book": {
+    "title": "This Is Marketing (Unutulmaz Markalar)",
+    "author": "Seth Godin",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Godin defines marketing as making change happen for the people we serve and builds on empathy for their wants, fears and stories. 'A promise made and kept' is consistent with his writing on trust. The supplied text's 'a gift' phrasing and 'wait and people will find it' step are softened: the book stresses patience and generosity but does not promise people will simply arrive. No named case is used.",
+  "facts": [
+    "Godin sets traditional marketing, which tries to persuade people with ads, pressure and tricks, against his own view.",
+    "In his view marketing means making a change happen for the people you serve, not talking them into buying.",
+    "The starting questions are who the work is for, what they want, and what is missing in their world.",
+    "Empathy means understanding what the person believes, wants and fears, and the story they tell themselves.",
+    "Work built with that understanding is closer to help than to persuasion.",
+    "Marketing makes a promise and then keeps it; trust is built through the keeping.",
+    "People share what has actually helped them.",
+    "Godin asks for patience: the work earns attention over time."
+  ],
+  "tension": "Selling feels like persuasion, yet Godin says persuasion is the part to drop and the question to ask is what is missing in the customer's world.",
+  "opening_idea": "Open on the two kinds of marketing: pushing people to buy versus asking what is missing for them.",
+  "lessons": [
+    {
+      "idea": "Empathy is information, not just kindness: what people believe shapes what they will accept.",
+      "anchor": "Understanding wants, fears and stories."
+    },
+    {
+      "idea": "A promise is only marketing if it is kept.",
+      "anchor": "Marketing as a promise made and kept."
+    },
+    {
+      "idea": "Patience is part of the method.",
+      "anchor": "Attention is earned over time."
+    }
+  ],
+  "reflect": [
+    "A time a product or service solved something you had not managed to name.",
+    "A promise your work makes, and whether you can keep it.",
+    "Someone you serve whose morning worries you could not describe."
+  ],
+  "reflect_final": "If you spent one hour listening to a person you serve, what would you most hope to learn?",
+  "use_cases": [
+    {
+      "situation": "You are preparing a pitch.",
+      "move": "Start with one sentence about what the listener believes and fears before saying what you offer.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A customer or colleague is unhappy with a result.",
+      "move": "Ask what they were hoping would change for them, then repeat it back before answering.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Writing a description of your own work.",
+      "move": "Write the promise in a sentence and check that each part of what you do keeps it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Write your promise in one sentence, then check whether this week's work keeps it.",
+  "conversation_variants": {
+    "punchline_idea": "Godin's marketing starts by asking what is missing in your customer's world.",
+    "thirty_sec_idea": "Godin rejects marketing as persuasion. He starts with who the work is for, what they want and what they fear, then asks you to make a promise and keep it. People share what actually helped them.",
+    "question_idea": "Ask the other person about the last thing they bought that really solved something for them.",
+    "key_contrast_idea": "Persuade or help."
+  }
+}

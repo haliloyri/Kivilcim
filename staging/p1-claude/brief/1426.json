@@ -1,0 +1,52 @@
+{
+  "story_id": 1426,
+  "kind": "anecdote",
+  "book": { "title": "Yetenek Yanılgısı", "author": "Geoff Colvin", "year": "2008" },
+  "confidence": "medium",
+  "confidence_note": "Leopold Mozart's 1756 violin treatise, the systematic early training, the father's handwriting on early works, the first four piano concertos being arrangements of other composers' music and the Ninth Concerto at 21 are the Mozart case Colvin builds. The supplied text also gives exact early ages (piano at three, symphony at eight) and a claim that Leopold stopped composing; the ages are left out as unverified, the stopped-composing point is kept as Colvin's observation. The 2014 meta-analysis (Macnamara, Hambrick, Oswald) is an editorial caveat from outside the book, not Colvin's claim; only its figures for games, music and sports are used.",
+  "facts": [
+    "Mozart is the standard picture of a born genius, a child prodigy.",
+    "His father Leopold was a well-known violin teacher who published a large book on violin teaching in 1756, the year Wolfgang was born.",
+    "Systematic training began in early childhood, by about age three at the latest, and continued for years.",
+    "Leopold took the children on European tours from about age six; Wolfgang spent much of his childhood on stage and on the road.",
+    "The early compositions are in Leopold's handwriting; the child could not yet write them down himself.",
+    "Leopold stopped composing once his son started.",
+    "The first four piano concertos, written at eleven, contain no original music: they are arrangements assembled from other composers' pieces.",
+    "The first piece now counted as a masterwork is the Ninth Piano Concerto, written at twenty-one, after more than eighteen years of training.",
+    "Colvin's claim is measured: explaining genius does not require a talent factor separate from practice. He does not say Wolfgang was ordinary."
+  ],
+  "tension": "Early output looks like proof of a gift, yet the first original masterwork came only after eighteen-plus years of guided training.",
+  "opening_idea": "Open on the four piano concertos written at eleven that contain no original music, then on the twenty-one-year-old masterwork that came after them.",
+  "lessons": [
+    {
+      "idea": "What looks like early talent usually has an early, intense start behind it that outsiders never saw.",
+      "anchor": "Leopold's treatise, his daily teaching and the father's handwriting on the first compositions."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which area do you call 'no talent' while never having worked on it regularly with guidance, and what would the first step be?",
+  "use_cases": [
+    {
+      "situation": "A child or relative is praised as naturally gifted at something.",
+      "move": "Mention that even Mozart's first scores were written down by his father, then ask who works with the child and for how long.",
+      "context": "family"
+    },
+    {
+      "situation": "You tell yourself 'I have no talent for this'.",
+      "move": "Say you never tried it regularly with someone's guidance, and book one short session to find out what changes.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend's success gets brushed off as 'natural talent'.",
+      "move": "Ask how they trained in the early years and who helped them.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Behind a prodigy stands a teacher; before calling someone a genius, ask who worked beside them for years.",
+  "conversation_variants": {
+    "punchline_idea": "Mozart's first four piano concertos, written at eleven, were arrangements of other composers' music.",
+    "thirty_sec_idea": "Leopold Mozart, a violin teacher with a book on the subject, trained his son from early childhood and wrote down his first scores; the first original masterwork came at twenty-one.",
+    "question_idea": "",
+    "key_contrast_idea": "Gift versus guided years"
+  }
+}

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Albor — Profil, uzun ekran</title>
+<style>
+  /* Referans: iPhone 17 Pro, 402 pt genişlik. Tüm içerik tek uzun sayfada. Kaynak ekran: ProfileScreen. Tasarım dili: DESIGN.md. */
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #E9E4DA; font-family: -apple-system, "SF Pro Text", Inter, system-ui, sans-serif; padding-bottom: 40px; }
+  body[data-mode="dark"] { background: #0A0A09; }
+  .switch { position: sticky; top: 0; z-index: 50; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 10px; background: rgba(233,228,218,.94); backdrop-filter: blur(8px); }
+  body[data-mode="dark"] .switch { background: rgba(10,10,9,.94); }
+  .switch button { min-height: 40px; padding: 0 14px; border-radius: 20px; border: 1px solid #8884; background: #fff; color: #24211E; font: 600 13px/1 inherit; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: #1F5F5B; color: #fff; border-color: #1F5F5B; }
+  svg.i { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.15em; }
+  p, h1, h2, h3, h4 { margin: 0; }
+
+  .phone { --serif: "Playfair Display", Georgia, serif; width: 402px; margin: 16px auto 0; background: var(--bg); color: var(--ink); border-radius: 48px; overflow: clip; position: relative; box-shadow: 0 0 0 10px #111, 0 30px 80px rgba(0,0,0,.35); }
+  .phone[data-m="light"] { --bg:#F7F3EC; --card:#FFFDF9; --bd:#E6DED3; --ink:#24211E; --t2:#6B625A; --mut:#8C837A; --pet:#1F5F5B; --onpet:#fff; --pc:#E2EDEA; --gold:#E9A94B; --goldtx:#8A5A0E; --hero:#1B4B48; --herobd:#1B4B48; --glow:rgba(233,169,75,.30); --tab:#FBF8F2; --track:#E4DDD2; --tile:rgba(36,33,30,.05); --danger:#B3261E; --fin:#2F7D5B; --psi:#5B5FB5; --fel:#5B5FB5; --his:#A5623A; --lea:#A5623A; --sci:#8650A8; --hea:#C0507A; --ico:#857E6E; }
+  .phone[data-m="dark"]  { --bg:#141413; --card:#201F1D; --bd:#2F2E2B; --ink:#F2EEE8; --t2:#A8A29A; --mut:#7E7870; --pet:#7CC0B6; --onpet:#1A1A1A; --pc:#1F3634; --gold:#F0C170; --goldtx:#F0C170; --hero:#1F3A37; --herobd:#2E5A55; --glow:rgba(240,193,112,.20); --tab:#141413; --track:#2A2927; --tile:rgba(255,255,255,.06); --danger:#F06A4A; --fin:#6FCB9F; --psi:#A5A9F0; --fel:#A5A9F0; --his:#E0A27C; --lea:#E0A27C; --sci:#CFA0E8; --hea:#F29AB8; --ico:#B7B9BE; }
+  .island { position: absolute; top: 11px; left: 50%; width: 126px; height: 37px; margin-left: -63px; background: #000; border-radius: 20px; z-index: 40; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .badge { flex: none; border-radius: 10px; overflow: hidden; display: grid; place-items: center; background: color-mix(in srgb, var(--c) 14%, var(--card)); width: 28px; height: 28px; }
+  .phone[data-m="dark"] .badge { background: color-mix(in srgb, var(--c) 30%, #141413); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 45%, transparent); }
+  .phone[data-m="dark"] .cp.on .badge { background: color-mix(in srgb, var(--c) 30%, #141413); }
+  .badge img { width: 100%; height: 100%; object-fit: contain; padding: 2px; display: block; }
+
+  /* ── Tepe: kimlik ── */
+  .head { position: relative; padding: 0 20px 22px; overflow: hidden; background: radial-gradient(120% 90% at 85% -10%, var(--glow) 0%, transparent 60%); }
+  .status { height: 62px; padding: 20px 14px 0; display: flex; justify-content: space-between; font-size: 16px; font-weight: 600; }
+  .bar h1 { margin-top: 6px; font-family: var(--serif); font-size: 28px; line-height: 1.1; font-weight: 700; }
+  .id { display: flex; align-items: center; gap: 16px; margin-top: 18px; min-height: 76px; }
+  .avatar { flex: none; width: 72px; height: 72px; border-radius: 36px; display: grid; place-items: center; background: var(--pet); color: var(--onpet); font-family: var(--serif); font-size: 26px; font-weight: 700; border: 2px solid var(--gold); }
+  .id .who { flex: 1; min-width: 0; }
+  .id h2 { font-family: var(--serif); font-size: 24px; line-height: 1.15; font-weight: 700; }
+  .id .title { display: inline-flex; align-items: center; min-height: 44px; margin-top: -4px; font-size: 14px; font-weight: 600; color: var(--pet); }
+  .id .title svg { margin-left: 2px; }
+  .edit { flex: none; width: 44px; height: 44px; border-radius: 22px; display: grid; place-items: center; background: var(--card); border: .5px solid var(--bd); color: var(--t2); }
+
+  /* ── Premium hero (tek birincil eylem) ── */
+  .hero { position: relative; margin: 0 20px; padding: 20px; border-radius: 24px; background: var(--hero); border: .5px solid var(--herobd); color: #F5F1E8; overflow: hidden; box-shadow: 0 14px 30px rgba(20,60,56,.22); }
+  .sun { position: absolute; right: -34px; top: -30px; width: 168px; height: 130px; pointer-events: none; }
+  .hero > *:not(.sun) { position: relative; }
+  .eyebrow { font-size: 12px; letter-spacing: .08em; font-weight: 600; color: var(--gold); text-transform: uppercase; }
+  .hero h3 { margin: 10px 0 6px; max-width: 70%; font-family: var(--serif); font-size: 26px; line-height: 1.15; font-weight: 700; }
+  .hero .copy { max-width: 84%; font-size: 14px; line-height: 1.45; color: #D5E4E0; }
+  .perks { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; font-size: 13px; color: #E6EFEC; }
+  .perks li { display: flex; align-items: center; gap: 8px; }
+  .perks svg { color: var(--gold); flex: none; }
+  .cta { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; margin-top: 18px; border-radius: 24px; background: var(--gold); color: #2A1E08; font-size: 16px; font-weight: 700; }
+
+  /* ── Bölümler ── */
+  .sec { margin: 28px 20px 0; }
+  .lbl { margin: 0 0 10px 4px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--t2); }
+  .card { background: var(--card); border: .5px solid var(--bd); border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(36,33,30,.04); }
+  .li { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 6px 14px; }
+  .li + .li, .sub + .li { border-top: .5px solid var(--bd); }
+  .ic { flex: none; width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; background: var(--tile); color: var(--ico); font-size: 17px; }
+  .li .tx { flex: 1; min-width: 0; }
+  .li b { display: block; font-size: 15px; font-weight: 500; }
+  .li small { display: block; margin-top: 1px; font-size: 12px; color: var(--t2); line-height: 1.35; }
+  .li .val { font-size: 14px; color: var(--t2); }
+  .li .chev { color: var(--mut); font-size: 16px; flex: none; }
+  .sub { padding: 2px 14px 14px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border-radius: 22px; font-size: 14px; font-weight: 500; background: var(--tile); border: .5px solid var(--bd); color: var(--t2); }
+  .chip.on { background: var(--pet); border-color: var(--pet); color: var(--onpet); }
+  .sw { flex: none; width: 51px; height: 31px; border-radius: 16px; background: var(--track); position: relative; }
+  .sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.25); }
+  .sw.on { background: var(--pet); } .sw.on::after { left: 22px; }
+  .seg { display: flex; gap: 3px; padding: 3px; border-radius: 14px; background: var(--tile); margin: 14px; }
+  .seg span { flex: 1; min-height: 44px; display: grid; place-items: center; border-radius: 11px; font-size: 14px; font-weight: 500; color: var(--t2); }
+  .seg .on { background: var(--pet); color: var(--onpet); }
+  .intp { display: flex; gap: 8px; padding: 0 14px 14px 58px; }
+  .intp .badge { width: 34px; height: 34px; border-radius: 11px; }
+
+  /* ── Alt kısım ── */
+  .foot { margin: 30px 20px 0; display: grid; justify-items: center; gap: 2px; }
+  .foot .dng { min-height: 44px; display: inline-flex; align-items: center; font-size: 14px; font-weight: 500; color: var(--danger); }
+  .foot .ver { margin-top: 6px; font-size: 12px; color: var(--t2); }
+
+  /* ── Alt paneller (açıkken görünüm) ── */
+  .panels { max-width: 1280px; margin: 44px auto 0; padding: 0 20px; }
+  .panels h2 { text-align: center; font-family: "Playfair Display", Georgia, serif; font-size: 22px; color: #24211E; margin-bottom: 18px; }
+  body[data-mode="dark"] .panels h2 { color: #F2EEE8; }
+  .pg { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: flex-end; }
+  .sheetwrap { width: 402px; }
+  .sheetwrap > p { text-align: center; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #6B625A; margin-bottom: 8px; }
+  body[data-mode="dark"] .sheetwrap > p { color: #A8A29A; }
+  .sheet-ph { --serif: "Playfair Display", Georgia, serif; border-radius: 28px; overflow: hidden; background: rgba(0,0,0,.45); padding-top: 70px; box-shadow: 0 10px 30px rgba(0,0,0,.2); }
+  .sheet { background: var(--card); color: var(--ink); border-radius: 24px 24px 0 0; padding: 10px 20px 34px; }
+  .sheet .gr { width: 36px; height: 4px; border-radius: 2px; background: var(--bd); margin: 0 auto 14px; }
+  .sheet h3 { font-family: var(--serif); font-size: 22px; font-weight: 700; }
+  .sheet .s { margin: 4px 0 16px; font-size: 13px; color: var(--t2); line-height: 1.4; }
+  .field { min-height: 48px; display: flex; align-items: center; padding: 0 14px; border: 1px solid var(--pet); border-radius: 12px; background: var(--bg); font-size: 15px; }
+  .field i { width: 1.5px; height: 20px; background: var(--pet); margin-left: 1px; }
+  .acts { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+  .btn { min-height: 44px; display: inline-flex; align-items: center; padding: 0 20px; border-radius: 22px; font-size: 14px; font-weight: 600; color: var(--t2); }
+  .btn.p { background: var(--pet); color: var(--onpet); }
+  .lang { display: flex; align-items: center; min-height: 52px; font-size: 16px; font-weight: 500; }
+  .lang + .lang { border-top: .5px solid var(--bd); }
+  .lang span { flex: 1; } .lang svg { color: var(--pet); font-size: 20px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cp { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px 0 8px; border-radius: 22px; font-size: 14px; font-weight: 500; background: var(--card); border: .5px solid var(--bd); color: var(--ink); }
+  .cp.on { background: var(--pet); border-color: var(--pet); color: var(--onpet); }
+
+  /* ── Tab bar ── */
+  .tabbar { position: sticky; bottom: 0; z-index: 25; display: flex; height: 92px; padding: 8px 12px 34px; background: var(--tab); border-top: .5px solid var(--bd); margin-top: 32px; }
+  .tab { flex: 1; display: grid; place-items: center; align-content: center; gap: 2px; font-size: 11px; color: var(--t2); } .tab svg { width: 24px; height: 24px; } .tab.on { color: var(--pet); font-weight: 600; }
+</style>
+</head>
+<body data-mode="light">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/></symbol>
+  <symbol id="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+  <symbol id="bell" viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15zM10 21h4"/></symbol>
+  <symbol id="compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+  <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+  <symbol id="card" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 11h18"/></symbol>
+  <symbol id="restore" viewBox="0 0 24 24"><path d="M4 12a8 8 0 108-8H8M8 4L5 7l3 3"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.8-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1L3.2 9.4l6.1-.8z"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></symbol>
+  <symbol id="opts" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol>
+  <symbol id="doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></symbol>
+  <symbol id="morning" viewBox="0 0 24 24"><path d="M5 17a7 7 0 0114 0M2 17h20M12 4v3M5 8l2 2M19 8l-2 2"/></symbol>
+  <symbol id="noon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></symbol>
+  <symbol id="lib" viewBox="0 0 24 24"><path d="M5 4v16M10 4v16M15 5l4 15"/></symbol>
+</defs></svg>
+
+<div class="switch">
+  <button type="button" data-m="light" aria-pressed="true">Açık</button>
+  <button type="button" data-m="dark" aria-pressed="false">Koyu</button>
+</div>
+
+<main class="phone" id="phone" data-m="light" aria-label="Albor Profil ekranı">
+  <div class="island"></div>
+
+  <!-- 1 · Kimlik -->
+  <section class="head">
+    <div class="status"><span>9:41</span><span>5G ▮▮▮</span></div>
+    <div class="bar"><h1>Profil</h1></div>
+    <div class="id">
+      <span class="avatar" aria-hidden="true">HO</span>
+      <div class="who">
+        <h2>Halil</h2>
+        <span class="title">Meraklı Zihin <svg class="i"><use href="#chev"/></svg></span>
+      </div>
+      <span class="edit" aria-label="Adı düzenle"><svg class="i"><use href="#edit"/></svg></span>
+    </div>
+  </section>
+
+  <!-- 2 · Premium (tek birincil eylem) -->
+  <section class="hero">
+    <svg class="sun" viewBox="0 0 168 130" fill="none" aria-hidden="true" style="transform:scaleY(-1)">
+      <circle cx="96" cy="104" r="40" fill="#E9A94B" opacity=".95"/><circle cx="96" cy="104" r="62" fill="#E9A94B" opacity=".14"/><circle cx="96" cy="104" r="84" fill="#E9A94B" opacity=".08"/>
+      <g stroke="#F3C877" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M96 40V22"/><path d="M60 52l-10-12"/><path d="M132 52l10-12"/><path d="M40 78l-16-6"/><path d="M152 78l16-6"/></g>
+    </svg>
+    <p class="eyebrow">Albor Premium</p>
+    <h3>Daha çok ışık, reklamsız</h3>
+    <p class="copy">Tüm hikâyeler, sınırsız dinleme, serini koruyan dondurma hakkı.</p>
+    <ul class="perks">
+      <li><svg class="i"><use href="#check"/></svg>Günlük kota yok</li>
+      <li><svg class="i"><use href="#check"/></svg>Reklamsız okuma</li>
+      <li><svg class="i"><use href="#check"/></svg>Seri dondurma</li>
+    </ul>
+    <div class="cta">Premium'a geç</div>
+  </section>
+
+  <!-- 3 · Okuma ritmi -->
+  <section class="sec">
+    <p class="lbl">Okuma ritmi</p>
+    <div class="card">
+      <div class="li"><span class="ic"><svg class="i"><use href="#bell"/></svg></span><div class="tx"><b>Hatırlatmalar</b></div><span class="sw on" role="switch" aria-checked="true"></span></div>
+      <div class="sub" style="border-top:.5px solid var(--bd);padding-top:14px">
+        <div class="chips">
+          <span class="chip on"><svg class="i"><use href="#morning"/></svg>Sabah</span>
+          <span class="chip"><svg class="i"><use href="#noon"/></svg>Öğle</span>
+          <span class="chip on"><svg class="i"><use href="#moon"/></svg>Akşam</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · İçerik -->
+  <section class="sec">
+    <p class="lbl">İçerik</p>
+    <div class="card">
+      <div class="li"><span class="ic"><svg class="i"><use href="#compass"/></svg></span><div class="tx"><b>İlgi alanları</b></div><span class="val">5 seçili</span><svg class="i chev"><use href="#chev"/></svg></div>
+      <div class="intp" id="intp"></div>
+      <div class="li"><span class="ic"><svg class="i"><use href="#globe"/></svg></span><div class="tx"><b>Dil</b></div><span class="val">Türkçe</span><svg class="i chev"><use href="#chev"/></svg></div>
+    </div>
+  </section>
+
+  <!-- 5 · Görünüm -->
+  <section class="sec">
+    <p class="lbl">Görünüm</p>
+    <div class="card">
+      <div class="seg" role="tablist"><span id="sg-light" class="on">Açık</span><span id="sg-dark">Koyu</span><span>Sistem</span></div>
+    </div>
+  </section>
+
+  <!-- 6 · Abonelik ve destek -->
+  <section class="sec">
+    <p class="lbl">Abonelik ve destek</p>
+    <div class="card">
+      <div class="li"><span class="ic"><svg class="i"><use href="#card"/></svg></span><div class="tx"><b>Premium’a geç</b><small>Premium üyelerde “Aboneliği yönet” olur</small></div><svg class="i chev"><use href="#chev"/></svg></div>
+      <div class="li"><span class="ic"><svg class="i"><use href="#restore"/></svg></span><div class="tx"><b>Satın alımları geri yükle</b></div><svg class="i chev"><use href="#chev"/></svg></div>
+      <div class="li"><span class="ic"><svg class="i"><use href="#mail"/></svg></span><div class="tx"><b>Geri bildirim gönder</b></div><svg class="i chev"><use href="#chev"/></svg></div>
+      <div class="li"><span class="ic"><svg class="i"><use href="#star"/></svg></span><div class="tx"><b>Uygulamayı puanla</b></div><svg class="i chev"><use href="#chev"/></svg></div>
+      <div class="li"><span class="ic"><svg class="i"><use href="#shield"/></svg></span><div class="tx"><b>Gizlilik politikası</b></div><svg class="i chev"><use href="#chev"/></svg></div>
+      <div class="li"><span class="ic"><svg class="i"><use href="#opts"/></svg></span><div class="tx"><b>Reklam gizliliği seçenekleri</b><small>Yalnızca gerekli bölgelerde görünür</small></div><svg class="i chev"><use href="#chev"/></svg></div>
+      <div class="li"><span class="ic"><svg class="i"><use href="#doc"/></svg></span><div class="tx"><b>Kullanım koşulları</b></div><svg class="i chev"><use href="#chev"/></svg></div>
+    </div>
+  </section>
+
+  <!-- 7 · Alt kısım -->
+  <footer class="foot">
+    <span class="dng">Verilerimi sıfırla</span>
+    <span class="dng">Hesabımı sil</span>
+    <span class="ver">Albor 1.0.0</span>
+  </footer>
+
+  <nav class="tabbar">
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Keşfet</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><use href="#lib"/></svg>Kütüphane</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14"/></svg>Yolum</span>
+    <span class="tab on"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>Profil</span>
+  </nav>
+</main>
+
+<!-- Alt paneller: satırlara dokununca açılanlar -->
+<section class="panels">
+  <h2>Alt paneller</h2>
+  <div class="pg" id="pg">
+    <div class="sheetwrap"><p>Adı düzenle</p>
+      <div class="phone sheet-ph" data-m="light"><div class="sheet">
+        <div class="gr"></div><h3>Adın</h3><p class="s">Paylaştığın kartlarda görünür.</p>
+        <div class="field">Halil<i></i></div>
+        <div class="acts"><span class="btn">Vazgeç</span><span class="btn p">Kaydet</span></div>
+      </div></div></div>
+    <div class="sheetwrap"><p>İlgi alanları</p>
+      <div class="phone sheet-ph" data-m="light"><div class="sheet">
+        <div class="gr"></div><h3>İlgi alanları</h3><p class="s">Keşfet’te önce bunları gösteririz. Hiçbirini seçmezsen hepsi görünür.</p>
+        <div class="pills" id="cp"></div>
+        <div class="acts"><span class="btn p">Tamam</span></div>
+      </div></div></div>
+    <div class="sheetwrap"><p>Dil</p>
+      <div class="phone sheet-ph" data-m="light"><div class="sheet">
+        <div class="gr"></div><h3 style="margin-bottom:8px">Dil</h3>
+        <div class="lang"><span>English</span></div>
+        <div class="lang"><span>Türkçe</span><svg class="i"><use href="#check"/></svg></div>
+        <div class="lang"><span>Español</span></div>
+        <div class="lang"><span>Deutsch</span></div>
+      </div></div></div>
+  </div>
+</section>
+
+<script>
+  const phone = document.getElementById('phone');
+  const EN = { Finans: 'Finance', Gelişim: 'Growth', Psikoloji: 'Psychology', Felsefe: 'Philosophy', Bilim: 'Science', İletişim: 'Communication', Tarih: 'History', Liderlik: 'Leadership', Sağlık: 'Health', İş: 'Business', Üretkenlik: 'Productivity' };
+  const CK = { Finans: 'fin', Psikoloji: 'psi', Felsefe: 'fel', Tarih: 'his', Liderlik: 'lea', Bilim: 'sci', Sağlık: 'hea', Gelişim: 'fin', İletişim: 'pet', İş: 'pet', Üretkenlik: 'pet' };
+  const dark = () => phone.dataset.m === 'dark';
+  const src = (c) => `../assets/categories/pill_icons/${EN[c]}${dark() ? '-dark' : ''}.png`;
+  const badge = (c) => `<span class="badge" style="--c:var(--${CK[c]})"><img data-c="${c}" src="${src(c)}" alt=""></span>`;
+  const refresh = () => document.querySelectorAll('img[data-c]').forEach((im) => { im.src = src(im.dataset.c); });
+
+  const picked = ['Finans', 'Felsefe', 'Psikoloji', 'Liderlik', 'Tarih'];
+  document.getElementById('intp').innerHTML = picked.map(badge).join('');
+  document.getElementById('cp').innerHTML = Object.keys(EN).map((c) => `<span class="cp${picked.includes(c) ? ' on' : ''}">${badge(c)}${c}</span>`).join('');
+
+  document.querySelectorAll('.switch button').forEach((b) => b.addEventListener('click', () => {
+    const m = b.dataset.m;
+    document.body.dataset.mode = m;
+    document.querySelectorAll('.phone').forEach((p) => { p.dataset.m = m; });
+    document.querySelectorAll('.switch button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    document.getElementById('sg-light').classList.toggle('on', m === 'light');
+    document.getElementById('sg-dark').classList.toggle('on', m === 'dark');
+    refresh();
+  }));
+</script>
+</body>
+</html>

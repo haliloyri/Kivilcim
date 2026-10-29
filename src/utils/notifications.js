@@ -206,7 +206,7 @@ export async function scheduleDailyNotifications(options = 'tr') {
   // Explicit hour preference (0-23), if the user set one — overrides the
   // window's default weekday/weekend hours. Validated inside getReminderHour.
   const reminderHour = normalized.reminderHour;
-  const dailyStoryTarget = Number(normalized.dailyStoryTarget) || 2;
+  const dailyStoryTarget = Number(normalized.dailyStoryTarget) || 3;
   const totalReads = Number(normalized.totalReads) || 0;
   const streak = Number(normalized.streak) || 0;
   const shareCount = Number(normalized.shareCount) || 0;
@@ -255,7 +255,7 @@ export async function scheduleDailyNotifications(options = 'tr') {
       name: 'Daily Reminders',
       importance: Notifications.AndroidImportance.HIGH,
       vibrationPattern: [0, 250, 250, 250],
-      lightColor: '#D06A1B',
+      lightColor: '#1F5F5B',
     });
   }
 
@@ -367,7 +367,7 @@ export function setupNotificationHandler() {
       name: 'Daily Reminders',
       importance: Notifications.AndroidImportance.HIGH,
       vibrationPattern: [0, 250, 250, 250],
-      lightColor: '#D06A1B',
+      lightColor: '#1F5F5B',
     }).catch(() => {});
   }
 }
@@ -530,7 +530,7 @@ export async function registerAndSavePushToken(userId = null) {
         name: 'Albor Notifications',
         importance: Notifications.AndroidImportance.HIGH,
         vibrationPattern: [0, 250, 250, 250],
-        lightColor: '#D06A1B',
+        lightColor: '#1F5F5B',
       });
     }
 

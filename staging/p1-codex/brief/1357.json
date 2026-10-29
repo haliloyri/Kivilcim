@@ -1,0 +1,67 @@
+{
+  "story_id": 1357,
+  "kind": "concept",
+  "book": {
+    "title": "This Is Marketing (Unutulmaz Markalar)",
+    "author": "Seth Godin",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The two opening questions (who is it for, what is it for), the smallest viable market and the phrase 'people like us do things like this' are core ideas of the book. The supplied Turkish text adds a love-versus-like line and a 'nobody champions it' line that I could not tie to specific passages, so the love/like line is left out and the champion point is kept only as Godin's reasoning. The book gives no single named case for this idea, so the story explains the mechanism instead of inventing a protagonist.",
+  "facts": [
+    "Godin starts his marketing advice with two questions: who is it for, and what is it for.",
+    "The usual first answer from founders and marketers is 'everyone'.",
+    "Godin's reasoning: work that has to suit everyone has no sharp edges and nobody who needs it enough to champion it.",
+    "His alternative is the smallest viable market: the smallest group of people the work can serve well while still sustaining itself.",
+    "He describes that group by what its members want and believe, not only by demographics.",
+    "He repeats the idea that people like us do things like this: choices signal who a person is and who they belong with.",
+    "Work that fits a group's values spreads inside that group because its members have a reason to pass it on.",
+    "Choosing a group means other people are left out; the work is simply not for them."
+  ],
+  "tension": "Choosing fewer people feels like giving up reach, yet Godin argues the broad answer is the one that leaves the work with no champion.",
+  "opening_idea": "A founder asked who the product is for answers 'everyone', and Godin builds his advice against that single word.",
+  "lessons": [
+    {
+      "idea": "A target group has to be describable by wants and beliefs, not only age and income.",
+      "anchor": "Godin defines the group by what its members want and believe."
+    },
+    {
+      "idea": "Smallest and viable are two separate tests that pull in opposite directions.",
+      "anchor": "The group must sustain the work yet stay small enough to serve well."
+    },
+    {
+      "idea": "Leaving people out is a sign the choice was real.",
+      "anchor": "Those outside the group are not failures; the work is not for them."
+    }
+  ],
+  "reflect": [
+    "A project you describe as being for everyone.",
+    "Something you recommend to friends and what choosing it says about the people who do.",
+    "A time you said no to a customer or colleague because the work was not right for them."
+  ],
+  "reflect_final": "What would change in your next piece of work if it had to be for one specific group?",
+  "use_cases": [
+    {
+      "situation": "A team describes its audience as everyone.",
+      "move": "Bring up Godin's point that work for everyone has no champion, then ask which small group would miss it most and design for them first.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague pitches a side project with no clear audience.",
+      "move": "Ask them to name the kind of people it is for, what those people want and what they already believe.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are deciding what to keep in your own small business or project.",
+      "move": "Write down who the work is for and what they want, and drop what helps nobody on that list.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Before describing your work, name the small group who would miss it most.",
+  "conversation_variants": {
+    "punchline_idea": "A product made for everyone has nobody who needs it enough to recommend it.",
+    "thirty_sec_idea": "Godin's first marketing question is who it is for. Everyone is the wrong answer. He asks for the smallest viable market: the smallest group you can serve well and still sustain the work.",
+    "question_idea": "Ask what the other person recommends to friends all the time and what choosing it says about people like them.",
+    "key_contrast_idea": "From everyone to someone."
+  }
+}

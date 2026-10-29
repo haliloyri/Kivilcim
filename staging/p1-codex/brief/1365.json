@@ -1,0 +1,61 @@
+{
+  "story_id": 1365,
+  "kind": "concept",
+  "book": {
+    "title": "Option B (Zihinsel Dayanıklılık)",
+    "author": "Sheryl Sandberg and Adam Grant",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "Post-traumatic growth, with five areas (personal strength, new possibilities, relating to others, appreciation of life, spiritual change), is the research of Tedeschi and Calhoun, discussed in the book. The supplied claim that 'the vast majority' recover and some surpass their former selves is left out because I cannot attribute a figure. Sandberg's attitude, that she would give up the growth to have Dave back, is paraphrased, not quoted. The 'consolation prize' line is not reproduced.",
+  "facts": [
+    "Researchers use the term post-traumatic growth for positive change that some people report after adversity.",
+    "Five areas appear in the research: personal strength, new possibilities, relationships, appreciation of life, and spiritual change.",
+    "Growth does not cancel the loss; pain and growth can exist side by side.",
+    "Sandberg writes that she would give up anything to have her husband back, yet recognizes that she has learned things she would not have otherwise.",
+    "Growth is not automatic; denying the pain tends to get in the way.",
+    "Facing the pain and working with it is part of what opens the possibility of growth.",
+    "The point of growth is not to make a loss worthwhile."
+  ],
+  "tension": "People report growth after loss while still wanting the loss undone, and both are true.",
+  "opening_idea": "Open on the sentence that holds both: I want it back, and I changed.",
+  "lessons": [
+    {
+      "idea": "Growth and grief can exist in the same person.",
+      "anchor": "Sandberg wants Dave back and notes what she has learned."
+    },
+    {
+      "idea": "Denial blocks growth.",
+      "anchor": "Facing the pain is the route in."
+    }
+  ],
+  "reflect": [
+    "A hard period that changed how you treat people.",
+    "A time someone rushed you to find the positive."
+  ],
+  "reflect_final": "What has a hard period shown you about yourself that you would not give back?",
+  "use_cases": [
+    {
+      "situation": "A friend is going through a loss.",
+      "move": "Skip silver linings. Say the loss is real and ask what they need today.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are looking back on a difficult year.",
+      "move": "Write down one thing you learned and keep it separate from your feelings about the year.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague had a serious setback.",
+      "move": "Offer concrete help, such as covering a task for a week.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Let loss be loss, and let what you learned count too; neither cancels the other.",
+  "conversation_variants": {
+    "punchline_idea": "Sandberg would give up anything to have her husband back and still says she learned things she could not have learned otherwise.",
+    "thirty_sec_idea": "Researchers call it post-traumatic growth: positive change after adversity in areas like personal strength and relationships. Sandberg shows what it looks like and what it doesn't. She would give it all up for Dave, and she can still see what she learned.",
+    "question_idea": "Ask what a hard time taught them that they might not have learned otherwise.",
+    "key_contrast_idea": "Loss and growth together."
+  }
+}

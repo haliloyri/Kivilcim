@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Albor — Ana ekran tepesi, marka yönü</title>
+<style>
+  /* Referans: iPhone 17 Pro, 402 x 874 pt. Marka: petrol + şafak altını + kâğıt. */
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #E9E4DA; font-family: -apple-system, "SF Pro Text", Inter, system-ui, sans-serif; padding-bottom: 40px; }
+  body[data-mode="dark"] { background: #0A0A09; }
+  .switch { position: sticky; top: 0; z-index: 50; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 10px; background: rgba(233,228,218,.94); backdrop-filter: blur(8px); }
+  body[data-mode="dark"] .switch { background: rgba(10,10,9,.94); }
+  .switch .grp { display: flex; gap: 6px; padding-right: 10px; margin-right: 4px; border-right: 1px solid #8884; }
+  .switch .grp:last-child { border: 0; margin: 0; padding: 0; }
+  .switch button { min-height: 40px; padding: 0 14px; border-radius: 20px; border: 1px solid #8884; background: #fff; color: #24211E; font: 600 13px/1 inherit; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: #1F5F5B; color: #fff; border-color: #1F5F5B; }
+  svg.i { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.15em; }
+
+  .phone { --serif: "Playfair Display", Georgia, serif; width: 402px; margin: 16px auto 0; background: var(--bg); color: var(--ink); border-radius: 48px; overflow: clip; position: relative; box-shadow: 0 0 0 10px #111, 0 30px 80px rgba(0,0,0,.35); }
+  .phone[data-m="light"] { --bg:#F7F3EC; --card:#FFFDF9; --bd:#E6DED3; --ink:#24211E; --t2:#6B625A; --pet:#1F5F5B; --onpet:#fff; --pc:#E2EDEA; --gold:#E9A94B; --goldtx:#8A5A0E; --hero:#1B4B48; --herobd:#1B4B48; --glow:rgba(233,169,75,.34); --tab:#FBF8F2;
+    --fin:#2F7D5B; --psi:#6B5BB5; --fel:#3F6FA8; --tar:#A86A12; --lid:#C0503A; }
+  .phone[data-m="dark"]  { --bg:#141413; --card:#201F1D; --bd:#2F2E2B; --ink:#F2EEE8; --t2:#A8A29A; --pet:#7CC0B6; --onpet:#1A1A1A; --pc:#1F3634; --gold:#F0C170; --goldtx:#E5C27A; --hero:#1F3A37; --herobd:#2E5A55; --glow:rgba(240,193,112,.22); --tab:#141413;
+    --fin:#6FCB9F; --psi:#B3A6F0; --fel:#8DB6EB; --tar:#E8B15A; --lid:#F0907A; }
+  [data-cat="Finans"] { --c: var(--fin); } [data-cat="Psikoloji"] { --c: var(--psi); } [data-cat="Felsefe"] { --c: var(--fel); }
+  [data-cat="Tarih"] { --c: var(--tar); } [data-cat="Liderlik"] { --c: var(--lid); }
+  p { margin: 0; }
+  .island { position: absolute; top: 11px; left: 50%; width: 126px; height: 37px; margin-left: -63px; background: #000; border-radius: 20px; z-index: 40; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .sub { font-size: 13px; color: var(--t2); margin-top: 2px; }
+  .chip { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; color: var(--c); background: color-mix(in srgb, var(--c) 14%, var(--card)); }
+  .meta { font-size: 13px; color: var(--t2); display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+  .lock { display: inline-flex; align-items: center; gap: 3px; font-size: 12px; font-weight: 600; color: var(--t2); }
+  .badge { flex: none; border-radius: 12px; overflow: hidden; display: grid; place-items: center; background: color-mix(in srgb, var(--c, var(--pet)) 14%, var(--card)); }
+  .badge img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 3px; }
+  .badge.s40 { width: 40px; height: 40px; }
+
+  /* ── Tepe: kâğıt zemin + şafak ışığı ── */
+  .head { position: relative; padding: 0 20px 70px; overflow: hidden; background: radial-gradient(120% 90% at 85% -10%, var(--glow) 0%, transparent 60%); }
+  .status { height: 62px; padding: 20px 14px 0; display: flex; justify-content: space-between; font-size: 16px; font-weight: 600; }
+  .bar { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+  .greet { flex: 1; min-width: 0; }
+  .greet small { display: block; font-size: 12px; letter-spacing: .02em; color: var(--t2); }
+  .greet b { display: block; margin-top: 2px; font-family: var(--serif); font-size: 21px; line-height: 1.15; font-weight: 600; white-space: nowrap; }
+  .tbtn { width: 44px; height: 44px; border-radius: 22px; background: var(--card); border: .5px solid var(--bd); color: var(--ink); display: grid; place-items: center; font-size: 19px; font-weight: 600; }
+  .streak { min-width: 44px; height: 44px; padding: 0 12px; border-radius: 22px; background: var(--card); border: .5px solid var(--bd); color: var(--goldtx); display: inline-flex; align-items: center; justify-content: center; gap: 4px; font-size: 15px; font-weight: 600; }
+  .streak svg { color: var(--gold); }
+  .avatar { background: var(--pc); border-color: transparent; color: var(--pet); }
+
+  /* ── Hero: petrol kart + doğan güneş ── */
+  .hero { position: relative; z-index: 2; margin: -52px 20px 0; padding: 20px; border-radius: 24px; background: var(--hero); border: .5px solid var(--herobd); color: #F5F1E8; overflow: hidden; box-shadow: 0 14px 30px rgba(20,60,56,.22); }
+  .sun { position: absolute; right: -34px; top: -30px; width: 168px; height: 130px; pointer-events: none; transform: rotate(0deg); }
+  .hero > *:not(.sun) { position: relative; }
+  .eyebrow { font-size: 12px; letter-spacing: .08em; font-weight: 600; color: var(--gold); }
+  .hero-top { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+  .hero .chip { background: rgba(255,255,255,.14); color: #F5F1E8; }
+  .hero .badge { background: rgba(255,255,255,.92); }
+  .hero h2 { margin: 12px 0 4px; max-width: 78%; font-family: var(--serif); font-size: 25px; line-height: 1.18; font-weight: 600; }
+  .hero .meta { color: #BFD6D1; }
+  .prog { margin-top: 14px; max-width: 82%; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #D5E4E0; }
+  .prog .track { flex: 1; height: 6px; border-radius: 3px; background: rgba(255,255,255,.2); overflow: hidden; }
+  .prog .track i { display: block; height: 100%; background: var(--gold); border-radius: 3px; }
+  .why { margin-top: 8px; max-width: 80%; font-size: 13px; color: #D5E4E0; }
+  .cta { display: flex; gap: 10px; margin-top: 18px; }
+  .btn { flex: 1; height: 52px; border-radius: 14px; background: var(--gold); color: #2A1E08; font: 600 17px/1 inherit; display: grid; place-items: center; }
+  .ibtn { height: 52px; padding: 0 16px; border-radius: 14px; background: rgba(255,255,255,.14); color: #F5F1E8; display: inline-flex; align-items: center; gap: 6px; font: 600 14px/1 inherit; }
+  .ibtn svg { font-size: 20px; }
+
+  /* ── Devamı (tepenin hemen altı) ── */
+  .talk { margin: 12px 20px 0; padding: 14px 16px; border-radius: 18px; background: var(--pc); }
+  .talk h4 { font-size: 15px; }
+  .talk .chips { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; scrollbar-width: none; }
+  .talk .chips span { flex: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 22px; background: var(--card); color: var(--pet); font-size: 14px; font-weight: 600; }
+  .daily { margin: 12px 20px 0; padding: 14px 16px; border-radius: 18px; background: var(--card); border: .5px solid var(--bd); }
+  .daily b { font-size: 15px; font-weight: 600; }
+  .daily .more { font-size: 14px; font-weight: 600; color: var(--pet); }
+  .dots { display: flex; gap: 6px; margin-top: 10px; }
+  .dots i { flex: 1; height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--pet) 22%, var(--card)); }
+  .dots i.on { background: var(--pet); }
+  .foot { margin-top: 8px; font-size: 13px; color: var(--t2); display: flex; justify-content: space-between; gap: 8px; }
+  .section { margin-top: 26px; }
+  .section h3 { font-size: 18px; font-weight: 600; padding: 0 20px; }
+  .section .sub { padding: 0 20px; }
+  .rail { display: flex; gap: 12px; padding: 10px 20px 4px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 20px; scrollbar-width: none; }
+  .pk { flex: 0 0 210px; scroll-snap-align: start; padding: 14px; border-radius: 18px; background: var(--card); border: .5px solid var(--bd); }
+  .pk .top-row { display: flex; align-items: center; justify-content: space-between; }
+  .pk h4 { font-size: 16px; line-height: 1.3; margin: 12px 0 6px; }
+  .tabbar { position: sticky; bottom: 0; z-index: 25; display: flex; height: 92px; padding: 8px 12px 34px; background: var(--tab); border-top: .5px solid var(--bd); margin-top: 24px; }
+  .tab { flex: 1; display: grid; place-items: center; align-content: center; gap: 2px; font-size: 11px; color: var(--t2); }
+  .tab svg { width: 24px; height: 24px; } .tab.on { color: var(--pet); font-weight: 600; }
+
+  /* ── Alt bölümler: filtre + akış + premium ── */
+  .cats { position: sticky; top: 60px; z-index: 20; display: flex; gap: 8px; margin-top: 24px; padding: 10px 20px; overflow-x: auto; scrollbar-width: none; background: var(--bg); border-bottom: .5px solid var(--bd); }
+  .cats button { flex: none; min-height: 44px; padding: 0 14px 0 8px; border-radius: 22px; border: .5px solid var(--bd); background: var(--card); color: var(--ink); display: inline-flex; align-items: center; gap: 8px; font: 500 14px/1 inherit; cursor: pointer; }
+  .cats button.all { padding-left: 16px; }
+  .cats button.on { background: var(--pet); color: var(--onpet); border-color: var(--pet); font-weight: 600; }
+  .badge.s24 { width: 24px; height: 24px; border-radius: 8px; } .badge.s24 img { padding: 1px; }
+  .badge.s48 { width: 48px; height: 48px; }
+  .feed-head { display: flex; align-items: baseline; justify-content: space-between; padding: 16px 20px 0; }
+  .feed-head h3 { padding: 0; font-size: 18px; font-weight: 600; }
+  .item { display: flex; gap: 12px; align-items: center; padding: 12px 20px; border-bottom: .5px solid var(--bd); }
+  .item h4 { font-size: 16px; line-height: 1.3; margin-bottom: 3px; }
+  .item .end { margin-left: auto; flex: none; }
+  .loadmore { display: grid; place-items: center; margin: 16px 20px 0; height: 48px; border-radius: 14px; border: .5px solid var(--bd); background: var(--card); color: var(--pet); font: 600 15px/1 inherit; cursor: pointer; width: calc(100% - 40px); }
+  .premium { position: relative; margin: 14px 20px; padding: 20px; border-radius: 22px; background: var(--hero); border: .5px solid var(--herobd); color: #F5F1E8; overflow: hidden; }
+  .premium .sun { right: -40px; top: -44px; opacity: .9; }
+  .premium h3 { position: relative; padding: 0; font-family: var(--serif); font-size: 21px; }
+  .premium p { position: relative; max-width: 80%; font-size: 14px; margin: 6px 0 14px; color: #D5E4E0; }
+  .premium .go { position: relative; height: 46px; border-radius: 14px; background: var(--gold); color: #2A1E08; display: grid; place-items: center; font-weight: 600; }
+</style>
+</head>
+<body data-mode="light">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 4 5 5.5 5 10a5 5 0 01-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-phones" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0116 0v2M4 14h3v6H4zM17 14h3v6h-3z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+</defs></svg>
+
+<div class="switch">
+  <div class="grp" role="group" aria-label="Hero durumu">
+    <button type="button" data-s="resume" aria-pressed="true">Devam et</button>
+    <button type="button" data-s="new" aria-pressed="false">Yeni gün</button>
+    <button type="button" data-s="done" aria-pressed="false">Bugün bitti</button>
+  </div>
+  <div class="grp" role="group" aria-label="Tema">
+    <button type="button" data-m="light" aria-pressed="true">Açık</button>
+    <button type="button" data-m="dark" aria-pressed="false">Koyu</button>
+  </div>
+</div>
+
+<main class="phone" id="phone" data-m="light" aria-label="Albor ana ekran">
+  <div class="island"></div>
+  <section class="head">
+    <div class="status"><span>9:41</span><span>5G ▮▮▮</span></div>
+    <div class="bar">
+      <div class="greet"><small>Pazartesi, 26 Ekim</small><b>Günaydın, Halil</b></div>
+      <span class="tbtn" aria-label="Ara"><svg class="i"><use href="#i-search"/></svg></span>
+      <span class="streak" aria-label="12 günlük seri"><svg class="i"><use href="#i-flame"/></svg>12</span>
+      <span class="tbtn avatar" aria-label="Profil">H</span>
+    </div>
+  </section>
+
+  <div id="hero"></div>
+  <div id="talk"></div>
+
+  <div class="daily">
+    <div class="row"><b>Bugün 2/3 hikâye</b><span class="more">Albor Yolu</span></div>
+    <div class="dots"><i class="on"></i><i class="on"></i><i></i></div>
+    <div class="foot"><span>12 günlük seri</span><span>Gözlemci · sonraki rozete 3 hikâye</span></div>
+  </div>
+
+  <section class="section">
+    <h3>Senin için seçtiklerimiz</h3><p class="sub">10 dakikalık planına göre</p>
+    <div class="rail" id="picks"></div>
+  </section>
+
+  <div class="cats" id="cats" role="tablist" aria-label="Kategori filtresi"></div>
+  <div class="feed-head"><h3>Tüm hikâyeler</h3><span class="sub" id="count"></span></div>
+  <div id="feed"></div>
+  <button class="loadmore" id="more" type="button">Daha fazla yükle</button>
+
+  <nav class="tabbar">
+    <span class="tab on"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Ana sayfa</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Keşfet</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z"/></svg>Favoriler</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>Profil</span>
+  </nav>
+</main>
+
+<script>
+  const I = (id) => `<svg class="i"><use href="#i-${id}"/></svg>`;
+  const EN = { Finans: 'Finance', Psikoloji: 'Psychology', Felsefe: 'Philosophy', Tarih: 'History', Liderlik: 'Leadership' };
+  const phone = document.getElementById('phone');
+  const src = (c) => `../assets/categories/pill_icons/${EN[c]}${phone.dataset.m === 'dark' ? '-dark' : ''}.png`;
+  const BADGE = (c, size) => `<span class="badge s${size}" data-cat="${c}"><img data-c="${c}" src="${src(c)}" alt=""></span>`;
+  const refreshImgs = () => document.querySelectorAll('img[data-c]').forEach((im) => { im.src = src(im.dataset.c); });
+  const LOCK = `<span class="lock">${I('lock')}Premium</span>`;
+  let state = 'resume';
+
+  /* Marka motifi: doğan güneş + ışınlar */
+  const SUN = `<svg class="sun" viewBox="0 0 168 130" fill="none" aria-hidden="true" style="transform:scaleY(-1)">
+    <circle cx="96" cy="104" r="40" fill="#E9A94B" opacity=".95"/>
+    <circle cx="96" cy="104" r="62" fill="#E9A94B" opacity=".14"/>
+    <circle cx="96" cy="104" r="84" fill="#E9A94B" opacity=".08"/>
+    <g stroke="#F3C877" stroke-width="3" stroke-linecap="round" opacity=".85">
+      <path d="M96 40V22"/><path d="M60 52l-10-12"/><path d="M132 52l10-12"/><path d="M40 78l-16-6"/><path d="M152 78l16-6"/>
+    </g></svg>`;
+
+  function renderHero() {
+    const c = 'Finans';
+    const ph = (t) => `<div class="ibtn">${I('phones')}${t}</div>`;
+    const top = `<div class="hero-top">${BADGE(c, 40)}<span class="chip">${c}</span></div>`;
+    const body = {
+      resume: `<p class="eyebrow">KALDIĞIN YERDEN</p>${top}<h2>Bileşik faizin sessiz gücü</h2>
+        <p class="meta">Morgan Housel</p>
+        <div class="prog"><span class="track"><i style="width:60%"></i></span><span>2 dk kaldı</span></div>
+        <div class="cta"><div class="btn">Devam et</div>${ph('Dinle')}</div>`,
+      new: `<p class="eyebrow">BUGÜNÜN ILK IŞIĞI</p>${top}<h2>Bileşik faizin sessiz gücü</h2>
+        <p class="meta">Morgan Housel · ${I('clock')} 4 dk</p><p class="why">Planına uygun, 10 dakikalık hedefinin ilk adımı.</p>
+        <div class="cta"><div class="btn">Okumaya başla</div>${ph('Dinle')}</div>`,
+      done: `<p class="eyebrow">BUGÜNÜN HEDEFİ TAMAM</p>
+        <h2 style="margin-top:12px;max-width:80%">3 hikâye, 12 günlük seri</h2>
+        <p class="why">Yarın yeni bir ışık seni bekliyor. İstersen bir tane daha oku.</p>
+        <div class="cta"><div class="btn">Bir tane daha oku</div></div>`,
+    }[state];
+    document.getElementById('hero').innerHTML = `<section class="hero">${SUN}${body}</section>`;
+    document.getElementById('talk').innerHTML = state === 'done'
+      ? `<div class="talk"><h4>Bugün ne diyeceksin?</h4><p class="sub" style="padding:0">Okuduğun fikri konuşmaya taşı.</p><div class="chips"><span>Toplantı</span><span>Birebir</span><span>Aile</span><span>Sosyal</span><span>Kendime</span></div></div>` : '';
+    refreshImgs();
+  }
+
+  const picks = [['Felsefe','Stoacı bir sabah rutini','Marcus Aurelius',3,0],['Liderlik','Dinleme sanatı','Kim Scott',5,0],
+    ['Psikoloji','Alışkanlıkların döngüsü','James Clear',4,0],['Tarih',"İpek Yolu'nun gizli haritası",'Peter Frankopan',4,1]];
+  document.getElementById('picks').innerHTML = picks.map(([c,t,a,m,l]) =>
+    `<article class="pk" data-cat="${c}"><div class="top-row">${BADGE(c,40)}${l ? LOCK : `<span class="chip">${c}</span>`}</div><h4>${t}</h4><p class="meta">${a} · ${I('clock')} ${m} dk</p></article>`).join('');
+
+  document.querySelectorAll('.switch button').forEach((b) => b.addEventListener('click', () => {
+    if (b.dataset.m) { phone.dataset.m = b.dataset.m; document.body.dataset.mode = b.dataset.m; }
+    if (b.dataset.s) state = b.dataset.s;
+    b.parentElement.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    renderHero(); refreshImgs();
+  }));
+  renderHero();
+  const stories = [
+    ['Psikoloji','Odaklanmanın görünmez maliyeti','Cal Newport',5,0],['Liderlik','Zor sohbetlerde ilk cümle','Stone & Patton',5,0],
+    ['Felsefe','Acı çekmenin öğrettiği','Viktor Frankl',4,0],['Tarih','İmparatorlukların çöküş kalıbı','Ray Dalio',5,1],
+    ['Finans','Bileşik düşünmek','Charlie Munger',3,1],['Psikoloji','Utanç ve cesaret','Brené Brown',4,0],
+    ['Finans','Riskin gerçek yüzü','Nassim Taleb',5,1],['Felsefe','Küçük şeylerin ağırlığı','Epiktetos',3,0],
+    ['Liderlik','Takımı güvenle kurmak','Patrick Lencioni',4,1],['Tarih','Roma nasıl düştü','Mary Beard',5,0],
+    ['Psikoloji','Düşünmenin iki hızı','Daniel Kahneman',6,1],['Finans','Para ve sabır','Benjamin Graham',4,0]];
+  const cats = ['Tümü','Finans','Psikoloji','Felsefe','Tarih','Liderlik'];
+  let active = 'Tümü', shown = 6;
+  const catBar = document.getElementById('cats');
+  const drawCats = () => { catBar.innerHTML = cats.map((c) =>
+    `<button type="button" class="${c === 'Tümü' ? 'all ' : ''}${c === active ? 'on' : ''}" data-n="${c}">${c === 'Tümü' ? '' : BADGE(c, 24)}${c}</button>`).join(''); refreshImgs(); };
+  function renderFeed() {
+    const list = stories.filter((x) => active === 'Tümü' || x[0] === active);
+    document.getElementById('count').textContent = `${list.length} hikâye`;
+    document.getElementById('feed').innerHTML = list.slice(0, shown).map(([c,t,a,m,l], i) => {
+      const prem = active === 'Tümü' && i === 3 ? `<div class="premium">${SUN}<h3>Albor Premium</h3><p>Sınırsız hikâye, sesli anlatım, reklamsız deneyim ve tüm temalar.</p><div class="go">Premium'u keşfet</div></div>` : '';
+      return `<article class="item" data-cat="${c}">${BADGE(c,48)}<div><h4>${t}</h4><p class="meta">${a} · ${I('clock')} ${m} dk</p></div>${l ? `<span class="end">${LOCK}</span>` : ''}</article>${prem}`;
+    }).join('');
+    document.getElementById('more').style.display = shown < list.length ? 'grid' : 'none';
+    refreshImgs();
+  }
+  catBar.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; active = b.dataset.n; shown = 6; drawCats(); renderFeed(); });
+  document.getElementById('more').addEventListener('click', () => { shown += 6; renderFeed(); });
+  drawCats(); renderFeed();
+</script>
+</body>
+</html>

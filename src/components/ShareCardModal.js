@@ -509,13 +509,13 @@ const makeStyles = ({ colors, isDark, layout, typography, insets }) => StyleShee
   },
   formatBtnActive: {
     borderColor: colors.primary,
-    backgroundColor: isDark ? 'rgba(181,83,16,0.15)' : 'rgba(181,83,16,0.08)',
+    backgroundColor: colors.primaryContainer,
   },
   formatBtnText: { fontFamily: 'Inter_500Medium', fontSize: 12, color: colors.textSecondary },
   formatBtnTextActive: { color: colors.primaryText },
   reelBadge: {
     marginTop: 3, paddingHorizontal: 6, paddingVertical: 1, borderRadius: 6,
-    backgroundColor: isDark ? 'rgba(181,83,16,0.22)' : 'rgba(181,83,16,0.10)',
+    backgroundColor: colors.primaryContainer,
   },
   reelBadgeText: { fontFamily: 'Inter_500Medium', fontSize: 9, color: colors.primaryText, letterSpacing: 0.3 },
   btnPrimary: {
@@ -526,7 +526,7 @@ const makeStyles = ({ colors, isDark, layout, typography, insets }) => StyleShee
     borderRadius: layout.radius.button, height: layout.heights.buttonPrimary,
     justifyContent: 'center', alignItems: 'center', overflow: 'hidden',
   },
-  btnPrimaryText: { fontFamily: 'Inter_500Medium', color: '#F7F3EB', fontSize: typography.sizes.ui + 1 },
+  btnPrimaryText: { fontFamily: 'Inter_500Medium', color: colors.onPrimary, fontSize: typography.sizes.ui + 1 },
   carouselBtn: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 10,
     height: layout.heights.buttonPrimary, borderRadius: layout.radius.button,

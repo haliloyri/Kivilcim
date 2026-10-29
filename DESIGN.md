@@ -1,117 +1,185 @@
-# Albor Tasarim Tanimlari (Acik + Koyu Mod)
+# Albor Tasarım Sistemi (Ana Sayfa Referansı)
 
-Bu dokuman, uygulamadaki mevcut tema token'larini tek bir yerde toplar ve yeni tasarim calismasi icin referans verir.
+Bu belge, yeniden tasarlanan **ana sayfanın** UI, UX ve renk kararlarını toplar. Diğer ekranları (Kütüphane, İlerleme, Profil, Hikâye Detay, Paywall, Onboarding) aynı dile getirirken tek referans olarak kullanılır.
 
-Kaynak kod eslesmesi:
-- Renk tokenlari: `src/theme/theme.js`
-- Tema secimi ve persist mekanizmasi: `src/context/ThemeContext.js`
+Kaynak kod: `src/theme/theme.js` (renk tokenları), `src/screens/HomeScreen.js`, `src/components/CategoryPill.js`, `src/utils/categoryImages.js`.
+Eski palet belgeleri (Digital Hearth, Nocturnal Bibliophile, kategori gradyanları) artık geçerli değil: `arsiv/tasarim-eski/`.
 
-## 1. Tasarim Yonelimi
+---
 
-### Acik Mod: "Digital Hearth"
-- Hedef hissiyat: sicak, kagit benzeri, uzun okuma odakli.
-- Gorsel dil: acik zemin, yumusak kontrast, toprak/altin vurgu.
-- Kullanim amaci: gun ici rahat okunabilirlik ve premium ama sakin gorunum.
+## 1. Marka kimliği
 
-### Koyu Mod: "Nocturnal Bibliophile"
-- Hedef hissiyat: gece kutuphanesi, editoriyal, goz yormayan koyu tonlar.
-- Gorsel dil: koyu komur zemin, krem yazi, pas/turuncu vurgu.
-- Kullanim amaci: dusuk isikta rahat okuma ve odakli deneyim.
+| | |
+|---|---|
+| Ad | Albor (şafak) |
+| Duygu | Sakin, güvenilir, günün başında küçük bir ışık. Kalabalık değil, editoryal |
+| Ana renk | **Derin petrol** `#1F5F5B` |
+| Işık rengi | **Şafak altını** `#E9A94B` (koyu tema `#F0C170`) |
+| Zemin | **Kâğıt** `#F7F3EC`, mürekkep `#24211E` |
+| Yazı tipleri | Başlık: **Playfair Display**. Gövde ve arayüz: **Inter** |
+| İmza motifi | Petrol kart üzerinde altın güneş (`HeroSun`) |
 
-## 2. Renk Token Tanimlari
+**Altın kuralı:** Altın yalnızca *ışık, ritüel ve ödül* içindir: hero kartın güneşi, birincil CTA, seri (alev), rozet, hedef tamamlandı. Kategori ikonlarında, kenarlıklarda ya da genel vurguda kullanılmaz.
 
-Asagidaki degerler uygulamanin su an kullandigi resmi token'lardir.
+**Yasaklar:** mercan/turuncu vurgu, soğuk gri, mor-mavi "tech" gradyanları, kategoriye göre boyanan ana kartlar.
 
-### 2.1 Acik Mod Tokenlari
+---
 
-| Token | Deger | Amac |
+## 2. Renk tokenları
+
+Tokenlar `NEUTRALS` (kâğıt, mürekkep, yüzeyler) ve `ACCENTS` (petrol, lacivert, koyu sarı) olarak ayrılır. Varsayılan ve marka her zaman **petrol**. Bileşenlerde sabit hex yerine `useTheme().colors` kullanılır.
+
+### 2.1 Nötrler
+
+| Rol | Token | Açık | Koyu |
+|---|---|---|---|
+| Sayfa zemini | `background` | `#F7F3EC` | `#141413` |
+| Kart | `cardBackground` | `#FFFDF9` | `#201F1D` |
+| En açık yüzey | `surfaceContainerLowest` | `#FFFFFF` | `#1C1B1A` |
+| Yüksek yüzey | `surfaceContainerHigh` | `#E4DDD2` | `#2A2927` |
+| Yazı | `text` | `#24211E` | `#F2EEE8` |
+| İkincil yazı | `textSecondary` | `#6B625A` | `#A8A29A` |
+| Soluk yazı | `mutedText` | `#8C837A` | `#7E7870` |
+| Kenarlık / ayraç | `border`, `divider` | `#E6DED3` | `#2F2E2B`, `#3A3936` |
+| Hata | `danger` | `#B3261E` | `#F06A4A` |
+| Başarı | `success` | `#3A5F3C` | `#6FBF73` |
+| Tab bar | `tabBarBackground` | `#FBF8F2` | `rgba(20,20,19,0.94)` |
+
+### 2.2 Marka ve ışık
+
+| Rol | Token | Açık | Koyu |
+|---|---|---|---|
+| Hero kart zemini | `heroSurface` | `#1B4B48` | `#1F3A37` |
+| Hero kenarı | `heroBorder` | `#1B4B48` | `#2E5A55` |
+| Şafak altını | `dawn` | `#E9A94B` | `#F0C170` |
+| Altın yazı | `dawnText` | `#8A5A0E` (5,3:1) | `#F0C170` |
+| Ödül | `reward`, `rewardText` | `#C89B3C`, `#8A6418` | `#E5C27A` |
+
+### 2.3 Petrol vurgusu (varsayılan)
+
+| Rol | Açık | Koyu |
 |---|---|---|
-| `background` | `#fcf9f4` | Ana ekran zemini (kemik beyaz) |
-| `backgroundDark` | `#F2EFE8` | Kart/ikincil zemin |
-| `surfaceContainerLowest` | `#ffffff` | En yuksek aydinlikta kaldirilmis yuzey |
-| `surfaceContainerHigh` | `#EBE6DC` | Derin katman/yuzey farki |
-| `text` | `#1A1A1A` | Ana metin |
-| `textSecondary` | `#9E9E9E` | Ikincil metin, etiket, metadata |
-| `primary` | `#C5A059` | Ana aksiyon vurgu rengi |
-| `primaryContainer` | `#D4AF37` | CTA gradyan veya ikincil vurgu |
-| `onPrimary` | `#ffffff` | Primary buton uzeri yazi |
-| `danger` | `#ba1a1a` | Hata/dikkat durumlari |
-| `success` | `#2C4A2E` | Basari/olumlu durumlar |
-| `border` | `#E8E3DA` | Ince ayirici/kenar |
-| `activeNav` | `#704214` | Aktif alt navigasyon tonu |
+| `primary` (dolu yüzey, seçili pill) | `#1F5F5B` | `#7CC0B6` |
+| `onPrimary` | `#FFFFFF` | `#1A1A1A` |
+| `primaryText` | `#1F5F5B` | `#7CC0B6` |
+| `primaryContainer` | `#E2EDEA` | `#1F3634` |
 
-### 2.2 Koyu Mod Tokenlari
+Lacivert (`#1F3A5C`) ve koyu sarı (`#D4952A`) kullanıcıya sonradan sunulabilecek seçenekler. Marka (mağaza varlıkları, paylaşım kartı, bildirim) her zaman petrol.
 
-| Token | Deger | Amac |
+### 2.4 Kontrast kuralı
+Metin ≥ 4,5:1, ikon ve grafik ≥ 3:1. Hero üzerindeki beyaz yazı 9,5:1. Yeni bir renk eklerken önce kontrastı hesapla, sonra token olarak `theme.js`'e ekle.
+
+---
+
+## 3. Tipografi
+
+| Kullanım | Yazı tipi | Not |
 |---|---|---|
-| `background` | `#131311` | Ana ekran zemini (deep charcoal) |
-| `backgroundDark` | `#1E1C18` | Kart/ikincil zemin |
-| `text` | `#E8E0D0` | Ana metin (soft cream) |
-| `textSecondary` | `#A89A84` | Ikincil metin, etiket, metadata |
-| `primary` | `#B55310` | Ana aksiyon vurgu rengi |
-| `primaryContainer` | `#9F3C00` | CTA gradyan veya ikincil vurgu |
-| `onPrimary` | `#F2E9D8` | Primary buton uzeri yazi |
-| `danger` | `#E05A3A` | Hata/dikkat durumlari |
-| `success` | `#5A9E5E` | Basari/olumlu durumlar |
-| `border` | `#4A3F33` | Ghost border tabani (dusuk opaklikla) |
+| Ekran/hero/bölüm başlığı, hikâye başlığı | `PlayfairDisplay_700Bold` / `_600SemiBold` | Bölüm başlığı 22 pt (hero'da kart genişliğine göre küçülür) |
+| Gövde, butonlar, etiketler | `Inter_400Regular`, `Inter_500Medium`, `Inter_600SemiBold` | Buton 15–17 pt, etiket 12–14 pt |
+| Eyebrow ("SONRAKİ ADIM") | `Inter_600SemiBold`, büyük harf, geniş harf aralığı | Hero üzerinde `dawn` renginde |
 
-## 3. Tipografi ve Boyut Sistemi
+Başlıklarda `adjustsFontSizeToFit` yalnızca hero'da kullanılır.
 
-Su anki global tipografi tokenlari (moddan bagimsiz):
+---
 
-- `heading`: `PlayfairDisplay`
-- `headingItalic`: `PlayfairDisplay-Italic`
-- `body`: `Inter`
+## 4. Ana sayfa yapısı (yukarıdan aşağıya)
 
-Boyutlar:
-- `badge`: `10`
-- `ui`: `13`
-- `body`: `15`
-- `quote`: `18`
-- `headingSmall`: `22`
-- `headingLarge`: `30`
+1. **Üst alan:** tarih (küçük, ikincil) + selamlama (Playfair) solda. Sağda seri hapı (alev + sayı) ve Albor Yolu girişi.
+2. **Arama:** tek satır alan, "Hikâye veya kategori ara…".
+3. **Birincil kart** (ekranın tek baskın nesnesi):
+   - Yarım kalan hikâye varsa **"Kaldığın yerden"** kartı: başlık, kalan süre, kategori rozeti ve adı, yazar, `Devam et` ve `Dinle` butonları.
+   - Yoksa **"Sonraki adım"** petrol hero kartı (Albor Yolu / günün hikâyesi), altın güneş, altın CTA.
+   - Her ikisi de petrol yüzeyde. **Kategori filtresinden etkilenmez.**
+4. **Günlük şerit:** "Bugün 1/3 hikâye" + üç segmentli ilerleme + seri satırı + "Albor Yolu" bağlantısı.
+5. **"Senin için seçtiklerimiz":** yatay kaydırmalı kartlar (genişlik 216), ilk kart sola hizalı, kilitli kartlar sona yerleşir.
+6. **Kategori pill'leri:** görsel + ad yan yana, yatay kaydırma. Filtre, altındaki akışı ve seçtiklerimizi değiştirir; birincil kartı değiştirmez.
+7. **"Daha Fazla Hikâye":** dikey liste, kategori görselli satır kartı.
 
-Okuma ritmi:
-- `bodyLineHeight`: `26`
-- `badgeLetterSpacing`: `0.5`
+**UX ilkeleri**
+- Ekranda **tek** birincil eylem vardır: petrol hero kartın CTA'sı.
+- Kullanıcının kaldığı yer her zaman en üstte. Filtre onu kapatmaz.
+- Filtre, filtrelediği içeriğin hemen üstünde durur.
+- Tüm dokunma hedefleri ≥ 44 pt.
+- Kilitli içerik görsel olarak soluk, ama okunur ve nedeni (kota/Premium) açık.
+- Kota dolunca engel değil seçenek: "Reklam izle" ya da "Premium".
 
-## 4. Yerlesim ve Yuvarlatma Sistemi
+---
 
-- `button` radius: `12`
-- `card` radius: `15`
-- `buttonPrimary` yukseklik: `48`
-- `buttonSecondary` yukseklik: `40`
-- Yatay padding: `20`
-- Dikey padding: `16`
-- Kartlar arasi bosluk: `12`
-- Standart border kalinligi: `0.5`
+## 5. Bileşen kalıpları
 
-## 5. Modlar Arasi Uygulama Kurallari
+| Bileşen | Kural |
+|---|---|
+| **Hero / resume kartı** | `heroSurface` zemin, köşe `layout.radius.card`, iç boşluk 20, yatay kenar `layout.padding.horizontal`, altın güneş sağ üstte (içeriği örtmez), yazı `#F5F1E8` |
+| **Birincil buton (hero üstü)** | `dawn` dolgu, koyu kahve yazı `#2A1E08` |
+| **İkincil buton (hero üstü)** | Yarı saydam açık dolgu ya da çerçeveli, aynı yükseklik |
+| **Kart (açık yüzey)** | `cardBackground`, 1 px `border`, köşe 16–18, hafif gölge |
+| **Kategori pill (`inline`)** | Yükseklik ≥ 44, köşe 22, solda 28×28 nötr karoda ikon, sağda ad. Seçili: `primary` dolgu + `onPrimary` yazı. Karo nötr (açık: `rgba(36,33,30,.05)`, koyu: `rgba(255,255,255,.06)`), kategori renginde boyanmaz |
+| **İlerleme çubuğu** | Segment, `primaryContainer` iz + `primary` dolgu |
+| **Seri hapı** | Alev `reward` renginde, sayı `rewardText` |
+| **Kategori rozeti (kartta)** | Kategori adı yazısı kategori ailesinin rengi, çerçevesi nötr |
 
-1. Ana ekran zemini her zaman `colors.background` ile baslamalidir.
-2. Kart ve panel gibi ikincil katmanlar `colors.backgroundDark` kullanmalidir.
-3. Ana metinler `colors.text`, ikincil metinler `colors.textSecondary` olmalidir.
-4. Buton ve onemli aksiyonlar `colors.primary`; gerekiyorsa `primary -> primaryContainer` gradyani kullanilmalidir.
-5. `danger` ve `success` sadece durum bildirimi icin kullanilmali, dekoratif kullanilmamalidir.
-6. Koyu modda sert beyaz/siyah kullanimi yapilmamali; sadece token degerleri tercih edilmelidir.
-7. Acik modda asiri kontrastli siyah metin yerine token tabanli `text` tonu korunmalidir.
+---
 
-## 6. Yeni Tasarim Icin Guncelleme Ceklisti
+## 6. Kategori ikon ve görsel sistemi
 
-Bu tanimlar guncellenirken asagidaki sirayla ilerlenmelidir:
+Her kategori için aynı çizimden iki çıktı vardır: **küçük ikon** (pill) ve **kart görseli** (liste/öne çıkan kartlar). Açık ve koyu temada ayrı dosya.
 
-1. Ilk olarak sadece token degerleri guncellenmeli (`src/theme/theme.js`).
-2. Sert kodlanmis renkler temizlenip token kullanimina cekilmelidir.
-3. Her iki modda da ayni bilesen hiyerarsisi korunmalidir (zemin -> katman -> vurgu).
-4. Metin kontrastlari manuel kontrol edilmelidir (ozellikle `text` ve `onPrimary`).
-5. Profil ekranindaki tema secimi ve sistemden devralma akisi test edilmelidir.
-6. Son adimda ekran bazli gorsel ince ayarlar yapilmalidir.
+### 6.1 Aileler ve kategoriler
 
-## 7. Uygulama Durumu Notu
+| Aile | Açık | Koyu | Kategoriler (simge) |
+|---|---|---|---|
+| Yeşil | `#2F7D5B` | `#6FCB9F` | Finans (para kesesi), Gelişim (filiz) |
+| Çivit | `#5B5FB5` | `#A5A9F0` | Psikoloji (ampullü profil), Felsefe (baykuş) |
+| Mor | `#8650A8` | `#CFA0E8` | Bilim (deney şişesi) |
+| Mavi | `#1F7FA8` | `#7CC3E3` | İletişim (iki konuşma balonu) |
+| Toprak | `#A5623A` | `#E0A27C` | Tarih (amfora), Liderlik (dağ ve bayrak) |
+| Gül | `#C0507A` | `#F29AB8` | Sağlık (artılı elma) |
+| Arduvaz | `#4C5B7A` | `#A9B7D6` | İş (evrak çantası), Üretkenlik (kum saati) |
+| Petrol | `#1F5F5B` | `#7CC0B6` | Tümü (dört kare) |
 
-Tema secimi su an:
-- Sistem temasini varsayilan alir.
-- Kullanici secimini `AsyncStorage` icinde `themeMode` anahtari ile saklar.
-- `light` ve `dark` modlari global context uzerinden tum ekranlara dagitilir.
+### 6.2 Çizim kuralları
+- Yalnızca dolgulu şekil; çizgi ikon yok. Ana ton + ikinci ton + iç detay (açık).
+- Her glifin dolu alanı eşit (kanvasın ~%32,6'sı). Boyutu elle değil `generate.py` ayarlar.
+- Altın yok. Kırmızı ve amber yok (hata ve ödül renkleriyle karışmasın).
+- Komşu kategoriler farklı ailede; aynı aileyi paylaşanların silüeti belirgin farklı.
+- Anlam çakışması yok: tik işareti (tamamlandı), kalp (favori), kalkan (güvenlik) kullanılmaz.
+- 20 px'te okunur olmalı. Önce 20 px'te kontrol et.
 
-Bu nedenle yeni tasarim gecisinde sadece renk/typography/layout tokenlarini degistirmek bile buyuk kisimda otomatik etki uretecektir.
+### 6.3 Dosyalar ve üretim
+- Küçük ikon: `assets/categories/pill_icons/<Ad>.png` ve `<Ad>-dark.png` (360 px, şeffaf).
+- Kart görseli: `assets/categories/<Ad>.png` ve `<Ad>-dark.png` (1024 px, düz aile tonu zemin + glif).
+- Kaynak ve üretici: `design/icons-src/generate.py` (ikonlar), `design/icons-src/generate_cards.py` (kart görselleri). Yeni sürüm üretmeden önce çalıştır, çıktıyı ilgili `assets/` klasörüne kopyala.
+- `getCategoryImage` artık döndürme, aynalama ve renk katmanı uygulamaz.
+
+---
+
+## 7. Diğer ekranlara uygulama kontrol listesi
+
+- [ ] Zemin `background`, kartlar `cardBackground`. Saf beyaz ve saf siyah yok.
+- [ ] Başlıklar Playfair, geri kalan her şey Inter.
+- [ ] Ekranda tek birincil eylem; altın yalnızca ışık/ödül.
+- [ ] Sabit hex yok; `useTheme().colors` token'ları.
+- [ ] Kategori renkleri yalnızca ikon/görselde ve küçük etiketlerde. Büyük yüzeyleri kategori boyamaz.
+- [ ] Açık ve koyu temada ayrı bak. Kontrast ≥ 4,5:1.
+- [ ] Dokunma hedefi ≥ 44 pt, boş durum ve kilitli durum tasarlandı.
+- [ ] Yeni metin `src/locales/i18n.js` içinde 4 dilde (tr, en, es, de), `t(...)` ile.
+- [ ] Analitik olayları `docs/ANALYTICS_EVENTS.md` ile tutarlı.
+
+---
+
+## 8. Bilinen açık konular
+
+- **Kategori tema paleti:** `getCategoryTheme` artık §6.1 ailelerini kullanır (ikonla aynı ton). Banner görselleri hâlâ eski stilde (aşağıda).
+- **Banner görselleri eski stilde:** `assets/banner/*` yeni ikon diliyle uyumlu değil.
+- **Koyu tema ekran doğrulaması yok:** yeni ikonlar ve kart görselleri koyu temada uygulama içinde test edilmedi.
+- **İspanyolca ve Almanca çeviri:** "Albor Yolu" karşılıkları ("Camino Albor", "Albor-Weg") doğrulanmadı.
+- **Kaldığın yerden kartı:** kayıtlı okuma konumuna kaydırma yok.
+
+---
+
+## 9. Referans prototipler
+
+- `design/home-top-albor.html`: onaylı ana sayfa üst tasarımı (iPhone 17 Pro, 402×874).
+- `design/home-deniz.html`: bölümlenmiş uzun sayfa denemesi.
+- Eski denemeler ve ikon iterasyonları: `arsiv/tasarim-eski/design-prototipleri/`.

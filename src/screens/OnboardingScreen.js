@@ -18,6 +18,7 @@ import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import useReducedMotion from '../hooks/useReducedMotion';
 import { getStoryByLang } from '../db/db';
 import { SUPPORTED_LANGS } from '../utils/locale';
+import { getLogo } from '../constants/logos';
 
 const PROFILE_INFO_PROMPT_SEEN_KEY = '@albor_profile_info_prompt_seen';
 // Read and cleared once by AppNavigator, after the reader finishes their first
@@ -43,7 +44,6 @@ const OnboardingScreen = ({ navigation }) => {
   const reduceMotion = useReducedMotion();
   const [step, setStep] = useState(0);
   const [selectedCats, setSelectedCats] = useState([]);
-  const [selectedTime, setSelectedTime] = useState(1);
   const [selectedReminders, setSelectedReminders] = useState(['evening']);
   const [name, setName] = useState(userProfile?.displayName || '');
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
@@ -97,11 +97,6 @@ const OnboardingScreen = ({ navigation }) => {
   }, [contentLang, lang]);
 
   const allCats = parentCategories.map((p) => Number(p.id));
-  const timeOptions = [
-    { label: t('time_3min', lang), sub: t('time_3min_sub', lang), iconName: 'cafe-outline', icon: '\u2615', minutes: 3, dailyStoryTarget: 1 },
-    { label: t('time_6min', lang), sub: t('time_6min_sub', lang), iconName: 'book-outline', icon: '\uD83D\uDCDA', minutes: 6, dailyStoryTarget: 2 },
-    { label: t('time_9min', lang), sub: t('time_9min_sub', lang), iconName: 'rocket-outline', icon: '\uD83D\uDE80', minutes: 9, dailyStoryTarget: 3 },
-  ];
   const reminderOptions = [
     { label: t('reminder_morning', lang), sub: t('reminder_morning_sub', lang), iconName: 'sunny-outline', icon: '\uD83C\uDF05', reminderWindow: 'morning', reminderHour: 8 },
     { label: t('reminder_noon', lang), sub: t('reminder_noon_sub', lang), iconName: 'partly-sunny-outline', icon: '\u2600\uFE0F', reminderWindow: 'noon', reminderHour: 13 },
@@ -218,11 +213,9 @@ const OnboardingScreen = ({ navigation }) => {
     // `isOnboarded`, unmounts this screen and mounts Home, which reads this flag
     // on mount. Writing it afterwards races Home and the name modal reappears.
     await AsyncStorage.setItem(PROFILE_INFO_PROMPT_SEEN_KEY, 'true').catch(() => {});
-    await saveOnboarding(selectedCats, timeOptions[selectedTime], selectedReminders);
+    await saveOnboarding(selectedCats, null, selectedReminders);
     trackEvent(ANALYTICS_EVENTS.ONBOARDING_COMPLETED, {
       categoryCount: selectedCats.length,
-      minutes: timeOptions[selectedTime]?.minutes,
-      dailyStoryTarget: timeOptions[selectedTime]?.dailyStoryTarget,
       reminderWindows: selectedReminders,
       lang,
     });
@@ -772,9 +765,7 @@ const OnboardingScreen = ({ navigation }) => {
         <View style={s.heroGlowBlob} />
         <View style={s.heroLogoWrapper}>
           <Image
-            source={isDark
-              ? require('../../assets/albor_logo_dark.png')
-              : require('../../assets/albor_logo.png')}
+            source={getLogo(isDark)}
             style={s.heroLogoImg}
             resizeMode="contain"
           />
@@ -896,29 +887,7 @@ const OnboardingScreen = ({ navigation }) => {
       </Text>
       <Text style={[s.sectionSubtitle, { marginBottom: 18 }]}>{t('onboarding_how_long_sub', lang)}</Text>
 
-      <Text style={s.groupLabel}>{t('readingPlan', lang)}</Text>
-      {timeOptions.map((option, i) => (
-        <TouchableOpacity
-          key={i}
-          style={[s.timeTile, selectedTime === i && s.timeTileSelected]}
-          onPress={() => { Haptics.selectionAsync().catch(() => {}); setSelectedTime(i); }}
-          activeOpacity={0.7}
-          accessibilityRole="radio"
-          accessibilityState={{ checked: selectedTime === i }}
-          accessibilityLabel={`${option.label} — ${option.sub}`}
-        >
-          <Ionicons name={option.iconName} size={24} color={selectedTime === i ? colors.primary : colors.textSecondary} style={s.timeTileIcon} />
-          <View style={{ flex: 1 }}>
-            <Text style={s.timeTileName}>{option.label}</Text>
-            <Text style={s.timeTileSub}>{option.sub}</Text>
-          </View>
-          <View style={[s.timeRadio, selectedTime === i && s.timeRadioSelected]}>
-            {selectedTime === i && <View style={s.timeRadioInner} />}
-          </View>
-        </TouchableOpacity>
-      ))}
-
-      <Text style={[s.groupLabel, { marginTop: 18 }]}>{t('reminderTime', lang)}</Text>
+      <Text style={s.groupLabel}>{t('reminderTime', lang)}</Text>
       {reminderOptions.map((option, i) => {
         const isSelected = selectedReminders.includes(option.reminderWindow);
         return (
@@ -1004,9 +973,7 @@ const OnboardingScreen = ({ navigation }) => {
                   mark, and showing it twice on one screen just read as clutter. */}
               <View style={s.headerLogoRow}>
                 <Image
-                  source={isDark
-                    ? require('../../assets/albor_logo_dark.png')
-                    : require('../../assets/albor_logo.png')}
+                  source={getLogo(isDark)}
                   style={s.headerLogoImg}
                   resizeMode="contain"
                 />

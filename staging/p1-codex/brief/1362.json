@@ -1,0 +1,61 @@
+{
+  "story_id": 1362,
+  "kind": "concept",
+  "book": {
+    "title": "The Intention Experiment (Niyet)",
+    "author": "Lynne McTaggart",
+    "year": "2007"
+  },
+  "confidence": "low",
+  "confidence_note": "McTaggart proposes that people sending the same intention together have a larger effect than one person alone, and ties this to a field in which living things influence each other. The supplied text names plants, bacteria and water crystals as targets; I could not confirm which experiments in this book those were, so no specific experiment, result or number is used. This is her proposal and has not been independently established. The practical suggestion (agree on a shared good intention with people you love at set moments) is kept.",
+  "facts": [
+    "McTaggart moves from individual intention to group intention.",
+    "She proposes that people focusing on the same aim together have a stronger effect than one person alone.",
+    "She explains this through a field: living things exist inside a shared field that links them.",
+    "Her suggestion is that when many people focus the same way, the field is strengthened.",
+    "Her practical advice is to hold a shared intention for good with people you love or belong to, at agreed moments.",
+    "She says to keep it small, deliberate and done together.",
+    "Editorial caveat, not from the book: the group effects she describes have not been independently established."
+  ],
+  "tension": "If intention helps when one person holds it, McTaggart asks whether it multiplies when many people hold it together, a claim that is not independently established.",
+  "opening_idea": "Start with the shift from one person to many, and the small shared moment she suggests.",
+  "lessons": [
+    {
+      "idea": "Doing something together at an agreed time changes the group even if outcomes are unclear.",
+      "anchor": "Shared moments of intention."
+    },
+    {
+      "idea": "A claim about a hidden field is an idea to hold lightly.",
+      "anchor": "McTaggart's field explanation."
+    }
+  ],
+  "reflect": [
+    "A moment when a group you belonged to felt in step.",
+    "A ritual your family or team already shares."
+  ],
+  "reflect_final": "What small, shared moment could you suggest to people close to you this week?",
+  "use_cases": [
+    {
+      "situation": "Your family has a week that is hard for someone in it.",
+      "move": "Agree on a time each evening when everyone thinks of that person.",
+      "context": "family"
+    },
+    {
+      "situation": "A team is about to start a stressful stretch.",
+      "move": "Begin the meeting with each person naming one thing they hope for the team.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend group is spread across cities.",
+      "move": "Pick a day and time to send each other a short good wish.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Pick a moment, tell your people, and spend it together on one good wish.",
+  "conversation_variants": {
+    "punchline_idea": "McTaggart suggests that a good wish held by many at once may carry more than one held alone.",
+    "thirty_sec_idea": "McTaggart argues group intention is stronger than the sum of individuals and explains it with a shared field. Her practical advice is simple: agree with people you love to hold a good wish at set moments. The effects are not independently established.",
+    "question_idea": "Ask whether the other person's family or friends have any small shared ritual.",
+    "key_contrast_idea": "Alone versus together."
+  }
+}

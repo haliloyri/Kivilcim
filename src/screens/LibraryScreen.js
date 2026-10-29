@@ -1,24 +1,27 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import {
   View, Text, ScrollView, FlatList, TouchableOpacity, StyleSheet,
-  StatusBar, Modal, TextInput, ImageBackground, useWindowDimensions,
+  StatusBar, Modal, TextInput, Image, useWindowDimensions,
 } from 'react-native';
+import Svg, { Circle, Line } from 'react-native-svg';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
-import StoryCard from '../components/StoryCard';
 import CategoryPill from '../components/CategoryPill';
-import { getCategoryTheme, getCategoryBanner } from '../utils/categoryImages';
+import ScreenHeader from '../components/ScreenHeader';
+import LibraryEmptyArt from '../components/LibraryEmptyArt';
+import { getCategoryTheme, getCategoryImage } from '../utils/categoryImages';
+import { intlLocaleFor } from '../utils/locale';
 import { extractShareParts } from '../utils/storyMarkup';
 import useRecordedStoryIds from '../hooks/useRecordedStoryIds';
 
 // Library = "action on top, archive below":
 //   1. Kaldığın yerden  – stories scrolled into but not finished (inProgressStories)
 //   2. Sonra oku        – favoriteCollections.saved_for_later
-//   3. Cebindekiler     – saved takeaways (careerTakeaways) as quote cards
+//   3. Cebimdekiler     – saved takeaways (careerTakeaways) as quote cards
 //   4. Arşiv            – Okunanlar / Favoriler / Kayıtlar + category + sort
 // The top sections hide while searching or when empty.
 
@@ -40,7 +43,7 @@ const storyMatchesSearch = (story, query) => {
 
 const categoryKeyOf = (story) => story?.parent_cat_raw || story?.parent_cat || story?.cat || '';
 
-// Text shown on a "Cebindekiler" card: the story's pocket takeaway if the
+// Text shown on a "Cebimdekiler" card: the story's pocket takeaway if the
 // rich format has one, otherwise its lesson.
 const getTakeawayText = (story) => {
   let parts = null;
@@ -50,6 +53,148 @@ const getTakeawayText = (story) => {
     parts = null;
   }
   return String(parts?.pocket || parts?.lesson || story?.lesson || '').trim();
+};
+
+// Brand motif: sun rising over a petrol card (same drawing as Home/Profile). Decorative only.
+const HeroSun = ({ color }) => (
+  <Svg
+    width={150}
+    height={116}
+    viewBox="0 0 168 130"
+    pointerEvents="none"
+    style={{ position: 'absolute', right: -30, top: -26, transform: [{ scaleY: -1 }] }}
+  >
+    <Circle cx={96} cy={104} r={84} fill={color} opacity={0.08} />
+    <Circle cx={96} cy={104} r={62} fill={color} opacity={0.14} />
+    <Circle cx={96} cy={104} r={40} fill={color} opacity={0.95} />
+    <Line x1={96} y1={40} x2={96} y2={22} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={60} y1={52} x2={50} y2={40} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={132} y1={52} x2={142} y2={40} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={40} y1={78} x2={24} y2={72} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={152} y1={78} x2={168} y2={72} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+  </Svg>
+);
+
+const HERO_TEXT = '#F5F1E8';
+const HERO_SUB = '#D5E4E0';
+
+// "Kaldığın yerden" card. All cards are equal peers (same surface, same CTA):
+// the reader may pick any of them, so none is visually preferred.
+const ResumeCard = ({ story, progress, width, onPress }) => {
+  const { colors, layout, lang } = useTheme();
+  const pct = Math.round(Math.max(0, Math.min(1, progress)) * 100);
+  const catLabel = t(story.parent_cat || story.cat, lang) || '';
+  const mins = Number(story?.min || story?.possible_read_minutes) || null;
+  return (
+    <TouchableOpacity
+      activeOpacity={0.9}
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={`${t('libraryContinueCta', lang)}: ${story.title}`}
+      style={{
+        width, padding: 20, borderRadius: layout.radius.card, overflow: 'hidden',
+        backgroundColor: colors.heroSurface, borderWidth: 1, borderColor: colors.heroBorder,
+      }}
+    >
+      <HeroSun color={colors.dawn} />
+      <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 12, letterSpacing: 1, color: colors.dawn, textTransform: 'uppercase' }} numberOfLines={1}>
+        {catLabel}{mins ? `  ·  ${mins} ${t('minLabel', lang)}` : ''}
+      </Text>
+      <Text style={{ fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, lineHeight: 26, color: HERO_TEXT, marginTop: 10, marginBottom: 18, maxWidth: '78%' }} numberOfLines={3}>
+        {story.title}
+      </Text>
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <View style={{ flex: 1, height: 6, borderRadius: 3, overflow: 'hidden', backgroundColor: 'rgba(255,255,255,0.18)' }}>
+          <View style={{ width: `${Math.max(pct, 4)}%`, height: '100%', borderRadius: 3, backgroundColor: colors.dawn }} />
+        </View>
+        <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 12, color: HERO_SUB }}>
+          {t('libraryProgressRead', lang, { pct })}
+        </Text>
+      </View>
+      <View style={{ minHeight: 48, marginTop: 16, borderRadius: 24, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: HERO_TEXT }}>
+        <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 16, color: '#1B4B48' }}>{t('libraryContinueCta', lang)}</Text>
+        <Ionicons name="arrow-forward" size={17} color="#1B4B48" />
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+// Archive / "Sonra oku" row: category artwork, serif title, quiet meta tags.
+// Category colour lives only in the artwork and the small category label.
+const LibraryRow = ({ story, readCount, hasRecording, usageDate, onPress, onUse }) => {
+  const { colors, isDark, lang } = useTheme();
+  const key = categoryKeyOf(story);
+  const catTheme = getCategoryTheme(key, isDark);
+  const img = getCategoryImage(key, isDark);
+  const catLabel = t(story.parent_cat || story.cat, lang) || '';
+  const mins = Number(story?.min || story?.possible_read_minutes) || null;
+  const tile = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(36,33,30,0.05)';
+
+  const tags = [];
+  if (readCount > 0) tags.push({ id: 'read', icon: 'repeat', text: t('libraryReadCount', lang, { n: readCount }), accent: true });
+  if (hasRecording) tags.push({ id: 'rec', icon: 'mic', text: t('libraryCollectionRecordings', lang) });
+  if (usageDate) {
+    tags.push({
+      id: 'use', icon: 'chatbubble-ellipses-outline',
+      text: t('storyCraftedLabel', lang, { date: new Date(usageDate).toLocaleDateString(intlLocaleFor(lang)) }),
+    });
+  }
+
+  return (
+    <TouchableOpacity
+      activeOpacity={0.85}
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={story.title}
+      style={{
+        flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12, minHeight: 92,
+        borderRadius: 18, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.cardBackground,
+      }}
+    >
+      <View style={{ width: 68, height: 68, borderRadius: 14, overflow: 'hidden', backgroundColor: catTheme.backgroundColor }}>
+        {img.source ? <Image source={img.source} style={{ width: '100%', height: '100%' }} resizeMode="cover" /> : null}
+      </View>
+      <View style={{ flex: 1, minWidth: 0 }}>
+        <Text numberOfLines={1} style={{ fontFamily: 'Inter_600SemiBold', fontSize: 11.5, color: catTheme.textColor }}>{catLabel}</Text>
+        <Text numberOfLines={2} style={{ fontFamily: 'PlayfairDisplay_700Bold', fontSize: 16, lineHeight: 20, color: colors.text, marginTop: 3 }}>
+          {story.title}
+        </Text>
+        {mins ? (
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 3 }}>
+            <Ionicons name="time-outline" size={12} color={colors.textSecondary} />
+            <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary }}>{`${mins} ${t('minLabel', lang)}`}</Text>
+          </View>
+        ) : null}
+        {tags.length ? (
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 7 }}>
+            {tags.map((tag) => (
+              <View
+                key={tag.id}
+                style={{
+                  flexDirection: 'row', alignItems: 'center', gap: 4, minHeight: 22, paddingHorizontal: 8,
+                  borderRadius: 11, backgroundColor: tag.accent ? colors.primaryContainer : tile,
+                }}
+              >
+                <Ionicons name={tag.icon} size={11} color={tag.accent ? colors.primaryText : colors.textSecondary} />
+                <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 11, color: tag.accent ? colors.primaryText : colors.textSecondary }}>{tag.text}</Text>
+              </View>
+            ))}
+          </View>
+        ) : null}
+      </View>
+      {onUse ? (
+        <TouchableOpacity
+          onPress={onUse}
+          hitSlop={{ top: 4, bottom: 4, left: 4, right: 4 }}
+          accessibilityRole="button"
+          accessibilityLabel={t('story_detail_use_cta', lang)}
+          style={{ width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.primaryContainer }}
+        >
+          <Ionicons name="chatbubble-ellipses-outline" size={20} color={colors.primaryText} />
+        </TouchableOpacity>
+      ) : null}
+    </TouchableOpacity>
+  );
 };
 
 const LibraryScreen = ({ navigation }) => {
@@ -204,136 +349,141 @@ const LibraryScreen = ({ navigation }) => {
     const goHome = () => navigation.navigate('HomeTab');
     if (isSearching) {
       return {
-        title: t('searchNoResultsTitle', lang), sub: t('searchNoResultsSub', lang),
+        icon: 'search', title: t('searchNoResultsTitle', lang), sub: t('searchNoResultsSub', lang),
         cta: t('searchClearAccessibility', lang), action: () => setSearchQuery(''),
       };
     }
     if (effectiveCategory !== 'all') {
       return {
-        title: t('libraryFilteredEmptyTitle', lang), sub: t('libraryFilteredEmptySub', lang),
+        icon: 'search', title: t('libraryFilteredEmptyTitle', lang), sub: t('libraryFilteredEmptySub', lang),
         cta: t('libraryClearFilterCta', lang), action: () => setActiveCategory('all'),
       };
     }
     if (activeCollection === 'favorites') {
-      return { title: t('noFavs', lang), sub: t('libraryEmptyFavoritesSub', lang), cta: t('libraryEmptyFavoritesCta', lang), action: goHome };
+      return { hero: true, art: 'favorites', icon: 'heart-outline', title: t('noFavs', lang), sub: t('libraryEmptyFavoritesSub', lang), cta: t('libraryEmptyFavoritesCta', lang), action: goHome };
     }
     if (activeCollection === 'recordings') {
-      return { title: t('libraryNoRecordings', lang), sub: t('libraryEmptyRecordingsSub', lang), cta: t('libraryEmptyRecordingsCta', lang), action: goHome };
+      return { hero: true, art: 'recordings', icon: 'mic-outline', title: t('libraryNoRecordings', lang), sub: t('libraryEmptyRecordingsSub', lang), cta: t('libraryEmptyRecordingsCta', lang), action: goHome };
     }
-    return { title: t('noHistory', lang), sub: t('libraryEmptyReadSub', lang), cta: t('libraryEmptyReadCta', lang), action: goHome };
+    return { hero: true, art: 'read', icon: 'book-outline', title: t('noHistory', lang), sub: t('libraryEmptyReadSub', lang), cta: t('libraryEmptyReadCta', lang), action: goHome };
   }, [activeCollection, effectiveCategory, isSearching, lang, navigation]);
 
   const openStory = useCallback((story) => navigation.navigate('StoryDetail', { story }), [navigation]);
   const openUseInConversation = useCallback((story) => navigation.navigate('UseInConversation', { story }), [navigation]);
 
-  // Shared neutral tokens (B2 passive look).
-  const neutral = isDark
-    ? { background: '#232326', border: '#34343A', text: '#B7B9BE' }
-    : { background: '#F1ECE1', border: '#E4DBCB', text: '#857E6E' };
-
   const styles = useMemo(() => StyleSheet.create({
     safe: { flex: 1, backgroundColor: colors.background },
-    header: { paddingHorizontal: hPad, paddingTop: 10, paddingBottom: 8 },
-    title: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 28, color: colors.text, letterSpacing: 0.2 },
     searchWrap: {
-      marginHorizontal: hPad, marginTop: 4, marginBottom: 4, minHeight: 46, borderRadius: 18,
+      marginHorizontal: hPad, marginTop: 16, minHeight: 48, borderRadius: 18,
       borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surfaceContainerLowest,
-      flexDirection: 'row', alignItems: 'center', paddingLeft: 14, paddingRight: 6,
+      flexDirection: 'row', alignItems: 'center', paddingLeft: 14, paddingRight: 4,
     },
     searchInput: {
-      flex: 1, minHeight: 46, paddingHorizontal: 10,
+      flex: 1, minHeight: 48, paddingHorizontal: 10,
       fontFamily: 'Inter_400Regular', fontSize: 15, color: colors.text,
     },
-    searchClearBtn: { width: 34, height: 34, borderRadius: 17, alignItems: 'center', justifyContent: 'center' },
+    searchClearBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
     sectionRow: {
       flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between',
-      marginHorizontal: hPad, marginTop: 22, marginBottom: 12,
+      marginHorizontal: hPad, marginTop: 28, marginBottom: 12,
     },
-    sectionTitle: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 20, color: colors.text, flexShrink: 1 },
+    sectionTitle: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, lineHeight: 26, color: colors.text, flexShrink: 1 },
     sectionCount: { fontFamily: 'Inter_500Medium', fontSize: 13, color: colors.textSecondary },
-    sectionAction: { fontFamily: 'Inter_500Medium', fontSize: 13, color: colors.primaryText },
+    sectionAction: { fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.primaryText },
     hList: { gap: 12, paddingHorizontal: hPad },
-    // Kaldığın yerden
-    continueCard: {
-      borderRadius: layout.radius.card, overflow: 'hidden', minHeight: 150,
-      padding: 18, justifyContent: 'space-between',
-      borderWidth: isDark ? 1 : 0, borderColor: colors.border,
-    },
-    continueEyebrow: { fontFamily: 'Inter_500Medium', fontSize: 12, letterSpacing: 0.3 },
-    continueTitle: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 19, lineHeight: 25, marginTop: 6 },
-    continueFooter: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 18 },
-    progressTrack: { flex: 1, height: 6, borderRadius: 3, overflow: 'hidden' },
-    progressFill: { height: '100%', borderRadius: 3 },
-    continueMeta: { fontFamily: 'Inter_500Medium', fontSize: 12 },
-    continueCta: {
-      flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 12, paddingVertical: 7,
-      borderRadius: 999, backgroundColor: isDark ? colors.background : colors.surfaceContainerLowest,
-    },
-    continueCtaText: { fontFamily: 'Inter_500Medium', fontSize: 13 },
-    // Sonra oku
     stackList: { paddingHorizontal: hPad, gap: 10 },
-    // Cebindekiler
+    // Cebimdekiler
     pocketCard: {
-      width: Math.min(280, windowWidth * 0.74), minHeight: 180, borderRadius: layout.radius.card,
-      borderWidth: 1, padding: 16, justifyContent: 'space-between',
+      width: Math.min(286, windowWidth * 0.74), minHeight: 200, borderRadius: 20, overflow: 'hidden',
+      borderWidth: 1, borderColor: colors.border, backgroundColor: colors.cardBackground, padding: 18,
     },
-    pocketEyebrow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-    pocketEyebrowText: { fontFamily: 'Inter_500Medium', fontSize: 12 },
+    pocketMark: {
+      position: 'absolute', right: 14, top: -6, fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 96, lineHeight: 110, opacity: 0.12,
+    },
+    pocketEyebrow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+    pocketEyebrowText: { fontFamily: 'Inter_600SemiBold', fontSize: 12 },
     pocketText: {
-      fontFamily: 'PlayfairDisplay_400Regular_Italic', fontSize: 16, lineHeight: 23,
-      color: colors.text, marginTop: 10,
+      fontFamily: 'PlayfairDisplay_400Regular_Italic', fontSize: 17, lineHeight: 24,
+      color: colors.text, marginTop: 12,
     },
-    pocketFooter: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 14 },
+    pocketFooter: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 'auto', paddingTop: 14 },
     pocketSource: { flex: 1, fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary },
-    pocketUseBtn: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center' },
+    pocketUseBtn: {
+      width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center',
+      backgroundColor: colors.primaryContainer,
+    },
     // Arşiv
     segment: {
-      flexDirection: 'row', marginHorizontal: hPad, marginBottom: 12, padding: 3,
-      borderRadius: 16, backgroundColor: neutral.background, borderWidth: 1, borderColor: neutral.border,
+      flexDirection: 'row', marginHorizontal: hPad, marginBottom: 14, padding: 3,
+      borderRadius: 18, backgroundColor: colors.cardBackground, borderWidth: 1, borderColor: colors.border,
     },
     segmentItem: {
-      flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5,
-      paddingVertical: 9, paddingHorizontal: 4, borderRadius: 13,
+      flex: 1, minHeight: 44, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
+      paddingHorizontal: 4, borderRadius: 15,
     },
     segmentItemActive: { backgroundColor: colors.primary },
-    segmentText: { fontFamily: 'Inter_500Medium', fontSize: 13, color: neutral.text, flexShrink: 1 },
+    segmentText: { fontFamily: 'Inter_500Medium', fontSize: 14, color: colors.textSecondary, flexShrink: 1 },
     segmentTextActive: { color: colors.onPrimary },
-    segmentCount: { fontFamily: 'Inter_400Regular', fontSize: 12, color: neutral.text, opacity: 0.85 },
+    segmentCount: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, opacity: 0.85 },
     segmentCountActive: { color: colors.onPrimary },
-    filterRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 10 },
+    filterRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
     sortBtn: {
-      width: 38, height: 38, borderRadius: 19, alignItems: 'center', justifyContent: 'center',
-      borderWidth: 1, borderColor: neutral.border, backgroundColor: neutral.background,
+      width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center',
+      borderWidth: 1, borderColor: colors.border, backgroundColor: colors.cardBackground,
       marginLeft: 8, marginRight: hPad,
     },
     countLine: {
       fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary,
-      marginHorizontal: hPad, marginBottom: 10,
+      marginHorizontal: hPad + 4, marginBottom: 10,
     },
     rowWrap: { paddingHorizontal: hPad },
-    emptyState: { paddingHorizontal: 40, paddingTop: 20, paddingBottom: 40, alignItems: 'center' },
-    emptyTitle: { fontFamily: 'Inter_500Medium', fontSize: 16, color: colors.text, textAlign: 'center' },
+    emptyState: { paddingHorizontal: 36, paddingTop: 28, paddingBottom: 44, alignItems: 'center' },
+    emptyRing: {
+      width: 72, height: 72, borderRadius: 36, alignItems: 'center', justifyContent: 'center',
+      backgroundColor: colors.primaryContainer,
+    },
+    emptyTitle: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 21, color: colors.text, textAlign: 'center', marginTop: 18 },
     emptyText: {
-      fontFamily: 'Inter_400Regular', fontSize: 14, color: colors.textSecondary,
+      fontFamily: 'Inter_400Regular', fontSize: 14, lineHeight: 20, color: colors.textSecondary,
       textAlign: 'center', marginTop: 8,
     },
     emptyButton: {
-      marginTop: 16, minHeight: 44, borderRadius: 12, paddingHorizontal: 16,
+      marginTop: 20, minHeight: 48, borderRadius: 24, paddingHorizontal: 24,
       alignItems: 'center', justifyContent: 'center', backgroundColor: colors.primary,
     },
-    emptyButtonText: { fontFamily: 'Inter_500Medium', fontSize: 13, color: colors.onPrimary },
+    emptyButtonText: { fontFamily: 'Inter_600SemiBold', fontSize: 15, color: colors.onPrimary },
+    heroEmpty: {
+      marginHorizontal: hPad, marginTop: 8, borderRadius: layout.radius.card, padding: 22, paddingTop: 26,
+      backgroundColor: colors.heroSurface, borderWidth: 1, borderColor: colors.heroBorder, overflow: 'hidden',
+    },
+    heroEmptyIcon: {
+      width: 84, height: 84, borderRadius: 42, alignItems: 'center', justifyContent: 'center',
+      backgroundColor: 'rgba(245,241,232,0.10)',
+    },
+    heroEmptyTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold', fontSize: 24, lineHeight: 30, color: '#F5F1E8', marginTop: 28,
+    },
+    heroEmptyText: {
+      fontFamily: 'Inter_400Regular', fontSize: 14, lineHeight: 21, color: 'rgba(245,241,232,0.78)', marginTop: 8,
+    },
+    heroEmptyButton: {
+      marginTop: 20, minHeight: 48, borderRadius: layout.radius.button, paddingHorizontal: 22,
+      alignSelf: 'flex-start', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.dawn,
+    },
+    heroEmptyButtonText: { fontFamily: 'Inter_600SemiBold', fontSize: 15, color: '#2A1E08' },
     sortOverlay: { flex: 1, backgroundColor: colors.modalOverlay, justifyContent: 'flex-end' },
     sortSheet: {
-      backgroundColor: colors.modalSurface, borderTopLeftRadius: 20, borderTopRightRadius: 20,
-      paddingHorizontal: 18, paddingTop: 16, paddingBottom: 24, borderTopWidth: 1, borderColor: colors.border,
+      backgroundColor: colors.modalSurface, borderTopLeftRadius: 24, borderTopRightRadius: 24,
+      paddingHorizontal: 20, paddingTop: 16, paddingBottom: 28, borderTopWidth: 1, borderColor: colors.border,
     },
-    sortTitle: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 20, color: colors.text, marginBottom: 10 },
+    sortTitle: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, color: colors.text, marginBottom: 6 },
     sortOption: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-      paddingVertical: 14, borderBottomWidth: 1, borderColor: colors.border,
+      minHeight: 52, borderBottomWidth: 1, borderColor: colors.border,
     },
-    sortOptionText: { fontFamily: 'Inter_500Medium', fontSize: 14, color: colors.text },
-  }), [colors, layout, isDark, hPad, windowWidth, neutral.background, neutral.border, neutral.text]);
+    sortOptionText: { fontFamily: 'Inter_500Medium', fontSize: 16, color: colors.text },
+  }), [colors, layout, hPad, windowWidth]);
 
   // ── Pieces ─────────────────────────────────────────────────────────────
   const SectionHeader = ({ title, count, actionLabel, onAction }) => (
@@ -343,105 +493,45 @@ const LibraryScreen = ({ navigation }) => {
         {count ? <Text style={styles.sectionCount}>{`  ${count}`}</Text> : null}
       </Text>
       {actionLabel ? (
-        <TouchableOpacity onPress={onAction} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} accessibilityRole="button">
+        <TouchableOpacity
+          onPress={onAction}
+          style={{ minHeight: 44, justifyContent: 'center' }}
+          accessibilityRole="button"
+        >
           <Text style={styles.sectionAction}>{actionLabel}</Text>
         </TouchableOpacity>
       ) : null}
     </View>
   );
 
-  const renderContinueCard = ({ story, progress }, cardWidth) => {
-    const catTheme = getCategoryTheme(categoryKeyOf(story), isDark);
-    const accent = catTheme.accent || colors.primary;
-    const pct = Math.round(Math.max(0, Math.min(1, progress)) * 100);
-    const catLabel = t(story.parent_cat || story.cat, lang) || '';
-    const mins = Number(story?.min || story?.possible_read_minutes) || null;
-    const titleColor = colors.text;
-    const subColor = colors.textSecondary;
-
-    const inner = (
-      <>
-        <View>
-          <Text style={[styles.continueEyebrow, { color: accent }]} numberOfLines={1}>
-            {catLabel}{mins ? `  ·  ${mins} ${t('minLabel', lang)}` : ''}
-          </Text>
-          <Text style={[styles.continueTitle, { color: titleColor }]} numberOfLines={2}>{story.title}</Text>
-        </View>
-        <View style={styles.continueFooter}>
-          <View style={{ flex: 1 }}>
-            <View style={[styles.progressTrack, { backgroundColor: isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.08)' }]}>
-              <View style={[styles.progressFill, { width: `${Math.max(pct, 4)}%`, backgroundColor: accent }]} />
-            </View>
-            <Text style={[styles.continueMeta, { color: subColor, marginTop: 6 }]}>
-              {t('libraryProgressRead', lang, { pct })}
-            </Text>
-          </View>
-          <View style={styles.continueCta}>
-            <Text style={[styles.continueCtaText, { color: accent }]}>{t('libraryContinueCta', lang)}</Text>
-            <Ionicons name="arrow-forward" size={15} color={accent} />
-          </View>
-        </View>
-      </>
-    );
-
-    return (
-      <TouchableOpacity
-        key={`continue-${story.story_id}`}
-        activeOpacity={0.86}
-        onPress={() => openStory(story)}
-        accessibilityRole="button"
-        accessibilityLabel={`${t('libraryContinueCta', lang)}: ${story.title}`}
-        style={{ width: cardWidth }}
-      >
-        {isDark ? (
-          <View style={[styles.continueCard, { backgroundColor: `${accent}22` }]}>{inner}</View>
-        ) : (
-          <ImageBackground
-            source={getCategoryBanner(categoryKeyOf(story)).source}
-            resizeMode="cover"
-            imageStyle={{ borderRadius: layout.radius.card }}
-            style={[styles.continueCard, { backgroundColor: catTheme.backgroundColor }]}
-          >
-            {inner}
-          </ImageBackground>
-        )}
-      </TouchableOpacity>
-    );
-  };
-
   const renderPocketCard = ({ story, text }) => {
     const catTheme = getCategoryTheme(categoryKeyOf(story), isDark);
-    const accent = catTheme.accent || colors.primary;
+    const accent = catTheme.textColor || colors.primaryText;
     return (
       <TouchableOpacity
         key={`pocket-${story.story_id}`}
         activeOpacity={0.86}
         onPress={() => openStory(story)}
         accessibilityRole="button"
-        style={[styles.pocketCard, {
-          backgroundColor: isDark ? colors.cardBackground : catTheme.backgroundColor,
-          borderColor: `${catTheme.borderColor || accent}40`,
-        }]}
+        style={styles.pocketCard}
       >
-        <View>
-          <View style={styles.pocketEyebrow}>
-            <Ionicons name="bookmark" size={13} color={accent} />
-            <Text style={[styles.pocketEyebrowText, { color: accent }]} numberOfLines={1}>
-              {t(story.parent_cat || story.cat, lang) || ''}
-            </Text>
-          </View>
-          <Text style={styles.pocketText} numberOfLines={5}>{text}</Text>
+        <Text style={[styles.pocketMark, { color: catTheme.accent || accent }]}>{'“'}</Text>
+        <View style={styles.pocketEyebrow}>
+          <Ionicons name="bookmark" size={13} color={accent} />
+          <Text style={[styles.pocketEyebrowText, { color: accent }]} numberOfLines={1}>
+            {t(story.parent_cat || story.cat, lang) || ''}
+          </Text>
         </View>
+        <Text style={styles.pocketText} numberOfLines={5}>{text}</Text>
         <View style={styles.pocketFooter}>
           <Text style={styles.pocketSource} numberOfLines={1}>{story.title}</Text>
           <TouchableOpacity
             onPress={() => openUseInConversation(story)}
-            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
             accessibilityRole="button"
             accessibilityLabel={t('story_detail_use_cta', lang)}
-            style={[styles.pocketUseBtn, { backgroundColor: `${accent}1A` }]}
+            style={styles.pocketUseBtn}
           >
-            <Ionicons name="chatbubble-ellipses-outline" size={18} color={accent} />
+            <Ionicons name="chatbubble-ellipses-outline" size={20} color={colors.primaryText} />
           </TouchableOpacity>
         </View>
       </TouchableOpacity>
@@ -449,15 +539,14 @@ const LibraryScreen = ({ navigation }) => {
   };
 
   const renderStoryRow = (story, keyPrefix) => (
-    <StoryCard
+    <LibraryRow
       key={`${keyPrefix}-${story.story_id}`}
       story={story}
-      type="ready"
-      isRead={false}
+      readCount={readCountsByStory?.[String(story.story_id)] || 0}
       hasRecording={recordedStoryIds.has(String(story.story_id))}
       usageDate={usageDateById.get(String(story.story_id)) || null}
       onPress={() => openStory(story)}
-      onUseInConversation={() => openUseInConversation(story)}
+      onUse={() => openUseInConversation(story)}
     />
   );
 
@@ -465,14 +554,12 @@ const LibraryScreen = ({ navigation }) => {
   const hasTopContent = showTopSections && (continueItems.length > 0 || readLaterStories.length > 0 || pocketItems.length > 0);
   const readLaterVisible = showAllReadLater ? readLaterStories : readLaterStories.slice(0, READ_LATER_PREVIEW);
   const singleCardWidth = windowWidth - hPad * 2;
-  const continueCardWidth = continueItems.length === 1 ? singleCardWidth : Math.min(320, windowWidth * 0.8);
+  const continueCardWidth = continueItems.length === 1 ? singleCardWidth : Math.min(330, windowWidth * 0.82);
+  const continueOffsets = continueItems.map((_, i) => i * (continueCardWidth + 12));
 
   const listHeader = (
     <View>
-      <View style={styles.header}>
-        <Text style={styles.title}>{t('tabLibrary', lang)}</Text>
-      </View>
-
+      <ScreenHeader title={t('tabLibrary', lang)} subtitle={t('librarySubtitle', lang)} />
       <View style={styles.searchWrap}>
         <Ionicons name="search" size={18} color={colors.textSecondary} />
         <TextInput
@@ -501,16 +588,25 @@ const LibraryScreen = ({ navigation }) => {
         <>
           <SectionHeader title={t('libraryContinueTitle', lang)} />
           {continueItems.length === 1 ? (
-            <View style={{ paddingHorizontal: hPad }}>{renderContinueCard(continueItems[0], singleCardWidth)}</View>
+            <View style={{ paddingHorizontal: hPad }}>
+              <ResumeCard {...continueItems[0]} width={singleCardWidth} onPress={() => openStory(continueItems[0].story)} />
+            </View>
           ) : (
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={styles.hList}
-              snapToInterval={continueCardWidth + 12}
+              snapToOffsets={continueOffsets}
               decelerationRate="fast"
             >
-              {continueItems.map((item) => renderContinueCard(item, continueCardWidth))}
+              {continueItems.map((item) => (
+                <ResumeCard
+                  key={`continue-${item.story.story_id}`}
+                  {...item}
+                  width={continueCardWidth}
+                  onPress={() => openStory(item.story)}
+                />
+              ))}
             </ScrollView>
           )}
         </>
@@ -533,7 +629,7 @@ const LibraryScreen = ({ navigation }) => {
         </>
       )}
 
-      {/* ── 3. Cebindekiler ────────────────────────────────── */}
+      {/* ── 3. Cebimdekiler ────────────────────────────────── */}
       {showTopSections && pocketItems.length > 0 && (
         <>
           <SectionHeader title={t('libraryPocketTitle', lang)} count={pocketItems.length} />
@@ -544,7 +640,7 @@ const LibraryScreen = ({ navigation }) => {
       )}
 
       {/* ── 4. Arşiv ───────────────────────────────────────── */}
-      {hasTopContent ? <SectionHeader title={t('libraryArchiveTitle', lang)} /> : <View style={{ height: 12 }} />}
+      {hasTopContent ? <SectionHeader title={t('libraryArchiveTitle', lang)} /> : <View style={{ height: 16 }} />}
 
       <View style={styles.segment}>
         {collectionItems.map((item) => {
@@ -558,9 +654,6 @@ const LibraryScreen = ({ navigation }) => {
               accessibilityState={{ selected: active }}
             >
               <Text numberOfLines={1} style={[styles.segmentText, active && styles.segmentTextActive]}>{item.label}</Text>
-              {item.count > 0 ? (
-                <Text style={[styles.segmentCount, active && styles.segmentCountActive]}>{item.count}</Text>
-              ) : null}
             </TouchableOpacity>
           );
         })}
@@ -576,28 +669,32 @@ const LibraryScreen = ({ navigation }) => {
           {categoryOptions.length > 2 && categoryOptions.map((item) => (
             <CategoryPill
               key={String(item.id)}
+              inline
               label={item.label}
               categoryName={item.rawName || item.label}
               active={effectiveCategory === item.id}
-              compact
               isDark={isDark}
               onPress={() => setActiveCategory(item.id)}
             />
           ))}
         </ScrollView>
-        <TouchableOpacity
-          style={styles.sortBtn}
-          onPress={() => setSortModalVisible(true)}
-          accessibilityRole="button"
-          accessibilityLabel={t('librarySortAction', lang)}
-        >
-          <Ionicons name="swap-vertical-outline" size={17} color={sortBy === 'recent' ? neutral.text : colors.primary} />
-        </TouchableOpacity>
+        {visibleArchive.length > 0 && (
+          <TouchableOpacity
+            style={styles.sortBtn}
+            onPress={() => setSortModalVisible(true)}
+            accessibilityRole="button"
+            accessibilityLabel={t('librarySortAction', lang)}
+          >
+            <Ionicons name="swap-vertical-outline" size={18} color={sortBy === 'recent' ? colors.textSecondary : colors.primaryText} />
+          </TouchableOpacity>
+        )}
       </View>
 
-      <Text style={styles.countLine}>
-        {`${visibleArchive.length} ${t(visibleArchive.length === 1 ? 'onboarding_story' : 'onboarding_stories', lang)}`}
-      </Text>
+      {visibleArchive.length > 0 && (
+        <Text style={styles.countLine}>
+          {`${visibleArchive.length} ${t(visibleArchive.length === 1 ? 'onboarding_story' : 'onboarding_stories', lang)}`}
+        </Text>
+      )}
     </View>
   );
 
@@ -611,8 +708,28 @@ const LibraryScreen = ({ navigation }) => {
         renderItem={({ item }) => <View style={styles.rowWrap}>{renderStoryRow(item, activeCollection)}</View>}
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
         ListHeaderComponent={listHeader}
-        ListEmptyComponent={(
+        ListEmptyComponent={emptyState.hero ? (
+          <View style={styles.heroEmpty}>
+            <HeroSun color={colors.dawn} />
+            <View style={styles.heroEmptyIcon}>
+              <LibraryEmptyArt kind={emptyState.art} accent={colors.dawn} size={52} />
+            </View>
+            <Text style={styles.heroEmptyTitle}>{emptyState.title}</Text>
+            <Text style={styles.heroEmptyText}>{emptyState.sub}</Text>
+            <TouchableOpacity
+              style={styles.heroEmptyButton}
+              onPress={emptyState.action}
+              accessibilityRole="button"
+              accessibilityLabel={emptyState.cta}
+            >
+              <Text style={styles.heroEmptyButtonText}>{emptyState.cta}</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
           <View style={styles.emptyState}>
+            <View style={styles.emptyRing}>
+              <Ionicons name={emptyState.icon} size={32} color={colors.primaryText} />
+            </View>
             <Text style={styles.emptyTitle}>{emptyState.title}</Text>
             <Text style={styles.emptyText}>{emptyState.sub}</Text>
             <TouchableOpacity

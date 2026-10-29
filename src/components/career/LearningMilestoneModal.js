@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Modal, StyleSheet, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,10 +11,11 @@ import { t } from '../../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../../utils/analytics';
 import { buildLearningSummary } from '../../utils/careerLearning';
 import { buildBooksMilestoneShare } from '../../utils/careerShare';
-import { getCategoryTheme } from '../../utils/categoryImages';
+import { getCategoryImage } from '../../utils/categoryImages';
 import { nextMilestoneState, pickMilestoneCelebration } from '../../utils/learningMilestones';
 import useReducedMotion from '../../hooks/useReducedMotion';
 import BadgeShareSheet from '../BadgeShareSheet';
+import { CelebrationCard, CelebrationButton, celebrationBackdrop } from '../CelebrationCard';
 
 const STORAGE_KEY = '@albor_learning_milestones_v1';
 
@@ -102,39 +103,35 @@ export const MilestoneModalView = ({ milestone, kickerKey, primaryKey, onClose, 
   const { colors, isDark, lang } = useTheme();
   if (!milestone) return null;
   const isBooks = milestone.type === 'books';
-  const accent = isBooks ? colors.primary : getCategoryTheme(milestone.categoryRaw || milestone.category, isDark).accent;
+  const categoryArt = isBooks ? null : getCategoryImage(milestone.categoryRaw || milestone.category, isDark).source;
 
   return (
     <Modal visible transparent animationType="fade" onRequestClose={onClose} accessibilityViewIsModal>
-      <View style={styles.backdrop}>
-        <View style={[styles.card, { backgroundColor: colors.background, borderColor: colors.border }]}>
-          <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.close', lang)} onPress={onClose} style={[styles.closeButton, { backgroundColor: colors.backgroundDark, borderColor: colors.border }]}>
-            <Ionicons name="close" size={18} color={colors.text} />
-          </TouchableOpacity>
-          <View style={[styles.icon, { backgroundColor: `${accent}1F` }]}>
-            <Ionicons name={isBooks ? 'library-outline' : 'compass-outline'} size={34} color={accent} />
-          </View>
-          <Text style={[styles.kicker, { color: colors.textSecondary }]}>{t(kickerKey, lang)}</Text>
-          <Text style={[styles.title, { color: colors.text }]}>
-            {isBooks
-              ? t('career.milestone.booksTitle', lang, { count: milestone.count })
-              : t('career.milestone.categoryTitle', lang, { category: milestone.category })}
-          </Text>
-          <Text style={[styles.body, { color: colors.textSecondary }]}>
-            {isBooks
-              ? t('career.milestone.booksBody', lang, { count: milestone.count })
-              : t('career.milestone.categoryBody', lang)}
-          </Text>
-          <TouchableOpacity accessibilityRole="button" accessibilityLabel={t(primaryKey, lang)} onPress={onClose} style={[styles.button, { backgroundColor: colors.primary }]}>
-            <Text style={[styles.buttonText, { color: isDark ? colors.backgroundDark : '#FFFFFF' }]}>{t(primaryKey, lang)}</Text>
-          </TouchableOpacity>
-          {isBooks && onShare ? (
-            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('badgeShare.share', lang)} onPress={onShare} style={[styles.secondaryButton, { borderColor: colors.border }]}>
-              <Ionicons name="share-social-outline" size={16} color={colors.text} />
-              <Text style={[styles.secondaryButtonText, { color: colors.text }]}>{t('badgeShare.share', lang)}</Text>
-            </TouchableOpacity>
-          ) : null}
-        </View>
+      <View style={celebrationBackdrop(isDark)}>
+        <CelebrationCard
+          onClose={onClose}
+          closeLabel={t('career.close', lang)}
+          emblem={categoryArt ? (
+            <Image accessible={false} source={categoryArt} resizeMode="cover" style={styles.emblemImage} />
+          ) : (
+            <View accessible={false} style={[styles.emblemDisc, { backgroundColor: colors.heroSurface }]}>
+              <Ionicons name={isBooks ? 'library-outline' : 'compass-outline'} size={46} color={colors.dawn} />
+            </View>
+          )}
+          kicker={t(kickerKey, lang)}
+          title={isBooks
+            ? t('career.milestone.booksTitle', lang, { count: milestone.count })
+            : t('career.milestone.categoryTitle', lang, { category: milestone.category })}
+          description={isBooks
+            ? t('career.milestone.booksBody', lang, { count: milestone.count })
+            : t('career.milestone.categoryBody', lang)}
+          actions={(
+            <>
+              <CelebrationButton variant="primary" label={t(primaryKey, lang)} onPress={onClose} />
+              {isBooks && onShare ? <CelebrationButton variant="secondary" icon="share-social-outline" label={t('badgeShare.share', lang)} onPress={onShare} /> : null}
+            </>
+          )}
+        />
       </View>
     </Modal>
   );
@@ -146,17 +143,8 @@ export const MilestoneReviewModal = ({ milestone, onClose, onShare }) => (
 );
 
 const styles = StyleSheet.create({
-  backdrop: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24, backgroundColor: 'rgba(0,0,0,0.5)' },
-  card: { width: '100%', maxWidth: 380, alignItems: 'center', padding: 24, borderRadius: 24, borderWidth: 1, gap: 10 },
-  closeButton: { position: 'absolute', top: 13, right: 13, width: 44, height: 44, borderRadius: 22, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
-  icon: { width: 76, height: 76, borderRadius: 38, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
-  kicker: { fontFamily: 'Inter_600SemiBold', fontSize: 11, textTransform: 'uppercase', letterSpacing: 1 },
-  title: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 29, textAlign: 'center' },
-  body: { fontFamily: 'Inter_400Regular', fontSize: 14, textAlign: 'center', lineHeight: 20 },
-  button: { alignSelf: 'stretch', minHeight: 48, borderRadius: 14, alignItems: 'center', justifyContent: 'center', marginTop: 8 },
-  buttonText: { fontFamily: 'Inter_700Bold', fontSize: 15 },
-  secondaryButton: { alignSelf: 'stretch', minHeight: 46, borderWidth: 1, borderRadius: 14, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: 7 },
-  secondaryButtonText: { fontFamily: 'Inter_700Bold', fontSize: 14 },
+  emblemImage: { width: '100%', height: '100%', borderRadius: 55 },
+  emblemDisc: { flex: 1, alignSelf: 'stretch', borderRadius: 55, alignItems: 'center', justifyContent: 'center' },
 });
 
 export default LearningMilestoneModal;

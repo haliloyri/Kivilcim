@@ -1,0 +1,67 @@
+{
+  "story_id": 1358,
+  "kind": "concept",
+  "book": {
+    "title": "This Is Marketing (Unutulmaz Markalar)",
+    "author": "Seth Godin",
+    "year": "2018"
+  },
+  "confidence": "low",
+  "confidence_note": "Godin's tribe idea is older than this book and appears in it mainly through the 'people like us' logic and the marketer's role in connecting a group. The supplied text contains a quoted line about people waiting for a leader that I could not confirm in this book, so it is omitted and nothing is presented as a direct quote. The history claim (tribes limited by geography before the internet) is kept as Godin's framing, not as a sourced fact. No case study is given.",
+  "facts": [
+    "Godin uses 'tribe' for a group of people connected to one another, to a leader and to an idea.",
+    "Groups like this are old; the internet removed the geographic limit, so people with shared interests can find each other from anywhere.",
+    "Godin argues that almost anyone can lead such a group.",
+    "Many people hold back because leading means being visible and open to criticism or rejection.",
+    "Leadership here is not a title; it is giving people something to move toward together.",
+    "A tribe grows around a point of view, a steady voice and something the leader truly cares about.",
+    "The marketer's role in the book includes helping members connect with each other, not only with the product.",
+    "Over time people who share the outlook find the leader."
+  ],
+  "tension": "The tools for gathering a group are open to everyone, yet many people wait, because leading means being visible and risking criticism.",
+  "opening_idea": "Open on the word tribe and the fact that a group needs three links: to each other, to a leader and to an idea.",
+  "lessons": [
+    {
+      "idea": "Groups need connection between members, not only attention on the leader.",
+      "anchor": "The three links of a tribe."
+    },
+    {
+      "idea": "Waiting for permission leaves the leader's seat empty.",
+      "anchor": "Many hold back for fear of criticism."
+    },
+    {
+      "idea": "Consistency matters more than production value.",
+      "anchor": "A steady voice and a point of view."
+    }
+  ],
+  "reflect": [
+    "A group you belong to and who actually connects its members.",
+    "Something you care about that you rarely say aloud.",
+    "A place where people seem to be waiting for someone to start."
+  ],
+  "reflect_final": "What is one thing you could say regularly, in your own voice, that the right people might be waiting to hear?",
+  "use_cases": [
+    {
+      "situation": "A team or club has members who never talk to each other.",
+      "move": "Link members by introducing two people who share an interest, then do it again next week.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend wants to start something but fears criticism.",
+      "move": "Point out that the group forms around a steady point of view, not a perfect launch, and ask for the first small thing they could share.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You have an interest you only follow privately.",
+      "move": "Share one honest note about it with the few people who share it.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "A tribe forms around someone who steadily says what they care about, so say it once this week.",
+  "conversation_variants": {
+    "punchline_idea": "Godin thinks the internet made gathering a tribe cheap, so the hard part left is being willing to lead.",
+    "thirty_sec_idea": "Godin calls a group connected to each other, to a leader and to an idea a tribe. The internet removed the distance problem. What remains is being willing to stand up with a point of view.",
+    "question_idea": "Ask the other person about a community they belong to and how they found it.",
+    "key_contrast_idea": "Audience versus tribe."
+  }
+}

@@ -17,11 +17,11 @@ export const buildRankShare = ({ titleKey, pathId = null, visualKey = null, lear
   const hasStats = ideas > 0 && books > 0;
   return {
     kind: 'rank',
+    kicker: t('career.title', lang),
     rankTitle: title,
     pathLabel: pathId && pathId !== 'common' ? t(`careerPath.${pathId}.title`, lang) : null,
-    line: hasStats
-      ? t('career.share.lineStats', lang, { name: readerName(name, lang), books, ideas, title })
-      : t('career.share.line', lang, { name: readerName(name, lang), title }),
+    // Numbers live in the stats panel; repeating them in the sentence doubled them on the card.
+    line: t('career.share.line', lang, { name: readerName(name, lang), title }),
     hook: t('career.share.hook', lang, { title }),
     stats: hasStats ? [
       { value: books, label: t('career.learned.books', lang) },

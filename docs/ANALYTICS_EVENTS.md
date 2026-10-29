@@ -238,7 +238,7 @@ Paylaşım hunisi iki adımdır: kart **açıldı** (`*_share_opened`) → kart 
 - `weekly_recap_notification_opened`: Pazar 18:30 haftalık özet bildirimine dokunulup İlerleme açıldığında. Alanlar: `stories`, `hasRecap` (o hafta okuma yoksa kart açılmaz).
 - `learning_milestone_shown`: Kitap kilometre taşı veya kategori ilki penceresi gösterildiğinde. Alanlar: `milestoneId` (`books_10`, `cat_philosophy`), `type` (`books` | `category`), `count`, `category` (ham kategori adı), `silentlySeen` (aynı anda ulaşılıp gösterilmeden işaretlenen diğer taş sayısı). İlk açılıştaki sessiz başlangıç kaydı olay üretmez.
 - `learning_milestone_share_opened`: Kitap kilometre taşı penceresinden "Paylaş"a basıldığında. Alanlar: `milestoneId`, `type`, `count`.
-- `share_card_exported`: Herhangi bir paylaşım kartı (unvan, haftalık, kilometre taşı, eski rozet) görsele dönüştürülüp sistem paylaşım menüsü gösterildiğinde. Alanlar: `kind` (`rank` | `weekly` | `milestone` | `badge`), `format` (`square` | `story`), `theme`, `accent`, `hasStats`, `badgeId`.
+- `share_card_exported`: Herhangi bir paylaşım kartı (unvan, haftalık, kilometre taşı, eski rozet) görsele dönüştürülüp sistem paylaşım menüsü gösterildiğinde. Alanlar: `kind` (`rank` | `weekly` | `milestone` | `badge`), `format` (`square` | `story`), `theme`, `hasStats`, `badgeId`.
 
 ### Albor Yolu kredi sözlüğü ve gizlilik
 

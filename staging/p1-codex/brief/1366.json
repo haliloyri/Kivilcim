@@ -1,0 +1,61 @@
+{
+  "story_id": 1366,
+  "kind": "anecdote",
+  "book": {
+    "title": "Company of One (Kendi Patronun Ol)",
+    "author": "Paul Jarvis",
+    "year": "2019"
+  },
+  "confidence": "low",
+  "confidence_note": "Jarvis describes his own move from running a larger web design business to working alone, and the book's thesis is that staying small is a legitimate goal rather than a stage. I am not certain of the exact size of his business, the dates or any income figures, so none are used. The supplied claims that his income fell and satisfaction 'exploded' are left out. Only the outline of his experience and the question 'why grow?' are retained.",
+  "facts": [
+    "Paul Jarvis worked as a web designer and ran a business that grew over time.",
+    "As it grew he took on more clients and more people.",
+    "His days shifted from designing to managing: meetings, email and people problems.",
+    "He chose to scale back and return to working on his own.",
+    "Out of that experience he wrote about 'a company of one': a business that stays small on purpose.",
+    "The book's question: is growth a goal or a tool, and does the growth serve the life you want.",
+    "Staying small, in the book, does not mean working without ambition."
+  ],
+  "tension": "A growing business that took him away from the work he loved, and the choice to shrink it.",
+  "opening_idea": "Open on the shift in his days: more clients and staff, less designing.",
+  "lessons": [
+    {
+      "idea": "Check what a measure of success has replaced in your day.",
+      "anchor": "Designing replaced by management."
+    },
+    {
+      "idea": "Growth is a tool and tools can be set down.",
+      "anchor": "Choosing to scale back."
+    }
+  ],
+  "reflect": [
+    "A change you made because it was the next step, not because you wanted it.",
+    "What your best day of work looks like."
+  ],
+  "reflect_final": "If your work grew by half next year, what part of your day would shrink?",
+  "use_cases": [
+    {
+      "situation": "You are offered a promotion that means mostly managing.",
+      "move": "Ask what a normal week would look like and what it replaces.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your team plans to take on more projects.",
+      "move": "Name the work each person would give up to fit them in.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are deciding whether to grow your own small business.",
+      "move": "Write down your best day of work and check whether growing protects it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Before you grow, write down what you would do with your best workday.",
+  "conversation_variants": {
+    "punchline_idea": "Paul Jarvis grew his web business until he stopped doing the work he started it for, and then he scaled back.",
+    "thirty_sec_idea": "Paul Jarvis's design business grew, and his days turned into meetings, emails and staff problems. He scaled back to work alone and wrote Company of One about the choice: growth is a tool, not a goal.",
+    "question_idea": "Ask when they last took on more at work and what it replaced.",
+    "key_contrast_idea": "Bigger or better."
+  }
+}

@@ -20,8 +20,10 @@ the story's details and choices, not inflated claims or motivational slogans.
   rhythm to an abstract introduction or explanation of why the story matters.
   Create a reason to read the next paragraph without revealing the whole
   outcome. Keep reader-facing advice for the later sections. Vary the opening
-  to suit the story; do not force every entry into a rhetorical question, an
-  "Imagine..." template, or a prediction of what the reader must feel.
+  to suit the story. NEVER open with an imperative to the reader ("Picture…",
+  "Imagine…", "Think of…", "Consider…", "Suppose…", "Ever noticed…"), a
+  rhetorical question, or a prediction of what the reader must feel. Start
+  inside the scene: the person, the object, the number, or the odd fact itself.
 - For anecdotes, let the reader follow the initial situation, the meaningful
   actions, and the outcome. Let concrete details carry the surprise. For
   concepts, develop the book's example or mechanism toward its central insight;
@@ -49,9 +51,11 @@ the story's details and choices, not inflated claims or motivational slogans.
   carry the emphasis instead of adding commentary such as "That result gives
   the details their scale." Short sentences can give a surprising choice or
   result room to land, without making every sentence clipped or theatrical.
-- Keep the sections distinct: story delivers the account; lessons explain
-  2–3 different implications anchored in it; reflection helps readers recognize
-  a relevant situation; use cards offer natural words for a concrete next step.
+- Keep the sections distinct: story delivers the account; the single lesson
+  explains the one implication that matters, anchored in it; reflection is one
+  question that sends the reader to their own life; use cards offer natural
+  words for a concrete next step (they are shown on the conversation screen,
+  not on the reading page).
   Do not make the reader do the same exercise in every section.
 - In at least one use card, let the line to say briefly connect a specific
   detail or mechanism from the brief to the proposed action. The reader should
@@ -67,15 +71,112 @@ the story's details and choices, not inflated claims or motivational slogans.
 - Keep the distinctive idea of this story. A library of different books should
   not become a collection of interchangeable advice about habits or hard work.
 
+## Reading time and where the words go
+
+The whole entry is a 3–5 minute read (about 200 words per minute): roughly
+{LEN_TOTAL} words across all sections. Spend that budget on the STORY, which
+must carry at least 55% of the words. The story is what the reader came for
+and what they will retell; everything after it is short.
+
+- Every number, name and example appears in full ONCE, in [[story]]. Lessons,
+  reflection and use cards may point back to it in a few words ("the pillows",
+  "the lunch break") but must not restate figures, dates or the outcome.
+- The lesson adds an implication the story did not already state. If it could
+  be deleted without the reader losing anything, replace it. It is not a second
+  retelling.
+- [[reflect]] holds ONLY the closing `&&question&&`. No bullets.
+- [[open]] is a hook, not a summary, and does not reveal the outcome that
+  [[story]] delivers.
+
+## Lesson and question rules (decided 2026-10-28, reading-page redesign)
+
+The reading page is no longer one long scroll of six equal sections. It is a
+reading layer (open, story, one lesson, one question, pocket); the three use
+cards belong to the "Use in conversation" screen. Therefore:
+
+1. EXACTLY ONE lesson (`$$...$$`) and EXACTLY ONE reflection question
+   (`&&...&&`). Never 2–3 lessons, never reflect bullets. Pick the single most
+   central implication. If the brief lists several, the others are dropped, not
+   merged. The `[[use]]` cards (exactly 3) and `[[pocket]]` stay as before.
+2. The lesson must not be short or telegraphic. Bold title, then 3–4 complete
+   sentences in this order: the principle, one concrete everyday-life example
+   (a reader's work, home or friendships; NOT a second retelling of the story's
+   event), and what it lets the reader do or notice. Every sentence is a full
+   sentence with its own verb. No stacked fragments.
+3. The example in the lesson is invented-but-ordinary (a baker, a repair shop,
+   a failed exam). It must not be presented as a fact from the book, must not
+   contain numbers or named people, and must not contradict the brief.
+4. The question is personal and answerable in one line of writing ("What would
+   you change in your next piece of work if ...?"). No yes/no question, no
+   advice disguised as a question, no repeat of the lesson's example.
+5. Keep the lesson free of machine tells (see "Keep the prose human"). In
+   addition avoid: ornamental metaphors ("opens a door", "a lens", "a
+   compass"), the "X does not mean Y, it means Z" pattern, and a closing
+   moral sentence that only restates the title.
+6. Story length: aim for the lower half of the range. A faithful short story
+   beats padding. Target roughly 300–400 words in English; keep the story at
+   least 50% of the entry.
+
+## Languages: write ALL of them
+
+The app shows the user's language, not English. A story that exists only in
+`en` looks like a plain old text to a Turkish, Spanish or German reader
+because the old plain-story rows stay in those languages. Every story must be
+delivered in tr, en, es and de in the same P1 format before it counts as
+done. Write each language natively (not word-for-word); the lesson example may
+be localized. Book titles outside English follow "English Title (Local
+Title)" at first mention.
+
+## Honesty and caveats
+
+- The source text can be unreliable. Never keep an unverifiable or wrong claim
+  just because it was in the source; set `confidence` in the brief honestly
+  (low when the book gives little) and tell less rather than invent.
+- Where outside research contradicts the book's claim (for example later,
+  larger trials), state it briefly in the story as an editorial caveat. Do
+  not present contested claims as established fact.
+
+## Keep the prose human
+
+These are the tells of machine-written text. Avoid them.
+
+- The "not X, but Y" move ("It isn't X. It's Y.", "Not one big change.
+  Hundreds of small ones.", "doesn't just A; it B"): at most ONE in the whole
+  entry, and only when the book itself draws that contrast.
+- Announcer transitions: "Here is the catch", "Then something striking
+  happened", "The answer came faster than anyone expected", "What happened
+  next surprised everyone". Just say what happened.
+- Aphorism endings: do not end every section or paragraph on a polished
+  one-line moral. One earned line in the whole entry is plenty.
+- Triplets: do not default to lists of exactly three items or three parallel
+  clauses. Use the number the facts actually have.
+- Template lesson: avoid the stiff "bold claim + restated example + so… moral"
+  shape and one-line fragments. Write it as flowing, complete sentences.
+- Stock vocabulary: avoid "delve, tapestry, testament, pivotal, intricate, underscore, showcase, vibrant, crucial, enduring, landscape (abstract), stands/serves as, nestled, groundbreaking" and their equivalents in the target language, plus filler such as "in order to", "it is important to note", "at its core", "the real question is", "let's dive in", and generic upbeat endings ("the future looks bright"). Say the plain thing instead.
+- Em dashes: at most 2 in the whole entry. Prefer a period or a comma.
+- Use cards: the line to say must sound like a real person talking, at most
+  35 words. Avoid tidy scaffolding such as "What if we…?" or "Let's take a
+  moment to…" in more than one card.
+
+## Sources and facts
+
+- Name the book, author, and any year or edition ONLY as given in the brief's
+  `book` field. Never add a publication year, a translated title, or a
+  "published in <language> as…" clause that the brief does not contain.
+- Attribute each claim to the book it actually comes from. If the brief marks
+  the source or attribution as uncertain, phrase it as the author's claim, or
+  leave the detail out.
+- Do not add context, causes, or comparisons ("same hospital, same staff") the
+  brief does not support. A study's scope stays exactly as the brief gives it.
+
 ## Format (exact markup)
 
 Section tags, alone on their own line, in this exact order:
 `[[open]]` `[[story]]` `[[lessons]]` `[[reflect]]` `[[use]]` `[[pocket]]`
 
 Block markers:
-- `$$**Title.** body$$` — a lesson card. [[lessons]] needs exactly 2–3 of
-  these, each starting with a **bold** title.
-- `- text` — a bullet (used inside [[reflect]]).
+- `$$**Title.** body$$` — the lesson card. [[lessons]] needs EXACTLY ONE,
+  starting with a **bold** title. See "Lesson and question rules" below.
 - `> text` — a quoted line / dialogue, inside [[story]].
 - `%%context:<slug> | Situation :: "line to say"%%` — a use-case card.
   [[use]] needs EXACTLY 3 of these. `<slug>` must be one of: meeting,
@@ -103,10 +204,10 @@ Inline: `**bold**` (sparingly) and `*italic*` (book titles, an inner voice).
 - [[open]]: {LEN_OPEN} words — hook the reader, do not summarize the story.
 - [[story]]: {LEN_STORY} words — tell it fully and faithfully; a short
   anecdote told faithfully beats padding.
-- [[lessons]]: {LEN_LESSONS} words across 2–3 cards, each tied to a concrete
+- [[lessons]]: ONE card, about 55–90 words in English (scale for other
+  languages; Turkish runs shorter than English), tied to a concrete
   beat of the story (not generic advice).
-- [[reflect]]: {LEN_REFLECT} words — 2–5 bullets that make the reader apply
-  the story to their own life, then the closing `&&question&&`.
+- [[reflect]]: only the closing `&&question&&` (one sentence, 15–30 words).
 - [[use]]: {LEN_USE} words across exactly 3 `%%...%%` cards.
 - [[pocket]]: ≤ 20 words, one `@@...@@` line.
 
@@ -115,7 +216,7 @@ specific story (no generic filler like "this isn't a mechanical recipe").
 
 ## Also write the conversation and sharing variants
 
-From the SAME brief, also write four short, independent strings for a
+From the SAME brief, also write the short, independent strings for a
 separate screen where the reader picks a ready-to-say line. They must not
 be near-verbatim copies of the [[pocket]] or [[reflect]] sentences — same
 underlying story, different framing:
@@ -136,12 +237,9 @@ underlying story, different framing:
   Avoid repeated author references, an unsupported statistic,
   or filler endings such as "What I like about this is...". Do not invent
   personal opinions or experiences for the user who will share the text.
-- `question`: one low-pressure conversation starter inviting a concrete
-  personal experience, observation, or choice. Make it easy to answer and
-  follow up on without knowing the book or disclosing something sensitive.
-  Prefer a question that opens an exchange to a broad ideal-self question
-  that collects one-word answers. It may share the reflection's idea, but
-  should sound like an invitation to another person, not a coaching exercise.
+- `question`: NO LONGER SHOWN in the app (decided 2026-10-28; the conversation
+  screen shows the three `[[use]]` cards plus the `thirty_sec` retelling).
+  Keep the key in the JSON with an empty string `""`. Do not spend words on it.
 - `key_contrast`: a 2–4 word label capturing this story's meaningful shift
   or contrast. Use familiar, natural words in the target language; avoid
   abstract jargon and generic slogans. It need not be a literal "X versus Y"

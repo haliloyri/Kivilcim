@@ -1,0 +1,22 @@
+Design the home screen of "Albor", a mobile app (iOS + Android, portrait). Provide light and dark themes.
+
+APP: Albor is Spanish for "dawn / first light". Slogan: "A new light every day." Daily-wisdom app with short, podcast-style stories (3-5 min, readable or audio) distilled from ~770 non-fiction books: Finance, Psychology, Philosophy, History, Leadership. Each story ends with an applicable idea and a line to use in conversation. Audience: 22-45 self-improvement minded professionals. Feel: calm, smart, premium, a morning ritual, not a noisy feed. Warmth, first light, clarity. No cliche book icons. Layouts must handle long German text.
+
+GOAL: In 5 seconds the user knows what to read today, where to continue, and their progress. ONE clear primary action.
+
+CONTENT (priority order):
+1. Header: greeting "Good morning, Halil", daily streak, profile entry.
+2. Hero card with 3 states: New day ("Daily focus / Open today's first story / Start reading"), In progress ("Next step / Continue my plan / Continue"), Done (celebration). Shows cover art, title, category, minutes, listen button.
+3. "Today's 5 Insights": curated story cards (title, book, category, minutes, lock icon if premium).
+4. "Picked for you": matched to the user's 5/10/15 min plan.
+5. Albor Path: current rank (12 tiers), progress bar to next badge, "See all".
+6. "Use in Conversation" teaser: "What will you say today?" with chips Meeting, One-on-one, Family, Social, Self.
+7. Scrollable category chips.
+8. "More Stories" list; free users see a locked teaser and a Premium card (unlimited, ad-free, all themes).
+9. Tab bar: Home, Explore, Favorites, Profile.
+
+EXTRA STATES: first-launch welcome ("What's your name?"), empty, offline, locked content.
+
+DELIVER: both themes, hero states, components (story card, chip, progress bar, premium card, tab bar), mini style guide.
+
+FREEDOM: colors, type, layout, UX are yours. Express "dawn" via warmth, glow, calm. WCAG AA, 44pt touch targets.

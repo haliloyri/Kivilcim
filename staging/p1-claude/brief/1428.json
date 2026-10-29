@@ -1,0 +1,51 @@
+{
+  "story_id": 1428,
+  "kind": "concept",
+  "book": { "title": "Yetenek Yanılgısı", "author": "Geoff Colvin", "year": "2008" },
+  "confidence": "medium",
+  "confidence_note": "Colvin's point that deliberate practice needs outside feedback and a coach who designs the work is a core argument, and Tiger Woods with his father Earl (Training a Tiger) is a case he uses. The supplied text lists Winston Churchill, Warren Buffett and Jack Welch with a shared 'young start, long guided work' pattern; I could not tie those names to specific passages, so they are left out. The musician, athlete and writer illustrations are general examples, not book cases. The survivorship caveat (the book does not measure whether failed performers had coaches) is an editorial limit, not Colvin's statement.",
+  "facts": [
+    "Colvin studied the lives of top performers in different fields.",
+    "The pattern: they did not get there alone; they worked for many years with someone who guided them.",
+    "Tiger Woods's father Earl Woods wrote a book about it, Training a Tiger, and writes there about how much he loved teaching.",
+    "Colvin's claim: feedback is essential to deliberate practice, and by definition it comes from outside, because judging your own performance objectively is nearly impossible.",
+    "A coach also designs the work: what to practise, in what order, at what intensity, with how much rest.",
+    "Illustrations: a musician may not hear a wrong note because the right one plays in their head; an athlete cannot see a technical flaw from inside; a writer knows what they meant and misses what the page says.",
+    "Editorial limit: the people studied are all already successful, and the book does not measure whether those who failed had coaches.",
+    "Measurement counts as feedback too: a recording, a score, honest colleague."
+  ],
+  "tension": "Everyone who reached the top seemingly practised hard, yet none could judge their own work from the inside.",
+  "opening_idea": "Open on Earl Woods writing a whole book about training his son, then widen to Colvin's pattern across fields.",
+  "lessons": [
+    {
+      "idea": "Your own intent hides your own output, so the blind spot needs an outside eye or a measurement.",
+      "anchor": "Colvin's claim that feedback comes from outside, with the musician who hears the right note in their head."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In the least visible part of your work, who or what gives you honest feedback today?",
+  "use_cases": [
+    {
+      "situation": "A team says a presentation 'went fine' without outside input.",
+      "move": "Say that we judge our own work from inside, so record it once and watch it together.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You want honest feedback from a colleague.",
+      "move": "Ask them to look at the hardest part of your work and name one thing honestly.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You work alone and have no coach.",
+      "move": "Wait a day before rereading what you wrote; time wipes out your intent and leaves the text.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Your intent hides your blind spot; a recording, a score or an honest colleague can show it.",
+  "conversation_variants": {
+    "punchline_idea": "Earl Woods wrote a whole book about training his son, and Colvin finds a guide behind most top performers.",
+    "thirty_sec_idea": "Colvin studied top performers and found none got there alone: someone guided them for years. Feedback has to come from outside because we cannot judge our own work, though the book does not measure whether failed performers had coaches too.",
+    "question_idea": "",
+    "key_contrast_idea": "Kendi gözün ve dış göz"
+  }
+}

@@ -91,7 +91,7 @@ export const fetchBatchResults = async (batch) => {
       if (result?.type === 'succeeded') {
         const content = result.message?.content || [];
         const text = content.map((c) => c.text || '').join('\n').trim();
-        return { customId, status: 'succeeded', text };
+        return { customId, status: 'succeeded', text, usage: result.message?.usage };
       }
       return { customId, status: result?.type || 'unknown', error: JSON.stringify(result?.error || result) };
     });

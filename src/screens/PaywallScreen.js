@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  StatusBar, Platform, Linking, Alert, Image, ActivityIndicator
+  View, Text, ScrollView, TouchableOpacity, StyleSheet, Pressable, Animated, PanResponder,
+  StatusBar, Linking, Alert, Image, ActivityIndicator, useWindowDimensions
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
+import Svg, { Circle, Line } from 'react-native-svg';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { getLegalUrls } from '../constants/externalLinks';
@@ -11,12 +13,35 @@ import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import { revenueAttrs, getTrialEligibility } from '../services/billing';
 import { formatCurrency } from '../utils/locale';
+import { getLogo } from '../constants/logos';
 
 // Trial copy (paywallTrial*, paywallEarlyTrialTrial*) says "7 days".
 const TRIAL_COPY_DAYS = 7;
 
-const ALBOR_LOGO = require('../../assets/albor_logo.png');
-const ALBOR_LOGO_DARK = require('../../assets/albor_logo_dark.png');
+// Text on the hero surface and the dawn-gold CTA (DESIGN.md §5).
+const HERO_TEXT = '#F5F1E8';
+const HERO_TEXT_SOFT = '#D5E4E0';
+const DAWN_CTA_INK = '#2A1E08';
+
+// Brand motif: sun rising over the hero card (same drawing as the home hero).
+const HeroSun = ({ color }) => (
+  <Svg
+    width={168}
+    height={130}
+    viewBox="0 0 168 130"
+    pointerEvents="none"
+    style={{ position: 'absolute', right: -34, top: -30, transform: [{ scaleY: -1 }] }}
+  >
+    <Circle cx={96} cy={104} r={84} fill={color} opacity={0.08} />
+    <Circle cx={96} cy={104} r={62} fill={color} opacity={0.14} />
+    <Circle cx={96} cy={104} r={40} fill={color} opacity={0.95} />
+    <Line x1={96} y1={40} x2={96} y2={22} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={60} y1={52} x2={50} y2={40} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={132} y1={52} x2={142} y2={40} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={40} y1={78} x2={24} y2={72} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={152} y1={78} x2={168} y2={72} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+  </Svg>
+);
 
 // Prices come from the store, always — never from a constant in here.
 //
@@ -31,24 +56,31 @@ const PLAN_SPECS = {
   monthly: {
     nameKey: 'planMonthly',
     perKey: 'perMo',
-    detailKey: 'paywallMonthlyDetail',
   },
   yearly: {
     nameKey: 'planAnnual',
     perKey: 'perYr',
-    detailKey: 'paywallAnnualDetail',
     popular: true,
     badgeKey: 'paywallAnnualBestValue',
   },
   lifetime: {
     nameKey: 'planLifetime',
     perKey: 'perLifetime',
-    detailKey: 'paywallLifetimeDetail',
   },
 };
 
+const FEATURES = [
+  { key: 'feat1', icon: 'book-outline' },
+  { key: 'feat2', icon: 'mic-outline' },
+  { key: 'feat3', icon: 'share-social-outline' },
+  { key: 'feat4', icon: 'journal-outline' },
+  { key: 'feat5', icon: 'ban-outline' },
+];
+
 const PaywallScreen = ({ navigation, route }) => {
   const { colors, typography, layout, isDark, lang } = useTheme();
+  const insets = useSafeAreaInsets();
+  const { height: windowHeight } = useWindowDimensions();
   const [planId, setPlanId] = useState(DEFAULT_PLAN_ID);
   const [purchaseConfirmed, setPurchaseConfirmed] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -75,96 +107,56 @@ const PaywallScreen = ({ navigation, route }) => {
   const paywallVariant = React.useMemo(() => {
     if (isEarlyTrial) {
       return {
-        bannerTitleKey: 'paywallEarlyTrialTitle',
-        bannerSubKey: 'paywallEarlyTrialSub',
         titleKey: 'paywallEarlyTrialHeroTitle',
         subKey: 'paywallEarlyTrialHeroSub',
-        whyTitleKey: 'paywallWhyNowTrialTitle',
-        whySubKey: 'paywallWhyNowTrialSub',
-        valueKeys: ['paywallTrialValue1', 'paywallTrialValue2', 'paywallTrialValue3'],
       };
     }
 
     if (isOneMinuteSummarySource) {
       return {
-        bannerTitleKey: 'paywallOneMinuteTitle',
-        bannerSubKey: 'paywallOneMinuteSub',
         titleKey: 'paywallOneMinuteHeroTitle',
         subKey: 'paywallOneMinuteHeroSub',
-        whyTitleKey: 'paywallWhyNowOneMinuteTitle',
-        whySubKey: 'paywallWhyNowOneMinuteSub',
-        valueKeys: ['paywallOneMinuteValue1', 'paywallOneMinuteValue2', 'paywallOneMinuteValue3'],
       };
     }
 
     if (isImageCardSource) {
       return {
-        bannerTitleKey: 'paywallImageCardTitle',
-        bannerSubKey: 'paywallImageCardSub',
         titleKey: 'paywallImageCardHeroTitle',
         subKey: 'paywallImageCardHeroSub',
-        whyTitleKey: 'paywallWhyNowImageCardTitle',
-        whySubKey: 'paywallWhyNowImageCardSub',
-        valueKeys: ['paywallImageCardValue1', 'paywallImageCardValue2', 'paywallImageCardValue3'],
       };
     }
 
     if (isStorytellerSource) {
       return {
-        bannerTitleKey: 'paywallStorytellerTitle',
-        bannerSubKey: 'paywallStorytellerSub',
         titleKey: 'paywallStorytellerHeroTitle',
         subKey: 'paywallStorytellerHeroSub',
-        whyTitleKey: 'paywallWhyNowStorytellerTitle',
-        whySubKey: 'paywallWhyNowStorytellerSub',
-        valueKeys: ['paywallStorytellerValue1', 'paywallStorytellerValue2', 'paywallStorytellerValue3'],
       };
     }
 
     if (isStreakFreezeSource) {
       return {
-        bannerTitleKey: 'paywallStreakFreezeTitle',
-        bannerSubKey: 'paywallStreakFreezeSub',
         titleKey: 'paywallStreakFreezeHeroTitle',
         subKey: 'paywallStreakFreezeHeroSub',
-        whyTitleKey: 'paywallWhyNowStreakFreezeTitle',
-        whySubKey: 'paywallWhyNowStreakFreezeSub',
-        valueKeys: ['paywallStreakFreezeValue1', 'paywallStreakFreezeValue2', 'paywallStreakFreezeValue3'],
       };
     }
 
     if (isLockedStorySource) {
       return {
-        bannerTitleKey: 'paywallLockedTitle',
-        bannerSubKey: 'paywallLockedSub',
         titleKey: 'paywallLockedHeroTitle',
         subKey: 'paywallLockedHeroSub',
-        whyTitleKey: 'paywallWhyNowLockedTitle',
-        whySubKey: 'paywallWhyNowLockedSub',
-        valueKeys: ['paywallLockedValue1', 'paywallLockedValue2', 'paywallLockedValue3'],
       };
     }
 
     if (isProfileSource) {
       return {
-        bannerTitleKey: 'paywallProfileTitle',
-        bannerSubKey: 'paywallProfileSub',
         titleKey: 'paywallProfileHeroTitle',
         subKey: 'paywallProfileHeroSub',
-        whyTitleKey: 'paywallWhyNowProfileTitle',
-        whySubKey: 'paywallWhyNowProfileSub',
-        valueKeys: ['paywallProfileValue1', 'paywallProfileValue2', 'paywallProfileValue3'],
       };
     }
 
     return {
-      bannerTitleKey: null,
-      bannerSubKey: null,
       titleKey: 'paywallTitle',
       subKey: 'paywallSub',
-      whyTitleKey: 'paywallWhyNowTitle',
-      whySubKey: 'paywallWhyNowSub',
-      valueKeys: ['paywallValue1', 'paywallValue2', 'paywallValue3'],
     };
   }, [isEarlyTrial, isImageCardSource, isLockedStorySource, isOneMinuteSummarySource, isProfileSource, isStorytellerSource, isStreakFreezeSource]);
   const priceUnavailable = t('paywallPriceUnavailable', lang);
@@ -174,20 +166,19 @@ const PaywallScreen = ({ navigation, route }) => {
   const livePriceString = (id) =>
     livePackages?.[id]?.product?.priceString || priceUnavailable;
 
-  // Savings %, months-free and the monthly-equivalent are all derived from the
-  // LIVE store amounts. They can only be shown once both the monthly and the
-  // yearly package have arrived — a percentage computed from a placeholder
-  // would be a made-up claim next to a real price.
+  // Savings % and the monthly-equivalent are derived from the LIVE store
+  // amounts. They can only be shown once both the monthly and the yearly
+  // package have arrived — a percentage computed from a placeholder would be a
+  // made-up claim next to a real price.
   const priceMeta = React.useMemo(() => {
     const m = livePackages?.monthly?.product;
     const y = livePackages?.yearly?.product;
     if (typeof m?.price !== 'number' || typeof y?.price !== 'number' || m.price <= 0) {
-      return { savingsPct: null, monthsFree: null, monthlyEquivalent: null };
+      return { savingsPct: null, monthlyEquivalent: null };
     }
     const currency = y.currencyCode || m.currencyCode;
     return {
       savingsPct: Math.max(0, Math.floor((1 - y.price / (m.price * 12)) * 100)),
-      monthsFree: Math.max(0, Math.round((m.price * 12 - y.price) / m.price)),
       monthlyEquivalent: formatCurrency(y.price / 12, currency, lang),
     };
   }, [livePackages, lang]);
@@ -207,7 +198,6 @@ const PaywallScreen = ({ navigation, route }) => {
         name: t(spec.nameKey, lang),
         price: livePriceString(id),
         per: t(spec.perKey, lang),
-        detail: t(spec.detailKey, lang),
         popular: !!spec.popular,
         badge: spec.badgeKey ? t(spec.badgeKey, lang) : null,
         save: null,
@@ -230,22 +220,13 @@ const PaywallScreen = ({ navigation, route }) => {
       setPlanId(plans.some((p) => p.id === DEFAULT_PLAN_ID) ? DEFAULT_PLAN_ID : plans[0].id);
     }
   }, [plans, planId]);
-  const features = [
-    t('feat1', lang),
-    t('feat2', lang),
-    t('feat3', lang),
-    t('feat4', lang),
-    t('feat5', lang),
-  ];
   const { buyPremium, restorePremium, getPremiumOfferings, billingLive } = useUserData();
 
-  const valuePoints = paywallVariant.valueKeys.map((key) => t(key, lang));
   // Store-payment and restore reassurance belong on every build — they describe
   // how the purchase works, not whether this build can take one.
   const trustPoints = [
-    t('paywallTrust1', lang),
-    t('paywallTrust2', lang),
-    t('paywallTrust3', lang),
+    { icon: 'lock-closed-outline', text: t('paywallTrust2', lang) },
+    { icon: 'refresh-outline', text: t('paywallTrust3', lang) },
   ];
 
   // App Store / Play require auto-renewable subscription terms next to the CTA.
@@ -419,549 +400,513 @@ const PaywallScreen = ({ navigation, route }) => {
     }
   };
 
+  // Bottom sheet: slides up on mount, closes by backdrop tap, close button or
+  // a drag down on the grab zone. All paths go through closeSheet.
+  const slide = useRef(new Animated.Value(windowHeight)).current;
+  const closingRef = useRef(false);
+
+  useEffect(() => {
+    Animated.timing(slide, { toValue: 0, duration: 260, useNativeDriver: true }).start();
+  }, [slide]);
+
+  const closeSheet = React.useCallback(() => {
+    if (closingRef.current) return;
+    closingRef.current = true;
+    Animated.timing(slide, { toValue: windowHeight, duration: 200, useNativeDriver: true })
+      .start(() => navigation.goBack());
+  }, [slide, windowHeight, navigation]);
+
+  const panResponder = React.useMemo(() => PanResponder.create({
+    onMoveShouldSetPanResponder: (_, g) => g.dy > 6 && Math.abs(g.dy) > Math.abs(g.dx),
+    onPanResponderMove: (_, g) => { if (g.dy > 0) slide.setValue(g.dy); },
+    onPanResponderRelease: (_, g) => {
+      if (g.dy > 110 || g.vy > 0.9) {
+        closeSheet();
+      } else {
+        Animated.spring(slide, { toValue: 0, useNativeDriver: true, bounciness: 0 }).start();
+      }
+    },
+    onPanResponderTerminate: () => {
+      Animated.spring(slide, { toValue: 0, useNativeDriver: true, bounciness: 0 }).start();
+    },
+  }), [slide, closeSheet]);
+
+  const gutter = 20;
+
   const styles = StyleSheet.create({
-    safe: {
+    root: {
       flex: 1,
-      backgroundColor: colors.background
+      justifyContent: 'flex-end',
+    },
+    backdrop: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: colors.modalOverlay,
+    },
+    sheet: {
+      maxHeight: '92%',
+      backgroundColor: colors.background,
+      borderTopLeftRadius: 28,
+      borderTopRightRadius: 28,
+      overflow: 'hidden',
+    },
+    handle: {
+      alignSelf: 'center',
+      width: 40,
+      height: 4,
+      borderRadius: 2,
+      backgroundColor: colors.border,
+      marginTop: 10,
+    },
+    topBar: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingHorizontal: gutter,
+      paddingTop: 6,
+      paddingBottom: 4,
+    },
+    brandRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 8,
     },
     brandLogo: {
-      width: 64,
-      height: 64,
-      alignSelf: 'center',
-      marginBottom: 12,
+      width: 28,
+      height: 28,
     },
-    paywallTitle: { 
-      fontFamily: 'PlayfairDisplay_700Bold', 
-      fontSize: typography.sizes.headingLarge - 2, 
-      color: colors.text, 
-      textAlign: 'center', 
-      marginBottom: 10, 
-      lineHeight: 34 
-    },
-    paywallSub: { 
-      fontFamily: 'Inter_400Regular', 
-      fontSize: typography.sizes.body - 1, 
-      color: colors.textSecondary, 
-      textAlign: 'center', 
-      lineHeight: typography.spacing.bodyLineHeight, 
-      marginBottom: 18 
-    },
-    limitBanner: {
-      borderWidth: 1,
-      borderColor: colors.primary,
-      backgroundColor: isDark ? 'rgba(200, 150, 80, 0.14)' : '#FFF6E8',
-      borderRadius: layout.radius.card,
-      padding: 12,
-      marginBottom: 14,
-    },
-    limitBannerTitle: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: typography.sizes.ui,
+    brandName: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 18,
       color: colors.text,
-      marginBottom: 4,
     },
-    limitBannerSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge + 1,
-      color: colors.textSecondary,
-      lineHeight: 18,
-    },
-    modelCard: {
-      borderWidth: 1,
+    closeBtn: {
+      width: 44,
+      height: 44,
+      borderRadius: 22,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.cardBackground,
+      borderWidth: layout.borderWidth,
       borderColor: colors.border,
+    },
+    hero: {
+      marginHorizontal: gutter,
+      marginTop: 6,
+      paddingHorizontal: 18,
+      paddingTop: 20,
+      paddingBottom: 18,
       borderRadius: layout.radius.card,
-      backgroundColor: colors.backgroundDark,
-      padding: 14,
-      marginBottom: 14,
+      backgroundColor: colors.heroSurface,
+      borderWidth: layout.borderWidth,
+      borderColor: colors.heroBorder,
+      overflow: 'hidden',
     },
-    modelTitle: {
+    heroEyebrow: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: typography.sizes.ui,
-      color: colors.text,
-      marginBottom: 6,
+      fontSize: 11.5,
+      letterSpacing: 1.2,
+      textTransform: 'uppercase',
+      color: colors.dawn,
     },
-    modelSub: {
+    heroTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 24,
+      lineHeight: 29,
+      color: HERO_TEXT,
+      marginTop: 8,
+      maxWidth: '78%',
+    },
+    heroSub: {
       fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge + 1,
-      color: colors.textSecondary,
-      lineHeight: 18,
-      marginBottom: 10,
+      fontSize: 14,
+      lineHeight: 20,
+      color: HERO_TEXT_SOFT,
+      marginTop: 8,
     },
-    modelRow: {
-      flexDirection: 'row',
+    features: {
+      marginHorizontal: gutter + 2,
+      marginTop: 16,
       gap: 10,
     },
-    modelCol: {
-      flex: 1,
-      borderRadius: 10,
-      borderWidth: 1,
-      borderColor: colors.border,
-      padding: 10,
-      backgroundColor: colors.background,
-    },
-    modelColTitle: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: typography.sizes.badge + 1,
-      color: colors.text,
-      marginBottom: 2,
-    },
-    modelColText: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge,
-      color: colors.textSecondary,
-      lineHeight: 16,
-    },
-    whyNowCard: {
-      borderWidth: 1,
-      borderColor: colors.border,
-      borderRadius: layout.radius.card,
-      padding: 14,
-      marginBottom: 16,
-      backgroundColor: colors.background,
-    },
-    whyNowTitle: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: typography.sizes.ui,
-      color: colors.text,
-      marginBottom: 6,
-    },
-    whyNowSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge + 1,
-      color: colors.textSecondary,
-      marginBottom: 8,
-      lineHeight: 18,
-    },
-    whyNowRow: {
+    featureRow: {
       flexDirection: 'row',
-      alignItems: 'flex-start',
-      gap: 8,
-      marginTop: 6,
+      alignItems: 'center',
+      gap: 12,
     },
-    whyNowBullet: {
-      color: colors.primaryText,
-      marginTop: 1,
-      fontSize: 12,
+    featureIcon: {
+      width: 28,
+      height: 28,
+      borderRadius: 9,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.primaryContainer,
     },
-    whyNowText: {
+    featureText: {
       flex: 1,
       fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge + 1,
-      lineHeight: 18,
+      fontSize: 14.5,
+      lineHeight: 20,
       color: colors.text,
     },
-    planCard: { 
-      flex: 1, 
-      borderWidth: layout.borderWidth, 
-      borderColor: colors.border, 
-      borderRadius: layout.radius.card, 
-      padding: 16, 
-      alignItems: 'center', 
-      backgroundColor: colors.backgroundDark 
+    plansRow: {
+      flexDirection: 'row',
+      gap: 10,
+      marginHorizontal: gutter,
+      marginTop: 22,
     },
-    planCardSelected: { 
-      borderWidth: 1.5, 
+    planCard: {
+      flex: 1,
+      minWidth: 0,
+      alignItems: 'center',
+      paddingTop: 26,
+      paddingBottom: 14,
+      paddingHorizontal: 10,
+      borderRadius: 18,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.cardBackground,
+    },
+    planCardSelected: {
+      borderWidth: 2,
       borderColor: colors.primary,
-      backgroundColor: isDark ? 'rgba(200, 150, 80, 0.12)' : '#FFF8EC',
+      backgroundColor: colors.primaryContainer,
+      paddingTop: 25,
+      paddingBottom: 13,
+      paddingHorizontal: 9,
     },
-    popularBadge: { 
-      backgroundColor: colors.danger, 
-      borderRadius: 10, 
-      paddingHorizontal: 8, 
-      paddingVertical: 3, 
-      marginBottom: 8 
+    planRadio: {
+      position: 'absolute',
+      top: 10,
+      right: 10,
+      width: 18,
+      height: 18,
+      borderRadius: 9,
+      borderWidth: 1.5,
+      borderColor: colors.mutedText,
+      alignItems: 'center',
+      justifyContent: 'center',
     },
-    popularText: { 
-      fontFamily: 'Inter_500Medium', 
-      fontSize: typography.sizes.badge, 
-      color: '#FFFFFF' 
+    planRadioSelected: {
+      borderColor: colors.primary,
     },
-    planName: { 
-      fontFamily: 'Inter_400Regular', 
-      fontSize: typography.sizes.ui, 
-      color: colors.text, 
-      marginBottom: 4 
+    planRadioDot: {
+      width: 8,
+      height: 8,
+      borderRadius: 4,
+      backgroundColor: colors.primary,
     },
-    planPrice: { 
-      fontFamily: 'PlayfairDisplay_600SemiBold', 
-      fontSize: 24, 
-      color: colors.text 
+    popularBadge: {
+      position: 'absolute',
+      top: -11,
+      alignSelf: 'center',
+      backgroundColor: colors.primary,
+      borderRadius: 12,
+      paddingHorizontal: 10,
+      paddingVertical: 4,
     },
-    planPer: { 
-      fontFamily: 'Inter_400Regular', 
-      fontSize: typography.sizes.badge, 
-      color: colors.textSecondary 
+    popularText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11.5,
+      color: colors.onPrimary,
     },
-    planSave: { 
-      fontFamily: 'Inter_500Medium', 
-      fontSize: typography.sizes.badge, 
-      color: colors.success, 
-      marginTop: 4 
-    },
-    planDetail: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge,
+    planName: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13.5,
       color: colors.textSecondary,
-      textAlign: 'center',
-      lineHeight: 16,
-      marginTop: 6,
+    },
+    planPrice: {
+      fontFamily: 'PlayfairDisplay_600SemiBold',
+      fontSize: 24,
+      color: colors.text,
+      marginTop: 4,
+    },
+    planPer: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      color: colors.textSecondary,
+      marginTop: 2,
     },
     planEffectivePrice: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: typography.sizes.badge + 1,
+      fontSize: 12.5,
+      lineHeight: 17,
       color: colors.primaryText,
       marginTop: 6,
       textAlign: 'center',
     },
-    annualNudge: {
-      borderWidth: 1,
-      borderColor: `${colors.primary}55`,
-      borderRadius: layout.radius.card,
-      backgroundColor: isDark ? 'rgba(200, 150, 80, 0.10)' : '#FFF6E8',
-      paddingHorizontal: 12,
-      paddingVertical: 10,
-      marginTop: -8,
-      marginBottom: 16,
-    },
-    annualNudgeText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: typography.sizes.badge + 1,
-      color: colors.text,
-      textAlign: 'center',
-      lineHeight: 18,
-    },
-    featureRow: { 
-      flexDirection: 'row', 
-      alignItems: 'center', 
-      gap: 12, 
-      paddingVertical: 10, 
-      borderBottomWidth: layout.borderWidth, 
-      borderBottomColor: colors.border 
-    },
-    featCheck: { 
-      width: 20, 
-      height: 20, 
-      borderRadius: 10, 
-      backgroundColor: colors.backgroundDark, 
-      borderWidth: layout.borderWidth, 
-      borderColor: colors.border, 
-      alignItems: 'center', 
-      justifyContent: 'center' 
-    },
-    featText: { 
-      fontFamily: 'Inter_400Regular', 
-      fontSize: typography.sizes.body - 1, 
-      color: colors.text, 
-      flex: 1 
-    },
-    btnPrimary: { 
-      backgroundColor: colors.primary, 
-      borderRadius: layout.radius.button, 
-      height: layout.heights.buttonPrimary, 
-      justifyContent: 'center', 
-      alignItems: 'center' 
-    },
-    btnPrimaryText: { 
-      fontFamily: 'Inter_500Medium', 
-      color: colors.onPrimary, 
-      fontSize: typography.sizes.ui + 1 
-    },
-    trustWrap: {
-      marginTop: 12,
-      gap: 6,
-    },
-    socialProofCard: {
-      marginTop: 14,
-      borderWidth: 1,
-      borderColor: colors.border,
-      borderRadius: layout.radius.card,
-      backgroundColor: colors.backgroundDark,
-      padding: 12,
-    },
-    socialProofTitle: {
+    planSave: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: typography.sizes.badge + 1,
-      color: colors.text,
-      marginBottom: 2,
+      fontSize: 12.5,
+      color: colors.success,
+      marginTop: 4,
     },
-    socialProofSub: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge,
-      color: colors.textSecondary,
-      lineHeight: 16,
+    buy: {
+      marginTop: 18,
+      paddingHorizontal: gutter,
     },
-    policyCard: {
-      marginTop: 12,
-      borderWidth: 1,
-      borderColor: colors.border,
-      borderRadius: layout.radius.card,
-      backgroundColor: colors.background,
-      padding: 12,
-      gap: 6,
-    },
-    policyTitle: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: typography.sizes.badge + 1,
-      color: colors.text,
-      marginBottom: 2,
-    },
-    policyText: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge,
-      color: colors.textSecondary,
-      lineHeight: 16,
-    },
-    legalWrap: {
-      marginTop: 12,
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 8,
+    ctaBtn: {
+      height: 56,
+      borderRadius: 16,
+      alignItems: 'center',
       justifyContent: 'center',
+      backgroundColor: colors.dawn,
+      shadowColor: colors.dawn,
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.4,
+      shadowRadius: 10,
+      elevation: 4,
     },
-    legalChip: {
-      borderWidth: 1,
-      borderColor: colors.border,
-      borderRadius: 999,
-      paddingHorizontal: 10,
-      paddingVertical: 6,
-      backgroundColor: colors.backgroundDark,
-    },
-    legalChipText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: typography.sizes.badge,
-      color: colors.text,
-    },
-    trustText: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge,
-      color: colors.textSecondary,
-      textAlign: 'center',
-      lineHeight: 16,
+    ctaText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 17,
+      color: DAWN_CTA_INK,
     },
     trialBadgeText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: typography.sizes.badge + 1,
+      fontSize: 13.5,
       color: colors.primaryText,
       textAlign: 'center',
-      marginTop: 10,
+      marginTop: 8,
     },
     disclosureText: {
       fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge - 1,
+      fontSize: 11,
+      lineHeight: 16,
       color: colors.textSecondary,
       textAlign: 'center',
-      lineHeight: 15,
+      marginHorizontal: gutter + 4,
+      marginTop: 10,
+    },
+    trustWrap: {
+      marginHorizontal: gutter + 2,
+      marginTop: 16,
+      gap: 8,
+    },
+    trustRow: {
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      gap: 10,
+    },
+    trustText: {
+      flex: 1,
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12.5,
+      lineHeight: 18,
+      color: colors.textSecondary,
+    },
+    refundText: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
+      lineHeight: 18,
+      color: colors.textSecondary,
+      textAlign: 'center',
+      marginHorizontal: gutter,
       marginTop: 12,
-      paddingHorizontal: 4,
+    },
+    footerRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingHorizontal: gutter,
+      marginTop: 4,
+    },
+    footerLink: {
+      minHeight: 44,
+      justifyContent: 'center',
+      paddingHorizontal: 10,
+    },
+    footerLinkText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12.5,
+      color: colors.textSecondary,
+      textDecorationLine: 'underline',
+    },
+    restoreText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: colors.primaryText,
+      textDecorationLine: 'underline',
     },
     successCard: {
       borderWidth: 1,
       borderColor: `${colors.primary}66`,
-      borderRadius: layout.radius.card,
-      backgroundColor: isDark ? `${colors.primary}18` : `${colors.primary}10`,
+      borderRadius: 18,
+      backgroundColor: colors.primaryContainer,
       padding: 16,
-      marginBottom: 16,
+      marginBottom: 12,
       alignItems: 'center',
-      gap: 8,
+      gap: 4,
     },
     successTitle: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: typography.sizes.ui,
+      fontSize: 16,
       color: colors.text,
     },
     successSub: {
       fontFamily: 'Inter_400Regular',
-      fontSize: typography.sizes.badge + 1,
+      fontSize: 13,
+      lineHeight: 19,
       color: colors.textSecondary,
       textAlign: 'center',
-      lineHeight: 18,
     },
   });
 
   return (
-    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
-      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
-      <ScrollView contentContainerStyle={{ padding: 24, paddingBottom: Platform.OS === 'android' ? 48 : 24 }} showsVerticalScrollIndicator={false}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ alignSelf: 'flex-end', marginBottom: 8, minWidth: 44, minHeight: 44, alignItems: 'center', justifyContent: 'center' }}
-          accessibilityRole="button"
-          accessibilityLabel={t('close', lang)}
-        >
-          <Text style={{ fontSize: 22, color: colors.textSecondary }}>✕</Text>
-        </TouchableOpacity>
+    <View style={styles.root}>
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
+      {/* Dimmed backdrop — tap to dismiss */}
+      <Pressable
+        style={styles.backdrop}
+        onPress={closeSheet}
+        accessibilityRole="button"
+        accessibilityLabel={t('close', lang)}
+      />
 
-        <Image
-          source={isDark ? ALBOR_LOGO_DARK : ALBOR_LOGO}
-          style={styles.brandLogo}
-          resizeMode="contain"
-          accessibilityRole="image"
-          accessibilityLabel="Albor"
-        />
-
-
-        {paywallVariant.bannerTitleKey && (
-          <View style={styles.limitBanner}>
-            <Text style={styles.limitBannerTitle}>{t(paywallVariant.bannerTitleKey, lang)}</Text>
-            <Text style={styles.limitBannerSub}>{t(paywallVariant.bannerSubKey, lang)}</Text>
-          </View>
-        )}
-
-        <Text style={styles.paywallTitle}>{t(heroTitleKey, lang)}</Text>
-        <Text style={styles.paywallSub}>{t(heroSubKey, lang)}</Text>
-
-        <View style={styles.modelCard}>
-          <Text style={styles.modelTitle}>{t('paywallModelTitle', lang)}</Text>
-          <Text style={styles.modelSub}>{t('paywallModelSub', lang)}</Text>
-          <View style={styles.modelRow}>
-            <View style={styles.modelCol}>
-              <Text style={styles.modelColTitle}>{t('paywallFreeLabel', lang)}</Text>
-              <Text style={styles.modelColText}>{t('paywallFreeValue', lang)}</Text>
+      <Animated.View style={[styles.sheet, { transform: [{ translateY: slide }] }]}>
+        {/* Grab zone: handle + top bar. Drag down to dismiss. */}
+        <View {...panResponder.panHandlers}>
+          <View style={styles.handle} />
+          <View style={styles.topBar}>
+            <View style={styles.brandRow} accessibilityRole="image" accessibilityLabel="Albor">
+              <Image source={getLogo(isDark)} style={styles.brandLogo} resizeMode="contain" />
+              <Text style={styles.brandName}>Albor</Text>
             </View>
-            <View style={styles.modelCol}>
-              <Text style={styles.modelColTitle}>{t('paywallPremiumLabel', lang)}</Text>
-              <Text style={styles.modelColText}>{t('paywallPremiumValue', lang)}</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.whyNowCard}>
-          <Text style={styles.whyNowTitle}>{t(paywallVariant.whyTitleKey, lang)}</Text>
-          <Text style={styles.whyNowSub}>{t(paywallVariant.whySubKey, lang)}</Text>
-          {valuePoints.map((point, idx) => (
-            <View key={idx} style={styles.whyNowRow}>
-              <Text style={styles.whyNowBullet}>●</Text>
-              <Text style={styles.whyNowText}>{point}</Text>
-            </View>
-          ))}
-        </View>
-
-        <View style={{ flexDirection: 'row', gap: 10, marginBottom: 20 }}>
-          {plans.map((p) => (
             <TouchableOpacity
-              key={p.id}
-              style={[styles.planCard, planId === p.id && styles.planCardSelected]}
-              onPress={() => handleSelectPlan(p.id)}
+              onPress={closeSheet}
+              style={styles.closeBtn}
+              hitSlop={{ top: 4, right: 4, bottom: 4, left: 4 }}
               accessibilityRole="button"
-              accessibilityLabel={`${p.name} ${p.price}${p.per}`}
-              accessibilityState={{ selected: planId === p.id }}
+              accessibilityLabel={t('close', lang)}
             >
-              {p.popular && (
-                <View style={styles.popularBadge}>
-                  <Text style={styles.popularText}>{p.badge || t('popular', lang)}</Text>
+              <Ionicons name="close" size={20} color={colors.textSecondary} />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <ScrollView
+          bounces={false}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: Math.max(insets.bottom, 12) + 12 }}
+        >
+          <View style={styles.hero}>
+            <HeroSun color={colors.dawn} />
+            <Text style={styles.heroEyebrow}>{t('paywallEyebrow', lang)}</Text>
+            <Text style={styles.heroTitle} accessibilityRole="header">{t(heroTitleKey, lang)}</Text>
+            <Text style={styles.heroSub}>{t(heroSubKey, lang)}</Text>
+          </View>
+
+          <View style={styles.features}>
+            {FEATURES.map((f) => (
+              <View key={f.key} style={styles.featureRow}>
+                <View style={styles.featureIcon}>
+                  <Ionicons name={f.icon} size={16} color={colors.primaryText} />
                 </View>
-              )}
-              {!p.popular && <View style={{ height: 22 }} />}
-              <Text style={[styles.planName, planId === p.id && { fontFamily: 'Inter_500Medium' }]}>{p.name}</Text>
-              <Text style={styles.planPrice}>{p.price}</Text>
-              <Text style={styles.planPer}>{p.per}</Text>
-              {p.effectivePrice && <Text style={styles.planEffectivePrice}>{p.effectivePrice}</Text>}
-              {p.save && <Text style={styles.planSave}>{p.save}</Text>}
-              <Text style={styles.planDetail}>{p.detail}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-
-        {selectedPlan?.id === 'yearly' && priceMeta.monthsFree !== null && (
-          <View style={styles.annualNudge}>
-            <Text style={styles.annualNudgeText}>
-              {t('paywallAnnualNudge', lang)
-                .replace('{{months}}', String(priceMeta.monthsFree))}
-            </Text>
-          </View>
-        )}
-
-        <View style={{ marginBottom: 20 }}>
-          {features.map((f, i) => (
-            <View key={i} style={styles.featureRow}>
-              <View style={styles.featCheck}>
-                <Text style={{ fontSize: 10, color: colors.success }}>✓</Text>
+                <Text style={styles.featureText}>{t(f.key, lang)}</Text>
               </View>
-              <Text style={styles.featText}>{f}</Text>
-            </View>
-          ))}
-        </View>
-
-        {purchaseConfirmed && (
-          <View style={styles.successCard} accessibilityRole="summary">
-            <Text style={styles.successTitle}>{t('paywallPurchaseSuccessTitle', lang)}</Text>
-            <Text style={styles.successSub}>{t('paywallPurchaseSuccessSub', lang)}</Text>
+            ))}
           </View>
-        )}
 
-        <TouchableOpacity
-          style={[styles.btnPrimary, isProcessing && { opacity: 0.6 }]}
-          onPress={purchaseConfirmed ? () => navigation.goBack() : handlePurchase}
-          disabled={isProcessing}
-          accessibilityRole="button"
-          accessibilityState={{ disabled: isProcessing, busy: isProcessing }}
-          accessibilityLabel={purchaseConfirmed ? t('paywallContinueCta', lang) : t('subscribe', lang)}
-        >
-          {isProcessing ? (
-            <ActivityIndicator color={colors.onPrimary} />
-          ) : (
-            <Text style={styles.btnPrimaryText}>{t(purchaseConfirmed ? 'paywallContinueCta' : 'subscribe', lang)}</Text>
-          )}
-        </TouchableOpacity>
+          <View style={styles.plansRow}>
+            {plans.map((p) => {
+              const selected = planId === p.id;
+              return (
+                <TouchableOpacity
+                  key={p.id}
+                  style={[styles.planCard, selected && styles.planCardSelected]}
+                  onPress={() => handleSelectPlan(p.id)}
+                  accessibilityRole="button"
+                  accessibilityLabel={`${p.name} ${p.price}${p.per}`}
+                  accessibilityState={{ selected }}
+                >
+                  {p.popular && (
+                    <View style={styles.popularBadge}>
+                      <Text style={styles.popularText}>{p.badge || t('popular', lang)}</Text>
+                    </View>
+                  )}
+                  <View style={[styles.planRadio, selected && styles.planRadioSelected]}>
+                    {selected && <View style={styles.planRadioDot} />}
+                  </View>
+                  <Text style={styles.planName}>{p.name}</Text>
+                  <Text style={styles.planPrice}>{p.price}</Text>
+                  <Text style={styles.planPer}>{p.per}</Text>
+                  {p.effectivePrice && <Text style={styles.planEffectivePrice}>{p.effectivePrice}</Text>}
+                  {p.save && <Text style={styles.planSave}>{p.save}</Text>}
+                </TouchableOpacity>
+              );
+            })}
+          </View>
 
-        {trialBadge && !purchaseConfirmed && (
-          <Text style={styles.trialBadgeText}>{trialBadge}</Text>
-        )}
+          <View style={styles.buy}>
+            {purchaseConfirmed && (
+              <View style={styles.successCard} accessibilityRole="summary">
+                <Text style={styles.successTitle}>{t('paywallPurchaseSuccessTitle', lang)}</Text>
+                <Text style={styles.successSub}>{t('paywallPurchaseSuccessSub', lang)}</Text>
+              </View>
+            )}
 
-        {billingLive && !purchaseConfirmed && (
-          <Text style={styles.disclosureText}>{autoRenewDisclosure}</Text>
-        )}
-
-        <View style={styles.trustWrap}>
-          {trustPoints.map((item, idx) => (
-            <Text key={idx} style={styles.trustText}>{item}</Text>
-          ))}
-        </View>
-
-        <View style={styles.socialProofCard}>
-          <Text style={styles.socialProofTitle}>{t('paywallSocialProofTitle', lang)}</Text>
-          <Text style={styles.socialProofSub}>{t('paywallSocialProofSub', lang)}</Text>
-        </View>
-
-        <View style={styles.policyCard}>
-          <Text style={styles.policyTitle}>{t('paywallTrialTitle', lang)}</Text>
-          {showsTrial && <Text style={styles.policyText}>{t('paywallTrialSub', lang)}</Text>}
-          <Text style={styles.policyText}>{t('paywallRefundText', lang)}</Text>
-          {billingLive && (
-            <>
-              <Text style={styles.policyText}>{t('paywallManageSub', lang)}</Text>
-              <Text style={styles.policyText}>{t('paywallManageCancel', lang)}</Text>
-            </>
-          )}
-        </View>
-
-        <View style={styles.legalWrap}>
-          {legalLinks.map((item) => (
             <TouchableOpacity
-              key={item.label}
-              style={styles.legalChip}
-              onPress={() => openLegalLink(item.url)}
-              accessibilityRole="link"
-              accessibilityLabel={item.label}
+              style={[styles.ctaBtn, isProcessing && { opacity: 0.6 }]}
+              onPress={purchaseConfirmed ? closeSheet : handlePurchase}
+              disabled={isProcessing}
+              accessibilityRole="button"
+              accessibilityState={{ disabled: isProcessing, busy: isProcessing }}
+              accessibilityLabel={purchaseConfirmed ? t('paywallContinueCta', lang) : t('subscribe', lang)}
             >
-              <Text style={styles.legalChipText}>{item.label}</Text>
+              {isProcessing ? (
+                <ActivityIndicator color={DAWN_CTA_INK} />
+              ) : (
+                <Text style={styles.ctaText}>{t(purchaseConfirmed ? 'paywallContinueCta' : 'subscribe', lang)}</Text>
+              )}
             </TouchableOpacity>
-          ))}
-        </View>
 
-        <TouchableOpacity
-          style={{ marginTop: 12, alignItems: 'center', minHeight: 44, justifyContent: 'center' }}
-          onPress={handleRestorePress}
-          disabled={isProcessing}
-          accessibilityRole="button"
-          accessibilityLabel={billingLive ? t('paywallRestoreCta', lang) : t('restore', lang)}
-        >
-          <Text style={{ fontSize: 12, color: colors.textSecondary, fontFamily: 'Inter_400Regular' }}>
-            {billingLive ? t('paywallRestoreCta', lang) : t('restore', lang)}
-          </Text>
-        </TouchableOpacity>
-      </ScrollView>
-    </SafeAreaView>
+            {trialBadge && !purchaseConfirmed && (
+              <Text style={styles.trialBadgeText}>{trialBadge}</Text>
+            )}
+          </View>
+
+          {billingLive && !purchaseConfirmed && (
+            <Text style={styles.disclosureText}>{autoRenewDisclosure}</Text>
+          )}
+
+          <View style={styles.trustWrap}>
+            {trustPoints.map((item) => (
+              <View key={item.icon} style={styles.trustRow}>
+                <Ionicons name={item.icon} size={15} color={colors.primaryText} style={{ marginTop: 1 }} />
+                <Text style={styles.trustText}>{item.text}</Text>
+              </View>
+            ))}
+          </View>
+
+          <Text style={styles.refundText}>{t('paywallRefundText', lang)}</Text>
+
+          <View style={styles.footerRow}>
+            <TouchableOpacity
+              style={styles.footerLink}
+              onPress={handleRestorePress}
+              disabled={isProcessing}
+              accessibilityRole="button"
+              accessibilityLabel={billingLive ? t('paywallRestoreCta', lang) : t('restore', lang)}
+            >
+              <Text style={styles.restoreText}>
+                {billingLive ? t('paywallRestoreCta', lang) : t('restore', lang)}
+              </Text>
+            </TouchableOpacity>
+            {legalLinks.map((item) => (
+              <TouchableOpacity
+                key={item.label}
+                style={styles.footerLink}
+                onPress={() => openLegalLink(item.url)}
+                accessibilityRole="link"
+                accessibilityLabel={item.label}
+              >
+                <Text style={styles.footerLinkText}>{item.label}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
+      </Animated.View>
+    </View>
   );
 };
 

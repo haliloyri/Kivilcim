@@ -1,9 +1,9 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
 import { t } from '../../locales/i18n';
-import { getCategoryTheme } from '../../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme } from '../../utils/categoryImages';
 import { listReachedMilestones } from '../../utils/learningMilestones';
 
 /**
@@ -25,7 +25,7 @@ const CareerLearnedSection = ({ summary, onOpenStory, onOpenMilestone }) => {
   return (
     <View style={styles.section}>
       <Text accessibilityRole="header" style={[styles.sectionTitle, { color: colors.text }]}>{t('career.learned.title', lang)}</Text>
-      <View style={[styles.card, { backgroundColor: `${colors.primary}10`, borderColor: `${colors.primary}2E` }]}>
+      <View style={[styles.card, { backgroundColor: colors.cardBackground || colors.background, borderColor: colors.border }]}>
         {isEmpty ? (
           <View style={styles.emptyRow}>
             <View style={[styles.emptyIcon, { backgroundColor: `${colors.primary}1F` }]}>
@@ -62,6 +62,7 @@ const CareerLearnedSection = ({ summary, onOpenStory, onOpenMilestone }) => {
                   {reachedMilestones.map((milestone) => {
                     const isBooks = milestone.type === 'books';
                     const accent = isBooks ? colors.primary : getCategoryTheme(milestone.categoryRaw || milestone.category, isDark).accent;
+                    const art = isBooks ? null : getCategoryImage(milestone.categoryRaw || milestone.category, isDark).source;
                     const label = isBooks ? t('career.milestone.booksChip', lang, { count: milestone.count }) : milestone.category;
                     const a11y = isBooks
                       ? t('career.milestone.booksTitle', lang, { count: milestone.count })
@@ -77,7 +78,7 @@ const CareerLearnedSection = ({ summary, onOpenStory, onOpenMilestone }) => {
                         style={styles.chip}
                       >
                         <View style={[styles.chipIcon, { backgroundColor: `${accent}1F`, borderColor: `${accent}59` }]}>
-                          <Ionicons name={isBooks ? 'library-outline' : 'compass-outline'} size={22} color={accent} />
+                          {art ? <Image accessible={false} source={art} resizeMode="cover" style={styles.chipArt} /> : <Ionicons name={isBooks ? 'library-outline' : 'compass-outline'} size={22} color={accent} />}
                         </View>
                         <Text numberOfLines={1} style={[styles.chipLabel, { color: colors.text }]}>{label}</Text>
                       </TouchableOpacity>
@@ -182,6 +183,7 @@ const styles = StyleSheet.create({
   barValue: { width: 22, textAlign: 'right', fontFamily: 'Inter_500Medium', fontSize: 12, fontVariant: ['tabular-nums'] },
   chipRow: { gap: 12, paddingRight: 4 },
   chip: { width: 68, alignItems: 'center', gap: 6 },
+  chipArt: { width: 46, height: 46, borderRadius: 23 },
   chipIcon: { width: 52, height: 52, borderRadius: 26, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
   chipLocked: { borderStyle: 'dashed' },
   chipLabel: { fontFamily: 'Inter_500Medium', fontSize: 11, textAlign: 'center', alignSelf: 'stretch' },

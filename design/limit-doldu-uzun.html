@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Albor — Günlük limit doldu, uzun ekran</title>
+<style>
+  /* Referans: iPhone 17 Pro, 402 pt genişlik. Kaynak: AdOrPremiumSheet (adSheetTitle). Tasarım dili: DESIGN.md. Kod değişmedi, yalnızca tasarım. */
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #E9E4DA; font-family: -apple-system, "SF Pro Text", Inter, system-ui, sans-serif; padding-bottom: 40px; }
+  body[data-mode="dark"] { background: #0A0A09; }
+  .switch { position: sticky; top: 0; z-index: 50; display: flex; gap: 8px; justify-content: center; padding: 10px; background: rgba(233,228,218,.94); backdrop-filter: blur(8px); }
+  body[data-mode="dark"] .switch { background: rgba(10,10,9,.94); }
+  .switch button { min-height: 40px; padding: 0 14px; border-radius: 20px; border: 1px solid #8884; background: #fff; color: #24211E; font: 600 13px/1 inherit; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: #1F5F5B; color: #fff; border-color: #1F5F5B; }
+  svg.i { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.15em; }
+  p, h1, h2, h3 { margin: 0; }
+
+  .phone { --serif: "Playfair Display", Georgia, serif; width: 402px; margin: 16px auto 0; background: var(--bg); color: var(--ink); border-radius: 48px; overflow: clip; position: relative; box-shadow: 0 0 0 10px #111, 0 30px 80px rgba(0,0,0,.35); }
+  .phone[data-m="light"] { --bg:#F7F3EC; --card:#FFFDF9; --bd:#E6DED3; --ink:#24211E; --t2:#6B625A; --mut:#8C837A; --pet:#1F5F5B; --onpet:#fff; --pc:#E2EDEA; --gold:#E9A94B; --goldtx:#8A5A0E; --hero:#1B4B48; --herobd:#1B4B48; --glow:rgba(233,169,75,.30); --track:#E4DDD2; --tile:rgba(36,33,30,.05); --ok:#3A5F3C; }
+  .phone[data-m="dark"]  { --bg:#141413; --card:#201F1D; --bd:#2F2E2B; --ink:#F2EEE8; --t2:#A8A29A; --mut:#7E7870; --pet:#7CC0B6; --onpet:#1A1A1A; --pc:#1F3634; --gold:#F0C170; --goldtx:#F0C170; --hero:#1F3A37; --herobd:#2E5A55; --glow:rgba(240,193,112,.20); --track:#2A2927; --tile:rgba(255,255,255,.06); --ok:#6FBF73; }
+  .island { position: absolute; top: 11px; left: 50%; width: 126px; height: 37px; margin-left: -63px; background: #000; border-radius: 20px; z-index: 40; }
+  .status { height: 62px; padding: 20px 14px 0; display: flex; justify-content: space-between; font-size: 16px; font-weight: 600; }
+
+  /* ── Üst: kapat + mesaj ── */
+  .top { position: relative; padding: 0 20px 8px; overflow: hidden; background: radial-gradient(120% 80% at 50% -10%, var(--glow) 0%, transparent 62%); }
+  .close { position: absolute; top: 4px; right: 16px; width: 44px; height: 44px; border-radius: 22px; display: grid; place-items: center; background: var(--card); border: .5px solid var(--bd); color: var(--t2); font-size: 18px; }
+  .msg { padding-top: 40px; text-align: center; }
+  .moon { width: 64px; height: 64px; margin: 0 auto; border-radius: 32px; display: grid; place-items: center; background: var(--pc); color: var(--pet); font-size: 28px; }
+  .eyebrow { margin-top: 18px; font-size: 12px; letter-spacing: .08em; font-weight: 600; text-transform: uppercase; color: var(--goldtx); }
+  .msg h1 { margin-top: 8px; font-family: var(--serif); font-size: 30px; line-height: 1.15; font-weight: 700; }
+  .msg .sub { margin: 12px auto 0; max-width: 320px; font-size: 15px; line-height: 1.5; color: var(--t2); }
+
+  /* ── Günlük şerit ── */
+  .strip { margin: 24px 20px 0; padding: 16px; background: var(--card); border: .5px solid var(--bd); border-radius: 18px; box-shadow: 0 1px 2px rgba(36,33,30,.04); }
+  .strip .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 14px; }
+  .strip b { font-weight: 600; }
+  .strip .reset { color: var(--t2); font-size: 13px; }
+  .segs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 12px; }
+  .segs i { height: 6px; border-radius: 3px; background: var(--pet); }
+
+  /* ── Premium hero (tek birincil eylem) ── */
+  .hero { position: relative; margin: 20px 20px 0; padding: 22px 20px 20px; border-radius: 24px; background: var(--hero); border: .5px solid var(--herobd); color: #F5F1E8; overflow: hidden; box-shadow: 0 14px 30px rgba(20,60,56,.22); }
+  .sun { position: absolute; right: -34px; top: -30px; width: 168px; height: 130px; pointer-events: none; transform: scaleY(-1); }
+  .hero > *:not(.sun) { position: relative; }
+  .hero .eb { font-size: 12px; letter-spacing: .08em; font-weight: 600; color: var(--gold); text-transform: uppercase; }
+  .hero h2 { margin: 10px 0 6px; max-width: 66%; font-family: var(--serif); font-size: 26px; line-height: 1.15; font-weight: 700; }
+  .hero .copy { max-width: 86%; font-size: 14px; line-height: 1.45; color: #D5E4E0; }
+  .perks { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; font-size: 14px; color: #E6EFEC; }
+  .perks li { display: flex; align-items: center; gap: 10px; }
+  .perks svg { color: var(--gold); flex: none; }
+  .cta { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; margin-top: 20px; border-radius: 26px; background: var(--gold); color: #2A1E08; font-size: 16px; font-weight: 700; }
+  .hero .hint { margin-top: 10px; text-align: center; font-size: 12px; color: #BCD0CC; }
+
+  /* ── veya ── */
+  .or { display: flex; align-items: center; gap: 12px; margin: 22px 40px 0; font-size: 12px; color: var(--t2); }
+  .or::before, .or::after { content: ""; flex: 1; height: .5px; background: var(--bd); }
+
+  /* ── Reklam seçeneği (ikincil) ── */
+  .ad { margin: 18px 20px 0; padding: 16px; background: var(--card); border: .5px solid var(--bd); border-radius: 18px; box-shadow: 0 1px 2px rgba(36,33,30,.04); }
+  .ad .btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 24px; border: 1.5px solid var(--pet); color: var(--pet); font-size: 16px; font-weight: 600; }
+  .ad .btn.load { opacity: .6; }
+  .ad .btn.off { border-color: var(--bd); color: var(--mut); }
+  .ad .hint { margin-top: 10px; text-align: center; font-size: 12px; line-height: 1.4; color: var(--t2); }
+  .spin { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--pc); border-top-color: var(--pet); animation: sp 1s linear infinite; }
+  @keyframes sp { to { transform: rotate(360deg); } }
+
+  /* ── Alt ── */
+  .foot { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-top: 18px; padding-bottom: 44px; }
+  .foot span { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600; color: var(--pet); }
+  .foot .later { color: var(--t2); font-weight: 500; }
+  .home { width: 134px; height: 5px; border-radius: 3px; background: var(--ink); opacity: .85; margin: 0 auto 8px; }
+
+  /* ── Durumlar ── */
+  .states { width: 402px; margin: 36px auto 0; }
+  .states h2 { font-family: "Playfair Display", Georgia, serif; font-size: 22px; color: #24211E; margin-bottom: 4px; }
+  body[data-mode="dark"] .states h2 { color: #F2EEE8; }
+  .states > p { font-size: 13px; color: #6B625A; margin-bottom: 14px; }
+  body[data-mode="dark"] .states > p { color: #A8A29A; }
+  .st { margin-bottom: 14px; }
+  .st .cap { margin: 0 0 6px 4px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #6B625A; }
+  body[data-mode="dark"] .st .cap { color: #A8A29A; }
+  .st .phone { margin: 0; width: 402px; border-radius: 24px; box-shadow: none; border: .5px solid #8883; padding-bottom: 18px; }
+  .st .ad { margin-top: 18px; }
+  .note { font-size: 12px; line-height: 1.5; color: #6B625A; margin-top: 22px; }
+  body[data-mode="dark"] .note { color: #A8A29A; }
+</style>
+</head>
+<body data-mode="light">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></symbol>
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.8-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1L3.2 9.4l6.1-.8z"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></symbol>
+  <symbol id="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<div class="switch">
+  <button data-m="light" aria-pressed="true">Açık</button>
+  <button data-m="dark" aria-pressed="false">Koyu</button>
+</div>
+
+<main class="phone" data-m="light">
+  <div class="island"></div>
+  <div class="status"><span>9:41</span><span>●●● 100</span></div>
+
+  <!-- 1 · Mesaj -->
+  <header class="top">
+    <span class="close" aria-label="Kapat"><svg class="i"><use href="#x"/></svg></span>
+    <div class="msg">
+      <div class="moon"><svg class="i"><use href="#moon"/></svg></div>
+      <p class="eyebrow">Günlük limit</p>
+      <h1>Bugünkü ücretsiz limit doldu</h1>
+      <p class="sub">Bir reklam izleyerek devam edebilir veya Premium ile her şeyi açabilirsin.</p>
+    </div>
+  </header>
+
+  <!-- 2 · Günlük şerit -->
+  <section class="strip">
+    <div class="row"><b>Bugün 3/3 hikâye</b><span class="reset"><svg class="i"><use href="#clock"/></svg> Yarın yeniden açılır</span></div>
+    <div class="segs"><i></i><i></i><i></i></div>
+  </section>
+
+  <!-- 3 · Premium (tek birincil eylem) -->
+  <section class="hero">
+    <svg class="sun" viewBox="0 0 168 130" fill="none" aria-hidden="true">
+      <circle cx="96" cy="104" r="40" fill="#E9A94B" opacity=".95"/><circle cx="96" cy="104" r="62" fill="#E9A94B" opacity=".14"/><circle cx="96" cy="104" r="84" fill="#E9A94B" opacity=".08"/>
+      <g stroke="#F3C877" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M96 40V22"/><path d="M60 52l-10-12"/><path d="M132 52l10-12"/><path d="M40 78l-16-6"/><path d="M152 78l16-6"/></g>
+    </svg>
+    <p class="eb">Albor Premium</p>
+    <h2>Hepsini aç, reklamsız</h2>
+    <p class="copy">Premium reklamları kaldırır ve tüm hikayeleri açar.</p>
+    <ul class="perks">
+      <li><svg class="i"><use href="#check"/></svg>Günlük kota yok</li>
+      <li><svg class="i"><use href="#check"/></svg>Tüm hikâyeler açık</li>
+      <li><svg class="i"><use href="#check"/></svg>Reklam yok</li>
+    </ul>
+    <div class="cta"><svg class="i"><use href="#star"/></svg>Premium'u gör</div>
+    <p class="hint">7 gün ücretsiz dene, istediğin zaman iptal et.</p>
+  </section>
+
+  <!-- 4 · veya -->
+  <div class="or">veya</div>
+
+  <!-- 5 · Reklam (ikincil) -->
+  <section class="ad">
+    <div class="btn"><svg class="i"><use href="#play"/></svg>Reklam izle</div>
+    <p class="hint">Kısa bir reklam bu işlemi bir kez açar.</p>
+  </section>
+
+  <!-- 6 · Alt -->
+  <footer class="foot">
+    <span>Satın alımları geri yükle</span>
+    <span class="later">Şimdi değil</span>
+    <div class="home"></div>
+  </footer>
+</main>
+
+<!-- Durumlar: reklam seçeneğinin üç hâli -->
+<section class="states">
+  <h2>Reklam seçeneği durumları</h2>
+  <p>Ekranın geri kalanı değişmez; yalnızca reklam kartı.</p>
+
+  <div class="st"><p class="cap">Yükleniyor</p>
+    <div class="phone" data-m="light"><section class="ad"><div class="btn load"><span class="spin"></span>Reklam izle</div><p class="hint">Kısa bir reklam bu işlemi bir kez açar.</p></section></div></div>
+
+  <div class="st"><p class="cap">Hazır değil</p>
+    <div class="phone" data-m="light"><section class="ad"><div class="btn off">Daha sonra dene</div><p class="hint">Reklam şu anda hazır değil.</p></section></div></div>
+
+  <p class="note">Yeni metinler (kodda yok, i18n gerekir): “Günlük limit”, “Bugün 3/3 hikâye”, “Yarın yeniden açılır”, “Hepsini aç, reklamsız”, üç avantaj satırı, “7 gün ücretsiz dene…”, “Şimdi değil”. Diğerleri mevcut anahtarlar: adSheetTitle, adSheetSubtitle, adWatchCta, adWatchSubtitle, adNotReady, adTryAgainLater, premiumUpgradeCta, premiumUpgradeSubtitle, paywallRestoreCta. Kota sayısı koddaki gerçek kotaya bağlanmalı (metinlerde 2 ve 3 karışık geçiyor).</p>
+</section>
+
+<script>
+  document.querySelectorAll('.switch button').forEach((b) => b.addEventListener('click', () => {
+    const m = b.dataset.m;
+    document.body.dataset.mode = m;
+    document.querySelectorAll('.phone').forEach((p) => { p.dataset.m = m; });
+    document.querySelectorAll('.switch button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  }));
+</script>
+</body>
+</html>

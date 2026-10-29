@@ -80,8 +80,8 @@ const PREMIUM_BONUS_STORAGE_KEY = '@albor_premium_bonus_until';
 // date-keyed record the "3 free stories" limit is not a limit at all — reading
 // them just moves them out of the candidate pool and three more become free.
 const FREE_READS_STORAGE_KEY = '@albor_free_reads';
-const STORY_COLLECTION_IDS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55'];
-const DEFAULT_STORY_COLLECTIONS = ['new', 'opus55'];
+const STORY_COLLECTION_IDS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55', 'son55'];
+const DEFAULT_STORY_COLLECTIONS = ['new', 'son55'];
 const EMPTY_PREFERENCES = {
   categories: [], time: null, reminderWindow: 'evening', reminderHour: 21,
   reminderWindows: ['evening'], storyVersion: 2, storyCollections: DEFAULT_STORY_COLLECTIONS,
@@ -100,51 +100,10 @@ const normalizeCategoryIds = (categories) => {
   )];
 };
 
-const normalizeMinutes = (rawMinutes) => {
-  if (rawMinutes == null) return null;
-
-  const parsed = Number(rawMinutes);
-  if (Number.isNaN(parsed)) return null;
-  if (parsed <= 3) return 3;
-  if (parsed <= 6) return 6;
-  return 9;
-};
-
-const inferMinutesFromTimePreference = (timePreference) => {
-  if (!timePreference) return null;
-
-  if (typeof timePreference === 'number') {
-    return normalizeMinutes(timePreference);
-  }
-
-  if (typeof timePreference === 'string') {
-    const match = timePreference.match(/\d+/);
-    return normalizeMinutes(match ? match[0] : null);
-  }
-
-  if (typeof timePreference === 'object') {
-    if (timePreference.minutes != null) {
-      return normalizeMinutes(timePreference.minutes);
-    }
-
-    const candidates = [timePreference.label, timePreference.value, timePreference.title];
-    for (const candidate of candidates) {
-      if (typeof candidate === 'string') {
-        const match = candidate.match(/\d+/);
-        if (match) return normalizeMinutes(match[0]);
-      }
-    }
-  }
-
-  return null;
-};
-
-const getDailyStoryTarget = (minutes) => {
-  if (minutes === 3) return 1;
-  if (minutes === 6) return 2;
-  if (minutes === 9) return 3;
-  return null;
-};
+// The daily plan is no longer a user choice: every reader gets the same
+// target, and previously saved 3/6/9 minute preferences are migrated to it.
+const DEFAULT_DAILY_STORY_TARGET = 3;
+const DEFAULT_DAILY_MINUTES = 9;
 
 const buildReminderPreference = (reminderPreference) => {
   if (!reminderPreference) {
@@ -183,26 +142,11 @@ const buildReminderPreference = (reminderPreference) => {
   return { reminderWindow: 'evening', reminderHour: 21 };
 };
 
-const buildTimePreference = (timePreference) => {
-  const minutes = inferMinutesFromTimePreference(timePreference);
-  if (!minutes) return null;
-
-  const dailyStoryTarget = getDailyStoryTarget(minutes);
-  const icon = typeof timePreference === 'object' && timePreference?.icon
-    ? timePreference.icon
-    : minutes === 3
-      ? '☕'
-      : minutes === 6
-        ? '📚'
-        : '🚀';
-
-  return {
-    ...(typeof timePreference === 'object' && timePreference ? timePreference : {}),
-    minutes,
-    dailyStoryTarget,
-    icon,
-  };
-};
+const buildTimePreference = () => ({
+  minutes: DEFAULT_DAILY_MINUTES,
+  dailyStoryTarget: DEFAULT_DAILY_STORY_TARGET,
+  icon: '🚀',
+});
 
 const normalizePreferences = (storedPreferences) => {
   if (!storedPreferences || typeof storedPreferences !== 'object') {
@@ -281,17 +225,18 @@ const normalizeUserProfile = (storedProfile) => {
   };
 };
 
-const normalizeFavoriteCollections = (storedCollections, favorites = []) => {
+// Collections (e.g. "saved_for_later") are independent of favorites: a story
+// can be saved for later without being a favorite.
+const normalizeFavoriteCollections = (storedCollections) => {
   const base = {
     ...EMPTY_FAVORITE_COLLECTIONS,
     ...(storedCollections && typeof storedCollections === 'object' ? storedCollections : {}),
   };
-  const favoriteSet = new Set((favorites || []).map((id) => String(id)));
 
   return Object.fromEntries(
     Object.entries(base).map(([key, list]) => {
       const normalizedList = Array.isArray(list)
-        ? [...new Set(list.map((id) => String(id)).filter((id) => favoriteSet.has(id)))]
+        ? [...new Set(list.map((id) => String(id)))]
         : [];
       return [key, normalizedList];
     })
@@ -552,7 +497,7 @@ export const UserDataProvider = ({ children }) => {
         }
         if (storedShareCount) setShareCount(JSON.parse(storedShareCount));
         const parsedCollections = storedCollections ? JSON.parse(storedCollections) : EMPTY_FAVORITE_COLLECTIONS;
-        const normalizedCollections = normalizeFavoriteCollections(parsedCollections, parsedFavorites);
+        const normalizedCollections = normalizeFavoriteCollections(parsedCollections);
         setFavoriteCollections(normalizedCollections);
         if (JSON.stringify(parsedCollections) !== JSON.stringify(normalizedCollections)) {
           await AsyncStorage.setItem(FAVORITE_COLLECTIONS_STORAGE_KEY, JSON.stringify(normalizedCollections));
@@ -620,7 +565,7 @@ export const UserDataProvider = ({ children }) => {
 
   useEffect(() => {
     const syncCollectionsWithFavorites = async () => {
-      const normalized = normalizeFavoriteCollections(favoriteCollections, favorites);
+      const normalized = normalizeFavoriteCollections(favoriteCollections);
       if (JSON.stringify(normalized) === JSON.stringify(favoriteCollections)) return;
       setFavoriteCollections(normalized);
       await AsyncStorage.setItem(FAVORITE_COLLECTIONS_STORAGE_KEY, JSON.stringify(normalized));
@@ -741,14 +686,6 @@ export const UserDataProvider = ({ children }) => {
 
   const toggleReadLater = async (storyId) => {
     const strId = String(storyId);
-
-    setFavorites((prev) => {
-      if (prev.some((id) => String(id) === strId)) return prev;
-      const nextFavorites = [...prev, strId];
-      AsyncStorage.setItem('@albor_favorites', JSON.stringify(nextFavorites));
-      enqueueAndSync('add_favorite', { storyId: strId });
-      return nextFavorites;
-    });
 
     setFavoriteCollections((prev) => {
       const current = Array.isArray(prev?.saved_for_later) ? prev.saved_for_later : [];
@@ -914,7 +851,7 @@ export const UserDataProvider = ({ children }) => {
         reminderWindow: prefs.reminderWindow,
         reminderHour: prefs.reminderHour,
         remindersEnabled: prefs.remindersEnabled,
-        dailyStoryTarget: prefs.time?.dailyStoryTarget || 2,
+        dailyStoryTarget: prefs.time?.dailyStoryTarget || DEFAULT_DAILY_STORY_TARGET,
         totalReads,
         streak,
         shareCount,
@@ -978,7 +915,7 @@ export const UserDataProvider = ({ children }) => {
         reminderWindow: nextPrefs.reminderWindow,
         reminderHour: nextPrefs.reminderHour,
         remindersEnabled: nextPrefs.remindersEnabled,
-        dailyStoryTarget: nextPrefs.time?.dailyStoryTarget || 2,
+        dailyStoryTarget: nextPrefs.time?.dailyStoryTarget || DEFAULT_DAILY_STORY_TARGET,
         totalReads,
         streak,
         shareCount,

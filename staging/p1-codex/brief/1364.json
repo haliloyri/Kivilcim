@@ -1,0 +1,65 @@
+{
+  "story_id": 1364,
+  "kind": "concept",
+  "book": {
+    "title": "Option B (Zihinsel Dayanıklılık)",
+    "author": "Sheryl Sandberg and Adam Grant",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "The three Ps (personalization, pervasiveness, permanence) come from Martin Seligman's research, which the book uses; Grant explained them to Sandberg. The supplied text says Seligman told Sandberg directly and gives her specific thoughts about her work; I could not confirm those, so her thoughts are described only in general terms (it will never end, it affects everything, it was my fault). The book's own examples of the three Ps are not reproduced from memory.",
+  "facts": [
+    "Adam Grant told Sheryl Sandberg about three ways of thinking that can deepen sadness after a setback.",
+    "They come from the research of the psychologist Martin Seligman.",
+    "Permanence: believing the pain will last forever.",
+    "Pervasiveness: believing it affects every part of life.",
+    "Personalization: believing it is your fault.",
+    "Sandberg recognized all three in her own thinking after her husband died.",
+    "Naming the three Ps gave her a way to challenge them: it will pass, it does not cover everything, it was not all my fault."
+  ],
+  "tension": "Three thoughts that feel like facts keep grief heavier, and they can be questioned once they are named.",
+  "opening_idea": "Open on Grant, the psychologist, laying out three kinds of thought to a grieving friend.",
+  "lessons": [
+    {
+      "idea": "Name the thought, then test it.",
+      "anchor": "Each P is a claim that can be checked."
+    },
+    {
+      "idea": "Not every part of life is equally affected.",
+      "anchor": "Pervasiveness."
+    },
+    {
+      "idea": "Personalization is not the same as responsibility.",
+      "anchor": "Self-blame."
+    }
+  ],
+  "reflect": [
+    "A time you said always or never about a setback.",
+    "An area of life that stayed fine when another fell apart."
+  ],
+  "reflect_final": "Which of the three, permanence, pervasiveness or personalization, is loudest in your head right now?",
+  "use_cases": [
+    {
+      "situation": "A friend says everything is ruined after a setback.",
+      "move": "Gently ask which part of their life is affected and which parts are okay.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A project fails and your team blames one person.",
+      "move": "Look at what circumstances contributed, not only who was involved.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You catch yourself thinking it will never get better.",
+      "move": "Replace never with right now and write it down.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Hear 'forever,' 'everything,' or 'my fault' in your own thinking, and test each one.",
+  "conversation_variants": {
+    "punchline_idea": "Three words in grief, forever, everything and my fault, can be tested once you hear them.",
+    "thirty_sec_idea": "After her husband died, psychologist Adam Grant told Sheryl Sandberg about Martin Seligman's three Ps: permanence, pervasiveness and personalization. She heard all three in her own head. Naming them gave her something to question.",
+    "question_idea": "Ask when they last caught themselves saying always or never about a bad day.",
+    "key_contrast_idea": "Forever, everything, my fault."
+  }
+}

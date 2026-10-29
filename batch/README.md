@@ -152,3 +152,19 @@ gönderme (V8) planın son adımı — ayrı, elle onaylanan bir iş.
   "review/" akışı henüz otomatikleştirilmedi) — `staging/p1/brief/*.json`
   içindeki `confidence` alanını yazım batch'ini göndermeden önce elle
   taramanız önerilir: `grep -l '"confidence": "low"' staging/p1/brief/*.json`
+
+## AI-tell checks
+
+`scripts/p1/validate.mjs` now calls `scripts/p1/ai-tells.mjs` (rules adapted from the
+humanizer skill: stock vocabulary, significance inflation, promotional language, generic
+endings, announcer phrases, negative parallelism, chatty openers such as "Picture/Imagine",
+plus rhythm checks). Chatbot artifacts / cutoff disclaimers / flattery are **errors**;
+everything else is a **warning** with a weighted "AI-tell score" per 100 words (target < 0.7).
+
+Revision list for a language (worst first, with a per-pattern tally):
+
+```bash
+node scripts/p1/ai-tells.mjs en            # all stories with >= 1 hit
+node scripts/p1/ai-tells.mjs en --min 3    # only the clearly flagged ones
+node scripts/p1/ai-tells.mjs en 1158 1139  # specific ids
+```

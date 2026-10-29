@@ -1,0 +1,66 @@
+{
+  "story_id": 1361,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Intention Experiment (Niyet)",
+    "author": "Lynne McTaggart",
+    "year": "2007"
+  },
+  "confidence": "low",
+  "confidence_note": "McTaggart reviews studies of distant healing and prayer, including trials in cardiac care. I cannot confirm the exact details of the trial in the supplied text (names, sizes, the discharge-time result), so only its outline is used: a controlled, blinded study of cardiac patients with volunteers praying by name list, reported by McTaggart as showing fewer complications. The 'multiple studies show similar results' claim is left as her argument. Editorial caveat, not from the book: large later trials, including one with more than 1,800 heart-surgery patients, found no benefit from being prayed for.",
+  "facts": [
+    "McTaggart reviews research on distant healing, where people direct healing intention at someone who is elsewhere.",
+    "She describes a controlled, blinded trial with cardiac intensive-care patients split into two groups.",
+    "Volunteers prayed by name for patients in one group; the patients did not know.",
+    "She reports that the prayed-for group had fewer complications.",
+    "She argues that findings across several studies are similar enough that dismissing them as mere belief misses the data.",
+    "Her phrase of caution: hard to explain does not mean not real.",
+    "Editorial caveat, not from the book: the largest later trial, with more than 1,800 heart-surgery patients, found no benefit, and some critics point to flaws in the earlier ones."
+  ],
+  "tension": "Patients did not know anyone was praying for them, yet one trial reportedly saw a difference, while the biggest later trial saw none.",
+  "opening_idea": "Start with the patients who had no idea a stranger was praying for them by name.",
+  "lessons": [
+    {
+      "idea": "Blinding is what lets a strange idea be tested at all.",
+      "anchor": "Patients did not know which group they were in."
+    },
+    {
+      "idea": "Hard to explain and not real are different claims.",
+      "anchor": "McTaggart's argument."
+    },
+    {
+      "idea": "A single early trial is a prompt for repetition.",
+      "anchor": "The editorial caveat."
+    }
+  ],
+  "reflect": [
+    "A time you accepted or dismissed something without looking at the data.",
+    "A person you could support with attention rather than advice.",
+    "A study headline you wanted to be true."
+  ],
+  "reflect_final": "How do you tell the difference between hoping something works and knowing it does?",
+  "use_cases": [
+    {
+      "situation": "Someone offers prayer or good wishes for a person who is ill.",
+      "move": "Accept the care as care, and leave the claims about outcomes out of it.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague quotes a study about alternative treatment.",
+      "move": "Ask how many people it covered and whether larger trials agreed.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is unwell and far away.",
+      "move": "Send a short message today so they know someone is thinking of them.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Wish well freely, and still ask for evidence before calling it treatment.",
+  "conversation_variants": {
+    "punchline_idea": "In one cardiac trial, patients had no idea strangers were praying for them, and McTaggart says that group did better.",
+    "thirty_sec_idea": "McTaggart describes a blinded cardiac-care trial where volunteers prayed for half the patients by name. She reports fewer complications in that group and argues hard to explain does not mean unreal. Later large trials found no benefit.",
+    "question_idea": "Ask whether the other person has ever been surprised by a study that went against what they expected.",
+    "key_contrast_idea": "Hard to explain, still unproven."
+  }
+}

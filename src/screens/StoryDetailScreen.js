@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import {
   View, Text, TouchableOpacity, StyleSheet,
-  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Platform, ActivityIndicator, Share, AppState
+  StatusBar, Animated, Dimensions, Modal, Alert, Linking, ScrollView, Platform, ActivityIndicator, Share, AppState, Image
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { captureRef } from 'react-native-view-shot';
@@ -9,14 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Speech from 'expo-speech';
 import * as Sharing from 'expo-sharing';
 import * as Clipboard from 'expo-clipboard';
-import {
-  useAudioRecorder,
-  useAudioRecorderState,
-  RecordingPresets,
-  AudioModule,
-  setAudioModeAsync,
-  createAudioPlayer,
-} from 'expo-audio';
+import { setAudioModeAsync, createAudioPlayer } from 'expo-audio';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
@@ -25,13 +18,12 @@ import { useStories } from '../context/StoriesContext';
 import { FEATURE_FLAGS } from '../config/featureFlags';
 import { t } from '../locales/i18n';
 import { getStoryByLang } from '../db/db';
-import { getCategoryTheme } from '../utils/categoryImages';
+import { getCategoryTheme, getCategoryPillImage } from '../utils/categoryImages';
 import { readableTextOn } from '../theme/theme';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import { ShareCardCanvas, ShareCardPreview } from '../components/ShareCardCanvas';
 import { shouldShowAd, rewardedGate, loadRewarded, showRewarded, loadInterstitial, showInterstitial, recordStoryRead } from '../utils/ads';
-import { getBookBuyLinks } from '../utils/bookLinks';
 import { getShareLabel, getShareUrl } from '../utils/share';
 import { hasReachedReadingCompletion, isShortStoryFullyVisible, ONE_MINUTE_SUMMARY_DWELL_MS, SHORT_STORY_DWELL_MS } from '../utils/storyCompletion';
 import { getStoryAudioAsset } from '../utils/storyAudio';
@@ -39,7 +31,7 @@ import { intlLocaleFor } from '../utils/locale';
 import StoryBody from '../components/story/StoryBody';
 import ReaderPanels from '../components/story/ReaderPanels';
 import ReaderActions from '../components/story/ReaderActions';
-import Reanimated, { useAnimatedRef, useScrollOffset, useSharedValue } from 'react-native-reanimated';
+import Reanimated, { useAnimatedRef, useAnimatedStyle, useScrollOffset, useSharedValue } from 'react-native-reanimated';
 import { parseStoryMarkup, toPlainText, extractShareParts } from '../utils/storyMarkup';
 
 const { width, height } = Dimensions.get('window');
@@ -66,8 +58,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const readerScrollRef = useAnimatedRef();
   const readerScrollOffset = useScrollOffset(readerScrollRef);
   const readerViewport = useSharedValue(0);
-  const endActionsY = useSharedValue(Number.MAX_SAFE_INTEGER);
+  const readerContentHeight = useSharedValue(0);
+  const readProgressStyle = useAnimatedStyle(() => {
+    const scrollable = readerContentHeight.get() - readerViewport.get();
+    const ratio = scrollable > 0 ? Math.min(1, Math.max(0, readerScrollOffset.get() / scrollable)) : 0;
+    return { width: `${Math.round(ratio * 100)}%` };
+  });
   const [readerSettingsOpen, setReaderSettingsOpen] = useState(false);
+  const [readerMoreOpen, setReaderMoreOpen] = useState(false);
   const [lineSpacing, setLineSpacing] = useState(1.55);
   const titleEnterAnim = useRef(new Animated.Value(0)).current;
   const hasReachedBottom = useRef(false);
@@ -115,17 +113,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
     pendingRewardedRef.current = null;
     showRewarded(p.ad, { onEarned: p.onEarned, onClosed: p.onClosed });
   };
-  const audioRecorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
-  const recorderState = useAudioRecorderState(audioRecorder);
-  const [isRecording, setIsRecording] = useState(false);
-  const isRecordingRef = useRef(false);
-  const recordingStopTimeoutRef = useRef(null);
-  const [recordingDuration, setRecordingDuration] = useState(0);
-  // Up to 3 recordings per story: [{uri, durationMs, date}]
-  const [audioRecordings, setAudioRecordings] = useState([]);
-  const [playingIndex, setPlayingIndex] = useState(null);
-  const [soundObj, setSoundObj] = useState(null);
-  const [recPanelVisible, setRecPanelVisible] = useState(false);
   // Full-screen interstitial gate: free users see an ad before the story.
   const [storyAdGate, setStoryAdGate] = useState(
     shouldShowAd({ isPremium, isOnboarded: true, kind: 'interstitial' })
@@ -147,12 +134,22 @@ const StoryDetailScreen = ({ route, navigation }) => {
     player.remove();
   }, []);
 
+  const narrationCapTimerRef = useRef(null);
+
+  const clearNarrationCap = React.useCallback(() => {
+    if (narrationCapTimerRef.current) {
+      clearTimeout(narrationCapTimerRef.current);
+      narrationCapTimerRef.current = null;
+    }
+  }, []);
+
   const stopStoryNarration = React.useCallback(() => {
+    clearNarrationCap();
     Speech.stop();
     releaseStoryAudioPlayer();
     setIsSpeaking(false);
     speechStartedAt.current = null;
-  }, [releaseStoryAudioPlayer]);
+  }, [clearNarrationCap, releaseStoryAudioPlayer]);
 
   React.useEffect(() => {
     const blocked = Boolean(shareModalVisible || cardGate || adSheet || storyAdGate || oneMinuteSummaryOpen || readerSettingsOpen);
@@ -160,43 +157,16 @@ const StoryDetailScreen = ({ route, navigation }) => {
     return () => setBadgePresentationBlocked('story_detail_overlay', false);
   }, [shareModalVisible, cardGate, adSheet, storyAdGate, oneMinuteSummaryOpen, readerSettingsOpen, setBadgePresentationBlocked]);
 
-  const AUDIO_LIST_KEY = `story_audio_list_${story?.story_id}`;
-  const MAX_RECORDINGS = 3;
-  // Maksimum kayıt süresi (otomatik durur). 90 sn = 1,5 dk.
-  const MAX_DURATION_SECONDS = 90;
-  const MAX_DURATION_MS = MAX_DURATION_SECONDS * 1000;
+  // Sesli Anlat üst sınırı: 3 dk.
+  const NARRATION_MAX_MS = 3 * 60 * 1000;
 
   React.useEffect(() => () => {
-    if (recordingStopTimeoutRef.current) clearTimeout(recordingStopTimeoutRef.current);
+    if (narrationCapTimerRef.current) clearTimeout(narrationCapTimerRef.current);
   }, []);
-
-  React.useEffect(() => {
-    return soundObj
-      ? () => { soundObj.remove(); }
-      : undefined;
-  }, [soundObj]);
 
   React.useEffect(() => {
     setIsTakeawaySaved(isCareerTakeawaySaved(story?.story_id));
   }, [story?.story_id, isCareerTakeawaySaved]);
-
-  React.useEffect(() => {
-    const loadSavedAudio = async () => {
-      try {
-        if (story?.story_id) {
-          const raw = await AsyncStorage.getItem(AUDIO_LIST_KEY);
-          if (raw) {
-            const parsed = JSON.parse(raw);
-            if (Array.isArray(parsed)) setAudioRecordings(parsed);
-          }
-        }
-      } catch (e) {
-        console.warn('Failed to load saved audio list', e);
-      }
-    };
-    loadSavedAudio();
-  }, [story?.story_id]);
-
 
   // On open, show a full-screen (interstitial) ad every 3 stories with a
   // minimum 3-minute cooldown between ads. Premium users skip entirely.
@@ -235,148 +205,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
     } else {
       navigation.navigate('Paywall', { reason: 'free_limit_reached', source: 'story_detail_next' });
     }
-  };
-
-  const startRecording = async () => {
-    if (audioRecordings.length >= MAX_RECORDINGS) return;
-    try {
-      stopStoryNarration();
-      if (soundObj) {
-        soundObj.remove();
-        setSoundObj(null);
-        setPlayingIndex(null);
-      }
-
-      const permission = await AudioModule.requestRecordingPermissionsAsync();
-      if (permission.granted) {
-        await setAudioModeAsync({
-          allowsRecording: true,
-          playsInSilentMode: true,
-        });
-        await audioRecorder.prepareToRecordAsync();
-        audioRecorder.record();
-        isRecordingRef.current = true;
-        setIsRecording(true);
-        setRecordingDuration(0);
-        if (recordingStopTimeoutRef.current) clearTimeout(recordingStopTimeoutRef.current);
-        recordingStopTimeoutRef.current = setTimeout(() => {
-          stopRecording(MAX_DURATION_MS);
-        }, MAX_DURATION_MS);
-      } else {
-        Alert.alert(t('alert_error', lang) || 'Error', 'Mikrofon izni gereklidir.');
-      }
-    } catch (err) {
-      console.error('Failed to start recording', err);
-    }
-  };
-
-  const stopRecording = async (finalDuration = recordingDuration) => {
-    if (!isRecordingRef.current) return;
-    try {
-      isRecordingRef.current = false;
-      if (recordingStopTimeoutRef.current) clearTimeout(recordingStopTimeoutRef.current);
-      recordingStopTimeoutRef.current = null;
-      setIsRecording(false);
-      await audioRecorder.stop();
-      const uri = audioRecorder.uri;
-
-      const newEntry = { uri, durationMs: finalDuration, date: new Date().toISOString() };
-      const updated = [...audioRecordings, newEntry].slice(0, MAX_RECORDINGS);
-      setAudioRecordings(updated);
-
-      if (story?.story_id) {
-        await AsyncStorage.setItem(AUDIO_LIST_KEY, JSON.stringify(updated));
-      }
-
-      const activeStory = localStory || story;
-      if (uri && finalDuration >= 3000 && activeStory?.story_id) {
-        await recordCareerInsight({
-          storyId: activeStory.story_id,
-          categoryId: activeStory.parent_cat_id ?? null,
-          eventSubtype: 'voice_recording',
-          metadata: { source: 'voice_recording' },
-        });
-      }
-    } catch (error) {
-      console.error('Failed to stop recording', error);
-    }
-  };
-
-  // expo-audio reports recording progress via recorderState. Mirror it into
-  // recordingDuration and auto-stop when the max length is reached.
-  React.useEffect(() => {
-    if (!isRecording) return;
-    const ms = recorderState.durationMillis || 0;
-    setRecordingDuration(ms);
-    if (ms >= MAX_DURATION_MS) {
-      stopRecording(MAX_DURATION_MS);
-    }
-  }, [recorderState.durationMillis, isRecording]);
-
-  const toggleRecording = () => {
-    if (isRecording) {
-      stopRecording();
-    } else {
-      startRecording();
-    }
-  };
-
-  const playRecording = async (index) => {
-    try {
-      stopStoryNarration();
-      if (soundObj) {
-        soundObj.remove();
-        setSoundObj(null);
-      }
-      // Tap same index while playing → stop
-      if (playingIndex === index) {
-        setPlayingIndex(null);
-        return;
-      }
-
-      const rec = audioRecordings[index];
-      if (!rec?.uri) return;
-
-      // allowsRecording:false routes playback to the loud speaker after a
-      // recording session (otherwise iOS keeps it quiet on the earpiece).
-      await setAudioModeAsync({ allowsRecording: false, playsInSilentMode: true });
-
-      const newSound = createAudioPlayer({ uri: rec.uri });
-      setSoundObj(newSound);
-      setPlayingIndex(index);
-
-      newSound.addListener('playbackStatusUpdate', (status) => {
-        if (status.didJustFinish) {
-          setPlayingIndex(null);
-          newSound.seekTo(0);
-        }
-      });
-      newSound.play();
-    } catch (error) {
-      console.error('Failed to play audio', error);
-    }
-  };
-
-  const deleteRecording = async (index) => {
-    try {
-      if (playingIndex === index && soundObj) {
-        soundObj.remove();
-        setSoundObj(null);
-        setPlayingIndex(null);
-      }
-      const updated = audioRecordings.filter((_, i) => i !== index);
-      setAudioRecordings(updated);
-      await AsyncStorage.setItem(AUDIO_LIST_KEY, JSON.stringify(updated));
-    } catch (error) {
-      console.error('Failed to delete recording', error);
-    }
-  };
-
-  const formatDuration = (ms) => {
-    const totalSec = Math.floor((ms || 0) / 1000);
-    const m = Math.floor(totalSec / 60);
-    const s = totalSec % 60;
-    return `${m}:${s.toString().padStart(2, '0')}`;
   };
 
   const handleWatchAdNext = async () => {
@@ -556,15 +384,16 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const displayCat = t(localStory.cat_display || localStory.cat || story.cat, localLang);
   const displayHook = localStory.hook || story.hook || '';
   const oneMinuteSummary = String(localStory.one_minute_summary || '').trim();
+  const collectionCode = String(story?.version ?? '').trim().toUpperCase();
   const categoryKey = story.parent_cat_raw || story.parent_cat || localStory.cat || story.cat;
   const baseCategoryTheme = getCategoryTheme(categoryKey, isDark);
-  // Reading uses one warm editorial accent; teal belongs to the main action.
+  // Category colour marks icon, section bars and small labels only; the main
+  // action stays petrol (DESIGN.md §1, §7).
   const categoryTheme = {
     ...baseCategoryTheme,
-    accent: colors.readerAccent,
-    textAccent: colors.readerAccentText,
-    borderColor: colors.readerBorder,
+    textAccent: baseCategoryTheme.textColor,
   };
+  const categoryPillImage = getCategoryPillImage(categoryKey, isDark).source;
 
   const storyUsage = Array.isArray(variantUsage) ? variantUsage.find(u => String(u.storyId) === String(story.story_id)) : null;
   const usageDate = storyUsage?.usedAt;
@@ -801,15 +630,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
   ]);
 
   const toggleSpeech = async () => {
+    const startNarrationCap = () => {
+      clearNarrationCap();
+      narrationCapTimerRef.current = setTimeout(stopStoryNarration, NARRATION_MAX_MS);
+    };
+
     if (isSpeaking || storyAudioPlayerRef.current) {
       stopStoryNarration();
       return;
-    }
-
-    if (soundObj) {
-      soundObj.remove();
-      setSoundObj(null);
-      setPlayingIndex(null);
     }
 
     // Packaged narrations were recorded for the legacy text; P1 bodies use device speech.
@@ -840,6 +668,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
         });
 
         player.play();
+        startNarrationCap();
         return;
       } catch (error) {
         releaseStoryAudioPlayer();
@@ -853,6 +682,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
     setIsSpeaking(true);
     speechStartedAt.current = Date.now();
+    startNarrationCap();
     Speech.speak(textToRead, {
       language: localLang === 'en' ? 'en-US' : localLang === 'es' ? 'es-ES' : localLang === 'de' ? 'de-DE' : 'tr-TR',
       rate: 0.95,
@@ -869,23 +699,25 @@ const StoryDetailScreen = ({ route, navigation }) => {
     });
   };
 
+  // Opened from the home "Dinle" button: start narration once the screen settles.
+  const toggleSpeechRef = React.useRef(toggleSpeech);
+  toggleSpeechRef.current = toggleSpeech;
+  const autoPlayedRef = React.useRef(false);
+  React.useEffect(() => {
+    if (!route.params?.autoPlayAudio) return undefined;
+    const timer = setTimeout(() => {
+      if (autoPlayedRef.current) return;
+      autoPlayedRef.current = true;
+      toggleSpeechRef.current();
+    }, 700);
+    return () => clearTimeout(timer);
+  }, [route.params?.autoPlayAudio]);
+
   const buildStoryTextSharePayload = () => {
     const cleanBody = toPlainText(displayBody, { headings: storySectionHeadings });
     const sourceParts = [displaySourceBook, localStory?.author].filter(Boolean).join(' — ');
     const sourceLine = sourceParts ? `\n\n${t('share_source', localLang)}${sourceParts}` : '';
     return `${displayTitle}\n\n${cleanBody}${sourceLine}\n\n${getShareUrl(localLang, { storyId: story?.story_id })}`.trim();
-  };
-
-  const sharePocketLine = async (line) => {
-    try {
-      const source = [displayTitle, displaySourceBook].filter(Boolean).join(' — ');
-      await Share.share({
-        message: `“${line}”\n\n${source}\n${getShareUrl(localLang, { storyId: story?.story_id })}`.trim(),
-      });
-      trackEvent(ANALYTICS_EVENTS.STORY_SHARED, { source: 'story_pocket', storyId: story?.story_id, lang: localLang });
-    } catch (e) {
-      console.warn('[story] pocket share failed:', e?.message);
-    }
   };
 
   const shareStoryAsText = async () => {
@@ -1316,7 +1148,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     formatBtnActive: {
       borderColor: colors.primary,
-      backgroundColor: isDark ? 'rgba(181,83,16,0.15)' : 'rgba(181,83,16,0.08)',
+      backgroundColor: colors.primaryContainer,
     },
     formatBtnText: {
       fontFamily: 'Inter_500Medium',
@@ -1331,7 +1163,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
       paddingHorizontal: 6,
       paddingVertical: 1,
       borderRadius: 6,
-      backgroundColor: isDark ? 'rgba(181,83,16,0.22)' : 'rgba(181,83,16,0.10)',
+      backgroundColor: colors.primaryContainer,
     },
     reelBadgeText: {
       fontFamily: 'Inter_500Medium',
@@ -1391,12 +1223,83 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     detailHeader: {
       flexDirection: 'row',
-      flexWrap: 'wrap',
       gap: 8,
       justifyContent: 'space-between',
       alignItems: 'center',
       paddingHorizontal: layout.padding.horizontal,
-      paddingVertical: 12
+      paddingTop: 6,
+      paddingBottom: 8,
+    },
+    toolbarGroup: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 8,
+      flexShrink: 1,
+    },
+    toolbarListen: {
+      paddingHorizontal: 12,
+    },
+    toolbarListenText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 14,
+      color: colors.text,
+    },
+    toolbarAa: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: 17,
+      color: colors.text,
+    },
+    readTrack: {
+      height: 3,
+      marginHorizontal: layout.padding.horizontal,
+      borderRadius: 2,
+      backgroundColor: colors.surfaceContainerHigh,
+      overflow: 'hidden',
+    },
+    readFill: {
+      height: '100%',
+      borderRadius: 2,
+      backgroundColor: colors.primary,
+    },
+    categoryRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 8,
+      marginBottom: 12,
+    },
+    categoryBadge: {
+      width: 28,
+      height: 28,
+      borderRadius: 9,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: categoryTheme.backgroundColor,
+    },
+    categoryBadgeLarge: {
+      width: 40,
+      height: 40,
+      borderRadius: 12,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: categoryTheme.backgroundColor,
+    },
+    categoryBadgeImage: {
+      width: '88%',
+      height: '88%',
+    },
+    categoryName: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+    },
+    collectionCode: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 11,
+      letterSpacing: 0.5,
+      borderWidth: 1,
+      borderRadius: 6,
+      paddingHorizontal: 6,
+      paddingVertical: 1,
+      overflow: 'hidden',
     },
     headerPillLeft: {
       flexDirection: 'row',
@@ -1414,8 +1317,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     storyHero: {
       paddingHorizontal: layout.padding.horizontal,
-      paddingTop: 8,
-      paddingBottom: 16,
+      paddingTop: 18,
+      paddingBottom: 12,
     },
     summaryChip: {
       alignSelf: 'flex-start',
@@ -1425,22 +1328,59 @@ const StoryDetailScreen = ({ route, navigation }) => {
       minHeight: 44,
       paddingHorizontal: 12,
       borderRadius: 22,
-      backgroundColor: colors.backgroundDark,
-      marginBottom: 16,
+      backgroundColor: colors.primaryContainer,
+      marginBottom: 8,
       maxWidth: '100%',
     },
     summaryChipText: {
       fontFamily: 'Inter_600SemiBold',
-      fontSize: 13,
-      color: colors.readerAccentText,
+      fontSize: 14,
+      color: colors.primaryText,
       flexShrink: 1,
+    },
+    endMark: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+      marginTop: 24,
+      marginHorizontal: layout.padding.horizontal,
+    },
+    endMarkLine: {
+      flex: 1,
+      height: StyleSheet.hairlineWidth,
+      backgroundColor: colors.border,
+    },
+    moreOverlay: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      backgroundColor: 'rgba(0,0,0,0.4)',
+    },
+    moreSheet: {
+      backgroundColor: colors.background,
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
+      paddingTop: 8,
+      paddingHorizontal: layout.padding.horizontal,
+    },
+    moreRow: {
+      minHeight: 56,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 14,
+    },
+    moreRowText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 16,
+      color: colors.text,
     },
     toolbarButton: {
       minHeight: 44,
       minWidth: 44,
       paddingHorizontal: 8,
       borderRadius: 22,
-      backgroundColor: colors.backgroundDark,
+      backgroundColor: colors.cardBackground,
+      borderWidth: StyleSheet.hairlineWidth,
+      borderColor: colors.border,
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
@@ -1464,10 +1404,10 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     detailTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 28,
+      fontSize: 30,
       color: colors.text,
-      lineHeight: 34,
-      marginBottom: 8,
+      lineHeight: 35,
+      marginBottom: 10,
     },
     metaItem: {
       fontFamily: 'Inter_400Regular',
@@ -1529,39 +1469,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
       borderRadius: 10,
     },
     takeawaySaveText: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 12,
-    },
-    storyEngagementCard: {
-      borderWidth: 1,
-      borderRadius: 16,
-      padding: 16,
-      marginTop: 16,
-      marginBottom: 8,
-    },
-    storyEngagementCopy: {
-      fontFamily: 'Inter_400Regular',
-      fontSize: 13,
-      lineHeight: 19,
-      color: colors.textSecondary,
-      marginBottom: 13,
-    },
-    storyEngagementActions: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 8,
-    },
-    storyEngagementAction: {
-      minHeight: 38,
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 6,
-      borderWidth: 1,
-      borderRadius: 10,
-      paddingHorizontal: 10,
-      paddingVertical: 8,
-    },
-    storyEngagementActionText: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 12,
     },
@@ -1663,37 +1570,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
       letterSpacing: 1.5,
       textTransform: 'uppercase',
     },
-    recInlinePanel: {
-      marginHorizontal: layout.padding.horizontal,
-      marginBottom: 10,
-      backgroundColor: isDark ? colors.backgroundDark : colors.surfaceContainerLowest,
-      borderRadius: 18,
-      borderWidth: 1,
-      borderColor: colors.border,
-      paddingVertical: 14,
-      paddingHorizontal: 16,
-      shadowColor: '#000',
-      shadowOpacity: 0.08,
-      shadowRadius: 12,
-      shadowOffset: { width: 0, height: 4 },
-      elevation: 4,
-    },
-    recordCardBtn: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 14,
-      borderWidth: 1,
-      borderRadius: 16,
-      padding: 14,
-      marginBottom: 14,
-    },
-    recordCardMic: {
-      width: 48,
-      height: 48,
-      borderRadius: 24,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
     btnSecondaryShare: {
       flex: 1,
       borderWidth: 1,
@@ -1710,26 +1586,22 @@ const StoryDetailScreen = ({ route, navigation }) => {
       color: colors.text
     },
     sourceSection: {
-      marginTop: 24,
-      padding: 16,
-      borderRadius: 12,
-      backgroundColor: isDark ? colors.backgroundDark : '#F7F3E8',
-      borderWidth: 1,
-      borderColor: colors.border,
+      marginTop: 20,
+      minHeight: 44,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
     },
     sourceLabel: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 11,
+      fontFamily: 'Inter_400Regular',
+      fontSize: 12,
       color: colors.textSecondary,
-      marginBottom: 8,
-      textTransform: 'uppercase',
-      letterSpacing: 1,
     },
     bookTitle: {
-      fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 20,
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 15,
       color: colors.text,
-      marginBottom: 12,
+      marginTop: 1,
     },
     linkBtn: {
       flexDirection: 'row',
@@ -1939,23 +1811,21 @@ const StoryDetailScreen = ({ route, navigation }) => {
           <TouchableOpacity style={styles.toolbarButton} onPress={() => navigation.goBack()} accessibilityRole="button" accessibilityLabel={t('backBtn', lang)}>
             <Ionicons name="arrow-back" size={20} color={colors.text} />
           </TouchableOpacity>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, alignItems: 'center', flexShrink: 1 }}>
-            <TouchableOpacity style={styles.toolbarButton} onPress={toggleSpeech} accessibilityRole="button" accessibilityLabel={t(isSpeaking ? 'readerStop' : 'readerListen', localLang)}>
+          <View style={styles.toolbarGroup}>
+            <TouchableOpacity style={[styles.toolbarButton, styles.toolbarListen]} onPress={toggleSpeech} accessibilityRole="button" accessibilityLabel={t(isSpeaking ? 'readerStop' : 'readerListen', localLang)}>
               <Ionicons name={isSpeaking ? 'stop' : 'play'} size={16} color={colors.text} />
-              <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 13, color: colors.text }}>{t(isSpeaking ? 'readerStop' : 'readerListen', localLang)}</Text>
+              <Text style={styles.toolbarListenText}>{t(isSpeaking ? 'readerStop' : 'readerListen', localLang)}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.toolbarButton} onPress={() => setReaderSettingsOpen(true)} accessibilityRole="button" accessibilityLabel={t('readerSettings', localLang)}>
-              <Text style={{ fontFamily: 'Inter_500Medium', fontSize: 17, color: colors.text }}>Aa</Text>
+              <Text style={styles.toolbarAa}>Aa</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.toolbarButton} onPress={shareStoryAsText} accessibilityRole="button" accessibilityLabel={t('shareBtn', lang)}>
-              <Ionicons name="share-social-outline" size={20} color={colors.text} />
+            <TouchableOpacity style={styles.toolbarButton} onPress={() => setReaderMoreOpen(true)} accessibilityRole="button" accessibilityLabel={t('readerMore', localLang)}>
+              <Ionicons name="ellipsis-horizontal" size={20} color={liked || savedForLater ? colors.primaryText : colors.text} />
             </TouchableOpacity>
-            <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-              <TouchableOpacity style={styles.toolbarButton} onPress={handleLike} accessibilityRole="button" accessibilityLabel={t('readerFavorite', localLang)} accessibilityState={{ selected: liked }}>
-                <Ionicons name={liked ? 'heart' : 'heart-outline'} size={22} color={liked ? colors.readerAccent : colors.text} />
-              </TouchableOpacity>
-            </Animated.View>
           </View>
+        </View>
+        <View style={styles.readTrack} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+          <Reanimated.View style={[styles.readFill, readProgressStyle]} />
         </View>
 
         <Reanimated.ScrollView
@@ -1969,6 +1839,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
           }}
           onContentSizeChange={(contentWidth, contentHeight) => {
             scrollContentHeight.current = contentHeight;
+            readerContentHeight.set(contentHeight);
             evaluateShortStoryReadState();
           }}
           onScroll={(event) => {
@@ -1999,24 +1870,24 @@ const StoryDetailScreen = ({ route, navigation }) => {
           scrollEventThrottle={16}
         >
           <View style={styles.storyHero}>
+            <View style={styles.categoryRow}>
+              <Text style={[styles.categoryName, { color: categoryTheme.textAccent, textTransform: 'uppercase', letterSpacing: 1 }]}>{displayCat}</Text>
+              {collectionCode ? (
+                <Text style={[styles.collectionCode, { color: categoryTheme.textAccent, borderColor: categoryTheme.borderColor }]}>{collectionCode}</Text>
+              ) : null}
+            </View>
             <Animated.Text style={[styles.detailTitle, titleEnterStyle]}>{displayTitle}</Animated.Text>
             <Text style={styles.metaItem}>
-              {story.min} {t('minLabel', localLang)}{' · '}
-              <Text style={{ color: colors.readerAccentText }}>{displayCat}</Text>
+              {[`${story.min} ${t('minLabel', localLang)}`, displaySourceBook ? displaySourceBook.split(' — ')[0].trim() : '', story.author].filter(Boolean).join(' · ')}
             </Text>
-            {usageDate ? (
-              <Text style={[styles.metaItem, { marginTop: 6 }]}>
-                {t('storyCraftedPreviouslyLabel', localLang, { date: new Date(usageDate).toLocaleDateString(intlLocaleFor(localLang)) })}
-              </Text>
-            ) : null}
           </View>
 
           <View style={{ paddingHorizontal: layout.padding.horizontal }}>
             {oneMinuteSummary ? (
               <TouchableOpacity onPress={handleOneMinuteSummaryPress} accessibilityRole="button" accessibilityLabel={t('oneMinuteSummaryCta', localLang)} accessibilityHint={t(isPremium ? 'oneMinuteSummarySubtitle' : 'readerSummaryLocked', localLang)} style={styles.summaryChip}>
-                <Ionicons name="sparkles" size={16} color={colors.readerAccent} />
+                <Ionicons name="sparkles" size={16} color={colors.primaryText} />
                 <Text style={styles.summaryChipText}>{t('oneMinuteSummaryCta', localLang)}</Text>
-                {!isPremium ? <Ionicons name="lock-closed-outline" size={14} color={colors.readerAccentText} /> : null}
+                {!isPremium ? <Ionicons name="lock-closed-outline" size={14} color={colors.dawnText} /> : null}
               </TouchableOpacity>
             ) : null}
 
@@ -2027,13 +1898,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 lineSpacing={lineSpacing}
                 categoryTheme={categoryTheme}
                 lang={localLang}
-                onReflectionPress={() => navigation.navigate('UseInConversation', { story: localStory || story })}
-                onSharePocket={sharePocketLine}
-                onTryUseCase={(seg) => navigation.navigate('UseInConversation', {
-                  story: localStory || story,
-                  initialContext: seg?.context || undefined,
-                  entrySource: 'story_use_case',
-                })}
                 renderLessonFooter={FEATURE_FLAGS.careerPathV1 ? (seg) => (seg.index !== 1 ? null : (
                   <TouchableOpacity
                     style={[styles.takeawaySaveButton, { borderColor: categoryTheme.borderColor, backgroundColor: isTakeawaySaved ? `${categoryTheme.accent}18` : colors.background }]}
@@ -2136,10 +2000,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 // Rich format (F7+): the reflection question becomes a tappable prompt.
                 if (seg.type === 'reflection') {
                   return (
-                    <TouchableOpacity
+                    <View
                       key={idx}
-                      activeOpacity={0.85}
-                      onPress={() => navigation.navigate('UseInConversation', { story })}
                       style={[styles.reflectionBox, { borderColor: categoryTheme.borderColor }]}
                     >
                       <View style={styles.takeawayLabelRow}>
@@ -2151,7 +2013,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                       <Text style={[styles.reflectionText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * lineSpacing }]}>
                         {seg.content}
                       </Text>
-                    </TouchableOpacity>
+                    </View>
                   );
                 }
 
@@ -2177,192 +2039,36 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 return null;
               });
             })()}
-            {/* Source & Book section */}
-            {displaySourceBook ? (
-              <View style={styles.sourceSection}>
-                <Text style={styles.sourceLabel}>{t('sourceExplore', lang)}</Text>
-                <Text style={styles.bookTitle}>{displaySourceBook.split(' — ')[0].trim()}</Text>
-                {story.author ? (
-                  <Text style={{
-                    fontFamily: 'Inter_400Regular',
-                    fontSize: 13,
-                    color: colors.textSecondary,
-                    marginTop: -10,
-                    marginBottom: 12,
-                  }}>
-                    ✍️ {story.author}
-                  </Text>
-                ) : null}
-
-                {/* Region-aware book buy buttons — geçici olarak kaldırıldı,
-                    anlaşma sağlanınca tekrar açılacak.
-                    TR → Hepsiburada + Kitapyurdu, elsewhere → local Amazon. */}
-                {false && (
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 12 }}>
-                  {getBookBuyLinks(displaySourceBook, story.author).map((link) => (
-                    <TouchableOpacity
-                      key={link.id}
-                      onPress={() => Linking.openURL(link.url)}
-                      style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: colors.backgroundDark, paddingVertical: 10, paddingHorizontal: 12, borderRadius: 8, flexGrow: 1, flexBasis: '30%', justifyContent: 'center', borderWidth: 1, borderColor: colors.border }}
-                    >
-                      <Ionicons name={link.icon} size={16} color={colors.text} style={{ marginRight: 6 }} />
-                      <Text style={{ color: colors.text, fontFamily: 'Inter_500Medium', fontSize: 12 }}>{link.label}</Text>
-                    </TouchableOpacity>
-                  ))}
-                </View>
-                )}
-              </View>
-            ) : null}
-
-            {FEATURE_FLAGS.careerPathV1 ? (
-              <View style={[styles.storyEngagementCard, { backgroundColor: categoryTheme.backgroundColor, borderColor: categoryTheme.borderColor }]}>
-                <View style={styles.takeawayLabelRow}>
-                  <Ionicons name="sparkles-outline" size={16} color={categoryTheme.accent} />
-                  <Text style={[styles.takeawayLabel, { color: categoryTheme.textAccent }]}>{t('career.engagement.title', lang)}</Text>
-                </View>
-                <Text style={styles.storyEngagementCopy}>{t('career.engagement.copy', lang)}</Text>
-                <View style={styles.storyEngagementActions}>
-                  <TouchableOpacity
-                    style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: isTakeawaySaved ? `${categoryTheme.accent}18` : colors.background }]}
-                    onPress={saveStoryReflection}
-                    disabled={isTakeawaySaved}
-                    accessibilityRole="button"
-                    accessibilityState={{ disabled: isTakeawaySaved }}
-                  >
-                    <Ionicons name={isTakeawaySaved ? 'checkmark-circle' : 'bookmark-outline'} size={17} color={categoryTheme.accent} />
-                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.textAccent }]}>{t(isTakeawaySaved ? 'career.engagement.saved' : 'career.engagement.save', lang)}</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: colors.background }]}
-                    onPress={() => setRecPanelVisible(true)}
-                    accessibilityRole="button"
-                  >
-                    <Ionicons name="mic-outline" size={17} color={categoryTheme.accent} />
-                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.textAccent }]}>{t('career.engagement.voice', lang)}</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={[styles.storyEngagementAction, { borderColor: categoryTheme.borderColor, backgroundColor: colors.background }]}
-                    onPress={openConversation}
-                    accessibilityRole="button"
-                  >
-                    <Ionicons name="chatbubbles-outline" size={17} color={categoryTheme.accent} />
-                    <Text style={[styles.storyEngagementActionText, { color: categoryTheme.textAccent }]}>{t('career.engagement.conversation', lang)}</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            ) : null}
-
           </View>
-          <View onLayout={(event) => endActionsY.set(event.nativeEvent.layout.y)} style={{ paddingHorizontal: layout.padding.horizontal, paddingTop: 24 }}>
-            <ReaderActions onConversation={openConversation} onRecord={() => setRecPanelVisible(true)} lang={localLang} />
+          <View style={styles.endMark} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+            <View style={styles.endMarkLine} />
+            <Ionicons name="checkmark-circle-outline" size={20} color={categoryTheme.accent} />
+            <View style={styles.endMarkLine} />
+          </View>
+          <View style={{ paddingHorizontal: layout.padding.horizontal, paddingTop: 8 }}>
+            <ReaderActions onConversation={openConversation} lang={localLang} />
           </View>
         </Reanimated.ScrollView>
 
-        {/* ── Ses Kaydı Paneli (satır içi — hikâye okunurken erişilebilir) ── */}
-        {recPanelVisible ? (
-          <View style={styles.recInlinePanel}>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
-                <Text style={styles.modalTitle}>{t('voiceRecordingPanelTitle', lang)}</Text>
-                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-                  <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary }}>
-                    {t('voiceRecordingCountLabel', lang, { count: audioRecordings.length, max: MAX_RECORDINGS })}
-                  </Text>
-                  <TouchableOpacity onPress={() => { if (!isRecording) setRecPanelVisible(false); }} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-                    <Ionicons name="chevron-down" size={22} color={colors.textSecondary} />
-                  </TouchableOpacity>
-                </View>
-              </View>
-
-              {/* Kayıt al / durdur — büyük buton */}
-              <TouchableOpacity
-                onPress={toggleRecording}
-                disabled={!isRecording && audioRecordings.length >= MAX_RECORDINGS}
-                activeOpacity={0.85}
-                style={[
-                  styles.recordCardBtn,
-                  {
-                    borderColor: isRecording ? categoryTheme.accent : categoryTheme.borderColor,
-                    backgroundColor: isRecording ? categoryTheme.strongBackgroundColor : categoryTheme.backgroundColor,
-                    opacity: (!isRecording && audioRecordings.length >= MAX_RECORDINGS) ? 0.4 : 1,
-                  },
-                ]}
-              >
-                <View style={[styles.recordCardMic, { backgroundColor: categoryTheme.accent }]}>
-                  <Ionicons name={isRecording ? 'stop' : 'mic'} size={24} color="#FFFFFF" />
-                </View>
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 16, color: categoryTheme.textAccent }}>
-                    {isRecording
-                      ? t('voiceRecordingStop', lang)
-                      : t('voiceRecordingNew', lang)}
-                  </Text>
-                  <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: isRecording ? categoryTheme.accent : colors.textSecondary, marginTop: 2 }}>
-                    {isRecording
-                      ? `● ${formatDuration(recordingDuration)} / ${formatDuration(MAX_DURATION_MS)}`
-                      : audioRecordings.length >= MAX_RECORDINGS
-                        ? t('voiceRecordingMaxReached', lang, { max: MAX_RECORDINGS })
-                        : t('voiceRecordingHint', lang, { duration: formatDuration(MAX_DURATION_MS) })}
-                  </Text>
-                </View>
+        <Modal visible={readerMoreOpen} transparent animationType="fade" onRequestClose={() => setReaderMoreOpen(false)}>
+          <View style={styles.moreOverlay}>
+            <TouchableOpacity style={StyleSheet.absoluteFill} activeOpacity={1} onPress={() => setReaderMoreOpen(false)} accessibilityRole="button" accessibilityLabel={t('career.close', localLang)} />
+            <View style={[styles.moreSheet, { paddingBottom: Math.max(insets.bottom, 16) }]}>
+              <TouchableOpacity style={styles.moreRow} onPress={() => { setReaderMoreOpen(false); setTimeout(shareStoryAsText, 250); }} accessibilityRole="button">
+                <Ionicons name="share-social-outline" size={22} color={colors.text} />
+                <Text style={styles.moreRowText}>{t('shareBtn', localLang)}</Text>
               </TouchableOpacity>
-
-              {/* Kayıt listesi */}
-              {audioRecordings.map((rec, index) => (
-                <View key={`rec-${index}`} style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  paddingVertical: 10,
-                  paddingHorizontal: 12,
-                  borderRadius: 14,
-                  backgroundColor: playingIndex === index
-                    ? `${categoryTheme.accent}18`
-                    : isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.04)',
-                  marginBottom: 8,
-                  borderWidth: playingIndex === index ? 1 : 0,
-                  borderColor: `${categoryTheme.accent}40`,
-                }}>
-                  <TouchableOpacity onPress={() => playRecording(index)} style={{ marginRight: 12 }}>
-                    <Ionicons
-                      name={playingIndex === index ? 'pause-circle' : 'play-circle'}
-                      size={36}
-                      color={categoryTheme.accent}
-                    />
-                  </TouchableOpacity>
-                  <View style={{ flex: 1 }}>
-                    <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.text }}>
-                      {t('voiceRecordingTakeLabel', lang, { n: index + 1 })}
-                      {' · '}
-                      <Text style={{ fontFamily: 'Inter_400Regular', color: colors.textSecondary }}>
-                        {formatDuration(rec.durationMs)}
-                      </Text>
-                    </Text>
-                    <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginTop: 1 }}>
-                      {new Date(rec.date).toLocaleDateString(intlLocaleFor(lang), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
-                    </Text>
-                  </View>
-                  <TouchableOpacity onPress={() => deleteRecording(index)} style={{ padding: 6 }}>
-                    <Ionicons name="trash-outline" size={20} color={colors.textSecondary} />
-                  </TouchableOpacity>
-                </View>
-              ))}
-
-              {audioRecordings.length === 0 && !isRecording ? (
-                <Text style={{ fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary, textAlign: 'center', marginTop: 6 }}>
-                  {t('voiceRecordingEmpty', lang)}
-                </Text>
-              ) : null}
+              <TouchableOpacity style={styles.moreRow} onPress={() => { handleReadLater(); setReaderMoreOpen(false); }} accessibilityRole="button" accessibilityState={{ selected: savedForLater }}>
+                <Ionicons name={savedForLater ? 'bookmark' : 'bookmark-outline'} size={22} color={savedForLater ? colors.primaryText : colors.text} />
+                <Text style={styles.moreRowText}>{t('storyReadLater', localLang)}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.moreRow} onPress={() => { handleLike(); setReaderMoreOpen(false); }} accessibilityRole="button" accessibilityState={{ selected: liked }}>
+                <Ionicons name={liked ? 'heart' : 'heart-outline'} size={22} color={liked ? colors.dawn : colors.text} />
+                <Text style={styles.moreRowText}>{t('readerFavorite', localLang)}</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        ) : null}
-
-        <ReaderActions
-          compact
-          scrollOffset={readerScrollOffset}
-          viewportHeight={readerViewport}
-          endActionsY={endActionsY}
-          hidden={recPanelVisible || storyAdGate}
-          onConversation={openConversation}
-          lang={localLang}
-        />
+        </Modal>
         <ReaderPanels
           settingsVisible={readerSettingsOpen}
           onCloseSettings={() => setReaderSettingsOpen(false)}

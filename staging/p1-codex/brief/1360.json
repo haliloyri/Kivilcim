@@ -1,0 +1,67 @@
+{
+  "story_id": 1360,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Intention Experiment (Niyet)",
+    "author": "Lynne McTaggart",
+    "year": "2007"
+  },
+  "confidence": "low",
+  "confidence_note": "McTaggart does discuss the Princeton lab's random-number-generator work and presents it as evidence that intention can shift physical systems. I am not certain of any numbers, so none are used; the 'hundreds of experiments, thousands of participants' wording in the supplied text is left out. The claim is McTaggart's reading of the lab's results. Outside the book, other labs have had mixed results and many scientists are not convinced; that caveat is editorial and not from the book. The story presents the account as her argument and does not endorse it.",
+  "facts": [
+    "At Princeton, a lab studied whether people could influence a random event generator by intention alone.",
+    "A random event generator produces zeros and ones in no pattern, like an honest coin.",
+    "Volunteers sat near the machine and tried to make it produce more of one outcome, without touching it.",
+    "McTaggart reports that across very many sessions the lab found a small shift away from chance, statistically significant.",
+    "The effect was small; McTaggart says so herself.",
+    "She presents the work as part of the base for her own intention experiments.",
+    "She reads it as consciousness interacting with its surroundings, not only observing them.",
+    "Editorial caveat, not from the book: results from other labs have been mixed, and many scientists remain unconvinced."
+  ],
+  "tension": "A tiny but repeatable shift in a machine built to be random: real effect, or a pattern in the noise?",
+  "opening_idea": "Open on the machine built to be boring and the odd request made of the people sitting in front of it.",
+  "lessons": [
+    {
+      "idea": "A small statistical effect can be called significant while still being easy to misread.",
+      "anchor": "The shift was small."
+    },
+    {
+      "idea": "An account with this much weight deserves checking for independent repetition.",
+      "anchor": "McTaggart's reading versus the editorial caveat."
+    },
+    {
+      "idea": "Curiosity and caution can sit together.",
+      "anchor": "The lab's careful setup."
+    }
+  ],
+  "reflect": [
+    "A claim you accepted because it came with numbers.",
+    "Something that seemed surprising until someone else repeated it.",
+    "A coincidence you noticed and how you tested it."
+  ],
+  "reflect_final": "What would it take for you to trust a surprising result, and who would you ask to repeat it?",
+  "use_cases": [
+    {
+      "situation": "A colleague shares an eye-catching study.",
+      "move": "Ask whether anyone outside the original lab has repeated it and how big the effect was.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is convinced a coincidence means something.",
+      "move": "Be curious with them: ask what result would change their mind.",
+      "context": "social"
+    },
+    {
+      "situation": "You read a bold claim about the mind.",
+      "move": "Note the size of the effect before the headline.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A tiny effect in a perfect-coin machine is a question to test, not a conclusion.",
+  "conversation_variants": {
+    "punchline_idea": "At Princeton, a machine built to be random was reported to drift slightly toward what people wanted from it.",
+    "thirty_sec_idea": "McTaggart describes a Princeton lab where volunteers tried to make a random generator produce more of one number just by intending it. She reports a small but statistically significant shift. Other labs have had mixed results.",
+    "question_idea": "Ask what kind of evidence would convince them of something that sounds impossible.",
+    "key_contrast_idea": "Small shift, big claim."
+  }
+}

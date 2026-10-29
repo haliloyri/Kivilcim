@@ -38,12 +38,13 @@ import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
 import StorytellerOverlay from '../components/StorytellerOverlay';
+import VoiceRecorderSheet, { useStoryVoiceRecorder } from '../components/story/VoiceRecorderSheet';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import ShareCardModal from '../components/ShareCardModal';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import { shouldShowAd, rewardedGate, loadRewarded, showRewarded } from '../utils/ads';
 import { getCategoryTheme } from '../utils/categoryImages';
-import { extractShareParts, getNarrativeText } from '../utils/storyMarkup';
+import { extractShareParts, getNarrativeText, parseStoryMarkup } from '../utils/storyMarkup';
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -152,10 +153,8 @@ const buildMicroVariants = (story, lang) => {
   const body = story.body || '';
   const quote       = extractMarker(body, '##');
   const lesson      = extractMarker(body, '$$');
-  const reflection  = extractMarker(body, '&&');
   const punchline   = (story.conversation_punchline || '').trim();
   const thirtySec   = (story.conversation_thirty_sec || story.thirty_sec || '').trim();
-  const question    = (story.conversation_question || '').trim();
   const clean       = cleanBodyText(body);
 
   const candidates = [
@@ -173,20 +172,34 @@ const buildMicroVariants = (story, lang) => {
       hint: t('mv_hint_thirty', lang),
       body: thirtySec || (clean.length > 320 ? clean.substring(0, 320).trimEnd() + '…' : clean),
     },
-    {
-      id: 'question',
-      type: 'QUESTION',
-      title: t('mv_len_question', lang),
-      hint: t('mv_hint_question', lang),
-      body: question || reflection,
-    },
   ];
 
   return candidates.filter(v => v.body.length > 0);
 };
 
-/** Context chips, same slugs as the story's [[use]] cards. */
+/** Context chips, same slugs as the story's [[use]] cards. Fallback for stories without cards. */
 const CONTEXTS = ['meeting', 'oneonone', 'family', 'social', 'self'];
+
+/**
+ * The story's [[use]] cards as ready-to-say variants, keyed by context.
+ * 'self' cards are personal commitments, not things to tell someone, so they
+ * stay on the reading page.
+ */
+const buildUseCardVariants = (story, lang) => {
+  const out = {};
+  parseStoryMarkup(story?.body || '').segments.forEach((seg) => {
+    if (seg.type !== 'usecase' || !seg.line || !seg.context || seg.context === 'self') return;
+    if (out[seg.context]) return;
+    out[seg.context] = {
+      id: `use_${seg.context}`,
+      type: 'PUNCHLINE',
+      body: seg.line,
+      situation: seg.label || '',
+      context: seg.context,
+    };
+  });
+  return out;
+};
 
 /** Context → the length that fits it best (suggested when a chip is picked). */
 const CONTEXT_TO_VARIANT = {
@@ -209,15 +222,11 @@ const UseInConversationScreen = ({ route, navigation }) => {
   const { isPremium, recordVariantUsage, removeVariantUsage, variantUsage, incrementShareCount, isStoryCompleted, setBadgePresentationBlocked } = useUserData();
   const insets = useSafeAreaInsets();
 
-  const variants = useMemo(() => buildMicroVariants(story, lang), [story, lang]);
-  const keyContrast = useMemo(() => {
-    const explicit = (story.conversation_key_contrast || '').trim();
-    if (explicit) return explicit;
-    const body = story.body || '';
-    const quote = extractMarker(body, '##');
-    const lesson = extractMarker(body, '$$');
-    return quote && quote !== lesson ? quote : '';
-  }, [story]);
+  const baseVariants = useMemo(() => buildMicroVariants(story, lang), [story, lang]);
+  const cardByContext = useMemo(() => buildUseCardVariants(story, lang), [story, lang]);
+  const cardContexts = useMemo(() => Object.keys(cardByContext), [cardByContext]);
+  // Stories with [[use]] cards show only their own contexts; older stories keep all chips.
+  const chipContexts = cardContexts.length ? cardContexts : CONTEXTS;
 
   const displayCat = t(story.parent_cat || story.cat || '', lang);
   const categoryTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
@@ -234,22 +243,37 @@ const UseInConversationScreen = ({ route, navigation }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [selectedContext, setSelectedContext] = useState(
-    () => (CONTEXTS.includes(initialContext) ? initialContext : null),
-  );
-
-  // Selected length (single-select). A preselected context suggests the
-  // length that fits it best.
-  const [selectedId, setSelectedId] = useState(() => {
-    const preferred = initialContext && CONTEXT_TO_VARIANT[initialContext];
-    if (preferred && variants.some(v => v.id === preferred)) return preferred;
-    return variants[0]?.id ?? null;
+  const [selectedContext, setSelectedContext] = useState(() => {
+    if (chipContexts.includes(initialContext)) return initialContext;
+    return cardContexts[0] || null;
   });
+
+  // Selected length (single-select). With a [[use]] card the context's own
+  // line is the default; otherwise a preselected context suggests the length
+  // that fits it best.
+  const [selectedId, setSelectedId] = useState(() => {
+    const startContext = chipContexts.includes(initialContext) ? initialContext : cardContexts[0];
+    if (startContext && cardByContext[startContext]) return cardByContext[startContext].id;
+    const preferred = initialContext && CONTEXT_TO_VARIANT[initialContext];
+    if (preferred && baseVariants.some(v => v.id === preferred)) return preferred;
+    return baseVariants[0]?.id ?? null;
+  });
+  // The context's card replaces the generic one-line variant.
+  const variants = useMemo(() => {
+    const card = selectedContext ? cardByContext[selectedContext] : null;
+    return card ? [card, ...baseVariants.filter(v => v.id === 'thirty_sec')] : baseVariants;
+  }, [baseVariants, cardByContext, selectedContext]);
   const selected = useMemo(
     () => variants.find(v => v.id === selectedId) || variants[0] || null,
     [variants, selectedId],
   );
+  // With a context card the card is the content; the 30-second retelling is
+  // a context-free alternative reached through a link, not a tab.
+  const activeCard = selectedContext ? cardByContext[selectedContext] : null;
+  const retell = variants.find(v => v.id === 'thirty_sec') || null;
 
+  const voiceRecorder = useStoryVoiceRecorder(story, lang);
+  const [voiceSheetVisible, setVoiceSheetVisible] = useState(false);
   const [copyToastVisible, setCopyToastVisible] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
   const [showStorytellerFor, setShowStorytellerFor] = useState(null);
@@ -383,13 +407,18 @@ const UseInConversationScreen = ({ route, navigation }) => {
   }, []);
 
   const handleSelectContext = useCallback((context) => {
+    if (cardByContext[context]) {
+      setSelectedContext(context);
+      setSelectedId(cardByContext[context].id);
+      return;
+    }
     setSelectedContext(prev => {
       const next = prev === context ? null : context;
       const preferred = next && CONTEXT_TO_VARIANT[next];
-      if (preferred && variants.some(v => v.id === preferred)) setSelectedId(preferred);
+      if (preferred && baseVariants.some(v => v.id === preferred)) setSelectedId(preferred);
       return next;
     });
-  }, [variants]);
+  }, [baseVariants, cardByContext]);
 
   const handleCopy = useCallback(async () => {
     if (!selected) return;
@@ -600,7 +629,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
   const bodyText = selected?.body || '';
   const isLong = bodyText.length > 150;
   const speakLine = t('mv_speak_time', lang, { sec: estimateSpeakSeconds(bodyText) });
-  const showEssence = Boolean(keyContrast) && keyContrast !== bodyText;
+  const showEssence = Boolean(selected?.situation);
 
   const shareRows = [
     {
@@ -680,8 +709,9 @@ const UseInConversationScreen = ({ route, navigation }) => {
           style={styles.chipScroll}
           contentContainerStyle={styles.chipRow}
         >
-          {CONTEXTS.map(ctx => {
-            const active = selectedContext === ctx;
+          {chipContexts.map(ctx => {
+            // The 30-second retelling is context-free: no chip stays lit while it shows.
+            const active = selectedContext === ctx && !(activeCard && selected?.id === retell?.id);
             return (
               <TouchableOpacity
                 key={ctx}
@@ -700,6 +730,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
         </ScrollView>
 
         {/* ── 2. Length — segmented control ────────────────────────────── */}
+        {!activeCard ? (
         <View style={styles.segment} accessibilityRole="tablist">
           {variants.map(v => {
             const active = v.id === selected?.id;
@@ -725,24 +756,25 @@ const UseInConversationScreen = ({ route, navigation }) => {
             );
           })}
         </View>
-        {selected ? <Text style={styles.hint}>{selected.hint}</Text> : null}
+        ) : null}
+        {selected && !activeCard ? <Text style={styles.hint}>{selected.hint}</Text> : null}
 
         {/* ── 3. Preview card ──────────────────────────────────────────── */}
         {selected && (
           <View style={styles.previewCard}>
+            {showEssence ? (
+              <View style={styles.essenceRow}>
+                <Text style={styles.essenceLabel}>{t('mv_situation_label', lang).toUpperCase()}</Text>
+                <Text style={styles.essenceText}>{selected.situation}</Text>
+              </View>
+            ) : null}
+
             <View style={styles.quoteRow}>
               <View style={styles.quoteBar} />
               <Text selectable style={[styles.quoteText, isLong && styles.quoteTextLong]}>
                 {bodyText}
               </Text>
             </View>
-
-            {showEssence ? (
-              <View style={styles.essenceRow}>
-                <Text style={styles.essenceLabel}>{t('mv_essence_label', lang).toUpperCase()}</Text>
-                <Text style={styles.essenceText}>{keyContrast}</Text>
-              </View>
-            ) : null}
 
             <View style={styles.previewFooter}>
               <View style={styles.speakRow}>
@@ -761,7 +793,43 @@ const UseInConversationScreen = ({ route, navigation }) => {
             </View>
           </View>
         )}
+
+        {activeCard && retell ? (
+          <TouchableOpacity
+            onPress={() => handleSelect(selected?.id === retell.id ? activeCard.id : retell.id)}
+            style={styles.retellLink}
+            accessibilityRole="button"
+            activeOpacity={0.8}
+          >
+            <Ionicons
+              name={selected?.id === retell.id ? 'arrow-back' : 'chatbubble-outline'}
+              size={15}
+              color={colors.primaryText}
+            />
+            <Text style={styles.retellLinkText}>
+              {t(selected?.id === retell.id ? 'mv_back_to_situation' : 'mv_retell_story', lang)}
+            </Text>
+          </TouchableOpacity>
+        ) : null}
+
+        <TouchableOpacity
+          onPress={() => setVoiceSheetVisible(true)}
+          style={styles.retellLink}
+          accessibilityRole="button"
+          activeOpacity={0.8}
+        >
+          <Ionicons name="mic-outline" size={15} color={colors.primaryText} />
+          <Text style={styles.retellLinkText}>{t('readerRecord', lang)}</Text>
+        </TouchableOpacity>
       </ScrollView>
+
+      <VoiceRecorderSheet
+        visible={voiceSheetVisible}
+        onClose={() => setVoiceSheetVisible(false)}
+        recorder={voiceRecorder}
+        categoryTheme={categoryTheme}
+        lang={lang}
+      />
 
       {/* ── 4. Bottom dock: Practice (primary) + I used it ──────────────── */}
       <View style={styles.dock}>
@@ -885,7 +953,6 @@ const UseInConversationScreen = ({ route, navigation }) => {
         visible={!!showStorytellerFor}
         story={story}
         variant={showStorytellerFor}
-        initialContext={selectedContext}
         isPremium={isPremium}
         onClose={() => setShowStorytellerFor(null)}
         onDone={handleStorytellerDone}
@@ -910,7 +977,11 @@ const UseInConversationScreen = ({ route, navigation }) => {
           trackEvent(ANALYTICS_EVENTS.AD_OR_PREMIUM_CHOICE, { source: 'use_in_conversation', choice: 'premium' });
           setAdUnavailable(false);
           setAdSheet(false);
-          navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
+          // Let the native sheet Modal finish dismissing before presenting the
+          // Paywall; navigating mid-dismiss leaves the Paywall untappable on iOS.
+          setTimeout(() => {
+            navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'storyteller_mode' });
+          }, 350);
         }}
         adUnavailable={adUnavailable}
         isAdLoading={isAdLoading}
@@ -933,7 +1004,9 @@ const UseInConversationScreen = ({ route, navigation }) => {
           setShareAdUnavailable(false);
           setShareGate(false);
           pendingShareVariantRef.current = null;
-          navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'image_card' });
+          setTimeout(() => {
+            navigation.navigate('Paywall', { source: 'use_in_conversation', reason: 'image_card' });
+          }, 350);
         }}
         adUnavailable={shareAdUnavailable}
         isAdLoading={shareAdLoading}
@@ -1089,6 +1162,19 @@ const buildStyles = (colors, isDark, insets) => {
       fontFamily: 'Inter_600SemiBold',
       color: isDark ? colors.primaryText : colors.text,
     },
+    retellLink: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      alignSelf: 'flex-start',
+      gap: 6,
+      minHeight: 44,
+      marginTop: 8,
+    },
+    retellLinkText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 14,
+      color: colors.primaryText,
+    },
     hint: {
       fontFamily: 'Inter_400Regular',
       fontSize: 12.5,
@@ -1136,10 +1222,10 @@ const buildStyles = (colors, isDark, insets) => {
       lineHeight: 26,
     },
     essenceRow: {
-      marginTop: 16,
-      paddingTop: 12,
-      borderTopWidth: StyleSheet.hairlineWidth,
-      borderTopColor: colors.border,
+      marginBottom: 14,
+      paddingBottom: 12,
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      borderBottomColor: colors.border,
       gap: 4,
     },
     essenceLabel: {

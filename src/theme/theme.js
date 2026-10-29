@@ -34,7 +34,11 @@ const NEUTRALS = {
     divider: '#E6DED3',
     quoteHighlight: '#FFD166',
     reward: '#C89B3C',
-    rewardText: '#8A6418',               // reward as text on paper (5.4:1)
+    rewardText: '#8A6418',
+    dawn: '#E9A94B',                     // sunrise gold: hero light, primary CTA on hero
+    dawnText: '#8A5A0E',                 // dawn as text on paper (5.3:1)
+    heroSurface: '#1B4B48',              // petrol hero card (white text 9.5:1)
+    heroBorder: '#1B4B48',               // reward as text on paper (5.4:1)
     overlaySoft: 'rgba(0,0,0,0.03)',
     overlayDark: 'rgba(0,0,0,0.24)',
     modalOverlay: 'rgba(18,17,15,0.26)',
@@ -63,6 +67,10 @@ const NEUTRALS = {
     quoteHighlight: '#FFD166',
     reward: '#E5C27A',
     rewardText: '#E5C27A',
+    dawn: '#F0C170',
+    dawnText: '#F0C170',
+    heroSurface: '#1F3A37',
+    heroBorder: '#2E5A55',
     overlaySoft: 'rgba(0,0,0,0.06)',
     overlayDark: 'rgba(0,0,0,0.4)',
     modalOverlay: 'rgba(0,0,0,0.4)',
@@ -216,9 +224,11 @@ export const typography = {
     quote: 18,
     headingSmall: 22,
     headingLarge: 26,
+    screenTitle: 28,
     heroTitle: 34,
   },
   spacing: {
+    screenTitleLineHeight: 34,
     bodyLineHeight: 28,
     quoteLineHeight: 30,
     badgeLetterSpacing: 0.5,
@@ -244,6 +254,7 @@ export const layout = {
     horizontal: 20,
     vertical: 16,
     cardGap: 16,
+    screenTop: 12,
   },
   borderWidth: 0.5,
   featuredCardWidth: 0.46,

@@ -34,6 +34,8 @@ There are currently no dedicated lint/test scripts in package.json.
 - Navigation and screen routing: [src/navigation/AppNavigator.js](src/navigation/AppNavigator.js)
 - State providers: [src/context](src/context)
 - SQLite/data layer: [src/db/db.js](src/db/db.js)
+- Design system (home page UI/UX + palette): [DESIGN.md](DESIGN.md)
+- Logos: all files in `assets/logo/`, imported only through [src/constants/logos.js](src/constants/logos.js) (`getLogo(isDark)`); never `require` a logo path from a screen. Old brand files live in `arsiv/marka-eski/`.
 - Localization: [src/locales/i18n.js](src/locales/i18n.js)
 - Analytics event catalog: [docs/ANALYTICS_EVENTS.md](docs/ANALYTICS_EVENTS.md)
 - Android build/run guide: [ANDROID_APK_REHBERI.md](ANDROID_APK_REHBERI.md)
@@ -108,6 +110,8 @@ automated (Anthropic Batch) pipeline: [batch/README.md](batch/README.md).
 - Source per story: `staging/p1/manifest.json` (one entry per `story_id`; read only the entries you need — the file is ~1.3 MB).
 - Official outputs: `staging/p1/brief/<id>.json`, `staging/p1/<lang>/<id>.md`, `staging/p1/<lang>/<id>.variants.json`.
 - Progress report (free, no API): `node batch/07-status.mjs en --list`.
+
+**Format decisions** (1 lesson + 1 question, lesson length/tone, all 4 languages, caveats) live in [batch/prompts/story-instructions.md](batch/prompts/story-instructions.md), section "Lesson and question rules". Read it before writing any story.
 
 **Hard rules**
 1. **Never create, edit or overwrite anything in `staging/p1/brief/` or `staging/p1/<lang>/`** unless the user explicitly asks. These are the production outputs of the Batch pipeline (Claude Opus), which skips any id whose file already exists.

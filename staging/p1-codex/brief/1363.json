@@ -1,0 +1,62 @@
+{
+  "story_id": 1363,
+  "kind": "anecdote",
+  "book": {
+    "title": "Option B (Zihinsel Dayanıklılık)",
+    "author": "Sheryl Sandberg and Adam Grant",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "Dave Goldberg died in May 2015 while the couple were on holiday; Sandberg writes that she found him after he collapsed in a hotel gym, and that they had two young children. The supplied text calls it a 'thirty-year marriage' and has them as Facebook COO colleagues on a trip; I used none of that. The friend who told her Option A was unavailable is from the book's opening to the best of my knowledge, but exact wording is not quoted and his name is omitted. Resilience as buildable rather than fixed is the book's thesis. Quotes in the supplied text are not reproduced.",
+  "facts": [
+    "In May 2015, Sheryl Sandberg's husband Dave Goldberg died suddenly during a family holiday.",
+    "She found him after he collapsed in a hotel gym.",
+    "They had two young children.",
+    "Sandberg was a senior executive at Facebook and had written Lean In.",
+    "In the weeks after, a friend told her that Option A, Dave being alive, was not available, and that the aim now was to make Option B as good as possible.",
+    "That framing became the title of the book she later wrote with Adam Grant.",
+    "Grant, a psychologist and her friend, helped her work through research on resilience.",
+    "The book's argument: resilience is not a fixed trait, it can be built, and it starts with being honest about the loss."
+  ],
+  "tension": "Wanting only Option A, and being told it is gone, as the only way to begin building something else.",
+  "opening_idea": "Open on Sandberg telling a friend she wants Option A and his unsoftened reply.",
+  "lessons": [
+    {
+      "idea": "Naming what is gone can make room for what is possible.",
+      "anchor": "Option A is not available."
+    },
+    {
+      "idea": "Resilience is built, with other people's help.",
+      "anchor": "Grant and the friends around her."
+    }
+  ],
+  "reflect": [
+    "A loss or change you wished away before you could work with it.",
+    "Someone who named a hard truth in a way that helped."
+  ],
+  "reflect_final": "What is your own Option A that is no longer available, and what is the best Option B within reach?",
+  "use_cases": [
+    {
+      "situation": "A friend is grieving something that cannot come back.",
+      "move": "Say you are sorry, name what they want back, and ask what would make a day a little better.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A plan at work falls through completely.",
+      "move": "Name what is now unavailable and ask what the best next version is.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You keep waiting for things to return to how they were.",
+      "move": "Write the Option A you want and one small Option B step for this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Name the Option A that is gone, then pick one small step toward Option B.",
+  "conversation_variants": {
+    "punchline_idea": "After her husband died, Sandberg was told Option A was gone and the work now was making Option B as good as possible.",
+    "thirty_sec_idea": "In May 2015 Sheryl Sandberg's husband died suddenly on a family holiday. Weeks later a friend told her Option A was not available, so they should make Option B as good as possible. That became her book with Adam Grant.",
+    "question_idea": "Ask if there was ever a plan that fell apart and what the better second option turned out to be.",
+    "key_contrast_idea": "Option A, Option B."
+  }
+}

@@ -2,8 +2,9 @@ import React, { useCallback, useEffect, useState } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
   StatusBar, Platform, Switch, Alert, Linking, Modal, TextInput,
-  AppState,
+  AppState, Image,
 } from 'react-native';
+import Svg, { Circle, Line } from 'react-native-svg';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants';
@@ -17,17 +18,14 @@ import { FEATURE_FLAGS } from '../config/featureFlags';
 import { getLegalUrls, localizedHomeUrl, SUPPORT_EMAIL, SUBSCRIPTION_URLS } from '../constants/externalLinks';
 import { t } from '../locales/i18n';
 import CategoryPill from '../components/CategoryPill';
+import ScreenHeader from '../components/ScreenHeader';
+import { getCategoryPillImage, getCategoryTheme } from '../utils/categoryImages';
 import { isPrivacyOptionsRequired, showPrivacyOptions } from '../utils/adsConsent';
 
 // Profil = kimlik + okuma ritmi + tercihler + abonelik/destek.
 // İlerleme/rozetler İlerleme sekmesinde; gerçek bir hesap sistemi olmadığı
 // için e-posta ve "oturumu kapat" yok. Test araçları yalnızca __DEV__ bölümünde.
 
-const PLAN_OPTIONS = [
-  { minutes: 3, target: 1 },
-  { minutes: 6, target: 2 },
-  { minutes: 9, target: 3 },
-];
 const REMINDER_OPTIONS = [
   { value: 'morning', labelKey: 'reminder_morning', icon: 'partly-sunny-outline' },
   { value: 'noon', labelKey: 'reminder_noon', icon: 'sunny-outline' },
@@ -39,12 +37,32 @@ const LANGUAGES = [
   { code: 'es', label: 'Español' },
   { code: 'de', label: 'Deutsch' },
 ];
-const STORY_COLLECTIONS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55'];
+const STORY_COLLECTIONS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55', 'son55'];
 const STORY_COLLECTION_LABEL = {
   classic: 'storyCollectionClassic', new: 'storyCollectionNew', agent: 'storyCollectionAgent',
   focus: 'storyCollectionFocus', conversation: 'storyCollectionConversation', originals: 'storyCollectionOriginals',
-  opus55: 'storyCollectionOpus55',
+  opus55: 'storyCollectionOpus55', son55: 'storyCollectionSon55',
 };
+
+// Brand motif (same drawing as HomeScreen's hero). Decorative only.
+const HeroSun = ({ color }) => (
+  <Svg
+    width={168}
+    height={130}
+    viewBox="0 0 168 130"
+    pointerEvents="none"
+    style={{ position: 'absolute', right: -34, top: -30, transform: [{ scaleY: -1 }] }}
+  >
+    <Circle cx={96} cy={104} r={84} fill={color} opacity={0.08} />
+    <Circle cx={96} cy={104} r={62} fill={color} opacity={0.14} />
+    <Circle cx={96} cy={104} r={40} fill={color} opacity={0.95} />
+    <Line x1={96} y1={40} x2={96} y2={22} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={60} y1={52} x2={50} y2={40} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={132} y1={52} x2={142} y2={40} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={40} y1={78} x2={24} y2={72} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={152} y1={78} x2={168} y2={72} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+  </Svg>
+);
 
 const ProfileScreen = ({ navigation }) => {
   const {
@@ -75,7 +93,6 @@ const ProfileScreen = ({ navigation }) => {
   const careerTitle = FEATURE_FLAGS.careerPathV1 && career?.profileTitle
     ? t(career.profileTitle, lang) : null;
 
-  const selectedMinutes = preferences?.time?.minutes || 6;
   const remindersEnabled = preferences?.remindersEnabled !== false;
   const selectedReminders = preferences?.reminderWindows || [preferences?.reminderWindow || 'evening'];
   const selectedStoryCollections = preferences?.storyCollections?.length ? preferences.storyCollections : ['new', 'opus55'];
@@ -85,6 +102,9 @@ const ProfileScreen = ({ navigation }) => {
   const interestSummary = interestCount === 0 || interestCount === parentCategories.length
     ? t('profileInterestsAll', lang)
     : t('profileInterestsCount', lang).replace('{{count}}', String(interestCount));
+  const interestPreview = (interestCount === 0 || interestCount === parentCategories.length
+    ? []
+    : parentCategories.filter((p) => selectedCategories.includes(Number(p.id)))).slice(0, 7);
   const appVersion = Constants.expoConfig?.version || Constants.manifest?.version || '';
 
   // ── Notification permission (refresh when returning from system settings) ──
@@ -107,18 +127,6 @@ const ProfileScreen = ({ navigation }) => {
     } catch {
       Alert.alert(t('alert_error', lang), t('profileExternalLinkError', lang));
     }
-  };
-
-  const handlePlanChange = async (minutes) => {
-    const opt = PLAN_OPTIONS.find((o) => o.minutes === minutes);
-    if (!opt || minutes === selectedMinutes) return;
-    await updatePreferences({
-      time: {
-        label: t(`time_${minutes}min`, lang),
-        minutes,
-        dailyStoryTarget: opt.target,
-      },
-    });
   };
 
   const handleRemindersEnabled = async (enabled) => {
@@ -252,35 +260,54 @@ const ProfileScreen = ({ navigation }) => {
 
     // Header
     header: {
-      flexDirection: 'row', alignItems: 'center', gap: 14,
-      paddingHorizontal: layout.padding.horizontal, paddingTop: 24, paddingBottom: 4,
+      flexDirection: 'row', alignItems: 'center', gap: 16,
+      paddingHorizontal: layout.padding.horizontal, paddingTop: 18, paddingBottom: 4, minHeight: 76,
     },
     avatar: {
-      width: 60, height: 60, borderRadius: 30,
-      backgroundColor: `${colors.primary}1F`,
+      width: 72, height: 72, borderRadius: 36,
+      backgroundColor: colors.primary,
+      borderWidth: 2, borderColor: colors.dawn,
       alignItems: 'center', justifyContent: 'center',
     },
-    avatarText: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, color: colors.primaryText },
+    avatarText: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 26, color: colors.onPrimary },
+    editBtn: {
+      width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center',
+      backgroundColor: colors.cardBackground, borderWidth: StyleSheet.hairlineWidth, borderColor: colors.border,
+    },
     headerInfo: { flex: 1, minWidth: 0 },
     nameRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-    name: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, color: colors.text, flexShrink: 1 },
+    name: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 24, color: colors.text, flexShrink: 1 },
     premiumTag: {
       paddingHorizontal: 8, paddingVertical: 2, borderRadius: 999, backgroundColor: colors.primary,
     },
     premiumTagText: { fontFamily: 'Inter_500Medium', fontSize: 11, color: colors.onPrimary },
     subline: { fontFamily: 'Inter_400Regular', fontSize: 13, color: colors.textSecondary, marginTop: 3 },
-    sublineAccent: { fontFamily: 'Inter_500Medium', fontSize: 13, color: colors.primaryText, marginTop: 3 },
+    sublineAccent: { fontFamily: 'Inter_600SemiBold', fontSize: 14, color: colors.primaryText, marginTop: 3 },
     guestHint: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginTop: 2 },
 
     // Premium strip
-    premiumStrip: {
-      marginHorizontal: layout.padding.horizontal, marginTop: 18,
-      flexDirection: 'row', alignItems: 'center', gap: 12,
-      paddingHorizontal: 16, paddingVertical: 14,
-      borderRadius: layout.radius.card, backgroundColor: `${colors.primary}14`,
+    premiumHero: {
+      marginHorizontal: layout.padding.horizontal, marginTop: 18, padding: 20, overflow: 'hidden',
+      borderRadius: 24, backgroundColor: colors.heroSurface,
+      borderWidth: StyleSheet.hairlineWidth, borderColor: colors.heroBorder,
     },
-    premiumStripTitle: { fontFamily: 'Inter_500Medium', fontSize: 14, color: colors.text },
-    premiumStripSub: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginTop: 2 },
+    premiumEyebrow: {
+      fontFamily: 'Inter_600SemiBold', fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', color: colors.dawn,
+    },
+    premiumHeroTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold', fontSize: 26, lineHeight: 30, color: '#F5F1E8', marginTop: 10, maxWidth: '72%',
+    },
+    premiumHeroSub: {
+      fontFamily: 'Inter_400Regular', fontSize: 14, lineHeight: 20, color: '#D5E4E0', marginTop: 6, maxWidth: '84%',
+    },
+    perks: { marginTop: 14, gap: 8 },
+    perkRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+    perkText: { fontFamily: 'Inter_400Regular', fontSize: 13, color: '#E6EFEC' },
+    premiumCta: {
+      minHeight: 48, borderRadius: 24, marginTop: 18, backgroundColor: colors.dawn,
+      alignItems: 'center', justifyContent: 'center',
+    },
+    premiumCtaText: { fontFamily: 'Inter_600SemiBold', fontSize: 16, color: '#2A1E08' },
 
     // Sections
     section: { marginTop: 26, paddingHorizontal: layout.padding.horizontal },
@@ -290,10 +317,10 @@ const ProfileScreen = ({ navigation }) => {
     },
     card: {
       backgroundColor: colors.surfaceContainerLowest, borderRadius: 18,
-      borderWidth: 1, borderColor: colors.border, overflow: 'hidden',
+      borderWidth: StyleSheet.hairlineWidth, borderColor: colors.border, overflow: 'hidden',
     },
-    row: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 14, gap: 12 },
-    divider: { borderTopWidth: 1, borderTopColor: colors.border },
+    row: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 8, gap: 12, minHeight: 56 },
+    divider: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: colors.border },
     rowIcon: {
       width: 32, height: 32, borderRadius: 10, backgroundColor: neutral.bg,
       alignItems: 'center', justifyContent: 'center',
@@ -307,9 +334,9 @@ const ProfileScreen = ({ navigation }) => {
 
     // Segmented control (Library pattern)
     segTrack: {
-      flexDirection: 'row', backgroundColor: neutral.bg, borderRadius: 12, padding: 3, gap: 3,
+      flexDirection: 'row', backgroundColor: neutral.bg, borderRadius: 14, padding: 3, gap: 3,
     },
-    seg: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: 8, borderRadius: 9 },
+    seg: { flex: 1, alignItems: 'center', justifyContent: 'center', minHeight: 44, borderRadius: 11 },
     segActive: { backgroundColor: colors.primary },
     segTitle: { fontFamily: 'Inter_500Medium', fontSize: 13, color: neutral.text },
     segSub: { fontFamily: 'Inter_400Regular', fontSize: 11, color: neutral.text, marginTop: 1 },
@@ -319,15 +346,21 @@ const ProfileScreen = ({ navigation }) => {
     chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
     chip: {
       flexDirection: 'row', alignItems: 'center', gap: 6,
-      paddingHorizontal: 12, paddingVertical: 7, borderRadius: 999,
+      paddingHorizontal: 16, minHeight: 44, borderRadius: 22,
       backgroundColor: neutral.bg, borderWidth: 1, borderColor: neutral.border,
     },
     chipActive: { backgroundColor: colors.primary, borderColor: colors.primary },
-    chipText: { fontFamily: 'Inter_500Medium', fontSize: 13, color: neutral.text },
+    chipText: { fontFamily: 'Inter_500Medium', fontSize: 14, color: neutral.text },
     chipActiveText: { color: colors.onPrimary },
 
+    // Interest preview (category icon badges)
+    previewRow: { flexDirection: 'row', gap: 8, paddingLeft: 58, paddingRight: 14, paddingBottom: 14, flexWrap: 'wrap' },
+    previewBadge: { width: 34, height: 34, borderRadius: 11, alignItems: 'center', justifyContent: 'center', borderWidth: 1 },
+    previewImg: { width: 28, height: 28 },
+
     // Footer
-    footer: { alignItems: 'center', marginTop: 30, gap: 10 },
+    footer: { alignItems: 'center', marginTop: 30, gap: 2 },
+    footLink: { minHeight: 44, justifyContent: 'center' },
     resetText: { fontFamily: 'Inter_500Medium', fontSize: 14, color: colors.danger },
     versionText: { fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary },
 
@@ -351,6 +384,11 @@ const ProfileScreen = ({ navigation }) => {
     btnGhostText: { fontFamily: 'Inter_500Medium', fontSize: 14, color: colors.textSecondary },
     btnPrimary: { backgroundColor: colors.primary, borderRadius: 999, paddingHorizontal: 20, paddingVertical: 11 },
     btnPrimaryText: { fontFamily: 'Inter_500Medium', fontSize: 14, color: colors.onPrimary },
+    btnPrimaryWide: {
+      backgroundColor: colors.primary, borderRadius: 999, minHeight: 48,
+      alignItems: 'center', justifyContent: 'center', marginTop: 20,
+    },
+    btnPrimaryWideText: { fontFamily: 'Inter_600SemiBold', fontSize: 15, color: colors.onPrimary },
     langRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 14 },
     langText: { flex: 1, fontFamily: 'Inter_500Medium', fontSize: 16, color: colors.text },
 
@@ -429,6 +467,8 @@ const ProfileScreen = ({ navigation }) => {
 
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.scroll}>
 
+        <ScreenHeader title={t('tabProfile', lang)} />
+
         {/* 1 · Kimlik */}
         <TouchableOpacity style={s.header} onPress={openNameSheet} activeOpacity={0.8}
           accessibilityRole="button" accessibilityLabel={t('profileEditName', lang)}>
@@ -455,50 +495,47 @@ const ProfileScreen = ({ navigation }) => {
               </Text>
             ) : null}
           </View>
+          <View style={s.editBtn}><Ionicons name="create-outline" size={19} color={colors.textSecondary} /></View>
         </TouchableOpacity>
 
         {/* 2 · Premium şeridi */}
         {!isPremium && (
-          <TouchableOpacity
-            style={s.premiumStrip}
-            activeOpacity={0.85}
-            onPress={() => navigation.navigate('Paywall', { source: 'profile_upsell', reason: 'profile_upgrade' })}
-          >
-            <Ionicons name="sparkles-outline" size={20} color={colors.primaryText} />
-            <View style={{ flex: 1 }}>
-              <Text style={s.premiumStripTitle}>{t('profilePremiumStripTitle', lang)}</Text>
-              <Text style={s.premiumStripSub}>{t('profilePremiumStripSub', lang)}</Text>
+          <View style={s.premiumHero}>
+            <HeroSun color={colors.dawn} />
+            <Text style={s.premiumEyebrow}>{t('profilePremiumStripTitle', lang)}</Text>
+            <Text style={s.premiumHeroTitle}>{t('profilePremiumHeadline', lang)}</Text>
+            <Text style={s.premiumHeroSub}>{t('profilePremiumCopy', lang)}</Text>
+            <View style={s.perks}>
+              {['profilePerkQuota', 'profilePerkNoAds', 'profilePerkFreeze'].map((k) => (
+                <View key={k} style={s.perkRow}>
+                  <Ionicons name="checkmark" size={15} color={colors.dawn} />
+                  <Text style={s.perkText}>{t(k, lang)}</Text>
+                </View>
+              ))}
             </View>
-            <Ionicons name="chevron-forward" size={16} color={colors.primaryText} />
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={s.premiumCta}
+              activeOpacity={0.85}
+              accessibilityRole="button"
+              onPress={() => navigation.navigate('Paywall', { source: 'profile_upsell', reason: 'profile_upgrade' })}
+            >
+              <Text style={s.premiumCtaText}>{t('profileGoPremium', lang)}</Text>
+            </TouchableOpacity>
+          </View>
         )}
 
         {/* 3 · Okuma ritmi */}
         <Section label={t('profileSectionRhythm', lang)}>
-          <View>
-            <Row first icon="flag-outline" title={t('profileDailyGoal', lang)} sub={t('profileDailyGoalSub', lang)} chevron={false} />
-            <View style={s.rowExtra}>
-              <Segmented
-                value={selectedMinutes}
-                onChange={handlePlanChange}
-                options={PLAN_OPTIONS.map((o) => ({
-                  value: o.minutes,
-                  title: t(o.target === 1 ? 'profileGoalStoryOne' : 'profileGoalStoryMany', lang).replace('{{count}}', String(o.target)),
-                  sub: t('profileGoalMinutes', lang).replace('{{min}}', String(o.minutes)),
-                }))}
-              />
-            </View>
-          </View>
-
           {permissionDenied ? (
             <Row
+              first
               icon="notifications-off-outline"
               title={t('profileRemindersOff', lang)}
               sub={t('profileRemindersOffSub', lang)}
               onPress={() => Linking.openSettings()}
             />
           ) : (
-            <View style={s.divider}>
+            <View>
               <Row
                 first
                 icon="notifications-outline"
@@ -533,6 +570,23 @@ const ProfileScreen = ({ navigation }) => {
         {/* 4 · İçerik */}
         <Section label={t('profileSectionContent', lang)}>
           <Row first icon="compass-outline" title={t('profileInterests', lang)} value={interestSummary} onPress={() => setSheet('interests')} />
+          {interestPreview.length > 0 ? (
+            <View style={s.previewRow}>
+              {interestPreview.map((p) => {
+                const name = p.raw_name || p.name;
+                const img = getCategoryPillImage(name, isDark).source;
+                const accent = getCategoryTheme(name, isDark).accent || colors.primary;
+                return (
+                  <View
+                    key={p.id}
+                    style={[s.previewBadge, { backgroundColor: `${accent}${isDark ? '4D' : '24'}`, borderColor: `${accent}${isDark ? '73' : '33'}` }]}
+                  >
+                    {img ? <Image source={img} style={s.previewImg} resizeMode="contain" /> : null}
+                  </View>
+                );
+              })}
+            </View>
+          ) : null}
           <Row icon="globe-outline" title={t('languageLabel', lang)} value={langLabel} onPress={() => setSheet('language')} />
         </Section>
 
@@ -574,10 +628,10 @@ const ProfileScreen = ({ navigation }) => {
 
         {/* 7 · Alt kısım */}
         <View style={s.footer}>
-          <TouchableOpacity onPress={handleResetData} hitSlop={10}>
+          <TouchableOpacity style={s.footLink} onPress={handleResetData}>
             <Text style={s.resetText}>{t('profileResetDataLabel', lang)}</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={handleDeleteAccount} hitSlop={10}>
+          <TouchableOpacity style={s.footLink} onPress={handleDeleteAccount}>
             <Text style={s.resetText}>{t('profileDeleteAccountLabel', lang)}</Text>
           </TouchableOpacity>
           <Text style={s.versionText}>{`Albor ${appVersion}`}</Text>
@@ -660,19 +714,15 @@ const ProfileScreen = ({ navigation }) => {
                         categoryName={p.raw_name || p.name}
                         active={selectedCategories.includes(id)}
                         isDark={isDark}
-                        compact
-                        showImage={false}
-                        useCategoryTextColor
+                        inline
                         onPress={() => toggleSelectedCategory(id)}
                       />
                     );
                   })}
                 </View>
-                <View style={s.sheetActions}>
-                  <TouchableOpacity style={s.btnPrimary} onPress={() => setSheet(null)}>
-                    <Text style={s.btnPrimaryText}>{t('profileDone', lang)}</Text>
-                  </TouchableOpacity>
-                </View>
+                <TouchableOpacity style={s.btnPrimaryWide} activeOpacity={0.85} onPress={() => setSheet(null)}>
+                  <Text style={s.btnPrimaryWideText}>{t('profileDone', lang)}</Text>
+                </TouchableOpacity>
               </>
             )}
 

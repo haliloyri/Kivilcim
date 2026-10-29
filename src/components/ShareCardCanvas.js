@@ -23,11 +23,12 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
+import { SHARE_CARD_ICON } from '../constants/logos';
 
 // App icon (navy rounded square, cropped to its edges) — reads as the Albor
 // logo on every card theme. The old transparent mark had ~25% empty padding
 // around the artwork, so it floated away from its underline and wasted space.
-const BRAND_ICON = require('../../assets/share_card_icon.png');
+const BRAND_ICON = SHARE_CARD_ICON;
 
 export const SHARE_CARD_WIDTH = 1080;
 export const getShareCardHeight = (format) => (format === 'post' ? 1080 : 1920);

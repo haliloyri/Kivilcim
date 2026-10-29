@@ -77,7 +77,7 @@ export const syncContentFromSupabase = async () => {
   // RLS only exposes active stories (and their translations/variants).
   const [
     mainCategories, subCategories, categories, categoryLabels, subcategories,
-    books, bookTranslations, stories, storyTranslations, variants,
+    books, bookTranslations, remoteStories, remoteTranslations, remoteVariants,
   ] = await Promise.all([
     fetchAll('main_categories', 'id, name_tr, name_en, name_de, name_es'),
     fetchAll('sub_categories', 'id, main_category_id, name_tr, name_en, name_de, name_es'),
@@ -93,7 +93,16 @@ export const syncContentFromSupabase = async () => {
 
   // An empty catalogue almost certainly means a broken upload — never let it
   // hide every story on the device.
-  if (!stories.length) return { changed: false };
+  if (!remoteStories.length) return { changed: false };
+
+  // SON55 stories ship only in the bundled DB (the server has not got them
+  // yet): the server must not revert their version, text or visibility.
+  const localOnlyIds = (await db.getAllAsync(`SELECT id FROM stories WHERE version = 'SON55'`))
+    .map((row) => Number(row.id));
+  const localOnly = new Set(localOnlyIds);
+  const stories = remoteStories.filter((s) => !localOnly.has(Number(s.id)));
+  const storyTranslations = remoteTranslations.filter((t) => !localOnly.has(Number(t.story_id)));
+  const variants = remoteVariants.filter((v) => !localOnly.has(Number(v.story_id)));
 
   await db.withTransactionAsync(async () => {
     await replaceRows(db, 'main_categories', ['id', 'name_tr', 'name_en', 'name_de', 'name_es'], mainCategories);
@@ -153,11 +162,8 @@ export const syncContentFromSupabase = async () => {
     await replaceRows(db, 'story_conversation_variants',
       ['story_id', 'lang_code', 'punchline', 'thirty_sec', 'question', 'key_contrast'], variants);
 
-    // Server decides what is visible.
-    const activeIds = stories.map((s) => Number(s.id)).filter(Number.isFinite);
-    await db.runAsync(
-      `UPDATE stories SET is_active = CASE WHEN id IN (${activeIds.join(',')}) THEN 1 ELSE 0 END`
-    );
+    // Every story is visible: collection selection (profile) filters, not is_active.
+    await db.runAsync('UPDATE stories SET is_active = 1');
 
     await db.runAsync(
       'INSERT OR REPLACE INTO content_seed_versions (seed_key, version, applied_at) VALUES (?, ?, ?)',

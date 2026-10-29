@@ -98,7 +98,7 @@ it('completes with no reminders or permission prompt and preserves opt-out after
   await press(primary());
   expect(userData.isOnboarded).toBe(true);
   expect(userData.preferences).toMatchObject({
-    categories: [1, 2], time: { minutes: 6, dailyStoryTarget: 2 },
+    categories: [1, 2], time: { minutes: 9, dailyStoryTarget: 3 },
     remindersEnabled: false, reminderWindows: [],
   });
   const writes = AsyncStorage.setItem.mock.calls
@@ -124,7 +124,7 @@ it('lets a reader reselect a window and keeps their plan when permission is deni
   await press(primary());
   expect(Notifications.requestPermissionsAsync).toHaveBeenCalled();
   expect(userData.preferences).toMatchObject({
-    categories: [1, 2], time: { minutes: 6 }, remindersEnabled: true,
+    categories: [1, 2], time: { minutes: 9 }, remindersEnabled: true,
     reminderWindows: ['morning'], reminderHour: 8,
   });
   expect(userData.isOnboarded).toBe(true);

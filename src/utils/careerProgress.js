@@ -150,6 +150,8 @@ export const buildRequirementRows = (node, metrics, availableCategoryCount) => {
 export const CAPSTONE_TITLE_KEY = 'careerTitle.renaissance';
 export const CAPSTONE_REQUIRED_PATHS = 2;
 
+export const getCareerPathIconName = (id) => (id === 'exploration' ? 'compass-outline' : id === 'depth' ? 'bulb-outline' : 'chatbubbles-outline');
+
 const asEarnedNodeIds = (earnedNodes) => new Set((earnedNodes || []).map((node) => typeof node === 'string' ? node : node?.nodeId).filter(Boolean));
 
 const buildPathNodes = ({ pathId, metrics, earnedNodeIds, availableCategoryCount, meaningfulActivityToday }) => {

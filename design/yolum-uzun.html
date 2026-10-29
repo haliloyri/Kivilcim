@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Albor — Yolum, uzun ekran</title>
+<style>
+  /* Referans: iPhone 17 Pro, 402 pt genişlik. Tüm içerik tek uzun sayfada. Kaynak ekran: CareerPathExperience. */
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #E9E4DA; font-family: -apple-system, "SF Pro Text", Inter, system-ui, sans-serif; padding-bottom: 40px; }
+  body[data-mode="dark"] { background: #0A0A09; }
+  .switch { position: sticky; top: 0; z-index: 50; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 10px; background: rgba(233,228,218,.94); backdrop-filter: blur(8px); }
+  body[data-mode="dark"] .switch { background: rgba(10,10,9,.94); }
+  .switch .grp { display: flex; gap: 6px; padding-right: 10px; margin-right: 4px; border-right: 1px solid #8884; flex-wrap: wrap; justify-content: center; }
+  .switch button { min-height: 40px; padding: 0 14px; border-radius: 20px; border: 1px solid #8884; background: #fff; color: #24211E; font: 600 13px/1 inherit; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: #1F5F5B; color: #fff; border-color: #1F5F5B; }
+  svg.i { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.15em; }
+  p, h1, h2, h3, h4 { margin: 0; }
+
+  .phone { --serif: "Playfair Display", Georgia, serif; width: 402px; margin: 16px auto 0; background: var(--bg); color: var(--ink); border-radius: 48px; overflow: clip; position: relative; box-shadow: 0 0 0 10px #111, 0 30px 80px rgba(0,0,0,.35); }
+  .phone[data-m="light"] { --bg:#F7F3EC; --card:#FFFDF9; --bd:#E6DED3; --ink:#24211E; --t2:#6B625A; --mut:#8C837A; --pet:#1F5F5B; --onpet:#fff; --pc:#E2EDEA; --gold:#E9A94B; --goldtx:#8A5A0E; --hero:#1B4B48; --herobd:#1B4B48; --glow:rgba(233,169,75,.34); --tab:#FBF8F2; --track:#E4DDD2; --cell:#E9E3DA; --hot:#966E25; --fin:#2F7D5B; --psi:#5B5FB5; --fel:#5B5FB5; --his:#A5623A; --lea:#A5623A; --sci:#8650A8; --hea:#C0507A; }
+  .phone[data-m="dark"]  { --bg:#141413; --card:#201F1D; --bd:#2F2E2B; --ink:#F2EEE8; --t2:#A8A29A; --mut:#7E7870; --pet:#7CC0B6; --onpet:#1A1A1A; --pc:#1F3634; --gold:#F0C170; --goldtx:#F0C170; --hero:#1F3A37; --herobd:#2E5A55; --glow:rgba(240,193,112,.22); --tab:#141413; --track:#2A2927; --cell:#2A2927; --hot:#E5C27A; --fin:#6FCB9F; --psi:#A5A9F0; --fel:#A5A9F0; --his:#E0A27C; --lea:#E0A27C; --sci:#CFA0E8; --hea:#F29AB8; }
+  .island { position: absolute; top: 11px; left: 50%; width: 126px; height: 37px; margin-left: -63px; background: #000; border-radius: 20px; z-index: 40; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .sub { font-size: 13px; color: var(--t2); margin-top: 2px; line-height: 1.4; }
+  .badge { flex: none; border-radius: 10px; overflow: hidden; display: grid; place-items: center; background: color-mix(in srgb, var(--c) 14%, var(--card)); }
+  .badge img { width: 100%; height: 100%; object-fit: contain; padding: 2px; display: block; }
+  .badge.s28 { width: 28px; height: 28px; } .badge.s40 { width: 40px; height: 40px; }
+
+  /* ── Tepe ── */
+  .head { position: relative; padding: 0 20px 70px; overflow: hidden; background: radial-gradient(120% 90% at 85% -10%, var(--glow) 0%, transparent 60%); }
+  .status { height: 62px; padding: 20px 14px 0; display: flex; justify-content: space-between; font-size: 16px; font-weight: 600; }
+  .bar { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+  .bar .ttl { flex: 1; min-width: 0; }
+  .bar h1 { font-family: var(--serif); font-size: 28px; line-height: 1.1; font-weight: 700; }
+  .bar .sub { margin-top: 4px; }
+  .streak { min-width: 44px; height: 44px; padding: 0 12px; border-radius: 22px; background: var(--card); border: .5px solid var(--bd); color: var(--goldtx); display: inline-flex; align-items: center; justify-content: center; gap: 4px; font-size: 15px; font-weight: 600; }
+  .streak svg { color: var(--gold); }
+
+  /* ── Hero: unvan kartı ── */
+  .hero { position: relative; z-index: 2; margin: -52px 20px 0; padding: 20px; border-radius: 24px; background: var(--hero); border: .5px solid var(--herobd); color: #F5F1E8; overflow: hidden; box-shadow: 0 14px 30px rgba(20,60,56,.22); }
+  .sun { position: absolute; right: -34px; top: -30px; width: 168px; height: 130px; pointer-events: none; }
+  .hero > *:not(.sun) { position: relative; }
+  .eyebrow { font-size: 12px; letter-spacing: .08em; font-weight: 600; color: var(--gold); text-transform: uppercase; }
+  .hero h2 { margin: 10px 0 6px; max-width: 74%; font-family: var(--serif); font-size: 30px; line-height: 1.15; font-weight: 700; }
+  .hero .copy { max-width: 82%; font-size: 14px; line-height: 1.45; color: #D5E4E0; }
+  .nxt { margin-top: 18px; }
+  .nxt .row b { font-size: 13px; font-weight: 600; }
+  .nxt .pct { font-size: 12px; font-weight: 700; color: var(--gold); font-variant-numeric: tabular-nums; }
+  .nxt .track { height: 6px; border-radius: 3px; background: rgba(255,255,255,.2); margin-top: 8px; overflow: hidden; }
+  .nxt .track i { display: block; height: 100%; background: var(--gold); border-radius: 3px; }
+  .nxt p { margin-top: 8px; font-size: 12px; color: #BFD6D1; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 11px; border-radius: 15px; background: rgba(255,255,255,.14); font-size: 12px; font-weight: 600; color: #F5F1E8; }
+  .pill svg { color: var(--gold); }
+  .share { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; min-height: 44px; padding: 0 16px; border-radius: 22px; background: rgba(255,255,255,.14); color: #F5F1E8; font-size: 14px; font-weight: 600; }
+
+  /* ── Genel bölüm ── */
+  .sec { margin: 28px 20px 0; }
+  .sec > h3, .sec .row > h3 { font-size: 18px; font-weight: 600; }
+  .link { font-size: 14px; font-weight: 600; color: var(--pet); min-height: 44px; display: inline-flex; align-items: center; }
+  .card { background: var(--card); border: .5px solid var(--bd); border-radius: 18px; padding: 16px; box-shadow: 0 1px 2px rgba(36,33,30,.04); }
+  .gap { margin-top: 12px; }
+  .eb { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--t2); }
+
+  .tool { display: flex; align-items: center; gap: 10px; min-height: 52px; margin: 12px 20px 0; padding: 0 16px; border-radius: 16px; background: var(--card); border: .5px solid var(--bd); font-size: 15px; font-weight: 600; }
+  .tool svg { font-size: 20px; color: var(--pet); } .tool .ch { margin-left: auto; color: var(--t2); }
+
+  /* ── Sıradaki adım ── */
+  .next h4 { font-family: var(--serif); font-size: 22px; line-height: 1.2; font-weight: 600; margin-top: 8px; }
+  .req { display: flex; gap: 12px; padding: 12px 0; border-bottom: .5px solid var(--bd); }
+  .req:last-of-type { border-bottom: 0; }
+  .req .ic { flex: none; width: 36px; height: 36px; border-radius: 18px; display: grid; place-items: center; background: var(--pc); color: var(--pet); font-size: 18px; }
+  .req.ok .ic { background: var(--pet); color: var(--onpet); }
+  .req .tx { flex: 1; min-width: 0; }
+  .req b { font-size: 14px; font-weight: 600; }
+  .req .v { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .req.ok .v { color: var(--pet); }
+  .req p { font-size: 12px; line-height: 1.45; color: var(--t2); margin-top: 3px; }
+  .req .mini { height: 4px; border-radius: 2px; background: var(--track); margin-top: 8px; overflow: hidden; }
+  .req .mini i { display: block; height: 100%; background: var(--pet); }
+  .reward { margin-top: 6px; padding: 12px 14px; border-radius: 14px; background: var(--pc); font-size: 13px; line-height: 1.45; color: var(--ink); }
+  .btn { display: flex; align-items: center; justify-content: space-between; height: 52px; margin-top: 14px; padding: 0 18px; border-radius: 14px; background: var(--gold); color: #2A1E08; font-size: 16px; font-weight: 600; }
+
+  /* ── Öğrendiklerin ── */
+  .kpis { display: flex; }
+  .kpi { flex: 1; } .kpi b { display: block; font-family: var(--serif); font-size: 32px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .kpi span { font-size: 12px; color: var(--t2); font-weight: 500; }
+  .ms { margin-top: 14px; } .ms .track { height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; } .ms .track i { display: block; height: 100%; background: var(--pet); }
+  .ms p { font-size: 12px; color: var(--t2); margin-top: 6px; }
+  .hr { height: .5px; background: var(--bd); margin: 16px 0; }
+  .chips { display: flex; gap: 14px; margin-top: 10px; overflow-x: auto; scrollbar-width: none; }
+  .mc { flex: none; width: 68px; text-align: center; font-size: 11px; font-weight: 500; }
+  .mc .o { width: 52px; height: 52px; margin: 0 auto 6px; border-radius: 26px; display: grid; place-items: center; background: var(--pc); color: var(--pet); font-size: 22px; }
+  .mc.lk .o { background: none; border: 1px dashed var(--mut); color: var(--t2); font-size: 18px; } .mc.lk { color: var(--t2); }
+  .strong { font-family: var(--serif); font-size: 18px; font-weight: 600; }
+  .bars { margin-top: 10px; display: grid; gap: 10px; }
+  .br { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; }
+  .br .n { width: 92px; display: flex; align-items: center; gap: 8px; } .br .n .badge { width: 24px; height: 24px; border-radius: 8px; } .br .n .badge img { padding: 1px; }
+  .br .t { flex: 1; height: 8px; border-radius: 4px; background: var(--track); overflow: hidden; } .br .t i { display: block; height: 100%; border-radius: 4px; background: var(--c); }
+  .br .c { width: 22px; text-align: right; color: var(--t2); font-variant-numeric: tabular-nums; }
+  .rec { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 8px 0; border-bottom: .5px solid var(--bd); }
+  .rec:last-child { border: 0; } .rec h5 { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.3; } .rec .meta { font-size: 12px; color: var(--t2); margin-top: 2px; } .rec .ch { margin-left: auto; color: var(--t2); }
+
+  /* ── Zaman çizgisi ── */
+  .tl { padding: 8px 16px 8px; }
+  .grp { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--pet); padding: 12px 0 4px; }
+  .nd { display: flex; gap: 14px; min-height: 64px; position: relative; padding: 8px 0; }
+  .nd .rail { flex: none; width: 32px; display: flex; flex-direction: column; align-items: center; }
+  .nd .rail i { flex: 1; width: 2px; margin-top: 4px; background: var(--bd); border-radius: 1px; }
+  .nd.done .rail i { background: var(--pet); }
+  .mk { width: 32px; height: 32px; border-radius: 16px; display: grid; place-items: center; font-size: 16px; flex: none; }
+  .done .mk { background: var(--pet); color: var(--onpet); }
+  .nxtn .mk { background: var(--card); color: var(--goldtx); border: 2px solid var(--gold); }
+  .fut .mk { border: 1.5px dashed var(--mut); color: var(--mut); }
+  .nd .tx { flex: 1; padding-bottom: 6px; min-width: 0; }
+  .nd b { font-size: 15px; font-weight: 600; } .fut b { color: var(--t2); }
+  .nd .st { font-size: 12px; color: var(--t2); margin-top: 1px; }
+  .nxtn .st { color: var(--goldtx); font-weight: 600; }
+  .nd .ds { font-size: 12px; line-height: 1.45; color: var(--t2); margin-top: 4px; }
+  .nd .ul { font-size: 11px; color: var(--mut); margin-top: 3px; font-weight: 500; }
+  .nd .ch { align-self: center; color: var(--mut); }
+
+  /* ── Öndeki yollar ── */
+  .path { display: flex; gap: 14px; align-items: center; min-height: 72px; padding: 14px 16px; border-radius: 18px; background: var(--card); border: .5px solid var(--bd); margin-top: 10px; }
+  .path .pi { flex: none; width: 44px; height: 44px; border-radius: 22px; background: var(--pc); color: var(--pet); display: grid; place-items: center; font-size: 22px; }
+  .path b { font-size: 15px; font-weight: 600; } .path p { font-size: 12px; color: var(--t2); margin-top: 2px; line-height: 1.4; }
+  .path .ln { font-size: 11px; color: var(--mut); margin-top: 6px; font-weight: 500; }
+  .path .ch { margin-left: auto; color: var(--t2); }
+  .path.cur { border-color: var(--pet); background: var(--pc); }
+  .tag { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 10px; background: var(--pet); color: var(--onpet); font-size: 10px; font-weight: 600; letter-spacing: .04em; vertical-align: 1px; }
+  .cap { display: flex; gap: 12px; align-items: center; margin-top: 10px; padding: 14px 16px; border-radius: 18px; border: 1px dashed var(--mut); font-size: 13px; color: var(--t2); line-height: 1.45; }
+  .cap svg { flex: none; font-size: 22px; color: var(--goldtx); } .cap b { display: block; color: var(--ink); font-family: var(--serif); font-size: 16px; font-weight: 600; }
+
+  /* ── Okuma ritmi ── */
+  .wk { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 12px; border-radius: 16px; background: var(--pc); color: var(--ink); font-size: 13px; font-weight: 500; margin-top: 10px; }
+  .wk svg { color: var(--pet); }
+  .st3 { display: flex; } .st3 > div { flex: 1; } .st3 b { display: block; font-family: var(--serif); font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; } .st3 span { font-size: 12px; color: var(--t2); font-weight: 500; }
+  .st3 .f b { color: var(--goldtx); }
+  .heat { display: flex; gap: 6px; margin-top: 8px; justify-content: space-between; }
+  .heat .col { display: grid; gap: 6px; flex: 1; justify-items: center; }
+  .heat i { width: 100%; max-width: 30px; aspect-ratio: 1; border-radius: 50%; background: var(--cell); } .heat i.l1 { background: color-mix(in srgb, var(--pet) 45%, var(--cell)); } .heat i.l2 { background: var(--pet); } .heat i.l3 { background: var(--hot); } .heat i.fu { background: transparent; }
+  .lg { display: flex; justify-content: flex-end; align-items: center; gap: 6px; margin-top: 12px; font-size: 11px; color: var(--t2); } .lg i { width: 10px; height: 10px; border-radius: 50%; background: var(--cell); } .lg i.l1 { background: color-mix(in srgb, var(--pet) 45%, var(--cell)); } .lg i.l2 { background: var(--pet); } .lg i.l3 { background: var(--hot); }
+  .frz { display: flex; gap: 12px; align-items: center; margin-top: 12px; padding: 14px; border-radius: 16px; background: var(--pc); }
+  .frz > svg { flex: none; font-size: 24px; color: var(--pet); } .frz b { font-size: 14px; font-weight: 600; } .frz p { font-size: 12px; color: var(--t2); margin-top: 2px; line-height: 1.4; }
+  .frz .go { flex: none; min-height: 44px; display: grid; place-items: center; padding: 0 14px; border-radius: 12px; border: .5px solid var(--pet); color: var(--pet); font-size: 13px; font-weight: 600; background: var(--card); }
+
+
+  .tabbar { position: sticky; bottom: 0; z-index: 25; display: flex; height: 92px; padding: 8px 12px 34px; background: var(--tab); border-top: .5px solid var(--bd); margin-top: 32px; }
+  .tab { flex: 1; display: grid; place-items: center; align-content: center; gap: 2px; font-size: 11px; color: var(--t2); } .tab svg { width: 24px; height: 24px; } .tab.on { color: var(--pet); font-weight: 600; }
+
+  /* ── Segment + özet ── */
+  .sumrow { display: flex; align-items: center; gap: 8px; margin-top: 16px; min-height: 44px; padding: 0 2px; border-top: .5px solid rgba(255,255,255,.18); font-size: 13px; color: #D5E4E0; }
+  .sumrow b { color: #F5F1E8; font-weight: 600; } .sumrow .ch { margin-left: auto; color: var(--gold); }
+  .seg { position: sticky; top: 52px; z-index: 20; display: flex; gap: 4px; margin: 20px 20px 0; padding: 4px; border-radius: 22px; background: var(--track); }
+  .seg button { flex: 1; min-height: 44px; border: 0; border-radius: 18px; background: transparent; color: var(--t2); font: 600 14px/1 inherit; cursor: pointer; }
+  .seg button[aria-selected="true"] { background: var(--card); color: var(--pet); box-shadow: 0 1px 3px rgba(36,33,30,.12); }
+  .panel[hidden] { display: none; }
+  .more { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; margin-top: 6px; color: var(--pet); font-size: 14px; font-weight: 600; cursor: pointer; }
+  .more svg { transition: transform .15s; } .more[aria-expanded="true"] svg { transform: rotate(90deg); }
+  .fold[hidden] { display: none; }
+  .done-row { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 8px 0; }
+  .done-row .mk { width: 32px; height: 32px; border-radius: 16px; background: var(--pet); color: var(--onpet); display: grid; place-items: center; font-size: 16px; flex: none; }
+  .done-row b { font-size: 15px; font-weight: 600; } .done-row p { font-size: 12px; color: var(--t2); }
+  .done-row .ch { margin-left: auto; color: var(--mut); }
+
+  .hero .shr { position: absolute; right: 12px; top: 12px; width: 44px; height: 44px; border-radius: 22px; background: rgba(255,255,255,.14); color: #F5F1E8; display: grid; place-items: center; font-size: 19px; }
+  .steps { display: flex; align-items: flex-start; margin-top: 18px; }
+  .step { flex: 1; text-align: center; font-size: 11px; line-height: 1.3; color: #BFD6D1; position: relative; }
+  .step .d { width: 24px; height: 24px; margin: 0 auto 6px; border-radius: 12px; display: grid; place-items: center; background: #F5F1E8; color: var(--hero); font-size: 13px; position: relative; z-index: 1; }
+  .step.nx .d { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+  .step:not(:last-child)::after { content: ""; position: absolute; top: 11px; left: 50%; width: 100%; height: 2px; background: rgba(255,255,255,.3); }
+  .step.dn:not(:last-child)::after { background: #F5F1E8; }
+  .step b { display: block; color: #F5F1E8; font-weight: 600; }
+  .hero .btn { margin-top: 18px; }
+  .weekstrip { display: flex; align-items: center; gap: 10px; min-height: 52px; margin: 12px 20px 0; padding: 0 16px; border-radius: 16px; background: var(--card); border: .5px solid var(--bd); font-size: 14px; cursor: pointer; }
+  .weekstrip svg { color: var(--pet); font-size: 18px; } .weekstrip b { font-weight: 600; } .weekstrip .ch { margin-left: auto; color: var(--t2); }
+</style>
+</head>
+<body data-mode="light">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="flame" viewBox="0 0 24 24"><path d="M12 3c1 4 5 5.5 5 10a5 5 0 01-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z"/></symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></symbol>
+  <symbol id="map" viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14"/></symbol>
+  <symbol id="trophy" viewBox="0 0 24 24"><path d="M8 4h8v6a4 4 0 01-8 0zM8 6H4v2a3 3 0 003 3M16 6h4v2a3 3 0 01-3 3M12 14v4M8 20h8"/></symbol>
+  <symbol id="share" viewBox="0 0 24 24"><path d="M12 15V3M8 7l4-4 4 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></symbol>
+  <symbol id="tool" viewBox="0 0 24 24"><path d="M14 6a4 4 0 005 5l-9 9a2.1 2.1 0 01-3-3l9-9a4 4 0 00-2-2z"/></symbol>
+  <symbol id="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+  <symbol id="book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19a2 2 0 012-2h13"/></symbol>
+  <symbol id="compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+  <symbol id="bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0012 3z"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></symbol>
+  <symbol id="lib" viewBox="0 0 24 24"><path d="M5 4v16M10 4v16M15 5l4 15"/></symbol>
+</defs></svg>
+
+<div class="switch">
+  <div class="grp" role="group" aria-label="Durum">
+    <button type="button" data-s="new" aria-pressed="false">Yeni</button>
+    <button type="button" data-s="mid" aria-pressed="true">Ortada</button>
+    <button type="button" data-s="select" aria-pressed="false">Yol seçimi</button>
+    <button type="button" data-s="path" aria-pressed="false">Yolda</button>
+    <button type="button" data-s="done" aria-pressed="false">Zirve</button>
+  </div>
+  <button type="button" data-m="light" aria-pressed="true">Açık</button>
+  <button type="button" data-m="dark" aria-pressed="false">Koyu</button>
+</div>
+
+<main class="phone" id="phone" data-m="light" aria-label="Albor Yolum ekranı">
+  <div class="island"></div>
+
+  <section class="head">
+    <div class="status"><span>9:41</span><span>5G ▮▮▮</span></div>
+    <div class="bar">
+      <div class="ttl"><h1>Yolum</h1><p class="sub">Okudukça büyüyen unvanların ve fikir haritan.</p></div>
+      <span class="streak" id="hstreak"><svg class="i"><use href="#flame"/></svg><i id="hsn" style="font-style:normal">12</i></span>
+    </div>
+  </section>
+
+  <!-- 1 · Hero -->
+  <section class="hero" id="hero"></section>
+
+  <div class="weekstrip" role="button" data-go="ritim"><svg class="i"><use href="#cal"/></svg><span id="wkline"></span><svg class="i ch"><use href="#chev"/></svg></div>
+
+  <div class="seg" role="tablist" aria-label="Yolum bölümleri">
+    <button role="tab" aria-selected="true" data-t="yolculuk">Yolculuk</button>
+    <button role="tab" aria-selected="false" data-t="ogrendiklerim">Öğrendiklerim</button>
+    <button role="tab" aria-selected="false" data-t="ritim">Ritim</button>
+  </div>
+
+  <div class="panel" data-p="yolculuk" id="yol"></div>
+
+  <div class="panel" data-p="ogrendiklerim" id="learnp" hidden>
+  <!-- 3 · Öğrendiklerin -->
+  <section class="sec">
+    <h3>Öğrendiklerin</h3>
+    <div class="card gap">
+      <div class="kpis">
+        <div class="kpi"><b>7</b><span>kitap</span></div>
+        <div class="kpi"><b>23</b><span>fikir</span></div>
+        <div class="kpi"><b>96</b><span>dakika</span></div>
+      </div>
+      <div class="ms"><div class="track"><i style="width:70%"></i></div><p>10 kitaba 3 kitap kaldı</p></div>
+      <div class="hr"></div>
+      <p class="eb">Kilometre taşların</p>
+      <div class="chips">
+        <div class="mc"><span class="o"><svg class="i"><use href="#lib"/></svg></span>5 kitap</div>
+        <div class="mc"><span class="o"><svg class="i"><use href="#compass"/></svg></span>Finans</div>
+        <div class="mc"><span class="o"><svg class="i"><use href="#compass"/></svg></span>Felsefe</div>
+        <div class="mc lk"><span class="o"><svg class="i"><use href="#lock"/></svg></span>10 kitap</div>
+      </div>
+      <div class="hr"></div>
+      <p class="strong">En güçlü alanın: Finans</p>
+      <p class="eb" style="margin-top:12px">Zihin haritan</p>
+      <div class="bars" id="bars"></div>
+      <div class="hr"></div>
+      <p class="eb">Son aklında kalanlar</p>
+      <div id="recent"></div>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="panel" data-p="ritim" hidden>
+  <!-- 6 · Okuma ritmi -->
+  <section class="sec">
+    <h3>Okuma ritmi</h3>
+    <span class="wk"><svg class="i"><use href="#cal"/></svg><i id="wk2" style="font-style:normal"></i></span>
+    <div class="card gap">
+      <div class="st3">
+        <div class="f"><b id="s1">12</b><span>Gün serisi</span></div>
+        <div><b id="s2">19</b><span>En uzun seri</span></div>
+        <div><b id="act">0</b><span>Aktif günler</span></div>
+      </div>
+      <p class="sub" style="margin-top:14px" id="hl"></p>
+      <div class="heat" id="heat"></div>
+      <div class="lg">Az <i></i><i class="l1"></i><i class="l2"></i><i class="l3"></i> Çok</div>
+    </div>
+    <div class="share" style="background:var(--card);border:.5px solid var(--bd);color:var(--pet)"><svg class="i"><use href="#share"/></svg>Haftamı paylaş</div>
+  </section>
+
+  </div>
+
+  <nav class="tabbar">
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Keşfet</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><use href="#lib"/></svg>Kütüphane</span>
+    <span class="tab on"><svg class="i" viewBox="0 0 24 24"><use href="#map"/></svg>Yolum</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>Profil</span>
+  </nav>
+</main>
+
+<script>
+  const SUNSVG = `<svg class="sun" viewBox="0 0 168 130" fill="none" aria-hidden="true" style="transform:scaleY(-1)">
+      <circle cx="96" cy="104" r="40" fill="#E9A94B" opacity=".95"/><circle cx="96" cy="104" r="62" fill="#E9A94B" opacity=".14"/><circle cx="96" cy="104" r="84" fill="#E9A94B" opacity=".08"/>
+      <g stroke="#F3C877" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M96 40V22"/><path d="M60 52l-10-12"/><path d="M132 52l10-12"/><path d="M40 78l-16-6"/><path d="M152 78l16-6"/></g>
+    </svg>`;
+  const I = (id) => `<svg class="i"><use href="#${id}"/></svg>`;
+  const phone = document.getElementById('phone');
+  const EN = { Finans: 'Finance', Psikoloji: 'Psychology', Felsefe: 'Philosophy', Tarih: 'History', Liderlik: 'Leadership' };
+  const CK = { Finans: 'fin', Psikoloji: 'psi', Felsefe: 'fel', Tarih: 'his', Liderlik: 'lea' };
+  const src = (c) => `../assets/categories/pill_icons/${EN[c]}${phone.dataset.m === 'dark' ? '-dark' : ''}.png`;
+  const badge = (c) => `<span class="badge" style="--c:var(--${CK[c]})"><img data-c="${c}" src="${src(c)}" alt=""></span>`;
+  const refresh = () => document.querySelectorAll('img[data-c]').forEach((im) => { im.src = src(im.dataset.c); });
+
+  const cats = [['Finans', 9], ['Felsefe', 6], ['Psikoloji', 5], ['Liderlik', 2], ['Tarih', 1]];
+  document.getElementById('bars').innerHTML = cats.map(([c, n]) =>
+    `<div class="br" style="--c:var(--${CK[c]})"><span class="n">${badge(c)}${c}</span><span class="t"><i style="width:${Math.max(8, Math.round(n / 9 * 100))}%"></i></span><span class="c">${n}</span></div>`).join('');
+
+  const recent = [['Finans', 'Bileşik faizin sessiz gücü', 'The Psychology of Money'], ['Felsefe', 'Stoacı bir sabah rutini', 'Meditations'], ['Psikoloji', 'Alışkanlıkların döngüsü', 'Atomic Habits']];
+  document.getElementById('recent').innerHTML = recent.map(([c, t, b]) =>
+    `<div class="rec">${badge(c)}<div><h5>${t}</h5><p class="meta">${b}</p></div><span class="ch">${I('chev')}</span></div>`).join('');
+
+  /* 8 hafta ısı haritası: sabit örnek veri, bugün = bu haftanın Çarşamba'sı */
+  const lv = [0,0,1,0,0,0,0, 1,0,0,2,1,0,0, 0,2,1,1,0,0,1, 2,2,1,0,1,2,0, 1,2,3,2,1,0,0, 2,3,2,1,2,2,1, 3,2,2,3,2,1,0, 2,3,2,0,0,0,0];
+  const todayIdx = 7 * 7 + 2;
+  let active = 0, html = '';
+  for (let w = 0; w < 8; w++) {
+    html += '<div class="col">';
+    for (let d = 0; d < 7; d++) { const k = w * 7 + d, fu = k > todayIdx, l = lv[k]; if (!fu && l) active++; html += `<i class="${fu ? 'fu' : l ? 'l' + l : ''}"></i>`; }
+    html += '</div>';
+  }
+  document.getElementById('heat').innerHTML = html;
+  document.getElementById('act').textContent = active;
+  document.getElementById('hl').textContent = `8 hafta · ${active} aktif gün`;
+
+  document.querySelectorAll('.switch [data-m]').forEach((b) => b.addEventListener('click', () => {
+    phone.dataset.m = b.dataset.m; document.body.dataset.mode = b.dataset.m;
+    document.querySelectorAll('.switch [data-m]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    refresh();
+  }));
+
+  document.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => show(b.dataset.t)));
+  function show(t) {
+    document.querySelectorAll('.seg button').forEach((x) => x.setAttribute('aria-selected', String(x.dataset.t === t)));
+    document.querySelectorAll('.panel').forEach((p) => { p.hidden = p.dataset.p !== t; });
+    document.querySelector('.seg').scrollIntoView({ block: 'start' });
+  }
+  document.querySelectorAll('[data-go]').forEach((el) => el.addEventListener('click', () => show(el.dataset.go)));
+  document.addEventListener('click', (ev) => { const el = ev.target.closest('[data-fold]'); if (!el) return; {
+    const f = document.getElementById(el.dataset.fold), open = f.hidden;
+    f.hidden = !open; el.setAttribute('aria-expanded', String(open));
+    el.firstElementChild.textContent = open ? 'Gizle' : 'Tüm koşullar (' + el.dataset.n + ')';
+  } });
+
+  /* ── Durumlar ── */
+  const STEP = (cls, ic, t) => `<div class="step ${cls}"><span class="d"><svg class="i"><use href="#${ic}"/></svg></span><b>${t}</b></div>`;
+  const REQ = (ic, t, a, b, p, ok) => `<div class="req${ok ? ' ok' : ''}"><span class="ic"><svg class="i"><use href="#${ok ? 'check' : ic}"/></svg></span><div class="tx"><div class="row"><b>${t}</b><span class="v">${a}/${b}</span></div>${ok ? '' : `<div class="mini"><i style="width:${Math.round(a / b * 100)}%"></i></div>`}${p ? `<p>${p}</p>` : ''}</div></div>`;
+  const PATHS = [['compass', 'Keşif Yolu', 'Merakını farklı fikirlere doğru izle.', 'Kâşif · Ufuk Gezgini · Bilgelik Haritacısı'], ['bulb', 'Derinlik Yolu', 'Fikirlere dön ve onları kendine ait kıl.', 'Derin Düşünür · Örüntü Avcısı · İçgörü Ustası'], ['chat', 'Aktarım Yolu', 'Fikirleri gerçek sohbetlere taşı.', 'Hikâye Anlatıcısı · İlham Veren · Meşale Taşıyan']];
+  const LOCKED = PATHS.map(([ic, n, d]) => `<div class="path"><span class="pi"><svg class="i"><use href="#${ic}"/></svg></span><div><b>${n}</b><p>${d}</p></div><svg class="i ch"><use href="#lock"/></svg></div>`).join('');
+  const CAP = (earned) => `<div class="cap"><svg class="i"><use href="#trophy"/></svg><div><b>Rönesans Zihni</b>${earned ? 'Zirveye ulaştın.' : 'İki yolu tamamlayınca zirve unvanı senin olur.'}</div></div>`;
+  const CTA = (t) => `<div class="btn"><span>${t}</span><svg class="i" style="font-size:20px"><use href="#chev"/></svg></div>`;
+  const NXT = (label, pct, rest) => `<div class="nxt"><div class="row"><b>${label}</b><span class="pct">${pct}%</span></div><div class="track"><i style="width:${pct}%"></i></div><p>${rest}</p></div>`;
+  const FOLD = (n, extra) => `<div class="more" role="button" aria-expanded="false" data-fold="reqfold" data-n="${n}"><span>Tüm koşullar (${n})</span><svg class="i"><use href="#chev"/></svg></div>`;
+  const COND = (title, top, rest, n, reward) => `<section class="sec"><h3>${title}</h3><div class="card next gap"><div>${top}${rest ? `<div class="fold" id="reqfold" hidden>${rest}</div>` : ''}</div>${rest ? FOLD(n) : ''}${reward ? `<div class="reward">${reward}</div>` : ''}</div></section>`;
+
+  const STATES = {
+    new: {
+      streak: 0, wk: '<b>Bu hafta</b> · henüz hikâye yok', s1: 0, s2: 0, heat: false,
+      hero: `<p class="eyebrow">Yeni başlıyorsun</p><h2>Yolun başındasın</h2><p class="copy">İlk hikâyeni bitir, İlk Işık unvanı senin olsun.</p>${NXT('İlk Işık’a ilerleme', 0, 'Kalan: 1 hikâye daha')}
+        <div class="steps">${STEP('nx', 'spark', 'İlk Işık')}${STEP('', 'lock', 'Meraklı Zihin')}${STEP('', 'lock', 'Fikir Avcısı')}</div>${CTA('İlk hikâyeni oku')}`,
+      yol: COND('İlk Işık için koşul', REQ('book', 'Hikâye oku', 0, 1, 'Hikâyeleri sonuna kadar oku. Günde 3 hikâyeye kadar sayılır.'), '', 1, 'İlk fikrini yaktın. Her şey böyle başlar. İlk Işık unvanı senin olur.') +
+        `<section class="sec"><h3>Öndeki yollar</h3><p class="sub">Fikir Avcısı olduğunda üç yoldan birini seçeceksin.</p>${LOCKED}${CAP(false)}</section>`, learnEmpty: true,
+    },
+    mid: {
+      streak: 12, wk: '<b>Bu hafta</b> · 5 hikâye · 21 dk', s1: 12, s2: 19, heat: true,
+      hero: `<p class="eyebrow">Şu anki unvanın</p><h2>Meraklı Zihin</h2><p class="copy">Farklı dünyalardan fikir topluyorsun.</p>${NXT('Fikir Avcısı’na ilerleme', 55, 'Kalan: 1 yeni alan · 1 fikir daha')}
+        <div class="steps">${STEP('dn', 'check', 'İlk Işık')}${STEP('dn', 'check', 'Meraklı Zihin')}${STEP('nx', 'spark', 'Fikir Avcısı')}</div>${CTA('Hikâye oku')}`,
+      yol: COND('Fikir Avcısı için kalan koşullar', REQ('compass', 'Farklı alanlar', 2, 3, 'Yeni bir alandan hikâye oku; her yeni kategori sayılır.') + REQ('bulb', 'Fikri sakla ya da üzerine düşün', 1, 2, 'Bitirdiğin bir hikâyeyi kaydet, sesli düşün ya da ertesi gün yeniden oku.'),
+        REQ('book', 'Hikâye oku', 8, 8, '', true) + REQ('chat', 'Sohbette kullan', 0, 1, 'Sohbette Kullan’da bir anlatımı “kullandım” diye işaretle. Günde 1 sayılır.') + REQ('cal', 'Farklı günler', 3, 5, 'Farklı günlerde okumaya devam et; günlerin art arda olması gerekmez.'), 5,
+        'Fikirlerin peşine düşüyor, iyilerini yakalıyorsun. Üç yolun kapısını ve Fikir Avcısı unvanını açar.') +
+        `<section class="sec"><h3>Öndeki yollar</h3><p class="sub">Fikir Avcısı olduğunda üç yoldan birini seçeceksin.</p>${LOCKED}${CAP(false)}</section>`,
+    },
+    select: {
+      streak: 14, wk: '<b>Bu hafta</b> · 6 hikâye · 26 dk', s1: 14, s2: 19, heat: true,
+      hero: `<p class="eyebrow">Yeni unvan</p><h2>Fikir Avcısı</h2><p class="copy">Bugün sana en yararlı gelen yönü seç. İstediğin zaman değiştirebilirsin.</p>
+        <div class="steps">${STEP('dn', 'check', 'İlk Işık')}${STEP('dn', 'check', 'Meraklı Zihin')}${STEP('dn', 'check', 'Fikir Avcısı')}</div>${CTA('Yolunu seç')}`,
+      yol: `<section class="sec"><h3>Hangi yön sana iyi gelir?</h3><p class="sub">Tüm yolları ve araçlarını ücretsiz seçebilirsin.</p>
+        <div class="reward" style="margin-top:12px"><b>Nazik bir öneri</b><br>Son zamanlarda farklı fikirlerin izini sürüyorsun; Keşif Yolu ritmine uyabilir.</div>
+        <div class="path cur"><span class="pi"><svg class="i"><use href="#compass"/></svg></span><div><b>Keşif Yolu<span class="tag">SANA ÖNERİLEN</span></b><p>Merakını farklı fikirlere doğru izle.</p><p class="ln">Kâşif · Ufuk Gezgini · Bilgelik Haritacısı</p></div><svg class="i ch"><use href="#chev"/></svg></div>
+        <div class="path"><span class="pi"><svg class="i"><use href="#bulb"/></svg></span><div><b>Derinlik Yolu</b><p>Fikirlere dön ve onları kendine ait kıl.</p><p class="ln">Bu yola geçersen 1 unvan hemen senin.</p></div><svg class="i ch"><use href="#chev"/></svg></div>
+        <div class="path"><span class="pi"><svg class="i"><use href="#chat"/></svg></span><div><b>Aktarım Yolu</b><p>Fikirleri gerçek sohbetlere taşı.</p></div><svg class="i ch"><use href="#chev"/></svg></div>
+        <div class="more" role="button">Daha sonra karar ver</div></section>`,
+    },
+    path: {
+      streak: 14, wk: '<b>Bu hafta</b> · 6 hikâye · 26 dk', s1: 14, s2: 19, heat: true,
+      hero: `<p class="eyebrow">Keşif Yolu</p><h2>Fikir Avcısı</h2><p class="copy">Fikirlerin peşine düşüyor, iyilerini yakalıyorsun.</p>${NXT('Kâşif’e ilerleme', 40, 'Kalan: 3 hikâye · 1 yeni alan daha')}
+        <div class="steps">${STEP('dn', 'check', 'Fikir Avcısı')}${STEP('nx', 'spark', 'Kâşif')}${STEP('', 'lock', 'Ufuk Gezgini')}${STEP('', 'lock', 'Bilgelik H.')}</div>${CTA('Hikâye oku')}`,
+      yol: `<div class="tool" style="margin-top:20px"><svg class="i"><use href="#tool"/></svg>Yol araçları<svg class="i ch"><use href="#chev"/></svg></div>` +
+        COND('Kâşif için kalan koşullar', REQ('book', 'Hikâye oku', 7, 10, 'Hikâyeleri sonuna kadar oku. Günde 3 hikâyeye kadar sayılır.') + REQ('compass', 'Farklı alanlar', 4, 5, 'Yeni bir alandan hikâye oku; her yeni kategori sayılır.'),
+          REQ('bulb', 'Fikri sakla ya da üzerine düşün', 3, 4, '') + REQ('cal', 'Farklı günler', 6, 8, ''), 4, 'Merakın seni yeni alanlara götürüyor. Keşif sorularını ve Kâşif unvanını açar.') +
+        `<section class="sec"><div class="row"><h3>Zirveye giden yol</h3><span class="link">Yolu değiştir</span></div>${CAP(false)}<p class="sub" style="margin-top:10px">Keşif Yolu 1/3 · diğer yollar seni bekliyor.</p></section>`,
+    },
+    done: {
+      streak: 41, wk: '<b>Bu hafta</b> · 9 hikâye · 38 dk', s1: 41, s2: 41, heat: true,
+      hero: `<p class="eyebrow">Zirveye ulaştın</p><h2>Rönesans Zihni</h2><p class="copy">Birden çok yolda ustalaştın. Nadir bir zihin.</p>${CTA('Unvanımı paylaş')}`,
+      yol: `<section class="sec"><h3>Tamamladığın yollar</h3><div class="path cur"><span class="pi"><svg class="i"><use href="#compass"/></svg></span><div><b>Keşif Yolu</b><p>Bilgelik Haritacısı</p></div><svg class="i ch" style="color:var(--pet)"><use href="#check"/></svg></div>
+        <div class="path cur"><span class="pi"><svg class="i"><use href="#bulb"/></svg></span><div><b>Derinlik Yolu</b><p>İçgörü Ustası</p></div><svg class="i ch" style="color:var(--pet)"><use href="#check"/></svg></div>
+        <div class="path"><span class="pi"><svg class="i"><use href="#chat"/></svg></span><div><b>Aktarım Yolu</b><p>İstersen bu yolda da ilerle.</p></div><svg class="i ch"><use href="#chev"/></svg></div></section>`,
+    },
+  };
+
+  let cur = 'mid', learnHTML = null;
+  const learnPanel = document.getElementById('learnp');
+  learnHTML = learnPanel.innerHTML;
+  const EMPTY = `<section class="sec"><h3>Öğrendiklerin</h3><div class="card gap" style="display:flex;gap:14px;align-items:center"><span class="req" style="padding:0;border:0"><span class="ic" style="width:44px;height:44px;border-radius:22px">${I('spark')}</span></span><p class="sub" style="margin:0">İlk hikâyeni bitirdiğinde öğrendiklerin burada birikecek.</p></div></section>`;
+
+  function drawHeat(on) {
+    let html = '', act = 0;
+    for (let w = 0; w < 8; w++) { html += '<div class="col">'; for (let d = 0; d < 7; d++) { const k = w * 7 + d, fu = k > todayIdx, l = on ? lv[k] : 0; if (!fu && l) act++; html += `<i class="${fu ? 'fu' : l ? 'l' + l : ''}"></i>`; } html += '</div>'; }
+    document.getElementById('heat').innerHTML = html;
+    document.getElementById('act').textContent = act;
+    document.getElementById('hl').textContent = `8 hafta · ${act} aktif gün`;
+  }
+  function render(k) {
+    cur = k; const S = STATES[k];
+    document.getElementById('hero').innerHTML = `${SUNSVG.replace('<svg ', '<svg style="transform:scaleY(-1)" ')}${k === 'new' ? '' : '<span class="shr" role="button" aria-label="Unvanımı paylaş"><svg class="i"><use href="#share"/></svg></span>'}${S.hero}`;
+    document.getElementById('yol').innerHTML = S.yol;
+    document.getElementById('hsn').textContent = S.streak;
+    document.getElementById('wkline').innerHTML = S.wk;
+    document.getElementById('wk2').textContent = S.wk.replace(/<[^>]+>/g, '');
+    document.getElementById('s1').textContent = S.s1; document.getElementById('s2').textContent = S.s2;
+    learnPanel.innerHTML = S.learnEmpty ? EMPTY : learnHTML;
+    if (!S.learnEmpty) { /* haritalar yeniden çizilir */ }
+    drawHeat(S.heat); refresh();
+    document.querySelectorAll('.switch [data-s]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.s === k)));
+    show('yolculuk');
+  }
+  document.querySelectorAll('.switch [data-s]').forEach((b) => b.addEventListener('click', () => render(b.dataset.s)));
+  render("mid");
+</script>
+</body>
+</html>

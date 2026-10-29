@@ -1,0 +1,62 @@
+{
+ "Finance": {
+  "fam": "green",
+  "cover": 0.326,
+  "scale": 0.851
+ },
+ "Growth": {
+  "fam": "green",
+  "cover": 0.324,
+  "scale": 1.089
+ },
+ "Psychology": {
+  "fam": "indigo",
+  "cover": 0.326,
+  "scale": 0.748
+ },
+ "Philosophy": {
+  "fam": "indigo",
+  "cover": 0.326,
+  "scale": 0.753
+ },
+ "Science": {
+  "fam": "plum",
+  "cover": 0.326,
+  "scale": 0.848
+ },
+ "Communication": {
+  "fam": "blue",
+  "cover": 0.326,
+  "scale": 0.783
+ },
+ "History": {
+  "fam": "earth",
+  "cover": 0.326,
+  "scale": 0.807
+ },
+ "Leadership": {
+  "fam": "earth",
+  "cover": 0.326,
+  "scale": 0.941
+ },
+ "Health": {
+  "fam": "rose",
+  "cover": 0.326,
+  "scale": 0.779
+ },
+ "Business": {
+  "fam": "slate",
+  "cover": 0.326,
+  "scale": 0.743
+ },
+ "Productivity": {
+  "fam": "slate",
+  "cover": 0.326,
+  "scale": 0.846
+ },
+ "All": {
+  "fam": "petrol",
+  "cover": 0.326,
+  "scale": 0.749
+ }
+}

@@ -6,19 +6,28 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { scanAiTells } from './ai-tells.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const SECTIONS = ['open', 'story', 'lessons', 'reflect', 'use', 'pocket'];
 const PAIRS = ['##', '$$', '&&', '~~', '%%', '@@'];
 
-// Word ranges per section. Turkish is agglutinative, so it needs fewer words.
-// The story minimum is deliberately low: a short anecdote told faithfully beats padding.
+// Target word ranges per section (3–5 minute read; story carries >= 55%).
+// Turkish is agglutinative, so it needs fewer words. Keep in sync with
+// batch/05-submit-stories.mjs (LANG_CONFIG.len). Outside the target = warning.
 const RANGES = {
-  en: { open: [35, 90], story: [280, 700], lessons: [140, 300], reflect: [50, 160], use: [80, 240], pocket: [4, 22] },
-  es: { open: [35, 95], story: [300, 740], lessons: [150, 320], reflect: [50, 170], use: [80, 250], pocket: [4, 24] },
-  de: { open: [30, 90], story: [270, 680], lessons: [130, 290], reflect: [45, 155], use: [75, 230], pocket: [4, 22] },
-  tr: { open: [30, 75], story: [230, 560], lessons: [110, 240], reflect: [40, 130], use: [70, 190], pocket: [3, 18] },
+  en: { open: [40, 80], story: [340, 520], lessons: [100, 180], reflect: [40, 90], use: [70, 150], pocket: [4, 22] },
+  es: { open: [43, 86], story: [365, 555], lessons: [107, 193], reflect: [43, 96], use: [75, 160], pocket: [4, 24] },
+  de: { open: [38, 77], story: [325, 500], lessons: [96, 173], reflect: [38, 86], use: [67, 144], pocket: [4, 22] },
+  tr: { open: [32, 64], story: [270, 415], lessons: [80, 145], reflect: [32, 72], use: [56, 120], pocket: [3, 18] },
 };
+// Hard story limits (error). Deliberately wide: a short anecdote told
+// faithfully beats padding, and older entries were written to wider ranges.
+const STORY_HARD = {
+  en: [280, 700], es: [300, 740], de: [270, 680], tr: [230, 560],
+};
+// Whole-entry word target (about 3–5 minutes of reading).
+const TOTAL = { en: [600, 1000], es: [650, 1070], de: [580, 960], tr: [480, 800] };
 
 // Phrases that make text read as machine-written or padded. Case-insensitive.
 const BANNED = {
@@ -34,6 +43,11 @@ const BANNED = {
   ],
   es: ['en el mundo actual', 'en conclusión', 'es importante destacar', 'cabe destacar', 'sumergirnos'],
   de: ['in der heutigen schnelllebigen welt', 'zusammenfassend lässt sich sagen', 'es ist wichtig zu beachten', 'eintauchen'],
+};
+
+// Announcer-style transitions: warning only (older entries use them).
+const SOFT_BANNED = {
+  en: ['here is the catch', "here's the catch", 'then something striking happened', 'what happened next surprised'],
 };
 
 const words = (s) => s.replace(/[*#$&%@~>\-•]/g, ' ').split(/\s+/).filter(Boolean).length;
@@ -97,9 +111,22 @@ export const validateP1 = (text, lang) => {
   const range = RANGES[lang] || RANGES.en;
   Object.entries(range).forEach(([sec, [min, max]]) => {
     const n = words(sectionText[sec] || '');
-    if (n < min || n > max) (sec === 'pocket' || sec === 'story' ? errors : warnings)
-      .push(`${sec}: ${n} words (target ${min}–${max})`);
+    if (n < min || n > max) {
+      const [hmin, hmax] = sec === 'story' ? (STORY_HARD[lang] || STORY_HARD.en) : [min, max];
+      const hard = sec === 'pocket' || (sec === 'story' && (n < hmin || n > hmax));
+      (hard ? errors : warnings).push(`${sec}: ${n} words (target ${min}–${max})`);
+    }
   });
+  const [tmin, tmax] = TOTAL[lang] || TOTAL.en;
+  const totalWords = words(text);
+  if (totalWords < tmin || totalWords > tmax) warnings.push(`total: ${totalWords} words (3–5 min target ${tmin}–${tmax})`);
+  if (words(sectionText.story || '') < totalWords * 0.5) warnings.push('story is under 50% of the entry; trim lessons/reflect/use');
+
+  // "Not X. It's Y." contrast pattern (English): at most one.
+  if (lang === 'en') {
+    const contrast = count(/\b(?:isn't|aren't|wasn't|weren't|doesn't|didn't|not)\b[^.!?\n]{0,80}[.!?]\s+(?:It's|It is|They're|That's|That was|It was|He|She|They)\b/g);
+    if (contrast > 1) warnings.push(`"not X. It's Y." pattern ×${contrast} (keep ≤ 1)`);
+  }
 
   // Repetition: identical paragraphs.
   const paras = text.split(/\n\s*\n/).map((p) => p.trim()).filter((p) => p.length > 40);
@@ -109,15 +136,21 @@ export const validateP1 = (text, lang) => {
   // Banned phrases.
   const lower = text.toLowerCase();
   (BANNED[lang] || []).forEach((b) => { if (lower.includes(b)) errors.push(`banned phrase: "${b}"`); });
+  (SOFT_BANNED[lang] || []).forEach((b) => { if (lower.includes(b)) warnings.push(`announcer phrase: "${b}"`); });
 
   // Em-dash density (a common machine-writing tell in English).
   if (lang === 'en') {
     const dashes = count(/—/g);
     const per1000 = (dashes / Math.max(1, words(text))) * 1000;
-    if (per1000 > 4) warnings.push(`em-dash density ${per1000.toFixed(1)}/1000 words (keep ≤ 4)`);
+    if (per1000 > 4 || dashes > 2) warnings.push(`em-dash ×${dashes} (${per1000.toFixed(1)}/1000 words; keep ≤ 2)`);
   }
 
-  return { errors, warnings, words: words(text) };
+  // AI-writing tells (humanizer-derived rules, see ai-tells.mjs).
+  const ai = scanAiTells(text, lang);
+  errors.push(...ai.errors);
+  warnings.push(...ai.warnings);
+
+  return { errors, warnings, words: words(text), aiScore: ai.per100 };
 };
 
 const main = () => {

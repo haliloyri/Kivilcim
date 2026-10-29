@@ -2,8 +2,8 @@
  * StorytellerOverlay
  *
  * Full-screen modal for "Storyteller Mode".
- * Shows talking points from the story, a context selector,
- * and a 30-second practice timer. No audio recording.
+ * Shows talking points from the story and a 30-second
+ * practice timer. No audio recording.
  *
  * Props:
  *   visible       – boolean
@@ -32,13 +32,6 @@ import { useTheme } from '../context/ThemeContext';
 
 const TIMER_SECONDS = 30;
 
-const CONTEXT_KEYS = [
-  { key: 'meeting',  i18nKey: 'mv_storyteller_context_meeting',  icon: 'briefcase-outline' },
-  { key: 'oneonone', i18nKey: 'mv_storyteller_context_oneonone', icon: 'person-outline' },
-  { key: 'family',   i18nKey: 'mv_storyteller_context_family',   icon: 'home-outline' },
-  { key: 'social',   i18nKey: 'mv_storyteller_context_social',   icon: 'people-outline' },
-];
-
 /** Extract up to 3 talking points from a variant or story body */
 const buildTalkingPoints = (variant, story) => {
   if (!variant) return [];
@@ -66,14 +59,12 @@ const StorytellerOverlay = ({
   visible,
   story,
   variant,
-  initialContext,
   isPremium,
   onClose,
   onDone,
   onPremiumTap,
 }) => {
   const { colors, layout, isDark, lang } = useTheme();
-  const [selectedContext, setSelectedContext] = useState('social');
   const [timerActive, setTimerActive] = useState(false);
   const [timeLeft, setTimeLeft] = useState(TIMER_SECONDS);
   const [timerDone, setTimerDone] = useState(false);
@@ -84,12 +75,11 @@ const StorytellerOverlay = ({
   // Reset state on open
   useEffect(() => {
     if (visible) {
-      setSelectedContext(CONTEXT_KEYS.some(c => c.key === initialContext) ? initialContext : 'social');
       setTimerActive(false);
       setTimeLeft(TIMER_SECONDS);
       setTimerDone(false);
     }
-  }, [visible, initialContext]);
+  }, [visible]);
 
   // Timer logic
   useEffect(() => {
@@ -176,33 +166,6 @@ const StorytellerOverlay = ({
             {/* Story title */}
             <Text style={styles.storyTitle} numberOfLines={2}>{story?.title || ''}</Text>
 
-            {/* Context selector */}
-            <Text style={styles.sectionLabel}>{t('mv_storyteller_context_social', lang)}</Text>
-            <View style={styles.contextRow}>
-              {CONTEXT_KEYS.map(ctx => (
-                <TouchableOpacity
-                  key={ctx.key}
-                  style={[
-                    styles.contextChip,
-                    selectedContext === ctx.key && { borderColor: colors.primary, backgroundColor: `${colors.primary}18` },
-                  ]}
-                  onPress={() => setSelectedContext(ctx.key)}
-                >
-                  <Ionicons
-                    name={ctx.icon}
-                    size={13}
-                    color={selectedContext === ctx.key ? colors.primary : colors.textSecondary}
-                  />
-                  <Text style={[
-                    styles.contextChipText,
-                    { color: selectedContext === ctx.key ? colors.primary : colors.textSecondary },
-                  ]}>
-                    {t(ctx.i18nKey, lang)}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-
             {/* Talking points */}
             {talkingPoints.length > 0 && (
               <View style={styles.pointsCard}>
@@ -250,7 +213,7 @@ const StorytellerOverlay = ({
 
             {/* Done CTA */}
             <TouchableOpacity style={styles.doneBtn} onPress={onDone}>
-              <Ionicons name="checkmark-circle" size={18} color="#fff" />
+              <Ionicons name="checkmark-circle" size={18} color={colors.onPrimary} />
               <Text style={styles.doneBtnText}>{t('mv_storyteller_done', lang)}</Text>
             </TouchableOpacity>
 
@@ -301,35 +264,6 @@ const buildStyles = (colors, layout, isDark) =>
       color: colors.text,
       lineHeight: 28,
       marginBottom: 20,
-    },
-    sectionLabel: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 10,
-      color: colors.textSecondary,
-      textTransform: 'uppercase',
-      letterSpacing: 1,
-      marginBottom: 10,
-    },
-    contextRow: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      gap: 8,
-      marginBottom: 24,
-    },
-    contextChip: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: 5,
-      paddingHorizontal: 12,
-      paddingVertical: 7,
-      borderRadius: 999,
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: isDark ? colors.backgroundDark : colors.background,
-    },
-    contextChipText: {
-      fontFamily: 'Inter_500Medium',
-      fontSize: 12,
     },
     pointsCard: {
       backgroundColor: isDark ? colors.backgroundDark : colors.cardBackground,
@@ -459,17 +393,17 @@ const buildStyles = (colors, layout, isDark) =>
       flexDirection: 'row',
       alignItems: 'center',
       gap: 6,
-      backgroundColor: isDark ? '#3A2E1A' : '#FFF8ED',
+      backgroundColor: colors.primaryContainer,
       borderRadius: 999,
       borderWidth: 1,
-      borderColor: '#E8A83844',
+      borderColor: `${colors.primary}44`,
       paddingHorizontal: 24,
       paddingVertical: 12,
     },
     gateBtnText: {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 14,
-      color: '#E8A838',
+      color: colors.primaryText,
     },
   });
 

@@ -34,25 +34,26 @@ const RichText = ({ text, style, boldStyle, ...rest }) => (
   </Text>
 );
 
-const UseCaseCard = ({ seg, styles, accent, textAccent, border, fontSize, lineSpacing, lang, onTry }) => (
-  <View style={[styles.useCard, { borderColor: border }]}>
+const UseCaseCard = ({ seg, styles, actionColor, fontSize, lineSpacing, lang, onTry }) => (
+  <View style={styles.useCard}>
     {seg.label ? (
-      <Text style={[styles.useLabel, { color: textAccent }]}>{seg.label}</Text>
+      <Text style={styles.useLabel}>{seg.label}</Text>
     ) : null}
     <Text style={[styles.useLine, { fontSize, lineHeight: Math.round(fontSize * lineSpacing) }]}>
       “{seg.line}”
     </Text>
-    <TouchableOpacity
-      onPress={() => onTry?.(seg)}
-      disabled={!onTry}
-      accessibilityRole="button"
-      accessibilityLabel={t('useCaseTry', lang)}
-      style={styles.useCopy}
-      hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-    >
-      <Text style={[styles.useCopyText, { color: textAccent }]}>{t('useCaseTry', lang)}</Text>
-      <Ionicons name="arrow-forward" size={13} color={accent} />
-    </TouchableOpacity>
+    {onTry ? (
+      <TouchableOpacity
+        onPress={() => onTry(seg)}
+        accessibilityRole="button"
+        accessibilityLabel={t('useCaseTry', lang)}
+        style={styles.useCopy}
+        hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+      >
+        <Text style={styles.useCopyText}>{t('useCaseTry', lang)}</Text>
+        <Ionicons name="arrow-forward" size={14} color={actionColor} />
+      </TouchableOpacity>
+    ) : null}
   </View>
 );
 
@@ -62,9 +63,7 @@ const UseCaseCard = ({ seg, styles, accent, textAccent, border, fontSize, lineSp
  * @param {number}   props.fontSize        reader font size
  * @param {{accent:string,borderColor:string,backgroundColor:string}} props.categoryTheme
  * @param {string}   props.lang
- * @param {() => void} [props.onReflectionPress]
  * @param {(seg:object) => React.ReactNode} [props.renderLessonFooter]
- * @param {(text:string) => void} [props.onSharePocket]
  * @param {(seg:object) => void} [props.onTryUseCase]
  */
 const StoryBody = ({
@@ -73,9 +72,7 @@ const StoryBody = ({
   lineSpacing = 1.55,
   categoryTheme,
   lang,
-  onReflectionPress,
   renderLessonFooter,
-  onSharePocket,
   onTryUseCase,
 }) => {
   const { colors, isDark } = useTheme();
@@ -85,6 +82,9 @@ const StoryBody = ({
   const tint = categoryTheme?.backgroundColor || (isDark ? colors.backgroundDark : colors.background);
   const styles = makeStyles(colors, isDark);
   const lh = (size, k = lineSpacing) => Math.round(size * k);
+  // Cards to say to someone live on the conversation screen; only personal
+  // ('self') cards stay on the reading page.
+  const hasSelfCard = segments.some((s) => s.type === 'usecase' && s.context === 'self');
 
   return (
     <View>
@@ -92,12 +92,23 @@ const StoryBody = ({
         const key = `${seg.type}-${idx}`;
         switch (seg.type) {
           case 'section': {
+            if (seg.section === 'use') {
+              if (!hasSelfCard) return null;
+              return (
+                <View key={key} style={styles.sectionHead} accessibilityRole="header">
+                  <View style={[styles.sectionBar, { backgroundColor: accent }]} />
+                  <Text style={[styles.sectionTitle, { fontSize: fontSize + 3, lineHeight: lh(fontSize + 3, 1.3) }]}>
+                    {t('storySectionFirstStep', lang)}
+                  </Text>
+                </View>
+              );
+            }
             const titleKey = SECTION_TITLE_KEYS[seg.section];
             if (!titleKey) return null; // [[open]] has no heading
             return (
               <View key={key} style={styles.sectionHead} accessibilityRole="header">
                 <View style={[styles.sectionBar, { backgroundColor: accent }]} />
-                <Text style={[styles.sectionTitle, { fontSize: fontSize + 4, lineHeight: lh(fontSize + 4, 1.3) }]}>
+                <Text style={[styles.sectionTitle, { fontSize: fontSize + 3, lineHeight: lh(fontSize + 3, 1.3) }]}>
                   {t(titleKey, lang)}
                 </Text>
               </View>
@@ -131,7 +142,7 @@ const StoryBody = ({
 
           case 'highlight':
             return (
-              <View key={key} style={[styles.highlight, { borderLeftColor: border, backgroundColor: tint }]}>
+              <View key={key} style={[styles.highlight, { borderLeftColor: accent }]}>
                 <RichText
                   text={seg.content}
                   style={[styles.highlightText, { fontSize: fontSize + 2, lineHeight: lh(fontSize + 2) }]}
@@ -154,9 +165,9 @@ const StoryBody = ({
 
           case 'lesson':
             return (
-              <View key={key} style={[styles.lessonCard, { borderLeftColor: accent, backgroundColor: tint }]}>
+              <View key={key} style={styles.lessonCard}>
                 <View style={styles.lessonHead}>
-                  <View style={[styles.lessonBadge, { borderColor: accent }]}>
+                  <View style={[styles.lessonBadge, { backgroundColor: tint }]}>
                     <Text style={[styles.lessonBadgeText, { color: textAccent }]}>{seg.index}</Text>
                   </View>
                   {seg.title ? (
@@ -178,13 +189,7 @@ const StoryBody = ({
 
           case 'reflection':
             return (
-              <TouchableOpacity
-                key={key}
-                activeOpacity={0.85}
-                disabled={!onReflectionPress}
-                onPress={onReflectionPress}
-                style={[styles.reflectionBox, { borderColor: border }]}
-              >
+              <View key={key} style={styles.reflectionBox}>
                 <View style={styles.labelRow}>
                   <Ionicons name="chatbubble-ellipses-outline" size={15} color={accent} />
                   <Text style={[styles.smallLabel, { color: textAccent }]}>{t('reflectionLabel', lang)}</Text>
@@ -194,45 +199,31 @@ const StoryBody = ({
                   style={[styles.reflectionText, { fontSize: fontSize + 1, lineHeight: lh(fontSize + 1) }]}
                   boldStyle={styles.bold}
                 />
-              </TouchableOpacity>
+              </View>
             );
 
           case 'usecase':
+            if (seg.context !== 'self') return null;
             return (
               <UseCaseCard
                 key={key}
                 seg={seg}
                 styles={styles}
-                accent={accent}
-                textAccent={textAccent}
-                border={border}
+                actionColor={colors.primaryText}
                 fontSize={fontSize}
                 lineSpacing={lineSpacing}
                 lang={lang}
-                onTry={onTryUseCase}
               />
             );
 
           case 'pocket':
             return (
-              <View key={key} style={[styles.pocket, { borderLeftColor: accent, borderBottomColor: accent }]}>
+              <View key={key} style={[styles.pocket, { backgroundColor: tint, borderColor: border }]}>
                 <RichText
                   text={seg.content}
                   style={[styles.pocketText, { fontSize: fontSize + 5, lineHeight: lh(fontSize + 5, 1.35) }]}
                   boldStyle={styles.bold}
                 />
-                {onSharePocket ? (
-                  <TouchableOpacity
-                    onPress={() => onSharePocket(seg.content)}
-                    accessibilityRole="button"
-                    accessibilityLabel={t('pocketShare', lang)}
-                    style={styles.pocketShare}
-                    hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-                  >
-                    <Ionicons name="share-outline" size={15} color={accent} />
-                    <Text style={[styles.useCopyText, { color: textAccent }]}>{t('pocketShare', lang)}</Text>
-                  </TouchableOpacity>
-                ) : null}
               </View>
             );
 
@@ -300,10 +291,9 @@ const makeStyles = (colors, isDark) => StyleSheet.create({
   },
   highlight: {
     borderLeftWidth: 4,
-    padding: 16,
-    paddingLeft: 20,
-    marginVertical: 12,
-    borderRadius: 4,
+    paddingLeft: 16,
+    paddingVertical: 2,
+    marginVertical: 14,
   },
   highlightText: {
     fontFamily: 'Inter_500Medium',
@@ -325,10 +315,12 @@ const makeStyles = (colors, isDark) => StyleSheet.create({
     marginBottom: 10,
   },
   lessonCard: {
-    borderLeftWidth: 4,
-    borderRadius: 12,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.cardBackground,
     padding: 16,
-    marginBottom: 14,
+    marginBottom: 12,
   },
   lessonHead: {
     flexDirection: 'row',
@@ -337,10 +329,9 @@ const makeStyles = (colors, isDark) => StyleSheet.create({
     marginBottom: 8,
   },
   lessonBadge: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    borderWidth: 1.5,
+    width: 26,
+    height: 26,
+    borderRadius: 13,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 1,
@@ -372,8 +363,9 @@ const makeStyles = (colors, isDark) => StyleSheet.create({
   },
   reflectionBox: {
     borderWidth: 1,
-    borderStyle: 'dashed',
-    borderRadius: 14,
+    borderColor: colors.border,
+    backgroundColor: colors.cardBackground,
+    borderRadius: 16,
     padding: 16,
     marginTop: 4,
     marginBottom: 18,
@@ -384,16 +376,18 @@ const makeStyles = (colors, isDark) => StyleSheet.create({
   },
   useCard: {
     borderWidth: 1,
-    borderRadius: 12,
-    padding: 14,
+    borderColor: colors.border,
+    borderRadius: 16,
+    padding: 16,
     marginBottom: 12,
-    backgroundColor: isDark ? colors.backgroundDark : colors.background,
+    backgroundColor: colors.cardBackground,
   },
   useLabel: {
-    fontFamily: 'Inter_700Bold',
-    fontSize: 13,
-    lineHeight: 18,
+    fontFamily: 'Inter_600SemiBold',
+    fontSize: 14,
+    lineHeight: 20,
     marginBottom: 8,
+    color: colors.textSecondary,
   },
   useLine: {
     fontFamily: 'Inter_500Medium_Italic',
@@ -404,32 +398,25 @@ const makeStyles = (colors, isDark) => StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 5,
-    marginTop: 10,
+    minHeight: 44,
+    marginTop: 4,
   },
   useCopyText: {
     fontFamily: 'Inter_600SemiBold',
-    fontSize: 12,
+    fontSize: 14,
+    color: colors.primaryText,
   },
   pocket: {
-    borderLeftWidth: 4,
-    borderBottomWidth: 2,
-    paddingLeft: 18,
-    paddingRight: 8,
-    paddingTop: 6,
-    paddingBottom: 16,
-    marginTop: 2,
-    marginBottom: 24,
+    borderWidth: 1,
+    borderRadius: 16,
+    paddingVertical: 20,
+    paddingHorizontal: 18,
+    marginTop: 4,
+    marginBottom: 8,
   },
   pocketText: {
     fontFamily: 'PlayfairDisplay_700Bold',
     color: colors.text,
-  },
-  pocketShare: {
-    alignSelf: 'flex-start',
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-    marginTop: 12,
   },
   contrastRow: {
     flexDirection: 'row',

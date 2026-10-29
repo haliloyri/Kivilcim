@@ -65,7 +65,7 @@ const NotificationPreferences = ({
 
               {isSelected && (
                 <View style={[styles.checkmark, { backgroundColor: colors.primary }]}>
-                  <Ionicons name="checkmark" size={16} color="#FFFFFF" />
+                  <Ionicons name="checkmark" size={16} color={colors.onPrimary} />
                 </View>
               )}
             </TouchableOpacity>

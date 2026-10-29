@@ -1,6 +1,9 @@
 import { translations } from '../i18n';
 
 const requiredCareerKeys = [
+  'career.seg.journey', 'career.seg.learned', 'career.seg.rhythm', 'career.weekStrip.empty',
+  'career.hero.eyebrow.current', 'career.hero.eyebrow.new', 'career.hero.eyebrow.promoted', 'career.hero.eyebrow.summit', 'career.hero.startCta',
+  'career.conditions.heading', 'career.conditions.all', 'career.paths.completedTitle', 'career.paths.summitTitle', 'career.paths.continueHint',
   'tabMyPath', 'career.title', 'career.subtitle', 'career.loading', 'career.unavailable', 'career.offline', 'career.retry',
   'career.choosePathTitle', 'career.choosePathCopy', 'career.nextStep', 'career.timeline', 'career.heroProgress.common', 'career.heroProgress.path',
   'career.requirementHelp.deepInteractions',

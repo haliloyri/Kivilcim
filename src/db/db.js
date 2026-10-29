@@ -45,7 +45,7 @@ export const waitForData = () => _dataReadyPromise;
 //  on the next app launch. This deletes the old DB
 //  and copies the fresh one from assets/albor.db.
 // ──────────────────────────────────────────────────────
-const DB_VERSION = 27; // 27: P1 publish 2026-09-28 (de 200, es 200, version Opus55) - de+es 200 (API batch)
+const DB_VERSION = 32; // 32: agent stories 1426-1428 tr P1 + SON55; 31: SON55 tr longer lessons; 30: SON55 tr 1 lesson + 1 question; 29: SON55 tr P1 content (ids 1357-1366); 28: SON55 collection (10 en stories, ids 1357-1366); 27: P1 publish 2026-09-28 (de 200, es 200, version Opus55)
 const DB_VERSION_KEY = 'db_version';
 
 const getVersionFilePath = () =>
@@ -204,18 +204,13 @@ const migrateStoryVersion = async (db) => {
   await db.execAsync(`UPDATE stories SET version = 1 WHERE version IS NULL;`);
 };
 
-// is_active: which stories the app shows. Supabase owns it (see
-// services/contentSync.js); until the first sync only the bundled Opus55
-// stories are active, so the offline first launch matches the server.
-const ACTIVE_STORY_VERSION = 'Opus55';
+// is_active: all stories are active; the profile collection selection filters.
 const migrateStoryActive = async (db) => {
   const columns = await db.getAllAsync(`PRAGMA table_info(stories)`);
-  if (columns.some((c) => c.name === 'is_active')) return;
-  await db.execAsync(`ALTER TABLE stories ADD COLUMN is_active INTEGER DEFAULT 0;`);
-  await db.runAsync(
-    `UPDATE stories SET is_active = CASE WHEN version = ? THEN 1 ELSE 0 END`,
-    [ACTIVE_STORY_VERSION]
-  );
+  if (!columns.some((c) => c.name === 'is_active')) {
+    await db.execAsync(`ALTER TABLE stories ADD COLUMN is_active INTEGER DEFAULT 1;`);
+  }
+  await db.execAsync(`UPDATE stories SET is_active = 1 WHERE is_active IS NOT 1;`);
 };
 
 const migrateStoryDuration = async (db) => {

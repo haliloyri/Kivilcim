@@ -12,15 +12,18 @@ import { useStories } from '../context/StoriesContext';
 import { useCareerPath } from '../context/CareerPathContext';
 import { FEATURE_FLAGS } from '../config/featureFlags';
 import { resolveCareerActionDestination } from '../utils/careerNavigation';
+import { getCareerPathIconName } from '../utils/careerProgress';
 import { getSelectedCategories } from '../db/db';
 import StoryCard from '../components/StoryCard';
 import CategoryPill from '../components/CategoryPill';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
+import DawnGlow from '../components/DawnGlow';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import Svg, { Circle, Line } from 'react-native-svg';
 import { t, getGreeting } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
-import { getCategoryImage, getCategoryTheme, getCategoryBanner, getBadgeBanner } from '../utils/categoryImages';
+import { getCategoryImage, getCategoryTheme, getCategoryBanner, getBadgeBanner, getCategoryPillImage } from '../utils/categoryImages';
 import { shouldShowAd, loadRewarded, showRewarded } from '../utils/ads';
 import BadgeIcon, { BADGE_MAP } from '../components/BadgeIcon';
 import { readableTextOn, colors as brandColors } from '../theme/theme';
@@ -263,12 +266,36 @@ const getStoryCollectionId = (version) => {
   if (/^C\d+$/.test(value)) return 'conversation';
   if (value === 'OH') return 'originals';
   if (value === 'OPUS55') return 'opus55';
+  if (value === 'SON55') return 'son55';
   return 'new';
 };
 
+// Brand motif: sun rising over the hero card (logo language). Decorative only.
+const HeroSun = ({ color }) => (
+  <Svg
+    width={168}
+    height={130}
+    viewBox="0 0 168 130"
+    pointerEvents="none"
+    style={{ position: 'absolute', right: -34, top: -30, transform: [{ scaleY: -1 }] }}
+  >
+    <Circle cx={96} cy={104} r={84} fill={color} opacity={0.08} />
+    <Circle cx={96} cy={104} r={62} fill={color} opacity={0.14} />
+    <Circle cx={96} cy={104} r={40} fill={color} opacity={0.95} />
+    <Line x1={96} y1={40} x2={96} y2={22} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={60} y1={52} x2={50} y2={40} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={132} y1={52} x2={142} y2={40} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={40} y1={78} x2={24} y2={72} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+    <Line x1={152} y1={78} x2={168} y2={72} stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
+  </Svg>
+);
+
+const FEATURED_CARD_WIDTH = 216;
+const DATE_LOCALES = { tr: 'tr-TR', en: 'en-US', es: 'es-ES', de: 'de-DE' };
+
 const HomeScreen = ({ navigation }) => {
   const { colors, typography, layout, isDark, lang, setLang, selectedCategories, setSelectedCategories } = useTheme();
-  const { isPremium, isOnboarded, history, earnedBadges, totalReads, todayReadsCount, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted, openBadgeModal, freeDailyQuota, freeQuotaRemaining, isStoryUnlockedToday, canOpenStoryFree, consumeFreeRead } = useUserData();
+  const { isPremium, isOnboarded, inProgressStories, history, earnedBadges, totalReads, todayReadsCount, streak, longestStreak, categoryStats, shareCount, favorites, preferences, userProfile, updateUserProfile, isStoryCompleted, markStoryCompleted, openBadgeModal, freeDailyQuota, freeQuotaRemaining, isStoryUnlockedToday, canOpenStoryFree, consumeFreeRead } = useUserData();
   const { stories, storiesLoading, categories, parentCategories, errorMsg, isOffline } = useStories();
   const { career, requestConditions } = useCareerPath();
   const insets = useSafeAreaInsets();
@@ -361,12 +388,15 @@ const HomeScreen = ({ navigation }) => {
 
   // Language strings
   const greeting = getGreeting(lang);
+  const todayDateLabel = new Date().toLocaleDateString(DATE_LOCALES[lang] || 'en-US', { weekday: 'long', day: 'numeric', month: 'long' });
+  const greetingName = userProfile?.displayName ? `${greeting}, ${userProfile.displayName}` : greeting;
   const categoriesLabel = t('categoriesLabel', lang);
   const todayLabel = t('todayLabel', lang);
+  const allStoriesLabel = t('home_all_stories', lang);
   const forYouLabel = t('home_for_you', lang);
-  const personalizedTarget = preferences?.time?.dailyStoryTarget || 2;
+  const personalizedTarget = preferences?.time?.dailyStoryTarget || 3;
   const moduleStoryCount = Math.min(3, Math.max(1, personalizedTarget));
-  const personalizedMinutes = preferences?.time?.minutes || 6;
+  const personalizedMinutes = preferences?.time?.minutes || 9;
   const forYouSubtitle = t('home_for_you_sub', lang)
     .replace('{{stories}}', String(personalizedTarget))
     .replace('{{minutes}}', String(personalizedMinutes));
@@ -705,6 +735,20 @@ const HomeScreen = ({ navigation }) => {
 
   // Count actually-read stories today from DB directly
   const doneCount = Math.min(todayReadsCount || 0, personalizedTarget);
+
+  // "Kaldığın yerden": the most recently started, unfinished story. It is
+  // independent of the category filter and the daily plan.
+  const resumeItem = React.useMemo(() => {
+    const entries = Array.isArray(inProgressStories) ? inProgressStories : [];
+    for (const entry of entries) {
+      const story = (stories || []).find((st) => String(st.story_id) === String(entry.id));
+      if (story && !(history || []).some((h) => String(h) === String(story.story_id))) {
+        return { story, percent: Math.max(1, Math.min(99, Math.round((entry.progress || 0) * 100))) };
+      }
+    }
+    return null;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inProgressStories, stories, history]);
   const careerHomeEnabled = FEATURE_FLAGS.careerPathV1 && Boolean(career);
   const historySet = React.useMemo(() => new Set((history || []).map(id => String(id))), [history]);
 
@@ -760,7 +804,7 @@ const HomeScreen = ({ navigation }) => {
    * `bypassQuota` is for the deliberate weekly bonus story, which is exactly one
    * extra story per week and is meant to be a gift, not a leak.
    */
-  const openStory = async (story, { source, bypassQuota = false } = {}) => {
+  const openStory = async (story, { source, bypassQuota = false, params = {} } = {}) => {
     if (!story) return false;
     if (!bypassQuota) {
       const allowed = await consumeFreeRead(story.story_id);
@@ -769,7 +813,7 @@ const HomeScreen = ({ navigation }) => {
         return false;
       }
     }
-    navigation.navigate('StoryDetail', { story });
+    navigation.navigate('StoryDetail', { story, ...params });
     return true;
   };
 
@@ -1247,22 +1291,51 @@ const HomeScreen = ({ navigation }) => {
     homeHeader: {
       flexDirection: 'row', 
       justifyContent: 'space-between', 
-      alignItems: 'center', 
+      alignItems: 'flex-start', 
       paddingHorizontal: layout.padding.horizontal, 
-      paddingTop: 10,
+      paddingTop: layout.padding.screenTop,
       paddingBottom: 8,
+      minHeight: 44 + layout.padding.screenTop,
     },
     brandLogo: {
       flex: 1,
       flexDirection: 'row',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       justifyContent: 'flex-start',
     },
     brandLogoText: {
       fontFamily: 'PlayfairDisplay_700Bold',
-      fontSize: 28,
+      fontSize: typography.sizes.screenTitle,
+      lineHeight: typography.spacing.screenTitleLineHeight,
       color: colors.text,
+      letterSpacing: 0.1,
+      marginTop: 5,
+    },
+    headerDate: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 13,
+      color: colors.textSecondary,
       letterSpacing: 0.2,
+      marginTop: 4,
+    },
+    streakPill: {
+      minWidth: 44,
+      height: 44,
+      paddingHorizontal: 12,
+      marginRight: 8,
+      borderRadius: 22,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 4,
+      backgroundColor: colors.cardBackground,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    streakPillText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 15,
+      color: colors.dawnText,
     },
     headerBadgeWrap: {
       flexDirection: 'row',
@@ -1332,6 +1405,39 @@ const HomeScreen = ({ navigation }) => {
       marginHorizontal: layout.padding.horizontal,
       marginTop: 6,
       marginBottom: 4,
+    },
+    emptyCard: {
+      alignItems: 'center',
+      marginTop: 8,
+      paddingVertical: 36,
+      paddingHorizontal: 24,
+      borderRadius: layout.radius.featuredCard,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.cardBackground,
+    },
+    emptyIconWrap: {
+      width: 64,
+      height: 64,
+      borderRadius: 32,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: 16,
+      backgroundColor: colors.primaryContainer,
+    },
+    emptyTitle: {
+      fontFamily: 'PlayfairDisplay_600SemiBold',
+      fontSize: typography.sizes.headingSmall,
+      color: colors.text,
+      textAlign: 'center',
+      marginBottom: 8,
+    },
+    emptyBody: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 14,
+      lineHeight: 21,
+      color: colors.textSecondary,
+      textAlign: 'center',
     },
     searchEmptyButton: {
       marginTop: 16,
@@ -1828,6 +1934,209 @@ const HomeScreen = ({ navigation }) => {
       letterSpacing: 0.3,
       textTransform: 'uppercase',
     },
+    resumeCard: {
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: 12,
+      marginBottom: 20,
+      padding: 20,
+      borderRadius: layout.radius.card,
+      overflow: 'hidden',
+      backgroundColor: colors.heroSurface,
+      borderWidth: 1,
+      borderColor: colors.heroBorder,
+      shadowColor: colors.primary,
+      shadowOffset: { width: 0, height: 10 },
+      shadowOpacity: 0.18,
+      shadowRadius: 18,
+      elevation: 6,
+    },
+    resumeEyebrow: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+      color: colors.dawn,
+      textTransform: 'uppercase',
+      letterSpacing: 1,
+    },
+    resumeCatRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 10,
+      marginTop: 12,
+    },
+    resumeCatBadge: {
+      width: 40,
+      height: 40,
+      borderRadius: 12,
+      backgroundColor: 'rgba(255,255,255,0.92)',
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
+    },
+    resumeCatBadgeImg: {
+      width: '100%',
+      height: '100%',
+    },
+    resumeCatChip: {
+      paddingHorizontal: 10,
+      paddingVertical: 4,
+      borderRadius: 12,
+      backgroundColor: 'rgba(255,255,255,0.14)',
+    },
+    resumeCatChipText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 12,
+      color: '#F5F1E8',
+    },
+    resumeTitle: {
+      fontFamily: 'PlayfairDisplay_700Bold',
+      fontSize: isSmallPhone ? 22 : 25,
+      lineHeight: isSmallPhone ? 27 : 30,
+      color: '#F5F1E8',
+      marginTop: 12,
+      maxWidth: '78%',
+    },
+    resumeAuthor: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 13,
+      color: '#BFD6D1',
+      marginTop: 4,
+    },
+    resumeProgressRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 10,
+      marginTop: 14,
+      maxWidth: '82%',
+    },
+    resumeTrack: {
+      flex: 1,
+      height: 6,
+      borderRadius: 3,
+      backgroundColor: 'rgba(255,255,255,0.2)',
+      overflow: 'hidden',
+    },
+    resumeTrackFill: {
+      height: '100%',
+      borderRadius: 3,
+      backgroundColor: colors.dawn,
+    },
+    resumePercent: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 13,
+      color: 'rgba(245,241,232,0.85)',
+    },
+    resumeActions: {
+      flexDirection: 'row',
+      gap: 10,
+      marginTop: 18,
+    },
+    resumeReadBtn: {
+      flex: 1,
+      minHeight: 52,
+      borderRadius: 14,
+      backgroundColor: colors.dawn,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+    },
+    resumeReadText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 17,
+      color: '#2A1E08',
+    },
+    resumeListenBtn: {
+      minHeight: 52,
+      paddingHorizontal: 16,
+      borderRadius: 14,
+      backgroundColor: 'rgba(255,255,255,0.14)',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+    },
+    resumeListenText: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 14,
+      color: '#F5F1E8',
+    },
+    featuredCard: {
+      padding: 14,
+      borderRadius: 18,
+      backgroundColor: colors.cardBackground,
+      borderWidth: 1,
+      borderColor: colors.border,
+      minHeight: 150,
+      justifyContent: 'space-between',
+    },
+    featuredCardTop: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+    featuredCardIcon: {
+      width: 40,
+      height: 40,
+      borderRadius: 12,
+      overflow: 'hidden',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    featuredCardIconImg: {
+      width: '100%',
+      height: '100%',
+    },
+    featuredCardTitle: {
+      fontFamily: 'PlayfairDisplay_600SemiBold',
+      fontSize: 16,
+      lineHeight: 21,
+      color: colors.text,
+      marginTop: 12,
+      marginBottom: 8,
+    },
+    dailyStrip: {
+      marginHorizontal: layout.padding.horizontal,
+      marginTop: -8,
+      marginBottom: 20,
+      paddingVertical: 14,
+      paddingHorizontal: 16,
+      borderRadius: 18,
+      backgroundColor: colors.cardBackground,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    dailyStripTop: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+    dailyStripTitle: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 15,
+      color: colors.text,
+    },
+    dailyStripLink: {
+      fontFamily: 'Inter_600SemiBold',
+      fontSize: 14,
+      color: colors.primaryText,
+    },
+    dailyStripDots: {
+      flexDirection: 'row',
+      gap: 6,
+      marginTop: 10,
+    },
+    dailyStripDot: {
+      flex: 1,
+      height: 6,
+      borderRadius: 3,
+      backgroundColor: colors.primaryContainer,
+    },
+    dailyStripFoot: {
+      fontFamily: 'Inter_400Regular',
+      fontSize: 13,
+      color: colors.textSecondary,
+      marginTop: 8,
+    },
     primaryActionCard: {
       marginHorizontal: layout.padding.horizontal,
       marginTop: 12,
@@ -2008,7 +2317,8 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safe}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={colors.background} />
-      <ScrollView 
+      <DawnGlow strength={0.8} top={-insets.top} height={380 + insets.top} />
+      <ScrollView
         showsVerticalScrollIndicator={false}
         onScroll={({ nativeEvent }) => handleLoadMore(nativeEvent)}
         onMomentumScrollEnd={({ nativeEvent }) => handleLoadMore(nativeEvent)}
@@ -2017,20 +2327,29 @@ const HomeScreen = ({ navigation }) => {
         {/* Header */}
         <View style={styles.homeHeader}>
           <View style={styles.brandLogo}>
-            <Text style={styles.brandLogoText}>Albor</Text>
+            <View>
+              <Text style={styles.brandLogoText} numberOfLines={1}>{greetingName}</Text>
+              <Text style={styles.headerDate}>{todayDateLabel}</Text>
+            </View>
           </View>
+          {streak > 0 && (
+            <View style={styles.streakPill} accessibilityLabel={`${streak}`}>
+              <Ionicons name="flame" size={16} color={colors.dawn} />
+              <Text style={styles.streakPillText}>{streak}</Text>
+            </View>
+          )}
           {careerHomeEnabled ? (
             <TouchableOpacity
               style={styles.headerBadgeWrap}
               onPress={() => navigation.navigate('ProgressTab')}
               activeOpacity={0.85}
               accessibilityRole="button"
-              accessibilityLabel={t(career.activePath ? career.profileTitle : 'career.choosePathTitle', lang)}
+              accessibilityLabel={t(career.isPathSelectionDue ? 'career.choosePathTitle' : career.profileTitle, lang)}
             >
               <View style={{ width: 42, height: 42, borderRadius: 21, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surfaceContainerHigh }}>
-                <Ionicons name="sparkles-outline" size={20} color={colors.primaryText} />
+                <Ionicons name={career.isPathSelectionDue ? 'compass-outline' : career.activePath ? getCareerPathIconName(career.activePath) : 'ribbon-outline'} size={20} color={colors.primaryText} />
               </View>
-              <Text style={styles.headerBadgeSub} numberOfLines={1}>{t(career.activePath ? career.profileTitle : 'career.choosePathTitle', lang)}</Text>
+              <Text style={styles.headerBadgeSub} numberOfLines={1}>{t(career.isPathSelectionDue ? 'career.choosePathShort' : career.profileTitle, lang)}</Text>
             </TouchableOpacity>
           ) : doneCount < personalizedTarget && (
             <TouchableOpacity
@@ -2091,39 +2410,62 @@ const HomeScreen = ({ navigation }) => {
 
         {loading && <HomeLoadingState colors={colors} layout={layout} isDark={isDark} />}
 
-        {/* Category Pills */}
-        {!loading && !isSearchActive && (
-          <>
-            <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
-              {categoriesLabel}
-            </Text>
-            <FlatList
-              ref={categoryScrollRef}
-              horizontal
-              scrollEnabled
-              data={visibleCategoriesList}
-              renderItem={({ item }) => (
-                <CategoryPill
-                  label={item.label}
-                  categoryName={item.rawName || item.label}
-                  active={item.key === activeFilter}
-                  vertical
-                  isDark={isDark}
-                  activeColor={item.key === 'all' ? colors.primary : undefined}
-                  activeTextColor={item.key === 'all' ? colors.onPrimary : undefined}
-                  onPress={() => setActiveFilter(item.key)}
-                />
-              )}
-              keyExtractor={(item) => String(item.key)}
-              contentContainerStyle={{ gap: 8, paddingHorizontal: layout.padding.horizontal }}
-              showsHorizontalScrollIndicator={false}
-              style={{ marginTop: 12, marginBottom: 4 }}
-              scrollToOverflowEnabled={true}
-            />
-          </>
-        )}
+        {/* Resume card: last unfinished story. Fixed at the top, never follows the category filter. */}
+        {!loading && !isSearchActive && resumeItem && (() => {
+          const rs = resumeItem.story;
+          const rsCatRaw = rs.parent_cat_raw || rs.parent_cat || rs.cat;
+          const rsCat = toPascalCase(t(rs.parent_cat || rs.cat, lang) || '');
+          const rsPill = getCategoryPillImage(rsCatRaw, false);
+          const rsMins = Number(rs.min || rs.possible_read_minutes) || personalizedMinutes;
+          const rsLeft = Math.max(1, Math.ceil(rsMins * (1 - resumeItem.percent / 100)));
+          return (
+            <View style={styles.resumeCard}>
+              <HeroSun color={colors.dawn} />
+              <Text style={styles.resumeEyebrow}>{t('libraryContinueTitle', lang)}</Text>
+              <View style={styles.resumeCatRow}>
+                <View style={styles.resumeCatBadge}>
+                  {rsPill.source ? <Image source={rsPill.source} style={styles.resumeCatBadgeImg} resizeMode="contain" /> : null}
+                </View>
+                {rsCat ? (
+                  <View style={styles.resumeCatChip}>
+                    <Text style={styles.resumeCatChipText} numberOfLines={1}>{rsCat}</Text>
+                  </View>
+                ) : null}
+              </View>
+              <Text style={styles.resumeTitle} numberOfLines={3}>{rs.title}</Text>
+              {rs.author ? <Text style={styles.resumeAuthor} numberOfLines={1}>{rs.author}</Text> : null}
+              <View style={styles.resumeProgressRow}>
+                <View style={styles.resumeTrack}>
+                  <View style={[styles.resumeTrackFill, { width: `${resumeItem.percent}%` }]} />
+                </View>
+                <Text style={styles.resumePercent}>{t('home_resume_remaining', lang, { count: rsLeft })}</Text>
+              </View>
+              <View style={styles.resumeActions}>
+                <TouchableOpacity
+                  style={styles.resumeReadBtn}
+                  onPress={() => openStory(rs, { source: 'home_resume' })}
+                  activeOpacity={0.86}
+                  accessibilityRole="button"
+                  accessibilityLabel={`${t('home_resume_continue', lang)}: ${rs.title}`}
+                >
+                  <Text style={styles.resumeReadText}>{t('home_resume_continue', lang)}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.resumeListenBtn}
+                  onPress={() => openStory(rs, { source: 'home_resume', params: { autoPlayAudio: true } })}
+                  activeOpacity={0.86}
+                  accessibilityRole="button"
+                  accessibilityLabel={`${t('home_resume_listen', lang)}: ${rs.title}`}
+                >
+                  <Ionicons name="headset-outline" size={20} color="#F5F1E8" />
+                  <Text style={styles.resumeListenText}>{t('home_resume_listen', lang)}</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          );
+        })()}
 
-        {!loading && !isSearchActive && sortedStories.length > 0 && !primaryHomeAction.isBadgeCard && (() => {
+        {!loading && !isSearchActive && !resumeItem && sortedStories.length > 0 && !primaryHomeAction.isBadgeCard && (() => {
           // Banner takes the active category colour (B2). On "All" it keeps the
           // brand gold; on a category it shifts from a lighter tone (top-left)
           // to the accent (bottom-right) for soft depth.
@@ -2137,14 +2479,15 @@ const HomeScreen = ({ navigation }) => {
           // "All" and the career card sit on the brand accent's soft container
           // (both modes): calm tinted surface, dark text and one filled CTA.
           // Category filters keep their category artwork / gradient.
-          const useAccentSurface = isAllFilter || isCareer;
+          // Kategori filtresi kartın görünümünü değiştirmez: her zaman marka yüzeyi.
+          const useAccentSurface = true;
           const useBannerImage = !isDark && !useAccentSurface;
           // Only read when the card is not on the accent surface, i.e. a
           // category filter is active.
           const accentColor = activeCatTheme.accent;
           const bannerCtaColor = accentColor;
           const bannerColors = useAccentSurface
-            ? [colors.primaryContainer, mixHex(colors.primaryContainer, colors.primary, isDark ? 0.14 : 0.1)]
+            ? [colors.heroSurface, colors.heroSurface]
             : [activeCatTheme.borderColor, activeCatTheme.accent];
           const bannerSource = getCategoryBanner(activeCatItem?.rawName || activeCatItem?.label).source;
           // Dark mode fills the card with a gradient (no banner image). The gold/
@@ -2167,21 +2510,23 @@ const HomeScreen = ({ navigation }) => {
           const onFillSoft = isDarkText ? 'rgba(26,26,26,0.72)' : 'rgba(255,255,255,0.85)';
           const onFillFaint = isDarkText ? 'rgba(26,26,26,0.6)' : 'rgba(255,255,255,0.8)';
 
-          const onLightSurface = useBannerImage || useAccentSurface;
-          const titleColor = onLightSurface ? colors.text : onFill;
-          const eyebrowColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFillSoft);
-          const subColor = onLightSurface ? colors.textSecondary : onFillSoft;
-          const progressColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFillFaint);
+          const onLightSurface = useBannerImage;
+          const onHero = useAccentSurface;
+          const titleColor = onHero ? '#F5F1E8' : (onLightSurface ? colors.text : onFill);
+          const eyebrowColor = onHero ? colors.dawn : (useBannerImage ? accentColor : onFillSoft);
+          const subColor = onHero ? 'rgba(245,241,232,0.78)' : (onLightSurface ? colors.textSecondary : onFillSoft);
+          const progressColor = onHero ? 'rgba(245,241,232,0.8)' : (useBannerImage ? accentColor : onFillFaint);
           const iconWrapBg = useAccentSurface
-            ? (isDark ? 'rgba(255,255,255,0.08)' : colors.surfaceContainerLowest)
+            ? 'rgba(255,255,255,0.14)'
             : (useBannerImage ? colors.surfaceContainerLowest : (isDarkText ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.25)'));
-          const iconColor = useAccentSurface ? colors.primaryText : (useBannerImage ? accentColor : onFill);
+          const iconColor = onHero ? colors.dawn : (useBannerImage ? accentColor : onFill);
           // CTA: filled accent on the accent surface; white pill on artwork.
-          const ctaBg = useAccentSurface ? colors.primary : (isDark ? colors.background : colors.surfaceContainerLowest);
-          const ctaTextColor = useAccentSurface ? colors.onPrimary : bannerCtaColor;
+          const ctaBg = onHero ? colors.dawn : (isDark ? colors.background : colors.surfaceContainerLowest);
+          const ctaTextColor = onHero ? '#2A1E08' : bannerCtaColor;
 
           const bannerInner = (
             <>
+              {onHero && <HeroSun color={colors.dawn} />}
               <View style={styles.primaryActionTop}>
                 <View style={[styles.primaryActionIconWrap, { backgroundColor: iconWrapBg }]}>
                   <Ionicons name={primaryHomeAction.icon} size={26} color={iconColor} />
@@ -2393,6 +2738,35 @@ const HomeScreen = ({ navigation }) => {
           );
         })()}
 
+        {/* Daily progress strip: today's goal, streak and next badge in one row */}
+        {!loading && !isSearchActive && sortedStories.length > 0 && (
+          <TouchableOpacity
+            style={styles.dailyStrip}
+            onPress={() => navigation.navigate('ProgressTab')}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityLabel={t('home_daily_strip_title', lang, { done: doneCount, total: Math.max(personalizedTarget, 1) })}
+          >
+            <View style={styles.dailyStripTop}>
+              <Text style={styles.dailyStripTitle}>
+                {t('home_daily_strip_title', lang, { done: doneCount, total: Math.max(personalizedTarget, 1) })}
+              </Text>
+              <Text style={styles.dailyStripLink}>{t('home_daily_strip_link', lang)}</Text>
+            </View>
+            <View style={styles.dailyStripDots}>
+              {Array.from({ length: Math.max(personalizedTarget, 1) }).map((_, i) => (
+                <View
+                  key={`strip-dot-${i}`}
+                  style={[styles.dailyStripDot, i < doneCount && { backgroundColor: colors.primary }]}
+                />
+              ))}
+            </View>
+            {streak > 0 && (
+              <Text style={styles.dailyStripFoot}>{t('home_daily_strip_streak', lang, { count: streak })}</Text>
+            )}
+          </TouchableOpacity>
+        )}
+
         {/* Featured Story Cards (Horizontal Scroll) */}
         {!loading && !isSearchActive && sortedStories.length > 0 && (() => {
           const featuredHidden = allFeaturedRead && isFeaturedCollapsed;
@@ -2435,88 +2809,123 @@ const HomeScreen = ({ navigation }) => {
                  )}
               </TouchableOpacity>
               {!featuredHidden && (
-              <View style={{ paddingHorizontal: layout.padding.horizontal, gap: 10 }}>
-                {featuredStories.map((story, idx) => {
-                  const catTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
-                  const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
-                  const displayCat = toPascalCase(t(story.parent_cat || story.cat, lang) || '');
-                  const isRead = checkIfRead(story.story_id);
-                  const isLocked = !canOpenStoryFree(story.story_id);
-                  const mins = Number(story.min || story.possible_read_minutes) || personalizedMinutes;
-                  return (
-                    <TouchableOpacity
-                      key={`featured-${story.story_id}`}
-                      style={[styles.insightRow, { borderColor: isRead ? `${colors.border}` : `${catTheme.borderColor}66`, opacity: isLocked ? 0.6 : 1 }]}
-                      activeOpacity={0.85}
-                      onPress={() => {
-                        if (isLocked) {
-                          openPaywallFromFreeLimit('home_featured_story_locked', story.story_id);
-                        } else {
-                          openPersonalizedStory(story, idx);
-                        }
-                      }}
-                    >
-                      <View style={[styles.insightIcon, { backgroundColor: catTheme.backgroundColor }]}>
-                        {catImg.source ? (
-                          <Image source={catImg.source} style={styles.insightIconImg} resizeMode="cover" />
-                        ) : (
-                          <Ionicons name="book-outline" size={24} color={catTheme.accent} />
-                        )}
-                      </View>
-                      <View style={{ flex: 1, minWidth: 0 }}>
-                        <Text numberOfLines={2} style={styles.insightTitle}>{story.title}</Text>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                decelerationRate="fast"
+                snapToInterval={FEATURED_CARD_WIDTH + 12}
+                snapToAlignment="start"
+                contentContainerStyle={{ paddingHorizontal: layout.padding.horizontal, gap: 12, paddingVertical: 4 }}
+              >
+                {featuredStories
+                  .map((story, idx) => ({ story, idx, locked: !canOpenStoryFree(story.story_id) }))
+                  .sort((x, y) => Number(x.locked) - Number(y.locked))
+                  .map(({ story, idx, locked: isLocked }) => {
+                    const catTheme = getCategoryTheme(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+                    const catImg = getCategoryImage(story.parent_cat_raw || story.parent_cat || story.cat, isDark);
+                    const displayCat = toPascalCase(t(story.parent_cat || story.cat, lang) || '');
+                    const isRead = checkIfRead(story.story_id);
+                    const mins = Number(story.min || story.possible_read_minutes) || personalizedMinutes;
+                    return (
+                      <TouchableOpacity
+                        key={`featured-${story.story_id}`}
+                        style={[styles.featuredCard, { width: FEATURED_CARD_WIDTH, opacity: isLocked ? 0.7 : 1 }]}
+                        activeOpacity={0.85}
+                        onPress={() => {
+                          if (isLocked) {
+                            openPaywallFromFreeLimit('home_featured_story_locked', story.story_id);
+                          } else {
+                            openPersonalizedStory(story, idx);
+                          }
+                        }}
+                      >
+                        <View style={styles.featuredCardTop}>
+                          <View style={[styles.featuredCardIcon, { backgroundColor: catTheme.backgroundColor }]}>
+                            {catImg.source ? (
+                              <Image source={catImg.source} style={styles.featuredCardIconImg} resizeMode="cover" />
+                            ) : (
+                              <Ionicons name="book-outline" size={22} color={catTheme.accent} />
+                            )}
+                          </View>
+                          {isLocked ? (
+                            <Ionicons name="lock-closed-outline" size={18} color={colors.textSecondary} />
+                          ) : isRead ? (
+                            <Ionicons name="checkmark-circle" size={20} color={colors.success} />
+                          ) : (
+                            <TouchableOpacity
+                              style={[styles.insightAction, { backgroundColor: `${catTheme.accent}1A` }]}
+                              onPress={() => navigation.navigate('UseInConversation', { story })}
+                              activeOpacity={0.86}
+                              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                              accessibilityRole="button"
+                              accessibilityLabel={t('story_detail_use_cta', lang)}
+                            >
+                              <Ionicons name="chatbubble-ellipses-outline" size={18} color={catTheme.accent} />
+                            </TouchableOpacity>
+                          )}
+                        </View>
+                        <Text numberOfLines={3} style={styles.featuredCardTitle}>{story.title}</Text>
                         <Text numberOfLines={1} style={styles.insightMeta}>
                           <Text style={{ color: catTheme.textColor, fontFamily: 'Inter_600SemiBold' }}>{displayCat}</Text>
                           {`  ·  ${mins} ${t('minLabel', lang)}`}
                         </Text>
-                      </View>
-                      {isLocked ? (
-                        <Ionicons name="lock-closed" size={20} color={colors.textSecondary} style={{ marginLeft: 10 }} />
-                      ) : isRead ? (
-                        <Ionicons name="checkmark" size={22} color={colors.success} style={{ marginLeft: 10 }} />
-                      ) : (
-                        <TouchableOpacity
-                          style={[styles.insightAction, { backgroundColor: `${catTheme.accent}1A` }]}
-                          onPress={() => navigation.navigate('UseInConversation', { story })}
-                          activeOpacity={0.86}
-                          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-                          accessibilityRole="button"
-                          accessibilityLabel={t('story_detail_use_cta', lang)}
-                        >
-                          <Ionicons name="chatbubble-ellipses-outline" size={20} color={catTheme.accent} />
-                        </TouchableOpacity>
-                      )}
-                    </TouchableOpacity>
-                  );
-                })}
-              </View>
+                      </TouchableOpacity>
+                    );
+                  })}
+              </ScrollView>
               )}
             </>
           );
         })()}
 
-        {!loading && !isSearchActive && <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>{todayLabel}</Text>}
+        {/* Category Pills */}
+        {!loading && !isSearchActive && (
+          <>
+            <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
+              {categoriesLabel}
+            </Text>
+            <FlatList
+              ref={categoryScrollRef}
+              horizontal
+              scrollEnabled
+              data={visibleCategoriesList}
+              renderItem={({ item }) => (
+                <CategoryPill
+                  label={item.label}
+                  categoryName={item.rawName || item.label}
+                  active={item.key === activeFilter}
+                  inline
+                  isDark={isDark}
+                  activeColor={item.key === 'all' ? colors.primary : undefined}
+                  activeTextColor={item.key === 'all' ? colors.onPrimary : undefined}
+                  onPress={() => setActiveFilter(item.key)}
+                />
+              )}
+              keyExtractor={(item) => String(item.key)}
+              contentContainerStyle={{ gap: 8, paddingHorizontal: layout.padding.horizontal }}
+              showsHorizontalScrollIndicator={false}
+              style={{ marginTop: 12, marginBottom: 4 }}
+              scrollToOverflowEnabled={true}
+            />
+          </>
+        )}
+
+        {!loading && !isSearchActive && <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>{allStoriesLabel}</Text>}
         
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
           {loading ? null : sortedStories.length === 0 ? (
-            <View style={{ alignItems: 'center', paddingVertical: 48, paddingHorizontal: 24 }}>
-              <Text style={{ fontSize: 48, marginBottom: 16 }}>✨</Text>
-              <Text style={{
-                fontFamily: 'PlayfairDisplay_600SemiBold',
-                fontSize: typography.sizes.headingSmall,
-                color: colors.text,
-                textAlign: 'center',
-                marginBottom: 8,
-              }}>
+            <View style={styles.emptyCard}>
+              <View style={styles.emptyIconWrap}>
+                <Ionicons
+                  name={isSearchActive ? 'search-outline' : 'library-outline'}
+                  size={30}
+                  color={colors.primaryText || colors.primary}
+                />
+              </View>
+              <Text style={styles.emptyTitle}>
                 {isSearchActive ? t('searchNoResultsTitle', lang) : t('noStoriesTitle', lang)}
               </Text>
-              <Text style={{
-                fontFamily: 'Inter_400Regular',
-                fontSize: typography.sizes.body,
-                color: colors.textSecondary,
-                textAlign: 'center',
-                lineHeight: 22,
-              }}>
+              <Text style={styles.emptyBody}>
                 {isSearchActive ? t('searchNoResultsSub', lang) : t('noStoriesBody', lang)}
               </Text>
               {isSearchActive ? (
@@ -2527,6 +2936,15 @@ const HomeScreen = ({ navigation }) => {
                   accessibilityLabel={t('searchClearAccessibility', lang)}
                 >
                   <Text style={styles.searchEmptyButtonText}>{t('searchClearAccessibility', lang)}</Text>
+                </TouchableOpacity>
+              ) : activeFilter !== 'all' ? (
+                <TouchableOpacity
+                  style={styles.searchEmptyButton}
+                  onPress={() => setActiveFilter('all')}
+                  accessibilityRole="button"
+                  accessibilityLabel={t('noStoriesShowAll', lang)}
+                >
+                  <Text style={styles.searchEmptyButtonText}>{t('noStoriesShowAll', lang)}</Text>
                 </TouchableOpacity>
               ) : null}
             </View>

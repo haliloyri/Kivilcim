@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Albor — Ana ekran alternatifleri</title>
+<style>
+  /* Referans: iPhone 17 Pro, 402 pt genişlik. Sayfa tam uzunlukta gösterilir. */
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #E6E1D8; font-family: -apple-system, "SF Pro Text", Inter, system-ui, sans-serif; padding-bottom: 60px; }
+  body[data-mode="dark"] { background: #0B0A10; }
+  .switch { position: sticky; top: 0; z-index: 30; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 14px; background: rgba(230,225,216,.92); backdrop-filter: blur(8px); }
+  body[data-mode="dark"] .switch { background: rgba(11,10,16,.92); }
+  .switch button { min-height: 44px; padding: 0 18px; border-radius: 22px; border: 1px solid #8884; background: #fff; color: #2A2230; font: 600 14px/1 inherit; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: #3B3A6B; color: #fff; border-color: #3B3A6B; }
+  .switch .sep { width: 1px; background: #8886; margin: 4px 6px; }
+  svg.i { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.15em; }
+
+  .phone { --serif: "Playfair Display", Georgia, serif; width: 402px; margin: 20px auto 0; background: var(--bg); color: var(--text); border-radius: 48px; overflow: hidden;
+    box-shadow: 0 0 0 10px #111, 0 30px 80px rgba(0,0,0,.35); position: relative; }
+  .phone[data-v="a"][data-m="light"] { --bg:#FBF6EE; --card:#FFFFFF; --bd:#E8E0E4; --text:#2A2230; --t2:#655D6B; --pr:#3B3A6B; --onpr:#fff; --ct:#E9E7F5; --dw:#E8704A; --dwt:#B8451F; --hero:#F4E6DD; --tab:#FEFAF4; }
+  .phone[data-v="a"][data-m="dark"]  { --bg:#15131C; --card:#1E1B27; --bd:#2E2A3A; --text:#F4F0F7; --t2:#AAA4B8; --pr:#B9B6F2; --onpr:#1A1830; --ct:#2A2745; --dw:#F2906B; --dwt:#F2906B; --hero:#2A2236; --tab:#15131C; }
+  .phone[data-v="b"][data-m="light"] { --bg:#FFF4E6; --card:#FFFFFF; --bd:#F0DCC6; --text:#3A2418; --t2:#7A5A48; --pr:#9C3D1F; --onpr:#fff; --ct:#FBE3CC; --dw:#F2A33A; --dwt:#8F4A0B; --hero:#F9C98A; --tab:#FFF9F0; }
+  .phone[data-v="b"][data-m="dark"]  { --bg:#1C130E; --card:#271A13; --bd:#3D2A1E; --text:#FBEEDD; --t2:#C9AE98; --pr:#F2A878; --onpr:#2A140A; --ct:#3A2619; --dw:#F5B355; --dwt:#F5B355; --hero:#4A2E1B; --tab:#1C130E; }
+  .phone[data-v="c"][data-m="light"] { --bg:#F2F5F7; --card:#FFFFFF; --bd:#DCE3E8; --text:#16222B; --t2:#566874; --pr:#0E5C66; --onpr:#fff; --ct:#DDEEF0; --dw:#F07C5A; --dwt:#B4452A; --hero:#16323C; --tab:#FAFCFD; }
+  .phone[data-v="c"][data-m="dark"]  { --bg:#0C171D; --card:#13232B; --bd:#1F3540; --text:#EAF3F6; --t2:#93AAB5; --pr:#7DD3D8; --onpr:#07262B; --ct:#173440; --dw:#F59A7C; --dwt:#F59A7C; --hero:#173440; --tab:#0C171D; }
+  .phone[data-m="light"] { --fin:#2F7D5B; --psi:#6B5BB5; --fel:#3F6FA8; --tar:#A86A12; --lid:#C0503A; }
+  .phone[data-m="dark"]  { --fin:#6FCB9F; --psi:#B3A6F0; --fel:#8DB6EB; --tar:#E8B15A; --lid:#F0907A; }
+
+  .island { position: absolute; top: 11px; left: 50%; width: 126px; height: 37px; margin-left: -63px; background: #000; border-radius: 20px; z-index: 5; }
+  .status { height: 62px; padding: 20px 34px 0; display: flex; justify-content: space-between; font-size: 16px; font-weight: 600; }
+  .body { padding: 8px 20px 24px; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  p { margin: 0; }
+  .greet { font-size: 14px; color: var(--t2); }
+  h1 { font-family: var(--serif); font-size: 26px; line-height: 1.15; font-weight: 600; }
+  .pill { white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; height: 32px; padding: 0 11px; border-radius: 16px; background: var(--ct); color: var(--dwt); font-size: 14px; font-weight: 600; }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--ct); color: var(--pr); display: grid; place-items: center; font-weight: 600; margin-left: 8px; }
+
+  .path { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 13px; color: var(--t2); }
+  .path b { color: var(--text); font-weight: 600; white-space: nowrap; }
+  .path .bar { flex: 1; height: 6px; border-radius: 3px; background: var(--ct); overflow: hidden; }
+  .path .bar i { display: block; width: 70%; height: 100%; background: var(--pr); border-radius: 3px; }
+
+  .hero { position: relative; margin-top: 16px; padding: 20px; border-radius: 24px; background: var(--hero); overflow: hidden; }
+  .glow { position: absolute; border-radius: 50%; background: var(--dw); }
+  .hero .g1 { right: -60px; top: -80px; width: 220px; height: 220px; opacity: .26; }
+  .hero .g2 { right: -20px; top: -40px; width: 120px; height: 120px; opacity: .34; }
+  .eyebrow { position: relative; font-size: 12px; letter-spacing: .08em; font-weight: 600; color: var(--dwt); }
+  .hero h2 { position: relative; max-width: 72%; margin: 8px 0 6px; font-family: var(--serif); font-size: 24px; line-height: 1.2; font-weight: 600; }
+  .meta { position: relative; font-size: 14px; color: var(--t2); }
+  .cta { position: relative; display: flex; gap: 10px; margin-top: 18px; }
+  .btn { flex: 1; height: 52px; border-radius: 14px; background: var(--pr); color: var(--onpr); font: 600 17px/1 inherit; display: grid; place-items: center; }
+  .ibtn { width: 52px; height: 52px; border-radius: 14px; background: var(--card); border: .5px solid var(--bd); color: var(--pr); display: grid; place-items: center; font-size: 22px; }
+  .phone[data-v="b"] .hero { border-radius: 0 0 36px 36px; margin: 10px -20px 0; padding: 24px 24px 28px; min-height: 270px; }
+  .phone[data-v="b"] .hero h2 { font-size: 30px; max-width: 80%; }
+  .phone[data-v="b"] .hero .g1 { right: -70px; top: auto; bottom: -110px; width: 250px; height: 250px; opacity: .55; }
+  .phone[data-v="b"] .hero .g2 { right: -20px; top: auto; bottom: -50px; width: 130px; height: 130px; opacity: .7; }
+  .phone[data-v="b"] .hero .meta, .phone[data-v="b"] .hero .eyebrow { color: var(--text); }
+  .phone[data-v="b"] .btn { border-radius: 26px; }
+  .phone[data-v="c"] .hero { color: #EAF3F6; padding: 18px; border-radius: 20px; }
+  .phone[data-v="c"] .hero .meta { color: #A8C0C8; }
+  .phone[data-v="c"] .hero .eyebrow { color: #F59A7C; }
+  .phone[data-v="c"] .hero h2 { max-width: 100%; font-size: 22px; }
+  .phone[data-v="c"] .hero .btn { background: #7DD3D8; color: #07262B; }
+  .phone[data-v="c"] .hero .ibtn { background: #1F4452; border-color: #2B5868; color: #7DD3D8; }
+  .phone[data-v="c"] .hero .g1 { width: 160px; height: 160px; right: -50px; top: -60px; opacity: .18; }
+  .phone[data-v="c"] .hero .g2 { opacity: .25; }
+
+  .section { margin-top: 28px; }
+  h3 { font-size: 18px; font-weight: 600; }
+  .sub { font-size: 13px; color: var(--t2); margin-top: 2px; }
+  .link { font-size: 14px; color: var(--dwt); font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; color: var(--c); background: color-mix(in srgb, var(--c) 14%, var(--card)); }
+  [data-cat="Finans"] { --c: var(--fin); } [data-cat="Psikoloji"] { --c: var(--psi); } [data-cat="Felsefe"] { --c: var(--fel); }
+  [data-cat="Tarih"] { --c: var(--tar); } [data-cat="Liderlik"] { --c: var(--lid); }
+
+  /* Seçki: A yatay kart, B numaralı yatay, C kompakt satır */
+  .picks { display: flex; gap: 12px; margin: 6px -20px 0; padding: 0 20px 4px; overflow-x: auto; scrollbar-width: none; counter-reset: n; }
+  .pk { flex: 0 0 168px; position: relative; padding: 14px; border-radius: 18px; background: var(--card); border: .5px solid var(--bd); min-height: 150px; counter-increment: n; }
+  .pk h4 { margin: 10px 0 6px; font-size: 16px; line-height: 1.25; }
+  .pk p { font-size: 13px; color: var(--t2); display: flex; align-items: center; gap: 4px; }
+  .phone[data-v="b"] .pk { flex-basis: 150px; background: transparent; border: 0; border-top: 2px solid var(--dw); border-radius: 0; padding: 10px 4px 0 0; }
+  .phone[data-v="b"] .pk::before { content: "0" counter(n); display: block; font-family: var(--serif); font-size: 30px; color: var(--dw); }
+  .phone[data-v="c"] .picks { flex-direction: column; margin: 6px 0 0; padding: 0; gap: 8px; overflow: visible; }
+  .phone[data-v="c"] .pk { flex: none; min-height: 0; display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 10px 14px; border-radius: 14px; }
+  .phone[data-v="c"] .pk .chip { grid-column: 1; justify-self: start; }
+  .phone[data-v="c"] .pk h4 { grid-column: 1; margin: 4px 0 2px; font-size: 15px; }
+  .phone[data-v="c"] .pk p { grid-column: 1; }
+  .phone[data-v="c"] .pk::after { content: "›"; grid-column: 2; grid-row: 1 / 4; font-size: 24px; color: var(--t2); }
+
+  /* Kategori filtresi (yapışkan) */
+  .cats { position: sticky; top: 0; z-index: 8; display: flex; gap: 8px; margin: 22px -20px 0; padding: 10px 20px; overflow-x: auto; scrollbar-width: none; background: var(--bg); border-bottom: .5px solid var(--bd); }
+  .cats button { flex: none; min-height: 44px; padding: 0 18px; border-radius: 22px; border: .5px solid var(--bd); background: var(--card); font: 500 14px/1 inherit; color: var(--t2); cursor: pointer; }
+  .cats button.on { background: var(--pr); color: var(--onpr); border-color: var(--pr); font-weight: 600; }
+
+  .feed { margin-top: 6px; }
+  .item { display: flex; gap: 12px; align-items: center; padding: 12px 0; border-bottom: .5px solid var(--bd); }
+  .cover { flex: none; width: 64px; height: 64px; border-radius: 14px; display: grid; place-items: center; font-size: 26px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, var(--card)); }
+  .item h4 { font-size: 16px; line-height: 1.25; margin: 5px 0 3px; }
+  .item p { font-size: 13px; color: var(--t2); display: flex; align-items: center; gap: 4px; }
+  .lock { margin-left: auto; flex: none; color: var(--t2); font-size: 18px; }
+  .more { margin-top: 16px; height: 52px; border-radius: 14px; border: .5px solid var(--bd); background: var(--card); color: var(--pr); display: grid; place-items: center; font: 600 16px/1 inherit; cursor: pointer; width: 100%; }
+
+  .talk { margin: 16px 0 4px; padding: 14px 16px; border-radius: 16px; background: var(--ct); }
+  .talk h4 { font-size: 15px; }
+  .talk .chips { display: flex; gap: 6px; margin-top: 10px; overflow-x: auto; scrollbar-width: none; }
+  .talk .chips span { flex: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 22px; background: var(--card); color: var(--pr); font-size: 14px; font-weight: 600; }
+
+  .premium { position: relative; margin: 16px 0; padding: 20px; border-radius: 22px; background: var(--pr); color: var(--onpr); overflow: hidden; }
+  .premium .glow { right: -40px; top: -50px; width: 150px; height: 150px; opacity: .3; }
+  .premium h3 { position: relative; font-family: var(--serif); font-size: 21px; }
+  .premium p { position: relative; font-size: 14px; margin: 6px 0 14px; opacity: .92; }
+  .premium .go { position: relative; height: 46px; border-radius: 14px; background: var(--onpr); color: var(--pr); display: grid; place-items: center; font-weight: 600; }
+
+  .tabbar { position: sticky; bottom: 0; z-index: 9; display: flex; height: 92px; padding: 8px 12px 34px; background: var(--tab); border-top: .5px solid var(--bd); margin-top: 8px; }
+  .tab { flex: 1; display: grid; place-items: center; align-content: center; gap: 2px; font-size: 11px; color: var(--t2); }
+  .tab svg { width: 24px; height: 24px; } .tab.on { color: var(--pr); font-weight: 600; }
+</style>
+</head>
+<body data-mode="light">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="flame" viewBox="0 0 24 24"><path d="M12 3c1 4 5 5.5 5 10a5 5 0 01-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="phones" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0116 0v2M4 14h3v6H4zM17 14h3v6h-3z"/></symbol>
+    <symbol id="Finans" viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/></symbol>
+    <symbol id="Psikoloji" viewBox="0 0 24 24"><path d="M9 4a4 4 0 00-4 4 3 3 0 00-1 5 3.5 3.5 0 004 4 3 3 0 005 0 3.5 3.5 0 004-4 3 3 0 00-1-5 4 4 0 00-4-4 3 3 0 00-3 0zM12 4v16"/></symbol>
+    <symbol id="Felsefe" viewBox="0 0 24 24"><path d="M12 3a6 6 0 00-4 10.5V16h8v-2.5A6 6 0 0012 3zM9 20h6"/></symbol>
+    <symbol id="Tarih" viewBox="0 0 24 24"><path d="M5 21h14M6 21V10M10 21V10M14 21V10M18 21V10M3 10l9-6 9 6z"/></symbol>
+    <symbol id="Liderlik" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4 1.3 6L12 16.4 6.6 19.300l1.3-6-4.5-4 6-.7z"/></symbol>
+  </defs>
+</svg>
+
+<div class="switch" role="group" aria-label="Tasarım seçimi">
+  <button type="button" data-v="a" aria-pressed="true">A · Şafak</button>
+  <button type="button" data-v="b" aria-pressed="false">B · Güneş</button>
+  <button type="button" data-v="c" aria-pressed="false">C · Sakin deniz</button>
+  <span class="sep"></span>
+  <button type="button" data-m="light" aria-pressed="true">Açık</button>
+  <button type="button" data-m="dark" aria-pressed="false">Koyu</button>
+</div>
+
+<main class="phone" id="phone" data-v="a" data-m="light" aria-label="Albor ana ekran">
+  <div class="island"></div>
+  <div class="status"><span>9:41</span><span>5G ▮▮▮</span></div>
+  <div class="body">
+    <header class="row">
+      <div><p class="greet">Günaydın, Halil</p><h1>Bugün ne okuyalım?</h1></div>
+      <div class="row"><span class="pill"><svg class="i"><use href="#flame"/></svg>12</span><div class="avatar">H</div></div>
+    </header>
+    <div class="path"><b>Gözlemci</b><span class="bar"><i></i></span><span>7/10</span></div>
+
+    <section class="hero">
+      <span class="glow g1"></span><span class="glow g2"></span>
+      <p class="eyebrow">GÜNÜN ODAĞI</p>
+      <h2>Bileşik faizin sessiz gücü</h2>
+      <p class="meta">Finans · 4 dk</p>
+      <div class="cta">
+        <div class="btn">Okumaya başla</div>
+        <div class="ibtn" aria-label="Sesli dinle"><svg class="i"><use href="#phones"/></svg></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="row"><div><h3>Senin için seçtiklerimiz</h3><p class="sub">10 dakikalık planına göre 5 içgörü</p></div></div>
+      <div class="picks" id="picks"></div>
+    </section>
+
+    <div class="cats" id="cats" role="tablist" aria-label="Kategori filtresi"></div>
+    <div class="feed" id="feed"></div>
+    <button class="more" id="more" type="button">Daha fazla yükle</button>
+  </div>
+
+  <nav class="tabbar">
+    <span class="tab on"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Ana sayfa</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Keşfet</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.500-7 10-7 10z"/></svg>Favoriler</span>
+    <span class="tab"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>Profil</span>
+  </nav>
+</main>
+
+<script>
+  const icon = (id) => `<svg class="i"><use href="#${id}"/></svg>`;
+  const picks = [
+    ['Felsefe', 'Stoacı bir sabah rutini', 'Marcus Aurelius', 3, 0],
+    ['Liderlik', 'Dinleme sanatı', 'Kim Scott', 5, 0],
+    ['Tarih', "İpek Yolu'nun gizli haritası", 'Peter Frankopan', 4, 1],
+    ['Psikoloji', 'Alışkanlıkların döngüsü', 'James Clear', 4, 0],
+    ['Finans', 'Zenginliğin psikolojisi', 'Morgan Housel', 5, 1],
+  ];
+  const stories = [
+    ['Psikoloji', 'Odaklanmanın görünmez maliyeti', 'Cal Newport', 5, 0],
+    ['Liderlik', 'Zor sohbetlerde ilk cümle', 'Stone & Patton', 5, 0],
+    ['Felsefe', 'Acı çekmenin öğrettiği', 'Viktor Frankl', 4, 0],
+    ['Tarih', 'İmparatorlukların çöküş kalıbı', 'Ray Dalio', 5, 1],
+    ['Finans', 'Bileşik düşünmek', 'Charlie Munger', 3, 1],
+    ['Psikoloji', 'Utanç ve cesaret', 'Brené Brown', 4, 0],
+    ['Finans', 'Riskin gerçek yüzü', 'Nassim Taleb', 5, 1],
+    ['Felsefe', 'Küçük şeylerin ağırlığı', 'Epiktetos', 3, 0],
+    ['Liderlik', 'Takımı güvenle kurmak', 'Patrick Lencioni', 4, 1],
+    ['Tarih', 'Roma nasıl düştü', 'Mary Beard', 5, 0],
+    ['Psikoloji', 'Düşünmenin iki hızı', 'Daniel Kahneman', 6, 1],
+    ['Finans', 'Para ve sabır', 'Benjamin Graham', 4, 0],
+  ];
+  const cats = ['Tümü', 'Finans', 'Psikoloji', 'Felsefe', 'Tarih', 'Liderlik'];
+  let active = 'Tümü', shown = 8;
+
+  document.getElementById('picks').innerHTML = picks.map(([c, t, a, m, l]) =>
+    `<article class="pk" data-cat="${c}"><span class="chip">${icon(c)}${c}</span><h4>${t}</h4><p>${icon('clock')}${m} dk${l ? ' · ' + icon('lock') : ''}</p></article>`).join('');
+
+  const talk = `<div class="talk"><h4>Bugün ne diyeceksin?</h4><div class="chips"><span>Toplantı</span><span>Birebir</span><span>Aile</span><span>Sosyal</span><span>Kendime</span></div></div>`;
+  const premium = `<div class="premium"><span class="glow"></span><h3>Albor Premium</h3><p>Sınırsız hikâye, sesli anlatım, reklamsız deneyim ve tüm temalar.</p><div class="go">Premium'u keşfet</div></div>`;
+
+  function renderFeed() {
+    const list = stories.filter((s) => active === 'Tümü' || s[0] === active);
+    const vis = list.slice(0, shown);
+    document.getElementById('feed').innerHTML = vis.map(([c, t, a, m, l], i) => {
+      const extra = active === 'Tümü' ? (i === 3 ? premium : i === 6 ? talk : '') : '';
+      return `<article class="item" data-cat="${c}"><div class="cover">${icon(c)}</div><div><span class="chip">${c}</span><h4>${t}</h4><p>${a} · ${icon('clock')}${m} dk</p></div>${l ? `<span class="lock">${icon('lock')}</span>` : ''}</article>${extra}`;
+    }).join('');
+    document.getElementById('more').style.display = shown < list.length ? 'grid' : 'none';
+  }
+  const catBar = document.getElementById('cats');
+  catBar.innerHTML = cats.map((c) => `<button type="button" class="${c === active ? 'on' : ''}">${c}</button>`).join('');
+  catBar.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'BUTTON') return;
+    active = e.target.textContent; shown = 8;
+    catBar.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b === e.target));
+    renderFeed();
+  });
+  document.getElementById('more').addEventListener('click', () => { shown += 8; renderFeed(); });
+  renderFeed();
+
+  const phone = document.getElementById('phone');
+  document.querySelectorAll('.switch button').forEach((b) => b.addEventListener('click', () => {
+    const key = b.dataset.v ? 'v' : 'm';
+    phone.dataset[key] = b.dataset[key];
+    if (key === 'm') document.body.dataset.mode = b.dataset.m;
+    document.querySelectorAll(`.switch button[data-${key}]`).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  }));
+</script>
+</body>
+</html>

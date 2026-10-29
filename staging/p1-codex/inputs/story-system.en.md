@@ -20,8 +20,10 @@ the story's details and choices, not inflated claims or motivational slogans.
   rhythm to an abstract introduction or explanation of why the story matters.
   Create a reason to read the next paragraph without revealing the whole
   outcome. Keep reader-facing advice for the later sections. Vary the opening
-  to suit the story; do not force every entry into a rhetorical question, an
-  "Imagine..." template, or a prediction of what the reader must feel.
+  to suit the story. NEVER open with an imperative to the reader ("Picture…",
+  "Imagine…", "Think of…", "Consider…", "Suppose…", "Ever noticed…"), a
+  rhetorical question, or a prediction of what the reader must feel. Start
+  inside the scene: the person, the object, the number, or the odd fact itself.
 - For anecdotes, let the reader follow the initial situation, the meaningful
   actions, and the outcome. Let concrete details carry the surprise. For
   concepts, develop the book's example or mechanism toward its central insight;
@@ -67,6 +69,57 @@ the story's details and choices, not inflated claims or motivational slogans.
 - Keep the distinctive idea of this story. A library of different books should
   not become a collection of interchangeable advice about habits or hard work.
 
+## Reading time and where the words go
+
+The whole entry is a 3–5 minute read (about 200 words per minute): roughly
+650–950 words across all sections. Spend that budget on the STORY, which
+must carry at least 55% of the words. The story is what the reader came for
+and what they will retell; everything after it is short.
+
+- Every number, name and example appears in full ONCE, in [[story]]. Lessons,
+  reflection and use cards may point back to it in a few words ("the pillows",
+  "the lunch break") but must not restate figures, dates or the outcome.
+- Each lesson adds an implication the story did not already state. If a lesson
+  could be deleted without the reader losing anything, replace it or drop to
+  two lessons. A lesson is 1–3 sentences, not a second retelling.
+- [[reflect]]: 2–3 bullets, each a different situation. The closing
+  `&&question&&` must not repeat or paraphrase any bullet.
+- [[open]] is a hook, not a summary, and does not reveal the outcome that
+  [[story]] delivers.
+
+## Keep the prose human
+
+These are the tells of machine-written text. Avoid them.
+
+- The "not X, but Y" move ("It isn't X. It's Y.", "Not one big change.
+  Hundreds of small ones.", "doesn't just A; it B"): at most ONE in the whole
+  entry, and only when the book itself draws that contrast.
+- Announcer transitions: "Here is the catch", "Then something striking
+  happened", "The answer came faster than anyone expected", "What happened
+  next surprised everyone". Just say what happened.
+- Aphorism endings: do not end every section or paragraph on a polished
+  one-line moral. One earned line in the whole entry is plenty.
+- Triplets: do not default to lists of exactly three items or three parallel
+  clauses. Use the number the facts actually have.
+- Template lessons: do not give every lesson the same shape (bold claim +
+  restated example + "so…" moral). Vary length and construction.
+- Stock vocabulary: avoid "delve, tapestry, testament, pivotal, intricate, underscore, showcase, vibrant, crucial, enduring, landscape (abstract), stands/serves as, nestled, groundbreaking" and their equivalents in the target language, plus filler such as "in order to", "it is important to note", "at its core", "the real question is", "let's dive in", and generic upbeat endings ("the future looks bright"). Say the plain thing instead.
+- Em dashes: at most 2 in the whole entry. Prefer a period or a comma.
+- Use cards: the line to say must sound like a real person talking, at most
+  35 words. Avoid tidy scaffolding such as "What if we…?" or "Let's take a
+  moment to…" in more than one card.
+
+## Sources and facts
+
+- Name the book, author, and any year or edition ONLY as given in the brief's
+  `book` field. Never add a publication year, a translated title, or a
+  "published in <language> as…" clause that the brief does not contain.
+- Attribute each claim to the book it actually comes from. If the brief marks
+  the source or attribution as uncertain, phrase it as the author's claim, or
+  leave the detail out.
+- Do not add context, causes, or comparisons ("same hospital, same staff") the
+  brief does not support. A study's scope stays exactly as the brief gives it.
+
 ## Format (exact markup)
 
 Section tags, alone on their own line, in this exact order:
@@ -100,14 +153,14 @@ Block markers:
 Inline: `**bold**` (sparingly) and `*italic*` (book titles, an inner voice).
 
 ## Section lengths (English)
-- [[open]]: 35–90 words — hook the reader, do not summarize the story.
-- [[story]]: 280–700 words — tell it fully and faithfully; a short
+- [[open]]: 40–80 words — hook the reader, do not summarize the story.
+- [[story]]: 340–520 words — tell it fully and faithfully; a short
   anecdote told faithfully beats padding.
-- [[lessons]]: 140–300 words across 2–3 cards, each tied to a concrete
+- [[lessons]]: 100–180 words across 2–3 cards, each tied to a concrete
   beat of the story (not generic advice).
-- [[reflect]]: 50–160 words — 2–5 bullets that make the reader apply
+- [[reflect]]: 40–90 words — 2–3 bullets that make the reader apply
   the story to their own life, then the closing `&&question&&`.
-- [[use]]: 80–240 words across exactly 3 `%%...%%` cards.
+- [[use]]: 70–150 words across exactly 3 `%%...%%` cards.
 - [[pocket]]: ≤ 20 words, one `@@...@@` line.
 
 Never repeat a paragraph. Never use a sentence that doesn't refer to this

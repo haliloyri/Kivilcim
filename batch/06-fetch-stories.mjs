@@ -28,7 +28,15 @@ fs.mkdirSync(outDir, { recursive: true });
 
 let ok = 0, failed = 0;
 const writtenIds = [];
+const use = { input: 0, cache_write: 0, cache_read: 0, output: 0 };
 for (const r of results) {
+  if (!r.customId.startsWith(`story-${lang}-`)) continue; // a multi-language batch holds other languages too
+  if (r.usage) {
+    use.input += r.usage.input_tokens || 0;
+    use.cache_write += r.usage.cache_creation_input_tokens || 0;
+    use.cache_read += r.usage.cache_read_input_tokens || 0;
+    use.output += r.usage.output_tokens || 0;
+  }
   const id = r.customId.replace(new RegExp(`^story-${lang}-`), '');
   if (r.status !== 'succeeded') {
     console.log(`FAIL story-${lang}-${id}: ${r.status} — ${r.error || ''}`);
@@ -59,7 +67,8 @@ for (const r of results) {
   writtenIds.push(id);
   ok += 1;
 }
-console.log(`\n${ok} stor${ok === 1 ? 'y' : 'ies'} written to staging/p1/${lang}/, ${failed} failed.`);
+console.log(`\nTokens: input ${use.input}, cache write ${use.cache_write}, cache read ${use.cache_read}, output ${use.output}`);
+console.log(`${ok} stor${ok === 1 ? 'y' : 'ies'} written to staging/p1/${lang}/, ${failed} failed.`);
 
 if (writtenIds.length) {
   console.log('\nValidating…');

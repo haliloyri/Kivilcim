@@ -4,10 +4,10 @@
   "book": {
     "title": "Beyin Fırtınası",
     "author": "David Eagleman",
-    "year": "2015"
+    "year": ""
   },
   "confidence": "medium",
-  "confidence_note": "The core material is well established and fits Eagleman's writing: split-brain patients, the talking left hemisphere, and confabulated explanations. But the reference TR text has the anatomy wrong. The split-brain setup works by visual field, not by covering one eye, and each eye feeds both hemispheres. An image flashed to the left visual field reaches the right hemisphere, which controls the left hand. The brief follows the correct version. The 'interpreter' concept comes from Michael Gazzaniga's split-brain research, which Eagleman discusses; do not present Eagleman as its originator. The Turkish title 'Beyin Fırtınası' and its match to a specific English original (2015 suggests 'The Brain: The Story of You') are not verified. The exact example objects in the book are uncertain, so writers should not name specific items.",
+  "confidence_note": "The core material is well established and fits Eagleman's writing: split-brain patients, the talking left hemisphere, and confabulated explanations. But the reference TR text has the anatomy wrong. The split-brain setup works by visual field, not by covering one eye, and each eye feeds both hemispheres. An image flashed to the left visual field reaches the right hemisphere, which controls the left hand. The brief follows the correct version. The 'interpreter' concept comes from Michael Gazzaniga's split-brain research, which Eagleman discusses; do not present Eagleman as its originator. The Turkish title 'Beyin Fırtınası' and its match to a specific English original (2015 suggests 'The Brain: The Story of You') are not verified. The exact example objects in the book are uncertain, so writers should not name specific items. The year and the book match were unverifiable (Eagleman's 'Incognito' (2011) and 'The Brain: The Story of You' (2015) both exist; no Turkish edition titled 'Beyin Fırtınası' could be confirmed), so the stories attribute the argument to Eagleman without naming a book or year.",
   "facts": [
     "In some patients with severe, drug-resistant epilepsy, surgeons cut the corpus callosum, the fiber bundle that connects the two brain hemispheres, to stop seizures from spreading.",
     "In everyday life these 'split-brain' patients seem largely normal: they walk, talk, and carry on with their lives.",

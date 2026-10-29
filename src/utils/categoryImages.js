@@ -55,109 +55,107 @@ const CATEGORY_THEME_MAP = {
     darkStrong: 'rgba(107, 161, 123, 0.30)',
     darkAccent: '#8CBF98',
   },
-  // Palette sourced from the "Kategori Görselleri Renk Kodları" reference sheet:
-  // accent = Ana Renk, borderColor = Detay/İkon (deep tone, also used for
-  // per-category text), lightSoft = Arka Plan. Dark-mode fields are lighter tones of
-  // the SAME hue so a category keeps its identity across themes.
+  // Category colours follow the eight icon families in DESIGN.md §6.1
+  // (same hue as the pill icons and card images). accent/borderColor = light
+  // theme tone, darkAccent = dark theme tone; soft/strong are tints of them.
   'Finance': {
-    accent: '#D4A23A',
-    borderColor: '#B8862B',
-    lightSoft: '#FFF6E3',
-    lightStrong: 'rgba(212, 162, 58, 0.14)',
-    darkSoft: 'rgba(154, 106, 47, 0.20)',
-    darkStrong: 'rgba(154, 106, 47, 0.30)',
-    darkAccent: '#B98A55',
+    accent: '#2F7D5B',
+    borderColor: '#2F7D5B',
+    lightSoft: 'rgba(47, 125, 91, 0.10)',
+    lightStrong: 'rgba(47, 125, 91, 0.16)',
+    darkSoft: 'rgba(111, 203, 159, 0.18)',
+    darkStrong: 'rgba(111, 203, 159, 0.28)',
+    darkAccent: '#6FCB9F',
   },
   'Psychology': {
-    accent: '#9A8AC7',
-    borderColor: '#7B6AAE',
-    lightSoft: '#F4EFFA',
-    lightStrong: 'rgba(154, 138, 199, 0.14)',
-    darkSoft: 'rgba(110, 97, 150, 0.20)',
-    darkStrong: 'rgba(110, 97, 150, 0.30)',
-    darkAccent: '#8E82AE',
+    accent: '#5B5FB5',
+    borderColor: '#5B5FB5',
+    lightSoft: 'rgba(91, 95, 181, 0.10)',
+    lightStrong: 'rgba(91, 95, 181, 0.16)',
+    darkSoft: 'rgba(165, 169, 240, 0.18)',
+    darkStrong: 'rgba(165, 169, 240, 0.28)',
+    darkAccent: '#A5A9F0',
   },
   'Leadership': {
-    accent: '#6A8FBE',
-    borderColor: '#4A6E97',
-    lightSoft: '#EAF1FA',
-    lightStrong: 'rgba(106, 143, 190, 0.14)',
-    darkSoft: 'rgba(63, 90, 115, 0.20)',
-    darkStrong: 'rgba(63, 90, 115, 0.30)',
-    darkAccent: '#6E8198',
+    accent: '#A5623A',
+    borderColor: '#A5623A',
+    lightSoft: 'rgba(165, 98, 58, 0.10)',
+    lightStrong: 'rgba(165, 98, 58, 0.16)',
+    darkSoft: 'rgba(224, 162, 124, 0.18)',
+    darkStrong: 'rgba(224, 162, 124, 0.28)',
+    darkAccent: '#E0A27C',
   },
   'Health': {
-    // Warm heart-red (was teal, which clashed with the Petrol brand accent).
-    accent: '#C0645A',
-    borderColor: '#9A4A42',
-    lightSoft: '#F8ECEA',
-    lightStrong: 'rgba(192, 100, 90, 0.14)',
-    darkSoft: 'rgba(192, 100, 90, 0.20)',
-    darkStrong: 'rgba(192, 100, 90, 0.30)',
-    darkAccent: '#D08A80',
+    accent: '#C0507A',
+    borderColor: '#C0507A',
+    lightSoft: 'rgba(192, 80, 122, 0.10)',
+    lightStrong: 'rgba(192, 80, 122, 0.16)',
+    darkSoft: 'rgba(242, 154, 184, 0.18)',
+    darkStrong: 'rgba(242, 154, 184, 0.28)',
+    darkAccent: '#F29AB8',
   },
   'Growth': {
-    accent: '#6BA17B',
-    borderColor: '#4D7F5D',
-    lightSoft: '#EAF4EA',
-    lightStrong: 'rgba(107, 161, 123, 0.14)',
-    darkSoft: 'rgba(91, 137, 105, 0.20)',
-    darkStrong: 'rgba(91, 137, 105, 0.30)',
-    darkAccent: '#90B89C',
+    accent: '#2F7D5B',
+    borderColor: '#2F7D5B',
+    lightSoft: 'rgba(47, 125, 91, 0.10)',
+    lightStrong: 'rgba(47, 125, 91, 0.16)',
+    darkSoft: 'rgba(111, 203, 159, 0.18)',
+    darkStrong: 'rgba(111, 203, 159, 0.28)',
+    darkAccent: '#6FCB9F',
   },
   'Science': {
-    accent: '#3C9AA5',
-    borderColor: '#2F7881',
-    lightSoft: '#E8F3F4',
-    lightStrong: 'rgba(60, 154, 165, 0.14)',
-    darkSoft: 'rgba(51, 131, 140, 0.20)',
-    darkStrong: 'rgba(51, 131, 140, 0.30)',
-    darkAccent: '#6DB3BC',
+    accent: '#8650A8',
+    borderColor: '#8650A8',
+    lightSoft: 'rgba(134, 80, 168, 0.10)',
+    lightStrong: 'rgba(134, 80, 168, 0.16)',
+    darkSoft: 'rgba(207, 160, 232, 0.18)',
+    darkStrong: 'rgba(207, 160, 232, 0.28)',
+    darkAccent: '#CFA0E8',
   },
   'Philosophy': {
-    accent: '#5B5F97',
-    borderColor: '#474A76',
-    lightSoft: '#EBECF3',
-    lightStrong: 'rgba(91, 95, 151, 0.14)',
-    darkSoft: 'rgba(77, 81, 128, 0.20)',
-    darkStrong: 'rgba(77, 81, 128, 0.30)',
-    darkAccent: '#8487B1',
+    accent: '#5B5FB5',
+    borderColor: '#5B5FB5',
+    lightSoft: 'rgba(91, 95, 181, 0.10)',
+    lightStrong: 'rgba(91, 95, 181, 0.16)',
+    darkSoft: 'rgba(165, 169, 240, 0.18)',
+    darkStrong: 'rgba(165, 169, 240, 0.28)',
+    darkAccent: '#A5A9F0',
   },
   'Communication': {
-    accent: '#F0A46B',
-    borderColor: '#C8733A',
-    lightSoft: '#FFEDE1',
-    lightStrong: 'rgba(240, 164, 107, 0.14)',
-    darkSoft: 'rgba(196, 106, 60, 0.20)',
-    darkStrong: 'rgba(196, 106, 60, 0.30)',
-    darkAccent: '#D18B66',
+    accent: '#1F7FA8',
+    borderColor: '#1F7FA8',
+    lightSoft: 'rgba(31, 127, 168, 0.10)',
+    lightStrong: 'rgba(31, 127, 168, 0.16)',
+    darkSoft: 'rgba(124, 195, 227, 0.18)',
+    darkStrong: 'rgba(124, 195, 227, 0.28)',
+    darkAccent: '#7CC3E3',
   },
   'Productivity': {
-    accent: '#9AA046',
-    borderColor: '#787D37',
-    lightSoft: '#F3F4E9',
-    lightStrong: 'rgba(154, 160, 70, 0.14)',
-    darkSoft: 'rgba(131, 136, 60, 0.20)',
-    darkStrong: 'rgba(131, 136, 60, 0.30)',
-    darkAccent: '#B3B874',
+    accent: '#4C5B7A',
+    borderColor: '#4C5B7A',
+    lightSoft: 'rgba(76, 91, 122, 0.10)',
+    lightStrong: 'rgba(76, 91, 122, 0.16)',
+    darkSoft: 'rgba(169, 183, 214, 0.18)',
+    darkStrong: 'rgba(169, 183, 214, 0.28)',
+    darkAccent: '#A9B7D6',
   },
   'History': {
-    accent: '#A8674A',
-    borderColor: '#83503A',
-    lightSoft: '#F5EDE9',
-    lightStrong: 'rgba(168, 103, 74, 0.14)',
-    darkSoft: 'rgba(143, 88, 63, 0.20)',
-    darkStrong: 'rgba(143, 88, 63, 0.30)',
-    darkAccent: '#BE8D77',
+    accent: '#A5623A',
+    borderColor: '#A5623A',
+    lightSoft: 'rgba(165, 98, 58, 0.10)',
+    lightStrong: 'rgba(165, 98, 58, 0.16)',
+    darkSoft: 'rgba(224, 162, 124, 0.18)',
+    darkStrong: 'rgba(224, 162, 124, 0.28)',
+    darkAccent: '#E0A27C',
   },
   'Business': {
-    accent: '#6B7C93',
-    borderColor: '#475667',
-    lightSoft: '#ECEFF3',
-    lightStrong: 'rgba(107, 124, 147, 0.14)',
-    darkSoft: 'rgba(79, 100, 117, 0.20)',
-    darkStrong: 'rgba(79, 100, 117, 0.30)',
-    darkAccent: '#768799',
+    accent: '#4C5B7A',
+    borderColor: '#4C5B7A',
+    lightSoft: 'rgba(76, 91, 122, 0.10)',
+    lightStrong: 'rgba(76, 91, 122, 0.16)',
+    darkSoft: 'rgba(169, 183, 214, 0.18)',
+    darkStrong: 'rgba(169, 183, 214, 0.28)',
+    darkAccent: '#A9B7D6',
   },
   default: {
     accent: '#C89B3C',
@@ -283,7 +281,8 @@ const DARK_IMAGE_MAP = {
 };
 
 // Category pill icons generated for home top filter row
-const PILL_ICON_ALL = null;
+const PILL_ICON_ALL = require('../../assets/categories/pill_icons/All.png');
+const PILL_ICON_ALL_DARK = require('../../assets/categories/pill_icons/All-dark.png');
 const PILL_ICON_FINANCE = require('../../assets/categories/pill_icons/Finance.png');
 const PILL_ICON_PSYCHOLOGY = require('../../assets/categories/pill_icons/Psychology.png');
 const PILL_ICON_LEADERSHIP = require('../../assets/categories/pill_icons/Leadership.png');
@@ -434,6 +433,7 @@ const CATEGORY_PILL_ICON_MAP = {
 // variant of CATEGORY_PILL_ICON_MAP can be derived instead of duplicating
 // every locale key above a second time.
 const PILL_ICON_LIGHT_TO_DARK = new Map([
+  [PILL_ICON_ALL, PILL_ICON_ALL_DARK],
   [PILL_ICON_FINANCE, PILL_ICON_FINANCE_DARK],
   [PILL_ICON_PSYCHOLOGY, PILL_ICON_PSYCHOLOGY_DARK],
   [PILL_ICON_LEADERSHIP, PILL_ICON_LEADERSHIP_DARK],
@@ -800,10 +800,8 @@ export const getCategoryImage = (catName, isDark = false) => {
     source = DARK_IMAGE_MAP[source] || source;
   }
 
-  const styleMap = isDark ? CAT_STYLES_DARK : CAT_STYLES;
-  const style = styleMap[normalizedKey] || { rotate: '0deg', flip: false, tint: 'transparent' };
-
-  return { source, ...style };
+  // Kart görselleri artık kategoriye özel çizim: eski tek-görsel döndürme/renk katmanı uygulanmaz.
+  return { source, rotate: '0deg', flip: false, tint: 'transparent' };
 };
 
 /**

@@ -7,7 +7,7 @@
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "backgroundColor": "#1D4A47",
-    "icon": "./assets/albor_shortcut_logo.png",
+    "icon": "./assets/logo/albor_app_icon.png",
     "locales": {
       "en": "./ios-locales/en.json",
       "es": "./ios-locales/es.json",
@@ -24,7 +24,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/albor_shortcut_logo.png",
+        "foregroundImage": "./assets/logo/albor_app_icon.png",
         "backgroundColor": "#131311"
       },
       "package": "com.albor.app"
@@ -120,13 +120,22 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/splash/albor-splash-book.png",
+          "image": "./assets/logo/splash/albor-splash-book.png",
           "backgroundColor": "#1D4A47",
           "imageWidth": 200,
           "resizeMode": "contain"
         }
       ],
-      "expo-tracking-transparency"
+      "expo-tracking-transparency",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/logo/notification-icon.png",
+          "color": "#1F5F5B"
+        }
+      ],
+      "expo-sharing",
+      "expo-status-bar"
     ],
     "extra": {
       "eas": {

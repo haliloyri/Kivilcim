@@ -23,6 +23,25 @@ Rules:
   actual per-language text is written later from these ideas, so keep them
   short and distinct from each other and from `pocket_idea`.
 
+## Book metadata and size
+
+- `book.title`, `book.author`, `book.year` must be exactly what you can
+  confidently attribute. Leave `year` empty rather than guess, and never add
+  translated titles, editions, or "published in <language> as…" details.
+  Check that the story's central claim actually comes from THAT book (a topic
+  can appear in several books by one author); if unsure, say so in
+  `confidence_note` and lower `confidence`.
+- The finished entry is a 3–5 minute read with the story as its main part.
+  Give the writer enough supported material for that: for an anecdote about
+  6–10 distinct `facts` (situation, stakes, action, outcome, 2–3 vivid
+  details). If the book supports fewer, keep `facts` short and say so in
+  `confidence_note`; a shorter faithful story beats padding.
+- The reading page now has ONE lesson and ONE question (see story-instructions,
+  "Lesson and question rules"). Put the single most central implication first in
+  `lessons`; extra entries are optional backup only. `reflect` may be empty; the
+  closing question lives in `reflect_final`. Do not copy a lesson's wording
+  into `reflect_final`, `use_cases` or `pocket_idea`.
+
 ## Select material that can carry a story
 
 This brief feeds a mobile library of many different book stories. Preserve
@@ -54,7 +73,7 @@ teach the same lesson about small habits or persistence.
   Give the writer an immediate entry into the account, without giving away
   the full result, inventing a scene, or turning the opening into coaching
   advice for the reader.
-- Each lesson needs a distinct idea and a specific factual `anchor`.
+- The lead lesson needs a distinct idea, a specific factual `anchor`, and a one-line everyday-life example idea.
   Reflection should connect that idea to a recognizable experience without
   assuming the reader shares the character's feelings or circumstances.
 - `reflect_final` and the use cases should help the reader try one feasible

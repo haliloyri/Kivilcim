@@ -1,0 +1,51 @@
+{
+  "story_id": 1427,
+  "kind": "concept",
+  "book": { "title": "Yetenek Yanılgısı", "author": "Geoff Colvin", "year": "2008" },
+  "confidence": "medium",
+  "confidence_note": "The physician comparison (Choudhry, Fletcher, Soumerai, Annals of Internal Medicine, 2005) and the routine versus deliberate practice distinction are the core of Colvin's argument. The supplied text also has a pilot example (one flying the same route for ten thousand hours, one training hard scenarios in a simulator) that I could not tie to a passage of the book; it is left out. The 2014 meta-analysis by Macnamara, Hambrick and Oswald is an editorial caveat from outside the book, and its percentages are stated as that study's figures. The explanation for why seniors lag (medical knowledge renews, routine reinforces old habits) is offered as a plausible reason, not as a proven finding.",
+  "facts": [
+    "A 2005 systematic review in the Annals of Internal Medicine (Choudhry, Fletcher, Soumerai) compared physicians' years in practice with the quality of care they gave.",
+    "On most measures the relationship ran the wrong way: more years in practice went with care further from current evidence.",
+    "So experience does not automatically produce competence.",
+    "A plausible reason: medical knowledge renews quickly and routine reinforces old habits, so a doctor sees more patients but often repeats the same method.",
+    "Colvin separates routine practice (repetition) from deliberate practice (work aimed at a weak point, guided by feedback, pushing the limit).",
+    "Deliberate practice is uncomfortable because it works outside the comfort zone.",
+    "Editorial caveat: Colvin's 2008 thesis has since been weakened. A 2014 meta-analysis (Macnamara, Hambrick, Oswald) found deliberate practice explained about 26% of performance differences in games, 21% in music, 18% in sports, 4% in education and under 1% in professions.",
+    "That finding does not say practice is useless; it says practice alone is not enough and explains almost nothing in professions."
+  ],
+  "tension": "The more experienced doctor is expected to diagnose better, yet on most measures the review found the opposite.",
+  "opening_idea": "Put a twenty-year physician next to a five-year one, let the reader guess, then bring in the review.",
+  "lessons": [
+    {
+      "idea": "Counting years measures time, not progress; only work on the hard part changes anything.",
+      "anchor": "The 2005 review where more years in practice went with care further from current evidence."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In a field where you say you practise, which hard point did you last work on on purpose, and what changed?",
+  "use_cases": [
+    {
+      "situation": "A team keeps a method because 'we have always done it this way'.",
+      "move": "Say that years of repeating a method are not the same as improving it, and ask which part of the job was hard for you this year.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You feel you are no longer improving at work.",
+      "move": "Pick the hardest part of your job this week and ask someone outside for feedback on it.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague relies on their years of experience.",
+      "move": "Ask what they struggled with recently and what they learned from it.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "More years of care did not mean better care; count what was hard lately, not how long you have done it.",
+  "conversation_variants": {
+    "punchline_idea": "In a 2005 review, more years in practice often went with care further from current evidence.",
+    "thirty_sec_idea": "Geoff Colvin cites a review of physicians where seniority did not bring better care. His distinction: routine practice repeats, deliberate practice targets the hard part with feedback. Later research weakened his larger thesis.",
+    "question_idea": "",
+    "key_contrast_idea": "Tekrar ve çalışma"
+  }
+}

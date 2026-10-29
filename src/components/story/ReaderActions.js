@@ -55,14 +55,8 @@ function FloatingActions({ scrollOffset, viewportHeight, endActionsY, hidden, on
 export default function ReaderActions(props) {
   const { colors } = useTheme();
   if (props.compact) return <FloatingActions {...props} />;
-  return <View style={{ gap: 14 }}>
-    <Text style={[styles.heading, { color: colors.text }]}>{t('story_detail_use_cta', props.lang)}</Text>
-    <Text style={[styles.description, { color: colors.textSecondary }]}>{t('story_detail_use_cta_sub', props.lang)}</Text>
+  return <View style={{ gap: 6, borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: colors.border, paddingTop: 22 }}>
     <ConversationButton onPress={props.onConversation} lang={props.lang} colors={colors} />
-    <TouchableOpacity onPress={props.onRecord} style={styles.record} accessibilityRole="button">
-      <Ionicons name="mic-outline" size={20} color={colors.readerAccent} />
-      <Text style={[styles.description, { color: colors.readerAccentText }]}>{t('readerRecord', props.lang)}</Text>
-    </TouchableOpacity>
   </View>;
 }
 
@@ -70,7 +64,7 @@ const styles = StyleSheet.create({
   floating: { position: 'absolute', bottom: 0, left: 0, right: 0 },
   primary: { minHeight: 48, paddingVertical: 13, paddingHorizontal: 16, borderRadius: 14, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 },
   primaryText: { fontFamily: 'Inter_600SemiBold', fontSize: 16, flexShrink: 1 },
-  heading: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 26 },
+  heading: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 24, lineHeight: 30, textAlign: 'center' },
   description: { fontFamily: 'Inter_400Regular', fontSize: 14, lineHeight: 21 },
   record: { minHeight: 44, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 },
 });

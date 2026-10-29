@@ -1,3 +1,4 @@
+import { getCareerHero } from '../constants/careerVisuals';
 import React, { useMemo, useState } from 'react';
 import { ActivityIndicator, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +14,7 @@ const PATH_ICONS = {
   transfer: 'chatbubbles-outline',
 };
 
-const CAREER_HERO = require('../../assets/career/albor-yolu-hero-v1.png');
+const CAREER_HERO = getCareerHero('common');
 
 const CareerPathSelectionScreen = ({ navigation }) => {
   const { colors, layout, isDark, lang } = useTheme();
@@ -60,7 +61,7 @@ const CareerPathSelectionScreen = ({ navigation }) => {
       <ImageBackground source={CAREER_HERO} imageStyle={styles.introImage} style={styles.intro}>
         <View style={styles.introScrim} />
         <View style={styles.introContent}>
-          <View style={styles.introKicker}><Ionicons name="sparkles-outline" size={15} color="#F9D783" /><Text selectable style={styles.introKickerText}>{t('career.selection.free', lang)}</Text></View>
+          <View style={styles.introKicker}><Ionicons name="sparkles-outline" size={15} color="#E9A94B" /><Text selectable style={styles.introKickerText}>{t('career.selection.free', lang)}</Text></View>
           <Text selectable style={styles.title}>{t('career.selection.title', lang)}</Text>
           <Text selectable style={styles.subtitle}>{t('career.selection.subtitle', lang)}</Text>
         </View>
@@ -153,7 +154,7 @@ const CareerPathSelectionScreen = ({ navigation }) => {
         onPress={persistSelection}
         style={[styles.primaryCta, { backgroundColor: colors.primary, opacity: selectedPath && !isSaving ? 1 : 0.48 }]}
       >
-        {isSaving ? <ActivityIndicator color={isDark ? colors.backgroundDark : '#FFFFFF'} /> : <Text selectable style={styles.primaryCtaText}>{t('career.selection.choose', lang)}</Text>}
+        {isSaving ? <ActivityIndicator color={colors.onPrimary} /> : <Text selectable style={[styles.primaryCtaText, { color: colors.onPrimary }]}>{t('career.selection.choose', lang)}</Text>}
       </TouchableOpacity>
       <TouchableOpacity accessibilityRole="button" onPress={() => navigation.goBack()} style={styles.laterButton}>
         <Text selectable style={[styles.laterText, { color: colors.textSecondary }]}>{t('career.selection.later', lang)}</Text>
@@ -168,9 +169,9 @@ const styles = StyleSheet.create({
   closeButton: { width: 44, height: 44, borderRadius: 22, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
   intro: { minHeight: 226, borderRadius: 24, overflow: 'hidden', justifyContent: 'flex-end' },
   introImage: { borderRadius: 24, resizeMode: 'cover' },
-  introScrim: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(4, 12, 35, 0.18)' },
+  introScrim: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(0, 0, 0, 0.1)' },
   introContent: { padding: 20, gap: 8 },
-  introKicker: { alignSelf: 'flex-start', paddingHorizontal: 10, minHeight: 29, borderRadius: 15, backgroundColor: 'rgba(8, 18, 45, 0.52)', borderWidth: 1, borderColor: 'rgba(249, 215, 131, 0.44)', flexDirection: 'row', alignItems: 'center', gap: 5 },
+  introKicker: { alignSelf: 'flex-start', paddingHorizontal: 10, minHeight: 29, borderRadius: 15, backgroundColor: 'rgba(255, 255, 255, 0.14)', borderWidth: 1, borderColor: 'rgba(233, 169, 75, 0.5)', flexDirection: 'row', alignItems: 'center', gap: 5 },
   introKickerText: { color: '#FFFFFF', fontFamily: 'Inter_700Bold', fontSize: 11, letterSpacing: 0.45, textTransform: 'uppercase' },
   title: { color: '#FFFFFF', fontFamily: 'PlayfairDisplay_700Bold', fontSize: 30 },
   subtitle: { color: 'rgba(255,255,255,0.86)', fontFamily: 'Inter_400Regular', fontSize: 14, lineHeight: 21, maxWidth: '92%' },
@@ -200,7 +201,7 @@ const styles = StyleSheet.create({
   toolkit: { borderRadius: 12, padding: 11, marginHorizontal: 8, marginBottom: 8, flexDirection: 'row', gap: 8, alignItems: 'center' },
   toolkitCopy: { flex: 1, fontFamily: 'Inter_500Medium', fontSize: 12, lineHeight: 17 },
   primaryCta: { minHeight: 50, borderRadius: 14, alignItems: 'center', justifyContent: 'center', marginTop: 4 },
-  primaryCtaText: { color: '#FFFFFF', fontFamily: 'Inter_700Bold', fontSize: 15 },
+  primaryCtaText: { fontFamily: 'Inter_700Bold', fontSize: 15 },
   laterButton: { minHeight: 44, alignItems: 'center', justifyContent: 'center' },
   laterText: { fontFamily: 'Inter_600SemiBold', fontSize: 14 },
 });

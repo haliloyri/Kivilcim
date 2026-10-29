@@ -1,7 +1,7 @@
 # Hikâye Dönüşüm Planı — Podcast Formatı (P1)
 
 Durum: **Onaylandı, uygulanıyor** · Tarih: 2026-09-23 (son güncelleme: 2026-09-24) · Dal: `feature/story-p1-format`
-Referans denemeler: `PODCAST_FORMAT_DENEME_1731.md`, `PODCAST_FORMAT_DENEME_1707.md`
+Referans denemeler: `arsiv/md-eski/PODCAST_FORMAT_DENEME_1731.md`, `arsiv/md-eski/PODCAST_FORMAT_DENEME_1707.md`
 Ek plan: `SOHBETTE_KULLAN_ENTEGRASYON_PLANI.md` — hikâye sonu `[[use]]` kartları ile
 "Sohbette kullan" ekranının ilişkisi, context etiketleri, `conversation_variants`
 yeniden yazımı. 1707 ve 1731'de uygulandı; aşağıdaki §3.2, §5 ve §6 bu kararı

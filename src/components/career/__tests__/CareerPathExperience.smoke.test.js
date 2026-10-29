@@ -26,7 +26,7 @@ it.each(all)('renders %s', async (id, vm) => {
   mockCareer = vm;
   let tree; await act(async () => { tree = TestRenderer.create(<CareerPathExperience navigation={nav} />); });
   const shown = texts(tree);
-  expect(shown).toContain('Öğrendiklerin');
+  expect(shown).toContain('Öğrendiklerim');
   expect(shown).toContain(EXPECTED_TITLE[id]);
 });
 

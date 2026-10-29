@@ -74,10 +74,11 @@ beforeEach(() => {
 });
 afterEach(() => { raw.close(); fs.rmSync(file, { force: true }); });
 
-it('applies the remote catalogue and makes Supabase the source of active stories', async () => {
+it('applies the remote catalogue and keeps every story active', async () => {
   await expect(syncContentFromSupabase()).resolves.toEqual({ changed: true, stories: 4 });
-  const active = raw.prepare('SELECT id FROM stories WHERE is_active = 1 ORDER BY id').all().map((r) => r.id);
-  expect(active).toEqual([...mockRemote.ids, 999001]);
+  expect(raw.prepare('SELECT COUNT(*) AS n FROM stories WHERE is_active = 0').get().n).toBe(0);
+  const active = raw.prepare('SELECT id FROM stories WHERE is_active = 1').all().map((r) => r.id);
+  expect(active).toEqual(expect.arrayContaining([...mockRemote.ids, 999001]));
   const tr = raw.prepare(`SELECT title, content FROM story_translations WHERE story_id = ? AND lang_code = 'tr'`).all(mockRemote.ids[0]);
   expect(tr).toEqual([{ title: 'Güncel başlık', content: 'Yeni metin' }]);
   expect(raw.prepare('SELECT sort_order FROM stories WHERE id = 999001').get().sort_order).toBeGreaterThan(0);
