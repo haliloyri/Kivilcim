@@ -1,0 +1,62 @@
+{
+ "story_id": 1781,
+ "kind": "anecdote",
+ "book": {
+  "title": "Bad Blood",
+  "author": "John Carreyrou",
+  "year": ""
+ },
+ "confidence": "medium",
+ "confidence_note": "Sources: acfe.com Fraud Magazine 2019 cover story on Tyler Shultz (his own account: joined 2013 in the protein engineering lab; assay validation; syphilis test found only 65% of known positives while a validation report listed 95%; proficiency-testing results from the company devices differed from Siemens machines by more than 300% and only third-party results went to New York State; April 2014 email to Holmes; Balwani replied that from anyone else he would have held them accountable for the tone; fake name to NY state lab unit, no reply; grandfather arranged a meeting where lawyers produced a restraining-order application and a David Boies letter alleging trade-secret leaks; grandfather objected and asked them to leave; second meeting asked him to sign an affidavit denying contact with the WSJ and name sources; he declined; Carreyrou first WSJ article October 2015); mcgill.ca book review (Bad Blood p.187: Edison identified only 65% of known positive samples, 95% reported); en.wikipedia Tyler_Shultz. The ACFE items are Shultz's own telling; Carreyrou covers the same episode in the chapter The Grandson but the book was not page-checked, so the writer should attribute the story to the book at most once and keep details that match both. Not verified: the email wording, Tyler's age, the exact order of the regulators complaint and the email. Omitted: legal fees, surveillance, later charges. Year empty.",
+ "facts": [
+  "Theranos claimed its Edison device could run a broad range of blood tests from a few drops taken from a finger prick.",
+  "Tyler Shultz, a Stanford graduate, joined Theranos in 2013 and worked on validating Edison tests. His grandfather, former Secretary of State George Shultz, sat on the Theranos board.",
+  "Assigned to the Edison syphilis test, Tyler found that it identified only about 65% of known positive samples; a validation report listed 95% (Bad Blood p.187 per a review).",
+  "In the lab's proficiency testing, results from Theranos devices differed from Siemens machines by more than 300%, and only the Siemens results were reported to New York State (Shultz's account).",
+  "In April 2014 he emailed Holmes about poor science and quality control. Sunny Balwani answered, saying that from anyone else the email would already have brought accountability for its tone. Tyler left.",
+  "Using a fake name and email, he also reported the company to the New York state lab investigative unit and never heard back.",
+  "His grandfather arranged a meeting with Holmes, where Theranos lawyers appeared with a restraining-order application and a letter from David Boies alleging trade-secret leaks. George Shultz objected and asked them to leave.",
+  "Tyler was later asked to sign an affidavit denying contact with the Wall Street Journal and to name suspected sources; he declined.",
+  "Carreyrou's first Wall Street Journal article appeared in October 2015."
+ ],
+ "scene_details": [
+  "a validation report listing 95% beside a result of 65%",
+  "an email to the founder answered by her president",
+  "lawyers arriving at his grandfather's meeting with a restraining-order application",
+  "a fake name and email used to write to the state"
+ ],
+ "tension": "A junior engineer reports a 65% result that a document lists as 95%, and is answered with a tone complaint.",
+ "opening_idea": "Open on the two numbers, 65 and 95.",
+ "lessons": [
+  {
+   "idea": "A success story that cannot be questioned needs someone to ask for the evidence, and asking is cheaper early and through a routine channel.",
+   "anchor": "the email to Holmes answered by Balwani"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which claim in your circle do people repeat without anyone asking to see the data behind it, and who could you ask first?",
+ "use_cases": [
+  {
+   "situation": "A colleague repeats a number everyone cites in a planning meeting.",
+   "move": "Ask where it was measured and who checked it, before it goes into the plan.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A friend is excited about an investment a relative recommended.",
+   "move": "Ask to see the statements, not the pitch, and say you ask the same of every investment.",
+   "context": "family"
+  },
+  {
+   "situation": "You doubt a report from your own team.",
+   "move": "Write your concern to the person who owns it, plainly and with the specific thing you saw.",
+   "context": "oneonone"
+  }
+ ],
+ "pocket_idea": "A reply from the wrong person to a plain question is information in itself.",
+ "conversation_variants": {
+  "punchline_idea": "The question went to the founder and the answer came from her president.",
+  "thirty_sec_idea": "Tyler Shultz joined Theranos in 2013 and worked on its Edison device. He saw problems in how results were checked, wrote to Holmes, and got a belittling reply from Balwani. He quit, regulators heard from him under an alias, and the company sent lawyers after him. His information fed Carreyrou's reporting.",
+  "question_idea": "Where have you been told not to ask?",
+  "key_contrast_idea": "Pitch versus proof"
+ }
+}

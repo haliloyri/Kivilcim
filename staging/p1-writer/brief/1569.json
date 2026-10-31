@@ -1,0 +1,59 @@
+{
+  "story_id": 1569,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Talent Code",
+    "author": "Daniel Coyle",
+    "year": "2009"
+  },
+  "confidence": "medium",
+  "confidence_note": "Facts about Spartak Tennis Club (one indoor court, rundown, freezing climate, more top-20 women than the entire US in recent years, same warm-up for five-year-olds and a top-ten player, slow-motion swings and swings with no ball called imitatsiya, three years before competing, coach saying technique is everything) are taken from Coyle's own website post on Spartak; the book's appearance of Spartak is from memory, not verified in the text. The top-20 figure covers a few recent years only (secondary sources suggest the mid-2000s). Old TR text (Hungary chess, Dominican baseball, Jeju golf, Polgar family) not verified and dropped; Polgar and 'geniuses are made' quote not used. DB title is Turkish 'Yetenek Kodu'.",
+  "facts": [
+    "Coyle came across Spartak while writing about talent hotbeds.",
+    "One rundown indoor court in a freezing climate.",
+    "Produced more top-20 women than the entire US in recent years.",
+    "Every player, from five-year-olds to a world top-ten player, starts with the same eye-hand warm-up of bouncing and catching.",
+    "Slow-motion swings and swings with no ball are called imitatsiya.",
+    "Players may compete only after three years of practice.",
+    "A Spartak coach: Technique is everything; starting without it is a 'Big, big mistake'."
+  ],
+  "scene_details": [
+    "bouncing and catching a ball",
+    "swinging with no ball",
+    "one indoor court"
+  ],
+  "tension": "Little equipment, outsized results.",
+  "opening_idea": "The top-ten player does the beginner warm-up.",
+  "lessons": [
+    {
+      "idea": "Slow, small, repeated work builds technique.",
+      "anchor": "Imitatsiya."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which basic move in your own work could you rehearse slowly, away from the real thing, before your next attempt?",
+  "use_cases": [
+    {
+      "situation": "Presentation tomorrow",
+      "move": "Rehearse the opening slowly.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Coaching a colleague",
+      "move": "Practice only the first step.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Guitar chord change",
+      "move": "Play only that change slowly.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "At Spartak even the top-ten player starts with a bouncing ball.",
+  "conversation_variants": {
+    "punchline_idea": "A top-ten player and a five-year-old start with the same ball bounce.",
+    "thirty_sec_idea": "Spartak, imitatsiya, three years.",
+    "question_idea": "",
+    "key_contrast_idea": "Slow before fast"
+  }
+}

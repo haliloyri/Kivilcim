@@ -1,0 +1,60 @@
+{
+  "story_id": 1566,
+  "kind": "concept",
+  "book": {
+    "title": "The 15 Commitments of Conscious Leadership",
+    "author": "Jim Dethmer, Diana Chapman and Kaley Warner Klemp",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book has a commitment about feeling all feelings and not suppressing them, and treats feelings as body experiences worth feeling through. The supplied TR text's CEO who suppressed tension for six months until a partnership collapsed, the exchange with the senior executive ('you ignore important data') and 'sending feelings underground' are not verifiable and are excluded; so are specifics of how many basic feelings the book lists. The story stays on what the book supports. The input title and year differ from the original (see 1564). Updated with a reviewer summary: locating the sensation, breathing, expression through sound and movement, venting as a loop, and the 90-second claim come from it. The 90 seconds is the book's claim; attribute it, do not present as settled science.",
+  "facts": [
+    "One commitment in the book is to feel all your feelings, all the way through.",
+    "The authors name feelings such as anger, joy, sadness and sexual feelings.",
+    "The first step is to locate the sensation in your body and describe it as accurately as you can.",
+    "Next you take a few gentle breaths and allow or accept the sensation.",
+    "You can match the feeling with an expression, usually sounds and movement rather than words, such as a groan or a laugh.",
+    "Venting to a coworker can keep you stuck in a loop, they say.",
+    "They argue that suppressing a feeling causes physical, psychological and relational problems, and that repressing one feeling affects the others.",
+    "They claim a feeling that is allowed to pass lasts around 90 seconds, whereas a repressed or recycled one can harden into a long mood."
+  ],
+  "scene_details": [
+    "a sensation somewhere in the body",
+    "a few gentle breaths",
+    "a groan or a laugh as the expression"
+  ],
+  "tension": "Many capable leaders were taught to put feelings aside to make a clear decision, and the book disagrees.",
+  "opening_idea": "Start with a leader who feels a knot during a tense moment and keeps talking anyway, which the authors describe as common.",
+  "lessons": [
+    {
+      "idea": "A feeling you skip over does not go away; noticing where it sits in your body lets you decide with it in view, not behind you.",
+      "anchor": "The commitment to feel feelings all the way through."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a recent tense moment. Where in your body did you feel it, and what did you do with that feeling at the time?",
+  "use_cases": [
+    {
+      "situation": "In a tense meeting you feel your jaw tighten.",
+      "move": "Take a breath, notice the tightness and say: I'd like a minute before I respond.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your colleague snaps at you and you want to snap back.",
+      "move": "Name the feeling to yourself first, such as angry or hurt, and answer after.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel uneasy about a decision you have already made.",
+      "move": "Sit with the uneasiness for a few minutes and ask what it is about.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Feel the feeling where it sits in your body before acting: the authors say it does not disappear if ignored.",
+  "conversation_variants": {
+    "punchline_idea": "The authors say a feeling you refuse to feel does not go away, and many leaders treat it as noise.",
+    "thirty_sec_idea": "One of the commitments in the book is to feel your feelings all the way through. The authors say leaders often treat anger, fear or sadness as a distraction and keep working. Their advice is to stop, notice where it sits in the body and let it be there before acting. A feeling you skip does not vanish.",
+    "question_idea": "Where do you feel tension?",
+    "key_contrast_idea": "Feel it, then decide"
+  }
+}

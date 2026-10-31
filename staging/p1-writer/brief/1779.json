@@ -1,0 +1,59 @@
+{
+ "story_id": 1779,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Ride of a Lifetime",
+  "author": "Robert Iger",
+  "year": ""
+ },
+ "confidence": "medium",
+ "confidence_note": "Sources: shortform.com/blog/?p=29237 (summary of the book: Eisner left end of September 2005 and Iger became CEO days later; Disney Animation had spent over a billion dollars on films in the prior decade and lost nearly $400 million; Iger laid out four options to the board, the last to buy Pixar, the room nearly exploded and the board let him explore; on a call about the video iPod Jobs said buying Pixar was not the craziest idea in the world; at Apple Jobs wrote Pros and Cons on a whiteboard, Cons outweighed Pros but a few big Pros mattered more; Lasseter previewed films and Catmull showed the technology; Iger committed to protecting Pixar culture and offered Lasseter and Catmull leadership of Disney Animation, with specific culture-protecting terms and a branding arrangement; all-stock $7.4B at 2.3 Disney shares per Pixar share; board approved 9 to 2 despite Eisner; on announcement day Jobs told Iger his pancreatic cancer had returned and offered a way out; Iger went ahead); CNBC 2020-12-02 coverage (Jobs: Disney culture will destroy Pixar; board will never let you). Summary, not the book text. Not verified: wording of the culture-protecting terms, the exact location of the meeting (Apple, per summary), Circle 7, Emeryville.",
+ "facts": [
+  "As Disney CEO from late 2005, Iger put four options to his board; the last was to buy Pixar outright. The room nearly exploded, but the board let him explore it.",
+  "Disney Animation had spent over a billion dollars on films in the prior decade and lost nearly $400 million.",
+  "On a call about the video iPod, Steve Jobs told Iger that buying Pixar was not the craziest idea in the world.",
+  "At Apple, Jobs wrote Pros and Cons on a whiteboard. His objections included that Disney's culture would destroy Pixar and that Iger's board would never allow it. The Cons list was longer, but Jobs judged a few big Pros more important than many small Cons.",
+  "Iger committed to protecting Pixar's culture and offered John Lasseter and Ed Catmull leadership of Disney Animation, with specific culture-protecting terms and a branding arrangement.",
+  "The deal was all stock, $7.4 billion, at 2.3 Disney shares per Pixar share; the board approved it 9 to 2 in January 2006 despite Eisner lobbying against it.",
+  "On announcement day Jobs told Iger his pancreatic cancer had returned and offered him a way out of the deal. Iger went ahead."
+ ],
+ "scene_details": [
+  "Pros and Cons columns on a whiteboard",
+  "a board room that nearly exploded",
+  "a share ratio of 2.3"
+ ],
+ "tension": "The seller said the buyer's culture would destroy what he sold.",
+ "opening_idea": "Open on the whiteboard and Jobs's list of reasons against.",
+ "lessons": [
+  {
+   "idea": "When you take over something good, find out what makes it work and leave that alone; fit it to your systems only where it does not.",
+   "anchor": "Jobs's fear that Disney's culture would destroy Pixar"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "In something you lead or have just joined, what is working well that you are about to rearrange without first asking the people who run it?",
+ "use_cases": [
+  {
+   "situation": "You have just taken over a team that performs well.",
+   "move": "Ask each person what must not change before you change anything.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Two families or two households are merging routines.",
+   "move": "List what each side values most and protect that first.",
+   "context": "family"
+  },
+  {
+   "situation": "You are bringing a smaller group into your bigger one.",
+   "move": "Say aloud what you will leave alone, and why.",
+   "context": "oneonone"
+  }
+ ],
+ "pocket_idea": "The seller feared the buyer's culture; the buyer started by asking what he must leave alone.",
+ "conversation_variants": {
+  "punchline_idea": "Steve Jobs's list of reasons not to sell Pixar to Disney included Disney itself.",
+  "thirty_sec_idea": "Bob Iger wanted to buy Pixar, and Steve Jobs had objections: Disney's culture would destroy Pixar, and Iger's board would never agree. Iger sat with him at a whiteboard in Cupertino and went through the pros and cons. The all-stock deal, worth about $7.4 billion, was announced in January 2006.",
+  "question_idea": "What have you taken over that you should leave alone?",
+  "key_contrast_idea": "Merge or protect"
+ }
+}

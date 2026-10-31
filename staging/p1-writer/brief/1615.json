@@ -1,0 +1,62 @@
+{
+  "story_id": 1615,
+  "kind": "concept",
+  "book": {
+    "title": "The Total Money Makeover",
+    "author": "Dave Ramsey",
+    "year": "2003"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read. Verified through reviews and Ramsey's own statements (Christianity Today review of the book; Fox Business piece): the snowball means paying debts from smallest to largest; Ramsey grants that the highest-interest-first order is cheaper on paper and answers that personal finance is mostly behavior (his '80 percent behavior, 20 percent head knowledge' line). The reference's 2,000 and 20,000 lira example with 18 and 12 percent rates is not from the book and was NOT used. The DB title mentions a 'screaming baby'; not verified, not used. No named case; writer must not invent a debtor. Added: subtitle and baby-step order (Christianity Today review; Ramsey Solutions page); house excluded from the snowball per Ramsey Solutions.",
+  "facts": [
+    "Ramsey's debt snowball: list all debts from smallest balance to largest, whatever the interest rate.",
+    "Pay the minimum on every debt except the smallest; put every spare dollar on the smallest.",
+    "When the smallest is gone, add its payment to the next one; the payment grows as each debt disappears.",
+    "Ramsey accepts that paying the highest interest rate first is cheaper on paper.",
+    "His answer: personal finance is about 80 percent behavior and 20 percent head knowledge.",
+    "He argues quick wins keep people going, and the plan fails if they quit.",
+    "The book's subtitle is 'A Proven Plan for Financial Fitness': Ramsey frames money like physical fitness, where doing the routine matters more than knowing the theory.",
+    "Ramsey lays out his plan as seven baby steps: the starter fund of $1,000 comes first, the debt snowball second, a full emergency fund of three to six months of expenses third.",
+    "The snowball covers all debts except the house (Ramsey Solutions' own description of the step)."
+  ],
+  "scene_details": [
+    "A list of debts written smallest to largest",
+    "A paid-off debt's payment moved onto the next line",
+    "The house is left out of the list"
+  ],
+  "tension": "The cheaper method on paper is not the one Ramsey tells people to use.",
+  "opening_idea": "Start with the list: debts written smallest to largest, interest rates ignored, against what the maths says.",
+  "lessons": [
+    {
+      "idea": "A plan you finish beats a better plan you abandon, so order the steps so the first ones can be completed soon.",
+      "anchor": "Ramsey puts the smallest debt first even though higher interest costs more, because early wins keep people paying.",
+      "everyday_example_idea": "Someone clearing a cluttered garage starts with the one shelf they can finish in an afternoon, not the largest corner."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your next big project, which small piece could you finish first so that you can see progress before the hard part starts?",
+  "use_cases": [
+    {
+      "situation": "A couple argues about which card to pay first.",
+      "move": "Ramsey puts the smallest balance first for momentum. Write all balances on one page and start with the smallest.",
+      "context": "family"
+    },
+    {
+      "situation": "A team's backlog looks endless.",
+      "move": "Propose finishing the three smallest items this week so the list visibly shrinks.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are tempted to wait for the perfect plan.",
+      "move": "Pick the first step you can finish today.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Ramsey pays the smallest debt first, not the costliest, because finishing something keeps you paying.",
+  "conversation_variants": {
+    "punchline_idea": "Ramsey admits the maths says pay the costliest debt first, then tells people to start with the smallest.",
+    "thirty_sec_idea": "Dave Ramsey's snowball lists debts smallest to largest and puts every spare dollar on the smallest while paying minimums on the rest. When it is gone, its payment moves to the next. He concedes highest interest first is cheaper on paper, but says money is mostly behavior, and early wins keep people going.",
+    "question_idea": "",
+    "key_contrast_idea": "Momentum over maths"
+  }
+}

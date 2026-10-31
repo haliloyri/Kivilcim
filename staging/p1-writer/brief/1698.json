@@ -1,0 +1,42 @@
+{
+  "story_id": 1698,
+  "kind": "anecdote",
+  "book": { "title": "Steve Jobs", "author": "Walter Isaacson", "year": "2011" },
+  "confidence": "medium",
+  "confidence_note": "The Reed College calligraphy story is told in Jobs's 2005 Stanford commencement speech and retold in Isaacson's biography; core facts (six months then dropping in for about 18 months, the calligraphy class, serif and sans serif, spacing between letter combinations, first Macintosh ten years later) verified against secondary sources quoting the speech. Details recalled from the speech and not separately verified in the book text: parents' savings paying tuition, sleeping on floors, returning bottles for deposits, the Sunday walk for a meal at a Hare Krishna temple, hand-calligraphed posters and drawer labels. The name of the teacher (Robert Palladino) is omitted on purpose. Editorial caveat kept: Jobs's 1979 Xerox PARC visit also shaped the Mac. Reference TR text 'zorunlu derslere girmiyordu' is right in substance.",
+  "facts": [
+    "Jobs enrolled at Reed College in Portland; his working-class parents' savings went to the tuition and he could not see the value in it.",
+    "He dropped out after about six months but stayed on campus roughly another 18 months, dropping in on classes that interested him.",
+    "He slept on the floors of friends' rooms, returned empty Coke bottles for the five-cent deposits to buy food, and walked about seven miles on Sunday nights for a good weekly meal at a Hare Krishna temple.",
+    "Reed's calligraphy instruction was among the best in the country; posters and drawer labels around campus were beautifully hand-lettered.",
+    "In the class he learned about serif and sans serif typefaces, about varying the space between letter combinations, and about what makes great typography great.",
+    "None of it had any hope of a practical use in his life at the time.",
+    "About ten years later, designing the first Macintosh, it all came back to him and he put it into the computer.",
+    "Jobs later said that without that class the Mac would never have had multiple typefaces or proportionally spaced fonts.",
+    "Caveat: the Mac's screen also drew on what he saw at Xerox PARC in 1979; the calligraphy class is Jobs's own account of one source."
+  ],
+  "scene_details": [
+    "Posters and drawer labels hand-lettered all over campus.",
+    "Empty Coke bottles returned for five cents each.",
+    "Letters spaced differently for different pairs."
+  ],
+  "tension": "A dropout sits in on a class with no practical use, and a decade later it shows up in a computer.",
+  "opening_idea": "Open on the five-cent Coke bottles and the hand-lettered drawer labels: a student with almost no money chooses a calligraphy class.",
+  "lessons": [
+    { "idea": "Make room for learning that has no use yet; its use may appear later, with no guarantee.", "anchor": "Calligraphy at Reed, typefaces in the first Mac about ten years later" }
+  ],
+  "reflect": [],
+  "reflect_final": "What are you learning right now without knowing what it is for, or what would you start if usefulness did not have to be proven?",
+  "use_cases": [
+    { "situation": "A teammate asks to spend an afternoon a month on something unrelated to the job.", "move": "Mention Jobs's calligraphy class and agree on a small, fixed slot, then see later what it connects to.", "context": "meeting" },
+    { "situation": "A friend skips a course because they cannot say what it is good for.", "move": "Ask which course they would join purely out of curiosity.", "context": "oneonone" },
+    { "situation": "You are curious about something with no obvious use.", "move": "Give it a short reading slot this week without asking what it is for.", "context": "self" }
+  ],
+  "pocket_idea": "Calligraphy reached the Mac about ten years later: don't demand an immediate use from what you learn out of curiosity.",
+  "conversation_variants": {
+    "punchline_idea": "A college dropout sat in on a calligraphy class with no practical use, and about ten years later the Mac had proportional fonts.",
+    "thirty_sec_idea": "Jobs dropped out of Reed, dropped in on calligraphy, learned about typefaces and spacing; ten years later the Mac had multiple typefaces; he said so himself.",
+    "question_idea": "",
+    "key_contrast_idea": "no use yet, used later"
+  }
+}

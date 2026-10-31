@@ -37,11 +37,11 @@ const LANGUAGES = [
   { code: 'es', label: 'Español' },
   { code: 'de', label: 'Deutsch' },
 ];
-const STORY_COLLECTIONS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55', 'son55'];
+const STORY_COLLECTIONS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55', 'opus55_2', 'son55'];
 const STORY_COLLECTION_LABEL = {
   classic: 'storyCollectionClassic', new: 'storyCollectionNew', agent: 'storyCollectionAgent',
   focus: 'storyCollectionFocus', conversation: 'storyCollectionConversation', originals: 'storyCollectionOriginals',
-  opus55: 'storyCollectionOpus55', son55: 'storyCollectionSon55',
+  opus55: 'storyCollectionOpus55', opus55_2: 'storyCollectionOpus55_2', son55: 'storyCollectionSon55',
 };
 
 // Brand motif (same drawing as HomeScreen's hero). Decorative only.
@@ -610,7 +610,7 @@ const ProfileScreen = ({ navigation }) => {
           {isPremium ? (
             <Row first icon="card-outline" title={t('profileManageSubscription', lang)} onPress={manageSubscription} />
           ) : (
-            <Row first icon="sparkles-outline" title={t('profileGoPremium', lang)}
+            <Row first icon="key-outline" title={t('profileGoPremium', lang)}
               onPress={() => navigation.navigate('Paywall', { source: 'profile_settings', reason: 'profile_upgrade' })} />
           )}
           <Row icon="refresh-outline" title={t('profileRestorePurchases', lang)}

@@ -1,0 +1,44 @@
+{
+  "story_id": 1402,
+  "kind": "anecdote",
+  "book": { "title": "The Tipping Point", "author": "Malcolm Gladwell", "year": "2000" },
+  "confidence": "high",
+  "confidence_note": "Verified against the full text on archive.org (Introduction). Two copies disagree through OCR (450,000 vs 430,000); the second copy and clearer scan give 430,000 pairs. The reference TR text's claim that Connectors carried the shoes is Gladwell's later speculation ('perhaps', 'maybe a fashion Maven') and is not used as a fact; the book says no ad told people the shoes were cool and the first kids wore them because no one else would.",
+  "facts": [
+    "Hush Puppies, the brushed-suede shoes with a crepe sole, tipped between late 1994 and early 1995; sales had fallen to 30,000 pairs a year, mostly in backwoods outlets and small-town family stores.",
+    "Wolverine, the maker, was thinking of phasing out the shoe.",
+    "At a fashion shoot, two executives, Owen Baxter and Geoffrey Lewis, met a New York stylist who told them the classic Hush Puppies had become hip in the clubs and bars of downtown Manhattan.",
+    "Resale shops in the Village and Soho were selling them, and people went to the little stores that still carried them and bought them up.",
+    "Lewis says they were told Isaac Mizrahi was wearing the shoes, and at the time he had no idea who Mizrahi was.",
+    "By fall 1995 designer John Bartlett called to use them in his spring collection, then Anna Sui wanted shoes for her show.",
+    "In Los Angeles, designer Joel Fitzgerald put a twenty-five-foot inflatable basset hound on the roof of his Hollywood store and turned an adjoining gallery into a Hush Puppies boutique; before he finished painting, Pee-wee Herman walked in and asked for a couple of pairs.",
+    "In 1995 the company sold 430,000 pairs; the next year four times that.",
+    "In 1996 Hush Puppies won best accessory at the Council of Fashion Designers awards at Lincoln Center, and the company's president accepted it, saying (per Gladwell) his company had almost nothing to do with it.",
+    "No one ran an ad saying the shoes were cool; the first kids wore them precisely because no one else would."
+  ],
+  "scene_details": [
+    "30,000 pairs a year",
+    "A twenty-five-foot inflatable basset hound on a Hollywood roof",
+    "Pee-wee Herman walking in before the shelves were up",
+    "The award at Lincoln Center"
+  ],
+  "tension": "A shoe the maker was about to drop becomes a fashion item, with no one trying to make it so.",
+  "opening_idea": "Start with the number: 30,000 pairs a year, and the maker's thought of discontinuing the line.",
+  "lessons": [
+    { "idea": "Ask who is already using your thing for their own reasons; a few early users in the right place can matter more than the size of your effort.", "anchor": "A handful of downtown kids wearing Hush Puppies because no one else would changed the brand's course before the company did anything.", "everyday_example_idea": "A small bakery notices that the cafe next door serves its bread and asks that owner what customers say." }
+  ],
+  "reflect": [],
+  "reflect_final": "Who is already using something you make or offer for reasons of their own, and what could you learn by asking them how they found it?",
+  "use_cases": [
+    { "situation": "You run a small product that sells slowly.", "move": "Hush Puppies sat at 30,000 pairs until a few downtown kids picked them. Ask your five most unusual customers how they found you.", "context": "meeting" },
+    { "situation": "Your team is debating a big ad spend.", "move": "No ad told people Hush Puppies were cool. Ask what the cheapest way would be to reach the few people whose use others copy.", "context": "meeting" },
+    { "situation": "A friend is launching a project.", "move": "Ask who the first ten people are who might use it for their own reasons, and go and talk to them.", "context": "social" }
+  ],
+  "pocket_idea": "Before Hush Puppies sold 430,000 pairs, a few downtown kids were wearing them for their own reasons; find your equivalent.",
+  "conversation_variants": {
+    "punchline_idea": "Hush Puppies went from 30,000 pairs a year to 430,000 without a single ad saying the shoes were cool.",
+    "thirty_sec_idea": "In 1994 Hush Puppies sold 30,000 pairs and Wolverine thought of dropping them. Then two executives heard from a stylist that Manhattan kids were buying them in resale shops. Designers called. The next year the company sold 430,000 pairs, and four times that the year after. Nobody ran an ad.",
+    "question_idea": "",
+    "key_contrast_idea": "Few kids, big wave"
+  }
+}

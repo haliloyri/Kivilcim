@@ -1,0 +1,35 @@
+{
+  "story_id": 1450,
+  "verdict": "keep",
+  "verify_note": "Not verified in this pass. Title changed: old title/description described the old text and no longer fit the new story.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Bilinçaltı, Tohum ve Toprak",
+    "description": "Murphy zihni iki katman olarak anlatıyor: seçen bilinçli zihin ve ekileni büyüten bilinçaltı. Caruso'nun sahne korkusu bu bölünmeye örnek oluyor.",
+    "hook": "Kendinize en sık hangi cümleyi söylüyorsunuz?",
+    "one_minute_summary": "Joseph Murphy, kalbin atması ve sindirim gibi kimsenin karar vermediği işlerden başlıyor. Zihni iki katman sayıyor: sorgulayan bilinçli zihin ve sorgulamadan kabul eden bilinçaltı. Bilinçaltı toprak, düşünceler tohum. Tenor Caruso sahne korkusunda şarkıyı \"büyük ben\"ine bırakmış. Murphy, inançla tekrarlanan düşüncelerin alışkanlıkları biçimlendirdiğini söylüyor. Kitap bunu bir deneyle sınamıyor, din adamı olan yazar okuyucudan kendi hayatında denemesini istiyor."
+  },
+  "en": {
+    "title": "The Subconscious as Soil",
+    "description": "Murphy describes a mind in two layers: a conscious one that chooses and a subconscious one that grows what it is given. Caruso's stage fright serves as his example.",
+    "hook": "Which sentence do you repeat to yourself most often?",
+    "one_minute_summary": "Joseph Murphy starts with things nobody decides, like the heartbeat and digestion. He sees the mind in two layers: a conscious one that questions and a subconscious one that accepts what it is given. The subconscious is the soil, thoughts are the seeds. The tenor Caruso, he says, left his stage fright to his subconscious \"big me\". Murphy concludes that thoughts held with conviction shape habits. He tests this in no experiment; he asks readers to try it."
+  },
+  "es": {
+    "title": "La subconsciente como tierra",
+    "description": "Murphy describe la mente en dos planos: la consciente elige y la subconsciente hace crecer lo recibido. El miedo escénico de Caruso le sirve de ejemplo.",
+    "hook": "¿Qué frase te repites con más frecuencia?",
+    "one_minute_summary": "Joseph Murphy parte de lo que nadie decide, como el latido y la digestión. Describe la mente en dos planos: la consciente lo cuestiona todo y la subconsciente acepta lo que recibe. La subconsciente es la tierra y los pensamientos, las semillas. Cuenta que el tenor Caruso, con miedo escénico, dejó el canto a su «yo grande». Concluye que los pensamientos sostenidos con convicción marcan los hábitos. No lo prueba con ningún experimento y pide al lector que lo compruebe."
+  },
+  "de": {
+    "title": "Das Unterbewusstsein als Boden",
+    "description": "Murphy beschreibt den Geist in zwei Stockwerken: Das Bewusstsein wählt, das Unterbewusstsein lässt wachsen. Carusos Lampenfieber dient ihm als Beispiel.",
+    "hook": "Welchen Satz sagst du dir selbst am häufigsten?",
+    "one_minute_summary": "Joseph Murphy beginnt bei dem, worüber niemand entscheidet, etwa Herzschlag und Verdauung. Er sieht den Geist in zwei Stockwerken: Das Bewusstsein hinterfragt, das Unterbewusstsein nimmt auf, was ihm eingeprägt wird. Es ist der Boden, Gedanken sind die Samen. Der Tenor Caruso überließ sein Lampenfieber dem »großen Ich« des Unterbewusstseins. Murphys Schluss: Überzeugt gehegte Gedanken prägen Gewohnheiten. Ein Experiment gibt es dazu nicht, der Leser soll es selbst prüfen."
+  }
+}

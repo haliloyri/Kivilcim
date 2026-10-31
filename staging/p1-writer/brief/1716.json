@@ -1,0 +1,35 @@
+{
+  "story_id": 1716,
+  "kind": "concept",
+  "book": {"title": "Chatter", "author": "Ethan Kross", "year": "2021"},
+  "confidence": "medium",
+  "confidence_note": "Distanced self-talk (using your own name or 'you' instead of 'I') and the study of people preparing for a stressful speech/conversation are from the supplied text and consistent with online summaries (less distress, less rumination, more balanced self-assessment). Exact study sample sizes, effect sizes, and the 'Ethan' example sentence's presence in the book are not verified. Solomon's paradox (people reason wiser about others' problems than their own) is recalled from the book, not verified online. Omitted: celebrity examples, numbers.",
+  "facts": [
+    "Ethan Kross is a psychologist who studies the inner voice; 'chatter' is the looping negative self-talk that comes with stress.",
+    "He and colleagues studied people who were about to face a stressful moment, such as speaking in front of others.",
+    "Some people spoke to themselves silently with 'I' (what am I going to do?); others used their own name or 'you' (what should Ethan do?).",
+    "Using one's own name created psychological distance, as if looking at someone else's problem.",
+    "People using their own name reported less overwhelming thinking and rated their performance in a more balanced way.",
+    "Kross calls this distanced self-talk; he says a single word does not solve a problem but can put enough distance between you and the thought to decide.",
+    "The book links this to Solomon's paradox: we advise others on their problems more wisely than we handle our own.",
+    "It is an inner-voice tool, not a replacement for acting on the problem."
+  ],
+  "scene_details": ["the silent question 'What should Ethan do?'", "someone about to give a speech or have a hard conversation", "the same problem seen as a friend's"],
+  "tension": "A one-word change, from 'I' to your own name, can lighten a stressful thought.",
+  "opening_idea": "Open on the two versions of the same inner sentence, 'What am I going to do?' versus 'What should Ethan do?'",
+  "lessons": [{"idea": "Say the question to yourself as you would to a friend, using your own name, to make room to decide.", "anchor": "the 'Ethan' version of the inner question"}],
+  "reflect": [],
+  "reflect_final": "In a hard moment, what sentence would you say to yourself if you spoke to yourself as a close friend and used your own name?",
+  "use_cases": [
+    {"situation": "You are about to give a presentation and feel your pulse rising.", "move": "Silently ask: 'What does [your name] need to do first?'", "context": "meeting"},
+    {"situation": "You replay an argument at night.", "move": "Address yourself by name and tell yourself the next step.", "context": "self"},
+    {"situation": "A friend is spiralling about a decision.", "move": "Ask what they would tell you if the problem were yours.", "context": "social"}
+  ],
+  "pocket_idea": "Kross: swapping 'I' for your own name puts a step between you and a stressful thought.",
+  "conversation_variants": {
+    "punchline_idea": "In Kross's research, talking to yourself by your own name made stress feel lighter.",
+    "thirty_sec_idea": "Psychologist Ethan Kross studied people facing a stressful moment. Some asked themselves what they would do. Others used their own name, like a friend giving advice. The name group felt less overwhelmed and judged their performance more evenly. One word does not fix a problem, but it can create the distance to decide.",
+    "question_idea": "",
+    "key_contrast_idea": "I or your name"
+  }
+}

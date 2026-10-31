@@ -1,0 +1,35 @@
+{
+ "story_id": 1686,
+ "verdict": "keep",
+ "verify_note": "Concept story, low confidence: no verified event; built on verified concepts (data not directives, signposts, keel, hooked, labeling, 2013 HBR article). Shadyac and call-center anecdotes dropped as unverifiable.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Duygu Gösterir, Değer Yönlendirir",
+  "description": "David'e göre duygu veridir, emir değil. Neyin önemli olduğunu gösterir, ne yapacağınızı değerleriniz belirler.",
+  "hook": "Sizi rahatsız eden bir duygu hangi değerinizi işaret ediyor?",
+  "one_minute_summary": "Susan David *Emotional Agility*'de duyguların bilgi olduğunu, emir olmadığını savunuyor. Duygular değerlerimizi işaret eder, bastırmak ters tepebilir. Takılıp kalmak, bir duyguya otomatik tepki vermek demek, duyguyu fark edip adlandırmak ilk adım. Değerleri sizi dengede tutan bir omurgaya benzetiyor. Önerdiği sıra: hissi fark et, hangi değere işaret ettiğini sor, sonra his geçse de geçmese de o değere uyan bir eylemi seç."
+ },
+ "en": {
+  "title": "Emotions Signpost, Values Steer",
+  "description": "David holds that an emotion is data, not a directive. It points to what matters, and your values choose the action.",
+  "hook": "Which value might a feeling that bothers you be pointing to?",
+  "one_minute_summary": "In Emotional Agility, Susan David argues that emotions are data, not directives. They signpost our values, and suppressing them can backfire. Getting hooked means reacting to a feeling on autopilot, and noticing and labeling it is the first step. She likens values to a keel that keeps you steady. Her order: notice the feeling, ask which value it points to, then choose an action that fits that value, whether or not the feeling fades."
+ },
+ "es": {
+  "title": "La emoción señala, el valor guía",
+  "description": "Para David, una emoción es un dato y no una orden. Señala lo que importa y tus valores eligen la acción.",
+  "hook": "¿A qué valor podría apuntar una emoción que te incomoda?",
+  "one_minute_summary": "En Emotional Agility, Susan David sostiene que las emociones son datos y no directivas. Señalan nuestros valores, y suprimirlas puede salir mal. Engancharse es reaccionar en piloto automático, y notar y nombrar la emoción es el primer paso. Compara los valores con una quilla que te estabiliza. Su orden: nota la emoción, pregunta a qué valor apunta y elige una acción acorde, se vaya o no la emoción."
+ },
+ "de": {
+  "title": "Gefühle zeigen, Werte lenken",
+  "description": "Für David ist ein Gefühl ein Datum, keine Anweisung. Es zeigt, was wichtig ist, und deine Werte wählen die Handlung.",
+  "hook": "Auf welchen Wert könnte ein Gefühl hindeuten, das dich beschäftigt?",
+  "one_minute_summary": "In Emotional Agility argumentiert Susan David, Gefühle seien Daten und keine Anweisungen. Sie weisen auf unsere Werte hin, und sie zu unterdrücken kann nach hinten losgehen. Sich zu verhaken heißt, im Autopilot zu reagieren, und das Gefühl zu bemerken und zu benennen ist der erste Schritt. Werte vergleicht sie mit einem Kiel, der stabil hält. Ihre Reihenfolge: Gefühl bemerken, fragen, auf welchen Wert es zeigt, dann eine passende Handlung wählen, ob das Gefühl nachlässt oder nicht."
+ }
+}

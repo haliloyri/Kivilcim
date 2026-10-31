@@ -1,0 +1,35 @@
+{
+  "story_id": 1458,
+  "verdict": "keep",
+  "verify_note": "Not verified in this pass. Title changed: old title/description described the old text and no longer fit the new story.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Sadece İzleyen Maymun",
+    "description": "Parma'da bir maymunun tek bir hücresi, fıstığı alırken de başkasının aldığını izlerken de ateşlendi. Ramachandran bu hücrelerden ne beklediğini anlatıyor.",
+    "hook": "Bir şeyi yalnızca izlemek, onu öğrenmenin bir parçası olabilir mi?",
+    "one_minute_summary": "Giacomo Rizzolatti'nin ekibi makakların premotor korteksindeki tek hücreleri kaydediyordu. Bir hücre maymun fıstığı tuttuğunda ateşleniyordu, ama maymun kıpırdamadan başkasının fıstığa uzandığını izlerken de ateşlendi. Bunlara ayna nöron denildi. Ramachandran insanlarda da olduklarını, taklit ve öğrenmede rol oynayabileceklerini düşünüyor ve psikolojiye DNA'nın biyolojiye kattığını katacaklarını öngörüyor. Bunlar onun hipotezleri ve öngörüsü, empatiyle ilgili iddialar henüz kesinleşmedi."
+  },
+  "en": {
+    "title": "The Monkey That Only Watched",
+    "description": "In Parma, one neuron in a macaque fired both when the monkey took a peanut and when it watched someone else do it. Ramachandran explains what he expects from such cells.",
+    "hook": "If watching already works as practice, what could you show someone before you explain it?",
+    "one_minute_summary": "Giacomo Rizzolatti's group recorded single neurons in the premotor cortex of macaques. One cell fired when the monkey took a peanut, and it fired again when the monkey sat still and watched someone else do it. These became known as mirror neurons. Ramachandran thinks humans have them and that they may help us imitate and read intentions, and he predicted they would do for psychology what DNA did for biology. Those are his hypotheses; the empathy claims remain open."
+  },
+  "es": {
+    "title": "El mono que solo miraba",
+    "description": "En Parma, una neurona de un macaco respondía al coger un cacahuete y también al ver cómo otro lo cogía. Ramachandran cuenta qué espera de estas células.",
+    "hook": "Si mirar ya es una forma de practicar, ¿qué podrías mostrar a alguien antes de explicárselo?",
+    "one_minute_summary": "El grupo de Giacomo Rizzolatti registraba neuronas sueltas de la corteza premotora de macacos. Una célula respondía cuando el mono cogía un cacahuete, y volvió a responder cuando el mono, quieto, vio a alguien coger uno. Se las llamó neuronas espejo. Ramachandran cree que las personas también las tenemos, que ayudan a imitar y a intuir intenciones, y pronosticó que harían por la psicología lo que el ADN por la biología. Son hipótesis suyas; lo de la empatía sigue abierto."
+  },
+  "de": {
+    "title": "Der Affe, der nur zusah",
+    "description": "In Parma feuerte eine Zelle im Gehirn eines Makaken, wenn er nach einer Erdnuss griff und auch, wenn er nur zusah. Ramachandran erklärt, was er sich von diesen Zellen erwartet.",
+    "hook": "Wenn Zuschauen schon eine Art Üben ist, was könntest du jemandem vormachen, bevor du es erklärst?",
+    "one_minute_summary": "Die Gruppe um Giacomo Rizzolatti zeichnete einzelne Nervenzellen im prämotorischen Kortex von Makaken auf. Eine Zelle feuerte, wenn der Affe eine Erdnuss nahm, und wieder, als er still saß und zusah, wie ein Mensch danach griff. Man nannte sie Spiegelneuronen. Ramachandran hält sie auch beim Menschen für wahrscheinlich und sagte voraus, sie würden für die Psychologie leisten, was die DNA für die Biologie leistete. Das sind seine Hypothesen, die Aussagen über Empathie sind offen."
+  }
+}

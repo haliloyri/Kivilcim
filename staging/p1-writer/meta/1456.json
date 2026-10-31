@@ -1,0 +1,35 @@
+{
+  "story_id": 1456,
+  "verdict": "keep",
+  "verify_note": "Not in verification scope; kept as-is.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Ayna kutusu",
+    "description": "Nörobilimci V.S. Ramachandran, hayalet uzuv hastaları için ortasında ayna olan bir kutu kullandı. Anlattığına göre bazı hastalar kayıp elin hareket ettiğini hissetti ve acıları hafifledi.",
+    "hook": "Gözün gördüğü, hissettiğin acıyı değiştirebilir mi?",
+    "one_minute_summary": "Kolunu ya da bacağını kaybedenler çoğu zaman o uzvu hâlâ hisseder. Nörobilimci V.S. Ramachandran, The Tell-Tale Brain kitabında hayalet elin sıkılı bir yumruk gibi takılı kaldığı hastaları anlatıyor. Çözümü ortasında ayna olan bir kutuda aradı: hasta sağlam elinin yansımasını kayıp elin yerinde görüyordu. Anlattığına göre bazı hastalar kayıp elin hareket ettiğini hissetti ve acıları hafifledi. Aynalı terapinin sonraki denemeleri karışık sonuç verdi. Ramachandran bunu her hasta için bir tedavi olarak sunmuyor, acının ve algının beyinde kurulduğunu gösteren bir vaka olarak anlatıyor."
+  },
+  "en": {
+    "title": "The mirror box",
+    "description": "V.S. Ramachandran used a box with a mirror to help patients whose phantom hand was stuck in a fist. By his account, some felt the hand move and their pain eased.",
+    "hook": "Can what you see change what you feel?",
+    "one_minute_summary": "People who lose a limb often go on feeling it. Neuroscientist V.S. Ramachandran describes in The Tell-Tale Brain patients whose phantom hand was stuck in a tight fist. He used a box with a mirror down the middle, so the patient saw the reflection of the healthy hand where the missing one would be. By his account, some patients felt the missing hand move and their pain eased. Later trials of mirror therapy gave mixed results. He presents the case as showing that pain and perception are built in the brain, and claims no cure for everyone."
+  },
+  "es": {
+    "title": "La caja de espejos",
+    "description": "V.S. Ramachandran usó una caja con un espejo en el centro con pacientes cuyo miembro fantasma estaba atascado en un puño. Según su relato, algunos sintieron moverse la mano y su dolor disminuyó.",
+    "hook": "¿Puede lo que ves cambiar lo que sientes?",
+    "one_minute_summary": "Una caja con un espejo en el centro fue la herramienta con la que V.S. Ramachandran trabajó con pacientes amputados, según cuenta en The Tell-Tale Brain. El paciente veía el reflejo de su mano sana donde estaría la ausente, y así aparecían dos manos. Según Ramachandran, algunos sintieron que la mano ausente se movía y su dolor disminuyó. Los ensayos posteriores con terapia de espejo dan resultados dispares: a unos les ayuda y a otros no. Él lo presenta como muestra de que el dolor y la percepción se construyen en el cerebro, sin sostener que sea una cura universal."
+  },
+  "de": {
+    "title": "Die Spiegelbox",
+    "description": "V.S. Ramachandran nutzte eine Kiste mit Spiegel für Patienten, deren Phantomhand als Faust feststeckte. Nach seinem Bericht spürten einige die Hand sich bewegen, und der Schmerz ließ nach.",
+    "hook": "Kann das, was du siehst, verändern, was du spürst?",
+    "one_minute_summary": "Wer ein Glied verliert, spürt es oft weiter. V.S. Ramachandran berichtet in The Tell-Tale Brain von Patienten, deren Phantomhand als Faust feststeckte. Er baute eine Kiste mit einem Spiegel in der Mitte: Der Patient sah das Spiegelbild der gesunden Hand dort, wo die fehlende wäre. Nach seinem Bericht spürten einige, dass sich die fehlende Hand bewegte, und der Schmerz ließ nach. Spätere Studien zur Spiegeltherapie fielen unterschiedlich aus. Er stellt den Fall als Beleg dar, dass Schmerz und Wahrnehmung im Gehirn entstehen, und beansprucht keine Heilung für alle."
+  }
+}

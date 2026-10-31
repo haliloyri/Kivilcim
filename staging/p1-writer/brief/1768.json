@@ -1,0 +1,60 @@
+{
+ "story_id": 1768,
+ "kind": "concept",
+ "book": {
+  "title": "The Anxious Generation",
+  "author": "Jonathan Haidt",
+  "year": "2024"
+ },
+ "confidence": "medium",
+ "confidence_note": "The book's framework recalled and cross-checked with general coverage, not page-checked: the Great Rewiring around 2010 to 2015, the four norms, the collective action argument. Omitted as unverified: precise statistics, the iPhone 4 front-camera detail, names of cited studies. Haidt's causal claim is disputed by some researchers; the story says so. No single anecdote; the book's example is the shift in childhood itself.",
+ "facts": [
+  "Haidt describes a Great Rewiring of childhood between about 2010 and 2015: from a play-based childhood to a phone-based one.",
+  "He reports that teen anxiety, depression and self-harm rose sharply in the early 2010s, especially among girls.",
+  "He names two changes: children lost unsupervised play in the real world, and smartphones and social media took over their time.",
+  "Haidt argues a family cannot solve this alone: a child without a phone is left out when everyone else is on one, a collective action problem.",
+  "His proposed norms: no smartphone before high school, no social media before 16, phone-free schools, and far more unsupervised play and independence.",
+  "Some researchers dispute that phones are the cause; the evidence is mostly correlational.",
+  "Haidt says children became overprotected in the real world and underprotected online.",
+  "He names four harms of the phone-based childhood: social deprivation, sleep deprivation, attention fragmentation and addiction."
+ ],
+ "scene_details": [
+  "a child left out because every classmate is in a group chat",
+  "a school where phones are locked away during the day",
+  "unsupervised play outside"
+ ],
+ "tension": "One family can say no, but its child pays for it alone.",
+ "opening_idea": "Open on the child whose parents say no to a phone while the whole class is already in the group chat.",
+ "lessons": [
+  {
+   "idea": "A rule that is hard to keep alone becomes easy when a whole group agrees on it together.",
+   "anchor": "the child left out when only one family holds the line; phone-free schools as shared rule"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which habit is hard for you to change alone, and who around you could agree on one shared rule for it with you this month?",
+ "use_cases": [
+  {
+   "situation": "Parents at a school group are unsure about phones.",
+   "move": "Propose one shared rule for the class, such as no phones before a certain age.",
+   "context": "social"
+  },
+  {
+   "situation": "A team inbox drains everybody after hours.",
+   "move": "Suggest the whole team agree on one quiet hour, since one person alone looks unresponsive.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Your kids fight over screens at dinner.",
+   "move": "Set one household rule that applies to the adults too.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "One family saying no leaves its child out of the group chat; an agreement made together removes that cost.",
+ "conversation_variants": {
+  "punchline_idea": "A child without a phone is left out when everyone else has one, which is why Haidt asks whole schools to act together.",
+  "thirty_sec_idea": "Haidt says childhood was rewired between about 2010 and 2015 from outdoor play to phones, and teen anxiety rose. A single family that says no leaves its child out, so he asks schools and communities to agree on shared rules: phone-free schools, later ages and more independent play. Some researchers dispute the cause.",
+  "question_idea": "",
+  "key_contrast_idea": "alone vs together"
+ }
+}

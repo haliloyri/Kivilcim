@@ -1,0 +1,61 @@
+{
+  "story_id": 1709,
+  "kind": "concept",
+  "book": {
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "year": "2020"
+  },
+  "confidence": "medium",
+  "confidence_note": "The valet opening of Housel's 'Wealth is what you don't see' chapter is confirmed by a secondary summary, but a Ferrari or any specific car brand was not confirmed, so only 'luxury cars' is used. Housel's phrases are paraphrased, not quoted. Omitted: figures, named people, the Read and Fuscone case, the car-brand detail, year of the valet job. The Man in the Car observation is from another chapter, recalled, not page-checked.",
+  "facts": [
+    "Morgan Housel opens the chapter by recalling his time working as a valet in Los Angeles, parking luxury cars.",
+    "People who see an expensive car tend to assume its owner is wealthy.",
+    "What the car shows is only that someone spent a large sum; it says nothing about what is left.",
+    "Housel's point: spending money to show how much you have is a fast way to end up with less of it.",
+    "He separates being rich, which is a matter of high current income, from being wealthy, which is money not spent.",
+    "Wealth, he says, is the assets that have not yet been turned into things you can see, such as the car not bought.",
+    "Because it is made of choices not to spend, wealth is invisible and cannot be read off someone's possessions.",
+    "In another chapter Housel observes that people looking at a beautiful car picture themselves in it rather than admiring the driver.",
+    "He separates being rich (high income) from being wealthy (money not spent)."
+  ],
+  "scene_details": [
+    "a valet parking luxury cars in Los Angeles",
+    "an expensive car and a guess about its driver",
+    "the car not bought"
+  ],
+  "tension": "The more visible someone's spending, the less you can tell about what they have kept.",
+  "opening_idea": "Open on a young Housel parking other people's luxury cars and the guesses people made about the drivers.",
+  "lessons": [
+    {
+      "idea": "A purchase shows what was spent, not what remains; the money you keep is what buys you options.",
+      "anchor": "the luxury cars Housel parked"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which recent purchase did you make partly to be seen, and what choice would that money have kept open for you?",
+  "use_cases": [
+    {
+      "situation": "You are about to upgrade something mainly for appearance.",
+      "move": "Say you want to wait a month; Housel's valet view is that a purchase shows only what was spent.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is impressed by someone's new car.",
+      "move": "Remark that you can see what they spent, not what they have left.",
+      "context": "social"
+    },
+    {
+      "situation": "Your partner and you plan a large purchase.",
+      "move": "Ask what choice you would keep open by not buying it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Housel parked luxury cars and saw only money spent: wealth is the car you did not buy, so it stays invisible.",
+  "conversation_variants": {
+    "punchline_idea": "A luxury car tells you what someone spent, Housel says, and nothing about what they kept.",
+    "thirty_sec_idea": "Morgan Housel worked as a valet in Los Angeles, parking luxury cars. People assumed the drivers were wealthy. His point: you only see the spending. Wealth is the money not yet turned into things, so it is invisible.",
+    "question_idea": "",
+    "key_contrast_idea": "spent, not kept"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "story_id": 1265,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Obstacle Is the Way",
+    "author": "Ryan Holiday",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against book text (Preface and Final Thoughts). Old text dropped: \"Marcus wanted to be a philosopher\" (not in the book) and the plague-taught-human-nature chain. Replaced by the Avidius Cassius episode, which the book tells.",
+  "facts": [
+    "Preface: year 170, night in tent on the Germania front, Marcus writes for himself; his reign brought near-constant war, plague, an attempt on his throne by a close ally, a depleted treasury, a greedy incompetent stepbrother as co-emperor.",
+    "Late in reign, sick and possibly near death, Marcus learned his old friend and most trusted general Avidius Cassius had rebelled in Syria and declared himself Caesar.",
+    "Marcus did nothing, kept the news from his troops, waited to see whether Cassius would come to his senses.",
+    "Cassius did not; Marcus told a council of soldiers they would march but the prize would be to capture him, to forgive a man who has wronged one; settle it well and show a right way to deal even with civil wars.",
+    "He sent troops to Rome to calm panicking crowds.",
+    "Three months later a lone assassin killed Cassius in Egypt; Marcus lost the chance to forgive in person but forgave more widely.",
+    "He refused to put coconspirators to death or prosecute senators and governors; he wrote asking the senate to keep his reign unstained by the blood of any senator.",
+    "Holiday: he controlled his perceptions, did not take it personally, then acted."
+  ],
+  "scene_details": [
+    "tent in Germania",
+    "news kept from the troops",
+    "letter to the senate"
+  ],
+  "tension": "A betrayed, sick emperor gets the revenge history would excuse and declines it.",
+  "opening_idea": "Open on the secret kept from the troops.",
+  "lessons": [
+    {
+      "idea": "See what happened before you answer it.",
+      "anchor": "Marcus waited and moved only once Cassius would not turn back.",
+      "everyday_example_idea": "A cafe owner learns a partner quietly left and writes down what happened and what the business needs before messaging."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you waited a day before answering someone who you feel has wronged you, what would you do with that day?",
+  "use_cases": [
+    {
+      "situation": "A colleague went over your head.",
+      "move": "Say you will not answer in the heat of the moment.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend described you unfairly.",
+      "move": "Listen to yourself first, then ask what happened.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are about to type an angry message.",
+      "move": "Keep it as a draft until tomorrow.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Marcus waited when his general rebelled, then acted.",
+  "conversation_variants": {
+    "punchline_idea": "When his general rebelled, Marcus Aurelius told his troops to capture him alive, and after the man was killed he forgave the conspirators.",
+    "thirty_sec_idea": "Sick Marcus heard Cassius had declared himself Caesar in Syria, kept it from his troops, and waited. He marched to capture rather than kill; after an assassin killed Cassius he spared the coconspirators. Holiday: obstacle becomes the way.",
+    "question_idea": "",
+    "key_contrast_idea": "Anger held, mercy chosen"
+  }
+}

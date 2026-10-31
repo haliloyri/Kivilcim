@@ -1,0 +1,35 @@
+{
+ "story_id": 1266,
+ "verdict": "keep",
+ "verify_note": "Verified against book text (Amor Fati chapter). Old Marcus quote and energy framing not in the book; story rebuilt on Jack Johnson vs Jim Jeffries plus Nietzsche epigraph.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Jack Johnson'ın Gülümsemesi",
+  "description": "Jack Johnson, nefret gören bir dövüşte hakaretleri plana kattı ve gülümsemeyi bırakmadı. Jeffries öfkelenip yoruldu.",
+  "hook": "Bu hafta sizi sinirlendirecek durumu planınıza nasıl katarsınız?",
+  "one_minute_summary": "Ryan Holiday amor fati bölümünde boksör Jack Johnson'ı anlatıyor. Jim Jeffries'le on beş raundluk dövüşte rakibi de seyirci de ondan nefret ediyordu. Johnson dövüş planını hakaretler üzerine kurdu, her kaba söze yumrukla karşılık verdi, dudağı yarılınca da gülümsemeyi bırakmadı. Jeffries öfkelendi, yoruldu, savaşma isteğini yitirdi. Holiday kabulü ilk adım, sevmeyi daha iyisi sayıyor, ama iyinin kötüyü her zaman aşmadığını ve bedelsiz olmadığını da yazıyor."
+ },
+ "en": {
+  "title": "Jack Johnson's Smile",
+  "description": "Hated by his opponent and the crowd, Jack Johnson built his fight plan around the abuse and kept smiling. Jeffries wore down.",
+  "hook": "What small change could include an irritating situation in your plan this week?",
+  "one_minute_summary": "In the amor fati chapter, Ryan Holiday describes boxer Jack Johnson in his fifteen-round fight with Jim Jeffries, hated by his opponent and the crowd. Johnson built his plan around the abuse, answering each remark with a blow, and kept smiling even through a cut lip. Jeffries grew enraged and tired and lost the will to fight. Holiday calls acceptance a first step and love of what happens better, while noting that the good does not always outweigh the bad."
+ },
+ "es": {
+  "title": "La sonrisa de Jack Johnson",
+  "description": "Odiado por su rival y el público, Jack Johnson construyó su plan a partir del abuso y siguió sonriendo. Jeffries se agotó.",
+  "hook": "¿Qué pequeño cambio incluiría en tu plan una situación que te irritará esta semana?",
+  "one_minute_summary": "En el capítulo sobre el amor fati, Ryan Holiday describe al boxeador Jack Johnson en su combate de quince asaltos contra Jim Jeffries, odiado por su rival y el público. Johnson basó su plan en el abuso, respondió cada comentario con un golpe y siguió sonriendo aun con un corte en el labio. Jeffries se enfureció, se cansó y perdió las ganas de pelear. Holiday ve la aceptación como un primer paso y amar lo que pasa como algo mejor, sin afirmar que lo bueno siempre pese más."
+ },
+ "de": {
+  "title": "Jack Johnsons Lächeln",
+  "description": "Von Gegner und Publikum gehasst, baute Jack Johnson seinen Plan um den Hohn und lächelte weiter. Jeffries ermüdete.",
+  "hook": "Welche kleine Änderung würde eine ärgerliche Situation in deinen Plan einbeziehen?",
+  "one_minute_summary": "Im Kapitel über Amor fati beschreibt Ryan Holiday den Boxer Jack Johnson in seinem Kampf über fünfzehn Runden gegen Jim Jeffries, vom Gegner und Publikum gehasst. Johnson baute seinen Plan um den Hohn, beantwortete jede Bemerkung mit einem Schlag und lächelte selbst mit aufgerissener Lippe. Jeffries wurde wütend und müde und verlor die Lust zu kämpfen. Holiday nennt Hinnehmen einen ersten Schritt und Lieben besser, behauptet aber nicht, dass das Gute das Schlechte immer überwiegt."
+ }
+}

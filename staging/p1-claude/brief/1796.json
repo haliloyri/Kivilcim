@@ -1,0 +1,35 @@
+{
+  "story_id": 1796,
+  "kind": "anecdote",
+  "book": { "title": "Delivering Happiness", "author": "Tony Hsieh", "year": "2010" },
+  "confidence": "medium",
+  "confidence_note": "No scripts, no call-time limits, no upselling, the phone number on every page and the call centre as the core of the brand are Zappos practices described in the book. The late-night pizza anecdote (a rep asked by a caller to find pizza and who looked up nearby places) is told in the book; names and place are left out because I am not certain of them. The record call length is left out, since figures vary across later reports.",
+  "facts": [
+    "Many call centres measure how short calls are and how many calls a rep handles.",
+    "Zappos put its phone number at the top of every page of its website instead of hiding it.",
+    "Its reps had no scripts and no time limit on calls, and were not pushed to upsell.",
+    "Hsieh describes the phone call as one of the few moments a company has a customer's full attention for several minutes.",
+    "The goal was to make the caller feel cared for, so they would remember Zappos and tell others.",
+    "In one story Hsieh tells, a caller late at night jokingly asked a Zappos rep for pizza; the rep did not refuse but looked up pizza places still open nearby.",
+    "Hsieh argued that money spent on customer experience worked better than money spent on advertising."
+  ],
+  "tension": "Every minute on the phone is a cost, yet Zappos removed the stopwatch.",
+  "opening_idea": "Open on the late-night call where someone asks a shoe store for pizza and the rep starts searching.",
+  "lessons": [
+    { "idea": "What you measure in a conversation decides how people behave in it.", "anchor": "No scripts and no call-time limits at Zappos." }
+  ],
+  "reflect": [],
+  "reflect_final": "In the conversation you have most often at work, what are you measuring, and what would change if you measured something else?",
+  "use_cases": [
+    { "situation": "A team is reviewing support metrics focused on call length.", "move": "Note that Zappos dropped call-time limits and scripts, then propose tracking whether the customer's problem was solved.", "context": "meeting" },
+    { "situation": "A colleague rushes customer calls to hit a target.", "move": "Ask which call they remember with pride and what they did differently there.", "context": "oneonone" },
+    { "situation": "You are calling a family member while busy.", "move": "Put the screen away for this one call and listen until they finish.", "context": "family" }
+  ],
+  "pocket_idea": "A shoe store's rep helped a caller find pizza; drop the stopwatch and people remember how you treated them.",
+  "conversation_variants": {
+    "punchline_idea": "A Zappos rep, asked for pizza late at night, looked up pizza places still open nearby.",
+    "thirty_sec_idea": "Zappos put its phone number on every page, gave reps no scripts and no time limit, and treated the call as its brand. Hsieh tells of a rep who, asked for pizza, searched nearby places.",
+    "question_idea": "",
+    "key_contrast_idea": "Saniye ve dikkat"
+  }
+}

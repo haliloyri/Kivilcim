@@ -1,0 +1,35 @@
+{
+  "story_id": 1714,
+  "kind": "concept",
+  "book": {"title": "You're Not Listening", "author": "Kate Murphy", "year": "2020"},
+  "confidence": "medium",
+  "confidence_note": "Journalist-interviewer angle, the habit of preparing one's own reply, and listening as tolerating uncertainty and giving up control come from the supplied text. Sociologist Charles Derber's shift-response versus support-response distinction and the thinking-speed versus speaking-speed gap are recalled from the book and NOT verified online in this session. Omitted: example dialogue wording, exact words-per-minute figures, any named interviewee.",
+  "facts": [
+    "Kate Murphy is a journalist; interviewing people showed her that many of them stay quiet only to prepare their own answer, not to understand the speaker.",
+    "In the book, listening means putting up with uncertainty about where a conversation will go.",
+    "It means not controlling the question and letting what you hear change your mind.",
+    "Phones distract, but the book places the deeper obstacle earlier: the wish to control the conversation.",
+    "Sociologist Charles Derber's idea: a shift-response turns the talk toward the listener's own experience.",
+    "A support-response keeps the focus on the speaker, for example by asking a follow-up question.",
+    "People think faster than they can speak or hear, so the listener's mind has spare time to drift to its own reply.",
+    "Silence alone is not listening; giving up the right to decide where the talk goes is."
+  ],
+  "scene_details": ["the pause where a listener is rehearsing a reply", "a follow-up question instead of a story about oneself", "an interviewer's recorder and open questions"],
+  "tension": "Staying quiet looks like listening, yet the quiet can be spent writing your own answer.",
+  "opening_idea": "Open on the pause: the silence in which one person is no longer listening but drafting a reply.",
+  "lessons": [{"idea": "Listening means letting the other person steer and being willing to change your mind, not just keeping quiet.", "anchor": "the interviewee's pause spent preparing an answer"}],
+  "reflect": [],
+  "reflect_final": "In your last important conversation, were you preparing your answer while the other person spoke, or letting what you heard change your mind?",
+  "use_cases": [
+    {"situation": "A colleague describes a problem and you already have a fix.", "move": "Ask one follow-up question before offering the fix.", "context": "meeting"},
+    {"situation": "A friend says they are exhausted.", "move": "Skip 'me too' and ask what the week has been like.", "context": "social"},
+    {"situation": "You notice yourself rehearsing your reply mid-sentence.", "move": "Let it go and ask yourself what you actually just heard.", "context": "self"}
+  ],
+  "pocket_idea": "Kate Murphy: silence is not listening if you are using it to write your own reply.",
+  "conversation_variants": {
+    "punchline_idea": "Murphy noticed many people stay silent not to understand but to prepare their own answer.",
+    "thirty_sec_idea": "Journalist Kate Murphy noticed in interviews that people often went quiet only to prepare their reply. In her book she argues real listening means tolerating uncertainty, not steering the question and letting what you hear change your mind. Phones distract, but the need to control the talk comes first.",
+    "question_idea": "",
+    "key_contrast_idea": "quiet or listening"
+  }
+}

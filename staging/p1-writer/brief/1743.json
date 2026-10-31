@@ -1,0 +1,61 @@
+{
+ "story_id": 1743,
+ "kind": "anecdote",
+ "book": {
+  "title": "Guns, Germs, and Steel",
+  "author": "Jared Diamond",
+  "year": "1997"
+ },
+ "confidence": "high",
+ "confidence_note": "Cajamarca (16 November 1532), Pizarro's 168 men, Atahualpa's army of tens of thousands, horses, steel and guns, the capture of Atahualpa, the gold ransom, and the smallpox epidemic preceding the Spanish are the core of Diamond's chapter 'Collision at Cajamarca' and chapters on germs. Diamond's figure of about 80,000 for Atahualpa's army and the exact split of the 168 (62 horse, 106 foot) are from memory and are not verified in this session; the story says 'tens of thousands' and 'some on horseback'. Omitted: number of Inca killed, Spanish casualties, names of other participants. ADDED LATER: Added from memory of Diamond's chapter, unverified in this session: the Bible thrown down by Atahualpa, Spaniards hidden around the square, Pizarro's knowledge of earlier conquests through writing versus Atahualpa's ignorance of the Spanish.",
+ "facts": [
+  "On 16 November 1532 Francisco Pizarro met the Inca emperor Atahualpa at Cajamarca in Peru with 168 Spanish men.",
+  "Atahualpa was surrounded by an army of tens of thousands.",
+  "The Spanish had horses, steel swords and armor, and guns; the Inca had none of these.",
+  "Pizarro's men ambushed Atahualpa in the square, killed many of those around him, and captured him the same day.",
+  "Atahualpa offered to fill a room with gold for his release; the Spanish took it and did not free him.",
+  "Diamond argues the outcome is explained by geography, not by Spanish superiority: Eurasia had domestic animals, writing, steel and dense societies.",
+  "Germs mattered too: smallpox, spread from Europeans, reached the Inca empire before Pizarro and killed the emperor Huayna Capac and his heir, leading to a civil war between Atahualpa and his brother Huascar.",
+  "The Spanish hid in buildings around the square; a priest handed Atahualpa a Bible and he threw it down; the attack followed.",
+  "Writing let Pizarro's men know about earlier conquests; Atahualpa knew nothing of the Spanish."
+ ],
+ "scene_details": [
+  "168 men and a square in Cajamarca",
+  "horses, steel and guns against an army of tens of thousands",
+  "a room to be filled with gold"
+ ],
+ "tension": "168 men take an emperor in front of tens of thousands, and Diamond asks why it was possible.",
+ "opening_idea": "Open with the number 168, then the square at Cajamarca.",
+ "lessons": [
+  {
+   "idea": "When you judge an outcome, ask what each side began with before you credit talent or character.",
+   "anchor": "168 Spaniards with horses, steel and germs against an empire weakened by smallpox"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which of your recent successes or failures would you explain differently if you counted what you started with?",
+ "use_cases": [
+  {
+   "situation": "A team celebrates a win.",
+   "move": "Say that Diamond explains Cajamarca by starting conditions, and ask which of ours helped us.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You are comparing yourself to a friend.",
+   "move": "List what each of you started with before you decide who did better.",
+   "context": "social"
+  },
+  {
+   "situation": "Reviewing a failure.",
+   "move": "Write down the starting conditions you could not control and the ones you could.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "168 men took an emperor at Cajamarca; Diamond says look at what each side started with.",
+ "conversation_variants": {
+  "punchline_idea": "168 Spaniards took an emperor at Cajamarca, and Diamond says the answer is not courage but what each side started with.",
+  "thirty_sec_idea": "In 1532 Pizarro met the Inca emperor at Cajamarca with 168 men. They had horses, steel and guns; the Inca, an army of tens of thousands, had none. They captured Atahualpa the same day. Jared Diamond says the cause was starting conditions, including smallpox that had already hit the Inca.",
+  "question_idea": "",
+  "key_contrast_idea": "start, not talent"
+ }
+}

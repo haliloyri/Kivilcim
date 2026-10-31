@@ -1,0 +1,35 @@
+{
+  "story_id": 1477,
+  "verdict": "keep",
+  "verify_note": "Recentred on the death-as-technical-problem argument and Calico's stated aim. Page-referenced notes and reviews; Calico date and CEO from news coverage. Old claims that Page and Brin founded Calico, billions invested and a misquoted line dropped. Medium confidence.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Ölüm teknik bir sorun mu",
+    "description": "Harari'ye göre modern insan ölümü çözülmesi gereken teknik bir sorun sayıyor, ama modern tıp doğal yaşam süresini uzatmadı.",
+    "hook": "Hayatınızdaki hangi soruna yanlış kişiyi ya da yöntemi işaret eden bir ad veriyorsunuz?",
+    "one_minute_summary": "Yuval Noah Harari, Homo Deus'ta dinlerin ölüme hoşgörülü olduğunu, modern insanın ise ölümü çözebileceğimiz ve çözmemiz gereken teknik bir sorun saydığını yazıyor. Uzmanlar da değişiyor: rahiplerin yerini mühendisler alıyor. Örnek olarak Google'ın 2013'te duyurulan Calico şirketini gösteriyor, amacı ölümü çözmek diye anılıyor. Aynı bölümde modern tıbbın doğal yaşam süresini tek bir yıl bile uzatmadığını, asıl başarısının erken ölümü önlemek olduğunu söylüyor. Bir eleştirmen, ölümü yalnızca teknik bir sorun saymanın tartışmalı bir görüşü kesin gibi sunduğunu belirtiyor."
+  },
+  "en": {
+    "title": "Death as a technical problem",
+    "description": "Harari says modern people treat death as a technical problem to solve, yet medicine has not lengthened our natural life span.",
+    "hook": "Which problem in your life have you named in a way that sends it to the wrong help?",
+    "one_minute_summary": "Yuval Noah Harari writes in Homo Deus that religions tolerated death, while modern people see it as a technical problem we can and should solve. The experts change too, with engineers replacing priests. He cites Google's Calico, announced in 2013, whose stated aim is to solve death. In the same section he says modern medicine has not extended our natural life span by a single year and has mainly prevented premature death. A reviewer objects that calling death only a technical problem presents a contested view as settled."
+  },
+  "es": {
+    "title": "La muerte como problema técnico",
+    "description": "Harari dice que la gente moderna trata la muerte como un problema técnico por resolver, aunque la medicina no ha alargado la vida natural.",
+    "hook": "¿Qué problema de tu vida has nombrado de un modo que lo manda a la ayuda equivocada?",
+    "one_minute_summary": "Yuval Noah Harari escribe en Homo Deus que las religiones toleraban la muerte, mientras que la gente moderna la ve como un problema técnico que podemos y debemos resolver. También cambian los expertos: los ingenieros ocupan el lugar de los sacerdotes. Cita Calico, la empresa de Google anunciada en 2013 cuyo objetivo declarado es resolver la muerte. En la misma sección dice que la medicina moderna no ha alargado la vida natural ni un solo año y que su logro ha sido evitar la muerte prematura. Un crítico objeta que llamar a la muerte solo un problema técnico presenta como zanjada una opinión discutible."
+  },
+  "de": {
+    "title": "Der Tod als technisches Problem",
+    "description": "Harari sagt, moderne Menschen behandeln den Tod als technisches Problem, doch die Medizin hat die natürliche Lebensspanne nicht verlängert.",
+    "hook": "Welches Problem in deinem Leben hast du so benannt, dass es bei der falschen Hilfe landet?",
+    "one_minute_summary": "Yuval Noah Harari schreibt in Homo Deus, Religionen duldeten den Tod, moderne Menschen dagegen sähen ihn als technisches Problem, das wir lösen können und sollten. Auch die Zuständigen wechseln, Ingenieure ersetzen Priester. Er nennt Googles 2013 angekündigte Firma Calico, deren erklärtes Ziel es ist, den Tod zu lösen. Im selben Abschnitt sagt er, die moderne Medizin habe die natürliche Lebensspanne nicht um ein einziges Jahr verlängert und vor allem vorzeitigen Tod verhindert. Ein Kritiker wendet ein, den Tod nur als technisches Problem zu sehen, stelle eine umstrittene Ansicht als geklärt dar."
+  }
+}

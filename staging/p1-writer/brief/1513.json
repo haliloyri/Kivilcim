@@ -1,0 +1,60 @@
+{
+  "story_id": 1513,
+  "kind": "concept",
+  "book": {
+    "title": "The Innovator's Dilemma",
+    "author": "Clayton Christensen",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from memory and secondary knowledge of the book, no book text accessed. Seagate 3.5-inch prototype shown to customers who did not want it is recalled from the book's disk-drive chapters; exact dates, drive capacities, firm counts and Seagate's later outcome omitted. Old TR text quote ('successfully managed firms failed') is a paraphrase of the book's thesis, not a verified quotation. DB title is Turkish 'Yildirici Inovasyon'; English title assumed to be The Innovator's Dilemma from author and year.",
+  "facts": [
+    "Christensen studied the disk drive industry across generations: 14-inch, 8-inch, 5.25-inch, 3.5-inch drives.",
+    "With each smaller size, leaders of the old size mostly did not lead the new one; newcomers did.",
+    "The failed leaders were well managed: they listened to best customers and invested in what those customers asked for.",
+    "Christensen argues those good management practices were the cause of their failure.",
+    "Smaller drives had less capacity, the measure mainframe and minicomputer customers cared about, so those customers did not want them.",
+    "New customers (desktop, later portable computer makers) valued small size and weight and accepted lower capacity.",
+    "Seagate's engineers built a 3.5-inch prototype and showed it to customers, who were not interested.",
+    "Small drives improved in capacity until they met the original customers' needs, and those customers moved."
+  ],
+  "scene_details": [
+    "a 3.5-inch prototype shown to customers",
+    "drives that held less capacity",
+    "desktop and portable computer makers as the new buyers"
+  ],
+  "tension": "The best-run firms did everything customers asked and still lost the lead.",
+  "opening_idea": "Seagate's engineers carry a small drive to customers who shrug.",
+  "lessons": [
+    {
+      "idea": "A product is judged by current users, who ask for more of the same, so the next buyers are easy to miss.",
+      "anchor": "Seagate's customers shrugged at the 3.5-inch drive."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What do the people who never use your work today choose to use in its place?",
+  "use_cases": [
+    {
+      "situation": "Planning review, everyone wants features for current clients",
+      "move": "Ask who is not buying and what they use instead, pointing to Seagate's customers shrugging at the small drive.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Wanting backing for a skill current projects ignore",
+      "move": "Ask for a few hours a week to learn it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Same few friends always give advice",
+      "move": "Ask one person outside the circle.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Seagate's best customers shrugged at the small drive; ask someone outside your circle what they use.",
+  "conversation_variants": {
+    "punchline_idea": "The leaders who lost weren't careless; they kept doing what best customers asked.",
+    "thirty_sec_idea": "Seagate prototype shrug, then industry pattern, new buyers, drives improved.",
+    "question_idea": "",
+    "key_contrast_idea": "Best customers, new buyers"
+  }
+}

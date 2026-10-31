@@ -1,0 +1,62 @@
+{
+  "story_id": 1726,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Gene",
+    "author": "Siddhartha Mukherjee",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "Supported by multiple secondary sources: Mendel (an Augustinian friar in Brno) presented his pea experiments in two lectures to the Brno natural history society on 8 February and 8 March 1865; the paper 'Research on Plant Hybrids' appeared in the society's 1866 Proceedings; it was largely overlooked until 1900, when Hugo de Vries, Carl Correns and Erich von Tschermak independently arrived at the same findings; Bateson later found the 1865 paper via a de Vries reprint. Whether Mukherjee gives each of these details, and his exact framing, was not checked in the book text; the story states them as history he recounts. Omitted as unverified: Darwin never read the paper, Nageli's letter and hawkweed, plant counts, the burning of Mendel's papers. A 2022 article disputes the 'ignored' narrative; the story therefore says 'largely overlooked'. The tall/short cross, the one-in-four return and the counting are the standard account of Mendel's experiments and are recalled for Mukherjee's chapter, not re-verified in the book text.",
+  "facts": [
+    "Gregor Mendel was an Augustinian friar in Brno who grew pea plants and watched individual traits, for instance seeds that were round or wrinkled.",
+    "He found that a trait does not blend away: it passes on in separate units, and it can disappear in one generation and come back in the next.",
+    "In February and March 1865 he gave two lectures on this to the natural history society of Brno.",
+    "His paper, 'Research on Plant Hybrids', was printed in the society's Proceedings in 1866.",
+    "The paper was largely overlooked for decades and cited only a few times.",
+    "In 1900 three researchers, Hugo de Vries, Carl Correns and Erich von Tschermak, each reached the same results independently and found Mendel's paper.",
+    "William Bateson later reached the 1865 paper through a reprint of de Vries's work.",
+    "From the 1865 lectures to the 1900 rediscovery is about thirty-five years.",
+    "He crossed plants with opposite traits, for example a tall plant with a short one: the first generation showed only one of the two traits, and the other came back in the next generation in about one plant out of four (textbook result, recalled; scope kept as 'roughly').",
+    "He counted the offspring by trait, plant by plant, generation after generation."
+  ],
+  "scene_details": [
+    "pea plants in a monastery garden in Brno",
+    "round and wrinkled seeds",
+    "a small society's Proceedings, printed in 1866"
+  ],
+  "tension": "A clear answer to how traits are inherited sat in a small journal for thirty-five years.",
+  "opening_idea": "Open on the two lectures in Brno in 1865: a friar describes his peas, and almost nothing happens.",
+  "lessons": [
+    {
+      "idea": "A result can be correct and still unread; if you want it used, you have to carry it to the people who can act on it, not only publish it.",
+      "anchor": "Mendel's paper sitting in the Brno society's Proceedings from 1866 until 1900"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which piece of your own work has been sitting unread somewhere, and who is one person you could put it in front of this week?",
+  "use_cases": [
+    {
+      "situation": "You wrote a useful report that nobody opened.",
+      "move": "Send it to one person who needs it, with one sentence saying what it changes for them.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend has a good idea but only tells it to you.",
+      "move": "Say Mendel's peas waited thirty-five years and ask who else should hear it.",
+      "context": "social"
+    },
+    {
+      "situation": "You keep notes on something you have learned.",
+      "move": "Pick one note and tell it to someone, out loud, this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Mendel's paper was correct in 1866 and read in 1900: being right does not travel on its own.",
+  "conversation_variants": {
+    "punchline_idea": "Mendel explained heredity in 1865, and it took until 1900 for anyone to build on it.",
+    "thirty_sec_idea": "A friar in Brno grew peas and saw that traits pass on in separate units, round or wrinkled, gone in one generation and back in the next. He told the local natural history society in 1865 and printed the paper in 1866. It was largely overlooked until 1900, when three researchers reached the same results on their own and found it.",
+    "question_idea": "",
+    "key_contrast_idea": "right, but unread"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "story_id": 1757,
+  "kind": "anecdote",
+  "book": {
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "year": "1988"
+  },
+  "confidence": "high",
+  "confidence_note": "Written from knowledge of Hawking's preface; widely quoted but no page-level check. The one equation (E = mc2) and the warning that each equation would halve sales are in the book's preface. Omitted on purpose: sales figure beyond 'millions' (reception claim), the editor's name, anything about the writing process beyond the preface. Details of the preface wording are paraphrased; the claim that a reader who meets an equation puts the book down is the story's paraphrase of the warning, not a quote.",
+  "facts": [
+    "While writing A Brief History of Time for general readers, Hawking was told that every equation in the book would cut its sales in half.",
+    "He decided to leave equations out.",
+    "The book covers black holes, the beginning of time and the expansion of the universe.",
+    "In the end he allowed a single equation, E = mc2.",
+    "Instead of formulas he used pictures, comparisons and everyday images.",
+    "The book sold in the millions."
+  ],
+  "scene_details": [
+    "one equation printed in a whole book",
+    "a diagram in place of algebra"
+  ],
+  "tension": "A physicist who could not avoid maths for a general book decides to leave nearly all of it out.",
+  "opening_idea": "Open on the warning Hawking was given about equations.",
+  "lessons": [
+    {
+      "idea": "Explain for the listener's ability, not for how much you know.",
+      "anchor": "Hawking kept one equation in a whole book"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What would you cut from your next explanation so that someone who knows nothing could follow it?",
+  "use_cases": [
+    {
+      "situation": "You must present a technical result to a mixed audience.",
+      "move": "Mention Hawking's one-equation rule and cut the slides to the single figure that matters.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A child asks you how something works.",
+      "move": "Use one everyday image before any terms.",
+      "context": "family"
+    },
+    {
+      "situation": "You are writing a message to a non-expert.",
+      "move": "Delete every term you would not use at a dinner table.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Hawking allowed one equation in a whole book on the universe: write for the person reading, not for what you know.",
+  "conversation_variants": {
+    "punchline_idea": "A publisher's warning that each equation would halve sales pushed Hawking to explain the universe with one equation.",
+    "thirty_sec_idea": "When Stephen Hawking wrote A Brief History of Time, he was warned that every equation would cut the readership in half. He kept the maths nearly out of it, using comparisons and pictures, and allowed a single equation, E = mc2. The book sold in the millions.",
+    "question_idea": "",
+    "key_contrast_idea": "one equation, whole universe"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1791,
+  "kind": "anecdote",
+  "book": { "title": "Why Zebras Don't Get Ulcers", "author": "Robert M. Sapolsky", "year": "1994" },
+  "confidence": "medium",
+  "confidence_note": "The rat warning-signal experiment and the list of factors that modulate stress (predictability, control, outlets, social support, perception of things not getting worse) are in the book. The sibling text's 'four things' is replaced by the longer list. The traffic jam versus marathon comparison from the supplied text is not used. Exact ulcer rates are not given.",
+  "facts": [
+    "Two rats receive the same electric shocks at the same intensity and frequency.",
+    "One rat hears a warning signal before each shock; the other gets none.",
+    "The rat that got the warning develops markedly fewer ulcers.",
+    "The shock is the same; predictability differs.",
+    "Sapolsky lists factors that shape stress load: predictability, a sense of control, an outlet for frustration, social support and a sense that things are not getting worse.",
+    "Giving a rat something to run on or gnaw, or giving a person control over timing, makes the same load easier to bear.",
+    "A warning signal gives the animal a safe period between shocks."
+  ],
+  "tension": "Identical shocks, yet one rat's body was spared because it knew when they would come.",
+  "opening_idea": "Open on two rats, identical shocks, and one small difference: a warning sound.",
+  "lessons": [
+    { "idea": "Reducing uncertainty lightens the load.", "anchor": "The rat that knew when the shock would come." }
+  ],
+  "reflect": [],
+  "reflect_final": "In the situation that tires you most, are you truly helpless, or can you open a small area of control or foresight?",
+  "use_cases": [
+    { "situation": "Deadlines stay vague.", "move": "Recall the rat that got a warning sound and ask for a date and who will warn the team if it changes.", "context": "meeting" },
+    { "situation": "Your child fears tomorrow's exam.", "move": "Spell out what is known: time, topics, what has been studied.", "context": "family" },
+    { "situation": "You are waiting on a result.", "move": "Find out when it arrives and write two things that are in your hands until then.", "context": "self" }
+  ],
+  "pocket_idea": "Same shock, fewer ulcers for the rat that was warned; add a date and a warning to vague tasks.",
+  "conversation_variants": {
+    "punchline_idea": "Two rats took the same shocks and the warned rat had far fewer ulcers.",
+    "thirty_sec_idea": "In an experiment Sapolsky describes, two rats got identical shocks but one heard a warning first and developed far fewer ulcers: predictability, control and outlets shape stress.",
+    "question_idea": "",
+    "key_contrast_idea": "Şok ve öngörü"
+  }
+}

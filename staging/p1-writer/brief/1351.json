@@ -1,0 +1,58 @@
+{
+  "story_id": 1351,
+  "kind": "concept",
+  "book": {
+    "title": "The 5AM Club",
+    "author": "Robin Sharma",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Based on the book's fable (a billionaire mentor teaching an entrepreneur and an artist), the 'Victory Hour' from 5 to 6 a.m. and the 20/20/20 formula of Move, Reflect, Grow. The supplied TR text's three-hour 5-8 block, the 20-20-20 as 'movement, reflection, growth' across three hours, 'nobody is born a night owl' and the cortisol reasoning are not in the book as stated or are the author's own interpretation and are excluded. The input title 'Bir Sonraki Seviye' is the Turkish edition title.",
+  "facts": [
+    "The book is a fable: an eccentric billionaire mentor teaches an entrepreneur and an artist, both struggling, to rise at 5 a.m.",
+    "Sharma calls the first hour, 5 to 6 a.m., the Victory Hour.",
+    "He argues it is valuable because the world is still quiet and nobody is asking you for anything.",
+    "He splits the hour into three blocks of 20 minutes: Move (intense exercise), Reflect (such as journaling or planning), Grow (such as reading or learning).",
+    "He presents rising early as a habit that can be installed, with a hard stretch at the start before it becomes automatic.",
+    "His explanations of why the early hour works rest on his own reading of brain and hormone effects, not on measured results in the book."
+  ],
+  "scene_details": [
+    "an alarm at 5",
+    "three blocks of 20 minutes",
+    "a quiet house before anyone calls"
+  ],
+  "tension": "Sharma asks for the most unpopular hour of the day and says it is the only one that nobody else will claim.",
+  "opening_idea": "Start with the billionaire in the fable telling two struggling people that the fix begins at five in the morning.",
+  "lessons": [
+    {
+      "idea": "Time you protect before others can ask for it is easier to keep than time you try to find later in the day.",
+      "anchor": "The Victory Hour from 5 to 6 a.m. in a quiet world."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which stretch of your day does nobody else claim, and what would you put in the first 20 minutes of it?",
+  "use_cases": [
+    {
+      "situation": "You never find time to read because the day fills with requests.",
+      "move": "Do the Grow block, 20 minutes of reading, before you open any messages tomorrow.",
+      "context": "self"
+    },
+    {
+      "situation": "Your household mornings are rushed.",
+      "move": "Agree that one person gets up 20 minutes earlier and the others protect that time.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague says they have no time for their own development.",
+      "move": "Share the 20/20/20 idea and ask which block they could try first.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Sharma splits one quiet early hour into move, reflect and grow, 20 minutes each, before anyone else needs you.",
+  "conversation_variants": {
+    "punchline_idea": "Sharma divides one hour before sunrise into three 20-minute blocks, and the first is exercise.",
+    "thirty_sec_idea": "In Robin Sharma's fable, a billionaire tells two struggling people to wake at 5 a.m. and spend the first hour in three 20-minute blocks: exercise, reflection, learning. He calls it the Victory Hour, and says the world is quiet and nobody is asking for anything. The brain and hormone reasons are his own reading, not measurements.",
+    "question_idea": "Do you have an hour that is yours?",
+    "key_contrast_idea": "Protected, not found"
+  }
+}

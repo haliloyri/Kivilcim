@@ -1,0 +1,36 @@
+{
+  "story_id": 1792,
+  "kind": "anecdote",
+  "book": { "title": "Why Zebras Don't Get Ulcers", "author": "Robert M. Sapolsky", "year": "1994" },
+  "confidence": "medium",
+  "confidence_note": "The Forest Troop episode (aggressive males dying of tuberculosis from tainted meat at a tourist lodge dump, a calmer culture that lasted, newcomers adopting it, lower stress hormones in subordinates) is Sapolsky's well-known account. Its presence and exact wording in this edition is not fully verified, so the story presents it as Sapolsky's account, omits the 'within a few months' timeline, and flags that it was a one-off natural event, not an experiment.",
+  "facts": [
+    "Sapolsky followed a baboon group called the Forest Troop for years in East Africa.",
+    "As in most troops, the most aggressive males ran it and made life hard for those below.",
+    "The most aggressive males ate tainted meat from a tourist lodge's garbage dump and died of tuberculosis.",
+    "The remaining males and females were more mellow.",
+    "The troop's style changed: less bullying, more grooming, less tension.",
+    "The calmer culture persisted; new males who joined later also adopted it over time.",
+    "Subordinates' measured stress hormones fell.",
+    "It was an accident of circumstance, not an experiment, so it shows a possibility rather than a rule."
+  ],
+  "tension": "The troop's toughest members died and the group became calmer, and stayed calm.",
+  "opening_idea": "Open on the most aggressive baboons dying of the same disease and what the troop did next.",
+  "lessons": [
+    { "idea": "A group's tension level is a learned culture that can change.", "anchor": "The Forest Troop's calm lasting after its aggressive males died." }
+  ],
+  "reflect": [],
+  "reflect_final": "Is there a small habit that lowers tension in a group you belong to, and could you be the one to start it?",
+  "use_cases": [
+    { "situation": "Meetings are always tense.", "move": "Recall the troop that grew calm and ask everyone to thank someone before speaking.", "context": "meeting" },
+    { "situation": "Everyone at home is irritable.", "move": "Put phones away at dinner and share one good moment of the day.", "context": "family" },
+    { "situation": "Gossip is spreading in your friend group.", "move": "Say the last chat did not feel good and propose another topic.", "context": "social" }
+  ],
+  "pocket_idea": "The troop's style changed and stayed changed; start the first step that lowers tension in your group.",
+  "conversation_variants": {
+    "punchline_idea": "When a baboon troop's most aggressive males died, the rest became calmer and stayed that way for years.",
+    "thirty_sec_idea": "In Sapolsky's Forest Troop the most aggressive males died of tuberculosis; the troop grew calmer, newcomers adopted that style and subordinates' stress hormones dropped.",
+    "question_idea": "",
+    "key_contrast_idea": "Kader değil kültür"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "story_id": 1749,
+  "kind": "anecdote",
+  "book": {
+    "title": "Unbroken",
+    "author": "Laura Hillenbrand",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Unbroken; no page-level check. Core: Louis Zamperini, 1936 Olympian, bombardier; B-24 crashed in the Pacific in May 1943; three of eleven survived; Francis McNamara died during the drift; Zamperini and pilot Russell Phillips drifted 47 days on a raft, caught birds and fish and drank rain, then were captured by Japanese forces. The forgiveness visit in 1950 Sugamo prison is the book's account; kept only as the end. Omitted on purpose: McNamara's exact day, distances, shark details, names of camp guards, the Bird's name beyond 'a guard nicknamed the Bird', conversion details. Added from memory of Hillenbrand, not page-checked: crash on a search mission, eight died, day-33 death, 2,000 miles, strafing, family notified. Prison visit kept to the book's gist.",
+  "facts": [
+    "Louis Zamperini ran at the 1936 Olympics and later served as a bombardier in the Second World War.",
+    "In May 1943 his bomber crashed in the Pacific; of eleven on board, three survived.",
+    "Zamperini, pilot Russell Phillips and a third man drifted on small rafts; the third man died during the drift.",
+    "The two survivors lived on rain water, fish and birds they caught, and drifted for 47 days before reaching land held by Japan.",
+    "They were taken prisoner; Zamperini spent about two years in prison camps, where a guard nicknamed the Bird tormented him.",
+    "After the war he came home angry and struggled; in 1950 he went to a prison in Tokyo and met former guards, as the book describes.",
+    "Zamperini ran the 5000 m in Berlin; the B-24 went down on a search mission; eight died in the crash; the third raft man died about day 33.",
+    "They covered roughly two thousand miles; sharks circled; a Japanese plane strafed the raft; the Bird picked him out because he was a famous athlete; his family had been told he was dead."
+  ],
+  "scene_details": [
+    "a rain-water ration on a small raft",
+    "a guard nicknamed the Bird",
+    "a prison visit in Tokyo in 1950"
+  ],
+  "tension": "A man survives 47 days at sea and two years of camps, and the harder part comes at home.",
+  "opening_idea": "Open on the raft: two men, 47 days, rain water, fish and birds.",
+  "lessons": [
+    {
+      "idea": "Surviving a hardship is not the same as being free of it; the resentment you carry is a separate task.",
+      "anchor": "Zamperini came home angry after the camps"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which old grievance still takes your attention, and what small step toward putting it down could you take this month?",
+  "use_cases": [
+    {
+      "situation": "A friend cannot stop talking about a coworker who wronged them years ago.",
+      "move": "Say you noticed it is still heavy and ask what would help them put it down.",
+      "context": "social"
+    },
+    {
+      "situation": "A family argument keeps returning at gatherings.",
+      "move": "Name one thing you are willing to let go before the next meal.",
+      "context": "family"
+    },
+    {
+      "situation": "You wake up replaying an old insult.",
+      "move": "Write it down once and decide what you will do with it, or not.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Zamperini survived the raft and the camps, then had to deal with anger: staying alive is not the same as being free.",
+  "conversation_variants": {
+    "punchline_idea": "Zamperini survived 47 days on a raft, and the war was still following him home.",
+    "thirty_sec_idea": "Louis Zamperini, an Olympic runner, survived a Pacific bomber crash and 47 days adrift on a raft before being taken prisoner by Japanese forces. He lived through about two years of camps, where a guard called the Bird targeted him. Back home he was full of anger. In 1950 he went to a prison in Tokyo to meet former guards. Laura Hillenbrand tells this in Unbroken.",
+    "question_idea": "",
+    "key_contrast_idea": "survived, then let go"
+  }
+}

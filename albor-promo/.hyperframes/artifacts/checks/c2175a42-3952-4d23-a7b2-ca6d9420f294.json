@@ -1,0 +1,424 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "overlapping_gsap_tweens",
+        "severity": "warning",
+        "message": "GSAP tweens overlap on \"#s3-sun\" for scale between 0.90s and 1.10s.",
+        "selector": "#s3-sun",
+        "dataAttributes": {},
+        "sourceFile": "/Users/hoyri/Documents/Projects/Spark/albor-promo/compositions/s3.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Shorten the earlier tween, move the later tween, or add `overwrite: \"auto\"`."
+      }
+    ],
+    "filesScanned": 5
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 5,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 2.125,
+        "selector": "#s1-w5",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 90,
+          "top": 1111.75,
+          "right": 738.63,
+          "bottom": 1307.19,
+          "width": 648.63,
+          "height": 195.44
+        },
+        "containerSelector": "#s2-a",
+        "text": "bekliyor.",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s1.html",
+        "bbox": {
+          "x": 90,
+          "y": 1111.75,
+          "width": 648.63,
+          "height": 195.44
+        },
+        "firstSeen": 2.125,
+        "lastSeen": 2.25,
+        "occurrences": 2,
+        "heldMs": 125,
+        "times": [
+          2.125,
+          2.25
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 0.556,
+        "selector": "#s1-w3",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 90,
+          "top": 837.79,
+          "right": 678.88,
+          "bottom": 999.71,
+          "width": 588.88,
+          "height": 161.92
+        },
+        "containerSelector": "#s1-lines > span:nth-of-type(3)",
+        "text": "kitaplar",
+        "fixHint": "Text is 589px x 162px inside 900px x 195px and overflows by up to 83px; increase the container height to at least ~279px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 90,
+          "top": 720.88,
+          "right": 990,
+          "bottom": 916.31,
+          "width": 900,
+          "height": 195.44
+        },
+        "overflow": {
+          "bottom": 83.4
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s1.html",
+        "bbox": {
+          "x": 90,
+          "y": 837.79,
+          "width": 588.88,
+          "height": 161.92
+        },
+        "firstSeen": 0.556,
+        "lastSeen": 0.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 0.556,
+        "selector": "#s1-w3",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 90,
+          "top": 809.3,
+          "right": 678.88,
+          "bottom": 990.74,
+          "width": 588.88,
+          "height": 181.44
+        },
+        "containerSelector": "#s1-lines > span:nth-of-type(3)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 90,
+          "top": 720.88,
+          "right": 990,
+          "bottom": 916.31,
+          "width": 900,
+          "height": 195.44
+        },
+        "overflow": {
+          "bottom": 74.43
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s1.html",
+        "bbox": {
+          "x": 90,
+          "y": 809.3,
+          "width": 588.88,
+          "height": 181.44
+        },
+        "firstSeen": 0.556,
+        "lastSeen": 0.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.556
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 2.778,
+        "selector": "#s2-a",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 331.06,
+          "top": 1099.38,
+          "right": 748.92,
+          "bottom": 1205.56,
+          "width": 417.86,
+          "height": 106.18
+        },
+        "containerSelector": "#s2-slogan > span:nth-of-type(1)",
+        "text": "Her gün",
+        "fixHint": "Text is 418px x 106px inside 960px x 135px and overflows by up to 40px; increase the container height to at least ~176px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 60,
+          "top": 1030,
+          "right": 1020,
+          "bottom": 1165.44,
+          "width": 960,
+          "height": 135.44
+        },
+        "overflow": {
+          "bottom": 40.12
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s2.html",
+        "bbox": {
+          "x": 331.06,
+          "y": 1099.38,
+          "width": 417.86,
+          "height": 106.18
+        },
+        "firstSeen": 2.778,
+        "lastSeen": 2.778,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.778
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 2.778,
+        "selector": "#s2-a",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 331.06,
+          "top": 1075.5,
+          "right": 748.92,
+          "bottom": 1200.94,
+          "width": 417.86,
+          "height": 125.44
+        },
+        "containerSelector": "#s2-slogan > span:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 60,
+          "top": 1030,
+          "right": 1020,
+          "bottom": 1165.44,
+          "width": 960,
+          "height": 135.44
+        },
+        "overflow": {
+          "bottom": 35.5
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s2.html",
+        "bbox": {
+          "x": 331.06,
+          "y": 1075.5,
+          "width": 417.86,
+          "height": 125.44
+        },
+        "firstSeen": 2.778,
+        "lastSeen": 2.778,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.778
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 2.778,
+        "selector": "#s2-b",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 221.22,
+          "top": 1297.15,
+          "right": 858.78,
+          "bottom": 1422.58,
+          "width": 637.56,
+          "height": 125.44
+        },
+        "containerSelector": "#s2-slogan > span:nth-of-type(2)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 60,
+          "top": 1165.44,
+          "right": 1020,
+          "bottom": 1300.88,
+          "width": 960,
+          "height": 135.44
+        },
+        "overflow": {
+          "bottom": 121.7
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s2.html",
+        "bbox": {
+          "x": 221.22,
+          "y": 1297.15,
+          "width": 637.56,
+          "height": 125.44
+        },
+        "firstSeen": 2.778,
+        "lastSeen": 2.778,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.778
+        ]
+      }
+    ],
+    "duration": 10,
+    "samples": [
+      0.556,
+      1.667,
+      2.778,
+      3.889,
+      5,
+      6.111,
+      7.222,
+      8.333,
+      9.444
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 6,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0.556,
+      2.778,
+      5,
+      7.222,
+      9.444
+    ],
+    "checked": 11,
+    "passed": 11
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 3,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"Albor\" (1 word) is on screen 1.60 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "Albor",
+        "selector": "#s4-name",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s4.html",
+        "bbox": {
+          "x": 345.33,
+          "y": 745.11,
+          "width": 389.34,
+          "height": 200
+        },
+        "time": 8.406,
+        "words": 1,
+        "seconds": 1.598,
+        "floorSeconds": 2
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"Her gün yeni bir ışık.\" (5 words) is on screen 1.40 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "Her gün yeni bir ışık.",
+        "selector": "#s4-tag",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s4.html",
+        "bbox": {
+          "x": 328.05,
+          "y": 946.59,
+          "width": 423.89000000000004,
+          "height": 54
+        },
+        "time": 8.602,
+        "words": 5,
+        "seconds": 1.402,
+        "floorSeconds": 2
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"Albor'u indir\" (2 words) is on screen 1.23 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "Albor'u indir",
+        "selector": "#s4-cta",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s4.html",
+        "bbox": {
+          "x": 362.36,
+          "y": 1109.27,
+          "width": 355.27,
+          "height": 71.46000000000004
+        },
+        "time": 8.773,
+        "words": 2,
+        "seconds": 1.23,
+        "floorSeconds": 2
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 80
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

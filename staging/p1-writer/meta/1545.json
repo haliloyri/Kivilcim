@@ -1,0 +1,35 @@
+{
+ "story_id": 1545,
+ "verdict": "keep",
+ "verify_note": "Insulation '150 percent' and the Kahneman and Tversky link were not found for this book and were dropped. Center is chapter 34 on loss, with New Coke as the example a chapter summary gives; New Coke facts follow Wikipedia and the book's own telling was not read (low confidence).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "New Coke'un 79 günü",
+  "description": "New Coke tadım testlerini kazandı ve 79 gün sonra geri çekildi. Kitabın kayıp bölümü, insanların kaybedeceklerine daha çok tepki verdiğini anlatıyor.",
+  "hook": "Başkalarının güvendiği bir şeyi değiştirirken onlar neyi kaybettiklerini hissedecek?",
+  "one_minute_summary": "Evet Dedirtmek'in otuz dördüncü bölümü, insanların kazanacaklarından çok kaybedeceklerine tepki verdiğini söylüyor. Bölüm özetleri örnek olarak New Coke'u gösteriyor. 1985'te çıkan yeni formül tadım testlerinde hem eskisini hem Pepsi'yi geçti. Ama Coca-Cola'ya 40.000'den fazla telefon ve mektup geldi, hat günde 1.500'ün üzerinde aranıyordu. Eski formül 79 gün sonra Classic adıyla döndü. Kitabın kendi anlatımı okunmadı, olaylar bilinen kayıtlara dayanıyor."
+ },
+ "en": {
+  "title": "New Coke's 79 days",
+  "description": "New Coke won the taste tests and was pulled after 79 days. The book's chapter on loss says people react more to what they may lose.",
+  "hook": "When you change something others rely on, what will they feel they are losing?",
+  "one_minute_summary": "Chapter thirty-four of Yes! says people react more to what they may lose than to what they may gain. Summaries of the chapter give New Coke as the example. Launched in 1985, the sweeter formula beat the old Coke and Pepsi in taste tests. Yet Coca-Cola received more than 40,000 calls and letters, and its hotline took over 1,500 calls a day. The original returned as Classic 79 days later. The book's own telling was not read, so the events follow the public record."
+ },
+ "es": {
+  "title": "Los 79 días de New Coke",
+  "description": "New Coke ganó las pruebas de sabor y fue retirada a los 79 días. El capítulo del libro sobre la pérdida dice que la gente reacciona más a lo que puede perder.",
+  "hook": "Cuando cambias algo de lo que otros dependen, ¿qué sentirán que pierden?",
+  "one_minute_summary": "El capítulo treinta y cuatro de Yes! dice que la gente reacciona más a lo que puede perder que a lo que puede ganar. Los resúmenes citan a New Coke. Lanzada en 1985, la fórmula más dulce superó en pruebas de sabor a la Coca-Cola de siempre y a Pepsi. Aun así, la empresa recibió más de 40.000 llamadas y cartas y su línea atendió más de 1.500 llamadas diarias. La original volvió como Classic 79 días después. No se leyó la versión del propio libro, los hechos siguen el registro público."
+ },
+ "de": {
+  "title": "New Cokes 79 Tage",
+  "description": "New Coke gewann die Geschmackstests und wurde nach 79 Tagen zurückgezogen. Das Kapitel über Verlust sagt, Menschen reagieren stärker auf das, was sie verlieren können.",
+  "hook": "Wenn du etwas änderst, worauf andere sich verlassen, was werden sie zu verlieren glauben?",
+  "one_minute_summary": "Kapitel vierunddreißig von Yes! sagt, Menschen reagierten stärker auf das, was sie verlieren könnten, als auf das, was sie gewinnen könnten. Zusammenfassungen nennen New Coke als Beispiel. 1985 eingeführt, schlug die süßere Rezeptur im Geschmackstest die alte Coke und Pepsi. Dennoch erhielt Coca-Cola mehr als 40.000 Anrufe und Briefe, die Hotline nahm über 1.500 Anrufe am Tag an. Das Original kehrte 79 Tage später als Classic zurück. Die Darstellung im Buch selbst wurde nicht gelesen, die Ereignisse folgen der öffentlichen Dokumentation."
+ }
+}

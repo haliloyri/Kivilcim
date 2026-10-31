@@ -1,0 +1,39 @@
+{
+  "story_id": 1440,
+  "kind": "anecdote",
+  "book": { "title": "Against Empathy", "author": "Paul Bloom", "year": "2016" },
+  "confidence": "medium",
+  "confidence_note": "The old TR text's claim about burnout rates among nurses, therapists and firefighters is not verified and is removed. Replaced with the Tania Singer lab work that Bloom draws on: Matthieu Ricard scanned in fMRI during compassion meditation versus empathy; and the training study (Klimecki et al.): empathy training raised negative feeling, compassion training reversed it. Confirmed from Bloom's essay on the topic and PubMed abstract; the exact placement in the book is not confirmed. Studies are small, mostly one lab; Ricard is an unusual subject. No numbers or direct quotes. Ricard likened the empathy state to burnout (paraphrased).",
+  "facts": [
+    "Neuroscientist Tania Singer's lab scanned the brain of Matthieu Ricard, a Buddhist monk, during compassion meditation aimed at people who are suffering.",
+    "During compassion meditation the brain regions that people normally use when thinking about others' pain did not activate.",
+    "When Ricard was then asked to take an empathic stance, the circuits tied to empathic distress activated, and he described that state as like burnout.",
+    "In a training study from the same research group, empathy training increased negative feeling and activity in regions linked to empathy for pain.",
+    "Compassion training that followed reversed the rise in negative feeling and raised positive feeling.",
+    "Bloom reads this as evidence that empathy (feeling the other's pain) can drain people, while compassion (caring and wanting to help) is more sustainable."
+  ],
+  "scene_details": [
+    "a monk lying in a brain scanner",
+    "two instructions: share their pain versus wish them well",
+    "the word burnout used by Ricard himself"
+  ],
+  "tension": "The same monk, scanned twice, felt drained with one instruction and warm with another.",
+  "opening_idea": "A Buddhist monk lies in a brain scanner and is given two tasks toward the same suffering, with very different feelings.",
+  "lessons": [
+    { "idea": "Wishing someone well and sharing their pain are different acts, and the first can be sustained longer.", "anchor": "Ricard's scan: empathy produced a burnout-like state, compassion did not." }
+  ],
+  "reflect": [],
+  "reflect_final": "After you help someone close to you, do you come away drained or steady, and what do you do during the conversation that makes the difference?",
+  "use_cases": [
+    { "situation": "A colleague is venting about a hard week and you feel your own mood sinking.", "move": "Say you care and ask what would help, instead of taking on their distress.", "context": "oneonone" },
+    { "situation": "You support a family member through a long illness and feel worn out.", "move": "Ricard in the scanner felt burned out sharing pain but not when wishing others well; try a short moment of wishing them well before you go in.", "context": "family" },
+    { "situation": "A friend tells you a painful story at a party.", "move": "Reply with 'I'm here, what do you need?' and see how you feel afterwards.", "context": "social" }
+  ],
+  "pocket_idea": "Ricard felt burned out sharing others' pain, not when wishing them well; offer care without absorbing.",
+  "conversation_variants": {
+    "punchline_idea": "A monk in a brain scanner felt burned out sharing others' pain, but not when he only wished them well.",
+    "thirty_sec_idea": "Tania Singer's lab scanned the monk Matthieu Ricard. During compassion meditation, the circuits for feeling others' pain stayed quiet. Asked to take an empathic stance, those circuits lit up and he said it felt like burnout. A follow-up training study found empathy training raised negative feeling, and compassion training reversed it. Paul Bloom reads this as: caring lasts longer than feeling the pain.",
+    "question_idea": "",
+    "key_contrast_idea": "Sharing pain, offering care"
+  }
+}

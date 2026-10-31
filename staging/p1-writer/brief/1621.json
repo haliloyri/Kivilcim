@@ -1,0 +1,58 @@
+{
+  "story_id": 1621,
+  "kind": "anecdote",
+  "book": {
+    "title": "Attached",
+    "author": "Amir Levine and Rachel S. F. Heller",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Mary Ainsworth's Strange Situation, the three patterns (secure, anxious, avoidant) and Levine's claim that adult relationships echo them are the book's opening argument. Avoidant babies' hidden stress (raised heart rate despite calm behaviour) is documented in infant research (Spangler and Grossmann, 1993) but could not be checked in the book text. Population shares are omitted because sources disagree (book's own figures not verified; reference text's 50/25/25 is a simplification). The Turkish title 'Bağlanma Teorisi' corresponds to Attached; only the English title is given.",
+  "facts": [
+    "Mary Ainsworth's Strange Situation experiment: a mother leaves her baby in an unfamiliar room, then comes back, and researchers watch.",
+    "Secure babies are upset when the mother leaves and settle quickly on her return, then go back to exploring.",
+    "Anxious babies react strongly to her leaving, and on her return cling and push away and are hard to settle.",
+    "Avoidant babies show little visible reaction to leaving or return; measurements of their bodies, such as heart rate, showed stress (not verified in the book text).",
+    "Levine says the same three styles show up in adult relationships.",
+    "Knowing your style helps you understand your patterns; styles are not fixed."
+  ],
+  "scene_details": [
+    "an unfamiliar room",
+    "a mother leaving and returning",
+    "a baby who clings and pushes away"
+  ],
+  "tension": "The calmest-looking babies were not calm inside.",
+  "opening_idea": "A baby is left in an unfamiliar room, and three babies react in three different ways when the door opens.",
+  "lessons": [
+    {
+      "idea": "Calm behaviour can hide stress, so look past how someone appears to what the pattern is.",
+      "anchor": "avoidant babies who looked calm yet showed signs of stress"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When you feel distance or anxiety with someone close, what do you usually do first, and what do you think it protects?",
+  "use_cases": [
+    {
+      "situation": "Your partner seems unbothered by a separation.",
+      "move": "Ask how the day apart really was for them, without assuming calm means fine.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel the urge to text repeatedly.",
+      "move": "Notice the urge, wait ten minutes, and see if it passes.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend says attachment styles are pseudo-science.",
+      "move": "Mention the mother leaving and returning to the room and ask which baby they imagine being.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Babies who looked calm after a separation still carried stress, so ask instead of assuming.",
+  "conversation_variants": {
+    "punchline_idea": "In the Strange Situation, the baby who seemed least bothered by the mother leaving was not the calmest one.",
+    "thirty_sec_idea": "Mary Ainsworth had mothers leave their babies in an unfamiliar room and return. Secure babies were upset then settled. Anxious babies clung and pushed away. Avoidant babies showed nothing, though their bodies showed stress. Levine says adults repeat these three styles in their relationships.",
+    "question_idea": "",
+    "key_contrast_idea": "Calm outside, stressed inside"
+  }
+}

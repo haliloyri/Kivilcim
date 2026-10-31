@@ -1,0 +1,35 @@
+{
+  "story_id": 1333,
+  "verdict": "keep",
+  "verify_note": "Recentred on Pilecki, the book's opening case (Kirkus and summaries); Pilecki history from Wikipedia. Manson's reading of him is secondhand (quoted podcast). The invented hope paradox wording dropped. Medium confidence.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Pilecki ve umut",
+    "description": "Polonyalı subay Witold Pilecki, 1940'ta kendini Auschwitz'e gönderttirdi. Manson umut kitabına onunla başlıyor.",
+    "hook": "Elinizin altındaki hangi küçük iş, umutsuz görünen bir durumda hâlâ sizin?",
+    "one_minute_summary": "Mark Manson umut üzerine kitabını Witold Pilecki ile açıyor. Polonyalı subay 1940'ta Varşova'daki bir baskında kendini yakalattı ve Auschwitz'e 4859 numaralı mahkûm olarak girdi. İçeride bir yeraltı örgütü kurdu, yedi ayda ev yapımı bir verici yaptı ve 1943'te kaçtı. Savaştan sonra komünist makamlar onu idam etti. Manson onu, umut yokken umut üretebilme becerisi olarak kahramanlığın örneği sayıyor ve umudu, ilerleyebileceğine duyulan inanç olarak tanımlıyor. Kitap ise okuru umutsuz davranmaya çağırarak kapanıyor."
+  },
+  "en": {
+    "title": "Pilecki and hope",
+    "description": "The Polish officer Witold Pilecki had himself sent to Auschwitz in 1940. Manson opens his book on hope with him.",
+    "hook": "What is one small thing within your reach in a situation that looks hopeless?",
+    "one_minute_summary": "Mark Manson opens his book on hope with Witold Pilecki. In 1940 the Polish officer let a Warsaw roundup catch him and entered Auschwitz as prisoner 4859. Inside he built an underground group and, over seven months, a homemade radio, and he escaped in 1943. After the war the communist-run Polish authorities executed him. Manson reads him as heroism, conjuring hope where none exists, and defines hope as the belief that you can make progress toward something valuable. The book ends by asking readers to act without hope."
+  },
+  "es": {
+    "title": "Pilecki y la esperanza",
+    "description": "El oficial polaco Witold Pilecki hizo que lo enviaran a Auschwitz en 1940. Manson abre su libro sobre la esperanza con él.",
+    "hook": "¿Qué pequeña cosa a tu alcance sigue siendo tuya en una situación que parece sin esperanza?",
+    "one_minute_summary": "Mark Manson abre su libro sobre la esperanza con Witold Pilecki. En 1940 el oficial polaco se dejó atrapar en una redada de Varsovia y entró en Auschwitz como el preso 4859. Dentro montó una organización clandestina y, en siete meses, una radio casera, y se escapó en 1943. Tras la guerra, las autoridades polacas bajo mando comunista lo ejecutaron. Manson lo lee como heroísmo, conjurar esperanza donde no la hay, y define la esperanza como la creencia de que puedes avanzar hacia algo valioso. El libro termina pidiendo al lector que actúe sin esperanza."
+  },
+  "de": {
+    "title": "Pilecki und die Hoffnung",
+    "description": "Der polnische Offizier Witold Pilecki ließ sich 1940 nach Auschwitz bringen. Manson eröffnet sein Buch über Hoffnung mit ihm.",
+    "hook": "Welche kleine Sache in deiner Reichweite gehört in einer aussichtslos wirkenden Lage noch dir?",
+    "one_minute_summary": "Mark Manson eröffnet sein Buch über Hoffnung mit Witold Pilecki. 1940 ließ sich der polnische Offizier bei einer Warschauer Razzia fangen und kam als Häftling 4859 nach Auschwitz. Im Lager baute er eine Untergrundgruppe auf und in sieben Monaten einen selbstgebauten Sender, 1943 floh er. Nach dem Krieg richteten ihn die kommunistisch geführten polnischen Behörden hin. Manson liest ihn als Heldentum, als Fähigkeit, Hoffnung heraufzubeschwören, wo keine ist, und definiert Hoffnung als Glauben, auf etwas Wertvolles hin voranzukommen. Das Buch endet mit der Aufforderung, ohne Hoffnung zu handeln."
+  }
+}

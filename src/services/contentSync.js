@@ -95,9 +95,9 @@ export const syncContentFromSupabase = async () => {
   // hide every story on the device.
   if (!remoteStories.length) return { changed: false };
 
-  // SON55 stories ship only in the bundled DB (the server has not got them
+  // SON55 and Opus55-2 stories ship only in the bundled DB (the server has not got them
   // yet): the server must not revert their version, text or visibility.
-  const localOnlyIds = (await db.getAllAsync(`SELECT id FROM stories WHERE version = 'SON55'`))
+  const localOnlyIds = (await db.getAllAsync(`SELECT id FROM stories WHERE version IN ('SON55', 'Opus55-2')`))
     .map((row) => Number(row.id));
   const localOnly = new Set(localOnlyIds);
   const stories = remoteStories.filter((s) => !localOnly.has(Number(s.id)));

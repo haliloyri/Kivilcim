@@ -1,0 +1,41 @@
+{
+  "story_id": 1302,
+  "kind": "concept",
+  "book": { "title": "Factfulness", "author": "Hans Rosling", "year": "2018" },
+  "confidence": "medium",
+  "confidence_note": "The book describes ten instincts, not four; this story covers only the fear instinct (the old TR text's UN projection to 11 billion belongs to the straight-line instinct and is dropped, as is the invented 'is this feeling or data' routine and the claim that fear speeds up and degrades thinking). Confirmed through summaries: 'frightening' and 'dangerous' are different; fear makes us attend to unlikely dangers we are most afraid of and neglect what is most risky; the three fears are physical harm, captivity and contamination; Risk = danger times exposure; the plane example, where safe landings go unreported and a crash makes headlines; the equation is the remedy. Exact crash statistics and the car comparison were not verified and are omitted.",
+  "facts": [
+    "Rosling lists fear as one of ten instincts that distort our view of the world.",
+    "He says 'frightening' and 'dangerous' are two different things.",
+    "The fear instinct pulls our attention to unlikely dangers that we are most afraid of, and away from what is actually most risky.",
+    "He names three kinds of things people fear most: physical harm, captivity and contamination.",
+    "His simple equation: risk equals danger multiplied by exposure.",
+    "Danger is how bad the harm would be; exposure is how likely we are to meet it.",
+    "Plane crashes are frightening and very rare among flights, and the media report a crash but not the planes that land safely.",
+    "His advice is to calm down and calculate the risk before reacting."
+  ],
+  "scene_details": [
+    "the equation risk = danger x exposure",
+    "a plane crash on the news while thousands of safe landings go unreported",
+    "three fears: physical harm, captivity, contamination"
+  ],
+  "tension": "What scares us most is not what is most likely to hurt us.",
+  "opening_idea": "Open with the news report of a plane crash and the thousands of landings nobody reports.",
+  "lessons": [
+    { "idea": "Fear tells you where the danger is worst, not how likely it is, and risk needs both, so do the multiplication before you decide.", "anchor": "Rosling's equation risk = danger x exposure and the plane crash example." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which fear is shaping a choice you are making right now, and what would you find out if you estimated the actual odds of it happening?",
+  "use_cases": [
+    { "situation": "A team wants to cancel a launch after one dramatic incident.", "move": "Ask how often this actually happens across all launches before deciding, because one frightening event is not its exposure.", "context": "meeting" },
+    { "situation": "A parent worries about a frightening but rare event.", "move": "Rosling separates frightening from dangerous; ask what the actual numbers say and what is more likely to harm the child.", "context": "family" },
+    { "situation": "You feel dread before a decision.", "move": "Write 'how bad' and 'how likely' next to the worry and answer each on its own.", "context": "self" }
+  ],
+  "pocket_idea": "Rosling: frightening is not the same as dangerous; risk is how bad times how likely.",
+  "conversation_variants": {
+    "punchline_idea": "We remember a plane crash because it is frightening, not because it is likely.",
+    "thirty_sec_idea": "Hans Rosling says frightening and dangerous are different things. Fear sends attention to unlikely dangers like physical harm, captivity or contamination, and away from what is most risky. Plane crashes make headlines while the safe landings go unreported. His fix is an equation: risk equals danger times exposure. Calm down, then calculate.",
+    "question_idea": "",
+    "key_contrast_idea": "Scary versus risky"
+  }
+}

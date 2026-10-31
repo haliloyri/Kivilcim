@@ -160,6 +160,14 @@ humanizer skill: stock vocabulary, significance inflation, promotional language,
 endings, announcer phrases, negative parallelism, chatty openers such as "Picture/Imagine",
 plus rhythm checks). Chatbot artifacts / cutoff disclaimers / flattery are **errors**;
 everything else is a **warning** with a weighted "AI-tell score" per 100 words (target < 0.7).
+The Turkish list also covers the prohibitions in story-instructions (invented ratios,
+personality labels, inner motives, reception claims, ornate metaphors, "missing the train"),
+so an over-embroidered allegory can no longer score 0.00.
+
+Before submitting a batch, run `npm run story:check-docs`: it compares the prompt, the
+plan docs and `scripts/p1/lang-config.mjs` (the single source for every word range) and
+fails when they drift apart. To compare two models or two prompt versions on the same
+ids, use `npm run story:score -- tr staging/p1-a/tr staging/p1-b/tr --ids 1783`.
 
 Revision list for a language (worst first, with a per-pattern tally):
 

@@ -1,0 +1,59 @@
+{
+  "story_id": 1747,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Wright Brothers",
+    "author": "David McCullough",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of McCullough's book; no page-level check. Core account: 1901 glider at Kitty Hawk performed below expectations; brothers doubted published air-pressure tables (Lilienthal's and Smeaton's coefficient); built a small wind tunnel in their Dayton bicycle shop in autumn 1901 and tested many wing shapes; 1902 glider flew far better; powered flight 17 December 1903. Omitted on purpose: tunnel dimensions, exact number of airfoils (roughly two hundred), instrument details, the names of tables beyond Lilienthal. Details added from memory of McCullough and general record, not page-checked: eighteenth-century coefficient, shop motor, metal models, ~200 shapes, ages.",
+  "facts": [
+    "In 1901 Wilbur and Orville Wright returned to Dayton from Kitty Hawk after a glider that lifted less than their calculations predicted.",
+    "The calculations used air-pressure tables published by earlier experimenters, including Otto Lilienthal.",
+    "Wilbur concluded the published tables might be wrong rather than their glider design alone.",
+    "They built a small wooden wind tunnel in their bicycle shop in Dayton and tested a large number of wing shapes in it.",
+    "They recorded their own lift and drag results and used them to design the 1902 glider.",
+    "The 1902 glider flew far better; the powered flight at Kitty Hawk followed on 17 December 1903.",
+    "The 1901 glider was fabric over wood, lifted only by Kitty Hawk wind; Wilbur was 34, Orville 30.",
+    "A coefficient in the tables dated from the 18th century (Smeaton); the tunnel fan ran off a shop motor; models were cut from metal; about 200 wing shapes were tested."
+  ],
+  "scene_details": [
+    "a wind tunnel built behind a bicycle shop in Dayton",
+    "miniature metal wings tested one at a time"
+  ],
+  "tension": "Two bicycle makers decide the experts' numbers are wrong and test for themselves.",
+  "opening_idea": "Open on a bicycle shop in Dayton and a wooden box built to blow air across small wings.",
+  "lessons": [
+    {
+      "idea": "Test the figure everyone else trusts when your own results disagree with it.",
+      "anchor": "the Wrights measured wing shapes themselves instead of trusting tables"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which number or rule in your work do you accept only because everyone does, and how could you measure it yourself once?",
+  "use_cases": [
+    {
+      "situation": "The team relies on a benchmark nobody checked.",
+      "move": "Mention the Wrights built a wind tunnel to test published tables, and propose checking the benchmark on one real case.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend repeats a health rule you suspect is overstated.",
+      "move": "Say you want to look at the evidence together.",
+      "context": "social"
+    },
+    {
+      "situation": "Your own result keeps coming out lower than the guide says.",
+      "move": "Run a small test of your own before you change the plan.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The Wrights built a wind tunnel behind a bicycle shop: when results and tables disagree, test the tables.",
+  "conversation_variants": {
+    "punchline_idea": "Two bicycle makers doubted the experts' tables, built a wind tunnel in their shop, and flew.",
+    "thirty_sec_idea": "In 1901 the Wright brothers' glider lifted less than the published tables predicted. Instead of blaming themselves, they built a small wind tunnel in their Dayton bicycle shop and tested wing shapes one by one. Their own measurements shaped the 1902 glider, which flew much better, and powered flight followed in December 1903. McCullough tells it in The Wright Brothers.",
+    "question_idea": "",
+    "key_contrast_idea": "trust, then test"
+  }
+}

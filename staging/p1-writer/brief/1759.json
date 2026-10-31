@@ -1,0 +1,57 @@
+{
+  "story_id": 1759,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Immortal Life of Henrietta Lacks",
+    "author": "Rebecca Skloot",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Skloot's book; no page-level check. Omitted on purpose: details of the tissue-banking and legal disputes, the family's personal stories beyond the lack of knowledge and insurance, the book's treatment of Deborah Lacks. Details from memory, not page-checked: Henrietta's age at death (31), tobacco farming background, polio vaccine production. Added from memory, not page-checked: the pain in her abdomen, separate ward for Black patients at the hospital, George Gey, family learning of it by phone call, mass testing of the polio vaccine. Consent statement ('practice did not require it') is Skloot's framing as recalled.",
+  "facts": [
+    "Henrietta Lacks, a Black woman from Virginia and a mother of five, was treated for cervical cancer at Johns Hopkins in 1951.",
+    "A doctor took a sample of her tumour without asking her; practice at that time did not require consent.",
+    "The cells, later called HeLa, kept dividing in the lab, the first human cells known to do so indefinitely.",
+    "Henrietta died in October 1951, aged 31.",
+    "HeLa cells were used in work on the polio vaccine and many other research areas.",
+    "Her family did not learn about the cells until decades later and some members could not afford health insurance."
+  ],
+  "scene_details": [
+    "a tumour sample taken without being asked",
+    "cells growing in a lab long after the person died"
+  ],
+  "tension": "One person's body feeds a century of science and her family is left out of the story.",
+  "opening_idea": "Open on the sample taken from Henrietta's tumour in 1951.",
+  "lessons": [
+    {
+      "idea": "When you benefit from someone's contribution, ask for consent and name them.",
+      "anchor": "HeLa cells and the Lacks family"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Whose unseen contribution are you relying on right now, and how could you name or thank them this week?",
+  "use_cases": [
+    {
+      "situation": "A project is presented as one person's achievement.",
+      "move": "Add a slide naming the people whose data or labour it relied on.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Family history tells only one branch of the story.",
+      "move": "Ask an elder who else should be remembered.",
+      "context": "family"
+    },
+    {
+      "situation": "You are using someone else's work in your own.",
+      "move": "Message them to say how you used it.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "HeLa cells helped science for decades before the Lacks family was told: name who your progress rests on.",
+  "conversation_variants": {
+    "punchline_idea": "Cells taken from Henrietta Lacks in 1951 became the first immortal human cell line, and her family learned of it decades later.",
+    "thirty_sec_idea": "In 1951 doctors took a sample from Henrietta Lacks's cervical tumour without asking. Her cells, called HeLa, kept dividing in the lab and became the first immortal human cell line. They helped in polio vaccine work and many other fields. Her family did not know for decades. Rebecca Skloot tells the story in The Immortal Life of Henrietta Lacks.",
+    "question_idea": "",
+    "key_contrast_idea": "famous cells, unknown woman"
+  }
+}

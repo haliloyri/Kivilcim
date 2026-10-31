@@ -1,0 +1,54 @@
+{
+  "story_id": 1803,
+  "kind": "concept",
+  "book": {
+    "title": "The Culture Map",
+    "author": "Erin Meyer",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Meyer's scheduling scale (linear-time versus flexible-time) and the placements used (Germany and Switzerland linear; India and Nigeria flexible) are the book's framework. The supplied Berlin and Istanbul scene is an illustration, not a book case; no named teams or times are used.",
+  "facts": [
+    "The scheduling scale runs from linear-time to flexible-time.",
+    "In linear-time cultures people do one thing at a time, follow the agenda and deadlines, and value promptness as respect.",
+    "In flexible-time cultures people handle several things at once, adapt as circumstances change, and treat the schedule as a guide.",
+    "In Meyer's map Germany and Switzerland sit at the linear end; India and Nigeria lean flexible.",
+    "Illustration (typical, not a book case): one side joins a meeting on the minute; the other is late because a customer crisis took priority.",
+    "The linear side may read lateness as lack of discipline; the flexible side may read a rigid schedule as ignoring what is happening in front of them.",
+    "Both are managing time; they attach different values to the schedule versus the situation."
+  ],
+  "tension": "Neither side is careless with time; they give different meanings to the minute.",
+  "opening_idea": "Open on a meeting that starts on time for one side and twelve minutes late for the other.",
+  "lessons": [
+    {
+      "idea": "Time management differs in what it protects: the plan or the situation.",
+      "anchor": "The schedule as a rule and the schedule as a guide."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When you manage a team's time, do you also ask what the schedule means to each person?",
+  "use_cases": [
+    {
+      "situation": "A global team treats start times differently.",
+      "move": "Agree openly on which deadlines are firm and which can move.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague regularly joins late.",
+      "move": "Ask what usually decides their priority when two things collide.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are planning a family trip with different habits.",
+      "move": "Decide together which time is fixed and which is flexible.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Linear time protects the plan; flexible time protects the situation. Say out loud which deadlines can move.",
+  "conversation_variants": {
+    "punchline_idea": "Meyer's scheduling scale shows two sides that both manage time, with different ideas of what a minute is for.",
+    "thirty_sec_idea": "Erin Meyer's scheduling scale runs from linear-time to flexible-time. Germans and Swiss lean linear and see promptness as respect. Indians and Nigerians lean flexible and let the situation rearrange the plan. One side reads lateness as indiscipline, the other reads rigidity as not seeing what is happening.",
+    "question_idea": "",
+    "key_contrast_idea": "Takvim ve durum"
+  }
+}

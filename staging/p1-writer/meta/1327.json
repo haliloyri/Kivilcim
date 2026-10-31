@@ -1,0 +1,26 @@
+{
+  "tr": {
+    "title": "Otuz Yapmak, Otuz Sahip Olmak, Otuz Olmak",
+    "description": "Üç sütun, otuzar satır: yapmak, sahip olmak, olmak. Jack Canfield'ın egzersizi ne istediğinizi adlandırmakla başlıyor.",
+    "hook": "Sayfada görmekten en çok şaşıracağınız tek satır hangisi olurdu?",
+    "one_minute_summary": "Jack Canfield'a göre peşinden gidebilmek için ne istediğinizi bilmeniz gerekir. Egzersiz genellikle şöyle özetlenir: ölmeden önce yapmak istediğiniz otuz, sahip olmak istediğiniz otuz, olmak istediğiniz otuz şeyi yazarsınız. Üç sütun farklı sorular sorar: etkinlik, mülk, kimlik. Satırları yazarken yargılamak için bir adım yok. Liste hiçbir maddeyi gerçekleştirmez, ama ilk dürüst envanteri verir."
+  },
+  "en": {
+    "title": "Thirty to Do, Thirty to Have, Thirty to Be",
+    "description": "Three columns of thirty lines: do, have, be. Jack Canfield's exercise starts with naming what you want.",
+    "hook": "Which single line would surprise you most to find on the page?",
+    "one_minute_summary": "Jack Canfield holds that you must know what you want to pursue it. As the exercise is usually summarized, you write thirty things to do, thirty to have and thirty to be before you die. The three columns ask different questions: activity, possessions, identity. There is no step for judging lines while you write. A list does not make anything happen, but it gives a first honest inventory."
+  },
+  "es": {
+    "title": "Noventa líneas en una hoja en blanco",
+    "description": "Tres columnas de treinta líneas: hacer, tener, ser. El ejercicio de Jack Canfield empieza por nombrar lo que quieres.",
+    "hook": "¿Qué línea sería la que más te sorprendería ver en la hoja?",
+    "one_minute_summary": "Según Jack Canfield, hay que saber lo que se quiere para perseguirlo. El ejercicio suele resumirse así: escribes treinta cosas que quieres hacer, treinta que quieres tener y treinta que quieres ser antes de morir. Las tres columnas plantean preguntas distintas: actividad, posesiones, identidad. No hay ningún paso para juzgar las líneas mientras escribes. Una lista no hace que nada ocurra, pero ofrece un primer inventario sincero."
+  },
+  "de": {
+    "title": "Neunzig Zeilen auf einem Blatt",
+    "description": "Drei Spalten mit je dreißig Zeilen: tun, haben, sein. Jack Canfields Übung beginnt damit, zu benennen, was man will.",
+    "hook": "Welche einzelne Zeile würde dich auf dem Blatt am meisten überraschen?",
+    "one_minute_summary": "Nach Jack Canfield muss man wissen, was man will, um es zu verfolgen. Die Übung wird meist so zusammengefasst: Man schreibt dreißig Dinge auf, die man tun, dreißig, die man haben, und dreißig, die man sein will, bevor man stirbt. Die drei Spalten stellen verschiedene Fragen: Tätigkeit, Besitz, Identität. Beim Schreiben gibt es keinen Schritt, der die Zeilen beurteilt. Eine Liste bewirkt nichts von selbst, liefert aber eine erste ehrliche Bestandsaufnahme."
+  }
+}

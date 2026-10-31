@@ -1,0 +1,60 @@
+{
+ "story_id": 1767,
+ "kind": "anecdote",
+ "book": {
+  "title": "Surely You're Joking, Mr. Feynman!",
+  "author": "Richard P. Feynman and Ralph Leighton",
+  "year": "1985"
+ },
+ "confidence": "high",
+ "confidence_note": "Well-known episode from the book (Cornell cafeteria plate), recalled; not page-checked. Omitted as unverified: the colleague's name and exact words, the exact wording of the Nobel remark, the date, Cornell department details. Wobble-to-spin ratio stated as the medallion turning about twice for each wobble. Bethe name and ratio caveat from search results (Physics Today letter by Sidney Coleman, 1988).",
+ "facts": [
+  "After the war Feynman was at Cornell and felt burned out; physics no longer gave him pleasure and he felt he could not produce.",
+  "He decided to play with physics, whatever interested him, without caring about importance.",
+  "In the cafeteria a student tossed a plate into the air; it wobbled and the Cornell medallion on it turned.",
+  "Feynman noticed that the medallion turned faster than the wobble, about twice as fast.",
+  "He worked out the equations for the wobbling plate for fun, and a colleague asked what the use of it was; he said it had none.",
+  "Working on the plate led him to think about electron behavior, which led to the work he later received the Nobel Prize for.",
+  "A colleague, Hans Bethe in Feynman's telling, asked what the importance of it was; Feynman said it had none and he was doing it for fun.",
+  "Feynman writes that the work he later got the Nobel Prize for came from that wobbling plate. A later physicist's letter notes the ratio is the reverse of the one he stated."
+ ],
+ "scene_details": [
+  "a plate tossed into the air in the cafeteria",
+  "the red Cornell medallion turning twice per wobble",
+  "a colleague asking what it was good for"
+ ],
+ "tension": "A burned-out physicist works on the one problem that has no use.",
+ "opening_idea": "Open on the plate spinning above a cafeteria table.",
+ "lessons": [
+  {
+   "idea": "Work started only for the fun of understanding can restore the energy that duty has drained.",
+   "anchor": "the plate was useless; it led back to electrons"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What small problem at work or home would you pick up for no reason except that it interests you, and when could you give it an hour?",
+ "use_cases": [
+  {
+   "situation": "Your team is stuck and tired on a deliverable.",
+   "move": "Say a physicist once restarted by working out why a plate wobbles, and propose an hour on a side question that interests people.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A friend feels drained by their job.",
+   "move": "Ask what small puzzle they used to enjoy and when they last did it.",
+   "context": "social"
+  },
+  {
+   "situation": "You postpone a hobby because it serves no purpose.",
+   "move": "Block one hour this weekend for it with no goal.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Feynman, burned out, worked out why a tossed plate wobbles for no reason, and that led back to his Nobel work. Give a useless puzzle an hour.",
+ "conversation_variants": {
+  "punchline_idea": "Feynman got his love of physics back by working out why a plate wobbles when it is tossed in a cafeteria.",
+  "thirty_sec_idea": "Burned out at Cornell, Feynman decided to play with physics. In the cafeteria a plate wobbled in the air, its medallion turning twice per wobble. He worked out the equations for fun, and that led him back to electron work that won the Nobel.",
+  "question_idea": "",
+  "key_contrast_idea": "play, not duty"
+ }
+}

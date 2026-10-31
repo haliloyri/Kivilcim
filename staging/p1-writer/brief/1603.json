@@ -1,0 +1,60 @@
+{
+  "story_id": 1603,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Wim Hof Method",
+    "author": "Wim Hof",
+    "year": "2020"
+  },
+  "confidence": "medium",
+  "confidence_note": "From memory and secondary knowledge; book text not accessed. Finland half marathon barefoot in shorts, about -20 C, is a well-documented Hof feat; the old TR text said Arctic marathon, which is wrong. Radboud University endotoxin study: 24 healthy young men, 12 trained for 10 days, fewer flu-like symptoms, higher adrenaline and anti-inflammatory response; recalled from published research, whether the book describes it exactly is unverified. Three pillars (breathing, cold, commitment) recalled; old TR said meditation. Old claims (ancestors, 'doctors said hypothermia inevitable', Hof himself injected) dropped. Small sample caveat added in the story. DB title is Turkish 'Soguk Yontem'; English title assumed.",
+  "facts": [
+    "Hof ran a half marathon barefoot in shorts above the Arctic Circle in Finland at about -20 C.",
+    "He teaches that such feats are learnable.",
+    "Three pillars: breathing, cold exposure, commitment.",
+    "Breathing: deliberate deep breaths followed by breath-holding.",
+    "Radboud University study: 24 healthy young men injected with bacterial endotoxin.",
+    "Twelve trained ten days; twelve did not.",
+    "Trained group reported fewer flu-like symptoms, higher adrenaline and anti-inflammatory response.",
+    "Small sample; does not show anyone can match Hof."
+  ],
+  "scene_details": [
+    "barefoot in shorts at minus 20",
+    "an injection of endotoxin",
+    "twelve trained, twelve not"
+  ],
+  "tension": "A dramatic feat versus a small study.",
+  "opening_idea": "Barefoot half marathon.",
+  "lessons": [
+    {
+      "idea": "Separate story from checkable evidence.",
+      "anchor": "24 volunteers."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which claim you recently believed rested on a striking story rather than on anything you could check yourself?",
+  "use_cases": [
+    {
+      "situation": "Friend raves about cold showers",
+      "move": "Ask what has been tested.",
+      "context": "social"
+    },
+    {
+      "situation": "Vendor dramatic case",
+      "move": "Ask how many customers.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Curious about breathing practice",
+      "move": "Look up the research and ask a doctor.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Hof's barefoot run and a 24-person study are different evidence.",
+  "conversation_variants": {
+    "punchline_idea": "A barefoot run and a 24-person study are different kinds of evidence.",
+    "thirty_sec_idea": "Run, study, caveat.",
+    "question_idea": "",
+    "key_contrast_idea": "Feat versus evidence"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "story_id": 1721,
+  "kind": "anecdote",
+  "book": {
+    "title": "A Short History of Nearly Everything",
+    "author": "Bill Bryson",
+    "year": "2003"
+  },
+  "confidence": "medium",
+  "confidence_note": "Core account (Wegener's idea that continents were once joined and moved; the matching Africa and South America coastlines; similar fossils and rock belts on both sides of the ocean; rejection by geologists because he offered no convincing mechanism; later vindication by ocean-floor measurements and plate tectonics) is from the supplied text and consistent with general sources (secondary sources confirm fossil evidence such as Lystrosaurus and that the lack of mechanism sank the idea). Details recalled from Bryson but NOT verified in this session: Wegener being a meteorologist rather than a geologist, the sunken-land-bridge explanation favoured by contemporaries, his death in Greenland in 1930, and the year 1912. Omitted: specific numbers, named critics, Bryson's quoted wording.",
+  "facts": [
+    "Alfred Wegener noticed that the coasts of Africa and South America fit together.",
+    "He gathered similar fossils and similar rock belts on the two sides of the ocean into one idea: the continents had once been joined and had moved.",
+    "The geologists of his time rejected the theory because he could not show a convincing force that could push continents.",
+    "Later, measurements of the ocean floor and the theory of plate tectonics confirmed the basic direction of his observation.",
+    "Wegener was a meteorologist rather than a geologist (recalled).",
+    "His critics preferred explanations such as sunken land bridges for the matching fossils (recalled).",
+    "Wegener died on an expedition to Greenland in 1930, before his idea was accepted (recalled).",
+    "Wegener called the single ancient landmass Pangaea (recalled).",
+    "Geologists doubted that continents could plough through the solid ocean floor (recalled).",
+    "Rock-belt example he used: the Appalachians in North America continuing as the Scottish Highlands (recalled, not verified).",
+    "He set the theory out in a book published in 1915 (recalled)."
+  ],
+  "scene_details": [
+    "a map where two coastlines fit like pieces",
+    "the same fossil found on two continents",
+    "a rock belt that continues across an ocean"
+  ],
+  "tension": "The observation was right, and the explanation was missing, so the whole idea was thrown out for decades.",
+  "opening_idea": "Open on the two coastlines on a map and the fossils found on both sides.",
+  "lessons": [
+    {
+      "idea": "Keep a strong observation even when you cannot yet explain it, and separate the fact from the missing mechanism.",
+      "anchor": "Wegener's matching coasts and fossils without a mechanism"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When did you last reject something that was true because the explanation offered with it was weak, and what would you ask to separate the two?",
+  "use_cases": [
+    {
+      "situation": "A colleague notes a pattern in the data they cannot explain.",
+      "move": "Ask what the observation is and what is still missing, separately.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend's odd theory is dismissed at dinner.",
+      "move": "Ask what observation it came from before arguing.",
+      "context": "social"
+    },
+    {
+      "situation": "You dismiss your own hunch because you cannot say why.",
+      "move": "Write down the observation alone and revisit it later.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Wegener's coastlines fit; the force was missing: a right observation can be rejected for a missing explanation.",
+  "conversation_variants": {
+    "punchline_idea": "Wegener saw continents fit like a puzzle and was rejected because he could not say what moved them.",
+    "thirty_sec_idea": "Alfred Wegener saw that Africa and South America fit, and that fossils and rock belts matched across the ocean. Geologists rejected continental drift because he had no convincing force to move continents. Decades later, ocean-floor measurements and plate tectonics confirmed the basic direction of his idea.",
+    "question_idea": "",
+    "key_contrast_idea": "evidence or mechanism"
+  }
+}

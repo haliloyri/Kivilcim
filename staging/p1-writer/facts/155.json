@@ -1,0 +1,220 @@
+{
+ "book_no": 155,
+ "title": "Full Catastrophe Living",
+ "authors": [
+  "Jon Kabat-Zinn"
+ ],
+ "year": "1990",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Full_Catastrophe_Living",
+  "https://en.wikipedia.org/wiki/The_full_catastrophe",
+  "https://www.exploringtheproblemspace.com/new-blog/2017/1/28/life-is-suffering-but-dont-worry",
+  "https://cavac.at/cavacopedia/Full%20Catastrophe%20Living",
+  "https://tricycle.org/magazine/dukkha-magnet-zone/",
+  "https://www.supersummary.com/full-catastrophe-living/part-3-summary",
+  "https://en.wikipedia.org/wiki/The_full_catastrophe"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The book grew out of the Stress Reduction Clinic at the University of Massachusetts Medical Center, founded in 1979 by Kabat-Zinn.",
+   "source": "Wikipedia Full Catastrophe Living",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "The clinic took patients referred by physicians who were 'falling through the cracks' of health care: a wide range of diagnoses, not responding completely to traditional treatment.",
+   "source": "Wikipedia",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "The Stress Reduction and Relaxation Program, later renamed mindfulness-based stress reduction (MBSR), was an eight-week course teaching mindfulness meditation and mindful hatha yoga.",
+   "source": "Wikipedia",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Part I covers the body scan, mindfulness of breathing, mindful hatha yoga, walking meditation and mindfulness of daily activities such as eating.",
+   "source": "Wikipedia",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "MBSR is today offered in more than 740 hospitals, clinics and stand-alone programs worldwide (Wikipedia's figure, not necessarily the book's).",
+   "source": "Wikipedia",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "The title comes from Zorba the Greek: asked whether he has been married, Zorba lists wife, house, kids and calls it 'the full catastrophe'. Exact wording differs between novel, film and translation.",
+   "source": "Wikipedia Full Catastrophe Living; Wikipedia The full catastrophe",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Kabat-Zinn's editor worried that the word 'catastrophe' in the title might repel readers; the phrase 'just kept coming back' to him and he kept it.",
+   "source": "Wikipedia",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Kabat-Zinn redefines the 'full catastrophe' as an affirmation of life's variety and chaos, to be embraced, not lamented.",
+   "source": "Wikipedia The full catastrophe",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Part IV on chronic pain includes the idea of seeing a headache as 'just a headache' rather than 'my headache'.",
+   "source": "Wikipedia",
+   "confidence": "medium"
+  },
+  {
+   "id": "f10",
+   "claim": "Kabat-Zinn writes that people are on 'automatic pilot so much of the time' and describes 'the blanket of unawareness'; Part III covers how habitual, automatic stress reactions compound stress. (Phrases come from Kindle quotations on a blog; wording not checked against print.)",
+   "source": "exploringtheproblemspace.com; Wikipedia",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Example participants in the book: 'Mary', whose body scan brought up tension linked to childhood trauma, and a young woman whose walking meditation helped with extreme anxiety.",
+   "source": "Wikipedia",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "A Tricycle introduction (editorial, not clearly the book) says more than five thousand people had taken the eight-week outpatient course, with diagnoses from cancer and AIDS to high blood pressure, back pain and panic attacks; 85 percent reported a significant reduction in symptoms and 93 percent kept some contemplative practice (self-reported).",
+   "source": "tricycle.org dukkha-magnet-zone",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "The program (per the same Tricycle introduction): a 2.5-hour weekly class of about thirty people, 45 minutes of practice a day six days a week, a day-long silent retreat, an individual interview before joining; focus on not-striving, on healing as different from curing, and on watching thoughts as events in awareness.",
+   "source": "tricycle.org dukkha-magnet-zone",
+   "confidence": "medium"
+  },
+  {
+   "id": "f14",
+   "claim": "The book says people are 'more asleep than awake, even when we are awake' and calls unawareness a 'blanket of unawareness' that 'may also be lethal, either rapidly or slowly' (Kindle quotations on a blog).",
+   "source": "exploringtheproblemspace.com",
+   "confidence": "medium"
+  },
+  {
+   "id": "f15",
+   "claim": "Part III has chapter 19 'Stuck in Stress Reactivity' and chapter 20 'Responding to Stress Instead of Reacting'. A text excerpt says our habitual and automatic reactions to stressors, especially maladaptive ones, determine in large measure how much stress we experience; a third-party summary says the book proposes becoming aware of one's own thoughts as the way to take control back from stress reactions.",
+   "source": "supersummary Part 3; fan-blog excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f16",
+   "claim": "One critical blogger finds the book's picture of everyday unawareness overdrawn and says it pathologises ordinary negative feelings.",
+   "source": "exploringtheproblemspace.com",
+   "confidence": "medium"
+  },
+  {
+   "id": "f17",
+   "claim": "Chapter 17 credits Hans Selye with popularising 'stress' in the 1950s and argues that stress contributes to illness alongside pathogens (third-party summary).",
+   "source": "supersummary Part 3",
+   "confidence": "medium"
+  },
+  {
+   "id": "f18",
+   "claim": "The phrase comes from the 1964 film Zorba the Greek (screenplay by Michael Cacoyannis): on a boat to Crete, Basil (Alan Bates), an English bookish mine owner, asks whether Zorba (Anthony Quinn) is married; the reply lists 'Wife, children, house, everything' and ends 'The full catastrophe'.",
+   "source": "Wikipedia The full catastrophe",
+   "confidence": "high"
+  },
+  {
+   "id": "f19",
+   "claim": "Kazantzakis's 1946 novel never uses the phrase; there Zorba calls marriage 'the Great Folly'. In a 2011 interview Cacoyannis said he chose the non-idiomatic phrase deliberately, for humor and impact. (This corrects the old text, which put the line in the novel.)",
+   "source": "Wikipedia The full catastrophe",
+   "confidence": "high"
+  },
+  {
+   "id": "f20",
+   "claim": "Most later uses of 'the full catastrophe' refer to the stresses of marriage and family life, e.g. David Carkeet's 1990 comic novel The Full Catastrophe and John Mellencamp's 1996 song of the same name.",
+   "source": "Wikipedia The full catastrophe",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Kabat-Zinn asked 'what if we taught these patients meditation?' and colleagues looked on with suspicion",
+   "reason": "Invented dialogue and reaction"
+  },
+  {
+   "claim": "First participants had chronic pain, cancer, heart disease; after 8 weeks pain, sleep and anxiety improved and measured",
+   "reason": "Outcome numbers/claims not found in sources for the book"
+  },
+  {
+   "claim": "The program took the core of Buddhist meditation and removed the religious context",
+   "reason": "Not verified as the book's account; only 'mindfulness meditation and hatha yoga' is stated"
+  },
+  {
+   "claim": "Over 700 hospitals worldwide, the small room as the beginning",
+   "reason": "'Small room' invented; hospital count taken only as Wikipedia's 740+"
+  },
+  {
+   "claim": "Dialogue with a woman about her drive home ('Arabaydım. Sonra evdeydim')",
+   "reason": "Invented scene, no source"
+  },
+  {
+   "claim": "Brain's ability to push routine tasks to the background as a described mechanism; shower/telephone examples",
+   "reason": "Not in sources"
+  },
+  {
+   "claim": "Zorba line 'Evli mi? Elbette. Çocuklar, ev, tam felaket!' as exact wording",
+   "reason": "Wording varies, and the phrase is from the 1964 film, not from Kazantzakis's novel"
+  },
+  {
+   "claim": "'Pain is inevitable, suffering is optional' presented as Kabat-Zinn's teaching; 'fighting pain makes it bigger'",
+   "reason": "Not confirmed as the book's statement"
+  },
+  {
+   "claim": "Book year 1990 as 'Farkındalık Temelli Yaşam' original",
+   "reason": "Original is Full Catastrophe Living, 1990; Turkish title only a local one"
+  }
+ ],
+ "stories": {
+  "1561": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f12",
+    "f13"
+   ],
+   "note": "Origin of the clinic; outcome claims and invented dialogue removed."
+  },
+  "1562": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f10",
+    "f4",
+    "f11",
+    "f14",
+    "f15",
+    "f16",
+    "f9",
+    "f11",
+    "f17"
+   ],
+   "note": "Concept story; invented woman scene removed. Low confidence, thin material."
+  },
+  "1563": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f18",
+    "f19",
+    "f20"
+   ],
+   "note": "Title story; pain/suffering paradox dropped."
+  }
+ }
+}

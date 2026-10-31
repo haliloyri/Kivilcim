@@ -1,0 +1,61 @@
+{
+  "story_id": 1291,
+  "kind": "concept",
+  "book": {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "DB lists the title only as the Turkish 'Zengin Baba Fakir Baba'; English title used. Written from well-known content (memory plus summaries), book text not opened. Old TR text errors: it says his own father was a 'retired civil servant whose pay stopped at retirement' and rich dad was 'a neighbour' and that Kiyosaki calls the cycle a 'hamster wheel'. In the book the poor dad (his real father) holds a Ph.D. and heads Hawaii's department of education, then resigns to run for lieutenant governor, loses and is out of work; rich dad is the father of his friend Mike and left school early; Kiyosaki's phrase is 'rat race', not 'hamster wheel'. Omitted: exact ages and years, the 10-cents-an-hour episode, the claim about the house's status (kept for the lesson-free part). Ten-cents-an-hour store episode: medium confidence on the wage, age and Rich Dad's response (remembered from the book, not re-checked).",
+  "facts": [
+    "Kiyosaki grew up with two fathers: his own, whom the book calls Poor Dad, and the father of his best friend Mike, Rich Dad.",
+    "Poor Dad held a Ph.D. and ran Hawaii's state education system; Rich Dad left school early and built a business empire in Hawaii.",
+    "Poor Dad's advice: go to school, get good grades, find a safe job.",
+    "At about nine, Kiyosaki and Mike worked in Rich Dad's store for ten cents an hour; Kiyosaki complained about the pay and Rich Dad did not raise it.",
+    "Poor Dad held that the love of money is the root of all evil; Rich Dad held that the lack of money is.",
+    "When something cost too much, Poor Dad said 'I can't afford it'. Rich Dad banned that phrase in his home and asked 'How can I afford it?' instead.",
+    "Poor Dad resigned from his state job to run for lieutenant governor, lost, and found himself out of work. Rich Dad became one of the richest men in Hawaii.",
+    "Kiyosaki's summary: the poor and middle class work for money; the rich make money work for them."
+  ],
+  "scene_details": [
+    "A father with a Ph.D. running the state's schools and a friend's father who left school early",
+    "The two phrases: 'I can't afford it' and 'How can I afford it?'",
+    "A resignation letter to run for office, followed by an election loss"
+  ],
+  "tension": "Two men the author trusted gave him opposite answers about money, and only one had finished school.",
+  "opening_idea": "Open on the two fathers side by side: the Ph.D. who ran the schools and the friend's father who had left school.",
+  "lessons": [
+    {
+      "idea": "Replacing 'I can't afford it' with a question forces you to look for the route rather than closing the topic.",
+      "anchor": "Rich Dad banned 'I can't afford it' and asked how he could afford it.",
+      "everyday_example_idea": "A shop owner stuck on a costly repair asks what could pay for it instead of saying no."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which purchase or plan have you dismissed with 'I can't afford it' that you could still rework into a question about how?",
+  "use_cases": [
+    {
+      "situation": "A teammate rejects a proposal for cost.",
+      "move": "Rich Dad asked 'How can I afford it?'; ask the team what would have to be true for it to be affordable.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child asks for something expensive.",
+      "move": "Skip the flat no and ask how they could earn or save part of it.",
+      "context": "family"
+    },
+    {
+      "situation": "You catch yourself dropping a goal for money reasons.",
+      "move": "Write the goal and one way, however slow, it could be paid for.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Rich Dad banned 'I can't afford it' in his house, because 'How can I afford it?' makes the mind search.",
+  "conversation_variants": {
+    "punchline_idea": "Kiyosaki's rich dad banned one sentence at home: 'I can't afford it'.",
+    "thirty_sec_idea": "Kiyosaki had two fathers, one with a Ph.D. who ran Hawaii's schools and one, his best friend's dad, who left school early. The first said get good grades and a safe job. The second banned 'I can't afford it' and asked 'How can I afford it?' The first lost an election and was out of work, the second grew rich.",
+    "question_idea": "",
+    "key_contrast_idea": "Afford it, or how?"
+  }
+}

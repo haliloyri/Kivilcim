@@ -1,0 +1,60 @@
+{
+  "story_id": 1748,
+  "kind": "anecdote",
+  "book": {
+    "title": "Into Thin Air",
+    "author": "Jon Krakauer",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of the book; no page-level check. Core: 10 May 1996, Everest summit day for Adventure Consultants (Rob Hall) and Mountain Madness (Scott Fischer); a 2 p.m. turnaround time was set; many climbers were above it; client Doug Hansen reached the summit after 4 p.m. with Hall; a storm hit; eight climbers died over 10-11 May including Hall, Fischer and Hansen. Omitted on purpose: Krakauer's own summit time, names of other dead, exact times of the storm, oxygen figures, his explanations beyond the turnaround rule. Added from memory of Krakauer, not page-checked: Krakauer's summit time, bottleneck and late ropes, Hansen's job, 1995 turnback, satellite call.",
+  "facts": [
+    "On 10 May 1996 two commercial expeditions, led by Rob Hall and Scott Fischer, climbed Everest on the same day; Krakauer was in Hall's group.",
+    "The guides had set a turnaround time of 2 p.m.: anyone not on the summit by then was supposed to turn back.",
+    "Many climbers were still climbing after 2 p.m.",
+    "Hall's client Doug Hansen reached the summit after 4 p.m., and Hall stayed with him.",
+    "A storm arrived that evening.",
+    "Eight people died on the mountain on 10 and 11 May, including Hall, Fischer and Hansen.",
+    "Krakauer links the disaster to decisions on the mountain, including the failure to enforce the turnaround time.",
+    "Krakauer reached the summit before 2 p.m. and started down; queues and late fixed ropes slowed climbers near the top.",
+    "Hansen was a postal worker; Hall had turned him back a year earlier; Hall spoke by satellite phone with his pregnant wife Jan Arnold."
+  ],
+  "scene_details": [
+    "a rule: 2 p.m. summit or turn back",
+    "a client reaching the top after 4 p.m."
+  ],
+  "tension": "A turnaround time everyone had agreed on was passed by hours.",
+  "opening_idea": "Open on 2 p.m., the hour set for turning back, and the climbers still going up.",
+  "lessons": [
+    {
+      "idea": "Set a stopping rule before the push and decide who enforces it.",
+      "anchor": "the 2 p.m. turnaround time was set but not kept"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which project or purchase has a point where you should stop, and what rule could you write down now so it is not decided in the heat of the moment?",
+  "use_cases": [
+    {
+      "situation": "A project is over budget, but the team says it is nearly done.",
+      "move": "Mention the 2 p.m. turnaround rule on Everest and ask what limit was agreed at the start.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are about to push on a long drive because you are close.",
+      "move": "Agree with your passenger on a time to stop and check it.",
+      "context": "family"
+    },
+    {
+      "situation": "You are deep into a goal and not sure of your limit.",
+      "move": "Write the stopping point on a card today.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "On Everest the turnaround time was 2 p.m. and it was passed: write your stopping rule before the push.",
+  "conversation_variants": {
+    "punchline_idea": "On Everest in 1996 the turnaround time was 2 p.m., and a client was still reaching the summit after 4.",
+    "thirty_sec_idea": "On 10 May 1996 guides on Everest had set a 2 p.m. turnaround time. Many climbers were still climbing after that, and Rob Hall stayed with his client Doug Hansen, who reached the summit after 4. A storm came that evening, and eight people died over the two days. Jon Krakauer, who was there, ties it to decisions, including keeping that rule only on paper.",
+    "question_idea": "",
+    "key_contrast_idea": "rule on paper, rule in practice"
+  }
+}

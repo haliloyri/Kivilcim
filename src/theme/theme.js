@@ -89,7 +89,7 @@ export const ACCENTS = {
       onPrimary: '#FFFFFF',
       primaryText: '#1F5F5B',
       primaryContainer: '#E2EDEA',
-      ctaGradientStart: '#2A716C',
+      ctaGradientStart: '#1F5F5B',          // flat CTA: no gradient
       ctaGradientEnd: '#1F5F5B',
     },
     dark: {
@@ -97,8 +97,8 @@ export const ACCENTS = {
       onPrimary: '#1A1A1A',
       primaryText: '#7CC0B6',
       primaryContainer: '#1F3634',
-      ctaGradientStart: '#8CCBC1',
-      ctaGradientEnd: '#6DB3A8',
+      ctaGradientStart: '#7CC0B6',          // flat CTA: no gradient
+      ctaGradientEnd: '#7CC0B6',
     },
   },
   navy: {
@@ -108,7 +108,7 @@ export const ACCENTS = {
       onPrimary: '#FFFFFF',
       primaryText: '#1F3A5C',
       primaryContainer: '#E3E9F1',
-      ctaGradientStart: '#2C4A73',
+      ctaGradientStart: '#1F3A5C',          // flat CTA: no gradient
       ctaGradientEnd: '#1F3A5C',
     },
     dark: {
@@ -116,8 +116,8 @@ export const ACCENTS = {
       onPrimary: '#1A1A1A',
       primaryText: '#8FB0D9',
       primaryContainer: '#1E2A3A',
-      ctaGradientStart: '#9DBCE2',
-      ctaGradientEnd: '#7FA2CF',
+      ctaGradientStart: '#8FB0D9',          // flat CTA: no gradient
+      ctaGradientEnd: '#8FB0D9',
     },
   },
   ochre: {
@@ -127,16 +127,16 @@ export const ACCENTS = {
       onPrimary: '#221C14',
       primaryText: '#8A5A0E',            // text variant (5.3:1 on paper)
       primaryContainer: '#F6E7C8',
-      ctaGradientStart: '#DDA343',
-      ctaGradientEnd: '#C98A1E',
+      ctaGradientStart: '#D4952A',          // flat CTA: no gradient
+      ctaGradientEnd: '#D4952A',
     },
     dark: {
       primary: '#E0A53C',
       onPrimary: '#1A1A1A',
       primaryText: '#E0A53C',
       primaryContainer: '#35291A',
-      ctaGradientStart: '#E8B458',
-      ctaGradientEnd: '#D4952A',
+      ctaGradientStart: '#E0A53C',          // flat CTA: no gradient
+      ctaGradientEnd: '#E0A53C',
     },
   },
 };

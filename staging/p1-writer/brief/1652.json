@@ -1,0 +1,58 @@
+{
+  "story_id": 1652,
+  "kind": "concept",
+  "book": {
+    "title": "Finding Flow",
+    "author": "Mihaly Csikszentmihalyi",
+    "year": "1997"
+  },
+  "confidence": "low",
+  "confidence_note": "The book's discussion of turning routine work into flow (set own goals, find feedback, bring full attention) is well known; the factory-worker case is taken from the reference text and could not be checked against the book (web search found only secondary summaries; a named assembly-line worker with timing figures appears in Csikszentmihalyi's earlier Flow, not verified for this book). Omitted on purpose: any name, cycle time, count or direct quote; the three questions are paraphrased, not quoted.",
+  "facts": [
+    "Csikszentmihalyi describes a factory worker doing a monotonous, repetitive task: the same movement for hours.",
+    "Many workers in that kind of job find it boring, meaningless and draining.",
+    "This worker kept setting himself small goals: finish this batch in less time, make fewer errors, be faster this morning than yesterday morning.",
+    "Csikszentmihalyi's reading: the worker turned the same task into a flow activity. He set the challenge himself, feedback came instantly, concentration came on its own.",
+    "The book presents this as a learnable skill: for any activity ask what could add challenge, how to get immediate feedback, and what brings your full attention to the task.",
+    "Flow depends on a person's relationship with the activity, not on the activity itself: the same job can bore one person and absorb another."
+  ],
+  "scene_details": [
+    "the same movement repeated for hours",
+    "a batch finished against the clock",
+    "a comparison between this morning and yesterday morning"
+  ],
+  "tension": "Same monotonous job, but most workers find it deadening while this one finds it absorbing.",
+  "opening_idea": "A line where the hands repeat one movement for hours, and one worker who treats it differently from the rest.",
+  "lessons": [
+    {
+      "idea": "Give a routine task a target you set yourself and a way to see right away whether you hit it.",
+      "anchor": "the worker's own targets for each batch and the instant feedback of finished pieces"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which ordinary task in your week could you give a small target, and how would you see right away whether you reached it?",
+  "use_cases": [
+    {
+      "situation": "A repetitive chore you dread.",
+      "move": "Pick one measurable target for the chore today and check it when you finish.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague complains the work is pointless.",
+      "move": "Ask what small target they could set on the work itself, like the factory worker who raced the clock on each batch.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Kids resist a daily tidy-up.",
+      "move": "Offer a small target, like finishing before a song ends, and compare it with yesterday.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The factory worker made a repeated movement absorbing by setting his own target and checking each batch.",
+  "conversation_variants": {
+    "punchline_idea": "The same factory job bored most people and absorbed one worker who kept racing his own morning from the day before.",
+    "thirty_sec_idea": "Factory worker, repetitive job, others find it deadening, he sets small targets each batch, checks errors and speed against yesterday; Csikszentmihalyi calls it flow made by oneself.",
+    "question_idea": "",
+    "key_contrast_idea": "Dull job, own targets"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1489,
+  "verdict": "keep",
+  "verify_note": "Not web-verified; Rat Park (Alexander) and Vietnam heroin example from Chasing the Scream (2015), brief as written.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Rat Park deneyi",
+    "description": "Johann Hari, Bruce Alexander'ın boş kafesteki fareye değil kafesin kendisine baktığını ve Rat Park'ı kurduğunu anlatıyor. Parktaki fareler uyuşturucu suyundan çok daha az içti.",
+    "hook": "Bir alışkanlığa direnemeyen birine bakarken, onun günlerinde neyin eksik olduğunu sordunuz mu?",
+    "one_minute_summary": "Johann Hari, Chasing the Scream kitabında klasik deneyi anlatıyor: boş kafeste yalnız bir fare, bir şişe su, bir şişe uyuşturucu karışımı. Fare ikinci şişeye dönüp duruyordu. Psikolog Bruce Alexander, yapacak başka şeyi olmayan bir hayvandan çok şey öğrenilemeyeceğinden şüphelendi ve içinde başka fareler, oyuncaklar ve alan olan Rat Park'ı kurdu. Parktaki fareler çok daha az içti. Hari bunu Vietnam'daki askerlerle yan yana koyuyor. Yine de Rat Park'ı tekrarlayanların sonuçları karışık çıktı ve kitap eleştiri aldı; bu kesin hüküm değil, ciddi bir itiraz."
+  },
+  "en": {
+    "title": "The Rat Park experiment",
+    "description": "Johann Hari tells how Bruce Alexander questioned the lone-rat addiction experiment and built Rat Park. The park rats drank far less of the drugged water.",
+    "hook": "Before asking what someone can't resist, have you asked what is missing from their days?",
+    "one_minute_summary": "In Chasing the Scream, Johann Hari describes the classic experiment: a rat alone in a bare cage with water and drugged water. It kept returning to the drug. Psychologist Bruce Alexander doubted that a lone animal says much about people, so he built Rat Park, with other rats and toys. Those rats drank far less. Hari sets this beside Vietnam soldiers who mostly quit at home. Later repeats of Rat Park gave mixed results and the book drew criticism, so treat it as a serious challenge, not a verdict."
+  },
+  "es": {
+    "title": "El experimento de Rat Park",
+    "description": "Johann Hari cuenta cómo Bruce Alexander dudó del experimento de la rata sola y creó Rat Park. Las ratas del parque bebieron mucha menos agua con droga.",
+    "hook": "Antes de preguntar qué no puede resistir alguien, ¿has preguntado qué falta en sus días?",
+    "one_minute_summary": "En Chasing the Scream, Johann Hari recoge el experimento clásico: una rata sola en una jaula vacía con una botella de agua y otra con droga. Volvía una y otra vez a la segunda. El psicólogo Bruce Alexander desconfió del montaje y creó Rat Park, con otras ratas, juguetes y espacio. Allí bebieron mucha menos droga. Hari lo une a los soldados de Vietnam, que en su mayoría dejaron la heroína. Repetir Rat Park dio resultados desiguales y el libro recibió críticas, así que es un reto, no una sentencia."
+  },
+  "de": {
+    "title": "Das Rat-Park-Experiment",
+    "description": "Johann Hari erzählt, wie Bruce Alexander das Experiment mit der einsamen Ratte anzweifelte und den Rat Park baute. Die Tiere im Park tranken viel weniger vom Drogenwasser.",
+    "hook": "Bevor du fragst, was jemand nicht lassen kann: Hast du gefragt, was in seinen Tagen fehlt?",
+    "one_minute_summary": "In Chasing the Scream beschreibt Johann Hari das klassische Experiment: eine Ratte allein im kahlen Käfig, eine Flasche Wasser, eine mit Droge. Sie kehrte immer wieder zur zweiten zurück. Der Psychologe Bruce Alexander traute dem Aufbau nicht und ließ den Rat Park bauen, mit anderen Ratten, Spielzeug und Platz. Dort tranken die Tiere viel weniger. Hari legt dazu die Soldaten in Vietnam, von denen die meisten nach der Rückkehr aufhörten. Spätere Wiederholungen ergaben ein gemischtes Bild, und das Buch wurde kritisiert. Es ist also ein ernster Einwand, kein letztes Wort."
+  }
+}

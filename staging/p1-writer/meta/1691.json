@@ -1,0 +1,35 @@
+{
+  "story_id": 1691,
+  "verdict": "keep",
+  "verify_note": "Old 'I-language', curiosity question and strength-then-growth feedback sequence not tied to the book and dropped. Kept three confirmed strategies: take feedback well, acknowledge the other person's feelings, fix-it statement. Sources: Atomic Object relationship-management post, SOA newsletter, Shortform; book wording not read, confidence low.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Suçlamada Çözüm Cümlesi",
+    "description": "Konuşma suçlamaya döndüğünde kitabın önerdiği hamle şu: bir sorun olduğunu söyleyin ve bir iki fikir getirin. Yanında geri bildirimi almak ve duyguyu kabul etmek için iki hamle daha var.",
+    "hook": "Hep suçlamayla biten konuşmanıza bir sonraki sefer hangi fikri getirirsiniz?",
+    "one_minute_summary": "Bradberry ile Greaves ilişki yönetimini birkaç somut hamleyle anlatıyor. Geri bildirim alırken savunmaya geçmeyin, dinleyin, geçerli olanı ayıklayın ve bir plan yapıp paylaşın. Biri güçlü duygu gösterdiğinde duyguyu kabul edin, nasıl yardımcı olabileceğinizi sorun ve duyduğunuzu özetleyin. Konuşma suçlamaya sapınca da bir sorun olduğunu söyleyip bir iki çözüm fikri sunun. Bu hamlelerin hiçbiri karşınızdakinin önce değişmesini beklemiyor. Üçü de kitabın 66 stratejisinden."
+  },
+  "en": {
+    "title": "A Fix-It Sentence for Blame",
+    "description": "When a talk slides into blame, Bradberry and Greaves suggest saying there is a problem and offering one or two ideas. Two other small moves cover feedback and strong feelings.",
+    "hook": "What idea could you bring next time a familiar conversation turns to blame?",
+    "one_minute_summary": "Bradberry and Greaves break relationship management into plain moves. When someone shows strong emotion, acknowledge it, ask how you can help and summarize what you heard. When feedback comes, do not get defensive: listen, sort out what is valid and share a plan. When a conversation slides into blame or complaining, name the problem and offer one or two ideas, a fix-it statement. None of the three needs the other person to change first."
+  },
+  "es": {
+    "title": "Una frase de arreglo",
+    "description": "Cuando la charla se desliza hacia la culpa, Bradberry y Greaves proponen decir que hay un problema y ofrecer una o dos ideas. Otros dos gestos cubren los comentarios y las emociones fuertes.",
+    "hook": "¿Qué idea podrías llevar la próxima vez que una conversación conocida acabe en reproches?",
+    "one_minute_summary": "Bradberry y Greaves reducen la gestión de las relaciones a gestos sencillos. Si alguien muestra una emoción fuerte, reconócela, pregunta cómo ayudar y resume lo que oíste. Ante un comentario, no te pongas a la defensiva: escucha, separa lo válido y comparte un plan. Y si la conversación se desliza hacia la culpa, nombra el problema y ofrece una o dos ideas. Ninguno de los tres gestos exige que el otro cambie primero."
+  },
+  "de": {
+    "title": "Wenn das Gespräch in Schuld kippt",
+    "description": "Rutscht ein Gespräch in Schuld, raten Bradberry und Greaves, das Problem zu nennen und ein bis zwei Ideen anzubieten. Zwei weitere Züge betreffen Feedback und starke Gefühle.",
+    "hook": "Welche Idee könntest du beim nächsten Mal in ein Gespräch mitbringen, das immer in Vorwürfen endet?",
+    "one_minute_summary": "Bradberry und Greaves zerlegen Beziehungsmanagement in schlichte Züge. Bei Feedback nicht in die Defensive gehen, sondern zuhören, aussortieren, was zutrifft, und einen Plan teilen. Zeigt jemand starke Gefühle, anerkennen, fragen, wie man helfen kann, und zusammenfassen, was man gehört hat. Rutscht ein Gespräch in Schuld oder Klage, das Problem nennen und ein bis zwei Ideen anbieten. Keiner der Züge setzt voraus, dass der andere sich zuerst ändert."
+  }
+}

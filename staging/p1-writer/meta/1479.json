@@ -1,0 +1,35 @@
+{
+  "story_id": 1479,
+  "verdict": "keep",
+  "verify_note": "Libet numbers corrected to the 1983 paper (about 550 ms readiness potential, about 200 ms reported urge, six subjects, forty trials). That Harari cites Libet is stated by commentators. Criminal-responsibility passage dropped. Medium confidence.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Libet'in saat deneyi",
+    "description": "Libet'in 1983 deneyinde beyin sinyali, deneklerin hareket etmek istediklerini söylemesinden önce başlıyordu. Harari bu tür deneyleri özgür iradeye karşı kullanıyor.",
+    "hook": "Hangi kararınız, gerekçeleriniz hikâyenin yalnızca bir kısmıysa farklı görünürdü?",
+    "one_minute_summary": "Libet'in 1983 çalışmasında altı denek, canları istediği an bileklerini oynattı ve isteğin ne zaman geldiğini noktası 2,56 saniyede dönen bir saatten söyledi. Beyin sinyali harekete yaklaşık 550 milisaniye kala başlıyor, bildirilen istek yaklaşık 200 milisaniye kala geliyordu. Yuval Noah Harari, Homo Deus'ta özgür iradeyi bilimle çelişen bir iddia sayıyor ve yorumculara göre bu tür deneylere yaslanıyor. Libet'in kendisi son anda bir veto payı bıraktı. Sonraki çalışmalar, hazırlık potansiyelinin bir karar sinyali olduğu okumasını sorguluyor."
+  },
+  "en": {
+    "title": "Libet's clock experiment",
+    "description": "In Libet's 1983 study the brain signal began before volunteers said they wanted to move. Harari uses experiments like this against free will.",
+    "hook": "Which decision of yours would look different if your reasons were only part of the story?",
+    "one_minute_summary": "In Libet's 1983 study six volunteers flexed a wrist whenever they felt like it and reported the position of a clock dot, which turned every 2.56 seconds, when they first felt the urge. The brain signal began about 550 milliseconds before the flex and the reported urge about 200 milliseconds before it. Yuval Noah Harari calls free will a claim that conflicts with science in Homo Deus and, commentators say, leans on this kind of experiment. Libet himself kept a veto for the last moment. Later work questions reading the signal as a decision."
+  },
+  "es": {
+    "title": "El experimento del reloj de Libet",
+    "description": "En el estudio de Libet de 1983 la señal cerebral empezó antes de que los voluntarios dijeran que querían moverse. Harari usa experimentos así contra el libre albedrío.",
+    "hook": "¿Qué decisión tuya se vería distinta si tus razones fueran solo parte de la historia?",
+    "one_minute_summary": "En el estudio de Libet de 1983, seis voluntarios flexionaron la muñeca cuando les apeteció y dijeron en qué posición estaba el punto de un reloj, que daba una vuelta cada 2,56 segundos, al notar el impulso. La señal cerebral empezó unos 550 milisegundos antes de la flexión y el impulso declarado unos 200 antes. Yuval Noah Harari llama al libre albedrío una afirmación que choca con la ciencia en Homo Deus y, según los comentaristas, se apoya en este tipo de experimento. El propio Libet dejó un veto para el último instante. Trabajos posteriores cuestionan leer la señal como una decisión."
+  },
+  "de": {
+    "title": "Libets Uhrenexperiment",
+    "description": "In Libets Studie von 1983 begann das Hirnsignal, bevor die Versuchspersonen sagten, sie wollten sich bewegen. Harari nutzt solche Experimente gegen den freien Willen.",
+    "hook": "Welche deiner Entscheidungen sähe anders aus, wenn deine Gründe nur ein Teil der Geschichte wären?",
+    "one_minute_summary": "In Libets Studie von 1983 beugten sechs Versuchspersonen das Handgelenk, wann immer sie Lust hatten, und nannten die Position eines Uhrenpunkts, der sich in 2,56 Sekunden drehte, als sie den Drang spürten. Das Hirnsignal begann etwa 550 Millisekunden vor der Beugung, der berichtete Drang etwa 200 davor. Yuval Noah Harari nennt den freien Willen in Homo Deus eine Behauptung im Widerspruch zur Wissenschaft und stützt sich laut Kommentatoren auf solche Experimente. Libet selbst ließ ein Veto für den letzten Moment. Spätere Arbeiten stellen infrage, das Signal als Entscheidung zu lesen."
+  }
+}

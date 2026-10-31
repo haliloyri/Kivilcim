@@ -1,0 +1,62 @@
+{
+  "story_id": 1477,
+  "kind": "concept",
+  "book": {
+    "title": "Homo Deus",
+    "author": "Yuval Noah Harari",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read; page-referenced reading notes and reviews agree on the p.22 line. The Calico aim is cited via reader summaries; date and chief executive come from news coverage, not the book. Old text dropped: Page and Brin founding Calico, billions invested, the best experts hired, a misquoted line, a religion-and-meaning claim.",
+  "facts": [
+    "In the section The Last Days of Death, Harari says the UN right to life turns death into a rights violation.",
+    "Religions sanctified life beyond this world and so tolerated death. Harari asks the reader to picture Christianity, Islam or Hinduism in a world without death.",
+    "For modern people, he writes, death is a technical problem we can and should solve. Engineers replace priests as experts on death; a few geeks in a lab can do it.",
+    "He calls the effort the Gilgamesh Project.",
+    "He cites Google's Calico, whose stated aim is to solve death, as an early step. Calico was announced on 18 September 2013 and led by Arthur Levinson; Google itself spoke of the challenge of aging and associated diseases.",
+    "Modern medicine has not lengthened natural life by a year; it has prevented premature death.",
+    "Equality is out, immortality is in; he expects the fight for eternal youth to become the fiercest political battle.",
+    "A reviewer says treating death as only a technical problem presents a contested view as settled.",
+    "Gilgamesh Project aims: nanobot immune systems clearing arteries, fighting bacteria and cancer, slowing or stopping aging; death as a technical failure.",
+    "In a 2016 talk Harari guessed overcoming death would take centuries, not decades."
+  ],
+  "scene_details": [
+    "A company named Calico with the stated aim of solving death",
+    "A few geeks in a lab in place of priests"
+  ],
+  "tension": "A company says it aims to solve death while the book says medicine has not added a year to natural life.",
+  "opening_idea": "Start with the stated aim of Calico, then back up to what the book says about priests and engineers.",
+  "lessons": [
+    {
+      "idea": "How you name a problem decides who you hand it to.",
+      "anchor": "Harari says modern people call death a technical problem and so hand it to engineers instead of priests.",
+      "everyday_example_idea": "A family that calls grandpa's forgetfulness a scheduling problem and buys a calendar, rather than asking the doctor."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which problem in your life have you named in a way that sends it to the wrong person for help?",
+  "use_cases": [
+    {
+      "situation": "A team calls a conflict a communication bug.",
+      "move": "Ask who we have handed it to by calling it that, as Harari says moderns did with death.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A dinner conversation turns to living forever.",
+      "move": "Ask whether you would want it if it cost more than most could pay, since Harari says equality is out and immortality is in.",
+      "context": "social"
+    },
+    {
+      "situation": "You catch yourself treating a worry as a task list.",
+      "move": "Say what the problem is called in your head and who that name sends it to.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Harari says we call death a technical problem and so hand it to engineers: the name you give a problem picks who tries to solve it.",
+  "conversation_variants": {
+    "punchline_idea": "Harari says modern people look at death the way engineers look at a broken machine.",
+    "thirty_sec_idea": "Harari says religions tolerated death and moderns treat it as a technical problem; Google launched Calico aiming to solve it; yet medicine has not added a year to natural lifespan.",
+    "question_idea": "",
+    "key_contrast_idea": "Priests, now engineers"
+  }
+}

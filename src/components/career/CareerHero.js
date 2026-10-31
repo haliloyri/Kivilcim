@@ -90,7 +90,7 @@ const CareerHero = ({ colors, background, pathChip, eyebrow, title, copy, next, 
                   step.state === 'future' && { backgroundColor: 'rgba(255,255,255,0.14)' },
                 ]}>
                   <Ionicons
-                    name={step.state === 'done' ? 'checkmark' : step.state === 'next' ? 'sparkles' : 'lock-closed'}
+                    name={step.state === 'done' ? 'checkmark' : step.state === 'next' ? 'arrow-forward' : 'lock-closed'}
                     size={step.state === 'future' ? 11 : 13}
                     color={step.state === 'done' ? surface : step.state === 'next' ? dawn : '#BFD6D1'}
                   />

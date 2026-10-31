@@ -1,0 +1,34 @@
+{
+  "story_id": 1642,
+  "kind": "concept",
+  "book": { "title": "Rising Strong", "author": "Brené Brown", "year": "2015" },
+  "confidence": "medium",
+  "confidence_note": "Roosevelt speech and chapter-one law verified from public record and an excerpt. Brown's critic and cost-of-courage lines come from an excerpt summary (Psychotherapy Networker), not full text. Old claims about her research results and paraphrased quotes were dropped. Downton Abbey origin is from an interview about Daring Greatly and not used.",
+  "facts": [
+    "Theodore Roosevelt gave the Man in the Arena speech at the Sorbonne in Paris on April 23, 1910; Brown's earlier book Daring Greatly takes its title from it.",
+    "Roosevelt: the credit belongs to the man actually in the arena, face marred by dust and sweat and blood, who strives valiantly, errs, comes short again and again; at best knows the triumph of high achievement, at worst fails while daring greatly, never among the cold and timid souls who know neither victory nor defeat.",
+    "Chapter one of Rising Strong opens with Brown's laws of emotional physics. First: if we're brave enough often enough, we will fall; she calls this the physics of vulnerability.",
+    "Brown: 'Fortune may favor the bold, but so does failure.' Daring means accepting that failure is certain and staying committed anyway.",
+    "Courage or comfort, she says, but not both.",
+    "Critics who watch from the stands without entering the arena: letting their judgment define us erodes our capacity for vulnerability; she wants feedback only from people who are themselves in the arena.",
+    "After acting bravely and falling, we cannot return to who we were; this can bring a sense of loss and a renewed sense of purpose."
+  ],
+  "scene_details": ["face marred by dust, sweat and blood", "the stands versus the arena", "a lecture hall at the Sorbonne, 23 April 1910"],
+  "tension": "The famous speech praises the person who errs again and again but stops before the fall itself; Brown's first law says the fall is guaranteed.",
+  "opening_idea": "A man with a bloodied, dusty face is praised in a 1910 Paris speech; no one says what happens when he hits the ground.",
+  "lessons": [{ "idea": "Treat a fall as the expected price of daring so one stumble does not turn into a verdict about you.", "anchor": "First law: if we're brave enough often enough, we will fall." }],
+  "reflect": [],
+  "reflect_final": "Think of the last brave attempt that went badly and the sentence you told yourself afterwards.",
+  "use_cases": [
+    { "situation": "A friend stumbled in a first presentation and will not try again", "move": "Name Brown's first law, that falling is the price of being brave often enough, then ask when they want to go again.", "context": "oneonone" },
+    { "situation": "Someone tears down a proposal without having offered one", "move": "Ask what they would put on the table, since Brown only wants feedback from people who are in the arena.", "context": "meeting" },
+    { "situation": "The morning after a failed project", "move": "Write only what happened and what you did, treating the fall as part of the deal.", "context": "self" }
+  ],
+  "pocket_idea": "Brave people fall; take feedback from people who are in the arena too.",
+  "conversation_variants": {
+    "punchline_idea": "Brown says anyone brave often enough will fall, and calls it the physics of vulnerability.",
+    "thirty_sec_idea": "Roosevelt's arena speech plus Brown's first law and her rule about who may give feedback.",
+    "question_idea": "",
+    "key_contrast_idea": "falling as the cost, not a verdict"
+  }
+}

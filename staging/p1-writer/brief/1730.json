@@ -1,0 +1,64 @@
+{
+  "story_id": 1730,
+  "kind": "anecdote",
+  "book": {
+    "title": "The 4-Hour Workweek",
+    "author": "Tim Ferriss",
+    "year": "2007"
+  },
+  "confidence": "low",
+  "confidence_note": "TITLE-CONTENT MISMATCH RISK: the title says things began to improve once Ferriss stepped away. Not verified in this session. Supported by secondary sources (Wikipedia, ABC News, Ferriss's blog, a Princeton student paper): he ran BrainQUICKEN, a sports-nutrition company; he worked very long days (one source says 14-hour days); he took a three-week trip to Europe to decide whether to redesign or close the business; instead he ran an experiment with email, checking it far less often; he says he realised he was the bottleneck for information and decisions and redesigned the company so staff could solve problems without him. A 2007 student paper reports profits up nearly 30 percent in four weeks after the new procedures, but that is not from the book and is omitted. The $40,000 a month and 80-hour figures were not confirmed: omitted. What the business did while he was away is not verified: the story only says what Ferriss claims about the bottleneck. Do not claim sales rose. Added from Wikipedia: founded 2001, 14-hour days, travelling afterwards, email once a day, virtual assistants. These are secondary and consistent with the book's premise but the book's wording was not checked.",
+  "facts": [
+    "Tim Ferriss ran BrainQUICKEN, a sports-nutrition company, and worked very long days to keep it going.",
+    "He went to Europe for three weeks to decide whether to redesign the business or close it.",
+    "While there he ran an experiment with email, checking it far less often than before.",
+    "Ferriss says he saw that he had become the bottleneck: staff and customers waited on him for answers and decisions.",
+    "He reorganised the company so people could solve problems without asking him first.",
+    "From that experience he built the argument of the book: you can cut your working hours by removing yourself as the bottleneck.",
+    "The book's method is summed up as D-E-A-L: Definition, Elimination, Automation, Liberation; Ferriss's own company is the case he builds the argument on.",
+    "The account is Ferriss's own telling; the sources found do not independently confirm the company's figures.",
+    "Ferriss founded BrainQUICKEN in 2001, an internet-based nutritional supplements business, while still holding another job (Wikipedia).",
+    "One source says his days at the company stretched to fourteen hours.",
+    "After the three weeks in Europe he kept travelling, through Europe, Asia and South America, and developed his email and outsourcing system there; he settled on checking email once a day and handed small daily tasks to virtual assistants (Wikipedia, secondary).",
+    "The company was sold years later (reported as 2009 or 2010: not used)."
+  ],
+  "scene_details": [
+    "an inbox checked less often",
+    "three weeks in Europe with the question: redesign or close",
+    "staff waiting on one person's answer"
+  ],
+  "tension": "A founder went away to decide whether to close his company and came back with the idea that he was the thing slowing it down.",
+  "opening_idea": "Open on the trip: Ferriss in Europe for three weeks with one question, whether to redesign or close the company.",
+  "lessons": [
+    {
+      "idea": "If everything waits for you, you are the limit; settle in advance which decisions others can make without you.",
+      "anchor": "staff and customers waiting on Ferriss, and the company redesigned so they did not have to"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which decision that comes to you every week could someone else make if you told them in advance what you would choose?",
+  "use_cases": [
+    {
+      "situation": "People keep asking you for small approvals.",
+      "move": "Tell your team which kinds of decisions they can make alone from now on.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your partner always waits for you to decide on household purchases.",
+      "move": "Say what amount or kind of purchase they can decide without asking.",
+      "context": "family"
+    },
+    {
+      "situation": "You check your email all day.",
+      "move": "Choose two times tomorrow to check it and tell the people who depend on you when to expect an answer.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Ferriss went to Europe to decide whether to close his company and saw he was the bottleneck: decide in advance what others may decide.",
+  "conversation_variants": {
+    "punchline_idea": "Ferriss left for Europe to decide whether to close his company and came back seeing that he was the bottleneck.",
+    "thirty_sec_idea": "Tim Ferriss ran a sports-nutrition company and worked very long days. He went to Europe for three weeks to decide whether to redesign it or close it, and tried checking email far less. His conclusion: he was the bottleneck. He reorganised so staff could solve problems without him, and that became the 4-Hour Workweek.",
+    "question_idea": "",
+    "key_contrast_idea": "bottleneck, not boss"
+  }
+}

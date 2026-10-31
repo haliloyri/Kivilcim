@@ -1,0 +1,53 @@
+{
+  "story_id": 1808,
+  "kind": "anecdote",
+  "book": {
+    "title": "Grinding It Out",
+    "author": "Ray Kroc",
+    "year": "1977"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kroc's own memoir, Grinding It Out (1977), is the source. The Multimixer order, the San Bernardino visit and the McDonald brothers' speed and simplicity are told there. Hamburger University (opened in 1961 in the basement of a restaurant in Elk Grove Village, Illinois) and Fred Turner's role in building the operations training are from Kroc's account. Class sizes and course lists are left out as unverified.",
+  "facts": [
+    "As McDonald's grew, Kroc worried that each new manager would run things a little differently.",
+    "In 1961 the company started Hamburger University in the basement of a restaurant in Elk Grove Village, Illinois.",
+    "It taught operations, customer service and procedures so that new managers worked the same way.",
+    "Fred Turner, who built the operations side, was central to the training.",
+    "The point was to move knowledge out of the founder's head into something others could learn.",
+    "Training supported consistency rather than slowing growth."
+  ],
+  "tension": "A chain that grows faster than its managers can learn loses the thing that made it work.",
+  "opening_idea": "Open on a basement classroom in Illinois where new managers learn how the company works.",
+  "lessons": [
+    {
+      "idea": "Scale lasts when know-how moves from a few people's instinct into something others can learn.",
+      "anchor": "Hamburger University in a restaurant basement."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your team, does the know-how live in a few heads or in something newcomers can learn?",
+  "use_cases": [
+    {
+      "situation": "A team relies on a few experienced people.",
+      "move": "Ask what we could write down or teach so newcomers get it faster.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A new colleague is learning the job.",
+      "move": "Share the three things you wish someone had told you.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You do something well but cannot explain it.",
+      "move": "Write the steps down as if teaching a new person.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "McDonald's trained its managers in a restaurant basement; turn your know-how into something others can learn.",
+  "conversation_variants": {
+    "punchline_idea": "McDonald's started Hamburger University in a restaurant basement so new managers learned the same way of working.",
+    "thirty_sec_idea": "As McDonald's grew, Ray Kroc worried every new manager would do things a little differently. So in 1961 the company opened Hamburger University in the basement of a restaurant in Illinois, to teach operations and customer service. Know-how stopped living in a few heads and became something others could learn.",
+    "question_idea": "",
+    "key_contrast_idea": "Sezgi ve sistem"
+  }
+}

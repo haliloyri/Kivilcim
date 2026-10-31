@@ -1,0 +1,57 @@
+{
+  "story_id": 1524,
+  "kind": "concept",
+  "book": {
+    "title": "The Road Less Traveled",
+    "author": "M. Scott Peck",
+    "year": "1978"
+  },
+  "confidence": "medium",
+  "confidence_note": "Peck's contrast is in the book: neurotics assume too much responsibility, people with character disorders too little; neurotics make themselves miserable, character-disordered make others miserable; most people are a mix and must keep sorting out what is theirs. The reference text's 'victim identity' paragraph and its two quotes could not be verified and are paraphrased or dropped. No case histories or numbers.",
+  "facts": [
+    "Peck is a psychiatrist who describes two opposite patterns.",
+    "Neurotics assume too much responsibility: in a conflict between themselves and the world they assume they are at fault.",
+    "People with character disorders assume too little: in the same conflict they assume the world is at fault.",
+    "Peck's line: neurotics make themselves miserable, character-disordered people make others miserable.",
+    "Most people are a mix of both and must keep working out what is and is not their responsibility.",
+    "Accepting a share of responsibility also means admitting you can change something."
+  ],
+  "scene_details": [
+    "two patients describing the same kind of conflict",
+    "a conflict between self and world"
+  ],
+  "tension": "Two people blame opposite parties, and both are stuck.",
+  "opening_idea": "Two patients sit down in a psychiatrist's office and each blames a different person.",
+  "lessons": [
+    {
+      "idea": "Sort out what is yours in a conflict: neither take all of it nor none of it.",
+      "anchor": "Peck's two opposite patterns, taking too much and too little responsibility"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In a current disagreement, which small part belongs to you, and what could you do about it this week?",
+  "use_cases": [
+    {
+      "situation": "After an argument you want to say sorry for everything.",
+      "move": "Name the one part that is yours, and leave the rest.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A project failed and everyone points outward.",
+      "move": "Start by saying what you would do differently, then invite others to do the same.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You tend to blame yourself for everything.",
+      "move": "Write down two things that were actually in your control and two that were not.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Sort a conflict into what is yours and what is not, instead of taking all or none.",
+  "conversation_variants": {
+    "punchline_idea": "Peck says neurotics make themselves miserable while character-disordered people make others miserable, and both avoid sorting out what is theirs.",
+    "thirty_sec_idea": "Peck describes two patients. One assumes too much responsibility and thinks every conflict is his fault. The other assumes none and blames the world. Most of us mix both. The task is to sort out what is truly ours.",
+    "question_idea": "",
+    "key_contrast_idea": "All fault, no fault"
+  }
+}

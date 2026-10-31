@@ -1,0 +1,57 @@
+{
+  "story_id": 1308,
+  "kind": "concept",
+  "book": {
+    "title": "Antifragile",
+    "author": "Nassim Nicholas Taleb",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "Hormesis/overcompensation (stress followed by recovery leaves the body stronger, dose matters) is a central idea of Antifragile, with muscles, bones and the immune system as examples. The reference text's quote about muscle ('the most perfect example of antifragility') is NOT used because it could not be verified. Learning from errors and firms/economies are mentioned only as Taleb's extension, no specifics. No numbers, no quotes.",
+  "facts": [
+    "Lifting heavy weights causes microscopic damage to muscle fibres; the body repairs it and ends up stronger than before.",
+    "Without the stress there is no damage, and therefore no growth.",
+    "Taleb treats the body as an example of antifragility: it needs some stress and gains from it.",
+    "The immune system is another example: exposure to germs in childhood strengthens it, and a child raised in a sterile setting may end up with a more fragile one.",
+    "The dose matters: the stress helps only when it is not too large to recover from.",
+    "Learning works similarly: a problem solved wrongly first is remembered better than an answer handed over."
+  ],
+  "scene_details": [
+    "a heavy bar lifted until the muscle aches",
+    "a child exposed to ordinary dirt and germs"
+  ],
+  "tension": "The body grows stronger from the very thing that damages it, as long as the dose is right.",
+  "opening_idea": "The ache after lifting weights is a repair job, and it is how the muscle gets stronger.",
+  "lessons": [
+    {
+      "idea": "Growth comes from stress at the right dose followed by recovery.",
+      "anchor": "muscle fibres damaged by lifting and rebuilt stronger"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which demanding stretch of the last three years left you stronger, and what part of it would you take on again on purpose?",
+  "use_cases": [
+    {
+      "situation": "You keep choosing only comfortable tasks.",
+      "move": "Pick one task slightly beyond your comfort and plan a rest after it, like a set at the gym.",
+      "context": "self"
+    },
+    {
+      "situation": "A junior colleague asks for a perfect answer.",
+      "move": "Let them try the problem first and then compare, instead of handing over the solution.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You overprotect a child from small setbacks.",
+      "move": "Let them handle one small setback today without stepping in.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A muscle grows from the tear that lifting causes, so look for stress you can recover from.",
+  "conversation_variants": {
+    "punchline_idea": "A muscle gets stronger from the tiny damage lifting does to it, and Taleb says that is how antifragile things work.",
+    "thirty_sec_idea": "Lift heavy and the muscle fibres tear slightly. The body repairs them and comes back stronger. Taleb uses this to explain antifragility. The immune system and learning work the same way. The dose matters: the stress has to be one you can recover from.",
+    "question_idea": "",
+    "key_contrast_idea": "Stress that builds"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "story_id": 1263,
+  "kind": "anecdote",
+  "book": {
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "year": "2016"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against book text (To Be or To Do). Old text replaced: the \"What am I doing / what do I want to be\" two-question framing and the claim about career crises are not in the book; the real scene is Boyd's fork-in-the-road speech.",
+  "facts": [
+    "John Boyd: fighter pilot, lead instructor at Fighter Weapons School, Nellis AFB, \"Forty-Second Boyd\" (beat any opponent in under 40 seconds), later Pentagon.",
+    "No books, one academic paper, never above colonel after nearly thirty years; F-15 and F-16 were his pet projects; retired with small apartment and pension.",
+    "1973: Boyd called a protege to a meeting and gave a speech he repeated for years: \"Tiger, one day you will come to a fork in the road.\"",
+    "Be somebody: compromises, turn your back on friends, join the club, promotions and good assignments. Do something: may not be promoted, not favored by superiors, but you do not compromise yourself and your work might make a difference. \"To be or to do? Which way will you go?\"",
+    "Chalkboard: DUTY, HONOR, COUNTRY crossed out and replaced with PRIDE, POWER, GREED.",
+    "Known as the ghetto colonel for frugal life; died with a drawerful of uncashed expense checks from private contractors, which he equated with bribes."
+  ],
+  "scene_details": [
+    "hands marking two directions",
+    "chalkboard words crossed out",
+    "drawer of uncashed checks"
+  ],
+  "tension": "Boyd chose the road without promotion, and paid for it.",
+  "opening_idea": "Open on the 40-second nickname, the checks or the speech.",
+  "lessons": [
+    {
+      "idea": "Weigh an offer by the work it would let you do.",
+      "anchor": "Boyd's fork: be somebody or do something.",
+      "everyday_example_idea": "An accountant offered a manager title writes down the work she wants to do and reads the offer against it."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If the title or recognition you are chasing this year disappeared tomorrow, which piece of work would you keep doing anyway?",
+  "use_cases": [
+    {
+      "situation": "A promotion is offered.",
+      "move": "Ask whether it brings you closer to the work or only to a title.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Yearly goals talk with a manager.",
+      "move": "Ask what work you want to be known for next year.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A job nobody will praise is waiting.",
+      "move": "Give it thirty minutes today.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Put Boyd's question to your next offer.",
+  "conversation_variants": {
+    "punchline_idea": "Boyd told young officers they would reach a fork where they could be somebody or do something.",
+    "thirty_sec_idea": "In 1973 Boyd laid two roads before a young officer: promotions at the price of compromises, or doing something without them. He never passed colonel. Holiday: ego blurs the choice.",
+    "question_idea": "",
+    "key_contrast_idea": "Somebody or something"
+  }
+}

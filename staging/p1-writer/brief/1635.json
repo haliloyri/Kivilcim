@@ -1,0 +1,43 @@
+{
+  "story_id": 1635,
+  "kind": "anecdote",
+  "book": { "title": "Scattered Minds", "author": "Gabor Maté", "year": "1999" },
+  "confidence": "high",
+  "confidence_note": "Verified against the full text on archive.org (Introduction, chapter 15 on shame, the myths chapter). The reference TR text attributed school reports and parental messages to Maté's own childhood and quoted 'treatment is identity repair'; none of that is in the book. The case here is a patient, John (name as given in the book), a 51-year-old unemployed single man whose written sketch Maté quotes 'exactly as written' with permission. Quote lines in English only as short fragments; other languages should paraphrase John's words, not present a translation as the exact text. Maté's claims about shame (a physiological-emotional state from isolation; failure reinforces but does not cause it; weakened by not feeding it) are his interpretation and must be attributed to him. No treatment claims.",
+  "facts": [
+    "Maté describes severely affected adults in their thirties, forties and fifties who have never kept a long-term job, some of whom have never read a book from cover to cover; their self-esteem is 'lost in some deep well' and most are convinced their problems come from a basic, incorrigible flaw in their personalities.",
+    "John, a fifty-one-year-old unemployed single man, gave Maté an autobiographical sketch which Maté quotes exactly as written, with his permission.",
+    "John writes that he has had jobs and did his best but could never be good enough; people ask whether he is listening or seems bored.",
+    "As a child his report cards said he did not pay attention in class and did not sit still; he was put in front of the class or at the back, sent to the principal's office (where he was strapped), tied down in a chair and sent out to the hall.",
+    "His father was always telling him to sit still and called him a lazy bum.",
+    "In person John said his father always rubbed his nose in it, that he should have been a doctor or lawyer or would not amount to anything.",
+    "Maté's reading: shame is a physiological-emotional state that comes from the sense of being cut off; failures can reinforce it but cannot cause it; it becomes wound into the person's identity.",
+    "Maté writes that the 'lazy' person is a whirlwind of energy when a task arouses interest, so laziness is an expression of the relationship with the world, not an unchangeable trait.",
+    "He says shame is weakened by not feeding it, not by arguing with it."
+  ],
+  "scene_details": [
+    "Report cards that say 'doesn't pay attention in class, doesn't sit still'",
+    "A chair he was tied to, the principal's office, the hall",
+    "A sketch quoted exactly as written, spelling included",
+    "A father's phrase: lazy bum"
+  ],
+  "tension": "A man of fifty-one lists his school reports and still carries the verdict; Maté argues the verdict hurt more than the attention problem.",
+  "opening_idea": "Start with the sheet John wrote and Maté quoted exactly, spelling mistakes included.",
+  "lessons": [
+    { "idea": "A verdict repeated by adults in childhood can become the voice you use on yourself; notice whose sentence it is before accepting it as your own.", "anchor": "John's report cards and his father's 'lazy bum' show up in the way he describes himself at fifty-one.", "everyday_example_idea": "A woman who always says 'I'm hopeless at maths' recalls the teacher who first said it, and tries one problem anyway." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which sentence about yourself, 'I never manage to...' or similar, did you first hear from someone else, and who was it?",
+  "use_cases": [
+    { "situation": "Your child keeps hearing 'he doesn't pay attention' from school.", "move": "John's report cards said the same; ask the child what they would say about the day, before adding another label.", "context": "family" },
+    { "situation": "A colleague calls himself lazy.", "move": "Ask when he last worked hard on something he cared about; Maté says the lazy person is a whirlwind where interest is present.", "context": "oneonone" },
+    { "situation": "You catch yourself thinking 'I never finish anything'.", "move": "Write down where that sentence first came from, and one thing you did finish this year.", "context": "self" }
+  ],
+  "pocket_idea": "John still carries his teachers' and father's verdicts at fifty-one; ask whose sentence your 'I never manage' really is.",
+  "conversation_variants": {
+    "punchline_idea": "At fifty-one, John still described himself in the words of his school reports and his father.",
+    "thirty_sec_idea": "In Scattered Minds Maté quotes a letter from John, fifty-one and unemployed, exactly as written. School reports: does not pay attention, does not sit still. A father who called him a lazy bum. Maté says the shame this leaves behind weighs more than the attention problem, and that calling someone lazy explains nothing.",
+    "question_idea": "",
+    "key_contrast_idea": "Verdict or person"
+  }
+}

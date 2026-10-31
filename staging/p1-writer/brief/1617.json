@@ -1,0 +1,63 @@
+{
+  "story_id": 1617,
+  "kind": "concept",
+  "book": {
+    "title": "The Total Money Makeover",
+    "author": "Dave Ramsey",
+    "year": "2003"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read. Ramsey's zero-based budget (every dollar of income assigned a job before the month starts, income minus outgo equal to zero) and cash envelopes are well documented across his teaching and the book's summaries; the envelope detail is attributed with medium confidence. The reference's 10,000 lira example and its claim about the first-month shock are not verified; dropped or kept generic. Do not quote Ramsey; paraphrase. Added: subtitle and step order as above; couples' monthly budget meeting is Ramsey's teaching, confidence medium that the book states it.",
+  "facts": [
+    "Ramsey asks people to write a monthly budget before the month begins.",
+    "It is zero-based: income minus planned spending equals zero.",
+    "Every dollar is assigned a job: rent, food, transport, debt payment, savings.",
+    "He asks people to give every dollar a purpose instead of wondering where it went.",
+    "For categories that leak, he recommends cash in envelopes, one per category.",
+    "When the envelope is empty, spending in that category stops.",
+    "The book's subtitle is 'A Proven Plan for Financial Fitness': Ramsey frames money like physical fitness, where doing the routine matters more than knowing the theory.",
+    "Ramsey lays out his plan as seven baby steps: the starter fund of $1,000 comes first, the debt snowball second, a full emergency fund of three to six months of expenses third.",
+    "Ramsey asks couples to write the budget together each month, so both agree on where the money goes."
+  ],
+  "scene_details": [
+    "A written budget with one line per category",
+    "Cash envelopes, one for each category",
+    "An empty envelope before month end",
+    "A couple sitting down with the written budget"
+  ],
+  "tension": "Most people cannot say where last month's money went, yet they feel a budget will cage them.",
+  "opening_idea": "Start with the empty envelope in the last week of the month.",
+  "lessons": [
+    {
+      "idea": "Decide where money goes before you have it, so spending becomes a set of choices.",
+      "anchor": "In Ramsey's zero-based budget every dollar has a job before the month starts, and an empty envelope ends that category.",
+      "everyday_example_idea": "A parent who sets a fixed pizza-night amount at the start of the month and knows exactly when it ends."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which category of your spending would surprise you most if you wrote down last month's actual total today?",
+  "use_cases": [
+    {
+      "situation": "You and your partner argue about spending.",
+      "move": "Sit down before the month starts and give each expected sum a job; extras need an agreed line.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend suggests a pricey trip.",
+      "move": "Say: I have a line for that, let me check what is left in it.",
+      "context": "social"
+    },
+    {
+      "situation": "It is the last day of the month.",
+      "move": "Write each category's real total beside its planned total and note the biggest gap.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "In Ramsey's budget every dollar has a job before the month starts; write next month's lines before the first payday.",
+  "conversation_variants": {
+    "punchline_idea": "Ramsey's budget ends with zero left over, because every dollar already has a job.",
+    "thirty_sec_idea": "Dave Ramsey's budget is written before the month starts. Income minus planned spending equals zero, so every dollar has a job: rent, food, debt, savings. For categories that leak, he suggests cash in an envelope, and when it is empty that spending stops.",
+    "question_idea": "",
+    "key_contrast_idea": "Told where to go"
+  }
+}

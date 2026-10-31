@@ -1,0 +1,43 @@
+{
+  "story_id": 1403,
+  "kind": "anecdote",
+  "book": { "title": "The Tipping Point", "author": "Malcolm Gladwell", "year": "2000" },
+  "confidence": "high",
+  "confidence_note": "Verified against the full text on archive.org (Introduction and the Power of Context chapter). The reference TR text's numbers (over 2,000 murders a year in the 1980s, crime down 50 percent, murders down to one third) do not match the book: it gives 2,154 murders and 626,182 serious crimes in 1992, falling within five years by 64.3 percent to 770 and to 355,893. Wilson and Kelling are real; the 'zero tolerance on turnstile jumping' is Bratton's crackdown on fare-beating. The book itself lists other explanations (policing, crack decline, economy, ageing) and calls Broken Windows 'the most intriguing candidate'; the causal claim is contested and the story says so briefly.",
+  "facts": [
+    "In 1992 New York City had 2,154 murders and 626,182 serious crimes. Within five years murders had dropped 64.3 percent to 770 and total crimes by almost half to 355,893.",
+    "Gladwell lists other explanations (better policing, the end of the crack trade, the economy, an ageing population) and says none explains the speed; he calls the Broken Windows theory of James Q. Wilson and George Kelling the most intriguing candidate for the something else.",
+    "Broken Windows: if a window is broken and left unrepaired, passers-by conclude that no one cares or is in charge, more windows are broken, and disorder spreads.",
+    "In the mid-1980s the Transit Authority hired Kelling as consultant and brought in a new subway director, David Gunn, to oversee a multibillion-dollar rebuilding; many advisers told him not to worry about graffiti. Gunn insisted that without winning the graffiti battle the other reforms would not happen.",
+    "He started with the number seven train and set a rule that a car, once cleaned, was never allowed to be vandalised again; a cleaning station at the end of the number one line removed graffiti during the turnaround.",
+    "At a yard on 135th Street in Harlem, kids would paint a train white the first night, draw the outline the second, colour it in the third; Gunn's crew then walked over with rollers and painted the finished mural over. The message: it will never see daylight.",
+    "The graffiti cleanup ran from 1984 to 1990. Then William Bratton was hired to head the transit police and cracked down on fare-beating: an estimated 170,000 people a day entered without paying, with $1.25 at stake each.",
+    "Bratton put plainclothes officers at turnstiles and used a retrofitted bus as a rolling station house, cutting an arrest from a day to an hour; of those arrested, one in seven had an outstanding warrant and one in twenty carried a weapon.",
+    "Bratton later headed the New York police, applied the same approach above ground and, with Mayor Giuliani, credited it for the fall in crime."
+  ],
+  "scene_details": [
+    "Three nights of painting on a train in a Harlem yard, then rollers",
+    "A cleaning station at the end of the line",
+    "Plainclothes officers at turnstiles and a bus converted into a station house",
+    "170,000 riders a day not paying $1.25"
+  ],
+  "tension": "Officials spend years scrubbing paint and chasing fare-beaters at the height of a crime wave; the book asks whether that is what turned the numbers.",
+  "opening_idea": "Start in a Harlem train yard where kids spend three nights on a mural and a crew with rollers erases it.",
+  "lessons": [
+    { "idea": "Fix the visible small thing at once and every time; the repeated rule tells everyone what the place expects.", "anchor": "Gunn's rule that a cleaned car was never allowed to be vandalised again, and the rollers over the three-night mural.", "everyday_example_idea": "A shared office kitchen where the first dirty mug is washed the same day stays clean longer than one cleaned monthly." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which small, visible thing in your workplace or home does everyone walk past, and what would it take to fix it every single time for a month?",
+  "use_cases": [
+    { "situation": "Your team ignores small deadline slips.", "move": "Gunn's trains were cleaned the same day, every time. Name one small slip and respond to it the same day, calmly.", "context": "meeting" },
+    { "situation": "Shared flat, dirty dishes pile up.", "move": "Propose one rule, such as washing your plate before bed, and keep it yourself first.", "context": "family" },
+    { "situation": "You are overwhelmed by a big mess in your project folder.", "move": "Pick the one visible broken window, such as an untitled file, fix it today and watch how the rest feels.", "context": "self" }
+  ],
+  "pocket_idea": "Gunn painted over the Harlem mural every time: a small thing fixed, in public, again and again, tells a place what is expected.",
+  "conversation_variants": {
+    "punchline_idea": "In Harlem, kids spent three nights painting a subway car, and a crew painted it over with rollers.",
+    "thirty_sec_idea": "In the 1980s New York subway director David Gunn started with graffiti, though advisers said the system had bigger problems. Cars were cleaned and never allowed to be vandalised again. Later William Bratton went after fare-beating. Gladwell calls this Broken Windows thinking a candidate for why crime fell, though he lists other explanations.",
+    "question_idea": "",
+    "key_contrast_idea": "Small fix, big signal"
+  }
+}

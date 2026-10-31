@@ -1,0 +1,62 @@
+{
+  "story_id": 1582,
+  "kind": "concept",
+  "book": {
+    "title": "A Whole New Mind",
+    "author": "Daniel Pink",
+    "year": "2005"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read. Verified through book summaries and talks: the three forces Abundance, Asia, Automation; the argument that logical left-brain work is increasingly done cheaper abroad or by software, while empathy, design, story and meaning rise in value; Pink's own caveat that the left/right split is a simplified metaphor. A tax-return example (work done in India, software like TurboTax) appears in secondhand summaries; no figures are used. The reference's claims about AI reading contracts and about 1990s 'safest jobs' are not Pink's (2005) and were NOT used. Added: Conceptual Age, L/R-directed thinking and the meaning of symphony are standard Pink terms, not checked against the text.",
+  "facts": [
+    "Pink argues that three forces are shifting which skills pay: Abundance, Asia and Automation.",
+    "Abundance: most people in rich countries can buy plenty cheaply, so design, meaning and beauty matter.",
+    "Asia: routine white-collar work, such as preparing tax returns, can be done abroad at lower cost.",
+    "Automation: software now handles routine, rule-based analysis.",
+    "Pink calls the left hemisphere's logical, sequential style 'left-brain' and argues the right-brain style (big picture, empathy) now needs equal weight.",
+    "He names six 'senses': design, story, symphony, empathy, play, meaning.",
+    "Pink acknowledges the left/right brain split is a simplified metaphor for two styles of thinking.",
+    "Pink says the Information Age, which rewarded logical, linear workers such as lawyers, accountants and programmers, is giving way to what he calls the Conceptual Age.",
+    "Pink calls the two modes L-directed and R-directed thinking, and says the three forces raise the value of the second without removing the first.",
+    "Symphony, in Pink's list, is the ability to see the big picture and put pieces together."
+  ],
+  "scene_details": [
+    "A tax return prepared overseas or by software",
+    "Three words on a page: Abundance, Asia, Automation"
+  ],
+  "tension": "The skills that were safest for a professional are the ones easiest to send abroad or hand to software.",
+  "opening_idea": "Start with the tax return: the same form done by an accountant at home, an accountant abroad and a piece of software.",
+  "lessons": [
+    {
+      "idea": "Skills that follow fixed rules are easiest to copy elsewhere or automate; add judgment about people to the work you do.",
+      "anchor": "Pink's three forces, Abundance, Asia and Automation, each take routine analysis out of local hands.",
+      "everyday_example_idea": "A bookkeeper who also explains numbers to a worried shop owner offers something a form cannot."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which part of your own work is routine enough for software, and which part depends on understanding a particular person?",
+  "use_cases": [
+    {
+      "situation": "Your team debates what to automate.",
+      "move": "Pink's Automation force takes routine analysis first. List which tasks follow fixed rules and which need judging a person.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend fears for their job.",
+      "move": "Ask which part of their day needs someone who understands the customer.",
+      "context": "social"
+    },
+    {
+      "situation": "You plan what to learn next.",
+      "move": "Pick one skill about people, like listening or explaining, and practise it in one conversation.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Pink's three forces move routine analysis abroad or into software; invest in the part of your work that needs understanding a person.",
+  "conversation_variants": {
+    "punchline_idea": "In Pink's argument, a tax return can be done abroad or by software, but understanding the client is harder to ship.",
+    "thirty_sec_idea": "Daniel Pink says three forces, Abundance, Asia and Automation, are changing which skills pay. Rule-based work can be done cheaper abroad or by software, and with plenty to buy, design and meaning matter more. He adds that left and right brain is a simplified metaphor.",
+    "question_idea": "",
+    "key_contrast_idea": "Rules vs people"
+  }
+}

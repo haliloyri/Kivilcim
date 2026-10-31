@@ -1,0 +1,61 @@
+{
+  "story_id": 1720,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Paradox of Choice",
+    "author": "Barry Schwartz",
+    "year": "2004"
+  },
+  "confidence": "medium",
+  "confidence_note": "The jam experiment is by Sheena Iyengar and Mark Lepper (published 2000, Journal of Personality and Social Psychology), run at an upscale grocery (Draeger's, Menlo Park, California, per secondary sources) with a tasting booth showing 24 or 6 jams; roughly 60% of passers-by stopped at the large display versus 40% at the small, but among those who stopped about 3% bought after 24 and 30% after 6 (secondary sources, a $1-off coupon was given). Schwartz relies on Iyengar's work (Reason, 2004), but the exact figures as printed in his book were not checked. The later-replication caveat (a meta-analysis of choice-overload studies found the average effect near zero) is recalled, not verified in this session. Omitted: shop details beyond the market, jam brand, statistics beyond the two rates.",
+  "facts": [
+    "Researchers Sheena Iyengar and Mark Lepper ran a jam tasting table in a market; some days it showed 24 jams, others 6.",
+    "The large display drew more people: about 60% of passers-by stopped, versus about 40% at the 6-jam table.",
+    "But of the shoppers who stopped, far fewer bought after the 24-jam table, about 3%, than after the 6-jam table, about 30%.",
+    "Tasters received a coupon for money off a jar.",
+    "Abundance attracted attention but made the decision heavier.",
+    "Schwartz uses such findings to argue that more options do not always mean more freedom: comparison costs, regret and postponed decisions grow with the number of choices.",
+    "Caveat: later work trying to repeat the effect has been mixed, and one meta-analysis found the average effect close to zero (recalled).",
+    "Schwartz distinguishes maximizers, who look for the very best option, from satisficers, who accept one that is good enough; he argues maximizers tend to be less satisfied and more prone to regret (recalled, not verified online).",
+    "More options also raise expectations and make the unchosen alternatives feel like losses (opportunity costs) (recalled)."
+  ],
+  "scene_details": [
+    "a tasting table with 24 jars",
+    "a smaller table with 6 jars",
+    "a coupon in a shopper's hand"
+  ],
+  "tension": "The bigger display drew the bigger crowd, yet sold far less to those who stopped.",
+  "opening_idea": "Open on the two tasting tables, 24 jars versus 6, and the crowd at each.",
+  "lessons": [
+    {
+      "idea": "When a decision feels heavy, cut the list yourself before comparing.",
+      "anchor": "the 6-jam table converting far better than the 24-jam table"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In which area of your life would having fewer options make you feel freer, and what is one option you could remove today?",
+  "use_cases": [
+    {
+      "situation": "You are choosing a gift and cannot decide.",
+      "move": "Cut the list to three before comparing prices.",
+      "context": "family"
+    },
+    {
+      "situation": "Your team has twenty vendor options.",
+      "move": "Agree on three criteria and drop everything that fails one.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You scroll through menus without choosing.",
+      "move": "Pick a category first and ignore the rest.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "24 jams drew the crowd, 6 jams drew the buyers: more choice can mean more browsing, fewer decisions.",
+  "conversation_variants": {
+    "punchline_idea": "A 24-jam table drew more shoppers but a 6-jam table sold far more.",
+    "thirty_sec_idea": "In a market tasting test, shoppers saw either 24 jams or 6. The big display stopped more people, but among those who stopped, many more bought after seeing 6. Barry Schwartz uses this to argue that more options do not always bring more freedom.",
+    "question_idea": "",
+    "key_contrast_idea": "crowd or buyers"
+  }
+}

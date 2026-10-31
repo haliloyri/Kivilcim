@@ -1,0 +1,61 @@
+{
+  "story_id": 1262,
+  "kind": "anecdote",
+  "book": {
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "year": "2016"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against book text (Become a Student). Old text dropped: generic list of fallen generals and artists, Holiday seeking experts before each book, the \"ego quiet\" quote. Replaced by Hammett/Satriani, Shamrock, Epictetus which the book contains.",
+  "facts": [
+    "Early 1980s April: Metallica told guitarist Dave Mustaine he was out in a decrepit New York warehouse and handed him a bus ticket to San Francisco; Kirk Hammett (Exodus, barely in his twenties) got the job and played first show days later.",
+    "Around then Hammett realized he was not as good as he wanted to be and looked for a teacher in San Francisco, insisting he was still a student.",
+    "Joe Satriani taught from a small music shop in Berkeley, a teacher's teacher whose students included Steve Vai.",
+    "Satriani: Hammett was already good (shredding, great right hand, most chords) but had not learned names and how things connect.",
+    "Rules: weekly lessons, lessons must be learned or Hammett wastes everyone's time; many peers stormed out calling him too harsh; Hammett stayed two years weekly, later brought riffs from the band and learned to do more with fewer notes.",
+    "Hammett became a great metal guitarist; Satriani sharpened his own technique.",
+    "Holiday: being a student puts ego in someone else's hands; an education cannot be hacked; Epictetus: impossible to learn what one thinks one already knows.",
+    "Frank Shamrock: plus, minus, equal: someone better, someone lesser to teach, an equal to test against."
+  ],
+  "scene_details": [
+    "bus ticket to San Francisco",
+    "small music shop in Berkeley",
+    "weekly lessons"
+  ],
+  "tension": "He had made it into his dream band and still hired a strict teacher.",
+  "opening_idea": "Open on the weekly-lesson rule or on friends storming out.",
+  "lessons": [
+    {
+      "idea": "Put your own assessment in someone else's hands for a while.",
+      "anchor": "Hammett booked weekly lessons after joining Metallica.",
+      "everyday_example_idea": "A new hire asks a senior colleague to mark weak points in each weekly report."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In an area where you already feel competent, whom could you ask this month for blunt feedback on a piece of your work?",
+  "use_cases": [
+    {
+      "situation": "You are about to send a first report.",
+      "move": "Ask a colleague to find weak spots.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A respected senior colleague.",
+      "move": "Ask for monthly review, citing Hammett's weekly lessons.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You think you have made it.",
+      "move": "Ask what you can still learn this week from someone better.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Where you feel arrived, find a teacher.",
+  "conversation_variants": {
+    "punchline_idea": "Kirk Hammett joined Metallica, then looked for a guitar teacher.",
+    "thirty_sec_idea": "Hammett got Mustaine's place, knew he was not good enough and took weekly lessons from strict Joe Satriani for two years while peers stormed out. Holiday: ego goes into the teacher's hands.",
+    "question_idea": "",
+    "key_contrast_idea": "Hired, still a student"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "story_id": 1404,
+  "kind": "anecdote",
+  "book": { "title": "The Tipping Point", "author": "Malcolm Gladwell", "year": "2000" },
+  "confidence": "high",
+  "confidence_note": "Verified against the full text on archive.org (chapter 2, The Law of the Few). The Revere and Dawes account is Gladwell's, drawn from historian David Hackett Fischer's Paul Revere's Ride; Gladwell's reading (Revere was a Connector and Maven, Dawes an ordinary man) is his interpretation. The reference TR text's 'these people are not chosen, they have recognizable traits' was not found and is dropped; Salesmen are described by Gladwell as people with the skill to persuade the unconvinced.",
+  "facts": [
+    "On the same night two men rode out with the identical message, that the British were coming: Paul Revere north and west of Boston, William Dawes, a tanner, through the towns to the west.",
+    "Dawes covered just as many towns and miles, but his ride did not set the countryside afire: the local militia leaders were not alerted, and so few men from Waltham fought the next day that some historians concluded the town was pro-British; it was not, it simply was not told until too late.",
+    "Gladwell's explanation: success in a word-of-mouth epidemic depends on a few people with rare social gifts, the Law of the Few: Connectors, Mavens and Salesmen.",
+    "Revere was gregarious and intensely social: a fisherman and hunter, card player and theatre-lover, pub-goer, businessman, member of the Masonic lodge and several social clubs; historian Fischer credits him with an uncanny genius for being at the centre of events. In each town he knew whom to wake: the militia leader and the key people, whom he had mostly met and who respected him.",
+    "Of Dawes, Fischer writes that the town fathers and militia commanders in Roxbury, Brookline, Watertown and Waltham were not awakened; Gladwell thinks Dawes probably had a normal social circle and, like most people, once he left his hometown would not have known whose door to knock on.",
+    "Revere was also a Maven: in autumn 1774 he set up a secret group that met at the Green Dragon Tavern to monitor British troop movements. Maven comes from Yiddish and means one who accumulates knowledge; Mavens want to share what they know.",
+    "Gladwell summarizes: Mavens are data banks, Connectors are social glue, and Salesmen have the skill to persuade people who are unconvinced of what they hear."
+  ],
+  "scene_details": [
+    "Two riders, one message, different towns",
+    "Waltham, where men did not know until too late",
+    "A secret group at the Green Dragon Tavern",
+    "A list of whose door to knock on"
+  ],
+  "tension": "The same urgent news, the same distance, and only one ride set off the alarm.",
+  "opening_idea": "Start with Dawes, the second rider who has no monument: the same message, just as many towns.",
+  "lessons": [
+    { "idea": "How far a message goes depends on who carries it; check whether your carrier knows whom to tell in each place.", "anchor": "Revere knew whom to wake in each town and Dawes, a normal man out of his hometown, did not.", "everyday_example_idea": "A volunteer who wants to promote a charity run sends the details to the one person who runs the neighbourhood group chats rather than posting in ten places." }
+  ],
+  "reflect": [],
+  "reflect_final": "If you had one announcement to get across to a group this month, whom would you tell first, and what makes that person someone others listen to?",
+  "use_cases": [
+    { "situation": "Planning how to announce a change at work.", "move": "Revere knew whose door to knock on in every town. List the two or three people others ask first about news here and brief them first.", "context": "meeting" },
+    { "situation": "You want your friends to try a new restaurant.", "move": "Tell the friend who already keeps everyone's plans; ask them what they think.", "context": "social" },
+    { "situation": "A neighbour project needs volunteers.", "move": "Ask who in the street everyone trusts and talk to that person before putting up posters.", "context": "family" }
+  ],
+  "pocket_idea": "Dawes and Revere carried the same news; Revere knew whose door to knock on. Before you announce, name your three doors.",
+  "conversation_variants": {
+    "punchline_idea": "Two riders carried the same news on the same night, and only the one who knew whose door to knock on is remembered.",
+    "thirty_sec_idea": "On the night of the British march, Paul Revere and William Dawes both rode out with the same message. Revere woke militia leaders town after town. Dawes's ride barely registered; Waltham heard too late. Gladwell says Revere was a Connector and a Maven: he knew many people and gathered information. Dawes was an ordinary man.",
+    "question_idea": "",
+    "key_contrast_idea": "Same news, different carrier"
+  }
+}

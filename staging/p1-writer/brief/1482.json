@@ -1,0 +1,39 @@
+{
+  "story_id": 1482,
+  "kind": "anecdote",
+  "book": { "title": "21 Lessons for the 21st Century", "author": "Yuval Noah Harari", "year": "2018" },
+  "confidence": "medium",
+  "confidence_note": "Old TR text said Harari goes on 10-day retreats twice a year; the book's closing chapter (Meditation) says he took a first course with S. N. Goenka in 2000, then began meditating two hours every day and each year takes a long retreat of a month or two (wording from a secondary quote of the book). Also confirmed: first course was a ten-day Vipassana retreat; argument that 'know thyself' matters more now because there is serious competition (corporations and governments learning to know you). The old quote 'knowing yourself is the most important political act of the 21st century' and the 'research, not rest' quote are not verified and omitted. The 'ten seconds on the breath' detail comes from an interview, not the book, and is omitted. No direct quotes.",
+  "facts": [
+    "Harari's last chapter is about meditation.",
+    "He says the advice to know yourself matters more in the 21st century because there is now serious competition: corporations and governments are learning to hack humans.",
+    "His own first course was a ten-day Vipassana retreat, with the teacher S. N. Goenka, in 2000, after a friend urged him to try it.",
+    "Since that first course he has meditated two hours every day.",
+    "Each year he also takes a long meditation retreat of a month or two.",
+    "He says Vipassana helps him observe reality as it is."
+  ],
+  "scene_details": [
+    "a ten-day retreat in 2000",
+    "two hours of meditation every day",
+    "a retreat of a month or two each year"
+  ],
+  "tension": "A historian who spent the whole book on technology and politics ends by sitting still for two hours a day.",
+  "opening_idea": "Harari finishes a book on AI, politics and work by describing how he spends two hours every day.",
+  "lessons": [
+    { "idea": "If others are getting better at reading you, knowing your own mind is a practical safeguard, and it improves with regular practice rather than with a single insight.", "anchor": "Harari's argument that corporations and governments are learning to hack humans, and his two hours a day of Vipassana." }
+  ],
+  "reflect": [],
+  "reflect_final": "When did you last notice a reaction in yourself before acting on it, and what did you see that you might have missed?",
+  "use_cases": [
+    { "situation": "You are about to make a snap decision after a heated message.", "move": "Take three breaths, notice what the message made you feel, and then reply.", "context": "self" },
+    { "situation": "A friend says they cannot stop checking their phone.", "move": "Harari trains attention by watching his breath; offer to try two quiet minutes together and compare what each of you noticed.", "context": "social" },
+    { "situation": "A teammate tends to react fast in meetings.", "move": "Suggest pausing before answering a charged question and say what you felt before you speak.", "context": "meeting" }
+  ],
+  "pocket_idea": "Harari ends a book about technology with two quiet hours a day, because someone is learning to read your mind.",
+  "conversation_variants": {
+    "punchline_idea": "Harari ends a book about AI and politics with the habit of sitting still for two hours a day.",
+    "thirty_sec_idea": "Harari's last chapter is not about technology but meditation. A friend pushed him to try a ten-day Vipassana course in 2000, and since then he has meditated two hours a day and takes a retreat of a month or two each year. His reason: corporations and governments are learning to hack humans, so knowing your own mind matters more than before.",
+    "question_idea": "",
+    "key_contrast_idea": "Outside noise, inner view"
+  }
+}

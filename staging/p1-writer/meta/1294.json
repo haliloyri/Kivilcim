@@ -1,0 +1,26 @@
+{
+ "tr": {
+  "title": "Önce Reklam, Sonra Ürün",
+  "description": "Tim Ferriss bir ürünü üretmeden önce küçük bir arama reklamı ve sade bir sayfayla talebi ölçüyor.",
+  "hook": "Gerçek insanlarla bu hafta hangi fikrini sınayabilirsin?",
+  "one_minute_summary": "Tim Ferriss'in kendi işi BrainQUICKEN, internetten satılan bir takviye ürünüdür. Yeni bir ürün için önce ürünü anlatan sade bir web sayfası hazırlar ve küçük arama reklamlarıyla insanları oraya yönlendirir. Kaç kişinin tıkladığını ve kaçının sipariş vermeye ilerlediğini sayar. Sayılar yeterliyse ürünü ürettirir, değilse fikri bırakır ya da değiştirir ve az para kaybeder."
+ },
+ "en": {
+  "title": "Test Before You Build",
+  "description": "Tim Ferriss measures demand for a product with a small search ad and a plain page before anything is made.",
+  "hook": "Which of your ideas could you test with real strangers this week?",
+  "one_minute_summary": "Tim Ferriss's own business, BrainQUICKEN, sells a supplement online. For a new product he first puts up a basic web page describing it and sends people there with small search ads. He counts how many click and how many go on to order. If the numbers are good enough, he has the product made. If not, he drops or changes the idea and has spent little."
+ },
+ "es": {
+  "title": "Probar antes de fabricar",
+  "description": "Tim Ferriss mide la demanda de un producto con un anuncio pequeño en buscadores y una página sencilla antes de fabricar nada.",
+  "hook": "¿Qué idea tuya podrías probar esta semana con desconocidos de verdad?",
+  "one_minute_summary": "El negocio de Tim Ferriss, BrainQUICKEN, vende un suplemento por internet. Para un producto nuevo, primero monta una página web sencilla que lo describe y lleva allí a la gente con pequeños anuncios en buscadores. Cuenta cuántos hacen clic y cuántos pasan a pedirlo. Si las cifras bastan, manda fabricar el producto. Si no, abandona o cambia la idea habiendo gastado poco."
+ },
+ "de": {
+  "title": "Erst die Anzeige, dann das Produkt",
+  "description": "Tim Ferriss misst die Nachfrage mit einer kleinen Suchanzeige und einer schlichten Seite, bevor etwas hergestellt wird.",
+  "hook": "Welche deiner Ideen könntest du diese Woche mit echten Fremden testen?",
+  "one_minute_summary": "Tim Ferriss' eigenes Geschäft BrainQUICKEN verkauft ein Nahrungsergänzungsmittel im Internet. Für ein neues Produkt stellt er zuerst eine schlichte Webseite ins Netz, die es beschreibt, und lenkt mit kleinen Suchanzeigen Leute dorthin. Er zählt, wie viele klicken und wie viele weiter zur Bestellung gehen. Reichen die Zahlen, lässt er produzieren. Wenn nicht, verwirft oder ändert er die Idee und hat wenig ausgegeben."
+ }
+}

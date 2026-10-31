@@ -1,0 +1,26 @@
+{
+ "tr": {
+  "title": "Muz Karşılığı Vaat",
+  "description": "Bir şempanze muzunu sınırsız muz vaadine değişmez. İnsanlar ise şirket, para ve ülke gibi ortak hikâyeler üzerinden yabancılarla iş birliği yapar.",
+  "hook": "Gündelik hayatında sağlam sandığın hangi şey aslında ortak bir anlaşma?",
+  "one_minute_summary": "Harari'ye göre bir şempanzeyi, şempanze cennetinde sınırsız muz vaat ederek muzundan vazgeçiremezsiniz. İnsanlar ise tanımadıkları kişilerle ortak hikâyeler üzerinden iş birliği yapar. Peugeot gibi bir şirketin bedeni yoktur, ama hukuk onu mal sahibi olabilen, borç alabilen ve dava edilebilen bir kişi sayar. Harari bu tür hikâyelere hayali düzenler der; yeterince çok kişi inandığı sürece işlerler."
+ },
+ "en": {
+  "title": "A Banana for a Promise",
+  "description": "A chimpanzee will not swap a banana for a promise of endless bananas. People cooperate with strangers over shared stories like companies, money and nations.",
+  "hook": "Which everyday thing you treat as solid is really a shared agreement?",
+  "one_minute_summary": "Harari says you could never persuade a chimpanzee to hand over a banana for the promise of unlimited bananas in chimpanzee heaven. People cooperate with strangers over shared stories instead. A company like Peugeot has no body, yet the law treats it as a person that can own property, borrow money and be sued. Harari calls such stories imagined orders; they hold as long as enough people believe in them together."
+ },
+ "es": {
+  "title": "El chimpancé y el plátano prometido",
+  "description": "Un chimpancé no cambia un plátano por la promesa de plátanos ilimitados. Las personas cooperan con desconocidos gracias a historias compartidas, como empresas, dinero y naciones.",
+  "hook": "¿Qué cosa cotidiana que tratas como sólida es en realidad un acuerdo compartido?",
+  "one_minute_summary": "Según Harari, jamás convencerías a un chimpancé de que te dé un plátano a cambio de la promesa de plátanos ilimitados en el cielo de los chimpancés. Las personas, en cambio, cooperan con desconocidos mediante historias compartidas. Una empresa como Peugeot no tiene cuerpo, pero la ley la trata como una persona que puede tener propiedades, pedir préstamos y ser demandada. Harari llama a estas historias órdenes imaginados; se sostienen mientras suficientes personas crean en ellos a la vez."
+ },
+ "de": {
+  "title": "Die Banane und das Versprechen",
+  "description": "Ein Schimpanse tauscht keine Banane gegen das Versprechen unbegrenzter Bananen. Menschen arbeiten über gemeinsame Geschichten mit Fremden zusammen, etwa Firmen, Geld und Nationen.",
+  "hook": "Welche alltägliche Sache, die du für fest hältst, ist in Wahrheit eine gemeinsame Vereinbarung?",
+  "one_minute_summary": "Laut Harari würde man einen Schimpansen nie dazu bringen, eine Banane gegen das Versprechen unbegrenzter Bananen im Schimpansenhimmel herzugeben. Menschen arbeiten dagegen über gemeinsame Geschichten mit Fremden zusammen. Eine Firma wie Peugeot hat keinen Körper, doch das Recht behandelt sie als Person, die Eigentum besitzen, Kredit aufnehmen und verklagt werden kann. Harari nennt solche Geschichten erdachte Ordnungen; sie halten, solange genug Menschen gemeinsam an sie glauben."
+ }
+}

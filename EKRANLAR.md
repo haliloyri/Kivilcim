@@ -182,46 +182,19 @@ Hikayeler arasında metin araması yapılan ekran. (Stack üzerinden açılır, 
 
 ---
 
-## 8. ProgressScreen — İlerleme
+## 8. ProgressScreen — İlerleme (Albor Yolu)
 
-Kullanıcının okuma istatistiklerini ve başarımlarını gösteren ekran. (Alt sekme: 📈 İlerleme)
+Alt sekme: İlerleme. `ProgressScreen` yalnızca `CareerPathExperience` (`src/components/career/`) bileşenini render eder ve sekme görüldüğünde `markPathTabSeen` çağırır. Durum `CareerPathContext` (`useCareerPath`) üzerinden gelir.
 
 **Bölümler:**
+- **Hero (`CareerHero`):** Gösterilen unvan, sonraki düğüm ve kalan adımlar.
+- **Yol haritası (`CareerMap`, `CareerNodeSheet`):** Düğümler; bir düğüme dokununca ayrıntı sayfası açılır.
+- **Ritim (`CareerRhythmSection`):** Okuma ritmi / seri bilgisi.
+- **Öğrenilenler (`CareerLearnedSection`):** Yol boyunca öğrenilen içerik.
+- **Yol değiştirme (`CareerPathSwitchSheet`):** Kullanıcı farklı bir yol seçebilir.
+- **Modallar:** `CareerPromotionModal` (terfi), `LearningMilestoneModal` (öğrenme kilometre taşı), `CareerMigrationSummary` (eski ilerlemenin yola taşınması).
 
-### Günlük Hedef
-- Bugün kaç hikaye okunduğu
-- Günlük hedefe ilerleme
-- Hedefe ulaşıldığında kutlama gösterimi
-
-### Streak (Seri)
-- Güncel okuma serisi (gün sayısı)
-- En uzun streak rekoru
-- Streak risk uyarısı (bugün hiç okuma yoksa)
-- **Streak Freeze** (Premium) — Bir günü dondurup seriyi koruma hakkı
-- Isı haritası (okuma geçmişi takvimi)
-
-### Rozet Sistemi (25+ rozet)
-
-| Kategori | Rozetler |
-|----------|---------|
-| **Okuma** | first_read, bookworm, philosopher |
-| **Streak** | streak_7 |
-| **Keşif** | explorer, sage, cat_variety_3/5/10 |
-| **Kategori Ustası** | cat_master_5/10/25/50/100 |
-| **Kaydetme** | save_5/10/50/100 |
-| **Paylaşım** | share_1/10/20/30/50 |
-| **Özel** | storyteller, icebreaker |
-
-- Kazanılan rozetler renkli gradient ikonlarla gösterilir
-- Kilitli rozetler gri ve asma kilit ikonuyla gösterilir
-- Rozet kazanıldığında konfetti animasyonu + ses efekti + haptic feedback içeren kutlama modalı
-- **Rozet paylaş (`BadgeShareSheet`):** Rozeti paylaşıma hazır karta dönüştürür. Renk seçenekleri (Gold `#C89B3C` / Slate `#3F5A73` / Teal `#2C8068` / Plum `#6E3B52`) "Kart Oluştur" temalarıyla aynı paleti paylaşır; tek vurgu rengi + yumuşak tonlu zemin mantığıyla çalışır. Format: Post / Story.
-
-### İstatistikler
-- Toplam okunan hikaye sayısı
-- Kategori bazlı okuma dağılımı
-- Paylaşım sayısı
-- Sonraki milestone için kalan hikaye sayısı
+Eski rozet / ısı haritası / günlük hedef ekranı bu sekmeden kaldırıldı.
 
 ---
 

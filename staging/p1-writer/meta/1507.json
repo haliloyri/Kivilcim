@@ -1,0 +1,35 @@
+{
+  "story_id": 1507,
+  "verdict": "keep",
+  "verify_note": "Book text is lending-only; facts verified from Kotter's 1995 HBR article 'Leading Change: Why Transformation Efforts Fail' (full text read), which the book expands: 100+ companies, 'well over 50%' fail in phase one, 75% rule, CEO's accounting loss, division president's surveys. Old text's '70-80% fail', competitor-took-10%-share example and 'false urgency' not found there and dropped. Figures flagged as Kotter's observations.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kötü Anketi Yayımlayan Başkan",
+    "description": "Kotter'in ilk hatası yetersiz aciliyet. Başarılı örneklerde liderler hoş olmayan gerçekleri kendileri ortaya koydu.",
+    "hook": "Değiştirmek istediğiniz bir şey için başkalarına hangi hoş olmayan gerçeği gösterirdiniz?",
+    "one_minute_summary": "John Kotter yaklaşık on yıl boyunca 100'den fazla şirketin değişmeye çalışmasını izledi. Hata listesinin başında yeterince aciliyet yaratamamak var ve izlediği şirketlerin yarısından fazlası bu aşamada takıldı. Başarılı örneklerde liderler hoş olmayan gerçekleri açıkça konuştu, çoğu zaman dışarıdan gelen analist, müşteri ve danışmanlarla: bir CEO rekor muhasebe zararı yarattı, bir bölüm başkanı berbat çıkacak müşteri anketlerini yayımladı. Kotter yönetimin yaklaşık yüzde 75'inin ikna olmasını ölçü sayıyor. Rakamlar onun gözlemleri."
+  },
+  "en": {
+    "title": "Publishing the Bad Survey",
+    "description": "Kotter's first mistake is too little urgency. In the successful cases, leaders put the unwelcome facts in front of people themselves.",
+    "hook": "For a change you want, which unwelcome fact would you show others first?",
+    "one_minute_summary": "John Kotter watched more than 100 companies try to change over about ten years. The first mistake on his list is not creating enough urgency, and well over half the companies he watched failed there. In the successful cases leaders put unpleasant facts on the table, often through outsiders such as analysts, customers and consultants: one CEO engineered a record accounting loss, and a division president published customer surveys he knew would be terrible. Kotter's rule of thumb is about 75 percent of management convinced. The figures are his own observations."
+  },
+  "es": {
+    "title": "Publicar la mala encuesta",
+    "description": "El primer error de Kotter es la poca urgencia. En los casos exitosos, los líderes pusieron ellos mismos delante los hechos incómodos.",
+    "hook": "Para un cambio que quieres, ¿qué hecho incómodo mostrarías primero a los demás?",
+    "one_minute_summary": "John Kotter observó durante unos diez años a más de 100 empresas que intentaban cambiar. El primer error de su lista es no crear suficiente urgencia, y bastante más de la mitad de las empresas fracasó ahí. En los casos exitosos los líderes pusieron hechos desagradables sobre la mesa, a menudo por medio de analistas, clientes y consultores externos: un consejero delegado provocó una pérdida contable récord y un presidente de división publicó encuestas de clientes que sabía pésimas. Su regla práctica es que cerca del 75 % de la dirección esté convencida. Las cifras son observaciones suyas."
+  },
+  "de": {
+    "title": "Der Präsident mit der schlechten Umfrage",
+    "description": "Kotters erster Fehler ist zu wenig Dringlichkeit. In den erfolgreichen Fällen legten Führungskräfte die unangenehmen Fakten selbst auf den Tisch.",
+    "hook": "Welche unangenehme Tatsache würdest du anderen für eine gewünschte Veränderung zuerst zeigen?",
+    "one_minute_summary": "John Kotter beobachtete rund zehn Jahre lang mehr als 100 Unternehmen beim Veränderungsversuch. Der erste Fehler auf seiner Liste ist zu wenig Dringlichkeit, und weit über die Hälfte der Firmen scheiterte daran. In den erfolgreichen Fällen legten Führungskräfte unangenehme Fakten auf den Tisch, oft durch Analysten, Kunden und Berater von außen: Ein Chef verursachte einen Rekordverlust, ein Bereichspräsident veröffentlichte Kundenumfragen, die er für miserabel hielt. Kotters Faustregel: etwa 75 Prozent des Managements überzeugt. Die Zahlen sind seine eigenen Beobachtungen."
+  }
+}

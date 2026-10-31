@@ -1,0 +1,62 @@
+{
+  "story_id": 1433,
+  "kind": "anecdote",
+  "book": {
+    "title": "Measure What Matters",
+    "author": "John Doerr",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The old text's slogan 'if you reach all your OKRs you were not ambitious enough' and the 'sixty-five percent beats a hundred percent' claim are not tied to the book as written and are dropped. Confirmed by several summaries: Google's aspirational OKRs aim at roughly 60 to 70 percent attainment, and the book's chapter 'Stretch: The Google Chrome Story' with Sundar Pichai's goal of 20 million seven-day active users in 2008, 50 million for 2009 with a result of 38 million, and 111 million in 2010 after Larry Page argued 100 million was not enough. The 2008 result and exact wording are not used. A blog gives 37 million for 2009, so the figure is rounded as 'about 12 million short'.",
+  "facts": [
+    "Doerr says Google likes stretch goals and that Google's aspirational OKRs aim at about 60 to 70 percent attainment.",
+    "In 2008 Chrome's key result was 20 million seven-day active users.",
+    "Doerr writes that he thought there was no way they would get there.",
+    "The goal for 2009 was 50 million; the team ended that year at 38 million, about 12 million short.",
+    "For 2010 Pichai proposed 100 million.",
+    "Larry Page said 100 million was not enough, pointing out it covered a small slice of the world's internet users.",
+    "They agreed on 111 million, and Chrome reached 111 million seven-day active users in 2010.",
+    "Doerr cites goal researcher Edwin Locke: hard goals beat easy ones, specific hard goals beat vague ones.",
+    "Chrome started from zero; the 2009 goal was 2.5 times the 2008 goal; 38 of 50 million is 76%.",
+    "Pichai backed the 100 million proposal with plans on advertising, faster code and distribution deals."
+  ],
+  "scene_details": [
+    "20 million seven-day active users",
+    "38 million against a target of 50 million",
+    "111 million"
+  ],
+  "tension": "Chrome missed its 2009 target by about 12 million and the next target was set higher.",
+  "opening_idea": "Start with the 2009 target of 50 million and the 38 million that Chrome actually had.",
+  "lessons": [
+    {
+      "idea": "A target set above what feels safe makes a miss still useful.",
+      "anchor": "50 million target, 38 million result, then 111 million."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your work have you set a target you were sure to hit, and what number would stretch you without being absurd?",
+  "use_cases": [
+    {
+      "situation": "Your team always hits its goals.",
+      "move": "Propose raising one target and agree that reaching most of it would count as a good result, like Chrome's 50 million.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague is discouraged by a miss.",
+      "move": "Ask what the result was against the target and what got built along the way.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are picking a fitness goal.",
+      "move": "Choose a number you might miss by a third and keep it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Chrome missed 50 million with 38 million: set a target you may miss and still count it a win.",
+  "conversation_variants": {
+    "punchline_idea": "Chrome missed its 2009 goal of 50 million users with 38 million, and Larry Page still said 100 million was too small for 2010.",
+    "thirty_sec_idea": "Google's Chrome team set stretch targets. For 2009 the goal was 50 million seven-day active users and they ended at 38 million. For 2010 Sundar Pichai proposed 100 million, Larry Page said that was not enough, and they settled on 111 million. Chrome reached it. Doerr says Google's aspirational OKRs aim at about 60 to 70 percent.",
+    "question_idea": "",
+    "key_contrast_idea": "Stretch not safe"
+  }
+}

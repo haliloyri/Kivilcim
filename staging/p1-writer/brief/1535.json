@@ -1,0 +1,66 @@
+{
+  "story_id": 1535,
+  "kind": "anecdote",
+  "book": {
+    "title": "Black Box Thinking",
+    "author": "Matthew Syed",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read; the episode is Festinger, Riecken and Schachter's 1954-56 study of a small Chicago group (documented in 'When Prophecy Fails'), which summaries say Syed uses for cognitive dissonance. Reference text said 'hundreds of followers' and gave an invented message wording; both dropped. The group was small, and 'Marian Keech' is the pseudonym in the researchers' account (real name Dorothy Martin) - omitted. Exact hour of the new message, number of members and what each gave up are omitted. Festinger's method has been criticised; writer may add one short clause. Syed's applications beyond the cult are not verified, so only a generic one-line link is allowed. Added details are from Festinger, Riecken and Schachter's own account (When Prophecy Fails), not verified in Syed's text.",
+  "facts": [
+    "In 1954 the psychologist Leon Festinger and colleagues joined a small group that expected the world to end in a flood on 21 December 1954.",
+    "The group's leader, a woman, said she received messages from higher beings; believers would be lifted away by a flying saucer before the flood.",
+    "Members had quit jobs and given away possessions in preparation.",
+    "Midnight came and went; no saucer appeared and no flood followed.",
+    "Early that morning the leader announced a new message: the group's faith had spread so much light that the world had been spared.",
+    "The group, which had avoided publicity, then began phoning the press and seeking followers; commitment rose after the failed date.",
+    "Festinger used the case to build the theory of cognitive dissonance: when evidence collides with a belief we paid heavily for, we reinterpret the evidence rather than the belief.",
+    "Syed uses this to explain why people and institutions resist learning from failure.",
+    "Before the date, members were asked to remove metal from their clothes, such as zippers and belt buckles, because they expected to board a flying saucer.",
+    "They gathered in the leader's home to wait for midnight.",
+    "Before the failed date the group had avoided reporters; afterwards it phoned newspapers and invited the public."
+  ],
+  "scene_details": [
+    "A date on the calendar: 21 December 1954",
+    "A group waiting up past midnight for a flying saucer",
+    "Telephones used to call the newspapers after the miss",
+    "Zippers and belt buckles taken off before midnight",
+    "Reporters being phoned the next day"
+  ],
+  "tension": "The prediction visibly failed, and the believers came out of it more certain, not less.",
+  "opening_idea": "Start with the researchers sitting in the room past midnight on 21 December 1954, waiting with the believers.",
+  "lessons": [
+    {
+      "idea": "The more you have paid for a decision, the harder it is to read evidence against it; set the test for being wrong before you commit.",
+      "anchor": "The believers had quit jobs and given away possessions, and after the miss they sought followers instead of doubting.",
+      "everyday_example_idea": "A founder who has spent two years on a product writes, before launch, what sales figure after three months would make her change course."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which decision of yours is already costly enough that you would explain away bad news about it, and what result would count as that bad news?",
+  "use_cases": [
+    {
+      "situation": "A project everybody has invested in is clearly behind.",
+      "move": "Ask the team to say now what result by what date would make us stop, before we are more invested.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You notice yourself defending a bad purchase.",
+      "move": "The failed date made the believers louder. Say out loud: if a friend had made this choice, what would I tell them?",
+      "context": "self"
+    },
+    {
+      "situation": "A friend keeps defending a plan that is not working.",
+      "move": "Ask what result would change their mind, instead of arguing with the plan.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "The believers answered a failed prophecy by recruiting; decide before you commit what result would make you change your mind.",
+  "conversation_variants": {
+    "punchline_idea": "When the world did not end on schedule, the group that predicted it started calling newspapers.",
+    "thirty_sec_idea": "In 1954 Leon Festinger joined a small group sure that a flood would end the world on 21 December. Members quit jobs and gave things away. Midnight passed with no saucer. By morning the leader announced the faith of the group had spared the world, and the group began seeking followers. Festinger called the clash between belief and evidence cognitive dissonance.",
+    "question_idea": "",
+    "key_contrast_idea": "Doubled down"
+  }
+}

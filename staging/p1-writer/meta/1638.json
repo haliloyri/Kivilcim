@@ -1,0 +1,35 @@
+{
+  "story_id": 1638,
+  "verdict": "keep",
+  "verify_note": "Rat Park told as the experiment (Wikipedia summary of Alexander's 1978-81 papers) with its replication caveats. Oxytocin mechanism, the 'antidote is connection' line (Johann Hari's phrase) and invented clinical claims dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Rat Park deneyi",
+    "description": "Bruce Alexander tek başına kafeste yaşayan sıçanlarla geniş bir alanda birlikte yaşayanları karşılaştırdı. Maté bunu Vietnam verileriyle birlikte okuyor.",
+    "hook": "Bir davranışa bakış açınız, nerede gerçekleştiği değişince nasıl değişirdi?",
+    "one_minute_summary": "Bruce Alexander ve arkadaşları Simon Fraser Üniversitesi'nde, tek başına küçük kafeslerde yaşayan sıçanlarla, standart kafesin iki yüz katı bir alanda birlikte yaşayanları karşılaştırdı. Her sıçanın önünde tatlandırılmış morfinli su ve düz su vardı. Park sıçanları çoğunlukla düz suyu seçti, bir koşulda kafesteki erkekler on dokuz kata kadar fazla morfin içti. Gabor Maté bunu Vietnam verileriyle birlikte okuyor. Sonuç tartışmalı: Petrie 1996'da yineleyemedi, eleştirmenler küçük örneklemi ve ağızdan verilen morfinin acılığını sayıyor."
+  },
+  "en": {
+    "title": "The Rat Park experiment",
+    "description": "Bruce Alexander compared rats housed alone in small cages with rats housed together in a much larger enclosure. Maté reads it beside the Vietnam data.",
+    "hook": "How would you read a behavior differently if you changed where it happens?",
+    "one_minute_summary": "At Simon Fraser University, Bruce Alexander and colleagues compared rats living alone in small cages with rats living together in an enclosure 200 times larger. Each rat could choose sweetened morphine water or plain water. The park rats mostly chose plain water, and in one condition the caged males drank up to nineteen times more morphine. Gabor Maté sets it beside the Vietnam data. The result is contested: Petrie could not repeat it in 1996, and critics cite small samples and the bitterness of oral morphine."
+  },
+  "es": {
+    "title": "El experimento Rat Park",
+    "description": "Bruce Alexander comparó ratas alojadas solas en jaulas pequeñas con ratas alojadas juntas en un recinto mucho mayor. Maté lo lee junto a los datos de Vietnam.",
+    "hook": "¿Cómo verías una conducta si cambiaras el lugar donde ocurre?",
+    "one_minute_summary": "En la Universidad Simon Fraser, Bruce Alexander y sus colegas compararon ratas que vivían solas en jaulas pequeñas con ratas que vivían juntas en un recinto 200 veces mayor. Cada rata podía elegir morfina endulzada o agua sola. Las del parque eligieron sobre todo agua, y en una condición los machos enjaulados bebieron hasta diecinueve veces más morfina. Gabor Maté lo pone junto a los datos de Vietnam. El resultado es discutido: Petrie no logró repetirlo en 1996 y los críticos señalan las muestras pequeñas y el amargor de la morfina oral."
+  },
+  "de": {
+    "title": "Das Rat-Park-Experiment",
+    "description": "Bruce Alexander verglich Ratten, die allein in kleinen Käfigen lebten, mit Ratten in einem viel größeren Gehege. Maté liest es neben den Vietnam-Daten.",
+    "hook": "Wie würdest du ein Verhalten sehen, wenn du änderst, wo es geschieht?",
+    "one_minute_summary": "An der Simon Fraser University verglichen Bruce Alexander und Kollegen Ratten, die allein in kleinen Käfigen lebten, mit Ratten in einem Gehege mit zweihundertfacher Fläche. Jede Ratte konnte gesüßtes Morphinwasser oder reines Wasser wählen. Im Park wählten die Tiere überwiegend Wasser, und unter einer Bedingung tranken die Männchen im Käfig bis zu neunzehnmal mehr Morphin. Gabor Maté stellt es neben die Vietnam-Daten. Das Ergebnis ist umstritten: Petrie konnte es 1996 nicht wiederholen, Kritiker nennen kleine Stichproben und die Bitterkeit von oral gegebenem Morphin."
+  }
+}

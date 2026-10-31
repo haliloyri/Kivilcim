@@ -1,0 +1,35 @@
+{
+  "story_id": 1790,
+  "kind": "anecdote",
+  "book": { "title": "Why Zebras Don't Get Ulcers", "author": "Robert M. Sapolsky", "year": "1994" },
+  "confidence": "medium",
+  "confidence_note": "Sapolsky's decades of summers studying wild baboons in East Africa and the link between social rank, social context and glucocorticoids are central in the book. Rank effects depend on the stability of the hierarchy and on individual coping style, so the story says 'in many cases'. The sibling text's 'thirty years of summers' is softened to 'years'. The displacement and grooming findings are described generally.",
+  "facts": [
+    "Sapolsky spent summers over many years watching wild baboons in East Africa.",
+    "Baboons spend most of the day foraging and resting; most daily tension comes from other baboons.",
+    "He watched who pressured whom and measured stress hormones in the same animals.",
+    "In many cases males low in the hierarchy had higher stress hormone levels, even with no lion around.",
+    "Rank alone was not decisive: stability of the hierarchy, ability to tell real threats from harmless events, ways to release tension and social ties mattered.",
+    "Some animals redirected tension onto others lower than them and had lower hormone levels; some built closeness through grooming.",
+    "Two baboons in the same position could carry very different loads."
+  ],
+  "tension": "Baboons had no lions to fear, yet low-ranking ones carried more stress hormone.",
+  "opening_idea": "Open on the baboons wearied by each other rather than by lions.",
+  "lessons": [
+    { "idea": "How you live your position matters more than the position.", "anchor": "Baboons of the same rank carrying very different stress loads." }
+  ],
+  "reflect": [],
+  "reflect_final": "In your own troop, is there someone you trust to release tension with, or do you carry everything alone?",
+  "use_cases": [
+    { "situation": "Someone on your team seems constantly tense.", "move": "Ask whether there is someone in the team they can unload with.", "context": "oneonone" },
+    { "situation": "New rules create uncertainty in the team.", "move": "Write down who decides what, citing baboon hierarchies where instability caused stress.", "context": "meeting" },
+    { "situation": "A friend complains of workload.", "move": "Offer an evening walk just to talk.", "context": "social" }
+  ],
+  "pocket_idea": "The same load is lighter with someone you trust beside you; call that person this week.",
+  "conversation_variants": {
+    "punchline_idea": "Sapolsky's baboons were worn down by each other, not by lions.",
+    "thirty_sec_idea": "Sapolsky watched wild baboons for years and measured stress hormones; low-ranking males often had more, but rank alone did not decide it, since stability, tension release and social ties mattered.",
+    "question_idea": "",
+    "key_contrast_idea": "Rütbe ve yaşanış"
+  }
+}

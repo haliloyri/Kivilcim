@@ -1,0 +1,35 @@
+{
+ "story_id": 1410,
+ "verdict": "keep",
+ "verify_note": "Mall-smile scene and partner/love-and-change points via LitCharts and Ruiz quotations (PhilosophersNotes); book text not read. Old migraine-partner story dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Alışveriş Merkezindeki Gülümseme",
+  "description": "Ruiz'in örneğinde alışveriş merkezindeki bir gülümseme kafanızda bir ilişkiye dönüşüyor. Çaresi, net olana kadar sormak.",
+  "hook": "Hangi sessizliği tahminle dolduruyorsunuz?",
+  "one_minute_summary": "Don Miguel Ruiz üçüncü anlaşmayı, varsayımda bulunmamayı, bir sahneyle anlatıyor: alışveriş merkezinde sevdiğiniz biri gülümsüyor, siz onun sizi sevdiğini varsayıp bir ilişki, hatta bir düğün kuruyorsunuz. Aynısını eşimizden aklımızı okumasını bekleyerek de yapıyoruz. Varsayım yanlış anlamaya, kişisel almaya ve boşuna bir drama dönüşüyor. Ruiz'in çaresi, net olana kadar soru sormaya cesaret etmek ve anlamadığınızda sormak. Kendimiz hakkında da sormadan varsayım yapıyoruz, diyor."
+ },
+ "en": {
+  "title": "The Smile at the Mall",
+  "description": "In Ruiz's example a smile at the mall becomes a relationship in your head. His fix is to ask until you are clear.",
+  "hook": "Which silence are you filling with a guess this week?",
+  "one_minute_summary": "Don Miguel Ruiz explains the third agreement, do not make assumptions, with a scene: someone you like smiles at you at the mall, and you assume they like you and picture a relationship, even a wedding. We do the same when we expect partners to read our minds. An assumption becomes a misunderstanding, taking it personally, and a big drama for nothing. Ruiz's remedy is to have the courage to ask until you are clear."
+ },
+ "es": {
+  "title": "La sonrisa en el centro comercial",
+  "description": "En el ejemplo de Ruiz, una sonrisa en un centro comercial se vuelve una relación en tu cabeza. Su remedio: preguntar hasta tenerlo claro.",
+  "hook": "¿Qué silencio estás llenando con una suposición esta semana?",
+  "one_minute_summary": "Don Miguel Ruiz explica el tercer acuerdo, no hacer suposiciones, con una escena: alguien que te gusta te sonríe en un centro comercial, supones que le gustas y te imaginas una relación, incluso una boda. Lo mismo hacemos al esperar que la pareja nos lea la mente. La suposición se vuelve malentendido, lo tomamos personal y se arma un drama por nada. El remedio de Ruiz es tener el valor de preguntar hasta estar claro."
+ },
+ "de": {
+  "title": "Das Lächeln im Einkaufszentrum",
+  "description": "In Ruiz' Beispiel wird ein Lächeln im Einkaufszentrum im Kopf zur Beziehung. Sein Rat: fragen, bis es klar ist.",
+  "hook": "Welches Schweigen füllst du diese Woche mit einer Vermutung?",
+  "one_minute_summary": "Don Miguel Ruiz erklärt das dritte Abkommen, keine Annahmen zu treffen, mit einer Szene: Jemand, der dir gefällt, lächelt dich im Einkaufszentrum an, du nimmst an, er mag dich, und malst dir eine Beziehung, sogar eine Hochzeit aus. Genauso erwarten wir, dass Partner Gedanken lesen. Aus der Annahme wird Missverständnis, persönliches Nehmen und ein Drama um nichts. Ruiz rät, den Mut zu haben, so lange zu fragen, bis alles klar ist."
+ }
+}

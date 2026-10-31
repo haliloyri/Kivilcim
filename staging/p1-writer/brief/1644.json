@@ -1,0 +1,61 @@
+{
+ "story_id": 1644,
+ "kind": "concept",
+ "book": {
+  "title": "Rising Strong",
+  "author": "Brené Brown",
+  "year": "2015"
+ },
+ "confidence": "medium",
+ "confidence_note": "Stage names (reckoning, rumble, revolution) and short definitions are firm (HuffPost, publisher). Detail about recognizing a feeling, curiosity examples, the stool image and the process-versus-practice line come from a Meaningful HQ summary, not full text. Old stage names, quotes and 'most people get stuck' claim dropped.",
+ "facts": [
+  "In the two years after Daring Greatly, Brown's team received emails every week from readers who had taken a risk, been hurt and asked how to get back up. Brown says she has collected such data throughout her work and calls herself a grounded theory researcher.",
+  "Rising Strong names three stages: the reckoning (walking into our story), the rumble (owning our story), the revolution (writing a new ending and changing how we engage with the world).",
+  "Reckoning: we only need to recognize that we are feeling something; exact naming can wait; the opposite is denying emotion. The body reacts before the conscious mind and often pushes us to disengage.",
+  "Then curiosity: 'Why am I being so hard on everyone around me today?' and 'What's setting me off?'",
+  "Rumble: begins with turning up curiosity; the messiest stage; get honest about the stories we tell ourselves, test them, separate what is true from what is self-protection.",
+  "Thoughts, actions and feelings are a three-legged stool; positive thinking alone does not change behavior if feelings stay negative.",
+  "Revolution: 'The rising strong process is nowhere near as powerful as the rising strong practice.' The uprising starts when the first reaction is curiosity rather than reflex. Incremental steps that become a daily way of engaging produce change that reaches the people around us.",
+  "Brown quote: I've collected that data all along, and what I've learned about surviving hurt has saved me again and again; owning our story and loving ourselves through that process is the bravest thing we'll ever do.",
+  "Curiosity study in Neuron (2014): brain chemistry changes when we are curious, aiding learning and retention."
+ ],
+ "scene_details": [
+  "weekly emails to Brown's team",
+  "'What's setting me off?'",
+  "the three-legged stool"
+ ],
+ "tension": "Readers ask how to get back up; the answer begins with a step that looks too small, noticing a feeling, and ends with a practice rather than a process.",
+ "opening_idea": "A weekly stream of emails from readers who took a risk and got hurt.",
+ "lessons": [
+  {
+   "idea": "Start with noticing and naming a feeling before questioning the story, because an unnamed feeling steers quietly.",
+   "anchor": "Reckoning: we only need to recognize we are feeling something."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "When did you first actually notice you were feeling something in a recent moment that hurt?",
+ "use_cases": [
+  {
+   "situation": "A close friend will not talk after a failure",
+   "move": "Say that Brown's first step only asks us to notice a feeling, not to name it, and ask what is there right now.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "After a meeting you realize you spoke harder than you meant",
+   "move": "Say you were sharp, that you are looking at what set you off, and that you will come back to it.",
+   "context": "meeting"
+  },
+  {
+   "situation": "The evening after something knocked you flat",
+   "move": "Only notice it first and test the story later, like the reckoning before the rumble.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "After a fall, notice you are feeling something first; name it and test the story afterward.",
+ "conversation_variants": {
+  "punchline_idea": "Brown's three stages: the middle one, the rumble, is the messiest.",
+  "thirty_sec_idea": "Weekly emails, three stages, ending on practice over process.",
+  "question_idea": "",
+  "key_contrast_idea": "process versus daily practice"
+ }
+}

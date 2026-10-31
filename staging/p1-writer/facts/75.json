@@ -1,0 +1,234 @@
+{
+ "book_no": 75,
+ "title": "A More Beautiful Question",
+ "authors": "Warren Berger",
+ "year": "2014",
+ "sources": [
+  "http://www.strategy-business.com/blog/Innovation-Begins-with-Three-Questions",
+  "https://www.rnz.co.nz/life/culture/how-a-daughter-s-puzzle-inspired-the-polaroid-camera",
+  "https://www.goodreads.com/author_blog_posts/21275267-what-if-questioning-like-a-kid-can-be-a-game-changer?tab=book",
+  "https://amorebeautifulquestion.com/airbnbs-10-billion-valuation-started-beautiful-question/",
+  "https://americanexpress.com/us/small-business/openforum/articles/the-power-of-asking-the-right-questions",
+  "https://shortform.com/blog/?p=113784",
+  "https://www.goodreads.com/work/quotes/25206641"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Berger's core progression: Why? (the catalyst, the question companies ask least; it challenges the premise of the work), What if? (open, unconstrained search for ideas), How? (turning ideas into practical steps).",
+   "source": "strategy+business blog by Berger; shortform",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Berger contrasts these with old, closed questions (How many? How much? How fast?) which support the status quo. Example of a why: asking why a business unit exists at all instead of how to raise its margins.",
+   "source": "strategy+business",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "December 1943, family vacation in Santa Fe. Edwin Land took a photo of his daughter. She asked why she could not see it right away.",
+   "source": "strategy+business (Berger); Goodreads/Berger blog post",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "The daughter was three years old (named Jennifer in an RNZ account).",
+   "source": "RNZ; Goodreads post",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "An expert would have answered that this is how the camera works; Land took the question seriously instead.",
+   "source": "Goodreads post on Berger's book",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "Land went for a walk and within an hour had the 'what if' of instant photography: what if there were a darkroom inside the camera? The practical details took much longer.",
+   "source": "strategy+business (Berger's account)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "The first Polaroid camera went on sale on 26 November 1948, five years after the question.",
+   "source": "RNZ; strategy+business ('five years later')",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Airbnb, fall 2007: Joe Gebbia and Brian Chesky, roommates in San Francisco with no jobs and little money, needed rent. Out-of-town conference visitors could not find hotel rooms because the city's hotels were full.",
+   "source": "Berger's own blog excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "They asked why they could not house these visitors for a night or two, then why not in their own place. They rented three inflatable mattresses to three strangers, with a modest breakfast and sightseeing tips.",
+   "source": "Berger's blog excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Next they asked what it would take to offer more than a mattress, built their own website instead of posting on Craigslist, then asked whether it could be repeated in every major city.",
+   "source": "Berger's blog excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Doubters: angel investor Paul Graham said 'No one would want to stay in someone else's bed.' Graham later became a seed investor.",
+   "source": "Berger's blog excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "Without money for ads, they launched in Denver during the 2008 Democratic National Convention and pitched the story to news producers, which got them on CNN.",
+   "source": "Berger's blog excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Berger observes that questioning often has an inverse relationship to expertise.",
+   "source": "Goodreads quote from the book",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "Berger quotes (via Zen teacher Shunryu Suzuki) the beginner's mind line: 'In the beginner's mind there are many possibilities, but in the expert's there are few.'",
+   "source": "Goodreads highlight; AmEx interview with Berger",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Berger notes attorneys are trained never to ask a question they do not know the answer to, and asks what is wrong with that approach in business.",
+   "source": "AmEx Open Forum interview with Berger",
+   "confidence": "medium"
+  },
+  {
+   "id": "f16",
+   "claim": "Berger says the harder task is to keep asking after experts have said you cannot change a situation and there are good reasons things are as they are.",
+   "source": "Goodreads highlight",
+   "confidence": "medium"
+  },
+  {
+   "id": "f17",
+   "claim": "Berger says schools and business cultures tend to reward rote answers over questions.",
+   "source": "shortform; book overviews",
+   "confidence": "medium"
+  },
+  {
+   "id": "f18",
+   "claim": "Robin Chase challenged the idea that cars could not be shared (Zipcar), as an example of challenging an assumption.",
+   "source": "Berger's blog excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f19",
+   "claim": "Gatorade story per Berger article (Daily Beast): a college football coach asked why players weren't urinating more, leading to the realization that sweating players weren't replenishing fluids well enough.",
+   "source": "Daily Beast interview piece",
+   "confidence": "medium"
+  },
+  {
+   "id": "f20",
+   "claim": "Land later said he set about 'solving the puzzle she had set me'. Season of the vacation differs by source (December in Berger's article, summer elsewhere), so only the year 1943 is used.",
+   "source": "RNZ; strategy+business; Biz Vault",
+   "confidence": "medium"
+  },
+  {
+   "id": "f21",
+   "claim": "Land's company became one of the Nifty Fifty growth stocks of the 1960s; Berger traces Netflix and Pixar to founding questions; Hal Gregersen's research (cited by Berger) found highly innovative leaders such as Jobs and Bezos question everything.",
+   "source": "strategy+business; Daily Beast",
+   "confidence": "medium"
+  },
+  {
+   "id": "f22",
+   "claim": "Berger sees the Why / What if / How progression behind many innovation breakthroughs; adds 'Why not?' as a companion that challenges assumptions; cites Robin Chase challenging the assumption that cars could not be shared (Zipcar).",
+   "source": "strategy+business; shortform; Berger blog excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f23",
+   "claim": "Berger argues the questions we ask often matter more than the answers, because facts are useful only when you know which follow-up questions to ask.",
+   "source": "shortform overview",
+   "confidence": "medium"
+  },
+  {
+   "id": "f24",
+   "claim": "Berger counts the inverse link between questioning and expertise among the interesting and appealing things about questioning; advises cultivating an outsider/novice perspective to ask basic why questions about established practices; a naive question can expose overlooked assumptions.",
+   "source": "Goodreads quote; podcast notes; AmEx interview",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1321: Land asked 'neden fotoğrafı hemen göremiyoruz', answered 'film must be developed' then looked elsewhere; 'Okul doğru cevabı ödüllendiriyor'",
+   "reason": "Scene reworked: Land is on vacation in Santa Fe in 1943, no scripted reply. Quote not used."
+  },
+  {
+   "claim": "Old 1321: widening the question changes the answer space; 'How can we make better film?' vs 'Is instant photography possible?'",
+   "reason": "Pair not attested."
+  },
+  {
+   "claim": "Old 1322: Berger ranks 'what' then 'how' then 'why' hierarchy",
+   "reason": "Wrong. Book's progression is Why, What if, How."
+  },
+  {
+   "claim": "Old 1322: Toyota 5 Whys machine example (fuse, motor, pump, filter)",
+   "reason": "Not found in Berger sources; illustration invented."
+  },
+  {
+   "claim": "Old 1323: Berger calls it 'expert blindness' (uzman körlüğü)",
+   "reason": "Term not found; book speaks of inverse relationship of expertise and questioning and beginner's mind."
+  },
+  {
+   "claim": "Old 1323: Airbnb came from two design students' question 'could sleeping in strangers' homes be safe?', hotel experts never asked",
+   "reason": "Wrong. Roommates short of rent; questions were why not house visitors, what more than a mattress."
+  },
+  {
+   "claim": "Old 1323: Berger advises asking 'how did other industries solve this?'",
+   "reason": "Not found."
+  },
+  {
+   "claim": "Toys R Us bankruptcy as a closed-questions case",
+   "reason": "2017, after the 2014 book; only in a later edition if at all. Not used."
+  },
+  {
+   "claim": "Uber founders in Paris snowstorm",
+   "reason": "Single secondary source, unverified for the book. Not used."
+  }
+ ],
+ "stories": {
+  "1321": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7"
+   ],
+   "note": "Polaroid anecdote kept, details corrected (1943 Santa Fe, daughter 3)."
+  },
+  "1322": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f8",
+    "f9",
+    "f10"
+   ],
+   "note": "Rebuilt around the real Why, What if, How progression with Airbnb as the case. Old hierarchy and Toyota dropped."
+  },
+  "1323": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f11",
+    "f13",
+    "f14",
+    "f15",
+    "f16"
+   ],
+   "note": "Reframed on the inverse expertise and questioning claim plus beginner's mind. Airbnb used only for Graham's doubt."
+  }
+ }
+}

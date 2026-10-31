@@ -1,0 +1,59 @@
+{
+  "story_id": 1689,
+  "kind": "concept",
+  "book": {
+    "title": "Emotional Intelligence 2.0",
+    "author": "Travis Bradberry and Jean Greaves",
+    "year": "2009"
+  },
+  "confidence": "medium",
+  "confidence_note": "The old TR text's '20-25% IQ correlation' and 'EQ earns more' claims could not be tied to the book and are dropped. Kept: the three-trait frame (IQ, personality, EQ), EQ as the flexible one, the 58% and 90% figures and the four skills, all confirmed by several summaries and TalentSmart's own papers. The figures come from the authors' company TalentSmart, not independent research; the story must say so. The '70% average-IQ people outperform high-IQ people' claim appears in one summary only and is left out. No concrete scene in the book for this concept; no example is invented.",
+  "facts": [
+    "Bradberry and Greaves name three traits that shape a person: IQ, personality and emotional intelligence (EQ).",
+    "They say IQ and personality are largely fixed, while EQ is flexible and can be built with practice.",
+    "They state that EQ explains 58% of success in job performance across all types of jobs.",
+    "They state that 90% of top performers are high in EQ.",
+    "These figures come from TalentSmart, the authors' own company, which tests EQ; they are not independent research.",
+    "They split EQ into four skills: self-awareness and self-management (about oneself), social awareness and relationship management (about others).",
+    "The book includes a passcode to an online EQ appraisal that scores the four skills and points to which of its 66 strategies would help most."
+  ],
+  "scene_details": [
+    "the figure 58%",
+    "the figure 90% of top performers",
+    "four skills in two pairs"
+  ],
+  "tension": "A single number says IQ is not what separates good performers, yet the number comes from the authors' own company.",
+  "opening_idea": "Start with the number 58 and what it supposedly explains.",
+  "lessons": [
+    {
+      "idea": "Treat the skills that can change as the place to put effort, and keep the headline figures at the weight of their source.",
+      "anchor": "IQ and personality largely fixed, EQ flexible; 58% from TalentSmart's own data."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Of the four skills, which one would the people who work with you say you use least, and what would you try first in the coming week?",
+  "use_cases": [
+    {
+      "situation": "A colleague is sure that talent is fixed.",
+      "move": "Say that the authors call EQ the flexible one of the three traits, so it is worth practicing.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are choosing what to improve this year.",
+      "move": "Name which of the four skills you want to work on and write down one situation where you will try it.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend quotes the 58% figure as proof.",
+      "move": "Point out that the number comes from the authors' company and read it as their claim.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "The 58% figure is TalentSmart's own, but the point stands on its own: EQ is the one of the three traits you can still train.",
+  "conversation_variants": {
+    "punchline_idea": "The book says IQ and personality barely move, EQ does, and its own company's data puts 58% of job performance on EQ.",
+    "thirty_sec_idea": "Bradberry and Greaves split a person into IQ, personality and EQ, say the first two mostly stay put and EQ can be trained, and cite their company's data: 58% of job performance, and 90% of top performers high in EQ. It is company data, not independent research.",
+    "question_idea": "",
+    "key_contrast_idea": "Fixed versus trainable"
+  }
+}

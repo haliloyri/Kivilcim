@@ -1,0 +1,62 @@
+{
+  "story_id": 1636,
+  "kind": "concept",
+  "book": {
+    "title": "In the Realm of Hungry Ghosts",
+    "author": "Gabor Maté",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "Full text not read. Hungry-ghost frame, Hell Realm line, continuum and the Downtown Eastside opening scene come from the publisher excerpt (high). The CD compulsion comes from a 2008 Globe profile and the \"why the pain\" question from the author site, so medium. Old text dropped: the invented \"what does the drug give you\" Q&A with five quotes, the ten-year figure.",
+  "facts": [
+    "Maté was staff physician for the Portland Hotel Society in Vancouver's Downtown Eastside, which runs the Portland, Stanley, Washington, Regal and Sunrise hotels. Most residents are addicts, many also mentally ill.",
+    "Opening scene: Eva, in her thirties, does the \"Hastings shuffle\", a cocaine-driven dance on the sidewalk. Arlene has rows of razor scars on her arms and takes medication that holds back the urge to cut; she fears the dose will be lowered.",
+    "He borrows the Buddhist Wheel of Life, six realms. The Hungry Ghost Realm is the realm of addiction: people keep reaching outside for relief from a craving that never ends, and what they reach for is not what they need.",
+    "Drug use, in his frame, is an attempt to escape the Hell Realm of overwhelming fear, rage and despair.",
+    "People with addictions are not a separate group. The continuum includes substances, compulsive eating, gambling and socially admired workaholism.",
+    "He puts himself on that continuum: his own compulsion is buying classical music CDs, often several versions of one piece.",
+    "His question: not why the addiction, but why the pain. Addiction serves a function in a painful history, so it calls for compassion. Some commentators question the scope of his claims.",
+    "He looks for the roots less in genes than in early childhood, when reward pathways develop and emotional patterns become unconscious; later stress adds to the predisposition."
+  ],
+  "scene_details": [
+    "The sidewalk dance called the Hastings shuffle",
+    "Rows of razor scars on Arlene's arms and a medication dose she fears losing",
+    "The Wheel of Life with its six realms",
+    "Stacks of classical CDs, several versions of the same piece"
+  ],
+  "tension": "The people in the book keep reaching for something that never satisfies, so asking how to make them stop misses what they are reaching away from.",
+  "opening_idea": "Start on the sidewalk with Eva's Hastings shuffle or Arlene's arms, then widen to the hotels and the physician.",
+  "lessons": [
+    {
+      "idea": "When a habit will not quit, ask what it is quieting before asking how to stop it.",
+      "anchor": "Hungry ghosts reach outward for relief and the thing they chase is never what they need; the Hell Realm of fear, rage and despair is what they flee.",
+      "everyday_example_idea": "A shop owner who snacks every night after the last customer leaves and asks what that hour feels like."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which habit of yours would look different if you asked what it quiets in you instead of how to stop it?",
+  "use_cases": [
+    {
+      "situation": "A friend keeps drinking after bad days and you are tempted to lecture.",
+      "move": "Skip the lecture and ask what the evenings are like lately, the way Maté asks why the pain.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You catch yourself scrolling, buying or snacking without hunger.",
+      "move": "Note what you felt five minutes earlier, as Maté did with his own CD buying.",
+      "context": "self"
+    },
+    {
+      "situation": "A relative is judged harshly at a family dinner for a habit.",
+      "move": "Say that a habit usually answers something and wonder aloud what it might be.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Before judging a craving, ask what pain it promises to quiet.",
+  "conversation_variants": {
+    "punchline_idea": "In Maté's Wheel of Life, the hungry ghost chases relief and the thing it chases is never what it needs.",
+    "thirty_sec_idea": "Physician in a Vancouver hotel for addicts, borrows the hungry ghost realm, sees fear and despair under the drug use, puts his own CD buying on the same continuum, asks why the pain.",
+    "question_idea": "",
+    "key_contrast_idea": "Craving, pain beneath"
+  }
+}

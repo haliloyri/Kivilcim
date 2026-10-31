@@ -1,0 +1,54 @@
+{
+  "story_id": 1807,
+  "kind": "anecdote",
+  "book": {
+    "title": "Grinding It Out",
+    "author": "Ray Kroc",
+    "year": "1977"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kroc's own memoir, Grinding It Out (1977), is the source. The Multimixer order, the San Bernardino visit and the McDonald brothers' speed and simplicity are told there. The account of Harry Sonneborn and the real-estate company he set up in 1956 (leasing or buying sites and subleasing them to franchisees) is from Kroc's memoir. Exact percentages and fee amounts are left out. The line that the company was 'a real-estate company' is an interpretation attributed to Sonneborn in other sources and is not used as a quote.",
+  "facts": [
+    "Kroc's early franchise model gave his company only a small share of each restaurant's sales.",
+    "Growth needed cash that this income did not cover.",
+    "Harry Sonneborn joined in 1956 and proposed a different structure.",
+    "The company would lease or buy the land and buildings and sublease them to franchisees.",
+    "Franchisees ran the restaurants; the company earned rent and kept more control over sites.",
+    "That income helped finance growth that the franchise fees alone had not.",
+    "Kroc credits Sonneborn with finding the way to pay for expansion."
+  ],
+  "tension": "The visible product was hamburgers, but the structure that paid for growth was elsewhere.",
+  "opening_idea": "Open on the cash problem of a chain that sold well but could not pay for its own expansion.",
+  "lessons": [
+    {
+      "idea": "A business may earn on one thing and be held up by another.",
+      "anchor": "Franchise income that was too small, and Sonneborn's real-estate plan."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your work, what lies under the product the customer sees and actually carries the value?",
+  "use_cases": [
+    {
+      "situation": "A team reviews where its income really comes from.",
+      "move": "Ask which part of our work pays for the rest.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague has a plan that depends on a single income stream.",
+      "move": "Ask what else could carry the cost if it slowed.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are looking at your own finances or projects.",
+      "move": "List what pays the bills and what only looks busy.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Sonneborn funded McDonald's growth through land, not hamburgers; look under your own product.",
+  "conversation_variants": {
+    "punchline_idea": "Harry Sonneborn financed McDonald's growth through the land under the restaurants.",
+    "thirty_sec_idea": "Ray Kroc's franchise model brought in too little to pay for growth. In 1956 Harry Sonneborn proposed that the company lease or buy the sites and sublease them to franchisees. Rent, not hamburgers, helped fund expansion, and the company kept more control over where restaurants stood.",
+    "question_idea": "",
+    "key_contrast_idea": "Ürün ve kaldıraç"
+  }
+}

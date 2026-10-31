@@ -1,0 +1,40 @@
+{
+  "story_id": 1483,
+  "kind": "anecdote",
+  "book": { "title": "The Fearless Organization", "author": "Amy C. Edmondson", "year": "2018" },
+  "confidence": "medium",
+  "confidence_note": "Core event facts come from public accident records (Columbia Accident Investigation Board synopsis via CRS report RS21606; Spaceflight Now coverage); WebSearch did not confirm which of these details Edmondson's book itself uses, so the story attributes only the framing (silence, psychological safety) to her and tells the event from the public record. Old TR text errors: foam strike 'two weeks before the launch' and 'fourteen days later' are wrong; the foam broke off during launch (16 January 2003) and the breakup came on reentry on 1 February 2003; the quoted manager line ('it is too late to question this') is unverified and omitted. Omitted: the exact wording of any email, Linda Ham's account (disputed), and any quote from Rocha. Rocha's regret at not speaking up is from press coverage of the investigation, medium confidence.",
+  "facts": [
+    "During the launch of Space Shuttle Columbia on 16 January 2003, a piece of foam insulation broke off the external tank and struck the shuttle's left wing.",
+    "Engineers noticed the strike on launch video and wanted better images of the wing to judge the damage.",
+    "Rodney Rocha, who led the engineers assessing the debris, was one of those worried; a request for imagery from outside NASA reached the right defence personnel but NASA cancelled it about 90 minutes later.",
+    "The Mission Management Team did not pursue the extra imagery. Rocha said afterwards that he regretted not speaking up at that team's meeting.",
+    "On 1 February 2003, Columbia broke apart during reentry and all seven astronauts died.",
+    "Edmondson uses the case to illustrate a lack of psychological safety: people hold back concerns when speaking up feels risky. She stresses it is not unique to NASA.",
+    "Edmondson's point: psychological safety is about candour being safe, not about being nice."
+  ],
+  "scene_details": [
+    "Foam breaking off the external tank and striking the left wing during launch",
+    "An imagery request cancelled about ninety minutes after it was made",
+    "An engineer who later said he regretted staying quiet at the meeting"
+  ],
+  "tension": "Engineers who had spotted the problem did not push the request, and the shuttle flew its full mission before the answer arrived.",
+  "opening_idea": "Start with the engineers watching the launch video of foam hitting the wing, and the request that was cancelled.",
+  "lessons": [
+    { "idea": "Silence does not mean agreement; people hold back concerns unless someone makes speaking up safe.", "anchor": "Rocha said afterwards he regretted not speaking up at the meeting.", "everyday_example_idea": "A team lead who asks 'what worries you?' and thanks the first person who answers." }
+  ],
+  "reflect": [],
+  "reflect_final": "When did you last keep a concern to yourself in a meeting, and what would have made it easier to say?",
+  "use_cases": [
+    { "situation": "You are chairing a meeting before a risky decision.", "move": "Ask for the biggest worry from each person before deciding, and thank whoever names one.", "context": "meeting" },
+    { "situation": "A report on your team seems too quiet.", "move": "In a one-to-one, ask what they have noticed but have not said.", "context": "oneonone" },
+    { "situation": "You have a doubt you have not voiced.", "move": "Write the concern in one sentence and decide where you will say it.", "context": "self" }
+  ],
+  "pocket_idea": "At Columbia, a cancelled request and a worried engineer stayed quiet: silence in a meeting is not agreement.",
+  "conversation_variants": {
+    "punchline_idea": "Before Columbia broke apart, engineers who saw the foam strike asked for images and the request was cancelled in about ninety minutes.",
+    "thirty_sec_idea": "Edmondson uses the 2003 Columbia disaster as a case of silence. Foam struck the shuttle's wing at launch and engineers wanted better images, but a request was cancelled and the engineer who led the debris team said later he regretted not speaking up at the meeting. Sixteen days after launch Columbia broke apart on reentry, killing seven astronauts. She says this is not unique to NASA.",
+    "question_idea": "",
+    "key_contrast_idea": "Silence is not agreement"
+  }
+}

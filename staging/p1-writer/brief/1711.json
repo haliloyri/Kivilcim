@@ -1,0 +1,62 @@
+{
+  "story_id": 1711,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Simple Path to Wealth",
+    "author": "J. L. Collins",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "Scene: the parable of the monk and the king's minister that the book uses to frame wealth as freedom. Sources: Four Minute Books summary (fourminutebooks.com/the-simple-path-to-wealth-summary/), Goodreads quote page and Matt Mulcock Substack (both carry the passage), theinvestorspodcast.com executive summary. Wording of the two replies varies between sources, so the story paraphrases and uses no direct quote. Not page-checked in the book. Not used: Mike Tyson example (one source), Collins's own savings rate (one source), any percentages, fund names, VTSAX (removed: recalled, not verified), the daughter's name. The origin in letters to a daughter and the 'F-you money' idea come from publisher descriptions and summaries. Added: the debt-as-leeches comparison and the three-part core advice come from summary sites (aibrary.ai summary and others), phrased loosely and not quoted.",
+  "facts": [
+    "The book frames wealth as freedom, and a short parable carries that idea.",
+    "Two boyhood friends grow up and go separate ways: one becomes a humble monk, the other a rich and powerful minister to the king.",
+    "Years later the minister, in his fine robes, takes pity on the thin, shabby monk.",
+    "Wanting to help, the minister says that if the monk learned to cater to the king he would not have to live on rice and beans.",
+    "The monk answers that if the minister learned to live on rice and beans he would not have to cater to the king.",
+    "Collins reads the parable as: the ability to live on little is what frees you from dependence on a boss or a king.",
+    "The book grew out of letters Collins wrote to his daughter about money and investing she was not yet ready to hear.",
+    "He calls the freedom he means 'F-you money': enough savings that you can say no to a job or a boss.",
+    "Collins treats debt as the biggest obstacle to building wealth and compares carrying it to being covered in leeches (summaries).",
+    "His core advice, as summaries give it: live on less than you earn, avoid debt, invest the surplus in low-cost broad index funds and hold through crashes."
+  ],
+  "scene_details": [
+    "a minister in fine robes pitying a thin, shabby monk",
+    "rice and beans",
+    "serving the king"
+  ],
+  "tension": "Each man thinks the other needs rescuing, and each reply turns the other's advice around.",
+  "opening_idea": "Open on the minister in fine robes looking at the thin, shabby monk.",
+  "lessons": [
+    {
+      "idea": "The ability to live on less is what buys you the option to refuse; it is built before the day you need to refuse.",
+      "anchor": "the monk's rice and beans against the minister's service to the king"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What would you refuse today if you could live on a little less, and which expense stands between you and that refusal?",
+  "use_cases": [
+    {
+      "situation": "You are about to take on a bigger monthly payment to match what your peers have.",
+      "move": "Ask what you would have to keep doing at work to carry it, and whether you could say no to that work later.",
+      "context": "self"
+    },
+    {
+      "situation": "You and your partner are talking about a long-term cushion.",
+      "move": "Name the freedom you want, saying no to a job or a boss, and agree on one automatic monthly amount.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend teases you about driving an old car or skipping the upgrade.",
+      "move": "Answer with the monk's point: living on less is what keeps your options open.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "The monk on rice and beans owed the king nothing; the money you do not need to spend is what lets you refuse.",
+  "conversation_variants": {
+    "punchline_idea": "A rich minister pitied a monk on rice and beans, and the monk pitied him right back: living on less meant owing the king nothing.",
+    "thirty_sec_idea": "In J. L. Collins's book, a rich minister to the king pities his old friend, a thin monk living on rice and beans. Learn to cater to the king, he says, and you could eat better. The monk answers that if the minister learned to live on rice and beans he would not have to cater to the king. Collins uses it to say wealth is freedom.",
+    "question_idea": "",
+    "key_contrast_idea": "freedom, not display"
+  }
+}

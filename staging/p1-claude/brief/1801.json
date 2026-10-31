@@ -1,0 +1,54 @@
+{
+  "story_id": 1801,
+  "kind": "concept",
+  "book": {
+    "title": "The Culture Map",
+    "author": "Erin Meyer",
+    "year": "2014"
+  },
+  "confidence": "low",
+  "confidence_note": "The book's claim that disagreement and agreement are signalled differently across cultures (communicating, evaluating, disagreeing and deciding scales) is used. I could not tie the supplied negotiation scene with a named person to a passage of the book, so no named person or event is used; the story is a mechanism with a general illustration. The suggestion to check commitment with concrete questions is a proposal for the reader, not a claim from the book.",
+  "facts": [
+    "In low-context, direct cultures a 'yes' usually means agreement and often a commitment.",
+    "In many high-context or indirect cultures openly disagreeing can damage the relationship, so people avoid a plain 'no'.",
+    "In those settings a 'yes' can mean 'I hear you', 'I understand', or 'I want to keep the conversation smooth' rather than 'I agree'.",
+    "Meyer's deciding scale adds a second layer: in top-down cultures the decision rests with the senior person, so a 'yes' from someone at the table may mean only that they will pass it up.",
+    "In consensual cultures a decision needs many people to agree, so an early 'yes' may still be far from final.",
+    "The same word therefore carries a different weight depending on context, feedback style and who decides.",
+    "Meyer's point is to learn how a counterpart signals agreement before reading a signal."
+  ],
+  "tension": "A word that means 'done' in one place means 'go on' in another.",
+  "opening_idea": "Open on a counterpart who says yes several times while the deal still does not move.",
+  "lessons": [
+    {
+      "idea": "Learn what a 'yes' weighs for this person before counting it as a commitment.",
+      "anchor": "One word, three weights: heard, understood, committed."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When someone says yes to you, how do you check what they have actually agreed to?",
+  "use_cases": [
+    {
+      "situation": "A counterpart has said yes several times.",
+      "move": "Ask what the next concrete step is, who does it, and by when.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague agrees quickly in a one-on-one.",
+      "move": "Ask what could make this hard for them.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A family member says yes to a plan.",
+      "move": "Ask whether they would like to change anything about it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A yes can mean heard, understood or committed; ask what happens next to find out which.",
+  "conversation_variants": {
+    "punchline_idea": "Meyer's maps suggest that one yes can carry very different weights depending on who says it.",
+    "thirty_sec_idea": "In Erin Meyer's framework a yes is not the same everywhere. In direct, low-context cultures it usually commits. In indirect ones it may only mean I hear you. And in top-down cultures the person at the table may not be the one who decides. So ask what happens next.",
+    "question_idea": "",
+    "key_contrast_idea": "Evet ve taahhüt"
+  }
+}

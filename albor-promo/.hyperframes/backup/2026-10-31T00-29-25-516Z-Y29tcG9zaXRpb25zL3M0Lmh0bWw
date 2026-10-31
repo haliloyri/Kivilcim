@@ -1,0 +1,85 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #f7f3ec;
+      overflow: hidden;
+    }
+    .eyebrow {
+      position: absolute;
+      left: 80px;
+      top: 180px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 34px;
+      letter-spacing: 0.28em;
+      color: #1f5f5b;
+    }
+    .head {
+      position: absolute;
+      left: 80px;
+      right: 60px;
+      top: 244px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 150px;
+      line-height: 1.05;
+      color: #24211e;
+    }
+    .head .ln {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 10px;
+    }
+    .head .w {
+      display: inline-block;
+    }
+    #s4-card {
+      position: absolute;
+      left: 80px;
+      top: 560px;
+      width: 920px;
+      padding: 64px 60px;
+      border-radius: 48px;
+      background: #fbf6ef;
+      border: 4px dashed #e8cdbd;
+    }
+    #s4-q {
+      font-family: "Inter", sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 68px;
+      line-height: 1.38;
+      color: #24211e;
+    }
+    #s4-q em {
+      font-style: italic;
+      font-weight: 600;
+      color: #1f5f5b;
+    }
+    #s4-hint {
+      margin-top: 52px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 36px;
+      color: #b85c2e;
+    }
+  </style>
+  <div id="root" data-composition-id="s4" data-width="1080" data-height="1920">
+    <div class="eyebrow" id="s4-eb">KENDİNE SOR</div>
+    <div class="head"><span class="ln"><span class="w" id="s4-a">Soru.</span></span></div>
+    <div id="s4-card">
+      <div id="s4-q">Gününde hangi cazibeyi, her göründüğünde direnmek yerine <em>gözden uzaklaştırabilirsin?</em></div>
+      <div id="s4-hint">Cevap kitapta değil, sende.</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s4-eb", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, 0.1);
+    tl.fromTo("#s4-a", { yPercent: 105 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+    tl.fromTo("#s4-card", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.5);
+    tl.fromTo("#s4-hint", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 4.8);
+    window.__timelines["s4"] = tl;
+  </script>
+</template>

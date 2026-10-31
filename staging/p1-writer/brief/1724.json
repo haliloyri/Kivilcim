@@ -1,0 +1,64 @@
+{
+  "story_id": 1724,
+  "kind": "anecdote",
+  "book": {
+    "title": "Good to Great",
+    "author": "Jim Collins",
+    "year": "2001"
+  },
+  "confidence": "medium",
+  "confidence_note": "Supported by several secondary sources: Smith became CEO of Kimberly-Clark in 1971; doctors diagnosed nose and throat cancer shortly after and gave him under a year (a Penguin excerpt says two months after he became CEO); he sold the traditional paper mills that were most of the business, including the namesake mill in Kimberly, Wisconsin, and moved into consumer paper products (Kleenex, Huggies); in 1995 Kimberly-Clark merged with its former rival Scott Paper. The 4.1x cumulative market-beating figure (1971 to 1991) is recalled from the book and not re-verified in this session; keep its scope exactly or leave it out. The reasoning attributed to Smith (the coated-paper business would be mediocre and he wanted to be best in the world) is recalled, not verified, so it is kept out of facts. Smith having been a company lawyer is recalled and left out. Wall Street reaction is omitted: no source found. Smith serving as CEO for twenty years is from a secondary source. Added as recalled, not re-verified: Smith's earlier work in the legal department, and his remark 'I never stopped trying to become qualified for the job'.",
+  "facts": [
+    "Darwin Smith became CEO of Kimberly-Clark in 1971.",
+    "Smith came to the top job from the company's legal department (recalled).",
+    "Shortly after he took the job, doctors diagnosed him with nose and throat cancer and told him he had less than a year to live (an excerpt says about two months after he became CEO).",
+    "Kimberly-Clark was then a traditional paper company; the paper mills made up most of its business.",
+    "Smith decided to sell all of those traditional mills, including the one in Kimberly, Wisconsin, that gave the company its name.",
+    "He moved the company toward consumer paper products such as Kleenex and Huggies.",
+    "Collins tells it as a case of a quiet, unflashy leader making a hard, clear choice that was not popular with the company's old identity.",
+    "Over the following years the company went up against Scott Paper, its main rival in consumer paper products, and did better than it.",
+    "Collins reports that in 1995 Kimberly-Clark came to own Scott Paper after a merger.",
+    "Smith led the company for about twenty years.",
+    "From 1971 to 1991 the company's cumulative stock returns were 4.1 times the general market (recalled; keep scope exact).",
+    "Collins quotes Smith saying of himself that he never stopped trying to become qualified for the job (recalled; quote kept short)."
+  ],
+  "scene_details": [
+    "the mill in Kimberly, Wisconsin that gave the company its name",
+    "Kleenex and Huggies on the other side of the choice",
+    "a doctor's verdict of less than a year"
+  ],
+  "tension": "A new CEO with less than a year to live sells the mills that gave the company its name.",
+  "opening_idea": "Open on the namesake mill in Kimberly, Wisconsin, which Darwin Smith put up for sale.",
+  "lessons": [
+    {
+      "idea": "Decide what you can do best and be willing to let go of the part of the business that carries your name and your habits.",
+      "anchor": "selling the Kimberly mill and putting the company into Kleenex and Huggies"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your own work, which activity are you keeping mainly because it has always been yours, even though you would not choose it if you started today?",
+  "use_cases": [
+    {
+      "situation": "Your team keeps an old report nobody reads.",
+      "move": "Say Smith sold the namesake mill and ask which item on your list is your Kimberly mill, then propose dropping one.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are asked why you are giving up something you built.",
+      "move": "Say what you will do instead and what you are best placed to do there.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are cleaning out a project that has become a habit.",
+      "move": "Write one thing you would not start again today, and stop it this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Kimberly-Clark sold the mill that gave it its name: the hardest cut is the part you are proudest of.",
+  "conversation_variants": {
+    "punchline_idea": "Darwin Smith sold the mill that gave Kimberly-Clark its name, and went on to beat Scott Paper.",
+    "thirty_sec_idea": "In 1971 Darwin Smith became CEO of Kimberly-Clark, and within months doctors gave him less than a year to live. He sold the paper mills that made up most of the company, including the one in Kimberly, Wisconsin, and moved into Kleenex and Huggies. Collins tells it as the clearest case of quiet leadership: the company beat Scott Paper, its old rival.",
+    "question_idea": "",
+    "key_contrast_idea": "sell the namesake"
+  }
+}

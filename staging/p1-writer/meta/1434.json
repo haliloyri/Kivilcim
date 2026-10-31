@@ -1,0 +1,35 @@
+{
+  "story_id": 1434,
+  "verdict": "keep",
+  "verify_note": "Old Doerr quote ('everyone has goals but nobody knows if they connect') and the CEO-to-employee cascade description not tied to the book and dropped. Kept the MyFitnessPal alignment chapter (Mike Lee, misaligned OKRs, regular meeting where department heads name the teams they depend on, single owner per OKR, Under Armour, Lee's hindsight), the two-direction framing, Google's openness and Intuit's Atticus Tysen on visibility. Sources: SuperSummary, LifeClub, chapter excerpts via summaries; 'quarterly' cadence not confirmed so 'regular' used; book text not read, confidence low.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "MyFitnessPal'da Bağımlılık Toplantısı",
+    "description": "MyFitnessPal'da ekipler birbirini beklerken tıkanıyordu. Çözüm, bölüm başkanlarının bağımlı oldukları ekipleri adlarıyla söylediği düzenli bir toplantıydı.",
+    "hook": "En önemli işiniz hangi iş arkadaşınızın çalışmasını bekliyor?",
+    "one_minute_summary": "Doerr hizalamayı MyFitnessPal bölümüyle anlatıyor, bölümü şirketin kurucusu Mike Lee yazıyor. Lee, birçok OKR'ın birbirine uymadığını ve ekiplerin başka ekipleri beklerken tıkandığını gördü. Çözüm, bölüm başkanlarının OKR'larını sunup bağımlı oldukları ekipleri adlarıyla söylediği düzenli bir toplantıydı. Doerr hizalamayı iki yönde anlatıyor ve şeffaflığı ikisinin de besleyicisi sayıyor. Intuit'te Atticus Tysen başarının anahtarının tüm OKR'ların görünür olması olduğunu söylüyor. Bölümün anlattığı çözümün özü, bağımlılığı iş tıkanmadan önce yüksek sesle söylemek."
+  },
+  "en": {
+    "title": "MyFitnessPal's Dependency Meeting",
+    "description": "At MyFitnessPal teams stalled waiting on one another. The fix was a regular meeting where department heads named the teams they depended on.",
+    "hook": "Whose finished work is your most important task waiting on right now?",
+    "one_minute_summary": "Doerr explains alignment through MyFitnessPal, in a chapter written by co-founder Mike Lee. Lee saw that many OKRs did not line up and that teams stalled while waiting on other teams. The fix was a regular meeting where department heads presented their OKRs and named the teams they depended on. Doerr describes alignment as running in two directions, fed by transparency. At Intuit, Atticus Tysen says the key was making all OKRs visible across the company."
+  },
+  "es": {
+    "title": "La reunión de dependencias",
+    "description": "En MyFitnessPal los equipos se atascaban esperándose. La solución fue una reunión periódica donde los jefes nombraban los equipos de los que dependían.",
+    "hook": "¿De qué trabajo ya terminado depende ahora tu tarea más importante?",
+    "one_minute_summary": "Doerr explica la alineación con MyFitnessPal, en un capítulo escrito por el cofundador Mike Lee. Lee vio que muchos OKR no encajaban y que los equipos se atascaban esperando a otros. La solución fue una reunión periódica donde los jefes de departamento presentaban sus OKR y nombraban los equipos de los que dependían. Doerr describe la alineación en dos direcciones, alimentada por la transparencia. En Intuit, Atticus Tysen dice que la clave fue hacer visibles todos los OKR."
+  },
+  "de": {
+    "title": "Das Abhängigkeits-Treffen",
+    "description": "Bei MyFitnessPal blieben Teams hängen, weil sie aufeinander warteten. Die Lösung war ein regelmäßiges Treffen, in dem Abteilungsleiter die Teams nannten, von denen sie abhingen.",
+    "hook": "Auf wessen fertige Arbeit wartet deine wichtigste Aufgabe gerade?",
+    "one_minute_summary": "Doerr erklärt Alignment am Beispiel MyFitnessPal, in einem Kapitel von Mitgründer Mike Lee. Lee sah, dass viele OKRs nicht zusammenpassten und Teams aufeinander warteten. Die Lösung war ein regelmäßiges Treffen, in dem Abteilungsleiter ihre OKRs vorstellten und die Teams nannten, von denen sie abhingen. Doerr beschreibt Alignment als Bewegung in zwei Richtungen, gespeist von Transparenz. Bei Intuit sagt Atticus Tysen, der Schlüssel sei gewesen, alle OKRs sichtbar zu machen."
+  }
+}

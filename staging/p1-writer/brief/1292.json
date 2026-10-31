@@ -1,0 +1,61 @@
+{
+  "story_id": 1292,
+  "kind": "anecdote",
+  "book": {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from memory and secondary summaries (richdad.com article, blog summaries; WebSearch confirmed the core: Kroc, MBA class at the University of Texas at Austin, 'What business am I in?', answer real estate). Sources note Kiyosaki tells it secondhand, wording varies between retellings, and no independent record of the exchange was found. Old TR text errors: it has Kiyosaki asking students 'What does McDonald's sell?' at a business conference; in the book it is Kroc who asks, in the MBA class story, relayed secondhand. Also old text says 'burger profit only covers the upkeep of the land' and that the land is 'owned or leased'; not supported, omitted. The beers detail comes from a secondary retelling; medium confidence. 'Location, location, location' as McDonald's chief strategy is Kiyosaki's framing in the book, medium confidence.",
+  "facts": [
+    "Kiyosaki relays a story about Ray Kroc, the founder of McDonald's, speaking to an MBA class at the University of Texas at Austin.",
+    "Afterwards the students invited him out for beers, and he joined them.",
+    "Kroc asked the students: 'What business am I in?' They answered that he was in the hamburger business.",
+    "Kroc said no: his business was real estate.",
+    "Kiyosaki's reading: McDonald's most important strategy was location, so the company wanted the land under the restaurants, the best corners.",
+    "Kiyosaki's point for readers: your business is the column of assets you build, separate from the job you do for pay.",
+    "Kiyosaki says the rich buy assets first and luxuries afterwards, paid from what the assets earn, while many others buy the luxury first.",
+    "Kiyosaki's complaint: many people spend their working lives building someone else's business while their own asset column stays nearly empty."
+  ],
+  "scene_details": [
+    "A table of MBA students with beers and the founder of McDonald's asking a question",
+    "The students' one-word answer: hamburgers",
+    "Corners of land under the restaurants"
+  ],
+  "tension": "A room of business students gives an obvious answer and the founder says they are wrong.",
+  "opening_idea": "Start with Kroc's question to the students and their one-word answer.",
+  "lessons": [
+    {
+      "idea": "Ask what you own as a result of your work, as well as what you are paid for it.",
+      "anchor": "Kroc's answer was real estate, not hamburgers: the land under the restaurants.",
+      "everyday_example_idea": "A freelance designer notices that her income is all hours, and nothing she builds keeps earning."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Beyond the pay you receive, what does your current work leave you owning a year from now?",
+  "use_cases": [
+    {
+      "situation": "You are reviewing a job offer.",
+      "move": "Ask what you would own after a year, beyond the salary.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A friend wants to open a shop.",
+      "move": "Kroc said his business was the land; ask which part of their shop they will own that grows in value.",
+      "context": "social"
+    },
+    {
+      "situation": "You plan your side income.",
+      "move": "Write which of your projects produces something that outlasts the hours.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Kroc said McDonald's was in real estate, not hamburgers. Ask what your work leaves you owning.",
+  "conversation_variants": {
+    "punchline_idea": "Ray Kroc told MBA students his business was not hamburgers, it was real estate.",
+    "thirty_sec_idea": "In Kiyosaki's retelling, McDonald's founder Ray Kroc speaks to an MBA class in Texas, then joins students for beers. He asks what business he is in. They say hamburgers. He says real estate. Kiyosaki's reading: your business is what you own, not what you do for pay.",
+    "question_idea": "",
+    "key_contrast_idea": "Burgers or land"
+  }
+}

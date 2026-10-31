@@ -1,0 +1,59 @@
+{
+ "story_id": 1466,
+ "kind": "anecdote",
+ "book": {
+  "title": "Talk Like TED",
+  "author": "Carmine Gallo",
+  "year": "2014"
+ },
+ "confidence": "medium",
+ "confidence_note": "Stevenson details come from Gallo's own pieces (Entrepreneur excerpt and HBR article) which accompany the book; his two accounts split the non-story third differently, so only the 65 percent story share is used. Brain coupling is as Gallo reports it, no study details. The old pure-data vs story imaging experiment was dropped.",
+ "facts": [
+  "Stevenson's 2013 TED talk, 'We need to talk about an injustice', ran 18 minutes and was built from three personal stories; he opened with one about his grandmother, 'because everyone has a grandmother'.",
+  "Stevenson is a civil rights attorney who argues before the U.S. Supreme Court and won Miller v. Alabama (no mandatory life without parole for juveniles convicted of murder).",
+  "The stories supported one theme: young people in underserved communities who grow up without a sense of identity and make seriously bad decisions.",
+  "Gallo counts about 65 percent of the talk as stories; accounts of the remainder differ (data 10 percent in one, logic 25 and credibility 10 in another).",
+  "Gallo reports the longest standing ovation in TED history and about one million dollars donated by audience members to the Equal Justice Initiative.",
+  "Gallo: when someone tells another a story, the same regions of their brains are engaged; researchers call it brain-to-brain coupling, he calls it a mind meld; stories activate language, sensory, visual and motor areas.",
+  "Gallo says workplace talks lean heavily on data and rarely on stories."
+ ],
+ "scene_details": [
+  "The grandmother story that opened the talk: 'because everyone has a grandmother'.",
+  "Three personal stories in eighteen minutes.",
+  "The phrase 'mind meld'."
+ ],
+ "tension": "A talk heavy on a hard subject opened with stories, not numbers.",
+ "opening_idea": "Start with the five minutes before the first statistic.",
+ "lessons": [
+  {
+   "idea": "Lead with a person, then give the figure.",
+   "anchor": "Stevenson's three stories before his first statistic."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which fact or number in your next explanation could be introduced through one person's situation instead, and whose would it be?",
+ "use_cases": [
+  {
+   "situation": "Presenting a budget request",
+   "move": "Stevenson told three personal stories before his first statistic; I'll start with one customer's case, then give the figure.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Persuading a relative to see a doctor",
+   "move": "Tell what happened to someone you both know before quoting any numbers.",
+   "context": "family"
+  },
+  {
+   "situation": "Writing the opening of an email",
+   "move": "Replace the first statistic with one concrete situation and see how the reply changes.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Stevenson told stories for five minutes before his first statistic.",
+ "conversation_variants": {
+  "punchline_idea": "A civil rights lawyer waited about five minutes for his first statistic.",
+  "thirty_sec_idea": "Gallo's count of Stevenson's talk and the brain-coupling idea.",
+  "question_idea": "",
+  "key_contrast_idea": "story before number"
+ }
+}

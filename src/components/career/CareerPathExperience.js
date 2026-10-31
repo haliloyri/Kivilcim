@@ -178,7 +178,7 @@ const CareerPathExperience = ({ navigation, route }) => {
   if (loading || !career) {
     return (
       <View style={[styles.centered, { backgroundColor: colors.background }]}> 
-        <Ionicons name="sparkles-outline" size={28} color={colors.primaryText} />
+        <Ionicons name="compass-outline" size={28} color={colors.primaryText} />
         <Text selectable style={[styles.loading, { color: colors.textSecondary }]}>{t('career.loading', lang)}</Text>
         {error ? <Text selectable style={[styles.error, { color: colors.textSecondary }]}>{t('career.unavailable', lang)}</Text> : null}
         {error ? <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.retry', lang)} onPress={() => refreshCareer()} style={[styles.retryButton, { borderColor: colors.border, backgroundColor: colors.backgroundDark }]}><Ionicons name="refresh-outline" size={17} color={colors.primaryText} /><Text selectable style={[styles.retryText, { color: colors.text }]}>{t('career.retry', lang)}</Text></TouchableOpacity> : null}
@@ -302,7 +302,7 @@ const CareerPathExperience = ({ navigation, route }) => {
               <Ionicons name={showConditions ? 'chevron-up' : 'chevron-forward'} size={16} color={colors.primaryText || colors.primary} />
             </TouchableOpacity>
           ) : null}
-          {career.nextNode.unlockKey ? <View style={[styles.reward, { borderColor: colors.mutedText }]}><Ionicons name="sparkles-outline" size={18} color={colors.dawnText} /><Text selectable style={[styles.rewardText, { color: colors.textSecondary, flex: 1 }]}>{t(career.nextNode.unlockKey, lang)}</Text></View> : null}
+          {career.nextNode.unlockKey ? <View style={[styles.reward, { borderColor: colors.mutedText }]}><Ionicons name="gift-outline" size={18} color={colors.dawnText} /><Text selectable style={[styles.rewardText, { color: colors.textSecondary, flex: 1 }]}>{t(career.nextNode.unlockKey, lang)}</Text></View> : null}
         </View>
       </View>
     );

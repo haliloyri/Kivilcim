@@ -1,0 +1,39 @@
+{
+  "story_id": 1417,
+  "kind": "anecdote",
+  "book": { "title": "Blue Ocean Strategy", "author": "W. Chan Kim and Renee Mauborgne", "year": "2004" },
+  "confidence": "medium",
+  "confidence_note": "Written from the book's best-known case and secondary summaries; book text not opened. Title in DB is the Turkish 'Mavi Okyanus Stratejisi'; the English title is used. The old TR text says only W. Chan Kim; the book has two authors (Kim and Mauborgne), and the old text also says Cirque 'has no clowns', which is wrong, since Cirque shows can include clowns; omitted. Also unverified in the old text: the claim that famous brands 'were closing' and that children had lost interest. Medium-confidence details: the list of what Cirque eliminated and added (strategy canvas) and the 'under 20 years vs more than a century' revenue comparison with Ringling Bros., which is the book's own claim and kept as the book's claim; no exact revenue figures included.",
+  "facts": [
+    "In 1984 a group of street performers in Quebec started Cirque du Soleil, at a time when the circus industry was in long decline.",
+    "Circus audiences were shrinking, animal-rights groups were criticising animal acts, and other entertainment competed for families' time.",
+    "Instead of fighting Ringling Bros. for the same customers, Cirque dropped animal shows, star performers and aisle concession sales, and did not run several rings at once.",
+    "It added elements from theatre: a story and theme, artistic music and dance, and a refined setting.",
+    "Its audience shifted to adults and corporate clients, and tickets cost several times more than at a traditional circus, closer to a theatre ticket.",
+    "The book says Cirque reached in under twenty years a level of revenue that Ringling Bros. took more than a century to reach."
+  ],
+  "scene_details": [
+    "A tent without the animal acts",
+    "A ticket priced like a theatre seat",
+    "Street performers from Quebec starting out in 1984"
+  ],
+  "tension": "A dying industry and a small troupe of street performers who chose not to fight the leader.",
+  "opening_idea": "Start with the street performers and the show they built without the elements everybody thought a circus needed.",
+  "lessons": [
+    { "idea": "Compare your offering with another industry's strengths, not only with your direct rivals.", "anchor": "Cirque borrowed story, music and refinement from theatre rather than copying Ringling.", "everyday_example_idea": "A small gym borrows the quiet, personal feel of a spa instead of copying nearby gyms." }
+  ],
+  "reflect": [],
+  "reflect_final": "In your field, which feature does everyone assume is required, and what would you try dropping or borrowing from somewhere else?",
+  "use_cases": [
+    { "situation": "Your team is stuck copying a competitor.", "move": "Cirque dropped animals and stars; ask which costly features customers rarely value.", "context": "meeting" },
+    { "situation": "You are thinking about a career change.", "move": "List which parts of your field everyone does the same way and which you'd drop.", "context": "self" },
+    { "situation": "A friend wants to open a cafe next to three others.", "move": "Ask what no one nearby offers that customers might want.", "context": "social" }
+  ],
+  "pocket_idea": "Cirque du Soleil dropped the animals and borrowed from theatre: stop copying rivals, borrow from another field.",
+  "conversation_variants": {
+    "punchline_idea": "Cirque du Soleil won over the circus industry by dropping the animals.",
+    "thirty_sec_idea": "In 1984 a group of Quebec street performers started Cirque du Soleil while the circus business was shrinking. They dropped animal acts and star performers, and borrowed story, music and dance from theatre. Their audience was adults, with tickets priced higher than any ordinary circus, and the book says it reached in under twenty years the revenue that Ringling Bros. needed over a century to reach.",
+    "question_idea": "",
+    "key_contrast_idea": "Not a better circus"
+  }
+}

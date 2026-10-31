@@ -5,9 +5,9 @@ import { useTheme } from '../../context/ThemeContext';
 import useReducedMotion from '../../hooks/useReducedMotion';
 
 const CONFIG = {
-  idle: { icon: 'sparkles-outline', pulse: false, intensity: 0.34 },
+  idle: { icon: 'sunny-outline', pulse: false, intensity: 0.34 },
   guide: { icon: 'navigate-outline', pulse: true, intensity: 0.42 },
-  celebrate: { icon: 'sparkles', pulse: true, intensity: 0.58 },
+  celebrate: { icon: 'sunny', pulse: true, intensity: 0.58 },
   gentleReturn: { icon: 'return-down-back-outline', pulse: false, intensity: 0.28 },
 };
 

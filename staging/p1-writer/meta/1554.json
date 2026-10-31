@@ -1,0 +1,26 @@
+{
+  "tr": {
+    "title": "Bu Rakam Kimin?",
+    "description": "Bir ekip, üyeleri kişisel hedeflerini tuttururken ortak sonucu ıskalayabilir. Lencioni'nin beşinci işlev bozukluğu, kimsenin kötü davranmadığı bir kayma.",
+    "hook": "Çalışma biçiminiz sizi kendi rakamlarınıza mı, ekibin hedefine mi çekiyor?",
+    "one_minute_summary": "Patrick Lencioni'nin beşinci işlev bozukluğu sonuçlara ilgisizliktir: ekip üyeleri ekibin sonucunun önüne kendi egosunu, kariyerini ya da takdirini koyar. Kimse kötü davranmaz, biri kişisel hedeflerini tutturur ama ekibin hedefi yerinden oynamaz. Çareleri, ekibin sonuçlarını herkesin göreceği yere yazmak ve ödülleri ekibin sonuçlarına bağlamaktır. Kitaptaki resim, herkesin aynı yöne kürek çektiği bir teknedir."
+  },
+  "en": {
+    "title": "Whose Number Is It?",
+    "description": "A team can hit every personal target and still miss the shared result. Lencioni's fifth dysfunction is a drift where nobody behaves badly.",
+    "hook": "Does the way your work is measured pull you toward your numbers or the team's?",
+    "one_minute_summary": "Patrick Lencioni's fifth dysfunction is inattention to results: team members put their own ego, career or recognition ahead of the team's result. Nobody acts badly, and someone can hit every personal target while the team's goal barely moves. His remedies are to state the team's results publicly and to tie rewards to them. His picture of the payoff is a boat where everyone rows in the same direction."
+  },
+  "es": {
+    "title": "Cada remero con su marcador",
+    "description": "Un equipo puede cumplir todos sus objetivos personales y fallar el resultado común. La quinta disfunción de Lencioni es una deriva donde nadie se porta mal.",
+    "hook": "¿Tu forma de medir el trabajo te acerca a tus cifras o a las del equipo?",
+    "one_minute_summary": "La quinta disfunción de Patrick Lencioni es la falta de atención a los resultados: los miembros anteponen su ego, su carrera o su reconocimiento al resultado del equipo. Nadie actúa mal, y alguien puede cumplir todos sus objetivos personales mientras la meta del equipo apenas se mueve. Sus remedios son declarar los resultados del equipo en público y vincular las recompensas a ellos. Su imagen es una barca donde todos reman en la misma dirección."
+  },
+  "de": {
+    "title": "Alle rudern, nur nicht gemeinsam",
+    "description": "Ein Team kann jedes persönliche Ziel erreichen und das gemeinsame Ergebnis trotzdem verfehlen. Lencionis fünfte Dysfunktion ist ein Abdriften, bei dem sich niemand schlecht benimmt.",
+    "hook": "Zieht die Art, wie deine Arbeit gemessen wird, dich zu den eigenen Zahlen oder zu denen des Teams?",
+    "one_minute_summary": "Die fünfte Dysfunktion in Patrick Lencionis Modell ist mangelnde Ergebnisorientierung: Teammitglieder stellen Ego, Karriere oder Anerkennung vor das Ergebnis des Teams. Niemand verhält sich schlecht, und doch kann jemand alle persönlichen Ziele erreichen, während das Teamziel kaum vorankommt. Seine Gegenmittel sind, die Teamergebnisse öffentlich zu benennen und Belohnungen daran zu knüpfen. Sein Bild ist ein Boot, in dem alle in dieselbe Richtung rudern."
+  }
+}

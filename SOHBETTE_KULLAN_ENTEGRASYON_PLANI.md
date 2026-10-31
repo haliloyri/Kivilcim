@@ -12,7 +12,8 @@ Hikâye sonu **"nerede"**yi gösterip merak uyandıracak; "Sohbette kullan"
 - Hikâye sonu (`[[use]]`), ücretsiz: en fazla 3 kullanım kartı, "Prova et →"
   ile doğrudan "Sohbette kullan" ekranını o durum seçili açar.
 - "Sohbette kullan": önce **durum** seçilir (Toplantı / Birebir / Aile /
-  Sosyal / Kendime), sonra **uzunluk** (Tek cümle / 30 saniye / Soru),
+  Sosyal / Kendime), sonra **uzunluk** (Tek cümle / 30 saniye — `question`
+  varyantı 2026-10-28'de ekrandan kaldırıldı, JSON'da boş string olarak durur),
   ardından prova (30 sn zamanlayıcı), "Bunu kullandım", paylaşım. Prova ve
   görsel kart premium sınırında kalır — abonelik için savunulabilir ayrım.
 
@@ -48,7 +49,7 @@ Hikâye sonu **"nerede"**yi gösterip merak uyandıracak; "Sohbette kullan"
 1. Ekranın akışı yeniden sıralanacak: önce **durum seçimi** (Toplantı /
    Birebir / Aile / Sosyal / Kendime — Storyteller modundaki context
    seçenekleriyle aynı liste), sonra o duruma ait **uzunluk** kartları
-   (Tek cümle / 30 saniye / Soru).
+   (Tek cümle / 30 saniye — `question` kartı 2026-10-28'de kaldırıldı).
    - Hikâyeden "Prova et →" ile gelindiğinde bu adım atlanıp doğrudan ilgili
      context açılacak.
 2. Format kartlarının içerik kaynağı: mevcut `story_conversation_variants`

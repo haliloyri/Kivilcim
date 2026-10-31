@@ -1,0 +1,64 @@
+{
+ "story_id": 1773,
+ "kind": "concept",
+ "book": {
+  "title": "The Happiness Hypothesis",
+  "author": "Jonathan Haidt",
+  "year": "2006"
+ },
+ "confidence": "medium",
+ "confidence_note": "Chapter 1 ('The Divided Self') content cross-checked between Wikipedia's chapter summary, a blog page reproducing the chapter text (mpass0.blogspot.com), a second set of reading notes (duddhawork.com) and a Taipei Times piece for Gazzaniga's chicken-claw test. The book itself was not available (archive.org copy is loan-locked), so page-level wording is unverified. Omitted: the exact seconds he froze (sources disagree), 'Cars go over edges' line (unverified), exact quotes from Ovid, the Franklin epigraph, all later-chapter material. Training methods named in the book (meditation, cognitive therapy, medication) are from later chapters (Wikipedia/shortform) and are not used as chapter 1 claims.",
+ "facts": [
+  "Haidt opens chapter 1 with his first solo horse ride, in 1991 in Great Smoky Mountains National Park, North Carolina, with eight other riders and a park ranger.",
+  "On a steep hillside path the trail turned sharply to the left. Haidt froze and did nothing while his horse and the horse beside it turned by themselves.",
+  "That moment gave him the image of himself as a rider on the back of an elephant; he has used it for years. The rider can steer only while the elephant has no strong desire of its own.",
+  "Older images of the same split: Ovid's Medea torn between love for Jason and duty to her father; Buddha's mind as a wild elephant controlled by a trainer; Plato's charioteer holding the reins of two horses, one obedient and one unruly; Freud's ego, id and superego, which Haidt pictures as a driver struggling with a lustful horse while the driver's father lectures from the back seat.",
+  "Haidt lists four divisions of the mind: mind versus body, left versus right brain, new versus old brain, controlled versus automatic processing. The last one matches rider and elephant.",
+  "Split-brain research: in the 1960s surgeon Joe Bogen cut the corpus callosum in patients with severe epilepsy; Michael Gazzaniga then showed pictures to one hemisphere at a time.",
+  "In Gazzaniga's chicken-claw test a patient was shown a chicken claw to one hemisphere and a snow scene to the other; the left hand picked a shovel, and the speaking left hemisphere, which never saw the snow, explained that a shovel is needed to clean out the chicken shed.",
+  "Gazzaniga calls the left-hemisphere explainer the interpreter; Haidt identifies it with the rider: it invents reasons without knowing the real causes.",
+  "Antonio Damasio's patients with damage just above the eyes kept their reasoning and IQ but lost emotional responses; they struggled to make even simple decisions and their lives fell apart. Haidt concludes that reason depends on emotion.",
+  "The rider cannot overpower the elephant directly. Haidt's advice is indirect: change your surroundings so the tempting thing is not there, and coax or distract the elephant instead of fighting it.",
+  "Willpower alone tends to fail like a tired muscle, while automatic processes carry on effortlessly."
+ ],
+ "scene_details": [
+  "a steep trail turning sharply left while the rider freezes",
+  "a chicken claw on one side and a snow scene on the other, and a shovel explained as for the chicken shed",
+  "a charioteer with two horses, a driver with his father lecturing from the back seat",
+  "a wild elephant held by a trainer"
+ ],
+ "tension": "The part that gives the orders is the small part, and it still invents a reason afterwards.",
+ "opening_idea": "Vary by language: the frozen rider on the trail; the shovel and the chicken shed; Medea; Freud's driver and father in the back seat.",
+ "lessons": [
+  {
+   "idea": "The rider cannot overpower the elephant, so to change a habit arrange the surroundings so the right path is the easy one, instead of piling up reasons.",
+   "anchor": "the horse and its neighbour turned by themselves while the rider froze"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which habit have you tried to change only by giving yourself reasons, and what one change to your surroundings would make the other path easier?",
+ "use_cases": [
+  {
+   "situation": "You keep skipping a morning run.",
+   "move": "Lay out the clothes the night before so the path is easier.",
+   "context": "self"
+  },
+  {
+   "situation": "A team agrees on a new process and then ignores it.",
+   "move": "Ask what makes the old way easier and change that, rather than repeating the reasons.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A friend knows they should stop doing something and cannot.",
+   "move": "Ask what makes it easy for them in the moment and offer to help change that.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "The rider cannot force the elephant, so change what is in front of it.",
+ "conversation_variants": {
+  "punchline_idea": "Haidt pictures your reasoning as a small rider on a huge elephant, so more arguments to the rider rarely move it.",
+  "thirty_sec_idea": "Haidt first rode a horse alone in 1991. On a steep trail that turned sharply left he froze, and the horse and its neighbour simply turned. He took it as an image of the mind: a small rider on a big elephant. Gazzaniga's split-brain patient even explained a shovel as being for the chicken shed. So change the surroundings, not only the argument.",
+  "question_idea": "",
+  "key_contrast_idea": "rider vs elephant"
+ }
+}

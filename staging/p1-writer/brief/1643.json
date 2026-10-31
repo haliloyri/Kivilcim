@@ -1,0 +1,65 @@
+{
+ "story_id": 1643,
+ "kind": "anecdote",
+ "book": {
+  "title": "Rising Strong",
+  "author": "Brené Brown",
+  "year": "2015"
+ },
+ "confidence": "medium",
+ "confidence_note": "Swim scene (Lake Travis, 2012, 500 yards, 'Yeah. Water's good.', fifteen feet) is from the published excerpt. Her swimsuit explanation and Steve's panic attack come from a Houston Chronicle review and a Spirituality & Health excerpt seen only through search snippets; one low-quality summary adds a nightmare detail that is NOT used. Old pool-and-phone scene was contradicted by the book and dropped.",
+ "facts": [
+  "2012 family vacation, rented house on Lake Travis; Brown and her husband Steve plan to swim across a deepwater cove each day, about 500 yards each way.",
+  "The day before she bought a new swimsuit and goggles. Steve was a competitive high school swimmer and still swims seriously; Brown swims for toning.",
+  "One early morning before the family woke, kids left with visiting relatives, they swam out together and stopped halfway to check for boats.",
+  "Brown felt overwhelmed with gratitude and said: I'm so glad we decided to do this together. It's beautiful out here.",
+  "Steve gave a noncommittal half smile, said 'Yeah. Water's good.' and started swimming again.",
+  "She was about fifteen feet from him and wondered whether he had heard her; she considered he might be too moved to answer, but the moment felt weird. Embarrassment rose, then shame.",
+  "Her explanation: that he was judging how she looked in her swimsuit.",
+  "Steve later said he had been fighting off a panic attack during the whole swim.",
+  "Brown's tool for such moments is saying 'The story I'm telling myself is...' to bring the assumption out loud.",
+  "Brown tells the swim as a story of what could be if our best selves showed up when we are angry, frustrated or hurt.",
+  "Brown says the body reacts to emotion before the conscious mind does (reckoning stage).",
+  "The rumble, the second stage, begins with turning up curiosity; it is the messiest stage: get honest about the stories we tell ourselves, test them, separate what is true from what is self-protection."
+ ],
+ "scene_details": [
+  "a deepwater cove, about 500 yards each way",
+  "new swimsuit and goggles bought the day before",
+  "'Yeah. Water's good.'",
+  "fifteen feet between them"
+ ],
+ "tension": "A warm remark gets two flat words back, and in the gap she builds a story about herself.",
+ "opening_idea": "Halfway across the cove she says she is glad they are doing this; he answers with three words and keeps swimming.",
+ "lessons": [
+  {
+   "idea": "A short or flat reply leaves a gap and the mind fills it, usually with something about ourselves; say the guess out loud as a guess.",
+   "anchor": "Her swimsuit story versus Steve's panic attack."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Write in one sentence the explanation you last built from someone's short answer or silence.",
+ "use_cases": [
+  {
+   "situation": "A partner gives short answers at dinner and you feel at fault",
+   "move": "As Brown did in the lake, name your guess as a story and ask what is going on for them.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "A colleague replied to your email with one line",
+   "move": "Say the story you are building, and ask what is behind the short answer.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You feel a story forming after a message",
+   "move": "Tell yourself it is a story and write down only what you actually know.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Steve's 'Water's good' hid a panic attack, not a verdict on her swimsuit; call your guess a story before you act on it.",
+ "conversation_variants": {
+  "punchline_idea": "He said 'Yeah. Water's good.' She built a story about her swimsuit; he was fighting a panic attack.",
+  "thirty_sec_idea": "Lake swim, her gratitude, his flat reply, her swimsuit story, his panic attack.",
+  "question_idea": "",
+  "key_contrast_idea": "the story I built versus what was happening"
+ }
+}

@@ -1,0 +1,40 @@
+{
+  "story_id": 1300,
+  "kind": "anecdote",
+  "book": { "title": "Factfulness", "author": "Hans Rosling", "year": "2018" },
+  "confidence": "medium",
+  "confidence_note": "Brief title 'Akıl Yürütme' is the old Turkish-library label; the book is Factfulness (Hans Rosling with Ola Rosling and Anna Rosling Rönnlund, 2018). Figures confirmed via secondary sources: three-option questions give chimpanzees about 33 percent by chance; on the vaccination question (20, 50 or 80 percent of the world's one-year-olds vaccinated against some disease; correct 80) on average about 13 percent answered right; on the poverty question (almost doubled, about the same, almost halved; correct 'almost halved') about 7 percent. Scopes of these averages (which countries and groups) are not given; they are stated as the averages Rosling reports. Old TR text's life-expectancy figure, 'world leaders and journalists' detail and 'more educated people did worse' claim are not verified and omitted (Rosling did say educated groups did not do better, but exact groups are unconfirmed).",
+  "facts": [
+    "Rosling and the Gapminder team asked people multiple-choice questions about the state of the world, each with three answer options.",
+    "A chimpanzee picking randomly would be right a third of the time (about 33 percent).",
+    "On vaccination, the question was how many of the world's one-year-olds have been vaccinated against some disease: 20, 50 or 80 percent. The right answer is 80 percent. On average about 13 percent of people got it right.",
+    "On poverty, the question was whether in the last twenty years the share of the world population living in extreme poverty had almost doubled, stayed about the same, or almost halved. The right answer is almost halved. On average about 7 percent got it right.",
+    "The wrong answers were not scattered: people systematically picked the gloomier option.",
+    "Rosling concluded that the chimpanzees would have beaten the people, which was not about intelligence or knowledge but about a distorted picture of the world.",
+    "The world was in fact improving on both measures."
+  ],
+  "scene_details": [
+    "three answer boxes: A, B, C",
+    "a chimpanzee picking at random",
+    "80 percent, 13 percent, 7 percent as figures said out loud"
+  ],
+  "tension": "People who read the news and are educated score below a chimpanzee on simple questions, and they err in one direction.",
+  "opening_idea": "Open with the chimpanzee: a chimp picking bananas from three options would score better than the humans Rosling tested.",
+  "lessons": [
+    { "idea": "Wrong answers that all lean the same way point to a built-in bias, not to missing intelligence, so check which direction your own guesses lean.", "anchor": "Most people picked the gloomier option on the vaccination and poverty questions, so a random chimp scored higher." }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a number you assume about your field or your city: which way do you suspect your guess leans, and where could you check it this week?",
+  "use_cases": [
+    { "situation": "A colleague says something is getting worse across the industry.", "move": "Ask what the figures were five or ten years ago, and which direction they have moved.", "context": "meeting" },
+    { "situation": "A family member is certain that the world is falling apart.", "move": "Share that Rosling's vaccination question had 80 percent right but only 13 percent answered it; ask them to guess a figure first, then look it up together.", "context": "family" },
+    { "situation": "You catch yourself on a gloomy news feed.", "move": "Pick one claim and look up the actual trend before you pass it on.", "context": "self" }
+  ],
+  "pocket_idea": "Rosling's chimpanzee beat the humans on three-option questions, because their errors leaned gloomy; check which way your guesses lean.",
+  "conversation_variants": {
+    "punchline_idea": "Rosling's test takers did worse than a chimpanzee picking at random, and their mistakes all leaned the same gloomy way.",
+    "thirty_sec_idea": "Hans Rosling asked people simple multiple-choice questions about the world. Each had three answers, so a chimp guessing would get a third right. On vaccination, about 13 percent got it right, though 80 percent of the world's one-year-olds are vaccinated. On poverty, about 7 percent knew it had almost halved. Wrong answers all leaned gloomy.",
+    "question_idea": "",
+    "key_contrast_idea": "Gloomy guess, better world"
+  }
+}

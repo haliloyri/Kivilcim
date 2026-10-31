@@ -1,0 +1,35 @@
+{
+ "story_id": 1441,
+ "verdict": "keep",
+ "verify_note": "Rebuilt on the post office door anecdote, plate/handle signals, stove mapping and Norman's Three Mile Island role (psnet interview, preface claim). Old verbatim quote, inner monologue and reversed plate logic removed; door-row details are from secondary sources.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Postane kapısında mahsur",
+  "description": "Don Norman'ın bir arkadaşı bir postanenin kapısında mahsur kaldı. Norman'a göre suç adamda değil, kapının tasarımındaydı.",
+  "hook": "Çevrende insanlar hep aynı hatayı yapıyorsa, insanları değil düzeni değiştirseydin neyi değiştirirdin?",
+  "one_minute_summary": "Don Norman'ın kitabı, bir arkadaşının Avrupa'da bir postanenin kapısında mahsur kalmasıyla açılıyor. Norman'a göre suç kapıdaydı. Düz plaka it, uzun dikey kol çek diyor. Ocakta dört göz iki sıra iki sütun, düğmeler tek sırada olunca insanlar yanlış göze basıyor ve Norman bunu eşleme hatası sayıyor. Three Mile Island'dan sonra çağrıldığını söylüyor. Kitap, hata tekrarlanıyorsa insanı değil kurulumu değiştirmeyi öneriyor."
+ },
+ "en": {
+  "title": "Trapped in the post office doorway",
+  "description": "A friend of Don Norman's got stuck in a post office doorway. Norman says the fault lay with the door's design, not the man.",
+  "hook": "Where do people around you keep making the same mistake, and what could you change in the setup?",
+  "one_minute_summary": "Don Norman's book begins with a friend trapped in the doorway of a post office in a European city. Norman says the door was at fault. A flat plate says push and a long vertical handle says pull. On a stove with burners in a square and controls in a row, people pick the wrong burner, and he blames the mapping. He was called in after Three Mile Island. The book says to change the setup, not the people, when a mistake repeats."
+ },
+ "es": {
+  "title": "Atrapado en la puerta de correos",
+  "description": "Un amigo de Don Norman quedó atrapado en la puerta de una oficina de correos. Norman dice que la culpa era del diseño de la puerta, no del hombre.",
+  "hook": "¿Dónde cometen siempre el mismo error las personas a tu alrededor, y qué cambiarías del montaje?",
+  "one_minute_summary": "El libro de Don Norman empieza con un amigo atrapado en la puerta de una oficina de correos europea. Según Norman, la culpa era de la puerta. Una placa plana dice empuja y una manija larga vertical dice tira. En una cocina con fogones en cuadrado y mandos en fila, la gente gira el mando equivocado, y él culpa a la correspondencia. Lo llamaron tras Three Mile Island. El libro dice que, cuando un error se repite, se cambia el montaje y no a las personas."
+ },
+ "de": {
+  "title": "Gefangen im Postamtseingang",
+  "description": "Ein Freund von Don Norman steckte im Eingang eines Postamts fest. Norman sagt, die Gestaltung der Tür war schuld, nicht der Mann.",
+  "hook": "Wo machen Menschen in deiner Umgebung immer wieder denselben Fehler, und was könntest du am Aufbau ändern?",
+  "one_minute_summary": "Don Normans Buch beginnt mit einem Freund, der im Eingang eines europäischen Postamts festsaß. Norman sagt, die Tür war schuld. Eine flache Platte sagt drücken, ein langer senkrechter Griff sagt ziehen. An einem Herd mit Platten im Quadrat und Reglern in einer Reihe drehen Leute den falschen Regler, und er macht die Zuordnung verantwortlich. Nach Three Mile Island wurde er hinzugezogen. Das Buch rät: Bei wiederholten Fehlern den Aufbau ändern, nicht die Menschen."
+ }
+}

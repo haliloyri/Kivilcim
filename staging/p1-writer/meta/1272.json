@@ -1,0 +1,35 @@
+{
+ "story_id": 1272,
+ "verdict": "keep",
+ "verify_note": "Not in verification scope; kept as-is.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Çocukluk Anketi ve Yetişkin Sağlığı",
+  "description": "Kaiser Permanente üyesi on yedi binden fazla kişi çocukluk deneyimlerini soran bir ankete yanıt verdi. Bildirilen zor deneyim arttıkça yetişkinlikte sağlık sorunu ihtimali de arttı.",
+  "hook": "Çocukken öğrendiğiniz tetikte olma hâli bugün hâlâ sizinle mi?",
+  "one_minute_summary": "Vincent Felitti ve Robert Anda, San Diego'da Kaiser Permanente'nin on yedi binden fazla üyesine çocuklukta yaşanan istismar, ihmal ve sorunlu ev gibi zor deneyimleri sordu. Yanıtlar, aynı kişilerin yetişkinlikteki sağlığıyla yan yana konuldu: bildirilen deneyim arttıkça sağlık ve duygusal sorun ihtimali de artıyordu. Van der Kolk bunu, korkutucu bir evde büyüyen çocuğun sürekli tetikte kalmaya uyum sağlaması olarak yorumluyor. Anket bir ilişkiyi gösteriyor, bir nedeni değil. Her zor çocukluk aynı sonuca varmıyor, Van der Kolk bu örüntüleri kader saymıyor."
+ },
+ "en": {
+  "title": "The Childhood Questionnaire",
+  "description": "More than 17,000 Kaiser Permanente members answered questions about hard childhood experiences. The more they reported, the likelier they were to have health problems as adults.",
+  "hook": "What did your childhood teach you to notice first in a room?",
+  "one_minute_summary": "Vincent Felitti and Robert Anda led a study in which more than 17,000 Kaiser Permanente members in San Diego answered questions about difficult childhood experiences such as abuse, neglect and a troubled home. The answers were set beside the same people's health as adults: the more hard experiences, the likelier the health and emotional problems. Bessel van der Kolk reads this as adaptation, a child staying on constant alert. The survey shows an association, not a cause. It does not say every hard childhood ends the same way, and van der Kolk does not treat these patterns as fate."
+ },
+ "es": {
+  "title": "El cuestionario de la infancia",
+  "description": "Más de 17 000 afiliados de Kaiser Permanente respondieron sobre su infancia. Cuantas más experiencias difíciles declaraban, más probable era que tuvieran problemas de salud de adultos.",
+  "hook": "¿Qué aprendió a vigilar tu cuerpo en la infancia?",
+  "one_minute_summary": "Vincent Felitti y Robert Anda dirigieron un estudio en el que más de 17 000 afiliados de Kaiser Permanente, en San Diego, respondieron un cuestionario sobre vivencias difíciles de la niñez: abuso, negligencia, un hogar conflictivo. Luego compararon las respuestas con la salud de esas mismas personas ya adultas. A más experiencias difíciles, más probabilidad de problemas de salud y emocionales. Van der Kolk lo interpreta como una adaptación del niño que vive en alerta. La encuesta muestra una asociación y no una causa, y no afirma que toda infancia difícil termine igual."
+ },
+ "de": {
+  "title": "Der Kindheitsfragebogen",
+  "description": "Über 17.000 Mitglieder von Kaiser Permanente beantworteten Fragen zur Kindheit. Je mehr schwere Erfahrungen sie angaben, desto wahrscheinlicher waren später gesundheitliche Probleme.",
+  "hook": "Welche Wachsamkeit hast du dir in der Kindheit angewöhnt?",
+  "one_minute_summary": "Vincent Felitti und Robert Anda leiteten eine Studie, in der mehr als 17.000 Mitglieder von Kaiser Permanente in San Diego Fragen zu schwierigen Kindheitserfahrungen beantworteten, etwa Missbrauch, Vernachlässigung oder ein belastetes Zuhause. Die Angaben wurden mit der Gesundheit derselben Personen als Erwachsene verglichen: Je mehr Erlebnisse, desto wahrscheinlicher waren spätere gesundheitliche und seelische Probleme. Van der Kolk deutet das als Anpassung an ein angsteinflößendes Zuhause. Die Studie zeigt einen Zusammenhang, keine Ursache, und sie sagt nicht, dass jede schwere Kindheit zum selben Ergebnis führt."
+ }
+}

@@ -1,0 +1,26 @@
+{
+  "tr": {
+    "title": "Bir Girişim, Yedi Şirket",
+    "description": "Tesla, SpaceX, LinkedIn ve diğerleri tek bir küçük girişimin mezunlarına uzanıyor. Thiel bunu ilk ekibin kurulma biçimine bağlıyor.",
+    "hook": "İlk ekip arkadaşlarınızı yeteneğe mi, birlikte çalışmaya mı bakarak seçersiniz?",
+    "one_minute_summary": "Peter Thiel PayPal'ın kurucu ortağı. PayPal mezunları Tesla, SpaceX, LinkedIn, Palantir, YouTube, Yelp ve Yammer'ı kurdu ya da kurulmasına yardım etti. Gruba PayPal Mafyası denir. Thiel bunu ilk ekibe bağlar: yetenekli ve birlikte çalışmak isteyen insanlar, herkesin net bir işi. Kusurlu başlayan bir ekip sonradan onarılamaz, der. Ama liste, işe alımın bu şirketleri doğurduğunu kanıtlamaz."
+  },
+  "en": {
+    "title": "One Startup, Seven Companies",
+    "description": "Tesla, SpaceX, LinkedIn and more trace back to one small startup. Thiel ties that to how the first team was built.",
+    "hook": "Do you pick early teammates for skill or for how they work together?",
+    "one_minute_summary": "Peter Thiel co-founded PayPal. Its alumni started or helped build Tesla, SpaceX, LinkedIn, Palantir, YouTube, Yelp and Yammer, a group nicknamed the PayPal Mafia. Thiel credits the early team: talented people who wanted to work together, each with a clearly defined job. A team flawed at the start, he argues, cannot be repaired later. The list does not prove the hiring caused those companies, though."
+  },
+  "es": {
+    "title": "Siete empresas, una sola PayPal",
+    "description": "Tesla, SpaceX, LinkedIn y otras se remontan a una pequeña startup. Thiel lo atribuye a cómo se formó el primer equipo.",
+    "hook": "¿Eliges a tus primeros compañeros por talento o por cómo trabajan juntos?",
+    "one_minute_summary": "Peter Thiel cofundó PayPal. Sus antiguos empleados crearon o ayudaron a crear Tesla, SpaceX, LinkedIn, Palantir, YouTube, Yelp y Yammer, un grupo apodado la mafia de PayPal. Thiel lo atribuye al primer equipo: gente con talento que quería trabajar junta, cada uno con una tarea bien definida. Un equipo defectuoso desde el inicio, sostiene, no se puede arreglar después. Aun así, la lista no prueba que la contratación causara esas empresas."
+  },
+  "de": {
+    "title": "Sieben Firmen, ein Startup",
+    "description": "Tesla, SpaceX, LinkedIn und mehr gehen auf ein einziges kleines Startup zurück. Thiel führt das darauf zurück, wie das erste Team zusammengestellt wurde.",
+    "hook": "Wählst du frühe Teamkollegen nach Können oder nach der Art, wie sie zusammenarbeiten?",
+    "one_minute_summary": "Peter Thiel gründete PayPal mit. Dessen Ehemalige gründeten Tesla, SpaceX, LinkedIn, Palantir, YouTube, Yelp und Yammer oder halfen beim Aufbau, eine Gruppe, die man PayPal-Mafia nennt. Thiel führt es auf das frühe Team zurück: talentierte Leute, die zusammenarbeiten wollten, jeder mit einer klar umrissenen Aufgabe. Ein Team, das am Anfang fehlerhaft ist, lasse sich später nicht reparieren. Die Liste beweist allerdings nicht, dass die Einstellungen diese Firmen hervorbrachten."
+  }
+}

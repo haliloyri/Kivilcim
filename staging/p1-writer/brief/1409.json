@@ -1,0 +1,59 @@
+{
+  "story_id": 1409,
+  "kind": "concept",
+  "book": {
+    "title": "The Four Agreements",
+    "author": "Don Miguel Ruiz",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Ruiz's street scene (\"Hey, you are so stupid\"), the \"Nothing other people do is because of you\" line, the refrigerator note and the habit quote are verified from direct Ruiz quotations (PhilosophersNotes) and LitCharts. Old text dropped: the colleague saying \"you look terrible\" scenario and the \"it is not indifference\" gloss, not in the book. Garbage, liar-afraid and compassion points from LitCharts.",
+  "facts": [
+    "Ruiz: if I see you on the street and say \"Hey, you are so stupid\" without knowing you, it is about me; if you take it personally you may wonder: how does he know, is he clairvoyant, or can everybody see?",
+    "Nothing other people do is because of you; it is because of themselves; everyone lives in own beliefs, a movie in the head.",
+    "We take things personally because we agree with what was said; the poison runs through us and we are in the dream of hell.",
+    "Taking it personally is taking someone else's emotional garbage; even praise is about the speaker; self-opinions came from others.",
+    "A person who lies is afraid; one who speaks badly of others likely does so to self and needs compassion.",
+    "Strong habit: avoid many upsets; anger, jealousy, envy and even sadness disappear; needs a very strong will.",
+    "Write the agreement on paper and put it on the refrigerator."
+  ],
+  "scene_details": [
+    "stranger on the street",
+    "note on the refrigerator"
+  ],
+  "tension": "A stranger's sentence is easy to hear as a verdict.",
+  "opening_idea": "Open on the stranger and the question how does he know.",
+  "lessons": [
+    {
+      "idea": "Read a sharp remark first as the speaker's story.",
+      "anchor": "Ruiz's stranger calls you stupid without knowing you.",
+      "everyday_example_idea": "A waiter snapped at over a late order checks the order and leaves the rest."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Thinking of one remark that has stayed with you this month, what might it say about the person who made it?",
+  "use_cases": [
+    {
+      "situation": "A client snaps on a call.",
+      "move": "Ask exactly what went wrong and fix that part.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A relative comments on your looks.",
+      "move": "Say it sounds like their taste.",
+      "context": "family"
+    },
+    {
+      "situation": "A remark replays in your head.",
+      "move": "Write the agreement on a note for the fridge.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Put \"don't take it personally\" on your fridge.",
+  "conversation_variants": {
+    "punchline_idea": "According to Ruiz, someone who calls you stupid without knowing you is describing the movie in his own head.",
+    "thirty_sec_idea": "Ruiz pictures telling you on the street, without knowing you, that you are stupid. It is about me, he says. Nothing others do is because of you; made a habit, it dissolves anger, envy, even sadness.",
+    "question_idea": "",
+    "key_contrast_idea": "Their movie, not my worth"
+  }
+}

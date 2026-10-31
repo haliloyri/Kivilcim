@@ -1,0 +1,60 @@
+{
+  "story_id": 1705,
+  "kind": "anecdote",
+  "book": {
+    "title": "Flow",
+    "author": "Mihaly Csikszentmihalyi",
+    "year": "1990"
+  },
+  "confidence": "medium",
+  "confidence_note": "Recalled from the book's central chapters, not page-checked. Omitted on purpose: named participants, numbers, the exact skill-challenge diagram labels, the chess, climbing and surgery examples, and any statistics from the sampling studies. The 'painter who forgets hunger' opening and the work-versus-leisure paradox are described in broad terms only. Chess, climbing and dance examples recalled from the book, not page-checked.",
+  "facts": [
+    "Mihaly Csikszentmihalyi began with painters who worked for hours, forgetting hunger and tiredness, and who lost interest in a painting once it was finished.",
+    "He then studied people in many kinds of absorbing activity, such as artists and athletes, asking what the experience had in common.",
+    "His team used a pager method: people were signalled at random moments of the day and wrote down what they were doing and how they felt.",
+    "The most absorbed moments came when the challenge of a task and the person's skills were both high and close to each other.",
+    "A task too easy for the person's skill brought boredom; a task too hard brought anxiety.",
+    "Clear goals and immediate feedback helped keep people in that balance.",
+    "People often reported more of this absorbed state at work than in free time, even though they said they wished to be elsewhere.",
+    "Participants included chess players, rock climbers, dancers, artists and athletes; the same job could bore one person and overwhelm another, so what mattered was where task met person."
+  ],
+  "scene_details": [
+    "a pager that signals at random moments of the day",
+    "a painter who forgets hunger and tiredness",
+    "a note of what you were doing and how you felt"
+  ],
+  "tension": "The most absorbing moments were not the easiest ones, which runs against what people say they want.",
+  "opening_idea": "Open on the pager going off at a random moment and a person writing down what they were doing and how it felt.",
+  "lessons": [
+    {
+      "idea": "If a task bores you, raise its challenge; if it overwhelms you, cut it into a step you can handle; the absorbed state needs a match.",
+      "anchor": "the finding that boredom came from tasks too easy and anxiety from tasks too hard"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which task that bores or overwhelms you could you adjust this week, either by making it harder or by cutting it smaller, and how would you tell it worked?",
+  "use_cases": [
+    {
+      "situation": "A colleague is bored by routine reports.",
+      "move": "Suggest a self-set challenge, such as finishing earlier or checking one new thing each time.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel overwhelmed by a long task.",
+      "move": "Write down the next piece that has a clear goal and quick feedback, and do only that.",
+      "context": "self"
+    },
+    {
+      "situation": "A child is bored by easy homework and anxious about hard homework.",
+      "move": "Mention Csikszentmihalyi's pagers: ask when during the day they felt most absorbed.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Csikszentmihalyi's pager studies found absorption where skill and challenge meet; make the boring harder and the huge smaller.",
+  "conversation_variants": {
+    "punchline_idea": "People signalled by pagers at random moments reported their most absorbed moments when a task was neither too easy nor too hard.",
+    "thirty_sec_idea": "Csikszentmihalyi watched painters forget hunger, then handed people pagers that beeped at random moments. They wrote down what they did and how it felt. The best moments came when skill and challenge matched, too easy meant boredom, too hard meant anxiety.",
+    "question_idea": "",
+    "key_contrast_idea": "challenge that matches skill"
+  }
+}

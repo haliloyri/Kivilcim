@@ -1,0 +1,141 @@
+<!doctype html>
+<html
+  lang="tr"
+  data-resolution="portrait"
+  data-composition-variables='[{"id":"cta","type":"string","label":"CTA","default":"Albor&#39;u indir"}]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --paper: #f7f3ec;
+        --ink: #24211e;
+        --petrol: #1f5f5b;
+        --hero: #1b4b48;
+        --dawn: #e9a94b;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--paper);
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        background: var(--paper);
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-txxr"
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="44.9"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div
+        id="s1"
+        class="clip"
+        data-composition-id="s1"
+        data-composition-src="compositions/s1.html"
+        data-start="0"
+        data-duration="14.3"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <div
+        id="s2"
+        class="clip"
+        data-composition-id="s2"
+        data-composition-src="compositions/s2.html"
+        data-start="14.0"
+        data-duration="3.8"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <div
+        id="s3"
+        class="clip"
+        data-composition-id="s3"
+        data-composition-src="compositions/s3.html"
+        data-start="17.5"
+        data-duration="5.3"
+        data-track-index="3"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <div
+        id="s4"
+        class="clip"
+        data-composition-id="s4"
+        data-composition-src="compositions/s4.html"
+        data-start="22.5"
+        data-duration="7.9"
+        data-track-index="4"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <div
+        id="s5"
+        class="clip"
+        data-composition-id="s5"
+        data-composition-src="compositions/s5.html"
+        data-start="30.1"
+        data-duration="11.3"
+        data-track-index="5"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <div
+        id="s6"
+        class="clip"
+        data-composition-id="s6"
+        data-composition-src="compositions/s6.html"
+        data-start="41.1"
+        data-duration="3.8"
+        data-track-index="6"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <audio id="vo-a1" src="assets/vo/a1.mp3" data-start="0.3" data-track-index="20" data-volume="1"></audio>
+      <audio id="vo-a2" src="assets/vo/a2.mp3" data-start="3.5" data-track-index="21" data-volume="1"></audio>
+      <audio id="vo-a3" src="assets/vo/a3.mp3" data-start="8.5" data-track-index="22" data-volume="1"></audio>
+      <audio id="vo-a4" src="assets/vo/a4.mp3" data-start="11.7" data-track-index="23" data-volume="1"></audio>
+      <audio id="vo-b0" src="assets/vo/b0.mp3" data-start="14.4" data-track-index="24" data-volume="1"></audio>
+      <audio id="vo-b1" src="assets/vo/b1.mp3" data-start="17.9" data-track-index="25" data-volume="1"></audio>
+      <audio id="vo-b2" src="assets/vo/b2.mp3" data-start="22.9" data-track-index="26" data-volume="1"></audio>
+      <audio id="vo-b3" src="assets/vo/b3.mp3" data-start="30.5" data-track-index="27" data-volume="1"></audio>
+      <audio id="vo-c1" src="assets/vo/c1.mp3" data-start="41.5" data-track-index="28" data-volume="1"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // soft crossfades: each scene's host fades in over the previous one
+      tl.fromTo("#s2", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 14.0);
+      tl.fromTo("#s3", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 17.5);
+      tl.fromTo("#s4", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 22.5);
+      tl.fromTo("#s5", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 30.1);
+      tl.fromTo("#s6", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 41.1);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

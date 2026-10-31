@@ -1,0 +1,35 @@
+{
+  "story_id": 1451,
+  "verdict": "fixed",
+  "verify_note": "Checked against archive.org full text (joseph-murphy-the-power-of-your-subconscious-mind-2023, djvu.txt). Confirmed: Australian boy picturing a diploma each night (ch. 'How to Attract the Money You Need'); drowsy/sleepy state; thank-you technique; 'turn it over to your subconscious mind prior to sleep'; reversed effort (no mental coercion). Removed unsupported claim that his work paid for medical school: in the book a doctor trained him, employed him and sent him to medical school at the doctor's own expense. Also swapped the 'strain a picture' detail for the book's will-power/coercion warning, and 'handing over' for the book's 'turn it over'. Title changed: old 'Pre-sleep programming' and its worry-deepening and neuroscience claims are not in the book or the new story.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Uykudan Önce Tek Sorun",
+    "description": "Murphy uykuya dalmadan önceki dakikaları bilinçaltına seslenmek için uygun sayıyor. Yöntem, sorunu bir kez söyleyip bırakmak ve teşekkür etmek.",
+    "hook": "Bu gece yatmadan önce hangi tek sorunu bir cümleyle söyleyip sabaha bırakabilirsiniz?",
+    "one_minute_summary": "Joseph Murphy uykuyla uyanıklık arasındaki uyuşuk dakikaları bilinçaltıyla konuşmak için uygun görüyor. İstenen sonucu sakince düşünmek, zorlamamak, sorunu bir kez söyleyip bilinçaltına bırakmak ve cevap için teşekkür etmek önerdiği adımlar. Avustralyalı bir çocuğun her gece tıp diplomasını hayal ettiğini anlatıyor. Murphy'ye göre bilinçaltı uyku boyunca çalışıyor. Bu onun iddiası; kitap bunu denemiyor, okuyucunun kendi sabahlarına bakmasını istiyor."
+  },
+  "en": {
+    "title": "One Problem Before Sleep",
+    "description": "Murphy treats the drowsy minutes before sleep as the moment to speak to the subconscious. His method is to name a problem once, say thanks and let go.",
+    "hook": "Which one problem could you put into a single sentence tonight and leave until morning?",
+    "one_minute_summary": "Joseph Murphy treats the drowsy minutes before sleep as the moment to speak to the subconscious. He suggests thinking calmly of the result you want without forcing it, or naming a problem once, turning it over to the subconscious and thanking it for the answer. He tells of a boy in Australia who pictured his medical diploma each night. Murphy says the subconscious works while you sleep. That is his claim; the book runs no test of it."
+  },
+  "es": {
+    "title": "Un problema antes de dormir",
+    "description": "Murphy considera los minutos de modorra antes de dormir el momento de hablar con la subconsciente. Su método consiste en plantear un problema una vez, dar las gracias y soltarlo.",
+    "hook": "¿Qué problema podrías reducir esta noche a una sola frase y dejar hasta mañana?",
+    "one_minute_summary": "Joseph Murphy considera los minutos de modorra previos al sueño el momento de hablar con la subconsciente. Propone pensar con calma en el resultado deseado sin forzarlo, o plantear un problema una vez, pasárselo a la subconsciente y agradecer la respuesta. Cuenta el caso de un muchacho de Australia que veía cada noche su título de médico. Según Murphy, la subconsciente trabaja mientras duermes. Es su afirmación; el libro no la comprueba."
+  },
+  "de": {
+    "title": "Ein Problem vor dem Einschlafen",
+    "description": "Murphy hält die dösigen Minuten vor dem Schlaf für den richtigen Moment, mit dem Unterbewusstsein zu sprechen. Seine Methode: das Problem einmal nennen, danken und loslassen.",
+    "hook": "Welches Problem könntest du heute Abend in einen Satz fassen und bis morgen früh liegen lassen?",
+    "one_minute_summary": "Joseph Murphy hält die dösigen Minuten vor dem Einschlafen für den richtigen Moment, mit dem Unterbewusstsein zu sprechen. Er rät, ruhig an das gewünschte Ergebnis zu denken, ohne etwas zu erzwingen, oder ein Problem einmal zu nennen, es dem Unterbewusstsein zu überlassen und sich für die Antwort zu bedanken. Er erzählt von einem Jungen in Australien, der sich jeden Abend sein Diplom vorstellte. Das Unterbewusstsein arbeite im Schlaf weiter. Das ist seine Behauptung; das Buch prüft sie nicht."
+  }
+}

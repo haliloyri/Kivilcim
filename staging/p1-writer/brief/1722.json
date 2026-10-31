@@ -1,0 +1,64 @@
+{
+  "story_id": 1722,
+  "kind": "anecdote",
+  "book": {
+    "title": "Creativity, Inc.",
+    "author": "Ed Catmull and Amy Wallace",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Braintrust account (director shows unfinished work to experienced colleagues, candid problems named, no obligation to follow the notes, authority staying with the director) matches the book as quoted in secondary sources ('The Braintrust has no authority... the director does not have to follow any of the specific suggestions given'). Toy Story 2 being rescued and reconceived with Lasseter taking over is confirmed by secondary sources, but the length of the rebuild is reported inconsistently (eight or nine months, four months before release) and is omitted. That it began as a direct-to-video sequel, Catmull's saying early versions of every film are bad, and the 'ugly baby' image are recalled, not verified in this session. Omitted: schedule numbers, names beyond Lasseter, specific note wording.",
+  "facts": [
+    "At Pixar, a director shows an unfinished version of a film to the Braintrust, a group of experienced colleagues.",
+    "The group says plainly what is not working but does not order a fix.",
+    "The Braintrust has no authority: the director does not have to follow any specific suggestion, and responsibility stays with the director.",
+    "That absence of authority lowers the fear of authority and makes candour possible.",
+    "Toy Story 2 was a project in trouble; it was torn apart and rebuilt, with John Lasseter taking over as director and the story reconceived.",
+    "Catmull's view is that early versions of Pixar films are bad, and the Braintrust is a way to see problems together rather than a gate for approval.",
+    "He compares a young film to an ugly baby that needs protection and time to grow (recalled).",
+    "Toy Story 2 began as a direct-to-video sequel and was judged not good enough (recalled, not verified).",
+    "Lasseter, Stanton, Unkrich and Ranft were among the people sent to rescue Toy Story 2 (secondary source).",
+    "The Braintrust is made of peers, not bosses (recalled).",
+    "Catmull holds that notes should describe what is not working rather than prescribe the fix, because the director owns the solution (recalled).",
+    "The point is shared sight: people deep in a film lose perspective, and peers help them see it again (recalled)."
+  ],
+  "scene_details": [
+    "an unfinished film shown to colleagues",
+    "a room where nobody can give an order",
+    "Toy Story 2 taken apart and rebuilt"
+  ],
+  "tension": "The meeting that saved films had no boss and no power to force a decision.",
+  "opening_idea": "Open on the room: a director shows a half-finished film and nobody in the room can order a change.",
+  "lessons": [
+    {
+      "idea": "Give feedback about problems and leave the choice of fix to the owner, so that candour is safe.",
+      "anchor": "the Braintrust's notes that the director need not follow"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your own work, which person's feedback do you take seriously because they will not force you to follow it?",
+  "use_cases": [
+    {
+      "situation": "You review a colleague's draft.",
+      "move": "Say what is not working, then say the choice of fix is theirs.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend asks what you think of their business idea.",
+      "move": "Name the one problem you see and ask what they will do about it.",
+      "context": "social"
+    },
+    {
+      "situation": "You show your own rough work.",
+      "move": "Tell the reviewer you are not asking for an order, only for what they see.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Pixar's Braintrust names the problem and leaves the fix to the director: candour is safer when nobody can order you.",
+  "conversation_variants": {
+    "punchline_idea": "At Pixar the group that rescued films could tell the director what was wrong but could not order the fix.",
+    "thirty_sec_idea": "At Pixar, a director shows an unfinished film to the Braintrust. The group names what is not working but has no authority to order a change, and the director does not have to follow the notes. Catmull argues that this lack of authority makes honest feedback possible, and projects like Toy Story 2 were rebuilt that way.",
+    "question_idea": "",
+    "key_contrast_idea": "notes, not orders"
+  }
+}

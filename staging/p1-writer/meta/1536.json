@@ -1,0 +1,35 @@
+{
+  "story_id": 1536,
+  "verdict": "keep",
+  "verify_note": "Not in scope of verification. Title fits (marginal gains, British Cycling, Tour de France); kept.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Marjinal kazanımlar",
+    "description": "Matthew Syed, Black Box Thinking kitabında Dave Brailsford'un British Cycling'i 2003'te devralıp her ayrıntıyı yüzde bir iyileştirme fikrini nasıl uyguladığını anlatır.",
+    "hook": "İşinizin hangi küçük parçasını bu hafta değiştirip sonucunu eskisiyle karşılaştırabilirsiniz?",
+    "one_minute_summary": "Dave Brailsford 2003'te British Cycling'i devraldı ve bir bisikletçiyi etkileyen her şeyi yüzde bir iyileştirmeyi denedi. Her iyileştirme bir deneydi: sonuç destekliyorsa kalıyor, yoksa bırakılıyordu. Sporculara kendi yastıkları verildi, bir cerrah el yıkamayı öğretti. İngiliz bisikletçiler 2008'de 8, 2012'de yine 8 altın madalya kazandı. Wiggins sonradan bu etiketi eleştirdi. Madalyaları küçük, sınanmış değişikliklerin toplamına bağlamak Syed'in kendi yorumudur."
+  },
+  "en": {
+    "title": "Marginal gains",
+    "description": "In Black Box Thinking, Matthew Syed tells how Dave Brailsford took over British Cycling in 2003 and set out to improve every factor by one percent.",
+    "hook": "Which small part of your work could you change this week and compare with the old result?",
+    "one_minute_summary": "Dave Brailsford took over British Cycling in 2003 and tried to improve every factor affecting a rider by one percent. Each change was an experiment, kept if the results backed it. Riders got their own pillows, and a surgeon taught them to wash their hands. British cyclists won 8 gold medals in 2008 and 8 more in 2012. Wiggins later criticised the label, and tying the medals to many small tested changes is Syed's own reading."
+  },
+  "es": {
+    "title": "Ganancias marginales",
+    "description": "En Black Box Thinking, Matthew Syed cuenta cómo Dave Brailsford asumió British Cycling en 2003 y se propuso mejorar cada factor un uno por ciento.",
+    "hook": "¿Qué pequeña parte de tu trabajo podrías cambiar esta semana y comparar con el resultado anterior?",
+    "one_minute_summary": "Dave Brailsford se hizo cargo de British Cycling en 2003 e intentó mejorar un uno por ciento cada factor que afecta a un ciclista. Cada cambio era un experimento y se conservaba si los resultados lo respaldaban. Los ciclistas recibieron sus propias almohadas y un cirujano les enseñó a lavarse las manos. Los británicos ganaron 8 oros en 2008 y otros 8 en 2012. Wiggins criticó después la etiqueta, y atribuir las medallas a muchos cambios pequeños y probados es lectura de Syed."
+  },
+  "de": {
+    "title": "Marginale Gewinne",
+    "description": "In Black Box Thinking erzählt Matthew Syed, wie Dave Brailsford 2003 British Cycling übernahm und jeden Faktor um ein Prozent verbessern wollte.",
+    "hook": "Welchen kleinen Teil deiner Arbeit könntest du diese Woche ändern und mit dem alten Ergebnis vergleichen?",
+    "one_minute_summary": "Dave Brailsford übernahm 2003 British Cycling und wollte jeden Faktor, der einen Fahrer beeinflusst, um ein Prozent verbessern. Jede Änderung war ein Experiment und blieb, wenn die Ergebnisse sie stützten. Die Fahrer bekamen eigene Kissen, und ein Chirurg zeigte ihnen richtiges Händewaschen. Die Briten gewannen 2008 acht Goldmedaillen und 2012 weitere acht. Wiggins kritisierte die Bezeichnung später, und die Medaillen auf viele kleine, geprüfte Änderungen zurückzuführen, ist Syeds eigene Deutung."
+  }
+}

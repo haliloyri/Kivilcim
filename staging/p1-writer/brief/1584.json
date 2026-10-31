@@ -1,0 +1,63 @@
+{
+  "story_id": 1584,
+  "kind": "anecdote",
+  "book": {
+    "title": "A Whole New Mind",
+    "author": "Daniel Pink",
+    "year": "2005"
+  },
+  "confidence": "low",
+  "confidence_note": "Book text not read. Meaning is the sixth of Pink's six senses; his link between abundance and the search for purpose is a known theme. Pink's use of Viktor Frankl (Man's Search for Meaning, 1946, concentration-camp survival and purpose) is plausible and widely reported but I did not confirm Pink's exact wording in the book. The reference's claims about hospitals designing recovery experiences and architects building meaning are unverified and dropped. Frankl's claim is kept to what the book itself says: those with something to live for coped better; do not state that physical strength did not matter, and do not give numbers. Added: Frankl biography and the Nietzsche line are standard record about Frankl and his book, NOT confirmed as part of Pink's text; the writer must attribute them to Frankl.",
+  "facts": [
+    "Meaning is the sixth of Pink's six senses.",
+    "Pink argues that as material needs are met, more people ask what their lives and work are for.",
+    "Viktor Frankl, a psychiatrist who survived Nazi camps, wrote about the importance of purpose in surviving them (his book appeared in 1946).",
+    "Frankl observed that those who had something to live for and a task ahead coped better.",
+    "Pink frames the shift as a change in question: from 'does this work' to 'does this matter'.",
+    "Pink says the left/right brain split is a simplified metaphor.",
+    "Frankl was a Viennese psychiatrist, deported in 1942 and held in several camps, Auschwitz among them; he was freed in 1945.",
+    "His book (1946) is reported to have been written within days of his release.",
+    "In it Frankl cites a line from Nietzsche: whoever has a why to live can bear almost any how.",
+    "Frankl founded logotherapy, a school of therapy centred on the search for meaning."
+  ],
+  "scene_details": [
+    "A psychiatrist writing about camp life in 1946",
+    "Two questions side by side: Does it work? Does it matter?",
+    "A manuscript written within days of release"
+  ],
+  "tension": "When basic needs are covered, the question left over is not about efficiency.",
+  "opening_idea": "Start with Frankl writing in 1946 about what kept some prisoners going.",
+  "lessons": [
+    {
+      "idea": "Name what your work is for, because a purpose carries you through the dull stretches that a task list cannot.",
+      "anchor": "Frankl wrote that people with something ahead of them coped better, and Pink says the 'does it matter' question now weighs more.",
+      "everyday_example_idea": "A nurse who keeps a note of why she chose the job and rereads it during a hard night shift."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one thing your current work is for, in a single sentence that you could say to a friend?",
+  "use_cases": [
+    {
+      "situation": "Your team is tired of a long project.",
+      "move": "Ask each person to say who the work helps, then keep that answer on the project page.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is burned out.",
+      "move": "Ask what part of the work still feels worth doing.",
+      "context": "social"
+    },
+    {
+      "situation": "You are choosing between two offers.",
+      "move": "Write beside each offer one sentence on what it would be for.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Frankl saw purpose carry people through hardship; write one sentence naming what your work is for.",
+  "conversation_variants": {
+    "punchline_idea": "Frankl wrote that people who had something to live for coped better; Pink says the same question now reaches the office.",
+    "thirty_sec_idea": "In 1946 Viktor Frankl wrote about surviving Nazi camps and about the role of having a purpose. Daniel Pink picks this up: with basic needs met, the question moves from does it work to does it matter.",
+    "question_idea": "",
+    "key_contrast_idea": "Works vs matters"
+  }
+}

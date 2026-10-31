@@ -1,0 +1,61 @@
+{
+ "story_id": 1496,
+ "kind": "concept",
+ "book": {
+  "title": "Now, Discover Your Strengths",
+  "author": "Marcus Buckingham and Donald O. Clifton",
+  "year": "2001"
+ },
+ "confidence": "medium",
+ "confidence_note": "Definitions of talent, weakness and strength and the quotes on yearnings, rapid learning, satisfactions and losing track of time are from Goodreads quote pages of the book. Spontaneous reactions as a clue and the 34 themes come from Gallup summaries. Old flow framing, the one-week exercise and the accountant example were not in the book and were dropped.",
+ "facts": [
+  "Knowledge is the facts and lessons learned; skills are the steps of an activity; talent is any recurring pattern of thought, feeling or behavior that can be productively applied.",
+  "Weakness: anything that gets in the way of excellent performance.",
+  "The acid test of a strength: the ability is a strength only if you can fathom yourself doing it repeatedly, happily and successfully; the goal is consistent near-perfect performance.",
+  "There is one sure way to identify your greatest potential for strength: step back and watch yourself for a while.",
+  "Spontaneous reactions provide the clearest trace of your talents; three more clues: yearnings (particularly when felt early in life), rapid learning, and satisfactions (the last clue).",
+  "Under satisfactions: see whether you become absorbed in the activity to such an extent that you lose track of time.",
+  "Excellent performers were rarely well rounded; on the contrary, they were sharp.",
+  "The Gallup profile asks you to choose between paired statements, reads instinctive reactions, and reports five signature themes out of 34 (e.g. Achiever, Activator, Empathy, Futuristic, Strategic); built from about 25 years of work and a little over two million interviews."
+ ],
+ "scene_details": [
+  "watching yourself for a while",
+  "a wish felt early in life",
+  "losing track of time inside an activity",
+  "pairs of statements to choose between"
+ ],
+ "tension": "Absorption is a clue to talent but only the last of several, and a strength needs more than being good.",
+ "opening_idea": "Being so absorbed that time disappears, counted as the last clue.",
+ "lessons": [
+  {
+   "idea": "Test an ability against the book's wording: could you do it repeatedly, happily and successfully?",
+   "anchor": "The strength test and the lose-track-of-time clue."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "In the past month, which task made you lose track of time, and how much room does it have in your week?",
+ "use_cases": [
+  {
+   "situation": "A friend is choosing between two jobs",
+   "move": "Ask which tasks they could picture doing repeatedly, happily and successfully, the book's test for a strength.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "You are splitting up a project among colleagues",
+   "move": "Ask who got absorbed in which task, the book's lose-track-of-time clue, before assigning.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You are reviewing your week",
+   "move": "Note which task made time vanish, as a clue rather than a verdict.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "A task that makes you lose track of time is the last of the clues to a talent, not the first.",
+ "conversation_variants": {
+  "punchline_idea": "Losing track of time is only the last clue to talent.",
+  "thirty_sec_idea": "Talent definition, the three clues, the strength test.",
+  "question_idea": "",
+  "key_contrast_idea": "good at it versus repeatedly, happily, successfully"
+ }
+}

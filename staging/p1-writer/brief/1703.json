@@ -1,0 +1,60 @@
+{
+  "story_id": 1703,
+  "kind": "anecdote",
+  "book": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The injury (a baseball bat to the face at the end of his sophomore year of high school, broken nose, shattered bones around the eyes) is confirmed by Clear's own interviews; the roughly one-year absence from baseball is from an interview, not checked in the book. The Denison University outcome (his university's top male athlete award, Academic All-America recognition) is recalled from the book's introduction and not re-checked. Omitted: the seizure, hospital transport and coma details, exact dates, team rank or roster details, the 33-player Academic All-America figure. The specific routine items (earlier bedtime, studying, lifting) follow the reference text and the book's general account.",
+  "facts": [
+    "On the last day of his sophomore year of high school, a baseball bat hit James Clear in the face.",
+    "His nose was broken and the bones around his eyes were shattered; the recovery was long.",
+    "He did not play baseball again for about a year.",
+    "When he came back he could not jump straight to his old level, so he worked on small, repeatable things: going to bed at a steadier hour, showing up to practice, studying on a schedule.",
+    "At Denison University he kept building on those routines rather than on big goals.",
+    "By his final year he was recognised at the university as its top male athlete and as an Academic All-American.",
+    "Clear says this experience taught him to trust small systems that keep running on bad days.",
+    "Clear chose steps small enough to do on any day, good or bad (earlier bedtime, practice, study hours), rather than a big comeback plan."
+  ],
+  "scene_details": [
+    "a baseball bat hits his face on the last day of sophomore year",
+    "a broken nose and shattered bones around the eyes",
+    "an earlier, steadier bedtime"
+  ],
+  "tension": "A teenager's face is smashed by a bat; instead of a dramatic comeback he gets better through unremarkable repeated acts.",
+  "opening_idea": "Open on the bat and the last day of school year, the face, the broken bones, and a boy who can no longer do what he did.",
+  "lessons": [
+    {
+      "idea": "After a setback, start with the version of the habit that survives a bad day, because that is what actually gets repeated.",
+      "anchor": "a steadier bedtime and showing up to practice while his face healed"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which habit of yours keeps collapsing on bad days, and what is the version of it you could still do when you feel at your worst?",
+  "use_cases": [
+    {
+      "situation": "You skipped the gym for two weeks after being ill.",
+      "move": "Say you will do ten minutes, not the old routine; Clear's recovery began at the smallest repeatable step.",
+      "context": "self"
+    },
+    {
+      "situation": "A teammate returns after a hard stretch and tries to catch up all at once.",
+      "move": "Suggest they pick the one routine that is easy to keep this week and build from it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A child is discouraged after falling behind in class.",
+      "move": "Agree on one small daily task together, same time each day, instead of a big catch-up plan.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Clear healed from a bat to the face by repeating an early bedtime and showing up; shrink the habit until a bad day cannot stop it.",
+  "conversation_variants": {
+    "punchline_idea": "James Clear's comeback after a bat broke his face was an earlier bedtime and showing up, not a big plan.",
+    "thirty_sec_idea": "Last day of sophomore year, a bat hit Clear in the face, broken nose, shattered bones around his eyes. He could not jump back, so he repeated small things: bedtime, practice, study. By his last year at Denison he was the university's top male athlete.",
+    "question_idea": "",
+    "key_contrast_idea": "small routine, not big comeback"
+  }
+}

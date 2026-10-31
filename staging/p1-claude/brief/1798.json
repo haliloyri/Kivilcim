@@ -1,0 +1,35 @@
+{
+  "story_id": 1798,
+  "kind": "anecdote",
+  "book": { "title": "Delivering Happiness", "author": "Tony Hsieh", "year": "2010" },
+  "confidence": "medium",
+  "confidence_note": "The book describes tension with the board after the 2008 financial crisis, the board seeing culture work as a costly experiment, Hsieh's worry that a new chief executive would end it, and the 2009 Amazon deal under which Zappos would keep running independently with its culture. The deal value of about $1.2 billion at closing is widely reported and given in the book's account; it is kept without further detail. Board members' names are left out.",
+  "facts": [
+    "During the 2008 financial crisis Zappos's board pressed for profit and saw Hsieh's culture work as an expensive experiment.",
+    "Hsieh feared the board could replace him with someone who would drop the culture.",
+    "He looked at ways to buy out the board but could not raise the money.",
+    "Amazon had approached Zappos before; in 2009 the talks became serious.",
+    "Hsieh's condition was that Zappos keep running as an independent company with its own culture and team.",
+    "Amazon agreed, and the deal was valued at about $1.2 billion when it closed.",
+    "Hsieh presented the sale to employees as a way to protect the culture rather than give it up."
+  ],
+  "tension": "To keep the culture safe from his own board, Hsieh sold the company.",
+  "opening_idea": "Open on a board that calls the culture an experiment, in the middle of the 2008 crisis.",
+  "lessons": [
+    { "idea": "Name what is non-negotiable before a big deal, then negotiate everything else.", "anchor": "Hsieh's condition that Zappos keep running independently with its culture." }
+  ],
+  "reflect": [],
+  "reflect_final": "If a big offer came tomorrow, which one condition would you refuse to give up, and have you said it out loud?",
+  "use_cases": [
+    { "situation": "Your team is negotiating a merger, a partnership or a large client.", "move": "Recall that Hsieh made independence his condition with Amazon, then ask the team to name the one thing not on the table.", "context": "meeting" },
+    { "situation": "You are offered a promotion that changes how you work.", "move": "Say which part of your current way of working you want to keep before discussing pay.", "context": "oneonone" },
+    { "situation": "Your family is planning a big move or change.", "move": "Ask everyone to name one thing they want to keep the same.", "context": "family" }
+  ],
+  "pocket_idea": "Hsieh sold Zappos to protect its culture; before a big deal, say the one thing that is not for sale.",
+  "conversation_variants": {
+    "punchline_idea": "Hsieh sold Zappos to Amazon partly to protect its culture from his own board.",
+    "thirty_sec_idea": "In the 2008 crisis Zappos's board saw the culture as a costly experiment. Unable to buy them out, Hsieh agreed to Amazon's 2009 offer on the condition that Zappos keep running independently with its culture. The deal was valued at about $1.2 billion.",
+    "question_idea": "",
+    "key_contrast_idea": "Fiyat ve kimlik"
+  }
+}

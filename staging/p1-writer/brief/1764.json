@@ -1,0 +1,63 @@
+{
+ "story_id": 1764,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Poisoner's Handbook",
+  "author": "Deborah Blum",
+  "year": "2010"
+ },
+ "confidence": "medium",
+ "confidence_note": "Checked against reviews and chapter summaries (NPR, SuperSummary), not page-checked. Core: 1915 Mors case with the coroner's claim that chloroform could not be found in a corpse; Norris first chief medical examiner in 1918; Bellevue pathology building lab; Gettler head toxicologist; wood alcohol rise shown by Gettler's test. Omitted as unverified: the old text's claim that Norris and Gettler paid for the lab with their own money, exact tests for thallium/arsenic, Christmas 1926 figures, any detail of the Mors case beyond the coroner's claim, the outcome of Mors. Short on facts: story will be short. Update after search: Mors confessed to multiple poisonings and vanished (review of the book); Gettler wood alcohol test method from a chapter summary (SuperSummary); press conference of December 1919 not used. Extra facts from Wikipedia and a chapter summary: first scientifically trained medical examiner, first toxicologist, chapter structure by poison.",
+ "facts": [
+  "In 1915 New York ran on a coroner system that Blum describes as corrupt and often failing at its job.",
+  "Frederic Mors confessed to several poisonings, escaped real punishment and then vanished; the coroner had claimed there was no way to find chloroform in a corpse.",
+  "Blum notes that tests for chloroform did exist in 1915, so the claim was false.",
+  "In 1918 Charles Norris became New York City first chief medical examiner, replacing the coroner system.",
+  "Norris set up his department in Bellevue Hospital recently completed pathology building, with a forensic chemistry laboratory.",
+  "Alexander Gettler was his head toxicologist, a dry, quiet, rigorously thorough technician.",
+  "One of Gettler first investigations was wood alcohol: his test ground up a piece of tissue and added chemicals that would produce formaldehyde if wood alcohol had been present.",
+  "His tests let the office prove that wood alcohol poisoning was rising; the two men advanced many of the methods used to track poisons in the body.",
+  "The book follows Norris and Gettler through a series of linked cases, each built around one poison: chloroform, wood alcohol, cyanide and others.",
+  "Gettler is described as the city's first toxicologist; Norris as its first scientifically trained medical examiner.",
+  "A chapter summary dates the wood alcohol work to 1918-1919 and places a press conference warning about wood alcohol in December 1919."
+ ],
+ "scene_details": [
+  "the coroner claim that nothing could be found in a corpse",
+  "a piece of tissue ground up and treated with chemicals that make formaldehyde",
+  "a laboratory inside Bellevue new pathology building"
+ ],
+ "tension": "A poisoner can walk free because an official says the poison cannot be found, when a test for it already exists.",
+ "opening_idea": "Open on the coroner's flat statement that chloroform cannot be found in a body, and the poisoner who benefited.",
+ "lessons": [
+  {
+   "idea": "A claim that something cannot be proved often means nobody has done the test; ask for the measurement before accepting it.",
+   "anchor": "the coroner's claim about chloroform vs. tests that existed in 1915"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which claim that something cannot be checked or measured in your own work have you simply accepted, and what first test could you try on it this month?",
+ "use_cases": [
+  {
+   "situation": "A colleague says a problem cannot be measured.",
+   "move": "Say that a coroner once said chloroform could not be found when tests existed, and ask what the simplest check would be.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Someone tells you a claim cannot be verified.",
+   "move": "Ask what test would settle it and who could run it.",
+   "context": "social"
+  },
+  {
+   "situation": "You assume a recurring household cost cannot be tracked.",
+   "move": "Write down the figure for one month before deciding it is unknowable.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "A coroner said chloroform could not be found in a body; a lab with a test proved him wrong. Test the claim before accepting it.",
+ "conversation_variants": {
+  "punchline_idea": "A New York coroner said chloroform could not be found in a corpse, in a year when tests for it existed.",
+  "thirty_sec_idea": "In 1915 a New York coroner said no one could find chloroform in a corpse and a poisoner escaped. In 1918 Charles Norris became the first chief medical examiner, built a lab in Bellevue and hired toxicologist Alexander Gettler, whose test showed wood alcohol deaths rising.",
+  "question_idea": "",
+  "key_contrast_idea": "claim vs test"
+ }
+}

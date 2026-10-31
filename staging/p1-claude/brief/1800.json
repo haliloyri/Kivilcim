@@ -1,0 +1,55 @@
+{
+  "story_id": 1800,
+  "kind": "concept",
+  "book": {
+    "title": "The Culture Map",
+    "author": "Erin Meyer",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Meyer's evaluating scale (direct versus indirect negative feedback), the upgrader/downgrader vocabulary and the point that it is separate from the context scale (France: high-context but direct; the US: low-context but softer in criticism) are the book's framework. Only a few country placements the book clearly makes are used. The supplied Paris scene is an illustration, not a book case, and is told as a typical situation.",
+  "facts": [
+    "The second scale is evaluating: how people give negative feedback, from direct to indirect.",
+    "In direct cultures criticism is blunt, specific and often delivered separately from praise, sometimes with strengthening words such as 'absolutely' or 'totally'.",
+    "In indirect cultures criticism is cushioned, often wrapped in positive messages and softened with words such as 'a bit' or 'maybe'.",
+    "In Meyer's map the Dutch and Germans lean direct, the Japanese lean indirect; Americans tend toward softening criticism with praise.",
+    "This scale is separate from context: the French are high-context yet direct in negative feedback, while Americans are low-context yet softer when criticising.",
+    "Illustration (typical, not a book case): a manager from a softer culture praises, softens the problem, then praises again; a direct-culture employee hears mostly praise and the problem fades.",
+    "The same message heard from the other side can sound rude to someone who expects cushioning.",
+    "Direction of adjustment: know where you and the listener sit before choosing how strongly to say it."
+  ],
+  "tension": "A kind message can be received as no message at all.",
+  "opening_idea": "Start with the surprise that France is high-context yet blunt in criticism, while the US is low-context yet softens it.",
+  "lessons": [
+    {
+      "idea": "Good feedback is measured by what the listener hears, not by how politely it was said.",
+      "anchor": "Two feedback styles and the wrapped criticism that disappears between two praises."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of the last criticism you gave: what exactly did the other person hear, and how could you find out?",
+  "use_cases": [
+    {
+      "situation": "You gave feedback to a colleague and are unsure if it landed.",
+      "move": "Ask them to say the main point back in their own words.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your team includes people from different working cultures.",
+      "move": "Agree out loud on how direct feedback should be in this team.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You received feedback that felt too blunt.",
+      "move": "Remember that bluntness may be this person's form of respect and ask what they would suggest changing.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Criticism wrapped in praise can disappear; ask the listener to say the main point back.",
+  "conversation_variants": {
+    "punchline_idea": "Meyer's evaluating scale shows how the same feedback can sound kind to one person and invisible to another.",
+    "thirty_sec_idea": "Erin Meyer's evaluating scale separates direct from indirect negative feedback. The Dutch and Germans lean direct; Americans tend to wrap criticism in praise. The scale is separate from context: the French are high-context yet direct. So a manager's gentle feedback can leave an employee from a direct culture hearing only the praise.",
+    "question_idea": "",
+    "key_contrast_idea": "Nezaket ve netlik"
+  }
+}

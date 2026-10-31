@@ -1,0 +1,60 @@
+{
+  "story_id": 1612,
+  "kind": "concept",
+  "book": {
+    "title": "The Millionaire Next Door",
+    "author": "Thomas Stanley",
+    "year": "1996"
+  },
+  "confidence": "medium",
+  "confidence_note": "From memory and secondary summaries; book text not accessed. Expected net worth formula (age x pre-tax income from all sources except inheritance / 10), PAW at least twice expected, UAW less than half confirmed by multiple secondary sources. Co-author William Danko omitted per brief. Millionaires living modestly and high earners with low net worth are stated as tendencies ('many'). Old TR claims (Stanley first searched luxury neighborhoods, PAWs hide their wealth, disregard status spending) not verified and dropped. DB title is Turkish 'Komsu Milyoner'.",
+  "facts": [
+    "Stanley studied America's wealthy.",
+    "Many millionaires lived in ordinary houses and drove ordinary cars; many high earners had little saved.",
+    "Expected net worth = age x annual pre-tax income (excluding inheritance) / 10.",
+    "PAW: net worth at least twice expected.",
+    "UAW: net worth less than half expected.",
+    "The yardstick scales with income.",
+    "PAWs live below their means and invest steadily.",
+    "The formula is a rule of thumb."
+  ],
+  "scene_details": [
+    "age times income divided by ten",
+    "ordinary houses and cars",
+    "a new car and thin balance sheet"
+  ],
+  "tension": "High income and large wealth often differ.",
+  "opening_idea": "Same paycheck, different wealth.",
+  "lessons": [
+    {
+      "idea": "Compare savings to income, not neighbors.",
+      "anchor": "The formula."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you compared what you have saved with what you have earned over the years, what would that comparison tell you?",
+  "use_cases": [
+    {
+      "situation": "Friend shows new car",
+      "move": "Track what you keep.",
+      "context": "social"
+    },
+    {
+      "situation": "Planning a purchase",
+      "move": "Check the yardstick together.",
+      "context": "family"
+    },
+    {
+      "situation": "Negotiating a raise",
+      "move": "Save the difference first.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Compare what you've kept with what you've earned.",
+  "conversation_variants": {
+    "punchline_idea": "Two people with the same paycheck can be far apart in wealth.",
+    "thirty_sec_idea": "Formula, PAW, UAW.",
+    "question_idea": "",
+    "key_contrast_idea": "Earned versus kept"
+  }
+}

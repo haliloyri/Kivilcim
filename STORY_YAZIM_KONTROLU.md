@@ -1,5 +1,11 @@
 # Dört Dilde Hikâye Yazım Kontrolü
 
+> **Bu dosya bir denetim günlüğüdür, kural kaynağı değil.** Kurallar
+> [batch/prompts/story-instructions.md](batch/prompts/story-instructions.md) ve
+> [scripts/p1/lang-config.mjs](scripts/p1/lang-config.mjs) içinde. Günlük
+> 2026-07-17'de, eski formatta (2–3 ders, maddeli reflect) yazılmış metinler
+> üzerinde tutuldu; yeni format (1 ders + 1 soru) için referans değildir.
+
 - Denetim zamanı: 2026-07-17 23:39 +03
 - Veri kaynağı: `assets/albor.db`
 - Veri tabanı SHA-256: `5ca451052986d774faee47156b659a0935107b6d317279e7674f915e570596c8`

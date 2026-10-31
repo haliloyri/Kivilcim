@@ -1,0 +1,35 @@
+{
+  "story_id": 1271,
+  "verdict": "keep",
+  "verify_note": "Not in verification scope; kept as-is.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Yoga ve travma",
+    "description": "Van der Kolk ve ekibi, yıllardır tedaviye yanıt vermeyen altmış dört kadınla bir deneme yaptı. On hafta sonunda yoga grubunun yaklaşık yarısı ölçütleri artık karşılamıyordu.",
+    "hook": "Konuşmak anlamayı değiştirir ama bedenin alarmını her zaman yatıştırır mı?",
+    "one_minute_summary": "Bessel van der Kolk ve meslektaşları, travma sonrası stres bozukluğu yıllardır süren altmış dört kadını iki gruba ayırdı: biri travmaya duyarlı yoga, öteki kadın sağlığı eğitimi aldı. İkisi de on hafta, haftada bir saat. Sonunda yoga grubunun yaklaşık yarısı artık ölçütleri karşılamıyordu, eğitim grubunda bu oran beşte bir civarındaydı. Van der Kolk'a göre beden duyumlarından kaçınanlar yogada bunları güvenli bir ortamda fark edebiliyor. Çalışma küçük ve yalnızca kadınlarla yapıldı, bu yüzden sonuç her hasta için geçerli sayılamaz."
+  },
+  "en": {
+    "title": "Yoga and trauma",
+    "description": "Sixty-four women with long-standing PTSD took trauma-sensitive yoga or a health class for ten weeks. About half of the yoga group no longer met the criteria.",
+    "hook": "Does understanding what happened to you always quiet the alarm in your body?",
+    "one_minute_summary": "Bessel van der Kolk and colleagues ran a trial with sixty-four women whose PTSD had lasted for years. One group took trauma-sensitive yoga, the other a women's health class, one hour a week for ten weeks. About half of the yoga group no longer met the criteria for PTSD, against about one in five in the education group. Van der Kolk says many survivors fear body sensations, and yoga lets them notice them safely. The study was small and all participants were women, so the result cannot be assumed for every patient."
+  },
+  "es": {
+    "title": "Yoga y trauma",
+    "description": "Sesenta y cuatro mujeres con estrés postraumático de años hicieron yoga sensible al trauma o clases de salud durante diez semanas. En el grupo de yoga, cerca de la mitad dejó de cumplir los criterios.",
+    "hook": "¿Entender lo que te pasó basta para calmar la alarma de tu cuerpo?",
+    "one_minute_summary": "Bessel van der Kolk quiso comprobar si trabajar con el cuerpo ayudaba donde hablar no había bastado. Su equipo repartió a sesenta y cuatro mujeres con estrés postraumático de años en dos grupos: yoga sensible al trauma o educación sobre salud de la mujer, una hora semanal durante diez semanas. Cerca de la mitad del grupo de yoga dejó de cumplir los criterios; en el otro, una de cada cinco. Participaron solo mujeres, así que no se puede asumir que valga para cualquier paciente. El trabajo corporal se suma a la terapia de la palabra."
+  },
+  "de": {
+    "title": "Yoga und Trauma",
+    "description": "Vierundsechzig Frauen mit langjähriger PTBS besuchten zehn Wochen lang traumasensiblen Yoga oder einen Gesundheitskurs. In der Yogagruppe erfüllte etwa die Hälfte die Kriterien nicht mehr.",
+    "hook": "Reicht es, zu verstehen, was dir passiert ist, damit der Alarm im Körper verstummt?",
+    "one_minute_summary": "Bessel van der Kolk und seine Kollegen untersuchten vierundsechzig Frauen, deren PTBS seit Jahren bestand. Die einen besuchten zehn Wochen lang einmal pro Woche traumasensiblen Yoga, die anderen einen Kurs mit Gesundheitsaufklärung. Danach erfüllte etwa die Hälfte der Yogagruppe die Kriterien nicht mehr, in der Aufklärungsgruppe etwa jede Fünfte. Van der Kolk erklärt es damit, dass viele Betroffene Körperempfindungen meiden und Yoga sie ihnen im geschützten Rahmen zugänglich macht. Es waren nur Frauen, das Ergebnis lässt sich nicht auf jeden übertragen."
+  }
+}

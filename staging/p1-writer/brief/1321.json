@@ -1,0 +1,64 @@
+{
+ "story_id": 1321,
+ "kind": "anecdote",
+ "book": {
+  "title": "A More Beautiful Question",
+  "author": "Warren Berger",
+  "year": "2014"
+ },
+ "confidence": "medium",
+ "confidence_note": "December 1943 Santa Fe vacation, the daughter's question and the 1948 camera are consistent across Berger's blog piece and other accounts. The one-hour walk, the 'darkroom inside the camera' what-if (Berger's own framing, not a Land quote) and the 1943-to-1973 line come from Berger's strategy+business article, not the book text. Daughter's name Jennifer is from RNZ, not Berger, so not used. Old scripted dialogue and the 'better film vs instant photo' pair were dropped.",
+ "facts": [
+  "1943, family vacation (another account says summer; Berger article says December, so year only) in Santa Fe: Edwin Land took a photo of his daughter, who was three, and she asked why she could not see it right away.",
+  "An expert would have answered that this is how the camera works; Land took the question seriously instead.",
+  "Land went for a walk and within an hour had the what-if of instant photography; Berger frames it as: what if you could have a darkroom inside a camera?",
+  "The practical details took much longer; in Land's words the work ran from 1943 to 1973.",
+  "The first Polaroid camera went on sale on 26 November 1948, five years after the question.",
+  "Berger sets Why, What if, How as a logical progression; the daughter's question is the why, the walk the what-if, the years after the how.",
+  "Closed questions (how many, how much, how fast) keep the status quo; Berger says why is the one companies ask least.",
+  "Polaroid filed for bankruptcy in 2001, a casualty of the digital shift; Berger presents it as a warning about relying on closed questions.",
+  "Berger says schools and business cultures tend to reward rote answers over questions.",
+  "Land later said he set about solving the puzzle his daughter had set him (RNZ).",
+  "Berger traces other breakthroughs to a question: in the Gatorade story a college football coach asked why players weren't urinating more, which led to realizing sweating players weren't replenishing fluids well enough.",
+  "Land's company became one of the Nifty Fifty growth stocks of the 1960s; Berger traces Netflix and Pixar to founding questions; Hal Gregersen (cited) found innovative leaders like Jobs and Bezos question everything."
+ ],
+ "scene_details": [
+  "a family vacation in Santa Fe in 1943",
+  "a walk of about an hour",
+  "a darkroom inside the camera"
+ ],
+ "tension": "A stock answer was available for a three-year-old's question; Land took it as a real problem.",
+ "opening_idea": "A three-year-old wants to see a photo now and the correct answer fits in a sentence.",
+ "lessons": [
+  {
+   "idea": "Keep a question beside the work before giving the stock answer; the question often yields a list of things that could change.",
+   "anchor": "Land's daughter asked why; he did not stop at 'that's how the camera works'."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "If you asked why about one thing at work that everyone explains with 'that's how we do it', what would you hope to find out?",
+ "use_cases": [
+  {
+   "situation": "The team defends a process with 'we have always done it this way'",
+   "move": "Mention Land's daughter and propose a few minutes asking why this step exists.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Your child asks why and you have a stock answer",
+   "move": "Admit you never asked it and wonder together what if it were different.",
+   "context": "family"
+  },
+  {
+   "situation": "You notice you are doing a familiar task on autopilot",
+   "move": "Ask why in this order and add one what-if.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Land answered his daughter's why with a walk, not a stock answer.",
+ "conversation_variants": {
+  "punchline_idea": "A three-year-old's 'why can't I see it now' led to the Polaroid camera five years later.",
+  "thirty_sec_idea": "Santa Fe 1943, the daughter's question, the walk, 1948.",
+  "question_idea": "",
+  "key_contrast_idea": "stock answer versus real question"
+ }
+}

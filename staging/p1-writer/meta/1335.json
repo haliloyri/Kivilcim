@@ -1,0 +1,35 @@
+{
+  "story_id": 1335,
+  "verdict": "keep",
+  "verify_note": "Reframed as fake versus real freedom (self-limitation). Low confidence: book text not reached; the line is credited to the book by notes and quote sites, and the dating example comes from a Globe and Mail interview, which the story says. Old claim that research shows more options means less happiness dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Seçenekleri kısaltmak",
+    "description": "Manson sahte özgürlükle gerçek özgürlüğü ayırıyor: daha çok seçenek bir tuzak, neyden vazgeçeceğini seçebilmek özgürlük.",
+    "hook": "Açık tuttuğunuz hangi seçenek dikkatinize mal oluyor?",
+    "one_minute_summary": "Mark Manson, kitabıyla ilgili bir gazete röportajında on erkekle çıkıp elinde bir şey kalmayan bir kadını anlatıyor. Ona, kıvılcım hissetmediği yirmi kişi mi yoksa bağ kuracağı iki kişi mi istediğini sormuş. Kadın ikiyi seçmiş, Manson da listesinin yüzde 80'ini silip ölçütlerini değerlere göre belirlemesini söylemiş. Kitaba atfedilen bir cümle, kendini sınırlamayı özgürlüğün tek etik biçimi sayıyor. Manson'a göre bolluk dikkat dağınıklığı ve kıskançlık getiriyor, gerçek özgürlük neyden vazgeçeceğini seçmek. Bu örnek kitaptan değil röportajdan."
+  },
+  "en": {
+    "title": "Freedom by cutting options",
+    "description": "Manson separates fake freedom, more options, from real freedom, choosing what to give up.",
+    "hook": "Which option do you keep open that costs you attention?",
+    "one_minute_summary": "In an interview about his book, Mark Manson described a woman who had dated ten men with nothing lasting. He asked whether she would rather date twenty men she felt nothing for or meet two she connected with. She chose two, and he told her to cut 80 per cent of her list and set standards by values. A line credited to the book calls self-limitation the only ethical form of freedom. Manson says abundance brings distraction and envy, and that real freedom is choosing what you give up. The example comes from the interview, not the book."
+  },
+  "es": {
+    "title": "Libertad recortando opciones",
+    "description": "Manson separa la libertad falsa, más opciones, de la real, elegir a qué renuncias.",
+    "hook": "¿Qué opción mantienes abierta que te cuesta atención?",
+    "one_minute_summary": "En una entrevista sobre su libro, Mark Manson habló de una mujer que había salido con diez hombres sin nada duradero. Le preguntó si prefería veinte hombres que no le decían nada o dos con los que conectara. Ella eligió dos, y él le dijo que eliminara el 80 % de su lista y fijara sus criterios según sus valores. Una frase que se atribuye al libro llama a la autolimitación la única forma ética de libertad. Manson dice que la abundancia trae distracción y envidia, y que la libertad real es elegir a qué renuncias. El ejemplo sale de la entrevista, no del libro."
+  },
+  "de": {
+    "title": "Freiheit durch weniger Optionen",
+    "description": "Manson trennt falsche Freiheit, mehr Optionen, von echter Freiheit, nämlich zu wählen, worauf man verzichtet.",
+    "hook": "Welche Option hältst du offen, obwohl sie dich Aufmerksamkeit kostet?",
+    "one_minute_summary": "In einem Interview zu seinem Buch erzählte Mark Manson von einer Frau, die zehn Männer gedatet hatte, ohne dass etwas hielt. Er fragte, ob sie lieber zwanzig Männer ohne Funken wolle oder zwei mit echter Verbindung. Sie wählte zwei, und er riet ihr, 80 Prozent ihrer Liste zu streichen und ihre Maßstäbe an Werten festzumachen. Ein dem Buch zugeschriebener Satz nennt Selbstbeschränkung die einzige ethische Form von Freiheit. Manson sagt, Überfluss bringe Ablenkung und Neid, echte Freiheit heiße zu wählen, worauf man verzichtet. Das Beispiel stammt aus dem Interview, nicht aus dem Buch."
+  }
+}

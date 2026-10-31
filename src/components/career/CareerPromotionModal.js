@@ -96,7 +96,7 @@ const CareerPromotionModal = () => {
               </>
             )}
           >
-            {isCapstone ? <CelebrationChip tone="reward" icon="sparkles-outline" label={t('career.capstone.profileBadge', lang, { title: t(node.titleKey, lang) })} /> : null}
+            {isCapstone ? <CelebrationChip tone="reward" icon="ribbon-outline" label={t('career.capstone.profileBadge', lang, { title: t(node.titleKey, lang) })} /> : null}
             {isCapstone ? (
               <View style={[styles.pathNote, { borderColor: colors.mutedText }]}>
                 <Text selectable style={[styles.pathNoteText, { color: colors.textSecondary }]}>{t('career.capstone.periodSummary', lang, { path: t(`careerPath.${node.pathId}.title`, lang) })}</Text>

@@ -12,45 +12,30 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const SECTIONS = ['open', 'story', 'lessons', 'reflect', 'use', 'pocket'];
 const PAIRS = ['##', '$$', '&&', '~~', '%%', '@@'];
 
-// Target word ranges per section (3–5 minute read; story carries >= 55%).
-// Turkish is agglutinative, so it needs fewer words. Keep in sync with
-// batch/05-submit-stories.mjs (LANG_CONFIG.len). Outside the target = warning.
-const RANGES = {
-  en: { open: [40, 80], story: [340, 520], lessons: [100, 180], reflect: [40, 90], use: [70, 150], pocket: [4, 22] },
-  es: { open: [43, 86], story: [365, 555], lessons: [107, 193], reflect: [43, 96], use: [75, 160], pocket: [4, 24] },
-  de: { open: [38, 77], story: [325, 500], lessons: [96, 173], reflect: [38, 86], use: [67, 144], pocket: [4, 22] },
-  tr: { open: [32, 64], story: [270, 415], lessons: [80, 145], reflect: [32, 72], use: [56, 120], pocket: [3, 18] },
-};
-// Hard story limits (error). Deliberately wide: a short anecdote told
-// faithfully beats padding, and older entries were written to wider ranges.
-const STORY_HARD = {
-  en: [280, 700], es: [300, 740], de: [270, 680], tr: [230, 560],
-};
-// Whole-entry word target (about 3–5 minutes of reading).
-const TOTAL = { en: [600, 1000], es: [650, 1070], de: [580, 960], tr: [480, 800] };
-
-// Phrases that make text read as machine-written or padded. Case-insensitive.
-const BANNED = {
-  en: [
-    'delve', 'tapestry', "in today's fast-paced world", 'in today’s fast-paced world', 'it is important to note',
-    "it's important to note", 'it’s important to note', 'in conclusion', 'navigate the complexities', 'a testament to',
-    'unlock the power', 'embark on a journey', 'let that sink in', 'game-changer', 'at the end of the day',
-    'not a mechanical recipe', 'a single case does not prove',
-  ],
-  tr: [
-    'günümüz dünyasında', 'unutmayın ki', 'unutmamak gerekir', 'sonuç olarak', 'mekanik bir reçete',
-    'tek bir karakter özelliğiyle', 'tek bir kişilik özelliğiyle', 'kahramanı taklit etmek',
-  ],
-  es: ['en el mundo actual', 'en conclusión', 'es importante destacar', 'cabe destacar', 'sumergirnos'],
-  de: ['in der heutigen schnelllebigen welt', 'zusammenfassend lässt sich sagen', 'es ist wichtig zu beachten', 'eintauchen'],
-};
-
-// Announcer-style transitions: warning only (older entries use them).
-const SOFT_BANNED = {
-  en: ['here is the catch', "here's the catch", 'then something striking happened', 'what happened next surprised'],
-};
+// All length targets, banned phrases and hard limits live in lang-config.mjs so
+// the prompts, the validator and the docs can never disagree again.
+import {
+  RANGES, LEGACY_RANGES, STORY_HARD, TOTAL, STORY_SHARE, LESSON_SENTENCES,
+  SEMICOLON_MAX, BANNED, SOFT_BANNED, META_IN_STORY,
+} from './lang-config.mjs';
 
 const words = (s) => s.replace(/[*#$&%@~>\-•]/g, ' ').split(/\s+/).filter(Boolean).length;
+
+// Two formats coexist in the catalogue:
+//   p1v2   — reading-page redesign (2026-10-28): exactly ONE lesson, ONE question.
+//   legacy — 2–3 lesson cards and a bulleted reflect block.
+// Detected per file, so the existing catalogue keeps passing while every new
+// story is held to the redesign.
+export const detectFormat = (sectionText) => {
+  const lessons = ((sectionText.lessons || '').match(/\$\$/g) || []).length / 2;
+  if (lessons === 1) return 'p1v2';
+  if (lessons >= 2 && lessons <= 3) return 'legacy';
+  return 'unknown';
+};
+
+const sentences = (s) => s.replace(/\s+/g, ' ')
+  .split(/(?<=[.!?…])\s+/).map((x) => x.trim())
+  .filter((x) => x.split(/\s+/).length >= 2);
 
 export const validateP1 = (text, lang) => {
   const errors = [];
@@ -76,6 +61,7 @@ export const validateP1 = (text, lang) => {
     if (cur) bySection[cur].push(l);
   });
   const sectionText = Object.fromEntries(Object.entries(bySection).map(([k, v]) => [k, v.join('\n').trim()]));
+  const format = detectFormat(sectionText);
 
   // Paired markers balanced.
   PAIRS.forEach((m) => {
@@ -87,7 +73,8 @@ export const validateP1 = (text, lang) => {
 
   const count = (re, s = text) => (s.match(re) || []).length;
   const lessons = count(/\$\$[\s\S]*?\$\$/g, sectionText.lessons || '');
-  if (lessons < 2 || lessons > 3) errors.push(`lessons: expected 2–3 $$ cards, got ${lessons}`);
+  if (format === 'unknown') errors.push(`lessons: expected 1 $$ card (new format) or 2–3 (legacy), got ${lessons}`);
+  if (format === 'legacy' && (lessons < 2 || lessons > 3)) errors.push(`lessons: expected 2–3 $$ cards (legacy), got ${lessons}`);
   if (count(/\$\$\*\*[^*]+\*\*/g, sectionText.lessons || '') !== lessons) errors.push('every lesson must start with a **bold title**');
   const USE_CONTEXTS = ['meeting', 'oneonone', 'family', 'social', 'self'];
   const uses = count(/%%[\s\S]*?%%/g, sectionText.use || '');
@@ -104,11 +91,31 @@ export const validateP1 = (text, lang) => {
   if (count(/&&[\s\S]*?&&/g) !== 1) errors.push('exactly one &&reflection&& required');
   if (count(/&&[\s\S]*?&&/g, sectionText.reflect || '') !== 1) errors.push('&&reflection&& must be inside [[reflect]]');
   if (count(/##[\s\S]*?##/g) > 1) errors.push('at most one ##highlight##');
-  const bullets = count(/^\s*- /gm, sectionText.reflect || '');
-  if (bullets < 2 || bullets > 5) warnings.push(`reflect: 2–5 bullets recommended, got ${bullets}`);
+  if (count(/~~[\s\S]*?~~/g) > 1) warnings.push('more than one ~~contrast~~ block (rarely needed)');
 
-  // Lengths.
-  const range = RANGES[lang] || RANGES.en;
+  // Reflection: the redesign wants ONE question, no bullets.
+  const reflectText = sectionText.reflect || '';
+  const bullets = count(/^\s*- /gm, reflectText);
+  const qMarks = (reflectText.match(/\?/g) || []).length;
+  if (format === 'p1v2') {
+    if (bullets) errors.push(`reflect: new format holds one &&question&& only; found ${bullets} bullet(s)`);
+    if (qMarks !== 1) errors.push(`reflect: exactly one question mark expected, found ${qMarks}`);
+    if (sentences(reflectText.replace(/&/g, '')).length > 1) warnings.push('reflect: more than one sentence; ask a single question');
+    if (lang === 'tr' && /\b(mi|mı|mu|mü)\s*,\s*[^?]*\b(ne|neydi|nasıl|neden|niçin|hangi|kim|nerede|kaç)\b[^?]*\?/i.test(reflectText)) {
+      warnings.push('reflect: a second question hides after the comma; keep one question');
+    }
+    const body = (sectionText.lessons || '').replace(/\$\$/g, '').replace(/\*\*[^*]+\*\*/g, '');
+    const [smin, smax] = LESSON_SENTENCES;
+    const lessonSentences = sentences(body).length;
+    if (lessonSentences < smin || lessonSentences > smax) warnings.push(`lesson: ${lessonSentences} sentences (want ${smin}–${smax}: principle, everyday example, what it enables)`);
+    const title = /\$\$\s*\*\*([^*]+)\*\*/.exec(sectionText.lessons || '');
+    if (title && /\b(değil|değildir|not a|isn't|no es|kein)\b/i.test(title[1])) warnings.push(`lesson title is an "X is not Y" aphorism: "${title[1].trim()}"`);
+  } else if (bullets && (bullets < 2 || bullets > 5)) {
+    warnings.push(`reflect: 2–5 bullets recommended, got ${bullets}`);
+  }
+
+  // Lengths: p1v2 targets, with the legacy lesson/reflect ranges for old entries.
+  const range = { ...(RANGES[lang] || RANGES.en), ...(format === 'legacy' ? (LEGACY_RANGES[lang] || LEGACY_RANGES.en) : {}) };
   Object.entries(range).forEach(([sec, [min, max]]) => {
     const n = words(sectionText[sec] || '');
     if (n < min || n > max) {
@@ -120,7 +127,36 @@ export const validateP1 = (text, lang) => {
   const [tmin, tmax] = TOTAL[lang] || TOTAL.en;
   const totalWords = words(text);
   if (totalWords < tmin || totalWords > tmax) warnings.push(`total: ${totalWords} words (3–5 min target ${tmin}–${tmax})`);
-  if (words(sectionText.story || '') < totalWords * 0.5) warnings.push('story is under 50% of the entry; trim lessons/reflect/use');
+  // p1v2 asks for 55%; legacy entries were written to the old 50% bar.
+  const shareTarget = format === 'p1v2' ? STORY_SHARE : 0.5;
+  if (words(sectionText.story || '') < totalWords * shareTarget) {
+    const share = (words(sectionText.story || '') / Math.max(1, totalWords)) * 100;
+    warnings.push(`story is ${share.toFixed(1)}% of the entry (want ≥ ${(shareTarget * 100).toFixed(0)}%); trim lessons/reflect/use`);
+  }
+
+  // [[open]] is a hook, not a citation: no year and no book title in italics.
+  const openText = sectionText.open || '';
+  const openCite = [];
+  if (/\b(1[5-9]\d{2}|20\d{2})\b/.test(openText)) openCite.push('a year');
+  if (/\*[^*\n]+\*/.test(openText)) openCite.push('an italic book title');
+  if (openCite.length) {
+    (format === 'p1v2' ? errors : warnings).push(`open cites ${openCite.join(' and ')}; start inside the scene and keep the citation for [[story]]`);
+  }
+
+  // Story must tell the story, not talk about the writing.
+  const storyText = sectionText.story || '';
+  (META_IN_STORY[lang] || []).forEach((m) => {
+    if (storyText.toLowerCase().includes(m)) {
+      (format === 'p1v2' ? errors : warnings).push(`story discusses the writing: "${m}" (an illustration belongs in [[lessons]])`);
+    }
+  });
+
+  if (lang === 'tr') {
+    const semi = count(/;/g);
+    if (semi > SEMICOLON_MAX) warnings.push(`Turkish: ${semi} semicolons (keep ≤ ${SEMICOLON_MAX})`);
+    const degil = count(/\bdeğil\b/gi);
+    if (degil > 3) warnings.push(`"değil" ×${degil}: the "not X but Y" move keeps repeating`);
+  }
 
   // "Not X. It's Y." contrast pattern (English): at most one.
   if (lang === 'en') {
@@ -138,11 +174,10 @@ export const validateP1 = (text, lang) => {
   (BANNED[lang] || []).forEach((b) => { if (lower.includes(b)) errors.push(`banned phrase: "${b}"`); });
   (SOFT_BANNED[lang] || []).forEach((b) => { if (lower.includes(b)) warnings.push(`announcer phrase: "${b}"`); });
 
-  // Em-dash density (a common machine-writing tell in English).
-  if (lang === 'en') {
+  // Em-dash density: at most 2 in the whole entry, in every language.
+  {
     const dashes = count(/—/g);
-    const per1000 = (dashes / Math.max(1, words(text))) * 1000;
-    if (per1000 > 4 || dashes > 2) warnings.push(`em-dash ×${dashes} (${per1000.toFixed(1)}/1000 words; keep ≤ 2)`);
+    if (dashes > 2) warnings.push(`em-dash ×${dashes} (keep ≤ 2 in the whole entry)`);
   }
 
   // AI-writing tells (humanizer-derived rules, see ai-tells.mjs).
@@ -150,7 +185,8 @@ export const validateP1 = (text, lang) => {
   errors.push(...ai.errors);
   warnings.push(...ai.warnings);
 
-  return { errors, warnings, words: words(text), aiScore: ai.per100 };
+  const counts = Object.fromEntries(SECTIONS.map((s) => [s, words(sectionText[s] || '')]));
+  return { errors, warnings: [...new Set(warnings)], words: words(text), counts, aiScore: ai.per100, format };
 };
 
 const main = () => {

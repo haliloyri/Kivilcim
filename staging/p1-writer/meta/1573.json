@@ -1,0 +1,30 @@
+{
+  "story_id": 1573,
+  "verdict": "keep",
+  "verify_note": "Rebuilt on Chapter 5 cases (Castor/Godschalk, Criner/McDougal, Florida/Dedge). Dropped the invented survey of 200+ exonerees and the quoted rationalisations. Second-lab and vacate beat and Godschalk's later statement are case-record facts, marked as such. County not named (sources disagree).",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Savcının ses kaydı",
+    "description": "DNA, on beş yıl hapis yatmış bir adamı temize çıkardı. Savcı yine de dedektifine ve kayıtlı itirafa güvendiğini söyledi.",
+    "hook": "Bir kararı savunurken hangi kanıtın fikrinizi değiştireceğini hiç yazdınız mı?",
+    "one_minute_summary": "Tavris ve Aronson, Pennsylvania'da bir bölge savcısının DNA sonucunu kabul etmemesini anlatıyor. Adam on beş yıl hapis yatmıştı, itirafı kayıtlıydı. Savcı bilimsel dayanağı olmadığını, ama dedektifine ve kayda güvendiğini söyledi. Dava kayıtlarına göre ikinci laboratuvar da aynı sonuca vardı ve savcı sonunda mahkûmiyetlerin kaldırılmasını istedi. Texas ve Florida'da da benzer tepkiler var. Yazarlar savcıları yalancı saymıyor: kendini dürüst gören biri için laboratuvardan şüphe etmek, masum birini mahkûm ettirdiğini düşünmekten daha kolay."
+  },
+  "en": {
+    "title": "The tape over the DNA",
+    "description": "DNA cleared a man who had served fifteen years. The district attorney said he trusted his detective and a recorded confession.",
+    "hook": "Have you ever written down what evidence would change your mind before you needed it?",
+    "one_minute_summary": "Tavris and Aronson describe a Pennsylvania district attorney who rejected a DNA result that cleared a man after fifteen years. The man's confession was on tape. Asked for a scientific basis, the attorney said he had none but trusted his detective and the recording. The case record says a second lab reached the same result and he later asked a judge to vacate the convictions. Texas and Florida prosecutors reacted similarly. The authors do not call them liars: doubting a lab is easier than admitting you helped convict an innocent man."
+  },
+  "es": {
+    "title": "La grabación frente al ADN",
+    "description": "El ADN exculpó a un hombre con quince años de cárcel. El fiscal dijo que confiaba en su detective y en una confesión grabada.",
+    "hook": "¿Has escrito alguna vez qué prueba te haría cambiar de opinión antes de necesitarla?",
+    "one_minute_summary": "Tavris y Aronson cuentan cómo un fiscal de Pennsylvania rechazó un resultado de ADN que exculpaba a un hombre tras quince años preso. Su confesión estaba grabada. Sin base científica, el fiscal dijo confiar en su detective y en la grabación. Según el expediente, un segundo laboratorio llegó al mismo resultado y él pidió anular las condenas. Hay casos parecidos en Texas y Florida. Los autores no los llaman mentirosos: dudar del laboratorio cuesta menos que admitir que ayudaste a condenar a un inocente."
+  },
+  "de": {
+    "title": "Die Aufnahme gegen die DNA",
+    "description": "Die DNA entlastete einen Mann nach fünfzehn Jahren Haft. Der Staatsanwalt vertraute seinem Detective und einem aufgezeichneten Geständnis.",
+    "hook": "Hast du je aufgeschrieben, welcher Beweis dich umstimmen würde, bevor du ihn brauchtest?",
+    "one_minute_summary": "Tavris und Aronson schildern einen Bezirksstaatsanwalt in Pennsylvania, der ein DNA-Ergebnis ablehnte, das einen Mann nach fünfzehn Jahren Haft entlastete. Das Geständnis war aufgezeichnet. Auf die Frage nach seiner Grundlage sagte er, er habe keine wissenschaftliche, vertraue aber seinem Detective und der Aufnahme. Laut Akten kam ein zweites Labor zum selben Ergebnis, später beantragte er die Aufhebung der Urteile. Auch in Texas und Florida gab es solche Reaktionen. Die Autoren sehen darin keine Lüge: Am Labor zu zweifeln fällt leichter, als sich Mitschuld an einem Fehlurteil einzugestehen."
+  }
+}

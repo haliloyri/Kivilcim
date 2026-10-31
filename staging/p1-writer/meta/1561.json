@@ -1,0 +1,35 @@
+{
+ "story_id": 1561,
+ "verdict": "keep",
+ "verify_note": "Rebuilt from Wikipedia's account of the book (1979 clinic, referrals, eight-week course, Part I practices) plus a Tricycle introduction for weekly format and self-reported results (flagged as not the book itself). Old outcome claims, invented dialogue and 'small room' removed.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Dikkat öğreten klinik",
+  "description": "Hekimlerin tam yardım edemediği hastalar, 1979'da bir üniversite hastanesinde sekiz haftalık bir dikkat kursuna yönlendirildi.",
+  "hook": "Günün hangi düzenli anı, olup biteni fark etmek için birkaç sakin dakikaya yer verebilir?",
+  "one_minute_summary": "Jon Kabat-Zinn 1979'da Massachusetts Üniversitesi Tıp Merkezi'nde bir klinik kurdu ve Full Catastrophe Living bu çalışmadan doğdu. Hekimler, tedaviye tam yanıt vermeyen hastaları yolluyordu. Sekiz haftalık program farkındalık meditasyonu ve yoga öğretiyordu. Bir dergi yazısına göre sınıf haftada iki buçuk saat toplanıyor, katılımcılar günde kırk beş dakika uygulama yapıyordu. Bugün MBSR 740'tan fazla hastane ve klinikte uygulanıyor. Sonuçlar katılımcıların kendi bildirimi."
+ },
+ "en": {
+  "title": "The clinic that taught attention",
+  "description": "Patients doctors could not fully help were sent to an eight-week attention course at a university hospital in 1979.",
+  "hook": "Which regular moment of your day could hold a few minutes of simply noticing what is happening?",
+  "one_minute_summary": "Jon Kabat-Zinn founded a clinic at the University of Massachusetts Medical Center in 1979, and Full Catastrophe Living grew out of it. Physicians sent patients who were not responding completely to traditional treatment. The eight-week program taught mindfulness meditation and yoga. According to a magazine article, classes met for two and a half hours a week and participants practised 45 minutes a day. MBSR is now offered in more than 740 hospitals and clinics. The reported results are the participants' own."
+ },
+ "es": {
+  "title": "La clínica que enseñó atención",
+  "description": "Pacientes a quienes los médicos no podían ayudar del todo fueron enviados en 1979 a un curso de atención de ocho semanas en un hospital universitario.",
+  "hook": "¿Qué momento regular de tu día podría dar cabida a unos minutos de simplemente notar lo que pasa?",
+  "one_minute_summary": "Jon Kabat-Zinn fundó en 1979 una clínica en el Centro Médico de la Universidad de Massachusetts, y de ella nació Full Catastrophe Living. Los médicos enviaban a pacientes que no respondían del todo al tratamiento tradicional. El programa de ocho semanas enseñaba meditación de atención plena y yoga. Según un artículo de revista, la clase duraba dos horas y media a la semana y se practicaban 45 minutos al día. Hoy la MBSR se ofrece en más de 740 hospitales y clínicas. Los resultados son informes de los propios participantes."
+ },
+ "de": {
+  "title": "Die Klinik der Aufmerksamkeit",
+  "description": "Patienten, denen Ärzte nicht ganz helfen konnten, wurden 1979 an einer Universitätsklinik in einen achtwöchigen Aufmerksamkeitskurs geschickt.",
+  "hook": "Welcher regelmäßige Moment deines Tages könnte ein paar Minuten bloßen Bemerkens aufnehmen?",
+  "one_minute_summary": "Jon Kabat-Zinn gründete 1979 eine Klinik am University of Massachusetts Medical Center, aus der Full Catastrophe Living entstand. Ärzte überwiesen Patienten, die auf die herkömmliche Behandlung nicht ganz ansprachen. Das achtwöchige Programm lehrte Achtsamkeitsmeditation und Yoga. Laut einem Magazinartikel traf sich die Gruppe zweieinhalb Stunden pro Woche, und die Teilnehmer übten 45 Minuten am Tag. Heute wird MBSR in mehr als 740 Kliniken angeboten. Die berichteten Ergebnisse stammen von den Teilnehmern selbst."
+ }
+}

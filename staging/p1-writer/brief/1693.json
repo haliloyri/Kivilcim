@@ -1,0 +1,63 @@
+{
+  "story_id": 1693,
+  "kind": "anecdote",
+  "book": {
+    "title": "Endurance",
+    "author": "Alfred Lansing",
+    "year": "1959"
+  },
+  "confidence": "high",
+  "confidence_note": "Well-documented core of Lansing's narrative. The reference TR text has errors that must not be carried over: the James Caird carried six men (Shackleton plus five), not five; the crossing took about 16 days, not 17; the distance is roughly 800 nautical miles, not 1,300 km; 22 men (not 'the whole crew') waited on Elephant Island; the rescue took four attempts. Omitted: exact sight counts, day-by-day details of the boat journey, direct quotes. Added later: ice chipping, screws in boots and rope, three failed rescue attempts, all recalled from Lansing and the general record (medium-high); kept to one clause each.",
+  "facts": [
+    "Shackleton's ship Endurance was trapped in the Weddell Sea pack ice in 1915, drifted with it for months, and was crushed and sank in November 1915; the 28-man crew made camp on the ice.",
+    "When the ice broke up the men took to three lifeboats and reached Elephant Island in April 1916.",
+    "Elephant Island was uninhabited and far from shipping lanes; nobody knew where the expedition was, so no rescue would come by itself.",
+    "Shackleton chose the strongest boat, the James Caird (about 22.5 ft / 6.9 m); the carpenter, Harry McNish, built it up with a deck from sledge runners, box lids and canvas.",
+    "Six men sailed: Shackleton, Frank Worsley, Tom Crean, McNish, Timothy McCarthy and John Vincent. Twenty-two stayed behind under Frank Wild.",
+    "The target was South Georgia, about 800 nautical miles away across the Southern Ocean; Worsley navigated with a sextant and only a handful of sun sightings through cloud.",
+    "The crossing took about 16 days; they landed on the wrong (uninhabited) side of South Georgia.",
+    "Shackleton, Worsley and Crean then crossed South Georgia's unmapped mountainous interior on foot in about 36 hours to reach the Stromness whaling station.",
+    "The men on Elephant Island were rescued on 30 August 1916 on the fourth rescue attempt; every one of the 28 survived.",
+    "Ice kept forming on the James Caird and the men had to chip it off so it would not capsize her.",
+    "For the South Georgia crossing, screws were driven into their boots for grip and they carried rope; the first three rescue attempts to Elephant Island were turned back by ice."
+  ],
+  "scene_details": [
+    "A 6.9 m open boat decked with sledge runners, box lids and canvas.",
+    "Worsley taking sun sights with a sextant when the clouds opened.",
+    "Twenty-two men waiting on a rocky island nobody knew they were on."
+  ],
+  "tension": "Waiting meant certain silence; leaving meant an open boat across the Southern Ocean with 22 men depending on a navigator who could rarely see the sun.",
+  "opening_idea": "Open on Worsley, the sextant and the rare gaps in the cloud, with 22 men staking their lives on those few readings.",
+  "lessons": [
+    {
+      "idea": "Waiting is also a risky choice; count its cost next to the cost of acting.",
+      "anchor": "Nobody knew where they were on Elephant Island, so waiting meant no rescue"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In what situation where you are waiting for an answer would you set a date to stop waiting and start the next step, and what date would you pick?",
+  "use_cases": [
+    {
+      "situation": "A supplier has gone silent and the team keeps saying 'let's wait a bit'.",
+      "move": "Say that waiting has a cost too, and propose a Friday deadline after which a second option opens.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend has waited for a reply on a job for weeks.",
+      "move": "Ask what date they would stop waiting and what second door they would try.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are postponing a decision that nobody else will make for you.",
+      "move": "Write down what waiting costs each week and set the date you will act, as Shackleton did when no rescue could come.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "On Elephant Island nobody was coming, so waiting was a decision too: price the wait and set an end date.",
+  "conversation_variants": {
+    "punchline_idea": "Twenty-two men waited on an island nobody knew about while six sailed 800 miles guided by a few glimpses of the sun.",
+    "thirty_sec_idea": "Endurance crushed, 28 men on Elephant Island, six in the James Caird, 800 miles, 16 days, mountains, rescue on fourth try, all alive.",
+    "question_idea": "",
+    "key_contrast_idea": "waiting costs too"
+  }
+}

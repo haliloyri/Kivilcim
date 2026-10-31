@@ -1,0 +1,62 @@
+{
+  "story_id": 1701,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Checklist Manifesto",
+    "author": "Atul Gawande",
+    "year": "2009"
+  },
+  "confidence": "high",
+  "confidence_note": "WHO Safe Surgery Checklist study figures verified in WHO, Harvard Gazette and PAHO releases: eight hospitals (Toronto, Seattle, London, New Zealand, Jordan, India, Philippines, Tanzania), 3,733 patients before and 3,955 after, major complications 11 to 7 percent, inpatient deaths 1.5 to 0.8 percent. The reference TR text's '19-item' count and the sample sizes match. The Boeing Model 299 episode (1935, an unreleased control lock) and the three pause points are recalled from the book, high confidence. Editorial caveat on before/after design and a later Ontario study without a significant drop is from general record (medium-high). Not used: the '93 percent of surgeons' figure (not verified), the Pronovost central-line story (not needed).",
+  "facts": [
+    "Gawande, a surgeon, helped lead a World Health Organization surgical safety effort; the team looked to aviation for a remedy.",
+    "In 1935 Boeing's new Model 299 bomber crashed on a test flight; a lock on the controls had not been released. Pilots answered with a short checklist.",
+    "The WHO team made a 19-item surgical checklist with three pause points: before anaesthesia, before the incision, and before the patient leaves the operating room.",
+    "Items included confirming the patient's identity and the surgical site, confirming that antibiotics had been given, team members saying their names and roles aloud, and counting instruments and sponges at the end.",
+    "It was tried in eight hospitals in eight cities: Toronto, New Delhi, Amman, Auckland, Manila, Ifakara, London and Seattle.",
+    "3,733 patients were followed before the checklist and 3,955 after it.",
+    "Major complications fell from 11 percent to 7 percent and inpatient deaths from 1.5 percent to 0.8 percent.",
+    "Caveat: the study compared before and after without a control group; a later large Ontario study did not find a significant drop.",
+    "A newspaper had called the Model 299 too much airplane for one man to fly; after the checklist it flew 1.8 million miles without an accident.",
+    "Hundreds of millions of operations are performed worldwide each year; some harm patients through avoidable mistakes."
+  ],
+  "scene_details": [
+    "Team members saying names and roles aloud before the incision.",
+    "Instrument and sponge count read out at the end.",
+    "A lock on the controls that nobody released."
+  ],
+  "tension": "Even skilled surgeons miss routine steps; could a short list read aloud change the numbers?",
+  "opening_idea": "Open on a team in an operating room saying names and roles aloud before the first cut.",
+  "lessons": [
+    {
+      "idea": "Experts forget routine steps; make the few costly ones visible and read them aloud with someone else.",
+      "anchor": "The 19-item list and the aviation precedent"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your work, which expensive or dangerous mistake could a short list, read aloud with someone, prevent?",
+  "use_cases": [
+    {
+      "situation": "The same pre-delivery mistake has happened twice.",
+      "move": "Point to the aloud pause points in the WHO list and propose a five-item check before every delivery.",
+      "context": "meeting"
+    },
+    {
+      "situation": "An experienced colleague thinks a checklist is beneath them.",
+      "move": "Say the list protects both of you on a tired day and ask which three steps must never be skipped.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You keep skipping the same step.",
+      "move": "Write it on a card and read it aloud before you start.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The WHO list had even familiar steps read aloud: write down the few steps that cost most when forgotten.",
+  "conversation_variants": {
+    "punchline_idea": "Surgeons added a 19-item list read aloud, and in eight hospitals complications fell from 11 to 7 percent.",
+    "thirty_sec_idea": "WHO list with three pauses, eight hospitals, 3,733 before and 3,955 after, complications 11 to 7, deaths 1.5 to 0.8; observational.",
+    "question_idea": "",
+    "key_contrast_idea": "memory or list"
+  }
+}

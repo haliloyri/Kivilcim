@@ -1,0 +1,55 @@
+{
+  "story_id": 1799,
+  "kind": "concept",
+  "book": {
+    "title": "The Culture Map",
+    "author": "Erin Meyer",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Meyer's eight scales and the end-points for each are the book's framework. The supplied scene (a named city, a named manager) is an illustration, not a case I can tie to the book, so it is presented as a typical situation, not as an event. Country placements are limited to ones the book clearly makes; Meyer also warns that a scale describes tendencies of a culture, not individuals.",
+  "facts": [
+    "Meyer compares cultures on eight scales; the first is communicating, from low-context to high-context.",
+    "In low-context cultures good communication is precise, simple and explicit; messages are taken at face value and repeated for clarity.",
+    "In high-context cultures good communication is layered and nuanced; part of the message is left unsaid and the listener reads between the lines.",
+    "In Meyer's map the United States sits at the low-context end and Japan at the high-context end.",
+    "Illustration (typical, not a book case): after a presentation in Tokyo a low-context manager asks if everyone agrees, hears silence and sees small nods, and takes it as agreement.",
+    "For a high-context listener the silence can itself be a message: polite hesitation or an unspoken no.",
+    "Meyer warns that scales describe tendencies, not individuals; the position tells where to look, not who a person is.",
+    "Direction of adjustment: a low-context speaker listens for what is not said; a high-context speaker is more explicit with low-context partners."
+  ],
+  "tension": "The same silence can mean agreement to one person and hesitation to another.",
+  "opening_idea": "Open on the question 'does everyone agree?' followed by a silence that two people read in opposite ways.",
+  "lessons": [
+    {
+      "idea": "Silence is a message, but it is not read the same way everywhere.",
+      "anchor": "The low-context and high-context end-points and the same silence read in two ways."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Whose silence in your last meeting might have meant something you did not hear, and how would you ask them?",
+  "use_cases": [
+    {
+      "situation": "Nobody objects in a meeting.",
+      "move": "Say that silence will not count as agreement and ask everyone to write one sentence before deciding.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A quiet colleague stayed silent in a discussion.",
+      "move": "Ask in private what solution would suit them best.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are about to send an important message.",
+      "move": "Imagine a reader with no background and add the missing sentence.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The same silence can be a yes in one culture and a hesitation in another; ask the quiet person before writing the decision down.",
+  "conversation_variants": {
+    "punchline_idea": "Meyer's map reads one silence in two opposite ways, depending on who is in the room.",
+    "thirty_sec_idea": "Erin Meyer's first scale separates low-context from high-context communication. A low-context speaker says things plainly and takes words at face value. A high-context speaker leaves part unsaid. So a silence after 'does everyone agree?' can be consent to one listener and polite doubt to another.",
+    "question_idea": "",
+    "key_contrast_idea": "Sessizlik ve onay"
+  }
+}

@@ -17,5 +17,8 @@
       "Bash(node scripts/story-pipeline/ingest-batch.mjs*)",
       "Bash(npm run story:ingest*)"
     ]
-  }
+  },
+  "disabledMcpjsonServers": [
+    "supabase"
+  ]
 }

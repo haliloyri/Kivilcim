@@ -1,0 +1,149 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #f7f3ec;
+      overflow: hidden;
+    }
+    .eyebrow {
+      position: absolute;
+      left: 80px;
+      top: 180px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 34px;
+      letter-spacing: 0.28em;
+      color: #1f5f5b;
+    }
+    .head {
+      position: absolute;
+      left: 80px;
+      right: 40px;
+      top: 244px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 112px;
+      line-height: 1.1;
+      color: #24211e;
+      white-space: nowrap;
+    }
+    .head .ln {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 10px;
+    }
+    .head .w {
+      display: inline-block;
+    }
+    #s5-chips {
+      position: absolute;
+      left: 80px;
+      top: 440px;
+      width: 920px;
+      display: flex;
+      gap: 14px;
+    }
+    .chip {
+      padding: 16px 24px;
+      border-radius: 40px;
+      background: #fffdf9;
+      box-shadow: 0 0 0 2px #e6ded3;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 32px;
+      color: #24211e;
+      white-space: nowrap;
+    }
+    .chip.on {
+      background: #e2edea;
+      box-shadow: 0 0 0 3px #1f5f5b;
+      color: #1f5f5b;
+      font-weight: 600;
+    }
+    #s5-scn {
+      position: absolute;
+      left: 80px;
+      top: 580px;
+      width: 920px;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 44px;
+      line-height: 1.35;
+      color: #6b625a;
+    }
+    #s5-quote {
+      position: absolute;
+      left: 80px;
+      top: 740px;
+      width: 920px;
+      padding: 56px 56px 48px 64px;
+      border-radius: 48px;
+      background: #fffdf9;
+      box-shadow: 0 0 0 2px #e6ded3, 0 28px 60px rgba(36, 33, 30, 0.14);
+    }
+    #s5-bar {
+      position: absolute;
+      left: 40px;
+      top: 56px;
+      height: 270px;
+      width: 10px;
+      border-radius: 5px;
+      background: #1f5f5b;
+    }
+    #s5-qt {
+      padding-left: 30px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 1.25;
+      color: #24211e;
+    }
+    #s5-sep {
+      margin: 40px 0 0 30px;
+      height: 2px;
+      background: #e6ded3;
+    }
+    #s5-ft {
+      display: flex;
+      justify-content: space-between;
+      margin: 28px 0 0 30px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      color: #1f5f5b;
+    }
+    #s5-ft span:first-child {
+      color: #6b625a;
+      font-weight: 400;
+    }
+  </style>
+  <div data-hf-id="hf-ejdb" id="root" data-composition-id="s5" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-x1kq" class="eyebrow" id="s5-eb">SOHBETTE KULLAN</div>
+    <div data-hf-id="hf-z992" class="head"><span data-hf-id="hf-smev" class="ln"><span data-hf-id="hf-uagp" class="w" id="s5-a">Sohbette kullan</span></span></div>
+    <div data-hf-id="hf-v4wj" id="s5-chips">
+      <div data-hf-id="hf-2z97" class="chip">Toplantı</div>
+      <div data-hf-id="hf-5o3j" class="chip">Birebir</div>
+      <div data-hf-id="hf-gir3" class="chip">Aile</div>
+      <div data-hf-id="hf-62np" class="chip">Sosyal</div>
+      <div data-hf-id="hf-up6q" class="chip on" id="s5-on">Kendime</div>
+    </div>
+    <div data-hf-id="hf-gxjj" id="s5-scn">Çalışırken masanda bir atıştırmalık duruyor.</div>
+    <div data-hf-id="hf-icqa" id="s5-quote">
+      <div data-hf-id="hf-mycp" id="s5-bar"></div>
+      <div data-hf-id="hf-pk4w" id="s5-qt">“Arkamdaki rafa kaldırıyorum. Gözümün önünde olmazsa daha az düşünürüm.”</div>
+      <div data-hf-id="hf-u3zm" id="s5-sep"></div>
+      <div data-hf-id="hf-nq40" id="s5-ft"><span data-hf-id="hf-il9v">≈ 9 sn'de söylenir</span><span data-hf-id="hf-iefo">Kopyala</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s5-eb", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, 0.1);
+    tl.fromTo("#s5-a", { yPercent: 105 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+    tl.fromTo("#s5-chips", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.2);
+    tl.fromTo("#s5-scn", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 2.0);
+    tl.fromTo("#s5-quote", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 7.8);
+    tl.fromTo("#s5-bar", { scaleY: 0, transformOrigin: "top center" }, { scaleY: 1, duration: 0.8, ease: "power2.out" }, 8.1);
+    window.__timelines["s5"] = tl;
+  </script>
+</template>

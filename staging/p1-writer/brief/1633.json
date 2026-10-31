@@ -1,0 +1,44 @@
+{
+  "story_id": 1633,
+  "kind": "anecdote",
+  "book": { "title": "Scattered Minds", "author": "Gabor Maté", "year": "1999" },
+  "confidence": "high",
+  "confidence_note": "Verified against the full text on archive.org (Scattered Minds, Maté's own infancy chapter and Introduction). The reference TR text (diagnosed in his 50s, 'genetics does not shape attention', 'ADHD is a sensitive brain, not a scattered one' as a flat claim) did not match the book: Maté writes that ADD is 'a matter of genes and parenting', that sensitivity is the inherited part, and that no genetic factor is decisive. The story is rebuilt on his own infancy account. Do not state his age at diagnosis (not found). The environmental view is a minority position and the evidence for heritability of ADHD is strong; the story must say this once and say diagnosis and treatment belong to a physician.",
+  "facts": [
+    "Maté was born in Budapest in January 1944, the first child of Jewish parents; two and a half months later Hungary came under German occupation.",
+    "Two days after the occupation his mother phoned the pediatrician: the baby had been crying almost without stop since the previous morning. The doctor answered that he would come but that all his Jewish babies were crying.",
+    "Maté's reading: infants absorb their parents' anxiety; they were loved no less than other children.",
+    "A photograph from May 1944 shows his mother holding him at four months, a yellow star on her jacket; the baby's face is tense and his eyes look far away.",
+    "In December the family sought refuge in a so-called protected house under the Swiss embassy with about two thousand people; there was hardly anything to feed him.",
+    "His mother gave him to a complete stranger, a non-Jewish woman, who pushed his buggy to the home of a relative.",
+    "They were reunited three weeks later when the Red Army took Budapest; when he saw her again he reacted as if she were a stranger and would not look at her for days.",
+    "Maté tells this as an illustration of how the relationship with a caregiver and her emotional state shape a baby's brain, not as proof; he writes that he cannot know whether he would have developed attention deficit disorder anyway.",
+    "He has ADD himself, and his three children were diagnosed with it; he writes that it is a matter of genes and parenting, that the inherited part is sensitivity, and that he does not believe any genetic factor is decisive."
+  ],
+  "scene_details": [
+    "A baby crying almost without stop for a day and a half",
+    "The pediatrician's line: all my Jewish babies are crying",
+    "A yellow star on the mother's jacket in a May 1944 photograph",
+    "A buggy pushed away by a stranger",
+    "Three weeks apart, then days of not looking at his mother"
+  ],
+  "tension": "A psychiatrist argues that attention problems begin in how an infant's first months go, and offers his own first year as the case, while admitting it cannot prove his own diagnosis.",
+  "opening_idea": "Start with the doctor's remark on the phone, and the baby who had cried for a day and a half.",
+  "lessons": [
+    { "idea": "When someone has trouble paying attention, ask what they have been living through as well as what is wrong with them; both questions belong in the room.", "anchor": "Maté reads his own first year (the crying, the stranger with the buggy, three weeks apart) as the setting in which his attention developed, while saying he cannot prove it.", "everyday_example_idea": "A parent whose child is forgetting homework asks about the last few weeks at home and school before booking more tutoring." }
+  ],
+  "reflect": [],
+  "reflect_final": "When you or someone close to you struggles to concentrate, which circumstances of the past months would you want to write down before drawing any conclusion?",
+  "use_cases": [
+    { "situation": "A teacher or parent worries a child cannot concentrate.", "move": "Maté's own first year included three weeks apart from his mother. Ask: what has changed for this child lately, at home and at school, before we label it?", "context": "family" },
+    { "situation": "You blame yourself for being scattered this month.", "move": "List what has been happening in your life since spring; then decide whether you need a doctor's opinion as well.", "context": "self" },
+    { "situation": "A colleague says they cannot focus lately.", "move": "Ask what has been going on for them, then mention that a doctor can assess attention problems.", "context": "oneonone" }
+  ],
+  "pocket_idea": "Maté asks what a scattered mind has lived through, not only what is wrong with it; the doctor's visit can come after.",
+  "conversation_variants": {
+    "punchline_idea": "Told that all his Jewish babies were crying, Gabor Maté's pediatrician unknowingly described the first year of a future ADD doctor.",
+    "thirty_sec_idea": "Gabor Maté was a baby in Budapest in 1944. His mother called the pediatrician about a baby who had cried for a day and a half; the doctor said all his Jewish babies were crying. Later she gave him to a stranger for three weeks. Maté, who has ADD, uses this as his case for how early stress shapes attention, and admits he cannot prove it.",
+    "question_idea": "",
+    "key_contrast_idea": "Label or backstory"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "story_id": 1751,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Splendid and the Vile",
+    "author": "Erik Larson",
+    "year": "2020"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of the book; no page-level check. Core: Churchill became prime minister May 1940; the Blitz of London began 7 September 1940; Larson shows him visiting bombed districts, weeping at what he saw in some, and watching raids from rooftops. Omitted on purpose: dates of individual visits, names of the districts, direct quotes, casualty numbers, other family members. Reference TR text says Churchill went on roofs against advice; kept general. Added from memory of Larson and general record, not page-checked: 57 nights, docks, Chequers, crowds calling out, advisers' unease.",
+  "facts": [
+    "Winston Churchill became prime minister in May 1940.",
+    "The German bombing of London began on 7 September 1940.",
+    "Larson describes Churchill visiting bombed streets after raids and being seen by residents.",
+    "On some visits he showed distress at what he saw.",
+    "He also went up on rooftops to watch the bombing, in the book's account.",
+    "London was bombed for months but the government and city kept functioning.",
+    "France fell June 1940; the Blitz began 7 September with attacks on the East London docks and ran 57 consecutive nights; Churchill spent weekends at Chequers; advisers worried about his safety."
+  ],
+  "scene_details": [
+    "rubble in the street after a night raid",
+    "a rooftop view of the bombing"
+  ],
+  "tension": "A leader chooses to be seen at the worst sites instead of staying in shelter.",
+  "opening_idea": "Open on the morning after a raid: the prime minister walking over broken glass in a street where people live.",
+  "lessons": [
+    {
+      "idea": "In a crisis, being seen with people matters as much as the plan.",
+      "anchor": "Churchill visited the bombed streets"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When your team is under pressure, where are you most visible: in the room with them or behind a closed door?",
+  "use_cases": [
+    {
+      "situation": "A project is in trouble and the team hears nothing from you.",
+      "move": "Show up at the problem site this week and say what you saw.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A relative is in a hard moment.",
+      "move": "Visit instead of sending a message.",
+      "context": "family"
+    },
+    {
+      "situation": "You are leading after a setback.",
+      "move": "Ask one person how the day went and listen.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Churchill walked the bombed streets himself: in a crisis, be where your people can see you.",
+  "conversation_variants": {
+    "punchline_idea": "During the Blitz, Churchill went to the bombed streets in person.",
+    "thirty_sec_idea": "When German bombs began falling on London in September 1940, Winston Churchill, prime minister for a few months, went to the damaged streets after the raids and let people see him there. Erik Larson's The Splendid and the Vile describes him showing distress at what he found and watching raids from rooftops. London took months of bombing and kept going.",
+    "question_idea": "",
+    "key_contrast_idea": "seen, not hidden"
+  }
+}

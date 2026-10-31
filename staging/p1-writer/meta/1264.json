@@ -1,0 +1,35 @@
+{
+ "story_id": 1264,
+ "verdict": "keep",
+ "verify_note": "Verified against book text (Love Everything That Happens). \"Dec 1914\", \"$23M damage\" and \"all our mistakes burned\" claims dropped; loss almost $1M (about $23M today) per the book.",
+ "title_changed": {
+  "tr": false,
+  "en": false,
+  "es": false,
+  "de": false
+ },
+ "tr": {
+  "title": "Edison'ın fabrika yangını",
+  "description": "Edison altmış yedi yaşındayken araştırma kampüsü yandı. Oğluna annesini çağırmasını söyledi, üç hafta sonra fabrika kısmen çalışıyordu.",
+  "hook": "Son aksilikten sonra ilk neyi bırakmanız gerekti?",
+  "one_minute_summary": "Ryan Holiday'e göre Thomas Edison altmış yedi yaşında araştırma kampüsünün yandığını görünce oğluna annesini ve arkadaşlarını getirmesini söyledi, böyle bir yangını bir daha göremezlerdi. Yılların kayıtları gitti, sigorta zararın yaklaşık üçte birini karşılıyordu. Üç hafta sonra fabrika kısmen çalışıyor, bir ay içinde iki vardiya üretiyordu. Zarar yaklaşık bir milyon dolardı, yine de o yıl yaklaşık on milyon dolar gelir geldi. Holiday için başka bir tepki hiçbir şeyi değiştirmezdi."
+ },
+ "en": {
+  "title": "Edison's factory fire",
+  "description": "When his campus burned at sixty-seven, Edison told his son to fetch his mother. Three weeks later the factory was partly running.",
+  "hook": "After your last setback, what did you first have to put down?",
+  "one_minute_summary": "In Ryan Holiday's account, Thomas Edison at sixty-seven watched his research campus burn and told his son to fetch his mother and her friends, since they would never see such a fire again. Years of records were lost and insurance covered about a third of the damage. Three weeks later the factory was partly running, and within a month it worked two shifts. The loss was almost a million dollars, yet revenue that year was nearly ten million. Holiday asks what else weeping or quitting would have achieved."
+ },
+ "es": {
+  "title": "Incendio en la fábrica de Edison",
+  "description": "Cuando su campus ardió a los sesenta y siete años, Edison mandó llamar a su madre. A las tres semanas la fábrica funcionaba en parte.",
+  "hook": "Tras tu último contratiempo, ¿qué tuviste que soltar primero?",
+  "one_minute_summary": "Según Ryan Holiday, Thomas Edison, a los sesenta y siete años, vio arder su campus de investigación y dijo a su hijo que fuera a buscar a su madre y sus amigas, porque no verían otro incendio igual. Se perdieron años de registros y el seguro cubría un tercio de los daños. A las tres semanas la fábrica funcionaba en parte y al mes tenía dos turnos. La pérdida fue de casi un millón, pero ese año ingresó casi diez millones. Holiday pregunta qué habría logrado llorar o rendirse."
+ },
+ "de": {
+  "title": "Edisons Fabrikbrand",
+  "description": "Als sein Gelände mit siebenundsechzig abbrannte, ließ Edison seine Frau holen. Nach drei Wochen lief die Fabrik teilweise wieder.",
+  "hook": "Was musstest du nach deinem letzten Rückschlag zuerst loslassen?",
+  "one_minute_summary": "Laut Ryan Holiday sah Thomas Edison mit siebenundsechzig sein Forschungsgelände brennen und sagte seinem Sohn, er solle die Mutter und ihre Freundinnen holen, so ein Feuer sähen sie nie wieder. Jahre an Aufzeichnungen gingen verloren, versichert war etwa ein Drittel des Schadens. Nach drei Wochen lief die Fabrik teilweise wieder, nach einem Monat in zwei Schichten. Der Verlust betrug fast eine Million, die Einnahmen im selben Jahr fast zehn Millionen. Holiday fragt, was Weinen oder Aufgeben gebracht hätte."
+ }
+}

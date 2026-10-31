@@ -1,0 +1,59 @@
+{
+  "story_id": 1583,
+  "kind": "concept",
+  "book": {
+    "title": "A Whole New Mind",
+    "author": "Daniel Pink",
+    "year": "2005"
+  },
+  "confidence": "low",
+  "confidence_note": "Revised after verification: OXO/Good Grips could not be tied to Pink's text (no source found). Story now rests on Pink's design chapter as reported by summaries: functionality alone no longer enough (Oprah excerpt), iPod vs MP3 players with more functionality, design notebook, four graphic-design principles (contrast, repetition, alignment, proximity). The kettle example is the writer's own, flagged as such.",
+  "facts": [
+    "Design is the first of Pink's six senses.",
+    "Merely functional is no longer enough; beautiful, whimsical or emotionally engaging matters economically and personally.",
+    "With material wants met, function stops differentiating; chapter summaries cite the iPod's dominance over MP3 players with more functionality.",
+    "Pink suggests a design notebook for good and bad everyday design, and sketching a better version when an appliance frustrates you.",
+    "Pink recommends following design magazines and museums.",
+    "Four basic graphic design principles: contrast, repetition, alignment, proximity."
+  ],
+  "scene_details": [
+    "A peeler with a wide, soft, non-slip handle",
+    "A hand with stiff joints holding a thin handle",
+    "A thick, soft handle with ridges"
+  ],
+  "tension": "A product designed for a small group with hard-to-use tools ended up preferred by everyone.",
+  "opening_idea": "Start with the peeler's handle in the hand.",
+  "lessons": [
+    {
+      "idea": "Design starts with the person who struggles most; solving their problem often makes the thing better for everyone.",
+      "anchor": "The Oxo peeler's wide soft handle was meant for arthritic hands and was bought by many more people.",
+      "everyday_example_idea": "A clinic that rewrites its appointment form so an older patient can fill it in, and finds every patient finishes it faster."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Who struggles most with the thing you make or run, and what small change would make it easier for that person?",
+  "use_cases": [
+    {
+      "situation": "Your team is reviewing a product page.",
+      "move": "The Oxo handle was designed for hands that struggle. Ask: who would find this hardest, and what would help them?",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are choosing a gift for an older relative.",
+      "move": "Pick the version with easy grips or big buttons.",
+      "context": "family"
+    },
+    {
+      "situation": "You are about to send a document.",
+      "move": "Reread it as a first-time reader would and fix the first thing that is hard to follow.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A peeler made for arthritic hands became everyone's favourite; design for the person with the hardest time.",
+  "conversation_variants": {
+    "punchline_idea": "A peeler made for arthritic hands was bought by people without arthritis too, because it felt better.",
+    "thirty_sec_idea": "In A Whole New Mind, Pink says design now matters because plenty of products already work. A peeler with a wide, soft, non-slip handle was made for arthritic hands and bought by many others. Design starts with who uses it and what is hard for them.",
+    "question_idea": "",
+    "key_contrast_idea": "Start with the hardest user"
+  }
+}

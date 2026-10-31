@@ -1,0 +1,38 @@
+{
+  "story_id": 1295,
+  "kind": "concept",
+  "book": { "title": "The 4-Hour Workweek", "author": "Tim Ferriss", "year": "2007" },
+  "confidence": "medium",
+  "confidence_note": "Written from memory of the book's fear-setting exercise and secondary summaries; book text not opened. The three questions (define the nightmare; what could you do to repair or recover; the cost of doing nothing) and the 1, 5, 10 year frame are remembered, medium confidence on the exact timeframes. Old TR text errors: it says Ferriss runs the exercise 'before every decision' and gives a '5 years' wording as 'the strongest question'; the book's own frame is the cost of inaction over several horizons, and the name 'fear-setting' is Ferriss's. The paraphrase 'most people choose unhappiness over uncertainty' and 'what we fear doing most is usually what we most need to do' are the book's, medium confidence; used as paraphrase, not as quotes. No personal anecdote of Ferriss included (not verified). Concept story: no invented protagonist.",
+  "facts": [
+    "Ferriss calls the exercise 'fear-setting': write down the thing you are afraid to do and then work it through on paper.",
+    "Step one: define the nightmare, the worst that could realistically happen if you did it.",
+    "Step two: write what you could do to repair the damage or get back on your feet, even temporarily.",
+    "Step three: write the cost of not acting, in emotional, physical and financial terms, over a year, five years and ten years.",
+    "Ferriss's observation: what we fear doing most is usually what we most need to do; and people tend to choose unhappiness over uncertainty."
+  ],
+  "scene_details": [
+    "A page with the nightmare written out in full",
+    "A list of ways to recover set beside it",
+    "The same page extended to the cost of doing nothing at one, five and ten years"
+  ],
+  "tension": "Fear of acting is loud and specific; the cost of not acting is quiet and never written down.",
+  "opening_idea": "Open on the page itself: the worst case in full on one side, the cost of doing nothing on the other.",
+  "lessons": [
+    { "idea": "Put the cost of staying put on the same page as the cost of trying, so the comparison is fair.", "anchor": "Step three of fear-setting asks what inaction costs at one, five and ten years.", "everyday_example_idea": "Someone who delays a hard conversation with a landlord lists what the delay costs each month." }
+  ],
+  "reflect": [],
+  "reflect_final": "What decision are you putting off, and what has it already cost you in time, money or peace of mind?",
+  "use_cases": [
+    { "situation": "You are afraid to ask for a raise.", "move": "Write the worst response, how you would recover, and what staying silent costs in a year.", "context": "oneonone" },
+    { "situation": "A friend is stuck on a decision.", "move": "Ask them to write what happens if nothing changes in five years.", "context": "social" },
+    { "situation": "You are hesitating on a career move.", "move": "Take twenty minutes tonight to write the three steps on one page.", "context": "self" }
+  ],
+  "pocket_idea": "Write the cost of doing nothing next to your worst case, because fear only ever draws one side.",
+  "conversation_variants": {
+    "punchline_idea": "Ferriss's fear exercise adds a column most people forget: what staying put costs.",
+    "thirty_sec_idea": "Ferriss's fear-setting is three questions on paper. What is the worst that could happen if I do it? What could I do to recover? And what does doing nothing cost me over one, five and ten years? Most people only ever work through the first.",
+    "question_idea": "",
+    "key_contrast_idea": "Cost of doing nothing"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "story_id": 1706,
+  "kind": "concept",
+  "book": {
+    "title": "Against Empathy",
+    "author": "Paul Bloom",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The spotlight image, the Newtown school shooting of 2012 and the 1987 girl-in-a-well case are all attributed to Bloom's argument by secondary summaries; chapter placement was not confirmed. Omitted: study names, donation figures, any statistic, direct quotes. Bloom's subtitle is The Case for Rational Compassion. The brief keeps to the idea and the two examples he is known to use.",
+  "facts": [
+    "Paul Bloom, a psychologist, argues in Against Empathy that empathy, in the sense of feeling what another person feels, is a poor guide to moral decisions.",
+    "He compares empathy to a spotlight: it lights up one person at a time, usually someone close, visible or similar to us, and leaves everyone outside the beam in the dark.",
+    "He points to the 2012 school shooting in Newtown, where the grief for the children was enormous, and notes that equally real suffering elsewhere gets far less attention.",
+    "He also points to the 1987 case of a girl trapped in a well in Texas as an example of how one named, visible person draws more concern than larger harms that have no face.",
+    "His claim is not that people should stop caring; the subtitle is the case for rational compassion.",
+    "In his view feeling should be joined with reasoning about evidence and about how many people a choice reaches.",
+    "Bloom distinguishes empathy (feeling what another feels) from compassion (caring about their wellbeing) and argues for relying less on the first and more on the second; he says empathy does not scale."
+  ],
+  "scene_details": [
+    "a spotlight that lights one person and leaves the rest dark",
+    "a girl in a well in Texas, 1987",
+    "an elementary school in Newtown, 2012"
+  ],
+  "tension": "The more our feelings are drawn to one face, the less we may see of the many who have none.",
+  "opening_idea": "Open on the girl in the well, a single named child, and the attention she drew compared with harms nobody pictured.",
+  "lessons": [
+    {
+      "idea": "A moving story shows you one person; before you act on it, ask who is outside the beam and what the evidence says about where help does most.",
+      "anchor": "Bloom's spotlight"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When you last gave time or money because of one person's story, what would you want to check about everyone who was not in that story?",
+  "use_cases": [
+    {
+      "situation": "You are deciding which charity to support after seeing a moving appeal.",
+      "move": "Mention Bloom's spotlight, and look up what the group does for the number of people it reaches before you give.",
+      "context": "self"
+    },
+    {
+      "situation": "A team lead wants to fund the project whose story is most vivid.",
+      "move": "Ask how many people each project reaches and what the evidence is, alongside the story.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is moved by one news report and wants to act.",
+      "move": "Say you share the feeling and ask what else could be done for others in the same situation.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Bloom's spotlight lights one face and hides the crowd; add the count and the evidence before you act on a moving story.",
+  "conversation_variants": {
+    "punchline_idea": "One trapped girl in a Texas well drew more concern than harms nobody had a face for, and Bloom says that bias is empathy's blind spot.",
+    "thirty_sec_idea": "Paul Bloom compares empathy to a spotlight that lights one visible person and leaves everyone else dark. A girl in a Texas well in 1987 drew enormous concern, larger harms with no face draw little. He does not say stop caring, he says add reasoning.",
+    "question_idea": "",
+    "key_contrast_idea": "one face, many unseen"
+  }
+}

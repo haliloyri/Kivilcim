@@ -15,6 +15,12 @@ Rules:
   concept story, `facts` should describe the book's own example/case for
   that idea — never a fabricated one; if the book gives no case, say so in
   confidence_note and keep `facts` to what the concept actually claims.
+- For an allegory or metaphor (a partner, a river, an experiment told as a
+  scene), record in `facts` only the mechanics the book states. Never add
+  ratios or shares, personality adjectives, motives, imagined questions or
+  dialogue. Reception claims (who endorsed it, how widely it spread) go into
+  `facts` only if you can attribute them confidently; otherwise leave them out
+  and say so in `confidence_note`.
 - `use_cases` must have exactly 3 entries, each tagged with a `context` from
   this fixed set: meeting, oneonone, family, social, self. Use at least 2
   distinct contexts. Each `move` is the concrete action/line a reader could
@@ -41,6 +47,25 @@ Rules:
   `lessons`; extra entries are optional backup only. `reflect` may be empty; the
   closing question lives in `reflect_final`. Do not copy a lesson's wording
   into `reflect_final`, `use_cases` or `pocket_idea`.
+
+## Scene material (what makes the story writable)
+
+A writer can only be concrete with what you hand over. Every brief gets
+`scene_details`: 2–4 short, physical, book-grounded details the writer can put
+in front of the reader — an object, a place, a repeated action, a figure said
+out loud, a phrase the author actually uses. No adjectives, no interpretation,
+no invented props.
+
+- Take them from the book's own account. If the book states the idea only
+  abstractly, leave `scene_details` empty and say why in `confidence_note`.
+  An empty list is honest; a fabricated prop is not.
+- They are not extra facts: each must already be supported by `facts` or by the
+  book's own wording.
+- The difference: for an allegory about a partner who names a price every day,
+  "he is moody" is a summary, while "each morning he names one figure and
+  offers to buy your share or to sell you his" is scene material.
+- Do not use `scene_details` to smuggle in ratios, personality labels, motives,
+  imagined questions or dialogue; the same prohibitions apply.
 
 ## Select material that can carry a story
 
@@ -110,6 +135,7 @@ other text before or after it):
   "confidence": "high" | "medium" | "low",
   "confidence_note": "...",
   "facts": ["...", "..."],
+  "scene_details": ["...", "..."],
   "tension": "...",
   "opening_idea": "...",
   "lessons": [ { "idea": "...", "anchor": "..." }, ... ],

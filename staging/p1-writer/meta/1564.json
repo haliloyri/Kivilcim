@@ -1,0 +1,35 @@
+{
+  "story_id": 1564,
+  "verdict": "keep",
+  "verify_note": "Content checked against summaries of The 15 Commitments of Conscious Leadership (above/below the line, responsibility, feeling feelings), not the full text. Title: dash subtitle removed or, where the old title promised something the story does not say, replaced.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Çizginin Altında ya da Üstünde",
+    "description": "Dethmer, Chapman ve Klemp, liderin her an çizginin altında ya da üstünde durduğunu söylüyor. Altı haklı çıkmaya, üstü öğrenmeye bağlı bir hâl.",
+    "hook": "Son tartışmanızda haklı çıkmaya mı, öğrenmeye mi bağlıydınız?",
+    "one_minute_summary": "The 15 Commitments of Conscious Leadership'in yazarları, liderin her an çizginin altında ya da üstünde durduğunu söylüyor. Altında kişi kapalı, savunmacı ve haklı çıkmaya bağlı, üstünde açık, meraklı ve öğrenmeye bağlı. Aynı itiraz altta saldırı gibi, üstte bilgi gibi duyuluyor. Çizgi bir kişilik tipi değil, o anın hâli: kimse hep üstte kalmıyor ve altına düşmek utanılacak bir şey değil. İlk adım nerede durduğunuzu fark edip söylemek, sonra neyi kaçırdığınızı sormak."
+  },
+  "en": {
+    "title": "Below or Above the Line",
+    "description": "The authors of The 15 Commitments of Conscious Leadership say a leader is always above or below a line. Below it you are committed to being right, above it to learning.",
+    "hook": "In your last heated conversation, were you committed to being right or to learning?",
+    "one_minute_summary": "The authors of The 15 Commitments of Conscious Leadership say a leader is always above or below a line. Below it a person is closed, defensive and committed to being right. Above it the same person is open, curious and committed to learning, so the same objection sounds like information. The line describes a moment, not a type. Nobody stays above it, and dropping below is no failing. The first step is to notice where you are, say so, and ask what you might be missing."
+  },
+  "es": {
+    "title": "Por debajo o por encima de la línea",
+    "description": "Dethmer, Chapman y Klemp dicen que un líder siempre está por encima o por debajo de una línea. Abajo se compromete con tener razón y arriba, con aprender.",
+    "hook": "En tu última discusión, ¿te movía tener razón o aprender?",
+    "one_minute_summary": "Los autores de The 15 Commitments of Conscious Leadership sostienen que un líder está siempre por encima o por debajo de una línea. Debajo, la persona está cerrada, a la defensiva y comprometida con tener razón. Encima, abierta, curiosa y comprometida con aprender, y la misma objeción le suena a información. La línea describe un momento, no un tipo de persona. Nadie permanece arriba y caer no es motivo de vergüenza. El primer paso es notar dónde estás, decirlo y preguntar qué te estás perdiendo."
+  },
+  "de": {
+    "title": "Unter oder über der Linie",
+    "description": "Dethmer, Chapman und Klemp sagen, eine Führungskraft stehe immer über oder unter einer Linie. Unten will man recht behalten, oben lernen.",
+    "hook": "Ging es dir im letzten hitzigen Gespräch ums Rechthaben oder ums Lernen?",
+    "one_minute_summary": "Die Autoren von The 15 Commitments of Conscious Leadership sagen, eine Führungskraft befinde sich immer über oder unter einer Linie. Darunter ist ein Mensch verschlossen, defensiv und aufs Rechthaben festgelegt. Darüber ist er offen, neugierig und aufs Lernen festgelegt, und derselbe Einwand klingt nach Information. Die Linie beschreibt einen Augenblick, keinen Typ. Niemand bleibt dauerhaft oben, und Abrutschen ist kein Makel. Erster Schritt: bemerken, wo du stehst, es aussprechen und fragen, was du übersiehst."
+  }
+}

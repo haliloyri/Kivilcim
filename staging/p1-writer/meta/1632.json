@@ -1,0 +1,35 @@
+{
+ "story_id": 1632,
+ "verdict": "keep",
+ "verify_note": "Chapter 'The Seven A's of Healing' confirmed by publisher (Penguin: principles in healing and prevention of illness from hidden stress); the seven words (acceptance, awareness, anger, autonomy, attachment, assertion, affirmation) confirmed by a book review blog only (single source for the list). Story elaborates only lightly and carries caveats.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İyileşmenin Yedi A'sı",
+  "description": "Maté'nin kitabı, A harfiyle başlayan yedi kelimelik bir son bölümle bitiyor. Liste bir tedavi değil, kendi gününüze bakmak için bir başlangıç noktası.",
+  "hook": "Yedi kelimeden hangisi sıradan bir haftanızı en çok değiştirirdi?",
+  "one_minute_summary": "When the Body Says No'nun son bölümü \"The Seven A's of Healing\" adını taşıyor. Yayıncı bunu, gizli stresten doğan hastalıkların iyileşmesi ve önlenmesi için ilkeler olarak sunuyor. Yedi kelime: kabul, farkındalık, öfke, özerklik, bağlanma, kendini ifade etme ve kendini onaylama. Öfke, özerklik ve kendini ifade etme, ihtiyacını ve sınırını söylemekle ilgili. Maté'nin hastalarında gördüğü örüntünün tam karşısında duruyorlar. Liste tedavinin yerini tutmuyor ve bir şey vaat etmiyor. Stresle hastalık bağının gücü tıpta hâlâ tartışılıyor."
+ },
+ "en": {
+  "title": "The Seven A's of Healing",
+  "description": "Maté's closing chapter offers seven words beginning with A as principles for healing. It is a list to reflect on, not a treatment.",
+  "hook": "Which of the seven would change an ordinary week of yours the most?",
+  "one_minute_summary": "The last chapter of When the Body Says No is called \"The Seven A's of Healing\". The publisher presents it as principles for healing and for preventing illness from hidden stress. The words are acceptance, awareness, anger, autonomy, attachment, assertion and affirmation. Anger, autonomy and assertion are about saying what you need and where your limits are, the opposite of the pattern Maté describes in his patients. The list does not replace medical treatment and promises nothing. How strongly stress ties to disease is still debated in medicine."
+ },
+ "es": {
+  "title": "Las siete A de la curación",
+  "description": "El último capítulo de When the Body Says No reúne siete palabras que empiezan por A, presentadas como principios para sanar. Es una lista para observar tus días, no un tratamiento.",
+  "hook": "¿Cuál de las siete cambiaría más una semana cualquiera de tu vida?",
+  "one_minute_summary": "El último capítulo de When the Body Says No se titula \"The Seven A's of Healing\". La editorial lo presenta como principios para sanar y prevenir enfermedades que nacen del estrés oculto. Las palabras son acceptance, awareness, anger, autonomy, attachment, assertion y affirmation: aceptación, conciencia, rabia, autonomía, apego, asertividad y afirmación. La rabia, la autonomía y la asertividad giran en torno a decir lo que necesitas y dónde pones tus límites, lo contrario del patrón que Maté ve en sus pacientes. La lista no sustituye ningún tratamiento ni promete nada, y la relación entre estrés y enfermedad sigue debatida."
+ },
+ "de": {
+  "title": "Die sieben A der Heilung",
+  "description": "Das letzte Kapitel von When the Body Says No nennt sieben Wörter mit A als Grundsätze für Heilung. Eine Liste zum Hinsehen, keine Therapie.",
+  "hook": "Welches der sieben Wörter würde eine ganz normale Woche von dir am meisten verändern?",
+  "one_minute_summary": "Das letzte Kapitel von When the Body Says No heißt \"The Seven A's of Healing\". Der Verlag beschreibt es als Grundsätze für Heilung und Vorbeugung bei Krankheiten aus verborgenem Stress. Die Wörter: Annahme, Bewusstheit, Wut, Autonomie, Bindung, Durchsetzungsfähigkeit und Bestätigung. Wut, Autonomie und Durchsetzungsfähigkeit betreffen, zu sagen, was du brauchst und wo deine Grenze liegt, das Gegenstück zu Matés Patientenmuster. Die Liste ersetzt keine Therapie und verspricht nichts. Wie eng Stress und Krankheit zusammenhängen, ist umstritten."
+ }
+}

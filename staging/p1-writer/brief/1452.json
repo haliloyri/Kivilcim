@@ -1,0 +1,58 @@
+{
+  "story_id": 1452,
+  "kind": "concept",
+  "book": {
+    "title": "The Power of Your Subconscious Mind",
+    "author": "Joseph Murphy",
+    "year": "1963"
+  },
+  "confidence": "medium",
+  "confidence_note": "The law of belief and the repeated phrase 'Be it done unto you as you believe' are central to the book (Murphy quotes Matthew). Excluded: the loop 'I cannot, so I do not try, so I fail, so I was right' written as Murphy's own text, the mention of placebo and nocebo (modern, not in a 1963 book), and the 'physiological changes' claim. Murphy's claims are belief-based, not evidence-based; the writer must keep that visible and avoid promising results. The wood-cross case appears in a secondary summary; keep it as Murphy's own claim and do not endorse it as medicine. Writer must say clearly that the book offers it as a story, not proof.",
+  "facts": [
+    "Murphy returns again and again to what he calls the law of belief: what a person believes, with conviction, tends to show up in their life.",
+    "He quotes a line from Matthew, 'Be it done unto you as you believe', as the root of this idea.",
+    "He says belief is just a thought held in the mind and accepted as true.",
+    "So a person who believes they will fail is, in his view, planting that outcome, and the reverse holds too.",
+    "He says changing the belief is the starting point; he gives practical exercises with prayer and repeated affirmation to do it.",
+    "The book makes no scientific tests of the claim; it rests on his reading and on the stories he tells of his clients.",
+    "Murphy tells of a relative of his with tuberculosis whose son handed him a piece of wood and called it a healing cross; Murphy says he recovered overnight and nobody told him the truth. This is Murphy's account, with no medical evidence in the book."
+  ],
+  "scene_details": [
+    "the phrase 'Be it done unto you as you believe'",
+    "a person saying 'I can't' before starting"
+  ],
+  "tension": "'I can't do this' sounds like a report. Murphy says it works more like an instruction.",
+  "opening_idea": "Start with the sentence Murphy keeps quoting, 'Be it done unto you as you believe', and where he took it from.",
+  "lessons": [
+    {
+      "idea": "A belief is a thought you have accepted as true, so it quietly decides what you try and what you leave alone.",
+      "anchor": "Murphy's law of belief and its Biblical phrase."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which 'I can't' or 'that won't work' have you said recently, and what would you have tried first if you had not said it?",
+  "use_cases": [
+    {
+      "situation": "A colleague says 'that will never work' about a new idea.",
+      "move": "Murphy says belief shapes the attempt. Ask: what would we try first if we assumed it could work?",
+      "context": "meeting"
+    },
+    {
+      "situation": "You catch yourself saying 'I'm not a numbers person'.",
+      "move": "Rephrase it to 'I haven't learned this yet' and do one small piece today.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is down on their chances for a job.",
+      "move": "Ask what they are telling themselves about the interview and whether it is the version they want.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Murphy's phrase 'Be it done unto you as you believe': notice which 'I can't' you say and what it stops you trying.",
+  "conversation_variants": {
+    "punchline_idea": "Murphy's most repeated line is 'Be it done unto you as you believe', and he means it as an instruction, not a comfort.",
+    "thirty_sec_idea": "Joseph Murphy keeps coming back to one verse from Matthew: 'Be it done unto you as you believe.' He reads it as a law: a thought you hold with conviction, even 'I can't', becomes what you act on. Change the belief first, he says. The book offers faith and anecdotes, not experiments.",
+    "question_idea": "Which 'I can't' do you say most often?",
+    "key_contrast_idea": "Belief before action"
+  }
+}

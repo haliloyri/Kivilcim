@@ -1,0 +1,56 @@
+{
+  "story_id": 1306,
+  "kind": "concept",
+  "book": {
+    "title": "Antifragile",
+    "author": "Nassim Nicholas Taleb",
+    "year": "2012"
+  },
+  "confidence": "low",
+  "confidence_note": "Taleb's argument that suppressing small stresses makes bigger blows worse is the book's core theme and he applies it to overprotected children and to economies. The forest-fire illustration could not be located in the book text (only a Project Syndicate review summarising it as Taleb's logic). Omitted on purpose: the 1988 Yellowstone fire from the reference text, because it is not shown to be in the book and the 1988 fires followed a drought and a let-burn policy, so it is a contested example. No numbers, no quotes.",
+  "facts": [
+    "Forest crews followed a rule of putting out every fire, small or large, quickly and completely, because fire looked like harm.",
+    "In Taleb's account, small fires do a job: they burn dry grass and dead material and let the ground renew itself.",
+    "Without them, that fuel builds up year after year and a later fire is bigger.",
+    "Taleb applies the same pattern elsewhere: a child shielded from all difficulty becomes fragile; an economy never allowed to contract stores up a bigger collapse.",
+    "Antifragile means gaining from small shocks: stress followed by repair."
+  ],
+  "scene_details": [
+    "dry grass and dead material left to pile up",
+    "a fire put out the moment it starts"
+  ],
+  "tension": "The policy that stopped every small fire made the next big one more likely.",
+  "opening_idea": "A crew puts out every fire the moment it starts, and the dry fuel keeps piling up.",
+  "lessons": [
+    {
+      "idea": "Shielding a system from every small shock lets the stress build until it arrives all at once.",
+      "anchor": "dry fuel piling up in a forest where no small fire is allowed to burn"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your life or work do you shield someone from every small difficulty, and what might that be saving up for later?",
+  "use_cases": [
+    {
+      "situation": "A team leader fixes every small error before anyone sees it.",
+      "move": "Let this small mistake play out and talk it through, like a small fire that clears the dry grass.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You want to step in every time your child struggles.",
+      "move": "Let them try first today, and step in only if it is really unsafe.",
+      "context": "family"
+    },
+    {
+      "situation": "You have avoided one small hard conversation for months.",
+      "move": "Have it this week while it is still small.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Dry fuel piles up where no small fire is allowed to burn, so let small problems play out.",
+  "conversation_variants": {
+    "punchline_idea": "Put out every small forest fire and the dry fuel keeps piling up for the big one.",
+    "thirty_sec_idea": "Forest crews used to put out every fire fast. Taleb argues small fires clear dry grass and dead material, and without them fuel piles up, so later fires get bigger. He says the same holds for children shielded from all difficulty and for economies never allowed to shrink.",
+    "question_idea": "",
+    "key_contrast_idea": "Small fires, big fires"
+  }
+}

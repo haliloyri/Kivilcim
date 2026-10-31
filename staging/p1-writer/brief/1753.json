@@ -1,0 +1,58 @@
+{
+  "story_id": 1753,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Wager",
+    "author": "David Grann",
+    "year": "2023"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of The Wager; supported by review summaries read online (court martial found Cheap had done his duty; only Lieutenant Baynes was reprimanded; Admiralty chose not to pursue the mutiny). No page-level check. Reference TR text was partly wrong (court did not decide by best narrative) and not followed. Omitted on purpose: ship's dates beyond 1741, number of survivors, names beyond Cheap, Bulkeley, Byron, the killing of a seaman by Cheap in detail. Court-martial outcome checked against review summaries only (Cheap found to have done his duty, one officer reprimanded, mutiny not prosecuted). Other added details from memory of Grann, not page-checked.",
+  "facts": [
+    "HMS Wager was wrecked off the coast of Patagonia in 1741 during a British naval expedition.",
+    "The survivors split: one group under Captain David Cheap stayed; another, led by the gunner John Bulkeley, sailed a lengthened boat out and reached Brazil.",
+    "Bulkeley's men and the later returnees under Cheap and midshipman John Byron gave different accounts of what happened.",
+    "Each account blamed the other side's conduct, including mutiny and the killing of a sailor.",
+    "Back in England the Admiralty held a court martial about the loss of the ship; Cheap was found to have done his duty, one officer was reprimanded, and the mutiny was not prosecuted.",
+    "Grann's point is that the Admiralty preferred not to punish anyone, and different survivors told incompatible stories.",
+    "Wager was part of Anson's squadron; Bulkeley's group crossed the Strait of Magellan to Brazil; Cheap shot a seaman; Bulkeley's journal printed 1743; Byron's narrative 1768; four men of Cheap's party reached Chile."
+  ],
+  "scene_details": [
+    "a wrecked ship on a Patagonian coast",
+    "two groups returning with two accounts"
+  ],
+  "tension": "Survivors from the same wreck arrive home with accounts that blame each other.",
+  "opening_idea": "Open on the court martial: two groups of survivors from one shipwreck, and incompatible stories.",
+  "lessons": [
+    {
+      "idea": "When two sides describe the same event differently, ask what each side gains from its version.",
+      "anchor": "Bulkeley's and Byron's accounts of the wreck differed"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a recent disagreement: what would the other person's version say about what happened, and what would they gain from it?",
+  "use_cases": [
+    {
+      "situation": "Two team members report the same incident differently.",
+      "move": "Ask each for what they saw and what they did, separately, before judging.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Siblings remember a family event differently.",
+      "move": "Say you would like to hear their version first.",
+      "context": "family"
+    },
+    {
+      "situation": "You hear one side of a friend's falling out.",
+      "move": "Say you would like to hear more before taking a position.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Wager survivors told incompatible stories of one wreck: before judging, ask what each version gains the teller.",
+  "conversation_variants": {
+    "punchline_idea": "Survivors of the same wreck came home with two stories that blamed each other.",
+    "thirty_sec_idea": "In 1741 HMS Wager was wrecked off Patagonia. One group of survivors, led by gunner John Bulkeley, sailed to Brazil. Others, including Captain Cheap and John Byron, returned later by a different route. Back in England, each group's account blamed the other, and the Admiralty held a court martial that ended without punishing the mutiny. David Grann tells this in The Wager.",
+    "question_idea": "",
+    "key_contrast_idea": "two versions, one wreck"
+  }
+}

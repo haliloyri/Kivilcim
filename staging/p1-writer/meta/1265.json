@@ -1,0 +1,35 @@
+{
+ "story_id": 1265,
+ "verdict": "keep",
+ "verify_note": "Verified against book text (Preface, Final Thoughts). \"Wanted to be a philosopher\" claim is not in the book and was dropped; story rebuilt on the Avidius Cassius episode.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Marcus Aurelius ve Asi General",
+  "description": "Marcus Aurelius, en güvendiği generalin isyanını duyunca öfkelenmedi, bekledi. Cassius öldürülünce suç ortaklarını bağışladı.",
+  "hook": "Haksızlık ettiğini düşündüğünüz birine yanıtı bir gün ertelerseniz ne yapardınız?",
+  "one_minute_summary": "Ryan Holiday kitabın sonunda hasta imparator Marcus Aurelius'u anlatıyor: en güvendiği general Avidius Cassius Suriye'de isyan edip kendini Sezar ilan etti. Marcus haberi askerlerinden sakladı ve generalin vazgeçmesini bekledi. Vazgeçmeyince onu öldürmeden yakalamak için yürüdü. Üç ay sonra bir suikastçı Cassius'u öldürünce suç ortaklarını idam ettirmedi, senatörlerin kanıyla lekelenmemiş bir saltanat istedi. Holiday için Marcus önce algısını denetledi, sonra eyledi."
+ },
+ "en": {
+  "title": "Marcus Aurelius and the Rebel General",
+  "description": "Marcus Aurelius met his most trusted general's revolt by waiting. After the general was killed he spared the conspirators.",
+  "hook": "What would you do with a day before answering someone who wronged you?",
+  "one_minute_summary": "Ryan Holiday ends the book with a sick Marcus Aurelius learning that his most trusted general, Avidius Cassius, had declared himself Caesar in Syria. Marcus kept the news from his troops and waited. When Cassius did not back down, he marched to capture him alive. A lone assassin killed Cassius three months later, and Marcus refused to execute coconspirators or prosecute senators. For Holiday, Marcus controlled his perception first and acted afterward."
+ },
+ "es": {
+  "title": "Marco Aurelio y el general rebelde",
+  "description": "Marco Aurelio respondió a la rebelión de su general de confianza esperando. Tras su muerte perdonó a los cómplices.",
+  "hook": "¿Qué harías con un día antes de responder a quien te ofendió?",
+  "one_minute_summary": "Ryan Holiday cierra el libro con un Marco Aurelio enfermo que supo que su general de más confianza, Avidio Casio, se había proclamado César en Siria. Marco ocultó la noticia a sus tropas y esperó. Como Casio no se retiró, marchó para capturarlo vivo. Un asesino lo mató tres meses después y Marco se negó a ejecutar a los cómplices o a procesar a senadores. Para Holiday, controló primero su percepción y actuó después."
+ },
+ "de": {
+  "title": "Marcus Aurelius und der Rebell",
+  "description": "Marcus Aurelius begegnete dem Aufstand seines vertrautesten Generals mit Warten. Nach dessen Tod verschonte er die Mitverschwörer.",
+  "hook": "Was würdest du mit einem Tag tun, bevor du jemandem antwortest, der dir Unrecht tat?",
+  "one_minute_summary": "Ryan Holiday beschließt das Buch mit einem kranken Marcus Aurelius, der erfuhr, dass sein vertrautester General Avidius Cassius sich in Syrien zum Caesar ausgerufen hatte. Marcus hielt die Nachricht vor den Truppen geheim und wartete. Als Cassius nicht einlenkte, zog er aus, ihn lebend zu fangen. Ein Attentäter erschlug Cassius drei Monate später, und Marcus ließ keinen Mitverschwörer hinrichten. Für Holiday kontrollierte er erst seine Wahrnehmung und handelte dann."
+ }
+}

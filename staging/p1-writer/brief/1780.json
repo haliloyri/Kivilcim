@@ -1,0 +1,63 @@
+{
+ "story_id": 1780,
+ "kind": "anecdote",
+ "book": {
+  "title": "No Rules Rules",
+  "author": "Reed Hastings and Erin Meyer",
+  "year": ""
+ },
+ "confidence": "medium",
+ "confidence_note": "Sources: shortform.com/blog/unlimited-vacation-policy (an employee questioned the vacation policy and Hastings removed it in 2003; Netflix neither allots nor tracks vacation; leaders took long vacations openly; guardrails such as two weeks notice for a five-day vacation; employees did not take much more time off); search summaries (2001 dot-com bust layoff of about a third of staff, around 120 left per Patty McCord; Hastings expected morale and output to fall and found both rose; expense policy reads Act in Netflix's best interest, reportedly iterated from Spend company money as if it were your own after people became too frugal: blog summary, not book text); Pure Atria detail removed as unverified. Not verified: layoff headcounts precisely (sources range 30-40%), anything Meyer says in her own voice. Year empty. UPDATE: Pure Atria fact removed. Layoff headcount left vague because sources conflict (a third of 120 vs a third leaving 120). UPDATE: sajithpai.com and mickmel.substack.com book notes (keeper test, severance 4-9 months, top-of-market pay, earlier expense wording). Blog reviews, not book text.",
+ "facts": [
+  "After the dot-com crash dried up venture capital in 2001, Hastings laid off about a third of Netflix's staff, including some who were doing adequate work (sources disagree on the headcount).",
+  "Hastings expected morale and output to fall; instead those who stayed were more productive and the company worked better. He draws from it the idea of talent density.",
+  "In 2003 an employee questioned the vacation policy and Hastings removed it; Netflix has since neither allotted vacation days nor tracked days off.",
+  "Leaders were expected to take long vacations openly; example guardrails: no vacation within two weeks of a deadline, two weeks' notice for a five-day vacation.",
+  "Employees did not take much more time off than under the old policy.",
+  "The expense policy became five words: act in Netflix's best interest, reportedly reworked from spend company money as if it were your own after people grew too frugal (summary, not book text).",
+  "Hastings says freedom works only when talent density is high and feedback is candid.",
+  "The expense policy example: economy class unless an employee must present at an early-morning conference after a redeye, when business class is justified. Safeguards: managers regularly sample expenses, employees know they could be checked at any time, and managers tell staff when someone is fired for overspending (shortform.com/blog/no-rules-rules-book).",
+  "The keeper test: managers ask whether they would fight to keep an employee who said they were leaving for a similar job at a peer company; if not, Netflix lets the person go with a severance of about four to nine months (blog reviews). Netflix pays top of the market for each role and has no bonuses.",
+  "The expense policy replaced an earlier wording, spend company money as if it were your own, which led people to be too frugal (blog review).",
+  "The book treats staying silent when you have useful feedback as disloyal to the company."
+ ],
+ "scene_details": [
+  "a company of about 120 after a layoff",
+  "a vacation policy with no tracking",
+  "an expense policy of five words"
+ ],
+ "tension": "Netflix cut a third of its staff and got better results, then took rules away.",
+ "opening_idea": "Open on the five-word expense policy or the day after the 2001 layoff.",
+ "lessons": [
+  {
+   "idea": "A rule is often a patch for someone you do not trust; before adding one, check whether the person or the information is the actual gap.",
+   "anchor": "five words replacing an expense policy"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which rule in your team or home exists because of one person or one incident, and what would you check before keeping it?",
+ "use_cases": [
+  {
+   "situation": "Someone proposes a new approval step after one mistake.",
+   "move": "Ask what the one mistake was and whether a conversation would fix it.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You manage a person who wants more freedom.",
+   "move": "Offer one decision they own fully, and agree how you will give feedback on it.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "A household chore system keeps failing.",
+   "move": "Drop one rule for two weeks and see who notices.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "Five words replaced a whole expense policy; ask what a rule is covering for.",
+ "conversation_variants": {
+  "punchline_idea": "Netflix's expense policy is five words long.",
+  "thirty_sec_idea": "After the 2001 crash, Netflix laid off about a third of its people. Hastings expected the rest to slump and they did better. He later removed the vacation policy and replaced expense rules with five words: act in Netflix's best interest.",
+  "question_idea": "Which rule do you keep without knowing why?",
+  "key_contrast_idea": "Rules versus judgment"
+ }
+}

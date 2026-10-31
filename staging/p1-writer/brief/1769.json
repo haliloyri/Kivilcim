@@ -1,0 +1,61 @@
+{
+ "story_id": 1769,
+ "kind": "concept",
+ "book": {
+  "title": "Behave",
+  "author": "Robert M. Sapolsky",
+  "year": "2017"
+ },
+ "confidence": "medium",
+ "confidence_note": "Framework of the book's first chapter recalled, not page-checked. Layers stated in general order only. Omitted as unverified: the specific hormones and brain regions named in the chapter beyond amygdala and frontal cortex, any individual anecdote, Sapolsky's thought experiment about Hitler. The book gives no single case for this idea; the story follows the layers themselves and uses a violent act as the book's running example. Testosterone and frontal cortex points recalled from the book, not page-checked.",
+ "facts": [
+  "Sapolsky takes a single behavior, such as a violent act, and asks why it happened, then answers on a different time scale each time.",
+  "One second before: which brain regions, such as the amygdala and the frontal cortex, were active.",
+  "Seconds to minutes before: what the person saw, heard or smelled that set it off.",
+  "Hours to days before: hormones and recent stress.",
+  "Months to years before: experiences, and the brain changes of adolescence.",
+  "Earlier still: childhood, the fetal environment, genes and culture, and the long history of evolution.",
+  "He argues all the layers are true together; picking one as the cause is a choice that changes how we judge the person.",
+  "On hormones, Sapolsky explains that testosterone does not create aggression but amplifies tendencies already there.",
+  "The frontal cortex, the part that restrains impulses, is the last brain region to mature, around the mid-twenties."
+ ],
+ "scene_details": [
+  "a single act, a trigger pulled or a hand raised",
+  "one second before the act, the amygdala",
+  "hormones hours before, childhood years before"
+ ],
+ "tension": "One act has many true causes, yet we usually name only the one closest to the act.",
+ "opening_idea": "Open on the single act and the clock running backwards from it.",
+ "lessons": [
+  {
+   "idea": "Before judging someone's behavior, ask what came before at more than one time scale.",
+   "anchor": "the layers from one second to many years before"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Think of someone whose behavior irritated you recently: what earlier circumstances, from that morning to long before, might have fed into it?",
+ "use_cases": [
+  {
+   "situation": "A coworker snaps at you in a meeting.",
+   "move": "Ask them later what the morning was like before you decide what it meant.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "A teenager slams a door.",
+   "move": "Ask what happened an hour before the door, not what is wrong with them.",
+   "context": "family"
+  },
+  {
+   "situation": "You are angry at yourself for a slip.",
+   "move": "List what had happened that day, such as sleep and stress, before judging it.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "One act has causes from one second to years before it; ask what came earlier before you judge it.",
+ "conversation_variants": {
+  "punchline_idea": "Sapolsky answers one question, why did he do that, with causes from one second to many years before the act.",
+  "thirty_sec_idea": "Sapolsky asks why a person did one violent act and answers on several clocks: one second before, the brain; minutes before, what they saw; hours before, hormones; years before, childhood and culture. All are true at once, he says, and the one we pick shapes how we judge.",
+  "question_idea": "",
+  "key_contrast_idea": "one cause, many layers"
+ }
+}

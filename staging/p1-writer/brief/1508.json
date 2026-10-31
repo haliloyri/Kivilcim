@@ -1,0 +1,42 @@
+{
+  "story_id": 1508,
+  "kind": "concept",
+  "book": { "title": "Leading Change", "author": "John Kotter", "year": "1996" },
+  "confidence": "medium",
+  "confidence_note": "The book text is lending-only; facts come from Kotter's 1995 HBR article (full text read), error #2 and step 2, which the book expands. The old TR text's four 'characteristics' (position power, expertise, credibility, leadership capacity) are in the book's chapter on the guiding coalition but could not be checked in the book text; the article gives the same ground as 'titles, information and expertise, reputations and relationships', which is what the story uses. The claim 'the strongest coalitions contain the most believing rather than highest-ranking people' and the scene of a CEO announcing a change and waiting are not in the sources and are dropped. Sizes (3 to 5 in year one, 20 to 50 in big companies) and the retreat figures are Kotter's observations.",
+  "facts": [
+    "Major renewal programmes often start with just one or two people; in successful efforts the leadership coalition grows, and unless some minimum mass is reached early nothing worthwhile happens.",
+    "Kotter says that what he describes goes far beyond the head of the organisation being an active supporter: in successful transformations the chairman, president or division general manager plus another 5 or 15 or 50 people develop a shared commitment to renewal.",
+    "This group never includes all of the company's most senior executives, because some people will not buy in at first; but it is always pretty powerful in titles, information and expertise, reputations and relationships.",
+    "A guiding team may consist of only three to five people in year one; in big companies it must grow to the 20 to 50 range before much progress in later phases. Senior managers form the core, with sometimes board members, a representative of a key customer or a powerful union leader.",
+    "Because members come from outside senior management, the coalition operates outside the normal hierarchy; Kotter says this can be awkward but is necessary.",
+    "Someone needs to bring the people together to build a shared assessment and a minimum of trust; off-site retreats of two or three days are one popular way, and he saw groups of 5 to 35 executives attend a series over months.",
+    "A common failure: the company expects a staff executive from human resources, quality or strategic planning to lead the team instead of a key line manager; no matter how capable, groups without strong line leadership never achieve the power required.",
+    "Efforts without a strong enough coalition can show progress for a while, but sooner or later the opposition gathers itself and stops the change."
+  ],
+  "scene_details": [
+    "A two or three-day off-site retreat",
+    "A union leader or key customer representative at the table",
+    "A staff executive from HR, quality or planning leading instead of a line manager",
+    "A team of three to five in year one"
+  ],
+  "tension": "A capable, dedicated leader from the wrong part of the organisation can still not carry the change.",
+  "opening_idea": "Start with the off-site retreat of two or three days, and the odd mix of people around the table.",
+  "lessons": [
+    { "idea": "Before announcing a change, assemble a small group with the position, the know-how, the reputation and the relationships to carry it, and let them agree on what is wrong first.", "anchor": "Kotter's coalition has titles, information and expertise, reputations and relationships; staff-led groups lacking line leadership 'never achieve the power required'.", "everyday_example_idea": "A parent who wants to change the household's bedtime routine talks it through with the other adult and the oldest child first." }
+  ],
+  "reflect": [],
+  "reflect_final": "For a change you want to make, which two or three people would you need on your side before you announce it, and what could you ask each of them?",
+  "use_cases": [
+    { "situation": "You want to propose a new process at work.", "move": "Kotter's group has power, expertise, good reputations and relationships. Name who in each of those areas you need, and meet them before the announcement.", "context": "meeting" },
+    { "situation": "A manager is about to hand a change to a staff coordinator.", "move": "Ask whether a line manager will own it; Kotter saw staff-led groups fail to gain power.", "context": "oneonone" },
+    { "situation": "You want your family to move house.", "move": "Talk to the person with the biggest stake first, then bring the rest.", "context": "family" }
+  ],
+  "pocket_idea": "Kotter's coalitions had titles, expertise, reputation and relationships; before you announce a change, name who covers each.",
+  "conversation_variants": {
+    "punchline_idea": "Kotter saw capable staff executives fail at leading change because they weren't line managers.",
+    "thirty_sec_idea": "John Kotter says change rarely starts with a crowd: often it begins with one or two people. The successful ones build a coalition of 3 to 5 in year one, growing to 20 to 50 in big companies, with titles, expertise, reputation and relationships, sometimes a union leader or a customer. Led by a staff executive rather than a line manager, they stalled.",
+    "question_idea": "",
+    "key_contrast_idea": "Not one person"
+  }
+}

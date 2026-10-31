@@ -6,7 +6,7 @@ draw out what it teaches, then turn to the reader.
 
 Address the reader as "siz". Write natural Turkish prose a
 native speaker would write — never a translation-sounding register. Avoid
-these phrases (and anything with the same flavor): "günümüz dünyasında", "unutmayın ki", "sonuç olarak", "mekanik bir reçete".
+these phrases (and anything with the same flavor): "günümüz dünyasında", "unutmayın ki", "unutmamak gerekir", "sonuç olarak", "mekanik bir reçete", "tek bir karakter özelliğiyle", "tek bir kişilik özelliğiyle", "kahramanı taklit etmek".
 
 ## Reader experience and factual boundaries
 
@@ -71,10 +71,34 @@ the story's details and choices, not inflated claims or motivational slogans.
 - Keep the distinctive idea of this story. A library of different books should
   not become a collection of interchangeable advice about habits or hard work.
 
+## Voice: how a paragraph earns its place
+
+The reader is on a phone and gives you about forty seconds before deciding to
+stay. Earn that with verbs, bodies and objects, not with explanation. These are
+requirements, not preferences:
+
+- Every [[story]] paragraph carries ONE physical beat taken from the brief: a
+  hand, an object, a repeated action, a place, a figure said out loud. If a
+  paragraph has none, it is commentary — re-derive it from `facts` and
+  `scene_details`, or cut it.
+- Rhythm budget: each paragraph holds at least one long sentence
+  (18+ words) and at least one short one (8 words or
+  fewer), and never three sentences of similar length in a row. The story
+  should breathe, not march.
+- At most ONE paragraph in the entry may close on a one-line aphorism. Three
+  seven-word verdicts in a row turn a story into a quote card.
+- Prefer the brief's own nouns to commentary about them: "the same balance
+  sheet, the same earnings" does more than "the essence does not change" —
+  and neither is allowed unless the brief supports it.
+- Read the first three sentences aloud. If they could open any article on this
+  topic, rewrite them until they could only open this one.
+- Never explain the story to the reader from inside the story, and never state
+  the lesson before the lesson section.
+
 ## Reading time and where the words go
 
 The whole entry is a 3–5 minute read (about 200 words per minute): roughly
-520–760 words across all sections. Spend that budget on the STORY, which
+480–800 words across all sections. Spend that budget on the STORY, which
 must carry at least 55% of the words. The story is what the reader came for
 and what they will retell; everything after it is short.
 
@@ -86,7 +110,18 @@ and what they will retell; everything after it is short.
   retelling.
 - [[reflect]] holds ONLY the closing `&&question&&`. No bullets.
 - [[open]] is a hook, not a summary, and does not reveal the outcome that
-  [[story]] delivers.
+  [[story]] delivers. It is not a citation: save the book title, author and
+  year for [[story]].
+- Never pad to reach a word count. Each point appears once. Before adding a
+  paragraph, check that it carries a NEW supported fact or mechanism from the
+  brief; a paragraph that says "you may ignore it" / "the decision is yours" /
+  "the price is only an offer" for a second or third time must be cut, not
+  lengthened.
+- If you finish UNDER the range, you have skipped a supported beat or written
+  an abstraction where the brief gave an act. Go back to `facts` and
+  `scene_details` and render one more concrete beat. Do not add commentary to
+  reach the count. Only when the brief itself has nothing left may the entry
+  finish at most 10% under the floor — and never explain that inside the text.
 
 ## Lesson and question rules (decided 2026-10-28, reading-page redesign)
 
@@ -108,14 +143,20 @@ cards belong to the "Use in conversation" screen. Therefore:
    contain numbers or named people, and must not contradict the brief.
 4. The question is personal and answerable in one line of writing ("What would
    you change in your next piece of work if ...?"). No yes/no question, no
-   advice disguised as a question, no repeat of the lesson's example.
+   advice disguised as a question, no repeat of the lesson's example. It is
+   ONE sentence of 15–30 words with one question mark: no second clause that
+   asks something else ("...and looking back, what was ...?").
 5. Keep the lesson free of machine tells (see "Keep the prose human"). In
    addition avoid: ornamental metaphors ("opens a door", "a lens", "a
    compass"), the "X does not mean Y, it means Z" pattern, and a closing
    moral sentence that only restates the title.
-6. Story length: aim for the lower half of the range. A faithful short story
-   beats padding. Target roughly 300–400 words in English; keep the story at
-   least 50% of the entry.
+   The bold title is a plain principle or action phrase in the reader's terms
+   ("Read a price as an offer"), not an aphorism of the form "X is not a Y".
+   The example has one clear actor and a situation a reader recognises at once;
+   no unexplained third party (for example a neighbour who for no reason prices
+   your shop) and no puzzle the reader must solve to see the point.
+6. Story length: aim for the lower half of 270–415. A faithful short story
+   beats padding, but the story must still carry at least 55% of the entry.
 
 ## Languages: write ALL of them
 
@@ -124,8 +165,9 @@ The app shows the user's language, not English. A story that exists only in
 because the old plain-story rows stay in those languages. Every story must be
 delivered in tr, en, es and de in the same P1 format before it counts as
 done. Write each language natively (not word-for-word); the lesson example may
-be localized. Book titles outside English follow "English Title (Local
-Title)" at first mention.
+be localized. A book whose original title is NOT English appears as "English
+Title (Local Title)" at first mention. If the brief's title is already in
+English, use it exactly as given and add no translated title in parentheses.
 
 ## Honesty and caveats
 
@@ -145,7 +187,10 @@ These are the tells of machine-written text. Avoid them.
   entry, and only when the book itself draws that contrast.
 - Announcer transitions: "Here is the catch", "Then something striking
   happened", "The answer came faster than anyone expected", "What happened
-  next surprised everyone". Just say what happened.
+  next surprised everyone". Just say what happened. The same goes for
+  bookkeeping transitions that announce the next point instead of making it:
+  "The author also stresses one more thing", "Graham underlines another
+  point", "Another important idea is". State the point itself.
 - Aphorism endings: do not end every section or paragraph on a polished
   one-line moral. One earned line in the whole entry is plenty.
 - Triplets: do not default to lists of exactly three items or three parallel
@@ -154,6 +199,21 @@ These are the tells of machine-written text. Avoid them.
   shape and one-line fragments. Write it as flowing, complete sentences.
 - Stock vocabulary: avoid "delve, tapestry, testament, pivotal, intricate, underscore, showcase, vibrant, crucial, enduring, landscape (abstract), stands/serves as, nestled, groundbreaking" and their equivalents in the target language, plus filler such as "in order to", "it is important to note", "at its core", "the real question is", "let's dive in", and generic upbeat endings ("the future looks bright"). Say the plain thing instead.
 - Em dashes: at most 2 in the whole entry. Prefer a period or a comma.
+- Pseudo-profound lines: no sentence where an abstraction performs an action
+  ("the metaphor puts a pause between two reflexes", "the image opens a
+  space"). No ornamental metaphor of your own (compass, lens, door, mirror,
+  "offer book"). No stock phrases such as "missing the train", "under normal
+  conditions nobody would", "that is exactly what people do". No sweeping claims
+  about what people or markets always do, and no "generations learned this from
+  this book" unless the brief states it as a supported fact.
+- Rhythm: vary sentence length. Mix short sentences with 15–25 word ones; never
+  run four or more short sentences of equal length in a row ("Same work. Same
+  profit. Only the offer changes."). Do not repeat a character's or concept's
+  name every sentence: use a pronoun or the role after the first mention in a
+  paragraph. In Turkish use at most two semicolons in the whole entry.
+- Texture: prefer the brief's own concrete nouns and mechanisms (the balance
+  sheet, the closed door, the warning sound) to commentary about them. Give one
+  such concrete detail in every paragraph of [[story]].
 - Use cards: the line to say must sound like a real person talking, at most
   35 words. Avoid tidy scaffolding such as "What if we…?" or "Let's take a
   moment to…" in more than one card.
@@ -168,6 +228,19 @@ These are the tells of machine-written text. Avoid them.
   leave the detail out.
 - Do not add context, causes, or comparisons ("same hospital, same staff") the
   brief does not support. A study's scope stays exactly as the brief gives it.
+- Allegories and concepts are not licences to embroider. Do not add ratios or
+  shares ("fifty percent"), personality labels ("a very helpful partner"),
+  motives or inner reasoning ("he is sure the firm will sink", "he almost
+  begs"), questions the author "stops to ask", or dialogue the brief does not
+  contain. Use the allegory exactly as far as the brief states it.
+- Reception claims ("the most translated book", "generations of investors
+  learned this", a famous person endorsed it) appear only when the brief lists
+  them as supported facts, and then in one hedged clause.
+- Your own illustrations (a made-up person or object used to show the idea) are
+  allowed only in the lesson and use cards, short, and never in [[story]].
+  If you would have to mark something as "not from the book", it does not belong
+  in the story. Never talk about the writing inside [[story]] ("let's look at an
+  example", "this example is not from the book"): it breaks the scene.
 
 ## Format (exact markup)
 
@@ -204,10 +277,11 @@ Inline: `**bold**` (sparingly) and `*italic*` (book titles, an inner voice).
 - [[open]]: 32–64 words — hook the reader, do not summarize the story.
 - [[story]]: 270–415 words — tell it fully and faithfully; a short
   anecdote told faithfully beats padding.
-- [[lessons]]: ONE card, about 55–90 words in English (scale for other
-  languages; Turkish runs shorter than English), tied to a concrete
-  beat of the story (not generic advice).
-- [[reflect]]: only the closing `&&question&&` (one sentence, 15–30 words).
+- [[lessons]]: ONE card, 70–100 words — bold title, then 3–4 full
+  sentences (principle, one everyday example, what it lets the reader do),
+  tied to a concrete beat of the story (not generic advice).
+- [[reflect]]: only the closing `&&question&&` — 15–30 words, one
+  question mark, no second question hidden after a comma.
 - [[use]]: 56–120 words across exactly 3 `%%...%%` cards.
 - [[pocket]]: ≤ 20 words, one `@@...@@` line.
 
@@ -251,13 +325,18 @@ calls to action. Preserve exactly these four JSON keys; do not add separate
 social-media fields or duplicate the same takeaway in different lengths.
 
 Before returning the two blocks, silently check: factual support and number
-scope; an immediate, lively opening; a clear outcome or insight; no repeated
-recap; one feasible application and a natural story connection in at least one
-use card; a pocket line that could not be swapped into unrelated stories;
-spoken rhythm in the short retelling; variants with different jobs; exact
-markup and section lengths. Mentally say the use lines and retelling aloud:
-replace formal reporting or coaching language with words someone would use.
-Fix weak passages rather than appending an explanation or quality report.
+scope; an immediate, lively opening with no book title, author or year in it; a
+physical beat in every story paragraph; the rhythm budget (one long and one
+short sentence per paragraph, no three similar lengths in a row); at most one
+aphorism ending; no talk about the writing inside the story; the lesson as 3–4
+full sentences; a single question mark in the reflection; a clear outcome or
+insight; no repeated recap; one feasible application and a natural story
+connection in at least one use card; a pocket line that could not be swapped
+into unrelated stories; spoken rhythm in the short retelling; variants with
+different jobs; exact markup and section lengths. Mentally say the use lines
+and retelling aloud: replace formal reporting or coaching language with words
+someone would use. Fix weak passages rather than appending an explanation or
+quality report.
 
 ## Output format
 

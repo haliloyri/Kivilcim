@@ -1,0 +1,26 @@
+{
+  "tr": {
+    "title": "İlk Nota Çalmadan Önce Sorulan Soru",
+    "description": "Henüz hiç nota çalmamış çocuklara tek bir soru soruldu. Verdikleri cevap, kimin ilerleyeceğiyle ilişkili çıktı.",
+    "hook": "Yıllarca sürdürdüğünüz şeyin arkasında hangi gelecek resmi vardı?",
+    "one_minute_summary": "Avustralyalı araştırmacı Gary McPherson, bir enstrüman öğrenmeye başlayan 157 çocuğu izledi ve çalışmalarını videoya aldı. Çocuklar daha enstrümanı seçmeden her birine ne kadar süre çalmayı düşündüklerini sordu. Daniel Coyle'a göre bu cevap, ilerleyenleri ilerlemeyenlerden en çok ayıran etkendi. Soru beceriyi ölçemezdi, çünkü kimse henüz çalmamıştı. Coyle buna tutuşma der."
+  },
+  "en": {
+    "title": "The Question Asked Before the First Note",
+    "description": "Children who had not yet played a note were asked one question. Their answer was linked to who would improve.",
+    "hook": "What picture of your future self kept you at something for years?",
+    "one_minute_summary": "Researcher Gary McPherson followed 157 children learning an instrument and videotaped their practice. Before each child chose an instrument, he asked how long they expected to keep playing. Daniel Coyle presents that answer as the factor that most separated the children who progressed. Since it came before a single note, it could not measure skill. Coyle calls the mechanism ignition."
+  },
+  "es": {
+    "title": "La pregunta antes de la primera nota",
+    "description": "A niños que aún no habían tocado una nota se les hizo una sola pregunta. Su respuesta estuvo ligada a quién avanzaría.",
+    "hook": "¿Qué imagen de tu futuro te mantuvo años en algo?",
+    "one_minute_summary": "El investigador Gary McPherson siguió a 157 niños que aprendían un instrumento y grabó en vídeo sus prácticas. Antes de que cada niño eligiera instrumento, le preguntó cuánto tiempo esperaba seguir tocando. Daniel Coyle presenta esa respuesta como el factor que más separó a quienes avanzaron. Como llegó antes de tocar una sola nota, no podía medir habilidad. Coyle lo llama ignición."
+  },
+  "de": {
+    "title": "Die Frage vor dem ersten Ton",
+    "description": "Kindern, die noch keinen Ton gespielt hatten, wurde eine einzige Frage gestellt. Ihre Antwort hing damit zusammen, wer vorankommen würde.",
+    "hook": "Welches Bild von deinem künftigen Ich hielt dich jahrelang bei einer Sache?",
+    "one_minute_summary": "Der Forscher Gary McPherson begleitete 157 Kinder, die ein Instrument lernten, und filmte ihr Üben. Bevor ein Kind sein Instrument wählte, fragte er, wie lange es zu spielen gedenke. Daniel Coyle stellt diese Antwort als den Faktor dar, der die Fortschrittlichen am stärksten von den anderen trennte. Weil sie vor dem ersten Ton kam, konnte sie kein Können messen. Coyle nennt den Mechanismus Zündung."
+  }
+}

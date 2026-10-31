@@ -1,0 +1,35 @@
+{
+  "story_id": 1635,
+  "verdict": "keep",
+  "verify_note": "Verified against the full text on archive.org (Scattered Minds: Introduction with John's sketch quoted exactly as written; chapter 15 on shame; myths chapter on 'lazy'). Old text attributed school reports and parental messages to Maté's own childhood and quoted 'treatment is identity repair'; none of that is in the book, so it was dropped. Case rebuilt on John (51, unemployed, single), a patient. Shame claims attributed to Maté as his interpretation.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "John'un Karnesi ve Babasının Sözleri",
+    "description": "Elli bir yaşındaki John, kendini hâlâ karnelerinin ve babasının kelimeleriyle anlatıyor. Maté'ye göre geride kalan utanç, dikkat güçlüğünden ağır basıyor.",
+    "hook": "Kendinize söylediğiniz hangi cümleyi ilk kez başka birinden duymuştunuz?",
+    "one_minute_summary": "Gabor Maté, giriş bölümünde elli bir yaşındaki işsiz John'un yazısını izniyle, yazıldığı gibi aktarıyor. Karneler dikkat etmiyor, yerinde oturmuyor diyor; müdür odasında sopa, sandalyeye bağlanma, koridora çıkarılma, babasından tembel serseri lafı var. Maté'ye göre geride kalan utanç dikkat güçlüğünden ağır basıyor. Utancı kendini kopuk hissetmekten doğan bir durum sayıyor, tembel sözcüğünün hiçbir şeyi açıklamadığını söylüyor. Bunlar onun yorumları, John ise tek bir hastanın örneği."
+  },
+  "en": {
+    "title": "John's Report Cards",
+    "description": "At fifty-one John still described himself in the words of his report cards and his father. Maté argues the shame left behind weighs more than the attention difficulty.",
+    "hook": "Which sentence you say about yourself did you first hear from someone else?",
+    "one_minute_summary": "In the Introduction to Scattered Minds, Gabor Maté quotes John, fifty-one, unemployed and single, exactly as written. His report cards said he did not pay attention or sit still. He was strapped in the principal's office, tied to a chair and sent into the hall, and his father called him a lazy bum. Maté argues that the shame left behind weighs more than the attention difficulty, treats shame as a state that comes from feeling cut off, and says calling someone lazy explains nothing. These are his interpretations, and John is one patient's example."
+  },
+  "es": {
+    "title": "Los boletines de John",
+    "description": "A los cincuenta y un años, John aún se describía con las palabras de sus boletines y de su padre. Maté sostiene que la vergüenza que queda pesa más que el problema de atención.",
+    "hook": "¿Qué frase que te dices sobre ti oíste primero a otra persona?",
+    "one_minute_summary": "En la introducción de Scattered Minds, Gabor Maté cita a John, de cincuenta y un años, soltero y sin empleo, tal como lo escribió. Sus boletines decían que no prestaba atención ni se quedaba quieto. Lo azotaron en el despacho del director, lo ataron a una silla y lo sacaron al pasillo, y su padre lo llamaba vago inútil. Maté sostiene que la vergüenza que queda pesa más que la dificultad de atención, la ve como un estado que nace de sentirse aislado y dice que llamar vago no explica nada. Son interpretaciones suyas y John es el ejemplo de un paciente."
+  },
+  "de": {
+    "title": "Johns Zeugnisse",
+    "description": "Mit einundfünfzig beschrieb sich John noch immer mit den Worten seiner Zeugnisse und seines Vaters. Maté meint, die zurückbleibende Scham wiege schwerer als die Aufmerksamkeitsschwierigkeit.",
+    "hook": "Welchen Satz über dich selbst hast du zuerst von jemand anderem gehört?",
+    "one_minute_summary": "In der Einleitung von Scattered Minds zitiert Gabor Maté John, einundfünfzig, arbeitslos und ledig, genau wie geschrieben. In den Zeugnissen stand, er passe nicht auf und sitze nicht still. Er wurde im Büro des Direktors geschlagen, auf einen Stuhl gebunden und auf den Flur geschickt, sein Vater nannte ihn einen faulen Taugenichts. Maté meint, die zurückbleibende Scham wiege schwerer als die Aufmerksamkeitsschwierigkeit, sieht sie als Zustand aus dem Gefühl, abgeschnitten zu sein, und sagt, „faul“ erkläre nichts. Das sind seine Deutungen, John ist das Beispiel eines Patienten."
+  }
+}

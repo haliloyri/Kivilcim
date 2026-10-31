@@ -1,0 +1,59 @@
+{
+  "story_id": 1458,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Tell-Tale Brain",
+    "author": "V.S. Ramachandran",
+    "year": "2011"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Parma group (Giacomo Rizzolatti), recordings from single neurons in macaque premotor cortex, the peanut task, the 'Gandhi neurons' name and Ramachandran's DNA comparison are from the book and his talks. Excluded: the researcher who 'accidentally' picked up a peanut (this belongs to a popular ice-cream retelling and is not in the supplied facts), the claim that your own pain centres partly activate when you see pain, the claim that empathy 'can be trained', and the Italian lab being 'in a laboratory' with an unspecified city. Mirror-neuron claims about empathy are Ramachandran's speculation and have been challenged since.",
+  "facts": [
+    "An Italian research group led by Giacomo Rizzolatti, working at the University of Parma, recorded from single neurons in the premotor cortex of macaque monkeys.",
+    "One neuron fired when the monkey itself reached out and took a peanut.",
+    "The same neuron also fired when the monkey sat still and watched someone else reach for a peanut.",
+    "Such cells came to be called mirror neurons, because the monkey's brain answered someone else's action as though it were doing it itself.",
+    "Ramachandran suggests humans have them too, and that they help us copy what we watch and read other people's intentions.",
+    "He calls a subset that respond to touch 'Gandhi neurons' because they dissolve the line between you and another person.",
+    "He predicted mirror neurons would do for psychology what DNA did for biology, a unifying framework that was still waiting for its experiments."
+  ],
+  "scene_details": [
+    "a wire in one neuron while a monkey sits still",
+    "a peanut within reach",
+    "an experimenter's hand reaching out"
+  ],
+  "tension": "The monkey did not move, but the cell that normally fires for grabbing a peanut fired anyway.",
+  "opening_idea": "Start with a monkey sitting perfectly still while a single cell in its brain behaves as if it were reaching.",
+  "lessons": [
+    {
+      "idea": "Watching someone act partly rehearses the action in your own head, which is why imitation and fellow-feeling come more easily than they should.",
+      "anchor": "The neuron that fired both when the monkey took the peanut and when it watched someone else do it."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When you watch someone you know do something difficult, such as speak in public or carry something heavy, what do you notice in your own body and what do you feel like doing?",
+  "use_cases": [
+    {
+      "situation": "A new colleague has to learn a task you do well.",
+      "move": "Do it in front of them at normal speed, then let them do it while you stay quiet. Watching is part of learning.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child is nervous before a swimming lesson.",
+      "move": "Get in the water first and let them watch you before you say anything.",
+      "context": "family"
+    },
+    {
+      "situation": "Someone tells you about a bad day.",
+      "move": "Notice what your own face is doing while they talk, and let it show.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "A monkey's neuron fired for a peanut it only watched someone else take: let people see you do what you want them to learn.",
+  "conversation_variants": {
+    "punchline_idea": "A monkey sat still and watched a peanut being picked up, and the neuron for picking it up fired anyway.",
+    "thirty_sec_idea": "In Parma, Rizzolatti's team recorded from single neurons in a monkey's brain. One fired when the monkey reached for a peanut, and again when it simply watched someone else do it. Ramachandran thinks humans have the same cells, and that they help us imitate and read each other. He predicted they would do for psychology what DNA did for biology.",
+    "question_idea": "When did you learn something just by watching?",
+    "key_contrast_idea": "Doing versus watching"
+  }
+}

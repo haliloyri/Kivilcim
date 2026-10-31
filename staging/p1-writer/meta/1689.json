@@ -1,0 +1,35 @@
+{
+  "story_id": 1689,
+  "verdict": "keep",
+  "verify_note": "Old '20-25% IQ correlation' and 'EQ earns more' claims not tied to the book and dropped. Kept: three traits, EQ flexible, 58% and 90% figures (TalentSmart's own data, flagged), four skills, 66 strategies and appraisal passcode. Sources: TalentSmart papers, Entrepreneur/Bradberry piece, Shortform and publisher listings.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "IQ, Kişilik ve EQ",
+    "description": "Bradberry ve Greaves bir insanı IQ, kişilik ve EQ diye üçe ayırıyor ve yalnızca EQ'nun çalışarak değiştirilebildiğini söylüyor. Başlıktaki yüzde 58 rakamı yazarların kendi şirketinin verisi.",
+    "hook": "Üç özelliğin hangisine emek verirseniz karşılığını en çok görürsünüz?",
+    "one_minute_summary": "Bradberry ile Greaves, bir insanı belirleyen üç özelliği ayırıyor: IQ, kişilik ve EQ. Üçü birbirinden bağımsız; IQ ile kişilik büyük ölçüde sabit, EQ ise çalışarak yükseltilebiliyor. Yazarlara göre EQ, her türlü işte performansın yüzde 58'ini açıklıyor ve en iyilerin yüzde 90'ının EQ'su yüksek. Bu rakamlar yazarların kendi şirketi TalentSmart'ın verisi, bağımsız bir araştırma değil. Kitap EQ'yu dört beceriye bölüyor ve 66 strateji sunuyor."
+  },
+  "en": {
+    "title": "IQ, Personality and EQ",
+    "description": "Bradberry and Greaves split a person into IQ, personality and EQ, and say only EQ is flexible enough to train. The 58% figure in their pitch comes from their own company.",
+    "hook": "Which of the traits that shape you are you actually putting practice into?",
+    "one_minute_summary": "Bradberry and Greaves founded TalentSmart, an EQ-testing company, and their book says EQ explains 58% of success in every kind of job and that 90% of top performers are high in it. Those figures are the company's own data, not independent research. The sturdier idea is their split: IQ and personality stay mostly fixed, while EQ is flexible and can be practiced. They organize 66 strategies under four skills, and an online appraisal points to where to start."
+  },
+  "es": {
+    "title": "CI, personalidad e IE",
+    "description": "Bradberry y Greaves separan al ser humano en CI, personalidad e IE y dicen que solo la IE es lo bastante flexible para entrenarse. El 58 % que citan sale de su propia empresa.",
+    "hook": "¿En cuál de los tres rasgos que te definen estás poniendo práctica de verdad?",
+    "one_minute_summary": "Bradberry y Greaves distinguen tres rasgos: CI, personalidad e inteligencia emocional. Según ellos, el CI y la personalidad casi no cambian, mientras que la IE se puede entrenar. Afirman que la IE explica el 58 % del éxito laboral y que el 90 % de los mejores tiene una IE alta, pero son datos de TalentSmart, su propia empresa, y no de un estudio independiente. El libro reparte 66 estrategias en cuatro habilidades y ofrece una evaluación en línea."
+  },
+  "de": {
+    "title": "IQ, Persönlichkeit und EQ",
+    "description": "Bradberry und Greaves unterscheiden IQ, Persönlichkeit und EQ und sagen, nur der EQ lasse sich üben. Die genannten 58 Prozent stammen aus der eigenen Firma der Autoren.",
+    "hook": "Welche deiner drei Eigenschaften übst du tatsächlich?",
+    "one_minute_summary": "Bradberry und Greaves teilen den Menschen in IQ, Persönlichkeit und EQ. IQ und Persönlichkeit bleiben nach ihrer Darstellung weitgehend fest, der EQ lässt sich durch Übung steigern. Sie behaupten, der EQ erkläre 58 Prozent des Berufserfolgs und 90 Prozent der Spitzenleute hätten einen hohen EQ, doch diese Zahlen stammen aus den Daten ihrer eigenen Firma TalentSmart und nicht aus einer unabhängigen Studie. Das Buch ordnet 66 Strategien vier Fähigkeiten zu, ein Online-Test zeigt, wo man beginnt."
+  }
+}

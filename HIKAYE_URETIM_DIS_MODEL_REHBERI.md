@@ -175,14 +175,23 @@ alır. Kontrol ederken şunlara bak:
 - `variants.json` içinde tam olarak dört anahtar: `punchline`, `thirty_sec`,
   `question`, `key_contrast`. `question` değeri boş string `""` olmalı
   (uygulamada artık gösterilmiyor).
-- Hikâye, toplam metnin en az %50'si olmalı.
-- Kelime aralıkları (İngilizce örnek): hikâye 340-520, toplam 650-950. Diğer
-  diller `scripts/p1/validate.mjs` içindeki `RANGES` tablosunda.
+- Hikâye, toplam metnin en az %55'i olmalı.
+- Kelime aralıkları: **tek kaynak** `scripts/p1/lang-config.mjs` (`RANGES`,
+  `TOTAL`, `STORY_HARD`). Örnek: İngilizce hikâye 340–520, toplam 600–1000;
+  Türkçe hikâye 270–415, toplam 480–800. Prompt bu sayıları `{LEN_*}`
+  yer tutucularıyla alır; hiçbir dosyaya elle yazma.
+- Ders: tek kart, İngilizce 95–140 / Türkçe 70–100 kelime, 3–4 tam cümle
+  (ilke → gündelik örnek → ne sağladığı). Soru: tek cümle, 15–30 kelime,
+  tek soru işareti.
 - Yapay zekâ kalıpları yasak: "Imagine…" ile açılış, "X değil, Y" kalıbının
-  tekrarı, süslü metaforlar, ahlak dersi cümlesiyle bitirmek.
+  tekrarı, süslü metaforlar, ahlak dersi cümlesiyle bitirmek, [[story]]
+  içinde "bir örnekle görelim / bu örnek kitapta geçmez" gibi yazı hakkında
+  konuşma.
 
-Çıktı örneği için bir mevcut hikâyeye bak:
-`staging/p1/en/1059.md` ve `staging/p1/en/1059.variants.json`.
+Çıktı formatı örneği (repoda): `staging/p1-claude/tr/1783.md` — 1 ders + 1
+soru, yeni format. `staging/p1/en/1059.md` eski formatın (2–3 ders) örneğidir;
+onu biçim için kopyalama. (Bu pakette yeni format örneği yok; paket yalnızca
+1059'u taşır.)
 
 ---
 
@@ -210,6 +219,17 @@ node scripts/p1/ai-tells.mjs en 1707 1731
 Hedef: 100 kelimede 0.7'nin altında. Yapay zekâ kalıbı **hata**, geri kalanı
 **uyarı** sayılır.
 
+İki modeli (veya aynı modelin iki prompt sürümünü) yan yana görmek için skor
+kartı — doğrulama + AI-tell + ritim metriklerini tek tabloda verir:
+
+```bash
+node scripts/p1/score-models.mjs tr staging/p1-claude/tr staging/p1-argon/tr --ids 1783
+```
+
+Metin dosyalarına ve sayı hedeflerine dokunmadan önce `node scripts/p1/check-docs.mjs`
+çalıştır: prompt, plan dosyaları ve `scripts/p1/lang-config.mjs` birbirinden
+kaymışsa hata verir.
+
 ---
 
 ## 7. İnsan kontrolü (atlama)
@@ -223,9 +243,11 @@ kendin oku:
 - `[[use]]` kartlarından en az birinde hikâyeye özgü bir ayrıntı var mı?
 - `thirty_sec` hikâyeyi okumamış biri için de anlaşılır mı?
 
-Repoda bu işi yapan ajanlar var: `quality-reviewer` (olgu ve kalite denetimi,
-onay vermez, bulgu raporlar) ve `proofread-stories` skill'i (yazım kontrolü).
-Aynı modele kendi işini denetletme; ikinci bir model kullan.
+Repoda `proofread-stories` skill'i yazım kontrolünü yapar. Eski
+`scripts/story-pipeline` batch'leri için `.claude/agents/quality-reviewer.md`
+ajanı var; **P1 hattında** ayrı bir olgu denetçisi yok — ya sen okursun ya
+ikinci bir model kullanırsın. Aynı modele kendi olgu/sayı işini denetletme;
+üslup revizyonunu aynı modelle yapmakta sakınca yok, olgu denetimini ayır.
 
 ---
 

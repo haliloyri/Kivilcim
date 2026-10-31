@@ -1,0 +1,60 @@
+{
+  "story_id": 1712,
+  "kind": "concept",
+  "book": {
+    "title": "The Republic",
+    "author": "Plato",
+    "year": "c. 375 BCE"
+  },
+  "confidence": "high",
+  "confidence_note": "Both passages are in the text: Book I (Socrates answering Thrasymachus on why good people rule, 347) and Book VII (the cave, the philosopher compelled to return, the city whose rulers least want power is best governed, 520). Paraphrased, not quoted. Omitted: Glaucon's dialogue lines, the full cave allegory, the philosopher-king training programme.",
+  "facts": [
+    "In Book I of The Republic, Thrasymachus argues that justice is whatever benefits the stronger.",
+    "Socrates replies that good people do not want to rule for money or for honour; being paid for ruling would shame them.",
+    "So the good must be given a reason: the heaviest penalty for refusing to rule is being ruled by someone worse.",
+    "In Book VII, after the cave allegory, those who have seen the truth outside the cave must be required to go back down and take part in ruling, rather than staying in contemplation.",
+    "Socrates says the city whose rulers are least eager to rule will be governed best, and a city of eager rulers worst.",
+    "His reasoning: people who love power for its own sake will fight over it, while those who have another life they value will treat it as a duty.",
+    "Socrates compares the ruler to a doctor and a shepherd who aim at the good of those they care for, not their own gain (Book I).",
+    "The penalty for refusing to rule is being ruled by someone worse."
+  ],
+  "scene_details": [
+    "a ruler who refuses pay and honour as reasons to rule",
+    "being governed by someone worse as the penalty",
+    "a philosopher sent back down into the cave"
+  ],
+  "tension": "The people who most want power are the ones least fit for it, and the best ruler is one who has to be persuaded to take it.",
+  "opening_idea": "Open on the penalty Socrates names for refusing to rule: being ruled by someone worse.",
+  "lessons": [
+    {
+      "idea": "Be wary of a candidate for any role of authority whose main drive is the position itself, and look for those who see it as a task.",
+      "anchor": "Socrates' penalty of being ruled by someone worse"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When someone seeks a role of power in your circle, what would you look for to tell whether they want the task or the position?",
+  "use_cases": [
+    {
+      "situation": "You are choosing a person to lead a project.",
+      "move": "Ask each candidate what the work involves and what they would drop to do it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are asked to take a leadership role and feel torn.",
+      "move": "Recall Socrates in Book I: ask yourself whether you would rather the role went to someone worse.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is campaigning hard for a board seat.",
+      "move": "Ask what problem they want to solve with it.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Plato's Socrates: the best ruler is the one who has to be persuaded, since the penalty for refusing is being ruled by someone worse.",
+  "conversation_variants": {
+    "punchline_idea": "In Plato's Republic the penalty for good people who refuse to rule is being ruled by someone worse.",
+    "thirty_sec_idea": "In Plato's Republic, Socrates tells Thrasymachus that good people do not want to rule for money or honour. They rule because the alternative is to be ruled by someone worse. In Book VII he says the city whose rulers least want power is governed best.",
+    "question_idea": "",
+    "key_contrast_idea": "duty, not appetite"
+  }
+}

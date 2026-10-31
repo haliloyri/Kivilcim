@@ -1,0 +1,61 @@
+{
+  "story_id": 1266,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Obstacle Is the Way",
+    "author": "Ryan Holiday",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against book text (Love Everything That Happens: Amor Fati). Old text dropped: \"Marcus: nothing you can wish away\" quote and the energy-resistance framing, not in the book. Edison appears only as a one-clause link; his fire is story 1264.",
+  "facts": [
+    "The chapter opens with Nietzsche: greatness is wanting nothing to be different and loving, not merely bearing, what is necessary.",
+    "Jack Johnson in his famous fifteen-round fight with Jim Jeffries, the Great White Hope, called out of retirement to beat the ascendant black champion; Johnson genuinely hated by opponent and crowd.",
+    "Johnson smiled, joked, played the whole fight; Holiday: no value in any other reaction, bitterness was their burden.",
+    "He built the fight plan around the abuse: each nasty remark from Jeffries's corner got another lacing; low tricks answered with a quip, never losing his cool.",
+    "A blow opened a cut on his lip and he kept smiling; each round happier while Jeffries grew enraged and tired and lost the will; fight ended with Jeffries on the floor.",
+    "Jack London from ringside: the story of the fight is the story of a smile.",
+    "Holiday: acceptance is a first step; better is love; not \"I'm okay with this\" but \"I feel great about it.\"",
+    "Caveat: good does not always outweigh bad nor is it free; some good always sits within the bad."
+  ],
+  "scene_details": [
+    "split lip, still smiling",
+    "quip after each low trick",
+    "Jack London at ringside"
+  ],
+  "tension": "Johnson was hated by everyone in the room and still enjoyed the fight.",
+  "opening_idea": "Open on the split lip and the smile.",
+  "lessons": [
+    {
+      "idea": "Turn a difficult behavior into material for your plan.",
+      "anchor": "Johnson built his fight plan around the abuse.",
+      "everyday_example_idea": "A consultant whose client interrupts puts the main point first and prepares a line to resume."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you know a situation this week will probably irritate you, what small change could you make to your plan to include it?",
+  "use_cases": [
+    {
+      "situation": "Someone cuts you off in every meeting.",
+      "move": "Say you allowed for interruptions and will make the point in three sentences.",
+      "context": "meeting"
+    },
+    {
+      "situation": "The same remark at every family dinner.",
+      "move": "Acknowledge it lightly and move on.",
+      "context": "family"
+    },
+    {
+      "situation": "A dull job you cannot avoid.",
+      "move": "Make part of it enjoyable.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Build an unavoidable difficult situation into your plan.",
+  "conversation_variants": {
+    "punchline_idea": "In his fight with Jim Jeffries, Jack Johnson answered every insult with a smile and a punch.",
+    "thirty_sec_idea": "Johnson fought Jeffries hated by opponent and crowd, built his plan around the abuse and kept smiling through a split lip until Jeffries lost the will. Holiday uses it for amor fati.",
+    "question_idea": "",
+    "key_contrast_idea": "Endure it, or enjoy it"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1466,
+ "verdict": "keep",
+ "verify_note": "Rebuilt on Gallo's Stevenson analysis (Entrepreneur excerpt, HBR piece). Old pure-data vs story imaging experiment and 'neural connection' wording removed; 65 percent flagged as Gallo's own count.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Stevenson ve üç hikâye",
+  "description": "Bryan Stevenson TED'de ilk istatistiğini beşinci dakikaya doğru verdi. Gallo bunu hikâyenin beyinde yarattığı eşleşmeyle açıklıyor.",
+  "hook": "Bir sonraki açıklamanda hangi sayıyı önce bir insanın durumuyla anlatabilirdin?",
+  "one_minute_summary": "Carmine Gallo, avukat Bryan Stevenson'ın on sekiz dakikalık TED konuşmasını çözümlüyor. Stevenson üç kişisel hikâye anlattı, ilkini büyükannesiyle açtı, ilk istatistiği beşinci dakikaya doğru verdi. Gallo kendi sayımıyla konuşmanın yüzde 65'ini hikâye sayıyor, kalan payı farklı hesaplıyor. Açıklaması beyinde: hikâye anlatılırken dinleyenin beyninde de anlatanla aynı bölgeler çalışıyor, buna beyinden beyne eşleşme diyor. Çıkarımı basit: önce bir insanı göster, rakamı sonra ver."
+ },
+ "en": {
+  "title": "Stevenson's three stories",
+  "description": "Bryan Stevenson waited about five minutes for his first statistic at TED. Gallo explains why with the brain-to-brain coupling that stories create.",
+  "hook": "Which number in your next explanation could come after one person's story?",
+  "one_minute_summary": "Carmine Gallo takes apart Bryan Stevenson's eighteen-minute TED talk. Stevenson, a civil rights attorney, told three personal stories, opening with one about his grandmother, and reached his first statistic around the fifth minute. Gallo's own count puts about 65 percent of the talk in stories, though his accounts of the rest differ. He explains the effect through brain research: when someone tells a story, the same regions are engaged in the listener. His lesson is to show a person first and give the number second."
+ },
+ "es": {
+  "title": "Las tres historias de Stevenson",
+  "description": "Bryan Stevenson esperó unos cinco minutos para dar su primera estadística en TED. Gallo lo explica con el acoplamiento de cerebros que provoca una historia.",
+  "hook": "¿Qué número de tu próxima explicación podría llegar después de la historia de una persona?",
+  "one_minute_summary": "Carmine Gallo analiza la charla TED de dieciocho minutos de Bryan Stevenson. El abogado de derechos civiles contó tres historias personales, abrió con la de su abuela y llegó a su primera estadística hacia el minuto cinco. Según el recuento de Gallo, cerca del 65 por ciento eran historias, aunque sus versiones sobre el resto varían. Lo explica con investigación sobre el cerebro: al contar una historia, en el oyente se activan las mismas regiones. La enseñanza es mostrar primero a una persona y dar el número después."
+ },
+ "de": {
+  "title": "Stevensons drei Geschichten",
+  "description": "Bryan Stevenson wartete bei TED etwa fünf Minuten mit seiner ersten Statistik. Gallo erklärt das mit der Gehirnkopplung, die Geschichten auslösen.",
+  "hook": "Welche Zahl in deiner nächsten Erklärung könnte nach der Geschichte eines Menschen kommen?",
+  "one_minute_summary": "Carmine Gallo zerlegt Bryan Stevensons achtzehnminütigen TED-Vortrag. Der Bürgerrechtsanwalt erzählte drei persönliche Geschichten, begann mit der über seine Großmutter und kam nach etwa fünf Minuten zur ersten Statistik. Nach Gallos eigener Zählung bestehen rund 65 Prozent des Vortrags aus Geschichten, über den Rest macht er unterschiedliche Angaben. Er erklärt die Wirkung mit Hirnforschung: Bei einer Geschichte sind im Zuhörer dieselben Regionen aktiv. Seine Lehre: erst den Menschen zeigen, dann die Zahl."
+ }
+}

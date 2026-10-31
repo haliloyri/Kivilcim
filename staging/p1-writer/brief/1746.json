@@ -1,0 +1,59 @@
+{
+  "story_id": 1746,
+  "kind": "anecdote",
+  "book": {
+    "title": "SPQR",
+    "author": "Mary Beard",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of SPQR; no page-level check. Beard's account: Rome extended citizenship to defeated peoples and freed slaves; Claudius's speech (AD 48) arguing for admitting Gallic notables to the senate survives in a bronze tablet at Lyon and in Tacitus's version; Caracalla's edict in AD 212 gave citizenship to nearly all free inhabitants. Omitted on purpose: exact wording of Claudius's speech, the Greek-city comparison details, motives for Caracalla (Beard notes the tax angle; not asserted here), number of people. Tacitus-version detail (Athens/Sparta) and the foundation-myth remark recalled from general knowledge of the same material; not page-checked against Beard.",
+  "facts": [
+    "Beard points out that Rome, unlike many Greek city-states, gave citizenship to people it conquered and to the freed slaves of Roman citizens.",
+    "Children of freed slaves were citizens.",
+    "Under Claudius a speech argued that notables from Gaul should be allowed into the senate; the bronze tablet bearing a version of the speech was found in Lyon.",
+    "Claudius reminded the senators in that speech that Rome had always taken in outsiders and had grown by it.",
+    "In AD 212 the emperor Caracalla gave Roman citizenship to nearly all free inhabitants of the empire.",
+    "Beard notes the grant also had practical effects on who owed certain taxes, and treats the motives as debated.",
+    "Beard notes Rome's own foundation stories describe a city of incomers.",
+    "In Tacitus's version Claudius cites Athens and Sparta as cities that weakened by treating the conquered as aliens."
+  ],
+  "scene_details": [
+    "a bronze tablet with Claudius's speech found at Lyon",
+    "one edict of AD 212 and nearly every free inhabitant"
+  ],
+  "tension": "An empire with a tiny ruling city kept making its former enemies into its own members.",
+  "opening_idea": "Open on the bronze tablet of Lyon carrying an emperor's argument for admitting Gauls to the senate.",
+  "lessons": [
+    {
+      "idea": "Bring newcomers into the group as full members, not as permanent guests.",
+      "anchor": "Rome citizen status for freed slaves and conquered; Caracalla's edict"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Who joined your team, class or circle recently, and what would change if they had the same say as people who were there from the start?",
+  "use_cases": [
+    {
+      "situation": "A new hire is still treated as a guest in meetings.",
+      "move": "Say Rome made outsiders citizens and grew; ask the newcomer to own one decision this month.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend group rarely includes the new person.",
+      "move": "Invite them to plan one outing instead of just come to it.",
+      "context": "social"
+    },
+    {
+      "situation": "You are the newcomer and are always asked to observe.",
+      "move": "Ask for one task with your name on the result.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Rome made former enemies and freed slaves into citizens: give a newcomer a real vote, not a seat.",
+  "conversation_variants": {
+    "punchline_idea": "Rome turned defeated enemies and freed slaves into citizens, and kept growing.",
+    "thirty_sec_idea": "Mary Beard says Rome did something many Greek cities did not: it gave citizenship to the people it conquered and to freed slaves. Under Claudius, a speech argued that Gallic notables should sit in the senate, and a bronze copy of it survives in Lyon. In AD 212 Caracalla gave citizenship to almost every free person in the empire. Rome grew by turning outsiders into members.",
+    "question_idea": "",
+    "key_contrast_idea": "members, not guests"
+  }
+}

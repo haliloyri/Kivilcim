@@ -153,11 +153,11 @@ const StorytellerOverlay = ({
         {/* ── Premium gate ──────────────────────────────────────── */}
         {!isPremium ? (
           <View style={styles.premiumGate}>
-            <Text style={{ fontSize: 48, marginBottom: 16 }}>🎤</Text>
+            <Ionicons name="mic-outline" size={48} color={colors.primaryText} style={{ marginBottom: 16 }} />
             <Text style={styles.gateTitle}>{t('mv_premium_locked_storyteller', lang)}</Text>
             <Text style={styles.gateSub}>{t('mv_unlock_premium', lang)}</Text>
             <TouchableOpacity style={styles.gateBtn} onPress={onPremiumTap}>
-              <Ionicons name="sparkles" size={14} color="#E8A838" />
+              <Ionicons name="key-outline" size={14} color={colors.dawn} />
               <Text style={styles.gateBtnText}>Premium</Text>
             </TouchableOpacity>
           </View>

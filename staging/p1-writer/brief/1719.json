@@ -1,0 +1,60 @@
+{
+  "story_id": 1719,
+  "kind": "concept",
+  "book": {
+    "title": "Complications",
+    "author": "Atul Gawande",
+    "year": "2002"
+  },
+  "confidence": "low",
+  "confidence_note": "The title's specific scene (a sleep-deprived surgeon deciding whether to hand a patient to a fresher colleague) could NOT be located in the book or in any source in this session. The supplied text asserts it, but a search found no passage; sleep deprivation is not mentioned on the book's Wikipedia page. The story therefore rests on verifiable context: Gawande wrote the essays during his general surgery residency at Brigham and Women's Hospital, worked about 110 hours a week and wrote at night and weekends (Wikipedia); the first essay, 'Education of a Knife', describes his struggles to insert a central line and an emergency tracheotomy that nearly killed a patient, and raises the ethics of learning on patients. The learner-versus-patient tension is the book's own; the lesson about asking for help when your own impairment is hard to judge is an inference, flagged. Omitted: any invented sleep scene, patient names, numbers beyond the 110 hours.",
+  "facts": [
+    "Complications is a set of essays by Atul Gawande about medicine as an imperfect science, written during his general surgery residency at Brigham and Women's Hospital.",
+    "He worked about 110 hours a week and wrote at night and on weekends (secondary source).",
+    "The first essay, 'Education of a Knife', describes his difficulty inserting a central venous catheter.",
+    "It also recounts an emergency tracheotomy that nearly killed a patient.",
+    "The essay raises the ethics of surgeons learning on patients: every surgeon was once a beginner, and the patient bears the risk.",
+    "The book shows a profession that presents itself as flawless while its practitioners work with uncertainty and error.",
+    "The tension: a trainee needs hard cases to gain experience, while the patient is better served by a more rested, more experienced hand.",
+    "In 'The Case of the Red Leg' (Part 3, Uncertainty) a doctor must tell common cellulitis from rare, deadly necrotizing fasciitis; influenced by a recent case of the latter, Gawande chose to perform a biopsy (secondary source)."
+  ],
+  "scene_details": [
+    "a central line that will not go in",
+    "an emergency tracheotomy that nearly killed a patient",
+    "essays written at night and on weekends after a long week"
+  ],
+  "tension": "Learning requires real patients, and the patient pays for the learner's inexperience and fatigue.",
+  "opening_idea": "Open on Gawande writing essays at night after a week of about 110 hours.",
+  "lessons": [
+    {
+      "idea": "Decide in advance when you will ask for help, because tiredness weakens your ability to judge how impaired you are.",
+      "anchor": "Gawande's long residency weeks"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one situation in your own work where you would want a clear rule, set in advance, for when you hand something to someone fresher?",
+  "use_cases": [
+    {
+      "situation": "You are exhausted before an important task.",
+      "move": "Ask a rested colleague to double-check one step.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family member insists on driving while exhausted.",
+      "move": "Offer to drive the first leg.",
+      "context": "family"
+    },
+    {
+      "situation": "You are tempted to push through a late shift.",
+      "move": "Set a stop time before you start and tell someone.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Gawande's residency weeks: the hand that wants the experience may be the one least able to judge its own fatigue.",
+  "conversation_variants": {
+    "punchline_idea": "Gawande wrote about the imperfect science of surgery while working about 110 hours a week.",
+    "thirty_sec_idea": "Atul Gawande wrote Complications during his surgical residency, working about 110 hours a week and writing at night. Its first essay shows him struggling with a central line and nearly losing a patient during an emergency tracheotomy, and asks whether patients should bear the cost of a beginner's learning.",
+    "question_idea": "",
+    "key_contrast_idea": "learn or hand over"
+  }
+}

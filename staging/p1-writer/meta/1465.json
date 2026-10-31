@@ -1,0 +1,35 @@
+{
+ "story_id": 1465,
+ "verdict": "keep",
+ "verify_note": "Rebuilt from Gallo's passion chapter (first secret, Mullins example, investor study). Old 'three elements' claim removed; material is thin, passed at low-medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Konunun altındaki tutku",
+  "description": "Aimee Mullins protezler üzerine konuştu ama Gallo'ya göre tutkusu başkaydı. Dokuz sırrın ilki konuşmacıdan konunun altındaki asıl derdi bulmasını istiyor.",
+  "hook": "Önümüzdeki sunumunun konusunun altında gerçekten önemsediğin şey ne?",
+  "one_minute_summary": "Carmine Gallo, beş yüz TED konuşmasını inceleyip dokuz sır çıkardı ve ilkini tutkuya ayırdı. Ona göre tutku bulaşıcıdır. Örneği Aimee Mullins: iki bacağı ampute bir atlet, konuşması protezler üzerine, ama tutkusu insan potansiyelini serbest bırakmak. Gallo, konuşmacının önce konunun altındaki asıl derdi bulmasını öneriyor, çünkü dinleyiciye geçen o heyecan. Bir yatırımcı araştırmasında da algılanan tutku, eğitim gibi ölçütlerin çok üzerinde tutulmuş. Hikâye anlatımı ve prova kitapta bunun arkasından geliyor."
+ },
+ "en": {
+  "title": "The passion beneath the topic",
+  "description": "Aimee Mullins spoke about prosthetics, yet Gallo says her real passion lay elsewhere. The first of his nine secrets asks speakers to find what sits under the topic.",
+  "hook": "Beneath the topic of your next presentation, what do you actually care about?",
+  "one_minute_summary": "Carmine Gallo studied five hundred TED talks and made passion the first of nine secrets. He says it is contagious: you cannot inspire others until you are inspired yourself. His example is Aimee Mullins, an athlete with double leg amputations who spoke about prosthetics, though Gallo says her passion is unleashing human potential. His advice is to find what sits beneath the topic before preparing anything else. He also cites an investor study in which perceived passion ranked well above education and experience."
+ },
+ "es": {
+  "title": "La pasión bajo el tema",
+  "description": "Aimee Mullins habló de prótesis, pero según Gallo su pasión estaba en otra parte. El primer secreto pide buscar lo que hay debajo del tema.",
+  "hook": "Debajo del tema de tu próxima presentación, ¿qué es lo que de verdad te importa?",
+  "one_minute_summary": "Carmine Gallo revisó quinientas charlas TED y puso la pasión como primero de sus nueve secretos. Dice que es contagiosa: no puedes inspirar a otros si tú no estás inspirado. Su ejemplo es Aimee Mullins, atleta con las dos piernas amputadas que habló de prótesis, aunque su pasión, según Gallo, es liberar el potencial humano. Su consejo es buscar lo que hay debajo del tema antes de preparar nada más. Cita también un estudio con inversionistas donde la pasión percibida pesó mucho más que la educación y la experiencia."
+ },
+ "de": {
+  "title": "Die Leidenschaft unter dem Thema",
+  "description": "Aimee Mullins sprach über Prothesen, doch ihre Leidenschaft lag laut Gallo woanders. Das erste Geheimnis verlangt, zu suchen, was unter dem Thema liegt.",
+  "hook": "Was liegt dir unter dem Thema deiner nächsten Präsentation wirklich am Herzen?",
+  "one_minute_summary": "Carmine Gallo wertete fünfhundert TED-Vorträge aus und machte die Leidenschaft zum ersten von neun Geheimnissen. Sie sei ansteckend, sagt er: Wer selbst nicht begeistert ist, kann andere nicht begeistern. Sein Beispiel ist Aimee Mullins, eine Athletin mit zwei amputierten Beinen, die über Prothesen sprach, deren Leidenschaft laut Gallo aber dem menschlichen Potenzial gilt. Sein Rat: Such vor allem anderen, was unter dem Thema liegt. Er verweist zudem auf eine Investorenstudie, in der wahrgenommene Leidenschaft weit über Ausbildung und Erfahrung lag."
+ }
+}

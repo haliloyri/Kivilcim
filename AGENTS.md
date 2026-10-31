@@ -82,6 +82,7 @@ Custom agents in `.github/agents/`:
 | **RN UI Developer** | Create/modify screens, components, navigation with proper patterns |
 | **i18n Manager** | Add/update/audit translation keys across all 4 languages (en, tr, es, de) |
 | **Albor Yolu Phase Runner** | Execute Albor Yolu phases 0–10 in a persistent implement-test-checkpoint loop |
+| **hikaye-yazari** (`.claude/agents/`) | Menu: find 10 new books, find story titles, write stories, list stories from local DB and regenerate a whole Sürüm; selectable model (default Sonnet 5.5); output only to `staging/p1-writer/` |
 
 ## Available Skills
 Custom skills in `.github/skills/`:
@@ -113,9 +114,11 @@ automated (Anthropic Batch) pipeline: [batch/README.md](batch/README.md).
 
 **Format decisions** (1 lesson + 1 question, lesson length/tone, all 4 languages, caveats) live in [batch/prompts/story-instructions.md](batch/prompts/story-instructions.md), section "Lesson and question rules". Read it before writing any story.
 
+**Numbers come from one place.** Length targets, hard limits and banned phrases live in [scripts/p1/lang-config.mjs](scripts/p1/lang-config.mjs). Prompts use `{LEN_*}` / `{VOICE_*}` placeholders; never type a word range into a prompt or a doc by hand. After editing any prompt or plan doc run `npm run story:check-docs` — it fails when the prompt, the plan and the config disagree. The validator is format-aware: `p1v2` (exactly 1 lesson + 1 question, no reflect bullets) for new stories, `legacy` (2–3 lessons + bullets) for the existing catalogue, detected per file. To compare two models/prompts on the same ids: `npm run story:score -- tr staging/p1-a/tr staging/p1-b/tr --ids 1783`.
+
 **Hard rules**
 1. **Never create, edit or overwrite anything in `staging/p1/brief/` or `staging/p1/<lang>/`** unless the user explicitly asks. These are the production outputs of the Batch pipeline (Claude Opus), which skips any id whose file already exists.
-2. Never write to `assets/albor.db` and never run `scripts/p1/apply-to-db.mjs` or anything that touches Supabase — the user applies content to the DB by hand after review.
+2. Never write to `assets/albor.db` and never run `scripts/p1/apply-to-db.mjs` or anything that touches Supabase — the user applies content to the DB by hand after review. **Exception (user-authorized):** the `hikaye-yazari` agent may write validated stories to `assets/albor.db` only via `scripts/p1/apply-writer.mjs` (version label `SON55`, overwrites existing text, backs up first).
 3. Agent-made stories go to a **separate folder**: `staging/p1-<agent>/` (e.g. `staging/p1-codex/brief/`, `staging/p1-codex/en/`).
 4. Use cards in `[[use]]` MUST start with `%%context:<meeting|oneonone|family|social|self> | ` — the app parser (`src/utils/storyMarkup.js`) needs the literal `context:` prefix.
 5. Validate before reporting: `node scripts/p1/validate-dir.mjs en staging/p1-codex/en <ids>` must print `N/N passed`.

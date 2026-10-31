@@ -266,6 +266,7 @@ const getStoryCollectionId = (version) => {
   if (/^C\d+$/.test(value)) return 'conversation';
   if (value === 'OH') return 'originals';
   if (value === 'OPUS55') return 'opus55';
+  if (value === 'OPUS55-2') return 'opus55_2';
   if (value === 'SON55') return 'son55';
   return 'new';
 };
@@ -550,7 +551,7 @@ const HomeScreen = ({ navigation }) => {
     return () => {
       active = false;
     };
-  }, [userProfile?.displayName, userProfile?.email]);
+  }, [userProfile?.displayName]);
 
   const saveProfilePrompt = async () => {
     await updateUserProfile({ displayName: profileNameInput.trim() || null });
@@ -971,7 +972,7 @@ const HomeScreen = ({ navigation }) => {
           sub: t(nextAction?.bodyKey || 'career.home.completeCopy', lang),
           cta: t(nextAction?.ctaKey || 'career.home.openPathCta', lang),
           progressLabel: nextAction?.type === 'advance' && career.nextNode ? t(career.nextNode.titleKey, lang) : t('career.title', lang),
-          icon: 'sparkles-outline',
+          icon: 'trail-sign-outline',
           source: 'home_career_next_action',
         };
       }
@@ -1018,7 +1019,7 @@ const HomeScreen = ({ navigation }) => {
       title: t('home_primary_new_title', lang),
       sub: nextStory?.title || t('home_primary_empty_sub', lang),
       cta: t('home_primary_new_cta', lang),
-      icon: 'sparkles',
+      icon: 'book-outline',
       story: nextStory,
       source: 'home_primary_new',
     };

@@ -1,0 +1,35 @@
+{
+ "story_id": 1262,
+ "verdict": "keep",
+ "verify_note": "Verified against book text (Become a Student). Old generic generals/Holiday-habit claims replaced by Hammett/Satriani, Shamrock, Epictetus from the book.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Hammett Yeniden Öğrenci Oldu",
+  "description": "Kirk Hammett Metallica'ya girdikten sonra Joe Satriani'den haftalık ders almaya başladı. İki yıl boyunca sert derslere devam etti.",
+  "hook": "Kendinizi yeterli saydığınız alanda kimden açık geri bildirim isteyebilirsiniz?",
+  "one_minute_summary": "Ryan Holiday, Metallica'ya yeni giren Kirk Hammett'ın istediği kadar iyi olmadığını fark edip Joe Satriani'den ders almaya başladığını anlatıyor. Satriani haftalık ders ve öğrenilmiş konu şartı koşuyordu, Hammett'in akranlarının çoğu onu fazla sert bulup çıkıp giderdi. Hammett iki yıl boyunca her hafta geldi, sonra da grupla çalıştığı melodileri getirdi. Holiday'e göre öğrencilik egoyu ustanın eline verir, kestirme yoktur. Epiktetos da bildiğini sandığın şeyi öğrenemeyeceğini söyler."
+ },
+ "en": {
+  "title": "Hammett Goes Back to Lessons",
+  "description": "After joining Metallica, Kirk Hammett started weekly lessons with Joe Satriani. He kept at it for two years while his peers stormed out.",
+  "hook": "Whom could you ask for blunt feedback in an area where you feel competent?",
+  "one_minute_summary": "Ryan Holiday tells how Kirk Hammett, newly in Metallica, realized he was not as good as he wanted to be and sought out Joe Satriani. Satriani demanded weekly lessons and learned material, and many of Hammett's peers stormed out thinking him too harsh. Hammett stayed for two years and later brought Satriani riffs he was writing with the band. Holiday sees the power of being a student in handing your ego to someone else, with no shortcuts. He closes with Epictetus on learning what you think you know."
+ },
+ "es": {
+  "title": "Hammett vuelve a las clases",
+  "description": "Tras entrar en Metallica, Kirk Hammett empezó clases semanales con Joe Satriani. Aguantó dos años mientras otros se marchaban furiosos.",
+  "hook": "¿A quién pedirías una opinión sin rodeos en un terreno donde te sientes competente?",
+  "one_minute_summary": "Ryan Holiday cuenta cómo Kirk Hammett, recién entrado en Metallica, vio que no tocaba tan bien como quería y buscó a Joe Satriani. Este exigía clase semanal y lección aprendida, y muchos conocidos de Hammett se iban furiosos por considerarlo demasiado duro. Hammett se quedó dos años y luego llevó los riffs de la banda. Holiday ve el poder de ser alumno en dejar el ego en manos de otro, sin atajos. Añade el método de Frank Shamrock con alguien mejor, alguien menos experto y un igual."
+ },
+ "de": {
+  "title": "Hammett nimmt Unterricht",
+  "description": "Nach dem Einstieg bei Metallica nahm Kirk Hammett wöchentlich Unterricht bei Joe Satriani. Zwei Jahre blieb er dabei, während andere empört gingen.",
+  "hook": "Wen könntest du in einem Bereich, in dem du dich kompetent fühlst, um direktes Feedback bitten?",
+  "one_minute_summary": "Ryan Holiday erzählt, wie Kirk Hammett, gerade bei Metallica, merkte, dass er nicht so gut war, wie er sein wollte, und Joe Satriani aufsuchte. Satriani verlangte wöchentliche Stunden und gelernte Lektionen, viele von Hammetts Altersgenossen stürmten empört hinaus. Hammett blieb zwei Jahre und brachte später Riffs aus der Band mit. Holiday sieht die Kraft des Schülerseins darin, das Ego in fremde Hände zu legen, ohne Abkürzungen. Er schließt mit Epiktet darüber, was man schon zu wissen glaubt."
+ }
+}

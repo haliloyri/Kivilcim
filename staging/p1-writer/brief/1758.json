@@ -1,0 +1,57 @@
+{
+  "story_id": 1758,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Code Breaker",
+    "author": "Walter Isaacson",
+    "year": "2021"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Isaacson's book; no page-level check. Omitted on purpose: Mojica's exact dates, names of the yogurt scientists, details of the patent dispute, any claim about clinical use. Added details from memory, not page-checked: Mojica's salt-marsh microbes; the yogurt-company work; the 2011 conference in Puerto Rico. Some wording added from memory, not page-checked: yogurt-company work supporting Mojica; 'months, then years' of Mojica's work is generic framing.",
+  "facts": [
+    "Microbiologists noticed odd repeating DNA sequences in bacteria and other microbes, at first with no known use.",
+    "Francisco Mojica in Spain, working on microbes from salt marshes, worked out that these sequences were part of a defence system against viruses.",
+    "Bacteria store bits of virus DNA and use them to recognise and cut the same virus later.",
+    "Jennifer Doudna and Emmanuelle Charpentier met at a conference in Puerto Rico in 2011 and joined forces.",
+    "In 2012 they showed the bacterial enzyme Cas9, guided by RNA, could be told which spot of DNA to cut.",
+    "They shared the 2020 Nobel Prize in Chemistry."
+  ],
+  "scene_details": [
+    "repeating DNA in salt-marsh microbes",
+    "an RNA guide steering a pair of molecular scissors"
+  ],
+  "tension": "A curiosity about bacteria's defence against viruses becomes a tool for editing genes.",
+  "opening_idea": "Open on the odd repeating sequences nobody could explain.",
+  "lessons": [
+    {
+      "idea": "Keep an open-ended question alive next to your practical work; it may become a tool.",
+      "anchor": "CRISPR began as curiosity about bacteria"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What question that looks useless today are you postponing, and what small time could you give it?",
+  "use_cases": [
+    {
+      "situation": "Your team only funds questions with a clear payoff.",
+      "move": "Mention CRISPR began as curiosity about bacteria and ask for a small exploratory slot.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A child asks a question that seems pointless.",
+      "move": "Spend two minutes on it together.",
+      "context": "family"
+    },
+    {
+      "situation": "You skip a curiosity because it is not useful yet.",
+      "move": "Give it thirty minutes this week and note what you find.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "CRISPR began as curiosity about bacteria's repeating DNA: keep one question without a payoff alive.",
+  "conversation_variants": {
+    "punchline_idea": "Researchers puzzled over odd repeating DNA in bacteria, and it turned out to be a defence system that became a gene-editing tool.",
+    "thirty_sec_idea": "Microbiologists noticed strange repeating DNA in bacteria and could not say what it was for. It turned out to be a defence system: bacteria store bits of virus DNA and use them to find and cut the same virus later. In 2012 Jennifer Doudna and Emmanuelle Charpentier showed this could be steered to cut a chosen spot in DNA. They shared the 2020 Nobel Prize. Walter Isaacson tells it in The Code Breaker.",
+    "question_idea": "",
+    "key_contrast_idea": "idle curiosity, real tool"
+  }
+}

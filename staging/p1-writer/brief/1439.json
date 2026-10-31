@@ -1,0 +1,37 @@
+{
+  "story_id": 1439,
+  "kind": "concept",
+  "book": { "title": "Against Empathy", "author": "Paul Bloom", "year": "2016" },
+  "confidence": "low",
+  "confidence_note": "Bloom's call for 'rational compassion' and his admiration for effective altruism (citing Peter Singer) are confirmed by reviews and Wikipedia; the Baby Jessica example (Midland, Texas, 1987: a little girl stuck in a well) is confirmed as used by Bloom to show people care more about one visible child than about crises affecting many more. The old TR text's blindness-surgery versus other-disease example, 'dollar per person' figures and 'cold and inhuman' framing could not be verified in the book and are removed. Facts are thin; no figures, no amounts raised, no ages. The book gives no named cost-effectiveness case that could be verified.",
+  "facts": [
+    "Bloom argues that empathy is a poor guide for decisions, though it can motivate kindness.",
+    "He contrasts empathy with what he calls rational compassion: caring about others' suffering while using cost and benefit reasoning to decide what to do.",
+    "He cites the Baby Jessica case of 1987, in Midland, Texas, where a little girl was stuck in a well, as an example of people caring more about one visible child than about crises affecting many more people.",
+    "He holds up the effective altruism movement, inspired by philosopher Peter Singer, as an ideal: directing giving toward where it helps the most people.",
+    "Bloom says people can make decisions on considerations of costs and benefits."
+  ],
+  "scene_details": [
+    "a little girl stuck in a well in Midland, Texas, in 1987",
+    "effective altruism: asking where giving helps the most"
+  ],
+  "tension": "One child stuck in a well draws everyone's attention while larger crises affecting many more people get less of it.",
+  "opening_idea": "In 1987 a little girl was stuck in a well in Midland, Texas, and the world watched; Bloom asks about the larger problems that nobody watched.",
+  "lessons": [
+    { "idea": "Good intentions are not enough; asking which action helps most can point somewhere different from where your feelings point.", "anchor": "The Baby Jessica case versus the effective altruism question of where giving helps most people." }
+  ],
+  "reflect": [],
+  "reflect_final": "The last time you wanted to help someone, did you check whether your help would actually change their situation, and how would you find out?",
+  "use_cases": [
+    { "situation": "A team wants to adopt a charity because a colleague told a moving story.", "move": "Ask what the charity achieves per unit of money and compare it with one or two alternatives before voting.", "context": "meeting" },
+    { "situation": "A relative asks for a loan after an emotional appeal.", "move": "Say you want to help and ask what would change their situation most, rather than giving the quick yes.", "context": "family" },
+    { "situation": "You are about to donate after seeing one photo online.", "move": "Bloom points to the Midland well rescue as a case of attention going to one child; look up one comparison charity first.", "context": "self" }
+  ],
+  "pocket_idea": "A child in a well gets the world's attention; rational compassion asks where the same help does the most good.",
+  "conversation_variants": {
+    "punchline_idea": "A girl in a well in 1987 got the world's attention, while larger crises affecting many more people got less.",
+    "thirty_sec_idea": "Paul Bloom points to a 1987 case in Midland, Texas, where a little girl was stuck in a well and everyone cared, while crises affecting many more people drew less attention. He doesn't ask us to stop caring. He asks for rational compassion: use feeling to start, then ask where help does the most good, as effective altruists do.",
+    "question_idea": "",
+    "key_contrast_idea": "Feeling versus finding impact"
+  }
+}

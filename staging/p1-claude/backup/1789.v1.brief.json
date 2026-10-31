@@ -1,0 +1,35 @@
+{
+  "story_id": 1789,
+  "kind": "concept",
+  "book": { "title": "Why Zebras Don't Get Ulcers", "author": "Robert M. Sapolsky", "year": "1994" },
+  "confidence": "medium",
+  "confidence_note": "The mobilize-now, postpone-long-term logic of the stress response and its harm when prolonged are the book's core. The supplied text's line that chronic cortisol weakens 'stomach defenses' and causes ulcers is NOT used, because ulcer causation involves other factors; the story names blood pressure, immunity, memory and digestion only in general terms. Fast versus slow arm (adrenaline, cortisol) is standard physiology in the book.",
+  "facts": [
+    "The stress response is resource management: the brain senses danger, adrenaline and cortisol are released, heart speeds up, sugar and fat go to muscles, blood pressure rises.",
+    "Long-term projects are postponed: digestion slows, growth and reproduction wait, parts of immune function are pushed back.",
+    "Adrenaline acts within seconds; cortisol arrives a bit later and lasts longer.",
+    "For a short flight this is efficient.",
+    "The problem is when the system stays on for weeks.",
+    "Prolonged high stress hormones are linked to strained blood vessels and blood pressure, weaker immunity, effects on memory-related brain areas and digestion.",
+    "Many stress-related illnesses come from a response that is too long, not from the response itself."
+  ],
+  "tension": "The same mechanism that protects in a chase harms when it never switches off.",
+  "opening_idea": "Open on the body shutting down digestion, growth and reproduction the moment danger is sensed.",
+  "lessons": [
+    { "idea": "Repairs postponed during chronic stress eventually come due.", "anchor": "Digestion, growth and immunity postponed by a prolonged emergency." }
+  ],
+  "reflect": [],
+  "reflect_final": "If your body is always in emergency mode, which repairs may it be postponing?",
+  "use_cases": [
+    { "situation": "You have slept too little for weeks.", "move": "Remember that the body postpones repairs in an emergency and give sleep priority on two evenings.", "context": "self" },
+    { "situation": "The team has been in rush mode for months.", "move": "After this delivery, take no new work for a week.", "context": "meeting" },
+    { "situation": "A relative keeps getting ill during a busy stretch.", "move": "Clear one weekend of plans so the body can recover.", "context": "family" }
+  ],
+  "pocket_idea": "The stress alarm saves lives in a chase; an alarm you forget to switch off postpones repairs.",
+  "conversation_variants": {
+    "punchline_idea": "According to Sapolsky the harm comes from the stress alarm never switching off, not from it ringing.",
+    "thirty_sec_idea": "Sapolsky describes stress as resource management: in danger the body speeds the heart and suspends digestion, growth and repair, which is great for a chase and damaging when it lasts for weeks.",
+    "question_idea": "",
+    "key_contrast_idea": "Alarm ve onarım"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1409,
+ "verdict": "keep",
+ "verify_note": "Ruiz street scene and key quotes verified from direct quotations (PhilosophersNotes) plus LitCharts; the old \"you look terrible\" colleague scenario is not in the book and was dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Yabancı Sana Aptal Diyor",
+  "description": "Ruiz'e göre sizi tanımayan biri size aptal diyorsa bu onun kendi dünyasıyla ilgili. Kişisel almak zehri içeri alır.",
+  "hook": "Size takılan bir söz, onu söyleyen hakkında ne anlatıyor olabilir?",
+  "one_minute_summary": "Don Miguel Ruiz ikinci anlaşmayı bir sahneyle anlatıyor: sizi tanımayan biri sokakta size aptal diyor. Bu sizinle değil, onunla ilgili. Kişisel alırsanız bunu nereden bildiğini sorarsınız ve söyleneni kabul etmiş olursunuz. Ruiz'e göre başkalarının yaptığı hiçbir şey sizin yüzünüzden değil, herkes kendi kafasındaki filmde yaşıyor. Bunu alışkanlık edinirseniz öfke, kıskançlık ve üzüntü azalır. Anlaşmayı kâğıda yazıp buzdolabına yapıştırmanızı öneriyor. Bu ancak güçlü bir iradeyle yerleşiyor."
+ },
+ "en": {
+  "title": "A Stranger Calls You Stupid",
+  "description": "Ruiz says that if a stranger calls you stupid, it is about the stranger. Taking it personally lets the poison in.",
+  "hook": "What might a remark that stayed with you say about the person who made it?",
+  "one_minute_summary": "Don Miguel Ruiz explains the second agreement with a scene: someone who does not know you calls you stupid on the street. That is about the speaker, not you. If you take it personally you may wonder how he knows. Ruiz holds that nothing others do is because of you, since each person lives in a movie of their own beliefs. As a habit it dissolves anger, envy and sadness. He suggests posting the agreement on the refrigerator."
+ },
+ "es": {
+  "title": "Un desconocido te llama tonto",
+  "description": "Para Ruiz, si un desconocido te llama tonto, habla de sí mismo. Tomártelo personal deja entrar el veneno.",
+  "hook": "¿Qué podría decir de quien lo dijo un comentario que se te quedó grabado?",
+  "one_minute_summary": "Don Miguel Ruiz explica el segundo acuerdo con una escena: alguien que no te conoce te llama tonto por la calle. Eso habla de quien lo dice. Si te lo tomas personal, quizá te preguntes cómo lo sabe. Para Ruiz nada de lo que hacen los demás es por ti, porque cada uno vive en una película de sus propias creencias. Hecho hábito, disuelve rabia, envidia y tristeza. Aconseja pegar el acuerdo en la nevera."
+ },
+ "de": {
+  "title": "Ein Fremder nennt dich dumm",
+  "description": "Nach Ruiz sagt ein Fremder, der dich dumm nennt, etwas über sich selbst. Persönlich nehmen lässt das Gift herein.",
+  "hook": "Was könnte eine Bemerkung, die dir im Kopf blieb, über den aussagen, der sie machte?",
+  "one_minute_summary": "Don Miguel Ruiz erklärt das zweite Abkommen mit einer Szene: Jemand, der dich nicht kennt, nennt dich auf der Straße dumm. Das handelt vom Sprecher. Nimmst du es persönlich, fragst du dich womöglich, woher er das weiß. Für Ruiz geschieht nichts, was andere tun, wegen dir, denn jeder lebt in einem Film aus eigenen Überzeugungen. Als Gewohnheit löst das Wut, Neid und Traurigkeit auf. Er rät, das Abkommen an den Kühlschrank zu kleben."
+ }
+}

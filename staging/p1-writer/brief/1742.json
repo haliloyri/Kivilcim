@@ -1,0 +1,60 @@
+{
+ "story_id": 1742,
+ "kind": "concept",
+ "book": {
+  "title": "The Good Life",
+  "author": "Robert Waldinger and Marc Schulz",
+  "year": "2023"
+ },
+ "confidence": "low",
+ "confidence_note": "TITLE-CONTENT MISMATCH: the title says a phone call turned into a happiness study. No phone-call scene was found in any source, so the story does not use one. Supported: the Harvard Study of Adult Development began in the late 1930s (1938 or 1939 depending on source) and followed 724 men (268 Harvard sophomores and 456 Boston boys, from general knowledge of the study); Waldinger is its director and co-author with Marc Schulz; the book's finding is that the strength of our connections predicts the health of body and brain. 'Relationship satisfaction at 50 predicted health at 80 better than cholesterol' is from Waldinger's widely-seen talk and is not verified in the book, so it is used only with 'he has said'. Omitted: names of participants, dates of director changes. ADDED LATER: Added from general knowledge of the study (268 Harvard sophomores and 456 Boston boys; interviews, questionnaires and medical records; spouses and children later added; Waldinger the fourth director), not source-verified this session. Cholesterol finding is attributed to a talk, not the book.",
+ "facts": [
+  "The Harvard Study of Adult Development began in the late 1930s and has followed 724 men from two groups, Harvard sophomores and boys from inner-city Boston, through their lives.",
+  "Researchers asked about work, health, marriages and loneliness over decades.",
+  "Robert Waldinger now directs the study and wrote The Good Life with associate director Marc Schulz.",
+  "The book's main finding is that the strength of people's connections predicts the health of body and brain as they age.",
+  "Waldinger has said that satisfaction with relationships at age fifty predicted health at eighty better than cholesterol did.",
+  "The practical idea: relationships need maintenance, such as calling a friend or having a hard conversation instead of postponing it.",
+  "268 Harvard sophomores and 456 Boston boys made up the 724.",
+  "Researchers used interviews, questionnaires and medical records; spouses and children were added later; Waldinger is the fourth director."
+ ],
+ "scene_details": [
+  "724 men followed for decades",
+  "a call to an old friend",
+  "a hard conversation not postponed"
+ ],
+ "tension": "Decades of data about money, health and careers all pointed to the same quiet factor: other people.",
+ "opening_idea": "Open on 724 men and the question researchers asked them for decades.",
+ "lessons": [
+  {
+   "idea": "Relationships need maintenance like health does, and the investment is small: a call, a visit, an honest conversation.",
+   "anchor": "the study's finding that closeness predicted health"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Who is one person you have been meaning to call, and what is stopping you from calling them this week?",
+ "use_cases": [
+  {
+   "situation": "You think of an old friend while commuting.",
+   "move": "Send a two-line message right then asking how they are.",
+   "context": "social"
+  },
+  {
+   "situation": "A conflict at home has been avoided for weeks.",
+   "move": "Say 'I would like to talk about it; when is a good time?' and set it for the same day.",
+   "context": "family"
+  },
+  {
+   "situation": "A colleague seems isolated.",
+   "move": "Mention the Harvard study's finding that connection predicted health and invite them to lunch.",
+   "context": "meeting"
+  }
+ ],
+ "pocket_idea": "Seven hundred and twenty-four lives, one steady finding: the people around you matter more than the numbers you chase.",
+ "conversation_variants": {
+  "punchline_idea": "The Harvard study that followed 724 men found that closeness predicted health better than the numbers people chased.",
+  "thirty_sec_idea": "The Harvard Study of Adult Development has followed 724 men since the late 1930s. Robert Waldinger and Marc Schulz report that the strength of people's relationships predicts the health of body and brain as they age. Waldinger has said satisfaction with relationships at fifty predicted health at eighty better than cholesterol.",
+  "question_idea": "",
+  "key_contrast_idea": "people over numbers"
+ }
+}

@@ -1,0 +1,60 @@
+{
+  "story_id": 1450,
+  "kind": "concept",
+  "book": {
+    "title": "The Power of Your Subconscious Mind",
+    "author": "Joseph Murphy",
+    "year": "1963"
+  },
+  "confidence": "medium",
+  "confidence_note": "The two-level model of mind (conscious and subconscious), the list of body processes the subconscious runs, and the seed and soil image are central to the book. Excluded because not attributable: the quoted line about 'milliseconds', the immune-system mention, and the statements about modern neuroscience (neural pathways), which are not in a 1963 text. The model is Murphy's belief and is presented with religious language in the book; it is not established science and the writer must not present it as such. Added after checking a secondary chapter summary: the Caruso 'little me / big me' case is Murphy's own story; details come from the summary, not from the book page, so treat them as medium confidence and keep the telling short.",
+  "facts": [
+    "Murphy describes two levels of mind: the conscious mind that reasons and chooses, and the subconscious that works below awareness.",
+    "He points out that the heart beats, the lungs breathe and food is digested without anyone deciding or remembering to do those things.",
+    "He says the subconscious runs all of this and does not argue or judge; it accepts what is impressed on it.",
+    "His image: the subconscious is like soil, and thoughts are seeds. The soil returns whatever is planted, good or bad.",
+    "So he argues that thoughts held with conviction and repeated end up shaping a person's habits and circumstances.",
+    "The book is written as practical advice, with prayer-like techniques and Biblical quotations alongside the argument.",
+    "Murphy tells of the opera tenor Enrico Caruso, who suffered sweating and throat spasms from stage fright and told his 'little me' (the conscious mind) to stop interfering with his 'big me' (the subconscious).",
+    "Murphy was a minister; the book reads like a sermon with practical exercises."
+  ],
+  "scene_details": [
+    "a heart that beats while you read",
+    "sweating and throat spasms before singing",
+    "seeds put into soil"
+  ],
+  "tension": "Your body runs a hundred jobs without asking you. Murphy asks what else is running down there, and who put it there.",
+  "opening_idea": "Start with the heartbeat the reader is not thinking about and the other things the body does unprompted.",
+  "lessons": [
+    {
+      "idea": "Thoughts you return to again and again work like seeds: you plant them mostly by repetition, not by deciding.",
+      "anchor": "Murphy's image of the subconscious as soil that gives back whatever is planted."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which sentence do you say to yourself most often about your work or your abilities, and what would you rather have planted instead?",
+  "use_cases": [
+    {
+      "situation": "You catch yourself repeating 'I am bad at this' before a task.",
+      "move": "Murphy treats repeated thoughts as seeds. Stop and say the sentence you would rather plant, out loud, once.",
+      "context": "self"
+    },
+    {
+      "situation": "A teammate keeps predicting that the project will fail.",
+      "move": "Ask: what are we repeating to ourselves about this project, and is it the thing we want to grow?",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your child says 'I can't do maths'.",
+      "move": "Ask them to try a different sentence, such as 'I haven't got this yet', and see how they feel saying it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Murphy compares the subconscious to soil that grows whatever is planted: watch which sentence you keep repeating.",
+  "conversation_variants": {
+    "punchline_idea": "Your heart is beating right now and you are not thinking about it, and Murphy says that is the same place your repeated thoughts end up.",
+    "thirty_sec_idea": "Murphy starts with the body: the heart, the breath, the digestion all run without orders. He says the subconscious mind does this work, and that it also accepts whatever you press into it, like soil taking seed. So thoughts you repeat with conviction, good or bad, end up shaping what you do. It is his belief, not lab science.",
+    "question_idea": "Which thought do you keep planting?",
+    "key_contrast_idea": "Seeds in the soil"
+  }
+}

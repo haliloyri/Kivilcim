@@ -1,0 +1,34 @@
+{
+  "story_id": 1574,
+  "kind": "concept",
+  "book": {"title": "Mistakes Were Made (But Not by Me)", "author": "Carol Tavris and Elliot Aronson", "year": "2007"},
+  "confidence": "medium",
+  "confidence_note": "Chapter 3 material (Wonderful O, Offer, housework, Feeney and Cassidy, Jones and Kohler) rests on detailed chapter notes plus corroboration for the Wonderful O anecdote and for Offer's finding; the 15 percent / nearly half split, the housework line and the Feeney/Cassidy and Jones/Kohler items come from the chapter notes only. The old text's study of students recalling high-school grades could not be tied to the book and was dropped. Offer's sample count (73 vs 67) and the gap (34 vs 35 years) differ by source, so neither is stated.",
+  "facts": [
+    "Tavris remembered her father reading her James Thurber's The Wonderful O; she found her first edition, dated 1957, a year after his death, and concluded someone else gave her the book and read it to her.",
+    "Daniel Offer: teenage boys interviewed on emotional topics (home life, sexuality, religion, parents, discipline), re-interviewed at 48 more than three decades later; asked to guess what they had said as teens, they did no better than chance.",
+    "Nearly half remembered believing high-school sex was acceptable; only 15 percent had held that view at fourteen.",
+    "In spousal surveys the housework shares each partner claims always add up to more than 100 percent.",
+    "Feeney and Cassidy: teens who felt close to a parent six weeks later remembered past quarrels as less intense than they reported at the time.",
+    "Jones and Kohler 1958, desegregation: each side remembered the plausible arguments for its own position and the weak ones for the other.",
+    "Book line: 'If mistakes were made, memory helps us remember that they were made by someone else.' Chapter title: 'Memory, the Self-Justifying Historian'."
+  ],
+  "scene_details": ["a first edition dated 1957", "housework percentages that sum past a hundred", "men of forty-eight guessing their teenage answers"],
+  "tension": "A vivid memory of being read to turned out to be impossible, and decades of data say this is ordinary.",
+  "opening_idea": "Open from the date in the first edition, the housework sums, or the 15 percent figure; each language its own.",
+  "lessons": [{"idea": "Check a vivid memory against a record before relying on it.", "anchor": "The printed date contradicted Tavris's sure memory of her father reading to her.", "everyday_example_idea": "Someone sure a sibling started an old argument looks for a message or photo from that week first."}],
+  "reflect": [],
+  "reflect_final": "Which certain memory of an old disagreement could you check against a message, a photo or another person's account?",
+  "use_cases": [
+    {"situation": "You recall a decision differently from a colleague.", "move": "Say memory edits things and check the notes first.", "context": "meeting"},
+    {"situation": "You and your partner each feel you do more at home.", "move": "Cite the survey fact that shares add up past a hundred, then list who did what this week.", "context": "family"},
+    {"situation": "An old conversation comes back up.", "move": "Say how you remember it, note it may differ from what happened, and ask how the other remembers it.", "context": "oneonone"}
+  ],
+  "pocket_idea": "A printing date overturned a vivid memory; check a record before insisting.",
+  "conversation_variants": {
+    "punchline_idea": "Tavris's first edition was printed a year after her father died.",
+    "thirty_sec_idea": "Wonderful O date, Offer's study at 48, housework over 100 percent.",
+    "question_idea": "",
+    "key_contrast_idea": "Vivid, but edited"
+  }
+}

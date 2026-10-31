@@ -1,0 +1,66 @@
+{
+  "story_id": 1534,
+  "kind": "anecdote",
+  "book": {
+    "title": "Black Box Thinking",
+    "author": "Matthew Syed",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read; built from what I know of Syed's aviation chapter plus the public NTSB record of United Airlines Flight 173 (Portland, December 1978). The reference text's Tenerife 1977 / 583 deaths and its claims about pilots being 'protected' and doctors being 'sued' could not be attributed to Syed and were NOT used. Number of deaths, passenger counts, exact minutes of circling and any quotes are omitted. The contrast with medicine is kept qualitative (Syed's thesis that medical errors are often not investigated or shared); no statistics. Added from the public NTSB record of Flight 173 (28 Dec 1978, DC-8, ten dead); not verified against Syed's own wording, so keep the writing to these points and attribute the account to Syed only lightly.",
+  "facts": [
+    "In December 1978 a United Airlines jet was approaching Portland, Oregon when the crew became worried about the landing gear.",
+    "The crew kept the plane circling while they dealt with the landing gear problem.",
+    "Their attention stayed on the gear while the fuel ran down.",
+    "The plane ran out of fuel and crashed short of the airport.",
+    "The flight recorders gave investigators the crew's words and the plane's data.",
+    "Investigators found the crew had lost track of time and fuel, and that other crew members had not pressed the captain strongly enough.",
+    "The findings were shared across the industry and changed training: crews learned to speak up and captains to listen.",
+    "Syed's point: aviation treats each accident as data for everyone; medicine often does not investigate or share its errors.",
+    "The flight was a United Airlines DC-8 on 28 December 1978; the landing gear did not give a clear safe signal after it was lowered, so the crew held a circling pattern near Portland.",
+    "The flight engineer had said the fuel was getting low, but the captain stayed on the landing gear problem.",
+    "The plane came down in a wooded suburb short of the airport; ten people died."
+  ],
+  "scene_details": [
+    "The plane circling above Portland",
+    "The landing gear problem holding the crew's attention",
+    "The recorders recovered after the crash",
+    "A landing gear indicator that gave no clear signal",
+    "A fuel gauge falling while the plane circled"
+  ],
+  "tension": "A crew with a working plane and a full set of instruments loses track of the one number that mattered, fuel.",
+  "opening_idea": "Start in the air: a jet circling Portland while its crew works on a landing gear problem.",
+  "lessons": [
+    {
+      "idea": "A mistake becomes useful only when it is recorded and shared; hidden, it teaches nobody.",
+      "anchor": "After the Portland crash, recorder data led to training changes shared across the industry.",
+      "everyday_example_idea": "A restaurant kitchen where a mislabelled allergy order is written in a shared log instead of quietly fixed, so every cook learns the check."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which mistake from the last month are you the only one who knows about, and who could learn something if you told them?",
+  "use_cases": [
+    {
+      "situation": "A launch slipped because of your error and nobody has asked.",
+      "move": "Syed's airlines turned every crash into shared training. Write three lines on what happened and send them to the team before the next launch.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your teenager hid a failed test.",
+      "move": "Start with: tell me what happened on the test, I only want to know where it broke.",
+      "context": "family"
+    },
+    {
+      "situation": "You are about to quietly patch a recurring slip.",
+      "move": "Before patching, write down what the slip was and what would have caught it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The recorders at Portland turned one crash into training for every crew; write your mistake down where others can read it.",
+  "conversation_variants": {
+    "punchline_idea": "In Portland the plane had working gear and no fuel: the crew was watching the wrong thing.",
+    "thirty_sec_idea": "In 1978 a United jet circled Portland while the crew worked on a landing gear problem. Fuel ran out and the plane came down short of the airport. The recorders told investigators why, and what they found changed crew training across the industry. Syed holds this up against medicine, where errors are less often examined.",
+    "question_idea": "",
+    "key_contrast_idea": "Hidden vs shared"
+  }
+}

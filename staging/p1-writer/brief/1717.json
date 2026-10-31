@@ -1,0 +1,62 @@
+{
+  "story_id": 1717,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Shallows",
+    "author": "Nicholas Carr",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Carr's personal opening (a heavy reader whose mind began to slip away after a few pages; the internet having trained him to scan, hop links and move to the next stimulus) is from the supplied text and the book's prologue as recalled. His 'scuba diver versus Jet Ski' self-description, his first blaming age, friends reporting the same, and McLuhan's 'the medium is the message' are recalled from the book, not verified online in this session. The Nietzsche typewriter anecdote (switched to a typewriter in 1882 because of illness; writing changed) is confirmed only at a headline level by a secondary source; the details of how his friend described the change are omitted. Omitted: any quoted line, dates beyond 1882, study figures.",
+  "facts": [
+    "Nicholas Carr was for years a heavy, immersed reader.",
+    "He noticed that after a few pages of a book or long article his mind drifted: he got restless, lost the thread and looked for something else to do.",
+    "The habit the internet had built was fast scanning, choosing links and moving to the next stimulus, and it made staying inside a long text harder.",
+    "He describes the change with an image: once a diver in a sea of words, now a person skimming along the surface on a Jet Ski.",
+    "He first suspected age, then recognised it as the way he now took in information (recalled).",
+    "He turned the question from 'what does the internet give us' to 'how does the tool we use rebuild the way we pay attention'.",
+    "He draws on Marshall McLuhan: media shape the way we think, not only what we read.",
+    "A precedent he describes: Friedrich Nietzsche began using a typewriter in 1882 when illness made writing by hand hard, and his writing changed (details omitted).",
+    "He writes of an uncomfortable sense that someone or something has been tinkering with his brain, remapping its circuits and reprogramming its memory; his mind is not going, he says, but it is changing (recalled, not verified).",
+    "The prologue draws on the scene of the computer HAL being disconnected in the film 2001 (recalled; line wording omitted)."
+  ],
+  "scene_details": [
+    "a page or two into a book, then the mind slipping",
+    "a sea of words versus a Jet Ski on the surface",
+    "a typewriter on Nietzsche's desk"
+  ],
+  "tension": "A man who read deeply for years found he could not stay inside a book for more than a few pages.",
+  "opening_idea": "Open on the third page: Carr reading, and his mind leaving the text.",
+  "lessons": [
+    {
+      "idea": "Notice which tools shape your attention and decide where a deep-reading stretch has to be protected from them.",
+      "anchor": "Carr's mind drifting after a few pages"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which tool in your daily routine is quietly teaching your attention to move faster, and when do you still read something all the way through?",
+  "use_cases": [
+    {
+      "situation": "You want to finish a long article.",
+      "move": "Open it with the phone in another room and read the first section only.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team scans emails and misses detail.",
+      "move": "Propose one document read in full before the meeting.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend says they can no longer finish books.",
+      "move": "Share Carr's Jet Ski image and ask what they read last in full.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Carr was a diver in a sea of words, then felt himself skimming the surface: the tool that speeds you up also changes how you read.",
+  "conversation_variants": {
+    "punchline_idea": "Carr used to dive in the sea of words and found himself skimming it like a Jet Ski.",
+    "thirty_sec_idea": "Nicholas Carr read deeply for years. Then, a few pages into a book, his mind began to slip away. He realised the internet had trained him to scan and jump to the next thing. He asked how the tools we use rebuild our attention, and The Shallows grew out of that question.",
+    "question_idea": "",
+    "key_contrast_idea": "dive or skim"
+  }
+}

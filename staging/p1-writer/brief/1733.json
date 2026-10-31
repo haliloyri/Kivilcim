@@ -1,0 +1,63 @@
+{
+  "story_id": 1733,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Success Principles",
+    "author": "Jack Canfield",
+    "year": "2004"
+  },
+  "confidence": "low",
+  "confidence_note": "TITLE-CONTENT MISMATCH: the title says 'five small asks' turned Chicken Soup into a phenomenon. No source in this session confirms five asks. Supported by secondary sources: Canfield and Mark Victor Hansen were rejected by 144 publishers over about 18 months (also reported as 'more than 130'); publishers said people did not read collections of short stories and thought the title silly; a publisher finally agreed to read it; Canfield's 'Rule of 5' is a daily habit of five specific actions toward a goal, and sources say it was used to promote the book, for instance five interviews a day. Whether The Success Principles itself tells this exact story, and the sales and timeline figures (1.3 million, a bestseller list in about a year), conflict across sources and are omitted. The book contains an 'ask' principle but a specific 'five asks' scene was not found. The story therefore uses the 144 rejections and the Rule of 5 only, hedged to 'as Canfield tells it'. Added hedged: the 130 vs 144 discrepancy, 22 New York publishers then 'over 120' more, and the asking advice tied to Stone.",
+  "facts": [
+    "Jack Canfield and Mark Victor Hansen created Chicken Soup for the Soul, a collection of short inspiring stories.",
+    "They were turned down by 144 publishers over about a year and a half.",
+    "Publishers told them that people did not read collections of short stories and thought the title was silly.",
+    "Eventually one publisher agreed to read it.",
+    "Canfield calls one of his principles the Rule of 5: do five specific things every day that move you toward a goal.",
+    "Sources describe the pair using this rule to promote the book, for example with a set number of interviews a day.",
+    "The Success Principles sets out 64 principles (Publishers Weekly); the Rule of 5 is one of them.",
+    "Canfield's pitch for the Rule of 5 is that small specific actions repeated daily add up (as he presents it; not a promise of results).",
+    "Sources differ on the count: one reports more than 130 publishers, others 144; 144 is used with 'according to sources'.",
+    "One account has the pair first pitching 22 New York publishers and then going to well over a hundred more (VOA 2008 interview, secondary).",
+    "Canfield links the habit of asking to his mentor W. Clement Stone and advises asking with certainty, boldness and confidence once you know what you want (secondary, Canfield article)."
+  ],
+  "scene_details": [
+    "a stack of rejection responses",
+    "the title, Chicken Soup for the Soul, that publishers found silly",
+    "five specific actions every day"
+  ],
+  "tension": "A book that 144 publishers turned down became a series, and the way was a small daily count.",
+  "opening_idea": "Open on the number: 144 publishers said no to Chicken Soup for the Soul.",
+  "lessons": [
+    {
+      "idea": "A daily count of a few concrete actions keeps you moving when each single answer is no.",
+      "anchor": "the 144 rejections and the Rule of 5"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What are the five concrete actions you could count tomorrow toward the one thing you want most, even if every answer is no?",
+  "use_cases": [
+    {
+      "situation": "You are looking for a job.",
+      "move": "Choose five specific actions for tomorrow, like two applications and three messages, and count them at night.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is discouraged after a few rejections.",
+      "move": "Say Chicken Soup was refused 144 times and ask what five small actions they could do tomorrow.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team is pitching a new idea.",
+      "move": "Agree on a daily count of actions and review the count, not the replies, on Friday.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "One hundred and forty-four publishers said no; Canfield's answer was a daily count of five actions, not a bigger hope.",
+  "conversation_variants": {
+    "punchline_idea": "Chicken Soup for the Soul was turned down by 144 publishers before one agreed to read it.",
+    "thirty_sec_idea": "Jack Canfield and Mark Victor Hansen put together stories and were turned down by 144 publishers, who thought people did not read story collections and the title was silly. One finally agreed to read it. Canfield describes a daily habit he calls the Rule of 5: do five specific actions toward the goal every day, and count them.",
+    "question_idea": "",
+    "key_contrast_idea": "count actions, not replies"
+  }
+}

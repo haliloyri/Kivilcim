@@ -1,0 +1,35 @@
+{
+ "story_id": 1543,
+ "verdict": "keep",
+ "verify_note": "Figures corrected to the published hotel study behind chapter 2 (35.1 to 44.1, 37.2 to 42.8 to 49.3). Old Arizona setting, '33 percent' claim and loose message wordings removed; mixed replications noted.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Aynı odada kalanlar",
+  "description": "Bir otelde havlu mesajları denendi. Aynı rakam farklı gruplara bağlanınca yeniden kullanım yüzde 37,2'den 49,3'e çıktı.",
+  "hook": "Birine çoğu insanın ne yaptığını söylerken, ona en yakın hangi grubu örnek gösterebilirsin?",
+  "one_minute_summary": "Evet Dedirtmek'in ikinci bölümü bir otel çalışmasına dayanıyor. Standart çevre mesajıyla havlu yeniden kullanımı yüzde 37,2'de kaldı. Aynı yüzde 75 rakamını farklı gruplara bağlayan mesajlar toplamda yüzde 42,8'e çıktı. Aynı odada kalanların yaptığını söyleyen mesaj ise yüzde 49,3'e ulaştı. Havlu ve rakam aynıydı, değişen grup. Bazı tekrarlarda etki bu kadar belirgin çıkmadı. Ders: başkalarının ne yaptığını söylerken dinleyene en yakın grubu an."
+ },
+ "en": {
+  "title": "Guests of this room",
+  "description": "A hotel tested towel messages. The same figure tied to different groups lifted reuse from 37.2 to 49.3 percent.",
+  "hook": "When you say what most people do, which group closest to your listener could you name?",
+  "one_minute_summary": "Chapter two of Yes! draws on a hotel study. A standard environmental message got 37.2 percent towel reuse. Messages attaching the same 75 percent figure to different groups reached 42.8 percent combined. The one naming guests of the same room reached 49.3. The towel and the figure were identical, only the group changed. Some replications found a weaker effect. The lesson: when you say what others do, name the group closest to your listener."
+ },
+ "es": {
+  "title": "Huéspedes de esta habitación",
+  "description": "Un hotel probó mensajes sobre toallas. La misma cifra atada a grupos distintos subió la reutilización del 37,2 al 49,3 por ciento.",
+  "hook": "Cuando dices lo que hace la mayoría, ¿qué grupo cercano a quien escucha podrías nombrar?",
+  "one_minute_summary": "El capítulo dos de Yes! se apoya en un estudio hotelero. Un mensaje ambiental estándar logró un 37,2 por ciento de toallas reutilizadas. Los mensajes que ataban la misma cifra del 75 por ciento a grupos distintos llegaron juntos al 42,8. El que nombraba a los huéspedes de la misma habitación llegó al 49,3. La toalla y la cifra eran las mismas, solo cambió el grupo. Algunas réplicas hallaron un efecto menor. La lección: nombra al grupo más cercano a quien escucha."
+ },
+ "de": {
+  "title": "Gäste dieses Zimmers",
+  "description": "Ein Hotel testete Handtuchbotschaften. Dieselbe Zahl an verschiedene Gruppen gehängt hob die Wiederverwendung von 37,2 auf 49,3 Prozent.",
+  "hook": "Wenn du sagst, was die meisten tun, welche Gruppe in der Nähe deines Gegenübers könntest du nennen?",
+  "one_minute_summary": "Kapitel zwei von Yes! stützt sich auf eine Hotelstudie. Eine Standard-Umweltbotschaft erreichte 37,2 Prozent Handtuch-Wiederverwendung. Botschaften, die dieselben 75 Prozent an verschiedene Gruppen hängten, kamen zusammen auf 42,8. Die mit den Gästen desselben Zimmers erreichte 49,3. Handtuch und Zahl waren gleich, nur die Gruppe änderte sich. Manche Wiederholungen fanden einen schwächeren Effekt. Die Lehre: Nenne die Gruppe, die deinem Gegenüber am nächsten ist."
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1797,
+  "kind": "anecdote",
+  "book": { "title": "Delivering Happiness", "author": "Tony Hsieh", "year": "2010" },
+  "confidence": "medium",
+  "confidence_note": "The Offer is described in the book: every new hire goes through a several-week training that includes time on the phones, and during it is offered money to quit. Hsieh writes that the amount started small and was raised over time, reaching $2,000 at the time of writing; the starting amount is left out. No take-up percentage is used. The supplied text's 'please do not take it' line is not presented as a quote.",
+  "facts": [
+    "Every new Zappos hire, whatever the role, went through a training of several weeks that included answering customer calls.",
+    "During that training each new hire was offered money to quit on the spot.",
+    "The amount was raised over time and stood at $2,000 when Hsieh wrote the book.",
+    "The point was to find out early who wanted the job and the culture, and who was there only for the paycheck.",
+    "Hsieh's reasoning: someone who stays only for pay costs more over time than the offer does.",
+    "Most new hires did not take the money.",
+    "Turning it down made staying a choice the employee had made."
+  ],
+  "tension": "A company spends weeks training people, then pays them to leave.",
+  "opening_idea": "Start in the middle of the training, when the new hire is told they can walk out with $2,000.",
+  "lessons": [
+    { "idea": "Commitment becomes real when leaving is easy and people stay anyway.", "anchor": "The Offer made in the middle of Zappos training." }
+  ],
+  "reflect": [],
+  "reflect_final": "What are you still doing mainly because leaving looks costly, and what would you choose if it were easy?",
+  "use_cases": [
+    { "situation": "A team is discussing why some new hires disengage after a few months.", "move": "Bring up Zappos paying people to quit during training, then ask how you could find out earlier who truly wants the role.", "context": "meeting" },
+    { "situation": "A new team member seems unsure about the job.", "move": "Tell them it is fine to say early if this is not the right fit.", "context": "oneonone" },
+    { "situation": "You stay in a commitment out of habit.", "move": "Ask yourself whether you would sign up again today, and write the answer down.", "context": "self" }
+  ],
+  "pocket_idea": "Zappos paid new hires to quit; when walking away is easy, the ones who stay have chosen to.",
+  "conversation_variants": {
+    "punchline_idea": "Zappos offered new hires $2,000 to quit in the middle of their training.",
+    "thirty_sec_idea": "Every Zappos hire spent weeks in training, including on the phones, and was offered money to quit, $2,000 when Hsieh wrote the book. Most stayed, and staying became their own choice.",
+    "question_idea": "",
+    "key_contrast_idea": "Kalmayı seçmek"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1563,
+ "verdict": "keep",
+ "verify_note": "Title origin corrected: the phrase is from the 1964 film (Cacoyannis), not Kazantzakis's novel. Old 'pain inevitable, suffering optional' and 'fighting pain enlarges it' claims removed; how Kabat-Zinn reads the phrase is from Wikipedia's paraphrase.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Zorba'nın tam felaketi",
+  "description": "Girit'e giden teknede Zorba evliliğini 'tam felaket' diye anlatır. Kabat-Zinn bu sözü kitabına başlık yaptı.",
+  "hook": "Hayatının hangi kısmı hem zor hem canlı bir tam felaket sayılır?",
+  "one_minute_summary": "Full Catastrophe Living'in başlığı 1964 tarihli Zorba filminden geliyor. Girit'e giden teknede Zorba, evli olup olmadığı sorulunca karısını, çocuklarını, evini sayıp tam felaket diyor. Söz Kazancakis'in romanında geçmiyor, yönetmen Cacoyannis kasıtlı seçmiş. Kabat-Zinn'in editörü başlıktan çekinmişti ama ifade aklından çıkmadı. Kabat-Zinn onu hayatın karmaşasını kucaklayan bir sözcük olarak yeniden tanımlıyor. Ağrı bölümünde baş ağrısını yalnızca baş ağrısı olarak görmeyi öneriyor."
+ },
+ "en": {
+  "title": "Zorba's full catastrophe",
+  "description": "On a boat to Crete, Zorba calls his married life the full catastrophe. Kabat-Zinn made that phrase the title of his book.",
+  "hook": "Which part of your life would you call a full catastrophe, hard and alive at once?",
+  "one_minute_summary": "The title Full Catastrophe Living comes from the 1964 film Zorba the Greek. On a boat to Crete, asked whether he is married, Zorba lists wife, children, house, everything, and calls it the full catastrophe. The phrase is not in Kazantzakis's novel, and the director chose it on purpose. Kabat-Zinn's editor feared the word, but it kept coming back to him. He redefines it as an affirmation of life's chaos, to be embraced. In the pain chapters he suggests seeing a headache as just a headache."
+ },
+ "es": {
+  "title": "La catástrofe completa de Zorba",
+  "description": "En un barco rumbo a Creta, Zorba llama a su vida de casado la catástrofe completa. Kabat-Zinn la convirtió en el título de su libro.",
+  "hook": "¿Qué parte de tu vida llamarías una catástrofe completa, dura y viva a la vez?",
+  "one_minute_summary": "El título Full Catastrophe Living viene de la película Zorba el griego, de 1964. En un barco rumbo a Creta, preguntado si está casado, Zorba enumera mujer, hijos, casa, todo, y lo llama la catástrofe completa. La frase no está en la novela de Kazantzakis y el director la eligió a propósito. El editor de Kabat-Zinn temió la palabra, pero a él le seguía volviendo. La redefine como afirmación del caos de la vida, para abrazarlo. En los capítulos sobre el dolor propone ver un dolor de cabeza solo como eso."
+ },
+ "de": {
+  "title": "Zorbas ganze Katastrophe",
+  "description": "Auf einem Schiff nach Kreta nennt Zorba sein Eheleben die ganze Katastrophe. Kabat-Zinn machte den Ausdruck zum Buchtitel.",
+  "hook": "Welchen Teil deines Lebens würdest du eine ganze Katastrophe nennen, schwer und lebendig zugleich?",
+  "one_minute_summary": "Der Titel Full Catastrophe Living stammt aus dem Film Alexis Sorbas von 1964. Auf einem Schiff nach Kreta zählt Zorba auf die Frage, ob er verheiratet ist, Frau, Kinder, Haus, alles auf und nennt es die ganze Katastrophe. Im Roman von Kazantzakis steht der Satz nicht, der Regisseur wählte ihn bewusst. Kabat-Zinns Lektor fürchtete das Wort, doch es kam ihm immer wieder. Er deutet es als Bejahung des Chaos des Lebens. In den Schmerzkapiteln rät er, Kopfschmerz als bloßen Kopfschmerz zu sehen."
+ }
+}

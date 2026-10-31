@@ -1,0 +1,32 @@
+{
+  "story_id": 1448,
+  "kind": "concept",
+  "book": {"title": "On the Shortness of Life", "author": "Seneca", "year": "49"},
+  "confidence": "high",
+  "confidence_note": "Checked against the Williams translation and Stewart wording. Dropped from the old text: 'a good death is the reward of a good life', the claim that Seneca does not see retirement as a goal (he urges Paulinus to retire), and the invented daily practice. The 'live immediately' line (9.2) and the Stewart-style wording of 9.1 are medium confidence because translations vary.",
+  "facts": [
+    "Augustus (4.2-4.5): never ceased to pray for rest and release from the affairs of state; in a letter he spoke of his deep desire for that time, long prayed for; he had shed blood by land and sea and plots formed in the city itself.",
+    "3.4-3.5: readers live as if they will live forever; the plan 'After my fiftieth year I'll retire to a life of leisure; my sixtieth year will bring release from all my duties'; answer: 'How late it is to begin living just when life must come to an end!'",
+    "5.2-5.3: Cicero wrote 'I'm lingering in my Tusculan estate, half-free'; the wise man will never be half-free but enjoy complete, unalloyed liberty.",
+    "9.1-9.2: 'The greatest impediment to living is expectancy, which relies on tomorrow and wastes today'; you arrange what is in Fortune's control and abandon what is in yours; the whole future lies in uncertainty, live immediately.",
+    "18-20: 'my dearest Paulinus' manages the revenues of the world and the public grain supply; Seneca urges him to withdraw to a more peaceful haven and calmer, safer, more important pursuits; such offices are bought at the cost of life; it is harder to obtain retirement from oneself than from the law; such men's funerals should be by torchlight and wax tapers, as if they had lived briefly."
+  ],
+  "scene_details": ["a letter in which the emperor writes of his long prayer for rest", "the sentence 'After my fiftieth year I'll retire'", "a funeral by torches and wax tapers", "the public grain supply"],
+  "tension": "The most powerful man in Rome and ordinary planners are all waiting for a later that may not come.",
+  "opening_idea": "Open on the plan sentence, Augustus's letter, the expectancy line or Paulinus's grain office; each language its own.",
+  "lessons": [{"idea": "Give one postponed thing a place in this week.", "anchor": "Seneca names expectancy, relying on tomorrow, as the greatest impediment to living.", "everyday_example_idea": "A baker who keeps promising her aunt a visit after the busy season writes it into the next free Sunday."}],
+  "reflect": [],
+  "reflect_final": "Which thing are you saving for after a busy stretch that you could begin in a small way this week?",
+  "use_cases": [
+    {"situation": "The team keeps saying 'after the launch'.", "move": "Cite the 'after my fiftieth year' plan and ask what can start small now.", "context": "meeting"},
+    {"situation": "You keep saying you will visit when things calm down.", "move": "Pick a specific weekend and accept a short visit.", "context": "family"},
+    {"situation": "You are postponing something you care about.", "move": "Put it in the next free calendar slot, small.", "context": "self"}
+  ],
+  "pocket_idea": "Seneca named expectancy, living on tomorrow, the greatest impediment to living; move one 'later' into this week.",
+  "conversation_variants": {
+    "punchline_idea": "'After my fiftieth year I'll retire': how late to begin living just when life must end.",
+    "thirty_sec_idea": "Augustus praying for rest, ordinary retirement plans, Seneca's reply, Paulinus urged to withdraw.",
+    "question_idea": "",
+    "key_contrast_idea": "Someday or today"
+  }
+}

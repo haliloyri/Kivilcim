@@ -1,0 +1,60 @@
+{
+  "story_id": 1290,
+  "kind": "concept",
+  "book": {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not online. A chapter summary (Atlanta Track Club) places the Cookie Jar in chapters 5-8 and describes: his mother kept a cookie jar stocked despite financial struggles, getting a cookie brought joy and gratitude; as an adult he built a mental version filled with past victories. In the 24-hour race (entered with no training, needing 100 miles to qualify), by mile 70 he was off pace, had fractured both feet, was severely dehydrated and showed signs of kidney failure; he recalled BUD/S and Hell Week (bacterial pneumonia, two fractured shins, 130 hours of training on under four hours of sleep a night) and writes 'My adrenaline took over' (cited p. 167), his pace picking up. Graham Mann's notes: journal your wins and obstacles overcome and, when pain hits, 'dunk your fist in, pull out a cookie'. Contents also named elsewhere: studying up to a reading level, passing the Air Force exam, 106 lb in three months. The reference TR text (bathroom mirror scene, 'hesap defteri') mixes up the Accountability Mirror (Post-it notes) and was NOT used. Pages are as cited by the summary, unverified.",
+  "facts": [
+    "Goggins's mother kept a cookie jar stocked even when money was short; getting a cookie brought him joy and gratitude.",
+    "As an adult he built a mental cookie jar filled with past victories: every obstacle overcome, small victory and set of odds beaten counts as a cookie. He recommends writing them down.",
+    "Cookies he names include studying until his reading level was good enough, passing the Air Force entry exam, and losing 106 pounds in three months to become eligible for SEAL training.",
+    "In a 24-hour race he entered with no training, needing 100 miles to qualify for later races, he was off pace by mile 70, with both feet fractured, severely dehydrated and showing signs of kidney failure.",
+    "To keep going he recalled BUD/S, especially Hell Week, where he had continued through bacterial pneumonia and two fractured shins, and where training ran 130 hours on under four hours of sleep a night.",
+    "He writes that remembering this brought his adrenaline up ('my adrenaline took over') and his pace picked up."
+  ],
+  "scene_details": [
+    "His mother's stocked cookie jar",
+    "Both feet fractured at mile 70",
+    "Hell Week: pneumonia, two fractured shins, 130 hours on under four hours of sleep a night per night",
+    "'My adrenaline took over'"
+  ],
+  "tension": "When the mind argues for quitting, what does Goggins hold up against it, and where did the idea come from?",
+  "opening_idea": "Start with the jar in his mother's kitchen, kept full when money was short.",
+  "lessons": [
+    {
+      "idea": "Keep a written record of things you actually got through, so that on a bad day you argue from evidence rather than from mood.",
+      "anchor": "Goggins turns past victories (reading level, Air Force exam, 106 pounds) into a list he reaches into when he wants to quit.",
+      "everyday_example_idea": "A nurse before a night shift she dreads reads the short list she keeps of hard shifts she handled."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which three things you got through in the past two years would belong in your own jar, and where could you write them down?",
+  "use_cases": [
+    {
+      "situation": "You doubt yourself before a presentation.",
+      "move": "Goggins keeps a jar of things he has already got through. Read your list of past talks or hard days for two minutes before you go in.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague is rattled after criticism.",
+      "move": "Ask them to name two hard situations they handled earlier this year, and write them down together.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A child wants to give up on a school task.",
+      "move": "Remind them of a thing they once thought they could not do, and that they did, and write it on a slip for a jar.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "At mile 70 on broken feet Goggins did not argue with his mood, he pulled Hell Week out of his jar: write down what you got through so you can read it when you want to quit.",
+  "conversation_variants": {
+    "punchline_idea": "Goggins's answer to wanting to quit was a jar of things he had already done.",
+    "thirty_sec_idea": "Goggins's mother kept the cookie jar full even when money was short. Years later he made his own: a list of what he had got through, such as passing the Air Force exam and losing 106 pounds in three months. Dehydrated in an ultra race and wanting to stop, he reached into it, remembered, and started running again.",
+    "question_idea": "",
+    "key_contrast_idea": "Mood, not evidence"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "story_id": 1694,
+  "kind": "anecdote",
+  "book": {
+    "title": "Seabiscuit",
+    "author": "Laura Hillenbrand",
+    "year": "2001"
+  },
+  "confidence": "medium",
+  "confidence_note": "Core facts verified against secondary sources (purchase for $8,000, trainer Tom Smith, 1 November 1938 match race at Pimlico, bell start negotiated because War Admiral was weak at starting gates and Smith retrained Seabiscuit to the bell, Seabiscuit lunged ahead at once). Omitted because not confirmed: the reference TR text's '17 straight losses', the winning margin, radio audience figure, Smith's private reasoning. Pollard's one-eyed blindness and Woolf taking the ride in the match race are recalled from the book and general record. Written without page-level check. Margin (four lengths), 1-to-4 odds, bell start and Pollard's plan for Woolf verified in secondary sources (PBS, Sunday Times, Baltimore Magazine, America's Best Racing). Reason for the bell start is disputed between sources and left out of all texts; the Man o' War lineage is recalled from the book and general record.",
+  "facts": [
+    "Seabiscuit was a small horse with knobby knees who liked to sleep and eat; in his early racing years under trainer Sunny Jim Fitzsimmons he mostly lost.",
+    "Charles Howard, who had moved from repairing bicycles to selling cars, bought him for $8,000 and gave him to the little-known, quiet trainer Tom Smith.",
+    "Jockey Red Pollard, who was blind in one eye, rode him.",
+    "Seabiscuit began to win. In 1938 the contest the public wanted was against War Admiral, the Triple Crown winner of 1937 and the favourite.",
+    "The match race was held at Pimlico on 1 November 1938 over about 1 3/16 miles.",
+    "Tom Smith retrained Seabiscuit to break at the bell. Pollard was injured, so George Woolf rode him.",
+    "When the bell rang, Seabiscuit lunged ahead of War Admiral immediately and won; the country followed it on the radio during the Depression.",
+    "War Admiral was the favourite at odds of 1 to 4.",
+    "Pollard had a broken leg; he told Woolf to take the lead fast, then hold Seabiscuit in check and let War Admiral catch up. The two ran level before Seabiscuit pulled clear in the stretch and won by four lengths.",
+    "Seabiscuit's side accepted a walk-up start only if it began with a bell instead of a starter's flag; sources disagree on why (War Admiral's behaviour at the gate), so the reason is left out. Seabiscuit and War Admiral were respectively a grandson and a son of Man o' War."
+  ],
+  "scene_details": [
+    "A bell instead of a starter's flag for the start.",
+    "Smith teaching the horse to leave at the sound of the bell.",
+    "A knobby-kneed horse that liked to sleep and eat."
+  ],
+  "tension": "A small horse that kept losing was matched against the champion, and the one rule his side demanded was how the race would start.",
+  "opening_idea": "Open on the bell: Smith taught the horse to leave at its sound because that was how the match race against the champion would start.",
+  "lessons": [
+    {
+      "idea": "Ask for the conditions in which your strength shows; the other side may accept them.",
+      "anchor": "Seabiscuit's side insisted on a bell start and Smith trained him for it"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which working arrangement on your next task would show your strengths best, and how would you put the request to the person who sets the terms?",
+  "use_cases": [
+    {
+      "situation": "A big deadline a month away overwhelms the team.",
+      "move": "Link to the bell start: propose splitting delivery into fortnightly drops because the team works better in short rounds.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is about to accept a job on terms that do not suit how they work.",
+      "move": "Ask under which conditions they do their best work and encourage them to ask for exactly that.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You always dread a certain kind of task.",
+      "move": "Choose the hour or setting where you start best and ask for that slot this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Seabiscuit's side asked for a bell start: know where you are strong and ask for that condition.",
+  "conversation_variants": {
+    "punchline_idea": "A horse that mostly lost beat the champion after his trainer taught him to leave at the sound of a bell.",
+    "thirty_sec_idea": "Howard bought him for $8,000, Smith trained him, the match race with War Admiral was set for a bell start, Seabiscuit lunged ahead and won.",
+    "question_idea": "",
+    "key_contrast_idea": "change the start, not the horse"
+  }
+}

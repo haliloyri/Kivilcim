@@ -1,0 +1,60 @@
+{
+  "story_id": 1744,
+  "kind": "anecdote",
+  "book": {
+    "title": "Collapse",
+    "author": "Jared Diamond",
+    "year": "2005"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Diamond's Collapse; no page-level check. Tikopia details (pigs eliminated, birth control, intensive orchard gardens, island very small) are the book's account of a community that sustained itself; Easter Island is the book's contrasting case. Omitted on purpose: exact population figures, the date of the pig order, island area beyond 'a few square kilometres', Diamond's discussion of why Tikopia decisions were possible (small, face-to-face society), and any dating of settlement. Reference TR text says ~5 km2; kept as 'under five square kilometres'. Story text also says the Tikopians 'saw the problem in time' and that the island is under five km2; both are Diamond's framing, recalled not page-checked.",
+  "facts": [
+    "Tikopia is a tiny Polynesian island in the Pacific; Diamond presents it as a society that survived for a very long time on a very small area.",
+    "The Tikopians gave up pigs: the animals damaged gardens and competed for food, so the islanders decided to kill all of them.",
+    "They also limited their own numbers on purpose, using methods the book describes, because the island could not feed unlimited people.",
+    "Land was run as an intensive, carefully tended garden of tree crops; the island was close to one big orchard.",
+    "Easter Island is the contrast: its people cut down the forest, partly to move and raise statues; soil eroded, canoes could no longer be built, food sources shrank with the trees.",
+    "Diamond uses the pair to ask why one society saw a resource problem coming and acted while another did not.",
+    "Easter Island: Diamond reads the statues as part of a competition between rival groups (his interpretation).",
+    "Tikopia killed its pigs and kept its numbers down, so the island stayed a dense garden of tree crops."
+  ],
+  "scene_details": [
+    "the pigs killed off on a small island",
+    "the island run as one garden of tree crops",
+    "statues on Easter Island raised with timber"
+  ],
+  "tension": "Both islands faced the same limit. One community gave up something it valued before the limit arrived, the other kept cutting.",
+  "opening_idea": "Open on Tikopia's pigs: a whole island decides to kill every one of them.",
+  "lessons": [
+    {
+      "idea": "Give up something valued early, while it is still your choice.",
+      "anchor": "Tikopians killed all their pigs; Easter Islanders kept felling trees"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which comfortable habit or commitment of yours is using up something you will need later, and what could you cut back first?",
+  "use_cases": [
+    {
+      "situation": "A team keeps taking on projects that drain one scarce resource, like one person's evenings.",
+      "move": "Mention how Tikopia gave up its pigs early, then propose naming the one thing the team stops doing this quarter.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your partner and you keep spending on something that is eating the savings.",
+      "move": "Say the island kept its garden by killing the pigs, then suggest choosing together one item to drop before you are forced to.",
+      "context": "family"
+    },
+    {
+      "situation": "You keep a commitment only because you have already put years into it.",
+      "move": "Write down what it costs each month and decide this week whether to reduce it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Tikopia killed its own pigs to keep its garden: give up the thing that eats your base before it runs out.",
+  "conversation_variants": {
+    "punchline_idea": "A tiny island killed every one of its pigs on purpose, and outlasted a bigger island that kept cutting trees.",
+    "thirty_sec_idea": "Diamond compares two Pacific islands. On Easter Island people cut the forest down, partly for statues, and the soil washed away and canoes could no longer be built. On tiny Tikopia, islanders killed all their pigs, which were wrecking the gardens, and limited their own numbers. Same kind of limit, different choice: one society gave up something it valued early.",
+    "question_idea": "",
+    "key_contrast_idea": "early sacrifice, late collapse"
+  }
+}

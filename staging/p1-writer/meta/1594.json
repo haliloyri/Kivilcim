@@ -1,0 +1,35 @@
+{
+  "story_id": 1594,
+  "verdict": "fixed",
+  "verify_note": "Gluten sensitivity beyond the gut and without celiac, inflammation mechanism, and gluten-elimination approach are in the book (Weston A. Price review, growthsummary, CBS interview, Bookey summary). The claim that blood tests can miss the sensitivity could not be tied to any source, so it was removed from the 4 story md files and the 4 variants files. Tr/es story got one general-reasoning paragraph on changing one thing at a time (labelled as not from the book) to keep length. Opening patient scene is generic framing.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Gluten ve beyin",
+    "description": "Nörolog David Perlmutter, glüten duyarlılığının çölyak olmayanlarda da sinir sistemine yansıyabileceğini savunuyor. Önerdiği yöntem, glüteni bir süre bırakıp notlar tutmak.",
+    "hook": "Bir yiyeceğin sizi etkilediğinden şüpheleniyorsanız bunu nasıl sınardınız?",
+    "one_minute_summary": "Nörolog David Perlmutter, Grain Brain kitabında glüten duyarlılığının yalnızca bağırsakta kalmayabileceğini, çölyak olmayanlarda da sinir sisteminde görülebileceğini savunuyor. Önerdiği mekanizma iltihap. Yöntemi sade: glüteni belirli bir süre bırakmak, baş ağrısı, ruh hâli, enerji ve odaklanmadaki değişimi not etmek. Çölyağın sinir sistemini etkilemesi tıpta kabul görüyor. Çölyak olmayanlarda beyin sorunlarına yol açtığı iddiası ise tartışmalı ve Perlmutter'in kendi görüşü. Köklü bir diyet değişikliğinden önce doktora danışmak mantıklı."
+  },
+  "en": {
+    "title": "Gluten and the brain",
+    "description": "Neurologist David Perlmutter argues that gluten sensitivity can reach the nervous system even without coeliac disease. His suggested test is to remove gluten for a set period and take notes.",
+    "hook": "If you suspected a food was affecting you, how would you test it?",
+    "one_minute_summary": "Neurologist David Perlmutter argues in Grain Brain that gluten sensitivity does not have to stay in the gut. It can show up in the nervous system, he says, even in people without coeliac disease, with inflammation as the mechanism. His method is plain: take gluten out for a set period, watch headaches, mood, energy and focus, and write it down. Coeliac disease affecting the nervous system is accepted in medicine. The claim for people without it is debated and is Perlmutter's own view, so talk to a doctor before a big diet change."
+  },
+  "es": {
+    "title": "El gluten y el cerebro",
+    "description": "El neurólogo David Perlmutter sostiene que la sensibilidad al gluten puede llegar al sistema nervioso incluso sin celiaquía. Propone retirarlo un periodo definido y anotar los cambios.",
+    "hook": "Si sospecharas de un alimento, ¿cómo lo pondrías a prueba?",
+    "one_minute_summary": "El método de David Perlmutter en Grain Brain es sencillo: retirar el gluten durante un periodo definido y observar si cambian los dolores de cabeza, el ánimo, la energía o la concentración, anotándolo. Como neurólogo, sostiene que la sensibilidad al gluten puede aparecer en el sistema nervioso incluso sin celiaquía, y propone la inflamación como vía. Que la celiaquía afecta al sistema nervioso se acepta en medicina. Que el gluten perjudique al cerebro sin celiaquía es debatido y es opinión de Perlmutter. Conviene consultar a un médico antes de cambiar mucho la dieta."
+  },
+  "de": {
+    "title": "Gluten und das Gehirn",
+    "description": "Der Neurologe David Perlmutter behauptet, dass Glutenempfindlichkeit auch ohne Zöliakie das Nervensystem erreichen kann. Er schlägt vor, Gluten für einen festen Zeitraum wegzulassen und Notizen zu machen.",
+    "hook": "Wie würdest du prüfen, ob dir ein bestimmtes Lebensmittel zusetzt?",
+    "one_minute_summary": "Der Neurologe David Perlmutter argumentiert in Grain Brain, dass eine Glutenempfindlichkeit nicht im Darm bleiben muss. Sie kann sich im Nervensystem zeigen, auch bei Menschen ohne Zöliakie, als Mechanismus nennt er Entzündung. Sein Vorschlag: Gluten für einen festgelegten Zeitraum weglassen und Kopfschmerzen, Stimmung, Energie und Konzentration notieren. Dass Zöliakie das Nervensystem beeinträchtigen kann, gilt als gesichert. Dass Gluten ohne Zöliakie dem Gehirn schadet, ist umstritten und Perlmutters eigene Sicht. Vor einer starken Ernährungsumstellung besprich es mit einem Arzt."
+  }
+}

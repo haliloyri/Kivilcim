@@ -1,0 +1,63 @@
+{
+  "story_id": 1715,
+  "kind": "anecdote",
+  "book": {
+    "title": "Indistractable",
+    "author": "Nir Eyal",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Opening anecdote (summer afternoon with his daughter, an activity book, the superpower question, the phone, looking up to find her gone) is confirmed by several secondary sources that differ in small details; the daughter's age and the exact words are omitted, and one blog's 'twenty minutes of scrolling' version is rejected as not matching his own telling. 'Time management is pain management' and the internal-trigger thesis are recalled from the book, not verified online. The claim that the four-part system was built after that afternoon is an inference and is stated loosely in the text.",
+  "facts": [
+    "Nir Eyal had written about how technology hooks people, and was known as an expert on the subject.",
+    "One summer afternoon he was playing with his young daughter and working through a book of activities.",
+    "One activity asked what superpower each of them would want.",
+    "While she thought about her answer, he looked at his phone.",
+    "When he looked up she was no longer in the room.",
+    "He has said his phone told her it mattered more than she did, and that his superpower choice today would be being indistractable.",
+    "The book argues that the roots of distraction are internal triggers: an urge to escape uncomfortable feelings such as boredom, loneliness or anxiety.",
+    "So the first step is to understand the discomfort, not to blame the phone.",
+    "Eyal compresses this to the idea that time management is pain management.",
+    "Eyal calls the opposite of distraction 'traction': actions that pull you toward what you want; both words share a Latin root meaning to pull (recalled, not verified online).",
+    "His framework has four parts: master internal triggers, make time for traction, hack back external triggers, prevent distraction with pacts (recalled, not verified online)."
+  ],
+  "scene_details": [
+    "a book of activities opened on a summer afternoon",
+    "the superpower question",
+    "a phone glanced at, then an empty room"
+  ],
+  "tension": "An expert on attention loses his own daughter's attention in one glance at his phone.",
+  "opening_idea": "Open on the question about superpowers and what Eyal did while his daughter thought about hers.",
+  "lessons": [
+    {
+      "idea": "Ask what discomfort you are trying to escape when you reach for the phone.",
+      "anchor": "Eyal's glance at the phone during his daughter's answer"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Next time you reach for your phone in the middle of something, what uncomfortable feeling do you think you are trying to step away from?",
+  "use_cases": [
+    {
+      "situation": "You reach for your phone while a child is talking.",
+      "move": "Pause and name the feeling for a few seconds before deciding.",
+      "context": "family"
+    },
+    {
+      "situation": "A long meeting makes you want to check messages.",
+      "move": "Notice whether it is boredom or anxiety first.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You open an app out of habit.",
+      "move": "Ask: what am I trying to avoid right now?",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Eyal looked up and his daughter had left: the phone is rarely the cause, the urge to escape a feeling is.",
+  "conversation_variants": {
+    "punchline_idea": "Nir Eyal studied distraction, then glanced at his phone during his daughter's answer and found her gone.",
+    "thirty_sec_idea": "Nir Eyal was asking his young daughter what superpower she would choose. While she thought, he checked his phone. When he looked up, she had left. That moment pushed him to ask why we escape into screens at all, and his answer in Indistractable is discomfort, not weak willpower.",
+    "question_idea": "",
+    "key_contrast_idea": "escape or stay"
+  }
+}

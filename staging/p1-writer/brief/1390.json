@@ -1,0 +1,32 @@
+{
+  "story_id": 1390,
+  "kind": "concept",
+  "book": {"title": "Goals!", "author": "Brian Tracy", "year": "2003"},
+  "confidence": "low",
+  "confidence_note": "The book could not be read directly. Tracy's retelling of the Harvard study rests on a review of Goals! (numbers) and Shortform's summary (Harvard framing, tenfold figure). The study itself has no known record, so the story tells it as Tracy's claim with that caveat, then gives the real Matthews study (Dominican University, via secondary reports of its press release and summary). The reticular activating system explanation, the six-P framework and the 'guaranteed success' and elephant passages could not be tied to Goals! and were dropped. It is assumed, not confirmed, that the Turkish title refers to Goals!.",
+  "facts": [
+    "Goals! (Berrett-Koehler, 2003) by Brian Tracy.",
+    "As retold in a review of the book: Harvard Business School graduates were asked whether they had set clear, written goals and made plans; 3% had written goals, 13% unwritten goals, 84% none; ten years later the 13% earned about twice the 84%, and the 3% about ten times the other 97% combined. Shortform confirms the Harvard framing and the tenfold figure.",
+    "No record of the study has been found: the Yale 1953 version was traced by journalists and a Yale library page is reported to say it did not happen; a Harvard version left no trace; Shortform notes the same gap; Tracy is named among those who spread it.",
+    "Gail Matthews, Dominican University: 267 recruited, 149 finished; five groups; group 1 only thought about goals; group 5 wrote goals, committed to actions, shared with a friend and sent weekly progress reports. Of those sending weekly updates, over 70% reported successful progress (including more than halfway) against 35% of those who kept goals to themselves unwritten. Self-reported.",
+    "Tracy calls writing goals down transformative and wants specific, measurable goals."
+  ],
+  "scene_details": ["a survey question about clear written goals", "a Yale library page saying no study took place", "weekly progress reports sent to a friend", "five groups, 149 finishers"],
+  "tension": "A famous statistic about written goals cannot be found, while a smaller real study points somewhere more specific.",
+  "opening_idea": "Open on the three percentages, the missing paperwork, or Matthews's group counts; each language its own.",
+  "lessons": [{"idea": "Pair a written goal with someone who asks about it.", "anchor": "Matthews's top group wrote goals, committed to actions and sent a friend weekly updates.", "everyday_example_idea": "A student writes the thesis-chapter goal on a card and texts a classmate every Friday."}],
+  "reflect": [],
+  "reflect_final": "Who could you send a short weekly update about one goal you have so far kept only in your head?",
+  "use_cases": [
+    {"situation": "A colleague quotes the famous written-goals statistic.", "move": "Say nobody has found that study, cite the real one with weekly updates, and propose writing goals and sending a Friday line.", "context": "meeting"},
+    {"situation": "You want help sticking to a goal.", "move": "Ask a friend if you can send them one line every Friday.", "context": "oneonone"},
+    {"situation": "A goal has only lived in your head.", "move": "Put it on a card with the name of the person who gets the first update.", "context": "self"}
+  ],
+  "pocket_idea": "The famous goals study was never found; a real one linked weekly updates to a friend with more progress.",
+  "conversation_variants": {
+    "punchline_idea": "The famous written-goals study was never found, but a real one tied weekly updates to a friend to more progress.",
+    "thirty_sec_idea": "Tracy's retold Harvard figures, the missing record, Matthews's five groups.",
+    "question_idea": "",
+    "key_contrast_idea": "Famous claim, real study"
+  }
+}

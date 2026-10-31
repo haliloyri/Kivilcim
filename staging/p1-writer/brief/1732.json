@@ -1,0 +1,66 @@
+{
+  "story_id": 1732,
+  "kind": "anecdote",
+  "book": {
+    "title": "Black Box Thinking",
+    "author": "Matthew Syed",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "The accident facts (United Airlines Flight 173, 28 December 1978, a DC-8 that ran out of fuel near Portland while the crew worked on a landing gear problem; the first officer and flight engineer tried to alert the captain but deferred to him; the NTSB cited the captain's failure to monitor fuel and the others' failure to communicate effectively; this led to crew resource management training, with United launching a comprehensive CRM program in 1981 and a 1979 NASA workshop) are well supported by Wikipedia, AirlineGeeks and an Offbeat Oregon page. Whether Syed uses exactly this case and how he words it was not checked in the book text; it is the standard example of the shift his book describes (learning from failure in aviation). Ten people died (recalled, consistent with sources). Omitted: crew names and ages, exact minutes of the holding pattern, cockpit recording quotes, passenger numbers. Added from general/secondary knowledge: gear indicator did not confirm locked gear; 189 aboard, 10 dead; CRM now standard training. The point about independent investigation and shared findings is the book's overall argument as recalled, not tied to this crash by a verified passage.",
+  "facts": [
+    "On 28 December 1978 United Airlines Flight 173, a DC-8, was heading for Portland, Oregon when the crew had a landing gear problem.",
+    "The crew held in the air to deal with the landing gear.",
+    "While they did, the plane ran out of fuel and crashed in a suburban neighbourhood near Portland; ten people died.",
+    "The first officer and the flight engineer had tried to alert the captain to the fuel situation, but deferred to him and did not press the point.",
+    "The investigators concluded that the captain failed to monitor the fuel and that the others failed to communicate their concern effectively.",
+    "The crash led to crew resource management: training that teaches crews to speak up, and captains to listen.",
+    "United Airlines began a comprehensive program in 1981, and NASA held a workshop on resource management on the flight deck in 1979.",
+    "The cockpit voice recorder, the black box, captured what the crew said, and investigators used it to see that the warning had been tried but not pressed.",
+    "The investigating body was the US National Transportation Safety Board (NTSB).",
+    "Syed uses aviation as his main example of an industry that studies its failures and changes practice; this crash is the standard example of that shift (his exact wording not verified).",
+    "The landing gear problem: the indicator that should show the gear locked did not confirm it (recalled from the NTSB report, kept general).",
+    "There were 189 people aboard; ten died and the rest survived (recalled, consistent with Wikipedia).",
+    "CRM later became a standard part of airline crew training (general knowledge).",
+    "Syed's central contrast is that aviation investigates every accident independently and shares the findings across the industry, which is why the black box gives the book its title (recalled from the book's argument)."
+  ],
+  "scene_details": [
+    "a landing gear problem and a plane circling",
+    "the flight engineer's words that did not land",
+    "fuel gauges running down while everyone looks at the gear"
+  ],
+  "tension": "The crew knew about the fuel and still did not make the captain hear it.",
+  "opening_idea": "Open on the plane holding over Portland while attention is on a landing gear problem and the fuel gauge runs down.",
+  "lessons": [
+    {
+      "idea": "A concern has to be said in words the other person cannot take as a hint; make it normal for the junior person to speak plainly, and the senior one to listen.",
+      "anchor": "the flight engineer and first officer deferring to the captain on Flight 173"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When did you last see a problem and only hint at it to someone senior, and what would the plain version have been?",
+  "use_cases": [
+    {
+      "situation": "You see a risk in a plan your boss likes.",
+      "move": "Say the risk in one plain sentence, naming the number or fact, not a hint.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A senior colleague is focused on a side problem.",
+      "move": "Ask them to pause and say what you are worried about, like fuel on a gauge.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are the one with authority.",
+      "move": "Ask the quietest person for one thing they noticed and write it down.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "On Flight 173 the warning was hinted, not said: a concern only counts when it is plainly stated and plainly heard.",
+  "conversation_variants": {
+    "punchline_idea": "On United 173 the crew knew the fuel was low, but deferred to the captain, and crew resource management was born.",
+    "thirty_sec_idea": "In 1978 a United DC-8 circled near Portland with a landing gear problem. The first officer and the flight engineer tried to flag the fuel but deferred to the captain, and the plane ran out of fuel and crashed. Investigators blamed missed monitoring and unclear communication. Airlines then taught crews to speak up and captains to listen.",
+    "question_idea": "",
+    "key_contrast_idea": "hint to plain words"
+  }
+}

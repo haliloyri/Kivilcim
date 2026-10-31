@@ -1,0 +1,147 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #f7f3ec;
+      overflow: hidden;
+    }
+    #s1-glow {
+      position: absolute;
+      left: -120px;
+      top: 1260px;
+      width: 1320px;
+      height: 1320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(233, 169, 75, 0.55) 0%, rgba(233, 169, 75, 0.18) 40%, rgba(233, 169, 75, 0) 66%);
+    }
+    .ph {
+      position: absolute;
+      left: 90px;
+      right: 90px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #24211e;
+    }
+    .ph .ln {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 14px;
+    }
+    .ph .w {
+      display: inline-block;
+    }
+    .ph .acc {
+      color: #1f5f5b;
+    }
+    #s1-p1 {
+      top: 330px;
+      font-size: 128px;
+      line-height: 1.1;
+    }
+    #s1-logo {
+      position: absolute;
+      left: 390px;
+      top: 330px;
+      width: 300px;
+      height: 300px;
+    }
+    #s1-p2 {
+      top: 700px;
+      left: 40px;
+      right: 40px;
+      text-align: center;
+      font-size: 100px;
+      line-height: 1.1;
+    }
+    #s1-p2b {
+      top: 1000px;
+      left: 40px;
+      right: 40px;
+      text-align: center;
+      font-size: 92px;
+      line-height: 1.12;
+    }
+    #s1-p3 {
+      top: 380px;
+      font-size: 150px;
+      line-height: 1.08;
+    }
+    #s1-p4 {
+      top: 380px;
+      font-size: 140px;
+      line-height: 1.1;
+    }
+  </style>
+  <div id="root" data-composition-id="s1" data-width="1080" data-height="1920">
+    <div id="s1-glow" data-layout-ignore></div>
+
+    <div class="ph" id="s1-p1">
+      <span class="ln"><span class="w" id="s1-q1">Okuduğun fikir</span></span>
+      <span class="ln"><span class="w" id="s1-q2">hayatında neyi</span></span>
+      <span class="ln"><span class="w acc" id="s1-q3">değiştirir?</span></span>
+    </div>
+
+    <img id="s1-logo" src="assets/logo.png" alt="Albor" />
+    <div class="ph" id="s1-p2">
+      <span class="ln"><span class="w" id="s1-b1">Her gün kitaptan</span></span>
+      <span class="ln"><span class="w" id="s1-b2">bir fikir getirir.</span></span>
+    </div>
+    <div class="ph" id="s1-p2b">
+      <span class="ln"><span class="w acc" id="s1-b3">Sonunda bu soruyu</span></span>
+      <span class="ln"><span class="w acc" id="s1-b4">sorar.</span></span>
+    </div>
+
+    <div class="ph" id="s1-p3">
+      <span class="ln"><span class="w" id="s1-c1">Cevabı kitapta</span></span>
+      <span class="ln"><span class="w" id="s1-c2">bulamazsın,</span></span>
+      <span class="ln"><span class="w acc" id="s1-c3">sende.</span></span>
+    </div>
+
+    <div class="ph" id="s1-p4">
+      <span class="ln"><span class="w" id="s1-d1">Oku,</span></span>
+      <span class="ln"><span class="w" id="s1-d2">düşün,</span></span>
+      <span class="ln"><span class="w acc" id="s1-d3">hayatına kat.</span></span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const rise = (id, t, d = 0.5) =>
+      tl.fromTo(id, { yPercent: 105, opacity: 0 }, { yPercent: 0, opacity: 1, duration: d, ease: "power3.out" }, t);
+
+    // phase 1: "Okuduğun fikir hayatında neyi değiştirir?" (voice 0.3 - 3.1)
+    tl.set("#s1-q1", { yPercent: 0, opacity: 1 }, 0); // frame 0 already shows the hook
+    rise("#s1-q2", 1.1);
+    rise("#s1-q3", 2.0, 0.6);
+    tl.fromTo("#s1-glow", { yPercent: 14, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, 0.8);
+    tl.to("#s1-p1", { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.2);
+
+    // phase 2: "Albor her gün kitaptan bir fikir getirir. Sonunda bu soruyu sorar." (voice 3.5 - 8.1)
+    tl.set("#s1-p2, #s1-p2b, #s1-logo", { opacity: 0 }, 0);
+    tl.fromTo("#s1-logo", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.4)" }, 3.5);
+    tl.set("#s1-p2", { opacity: 1 }, 3.5);
+    rise("#s1-b1", 3.7);
+    rise("#s1-b2", 4.4);
+    tl.set("#s1-p2b", { opacity: 1 }, 6.0);
+    rise("#s1-b3", 6.1);
+    rise("#s1-b4", 6.6);
+    tl.to("#s1-p2, #s1-p2b, #s1-logo", { opacity: 0, duration: 0.3, ease: "power2.in" }, 8.2);
+
+    // phase 3: "Cevabı kitapta bulamazsın. Sende." (voice 8.5 - 11.3)
+    tl.set("#s1-p3", { opacity: 0 }, 0);
+    tl.set("#s1-p3", { opacity: 1 }, 8.5);
+    rise("#s1-c1", 8.6);
+    rise("#s1-c2", 9.3);
+    rise("#s1-c3", 10.2, 0.6);
+    tl.to("#s1-p3", { opacity: 0, duration: 0.3, ease: "power2.in" }, 11.4);
+
+    // phase 4: "Oku, düşün, hayatına kat." (voice 11.7 - 14.0)
+    tl.set("#s1-p4", { opacity: 0 }, 0);
+    tl.set("#s1-p4", { opacity: 1 }, 11.7);
+    rise("#s1-d1", 11.8);
+    rise("#s1-d2", 12.4);
+    rise("#s1-d3", 12.95);
+    window.__timelines["s1"] = tl;
+  </script>
+</template>

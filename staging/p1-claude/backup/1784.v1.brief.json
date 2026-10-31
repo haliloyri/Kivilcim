@@ -1,0 +1,35 @@
+{
+  "story_id": 1784,
+  "kind": "concept",
+  "book": { "title": "Being Mortal", "author": "Atul Gawande", "year": "2014" },
+  "confidence": "medium",
+  "confidence_note": "The early palliative care study in advanced lung cancer is described in the book; the sibling TR text's exact wording of the three 'simple questions' is a paraphrase, so the story uses the book's conversation themes (understanding of illness, fears, goals, trade-offs) without quotes. The exact survival gain is left as 'a few months'. The claim that medical school did not teach him how to talk about dying is the author's own and is kept as attributed.",
+  "facts": [
+    "Gawande is a surgeon; his medical training taught him little about dying.",
+    "Modern hospital care is organized around fighting the disease; what the patient values in the remaining time is often not asked.",
+    "He cites a study of advanced lung cancer patients, some of whom received early palliative care alongside standard treatment.",
+    "Those patients chose less aggressive care near the end, had better quality of life, and on average lived a few months longer.",
+    "The conversation covers the patient's understanding of the illness, fears, goals and what trade-offs they would accept.",
+    "Talking about the end does not shorten life; delaying it leaves decisions to be made in a rush.",
+    "The book's call: let the patient set the measure for the time that remains."
+  ],
+  "tension": "Choosing less aggressive treatment turned out to go with better quality of life and slightly longer survival.",
+  "opening_idea": "Open on a surgeon who was never taught what to ask a dying patient.",
+  "lessons": [
+    { "idea": "A good ending begins with knowing what the person cannot give up.", "anchor": "The palliative care conversation about fears, goals and trade-offs." }
+  ],
+  "reflect": [],
+  "reflect_final": "If your remaining time were shorter, which parts of your days would be non-negotiable, and do those close to you know?",
+  "use_cases": [
+    { "situation": "A relative's care is being discussed and everyone lists options.", "move": "Ask the person what a good day looks like and what they fear most, before looking at options.", "context": "family" },
+    { "situation": "A sick friend describes their treatment.", "move": "Ask what matters most to them in this process, as the doctors in Gawande's study did.", "context": "oneonone" },
+    { "situation": "You have never told anyone your wishes.", "move": "Tell someone close what a good day looks like for you.", "context": "self" }
+  ],
+  "pocket_idea": "Before the list of treatments, ask what a good day looks like for this person.",
+  "conversation_variants": {
+    "punchline_idea": "Gawande says to ask a seriously ill patient what a good day looks like before asking which treatment.",
+    "thirty_sec_idea": "In a lung cancer study cited by Gawande, patients who got early palliative care talked about fears and goals, chose less aggressive care, and lived slightly longer.",
+    "question_idea": "",
+    "key_contrast_idea": "Süre ve anlam"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1336,
+  "verdict": "keep",
+  "verify_note": "Verified against secondary sources: Actionable Books summary (limbic brain drives fight/flight/freeze, feet pointing toward exit, pacifying behaviors on face and neck), Calvin Rosser notes (limbic honest brain vs neocortex), Shortform and Armed Citizens Network review (feet/legs most honest), turtle effect (raised shoulders, lowered head) in several summaries. Central content is in the book. Caveats already in story.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Dürüst beyin ve ayaklar",
+    "description": "Eski FBI ajanı Joe Navarro, tehdide verilen ilk tepkinin limbik sistemden geldiğini ve ayaklarda göründüğünü savunuyor. Bunu bir kanıt değil, soru sormak için bir neden sayıyor.",
+    "hook": "Birinin bedeni sözlerinden farklı bir şey söylediğinde ne yaptınız?",
+    "one_minute_summary": "Joe Navarro yaklaşık yirmi beş yıl FBI'da karşı istihbarat ajanıydı. What Every BODY Is Saying kitabında sözleri yönetebildiğimizi ama tehdide verilen ilk tepkiyi yönetemediğimizi söylüyor. Bu tepki limbik sistemden geliyor: donmak, kaçmak, karşı koymak. Ayaklar kapıya dönebilir, omuzlar yükselir, el boyna gider. Navarro'ya göre ayaklar en dürüst yer, çünkü kimse onlara bakmıyor. Ama bu onun kendi çerçevesi, ölçülmüş bir bulgu değil; araştırmalar bu işaretlerin yalanı zor yakaladığını gösteriyor. Ayakların kapıya dönmesi kanıt sayılmaz, soru sormak için bir nedendir."
+  },
+  "en": {
+    "title": "The honest brain and the feet",
+    "description": "Ex-FBI agent Joe Navarro argues that the first reaction to a threat comes from the limbic system and shows in the feet. He treats it as a reason to ask, not as proof.",
+    "hook": "When did someone's body tell you something their words did not?",
+    "one_minute_summary": "Joe Navarro, a counterintelligence agent at the FBI for about twenty-five years, argues in What Every BODY Is Saying that you can manage your words but not your first reaction to a threat. It comes from the limbic system, his \"honest brain\": freeze, flight or fight. He calls the feet the most honest part of the body because nobody watches them. This is his own framework, and studies find such cues weak at detecting lies. Feet toward the door prove nothing, but they are a reason to ask."
+  },
+  "es": {
+    "title": "El cerebro honesto y los pies",
+    "description": "El exagente del FBI Joe Navarro sostiene que la primera reacción ante una amenaza nace del sistema límbico y se nota en los pies. Lo toma como motivo para preguntar, no como prueba.",
+    "hook": "¿Cuándo te dijo el cuerpo de alguien algo que sus palabras no decían?",
+    "one_minute_summary": "Joe Navarro trabajó unos veinticinco años como agente de contrainteligencia del FBI. En What Every BODY Is Saying sostiene que puedes controlar tus palabras, pero no tu primera reacción ante una amenaza. Nace del sistema límbico, el cerebro honesto: congelarse, huir o enfrentarse. Para él los pies son lo más honesto del cuerpo porque nadie los vigila. Es su marco propio, y los estudios encuentran estas señales poco útiles para detectar mentiras. Unos pies hacia la puerta no prueban nada, pero dan un motivo para preguntar."
+  },
+  "de": {
+    "title": "Das ehrliche Gehirn und die Füße",
+    "description": "Der ehemalige FBI-Agent Joe Navarro meint, die erste Reaktion auf eine Bedrohung komme aus dem limbischen System und zeige sich an den Füßen. Er sieht darin einen Anlass zum Nachfragen, keinen Beweis.",
+    "hook": "Wann hat dir der Körper eines Menschen etwas gesagt, das seine Worte nicht sagten?",
+    "one_minute_summary": "Joe Navarro arbeitete etwa fünfundzwanzig Jahre als Spionageabwehr-Agent beim FBI. In What Every BODY Is Saying schreibt er, dass du Worte steuern kannst, die erste Reaktion auf eine Bedrohung aber nicht. Sie kommt aus dem limbischen System, dem ehrlichen Gehirn: erstarren, fliehen, kämpfen. Für ihn sind die Füße der ehrlichste Teil des Körpers, weil niemand auf sie achtet. Das ist sein eigener Rahmen, und Studien sehen solche Signale als schwache Lügendetektoren. Füße zur Tür beweisen nichts, aber sie geben einen Anlass nachzufragen."
+  }
+}

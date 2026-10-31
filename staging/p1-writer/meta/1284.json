@@ -1,0 +1,26 @@
+{
+ "tr": {
+  "title": "Yabani İncirin Altında Kazmak",
+  "description": "Piramitlerin dibinde elinde kürekle boş kum kazan Santiago'ya, onu döven adamlar hazinenin gerçek yerini söylüyor.",
+  "hook": "Aradığın şey, yola çıktığın yerin yanında olsaydı, bunu yolculuk olmadan anlar mıydın?",
+  "one_minute_summary": "Santiago uzun bir yolculuktan sonra Mısır piramitlerine varır ve kumu kazmaya başlar, ama hiçbir şey çıkmaz. Altın arayan bir grup adam onu döver. Elebaşı, kendi rüyasında hazinenin İspanya'da terk edilmiş bir kilisede, bir yabani incirin yanında yattığını söyler ve bir rüya için çöl geçmeyeceğini ekler. Santiago koyunlarıyla uyuduğu kiliseye döner, ağacın altını kazar ve hazineyi bulur."
+ },
+ "en": {
+  "title": "Digging Under the Sycamore",
+  "description": "Santiago digs at the pyramids and finds nothing, until the men who beat him describe where the treasure really lies.",
+  "hook": "If what you were looking for lay near where you started, would you have seen it without the journey?",
+  "one_minute_summary": "After a long journey Santiago reaches the Egyptian pyramids and digs, but the sand gives him nothing. A band of men looking for gold beats him. Their leader says he has dreamed of a treasure in an abandoned church in Spain, beside a sycamore, and that he would never cross a desert for a dream. Santiago goes back to the church where he slept with his sheep, digs under the sycamore and finds the treasure."
+ },
+ "es": {
+  "title": "El tesoro estaba bajo el sicomoro",
+  "description": "Santiago cava en las pirámides y no encuentra nada, hasta que los hombres que lo golpean le describen dónde está de verdad el tesoro.",
+  "hook": "Si lo que buscabas estuviera cerca de donde empezaste, ¿lo habrías visto sin el viaje?",
+  "one_minute_summary": "Tras un largo viaje, Santiago llega a las pirámides de Egipto y cava, pero la arena no le da nada. Unos hombres que buscan oro lo golpean. Su jefe cuenta que ha soñado con un tesoro en una iglesia abandonada de España, junto a un sicomoro, y que nunca cruzaría un desierto por un sueño. Santiago vuelve a la iglesia donde durmió con sus ovejas, cava bajo el sicomoro y encuentra el tesoro."
+ },
+ "de": {
+  "title": "Der Schatz unter der Sykomore",
+  "description": "Santiago gräbt an den Pyramiden vergeblich, bis ihm die Männer, die ihn schlagen, verraten, wo der Schatz wirklich liegt.",
+  "hook": "Hättest du ohne die Reise erkannt, was du suchst, wenn es nah bei deinem Ausgangspunkt gelegen hätte?",
+  "one_minute_summary": "Nach einer langen Reise erreicht Santiago die ägyptischen Pyramiden und gräbt, doch der Sand gibt nichts her. Eine Gruppe von Männern, die Gold sucht, schlägt ihn. Ihr Anführer erzählt, er habe von einem Schatz in einer verlassenen Kirche in Spanien geträumt, neben einer Sykomore, würde aber für einen Traum nie eine Wüste durchqueren. Santiago kehrt zu der Kirche zurück, in der er mit seinen Schafen schlief, gräbt unter der Sykomore und findet den Schatz."
+ }
+}

@@ -1,0 +1,59 @@
+{
+  "story_id": 1410,
+  "kind": "concept",
+  "book": {
+    "title": "The Four Agreements",
+    "author": "Don Miguel Ruiz",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Mall-smile scene, partners who \"should know\", love-and-change point and the remedy are from LitCharts chapter summary and direct Ruiz quotations (PhilosophersNotes); not checked against the book text. Old text dropped: the migraine partner story and \"relationships are mostly built on assumptions\".",
+  "facts": [
+    "Ruiz: we make assumptions about everything and believe them true, could swear they are real.",
+    "Scene: you see someone you like at the mall; the person smiles; you assume they like you, picture a relationship, may fantasize about the wedding; we do this all the time; it gives too much power to an invented reality.",
+    "We expect partners to know what we think and want; assume friends and family know us so well we need not communicate; then resent them.",
+    "Early in a relationship we see what we like, overlook the rest, assume we can change it; real love is accepting someone as they are; if someone wants to change you, they do not really love you.",
+    "Chain: assume, take it personally, blame, send emotional poison with the word; misunderstand and create a big drama for nothing.",
+    "We also make assumptions about ourselves because we do not ask questions.",
+    "Remedy: ask questions, make sure communication is clear, have the courage to ask until as clear as you can be."
+  ],
+  "scene_details": [
+    "smile at the mall",
+    "wedding in your head"
+  ],
+  "tension": "A smile becomes a relationship in seconds, with no word exchanged.",
+  "opening_idea": "Open on the smile.",
+  "lessons": [
+    {
+      "idea": "Fill a gap with a question instead of a guess.",
+      "anchor": "The person smiling at the mall is someone you know nothing about.",
+      "everyday_example_idea": "A manager gets a one-word reply to her draft and asks which part worked."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which silence or short reply are you filling this week with a guess, when one question to the person would settle it?",
+  "use_cases": [
+    {
+      "situation": "A colleague says only \"fine\".",
+      "move": "Ask what they would change.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A partner is quiet at dinner.",
+      "move": "Ask if something is on their mind or they are tired.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend has not replied.",
+      "move": "Name the assumption and ask directly.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Turn a guess into one question.",
+  "conversation_variants": {
+    "punchline_idea": "In Ruiz's example, a smile at the mall is enough to build a whole relationship in your head.",
+    "thirty_sec_idea": "Ruiz describes a smile at the mall that you read as love, down to the wedding. Assumptions grow into misunderstanding and drama for nothing. His fix: ask until you are clear.",
+    "question_idea": "",
+    "key_contrast_idea": "Guess, then ask"
+  }
+}

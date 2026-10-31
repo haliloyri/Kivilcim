@@ -1,0 +1,61 @@
+{
+  "story_id": 1637,
+  "kind": "anecdote",
+  "book": {
+    "title": "In the Realm of Hungry Ghosts",
+    "author": "Gabor Maté",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "Chapter title confirmed in two tables of contents; the 95 percent remission figure is quoted by one chapter summary (p.142). Robins numbers and the 1971 sample come from outside sources (a 2017 review and Mad in America) and are marked as such in the story. Old text dropped: government \"panic\", the \"toxic society\" list, policy claims, a wrong reading of 95 percent as \"never became dependent\".",
+  "facts": [
+    "Chapter 12 is called \"From Vietnam to Rat Park: Do Drugs Cause Addiction?\". Maté's main example against the idea that a drug alone causes addiction is US soldiers who used heroin in Vietnam.",
+    "Cheap, potent heroin was widely available to American soldiers in Vietnam. The US government asked Lee Robins's research group to measure what returning addicts would cost the Veterans Administration. In September 1971 the group sampled about 470 returning soldiers.",
+    "A 2017 review of Robins's work: about a third of soldiers used heroin in Vietnam and about one in five showed signs of dependence.",
+    "Maté cites a remission rate of 95 percent after return, which he calls unheard of among narcotics addicts treated in the US. The figure applies to men who had been addicted.",
+    "Most who recovered did so without formal treatment.",
+    "Robins's team put it down to leaving the war and returning to a stable home, and said the effect of setting needed more study, including how long remission lasts.",
+    "A 1979 survey of veterans in heroin treatment found they had often started during service and usually named relief from fear and the tension of war.",
+    "At one year home, about 10% of the 1971 sample reported using an opiate and 7% of those reported readdiction."
+  ],
+  "scene_details": [
+    "Cheap heroin on sale near the bases (as the sources describe it: widely available)",
+    "The 1971 sample of about 470 returning men",
+    "Most recovering without treatment"
+  ],
+  "tension": "Heroin addiction that should have followed thousands of soldiers home mostly did not.",
+  "opening_idea": "Start with the government asking a research group to count what returning addicts would cost, or with the 95 percent figure.",
+  "lessons": [
+    {
+      "idea": "A habit that fits a hard place may loosen when the place changes, so look at the setting before judging the person.",
+      "anchor": "Men addicted in Vietnam mostly stopped after returning to a stable home, most without treatment.",
+      "everyday_example_idea": "A nurse who snaps at colleagues only during night shifts on an understaffed ward."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which habit or mood of yours shows up mainly in one setting, and what is that setting asking of you?",
+  "use_cases": [
+    {
+      "situation": "A colleague is called difficult in a team meeting.",
+      "move": "Mention that men addicted in Vietnam mostly stopped at home, and ask what is different about this team's setting.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend slides back into an old habit after a move.",
+      "move": "Ask what the new place is like at night before talking about willpower.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You notice a habit that only appears in one place.",
+      "move": "Write down where it happens and what you feel just before.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Soldiers addicted in Vietnam mostly stopped after going home: check what a setting asks of a habit.",
+  "conversation_variants": {
+    "punchline_idea": "Maté cites a 95 percent remission rate among soldiers who were addicted in Vietnam and came home.",
+    "thirty_sec_idea": "Robins's group tracked soldiers returning from Vietnam in 1971; many had been dependent on heroin; after coming home most quit, mostly without treatment; Maté reads setting as the key.",
+    "question_idea": "",
+    "key_contrast_idea": "War setting, home setting"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1637,
+  "verdict": "keep",
+  "verify_note": "Vietnam data only. 95 percent remission is Maté's figure for men who had been addicted (one chapter summary, p.142); Robins numbers from a 2017 review and Mad in America. Old claims of government panic, a toxic-society list and policy conclusions dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Vietnam'dan dönen askerler",
+    "description": "Vietnam'da eroin kullanan askerlerin çoğu eve dönünce bıraktı. Maté bunu, bağımlılığın yalnızca maddeye bağlı olmadığının kanıtı sayıyor.",
+    "hook": "Hangi alışkanlığınız yalnızca belli bir yerde ortaya çıkıyor?",
+    "one_minute_summary": "1971'de Amerikan hükûmeti, Lee Robins'in araştırma grubundan Vietnam'dan dönen askerlerin eroin bağımlılığını ölçmesini istedi. Askerlerin yaklaşık üçte biri Vietnam'da eroin kullanmış, beşte birinde bağımlılık belirtisi görülmüştü. Gabor Maté, bağımlı olmuş askerler arasında eve dönüşten sonra yüzde 95'lik bir iyileşme oranından söz ediyor. İyileşenlerin çoğu resmî tedavi görmedi. Robins'in ekibi bunu savaş ortamından çıkıp istikrarlı bir eve dönmekle açıkladı, ama ortamın etkisinin daha fazla incelenmesi gerektiğini de söyledi. Rakam yalnızca bağımlı olanlar için geçerli."
+  },
+  "en": {
+    "title": "Soldiers home from Vietnam",
+    "description": "Most soldiers who became dependent on heroin in Vietnam quit after coming home. Maté reads this as showing that setting shapes addiction, not just the drug.",
+    "hook": "Which habit of yours turns up mainly in one particular place?",
+    "one_minute_summary": "In 1971 the US government asked Lee Robins's research group to measure what returning heroin addicts from Vietnam would cost. About a third of soldiers had used heroin there and about one in five showed signs of dependence. Gabor Maté cites a remission rate of 95 percent among those who had been addicted once they were home, and most recovered without formal treatment. Robins's team pointed to leaving the war and returning to a stable home, and asked for more study of setting. The figure covers men who had been addicted, not all soldiers."
+  },
+  "es": {
+    "title": "Soldados de vuelta de Vietnam",
+    "description": "La mayoría de los soldados dependientes de la heroína en Vietnam lo dejó al volver. Maté lo toma como señal de que el entorno pesa en la adicción.",
+    "hook": "¿Qué hábito tuyo aparece sobre todo en un lugar concreto?",
+    "one_minute_summary": "En 1971 el Gobierno de Estados Unidos encargó al grupo de Lee Robins medir lo que costaría el regreso de los adictos a la heroína de Vietnam. Cerca de un tercio de los soldados la había consumido allí y uno de cada cinco mostró señales de dependencia. Gabor Maté cita una remisión del 95 % entre quienes habían sido adictos una vez en casa, y la mayoría se recuperó sin tratamiento formal. El equipo de Robins lo atribuyó a dejar la guerra y volver a un hogar estable, y pidió estudiar más el entorno. La cifra vale solo para quienes habían sido adictos."
+  },
+  "de": {
+    "title": "Heimkehrer aus Vietnam",
+    "description": "Die meisten Soldaten, die in Vietnam heroinabhängig wurden, hörten zu Hause auf. Maté sieht darin einen Hinweis, dass die Umgebung die Sucht mitprägt.",
+    "hook": "Welche deiner Gewohnheiten zeigt sich vor allem an einem bestimmten Ort?",
+    "one_minute_summary": "1971 ließ die US-Regierung die Gruppe um Lee Robins messen, was heimkehrende Heroinsüchtige aus Vietnam kosten würden. Etwa ein Drittel der Soldaten hatte dort Heroin genommen, etwa jeder Fünfte zeigte Anzeichen von Abhängigkeit. Gabor Maté nennt eine Remission von 95 Prozent unter denen, die süchtig gewesen waren und heimkehrten, die meisten erholten sich ohne formelle Behandlung. Robins' Team verwies auf das Ende des Krieges und ein stabiles Zuhause und bat um weitere Studien zur Umgebung. Die Zahl gilt nur für ehemals Süchtige, nicht für alle Soldaten."
+  }
+}

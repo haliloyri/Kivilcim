@@ -1,0 +1,69 @@
+{
+  "story_id": 1760,
+  "kind": "concept",
+  "book": {
+    "title": "The Hidden Life of Trees",
+    "author": "Peter Wohlleben",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Rebuilt 2026-10-30 to replace filler paragraphs (chemical signals, 'trees live like a family', 'the book's charm') with the stump scene itself. Sources (book text not read page by page): America magazine essay 2018/06/13 'Secret lives of trees, ourselves and our God' (mossy stones, ring about 5 feet across, bark under the moss, scraped with a pocket knife, green layer, at least 400-500 years since felling, interior rotted to humus, neighbours supply nutrients); Living on Earth (PRI) 2018 interview with Wohlleben (after about 400 years no sugar of its own should be left, so neighbours must be supplying it); gibsonmeigs.blogspot.com 2022/11 first lines of the book (patch of strange mossy stones, curved with hollowed areas, in a preserve of old beeches, walked past many times); Irish Times review (stump in the Eifel, chlorophyll, surrounding beeches pumping sugar, wood wide web); nybg.org (Wohlleben manages a beech forest in Huemmel); Goodreads highlights plus deutschland.de (a teaspoon of forest soil holds many miles/several kilometres of fungal threads). Caveat from outside research: Karst et al., Nature Ecology & Evolution 2023, argue that claims about carbon sharing through mycorrhizal networks are overstated; the story says later reviews dispute how far the sharing goes and that the stump's survival is described by Wohlleben as sugar from neighbours. NOT verified or omitted: the exact age (sources say 400, or 400-500 years); that the stump was too hard to lift (one source only); neighbours about 200 years old (one interview only); the exact diameter in metres; Wohlleben's wording; fungi involvement in this particular stump (the book's fungal network is general, not stated as proven for the stump); chemical-signal and acacia-giraffe material and the family comparison, removed on purpose. Added after extension: Harz Mountains study and root recognition (alexcriddle.com summary of the Friendships chapter plus a second search summary); street trees as singles, 200-year-old neighbours and 'really possible' offspring (Living on Earth interview, single source, Wohlleben's own words); fast rot of beech wood (America magazine essay only, single source). The 5 feet ring and 400-500 years rest on America magazine; 400 years on Living on Earth.",
+  "facts": [
+    "Wohlleben, a German forester who manages a beech forest, kept walking past a patch of strange mossy stones in a preserve of old beeches.",
+    "The stones were gently curved with hollowed areas. One day he stopped and bent down.",
+    "Under the moss one 'stone' was tree bark, old wood, not rock.",
+    "The stones formed a ring about five feet (about 1.5 metres) across: the remains of a huge ancient stump whose inside had long since rotted into humus.",
+    "He estimated the tree had been felled at least 400 to 500 years earlier.",
+    "He scraped the bark with a pocket knife and found a green layer. Green means chlorophyll, so the wood was still alive.",
+    "His reasoning: after that many years, a stump with no leaves has no sugar of its own left, so something must be feeding it.",
+    "He concludes that neighbouring trees supply it with sugar through their roots.",
+    "He describes fungal threads in the soil connecting trees; a teaspoon of forest soil holds many miles of such filaments.",
+    "He argues trees in a forest behave more like a community than like lone competitors.",
+    "Editorial caveat: later scientific reviews say some claims about this sharing are overstated; the stump being alive is his observation, the explanation is his reading.",
+    "Wohlleben manages a beech forest in Germany; the stones lay in a preserve of old beeches.",
+    "In a Living on Earth interview he put the neighbouring beeches at about 200 years old, said he cannot know for sure, and called it really possible that they are the stump's offspring.",
+    "In the Harz Mountains of Germany, scientists found that most trees of the same species in the same stand are linked through their roots; research he cites says trees can tell their own roots from those of other species and even related individuals.",
+    "On city streets, where roots are cut, the links break and trees stand as singles (Living on Earth interview).",
+    "Beech wood on damp forest ground normally rots within a few years (America magazine essay)."
+  ],
+  "scene_details": [
+    "mossy curved stones in a beech preserve, passed many times",
+    "a pocket knife scraping bark, a green layer beneath",
+    "a ring about 1.5 metres across with rotted wood inside",
+    "fungal threads in a teaspoon of soil"
+  ],
+  "tension": "Something with no leaves, felled centuries ago, is still green under its bark, and the question is what has been feeding it.",
+  "opening_idea": "Open on mossy stones the forester had passed many times, then the knife and the green.",
+  "lessons": [
+    {
+      "idea": "Look at what keeps you going that you do not see, and give some of it back.",
+      "anchor": "the stump fed by neighbours"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which people or groups keep you going, and when did you last give something back?",
+  "use_cases": [
+    {
+      "situation": "A teammate is struggling and others are watching.",
+      "move": "Mention the stump kept alive by its neighbours and ask who can share a small piece of the load.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You have not called an old friend in a while.",
+      "move": "Send a short message today.",
+      "context": "social"
+    },
+    {
+      "situation": "You try to manage everything alone.",
+      "move": "Name one person to ask for help this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A leafless stump stayed green for centuries, fed by neighbouring roots: name who keeps you going and give something back.",
+  "conversation_variants": {
+    "punchline_idea": "A forester scraped a mossy 'stone' with his knife and found a green layer: a stump alive for centuries.",
+    "thirty_sec_idea": "German forester Peter Wohlleben passed some mossy stones for years until he scraped one with his pocket knife and found green underneath. It was the ring of an ancient beech stump, felled centuries ago and still alive. With no leaves it had no sugar of its own, so he concluded neighbouring trees were feeding it through their roots. Later reviews say the sharing is overstated. The book is The Hidden Life of Trees.",
+    "question_idea": "",
+    "key_contrast_idea": "alone or linked"
+  }
+}

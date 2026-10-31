@@ -1,0 +1,41 @@
+{
+  "story_id": 1651,
+  "kind": "anecdote",
+  "book": { "title": "Finding Flow", "author": "Mihaly Csikszentmihalyi", "year": "1997" },
+  "confidence": "medium",
+  "confidence_note": "The old TR text's list (surgeon, musician, child, chess player) and 'not on vacation' claims are not verified for this book and are removed. Kept: Csikszentmihalyi's research with the experience sampling method (participants carry pagers that beep at random times; each time they fill in a form about what they are doing and how they feel; about seven or eight beeps a day for a week in typical studies, so numbers omitted). Finding Flow has a chapter on the paradox of work: flow was reported more at work than in free time, yet people said they wanted to be doing something else. Percentages (54 vs 18) differ between sources and are omitted. Challenge and skill channel: anxiety when challenge exceeds skill, boredom when skill exceeds challenge, flow when balanced. Details from secondary sources, not the text.",
+  "facts": [
+    "Csikszentmihalyi studied how people experience everyday life using the experience sampling method.",
+    "Participants carried pagers that beeped at random times of day.",
+    "Each time the pager beeped, they wrote down what they were doing and how they felt.",
+    "He found that people reported flow more often at work than in free time.",
+    "At work, people more often said they wished they were doing something else, which he called a paradox.",
+    "He explains flow as a balance between the challenge of a task and the skills of the person.",
+    "When challenge is much higher than skill, the result is anxiety; when skill is much higher than challenge, boredom.",
+    "Free time without structure left people without the means to organise their attention."
+  ],
+  "scene_details": [
+    "a pager beeping at a random moment",
+    "a form filled in each time: what are you doing, how do you feel",
+    "challenge and skill in balance"
+  ],
+  "tension": "People wished to be elsewhere while at work, yet reported their best experiences there.",
+  "opening_idea": "Open with the beeping pager, which interrupted people at random times, and the form they filled in.",
+  "lessons": [
+    { "idea": "How good a moment feels depends on the match between the task's difficulty and your skill, which you can adjust by making a task harder or breaking it into steps.", "anchor": "Flow reports came from work more often than free time; the balance between challenge and skill explains the pattern." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which task in your week feels either boring or overwhelming, and how could you make it slightly harder or slightly smaller to fit your skill?",
+  "use_cases": [
+    { "situation": "A team member is bored with routine work.", "move": "Ask them to set a harder goal on the same task, such as faster or with fewer mistakes.", "context": "oneonone" },
+    { "situation": "A big project feels overwhelming.", "move": "Csikszentmihalyi links anxiety to challenge exceeding skill; cut it into a step you can finish today.", "context": "self" },
+    { "situation": "A teenager says they have nothing to do on weekends.", "move": "Offer to pick one activity with a clear goal and rising difficulty, and try it together.", "context": "family" }
+  ],
+  "pocket_idea": "Csikszentmihalyi's pager study: people wished to be elsewhere while at work, yet reported flow more there than in free time.",
+  "conversation_variants": {
+    "punchline_idea": "Csikszentmihalyi beeped people at random times and found flow showed up more at work than in free time.",
+    "thirty_sec_idea": "Mihaly Csikszentmihalyi gave people pagers that beeped at random times; each time, they wrote down what they were doing and how they felt. People reported flow more often at work than in free time, yet said at work they wished to be elsewhere. His explanation is a balance between the challenge of a task and the skill of the person. Too much challenge brings anxiety; too little, boredom.",
+    "question_idea": "",
+    "key_contrast_idea": "Work, not rest"
+  }
+}

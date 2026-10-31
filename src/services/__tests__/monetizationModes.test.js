@@ -8,13 +8,16 @@ const EXTRA = {
   },
 };
 
-const load = ({ live, dev, extra = EXTRA, purchases }) => {
+// Ads are off in the EEA/UK and when the region is unknown (utils/adRegion.js),
+// so ad cases run from a region where ads are allowed unless told otherwise.
+const load = ({ live, dev, extra = EXTRA, purchases, regionCode = 'TR' }) => {
   let mods;
   jest.isolateModules(() => {
     global.__DEV__ = dev;
     jest.doMock('../../config/monetization', () => ({ MONETIZATION_LIVE: live }));
     jest.doMock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { extra }, executionEnvironment: 'bare' } }));
     jest.doMock('react-native', () => ({ Platform: { OS: 'ios', select: (o) => o.ios } }));
+    jest.doMock('expo-localization', () => ({ getLocales: () => [{ regionCode }] }));
     jest.doMock('react-native-purchases', () => ({ __esModule: true, default: purchases || {} }));
     jest.doMock('react-native-google-mobile-ads', () => ({
       __esModule: true,

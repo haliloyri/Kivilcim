@@ -1,0 +1,62 @@
+{
+  "story_id": 1729,
+  "kind": "anecdote",
+  "book": {
+    "title": "An Immense World",
+    "author": "Ed Yong",
+    "year": "2022"
+  },
+  "confidence": "medium",
+  "confidence_note": "Facts come from reports on Caitlin O'Connell-Rodwell's Etosha research (Stanford, Physics World, KQED, Kruger Park Times); whether Yong's chapter narrates each detail and in what words was not checked against the book text, so the story attributes the work to the researchers and to the book only in general. Supported: elephants may sense ground vibrations with receptors in feet and trunk (mechanism still debated; one proposal is bone conduction from toenails to the ear); a 1994 recording of a breeding herd's alarm calls when confronted by lions was converted by a device into soil vibrations, with microphones above ground confirming no airborne sound; elephants visiting a waterhole reacted as to the audible call; they were selective, reacting more to vibrations from nearby than from elsewhere, and ignored Kenyan vibrations played in Namibia; experiments suggested signals might reach elephants up to 2 km away. The 2 km is an estimate, kept hedged. Title says 'kilometres', which is in the book's spirit only through this estimate. Omitted: posture details, year of the playback, sample sizes. The rumbles-through-ground point is general science context from the researchers' publications, hedged in the text.",
+  "facts": [
+    "Elephants may feel ground vibrations through receptors in their feet and trunk; how this works is still debated, and one proposal is that vibrations travel from the toenails through bone to the ear.",
+    "In Etosha, in Namibia, a research team used a 1994 recording of a breeding herd's alarm calls when lions confronted it.",
+    "A device converted the recording into vibrations in the soil.",
+    "Microphones above the ground confirmed that no sound could be heard in the air.",
+    "Elephants visiting a waterhole reacted to the vibrations as they had reacted to the audible call.",
+    "They responded more to vibrations recorded nearby than to those from other areas.",
+    "Vibrations recorded in Kenya and played in Namibia were ignored.",
+    "The experiments suggest elephants could pick up seismic signals made by other elephants from as far as about two kilometres, an estimate rather than a measurement.",
+    "Elephants' low rumbles travel through the ground as well as through the air, which is why vibration could carry a message (general science, hedged).",
+    "To tell ground from air, the team needed a call that existed only in the soil: that is what the device and the microphones above the ground provided."
+  ],
+  "scene_details": [
+    "a waterhole with elephants visiting",
+    "a device that turns a recording into soil vibrations",
+    "microphones above the ground that hear nothing"
+  ],
+  "tension": "Elephants reacted to an alarm call that nobody and nothing in the air could hear.",
+  "opening_idea": "Open on the waterhole and the microphones above ground that picked up silence while the elephants responded to an alarm.",
+  "lessons": [
+    {
+      "idea": "What you cannot hear can still be a real signal; a creature's world is set by the channels it uses, so ask which channel a message travels in before you call it absent.",
+      "anchor": "microphones above ground hearing nothing while the elephants reacted"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In one recent disagreement, which kind of signal (tone, timing, silence) might the other person have been responding to that you were not listening for?",
+  "use_cases": [
+    {
+      "situation": "A colleague went quiet in a meeting.",
+      "move": "Say you noticed the silence and ask what they would say if there were no pressure, without presuming.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A teenager says everything is fine.",
+      "move": "Ask how the day felt in their body, tired or tight, not what happened.",
+      "context": "family"
+    },
+    {
+      "situation": "You think no one reacted to your message.",
+      "move": "Check whether they answered in another channel, call or in person, before assuming silence.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Microphones in the air heard nothing, yet the elephants answered: some messages travel through the ground.",
+  "conversation_variants": {
+    "punchline_idea": "Elephants responded to an alarm call played only through the soil, while microphones above ground heard nothing.",
+    "thirty_sec_idea": "In Etosha, researchers took a recording of a herd's alarm calls and turned it into vibrations in the ground. Microphones above the soil heard nothing, yet elephants at a waterhole reacted. They answered nearby recordings more than far ones, and experiments suggest elephants may feel each other from around two kilometres away.",
+    "question_idea": "",
+    "key_contrast_idea": "heard through ground"
+  }
+}

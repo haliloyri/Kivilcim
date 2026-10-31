@@ -1,0 +1,59 @@
+{
+  "story_id": 1691,
+  "kind": "concept",
+  "book": {
+    "title": "Emotional Intelligence 2.0",
+    "author": "Travis Bradberry and Jean Greaves",
+    "year": "2009"
+  },
+  "confidence": "low",
+  "confidence_note": "The old text's 'I-language', 'curiosity question' and 'strength then growth then support' feedback sequence could not be tied to the book and are dropped. Confirmed through summaries: three relationship-management strategies, namely taking feedback well, acknowledging the other person's feelings, and the fix-it statement when a conversation turns to blame. The book's exact wording could not be read; the book's example for acknowledging feelings is a plain act of asking how to help and summarizing what was heard. No scene is invented.",
+  "facts": [
+    "Relationship management is the fourth skill in Emotional Intelligence 2.0 and sits on top of self-awareness, self-management and social awareness.",
+    "Strategy: take feedback well. Do not get defensive, since the person giving feedback cares about your growth. Listen to understand, sort which points are valid, make a plan and share it so they know you heard.",
+    "Strategy: acknowledge the other person's feelings. When someone shows strong emotion, acknowledge it, ask how you can help, ask open questions, listen closely and summarize what you heard.",
+    "The book says such simple acts acknowledge emotions without making a big deal of them or dismissing them.",
+    "Strategy: offer a fix-it statement. When a conversation slides into blame or complaining, say there is a problem and offer one or two ideas to solve it.",
+    "The fix-it statement moves the talk from winning the argument to solving the problem.",
+    "The book has 66 strategies in total; these three are among them."
+  ],
+  "scene_details": [
+    "asking how you can help",
+    "summarizing what you heard",
+    "one or two ideas offered"
+  ],
+  "tension": "A conversation that has slid into blame has no obvious way back, and the book offers a single sentence for it.",
+  "opening_idea": "Start with a conversation that has turned into complaining, and the one move the book proposes.",
+  "lessons": [
+    {
+      "idea": "In a conversation that has turned to blame, name the problem and offer an idea, because it changes what the talk is about.",
+      "anchor": "The fix-it statement with one or two ideas."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a conversation that keeps ending in blame: what one or two ideas could you bring to it next time?",
+  "use_cases": [
+    {
+      "situation": "A team meeting is turning into complaints.",
+      "move": "Say there is a problem and offer one or two ideas, as the fix-it statement in the book does.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague reacts strongly to your feedback.",
+      "move": "Acknowledge the feeling, ask how you can help and summarize what you heard.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are receiving criticism and feel defensive.",
+      "move": "Listen to understand, pick the points that are valid and say what you will do.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "When a talk turns to blame, say there is a problem and bring one or two ideas to fix it.",
+  "conversation_variants": {
+    "punchline_idea": "The book's answer to a conversation that has turned into blame is one sentence: there is a problem, and here are one or two ideas.",
+    "thirty_sec_idea": "Bradberry and Greaves give relationship management a few plain moves. When someone shows strong feeling, acknowledge it, ask how you can help and summarize what you heard. When feedback comes, listen instead of defending. And when a talk slides into blame, name the problem and offer one or two ideas.",
+    "question_idea": "",
+    "key_contrast_idea": "Blame to problem-solving"
+  }
+}

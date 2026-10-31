@@ -1,0 +1,34 @@
+{
+  "story_id": 1788,
+  "kind": "concept",
+  "book": { "title": "Why Zebras Don't Get Ulcers", "author": "Robert M. Sapolsky", "year": "1994" },
+  "confidence": "high",
+  "confidence_note": "The zebra and lion framing and the point that human stress is often psychological and chronic are the book's central thesis. 'Millions of years' from the supplied text is softened. The book's causal chain to specific diseases is not claimed in this story.",
+  "facts": [
+    "A zebra spots a lion and the body switches to an emergency plan: heart speeds up, muscles get energy, digestion pauses.",
+    "If the zebra escapes it calms within minutes and goes back to grazing.",
+    "Humans can trigger the same response by thinking about rent, an exam or the distant future.",
+    "Such thoughts can last for days or months.",
+    "For the zebra, stress is brief and physical; for humans it is often psychological and social.",
+    "A body that keeps preparing to run without running pays a price over time; the book names this explanation for the title."
+  ],
+  "tension": "The zebra shuts the alarm off when the lion leaves; humans often cannot.",
+  "opening_idea": "Open on the zebra grazing again after the lion has gone.",
+  "lessons": [
+    { "idea": "Check whether the alarm is set off by a lion or by a thought.", "anchor": "The same stress response triggered by a thought in humans." }
+  ],
+  "reflect": [],
+  "reflect_final": "Was it a real lion that put your body on alert today, or a thought in your head?",
+  "use_cases": [
+    { "situation": "Tomorrow's presentation keeps you awake.", "move": "Tell yourself there is no lion, only a thought, and leave tomorrow's task for the morning.", "context": "self" },
+    { "situation": "Your partner is tense about money.", "move": "Mention the zebra calming when the lion leaves and agree to look at the numbers together tomorrow.", "context": "family" },
+    { "situation": "A teammate seems constantly on edge.", "move": "Ask whether something is truly urgent or a worry.", "context": "oneonone" }
+  ],
+  "pocket_idea": "The zebra relaxes when the danger ends; turn off the alarm yourself for the lion in your head.",
+  "conversation_variants": {
+    "punchline_idea": "A zebra relaxes when the lion leaves; a human can keep the same alarm on with one thought.",
+    "thirty_sec_idea": "Sapolsky describes a zebra fleeing a lion, then grazing again; humans trigger the same alarm with worries that last for days.",
+    "question_idea": "",
+    "key_contrast_idea": "Aslan ya da düşünce"
+  }
+}

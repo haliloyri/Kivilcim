@@ -1,0 +1,35 @@
+{
+  "story_id": 1676,
+  "verdict": "keep",
+  "verify_note": "Not web-verified; Two-Minute Rule from Atomic Habits (2018), brief as written.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "İki Dakika Kuralı",
+    "description": "James Clear, yeni bir alışkanlığın iki dakikadan kısa sürmesini öneriyor. Küçülen hedef değil, başlangıç.",
+    "hook": "Bu akşam ertelediğiniz alışkanlığın, iki dakikadan kısa süren ilk adımı ne olurdu?",
+    "one_minute_summary": "James Clear, Atomic Habits'te İki Dakika Kuralı'nı anlatıyor: yeni bir alışkanlık iki dakikadan kısa sürmeli. \"Koşuya çık\" yerine \"ayakkabıyı bağla\", \"kitap oku\" yerine \"bir sayfa oku\". Clear'a göre zor olan başlamak, başladıktan sonra devam etmek çok daha kolay. Ama iki dakikada kalmak amaç değil. Asıl hedef ortaya çıkma alışkanlığını edinmek, çünkü yerleşmemiş bir alışkanlığı geliştirmeye çalışmak temelsiz bir binaya kat çıkmaya benziyor. Bazı akşamlar iki dakika gerçekten iki dakikada biter ve bu da sayılır."
+  },
+  "en": {
+    "title": "The Two-Minute Rule",
+    "description": "James Clear says a new habit should take under two minutes to start. What shrinks is not the goal but the starting line.",
+    "hook": "What is the smallest first step, under two minutes, for the habit you keep postponing?",
+    "one_minute_summary": "In Atomic Habits, James Clear calls it the Two-Minute Rule: a new habit should take less than two minutes. \"Go for a run\" becomes \"tie my running shoes,\" and \"read before bed\" becomes \"read one page.\" His reasoning is that starting is the hard part, and continuing is far easier once you have begun. Staying at two minutes is not the point. The point is to master showing up, because a habit has to be established before it can be improved."
+  },
+  "es": {
+    "title": "La Regla de los Dos Minutos",
+    "description": "James Clear propone que un hábito nuevo dure menos de dos minutos. No se achica el objetivo, se achica la línea de salida.",
+    "hook": "¿Cuál sería el primer paso, de menos de dos minutos, del hábito que sigues aplazando?",
+    "one_minute_summary": "En Atomic Habits, James Clear explica la Regla de los Dos Minutos: un hábito nuevo debe durar menos de dos minutos. «Salir a correr» se queda en «atarme las zapatillas» y «leer cada noche» en «leer una página». Para Clear lo difícil es empezar, y una vez en marcha seguir cuesta mucho menos. Quedarse en dos minutos no es el fin: se trata de dominar el gesto de presentarse, porque un hábito debe estar asentado antes de mejorarlo. Algunas noches los dos minutos son solo dos minutos, y también cuentan."
+  },
+  "de": {
+    "title": "Die Zwei-Minuten-Regel",
+    "description": "James Clear verlangt, dass eine neue Gewohnheit unter zwei Minuten dauert. Verkleinert wird nicht das Ziel, sondern die Startlinie.",
+    "hook": "Was wäre der kleinste erste Schritt unter zwei Minuten für die Gewohnheit, die du aufschiebst?",
+    "one_minute_summary": "In Atomic Habits nennt James Clear es die Zwei-Minuten-Regel: Eine neue Gewohnheit soll unter zwei Minuten dauern. Aus »Laufen gehen« wird »die Laufschuhe binden«, aus »vor dem Schlafen lesen« wird »eine Seite lesen«. Clears Gedanke: Das Schwere ist der Anfang, danach fällt das Weitermachen leichter. Bei zwei Minuten zu bleiben ist nicht das Ziel. Es geht darum, das Auftauchen zur Gewohnheit zu machen, denn sie muss sitzen, bevor man sie verbessert. An manchen Abenden bleibt es bei zwei Minuten, und das zählt trotzdem."
+  }
+}

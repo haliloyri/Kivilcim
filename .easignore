@@ -74,5 +74,10 @@ batch/
 docs/
 TODO/
 Delete/
+albor-reel/
+seslendirmeler/
+design/
+hikaye-paketi/
+hikaye-paketi.zip
 *.md
 !README.md

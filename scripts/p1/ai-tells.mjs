@@ -57,6 +57,17 @@ const WARN_RULES = {
     ['duyuru', 2, ['\\bhadi başlayalım\\b', '\\bderinlemesine inceleyelim\\b', '\\bbilmeniz gerekenler\\b', '\\bdaha yakından bakalım\\b']],
     ['olumsuz paralellik', 2, ['\\byalnızca\\b[^.!?\\n]{1,80}\\bdeğil\\b[^.!?\\n]{1,40}\\baynı zamanda\\b', '\\bsadece\\b[^.!?\\n]{1,80}\\bdeğil\\b[^.!?\\n]{1,40}\\baynı zamanda\\b']],
     ['çağrıştıran açılış', 3, ['^(hayal edin|düşünün|bir düşünün|gözünüzün önüne getirin)']],
+    // Rules below mirror the "Honesty and caveats" bans in
+    // batch/prompts/story-instructions.md — the ones that keep slipping into
+    // allegory retellings.
+    ['oran / pay uydurma', 3, ['\\byüzde (elli|on|yirmi|otuz|kırk|altmış|yetmiş|seksen|doksan)\\b', '\\byarı yarıya\\b', '%\\s?\\d']],
+    ['kişilik etiketi', 3, ['\\byardımsever bir ortak\\b', '\\bson derece (yardımsever|cömert|iyimser|kötümser)\\b', '\\boldukça (yardımsever|düşünceli|cömert)\\b']],
+    ['iç muhakeme / niyet', 2, ['\\bbatacağından emindir\\b', '\\bemin olmuştur\\b', '\\byalvarır\\b']],
+    ['yazarın sorduğu soru', 2, ['\\bsoruyu sorar\\b', '\\bşu soruyu sor\\b']],
+    ['resepsiyon iddiası', 3, ['\\bkuşaklar boyu\\b', '\\bnesiller boyu\\b', '\\bbu hikâyeden öğrendi\\b', '\\bdünyanın dört bir yanında\\b', '\\bmilyonlarca okur\\b', '\\ben çok okunan\\b']],
+    ['süslü metafor', 2, ['\\bpusula\\b', '\\bteklif defteri\\b', '\\bkapı aralar\\b', '\\bbir ayna\\b', '\\bbir mercek\\b']],
+    ['kaçırma korkusu', 2, ['\\btreni kaçır', '\\bfırsatı kaçırma korkusu\\b']],
+    ['genel geçer iddia', 2, ['\\bnormal şartlarda\\b', '\\binsanlar tam olarak bunu yapar\\b', '\\bçoğu insan böyle yapar\\b', '\\bherkes böyle yapar\\b']],
   ],
   de: [
     ['aufgeblasene Einleitung', 3, ['in der heutigen (schnelllebigen )?(welt|zeit)', 'im heutigen digitalen zeitalter', 'in der hektischen welt von heute', 'in einer welt, in der', '\\bgrundsätzlich gilt\\b', '\\bbetrachten wir zunächst\\b']],
@@ -117,7 +128,9 @@ export const scanAiTells = (text, lang, variantsText = '') => {
   const warnings = [];
   const rules = WARN_RULES[lang] || [];
   const plain = stripMarkup(text) + (variantsText ? ` ${variantsText.replace(/[{}"]|\\n/g, ' ')}` : '');
-  const lower = plain.toLowerCase();
+  // Locale-aware folding: Turkish İ→i must not become "i̇" (combining dot) or
+  // patterns like "insanlar" never match. Other languages keep plain lowercasing.
+  const lower = lang === 'tr' ? plain.toLocaleLowerCase('tr') : plain.toLowerCase();
 
   // Errors: chatbot / cutoff / sycophancy.
   (ERROR_RULES[lang] || []).forEach((p) => {

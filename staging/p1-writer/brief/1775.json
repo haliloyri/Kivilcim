@@ -1,0 +1,60 @@
+{
+ "story_id": 1775,
+ "kind": "concept",
+ "book": {
+  "title": "Scarcity",
+  "author": "Sendhil Mullainathan and Eldar Shafir",
+  "year": ""
+ },
+ "confidence": "medium",
+ "confidence_note": "Sources: centerforhealthjournalism.org 2013 (farmers tested one month before and one month after harvest on fluid intelligence and executive control, 9-10 IQ points lower, compared to a night without sleep; mall shoppers thought about paying for a car repair, then did spatial and reasoning tests; low-income shoppers did poorly when the repair was expensive and fine when cheap; higher-income shoppers fine in both); eurekalert Science release and APA Monitor coverage (consistent). Book not page-checked. Not stated in sources and left out: number of farmers or shoppers, repair costs, income thresholds. Year empty. UPDATE: game details from the Shah, Mullainathan, Shafir 2012 Science paper as summarized in secondary coverage (wilsonquarterly.com Distracted Into Debt; Kellogg PDF; blog.jcx.au replication post); the book describes the same experiment but was not page-checked.",
+ "facts": [
+  "Mullainathan and Shafir ran two studies reported in Science: one with sugarcane farmers in rural India and one with shoppers at a mall in New Jersey.",
+  "The farmers receive most of their income at one harvest, so the same farmers are poorest before it and comparatively well off after it.",
+  "The researchers tested the same farmers on fluid intelligence and executive control about a month before and a month after the harvest. Before the harvest they scored about 9 to 10 IQ points lower, an effect compared in coverage to a night without sleep.",
+  "At the mall, shoppers were asked to think about how they would pay for a car repair, then did spatial and reasoning tests.",
+  "Lower-income shoppers did poorly when the repair was described as expensive and fine when it was cheap; higher-income shoppers did well in both versions.",
+  "The authors conclude that scarcity captures attention for the pressing need, leaving less bandwidth for everything else; the problem lies in the situation, not in the person.",
+  "In a lab game in the style of Angry Birds, players assigned to be poor had 30 slingshot shots in all (three per level) and those assigned to be rich had 150 (fifteen per level); players could borrow extra shots. Poor players who borrowed did worse than poor players who could not, borrowing made no difference to the rich, and the poor took longer to aim each shot.",
+  "Editorial caveat: later replication attempts were mixed; the findings about overborrowing and narrowed focus have held up better than the claim that scarcity on one task causes cognitive fatigue on the next (Camerer et al.; a 2019 self-replication)."
+ ],
+ "scene_details": [
+  "a mall in New Jersey",
+  "the same farmers tested twice",
+  "a repair bill read before a test"
+ ],
+ "tension": "The same people scored differently depending on whether the harvest had come in.",
+ "opening_idea": "Open on the farmers tested twice.",
+ "lessons": [
+  {
+   "idea": "A tight moment narrows what you can think about; so when you are short of money or time, postpone the big decision or make it with another person.",
+   "anchor": "the farmers before the harvest"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "When money or time last ran short, which decision did you make quickly that you would have made differently with more room?",
+ "use_cases": [
+  {
+   "situation": "A teammate is behind on a deadline and is making hasty calls.",
+   "move": "Offer to take one task off their list so they have room to think.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You are tempted by a payday loan or a rushed purchase.",
+   "move": "Wait until the next morning and ask one other person.",
+   "context": "self"
+  },
+  {
+   "situation": "Someone you love is making money mistakes.",
+   "move": "Ask what is pressing on them before judging the choices.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "The same farmers tested worse before the harvest; judge the situation before the person.",
+ "conversation_variants": {
+  "punchline_idea": "The same sugarcane farmers did worse on tests before the harvest than after it.",
+  "thirty_sec_idea": "Mullainathan and Shafir tested sugarcane farmers in India twice, before and after the harvest. The same people did noticeably worse on cognitive tests when money was short, a gap the researchers compare to 9 or 10 IQ points. Scarcity, they argue, narrows attention.",
+  "question_idea": "When were you too short on money or time to think straight?",
+  "key_contrast_idea": "Pressure narrows thinking"
+ }
+}

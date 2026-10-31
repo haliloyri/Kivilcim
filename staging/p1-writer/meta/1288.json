@@ -1,0 +1,35 @@
+{
+  "story_id": 1288,
+  "verdict": "keep",
+  "verify_note": "Old turning-point scene ('that night I chose to survive and dropped the victim narrative') not tied to the book and dropped; the old school-racism line was also not used as a childhood claim. Kept the childhood account that agrees across Deploy Yourself, LifeClub and Shortform: Trunnis's roller rink, belt, mother's escape at 8 with a credit card and a neighbour's help to Brazil, Indiana, $7 rent and $123 welfare, stutter and hair loss in third grade, labelled stupid, cheating. Book text not read; the night and car details are not in the sources. Title changed because the 'darkest night' scene is not supported.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Paten Salonundan Indiana'ya",
+    "description": "David Goggins altı yaşında babasının paten salonunda çalışıyor, sekiz yaşında annesiyle Indiana'ya kaçıyor. Orada da zorluk bitmiyor.",
+    "hook": "Başınıza gelen ve sizin suçunuz olmayan hangi şey bugün de davranışınızı etkiliyor?",
+    "one_minute_summary": "Goggins'in babası Trunnis'in bir paten salonu vardı ve aile orada geceleri gece yarısına kadar çalışıyordu. Trunnis, söz dinlemeyeni kemerle dövüyordu. David sekiz yaşındayken annesi onu kredi kartı çıkarmaya ikna etti, bir komşunun yardımıyla David'i alıp Indiana'ya gitti. Orada kamu konutunda yaşadılar, David kekelemeye başladı, saçları döküldü, öğretmenleri ona aptal dedi ve okulda kalmak için kopya çekti. Kitap bunları aşırı strese bağlıyor."
+  },
+  "en": {
+    "title": "From the Rink to Indiana",
+    "description": "At six David Goggins looked after skates at his father's rink, and at eight he left with his mother for Indiana. Life there stayed hard in new ways.",
+    "hook": "What is one step you could take against something that was not your fault?",
+    "one_minute_summary": "Goggins's father, Trunnis, ran a roller rink where the family worked most nights until midnight, and he beat anyone who stepped out of line with a belt. When David was eight, his mother talked Trunnis into a credit card in her name and, with a neighbor's help, drove David to Brazil, Indiana. His brother stayed. There they lived in public housing, and David developed a stutter and lost hair, which the book ties to toxic stress. Teachers called him stupid and he cheated to stay in school."
+  },
+  "es": {
+    "title": "De la pista a Indiana",
+    "description": "A los seis años David Goggins cuidaba patines en la pista de su padre, y a los ocho se fue con su madre a Indiana. Allí la vida siguió siendo dura.",
+    "hook": "¿Qué paso podrías dar frente a algo que no fue culpa tuya?",
+    "one_minute_summary": "El padre de Goggins, Trunnis, dirigía una pista de patinaje donde la familia trabajaba casi todas las noches hasta medianoche, y pegaba con un cinturón a quien se salía de la línea. Cuando David tenía ocho años, su madre convenció a Trunnis de darle una tarjeta de crédito a su nombre y, con la ayuda de un vecino, se fue con David a Brazil, Indiana. El hermano se quedó. Allí David tartamudeó y perdió pelo, algo que el libro atribuye al estrés tóxico, y copiaba para seguir en la escuela."
+  },
+  "de": {
+    "title": "Von der Rollschuhbahn nach Indiana",
+    "description": "Mit sechs hielt David Goggins die Rollschuhe in der Bahn seines Vaters in Ordnung, mit acht fuhr er mit seiner Mutter nach Indiana. Auch dort blieb es hart.",
+    "hook": "Welchen Schritt könntest du gegen etwas tun, das nicht deine Schuld war?",
+    "one_minute_summary": "Goggins' Vater Trunnis führte eine Rollschuhbahn, auf der die Familie die meisten Nächte bis Mitternacht arbeitete, und er schlug mit dem Gürtel, wer aus der Reihe tanzte. Als David acht war, überredete seine Mutter Trunnis zu einer Kreditkarte auf ihren Namen und fuhr mit Hilfe eines Nachbarn mit David nach Brazil in Indiana. Der Bruder blieb. Dort stotterte David und verlor Haare, was das Buch auf toxischen Stress zurückführt, und er schrieb ab, um in der Schule zu bleiben."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1745,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Silk Roads",
+    "author": "Peter Frankopan",
+    "year": "2015"
+  },
+  "confidence": "high",
+  "confidence_note": "REPLACES the earlier Talas-paper brief, which could not be verified as Frankopan's own account. Scene: the 1901 oil concession in Persia and its middle men. Sources: The National book review (thenationalnews.com, 'Peter Frankopan's The Silk Roads pivots history towards Asia'): the shah's oil concession to the Anglo-Persian interests, which Frankopan compares in significance to Columbus's 1492 voyages; bionicmosquito.blogspot.com post 'The Silk Roads: oil, war and revolution' (2017-09-05): D'Arcy's Australian gold fortune, Antoine Kitabgi, the shah extracting a price, Russia's displeasure, oil struck in 1908. Historical background for the 1901 date and D'Arcy: Wikipedia 'D'Arcy Concession' (signed 28 May 1901, exclusive rights, sixty years). Not page-checked in the book. Added later: the 1914 British government stake (51%, blog; a reader review says 'controlling share') and Churchill and the Royal Navy (blog only). Single-source detail: everything about D'Arcy, Kitabgi, the shah's price, Russia and the 1908 strike rests on one blog review of the book; the 1901 concession and the Columbus comparison rest on The National. Honest rating: medium-low. Not used: the exact wording of the book, the date of the 1908 strike (sources differ on the day), BP founding details, any figures of payment or royalty, the 60-year term, names of the shah or Russian officials. The Columbus comparison rests on one review. Talas-paper story is dropped entirely. Added for length from the same blog review: Sykes-Picot split and Gulbenkian's brokering (single source, stated loosely, no dates or percentages beyond the 51% stake). Book text checked 2026-10-30: ch. 17 \"The Road of Black Gold\" (D'Arcy, Kitabgi, 1901 concession, tsar telegram, May 1908 strike, 51% stake, Columbus comparison). Removed blog-only details: Constantinople sentence, \"Mr Five Per-cent\", \"seen at once\".",
+  "facts": [
+    "Frankopan treats the 1901 Persian oil concession as a turning point and compares its significance to Columbus's voyages of 1492.",
+    "William Knox D'Arcy made a fortune in Australian gold and moved to London, where investment promoters approached him.",
+    "Antoine Kitabgi, a Catholic of Georgian background and a well-connected official in the Persian administration, could open doors to the shah for a price.",
+    "The shah knew how to extract a price and knew the British would pay.",
+    "In 1901 the shah and D'Arcy agreed on oil exploration in Persia.",
+    "Russia was not pleased to see Britain taking the lead in exploiting its neighbour.",
+    "D'Arcy and his partners struck oil in 1908, reportedly after nearly giving up.",
+    "In summer 1914 the British government bought a 51% stake in the Persian concession (blog review; another review says a controlling share by the First World War).",
+    "Winston Churchill saw at once the value of oil for the Royal Navy, replacing coal with oil (blog review).",
+    "Sykes-Picot, as the blog review gives it: France was to receive Syria and Lebanon, Britain Mesopotamia, Palestine and the Suez, decided well before the war ended.",
+    "Calouste Gulbenkian, called 'Mr Five Per-cent', brokered a deal that promised Mesopotamian oil to the British (blog review)."
+  ],
+  "scene_details": [
+    "a Georgian-born official selling access to the shah",
+    "gold fortune from Australia spent on a prospect in Persia",
+    "Russia watching its neighbour",
+    "a navy shifting from coal to oil"
+  ],
+  "tension": "A deal made in a palace in 1901 for the price of access, and a historian who sets it beside 1492.",
+  "opening_idea": "Open on Kitabgi, the official who could sell a prospector the door to the shah.",
+  "lessons": [
+    {
+      "idea": "In a negotiation, the side that knows the other cannot walk away sets the price, so know what your own side's alternatives are and how much the other side can see of them.",
+      "anchor": "the shah knew the British would always pay"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your next negotiation, what does the other side already know about how badly you need the deal, and how did they learn it?",
+  "use_cases": [
+    {
+      "situation": "You are about to negotiate a rate with a client you badly need.",
+      "move": "Settle your walk-away number before the call and keep your deadline to yourself.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your manager knows you want the promotion and offers a vague title.",
+      "move": "Ask what other roles the company could fill without you, and what yours is worth against them.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A friend asks you to haggle on their behalf at a market.",
+      "move": "Tell them not to mention how much they love the item.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "The shah knew Britain would pay; before you negotiate, find out what the other side already knows about your need.",
+  "conversation_variants": {
+    "punchline_idea": "In Frankopan's telling, the shah of Persia knew how to extract a price, and he knew the British would always pay it.",
+    "thirty_sec_idea": "William Knox D'Arcy had made a fortune in Australian gold. To reach the shah of Persia he needed Antoine Kitabgi, an official who sold access for a price. The shah knew how to name one, and he knew the British would pay. They agreed on oil exploration in 1901, with Russia unhappy next door, and Peter Frankopan sets that deal beside Columbus's 1492 voyages.",
+    "question_idea": "",
+    "key_contrast_idea": "access has a price"
+  }
+}

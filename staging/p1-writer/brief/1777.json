@@ -1,0 +1,62 @@
+{
+ "story_id": 1777,
+ "kind": "anecdote",
+ "book": {
+  "title": "Shoe Dog",
+  "author": "Phil Knight",
+  "year": ""
+ },
+ "confidence": "medium",
+ "confidence_note": "Sources: shortform.com/blog/blue-ribbon-sports-nike-history (summary of the book: Knight, 24, sold imported Onitsuka shoes from his car trunk at track meets; in 1962 pitched Onitsuka in Kobe as Blue Ribbon Sports of Portland, Oregon, a company he did not yet have; 1964 sent two pairs to Bowerman; first order 300 shoes stored in his basement, a second order of 300 sold out in months; banks wanted new companies to be profitable fast and keep sales within cash balance; sales kept doubling and each sale's cash went into the next larger shipment; late shipments from Onitsuka; 1968 he left Price Waterhouse for a teaching post at Portland State at $700 a month; 1969 sales projected to double to about $300,000, Knight paid himself $18,000); plus other search results confirming the green Plymouth Valiant, track meets, about $8,000 first-year sales (dated 1963 or 1964 by different sources). Book not page-checked. Not verified: loan sizes, bank names, Nissho. Year empty; the writer should avoid year claims except 1962 pitch and 1964 first shipment as given in the summary. UPDATE: mtlynch.io/book-reports/shoe-dog (1971 rename, 7% pre-order discount, 1975 Bank of California, Nissho audit and debt takeover); one report says Knight pitched Onitsuka in 1962, another says Blue Ribbon was formed in 1963: story avoids the formation year.",
+ "facts": [
+  "At 24, Phil Knight pitched Onitsuka in Kobe, Japan, as Blue Ribbon Sports of Portland, Oregon, a company he did not yet have; Onitsuka agreed to let him represent the shoes in America.",
+  "When the shoes arrived he sent two pairs to Bill Bowerman, his old University of Oregon track coach, who became his partner.",
+  "He sold the shoes from the trunk of his green Plymouth Valiant at track meets. The first order of 300 pairs was stored in his basement; a second order of 300 sold out within months. First-year sales were about $8,000.",
+  "Sales kept doubling, but the cash from each sale went straight into the next, larger shipment, so the company ran short of cash. Banks wanted new companies to be profitable quickly and to keep sales within their cash balance.",
+  "Late shipments from Onitsuka made selling time shorter and loan repayments harder.",
+  "In 1968 Knight left his accounting job at Price Waterhouse for a teaching post at Portland State paying $700 a month; he could not afford a salary from the company.",
+  "In 1969 sales were projected to double to about $300,000; Knight paid himself $18,000 a year and left teaching to work full time.",
+  "Blue Ribbon was renamed Nike in 1971. Nike offered retailers a 7% discount for orders placed six months ahead, which brought cash in early.",
+  "In 1975 Bank of California dropped Nike and closed its credit line, citing its focus on growth over equity. Nissho, another Japanese company that financed Nike, required a full audit, which showed a loan had gone into building a factory; Nissho then took over Nike's debt to the bank (mtlynch.io book report)."
+ ],
+ "scene_details": [
+  "two pairs of shoes mailed to a coach",
+  "300 pairs stored in a basement",
+  "the trunk of a green Plymouth Valiant",
+  "a $700 monthly teaching salary"
+ ],
+ "tension": "Every sale had to be spent on a bigger order before the next one paid.",
+ "opening_idea": "Open on the basement with 300 pairs of shoes.",
+ "lessons": [
+  {
+   "idea": "Growth can starve a business of cash; know the gap between paying and getting paid before you celebrate a rising number.",
+   "anchor": "sales rising while banks stayed wary"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "In something you are growing, which cost arrives before the money does, and how long can you cover that gap?",
+ "use_cases": [
+  {
+   "situation": "Your small business just got a bigger order.",
+   "move": "Work out what you must pay out before the client pays you.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A friend wants to scale up a side project.",
+   "move": "Ask what happens to their cash if the first customer pays late.",
+   "context": "social"
+  },
+  {
+   "situation": "You plan a big family expense.",
+   "move": "Write the date the bill is due and the date the money arrives.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "Sales kept rising, yet cash ran short; check when you pay and when you get paid.",
+ "conversation_variants": {
+  "punchline_idea": "Nike's founder sold shoes from the trunk of his car and the more he sold, the more cash he needed.",
+  "thirty_sec_idea": "Phil Knight sold Japanese running shoes from the trunk of his green Plymouth Valiant at track meets, about $8,000 in the first year. Sales grew, but paying for stock before customers paid him left the company short of cash, and banks hesitated. That company became Nike.",
+  "question_idea": "Where does growth cost you first?",
+  "key_contrast_idea": "Sales versus cash"
+ }
+}

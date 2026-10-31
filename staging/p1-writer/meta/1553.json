@@ -1,0 +1,26 @@
+{
+  "tr": {
+    "title": "Uyumlu Toplantılar Neden Susar",
+    "description": "Herkesin başını salladığı toplantıda gerçek fikirler kulis konuşmalarına kayar. Lencioni buna yapay uyum der ve çaresini fikirler üzerine açık tartışmada görür.",
+    "hook": "Son toplantınızda söylemediğiniz fikir, koridorda mı konuşuldu?",
+    "one_minute_summary": "Patrick Lencioni'ye göre kimsenin itiraz etmediği, sessiz ve nazik bir toplantı sağlıklı değildir. Buna yapay uyum der. Gerçek görüşler toplantı sonrası yorumlara kayar, karara göründüğünden az kişi inanır. İstediği çatışma kişilerle değil fikirlerle ilgilidir ve meseleleri daha hızlı çözer. Lider gömülü anlaşmazlığı ortaya çıkarmalı, bunun da temeli güvendir."
+  },
+  "en": {
+    "title": "Why Agreeable Meetings Go Quiet",
+    "description": "When every head nods, the real opinions move to back-channel talk. Lencioni calls it artificial harmony and points to open argument about ideas as the way out.",
+    "hook": "What did you think in your last meeting but only say afterward?",
+    "one_minute_summary": "According to Patrick Lencioni, a quiet, pleasant meeting where nobody pushes back is not a healthy one. He calls it artificial harmony. The real opinions move into veiled remarks and back-channel comments, so the decision on paper has fewer believers than it seems. The conflict he wants is about ideas, not personalities, and it settles issues faster. The leader's job is to pull buried disagreement into the open, and trust makes that possible."
+  },
+  "es": {
+    "title": "La reunión donde nadie discutía",
+    "description": "Cuando todos asienten, las opiniones reales se van a los comentarios de pasillo. Lencioni lo llama armonía artificial y propone discutir ideas abiertamente.",
+    "hook": "¿Qué pensaste en tu última reunión y solo dijiste cuando ya había terminado?",
+    "one_minute_summary": "Según Patrick Lencioni, una reunión tranquila y agradable donde nadie lleva la contraria no es sana. Lo llama armonía artificial. Las opiniones de verdad pasan a comentarios velados y conversaciones paralelas, y la decisión tiene menos defensores de los que parece. El conflicto que propone trata de ideas, no de personas, y resuelve los asuntos más rápido. El líder debe sacar a la luz el desacuerdo enterrado, y eso depende de la confianza."
+  },
+  "de": {
+    "title": "Wenn alle nicken",
+    "description": "Wo jeder nickt, wandern die echten Meinungen in Flurgespräche. Lencioni nennt das künstliche Harmonie und sieht den Ausweg im offenen Streit um Ideen.",
+    "hook": "Welche Meinung aus deiner letzten Besprechung hast du erst danach geäußert?",
+    "one_minute_summary": "Laut Patrick Lencioni ist eine ruhige, angenehme Besprechung, in der niemand widerspricht, nicht gesund. Er nennt das künstliche Harmonie. Die echten Meinungen wandern in versteckte Bemerkungen und Flurgespräche, und der Beschluss hat weniger Anhänger, als es scheint. Der Konflikt, den er meint, dreht sich um Ideen statt um Personen und klärt Streitfragen schneller. Die Führungskraft soll verborgenen Widerspruch ans Licht holen, und das ruht auf Vertrauen."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "story_id": 1301,
+  "kind": "concept",
+  "book": { "title": "Factfulness", "author": "Hans Rosling", "year": "2018" },
+  "confidence": "medium",
+  "confidence_note": "Thresholds and populations (Level 1 under $2 a day, about 1 billion; Level 2 $2 to $8, about 3 billion; Level 3 $8 to $32, about 2 billion; Level 4 over $32, about 1 billion; roughly 7 billion people) confirmed in a Cato review and other summaries. Gap instinct: tendency to split the world into two groups, and Rosling replaces 'developing versus developed' with four levels. The old TR text's claims about a Level 2 mother versus a Level 1 mother being a bigger difference than Level 4 versus Level 2, and about the company that 'cannot sell to the poor world', are unverified and omitted. Per-day amounts are as the review states them (price-adjusted); book's details of price adjustment are not stated here. Timeframe: book's own figures (2017).",
+  "facts": [
+    "Rosling calls the habit of dividing the world into two groups, rich West and poor rest, the gap instinct.",
+    "He replaces the two-group picture with four income levels, measured in dollars per person per day.",
+    "Level 1: less than $2 a day, about 1 billion people.",
+    "Level 2: $2 to $8 a day, about 3 billion people.",
+    "Level 3: $8 to $32 a day, about 2 billion people.",
+    "Level 4: more than $32 a day, about 1 billion people.",
+    "Roughly 5 billion of the world's 7 billion people therefore live on the two middle levels, not at either end."
+  ],
+  "scene_details": [
+    "four steps, each with a dollar line: $2, $8, $32",
+    "1 billion, 3 billion, 2 billion, 1 billion said out loud",
+    "most people in the middle"
+  ],
+  "tension": "The picture of 'rich West versus poor rest' leaves out where most of the world's people actually live.",
+  "opening_idea": "Start with the four numbers: 1, 3, 2 and 1 billion people, and the question of which group a 'developing country' belongs to.",
+  "lessons": [
+    { "idea": "Splitting a group into two sides hides the middle where most of it lives, so ask how many levels the picture really has.", "anchor": "Rosling's four levels put about five billion of seven billion people in the two middle ones." }
+  ],
+  "reflect": [],
+  "reflect_final": "Where do you currently divide something into two camps, such as customers, colleagues or relatives, and what would a middle group look like there?",
+  "use_cases": [
+    { "situation": "A planning meeting talks about 'emerging markets' as one block.", "move": "Ask which income level we mean, because Rosling shows three of the four levels sit in what gets called developing.", "context": "meeting" },
+    { "situation": "A friend says there are rich people and poor people and nothing between.", "move": "Share the 1, 3, 2, 1 billion split and ask where they would put most people.", "context": "social" },
+    { "situation": "You describe two sides in an argument at home.", "move": "Ask whether there are one or two positions between the two you named.", "context": "family" }
+  ],
+  "pocket_idea": "Rosling's four income levels: about five of seven billion live in the middle, not at either end.",
+  "conversation_variants": {
+    "punchline_idea": "Rosling split the world into four income levels, and the largest groups sit in the middle two.",
+    "thirty_sec_idea": "Hans Rosling's gap instinct is the urge to split the world into rich and poor. He proposes four income levels: under $2 a day, about 1 billion people; $2 to $8, about 3 billion; $8 to $32, about 2 billion; over $32, about 1 billion. About five billion of seven billion live in the middle two levels.",
+    "question_idea": "",
+    "key_contrast_idea": "Two camps, four levels"
+  }
+}

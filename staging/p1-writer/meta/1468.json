@@ -1,0 +1,35 @@
+{
+  "story_id": 1468,
+  "verdict": "keep",
+  "verify_note": "Old 'printer, doctor, merchant, engineer at one table' and 'modern research supports this' not tied to the book and dropped. Kept: liquid network, London coffeehouses mixing fields, Franklin's Club of Honest Whigs at the London Coffeehouse (NPR 2010), TED outline. Caffeine-for-alcohol point comes from TED-talk summaries and is hedged. Book text not read; confidence medium.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Londra'nın Kahvehaneleri",
+    "description": "Johnson'a göre Aydınlanma'nın birçok fikrinin geçmişinde bir Londra kahvehanesi var. Franklin'in kulübü de Londra Kahvehanesi'nde toplanıyordu.",
+    "hook": "Haftanızın hangi sohbeti sizi kendi alanınızın dışından biriyle buluşturuyor?",
+    "one_minute_summary": "Steven Johnson'a göre Aydınlanma'nın birçok fikrinin geçmişinde bir kahvehane var. Londra'nın kahvehaneleri farklı alanlardan insanları aynı odaya çekiyor, Franklin'in Dürüst Whig'ler Kulübü de Londra Kahvehanesi'nde toplanıyordu. Johnson bu ortamlara akışkan ağ diyor: fikirler sohbetten sohbete geçip karışıyor. Sloganı, şansın bağlantılı zihnin tarafını tuttuğu. Kahve ve çayın alkolün yerini almasına ilişkin ayrıntı onun konuşmasından geliyor ve bir ihtimal olarak sunuluyor. Franklin'in kulübünün orada toplandığı bilgisi 2010 tarihli bir NPR röportajından geliyor."
+  },
+  "en": {
+    "title": "London's Liquid Networks",
+    "description": "Steven Johnson says many Enlightenment ideas have a coffeehouse in their history. London's coffeehouses mixed fields at one table, and Franklin's club met in one.",
+    "hook": "Which regular conversation in your week puts you beside someone from another field?",
+    "one_minute_summary": "Steven Johnson argues that many ideas of the Enlightenment have a coffeehouse in their history. London's coffeehouses drew people from different fields into one room, and Benjamin Franklin's Club of Honest Whigs met at the London Coffeehouse. Johnson calls such places liquid networks, where ideas collide and mix, and his motto is that chance favors the connected mind. He also suggests that coffee and tea replacing alcohol may have made the talk clearer."
+  },
+  "es": {
+    "title": "Las cafeterías de Londres",
+    "description": "Según Steven Johnson, muchas ideas de la Ilustración tienen una cafetería en su historia. Las de Londres mezclaban campos en una mesa, y allí se reunía el club de Franklin.",
+    "hook": "¿Qué charla habitual de tu semana te sienta junto a alguien de otro campo?",
+    "one_minute_summary": "Steven Johnson sostiene que muchas ideas de la Ilustración tienen una cafetería en su historia. Las cafeterías de Londres juntaban en una sala a gente de campos distintos, y el Club of Honest Whigs de Benjamin Franklin se reunía en el London Coffeehouse. Johnson llama redes líquidas a estos lugares, donde las ideas chocan y se mezclan, y su lema es que el azar favorece a la mente conectada. Sugiere además que el café y el té, al sustituir al alcohol, pudieron aclarar las conversaciones."
+  },
+  "de": {
+    "title": "Londons Kaffeehäuser",
+    "description": "Laut Steven Johnson haben viele Ideen der Aufklärung ein Kaffeehaus in ihrer Geschichte. Londons Kaffeehäuser mischten Fächer an einem Tisch, und Franklins Klub tagte in einem.",
+    "hook": "Welches regelmäßige Gespräch deiner Woche setzt dich neben jemanden aus einem anderen Fach?",
+    "one_minute_summary": "Steven Johnson behauptet, viele Ideen der Aufklärung hätten ein Kaffeehaus in ihrer Geschichte. Londons Kaffeehäuser brachten Menschen aus verschiedenen Fächern in einen Raum, und Benjamin Franklins Club of Honest Whigs tagte im London Coffeehouse. Johnson nennt solche Orte Liquid Networks, in denen Ideen aufeinanderstoßen und sich mischen, sein Leitsatz ist: Zufall begünstigt den vernetzten Geist. Dass Kaffee und Tee den Alkohol ersetzten und Gespräche klarer machten, vermutet er nur."
+  }
+}

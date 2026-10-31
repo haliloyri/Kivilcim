@@ -1,0 +1,35 @@
+{
+  "story_id": 1584,
+  "verdict": "keep",
+  "verify_note": "Frankl in Pink's Meaning chapter (chapter 9): SuperSummary study guide says Pink opens the chapter with Frankl's story; a blog on the six senses says Pink opens with Frankl, author of Man's Search for Meaning; a student slideshow says Pink references the book several times. All secondary, no direct text. Nietzsche line and biography are attributed to Frankl in the story, not to Pink.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Paranın ötesinde anlam",
+    "description": "Daniel Pink, A Whole New Mind kitabında anlam bölümünde Viktor Frankl'a başvurur. Maddi ihtiyaçlar karşılanınca soru, işe yarayıp yaramadığından önemli olup olmadığına kayar.",
+    "hook": "Yaptığınız işin neye yaradığını bir cümleyle söyleyebilir misiniz?",
+    "one_minute_summary": "Pink, anlamı altı duyunun sonuncusu sayar ve Viktor Frankl'a başvurur. Frankl 1942'de sürgün edilen, 1945'te serbest kalan Viyanalı bir psikiyatristti. Önünde bir amacı olanların zor koşullara daha iyi dayandığını gözlemledi ve logoterapiyi kurdu. Pink fikri bugüne taşır: ihtiyaçlar karşılanınca insanlar bir işin işe yarayıp yaramadığına değil, önemli olup olmadığına bakmaya başlar. Frankl'ın kitabının serbest kalışından günler sonra yazıldığı anlatılır, bu bilgi kesin olarak sunulmuyor. Pink sol ve sağ beyin ayrımının bir benzetme olduğunu kabul eder."
+  },
+  "en": {
+    "title": "Meaning beyond money",
+    "description": "Daniel Pink turns to Viktor Frankl in the meaning chapter of A Whole New Mind. Once basic needs are met, the question moves from whether something works to whether it matters.",
+    "hook": "Can you say in one sentence what your work is for?",
+    "one_minute_summary": "Pink treats meaning as the sixth of his six senses and turns to Viktor Frankl, a Viennese psychiatrist deported in 1942 and freed in 1945. Frankl observed that people with something ahead of them endured harsh conditions better, and he went on to found logotherapy. Pink carries the idea into the present: when basic needs are met, people ask a new question, does it matter? His book is reported to have been written within days of his release, which the story passes on as reported. Pink admits the left and right brain split is a metaphor."
+  },
+  "es": {
+    "title": "Sentido más allá del dinero",
+    "description": "Daniel Pink se apoya en Viktor Frankl en el capítulo sobre el sentido de A Whole New Mind. Cuando las necesidades básicas están cubiertas, la pregunta pasa de si algo funciona a si importa.",
+    "hook": "¿Sabrías decir en una frase para qué sirve tu trabajo?",
+    "one_minute_summary": "Pink trata el sentido como el sexto de sus seis sentidos y se apoya en Viktor Frankl, psiquiatra vienés deportado en 1942 y liberado en 1945. Frankl observó que quienes tenían algo por delante soportaban mejor las condiciones duras, y fundó la logoterapia. Pink lleva la idea al presente: cubiertas las necesidades básicas, la gente se pregunta si algo importa. Se cuenta que Frankl escribió su libro a los pocos días de su liberación, dato que se da como referido. Pink admite que la división entre hemisferios es una metáfora."
+  },
+  "de": {
+    "title": "Sinn jenseits des Geldes",
+    "description": "Daniel Pink beruft sich im Sinn-Kapitel von A Whole New Mind auf Viktor Frankl. Sind die Grundbedürfnisse gedeckt, verschiebt sich die Frage von Funktioniert es? zu Ist es wichtig?",
+    "hook": "Kannst du in einem Satz sagen, wofür deine Arbeit da ist?",
+    "one_minute_summary": "Pink macht den Sinn zum sechsten seiner sechs Sinne und beruft sich auf Viktor Frankl, einen Wiener Psychiater, der 1942 deportiert und 1945 befreit wurde. Frankl beobachtete, dass Menschen mit etwas vor sich harte Bedingungen besser durchstanden, und begründete die Logotherapie. Pink überträgt das in die Gegenwart: Sind die Grundbedürfnisse gedeckt, fragen Menschen, ob etwas wichtig ist. Sein Buch soll er innerhalb weniger Tage nach der Entlassung geschrieben haben, das wird nur als überliefert wiedergegeben. Pink nennt die Trennung der Gehirnhälften eine Metapher."
+  }
+}

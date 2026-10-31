@@ -1,0 +1,30 @@
+{
+  "story_id": 1448,
+  "verdict": "keep",
+  "verify_note": "Checked against the text. Replaced the invented 'good death' quote and the claim that Seneca rejects retirement (he urges Paulinus to retire) with Augustus's letter, the fifty/sixty plan, expectancy, Cicero and Paulinus.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Ellinci yıldan sonra",
+    "description": "Seneca, emeklilikte yaşamayı planlayanlara cevap veriyor: yaşamaya başlamak ne kadar geç, tam da yaşamın bitmesi gerektiği anda.",
+    "hook": "Yoğun dönem bitince diye beklettiğiniz hangi şeye bu hafta başlayabilirsiniz?",
+    "one_minute_summary": "Seneca, insanların kendilerine tekrarladığı bir planı aktarıyor: ellinci yaştan sonra çekilmek, altmışıncıda görevlerden kurtulmak. Cevabı: yaşamaya başlamak ne kadar geç, tam da yaşamın bitmesi gerektiği anda. Augustus yıllarca dinlenmeyi diledi, Cicero Tusculum'da yarı özgür oyalandı. Yaşamanın en büyük engelini, yarına yaslanıp bugünü harcayan beklenti olarak adlandırıyor. Tahıl tedarikini yöneten dostu Paulinus'a daha sakin bir limana çekilmesini öneriyor. Bu yüzden ertelenmiş bir şeye bu hafta bir yer vermek mantıklı."
+  },
+  "en": {
+    "title": "After my fiftieth year",
+    "description": "Seneca answers those who plan to start living in retirement: how late it is to begin living just when life must end.",
+    "hook": "What are you saving for after a busy stretch that you could start this week?",
+    "one_minute_summary": "Seneca quotes a plan people repeat: retire after fifty, be free of duties at sixty. His answer: how late it is to begin living just when life must end. Augustus spent years praying for rest, and Cicero lingered half-free on his estate. Seneca names expectancy, relying on tomorrow, as the greatest impediment to living, and urges his friend Paulinus, who runs the grain supply, to withdraw to a calmer haven. That makes it sensible to give one postponed thing a place in this week."
+  },
+  "es": {
+    "title": "Después de los cincuenta",
+    "description": "Séneca responde a quienes planean empezar a vivir al jubilarse: qué tarde es para empezar a vivir justo cuando la vida debe terminar.",
+    "hook": "¿Qué guardas para después de una racha ocupada que podrías empezar esta semana?",
+    "one_minute_summary": "Séneca cita un plan que la gente se repite: retirarse después de los cincuenta, librarse de obligaciones a los sesenta. Su respuesta: qué tarde es para empezar a vivir justo cuando la vida debe terminar. Augusto pasó años rezando por descanso y Cicerón se demoraba a medias libre en su finca. Séneca llama expectativa, apoyarse en el mañana, al mayor obstáculo para vivir, y pide a su amigo Paulino, que gestiona el suministro de grano, que se retire a un puerto más tranquilo. Por eso conviene dar a una cosa aplazada un lugar en esta semana."
+  },
+  "de": {
+    "title": "Nach dem fünfzigsten Jahr",
+    "description": "Seneca antwortet denen, die erst im Ruhestand zu leben planen: Wie spät ist es, mit dem Leben anzufangen, gerade wenn es enden muss.",
+    "hook": "Was bewahrst du dir für nach einer arbeitsreichen Phase auf, das du diese Woche beginnen könntest?",
+    "one_minute_summary": "Seneca zitiert einen Plan, den Menschen sich vorsagen: nach fünfzig zurückziehen, mit sechzig von den Pflichten frei sein. Seine Antwort: Wie spät ist es, mit dem Leben anzufangen, gerade wenn es enden muss. Augustus betete jahrelang um Ruhe, und Cicero verweilte halb frei auf seinem Landgut. Seneca nennt die Erwartung, das Leben auf morgen gestützt, das größte Hindernis und drängt seinen Freund Paulinus, der die Getreideversorgung verwaltet, in einen ruhigeren Hafen. Darum lohnt es, einer aufgeschobenen Sache diese Woche einen Platz zu geben."
+  }
+}

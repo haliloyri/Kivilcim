@@ -1,0 +1,256 @@
+{
+ "book_no": 123,
+ "title": "Talk Like TED",
+ "authors": [
+  "Carmine Gallo"
+ ],
+ "year": "2014",
+ "sources": [
+  "https://www.kirkusreviews.com/book-reviews/carmine-gallo/talk-like-ted/",
+  "https://carminegallo.com/?p=4690",
+  "https://www.carminegallo.com/bryan-stevenson-and-the-power-of-persuasion-to-achieve-just-mercy/",
+  "https://www.carminegallo.com/cracking-the-ted-code-takeaways-from-talk-like-ted-the-9-public-speaking-secrets-of-the-worlds-top-minds/",
+  "https://entrepreneur.com/leadership/why-ted-talks-are-impossible-to-resist/231433",
+  "https://blogs.nature.com/blog/gates_unleashes_a_million_bug/",
+  "https://notes.elie.net/zdata/kindle/Gallo-Talk+Like+TED",
+  "https://supersummary.com/talk-like-ted/part-1-summary",
+  "https://www.cnbc.com/2017/11/28/bill-gates-released-swarming-mosquitoes-to-make-a-point-about-malaria.html",
+  "https://gizmodo.com/bill-gates-just-unleashed-a-swarm-of-live-mosquitoes-on-5146564"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Gallo studied more than 500 TED talks and the speaking methods of leaders and celebrities; the book is organised as nine secrets (St. Martin's, March 2014).",
+   "source": "Kirkus review",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Gallo's passion chapter says passion is contagious, 'literally', and that you cannot inspire others unless you are inspired yourself.",
+   "source": "Kindle highlights (notes.elie.net); carminegallo.com interview",
+   "confidence": "medium"
+  },
+  {
+   "id": "f3",
+   "claim": "Aimee Mullins is the book's passion example: her TED talk concerns prosthetics, but Gallo writes she 'isn't passionate about prosthetics; she's passionate about unleashing human potential.' Mullins is an athlete with double leg amputations.",
+   "source": "carminegallo.com 'Cracking the TED code'; supersummary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f4",
+   "claim": "Gallo cites an investor study in which perceived passion ranked well above criteria such as the entrepreneur's education and start-up experience (the count of criteria and the exact rank are not verified).",
+   "source": "carminegallo.com ?p=4690 interview",
+   "confidence": "low"
+  },
+  {
+   "id": "f5",
+   "claim": "For Bryan Stevenson's TED talk Gallo reports that about 65 percent of the talk was stories that framed the argument; he describes three personal stories and says the first statistic came about five minutes in.",
+   "source": "carminegallo.com Stevenson article and ?p=4690; Gallo's own posts disagree on what the remaining 35 percent was (data vs ethos/logos), so only the 65 percent story share is used",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "Gallo writes that when someone tells another person a story, the same regions of their brains are engaged. Researchers call it 'brain to brain coupling'; Gallo calls it a 'mind meld'.",
+   "source": "carminegallo.com ?p=4690",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Gallo: stories use the whole brain, activating language, sensory, visual and motor areas, where facts alone engage less.",
+   "source": "Kindle highlight (notes.elie.net), loc. 728",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Bill Gates spoke about malaria at TED in February 2009 (Long Beach, California). He opened a jar of mosquitoes on stage and said malaria is spread by mosquitoes and that he had brought some.",
+   "source": "Nature blog; Gallo 'Cracking the TED code'; Entrepreneur excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "The Gates Foundation later said the mosquitoes were not carrying the disease.",
+   "source": "Nature blog",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Gallo says the mosquito moment took up less than five percent of Gates's total speaking time; the talk ran 18 minutes. He calls it a jaw-dropping moment and links such moments to what neuroscientists call an 'emotionally charged event'; he says every presentation needs one.",
+   "source": "carminegallo.com 'Cracking the TED code'",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Gates is quoted as saying 'There is no reason only poor people should be infected.' (Wording varies between sources; use only as paraphrase, not as a quotation.)",
+   "source": "Entrepreneur excerpt",
+   "confidence": "low"
+  },
+  {
+   "id": "f12",
+   "claim": "Gallo's 18-minute guideline rests on research about 'cognitive backlog'; he advises soft breaks (stories, videos, demonstrations) every 10 minutes in a longer talk.",
+   "source": "Gallo site; Kindle highlights",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "The first secret is titled 'Unleash the Master Within'. It asks speakers to find a personal link to their topic and claims enthusiasm spreads from presenter to audience; Gallo argues the most popular TED speakers present their ideas as a calling rather than a job.",
+   "source": "supersummary Part 1 (via search summary)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f14",
+   "claim": "Gallo's analysis covered 500 TED talks, more than 150 hours of video in all, plus interviews with TED speakers (his Harvard Business Review piece is titled 'What I Learned From 150 Hours of TED Talks').",
+   "source": "carminegallo.com ?p=4854 listing; search summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f15",
+   "claim": "Gallo groups the nine secrets under three components: emotional, novel, memorable.",
+   "source": "carminegallo.com 'Cracking the TED code'",
+   "confidence": "medium"
+  },
+  {
+   "id": "f16",
+   "claim": "TED launched in 1984. In Gallo's Entrepreneur excerpt (written around the book's 2014 release) TED.com talks had been viewed more than one billion times and were watched more than two million times a day.",
+   "source": "carminegallo.com 'Cracking the TED code'; Entrepreneur excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f17",
+   "claim": "Bryan Stevenson's 2013 TED talk is titled 'We need to talk about an injustice'. He is a civil rights attorney who argues before the U.S. Supreme Court and won Miller v. Alabama, which bars mandatory life sentences without parole for juveniles convicted of murder. The talk ran 18 minutes.",
+   "source": "Gallo HBR piece (carminegallo.com ?p=4854); Entrepreneur excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f18",
+   "claim": "The talk was built on three personal stories. Gallo says Stevenson opened with one about his grandmother, explaining that he did so 'because everyone has a grandmother'. The stories supported a theme: many young people in underserved communities grow up without a sense of identity, which leads them to make seriously bad decisions.",
+   "source": "Gallo HBR piece; Entrepreneur excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f19",
+   "claim": "Gallo says the talk received the longest standing ovation in TED history and that audience members collectively donated one million dollars to Stevenson's nonprofit, the Equal Justice Initiative.",
+   "source": "Entrepreneur excerpt; Gallo HBR piece",
+   "confidence": "medium"
+  },
+  {
+   "id": "f20",
+   "claim": "Gallo's count: stories 65 percent of the talk. One account gives data about 10 percent; another account splits it as pathos 65, logos 25, ethos 10. Only the 65 percent story/emotion share is stable across his accounts.",
+   "source": "Entrepreneur excerpt; HBR piece",
+   "confidence": "medium"
+  },
+  {
+   "id": "f21",
+   "claim": "Gallo says workplace talks lean heavily on data and rarely on stories, and recommends anecdotes from your own experience, from others and about brands.",
+   "source": "Gallo HBR piece",
+   "confidence": "medium"
+  },
+  {
+   "id": "f22",
+   "claim": "Gallo says Gates's mosquito moment grabbed attention and that Gates said the mosquitoes were not infected only after the stunt had grabbed attention. Neuroscientist A. K. Pradeep says the brain is wired to notice what is new and stands out.",
+   "source": "Gallo HBR piece; Entrepreneur excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f23",
+   "claim": "Robert Ballard's talk on finding the Titanic, 2.5 miles down in the Atlantic, used 57 slides with no words; asked why, he said he was storytelling, not lecturing.",
+   "source": "Gallo HBR piece",
+   "confidence": "medium"
+  },
+  {
+   "id": "f24",
+   "claim": "Gates said there was no reason only poor people should have the experience (wording varies by source; used as paraphrase). CNBC adds his point that even diseases that do not affect you deserve attention: he noted more research money had gone to hair-loss drugs because rich men are afflicted, and joked that baldness is a terrible thing.",
+   "source": "CNBC 2017; Gizmodo 2009",
+   "confidence": "medium"
+  },
+  {
+   "id": "f25",
+   "claim": "At TED in 2010, in a talk on energy, Gates recalled the 2009 audience's reaction and repeated the stunt with fireflies; that audience laughed and later gave him a standing ovation.",
+   "source": "CNBC 2017",
+   "confidence": "medium"
+  },
+  {
+   "id": "f26",
+   "claim": "Gizmodo, writing on 4 February 2009, said there was no confirmation at the time that the mosquitoes were free of malaria; the Foundation's clarification came afterwards (Nature).",
+   "source": "Gizmodo; Nature blog",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "The book finds three shared elements in TED talks (one central message, storytelling, passion)",
+   "reason": "The book has nine secrets; the three-element claim is not in any source"
+  },
+  {
+   "claim": "Gallo studied thousands of salespeople, leaders and academics",
+   "reason": "Not supported; the sample is 500+ TED talks"
+  },
+  {
+   "claim": "Subjects listened to a pure-data talk vs a story talk and brain imaging showed only language areas for data",
+   "reason": "The experiment as described is not attributed to the book; the book cites Princeton brain-coupling research instead"
+  },
+  {
+   "claim": "Gallo calls it 'neural connection' and says listeners understand the speaker's viewpoint",
+   "reason": "Term in sources is 'brain to brain coupling' / 'mind meld'"
+  },
+  {
+   "claim": "Rakamları insanlaştırın: 'Yüz bin kişi' yerine 'Hasan gibi bir insan'",
+   "reason": "No source; invented formula"
+  },
+  {
+   "claim": "Mehrabian 7-38-55 split and the 'people remember how you made them feel' line attributed to Gallo",
+   "reason": "No source links Mehrabian to the book; the figures are widely misapplied"
+  },
+  {
+   "claim": "TED speakers prepare an average of 200 hours",
+   "reason": "Gallo's site says Jill Bolte Taylor rehearsed 200 times; the '200 hours' is not verified as a book claim"
+  },
+  {
+   "claim": "Stevenson 10 percent data",
+   "reason": "Gallo's later post reassigns 10 percent to ethos; inconsistent"
+  }
+ ],
+ "stories": {
+  "1465": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f13",
+    "f14",
+    "f15",
+    "f16"
+   ],
+   "note": "Retargeted: passion chapter (Mullins) instead of the false 'three elements'. Concept story, thin material."
+  },
+  "1466": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f5",
+    "f6",
+    "f7",
+    "f17",
+    "f18",
+    "f19",
+    "f20",
+    "f21"
+   ],
+   "note": "Old pure-data vs story experiment rejected; rebuilt on Stevenson 65 percent and brain-to-brain coupling."
+  },
+  "1467": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f8",
+    "f9",
+    "f10",
+    "f12",
+    "f22",
+    "f24",
+    "f25",
+    "f26"
+   ],
+   "note": "Mehrabian rejected; same center 'how it is delivered sticks' moved to the Gates mosquito jar, which the book uses."
+  }
+ }
+}

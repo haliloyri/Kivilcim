@@ -1,0 +1,160 @@
+{
+  "book_no": 117,
+  "title": "On the Shortness of Life",
+  "authors": [
+    "Seneca"
+  ],
+  "year": "49",
+  "sources": [
+    "https://archive.org/stream/SenecaOnTheShortnessOfLife/Seneca+on+the+Shortness+of+Life_djvu.txt",
+    "https://catalog.perseus.org/catalog/urn:cts:latinLit:phi1017.phi012.opp-eng18",
+    "https://www.gutenberg.org/ebooks/64576",
+    "https://librivox.org/of-the-shortness-of-life-by-lucius-annaeus-seneca/"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The essay (De Brevitate Vitae) is addressed to Paulinus ('my dearest Paulinus'). Seneca answers the common complaint that nature is stingy with life: 'It is not that we have a short time to live, but that we waste much of it.' Life is long enough and given in generous measure if all of it is well invested (1.3-1.4).",
+      "source": "Williams translation (archive.org); Stewart translation (Perseus/Gutenberg)",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Analogy (1.4): wealth, however modest, grows with careful deployment when entrusted to a responsible guardian; vast wealth handed to a bad owner is scattered at once. Life, he says, extends if you know how to manage it.",
+      "source": "Williams translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "What eats the days (2.1-2.2, 7): greed, drink, idleness, political ambition; people busy chasing other people's wealth or complaining about their own; days spent on ledgers, traps, bail, and dinner parties that have themselves become business. Death takes them by surprise.",
+      "source": "Williams translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "3.1: people are thrifty in guarding their private property but let others trespass on their existence; they are most wasteful of the one thing it is right to be miserly with: time.",
+      "source": "Williams translation; Stewart translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "3.2: the audit. Seneca asks the reader to review his life, including how few days turned out as intended, and concludes the reader is dying before his time. 8.2: no one values time; all use it lavishly as if it cost nothing.",
+      "source": "Williams translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "3.4-3.5: 'Your sort live as if you're going to live forever.' Plans are postponed to the fiftieth and sixtieth year. Seneca presents a hypothetical plan: 'After my fiftieth year I'll retire to a life of leisure; my sixtieth year will bring release from all my duties.' His answer: 'How late it is to begin living just when life must come to an end!' (Stewart renders the same as folly: to postpone sound plans to the fifty-first and sixtieth year and begin life at a point few have reached.)",
+      "source": "Williams translation (3.4-3.5); Stewart translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "9.1: 'The greatest impediment to living is expectancy, which relies on tomorrow and wastes today.'",
+      "source": "Williams translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "Augustus (4.2-4.3): never ceased to pray for rest for himself and to seek release from the affairs of state; in a letter he spoke of his deep desire for that time, which he had long prayed for. 4.5: he had shed blood by land and sea, and plots were forming against him in the city itself.",
+      "source": "Williams translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Paulinus (18-20): Seneca urges him to withdraw 'to a more peaceful haven'. Paulinus manages 'the revenues of the world' and the public grain supply; the text does not give his office title. 19.1: retire to calmer, safer, more important pursuits. 20.1: those trappings of office are bought at the cost of life. 20.4: it is harder to obtain retirement from oneself than from the law.",
+      "source": "Williams translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Cicero (5.2): wrote 'I am lingering in my Tusculan estate, half-free'; Seneca says the wise man will never be half-free.",
+      "source": "Williams translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "7.10: a man with white hair and wrinkles has not necessarily lived long, only existed long (Penguin-style and Basore translations; wording varies, 'grey hair' in some).",
+      "source": "Basore translation excerpt (thedailyidea.org); Braunstein quote; Williams 7.10 'not lived long but long existed'",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "20.5: Seneca says such men's funerals should be held 'by the light of torches and wax tapers', as if they had lived briefly. 5.3: the wise man will never be half-free; he enjoys complete and unalloyed liberty.",
+      "source": "Williams translation",
+      "confidence": "high"
+    },
+    {
+      "id": "f13",
+      "claim": "9.1-9.2: you are arranging what lies in Fortune's control and abandoning what lies in yours; the whole future lies in uncertainty: live immediately.",
+      "source": "Stewart translation as quoted on philosophybreak.com and Goodreads quote collections; wording varies by translation",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Most people spend time on three things: answering others' demands, regretting the past, worrying about an unclear future.",
+      "reason": "Not Seneca's list. His catalogue is greed, drink, idleness, ambition (f3)."
+    },
+    {
+      "claim": "Seneca asks: 'How many days did you live for yourself? How many bent to others' agendas?'",
+      "reason": "Close to the audit idea (f5) but not that wording; do not present as a quote."
+    },
+    {
+      "claim": "'Life is not short, we make it short' as a pull quote with the old phrasing; 'give your own priorities a yes before others' urgent things'.",
+      "reason": "The yes-to-priorities advice is not in the text."
+    },
+    {
+      "claim": "'A good death is the reward of a good life, but a good life is lived daily, not on retirement day.'",
+      "reason": "Not found in the essay."
+    },
+    {
+      "claim": "Seneca does not see retirement as a goal; postponing life to retirement wastes most of life.",
+      "reason": "Overstated. Seneca himself urges Paulinus to retire; his target is the person who postpones living, not retirement."
+    },
+    {
+      "claim": "Nightly ritual: 'What did I learn today? Which bad habit did I fight? Am I a better person?'",
+      "reason": "That is the evening review in De Ira 3.36, not in On the Shortness of Life. Verified absent in the essay text."
+    },
+    {
+      "claim": "'A life you do not account for is a life not lived' / 'What did I leave to future generations?'",
+      "reason": "Not in the book. Invented attribution."
+    },
+    {
+      "claim": "Modern research shows daily reflection makes people happier and more productive.",
+      "reason": "Unsourced, not from the book."
+    }
+  ],
+  "stories": {
+    "1447": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f11"
+      ],
+      "note": "Guardian analogy and the audit of days."
+    },
+    "1448": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f12",
+        "f13"
+      ],
+      "note": "Postponement: Augustus's longed-for rest, the fifty/sixty plan, Paulinus."
+    },
+    "1449": {
+      "verdict": "delete",
+      "fact_ids": [],
+      "note": "Core is the nightly self-review, which is from De Ira 3.36, not this book (verified absent). The audit-of-days passage that does exist is used in 1447."
+    }
+  }
+}

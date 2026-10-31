@@ -1,0 +1,253 @@
+{
+  "book_no": 127,
+  "title": "Homo Deus",
+  "authors": [
+    "Yuval Noah Harari"
+  ],
+  "year": "2015",
+  "note": "Hebrew edition 2015; English 2016. Facts come from page-referenced reading notes, reviews and chapter summaries (full text not accessible). Quotes are kept only where two sources agree.",
+  "sources": [
+    "https://vialogue.wordpress.com/2017/07/23/homo-deus-notes-critical-reflections/",
+    "https://www.thedailybeast.com/yuval-hararis-new-book-feeds-the-tech-czars-god-complex/",
+    "https://bliis.org/essay/yuval-noah-harari-the-gilgamesh-project-and-the-science-industry/",
+    "https://www.nbcnews.com/mach/technology/godlike-homo-deus-could-replace-humans-tech-evolves-n757971",
+    "https://en.wikipedia.org/wiki/Calico_(company)",
+    "https://www.macrumors.com/2013/09/18/apple-chairman-art-levinson-to-head-google-spinoff-dedicated-to-solving-age-related-health-issues",
+    "https://www.noemamag.com/historian-human-history-will-end-when-men-become-gods-2/",
+    "https://en.wikipedia.org/wiki/Dataism",
+    "https://summarist.pages.dev/summary/homo-deus/the-time-bomb-in-the-laboratory",
+    "https://www.atticusli.com/replication-crisis/libet-free-will-experiments/",
+    "https://3quarksdaily.com/?p=169661"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "In the section 'The Last Days of Death' (pp. 21-29) Harari argues that the UN's 'right to life' turns death into a rights violation; he paraphrases it as death being a crime against humanity.",
+      "source": "vialogue reading notes (page-referenced)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f2",
+      "claim": "Religions sanctified something beyond earthly life and so tolerated death. Harari asks the reader to imagine Christianity, Islam or Hinduism in a world without death.",
+      "source": "vialogue notes pp. 21-22",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "Harari writes that for modern people death is 'a technical problem that we can and should solve' (p. 22). Engineers take over from priests as the experts on death; a few geeks in a lab can do it (p. 23).",
+      "source": "vialogue notes; Daily Beast quotes the p. 22 line",
+      "confidence": "high for p.22 line, medium for p.23"
+    },
+    {
+      "id": "f4",
+      "claim": "Harari names the modern drive to overcome death the Gilgamesh Project, after the Mesopotamian hero.",
+      "source": "bliis.org essay; NBC News summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Google's launch of Calico, with the stated aim 'to solve death', is cited in the book as an early step. Calico was announced on 18 September 2013 with Arthur Levinson, former Genentech chief and Apple chairman, as chief executive. Google's own wording was 'the challenge of aging and associated diseases'.",
+      "source": "book via reader summaries; MacRumors; Wikipedia Calico",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "'Equality is out, immortality is in' (p. 25). Harari expects the struggle for eternal youth to become a political battle more intense than any before (p. 29).",
+      "source": "vialogue notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "Modern medicine has not extended our natural life span by a single year; its real achievement is preventing premature death (p. 27, paraphrased).",
+      "source": "vialogue notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "A Vienna University of Economics and Business study calls Harari's treatment of death as 'only a technical problem' overstated; the Daily Beast reviewer says it treats a contested view as settled.",
+      "source": "search result; Daily Beast",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Dataism: the universe consists of data flows, and the value of any phenomenon or entity is its contribution to data processing. Harari says it began as neutral science and is mutating into a religion that claims to say what is right and wrong. Harari argues all competing political or social structures can be read as data-processing systems.",
+      "source": "Wikipedia Dataism; reader summaries (Vintage ed. p. ~428)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Harari defines an algorithm as a methodical set of steps for calculations, problem-solving and decisions (p. 83) and says what we call sensations and emotions are in fact algorithms (p. 86).",
+      "source": "vialogue notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "External algorithms may 'hack humanity' and know people better than they know themselves (p. 334). Google and Facebook algorithms know how you feel and many other things you hardly suspect (p. 397).",
+      "source": "vialogue notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Google Flu Trends, which flagged flu outbreaks from search data ahead of conventional health services, appears among the book's Google examples, alongside the Baseline Study and Google Fit. Future people may carry biometric devices that monitor their health, and medicine shifts from healing the sick to upgrading the healthy (pp. 349-353).",
+      "source": "vialogue notes; reader commentary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Authority shifts, in Harari's framing: from kings, popes and one's own feelings to data. Facing a life decision, people ask Google or Facebook instead of God or their feelings.",
+      "source": "Noema interview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Critics say the 'algorithms know you better' claim takes the algorithms' own claims at face value and rests on guesswork, not empirical data.",
+      "source": "reviews found via search",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Chapter 8 'The Time Bomb in the Laboratory': Harari calls free will a factual claim that conflicts with science, 'the elephant in the laboratory' (p. 284). Brain processes are deterministic, random or a mix, and none of those is free. Acting on a desire is not the same as choosing it (pp. 284-286).",
+      "source": "vialogue notes; chapter summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f16",
+      "claim": "Brain scanners can predict people's desires and decisions well before they are aware of them, with neural signals appearing from a few hundred milliseconds to a few seconds ahead (p. 286). A scientist watching a scanner can predict which switch a subject will press before the subject knows they chose.",
+      "source": "vialogue notes; 3 Quarks Daily",
+      "confidence": "medium"
+    },
+    {
+      "id": "f17",
+      "claim": "Commentators say Homo Deus cites Benjamin Libet's experiment to argue that the autonomous individual of liberal humanism is empirically obsolete.",
+      "source": "atticusli.com (secondhand)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f18",
+      "claim": "Libet's original 1983 study (Libet, Gleason, Wright, Pearl, Brain 106): a custom clock whose dot turned once every 2.56 seconds; scalp electrodes recorded the readiness potential; subjects flexed a wrist whenever they felt like it and reported the clock position when they first felt the urge. The readiness potential began about 550 ms before the flex, the reported urge about 200 ms before. Six subjects, forty trials each. Libet proposed a 'free won't' veto in the last ~150 ms.",
+      "source": "atticusli.com summary of the paper",
+      "confidence": "high (about the paper, not about the book)"
+    },
+    {
+      "id": "f19",
+      "claim": "Later work: Schurger (2012) showed the averaged readiness potential can arise from spontaneous neural noise; a 2021 review says the classic 'decision signal' reading is no longer the field default. Soon et al. (2008, fMRI) predicted a binary choice only modestly above chance (about 60%).",
+      "source": "atticusli.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "f20",
+      "claim": "The Gilgamesh Project's aims include nanobot-based immune systems that clear blocked arteries, fight bacteria and cancer, and slow or stop aging (pp. 27-28). Liberalism treats death as a technical problem caused by technical failures, with the goal of becoming a-mortal (p. 30).",
+      "source": "bliis.org essay citing page numbers",
+      "confidence": "medium"
+    },
+    {
+      "id": "f21",
+      "claim": "In a 2016 talk about the book, Harari argued science has redefined death as a technical problem and that engineers have taken over from priests; he said overcoming old age and death would probably take a few centuries rather than a few decades.",
+      "source": "NBC News report on the talk",
+      "confidence": "medium"
+    },
+    {
+      "id": "f22",
+      "claim": "Time ran a cover story that September titled 'Can Google Solve Death?' built on Larry Page's comments. A Daily Beast review reports that Sergey Brin was interested to learn he would probably die before humanity solves death.",
+      "source": "Calico search results; Daily Beast",
+      "confidence": "medium"
+    },
+    {
+      "id": "f23",
+      "claim": "Harari calls 'algorithm' arguably the single most important concept in our world (p. 83). Writing let societies be organised algorithmically, each person a step in a larger process, the essence of bureaucracy (p. 160, paraphrased). The word Dataism was first used by David Brooks in the New York Times in 2013.",
+      "source": "vialogue notes; Wikipedia Dataism",
+      "confidence": "medium"
+    },
+    {
+      "id": "f24",
+      "claim": "A 3 Quarks Daily review of Harari's argument sums it up: a scientist watching a brain scanner can predict which of two switches a subject will press before the subject is aware of having chosen.",
+      "source": "3 Quarks Daily",
+      "confidence": "medium"
+    },
+    {
+      "id": "f25",
+      "claim": "Caveats on Libet-style work: the wrist-flex task is trivial, samples were small, introspective reports of when the urge arrived were never validated against an independent measure (Banks and Pockett 2007). Soon et al. 2008 (fMRI) predicted a binary choice only modestly above chance (about 60%).",
+      "source": "atticusli.com",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Calico was founded by Larry Page and Sergey Brin; Google Ventures invested billions and gathered the best biologists, geneticists and AI experts.",
+      "reason": "Not in any source. Calico was announced by Larry Page with Levinson as CEO; investment sums unverified. The book's own statement is only the stated aim."
+    },
+    {
+      "claim": "Quote: 'For the first time in history humanity treats death not as inevitable but as a technical problem.'",
+      "reason": "Not the book's wording. The sourced p.22 line is used instead."
+    },
+    {
+      "claim": "Immortality would transform religions because belief systems make death meaningful, 'this world is temporary'.",
+      "reason": "The sourced version is narrower: religions sanctified life beyond earth and tolerated death."
+    },
+    {
+      "claim": "AI radiologists already detect some cancers earlier than doctors; Spotify predicts your taste; matching algorithms suggest marriage partners.",
+      "reason": "None of these appear in the sources for the book."
+    },
+    {
+      "claim": "Harari's Dataism is introduced as a 'new religion where humans hand authority to algorithms' with the book asking how far to trust them.",
+      "reason": "Partly supported (f9, f13); the 'how far should we trust' questions are not."
+    },
+    {
+      "claim": "Libet: the brain activated 300 to 500 milliseconds before the conscious decision; an electrode on the hand measured movement.",
+      "reason": "Wrong numbers and setup. The paper reports about 550 ms (readiness potential) versus about 200 ms (reported urge) before the flex, scalp electrodes and an EMG."
+    },
+    {
+      "claim": "Harari moves the free-will question into law, crime, punishment and personal responsibility.",
+      "reason": "No source."
+    },
+    {
+      "claim": "Harari's stated goal is only to name the biggest questions, not answer them.",
+      "reason": "Interpretation, no source."
+    }
+  ],
+  "stories": {
+    "1477": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f20",
+        "f21",
+        "f22"
+      ],
+      "note": "Recentred on the 'death as technical problem' argument and Calico's stated aim."
+    },
+    "1478": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "f13",
+        "f14",
+        "f23"
+      ],
+      "note": "Medicine, Spotify and matching examples removed; replaced by what the book is sourced for."
+    },
+    "1479": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f15",
+        "f16",
+        "f17",
+        "f18",
+        "f19",
+        "f24",
+        "f25"
+      ],
+      "note": "Libet numbers corrected; criminal-responsibility passage dropped."
+    }
+  }
+}

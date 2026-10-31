@@ -1,0 +1,39 @@
+{
+  "story_id": 1474,
+  "kind": "concept",
+  "book": { "title": "Sapiens", "author": "Yuval Noah Harari", "year": "2011" },
+  "confidence": "medium",
+  "confidence_note": "Written from the book's well-known passages (chimpanzee and banana line, Peugeot as a legal fiction, imagined orders); book text not opened and no quotation reproduced verbatim. Title in DB is the Turkish 'Insanligin Kisa Tarihi'; the English title Sapiens used. Year 2011 kept as given in the DB (the original Hebrew edition; English later); no edition details added. Old TR text errors: it presents as a direct Harari quote 'the greatest success of Homo sapiens is the capacity to believe in things that are not real', which is not a verified quotation; also claims 'a billion people cooperating' around 'God, human rights, money', a loose paraphrase, and says chimpanzees 'can lie'; omitted. The Peugeot detail (a company that exists only in collective imagination, with limited liability for its owners) kept at the level of mechanics; no founding date or details added.",
+  "facts": [
+    "Harari's argument: Homo sapiens is unusual in cooperating flexibly in very large groups of strangers; other animals cooperate in small groups of individuals who know each other.",
+    "He says you could never persuade a chimpanzee to hand over a banana by promising it limitless bananas in chimpanzee heaven after death.",
+    "Humans can cooperate over shared stories: gods, nations, money, human rights, and companies.",
+    "His example is a company such as Peugeot: it has no physical form, yet the law treats it as a person that can own property, borrow money and be sued.",
+    "Peugeot's owners are not personally liable for its debts, and a court can dissolve it, though no car, factory or worker is destroyed by that.",
+    "Harari calls such shared stories imagined orders; they hold only because enough people believe in them together."
+  ],
+  "scene_details": [
+    "A banana held out to a chimpanzee in exchange for a promise of bananas after death",
+    "A company with no body that can nevertheless be sued",
+    "A coin or banknote that is valuable because everyone agrees it is"
+  ],
+  "tension": "Humans routinely treat things that exist only in shared belief as solid, while an animal cannot be bought with a promise.",
+  "opening_idea": "Start with the banana and the promise of unlimited bananas in chimpanzee heaven.",
+  "lessons": [
+    { "idea": "Shared agreements are made, not found, and can be remade when enough people change what they treat as real.", "anchor": "A company like Peugeot is a legal fiction that people treat as a person.", "everyday_example_idea": "A household rule like a chore chart works only while everyone agrees to follow it." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which everyday thing you treat as solid is really a shared agreement, and what would you notice differently if you saw it that way?",
+  "use_cases": [
+    { "situation": "A team argues over an unwritten rule.", "move": "Harari says imagined orders work only because everyone believes; ask when it was agreed and whether it still serves the group.", "context": "meeting" },
+    { "situation": "Teenagers ask why they must follow a family rule.", "move": "Explain it as an agreement you all keep, and ask what they would change.", "context": "family" },
+    { "situation": "You stress over a status or title.", "move": "Remind yourself it is a shared story and notice what you actually value.", "context": "self" }
+  ],
+  "pocket_idea": "A chimpanzee won't swap a banana for a promise; people will: a lot of what we call real is agreement.",
+  "conversation_variants": {
+    "punchline_idea": "A chimpanzee will not trade a banana for bananas in chimpanzee heaven, but people trade their lives for shared stories.",
+    "thirty_sec_idea": "Harari says you could never persuade a chimpanzee to give up a banana for a promise of endless bananas in chimpanzee heaven. Humans do this constantly. A company like Peugeot has no body, yet the law treats it as a person that can own, borrow and be sued. Money, nations and rights work the same way, because enough of us agree they are real.",
+    "question_idea": "",
+    "key_contrast_idea": "Agreed, not found"
+  }
+}

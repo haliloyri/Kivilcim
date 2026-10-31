@@ -1,0 +1,61 @@
+{
+  "story_id": 1728,
+  "kind": "anecdote",
+  "book": {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Supported by secondary sources and a book excerpt: Goggins describes the Accountability Mirror: goals written on Post-it notes stuck to a bathroom mirror, which he used to tell himself the truth about his situation, with a nightly check that he worked toward them; he weighed about 297 pounds at one point (the excerpt places it in 1999) and wanted to become a Navy SEAL; accounts say he lost more than 100 pounds in about three months, but end weight and timing differ across sources, so only 'more than a hundred pounds in a few months' is used, hedged. Not verified: the exact wording of the notes, what he said to the mirror, his job at the time, the order of events. The mirror practice as the reason for the weight loss is the book's framing, not proven causation. Omitted: language, specific goals on notes. Added as recalled, not re-verified: the pest-control job and that he completed SEAL training after more than one attempt. The mirror's causal role in later outcomes is the book's framing, not proven.",
+  "facts": [
+    "Goggins weighed about 297 pounds (roughly 135 kilos) at the start of the account (the book excerpt places it in 1999).",
+    "He wanted to become a Navy SEAL.",
+    "He wrote his goals on Post-it notes and stuck them on his bathroom mirror, which he calls the Accountability Mirror.",
+    "He looked into the mirror and told himself the truth about where he was, not a softened version.",
+    "Each night he wrote the next day's goals on the notes and made sure he worked toward them.",
+    "According to the book, he lost over a hundred pounds in a few months (secondary sources say about three months; end weight differs).",
+    "The mirror matters in the book because the person who has to hear the truth is the one who can act on it.",
+    "At that time he worked a pest-control job (recalled).",
+    "The book tells that he went through SEAL training (BUD/S) and finished it on a later attempt, after more than one try (recalled; no class number or counts beyond 'more than one attempt')."
+  ],
+  "scene_details": [
+    "sticky notes on a bathroom mirror",
+    "a man looking at himself at 297 pounds",
+    "goals for tomorrow written the night before"
+  ],
+  "tension": "A man told himself the plain truth in a mirror, and wrote what he would do about it on paper stuck to the glass.",
+  "opening_idea": "Open on the bathroom mirror covered in sticky notes, and the man in front of it weighing 297 pounds.",
+  "lessons": [
+    {
+      "idea": "Say the plain version of your situation to yourself, then write down the next day's concrete tasks where you cannot miss them.",
+      "anchor": "the Post-it goals stuck on the mirror and checked each night"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one plain sentence about your current situation that you have been softening, and where would you put the first task it calls for?",
+  "use_cases": [
+    {
+      "situation": "You keep postponing a task.",
+      "move": "Write tomorrow's task on a note, put it where you wash your face, and tick it the same night.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend asks how your fitness plan is going.",
+      "move": "Say what you really did this week, in one sentence, with no softener.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team keeps saying it is almost done.",
+      "move": "Ask for tomorrow's one concrete step and who checks it, tonight.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Goggins stuck goals on a mirror and told himself the truth: write tomorrow's task where you see your own face.",
+  "conversation_variants": {
+    "punchline_idea": "Goggins put his goals on sticky notes on the mirror and told the man in it the truth.",
+    "thirty_sec_idea": "At 297 pounds and wanting to be a Navy SEAL, David Goggins stuck his goals on Post-it notes on his bathroom mirror. He looked at himself, told himself the truth instead of a softer story, and each night wrote what he had to do next. In the book he lost over a hundred pounds in a few months.",
+    "question_idea": "",
+    "key_contrast_idea": "honest mirror"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "story_id": 1553,
+  "kind": "concept",
+  "book": {
+    "title": "The Five Dysfunctions of a Team",
+    "author": "Patrick Lencioni",
+    "year": "2002"
+  },
+  "confidence": "medium",
+  "confidence_note": "From memory of the model section; book text not accessed. Artificial harmony, back-channel comments, ideological (idea-based) conflict, mining for conflict and real-time permission are recalled as the book's terms. No specific fable scene is included because none could be verified; the old TR text's board meeting and hallway quotes are not from the book and were dropped. 'Settles issues faster' and 'passionate and unfiltered' are paraphrases of the book's claims.",
+  "facts": [
+    "The second dysfunction is fear of conflict, leading to artificial harmony.",
+    "Teams that avoid conflict have boring meetings.",
+    "Disagreements move into veiled discussions and back-channel comments.",
+    "Healthy conflict is about ideas, not personalities, and can be passionate.",
+    "Such teams settle issues faster.",
+    "Leaders should mine for conflict, pulling buried disagreements out and resisting the urge to rescue people from discomfort.",
+    "Leaders can give real-time permission mid-debate.",
+    "Conflict depends on trust."
+  ],
+  "scene_details": [
+    "a quiet pleasant meeting",
+    "back-channel comments",
+    "the leader pulling a disagreement out of hiding"
+  ],
+  "tension": "A meeting everyone calls fine that settles nothing.",
+  "opening_idea": "Everyone nods in the room and talks afterward.",
+  "lessons": [
+    {
+      "idea": "Agreement in the room can hide the debate elsewhere.",
+      "anchor": "Back-channel comments."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What opinion from your last meeting did you keep to yourself until the meeting was over?",
+  "use_cases": [
+    {
+      "situation": "Silence after a proposal",
+      "move": "Ask for the weakest part of the plan.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Manager wants agreement",
+      "move": "Raise the concern you agreed past.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Trip planning, nobody objects",
+      "move": "Ask what they would change.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Silence in a meeting means the debate is happening afterward.",
+  "conversation_variants": {
+    "punchline_idea": "A meeting with no disagreement may just move arguments elsewhere.",
+    "thirty_sec_idea": "Artificial harmony, back-channel, mining for conflict.",
+    "question_idea": "",
+    "key_contrast_idea": "Quiet room, loud hallway"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1616,
+  "verdict": "keep",
+  "verify_note": "Not in scope of verification. Title fits (emergency fund); kept.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Acil durum fonu",
+    "description": "Dave Ramsey, The Total Money Makeover kitabında planına borç ödeyerek değil, 1.000 dolarlık küçük bir acil durum fonuyla başlar. Amaç, beklenmedik bir faturanın planı durdurmasını önlemektir.",
+    "hook": "Planınızın hangi noktasında tek bir sıradan sorun her şeyi durdurur?",
+    "one_minute_summary": "Ramsey'in planının ilk adımı, borçlara ekstra ödeme başlamadan önce kenara ayrılan 1.000 dolardır. Gerekçe tanıdık: biri borcunu ödüyor, sonra bir araç tamiri faturası geliyor ve nakit yoksa kredi kartı çıkıyor. Yeni borç eklenince plan duruyor. Ramsey 1.000 doları çoğu küçük sürprizi karşılayan bir tampon olarak görür, tam güvence saymaz. Bu dönemde yeni borca girilmez. Borçlar bitince fon üç ila altı aylık gidere çıkar, bu üçüncü adımdır."
+  },
+  "en": {
+    "title": "The emergency fund",
+    "description": "Dave Ramsey starts the plan in The Total Money Makeover with a $1,000 emergency fund, not with debt payments. Its job is to keep a surprise bill from stalling the plan.",
+    "hook": "Where in your own plan would one ordinary problem stop everything?",
+    "one_minute_summary": "The first step in Ramsey's plan is $1,000 set aside before any extra money goes to debt. His reasoning is a familiar scene: someone pays down a debt, a car repair bill arrives, there is no cash, and the credit card comes out. New debt is added and the plan stalls. Ramsey calls the $1,000 a buffer for most small surprises, not full protection. No new debt is taken during this period. Once the debts are paid, the fund grows to three to six months of expenses, which is step three."
+  },
+  "es": {
+    "title": "El fondo de emergencia",
+    "description": "Dave Ramsey empieza su plan en The Total Money Makeover con un fondo de emergencia de 1.000 dólares y no con el pago de deudas. Su tarea es evitar que una factura imprevista frene el plan.",
+    "hook": "¿En qué punto de tu propio plan un problema corriente lo pararía todo?",
+    "one_minute_summary": "El primer paso del plan de Ramsey son 1.000 dólares apartados antes de dedicar dinero extra a las deudas. Su razonamiento parte de una escena conocida: alguien paga una deuda, llega la factura de una reparación del coche, no hay efectivo y sale la tarjeta. Se suma una deuda nueva y el plan se atasca. Ramsey presenta los 1.000 dólares como un colchón para los sustos pequeños, no como protección total. En este periodo no se contraen deudas nuevas. Pagadas las deudas, el fondo sube a tres o seis meses de gastos, el tercer paso."
+  },
+  "de": {
+    "title": "Der Notgroschen",
+    "description": "Dave Ramsey beginnt seinen Plan in The Total Money Makeover mit einem Notfallfonds von 1.000 Dollar und nicht mit dem Abzahlen. Er soll verhindern, dass eine überraschende Rechnung den Plan stoppt.",
+    "hook": "An welcher Stelle deines eigenen Plans würde ein gewöhnliches Problem alles anhalten?",
+    "one_minute_summary": "Der erste Schritt in Ramseys Plan sind 1.000 Dollar, die beiseitegelegt werden, bevor zusätzliches Geld in die Schulden fließt. Seine Begründung ist eine bekannte Szene: Jemand zahlt eine Schuld ab, dann kommt die Rechnung für eine Autoreparatur, es gibt kein Bargeld, und die Kreditkarte kommt heraus. Eine neue Schuld entsteht, der Plan gerät ins Stocken. Ramsey nennt die 1.000 Dollar einen Puffer für kleine Überraschungen und keinen vollen Schutz. In dieser Zeit entstehen keine neuen Schulden. Sind die Schulden bezahlt, wächst der Fonds auf drei bis sechs Monatsausgaben, den dritten Schritt."
+  }
+}

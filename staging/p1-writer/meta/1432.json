@@ -1,0 +1,35 @@
+{
+  "story_id": 1432,
+  "verdict": "keep",
+  "verify_note": "Old text's Grove quote, 'Doerr joined Intel in 1975 as a young engineer' and 'Google uses OKRs every quarter to this day' not tied to the book and dropped. Replaced with Operation Crush (late 1979 telex by Don Buckout via Casey Powell to Andy Grove, objective sentence, 2,000 design wins, Jan 1980 Crush teams, Motorola beaten by end of 1980, 8088 in first IBM PC). Sources: whatmatters.com (Doerr's own site), Intel and Computer History Museum pages. Final design-win count differs by source and is omitted. Doerr's own role in the episode is not stated.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Intel'in Operation Crush'ı",
+    "description": "1979'un sonunda Intel'in 8086'sı Motorola'ya yenilirken bir satış müdürünün sekiz sayfalık teleksi Operation Crush kampanyasını başlattı. Hedef bir cümle ve 2.000 design win'di.",
+    "hook": "Şu an yürüttüğünüz hangi işin hedefi var ama ulaşıldığını gösteren bir sayısı yok?",
+    "one_minute_summary": "Doerr, Intel'in Operation Crush kampanyasını anlatıyor. 1979'un sonunda 8086, Motorola'nın 68000'i karşısında yer kaybederken bölge satış müdürü Don Buckout sekiz sayfalık bir teleks gönderdi. Mesaj Andy Grove'a ulaştı. Hedef tek cümleydi: 8086'yı en yüksek performanslı 16 bit işlemci ailesi yapmak. Sayısı ise 2.000 design win'di. Ocak 1980'de ekipler satış ofislerine gitti, yılın sonunda Intel Motorola'yı yenmişti. Sonradan 8088 ilk IBM PC'ye güç verdi."
+  },
+  "en": {
+    "title": "Intel's Operation Crush",
+    "description": "In late 1979 Intel's 8086 was losing to Motorola, and a district manager's eight-page telex set off Operation Crush. The goal was one sentence and 2,000 design wins.",
+    "hook": "Which piece of your work has a written goal but no number to check?",
+    "one_minute_summary": "Doerr tells of Intel's Operation Crush. In late 1979 the 8086 was losing ground to Motorola's 68000, and district sales manager Don Buckout sent headquarters an eight-page telex. It reached Andy Grove. The objective was one sentence, to establish the 8086 as the highest performance 16-bit family, with a target of 2,000 design wins. Crush teams went to field offices in January 1980, and by the end of the year Intel had beaten Motorola. The 8088 later powered the first IBM PC."
+  },
+  "es": {
+    "title": "La Operación Crush de Intel",
+    "description": "A finales de 1979 el 8086 de Intel perdía frente a Motorola, y el télex de ocho páginas de un gerente desató la Operación Crush. La meta fue una frase y 2.000 design wins.",
+    "hook": "¿Qué trabajo tuyo tiene una meta escrita pero ningún número para comprobarla?",
+    "one_minute_summary": "Doerr cuenta la Operación Crush de Intel. A finales de 1979 el 8086 perdía terreno frente al 68000 de Motorola, y el gerente de ventas Don Buckout envió a la sede un télex de ocho páginas que llegó a Andy Grove. El objetivo cabía en una frase, establecer el 8086 como la familia de 16 bits de mayor rendimiento, con una meta de 2.000 design wins. En enero de 1980 los equipos salieron a las oficinas de campo y a final de año Intel había vencido a Motorola."
+  },
+  "de": {
+    "title": "Intels Operation Crush",
+    "description": "Ende 1979 verlor Intels 8086 gegen Motorola, und der achtseitige Telex eines Verkaufsleiters löste Operation Crush aus. Das Ziel waren ein Satz und 2.000 Design Wins.",
+    "hook": "Welche deiner Arbeiten hat ein schriftliches Ziel, aber keine Zahl zum Nachprüfen?",
+    "one_minute_summary": "Doerr erzählt Intels Operation Crush. Ende 1979 verlor der 8086 Boden gegen Motorolas 68000, und Bezirksverkaufsleiter Don Buckout schickte der Zentrale einen Telex von acht Seiten, der Andy Grove erreichte. Das Ziel war ein Satz, den 8086 zur leistungsstärksten 16-Bit-Familie zu machen, dazu 2.000 Design Wins als Zahl. Im Januar 1980 reisten Crush-Teams in die Vertriebsbüros, bis Jahresende hatte Intel Motorola geschlagen. Der 8088 trieb später den ersten IBM-PC an."
+  }
+}

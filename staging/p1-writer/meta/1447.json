@@ -1,0 +1,35 @@
+{
+  "story_id": 1447,
+  "verdict": "keep",
+  "verify_note": "Checked against the Williams and Stewart texts. Replaced the invented three-way list and quoted question with the actual catalogue (greed, drink, idleness, ambition), the guardian analogy and the audit of days.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Planlandığı gibi geçen günler",
+    "description": "Seneca, hayatın kısa olduğu şikâyetini zamanın çoğunu boşa harcadığımız yanıtıyla karşılıyor ve kaç günün niyet edildiği gibi geçtiğini soruyor.",
+    "hook": "Geçen haftanın hangi saatleri tam olarak planladığınız yere gitti?",
+    "one_minute_summary": "Seneca, Paulinus'a yazdığı eserde hayatın kısa olduğu şikâyetini yanıtlıyor: sorun az zamanımız olması değil, çoğunu boşa harcamamız. Hayatı servete benzetiyor: iyi bir bekçinin elinde mütevazı servet büyür, kötü sahibin elinde büyük servet dağılır. Günleri hırs, içki, tembellik ve siyasi emel yiyor. İnsanlar mallarını korurken varoluşlarına başkalarının girmesine izin veriyor. Sonunda okura, niyet ettiği gibi geçen günlerin ne kadar az olduğunu saymasını söylüyor. Bu sayım küçük ama işe yarar bir alışkanlığa dönüşebilir."
+  },
+  "en": {
+    "title": "The days that went as planned",
+    "description": "Seneca answers the complaint that life is short with the claim that we waste much of it, and asks how few days went as intended.",
+    "hook": "Which hours of last week went exactly where you planned?",
+    "one_minute_summary": "Writing to Paulinus, Seneca answers the complaint that life is short: the problem is not how little time we have but how much we waste. He compares life to wealth, which grows under a careful guardian and scatters under a bad owner. Greed, drink, idleness and ambition eat the days, and people guard property closely while letting others trespass on their existence. He ends by asking the reader to count how few days went as intended. That count can become a small, useful habit."
+  },
+  "es": {
+    "title": "Los días que salieron como querías",
+    "description": "Séneca responde a la queja de que la vida es corta con que perdemos mucha, y pregunta qué pocos días salieron como se pretendía.",
+    "hook": "¿Qué horas de la semana pasada fueron exactamente adonde habías planeado?",
+    "one_minute_summary": "En su escrito a Paulino, Séneca responde a la queja de que la vida es corta: el problema no es que tengamos poco tiempo, sino que perdemos mucho. Compara la vida con la riqueza, que crece con un guardián cuidadoso y se dispersa con un mal dueño. La codicia, la bebida, la ociosidad y la ambición se llevan los días, y la gente vigila sus propiedades mientras deja que otros invadan su existencia. Termina pidiendo al lector contar qué pocos días salieron como pretendía. Ese recuento puede ser un hábito pequeño y útil."
+  },
+  "de": {
+    "title": "Die Tage, die wie geplant verliefen",
+    "description": "Seneca antwortet auf die Klage, das Leben sei kurz, wir vergeudeten viel davon, und fragt, wie wenige Tage so verliefen wie geplant.",
+    "hook": "Welche Stunden der letzten Woche gingen genau dorthin, wo du sie haben wolltest?",
+    "one_minute_summary": "In seiner Schrift an Paulinus beantwortet Seneca die Klage, das Leben sei kurz: Das Problem sei nicht, dass wir wenig Zeit haben, sondern dass wir viel vergeuden. Er vergleicht das Leben mit Vermögen, das bei einem sorgfältigen Verwalter wächst und bei einem schlechten Besitzer zerstreut wird. Gier, Trunk, Müßiggang und Ehrgeiz fressen die Tage, und Menschen hüten ihr Eigentum, während sie andere in ihre Existenz eindringen lassen. Am Ende bittet er den Leser zu zählen, wie wenige Tage so verliefen wie geplant. Dieses Zählen kann zu einer kleinen, nützlichen Gewohnheit werden."
+  }
+}

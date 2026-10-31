@@ -1,0 +1,35 @@
+{
+ "story_id": 1408,
+ "verdict": "keep",
+ "verify_note": "Mother/headache/singing daughter anecdote via LitCharts and Shortform chapter summaries (book text not read). Old \"five years old / forty years / Toltec teaching / true-necessary-kind\" claims dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Bir Ses Hakkında Tek Cümle",
+  "description": "Ruiz'in örneğinde başı ağrıyan bir anne şarkı söyleyen kızına sesinin çirkin olduğunu söylüyor. Kız sesinden korkmaya başlıyor.",
+  "hook": "Geçen hafta söylediğiniz bir cümleyi şimdi nasıl kurardınız?",
+  "one_minute_summary": "Don Miguel Ruiz birinci anlaşmayı bir sahneyle anlatıyor: başı ağrıyan anne, şarkı söyleyen kızına susmasını ve sesinin çirkin olduğunu söylüyor. Kız sesini kullanmaktan korkabilir, içine kapanabilir. Ruiz bunu kara büyü sayıyor ve insanların çoğu zaman sevdiklerine farkında olmadan yaptığını söylüyor. Kusursuz sözcüğünü Latince günahtan türetiyor, kendini yargılamamak ve suçlamamak anlamına getiriyor. Dedikoduyu bilgisayar virüsüne benzetiyor, çocukken aptal duyan birinin buna inanmaya yatkın olduğunu ekliyor."
+ },
+ "en": {
+  "title": "One Remark About a Voice",
+  "description": "In Ruiz's example a mother with a headache tells her singing daughter that her voice is ugly. The girl grows afraid of it.",
+  "hook": "How would you rebuild a sentence you said last week?",
+  "one_minute_summary": "Don Miguel Ruiz explains the first agreement with a scene: a mother with a headache tells her singing daughter to shut up because her voice is ugly. The girl may grow afraid of her voice and turn withdrawn. Ruiz calls this black magic. He derives impeccable from the Latin for sin and ties it to not judging or blaming yourself. He compares gossip to a computer virus and says a child told she is stupid tends to believe it."
+ },
+ "es": {
+  "title": "Una frase sobre su voz",
+  "description": "En el ejemplo de Ruiz, una madre con dolor de cabeza dice a su hija que canta que su voz es fea. La niña le tiene miedo.",
+  "hook": "¿Cómo reconstruirías ahora una frase que dijiste la semana pasada?",
+  "one_minute_summary": "Don Miguel Ruiz explica el primer acuerdo con una escena: una madre con dolor de cabeza manda callar a su hija, que canta, y le dice que su voz es fea. La niña puede temer su voz y volverse retraída. Ruiz lo llama magia negra. Deriva impecable del latín pecado y lo vincula a no juzgarse ni culparse. Compara el chisme con un virus informático y dice que un niño al que llaman tonto suele creérselo."
+ },
+ "de": {
+  "title": "Ein Satz über ihre Stimme",
+  "description": "In Ruiz' Beispiel sagt eine Mutter mit Kopfschmerzen ihrer singenden Tochter, ihre Stimme sei hässlich. Das Mädchen fürchtet sie.",
+  "hook": "Wie würdest du einen Satz von letzter Woche jetzt umformulieren?",
+  "one_minute_summary": "Don Miguel Ruiz erklärt das erste Abkommen mit einer Szene: Eine Mutter mit Kopfschmerzen sagt ihrer singenden Tochter, sie solle still sein, ihre Stimme sei hässlich. Das Mädchen fürchtet sich womöglich vor seiner Stimme und wird in sich gekehrt. Ruiz nennt das schwarze Magie. Makellos leitet er vom lateinischen Wort für Sünde ab und bezieht es darauf, sich nicht zu verurteilen. Klatsch vergleicht er mit einem Computervirus."
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "story_id": 1740,
+ "kind": "anecdote",
+ "book": {
+  "title": "Pour Your Heart Into It",
+  "author": "Howard Schultz and Dori Jones Yang",
+  "year": "1997"
+ },
+ "confidence": "medium",
+ "confidence_note": "TITLE-CONTENT MISMATCH (partial): the title mentions a Starbucks meeting changed by an Italian espresso bar. The 1983 Milan trip, Schultz's reaction, the founders' hesitation and the small Seattle espresso-bar test (a corner of the Fourth and Spring store, 1984) are confirmed by secondary sources; no specific 'meeting' scene was verified, so the story does not stage one. Omitted because sources conflict or were single-source: number of Milan espresso bars (1,500 vs 500 visited), opening-day customer figures, the 1985 funding amount. Names of baristas not used. ADDED LATER: Added from memory of the book, unverified in this session: Schultz joined Starbucks in 1982; he later bought Starbucks (the book's later chapters); the sixth store at Fourth and Spring is from secondary sources. The sentence 'what was lacking was an experience, not another product' is an interpretation drawn from the book's theme, not a quote.",
+ "facts": [
+  "In 1983 Howard Schultz, then in charge of marketing at Starbucks, went to Milan on a business trip.",
+  "He walked into Italian espresso bars and saw baristas and regulars treating the bar as a meeting place, not just a place to buy coffee.",
+  "Starbucks at that time sold roasted beans and equipment, not drinks made to order.",
+  "Back in Seattle he argued that Starbucks should serve espresso drinks in the stores.",
+  "The founders, led by Jerry Baldwin, hesitated, in part because they saw themselves as coffee merchants.",
+  "In April 1984 he got to try a small espresso bar in a corner of the Fourth and Spring store in Seattle.",
+  "After the trial the founders still declined to expand, and Schultz left in 1985 to start his own espresso-bar company, Il Giornale.",
+  "Schultz joined Starbucks in 1982 and ran marketing.",
+  "He later bought Starbucks."
+ ],
+ "scene_details": [
+  "the baristas and regulars in a Milan espresso bar",
+  "a beans-only store in Seattle",
+  "a small espresso bar in the corner of the Fourth and Spring store"
+ ],
+ "tension": "A man sees in Italy what a coffee company is missing, and his bosses are not convinced.",
+ "opening_idea": "Open in the Milan espresso bar where a Starbucks marketing manager watched people, not coffee.",
+ "lessons": [
+  {
+   "idea": "A product you sell can hide a different thing customers come for, and you see it by watching how people use the place.",
+   "anchor": "Milan's espresso bars as meeting places while Starbucks sold only beans"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What is one thing your customers or colleagues actually come to you for, other than the thing on the label?",
+ "use_cases": [
+  {
+   "situation": "A team reviews why customers come back.",
+   "move": "Say that Schultz noticed Milan's bars sold company, not just coffee, and ask what your customers get beyond the product.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You visit a place with a different way of doing your work.",
+   "move": "Take notes on what people do there, not on what is sold, then show one thing to your team.",
+   "context": "self"
+  },
+  {
+   "situation": "A friend pitches an idea to a doubtful partner.",
+   "move": "Suggest asking for a small trial in one corner first, as Schultz did at Fourth and Spring.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "Schultz saw that Milan's bars sold company along with espresso, and asked a doubtful boss for a corner to test it.",
+ "conversation_variants": {
+  "punchline_idea": "Howard Schultz returned from Milan seeing that the espresso bar sold company as much as coffee, and the company that sold only beans was missing it.",
+  "thirty_sec_idea": "In 1983 Howard Schultz visited Milan and noticed that the espresso bars were places where people met, not just bought coffee. Starbucks then sold only beans. He pushed for espresso drinks, the founders hesitated, and he got a small test in one corner of a Seattle store. They still declined to expand, so he left to start Il Giornale.",
+  "question_idea": "",
+  "key_contrast_idea": "coffee, plus company"
+ }
+}

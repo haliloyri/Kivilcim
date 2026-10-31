@@ -1,0 +1,54 @@
+{
+  "story_id": 1802,
+  "kind": "concept",
+  "book": {
+    "title": "The Culture Map",
+    "author": "Erin Meyer",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Meyer's trusting scale (task-based versus relationship-based) and the country placements used (US and Germany task-based; Brazil, China, India relationship-based) are the book's framework. The supplied Stockholm and São Paulo scene is an illustration, not a book case; no named people are used.",
+  "facts": [
+    "The trusting scale runs from task-based to relationship-based trust.",
+    "In task-based cultures trust is built through work: reliability, competence and keeping promises; business and personal life are kept apart.",
+    "In relationship-based cultures trust is built through personal connection over time, such as shared meals, conversation and getting to know the person.",
+    "In Meyer's map the United States and Germany lean task-based; Brazil, China and India lean relationship-based.",
+    "Illustration (typical, not a book case): one side opens with goals, roles and deadlines; the other expects time for personal conversation first.",
+    "Each side is looking for trust; they open it through different doors.",
+    "Moving straight to the agenda can look cold to a relationship-based partner; spending the first meeting on conversation can look like wasted time to a task-based one."
+  ],
+  "tension": "Both sides want trust, but each starts it through a different door.",
+  "opening_idea": "Open on a first meeting where one person goes straight to the agenda and the other expects to talk first.",
+  "lessons": [
+    {
+      "idea": "Trust has more than one starting point; learn the other person's before you start.",
+      "anchor": "Two doors to trust, one task-based and one relationship-based."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Does trust start with your counterpart's competence or the relationship, and do they start the same way?",
+  "use_cases": [
+    {
+      "situation": "You open a first meeting with a new partner.",
+      "move": "Offer a few minutes of personal conversation before the agenda and see how they respond.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A new colleague seems cold to your friendly approach.",
+      "move": "Offer a clear plan and deliver the first small task on time.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are preparing for a first meeting.",
+      "move": "Write down how you build trust and guess how the other side does.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Both sides want trust; learn whether the other builds it through work or through the relationship.",
+  "conversation_variants": {
+    "punchline_idea": "Meyer's trusting scale shows that one side may spend the first meeting on the agenda and the other on getting acquainted.",
+    "thirty_sec_idea": "Erin Meyer's trusting scale runs from task-based to relationship-based trust. Americans and Germans tend to build it through reliable work, while Brazilians, Chinese and Indians tend to build it through personal ties over time. Both want trust, but they open it through different doors.",
+    "question_idea": "",
+    "key_contrast_idea": "İş ve ilişki"
+  }
+}

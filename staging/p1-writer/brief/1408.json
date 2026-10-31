@@ -1,0 +1,60 @@
+{
+  "story_id": 1408,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Four Agreements",
+    "author": "Don Miguel Ruiz",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Core anecdote (mother with a headache tells singing daughter to shut up, ugly voice; girl becomes afraid of her voice) taken from detailed chapter summaries (LitCharts, Shortform), not the book text. Old text dropped: \"five years old\", \"forty years without singing\", \"Toltec teaching\", the \"true, necessary, kind\" test. Impeccable/pecatus definition and domestication quote verified from Ruiz quotations in PhilosophersNotes.",
+  "facts": [
+    "Ruiz: the word is a force, the power to express, communicate, think and create events in your life; mind is fertile ground, words are seeds.",
+    "First agreement is the most important and most difficult; with it alone one can reach heaven on earth.",
+    "A mother comes home from work with a headache; daughter is singing happily; mother tells her to shut up, she has an ugly voice.",
+    "The girl grows afraid to use her voice, develops a complex and may grow shy and withdrawn; Ruiz calls this black magic used unknowingly on loved ones.",
+    "Impeccable from Latin pecatus, sin; im means without; sin is anything you do against yourself, incl. judging or blaming yourself; being impeccable is taking responsibility without judging or blaming.",
+    "Gossip is like a computer virus; mind fills with chaos of a thousand voices.",
+    "A child told she is stupid or ugly tends to believe it; breaking the spell takes someone who hooks her attention.",
+    "Children are raised like dogs, with punishment and reward: good girl, bad girl (domestication chapter)."
+  ],
+  "scene_details": [
+    "mother with headache",
+    "daughter singing happily"
+  ],
+  "tension": "One tired sentence can reshape how a child relates to her own voice.",
+  "opening_idea": "Open on headache and singing.",
+  "lessons": [
+    {
+      "idea": "Build the sentence for the memory of the person hearing it.",
+      "anchor": "The mother's single sentence changed how the girl felt about her voice.",
+      "everyday_example_idea": "A team lead rephrases \"this is a mess\" into a concrete fix."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If a sentence you said to someone last week could stay with them for years, how would you rebuild it now?",
+  "use_cases": [
+    {
+      "situation": "Commenting on a newcomer's first presentation.",
+      "move": "Name what worked, then offer one concrete change.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You come home with a headache and your kid is noisy.",
+      "move": "Ask for ten quiet minutes and promise to listen after.",
+      "context": "family"
+    },
+    {
+      "situation": "You are about to say something harsh to yourself.",
+      "move": "Ask how long it would stay with someone else, rephrase.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Rebuild a harsh sentence before you say it.",
+  "conversation_variants": {
+    "punchline_idea": "In Ruiz's example, one sentence said through a headache was enough to make a girl afraid of her own voice.",
+    "thirty_sec_idea": "Ruiz describes a mother with a headache telling her singing daughter to shut up. The girl grows afraid of her voice. He calls it black magic done unknowingly to loved ones, hence the first agreement.",
+    "question_idea": "",
+    "key_contrast_idea": "One sentence, long echo"
+  }
+}

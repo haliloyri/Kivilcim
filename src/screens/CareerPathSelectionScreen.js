@@ -61,7 +61,7 @@ const CareerPathSelectionScreen = ({ navigation }) => {
       <ImageBackground source={CAREER_HERO} imageStyle={styles.introImage} style={styles.intro}>
         <View style={styles.introScrim} />
         <View style={styles.introContent}>
-          <View style={styles.introKicker}><Ionicons name="sparkles-outline" size={15} color="#E9A94B" /><Text selectable style={styles.introKickerText}>{t('career.selection.free', lang)}</Text></View>
+          <View style={styles.introKicker}><Ionicons name="gift-outline" size={15} color="#E9A94B" /><Text selectable style={styles.introKickerText}>{t('career.selection.free', lang)}</Text></View>
           <Text selectable style={styles.title}>{t('career.selection.title', lang)}</Text>
           <Text selectable style={styles.subtitle}>{t('career.selection.subtitle', lang)}</Text>
         </View>
@@ -74,7 +74,7 @@ const CareerPathSelectionScreen = ({ navigation }) => {
 
       {recommendedPathId ? (
         <View style={[styles.recommendation, { backgroundColor: `${colors.primary}14`, borderColor: `${colors.primary}52` }]}>
-          <Ionicons name="sparkles-outline" size={18} color={colors.primaryText} />
+          <Ionicons name="compass-outline" size={18} color={colors.primaryText} />
           <View style={{ flex: 1 }}>
             <Text selectable style={[styles.recommendationTitle, { color: colors.text }]}>{t('career.selection.recommendationTitle', lang)}</Text>
             <Text selectable style={[styles.recommendationCopy, { color: colors.textSecondary }]}>{t(recommendation.reasonKey, lang)}</Text>

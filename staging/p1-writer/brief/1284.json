@@ -1,0 +1,59 @@
+{
+  "story_id": 1284,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "year": "1988"
+  },
+  "confidence": "medium",
+  "confidence_note": "DB lists the book as 'Kaybedilen Cennet'; content is The Alchemist, book field corrected. Written from well-known plot and secondary summaries, book text not opened. Old TR text said 'a stranger laughed' and 'he wept and tired'; in the book the speaker is the leader of the men who beat him, so that is what is used. Old text's 'fig tree' is the sycamore. Omitted: exact wording of the leader's line, the scarab sign, what exactly the chest held, the number of coins. Outcome stated only as 'found the treasure' at the church. Fatima thought at the end: medium confidence (book ends with him thinking of her).",
+  "facts": [
+    "Santiago reaches the Egyptian pyramids after a long journey and starts to dig in the sand.",
+    "On the way he was robbed in Tangier, worked in a crystal merchant's shop, crossed the desert with a caravan, left Fatima waiting at an oasis and was guided by an alchemist.",
+    "A group of men finds him digging. They beat him and demand the gold they think he carries.",
+    "Santiago tells them he is looking for treasure that he dreamed of. Their leader says he has had a recurring dream himself, of a treasure in an abandoned church in Spain, where a sycamore grows in the old sacristy.",
+    "The leader says he would never cross a desert because of a recurring dream, and lets Santiago go.",
+    "Santiago goes back to Spain, to the abandoned church where he had slept with his sheep and dreamed. He digs under the sycamore and finds the treasure. Fatima, waiting at her oasis, is the first person he thinks of."
+  ],
+  "scene_details": [
+    "Digging in the sand at the pyramids with nothing coming up",
+    "A beating by men who expect gold",
+    "A sycamore growing from the sacristy of the abandoned church, and a spade under it"
+  ],
+  "tension": "After a hard journey to the pyramids a shepherd finds nothing, and the one man who knows where the treasure lies has never left home to look.",
+  "opening_idea": "Start with Santiago digging at the pyramids and the men who find him, then the leader's own dream.",
+  "lessons": [
+    {
+      "idea": "What you are looking for may be near where you started, but you may need the trip to recognise it and be ready for it.",
+      "anchor": "The leader of the men who beat Santiago described the church under the sycamore from his own dream and never went, so he never found it.",
+      "everyday_example_idea": "Someone returns to the town where they grew up after years away and finally sees what it offered."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What did you only recognise as valuable after you had been away from it, and what did the time away change in how you saw it?",
+  "use_cases": [
+    {
+      "situation": "A friend is restless and thinks the answer is somewhere else.",
+      "move": "Santiago's treasure was under the sycamore where he began; ask what exactly they hope to find elsewhere and whether any of it is already near.",
+      "context": "social"
+    },
+    {
+      "situation": "You came back from a long trip or job and feel unsettled.",
+      "move": "Write what you now notice at home that you did not before.",
+      "context": "self"
+    },
+    {
+      "situation": "Colleague dismisses an idea because it requires travel or relocating.",
+      "move": "Ask what the idea would need and whether part could be tried locally first.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Santiago crossed a desert to learn where to dig; the treasure was under the sycamore he started beside.",
+  "conversation_variants": {
+    "punchline_idea": "The man who knew where Santiago's treasure was buried had never left home to dig for it.",
+    "thirty_sec_idea": "Santiago finally reaches the pyramids, digs and finds nothing, and is beaten by men looking for gold. Their leader says he too dreamed of a treasure, in an abandoned church in Spain under a sycamore, but he would never cross a desert for a dream. Santiago goes back to the church where he first slept and dug under the sycamore, and finds it.",
+    "question_idea": "",
+    "key_contrast_idea": "Far journey, near treasure"
+  }
+}

@@ -1,0 +1,63 @@
+{
+ "story_id": 1323,
+ "kind": "concept",
+ "book": {
+  "title": "A More Beautiful Question",
+  "author": "Warren Berger",
+  "year": "2014"
+ },
+ "confidence": "medium",
+ "confidence_note": "Inverse relationship of questioning and expertise, the beginner's mind line and the keep-asking-after-experts highlight come from Goodreads highlights and an American Express interview with Berger, not the book text. Graham's quote and later seed investment come from Berger's blog excerpt. Old term 'expert blindness', the 'two design students' claim and 'how did other industries solve it' were not found and dropped.",
+ "facts": [
+  "Berger observes that questioning often has an inverse relationship to expertise.",
+  "He quotes the beginner's mind line (via Zen teacher Shunryu Suzuki): in the beginner's mind there are many possibilities, but in the expert's there are few.",
+  "Attorneys are trained never to ask a question they do not know the answer to; Berger asks what is wrong with that approach in business.",
+  "Berger says the harder task is to keep asking after experts have told you, in effect, that you cannot change this situation and that there are good reasons things are the way they are.",
+  "Berger says asking fundamental, naive questions about what we observe takes guts; he credits a child's naive question for Land's Polaroid camera.",
+  "Airbnb: roommates Joe Gebbia and Brian Chesky, no jobs and little money in San Francisco, 2007. Investors and industry figures doubted the idea; angel investor Paul Graham said 'No one would want to stay in someone else's bed.' Graham later became a seed investor.",
+  "The founders challenged the assumption that travelers needed established hotels.",
+  "Berger says schools and business cultures tend to reward rote answers over questions.",
+  "Gebbia said being both travelers and hosts helped them see the opportunity; Berger sets the founders beside Robin Chase (cars can be shared).",
+  "Berger advises cultivating an outsider's or novice's perspective for basic why questions; a naive question can expose overlooked assumptions.",
+  "Without ad money the founders launched in Denver during the 2008 Democratic National Convention and got on CNN by pitching news producers."
+ ],
+ "scene_details": [
+  "Graham's line about someone else's bed",
+  "attorneys never asking a question they don't know the answer to",
+  "the beginner's mind and the expert's mind"
+ ],
+ "tension": "The people who know a field best are the least likely to ask the basic question.",
+ "opening_idea": "An investor hears the Airbnb idea and says no one would want to stay in someone else's bed.",
+ "lessons": [
+  {
+   "idea": "Expertise turns questions into settled facts; borrow a newcomer's eye on your own field.",
+   "anchor": "Inverse relationship of expertise and questioning; attorneys' rule."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What have you accepted for years in your own work that a newcomer would probably ask about on the first day?",
+ "use_cases": [
+  {
+   "situation": "Your team keeps an old rule without questioning it",
+   "move": "Say a newcomer would ask why, and ask it first.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A new colleague hesitates over a basic question",
+   "move": "Tell them experienced people stopped asking and invite the question.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "You are reviewing something you do every week",
+   "move": "Ask what you would question if you saw it for the first time today.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Expertise cuts down on questions; look at your own work as if for the first time.",
+ "conversation_variants": {
+  "punchline_idea": "Berger: questioning often has an inverse relationship to expertise.",
+  "thirty_sec_idea": "Graham's doubt, the beginner's mind, the attorneys' rule.",
+  "question_idea": "",
+  "key_contrast_idea": "expert's few possibilities, beginner's many"
+ }
+}

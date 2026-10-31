@@ -24,29 +24,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const langArg = args[0];
 
-// Keep these in sync with scripts/p1/validate.mjs (RANGES / BANNED).
-const LANG_CONFIG = {
-  en: {
-    name: 'English', address: '"you"',
-    len: { open: '40–80', story: '340–520', lessons: '100–180', reflect: '40–90', use: '70–150', total: '650–950' },
-    banned: ['delve', 'tapestry', "in today's fast-paced world", 'embark on a journey', 'game-changer', 'let that sink in'],
-  },
-  tr: {
-    name: 'Turkish', address: '"siz"',
-    len: { open: '32–64', story: '270–415', lessons: '80–145', reflect: '32–72', use: '56–120', total: '520–760' },
-    banned: ['günümüz dünyasında', 'unutmayın ki', 'sonuç olarak', 'mekanik bir reçete'],
-  },
-  es: {
-    name: 'Spanish (neutral, avoid regional slang)', address: '"tú"',
-    len: { open: '43–86', story: '365–555', lessons: '107–193', reflect: '43–96', use: '75–160', total: '700–1010' },
-    banned: ['en el mundo actual', 'en conclusión', 'es importante destacar', 'sumergirnos'],
-  },
-  de: {
-    name: 'German', address: '"du"',
-    len: { open: '38–77', story: '325–500', lessons: '96–173', reflect: '38–86', use: '67–144', total: '620–910' },
-    banned: ['in der heutigen schnelllebigen welt', 'zusammenfassend lässt sich sagen', 'eintauchen'],
-  },
-};
+// Single source of truth: scripts/p1/lang-config.mjs (also used by validate.mjs).
+// Never hardcode the numbers here — the validator would drift away from the prompt.
+import { LANG_CONFIG } from '../scripts/p1/lang-config.mjs';
 
 const langs = (langArg || '').split(',').filter(Boolean);
 if (!langs.length || langs.some((l) => !LANG_CONFIG[l])) {
@@ -65,7 +45,9 @@ const limitIdx = args.indexOf('--limit');
 const limit = limitIdx !== -1 ? Number(args[limitIdx + 1]) : null;
 
 const briefDir = path.join(ROOT, 'staging/p1/brief');
-const briefIds = fs.readdirSync(briefDir).filter((f) => f.endsWith('.json')).map((f) => Number(f.replace(/\.json$/, '')));
+const briefIds = fs.existsSync(briefDir)
+  ? fs.readdirSync(briefDir).filter((f) => f.endsWith('.json')).map((f) => Number(f.replace(/\.json$/, '')))
+  : [];
 const doneFor = (lang) => {
   const dir = path.join(ROOT, 'staging/p1', lang);
   fs.mkdirSync(dir, { recursive: true });
@@ -95,11 +77,13 @@ const fillTemplate = (cfg) => template
   .replaceAll('{LEN_LESSONS}', cfg.len.lessons)
   .replaceAll('{LEN_REFLECT}', cfg.len.reflect)
   .replaceAll('{LEN_USE}', cfg.len.use)
-  .replaceAll('{LEN_TOTAL}', cfg.len.total);
+  .replaceAll('{LEN_TOTAL}', cfg.len.total)
+  .replaceAll('{VOICE_LONG}', String(cfg.voice.long))
+  .replaceAll('{VOICE_SHORT}', String(cfg.voice.short));
 
 // Cached mode: the template is sent with its {PLACEHOLDERS} intact so the
 // system block is identical for every language and story.
-const PREAMBLE = 'The {PLACEHOLDERS} used in the instructions below (LANG_NAME, ADDRESS_FORM, BANNED_PHRASES, LEN_OPEN, LEN_STORY, LEN_LESSONS, LEN_REFLECT, LEN_USE, LEN_TOTAL) are defined in the "Target language settings" block that comes after the content brief. Apply those values, and write the story ONLY in that target language.\n\n';
+const PREAMBLE = 'The {PLACEHOLDERS} used in the instructions below (LANG_NAME, ADDRESS_FORM, BANNED_PHRASES, LEN_OPEN, LEN_STORY, LEN_LESSONS, LEN_REFLECT, LEN_USE, LEN_TOTAL, VOICE_LONG, VOICE_SHORT) are defined in the "Target language settings" block that comes after the content brief. Apply those values, and write the story ONLY in that target language.\n\n';
 const settingsText = (cfg) => [
   'Target language settings:',
   `- {LANG_NAME} = ${cfg.name}`,
@@ -111,7 +95,18 @@ const settingsText = (cfg) => [
   `- {LEN_REFLECT} = ${cfg.len.reflect} words`,
   `- {LEN_USE} = ${cfg.len.use} words`,
   `- {LEN_TOTAL} = ${cfg.len.total} words`,
+  `- {VOICE_LONG} = ${cfg.voice.long} words`,
+  `- {VOICE_SHORT} = ${cfg.voice.short} words`,
 ].join('\n');
+
+// Fail fast when the template asks for a placeholder that no config supplies.
+// (That is how the prompt once carried a hardcoded lesson range next to a
+// settings block with a different one, in the same request.)
+const leftover = [...new Set(fillTemplate(LANG_CONFIG[langs[0]]).match(/\{[A-Z_]+\}/g) || [])];
+if (leftover.length) {
+  console.error(`story-instructions.md has unfilled placeholders: ${leftover.join(', ')} — add them to lang-config.mjs and to fillTemplate()`);
+  process.exit(2);
+}
 
 const requests = [];
 storyOrder.forEach((id) => { // story-major order keeps one story's languages adjacent

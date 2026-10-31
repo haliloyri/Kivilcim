@@ -1,0 +1,35 @@
+{
+  "story_id": 1785,
+  "kind": "concept",
+  "book": { "title": "Nonviolent Communication", "author": "Marshall B. Rosenberg", "year": "1999" },
+  "confidence": "medium",
+  "confidence_note": "The four components (observation, feeling, need, request) and the claim that judgments express unmet needs are the book's own. The 'sen hep geç kalıyorsun' and lateness sentences are NOT from the book; they are labelled in the story as an illustration of the model's logic. Claims in the sibling text about prisons, schools and war zones are omitted. Request versus demand and universal needs are from the book.",
+  "facts": [
+    "Rosenberg was a clinical psychologist.",
+    "People often judge instead of stating what they need; judgments put the other person on the defensive.",
+    "The model has four components: observation, feeling, need, request.",
+    "An observation states what happened without evaluation; a feeling says how you feel; a need is the unmet thing behind the feeling; a request is a clear, doable ask.",
+    "Needs are basic and shared by everyone, such as understanding, safety and respect.",
+    "A request differs from a demand: the other person must be free to say no.",
+    "The same four steps can be used to listen to the other person's observation, feelings and needs."
+  ],
+  "tension": "The sentence that comes out fastest in conflict is the one that shuts the conversation down.",
+  "opening_idea": "Open on Rosenberg's observation that people judge when they should be naming a need.",
+  "lessons": [
+    { "idea": "Look for the need underneath a criticism before saying it.", "anchor": "The four-step rewrite of a judgmental sentence." }
+  ],
+  "reflect": [],
+  "reflect_final": "In your last argument, which unmet need sat under the judgment you threw?",
+  "use_cases": [
+    { "situation": "A colleague keeps handing in a shared file at the last minute.", "move": "State the observation, your feeling and need, then one clear ask using Rosenberg's four steps.", "context": "meeting" },
+    { "situation": "Your partner arrived late again.", "move": "Name the late arrival, say you felt alone, and ask for a message next time.", "context": "family" },
+    { "situation": "Someone aimed a sharp criticism at you.", "move": "Ask if they are tired or need something before answering the criticism.", "context": "oneonone" }
+  ],
+  "pocket_idea": "Say what happened, what you feel, what you need and one request before the judgment.",
+  "conversation_variants": {
+    "punchline_idea": "Rosenberg says a judgment like 'you are always late' hides the real need and invites a defense.",
+    "thirty_sec_idea": "Rosenberg saw people throw judgments instead of needs; his four steps are observation, feeling, need and a clear request, and he held that every judgment hides an unmet need.",
+    "question_idea": "",
+    "key_contrast_idea": "Yargı yerine ihtiyaç"
+  }
+}

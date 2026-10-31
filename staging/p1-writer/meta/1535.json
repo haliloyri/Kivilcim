@@ -1,0 +1,35 @@
+{
+  "story_id": 1535,
+  "verdict": "keep",
+  "verify_note": "Not in scope of verification. Title fits (Festinger, cognitive dissonance); kept.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Bilişsel uyumsuzluk",
+    "description": "Matthew Syed, Black Box Thinking kitabında Leon Festinger'in 1954'te bir kıyamet grubuna katıldığı olayı anlatır. Tarih geçti, ama inanç güçlendi.",
+    "hook": "Bir karara ne kadar çok bedel ödediyseniz, kanıtı o kadar kolay eğdiğinizi hiç fark ettiniz mi?",
+    "one_minute_summary": "Psikolog Leon Festinger ve ekibi, dünyanın 21 Aralık 1954'te bir tufanla biteceğine inanan bir gruba katıldı. Üyeler işlerini bırakmış, eşyalarını dağıtmıştı. Gece yarısı geçti, ne uçan daire geldi ne tufan koptu. Lider yeni bir mesaj duyurdu ve grup, o güne dek uzak tuttuğu gazetecileri aramaya başladı. Festinger bilişsel uyumsuzluk kuramını buradan çıkardı: inanç gerçekle çelişince insan ya inancı bırakır ya gerçeği başka okur. Festinger'in yöntemi sonradan eleştirildi."
+  },
+  "en": {
+    "title": "Cognitive dissonance",
+    "description": "In Black Box Thinking, Matthew Syed returns to 1954, when Leon Festinger joined a group that expected the world to end. The date passed and the belief got stronger.",
+    "hook": "Have you ever caught yourself bending the evidence to protect a decision that cost you a lot?",
+    "one_minute_summary": "Psychologist Leon Festinger and colleagues joined a small group that expected a flood to end the world on 21 December 1954. Members had quit jobs and given away belongings. Midnight passed with no flying saucer and no flood. The leader announced a new message, and the group began calling newspapers it had kept away before. From this Festinger built the theory of cognitive dissonance: when a belief meets contrary facts, people drop the belief or read the facts differently. His method has since been criticised."
+  },
+  "es": {
+    "title": "Disonancia cognitiva",
+    "description": "En Black Box Thinking, Matthew Syed vuelve a 1954, cuando Leon Festinger se unió a un grupo que esperaba el fin del mundo. La fecha pasó y la creencia salió reforzada.",
+    "hook": "¿Te has sorprendido alguna vez torciendo las pruebas para defender una decisión que te costó mucho?",
+    "one_minute_summary": "El psicólogo Leon Festinger y sus colegas se unieron a un grupo que esperaba una inundación que acabaría con el mundo el 21 de diciembre de 1954. Los miembros habían dejado sus trabajos y regalado sus cosas. Pasó la medianoche sin platillo volante ni inundación. La líder anunció un nuevo mensaje y el grupo empezó a llamar a los periódicos que antes evitaba. De ahí salió la teoría de la disonancia cognitiva: ante hechos que contradicen una creencia, se abandona la creencia o se leen los hechos de otro modo. El método de Festinger se ha criticado después."
+  },
+  "de": {
+    "title": "Kognitive Dissonanz",
+    "description": "In Black Box Thinking geht Matthew Syed zurück ins Jahr 1954, als Leon Festinger sich einer Gruppe anschloss, die das Weltende erwartete. Das Datum verstrich, und der Glaube wurde stärker.",
+    "hook": "Hast du dich schon einmal dabei ertappt, Belege zurechtzubiegen, um eine teure Entscheidung zu verteidigen?",
+    "one_minute_summary": "Der Psychologe Leon Festinger und seine Kollegen schlossen sich einer kleinen Gruppe an, die für den 21. Dezember 1954 eine Flut erwartete. Die Mitglieder hatten gekündigt und ihren Besitz verschenkt. Mitternacht verstrich ohne Untertasse und ohne Flut. Die Anführerin verkündete eine neue Botschaft, und die Gruppe rief nun Zeitungen an, die sie zuvor ferngehalten hatte. Daraus entwickelte Festinger die Theorie der kognitiven Dissonanz: Trifft ein Glaube auf Gegenteiliges, gibt man ihn auf oder liest die Tatsachen anders. Seine Methode wurde später kritisiert."
+  }
+}

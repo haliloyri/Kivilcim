@@ -1,0 +1,58 @@
+{
+  "story_id": 1523,
+  "kind": "concept",
+  "book": {
+    "title": "The Road Less Traveled",
+    "author": "M. Scott Peck",
+    "year": "1978"
+  },
+  "confidence": "medium",
+  "confidence_note": "Peck's thesis that avoiding problems and the pain in them underlies mental illness, his use of Jung's line 'neurosis is always a substitute for legitimate suffering', and dedication to truth (keeping one's map of reality up to date) are in the book. The reference text's specific patient examples (an ended relationship, an unsuitable job) and its 'hardest moment in therapy' claim could not be verified and are left out; its quote is paraphrased. No numbers, names or case details are claimed.",
+  "facts": [
+    "Peck is a psychiatrist who treated patients.",
+    "He holds that the tendency to avoid problems and the emotional pain in them lies at the root of mental illness.",
+    "He cites Jung: neurosis is always a substitute for legitimate suffering.",
+    "So the avoided pain does not go away: it returns as a worse, longer-lasting one.",
+    "Peck's remedy is dedication to truth: seeing reality as it is and revising one's mental map when it no longer fits.",
+    "Facing the truth is painful because it usually demands change and gives up comfort.",
+    "He extends the idea to groups and institutions, which also suffer when they avoid the truth."
+  ],
+  "scene_details": [
+    "a patient steering away from one fact",
+    "a map of reality that needs redrawing"
+  ],
+  "tension": "People flee a small pain and end up in a bigger, longer one.",
+  "opening_idea": "A psychiatrist notices patients describing everything except the one fact that would explain the pain.",
+  "lessons": [
+    {
+      "idea": "Avoided pain returns in another form, so facing the fact early costs less.",
+      "anchor": "Jung's line that neurosis substitutes for legitimate suffering"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What fact about your own situation do you notice and then look away from, and what would change if you looked at it for a minute?",
+  "use_cases": [
+    {
+      "situation": "You keep postponing a decision you already know the answer to.",
+      "move": "Write down the plain fact in one sentence and read it aloud.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend keeps avoiding the obvious.",
+      "move": "Ask gently what they think is true about it and listen without fixing.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A project is clearly late and nobody says so.",
+      "move": "Say, 'Here is where we actually are,' and then the date.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Avoided pain comes back bigger; look at the fact you keep glancing past.",
+  "conversation_variants": {
+    "punchline_idea": "Peck, quoting Jung, says neurosis is a substitute for legitimate suffering: the pain you dodge returns in a worse form.",
+    "thirty_sec_idea": "Psychiatrist M. Scott Peck argues the root of mental illness is avoiding problems and their pain. Quoting Jung, he calls neurosis a substitute for legitimate suffering. His remedy is dedication to truth: look at reality and redraw your map of it, even though that means change.",
+    "question_idea": "",
+    "key_contrast_idea": "Facing, not avoiding"
+  }
+}

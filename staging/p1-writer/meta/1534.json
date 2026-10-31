@@ -1,0 +1,35 @@
+{
+  "story_id": 1534,
+  "verdict": "keep",
+  "verify_note": "Not in scope of verification. Title changed: old titles named a success-culture vs learning-culture theme and the old text was Tenerife; new content is the 1978 Portland crash.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Portland Üzerinde Dönen Uçak",
+    "description": "Matthew Syed, Black Box Thinking kitabında 1978'de Portland yakınında düşen bir United DC-8'i anlatır. Kaza, havacılığın hatalarla nasıl başa çıktığını gösterir.",
+    "hook": "Ekibinizde bir şey ters gittiğinde önce ne olduğunu mu sorarsınız, yoksa kimin suçlu olduğunu mu?",
+    "one_minute_summary": "28 Aralık 1978'de bir United DC-8, iniş takımının kilitlendiğine dair net sinyal alamayınca Portland yakınında dönmeye başladı. Mürettebatın dikkati takımda kaldı, yakıt azaldı. Uçak havaalanına varamadan düştü ve on kişi öldü. Kara kutu kayıtları ekibin zamanı ve yakıtı gözden kaçırdığını, bazılarının da kaptana yeterince ısrar etmediğini gösterdi. Bulgular sektörle paylaşıldı, eğitim değişti. Syed bunu tıpla karşılaştırır: ona göre tıpta hatalar daha az incelenip paylaşılıyor."
+  },
+  "en": {
+    "title": "The Plane That Circled Portland",
+    "description": "In Black Box Thinking, Matthew Syed uses a 1978 United DC-8 crash near Portland to show how aviation treats failure.",
+    "hook": "When something goes wrong on your team, do you ask what happened before you ask who is to blame?",
+    "one_minute_summary": "On 28 December 1978 a United DC-8 circled near Portland after the crew got no clear signal that the landing gear was locked. Their attention stayed on the gear while the fuel dropped. The plane came down short of the airport and ten people died. The recorders let investigators see that the crew lost track of time and fuel and that some did not press the captain hard enough. The findings were shared across the industry and training changed. Syed sets this against medicine, where, in his account, errors are investigated less."
+  },
+  "es": {
+    "title": "El avión que sobrevoló Portland",
+    "description": "En Black Box Thinking, Matthew Syed usa un accidente de un DC-8 de United cerca de Portland en 1978 para mostrar cómo trata la aviación el fallo.",
+    "hook": "Cuando algo sale mal en tu equipo, ¿preguntas qué pasó antes de preguntar quién tuvo la culpa?",
+    "one_minute_summary": "El 28 de diciembre de 1978, un DC-8 de United dio vueltas cerca de Portland porque la tripulación no recibió una señal clara de que el tren de aterrizaje estuviera bloqueado. La atención se quedó en el tren y el combustible bajó. El avión cayó antes de llegar al aeropuerto y murieron diez personas. Las grabadoras mostraron que la tripulación perdió la noción del tiempo y del combustible y que algunos no insistieron lo bastante al capitán. Las conclusiones se compartieron con todo el sector. Syed lo compara con la medicina, donde, según su relato, se investigan menos los errores."
+  },
+  "de": {
+    "title": "Warteschleife über Portland",
+    "description": "In Black Box Thinking nutzt Matthew Syed den Absturz einer United DC-8 bei Portland 1978, um zu zeigen, wie die Luftfahrt mit Fehlern umgeht.",
+    "hook": "Fragst du bei einem Fehler in deinem Team zuerst, was passiert ist, und erst dann, wer schuld war?",
+    "one_minute_summary": "Am 28. Dezember 1978 flog eine United DC-8 bei Portland Warteschleifen, weil die Besatzung kein klares Signal bekam, dass das Fahrwerk eingerastet war. Die Aufmerksamkeit blieb beim Fahrwerk, während der Treibstoff sank. Die Maschine stürzte vor dem Flughafen ab, zehn Menschen starben. Die Rekorder zeigten, dass die Besatzung Zeit und Treibstoff aus dem Blick verloren hatte und manche dem Kapitän nicht hartnäckig genug widersprachen. Die Ergebnisse wurden in der ganzen Branche geteilt. Syed vergleicht das mit der Medizin, in der Fehler nach seiner Darstellung seltener untersucht werden."
+  }
+}

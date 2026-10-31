@@ -1,0 +1,59 @@
+{
+  "story_id": 1752,
+  "kind": "anecdote",
+  "book": {
+    "title": "Say Nothing",
+    "author": "Patrick Radden Keefe",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Say Nothing; no page-level check. Core: Jean McConville, mother of ten, abducted in Belfast in December 1972 and killed by the IRA; her body found 2003 on a beach; the Boston College Belfast Project recorded interviews with former paramilitaries on the promise they'd be sealed until death; legal action led to subpoenas in 2011; Dolours Price and Brendan Hughes are central interviewees. Reference TR text contained errors and was not followed. Omitted on purpose: Adams's arrest details, who ordered the killing, exact dates, quotes. Added from memory of Keefe and general record, not page-checked: project leaders, Price's 1973 bombing, deaths, Adams's questioning, 1999 admission.",
+  "facts": [
+    "In December 1972 Jean McConville, a widowed mother of ten, was taken from her home in Belfast and disappeared; the IRA was responsible.",
+    "For decades her neighbours and the IRA kept silent about what happened.",
+    "Her remains were found in 2003 on a beach.",
+    "Boston College's Belfast Project recorded interviews with former paramilitaries, including Dolours Price and Brendan Hughes, on the promise that they would stay sealed until the speakers had died.",
+    "In 2011 legal action in the United States over those recordings began, and the promise of secrecy was tested.",
+    "Keefe's account follows how silence on one side was broken by recordings made to be kept.",
+    "The IRA accused Jean McConville of being an informer; her children saw her taken and were later scattered; the IRA admitted some of the Disappeared in 1999; a walker found the remains in 2003.",
+    "Belfast Project run by Ed Moloney and Anthony McIntyre; Price was jailed for the 1973 London bombing; Hughes was a Belfast commander; Hughes died 2008, Price 2013; Gerry Adams questioned and released without charge."
+  ],
+  "scene_details": [
+    "a mother taken from a Belfast flat",
+    "tapes sealed until the speaker's death"
+  ],
+  "tension": "A community kept silent for decades, and a promise of secrecy made to former fighters did not hold.",
+  "opening_idea": "Open on December 1972, Belfast, ten children and a mother who did not come back.",
+  "lessons": [
+    {
+      "idea": "A promise of secrecy is only as strong as what can force it open; say what you can and cannot guarantee.",
+      "anchor": "Boston College promised sealed tapes; subpoenas followed"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When did you last promise someone confidentiality, and what could have made you unable to keep it?",
+  "use_cases": [
+    {
+      "situation": "A colleague asks you to keep something to yourself.",
+      "move": "Say what you can keep private and where you would have to tell someone.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You collect personal stories for a project.",
+      "move": "Tell participants exactly how the recordings could be used.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family keeps a painful topic off the table.",
+      "move": "Ask whether anyone wants to say something about it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Boston College sealed the tapes until death, and courts opened them: promise only what you can keep.",
+  "conversation_variants": {
+    "punchline_idea": "Interviews recorded on the promise of secrecy until death were pulled into court within years.",
+    "thirty_sec_idea": "Jean McConville, a mother of ten, was taken from her Belfast home in 1972 and her fate stayed unspoken for decades. Her remains were found in 2003. Meanwhile Boston College recorded interviews with former paramilitaries on the promise of keeping them sealed until death. In 2011 legal action over those tapes began. Patrick Radden Keefe tells this in Say Nothing.",
+    "question_idea": "",
+    "key_contrast_idea": "promised silence, broken silence"
+  }
+}

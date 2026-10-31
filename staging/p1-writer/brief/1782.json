@@ -1,0 +1,67 @@
+{
+ "story_id": 1782,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Hard Thing About Hard Things",
+  "author": "Ben Horowitz",
+  "year": ""
+ },
+ "confidence": "medium",
+ "confidence_note": "Sources (secondary): shortform.com/blog/loudcloud (roadshow opened at $10, repriced to $6; $162.5M raised; S-1 said money would run out in 3 weeks without the IPO; guidance cut from $75M to $55M and stock fell from $6 to $2; Q3 2000 bookings $37M against a $100M forecast; largest customer ($1M a month, about 20% of revenue) went bankrupt early 2002; Horowitz considered bankruptcy, chose to buy Opsware software; EDS paid $63.5M cash, licensed Opsware at $20M a year; IBM was other top bidder; 477 employees late 2000); Wikipedia Ben Horowitz (IPO March 2001). Book not page-checked. Not verified/omitted: Horowitz's own words, how he told employees, layoff numbers (sources conflict), who the largest customer was, later HP sale (known publicly, left out). Year left empty. UPDATE: fuller facts from shortform.com/blog/loudcloud and /opsware (summaries of the book): founded 1999 with Marc Andreessen; $21M raised two months after founding; $45M debt from Morgan Stanley; investors urged running as if capital were free; ~200 hires in six months and a $5M office; June 2000 $120M Series C at $700M pre-money; Q3 2000 forecast $100M booked, $37M actual; S-1 showed $1.94M revenue in prior six months and forecast $75M; Exodus bankrupt 26 Sept 2001, valued $50B a year earlier; a team of ten secretly made Opsware run on any platform; after the EDS deal stock low $0.35, about 150 moved to EDS, 140 laid off, about 80 stayed; HP bought Opsware 2007 at $14.25 a share, about $1.6B. Summaries, not book text; headcount and HP figure reported by one site each.",
+ "facts": [
+  "Loudcloud's IPO roadshow opened at $10 a share; with comparable companies losing about half their value during the roadshow, it was repriced to $6, and the IPO raised $162.5 million.",
+  "The company's filing said it would run out of money in about three weeks without the IPO.",
+  "After its first earnings call, revenue guidance was cut from $75 million to $55 million and the stock fell from $6 to $2.",
+  "Loudcloud's customers, many of them internet companies, were going bankrupt; its largest customer, paying about $1 million a month (about 20% of revenue), went bankrupt in early 2002.",
+  "Horowitz considered bankruptcy, then decided to build the company around the Opsware server-management software and exit the cloud business.",
+  "Loudcloud sold the cloud business to EDS for $63.5 million in cash; EDS also licensed Opsware for $20 million a year. IBM was the other leading bidder.",
+  "The company kept the Opsware product and renamed itself Opsware.",
+  "Horowitz's point in the book: no management book gave a formula for these moments.",
+  "Loudcloud was founded in 1999 by Horowitz and Marc Andreessen; two months later it raised $21 million, and investors urged Horowitz to run it as if capital were free. Within six months it hired almost 200 people and spent $5 million on an office.",
+  "In June 2000 it closed a $120 million round at a $700 million pre-money valuation; late in 2000 it had 477 employees; Q3 2000 bookings were $37 million against a $100 million forecast.",
+  "Its filing showed $1.94 million in revenue over the prior six months and forecast $75 million for the coming year.",
+  "Competitor Exodus went bankrupt on 26 September 2001, a year after being valued at $50 billion.",
+  "Horowitz put a team of ten on making Opsware run on any server platform and kept the plan from the rest of the company so it would not distract from the core business.",
+  "In 2007 HP bought Opsware for about $1.6 billion."
+ ],
+ "scene_details": [
+  "a roadshow price cut from $10 to $6",
+  "a filing that names three weeks of cash",
+  "a customer paying $1 million a month going bankrupt",
+  "the sale of the business the company had been built on"
+ ],
+ "tension": "The company had to sell the business it was built on to keep the product it hardly sold.",
+ "opening_idea": "Open on the roadshow price cut from $10 to $6.",
+ "lessons": [
+  {
+   "idea": "When every option is bad, picking the least-bad one in the open and early beats waiting for a clean answer.",
+   "anchor": "selling the cloud business to EDS and keeping Opsware"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which decision are you postponing because every option looks bad, and what is the least-bad choice you could name aloud this week?",
+ "use_cases": [
+  {
+   "situation": "Your team keeps debating two bad options.",
+   "move": "Name the less-bad one aloud with the reason and a date, as Horowitz did when he chose to sell the core business to keep the product.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You must tell someone bad news about their role.",
+   "move": "Say the facts first, plainly, without softening the decision itself.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "You are stuck choosing between two costly paths in your own life.",
+   "move": "Write what each option costs and pick the cost you can live with.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Horowitz sold the business he had built to keep the product; a clean answer was never coming.",
+ "conversation_variants": {
+  "punchline_idea": "Loudcloud had three weeks of cash on paper and a price cut from $10 to $6 before it even listed.",
+  "thirty_sec_idea": "Loudcloud went public in 2001 after repricing from $10 to $6, with a filing that warned of three weeks of cash. The stock fell, customers went bankrupt, and Horowitz sold the cloud business to EDS for $63.5 million to keep the Opsware software, which EDS then licensed.",
+  "question_idea": "What decision are you putting off because no option is good?",
+  "key_contrast_idea": "Sell to survive"
+ }
+}

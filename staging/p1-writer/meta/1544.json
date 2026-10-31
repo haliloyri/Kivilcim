@@ -1,0 +1,35 @@
+{
+ "story_id": 1544,
+ "verdict": "keep",
+ "verify_note": "Rebuilt on chapter 14 (small request roughly doubles agreement to a large one) and Freedman and Fraser's household survey (52.8 percent). Old sign-study numbers kept only as the same paper's second study, not attributed to the book; old identity claims removed.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Önce küçük bir evet",
+  "description": "Ev hanımlarına önce birkaç soru soruldu, sonra evlerinin iki saat karıştırılması istendi. Küçük istek büyüğün yolunu açtı.",
+  "hook": "Büyük isteğinin önüne hangi küçük ve kolay adımı koyabilirsin?",
+  "one_minute_summary": "Evet Dedirtmek'in on dördüncü bölümü Freedman ve Fraser'ın deneyine yaslanıyor. Kaliforniya'da ev hanımlarına telefonla birkaç ev ürünü sorusu soruldu. Üç gün sonra beş altı erkeğin iki saat evi karıştırması istendi. Soruları yanıtlayanların yüzde 52,8'i kabul etti, yalnızca büyük isteği duyanlar bunun yarısından azı. Aynı makalede küçük pencere tabelası ve büyük bahçe tabelası çalışması var. Sonraki araştırmalar karışık, etki her yerde aynı büyüklükte değil."
+ },
+ "en": {
+  "title": "A small yes first",
+  "description": "Housewives were first asked a few questions, then to let strangers go through their cupboards for two hours. The small ask opened the way for the large one.",
+  "hook": "What small first step could you put before the larger thing you want?",
+  "one_minute_summary": "Chapter fourteen of Yes! rests on Freedman and Fraser's experiment. In California, housewives were phoned with a few questions about household products. Three days later they were asked to let five or six men spend two hours going through their cupboards. Of those who had answered, 52.8 percent agreed, and those asked only the large request were less than half as likely. The same paper has a small-window-sign study too. Later research is mixed, so the size of the effect varies."
+ },
+ "es": {
+  "title": "Primero un sí pequeño",
+  "description": "A unas amas de casa les hicieron primero unas preguntas y luego les pidieron dejar revisar sus armarios durante dos horas. La petición pequeña abrió paso a la grande.",
+  "hook": "¿Qué pequeño primer paso podrías poner antes de lo grande que quieres?",
+  "one_minute_summary": "El capítulo catorce de Yes! se apoya en el experimento de Freedman y Fraser. En California llamaron a amas de casa con unas preguntas sobre productos domésticos. Tres días después les pidieron dejar que cinco o seis hombres revisaran sus armarios durante dos horas. De quienes habían contestado, el 52,8 por ciento aceptó, y quienes solo recibieron la petición grande tenían menos de la mitad de probabilidades. El mismo artículo incluye el estudio del cartel en la ventana. Las investigaciones posteriores son desiguales."
+ },
+ "de": {
+  "title": "Erst das kleine Ja",
+  "description": "Hausfrauen wurden erst ein paar Fragen gestellt, dann sollten sie Fremde zwei Stunden ihre Schränke durchsehen lassen. Die kleine Bitte ebnete die große.",
+  "hook": "Welchen kleinen ersten Schritt könntest du vor das Größere stellen, das du willst?",
+  "one_minute_summary": "Kapitel vierzehn von Yes! stützt sich auf das Experiment von Freedman und Fraser. In Kalifornien wurden Hausfrauen mit ein paar Fragen zu Haushaltsprodukten angerufen. Drei Tage später sollten sie fünf oder sechs Männer zwei Stunden lang ihre Schränke durchsehen lassen. Von denen, die geantwortet hatten, stimmten 52,8 Prozent zu, bei denen mit nur der großen Bitte weniger als halb so viele. Derselbe Aufsatz enthält die Studie mit dem Fensterschild. Spätere Forschung ist gemischt."
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1582,
+  "verdict": "keep",
+  "verify_note": "Not in scope of verification. Title fits (Conceptual Age, rise of right brain); kept.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Sol beyin çağının sonu",
+    "description": "Daniel Pink, A Whole New Mind kitabında bilgi çağının yerini kavramsal çağın aldığını savunur. Bolluk, Asya ve Otomasyon dengeyi kaydırıyor.",
+    "hook": "İşinizin hangi kısmı bir kurala yazılabilir, hangisi bir insanı anlamayı gerektirir?",
+    "one_minute_summary": "Pink'e göre bilgi çağında mantıklı, adım adım düşünenler iyi kazanıyordu. Üç güç bunu kaydırıyor: Bolluk, Asya ve Otomasyon. Bolluk, yalnızca işe yarayan ürünün artık satmaya yetmediği demek. Asya ve Otomasyon, kurala bağlı işi başka bir ofise ya da yazılıma taşıyor. Tarif edilebilen iş devredilebilir, bir müşterinin neden tedirgin olduğunu anlamak ise tarif etmesi zor. Pink sol beyin düşüncesini korumayı, üstüne tasarım, hikâye, senfoni, empati, oyun ve anlam duyularını eklemeyi önerir. Sol ve sağ beyin ayrımının bir benzetme olduğunu kendisi de belirtir."
+  },
+  "en": {
+    "title": "The end of the left-brain era",
+    "description": "In A Whole New Mind, Daniel Pink argues that the Information Age is giving way to the Conceptual Age. Abundance, Asia and Automation are shifting the balance.",
+    "hook": "Which part of your work could be written as rules, and which part needs someone to understand a person?",
+    "one_minute_summary": "Pink says the Information Age paid well for logical, step-by-step thinkers, and three forces are shifting that: Abundance, Asia and Automation. Abundance means a product that merely works no longer wins on that alone. Asia and Automation move rule-based work to another office or into software. Work that can be described can be handed off, while understanding why a client is anxious is harder to describe. Pink wants readers to keep left-brain thinking and add six senses: design, story, symphony, empathy, play and meaning. He admits the left and right brain split is a metaphor."
+  },
+  "es": {
+    "title": "Se acaba la era del hemisferio izquierdo",
+    "description": "En A Whole New Mind, Daniel Pink sostiene que la era de la información deja paso a la era conceptual. Abundancia, Asia y Automatización mueven el equilibrio.",
+    "hook": "¿Qué parte de tu trabajo se puede escribir como reglas y cuál exige entender a una persona?",
+    "one_minute_summary": "Según Pink, la era de la información pagaba bien a quienes pensaban de forma lógica y lineal, y tres fuerzas lo están cambiando: Abundancia, Asia y Automatización. Un producto que solo funciona ya no se vende por eso. Asia y la automatización llevan el trabajo basado en reglas a otra oficina o a un programa. Lo que se puede describir se puede delegar; entender por qué un cliente está inquieto es más difícil. Pink quiere que se conserve el pensamiento lógico y se sumen seis sentidos: diseño, historia, sinfonía, empatía, juego y sentido. Admite que la división entre hemisferios es una metáfora."
+  },
+  "de": {
+    "title": "Das Ende des linkshirnigen Zeitalters",
+    "description": "In A Whole New Mind behauptet Daniel Pink, das Informationszeitalter weiche dem Konzeptionszeitalter. Überfluss, Asien und Automatisierung verschieben das Gleichgewicht.",
+    "hook": "Welcher Teil deiner Arbeit lässt sich als Regeln aufschreiben, und welcher verlangt, einen Menschen zu verstehen?",
+    "one_minute_summary": "Pink sagt, das Informationszeitalter habe logisch und Schritt für Schritt denkende Leute gut bezahlt, drei Kräfte verschöben das: Überfluss, Asien und Automatisierung. Ein Produkt, das nur funktioniert, verkauft sich damit nicht mehr von allein. Asien und Automatisierung verlagern regelbasierte Arbeit in ein anderes Büro oder in Software. Was sich beschreiben lässt, lässt sich abgeben, doch zu verstehen, warum ein Kunde besorgt ist, ist schwerer. Pink will, dass Leser das logische Denken behalten und sechs Sinne ergänzen: Gestaltung, Geschichte, Symphonie, Empathie, Spiel und Sinn. Die Trennung in Gehirnhälften nennt er selbst eine Metapher."
+  }
+}

@@ -29,7 +29,7 @@ const CareerLearnedSection = ({ summary, onOpenStory, onOpenMilestone }) => {
         {isEmpty ? (
           <View style={styles.emptyRow}>
             <View style={[styles.emptyIcon, { backgroundColor: `${colors.primary}1F` }]}>
-              <Ionicons name="sparkles-outline" size={20} color={colors.primaryText} />
+              <Ionicons name="library-outline" size={20} color={colors.primaryText} />
             </View>
             <Text style={[styles.body, { color: colors.textSecondary, flex: 1 }]}>{t('career.learned.empty', lang)}</Text>
           </View>

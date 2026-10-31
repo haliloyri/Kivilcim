@@ -20,7 +20,7 @@ const ToolkitRow = ({ row, colors, isDark, onPress, trailingIcon = 'chevron-forw
   const image = row.category ? getCategoryImage(row.category, isDark).source : null;
   const content = (
     <>
-      {image ? <Image accessible={false} source={image} style={styles.rowImage} /> : <View accessible={false} style={[styles.rowImage, styles.rowFallback, { backgroundColor: `${colors.primary}24` }]}><Ionicons name={row.icon || 'sparkles-outline'} size={20} color={colors.primaryText} /></View>}
+      {image ? <Image accessible={false} source={image} style={styles.rowImage} /> : <View accessible={false} style={[styles.rowImage, styles.rowFallback, { backgroundColor: `${colors.primary}24` }]}><Ionicons name={row.icon || 'briefcase-outline'} size={20} color={colors.primaryText} /></View>}
       <View style={styles.rowCopy}>
         <Text selectable numberOfLines={2} style={[styles.rowTitle, { color: colors.text }]}>{row.title}</Text>
         {row.meta ? <Text selectable numberOfLines={2} style={[styles.rowMeta, { color: colors.textSecondary }]}>{row.meta}</Text> : null}

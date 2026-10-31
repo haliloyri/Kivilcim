@@ -1,0 +1,58 @@
+{
+  "story_id": 1568,
+  "kind": "concept",
+  "book": {
+    "title": "The Talent Code",
+    "author": "Daniel Coyle",
+    "year": "2009"
+  },
+  "confidence": "low",
+  "confidence_note": "From memory and secondary sources; book text not accessed. McPherson study (157 children, question before choosing an instrument, answer predicted progress, practice videotaped) confirmed in secondary sources only; Coyle's wording unverified. Children's answer categories, any ratios, and age range omitted. Old TR claims (Cuban tennis academy, Javier Sotomayor, Nashville, Brazil, Russia chess) were not verified in the book and were dropped. Old title does not match the account; new title suggested. DB title is Turkish 'Yetenek Kodu'.",
+  "facts": [
+    "Gary McPherson studied 157 children learning an instrument.",
+    "Practice was videotaped.",
+    "Before children chose an instrument he asked how long they expected to keep playing.",
+    "Coyle presents the answer as the factor that most separated those who progressed.",
+    "It was asked before playing so it measured no skill.",
+    "Coyle calls the mechanism ignition, one of three elements with deep practice and coaching.",
+    "Ignition is triggered by cues that a place in the group is within reach."
+  ],
+  "scene_details": [
+    "a question asked before the first note",
+    "videotaped practice sessions"
+  ],
+  "tension": "What a child imagines predicts progress.",
+  "opening_idea": "A question asked before anyone plays.",
+  "lessons": [
+    {
+      "idea": "Future-self picture drives practice.",
+      "anchor": "The pre-instrument question."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is something you stuck with for years, and what picture of your future self was behind it?",
+  "use_cases": [
+    {
+      "situation": "New hire",
+      "move": "Ask what they picture in two years.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Child wants piano",
+      "move": "Ask how long they want to play.",
+      "context": "family"
+    },
+    {
+      "situation": "Hard course",
+      "move": "Write one sentence about who you will be.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Picture how long you'll keep at it before you start.",
+  "conversation_variants": {
+    "punchline_idea": "Before a note was played, the child's answer predicted progress.",
+    "thirty_sec_idea": "McPherson 157 children and the question.",
+    "question_idea": "",
+    "key_contrast_idea": "Picture of future self"
+  }
+}

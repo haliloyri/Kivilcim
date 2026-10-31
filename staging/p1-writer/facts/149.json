@@ -1,0 +1,199 @@
+{
+ "book_no": 149,
+ "title": "Yes! 50 Scientifically Proven Ways to Be Persuasive",
+ "authors": [
+  "Noah J. Goldstein",
+  "Steve J. Martin",
+  "Robert B. Cialdini"
+ ],
+ "year": "2008",
+ "sources": [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC4118982/",
+  "https://yukaichou.com/gamification-study/chapter-chapter-takeaway-50-scientifically-proven-ways-persuasive/",
+  "https://link.dclibrary.org/resource/_7lw4dgNk7E",
+  "https://en.wikipedia.org/wiki/Foot-in-the-door_technique",
+  "https://en.wikipedia.org/wiki/New_Coke"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Chapter 2 of the book is titled 'What shifts the bandwagon effect into another gear?' It concerns descriptive norms such as hotel towel reuse. The work is Goldstein, Cialdini and Griskevicius (2008).",
+   "source": "Library catalogue TOC; PMC article",
+   "confidence": "medium"
+  },
+  {
+   "id": "f2",
+   "claim": "Study 1: a standard environmental message ('help save the environment') got a towel reuse rate of 35.1 percent; a message saying almost 75 percent of guests reuse towels got 44.1 percent. Data came over 80 days, first eligible day per guest, guests staying at least two nights.",
+   "source": "PMC4118982",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Study 2: the message naming guests who stayed in the same room reached 49.3 percent, other norm messages combined 42.8 percent, the standard environmental message 37.2 percent. Relative to the standard message, 49.3 is about a third more (computed).",
+   "source": "PMC4118982",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "All norm messages said about 75 percent of the reference group reused towels, based on an earlier study. Replications are mixed: a later study found the general norm but not the same-room norm raised reuse.",
+   "source": "PMC4118982",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Chapter 14 is titled 'How can one small step help your influence take a giant leap?' Getting agreement to a small reasonable request roughly doubles agreement to a much larger one; the example is a request for a multi-hour in-home study.",
+   "source": "NYPL/library TOC; yukaichou chapter summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "The classic study behind it (Freedman and Fraser, 1966): women were phoned and asked to answer a few questions about household products they used. Three days later they were asked whether five or six men could come into the home for two hours to go through cupboards and storage. 52.8 percent of the women who had answered the questions agreed; women asked only the large request agreed far less (more than twice as likely in the first group).",
+   "source": "Wikipedia foot-in-the-door; Freedman and Fraser",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Chapter 34 is titled 'What can you gain from loss?' It says people respond more to what they might lose than to what they might gain; a summary gives New Coke as the example.",
+   "source": "Library TOC; yukaichou summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "New Coke launched April 23, 1985. It beat regular Coke and Pepsi in taste tests, surveys and focus groups. Afterwards the company received over 40,000 calls and letters of anger or disappointment; a group called Old Cola Drinkers of America filed a class action that a judge dismissed. The original formula returned July 11, 1985 as Coca-Cola Classic, 79 days after launch.",
+   "source": "Wikipedia New Coke",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Per the book summary, loyal fans had chosen the new formula in blind tests, but once they felt the original was being taken away they formed clubs and filed lawsuits.",
+   "source": "yukaichou chapter summary",
+   "confidence": "low"
+  },
+  {
+   "id": "f10",
+   "claim": "Each chapter of the book opens with a scientific case study, then states conclusions, then ways to apply them; chapter titles are questions. Chapter 3 is 'What common mistake causes messages to self-destruct?': a summary gives its lesson as avoiding the claim that most people behave badly, since that normalises the behaviour.",
+   "source": "Library TOC; yukaichou chapter summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "In the first study the norm message spoke of almost 75 percent of guests who are asked to participate in the hotel's resource-saving program.",
+   "source": "PMC4118982",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Same 1966 paper, sign study (as Wikipedia reports it): one group had earlier been asked to display a small 'Be a Safe Driver' sign in a window and almost all agreed; asked later for a large, unsightly 'Drive Carefully' lawn sign, 76 percent of them complied against 17 percent of a group asked only the large request. Sources differ on the sign size and the gap between requests (about two weeks in some).",
+   "source": "Wikipedia foot-in-the-door; search summaries",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Later work on the foot-in-the-door technique is mixed: donation studies sometimes found no significant effect. The original effect sizes are generally not matched in later reviews (secondary sources).",
+   "source": "Wikipedia foot-in-the-door",
+   "confidence": "medium"
+  },
+  {
+   "id": "f14",
+   "claim": "New Coke facts (Wikipedia): about 10 to 12 percent of testers said they felt angry and alienated; hotline over 1,500 calls a day against about 400 before; Old Cola Drinkers of America received over 60,000 calls; some bottlers also sued.",
+   "source": "Wikipedia New Coke",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Why the change (Wikipedia): Coca-Cola's U.S. cola share fell from about 60 percent after WWII to under 24 percent by 1983, largely due to Pepsi; blind taste tests showed people preferred sweeter Pepsi; survey results were key in convincing management; the project was led by Sergio Zyman and Brian Dyson.",
+   "source": "Wikipedia New Coke",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "Early results: surveys found three quarters of respondents would buy New Coke again. Backlash: the hotline got 31,600 calls in the two days after the return was announced. Donald Keough later said consumer research could not measure or reveal the deep and abiding emotional attachment to original Coca-Cola.",
+   "source": "Wikipedia New Coke",
+   "confidence": "high"
+  },
+  {
+   "id": "f17",
+   "claim": "Afterwards: by the end of 1985 Coca-Cola Classic substantially outsold both New Coke and Pepsi, and New Coke fell to about a 3 percent share. Later research credited Cherry Coke more than the Classic return for 1985's success.",
+   "source": "Wikipedia New Coke",
+   "confidence": "medium"
+  },
+  {
+   "id": "f18",
+   "claim": "CEO Roberto Goizueta (CEO since 1980) said 'New Coke or no Coke' and insisted on the 'New!' label.",
+   "source": "Wikipedia New Coke",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Arizona hotel chain with a sustainability problem; Goldstein and Cialdini visited the hotel and put messages on bathroom doors",
+   "reason": "Hotel location and logistics not in the sources"
+  },
+  {
+   "claim": "Second message raised reuse by 33 percent (old text)",
+   "reason": "Not a raw figure; closest real numbers are 35.1 to 44.1 and 37.2 to 49.3 percent"
+  },
+  {
+   "claim": "Message used 'Bu otelde konaklayan misafirlerin büyük çoğunluğu' and 'sizinle aynı şehirden gelenler'",
+   "reason": "Study wording was 'almost 75 percent' of guests; the same-room and fellow-citizens messages exist but old paraphrases are loose"
+  },
+  {
+   "claim": "Neighborhood split in two: 17 percent said yes to a big 'Drive Carefully' lawn sign, 76 percent after a small window sticker",
+   "reason": "The sign study is real (Freedman and Fraser 1966, 76 vs 17 percent) but the book chapter is summarised around the in-home survey; the sign study is kept only as the same paper's second study, not attributed to the book"
+  },
+  {
+   "claim": "Goldstein: 'Big requests do not need big yeses, small yeses build identity'",
+   "reason": "No source; identity framing not verified for the book"
+  },
+  {
+   "claim": "Insulation message: 'save 150 dollars' vs 'lose 150 dollars' raised uptake by 150 percent",
+   "reason": "Not found in any source for this book; the figure looks garbled"
+  },
+  {
+   "claim": "Goldstein ties it to Kahneman and Tversky and warns against manipulation",
+   "reason": "Not verified in the book"
+  },
+  {
+   "claim": "Book year 2007 and single author Goldstein",
+   "reason": "Book is 2008, by Goldstein, Martin and Cialdini"
+  }
+ ],
+ "stories": {
+  "1543": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f10",
+    "f11"
+   ],
+   "note": "Numbers corrected to the published study."
+  },
+  "1544": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f5",
+    "f6",
+    "f12",
+    "f13"
+   ],
+   "note": "Sign study replaced by the household-products survey from chapter 14."
+  },
+  "1545": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f7",
+    "f8",
+    "f9",
+    "f14",
+    "f15",
+    "f16",
+    "f17",
+    "f18"
+   ],
+   "note": "Insulation numbers rejected; New Coke is the case a book summary gives for chapter 34. Low confidence on what the book itself says."
+  }
+ }
+}

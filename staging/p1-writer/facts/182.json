@@ -1,0 +1,226 @@
+{
+ "book_no": 182,
+ "title": "Rising Strong",
+ "authors": "Brené Brown",
+ "year": "2015",
+ "sources": [
+  "https://www.abebooks.com/9780812995824/Rising-Strong-Reckoning-Rumble-Revolution-0812995821/plp",
+  "https://www.psychotherapynetworker.org/article/physics-vulnerability/",
+  "https://www.huffpost.com/entry/the-reckoning-the-rumble-the-revolution-brene-browns-rising-strong_b_8068256",
+  "https://www.meaningfulhq.com/rising-strong.html",
+  "https://litlovers.com/reading-guides/non-fiction/rising-strong-brown?showall=1",
+  "https://www.pressreader.com/usa/houston-chronicle-sunday/20150823/282750585481543 (via search snippets, page blocked)"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Theodore Roosevelt gave the 'Citizenship in a Republic' (Man in the Arena) speech at the Sorbonne in Paris on April 23, 1910. Brown's earlier book Daring Greatly takes its title from it.",
+   "source": "litlovers reading guide; Roosevelt speech is public record",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Roosevelt's words (public domain): 'The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again...; who at the best knows in the end the triumph of high achievement, and who at the worst, if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who neither know victory nor defeat.'",
+   "source": "Roosevelt speech text, public domain",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Chapter one of Rising Strong is titled 'The Physics of Vulnerability'. It opens with Brown's basic 'laws of emotional physics'. The first: 'If we're brave enough often enough, we will fall; this is the physics of vulnerability.'",
+   "source": "Psychotherapy Networker excerpt; library catalogue summaries",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Brown writes: 'Fortune may favor the bold, but so does failure.' She reframes daring as accepting that failure is certain and staying committed anyway.",
+   "source": "Psychotherapy Networker excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "Brown writes that we can choose courage or comfort but not both.",
+   "source": "Psychotherapy Networker excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "Critics who watch from the stands without entering the arena: Brown says letting their judgment define us erodes our capacity for vulnerability; she wants feedback only from people who are themselves in the arena.",
+   "source": "Psychotherapy Networker excerpt (this is a Daring Greatly idea that Rising Strong carries on)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Once we act bravely and fall, we cannot return to who we were before. Courage changes us, which can bring a sense of loss as well as a renewed sense of purpose.",
+   "source": "Psychotherapy Networker excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Brown says humans are wired for story and that sharing our struggles is part of how we connect.",
+   "source": "Psychotherapy Networker excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "2012 family vacation in a rented house on Lake Travis. Brown and her husband Steve plan to swim across a deepwater cove each day, about 500 yards each way. The day before she bought a new swimsuit and goggles. Steve was a competitive high school swimmer and still swims seriously; Brown swims 'for toning'.",
+   "source": "AbeBooks book excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "One early morning, before the rest of the family woke and with the kids left with visiting relatives, they swam out together. Halfway across they stopped to check for boats. Brown felt overwhelmed with gratitude and said: 'I'm so glad we decided to do this together. It's beautiful out here.' Steve gave a noncommittal half smile, said 'Yeah. Water's good.' and started swimming again.",
+   "source": "AbeBooks book excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Brown was about fifteen feet from him and wondered whether he had heard her. She considered he might have been too moved to answer, but the moment felt weird. Embarrassment, then shame, rose in her.",
+   "source": "AbeBooks book excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Her explanation for his brush-off was about her own appearance: that he was judging how she looked in the swimsuit.",
+   "source": "Houston Chronicle review and Spirituality & Health excerpt, via search snippets (pages blocked)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Steve later said he had been fighting off a panic attack during the whole swim.",
+   "source": "Houston Chronicle review via search snippets (page blocked); one low-quality summary adds an unverified nightmare detail that is NOT used",
+   "confidence": "medium"
+  },
+  {
+   "id": "f14",
+   "claim": "Brown's tool for this moment is saying 'The story I'm telling myself is...' to surface the assumptions she has made.",
+   "source": "secondary book summaries",
+   "confidence": "medium"
+  },
+  {
+   "id": "f15",
+   "claim": "Rising Strong names three stages: the Reckoning (walking into our story), the Rumble (owning our story), the Revolution (writing a new ending and changing how we engage with the world).",
+   "source": "HuffPost; Penguin/publisher descriptions",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "Reckoning: we only need to recognize that we are feeling something; the opposite is denying emotion. Then get curious, e.g. 'Why am I being so hard on everyone around me today?' and 'What's setting me off?' The body reacts to emotion before the conscious mind.",
+   "source": "Meaningful HQ summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f17",
+   "claim": "Rumble: get honest about the stories we tell ourselves and test them to separate what is true from what is self-protection. The rumble begins with turning up our curiosity. It is the messiest stage.",
+   "source": "HuffPost; Meaningful HQ summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f18",
+   "claim": "Revolution: 'The rising strong process is nowhere near as powerful as the rising strong practice.' The uprising starts when the first reaction is curiosity instead of reflex ('Why am I so pissed? What's going on with me?').",
+   "source": "Meaningful HQ summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f19",
+   "claim": "In the two years after Daring Greatly, Brown's team received emails every week from readers who had taken a risk, been hurt, and asked how to get back up. Brown says she has collected this data throughout her work. She calls herself a grounded theory researcher.",
+   "source": "HuffPost; litlovers",
+   "confidence": "medium"
+  },
+  {
+   "id": "f20",
+   "claim": "Brown cites neurologist Robert Burton: the brain rewards us for completing patterns even when the explanation is incomplete or wrong. A study of identical items where every shopper gave a detailed reason for their pick is called 'lies, honestly told'.",
+   "source": "Meaningful HQ summary only",
+   "confidence": "low"
+  },
+  {
+   "id": "f21",
+   "claim": "Brown tells the swim story both in the book and from the stage.",
+   "source": "Houston Chronicle review via search snippet",
+   "confidence": "medium"
+  },
+  {
+   "id": "f22",
+   "claim": "Brown: 'I've collected that data all along, and what I've learned about surviving hurt has saved me again and again.' And: owning our story and loving ourselves through that process is the bravest thing we'll ever do.",
+   "source": "HuffPost",
+   "confidence": "high"
+  },
+  {
+   "id": "f23",
+   "claim": "Brown ties curiosity to a study published October 22, 2014 in Neuron: brain chemistry changes when we become curious, which aids learning and retention.",
+   "source": "Meaningful HQ summary",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1643: Brown swims in a POOL, husband lies on the next lounger smiling at his phone, he replies that an old friend sent a funny message",
+   "reason": "Contradicted by the book excerpt: lake swim at Lake Travis, Steve answers 'Yeah. Water's good.' No phone, no friend message."
+  },
+  {
+   "claim": "Old 1644: three stages named Confrontation / Clarification / Transformation with the quotes 'I'm lying in the mud', 'what part is real', 'what did I learn'",
+   "reason": "Book names are Reckoning, Rumble, Revolution; the quoted lines are not attested."
+  },
+  {
+   "claim": "Old 1644: most people get stuck at stage one or skip stage two; Brown researched hundreds of people on falling and rising",
+   "reason": "No source; interview count never found."
+  },
+  {
+   "claim": "Old 1642: in her research the bravest people were also the ones who fell most; the most criticized were the ones who entered the arena most",
+   "reason": "Not found in sources."
+  },
+  {
+   "claim": "Old 1642: 'Falling is not failure, it is proof of being in the arena. Those who never fall never enter.'",
+   "reason": "Paraphrase not attested; book's attested lines are f3 and f4."
+  },
+  {
+   "claim": "Old 1642: Brown 'made the passage her life compass'",
+   "reason": "Ornamental, not attested."
+  },
+  {
+   "claim": "Brown came across the Roosevelt quote while googling the Downton Abbey era",
+   "reason": "From an Oprah interview about Daring Greatly, not from Rising Strong. Not used."
+  },
+  {
+   "claim": "Steve's panic attack was triggered by a nightmare about failing to save their children",
+   "reason": "Only on an AI-summary site."
+  }
+ ],
+ "stories": {
+  "1642": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7"
+   ],
+   "note": "Reframed to the book's own arena opening and the first law 'brave enough often enough, we will fall'. Old claims about research and quotes dropped. Title changes."
+  },
+  "1643": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f9",
+    "f10",
+    "f11",
+    "f12",
+    "f13",
+    "f14"
+   ],
+   "note": "Old pool-and-phone scene is wrong. Rewritten around the Lake Travis swim. Panic-attack ending medium confidence."
+  },
+  "1644": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f15",
+    "f16",
+    "f17",
+    "f18",
+    "f19"
+   ],
+   "note": "Stage names corrected to Reckoning, Rumble, Revolution."
+  }
+ }
+}

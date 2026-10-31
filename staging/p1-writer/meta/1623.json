@@ -1,0 +1,35 @@
+{
+  "story_id": 1623,
+  "verdict": "keep",
+  "verify_note": "Not web-verified; attachment styles, protest behavior, deactivating strategies from Attached (2010), brief as written.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kaygılı-kaçıngan tuzağı",
+    "description": "Levine ve Heller, kaygılı ve kaçıngan bağlananların neden sık sık birbirini bulduğunu anlatıyor. Birinin hamlesi ötekinin hamlesini tetikliyor.",
+    "hook": "Aynı tartışma tekrar tekrar dönüyorsa, kendi payınıza düşen hamle hangisi?",
+    "one_minute_summary": "Amir Levine ile Rachel Heller, Attached kitabında üç bağlanma stili ayırıyor: güvenli, kaygılı ve kaçıngan. Kaygılı kişi yakınlık ister, endişelenince art arda yazar. Kaçıngan bunu baskı sayıp geri çekilir, çekilmeyi gören kaygılı daha çok yazar. Kitaba göre kaygılı kişinin bağlanma sistemi mesafeli birinin yanında tetikte kalır ve bu hâl çekim gibi hissedilir. Kötü adam yok, iki sistem birbirini tetikliyor. Yine de bağlanma çoğu araştırmada bir yelpaze sayılır; bu bir eğilimi tarif eder, kaderi değil."
+  },
+  "en": {
+    "title": "The anxious-avoidant trap",
+    "description": "Levine and Heller explain why anxious and avoidant partners keep finding each other. Each one's move sets off the other's.",
+    "hook": "In an argument that keeps coming back, which of your own moves do you leave out when you retell it?",
+    "one_minute_summary": "In Attached, Amir Levine and Rachel Heller sort people into secure, anxious and avoidant styles. The anxious partner wants closeness and sends text after text when worried. The avoidant partner feels pressure and pulls back, which makes the anxious one reach harder. Near a distant partner, the authors say, an anxious person's attachment system stays on, and that alertness can feel like chemistry. Researchers tend to treat attachment as a spectrum, so this describes a tendency, not a destiny."
+  },
+  "es": {
+    "title": "La trampa ansioso-evitativa",
+    "description": "Levine y Heller cuentan por qué las personas con apego ansioso y evitativo se buscan una y otra vez. Lo que uno vive como defensa, el otro lo vive como ataque.",
+    "hook": "¿Qué movimiento tuyo sueles dejar fuera cuando cuentas una discusión que siempre vuelve?",
+    "one_minute_summary": "En Attached, Amir Levine y Rachel Heller distinguen tres estilos de apego: seguro, ansioso y evitativo. El ansioso desea cercanía y, cuando teme, escribe mensaje tras mensaje. El evitativo lo vive como presión y se echa atrás, y eso hace que el ansioso insista más. Según el libro, junto a alguien distante el sistema de apego del ansioso no se apaga, y esa alerta se siente como química. La investigación suele ver el apego como gradiente, así que es una tendencia, no una condena."
+  },
+  "de": {
+    "title": "Die ängstlich-vermeidende Falle",
+    "description": "Levine und Heller beschreiben, warum sich ängstlich und vermeidend gebundene Menschen so oft finden. Der Zug des einen löst den Zug des anderen aus.",
+    "hook": "Welche deiner eigenen Züge lässt du weg, wenn du von einem Streit erzählst, der immer wiederkehrt?",
+    "one_minute_summary": "In Attached unterscheiden Amir Levine und Rachel Heller drei Bindungstypen: sicher, ängstlich und vermeidend. Wer ängstlich gebunden ist, sucht Nähe und schreibt bei Sorge Nachricht um Nachricht. Die vermeidende Seite erlebt das als Druck und zieht sich zurück, worauf die ängstliche noch öfter schreibt. Nach dem Buch bleibt ihr Bindungssystem neben einem Distanzierten ständig an, und das fühlt sich wie Chemie an. Die Forschung sieht Bindung eher als Spektrum, das Muster ist also eine Tendenz, kein Schicksal."
+  }
+}

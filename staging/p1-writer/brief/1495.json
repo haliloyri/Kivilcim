@@ -1,0 +1,61 @@
+{
+ "story_id": 1495,
+ "kind": "concept",
+ "book": {
+  "title": "Now, Discover Your Strengths",
+  "author": "Marcus Buckingham and Donald O. Clifton",
+  "year": "2001"
+ },
+ "confidence": "medium",
+ "confidence_note": "Two assumptions, the best managers' opposite pair, the interview groups and the 80,000-manager study are from Gallup's January 2001 excerpt and the book's introduction text. The 25-year/34-theme profile detail and the parents-and-teachers claim come from a summary page. Old claims (A in math/F in English report card, strengths give ten times the improvement, successful people manage weaknesses) were not found and dropped.",
+ "facts": [
+  "Over thirty years Gallup interviewed 80,000 managers in hundreds of organizations to find what the best had in common; findings in First, Break All the Rules.",
+  "Gallup's study of excellence ran to a little over two million interviews: best teachers, doctors, salespeople, lawyers, professional basketball players, stockbrokers, accountants, hotel housekeepers, leaders, soldiers, nurses, pastors, systems engineers, chief executives.",
+  "Most organizations are built on two assumptions: each person can learn to be competent in almost anything; each person's greatest room for growth is in the areas of greatest weakness.",
+  "The best managers assume instead: each person's talents are enduring and unique; each person's greatest room for growth is in the areas of greatest strength.",
+  "The authors argue that parents, teachers, managers and psychology's focus on pathology make us experts in our weaknesses while strengths stay dormant and neglected.",
+  "A weakness is anything that gets in the way of excellent performance.",
+  "The StrengthsFinder profile came from about 25 years of Gallup work, identifies 34 themes and reports a person's five most powerful signature themes; the goal is consistent, near-perfect performance.",
+  "Gallup's four warning signs: more spent on training after hiring than on selection; performance managed through work rules, policies, procedures; development plans around areas of opportunity; promotion on accumulated skills with most prestige and pay to the most well-rounded. Remedial fixes such as a communication class are damage control, accepted only occasionally.",
+  "The best managers look for talent in every role, focus on outcomes, treat employees differently and spend the most time with the best people."
+ ],
+ "scene_details": [
+  "hotel housekeepers and professional basketball players among the interview groups",
+  "two assumptions set against the opposite two",
+  "five signature themes out of 34"
+ ],
+ "tension": "Most organizations put growth effort where people are weakest; Gallup's best managers put it where people are strongest.",
+ "opening_idea": "Two assumptions most organizations run on, and the opposite pair the best managers used.",
+ "lessons": [
+  {
+   "idea": "Look for growth where the person is strongest and manage the weak spot rather than fix it forever.",
+   "anchor": "Best managers' assumption: greatest room for growth is in areas of greatest strength."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "If you gave the work you do best a little more of next week's time, which task would you take off your calendar?",
+ "use_cases": [
+  {
+   "situation": "A meeting is called to fix a colleague's weak spot",
+   "move": "Cite Gallup's best managers, who put growth where a person is strongest, and ask what that person does best.",
+   "context": "meeting"
+  },
+  {
+   "situation": "An employee struggles with one task again",
+   "move": "Arrange that task to weigh on them least and talk about what they do best.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "You are writing your own development plan",
+   "move": "Ask whether the effort on your weak spots is matched by effort on your best work.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Gallup's best managers looked for growth in strengths, not weaknesses.",
+ "conversation_variants": {
+  "punchline_idea": "Most organizations assume growth is in weakness; the best managers assume it is in strength.",
+  "thirty_sec_idea": "Interview groups, two assumptions and the opposite pair, the five themes.",
+  "question_idea": "",
+  "key_contrast_idea": "fix weakness versus grow strength"
+ }
+}

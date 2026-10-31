@@ -1,0 +1,64 @@
+{
+ "story_id": 1778,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Everything Store",
+  "author": "Brad Stone",
+  "year": ""
+ },
+ "confidence": "medium",
+ "confidence_note": "Scene widened to the customer-voice thread in Stone's book: speakerphone call + question-mark escalations + empty chair. Sources (secondary, no book page seen): (1) NZ Herald piece citing Stone: Price said hold under a minute; Bezos dialed on speakerphone, 30 executives waited 4.5 min; Bezos said he was only calling to check and hung up. (2) Goodreads reader highlight of the book via search summary: Price assured 'well under a minute' with little proof; 800 number on speakerphone in middle of conference table; hold music. (3) Bezos on Lex Fridman podcast (Dec 2023; Upworthy, IBTimes, UNILAD): wait more than 10 minutes, group waited in silence; the book figure is ~4.5. (4) Stone's Bloomberg Businessweek excerpt (Oct 2013) via nextdraft.com and grimbeorn.blogspot.com: question-mark e-mail = 'ticking bomb', few hours to fix and write thorough explanation, reviewed by succession of managers before reaching Bezos; escalations are Bezos's way of making sure the customer's voice is constantly heard; Jeff Wilke: every customer anecdote matters, each researched because it says something about processes. (5) Empty chair: Bill Price in Hyken interview (hyken.com): 'I was in the very first meeting at Amazon where Jeff left the chair empty'; chair kept empty for the customer because the customer can never come to our meetings. Chair is Price's recollection; Stone's coverage of it only seen in a review summary. Not verified: book page numbers; year; whether chair and speakerphone were the same meeting (story keeps them separate); hold music wording; Wilke's title and who put the question to him (story says only 'asked why'); Price resigned under a year later (secondary only, not used); watch-off detail (not used); 'angrily' (not used).",
+ "facts": [
+  "Bezos asked Bill Price, Amazon's vice president of customer service, for the average phone hold time; Price said well under a minute, with little proof (Stone via reader highlight).",
+  "Bezos put the speakerphone in the middle of the conference table and dialed Amazon's 800 number while about 30 executives waited.",
+  "In Stone's account about four and a half minutes passed before an agent answered; Bezos said he was only calling to check and hung up.",
+  "Years later, on a podcast (2023), Bezos remembered the wait as more than ten minutes and the room silent.",
+  "Bezos forwarded customer complaint e-mails to the responsible executive with a single added character, a question mark.",
+  "Stone: employees reacted as if they had found a ticking bomb; they had a few hours to solve the issue and prepare a thorough explanation, reviewed by a succession of managers before it reached Bezos.",
+  "Stone: such escalations are Bezos's way of making sure the customer's voice is constantly heard inside the company.",
+  "Asked why whole teams must drop everything for a question mark, Jeff Wilke answered that every customer anecdote matters and each is researched because it says something about the company's processes.",
+  "Price recalled being in the very first meeting where Bezos left a chair empty, for the customer, who can never come to the company's meetings.",
+  "Bezos on the Lex Fridman podcast (2023): in a weekly business review a customer-service metric in a deck said wait times were under 60 seconds, but customer complaints suggested otherwise; after the call he said they were not measuring the right thing, which set off a chain of events in which they started measuring it right (Upworthy, UNILAD, IBTimes; not Stone).",
+  "Hyken interview: Bezos asked Price in his job interview for his definition of customer service; Price answered that the best service is no service, and Bezos hired him (Price's account, not Stone)."
+ ],
+ "scene_details": [
+  "a speakerphone in the middle of a conference table",
+  "about 30 executives listening to hold music",
+  "an empty chair at the table",
+  "a forwarded e-mail with only a question mark"
+ ],
+ "tension": "Price said hold time was well under a minute; the speakerphone said about four and a half.",
+ "opening_idea": "Open differently per language: speakerphone, question mark, Price's answer, or the empty chair.",
+ "lessons": [
+  {
+   "idea": "Give the person who lives with a decision a place in the room, or test the report against their real experience.",
+   "anchor": "the empty chair / the speakerphone call"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "In your next decision, who will live with the result without being in the room, and how would you find out what they would say?",
+ "use_cases": [
+  {
+   "situation": "A team is about to ship a change.",
+   "move": "Leave one chair empty and ask what the person who will use it would say.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A family plans a move.",
+   "move": "Ask what the child who is not in the room would say.",
+   "context": "family"
+  },
+  {
+   "situation": "You are deciding alone.",
+   "move": "Write the name of the person affected and one sentence in their voice.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "An empty chair at the table, kept for the person the decision lands on.",
+ "conversation_variants": {
+  "punchline_idea": "Price said under a minute; Bezos dialed and the wait was about four and a half.",
+  "thirty_sec_idea": "Speakerphone call, question-mark e-mails and an empty chair: three ways Bezos put the customer in the room.",
+  "question_idea": "",
+  "key_contrast_idea": "Report versus the real call"
+ }
+}

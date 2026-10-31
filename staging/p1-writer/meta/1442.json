@@ -1,0 +1,35 @@
+{
+ "story_id": 1442,
+ "verdict": "keep",
+ "verify_note": "Old 'anxiety machines' quote and the elevator-button and digital-screen claims were not found and removed. Rebuilt around feedback and the gulf of evaluation (Wikipedia) with the Three Mile Island indicator from accident summaries; the link to the book is a comparison to its definition, not a verified book example (low confidence).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Işık komutu gösterdi",
+  "description": "Three Mile Island'da bir gösterge, vananın kapandığını değil, kapatma komutunun verildiğini bildiriyordu. Norman'ın geri bildirim tanımı bu farkı anlatıyor.",
+  "hook": "İşinde ya da evinde hangi sinyal bir şeyin gönderildiğini söylüyor ama işe yarayıp yaramadığını söylemiyor?",
+  "one_minute_summary": "1979'daki Three Mile Island kazasında bir tahliye vanasının göstergesi vananın solenoidine bağlıydı ve kapatma komutunun verildiğini bildiriyordu, vananın kapandığını değil. Don Norman, olaydan sonra başka psikologlarla operatörleri eğitmeye çağrıldığını söylemiş. Kitabı geri bildirimi eylemin sonucuna dair tam ve sürekli bilgi diye tanımlıyor, değerlendirme uçurumunu da sistemin durumunu okumak için gereken çaba diye. Bu tanıma göre ışık yetersizdi. Ders: işin yapıldığını göster."
+ },
+ "en": {
+  "title": "The light that showed the command",
+  "description": "At Three Mile Island a valve indicator showed that a close command had been sent, not that the valve had closed. Norman's definition of feedback names that gap.",
+  "hook": "Where in your work or home does a signal tell you something was sent without saying whether it worked?",
+  "one_minute_summary": "At Three Mile Island in 1979, the indicator for a relief valve was wired to the valve's solenoid and showed that a close command had been sent, not that the valve was shut. Don Norman has said he was called in with other psychologists to help retrain the operators. His book defines feedback as full and continuous information about the results of actions, and the gulf of evaluation as the effort to read a system's state. Measured against that, the light fell short. The lesson is to show the job is done."
+ },
+ "es": {
+  "title": "La luz mostraba la orden",
+  "description": "En Three Mile Island un indicador de válvula mostraba que se había enviado la orden de cerrar, no que la válvula estuviera cerrada. La definición de Norman de retroalimentación nombra esa brecha.",
+  "hook": "¿En qué parte de tu trabajo o de tu casa una señal te dice que algo se envió sin decirte si funcionó?",
+  "one_minute_summary": "En Three Mile Island, en 1979, el indicador de una válvula de alivio estaba cableado a su solenoide y mostraba que se había enviado la orden de cerrar, no que la válvula estuviera cerrada. Don Norman ha dicho que lo llamaron con otros psicólogos para reentrenar a los operadores. Su libro define la retroalimentación como información plena y continua sobre los resultados de las acciones. Frente a eso, la luz se quedaba corta. La lección: muestra que el trabajo está hecho."
+ },
+ "de": {
+  "title": "Das Licht zeigte den Befehl",
+  "description": "In Three Mile Island zeigte eine Ventilanzeige, dass ein Schließbefehl gesendet war, nicht dass das Ventil geschlossen war. Normans Definition von Rückmeldung benennt diese Lücke.",
+  "hook": "Wo sagt dir in deiner Arbeit oder zu Hause ein Signal, dass etwas gesendet wurde, ohne zu sagen, ob es gewirkt hat?",
+  "one_minute_summary": "In Three Mile Island war 1979 die Anzeige eines Entlastungsventils mit dessen Magnetspule verdrahtet und zeigte, dass ein Schließbefehl gesendet war, nicht dass das Ventil geschlossen war. Don Norman sagt, er sei mit anderen Psychologen hinzugezogen worden, um die Bediener neu zu schulen. Sein Buch definiert Rückmeldung als vollständige, fortlaufende Information über Handlungsergebnisse und die Kluft der Bewertung als den Aufwand, einen Systemzustand zu lesen. Daran gemessen blieb das Licht zu kurz. Die Lehre: Zeige, dass die Arbeit erledigt ist."
+ }
+}

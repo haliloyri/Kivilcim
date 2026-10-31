@@ -1,0 +1,40 @@
+{
+  "story_id": 1282,
+  "kind": "anecdote",
+  "book": { "title": "The Alchemist", "author": "Paulo Coelho", "year": "1988" },
+  "confidence": "medium",
+  "confidence_note": "DB lists the book as 'Kaybedilen Cennet' (Lost Paradise); the story content is The Alchemist (Coelho, 1988 original Portuguese), so the book field was corrected. Written from well-known plot (memory plus secondary summaries), book text not opened. Old TR text invented the king's quote ('the spirit of the treasure stops speaking to you') and said the dream was the pyramids 'under sand'; neither used. Omitted: exact wording of the king's speech, the tenth-of-the-flock bargain, the name of the Tangier thief, the number of sheep sold. 'Cirque'-style statistics not applicable. Old TR text also says the treasure's secret is 'revealed at the very end' and 'nowhere he thought': kept out of this story, which stops before the ending.",
+  "facts": [
+    "Santiago is a young Andalusian shepherd who beds his flock down in an abandoned church; a sycamore grows through the roof of the old sacristy.",
+    "In his dream a child takes him by the hands, leads him to the Egyptian pyramids and says that if he goes there he will find a hidden treasure.",
+    "Just before the child shows the exact spot, Santiago wakes. The same dream comes a second time in the same place and ends the same way.",
+    "In Tarifa a gypsy woman interprets the dream as an instruction to go to the pyramids and asks a tenth of the treasure for the reading.",
+    "An old man who turns out to be the King of Salem tells him about a Personal Legend, the thing a person has always wanted to accomplish, and that most people stop believing it is possible.",
+    "Santiago sells his sheep and crosses to Africa.",
+    "On his first day in Tangier a young man who offers to guide him leaves him with no money. He is in a foreign port with the pyramids still far away."
+  ],
+  "scene_details": [
+    "A sycamore growing through the roof of an abandoned church's sacristy",
+    "A child leading him by the hands toward the pyramids and the dream breaking off before the spot is shown",
+    "Sheep sold and a port town where his money disappears on day one"
+  ],
+  "tension": "A shepherd has the same unfinished dream twice and has to decide what a dream is worth when the cost is the flock that makes his living.",
+  "opening_idea": "Start in the ruined church under the sycamore, with the sleeping shepherd and the dream that stops one step before the answer.",
+  "lessons": [
+    { "idea": "A wish that returns unchanged is worth testing with a real, affordable step instead of being argued about forever.", "anchor": "The dream came twice, identical and incomplete, and Santiago acted on it by selling the sheep and crossing to Africa.", "everyday_example_idea": "A cook who keeps imagining her own small place books one weekend stall at a market." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which idea keeps coming back to you, in more or less the same form, and what small step could you take toward it this month?",
+  "use_cases": [
+    { "situation": "A friend keeps describing the same plan and never starts it.", "move": "Santiago's dream arrived twice before he moved. Ask the friend what the smallest real step would be, and when.", "context": "social" },
+    { "situation": "You have an idea you keep postponing.", "move": "Write the idea in one sentence and the first step that costs little, then choose a day for it.", "context": "self" },
+    { "situation": "A family member is afraid of giving up a safe job.", "move": "Santiago sold the flock to go; ask what part of the safe thing they would keep and what part they could test first.", "context": "family" }
+  ],
+  "pocket_idea": "A dream that comes back unchanged is asking for a first step, the way Santiago's twice-dreamed pyramids sent him to sell his sheep.",
+  "conversation_variants": {
+    "punchline_idea": "Santiago's dream stopped one step short of the answer, twice, and he sold his sheep anyway.",
+    "thirty_sec_idea": "Shepherd sleeps in a ruined church, dreams of a child leading him to the pyramids, wakes before the spot is shown. Dreams it again. A gypsy woman reads it as go, an old king talks about a Personal Legend, and he sells the flock. First day in Tangier he is robbed.",
+    "question_idea": "",
+    "key_contrast_idea": "Flock or dream"
+  }
+}

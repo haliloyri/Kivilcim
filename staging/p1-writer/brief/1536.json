@@ -1,0 +1,67 @@
+{
+  "story_id": 1536,
+  "kind": "anecdote",
+  "book": {
+    "title": "Black Box Thinking",
+    "author": "Matthew Syed",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read. Core (Brailsford at British Cycling from 2003, aim of improving many small things, Beijing 2008, London 2012, Wiggins as first British Tour winner in 2012) is widely documented. Specifics: the pillows, massage gel and hand-washing examples are well-known from coverage of the story and appear in Syed's marginal gains discussion as I recall, but I did not confirm them in the book text; kept as 'among the small things'. The reference's '76 years' claim and '100 things' arithmetic were NOT verified and are omitted. Per later press (Gulf News report), Wiggins himself later dismissed the 'marginal gains' label; this is outside the book and may be added only as a caveat. Do not claim marginal gains alone caused the medals. Hand-washing surgeon and pillows/mattresses recalled from coverage of the story; not verified in the book text.",
+  "facts": [
+    "In 2003 Dave Brailsford took over British Cycling, a programme with little Olympic success behind it.",
+    "His approach: look for small improvements in every factor that affects a rider, and test each one.",
+    "Small things included the pillows riders slept on, the massage gel, and how riders washed their hands to avoid infections.",
+    "Each change was tested; the idea was that many small gains add up.",
+    "At the 2008 Beijing Olympics British cyclists won 8 gold medals.",
+    "At London 2012 they won 8 golds again.",
+    "In 2012 Bradley Wiggins became the first British winner of the Tour de France.",
+    "Syed ties this to black box thinking: results are measured, failures are recorded and each change is tested.",
+    "Riders were given their own pillows and mattresses to take to hotels so they would sleep the same way everywhere.",
+    "A surgeon was brought in to teach riders how to wash their hands properly, to reduce infections.",
+    "Reports of the programme also mention the floor of the team truck painted white so dust would show; treat as reported, not as Syed's own claim.",
+    "Brailsford's stated aim: improve each factor by one percent, not to find one big change."
+  ],
+  "scene_details": [
+    "Riders' pillows and massage gel as items under test",
+    "Hand-washing taught to riders",
+    "A medal count: 8 golds in Beijing, 8 in London",
+    "A white-painted truck floor (reported)",
+    "Riders carrying their own pillows"
+  ],
+  "tension": "A programme that tried to win by improving dozens of unglamorous details at once, and had to find out which actually helped.",
+  "opening_idea": "Start with the pillows: a cycling programme testing what its riders sleep on.",
+  "lessons": [
+    {
+      "idea": "Break a result into its parts and test each part, so the improvements you keep are the ones that show up in the measurements.",
+      "anchor": "Brailsford's team tested items as small as pillows and massage gel and kept what worked.",
+      "everyday_example_idea": "A small bakery changes one thing per week (oven time, flour, packaging) and keeps a note of what sold better."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which part of the work you do could you test with one small change this week, and how would you tell whether it helped?",
+  "use_cases": [
+    {
+      "situation": "Your team debates a big redesign.",
+      "move": "Brailsford tested pillows before he promised medals. Pick one small element, change only that and compare results.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend wants to 'get fit' with a total overhaul.",
+      "move": "Suggest changing one thing, like sleep time, and checking how they feel in a week.",
+      "context": "social"
+    },
+    {
+      "situation": "You keep missing a deadline.",
+      "move": "List the five small steps in your process and time each one for a week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "British Cycling tested pillows, gel and hand-washing one by one; test one small part of your work before the big change.",
+  "conversation_variants": {
+    "punchline_idea": "Before the medals, British cycling tested what riders slept on.",
+    "thirty_sec_idea": "In 2003 Dave Brailsford took over British Cycling and set out to improve many small things, from pillows to massage gel to how riders washed their hands, testing each. British cyclists won eight golds in Beijing in 2008 and eight more in London in 2012, and in 2012 Bradley Wiggins was the first Briton to win the Tour de France.",
+    "question_idea": "",
+    "key_contrast_idea": "Many small tests"
+  }
+}

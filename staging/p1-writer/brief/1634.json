@@ -1,0 +1,41 @@
+{
+  "story_id": 1634,
+  "kind": "anecdote",
+  "book": { "title": "Scattered Minds", "author": "Gabor Maté", "year": "1999" },
+  "confidence": "high",
+  "confidence_note": "Verified against the full text on archive.org. The reference TR text (hyperfocus as a gift, 'ADHD brain is stronger than normal when fired by meaning', dopamine ignited by meaning/novelty, 'attention selectivity not disorder') contradicts the book: Maté says hyperfocus that excludes awareness also signals poor attention regulation, is often passive attention (television, video games), and that active attention needs a much higher level of motivation in ADD; dopamine is mentioned as thought to be undersupplied, with Maté warning that biochemical explanations are dangerous oversimplifications. The story uses the book's own case: a college lecturer Maté had diagnosed, whose GP asked for a second opinion. The psychiatrist's letter and Maté's correction are from the book. No claim of special power in the ADD brain is made.",
+  "facts": [
+    "Maté had diagnosed a college lecturer with attention deficit disorder, but the lecturer's GP wanted a second opinion.",
+    "The second psychiatrist wrote that the patient 'is able to focus his attention on something that he is really interested in, which for patients afflicted with ADD is very difficult'.",
+    "Maté's reply in the book: that is not what is very difficult. What can be immobilizingly difficult is to arouse the brain's motivational apparatus in the absence of personal interest.",
+    "Maté: a facility for focusing on what interests you does not rule out ADD, but the person with ADD needs a much higher level of motivation than others; ignorance of this has led many doctors to miss the diagnosis.",
+    "He adds that ADD is situational: the same child may do remarkably well in certain classes and be scattered, unproductive and perhaps disruptive in others; teachers may conclude the child chooses when to work.",
+    "Some activities can draw compulsive hyperconcentrated attention, but hyperfocus that excludes awareness of the surroundings also denotes poor attention regulation; it is often passive attention, as with television or video games, which lets the mind cruise on automatic.",
+    "Active attention, the mind fully engaged and the brain working, is mustered only in special circumstances of high motivation; the ADD brain lacks it for organized work or low-interest tasks.",
+    "Maté mentions that attention deficit is thought to be partly due to an undersupply of dopamine, crucial to attention and reward, and that stimulants such as Ritalin are thought to raise its availability in the prefrontal areas; he calls such biochemical explanations 'dangerous oversimplifications'."
+  ],
+  "scene_details": [
+    "A college lecturer, a GP asking for a second opinion, a letter from a psychiatrist",
+    "A child excellent in one class and scattered in another",
+    "Television and video games as passive attention"
+  ],
+  "tension": "A doctor's letter says the patient can concentrate on what interests him, which sounds like evidence against ADD; Maté says it is the opposite.",
+  "opening_idea": "Start with the lecturer and the second-opinion letter that argued he could not have ADD because he could focus.",
+  "lessons": [
+    { "idea": "A person's focus on what interests them tells you little about whether they can attend to what does not; ask what each task asks of them rather than inferring effort from a good day.", "anchor": "The second psychiatrist read the lecturer's focus on interests as a sign against ADD; Maté reads the missing motivation for dull tasks as the difficulty.", "everyday_example_idea": "A manager sees an employee build a spreadsheet at speed for a project they care about and wonders why expense reports sit unfinished." }
+  ],
+  "reflect": [],
+  "reflect_final": "In which of your own tasks does attention arrive on its own, and in which does it only come with a deadline, a person waiting or some other push?",
+  "use_cases": [
+    { "situation": "A parent is told their child 'can concentrate fine on games'.", "move": "Maté's answer is that passive attention on a game is different from the effort a worksheet asks. Ask what would make this task more interesting or shorter.", "context": "family" },
+    { "situation": "You notice a colleague is energetic on one project and stuck on another.", "move": "Ask which parts of the stuck task have no hook for them and whether it can be paired with a person or deadline.", "context": "meeting" },
+    { "situation": "You are being too hard on yourself for putting off a boring chore.", "move": "Notice that Maté describes the effort as hard to start without personal interest; attach one outside cue (a call with someone) and start.", "context": "self" }
+  ],
+  "pocket_idea": "Maté: being able to focus on what interests you says nothing about the tasks that don't; give those a person or a deadline.",
+  "conversation_variants": {
+    "punchline_idea": "A psychiatrist wrote that a lecturer could focus on what he loved; Maté answered that this was not the hard part.",
+    "thirty_sec_idea": "Gabor Maté diagnosed a college lecturer with ADD, and the GP asked another psychiatrist to look. The letter said the man could focus on things he found interesting, which is hard for ADD. Maté's reply: that is not what is hard. The hard part is switching on motivation when there is no personal interest.",
+    "question_idea": "",
+    "key_contrast_idea": "Interest versus effort"
+  }
+}

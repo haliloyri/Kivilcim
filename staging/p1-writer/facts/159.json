@@ -1,0 +1,188 @@
+{
+  "book_no": 159,
+  "title": "Mistakes Were Made (But Not by Me)",
+  "authors": [
+    "Carol Tavris",
+    "Elliot Aronson"
+  ],
+  "year": "2007",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Mistakes_Were_Made_(but_Not_by_Me)",
+    "https://world.hey.com/stockdabba/cliff-notes-of-mistakes-were-made-but-not-by-me-by-carol-tavris-and-elliot-aronson-b83701b1",
+    "https://innocenceproject.org/cases/bruce-godschalk",
+    "https://exonerationregistry.org/cases/10472",
+    "https://www.houstonpress.com/news/innocent-at-last-6564185/",
+    "https://dailydoubt.blogspot.com/2009/10/mistakes-were-made-but-not-when-my-dad.html",
+    "https://nextbigideaclub.com/magazine/mistakes-made-not-justify-foolish-beliefs-bad-decisions-hurtful-acts-bookbite/30799/amp/",
+    "https://philoonbooks.wordpress.com/2015/04/25/mistakes-were-made-but-not-by-me-by-carol-tavris-and-elliot-aronson/",
+    "https://www.mindingtherapy.com/mistakes-were-made-tavris-aronson/",
+    "https://news.feinberg.northwestern.edu/2004/09/01/teens"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Book: Mistakes Were Made (But Not by Me): Why We Justify Foolish Beliefs, Bad Decisions, and Hurtful Acts, by social psychologists Carol Tavris and Elliot Aronson, Harcourt, 2007. The DB lists only Tavris as author; the book has two authors. Central idea: cognitive dissonance drives self-justification.",
+      "source": "Wikipedia",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Chapter 5 'Law and Disorder': a district attorney named Bruce Castor rejected a DNA result that cleared a man who had spent fifteen years in prison. Asked for a scientific basis he said: 'I have no scientific basis. I know because I trust my detective and my tape-recorded confession.' The man was Bruce Godschalk (Montgomery County, Pennsylvania, exonerated 2002 after DNA testing excluded him). The book's note places Castor in Philadelphia; the case record says Montgomery County, so the story does not name a county.",
+      "source": "hey.com chapter notes; Innocence Project (Godschalk); Exoneration Registry",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Same chapter: in Texas, DNA from the victim of a rape-murder did not match Roy Criner, the man convicted. Prosecutor Michael McDougal answered: 'It means that the sperm found in her was not his.' The point of the example: the evidence was read as not touching the verdict.",
+      "source": "hey.com chapter notes; Houston Press / Innocence Project (Criner case, McDougal opposed a new trial)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Same chapter: after more than 130 DNA exonerations in fifteen years, Florida prosecutors mounted a vigorous challenge to similar new cases. Wilton Dedge had to sue the state to get his evidence retested; prosecutors cited the state's interest in finality; he was later exonerated and released.",
+      "source": "hey.com chapter notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "The authors' frame: a prosecutor who dismisses DNA is not simply lying. Having committed to the case, he has a self-image (competent, decent) that clashes with 'I helped convict an innocent man', and dissonance reduction supplies reasons to stay put.",
+      "source": "Wikipedia; Indiana law review article summarising the chapter; hey.com notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Chapter 3 'Memory, the Self-Justifying Historian'. Opening anecdote: Tavris remembered her father reading James Thurber's The Wonderful O to her. She later found her first edition: published 1957, a year after her father's death. Her conclusion: someone else gave her the book and read it to her.",
+      "source": "hey.com chapter notes; Next Big Idea Club; Philo on Books review",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Daniel Offer's study: teenage boys were interviewed about emotionally charged topics (home life, sexuality, religion, parents, discipline), then re-interviewed at forty-eight. Their ability to guess what they had said about themselves as teenagers was 'no better than chance'. The book's notes say thirty-four years later; Northwestern releases give 1962 and 1997, so 'more than three decades' is the safe wording. Sample size differs by source (73 vs 67), so no count is used.",
+      "source": "hey.com chapter notes; Northwestern/EurekAlert releases",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "In the same study nearly half the men remembered believing high-school sex was acceptable, while only 15 percent had held that view at fourteen.",
+      "source": "hey.com chapter notes only",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "In spousal surveys, the shares of housework each partner claims always add up to more than 100 percent.",
+      "source": "hey.com chapter notes only",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Book line: 'If mistakes were made, memory helps us remember that they were made by someone else.'",
+      "source": "Minding Therapy quote list; Guardian review via Wikipedia",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "Chapter 2 'Pride and Prejudice ... and Other Blind Spots' introduces the pyramid of choice. Two people start at the top of a pyramid, close together; each makes a first choice, justifies it, and slides down a different side, ending far apart. The danger is less the first step than the string of justified steps after it.",
+      "source": "hey.com chapter notes; Tavris interview (American Scientist) quoted on dailydoubt blog",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "Student version of the pyramid, as Tavris tells it in an interview: two students hold the same mild view of cheating, neither thinks it honourable nor terrible. A test that matters for graduate-school admission goes badly, both freeze on an essay question, and a neighbour's answers are visible. On impulse one cheats and the other resists. Each then justifies the choice, and over time their beliefs about cheating move far apart. Tavris says Aronson built the metaphor from an experiment by Judson Mills on children. Other summaries tell a wallet-with-$500 version, so the exact scenario in the printed book is not pinned down; keep only what the interview states.",
+      "source": "Tavris interview (American Scientist) via dailydoubt blog; supersummary (wallet variant)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Book's real-life slide example in chapter 2: politicians accepting favours from lobbyists; Tom DeLay's trip to St Andrews. The book sums it up: 'Pride, when followed by self-justification, paves the road to Scotland.'",
+      "source": "hey.com chapter notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Chapter 2 also uses Jeb Magruder (Watergate): he watched Bob Haldeman chew out an assistant for a minor lapse and excused it; the authors present small justifications like this as steps toward his later prison term.",
+      "source": "Next Big Idea Club summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Outside the book, from the case record: Godschalk's confession had been recorded by police. Castor's office sent the evidence to a second laboratory, which also excluded Godschalk. On 14 February 2002 Castor asked the judge to vacate the convictions. Added as the outcome beat; the story marks it as the record of the case, not the book's wording.",
+      "source": "Innocence Project (Godschalk case); Exoneration Registry case 10472",
+      "confidence": "medium"
+    },
+    {
+      "id": "f16",
+      "claim": "Feeney and Cassidy: teenagers who felt close to a parent six weeks later remembered past quarrels as less intense than they had reported at the time.",
+      "source": "hey.com chapter notes only",
+      "confidence": "medium"
+    },
+    {
+      "id": "f17",
+      "claim": "Jones and Kohler, 1958, a study on attitudes to desegregation: people on each side remembered the plausible arguments for their own position and the weak arguments for the other side.",
+      "source": "hey.com chapter notes only",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Over 200 wrongly convicted people freed by DNA, researchers went back to prosecutors asking 'Has your view changed?', most answering 'No, I still believe he is guilty, DNA can mislead'.",
+      "reason": "No such survey in the book or any source. The book's cases are named: Castor, McDougal, Florida prosecutors."
+    },
+    {
+      "claim": "The 3-step quotes 'It wasn't that bad', 'Under the circumstances it made sense', 'Anyone would have done it'.",
+      "reason": "Not attributed to the book; invented illustrations."
+    },
+    {
+      "claim": "University students asked for GPA and high-school grades at the start of college and again four years later; low-GPA students inflated high-school grades.",
+      "reason": "The real Bahrick, Hall and Berger 1996 study is different (recall checked against transcripts) and no source ties it to this book. Dropped."
+    },
+    {
+      "claim": "Two students decide about cheating, then 'a few months later' the cheater thinks everyone does it and the system is unfair.",
+      "reason": "Timeline and the quoted rationalisations are not in any source. Interview says only that beliefs drift apart."
+    },
+    {
+      "claim": "Pyramid applied to 'corruption, relationship violations, corporate scandals' as listed.",
+      "reason": "Book examples found: Magruder, DeLay. The rest is unattributed."
+    },
+    {
+      "claim": "Bradley Page detective turned off the tape before the confession words; jury never heard them.",
+      "reason": "Single secondary source, no corroboration. Not used."
+    }
+  ],
+  "stories": {
+    "1573": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f10",
+        "f15"
+      ],
+      "note": "Re-anchored on the Castor/Godschalk exchange instead of an invented survey."
+    },
+    "1574": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f16",
+        "f17"
+      ],
+      "note": "Grade-recall study removed; rebuilt on Tavris's Wonderful O memory and Offer's follow-up."
+    },
+    "1575": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f11",
+        "f12",
+        "f13",
+        "f14"
+      ],
+      "note": "Two-student pyramid as told by Tavris; no months-later epilogue."
+    }
+  }
+}

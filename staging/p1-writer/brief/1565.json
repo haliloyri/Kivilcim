@@ -1,0 +1,58 @@
+{
+  "story_id": 1565,
+  "kind": "concept",
+  "book": {
+    "title": "The 15 Commitments of Conscious Leadership",
+    "author": "Jim Dethmer, Diana Chapman and Kaley Warner Klemp",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The first commitment, taking responsibility, and the 'to me' versus 'by me' framing come from the book (one review summarises it so). The supplied TR text's CEO anecdote about the team that 'did not work' (wrong hires, vague goals, no feedback), the quoted line about 'the only thing you can change is yourself', and the figure 'a hundred percent' are not verified and are excluded. The input title and year differ from the original (see 1564). Updated with a reviewer summary of the book: 'more or less than 100 percent' and victim, villain, hero are from it.",
+  "facts": [
+    "Commitment 1 in the book is about taking full responsibility for the circumstances of your life.",
+    "Below the line, a leader takes more or less than 100 percent responsibility: they blame others, or they blame themselves.",
+    "The authors describe three roles people fall into below the line: victim, villain and hero.",
+    "Blaming yourself counts as below the line too, so full responsibility does not mean guilt.",
+    "Above the line, a leader asks what their part in the situation is and what they can do next, and helps others do the same.",
+    "In a 'to me' story, the cause is outside you, and so is the fix."
+  ],
+  "scene_details": [
+    "the figure 100 percent",
+    "the words victim, villain, hero",
+    "a list of complaints, each about someone else"
+  ],
+  "tension": "A fair complaint can still keep you stuck, because it puts the fix in someone else's hands.",
+  "opening_idea": "Start with two small words, 'to me' and 'by me', and what a leader sounds like in each.",
+  "lessons": [
+    {
+      "idea": "Blaming something outside you may be accurate, but it hands the solution to someone else, while looking at your part gives you something you can change.",
+      "anchor": "The 'to me' and 'by me' contrast in the first commitment."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your life do you tell a 'to me' story right now, and what is one part of it that is yours to change?",
+  "use_cases": [
+    {
+      "situation": "Your team missed a deadline and the first reaction is to point at another department.",
+      "move": "Ask the group: what part of this was ours, and what can we do about it this week?",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are annoyed that your flatmate never cleans.",
+      "move": "Ask yourself what you have said or not said about it, and raise it once, plainly.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend only complains about their boss.",
+      "move": "Ask: what would you do if you took the boss as given?",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "'To me' puts the fix out of reach, 'by me' puts it back in your hands: ask what your part is.",
+  "conversation_variants": {
+    "punchline_idea": "In the first commitment, 'to me' keeps the solution out of your reach and 'by me' puts it back.",
+    "thirty_sec_idea": "The first commitment in the book is responsibility. Below the line, you tell a 'to me' story: life happens to me, someone is to blame. Above it, you tell a 'by me' story and ask what your part is. It is not self-blame. It is the only version where you still have something to do.",
+    "question_idea": "Where do you blame outward?",
+    "key_contrast_idea": "To me, by me"
+  }
+}

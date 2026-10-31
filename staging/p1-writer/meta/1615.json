@@ -1,0 +1,35 @@
+{
+  "story_id": 1615,
+  "verdict": "keep",
+  "verify_note": "Not in scope of verification. Title changed: old title promised a screaming baby and psychological warfare, which the new story does not contain; new story is the debt snowball.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Borç Kartopu: Önce En Küçüğü",
+    "description": "Dave Ramsey, The Total Money Makeover kitabında borçları faize göre değil, bakiyeye göre sıralamayı önerir. Kendisi de bunun hesapta en ucuz yol olmadığını kabul eder.",
+    "hook": "Uzun bir işe başlarken ilk adımı verimliliğe göre mi seçersiniz, yoksa ne kadar çabuk bitirebileceğinize göre mi?",
+    "one_minute_summary": "Ramsey'in yedi basamaklı planında ikinci adım borç kartopudur. Bütün borçlar en küçük bakiyeden en büyüğe sıralanır, faiz oranına bakılmaz, ev kredisi listeye girmez. En küçük borç dışında hepsine asgari ödeme yapılır, artan para küçük borca gider. O kapanınca ödeme sıradaki borca eklenir. Ramsey, kâğıt üstünde en yüksek faizliyi önce kapatmanın daha ucuz olduğunu kabul eder. Yine de bu sırayı önerir, çünkü ona göre para yönetimi yaklaşık yüzde 80 davranıştır."
+  },
+  "en": {
+    "title": "The Debt Snowball: Smallest First",
+    "description": "In The Total Money Makeover, Dave Ramsey sorts debts by balance, not by interest rate. He admits the maths does not favour his order.",
+    "hook": "When you start a long job, do you pick the first step for efficiency or for how soon you can finish it?",
+    "one_minute_summary": "Step two of Ramsey's seven-step plan is the debt snowball. List every debt from smallest balance to largest, ignoring interest rates, and leave the house off. Pay the minimum on all but the smallest and send every spare dollar to it. When it is gone, its payment moves to the next debt. Ramsey concedes that on paper clearing the highest-interest debt first is cheaper. He still recommends this order because, as he puts it, personal finance is about 80 percent behaviour."
+  },
+  "es": {
+    "title": "La bola de nieve de la deuda",
+    "description": "En The Total Money Makeover, Dave Ramsey ordena las deudas por saldo y no por interés. Reconoce que las matemáticas no están de su parte.",
+    "hook": "Al empezar una tarea larga, ¿eliges el primer paso por su eficiencia o por lo pronto que puedes terminarlo?",
+    "one_minute_summary": "El segundo paso del plan de siete pasos de Ramsey es la bola de nieve de la deuda. Se ordenan todas las deudas del saldo menor al mayor, sin mirar el interés, y la hipoteca queda fuera. Se paga el mínimo en todas menos en la más pequeña y todo lo que sobra va a esa. Al cerrarla, su pago pasa a la siguiente. Ramsey admite que sobre el papel saldar primero la de mayor interés sale más barato. Aun así recomienda este orden porque, según él, las finanzas personales son un 80 por ciento comportamiento."
+  },
+  "de": {
+    "title": "Der Schuldenschneeball",
+    "description": "In The Total Money Makeover sortiert Dave Ramsey Schulden nach Restbetrag und nicht nach Zinssatz. Er räumt ein, dass die Mathematik nicht für ihn spricht.",
+    "hook": "Wählst du bei einer langen Aufgabe den ersten Schritt nach Effizienz oder danach, wie bald du ihn abschließen kannst?",
+    "one_minute_summary": "Der zweite Schritt in Ramseys Plan mit sieben Schritten ist der Schuldenschneeball. Alle Schulden werden von der kleinsten zur größten Restschuld sortiert, der Zinssatz zählt nicht, das Haus bleibt außen vor. Auf alle außer der kleinsten zahlt man nur die Mindestrate, alles Übrige geht an die kleinste. Ist sie getilgt, wandert ihre Rate zur nächsten. Ramsey gibt zu, dass es auf dem Papier billiger ist, zuerst die Schuld mit dem höchsten Zins zu tilgen. Er empfiehlt die andere Reihenfolge trotzdem, weil Finanzen seiner Aussage nach zu etwa 80 Prozent Verhalten sind."
+  }
+}

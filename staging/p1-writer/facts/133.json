@@ -1,0 +1,214 @@
+{
+ "book_no": 133,
+ "title": "Now, Discover Your Strengths",
+ "authors": "Marcus Buckingham and Donald O. Clifton",
+ "year": "2001",
+ "sources": [
+  "https://news.gallup.com/businessjournal/547/the-strengths-revolution.aspx",
+  "https://pdfroom.com/books/now-discover-your-strengths/jndOKy7PdRq",
+  "https://www.goodreads.com/work/quotes/1045276",
+  "https://lifeandleadership.com/book-summaries/buckingham-now-discover-your-strengths/",
+  "https://www.fastcompany.com/64388/do-you-know-your-own-strength (via search snippet)",
+  "https://en.wikipedia.org/wiki/CliftonStrengths"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The book's authors are Marcus Buckingham and Donald O. Clifton (Gallup), published 2001.",
+   "source": "Wikipedia; Gallup",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "The question: 'At work, do you have the opportunity to do what you do best every day?'",
+   "source": "Gallup Business Journal (Jan 2001 book excerpt); book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Globally, only 20 percent of employees working in the large organizations Gallup surveyed feel their strengths are in play every day. The wider database behind the question: more than 1.7 million employees in 101 companies in 63 countries. The 20 percent is the share who strongly agree.",
+   "source": "Gallup Business Journal; book text; Fast Company",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Gallup meta-analysis: 198,000 employees, 7,939 business units, 36 companies. Employees who strongly agreed were 50 percent more likely to work in business units with lower turnover, 38 percent more likely in more productive units, 44 percent more likely in units with higher customer satisfaction scores. These are associations, not proven causation.",
+   "source": "Gallup Business Journal",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Business units that increased their number of strongly agreeing employees saw matching gains in productivity, customer loyalty and retention.",
+   "source": "Gallup Business Journal",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "Two assumptions most organizations are built on: each person can learn to be competent in almost anything; each person's greatest room for growth is in the areas of greatest weakness.",
+   "source": "Gallup Business Journal; book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "The best managers assume instead: each person's talents are enduring and unique; each person's greatest room for growth is in the areas of greatest strength.",
+   "source": "Gallup Business Journal; book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Gallup's study of excellence involved a little over two million interviews, with groups such as best teachers, doctors, salespeople, lawyers, professional basketball players, stockbrokers, accountants, hotel housekeepers, leaders, soldiers, nurses, pastors, systems engineers and chief executives.",
+   "source": "book text (pdfroom copy of introduction)",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Before that, Gallup interviewed 80,000 managers over thirty years (the research behind First, Break All the Rules).",
+   "source": "Gallup Business Journal",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "The authors argue that parents, teachers, managers and psychology's focus on pathology push us to become experts in our weaknesses while strengths stay dormant and neglected.",
+   "source": "LifeandLeadership summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Talent: 'any recurring pattern of thought, feeling, or behavior that can be productively applied.'",
+   "source": "book quote (Goodreads quotes)",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Weakness: 'anything that gets in the way of excellent performance.'",
+   "source": "book quote",
+   "confidence": "high"
+  },
+  {
+   "id": "f13",
+   "claim": "Strength: the ability is a strength only if you can fathom yourself doing it repeatedly, happily and successfully (consistent near-perfect performance is the goal).",
+   "source": "book quote; LifeandLeadership",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "Clues to talent in the book: yearnings ('particularly when felt early in life'), rapid learning, satisfactions ('the last clue'). Under satisfactions the book suggests seeing whether you become absorbed in an activity to such an extent that you lose track of time. Spontaneous reactions are also listed among the clues in secondary sources.",
+   "source": "book quotes via Goodreads; Gallup clue lists",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "The StrengthsFinder profile reports a person's five most powerful signature themes out of 34 themes; Gallup built profiles from more than two million people over about 25 years.",
+   "source": "LifeandLeadership; book text",
+   "confidence": "medium"
+  },
+  {
+   "id": "f16",
+   "claim": "Gallup's four warning signs of an organization on wrong assumptions, remedial fixes as damage control, and what the best managers do (talent in every role, outcomes, treat people differently, most time with best people).",
+   "source": "Gallup Business Journal, January 2001 book excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f17",
+   "claim": "The longer an employee stays and the higher they climb, the less likely they are to strongly agree that they play to their strengths; 'eight out of ten feel somewhat miscast' (source of that figure unclear); 40 percent used as example of doubling and 60 percent called not too aggressive for great organizations.",
+   "source": "Gallup Business Journal",
+   "confidence": "medium"
+  },
+  {
+   "id": "f18",
+   "claim": "Knowledge consists of the facts and lessons learned; skills are the steps of an activity; a skill is designed to make the secrets of the best easily transferable.",
+   "source": "Goodreads quotes from the book",
+   "confidence": "high"
+  },
+  {
+   "id": "f19",
+   "claim": "'There is one sure way to identify your greatest potential for strength: step back and watch yourself for a while.'",
+   "source": "Goodreads quotes from the book",
+   "confidence": "high"
+  },
+  {
+   "id": "f20",
+   "claim": "'While your spontaneous reactions provide the clearest trace of your talents, here are three more clues': yearnings, rapid learning, satisfactions.",
+   "source": "Goodreads quotes from the book",
+   "confidence": "high"
+  },
+  {
+   "id": "f21",
+   "claim": "'When we studied them, excellent performers were rarely well rounded. On the contrary, they were sharp.' Avoiding strengths to focus on weaknesses 'isn't a sign of diligent humility.'",
+   "source": "Goodreads quotes from the book",
+   "confidence": "high"
+  },
+  {
+   "id": "f22",
+   "claim": "Since talents are enduring, spend a great deal of time and money selecting people properly; the authors do not say you should always forgo weakness fixing, but the focus belongs on strengths.",
+   "source": "Goodreads quotes (partial)",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1497: 17 percent say yes, 83 percent cannot use strengths; 100 countries, millions of workers",
+   "reason": "Book says 20 percent; 1.7 million employees, 101 companies, 63 countries."
+  },
+  {
+   "claim": "Old 1497: yes-sayers have fewer sick days",
+   "reason": "Book's attested outcomes are turnover, productivity, customer satisfaction."
+  },
+  {
+   "claim": "Old 1495: child gets A in math and F in English, most parents pick English",
+   "reason": "Example not found in the book text or its summaries."
+  },
+  {
+   "claim": "Old 1495: developing strengths gives up to ten times the improvement of fixing weaknesses; strengths develop faster and sustain motivation",
+   "reason": "No source."
+  },
+  {
+   "claim": "Old 1495: successful people manage weaknesses and systematically build strengths",
+   "reason": "Not attested in this form."
+  },
+  {
+   "claim": "Old 1496: flow moment is the strongest signal of talent, one-week journal exercise, the accountant who calculates well but is drained",
+   "reason": "Flow framing, week exercise and accountant are not in the book; the lose-track-of-time test is under satisfactions."
+  },
+  {
+   "claim": "Old 1496: strength is what you are good at AND what gives energy",
+   "reason": "Book's own test is repeatedly, happily, successfully."
+  },
+  {
+   "claim": "Fifth clue 'glimpses of excellence' as a book clue",
+   "reason": "Only in a class handout, not the book's list."
+  }
+ ],
+ "stories": {
+  "1495": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f10"
+   ],
+   "note": "Rebuilt around the two assumptions and Gallup's interview groups. Report card and ten-times claim dropped."
+  },
+  "1496": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f11",
+    "f12",
+    "f13",
+    "f14"
+   ],
+   "note": "Rebuilt around the book's own clues and definitions; lose track of time kept as one test."
+  },
+  "1497": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f2",
+    "f3",
+    "f4"
+   ],
+   "note": "Percent corrected from 17 to 20; scope corrected."
+  }
+ }
+}

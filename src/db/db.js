@@ -45,7 +45,7 @@ export const waitForData = () => _dataReadyPromise;
 //  on the next app launch. This deletes the old DB
 //  and copies the fresh one from assets/albor.db.
 // ──────────────────────────────────────────────────────
-const DB_VERSION = 32; // 32: agent stories 1426-1428 tr P1 + SON55; 31: SON55 tr longer lessons; 30: SON55 tr 1 lesson + 1 question; 29: SON55 tr P1 content (ids 1357-1366); 28: SON55 collection (10 en stories, ids 1357-1366); 27: P1 publish 2026-09-28 (de 200, es 200, version Opus55)
+const DB_VERSION = 42; // 42: en/es/de proofread fixes for 20 Sürüm 1 stories, 1275 attribution, 1745 source fixes, 1779/1780 openings, 1755 tr; 41: tr proofread fixes for 20 Sürüm 1 stories (STORY_YAZIM_KONTROLU_SURUM1.md); 40: book 1250 title -> Simyacı/The Alchemist; claim fixes 1264, 1268, 1271, 1275; 39: Sürüm 1 stories 1276, 1282, 1284, 1291, 1292, 1294, 1295, 1303, 1327, 1417, 1474, 1483, 1513, 1552-1554, 1568, 1569, 1603, 1612 4 langs P1 + SON55 + meta, plus 1778; 38: Sürüm 2 stories 1756, 1760, 1763, 1774-1777, 1779-1782 4 langs P1 + SON55, meta fixes; 37: Argon tr P1 stories (1059, 1120, 1200)
 const DB_VERSION_KEY = 'db_version';
 
 const getVersionFilePath = () =>

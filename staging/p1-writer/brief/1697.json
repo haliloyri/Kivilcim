@@ -1,0 +1,40 @@
+{
+  "story_id": 1697,
+  "kind": "concept",
+  "book": { "title": "The Power of Regret", "author": "Daniel H. Pink", "year": "2022" },
+  "confidence": "medium",
+  "confidence_note": "The 1992 Barcelona Olympics medalist study by Medvec, Gilovich and Madey is the book's counterfactual-thinking example (verified in secondary sources: about three dozen medalists on video, raters scored facial happiness, bronze 7.1 vs silver 4.8, bronze 'at least' vs silver 'if only' statements; explanation: silver compares to gold, bronze to finishing with nothing). Wording of the rating scale (10-point, agony to ecstasy) and the two moments filmed (right after the event, on the podium) are recalled and appear in the reference TR text; the numbers are attached to the moment right after the event only. Not verified: exact page, sample counts per medal. Concept story: no protagonist.",
+  "facts": [
+    "Pink describes a study of the 1992 Barcelona Olympics by Victoria Medvec and Thomas Gilovich of Cornell and Scott Madey of the University of Toledo.",
+    "They collected video of about three dozen bronze and silver medalists.",
+    "Raters scored facial expressions of happiness on a 10-point scale; right after their events bronze medalists averaged 7.1 and silver medalists 4.8.",
+    "Silver medalists, objectively better placed, looked less happy than bronze medalists; bronze looked happier on the podium too.",
+    "In interviews bronze medalists made more 'at least' statements, silver medalists more 'if only' statements.",
+    "Explanation: silver medalists compared themselves with the gold they just missed; bronze medalists compared themselves with finishing fourth and getting no medal.",
+    "Pink calls imagined alternatives counterfactuals: 'if only' is upward, 'at least' is downward."
+  ],
+  "scene_details": [
+    "Video of faces at the finish and on the podium.",
+    "A 10-point scale and the numbers 7.1 and 4.8.",
+    "The words 'at least' and 'if only' in interviews."
+  ],
+  "tension": "The athlete who finished better looked less happy than the one who finished worse.",
+  "opening_idea": "Open on silver looking unhappier than bronze, and that the cause is in the head.",
+  "lessons": [
+    { "idea": "Choose which comparison you make; the same result feels different next to a missed prize or next to nothing.", "anchor": "Silver compares with gold, bronze with fourth place" }
+  ],
+  "reflect": [],
+  "reflect_final": "Which recent result did you shrink by comparing it with someone or with an imagined outcome?",
+  "use_cases": [
+    { "situation": "A project fell a little short of target and the team talks only in 'if only'.", "move": "Ask for the 'at least' version as well, and put both on the table.", "context": "meeting" },
+    { "situation": "A friend downplays something they achieved.", "move": "Ask who they are comparing it to, then ask them to compare with where they started.", "context": "oneonone" },
+    { "situation": "You catch yourself writing 'if only' about a result.", "move": "Write the 'at least' sentence next to it.", "context": "self" }
+  ],
+  "pocket_idea": "Same medal, different comparison: write both the 'if only' and the 'at least' sentence about a result.",
+  "conversation_variants": {
+    "punchline_idea": "Olympic bronze medalists looked happier than silver medalists because they compared themselves with fourth place.",
+    "thirty_sec_idea": "1992 Olympics video study, 7.1 bronze vs 4.8 silver, 'at least' vs 'if only'.",
+    "question_idea": "",
+    "key_contrast_idea": "if only, at least"
+  }
+}

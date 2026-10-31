@@ -1,0 +1,38 @@
+{
+  "story_id": 1481,
+  "kind": "concept",
+  "book": { "title": "21 Lessons for the 21st Century", "author": "Yuval Noah Harari", "year": "2018" },
+  "confidence": "medium",
+  "confidence_note": "Old TR text cited COVID-19 vaccine falsehoods and deepfakes; a 2018 book cannot contain COVID-19, and the Cambridge Analytica/deepfake examples and the evolved-brain 'tribal leader' argument were not verified in the book, so all are removed. Kept only: the book's opening claim that clarity is power in a world flooded with irrelevant information; censorship by flooding people with disinformation and distractions (both from the publisher blurb); the widely quoted fake-news line (thousand people / one month versus a billion / a thousand years) from the post-truth chapter; and advice that reliable information is worth paying for (confirmed via a review, not the text). The echo-chamber advice is not confirmed and is omitted. No other quotes.",
+  "facts": [
+    "The book opens with the claim that in a world deluged by irrelevant information, clarity is power.",
+    "Harari says censorship in the 21st century works not by blocking information but by flooding people with disinformation and distractions.",
+    "In the fake-news discussion he writes that when a thousand people believe a made-up story for one month, that is fake news, and when a billion people believe it for a thousand years, that is a religion.",
+    "He argues that fake news is old and that shared stories have long inspired people, often to good effect.",
+    "Among his practical advice on fake news: if you want reliable information, be ready to pay for it."
+  ],
+  "scene_details": [
+    "a thousand people believing a story for one month",
+    "a billion people believing a story for a thousand years",
+    "a flood of disinformation and distractions"
+  ],
+  "tension": "Information is cheap and everywhere, yet knowing what to trust is harder; the flood is itself the problem.",
+  "opening_idea": "Harari opens his book by saying that censorship today works by drowning people in noise rather than by hiding facts.",
+  "lessons": [
+    { "idea": "With too much information around, the scarce skill is deciding what deserves your attention and trust, and good sources can cost time or money.", "anchor": "Harari's claim that clarity is power in a flood of information, and his advice to pay for reliable information." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which source do you trust most for news that matters to you, and what makes you think it earns that trust?",
+  "use_cases": [
+    { "situation": "A colleague forwards a dramatic claim to the team chat.", "move": "Ask where it came from and who would have to be wrong if it were false, before anyone repeats it.", "context": "meeting" },
+    { "situation": "A relative shares a viral post at dinner.", "move": "Say you want to check it first and suggest looking up one source that is paid to get facts right.", "context": "family" },
+    { "situation": "You scroll for news every morning without paying for any of it.", "move": "Harari says reliable information may be worth paying for; pick one outlet that checks its facts and give it your first ten minutes instead of the feed.", "context": "self" }
+  ],
+  "pocket_idea": "Harari: in a flood of information, censorship comes as noise, so choose a few sources worth paying for.",
+  "conversation_variants": {
+    "punchline_idea": "Harari says modern censorship does not hide facts, it buries them in noise.",
+    "thirty_sec_idea": "Harari begins 21 Lessons by saying that in a flood of irrelevant information, clarity is power, and that censorship now works by flooding people with disinformation and distractions. On fake news he writes that a made-up story believed by a thousand people for a month is fake news, but believed by a billion for a thousand years it is a religion. His practical tip: reliable information is worth paying for.",
+    "question_idea": "",
+    "key_contrast_idea": "Noise versus clarity"
+  }
+}

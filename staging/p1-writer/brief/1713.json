@@ -1,0 +1,36 @@
+{
+  "story_id": 1713,
+  "kind": "anecdote",
+  "book": {"title": "Ego Is the Enemy", "author": "Ryan Holiday", "year": "2016"},
+  "confidence": "medium",
+  "confidence_note": "Core account (Holiday's own early rise, American Apparel executive role, success not making him wiser, the book's three stages aspire/success/failure, the 'be a student' idea) is from the book and the supplied text. The dropout-then-apprenticeship with Robert Greene and the definition of ego as an unhealthy belief in our own importance come from memory of the book and were NOT confirmed by an online source in this session. Omitted: his exact age, dates, job title wording, specific American Apparel crisis events, any quotes.",
+  "facts": [
+    "Ryan Holiday opens Ego Is the Enemy from his own path, not from a famous stranger.",
+    "He left college and apprenticed under the author Robert Greene (unverified online).",
+    "He then rose quickly and, young, became an executive at American Apparel.",
+    "Crises around the company and his own ambition showed him that success does not make a person wise by itself.",
+    "As outside approval grew, admitting a mistake and listening like a student again got harder.",
+    "Holiday defines ego as an unhealthy belief in our own importance (unverified online).",
+    "The book follows ego through three stages: aspiring, success, failure.",
+    "In the first stage ego favours talking over doing; in the second it makes success blinding; in the third it makes recovery harder.",
+    "His remedy is to keep a student's stance deliberately, after success, as he had in his apprenticeship."
+  ],
+  "scene_details": ["the apprentice years beside Robert Greene", "an executive seat at American Apparel", "a book split in three parts: aspire, success, failure"],
+  "tension": "The person who studied humbly as an apprentice found it hardest to be a student once success arrived.",
+  "opening_idea": "Open on Holiday young and already an executive at American Apparel, with a company in crisis and a harder time admitting his own mistakes.",
+  "lessons": [{"idea": "After a win, schedule a way to hear criticism again, because approval makes feedback quieter.", "anchor": "Holiday's rise at American Apparel and the harder-to-admit mistakes"}],
+  "reflect": [],
+  "reflect_final": "After a success of your own, which habit has actually put you back in the position of a student who listens?",
+  "use_cases": [
+    {"situation": "You just finished a project that went well.", "move": "Ask one colleague what you got wrong, before the praise settles in.", "context": "meeting"},
+    {"situation": "A mentor offers a correction after your promotion.", "move": "Say: 'Tell me the part I am probably missing.'", "context": "oneonone"},
+    {"situation": "You notice you stopped asking questions lately.", "move": "Recall Holiday's apprenticeship and pick one thing to ask someone this week.", "context": "self"}
+  ],
+  "pocket_idea": "Holiday learned at American Apparel that success does not make you wise; being a student has to be chosen again.",
+  "conversation_variants": {
+    "punchline_idea": "Holiday was a student as an apprentice and had to choose it again once he became an executive.",
+    "thirty_sec_idea": "Holiday apprenticed under Robert Greene, then rose fast to an executive role at American Apparel. Crises and his own ambition showed him that success had not made him wiser; admitting mistakes had got harder. That break became the start of his book on ego.",
+    "question_idea": "",
+    "key_contrast_idea": "student again"
+  }
+}

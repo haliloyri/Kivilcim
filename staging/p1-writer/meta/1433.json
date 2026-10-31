@@ -1,0 +1,35 @@
+{
+  "story_id": 1433,
+  "verdict": "keep",
+  "verify_note": "Old slogan 'if you hit all your OKRs you were not ambitious enough' and 'moonshot' text not tied to the book as written and dropped. Kept: Google aspirational OKRs aim at about 60-70% attainment, Edwin Locke on hard goals, Chrome chapter 'Stretch: The Google Chrome Story': 2008 key result 20 million seven-day actives, 2009 goal 50 million with 38 million result, 2010 settled at 111 million and reached. 2008 result not used. Sources: SuperSummary, Business Insider/Fossbytes excerpts, Tom Tunguz, MetaPulse; some blogs give 37 million for 2009, 38 million used.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Chrome'un Zorlayıcı Hedefleri",
+    "description": "Chrome ekibi 2009'da 50 milyonluk hedefe 38 milyonla kaldı, yine de 2010 hedefi 111 milyona çıktı. Doerr, Google'ın iddialı hedeflerinde yüzde 60-70 başarıyı hedeflediklerini yazıyor.",
+    "hook": "Tutturacağınızdan emin koyduğunuz hangi hedefi biraz daha yükseltebilirsiniz?",
+    "one_minute_summary": "Doerr, Chrome örneğiyle Google'ın iddialı hedeflerini anlatıyor ve bu hedeflerde yüzde 60-70 başarıyı hedeflediklerini söylüyor. 2008'de Sundar Pichai'nin ana sonucu 20 milyon yedi günlük aktif kullanıcıydı. 2009 hedefi 50 milyondu, ekip 38 milyonla kapattı. 2010 için Pichai 100 milyon önerdi, Larry Page yetmediğini söyledi ve 111 milyonda anlaştılar. Chrome o sayıya ulaştı. Yani bir kaçırma, bir sonraki hedefi düşürmedi. Doerr bu sayıları, Google'da bir kaçırmanın veri olarak okunduğunu göstermek için kullanıyor."
+  },
+  "en": {
+    "title": "Chrome's Stretch Targets",
+    "description": "Chrome missed its 2009 goal of 50 million with 38 million, and the 2010 target still went up to 111 million. Doerr writes that Google's aspirational OKRs aim for about 60 to 70 percent.",
+    "hook": "Which target did you set only because you were sure of hitting it?",
+    "one_minute_summary": "Doerr uses Chrome to show a stretch goal, noting that Google's aspirational OKRs aim at roughly 60 to 70 percent attainment. In 2008 Sundar Pichai's key result was 20 million seven-day active users. The 2009 goal was 50 million and the team ended at 38 million. For 2010 Pichai proposed 100 million, Larry Page said it was not enough, and they settled on 111 million. Chrome reached it, so the earlier miss had not lowered the next target."
+  },
+  "es": {
+    "title": "Las metas ambiciosas de Chrome",
+    "description": "Chrome se quedó en 38 millones frente a una meta de 50 en 2009, y aun así la meta de 2010 subió a 111. Doerr escribe que los OKR aspiracionales de Google apuntan a un 60 o 70 %.",
+    "hook": "¿Qué meta fijaste solo porque estabas seguro de alcanzarla?",
+    "one_minute_summary": "Doerr usa Chrome para mostrar una meta ambiciosa y dice que los OKR aspiracionales de Google apuntan a un 60 o 70 % de logro. En 2008, el resultado clave de Sundar Pichai fue de 20 millones de usuarios activos en siete días. La meta de 2009 era de 50 millones y el equipo cerró en 38. Para 2010 Pichai propuso 100 millones, Larry Page dijo que no bastaba y acordaron 111. Chrome los alcanzó: el fallo previo no rebajó la meta siguiente."
+  },
+  "de": {
+    "title": "Chromes Stretch-Ziele",
+    "description": "Chrome blieb 2009 mit 38 Millionen unter dem Ziel von 50, und das Ziel für 2010 stieg trotzdem auf 111 Millionen. Doerr schreibt, Googles ambitionierte OKRs zielten auf 60 bis 70 Prozent.",
+    "hook": "Welches Ziel hast du nur gesetzt, weil du sicher warst, es zu erreichen?",
+    "one_minute_summary": "Doerr zeigt am Browser Chrome ein Stretch-Ziel und schreibt, Googles ambitionierte OKRs zielten auf etwa 60 bis 70 Prozent Zielerreichung. 2008 lautete Sundar Pichais Schlüsselergebnis 20 Millionen Nutzer, die innerhalb von sieben Tagen aktiv waren. Das Ziel für 2009 waren 50 Millionen, das Team endete bei 38. Für 2010 schlug Pichai 100 Millionen vor, Larry Page hielt das für zu wenig, man einigte sich auf 111. Chrome erreichte sie."
+  }
+}

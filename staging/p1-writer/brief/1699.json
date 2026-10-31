@@ -1,0 +1,61 @@
+{
+  "story_id": 1699,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Founders",
+    "author": "Jimmy Soni",
+    "year": "2022"
+  },
+  "confidence": "medium",
+  "confidence_note": "Verified in secondary sources: Confinity (Thiel, Levchin, Nosek; PalmPilot payments first, then email payments) and X.com (Musk, 1999, Palo Alto) merged in March 2000, name PayPal from 2001, September 2000 board vote replacing Musk with Thiel while Musk was travelling, and Soni's account of an intense rivalry that pushed both teams to innovate, with conflict after the merger. From memory, not verified: both firms paid users for signing up; eBay's rival service Billpoint; PayPal's spread among eBay sellers; eBay's 2002 acquisition for $1.5 billion. Omitted on purpose: amounts of sign-up bonuses, details of the technology dispute, reasons for the merger. The reference TR text's claim of 'milyarlarca dolar' is corrected to the specific figure, stated with a hedge. Added later from memory (medium): fraud fight and Levchin's tools, February 2002 IPO and summer 2002 eBay announcement. Subtitle verified.",
+  "facts": [
+    "Confinity was founded in 1998 by Peter Thiel, Max Levchin and others; its first product let people beam money between PalmPilots, before it moved to email-based payments.",
+    "X.com was started in 1999 in Palo Alto by Elon Musk and co-founders, offering online money services.",
+    "The two companies competed for the same customers and engineers; Soni's account says the rivalry pushed both teams to innovate and drained both.",
+    "Both grew by paying new users to join (recalled from the book, amounts omitted).",
+    "In March 2000 they merged; the merged company kept the X.com name and became PayPal in 2001.",
+    "Conflict continued after the merger over management and technology; in September 2000 the board voted to replace Musk as CEO with Thiel while Musk was travelling.",
+    "PayPal spread among eBay sellers; eBay had its own payment service and in 2002 bought PayPal for about $1.5 billion.",
+    "After the merger the focus became the PayPal product spreading among eBay sellers; fraud became a new fight and Levchin's engineers built tools against it.",
+    "PayPal went public in February 2002 and eBay announced the purchase that summer; the book's subtitle says these entrepreneurs shaped Silicon Valley."
+  ],
+  "scene_details": [
+    "Money beamed between two PalmPilots.",
+    "Two rival startups in the same town, Palo Alto.",
+    "A board vote taken while the CEO was away."
+  ],
+  "tension": "Two small rival payment startups were wearing each other out; merging solved that and created fights over who ran it.",
+  "opening_idea": "Open on two startups in Palo Alto each trying to take the other's customers, with the same product idea.",
+  "lessons": [
+    {
+      "idea": "Weigh the cost of fighting a rival against the cost of merging, and settle who decides before the handshake.",
+      "anchor": "Merger in March 2000, CEO replaced in September 2000"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In which of your own rivalries would joining forces cost less than winning, and what would you need to agree on first?",
+  "use_cases": [
+    {
+      "situation": "Two teams in your company are building almost the same tool.",
+      "move": "Propose a joint session to compare costs of continuing separately vs merging, and name who will decide.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend with a similar small business keeps undercutting yours.",
+      "move": "Ask them what a joint arrangement would look like and who would decide what.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are competing with a peer for the same opening.",
+      "move": "Write what the competition costs you and what it would take to collaborate.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "PayPal's two rivals merged and then fought over who ran it: before shaking hands, settle who decides.",
+  "conversation_variants": {
+    "punchline_idea": "PayPal began as two rival startups that merged, and the CEO of the merged company was replaced within months.",
+    "thirty_sec_idea": "Confinity and X.com, rivals in Palo Alto, merged in March 2000; fights over management; Musk replaced in September; eBay bought PayPal in 2002.",
+    "question_idea": "",
+    "key_contrast_idea": "rival to teammate"
+  }
+}

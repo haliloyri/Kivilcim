@@ -1,0 +1,63 @@
+{
+  "story_id": 1695,
+  "kind": "anecdote",
+  "book": {
+    "title": "Midnight in Chernobyl",
+    "author": "Adam Higginbotham",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Account of the night of 25-26 April 1986 follows the book's well-documented narrative (turbine run-down safety test, delay at the request of the Kyiv grid controller, Dyatlov, Akimov, Toptunov, power falling to about 30 MW, control rods withdrawn, emergency core cooling disabled, AZ-5 pressed at about 1:23 a.m., graphite-tipped rods). Written from knowledge of the book, no page-level check. Kept to qualitative statements: exact planned power level, rod counts and the second-by-second sequence are omitted. The statement that the rod flaw had been identified earlier and withheld from operators is recalled from the book (Leningrad 1975, Ignalina 1983) and is stated in general terms only. The reference TR text is vague and its closing 'investigations explained it with flawed design and weak safety culture' is kept in that general form.",
+  "facts": [
+    "On 25-26 April 1986 reactor 4 at the Chernobyl plant was to run a safety test: whether the spinning-down turbine could power the cooling pumps in the gap before diesel generators came up after a power loss.",
+    "The test was planned for the day shift but was delayed because the Kyiv grid controller asked for the reactor to stay online, so it fell to the night shift.",
+    "Deputy chief engineer Anatoly Dyatlov oversaw the test; shift supervisor Aleksandr Akimov and young operator Leonid Toptunov were at the controls.",
+    "Reactor power fell to about 30 megawatts, far below the level the test called for, leaving the reactor unstable.",
+    "Operators withdrew nearly all the control rods to bring power back up, the emergency core cooling system had been disabled for the test, and Dyatlov insisted the test continue.",
+    "At about 1:23 a.m. the AZ-5 emergency shutdown button was pressed; the control rods began to descend.",
+    "The rods had graphite tips. Entering the bottom of the core they first increased power instead of reducing it; within seconds the reactor exploded.",
+    "The rod flaw had shown up in earlier incidents and was not passed on to operators; early Soviet accounts put the blame on the operators, while the book shows flawed design and weak safety culture alongside their errors.",
+    "Pripyat, the city built for the plant's workers, lay a few kilometres away and was asleep; the control room's first reports said the reactor was intact; the plant's firefighters were on the roof within minutes and several died of radiation sickness in the following weeks.",
+    "The first outside sign of the accident came two days later from Sweden, where radiation alarms went off at a nuclear plant."
+  ],
+  "scene_details": [
+    "A turbine spinning down while cooling pumps depend on it.",
+    "The number 30 megawatts on the panel.",
+    "The AZ-5 button pressed at about 1:23 a.m.",
+    "Graphite tips on the control rods."
+  ],
+  "tension": "The button meant to stop the reactor made it worse, and the people who pressed it had not been told.",
+  "opening_idea": "Open on the AZ-5 button pressed at 1:23 a.m. to shut the reactor down, then the explosion seconds later.",
+  "lessons": [
+    {
+      "idea": "After a failure, look for the conditions that made the last mistake easy before judging the person who made it.",
+      "anchor": "Graphite-tipped rods flaw known earlier but not told to operators"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In the last mishap you dealt with, how did you look at the setup that made the mistake easy before looking at the person who made it?",
+  "use_cases": [
+    {
+      "situation": "The same error has happened a third time and people are naming names.",
+      "move": "Mention that Chernobyl's rod design was part of the problem; ask which step of the process made the mistake easy before talking to anyone.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague made a costly mistake and expects blame.",
+      "move": "Ask what the tools and instructions in front of them showed at that moment.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You keep repeating the same slip yourself.",
+      "move": "Write down what in your setup makes the slip easy before you blame yourself.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "At Chernobyl the investigation reached the design behind the button; look at the setup behind a mistake.",
+  "conversation_variants": {
+    "punchline_idea": "The emergency button that was meant to stop the Chernobyl reactor made its power rise first.",
+    "thirty_sec_idea": "Night test, delayed, power falls to 30 MW, rods withdrawn, AZ-5 pressed, graphite tips raise power, explosion; the flaw was known but not told.",
+    "question_idea": "",
+    "key_contrast_idea": "the person or the design"
+  }
+}

@@ -1,0 +1,59 @@
+{
+ "story_id": 1738,
+ "kind": "concept",
+ "book": {
+  "title": "The Righteous Mind",
+  "author": "Jonathan Haidt",
+  "year": "2012"
+ },
+ "confidence": "medium",
+ "confidence_note": "TITLE-CONTENT: the title names a dirty desk. Haidt's disgust studies (Wheatley and Haidt hypnosis; Schnall, Haidt, Clore and Jordan 2008 with smell and a dirty workspace) are real and published; whether the book describes the dirty-desk version in detail is unverified. Omitted: the exact items on the desk, number of participants, effect sizes. Outside caveat (verified): a 2015 meta-analysis (Landy and Goodwin) found incidental disgust has at most a small effect on moral judgment and replications are mixed; the story must state this. ADDED LATER: Added from memory of the book, unverified in this session: the earlier Wheatley and Haidt hypnosis study (disgust at an arbitrary word made stories judged harsher) is in the search results as published work but its place in the book is unverified. The 'elephant' image is Haidt's.",
+ "facts": [
+  "Haidt argues moral judgments come first as quick intuitions, and reasoning mostly justifies them afterward; he uses the image of a rider on an elephant.",
+  "In experiments by Haidt and colleagues, people read short moral stories and rated how wrong the action was.",
+  "Some did so in a room with a foul smell or at a dirty desk, others in a clean setting.",
+  "Those exposed to disgust tended to rate the wrongs more severely.",
+  "The people did not say the smell was the cause; they gave reasons about the action itself.",
+  "Outside caveat: later replications are mixed and a 2015 meta-analysis found at best a small effect from incidental disgust on moral judgment.",
+  "Haidt and Thalia Wheatley earlier used hypnosis to induce disgust at an arbitrary word; stories containing the word were judged more harshly."
+ ],
+ "scene_details": [
+  "a dirty desk",
+  "a foul smell in the room",
+  "a short story about someone's action to be rated as right or wrong"
+ ],
+ "tension": "People who think they are weighing a moral question may be partly reacting to the room they are sitting in.",
+ "opening_idea": "Open at the dirty desk where someone is asked to rate how wrong a stranger's act was.",
+ "lessons": [
+  {
+   "idea": "Your first moral reaction may come from a feeling in the body, and your reasons arrive later to defend it, so check before you act on a harsh verdict.",
+   "anchor": "harsher ratings at a dirty desk or in a smelly room"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Think of the last time you judged someone harshly: what was your own state at that moment, and would the verdict have been the same after rest?",
+ "use_cases": [
+  {
+   "situation": "You are about to reply sharply to an email.",
+   "move": "Wait until you have eaten, slept or aired the room, then reread the email and see if your verdict stands.",
+   "context": "self"
+  },
+  {
+   "situation": "A heated family dispute about right and wrong.",
+   "move": "Say 'I am angry, so let me think again after dinner' and come back later.",
+   "context": "family"
+  },
+  {
+   "situation": "A meeting decision on someone's conduct.",
+   "move": "Ask the group what the reasons are before the room reaches a verdict, and note whether the reasons were found after the fact.",
+   "context": "meeting"
+  }
+ ],
+ "pocket_idea": "Haidt's rater at a dirty desk judged harder; before you condemn, check what your body is feeling.",
+ "conversation_variants": {
+  "punchline_idea": "In Haidt's disgust experiments, people sitting at a dirty desk judged moral wrongs more harshly.",
+  "thirty_sec_idea": "Jonathan Haidt: people rated moral wrongs in a foul-smelling room or at a dirty desk and judged harsher. They explained their verdicts with reasons about the act, not the smell. His point is that the gut speaks first and reason comes after. Later replications are mixed and the effect may be small.",
+  "question_idea": "",
+  "key_contrast_idea": "gut first, reason later"
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1261,
+ "verdict": "keep",
+ "verify_note": "Verified against book text (Part II Hughes chapter); hotel-room, nails and \"most dangerous moment\" claims dropped.",
+ "title_changed": {
+  "tr": false,
+  "en": false,
+  "es": false,
+  "de": false
+ },
+ "tr": {
+  "title": "Howard Hughes'ın çöküşü",
+  "description": "Hughes babasının şirketini on sekiz yaşında devraldı, sonra filmlerde, borsada ve uçaklarda servetler yaktı. Savunma işi ise o çekilince toparlandı.",
+  "hook": "Başarının ardından kontrolü bırakmak sizi neden bu kadar zorlar?",
+  "one_minute_summary": "Ryan Holiday, Howard Hughes'ı ego yüzünden harcanmış bir yetenek olarak anlatıyor. Hughes on sekiz yaşında babasının şirketini devralıp akrabalarının hisselerini satın aldı, sonra borsada, Hell's Angels filminde, Spruce Goose uçağında ve RKO stüdyosunda milyonlar kaybetti. Savunma işini yöneticilere bırakınca iş toparlandı, Holiday'e göre onun yokluğu sayesinde. Hata yapıp batmamasını babasının şirketinin kâr akışı sağladı, bu yüzden hasar baştan sona görünür kaldı. Holiday'in hükmü kısa: ego onu mahvetti."
+ },
+ "en": {
+  "title": "Howard Hughes' downfall",
+  "description": "Hughes took over his father's company at eighteen, then burned fortunes on stocks, films and aircraft. The defense arm did better once he handed it off.",
+  "hook": "Which task are you holding mainly to feel important?",
+  "one_minute_summary": "Ryan Holiday uses Howard Hughes as a case of talent spent by ego. At eighteen Hughes inherited three quarters of his father's tool company and bought out his relatives. He then lost millions on stocks, the film Hell's Angels, the Spruce Goose and the RKO studio. When he handed defense contracting to executives, it began to thrive, in Holiday's words because of his absence. Profits from his father's firm kept him afloat, so the damage stayed visible. Holiday's verdict is blunt: ego wrecked him."
+ },
+ "es": {
+  "title": "La caída de Howard Hughes",
+  "description": "Hughes heredó la empresa de su padre a los dieciocho años y perdió fortunas en cine, bolsa y aviación. La rama de defensa mejoró cuando la dejó en manos de otros.",
+  "hook": "¿Qué tarea mantienes en tus manos solo para sentirte importante?",
+  "one_minute_summary": "Ryan Holiday presenta a Howard Hughes como un talento malgastado por el ego. A los dieciocho años heredó tres cuartas partes de la empresa de su padre y compró las acciones de sus parientes. Después perdió millones en bolsa, con Hell's Angels, con el Spruce Goose y con el estudio RKO. Cuando dejó la defensa en manos de directivos, el negocio empezó a prosperar, dice Holiday, gracias a su ausencia. Los beneficios de la empresa paterna lo mantuvieron a flote. Para Holiday, el ego lo arruinó."
+ },
+ "de": {
+  "title": "Der Untergang von Howard Hughes",
+  "description": "Hughes übernahm mit achtzehn die Firma seines Vaters und verbrannte Vermögen mit Aktien, Filmen und Flugzeugen. Die Rüstungssparte lief besser, als er sie abgab.",
+  "hook": "Welche Aufgabe hältst du vor allem fest, um dich wichtig zu fühlen?",
+  "one_minute_summary": "Ryan Holiday zeigt Howard Hughes als Talent, das das Ego verschwendet hat. Mit achtzehn erbte Hughes drei Viertel der väterlichen Werkzeugfirma und kaufte die Anteile der Verwandten. Später verlor er Millionen mit Aktien, dem Film Hell's Angels, der Spruce Goose und dem Studio RKO. Die Rüstungssparte, die er Managern überließ, begann zu florieren, laut Holiday wegen seiner Abwesenheit. Die Gewinne der väterlichen Firma hielten ihn über Wasser, deshalb blieb der Schaden sichtbar. Holidays Urteil: Das Ego hat ihn ruiniert."
+ }
+}

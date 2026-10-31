@@ -1,0 +1,60 @@
+{
+  "story_id": 1704,
+  "kind": "anecdote",
+  "book": {
+    "title": "Influence",
+    "author": "Robert Cialdini",
+    "year": "1984"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Petrified Forest National Park field study is Cialdini's own research and is reported in later editions of Influence; the 1984 first edition year is as given by the catalogue. Checked against secondary summaries only. The size of the effect is kept to 'nearly three times the no-sign level' (secondary summaries disagree on exact percentages, 7.92 and 2.92 and 1.67 were seen); percentages, tonnage figures and exact sign wording are omitted. The 'please do not remove' sign is described only as a plain request.",
+  "facts": [
+    "Petrified Forest National Park in Arizona had a problem with visitors taking pieces of petrified wood.",
+    "A natural response was a sign telling visitors that many people already take wood from the park.",
+    "Cialdini and colleagues tested sign messages in the park: they placed secretly marked pieces of petrified wood along visitor paths and counted how many disappeared.",
+    "The sign saying many past visitors took wood, with a picture of several people taking pieces, led to theft rising to nearly three times the level on a path with no sign.",
+    "A sign that simply asked visitors not to remove the wood did better, with fewer pieces vanishing.",
+    "Cialdini's reading: a warning that stresses how common a bad behaviour is can make it look normal, so the message works against its own aim.",
+    "He calls this negative social proof.",
+    "Cialdini reads messages as doing one of two jobs: showing what others actually do, or saying what should be done. The sign did the first; the plain request the second."
+  ],
+  "scene_details": [
+    "secretly marked pieces of petrified wood along visitor paths",
+    "a sign with a picture of several people taking pieces of wood",
+    "a plain sign asking visitors not to remove wood"
+  ],
+  "tension": "A park posts a warning against theft and the theft rises.",
+  "opening_idea": "Open on the marked pieces of wood lying on the paths and the count of how many vanished under each sign.",
+  "lessons": [
+    {
+      "idea": "When you want to stop a behaviour, do not tell people how many others do it; say what you want them to do.",
+      "anchor": "the sign that stressed how many visitors took wood"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When did you last explain a rule by saying how many people break it, and how could you word it by saying what you want instead?",
+  "use_cases": [
+    {
+      "situation": "You write a reminder to the team about late timesheets.",
+      "move": "Skip 'many of you are late'; state the deadline and what you want done.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You tell your teenager that everyone leaves dishes in the sink.",
+      "move": "Drop the 'everyone does' line and ask for the dishes in the dishwasher after dinner.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend complains that a group chat is full of skipped payments.",
+      "move": "Mention the Petrified Forest sign, and suggest saying 'please pay by Friday' instead of listing who has not.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "A park's warning that many visitors took wood led to more theft; name the behaviour you want, not the one that is common.",
+  "conversation_variants": {
+    "punchline_idea": "A sign in a national park saying many people take petrified wood led visitors to take nearly three times as much.",
+    "thirty_sec_idea": "A park in Arizona wanted visitors to stop taking petrified wood, so it told them many others did. Cialdini's team marked pieces and counted: more went missing than on a path with no sign. A plain request not to take any worked better.",
+    "question_idea": "",
+    "key_contrast_idea": "say the wanted behaviour"
+  }
+}

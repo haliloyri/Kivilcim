@@ -1,0 +1,35 @@
+{
+  "story_id": 1793,
+  "kind": "concept",
+  "book": { "title": "The Intelligent Investor", "author": "Benjamin Graham", "year": "1949" },
+  "confidence": "high",
+  "confidence_note": "Price versus value via Mr. Market is Graham's central distinction. The 'half-and-half partner' detail and the 'iki yüz' framing in the supplied text are not used. The Buffett attribution is kept only in the sibling story 1783. No quotes are reproduced.",
+  "facts": [
+    "A share has two faces: a price and the value of the underlying business.",
+    "Mr. Market names the price every morning; it carries his mood, high when he is euphoric and very low when he is gloomy.",
+    "Value reflects what the business actually earns and changes slowly.",
+    "Buying a share means becoming a part-owner of a business; the screen price is its daily label.",
+    "The investor is not obliged to follow Mr. Market's quote.",
+    "When price is far below value, Mr. Market's pessimism becomes an opportunity; far above value, selling can be considered.",
+    "Confusing price with value is the trap: the same business is judged good one day and finished the next."
+  ],
+  "tension": "One business carries two numbers, one that shifts every morning and one that barely moves.",
+  "opening_idea": "Open on the two numbers an investor sees for the same business and the one he must not confuse.",
+  "lessons": [
+    { "idea": "Keep price and value on separate ledgers before deciding.", "anchor": "Mr. Market's daily quote versus what the business earns." }
+  ],
+  "reflect": [],
+  "reflect_final": "In your last big decision, did the number you saw describe the value of the thing, or someone's mood that day?",
+  "use_cases": [
+    { "situation": "A team debates buying a fast-rising stock.", "move": "Say the price may be Mr. Market's enthusiasm and ask what the company earns first.", "context": "meeting" },
+    { "situation": "An adviser praises a fund's recent rise.", "move": "Ask whether the earnings of the underlying businesses rose as much as the price.", "context": "oneonone" },
+    { "situation": "You are about to buy a stock whose price fell.", "move": "Ask whether the business changed or only Mr. Market's mood.", "context": "self" }
+  ],
+  "pocket_idea": "Mr. Market's price is the label; the business under the label is what you buy.",
+  "conversation_variants": {
+    "punchline_idea": "One business, two numbers: Mr. Market's changes every morning, the business's barely moves.",
+    "thirty_sec_idea": "Graham separates price (a mood-driven quote) from value (what the business earns); act when they diverge, never because of the price alone.",
+    "question_idea": "",
+    "key_contrast_idea": "Fiyat ve değer"
+  }
+}

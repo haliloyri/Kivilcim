@@ -1,0 +1,57 @@
+{
+  "story_id": 1762,
+  "kind": "anecdote",
+  "book": {
+    "title": "Longitude",
+    "author": "Dava Sobel",
+    "year": "1995"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Sobel's book; no page-level check. Omitted on purpose: details of the Board of Longitude's disputes, the names of its members, the years of each clock beyond H1 and H4, the exact prize schedule. From memory, not page-checked: 1707 Scilly wreck, the 1714 prize of up to 20,000 pounds, H4's 1761 trial to Jamaica losing about five seconds in 81 days, final payment in 1773 after King George III intervened. Added from memory, not page-checked: 1736 Lisbon trial of the first clock, 'larger clocks' before H4, local-noon explanation of longitude. Prize 'up to twenty thousand pounds' from general record.",
+  "facts": [
+    "In the 1700s sailors could find latitude but not longitude, and ships were lost for it; Sobel opens with a 1707 wreck off the Scilly Isles.",
+    "In 1714 the British Parliament offered a large prize for a method of finding longitude at sea.",
+    "Famous astronomers looked for the answer in the sky.",
+    "John Harrison, a self-taught clockmaker from Yorkshire, argued that a clock which kept accurate time at sea would solve it.",
+    "He spent decades building clocks; his H4, a large watch, lost only about five seconds on a voyage to Jamaica in 1761.",
+    "The Board of Longitude was slow to pay him; Harrison received his final reward in 1773 after the king intervened."
+  ],
+  "scene_details": [
+    "a clock that does not lose time on a ship",
+    "a prize offered by Parliament"
+  ],
+  "tension": "The answer came from a craftsman's clock rather than from the astronomers, and the establishment would not pay up easily.",
+  "opening_idea": "Open on a ship striking rocks because the crew could not tell how far east or west it was.",
+  "lessons": [
+    {
+      "idea": "When experts all look in one place, ask who is working on the same problem from another direction.",
+      "anchor": "astronomers watched the sky, Harrison built a clock"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "On a problem where everyone searches in the same direction, which different angle could you try?",
+  "use_cases": [
+    {
+      "situation": "The team keeps iterating on the same approach.",
+      "move": "Mention Harrison solved longitude with a clock while astronomers watched the sky; ask who outside our field could look at this.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A relative is stuck in a rut.",
+      "move": "Ask them how they would do it if they had never seen it done.",
+      "context": "family"
+    },
+    {
+      "situation": "You are stuck on a problem in your field.",
+      "move": "Ask someone from a different field how they would tackle it.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Harrison solved longitude with a clock while experts watched the stars: ask who is solving your problem from another side.",
+  "conversation_variants": {
+    "punchline_idea": "A self-taught clockmaker solved a problem astronomers had worked on for decades, with a clock that kept time at sea.",
+    "thirty_sec_idea": "In the 1700s ships were lost because sailors could not find longitude at sea. Parliament offered a large prize in 1714, and astronomers searched the sky. John Harrison, a self-taught clockmaker, built clocks that kept accurate time instead. His H4 lost only about five seconds on a voyage to Jamaica in 1761, and he was paid only after years of dispute. Dava Sobel tells it in Longitude.",
+    "question_idea": "",
+    "key_contrast_idea": "sky, clock"
+  }
+}

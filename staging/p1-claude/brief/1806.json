@@ -1,0 +1,53 @@
+{
+  "story_id": 1806,
+  "kind": "anecdote",
+  "book": {
+    "title": "Grinding It Out",
+    "author": "Ray Kroc",
+    "year": "1977"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kroc's own memoir, Grinding It Out (1977), is the source. The Multimixer order, the San Bernardino visit and the McDonald brothers' speed and simplicity are told there. The opening of the Des Plaines restaurant in 1955 and Kroc's insistence on uniform standards (quality, service, cleanliness and value) are from his account. No sales figures from the opening day are used. The supplied line about 'California sun' is a flourish and is dropped.",
+  "facts": [
+    "In 1955 Kroc opened a restaurant in Des Plaines, Illinois, near Chicago, as his own first McDonald's.",
+    "The question was whether the system would work outside California, in a different city, with different staff and customers.",
+    "Kroc believed every restaurant had to offer the same quality, service, cleanliness and value.",
+    "He insisted that operators follow the system rather than change it.",
+    "A copy is only a brand if it produces the same trust in the second place.",
+    "Kroc's role was to keep the standards the same as the number of restaurants grew."
+  ],
+  "tension": "A good formula had to work again in a second place, with different people.",
+  "opening_idea": "Open on the Des Plaines opening as the test of whether the model could move.",
+  "lessons": [
+    {
+      "idea": "A model proves itself when it produces the same trust in a second place.",
+      "anchor": "Des Plaines as the second test of the formula."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If your best result were repeated somewhere new, which standard would have to stay the same?",
+  "use_cases": [
+    {
+      "situation": "A team plans to copy a successful project elsewhere.",
+      "move": "Ask which two or three standards must stay the same for it to work.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are handing a process to a colleague.",
+      "move": "Write down what must stay the same and what they can adapt.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are repeating something that worked once.",
+      "move": "Write down what actually made it work.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Des Plaines tested whether the McDonald's formula worked in a second place; name the standards that must not change.",
+  "conversation_variants": {
+    "punchline_idea": "Kroc's Des Plaines restaurant tested whether McDonald's worked outside California.",
+    "thirty_sec_idea": "In 1955 Ray Kroc opened a McDonald's in Des Plaines, Illinois, to see whether the system would work in a different city with different people. He insisted on the same quality, service, cleanliness and value everywhere, because a copy only becomes a brand if it earns the same trust.",
+    "question_idea": "",
+    "key_contrast_idea": "Kopya ve güven"
+  }
+}

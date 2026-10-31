@@ -1,0 +1,56 @@
+{
+  "story_id": 1307,
+  "kind": "concept",
+  "book": {
+    "title": "Antifragile",
+    "author": "Nassim Nicholas Taleb",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The barbell strategy (extremely safe on one side, small speculative bets with limited loss on the other, nothing in the middle) is explicit in Antifragile. The 90/10 split is Taleb's illustrative figure (first widely quoted from The Black Swan), so it is hedged as 'something like'. Career use (stable income plus experiments) is as in the reference text; no specific person or anecdote is claimed. Omitted: Seneca, named investors, direct quotes.",
+  "facts": [
+    "Taleb's image is a barbell: weight at both ends, nothing in the middle.",
+    "In investing he puts most of the money, something like 90 percent, in extremely safe holdings and a small remainder in highly speculative bets whose loss is limited.",
+    "The middle ground of moderate risk is deceptive: its real risk is hard to measure, so it can carry large losses without the upside.",
+    "He applies the same shape to a career: a stable base income plus experimental projects with large potential.",
+    "The safe side caps the downside; the speculative side stays open to positive surprises."
+  ],
+  "scene_details": [
+    "a bar with a plate at each end and bare steel between",
+    "a stable salary next to a side project"
+  ],
+  "tension": "The sensible-sounding middle is the worst place to be when the future is unknown.",
+  "opening_idea": "A barbell has plates only at the ends, and Taleb thinks money and careers should look the same.",
+  "lessons": [
+    {
+      "idea": "Under uncertainty, keep one part very safe and one part boldly experimental instead of settling in the middle.",
+      "anchor": "the barbell with weight at the ends and nothing between"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In which part of your work or money could you keep a very safe base and still try one small experiment with a capped loss?",
+  "use_cases": [
+    {
+      "situation": "You are deciding how to split your savings.",
+      "move": "Keep the base safe and decide in advance the small amount you are willing to lose on a bold bet.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend wants to quit a stable job for a startup.",
+      "move": "Ask whether they can keep the safe base and test the idea on the side first, like the two ends of a barbell.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A team picks only moderate projects.",
+      "move": "Propose one very safe project and one small bold experiment instead of two medium ones.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Keep one end very safe and the other end a small bold bet, like plates at the ends of a bar.",
+  "conversation_variants": {
+    "punchline_idea": "Taleb's advice for an unpredictable world looks like a barbell: very safe at one end, a small bold bet at the other, nothing between.",
+    "thirty_sec_idea": "Taleb pictures a barbell with weight only at the ends. Put most money in very safe things, a small part in bold bets whose loss is limited, and avoid the middle where risk hides. He suggests the same for a career: a stable base plus experiments.",
+    "question_idea": "",
+    "key_contrast_idea": "Both ends, no middle"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "story_id": 1333,
+  "kind": "anecdote",
+  "book": {
+    "title": "Everything Is F*cked",
+    "author": "Mark Manson",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read. Pilecki as the book's opening case is stated by Kirkus and several summaries; Manson's reading (\"heroism is conjuring hope where none exists\") comes from a quoted podcast transcript, secondhand. Pilecki's history comes from Wikipedia and is labelled historical. Old text dropped: the \"hope paradox\" label and the \"meaning is in the present\" claims.",
+  "facts": [
+    "Everything Is F*cked: A Book About Hope opens with Witold Pilecki, a Polish officer who in 1940 had himself sent to Auschwitz.",
+    "On 19 September 1940 he stood in a Warsaw street roundup of about 2,000 men. He reached Auschwitz on 21-22 September with 1,705 others, as prisoner 4859 under the name Tomasz Serafinski.",
+    "Inside he built an underground group and a homemade radio transmitter, finished over seven months, that sent arrival and death figures until autumn 1942. He sent secret reports from October 1940.",
+    "He escaped on the night of 26-27 April 1943 and wrote a report that August. The communist-run Polish state executed him on 25 May 1948.",
+    "Manson reads Pilecki as heroism, the ability to conjure hope where none exists, and uses him to ask where hope comes from.",
+    "Manson defines hope as the belief that you can make progress toward something valuable, resting on a sense of control, belief in the value of something and community.",
+    "The book ends by asking the reader to act without hope: to not hope for better, to be better.",
+    "ZOW worked in cells of five and aimed to raise morale, bring news, share food and clothing, build intelligence and prepare to seize the camp if a relief attack came; his reports were a principal Auschwitz intelligence source for the Western Allies.",
+    "He escaped with two comrades after the camp Gestapo had killed many ZOW members, hoping to persuade the Home Army to attempt a rescue; the Home Army judged a rescue attack would fail for lack of transport, supplies and shelter."
+  ],
+  "scene_details": [
+    "A Warsaw street roundup in September 1940",
+    "Prisoner number 4859",
+    "A radio transmitter built over seven months inside the camp"
+  ],
+  "tension": "A man chose a place with no visible hope and built something there anyway.",
+  "opening_idea": "Start with Pilecki standing in the Warsaw roundup, or with the number 4859.",
+  "lessons": [
+    {
+      "idea": "Hope holds up when it is tied to a task you can still move, however small.",
+      "anchor": "Pilecki's radio, built over seven months, was something he could do inside the camp.",
+      "everyday_example_idea": "An employee on a failing team who takes one fixable process in hand."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In a situation that feels stuck right now, what is one thing within reach that you could build slowly?",
+  "use_cases": [
+    {
+      "situation": "Your team feels the project is doomed.",
+      "move": "Mention the radio Pilecki built over seven months and ask which small piece is still in your hands.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend says nothing they do matters.",
+      "move": "Ask what they could finish this week that would still be there next month.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel hopeless about a long problem.",
+      "move": "Name the one part you control and put it on the calendar.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Pilecki built a radio inside Auschwitz over seven months: hope stays alive on the part you can still move.",
+  "conversation_variants": {
+    "punchline_idea": "Pilecki had himself arrested in Warsaw so he could build a resistance inside Auschwitz.",
+    "thirty_sec_idea": "Pilecki joins a 1940 Warsaw roundup, enters Auschwitz as 4859, builds an underground network and a radio, escapes in 1943; Manson opens his hope book with him.",
+    "question_idea": "",
+    "key_contrast_idea": "No hope, still building"
+  }
+}

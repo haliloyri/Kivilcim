@@ -1,0 +1,63 @@
+{
+  "story_id": 1727,
+  "kind": "anecdote",
+  "book": {
+    "title": "Noise",
+    "author": "Daniel Kahneman, Olivier Sibony and Cass R. Sunstein",
+    "year": "2021"
+  },
+  "confidence": "medium",
+  "confidence_note": "Supported by several secondary sources: a noise audit at a large insurer in which 48 underwriters were given realistic summaries of risks and asked to set premiums; executives expected about a 10 percent difference between two underwriters; the typical (median) gap was 55 percent of the average premium, more than five times the expectation. A second audit with claims adjusters on the same cases is mentioned in sources but its figures are omitted. Kahneman's own podcast remarks put the gap at roughly 50 percent and one cost-of-noise figure ('over $1 billion a year') is omitted as an estimate. The exact premium dollar examples are not used. The word 'insurer' is the safe description; the book's exact wording of the company is not verified. The executives' reaction is not described in sources and is left out. Definitions of underwriter, noise and bias are standard and match the book's usage; 'judges alone, numbers written before discussion' is the audit's design as described in secondary sources. Added qualitative point on opposite-direction errors adding up is recalled from the book's argument, with no figures.",
+  "facts": [
+    "At a large insurer, the company asked for a noise audit: a test of how much professionals' judgments differ when they look at the same case.",
+    "Forty-eight underwriters were each given realistic summaries of risks and asked to set a premium.",
+    "Executives had expected about a 10 percent difference between any two underwriters looking at the same case.",
+    "The typical gap between two underwriters was 55 percent of their average premium.",
+    "That is more than five times what the executives had expected.",
+    "A second experiment gave claims adjusters the same cases and asked what payment the insurer should offer.",
+    "The point of the audit is that the cases were identical: any difference came from who looked at the file, not from the file.",
+    "Underwriters are the insurance professionals who set the price (premium) for a risk.",
+    "The authors call the scatter between judgments on the same case noise, and separate it from bias: bias is a shared error pushing the same way, noise is the spread between people.",
+    "The noise audit works because everyone is given the same case and judges alone: each person's number is written down before any discussion.",
+    "A premium that is too high loses the customer and one that is too low loses money on the policy; the authors stress that such errors in opposite directions do not cancel each other out but add up as cost (recalled, kept qualitative)."
+  ],
+  "scene_details": [
+    "forty-eight underwriters, each with the same case summaries",
+    "a premium written as a figure, two figures for one case",
+    "the executives' guess of 10 percent next to the actual 55"
+  ],
+  "tension": "The people who ran the company expected a small difference between their experts and got a gap more than five times larger.",
+  "opening_idea": "Open on the executives' guess: they expected two underwriters on the same case to differ by about ten percent.",
+  "lessons": [
+    {
+      "idea": "Judgments about the same thing can differ widely by who makes them; measuring that spread is the first step, because nobody sees it from inside.",
+      "anchor": "executives expecting about 10 percent and the underwriters landing at 55 percent"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your work, where do two people judge the same thing, and what would you learn if you asked both without telling them about each other?",
+  "use_cases": [
+    {
+      "situation": "Your team scores job applicants one by one.",
+      "move": "Give the same two applications to everyone, collect the scores separately, then compare.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Two of you price or grade the same piece of work.",
+      "move": "Each write a number first, before you talk, and see the gap.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You think your own decisions are consistent.",
+      "move": "Rate the same kind of case on a different day and see whether you give the same answer.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Forty-eight underwriters, same cases, 55 percent apart: if you never ask two people separately, you never see the noise.",
+  "conversation_variants": {
+    "punchline_idea": "Executives expected their underwriters to differ by about 10 percent on the same case, and the gap was 55 percent.",
+    "thirty_sec_idea": "An insurer gave forty-eight underwriters the same realistic case summaries and asked each for a premium. Executives expected about a 10 percent difference between any two. The typical gap was 55 percent of the average premium, more than five times that. Kahneman, Sibony and Sunstein call it noise: the file was identical, only the person changed.",
+    "question_idea": "",
+    "key_contrast_idea": "same file, other price"
+  }
+}

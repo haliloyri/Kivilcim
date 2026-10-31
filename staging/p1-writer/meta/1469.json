@@ -1,0 +1,35 @@
+{
+  "story_id": 1469,
+  "verdict": "keep",
+  "verify_note": "Old Newton apple, Archimedes bath, '15 years of notes' and walk/sleep advice not tied to the book and dropped. Kept: slow hunch, Darwin/Malthus 1838 with Gruber's notebook study, Berners-Lee about a decade from Enquire Within Upon Everything to CERN's Enquire (1980), notebooks/groups as shelter. Sources: NPR 2010, SuperSummary, reader notes; exact book wording not read, confidence medium.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Yavaş Sezgi",
+    "description": "Darwin'in Malthus anı ve Berners-Lee'nin web fikri bir çakma değil, yıllara yayılan bir birikim. Johnson buna yavaş sezgi diyor.",
+    "hook": "Yarım kalmış hangi fikriniz hâlâ bir defterde bekliyor?",
+    "one_minute_summary": "Johnson'a göre buluş hikâyeleri çakma gibi anlatılır ama kayıtlar birikim gösterir. Darwin'in doğal seçilim fikrinin parçaları, Malthus'u okuduğu 1838'den önce de defterlerindeydi. Tim Berners-Lee'nin web fikri çocukluk kitabı Enquire Within Upon Everything'den CERN'deki Enquire programına yaklaşık on yıl sürdü. Johnson bunlara yavaş sezgi diyor ve yarım fikirlerin yaşayabilmesi için bir deftere ya da dinleyen bir gruba ihtiyaç olduğunu söylüyor. Johnson'a göre defter, yarım fikri başka bir parçayla karşılaşacağı güne kadar saklıyor."
+  },
+  "en": {
+    "title": "The Slow Hunch",
+    "description": "Darwin's Malthus moment and Berners-Lee's web idea were slow builds, not flashes. Johnson calls this the slow hunch.",
+    "hook": "Which half-formed idea of yours is waiting for a place to live?",
+    "one_minute_summary": "Johnson says discovery stories are told as flashes while the record shows long builds. The pieces of Darwin's natural selection were already in his notebooks before he read Malthus in 1838. Tim Berners-Lee's web took about a decade, from the childhood book Enquire Within Upon Everything to his Enquire program at CERN. Johnson calls these slow hunches, half-formed thoughts that last a long time, and says they need a notebook or a group of listeners to survive."
+  },
+  "es": {
+    "title": "La corazonada lenta",
+    "description": "El momento Malthus de Darwin y la web de Berners-Lee fueron procesos lentos, no chispazos. Johnson lo llama corazonada lenta.",
+    "hook": "¿Qué idea a medias tienes esperando un sitio donde vivir?",
+    "one_minute_summary": "Según Johnson, los descubrimientos se cuentan como chispazos, pero los registros muestran procesos largos. Las piezas de la selección natural de Darwin ya estaban en sus cuadernos antes de que leyera a Malthus en 1838. La web le llevó a Tim Berners-Lee cerca de una década, desde el libro infantil Enquire Within Upon Everything hasta su programa Enquire en el CERN. Johnson las llama corazonadas lentas, pensamientos a medio formar que necesitan un cuaderno o un grupo que escuche para sobrevivir."
+  },
+  "de": {
+    "title": "Der langsame Hunch",
+    "description": "Darwins Malthus-Moment und Berners-Lees Web waren langsame Entwicklungen, keine Blitze. Johnson nennt das den langsamen Hunch.",
+    "hook": "Welche halb fertige Idee wartet bei dir auf einen Platz zum Leben?",
+    "one_minute_summary": "Johnson sagt, Entdeckungsgeschichten werden als Blitz erzählt, die Aufzeichnungen zeigen lange Entwicklungen. Die Bausteine von Darwins Selektionstheorie standen schon in seinen Notizbüchern, bevor er 1838 Malthus las. Tim Berners-Lees Web dauerte etwa ein Jahrzehnt, vom Kinderratgeber Enquire Within Upon Everything bis zum Programm Enquire am CERN. Johnson nennt das langsame Hunches, halb fertige Gedanken, die ein Notizbuch oder zuhörende Menschen brauchen, um zu überleben."
+  }
+}

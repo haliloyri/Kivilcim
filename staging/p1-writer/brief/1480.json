@@ -1,0 +1,40 @@
+{
+  "story_id": 1480,
+  "kind": "concept",
+  "book": { "title": "21 Lessons for the 21st Century", "author": "Yuval Noah Harari", "year": "2018" },
+  "confidence": "medium",
+  "confidence_note": "Core claims (nobody can predict the 2050 job market; schools should favour general-purpose life skills over technical skills; the four Cs; coping with change and keeping mental balance; reinventing yourself again and again) are confirmed by secondary summaries and reviews of the Education chapter, not by the book text itself. The old TR text's 18th/20th-century job-transition scenario, the claim that learning machines gain general adaptability, and 'teach emotional resilience' wording were not verified and are left out. The book gives no named case, so facts are the argument itself. No direct quotes used.",
+  "facts": [
+    "Harari states that nobody knows what the job market will look like in 2050.",
+    "A child who starts school now will be in mid-career by 2050, and much of what the child memorises today may be irrelevant by then.",
+    "He observes that schools still spend most of their effort passing information to pupils.",
+    "He proposes shifting the emphasis from technical skills to general-purpose life skills.",
+    "He lists the four skills many educators recommend: critical thinking, communication, collaboration and creativity.",
+    "He values most the ability to deal with change, to learn new things, and to preserve mental balance in unfamiliar situations.",
+    "To keep up with the world of 2050, he writes, people will need not just to invent new ideas and products but above all to reinvent themselves again and again."
+  ],
+  "scene_details": [
+    "the year 2050",
+    "a child at the start of school with facts to memorise",
+    "the four named skills: critical thinking, communication, collaboration, creativity"
+  ],
+  "tension": "Schools prepare children with facts and skills for a job market that nobody can describe.",
+  "opening_idea": "A child who starts school this year will be mid-career in 2050, and no one can say what jobs exist then.",
+  "lessons": [
+    { "idea": "When you cannot predict which skill will be needed, the ability to learn and to stay steady while learning is the part of your preparation that does not expire.", "anchor": "Harari puts coping with change, learning new things and keeping mental balance above technical skills, and says people will have to reinvent themselves again and again." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which skill you rely on today would you most struggle to replace if your field changed, and what small thing could you learn this month beside it?",
+  "use_cases": [
+    { "situation": "A team debates sending people on a course for one specific tool.", "move": "Harari says nobody can predict the 2050 job market, so ask whether the course also builds the habit of learning the next tool, and pick the one that does.", "context": "meeting" },
+    { "situation": "A teenager asks which subject is safest to study.", "move": "Share that Harari puts coping with change and learning new things above any one technical skill, and ask what they would like to practise getting better at learning.", "context": "family" },
+    { "situation": "You feel stuck because your role is changing.", "move": "Name one unfamiliar task this week and do it once while noticing how you steady yourself when it feels awkward.", "context": "self" }
+  ],
+  "pocket_idea": "Harari's advice for 2050: schools should teach children to cope with change and learn again, because the facts they memorise may be outdated.",
+  "conversation_variants": {
+    "punchline_idea": "A child starting school today will be mid-career in 2050, in a job market nobody can describe.",
+    "thirty_sec_idea": "Harari starts from the fact that no one knows what work looks like in 2050, so what a child memorises now may be useless. He wants schools to teach life skills instead: critical thinking, communication, collaboration, creativity, and above all coping with change and keeping balance.",
+    "question_idea": "",
+    "key_contrast_idea": "Facts versus learning"
+  }
+}

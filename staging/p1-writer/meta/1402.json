@@ -1,0 +1,30 @@
+{
+ "story_id": 1402,
+ "verdict": "keep",
+ "verify_note": "Verified against the full text on archive.org (Introduction). Facts match: 30,000 pairs, Baxter and Lewis, Mizrahi, Bartlett, Sui, Fitzgerald's 25-foot basset hound, Pee-wee Herman, 430,000 pairs then four times that, CFDA award. Old text's 'Connectors carried the shoes' is only Gladwell's later speculation and was dropped; the book says no ad ran and the first kids wore them because no one else would.",
+ "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+ "tr": {
+  "title": "30.000 Çiftten 430.000 Çifte",
+  "description": "Hush Puppies yılda 30.000 çift satıyor ve üreticisi markayı bırakmayı düşünüyordu. Sonra birkaç genç ve birkaç tasarımcı, hiçbir ilan olmadan her şeyi değiştirdi.",
+  "hook": "Yaptığınız bir şeyi sizden habersiz, kendi nedenleriyle kullanan biri var mı?",
+  "one_minute_summary": "Hush Puppies yılda 30.000 çift satıyor ve üreticisi Wolverine bu modeli bırakmayı düşünüyordu. İki yönetici bir stilistten, Manhattan kulüplerinde ve ikinci el dükkânlarda ayakkabıların aranır olduğunu duydu. Tasarımcılar John Bartlett ve Anna Sui aradı, Los Angeles'ta bir mağazanın çatısına 25 fitlik şişme bir basset köpeği kondu. 1995'te şirket 430.000 çift, ertesi yıl bunun dört katını sattı. Gladwell'a göre kimse ilan vermemişti, ilk gençler ayakkabıyı başka kimse giymediği için giymişti."
+ },
+ "en": {
+  "title": "From 30,000 Pairs to 430,000",
+  "description": "Hush Puppies sold 30,000 pairs a year and the maker thought of dropping them. A few kids and a few designers changed that without any ad.",
+  "hook": "Is anyone using something you made for reasons you never planned for?",
+  "one_minute_summary": "Hush Puppies sold 30,000 pairs a year, and the maker, Wolverine, was thinking of dropping the shoe. Two executives heard from a stylist that the shoes were hip in downtown Manhattan clubs and resale shops. Designers John Bartlett and Anna Sui called, and a Los Angeles store put a 25-foot inflatable basset hound on its roof. In 1995 the company sold 430,000 pairs, and four times that the next year. By Gladwell's account no one ran an ad; the first kids wore the shoes because no one else would."
+ },
+ "es": {
+  "title": "De 30.000 a 430.000 pares",
+  "description": "Hush Puppies vendía 30.000 pares al año y la fabricante pensaba dejarlos. Unos jóvenes y unos diseñadores lo cambiaron sin ningún anuncio.",
+  "hook": "¿Alguien usa algo que hiciste por razones que nunca previste?",
+  "one_minute_summary": "Hush Puppies vendía 30.000 pares al año y la fabricante, Wolverine, pensaba retirar el modelo. Dos directivos supieron por una estilista que los zapatos estaban de moda en clubes y tiendas de segunda mano del centro de Manhattan. Llamaron los diseñadores John Bartlett y Anna Sui, y una tienda de Los Ángeles puso un basset hound inflable de 25 pies en su tejado. En 1995 la empresa vendió 430.000 pares y al año siguiente cuatro veces más. Según Gladwell nadie puso un anuncio, y los primeros jóvenes los llevaban porque nadie más lo hacía."
+ },
+ "de": {
+  "title": "Von 30.000 auf 430.000 Paar",
+  "description": "Hush Puppies verkauften 30.000 Paar im Jahr, und der Hersteller dachte ans Aufgeben. Ein paar Jugendliche und ein paar Designer änderten das ganz ohne Anzeige.",
+  "hook": "Benutzt jemand etwas, das du gemacht hast, aus Gründen, die du nie geplant hattest?",
+  "one_minute_summary": "Hush Puppies verkauften 30.000 Paar im Jahr, und Hersteller Wolverine überlegte, den Schuh einzustellen. Zwei Manager erfuhren von einer Stylistin, dass die Schuhe in Clubs und Second-Hand-Läden in Downtown Manhattan angesagt waren. Die Designer John Bartlett und Anna Sui riefen an, und ein Laden in Los Angeles stellte einen aufblasbaren Basset von 25 Fuß aufs Dach. 1995 verkaufte die Firma 430.000 Paar, im Jahr darauf das Vierfache. Nach Gladwell gab es keine Anzeige, die ersten Jugendlichen trugen die Schuhe, weil sonst niemand sie trug."
+ }
+}

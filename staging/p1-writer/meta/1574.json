@@ -1,0 +1,30 @@
+{
+  "story_id": 1574,
+  "verdict": "keep",
+  "verify_note": "Dropped the grade-recall study (not tied to the book). Rebuilt on Chapter 3: Tavris's Wonderful O edition, Offer's follow-up, housework shares, Feeney/Cassidy, Jones/Kohler. Several items rest on chapter notes only.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Çok geç basılan kitap",
+    "description": "Carol Tavris babasının ona bir kitap okuduğunu hatırlıyordu. İlk baskının tarihi, babasının ölümünden bir yıl sonrasını gösteriyordu.",
+    "hook": "En emin olduğunuz anılardan hangisini bir kayıtla karşılaştırabilirsiniz?",
+    "one_minute_summary": "Tavris, babasının ona Thurber'in The Wonderful O kitabını okuduğunu hatırlıyordu. İlk baskının tarihi 1957'ydi, babasının ölümünden bir yıl sonra. Bölümde ayrıca Daniel Offer'ın çalışması var: kırk sekiz yaşındaki adamlar gençken kendileri hakkında ne söylediklerini tesadüften iyi tahmin edemedi. Eşlerin söylediği ev işi payları toplamda yüzü aşıyor. Yazarlara göre bellek, kendi çıkarı olan bir tarihçi gibi çalışıyor. Bu yüzden canlı bir anıyı hissin gücüne bakarak değil, bir kayıtla kontrol etmek daha güvenli."
+  },
+  "en": {
+    "title": "A book published too late",
+    "description": "Carol Tavris remembered her father reading her a book. Her first edition was dated a year after he died.",
+    "hook": "Which of your surest memories could you check against a record?",
+    "one_minute_summary": "Carol Tavris remembered her father reading her Thurber's The Wonderful O. Her first edition was dated 1957, a year after he died. The same chapter reports Daniel Offer's study, in which men of forty-eight guessed what they had said as teenagers no better than chance, and surveys in which couples' housework shares add up to more than 100 percent. The authors describe memory as a historian with a stake in the outcome. So a vivid memory is safer checked against a record than trusted for how sharp it feels."
+  },
+  "es": {
+    "title": "El libro que llegó tarde",
+    "description": "Carol Tavris recordaba que su padre le leía un libro. La primera edición era de un año después de su muerte.",
+    "hook": "¿Cuál de tus recuerdos más seguros podrías contrastar con un registro?",
+    "one_minute_summary": "Carol Tavris recordaba que su padre le leía The Wonderful O, de Thurber. Su primera edición era de 1957, un año después de que él muriera. El mismo capítulo recoge el estudio de Daniel Offer, en el que hombres de cuarenta y ocho años adivinaron lo que habían dicho de adolescentes no mejor que al azar, y encuestas donde las tareas del hogar de las parejas suman más de cien por cien. Los autores describen la memoria como un historiador con intereses. Mejor contrastar un recuerdo vívido con un registro que fiarse de lo nítido que se siente."
+  },
+  "de": {
+    "title": "Das Buch, das zu spät erschien",
+    "description": "Carol Tavris erinnerte sich, dass ihr Vater ihr ein Buch vorlas. Die Erstausgabe war ein Jahr nach seinem Tod datiert.",
+    "hook": "Welche deiner sichersten Erinnerungen könntest du mit einer Aufzeichnung abgleichen?",
+    "one_minute_summary": "Carol Tavris erinnerte sich, dass ihr Vater ihr Thurbers The Wonderful O vorlas. Ihre Erstausgabe stammte von 1957, ein Jahr nach seinem Tod. Im selben Kapitel steht Daniel Offers Studie, in der achtundvierzigjährige Männer nicht besser als der Zufall rieten, was sie als Jugendliche gesagt hatten, und Umfragen, in denen die Hausarbeitsanteile von Paaren über 100 Prozent ergeben. Die Autoren beschreiben das Gedächtnis als Historiker mit eigenem Interesse. Eine lebhafte Erinnerung prüfst du daher besser an einer Aufzeichnung, als dich auf ihre Schärfe zu verlassen."
+  }
+}

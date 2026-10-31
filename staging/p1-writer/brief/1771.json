@@ -1,0 +1,76 @@
+{
+ "story_id": 1771,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Man Who Mistook His Wife for a Hat",
+  "author": "Oliver Sacks",
+  "year": "1985"
+ },
+ "confidence": "high",
+ "confidence_note": "Checked against the full text of the title chapter (archive.org copy of the book, 'The Man Who Mistook His Wife for a Hat - Oliver Sacks') and Wikipedia's chapter summary. Quotes below are Sacks's own wording from the chapter. Omitted on purpose: Sacks's later postscript theory, Honegger, Hughlings Jackson and Luria comparisons, the mental chess game, the Anna Karenina memory test. Caveat: Wikipedia reports (citing The New Yorker, 2025) that Sacks's private journals show he embellished some cases in this book; it does not say Dr. P's case is one of them, so the story attributes events to 'Sacks tells it'.",
+ "facts": [
+  "Dr. P. was a musician of distinction, long known as a singer and then a teacher at the local School of Music.",
+  "The first oddities appeared with his students: he would not recognise a student's face, but knew him the moment he spoke.",
+  "He also saw faces that were not there: in the street he patted the heads of water-hydrants and parking-meters, taking them for children, and addressed carved knobs on furniture, astonished when they did not answer.",
+  "At first the mistakes were laughed off as jokes, by Dr. P. too; his musical powers were as dazzling as ever.",
+  "About three years later diabetes developed. An ophthalmologist examined his eyes, found nothing wrong with them, said there was trouble with the visual parts of his brain, and sent him to a neurologist, Sacks.",
+  "In Sacks's office his eyes made sudden strange fixations on a nose, an ear, a chin, as if noting features one by one without seeing the whole face; Sacks thought he faced him with his ears, not his eyes.",
+  "During the reflex exam Sacks took off his left shoe and scratched the sole with a key, then left him to put it back on. A minute later the shoe was still off; Dr. P. looked at his foot and asked, 'That is my shoe, yes?' then, 'Ah! I thought that was my foot.'",
+  "His visual acuity was good: he saw a pin on the floor.",
+  "Shown the cover of a National Geographic, an unbroken expanse of Sahara dunes, he said he saw a river, a little guest-house with a terrace on the water, people dining, coloured parasols here and there.",
+  "At the end of that first visit he looked round for his hat, reached out, took hold of his wife's head and tried to lift it off to put it on. His wife looked as if she was used to such things.",
+  "A few days later Sacks visited the couple at home, bringing the score of Schumann's Dichterliebe. Dr. P. said he could no longer read music and asked Sacks to play; he sang.",
+  "He named the Platonic solids at once (a cube, a dodecahedron) and identified playing cards and cartoons from one key feature, such as Churchill's cigar.",
+  "Shown photographs of his family, colleagues, pupils and himself he recognised almost nobody; he knew Einstein by hair and moustache and his brother Paul by 'that square jaw, those big teeth'.",
+  "Handed a red rose, he said: 'About six inches in length. A convoluted red form with a linear green attachment.' Only when Sacks told him to smell it did he say 'Beautiful! An early rose. What a heavenly smell!' and start to hum 'Die Rose, die Lillie'.",
+  "Handed a glove he said: 'A continuous surface infolded on itself. It appears to have five outpouchings, if this is the word.' He guessed a container, perhaps a change-purse for coins of five sizes; no light of recognition dawned.",
+  "At the table he ate cakes in a 'melody of eating'; a loud rat-tat-tat at the door interrupted him and he sat frozen, no longer seeing the table as a table. The smell of the coffee his wife poured brought him back and the eating resumed.",
+  "His wife told Sacks she laid out his usual clothes in the usual places and he dressed singing to himself; if interrupted he came to a complete stop and did not know his clothes or his own body. 'He can't do anything unless he makes it a song.'",
+  "The paintings on the walls moved over the years from realistic to geometrical to chaotic lines; his wife saw artistic development, Sacks saw the illness advancing.",
+  "Sacks told him: 'I can't tell you what I find wrong, but I'll say what I find right. You are a wonderful musician, and music is your life.' He prescribed a life that consists entirely of music.",
+  "Sacks never saw him again, but writes that despite the advance of his disease (a massive tumour or degenerative process in the visual parts of the brain) Dr. P. lived and taught music to the last days of his life."
+ ],
+ "scene_details": [
+  "a left shoe, a key scratched on the sole, a foot taken for the shoe",
+  "a Sahara-dunes cover read as a river with a guest-house and coloured parasols",
+  "a hand closing on his wife's head instead of his hat",
+  "a rose described as a convoluted red form, named only by smell",
+  "a glove described as a continuous surface with five outpouchings",
+  "cakes eaten as a melody, stopped by a knock at the door",
+  "a Bosendorfer piano and the Dichterliebe score"
+ ],
+ "tension": "A man sees every detail and recognises nothing, and the things that work are music and smell.",
+ "opening_idea": "Vary by language: the shoe taken for a foot; the rose described as a red form; the faces he did not know until they spoke; the hydrants patted as children.",
+ "lessons": [
+  {
+   "idea": "Seeing is the brain building meaning, and we can use a working channel, like music, to support one that fails.",
+   "anchor": "Dr. P sang to dress and eat"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "When a task that normally goes smoothly stops, which other route, such as a song, a list or a person, could carry you through it?",
+ "use_cases": [
+  {
+   "situation": "A colleague cannot follow a written plan.",
+   "move": "Offer to talk it through aloud instead, the way Dr. P. managed through song.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "A relative with memory trouble forgets the steps of a routine.",
+   "move": "Attach the steps to a tune or a fixed order, as Dr. P.'s wife laid out his clothes in the same places.",
+   "context": "family"
+  },
+  {
+   "situation": "You freeze on a form that needs filling in.",
+   "move": "Switch the format, for example read it aloud, and start again.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Dr. P. could not name a glove, yet he could dress and eat as long as he was singing.",
+ "conversation_variants": {
+  "punchline_idea": "Dr. P could describe a glove perfectly and could not say it was a glove, but he could dress by singing.",
+  "thirty_sec_idea": "Sacks's patient Dr. P., a singer and music teacher, saw perfectly well but could not recognise things: he took his foot for his shoe, described a rose as a convoluted red form until he smelled it, and reached for his wife's head as a hat. Yet he could eat and dress as long as he sang. Sacks told him to make music the whole of his life.",
+  "question_idea": "",
+  "key_contrast_idea": "seeing vs recognizing"
+ }
+}

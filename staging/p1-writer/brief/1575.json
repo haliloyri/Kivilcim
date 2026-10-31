@@ -1,0 +1,33 @@
+{
+  "story_id": 1575,
+  "kind": "concept",
+  "book": {"title": "Mistakes Were Made (But Not by Me)", "author": "Carol Tavris and Elliot Aronson", "year": "2007"},
+  "confidence": "medium",
+  "confidence_note": "The two-student pyramid is taken from Tavris's own description in an interview (American Scientist), quoted on a blog; other summaries describe a wallet-with-$500 version, so the exact scenario in the printed book is not pinned down. The old text's 'a few months later' epilogue and its quoted rationalisations are not supported and were dropped. Magruder rests on one summary; the DeLay line on chapter notes. Mills: only the 1958 Journal of Personality publication and the divergence of attitudes are confirmed, not the study's design.",
+  "facts": [
+    "Chapter 2 'Pride and Prejudice ... and Other Blind Spots' introduces the pyramid of choice: two people start at the top, close together, and slide down different sides.",
+    "Tavris's student version: two students hold the same mild view of cheating; a test matters for graduate-school admission; both freeze on an essay question and a neighbor's answers are visible; on impulse one cheats and the other resists; each justifies the choice; their beliefs drift far apart.",
+    "Tavris says Aronson built the metaphor from an experiment by Judson Mills with children (Journal of Personality, 1958), in which attitudes diverged between children who cheated and those who did not.",
+    "The mechanism is justification: each step is explained and the explanation makes the next step easier.",
+    "Jeb Magruder (Watergate) watched Bob Haldeman chew out an assistant over a minor lapse and excused it; the authors present such small excuses as early steps toward his later prison term.",
+    "Politicians accept small favors from lobbyists and justify them, then larger ones; the book names Tom DeLay's trip to St Andrews and sums it up: 'Pride, when followed by self-justification, paves the road to Scotland.'"
+  ],
+  "scene_details": ["a neighbor's answers in plain sight", "an essay question where both freeze", "a trip to St Andrews", "Haldeman chewing out an assistant"],
+  "tension": "Two people with the same view and the same temptation end up believing opposite things, and the gap is built from reasons, not from the first act.",
+  "opening_idea": "Open on the test, or on Magruder, or on the small lobbyist favor; each language its own.",
+  "lessons": [{"idea": "Notice the reason you give yourself right after a small choice.", "anchor": "Both students justified their choice, and the justifications pulled them apart.", "everyday_example_idea": "A freelancer skips a small invoice step 'just this once' and tells herself nobody checks."}],
+  "reflect": [],
+  "reflect_final": "Which small shortcut of yours did you explain away most easily in the past few weeks?",
+  "use_cases": [
+    {"situation": "A team is about to approve an exception.", "move": "Say each excused step makes the next easier and ask whether they would accept it as the standing rule.", "context": "meeting"},
+    {"situation": "You want a colleague to keep you honest.", "move": "Ask them to say so if you start explaining away something you would have objected to a year ago.", "context": "oneonone"},
+    {"situation": "You just cut a small corner.", "move": "Say the reason you gave yourself out loud and check if it holds.", "context": "self"}
+  ],
+  "pocket_idea": "Two students, one temptation: the reasons they gave afterward pulled them apart.",
+  "conversation_variants": {
+    "punchline_idea": "Two students with the same mild view of cheating end up far apart through the reasons they give.",
+    "thirty_sec_idea": "The two students, the visible answers, one copies and one looks away, each justifies, beliefs drift apart.",
+    "question_idea": "",
+    "key_contrast_idea": "Same start, opposite ends"
+  }
+}

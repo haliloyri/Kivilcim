@@ -1,0 +1,61 @@
+{
+  "story_id": 1723,
+  "kind": "concept",
+  "book": {
+    "title": "Thinking in Systems",
+    "author": "Donella Meadows",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "TITLE-CONTENT MISMATCH: the title and the old text speak of saving a polluted lake. No source in this session confirms a lake or pollution example in the book, so it is omitted from facts and from the story. What is supported by several summaries and reader highlights is the bathtub model: stock (water in the tub), inflow (faucet), outflow (drain); a stock changes slowly even when flows change suddenly; stocks act as delays, buffers or shock absorbers; a stock can be raised by closing the outflow as well as opening the inflow. The remark that the faucet takes a second to turn but the tub takes minutes to fill comes from a summary, not verified in the book text. The soil-over-centuries image is from a reader highlight and is left out of facts. No numbers are used. The lake appears only as an invented everyday example in the lesson, not as a book fact.",
+  "facts": [
+    "Meadows starts with the simplest system she can draw: a bathtub. The water in the tub is the stock, the faucet is the inflow, the drain is the outflow.",
+    "Turning the faucet takes a second, but filling the tub takes minutes: the hand moves fast and the water level follows slowly.",
+    "The level changes only through the difference between what flows in and what flows out; if both are equal, the level stays where it is.",
+    "A stock can be raised by closing the drain as well as by opening the faucet: there is more than one way to fill a bathtub.",
+    "Stocks change slowly even when the flows into or out of them change suddenly.",
+    "Because of that, stocks act as delays, buffers or shock absorbers: they let inflow and outflow be out of balance with each other for a while.",
+    "Meadows notes that these time lags can cause trouble in a system, but they can also be a source of stability.",
+    "Stocks are the elements of a system that you can see, feel, count or measure at a given moment; in the tub, the water level.",
+    "In a feedback loop, a delay makes the system likely to swing back and forth, because the information it acts on arrives late."
+  ],
+  "scene_details": [
+    "a bathtub with the faucet open and the drain open",
+    "the hand turns the tap in a second, the water takes minutes to rise",
+    "the water level as the thing you can see and measure"
+  ],
+  "tension": "You can change the flow in a second, but the thing you actually care about, the level, answers much later.",
+  "opening_idea": "Open on the bathtub: a hand turns the faucet in a second while the water level takes minutes to move.",
+  "lessons": [
+    {
+      "idea": "Judge a change by what it does to the stock, not by whether the level has moved yet; a level lags behind the flow.",
+      "anchor": "the faucet turned in a second and the tub filling over minutes"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which change you made recently might you be judging too early, because the level you are watching has not had time to respond to the new flow?",
+  "use_cases": [
+    {
+      "situation": "A new process started last week and a colleague wants to scrap it.",
+      "move": "Say the flow changed on day one but the level takes longer to show, and agree on when you will look at the level.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You started spending less on takeaway and the account looks the same.",
+      "move": "Check the balance only at the next statement and compare it with the one before.",
+      "context": "self"
+    },
+    {
+      "situation": "A family member started sleeping earlier and is still tired.",
+      "move": "Say the tub fills slower than the tap turns, and ask how they feel in a few days.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A faucet turns in a second and a tub fills in minutes: judge a new habit by the level, and give the level time.",
+  "conversation_variants": {
+    "punchline_idea": "You can open a faucet in a second, but the water in the tub rises on its own schedule.",
+    "thirty_sec_idea": "Meadows begins with a bathtub: the water is the stock, the faucet the inflow, the drain the outflow. You can turn the tap in a second, but the level follows slowly, and it only moves by the gap between in and out. So stocks behave like buffers, which is why a good change can look like nothing for a while.",
+    "question_idea": "",
+    "key_contrast_idea": "fast tap, slow level"
+  }
+}

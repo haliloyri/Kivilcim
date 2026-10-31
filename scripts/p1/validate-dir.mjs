@@ -13,11 +13,12 @@ let bad = 0;
 for (const id of list) {
   const file = path.join(dir, `${id}.md`);
   if (!fs.existsSync(file)) { console.log(`MISSING ${file}`); bad += 1; continue; }
-  const { errors, words } = validateP1(fs.readFileSync(file, 'utf8').trim(), lang);
+  const { errors, warnings, words, format } = validateP1(fs.readFileSync(file, 'utf8').trim(), lang);
   const vFile = path.join(dir, `${id}.variants.json`);
   try { JSON.parse(fs.readFileSync(vFile, 'utf8')); } catch (e) { errors.push(`variants file missing or invalid JSON: ${e.message}`); }
-  console.log(`${errors.length ? 'FAIL' : 'OK  '} ${path.join(dir, id)}.md (${words} words)`);
+  console.log(`${errors.length ? 'FAIL' : 'OK  '} ${path.join(dir, id)}.md (${words} words, ${format})`);
   errors.forEach((e) => console.log(`   ✗ ${e}`));
+  warnings.forEach((w) => console.log(`   ! ${w}`));
   if (errors.length) bad += 1;
 }
 console.log(`\n${list.length - bad}/${list.length} passed`);

@@ -1,0 +1,30 @@
+{
+ "story_id": 1633,
+ "verdict": "keep",
+ "verify_note": "Verified against the full text on archive.org (Scattered Minds: Introduction and Maté's infancy chapter). Old text's claims (diagnosed in his 50s, 'genetics does not shape attention', flat 'sensitive brain' thesis) not in the book: Maté says ADD is 'a matter of genes and parenting', inherited part is sensitivity. Story rebuilt on his own infancy account (pediatrician line, photograph, stranger and buggy, three weeks apart). Environmental thesis flagged as minority view with a physician caveat.",
+ "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+ "tr": {
+  "title": "Budapeşte'de Ağlayan Bebek",
+  "description": "Gabor Maté, DEHB'nin kökenini kendi ilk yılıyla anlatıyor: işgal altındaki Budapeşte, ağlayan bir bebek ve üç hafta süren ayrılık. Kanıt olarak değil, örnek olarak sunuyor.",
+  "hook": "Biri dikkatini toplayamadığında önce ne yaşadığını sormak ona ne kazandırır?",
+  "one_minute_summary": "Gabor Maté Ocak 1944'te Budapeşte'de doğdu. İşgalden iki gün sonra annesi çocuk doktorunu aradığında doktor bütün Yahudi bebeklerin ağladığını söyledi. Aralık'ta aile kalabalık bir sığınakta kaldı ve annesi onu tanımadığı bir kadına emanet etti. Üç hafta sonra Gabor annesine yabancı gibi baktı. Maté bunu, bakım verenle ilişkinin bebeğin beynini biçimlendirdiğinin örneği sayıyor ve kendi dikkat sorununun nedenini bilemediğini de yazıyor. Görüşü klinik literatürde azınlıkta, tanı ve tedavi hekime ait."
+ },
+ "en": {
+  "title": "The Crying Baby of Budapest",
+  "description": "Gabor Maté explains how he sees the roots of attention problems through his own first year: occupied Budapest, a crying baby and three weeks apart from his mother. He offers it as an illustration, not as proof.",
+  "hook": "What would you learn about someone's attention problem by asking what they have lived through first?",
+  "one_minute_summary": "Gabor Maté was born in Budapest in January 1944. Two days after the occupation his mother phoned the pediatrician, who said all his Jewish babies were crying. In December the family was in a crowded protected house, and his mother gave him to a stranger, who took him to a relative. Three weeks later he treated her as a stranger. Maté uses this to show how the bond with a caregiver shapes a baby's brain, and says he cannot know whether he would have developed ADD anyway. His view is a minority one, and diagnosis belongs to a physician."
+ },
+ "es": {
+  "title": "El bebé que lloraba en Budapest",
+  "description": "Gabor Maté explica su idea del origen de los problemas de atención con su propio primer año: Budapest ocupada, un bebé que llora y tres semanas lejos de su madre. Lo ofrece como ejemplo, no como prueba.",
+  "hook": "¿Qué aprenderías de la falta de atención de alguien si preguntaras primero qué ha vivido?",
+  "one_minute_summary": "Gabor Maté nació en Budapest en enero de 1944. Dos días después de la ocupación, su madre llamó al pediatra, que le dijo que todos sus bebés judíos lloraban. En diciembre la familia estaba en una casa protegida y abarrotada, y su madre lo entregó a una desconocida que lo llevó con un familiar. Tres semanas después, él trató a su madre como a una extraña. Maté lo usa para mostrar cómo el vínculo con quien cuida moldea el cerebro del bebé y dice que no puede saber si habría tenido TDA igualmente. Es una postura minoritaria y el diagnóstico corresponde a un médico."
+ },
+ "de": {
+  "title": "Das weinende Baby von Budapest",
+  "description": "Gabor Maté erklärt seine Sicht auf die Wurzeln von Aufmerksamkeitsproblemen an seinem eigenen ersten Lebensjahr: das besetzte Budapest, ein weinendes Baby und drei Wochen ohne die Mutter. Er bietet es als Beispiel an, nicht als Beweis.",
+  "hook": "Was würdest du über die Konzentrationsprobleme eines Menschen erfahren, wenn du zuerst fragst, was er erlebt hat?",
+  "one_minute_summary": "Gabor Maté kam im Januar 1944 in Budapest zur Welt. Zwei Tage nach der Besetzung rief seine Mutter den Kinderarzt an, der sagte, alle seine jüdischen Babys weinten. Im Dezember war die Familie in einem überfüllten geschützten Haus, und seine Mutter gab ihn einer Fremden, die ihn zu einem Verwandten brachte. Drei Wochen später behandelte er sie wie eine Fremde. Maté nutzt das als Beispiel dafür, wie die Bindung zur Bezugsperson das Babygehirn formt, und sagt, er wisse nicht, ob er ADS auch sonst bekommen hätte. Seine Sicht ist eine Minderheitsposition, die Diagnose gehört in ärztliche Hände."
+ }
+}

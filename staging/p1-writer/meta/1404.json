@@ -1,0 +1,30 @@
+{
+ "story_id": 1404,
+ "verdict": "keep",
+ "verify_note": "Verified against the full text on archive.org (ch.2, Law of the Few): Revere vs Dawes (from Fischer's Paul Revere's Ride), Connectors/Mavens/Salesmen summary, Green Dragon group. Old text's 'these people are not chosen, they have recognizable traits' not found and dropped. Reading of Revere as Connector flagged as Gladwell's interpretation.",
+ "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+ "tr": {
+  "title": "Revere'in Çaldığı Kapılar",
+  "description": "Revere ve Dawes aynı gece aynı haberi taşıdı, ama yalnızca biri kırsalı uyandırdı. Gladwell farkı atlıların sosyal çevresinde arıyor.",
+  "hook": "Bir duyuruyu ulaştırmanız gerekse ilk kime söylerdiniz?",
+  "one_minute_summary": "Paul Revere ve William Dawes aynı gece aynı mesajla, İngilizler geliyor diye yola çıktı. Revere milis liderlerini kasaba kasaba uyandırdı, Dawes'in yolculuğu neredeyse iz bırakmadı ve Waltham haberi geç aldı. Gladwell farkı insanlarda arıyor: Revere çok geniş bir çevreye ve bilgi toplama alışkanlığına sahipti, Dawes büyük olasılıkla sıradan bir çevreye. Bu tür insanlara Bağlayıcı, Maven ve Satıcı diyor. Anlatı Fischer'a dayanıyor, Revere'i Bağlayıcı saymak Gladwell'ın yorumu."
+ },
+ "en": {
+  "title": "Revere's Doors, Dawes's Silence",
+  "description": "Revere and Dawes carried the same news on the same night, yet only one ride woke the countryside. Gladwell looks for the difference in the riders' social worlds.",
+  "hook": "If you had one announcement to get across, whom would you tell first?",
+  "one_minute_summary": "Paul Revere and William Dawes rode out on the same night with the same message: the British are coming. Revere woke militia leaders town after town, Dawes's ride barely registered and Waltham heard too late. Gladwell looks for the difference in the people: Revere had a wide social circle and gathered information, Dawes probably an ordinary one. He calls such people Connectors, Mavens and Salesmen. The account rests on Fischer, and calling Revere a Connector is Gladwell's own interpretation."
+ },
+ "es": {
+  "title": "Las puertas de Revere",
+  "description": "Revere y Dawes llevaron la misma noticia la misma noche, pero solo una cabalgata despertó al campo. Gladwell busca la diferencia en el mundo social de cada jinete.",
+  "hook": "Si tuvieras que hacer llegar un anuncio, ¿a quién se lo dirías primero?",
+  "one_minute_summary": "Paul Revere y William Dawes salieron la misma noche con el mismo mensaje: vienen los británicos. Revere despertó a jefes de milicia pueblo tras pueblo; el viaje de Dawes apenas dejó huella y Waltham se enteró tarde. Gladwell busca la diferencia en las personas: Revere tenía un círculo amplio y reunía información, Dawes probablemente uno normal. Llama a esas personas Conectores, Mavens y Vendedores. El relato se apoya en Fischer y llamar Conector a Revere es interpretación de Gladwell."
+ },
+ "de": {
+  "title": "Reveres Türen",
+  "description": "Revere und Dawes trugen in derselben Nacht dieselbe Nachricht, doch nur ein Ritt weckte das Land. Gladwell sucht den Unterschied in der sozialen Welt der Reiter.",
+  "hook": "Wem würdest du eine wichtige Ankündigung zuerst sagen?",
+  "one_minute_summary": "Paul Revere und William Dawes ritten in derselben Nacht mit derselben Botschaft los: Die Briten kommen. Revere weckte Ort für Ort die Milizführer, Dawes' Ritt verhallte fast, Waltham erfuhr es zu spät. Gladwell sucht den Unterschied in den Menschen: Revere hatte einen großen Bekanntenkreis und sammelte Informationen, Dawes wohl einen normalen. Solche Menschen nennt er Connectors, Mavens und Salesmen. Die Darstellung stützt sich auf Fischer, Revere einen Connector zu nennen ist Gladwells Deutung."
+ }
+}

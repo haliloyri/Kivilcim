@@ -1,0 +1,60 @@
+{
+ "story_id": 1770,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Lucifer Effect",
+  "author": "Philip Zimbardo",
+  "year": "2007"
+ },
+ "confidence": "medium",
+ "confidence_note": "Details from the Wikipedia Stanford prison experiment entry, consistent with Zimbardo's account; not page-checked in The Lucifer Effect. Day sequence and numbers as given by that entry. Criticism stated as an editorial caveat.",
+ "facts": [
+  "From 14 to 20 August 1971 (planned for two weeks) Zimbardo ran a mock prison in the basement of Jordan Hall at Stanford, funded by the US Office of Naval Research.",
+  "Ads in the Palo Alto Times and Stanford Daily offered 15 dollars a day; 75 men applied and 24 were chosen as psychologically stable.",
+  "Assignment to guard or prisoner was random; guards got khaki uniforms, wooden batons and mirrored sunglasses and were told not to hurt prisoners.",
+  "On day one the Palo Alto police arrested the prisoners at home without warning; at the mock jail they were fingerprinted, strip-searched and given numbers and smocks. Guards used numbers, not names.",
+  "Around 2:30 a.m. on day two prisoners rebelled by removing number tags and caps; guards sprayed fire extinguishers and sent the leaders to solitary.",
+  "On day three the abuse grew, with forced push-ups and a bucket for the toilet; prisoner 8612, Douglas Korpi, left after about 36 hours in distress.",
+  "Prisoner 819 broke down crying on day four; on day five Christina Maslach saw guards making prisoners wear bags over their heads and objected to Zimbardo.",
+  "Zimbardo ended it on day six. He reads the result as the power of a situation. Critics, including Thibault Le Texier, say guards were guided and wanted to please the researchers."
+ ],
+ "scene_details": [
+  "mirrored sunglasses and wooden batons",
+  "numbers instead of names",
+  "bags over prisoners' heads on the fifth night"
+ ],
+ "tension": "Ordinary students given uniforms and a role turned cruel in days.",
+ "opening_idea": "Open on the mirrored sunglasses and the coin toss that decided who wore them.",
+ "lessons": [
+  {
+   "idea": "The role and rules you give people shape how they act, so check the setup before blaming the person.",
+   "anchor": "coin toss assigned guards and prisoners"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Where in your own workplace or home does a role or rule push people toward behavior you would otherwise question, and what could you change about it?",
+ "use_cases": [
+  {
+   "situation": "A team keeps treating a role badly, like support staff.",
+   "move": "Ask what the role gives people the power to do and change one rule about it.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A friend turns harsh after getting a title.",
+   "move": "Ask how the new position feels before judging the person.",
+   "context": "social"
+  },
+  {
+   "situation": "You get sharp with your kids when you hold the rule-keeper role.",
+   "move": "Notice that role and rotate who sets the rules this week.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "Mirrored sunglasses and a coin toss turned students into guards in days; check the setup before judging the person.",
+ "conversation_variants": {
+  "punchline_idea": "A coin toss decided who got the mirrored sunglasses and the baton in Zimbardo's mock prison.",
+  "thirty_sec_idea": "In 1971 Zimbardo built a mock prison in a Stanford basement and assigned 24 students as guards or prisoners by coin toss. Guards soon woke prisoners at night and humiliated them, and a colleague objected. The study ended after six days; later critics say guards were coached.",
+  "question_idea": "",
+  "key_contrast_idea": "role, not character"
+ }
+}

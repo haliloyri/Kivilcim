@@ -1,0 +1,36 @@
+{
+  "story_id": 1787,
+  "kind": "concept",
+  "book": { "title": "Tao Te Ching", "author": "Lao Tzu", "year": "" },
+  "confidence": "medium",
+  "confidence_note": "Authorship and dating are traditional and debated, so the year is left empty and the text is described as traditionally attributed. The water passages (soft overcoming hard, highest good like water), the clay pot and room image, and the living plant versus dead plant passage are standard chapters; no direct quotes are used since wording varies by translation. Claims such as 'most translated book' and 'the valley was shaped by water' in the supplied text are omitted.",
+  "facts": [
+    "The text is traditionally attributed to Lao Tzu and has eighty-one short chapters.",
+    "Water takes the shape of any vessel, resists no mold and flows to low places.",
+    "Nothing is softer than water, yet nothing surpasses it in wearing down the hard and strong.",
+    "The highest good is likened to water: it benefits all things and does not contend with them.",
+    "A clay pot is made of clay but its use is the empty space inside; a room works because of the space between its walls.",
+    "A living plant is soft and moist; a dead one is dry and hard. The stiff belongs with death, the gentle with life.",
+    "Wu wei is often understood as acting without forcing, reading the flow instead of pushing against it.",
+    "Wording varies across translations."
+  ],
+  "tension": "The softest thing in the world wears down the hardest.",
+  "opening_idea": "Open on the claim that nothing is softer than water and nothing wears down hard things better.",
+  "lessons": [
+    { "idea": "Read the flow of a situation before forcing it.", "anchor": "Water yielding to every vessel yet wearing down stone." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which problem you are pushing at could you solve by reading its flow instead?",
+  "use_cases": [
+    { "situation": "A colleague rejects every proposal.", "move": "Listen to what they are protecting, then offer another route to the same goal, as water finds a way around.", "context": "meeting" },
+    { "situation": "Nobody at home wants to give way.", "move": "Park the topic tonight and return tomorrow.", "context": "family" },
+    { "situation": "A task will not move when forced.", "move": "Switch tasks for half an hour and see where it flows.", "context": "self" }
+  ],
+  "pocket_idea": "Water takes the shape of the vessel and still wears down rock; read the flow before forcing.",
+  "conversation_variants": {
+    "punchline_idea": "Tao Te Ching says the softest thing in the world, water, beats the hardest.",
+    "thirty_sec_idea": "The Tao Te Ching has eighty-one short chapters; water yields to every vessel yet wears down the hard, which the text uses to say strength lies in flexibility.",
+    "question_idea": "",
+    "key_contrast_idea": "Sertlik ve esneklik"
+  }
+}

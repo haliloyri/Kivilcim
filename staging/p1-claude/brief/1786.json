@@ -1,0 +1,35 @@
+{
+  "story_id": 1786,
+  "kind": "concept",
+  "book": { "title": "Four Thousand Weeks", "author": "Oliver Burkeman", "year": "2021" },
+  "confidence": "high",
+  "confidence_note": "The four-thousand-week framing, the productivity trap and the case for choosing what to neglect are the book's central ideas. The claim that Burkeman tried techniques on himself is consistent with the book's account. No numbers beyond roughly eighty years are added.",
+  "facts": [
+    "Burkeman is a journalist who wrote about productivity for years and tried many techniques himself.",
+    "An average life of about eighty years is roughly four thousand weeks.",
+    "The productivity trap: answering email faster brings more email; clearing a list brings a new list.",
+    "Becoming more efficient pulls in more work instead of bringing relief.",
+    "His response: drop the dream of getting on top of everything and accept finitude.",
+    "Make room for a few things that matter and consciously neglect the rest.",
+    "Every yes is a no to something else; missing things is the normal result of a finite life."
+  ],
+  "tension": "The faster you work, the more work arrives, so efficiency never produces calm.",
+  "opening_idea": "Open on the number 4,000 and a productivity writer doing the math on his own life.",
+  "lessons": [
+    { "idea": "Time management is deciding what you will leave undone.", "anchor": "Burkeman's choice to neglect things on purpose." }
+  ],
+  "reflect": [],
+  "reflect_final": "What will you openly and deliberately say no to this week?",
+  "use_cases": [
+    { "situation": "Another project is added to your team.", "move": "Connect the finite number of weeks to the request and ask what gets dropped if you take it.", "context": "meeting" },
+    { "situation": "Your to-do list refills every day.", "move": "Choose two things for today and let the rest wait on purpose.", "context": "self" },
+    { "situation": "You are tired of saying yes to every invitation.", "move": "Pick two things for the weekend and tell people you are saying no to the rest.", "context": "family" }
+  ],
+  "pocket_idea": "In a life of 4,000 weeks every yes is a no; write down what you are choosing to leave out.",
+  "conversation_variants": {
+    "punchline_idea": "An average life is about 4,000 weeks and the inbox never empties.",
+    "thirty_sec_idea": "Burkeman wrote about productivity for years, then saw life is about 4,000 weeks and that efficiency just brings more work, so he chose a few things and neglected the rest.",
+    "question_idea": "",
+    "key_contrast_idea": "Yetişmek yerine seçmek"
+  }
+}

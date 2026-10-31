@@ -1,0 +1,61 @@
+{
+  "story_id": 1457,
+  "kind": "concept",
+  "book": {
+    "title": "The Tell-Tale Brain",
+    "author": "V.S. Ramachandran",
+    "year": "2011"
+  },
+  "confidence": "medium",
+  "confidence_note": "Synesthesia and the grid test with hidden 2s among 5s, the cross-activation hypothesis and the link to creative people are all discussed by Ramachandran in the book. Excluded because not attributable: the single patient who saw 5 as red, 6 as blue and 7 as yellow, the 'about two percent' figure, the named artists (Kandinsky, Nabokov, Feynman) and the quoted line 'this tells us...'. The grid test is described from memory of the book and the author's public talks; exact grid size and colours are left out. Cross-activation is presented as Ramachandran's hypothesis, and later reviews say the neural basis is not settled. The remark that such reports were met with doubt is from memory of the book and his talks; keep it brief.",
+  "facts": [
+    "Some people see printed numbers in colour: for them a particular digit always carries its own hue, as if it had been painted.",
+    "Ramachandran wanted to show this is something they see, not a fancy or a memory trick.",
+    "His test: a grid of printed 5s with a few 2s hidden among them so that the 2s form a shape, such as a triangle.",
+    "Most people looking at the grid at a glance see only a mass of 5s and have to hunt for the shape.",
+    "People with number-colour synesthesia, who see 5s in one colour and 2s in another, pick the shape out quickly.",
+    "His explanation: the brain area that handles number shapes sits right next to an area that handles colour, and in these people the two are cross-activated, perhaps through a gene that left extra wiring between neighbouring areas.",
+    "Synesthesia turns up much more often among artists, poets and novelists than in the general population.",
+    "Ramachandran proposes that the same cross-wiring may make it easier to link unrelated things, which is what a metaphor does.",
+    "Ramachandran says reports of this kind were long met with doubt before tests like his."
+  ],
+  "scene_details": [
+    "a grid of 5s with 2s forming a triangle hidden inside",
+    "a digit that is always the same colour",
+    "two brain areas side by side, one for number shapes, one for colour"
+  ],
+  "tension": "A person says the number 5 is red. Is that a poetic habit or something the eyes really do, and how could you ever check?",
+  "opening_idea": "Start with the grid of 5s and the hidden triangle of 2s, and the fact that some people find it at once.",
+  "lessons": [
+    {
+      "idea": "A claim about inner experience can be turned into a test you can run, so you do not have to take it on trust or dismiss it.",
+      "anchor": "The hidden triangle of 2s among 5s, found fast by number-colour synesthetes."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of someone who describes something about their experience that you find hard to believe. What small check or question could you try before deciding whether you accept it?",
+  "use_cases": [
+    {
+      "situation": "A colleague insists they notice things in a spreadsheet that you do not.",
+      "move": "Ramachandran did not argue about whether synesthetes were imagining; he built a grid test. Ask them to show you one example on screen.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend says music has colours for them.",
+      "move": "Ask what colour a particular song is and whether it is always the same, then ask again next week.",
+      "context": "social"
+    },
+    {
+      "situation": "You dismissed a family member's odd claim and want to be fairer.",
+      "move": "Say: I find that hard to picture, can you show me how you notice it?",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Ramachandran hid 2s among 5s to test whether numbers really look coloured to some people: when a claim sounds odd, look for a test.",
+  "conversation_variants": {
+    "punchline_idea": "Hide a triangle of 2s inside a field of 5s and a person who sees numbers in colour will find it before you do.",
+    "thirty_sec_idea": "Ramachandran heard people say that numbers have colours. To check, he used a grid of 5s with some 2s forming a triangle. Most of us have to hunt; synesthetes spot it fast because their 2s are a different colour. He explains it by neighbouring brain areas being cross-wired.",
+    "question_idea": "Do you know anyone whose experience of the world is oddly specific?",
+    "key_contrast_idea": "Imagined or really seen"
+  }
+}

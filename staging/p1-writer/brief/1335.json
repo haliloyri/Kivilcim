@@ -1,0 +1,59 @@
+{
+  "story_id": 1335,
+  "kind": "concept",
+  "book": {
+    "title": "Everything Is F*cked",
+    "author": "Mark Manson",
+    "year": "2019"
+  },
+  "confidence": "low",
+  "confidence_note": "Book text not read. The self-limitation line and the fake versus real freedom idea come from notes and quote sites; the examples come from a Globe and Mail interview about the book, so the story says so. No numbers beyond the interview's own. Old text dropped: \"research shows more options means less happiness\", the commitment quote.",
+  "facts": [
+    "The book is credited with the line: self-limitation is the only ethical form of freedom.",
+    "Notes describe fake freedom (more stuff, more options, the hedonic treadmill) against real freedom, which involves limitation and asks what you are willing to give up.",
+    "In an interview about the book Manson said freedom comes from eliminating options, not adding them, and that abundance leaves people in distraction, envy and FOMO.",
+    "He called limiting yourself a major challenge, like an information diet: follow fewer people and hold higher standards for whom you trust.",
+    "Interview example: a woman in her late twenties had dated ten men with nothing lasting. He asked whether she would rather date twenty men she felt nothing for or meet two she connected with. She chose two. He told her to cut 80 per cent of the men she normally considered and to set her standards by values.",
+    "He says the difficulty and fear of such a cut are part of what makes commitment worth it.",
+    "He said he wrote the book after the 2016 US election, feeling the internet honeymoon was over, and that dating questions keep coming at his talks, all problems of fake freedom."
+  ],
+  "scene_details": [
+    "Twenty men she felt nothing for or two she connected with",
+    "Following fewer people as an information diet"
+  ],
+  "tension": "A woman with many options and no lasting result is asked to pick fewer.",
+  "opening_idea": "Start with the question put to the woman who had dated ten men: twenty without a spark, or two with one.",
+  "lessons": [
+    {
+      "idea": "Choosing what to give up can free more than keeping every option open.",
+      "anchor": "Manson's advice to cut 80 per cent of the men she considered and set standards by values.",
+      "everyday_example_idea": "A freelancer who says yes to every request and burns out, then drops all but a few clients."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one option you keep open that costs you attention, and what would you pick instead if you had to choose today?",
+  "use_cases": [
+    {
+      "situation": "You cannot decide between many similar offers.",
+      "move": "Say you will cut the list by most and keep only what matches your values, like Manson's advice in the dating example.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend swipes endlessly and feels worse.",
+      "move": "Ask whether they would rather meet two people they connect with than twenty they do not.",
+      "context": "social"
+    },
+    {
+      "situation": "A team keeps adding projects.",
+      "move": "Propose naming what you will stop doing before adding anything new.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Manson asked: twenty men you feel nothing for or two you connect with? Cut the list by values.",
+  "conversation_variants": {
+    "punchline_idea": "Manson told a woman who had dated ten men to cut 80 per cent of the men she considered.",
+    "thirty_sec_idea": "Manson separates fake freedom, more options, from real freedom, choosing what you give up; his example is a woman asked whether she wants twenty men with no spark or two with one.",
+    "question_idea": "",
+    "key_contrast_idea": "More options, fewer picks"
+  }
+}

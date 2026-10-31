@@ -1,0 +1,30 @@
+{
+ "story_id": 1508,
+ "verdict": "keep",
+ "verify_note": "Book text is lending-only; facts verified from Kotter's 1995 HBR article (error #2, guiding coalition), which the book expands: starts with one or two people, plus 5/15/50, 3-5 in year one and 20-50 in big companies, retreats of 2-3 days, staff-led failure. Old text's four traits (position power, expertise, credibility, leadership) not checked in the book (article words them titles, information and expertise, reputations, relationships, which is what the story uses); its 'CEO announces and waits' scene and 'most believers rather than highest-ranking' claim were not found and dropped.",
+ "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+ "tr": {
+  "title": "Koalisyonda Kim Oturmalı",
+  "description": "Kotter'e göre değişim bir ya da iki kişiyle başlıyor ve güçlü bir koalisyona dönüşmezse duruyor. Kurmay yöneticinin liderliği tek başına yetmiyor.",
+  "hook": "Bir değişimi duyurmadan önce yanınızda hangi iki ya da üç kişi olmalı?",
+  "one_minute_summary": "John Kotter'e göre büyük dönüşümler çoğu zaman bir ya da iki kişiyle başlıyor ve yeterince güçlü bir yönlendirici koalisyon kurulmazsa anlamlı bir şey olmuyor. Başarılı örneklerde başkan artı 5, 15 ya da 50 kişi unvan, bilgi, itibar ve ilişki açısından güçlü bir grup oluşturuyor. İlk yıl üç ila beş kişi, büyük şirketlerde sonra 20 ila 50 kişi gerekiyor. İki üç günlük şehir dışı toplantılar yaygın bir yol. Liderliği kurmay yöneticiye vermek sık görülen bir hata. Rakamlar Kotter'in gözlemleri."
+ },
+ "en": {
+  "title": "Who Sits in the Room",
+  "description": "In Kotter's account change starts with one or two people and stalls unless it grows into a powerful coalition. A staff executive's leadership is not enough.",
+  "hook": "Which two or three people should be on your side before you announce a change?",
+  "one_minute_summary": "John Kotter says big transformations often start with one or two people and nothing worthwhile happens unless a powerful guiding coalition forms. In successful cases the head plus another 5, 15 or 50 people build a group with titles, expertise, reputation and relationships. It may be only three to five people in year one and 20 to 50 in big companies. Off-site retreats of two or three days are a common way to build it. Putting a staff executive in charge instead of a line manager is a common failure. The numbers are Kotter's observations."
+ },
+ "es": {
+  "title": "Quién se sienta en la sala",
+  "description": "Para Kotter el cambio empieza con una o dos personas y se atasca si no crece hasta una coalición poderosa. Un ejecutivo de personal al frente no basta.",
+  "hook": "¿Qué dos o tres personas deberían estar de tu lado antes de anunciar un cambio?",
+  "one_minute_summary": "Según John Kotter, las grandes transformaciones suelen empezar con una o dos personas y no pasa nada que valga la pena si no se forma una coalición directiva poderosa. En los casos exitosos, el jefe más otras 5, 15 o 50 personas forman un grupo con cargos, experiencia, reputación y relaciones. Puede ser de solo tres a cinco personas el primer año y de 20 a 50 en empresas grandes. Los retiros de dos o tres días son una forma habitual. Poner al frente a un ejecutivo de personal en vez de a un jefe de línea es un fallo común. Las cifras son observaciones de Kotter."
+ },
+ "de": {
+  "title": "Wer im Raum sitzt",
+  "description": "Nach Kotter beginnt Wandel mit ein oder zwei Personen und bleibt stecken, wenn er nicht zu einer mächtigen Koalition wächst. Die Leitung durch einen Stabsmanager reicht nicht.",
+  "hook": "Welche zwei oder drei Menschen sollten auf deiner Seite sein, bevor du eine Veränderung ankündigst?",
+  "one_minute_summary": "Laut John Kotter beginnen große Veränderungen oft mit ein oder zwei Personen, und ohne eine mächtige Führungskoalition geschieht nichts Nennenswertes. In erfolgreichen Fällen bilden der Chef und weitere 5, 15 oder 50 Personen eine Gruppe mit Titeln, Fachwissen, Ansehen und Beziehungen. Im ersten Jahr können es nur drei bis fünf sein, in großen Firmen später 20 bis 50. Zwei- bis dreitägige Retreats sind ein gängiger Weg. Die Leitung einem Stabsmanager statt einem Linienmanager zu geben, ist ein häufiger Fehler. Die Zahlen sind Kotters Beobachtungen."
+ }
+}

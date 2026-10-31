@@ -1,0 +1,61 @@
+{
+  "story_id": 1690,
+  "kind": "concept",
+  "book": {
+    "title": "Emotional Intelligence 2.0",
+    "author": "Travis Bradberry and Jean Greaves",
+    "year": "2009"
+  },
+  "confidence": "low",
+  "confidence_note": "The old text's '90% say above average / 360-degree gap' study and its internal/external self-awareness split could not be tied to the book and are dropped. What I could confirm through summaries is three of the book's self-awareness strategies: stop labelling emotions good or bad (judging a feeling piles shame or pride on top of it), lean into discomfort, and connect emotions to physical sensations. The book's own wording could not be read; no case or scene is available, so none is invented.",
+  "facts": [
+    "Self-awareness is the first of the four EQ skills in Emotional Intelligence 2.0.",
+    "One strategy: stop labelling emotions as good or bad. Judging a feeling puts a second feeling on top of it, such as guilt about being angry.",
+    "A second strategy: lean into discomfort instead of brushing away a negative feeling; even a small emotion ignored is a missed chance to use it.",
+    "A third strategy: link feelings to the body. In a calm moment recall a past event that stirred a strong feeling and notice what the body did, such as muscle tension, breathing or heart rate.",
+    "Body signals differ from person to person, so each reader builds his or her own map.",
+    "The aim is to recognise the emotion later, in the moment, from those signals.",
+    "Self-awareness is defined as perceiving your emotions accurately as they happen and understanding how you tend to behave across situations.",
+    "Avoiding 'bad' emotions means missing what they tell you, and dwelling on them can make them bigger."
+  ],
+  "scene_details": [
+    "tight muscles",
+    "breathing",
+    "heart rate",
+    "guilt on top of anger"
+  ],
+  "tension": "A feeling is usually judged the instant it arrives, and the judgment hides it.",
+  "opening_idea": "Start with anger followed at once by guilt about being angry.",
+  "lessons": [
+    {
+      "idea": "Name a feeling before you rate it, and use the body as the early signal.",
+      "anchor": "Stop labelling emotions good or bad; link feelings to physical sensations."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When did your body last tell you about a feeling before your thoughts did, and what did you notice happening in it?",
+  "use_cases": [
+    {
+      "situation": "Before a tense meeting your shoulders tighten.",
+      "move": "Treat the tight shoulders as a signal, name the feeling in one word and say it to yourself before you speak.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You snapped at someone at home and then felt bad about snapping.",
+      "move": "Separate the two feelings: name the anger first, then the guilt, and tell the person what you felt.",
+      "context": "family"
+    },
+    {
+      "situation": "On an ordinary evening you want to practice.",
+      "move": "Recall one event that stirred you and write where in your body you felt it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Anger, then guilt about the anger: name each one separately and check where your body feels it.",
+  "conversation_variants": {
+    "punchline_idea": "Feeling guilty about being angry puts two emotions in the place of one, so the book starts by asking you to stop grading them.",
+    "thirty_sec_idea": "Bradberry and Greaves start self-awareness with a plain rule: do not label an emotion good or bad. Judging adds a second feeling, like guilt about anger. Then they ask you to link feelings to the body, recalling a past event and noticing muscle tension, breathing or heart rate, so you can spot the same signal next time.",
+    "question_idea": "",
+    "key_contrast_idea": "Name before judging"
+  }
+}

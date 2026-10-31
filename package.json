@@ -19,6 +19,8 @@
     "story:validate-summaries": "node scripts/story-pipeline/validate-one-minute-summaries.mjs",
     "story:ingest": "node scripts/story-pipeline/ingest-batch.mjs",
     "story:publish": "node scripts/p1/publish-local.mjs",
+    "story:check-docs": "node scripts/p1/check-docs.mjs",
+    "story:score": "node scripts/p1/score-models.mjs",
     "build:apk:dev": "eas build --platform android --profile development",
     "build:apk": "eas build --platform android --profile apk",
     "build:apk:local": "eas build --platform android --profile apk --local",
@@ -84,11 +86,15 @@
     "@types/react-native": "^0.72.8",
     "jest": "~30.5.2",
     "jest-expo": "~58.0.12",
+    "react-test-renderer": "19.3.0",
     "sql.js": "^1.14.1",
     "typescript": "~6.0.3"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "modulePaths": [
+      "<rootDir>/node_modules/expo/node_modules"
+    ]
   },
   "private": true
 }

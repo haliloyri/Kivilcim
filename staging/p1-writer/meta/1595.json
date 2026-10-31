@@ -1,0 +1,35 @@
+{
+ "story_id": 1595,
+ "verdict": "keep",
+ "verify_note": "SuperSummary plot summary confirms the book discusses the 1977 'Dietary Goals for the United States' and the low-fat/high-carb shift; Weston A. Price review and others confirm cholesterol/fat for the brain and 'diabetes type 3'; CBS: 'your brain needs fat'. Story already frames everything as Perlmutter's disputed view. Exact wording that food makers swapped in refined carbs after 1977 is his argument, not independently verified.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Yağ Çıktı, Şeker Girdi",
+  "description": "1977'de ABD hükümeti insanlara daha az yağ yemelerini söyledi. Perlmutter'e göre ürünlerden yağ çıkınca yerine rafine karbonhidrat ve şeker girdi.",
+  "hook": "Tabağınızdan bir şey çıkardığınızda yerine ne girdi?",
+  "one_minute_summary": "1977'de ABD hükümeti halka yönelik beslenme hedefleri yayımladı ve ilk öneri yağı azaltmaktı. Raflar düşük yağlı ürünlerle doldu. Nörolog David Perlmutter, Grain Brain kitabında yağ çıkınca yerine rafine karbonhidrat ve şekerin girdiğini, asıl tehdidin de kan şekerinin tekrar tekrar yükselmesi olduğunu savunuyor. Beynin büyük ölçüde yağdan oluştuğunu ve kolesterolün hücrelerinin yapı taşı olduğunu söylüyor. Bunlar Perlmutter'in görüşleri ve tartışmalı. Birçok sağlık kuruluşu doymuş yağın sınırlanmasını hâlâ öneriyor."
+ },
+ "en": {
+  "title": "Fat Out, Sugar In",
+  "description": "In 1977 the US government urged people to eat less fat. Perlmutter argues that refined carbohydrate and sugar took its place in food.",
+  "hook": "When you cut something from your plate, what quietly took its place?",
+  "one_minute_summary": "In 1977 the US government published dietary goals whose first message was to eat less fat, and shelves filled with low-fat products. Neurologist David Perlmutter argues in Grain Brain that refined carbohydrate and sugar went in when fat came out. He says the brain is largely made of fat, that cholesterol is a building block of its cells, and that the real threat is blood sugar rising again and again. These are his views and they are disputed. Many health bodies still recommend limiting saturated fat, so the book is one specialist's argument, not a settled finding."
+ },
+ "es": {
+  "title": "Sale la grasa, entra el azúcar",
+  "description": "En 1977 el gobierno de Estados Unidos pidió comer menos grasa. Según Perlmutter, los alimentos sustituyeron esa grasa por carbohidratos refinados y azúcar.",
+  "hook": "Cuando quitas algo de tu plato, ¿qué entra en su lugar?",
+  "one_minute_summary": "Cuando un alimento pierde su grasa, algo ocupa el hueco. David Perlmutter sostiene en Grain Brain que lo ocuparon los carbohidratos refinados y el azúcar, tras unos objetivos dietéticos que el gobierno de Estados Unidos publicó en 1977 con el mensaje de comer menos grasa. Para él, el cerebro está hecho en buena parte de grasa y lo peligroso es que el azúcar en sangre suba una y otra vez. Son ideas suyas y están discutidas: muchos organismos de salud siguen aconsejando limitar la grasa saturada. Es el argumento de un especialista, no un resultado definitivo."
+ },
+ "de": {
+  "title": "Fett raus, Zucker rein",
+  "description": "1977 riet die US-Regierung zu weniger Fett. Nach Perlmutter kamen raffinierte Kohlenhydrate und Zucker an die Stelle des Fettes.",
+  "hook": "Was kommt an die Stelle, wenn du etwas von deinem Teller streichst?",
+  "one_minute_summary": "Das Gehirn besteht großenteils aus Fett, sagt der Neurologe David Perlmutter in Grain Brain. 1977 veröffentlichte die US-Regierung Ernährungsziele mit der Botschaft, weniger Fett zu essen, und fettarme Produkte füllten die Regale. Nach seiner Darstellung kamen dafür raffinierte Kohlenhydrate und Zucker hinein, und die eigentliche Gefahr sieht er im immer wieder steigenden Blutzucker. Das sind seine Ansichten, und sie sind umstritten. Viele Gesundheitsorganisationen raten weiter, gesättigte Fette zu begrenzen. Das Buch ist das Argument eines Spezialisten, kein abgeschlossenes Ergebnis."
+ }
+}

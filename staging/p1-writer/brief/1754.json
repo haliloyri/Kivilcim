@@ -1,0 +1,59 @@
+{
+  "story_id": 1754,
+  "kind": "anecdote",
+  "book": {
+    "title": "Killers of the Flower Moon",
+    "author": "David Grann",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Grann's book; no page-level check. Omitted on purpose: murder counts (the book says the true number is far larger than the trial record), exact dates beyond 1921/1923, direct quotes, details of the trial. Details recalled from memory, not page-checked: headrights inheritable but not saleable; guardianship; Anna Brown's body found May 1921; Lizzie's death; Rita and Bill Smith house bombing 1923; William Hale; agent Tom White. Extras from memory, not page-checked: 1870s purchase with common mineral rights, William Hale's reputation as a friend of the Osage, undercover agents.",
+  "facts": [
+    "The Osage were moved onto rocky Oklahoma land; oil was found beneath it and by the 1920s the Osage were among the richest people per head in the world.",
+    "Oil income came through headrights, which could be inherited but not sold.",
+    "Under a guardianship system, many Osage had to have white guardians approved by the court to manage their money, and guardians often took it.",
+    "In 1921 Anna Brown was found shot in a ravine; her mother Lizzie died soon after; in 1923 the house of her sister Rita and brother-in-law Bill Smith was blown up.",
+    "Mollie Burkhart, the sister of Anna, Minnie and Rita, saw her family die; she was married to Ernest Burkhart, nephew of the rancher William Hale.",
+    "Local lawmen, doctors and lawyers often covered the deaths; the new Bureau of Investigation sent Tom White to take the case.",
+    "Hale and others were convicted, but Grann concludes many more were killed than the trials ever showed."
+  ],
+  "scene_details": [
+    "a ravine where Anna Brown was found",
+    "a house blown up in 1923",
+    "a guardian approved by a court"
+  ],
+  "tension": "A people made rich by oil are killed one by one by those who stand to inherit, while the officials who should protect them look away.",
+  "opening_idea": "Open on the headrights: income that could be inherited but never sold, and what that did.",
+  "lessons": [
+    {
+      "idea": "When someone controls another person's money or rights, check who profits if that person is gone.",
+      "anchor": "the guardianship system and the headrights"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Whose money or decisions are you responsible for, and who checks that you are acting in their interest?",
+  "use_cases": [
+    {
+      "situation": "You manage a shared budget for a group.",
+      "move": "Mention that the Osage guardians held other people's money unchecked; propose a second person signs off on spending.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A relative handles an older family member's affairs.",
+      "move": "Ask to see simple statements together once a quarter.",
+      "context": "family"
+    },
+    {
+      "situation": "You are asked to sign over control of your own money.",
+      "move": "Ask who gains if you say yes and take a day to decide.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Osage oil money could be inherited but not sold, and murder followed the heirs: ask who profits when others hold your money.",
+  "conversation_variants": {
+    "punchline_idea": "A people grew rich on oil beneath their land, and the people appointed to guard their money were among those who profited from their deaths.",
+    "thirty_sec_idea": "In 1920s Oklahoma the Osage were among the richest people in the world per head, because of oil beneath their land. Their money had to be managed by white guardians. Then family members began to die, in a shot found in a ravine and a house blown up. David Grann says the FBI's new bureau uncovered a plot tied to inheritance, and that the real death toll was higher than the trials showed.",
+    "question_idea": "",
+    "key_contrast_idea": "wealth, then danger"
+  }
+}

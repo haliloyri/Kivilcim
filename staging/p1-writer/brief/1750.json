@@ -1,0 +1,57 @@
+{
+  "story_id": 1750,
+  "kind": "anecdote",
+  "book": {
+    "title": "Hidden Figures",
+    "author": "Margot Lee Shetterly",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Hidden Figures; no page-level check. Core: Glenn's orbital flight February 1962; NASA used an IBM computer for trajectory calculations; Glenn asked for Katherine Johnson to verify the numbers by hand; she was at Langley. Omitted on purpose: exact words Glenn used (the book records a line, not quoted here), how many days she took, which calculator, the date of her hiring. Reference TR text 'separate unit' is kept to the West Area computers context in general terms only. Added from memory of Shetterly, not page-checked: Shepard, Vaughan, Jackson, age 43, Friendship 7, flight length. Glenn's exact words are not quoted.",
+  "facts": [
+    "In early 1962 NASA prepared to launch John Glenn into orbit around the Earth.",
+    "The trajectory calculations used a new electronic computer, which many on the team did not yet trust.",
+    "Glenn asked that Katherine Johnson check the computer's figures by hand before he would fly.",
+    "Johnson worked at NASA's Langley research centre as a mathematician; she had come from the segregated group of Black women who did calculations.",
+    "She checked the figures and Glenn flew; the launch and three orbits succeeded in February 1962.",
+    "Gagarin orbited in 1961; Johnson had computed Shepard's 1961 trajectory; her unit was West Area Computing under Dorothy Vaughan; Mary Jackson worked there; Johnson was 43; capsule Friendship 7; flight ~5 hours."
+  ],
+  "scene_details": [
+    "a flight trajectory checked with a hand calculator",
+    "a pilot saying he will fly once one person confirms the figures"
+  ],
+  "tension": "A machine's numbers are in hand, and the astronaut asks for a human's check before he trusts them.",
+  "opening_idea": "Open on John Glenn asking for one person to check the computer's figures before he would launch.",
+  "lessons": [
+    {
+      "idea": "Trust is earned by work that proves right again and again, and it surfaces when the stakes rise.",
+      "anchor": "Glenn asked for Katherine Johnson's check"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Whose numbers or judgement do you rely on when it truly matters, and what have they done to earn it?",
+  "use_cases": [
+    {
+      "situation": "A report is going out and the new tool gave the figures.",
+      "move": "Mention that Glenn asked a person to check the computer, and ask who can verify the key figures by hand.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You want to be the person others turn to.",
+      "move": "Show your working on the next task so it can be checked.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A friend wants advice on whom to trust with a big job.",
+      "move": "Ask what that person's past work shows.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Glenn asked for Katherine Johnson to check the computer by hand: build the record people turn to when it counts.",
+  "conversation_variants": {
+    "punchline_idea": "Before John Glenn would orbit the Earth, he asked for Katherine Johnson to check the computer's numbers.",
+    "thirty_sec_idea": "In 1962 NASA planned to launch John Glenn into orbit, with the trajectory figures calculated by a new electronic computer. Glenn asked for Katherine Johnson, a Langley mathematician, to check the numbers by hand first. She did, and he flew. Margot Lee Shetterly tells this in Hidden Figures about the Black women whose work stood behind the launch.",
+    "question_idea": "",
+    "key_contrast_idea": "proof over title"
+  }
+}

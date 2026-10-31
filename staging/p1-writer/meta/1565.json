@@ -1,0 +1,35 @@
+{
+  "story_id": 1565,
+  "verdict": "keep",
+  "verify_note": "Content checked against summaries of The 15 Commitments of Conscious Leadership (above/below the line, responsibility, feeling feelings), not the full text. Title: dash subtitle removed or, where the old title promised something the story does not say, replaced.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Yüzde Yüz Sorumluluk",
+    "description": "İlk taahhüt, hayatın koşulları için tam sorumluluk almak. Yazarlar 'bana oluyor' hikâyesini kurban, kötü adam ve kahraman rolleriyle anlatıyor.",
+    "hook": "En çok şikâyet ettiğiniz konuda payınıza ne düşüyor?",
+    "one_minute_summary": "The 15 Commitments of Conscious Leadership'in ilk taahhüdü sorumluluk: hayatın koşulları ve kişinin iyi oluşu için tam sorumluluk almak. Çizginin altındaki lider \"bana oluyor\" hikâyesini anlatır ve kurban, kötü adam ya da kahraman rolüne girer; üçünde de sorumluluk ya fazla ya eksik. Üstteki lider \"bu işte payım ne, ne yapabilirim\" diye sorar. Kendini suçlamak da çizginin altında sayılıyor, yani tam sorumluluk suçluluk demek değil."
+  },
+  "en": {
+    "title": "One Hundred Percent Responsibility",
+    "description": "The first commitment is full responsibility for the circumstances of your life. The authors describe the \"to me\" story through the victim, the villain and the hero.",
+    "hook": "In the area where you complain most, what part of the situation is yours?",
+    "one_minute_summary": "The first commitment in The 15 Commitments of Conscious Leadership is full responsibility for the circumstances of your life and your wellbeing. Below the line a leader tells a \"to me\" story and plays the victim, the villain or the hero, each with too much or too little responsibility. Above it the leader asks what their own part is and what they can do next. Blaming yourself also counts as below the line, so full responsibility does not mean guilt."
+  },
+  "es": {
+    "title": "Cien por ciento de responsabilidad",
+    "description": "El primer compromiso es asumir plena responsabilidad de las circunstancias de tu vida. Los autores describen la historia de «a mí» con la víctima, el villano y el héroe.",
+    "hook": "En lo que más te quejas ahora, ¿qué parte depende de ti?",
+    "one_minute_summary": "El primer compromiso de The 15 Commitments of Conscious Leadership es asumir plena responsabilidad de las circunstancias de tu vida y tu bienestar. Debajo de la línea el líder cuenta una historia de «a mí» y adopta el papel de víctima, villano o héroe, con demasiada o demasiado poca responsabilidad. Encima se pregunta cuál es su parte y qué puede hacer. Culparse a uno mismo también queda debajo de la línea: responsabilidad plena no es culpa."
+  },
+  "de": {
+    "title": "Hundertprozentige Verantwortung",
+    "description": "Die erste Verpflichtung ist volle Verantwortung für die Umstände des eigenen Lebens. Die Autoren beschreiben die »Mir passiert es«-Geschichte mit Opfer, Bösewicht und Held.",
+    "hook": "Welchen Anteil hast du an dem, worüber du dich gerade am meisten beklagst?",
+    "one_minute_summary": "Die erste Verpflichtung in The 15 Commitments of Conscious Leadership ist volle Verantwortung für die Umstände des eigenen Lebens und das eigene Wohlbefinden. Unter der Linie erzählt eine Führungskraft eine »Mir passiert es«-Geschichte und spielt Opfer, Bösewicht oder Held, jeweils mit zu viel oder zu wenig Verantwortung. Darüber fragt sie nach dem eigenen Anteil und dem nächsten Schritt. Auch Selbstvorwürfe liegen unter der Linie: Volle Verantwortung ist keine Schuld."
+  }
+}

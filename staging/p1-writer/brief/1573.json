@@ -1,0 +1,33 @@
+{
+  "story_id": 1573,
+  "kind": "anecdote",
+  "book": {"title": "Mistakes Were Made (But Not by Me)", "author": "Carol Tavris and Elliot Aronson", "year": "2007"},
+  "confidence": "medium",
+  "confidence_note": "Castor quote and the Criner, Florida and Dedge material come from chapter notes (Chapter 5) cross-checked against case records; the second-lab and vacate beat (f15) and Godschalk's later statement come from the case record, not the book, and are worded as such. The old text's survey of 200+ exonerees and its quoted rationalisations are not in the book and were dropped. The exact county is not named because the chapter notes and the case record disagree.",
+  "facts": [
+    "Chapter 5 'Law and Disorder': district attorney Bruce Castor rejected a DNA result that cleared Bruce Godschalk, who had served fifteen years; police had recorded Godschalk's confession.",
+    "Asked for a scientific basis: 'I have no scientific basis. I know because I trust my detective and my tape-recorded confession.'",
+    "Case record: Castor's office sent the evidence to a second laboratory, which also excluded Godschalk; in February 2002 Castor asked a judge to vacate the convictions.",
+    "Texas: DNA from a young rape-murder victim did not match Roy Criner, the convicted man; prosecutor Michael McDougal said it meant the sperm found in her was not his.",
+    "Florida: after more than 130 DNA exonerations in fifteen years, prosecutors mounted a vigorous challenge to similar new cases; Wilton Dedge had to sue to get his evidence retested; prosecutors cited the state's interest in finality; he was exonerated and released.",
+    "Authors do not read the prosecutors as liars: 'I am good at this work' collides with 'I helped convict an innocent person', and cognitive dissonance plus self-justification explain which gives way."
+  ],
+  "scene_details": ["a tape-recorded confession", "a detective the prosecutor trusted", "a second laboratory", "a retest the prisoner had to sue for"],
+  "tension": "A DNA result cleared a man after fifteen years and the prosecutor answered with a tape and his trust in a detective.",
+  "opening_idea": "Open on the tape against the lab report, or on the Florida count, or the Texas sperm line; each language picks its own.",
+  "lessons": [{"idea": "Decide beforehand what evidence would change your mind.", "anchor": "Castor named no scientific basis, only trust in his detective and the tape.", "everyday_example_idea": "A café owner writes down which result would make her switch suppliers before complaints arrive."}],
+  "reflect": [],
+  "reflect_final": "What evidence would have to turn up before you reversed a decision you are defending right now?",
+  "use_cases": [
+    {"situation": "A team defends a plan before results are in.", "move": "Cite the prosecutor holding to a tape over a DNA result, then write down which result would make the team drop the plan.", "context": "meeting"},
+    {"situation": "A friend shows you something suggesting you were wrong.", "move": "Ask for a day before answering, and say you can feel yourself arguing.", "context": "oneonone"},
+    {"situation": "A decision of yours is questioned.", "move": "Write what you would see if you were wrong, now.", "context": "self"}
+  ],
+  "pocket_idea": "Write down what would change your mind before the result arrives.",
+  "conversation_variants": {
+    "punchline_idea": "DNA cleared a man after fifteen years; the DA trusted his detective and a tape.",
+    "thirty_sec_idea": "Castor, the DNA, the tape, the authors' reading as dissonance rather than lying.",
+    "question_idea": "",
+    "key_contrast_idea": "Tape against DNA"
+  }
+}

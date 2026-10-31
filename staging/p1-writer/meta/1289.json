@@ -1,0 +1,30 @@
+{
+ "story_id": 1289,
+ "verdict": "keep",
+ "verify_note": "Race facts (2005 San Diego 24-hour race, 101 miles in about 19 h, broken foot bones, kidneys, blood; 106 lb in 3 months) from Trail Runner profile and Wikipedia; 40% Rule wording from several summaries. Book text not online; link between this race and the rule not confirmed, kept as separate facts. Old claims (160 km, 'if I were finished I'd be dying' quote, kidney failure) dropped. 40% is Goggins's own estimate; caveat kept in text.",
+ "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+ "tr": {
+  "title": "101 Mil ve Yüzde Kırk Kuralı",
+  "description": "Goggins, neredeyse hazırlıksız girdiği 24 saatlik bir yarışta 101 mil koştu. Kitabındaki yüzde kırk kuralı ise ölçüm değil, kendi deneyiminden çıkardığı bir tahmin.",
+  "hook": "Zor bir işte bırakmak istediğiniz an, gerçekten sınıra mı geldiniz yoksa yalnızca hissi mi okudunuz?",
+  "one_minute_summary": "David Goggins 2005'te San Diego'daki 24 saatlik bir yarışa, Badwater için gereken 100 millik kaydı almak üzere, neredeyse hiç hazırlanmadan girdi. Yaklaşık 19 saatte 101 mil koştu; ayağında birkaç kemik kırıldı, sonra böbrekleri sızladı ve idrarında kan vardı. Kitabında bu tür anları yüzde kırk kuralıyla yorumluyor: zihin bittiğini söylediğinde kapasitenin yaklaşık yüzde kırkındasınız. Bu bir ölçüm değil, onun deneyiminden çıkardığı tahmin. Kalıcı olan fikir, durma isteğinin gerçek sınırdan önce gelebileceği."
+ },
+ "en": {
+  "title": "101 Miles and the 40% Rule",
+  "description": "Goggins ran 101 miles in a 24-hour race he had barely trained for. His 40% Rule is his own estimate, not a measurement.",
+  "hook": "When you want to quit something hard, are you reading your limit or only your mood?",
+  "one_minute_summary": "In 2005 David Goggins entered a 24-hour race in San Diego with almost no preparation, needing a 100-mile result to apply for Badwater. He ran 101 miles in about nineteen hours; several bones in his feet broke, and afterwards his kidneys ached and he passed blood. In Can't Hurt Me he reads such moments through his 40% Rule: when your mind says you are done, you are only about 40 percent done. The figure is his own estimate, not a laboratory result. What holds up is the idea that the urge to stop can come before the real limit."
+ },
+ "es": {
+  "title": "101 millas y la regla del 40 %",
+  "description": "Goggins corrió 101 millas en una carrera de 24 horas casi sin preparación. Su regla del 40 % es una estimación propia, no una medición.",
+  "hook": "Cuando quieres dejar algo difícil, ¿lees tu límite real o solo cómo te sientes?",
+  "one_minute_summary": "En 2005 David Goggins se inscribió en una carrera de 24 horas en San Diego casi sin preparación, porque necesitaba un registro de cien millas para Badwater. Corrió 101 millas en unas 19 horas; se le rompieron varios huesos de los pies y después le dolían los riñones y orinó sangre. En Can't Hurt Me interpreta momentos así con su regla del 40 %: cuando tu mente dice que has terminado, vas por el 40 % de lo que puedes dar. La cifra es estimación suya, no un dato de laboratorio. Lo que se sostiene es que las ganas de parar pueden llegar antes que el límite."
+ },
+ "de": {
+  "title": "101 Meilen und die 40-Prozent-Regel",
+  "description": "Goggins lief 101 Meilen in einem 24-Stunden-Rennen, auf das er kaum vorbereitet war. Seine 40-Prozent-Regel ist eine eigene Schätzung, keine Messung.",
+  "hook": "Wenn du etwas Schweres abbrechen willst, liest du dann deine Grenze oder nur dein Gefühl?",
+  "one_minute_summary": "David Goggins meldete sich 2005 fast ohne Vorbereitung zu einem 24-Stunden-Rennen in San Diego an, weil er einen Hundert-Meilen-Lauf für Badwater brauchte. Er lief 101 Meilen in etwa 19 Stunden; mehrere Fußknochen brachen, danach schmerzten die Nieren und er hatte Blut im Urin. In Can't Hurt Me deutet er solche Momente mit der 40-Prozent-Regel: Wenn der Kopf sagt, du bist fertig, hast du erst etwa 40 Prozent geleistet. Die Zahl ist seine eigene Schätzung, kein Laborwert. Brauchbar bleibt, dass der Wunsch aufzuhören vor der echten Grenze kommen kann."
+ }
+}

@@ -12,7 +12,6 @@ create extension if not exists "uuid-ossp";
 create table if not exists public.profiles (
   id            uuid        primary key references auth.users(id) on delete cascade,
   display_name  text,
-  email         text,
   lang          text        not null default 'tr',
   is_premium    boolean     not null default false,
   device_id     text,
@@ -20,12 +19,8 @@ create table if not exists public.profiles (
   updated_at    timestamptz not null default now()
 );
 
--- email: free-text profile field the user types in the Edit Profile modal
--- (ProfileScreen). Not linked to Supabase Auth's own auth.users.email /
--- linkEmailToDeviceAccount() — this is just "what the user typed for their
--- profile", mirrored the same way display_name already was. Added separately
--- for existing DBs, same pattern as device_id above.
-alter table public.profiles add column if not exists email text;
+-- email column dropped (see migrations/20261029000000_drop_profiles_email.sql).
+alter table public.profiles drop column if exists email;
 
 -- device_id: stable per-install id stamped by ensureDeviceSession() so a
 -- profile can be matched back to its device. Added separately for existing DBs.

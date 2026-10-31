@@ -1,0 +1,35 @@
+{
+  "story_id": 1675,
+  "verdict": "keep",
+  "verify_note": "Not web-verified; smoker refusal contrast, three layers, votes, identity etymology from Atomic Habits (2018), brief as written.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kimlikten başlayan alışkanlık",
+    "description": "James Clear, \"bırakmaya çalışıyorum\" ile \"ben sigara içmiyorum\" cümlesini yan yana koyuyor. İkisi aynı reddi söylüyor ama yalnızca ikincisi reddeden kişiyi değiştirmiş.",
+    "hook": "Hâlâ \"yapmaya çalışıyorum\" diye anlattığınız bir alışkanlık hangisi?",
+    "one_minute_summary": "James Clear, Atomic Habits'te iki cevabı yan yana koyuyor: \"Hayır, bırakmaya çalışıyorum\" ve \"Hayır, ben sigara içmiyorum.\" Davranış aynı, ama cümleler farklı bir kendilik tasarımından geliyor. Clear değişimi sonuç, süreç ve kimlik diye üç katmanda anlatıyor ve kalıcı değişimin içten başladığını savunuyor. Yaptığınız her eylem, olmak istediğiniz kişi için atılmış bir oy. Tek oy belirlemez, çoğunluk gerekir. Önce kim olmak istediğinizi seçin, sonra bunu küçük başarılarla kendinize kanıtlayın."
+  },
+  "en": {
+    "title": "Habits start with identity",
+    "description": "James Clear sets \"I'm trying to quit\" beside \"I'm not a smoker\". Both refuse the cigarette, but only the second has changed who is refusing.",
+    "hook": "Which habit do you still describe as something you are trying to do?",
+    "one_minute_summary": "In Atomic Habits, James Clear puts two answers side by side: \"No thanks, I'm trying to quit\" and \"No thanks, I'm not a smoker.\" Same behavior, different picture of the self. He describes three layers of change, outcomes, processes and identity, and argues that lasting change begins with identity. Each action is a vote for the person you want to become. One vote decides nothing; you need a majority. First decide who you want to be, then prove it to yourself with small wins."
+  },
+  "es": {
+    "title": "Los hábitos nacen de la identidad",
+    "description": "James Clear compara «estoy intentando dejarlo» con «no fumo». Las dos frases rechazan igual, pero solo la segunda ha cambiado a quien rechaza.",
+    "hook": "¿Qué hábito sigues describiendo como algo que estás intentando?",
+    "one_minute_summary": "En Atomic Habits, James Clear coloca dos respuestas lado a lado: «No, gracias, estoy intentando dejarlo» y «No, gracias, no fumo». La conducta es la misma, pero cada frase nace de una imagen distinta de uno mismo. Describe tres capas de cambio, resultados, procesos e identidad, y sostiene que el cambio duradero parte de la identidad. Cada acción es un voto por la persona que quieres ser. Un voto no decide, hace falta mayoría. Primero decide quién quieres ser y luego demuéstratelo con victorias pequeñas."
+  },
+  "de": {
+    "title": "Gewohnheit beginnt bei der Identität",
+    "description": "James Clear stellt »Ich versuche aufzuhören« neben »Ich bin Nichtraucherin«. Beide lehnen ab, aber nur der zweite Satz kommt von einem anderen Selbstbild.",
+    "hook": "Welche Gewohnheit beschreibst du noch als etwas, das du versuchst?",
+    "one_minute_summary": "In Atomic Habits setzt James Clear zwei Antworten nebeneinander: »Nein danke, ich versuche aufzuhören« und »Nein danke, ich bin Nichtraucherin«. Das Verhalten ist gleich, aber jeder Satz kommt aus einem anderen Selbstbild. Clear beschreibt drei Ebenen der Veränderung, Ergebnisse, Prozesse und Identität, und meint, dass dauerhafte Veränderung innen beginnt. Jede Handlung ist eine Stimme für die Person, die du werden willst. Eine Stimme entscheidet nichts, gebraucht wird eine Mehrheit. Entscheide erst, wer du sein willst, und beweise es dir mit kleinen Erfolgen."
+  }
+}

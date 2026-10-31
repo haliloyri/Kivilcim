@@ -1,0 +1,35 @@
+{
+ "story_id": 1263,
+ "verdict": "keep",
+ "verify_note": "Verified against book text (To Be or To Do). The old \"what am I doing / what do I want to be\" framing is not in the book; replaced by Boyd's fork speech.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Boyd'un Çatal Yol Konuşması",
+  "description": "John Boyd genç bir subaya iki yol gösterdi: biri olmak ya da bir şey yapmak. Kendisi ikincisini seçti ve albaylıktan yukarı çıkamadı.",
+  "hook": "Peşinden koştuğunuz unvan kalksa hangi işe devam ederdiniz?",
+  "one_minute_summary": "Ryan Holiday, 1973'te John Boyd'un genç bir subaya yaptığı konuşmayı anlatıyor: bir yol ayrımında biri olmak terfi ve iyi görevler getirir ama taviz ister, bir şey yapmak terfi getirmeyebilir ama kendinden ödün vermemeyi sağlar. Boyd albaylıktan yukarı çıkmadı, F-15 ve F-16 onun gözde projeleriydi. Tahtaya görev, onur, vatan yazıp yerine gurur, iktidar, açgözlülük koyardı. Holiday'e göre ego bu seçimi bulanıklaştırır."
+ },
+ "en": {
+  "title": "Boyd's Fork in the Road",
+  "description": "John Boyd told a young officer he would have to choose between being somebody and doing something. Boyd chose the second and never rose above colonel.",
+  "hook": "Which work would you keep doing if the title you chase vanished?",
+  "one_minute_summary": "Ryan Holiday recounts the speech John Boyd gave a protege in 1973: one road leads to being somebody, with promotions and compromises, the other to doing something, without them but with integrity. Boyd never rose above colonel, though the F-15 and F-16 were his pet projects. He also wrote DUTY, HONOR, COUNTRY on a chalkboard and replaced it with PRIDE, POWER, GREED. For Holiday, ego blurs this choice, and purpose answers it."
+ },
+ "es": {
+  "title": "La bifurcación de Boyd",
+  "description": "John Boyd dijo a un joven oficial que tendría que elegir entre ser alguien y hacer algo. Él eligió lo segundo y nunca pasó de coronel.",
+  "hook": "¿Qué trabajo seguirías haciendo si desapareciera el cargo que persigues?",
+  "one_minute_summary": "Ryan Holiday cuenta el discurso que John Boyd dio en 1973 a un joven protegido: un camino lleva a ser alguien, con ascensos y concesiones, y otro a hacer algo, sin ascensos pero con integridad. Boyd nunca pasó de coronel, aunque los cazas F-15 y F-16 fueron proyectos suyos. En la pizarra tachaba deber, honor, patria y escribía orgullo, poder, codicia. Para Holiday, el ego difumina esta elección y el propósito la resuelve."
+ },
+ "de": {
+  "title": "Boyds Weggabelung",
+  "description": "John Boyd sagte einem jungen Offizier, er müsse zwischen Jemand-Sein und Etwas-Tun wählen. Er wählte das zweite und wurde nie mehr als Oberst.",
+  "hook": "Welche Arbeit würdest du weitermachen, wenn der Titel, den du anstrebst, wegfiele?",
+  "one_minute_summary": "Ryan Holiday erzählt die Rede, die John Boyd 1973 einem Schützling hielt: Ein Weg führt dazu, jemand zu sein, mit Beförderungen und Kompromissen, der andere dazu, etwas zu tun, ohne sie, aber mit Integrität. Boyd wurde nie mehr als Oberst, obwohl F-15 und F-16 seine Herzensprojekte waren. An der Tafel ersetzte er Pflicht, Ehre, Vaterland durch Stolz, Macht, Gier. Für Holiday verwischt das Ego diese Wahl, Zweck beantwortet sie."
+ }
+}

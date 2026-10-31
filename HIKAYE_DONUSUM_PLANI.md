@@ -48,7 +48,7 @@ Parser `StoryDetailScreen.js` içinde satır içi yazılmış (~satır 2427). Ay
 | # | Karar | Öneri |
 |---|---|---|
 | K1 | "Local" kaynak ne olsun? | **Paketlenmiş SQLite (`assets/albor.db`)** tek kaynak olsun. Supabase'den hikâye çekme bir bayrakla kapatılsın (`EXPO_PUBLIC_STORIES_SOURCE=local`, varsayılan). AsyncStorage önbelleği temizlensin, yoksa eski Supabase metni ilk açılışta görünmeye devam eder. |
-| K2 | Diller nasıl üretilsin? | **Çeviri yok.** Her hikâye için önce dilden bağımsız bir **içerik özeti** çıkarılır (kitaptaki olaylar, isim/tarih/sayılar, 2–3 dersin fikri, kullanım durumları, cebe konacak cümlenin fikri). Olaylar bu özet üzerinde bir kez kontrol edilir. Sonra TR, EN, ES ve DE metinleri **bu özetten, her biri kendi dilinde sıfırdan** yazılır. Hiçbir dil başka bir dilin metnini görmez. Böylece olaylar dört dilde aynı kalır, ama metin çeviri gibi durmaz. |
+| K2 | Diller nasıl üretilsin? | **Çeviri yok.** Her hikâye için önce dilden bağımsız bir **içerik özeti** çıkarılır (kitaptaki olaylar, isim/tarih/sayılar, tek dersin fikri, kullanım durumları, cebe konacak cümlenin fikri). Olaylar bu özet üzerinde bir kez kontrol edilir. Sonra TR, EN, ES ve DE metinleri **bu özetten, her biri kendi dilinde sıfırdan** yazılır. Hiçbir dil başka bir dilin metnini görmez. Böylece olaylar dört dilde aynı kalır, ama metin çeviri gibi durmaz. |
 | K2a | Dil sırası (2026-09-23 kararı) | **İlk pazar global, ilk dil İngilizce.** 1. aşamada sadece içerik özeti + EN metin yazılır (750 hikâye, Batch API ile ~90 $). TR, ES ve DE daha sonra aynı özetlerden yazılır; özetler bir kez hazırlandığı için tekrar maliyeti olmaz. Pilot da EN yapılır. |
 | K2b | Hitap | TR: "siz" · EN: "you" · ES: "tú", bölgesel kalıplardan kaçınan tarafsız İspanyolca · DE: "du" (Almanca uygulama ve podcast dilinde yaygın) |
 | K3 | Kitaba sadakat | Kitaplar elimizde değil; metin modelin kitap bilgisine dayanıyor. Her hikâyeye **güven seviyesi** (yüksek/orta/düşük) verilsin. "Düşük" olanlar otomatik yayına girmesin, inceleme listesine düşsün. **Kitapta olmayan detay uydurulmaz.** |
@@ -98,6 +98,12 @@ ve gerekçe: `SOHBETTE_KULLAN_ENTEGRASYON_PLANI.md` §A.
 | `*metin*` | İtalik (kitap adı, iç ses, vurgulu kısa ifade). iOS için gerçek italik fontlar (Inter *_Italic) App.js'te yükleniyor. |
 
 ### 3.4 Örnek (kısaltılmış)
+
+> **Format 2026-10-28'de değişti:** okuma sayfası **1 ders + 1 soru** gösterir.
+> Uzunluk sayılarının tek kaynağı `scripts/p1/lang-config.mjs`; aşağıdaki tablo
+> oradan gelir. Bu dosya ile `batch/prompts/story-instructions.md` çelişirse
+> **story-instructions kazanır**.
+
 ```
 [[open]]
 Bugün size bu hafta sinir olduğunuz birini düşündürerek başlayacağım…
@@ -108,14 +114,9 @@ Bir pazar sabahı New York'ta metrodadır. Vagon sakin…
 ##Çocuklar hâlâ bağırıyordu; değişen sadece Covey'in baktığı yerdi.##
 
 [[lessons]]
-$$**Gördüğümüz davranış değil, taktığımız gözlük.** Covey aynı çocuklara bakıyordu…$$
-$$**Vagondaki herkes aynı hikâyeyi yazmıştı, kimse sormamıştı.** …$$
-$$**Bu, "kimseye bir şey söyleme" hikâyesi değil.** …$$
+$$**Bir davranışı yargılamadan önce hikâyeyi sorun.** Covey aynı çocuklara bakıyordu…$$
 
 [[reflect]]
-Başta düşündüğünüz o kişiye geri dönün.
-- Onun hakkında kafanızda hangi hikâyeyi yazdınız?
-- O hikâyenin ne kadarını gerçekten biliyorsunuz?
 &&Siz hiç o vagondaki baba oldunuz mu?&&
 
 [[use]]
@@ -128,30 +129,35 @@ Başta düşündüğünüz o kişiye geri dönün.
 ```
 
 Aynı yazım isteminde, `.md` dosyasıyla birlikte küçük bir `.variants.json` da
-üretilir — "Sohbette kullan" ekranındaki 4 formatın (Tek cümle / 30 saniye /
-Soru / Karşıtlık) metni. Aynı özetten geldiği için olaylar tutarlı kalır, ama
-`[[pocket]]`/`[[reflect]]` cümleleriyle birebir aynı olmaması istenir:
+üretilir — "Sohbette kullan" ekranındaki 3 formatın (Tek cümle / 30 saniye /
+Karşıtlık) metni. `question` anahtarı JSON'da durur ama boş string olur
+(2026-10-28 kararı: uygulamada gösterilmiyor). Aynı özetten geldiği için olaylar
+tutarlı kalır, ama `[[pocket]]`/`[[reflect]]` cümleleriyle birebir aynı olmaması
+istenir:
 
 ```json
 {
   "punchline": "Bir cümle, tek başına — hikâyenin en keskin çıkarımı.",
   "thirty_sec": "Hikâyenin 30 saniyelik, kendi başına anlaşılan özeti.",
-  "question": "Sohbeti açacak tek soru.",
+  "question": "",
   "key_contrast": "İki-üç kelimelik önce/sonra etiketi."
 }
 ```
 
 ### 3.5 Bölüm uzunlukları (TR)
+
 | Bölüm | Kelime |
 |---|---|
-| open | 40–70 |
-| story | 350–500 |
-| lessons | 2–3 ders, toplam 150–220 |
-| reflect | 3–4 madde + 1 `&&` soru, 70–120 |
-| use | 3–4 senaryo, 100–160 |
+| open | 32–64 |
+| story | 270–415 |
+| lessons | 1 ders, 70–100 |
+| reflect | 1 `&&` soru, 15–30 |
+| use | 3 kart, 56–120 |
 | pocket | 1 cümle, ≤ 20 kelime |
 
-Yasak: hikâyeye atıf yapmayan jenerik cümleler ("mekanik bir reçete değildir", "tek vaka kanıt değildir" vb.; tam liste doğrulayıcıda), aynı paragrafın tekrarı, kitapta olmayan isim/tarih/sayı.
+Toplam 480–800 kelime; hikâye toplamın en az %55'i olmalı.
+
+Yasak: hikâyeye atıf yapmayan jenerik cümleler ("mekanik bir reçete değildir", "tek vaka kanıt değildir" vb.; tam liste doğrulayıcıda), aynı paragrafın tekrarı, kitapta olmayan isim/tarih/sayı, [[story]] içinde örnek/örnekleme tartışması ("bir örnekle görelim", "bu örnek kitapta geçmez").
 
 ---
 

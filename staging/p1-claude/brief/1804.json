@@ -1,0 +1,54 @@
+{
+  "story_id": 1804,
+  "kind": "anecdote",
+  "book": {
+    "title": "Grinding It Out",
+    "author": "Ray Kroc",
+    "year": "1977"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kroc's own memoir, Grinding It Out (1977), is the source. The Multimixer order, the San Bernardino visit and the McDonald brothers' speed and simplicity are told there. Exact figures for the order beyond 'eight mixers' and Kroc's exact age are left out as unverified; the supplied 'in his fifties' line is replaced by 'past fifty'. The supplied wording about a 'new operating language' is the text's interpretation and is not used.",
+  "facts": [
+    "Ray Kroc sold Multimixer milkshake machines to restaurants, travelling for his sales.",
+    "He was past fifty and still working the road.",
+    "A small drive-in in San Bernardino, California, ordered eight Multimixers, which meant it could make many shakes at once.",
+    "Most salesmen would have taken the order and moved on.",
+    "Kroc wondered why a single restaurant needed so many mixers and went to San Bernardino to look.",
+    "The restaurant was run by the McDonald brothers; Kroc saw crowds served at speed from a simple menu.",
+    "What he saw led him to see a chance for more restaurants like it across the country."
+  ],
+  "tension": "An order that could have been an invoice became the start of a different business because he asked why.",
+  "opening_idea": "Open on the number eight: a small restaurant orders eight mixers and the salesman wants to know why.",
+  "lessons": [
+    {
+      "idea": "A small anomaly deserves a question before it gets filed away.",
+      "anchor": "The order for eight mixers and Kroc's decision to visit."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which small oddity did you recently file away as normal, and what would you ask about it?",
+  "use_cases": [
+    {
+      "situation": "A customer's order or request looks unusual.",
+      "move": "Ask what is behind it before closing the ticket.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague mentions something that does not fit the pattern.",
+      "move": "Ask them to tell you more about it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Something in your routine keeps repeating.",
+      "move": "Write it down and ask why it keeps happening.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Kroc asked why one restaurant needed eight mixers; ask the question about the small oddity first.",
+  "conversation_variants": {
+    "punchline_idea": "A salesman asked why a small restaurant ordered eight milkshake mixers, and visited to find out.",
+    "thirty_sec_idea": "Ray Kroc sold milkshake mixers. A small restaurant in San Bernardino ordered eight, and instead of just filling the order he wondered why it needed so many. He went to look, saw the McDonald brothers serving crowds fast from a simple menu, and saw a chance for more restaurants like it.",
+    "question_idea": "",
+    "key_contrast_idea": "Sipariş ve merak"
+  }
+}

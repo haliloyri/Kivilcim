@@ -1,0 +1,416 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 7
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 7,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 7.743,
+        "selector": "#s1-d1",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 90,
+          "top": 380,
+          "right": 393,
+          "bottom": 548,
+          "width": 303,
+          "height": 168
+        },
+        "containerSelector": "#s2-b",
+        "text": "Oku,",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s1.html",
+        "bbox": {
+          "x": 90,
+          "y": 380,
+          "width": 303,
+          "height": 168
+        },
+        "firstSeen": 7.743,
+        "lastSeen": 7.743,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.743
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 11.399,
+        "selector": "#s2-eb",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 80,
+          "top": 180,
+          "right": 246.22,
+          "bottom": 221,
+          "width": 166.22,
+          "height": 41
+        },
+        "containerSelector": "#s3-eb",
+        "text": "ÖRNEK",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {
+          "data-hf-id": "hf-bm0y"
+        },
+        "sourceFile": "compositions/s2.html",
+        "bbox": {
+          "x": 80,
+          "y": 180,
+          "width": 166.22,
+          "height": 41
+        },
+        "firstSeen": 11.399,
+        "lastSeen": 11.399,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          11.399
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 11.399,
+        "selector": "#s2-a",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 80,
+          "top": 244,
+          "right": 734.47,
+          "bottom": 383.59,
+          "width": 654.47,
+          "height": 139.59
+        },
+        "containerSelector": "#s3-a",
+        "text": "kitaptan bir",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {
+          "data-hf-id": "hf-9ws2"
+        },
+        "sourceFile": "compositions/s2.html",
+        "bbox": {
+          "x": 80,
+          "y": 244,
+          "width": 654.47,
+          "height": 139.59
+        },
+        "firstSeen": 11.399,
+        "lastSeen": 11.399,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          11.399
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 16.346,
+        "selector": "#s3-eb",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 80,
+          "top": 180,
+          "right": 446.31,
+          "bottom": 221,
+          "width": 366.31,
+          "height": 41
+        },
+        "containerSelector": "#s4-eb",
+        "text": "KİTABIN DERSİ",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {
+          "data-hf-id": "hf-5iwk"
+        },
+        "sourceFile": "compositions/s3.html",
+        "bbox": {
+          "x": 80,
+          "y": 180,
+          "width": 366.31,
+          "height": 41
+        },
+        "firstSeen": 16.346,
+        "lastSeen": 16.346,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          16.346
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 16.346,
+        "selector": "#s3-a",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 80,
+          "top": 244,
+          "right": 410.39,
+          "bottom": 411.5,
+          "width": 330.39,
+          "height": 167.5
+        },
+        "containerSelector": "#s4-a",
+        "text": "Ders",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {
+          "data-hf-id": "hf-wma0"
+        },
+        "sourceFile": "compositions/s3.html",
+        "bbox": {
+          "x": 80,
+          "y": 244,
+          "width": 330.39,
+          "height": 167.5
+        },
+        "firstSeen": 16.346,
+        "lastSeen": 16.346,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          16.346
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 23.874,
+        "selector": "#s4-eb",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 80,
+          "top": 180,
+          "right": 414.36,
+          "bottom": 221,
+          "width": 334.36,
+          "height": 41
+        },
+        "containerSelector": "#s5-eb",
+        "text": "KENDİNE SOR",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {
+          "data-hf-id": "hf-tyt1"
+        },
+        "sourceFile": "compositions/s4.html",
+        "bbox": {
+          "x": 80,
+          "y": 180,
+          "width": 334.36,
+          "height": 41
+        },
+        "firstSeen": 23.874,
+        "lastSeen": 23.874,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.874
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 23.874,
+        "selector": "#s4-a",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 80,
+          "top": 244,
+          "right": 413.13,
+          "bottom": 411.5,
+          "width": 333.13,
+          "height": 167.5
+        },
+        "containerSelector": "#s5-a",
+        "text": "Soru",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {
+          "data-hf-id": "hf-iz50"
+        },
+        "sourceFile": "compositions/s4.html",
+        "bbox": {
+          "x": 80,
+          "y": 244,
+          "width": 333.13,
+          "height": 167.5
+        },
+        "firstSeen": 23.874,
+        "lastSeen": 23.874,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.874
+        ]
+      }
+    ],
+    "duration": 38.5,
+    "samples": [
+      2.139,
+      6.417,
+      10.694,
+      14.972,
+      19.25,
+      23.528,
+      27.806,
+      32.083,
+      36.361
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 7,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      2.139,
+      10.694,
+      19.25,
+      27.806,
+      36.361
+    ],
+    "checked": 27,
+    "passed": 27
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 4,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ARAŞTIRMA · PSİKOLOJİ Şimdiki Bir mi, Sonraki İki mi? Wal...\" (22 words) is on screen 2.91 s (±0.01 s), under its 5.32 s floor: hold it about 0.5 s + 0.3 s a word (7.10 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ARAŞTIRMA · PSİKOLOJİ Şimdiki Bir mi, Sonraki İki mi? Walter Mischel · The Marshmallow Test Stanford'da anaokulu çocuklarıyla bekleme deneyi 6 dk okuma · dinlenebilir",
+        "selector": "#s2-card",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s2.html",
+        "bbox": {
+          "x": 162,
+          "y": 719.76,
+          "width": 434.73,
+          "height": 36
+        },
+        "time": 8.5,
+        "words": 22,
+        "seconds": 2.906,
+        "floorSeconds": 5.325
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"Bekleyen çocuklar sırtını döndü, şarkı söyledi, gözünü ka...\" (8 words) is on screen 1.77 s (±0.01 s), under its 2.17 s floor: hold it about 0.5 s + 0.3 s a word (2.90 s here) before it leaves or changes; see references/motion.md.",
+        "text": "Bekleyen çocuklar sırtını döndü, şarkı söyledi, gözünü kapadı.",
+        "selector": "#s3-pocket",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s3.html",
+        "bbox": {
+          "x": 174,
+          "y": 989.42,
+          "width": 703.97,
+          "height": 107.00000000000011
+        },
+        "time": 14.641,
+        "words": 8,
+        "seconds": 1.766,
+        "floorSeconds": 2.175
+      },
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 5.00 s (17.25–22.25 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 17.25,
+        "seconds": 5,
+        "floorSeconds": 3,
+        "until": 22.25
+      },
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 5.25 s (26.25–31.50 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 26.25,
+        "seconds": 5.25,
+        "floorSeconds": 3,
+        "until": 31.5
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 308
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

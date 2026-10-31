@@ -1,0 +1,30 @@
+{
+  "story_id": 1575,
+  "verdict": "keep",
+  "verify_note": "Pyramid told as Tavris describes it in an interview (two students); removed the invented months-later epilogue and quoted rationalisations. Added Magruder, DeLay and Mills (1958). Exact printed scenario unconfirmed (other summaries use a wallet), so medium confidence.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Piramidin tepesinde iki öğrenci",
+    "description": "Kopyaya aynı gözle bakan iki öğrenci aynı cazibeyle karşılaşıyor. Sonradan kurdukları gerekçeler onları birbirinden uzaklaştırıyor.",
+    "hook": "Son kestirmenizden hemen sonra kendinize ne dediniz?",
+    "one_minute_summary": "Tavris ve Aronson, bir piramit imgesi kullanıyor. Tavris'in anlatımında iki öğrenci kopyaya aynı ılımlı gözle bakıyor, önemli bir sınavda takılıyor, yan sıradakinin cevapları görünüyor. Biri kopya çekiyor, öbürü çekmiyor ve her biri kendine bir gerekçe kuruyor. Zamanla inançları birbirinden çok uzaklaşıyor. Aynı mekanizma Watergate'ten Jeb Magruder'in ve Tom DeLay'in örneklerinde de var: her adım açıklanıyor ve açıklama bir sonrakini kolaylaştırıyor. Bu yüzden küçük bir seçimden sonra verdiğiniz gerekçeye bakmak değerli."
+  },
+  "en": {
+    "title": "Two students at the top",
+    "description": "Two students who think the same way about cheating face one temptation. The reasons they give afterward pull them apart.",
+    "hook": "What did you tell yourself right after your last shortcut?",
+    "one_minute_summary": "Tavris and Aronson use a pyramid image. In Tavris's telling, two students hold the same mild view of cheating, freeze on an essay question in a test that matters, and a neighbor's answers are in view. One copies, one looks away, and each builds a reason. Over time their beliefs drift far apart. The same mechanism shows in Jeb Magruder's Watergate path and in Tom DeLay's trip: each step is explained and the explanation makes the next one easier. So the reason you give yourself after a small choice is worth checking."
+  },
+  "es": {
+    "title": "Dos estudiantes en la cima",
+    "description": "Dos estudiantes que piensan igual sobre copiar afrontan la misma tentación. Las razones que dan después los separan.",
+    "hook": "¿Qué te dijiste justo después de tu último atajo?",
+    "one_minute_summary": "Tavris y Aronson usan la imagen de una pirámide. En el relato de Tavris, dos estudiantes tienen la misma opinión suave sobre copiar, se bloquean ante una pregunta de ensayo en un examen importante y las respuestas del vecino quedan a la vista. Uno copia, otro mira a otro lado, y cada uno se construye una razón. Con el tiempo sus creencias se separan mucho. El mismo mecanismo aparece en el caso de Jeb Magruder en Watergate y en el viaje de Tom DeLay: cada paso se explica y la explicación facilita el siguiente. Conviene revisar la razón que te das tras una elección pequeña."
+  },
+  "de": {
+    "title": "Zwei Studenten an der Spitze",
+    "description": "Zwei Studenten, die gleich über Mogeln denken, geraten in dieselbe Versuchung. Die Gründe, die sie sich danach geben, trennen sie.",
+    "hook": "Was hast du dir direkt nach deiner letzten Abkürzung gesagt?",
+    "one_minute_summary": "Tavris und Aronson arbeiten mit dem Bild einer Pyramide. In Tavris' Darstellung denken zwei Studenten gleich mild über Mogeln, bleiben in einer wichtigen Prüfung bei einer Essayfrage hängen, und die Antworten des Nachbarn liegen offen da. Einer schreibt ab, einer blickt weg, und jeder baut sich einen Grund. Mit der Zeit gehen ihre Überzeugungen weit auseinander. Derselbe Mechanismus zeigt sich bei Jeb Magruders Weg durch Watergate und bei Tom DeLays Reise: Jeder Schritt wird erklärt, und die Erklärung erleichtert den nächsten. Darum lohnt der Blick auf den Grund, den du dir nach einer kleinen Entscheidung gibst."
+  }
+}

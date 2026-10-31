@@ -1,0 +1,66 @@
+{
+ "story_id": 1741,
+ "kind": "anecdote",
+ "book": {
+  "title": "Stillness Is the Key",
+  "author": "Ryan Holiday",
+  "year": "2019"
+ },
+ "confidence": "medium",
+ "confidence_note": "Scene: President Kennedy during the Cuban Missile Crisis, which Holiday uses as his example of stillness of mind. Sources: Art of Manliness podcast 565 with Holiday (artofmanliness.com/character/behavior/podcast-565-stillness-is-the-key/): slowing down over the 13 days, thinking past the first move, legal-pad doodles; Michael W. Sherwood's Substack review (michaelwsherwood.substack.com/p/book-review-summary-stillness-is): thirteen days, advisers urging aggression, The Guns of August, sailboat and key-word doodles; a SuperSummary plot summary and a Shepherd preview list the Kennedy crisis in the book's first part. Not page-checked. Used with attribution to Holiday talking about the book (podcast, not page-checked in the book): the generals' warning, the 'quarantine' wording, the time-as-a-tool line, the note on Kennedy's private conduct. Not used: the knot-in-a-rope letter (one review), the claim that Kennedy's calm was complete in his private life (Holiday says it was not), exact dates, casualty estimates, names of advisers, anything about the Bay of Pigs beyond that it had gone badly earlier. Doodle contents beyond 'sailboats and key words' are not used.",
+ "facts": [
+  "In October 1962 Kennedy learned the Soviet Union had put missiles in Cuba that could reach much of the US East Coast; the crisis ran thirteen days.",
+  "Holiday presents Kennedy's handling as stillness of mind under the highest stakes.",
+  "His advisers told him aggression should be met with aggression and pressed for a military response.",
+  "Kennedy had read The Guns of August, about leaders who rushed into a war they could not undo.",
+  "He wanted his advisers to slow down and think past the first move to what the other side would do next.",
+  "While he thought, he doodled on a notepad: sailboats and key words.",
+  "He did not escalate; he demanded the missiles be withdrawn and chose a naval blockade, which gave Khrushchev time to reconsider.",
+  "Khrushchev backed down and withdrew the missiles.",
+  "Kennedy warned his generals that the bombing they proposed could have catastrophic consequences (Holiday, Art of Manliness podcast).",
+  "He thought about how the Soviet leaders would take each step; he called the naval blockade a 'quarantine' because 'blockade' sounded too aggressive (Holiday, same podcast).",
+  "Holiday quotes Kennedy: \"You want to use time as a tool, not as a couch.\" (same podcast; a widely documented Kennedy line).",
+  "Holiday says Kennedy's handling of the crisis was strong, while his personal conduct during those same days, including an affair, shows he was not still in every area of his life (same podcast)."
+ ],
+ "scene_details": [
+  "a notepad with sailboats and key words",
+  "advisers urging a military response",
+  "a book about a war nobody could stop, read earlier",
+  "a general's bombing plan Kennedy warned against",
+  "a blockade renamed a quarantine"
+ ],
+ "tension": "Everyone in the room wanted to act fast, and the man who could give the order spent the time doodling.",
+ "opening_idea": "Open on the notepad: sailboats and key words, drawn while advisers argued for force.",
+ "lessons": [
+  {
+   "idea": "When pressure pushes you toward the first available move, slowing down long enough to ask what the other side will do next is itself a decision.",
+   "anchor": "Kennedy asking his advisers to think past the first move"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "In your next tense exchange, what could you do for ten slow seconds, like doodling, so that the first reply is not the one you regret?",
+ "use_cases": [
+  {
+   "situation": "In a meeting someone proposes an immediate, forceful reply to a client's complaint.",
+   "move": "Ask the room what the client will do after our reply, then the step after that.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A family argument is escalating and you feel the sharp answer arriving.",
+   "move": "Take your hands to something small, a pen or a napkin, and answer after one slow breath.",
+   "context": "family"
+  },
+  {
+   "situation": "You received an angry message and want to hit send on your answer.",
+   "move": "Write the key words of what you actually want from the exchange first.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "While advisers pushed for force, Kennedy doodled sailboats and key words; before your first reply, ask what comes after it.",
+ "conversation_variants": {
+  "punchline_idea": "During the thirteen days of the Cuban Missile Crisis, Kennedy filled a notepad with sailboats and key words while his advisers argued for force.",
+  "thirty_sec_idea": "In 1962 Kennedy's advisers wanted a military answer to the missiles in Cuba. He had read The Guns of August, about leaders who stumbled into a war, and he kept asking what the Soviets would do after each move. He doodled sailboats and key words, chose a blockade and not an attack, and Khrushchev withdrew. Ryan Holiday uses it as his picture of stillness under pressure.",
+  "question_idea": "",
+  "key_contrast_idea": "slow before the first move"
+ }
+}

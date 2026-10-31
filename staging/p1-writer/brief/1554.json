@@ -1,0 +1,60 @@
+{
+  "story_id": 1554,
+  "kind": "concept",
+  "book": {
+    "title": "The Five Dysfunctions of a Team",
+    "author": "Patrick Lencioni",
+    "year": "2002"
+  },
+  "confidence": "medium",
+  "confidence_note": "From memory of the model section; book text not accessed. Inattention to results defined as putting ego, career development or recognition ahead of collective results; remedies public declaration of results and results-based rewards; rowing image recalled from the introduction, paraphrased. No fable scene included. Old TR text's sales director and budget examples are not from the book and were dropped.",
+  "facts": [
+    "The fifth dysfunction is inattention to results.",
+    "Members put ego, career development or recognition ahead of collective results.",
+    "Results means the team's results, not individuals' sum.",
+    "It tops the pyramid because the other four feed it.",
+    "Remedy: public declaration of results.",
+    "Remedy: results-based rewards tied to team results.",
+    "Healthy teams keep achievement-minded people and feel shared wins and failures.",
+    "Image: all people in an organization rowing in the same direction."
+  ],
+  "scene_details": [
+    "results written where everyone can see them",
+    "rewards tied to team results",
+    "a boat rowing in one direction"
+  ],
+  "tension": "People who work hard and still miss the team's goal.",
+  "opening_idea": "Personal targets all met, team goal stalled.",
+  "lessons": [
+    {
+      "idea": "Measures decide what people protect.",
+      "anchor": "Rowing."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where does the way your work is measured pull you toward your own numbers and away from what your team is trying to achieve?",
+  "use_cases": [
+    {
+      "situation": "Budget review of separate lines",
+      "move": "Agree on one team result.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Manager asks about goals",
+      "move": "Offer help where the team is behind.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Chore chart",
+      "move": "Decide on a shared outcome.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Post the team's result where everyone sees it.",
+  "conversation_variants": {
+    "punchline_idea": "A team can hit every personal target and miss its shared result.",
+    "thirty_sec_idea": "Fifth dysfunction, two fixes.",
+    "question_idea": "",
+    "key_contrast_idea": "My numbers, our result"
+  }
+}

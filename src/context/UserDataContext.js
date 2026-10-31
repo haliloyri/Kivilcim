@@ -80,14 +80,14 @@ const PREMIUM_BONUS_STORAGE_KEY = '@albor_premium_bonus_until';
 // date-keyed record the "3 free stories" limit is not a limit at all — reading
 // them just moves them out of the candidate pool and three more become free.
 const FREE_READS_STORAGE_KEY = '@albor_free_reads';
-const STORY_COLLECTION_IDS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55', 'son55'];
+const STORY_COLLECTION_IDS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55', 'opus55_2', 'son55'];
 const DEFAULT_STORY_COLLECTIONS = ['new', 'son55'];
 const EMPTY_PREFERENCES = {
   categories: [], time: null, reminderWindow: 'evening', reminderHour: 21,
   reminderWindows: ['evening'], storyVersion: 2, storyCollections: DEFAULT_STORY_COLLECTIONS,
   remindersEnabled: true,
 };
-const EMPTY_USER_PROFILE = { displayName: null, email: null };
+const EMPTY_USER_PROFILE = { displayName: null };
 const EMPTY_FAVORITE_COLLECTIONS = { saved_for_later: [] };
 
 const normalizeCategoryIds = (categories) => {
@@ -215,13 +215,9 @@ const normalizeUserProfile = (storedProfile) => {
   const displayName = typeof storedProfile.displayName === 'string' && storedProfile.displayName.trim()
     ? storedProfile.displayName.trim()
     : null;
-  const email = typeof storedProfile.email === 'string' && storedProfile.email.trim()
-    ? storedProfile.email.trim()
-    : null;
 
   return {
     displayName,
-    email,
   };
 };
 
@@ -1221,19 +1217,12 @@ export const UserDataProvider = ({ children }) => {
         displayName: Object.prototype.hasOwnProperty.call(partialProfile, 'displayName')
           ? partialProfile.displayName
           : userProfile.displayName,
-        email: Object.prototype.hasOwnProperty.call(partialProfile, 'email')
-          ? partialProfile.email
-          : userProfile.email,
       };
 
       const nextProfile = normalizeUserProfile(candidate);
       setUserProfile(nextProfile);
       await AsyncStorage.setItem(USER_PROFILE_STORAGE_KEY, JSON.stringify(nextProfile));
-      // Mirror both name and email to profiles.email/display_name (free-text
-      // fields from the Edit Profile modal — see schema.sql comment on
-      // profiles.email for why this is separate from Supabase Auth's own
-      // auth.users.email / linkEmailToDeviceAccount()).
-      enqueueAndSync('upsert_profile', { patch: { display_name: nextProfile.displayName, email: nextProfile.email } });
+      enqueueAndSync('upsert_profile', { patch: { display_name: nextProfile.displayName } });
     } catch (error) {
       console.error('Profil bilgisi güncelleme hatası:', error);
     }

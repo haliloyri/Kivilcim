@@ -1,0 +1,35 @@
+{
+  "story_id": 1452,
+  "verdict": "keep",
+  "verify_note": "Not verified in this pass. Title changed: old title/description described the old text and no longer fit the new story.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "İnandığınız Gibi Olsun",
+    "description": "Murphy, Matta İncili'ndeki bir cümleyi kitabın temel kuralı sayıyor: inanç, kabul edilmiş bir düşüncedir. Bu yüzden 'yapamam' cümlesi bir yöneliş belirliyor.",
+    "hook": "Kendinize 'yapamam' dediğinizde, o cümle size hangi denemeyi yaptırmıyor?",
+    "one_minute_summary": "Joseph Murphy kitabın temel kuralı olarak Matta İncili'ndeki \"İnandığınız gibi olsun\" cümlesini alıyor. Ona göre inanç, doğru diye kabul edilmiş bir düşünce ve değiştirilebilir. \"Yapamam\" demek, sonucu baştan ekmeye benziyor. Örnek olarak, oğlunun şifalı haç diye verdiği tahta parçasıyla bir gecede iyileştiğini söylediği verem hastası akrabasını anlatıyor. Bu Murphy'nin kendi anlatısı, tıbbi bir kanıtla desteklenmiyor. Hikâye, inancın davranışı yönlendirdiğini göstermek için anlatılıyor."
+  },
+  "en": {
+    "title": "The Law of Belief",
+    "description": "Murphy builds the book on a line from Matthew: be it done unto you as you believe. A belief, he says, is a thought you have accepted, so it can be replaced.",
+    "hook": "When you say \"I can't\", which small attempt does that sentence stop you from making?",
+    "one_minute_summary": "Joseph Murphy returns throughout the book to a line from Matthew: be it done unto you as you believe. He calls it the law of belief. A belief is a thought accepted as true, and a thought can be replaced. Saying \"I can't\" is like planting the result before you start. He tells of a relative with tuberculosis who, he says, recovered overnight after receiving a piece of wood called a healing cross. It is Murphy's own account, with no medical evidence in the book."
+  },
+  "es": {
+    "title": "La ley de la creencia",
+    "description": "Murphy apoya el libro en una frase de Mateo: que te sea hecho según lo que crees. Una creencia, dice, es un pensamiento dado por cierto y se puede cambiar.",
+    "hook": "Cuando dices «no puedo», ¿qué pequeño intento te impide hacer esa frase?",
+    "one_minute_summary": "Joseph Murphy vuelve a una frase del Evangelio de Mateo: que te sea hecho según lo que crees. La llama ley de la creencia. Creer es mantener un pensamiento por cierto, y un pensamiento puede cambiarse. Decir «no puedo» se parece a sembrar el resultado antes de intentarlo. Cuenta que un pariente con tuberculosis mejoró en una noche tras recibir un trozo de madera presentado como cruz sanadora. Es la versión de Murphy y el libro no aporta pruebas médicas."
+  },
+  "de": {
+    "title": "Das Gesetz des Glaubens",
+    "description": "Murphy stützt sein Buch auf einen Satz aus Matthäus: Dir geschehe, wie du glaubst. Glauben ist für ihn ein für wahr gehaltener Gedanke, und den kann man ändern.",
+    "hook": "Welchen kleinen Versuch hält dich ein »Ich kann das nicht« gerade ab zu wagen?",
+    "one_minute_summary": "Joseph Murphy kommt immer wieder auf einen Satz aus dem Matthäusevangelium zurück: Dir geschehe, wie du glaubst. Er nennt es das Gesetz des Glaubens. Glauben heißt, einen Gedanken für wahr zu halten, und den kann man ändern. »Ich kann das nicht« gleicht einer Aussaat des Ergebnisses vor dem Versuch. Er erzählt von einem Verwandten mit Tuberkulose, der nach Murphys Bericht über Nacht genas, nachdem er ein Stück Holz als heilendes Kreuz erhalten hatte. Es ist sein eigener Bericht, ein medizinischer Beleg fehlt."
+  }
+}

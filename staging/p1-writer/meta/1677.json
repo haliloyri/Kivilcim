@@ -1,0 +1,35 @@
+{
+  "story_id": 1677,
+  "verdict": "keep",
+  "verify_note": "Not web-verified; 1.01^365 = 37.78, 0.99^365 = 0.03, ice cube example from Atomic Habits (2018), brief as written.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Yüzde bir ve buz küpü",
+    "description": "James Clear, her gün yüzde bir iyileşmenin kâğıt üzerinde 37,78 kat ettiğini ve sonuçların geç geldiğini anlatıyor. Buz küpü bunu gösteriyor.",
+    "hook": "Her gün yaptığınız hangi küçük şeyin etkisini aylarca görmeyeceksiniz?",
+    "one_minute_summary": "James Clear, Atomic Habits'te hesap yapıyor: her gün yüzde bir iyileşirseniz bir yılda yaklaşık 37,78 kat, yüzde bir kötüleşirseniz 0,03. Bunlar tahmin değil, kâğıt üzerinde bir örnek. Asıl mesele sonuçların geç gelmesi: iyi alışkanlık hemen ödemiyor, kötüsü hemen faturayı kesmiyor. Buz küpü örneğinde oda 25 Fahrenheit derecesinden 28'e ısınırken küp aynı kalıyor, 32'de eriyor. Emek görünür bir şey çıkmadan önce birikiyor ve insanlar çoğu zaman tam orada bırakıyor."
+  },
+  "en": {
+    "title": "One percent and the ice cube",
+    "description": "James Clear shows that 1 percent better each day is 37.78 times on paper, and that results arrive late. An ice cube makes the point.",
+    "hook": "Which small thing do you repeat every day that you would not notice for months?",
+    "one_minute_summary": "In Atomic Habits, James Clear does the arithmetic: 1 percent better every day for a year is about 37.78 times, and 1 percent worse is 0.03. The numbers are an illustration, not a forecast. His point is that results arrive late. Good habits do not pay at once, and bad ones do not bill at once. In his ice cube example, a room warms from 25 to 28 degrees Fahrenheit and nothing happens, then at 32 the cube melts. Effort piles up unseen, and many quit there."
+  },
+  "es": {
+    "title": "El 1 % y el cubo de hielo",
+    "description": "James Clear calcula que mejorar un 1 por ciento diario da 37,78 veces en papel y que los resultados tardan en verse. Un cubo de hielo lo ilustra.",
+    "hook": "¿Qué pequeña cosa repites cada día cuyos efectos no notarás en meses?",
+    "one_minute_summary": "En Atomic Habits, James Clear hace la cuenta: mejorar un 1 por ciento al día da unas 37,78 veces, y empeorar un 1 por ciento da 0,03. Son números de ejemplo. Lo que importa es que los resultados llegan con retraso: un hábito bueno no paga enseguida ni uno malo cobra enseguida. En su ejemplo del cubo de hielo, la habitación sube de 25 a 28 grados Fahrenheit, y a 32 se derrite. El esfuerzo se acumula antes de verse, y ahí mucha gente abandona."
+  },
+  "de": {
+    "title": "Ein Prozent und der Eiswürfel",
+    "description": "James Clear rechnet vor, dass ein Prozent täglich auf dem Papier das 37,78-Fache ergibt und dass Ergebnisse spät kommen. Ein Eiswürfel macht es anschaulich.",
+    "hook": "Welche kleine Sache wiederholst du täglich, deren Wirkung du monatelang nicht bemerken würdest?",
+    "one_minute_summary": "In Atomic Habits rechnet James Clear vor: Ein Prozent besser pro Tag ergibt nach einem Jahr etwa das 37,78-Fache, ein Prozent schlechter ergibt 0,03. Er gibt die Zahlen als Veranschaulichung, nicht als Prognose. Wichtig ist, dass Ergebnisse spät kommen: Eine gute Gewohnheit zahlt nicht sofort aus, eine schlechte stellt nicht sofort die Rechnung. Im Eis-Beispiel wird ein Raum von 25 auf 28 Grad Fahrenheit wärmer, und der Würfel bleibt gleich, bei 32 schmilzt er. Die Mühe sammelt sich an, bevor etwas sichtbar wird, und dort geben viele auf."
+  }
+}

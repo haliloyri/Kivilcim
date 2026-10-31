@@ -1,0 +1,62 @@
+{
+  "story_id": 1616,
+  "kind": "concept",
+  "book": {
+    "title": "The Total Money Makeover",
+    "author": "Dave Ramsey",
+    "year": "2003"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read. Verified through Ramsey Solutions and summary pages: the plan's first step is a starter emergency fund of $1,000, saved before attacking debts; later, once debts are paid, a fuller fund of three to six months of expenses. The reference's car, tooth and washing machine scene is presented in the book only as the idea of emergencies; the specific list is not verified and is kept generic ('a car repair'). Dollar figure is as Ramsey gives it; do not convert currency. No named debtor. Added: baby-step order and subtitle as above; 'stop borrowing' is the premise of the plan, stated generally.",
+  "facts": [
+    "Ramsey's first step is a starter emergency fund of $1,000.",
+    "It comes before paying down debt.",
+    "Without it, any surprise bill such as a car repair goes back on a credit card.",
+    "A new debt interrupts the payoff plan and discourages the person paying.",
+    "Once the debts are paid, the fund grows to three to six months of expenses.",
+    "The book's subtitle is 'A Proven Plan for Financial Fitness': Ramsey frames money like physical fitness, where doing the routine matters more than knowing the theory.",
+    "Ramsey lays out his plan as seven baby steps: the starter fund of $1,000 comes first, the debt snowball second, a full emergency fund of three to six months of expenses third.",
+    "Ramsey says to stop borrowing while paying off debt: the plan assumes no new credit card use."
+  ],
+  "scene_details": [
+    "A car repair bill landing in the middle of a payoff plan",
+    "A credit card used because there is no cash",
+    "A fund of $1,000 set aside first",
+    "A paid-off card put away"
+  ],
+  "tension": "Someone paying off debt every month is knocked back by one ordinary bill.",
+  "opening_idea": "Start with the repair bill that arrives in month four of a payoff plan.",
+  "lessons": [
+    {
+      "idea": "Expect surprises and keep a small cushion so a small surprise cannot undo a long effort.",
+      "anchor": "Ramsey's $1,000 starter fund keeps a car repair off the credit card and the payoff on track.",
+      "everyday_example_idea": "A freelancer who keeps a spare laptop charger and a backup drive so one failure does not cost a deadline."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If an unplanned bill arrived tomorrow, what would you pay it with, and what would that change in your plans this month?",
+  "use_cases": [
+    {
+      "situation": "Your partner wants every spare coin on the debt.",
+      "move": "Ramsey sets $1,000 aside first so a repair does not undo the payoff. Suggest saving that amount before extra payments.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend says they have no savings.",
+      "move": "Ask how much a typical surprise costs them and start with that sum.",
+      "context": "social"
+    },
+    {
+      "situation": "You get paid today.",
+      "move": "Move a fixed sum into a separate account before spending.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A $1,000 cushion in Ramsey's plan keeps the car repair off the card; build the cushion before the next payoff push.",
+  "conversation_variants": {
+    "punchline_idea": "Ramsey's first step for someone in debt is not to pay debt, it is to save $1,000.",
+    "thirty_sec_idea": "Dave Ramsey sees the same break in debt payoff: a repair bill arrives, there is no cash, the card comes out and the plan stalls. So his first step is a starter fund of $1,000 before extra payments. Once the debts are gone, the fund grows to three to six months of expenses.",
+    "question_idea": "",
+    "key_contrast_idea": "Cushion before payoff"
+  }
+}

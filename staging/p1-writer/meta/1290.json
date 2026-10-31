@@ -1,0 +1,30 @@
+{
+ "story_id": 1290,
+ "verdict": "keep",
+ "verify_note": "Cookie Jar confirmed by chapter summaries (Atlanta Track Club, Graham Mann notes, Shortform): mother's stocked jar, jar of past victories, contents (reading level, Air Force exam, 106 lb in 3 months), 24-hour race mile 70 (fractured feet, dehydration, kidney signs, Hell Week recalled, adrenaline took over). Book text not online. Old text mixed the Accountability Mirror (Post-it notes) with the cookie jar and invented 'hesap defteri'; rewritten on the cookie jar. Title changed.",
+ "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+ "tr": {
+  "title": "Goggins'in Kurabiye Kavanozu",
+  "description": "Goggins, annesinin kurabiye kavanozunun adını kendi geçmişteki zaferlerine verdi. Yetmişinci milde ayakları kırıkken o listeye uzandı.",
+  "hook": "Zor bir günde elinizde, atlattıklarınızı gösteren yazılı bir kayıt olsaydı neleri içerirdi?",
+  "one_minute_summary": "David Goggins'in annesi para sıkıntısında bile kurabiye kavanozunu dolu tutardı. Goggins kitabında bu adı, aştığı engellerin ve küçük zaferlerin listesine veriyor: Hava Kuvvetleri sınavı, üç ayda verdiği 106 pound. Antrenmansız girdiği 24 saatlik yarışta yetmişinci milde ayakları kırık, aşırı susuz ve böbrek belirtileri vardı. O anda Cehennem Haftası'nı hatırladı, adrenalini devraldı ve yüz mili tamamladı. Önerisi, bu listeyi yazıya geçirip bırakmak istediğiniz gün okumak."
+ },
+ "en": {
+  "title": "Goggins's Cookie Jar",
+  "description": "Goggins gave his mother's cookie jar a second meaning: a list of what he had already got through. At mile 70, with both feet fractured, he reached into it.",
+  "hook": "If you had a written record of what you have got through, what would be in it on a bad day?",
+  "one_minute_summary": "David Goggins's mother kept the cookie jar stocked even when money was short. In Can't Hurt Me he uses the name for his list of past victories, such as passing the Air Force exam and losing 106 pounds in three months. In a 24-hour race he entered with no training, he reached mile 70 with both feet fractured, badly dehydrated and showing signs of kidney failure. He recalled Hell Week, felt his adrenaline take over and finished the hundred miles. His advice is to write the list down and read it before you quit."
+ },
+ "es": {
+  "title": "El tarro de galletas de Goggins",
+  "description": "Goggins dio a la lata de galletas de su madre un segundo sentido: la lista de lo que ya había superado. En la milla 70, con los dos pies fracturados, recurrió a ella.",
+  "hook": "Si tuvieras por escrito lo que ya has superado, ¿qué habría en esa lista un mal día?",
+  "one_minute_summary": "La madre de David Goggins mantenía llena la lata de galletas aunque faltara dinero. En Can't Hurt Me usa ese nombre para su lista de victorias: aprobar el examen de las Fuerzas Aéreas, perder 106 libras en tres meses. En una carrera de 24 horas a la que fue sin entrenar, llegó a la milla 70 con los pies fracturados, muy deshidratado y con señales de fallo renal. Recordó la Semana Infernal, su adrenalina tomó el control y terminó las cien millas. Su consejo es anotar la lista y leerla antes de abandonar."
+ },
+ "de": {
+  "title": "Goggins' Keksdose",
+  "description": "Goggins gab der Keksdose seiner Mutter eine zweite Bedeutung: die Liste dessen, was er schon durchgestanden hatte. Auf Meile 70, mit zwei gebrochenen Füßen, griff er hinein.",
+  "hook": "Wenn du schriftlich hättest, was du schon durchgestanden hast, was stünde an einem schlechten Tag darin?",
+  "one_minute_summary": "David Goggins' Mutter hielt die Keksdose gefüllt, auch wenn das Geld knapp war. In Can't Hurt Me nennt er seine Liste überwundener Hindernisse so: die bestandene Air-Force-Prüfung, 106 Pfund in drei Monaten. Bei einem 24-Stunden-Rennen, das er ohne Training lief, hatte er auf Meile 70 gebrochene Füße, war stark dehydriert und zeigte Anzeichen von Nierenversagen. Er erinnerte sich an die Hell Week, sein Adrenalin übernahm, und er lief die hundert Meilen zu Ende. Sein Rat: die Liste aufschreiben und vor dem Aufgeben lesen."
+ }
+}

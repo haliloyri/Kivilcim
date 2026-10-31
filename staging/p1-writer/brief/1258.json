@@ -1,0 +1,62 @@
+{
+  "story_id": 1258,
+  "kind": "anecdote",
+  "book": {
+    "title": "Stillness Is the Key",
+    "author": "Ryan Holiday",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Checked against Ryan Holiday's Stillness Is the Key (2019). The old TR reference text claimed Alexander the Great ordered his army to wait before a battle and then said 'Now'; that scene is not how Stillness Is the Key uses Alexander. In the book, Holiday pairs Alexander the Great—the restless conqueror driven by constant motion—with the philosopher Diogenes of Sinope in Corinth, and also contrasts impulsive commanders with leaders like John F. Kennedy during the Cuban Missile Crisis who resisted generals pressing for an immediate strike. To stay faithful to the book while preserving the story's theme (the discipline of pausing and resisting restless compulsion when everyone around you pushes for action), this brief uses the book's actual accounts of Alexander and Diogenes alongside the book's theme of strategic restraint.",
+  "facts": [
+    "In Stillness Is the Key, Ryan Holiday examines how the compulsion for constant motion and immediate action misleads even the most capable leaders.",
+    "Holiday recounts the meeting in Corinth between Alexander the Great—then the most powerful commander in the world, always pushing toward the next campaign—and the philosopher Diogenes of Sinope.",
+    "Diogenes lived with almost nothing, famously sleeping in a clay jar and smashing his own wooden cup after seeing a child drink water from a well with his bare hands.",
+    "While statesmen and generals crowded around Alexander to flatter him and propose campaigns, Diogenes did not come to see him, so Alexander walked over to find the philosopher lying in the sun.",
+    "Alexander stood over him and asked what he, with all his power and armies, could do for Diogenes.",
+    "Diogenes gave a one-line reply: 'Stop blocking my sun.'",
+    "Even as his own officers mocked the old man, Alexander recognized the strength in someone who did not need to chase the next conquest, saying that if he were not Alexander, he would wish to be Diogenes.",
+    "Holiday notes that Alexander never learned to stop—he marched across continents until his exhausted soldiers refused to go farther in India, and he died at thirty-two—showing that knowing how to pause is a harder discipline than knowing how to attack."
+  ],
+  "scene_details": [
+    "Diogenes lying in the morning sun in Corinth",
+    "a wooden cup smashed after watching a child drink water with bare hands",
+    "Alexander standing in front of Diogenes and casting a shadow over him",
+    "Alexander's officers laughing as they walk away while Alexander stays quiet"
+  ],
+  "tension": "A commander who commands armies across continents meets a man with no possessions who asks him only to step out of the sunlight.",
+  "opening_idea": "Start in Corinth: statesmen and officers crowd around the young king to talk campaigns, while one man stays lying in the sun and asks the conqueror to take a step to the side.",
+  "lessons": [
+    {
+      "idea": "Treat the urge to act immediately or add one more goal as something to question before you move.",
+      "anchor": "Alexander could conquer empires yet could not stop marching until his army refused to go on in India, whereas Diogenes knew what was already enough.",
+      "everyday_example_idea": "A software team lead who automatically says yes to every new feature request pauses before the next sprint to ask whether the team needs another project or room to finish the current one."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your work or schedule are you pushing for the next move simply because stopping feels uncomfortable?",
+  "use_cases": [
+    {
+      "situation": "Everyone in a project meeting is rushing to launch a new initiative before the current one is stable.",
+      "move": "Say: 'Before we add another campaign to the list, let's pause for ten minutes and ask what happens if we just finish what is already in front of us.'",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague feels guilty for not taking on an extra side project.",
+      "move": "Remind them of Diogenes smashing his cup: 'Doing more is not always strength; sometimes the hardest move is leaving space for the work you already care about.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel restless on a quiet afternoon and reach for busywork.",
+      "move": "Close the extra tab and sit with the pause for fifteen minutes before deciding whether anything actually needs your action today.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Alexander conquered empires but could not stop marching; real command includes knowing when to stand still.",
+  "conversation_variants": {
+    "punchline_idea": "When Alexander the Great offered Diogenes anything in the world, the philosopher only asked him to step out of the sun.",
+    "thirty_sec_idea": "In Stillness Is the Key, Ryan Holiday tells how Alexander the Great went to Corinth and stood over the philosopher Diogenes, offering him anything he wanted. Diogenes, who had even thrown away his wooden cup after seeing a boy drink with his hands, replied: 'Stop blocking my sun.' Alexander's officers laughed, but Alexander envied that calm. He conquered half the known world yet could never stop marching until his troops mutinied in India.",
+    "question_idea": "",
+    "key_contrast_idea": "Restless conquest vs knowing when to stop"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1288,
+  "kind": "anecdote",
+  "book": {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The old text's turning point ('that night he said I choose to survive and dropped the victim story') could not be tied to the book and is dropped, as is the old text's 'racism at school' as a childhood fact (the sources place racism in Indiana later). Kept: Trunnis Goggins's roller rink where the family worked nights, the belt, the escape to Brazil, Indiana when David was 8 with his mother, using a credit card she got by persuading his father and a neighbour's help, the brother staying, public housing at $7 a month and a $123 welfare check, stutter and hair loss in third grade, being labelled stupid and cheating to stay enrolled. These agree across Deploy Yourself, LifeClub and Shortform summaries; the book itself was not read. The night, the car and the hour of the escape are not described in the sources and are left out.",
+  "facts": [
+    "David Goggins was born in 1975 and grew up in New York with his mother, father and older brother.",
+    "His father, Trunnis, owned a roller rink and the family worked there most nights until midnight.",
+    "Between ages 6 and 8 David's job was looking after the skating shoes.",
+    "The family slept in the rink's office; Trunnis beat his wife with a belt when she disobeyed and beat David with the belt if he tried to protect her.",
+    "When David was 8, his mother talked Trunnis into letting her get a credit card in her name.",
+    "With a neighbour's help she planned an escape and drove with David to Brazil, Indiana. His older brother stayed with their father.",
+    "In Indiana they lived in public housing, paying $7 a month in rent, on a part-time wage and a $123 monthly welfare check.",
+    "In third grade David developed a stutter, lost hair and had patches of skin lose colour, which the book ties to toxic stress.",
+    "Teachers called him stupid, and he cheated on homework and tests to stay in school, so he could barely read by his teens.",
+    "After her ear-infection hospital visit with David, Trunnis beat his wife again.",
+    "David was the only Black child in his class and was threatened with expulsion or special-needs placement."
+  ],
+  "scene_details": [
+    "a roller rink open until midnight",
+    "a credit card in the mother's name",
+    "$7 rent",
+    "$123 welfare check"
+  ],
+  "tension": "A boy who looked after skates until midnight left in a car with his mother, and the escape did not end the trouble.",
+  "opening_idea": "Start with the job a six-year-old had at his father's roller rink.",
+  "lessons": [
+    {
+      "idea": "What happened to you is not your fault, and you can still choose what to do with it next.",
+      "anchor": "The escape at eight, then the cheating and the stutter in Indiana."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which thing that happened to you is not your fault, but still shapes how you act, and what is one move that is yours to make?",
+  "use_cases": [
+    {
+      "situation": "A friend blames their past for a setback.",
+      "move": "Say the past is real, then ask what the next small thing is that only they can do.",
+      "context": "social"
+    },
+    {
+      "situation": "You get a bad result.",
+      "move": "Write down what was out of your hands and what was yours, and act on the second.",
+      "context": "self"
+    },
+    {
+      "situation": "A child is struggling at school.",
+      "move": "Tell them the label is not the whole picture and ask what they want to try next.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Goggins's mother left with a credit card and a neighbour's help: you may not choose what happened, but you choose the next move.",
+  "conversation_variants": {
+    "punchline_idea": "At six David Goggins looked after skates at his father's rink until midnight, and at eight he left with his mother in a car.",
+    "thirty_sec_idea": "David Goggins grew up working nights at his father's roller rink, with a belt waiting at home for anyone who stepped out of line. When he was 8, his mother talked his father into a credit card in her name, a neighbour helped, and they drove to Brazil, Indiana. His brother stayed. Life there was poor and hard in new ways: a stutter, hair loss, teachers who called him stupid.",
+    "question_idea": "",
+    "key_contrast_idea": "Not your fault, your move"
+  }
+}

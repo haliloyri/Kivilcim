@@ -1,0 +1,35 @@
+{
+  "story_id": 1795,
+  "kind": "anecdote",
+  "book": { "title": "Delivering Happiness", "author": "Tony Hsieh", "year": "2010" },
+  "confidence": "medium",
+  "confidence_note": "Nick Swinmurn's founding test (photographing shoes in local stores and buying them at full price when an order came in), free shipping both ways and the 365-day return policy are in the book. Hsieh's remark that the best customers return the most is kept as his claim. The supplied text's 'fitting room in your living room' image is used as framing, not as a quote. No figures for return costs are given, so none are used.",
+  "facts": [
+    "Zappos began when Nick Swinmurn could not find the shoes he wanted at a mall and thought of selling shoes online.",
+    "Selling shoes online seemed odd at the time, because people want to try shoes on.",
+    "To test the idea he photographed shoes in local stores, put the photos online, and when someone ordered he bought the pair at full price and shipped it.",
+    "Zappos made shipping free in both directions and offered a 365-day return window.",
+    "Customers could order several sizes or colours and send back what did not fit.",
+    "Hsieh treated those return costs as part of the marketing budget, an investment in repeat customers rather than a loss.",
+    "Hsieh writes that the customers who return the most are also among the most valuable, because they buy the most."
+  ],
+  "tension": "Shoes need trying on, so a shoe store without a fitting room looked like a bad idea.",
+  "opening_idea": "Start with Swinmurn buying a pair at full price from a local store just to ship one online order.",
+  "lessons": [
+    { "idea": "People decide faster when someone else carries the cost of being wrong.", "anchor": "Free shipping both ways and the 365-day return window." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which risk keeps people from saying yes to what you offer, and how could you carry part of it for them?",
+  "use_cases": [
+    { "situation": "A team argues that a generous return or trial policy is too expensive.", "move": "Mention that Zappos counted return shipping as marketing, then ask how much the fear of a wrong choice is costing in lost first orders.", "context": "meeting" },
+    { "situation": "You are asking someone to try something new.", "move": "Offer an easy way back if it does not work for them.", "context": "family" },
+    { "situation": "You are about to pitch your own service.", "move": "Name the customer's biggest worry and say what you will do if it goes wrong.", "context": "self" }
+  ],
+  "pocket_idea": "Zappos made returns free for a year; when the wrong choice costs nothing, the first yes comes easier.",
+  "conversation_variants": {
+    "punchline_idea": "Zappos began with a founder buying shoes at full price from a local store to ship a single online order.",
+    "thirty_sec_idea": "Swinmurn tested online shoe sales by photographing local stock and buying pairs at full price when orders came. Zappos then offered free shipping both ways and a 365-day return window, treating return costs as marketing.",
+    "question_idea": "",
+    "key_contrast_idea": "Riski üstlenmek"
+  }
+}

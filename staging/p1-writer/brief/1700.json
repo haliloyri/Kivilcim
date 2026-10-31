@@ -1,0 +1,62 @@
+{
+  "story_id": 1700,
+  "kind": "anecdote",
+  "book": {
+    "title": "A Random Walk Down Wall Street",
+    "author": "Burton G. Malkiel",
+    "year": "1973"
+  },
+  "confidence": "medium",
+  "confidence_note": "Recalled from the book and general record, no page-level check: first published 1973; the thesis that short-term price moves cannot be reliably predicted from past patterns; the coin-flip chart shown to a chartist; the blindfolded monkey and the newspaper's financial pages; the case for low-cost index funds. Details kept qualitative: no coin-flip step sizes, no dates for the chartist, no fund statistics. The chartist's angry reaction is recalled with lower certainty and is stated softly. The reference TR text's 'milyonlarca bireysel yatirimci' claim is dropped (not verified). Editorial caveat added: economists still debate how efficient markets are.",
+  "facts": [
+    "Burton Malkiel, an economist at Princeton, published A Random Walk Down Wall Street in 1973.",
+    "His claim: short-term moves in stock prices cannot be reliably predicted from past price charts, because known information is reflected in prices quickly.",
+    "To illustrate it, he had his students flip a coin to generate a stock's 'price' day by day and plotted the result as a chart.",
+    "He showed the coin-flip chart to a chartist, someone who predicts prices from chart patterns, who read it as a real stock and urged him to buy; the chartist reacted badly when told it came from coin flips.",
+    "He wrote that a blindfolded monkey throwing darts at a newspaper's financial pages could pick a portfolio as good as one chosen by experts.",
+    "Research he popularised found that most actively managed funds do not beat the market average over the long run, especially after costs.",
+    "The practical advice: buy and hold a broad, low-cost index fund and focus on costs, diversification and time.",
+    "Caveat: economists still argue about how far markets are unpredictable.",
+    "The title's random walk is a path whose next step cannot be predicted from earlier steps; the book was written for ordinary readers and has been reissued many times.",
+    "About three years after the first edition, in 1976, Vanguard launched the first index fund open to ordinary investors."
+  ],
+  "scene_details": [
+    "A chart drawn from coin flips, shown to a chartist.",
+    "A blindfolded monkey throwing darts at the newspaper's financial pages.",
+    "A student flipping a coin to move a price up or down."
+  ],
+  "tension": "Could a pattern-reading expert tell a real stock's chart from a coin's?",
+  "opening_idea": "Open on the coin: a student flips it and a stock's chart gets drawn.",
+  "lessons": [
+    {
+      "idea": "Spend effort on what you can control, such as costs, spread and time, instead of predicting what cannot be predicted.",
+      "anchor": "Chartist sees a trend in coin flips; the book recommends low-cost index funds"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In an area where you cannot predict the outcome, which things you can control are you working on?",
+  "use_cases": [
+    {
+      "situation": "The team is arguing over a forecast nobody can verify.",
+      "move": "Mention the coin-flip chart and ask which parts of the plan we control, such as costs and timing.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend wants to time a market move.",
+      "move": "Ask what they can control about it: fees, spread, how long they hold.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are tempted to follow a chart pattern.",
+      "move": "Write what you control in this decision and set a rule on those items only.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A chartist saw a trend in coin flips: put your effort into costs, spread and time, not predictions.",
+  "conversation_variants": {
+    "punchline_idea": "A chartist read a coin-flip chart as a real stock and urged buying it.",
+    "thirty_sec_idea": "Malkiel's students flipped a coin to draw a stock chart; a chartist wanted to buy; the book argues for low-cost index funds.",
+    "question_idea": "",
+    "key_contrast_idea": "predict or control"
+  }
+}

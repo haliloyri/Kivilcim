@@ -1,0 +1,66 @@
+{
+  "story_id": 1763,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Disappearing Spoon",
+    "author": "Sam Kean",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Rebuilt 2026-10-30 to replace filler ('story map' closing, repeated recaps, density re-measurement numbers recalled from general history) with details confirmed for Kean's book. Sources (book text not read page by page): Science History Institute 'Disappearing Pod' interview with Kean (sciencehistory.org/stories/disappearing-pod/tales-of-love-and-madness-from-the-periodic-table): gallium sits right below aluminium and looks and behaves almost like it, melts at about 85-87 F, the 'classic nerd science prank' of serving hot tea or coffee with a gallium spoon, the guest assumes it is aluminium, the book's title; Lecoq de Boisbaudran discovered gallium, first to separate it from ore and hold it, published melting point and density; Mendeleev argued the data must be wrong; Kean says Mendeleev was right and Lecoq had to correct his data; Mendeleev later tried to claim too much credit; the rivalry showed the periodic table had predictive power. LitCharts summary of chapter 3 'The Galapagos of the Periodic Table' (Mendeleev's eka-aluminium prediction, Mendeleev challenged Lecoq's data and was right, Lecoq had to retract the first data, a theory can show an experiment wrong; 62 known elements in Mendeleev's table). Down To Earth review and NPR (2010-07-17): Stan Jones, a US Senate candidate, drank liquid silver for the Y2K 'virus' and ended with permanently blue skin; Kean reports he said he would do it again. Chemistry World and Down To Earth: the title comes from the gallium spoon vanishing in tea. Year 1875 for the discovery is from general chemistry record (encyclopedia.com), not confirmed as Kean's wording. NOT verified or omitted: exact density numbers (sources disagree: 4.7 or 4.9 first measured against Mendeleev's 5.9, not confirmed in Kean); chapter of the Stan Jones story; Kean's own boyhood mercury story (earlier text, not re-confirmed this round); the naming-pun rumour; the claim that Lecoq falsely credited a little-known French scientist with the table (one summary only); Kean's exact wording. Added after extension: textbook deadline and 'father of the table, not the only one' from the Science History Institute interview with Kean; 62 elements from the LitCharts chapter 3 summary (single source); cadmium cups and Parker pen from Down To Earth review, Boing Boing and Publishers Weekly (chapter not confirmed; the $400 million figure from Publishers Weekly was left out); Stan Jones from NPR 2010-07-17 and Down To Earth.",
+  "facts": [
+    "Kean's book takes its title from a prank: serve hot tea or coffee with a spoon made of gallium.",
+    "Gallium sits right below aluminium in the periodic table and looks and behaves almost like it, so the guest assumes the spoon is aluminium.",
+    "Gallium melts at about 30 degrees Celsius, so the spoon melts as the guest stirs.",
+    "Mendeleev's table had a gap below aluminium; he predicted the missing element and called it eka-aluminium.",
+    "Paul-Emile Lecoq de Boisbaudran found gallium in 1875, the first person to separate it from ore, hold it and describe it.",
+    "He published its melting point and density. Mendeleev, working from his prediction, said the data must be wrong.",
+    "Kean says Mendeleev was right, and Lecoq had to correct his data before publishing it again.",
+    "Kean takes the exchange as proof that the periodic table could predict: a theory had corrected an experiment.",
+    "Kean adds that Mendeleev then tried to claim too much credit for the discovery.",
+    "Kean wrote the book to show that the table touches art, politics and war, not only chemistry; elsewhere in it, a Senate candidate named Stan Jones drank liquid silver and ended with permanently blue skin.",
+    "Mendeleev built his table while writing a textbook under deadline pressure; Kean calls him the father of the periodic table though not the only person to think of it; his table sorted 62 known elements.",
+    "In the 1940s cups lined with cadmium made people ill; Kenneth Parker, heir to the founder of the Parker pen company, profited from a fountain pen tipped with ruthenium (1944 nib).",
+    "Stan Jones, a US Senate candidate, drank liquid silver against the Y2K 'virus', his skin turned permanently blue, and he told a magazine he would do it again."
+  ],
+  "scene_details": [
+    "a gallium spoon that goes soft in a cup of hot tea",
+    "a guest who assumes the spoon is aluminium",
+    "a gap in a table below aluminium",
+    "a Frenchman holding the new metal in his hand, a Russian telling him his numbers are wrong"
+  ],
+  "tension": "A spoon that vanishes in tea is a joke, and the same metal once let a table correct a laboratory.",
+  "opening_idea": "Open on the guest stirring tea with a spoon that looks like aluminium.",
+  "lessons": [
+    {
+      "idea": "To make a dry subject stick, begin with its strangest concrete detail.",
+      "anchor": "the gallium spoon in the tea"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which subject you find dry could you open with its strangest true detail?",
+  "use_cases": [
+    {
+      "situation": "You must teach a dull topic to colleagues.",
+      "move": "Mention the gallium spoon melting in tea and open with a single odd fact.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A child dislikes memorising.",
+      "move": "Find one strange story behind the fact.",
+      "context": "family"
+    },
+    {
+      "situation": "You struggle to learn a topic.",
+      "move": "Search for its oddest true story before you study.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A gallium spoon melts in hot tea: open a dry subject with its strangest detail.",
+  "conversation_variants": {
+    "punchline_idea": "A spoon that looks like aluminium melts in your tea, and the same metal once proved a chemist's table right.",
+    "thirty_sec_idea": "Sam Kean's The Disappearing Spoon is named for a prank: stir hot tea with a gallium spoon and it melts, because gallium looks like aluminium but melts at about 30 degrees. When a French chemist published numbers for the new metal, Mendeleev said they must be wrong. Mendeleev was right, and the Frenchman had to correct them. Kean uses it to show the periodic table could predict.",
+    "question_idea": "",
+    "key_contrast_idea": "dry table, odd story"
+  }
+}

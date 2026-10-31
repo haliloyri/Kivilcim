@@ -26,7 +26,7 @@ import { ShareCardCanvas, ShareCardPreview } from '../components/ShareCardCanvas
 import { shouldShowAd, rewardedGate, loadRewarded, showRewarded, loadInterstitial, showInterstitial, recordStoryRead } from '../utils/ads';
 import { getShareLabel, getShareUrl } from '../utils/share';
 import { hasReachedReadingCompletion, isShortStoryFullyVisible, ONE_MINUTE_SUMMARY_DWELL_MS, SHORT_STORY_DWELL_MS } from '../utils/storyCompletion';
-import { getStoryAudioAsset } from '../utils/storyAudio';
+import { getStoryAudioUrl } from '../utils/storyAudio';
 import { intlLocaleFor } from '../utils/locale';
 import StoryBody from '../components/story/StoryBody';
 import ReaderPanels from '../components/story/ReaderPanels';
@@ -629,6 +629,18 @@ const StoryDetailScreen = ({ route, navigation }) => {
     story,
   ]);
 
+  // Listen is enabled only when a recorded narration exists in R2 for this story + language.
+  const audioStoryId = (localStory || story)?.story_id;
+  const [storyAudioAvailable, setStoryAudioAvailable] = useState(false);
+  React.useEffect(() => {
+    let cancelled = false;
+    setStoryAudioAvailable(false);
+    getStoryAudioUrl(audioStoryId, localLang).then((url) => {
+      if (!cancelled) setStoryAudioAvailable(Boolean(url));
+    });
+    return () => { cancelled = true; };
+  }, [audioStoryId, localLang]);
+
   const toggleSpeech = async () => {
     const startNarrationCap = () => {
       clearNarrationCap();
@@ -640,63 +652,44 @@ const StoryDetailScreen = ({ route, navigation }) => {
       return;
     }
 
-    // Packaged narrations were recorded for the legacy text; P1 bodies use device speech.
-    const storyAudioAsset = localLang === 'tr' && parsedBody.format !== 'p1'
-      ? getStoryAudioAsset((localStory || story)?.story_id)
-      : null;
+    if (!storyAudioAvailable) return;
 
-    if (storyAudioAsset) {
-      try {
-        await setAudioModeAsync({
-          allowsRecording: false,
-          playsInSilentMode: true,
-          shouldPlayInBackground: false,
-        });
-
-        const player = createAudioPlayer(storyAudioAsset, { updateInterval: 250 });
-        storyAudioPlayerRef.current = player;
-        setIsSpeaking(true);
-        speechStartedAt.current = Date.now();
-
-        storyAudioSubscriptionRef.current = player.addListener('playbackStatusUpdate', (status) => {
-          if (!status.didJustFinish || storyAudioPlayerRef.current !== player) return;
-
-          releaseStoryAudioPlayer();
-          setIsSpeaking(false);
-          markStoryReadIfNeeded('audio');
-          speechStartedAt.current = null;
-        });
-
-        player.play();
-        startNarrationCap();
-        return;
-      } catch (error) {
-        releaseStoryAudioPlayer();
-        setIsSpeaking(false);
-        speechStartedAt.current = null;
-        console.warn('[story] packaged narration playback failed, using device speech:', error?.message);
-      }
+    // Fetch again at play time: the cached presigned URL may be close to expiry.
+    const storyAudioUrl = await getStoryAudioUrl(audioStoryId, localLang);
+    if (!storyAudioUrl) {
+      setStoryAudioAvailable(false);
+      return;
     }
 
-    const cleanBody = toPlainText(displayBody, { headings: storySectionHeadings });
-    const textToRead = `${displayTitle}. \n\n ${cleanBody}`;
-    setIsSpeaking(true);
-    speechStartedAt.current = Date.now();
-    startNarrationCap();
-    Speech.speak(textToRead, {
-      language: localLang === 'en' ? 'en-US' : localLang === 'es' ? 'es-ES' : localLang === 'de' ? 'de-DE' : 'tr-TR',
-      rate: 0.95,
-      pitch: 1.0,
-      onDone: () => {
+    try {
+      await setAudioModeAsync({
+        allowsRecording: false,
+        playsInSilentMode: true,
+        shouldPlayInBackground: false,
+      });
+
+      const player = createAudioPlayer({ uri: storyAudioUrl }, { updateInterval: 250 });
+      storyAudioPlayerRef.current = player;
+      setIsSpeaking(true);
+      speechStartedAt.current = Date.now();
+
+      storyAudioSubscriptionRef.current = player.addListener('playbackStatusUpdate', (status) => {
+        if (!status.didJustFinish || storyAudioPlayerRef.current !== player) return;
+
+        releaseStoryAudioPlayer();
         setIsSpeaking(false);
-        // onDone means the entire narration completed; early stop/error use
-        // their dedicated callbacks and must not create H.
         markStoryReadIfNeeded('audio');
         speechStartedAt.current = null;
-      },
-      onStopped: () => { setIsSpeaking(false); speechStartedAt.current = null; },
-      onError: () => { setIsSpeaking(false); speechStartedAt.current = null; },
-    });
+      });
+
+      player.play();
+      startNarrationCap();
+    } catch (error) {
+      releaseStoryAudioPlayer();
+      setIsSpeaking(false);
+      speechStartedAt.current = null;
+      console.warn('[story] narration playback failed:', error?.message);
+    }
   };
 
   // Opened from the home "Dinle" button: start narration once the screen settles.
@@ -704,14 +697,15 @@ const StoryDetailScreen = ({ route, navigation }) => {
   toggleSpeechRef.current = toggleSpeech;
   const autoPlayedRef = React.useRef(false);
   React.useEffect(() => {
-    if (!route.params?.autoPlayAudio) return undefined;
+    // Wait until the narration lookup confirms a recording exists.
+    if (!route.params?.autoPlayAudio || !storyAudioAvailable) return undefined;
     const timer = setTimeout(() => {
       if (autoPlayedRef.current) return;
       autoPlayedRef.current = true;
       toggleSpeechRef.current();
     }, 700);
     return () => clearTimeout(timer);
-  }, [route.params?.autoPlayAudio]);
+  }, [route.params?.autoPlayAudio, storyAudioAvailable]);
 
   const buildStoryTextSharePayload = () => {
     const cleanBody = toPlainText(displayBody, { headings: storySectionHeadings });
@@ -1238,6 +1232,9 @@ const StoryDetailScreen = ({ route, navigation }) => {
     },
     toolbarListen: {
       paddingHorizontal: 12,
+    },
+    toolbarButtonDisabled: {
+      opacity: 0.4,
     },
     toolbarListenText: {
       fontFamily: 'Inter_600SemiBold',
@@ -1812,7 +1809,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
             <Ionicons name="arrow-back" size={20} color={colors.text} />
           </TouchableOpacity>
           <View style={styles.toolbarGroup}>
-            <TouchableOpacity style={[styles.toolbarButton, styles.toolbarListen]} onPress={toggleSpeech} accessibilityRole="button" accessibilityLabel={t(isSpeaking ? 'readerStop' : 'readerListen', localLang)}>
+            <TouchableOpacity
+              style={[styles.toolbarButton, styles.toolbarListen, !storyAudioAvailable && !isSpeaking && styles.toolbarButtonDisabled]}
+              onPress={toggleSpeech}
+              disabled={!storyAudioAvailable && !isSpeaking}
+              accessibilityRole="button"
+              accessibilityState={{ disabled: !storyAudioAvailable && !isSpeaking }}
+              accessibilityLabel={t(isSpeaking ? 'readerStop' : storyAudioAvailable ? 'readerListen' : 'readerListenUnavailable', localLang)}
+            >
               <Ionicons name={isSpeaking ? 'stop' : 'play'} size={16} color={colors.text} />
               <Text style={styles.toolbarListenText}>{t(isSpeaking ? 'readerStop' : 'readerListen', localLang)}</Text>
             </TouchableOpacity>
@@ -1885,7 +1889,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
           <View style={{ paddingHorizontal: layout.padding.horizontal }}>
             {oneMinuteSummary ? (
               <TouchableOpacity onPress={handleOneMinuteSummaryPress} accessibilityRole="button" accessibilityLabel={t('oneMinuteSummaryCta', localLang)} accessibilityHint={t(isPremium ? 'oneMinuteSummarySubtitle' : 'readerSummaryLocked', localLang)} style={styles.summaryChip}>
-                <Ionicons name="sparkles" size={16} color={colors.primaryText} />
+                <Ionicons name="time-outline" size={16} color={colors.primaryText} />
                 <Text style={styles.summaryChipText}>{t('oneMinuteSummaryCta', localLang)}</Text>
                 {!isPremium ? <Ionicons name="lock-closed-outline" size={14} color={colors.dawnText} /> : null}
               </TouchableOpacity>
@@ -1923,7 +1927,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
               const fverMatch = /^F(\d+)$/.exec(storyVersionKey);
               const cverMatch = /^C(\d+)$/.exec(storyVersionKey);
               // 'OH' = yeni üretim (rich) formatı: $$, &&, ~~ görünür kartlar olarak render edilir.
-              const richFormat = (!!fverMatch && Number(fverMatch[1]) >= 7) || !!cverMatch || storyVersionKey === 'OH';
+              const richFormat = (!!fverMatch && Number(fverMatch[1]) >= 7) || !!cverMatch || storyVersionKey === 'OH' || storyVersionKey === 'OPUS55-2';
 
               const segments = parsedBody.segments;
 

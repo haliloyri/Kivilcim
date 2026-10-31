@@ -1,0 +1,61 @@
+{
+  "story_id": 1710,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Boys in the Boat",
+    "author": "Daniel James Brown",
+    "year": "2013"
+  },
+  "confidence": "medium",
+  "confidence_note": "The Berlin 1936 final details (lane six, start problem, trailing at halfway, stroke Don Hume ill, coxswain Bobby Moch, margin of 0.6 seconds over Italy) were checked against several secondary sources (Seattle Times, University of Washington, Olympedia); not page-checked. Omitted because sources disagree or were unverified: the stroke rate (44 vs about 45), the exact point where the boat overtook Germany and Italy, crowd figures, Hitler. Joe Rantz's background and the 'swing' idea come from the book's central narrative. Pocock's cedar shells and Rantz working to stay in school are recalled from the book and general sources. Rewrite 2026-10-29: each language tells it independently from these facts; the 'gardener crew' lesson example was dropped (not from the book). Unverified detail: Hume 'lifted the rate' is a mild reading of 'responded'; margin to Germany stated only as 'somewhat further back'.",
+  "facts": [
+    "The University of Washington eight that went to the 1936 Berlin Olympics was made up of young men from working-class families, not wealthy rowing clubs.",
+    "Joe Rantz had been left to fend for himself as a teenager and learned to rely only on himself, which made it hard to trust others in a boat.",
+    "Boat builder George Pocock and coach Al Ulbrickson stressed the idea of swing: eight rowers and a coxswain moving as one, which strength alone could not produce.",
+    "In the Berlin final the Washington crew drew lane six, the outside lane, and had trouble hearing the start call.",
+    "At the halfway mark they were trailing.",
+    "Stroke Don Hume (the rower who sets the rhythm) was ill; coxswain Bobby Moch called for a higher stroke rate and at one point considered asking Joe Rantz to take over setting the rhythm; Hume answered the call and lifted the rate (the exact rate is not stated because sources differ).",
+    "The boat came through in the last part of the race and won, finishing 0.6 seconds ahead of Italy with Germany somewhat further back.",
+    "George Pocock built the cedar shells the crew rowed; this is a separate fact from the rowers' backgrounds, and Rantz was one of the young men who worked to stay at the university.",
+    "The final was a 2,000-metre race; the crew was trailing at the halfway mark, so the gold was won in the second thousand metres."
+  ],
+  "scene_details": [
+    "lane six, the outside lane, with the start call hard to hear",
+    "the coxswain's voice calling for a higher rate",
+    "a margin of 0.6 seconds"
+  ],
+  "tension": "The crew with the fewest advantages starts badly in the worst lane, and the only way back is to move as one.",
+  "opening_idea": "Open on lane six at the Berlin final, the start call that the crew could barely hear, and a boat that falls behind at once.",
+  "lessons": [
+    {
+      "idea": "A group moves fastest when each person fits their effort to the others rather than pushing harder alone.",
+      "anchor": "Rantz learning to trust the rhythm of others; swing; the instinct of a trailing boat to pull harder"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In a group you work with, where could you match your pace to the others rather than push harder on your own, and what would you notice if you did?",
+  "use_cases": [
+    {
+      "situation": "Your team is behind schedule and everyone is racing on their own part.",
+      "move": "Call a five-minute check so people align on one rhythm, as a crew does when the boat is behind.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A strong colleague keeps doing more than agreed.",
+      "move": "Say you value the effort and ask them to match the team's pace this week.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are packing for a family trip and everyone does their own thing.",
+      "move": "Pick one start time and move together, like a crew.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "In Berlin a late-starting crew in lane six won by 0.6 seconds by rowing as one; fit your effort to the group's rhythm.",
+  "conversation_variants": {
+    "punchline_idea": "A crew that could barely hear the start call in lane six won gold in Berlin by 0.6 seconds, rowing as one.",
+    "thirty_sec_idea": "Nine working-class young men from the University of Washington reached the 1936 Berlin final. They drew lane six, struggled to hear the start and trailed at halfway. Their coxswain called for more, the whole boat answered together and they won by 0.6 seconds over Italy.",
+    "question_idea": "",
+    "key_contrast_idea": "one rhythm, not nine"
+  }
+}

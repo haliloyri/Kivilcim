@@ -1,0 +1,35 @@
+{
+  "story_id": 1690,
+  "verdict": "keep",
+  "verify_note": "Old '90% say above average / 360 gap' study and internal/external split not tied to the book and dropped. Kept three confirmed self-awareness strategies (stop labelling emotions good/bad, lean into discomfort, link feelings to body signals). Sources: Atomic Object (Matt Fletcher) summary, Shortform, Loyola module; book wording not read, confidence low.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Önce Adlandır, Sonra Değerlendir",
+    "description": "Bir duyguya iyi ya da kötü demek, üstüne ikinci bir duygu ekliyor. Kitap önce adlandırmayı, sonra bedenin işaretlerini okumayı öneriyor.",
+    "hook": "Bedeniniz son kez hangi duyguyu düşüncelerinizden önce haber verdi?",
+    "one_minute_summary": "Bradberry ile Greaves öz farkındalığa üç küçük yöntemle başlıyor. Duygulara iyi ya da kötü demeyin, çünkü yargılamak öfkenin üstüne suçluluk gibi ikinci bir duygu ekliyor. Rahatsız edici duyguyu savuşturmak yerine ona dönün. Sakin bir anda güçlü bir duygu yaşadığınız bir olayı hatırlayıp kaslarınızın, nefesinizin ve kalbinizin ne yaptığına bakın; işaretler kişiden kişiye değiştiği için herkes kendi haritasını çıkarır. Amaç duyguyu yaşarken adlandırabilmek."
+  },
+  "en": {
+    "title": "Name the Feeling First",
+    "description": "Judging a feeling puts a second feeling on top of it, say Bradberry and Greaves. They suggest naming it first and reading the body's signals.",
+    "hook": "When did your body last flag a feeling before your thoughts did?",
+    "one_minute_summary": "Bradberry and Greaves open self-awareness with three small strategies. Do not label emotions good or bad, because judging puts a second feeling, such as guilt, on top of anger. Lean into discomfort instead of brushing a feeling away. And when you are calm, recall a strong event and notice what your muscles, breathing and heart did. Signals differ between people, so each reader builds a personal map. The aim is to name a feeling while it is happening."
+  },
+  "es": {
+    "title": "Nombra la emoción primero",
+    "description": "Juzgar una emoción le suma otra, dicen Bradberry y Greaves. Proponen nombrarla primero y leer las señales del cuerpo.",
+    "hook": "¿Cuándo te avisó tu cuerpo de una emoción antes que tus pensamientos?",
+    "one_minute_summary": "Bradberry y Greaves abren la autoconciencia con una regla: no etiquetes tus emociones como buenas o malas, porque juzgarlas pone una segunda emoción encima, como la culpa sobre el enfado. Después piden inclinarte hacia la incomodidad en lugar de apartar lo que sientes, y usar el cuerpo: en un momento de calma, recuerda un episodio intenso y fíjate en músculos, respiración y corazón. Cada lector traza su propio mapa de señales. El objetivo es nombrar la emoción mientras ocurre."
+  },
+  "de": {
+    "title": "Erst das Gefühl benennen",
+    "description": "Ein Gefühl zu bewerten legt ein zweites darüber, sagen Bradberry und Greaves. Sie raten, es erst zu benennen und die Körpersignale zu lesen.",
+    "hook": "Wann hat dein Körper zuletzt ein Gefühl gemeldet, bevor es deine Gedanken taten?",
+    "one_minute_summary": "Bradberry und Greaves beginnen die Selbstwahrnehmung mit drei Strategien. Wende dich unbequemen Gefühlen zu, statt sie wegzuschieben. Nenne Gefühle nicht gut oder schlecht, denn das Urteil legt ein zweites Gefühl darüber, etwa Schuld auf die Wut. Und erinnere dich in einem ruhigen Moment an ein starkes Ereignis und achte auf Muskeln, Atem und Herzschlag. Körpersignale sind individuell, jeder zeichnet seine eigene Karte. Ziel ist, das Gefühl im Moment zu benennen."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "story_id": 1718,
+  "kind": "anecdote",
+  "book": {
+    "title": "Rubicon",
+    "author": "Tom Holland",
+    "year": "2003"
+  },
+  "confidence": "medium",
+  "confidence_note": "The core account (49 BC, the law barring a commander from bringing an army into Italy, the Senate demanding that Caesar disband his army, Caesar arriving with the 13th Legion, crossing as open rebellion, civil war and an irreversible change to the Republic) is from the supplied text and matches general historical accounts; a secondary source confirms the 13th Legion and Ariminum. Holland's own phrasing, Caesar's reported words at the river (ancient sources differ on them), the exact date (usually placed in January 49 BC, uncertain), Pompey's role and Caesar's earlier years in Gaul are deliberately omitted from the story or kept to a minimum because they were not verified in Holland's text in this session. Added background (370 to 22 vote, 7 January ultimatum, tribunes fleeing, 10-11 January) comes from a general history source (Wikipedia, Caesar's civil war), not from Holland's text; the story attributes these to 'the accounts'.",
+  "facts": [
+    "In 49 BC Roman law forbade a commander to lead his army into Italy.",
+    "Caesar had commanded in Gaul; the small river Rubicon marked the edge of his province.",
+    "The Senate told Caesar to disband his army.",
+    "He instead came to the river with the 13th Legion.",
+    "Crossing with soldiers was not a march but open rebellion against the state.",
+    "Caesar advanced anyway, and civil war began.",
+    "The Republic's political balance changed in a way that could not be reversed.",
+    "After crossing, he took the city of Ariminum, the first city beyond his province (secondary source).",
+    "Background from general histories (not verified against Holland's text): on 1 December 50 BC the Senate voted 370 to 22 that both Pompey and Caesar give up their armies; Pompey and a consul rejected it.",
+    "On 7 January 49 BC the Senate demanded Caesar give up his post or be judged an enemy of the state; pro-Caesar tribunes vetoed, the veto was ignored, and those tribunes fled to Caesar's camp.",
+    "The crossing is usually dated to the night of 10 or 11 January 49 BC; Caesar took Ariminum without resistance.",
+    "On 1 January 49 BC Caesar said he would resign if the other commanders did; his representatives offered to give up Transalpine Gaul if he could keep two legions and stand for the consulship while absent; Cato rejected the terms (general history source)."
+  ],
+  "scene_details": [
+    "a small river with a legion standing at its bank",
+    "the 13th Legion",
+    "the Senate's demand to disband"
+  ],
+  "tension": "One step across a modest river turned a political dispute into a war, with no way to undo it.",
+  "opening_idea": "Open on the river itself and the legion waiting at its edge.",
+  "lessons": [
+    {
+      "idea": "Before an action that cannot be reversed, name what you can no longer undo and pause on that.",
+      "anchor": "Caesar's legion at the Rubicon"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which decision in your life has a clear line like the Rubicon, where once you cross there is no coming back, and what makes you sure you are ready?",
+  "use_cases": [
+    {
+      "situation": "You are about to send an email that burns a bridge.",
+      "move": "Wait one hour and ask what could not be taken back.",
+      "context": "self"
+    },
+    {
+      "situation": "A team wants to launch something irreversible.",
+      "move": "Ask: which part of this can we still undo after Friday?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A relative wants to make a big move quickly.",
+      "move": "Ask them to name what they would be unable to undo.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Caesar's legion at the Rubicon: some steps are small to take and impossible to undo, so ask first which kind this is.",
+  "conversation_variants": {
+    "punchline_idea": "The Rubicon was only a small river, but crossing it with a legion made it open rebellion.",
+    "thirty_sec_idea": "In 49 BC Roman law forbade commanders to bring an army into Italy. The Senate told Caesar to disband his. He came to the Rubicon instead, with the 13th Legion, and crossed. It was open rebellion: civil war began and the Republic's balance never returned.",
+    "question_idea": "",
+    "key_contrast_idea": "small step, no return"
+  }
+}

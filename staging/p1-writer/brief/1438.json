@@ -1,0 +1,40 @@
+{
+  "story_id": 1438,
+  "kind": "anecdote",
+  "book": { "title": "Against Empathy", "author": "Paul Bloom", "year": "2016" },
+  "confidence": "medium",
+  "confidence_note": "The old TR text described a vague photo-and-statistics experiment with no names; that version could not be tied to the book. Replaced with the Sheri Summers experiment (Batson and colleagues, 1995), which Bloom discusses in Against Empathy; details come from secondary sources (Freakonomics transcript, reviews), not the book text. Group design is described only as high-empathy versus low-empathy. 'Statistics fade' / 'dullness of statistics' wording is not used. Individual researcher first names and exact sample sizes omitted.",
+  "facts": [
+    "Batson and colleagues ran an experiment in 1995, which Paul Bloom discusses in Against Empathy.",
+    "Volunteers learned about Sheri Summers, a ten-year-old with a fatal disease who was waiting for treatment.",
+    "They were asked whether to move her up the waiting list so she would get immediate treatment.",
+    "Moving her up meant other children waiting for treatment would be pushed back.",
+    "One group was first asked to imagine what Sheri felt, to put themselves in her shoes (high empathy). A comparison group was not (low empathy).",
+    "About three-quarters of the high-empathy group wanted to move her up. About one-third of the low-empathy group did.",
+    "Bloom uses the result to argue that empathy focuses on one person and can push people to treat others unfairly."
+  ],
+  "scene_details": [
+    "a ten-year-old named Sheri Summers on a waiting list for treatment",
+    "the instruction: imagine what she feels",
+    "three-quarters versus one-third"
+  ],
+  "tension": "The same girl and the same list produce opposite answers depending on whether volunteers were told to imagine her feelings.",
+  "opening_idea": "Start with Sheri Summers, a ten-year-old with a fatal disease on a waiting list, and the single question put to volunteers.",
+  "lessons": [
+    { "idea": "Feeling strongly for one person can quietly change a fair decision, because the others affected are never pictured.", "anchor": "Volunteers told to imagine Sheri's feelings mostly moved her up the list, which pushed other children back." }
+  ],
+  "reflect": [],
+  "reflect_final": "In a recent decision that affected several people, whose situation did you picture most vividly, and who stayed out of view?",
+  "use_cases": [
+    { "situation": "A manager is asked to bump one colleague's request to the front of the queue after hearing a moving story.", "move": "Ask who else is waiting and what each of them needs before moving anyone.", "context": "meeting" },
+    { "situation": "A friend pleads for you to donate to one person's fundraiser.", "move": "Say you are moved, and that you first want to see where the same money helps most people.", "context": "social" },
+    { "situation": "You feel a strong pull to make an exception for one child over another.", "move": "In Bloom's study, imagining Sheri's feelings moved her ahead of other children; pause and name the others affected before deciding.", "context": "family" }
+  ],
+  "pocket_idea": "Imagine one person's feelings and a waiting list quietly reorders; before deciding, count the people you did not picture.",
+  "conversation_variants": {
+    "punchline_idea": "Tell people to imagine a sick girl's feelings, and three-quarters will move her ahead of other children in line.",
+    "thirty_sec_idea": "In a 1995 experiment Paul Bloom describes, volunteers were asked whether Sheri Summers, a ten-year-old with a fatal disease, should skip ahead on a waiting list. Told to imagine her feelings, about three-quarters said yes. Without that instruction, about a third did. Bloom's point: empathy lights up one person and can leave the rest of the line unfairly behind.",
+    "question_idea": "",
+    "key_contrast_idea": "One face, many in line"
+  }
+}

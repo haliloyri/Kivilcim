@@ -1,0 +1,58 @@
+{
+ "story_id": 1772,
+ "kind": "anecdote",
+ "book": {
+  "title": "Incognito",
+  "author": "David Eagleman",
+  "year": "2011"
+ },
+ "confidence": "medium",
+ "confidence_note": "Details from the Wikipedia Charles Whitman entry (note, psychiatrist, tumor, commission); that Eagleman opens his chapter on blameworthiness with the case is recalled, not page-checked. Omitted: victim counts, the exact wording of the note.",
+ "facts": [
+  "On 1 August 1966 Charles Whitman killed his mother and then his wife; in the late morning he went up the University of Texas tower in Austin and fired on people below for about 96 minutes until police shot him.",
+  "The night before he typed a note that asked for an autopsy to look for a biological cause of his actions and his worsening headaches.",
+  "On 29 March 1966, at his wife's urging, he had seen a campus psychiatrist, who noted his hostility and his fantasies of shooting people from the tower; he did not return for the follow-up.",
+  "The autopsy found a pecan-sized brain tumor near the amygdala, a region involved in fear and emotion; it was first diagnosed as an astrocytoma and later called a glioblastoma.",
+  "A review commission said the link between tumor and actions could not be established with clarity but conceivably could have affected his control of emotions.",
+  "Eagleman uses the case to argue that biology shapes behavior in ways the person cannot see, so asking only who is to blame misses what could be learned or prevented. He does not argue it excuses the acts."
+ ],
+ "scene_details": [
+  "the tower at the University of Texas",
+  "a note asking that his brain be examined",
+  "a tumor the size of a pecan"
+ ],
+ "tension": "A man's own request for an autopsy suggests he sensed something wrong in his head, and the autopsy found something.",
+ "opening_idea": "Open on the note asking for his brain to be examined.",
+ "lessons": [
+  {
+   "idea": "Many causes of behavior are biological and hidden, so a decision is rarely only the choice of one conscious self.",
+   "anchor": "the tumor on the amygdala"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Think of a decision you made recently that felt entirely your own: what bodily or hidden factor, like sleep or hunger, could have been steering it?",
+ "use_cases": [
+  {
+   "situation": "Someone makes a poor call late in a long day.",
+   "move": "Propose moving big decisions to the morning.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A friend acts out of character.",
+   "move": "Ask how they have been sleeping and feeling before judging.",
+   "context": "social"
+  },
+  {
+   "situation": "You regret something you said when you were hungry and tired.",
+   "move": "Note the state you were in and plan around it.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Whitman asked for an autopsy and the finding was a tumor on the amygdala; look for hidden causes before deciding it was all will.",
+ "conversation_variants": {
+  "punchline_idea": "Before his attack, Charles Whitman asked that his brain be examined; the autopsy found a tumor pressing on the amygdala.",
+  "thirty_sec_idea": "In 1966 Charles Whitman shot people from the University of Texas tower after killing his wife and mother. He left a note asking for an autopsy, and it found a tumor pressing on his amygdala. Eagleman argues this shows biology shapes behavior unseen, though a commission could not prove the tumor caused it.",
+  "question_idea": "",
+  "key_contrast_idea": "choice vs hidden cause"
+ }
+}

@@ -1,0 +1,165 @@
+{
+  "book_no": 79,
+  "title": "Everything Is F*cked",
+  "authors": [
+    "Mark Manson"
+  ],
+  "year": "2019",
+  "note": "Subtitle: A Book About Hope. DB Turkish title 'Her Şey Yolunda' is not a faithful title. Full text not accessible; facts come from reviews, notes and a Globe and Mail interview, so confidence is capped at medium.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Everything_Is_F*cked",
+    "https://kirkusreviews.com/book-reviews/mark-manson/everything-is-fcked/print",
+    "https://tandrasz.blogspot.com/2025/06/everything-is-fcked.html",
+    "https://dansilvestre.com/?p=2522",
+    "https://barney.md/books/everything-is-fucked/",
+    "https://www.shortform.com/blog/mark-manson-everything-is-f/",
+    "https://www.theglobeandmail.com/life/relationships/article-why-limiting-our-choices-can-make-us-happier",
+    "https://en.wikipedia.org/wiki/Witold_Pilecki",
+    "https://www.blinkist.com/en/books/everything-is-f-star-cked-en"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Everything Is F*cked: A Book About Hope, Harper, 2019. Nine chapters; Part 1 ends with 'Hope Is F*cked'. Debuted at number one on the NYT list for Life Advice, How-to and Miscellaneous (week of May 26, 2019).",
+      "source": "Wikipedia",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "The book opens with Witold Pilecki, a Polish officer who in 1940 had himself sent to Auschwitz. Manson reads him as heroism: the ability to conjure hope where none exists, and asks where hope comes from.",
+      "source": "Kirkus; reader summaries; podcast transcript quoted in search results",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "On 19 September 1940 Pilecki was swept up in a Warsaw street roundup of about 2,000 men. He reached Auschwitz on 21-22 September with 1,705 other prisoners, as prisoner 4859 under the name Tomasz Serafinski.",
+      "source": "Wikipedia Witold Pilecki",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Inside, he built an underground group (ZOW) and a homemade radio transmitter, finished over seven months, that sent camp arrival and death figures until autumn 1942, when it was dismantled. He sent secret reports from October 1940.",
+      "source": "Wikipedia Witold Pilecki",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "He escaped on the night of 26-27 April 1943 and wrote Witold's Report in August 1943. The communist-run Polish authorities tried him on 3 March 1948, sentenced him to death on 15 May and executed him on 25 May 1948 in Mokotow Prison.",
+      "source": "Wikipedia Witold Pilecki",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Manson defines hope as the belief that you can make progress toward something valuable, and says it rests on a sense of control, a belief in the value of something, and community.",
+      "source": "Shortform; barney.md notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "A line attributed to the book: 'Hope is the only thing any of us willingly dies for.' The closing lines ask the reader to act without hope: 'To act without hope. To not hope for better. To be better.'",
+      "source": "dansilvestre.com; Blinkist excerpt",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "A line attributed to the book: 'Self limitation is the only ethical form of freedom.' Notes describe 'fake freedom' (more stuff, more options, the hedonic treadmill) against real freedom, which involves limitation and asks what you are willing to give up.",
+      "source": "dansilvestre.com; barney.md notes; Goodreads highlights via search",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "In a Globe and Mail interview about the book Manson said freedom comes from eliminating options, not adding them; abundance leaves people in distraction, envy and FOMO; real freedom is choosing your commitments and what you give up. He called limiting yourself a key challenge for the next 10-15 years, like an information diet: follow fewer people, hold higher standards for whom you trust.",
+      "source": "Globe and Mail interview",
+      "confidence": "high (about the interview, not the book text)"
+    },
+    {
+      "id": "f10",
+      "claim": "Interview anecdote: a woman in her late twenties had dated ten men with no lasting result. Manson asked whether she would rather date twenty men she felt nothing for or meet two she connected with. She chose two. He told her to cut 80 per cent of the men she normally considered and to set her standards by values. He says the difficulty and fear are part of what makes commitment worthwhile.",
+      "source": "Globe and Mail interview",
+      "confidence": "high (about the interview)"
+    },
+    {
+      "id": "f11",
+      "claim": "ZOW (Military Organization Union) was organised in secret cells of five. Its aims: boost inmate morale, bring outside news, distribute extra food and clothing, build intelligence networks, and train detachments to seize the camp during a relief attack. Pilecki's reports were a principal source of Auschwitz intelligence for the Western Allies.",
+      "source": "Wikipedia Witold Pilecki",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "The camp Gestapo was killing many ZOW members; Pilecki wanted to convince Home Army leaders that a rescue attempt was viable. He escaped with two comrades and was wounded by gunfire on the way. The Home Army command judged a rescue attack would fail for lack of transport, supplies and shelter for the freed prisoners.",
+      "source": "Wikipedia Witold Pilecki",
+      "confidence": "high"
+    },
+    {
+      "id": "f13",
+      "claim": "The 1948 show trial was on 3 March; sentenced 15 May; executed 25 May 1948 at Mokotow Prison. (Arrested 8 May 1947 and tortured.)",
+      "source": "Wikipedia Witold Pilecki",
+      "confidence": "high"
+    },
+    {
+      "id": "f14",
+      "claim": "Manson said he wrote the book after the 2016 US election, when he felt the 'honeymoon with the internet was over'. At his talks, he said, dating questions have returned and he calls them all problems of fake freedom.",
+      "source": "Globe and Mail interview",
+      "confidence": "high (about the interview)"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Manson names an 'umut paradoksu' (hope paradox): hoping for better says the present is not good enough.",
+      "reason": "The term does not appear in any source. The book's actual argument is about hope's role and acting without hope."
+    },
+    {
+      "claim": "Meaning is found in the present, not postponed ('this pain already holds meaning').",
+      "reason": "No source. Dropped."
+    },
+    {
+      "claim": "Manson recommends daily contemplation of your own death (memento mori, Stoics) and said 'Facing death clears the most meaningless parts of life.'",
+      "reason": "A reviewer calls the book a take on memento mori, but no source shows a daily practice, a Stoic link, or this quote. The mortality theme (the Uncomfortable Truth: cosmic insignificance and death) has no concrete case in the sources."
+    },
+    {
+      "claim": "Research consistently shows more options means less happiness.",
+      "reason": "No source ties this claim to the book. The interview argues from Manson's own view and one dating example."
+    },
+    {
+      "claim": "Quote 'Commitment doesn't feel like freedom, but it liberates.'",
+      "reason": "No source."
+    },
+    {
+      "claim": "Manson 'admits uncertainty, hardship and the inevitability of tragedy' and finds meaning within them.",
+      "reason": "Too vague to source."
+    }
+  ],
+  "stories": {
+    "1333": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f11",
+        "f12",
+        "f13"
+      ],
+      "note": "Hope story anchored in Pilecki, the book's opening case; the invented 'hope paradox' wording is gone."
+    },
+    "1334": {
+      "verdict": "delete",
+      "fact_ids": [],
+      "note": "Central claim (daily memento mori, Stoic roots, quote) is not tied to the book by any source."
+    },
+    "1335": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f8",
+        "f9",
+        "f10",
+        "f14"
+      ],
+      "note": "Reframed as fake versus real freedom (self-limitation). Confidence low: the book text itself was not reachable; the anecdote is from an interview."
+    }
+  }
+}

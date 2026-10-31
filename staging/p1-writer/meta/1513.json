@@ -1,0 +1,26 @@
+{
+  "tr": {
+    "title": "Dinlemek Liderliği Kaybettirince",
+    "description": "Seagate'in mühendisleri küçük bir disk sürücüsünü müşterilere götürdü ve onlar ilgilenmedi. İyi yönetilen liderler, en iyi müşterilerini dinleyerek yeni boyutu kaçırdı.",
+    "hook": "En iyi müşterilerinizin istemediği şey, bir sonraki büyük şey olabilir mi?",
+    "one_minute_summary": "Seagate'in mühendisleri 3,5 inçlik bir sürücü yapıp müşterilere götürdü, ama müşteriler daha çok kapasite istiyordu. Clayton Christensen, disk sürücü sektöründe her küçülmede eski liderlerin yerini yeni gelenlerin aldığını anlatır. Liderler en iyi müşterilerini dinledi ve kaybetti. Küçük sürücülerin ilk alıcıları masaüstü ve taşınabilir bilgisayar üreticileriydi. Sürücüler geliştikçe eski müşteriler de onlara geçti."
+  },
+  "en": {
+    "title": "When Listening Costs the Lead",
+    "description": "Seagate's engineers took a small disk drive to customers who shrugged. The well-run leaders kept listening to their best buyers and missed the next size.",
+    "hook": "What if the people who shrug at your work today are not the ones who matter next?",
+    "one_minute_summary": "Seagate's engineers built a 3.5-inch drive and showed it to customers, who wanted more capacity, not less. Clayton Christensen traces how, with each smaller disk size, the old leaders were replaced by newcomers. The leaders were well run and listened to their best customers, and that is how they lost. Desktop and portable computer makers bought the small drives first. As capacity grew, the old customers moved too."
+  },
+  "es": {
+    "title": "El disco que los clientes no quisieron",
+    "description": "Los ingenieros de Seagate llevaron un disco más pequeño a sus clientes, y estos se encogieron de hombros. Las empresas bien dirigidas escucharon a sus mejores clientes y perdieron el siguiente tamaño.",
+    "hook": "¿Y si quienes hoy no se interesan por tu trabajo son los que mañana decidirán qué se usa?",
+    "one_minute_summary": "Los ingenieros de Seagate construyeron un disco de 3,5 pulgadas y se lo enseñaron a sus clientes, que querían más capacidad. Clayton Christensen cuenta que, con cada tamaño menor, los líderes del anterior fueron reemplazados por recién llegados. Estaban bien dirigidos y escuchaban a sus mejores clientes, y por eso perdieron. Los fabricantes de ordenadores de sobremesa y portátiles compraron primero los discos pequeños. Al crecer su capacidad, los clientes antiguos también se pasaron."
+  },
+  "de": {
+    "title": "Wenn Zuhören die Führung kostet",
+    "description": "Seagates Ingenieure zeigten Kunden ein kleines Laufwerk, und die winkten ab. Die gut geführten Marktführer hörten auf ihre besten Kunden und verpassten die nächste Größe.",
+    "hook": "Was, wenn die Menschen, die heute abwinken, morgen entscheiden, was gekauft wird?",
+    "one_minute_summary": "Seagates Ingenieure bauten ein 3,5-Zoll-Laufwerk und zeigten es den Kunden, die mehr Kapazität wollten. Clayton Christensen beschreibt, wie bei jeder kleineren Größe die alten Marktführer durch Neulinge ersetzt wurden. Sie waren gut geführt und hörten auf ihre besten Kunden, und genau das kostete sie die Führung. Hersteller von Desktop- und tragbaren Computern kauften die kleinen Laufwerke zuerst. Als deren Kapazität wuchs, wechselten auch die alten Kunden."
+  }
+}

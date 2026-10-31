@@ -1,0 +1,58 @@
+{
+  "story_id": 1622,
+  "kind": "concept",
+  "book": {
+    "title": "Attached",
+    "author": "Amir Levine and Rachel S. F. Heller",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Deactivating strategies (an avoidant person pulling away as closeness grows, dwelling on a partner's small flaws or on doubts about whether this is 'the one') and the idea that recognising them is the first step are in Attached. The reference text's first-person quote ('I run as I start to fall') and its brain-activation wording could not be verified and are left out. No names, numbers or case histories are claimed.",
+  "facts": [
+    "Levine describes a pattern: early dates are exciting and feel close.",
+    "As the partner moves closer, the avoidant person starts to notice small flaws: the partner's voice, habits, and doubts about whether they are really compatible.",
+    "The book calls these automatic moves deactivating strategies: ways of pushing closeness away.",
+    "They are not a conscious plan; they are a reflex in response to feeling too close.",
+    "It hurts the avoidant person, who wants closeness and also feels driven to retreat.",
+    "It confuses the partner, who sees good moments and then a sudden chill without a reason.",
+    "Recognising the style, telling yourself 'this is my pattern and not the truth about my partner', is the first step to change."
+  ],
+  "scene_details": [
+    "a partner's voice or habit that suddenly irritates",
+    "good dates followed by a sudden chill"
+  ],
+  "tension": "The closer the partner gets, the more their small flaws seem to grow.",
+  "opening_idea": "After several great dates, the person who wanted closeness starts noticing how the partner chews or talks.",
+  "lessons": [
+    {
+      "idea": "A sudden urge to pull away can be a learned reflex and not information about the partner.",
+      "anchor": "flaws that appear as closeness grows"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When someone gets closer, what small thing do you start noticing about them, and what else might that urge be telling you?",
+  "use_cases": [
+    {
+      "situation": "You notice an irritation right after a warm evening.",
+      "move": "Write down the irritation and ask whether it would bother you a week earlier.",
+      "context": "self"
+    },
+    {
+      "situation": "Your partner pulls back after a close weekend.",
+      "move": "Say, 'I noticed some distance; I would rather ask than guess.'",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A friend keeps ending good relationships.",
+      "move": "Ask when in the relationship the doubts usually begin.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "When closeness makes a partner's small flaws loom, ask whether it is a reflex.",
+  "conversation_variants": {
+    "punchline_idea": "After great first dates, avoidant people often start noticing a partner's small flaws, and Levine calls that a deactivating strategy.",
+    "thirty_sec_idea": "Levine describes a pattern: the first dates are great, then the partner moves closer and the avoidant person starts noticing flaws, a voice, a habit, and wonders if they are compatible. The book calls this a deactivating strategy, a reflex to push closeness away. Naming it is the first step.",
+    "question_idea": "",
+    "key_contrast_idea": "Reflex, not verdict"
+  }
+}

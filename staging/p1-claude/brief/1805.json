@@ -1,0 +1,53 @@
+{
+  "story_id": 1805,
+  "kind": "anecdote",
+  "book": {
+    "title": "Grinding It Out",
+    "author": "Ray Kroc",
+    "year": "1977"
+  },
+  "confidence": "medium",
+  "confidence_note": "Kroc's own memoir, Grinding It Out (1977), is the source. The Multimixer order, the San Bernardino visit and the McDonald brothers' speed and simplicity are told there. The description of the McDonald brothers' operation (short menu, self-service window, kitchen arranged for speed) is from Kroc's account. The supplied 'dance rehearsal' image is a paraphrase and is dropped. No figures on speed or prices are used.",
+  "facts": [
+    "The McDonald brothers ran a restaurant that had cut its menu to a few items.",
+    "Customers walked up to a window and served themselves instead of waiting for waiters.",
+    "The kitchen was arranged so each worker did one task in a fixed order.",
+    "Fewer choices and fewer steps meant faster service and a product that came out the same each time.",
+    "Kroc saw not just a busy hamburger stand but a method that could be repeated elsewhere.",
+    "The system's strength came from what it left out."
+  ],
+  "tension": "Speed came from removing options, not adding capacity.",
+  "opening_idea": "Open on the brothers' decision to shorten the menu.",
+  "lessons": [
+    {
+      "idea": "Scaling often depends on what you decide not to do.",
+      "anchor": "The short menu, the walk-up window and the one-task-per-person kitchen."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which good-looking option could you remove from your work to make the rest run faster?",
+  "use_cases": [
+    {
+      "situation": "A team is adding another step or option.",
+      "move": "Ask what we could remove so the rest moves faster.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague struggles with too many priorities.",
+      "move": "Ask which one could be dropped this month.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your daily routine feels heavy.",
+      "move": "Take one task off the list and see what happens.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The McDonald brothers got faster by cutting the menu; look for the option you can remove.",
+  "conversation_variants": {
+    "punchline_idea": "The McDonald brothers sped up service by removing options rather than adding capacity.",
+    "thirty_sec_idea": "The McDonald brothers cut their menu to a few items, let customers serve themselves at a window, and arranged the kitchen so each worker did one task. Ray Kroc saw that the speed came from what they had left out, and that a method like that could be copied.",
+    "question_idea": "",
+    "key_contrast_idea": "Çok ve az"
+  }
+}

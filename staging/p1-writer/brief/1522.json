@@ -1,0 +1,58 @@
+{
+  "story_id": 1522,
+  "kind": "concept",
+  "book": {
+    "title": "The Road Less Traveled",
+    "author": "M. Scott Peck",
+    "year": "1978"
+  },
+  "confidence": "medium",
+  "confidence_note": "Opening line 'Life is difficult', the definition of love as the will to extend oneself for the nurturing of one's own or another's spiritual growth, and the four tools of discipline (delaying gratification, accepting responsibility, dedication to truth, balancing) are the book's well-known structure. The reference text's exact quotes are paraphrased, not quoted verbatim. Omitted: case histories, sentences on 'discipline without love is destructive'.",
+  "facts": [
+    "The book opens with 'Life is difficult', which Peck calls a great truth.",
+    "Peck says that once we truly accept this fact it stops troubling us.",
+    "He defines love as the will to extend oneself in order to nurture one's own or another's spiritual growth; love is an act of will, not a feeling.",
+    "Discipline is the means of that growth. Peck names four tools: delaying gratification, accepting responsibility, dedication to truth, and balancing.",
+    "Delaying gratification means giving up short-term comfort for a longer-term good.",
+    "Peck says discipline is fed by love: a parent who loves a child will have the hard conversations, and a person who values themselves will choose a hard discipline.",
+    "Love without discipline falls short."
+  ],
+  "scene_details": [
+    "three words opening the book",
+    "a list of four tools"
+  ],
+  "tension": "The author says love is an act of will that often feels uncomfortable.",
+  "opening_idea": "A psychiatrist opens a self-help book with three blunt words that promise no comfort.",
+  "lessons": [
+    {
+      "idea": "Love shows up as the hard action done for someone's growth, not as a comfortable feeling.",
+      "anchor": "Peck's definition of love as extending oneself for another's growth"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What hard thing have you done, or avoided, for someone you love, and what would it mean to treat that as part of caring?",
+  "use_cases": [
+    {
+      "situation": "A friend keeps making a choice that hurts them.",
+      "move": "Say plainly that you are worried and why, even if it risks the evening.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A teenager wants an easy yes.",
+      "move": "Give the answer you believe in and say it comes from caring.",
+      "context": "family"
+    },
+    {
+      "situation": "You put off a task that serves your own growth.",
+      "move": "Do the unpleasant part first, today.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Love is an act of will aimed at someone's growth, and discipline is how that will gets carried out.",
+  "conversation_variants": {
+    "punchline_idea": "Peck defines love as an act of will for someone's growth, which can mean doing the uncomfortable thing.",
+    "thirty_sec_idea": "Peck opens by saying life is difficult, and that accepting this makes it lighter. He defines love as extending yourself for someone's growth, and names four tools: delaying gratification, taking responsibility, honesty with reality, balance.",
+    "question_idea": "",
+    "key_contrast_idea": "Love as action"
+  }
+}

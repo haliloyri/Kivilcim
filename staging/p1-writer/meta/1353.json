@@ -1,0 +1,35 @@
+{
+  "story_id": 1353,
+  "verdict": "keep",
+  "verify_note": "Not in scope of verification (no change). Title replaced to match the new content, the Twin Cycles chapter.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Odaklı Çalışma, Planlı Toparlanma",
+    "description": "Robin Sharma'nın The 5 AM Club kitabındaki bir bölüm, yoğun odaklı çalışmayı derin toparlanmayla aynı ağırlıkta ele alır. Bölümün adı Elit Performansın İkiz Döngüleri.",
+    "hook": "Takviminizde toparlanmaya, çalışmaya ayırdığınız kadar yer var mı?",
+    "one_minute_summary": "The 5 AM Club sabah beşte kalkmakla anılır, ama bir bölümü başka bir şeyi anlatır: elit performansın ikiz döngüleri. Biri yoğun, odaklı çalışma dönemi, ötekisi bilerek yapılan derin toparlanma. Sharma'ya göre derin toparlanma olmadan sürdürülen performans, onu üreten kişiyi tüketir. Düzen şöyle: sert bir çalışma bloğu, planlı bir toparlanma, yine bir blok. Sharma modelin koçluk yaptığı yönetici ve sporculara yaradığını söyler, kaynaklarda kimse adıyla anılmıyor. Elimizde bir olay yok, bir düzen önerisi var."
+  },
+  "en": {
+    "title": "Focused Work, Planned Recovery",
+    "description": "A chapter of Robin Sharma's The 5 AM Club, The Twin Cycles of Elite Performance, gives deep recovery the same weight as focused work.",
+    "hook": "Does your calendar hold as much room for recovery as it does for work?",
+    "one_minute_summary": "The 5 AM Club is known for its early start, yet one chapter is about something else: the twin cycles of elite performance. One is a stretch of intense, focused work. The other is deliberate, deep recovery. Sharma's claim is that elite performance without deep recovery wears down the person producing it. The pattern is a hard block of work, a planned recovery, then another block. He says the model helped executives and athletes he coaches, but the sources name none of them. This is a routine, not a story."
+  },
+  "es": {
+    "title": "Trabajo enfocado, descanso planificado",
+    "description": "Un capítulo de The 5 AM Club, de Robin Sharma, da a la recuperación profunda el mismo peso que al trabajo enfocado. Se titula The Twin Cycles of Elite Performance.",
+    "hook": "¿Tiene tu calendario tanto sitio para recuperarte como para trabajar?",
+    "one_minute_summary": "The 5 AM Club se recuerda por la hora antes del amanecer, pero un capítulo habla de otra cosa: los ciclos gemelos del alto rendimiento. Uno es un tramo de trabajo intenso y enfocado; el otro, una recuperación profunda y deliberada. Según Sharma, el alto rendimiento sin recuperación desgasta a quien lo practica. La pauta es un bloque duro, un descanso planificado y otro bloque. Dice que el modelo ha servido a directivos y deportistas a quienes entrena, pero las fuentes no nombran a ninguno. Es una pauta, no una escena."
+  },
+  "de": {
+    "title": "Konzentrierte Arbeit, geplante Erholung",
+    "description": "Ein Kapitel in Robin Sharmas The 5 AM Club gibt tiefer Erholung dasselbe Gewicht wie konzentrierter Arbeit. Es heißt The Twin Cycles of Elite Performance.",
+    "hook": "Hat dein Kalender für Erholung so viel Platz wie für Arbeit?",
+    "one_minute_summary": "The 5 AM Club kennt man wegen der Stunde vor Sonnenaufgang, doch ein Kapitel handelt von etwas anderem: den Zwillingszyklen der Spitzenleistung. Der eine ist eine Phase intensiver, konzentrierter Arbeit, der andere bewusste, tiefe Erholung. Sharma sagt, Spitzenleistung ohne tiefe Erholung zehre an dem, der sie bringt. Das Muster: ein harter Arbeitsblock, geplante Erholung, wieder ein Block. Das Modell habe Führungskräften und Sportlern geholfen, die er coacht, die Quellen nennen aber niemanden. Es ist ein Muster, keine Szene."
+  }
+}

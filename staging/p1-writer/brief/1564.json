@@ -1,0 +1,58 @@
+{
+  "story_id": 1564,
+  "kind": "concept",
+  "book": {
+    "title": "The 15 Commitments of Conscious Leadership",
+    "author": "Jim Dethmer, Diana Chapman and Kaley Warner Klemp",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The above-the-line / below-the-line model is the book's core idea. The supplied TR text's CEO meeting anecdote ('Did you feel threatened?') and quoted lines are not in the book as far as I can verify, so they are excluded; the story is told as a concept from the model's own terms. The input title and year (Bilinçli Liderlik, 2020, Jim Dethmer alone) differ from the original (2014, three authors); the brief uses the original English book data. 'Closed, defensive, committed to being right' versus 'open, curious, committed to learning' is how the book and its authors describe the two states.",
+  "facts": [
+    "The authors say a leader is always in one of two places: above the line or below the line.",
+    "Below the line a person is closed and defensive, and committed to being right.",
+    "Above the line a person is open and curious, and committed to learning.",
+    "The line is about the moment you are in, not about the kind of person you are.",
+    "Nobody lives above it all the time; the authors expect people to drop below it often.",
+    "Their first step is simply to notice and say which side you are on, without shame.",
+    "The practice is to move from 'I'm right' to curiosity, asking what you might be missing.",
+    "The book lists 15 commitments; each one has an above-the-line and a below-the-line version, and the model is how the authors frame all of them."
+  ],
+  "scene_details": [
+    "the pair of descriptions: closed, defensive, committed to being right / open, curious, committed to learning"
+  ],
+  "tension": "The most capable person in the room can be just as closed as the least capable, and the difference is not skill.",
+  "opening_idea": "Start with the line itself drawn on a page, and the two words the authors put on either side.",
+  "lessons": [
+    {
+      "idea": "You cannot choose to avoid dropping below the line, but you can notice it and name it, which changes what happens next.",
+      "anchor": "The authors' advice to notice and say which side of the line you are on."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your last disagreement, which side of the line were you on, and what could you have asked in order to move across it?",
+  "use_cases": [
+    {
+      "situation": "In a meeting you notice your reply is getting sharper.",
+      "move": "Say quietly: I think I'm below the line, give me a second.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your partner disagrees with a plan you love.",
+      "move": "Ask one curious question before you answer, such as: what do you see that I don't?",
+      "context": "family"
+    },
+    {
+      "situation": "After an argument with a friend, you replay it.",
+      "move": "Ask yourself: was I trying to be right or trying to learn?",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Above the line you are curious and learning; below it you defend and want to be right. Name which side you are on.",
+  "conversation_variants": {
+    "punchline_idea": "The authors split a leader's day into two places, above the line and below it, and the difference is not skill.",
+    "thirty_sec_idea": "In the book on conscious leadership, a leader is always either above the line or below it. Below, you are closed, defensive and committed to being right. Above, you are open, curious and committed to learning. Nobody lives above the line all the time, so the first step is just to notice and say which side you are on.",
+    "question_idea": "When did you last catch yourself defending?",
+    "key_contrast_idea": "Right or curious"
+  }
+}

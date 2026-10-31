@@ -1,0 +1,61 @@
+{
+  "story_id": 1708,
+  "kind": "concept",
+  "book": {
+    "title": "Emotional Intelligence",
+    "author": "Daniel Goleman",
+    "year": "1995"
+  },
+  "confidence": "medium",
+  "confidence_note": "Recalled from the book's chapters on the emotional brain and on IQ versus other factors; not page-checked. The 20 percent figure is Goleman's quoted estimate and kept hedged. Omitted: LeDoux's rat experiment details, the opening Chauncey train story, the marshmallow test, personal anecdotes and any named patient. The reference text has no concrete event; this brief uses the book's own mechanism and argument.",
+  "facts": [
+    "Daniel Goleman was a science reporter for The New York Times covering brain and behaviour research before he wrote the book.",
+    "In the book he draws on Joseph LeDoux's work on the brain's emotional centre, the amygdala.",
+    "A sensory signal first reaches the thalamus; from there one branch goes straight to the amygdala while the main path goes on to the neocortex, the thinking brain.",
+    "That shortcut means the amygdala can start a reaction before the thinking brain has fully registered what is happening.",
+    "Goleman calls such a takeover an emotional hijacking.",
+    "He also argues that IQ accounts for at most about a fifth of what shapes success in life, leaving most of it to other forces, among them handling emotions and relationships.",
+    "From this he builds the case for emotional intelligence: self-awareness, self-control, empathy and social skill.",
+    "Goleman presents emotional intelligence skills (self-awareness, self-management, empathy, social skill) as learnable.",
+    "He uses the IQ figure to ask what explains different outcomes for people with the same IQ."
+  ],
+  "scene_details": [
+    "a signal that splits after the thalamus: one branch to the amygdala, one to the thinking brain",
+    "the phrase 'emotional hijacking'",
+    "at most about a fifth of success credited to IQ"
+  ],
+  "tension": "The body may be ready to react before the mind has finished understanding, yet we are rated on IQ.",
+  "opening_idea": "Open on the signal that splits in two after the thalamus, the short branch reaching the amygdala first.",
+  "lessons": [
+    {
+      "idea": "A strong reaction can start before you have thought; notice it and give the thinking brain a moment before you speak or send.",
+      "anchor": "the shortcut from thalamus to amygdala"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In which situation does your first reaction come before your thinking, and what one small pause could you build in next time?",
+  "use_cases": [
+    {
+      "situation": "You get a sharp email and want to reply at once.",
+      "move": "Wait until you have reread it, since the first reaction can come before understanding; reply after the pause.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague loses their temper in a meeting.",
+      "move": "Call a short break and resume when both of you have settled.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You and your partner are arguing and voices are rising.",
+      "move": "Say you want to continue, and propose ten minutes apart first.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Goleman's emotional hijacking: the amygdala can react before the thinking brain catches up, so give it a pause.",
+  "conversation_variants": {
+    "punchline_idea": "Goleman says part of a signal reaches the amygdala before the thinking brain has caught up, which is why reactions can beat reasoning.",
+    "thirty_sec_idea": "Daniel Goleman, a New York Times science reporter, built on LeDoux's work: a signal from the senses splits, one branch straight to the amygdala, the other to the thinking brain. So a reaction can start first. He called it emotional hijacking and argued IQ explains at most about a fifth of success.",
+    "question_idea": "",
+    "key_contrast_idea": "reaction first, thinking second"
+  }
+}

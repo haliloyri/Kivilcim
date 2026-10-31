@@ -1,0 +1,41 @@
+{
+  "story_id": 1507,
+  "kind": "concept",
+  "book": { "title": "Leading Change", "author": "John Kotter", "year": "1996" },
+  "confidence": "medium",
+  "confidence_note": "The book text is lending-only on archive.org; the facts come from Kotter's 1995 Harvard Business Review article 'Leading Change: Why Transformation Efforts Fail' (full text read), which the book expands as its first step, and from the excerpt notes. The 'well over 50%' failure figure, the 75% rule and the two cases (the CEO's accounting loss, the division president's surveys) are Kotter's own observations from watching more than 100 companies, not a study. The reference TR text's '70 to 80 percent fail', the 'competitor took 10 percent of market share' example and 'false urgency' were not found in the 1995 article and are dropped. State once that the figures are Kotter's observations.",
+  "facts": [
+    "Kotter watched more than 100 companies try to remake themselves over about ten years; his first listed error is not establishing a great enough sense of urgency.",
+    "He writes that phase one can sound easy but well over 50 percent of the companies he watched fail in it.",
+    "Why: executives underestimate how hard it is to drive people out of their comfort zones, grossly overestimate how much urgency they have created, lack patience, or are paralysed by worry about morale, the stock price and being blamed for creating a crisis.",
+    "In more successful cases someone starts a frank discussion of unpleasant facts such as new competition, shrinking margins or falling market share, and executives often rely on outsiders such as analysts, customers and consultants to bring the bad news, because people tend to shoot the bearer of bad news.",
+    "A former CEO of a large European company put the aim as making the status quo seem more dangerous than launching into the unknown.",
+    "In a few of the most successful cases a group manufactured a crisis: one CEO deliberately engineered the largest accounting loss in the company's history, and one division president commissioned first-ever customer-satisfaction surveys knowing the results would be terrible and then made them public.",
+    "Kotter's rule of thumb: urgency is high enough when about 75 percent of a company's management is honestly convinced that business as usual is totally unacceptable."
+  ],
+  "scene_details": [
+    "A division president publishing survey results he knew would be bad",
+    "A CEO engineering a record accounting loss",
+    "Outside analysts, customers and consultants delivering the news",
+    "The 75 percent rule"
+  ],
+  "tension": "To get people moving, some leaders chose to make the bad numbers public themselves, at a visible cost.",
+  "opening_idea": "Start with the CEO who deliberately engineered the largest accounting loss in his company's history.",
+  "lessons": [
+    { "idea": "Before asking people to change, put the facts that make standing still risky in front of them.", "anchor": "The division president who published customer-satisfaction results he knew would be terrible.", "everyday_example_idea": "A team lead who wants to change a slow handover process shows the team a list of the last missed deliveries before proposing anything." }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one change you want to make where you could show others a concrete, unwelcome fact first, and which fact would it be?",
+  "use_cases": [
+    { "situation": "You want your team to change a process.", "move": "Kotter's division president published survey results he knew would be bad. Share one concrete number that shows the cost of the current way before proposing the new one.", "context": "meeting" },
+    { "situation": "A family needs to change how chores are shared.", "move": "Put the real list on the fridge for a week so that everyone sees who does what, then talk about it.", "context": "family" },
+    { "situation": "You are trying to convince yourself to change a habit.", "move": "Write one concrete fact about what staying the same has cost you in the last month.", "context": "self" }
+  ],
+  "pocket_idea": "Kotter's division president published the survey he knew was bad; start change by showing the unwelcome number.",
+  "conversation_variants": {
+    "punchline_idea": "One of Kotter's CEOs engineered the largest accounting loss in company history to get people to move.",
+    "thirty_sec_idea": "John Kotter watched more than 100 companies try to change. His first mistake on the list is too little urgency, and well over half failed there. In the better cases leaders showed people the unpleasant facts: one CEO engineered a record accounting loss, a division president published customer surveys he knew would be terrible.",
+    "question_idea": "",
+    "key_contrast_idea": "Show the real number"
+  }
+}

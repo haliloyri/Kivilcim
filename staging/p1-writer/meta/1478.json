@@ -1,0 +1,35 @@
+{
+  "story_id": 1478,
+  "verdict": "keep",
+  "verify_note": "Medicine, Spotify and matching examples removed; replaced by what page-referenced notes and reviews support (definition, algorithms, Google Flu Trends, biometric devices, authority shift) plus the critics' caveat. Medium confidence.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Dataizm: sizi kim tanıyor",
+    "description": "Harari'nin Dataizm'i her şeyin değerini veri işlemeye katkısıyla ölçüyor. Algoritmaların sizi sizden iyi tanıyabileceğini söylüyor, eleştirmenler kanıtsız buluyor.",
+    "hook": "Son kararınızda bir puanı kendi hissinizin önüne koydunuz mu?",
+    "one_minute_summary": "Yuval Noah Harari, Dataizm'i şöyle anlatıyor: evren veri akışlarından oluşuyor ve her şeyin değeri veri işlemeye katkısıyla ölçülüyor. Organizmalar ve duygular da algoritma sayılıyor. Google ve Facebook algoritmalarının nasıl hissettiğinizi bildiğini, dışarıdaki algoritmaların insanlığı hackleyip insanları kendilerinden iyi tanıyabileceğini öne sürüyor. Örnek olarak arama verilerinden grip salgınlarını yakalayan Google Flu Trends'i ve sağlığı izleyen biyometrik cihazları anıyor. Eleştirmenler iddianın algoritmaların kendi beyanlarına dayandığını ve kanıtının az olduğunu söylüyor."
+  },
+  "en": {
+    "title": "Dataism: who knows you best",
+    "description": "Harari's Dataism values everything by its contribution to data processing. He says algorithms may know you better than you know yourself, and critics call that unproven.",
+    "hook": "Did you last put a score ahead of your own feeling when you decided?",
+    "one_minute_summary": "Yuval Noah Harari describes Dataism as the view that the universe consists of data flows and that everything is valued by its contribution to data processing. Organisms and emotions count as algorithms too. He says Google and Facebook algorithms know how you feel and that outside algorithms may hack humanity and know people better than they know themselves. His examples include Google Flu Trends, which caught flu outbreaks from searches, and biometric health devices. Critics say the claim takes the algorithms' own claims at face value and rests on little evidence."
+  },
+  "es": {
+    "title": "Dataísmo: quién te conoce",
+    "description": "El dataísmo de Harari valora todo por lo que aporta al procesamiento de datos. Dice que los algoritmos pueden conocerte mejor que tú, y los críticos lo ven sin pruebas.",
+    "hook": "¿Pusiste por última vez una puntuación por delante de tu propia sensación al decidir?",
+    "one_minute_summary": "Yuval Noah Harari describe el dataísmo como la visión de que el universo consiste en flujos de datos y todo se valora por lo que aporta al procesamiento de datos. Los organismos y las emociones también cuentan como algoritmos. Dice que los algoritmos de Google y Facebook saben cómo te sientes y que algoritmos externos podrían hackear a la humanidad y conocer a las personas mejor que ellas mismas. Sus ejemplos incluyen Google Flu Trends, que detectó brotes de gripe con búsquedas, y los dispositivos biométricos de salud. Los críticos dicen que la afirmación da por buenas las promesas de los algoritmos y se apoya en pocos datos."
+  },
+  "de": {
+    "title": "Dataismus: wer kennt dich",
+    "description": "Hararis Dataismus bewertet alles nach seinem Beitrag zur Datenverarbeitung. Er sagt, Algorithmen könnten dich besser kennen als du dich selbst, Kritiker nennen das unbelegt.",
+    "hook": "Hast du bei deiner letzten Entscheidung einen Wert vor dein eigenes Gefühl gestellt?",
+    "one_minute_summary": "Yuval Noah Harari beschreibt den Dataismus als Sicht, das Universum bestehe aus Datenflüssen und alles werde nach seinem Beitrag zur Datenverarbeitung bewertet. Organismen und Gefühle gelten ebenfalls als Algorithmen. Er sagt, Google- und Facebook-Algorithmen wüssten, wie du dich fühlst, und äußere Algorithmen könnten die Menschheit hacken und Menschen besser kennen als diese sich selbst. Seine Beispiele sind Google Flu Trends, das Grippewellen aus Suchanfragen erkannte, und biometrische Gesundheitsgeräte. Kritiker sagen, die Behauptung nehme die Versprechen der Algorithmen für bare Münze und stütze sich auf wenig Belege."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1470,
+  "verdict": "keep",
+  "verify_note": "Old 1850-iPhone / 1950-transistor thought experiment not tied to the book and dropped. Kept: Kauffman's adjacent possible, house-of-doors image, Babbage 1830s, Leyden jar (Von Kleist and Cunaeus), TED lineage flute-organ-music box. Sources: Shortform note on the concept, review summaries, SuperSummary; exact book wording not read, confidence medium.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Bitişik Olanak",
+    "description": "Johnson, biyolog Kauffman'dan aldığı bitişik olanak terimini bir evle anlatıyor. Babbage'ın bilgisayarı bir yüzyıl parçalarını bekledi.",
+    "hook": "Elinizdeki hangi aracın bir sonraki adımını hiç denemediniz?",
+    "one_minute_summary": "Steven Johnson, biyolog Stuart Kauffman'dan bitişik olanak terimini alıyor: elinizdeki bilgi ve malzemeyle ulaşılabilecek fikirler. Bunu, her açılan kapının yeni odalar gösterdiği bir evle anlatıyor. Charles Babbage programlanabilir bir bilgisayar tasarladı ama o günün malzemesiyle makine mekanik ve yavaş olacaktı, bilgisayarlar yaklaşık bir yüzyıl sonra onun planları üzerine kuruldu. Leyden şişesini 1700'lerin ortasında iki kişi yaklaşık bir yıl arayla geliştirdi."
+  },
+  "en": {
+    "title": "The Adjacent Possible",
+    "description": "Johnson borrows the adjacent possible from biologist Stuart Kauffman and pictures it as a house of doors. Babbage's computer waited about a century for its parts.",
+    "hook": "Which tool or skill you already have has a next step you have never tried?",
+    "one_minute_summary": "Steven Johnson borrows adjacent possible from biologist Stuart Kauffman: the ideas within reach of current knowledge and materials. He pictures it as a house where each door you open shows new rooms. Charles Babbage conceived a programmable computer in the 1830s, but with his era's materials it would have been mechanical and very slow, and computers were built on his blueprints about a century later. In the mid-1700s two men made the Leyden jar within about a year of each other."
+  },
+  "es": {
+    "title": "Lo posible adyacente",
+    "description": "Johnson toma lo posible adyacente del biólogo Stuart Kauffman y lo imagina como una casa de puertas. El ordenador de Babbage esperó cerca de un siglo por sus piezas.",
+    "hook": "¿Qué herramienta o habilidad que ya tienes tiene un siguiente paso que nunca has probado?",
+    "one_minute_summary": "Steven Johnson toma del biólogo Stuart Kauffman lo posible adyacente: las ideas al alcance de los conocimientos y materiales actuales. Lo imagina como una casa donde cada puerta que abres muestra habitaciones nuevas. Charles Babbage concibió un ordenador programable en la década de 1830, pero con los materiales de su época habría sido mecánico y muy lento, y los ordenadores se construyeron sobre sus planos cerca de un siglo después. A mediados del siglo XVIII dos hombres hicieron la botella de Leiden con un año de diferencia."
+  },
+  "de": {
+    "title": "Das angrenzende Mögliche",
+    "description": "Johnson übernimmt das angrenzende Mögliche vom Biologen Kauffman und zeichnet es als Haus mit Türen. Babbages Computer wartete rund ein Jahrhundert auf seine Teile.",
+    "hook": "Bei welchem Werkzeug, das du schon hast, hast du den nächsten Schritt noch nie probiert?",
+    "one_minute_summary": "Steven Johnson übernimmt vom Biologen Stuart Kauffman das angrenzende Mögliche: die Ideen, die mit vorhandenem Wissen und Material in Reichweite liegen. Er sieht es als Haus, in dem jede geöffnete Tür neue Räume zeigt. Charles Babbage dachte sich in den 1830ern einen programmierbaren Computer aus, der mit den Mitteln seiner Zeit mechanisch und langsam geworden wäre, und moderne Computer entstanden rund ein Jahrhundert später auf seinen Plänen. Mitte des 18. Jahrhunderts bauten zwei Männer die Leidener Flasche."
+  }
+}

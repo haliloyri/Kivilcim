@@ -1,0 +1,35 @@
+{
+  "story_id": 1636,
+  "verdict": "keep",
+  "verify_note": "Rebuilt on the publisher excerpt (hungry ghost realm, Hell Realm, continuum, Eva and Arlene). Invented patient Q&A and ten-year figure dropped. Maté's CD habit comes from a 2008 profile; medium confidence.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Aç hayaletler diyarı",
+    "description": "Maté, Vancouver'ın Downtown Eastside semtinde bağımlılara bakan bir doktor. Hastalarını anlatmak için Budist Yaşam Çarkı'ndaki aç hayaletler âlemini kullanıyor.",
+    "hook": "Bırakamadığınız alışkanlık sizi hangi acıdan uzak tutuyor?",
+    "one_minute_summary": "Gabor Maté, Vancouver'ın Downtown Eastside semtinde Portland Hotel Society'nin doktoru. Hastalarını anlatmak için Budist Yaşam Çarkı'ndaki aç hayaletler âlemini ödünç alıyor: orada rahatlık hep dışarıda aranıyor ve kovalanan şey asıl ihtiyaç olmuyor. Uyuşturucu kullanımını korku, öfke ve umutsuzluktan kaçış olarak okuyor, bağımlılığı iş bağımlılığına kadar uzanan bir süreklilik içinde görüyor ve kendi CD alma tutkusunu da buraya katıyor. Sorusu şu: neden bağımlılık değil, neden acı? Bazı yorumcular iddialarının kapsamını tartışmalı buluyor."
+  },
+  "en": {
+    "title": "The Hungry Ghost Realm",
+    "description": "Maté was a physician in a Vancouver hotel for people with addictions. He borrows the Buddhist hungry ghost realm to describe the people he treats.",
+    "hook": "Which habit of yours might be quieting something you have not named?",
+    "one_minute_summary": "Gabor Maté is the physician for the Portland Hotel Society in Vancouver's Downtown Eastside. To describe his patients he borrows the Buddhist Wheel of Life, where hungry ghosts reach outside themselves for relief and never find what they need. He reads drug use as an escape from the Hell Realm of fear, rage and despair, sees addiction on a continuum that reaches workaholism, and counts his own habit of buying classical CDs on it. His question is why the pain rather than why the addiction. Some commentators question how far his claims reach."
+  },
+  "es": {
+    "title": "El mundo de los fantasmas hambrientos",
+    "description": "Maté fue médico en un hotel de Vancouver para personas con adicciones. Toma prestado el mundo budista de los fantasmas hambrientos para describir a sus pacientes.",
+    "hook": "¿Qué hábito tuyo podría estar calmando algo que todavía no has nombrado?",
+    "one_minute_summary": "Gabor Maté es médico de la Portland Hotel Society, en el Downtown Eastside de Vancouver. Para describir a sus pacientes toma la Rueda de la Vida budista, donde los fantasmas hambrientos buscan alivio fuera de sí y nunca encuentran lo que necesitan. Interpreta el consumo como una huida del mundo infernal del miedo, la rabia y la desesperación, sitúa la adicción en un continuo que llega al exceso de trabajo y cuenta en él su propia costumbre de comprar discos de música clásica. Su pregunta es por qué el dolor y no por qué la adicción. Algunos comentaristas cuestionan hasta dónde llegan sus afirmaciones."
+  },
+  "de": {
+    "title": "Die Welt der hungrigen Geister",
+    "description": "Maté war Arzt in einem Hotel für Suchtkranke in Vancouver. Er leiht sich die buddhistische Welt der hungrigen Geister, um seine Patienten zu beschreiben.",
+    "hook": "Welche deiner Gewohnheiten beruhigt vielleicht etwas, das du noch nicht benannt hast?",
+    "one_minute_summary": "Gabor Maté ist Arzt der Portland Hotel Society im Vancouver Downtown Eastside. Seine Patienten beschreibt er mit dem buddhistischen Lebensrad, in dem hungrige Geister Linderung außerhalb ihrer selbst suchen und nie finden, was sie brauchen. Drogenkonsum liest er als Flucht aus der Höllenwelt von Angst, Wut und Verzweiflung, Sucht sieht er auf einem Kontinuum bis zur Arbeitssucht und zählt seine eigene Gewohnheit, klassische CDs zu kaufen, dazu. Seine Frage lautet, warum der Schmerz und nicht, warum die Sucht. Manche Kommentatoren fragen, wie weit seine Behauptungen tragen."
+  }
+}

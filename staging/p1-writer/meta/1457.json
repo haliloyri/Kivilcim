@@ -1,0 +1,35 @@
+{
+  "story_id": 1457,
+  "verdict": "keep",
+  "verify_note": "Not verified in this pass. Title changed: old title/description described the old text and no longer fit the new story.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Beşlerin Arasındaki İkiler",
+    "description": "Ramachandran, rakamları renkli gören insanları bir sayfa deneyle sınadı. Beşlerin arasına gizlenen ikiler, rengin hayal mi gerçek mi olduğunu ölçmeye yaradı.",
+    "hook": "Birinin gördüğünü söylediği ama sizin göremediğiniz bir şeye nasıl yaklaşırsınız?",
+    "one_minute_summary": "V.S. Ramachandran, rakamları renkli gören insanları anlatıyor. Bunun hayal mi, gerçek algı mı olduğunu ölçmek için sıra sıra 5'lerin arasına, bir üçgen oluşturacak biçimde birkaç 2 yerleştirdi. Bu insanlar üçgeni neredeyse hemen buldu, çünkü ikiler onlara başka renkte görünüyordu. Ramachandran bunu komşu beyin bölgeleri arasındaki fazladan bağlantıya bağlıyor. Bu onun önerisi, sonraki incelemelere göre sinirsel temeli henüz oturmuş değil."
+  },
+  "en": {
+    "title": "Twos Hidden Among Fives",
+    "description": "Ramachandran tested people who see numbers in colour with a page of printed digits. The test showed whether the colour was imagined or actually seen.",
+    "hook": "When someone says they perceive what you cannot, can you think of a test that would settle it?",
+    "one_minute_summary": "In The Tell-Tale Brain, V.S. Ramachandran asks whether number colours are imagined or seen. He printed rows of 5s with a few 2s hidden among them, forming a triangle. People with number-colour synesthesia found the shape almost at once, because their 2s had another colour. Ramachandran explains it by neighbouring brain areas that switch each other on. That is his proposal, and later reviews say the neural basis is still not settled."
+  },
+  "es": {
+    "title": "Doses entre cincos",
+    "description": "Ramachandran puso a prueba a quienes ven las cifras en color con una hoja llena de cincos. La prueba midió si el color se imaginaba o se veía.",
+    "hook": "¿Qué prueba sencilla propondrías para comprobar algo que otra persona dice percibir y tú no?",
+    "one_minute_summary": "V.S. Ramachandran quería saber si el color de las cifras se imagina o se ve. Preparó una hoja con filas de cincos y unos pocos doses que dibujaban un triángulo. Las personas con sinestesia numérica lo encontraron casi de inmediato, porque para ellas los doses tenían otro color. Él lo explica por la cercanía de dos áreas cerebrales que se activan entre sí. Es su propuesta, y trabajos posteriores indican que la base neuronal no está resuelta."
+  },
+  "de": {
+    "title": "Zweien zwischen Fünfen",
+    "description": "Ramachandran prüfte Menschen, die Zahlen farbig sehen, mit einem Blatt voller Fünfen. Der Test zeigte, ob die Farbe Einbildung ist oder tatsächlich gesehen wird.",
+    "hook": "Wie würdest du prüfen, was jemand wahrnimmt, das du selbst nicht siehst?",
+    "one_minute_summary": "V.S. Ramachandran wollte wissen, ob die Zahlenfarben der Synästheten Einbildung sind. Er legte ein Blatt mit Reihen von Fünfen an und mischte einige Zweien so darunter, dass sie ein Dreieck bildeten. Menschen mit Zahlen-Farben-Synästhesie fanden die Form fast sofort, weil ihre Zweien eine andere Farbe hatten. Er erklärt das mit benachbarten Hirnarealen, die sich gegenseitig anregen. Das ist seine Hypothese, die neuronale Grundlage gilt noch nicht als geklärt."
+  }
+}

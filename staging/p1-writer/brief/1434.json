@@ -1,0 +1,58 @@
+{
+  "story_id": 1434,
+  "kind": "anecdote",
+  "book": {
+    "title": "Measure What Matters",
+    "author": "John Doerr",
+    "year": "2018"
+  },
+  "confidence": "low",
+  "confidence_note": "The old text's Doerr quote ('in most organizations everyone has goals but nobody knows whether they connect') and its description of a CEO-to-employee cascade are not tied to the book and are dropped. Confirmed through summaries: the book's chapter on MyFitnessPal, where the Lee brothers found many individual OKRs misaligned and teams blocking one another, and fixed it with a regular meeting at which department heads presented their OKRs and named the teams they depended on; and the Intuit chapter, where CIO Atticus Tysen says the key was making all OKRs visible across the company. I could not read the book text, and the number of people or teams, the size of the company and the result are not confirmed and are not used. The word quarterly was not confirmed in sources, so 'regular' is used.",
+  "facts": [
+    "In the book's MyFitnessPal chapter, brothers Mike and Albert Lee found that many people's OKRs were not aligned.",
+    "Teams were blocked because they depended on other teams.",
+    "The fix was a regular meeting where each department head presented their OKRs.",
+    "In that meeting each head also named the teams they depended on.",
+    "In the Intuit chapter, CIO Atticus Tysen says the key to success was making all OKRs visible across the company.",
+    "The chapter 'Align: The MyFitnessPal Story' is written by co-founder and CEO Mike Lee; each OKR has a single owner; after Under Armour acquired the company OKRs became more important; Lee wished he had started OKRs earlier."
+  ],
+  "scene_details": [
+    "a quarterly meeting",
+    "department heads presenting OKRs",
+    "naming the teams they depend on"
+  ],
+  "tension": "Teams worked on their own goals and found out only later that they were waiting for someone else.",
+  "opening_idea": "Start with a team blocked because it depended on another team.",
+  "lessons": [
+    {
+      "idea": "Say out loud which team you depend on, so the dependency is visible before it blocks you.",
+      "anchor": "Department heads naming the teams they depend on."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Whose work do you depend on to finish your most important task, and does that person know it?",
+  "use_cases": [
+    {
+      "situation": "Your work waits on another team.",
+      "move": "Tell them in the planning meeting which of your goals depends on them, as the MyFitnessPal department heads did.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague seems blocked.",
+      "move": "Ask who they are waiting on and offer to raise it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You plan a chore list at home.",
+      "move": "Say who must finish what first so the others are not waiting.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "At MyFitnessPal heads named the teams they depended on every quarter: say who you are waiting on.",
+  "conversation_variants": {
+    "punchline_idea": "At MyFitnessPal the fix for misaligned goals was a quarterly meeting where every head named the teams they depended on.",
+    "thirty_sec_idea": "In Doerr's chapter on MyFitnessPal, the Lee brothers found many people's OKRs misaligned and teams blocking one another. They fixed it with a quarterly meeting where each department head presented their OKRs and named the teams they depended on. At Intuit, CIO Atticus Tysen says the key was making all OKRs visible.",
+    "question_idea": "",
+    "key_contrast_idea": "Say who you depend on"
+  }
+}

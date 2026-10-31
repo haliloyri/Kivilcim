@@ -1,0 +1,60 @@
+{
+  "story_id": 1479,
+  "kind": "anecdote",
+  "book": {
+    "title": "Homo Deus",
+    "author": "Yuval Noah Harari",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read. That Harari says scanners predict decisions before awareness is sourced to page-referenced notes; that he cites Libet is stated by commentators. Experiment numbers come from the 1983 paper as summarised by an outside source and are labelled in the story. Old text dropped: wrong timing (300-500 ms), electrode on the hand, the criminal-responsibility section.",
+  "facts": [
+    "Chapter 8, The Time Bomb in the Laboratory: Harari calls free will a factual claim that conflicts with science. Brain processes are deterministic, random or a mix, and none of those is free. Acting on a desire is not choosing it.",
+    "Scanners can predict desires and decisions before people are aware of them, with signals appearing from a few hundred milliseconds to a few seconds ahead.",
+    "Commentators say the book cites Benjamin Libet's experiment for this.",
+    "Libet, 1983: a custom clock whose dot turned once every 2.56 seconds. Subjects flexed a wrist whenever they felt like it and reported the clock position when they first felt the urge. Scalp electrodes showed the readiness potential about 550 ms before the flex; the reported urge came about 200 ms before. Six subjects, forty trials each.",
+    "Libet himself proposed a \"free won't\": a veto in the last 150 ms before movement.",
+    "Later reanalysis (Schurger 2012) showed the readiness potential can arise from spontaneous noise. A 2021 review says the classic reading as a decision signal is no longer the field default.",
+    "Harari adds that drugs, genetic engineering or brain stimulation could create or erase feelings such as love or fear."
+  ],
+  "scene_details": [
+    "A clock dot turning once every 2.56 seconds",
+    "A wrist flexed whenever the subject felt like it",
+    "Scalp electrodes recording before the urge was felt"
+  ],
+  "tension": "A signal appears in the brain about 350 ms before the person reports wanting to move.",
+  "opening_idea": "Start with the clock dot and the wrist flex.",
+  "lessons": [
+    {
+      "idea": "A feeling of deciding does not tell you everything about where the decision began, so hold your explanations for your own choices a little loosely.",
+      "anchor": "In Libet's task the brain signal came before the reported urge, yet Libet kept a veto for the last 150 ms.",
+      "everyday_example_idea": "Someone who snaps at a coworker and insists they chose their words calmly, then reads the message back."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which choice of yours would look different if you assumed the reasons you give for it were only part of the story?",
+  "use_cases": [
+    {
+      "situation": "After an argument you defend your choice of words.",
+      "move": "Say you chose in the moment and want to look at what led there, like the wrist that moved before the urge.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A friend says they simply decided to quit.",
+      "move": "Ask what happened in the days before they felt decided.",
+      "context": "social"
+    },
+    {
+      "situation": "You feel an urge to send a message.",
+      "move": "Use the last moment before sending as your veto, as Libet's free won't.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "In Libet's clock test the brain signal came before the urge; use the last moment before acting as your veto.",
+  "conversation_variants": {
+    "punchline_idea": "In Libet's experiment a brain signal showed up roughly 350 milliseconds before people said they wanted to move.",
+    "thirty_sec_idea": "Libet had people flex a wrist whenever they felt like it and note a clock; the brain signal began about 550 ms before the move, the felt urge about 200 ms; Harari uses this against free will; later work questions the reading.",
+    "question_idea": "",
+    "key_contrast_idea": "Brain first, urge later"
+  }
+}

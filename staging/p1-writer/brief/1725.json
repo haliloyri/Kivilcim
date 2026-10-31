@@ -1,0 +1,63 @@
+{
+  "story_id": 1725,
+  "kind": "anecdote",
+  "book": {
+    "title": "Money: Master the Game",
+    "author": "Tony Robbins",
+    "year": "2014"
+  },
+  "confidence": "low",
+  "confidence_note": "TITLE-CONTENT MISMATCH RISK: the title says the 2008 crisis changed Robbins's question. No source in this session states what the question was before or after. Supported: Robbins has said in interviews (HuffPost, Worth) that watching people suffer in 2008 made him decide to write the book and recalled his childhood when people could not afford food; the book is built on interviews with leading financial figures including Ray Dalio, John Bogle, Carl Icahn and Paul Tudor Jones (named in several sources); its stated aim is to give ordinary investors access to strategies large institutions use. The count of fifty interviewees rests on one site, so it is omitted. The Bogle 45-minutes-turned-four-and-a-half-hours story is repeated in secondary sources and may come from interviews, not the book: omitted. Interview statements are attributed to Robbins, not claimed as book text. No direct quotes. The 'question' framing is the writer's reading of the book's stated aim, not a supported fact. The one-line descriptions of who the interviewees are come from general knowledge, not from the book. Interview-sourced, not book text: Inside Job, 'the system has to change'.",
+  "facts": [
+    "Money: Master the Game came out in 2014.",
+    "Robbins has said that the 2008 financial crisis, and the suffering he saw among people, is why he wrote it.",
+    "He has said the crisis reminded him of his childhood, when people could not afford food.",
+    "He had long been known as a coach on performance, not as a finance writer.",
+    "For the book he sat down with leading financial figures, among them Ray Dalio, John Bogle, Carl Icahn and Paul Tudor Jones.",
+    "Dalio explains his all-weather style of portfolio; Bogle represents the case for index funds.",
+    "The stated aim of the book is to hand ordinary investors strategies that big institutions use.",
+    "The book's subtitle promises seven simple steps to financial freedom.",
+    "Robbins had coached Paul Tudor Jones for years, which helped him reach some interviewees (secondary source, hedged).",
+    "Background about the interviewees (general knowledge, not the book's account): Dalio founded the investment firm Bridgewater; Bogle founded the fund company Vanguard and championed index funds; Icahn is known as an activist investor; Tudor Jones founded a hedge-fund firm.",
+    "Robbins has said the documentary Inside Job deepened his frustration with how the crisis was handled (Worth, secondary).",
+    "Robbins has said he concluded that the system had to change (HuffPost interview)."
+  ],
+  "scene_details": [
+    "interviews with Ray Dalio, John Bogle, Carl Icahn and Paul Tudor Jones",
+    "ordinary savers on one side, institutions on the other"
+  ],
+  "tension": "A motivational coach answers a financial crisis by going to interview the people who run money.",
+  "opening_idea": "Open on the list of people Robbins sat down with (Dalio, Bogle, Icahn, Tudor Jones), a strange guest list for a motivational coach.",
+  "lessons": [
+    {
+      "idea": "When something goes badly wrong in a field you do not know, go and ask the people who know it best, and ask on behalf of those with less access.",
+      "anchor": "Robbins taking his questions to Dalio, Bogle, Icahn and Tudor Jones"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which area of your life are you still handling by guesswork that you could improve by asking one person who does it very well?",
+  "use_cases": [
+    {
+      "situation": "You do not understand your pension statement.",
+      "move": "Ask someone who handles money well to walk through it with you, and bring two questions.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is anxious about their savings.",
+      "move": "Say Robbins went and asked specialists after 2008, and offer to find one name you could both ask.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team has a gap nobody in it can fill.",
+      "move": "Name one outside person who does this well and ask for twenty minutes.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "After 2008 Robbins went to ask Dalio, Bogle and others: when you lack the answer, borrow it from those who hold it.",
+  "conversation_variants": {
+    "punchline_idea": "After the 2008 crisis, a motivational coach went to interview Ray Dalio and John Bogle about money.",
+    "thirty_sec_idea": "Tony Robbins is known for peak performance, not finance. After 2008, he says, seeing people suffer pushed him to write Money: Master the Game. He sat down with figures like Ray Dalio, John Bogle and Carl Icahn, and wrote the book to give ordinary investors what big institutions already use.",
+    "question_idea": "",
+    "key_contrast_idea": "ask the ones who know"
+  }
+}

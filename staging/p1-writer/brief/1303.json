@@ -1,0 +1,40 @@
+{
+  "story_id": 1303,
+  "kind": "anecdote",
+  "book": { "title": "The Black Swan", "author": "Nassim Nicholas Taleb", "year": "2007" },
+  "confidence": "high",
+  "confidence_note": "The turkey parable is one of the best-known passages of the book; the scenario (fed daily, belief strengthened with each feeding, the shock on the Wednesday before Thanksgiving, confidence at its peak just before) is remembered closely; exact wording is not quoted. Taleb credits the earlier chicken example to Bertrand Russell (medium confidence on attribution detail; used once, hedged). Title in DB is the Turkish 'Siyah Kugu'; English title used. Old TR text errors: it cites the 2008 housing crash, which cannot appear in a 2007 book; it quotes Taleb as saying 'we do not know the unknown', not verified; it lists Amazon and the iPhone as unpredicted (iPhone launched in 2007, not in the book); it has a turkey 'economist' drawing a graph, unverified. All omitted. The 'every day for 1,000 days' count is a figure Taleb uses; medium confidence on the exact number, kept as 'a thousand days'.",
+  "facts": [
+    "A turkey is fed every day by humans. Each feeding strengthens its belief that being fed daily by friendly people who look out for its interests is the general rule of life.",
+    "Its confidence rises with each day; Taleb uses a run of about a thousand days.",
+    "On the Wednesday before Thanksgiving, something unexpected happens and the turkey has to revise its belief.",
+    "The turkey's sense of safety is at its highest at the moment the risk is greatest.",
+    "Taleb says the earlier version of the example was Bertrand Russell's chicken; he swapped in a turkey.",
+    "The black swan idea: Europeans assumed all swans were white until black ones were seen in Australia, so one observation overturned a belief built on countless sightings.",
+    "Taleb's point: a long record of calm days does not show that the rare, large event cannot come."
+  ],
+  "scene_details": [
+    "The farmer arriving every morning with food",
+    "A thousand identical days",
+    "The Wednesday before Thanksgiving"
+  ],
+  "tension": "The animal feels safest on the last day, because every previous day supports its belief.",
+  "opening_idea": "Start with the farmer coming each morning and the turkey's growing trust.",
+  "lessons": [
+    { "idea": "A long run of calm tells you about the calm, not about the risk it may hide.", "anchor": "The turkey's evidence was perfect until the Wednesday before Thanksgiving.", "everyday_example_idea": "A small shop that depends on one big customer treats years of steady orders as proof." }
+  ],
+  "reflect": [],
+  "reflect_final": "Which part of your work or life feels safest only because nothing has gone wrong yet, and what would you check first?",
+  "use_cases": [
+    { "situation": "A plan depends on a single supplier that has never failed.", "move": "The turkey's evidence was perfect for a thousand days; ask what happens the day this supplier doesn't deliver.", "context": "meeting" },
+    { "situation": "A relative says an investment has always been safe.", "move": "Ask what would have to happen for it to lose, and whether it has been tested in a bad year.", "context": "family" },
+    { "situation": "You feel complacent about a routine.", "move": "Write one way it could suddenly stop working, and one small thing you'd do now.", "context": "self" }
+  ],
+  "pocket_idea": "The turkey felt safest on the last day: a long calm record says nothing about the one risk you haven't seen.",
+  "conversation_variants": {
+    "punchline_idea": "Taleb's turkey was most confident of all on the Wednesday before Thanksgiving.",
+    "thirty_sec_idea": "A turkey is fed by the farmer every day for a thousand days, and each meal makes it surer that people look out for it. Its confidence peaks on the Wednesday before Thanksgiving. Taleb uses this to show that a long calm record says little about a rare event that has not happened yet.",
+    "question_idea": "",
+    "key_contrast_idea": "Calm record, hidden risk"
+  }
+}

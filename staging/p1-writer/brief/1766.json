@@ -1,0 +1,62 @@
+{
+ "story_id": 1766,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Butchering Art",
+  "author": "Lindsey Fitzharris",
+  "year": "2017"
+ },
+ "confidence": "medium",
+ "confidence_note": "Recalled from the book and well-known sources, not page-checked: surgeons in blood-stiffened coats; Lister in Glasgow reading Pasteur; carbolic acid used on sewage; August 1865 case of James Greenlees, an eleven-year-old boy with a compound leg fracture treated with carbolic dressings and recovering. Omitted as unverified: exact dates of the dressing changes, mortality statistics, the carbolic spray, names of the mockers. Old text's claim about numbers of later surgeries dropped. Liston and Condy's fluid/Carlisle details from a study guide and Wikipedia; the 28 seconds is the study guide's figure.",
+ "facts": [
+  "In the mid-1800s surgery was done without any idea of germs; some surgeons wore coats stiff with old blood as a mark of experience.",
+  "Wounds often turned septic after an operation, and patients died of infections nobody could explain.",
+  "Joseph Lister, a surgeon in Glasgow, read Louis Pasteur's work showing that microscopic organisms cause putrefaction.",
+  "Carbolic acid had been used to treat sewage; Lister reasoned it might kill the organisms in a wound.",
+  "In August 1865 he treated an eleven-year-old boy, James Greenlees, whose leg had a compound fracture (bone through the skin), by dressing it with carbolic acid.",
+  "The wound did not turn septic and the boy's leg healed.",
+  "Other surgeons doubted that invisible organisms mattered and resisted his methods for years.",
+  "The book opens with Robert Liston, a surgeon famous for speed, and a December 1846 mid-thigh amputation in about half a minute (a study-guide summary gives 28 seconds).",
+  "Surgeons took pride in unwashed, stained gowns; one phrase for it was the good old surgical stink.",
+  "Before 1865 Lister tried a household disinfectant, Condy's fluid, and the limb still festered; then he heard that carbolic acid, a relative of creosote, was used to treat sewage in Carlisle and got a sample."
+ ],
+ "scene_details": [
+  "a coat stiff with dried blood",
+  "carbolic acid on the dressing",
+  "a boy's broken leg with the bone through the skin"
+ ],
+ "tension": "A wound that normally killed was treated against an enemy nobody could see.",
+ "opening_idea": "Open on the stiff, blood-caked coat a surgeon wore with pride.",
+ "lessons": [
+  {
+   "idea": "A cause you cannot see can still be acted on; treat the invisible one as real when the evidence points to it.",
+   "anchor": "Lister acted on Pasteur's invisible organisms with carbolic acid"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which problem in your own work keeps coming back with no visible cause, and what invisible factor could you test for next time it appears?",
+ "use_cases": [
+  {
+   "situation": "A recurring error keeps reaching customers.",
+   "move": "Propose a short review of the step nobody checks, the way Lister cleaned what he could not see.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A colleague shrugs off a small hygiene or safety step.",
+   "move": "Ask them to try it for two weeks and compare what happens.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "You keep getting sick after the same kind of family event.",
+   "move": "Look at what is shared there, like food or surfaces, and change one thing.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "Lister dressed a boy's open fracture with carbolic acid against germs no one could see; clean the step you can't see failing.",
+ "conversation_variants": {
+  "punchline_idea": "Surgeons wore blood-stiff coats with pride while Lister cleaned wounds against germs nobody could see.",
+  "thirty_sec_idea": "In Glasgow in 1865 Joseph Lister read Pasteur's work on microscopic organisms. When an eleven-year-old boy came in with a compound leg fracture, Lister dressed it with carbolic acid. The wound stayed clean and the leg healed, though many surgeons still resisted for years.",
+  "question_idea": "",
+  "key_contrast_idea": "unseen cause, real cause"
+ }
+}

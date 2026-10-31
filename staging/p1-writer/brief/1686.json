@@ -1,0 +1,56 @@
+{
+  "story_id": 1686,
+  "kind": "concept",
+  "book": {
+    "title": "Emotional Agility",
+    "author": "Susan David",
+    "year": "2016"
+  },
+  "confidence": "low",
+  "confidence_note": "Concept story: the book gives no event verified in this pass. Verified from several summaries and quotations: emotions as data, not directives; emotions signpost values; values as a psychological keel; getting hooked; labeling; chapter titles Hooked, Trying to unhook, Walking your why; the golf example (summary only); 2013 HBR article with Congleton. Dropped: the old anxiety/anger/sadness quotes, the \"people expect to feel good first\" claim, and the Tom Shadyac and call-center anecdotes (unverifiable details; summary dates conflict with public record).",
+  "facts": [
+    "David treats emotions as data, not directives: they say what matters, not what to do; emotions signpost our values.",
+    "Suppressing or ignoring emotions backfires and can raise stress; forced positivity is a trap.",
+    "Introduced to business readers in a 2013 HBR article with Christina Congleton.",
+    "Hooked: caught in a thought or feeling and reacting on autopilot, likelier when distracted or in difficult emotions.",
+    "Showing up: notice the emotion; labeling turns \"I am a failure\" into \"I am having the thought that I am a failure\".",
+    "Walking your why: values are a psychological keel; many choices are not fully ours; golf example (liking it because friends play).",
+    "Knowing what you care about is half of it; acting on it via tiny tweaks is the rest."
+  ],
+  "scene_details": [],
+  "tension": "Feelings feel like orders, but they are information about what you value.",
+  "opening_idea": "Open on the tight chest before a presentation.",
+  "lessons": [
+    {
+      "idea": "Let the feeling name the value, then let the value pick the action.",
+      "anchor": "David: emotions signpost values; values are the keel.",
+      "everyday_example_idea": "A manager with dread before hard feedback sees she values fairness and gives fair, clear feedback."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a feeling that has been bothering you lately: which value of yours might it be pointing to?",
+  "use_cases": [
+    {
+      "situation": "Anxious before a presentation.",
+      "move": "Notice it, say it matters, go ahead simply.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is angry about work.",
+      "move": "Say the anger may point at something they care about.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Stuck between two options.",
+      "move": "Ask which fits your values and which fits others' expectations.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Name the value, then pick the action that fits it.",
+  "conversation_variants": {
+    "punchline_idea": "Susan David says an emotion is data, not a directive: it points to a value but does not decide your move.",
+    "thirty_sec_idea": "David argues emotions carry information but give no orders; notice and label the feeling, ask which value it points to, act on that value even if the feeling stays.",
+    "question_idea": "",
+    "key_contrast_idea": "Feelings point, values steer"
+  }
+}

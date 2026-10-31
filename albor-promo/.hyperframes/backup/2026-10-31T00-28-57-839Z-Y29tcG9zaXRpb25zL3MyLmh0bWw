@@ -1,0 +1,114 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #f7f3ec;
+      overflow: hidden;
+    }
+    .eyebrow {
+      position: absolute;
+      left: 80px;
+      top: 180px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 34px;
+      letter-spacing: 0.28em;
+      color: #1f5f5b;
+    }
+    .head {
+      position: absolute;
+      left: 80px;
+      right: 60px;
+      top: 244px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 120px;
+      line-height: 1.08;
+      color: #24211e;
+    }
+    .head .ln {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 10px;
+    }
+    .head .w {
+      display: inline-block;
+    }
+    #s2-card {
+      position: absolute;
+      left: 80px;
+      top: 620px;
+      width: 920px;
+      padding: 56px;
+      border-radius: 48px;
+      background: #fffdf9;
+      box-shadow: 0 0 0 2px #e6ded3, 0 28px 60px rgba(36, 33, 30, 0.14);
+    }
+    #s2-tag {
+      display: inline-block;
+      padding: 10px 26px;
+      border-radius: 30px;
+      background: #e2edea;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 30px;
+      letter-spacing: 0.12em;
+      color: #1f5f5b;
+    }
+    #s2-title {
+      margin-top: 36px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 76px;
+      line-height: 1.14;
+      color: #24211e;
+    }
+    #s2-meta {
+      margin-top: 30px;
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 38px;
+      line-height: 1.4;
+      color: #6b625a;
+    }
+    #s2-meta b {
+      font-weight: 600;
+      color: #24211e;
+    }
+    #s2-rule {
+      margin-top: 40px;
+      height: 2px;
+      background: #e6ded3;
+    }
+    #s2-foot {
+      margin-top: 32px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 34px;
+      color: #1f5f5b;
+    }
+  </style>
+  <div id="root" data-composition-id="s2" data-width="1080" data-height="1920">
+    <div class="eyebrow" id="s2-eb">ÖRNEK</div>
+    <div class="head">
+      <span class="ln"><span class="w" id="s2-a">Kitaptan bir</span></span>
+      <span class="ln"><span class="w" id="s2-b">araştırma.</span></span>
+    </div>
+    <div id="s2-card">
+      <span id="s2-tag">ARAŞTIRMA · PSİKOLOJİ</span>
+      <div id="s2-title">Şimdiki Bir mi, Sonraki İki mi?</div>
+      <div id="s2-meta"><b>Walter Mischel</b> · <i>The Marshmallow Test</i><br />Stanford'da anaokulu çocuklarıyla bekleme deneyi</div>
+      <div id="s2-rule"></div>
+      <div id="s2-foot">6 dk okuma · dinlenebilir</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s2-eb", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, 0.1);
+    tl.fromTo("#s2-a", { yPercent: 105 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+    tl.fromTo("#s2-b", { yPercent: 105 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 0.4);
+    tl.fromTo("#s2-card", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.8);
+    window.__timelines["s2"] = tl;
+  </script>
+</template>

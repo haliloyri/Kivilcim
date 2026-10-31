@@ -1,0 +1,30 @@
+{
+  "story_id": 1390,
+  "verdict": "keep",
+  "verify_note": "Book not read directly; confidence low. The Harvard figures are told as Tracy's claim with the no-record caveat, followed by the real Matthews study. RAS explanation removed (not tied to Goals!).",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Kimsenin bulamadığı çalışma",
+    "description": "Yazılı hedefi olanların on kat fazla kazandığı çalışma hiç bulunamadı. Gerçek bir çalışma ise haftalık güncellemeyi daha fazla ilerlemeyle ilişkilendirdi.",
+    "hook": "Kafanızda tuttuğunuz bir hedef için kime haftalık bir satır yazabilirsiniz?",
+    "one_minute_summary": "Tracy'nin Goals! kitabının aktarımına göre, Harvard mezunlarının yüzde 3'ünün yazılı hedefi vardı ve on yıl sonra diğerlerinin toplamından yaklaşık on kat fazla kazandı. Bu çalışmanın kaydı bulunamadı. Dominican Üniversitesi'nde yapılan gerçek bir çalışmada, hedefini yazanlar, eylemlere söz verenler ve bir arkadaşa haftalık güncelleme gönderenlerin yüzde 70'ten fazlası başarılı ilerleme bildirdi. Hedefini kendine saklayanlarda bu oran yüzde 35'ti. Bu öz bildirimlerden çıkan şey, yazmak, anlatmak ve haber vermenin birlikte gitmesi."
+  },
+  "en": {
+    "title": "The goals study nobody found",
+    "description": "The study in which written goals paid ten times more has never been found. A real one linked weekly updates to a friend with more progress.",
+    "hook": "Who could get a one-line weekly update about a goal you have only kept in your head?",
+    "one_minute_summary": "In Tracy's Goals!, as reviews retell it, 3% of Harvard graduates had written goals and later earned about ten times more than everyone else combined. No record of that study has been found. A real study at Dominican University compared five groups: more than 70% of those who wrote goals, committed to actions and sent a friend weekly updates reported successful progress, against 35% of those who kept goals to themselves. These were self-reports, but the pattern is clear: writing, telling someone and checking in went together."
+  },
+  "es": {
+    "title": "El estudio de metas que nadie halló",
+    "description": "El estudio donde las metas escritas rendían diez veces más nunca se encontró. Uno real asoció informar cada semana a un amigo con más avance.",
+    "hook": "¿A quién podrías enviar una línea semanal sobre una meta que solo guardas en la cabeza?",
+    "one_minute_summary": "En Goals! de Tracy, según lo cuentan las reseñas, el 3% de los graduados de Harvard tenía metas escritas y después ganó unas diez veces más que todos los demás juntos. No se ha encontrado registro de ese estudio. Uno real, en la Dominican University, comparó cinco grupos: más del 70% de quienes escribieron metas, se comprometieron con acciones y enviaron avances semanales a un amigo informó de progreso, frente al 35% de quienes las guardaron para sí. Eran autoinformes, pero el patrón es claro: escribir, contarlo y dar noticias iban juntos."
+  },
+  "de": {
+    "title": "Die Zielstudie, die niemand fand",
+    "description": "Die Studie, in der schriftliche Ziele zehnmal mehr einbrachten, wurde nie gefunden. Eine echte verband wöchentliche Updates mit mehr Fortschritt.",
+    "hook": "Wem könntest du eine Zeile pro Woche über ein Ziel schicken, das du nur im Kopf trägst?",
+    "one_minute_summary": "In Tracys Goals! hatten laut Besprechungen drei Prozent der Harvard-Absolventen schriftliche Ziele und verdienten später etwa zehnmal so viel wie alle anderen zusammen. Einen Beleg für diese Studie gibt es nicht. In einer echten Studie an der Dominican University berichteten über 70 Prozent derer, die Ziele aufschrieben, sich zu Schritten verpflichteten und einem Freund wöchentlich schrieben, von Fortschritt, gegenüber 35 Prozent derer, die sie für sich behielten. Das waren Selbstauskünfte, aber das Muster ist klar: Aufschreiben, davon erzählen und berichten gingen zusammen."
+  }
+}

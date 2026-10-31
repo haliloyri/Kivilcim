@@ -1,0 +1,59 @@
+{
+  "story_id": 1552,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Five Dysfunctions of a Team",
+    "author": "Patrick Lencioni",
+    "year": "2002"
+  },
+  "confidence": "low",
+  "confidence_note": "From memory of the fable and secondary summaries; book text not accessed. Kathryn Petersen as new CEO of DecisionTech and the Napa Valley offsite are recalled, as is the personal histories exercise (birthplace, siblings, birth order, unusual hobby, worst job) from the book's model section. Whether the exercise is run exactly as described at Napa in the fable is not verified, so the story says she 'uses' it there. Boardroom scene in the old TR text (Lencioni walking into a board meeting) is not from the book and was dropped. Old title mismatched; new English title suggested.",
+  "facts": [
+    "Fable: Kathryn Petersen is the new CEO of DecisionTech, a Silicon Valley company with good technology and a dysfunctional executive team.",
+    "She takes the team to an offsite in Napa Valley.",
+    "A personal histories exercise: birthplace, number of siblings, birth order, unusual hobby, worst job.",
+    "Lencioni defines trust as vulnerability-based: admitting mistakes, weaknesses, asking for help.",
+    "Without trust, members hide mistakes, hesitate to ask for help, and assume the worst of intentions.",
+    "Trust is the base of the pyramid: conflict, commitment, accountability, results follow."
+  ],
+  "scene_details": [
+    "worst job",
+    "unusual hobby",
+    "number of siblings",
+    "an offsite in Napa Valley"
+  ],
+  "tension": "Skilled executives who cannot admit weakness.",
+  "opening_idea": "Questions about worst jobs at a high-stakes offsite.",
+  "lessons": [
+    {
+      "idea": "Small low-risk admissions make a team ready for honest talk.",
+      "anchor": "The worst-job answer."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one small mistake or gap you usually keep from your team that you could name out loud at your next meeting?",
+  "use_cases": [
+    {
+      "situation": "Kickoff with unfamiliar people",
+      "move": "Admit the part you are least sure about.",
+      "context": "meeting"
+    },
+    {
+      "situation": "New report joins",
+      "move": "Offer to swap worst job and hobby, referencing Kathryn's team.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Dinner with relatives",
+      "move": "Swap worst-job stories.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Start building trust with answers anyone could give over dinner.",
+  "conversation_variants": {
+    "punchline_idea": "Before arguing strategy, Kathryn asked executives about their worst job.",
+    "thirty_sec_idea": "Napa offsite, personal histories, trust as base of pyramid.",
+    "question_idea": "",
+    "key_contrast_idea": "Stories before strategy"
+  }
+}

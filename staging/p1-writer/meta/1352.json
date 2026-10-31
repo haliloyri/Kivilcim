@@ -1,0 +1,35 @@
+{
+  "story_id": 1352,
+  "verdict": "keep",
+  "verify_note": "Not verified in this pass. New title required: old '1-3-5 rule' does not appear in the new content (five small daily goals, 1,825 a year).",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Günde Beş Küçük Hedef",
+    "description": "Sharma, her sabah o gün bitirilecek beş küçük hedef yazmayı öneriyor. Günde beş, yılda 1.825 küçük kazanım ediyor; bu bir hesap, ölçüm değil.",
+    "hook": "Bugün hangi küçük işlerin sayılacağına siz mi karar veriyorsunuz, gelen mesajlar mı?",
+    "one_minute_summary": "The 5AM Club'ın sabah saatini kendinize ayırma fikrinin içinde küçük bir öneri var: her sabah o gün bitirmek istediğiniz beş küçük hedefi yazmak. Sharma'nın dayanağı aritmetik: günde beş küçük kazanım yılda 1.825 eder. Bu bir hesap, ölçüm değil; kitap, beş hedef yazan birinin bir yılda tam 1.825 iş bitirdiğini göstermiyor. Önerinin işi bir kararı öne çekmek: neyin sayılacağını sabah siz seçiyorsunuz, akşam kaçını bitirdiğinizi sayıyorsunuz."
+  },
+  "en": {
+    "title": "Five Small Goals a Day",
+    "description": "Sharma suggests writing five small goals each morning. Five a day adds up to 1,825 a year, though that is a sum, not a measurement.",
+    "hook": "Who decides what counts as a win in your day, you or your inbox?",
+    "one_minute_summary": "Inside The 5AM Club's idea of protecting the early morning sits a small suggestion: write five small goals each morning that you want to finish that day. Sharma's reasoning is arithmetic: five a day makes 1,825 a year. That is a sum, not a measurement, and the book does not show that anyone finished exactly that many. What the habit does is move a decision: you choose the day's small wins in the morning and count what you finished in the evening."
+  },
+  "es": {
+    "title": "Cinco metas pequeñas al día",
+    "description": "Sharma propone anotar cada mañana cinco metas pequeñas. Cinco al día suman 1.825 al año, aunque es una suma y no una medición.",
+    "hook": "¿Quién decide qué cuenta como logro en tu día, tú o tu bandeja de entrada?",
+    "one_minute_summary": "Dentro de la idea de The 5AM Club de reservar las primeras horas, hay un consejo pequeño: anotar cada mañana cinco metas modestas que quieras cumplir ese día. El razonamiento de Sharma es aritmético: cinco al día suman 1.825 al año. Es una suma, no una medición, y el libro no demuestra que alguien terminara exactamente esas tareas. Lo que hace el hábito es mover una decisión: por la mañana eliges los pequeños logros y por la noche cuentas cuántos terminaste."
+  },
+  "de": {
+    "title": "Fünf kleine Ziele pro Tag",
+    "description": "Sharma rät, jeden Morgen fünf kleine Ziele aufzuschreiben. Fünf pro Tag ergeben 1.825 im Jahr, doch das ist eine Rechnung und keine Messung.",
+    "hook": "Wer entscheidet in deinem Tag, was als Erfolg zählt, du oder dein Postfach?",
+    "one_minute_summary": "In The 5AM Club steckt im Gedanken, die frühen Morgenstunden für sich zu schützen, ein kleiner Rat: jeden Morgen fünf kleine Ziele aufschreiben, die du am selben Tag erledigen willst. Sharmas Überlegung ist Arithmetik: fünf am Tag ergeben 1.825 im Jahr. Das ist eine Rechnung, keine Messung, und das Buch zeigt nicht, dass jemand genau so viele schaffte. Der Rat verlegt eine Entscheidung: Morgens wählst du, was zählt, abends zählst du, wie viele du geschafft hast."
+  }
+}

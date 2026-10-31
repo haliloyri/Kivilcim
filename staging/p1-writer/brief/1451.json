@@ -1,0 +1,60 @@
+{
+  "story_id": 1451,
+  "kind": "concept",
+  "book": {
+    "title": "The Power of Your Subconscious Mind",
+    "author": "Joseph Murphy",
+    "year": "1963"
+  },
+  "confidence": "low",
+  "confidence_note": "Murphy's advice to use the drowsy minutes before sleep to hold a wish or hand a problem over to the subconscious is documented in chapter summaries, but I could not check the book's own wording or any named case. Excluded: the quoted line about filling the mind with positive thoughts, the claim that worries deepen overnight, the Olympic athletes and the sport-psychology research (all outside a 1963 book), and 'Murphy wrote it in 1963, neuroscience found it later'. Keep the story short and attribute the method to Murphy as his own claim. The Australian boy and the 'mental movie' method come from a secondary summary of the book; I kept the details minimal. Treat as medium-low confidence and attribute to Murphy's account.",
+  "facts": [
+    "Murphy treats the drowsy time just before sleep as a good moment to speak to the subconscious.",
+    "His method: think calmly of the answer or result you want and let that thought carry you into sleep.",
+    "For a problem, he describes handing it over: state it once, trust that the subconscious will deal with it, and then stop turning it over.",
+    "He also describes thanking the subconscious for the answer, as if it had already been given.",
+    "He advises against forcing a mental picture: strain works against the method.",
+    "His claim is that the subconscious keeps working while the body sleeps, so an answer may come on waking.",
+    "Murphy's 'mental movie' method: as you drift off, picture the scene you want as if it were happening.",
+    "Murphy tells of a boy in Australia who each night pictured his medical diploma on the wall; later a job around patients paid his way through medical school."
+  ],
+  "scene_details": [
+    "the minutes in bed with the light off",
+    "a problem handed over once before sleep",
+    "a quiet thank-you as sleep comes"
+  ],
+  "tension": "Most people lie in bed going over problems. Murphy says to do the opposite: say it once, drop it, and let sleep take over.",
+  "opening_idea": "Start in bed, light off, with the usual round of worries, and what Murphy suggests doing with that quarter hour.",
+  "lessons": [
+    {
+      "idea": "What you hand over before sleeping is treated differently from what you keep chewing on, because you stop working at it.",
+      "anchor": "Murphy's idea of handing a problem over once, calmly, before sleep."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Tonight, what is one problem you could name once in a sentence before sleep, and then deliberately leave alone until the morning?",
+  "use_cases": [
+    {
+      "situation": "You lie awake going over tomorrow's presentation.",
+      "move": "Say the problem to yourself once in a single sentence, then say 'thank you for the answer' and stop thinking about it.",
+      "context": "self"
+    },
+    {
+      "situation": "A partner is stewing over a decision late at night.",
+      "move": "Suggest writing the question down, closing the notebook and coming back to it at breakfast.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague asks for an answer by tomorrow.",
+      "move": "Say: let me think about it overnight and give you my answer first thing.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Murphy says to hand a problem over once, calmly, as you fall asleep, and not keep turning it over in bed.",
+  "conversation_variants": {
+    "punchline_idea": "Murphy's advice for a bad night is to say the problem once, say thank you, and go to sleep.",
+    "thirty_sec_idea": "Joseph Murphy treats the drowsy minutes before sleep as the moment to speak to your subconscious. You think calmly of the result you want, or you hand over a problem once, thank it for the answer, and let go. He says it keeps working while you sleep. That is his claim; the book offers no tests.",
+    "question_idea": "How do you deal with a problem at bedtime?",
+    "key_contrast_idea": "Hand over, don't stew"
+  }
+}

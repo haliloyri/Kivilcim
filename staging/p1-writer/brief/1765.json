@@ -1,0 +1,64 @@
+{
+ "story_id": 1765,
+ "kind": "anecdote",
+ "book": {
+  "title": "Radium Girls",
+  "author": "Kate Moore",
+  "year": "2017"
+ },
+ "confidence": "medium",
+ "confidence_note": "Checked against Wikipedia entries for the Radium Girls and Grace Fryer (suit filed 1927 by Raymond Berry, five plaintiffs, 1928 settlement figures), not page-checked in Moore. Omitted as unverified: chemists using tongs and shields, glow-in-the-dark play, pay rates, the Ottawa Illinois case, statute-of-limitations details. The legacy claim is the author framing. Update: pay, chemists' protection, painting nails and teeth from the Wikipedia Radium Girls entry; first death year differs between sources (1922 vs 1923), so no year is stated.",
+ "facts": [
+  "Young women painted watch and clock dials with glowing radium paint at the US Radium Corporation in Orange, New Jersey, in the years around the First World War.",
+  "To get a fine line they were taught to point the brush tip with their lips, a routine summed up as lip, dip, paint; they were paid by the dial.",
+  "They were told the paint was harmless.",
+  "Small amounts swallowed with every brush settled in their bones; many developed painful teeth and jaw damage.",
+  "Mollie Maggia was among the first to die, in 1922, after dental and jaw trouble.",
+  "Grace Fryer spent about two years looking for a lawyer; Raymond Berry of Newark filed suit in 1927 and four other dial painters joined: Edna Hussman, Katherine Schaub and sisters Quinta McDonald and Albina Larice.",
+  "The case settled out of court in 1928: each woman received 10,000 dollars, an annuity of 600 dollars a year and her medical bills paid, a fraction of what they had sought.",
+  "Moore presents their cases as a turning point for the rights and safety of workers handling dangerous substances.",
+  "Brushes lost their point after a few strokes; supervisors said shaping the tip with the lips was quicker than rinsing it; pay was about a cent and a half per dial.",
+  "The company had circulated literature to doctors on radium's injurious effects, and its chemists used lead screens, tongs and masks, while the painters had no protection.",
+  "Believing it safe, some painters also dabbed the paint on their nails, teeth and faces so that they glowed.",
+  "Dentists were among the first to see the damage: loose teeth, ulcers and extractions that would not heal; the company blamed other causes."
+ ],
+ "scene_details": [
+  "a brush tip pointed between the lips",
+  "a dial painted by the piece",
+  "a lawyer in Newark who finally took the case"
+ ],
+ "tension": "The women who were told the paint was safe were the only people in the room not protected from it.",
+ "opening_idea": "Open on the brush and the lips: how the technique was taught as ordinary craft.",
+ "lessons": [
+  {
+   "idea": "A reassurance is not evidence; ask what the claim is based on before accepting a risk.",
+   "anchor": "the women were told the paint was harmless while swallowing it with every brush"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "When someone tells you a task at work is safe, what could you look at in how they themselves handle it before you believe them?",
+ "use_cases": [
+  {
+   "situation": "A supervisor says a new process is fine.",
+   "move": "Ask who designed it and what protection they use themselves; the dial painters were told the paint was harmless.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A relative tells you a supplement or fix is harmless.",
+   "move": "Ask what they do about it themselves and what the label says.",
+   "context": "family"
+  },
+  {
+   "situation": "A colleague reports a symptom at work and is brushed off.",
+   "move": "Write down the date and the symptom and raise it with the person responsible.",
+   "context": "oneonone"
+  }
+ ],
+ "pocket_idea": "Dial painters were told radium paint was harmless while they pointed brushes with their lips; check the claim against the facts, not the assurance.",
+ "conversation_variants": {
+  "punchline_idea": "Young women were told to point their brushes with their lips and that radium paint was harmless.",
+  "thirty_sec_idea": "At a New Jersey factory young women painted watch dials with glowing radium paint, pointing the brush with their lips and told it was harmless. Many developed jaw damage and Mollie Maggia died in 1922. Grace Fryer found a lawyer, and five women sued; the case settled in 1928.",
+  "question_idea": "",
+  "key_contrast_idea": "told safe, not safe"
+ }
+}

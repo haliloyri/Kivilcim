@@ -1,0 +1,35 @@
+{
+  "story_id": 1596,
+  "verdict": "keep",
+  "verify_note": "Not in verification scope; kept as-is.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "BDNF ve beyin",
+    "description": "Nörolog David Perlmutter'e göre yetişkin hipokampus da yeni nöron üretebiliyor. BDNF'yi yükselten şeylerin listesi günlük hayattan oluşuyor.",
+    "hook": "Bugünkü uyku, hareket ve yemek alışkanlıklarınız hafızanıza küçük bir katkı olabilir mi?",
+    "one_minute_summary": "Uzun yıllar yetişkin beyninin yeni sinir hücresi üretemediğine inanıldı. Nörolog David Perlmutter, Grain Brain kitabında hipokampusun yetişkinlikte de yeni nöron üretebildiğini, BDNF adlı proteinin bunu desteklediğini anlatıyor. BDNF'yi yükselten şeyler arasında aerobik egzersiz, kalori kısıtlaması ya da oruç, ketojenik beslenme, omega-3 DHA, kurkumin ve uyku var. Kanıtın bir kısmı hayvan çalışmalarından geliyor ve yetişkin insanda ne kadar yeni nöron oluştuğu hâlâ tartışılıyor. Liste bir garanti değil, bir öneriler topluluğu."
+  },
+  "en": {
+    "title": "BDNF and the brain",
+    "description": "For years it was held that the adult brain makes no new cells. Perlmutter writes that the hippocampus can, and lists ordinary habits that raise the protein BDNF.",
+    "hook": "Which of your daily habits could be feeding your memory?",
+    "one_minute_summary": "For a long time scientists believed that the adult brain cannot make new nerve cells. Neurologist David Perlmutter writes in Grain Brain that this belief has been given up: the hippocampus, tied to learning and memory, can produce new neurons, helped by a protein called BDNF. He lists what raises it, including aerobic exercise, fasting or a ketogenic diet, DHA, curcumin and sleep. Part of the evidence comes from animal studies, and how many new neurons an adult human hippocampus makes is still debated, so the list is a set of suggestions, not a guarantee."
+  },
+  "es": {
+    "title": "El BDNF y el cerebro",
+    "description": "Según Perlmutter, el hipocampo adulto puede producir neuronas nuevas, ayudado por la proteína BDNF. Su lista para subirla está hecha de cosas cotidianas.",
+    "hook": "¿Qué hábito de cada día podría estar alimentando tu memoria?",
+    "one_minute_summary": "Durante mucho tiempo se creyó que el cerebro adulto no fabrica células nuevas. David Perlmutter afirma en Grain Brain que esa idea se abandonó: el hipocampo, ligado al aprendizaje y la memoria, puede producir neuronas nuevas con ayuda de la proteína BDNF. Entre lo que la sube cita el ejercicio aeróbico, el ayuno o la dieta cetogénica, el omega-3 DHA, la curcumina y el sueño. Parte de la evidencia viene de estudios con animales, y cuántas neuronas nuevas hace un hipocampo humano adulto sigue en debate, así que la lista es una serie de sugerencias, no una garantía."
+  },
+  "de": {
+    "title": "BDNF und das Gehirn",
+    "description": "Nach Perlmutter kann der Hippocampus auch im Erwachsenenalter neue Neuronen bilden, unterstützt vom Eiweiß BDNF. Seine Liste dazu besteht aus Alltagsdingen.",
+    "hook": "Welche Gewohnheit deines Alltags könnte dein Gedächtnis füttern?",
+    "one_minute_summary": "Lange hieß es, das erwachsene Gehirn bilde keine neuen Zellen. Der Neurologe David Perlmutter schreibt in Grain Brain, diese Überzeugung sei aufgegeben worden: Der Hippocampus, die Region für Lernen und Gedächtnis, kann neue Neuronen bilden, unterstützt vom Eiweiß BDNF. Was es steigen lässt, zählt er auf: Ausdauertraining, Fasten oder ketogene Ernährung, DHA, Curcumin und Schlaf. Ein Teil der Belege stammt aus Tierstudien, und wie viele neue Neuronen der erwachsene menschliche Hippocampus bildet, wird weiter diskutiert. Die Liste ist eine Sammlung von Vorschlägen, keine Garantie."
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "story_id": 1653,
+  "kind": "concept",
+  "book": {
+    "title": "Finding Flow",
+    "author": "Mihaly Csikszentmihalyi",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "The experience sampling method (pagers, random signals, self-report) and the 'paradox of work' (people report more flow-like states at work yet say they would rather be elsewhere, and feel flatter in passive leisure) are the book's core finding. Omitted: percentages, sample size, country, the brain-evolution claim and the exact pager schedule, none of which could be checked. The old reference text's 'brain drifts to negative thoughts' is kept only as Csikszentmihalyi's reading, hedged.",
+  "facts": [
+    "Csikszentmihalyi's team used pagers that signalled people at random moments, several times a day; each time people recorded what they were doing and how they felt (experience sampling).",
+    "At work, people more often reported flow-like states: a challenge that used their skills and full attention.",
+    "Yet people said they would rather be doing something else while at work.",
+    "In free time, especially passive leisure such as watching television, people reported lower concentration and a flatter mood than at work.",
+    "Csikszentmihalyi calls this the paradox of work and leisure.",
+    "His reading: unstructured time with no goal or feedback asks more of a person than it seems to, and attention tends to drift to worries.",
+    "He concludes that happiness is built from activities with challenge and meaning, not found in rest."
+  ],
+  "scene_details": [
+    "a pager beeping at a random moment",
+    "a form filled in on the spot: what am I doing, how do I feel",
+    "the television on in free time"
+  ],
+  "tension": "People preferred the hours that felt worse and avoided the hours that felt better.",
+  "opening_idea": "A pager beeps at a random moment; the entries from desk and sofa tell an unexpected story.",
+  "lessons": [
+    {
+      "idea": "Free time needs structure with a challenge, or it tends to feel flat.",
+      "anchor": "flatter mood during passive leisure than at work in the pager entries"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What activity in your own free time asks something of you and leaves you feeling better afterwards?",
+  "use_cases": [
+    {
+      "situation": "An open weekend afternoon.",
+      "move": "Choose one activity with a small challenge for the afternoon before reaching for the screen.",
+      "context": "self"
+    },
+    {
+      "situation": "Family evening drifting into television.",
+      "move": "Propose something that needs everyone's effort, like cooking one dish together.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend says they just want to do nothing on holiday.",
+      "move": "Ask what they would do on one day that would stretch them a little.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "The pager entries felt flatter in front of the television than at work, so give free time a small challenge.",
+  "conversation_variants": {
+    "punchline_idea": "Pager studies caught people feeling more absorbed at work than in front of the television, though they preferred the television.",
+    "thirty_sec_idea": "Csikszentmihalyi gave people pagers that beeped at random times and asked what they were doing and feeling. At work they were more often absorbed, yet wished to be elsewhere. In passive free time they felt flatter. His reading: unstructured time needs a goal to feel good.",
+    "question_idea": "",
+    "key_contrast_idea": "Work felt better"
+  }
+}

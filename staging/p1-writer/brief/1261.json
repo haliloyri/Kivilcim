@@ -1,0 +1,61 @@
+{
+  "story_id": 1261,
+  "kind": "anecdote",
+  "book": {
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "year": "2016"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against the book text (Part II, Howard Hughes chapter). Old text claims dropped: hotel-room seclusion, long nails, dehydration, Holiday asking when success is most dangerous. Numbers keep the book scope.",
+  "facts": [
+    "Jan 1924: Hughes Sr. died of a heart attack at a business meeting, aged 54; son, 18, inherited three quarters of the tool company (patents and leases critical to oil drilling, worth nearly $1 million).",
+    "Still a legal minor, he leveraged personal assets and nearly all company funds to buy out relatives who objected; it later yielded billions in cash profit over the next century.",
+    "He left Houston, never entered HQ again, used it as cash source; moved to LA to be producer and celebrity.",
+    "Lost over $8M trading stocks from bed before the Depression; Hell's Angels took 3 years, lost $1.5M on a $4.2M budget; $4M lost on Chrysler stock early 1930.",
+    "Two WWII defense contracts worth $40M failed; Spruce Goose: 5+ years, about $20M, one flight of barely a mile at 70 ft; hangar in Long Beach at $1M a year for decades.",
+    "RKO lost over $22M, staff from 2,000 to under 500; when he handed defense contracting to executives it began to thrive, in Holiday's words because of his absence.",
+    "A bad businessman usually fails and vanishes; Hughes stayed afloat on father's company profits so the damage is visible.",
+    "Biographers: sat naked in white chair, unwashed, dictating a memo on Kleenex then a brilliant strategy; IBM two-subsidiaries comparison. Near death an aide praised his life; he replied swapping places would be regretted within a week."
+  ],
+  "scene_details": [
+    "white chair",
+    "memo about Kleenex",
+    "Spruce Goose hangar at $1M a year"
+  ],
+  "tension": "Gifted and brave, he wasted it, and only a rich father's company let the damage stay visible.",
+  "opening_idea": "Start from one concrete image such as the white chair, the Spruce Goose hangar or the Hell's Angels numbers.",
+  "lessons": [
+    {
+      "idea": "Check how the work runs without you.",
+      "anchor": "Hughes's defense business began to thrive once he handed it to executives.",
+      "everyday_example_idea": "A tailor who approves every order takes two days off and reads the order book."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which task are you keeping in your own hands mainly because letting go would make you feel less important?",
+  "use_cases": [
+    {
+      "situation": "You approve everything on your team.",
+      "move": "Hand two decisions to the team, citing the defense business that recovered after Hughes handed it off.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A promoted friend does everything alone.",
+      "move": "Ask what happens if they step back from a project for a week.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "After a good run you feel sure about a big call.",
+      "move": "Ask who could tell you no before deciding alone.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Hand one task away for a week and watch what happens.",
+  "conversation_variants": {
+    "punchline_idea": "Hughes's defense business only began to thrive after he handed it off.",
+    "thirty_sec_idea": "Hughes inherited the company at 18, lost fortunes on films, stocks, a plane that flew once and a studio; the defense arm did better once he let go. Holiday: ego wrecked him.",
+    "question_idea": "",
+    "key_contrast_idea": "Genius, wasted"
+  }
+}

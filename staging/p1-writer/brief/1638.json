@@ -1,0 +1,62 @@
+{
+  "story_id": 1638,
+  "kind": "anecdote",
+  "book": {
+    "title": "In the Realm of Hungry Ghosts",
+    "author": "Gabor Maté",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book pairs Rat Park with the Vietnam data in chapter 12 (two tables of contents, chapter summaries), but the book text was not read; experiment details come from Alexander's papers as summarised by Wikipedia. Old text dropped: oxytocin and dopamine mechanism, the \"antidote is connection\" line (Johann Hari's phrase), clinical observations, \"until death\".",
+  "facts": [
+    "Chapter 12, \"From Vietnam to Rat Park\", sets Bruce Alexander's rat experiments beside the Vietnam data to argue that addiction's roots are environmental.",
+    "Alexander and colleagues at Simon Fraser University published the work between 1978 and 1981.",
+    "Rat Park was an enclosure with 200 times the floor area of a standard lab cage, holding 16 to 20 rats of both sexes with food, balls, wheels and room to mate. Control rats lived alone in small metal cages.",
+    "Each rat had two drop dispensers: sweetened morphine solution and plain tap water. The sweetener was meant to cover morphine's bitter taste.",
+    "Park rats mostly chose plain water. In one condition caged males drank up to 19 times more morphine than Park males.",
+    "Rats kept 57 days on morphine only, then given a choice in Rat Park, chose plain water and showed only minor withdrawal signs.",
+    "Caveats: Bruce Petrie (1996), a former student of Alexander, could not replicate it; critics cite small samples, bitter oral morphine, uneven measurement and equipment failures.",
+    "Design: four groups of eight rats (32), caged or in the park from weaning (day 22) to day 80, two groups swapped at day 65; females sampled morphine more than males.",
+    "Johann Hari's 2015 TED talk popularized the study; researchers say the media oversold it as a paradigm shift."
+  ],
+  "scene_details": [
+    "Two drop dispensers per rat, one morphine and one water",
+    "A wire-and-metal cage for one rat beside an enclosure 200 times larger with wheels and balls",
+    "Rats moved after 57 days of forced morphine choosing water"
+  ],
+  "tension": "The same drug in the same bottle was drunk very differently depending on where the rat lived.",
+  "opening_idea": "Start with the two dispensers and the two ways of housing the rats.",
+  "lessons": [
+    {
+      "idea": "Before blaming a trait, change one condition and see whether the behaviour moves.",
+      "anchor": "Same morphine, same rats, different housing, different drinking.",
+      "everyday_example_idea": "A teenager called lazy about homework who works fine at a library table instead of a crowded kitchen."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which behaviour of yours or of someone close would you re-read if you changed where or with whom it happens?",
+  "use_cases": [
+    {
+      "situation": "A teammate is labelled unmotivated.",
+      "move": "Cite the rats that drank less once housing changed and propose swapping one condition for two weeks.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family member is blamed for a habit.",
+      "move": "Ask what the days around the habit look like and who is around.",
+      "context": "family"
+    },
+    {
+      "situation": "You keep failing at something at home.",
+      "move": "Try it once in another room or place and watch what changes.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The rats in the big enclosure mostly skipped the morphine: change the surroundings before blaming the appetite.",
+  "conversation_variants": {
+    "punchline_idea": "Alexander's rats chose plain water over morphine when their cage became a park.",
+    "thirty_sec_idea": "Alexander compared lone caged rats with rats in a 200-times-larger enclosure, each offered sweet morphine or water; the park rats mostly drank water; later labs failed to repeat it.",
+    "question_idea": "",
+    "key_contrast_idea": "Small cage, big park"
+  }
+}

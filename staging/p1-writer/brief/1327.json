@@ -1,0 +1,57 @@
+{
+  "story_id": 1327,
+  "kind": "concept",
+  "book": {
+    "title": "The Success Principles",
+    "author": "Jack Canfield",
+    "year": "2004"
+  },
+  "confidence": "low",
+  "confidence_note": "From secondary summaries; book text not accessed. The 30 things to do, 30 to have, 30 to be before you die exercise comes from a PhilosophersNotes-style summary; the 101 goals exercise and the claim that over 70 percent were achieved in the old TR text could NOT be found and were dropped. The retic activation claim was also dropped. Canfield's $100,000 bill anecdote could not be verified and was not used. Title mismatch: new English title suggested. Year 2004 as given in the brief (editions list 2005).",
+  "facts": [
+    "Canfield says you must know what you want to pursue it.",
+    "Exercise: list 30 things to do, 30 to have, 30 to be before you die.",
+    "The columns ask different questions: activity, possessions, identity.",
+    "Clarity is a starting point for the rest of the book.",
+    "No step for judging lines while writing.",
+    "A list does not make any item happen."
+  ],
+  "scene_details": [
+    "three columns of thirty lines",
+    "ninety lines on one page"
+  ],
+  "tension": "A blank page and ninety lines.",
+  "opening_idea": "Three columns.",
+  "lessons": [
+    {
+      "idea": "Name wants broadly before choosing goals.",
+      "anchor": "Do, have, be."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you wrote thirty lines under do, have and be, which single line would you be most surprised to find on the page?",
+  "use_cases": [
+    {
+      "situation": "Planning a new year",
+      "move": "Write the three lists.",
+      "context": "self"
+    },
+    {
+      "situation": "Career conversation",
+      "move": "Share a long list of wants.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Quiet Sunday",
+      "move": "Write lists and compare.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Before choosing a goal, fill three columns of thirty.",
+  "conversation_variants": {
+    "punchline_idea": "Thirty to do, thirty to have, thirty to be.",
+    "thirty_sec_idea": "The exercise.",
+    "question_idea": "",
+    "key_contrast_idea": "Ninety honest lines"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1566,
+  "verdict": "keep",
+  "verify_note": "Content checked against summaries of The 15 Commitments of Conscious Leadership (above/below the line, responsibility, feeling feelings), not the full text. Title: dash subtitle removed or, where the old title promised something the story does not say, replaced. Old title 'emotions as data' is not in the new story (it is about locating the feeling in the body).",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Duyguyu Bedende Bulmak",
+    "description": "Yazarlar bütün duyguları sonuna kadar hissetmeyi öneriyor. Yöntem bedende başlıyor: yeri bulmak, nefes almak, bir ses ya da hareket vermek.",
+    "hook": "Son gergin anınızda duyguyu bedeninizin neresinde hissettiniz?",
+    "one_minute_summary": "The 15 Commitments of Conscious Leadership'in bir taahhüdü, bütün duyguları sonuna kadar hissetmek. Önce duygunun bedendeki yerini bulup tarif ediyorsunuz, birkaç yumuşak nefes alıp ona izin veriyorsunuz, sonra bir ses ya da hareketle ifade ediyorsunuz. Bir iş arkadaşına dert yanmak bunun yerini tutmuyor, diyor yazarlar. Karar en sona kalıyor. Kitap, yaşanmasına izin verilen duygunun yaklaşık 90 saniye sürdüğünü öne sürüyor; bu kitabın iddiası, bir ölçüm değil."
+  },
+  "en": {
+    "title": "Find the Feeling in the Body",
+    "description": "The authors urge leaders to feel their feelings all the way through. The method starts in the body: locate it, breathe, give it a sound or a movement.",
+    "hook": "In your last tense moment, where in your body did you feel it?",
+    "one_minute_summary": "One commitment in The 15 Commitments of Conscious Leadership is to feel your feelings all the way through. You locate the sensation in the body and describe it, take a few gentle breaths and allow it, then give it a sound or a movement. Talking it over with a coworker is not the same thing, the authors say. Only then do you decide what to do. The book claims a feeling allowed to pass lasts about 90 seconds; that is its claim, not a measurement."
+  },
+  "es": {
+    "title": "Siente la emoción en el cuerpo",
+    "description": "Los autores proponen sentir las emociones hasta el final. El método empieza en el cuerpo: localizar la sensación, respirar y darle un sonido o un movimiento.",
+    "hook": "En tu último momento de tensión, ¿en qué parte del cuerpo lo notaste?",
+    "one_minute_summary": "Uno de los compromisos de The 15 Commitments of Conscious Leadership es sentir las emociones hasta el final. Localizas la sensación en el cuerpo y la describes, respiras con suavidad y la dejas estar, y luego le das un sonido o un movimiento. Contárselo a un compañero no equivale a esto, advierten. Solo después decides qué hacer. El libro afirma que una emoción a la que se deja pasar dura unos noventa segundos; es su afirmación, no una medición."
+  },
+  "de": {
+    "title": "Das Gefühl im Körper finden",
+    "description": "Die Autoren raten, Gefühle ganz durchzufühlen. Die Methode beginnt im Körper: orten, atmen, dem Gefühl einen Laut oder eine Bewegung geben.",
+    "hook": "Wo genau im Körper hast du es im letzten angespannten Moment gespürt?",
+    "one_minute_summary": "Eine Verpflichtung in The 15 Commitments of Conscious Leadership lautet, Gefühle ganz durchzufühlen. Du ortest die Empfindung im Körper und beschreibst sie, atmest sanft und lässt sie zu, dann gibst du ihr einen Laut oder eine Bewegung. Sich bei einer Kollegin auszusprechen sei etwas anderes, sagen die Autoren. Erst danach entscheidest du, was zu tun ist. Laut Buch dauert ein Gefühl, das man vorbeiziehen lässt, etwa 90 Sekunden. Das ist die Behauptung des Buches, keine Messung."
+  }
+}

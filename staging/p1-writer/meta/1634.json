@@ -1,0 +1,30 @@
+{
+ "story_id": 1634,
+ "verdict": "keep",
+ "verify_note": "Verified against the full text on archive.org (Scattered Minds, chapter 1 on attention, dopamine passages). The book contradicts the old text: Maté says hyperfocus signals poor attention regulation, is often passive attention (TV, video games), and that ADD needs much higher motivation; dopamine is 'thought to' be undersupplied and he calls biochemical explanations 'dangerous oversimplifications'. 'ADHD brain stronger when ignited by meaning' is not in the book and was dropped. Rebuilt on the book's lecturer case with the psychiatrist's second opinion and Maté's reply.",
+ "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+ "tr": {
+  "title": "Sevdiği İşe Odaklanan Öğretim Görevlisi",
+  "description": "Bir psikiyatrist, öğretim görevlisinin ilgilendiği şeye odaklanabilmesini tanıya karşı saydı. Maté'ye göre zor olan bu değil, ilgi yokken motivasyonu harekete geçirmek.",
+  "hook": "Hangi işlerinizde dikkat kendiliğinden gelir, hangilerinde bir itiş gerekir?",
+  "one_minute_summary": "Gabor Maté, dikkat eksikliği tanısı koyduğu bir öğretim görevlisinin ikinci görüşe gönderilmesini anlatıyor. Başka bir psikiyatrist, adamın ilgilendiği şeye odaklanabilmesini tanıya karşı saydı. Maté'ye göre zor olan bu değil: ilgi yokken beynin motivasyon düzeneğini harekete geçirmek. Aynı çocuk bir derste iyi, bir başkasında dağınık olabilir. Yoğun odaklanmayı da güç olarak değil, çoğunlukla pasif dikkat ve zayıf düzenlemenin işareti olarak okuyor. Dopamin açıklamalarını ise tehlikeli basitleştirme sayıyor."
+ },
+ "en": {
+  "title": "The Lecturer Who Could Focus",
+  "description": "A psychiatrist took a lecturer's ability to focus on what interested him as evidence against ADD. Maté answered that the hard part is starting motivation when there is no interest.",
+  "hook": "Which of your tasks get your attention by themselves, and which need a push?",
+  "one_minute_summary": "Gabor Maté had diagnosed a college lecturer with ADD, and the GP asked for a second opinion. Another psychiatrist wrote that the man could focus on what really interested him, which he called very difficult for ADD. Maté replied that this is not what is difficult: the hard part is arousing the brain's motivational apparatus when there is no personal interest. The same child may do well in one class and be scattered in another. He reads intense focus as poor regulation, often passive attention, and calls dopamine explanations dangerous oversimplifications."
+ },
+ "es": {
+  "title": "El profesor que sí podía concentrarse",
+  "description": "Un psiquiatra tomó como argumento contra el TDA que un profesor se concentrara en lo que le interesaba. Maté respondió que lo difícil es activar la motivación sin interés.",
+  "hook": "¿En cuáles de tus tareas la atención llega sola y en cuáles necesita un empujón?",
+  "one_minute_summary": "Gabor Maté había diagnosticado TDA a un profesor universitario y su médico de cabecera pidió una segunda opinión. Otro psiquiatra escribió que el hombre podía concentrarse en lo que de verdad le interesaba, algo que llamó muy difícil en el TDA. Maté respondió que eso no es lo difícil: lo difícil es activar el aparato de motivación del cerebro sin interés personal. El mismo niño puede rendir en una clase y estar disperso en otra. Lee el hiperenfoque como mala regulación, a menudo atención pasiva, y llama simplificaciones peligrosas a las explicaciones con dopamina."
+ },
+ "de": {
+  "title": "Der Dozent, der sich konzentrieren konnte",
+  "description": "Ein Psychiater wertete es als Argument gegen ADS, dass ein Dozent sich auf Interessantes konzentrieren konnte. Maté antwortete, schwer sei es, Motivation ohne Interesse anzuwerfen.",
+  "hook": "Bei welchen deiner Aufgaben kommt die Aufmerksamkeit von allein, und bei welchen braucht sie einen Anstoß?",
+  "one_minute_summary": "Gabor Maté hatte bei einem College-Dozenten ADS diagnostiziert, und der Hausarzt bat um eine zweite Meinung. Ein anderer Psychiater schrieb, der Mann könne sich auf das konzentrieren, was ihn wirklich interessiere, was bei ADS sehr schwer sei. Maté antwortete, das sei nicht das Schwierige: Schwer sei es, den Motivationsapparat des Gehirns ohne persönliches Interesse in Gang zu bringen. Dasselbe Kind kann in einem Fach gut und im anderen zerstreut sein. Hyperfokus deutet er als schlechte Regulierung, oft passive Aufmerksamkeit, und Dopamin-Erklärungen nennt er gefährliche Vereinfachungen."
+ }
+}

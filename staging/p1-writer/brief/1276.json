@@ -1,0 +1,58 @@
+{
+  "story_id": 1276,
+  "kind": "concept",
+  "book": {
+    "title": "Zero to One",
+    "author": "Peter Thiel",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "From memory and secondary summaries; book text not accessed. Alumni list (Tesla, SpaceX, LinkedIn, Palantir, YouTube, Yelp, Yammer) and Thiel's Palantir co-founding are confident. Hiring for people who like working together, single clear job per employee, 'startup messed up at its foundation cannot be fixed' recalled from the founders chapter, not verified verbatim. 'PayPal Mafia' nickname hedged. Old TR claims (largest startup exit in history, eBay 1.5 billion sale, early investors in Facebook and Airbnb, trillion-dollar ecosystem) not from the book as verified and dropped. DB title is Turkish 'Sifir'dan Bir'e'.",
+  "facts": [
+    "PayPal alumni started or helped build Tesla, SpaceX, LinkedIn, Palantir, YouTube, Yelp, Yammer.",
+    "Thiel co-founded PayPal and Palantir.",
+    "Group nicknamed the PayPal Mafia.",
+    "Early team hired talented people who wanted to work together.",
+    "Each employee had a clearly defined job.",
+    "A flawed founding team cannot be repaired later.",
+    "Hiring cannot be proven to have caused the later companies."
+  ],
+  "scene_details": [
+    "a list of seven companies",
+    "a clearly defined job for each person"
+  ],
+  "tension": "One startup, seven companies.",
+  "opening_idea": "The list.",
+  "lessons": [
+    {
+      "idea": "Choose teammates for how they work together.",
+      "anchor": "The founding team."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In the best team you have worked on, what made people actually want to work with one another?",
+  "use_cases": [
+    {
+      "situation": "Hiring panel",
+      "move": "Ask if we would enjoy working with them.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Duplicated work",
+      "move": "Clarify who owns what.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Friend starting a company",
+      "move": "Ask who the first people are and what each would own.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "PayPal's alumni built Tesla, SpaceX and LinkedIn.",
+  "conversation_variants": {
+    "punchline_idea": "Tesla, SpaceX, LinkedIn and Palantir trace back to one small startup.",
+    "thirty_sec_idea": "Alumni list, hiring, caveat.",
+    "question_idea": "",
+    "key_contrast_idea": "First team matters"
+  }
+}

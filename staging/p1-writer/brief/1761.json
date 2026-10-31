@@ -1,0 +1,57 @@
+{
+  "story_id": 1761,
+  "kind": "concept",
+  "book": {
+    "title": "Entangled Life",
+    "author": "Merlin Sheldrake",
+    "year": "2020"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Sheldrake's book; no page-level check. Concept story: the book's central ideas, not one event. Omitted on purpose: numbers (kilometres of mycelium per footstep), species names beyond Ophiocordyceps, his own experiments, the book's discussion of psychedelics and truffles. Added from memory, not page-checked: fungus as old as a tree, thread-shaped cells with large surface, kitchen fungi (cheese mould, yeast, beer) as an editorial aside.",
+  "facts": [
+    "Sheldrake, a biologist, argues that fungi are a kingdom of their own, neither plant nor animal, and genetically closer to animals than to plants.",
+    "Most of a fungus is hidden: a mass of fine threads called mycelium in soil or wood, while a mushroom is only its fruiting body.",
+    "Many fungi live in partnership with plant roots, trading minerals such as phosphorus for sugars.",
+    "The book says such partnerships were important when plants first moved onto land.",
+    "Some fungi manipulate animals, like the one that takes over ants, Ophiocordyceps.",
+    "Sheldrake treats some popular claims about a 'wood wide web' with caution."
+  ],
+  "scene_details": [
+    "a mushroom as the visible tip of a hidden thread",
+    "an ant gripping a stem"
+  ],
+  "tension": "The mushroom you see is the smallest part of the organism, and the hidden part holds ecosystems together.",
+  "opening_idea": "Open on a mushroom and what lies below it.",
+  "lessons": [
+    {
+      "idea": "Look for the hidden infrastructure that holds your work together, before you change it.",
+      "anchor": "mushrooms and mycelium"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What hidden support in your team or home keeps things running, and who does it?",
+  "use_cases": [
+    {
+      "situation": "The team plans to cut a role that nobody talks about.",
+      "move": "Mention that a mushroom is the small visible part of a fungus and ask what the role quietly supports.",
+      "context": "meeting"
+    },
+    {
+      "situation": "One family member does invisible chores.",
+      "move": "Name one thing they do and thank them specifically.",
+      "context": "family"
+    },
+    {
+      "situation": "You are tidying up a system you do not fully understand.",
+      "move": "Ask someone what it connects to before removing anything.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A mushroom is only the visible part of a fungus: ask what hidden threads hold your team together.",
+  "conversation_variants": {
+    "punchline_idea": "Sheldrake shows that the part of a fungus we see is small, and the hidden threads under it hold ecosystems together.",
+    "thirty_sec_idea": "Merlin Sheldrake says fungi are neither plants nor animals but a kingdom of their own, closer to animals than to plants. A mushroom is only the fruiting body. Below it runs a web of fine threads that trade minerals with plant roots and break down dead matter. The book is Entangled Life.",
+    "question_idea": "",
+    "key_contrast_idea": "visible, hidden"
+  }
+}

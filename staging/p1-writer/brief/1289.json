@@ -1,0 +1,63 @@
+{
+  "story_id": 1289,
+  "kind": "concept",
+  "book": {
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not available online. Race facts (2005 24-hour race in San Diego, entered at short notice to qualify for Badwater, 101 miles in about 19 hours, several broken bones in the feet, aching kidneys and blood afterwards, almost no preparation) come from a Trail Runner magazine profile and consistent secondary sources; the 40% Rule wording (when your mind says you are done you are only about 40 percent done) is confirmed by several summaries and Wikipedia's description of the memoir. Not confirmed: whether the book itself ties the rule to this race (the story keeps them as two separate facts and only says Goggins reads such moments through the rule), the exact wording in the book, and any claim about what he thought at which mile. Reference TR text (160 km with no equipment, 'if I were really finished I would be dying' quote, kidney failure, the rule 'derived' from this race) was NOT used. 40% is Goggins's own rule of thumb, not a measured figure: say so. Update: an Atlanta Track Club chapter summary (atlantatrackclub.org) and Graham Mann's notes place the 40% Rule in chapter 7 with the sentence 'Sadly, most of us give up when we've only given around 40 percent of our maximum effort' (cited p. 187) and call the early wave of pain and fatigue the 'governor'; the same summary places the 24-hour race (no training, needed 100 miles to qualify) in the Cookie Jar section. The book itself still not read.",
+  "facts": [
+    "In 2005 Goggins, a former Navy SEAL, entered a 24-hour race in San Diego.",
+    "He needed a 100-mile finish on his record to qualify for the Badwater 135 and entered on short notice, the day after learning this.",
+    "He had done almost no preparation for such a distance.",
+    "He ran 101 miles in about 19 hours, well inside the 24 hours allowed.",
+    "Several bones in his feet broke during the race.",
+    "Afterwards his kidneys ached and he passed blood.",
+    "Goggins calls his idea the 40% Rule: when your mind tells you you are done, you are really only about 40 percent done; most people stop with most of their capacity unused.",
+    "The 40% figure is his own rule of thumb drawn from experience, not a laboratory measurement.",
+    "In the book's wording (as quoted by a chapter summary): most of us give up when we have only given around 40 percent of our maximum effort; the early wave of pain and fatigue is what Goggins calls the governor."
+  ],
+  "scene_details": [
+    "A 24-hour race that he stopped at 101 miles, inside about 19 hours",
+    "Broken bones in the feet",
+    "Blood in the urine and aching kidneys afterwards",
+    "The name 40% Rule"
+  ],
+  "tension": "A man with almost no preparation covers 101 miles on feet that are breaking; where does the idea come from that the stopping signal arrives early?",
+  "opening_idea": "Start with the finish line number: 101 miles, not on a trained body, and the bill that came after.",
+  "lessons": [
+    {
+      "idea": "The urge to stop is a report about how you feel, not a measurement of what is left; check it against something before you obey it.",
+      "anchor": "Goggins ran 101 miles on breaking feet and calls the gap between the stop signal and real capacity the 40% Rule.",
+      "everyday_example_idea": "A student who wants to close the books after twenty minutes of revision decides to finish one more page and then see how it feels."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "The next time you want to stop in the middle of something difficult, what could you do for ten more minutes before you decide?",
+  "use_cases": [
+    {
+      "situation": "You are about to abandon a hard task for the day.",
+      "move": "Goggins ran 101 miles while his body was breaking; say to yourself 'my mind says stop, I will do one more block and then judge', then do it.",
+      "context": "self"
+    },
+    {
+      "situation": "A teammate says they are done for the day.",
+      "move": "Ask what exactly is stopping them and propose one more short, defined stretch before deciding, with the right to stop afterwards.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend wants to quit training for a race after a rough week.",
+      "move": "Share the 40% Rule as Goggins's rule of thumb, not a fact, and suggest a shorter session instead of quitting.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Goggins' 40% Rule: the urge to stop is a report, not a measurement, so ask for one more defined stretch before obeying it.",
+  "conversation_variants": {
+    "punchline_idea": "Goggins ran 101 miles on feet with broken bones and still says the mind quits at about 40 percent.",
+    "thirty_sec_idea": "Goggins entered a 24-hour race in San Diego with almost no preparation, ran 101 miles in about 19 hours, broke bones in his feet and passed blood afterwards. He reads such moments through his 40% Rule: when your mind says done, you are only about 40 percent done. It is his own rule of thumb, not a measurement.",
+    "question_idea": "",
+    "key_contrast_idea": "Stop signal, real limit"
+  }
+}

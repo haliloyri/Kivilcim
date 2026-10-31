@@ -1,0 +1,35 @@
+{
+ "story_id": 1562,
+ "verdict": "keep",
+ "verify_note": "Old woman-on-the-drive dialogue and the brain-offloading mechanism removed (invented). Rebuilt as a concept story from the book's own phrases (automatic pilot, more asleep than awake), Part III chapter titles and examples; surrounding text not read, low confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Uyanıkken uykuda",
+  "description": "Kabat-Zinn'e göre insanlar zamanlarının çoğunu otomatik pilotta geçiriyor. Kitabın stres bölümü tepki vermekle yanıt vermeyi ayırıyor.",
+  "hook": "Alışkanlık haline gelmiş bir tepkinin başladığını sana ilk hangi küçük işaret haber veriyor?",
+  "one_minute_summary": "Jon Kabat-Zinn'in kitabı, insanların zamanlarının büyük kısmını otomatik pilotta, uyanıkken bile uyanıktan çok uykuda geçirdiğini söylüyor. Üçüncü bölümün iki başlığı konuyu özetliyor: stres tepkiselliğine takılıp kalmak ve strese tepki vermek yerine yanıt vermek. Kitaba göre alışkanlık haline gelmiş otomatik tepkiler yaşanan stresin büyük kısmını belirliyor. Çıkış yolu olarak kendi düşüncelerinin farkına varmak öneriliyor. Bir blog yazarı tabloyu fazla koyu buluyor, alıntılar okurlardan geliyor."
+ },
+ "en": {
+  "title": "Asleep while awake",
+  "description": "Kabat-Zinn writes that people spend much of their time on automatic pilot. The book's stress part separates reacting from responding.",
+  "hook": "What is the first small sign that tells you a habitual reaction is starting?",
+  "one_minute_summary": "Jon Kabat-Zinn's book says people run on automatic pilot so much of the time, more asleep than awake even when awake. Two chapter titles from Part III sum up the subject: stuck in stress reactivity, and responding to stress instead of reacting. Habitual automatic reactions, the book says, determine in large measure how much stress we experience. One summary says the way out is to become aware of one's own thoughts. A critical blogger finds the picture overdrawn, and the quotations come from readers."
+ },
+ "es": {
+  "title": "Dormido estando despierto",
+  "description": "Kabat-Zinn escribe que la gente pasa buena parte del tiempo en piloto automático. La parte sobre el estrés separa reaccionar de responder.",
+  "hook": "¿Cuál es la primera señal pequeña que te avisa de que empieza una reacción habitual?",
+  "one_minute_summary": "El libro de Jon Kabat-Zinn dice que la gente va en piloto automático buena parte del tiempo, más dormida que despierta incluso estando despierta. Dos títulos de la tercera parte resumen el asunto: atascado en la reactividad al estrés y responder al estrés en lugar de reaccionar. Las reacciones habituales y automáticas, afirma, determinan en buena medida el estrés que vivimos. Un resumen dice que la salida es tomar conciencia de los propios pensamientos. Un bloguero crítico ve el cuadro exagerado y las citas proceden de lectores."
+ },
+ "de": {
+  "title": "Wach und doch im Schlaf",
+  "description": "Kabat-Zinn schreibt, Menschen verbrächten viel Zeit im Autopilot. Der Stressteil des Buchs trennt Reagieren von Antworten.",
+  "hook": "Welches ist das erste kleine Zeichen, das dir sagt, dass eine gewohnheitsmäßige Reaktion beginnt?",
+  "one_minute_summary": "Jon Kabat-Zinns Buch sagt, Menschen liefen sehr oft im Autopilot-Modus, mehr schlafend als wach, selbst wenn sie wach sind. Zwei Kapiteltitel aus Teil III fassen das Thema zusammen: gefangen in der Stressreaktivität und auf Stress antworten statt reagieren. Gewohnheitsmäßige automatische Reaktionen bestimmen laut Buch weitgehend, wie viel Stress wir erleben. Eine Zusammenfassung nennt als Ausweg, die eigenen Gedanken zu bemerken. Ein kritischer Blogger findet das Bild überzeichnet, die Zitate stammen von Lesern."
+ }
+}

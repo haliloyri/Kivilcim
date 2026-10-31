@@ -1,0 +1,35 @@
+{
+  "story_id": 1490,
+  "verdict": "keep",
+  "verify_note": "Not web-verified; Portugal 2001 decriminalization and Goulao interview from Chasing the Scream (2015), brief as written. Old title (drug war paradox) no longer fits.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Portekiz'in uyuşturucu yasası",
+    "description": "Johann Hari, 2001'de kişisel kullanımı suç olmaktan çıkaran Portekiz'e gidiyor. Kullanıcıları cezalandırmaya giden para tedaviye ve işe kaydı.",
+    "hook": "Biri hata yaptığında önce cezayı mı düşünürsünüz, yoksa geri dönüşünü mü?",
+    "one_minute_summary": "Johann Hari, Chasing the Scream için Portekiz'e gidip hekim João Goulão ile konuşuyor. 2001'den beri kişisel kullanım için uyuşturucu bulundurmak suç değil, satış suç olmaya devam ediyor. Kullanıcıları cezalandırmaya giden para tedaviye ve işe dönüş desteğine aktarıldı. Kitaba göre enjekte kullanım yaklaşık yarıya indi, HIV bulaşları ve aşırı doz ölümleri azaldı. Hari'ye göre ceza, kullanıcıyı onu tutabilecek bağlardan uzaklaştırıyor. Ama değişimin ne kadarının yasadan geldiği tartışmalı, çünkü yasa tedavi ve iş desteğiyle birlikte geldi."
+  },
+  "en": {
+    "title": "Portugal's drug law",
+    "description": "Johann Hari travels to Portugal, where personal drug possession stopped being a crime in 2001. The money once spent on punishing users went to treatment and jobs.",
+    "hook": "When someone fails, do you think first of the penalty or of the way back?",
+    "one_minute_summary": "For Chasing the Scream, Johann Hari spoke in Portugal with Dr. João Goulão, who helped shape the country's drug policy. Since 2001, possessing drugs for personal use is no crime, while selling still is. Money once spent on punishing users went to treatment and help returning to ordinary life, including work. The book reports that injecting drug use roughly halved, and HIV infections and overdose deaths fell. Hari argues punishment pushes users from helpful bonds. How much came from the law itself is debated."
+  },
+  "es": {
+    "title": "La ley de drogas de Portugal",
+    "description": "Johann Hari viaja a Portugal, donde desde 2001 tener droga para consumo propio dejó de ser delito. El dinero que castigaba pasó a pagar tratamiento y empleo.",
+    "hook": "Cuando alguien falla, ¿piensas primero en la pena o en cómo puede volver?",
+    "one_minute_summary": "Para Chasing the Scream, Johann Hari habló en Portugal con el médico João Goulão, que participó en la política de drogas. Desde 2001 tener droga para consumo propio no es delito, y vender sí. El dinero que se gastaba en castigar a los consumidores pasó a pagar tratamiento y ayuda para reincorporarse a la vida normal. Según el libro, el consumo por inyección bajó a la mitad y cayeron el VIH y las sobredosis. Para Hari, castigar aleja de los vínculos. Cuánto se debe a la ley sigue en debate."
+  },
+  "de": {
+    "title": "Portugals Drogengesetz",
+    "description": "Johann Hari reist nach Portugal, wo der Besitz für den eigenen Gebrauch seit 2001 keine Straftat mehr ist. Das Geld für Strafen bezahlte nun Behandlung und Arbeit.",
+    "hook": "Denkst du bei einem Fehler zuerst an die Strafe oder an den Weg zurück?",
+    "one_minute_summary": "Für Chasing the Scream sprach Johann Hari in Portugal mit dem Arzt João Goulão, der an der Drogenpolitik mitgearbeitet hat. Seit 2001 ist der Besitz für den eigenen Gebrauch keine Straftat, der Handel bleibt verboten. Das Geld, das in die Verfolgung von Konsumenten floss, bezahlte nun Behandlung und Hilfen zurück ins Alltagsleben, auch in Arbeit. Dem Buch zufolge ging der Konsum per Spritze auf etwa die Hälfte zurück, HIV-Infektionen und Todesfälle durch Überdosis wurden seltener. Hari sieht in Strafe eine Entfernung von Bindungen. Wie viel am Gesetz liegt, ist umstritten."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "story_id": 1353,
+  "kind": "concept",
+  "book": {
+    "title": "The 5 AM Club",
+    "author": "Robin Sharma",
+    "year": "2018"
+  },
+  "confidence": "low",
+  "confidence_note": "DB lists this story under The 5 AM Club (Turkish edition title 'Bir Sonraki Seviye'). The reference TR text (a 'winning loop' and a 'learning loop', 365 and 1,825 learning points, a Sharma quote) matched nothing I could verify and was NOT used. Verified from Robin Sharma's own page and third-party summaries only (book text not read): the book has a chapter 'The Twin Cycles of Elite Performance'; the idea is that elite performers alternate focused high-output work with deliberate recovery; Sharma's site says elite performance without deep recovery depletes your productive assets and that rest is a necessity. Summaries name the halves High-Excellence Cycle and Deep-Refueling Cycle; exact durations (a 90/10 split appears in one newsletter) are unconfirmed and omitted. No anecdote or case from the book is verified, so the story stays a short concept piece and must not invent a scene or a named elite performer. Added from general knowledge of the book's fable frame and the 20/20/20 formula; not checked against the text.",
+  "facts": [
+    "The 5 AM Club (2018) by Robin Sharma contains a chapter called 'The Twin Cycles of Elite Performance'.",
+    "The model pairs two halves: a stretch of intense, focused, high-quality work and a stretch of deliberate recovery.",
+    "Summaries name them the High-Excellence Cycle and the Deep-Refueling Cycle.",
+    "Sharma's claim: elite performance without deep recovery depletes the performer's productive assets.",
+    "Sharma calls rest a necessity for growth and for using one's talents fully, not a luxury.",
+    "Sharma says he has seen the model help the executives and athletes he coaches, but names none of them in the sources checked.",
+    "The same book builds its morning routine (the 5 AM hour) around exercise, reflection and learning, which is the setting for the cycles.",
+    "The book is framed as a story in which an entrepreneur and an artist take lessons from an eccentric billionaire; the twin cycles are one of those lessons.",
+    "The book's morning routine is the 20/20/20 formula: twenty minutes each of movement, reflection and learning."
+  ],
+  "scene_details": [
+    "A chapter titled 'The Twin Cycles of Elite Performance'",
+    "A focused work stretch followed by a deliberate recovery stretch"
+  ],
+  "tension": "People who push hard assume rest is what they trade away to get results; Sharma says the best performers schedule recovery as half of the system.",
+  "opening_idea": "Start with the chapter title and its odd pairing: a book about getting up at 5 AM that gives a whole chapter to recovery.",
+  "lessons": [
+    {
+      "idea": "Plan recovery with the same care as the work, because output without refuelling wears down the thing that produces it.",
+      "anchor": "Sharma pairs a High-Excellence Cycle with a Deep-Refueling Cycle and says elite performance without deep recovery depletes productive assets.",
+      "everyday_example_idea": "A line cook who works every shift of the week and cannot taste what she cooks by Friday; one fixed day off changes her Friday plates."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your week do you already do focused work, and where is the matching stretch of real recovery that you have not planned yet?",
+  "use_cases": [
+    {
+      "situation": "Your team keeps stacking deadlines back to back.",
+      "move": "Sharma pairs a work cycle with a refuelling cycle. Ask: where in this schedule is the recovery half, and who protects it?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend brags about never taking a break.",
+      "move": "Say that the book treats rest as part of performance, not a reward for it, and ask what they would drop to fit in one real break this week.",
+      "context": "social"
+    },
+    {
+      "situation": "You finish a heavy push and feel flat.",
+      "move": "Block one recovery slot on your calendar tonight before choosing the next push, and note how the next focused hour feels.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "In Sharma's Twin Cycles, focused work and deliberate recovery come as a pair; schedule the recovery slot before the next push.",
+  "conversation_variants": {
+    "punchline_idea": "A book about waking at 5 AM spends a whole chapter on recovery.",
+    "thirty_sec_idea": "Robin Sharma's The 5 AM Club has a chapter called the Twin Cycles of Elite Performance: one cycle of intense focused work, one of deep recovery. His claim is that top performers who skip the recovery half drain the very assets they work with, so rest becomes part of the system.",
+    "question_idea": "",
+    "key_contrast_idea": "Rest as half the system"
+  }
+}

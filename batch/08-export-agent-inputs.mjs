@@ -12,6 +12,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+// Same settings object the Batch pipeline uses (single source of truth).
+import { LANG_CONFIG } from '../scripts/p1/lang-config.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
@@ -25,10 +27,7 @@ if (!lang || !ids.length) {
   process.exit(2);
 }
 
-// Pull LANG_CONFIG out of 05-submit-stories.mjs so the two never drift apart.
-const src05 = fs.readFileSync(path.join(ROOT, 'batch/05-submit-stories.mjs'), 'utf8');
-const cfgSrc = /const LANG_CONFIG = (\{[\s\S]*?\n\});/.exec(src05)[1];
-const LANG_CONFIG = new Function(`return ${cfgSrc}`)();
+// Settings come from scripts/p1/lang-config.mjs (also used by validate.mjs).
 const cfg = LANG_CONFIG[lang];
 if (!cfg) { console.error(`unknown lang ${lang}`); process.exit(2); }
 
@@ -45,7 +44,9 @@ const storySystem = fs.readFileSync(path.join(ROOT, 'batch/prompts/story-instruc
   .replaceAll('{LEN_LESSONS}', cfg.len.lessons)
   .replaceAll('{LEN_REFLECT}', cfg.len.reflect)
   .replaceAll('{LEN_USE}', cfg.len.use)
-  .replaceAll('{LEN_TOTAL}', cfg.len.total);
+  .replaceAll('{LEN_TOTAL}', cfg.len.total)
+  .replaceAll('{VOICE_LONG}', String(cfg.voice.long))
+  .replaceAll('{VOICE_SHORT}', String(cfg.voice.short));
 fs.writeFileSync(path.join(inDir, `story-system.${lang}.md`), storySystem);
 
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'staging/p1/manifest.json'), 'utf8'));

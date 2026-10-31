@@ -1,0 +1,247 @@
+{
+  "book_no": 180,
+  "title": "In the Realm of Hungry Ghosts",
+  "authors": [
+    "Gabor Maté"
+  ],
+  "year": "2008",
+  "note": "DB carries Turkish title 'Her Şey Gerçek Olabilir' (not the book's real title). Full text was not accessible; facts come from the publisher excerpt, profiles and chapter summaries. Chapter 12 title confirmed by two tables of contents.",
+  "sources": [
+    "https://49thshelf.com/content/view/full/245165",
+    "https://www.theglobeandmail.com/life/relationships/the-good-doctors-ghosts/article718188",
+    "https://magazine.alumni.ubc.ca/node/2700",
+    "https://drgabormate.com/about/",
+    "https://canadiandimension.com/articles/1738/",
+    "https://www.connexions.org/CxLibrary/CA19870.htm",
+    "https://www.supersummary.com/in-the-realm-of-hungry-ghosts/part-3/",
+    "https://pubmed.ncbi.nlm.nih.gov/27650054/",
+    "https://www.madinamerica.com/?p=218001",
+    "https://en.wikipedia.org/wiki/Rat_Park"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Maté was staff physician for the Portland Hotel Society, a nonprofit in Vancouver's Downtown Eastside that runs the Portland, Stanley, Washington, Regal and Sunrise hotels. Most residents are addicts and many also have mental illness.",
+      "source": "49thshelf publisher excerpt",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "The book borrows the Buddhist Wheel of Life with six realms. The Hungry Ghost Realm is the realm of addiction: people keep reaching outside themselves for relief from a craving that never ends, and what they reach for is not what they really need.",
+      "source": "49thshelf excerpt",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Maté frames drug use as an attempt to escape the 'Hell Realm of overwhelming fear, rage and despair'.",
+      "source": "49thshelf excerpt",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "People with addictions are not a separate group. Addiction sits on a continuum that includes substance use, compulsive eating, gambling and socially admired workaholism.",
+      "source": "49thshelf excerpt; UBC alumni talk summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Opening scene patients: Eva, in her thirties, does what locals call the 'Hastings shuffle', a cocaine-driven dance on the sidewalk. Arlene has rows of horizontal razor scars on her arms; her medication controls compulsive self-harm and she fears the dose will be cut.",
+      "source": "49thshelf excerpt",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Maté counts himself on the continuum: his own compulsion is buying classical music CDs, often several versions of one piece.",
+      "source": "Globe and Mail 2008 profile (about the author and the book's self-examination)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "His guiding question is 'not why the addiction, but why the pain'. Addiction serves a function: it answers a painful history and should be met with compassion, not only treated as a disease.",
+      "source": "drgabormate.com tagline; UBC alumni talk summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Maté calls addiction work with this population 'palliative work' and says 'we do not expect to cure anyone'.",
+      "source": "Globe profile",
+      "confidence": "low"
+    },
+    {
+      "id": "f9",
+      "claim": "Chapter 12 is titled 'From Vietnam to Rat Park: Do Drugs Cause Addiction?'.",
+      "source": "two tables of contents (Connexions, library TOC)",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "In chapter 12 Maté's main example against the idea that a drug alone causes addiction is US soldiers who used heroin in Vietnam. A chapter summary quotes him giving a remission rate of 95 percent after return, 'unheard of among narcotics addicts treated in the U.S.' (attributed to p.142).",
+      "source": "SuperSummary part 3",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Robins's research group was asked by the US government to measure how heroin addiction among returning GIs would affect Veterans Administration resources. Cheap, potent heroin was widely available to GIs in Vietnam. About 470 returning soldiers were sampled in September 1971.",
+      "source": "Mad in America part 5",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "A 2017 review of Robins's studies: about 34% of US soldiers used heroin in Vietnam and about 20% showed symptoms of dependence; only about 1% became re-addicted in the first year back.",
+      "source": "PubMed 27650054 (Hall and Weier 2017)",
+      "confidence": "high"
+    },
+    {
+      "id": "f13",
+      "claim": "Most soldiers who recovered did so without formal treatment. Robins's team attributed it to leaving the war environment and returning to a stable home, and said the effect of setting needed further study, including how long remission lasts.",
+      "source": "Mad in America part 5",
+      "confidence": "high"
+    },
+    {
+      "id": "f14",
+      "claim": "A 1979 survey of veterans seeking heroin treatment: Vietnam veterans were more likely to have started during service and more likely to say service experiences affected their use, usually naming relief of fear and the tensions of war.",
+      "source": "PubMed 507021 abstract via search",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Rat Park (Bruce Alexander and colleagues, Simon Fraser University, papers 1978-1981): an enclosure with 200 times the floor area of a standard lab cage, 16-20 rats of both sexes, food, balls, wheels and room to mate. Control rats lived alone in small metal cages.",
+      "source": "Wikipedia Rat Park",
+      "confidence": "high"
+    },
+    {
+      "id": "f16",
+      "claim": "Each rat had two drop dispensers, one with sweetened morphine solution and one with plain tap water. Sweetener was meant to cover morphine's bitterness; sweetened quinine was offered first as a control.",
+      "source": "Wikipedia Rat Park",
+      "confidence": "high"
+    },
+    {
+      "id": "f17",
+      "claim": "Result: Park rats mostly chose plain water. In one condition caged males drank up to 19 times more morphine than Park males. Rats kept 57 days on morphine only, then given a choice in Rat Park, chose plain water and showed only minor withdrawal signs.",
+      "source": "Wikipedia Rat Park",
+      "confidence": "high"
+    },
+    {
+      "id": "f18",
+      "claim": "Caveats: Bruce Petrie (1996), a former student of Alexander, could not replicate the result and suggested rat strain; critics cite small samples, bitter oral morphine, uneven measurement between conditions, equipment failures and rat deaths. The group moved from cages to the park drank nearly as much as caged rats when the solution was sweeter and more dilute.",
+      "source": "Wikipedia Rat Park",
+      "confidence": "high"
+    },
+    {
+      "id": "f19",
+      "claim": "Chapter 12 pairs Rat Park with the Vietnam data to argue addiction's roots are environmental.",
+      "source": "SuperSummary; chapter summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f20",
+      "claim": "Maté looks for addiction's roots less in genes than in early childhood, when reward pathways develop and emotional patterns become unconscious; stress later in life adds to the predisposition.",
+      "source": "UBC alumni talk summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f21",
+      "claim": "Robins's September 1971 sample (about 470 returning soldiers): at one year home, about 10% reported using an opiate and 7% of those reported readdiction. Opium had spread across Southeast Asia, which made heroin cheap and potent.",
+      "source": "Mad in America part 5",
+      "confidence": "high"
+    },
+    {
+      "id": "f22",
+      "claim": "Rat Park 'seduction' design: four groups of eight rats (32): caged from weaning at 22 days to day 80; park for the same period; caged then moved to the park at day 65; park then moved to cages at day 65. Dispensers recorded intake automatically. Females sampled morphine more often than males; the authors concluded that isolated cages and female sex increased consumption.",
+      "source": "Wikipedia Rat Park",
+      "confidence": "high"
+    },
+    {
+      "id": "f23",
+      "claim": "Johann Hari's 2015 TED talk popularized the study. Researchers say the media overstated it as a paradigm shift, since environment is not the only factor in addiction.",
+      "source": "Wikipedia Rat Park",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Maté asked every patient 'what does the drug give you?' and got five quoted answers ('I don't feel pain', 'I feel at peace' ...).",
+      "reason": "No source shows these quotes or this scene in the book."
+    },
+    {
+      "claim": "Maté worked exactly ten years in the Downtown Eastside.",
+      "reason": "Sources say 7, 8, 10 or 12 years. Left out."
+    },
+    {
+      "claim": "The 'Downtown Eastside is Canada's poorest neighbourhood' framing and 'early trauma, neglect, violence' as the common ground for every patient.",
+      "reason": "Only secondary blog support; the story keeps to what the excerpt shows."
+    },
+    {
+      "claim": "'Addiction is dependence on what the drug gives, not the drug' as a direct Maté quote.",
+      "reason": "Paraphrase with no source; story uses the sourced 'why the pain' question instead."
+    },
+    {
+      "claim": "The US government panicked about millions of addicts coming home.",
+      "reason": "Sources say the government commissioned a study of VA burden; 'panic' unsupported."
+    },
+    {
+      "claim": "Stated as: 95 percent of returning soldiers never developed dependence.",
+      "reason": "Wrong scope. The 95 percent figure is a remission rate among those who had been addicted."
+    },
+    {
+      "claim": "Maté's closing line 'the antidote to addiction is connection'.",
+      "reason": "The phrase 'the opposite of addiction is connection' is Johann Hari's; no source ties the line to Maté's book."
+    },
+    {
+      "claim": "Social connection raises oxytocin, oxytocin regulates dopamine, addictive behaviour drops.",
+      "reason": "No source in the book summaries; mechanism not supported."
+    },
+    {
+      "claim": "Maté confirmed Rat Park with his own clinical observations about what breaks addiction (real connection, acceptance without judgement, meaning, belonging).",
+      "reason": "No source."
+    },
+    {
+      "claim": "The Rat Park alley had tunnels, playground and 'same-sex partners'; the lonely rat chose morphine and drank until death.",
+      "reason": "Not in the papers as summarised; 'until death' contradicted by caveats."
+    }
+  ],
+  "stories": {
+    "1636": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f20"
+      ],
+      "note": "Recentred on the hungry-ghost frame and the 'why the pain' question; the invented Q&A scene is gone."
+    },
+    "1637": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "f13",
+        "f14",
+        "f19",
+        "f21"
+      ],
+      "note": "Vietnam data only; the 'toxic society' list and policy claims dropped."
+    },
+    "1638": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f15",
+        "f16",
+        "f17",
+        "f18",
+        "f19",
+        "f22",
+        "f23"
+      ],
+      "note": "Rat Park told as the experiment with its caveats; oxytocin and 'antidote' claims dropped."
+    }
+  }
+}

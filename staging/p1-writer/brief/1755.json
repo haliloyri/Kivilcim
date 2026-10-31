@@ -1,0 +1,58 @@
+{
+  "story_id": 1755,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Lost City of Z",
+    "author": "David Grann",
+    "year": "2009"
+  },
+  "confidence": "medium",
+  "confidence_note": "Written from knowledge of Grann's book; no page-level check. Fawcett's last letter from Dead Horse Camp on 29 May 1925 was confirmed in web sources; Kalapalo and Heckenberger (archaeological evidence of large settlements) not confirmed online. Omitted on purpose: the count of searchers who died, Fawcett's own statements about rescue, Grann's trip details, exact route. Extras from memory, not page-checked: Fawcett's earlier border mapping, taking his son as a heavy decision. Wording in some langs ('obsession', 'dreamer', 'each searcher carried a belief') is editorial framing, not a book claim; the line that his last letter was 'reassuring' comes from web summaries of the letter.",
+  "facts": [
+    "Percy Fawcett was a British explorer who believed an advanced ancient city, which he called Z, lay in the Brazilian jungle.",
+    "In 1925 he set out with his son Jack and Jack's friend Raleigh Rimell.",
+    "His last known letter, to his wife, was written at Dead Horse Camp at the end of May 1925; nothing more was heard of the three.",
+    "Many expeditions went looking for them and some searchers died or vanished.",
+    "Decades later David Grann followed Fawcett into the Amazon himself.",
+    "In the book's account, archaeologists later found evidence that large organised settlements did exist in the Amazon."
+  ],
+  "scene_details": [
+    "Dead Horse Camp",
+    "a letter to his wife",
+    "a jungle that swallowed the party"
+  ],
+  "tension": "A man's belief in a lost city turns out to be partly right, but it cost him and others everything.",
+  "opening_idea": "Open on Fawcett's last letter from Dead Horse Camp, and the silence that followed.",
+  "lessons": [
+    {
+      "idea": "Test a strong conviction in small steps before staking everything on it.",
+      "anchor": "Fawcett's 1925 expedition vs later archaeological finds"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which belief of yours are you pursuing hard without having tested it first, and what small test could you run?",
+  "use_cases": [
+    {
+      "situation": "A teammate is certain about a risky bet.",
+      "move": "Mention Fawcett: right about the idea and still lost; ask what small trial could show it first.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend wants to quit a job for a single hunch.",
+      "move": "Ask what they could test over a weekend before deciding.",
+      "context": "social"
+    },
+    {
+      "situation": "You are sure about a plan.",
+      "move": "Write the one result that would change your mind.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Fawcett was partly right about the Amazon and lost everything: test a conviction before you stake your life on it.",
+  "conversation_variants": {
+    "punchline_idea": "Fawcett's belief in a lost city in the Amazon was partly borne out by later finds, and it still cost him his life.",
+    "thirty_sec_idea": "In 1925 the British explorer Percy Fawcett set off into the Brazilian jungle with his son and his son's friend, looking for a lost city he called Z. His last letter came from Dead Horse Camp. They were never seen again, and others died looking for them. David Grann's book says archaeologists later found large settlements in the Amazon. Fawcett was partly right, and it cost him everything.",
+    "question_idea": "",
+    "key_contrast_idea": "right idea, wrong test"
+  }
+}

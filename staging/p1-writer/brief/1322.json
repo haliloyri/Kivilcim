@@ -1,0 +1,60 @@
+{
+ "story_id": 1322,
+ "kind": "concept",
+ "book": {
+  "title": "A More Beautiful Question",
+  "author": "Warren Berger",
+  "year": "2014"
+ },
+ "confidence": "medium",
+ "confidence_note": "Why, What if, How and the closed-question contrast are from Berger's own strategy+business piece. Airbnb details are from Berger's own blog excerpt of the book story. Old claim of a what-how-why hierarchy was wrong and the Toyota 5 Whys example was not found in Berger sources; both dropped. Whether Berger labels each Airbnb step as why/what if/how is only partly supported (the blog says what-if questions soon followed).",
+ "facts": [
+  "Berger describes a basic, logical progression of three open questions: Why? (the catalyst, the one companies ask least, challenging the premise), What if? (unconstrained search for solutions), How? (turning ideas into practical steps).",
+  "He contrasts these with old closed questions (how many, how much, how fast), which assume you should keep doing what you already do. Example of a why: asking why a business unit exists at all instead of how to raise its margins.",
+  "Fall 2007, San Francisco: Joe Gebbia and Brian Chesky, roommates with no jobs and little money, needed rent. Conference visitors could not find hotel rooms because hotels were full.",
+  "They asked why they could not house these visitors for a night or two, then why not in their own place; they rented out three inflatable mattresses to three strangers with a modest breakfast and sightseeing tips.",
+  "They then asked what it would take to offer more than a mattress, built their own website instead of posting on Craigslist, and asked whether it could be repeated in every major city.",
+  "No money for ads: they launched in Denver during the 2008 Democratic National Convention and pitched the story to news producers, which got them on CNN. Over the next year they kept asking what was working, leading to online payments and expansion beyond the US.",
+  "Gebbia said being both travelers and hosts helped them see the opportunity.",
+  "Berger sees the progression behind many innovation breakthroughs and adds why not as a companion that challenges assumptions; Robin Chase challenged the idea that cars could not be shared (Zipcar)."
+ ],
+ "scene_details": [
+  "three inflatable mattresses for three strangers",
+  "a modest breakfast and sightseeing tips",
+  "their own website instead of Craigslist"
+ ],
+ "tension": "Two roommates with rent due asked a question about visitors instead of a question about money.",
+ "opening_idea": "Two roommates short on rent notice that conference visitors cannot find hotel rooms.",
+ "lessons": [
+  {
+   "idea": "Ask why before how: a how question speeds up what exists, a why question can remove it.",
+   "anchor": "Berger's sequence and the Airbnb founders' first question."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "In something you are currently trying to do better, what would your first answer be if you asked why you do it at all?",
+ "use_cases": [
+  {
+   "situation": "Your team is trying to speed up a process",
+   "move": "Mention that the Airbnb founders first asked why they could not host visitors, and ask why this step exists.",
+   "context": "meeting"
+  },
+  {
+   "situation": "The same weekly argument returns at home",
+   "move": "Ask what would happen if you stopped doing it this way, before asking how to fix it.",
+   "context": "family"
+  },
+  {
+   "situation": "You work toward a goal on autopilot",
+   "move": "Write down why you want it before working out how.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Airbnb's founders asked why before how.",
+ "conversation_variants": {
+  "punchline_idea": "Airbnb began with why couldn't we host these visitors, not how do we make rent.",
+  "thirty_sec_idea": "Two roommates, three air mattresses, the questions in order.",
+  "question_idea": "",
+  "key_contrast_idea": "why first, how last"
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "story_id": 1776,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Marshmallow Test",
+  "author": "Walter Mischel",
+  "year": ""
+ },
+ "confidence": "medium",
+ "confidence_note": "Sources: bingschool.stanford.edu 50-years article (late 1960s-early 1970s at Bing; preschoolers; choice of one treat now or a larger one later; researcher behind a one-way window; a bell to call the researcher back; children turned their backs, covered their eyes, sang quietly, played with their toes, invented games, whispered the rule to themselves; children who imagined treats as just a picture waited almost 18 minutes; those who waited longer at 4 or 5 scored higher on SAT and were rated better socially and cognitively as adolescents); another search summary (Surprise Room; treats included marshmallows, cookies, little pretzels, mints; a child told to put an imaginary frame around the treat; one child sang about home in Redwood City); Wikipedia and secondary sources on later replications showing a smaller link once family background is considered (not from the book). Book not page-checked. Not verified: child count, exact wait times other than almost 18 minutes, the cloud variant (dropped), trying to sleep (dropped). UPDATE: timeshighereducation.com review of the book (strategies, doubled waiting time with a photo, hot/cool, smoking anecdote). Daughters detail from news profiles, not verified in the book.",
+ "facts": [
+  "At Stanford's Bing Nursery School in the late 1960s and early 1970s, Mischel's team led preschool children into a small room, called the Surprise Room in the book, and offered them a choice: one treat now, or a larger reward if they waited for the researcher to return.",
+  "The treats included marshmallows, cookies, little pretzels and mints. The researcher watched through a one-way window, and the child could ring a bell to end the wait.",
+  "Some children rang quickly. Others turned their backs to the treat, covered their eyes, sang quietly to themselves, played with their toes or whispered the rule to themselves; one sang about her home in Redwood City.",
+  "Children who imagined the treat was only a picture waited almost 18 minutes.",
+  "Mischel reports that those who waited longer at age 4 or 5 had higher SAT scores and were rated better socially and cognitively as adolescents.",
+  "Editorial caveat: later, larger studies found a smaller link between waiting and later outcomes once family background was taken into account.",
+  "Children who succeeded in waiting also pushed the bell away, repeated the two-treat rule aloud, or fell asleep; covering the treat made waiting easier (Times Higher Education review of the book).",
+  "A life-sized photo of the treat roughly doubled average waiting time, and telling children to frame the real treat as a picture produced the same gain; telling them the picture was real reversed it.",
+  "Mischel separates hot qualities of a treat (it tastes good, which triggers eating) from cool ones (white, soft), which help waiting. When he quit smoking he pictured a cancer patient receiving radiation whenever he craved a cigarette.",
+  "Mischel followed the children up years later: those who waited longer had more self-control and better social and cognitive functioning in adolescence (secondary: profiles say his daughters, who attended the school, started him asking how classmates fared)."
+ ],
+ "scene_details": [
+  "a bell on the table",
+  "hands over eyes",
+  "a one-way window",
+  "a line sung under the breath"
+ ],
+ "tension": "The children who waited did not stare harder at the treat; they looked away.",
+ "opening_idea": "Open on the child with hands over eyes.",
+ "lessons": [
+  {
+   "idea": "Self-control works better as a way of managing what you look at than as straining against a pull, so change what is in front of you.",
+   "anchor": "the children covering their eyes and singing"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which tempting thing could you put out of sight or change in your next hour at work or home, rather than resisting it?",
+ "use_cases": [
+  {
+   "situation": "You keep checking your phone in meetings.",
+   "move": "Put it in your bag before the meeting starts.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Your child is waiting for a treat.",
+   "move": "Suggest a song or a game to fill the wait.",
+   "context": "family"
+  },
+  {
+   "situation": "You are avoiding a snack at your desk.",
+   "move": "Imagine the snack as something else, as the clouds in the study, or move it out of sight.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "The children who waited sang and covered their eyes: look away from the pull.",
+ "conversation_variants": {
+  "punchline_idea": "The children who waited longest were not staring at the marshmallow.",
+  "thirty_sec_idea": "At Stanford's Bing Nursery School, Walter Mischel offered children a marshmallow now or two later. Some waited by covering their eyes, singing, or even trying to sleep. When children were told to think of a marshmallow as a cloud, they waited longer. Mischel concluded waiting is about where attention goes.",
+  "question_idea": "What do you do to not look at a temptation?",
+  "key_contrast_idea": "Look away, do not fight"
+ }
+}

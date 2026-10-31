@@ -1,0 +1,35 @@
+{
+ "story_id": 1270,
+ "verdict": "keep",
+ "verify_note": "Not in verification scope; kept as-is.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Alarm Çalıyor, Konuşma Susuyor",
+  "description": "Van der Kolk, travma öyküsü olanlara kendi yaşadıklarının anlatımını dinletirken beyinlerini taradı. Amigdala çok yoğun çalıştı, Broca bölgesi sustu.",
+  "hook": "Bir olayı anımsamakla onu yeniden yaşamak arasındaki fark sizce ne?",
+  "one_minute_summary": "Bessel van der Kolk, Boston'da Vietnam gazileriyle çalışırken travma yaşayanların bir hatırlatıcıya olay şimdi oluyormuş gibi tepki verdiğini gördü. Meslektaşlarıyla travma öyküsü olanlara kendi yaşadıklarının anlatımını dinletip beyinlerini taradı. Alarm bölgesi amigdala çok yoğun çalıştı, konuşmaya yardım eden Broca bölgesi sessizleşti. Ona göre bu, anımsamakla yeniden yaşamak arasındaki farkı gösteriyor. Konuşmaya dayanan tedavinin tek başına yetmeyebileceğini düşünüyor ve beden odaklı yaklaşımların yanına konmasını savunuyor."
+ },
+ "en": {
+  "title": "Alarm On, Speech Off",
+  "description": "Van der Kolk scanned the brains of people with trauma as they heard an account of their own experience. The amygdala surged while Broca's area went quiet.",
+  "hook": "What is the difference between remembering something and living it again?",
+  "one_minute_summary": "Bessel van der Kolk began as a psychiatrist at a Veterans Administration clinic in Boston, where Vietnam veterans reacted as if the war were still going on. With colleagues he scanned the brains of people with traumatic histories while they listened to an account of their own experience. The amygdala, the alarm region, became highly active, and Broca's area, which helps turn experience into words, went quiet. He concludes that in such moments the body reacts first and speech may fail. In his view talk treatment alone may not be enough."
+ },
+ "es": {
+  "title": "Alarma encendida, habla apagada",
+  "description": "Van der Kolk tumbó en un escáner a personas con historias traumáticas y les hizo escuchar su propio relato. Se encendió la amígdala y se apagó el área de Broca.",
+  "hook": "¿En qué se distingue recordar un hecho de revivirlo?",
+  "one_minute_summary": "En una clínica para veteranos de Boston, Bessel van der Kolk veía a hombres que habían salido de Vietnam y reaccionaban como si no. Quiso verlo en un escáner cerebral: junto con sus colegas, hizo que personas con historias traumáticas escucharan el relato de su propia experiencia. La amígdala, que da la alarma, se encendió, y el área de Broca, que ayuda a poner la experiencia en palabras, se apagó. Para él, el escáner muestra la diferencia entre recordar y revivir, y por eso cree que la terapia de la palabra sola puede quedarse corta."
+ },
+ "de": {
+  "title": "Alarm an, Sprache aus",
+  "description": "Van der Kolk ließ Menschen mit Traumaerfahrung im Hirnscanner den Bericht ihrer eigenen Erfahrung hören. Die Amygdala schlug Alarm, das Broca-Areal verstummte.",
+  "hook": "Worin unterscheidet sich Erinnern vom Wiedererleben?",
+  "one_minute_summary": "In einer Veteranenklinik in Boston behandelte Bessel van der Kolk Vietnamveteranen, die reagierten, als wären sie noch im Krieg. Mit Kollegen ließ er Menschen mit traumatischen Erlebnissen im Hirnscanner den Bericht ihrer eigenen Erfahrung hören. Die Amygdala, die bei Gefahr Alarm schlägt, wurde stark aktiv, das Broca-Areal, das hilft, Erlebtes in Worte zu bringen, verstummte. Er folgert, dass der Körper zuerst reagiert und Betroffene oft nicht erklären können, was mit ihnen geschieht. Gesprächstherapie allein reicht seiner Ansicht nach womöglich nicht."
+ }
+}

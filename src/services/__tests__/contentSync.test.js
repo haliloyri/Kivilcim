@@ -88,6 +88,9 @@ it('applies the remote catalogue and keeps every story active', async () => {
 
 it('never hides every story when the server returns an empty catalogue', async () => {
   mockRemote.stories = [];
+  const activeCount = () => raw.prepare('SELECT COUNT(*) AS n FROM stories WHERE is_active = 1').get().n;
+  const before = activeCount();
+  expect(before).toBeGreaterThan(0);
   await expect(syncContentFromSupabase()).resolves.toEqual({ changed: false });
-  expect(raw.prepare('SELECT COUNT(*) AS n FROM stories WHERE is_active = 1').get().n).toBe(200);
+  expect(activeCount()).toBe(before);
 });

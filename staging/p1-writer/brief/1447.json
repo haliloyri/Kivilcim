@@ -1,0 +1,33 @@
+{
+  "story_id": 1447,
+  "kind": "concept",
+  "book": {"title": "On the Shortness of Life", "author": "Seneca", "year": "49"},
+  "confidence": "high",
+  "confidence_note": "Checked against the Williams translation (archive.org) and a public-domain Stewart text. Dropped from the old text: the three-way list (others' requests, regret, worry), the invented quoted question about days lived for oneself, and the 'say yes to your own priorities' advice. The audit passage is in the book (3.2), though not as a question about 'days for yourself'.",
+  "facts": [
+    "Addressed to Paulinus ('my dearest Paulinus'), who manages the public grain supply. Answers the complaint that nature gave us too little time: 'It is not that we have a short time to live, but that we waste much of it.' Life is long enough and generous if well invested (1.3-1.4).",
+    "Wealth analogy (1.4): modest wealth with a responsible guardian grows, vast wealth with a bad owner is scattered at once.",
+    "What fills the days (2.1-2.2, 7): greed, drink, idleness, political ambition; chasing others' wealth or complaining about one's own; ledgers, bail, dinner parties that have turned into business. Death takes them by surprise.",
+    "3.4: 'Your sort live as if you're going to live forever.' 7.10: a man with white hair and wrinkles has not necessarily lived long, only existed long. 7.3: nothing is less characteristic of a preoccupied man than living; learning how to live takes a whole lifetime.",
+    "3.1: people guard property closely but let others trespass on their existence; they waste the one thing it is right to be stingy about. 8.2: no one values time, all use it lavishly as if it cost nothing.",
+    "3.2: the audit. Review your life and count how few days turned out as intended; you are dying before your time."
+  ],
+  "scene_details": ["a guardian handling inherited wealth", "ledgers, bail and dinner parties that became business", "white hair and wrinkles", "counting the days that went as intended"],
+  "tension": "Everyone says life is short; the author says the shortage is in what we do with it.",
+  "opening_idea": "Open on the guardian analogy, the property-versus-time contrast, or the list of what fills the days; each language its own.",
+  "lessons": [{"idea": "Count the hours that went where you meant them to go.", "anchor": "Seneca's audit asks how few days turned out as intended.", "everyday_example_idea": "A teacher marks on Friday which hours went where she planned and sees what keeps taking the rest."}],
+  "reflect": [],
+  "reflect_final": "Which hours of your last working week went exactly where you had meant them to go?",
+  "use_cases": [
+    {"situation": "Your team says it never has time for the main work.", "move": "Cite Seneca's count of days that went as intended and mark last week's calendar for hours that went where planned.", "context": "meeting"},
+    {"situation": "A friend says time just disappears.", "move": "Go through their last week together and mark what went where they wanted.", "context": "oneonone"},
+    {"situation": "It is Friday afternoon.", "move": "Spend five minutes listing hours that went as planned and pick one to protect next week.", "context": "self"}
+  ],
+  "pocket_idea": "Seneca asked how few days went as intended; count last week's hours that did.",
+  "conversation_variants": {
+    "punchline_idea": "Seneca answers 'life is short' with 'we waste much of it'.",
+    "thirty_sec_idea": "The complaint, the guardian analogy, the audit of days.",
+    "question_idea": "",
+    "key_contrast_idea": "Short or wasted"
+  }
+}

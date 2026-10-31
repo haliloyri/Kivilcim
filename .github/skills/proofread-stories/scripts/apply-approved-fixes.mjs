@@ -45,7 +45,7 @@ if (currentSha256 !== plan.databaseSha256) {
 
 const ids = new Set();
 for (const fix of plan.fixes) {
-  if (!/^YK-\d{3,}$/u.test(fix.id || '')) throw new Error(`Invalid fix id: ${fix.id}`);
+  if (!/^YK-(?:[A-Z0-9]+-)?\d{3,}$/u.test(fix.id || '')) throw new Error(`Invalid fix id: ${fix.id}`);
   if (ids.has(fix.id)) throw new Error(`Duplicate fix id: ${fix.id}`);
   ids.add(fix.id);
   if (!Number.isSafeInteger(fix.storyId) || fix.storyId <= 0) throw new Error(`${fix.id}: invalid storyId`);
@@ -69,24 +69,31 @@ for (const fix of plan.fixes) {
 
 const countOccurrences = (text, needle) => text.split(needle).length - 1;
 const markerCounts = (text) => Object.fromEntries(
-  ['##', '~~', '::', '$$', '&&'].map((marker) => [marker, countOccurrences(text, marker)]),
+  ['##', '~~', '::', '$$', '&&', '%%', '@@'].map((marker) => [marker, countOccurrences(text, marker)]),
 );
 const SQL = await initSqlJs();
 const db = new SQL.Database(dbBytes);
 const changes = [];
+// Latest text per cell, so several fixes on the same field chain instead of
+// each one starting from the original value and overwriting the previous one.
+const pending = new Map();
 
 for (const fix of plan.fixes) {
   for (const target of fix.targets) {
-    const select = db.prepare(
-      `SELECT ${target.field} AS value FROM ${target.table} WHERE story_id = ? AND lang_code = ?`,
-    );
-    select.bind([fix.storyId, fix.lang]);
-    if (!select.step()) {
+    const cellKey = `${target.table}|${target.field}|${fix.storyId}|${fix.lang}`;
+    let current = pending.get(cellKey);
+    if (current === undefined) {
+      const select = db.prepare(
+        `SELECT ${target.field} AS value FROM ${target.table} WHERE story_id = ? AND lang_code = ?`,
+      );
+      select.bind([fix.storyId, fix.lang]);
+      if (!select.step()) {
+        select.free();
+        throw new Error(`${fix.id}: no row for ${target.table}, story ${fix.storyId}, ${fix.lang}`);
+      }
+      current = select.getAsObject().value;
       select.free();
-      throw new Error(`${fix.id}: no row for ${target.table}, story ${fix.storyId}, ${fix.lang}`);
     }
-    const current = select.getAsObject().value;
-    select.free();
     if (typeof current !== 'string') throw new Error(`${fix.id}: ${target.table}.${target.field} is not text`);
     const occurrences = countOccurrences(current, fix.old);
     if (occurrences !== fix.expectedOccurrences) {
@@ -98,7 +105,8 @@ for (const fix of plan.fixes) {
     if (JSON.stringify(markerCounts(current)) !== JSON.stringify(markerCounts(updated))) {
       throw new Error(`${fix.id}: replacement changes protected story markup tokens`);
     }
-    changes.push({ fix, target, updated });
+    pending.set(cellKey, updated);
+    changes.push({ fix, target });
   }
 }
 
@@ -120,10 +128,11 @@ copyFileSync(dbPath, backupPath);
 
 db.run('BEGIN');
 try {
-  for (const { fix, target, updated } of changes) {
+  for (const [cellKey, updated] of pending) {
+    const [table, field, storyId, lang] = cellKey.split('|');
     db.run(
-      `UPDATE ${target.table} SET ${target.field} = ? WHERE story_id = ? AND lang_code = ?`,
-      [updated, fix.storyId, fix.lang],
+      `UPDATE ${table} SET ${field} = ? WHERE story_id = ? AND lang_code = ?`,
+      [updated, Number(storyId), lang],
     );
   }
   db.run('COMMIT');

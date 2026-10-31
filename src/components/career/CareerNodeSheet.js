@@ -79,7 +79,7 @@ const CareerNodeSheet = ({ node, onClose }) => {
               </>
             )}
             <View style={[styles.reward, { borderColor: colors.mutedText }]}>
-              <Ionicons name="sparkles-outline" size={18} color={colors.dawnText} />
+              <Ionicons name="gift-outline" size={18} color={colors.dawnText} />
               <Text selectable style={[styles.rewardCopy, { color: colors.textSecondary }]}>{t(node.unlockKey, lang)}</Text>
             </View>
             {isDone ? null : <Text selectable style={[styles.footnote, { color: colors.mutedText }]}>{t('career.conditionsSaved', lang)}</Text>}

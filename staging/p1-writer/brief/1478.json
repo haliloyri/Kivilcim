@@ -1,0 +1,60 @@
+{
+  "story_id": 1478,
+  "kind": "concept",
+  "book": {
+    "title": "Homo Deus",
+    "author": "Yuval Noah Harari",
+    "year": "2015"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not read; page-referenced notes and reviews. The book gives no single worked case for the claim, so the story stays with the definition and the examples named in sources (Google Flu Trends, biometric devices). Old text dropped: AI radiologists, Spotify, matching algorithms, the \"wake-up call\" framing.",
+  "facts": [
+    "Dataism: the universe consists of data flows and the value of anything is its contribution to data processing. Harari says it began as neutral science and is turning into a religion claiming to say what is right and wrong.",
+    "An algorithm is a methodical set of steps for calculating, solving problems and deciding. Sensations and emotions are algorithms too.",
+    "External algorithms may hack humanity and know people better than they know themselves. Google and Facebook algorithms know how you feel and many other things you hardly suspect.",
+    "Google Flu Trends, which flagged flu outbreaks from search data ahead of health services, is among his examples.",
+    "People may carry biometric devices that monitor their health; medicine moves from healing the sick to upgrading the healthy.",
+    "Authority shifts from kings, popes and one's own feelings to data: facing a decision, people ask Google or Facebook.",
+    "Critics say the claim that algorithms know you better takes their own claims at face value and has little empirical support."
+  ],
+  "scene_details": [
+    "A search box asked about a life decision",
+    "A wrist-worn biometric device monitoring health",
+    "Flu outbreaks flagged from search queries"
+  ],
+  "tension": "The book says an algorithm may come to know you better than you do, and critics say that is unproven.",
+  "opening_idea": "Start with the flu searches or the search box that people now ask about decisions.",
+  "lessons": [
+    {
+      "idea": "Before you trust a recommendation over your own sense, ask what it has measured about you and what it has missed.",
+      "anchor": "Dataism values things by their contribution to data processing and says algorithms may know you better; critics say that is taken on faith.",
+      "everyday_example_idea": "Someone who follows an app's sleep score and ignores that they feel rested."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a recent choice where you followed a score, a ranking or a suggestion over your own feeling: what did that source not know about you?",
+  "use_cases": [
+    {
+      "situation": "A colleague quotes a dashboard to settle a debate.",
+      "move": "Ask what the dashboard measures and what it leaves out about this case.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your partner trusts an app over how they feel.",
+      "move": "Ask how they feel first and then look at what the app says.",
+      "context": "family"
+    },
+    {
+      "situation": "You are about to follow a recommendation.",
+      "move": "Write your own guess first, then compare it with the suggestion.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Harari says algorithms may know you better than you do, critics say unproven: write your guess before reading the recommendation.",
+  "conversation_variants": {
+    "punchline_idea": "In Harari's Dataism, the search box has taken the place feelings used to hold for deciding.",
+    "thirty_sec_idea": "Harari defines Dataism as valuing things by their data-processing contribution; algorithms from Google and Facebook may know how you feel; critics say the claim is unproven.",
+    "question_idea": "",
+    "key_contrast_idea": "Gut feeling, data feed"
+  }
+}

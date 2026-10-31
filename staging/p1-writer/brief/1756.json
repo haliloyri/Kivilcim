@@ -1,0 +1,66 @@
+{
+  "story_id": 1756,
+  "kind": "anecdote",
+  "book": {
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "year": "1980"
+  },
+  "confidence": "medium",
+  "confidence_note": "Rebuilt 2026-10-30. The previous version told the Pale Blue Dot photograph (1990), which belongs to Sagan's later book Pale Blue Dot (1994) and is not in Cosmos; it was dropped completely. New scene: Eratosthenes measures the Earth in Cosmos chapter 1 ('The Shores of the Cosmic Ocean'). Sources checked (book text not read page by page): (1) a posted extract of the Cosmos chapter on vidyasharati.blogspot.com (2022/09 'From Cosmos - Carl Sagan'): third century B.C., Alexandria, director of the great library, papyrus book, Syene, vertical sticks without shadow at noon on the summer solstice, temple columns, Sun reflected in a deep well, sticks do cast shadows in Alexandria, curved Earth, about seven degrees, one fiftieth of a circle, about 800 km paced out, result about 40,000 km, accurate to within a few percent; (2) transcript of the TV episode 1 of Cosmos on kiwihellenist.blogspot.com (2018/11/cosmos-1-eratosthenes), which gives the same sequence; (3) general-history sources (Bucknell astronomy page, Dan Sperber on edge.org, St Andrews MacTutor) for the stadia figures and the 7.2 degree value. Historical caveat, from those sources and the kiwihellenist annotations: ancient figures are in stadia (about 5,000), the modern length of that stadion is uncertain, and historians dispute details of the well and of who took the readings; the story therefore gives the numbers as Sagan tells them and states the 'few percent' as his claim. NOT verified or deliberately omitted: Sagan's exact wording; whether the book itself says 'sticks, eyes, feet and brains' (only in the TV transcript, so omitted); the 'Beta/Alpha' nickname (TV transcript, omitted); the Phoenician fleet sentence; the library scroll count; the exact page. The 'hired a man to pace' detail is in the extract (1) and the transcript (2). Added after extension: Beta/Alpha nickname, list of fields, book titles, Alexandria seaport, Necho fleet (three years) come from the vidyasharati extract of the Cosmos chapter and the TV transcript; the Beta nickname's meaning is itself disputed (Suda reading vs 'second librarian'), so the story reports it as Sagan tells it. The Necho and seaport sentences rest on that single extract.",
+  "facts": [
+    "Eratosthenes lived in Alexandria in the third century B.C. and was director of the great library there.",
+    "In a papyrus book he read that at Syene, a southern frontier outpost near the first cataract of the Nile, vertical sticks cast no shadow at noon on June 21, the summer solstice.",
+    "Sagan adds that the shadows of temple columns shrank toward noon and vanished, and that the Sun could be seen reflected in the water at the bottom of a deep well, so the Sun stood straight overhead.",
+    "Eratosthenes asked whether sticks in Alexandria cast shadows at noon on the same day. They did.",
+    "A flat Earth could not give a shadow in one city and none in the other at the same moment, so the surface had to be curved.",
+    "The difference in shadows meant the two cities were about seven degrees apart on the globe, about one fiftieth of a circle of 360 degrees.",
+    "Alexandria and Syene are about 800 kilometres apart; Eratosthenes had the distance paced out by a man he hired.",
+    "800 kilometres times 50 gives about 40,000 kilometres for the circumference of the Earth. Sagan says the answer was accurate to within a few percent.",
+    "Editorial caveat: ancient sources count the distance in stadia and the modern length of that unit is uncertain, so the exact size of the error is debated by historians.",
+    "Eratosthenes was an astronomer, historian, geographer, philosopher, poet, theater critic and mathematician; his book titles ranged from Astronomy to Freedom from Pain.",
+    "Envious contemporaries called him Beta, second best at everything; Sagan argues he was Alpha in many fields.",
+    "Alexandria was the greatest seaport of its time; about four hundred years earlier a Phoenician fleet hired by Pharaoh Necho had sailed round Africa in three years, probably in frail open boats.",
+    "About 2,200 years ago; 800 km is about 500 miles and 40,000 km about 25,000 miles."
+  ],
+  "scene_details": [
+    "a vertical stick with no shadow at noon in Syene",
+    "temple column shadows shrinking to nothing, sunlight reaching the water at the bottom of a deep well",
+    "the same stick in Alexandria casting a shadow",
+    "a hired man pacing the 800 kilometres between the cities"
+  ],
+  "tension": "A papyrus note about a shadowless noon in a southern town lets a librarian who never left Egypt measure the whole planet.",
+  "opening_idea": "Open on noon at Syene: a stick with no shadow, a column with no shadow, the Sun in the water of a deep well.",
+  "lessons": [
+    {
+      "idea": "When you cannot see the whole of something, set two simple observations from different places side by side and work out the size of what lies between them.",
+      "anchor": "the same noon, a stick with no shadow in one city and a shadow in the other"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which question that feels too big to answer could you approach by comparing two simple things you can already observe?",
+  "use_cases": [
+    {
+      "situation": "A team argues about why customers leave and everyone offers a theory.",
+      "move": "Mention the shadow in two cities and ask the group for two plain numbers to compare before anyone debates.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A child asks how anyone could know how big the Earth is.",
+      "move": "Tell the stick-and-shadow story and put a stick in the sun together.",
+      "context": "family"
+    },
+    {
+      "situation": "A big question about your own work feels impossible to estimate.",
+      "move": "Write down two things you can observe and compare them before you guess.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A stick with no shadow in one city and a shadow in another gave Eratosthenes the size of the Earth: compare two simple observations before you guess.",
+  "conversation_variants": {
+    "punchline_idea": "A librarian in Alexandria worked out the size of the Earth from the shadow of a stick.",
+    "thirty_sec_idea": "In Carl Sagan's Cosmos, Eratosthenes, head of the library in Alexandria, reads that at Syene a stick has no shadow at noon on the summer solstice. In Alexandria the same stick does. He concludes the Earth is curved, reads the shadow as about one fiftieth of a circle, multiplies the roughly 800 kilometres between the cities by 50 and gets about 40,000 kilometres, accurate within a few percent by Sagan's account.",
+    "question_idea": "",
+    "key_contrast_idea": "two shadows, one planet"
+  }
+}

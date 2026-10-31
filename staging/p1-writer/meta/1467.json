@@ -1,0 +1,35 @@
+{
+ "story_id": 1467,
+ "verdict": "keep",
+ "verify_note": "Mehrabian percentages and '200 hours' removed (not in the book). Center moved to the Gates mosquito jar, which the book uses as its jaw-dropping example (Kirkus, Gallo's pieces).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Gates'in sivrisinek kavanozu",
+  "description": "Bill Gates TED'de malaryayı anlatırken sahnede bir kavanoz açtı. Gallo bu anı çarpıcı an örneği olarak kullanıyor.",
+  "hook": "Dinleyene anlatmak yerine gösterebileceğin tek şey ne olurdu?",
+  "one_minute_summary": "2009'da Bill Gates TED'de malaryayı anlatırken sahnede bir kavanoz açtı, içinde sivrisinekler vardı. Gates Vakfı sonradan sivrisineklerin hastalık taşımadığını söyledi. Carmine Gallo bu anı çarpıcı an örneği yapıyor ve kendi sayımıyla konuşmanın yüzde 5'inden azını tuttuğunu yazıyor. Her sunumda böyle bir an olması gerektiğini, bunu da sinirbilimcilerin duygusal yüklü olay dediği şeye bağlıyor. Önerisi, uzun konuşmada on dakikada bir hikâye, video ya da gösteriyle mola vermek."
+ },
+ "en": {
+  "title": "Gates and the mosquito jar",
+  "description": "Bill Gates opened a jar of mosquitoes on the TED stage during a malaria talk. Gallo uses the moment as his model of a jaw-dropping moment.",
+  "hook": "What one thing could you show people instead of describing it?",
+  "one_minute_summary": "In 2009 Bill Gates opened a jar of mosquitoes on the TED stage while talking about malaria. The Gates Foundation later said they were not carrying the disease. Carmine Gallo uses the moment as his model of a jaw-dropping moment and says it took under five percent of the talk. Every presentation needs one, he argues, and he links it to what neuroscientists call an emotionally charged event. He also advises a break with a story, video or demonstration every ten minutes in a long talk."
+ },
+ "es": {
+  "title": "Gates y el frasco de mosquitos",
+  "description": "Bill Gates abrió un frasco de mosquitos en el escenario de TED durante una charla sobre malaria. Gallo lo usa como modelo de momento que deja boquiabierto.",
+  "hook": "¿Qué cosa podrías mostrar a la gente en lugar de describirla?",
+  "one_minute_summary": "En 2009 Bill Gates abrió un frasco de mosquitos en el escenario de TED mientras hablaba de malaria. La Fundación Gates aclaró después que no llevaban la enfermedad. Carmine Gallo usa el momento como modelo de lo que llama un momento que deja con la boca abierta y dice que ocupó menos del cinco por ciento de la charla. Según él toda presentación necesita uno, y lo vincula con lo que los neurocientíficos llaman un evento cargado de emoción. Recomienda además una pausa con historia, vídeo o demostración cada diez minutos."
+ },
+ "de": {
+  "title": "Gates und das Mückenglas",
+  "description": "Bill Gates öffnete bei TED während eines Malaria-Vortrags ein Glas mit Mücken. Gallo nutzt den Moment als Vorbild für einen atemberaubenden Augenblick.",
+  "hook": "Was könntest du den Leuten zeigen, statt es zu beschreiben?",
+  "one_minute_summary": "2009 öffnete Bill Gates bei TED während eines Vortrags über Malaria ein Glas mit Mücken. Die Gates-Stiftung erklärte später, sie hätten die Krankheit nicht getragen. Carmine Gallo nutzt den Moment als Vorbild für einen atemberaubenden Augenblick und schreibt, er habe weniger als fünf Prozent des Vortrags ausgemacht. Jede Präsentation brauche einen, sagt er, und verbindet ihn mit dem, was Neurowissenschaftler ein emotional aufgeladenes Ereignis nennen. In langen Vorträgen rät er alle zehn Minuten zu einer Pause mit Geschichte, Video oder Vorführung."
+ }
+}

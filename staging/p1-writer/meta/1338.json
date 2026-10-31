@@ -1,0 +1,35 @@
+{
+  "story_id": 1338,
+  "verdict": "keep",
+  "verify_note": "Verified: Throughline Group excerpt quotes Navarro that hand steepling \"may well be the most powerful high-confidence tell\" and describes hands in pockets with fingers hanging out as uncertainty (thumbs out of pocket as high confidence); Actionable Books summary: hands on hips (akimbo) stakes out territory / prepares for an argument; Harper's Bazaar Singapore quotes Navarro on broadening territory when confident and a desk-arrangement tip. Central content is in the book. Story wording (\"authority or readiness\") is a mild paraphrase of the akimbo display.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Eller, alan ve güven",
+    "description": "Joe Navarro'ya göre güven, söze başlamadan önce ellerde ve kapladığınız alanda görünüyor. Parmak uçlarını birleştirmek, onun deyişiyle belki de en güçlü işaret.",
+    "hook": "Bir toplantının ilk dakikasında elleriniz ve omuzlarınız ne yapıyor?",
+    "one_minute_summary": "Joe Navarro, What Every BODY Is Saying kitabında güveni sözlerden önce bedenin gösterdiğini anlatıyor. Parmak uçlarını birleştirmek, onun deyişiyle yüksek güvenin belki de en güçlü işareti. İkinci işaret alan: kendinden emin olan yayılıyor, emin olmayan toparlanıyor, masadaki eşyalar bile bunu gösteriyor. Eller belde otorite ve hazır olma, cepte parmaklar dışarıda sarkarken düşük güven olarak okunuyor. Navarro tek işarete bakıp hüküm vermiyor, anlam kişinin normaline bağlı. Başkasının duruşunu çözemeseniz de kendi ellerinizi ve kapladığınız alanı seçebilirsiniz."
+  },
+  "en": {
+    "title": "Hands, space and confidence",
+    "description": "Joe Navarro says confidence shows in the hands and in the space someone takes before speaking. Steepling the fingers is, in his words, probably the most powerful sign.",
+    "hook": "What do your hands and shoulders usually do in the first minute of a meeting?",
+    "one_minute_summary": "In What Every BODY Is Saying, Joe Navarro describes confidence as something the body announces before speech. Pressing the fingertips into a steeple is, in his words, probably the most powerful high-confidence sign. A second signal is territory: confident people expand and unsure people contract. Hands on the hips display authority or readiness, while hands in pockets with fingers hanging out read as low confidence. None of it is a verdict from one gesture, since meaning depends on a person's baseline."
+  },
+  "es": {
+    "title": "Manos, espacio y confianza",
+    "description": "Joe Navarro sostiene que la confianza se nota en las manos y en el espacio que alguien ocupa antes de hablar. Juntar las yemas de los dedos es, según él, probablemente la señal más potente.",
+    "hook": "¿Qué hacen tus manos y tus hombros en el primer minuto de una reunión?",
+    "one_minute_summary": "En What Every BODY Is Saying, Joe Navarro describe la confianza como algo que el cuerpo anuncia antes de hablar. Juntar las yemas de los dedos es, según él, probablemente la señal de alta confianza más potente. Otra señal es el territorio: quien confía se expande y quien duda se contrae. Las manos en la cintura muestran autoridad o disposición, y los dedos colgando de los bolsillos, como poca confianza. Un gesto aislado no sentencia, pues el significado depende de la línea de base de cada persona."
+  },
+  "de": {
+    "title": "Hände, Raum und Selbstvertrauen",
+    "description": "Joe Navarro sagt, Selbstvertrauen zeige sich in den Händen und im Raum, den jemand einnimmt, bevor er spricht. Das Dach aus Fingerspitzen ist für ihn vermutlich das stärkste Zeichen.",
+    "hook": "Was machen deine Hände und Schultern in der ersten Minute einer Besprechung?",
+    "one_minute_summary": "In What Every BODY Is Saying beschreibt Joe Navarro Selbstvertrauen als etwas, das der Körper ankündigt, bevor jemand spricht. Die Fingerspitzen zu einem Dach zusammenzulegen ist seiner Darstellung nach vermutlich das stärkste Zeichen für hohes Selbstvertrauen. Ein zweites Signal ist das Revier: Selbstsichere dehnen sich aus, Unsichere ziehen sich zusammen. Hände in den Hüften gelten als Autorität oder Handlungsbereitschaft, Hände in den Taschen mit hängenden Fingern als geringes Selbstvertrauen. Ein einzelnes Zeichen taugt nicht für ein Urteil, denn es hängt von der Baseline ab. Die eigene Haltung kannst du wählen."
+  }
+}

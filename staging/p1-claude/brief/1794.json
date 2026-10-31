@@ -1,0 +1,35 @@
+{
+  "story_id": 1794,
+  "kind": "anecdote",
+  "book": { "title": "Delivering Happiness", "author": "Tony Hsieh", "year": "2010" },
+  "confidence": "medium",
+  "confidence_note": "The LinkExchange arc is told in the book: co-founded by Hsieh, fast growth with fast hiring, a culture he stopped enjoying, the sale to Microsoft in 1998 for $265 million, and his decision to leave before the full payout instead of staying through the required period. The exact amount he gave up is left out. The supplied text's line about people 'waiting for Friday' is a paraphrase, not a quote, and is not used as one.",
+  "facts": [
+    "Tony Hsieh co-founded LinkExchange, an internet advertising network, in the 1990s.",
+    "The company grew fast, and to keep up it hired quickly, often people chosen for skills and experience rather than fit.",
+    "As it grew, Hsieh found he no longer wanted to go to the office; he describes hitting the snooze button again and again on a company he had built.",
+    "LinkExchange was sold to Microsoft in 1998 for $265 million.",
+    "To receive the full payout he would have had to stay on for a set period; he left early and gave up part of the money.",
+    "The lesson he took away: a company can be very valuable and still be a place its own founder does not want to be.",
+    "At Zappos he made company culture the first priority, ahead of the product."
+  ],
+  "tension": "A sale worth hundreds of millions, and the founder would rather leave money behind than keep showing up.",
+  "opening_idea": "Open on Hsieh hitting snooze at a company that is about to sell for $265 million.",
+  "lessons": [
+    { "idea": "Who you hire while growing quietly decides whether the place is still worth coming to.", "anchor": "Fast hiring at LinkExchange and Hsieh's snooze button." }
+  ],
+  "reflect": [],
+  "reflect_final": "In the place you work or build, what would make you want to show up on Monday morning, and is it still there?",
+  "use_cases": [
+    { "situation": "A team is rushing to hire because it is growing.", "move": "Recall that LinkExchange grew by hiring fast and its founder stopped wanting to come in, then propose one fit question in every interview.", "context": "meeting" },
+    { "situation": "You are weighing a job offer that pays well.", "move": "Ask the people already there what keeps them coming in besides the salary.", "context": "self" },
+    { "situation": "A friend is proud of a big exit or promotion but sounds tired.", "move": "Ask what part of the work they still look forward to.", "context": "social" }
+  ],
+  "pocket_idea": "Hsieh sold a company for $265 million and still dreaded the office; check who you hire before checking the price.",
+  "conversation_variants": {
+    "punchline_idea": "Tony Hsieh left money on the table at LinkExchange because he no longer wanted to go to work there.",
+    "thirty_sec_idea": "LinkExchange grew fast and hired fast; Hsieh stopped wanting to come in, sold to Microsoft for $265 million, left early giving up part of the payout, and made culture Zappos's first priority.",
+    "question_idea": "",
+    "key_contrast_idea": "Değer ve aidiyet"
+  }
+}

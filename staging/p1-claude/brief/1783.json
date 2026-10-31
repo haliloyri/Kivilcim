@@ -1,0 +1,37 @@
+{
+  "story_id": 1783,
+  "kind": "concept",
+  "book": { "title": "The Intelligent Investor", "author": "Benjamin Graham", "year": "1949" },
+  "confidence": "high",
+  "confidence_note": "Mr. Market is Graham's best-known allegory in the book. The supplied text's claim that generations of investors learned this from the story is trimmed to the safer statement that Warren Buffett is known to value the chapter. No exact quotes are used; the equal 'half-and-half' partnership in the sibling text is not used.",
+  "facts": [
+    "Graham asks the investor to imagine being a partner in a private business with Mr. Market.",
+    "Every day Mr. Market names a price at which he will buy the investor's share or sell his own.",
+    "His mood swings: on euphoric days he quotes high prices, on gloomy days very low ones, while the business itself has not changed.",
+    "The investor is free to ignore the quote; Mr. Market returns the next day with another.",
+    "Graham: Mr. Market is there to serve the investor, not to guide him.",
+    "The business's balance sheet, earnings and operation give the investor a value to check the quote against.",
+    "Sell when the price is far above the business's value, buy when it is far below.",
+    "Graham says the investor's chief problem, even his worst enemy, is likely to be himself.",
+    "Warren Buffett is known to value this allegory."
+  ],
+  "tension": "The same share gets a euphoric price one day and a panic price the next while nothing in the business changed.",
+  "opening_idea": "Open on Mr. Market knocking at the door every morning with a different price for the same share.",
+  "lessons": [
+    { "idea": "A quoted price is an offer to consider, not a verdict to obey.", "anchor": "Mr. Market's euphoric and panic quotes for an unchanged business." }
+  ],
+  "reflect": [],
+  "reflect_final": "When did a price last make you anxious, and had the thing itself actually changed?",
+  "use_cases": [
+    { "situation": "A portfolio fell sharply and you want to sell.", "move": "Recall that Mr. Market's gloom is his mood, then check what the business actually earns before deciding.", "context": "self" },
+    { "situation": "A partner wants to invest because of a headline rally.", "move": "Suggest waiting a week and looking at what the company actually earns.", "context": "family" },
+    { "situation": "A friend talks about market panic.", "move": "Describe Graham's partner who quotes a mood-driven price each morning and can be ignored.", "context": "social" }
+  ],
+  "pocket_idea": "The price is Mr. Market's mood that morning; work out the business's value yourself before deciding.",
+  "conversation_variants": {
+    "punchline_idea": "Mr. Market quotes a price every morning, and you are free to ignore it.",
+    "thirty_sec_idea": "Graham's partner Mr. Market names a mood-driven price daily; the business stays the same; you may refuse his offer and act only when price is far from value.",
+    "question_idea": "",
+    "key_contrast_idea": "Fiyat ve ruh hali"
+  }
+}

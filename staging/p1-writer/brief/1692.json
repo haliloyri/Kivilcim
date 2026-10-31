@@ -1,0 +1,62 @@
+{
+  "story_id": 1692,
+  "kind": "anecdote",
+  "book": {
+    "title": "Team of Rivals",
+    "author": "Doris Kearns Goodwin",
+    "year": "2005"
+  },
+  "confidence": "medium",
+  "confidence_note": "Core account (1860 Chicago convention, Seward/Chase/Bates in the cabinet, Seward's 1 April 1861 memorandum, Chase's 1864 appointment as chief justice, Seward-Lincoln friendship) is the book's central narrative and widely documented. Written from knowledge of the book plus the reference TR text; no page-level check was done. Omitted on purpose: exact wording of Seward's memo and Lincoln's reply, ballot counts, direct quotes, the other cabinet members. The reference TR text's phrase 'adalet yonetimi' means attorney general. Lincoln's reply is kept to the book's gist (the president sets policy), not quoted. Stanton's earlier Cincinnati snub and January 1862 appointment are recalled from the book and general record; kept to one clause.",
+  "facts": [
+    "May 1860, Republican convention in Chicago: William Seward of New York was the favourite; Salmon Chase of Ohio and Edward Bates of Missouri also sought the nomination.",
+    "Lincoln had served one term in Congress and lost the 1858 Senate race; the three rivals were far more experienced national figures.",
+    "Lincoln was the less nationally familiar name; delegates moved toward him ballot by ballot and he won the nomination on the third ballot, then the presidency in November 1860.",
+    "After the election Lincoln invited all three rivals into his cabinet: Seward as secretary of state, Chase as treasury secretary, Bates as attorney general.",
+    "Goodwin's point: each of these men believed himself better qualified for the presidency than Lincoln.",
+    "On 1 April 1861, about a month after the inauguration, Seward sent Lincoln a memorandum saying the administration lacked a clear policy, proposing to unite the country by confronting foreign powers, and implying he could direct policy himself.",
+    "Lincoln did not dismiss Seward; he made clear the president would set policy and kept him in office.",
+    "Chase kept presidential ambitions while at the Treasury and left the department in 1864; Lincoln appointed him chief justice of the Supreme Court later that year.",
+    "Seward, who at first saw himself as the real head of the government, became one of Lincoln's closest friends.",
+    "Edwin Stanton, who had slighted Lincoln years earlier as a lawyer in a Cincinnati case, joined the cabinet as secretary of war in January 1862."
+  ],
+  "scene_details": [
+    "Three defeated rivals offered three cabinet posts: state, treasury, attorney general.",
+    "A memorandum from Seward dated 1 April 1861, one month into the administration.",
+    "The nomination decided on the third ballot in Chicago."
+  ],
+  "tension": "A new president surrounds himself with the three men who each thought they should have his job, and one of them quickly tries to take over policy.",
+  "opening_idea": "Open on the three offers: state, treasury, attorney general, all to men who had just lost to him and thought they were better suited.",
+  "lessons": [
+    {
+      "idea": "A team member who disagrees with you is usable when it is clear who makes the final decision.",
+      "anchor": "Lincoln kept Seward but told him the president sets policy"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which person who disagrees with you but knows the work could join your next decision, and how would you make clear who has the last word?",
+  "use_cases": [
+    {
+      "situation": "A colleague keeps raising the same objection and you want them quiet.",
+      "move": "Hear the objection out first and say you will decide afterwards; ask that the reasoning be recorded.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are considering adding a strong person who does not like you to the project.",
+      "move": "Mention Lincoln keeping Seward after the memo: ask for their different view, and say plainly that you will make the final call.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You notice everyone around you tends to agree with you.",
+      "move": "This week show a draft to someone who knows the topic and does not usually agree, and ask where it is weakest.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Lincoln took in rivals but kept the last word: invite the objection, name the decider.",
+  "conversation_variants": {
+    "punchline_idea": "Lincoln gave cabinet posts to the three men who lost to him, and kept Seward after Seward's memo.",
+    "thirty_sec_idea": "Three rivals, three cabinet seats, one memo from Seward, Lincoln keeps him and states who sets policy.",
+    "question_idea": "",
+    "key_contrast_idea": "rivals at the table, one decider"
+  }
+}

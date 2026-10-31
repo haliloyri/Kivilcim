@@ -1,0 +1,35 @@
+{
+  "story_id": 1617,
+  "verdict": "keep",
+  "verify_note": "Not in scope of verification. Title fits (zero-based budget, boss of your money); kept.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Paranın patronu olmak",
+    "description": "Dave Ramsey, The Total Money Makeover kitabında bütçeyi, ay başlamadan kâğıda yazılan ve sonunda sıfır kalan bir plan olarak anlatır. Nakit zarflar da buna eşlik eder.",
+    "hook": "Paranız bu ay nereye gideceğini önceden biliyor mu?",
+    "one_minute_summary": "Ramsey bütçeyi ay başında yazılan bir plan olarak tanımlar: gelirden planlı harcamalar çıkınca geriye sıfır kalır, buna sıfır tabanlı bütçe denir. Her dolara bir görev verilir. Çiftlerin bunu birlikte yazmasını ister. Bütçe aylıktır ve her ay yeniden yazılır. Para sızdıran kategoriler için nakit zarflar önerir: zarf boşalınca o kategorideki harcama durur. Ramsey'e göre bu bir yoksunluk planı gibi görünse de her satır bir evettir. Borç kartopu ve acil durum fonu için gereken para da önce bu kâğıtta bulunur."
+  },
+  "en": {
+    "title": "Be the boss of your money",
+    "description": "In The Total Money Makeover, Dave Ramsey describes a budget as a plan written before the month starts and ending at zero. Cash envelopes keep the leaky categories in check.",
+    "hook": "Does your money know where it is going before the month begins?",
+    "one_minute_summary": "Ramsey describes a budget as a plan written before the month starts: income minus planned spending equals zero, which is why it is called zero-based. Every dollar gets a job, and he asks couples to write it together. The budget is rewritten monthly. For categories that leak, he recommends cash envelopes, and when an envelope is empty, spending in that category stops. It can sound like deprivation, but each line is something you said yes to. In his plan the budget is also where the extra money for the snowball and the emergency fund is found."
+  },
+  "es": {
+    "title": "Ser el jefe de tu dinero",
+    "description": "En The Total Money Makeover, Dave Ramsey describe el presupuesto como un plan escrito antes de que empiece el mes y que termina en cero. Los sobres de efectivo vigilan las categorías que se escapan.",
+    "hook": "¿Sabe tu dinero adónde va a ir antes de que empiece el mes?",
+    "one_minute_summary": "Ramsey define el presupuesto como un plan escrito antes del mes: ingresos menos gasto previsto da cero, por eso se llama de base cero. Cada dólar recibe un trabajo y pide que las parejas lo escriban juntas. Se reescribe cada mes. Para las categorías que se escapan recomienda sobres de efectivo; cuando el sobre se vacía, ese gasto se detiene. Suena a privación, pero cada línea es un sí a algo. En su plan, el presupuesto es también donde se encuentra primero el dinero extra para la bola de nieve y el fondo de emergencia."
+  },
+  "de": {
+    "title": "Chef über dein Geld",
+    "description": "In The Total Money Makeover beschreibt Dave Ramsey das Budget als Plan, der vor Monatsbeginn geschrieben wird und bei null endet. Bargeldumschläge halten die Posten im Zaum, bei denen Geld versickert.",
+    "hook": "Weiß dein Geld, wohin es geht, bevor der Monat beginnt?",
+    "one_minute_summary": "Ramsey beschreibt das Budget als Plan vor Monatsbeginn: Einnahmen minus geplante Ausgaben ergeben null, deshalb heißt es Nullbasis-Budget. Jeder Dollar bekommt eine Aufgabe, und Paare sollen es gemeinsam schreiben. Das Budget wird jeden Monat neu verfasst. Für Posten, bei denen Geld versickert, empfiehlt er Bargeld in Umschlägen; ist der Umschlag leer, hören die Ausgaben dort auf. Das klingt nach Verzicht, doch jede Zeile ist etwas, zu dem du Ja gesagt hast. In seinem Plan findet man hier auch zuerst das Geld für Schuldenschneeball und Notfallfonds."
+  }
+}

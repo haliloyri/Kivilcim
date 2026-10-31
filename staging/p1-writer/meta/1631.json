@@ -1,0 +1,35 @@
+{
+  "story_id": 1631,
+  "verdict": "keep",
+  "verify_note": "Not in verification scope; kept as-is.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Stres ve bağışıklık",
+    "description": "Psikolog Janice Kiecolt-Glaser evli çiftlere bir anlaşmazlığı konuşturdu ve kan aldı. Düşmanca geçen konuşmaların ardından bağışıklık ölçümleri daha düşüktü.",
+    "hook": "Bir tartışma bedeninizde ölçülebilir bir iz bırakıyor olabilir mi?",
+    "one_minute_summary": "Psikolog Janice Kiecolt-Glaser evli çiftlerden bir anlaşmazlığı konuşmalarını istedi ve kan örneği aldı. Düşmanca geçen konuşmaların ardından bağışıklık ölçümleri, sakin geçenlere göre daha düşüktü. Gabor Maté bu çalışmayı psikonöroimmünolojiyi anlatmak için örnek olarak kullanıyor: beyin, sinir sistemi ve bağışıklık sistemi aynı kimyasal habercileri paylaşıyor. Ölçülen, tek konuşma sonrasındaki kısa süreli bir fark. Çalışma tek başına bunun ne kadar sürdüğünü ya da tartışmanın hasta ettiğini göstermiyor. Maté'ye göre duygular iz bırakır, ama kimseyi mahkûm etmez."
+  },
+  "en": {
+    "title": "Stress and immunity",
+    "description": "Psychologist Janice Kiecolt-Glaser asked married couples to talk through a disagreement and took their blood. After hostile conversations, the immune measures were lower.",
+    "hook": "Could one argument leave a measurable trace in your body?",
+    "one_minute_summary": "Psychologist Janice Kiecolt-Glaser had married couples discuss a disagreement and then collected blood samples. After hostile conversations the immune measures were lower than after calm ones. Gabor Maté uses the study to illustrate psychoneuroimmunology: brain, nervous system and immune system share chemical messengers. It was a short-term difference after one conversation, and the study alone does not show how long it lasts or that quarrelling makes anyone ill. Feelings leave traces, in Maté's account, but nobody is doomed."
+  },
+  "es": {
+    "title": "Estrés e inmunidad",
+    "description": "La psicóloga Janice Kiecolt-Glaser pidió a parejas casadas que hablaran de un desacuerdo y les extrajo sangre. Tras las conversaciones hostiles, los indicadores inmunitarios eran más bajos.",
+    "hook": "¿Puede una discusión dejar huella en tu cuerpo?",
+    "one_minute_summary": "Para Gabor Maté, separar la enfermedad mental de la física es artificial. Lo ilustra con el estudio de Janice Kiecolt-Glaser: parejas casadas hablaron de un desacuerdo y después les sacaron sangre. Tras las conversaciones hostiles, los indicadores inmunitarios estaban más bajos que tras las serenas. Fue una diferencia breve, después de una sola charla, y el estudio por sí solo no dice cuánto dura ni que pelearse enferme. Maté lo cuenta como ejemplo, no como prueba cerrada. Las emociones dejan huella, pero no sentencian a nadie."
+  },
+  "de": {
+    "title": "Stress und Immunität",
+    "description": "Die Psychologin Janice Kiecolt-Glaser ließ Ehepaare über einen Konflikt sprechen und nahm ihnen Blut ab. Nach feindseligen Gesprächen lagen die Immunwerte niedriger.",
+    "hook": "Kann ein Streit messbare Spuren in deinem Körper hinterlassen?",
+    "one_minute_summary": "Die Psychologin Janice Kiecolt-Glaser ließ Ehepaare über einen Konflikt sprechen und nahm ihnen danach Blut ab. Nach feindseligen Gesprächen lagen die Immunwerte niedriger als nach ruhigen. Gabor Maté erzählt die Studie als Beispiel für die Psychoneuroimmunologie: Gehirn, Nervensystem und Immunsystem teilen dieselben Botenstoffe. Gemessen wurde ein kurzfristiger Unterschied nach einem einzigen Gespräch. Wie lange er anhielt oder ob Streiten krank macht, sagt die Studie nicht. Gefühle hinterlassen Spuren, aber niemand ist dadurch verloren."
+  }
+}

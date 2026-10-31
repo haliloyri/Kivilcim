@@ -1,0 +1,39 @@
+{
+  "story_id": 1696,
+  "kind": "anecdote",
+  "book": { "title": "Predictably Irrational", "author": "Dan Ariely", "year": "2008" },
+  "confidence": "medium",
+  "confidence_note": "Chocolate experiment (Lindt truffle 15 cents vs Hershey's Kiss 1 cent: 73 percent chose the truffle; both prices cut by 1 cent, truffle 14 cents and Kiss free: 69 percent chose the Kiss) is from the book's chapter on 'Free!' and is widely documented; percentages recalled, not checked against the page. The Amazon France free-shipping anecdote is recalled from the same chapter with medium confidence: stated in general terms only (no exact amounts, no claim about why France charged). The reference TR text's claim that the 'word free' erased the possibility of loss is the author's interpretation and kept as such.",
+  "facts": [
+    "Ariely and colleagues set up a table where each customer could buy one chocolate: a Lindt truffle or a Hershey's Kiss.",
+    "At 15 cents for the truffle and 1 cent for the Kiss, 73 percent of buyers chose the truffle and 27 percent the Kiss.",
+    "The researchers then cut both prices by 1 cent: the truffle 14 cents, the Kiss free. The gap stayed 14 cents.",
+    "The choice flipped: 69 percent now took the free Kiss.",
+    "Ariely reads zero as more than a small price: it sets off an emotional reaction.",
+    "Amazon offered free shipping in several European countries; in France it charged a very small fee and orders did not rise; when that fee dropped to zero, French orders rose like the others."
+  ],
+  "scene_details": [
+    "A table with two chocolates and two price signs.",
+    "Each customer could take only one chocolate.",
+    "Both prices cut by one cent; the gap stays fourteen cents."
+  ],
+  "tension": "The difference between the two chocolates stayed exactly the same, yet most people switched to the other one.",
+  "opening_idea": "Start with the table, the two price signs and the researchers lowering both by one cent.",
+  "lessons": [
+    { "idea": "When something is free, price the time, space and attention it costs and ask whether you would take it at a small price.", "anchor": "The 14-cent gap did not change but the free Kiss won" }
+  ],
+  "reflect": [],
+  "reflect_final": "What did you recently take only because it was free and later realise you hardly needed?",
+  "use_cases": [
+    { "situation": "The team is about to adopt a free tool.", "move": "Ask whether we would pick it if it carried a small price; count setup and learning time.", "context": "meeting" },
+    { "situation": "A friend signs up for a free course.", "move": "Ask if they would still join if it cost something small.", "context": "oneonone" },
+    { "situation": "You are about to take a free item.", "move": "Imagine a small price on it before you take it.", "context": "self" }
+  ],
+  "pocket_idea": "In the chocolate test the 14-cent gap stayed and zero flipped the choice: put a small price on a free thing and see if you still want it.",
+  "conversation_variants": {
+    "punchline_idea": "Take one cent off both chocolates and the price gap stays the same, but most people switch to the free one.",
+    "thirty_sec_idea": "Truffle 15 cents vs Kiss 1 cent: 73 percent truffle; 14 vs free: 69 percent Kiss.",
+    "question_idea": "",
+    "key_contrast_idea": "free is not just cheap"
+  }
+}

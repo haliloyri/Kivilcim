@@ -1,0 +1,35 @@
+{
+  "story_id": 1337,
+  "verdict": "keep",
+  "verify_note": "Not web-verified; baseline and cluster principle from What Every BODY Is Saying (2008), consistent with Navarro sources seen while checking 1336/1338.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Önce temel çizgiyi öğren",
+    "description": "Joe Navarro, beden dilini bir işaret sözlüğü gibi ezberlemenin yanıltıcı olduğunu söylüyor. Bir hareketin anlamı, o kişinin normaline göre belirleniyor.",
+    "hook": "Takımınızdaki birinin normal hâlini ne kadar iyi biliyorsunuz?",
+    "one_minute_summary": "Joe Navarro, What Every BODY Is Saying kitabında beden dilini işaret sözlüğü gibi ezberlemeye karşı çıkıyor. \"Kollar kavuşturulmuşsa savunmacıdır\" gibi kurallar çabuk çöküyor, çünkü kişi üşüyor olabilir. Çıkış noktası kişinin temel çizgisi: rahatken nasıl durduğu, nasıl konuştuğu. Anlamlı olan o hâlden sapma. Stres herkeste aynı görünmüyor ve tek bir işarete güvenmemek gerekiyor; birkaç işaret bir araya gelince bir küme oluşuyor. Bunun bedeli zaman: gözlemlemek, dinlemek, acele etmemek. Beynin duygu ve akıl diye bölündüğü fikri de bir kısaltma."
+  },
+  "en": {
+    "title": "Learn the baseline first",
+    "description": "Joe Navarro warns against memorizing body language as a dictionary of signs. A gesture only means something against that person's normal.",
+    "hook": "How well do you know what normal looks like for the people around you?",
+    "one_minute_summary": "In What Every BODY Is Saying, Joe Navarro starts with a caution: reading body language is not memorizing a dictionary of signs. A rule like \"crossed arms mean defensive\" breaks down fast, since the person may be cold. His starting point is the baseline, how someone looks when relaxed, and what matters is the departure from it. He distrusts any single signal, while a cluster says more. The cost is time: you need to watch, listen and not hurry."
+  },
+  "es": {
+    "title": "Primero, la línea de base",
+    "description": "Joe Navarro advierte contra memorizar el lenguaje corporal como un diccionario de señales. Un gesto solo significa algo frente a lo normal de esa persona.",
+    "hook": "¿Qué tan bien conoces lo que es normal en las personas que te rodean?",
+    "one_minute_summary": "Al empezar What Every BODY Is Saying, Joe Navarro advierte que leer el lenguaje corporal no es memorizar un diccionario de señales. Una regla como «brazos cruzados, actitud defensiva» se rompe enseguida, porque la persona puede tener frío. Su punto de partida es la línea de base, cómo es alguien cuando está relajado, y lo que importa es la desviación. Desconfía de las señales aisladas: un conjunto sí dice algo. El precio es el tiempo, porque hay que observar y no precipitarse."
+  },
+  "de": {
+    "title": "Erst die Baseline kennen",
+    "description": "Joe Navarro warnt davor, Körpersprache wie ein Wörterbuch von Zeichen auswendig zu lernen. Eine Geste bedeutet erst etwas vor dem Normalen dieser Person.",
+    "hook": "Wie gut kennst du, was bei den Menschen um dich herum normal ist?",
+    "one_minute_summary": "Zu Beginn von What Every BODY Is Saying warnt Joe Navarro: Körpersprache zu lesen heißt nicht, ein Wörterbuch von Zeichen auswendig zu lernen. Eine Regel wie »Arme verschränkt, also abwehrend« bricht schnell zusammen, denn die Person friert vielleicht. Sein Ausgangspunkt ist die Baseline, wie jemand entspannt aussieht, und aussagekräftig wird die Abweichung davon. Er misstraut einzelnen Signalen, während ein Cluster etwas sagt. Der Preis ist Zeit: beobachten, zuhören, sich nicht hetzen."
+  }
+}

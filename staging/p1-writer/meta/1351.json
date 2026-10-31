@@ -1,0 +1,35 @@
+{
+  "story_id": 1351,
+  "verdict": "keep",
+  "verify_note": "Not verified in this pass. Title changed: old title/description described the old text and no longer fit the new story. Old title promised 'brain's golden hours' backed by neuroscience; the new story calls those explanations Sharma's own reading.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Zafer Saati",
+    "description": "Sharma sabah 5 ile 6 arasını \"Zafer Saati\" diye adlandırıp üç eşit bloğa bölüyor. Değerini dünyanın hâlâ sessiz olmasından alıyor.",
+    "hook": "Günün ilk saati başkaları istemeden önce sizin olsaydı, onu neye ayırırdınız?",
+    "one_minute_summary": "Robin Sharma'nın The 5AM Club kitabında eksantrik bir milyarder, zorlanan bir girişimci ile bir sanatçıya sabah 5'te kalkmayı öğretiyor. 5 ile 6 arasına Zafer Saati deniyor, çünkü dünya henüz sessiz. Saat 20'şer dakikalık üç bloğa bölünüyor: hareket, düşünme, öğrenme. Sharma erken kalkmayı kurulabilen bir alışkanlık olarak anlatıyor ve başlangıcın zor olduğunu kabul ediyor. Beyin ve hormon açıklamaları kendi yorumu, kitap bunları ölçümle göstermiyor."
+  },
+  "en": {
+    "title": "The Victory Hour",
+    "description": "Sharma calls the hour from five to six the Victory Hour and splits it into three twenty-minute blocks. Its value, he says, is that the world is still quiet.",
+    "hook": "If the first hour of your day belonged to you, how would you use it?",
+    "one_minute_summary": "In The 5AM Club, an eccentric billionaire mentors a struggling entrepreneur and an artist and asks them to rise at five. Sharma calls the hour from five to six the Victory Hour, valuable because the world is still quiet. It is split into three twenty-minute blocks: Move, Reflect and Grow. He presents rising early as a habit you can install and admits the start is hard. His explanations about the brain and hormones are his own reading, not backed by measurements."
+  },
+  "es": {
+    "title": "La Hora de la Victoria",
+    "description": "Sharma llama Hora de la Victoria al tramo entre las cinco y las seis y lo reparte en tres bloques de veinte minutos. Su valor, dice, está en el silencio del mundo.",
+    "hook": "Si la primera hora del día fuera tuya, ¿en qué la usarías?",
+    "one_minute_summary": "En The 5AM Club, un multimillonario excéntrico hace de mentor de un emprendedor y un artista que atraviesan un mal momento y les pide que se levanten a las cinco. Sharma llama Hora de la Victoria al tramo de cinco a seis, valioso porque el mundo aún está en silencio. Lo reparte en tres bloques de veinte minutos: moverse, reflexionar y aprender. Presenta madrugar como un hábito que se instala y admite que el comienzo cuesta. Sus explicaciones sobre cerebro y hormonas son lectura suya; el libro no las mide."
+  },
+  "de": {
+    "title": "Die Siegerstunde",
+    "description": "Sharma nennt die Stunde von fünf bis sechs die Siegerstunde und teilt sie in drei Blöcke zu je zwanzig Minuten. Ihr Wert liege in der Stille der Welt.",
+    "hook": "Wenn die erste Stunde des Tages dir gehörte, wofür würdest du sie nutzen?",
+    "one_minute_summary": "In The 5AM Club begleitet ein exzentrischer Milliardär einen Unternehmer und einen Künstler in schwieriger Lage und verlangt, dass sie um fünf aufstehen. Sharma nennt die Stunde von fünf bis sechs die Siegerstunde, wertvoll, weil die Welt noch still ist. Sie besteht aus drei Blöcken zu je zwanzig Minuten: Move, Reflect, Grow. Er stellt Frühaufstehen als einübbare Gewohnheit dar und räumt ein, dass der Anfang schwerfällt. Seine Erklärungen zu Gehirn und Hormonen sind seine eigene Deutung, das Buch belegt sie nicht."
+  }
+}

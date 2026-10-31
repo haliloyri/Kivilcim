@@ -3,9 +3,9 @@ import { buildRankShare, buildWeeklyShare } from '../careerShare';
 const learning = { ideas: 34, books: 12, minutes: 96, week: { stories: 5, minutes: 22, books: 3 } };
 
 describe('career share copy', () => {
-  it('uses real numbers and a viewer hook for a title', () => {
+  it('keeps numbers in the stats panel and adds a viewer hook for a title', () => {
     const share = buildRankShare({ titleKey: 'careerNode.horizonTraveler.title', pathId: 'exploration', learning, name: 'Ayşe', lang: 'tr' });
-    expect(share.line).toBe('Ayşe 12 kitaptan 34 fikir topladı ve Ufuk Gezgini oldu.');
+    expect(share.line).toBe('Ayşe yeni bir unvan kazandı: Ufuk Gezgini.');
     expect(share.hook).toBe('Sıradaki Ufuk Gezgini sen misin?');
     expect(share.pathLabel).toBe('Keşif Yolu');
     expect(share.stats.map((item) => item.value)).toEqual([12, 34, 96]);

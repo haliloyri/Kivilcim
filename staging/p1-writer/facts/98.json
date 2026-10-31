@@ -1,0 +1,34 @@
+{
+  "book_no": 98,
+  "title": "Goals!: How to Get Everything You Want, Faster Than You Ever Thought Possible",
+  "authors": ["Brian Tracy"],
+  "year": "2003",
+  "sources": [
+    "https://www.shortform.com/summary/goals-summary-brian-tracy",
+    "https://plums-tetra-l6zw.squarespace.com/blog/goals",
+    "https://leadershipnow.com/leadershop/5235-6.html",
+    "https://www.w-ilmu.intan.my/neuseal/Record/0000022174/Details",
+    "https://www.goodreads.com/author_blog_posts/9071103-the-harvard-and-yale-goals-studies-a-myth-but",
+    "https://www.dominican.edu/sites/default/files/2020-02/gailmatthews-harvard-goals-researchsummary.pdf",
+    "https://media.dominican.edu/uploads/LIBR/News-Archives-2016/News-01-2016-GoalSettingResearch.pdf",
+    "https://www.psychologytoday.com/us/blog/the-science-of-success/201106/the-3-biggest-myths-about-motivation-that-wont-go-away"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "Goals! (Berrett-Koehler, San Francisco, 2003) by Brian Tracy; later editions exist. The Turkish title in the DB is assumed to be this book; Tracy wrote several goal books, so this is not confirmed.", "source": "library catalogue record; publisher page", "confidence": "medium"},
+    {"id": "f2", "claim": "Tracy tells of a Harvard Business School study. As retold in a review of Goals!: in 1979, 3% of the participants had written goals, 13% had goals but unwritten, 84% had none; ten years later the 13% group earned about twice as much as the 84% group, and the 3% group about ten times as much as the other 97% combined. The 1979 survey question asked whether they had 'set clear, written goals for your future and made plans to accomplish them'. Shortform's summary confirms the Harvard framing and the tenfold figure.", "source": "squarespace book review; Shortform", "confidence": "medium"},
+    {"id": "f3", "claim": "No record of this study has been found. The 1953 Yale version, told by many speakers, was traced by journalists and a Yale library page found no such study; a Harvard version also left no trace. Shortform's own note says there is no record the study ever took place. Brian Tracy is named among those who spread it.", "source": "Shortform note; Goodreads author blog; Psychology Today", "confidence": "medium"},
+    {"id": "f4", "claim": "Real research on writing goals: Gail Matthews, Dominican University. 267 people recruited from businesses and networking groups, 149 finished. Five groups: group 1 only thought about goals, group 5 wrote goals, made action commitments, shared them with a friend and sent weekly progress reports. Of those who sent weekly updates to a friend, more than 70% reported successful progress (more than halfway) versus 35% of those who kept goals to themselves unwritten.", "source": "Dominican University summary and press release (via secondary reports)", "confidence": "medium"},
+    {"id": "f5", "claim": "Tracy calls writing goals down 'transformative' and wants specific, measurable goals.", "source": "Shortform", "confidence": "medium"}
+  ],
+  "rejected": [
+    {"claim": "Only 3% of graduates had written goals, 13% verbal, 84% none; ten years on the 13% earned twice the 84%, the 3% ten times the other 97%, as a verified fact.", "reason": "Kept only as Tracy's claim (f2) with the no-record caveat (f3). The old text said 'university graduates'; the retelling says Harvard MBA."},
+    {"claim": "The reticular activating system (RAS) is a filter calibrated by written goals; 'show me everything fitting this goal'.", "reason": "Not found in any Goals! summary or contents list. Dropped."},
+    {"claim": "Six P's of goals (Positive, Present tense, Personal, Precise, Positive emotion, Persistent) with '$10,000 by Dec 31' example.", "reason": "The six-P framework is not found in Goals!; summaries give 'seven key elements' and 'twelve steps'. 1391 deleted."},
+    {"claim": "Question 'If you were absolutely certain you could succeed, what would you do?', the 'eat an elephant one bite at a time' line, 365 steps and the 'ordinary things done extraordinarily' quote.", "reason": "Not found in Goals!. The elephant belongs to other Tracy material. A 'magic wand' exercise exists but with different wording. 1392 deleted."}
+  ],
+  "stories": {
+    "1390": {"verdict": "keep", "fact_ids": ["f2","f3","f4","f5"], "note": "Told as Tracy's claim plus the editorial caveat plus the real study. Low-medium confidence."},
+    "1391": {"verdict": "delete", "fact_ids": [], "note": "Six-P framework cannot be tied to Goals!."},
+    "1392": {"verdict": "delete", "fact_ids": [], "note": "Guaranteed-success question, elephant and 365-step passage cannot be tied to Goals!."}
+  }
+}

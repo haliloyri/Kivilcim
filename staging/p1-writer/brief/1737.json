@@ -1,0 +1,59 @@
+{
+ "story_id": 1737,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Life-Changing Magic of Tidying Up",
+  "author": "Marie Kondo",
+  "year": "2011"
+ },
+ "confidence": "medium",
+ "confidence_note": "The shift from 'what to throw out' to 'what to keep and what sparks joy' is central to the book. The adolescent episode (tidying obsessively since childhood, around age 15 collapsing from exhaustion and hearing a voice telling her to look at her things more carefully) is reported by secondary sources and a Kondo interview; whether the book words it that way, including the two hours unconscious, is unverified, so story uses 'as she tells it' and omits the two hours. Omitted: client numbers, bag counts, order of categories. The line 'touch each item' is from the book's method. ADDED LATER: Added from general knowledge of the book's method, not source-verified this session: gather a whole category (clothes first) into a pile, handle each item, finish a category before the next, tidy in one go. Two-hours-unconscious detail omitted.",
+ "facts": [
+  "From childhood Marie Kondo was fascinated by tidying and tried method after method.",
+  "In her teens she tidied by discarding: she looked for things to throw away every day after school.",
+  "She tells of a breakdown at around fifteen: exhausted by tidying, she lost consciousness, and on waking heard a voice telling her to look at her things more carefully.",
+  "She realized she had been looking only for what to throw away, when the question should be what to keep.",
+  "Her method: pick up each item in your hands and ask whether it sparks joy; keep what does.",
+  "The change turns tidying from a hunt for what to get rid of into a choice about what to live with.",
+  "Her method: pile all items of a category (clothes first) on the floor, take each in your hands, keep what sparks joy; tidy by category, in one concentrated effort."
+ ],
+ "scene_details": [
+  "holding each item in your hands",
+  "a daily after-school search for things to throw out",
+  "a voice telling her to look at her things more carefully"
+ ],
+ "tension": "She tidied obsessively for years and still did not get a tidy home, until she changed the question she asked.",
+ "opening_idea": "Open on the teenager coming home from school every day to look for things to throw out.",
+ "lessons": [
+  {
+   "idea": "Choosing what to keep works better than hunting for what to remove, because the question points at what you value.",
+   "anchor": "switching from what to throw away to what sparks joy"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Pick one drawer, folder or commitment you keep meaning to clear: what is in it that you would gladly choose again today?",
+ "use_cases": [
+  {
+   "situation": "Clearing a closet with a partner.",
+   "move": "Hold each item and ask 'do I want to keep this?' instead of 'can I let go of it?'",
+   "context": "family"
+  },
+  {
+   "situation": "Your task list is overloaded.",
+   "move": "Read the list and mark only the items you would choose again today; ask what happens to the rest.",
+   "context": "self"
+  },
+  {
+   "situation": "A meeting calendar has grown crowded.",
+   "move": "Say that Kondo got out of her tidying loop by asking what to keep, and ask which recurring meeting you would pick again.",
+   "context": "meeting"
+  }
+ ],
+ "pocket_idea": "Kondo stopped asking what to throw out and began holding each thing, asking whether to keep it.",
+ "conversation_variants": {
+  "punchline_idea": "Marie Kondo spent years looking for things to throw away and only got tidy when she began asking what to keep.",
+  "thirty_sec_idea": "As a teenager, Marie Kondo tidied by throwing things out, every day after school, and she wore herself out. She says the turn came when she began to look at each thing in her hands and ask what to keep. That became her question: does it spark joy?",
+  "question_idea": "",
+  "key_contrast_idea": "keep, not discard"
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "story_id": 1774,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Confidence Game",
+  "author": "Maria Konnikova",
+  "year": ""
+ },
+ "confidence": "medium",
+ "confidence_note": "Sources (secondary summaries of the book, not the book text): saturdayeveningpost.com/2017/02/the-art-of-the-con (Cayuga scene with 19 wounded on a junk, 48 hours, textbook, Ontario physician field guide, press officer, navy dismissal; Demara impersonations; stages of a con; why marks fall); lareviewofbooks.org/article/vote-for-confidence (Mitchell and Lee Choong, Lloyd, Crichton babysitting); highbrowmagazine.com (Lustig and the Eiffel Tower). The Post piece also says alcohol was for the surgeon himself: left out as unverified. Not verified: wording in the book, how Demara was first recognized, Konnikova's exact framing of each case. Year empty.",
+ "facts": [
+  "In September 1951, during the Korean War, HMCS Cayuga was north of the 38th parallel when a junk carrying 19 wounded men, mostly young, from an ambush approached the ship under a flag.",
+  "The ship's only medical man, Lieutenant Dr. Joseph Cyr, had never finished high school. His real name was Ferdinand Waldo Demara.",
+  "Over 48 hours he performed the surgeries using a medical textbook, a field guide written by an Ontario physician, and antibiotics for the patients.",
+  "A navy press officer looked for a story, and Cyr's heroism spread across Canada.",
+  "The navy did not press charges; it quietly dismissed Demara and asked him to leave the country.",
+  "Demara was exposed repeatedly yet kept succeeding: among other roles he posed as a monk, a psychologist, a professor, a prison warden, a teacher at a school for disabled children and a civil engineer who nearly won a bridge contract in Mexico. He also posed as Robert Crichton, author of the 1959 book The Great Impostor, and after Crichton exposed him he asked him for money and babysat his children.",
+  "A New York psychic took more than $128,000 from Lee Choong, a Singaporean businesswoman in a romantic and professional rut; Robin Lloyd, new to New York and short of cash, lost money at three-card monte; Victor Lustig, who called himself a count, twice sold investors shares in the Eiffel Tower.",
+  "The first step of a con is the put-up: identifying the victim and their desires.",
+  "Konnikova's argument: people dislike uncertainty and crave stories that explain; victims assume too good to be true applies to others; the con artist never has to force anyone, because the victim supplies the story and the persuasion, and growing investment deepens commitment."
+ ],
+ "scene_details": [
+  "a ship's operating room off North Korea",
+  "a medical textbook in the surgeon's hands",
+  "three cards on a street table"
+ ],
+ "tension": "A man with no medical degree operated for two days and the men lived.",
+ "opening_idea": "Open on the Cayuga and the only medical man aboard.",
+ "lessons": [
+  {
+   "idea": "The easiest person to deceive is one who is hoping for a particular answer, so notice what you hope is true before judging the pitch.",
+   "anchor": "Lee Choong's rut and Lloyd's need for cash"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "When did you last want an offer or a story to be true, and what question did you skip asking because of it?",
+ "use_cases": [
+  {
+   "situation": "A colleague is thrilled about a deal that sounds too good.",
+   "move": "Ask what would have to be true for it to fail and who has checked.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A relative wants to lend savings to a charming stranger.",
+   "move": "Ask them to wait a day and talk to one person who is not excited.",
+   "context": "family"
+  },
+  {
+   "situation": "You hear an offer that fits exactly what you need.",
+   "move": "Write down what you hope is true before you reply.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "A pitch that fits your need exactly is the one to check twice.",
+ "conversation_variants": {
+  "punchline_idea": "Konnikova's marks were not fools, they were people at a moment of need.",
+  "thirty_sec_idea": "Maria Konnikova opens with Ferdinand Demara, who posed as a navy surgeon on a Korean War ship. Her marks included a psychic's client who was in a romantic and professional rut and a newcomer to New York who was short of cash. The con begins by choosing someone with a need.",
+  "question_idea": "What do you want to be true right now?",
+  "key_contrast_idea": "Need before pitch"
+ }
+}

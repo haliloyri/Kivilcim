@@ -1,0 +1,26 @@
+{
+ "tr": {
+  "title": "Hindinin Bin Günü",
+  "description": "Hindi her gün beslenir ve güveni her yemekle büyür. En emin olduğu gün, Şükran Günü'nden önceki çarşamba, tehlikeye en yakın olduğu gündür.",
+  "hook": "Hayatında yalnızca bugüne kadar bir şey ters gitmediği için güvende görünen ne var?",
+  "one_minute_summary": "Taleb'in anlattığı hindi, çiftçi tarafından her gün beslenir ve yaklaşık bin gün boyunca insanların onu kolladığına dair inancı güçlenir. Şükran Günü'nden önceki çarşamba beklenmedik bir şey olur ve inancını gözden geçirmek zorunda kalır. Taleb bunu siyah kuğu fikrine bağlar: uzun bir sakin dönem, nadir ve büyük bir olayın gelemeyeceğini göstermez."
+ },
+ "en": {
+  "title": "The Turkey's Thousand Days",
+  "description": "A turkey is fed every day and trusts the farmer more with each meal. It feels safest on the Wednesday before Thanksgiving.",
+  "hook": "Which part of your life only feels safe because nothing has gone wrong yet?",
+  "one_minute_summary": "In Taleb's parable, a turkey is fed by the farmer every day, and over about a thousand days its belief that people look out for it grows stronger. On the Wednesday before Thanksgiving something unexpected happens and it has to revise that belief. Taleb ties this to the black swan: a long calm record does not show that a rare, large event cannot come."
+ },
+ "es": {
+  "title": "El pavo y el miércoles de Acción de Gracias",
+  "description": "Un pavo come cada día y confía más en el granjero con cada comida. Se siente más seguro el miércoles antes de Acción de Gracias.",
+  "hook": "¿Qué parte de tu vida parece segura solo porque hasta ahora nada ha salido mal?",
+  "one_minute_summary": "En la parábola de Taleb, un pavo recibe comida del granjero cada día y, a lo largo de unos mil días, su creencia de que las personas velan por él se refuerza. El miércoles anterior a Acción de Gracias ocurre algo inesperado y debe revisar esa creencia. Taleb lo enlaza con el cisne negro: un largo historial de calma no demuestra que no pueda llegar un suceso raro y enorme."
+ },
+ "de": {
+  "title": "Der Truthahn und der Mittwoch vor Thanksgiving",
+  "description": "Ein Truthahn wird täglich gefüttert und vertraut dem Bauern mit jeder Mahlzeit mehr. Am sichersten fühlt er sich am Mittwoch vor Thanksgiving.",
+  "hook": "Welcher Teil deines Lebens fühlt sich nur sicher an, weil bisher nichts schiefgegangen ist?",
+  "one_minute_summary": "In Talebs Gleichnis wird ein Truthahn jeden Tag vom Bauern gefüttert, und über rund tausend Tage wächst sein Glaube, dass die Menschen es gut mit ihm meinen. Am Mittwoch vor Thanksgiving geschieht etwas Unerwartetes, und er muss diesen Glauben revidieren. Taleb verbindet das mit dem schwarzen Schwan: Eine lange ruhige Bilanz beweist nicht, dass ein seltenes, großes Ereignis nicht kommen kann."
+ }
+}

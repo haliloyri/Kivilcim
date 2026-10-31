@@ -1,0 +1,63 @@
+{
+  "story_id": 1432,
+  "kind": "anecdote",
+  "book": {
+    "title": "Measure What Matters",
+    "author": "John Doerr",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The old text's Grove quote ('if you don't know where you're going...'), its claim that Doerr joined Intel in 1975 as a young engineer, and 'Google uses OKRs every quarter to this day' are not tied to the book and are dropped; sources say Doerr joined Intel in 1974 as a salesman, but the year is not used. Used instead: Operation Crush at Intel, told on whatmatters.com (Doerr's own site) and in Intel and Computer History Museum pages: late 1979 telex from district sales manager Don Buckout, forwarded by Casey Powell to Andy Grove; objective 'Establish the 8086 as the highest performance 16-bit microprocessor family'; target of 2,000 design wins; Crush teams to field offices in January 1980 with Grove videos; Motorola beaten by end of 1980; the 8088 later powered the first IBM PC. Final design-win count differs between sources (about 2,300 to almost 2,500) so it is left out. Doerr's role in the story was not confirmed as a participant.",
+  "facts": [
+    "In late November 1979 Intel's 8086 chip was losing ground to Motorola's 68000.",
+    "A district sales manager, Don Buckout, sent headquarters an eight-page telex about it.",
+    "His boss Casey Powell forwarded it to Andy Grove, then Intel's president and COO.",
+    "The executive staff met within a week and a task force formed the week after.",
+    "The objective was written as: Establish the 8086 as the highest performance 16-bit microprocessor family.",
+    "The target was 2,000 design wins, meaning customers agreeing to build the chip into their products.",
+    "In January 1980 Crush teams went to field offices worldwide, supported by videos of Grove.",
+    "Intel changed no product for the campaign; it changed how it sold, aiming at long-term systems and service.",
+    "By the end of 1980 Intel had beaten Motorola, and the 8088 later powered the first IBM PC.",
+    "The 8086 was Intel's first high-performance 16-bit microprocessor; the task force judged Zilog a minor threat and Motorola the real danger.",
+    "By the second quarter of 1980 the sales organization had deployed the new approach; by 1986 the 8086 had regained 85% of the 16-bit market."
+  ],
+  "scene_details": [
+    "an eight-page telex",
+    "the number 2,000 design wins",
+    "videos of Grove sent to field offices"
+  ],
+  "tension": "An eight-page telex from a district sales manager reached the president within days.",
+  "opening_idea": "Start with the eight-page telex that Don Buckout sent in November 1979.",
+  "lessons": [
+    {
+      "idea": "A goal written as an objective plus a countable target lets a whole organization move in the same direction.",
+      "anchor": "One sentence of objective and 2,000 design wins."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one thing you are working on now that has a clear objective but no number that would tell you it was reached?",
+  "use_cases": [
+    {
+      "situation": "A project has a vague aim.",
+      "move": "Write the objective in one sentence and one number that shows it was reached, as Intel did with 2,000 design wins.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your team lead asks what you will focus on.",
+      "move": "Say the objective and the one number you will check at the end of the quarter.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You want to start a personal goal.",
+      "move": "Write the sentence and the countable target on one page.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Intel wrote one objective and one number, 2,000 design wins: write your own sentence and number.",
+  "conversation_variants": {
+    "punchline_idea": "A district manager's eight-page telex became Intel's Operation Crush within a few weeks.",
+    "thirty_sec_idea": "In late 1979 Intel's 8086 was losing to Motorola. District sales manager Don Buckout sent an eight-page telex, it reached Andy Grove, and the company set one objective and a target of 2,000 design wins. Crush teams went to field offices in January 1980, and by year's end Intel had beaten Motorola. The chip later powered the first IBM PC.",
+    "question_idea": "",
+    "key_contrast_idea": "Objective plus number"
+  }
+}

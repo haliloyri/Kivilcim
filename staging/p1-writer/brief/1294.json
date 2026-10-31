@@ -1,0 +1,37 @@
+{
+  "story_id": 1294,
+  "kind": "concept",
+  "book": { "title": "The 4-Hour Workweek", "author": "Tim Ferriss", "year": "2007" },
+  "confidence": "low",
+  "confidence_note": "Written from memory and secondary summaries; WebSearch did not confirm the old TR text's specifics. Old TR text claims '$200 of Google ads', '48 hours', a 'Buy' button on a fake page and a 'BrainQUICKEN' mock page. NOT verified: no source confirmed $200 or 48 hours for BrainQUICKEN (a secondary document attributed to the book mentions at least $2,500 a month of ad spend on BrainQUICKEN, unverified; a $200 figure belongs to Ferriss's separate book-title ad test per Boing Boing, not BrainQUICKEN). Omitted all numbers, the dummy-page detail and the exact ordering mechanics. Kept: BrainQUICKEN as his own online supplement business, the idea of testing demand with small search ads before committing to inventory, measuring clicks and orders. The old claim that 2007 entrepreneurs usually built for years first is the editorial gloss of the old text and is omitted. A story anchored on the book-title test would be a better fit but was not verified as in the book itself.",
+  "facts": [
+    "Ferriss's own business in the book is BrainQUICKEN, a supplement sold online, with manufacturing and order handling done by outside companies.",
+    "The book's approach to a new product: test demand before committing money to production.",
+    "The test uses a basic web page about the product and small search ad campaigns that send people to it.",
+    "What is measured: how many people click the ad and how many go on to order.",
+    "If the numbers justify it, make the product. If not, drop or change the idea having spent little."
+  ],
+  "scene_details": [
+    "A small search ad leading to a basic page about a product that has not been made yet",
+    "Counting clicks and orders as the verdict on the idea"
+  ],
+  "tension": "Most founders prepare for months before learning whether anyone wants the product, which Ferriss turns around.",
+  "opening_idea": "Start with the product that exists only as an ad and a basic web page, and the number that decides its fate.",
+  "lessons": [
+    { "idea": "Let a small, real action decide whether a big commitment is worth making.", "anchor": "Ferriss tests with small ads before production.", "everyday_example_idea": "A home baker puts a pre-order list on a post before buying equipment." }
+  ],
+  "reflect": [],
+  "reflect_final": "What idea of yours could be tested with real strangers this week before you spend the larger sum you have been planning?",
+  "use_cases": [
+    { "situation": "You want to launch a side project.", "move": "Describe it on one page and show it to ten possible customers, counting who says yes to buying.", "context": "self" },
+    { "situation": "A manager wants a big spend approved.", "move": "Propose a small test first and name the number that would make you proceed.", "context": "meeting" },
+    { "situation": "A friend is sure their idea will work.", "move": "Ask what the cheapest real-world test would be.", "context": "social" }
+  ],
+  "pocket_idea": "Ferriss let a small ad decide what to manufacture: test for demand before you spend on supply.",
+  "conversation_variants": {
+    "punchline_idea": "Ferriss tests whether anyone wants a product before he makes any.",
+    "thirty_sec_idea": "Instead of building a product and hoping, Ferriss describes testing demand first: a basic page, a small search ad campaign, and a count of clicks and orders. Only if the numbers work does anything get made.",
+    "question_idea": "",
+    "key_contrast_idea": "Test, then build"
+  }
+}

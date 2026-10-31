@@ -1,0 +1,61 @@
+{
+  "story_id": 1264,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Obstacle Is the Way",
+    "author": "Ryan Holiday",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against book text (Love Everything That Happens). Old claims dropped: \"Dec 1914\" (not in the passage), \"$23M damage\" (book: loss almost $1M, about $23M in today's dollars) and the \"all our mistakes are burned\" quote (not in the book).",
+  "facts": [
+    "Age 67, Edison went home early; after dinner a man rushed in: fire at his research and production campus a few miles away.",
+    "Engines from eight towns could not contain it; chemicals fed green and yellow flames six and seven stories high.",
+    "He found his son and said with childlike excitement: get your mother and her friends, they will never see a fire like this again; \"We've just got rid of a lot of rubbish.\"",
+    "Years of records, prototypes, research turned to ash; supposedly fireproof concrete buildings insured for about a third of the damage.",
+    "Next day told a reporter he was not too old for a fresh start; \"prevents a man from being afflicted with ennui.\"",
+    "Within about three weeks partly running; within a month two shifts a day with new products.",
+    "Loss almost $1M (more than $23M today) yet nearly $10M revenue that year.",
+    "Holiday: weeping or quitting would accomplish nothing; earlier in book Edison tested six thousand filaments in 1878."
+  ],
+  "scene_details": [
+    "green and yellow flames",
+    "get your mother and her friends",
+    "two shifts a day"
+  ],
+  "tension": "A man watching decades of work burn behaves as if it were a spectacle.",
+  "opening_idea": "Open on the flames and the errand he gave his son.",
+  "lessons": [
+    {
+      "idea": "After a loss, give the first job to the next step.",
+      "anchor": "Edison talked of a fresh start the next day and had the factory partly running in three weeks.",
+      "everyday_example_idea": "A shopkeeper after a flood lists which shelves could open tomorrow."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "After the last big setback you had, what did you first have to put down before you could move on to the next step?",
+  "use_cases": [
+    {
+      "situation": "A deadline slipped.",
+      "move": "Postpone the post-mortem, list what remains today.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A plan at home is ruined.",
+      "move": "Ask what can be working again tomorrow.",
+      "context": "family"
+    },
+    {
+      "situation": "A lot of work wasted.",
+      "move": "Cite Edison's three weeks and ask what you can return to today.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Before tallying damage, write tomorrow's first job.",
+  "conversation_variants": {
+    "punchline_idea": "While his factory burned, Edison sent for his mother and her friends because they would never see such a fire again.",
+    "thirty_sec_idea": "Edison at 67 watched his campus burn, insured for a third; three weeks later it was partly running. Holiday: nothing else would have accomplished anything.",
+    "question_idea": "",
+    "key_contrast_idea": "Fire, then two shifts"
+  }
+}

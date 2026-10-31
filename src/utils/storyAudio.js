@@ -1,60 +1,65 @@
-// Metro can only bundle local assets that are referenced statically. Keep this
-// map explicit so a database story_id resolves to its packaged narration.
-const STORY_AUDIO_BY_ID = Object.freeze({
-  1059: require('../../seslendirmeler/[1059].mp3'),
-  1060: require('../../seslendirmeler/[1060].mp3'),
-  1061: require('../../seslendirmeler/[1061].mp3'),
-  1070: require('../../seslendirmeler/[1070].mp3'),
-  1071: require('../../seslendirmeler/[1071].mp3'),
-  1072: require('../../seslendirmeler/[1072].mp3'),
-  1073: require('../../seslendirmeler/[1073].mp3'),
-  1074: require('../../seslendirmeler/[1074].mp3'),
-  1075: require('../../seslendirmeler/[1075].mp3'),
-  1076: require('../../seslendirmeler/[1076].mp3'),
-  1077: require('../../seslendirmeler/[1077].mp3'),
-  1078: require('../../seslendirmeler/[1078].mp3'),
-  1079: require('../../seslendirmeler/[1079].mp3'),
-  1080: require('../../seslendirmeler/[1080].mp3'),
-  1081: require('../../seslendirmeler/[1081].mp3'),
-  1082: require('../../seslendirmeler/[1082].mp3'),
-  1083: require('../../seslendirmeler/[1083].mp3'),
-  1084: require('../../seslendirmeler/[1084].mp3'),
-  1085: require('../../seslendirmeler/[1085].mp3'),
-  1086: require('../../seslendirmeler/[1086].mp3'),
-  1087: require('../../seslendirmeler/[1087].mp3'),
-  1088: require('../../seslendirmeler/[1088].mp3'),
-  1089: require('../../seslendirmeler/[1089].mp3'),
-  1090: require('../../seslendirmeler/[1090].mp3'),
-  1091: require('../../seslendirmeler/[1091].mp3'),
-  1092: require('../../seslendirmeler/[1092].mp3'),
-  1093: require('../../seslendirmeler/[1093].mp3'),
-  1094: require('../../seslendirmeler/[1094].mp3'),
-  1095: require('../../seslendirmeler/[1095].mp3'),
-  1096: require('../../seslendirmeler/[1096].mp3'),
-  1097: require('../../seslendirmeler/[1097].mp3'),
-  1098: require('../../seslendirmeler/[1098].mp3'),
-  1099: require('../../seslendirmeler/[1099].mp3'),
-  1100: require('../../seslendirmeler/[1100].mp3'),
-  1101: require('../../seslendirmeler/[1101].mp3'),
-  1102: require('../../seslendirmeler/[1102].mp3'),
-  1103: require('../../seslendirmeler/[1103].mp3'),
-  1104: require('../../seslendirmeler/[1104].mp3'),
-  1105: require('../../seslendirmeler/[1105].mp3'),
-  1106: require('../../seslendirmeler/[1106].mp3'),
-  1107: require('../../seslendirmeler/[1107].mp3'),
-  1108: require('../../seslendirmeler/[1108].mp3'),
-});
+import { supabase, SUPABASE_LIVE } from '../services/supabase';
 
-export const STORY_AUDIO_IDS = Object.freeze(
-  Object.keys(STORY_AUDIO_BY_ID).map(Number)
-);
+// Narrations live in a private Cloudflare R2 bucket as `<story_id>-<lang>-seslendirme.mp3`.
+// The `audio-url` Edge Function checks the object and returns a short-lived presigned URL.
+const SUPPORTED_LANGS = new Set(['tr', 'en', 'es', 'de']);
+// Refresh a cached URL this long before it expires so playback never starts on a dead link.
+const URL_REFRESH_MARGIN_MS = 5 * 60 * 1000;
 
-export const getStoryAudioAsset = (storyId) => {
+const cache = new Map();
+const inFlight = new Map();
+
+const cacheKey = (storyId, lang) => `${storyId}:${lang}`;
+
+const isFresh = (entry) =>
+  entry && (!entry.available || entry.expiresAt - URL_REFRESH_MARGIN_MS > Date.now());
+
+/**
+ * Resolve the streaming URL for a story narration.
+ * @returns {Promise<string|null>} presigned URL, or null when no narration exists
+ *   (or the lookup failed — the listen button stays disabled in that case).
+ */
+export const getStoryAudioUrl = async (storyId, lang) => {
   const normalizedId = Number(storyId);
-  return Number.isSafeInteger(normalizedId)
-    ? STORY_AUDIO_BY_ID[normalizedId] || null
-    : null;
+  const normalizedLang = String(lang || '').toLowerCase();
+  if (!SUPABASE_LIVE || !Number.isSafeInteger(normalizedId) || !SUPPORTED_LANGS.has(normalizedLang)) {
+    return null;
+  }
+
+  const key = cacheKey(normalizedId, normalizedLang);
+  const cached = cache.get(key);
+  if (isFresh(cached)) return cached.available ? cached.url : null;
+  if (inFlight.has(key)) return inFlight.get(key);
+
+  const request = (async () => {
+    try {
+      const { data, error } = await supabase.functions.invoke('audio-url', {
+        body: { storyId: normalizedId, lang: normalizedLang },
+      });
+      if (error || !data) throw error || new Error('empty response');
+
+      if (data.available && data.url) {
+        cache.set(key, { available: true, url: data.url, expiresAt: Number(data.expiresAt) || 0 });
+        return data.url;
+      }
+      cache.set(key, { available: false });
+      return null;
+    } catch (error) {
+      // Do not cache failures: a later open retries once the network is back.
+      console.warn('[storyAudio] narration lookup failed:', error?.message);
+      return null;
+    } finally {
+      inFlight.delete(key);
+    }
+  })();
+
+  inFlight.set(key, request);
+  return request;
 };
 
-export const hasStoryAudio = (storyId) => Boolean(getStoryAudioAsset(storyId));
+export const hasStoryAudio = async (storyId, lang) => Boolean(await getStoryAudioUrl(storyId, lang));
 
+export const __resetStoryAudioCache = () => {
+  cache.clear();
+  inFlight.clear();
+};

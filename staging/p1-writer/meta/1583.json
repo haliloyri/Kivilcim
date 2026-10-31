@@ -1,0 +1,35 @@
+{
+  "story_id": 1583,
+  "verdict": "fixed",
+  "verify_note": "OXO/Good Grips/Sam Farber could not be tied to Pink's book: searches of the Design chapter (chapter 4) and book summaries found no mention; Pink's text itself was not accessible (archive.org lending copy 401). OXO claim removed in all 4 md. Replaced with chapter content found in sources: merely functional no longer enough (Oprah excerpt of the book), iPod beating MP3 players with more functionality (nehrlich.com review), design notebook and design magazines/museums (SuperSummary), four graphic design principles (summary on lifeclub/kimhartman study guide). Residual risk: iPod example rests on one reviewer's summary. Title changed because old title said creating meaning.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "İşlevin Ötesinde Tasarım",
+    "description": "Pink'in tasarım bölümü, bir şeyi yalnızca işlevsel yapmanın artık yetmediğini söyler. Önerisi küçük: bir tasarım defteri tutmak.",
+    "hook": "Bu hafta hangi nesne ya da ekran sizi rahatsız etti?",
+    "one_minute_summary": "Pink, A Whole New Mind kitabında tasarımı altı duyudan ilki sayar. Ona göre bolluk çağında yalnızca işlevsel olmak yetmiyor. Bölüm özetleri iPod'u örnek gösterir: daha fazla işlevi olan MP3 çalarların önüne geçti. Pink bir tasarım defteri önerir: gündelik hayattaki iyi ve kötü tasarımı not edin, bir cihaz sizi sinirlendirince daha iyisini çizin. Bölüm grafik tasarımın dört ilkesini de sayar: karşıtlık, tekrar, hizalama ve yakınlık. Hikâyedeki su ısıtıcısı örneği bize ait, Pink'in değil."
+  },
+  "en": {
+    "title": "Design Beyond Function",
+    "description": "Pink's design chapter says making something merely functional is no longer enough. His practical advice is small: keep a design notebook.",
+    "hook": "Which object or screen annoyed you this week?",
+    "one_minute_summary": "In A Whole New Mind, Pink counts design as the first of six senses. With abundance, he says, merely functional no longer wins. Summaries of the chapter cite the iPod, which took over from MP3 players with more functionality. Pink suggests a design notebook: record good and bad design from everyday life, and sketch a better version when an appliance frustrates you. The chapter also gives four graphic design principles: contrast, repetition, alignment and proximity. The kettle example in the story is ours, not Pink's."
+  },
+  "es": {
+    "title": "Diseño más allá de la función",
+    "description": "El capítulo de Pink sobre diseño dice que ya no basta con que algo sea funcional. Su consejo práctico es pequeño: llevar un cuaderno de diseño.",
+    "hook": "¿Qué objeto o pantalla te molestó esta semana?",
+    "one_minute_summary": "En A Whole New Mind, Pink cuenta el diseño como el primero de sus seis sentidos. Con la abundancia, dice, lo meramente funcional ya no gana. Los resúmenes del capítulo citan el iPod, que se impuso a reproductores de MP3 con más funcionalidad. Pink propone un cuaderno de diseño: anota el buen y el mal diseño de la vida diaria y dibuja una versión mejor cuando un aparato te frustre. El capítulo recoge cuatro principios del diseño gráfico: contraste, repetición, alineación y proximidad. El ejemplo del hervidor es nuestro, no de Pink."
+  },
+  "de": {
+    "title": "Design jenseits der Funktion",
+    "description": "Pinks Designkapitel sagt, dass bloße Funktion nicht mehr reicht. Sein praktischer Rat ist klein: ein Designheft führen.",
+    "hook": "Welches Objekt oder welcher Bildschirm hat dich diese Woche geärgert?",
+    "one_minute_summary": "In A Whole New Mind zählt Pink das Design als ersten von sechs Sinnen. Im Überfluss, sagt er, gewinnt bloße Funktion nicht mehr. Zusammenfassungen des Kapitels nennen den iPod, der MP3-Player mit mehr Funktionen verdrängte. Pink rät zu einem Designheft: gutes und schlechtes Alltagsdesign notieren und bei Ärger über ein Gerät eine bessere Version skizzieren. Das Kapitel nennt vier Grundregeln der Grafikgestaltung: Kontrast, Wiederholung, Ausrichtung und Nähe. Das Wasserkocher-Beispiel stammt von uns, nicht von Pink."
+  }
+}

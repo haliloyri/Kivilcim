@@ -1,0 +1,61 @@
+{
+  "story_id": 1702,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Comfort Crisis",
+    "author": "Michael Easter",
+    "year": "2021"
+  },
+  "confidence": "medium",
+  "confidence_note": "Trip basics (a 33-day, on-foot caribou hunt in the Alaskan Arctic, long boredom, no phone signal) were checked against several secondary descriptions of the book, not page by page. Omitted on purpose: guide and companion names, the region name (Brooks Range was not confirmed), distances, pack weights, any research citations from the boredom chapter, and the 'misogi' idea. The conclusion paragraph follows the reference TR text and the book's general argument; Easter's exact post-trip habits were not verified.",
+  "facts": [
+    "Michael Easter, a journalist, wrote The Comfort Crisis on the argument that modern life has engineered out discomfort: cold and heat, hunger, hard physical effort, boredom, uncertainty.",
+    "To test the idea on himself he joined a caribou hunt in the Alaskan Arctic that lasted 33 days and was done on foot.",
+    "He went with other hunters and carried a heavy pack across open country; there was no phone signal.",
+    "Long stretches of the trip were boredom and waiting, with no screens to fill them.",
+    "Food was not guaranteed: it depended on the hunt itself.",
+    "Easter did not come away claiming that discomfort is automatically good; in the account, chosen and purposeful difficulty is what made him notice capacities he normally leaves unused.",
+    "Ordinary comfort also became noticeable to him again after the trip.",
+    "Back home he argued for adding small, regular, voluntary hardships rather than rejecting comfort altogether.",
+    "Easter framed the trip as a test of the book's question: as comfort grows, which capacities do body and mind stop using?"
+  ],
+  "scene_details": [
+    "33 days on foot in the Alaskan Arctic",
+    "a heavy pack carried across open country",
+    "no phone signal"
+  ],
+  "tension": "A writer who studies how comfort shrinks us goes where nothing is comfortable for more than a month, and the useful result is not the one you would expect.",
+  "opening_idea": "Open on the number: 33 days on foot in the Alaskan Arctic, a pack on his back, no phone signal, a journalist who had been writing about comfort.",
+  "lessons": [
+    {
+      "idea": "Difficulty you choose and can end brings back abilities that comfort lets idle; it is the choice and purpose that matter, not the suffering.",
+      "anchor": "Easter's 33 days on foot with no signal"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What small, safe difficulty could you add to an ordinary week that you would actually repeat, and what would you watch for afterwards?",
+  "use_cases": [
+    {
+      "situation": "A friend says life would be better with everything easier.",
+      "move": "Mention Easter's 33 days on foot with no signal and say you want to try one deliberately harder thing this month.",
+      "context": "social"
+    },
+    {
+      "situation": "You always reach for the phone in any gap.",
+      "move": "Leave the phone in a bag for one wait or one commute and notice what the boredom does.",
+      "context": "self"
+    },
+    {
+      "situation": "Your team keeps removing every hard step from a task.",
+      "move": "Propose keeping one step hard on purpose this sprint and compare how it feels afterwards.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Easter walked 33 days to relearn what comfort had idled; pick one chosen hardship you can end whenever you like.",
+  "conversation_variants": {
+    "punchline_idea": "A journalist who wrote about comfort walked 33 days through the Alaskan Arctic and came back arguing for small chosen hardships, not suffering.",
+    "thirty_sec_idea": "Easter, 33 days on foot in the Alaskan Arctic, pack, no signal, boredom; his takeaway: purposeful chosen difficulty, not pain for its own sake.",
+    "question_idea": "",
+    "key_contrast_idea": "chosen hardship, not suffering"
+  }
+}

@@ -1,0 +1,30 @@
+{
+ "story_id": 1403,
+ "verdict": "keep",
+ "verify_note": "Verified against the full text on archive.org (Introduction, Power of Context ch.). Old numbers (2,000+ murders, crime down 50%, murders to one third) don't match the book: 2,154 murders and 626,182 serious crimes in 1992, down 64.3% to 770 and to 355,893 within five years. Story rebuilt on Gunn's graffiti rule and Bratton's fare-beating crackdown; causal claim flagged as contested (Gladwell lists other causes).",
+ "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+ "tr": {
+  "title": "Üç Gecelik Boya, Bir Silindir",
+  "description": "Metro müdürü Gunn kriz sırasında grafiti temizledi, sonra bilet atlayanlara yönelindi. Gladwell bunu suçun düşüşü için bir aday sayıyor, kesin neden değil.",
+  "hook": "Çevrenizde herkesin yanından geçtiği küçük bir kırık cam hangisi?",
+  "one_minute_summary": "1992'de New York'ta 2.154 cinayet vardı, beş yıl içinde sayı 770'e indi. Gladwell başka açıklamaları sayıp Kırık Camlar teorisini en ilginç aday olarak görüyor. Metro müdürü David Gunn, sistem çökerken grafitiyle uğraştı: temizlenen vagon bir daha boyanmayacaktı, Harlem'de üç gecelik bir resim silindirle kapatıldı. Sonra William Bratton günde tahminen 170.000 bilet atlayanın peşine düştü. Nedensellik tartışmalı, Gladwell bunu tek açıklama diye sunmuyor."
+ },
+ "en": {
+  "title": "Three Nights of Paint, One Roller",
+  "description": "Subway director Gunn scrubbed graffiti in the middle of a crisis, and later fare-beaters were targeted. Gladwell calls it a candidate for the fall in crime, not a proven cause.",
+  "hook": "Which small broken window around you does everyone walk past?",
+  "one_minute_summary": "New York had 2,154 murders in 1992, and within five years the number fell to 770. Gladwell lists other explanations and calls the Broken Windows theory the most intriguing candidate. Subway director David Gunn went after graffiti while the system was close to collapse: a cleaned car was never allowed to be vandalised again, and a three-night mural in a Harlem yard was rolled over. Later William Bratton targeted fare-beating, an estimated 170,000 riders a day. Causation is contested, and Gladwell does not present it as the only explanation."
+ },
+ "es": {
+  "title": "Tres noches de pintura, un rodillo",
+  "description": "El director del metro Gunn limpió grafitis en plena crisis y después se fue a por quienes se colaban. Gladwell lo ve como candidato para explicar la caída del crimen, no como causa probada.",
+  "hook": "¿Qué ventana rota pequeña pasan todos por alto a tu alrededor?",
+  "one_minute_summary": "Nueva York tuvo 2.154 asesinatos en 1992 y en cinco años la cifra bajó a 770. Gladwell enumera otras explicaciones y ve en la teoría de las ventanas rotas el candidato más intrigante. El director del metro, David Gunn, fue a por los grafitis cuando el sistema casi se hundía: un vagón limpio no volvía a ser vandalizado y un mural de tres noches en Harlem fue tapado con rodillos. Luego William Bratton se centró en quienes se colaban, unos 170.000 al día. La causalidad es discutida y Gladwell no la presenta como única."
+ },
+ "de": {
+  "title": "Drei Nächte Farbe, eine Rolle",
+  "description": "U-Bahn-Chef Gunn entfernte Graffiti mitten in der Krise, später ging man gegen Schwarzfahrer vor. Gladwell nennt das einen Kandidaten für den Rückgang der Kriminalität, keine bewiesene Ursache.",
+  "hook": "Welches kleine kaputte Fenster übergeht in deiner Umgebung jeder?",
+  "one_minute_summary": "New York hatte 1992 2.154 Morde, innerhalb von fünf Jahren sank die Zahl auf 770. Gladwell führt andere Erklärungen auf und sieht in der Broken-Windows-Theorie den interessantesten Kandidaten. U-Bahn-Chef David Gunn ging gegen Graffiti vor, als das System fast zusammenbrach: Ein gereinigter Wagen durfte nie wieder beschmiert werden, ein dreinächtiges Bild in Harlem wurde überrollt. Später nahm William Bratton Schwarzfahrer ins Visier, geschätzt 170.000 pro Tag. Die Kausalität ist umstritten, Gladwell stellt sie nicht als einzige Erklärung dar."
+ }
+}

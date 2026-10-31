@@ -1,0 +1,35 @@
+{
+ "story_id": 1630,
+ "verdict": "keep",
+ "verify_note": "Central thesis (patients who put others first, hold anger in, cannot say no; body says the no) is the book's core, per publisher description and multiple reviews/summaries. No named case used. Debate caveat already in story.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Hayır Diyemeyen Kişi",
+  "description": "Gabor Maté, kronik hastalarında hep başkasını önceleyen, öfkesini içine atan ve hayır diyemeyen insanlar gördü. Ona göre bedenin söylediği hayır, kişinin söyleyemediği hayırdır.",
+  "hook": "Son kez ne zaman içinizden hayır derken evet dediniz?",
+  "one_minute_summary": "Gabor Maté yıllarca ciddi kronik hastalığı olan insanlarla çalıştı. Çoğu başkalarının ihtiyacını kendininkinin önüne koyuyor, öfkesini içinde tutuyor ve hayır demekte çok zorlanıyordu. Maté'ye göre hayır diyemeyen kişinin yerine bazen beden diyor: yorgunlukla, ağrıyla, hastalıkla. Aracı, yıllarca süren kronik stres. Hastalığı kişinin hatası saymıyor, anlamaya çalışıyor. Stresle hastalık arasındaki bağın gücü tıpta hâlâ tartışılıyor. Kitap teşhis ya da tedavi planı değil, bir hekimin yorumu."
+ },
+ "en": {
+  "title": "The Person Who Never Says No",
+  "description": "Gabor Maté saw a pattern in chronically ill patients: they put others first, held their anger in and rarely said no. In his view, the body says the no the person could not.",
+  "hook": "When did you last say yes while something in you had already said no?",
+  "one_minute_summary": "Physician Gabor Maté treated people with serious chronic illness and kept meeting the same way of living. They put other people's needs first, held anger in and found it very hard to say no. His idea is that when someone cannot say no, the body sometimes does it for them, through exhaustion, pain or illness, with long-running stress as the route. He does not blame the patient. How strong the stress and disease link is, and which way it runs, is still debated, and the book offers no diagnosis or treatment."
+ },
+ "es": {
+  "title": "La persona que nunca dice no",
+  "description": "Gabor Maté observó en pacientes con enfermedades crónicas graves un patrón: anteponían a los demás, guardaban la rabia y no sabían negarse. Según él, el cuerpo dice el no que la persona nunca dijo.",
+  "hook": "¿Cuándo fue la última vez que dijiste que sí con algo dentro que ya había dicho no?",
+  "one_minute_summary": "El médico Gabor Maté trató durante años a pacientes con enfermedades crónicas graves y veía lo mismo una y otra vez: ponían las necesidades ajenas primero, guardaban la rabia y no podían negarse a nada. Su tesis es que, cuando alguien no logra decir que no, a veces lo dice su cuerpo, con agotamiento, dolor o enfermedad, a través del estrés crónico. No culpa al paciente. Cuánto pesa el estrés en la enfermedad sigue debatido, y el libro no ofrece diagnóstico ni tratamiento."
+ },
+ "de": {
+  "title": "Wer nie Nein sagt",
+  "description": "Gabor Maté sah bei schwer chronisch Kranken ein Muster: Sie stellten andere an die erste Stelle, schluckten Ärger und sagten kaum Nein. Das Nein, das der Mensch nie aussprach, übernimmt dann der Körper.",
+  "hook": "Wann hast du zuletzt Ja gesagt, obwohl in dir schon ein Nein war?",
+  "one_minute_summary": "Gabor Maté behandelte Menschen mit schweren chronischen Erkrankungen und sah bei vielen dasselbe: Sie stellten die Wünsche anderer über die eigenen, behielten ihren Ärger für sich und brachten kaum ein Nein heraus. Seine Erklärung: Wer nicht Nein sagen kann, bei dem sagt manchmal der Körper es, als Erschöpfung, Schmerz oder Krankheit, über chronischen Stress. Er macht Kranke nicht verantwortlich. Wie stark Stress und Krankheit zusammenhängen, ist umstritten. Das Buch ist die Deutung eines Arztes, kein Befund."
+ }
+}
