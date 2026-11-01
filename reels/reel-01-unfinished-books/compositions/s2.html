@@ -1,0 +1,74 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F7F3EC; overflow: hidden; }
+    .kicker { position: absolute; left: 80px; right: 80px; top: 196px; font-family: "Inter", sans-serif; font-weight: 600;
+      font-size: 30px; letter-spacing: 0.18em; text-transform: uppercase; color: #1F5F5B; }
+    .cap { position: absolute; left: 80px; right: 60px; top: 1150px; font-family: "Inter", sans-serif; font-weight: 800;
+      font-size: 66px; line-height: 1.16; letter-spacing: -0.02em; color: #8C837A; opacity: 0; }
+    .ttl { position: absolute; left: 80px; right: 80px; font-family: "Playfair Display", serif; font-weight: 700;
+      letter-spacing: -0.015em; color: #24211E; }
+    .ttl .ln { display: block; overflow: hidden; padding-bottom: 10px; }
+    .ttl .w { display: inline-block; }
+    .ttl .acc { color: #1F5F5B; }
+    .shot { position: absolute; left: 80px; top: 270px; width: 920px; height: 790px;
+      border-radius: 36px; overflow: hidden; background: #F7F3EC; border: 2px solid #E6DED3; }
+    .cam { position: absolute; left: 0; top: 0; width: 920px; height: 1990.974px; }
+    .cam img { display: block; width: 100%; height: 100%; }
+    .mask { position: absolute; }
+    .ink { position: absolute; left: 0; top: 0; overflow: visible; }
+    .tap { position: absolute; width: 120px; height: 120px; border-radius: 50%; border: 6px solid #1F5F5B; opacity: 0; }
+    .dot { position: absolute; width: 44px; height: 44px; border-radius: 50%; background: rgba(31, 95, 91, 0.35); opacity: 0; }
+    .fade { position: absolute; left: 0; right: 0; bottom: 0; height: 110px; background: linear-gradient(rgba(247, 243, 236, 0), #F7F3EC); }
+  </style>
+  <div id="root" data-composition-id="s2" data-width="1080" data-height="1920">
+    <div class="kicker" id="s2-k">Today's story</div>
+    <div class="shot" id="s2-shot">
+      <div class="cam" id="s2-cam">
+        <img src="assets/screens/03-story-detail.png" alt="Albor story screen" />
+        <div class="mask" style="left: 273.641px; top: 290.94px; width: 143.111px; height: 53.47px; background: #F7F3EC"></div>
+
+
+      </div>
+      <div class="fade"></div>
+    </div>
+    <div class="cap" id="s2-c0"><span id="s2-c0w0">Albor</span> <span id="s2-c0w1">takes</span> <span id="s2-c0w2">one</span> <span id="s2-c0w3">idea</span></div>
+    <div class="cap" id="s2-c1"><span id="s2-c1w0">from</span> <span id="s2-c1w1">a</span> <span id="s2-c1w2">book</span> <span id="s2-c1w3">like</span> <span id="s2-c1w4">this</span> <span id="s2-c1w5">one,</span></div>
+    <div class="cap" id="s2-c2"><span id="s2-c2w0">and</span> <span id="s2-c2w1">tells</span> <span id="s2-c2w2">it</span> <span id="s2-c2w3">as</span> <span id="s2-c2w4">a</span> <span id="s2-c2w5">short,</span> <span id="s2-c2w6">true</span> <span id="s2-c2w7">story.</span></div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    // the shot pushes in from below; the camera keeps moving over the real screen
+    tl.fromTo("#s2-shot", { opacity: 0, y: 90, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 0);
+    tl.fromTo("#s2-k", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, 0.12);
+    tl.fromTo("#s2-cam", { x: 0, y: -259.487, scale: 1, transformOrigin: "0 0" },
+      { x: 0, y: -298.803, scale: 1, duration: 5.516, ease: "sine.inOut" }, 0);
+
+
+    tl.fromTo("#s2-c0", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.16, ease: "power2.out" }, 0.12);
+    tl.set("#s2-c0w0", { color: "#1F5F5B" }, 0.2); tl.set("#s2-c0w0", { color: "#24211E" }, 0.688);
+    tl.set("#s2-c0w1", { color: "#1F5F5B" }, 0.688); tl.set("#s2-c0w1", { color: "#24211E" }, 0.989);
+    tl.set("#s2-c0w2", { color: "#1F5F5B" }, 0.989); tl.set("#s2-c0w2", { color: "#24211E" }, 1.21);
+    tl.set("#s2-c0w3", { color: "#1F5F5B" }, 1.21); tl.set("#s2-c0w3", { color: "#24211E" }, 1.674);
+    tl.to("#s2-c0", { opacity: 0, duration: 0.08 }, 1.492);
+    tl.fromTo("#s2-c1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.16, ease: "power2.out" }, 1.502);
+    tl.set("#s2-c1w0", { color: "#1F5F5B" }, 1.582); tl.set("#s2-c1w0", { color: "#24211E" }, 1.756);
+    tl.set("#s2-c1w1", { color: "#1F5F5B" }, 1.756); tl.set("#s2-c1w1", { color: "#24211E" }, 1.825);
+    tl.set("#s2-c1w2", { color: "#1F5F5B" }, 1.825); tl.set("#s2-c1w2", { color: "#24211E" }, 2.058);
+    tl.set("#s2-c1w3", { color: "#1F5F5B" }, 2.058); tl.set("#s2-c1w3", { color: "#24211E" }, 2.232);
+    tl.set("#s2-c1w4", { color: "#1F5F5B" }, 2.232); tl.set("#s2-c1w4", { color: "#24211E" }, 2.452);
+    tl.set("#s2-c1w5", { color: "#1F5F5B" }, 2.452); tl.set("#s2-c1w5", { color: "#24211E" }, 2.858);
+    tl.to("#s2-c1", { opacity: 0, duration: 0.08 }, 2.722);
+    tl.fromTo("#s2-c2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.16, ease: "power2.out" }, 2.732);
+    tl.set("#s2-c2w0", { color: "#1F5F5B" }, 2.812); tl.set("#s2-c2w0", { color: "#24211E" }, 2.998);
+    tl.set("#s2-c2w1", { color: "#1F5F5B" }, 2.998); tl.set("#s2-c2w1", { color: "#24211E" }, 3.288);
+    tl.set("#s2-c2w2", { color: "#1F5F5B" }, 3.288); tl.set("#s2-c2w2", { color: "#24211E" }, 3.393);
+    tl.set("#s2-c2w3", { color: "#1F5F5B" }, 3.393); tl.set("#s2-c2w3", { color: "#24211E" }, 3.52);
+    tl.set("#s2-c2w4", { color: "#1F5F5B" }, 3.52); tl.set("#s2-c2w4", { color: "#24211E" }, 3.613);
+    tl.set("#s2-c2w5", { color: "#1F5F5B" }, 3.613); tl.set("#s2-c2w5", { color: "#24211E" }, 3.985);
+    tl.set("#s2-c2w6", { color: "#1F5F5B" }, 3.985); tl.set("#s2-c2w6", { color: "#24211E" }, 4.345);
+    tl.set("#s2-c2w7", { color: "#1F5F5B" }, 4.345); tl.set("#s2-c2w7", { color: "#24211E" }, 5.366);
+    tl.to("#s2-c2", { opacity: 0, duration: 0.08 }, 5.466);
+    window.__timelines["s2"] = tl;
+  </script>
+</template>

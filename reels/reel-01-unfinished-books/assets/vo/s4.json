@@ -1,0 +1,69 @@
+{
+  "key": "b313e39dd588b791d077506e7e06a28b219d4de3",
+  "text": "Then it asks you one question. About your week, not the book.",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "model": "eleven_multilingual_v2",
+  "duration": 4.458231,
+  "words": [
+    {
+      "w": "Then",
+      "start": 0,
+      "end": 0.197
+    },
+    {
+      "w": "it",
+      "start": 0.244,
+      "end": 0.302
+    },
+    {
+      "w": "asks",
+      "start": 0.36,
+      "end": 0.604
+    },
+    {
+      "w": "you",
+      "start": 0.639,
+      "end": 0.731
+    },
+    {
+      "w": "one",
+      "start": 0.813,
+      "end": 0.964
+    },
+    {
+      "w": "question.",
+      "start": 0.998,
+      "end": 1.591
+    },
+    {
+      "w": "About",
+      "start": 2.078,
+      "end": 2.38
+    },
+    {
+      "w": "your",
+      "start": 2.438,
+      "end": 2.589
+    },
+    {
+      "w": "week,",
+      "start": 2.659,
+      "end": 3.1
+    },
+    {
+      "w": "not",
+      "start": 3.297,
+      "end": 3.448
+    },
+    {
+      "w": "the",
+      "start": 3.483,
+      "end": 3.553
+    },
+    {
+      "w": "book.",
+      "start": 3.599,
+      "end": 4.458
+    }
+  ]
+}

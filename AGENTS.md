@@ -99,6 +99,7 @@ Custom skills in `.github/skills/`:
 | **run-ios** | `ios çalıştır`, `simulatörde aç`, `run ios` |
 | **expo-prebuild** | `prebuild yap`, `native güncelle`, `expo prebuild` |
 | **db-migration** | `veritabanı değiştir`, `tablo ekle`, `schema güncelle` |
+| **albor-reel** (`.claude/skills/`) | `reels videosu yap`, `reel üret`, `make a reel` — fixed-format marketing reel from `reels/<id>/reel.json` |
 | **proofread-stories** | `hikayeleri kontrol et`, `dil dil kontrol et`, `parça parça kontrol et`, `yazım yanlışı var mı`, `onaylı düzeltmeleri uygula` |
 
 ## Story Content Pipeline (P1 rewrite) — rules for every agent

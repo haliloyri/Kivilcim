@@ -1,0 +1,79 @@
+{
+  "key": "9f8eb61e033383ff150c47196e09513fc80f9e2b",
+  "text": "Ben Horowitz, weeks from running out of cash, deciding what his company should become.",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "model": "eleven_multilingual_v2",
+  "duration": 5.10839,
+  "words": [
+    {
+      "w": "Ben",
+      "start": 0,
+      "end": 0.267
+    },
+    {
+      "w": "Horowitz,",
+      "start": 0.337,
+      "end": 0.836
+    },
+    {
+      "w": "weeks",
+      "start": 0.94,
+      "end": 1.207
+    },
+    {
+      "w": "from",
+      "start": 1.242,
+      "end": 1.382
+    },
+    {
+      "w": "running",
+      "start": 1.44,
+      "end": 1.683
+    },
+    {
+      "w": "out",
+      "start": 1.73,
+      "end": 1.858
+    },
+    {
+      "w": "of",
+      "start": 1.904,
+      "end": 1.962
+    },
+    {
+      "w": "cash,",
+      "start": 2.032,
+      "end": 2.473
+    },
+    {
+      "w": "deciding",
+      "start": 2.577,
+      "end": 3.019
+    },
+    {
+      "w": "what",
+      "start": 3.053,
+      "end": 3.17
+    },
+    {
+      "w": "his",
+      "start": 3.204,
+      "end": 3.297
+    },
+    {
+      "w": "company",
+      "start": 3.355,
+      "end": 3.68
+    },
+    {
+      "w": "should",
+      "start": 3.715,
+      "end": 3.889
+    },
+    {
+      "w": "become.",
+      "start": 3.924,
+      "end": 5.108
+    }
+  ]
+}

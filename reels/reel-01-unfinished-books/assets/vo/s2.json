@@ -1,0 +1,99 @@
+{
+  "key": "60abe29a529bc04956c68e4c367722e53a206908",
+  "text": "Albor takes one idea from a book like this one, and tells it as a short, true story.",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "model": "eleven_multilingual_v2",
+  "duration": 5.01551,
+  "words": [
+    {
+      "w": "Albor",
+      "start": 0,
+      "end": 0.43
+    },
+    {
+      "w": "takes",
+      "start": 0.488,
+      "end": 0.731
+    },
+    {
+      "w": "one",
+      "start": 0.789,
+      "end": 0.964
+    },
+    {
+      "w": "idea",
+      "start": 1.01,
+      "end": 1.324
+    },
+    {
+      "w": "from",
+      "start": 1.382,
+      "end": 1.521
+    },
+    {
+      "w": "a",
+      "start": 1.556,
+      "end": 1.579
+    },
+    {
+      "w": "book",
+      "start": 1.625,
+      "end": 1.8
+    },
+    {
+      "w": "like",
+      "start": 1.858,
+      "end": 2.009
+    },
+    {
+      "w": "this",
+      "start": 2.032,
+      "end": 2.183
+    },
+    {
+      "w": "one,",
+      "start": 2.252,
+      "end": 2.508
+    },
+    {
+      "w": "and",
+      "start": 2.612,
+      "end": 2.752
+    },
+    {
+      "w": "tells",
+      "start": 2.798,
+      "end": 3.042
+    },
+    {
+      "w": "it",
+      "start": 3.088,
+      "end": 3.158
+    },
+    {
+      "w": "as",
+      "start": 3.193,
+      "end": 3.274
+    },
+    {
+      "w": "a",
+      "start": 3.32,
+      "end": 3.355
+    },
+    {
+      "w": "short,",
+      "start": 3.413,
+      "end": 3.762
+    },
+    {
+      "w": "true",
+      "start": 3.785,
+      "end": 4.098
+    },
+    {
+      "w": "story.",
+      "start": 4.145,
+      "end": 5.016
+    }
+  ]
+}

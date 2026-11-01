@@ -1,0 +1,64 @@
+{
+  "key": "d7ff6900d5fce1163b64c45358d41bceb58cfd83",
+  "text": "How many books did you start this year... and never finish?",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "model": "eleven_multilingual_v2",
+  "duration": 3.390113,
+  "words": [
+    {
+      "w": "How",
+      "start": 0,
+      "end": 0.174
+    },
+    {
+      "w": "many",
+      "start": 0.209,
+      "end": 0.36
+    },
+    {
+      "w": "books",
+      "start": 0.406,
+      "end": 0.65
+    },
+    {
+      "w": "did",
+      "start": 0.673,
+      "end": 0.801
+    },
+    {
+      "w": "you",
+      "start": 0.836,
+      "end": 0.906
+    },
+    {
+      "w": "start",
+      "start": 0.952,
+      "end": 1.219
+    },
+    {
+      "w": "this",
+      "start": 1.254,
+      "end": 1.393
+    },
+    {
+      "w": "year...",
+      "start": 1.463,
+      "end": 1.8
+    },
+    {
+      "w": "and",
+      "start": 1.834,
+      "end": 1.985
+    },
+    {
+      "w": "never",
+      "start": 2.043,
+      "end": 2.241
+    },
+    {
+      "w": "finish?",
+      "start": 2.299,
+      "end": 3.39
+    }
+  ]
+}
