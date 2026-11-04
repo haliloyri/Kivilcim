@@ -888,7 +888,7 @@ revoke all on function public.claim_referral(uuid, bigint, text) from public;
 grant execute on function public.claim_referral(uuid, bigint, text) to authenticated;
 
 -- ─── In-app account deletion (App Store 5.1.1(v)) ──────────────────────────
--- Kept in sync with migrations/20261002000000_delete_my_account.sql.
+-- Kept in sync with migrations/20261104000000_delete_my_account_push_tokens.sql.
 create or replace function public.delete_my_account()
 returns void
 language plpgsql security definer set search_path = public, auth as $$
@@ -898,6 +898,7 @@ begin
   if v_uid is null then
     raise exception 'not authenticated';
   end if;
+  delete from public.push_tokens where user_id = v_uid;
   delete from auth.users where id = v_uid;
 end;
 $$;
