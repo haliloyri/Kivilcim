@@ -1,5 +1,5 @@
 {
   "NSPhotoLibraryAddUsageDescription": "Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.",
-  "NSUserTrackingUsageDescription": "Bu tanımlayıcı, sana kişiselleştirilmiş reklamlar sunmak için kullanılacaktır.",
+  "NSUserTrackingUsageDescription": "Albor'u ücretsiz tutmak için reklam gösteriyoruz. İzin verirsen bu tanımlayıcı, sana daha alakalı reklamlar göstermek için kullanılır. Reddetsen de uygulamanın tamamı çalışır.",
   "NSMicrophoneUsageDescription": "Albor, hikayeleri sesli olarak kaydedip dinleyebilmen için mikrofona erişmek ister."
 }

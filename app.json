@@ -44,7 +44,7 @@
       [
         "expo-media-library",
         {
-          "photosPermission": "Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.",
+          "photosPermission": false,
           "savePhotosPermission": "Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.",
           "isAccessMediaLocationEnabled": false
         }
@@ -55,7 +55,7 @@
           "_comment": "Only used if `expo prebuild` regenerates ios/ and android/. The committed native projects are the source of truth: Debug uses Google's sample app ID, Release uses the real iOS one (ca-app-pub-1087148522890227~7920022425) (ios: GAD_APPLICATION_IDENTIFIER build setting in project.pbxproj; android: manifestPlaceholders in android/app/build.gradle). Ad UNIT ids live in extra.admob.",
           "androidAppId": "ca-app-pub-3940256099942544~3347511713",
           "iosAppId": "ca-app-pub-1087148522890227~7920022425",
-          "userTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you.",
+          "userTrackingUsageDescription": "Albor'u ücretsiz tutmak için reklam gösteriyoruz. İzin verirsen bu tanımlayıcı, sana daha alakalı reklamlar göstermek için kullanılır. Reddetsen de uygulamanın tamamı çalışır.",
           "skAdNetworkItems": [
             "cstr6suwn9.skadnetwork",
             "4fzdc2evr5.skadnetwork",

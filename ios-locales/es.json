@@ -1,5 +1,5 @@
 {
   "NSPhotoLibraryAddUsageDescription": "Albor solicita permiso para guardar en tu galería las tarjetas para compartir que creas.",
-  "NSUserTrackingUsageDescription": "Este identificador se usará para ofrecerte anuncios personalizados.",
+  "NSUserTrackingUsageDescription": "Los anuncios ayudan a que Albor sea gratis. Si lo permites, este identificador se usa para mostrarte anuncios más relevantes. Albor funciona por completo en ambos casos.",
   "NSMicrophoneUsageDescription": "Albor solicita acceso al micrófono para que puedas grabar y escuchar historias en voz alta."
 }

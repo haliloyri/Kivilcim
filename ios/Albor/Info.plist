@@ -55,10 +55,8 @@
 	<string>Albor, hikayeleri sesli olarak kaydedip dinleyebilmen için mikrofona erişmek ister.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister.</string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>This identifier will be used to deliver personalized ads to you.</string>
+	<string>Albor'u ücretsiz tutmak için reklam gösteriyoruz. İzin verirsen bu tanımlayıcı, sana daha alakalı reklamlar göstermek için kullanılır. Reddetsen de uygulamanın tamamı çalışır.</string>
 	<key>RCTMetroPort</key>
 	<string>$(RCT_METRO_PORT)</string>
 	<key>RCTNewArchEnabled</key>
