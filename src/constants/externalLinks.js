@@ -17,7 +17,10 @@ export const LEGAL_URLS = Object.freeze({
 export const getLegalUrls = (lang) => Object.freeze({
   privacy: localizedSiteUrl('privacy', lang),
   terms: localizedSiteUrl('terms', lang),
-  refund: localizedSiteUrl('refund', lang),
+  // The refund page has no language routes on the site yet: /refund/tr and the
+  // other three return 404, while /refund works. Keep it language-less until
+  // the site publishes them, so the paywall never opens a dead link.
+  refund: LEGAL_URLS.refund,
   support: localizedSiteUrl('support', lang),
 });
 
