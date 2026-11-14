@@ -1,0 +1,58 @@
+{
+ "story_id": 1375,
+ "kind": "anecdote",
+ "book": {
+  "title": "Meditations",
+  "author": "Marcus Aurelius",
+  "year": ""
+ },
+ "confidence": "high",
+ "confidence_note": "Passages checked in George Long's public-domain translation (MIT Classics): 1.7 Rusticus, the place notes ending Books 1 and 2, 2.1 and 5.1. Dating (c. 170-180), Greek language, the heading meaning 'to himself', twelve books, probable non-publication and Arethas c. 907 come from Wikipedia. Year left empty because composition spans a decade; the DB's '180' is his death year. The old text's invented diary lines ('I can't get up', 'someone angered me') were replaced with the real passages.",
+ "facts": [
+  "Written in Greek, probably 170-180 AD, much of it on campaign; 12 books; probably not for publication; Greek heading means 'things to himself'.",
+  "Book 1 ends 'Among the Quadi at the Granua'; Book 2 ends 'This in Carnuntum'.",
+  "Book 1 lists debts; from Rusticus: not to show off as a disciplined man, avoid rhetoric, poetry and fine writing, write letters simply; Rusticus lent him Epictetus's discourses.",
+  "5.1: rising unwillingly, 'I am rising to the work of a human being'; was I made to lie in the bedclothes and keep warm? 'But this is more pleasant'; plants, birds, ants, spiders, bees at work; rest is necessary but nature set bounds, which he exceeds in eating and drinking but not in work.",
+  "2.1: 'Begin the morning by saying to thyself, I shall meet with the busy-body, the ungrateful, arrogant, deceitful, envious, unsocial'; he cannot be angry with kin; made for co-operation like feet, hands, eyelids.",
+  "Earliest clear mention by another writer: Arethas of Caesarea, c. 907."
+ ],
+ "scene_details": [
+  "the place notes 'Among the Quadi at the Granua' and 'This in Carnuntum'",
+  "the emperor arguing with himself under the bedclothes",
+  "feet, hands, eyelids"
+ ],
+ "tension": "The most powerful man in the empire writes himself reminders to get out of bed, never meant for anyone else.",
+ "opening_idea": "Open on the place notes or the 5.1 bed sentence, without naming him or the book.",
+ "lessons": [
+  {
+   "idea": "Write yourself short private notes in advance for hard moments.",
+   "anchor": "5.1 and 2.1 as morning self-reminders."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What one-sentence note would you leave yourself tonight for tomorrow's hardest moment?",
+ "use_cases": [
+  {
+   "situation": "Struggling with mornings",
+   "move": "Put the 5.1 line by the bed.",
+   "context": "self"
+  },
+  {
+   "situation": "Teen embarrassed about a diary",
+   "move": "Mention the emperor's private notes still read today.",
+   "context": "family"
+  },
+  {
+   "situation": "Friend dreads a difficult colleague",
+   "move": "Share 2.1's morning preparation.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "A Roman emperor wrote himself notes to get out of bed; prepare one sentence for your hardest moment.",
+ "conversation_variants": {
+  "punchline_idea": "Marcus Aurelius wrote himself a note arguing with his urge to stay in bed.",
+  "thirty_sec_idea": "Private campaign notebook, 5.1 and 2.1.",
+  "question_idea": "",
+  "key_contrast_idea": "Emperor, private notebook"
+ }
+}

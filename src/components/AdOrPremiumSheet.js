@@ -36,7 +36,9 @@ import {
 import Svg, { Circle, Line } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
+import Albi from './Albi';
 import { t } from '../locales/i18n';
+import { toUpperFor } from '../utils/locale';
 import { preloadRewarded } from '../utils/ads';
 import { FREE_DAILY_STORY_QUOTA } from '../utils/freeQuota';
 
@@ -69,7 +71,7 @@ const AdOrPremiumSheet = ({
   isAdLoading = false,
   lang = 'tr',
 }) => {
-  const { colors } = useTheme();
+  const { colors, isDark } = useTheme();
   const cs = makeStyles(colors);
 
   // Start fetching the ad as soon as the sheet appears, so it is usually ready
@@ -113,10 +115,8 @@ const AdOrPremiumSheet = ({
           <ScrollView contentContainerStyle={cs.scroll} showsVerticalScrollIndicator={false} bounces={false}>
             {/* 1 · Message */}
             <View style={cs.msg}>
-              <View style={cs.iconCircle}>
-                <Ionicons name="moon" size={28} color={colors.primaryText} />
-              </View>
-              {isLimit ? <Text style={cs.eyebrow}>{t('adSheetEyebrow', lang)}</Text> : null}
+              <Albi pose="kota_doldu" size={80} disc={isDark} />
+              {isLimit ? <Text style={cs.eyebrow}>{toUpperFor(t('adSheetEyebrow', lang), lang)}</Text> : null}
               <Text style={cs.title}>{resolvedTitle}</Text>
               {resolvedSubtitle ? <Text style={cs.subtitle}>{resolvedSubtitle}</Text> : null}
             </View>
@@ -240,14 +240,6 @@ const makeStyles = (colors) => StyleSheet.create({
   },
   scroll: { paddingHorizontal: 20, paddingTop: 36, paddingBottom: 28 },
   msg: { alignItems: 'center' },
-  iconCircle: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: colors.primaryContainer,
-  },
   eyebrow: {
     marginTop: 18,
     fontSize: 12,

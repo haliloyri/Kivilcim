@@ -6,6 +6,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useCareerPath } from '../context/CareerPathContext';
 import { getNodesForPath, PATH_DEFINITIONS } from '../constants/careerPath';
 import { t } from '../locales/i18n';
+import { toUpperFor } from '../utils/locale';
 import CareerPathArtwork from '../components/career/CareerPathArtwork';
 
 const PATH_ICONS = {
@@ -61,7 +62,7 @@ const CareerPathSelectionScreen = ({ navigation }) => {
       <ImageBackground source={CAREER_HERO} imageStyle={styles.introImage} style={styles.intro}>
         <View style={styles.introScrim} />
         <View style={styles.introContent}>
-          <View style={styles.introKicker}><Ionicons name="gift-outline" size={15} color="#E9A94B" /><Text selectable style={styles.introKickerText}>{t('career.selection.free', lang)}</Text></View>
+          <View style={styles.introKicker}><Ionicons name="gift-outline" size={15} color="#E9A94B" /><Text selectable style={styles.introKickerText}>{toUpperFor(t('career.selection.free', lang), lang)}</Text></View>
           <Text selectable style={styles.title}>{t('career.selection.title', lang)}</Text>
           <Text selectable style={styles.subtitle}>{t('career.selection.subtitle', lang)}</Text>
         </View>
@@ -121,12 +122,12 @@ const CareerPathSelectionScreen = ({ navigation }) => {
               {isRecommended ? <Text selectable style={[styles.recommendedLabel, { color: colors.primaryText }]}>{t('career.selection.recommended', lang)}</Text> : null}
 
               <View style={[styles.detailBlock, { borderColor: colors.border }]}>
-                <Text selectable style={[styles.detailLabel, { color: colors.textSecondary }]}>{t('career.selection.behaviorLabel', lang)}</Text>
+                <Text selectable style={[styles.detailLabel, { color: colors.textSecondary }]}>{toUpperFor(t('career.selection.behaviorLabel', lang), lang)}</Text>
                 <Text selectable style={[styles.detailCopy, { color: colors.text }]}>{t(`careerPath.${path.id}.behavior`, lang)}</Text>
               </View>
 
               <View style={styles.previewBlock}>
-                <Text selectable style={[styles.detailLabel, { color: colors.textSecondary }]}>{t('career.selection.rankPreviewLabel', lang)}</Text>
+                <Text selectable style={[styles.detailLabel, { color: colors.textSecondary }]}>{toUpperFor(t('career.selection.rankPreviewLabel', lang), lang)}</Text>
                 <View style={styles.rankList}>
                   {nodes.map((node, index) => (
                     <View key={node.id} style={[styles.rankPill, { backgroundColor: isDark ? `${colors.border}6E` : colors.backgroundDark }]}>

@@ -1,0 +1,59 @@
+{
+  "story_id": 1628,
+  "kind": "concept",
+  "book": {
+    "title": "Trauma and Recovery",
+    "author": "Judith Lewis Herman",
+    "year": "1992"
+  },
+  "confidence": "high",
+  "confidence_note": "All quotes from recoverystories.info and childusa (p.133). The two-approach framing and food example in old text dropped. DB title is the Turkish edition title Travma ve İyileşme.",
+  "facts": [
+    "Herman states the first principle of recovery is empowerment of the survivor: she must be the author and arbiter of her own recovery.",
+    "Others can give advice, support, assistance, affection and care, but not cure.",
+    "Interventions that take control from the survivor can harm recovery, even when they seem in her interest.",
+    "Recovery can take place only within the context of relationships; it cannot occur in isolation.",
+    "Trauma isolates; a group re-creates a sense of belonging and bears witness.",
+    "The first task of recovery is to establish the survivor safety; it takes precedence over all others."
+  ],
+  "scene_details": [
+    "author and arbiter of her own recovery",
+    "advice, support, assistance, affection and care, but not cure",
+    "a group that bears witness"
+  ],
+  "tension": "Help from others is essential, yet it cannot do the one thing it wants most: cure.",
+  "opening_idea": "Start with the list: advice, support, assistance, affection and care, but not cure.",
+  "lessons": [
+    {
+      "idea": "When you help someone through something heavy, give your support and leave the decisions with them.",
+      "anchor": "Survivor as author and arbiter; others give care, not cure.",
+      "example": "A neighbour who brings soup and asks what is useful beats one who rearranges the kitchen."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "The next time someone close to you is struggling, what could you offer and what would you leave for them to decide?",
+  "use_cases": [
+    {
+      "situation": "A friend is in a hard period and you want to fix it.",
+      "move": "Ask what would help this week and offer only that, noting the choice is theirs.",
+      "context": "social"
+    },
+    {
+      "situation": "A colleague returns after a bad stretch.",
+      "move": "Say you are around and let them set how much to share.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You feel stuck after something painful.",
+      "move": "Name one person who can be around and one choice that stays yours today.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Offer care, not cure, and let the person decide.",
+  "conversation_variants": {
+    "punchline_idea": "Herman says others can offer advice, support, assistance, affection and care, but not cure.",
+    "thirty_sec_idea": "Judith Herman puts empowerment first: the survivor must be the author and arbiter of her own recovery. Others can give advice, support, assistance, affection and care, but not cure. Yet recovery cannot happen in isolation, so it takes safety first and then relationships.",
+    "question_idea": "",
+    "key_contrast_idea": "alone, or together"
+  }
+}

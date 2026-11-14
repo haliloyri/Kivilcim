@@ -1,0 +1,43 @@
+{
+  "book_no": 153,
+  "title": "Business Model Generation",
+  "authors": ["Alexander Osterwalder", "Yves Pigneur"],
+  "year": "2010",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Business_Model_Canvas",
+    "https://www.strategyzer.com/library/the-business-model-canvas",
+    "https://www.shortform.com/blog/business-model-generation-osterwalder/",
+    "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/business-model-generation-978-0-470-87641-1",
+    "https://www.sumizeit.com/books/scrum"
+  ],
+  "source_note": "Book itself not read. Facts come from Wikipedia (Business Model Canvas), Strategyzer, a Shortform summary and publisher listings. The Wikipedia page for the book returned 404.",
+  "facts": [
+    {"id":"f1","claim":"The book Business Model Generation (Osterwalder, Pigneur, with Tim Clark credited on Wikipedia) appeared in 2010; the publisher says it was co-created by 470 practitioners from 45 countries.","source":"Wikipedia Business Model Canvas; Wiley listing","confidence":"high"},
+    {"id":"f2","claim":"Osterwalder proposed the nine building blocks in 2005, from PhD work on business model ontology supervised by Yves Pigneur; the thesis is dated 2004.","source":"Wikipedia Business Model Canvas","confidence":"high"},
+    {"id":"f3","claim":"The nine blocks: customer segments, value propositions, channels, customer relationships, revenue streams, key resources, key activities, key partners, cost structure.","source":"Wikipedia; Shortform","confidence":"high"},
+    {"id":"f4","claim":"The canvas is printed on a large surface so groups can sketch and discuss the blocks with sticky notes or board markers.","source":"Wikipedia","confidence":"high"},
+    {"id":"f5","claim":"Layout: the right side represents the market, the left side what it takes to serve that market, with value propositions between them.","source":"Strategyzer","confidence":"medium"},
+    {"id":"f6","claim":"The blocks are interdependent: changing a customer segment affects channels, activities and costs; a change in one block can constrain or amplify the others.","source":"Strategyzer; Shortform","confidence":"medium"},
+    {"id":"f7","claim":"Criticism: the canvas is static (does not capture how a model evolves), says little about how components interact, and is conceptually isolated from the environment.","source":"Wikipedia","confidence":"high"},
+    {"id":"f8","claim":"Patterns chapter covers unbundling, the long tail, multi-sided platforms, FREE as a business model, and open business models.","source":"publisher table of contents listings","confidence":"high"},
+    {"id":"f9","claim":"Free pattern: at least one customer group always gets value for free, financed by another part of the model or another segment. Three subtypes: advertising, freemium (premium services), bait and hook (continuing purchases).","source":"Shortform","confidence":"medium"},
+    {"id":"f10","claim":"Advertising subtype: Google is the summary's example; advertiser revenue enables users to search for free. Facebook also discussed.","source":"Shortform","confidence":"medium"},
+    {"id":"f11","claim":"Multi-sided platform: two or more interdependent customer groups; the more active users a platform attracts, the more value it offers both sides.","source":"Shortform","confidence":"medium"},
+    {"id":"f12","claim":"Bait and hook examples in the summary: coffee machines that need capsules, printers that need ink. A reversal also exists: a high-priced premium product with a low-priced complement.","source":"Shortform","confidence":"medium"},
+    {"id":"f13","claim":"Revenue stream types listed for the canvas: asset sale, usage fee, subscription, lending/leasing/renting, licensing, brokerage, advertising.","source":"Wikipedia","confidence":"high"},
+    {"id":"f14","claim":"A business model describes how an organization creates, delivers and captures value (the book's own definition, recalled, not re-verified).","source":"own knowledge","confidence":"medium"}
+  ],
+  "rejected": [
+    {"claim":"2004 entrepreneur wrote an 87-page business plan for three years","reason":"No source; looks invented"},
+    {"claim":"Changing a canvas block takes 10 minutes versus months for a plan","reason":"No source"},
+    {"claim":"Osterwalder says the model is a living entity, continuously tested","reason":"Only a Strategyzer web line about testing the canvas; not attributable to the book"},
+    {"claim":"Spotify, Dropbox, LinkedIn as freemium; credit cards, newspapers, game platforms as two-sided","reason":"Not found in any source for the book"},
+    {"claim":"IKEA, Nespresso, Zipcar as model innovation cases; models cannot be copied","reason":"None appear in the book summary; unsupported"},
+    {"claim":"Southwest, Xiaomi, Evernote, Etsy, Amazon long tail share","reason":"Come from a summary's own notes, not confirmed as book content"}
+  ],
+  "stories": {
+    "1555": {"verdict":"keep","fact_ids":["f1","f2","f3","f4","f5","f6","f7"],"note":"Concept story; medium confidence."},
+    "1556": {"verdict":"keep","fact_ids":["f8","f9","f10","f11"],"note":"Concept story; Google example only via summary."},
+    "1557": {"verdict":"keep","fact_ids":["f3","f8","f9","f12","f13"],"note":"Reframed: old IKEA/Nespresso/Zipcar cases dropped; story built from revenue-stream types and bait-and-hook reversal. Low confidence."}
+  }
+}

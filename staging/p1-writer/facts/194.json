@@ -1,0 +1,133 @@
+{
+ "book_no": 194,
+ "title": "The Headspace Guide to Meditation",
+ "authors": [
+  "Andy Puddicombe"
+ ],
+ "year": "2012",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Andy_Puddicombe",
+  "https://dygest.co/en/books/the-headspace-guide-to-meditation-and-mindfulness/",
+  "https://www.goodreads.com/book/show/27414493-the-headspace-guide-to-meditation-mindfulness",
+  "https://www.goodreads.com/author/quotes/4874424.Andy_Puddicombe",
+  "https://www.abebooks.com/9781444722208/Get-Headspace-Andy-Puddicombe-1444722204/plp"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The book (first published in the UK as Get Some Headspace, 2011; Headspace Guide to Meditation and Mindfulness is the reissue) teaches one core exercise Puddicombe calls Take10: ten minutes, once a day. Publisher blurb: quiet the mind, feel less stressed and less tired 'in just ten minutes a day'.",
+   "source": "publisher blurb; Dygest summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f2",
+   "claim": "Take10 steps as summarised: sit undisturbed, upright back, hands resting; a few deep breaths, then let breathing return to its natural rhythm; when the mind wanders, notice it without irritation and return to the breath. A brief check-in on body, sounds and mood comes first.",
+   "source": "Dygest summary (secondary)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f3",
+   "claim": "Emptying the mind is not the aim. Thoughts arise in the way a heartbeat does; forcing silence is compared to stirring muddy water harder to make it clear.",
+   "source": "Dygest summary (secondary)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f4",
+   "claim": "The busy-road image: imagine sitting on the side of a busy road with traffic in both directions; each car or truck that passes is a thought, a physical sensation or an emotion. The aim is to sit and watch them pass.",
+   "source": "Dygest summary; excerpt-style listing found via search (paraphrased)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "The trap in the image: most of us do not just watch. We run into the road, chase a particularly shiny car, get caught up in where it is going, and only notice minutes later that we have been dragged off. It gets easier with practice, with less urge to run into the road.",
+   "source": "listing excerpt found via search (paraphrased, wording not verified in the book)",
+   "confidence": "low"
+  },
+  {
+   "id": "f6",
+   "claim": "Puddicombe says not all thinking is bad; creative and problem-solving thoughts have value.",
+   "source": "search excerpt (paraphrased)",
+   "confidence": "low"
+  },
+  {
+   "id": "f7",
+   "claim": "Author background: left sports science studies in 1994 after bereavement and trained about ten years as a Buddhist monk in Nepal, India, Burma (Myanmar), Thailand, Russia and elsewhere; full ordination in the Tibetan tradition at a monastery in the Himalayas in India; returned to the UK in 2004. Publisher bio: 'a former Buddhist monk with a degree in Circus Arts'.",
+   "source": "Wikipedia; Dygest; Goodreads bio",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Headspace was co-founded by Puddicombe and Richard Pierson in London in 2010, initially as an events company; a first app was out by January 2012.",
+   "source": "Wikipedia",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Quoted phrases attributed to the book: 'we are still only talking about ten minutes'; 'this is ten minutes that is going to set up your entire day for you'; 'less easily distracted by passing thoughts'.",
+   "source": "Goodreads quotes page (reader-submitted)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f10",
+   "claim": "The ten minutes are presented as a training ground for the rest of the day; the book applies mindfulness to eating, walking, running and falling asleep.",
+   "source": "Dygest summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "The method warns against two traps: white-knuckle effort and drowsy vagueness; the target is 'relaxed alertness'.",
+   "source": "Dygest summary",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1678: Puddicombe heard for years 'I tried but I can't, my mind won't stop'.",
+   "reason": "No source; invented framing. Dropped."
+  },
+  {
+   "claim": "Old 1678: examples 'forgot the bill', 'tomorrow's meeting' and the phrase 'attention-return muscle'.",
+   "reason": "Not found in book or summaries; the muscle image is not Puddicombe's wording as verified."
+  },
+  {
+   "claim": "Old 1679: Puddicombe in Tibet, friends in London asked 'how do I meditate?'.",
+   "reason": "No source for the friends scene. Wikipedia gives training across several countries and return to UK in 2004, not only Tibet."
+  },
+  {
+   "claim": "Old 1679: ten minutes regulates stress response, strengthens prefrontal cortex, calms amygdala, improves sleep.",
+   "reason": "Not attributable to the book; old text itself admits studies are small. Dropped as scientific claims."
+  },
+  {
+   "claim": "Old 1679: free starter, 'consistent ten minutes beats a perfect hour', 'compounding effect'.",
+   "reason": "Free starter and compounding not verified in the book; the 'ten minutes beats an hour' is not a verified quote."
+  }
+ ],
+ "stories": {
+  "1678": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f10",
+    "f11"
+   ],
+   "note": "Road image. Concept story with a weak primary source: summaries and excerpts only. Confidence medium-low; keep claims to f3-f5 and phrase as 'as Puddicombe describes it'."
+  },
+  "1679": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f7",
+    "f8",
+    "f9",
+    "f10"
+   ],
+   "note": "Ten minutes as the unit, ex-monk to a ten-minute method. Thin; confidence low-medium. Story will be shorter than range floor by up to 10%. No health claims."
+  }
+ }
+}

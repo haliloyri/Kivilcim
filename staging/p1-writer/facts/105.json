@@ -1,0 +1,175 @@
+{
+  "book_no": 105,
+  "title": "Quiet",
+  "authors": [
+    "Susan Cain"
+  ],
+  "year": "2012",
+  "sources": [
+    "https://insidestory.org.au/quiet-please",
+    "https://www.shortform.com/blog/jerome-kagan/",
+    "https://lifeclub.org/books/quiet-susan-cain-review-summary",
+    "https://sites.fuqua.duke.edu/fordlibrary/2012/07/30/book-review-quiet-the-power-of-introverts/index.html",
+    "https://paw.princeton.edu/article/reading-room-power-introverts"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Cain defines shyness as the fear of social disapproval or humiliation, and introversion as a preference for environments that are not over-stimulating; she uses this to show the two can be separated.",
+      "source": "Inside Story review; lifeclub summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Examples of the split: Barbra Streisand as a shy extrovert (outgoing but with severe stage fright), Bill Gates as a non-shy introvert.",
+      "source": "Inside Story; lifeclub",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Jerome Kagan of Harvard started a study in 1989 with about 500 four-month-old infants, exposing them for forty-five minutes to taped voices, popping balloons, colorful mobiles and cotton swabs with the smell of alcohol.",
+      "source": "shortform; search summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Kagan called infants who pumped their limbs and cried 'high-reactive' and calm ones 'low-reactive'; high-reactives were later more likely to become quiet, introverted children, low-reactives relaxed, confident extroverts.",
+      "source": "Inside Story; shortform",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Kagan retested the children with new things (a clown, a woman in a gas mask) at ages two, four, seven and eleven; most matched his predictions.",
+      "source": "shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Kagan stressed that high and low reactivity were not the only routes to introversion and extroversion.",
+      "source": "Inside Story; search summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Cain went to Harvard Business School, which she calls the 'Spiritual Capital of Extroversion', where future leaders are taught to act confidently and make decisions with incomplete information.",
+      "source": "Inside Story; Fuqua review",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "At HBS classroom participation drives status and grades; each incoming cohort runs the Subarctic Survival Situation, a group exercise in which students brainstorm how to survive a cold-weather crash with limited resources.",
+      "source": "search summaries of chapter 1",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Students attend largely to build lasting personal networks; days are group exercises and the evenings are 'an extreme sport'. Asked whether anyone on campus is quieter, one student answered 'I couldn't tell you'.",
+      "source": "Inside Story review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Cain argues that introverts prefer to work independently and that solitude can be a catalyst to innovation; brainstorming in groups is less effective than assumed.",
+      "source": "Inside Story",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Adam Grant's pizza-franchise leadership study appears in Quiet: extroverted leaders do better with passive employees, introverted leaders with proactive ones (figures reported as 16% and 14% higher profits, unverified in primary text).",
+      "source": "search summaries",
+      "confidence": "low"
+    },
+    {
+      "id": "f12",
+      "claim": "By one reviewer's account, about a quarter of Kagan's high-reactive children apparently suffered from social anxiety disorder.",
+      "source": "Inside Story review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Carl Schwartz, who retested the children as adults, concluded that we can stretch our personalities, but only up to a point.",
+      "source": "Inside Story review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Per studies Cain cites, one third to one half of Americans are introverts; introverts and extroverts have the same average IQ, but introverts tend to earn better grades in high school and college.",
+      "source": "Princeton Alumni Weekly review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Cain cites financial executives who said cautious, introverted leaders on Wall Street might have noticed warning signs before the economic meltdown (their view, not a study result).",
+      "source": "Princeton Alumni Weekly review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f16",
+      "claim": "Cain calls the trend of group work in schools and offices the New Groupthink and says group work should not dominate the school day.",
+      "source": "Princeton Alumni Weekly review",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Introvert and extrovert babies; extrovert babies 'curious and calm'; introverts have a 'neurological preference, not a character weakness'",
+      "reason": "Curious/calm wording and the neurological framing not found in sources; used only Kagan's reported reactions."
+    },
+    {
+      "claim": "A faculty member told Cain: 'If you have an idea but don't say it, you don't have an idea.'",
+      "reason": "No source found."
+    },
+    {
+      "claim": "Anatoly Karpov as a quiet chess champion",
+      "reason": "Not found in any Quiet summary."
+    },
+    {
+      "claim": "Buffett, Gates, Einstein as one list of deep thinkers",
+      "reason": "Gates appears (f2); the list as framed is not verified."
+    },
+    {
+      "claim": "Adam Grant found ambiverts are the best salespeople; introverted salespeople are better in some categories (1413)",
+      "reason": "Grant's sales study is a 2013 paper (Psychological Science, 340 call-centre reps), after Quiet (2012); not shown to be in the book."
+    },
+    {
+      "claim": "Introverts are better listeners who shape the solution to the customer's need",
+      "reason": "Not found in the book's sales material."
+    }
+  ],
+  "stories": {
+    "1411": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f12",
+        "f13"
+      ],
+      "note": "Shy vs introvert plus Kagan's babies; solid. Percentages of high-reactives differ between sources, omitted."
+    },
+    "1412": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f14",
+        "f15",
+        "f16"
+      ],
+      "note": "HBS scene only. Karpov and the faculty quote dropped. Thin: short story."
+    },
+    "1413": {
+      "verdict": "delete",
+      "fact_ids": [
+        "f11"
+      ],
+      "note": "Central claim (ambivert salespeople, Grant) cannot be tied to Quiet. A new story on Grant's pizza-franchise leadership study could replace it if the primary text is checked."
+    }
+  }
+}

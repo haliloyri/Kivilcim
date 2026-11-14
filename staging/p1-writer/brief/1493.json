@@ -1,0 +1,61 @@
+{
+  "story_id": 1493,
+  "kind": "concept",
+  "book": {
+    "title": "Lost Connections",
+    "author": "Johann Hari",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Built from summaries of the work chapter (Shortform, Big Think, a Substack summary), not the book text. The old text's London banker, his resignation and mentoring, and the generic 'research shows meaningless work predicts depression' were not found and are dropped. The Gallup figures (about 13 percent engaged in 2011-2012, 63 not engaged, 24 actively disengaged, 142 countries) and Marmot's Whitehall finding come from secondary summaries and are hedged. Gallup measures engagement, not depression; Marmot measured stress and heart attack. Critics say Hari selects evidence.",
+  "facts": [
+    "Lost Connections (2018) by Johann Hari lists disconnection from meaningful work as one of nine causes of depression and anxiety.",
+    "Summaries describe a Gallup survey of 2011-2012 across 142 countries in which about 13 percent of people said they were engaged in their work, 63 percent not engaged and 24 percent actively disengaged.",
+    "Michael Marmot began studying the British civil service (Whitehall) in the 1970s; the lower an employee's rank, the higher their stress and likelihood of a heart attack.",
+    "Hari stresses lack of control as the key factor: with no control over your work you are far likelier to be stressed and depressed; one summary says control predicts depression better than workplace, status or pay.",
+    "Three workplace factors named as harmful: feeling controlled, effort without reward, low status.",
+    "A bike repairman named Josh and his colleagues turned their workplace into a cooperative; the account says it worked, without figures.",
+    "Gallup measures work engagement, not depression, and Marmot's Whitehall work measured stress and heart attack; the link to depression is Hari's argument.",
+    "Critics say Hari selects evidence."
+  ],
+  "scene_details": [
+    "a survey figure: about 13 percent engaged",
+    "civil servants ranked from top to bottom, stress rising as rank falls",
+    "a bike repair shop turned into a cooperative by its workers"
+  ],
+  "tension": "Most people say they are not engaged in their work, and the least control sits at the bottom of the ladder.",
+  "opening_idea": "Open on the Gallup number: about 13 percent of people said they were engaged in their work.",
+  "lessons": [
+    {
+      "idea": "Look for a decision inside your work that you can make yourself, and widen it.",
+      "anchor": "Control as the key factor in Hari's account of Whitehall.",
+      "example": "A hospital cleaner asks whether she can choose the order of the wards she covers."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which part of your working week do you control least, and what is one decision inside it you could ask to make yourself?",
+  "use_cases": [
+    {
+      "situation": "A team waits for approval on small decisions.",
+      "move": "Name two decisions the team could make itself; Marmot's civil servants lower down had less control and more stress.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your manager sets every step of your task.",
+      "move": "Ask to choose the order or method for one part of it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Work leaves you drained and you feel you control nothing.",
+      "move": "List what you do decide in a day and pick one to expand.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Control over your work is the lever Hari points to; find one decision that is yours.",
+  "conversation_variants": {
+    "punchline_idea": "In Gallup's survey as Hari reports it, only about 13 percent of people said they were engaged in their work.",
+    "thirty_sec_idea": "Johann Hari points to a Gallup survey in which about 13 percent of people said they were engaged in their work, and to Michael Marmot's Whitehall studies, where lower-ranked civil servants had more stress and heart attacks. For Hari the key is control: how little say people have over their work.",
+    "question_idea": "",
+    "key_contrast_idea": "engaged or controlled"
+  }
+}

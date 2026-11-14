@@ -1,0 +1,37 @@
+### en — reference (1426)
+
+```story
+[[open]]
+Mozart's first four piano concertos, written when he was eleven, contain no original music. They are arrangements stitched together from other composers' pieces. The first concerto now counted as a masterwork came at twenty-one, after more than eighteen years of training.
+
+[[story]]
+Geoff Colvin's *Talent Is Overrated* (Yetenek Yanılgısı, 2008) builds one of its main cases on Mozart, the standard picture of the born genius. A child prodigy who simply had it. Colvin opens the file and finds a different story.
+
+Wolfgang's father, Leopold Mozart, was a well-known violin teacher. In 1756, the year Wolfgang was born, he published a large book on how to teach the violin. So a method was already written down when his son arrived. Systematic training began in early childhood, by age three at the latest, and kept going for years. From about age six Leopold took the children on tours across Europe, and Wolfgang spent much of his childhood on stage and on the road.
+
+##The earliest compositions are in Leopold's handwriting, not Wolfgang's.## The child could not yet write them down himself, so his father did. Leopold also stopped composing his own music once his son started, a detail Colvin treats as telling.
+
+The next detail is less comfortable. The first four piano concertos, written at eleven, contain no original music. They are arrangements assembled from other composers' pieces. The first work now counted as a masterwork is the Ninth Piano Concerto, written at twenty-one, after more than eighteen years of training. There was early output, but not early mastery.
+
+Colvin is not saying Wolfgang was ordinary. His argument is more measured: explaining genius does not require a talent factor separate from practice. What nobody sees is where the extraordinary begins, because it begins inside a house, over years, not in a concert hall.
+
+One caveat belongs here. Colvin's book appeared in 2008 and its central thesis has weakened since. A 2014 meta-analysis by Macnamara, Hambrick and Oswald found that deliberate practice explained about 26 percent of the differences in performance in games, 21 percent in music and 18 percent in sports. In music, practice explains a lot, but not everything. Building Mozart out of hours alone is as incomplete as building him out of gift alone.
+
+Even so, the neglected side of the story is the practice side. When Mozart is told, the three-year-old is told. The teacher with the book behind him rarely is.
+
+[[lessons]]
+$$**Behind early success there is usually an early start.** The neighbour's kid who beats everyone in the pool is often the one who has been driven to training several mornings a week, and from the outside that looks like a gift. Before you marvel at someone's talent, ask what routine stands behind it and who has been working beside them. You will read them more accurately, and you will see your own gaps more accurately too. Praise for a gift often hides a long, quiet schedule that nobody photographed.$$
+
+[[reflect]]
+&&What is one area you have written off as "no talent" without ever practising it regularly with someone's guidance?&&
+
+[[use]]
+%%context:family | A child you know is praised as naturally gifted at something :: "Even Mozart's first scores were written down by his father. Who works with you on this, and for how long?"%%
+
+%%context:self | You tell yourself "I have no talent for this" :: "I have never really tried it regularly. Let me book one twenty-minute session and see what changes."%%
+
+%%context:social | A friend's success gets brushed off as natural talent :: "How did you learn it? What did you work on in the first years, and with whom?"%%
+
+[[pocket]]
+@@Behind a prodigy stands a teacher. Before calling someone a genius, ask who worked beside them for years.@@
+```

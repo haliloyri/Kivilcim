@@ -1,0 +1,35 @@
+{
+  "story_id": 1493,
+  "verdict": "keep",
+  "verify_note": "Keep: topic (disconnection from meaningful work, with control as the key factor) confirmed in summaries; the old London banker anecdote was not found and is dropped, replaced with the Gallup figure and Marmot's Whitehall finding, both from secondary sources. Gallup measures engagement and Marmot stress and heart attack, so the text keeps that scope. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Yüzde on üç ve kontrol",
+    "description": "Hari, Gallup'un yüzde 13'lük katılım rakamını ve Whitehall çalışmasını anlatır. Ona göre belirleyici olan, işte ne kadar söz sahibi olduğunuz.",
+    "hook": "Çalışma haftanızın hangi bölümünde en az söz sahibisiniz?",
+    "one_minute_summary": "Johann Hari, Gallup'un 2011-2012 anketini aktarır: 142 ülkede insanların yaklaşık yüzde 13'ü işine bağlı olduğunu söyledi, yüzde 63'ü bağlı değil, yüzde 24'ü ise aktif olarak kopuktu. Sonra Michael Marmot'un İngiliz memurlar üzerindeki Whitehall çalışmasına döner: rütbe düştükçe stres ve kalp krizi olasılığı artıyordu. Hari'ye göre anahtar, işinizde ne kadar kontrol sahibi olduğunuzdur. Anket bağlılığı, Marmot stresi ölçtü, depresyon bağlantısı Hari'nin savı. Eleştirmenler kanıtları seçici kullandığını söylüyor."
+  },
+  "en": {
+    "title": "Thirteen percent and control",
+    "description": "Johann Hari points to a Gallup figure and the Whitehall studies. For him, the key is how much say people have over their work.",
+    "hook": "Which part of your working week do you control least?",
+    "one_minute_summary": "Johann Hari cites a Gallup survey of 2011-2012 in which, across 142 countries, about 13 percent of people said they were engaged in their work, 63 percent not engaged and 24 percent actively disengaged. He then turns to Michael Marmot's Whitehall studies of British civil servants, where lower rank meant more stress and more heart attacks. For Hari the key factor is control. The survey measures engagement and Marmot measured stress, so the link to depression is Hari's argument, and critics say he selects his evidence."
+  },
+  "es": {
+    "title": "El trece por ciento y el control",
+    "description": "Johann Hari cita una cifra de Gallup y los estudios de Whitehall. Para él, lo decisivo es cuánto margen tiene la gente sobre su trabajo.",
+    "hook": "¿En qué parte de tu semana laboral controlas menos?",
+    "one_minute_summary": "Johann Hari cita una encuesta de Gallup de 2011-2012 según la cual, en 142 países, cerca del 13 % de las personas decía estar comprometida con su trabajo, el 63 % no lo estaba y el 24 % estaba activamente desvinculado. Luego recurre a los estudios de Whitehall de Michael Marmot sobre funcionarios británicos: a menor rango, más estrés y más infartos. Para Hari la clave es el control. La encuesta mide compromiso y Marmot midió estrés, así que el vínculo con la depresión es argumento de Hari, y los críticos dicen que elige las pruebas."
+  },
+  "de": {
+    "title": "Dreizehn Prozent und Kontrolle",
+    "description": "Johann Hari verweist auf eine Gallup-Zahl und die Whitehall-Studien. Entscheidend ist für ihn, wie viel Mitsprache Menschen bei ihrer Arbeit haben.",
+    "hook": "In welchem Teil deiner Arbeitswoche hast du am wenigsten Kontrolle?",
+    "one_minute_summary": "Johann Hari zitiert eine Gallup-Umfrage von 2011 und 2012, nach der in 142 Ländern etwa 13 Prozent der Menschen sagten, sie seien bei ihrer Arbeit engagiert, 63 Prozent nicht engagiert und 24 Prozent aktiv abgekoppelt. Dann wendet er sich Michael Marmots Whitehall-Studien an britischen Beamten zu: Je niedriger der Rang, desto mehr Stress und Herzinfarkte. Für Hari ist Kontrolle der Schlüssel. Die Umfrage misst Engagement, Marmot maß Stress, der Bezug zur Depression ist Haris These, und Kritiker sagen, er wähle Belege aus."
+  }
+}

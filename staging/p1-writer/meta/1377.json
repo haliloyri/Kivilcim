@@ -1,0 +1,35 @@
+{
+ "story_id": 1377,
+ "verdict": "keep",
+ "verify_note": "Passages 11.33-35, 7.27 and 2.11 checked in the Long translation of Meditations. The invented 'trust left to me' quote and the claim of daily imagining losing health and empire were dropped; 'premeditatio malorum' is not Marcus's term and is mentioned only as a later label.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Öperken Fısıldanan Cümle",
+  "description": "Marcus Aurelius, çocuğunu öperken onun yarın ölebileceğini düşünmeyi öğütleyen Epiktetos'u defterine geçirdi. Bu sert öğüdü, elindekini daha çok görmenin ve ona daha az yapışmanın yolu sayıyordu.",
+  "hook": "Sevdiğiniz birini bir gün kaybedebileceğinizi düşünmek onu daha çok görmenizi sağlar mı?",
+  "one_minute_summary": "Marcus Aurelius, Meditations'ın on birinci kitabına Epiktetos'un öğüdünü yazdı: çocuğunu öperken içinden yarın belki öleceğini söyle. Uğursuz sözler itirazına cevap şu: doğanın işini anlatan söz uğursuz olmaz, yoksa başakların biçildiğini söylemek de uğursuz olurdu. Yedinci kitapta sahip olduklarının en iyilerini seçip, olmasalar ne kadar arayacağını düşünmesini, ama onlara aşırı değer vermemesini istiyor. İkinci kitapta her eylemini, şu an ölebilecekmiş gibi düzenlemesini yazıyor."
+ },
+ "en": {
+  "title": "The Whisper During the Kiss",
+  "description": "Marcus Aurelius copied Epictetus's advice to think, while kissing your child, that they may die tomorrow. He saw it as a way to see what he had more clearly and cling to it less.",
+  "hook": "Does imagining a loss help you see what you have?",
+  "one_minute_summary": "In Book Eleven of Meditations, Marcus Aurelius records Epictetus's advice: when kissing your child, whisper that tomorrow they may die. To the objection that this is ill-omened, Epictetus replies that no word describing nature is, or speaking of reaped corn would be too. In Book Seven, Marcus tells himself to pick the best of what he has and imagine how eagerly he would seek it if it were gone, while not overvaluing it. In Book Two he orders every act as if he might die now."
+ },
+ "es": {
+  "title": "El susurro durante el beso",
+  "description": "Marco Aurelio copió el consejo de Epicteto de pensar, al besar a un hijo, que mañana podría morir. Lo veía como una forma de ver mejor lo que tenía y aferrarse menos.",
+  "hook": "¿Imaginar una pérdida te ayuda a ver lo que tienes?",
+  "one_minute_summary": "En el libro undécimo de Meditations, Marco Aurelio recoge el consejo de Epicteto: al besar a tu hijo, susúrrate que mañana quizá muera. Ante la objeción de que es de mal agüero, Epicteto responde que ninguna palabra que describe la naturaleza lo es, o también lo sería hablar de la siega. En el libro séptimo, Marco se pide escoger lo mejor de lo que tiene e imaginar con cuánto afán lo buscaría si faltara, sin sobrevalorarlo. En el segundo ordena cada acto como si pudiera morir ahora."
+ },
+ "de": {
+  "title": "Das Flüstern beim Kuss",
+  "description": "Marcus Aurelius schrieb Epiktets Rat ab, beim Küssen des Kindes daran zu denken, dass es morgen sterben könnte. Für ihn war das ein Weg, klarer zu sehen, was er hat, und weniger daran zu hängen.",
+  "hook": "Hilft dir die Vorstellung eines Verlusts, zu sehen, was du hast?",
+  "one_minute_summary": "Im elften Buch der Meditations hält Marcus Aurelius Epiktets Rat fest: Beim Küssen deines Kindes flüstere dir zu, dass es morgen vielleicht stirbt. Auf den Einwand, das sei unheilvoll, antwortet Epiktet, kein Wort über die Natur sei es, sonst auch nicht das Reden vom Mähen der Ähren. Im siebten Buch rät Marcus sich, das Beste seines Besitzes auszuwählen und sich vorzustellen, wie sehr er es suchen würde, ohne es zu überschätzen. Im zweiten Buch richtet er jede Handlung so aus, als könne er jetzt sterben."
+ }
+}

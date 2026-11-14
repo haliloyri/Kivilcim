@@ -1,0 +1,62 @@
+{
+  "story_id": 1326,
+  "kind": "concept",
+  "book": {
+    "title": "The Artist's Way",
+    "author": "Julia Cameron",
+    "year": "1992"
+  },
+  "confidence": "medium",
+  "confidence_note": "Full text not accessible; the artist-date definition, examples and the well/trout-pond passages are quoted in several secondary sources. The old text's quote ('creativity gives out and must take in; the one who only gives burns out') is not verified and is dropped.",
+  "facts": [
+    "Cameron writes: 'Art is an image-using system.' To make art we draw images out of an inner well, which should ideally be like a well-stocked trout pond.",
+    "If we don't give attention to upkeep, she says, the well is apt to become depleted, stagnant or blocked.",
+    "'Filling the well involves the active pursuit of images to refresh our artistic reservoirs.'",
+    "'In filling the well, think magic. Think delight. Think fun. Do not think duty.' And: 'think mystery, not mastery.' Her example: if I drive this road, not my usual road, what will I see?",
+    "Her tool for it is the artist date: 'a block of time, perhaps two hours weekly, especially set aside and committed to nurturing your creative consciousness, your inner artist.' You go alone.",
+    "Her sample artist dates include a great junk store, a solo trip to the beach, an old movie, an aquarium or an art gallery.",
+    "Her trout pond holds 'big fish, little fish, fat fish, skinny fish', an abundance of artistic fish to fry.",
+    "'Do what intrigues you, explore what interests you; think mystery, not mastery.'"
+  ],
+  "scene_details": [
+    "a well-stocked trout pond",
+    "a junk store, an aquarium, an old movie, alone",
+    "driving a road that isn't your usual road",
+    "two hours a week set aside"
+  ],
+  "tension": "Cameron's prescription for people who can't create is to stop producing for two hours and go to a junk store alone.",
+  "opening_idea": "Start with the odd assignment: two hours a week, alone, in a junk store or an aquarium, with nothing to produce.",
+  "lessons": [
+    {
+      "idea": "If you produce every week, plan time that only takes in, chosen for delight rather than duty, before the ideas run dry.",
+      "anchor": "Cameron's well needs images put back; the artist date is two hours of taking in.",
+      "everyday_example_idea": "A designer who has run out of ideas walks home a different way and visits a hardware store with no task."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where could you spend two hours alone this week just looking, with nothing to make or finish afterward?",
+  "use_cases": [
+    {
+      "situation": "A colleague says they're out of ideas.",
+      "move": "Suggest an artist date: two hours alone somewhere odd, like a junk store, with nothing to produce.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You plan the weekend.",
+      "move": "Block two hours for one solo outing chosen for delight, not usefulness.",
+      "context": "self"
+    },
+    {
+      "situation": "A partner always fills free time with chores.",
+      "move": "Offer to cover the chores so they can take a road they never take.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Ideas come out of a well; two hours alone in a junk store is how you put images back.",
+  "conversation_variants": {
+    "punchline_idea": "Julia Cameron's cure for creative block includes going to a junk store alone, two hours a week.",
+    "thirty_sec_idea": "Julia Cameron says art uses images, and every time you make something you scoop them out of an inner well. Without upkeep it runs dry. So she prescribes an artist date: about two hours a week, alone, somewhere that delights you, like a junk store, an aquarium, an old movie. No duty, no output. Think mystery, not mastery.",
+    "question_idea": "",
+    "key_contrast_idea": "Taking in, not just giving out"
+  }
+}

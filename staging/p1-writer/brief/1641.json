@@ -1,0 +1,56 @@
+{
+  "story_id": 1641,
+  "kind": "concept",
+  "book": {
+    "title": "The Gifts of Imperfection",
+    "author": "Brené Brown",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Gratitude finding and foreboding joy from interview and summaries; sources disagree on which book first uses the term.",
+  "facts": [
+    "Guidepost 4: Cultivating Gratitude and Joy: Letting Go of Scarcity and Fear of the Dark.",
+    "Brown never met anyone able to feel joy without regularly practicing gratitude.",
+    "Foreboding joy: when joy arrives, fear of loss and imagined catastrophe, for example a parent looking at a child.",
+    "Joyful people respond by practicing gratitude.",
+    "Painful emotions cannot be numbed selectively; numbing the dark numbs joy too."
+  ],
+  "scene_details": [
+    "a parent over a sleeping child",
+    "three things on the table"
+  ],
+  "tension": "Joy brings fear.",
+  "opening_idea": "A jolt of fear over a sleeping child.",
+  "lessons": [
+    {
+      "idea": "When joy arrives, name what you have.",
+      "anchor": "foreboding joy, gratitude practice"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "This week, what fear of loss crossed your mind in a good moment?",
+  "use_cases": [
+    {
+      "situation": "Fear while child sleeps",
+      "move": "Right now they're here and healthy; I'm grateful, out loud.",
+      "context": "family"
+    },
+    {
+      "situation": "Worst case during a good day",
+      "move": "This is foreboding joy; I name three things.",
+      "context": "self"
+    },
+    {
+      "situation": "Friend says what if it falls through",
+      "move": "Enjoy first; name three things you're grateful for.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "When joy arrives, don't rehearse the loss: name three things you have now.",
+  "conversation_variants": {
+    "punchline_idea": "Everyone able to feel joy practiced gratitude.",
+    "thirty_sec_idea": "Foreboding joy, gratitude practice, numbing.",
+    "question_idea": "",
+    "key_contrast_idea": "gratitude vs dread"
+  }
+}

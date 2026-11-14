@@ -3,6 +3,7 @@ import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react
 import Svg, { Circle, Line } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import CareerNodeMark from './CareerNodeMark';
+import { formatPercent } from '../../utils/locale';
 
 const ON_HERO = '#F5F1E8';
 const ON_HERO_SOFT = '#D5E4E0';
@@ -28,7 +29,7 @@ const HeroSun = ({ color }) => (
  * indicator and the screen's single primary action.
  * steps: [{ id, node, label, state: 'done' | 'next' | 'future', onPress, setRef }]
  */
-const CareerHero = ({ colors, background, pathChip, eyebrow, title, copy, next, steps = [], cta, onShare, shareLabel }) => {
+const CareerHero = ({ colors, background, pathChip, eyebrow, title, copy, next, steps = [], cta, onShare, shareLabel, lang }) => {
   const surface = colors.heroSurface || colors.primary;
   const dawn = colors.dawn || '#E9A94B';
 
@@ -58,7 +59,7 @@ const CareerHero = ({ colors, background, pathChip, eyebrow, title, copy, next, 
         <View style={styles.next}>
           <View style={styles.nextHeader}>
             <Text selectable numberOfLines={1} style={styles.nextLabel}>{next.label}</Text>
-            <Text selectable style={[styles.nextPct, { color: dawn }]}>{`${next.pct}%`}</Text>
+            <Text selectable style={[styles.nextPct, { color: dawn }]}>{formatPercent(next.pct, lang)}</Text>
           </View>
           <View style={styles.track}><View style={[styles.fill, { width: `${Math.max(4, next.pct)}%`, backgroundColor: dawn }]} /></View>
           {next.remaining ? <Text selectable style={styles.remaining}>{next.remaining}</Text> : null}

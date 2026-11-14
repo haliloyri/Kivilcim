@@ -1,0 +1,35 @@
+{
+ "story_id": 1330,
+ "verdict": "keep",
+ "verify_note": "'What pain do you want?' and the 'everything worthwhile' line are verified highlights. Manson's rock-star fantasy comes from a chapter summary and is told without specifics. Invented athlete and relationship examples and the 'majority never succeed' claim dropped. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Hangi Acıyı İstiyorsunuz?",
+  "description": "Mark Manson yıllarca rock yıldızı olmayı hayal etti ama hiç adım atmadı. Nedenini sonradan anladı: sahneyi istiyordu, oraya giden yolu değil.",
+  "hook": "En çok istediğiniz hedefin hangi sıkıcı kısmını gerçekten seviyorsunuz?",
+  "one_minute_summary": "Mark Manson yıllarca rock yıldızı olmayı hayal etti ama o yola hiç adım atmadı. Sonradan nedenini anladı: sonucu istiyordu, süreci değil. Kitabında bu yüzden şunu sorar: hayatınızda hangi acıyı istiyorsunuz? İyi bir işi ya da sağlıklı bir bedeni herkes ister, bu yüzden istemek pek bir şey ayırt etmez. Belirleyici olan, hangi acıya katlanmaya razı olduğunuzdur. Aç sanatçı hayatının belirsizliğini sevenler, o hayatı gerçekten yaşayıp başaranlardır."
+ },
+ "en": {
+  "title": "What Pain Do You Want?",
+  "description": "Mark Manson spent years dreaming of being a rock star and never became one. He later saw why: he wanted the stage, not the work that leads to it.",
+  "hook": "Which unglamorous part of your biggest goal do you actually enjoy?",
+  "one_minute_summary": "Mark Manson fantasized for years about being a rock star, and it never happened. Looking back, he saw he wanted the result and not the process. That's why his book asks: what pain do you want in your life, and what are you willing to struggle for? Nearly everyone wants a great job or a strong body, so wanting them says little. The people who enjoy the uncertainty of the starving artist's life are the ones who end up living it."
+ },
+ "es": {
+  "title": "¿Qué dolor quieres?",
+  "description": "Mark Manson soñó durante años con ser estrella de rock y nunca lo fue. Más tarde entendió por qué: quería el escenario, no el trabajo que lleva hasta él.",
+  "hook": "¿Qué parte poco vistosa de tu gran meta disfrutas de verdad?",
+  "one_minute_summary": "Mark Manson fantaseó durante años con ser estrella de rock y no ocurrió nada. Con el tiempo entendió que quería el resultado y no el proceso. Por eso su libro pregunta: ¿qué dolor quieres en tu vida, por qué estás dispuesto a luchar? Casi todos queremos un buen trabajo o un cuerpo en forma, así que desearlo dice poco. Quienes disfrutan de la incertidumbre de la vida del artista sin dinero son los que acaban viviéndola y saliendo adelante."
+ },
+ "de": {
+  "title": "Welchen Schmerz willst du?",
+  "description": "Mark Manson träumte jahrelang davon, Rockstar zu sein, und wurde es nie. Später verstand er, warum: Er wollte die Bühne, nicht den Weg dorthin.",
+  "hook": "Welchen unscheinbaren Teil deines großen Ziels magst du wirklich?",
+  "one_minute_summary": "Mark Manson sah sich jahrelang als Rockstar auf der Bühne, getan hat er dafür kaum etwas. Später verstand er, dass er das Ergebnis wollte und nicht den Prozess. Deshalb fragt sein Buch: Welchen Schmerz willst du in deinem Leben, wofür bist du bereit zu kämpfen? Einen guten Job oder einen fitten Körper will fast jeder, das sagt wenig. Wer die Unsicherheit eines Künstlerlebens wirklich mag, lebt dieses Leben am Ende auch und kommt darin voran."
+ }
+}

@@ -1,0 +1,59 @@
+{
+  "story_id": 1640,
+  "kind": "concept",
+  "book": {
+    "title": "The Gifts of Imperfection",
+    "author": "Brené Brown",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Definitions confirmed by summaries; apology pair attributed via fs.blog; 'hates words wrapped around it' from memory.",
+  "facts": [
+    "Shame: believing we are flawed and unworthy of love and belonging: 'I am bad'.",
+    "Guilt: 'I did something bad'; compares behaviour with values.",
+    "Guilt can motivate change.",
+    "Shame is associated with addiction, aggression, depression, violence.",
+    "Shame grows in secrecy and silence and hates having words wrapped around it.",
+    "Apology pair: I made a mistake vs I am a mistake.",
+    "Four shame-resilience steps."
+  ],
+  "scene_details": [
+    "a tight stomach",
+    "a flushed face",
+    "an apology"
+  ],
+  "tension": "Two feelings confused.",
+  "opening_idea": "I made a mistake vs I am a mistake.",
+  "lessons": [
+    {
+      "idea": "Attach the mistake to the act.",
+      "anchor": "apology contrast"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Last time you regretted something, did you say 'I did something' or 'I am like this'?",
+  "use_cases": [
+    {
+      "situation": "Wrong number in a meeting",
+      "move": "I quoted it without checking; I'll send the right one.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Raised voice at child",
+      "move": "I shouted and that was my mistake, not yours.",
+      "context": "family"
+    },
+    {
+      "situation": "Angry at yourself",
+      "move": "I made a mistake, I am not one.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "I made a mistake, I am not one: guilt repairs the act, shame hides the person.",
+  "conversation_variants": {
+    "punchline_idea": "Guilt says I did something bad; shame says I am bad.",
+    "thirty_sec_idea": "Definitions, consequences, apology pair.",
+    "question_idea": "",
+    "key_contrast_idea": "I did vs I am"
+  }
+}

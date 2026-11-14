@@ -6,57 +6,61 @@
     "author": "Ryan Holiday",
     "year": "2019"
   },
-  "confidence": "medium",
-  "confidence_note": "Checked against Ryan Holiday's Stillness Is the Key (2019). The old TR reference text claimed Alexander the Great ordered his army to wait before a battle and then said 'Now'; that scene is not how Stillness Is the Key uses Alexander. In the book, Holiday pairs Alexander the Great—the restless conqueror driven by constant motion—with the philosopher Diogenes of Sinope in Corinth, and also contrasts impulsive commanders with leaders like John F. Kennedy during the Cuban Missile Crisis who resisted generals pressing for an immediate strike. To stay faithful to the book while preserving the story's theme (the discipline of pausing and resisting restless compulsion when everyone around you pushes for action), this brief uses the book's actual accounts of Alexander and Diogenes alongside the book's theme of strategic restraint.",
+  "confidence": "high",
+  "confidence_note": "The old Alexander the Great story is not in the book and was replaced by the book's own opening case, Kennedy in the Cuban Missile Crisis, checked against the archive.org full text. Holiday's interpretive claims (Kennedy 'saved the world') are kept as the author's view; secondary details like the Turkey missile deal are as Holiday tells them.",
   "facts": [
-    "In Stillness Is the Key, Ryan Holiday examines how the compulsion for constant motion and immediate action misleads even the most capable leaders.",
-    "Holiday recounts the meeting in Corinth between Alexander the Great—then the most powerful commander in the world, always pushing toward the next campaign—and the philosopher Diogenes of Sinope.",
-    "Diogenes lived with almost nothing, famously sleeping in a clay jar and smashing his own wooden cup after seeing a child drink water from a well with his bare hands.",
-    "While statesmen and generals crowded around Alexander to flatter him and propose campaigns, Diogenes did not come to see him, so Alexander walked over to find the philosopher lying in the sun.",
-    "Alexander stood over him and asked what he, with all his power and armies, could do for Diogenes.",
-    "Diogenes gave a one-line reply: 'Stop blocking my sun.'",
-    "Even as his own officers mocked the old man, Alexander recognized the strength in someone who did not need to chase the next conquest, saying that if he were not Alexander, he would wish to be Diogenes.",
-    "Holiday notes that Alexander never learned to stop—he marched across continents until his exhausted soldiers refused to go farther in India, and he died at thirty-two—showing that knowing how to pause is a harder discipline than knowing how to attack."
+    "Between going to bed on October 15, 1962 and waking the next morning, the CIA identified Soviet ballistic missile sites being built in Cuba, ninety miles from US shores.",
+    "As many as seventy million people were expected to die in the first exchange of strikes, though Holiday notes that was only a guess.",
+    "Kennedy's record was poor: the failed Bay of Pigs invasion in April 1961, which the CIA pressured him into, and being dominated by Khrushchev in Vienna.",
+    "His advisors were immediate and emphatic: destroy the sites with full military force, then a full-scale invasion of Cuba.",
+    "He had recently read Barbara Tuchman's The Guns of August, about leaders rushing into World War I and being unable to stop; he wanted everyone to slow down.",
+    "In his notes he repeated words: 'Missile. Missile. Missile.', 'Veto. Veto. Veto. Veto.'; on a yellow legal pad he drew two sailboats; on White House stationery he wrote: 'We are demanding withdrawal of the missiles.'",
+    "He asked advisors why the Russians had done this and what advantage they wanted.",
+    "He chose a blockade, opposed by nearly half his advisors, because it preserved options and used time as a tool; he called it a 'quarantine'.",
+    "After the quarantine came provocations: a Russian tanker approached the quarantine line, Soviet submarines surfaced, and an American U-2 spy plane was shot down over Cuba, killing the pilot. Kennedy told advisors his worry was not the first step but both sides escalating to the fourth and fifth.",
+    "In tense moments he walked in the Rose Garden, swam, sat in his rocking chair, and left the room so advisors could debate freely.",
+    "On October 26, eleven days in, Khrushchev wrote that they were pulling on a rope with a knot of war in the middle; the Soviets signalled they would remove the missiles. Kennedy pledged not to invade Cuba.",
+    "In secret, Kennedy also let the Russians know he would remove US missiles in Turkey, months later, so as not to appear pressured."
   ],
   "scene_details": [
-    "Diogenes lying in the morning sun in Corinth",
-    "a wooden cup smashed after watching a child drink water with bare hands",
-    "Alexander standing in front of Diogenes and casting a shadow over him",
-    "Alexander's officers laughing as they walk away while Alexander stays quiet"
+    "two sailboats drawn on a yellow legal pad",
+    "'Missile. Missile. Missile.' repeated in his notes",
+    "the word 'quarantine' instead of 'blockade'",
+    "Khrushchev's rope with a knot of war in the middle"
   ],
-  "tension": "A commander who commands armies across continents meets a man with no possessions who asks him only to step out of the sunlight.",
-  "opening_idea": "Start in Corinth: statesmen and officers crowd around the young king to talk campaigns, while one man stays lying in the sun and asks the conqueror to take a step to the side.",
+  "tension": "Every advisor says strike now; the last time Kennedy followed that kind of pressure he got the Bay of Pigs.",
+  "opening_idea": "Open on the night of October 15, 1962: Kennedy goes to bed, and while he sleeps the CIA finds the missile sites.",
   "lessons": [
     {
-      "idea": "Treat the urge to act immediately or add one more goal as something to question before you move.",
-      "anchor": "Alexander could conquer empires yet could not stop marching until his army refused to go on in India, whereas Diogenes knew what was already enough.",
-      "everyday_example_idea": "A software team lead who automatically says yes to every new feature request pauses before the next sprint to ask whether the team needs another project or room to finish the current one."
+      "idea": "Before a big decision, buy time and widen the options instead of taking the first forceful one.",
+      "anchor": "The blockade kept options open and gave Khrushchev time.",
+      "example": "A manager furious about a client email drafts a reply, then asks a colleague what the client might want before sending."
     }
   ],
   "reflect": [],
-  "reflect_final": "Where in your work or schedule are you pushing for the next move simply because stopping feels uncomfortable?",
+  "reflect_final": "In a decision you are facing now, which option would keep the most doors open for a few more days?",
   "use_cases": [
     {
-      "situation": "Everyone in a project meeting is rushing to launch a new initiative before the current one is stable.",
-      "move": "Say: 'Before we add another campaign to the list, let's pause for ten minutes and ask what happens if we just finish what is already in front of us.'",
+      "situation": "A meeting is rushing toward a drastic decision.",
+      "move": "Ask what the other side is trying to get, the question Kennedy put to his advisors, before voting.",
       "context": "meeting"
     },
     {
-      "situation": "A colleague feels guilty for not taking on an extra side project.",
-      "move": "Remind them of Diogenes smashing his cup: 'Doing more is not always strength; sometimes the hardest move is leaving space for the work you already care about.'",
-      "context": "oneonone"
+      "situation": "You are about to send an angry reply to a relative.",
+      "move": "Write what you actually want from them in one sentence, like Kennedy's note, then decide.",
+      "context": "family"
     },
     {
-      "situation": "You feel restless on a quiet afternoon and reach for busywork.",
-      "move": "Close the extra tab and sit with the pause for fifteen minutes before deciding whether anything actually needs your action today.",
+      "situation": "Facing a pressured personal choice.",
+      "move": "Choose the step that can still be reversed and set a date to look again.",
       "context": "self"
     }
   ],
-  "pocket_idea": "Alexander conquered empires but could not stop marching; real command includes knowing when to stand still.",
+  "pocket_idea": "Kennedy wrote one sentence of what he wanted before choosing; write yours before you act.",
   "conversation_variants": {
-    "punchline_idea": "When Alexander the Great offered Diogenes anything in the world, the philosopher only asked him to step out of the sun.",
-    "thirty_sec_idea": "In Stillness Is the Key, Ryan Holiday tells how Alexander the Great went to Corinth and stood over the philosopher Diogenes, offering him anything he wanted. Diogenes, who had even thrown away his wooden cup after seeing a boy drink with his hands, replied: 'Stop blocking my sun.' Alexander's officers laughed, but Alexander envied that calm. He conquered half the known world yet could never stop marching until his troops mutinied in India.",
-    "question_idea": "",
-    "key_contrast_idea": "Restless conquest vs knowing when to stop"
+    "punchline_idea": "In the tensest days of the missile crisis Kennedy doodled two sailboats on a legal pad.",
+    "thirty_sec_idea": "Missiles found in Cuba; advisors demand strike and invasion; Kennedy, burned by the Bay of Pigs and fresh from The Guns of August, slows everyone down, asks why the Soviets did it, picks a 'quarantine'; Khrushchev writes about the knot and pulls back.",
+    "question_idea": "When did slowing down save you from a mistake?",
+    "key_contrast_idea": "strike now versus buy time"
   }
 }

@@ -1,0 +1,62 @@
+{
+  "story_id": 1273,
+  "kind": "concept",
+  "book": {
+    "title": "When: The Scientific Secrets of Perfect Timing",
+    "author": "Daniel H. Pink",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The old Hemingway routine is not attributable to When and was removed. The tweets study, earnings calls and the analytic/insight split are confirmed through reviews, reader highlights and summaries; no full text was available. Chronotype detail kept general. Twitter study figures follow press reports of Golder and Macy.",
+  "facts": [
+    "Pink opens with a Cornell study of about 500 million tweets from about 2.4 million people in 84 countries over two years.",
+    "Positive language rose in the morning, dropped in the afternoon and rose again in the evening, across continents and time zones: peak, trough, rebound.",
+    "An analysis of more than 26,000 earnings calls from about 2,100 US companies found afternoon calls 'more negative, irritable, and combative' than morning ones, and the tone moved stock prices.",
+    "Analytic tasks go best at the morning peak for most people; insight tasks go better in the late afternoon or early evening, when the mind's guard is lower. Pink calls it the 'inspiration paradox'.",
+    "Larks and 'third birds' run peak, trough, rebound through the day; owls run it roughly in reverse.",
+    "Pink's explanation for the insight result: when we are a little groggy, our mental guard is down and stray thoughts get in, which helps the sudden connections insight problems need.",
+    "The researchers behind the earnings-call study linked the worse afternoon tone to weaker share-price reactions.",
+    "In the tweets study, weekend mood followed the same shape but the morning peak came about two hours later, consistent with people sleeping in; the afternoon decline showed up on weekends too, so it was not only about work."
+  ],
+  "scene_details": [
+    "500 million tweets",
+    "earnings calls turning combative after lunch",
+    "the afternoon trough",
+    "larks, owls and third birds"
+  ],
+  "tension": "The same executives, same type of call: the time on the clock changed the tone, and the market reacted.",
+  "opening_idea": "Open on the earnings calls: a company's quarterly call is scheduled after lunch.",
+  "lessons": [
+    {
+      "idea": "Match the kind of work to the hour: sharp analysis at your peak, open-ended ideas when you are a little tired.",
+      "anchor": "Analytic at peak, insight at the trough/rebound.",
+      "example": "A freelance designer checks invoices and contracts in the morning and sketches new concepts in the early evening."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which task on your list tomorrow needs your sharpest hour, and when in your day does that hour actually come?",
+  "use_cases": [
+    {
+      "situation": "Scheduling a tough negotiation or review.",
+      "move": "Ask to hold it in the morning; Pink cites earnings calls turning more combative in the afternoon.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Planning a brainstorm with a colleague.",
+      "move": "Suggest late afternoon, when insight work tends to go better.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Planning your own day.",
+      "move": "Put the task with numbers first and the open-ended one later, then compare.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Afternoon earnings calls ran more combative; schedule your hardest analytic work before your trough.",
+  "conversation_variants": {
+    "punchline_idea": "Executives on afternoon earnings calls sounded more irritable than on morning calls, and stock prices noticed.",
+    "thirty_sec_idea": "Pink starts with 500 million tweets: mood peaks in the morning, dips in the afternoon, rebounds at night. Earnings calls after lunch were more combative. So analytic work at the peak, insight work later.",
+    "question_idea": "When in the day are you at your sharpest?",
+    "key_contrast_idea": "right task, wrong hour"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "book_no": 126,
+  "title": "Sapiens: A Brief History of Humankind",
+  "authors": [
+    "Yuval Noah Harari"
+  ],
+  "year": "2011",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Sapiens:_A_Brief_History_of_Humankind",
+    "https://www.goodreads.com/author_blog_posts/22966102-sapiens-chapter-5-summary-history-s-biggest-fraud",
+    "https://joshua0308.github.io/book-notes/sapiens/19-20.html"
+  ],
+  "source_note": "Book text not read; facts from chapter summaries and notes (chapters 5 and 19). Year 2011 is the Hebrew first edition; English editions followed (Wikipedia is inconsistent: 2014/2015).",
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Chapter 5, 'History's Biggest Fraud': Harari argues the Agricultural Revolution was a bad deal for individuals. The average farmer worked harder than the average forager and got a worse diet in return.",
+      "source": "Goodreads blog summary; search results",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Harari says wheat, rice and potatoes domesticated Homo sapiens rather than the reverse. About 10,000 years ago wheat was a wild grass in a small part of the Middle East; within a few millennia it grew across the world.",
+      "source": "Goodreads blog summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Farming work listed: clearing stones, weeding, guarding against worms and blight, building fences, digging irrigation canals, fertilising with animal dung. Human bodies were not adapted to it; he links it to slipped discs, arthritis and hernias.",
+      "source": "Goodreads blog summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Humans are omnivores; before farming grains were a small share of the diet. A cereal diet is poor in minerals and vitamins. Peasants were less secure than foragers: reliance on few crops meant a failed harvest could kill thousands or millions.",
+      "source": "Goodreads blog summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Farming supported more people per unit of land: an area feeding 100 healthy foragers could support a crowded village of 1,000, at the cost of disease and malnutrition. In most farming societies at least one in three children died before the age of 20.",
+      "source": "Goodreads blog summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "The trap: ancestors reasonably believed harder work would secure their children's food; they did not foresee larger families, shared disease and the need for walls and guards. Change was gradual, so later generations did not remember earlier life. 'Luxuries become necessities and obligations.'",
+      "source": "Goodreads blog summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Harari's company analogy: a species' success is measured in copies of its DNA, as a company is measured by money rather than employee happiness. Evolutionary success and individual suffering come apart.",
+      "source": "Goodreads blog summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Chapter 19: happiness depends less on objective conditions than on how they compare with expectations. Examples as summarised: wanting a new Ferrari but getting a used Fiat feels like deprivation; lottery winners end up with about the same long-term happiness as people after a debilitating car accident.",
+      "source": "joshua0308 notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Biochemistry works like a thermostat holding happiness near a set level that differs by person; one person might swing between 6 and 10 and settle at 8, another between 3 and 7 and settle at 5 (as illustration).",
+      "source": "joshua0308 notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Meaning: Harari disputes that happiness equals pleasure. A study by Kahneman found parenting full of unpleasant moments, yet parents call children their chief source of happiness. He quotes Nietzsche: 'If you have a why to live, you can bear almost any how.' Medieval people's hard lives may have felt meaningful because of belief in an afterlife.",
+      "source": "joshua0308 notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Harari says historians have little research on happiness and suggests people today are not significantly happier than in earlier eras.",
+      "source": "Wikipedia",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Questionnaire method as summarised: compare groups, for example 1,000 people earning $100,000 with 1,000 earning $50,000. Money raises happiness up to a point; beyond it extra income makes little long-term difference, though for people at the bottom more money does mean more happiness.",
+      "source": "joshua0308 notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Family and community matter more than money or health; good marriages correlate strongly with high well-being, bad ones with misery. Illness lowers happiness in the short term and causes lasting distress mainly when it keeps worsening or involves constant, debilitating pain.",
+      "source": "joshua0308 notes",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Old text: foragers worked an average of four to six hours a day and had leisure.",
+      "reason": "Figure not found in sources."
+    },
+    {
+      "claim": "Old text: direct quote 'it made humanity slaves to wheat, rice and potatoes'.",
+      "reason": "Paraphrase, not verified verbatim."
+    },
+    {
+      "claim": "Old text: agricultural societies crushed foragers by numbers; 'progress optimises collective growth, not individual welfare' as a modern-life claim.",
+      "reason": "Second half is the old text's extrapolation."
+    },
+    {
+      "claim": "Old text: humanity beat deadly diseases, reduced hunger, violence declining, as the opening of the happiness chapter; medieval peasant did not know electricity.",
+      "reason": "Not in sources."
+    },
+    {
+      "claim": "Old text: direct quote 'Prosperity is not happiness'.",
+      "reason": "Not verified."
+    }
+  ],
+  "stories": {
+    "1475": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7"
+      ],
+      "note": "Wheat domesticating humans; luxury trap."
+    },
+    "1476": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "f13"
+      ],
+      "note": "Expectations and meaning; chapter 19 from notes, medium confidence."
+    }
+  }
+}

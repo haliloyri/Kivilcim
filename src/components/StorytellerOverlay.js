@@ -29,6 +29,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
 import { useTheme } from '../context/ThemeContext';
+import Albi from './Albi';
 
 const TIMER_SECONDS = 30;
 
@@ -182,6 +183,7 @@ const StorytellerOverlay = ({
 
             {/* 30s Timer */}
             <View style={styles.timerSection}>
+              <Albi pose={timerDone ? 'hedef_tamam' : 'dinleme'} size={88} disc={isDark} style={{ marginBottom: 14 }} />
               <Text style={styles.timerLabel}>{t('mv_storyteller_practice_30s', lang)}</Text>
               <Animated.View style={[styles.timerCircle, { transform: [{ scale: pulseAnim }] },
                 timerDone && { borderColor: colors.primary },

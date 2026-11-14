@@ -1,0 +1,35 @@
+{
+ "story_id": 1379,
+ "verdict": "keep",
+ "verify_note": "Three dimensions are the book's core. Anchored in the Met Life case: 37% / double retention verified in Seligman & Schulman 1986; Creedon and the 129-person special force (21%/57%) rest on a Fortune excerpt and trade press, framed as Seligman's account. Old invented quotes dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Reddedilmeyi Açıklayan Satıcılar",
+  "description": "Met Life, kendi testinden kalan 129 kişiyi yalnızca kötü olayları nasıl açıkladıklarına bakarak işe aldı. Martin Seligman'ın açıklama tarzı fikri bu vakada sınandı.",
+  "hook": "Bir aksiliği kendinize anlatırken \"hep\", \"her şey\" ya da \"ben\" diyor musunuz?",
+  "one_minute_summary": "Met Life yeni satıcılarının çoğunu kısa sürede kaybediyordu ve Martin Seligman'a başvurdu. Seligman'a göre insanlar kötü olayları üç boyutta açıklar: kalıcı mı geçici mi, her şeyi mi yoksa tek alanı mı etkiliyor, suç kişide mi koşullarda mı. Bu tarzı ölçen ankette üst yarıdaki acenteler ilk iki yılda yüzde 37 daha fazla sattı ve işte kalma oranları iki katıydı. Şirket, standart testten kalan ama iyimser çıkan 129 kişiyi de işe aldı. Seligman'ın aktardığına göre bu ekip kötümserleri geride bıraktı."
+ },
+ "en": {
+  "title": "The Agents Who Said 'This Time'",
+  "description": "Met Life hired 129 people who had failed its own test, based only on how they explained bad events. Martin Seligman's idea of explanatory style was tested in that case.",
+  "hook": "When you explain a setback to yourself, do you reach for always, everything or me?",
+  "one_minute_summary": "Met Life was losing many new insurance agents and turned to Martin Seligman. He describes how people explain bad events along three dimensions: permanent or temporary, everything or one area, all my fault or partly the circumstances. On his questionnaire, agents in the top half sold 37 percent more in their first two years and stayed in the job twice as often. The company then hired 129 applicants who had failed the standard test but scored as optimists, and by Seligman's account they outsold the pessimists."
+ },
+ "es": {
+  "title": "Los agentes que decían \"esta vez\"",
+  "description": "Met Life contrató a 129 personas que habían suspendido su propia prueba, solo por cómo explicaban lo malo que les pasaba. Así se puso a prueba el estilo explicativo de Martin Seligman.",
+  "hook": "Cuando te explicas un tropiezo, ¿recurres a siempre, todo o yo?",
+  "one_minute_summary": "Met Life perdía a muchos agentes nuevos y acudió a Martin Seligman. Él describe cómo explicamos lo malo en tres dimensiones: permanente o pasajero, que afecta a todo o a un área, culpa mía o también de las circunstancias. En su cuestionario, los agentes de la mitad superior vendieron un 37 % más en sus dos primeros años y siguieron en el puesto el doble. Luego la empresa contrató a 129 aspirantes que habían suspendido la prueba estándar pero salían optimistas y, según Seligman, vendieron más que los pesimistas."
+ },
+ "de": {
+  "title": "Die Vertreter, die \"diesmal\" sagten",
+  "description": "Met Life stellte 129 Leute ein, die den eigenen Eignungstest nicht bestanden hatten, nur wegen ihrer Art, Rückschläge zu erklären. Daran wurde Martin Seligmans Idee des Erklärungsstils geprüft.",
+  "hook": "Greifst du nach einem Rückschlag zu immer, alles oder ich?",
+  "one_minute_summary": "Met Life verlor viele neue Versicherungsvertreter und holte Martin Seligman. Er beschreibt, wie Menschen Rückschläge in drei Dimensionen erklären: dauerhaft oder vorübergehend, alles oder ein Bereich, ganz meine Schuld oder auch die Umstände. In seinem Fragebogen verkauften die Vertreter der oberen Hälfte in zwei Jahren 37 Prozent mehr und blieben doppelt so oft. Dann stellte die Firma 129 Bewerber ein, die den Standardtest nicht bestanden, aber als Optimisten galten, und laut Seligman verkauften sie mehr als die Pessimisten."
+ }
+}

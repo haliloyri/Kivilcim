@@ -1,0 +1,59 @@
+{
+ "story_id": 1601,
+ "kind": "concept",
+ "book": {
+  "title": "Breath",
+  "author": "James Nestor",
+  "year": "2020"
+ },
+ "confidence": "medium",
+ "confidence_note": "Concept; the 5.5-second pace is from secondary summaries of the book. The rosary and yoga mantra study is verified (BMJ 2001, Bernardi et al.), but I did not confirm how Nestor presents it, so it is attributed to the study. Old text's shamanic rituals, 'dozens of techniques' and outcomes list dropped. The Buddhist mantra duration claim from a summary was dropped (the BMJ paper's mantra is spelled om-mani-padme-om, not -hum).",
+ "facts": [
+  "In the book the relaxed pace is about 5.5 seconds in and 5.5 seconds out, around 5.5 breaths a minute.",
+  "BMJ 2001 study (Bernardi et al.): 23 healthy adults in Florence and Pavia.",
+  "At rest, spontaneous respiratory rate averaged about 14 per minute (14.1, SD 4.8); talking slowed it; the Ave Maria in Latin and the mantra brought it to about 6 per minute.",
+  "Reciting the Ave Maria in the rosary and a yoga mantra slowed breathing to about six per minute.",
+  "It also increased variability in cardiovascular rhythms; baroreflex sensitivity rose from 9.5 to 11.5 ms/mm Hg.",
+  "The authors suggested the rosary may have partly evolved because it matches those rhythms (their interpretation)."
+ ],
+ "scene_details": [
+  "the Ave Maria repeated in the rosary",
+  "23 volunteers in Florence and Pavia",
+  "5.5 seconds in, 5.5 out"
+ ],
+ "tension": "Prayers from different traditions seem to run at about the same breathing pace.",
+ "opening_idea": "Open on the Ave Maria and a yoga mantra recited in an Italian lab, with breathing falling to about six a minute.",
+ "lessons": [
+  {
+   "idea": "Slow your exhale to a count you can repeat.",
+   "anchor": "5.5 seconds in and out.",
+   "example": "Before a hard phone call, breathe in for five counts and out for five."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Before the next moment that tightens your chest, which slow count could you practise in, so it is ready when you need it?",
+ "use_cases": [
+  {
+   "situation": "Your heart races before a presentation.",
+   "move": "Breathe in for about five seconds and out for about five for a minute, the pace the book describes.",
+   "context": "self"
+  },
+  {
+   "situation": "A friend is anxious.",
+   "move": "Offer to breathe with them at a slow count of five in, five out.",
+   "context": "social"
+  },
+  {
+   "situation": "Your child cannot settle at bedtime.",
+   "move": "Hold a slow count together, in for five, out for five.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "Five seconds in and five out is the pace at which rosary and mantra recitations settled the breathing of volunteers.",
+ "conversation_variants": {
+  "punchline_idea": "In a 2001 study the rosary slowed breathing to about six a minute.",
+  "thirty_sec_idea": "In an Italian study, 23 adults recited the Ave Maria and a yoga mantra. Both slowed breathing to about six per minute and raised variability in heart and blood-pressure rhythms. Nestor's slow pace is 5.5 seconds in and out.",
+  "question_idea": "",
+  "key_contrast_idea": "fast breath vs slow count"
+ }
+}

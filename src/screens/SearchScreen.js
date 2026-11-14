@@ -12,6 +12,7 @@ import { useUserData } from '../context/UserDataContext';
 import StoryCard from '../components/StoryCard';
 import CategoryPill from '../components/CategoryPill';
 import { t } from '../locales/i18n';
+import { toUpperFor } from '../utils/locale';
 import { searchStoriesForLang } from '../db/db';
 
 const RECENT_SEARCHES_KEY = '@albor_recent_searches';
@@ -287,7 +288,7 @@ const SearchScreen = ({ navigation, route }) => {
           <>
             {recentSearches.length > 0 && (
               <>
-                <Text style={styles.sectionLabel}>{t('searchRecentTitle', lang)}</Text>
+                <Text style={styles.sectionLabel}>{toUpperFor(t('searchRecentTitle', lang), lang)}</Text>
                 <View style={styles.chipRow}>
                   {recentSearches.map((term, idx) => (
                     <TouchableOpacity key={`${term}-${idx}`} style={styles.chip} onPress={() => applySearchTerm(term)}>
@@ -298,7 +299,7 @@ const SearchScreen = ({ navigation, route }) => {
               </>
             )}
 
-            <Text style={styles.sectionLabel}>{t('searchPopularTitle', lang)}</Text>
+            <Text style={styles.sectionLabel}>{toUpperFor(t('searchPopularTitle', lang), lang)}</Text>
             <View style={styles.chipRow}>
               {popularCategories.length > 0 ? popularCategories.map((item, idx) => (
                 <CategoryPill
@@ -318,7 +319,7 @@ const SearchScreen = ({ navigation, route }) => {
           </>
         ) : (
           <>
-            <Text style={styles.sectionLabel}>{t('resultsLabel', lang)}</Text>
+            <Text style={styles.sectionLabel}>{toUpperFor(t('resultsLabel', lang), lang)}</Text>
             <Text style={styles.resultInfo}>
               {isSearching ? t('searchSearching', lang) : `${results.length} ${t('foundStories', lang)}`}
             </Text>
@@ -333,7 +334,7 @@ const SearchScreen = ({ navigation, route }) => {
                     <Text style={styles.homeCtaText}>{t('searchReturnHome', lang)}</Text>
                   </TouchableOpacity>
                 </View>
-                <Text style={styles.sectionLabel}>{t('searchTrySuggestions', lang)}</Text>
+                <Text style={styles.sectionLabel}>{toUpperFor(t('searchTrySuggestions', lang), lang)}</Text>
                 <View style={styles.chipRow}>
                   {popularCategories.length > 0 ? popularCategories.map((item, idx) => (
                     <CategoryPill

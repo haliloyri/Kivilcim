@@ -1,0 +1,35 @@
+{
+ "story_id": 1679,
+ "verdict": "keep",
+ "verify_note": "Keep with low confidence: book text not available; checked against Wikipedia, publisher blurb, a chapter summary and reader-submitted quotes. Old London-friends scene, health claims (prefrontal cortex, amygdala, sleep), 'free starter' and 'compounding' dropped. Story is thin and a little under the word floor on purpose. DB title differs from the real one.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "On yıl, on dakika",
+  "description": "Yaklaşık on yıl rahip olarak eğitim gören Andy Puddicombe, yöntemini günde on dakikaya sığdırdı. Kitabının ölçüsü tek bir kısa oturuş.",
+  "hook": "Başka hiçbir şeyi kaydırmadan günün hangi saatine sabit on dakika koyabilirsiniz?",
+  "one_minute_summary": "Andy Puddicombe 1994'te spor bilimleri öğrenimini bırakıp Asya'ya gitti ve yaklaşık on yıl Budist rahip olarak eğitim gördü. 2004'te İngiltere'ye döndü. Kitabı tek bir egzersiz öğretir, adı Take10: günde bir kez on dakika. Dik oturulur, birkaç derin nefes alınır, zihin dağılınca kızmadan nefese dönülür. Yayıncının tanıtımı, zihni sakinleştirmeyi bu kadar kısa bir sürede vaat eder. 2010'da Richard Pierson'la Londra'da Headspace'i kurdu. Alıntı cümlelerin kelimeleri okur derlemelerinden geldiği için değişebilir."
+ },
+ "en": {
+  "title": "Ten years, ten minutes",
+  "description": "Andy Puddicombe trained about ten years as a monk, then built his method around ten minutes a day.",
+  "hook": "Where in your actual schedule could a fixed ten minutes go without moving anything else?",
+  "one_minute_summary": "Andy Puddicombe left his sports science studies in 1994 and trained about ten years as a Buddhist monk in Asia, returning to the UK in 2004. His book teaches one exercise called Take10: ten minutes, once a day. You sit upright, take a few deep breaths, and when the mind wanders you notice it without irritation and go back to the breath. The publisher's blurb promises calmer, less stressed days in just that time. In 2010 he and Richard Pierson started Headspace in London. Quoted lines come from reader collections."
+ },
+ "es": {
+  "title": "Diez años, diez minutos",
+  "description": "Andy Puddicombe se formó unos diez años como monje y construyó su método en torno a diez minutos al día.",
+  "hook": "¿Dónde de tu horario real cabrían diez minutos fijos sin mover nada más?",
+  "one_minute_summary": "Andy Puddicombe dejó sus estudios de ciencias del deporte en 1994 y se formó unos diez años como monje budista en Asia; volvió al Reino Unido en 2004. Su libro enseña un solo ejercicio llamado Take10: diez minutos, una vez al día. Te sientas con la espalda recta, respiras hondo unas veces y, cuando la mente se va, lo notas sin irritación y vuelves a la respiración. La reseña del editor promete días más tranquilos en ese tiempo. Las frases citadas vienen de colecciones de lectores."
+ },
+ "de": {
+  "title": "Zehn Jahre, zehn Minuten",
+  "description": "Andy Puddicombe lernte etwa zehn Jahre als Mönch und baute seine Methode dann auf zehn Minuten am Tag.",
+  "hook": "Wo in deinem tatsächlichen Tagesablauf könnten zehn feste Minuten stehen, ohne dass du etwas verschiebst?",
+  "one_minute_summary": "Andy Puddicombe brach 1994 sein Sportwissenschaftsstudium ab und lernte etwa zehn Jahre als buddhistischer Mönch in Asien; 2004 kehrte er nach Großbritannien zurück. Sein Buch lehrt eine einzige Übung namens Take10: zehn Minuten, einmal am Tag. Du sitzt aufrecht, atmest ein paar Mal tief durch, und schweift der Kopf ab, bemerkst du es ohne Ärger und kehrst zum Atem zurück. Der Klappentext verspricht in dieser Zeit ruhigere Tage. 2010 gründete er mit Richard Pierson Headspace in London. Zitierte Sätze stammen aus Leserkollektionen."
+ }
+}

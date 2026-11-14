@@ -1,0 +1,63 @@
+{
+  "story_id": 1396,
+  "kind": "concept",
+  "book": {
+    "title": "The Infinite Game",
+    "author": "Simon Sinek",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Facts from summaries and reviews (Shortform, Four Minute Books, Strategy Bridge, Wikipedia); no primary text. The S&P lifespan figures are as reported by a summary and kept approximate. Old claims about Apple, Disney and Amazon as long-lived infinite players and about collapse after short-term gains were dropped. No concrete company case supported; keep it to the mechanism.",
+  "facts": [
+    "Sinek builds the book on James Carse's split between two kinds of game.",
+    "In a finite game the players are known, the rules are fixed and there is an agreed end with a winner. Soccer is the example.",
+    "In an infinite game players come and go, rules can change, and the aim is to keep the game going.",
+    "Sinek says business, relationships and education are infinite games: there is no final winner.",
+    "A leader with a finite mindset plays to beat others, chases near-term profit and reacts to disruption; an infinite-minded leader aims to stay in the game and come out of setbacks stronger.",
+    "Sinek cites a study that the lifespan of S&P 500 companies fell from about 61 years to about 18.",
+    "He lists five practices: advance a just cause, build trusting teams, study worthy rivals, practice existential flexibility, show the courage to lead.",
+    "Sinek defines a just cause as 'a specific vision of a future state that does not yet exist'.",
+    "He says the five practices should be adopted together.",
+    "A reviewer notes Carse says everyone plays finite games and that Sinek gives anything finite a negative tone."
+  ],
+  "scene_details": [
+    "soccer with its whistle and final score",
+    "the S&P 500 lifespan figures",
+    "five practices"
+  ],
+  "tension": "A company can beat every rival this quarter in a game that never announces a winner.",
+  "opening_idea": "Open on the S&P 500 lifespan figures, 61 years down to 18, against the notion of coming first.",
+  "lessons": [
+    {
+      "idea": "Before a decision, ask whether the game has a final whistle; if it does not, judge choices by whether they keep you playing.",
+      "anchor": "Soccer has fixed rules and a winner; business and friendship have neither.",
+      "example": "A shop owner who cuts a supplier to the bone wins this month, then finds no one willing to rush an order when she is stuck."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a decision you made lately to come out ahead: what would you have chosen if the aim had been staying in the game?",
+  "use_cases": [
+    {
+      "situation": "A team debates how to beat a rival this quarter.",
+      "move": "Sinek says business has no final whistle like soccer; ask which option still leaves us strong in three years.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You win an argument with a friend.",
+      "move": "Ask yourself what the win cost the friendship before you press on.",
+      "context": "social"
+    },
+    {
+      "situation": "You plan the next year of your work.",
+      "move": "List one decision that serves this quarter and one that serves staying in the game, then compare.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Soccer ends with a whistle; most of life does not. Choose what keeps you playing over what wins this round.",
+  "conversation_variants": {
+    "punchline_idea": "S&P 500 companies once lasted about 61 years; Sinek says about 18 now, because most are playing a game with no final whistle as if it had one.",
+    "thirty_sec_idea": "Soccer has fixed rules and a winner. Simon Sinek, borrowing from James Carse, says business is not like that: players come and go, rules change, nobody wins for good. He points to S&P 500 companies whose lifespans fell from about 61 years to about 18. His advice for leaders: stop playing to beat rivals and play to stay in the game.",
+    "question_idea": "Which of your goals has no finish line?",
+    "key_contrast_idea": "win or stay"
+  }
+}

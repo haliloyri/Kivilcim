@@ -29,8 +29,10 @@ const categories = readCategories(db);
    bozuk paylas karti olan hikayeler uzerine yeni uretim yigilir. */
 const brokenMarkers = [];
 for (const r of rows(db, "SELECT story_id, lang_code, content FROM story_translations WHERE content IS NOT NULL AND content <> ''")) {
+  // Bazi kayitlar BLOB olarak yazilmis (ornegin story 1723); sql.js bunlari Uint8Array verir.
+  const content = typeof r.content === 'string' ? r.content : new TextDecoder().decode(r.content);
   const bad = ['##', '$$', '&&'].filter(
-    (m) => (r.content.match(new RegExp(m.replace(/[$]/g, '\\$'), 'g')) || []).length % 2
+    (m) => (content.match(new RegExp(m.replace(/[$]/g, '\\$'), 'g')) || []).length % 2
   );
   if (bad.length) brokenMarkers.push({ story_id: r.story_id, lang: r.lang_code, marks: bad });
 }

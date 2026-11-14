@@ -1,0 +1,35 @@
+{
+  "story_id": 1542,
+  "verdict": "keep",
+  "verify_note": "Keep with low confidence: Southwest napkin triangle confirmed in the Globe and Mail review and publisher copy; who drew it differs by source. Caveat added from Wikipedia and Texas Co-op Power (no literal napkin per Kelleher and King). Old 1966 contrasts, FedEx logo and invented lines dropped; no full text available.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Üç nokta, üç ok",
+    "description": "Dan Roam'a göre Southwest Airlines'ı bir peçeteye çizilen üçgen anlatılır kıldı. Kurucular sonradan gerçek bir peçete olmadığını söyledi.",
+    "hook": "Projenizi yalnızca üç nokta ve üç okla çizseniz hangi parçalar sayfada kalırdı?",
+    "one_minute_summary": "Rollin King küçük bir bölgesel havayolunu kapatırken avukatı Herb Kelleher'le büyük Teksas şehirlerini bağlayan küçük bir havayolu fikrini konuştu. Bir bar peçetesindeki üçgen: Dallas, Houston ve San Antonio üç nokta, doğrudan uçuşlar üç ok. Geleneksel havayollarının spagetti gibi rota haritalarının yanında yalın duruyordu. Roam'a göre resim, fikri yatırımcılara ve müşterilere satmayı kolaylaştırdı. Kurucular sonradan gerçek bir peçete olmadığını söyledi ve King ölümünden kısa süre önce hikâyenin tam doğru olmadığını belirtti."
+  },
+  "en": {
+    "title": "Three dots, three arrows",
+    "description": "A triangle of Dallas, Houston and San Antonio on a napkin made Southwest Airlines easy to explain, Dan Roam argues. Its founders later said there was no literal napkin.",
+    "hook": "If you drew your project with only a few dots and arrows, what would stay on the page?",
+    "one_minute_summary": "Rollin King, winding down a small regional carrier, talked with his lawyer Herb Kelleher about a small airline linking large Texas cities. The napkin sketch showed three dots for Dallas, Houston and San Antonio and three arrows for direct flights, neat beside the spaghetti route maps of hub-and-spoke carriers. Dan Roam uses it to show how a picture made the idea easy to sell to investors and customers. Both men later said there was no literal napkin, and King reportedly called it a hell of a good story."
+  },
+  "es": {
+    "title": "Tres puntos y tres flechas",
+    "description": "Según Dan Roam, un triángulo de Dallas, Houston y San Antonio en una servilleta hizo fácil de contar a Southwest Airlines. Sus fundadores dijeron luego que no hubo servilleta.",
+    "hook": "Si dibujaras tu proyecto con unos pocos puntos y flechas, ¿qué se quedaría en la hoja?",
+    "one_minute_summary": "Rollin King, que cerraba una pequeña aerolínea regional, habló con su abogado Herb Kelleher de una aerolínea que uniera grandes ciudades de Texas. El esbozo mostraba tres puntos para Dallas, Houston y San Antonio y tres flechas para los vuelos directos, limpio frente a los mapas en espagueti de las aerolíneas con hubs. Roam lo usa para mostrar que el dibujo facilitó vender la idea. Ambos dijeron después que no hubo servilleta literal."
+  },
+  "de": {
+    "title": "Drei Punkte, drei Pfeile",
+    "description": "Laut Dan Roam machte ein Dreieck aus Dallas, Houston und San Antonio auf einer Serviette Southwest Airlines leicht verkäuflich. Die Gründer sagten später, es habe keine Serviette gegeben.",
+    "hook": "Wenn du dein Projekt mit nur wenigen Punkten und Pfeilen zeichnen müsstest, was bliebe auf dem Blatt?",
+    "one_minute_summary": "Rollin King wickelte eine kleine Regionalfluglinie ab und besprach mit seinem Anwalt Herb Kelleher die Idee einer kleinen Airline zwischen großen Städten in Texas. Auf der Serviette standen drei Punkte für Dallas, Houston und San Antonio und drei Pfeile für Direktflüge, schlicht neben den Spaghetti-Streckenkarten der Hub-Airlines. Roam zeigt damit, wie ein Bild die Idee für Investoren und Kunden leicht verkäuflich machte. Beide sagten später, es habe keine echte Serviette gegeben, und King nannte die Geschichte angeblich eine verdammt gute."
+  }
+}

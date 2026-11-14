@@ -1,0 +1,32 @@
+{
+ "book_no": 139,
+ "title": "The Innovator's Dilemma",
+ "authors": ["Clayton M. Christensen"],
+ "year": "1997",
+ "sources": [
+  "https://cse.iitk.ac.in/users/amit/books/christensen-1997-innovators-dilemma-when.html",
+  "https://shortform.com/blog/?p=16724",
+  "https://electronicdesign.com/home/article/21204356/lepore-challenges-39the-innovator39s-dilemma39-christensen-responds"
+ ],
+ "facts": [
+  {"id":"f1","claim":"The book's central industry is disk drives. 14-inch drives served mainframe makers (200MB+); 8-inch drives, introduced by entrant firms around 1978-1980, served minicomputer makers (10-50MB); 5.25-inch drives (Seagate, 1980) went to desktop PCs after minicomputer makers showed no interest.","source":"iitk book notes; Shortform","confidence":"medium"},
+  {"id":"f2","claim":"The 14-inch makers 'were listening and responding to their established customers'; those customers pulled them along a capacity trajectory of about 22 percent per year. Christensen says the leaders were 'held captive by customers'.","source":"iitk book notes (quotes)","confidence":"medium"},
+  {"id":"f3","claim":"Established firms led nearly every sustaining innovation; their failures were not due to passivity or risk aversion.","source":"iitk book notes","confidence":"medium"},
+  {"id":"f4","claim":"Disruptive products offered less of what mainstream customers wanted, and a different set of attributes valued in an emerging market. They were technologically straightforward, often off-the-shelf components in simpler architectures.","source":"iitk book notes","confidence":"medium"},
+  {"id":"f5","claim":"Two-thirds of 14-inch makers never entered the 8-inch market; those that did were about two years behind the startups. Every 14-inch maker eventually failed.","source":"Shortform","confidence":"medium"},
+  {"id":"f6","claim":"The 1.8-inch drive's largest initial market was portable heart monitoring devices, not computing.","source":"iitk book notes","confidence":"medium"},
+  {"id":"f7","claim":"Seagate built a working 3.5-inch prototype (around 1985). Its marketing and executive side argued that the market wanted higher-capacity drives at lower cost per megabyte. Prototypes shown to existing customers drew lukewarm reviews; the program manager lowered his sales estimates and executives cancelled the program.","source":"iitk book notes; Shortform; electronicdesign","confidence":"medium"},
+  {"id":"f8","claim":"The 3.5-inch architecture was first developed in 1984 by Rodime; Conner Peripherals (a spin-off of Seagate and Miniscribe people) began shipping in 1987, targeting portable and laptop computers. Seagate began making 3.5-inch drives in 1988, then sold them to desktop makers, cutting into its own existing sales.","source":"iitk book notes; Shortform","confidence":"medium"},
+  {"id":"f9","claim":"Critics such as Jill Lepore argue Christensen picked case studies that do not fully support his thesis; disk drives are one focus of that critique.","source":"electronicdesign","confidence":"medium"}
+ ],
+ "rejected": [
+  {"claim":"Old 1514 quote: 'Big companies look at disruptive innovation and sensibly avoid it, because the short-term sensible decision is deadly long term.'","reason":"Quotation not found; paraphrase presented as direct quote."},
+  {"claim":"Old 1514: disruptive innovation 'requires a separate unit protected from the business culture'.","reason":"Not verified in the excerpts available; left out."},
+  {"claim":"Old 1515: a company debates 50 million for a new market vs 20 million for an existing customer, and the customer project always wins; quote from Christensen.","reason":"Invented budget figures and quote. The real mechanism is documented in the Seagate episode, so 1515 is rebuilt on it."},
+  {"claim":"Old 1515: individuals fall in the same trap (health priority vs calendar).","reason":"Reader application, not from the book; may appear only in lesson/use cards as proposal."}
+ ],
+ "stories": {
+  "1514": {"verdict":"keep","fact_ids":["f1","f2","f3","f4","f5"],"note":"Rebuilt on the 14-inch to 5.25-inch drive chain: the leaders listened to customers and still lost. Medium confidence, secondary notes."},
+  "1515": {"verdict":"keep","fact_ids":["f7","f8","f9"],"note":"Rebuilt on the Seagate 3.5-inch prototype that customers did not want. Medium confidence; one critic's caveat included."}
+ }
+}

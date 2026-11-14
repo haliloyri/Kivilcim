@@ -1,0 +1,35 @@
+{
+  "story_id": 1494,
+  "verdict": "keep",
+  "verify_note": "Keep: Cambodian farmer account confirmed in secondhand summaries; corrected from tractor accident to land mine; invented village-healer dialogue and milk-sharing details dropped. Presented as an illustration since critics fault Hari's selection. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Bir inek ve bir gelecek",
+    "description": "Hari'nin anlattığı Kamboçyalı çiftçi, bir mayında bacağını kaybetti. Depresyonu, ona alınan bir inekle hafifledi.",
+    "hook": "En son ne zaman birine yararlı olduğunuzu hissettiniz?",
+    "one_minute_summary": "Johann Hari, Kamboçyalı bir çiftçinin hikâyesini anlatır. Bir mayın çiftçinin sol bacağını aldı. Takma bacak taktılar, ama iyileşemedi: sürekli bir gelecek kaygısı ve çaresizlik içindeydi. Doktorlar ve komşular onunla oturup hayatını konuştu. Pirinç tarlası artık ona fazla ağırdı, bu yüzden bir inek aldılar ve süt çiftçisi olabildi. Aylar ve yıllar içinde depresyonu geçti. Yerliler ineğe “bir ağrı kesici ve antidepresan” dedi. Hari bunu kaybolmuş bir geleceğin yeniden kurulması olarak okur. Eleştirmenler Hari'nin seçici davrandığını söylüyor."
+  },
+  "en": {
+    "title": "A cow and a future",
+    "description": "In Johann Hari's telling, a Cambodian farmer lost a leg to a land mine. His depression lifted after neighbours bought him a cow.",
+    "hook": "When did you last feel useful to someone?",
+    "one_minute_summary": "Johann Hari tells of a Cambodian farmer whose left leg was destroyed by a land mine. He got an artificial limb but did not recover, and felt constant anxiety about the future and despair. Doctors and neighbours sat with him and talked through his life. The rice paddy was now too hard for him, so they bought him a cow and he became a dairy farmer. Over months and years his depression went away. Locals called the cow an analgesic and antidepressant. Critics say Hari picks his evidence selectively."
+  },
+  "es": {
+    "title": "Una vaca y un futuro",
+    "description": "En el relato de Johann Hari, un granjero camboyano perdió una pierna por una mina. Su depresión cedió cuando los vecinos le compraron una vaca.",
+    "hook": "¿Cuándo fue la última vez que te sentiste útil para alguien?",
+    "one_minute_summary": "Johann Hari cuenta el caso de un granjero camboyano al que una mina le destrozó la pierna izquierda. Le pusieron una prótesis, pero no se recuperó: sentía ansiedad constante por el futuro y desesperanza. Médicos y vecinos se sentaron con él a repasar su vida. El arrozal ya le resultaba demasiado duro, así que le compraron una vaca y se hizo lechero. En meses y años su depresión desapareció. Los vecinos llamaron a la vaca analgésico y antidepresivo. Los críticos dicen que Hari elige las pruebas a su conveniencia."
+  },
+  "de": {
+    "title": "Eine Kuh und eine Zukunft",
+    "description": "In Johann Haris Erzählung verlor ein kambodschanischer Bauer durch eine Mine ein Bein. Seine Depression ließ nach, als Nachbarn ihm eine Kuh kauften.",
+    "hook": "Wann hast du dich zuletzt für jemanden nützlich gefühlt?",
+    "one_minute_summary": "Johann Hari erzählt von einem kambodschanischen Bauern, dem eine Mine das linke Bein zerstörte. Er bekam eine Prothese, erholte sich aber nicht und litt unter ständiger Angst vor der Zukunft und Verzweiflung. Ärzte und Nachbarn setzten sich mit ihm zusammen und sprachen über sein Leben. Der Reisfeldarbeit war er nicht mehr gewachsen, also kauften sie ihm eine Kuh, und er wurde Milchbauer. Über Monate und Jahre verschwand seine Depression. Die Leute nannten die Kuh ein Schmerz- und Antidepressivum. Kritiker sagen, Hari wähle seine Belege einseitig aus."
+  }
+}

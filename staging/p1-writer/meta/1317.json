@@ -1,0 +1,35 @@
+{
+ "story_id": 1317,
+ "verdict": "keep",
+ "verify_note": "Verified in full text. Book describes Skinner's pigeons, not a rat, and more taps, not obsessive pressing; corrected. Email as tribe/hunt/self reward is Eyal's own example.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Skinner'ın Güvercinleri",
+  "description": "Yem rastgele gelmeye başlayınca Skinner'ın güvercinleri kola çok daha sık vurdu. Nir Eyal aynı düzeneği e-postada üç kat güçlü görüyor.",
+  "hook": "Gelen kutunuza bakarken hangi ödülü umduğunuzu hiç düşündünüz mü?",
+  "one_minute_summary": "Nir Eyal, B.F. Skinner'ın 1950'lerdeki deneyini anlatıyor. Güvercinler önce kola her bastıklarında yem aldı. Sonra yem rastgele sayıda vuruştan sonra gelmeye başladı ve kola vurma sayısı çarpıcı biçimde arttı. Eyal değişken ödülleri üçe ayırıyor: kabile, av ve benlik. E-postanın üçünü birden kullandığını söylüyor: kimin yazdığı, içinde olabilecek fırsat ve okunmamış sayısını sıfırlama isteği. Twitter akışı ve kumar makineleri de avın ödülüne örnek."
+ },
+ "en": {
+  "title": "Skinner's Pigeons",
+  "description": "Once food came at random, Skinner's pigeons tapped the lever far more often. Nir Eyal sees the same mechanism at work in email, three times over.",
+  "hook": "When you check your inbox, have you ever asked which reward you are hoping for?",
+  "one_minute_summary": "Nir Eyal goes back to B.F. Skinner's experiments in the 1950s. Pigeons first got a food pellet every time they pressed a lever. Then food came only after a random number of taps, and the number of taps rose dramatically. Eyal sorts variable rewards into three kinds: the tribe, the hunt and the self. Email, he argues, uses all three: who wrote, what opportunity might be inside, and the urge to clear the unread count. Twitter's feed and slot machines are rewards of the hunt."
+ },
+ "es": {
+  "title": "Las palomas de Skinner",
+  "description": "Cuando la comida empezó a llegar al azar, las palomas de Skinner picotearon la palanca mucho más. Nir Eyal ve el mismo mecanismo en el correo, por triplicado.",
+  "hook": "Cuando miras el correo, ¿te has preguntado alguna vez qué recompensa esperas?",
+  "one_minute_summary": "Nir Eyal vuelve a los experimentos de B.F. Skinner en los años cincuenta. Al principio, las palomas recibían comida cada vez que pulsaban una palanca. Luego la comida llegaba tras un número aleatorio de toques, y los toques aumentaron de forma espectacular. Eyal distingue tres recompensas variables: la tribu, la caza y el yo. El correo, dice, usa las tres: quién ha escrito, qué oportunidad puede traer y las ganas de dejar a cero los no leídos. El muro de Twitter y las tragaperras son recompensas de la caza."
+ },
+ "de": {
+  "title": "Skinners Tauben",
+  "description": "Als das Futter zufällig kam, pickten Skinners Tauben viel öfter auf den Hebel. Nir Eyal sieht denselben Mechanismus im E-Mail-Postfach, gleich dreifach.",
+  "hook": "Hast du dich beim Mail-Checken schon einmal gefragt, auf welche Belohnung du eigentlich hoffst?",
+  "one_minute_summary": "Nir Eyal geht zurück zu B.F. Skinners Experimenten in den 1950er-Jahren. Zuerst bekamen Tauben bei jedem Druck auf den Hebel Futter. Dann kam das Futter erst nach einer zufälligen Zahl von Picks, und die Zahl der Picks stieg drastisch. Eyal unterscheidet drei variable Belohnungen: Stamm, Jagd und Selbst. Die E-Mail nutzt laut ihm alle drei: wer geschrieben hat, welche Chance drinsteckt und der Drang, die ungelesenen Mails auf null zu bringen. Twitter-Feed und Spielautomaten sind Belohnungen der Jagd."
+ }
+}

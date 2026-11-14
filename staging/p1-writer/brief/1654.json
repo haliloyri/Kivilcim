@@ -1,0 +1,62 @@
+{
+  "story_id": 1654,
+  "kind": "concept",
+  "book": {
+    "title": "Creativity: Flow and the Psychology of Discovery and Invention",
+    "author": "Mihaly Csikszentmihalyi",
+    "year": "1996"
+  },
+  "confidence": "medium",
+  "confidence_note": "From summaries and blogs quoting the book, not the book text. Old text's Nobel claim, 'avoiding paradoxes means not truly creative' and 'draw energy from tension' dropped. The Uccello detail is Vasari's account as summarised, so no direct quote. About 91 interviewees is medium (one catalogue says nearly one hundred).",
+  "facts": [
+    "The book draws on in-depth interviews with about 91 exceptional individuals.",
+    "Csikszentmihalyi finds that creative people hold opposite traits at once and lists ten pairs.",
+    "Energetic yet restful: they work long hours with intense concentration while seeming fresh, and are quiet at rest.",
+    "Smart yet naive.",
+    "Playful yet disciplined: he cites Vasari's account of the painter Paolo Uccello, who stayed up through the night working out perspective.",
+    "Rebellious yet conservative: creators absorb an area of culture before they challenge it.",
+    "Passionate yet objective: he quotes the historian Natalie Davis on detaching from her own writing so she can accept criticism.",
+    "The most consistent trait he finds is the ability to enjoy the process of creation for its own sake.",
+    "Studies cited by Csikszentmihalyi suggest an IQ cutoff around 120, above which more intelligence does not necessarily bring more creativity.",
+    "In his tests creative girls were more dominant than peers and creative boys more sensitive and less aggressive (summary, medium)."
+  ],
+  "scene_details": [
+    "Uccello working out perspective all night",
+    "Natalie Davis stepping back from her own pages",
+    "ten pairs of opposites"
+  ],
+  "tension": "The people studied did not share one trait; they combined traits that normally exclude each other.",
+  "opening_idea": "Open on the pairs: energetic and restful, playful and disciplined.",
+  "lessons": [
+    {
+      "idea": "Use the half of a pair that you neglect",
+      "anchor": "the ten pairs, especially playful and disciplined and passionate and objective; Everyday: a cabinetmaker who plays with shapes on Monday and checks every joint on Tuesday"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which of your habits has an opposite you tend to neglect, and what would using it on one task look like?",
+  "use_cases": [
+    {
+      "situation": "The team debates spontaneity versus process",
+      "move": "Csikszentmihalyi found creative people were playful and disciplined at once. Can we play with options for an hour, then pick one and check it carefully?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague is hurt by feedback on their draft",
+      "move": "Natalie Davis stepped back from her own writing to take criticism. Want to read it as if someone else wrote it first?",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You see yourself only as a planner or only as a dreamer",
+      "move": "I do one half well and skip the other. Today I will do the neglected half for one task.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Csikszentmihalyi found opposites in creative people: playful and disciplined, passionate and objective. Use the half you neglect today.",
+  "conversation_variants": {
+    "punchline_idea": "Creative people in Csikszentmihalyi's interviews were energetic and restful, smart and naive, playful and disciplined, all at once.",
+    "thirty_sec_idea": "Csikszentmihalyi interviewed about 91 exceptional people and found no single creative trait, but pairs of opposites held together: energetic and restful, playful and disciplined, passionate and objective. He cites Vasari's story of Uccello up all night over perspective, and the historian Natalie Davis stepping back from her own writing to take criticism.",
+    "question_idea": "",
+    "key_contrast_idea": "two opposites, one person"
+  }
+}

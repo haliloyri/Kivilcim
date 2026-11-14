@@ -1,0 +1,35 @@
+{
+ "story_id": 1610,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence and short: rebuilt on Bogle's Cervantes needle-in-a-haystack line, his corollary 'buy the haystack' and the gross-minus-cost arithmetic (summaries and quote pages). Old SPIVA claim and 'winners erase losers' wording dropped as unverified. Concept story, no concrete case in the book was verified.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İğneyi aramayın",
+  "description": "Bogle, kazanan fonu seçmek için Cervantes'in samanlıkta iğne imgesini ödünç alıyor. Arama para tutuyor, endeks fonu bütün piyasayı tutarak aramayı atlıyor.",
+  "hook": "Kazanan fonu arama masrafını kim ödüyor?",
+  "one_minute_summary": "Bogle Cervantes'in imgesini ödünç alıyor: uzun vadede piyasayı yenecek bir fon seçmek samanlıkta iğne aramaya benzer. Yöneticiler araştırıp alıp satarak arıyor ve fatura fon sahiplerinin getirisinden çıkıyor. Aritmetiği: brüt getiri eksi maliyet, net getiridir. Cevabı, bütün piyasaya sahip olan ve az ücret alan geniş bir endeks fonu. Samanlıkta iğne aramayın, samanlığı satın alın. Kitabın alt başlığı da bunu vaat ediyor: borsa getirisindeki adil payınızı garanti etmenin tek yolu."
+ },
+ "en": {
+  "title": "Don't look for the needle",
+  "description": "Bogle borrows Cervantes' needle in a haystack for picking winning funds. The search costs money, and index funds skip it by owning the whole market.",
+  "hook": "Who pays for the search for the winning fund?",
+  "one_minute_summary": "Bogle borrows Cervantes' image: picking a fund that will beat the market over the long run is like looking for a needle in a haystack. Managers search by researching and trading, and the bill comes out of the owners' returns. His arithmetic: gross return minus costs equals net return. His answer is a broad index fund that owns the whole market and charges little. Don't look for the needle in the haystack, just buy the haystack."
+ },
+ "es": {
+  "title": "No busques la aguja",
+  "description": "Bogle toma de Cervantes la aguja en el pajar para elegir fondos ganadores. La búsqueda cuesta dinero, y el fondo indexado la evita al poseer todo el mercado.",
+  "hook": "¿Quién paga la búsqueda del fondo ganador?",
+  "one_minute_summary": "Bogle toma la imagen de Cervantes: elegir un fondo que supere al mercado a largo plazo es como buscar una aguja en un pajar. Los gestores buscan investigando y operando, y la factura sale de los rendimientos de los dueños. Su aritmética: rendimiento bruto menos costes es igual a rendimiento neto. Su respuesta es un fondo indexado amplio que posee todo el mercado y cobra poco. No busques la aguja en el pajar, compra el pajar."
+ },
+ "de": {
+  "title": "Such nicht die Nadel",
+  "description": "Bogle leiht sich bei Cervantes die Nadel im Heuhaufen für die Wahl von Gewinnerfonds. Die Suche kostet Geld, der Indexfonds spart sie, indem er den ganzen Markt hält.",
+  "hook": "Wer bezahlt die Suche nach dem Gewinnerfonds?",
+  "one_minute_summary": "Bogle leiht sich Cervantes' Bild: Einen Fonds zu wählen, der den Markt langfristig schlägt, sei, als suche man eine Nadel im Heuhaufen. Manager suchen mit Recherche und Handel, und die Rechnung zahlen die Besitzer aus ihrer Rendite. Seine Rechnung: Bruttorendite minus Kosten ist Nettorendite. Seine Antwort ist ein breiter Indexfonds, der den ganzen Markt hält und wenig kostet. Such nicht die Nadel im Heuhaufen, kauf den Heuhaufen."
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1537,
+  "verdict": "keep",
+  "verify_note": "Keep: violin-study figures (about 10,000 vs 4,000 hours; middle groups differ between sources and are omitted), purposeful practice, Federer and Agassi examples from the spiked review, lifeclub and fivelessonsfrom; Macnamara 2014 caveat. No primary text. Ericsson-vs-Gladwell dispute, the 3-year vs 10-year comparison and the feedback/analysis steps dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "10.000 saat ve zor kısım",
+    "description": "Matthew Syed, keman öğrencileri araştırmasından yola çıkar: saatler ancak konfor alanının ötesine geçilirse işe yarar.",
+    "hook": "Uzun süredir pratik ettiğiniz ama gelişmediğiniz bir beceri var mı?",
+    "one_minute_summary": "Matthew Syed bir keman öğrencisi araştırmasına dayanır: en iyiler ortalama yaklaşık 10.000 saat ciddi pratik yapmış, en az yetenekliler yaklaşık 4.000. Ona göre mükemmellik yaklaşık on yıllık amaçlı pratik ister, yani konfor alanının ötesine geçmek. Birçok kişi rahat bir düzeye gelince bunu bırakır. Federer'in servisi okuması ve Agassi'nin babasının günde 2.500 topu öğrenilmiş becerinin örnekleri. 2014 meta-analizi pratiğin çok şeyi açıkladığını ama her şeyi açıklamadığını gösteriyor."
+  },
+  "en": {
+    "title": "10,000 Hours and the Hard Part",
+    "description": "Matthew Syed starts from a violin-student study: hours only help if they push past your comfort zone.",
+    "hook": "Which skill have you practised for a long time without improving?",
+    "one_minute_summary": "Matthew Syed points to a study of violin students: the best averaged about 10,000 hours of serious practice, the least skilled about 4,000. He says excellence generally takes around ten years of purposeful practice, which means pushing past your comfort zone, something many people stop doing once they feel comfortable. Federer's reading of serves and Agassi's father's 2,500 balls a day are his examples. A 2014 meta-analysis found practice explains a lot but not everything."
+  },
+  "es": {
+    "title": "10.000 horas y la parte difícil",
+    "description": "Matthew Syed parte de un estudio con estudiantes de violín: las horas solo sirven si empujan más allá de la zona de confort.",
+    "hook": "¿Qué habilidad has practicado mucho tiempo sin mejorar?",
+    "one_minute_summary": "Matthew Syed cita un estudio con estudiantes de violín: los mejores acumularon de media unas 10.000 horas de práctica seria, los menos dotados unas 4.000. Dice que la excelencia suele requerir unos diez años de práctica con propósito, es decir, empujar más allá de la zona de confort, algo que mucha gente deja al sentirse cómoda. Sus ejemplos son la lectura del saque de Federer y las 2.500 pelotas diarias que quería el padre de Agassi. Un metaanálisis de 2014 halló que la práctica explica mucho, pero no todo."
+  },
+  "de": {
+    "title": "10.000 Stunden und der schwere Teil",
+    "description": "Matthew Syed geht von einer Studie mit Geigenstudenten aus: Stunden helfen nur, wenn sie über die Komfortzone hinausgehen.",
+    "hook": "Welche Fähigkeit übst du schon lange, ohne besser zu werden?",
+    "one_minute_summary": "Matthew Syed verweist auf eine Studie mit Geigenstudenten: Die Besten kamen im Schnitt auf etwa 10.000 Stunden ernsthaften Übens, die Schwächsten auf etwa 4.000. Exzellenz braucht seiner Darstellung nach rund zehn Jahre zielgerichtetes Üben, also über die Komfortzone hinauszugehen, was viele aufgeben, sobald es bequem wird. Federers Lesen der Aufschläge und die 2.500 Bälle täglich, die Agassis Vater wollte, sind seine Beispiele. Eine Metaanalyse von 2014 fand, Üben erkläre viel, aber nicht alles."
+  }
+}

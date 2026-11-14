@@ -17,8 +17,9 @@ import { getCachedDeviceUserId } from '../services/supabase';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import useReducedMotion from '../hooks/useReducedMotion';
 import { getStoryByLang } from '../db/db';
-import { SUPPORTED_LANGS } from '../utils/locale';
+import { SUPPORTED_LANGS, toUpperFor } from '../utils/locale';
 import { getLogo } from '../constants/logos';
+import Albi from '../components/Albi';
 
 const PROFILE_INFO_PROMPT_SEEN_KEY = '@albor_profile_info_prompt_seen';
 // Read and cleared once by AppNavigator, after the reader finishes their first
@@ -414,21 +415,6 @@ const OnboardingScreen = ({ navigation }) => {
       backgroundColor: colors.primary,
       opacity: 0.07,
     },
-    heroLogoWrapper: {
-      width: '44%',
-      aspectRatio: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      shadowColor: colors.primary,
-      shadowOffset: { width: 0, height: 6 },
-      shadowOpacity: 0.18,
-      shadowRadius: 20,
-      elevation: 4,
-    },
-    heroLogoImg: {
-      width: '100%',
-      height: '100%',
-    },
     welcomeTitle: {
       fontFamily: 'PlayfairDisplay_700Bold',
       fontSize: isCompactPhone ? 27 : 32,
@@ -763,13 +749,7 @@ const OnboardingScreen = ({ navigation }) => {
         <View style={s.heroOuterRing} />
         <View style={s.heroInnerRing} />
         <View style={s.heroGlowBlob} />
-        <View style={s.heroLogoWrapper}>
-          <Image
-            source={getLogo(isDark)}
-            style={s.heroLogoImg}
-            resizeMode="contain"
-          />
-        </View>
+        <Albi pose="selamlama" size={isCompactPhone ? 68 : 78} disc={isDark} />
       </Animated.View>
       <Text style={s.welcomeTitle}>{t('onboarding_welcome', lang)}</Text>
       <Text style={s.welcomeSubtitle}>{t('onboarding_welcome_sub', lang)}</Text>
@@ -792,7 +772,7 @@ const OnboardingScreen = ({ navigation }) => {
       </View>
       <View style={[s.firstValueCard, { marginTop: isCompactPhone ? 12 : 28 }]}>
           <Text style={s.firstValueCategory} numberOfLines={1}>
-            {t('onboarding_first_value_title', lang)}
+            {toUpperFor(t('onboarding_first_value_title', lang), lang)}
           </Text>
           {firstValueStory && hasLocalizedFirstValue ? (
             <>
@@ -811,6 +791,7 @@ const OnboardingScreen = ({ navigation }) => {
 
     /* -- Step 1: Category selection (min. 2) -- */
     <View style={{ flex: 1, justifyContent: 'center' }} key="step1">
+      {!isCompactPhone && <Albi pose="bos_kutuphane" size={64} disc={isDark} style={{ marginBottom: 12 }} />}
       <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
         {t('onboarding_why', lang)}
       </Text>
@@ -882,12 +863,13 @@ const OnboardingScreen = ({ navigation }) => {
        Two taps that used to be two screens; neither needs a screen of its own,
        and the summary step that restated them is gone. -- */
     <View style={{ flex: 1, justifyContent: 'center' }} key="step2">
+      {!isCompactPhone && <Albi pose="okuma" size={64} disc={isDark} style={{ marginBottom: 12 }} />}
       <Text style={s.sectionTitle} numberOfLines={2} adjustsFontSizeToFit>
         {t('onboarding_plan_title', lang)}
       </Text>
       <Text style={[s.sectionSubtitle, { marginBottom: 18 }]}>{t('onboarding_how_long_sub', lang)}</Text>
 
-      <Text style={s.groupLabel}>{t('reminderTime', lang)}</Text>
+      <Text style={s.groupLabel}>{toUpperFor(t('reminderTime', lang), lang)}</Text>
       {reminderOptions.map((option, i) => {
         const isSelected = selectedReminders.includes(option.reminderWindow);
         return (

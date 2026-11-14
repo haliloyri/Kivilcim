@@ -1,0 +1,35 @@
+{
+  "story_id": 1528,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: origin facts (1986 HBR article, rugby, Easel, OOPSLA '95, Sutherland biography) from Wikipedia; the FBI figures come from one summary site and are hedged. Old text's brain-research and sector claims dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Scrum nasıl doğdu",
+    "description": "Scrum adı 1986 tarihli bir makaledeki ragbi benzetmesinden geliyor. FBI ayrıntısı bir özet kaynaktan.",
+    "hook": "İşinizde top kimden kime pas ediliyor?",
+    "one_minute_summary": "Scrum sözcüğü, Takeuchi ve Nonaka'nın 1986'da otomobil, fotokopi ve yazıcı firmalarını ragbiye benzettiği makaleden geliyor. 1990'ların başında Sutherland, Scumniotales ve McKenna Easel'da benzer bir yaklaşım geliştirip ona scrum dedi, 1995'te Sutherland ve Schwaber bunu bir makalede sundu. Sprintler normalde bir hafta ile bir ay arasında, çoğunlukla iki hafta sürer. FBI ayrıntısı yalnızca bir özet kaynağa dayanıyor."
+  },
+  "en": {
+    "title": "How scrum got its name",
+    "description": "Scrum is named after a rugby comparison in a 1986 article. The FBI detail comes from a summary of the book.",
+    "hook": "Who passes the ball to whom in your work?",
+    "one_minute_summary": "The word scrum comes from a 1986 Harvard Business Review article in which Takeuchi and Nonaka compared product teams at car, copier and printer firms to rugby. In the early 1990s Sutherland, Scumniotales and McKenna built a similar approach at Easel and called it scrum, and in 1995 Sutherland and Schwaber presented it in a paper. Sprints normally last one week to one month, most often two. The FBI detail rests on one summary."
+  },
+  "es": {
+    "title": "Cómo nació scrum",
+    "description": "Scrum toma su nombre de una comparación con el rugby en un artículo de 1986. El dato del FBI sale de un resumen del libro.",
+    "hook": "¿Quién pasa el balón a quién en tu trabajo?",
+    "one_minute_summary": "La palabra scrum viene de un artículo de 1986 de la Harvard Business Review en el que Takeuchi y Nonaka compararon con el rugby los equipos de producto de empresas de coches, fotocopiadoras e impresoras. A principios de los noventa Sutherland, Scumniotales y McKenna crearon un enfoque parecido en Easel y lo llamaron scrum, y en 1995 Sutherland y Schwaber lo presentaron en un artículo. Los sprints duran normalmente de una semana a un mes, casi siempre dos. El dato del FBI se apoya en un solo resumen."
+  },
+  "de": {
+    "title": "Wie Scrum zu seinem Namen kam",
+    "description": "Scrum ist nach einem Rugby-Vergleich in einem Aufsatz von 1986 benannt. Das FBI-Detail stammt aus einer Zusammenfassung des Buches.",
+    "hook": "Wer spielt in deiner Arbeit wem den Ball zu?",
+    "one_minute_summary": "Das Wort Scrum stammt aus einem Aufsatz der Harvard Business Review von 1986, in dem Takeuchi und Nonaka Produktteams von Auto-, Kopierer- und Druckerfirmen mit Rugby verglichen. Anfang der Neunzigerjahre entwickelten Sutherland, Scumniotales und McKenna bei Easel einen ähnlichen Ansatz und nannten ihn Scrum, 1995 stellten Sutherland und Schwaber ihn in einem Papier vor. Sprints dauern normalerweise eine Woche bis einen Monat, meist zwei. Das FBI-Detail beruht auf einer einzigen Zusammenfassung."
+  }
+}

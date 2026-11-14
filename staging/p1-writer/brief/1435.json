@@ -1,0 +1,32 @@
+{
+  "story_id": 1435,
+  "kind": "concept",
+  "book": {"title": "The Psychology of Selling", "author": "Brian Tracy", "year": "2006"},
+  "confidence": "low",
+  "confidence_note": "The book's text was not available; facts come from a single summary preview (Shortform) that states the central claim, the five desires and two fears, and the benefit-focused pitch. The old text's quotation ('people buy with emotions and justify with logic') and its insurance example could not be found and were dropped. Publication year follows the library record (2006); the book may have appeared earlier. Damasio's patient Elliot is outside context, flagged as such in the story, and is known only through secondary summaries.",
+  "facts": [
+    "A summary states the book's central claim: all buying decisions are emotional rather than rational.",
+    "Customer desires listed: money and security, personal growth, love and companionship, health, status and prestige.",
+    "Customer fears: losing money (overspending on a poorly judged purchase) and making a mistake (buying something they won't want, don't need, or that won't work as expected).",
+    "Pitches are benefit-focused (what the product does for the buyer, not what it is); the book teaches a 'show, tell, ask' format and tailors presentations to six buyer types.",
+    "Outside context: Damasio's Descartes' Error (1994) describes Elliot, whose intellect stayed intact after tumour surgery but whose emotions went flat; his everyday decisions failed (lost job, ill-advised money-making schemes, bankruptcy per summaries). Damasio's explanation: emotions, felt as bodily states, act as a fast, preconscious guide for decisions."
+  ],
+  "scene_details": ["a spec sheet", "five listed desires", "two named fears", "Elliot unable to decide"],
+  "tension": "A buyer seems to compare specifications, yet the book says the choice is driven by feeling.",
+  "opening_idea": "Open on the buyer's two fears, which appear on no spec sheet.",
+  "lessons": [{"idea": "Behind a hesitant 'let me think about it' there is often a fear of a specific mistake; asking which one moves the conversation.", "anchor": "The two fears: losing money, making a mistake.", "example": "Someone choosing a laptop for a small shop who fears paying for features they will never use."}],
+  "reflect": [],
+  "reflect_final": "When you last hesitated over a purchase or a decision, which specific mistake were you trying to avoid?",
+  "use_cases": [
+    {"situation": "Your team hesitates to buy a piece of software.", "move": "Ask what would count as a mistake here, overpaying or choosing something nobody uses, before comparing features.", "context": "meeting"},
+    {"situation": "A relative cannot decide between two options and keeps asking for more specs.", "move": "Ask what they would regret most if they chose wrong and start from there.", "context": "family"},
+    {"situation": "You are about to buy something expensive and keep reading reviews.", "move": "Recall Tracy's two fears, losing money and making a mistake, and decide which one you are really weighing.", "context": "self"}
+  ],
+  "pocket_idea": "Hesitation usually hides a fear: losing money or making a mistake. Ask which one before you add facts.",
+  "conversation_variants": {
+    "punchline_idea": "Tracy's two buyer fears, losing money and making a mistake, appear on no spec sheet.",
+    "thirty_sec_idea": "Tracy claims all buying is emotional: buyers want security, status, health, growth and love, and fear losing money or making a mistake. Neuroscience adds a caution: a patient with flat emotions could not decide, but that does not prove reasoning plays no part.",
+    "question_idea": "",
+    "key_contrast_idea": "specs versus fears"
+  }
+}

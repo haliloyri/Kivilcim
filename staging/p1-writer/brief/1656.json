@@ -1,0 +1,59 @@
+{
+  "story_id": 1656,
+  "kind": "concept",
+  "book": {
+    "title": "Creativity: Flow and the Psychology of Discovery and Invention",
+    "author": "Mihaly Csikszentmihalyi",
+    "year": "1996"
+  },
+  "confidence": "medium",
+  "confidence_note": "From summaries and the author's lecture, not the book text. The old tree-in-the-forest framing, Bach and Van Gogh, and 'community' as the third part were dropped; the book calls it the field. Einstein example comes from a lecture transcript, not confirmed in the book, so it is flagged low and attributed to a lecture in the story.",
+  "facts": [
+    "Csikszentmihalyi's systems model says creativity arises from three parts: the individual, the domain and the field.",
+    "The domain is the body of symbolic rules and procedures, such as mathematics or music.",
+    "The field is the group of experts who decide whether a new idea enters the domain, the gatekeepers.",
+    "The individual uses the domain's symbols to produce something new.",
+    "He defines a creative person as someone whose thoughts or actions change a domain or establish a new one, and a domain cannot be changed without the explicit or implicit consent of the field.",
+    "In a lecture he says Einstein's ideas were certified as creative by a small number of leading physics professors.",
+    "Where someone lives matters because it decides access to information about the domain, stimulation of novelty and closeness to the field's centres of power (plot summary, medium).",
+    "One source illustrates the field with modern art: those who decide which new paintings deserve to be seen, bought and collected, in Manhattan (low; not confirmed as the book's own example)."
+  ],
+  "scene_details": [
+    "a small number of physics professors certifying Einstein's ideas",
+    "experts acting as gatekeepers"
+  ],
+  "tension": "A new idea alone is not enough: someone in the field has to accept it.",
+  "opening_idea": "Open on the Einstein example from the lecture and the small number of professors.",
+  "lessons": [
+    {
+      "idea": "Find out who judges your work before you polish it",
+      "anchor": "the field as gatekeepers; Everyday: someone writing a funding proposal who asks the person who will sign it what they check first"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Who in your field would be the first to judge your current work, and what would you ask them to look at?",
+  "use_cases": [
+    {
+      "situation": "You finished a draft and are about to publish",
+      "move": "Csikszentmihalyi says the field decides what enters the domain. Who is one expert we could ask to look at this first?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend works alone on a project for years",
+      "move": "Even Einstein's ideas needed physics professors to certify them, per Csikszentmihalyi. Who could look at a part of yours?",
+      "context": "social"
+    },
+    {
+      "situation": "You doubt whether your work is any good",
+      "move": "I know my domain's rules, but I have never asked the field. I will send one page to one expert.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Csikszentmihalyi's model has three parts: you, your domain, and the experts who judge. Find your judges early.",
+  "conversation_variants": {
+    "punchline_idea": "In Csikszentmihalyi's model an idea becomes creative only when the experts of its field accept it.",
+    "thirty_sec_idea": "Csikszentmihalyi says creativity needs three parts: an individual, a domain with its symbolic rules like mathematics or music, and a field of experts who act as gatekeepers. A creative person changes the domain, but only with the field's consent. In a lecture he says a small number of leading physics professors certified Einstein's ideas.",
+    "question_idea": "",
+    "key_contrast_idea": "idea, then acceptance"
+  }
+}

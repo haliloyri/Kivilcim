@@ -1,0 +1,30 @@
+{
+  "story_id": 1510,
+  "verdict": "keep",
+  "verify_note": "Keep: negative visualization and hedonic adaptation verified in reviews and reader notes. Old quote, morning ritual and coffee example dropped; no full text, so medium confidence.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Kaybı kısaca hayal etmek",
+    "description": "Irvine'e göre elde edince alışırız. Stoacıların çaresi, kaybı kısa süre ve bilerek hayal edip sonra bırakmaktır.",
+    "hook": "Sıradan haftanızda hangi kişiye ya da şeye artık dikkat etmiyorsunuz?",
+    "one_minute_summary": "William Irvine'e göre insanlar istediklerini elde edince onlara alışır ve daha büyük arzular kurar. Stoacıların çaresi olumsuz görselleştirmedir: sahip olduğunuz bir şeyi, eşi, arabayı, işi kaybettiğinizi kısa süre hayal etmek. Epiktetos, bir arkadaşınızdan ayrılırken bunun son ayrılık olabileceğini sessizce hatırlatmayı öğütler. Yemek duasını da bu pratiğe benzetir: yemeğin hiç gelmemiş olabileceğini düşünmek. Stoacılar bunu zaman zaman yapar, sürekli değil, böylece karamsarlaşmazlar."
+  },
+  "en": {
+    "title": "Imagining the loss, briefly",
+    "description": "Irvine says we stop noticing what we get. The Stoic remedy is to picture the loss briefly and on purpose, then put it away.",
+    "hook": "Which person or thing in your ordinary week have you stopped noticing?",
+    "one_minute_summary": "William Irvine says people get what they want and then take it for granted, forming grander desires. The Stoic remedy is negative visualization: picture losing what you value, a spouse, a car, a job. Epictetus advised quietly reminding yourself, when parting from a friend, that it might be the last time, and saying grace works the same way. The Stoics did this only periodically, a few times a day or week, so it never turned into pessimism."
+  },
+  "es": {
+    "title": "Imaginar la pérdida, un momento",
+    "description": "Según Irvine dejamos de notar lo que conseguimos. El remedio estoico es imaginar la pérdida un momento y luego soltarla.",
+    "hook": "¿A qué persona o cosa de tu semana normal has dejado de prestar atención?",
+    "one_minute_summary": "Según William Irvine, la gente consigue lo que quiere, lo da por sentado y desarrolla deseos mayores. El remedio estoico es la visualización negativa: imaginar que pierdes lo que valoras, una pareja, un coche, un trabajo. Epicteto aconsejaba recordarse en silencio, al despedirte de un amigo, que podría ser la última vez, y bendecir la mesa funciona igual. Los estoicos lo hacían solo de vez en cuando, algunas veces al día o a la semana, para no caer en el pesimismo."
+  },
+  "de": {
+    "title": "Den Verlust kurz vorstellen",
+    "description": "Laut Irvine bemerken wir nicht mehr, was wir bekommen haben. Das stoische Mittel: den Verlust kurz und bewusst vorstellen und wieder loslassen.",
+    "hook": "Welchen Menschen oder welche Sache in deiner gewöhnlichen Woche bemerkst du nicht mehr?",
+    "one_minute_summary": "William Irvine zufolge bekommen Menschen, was sie wollen, nehmen es als selbstverständlich und entwickeln größere Wünsche. Das stoische Mittel ist die negative Visualisierung: sich vorzustellen, Partner, Auto oder Job zu verlieren. Epiktet riet, sich beim Abschied von einem Freund leise zu sagen, dass es der letzte sein könnte, und auch das Tischgebet funktioniert so. Die Stoiker taten das nur zeitweise, ein paar Mal am Tag oder in der Woche, damit sie nicht zu Pessimisten wurden."
+  }
+}

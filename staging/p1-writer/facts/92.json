@@ -1,0 +1,188 @@
+{
+  "book_no": 92,
+  "title": "The Life-Changing Magic of Tidying Up",
+  "authors": [
+    "Marie Kondo"
+  ],
+  "year": "2011",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Marie_Kondo",
+    "https://www.sloww.co/marie-kondo-magic-tidying-book-summary/",
+    "https://www.bustle.com/p/how-shinto-influenced-marie-kondos-konmari-method-of-organizing-15861445",
+    "https://konmari.com/?p=671",
+    "https://medium.com/the-ascent/life-changing-lessons-from-marie-kondo-16076ea8ad54",
+    "https://fourminutebooks.com/the-life-changing-magic-of-tidying-up-summary/"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Japanese original Jinsei ga Tokimeku Katazuke no Maho (Sunmark, 2011); English edition The Life-Changing Magic of Tidying Up (Ten Speed Press, 2014).",
+      "source": "Wikipedia",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Selection criterion: keep only what sparks joy; 'whether or not it gives you a thrill of pleasure when you touch it.' Each item is taken in hand.",
+      "source": "sloww (book quotes)",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "'Keep things because you love them, not just because.' People hold on out of 'an attachment to the past or a fear for the future.'",
+      "source": "sloww (book quotes)",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Items that no longer spark joy are thanked before being let go: a gift has done its job when it was received; an item bought but not used gave joy when bought and has completed its role ('Thank you for giving me joy when I bought you').",
+      "source": "Medium (The Ascent), quote collections",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Discarding comes before deciding where to store. 'Tidying up by location is a fatal mistake': items of the same kind are scattered across rooms.",
+      "source": "sloww (book quotes)",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Order: clothes first, then books, papers, komono (miscellany), and lastly mementos/sentimental items. Moving from easier to harder decisions; sentimental items and photos come last.",
+      "source": "sloww; Wikipedia; fourminutebooks",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "All items of one category are gathered in one place before deciding (e.g. every piece of clothing in the house on the floor).",
+      "source": "widely summarized; not quoted verbatim in accessed sources",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Numerical goals ('seven jackets and ten blouses is the perfect amount') are one reason other methods result in rebound.",
+      "source": "sloww (book quote)",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Kondo worked five years as a Shinto shrine maiden (miko).",
+      "source": "Wikipedia; Bustle quoting the book",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Kondo greets a client's house before tidying: 'I began this custom quite naturally based on the etiquette of worshipping at Shinto shrines'; the moment a client opens the door 'resembles the atmosphere when one passes under a shrine gate'; 'my way of showing respect for the house and its contents.' She kneels in the centre of the house and greets it in her mind.",
+      "source": "Bustle (book quotes); konmari.com",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "'I began to treat my belongings as if they were alive when I was a high school student.'",
+      "source": "sloww (book quote)",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "When she comes home she greets her house and, as she puts down her handbag, thanks it for the day's work.",
+      "source": "secondary column summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "'Just like the gentle shake we use to wake someone up, we can stimulate our belongings by physically moving them.'",
+      "source": "Bustle (book quote)",
+      "confidence": "high"
+    },
+    {
+      "id": "f14",
+      "claim": "'Clutter is caused by a failure to return things to where they belong.' 'Store all items of the same type in the same place.'",
+      "source": "sloww (book quotes)",
+      "confidence": "high"
+    },
+    {
+      "id": "f15",
+      "claim": "Kondo began thinking about storage at age five and discovered discarding as a teenager.",
+      "source": "sloww",
+      "confidence": "medium"
+    },
+    {
+      "id": "f16",
+      "claim": "Kondo also phrases the joy test as 'speak to your heart' or 'moves you'.",
+      "source": "sloww",
+      "confidence": "high"
+    },
+    {
+      "id": "f17",
+      "claim": "'Tidying is just a tool, not the final destination.' 'After tidying, many clients tell me that their worldly desires have decreased.' Three approaches: 'face them now, face them sometime, or avoid them until the day we die.'",
+      "source": "sloww (book quotes)",
+      "confidence": "high"
+    },
+    {
+      "id": "f18",
+      "claim": "Kondo visited her community shrine often as a child; the greeting can be spoken aloud or silently.",
+      "source": "Bustle; konmari.com",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Dialogue with a client holding an old blouse ('Do you feel joy holding it?' / 'I only keep it because I paid for it').",
+      "reason": "Scene not found in the book; invented."
+    },
+    {
+      "claim": "'Does this give you energy or take it away?' as Kondo's method.",
+      "reason": "Not the book's wording; criterion is joy when touching."
+    },
+    {
+      "claim": "'Thank your bag as you enter it' and that the method spreads to relationships, habits and work ('Does this relationship spark joy?').",
+      "reason": "Not in the book; extrapolation."
+    },
+    {
+      "claim": "'Every photo takes ten minutes' and 'decision muscle' wording.",
+      "reason": "Not verified."
+    },
+    {
+      "claim": "'Clutter comes from postponed decisions, not too many objects' as Kondo's line.",
+      "reason": "Not her wording; she says clutter comes from failure to return things to their place."
+    }
+  ],
+  "stories": {
+    "1372": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f7",
+        "f15",
+        "f16",
+        "f17"
+      ],
+      "note": "Joy criterion kept; invented client dialogue dropped."
+    },
+    "1373": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f14"
+      ],
+      "note": "Category order verified; invented timings dropped."
+    },
+    "1374": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "f13",
+        "f18"
+      ],
+      "note": "Recentered on the shrine-maiden background and greeting the house; extension to relationships dropped."
+    }
+  }
+}

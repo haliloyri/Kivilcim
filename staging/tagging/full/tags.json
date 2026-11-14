@@ -1,0 +1,7711 @@
+{
+  "model": "laya",
+  "weights": {
+    "hook": 0.4,
+    "visual": 0.3,
+    "fit_45s": 0.3
+  },
+  "created": "2026-11-01T10:45:04.354Z",
+  "stories": {
+    "1059": {
+      "reels_score": 3.58,
+      "rank": 529,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1060": {
+      "reels_score": 3.58,
+      "rank": 530,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1061": {
+      "reels_score": 3.73,
+      "rank": 241,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1062": {
+      "reels_score": 3.84,
+      "rank": 90,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1063": {
+      "reels_score": 3.63,
+      "rank": 441,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1064": {
+      "reels_score": 3.38,
+      "rank": 721,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1065": {
+      "reels_score": 3.39,
+      "rank": 719,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1066": {
+      "reels_score": 3.72,
+      "rank": 249,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1067": {
+      "reels_score": 3.65,
+      "rank": 399,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 3,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1068": {
+      "reels_score": 3.66,
+      "rank": 377,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1069": {
+      "reels_score": 3.68,
+      "rank": 329,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1070": {
+      "reels_score": 3.89,
+      "rank": 51,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1071": {
+      "reels_score": 3.61,
+      "rank": 481,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1072": {
+      "reels_score": 3.59,
+      "rank": 514,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1073": {
+      "reels_score": 3.56,
+      "rank": 564,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1074": {
+      "reels_score": 3.56,
+      "rank": 565,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits",
+        "creativity"
+      ]
+    },
+    "1075": {
+      "reels_score": 3.66,
+      "rank": 378,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1076": {
+      "reels_score": 3.69,
+      "rank": 313,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1077": {
+      "reels_score": 3.62,
+      "rank": 462,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "money_career",
+        "thinking"
+      ]
+    },
+    "1078": {
+      "reels_score": 3.64,
+      "rank": 420,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "influence",
+      "secondary_themes": []
+    },
+    "1079": {
+      "reels_score": 3.67,
+      "rank": 359,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "influence",
+      "secondary_themes": []
+    },
+    "1080": {
+      "reels_score": 3.64,
+      "rank": 421,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "influence",
+      "secondary_themes": []
+    },
+    "1081": {
+      "reels_score": 3.41,
+      "rank": 708,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "influence",
+      "secondary_themes": []
+    },
+    "1082": {
+      "reels_score": 3.29,
+      "rank": 747,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1083": {
+      "reels_score": 3.91,
+      "rank": 44,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1084": {
+      "reels_score": 3.74,
+      "rank": 228,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1085": {
+      "reels_score": 3.85,
+      "rank": 77,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1086": {
+      "reels_score": 3.77,
+      "rank": 179,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1087": {
+      "reels_score": 3.71,
+      "rank": 267,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1088": {
+      "reels_score": 3.71,
+      "rank": 268,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1089": {
+      "reels_score": 3.85,
+      "rank": 78,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1090": {
+      "reels_score": 3.63,
+      "rank": 442,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1091": {
+      "reels_score": 3.72,
+      "rank": 250,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "focus",
+      "secondary_themes": []
+    },
+    "1092": {
+      "reels_score": 3.66,
+      "rank": 379,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "focus",
+      "secondary_themes": []
+    },
+    "1093": {
+      "reels_score": 3.68,
+      "rank": 330,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "focus",
+      "secondary_themes": []
+    },
+    "1094": {
+      "reels_score": 3.3,
+      "rank": 743,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1095": {
+      "reels_score": 3.98,
+      "rank": 16,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1096": {
+      "reels_score": 3.75,
+      "rank": 210,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1097": {
+      "reels_score": 3.52,
+      "rank": 622,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1098": {
+      "reels_score": 3.53,
+      "rank": 603,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1099": {
+      "reels_score": 3.58,
+      "rank": 531,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1100": {
+      "reels_score": 3.65,
+      "rank": 400,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1101": {
+      "reels_score": 3.82,
+      "rank": 119,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking",
+        "health"
+      ]
+    },
+    "1102": {
+      "reels_score": 3.77,
+      "rank": 180,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "meaning",
+        "communication"
+      ]
+    },
+    "1103": {
+      "reels_score": 3.89,
+      "rank": 52,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1104": {
+      "reels_score": 3.7,
+      "rank": 297,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1105": {
+      "reels_score": 3.66,
+      "rank": 380,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "communication",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1106": {
+      "reels_score": 3.64,
+      "rank": 422,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1107": {
+      "reels_score": 3.56,
+      "rank": 566,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1108": {
+      "reels_score": 3.64,
+      "rank": 423,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1109": {
+      "reels_score": 3.92,
+      "rank": 36,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1110": {
+      "reels_score": 3.83,
+      "rank": 103,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1111": {
+      "reels_score": 3.59,
+      "rank": 515,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 3,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1112": {
+      "reels_score": 3.57,
+      "rank": 547,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1113": {
+      "reels_score": 3.68,
+      "rank": 331,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1114": {
+      "reels_score": 3.6,
+      "rank": 506,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1115": {
+      "reels_score": 3.72,
+      "rank": 251,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1116": {
+      "reels_score": 3.45,
+      "rank": 680,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1117": {
+      "reels_score": 3.61,
+      "rank": 482,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1118": {
+      "reels_score": 3.69,
+      "rank": 314,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1119": {
+      "reels_score": 3.76,
+      "rank": 192,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1120": {
+      "reels_score": 3.85,
+      "rank": 79,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1121": {
+      "reels_score": 3.53,
+      "rank": 604,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1122": {
+      "reels_score": 3.73,
+      "rank": 242,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1123": {
+      "reels_score": 3.84,
+      "rank": 91,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1124": {
+      "reels_score": 3.69,
+      "rank": 315,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1125": {
+      "reels_score": 3.7,
+      "rank": 298,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1126": {
+      "reels_score": 3.81,
+      "rank": 135,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1127": {
+      "reels_score": 3.7,
+      "rank": 299,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1128": {
+      "reels_score": 3.31,
+      "rank": 742,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1129": {
+      "reels_score": 3.66,
+      "rank": 381,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1130": {
+      "reels_score": 3.75,
+      "rank": 211,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking",
+        "emotions"
+      ]
+    },
+    "1131": {
+      "reels_score": 3.83,
+      "rank": 104,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1132": {
+      "reels_score": 3.74,
+      "rank": 229,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1133": {
+      "reels_score": 3.98,
+      "rank": 17,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1134": {
+      "reels_score": 3.65,
+      "rank": 401,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning",
+        "habits"
+      ]
+    },
+    "1135": {
+      "reels_score": 3.61,
+      "rank": 483,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": []
+    },
+    "1136": {
+      "reels_score": 3.83,
+      "rank": 105,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "habits",
+        "thinking"
+      ]
+    },
+    "1137": {
+      "reels_score": 3.67,
+      "rank": 360,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1138": {
+      "reels_score": 3.84,
+      "rank": 92,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1139": {
+      "reels_score": 3.8,
+      "rank": 145,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1140": {
+      "reels_score": 3.67,
+      "rank": 361,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1141": {
+      "reels_score": 3.43,
+      "rank": 693,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1142": {
+      "reels_score": 3.75,
+      "rank": 212,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 3,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1143": {
+      "reels_score": 3.67,
+      "rank": 362,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "decision_making",
+      "secondary_themes": []
+    },
+    "1144": {
+      "reels_score": 3.73,
+      "rank": 243,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1145": {
+      "reels_score": 3.91,
+      "rank": 45,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1146": {
+      "reels_score": 3.44,
+      "rank": 689,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1147": {
+      "reels_score": 3.68,
+      "rank": 332,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1148": {
+      "reels_score": 3.58,
+      "rank": 532,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1149": {
+      "reels_score": 3.76,
+      "rank": 193,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "communication",
+      "secondary_themes": []
+    },
+    "1150": {
+      "reels_score": 3.42,
+      "rank": 695,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1151": {
+      "reels_score": 4.03,
+      "rank": 11,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1152": {
+      "reels_score": 3.83,
+      "rank": 106,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1153": {
+      "reels_score": 3.7,
+      "rank": 300,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1154": {
+      "reels_score": 3.5,
+      "rank": 641,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1155": {
+      "reels_score": 3.85,
+      "rank": 80,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1156": {
+      "reels_score": 3.92,
+      "rank": 37,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "health",
+        "thinking"
+      ]
+    },
+    "1157": {
+      "reels_score": 3.64,
+      "rank": 424,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1158": {
+      "reels_score": 3.55,
+      "rank": 580,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1159": {
+      "reels_score": 3.68,
+      "rank": 333,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1160": {
+      "reels_score": 3.61,
+      "rank": 484,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1161": {
+      "reels_score": 3.84,
+      "rank": 93,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1162": {
+      "reels_score": 3.59,
+      "rank": 516,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1163": {
+      "reels_score": 3.6,
+      "rank": 507,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1164": {
+      "reels_score": 3.52,
+      "rank": 623,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1165": {
+      "reels_score": 3.82,
+      "rank": 120,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1166": {
+      "reels_score": 3.73,
+      "rank": 244,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "leadership"
+      ]
+    },
+    "1167": {
+      "reels_score": 3.7,
+      "rank": 301,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1168": {
+      "reels_score": 3.87,
+      "rank": 62,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1169": {
+      "reels_score": 3.72,
+      "rank": 252,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": []
+    },
+    "1170": {
+      "reels_score": 3.47,
+      "rank": 665,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1171": {
+      "reels_score": 3.97,
+      "rank": 22,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1172": {
+      "reels_score": 3.66,
+      "rank": 382,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1173": {
+      "reels_score": 3.61,
+      "rank": 485,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1174": {
+      "reels_score": 3.61,
+      "rank": 486,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1175": {
+      "reels_score": 3.75,
+      "rank": 213,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career",
+        "influence"
+      ]
+    },
+    "1176": {
+      "reels_score": 3.71,
+      "rank": 269,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1177": {
+      "reels_score": 3.64,
+      "rank": 425,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1178": {
+      "reels_score": 3.65,
+      "rank": 402,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1179": {
+      "reels_score": 3.6,
+      "rank": 508,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "creativity",
+        "thinking"
+      ]
+    },
+    "1180": {
+      "reels_score": 3.75,
+      "rank": 214,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1181": {
+      "reels_score": 3.86,
+      "rank": 71,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1182": {
+      "reels_score": 3.75,
+      "rank": 215,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1183": {
+      "reels_score": 3.54,
+      "rank": 593,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1184": {
+      "reels_score": 3.72,
+      "rank": 253,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1185": {
+      "reels_score": 3.64,
+      "rank": 426,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1186": {
+      "reels_score": 3.4,
+      "rank": 711,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1187": {
+      "reels_score": 3.75,
+      "rank": 216,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1188": {
+      "reels_score": 3.39,
+      "rank": 720,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1189": {
+      "reels_score": 3.86,
+      "rank": 72,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1190": {
+      "reels_score": 3.72,
+      "rank": 254,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1191": {
+      "reels_score": 3.98,
+      "rank": 18,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1192": {
+      "reels_score": 3.63,
+      "rank": 443,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1193": {
+      "reels_score": 3.68,
+      "rank": 334,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1194": {
+      "reels_score": 3.76,
+      "rank": 194,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1195": {
+      "reels_score": 3.51,
+      "rank": 630,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1196": {
+      "reels_score": 3.67,
+      "rank": 363,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1197": {
+      "reels_score": 3.83,
+      "rank": 107,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1198": {
+      "reels_score": 3.74,
+      "rank": 230,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1199": {
+      "reels_score": 3.95,
+      "rank": 27,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1200": {
+      "reels_score": 3.84,
+      "rank": 94,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1201": {
+      "reels_score": 3.88,
+      "rank": 55,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1202": {
+      "reels_score": 3.66,
+      "rank": 383,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1203": {
+      "reels_score": 3.8,
+      "rank": 146,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1204": {
+      "reels_score": 3.69,
+      "rank": 316,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1205": {
+      "reels_score": 3.9,
+      "rank": 47,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1206": {
+      "reels_score": 3.92,
+      "rank": 38,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1207": {
+      "reels_score": 3.63,
+      "rank": 444,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1208": {
+      "reels_score": 3.51,
+      "rank": 631,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1209": {
+      "reels_score": 3.76,
+      "rank": 195,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1210": {
+      "reels_score": 3.61,
+      "rank": 487,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1211": {
+      "reels_score": 3.45,
+      "rank": 681,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1212": {
+      "reels_score": 3.63,
+      "rank": 445,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1213": {
+      "reels_score": 3.72,
+      "rank": 255,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1214": {
+      "reels_score": 3.49,
+      "rank": 648,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1215": {
+      "reels_score": 3.53,
+      "rank": 605,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1216": {
+      "reels_score": 3.83,
+      "rank": 108,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1217": {
+      "reels_score": 3.68,
+      "rank": 335,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1218": {
+      "reels_score": 3.42,
+      "rank": 696,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking",
+        "creativity"
+      ]
+    },
+    "1219": {
+      "reels_score": 3.82,
+      "rank": 121,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "relationships"
+      ]
+    },
+    "1220": {
+      "reels_score": 3.72,
+      "rank": 256,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1221": {
+      "reels_score": 3.52,
+      "rank": 624,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1222": {
+      "reels_score": 3.85,
+      "rank": 81,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1223": {
+      "reels_score": 3.69,
+      "rank": 317,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "communication"
+      ]
+    },
+    "1224": {
+      "reels_score": 3.79,
+      "rank": 152,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1225": {
+      "reels_score": 3.38,
+      "rank": 722,
+      "fit_45s": 3,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1226": {
+      "reels_score": 3.58,
+      "rank": 533,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1227": {
+      "reels_score": 3.82,
+      "rank": 122,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1228": {
+      "reels_score": 3.83,
+      "rank": 109,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "health",
+        "emotions"
+      ]
+    },
+    "1229": {
+      "reels_score": 3.68,
+      "rank": 336,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1230": {
+      "reels_score": 3.76,
+      "rank": 196,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1231": {
+      "reels_score": 3.82,
+      "rank": 123,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1232": {
+      "reels_score": 3.83,
+      "rank": 110,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking",
+        "emotions"
+      ]
+    },
+    "1233": {
+      "reels_score": 3.61,
+      "rank": 488,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity",
+        "thinking"
+      ]
+    },
+    "1234": {
+      "reels_score": 3.57,
+      "rank": 548,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1235": {
+      "reels_score": 3.66,
+      "rank": 384,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking",
+        "emotions"
+      ]
+    },
+    "1236": {
+      "reels_score": 3.77,
+      "rank": 181,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1237": {
+      "reels_score": 3.66,
+      "rank": 385,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1238": {
+      "reels_score": 3.62,
+      "rank": 463,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 3,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1239": {
+      "reels_score": 3.59,
+      "rank": 517,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1240": {
+      "reels_score": 3.45,
+      "rank": 682,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1241": {
+      "reels_score": 3.61,
+      "rank": 489,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "influence",
+      "secondary_themes": [
+        "money_career",
+        "creativity"
+      ]
+    },
+    "1242": {
+      "reels_score": 3.3,
+      "rank": 744,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "influence",
+      "secondary_themes": [
+        "emotions",
+        "thinking"
+      ]
+    },
+    "1243": {
+      "reels_score": 3.42,
+      "rank": 697,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1244": {
+      "reels_score": 3.4,
+      "rank": 712,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1245": {
+      "reels_score": 3.59,
+      "rank": 518,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1246": {
+      "reels_score": 3.83,
+      "rank": 111,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1247": {
+      "reels_score": 3.8,
+      "rank": 147,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1248": {
+      "reels_score": 3.79,
+      "rank": 153,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1249": {
+      "reels_score": 3.85,
+      "rank": 82,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1250": {
+      "reels_score": 3.69,
+      "rank": 318,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1251": {
+      "reels_score": 3.61,
+      "rank": 490,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1252": {
+      "reels_score": 3.4,
+      "rank": 713,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1253": {
+      "reels_score": 3.73,
+      "rank": 245,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1254": {
+      "reels_score": 3.7,
+      "rank": 302,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1255": {
+      "reels_score": 3.54,
+      "rank": 594,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "communication",
+        "relationships"
+      ]
+    },
+    "1256": {
+      "reels_score": 3.87,
+      "rank": 63,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1257": {
+      "reels_score": 3.46,
+      "rank": 673,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1258": {
+      "reels_score": 3.47,
+      "rank": 666,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1259": {
+      "reels_score": 3.72,
+      "rank": 257,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1260": {
+      "reels_score": 3.51,
+      "rank": 632,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1261": {
+      "reels_score": 4.06,
+      "rank": 9,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "leadership"
+      ]
+    },
+    "1262": {
+      "reels_score": 3.67,
+      "rank": 364,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "influence",
+      "secondary_themes": [
+        "creativity",
+        "emotions"
+      ]
+    },
+    "1263": {
+      "reels_score": 3.47,
+      "rank": 667,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "meaning",
+      "secondary_themes": []
+    },
+    "1264": {
+      "reels_score": 3.67,
+      "rank": 365,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1265": {
+      "reels_score": 3.68,
+      "rank": 337,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1266": {
+      "reels_score": 3.97,
+      "rank": 23,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity",
+        "thinking"
+      ]
+    },
+    "1267": {
+      "reels_score": 3.35,
+      "rank": 731,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1268": {
+      "reels_score": 3.46,
+      "rank": 674,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1269": {
+      "reels_score": 3.73,
+      "rank": 246,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1270": {
+      "reels_score": 3.63,
+      "rank": 446,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1271": {
+      "reels_score": 3.9,
+      "rank": 48,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1272": {
+      "reels_score": 3.62,
+      "rank": 464,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1273": {
+      "reels_score": 3.92,
+      "rank": 39,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1274": {
+      "reels_score": 3.77,
+      "rank": 182,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1275": {
+      "reels_score": 3.56,
+      "rank": 567,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1276": {
+      "reels_score": 3.56,
+      "rank": 568,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "leadership"
+      ]
+    },
+    "1277": {
+      "reels_score": 3.71,
+      "rank": 270,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1278": {
+      "reels_score": 3.18,
+      "rank": 759,
+      "fit_45s": 4,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1279": {
+      "reels_score": 3.54,
+      "rank": 595,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1280": {
+      "reels_score": 3.33,
+      "rank": 736,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1281": {
+      "reels_score": 3.79,
+      "rank": 154,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1282": {
+      "reels_score": 3.82,
+      "rank": 124,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1283": {
+      "reels_score": 4.03,
+      "rank": 12,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1284": {
+      "reels_score": 3.7,
+      "rank": 303,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1285": {
+      "reels_score": 3.35,
+      "rank": 732,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 3,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1286": {
+      "reels_score": 3.82,
+      "rank": 125,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1287": {
+      "reels_score": 3.79,
+      "rank": 155,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1288": {
+      "reels_score": 3.78,
+      "rank": 169,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1289": {
+      "reels_score": 3.49,
+      "rank": 649,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1290": {
+      "reels_score": 3.64,
+      "rank": 427,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1291": {
+      "reels_score": 3.35,
+      "rank": 733,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1292": {
+      "reels_score": 3.61,
+      "rank": 491,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1293": {
+      "reels_score": 3.4,
+      "rank": 714,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1294": {
+      "reels_score": 3.63,
+      "rank": 447,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1295": {
+      "reels_score": 3.63,
+      "rank": 448,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1296": {
+      "reels_score": 3.82,
+      "rank": 126,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "influence",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1297": {
+      "reels_score": 3.65,
+      "rank": 403,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1298": {
+      "reels_score": 3.62,
+      "rank": 465,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1299": {
+      "reels_score": 3.67,
+      "rank": 366,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1300": {
+      "reels_score": 3.58,
+      "rank": 534,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1301": {
+      "reels_score": 3.8,
+      "rank": 148,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1302": {
+      "reels_score": 3.79,
+      "rank": 156,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "resilience",
+        "thinking"
+      ]
+    },
+    "1303": {
+      "reels_score": 3.64,
+      "rank": 428,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "meaning",
+      "secondary_themes": []
+    },
+    "1304": {
+      "reels_score": 3.5,
+      "rank": 642,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1305": {
+      "reels_score": 3.64,
+      "rank": 429,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1306": {
+      "reels_score": 3.87,
+      "rank": 64,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "leadership",
+        "creativity"
+      ]
+    },
+    "1307": {
+      "reels_score": 3.74,
+      "rank": 231,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1308": {
+      "reels_score": 3.36,
+      "rank": 727,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1309": {
+      "reels_score": 3.7,
+      "rank": 304,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1310": {
+      "reels_score": 3.58,
+      "rank": 535,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1311": {
+      "reels_score": 3.77,
+      "rank": 183,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1312": {
+      "reels_score": 3.58,
+      "rank": 536,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking",
+        "habits"
+      ]
+    },
+    "1313": {
+      "reels_score": 3.78,
+      "rank": 170,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "leadership",
+        "thinking"
+      ]
+    },
+    "1314": {
+      "reels_score": 3.65,
+      "rank": 404,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1315": {
+      "reels_score": 3.79,
+      "rank": 157,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1316": {
+      "reels_score": 3.66,
+      "rank": 386,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "meaning",
+        "emotions"
+      ]
+    },
+    "1317": {
+      "reels_score": 3.97,
+      "rank": 24,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1318": {
+      "reels_score": 3.85,
+      "rank": 83,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "focus",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1319": {
+      "reels_score": 3.49,
+      "rank": 650,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "communication",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1320": {
+      "reels_score": 3.74,
+      "rank": 232,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1321": {
+      "reels_score": 3.62,
+      "rank": 466,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1322": {
+      "reels_score": 3.53,
+      "rank": 606,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1323": {
+      "reels_score": 3.71,
+      "rank": 271,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1324": {
+      "reels_score": 3.54,
+      "rank": 596,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1325": {
+      "reels_score": 3.71,
+      "rank": 272,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1326": {
+      "reels_score": 3.88,
+      "rank": 56,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1327": {
+      "reels_score": 3.32,
+      "rank": 739,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "creativity",
+        "thinking"
+      ]
+    },
+    "1328": {
+      "reels_score": 3.63,
+      "rank": 449,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1329": {
+      "reels_score": 3.64,
+      "rank": 430,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1330": {
+      "reels_score": 3.84,
+      "rank": 95,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1331": {
+      "reels_score": 3.69,
+      "rank": 319,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1332": {
+      "reels_score": 3.71,
+      "rank": 273,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1333": {
+      "reels_score": 3.84,
+      "rank": 96,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1334": {
+      "reels_score": 3.76,
+      "rank": 197,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1335": {
+      "reels_score": 4.09,
+      "rank": 6,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "emotions",
+        "relationships"
+      ]
+    },
+    "1336": {
+      "reels_score": 3.46,
+      "rank": 675,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1337": {
+      "reels_score": 3.53,
+      "rank": 607,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1338": {
+      "reels_score": 3.53,
+      "rank": 608,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1339": {
+      "reels_score": 3.28,
+      "rank": 748,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1340": {
+      "reels_score": 3.57,
+      "rank": 549,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1341": {
+      "reels_score": 3.64,
+      "rank": 431,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1342": {
+      "reels_score": 3.53,
+      "rank": 609,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1343": {
+      "reels_score": 3.2,
+      "rank": 756,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1344": {
+      "reels_score": 3.71,
+      "rank": 274,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1345": {
+      "reels_score": 3.64,
+      "rank": 432,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1346": {
+      "reels_score": 3.68,
+      "rank": 338,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1347": {
+      "reels_score": 3.69,
+      "rank": 320,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1348": {
+      "reels_score": 3.62,
+      "rank": 467,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1349": {
+      "reels_score": 3.58,
+      "rank": 537,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1350": {
+      "reels_score": 3.54,
+      "rank": 597,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1351": {
+      "reels_score": 3.55,
+      "rank": 581,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1352": {
+      "reels_score": 3.79,
+      "rank": 158,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1353": {
+      "reels_score": 3.68,
+      "rank": 339,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "focus",
+        "creativity"
+      ]
+    },
+    "1354": {
+      "reels_score": 3.72,
+      "rank": 258,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1355": {
+      "reels_score": 3.73,
+      "rank": 247,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits",
+        "emotions"
+      ]
+    },
+    "1356": {
+      "reels_score": 3.49,
+      "rank": 651,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1357": {
+      "reels_score": 3.57,
+      "rank": 550,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1358": {
+      "reels_score": 3.53,
+      "rank": 610,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1359": {
+      "reels_score": 3.46,
+      "rank": 676,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "communication",
+      "secondary_themes": [
+        "focus",
+        "thinking"
+      ]
+    },
+    "1360": {
+      "reels_score": 3.67,
+      "rank": 367,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1361": {
+      "reels_score": 3.94,
+      "rank": 31,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1362": {
+      "reels_score": 3.74,
+      "rank": 233,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "meaning",
+        "thinking"
+      ]
+    },
+    "1363": {
+      "reels_score": 3.5,
+      "rank": 643,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1364": {
+      "reels_score": 3.74,
+      "rank": 234,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1365": {
+      "reels_score": 3.57,
+      "rank": 551,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1366": {
+      "reels_score": 3.82,
+      "rank": 127,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "focus",
+      "secondary_themes": [
+        "thinking",
+        "creativity"
+      ]
+    },
+    "1367": {
+      "reels_score": 3.72,
+      "rank": 259,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1368": {
+      "reels_score": 3.49,
+      "rank": 652,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1369": {
+      "reels_score": 4.22,
+      "rank": 2,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "influence",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1370": {
+      "reels_score": 3.52,
+      "rank": 625,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1371": {
+      "reels_score": 3.36,
+      "rank": 728,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "influence"
+      ]
+    },
+    "1372": {
+      "reels_score": 3.49,
+      "rank": 653,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1373": {
+      "reels_score": 3.61,
+      "rank": 492,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking",
+        "meaning"
+      ]
+    },
+    "1374": {
+      "reels_score": 3.6,
+      "rank": 509,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning",
+        "creativity"
+      ]
+    },
+    "1375": {
+      "reels_score": 3.21,
+      "rank": 754,
+      "fit_45s": 4,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking",
+        "meaning"
+      ]
+    },
+    "1376": {
+      "reels_score": 3.22,
+      "rank": 753,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1377": {
+      "reels_score": 3.63,
+      "rank": 450,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits",
+        "emotions"
+      ]
+    },
+    "1378": {
+      "reels_score": 3.71,
+      "rank": 275,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1379": {
+      "reels_score": 3.66,
+      "rank": 387,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1380": {
+      "reels_score": 3.98,
+      "rank": 19,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1381": {
+      "reels_score": 3.55,
+      "rank": 582,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1382": {
+      "reels_score": 3.93,
+      "rank": 34,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1383": {
+      "reels_score": 3.76,
+      "rank": 198,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1384": {
+      "reels_score": 3.78,
+      "rank": 171,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1385": {
+      "reels_score": 3.71,
+      "rank": 276,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1386": {
+      "reels_score": 3.44,
+      "rank": 690,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1387": {
+      "reels_score": 3.61,
+      "rank": 493,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1388": {
+      "reels_score": 3.69,
+      "rank": 321,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1389": {
+      "reels_score": 3.79,
+      "rank": 159,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1390": {
+      "reels_score": 3.76,
+      "rank": 199,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1393": {
+      "reels_score": 3.59,
+      "rank": 519,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "habits",
+        "thinking"
+      ]
+    },
+    "1394": {
+      "reels_score": 3.47,
+      "rank": 668,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1395": {
+      "reels_score": 3.75,
+      "rank": 217,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1396": {
+      "reels_score": 3.67,
+      "rank": 368,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1397": {
+      "reels_score": 3.7,
+      "rank": 305,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1398": {
+      "reels_score": 3.59,
+      "rank": 520,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1399": {
+      "reels_score": 3.53,
+      "rank": 611,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1400": {
+      "reels_score": 3.58,
+      "rank": 538,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1401": {
+      "reels_score": 3.87,
+      "rank": 65,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": []
+    },
+    "1402": {
+      "reels_score": 3.54,
+      "rank": 598,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1403": {
+      "reels_score": 3.6,
+      "rank": 510,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1404": {
+      "reels_score": 3.95,
+      "rank": 28,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1405": {
+      "reels_score": 3.47,
+      "rank": 669,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1406": {
+      "reels_score": 3.72,
+      "rank": 260,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1407": {
+      "reels_score": 3.57,
+      "rank": 552,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1408": {
+      "reels_score": 3.65,
+      "rank": 405,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "meaning",
+      "secondary_themes": []
+    },
+    "1409": {
+      "reels_score": 3.51,
+      "rank": 633,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1410": {
+      "reels_score": 3.54,
+      "rank": 599,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": []
+    },
+    "1411": {
+      "reels_score": 3.71,
+      "rank": 277,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1412": {
+      "reels_score": 3.71,
+      "rank": 278,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1413": {
+      "reels_score": 3.79,
+      "rank": 160,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1414": {
+      "reels_score": 3.5,
+      "rank": 644,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1415": {
+      "reels_score": 3.57,
+      "rank": 553,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "thinking",
+        "meaning"
+      ]
+    },
+    "1416": {
+      "reels_score": 3.61,
+      "rank": 494,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1417": {
+      "reels_score": 3.98,
+      "rank": 20,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1418": {
+      "reels_score": 3.68,
+      "rank": 340,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1419": {
+      "reels_score": 3.65,
+      "rank": 406,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1420": {
+      "reels_score": 3.56,
+      "rank": 569,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1421": {
+      "reels_score": 3.53,
+      "rank": 612,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1422": {
+      "reels_score": 3.65,
+      "rank": 407,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1423": {
+      "reels_score": 3.66,
+      "rank": 388,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1424": {
+      "reels_score": 3.71,
+      "rank": 279,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1425": {
+      "reels_score": 3.58,
+      "rank": 539,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1426": {
+      "reels_score": 3.62,
+      "rank": 468,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1427": {
+      "reels_score": 3.62,
+      "rank": 469,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1428": {
+      "reels_score": 3.71,
+      "rank": 280,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1429": {
+      "reels_score": 3.63,
+      "rank": 451,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1430": {
+      "reels_score": 4.12,
+      "rank": 3,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 5,
+      "primary_theme": "relationships",
+      "secondary_themes": []
+    },
+    "1431": {
+      "reels_score": 3.75,
+      "rank": 218,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1432": {
+      "reels_score": 3.49,
+      "rank": 654,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1433": {
+      "reels_score": 3.71,
+      "rank": 281,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1434": {
+      "reels_score": 3.42,
+      "rank": 698,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1435": {
+      "reels_score": 3.71,
+      "rank": 282,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1436": {
+      "reels_score": 3.58,
+      "rank": 540,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking",
+        "emotions"
+      ]
+    },
+    "1437": {
+      "reels_score": 3.85,
+      "rank": 84,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1438": {
+      "reels_score": 3.86,
+      "rank": 73,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": []
+    },
+    "1439": {
+      "reels_score": 3.99,
+      "rank": 15,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1440": {
+      "reels_score": 3.72,
+      "rank": 261,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1441": {
+      "reels_score": 3.56,
+      "rank": 570,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1442": {
+      "reels_score": 3.37,
+      "rank": 723,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1443": {
+      "reels_score": 3.5,
+      "rank": 645,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1444": {
+      "reels_score": 3.71,
+      "rank": 283,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1445": {
+      "reels_score": 3.57,
+      "rank": 554,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "influence",
+      "secondary_themes": []
+    },
+    "1446": {
+      "reels_score": 3.45,
+      "rank": 683,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1447": {
+      "reels_score": 3.61,
+      "rank": 495,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1448": {
+      "reels_score": 3.52,
+      "rank": 626,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions",
+        "habits"
+      ]
+    },
+    "1450": {
+      "reels_score": 3.75,
+      "rank": 219,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1451": {
+      "reels_score": 3.69,
+      "rank": 322,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1452": {
+      "reels_score": 3.71,
+      "rank": 284,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1453": {
+      "reels_score": 3.55,
+      "rank": 583,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1454": {
+      "reels_score": 3.65,
+      "rank": 408,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1455": {
+      "reels_score": 3.62,
+      "rank": 470,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1456": {
+      "reels_score": 3.81,
+      "rank": 136,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1457": {
+      "reels_score": 3.37,
+      "rank": 724,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1458": {
+      "reels_score": 3.65,
+      "rank": 409,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "thinking",
+        "creativity"
+      ]
+    },
+    "1459": {
+      "reels_score": 4.31,
+      "rank": 1,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 5,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1460": {
+      "reels_score": 3.84,
+      "rank": 97,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "leadership"
+      ]
+    },
+    "1461": {
+      "reels_score": 3.65,
+      "rank": 410,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1462": {
+      "reels_score": 3.37,
+      "rank": 725,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits",
+        "creativity"
+      ]
+    },
+    "1463": {
+      "reels_score": 3.66,
+      "rank": 389,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1464": {
+      "reels_score": 3.77,
+      "rank": 184,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1465": {
+      "reels_score": 3.83,
+      "rank": 112,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1466": {
+      "reels_score": 3.82,
+      "rank": 128,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1467": {
+      "reels_score": 2.91,
+      "rank": 762,
+      "fit_45s": 4,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1468": {
+      "reels_score": 3.81,
+      "rank": 137,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1469": {
+      "reels_score": 3.79,
+      "rank": 161,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1470": {
+      "reels_score": 3.61,
+      "rank": 496,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1471": {
+      "reels_score": 3.87,
+      "rank": 66,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1473": {
+      "reels_score": 4.12,
+      "rank": 4,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1474": {
+      "reels_score": 3.76,
+      "rank": 200,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1475": {
+      "reels_score": 3.75,
+      "rank": 220,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity",
+        "influence"
+      ]
+    },
+    "1476": {
+      "reels_score": 3.67,
+      "rank": 369,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1477": {
+      "reels_score": 3.57,
+      "rank": 555,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1478": {
+      "reels_score": 3.36,
+      "rank": 729,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1479": {
+      "reels_score": 3.67,
+      "rank": 370,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1480": {
+      "reels_score": 3.77,
+      "rank": 185,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1481": {
+      "reels_score": 3.76,
+      "rank": 201,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1482": {
+      "reels_score": 3.49,
+      "rank": 655,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1483": {
+      "reels_score": 3.74,
+      "rank": 235,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1484": {
+      "reels_score": 3.92,
+      "rank": 40,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1485": {
+      "reels_score": 3.74,
+      "rank": 236,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1486": {
+      "reels_score": 3.69,
+      "rank": 323,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1487": {
+      "reels_score": 3.42,
+      "rank": 699,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1488": {
+      "reels_score": 3.55,
+      "rank": 584,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking",
+        "emotions"
+      ]
+    },
+    "1489": {
+      "reels_score": 3.79,
+      "rank": 162,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1490": {
+      "reels_score": 3.72,
+      "rank": 262,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1492": {
+      "reels_score": 3.72,
+      "rank": 263,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1493": {
+      "reels_score": 3.77,
+      "rank": 186,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1494": {
+      "reels_score": 3.76,
+      "rank": 202,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1495": {
+      "reels_score": 3.57,
+      "rank": 556,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1496": {
+      "reels_score": 3.59,
+      "rank": 521,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "communication"
+      ]
+    },
+    "1497": {
+      "reels_score": 3.61,
+      "rank": 497,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1498": {
+      "reels_score": 3.83,
+      "rank": 113,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1499": {
+      "reels_score": 3.81,
+      "rank": 138,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1500": {
+      "reels_score": 3.67,
+      "rank": 371,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1501": {
+      "reels_score": 3.9,
+      "rank": 49,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1502": {
+      "reels_score": 3.51,
+      "rank": 634,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1503": {
+      "reels_score": 3.83,
+      "rank": 114,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1504": {
+      "reels_score": 3.72,
+      "rank": 264,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "influence",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1505": {
+      "reels_score": 3.58,
+      "rank": 541,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "influence",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1506": {
+      "reels_score": 3.81,
+      "rank": 139,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1507": {
+      "reels_score": 3.58,
+      "rank": 542,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1508": {
+      "reels_score": 3.84,
+      "rank": 98,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "decision_making",
+      "secondary_themes": [
+        "leadership"
+      ]
+    },
+    "1509": {
+      "reels_score": 3.53,
+      "rank": 613,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1510": {
+      "reels_score": 3.72,
+      "rank": 265,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "leadership"
+      ]
+    },
+    "1511": {
+      "reels_score": 3.53,
+      "rank": 614,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1512": {
+      "reels_score": 3.66,
+      "rank": 390,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1513": {
+      "reels_score": 3.7,
+      "rank": 306,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1514": {
+      "reels_score": 3.57,
+      "rank": 557,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1515": {
+      "reels_score": 3.45,
+      "rank": 684,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1516": {
+      "reels_score": 3.5,
+      "rank": 646,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1517": {
+      "reels_score": 3.36,
+      "rank": 730,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1518": {
+      "reels_score": 3.56,
+      "rank": 571,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1519": {
+      "reels_score": 3.81,
+      "rank": 140,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "influence"
+      ]
+    },
+    "1520": {
+      "reels_score": 3.82,
+      "rank": 129,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1521": {
+      "reels_score": 3.87,
+      "rank": 67,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1522": {
+      "reels_score": 3.54,
+      "rank": 600,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1523": {
+      "reels_score": 3.21,
+      "rank": 755,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1524": {
+      "reels_score": 3.51,
+      "rank": 635,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1525": {
+      "reels_score": 3.23,
+      "rank": 751,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1526": {
+      "reels_score": 3.53,
+      "rank": 615,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1527": {
+      "reels_score": 3.63,
+      "rank": 452,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1528": {
+      "reels_score": 3.75,
+      "rank": 221,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "thinking",
+        "creativity"
+      ]
+    },
+    "1529": {
+      "reels_score": 3.87,
+      "rank": 68,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "resilience",
+        "leadership"
+      ]
+    },
+    "1530": {
+      "reels_score": 3.81,
+      "rank": 141,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "thinking",
+        "leadership"
+      ]
+    },
+    "1531": {
+      "reels_score": 3.7,
+      "rank": 307,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1532": {
+      "reels_score": 3.66,
+      "rank": 391,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1533": {
+      "reels_score": 3.27,
+      "rank": 749,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1534": {
+      "reels_score": 3.67,
+      "rank": 372,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1535": {
+      "reels_score": 3.37,
+      "rank": 726,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1536": {
+      "reels_score": 3.81,
+      "rank": 142,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1537": {
+      "reels_score": 3.56,
+      "rank": 572,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1538": {
+      "reels_score": 3.68,
+      "rank": 341,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1539": {
+      "reels_score": 3.59,
+      "rank": 522,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1540": {
+      "reels_score": 3.62,
+      "rank": 471,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1541": {
+      "reels_score": 3.68,
+      "rank": 342,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1542": {
+      "reels_score": 3.63,
+      "rank": 453,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1543": {
+      "reels_score": 3.68,
+      "rank": 343,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1544": {
+      "reels_score": 3.74,
+      "rank": 237,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1545": {
+      "reels_score": 3.78,
+      "rank": 172,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1546": {
+      "reels_score": 3.71,
+      "rank": 285,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1547": {
+      "reels_score": 3.71,
+      "rank": 286,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1548": {
+      "reels_score": 3.42,
+      "rank": 700,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1549": {
+      "reels_score": 3.8,
+      "rank": 149,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking",
+        "resilience"
+      ]
+    },
+    "1550": {
+      "reels_score": 3.5,
+      "rank": 647,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1551": {
+      "reels_score": 3.68,
+      "rank": 344,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1552": {
+      "reels_score": 3.58,
+      "rank": 543,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1553": {
+      "reels_score": 3.92,
+      "rank": 41,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1554": {
+      "reels_score": 3.88,
+      "rank": 57,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1555": {
+      "reels_score": 3.4,
+      "rank": 715,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1556": {
+      "reels_score": 3.35,
+      "rank": 734,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1557": {
+      "reels_score": 3.32,
+      "rank": 740,
+      "fit_45s": 3,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1558": {
+      "reels_score": 3.75,
+      "rank": 222,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1559": {
+      "reels_score": 3.48,
+      "rank": 660,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1560": {
+      "reels_score": 3.83,
+      "rank": 115,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1561": {
+      "reels_score": 3.49,
+      "rank": 656,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1562": {
+      "reels_score": 3.43,
+      "rank": 694,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1563": {
+      "reels_score": 3.2,
+      "rank": 757,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning",
+        "creativity"
+      ]
+    },
+    "1564": {
+      "reels_score": 3.57,
+      "rank": 558,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1565": {
+      "reels_score": 3.47,
+      "rank": 670,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1566": {
+      "reels_score": 3.61,
+      "rank": 498,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1567": {
+      "reels_score": 3.78,
+      "rank": 173,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1568": {
+      "reels_score": 3.42,
+      "rank": 701,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1569": {
+      "reels_score": 3.65,
+      "rank": 411,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1570": {
+      "reels_score": 3.54,
+      "rank": 601,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1571": {
+      "reels_score": 4.12,
+      "rank": 5,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1572": {
+      "reels_score": 3.41,
+      "rank": 709,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "creativity",
+        "decision_making"
+      ]
+    },
+    "1573": {
+      "reels_score": 4.03,
+      "rank": 13,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1574": {
+      "reels_score": 3.66,
+      "rank": 392,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "emotions",
+        "thinking"
+      ]
+    },
+    "1575": {
+      "reels_score": 3.57,
+      "rank": 559,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1576": {
+      "reels_score": 3.71,
+      "rank": 287,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1577": {
+      "reels_score": 3.45,
+      "rank": 685,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1578": {
+      "reels_score": 3.23,
+      "rank": 752,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1579": {
+      "reels_score": 3.69,
+      "rank": 324,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "influence",
+      "secondary_themes": []
+    },
+    "1580": {
+      "reels_score": 3.56,
+      "rank": 573,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1581": {
+      "reels_score": 3.6,
+      "rank": 511,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1582": {
+      "reels_score": 3.51,
+      "rank": 636,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1583": {
+      "reels_score": 3.64,
+      "rank": 433,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1584": {
+      "reels_score": 3.67,
+      "rank": 373,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1585": {
+      "reels_score": 3.74,
+      "rank": 238,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1586": {
+      "reels_score": 3.55,
+      "rank": 585,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1587": {
+      "reels_score": 3.74,
+      "rank": 239,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1588": {
+      "reels_score": 3.96,
+      "rank": 26,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1589": {
+      "reels_score": 3.64,
+      "rank": 434,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1590": {
+      "reels_score": 3.79,
+      "rank": 163,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1591": {
+      "reels_score": 3.86,
+      "rank": 74,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1592": {
+      "reels_score": 3.69,
+      "rank": 325,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1593": {
+      "reels_score": 3.83,
+      "rank": 116,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1594": {
+      "reels_score": 3.74,
+      "rank": 240,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1595": {
+      "reels_score": 3.09,
+      "rank": 760,
+      "fit_45s": 4,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1596": {
+      "reels_score": 3.68,
+      "rank": 345,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1597": {
+      "reels_score": 3.56,
+      "rank": 574,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1598": {
+      "reels_score": 3.7,
+      "rank": 308,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1599": {
+      "reels_score": 3.66,
+      "rank": 393,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1600": {
+      "reels_score": 3.64,
+      "rank": 435,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1601": {
+      "reels_score": 3.67,
+      "rank": 374,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1602": {
+      "reels_score": 3.57,
+      "rank": 560,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1603": {
+      "reels_score": 3.76,
+      "rank": 203,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1604": {
+      "reels_score": 3.53,
+      "rank": 616,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1605": {
+      "reels_score": 3.76,
+      "rank": 204,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1606": {
+      "reels_score": 3.62,
+      "rank": 472,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1607": {
+      "reels_score": 3.33,
+      "rank": 737,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1608": {
+      "reels_score": 3.48,
+      "rank": 661,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1609": {
+      "reels_score": 3.62,
+      "rank": 473,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1610": {
+      "reels_score": 3.45,
+      "rank": 686,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1611": {
+      "reels_score": 3.42,
+      "rank": 702,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1612": {
+      "reels_score": 3.65,
+      "rank": 412,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1613": {
+      "reels_score": 3.51,
+      "rank": 637,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1614": {
+      "reels_score": 3.45,
+      "rank": 687,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1615": {
+      "reels_score": 3.55,
+      "rank": 586,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1616": {
+      "reels_score": 3.95,
+      "rank": 29,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1617": {
+      "reels_score": 3.55,
+      "rank": 587,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1618": {
+      "reels_score": 3.87,
+      "rank": 69,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": []
+    },
+    "1619": {
+      "reels_score": 3.8,
+      "rank": 150,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1620": {
+      "reels_score": 3.64,
+      "rank": 436,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1621": {
+      "reels_score": 3.68,
+      "rank": 346,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "relationships"
+      ]
+    },
+    "1622": {
+      "reels_score": 3.77,
+      "rank": 187,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": []
+    },
+    "1623": {
+      "reels_score": 3.59,
+      "rank": 523,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "communication"
+      ]
+    },
+    "1624": {
+      "reels_score": 3.52,
+      "rank": 627,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1625": {
+      "reels_score": 3.35,
+      "rank": 735,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1626": {
+      "reels_score": 3.56,
+      "rank": 575,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "communication",
+      "secondary_themes": []
+    },
+    "1627": {
+      "reels_score": 3.64,
+      "rank": 437,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "health",
+        "emotions"
+      ]
+    },
+    "1628": {
+      "reels_score": 3.84,
+      "rank": 99,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1629": {
+      "reels_score": 3.85,
+      "rank": 85,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "focus",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1630": {
+      "reels_score": 3.49,
+      "rank": 657,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1631": {
+      "reels_score": 3.57,
+      "rank": 561,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1632": {
+      "reels_score": 3.64,
+      "rank": 438,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1633": {
+      "reels_score": 3.47,
+      "rank": 671,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1634": {
+      "reels_score": 3.6,
+      "rank": 512,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1635": {
+      "reels_score": 3.62,
+      "rank": 474,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1636": {
+      "reels_score": 3.68,
+      "rank": 347,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1637": {
+      "reels_score": 3.66,
+      "rank": 394,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1638": {
+      "reels_score": 3.62,
+      "rank": 475,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1639": {
+      "reels_score": 3.49,
+      "rank": 658,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "thinking",
+        "emotions"
+      ]
+    },
+    "1640": {
+      "reels_score": 3.75,
+      "rank": 223,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1641": {
+      "reels_score": 3.69,
+      "rank": 326,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1642": {
+      "reels_score": 3.65,
+      "rank": 413,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1643": {
+      "reels_score": 3.82,
+      "rank": 130,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1644": {
+      "reels_score": 3.71,
+      "rank": 288,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1645": {
+      "reels_score": 3.66,
+      "rank": 395,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1646": {
+      "reels_score": 3.24,
+      "rank": 750,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1647": {
+      "reels_score": 3.89,
+      "rank": 53,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1648": {
+      "reels_score": 3.44,
+      "rank": 691,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1649": {
+      "reels_score": 3.63,
+      "rank": 454,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1650": {
+      "reels_score": 3.62,
+      "rank": 476,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1651": {
+      "reels_score": 3.83,
+      "rank": 117,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1652": {
+      "reels_score": 3.76,
+      "rank": 205,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1653": {
+      "reels_score": 3.62,
+      "rank": 477,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1654": {
+      "reels_score": 3.61,
+      "rank": 499,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1655": {
+      "reels_score": 3.55,
+      "rank": 588,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1656": {
+      "reels_score": 3.71,
+      "rank": 289,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1657": {
+      "reels_score": 3.46,
+      "rank": 677,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1658": {
+      "reels_score": 3.65,
+      "rank": 414,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1659": {
+      "reels_score": 3.77,
+      "rank": 188,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "communication",
+      "secondary_themes": [
+        "health",
+        "thinking"
+      ]
+    },
+    "1660": {
+      "reels_score": 3.65,
+      "rank": 415,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1661": {
+      "reels_score": 3.59,
+      "rank": 524,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1662": {
+      "reels_score": 3.68,
+      "rank": 348,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1663": {
+      "reels_score": 3.64,
+      "rank": 439,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1664": {
+      "reels_score": 3.97,
+      "rank": 25,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1665": {
+      "reels_score": 4.07,
+      "rank": 8,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1666": {
+      "reels_score": 3.47,
+      "rank": 672,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1667": {
+      "reels_score": 3.46,
+      "rank": 678,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1668": {
+      "reels_score": 3.53,
+      "rank": 617,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1669": {
+      "reels_score": 3.57,
+      "rank": 562,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 3,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1670": {
+      "reels_score": 3.53,
+      "rank": 618,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking",
+        "health"
+      ]
+    },
+    "1671": {
+      "reels_score": 3.64,
+      "rank": 440,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1672": {
+      "reels_score": 4.08,
+      "rank": 7,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "focus",
+      "secondary_themes": []
+    },
+    "1673": {
+      "reels_score": 3.69,
+      "rank": 327,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1674": {
+      "reels_score": 3.42,
+      "rank": 703,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1675": {
+      "reels_score": 3.56,
+      "rank": 576,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1676": {
+      "reels_score": 3.71,
+      "rank": 290,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1677": {
+      "reels_score": 3.66,
+      "rank": 396,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1678": {
+      "reels_score": 3.79,
+      "rank": 164,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1679": {
+      "reels_score": 3.48,
+      "rank": 662,
+      "fit_45s": 5,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "focus"
+      ]
+    },
+    "1680": {
+      "reels_score": 3.51,
+      "rank": 638,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1681": {
+      "reels_score": 3.52,
+      "rank": 628,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1682": {
+      "reels_score": 3.57,
+      "rank": 563,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1683": {
+      "reels_score": 3.82,
+      "rank": 131,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "focus",
+      "secondary_themes": []
+    },
+    "1684": {
+      "reels_score": 3.63,
+      "rank": 455,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "focus",
+      "secondary_themes": []
+    },
+    "1685": {
+      "reels_score": 3.44,
+      "rank": 692,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 3,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1686": {
+      "reels_score": 3.62,
+      "rank": 478,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1687": {
+      "reels_score": 3.3,
+      "rank": 745,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1688": {
+      "reels_score": 3.3,
+      "rank": 746,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1689": {
+      "reels_score": 3.84,
+      "rank": 100,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1690": {
+      "reels_score": 3.63,
+      "rank": 456,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1691": {
+      "reels_score": 3.63,
+      "rank": 457,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1692": {
+      "reels_score": 3.75,
+      "rank": 224,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1693": {
+      "reels_score": 3.61,
+      "rank": 500,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1694": {
+      "reels_score": 3.9,
+      "rank": 50,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1695": {
+      "reels_score": 3.7,
+      "rank": 309,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": []
+    },
+    "1696": {
+      "reels_score": 3.6,
+      "rank": 513,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1697": {
+      "reels_score": 3.63,
+      "rank": 458,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1698": {
+      "reels_score": 3.76,
+      "rank": 206,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "focus",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1699": {
+      "reels_score": 3.53,
+      "rank": 619,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1700": {
+      "reels_score": 3.66,
+      "rank": 397,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1701": {
+      "reels_score": 3.58,
+      "rank": 544,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1702": {
+      "reels_score": 3.89,
+      "rank": 54,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1703": {
+      "reels_score": 3.81,
+      "rank": 143,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1704": {
+      "reels_score": 3.4,
+      "rank": 716,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "influence",
+      "secondary_themes": []
+    },
+    "1705": {
+      "reels_score": 3.59,
+      "rank": 525,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1706": {
+      "reels_score": 3.83,
+      "rank": 118,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1707": {
+      "reels_score": 4.06,
+      "rank": 10,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1708": {
+      "reels_score": 3.42,
+      "rank": 704,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1709": {
+      "reels_score": 3.59,
+      "rank": 526,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1710": {
+      "reels_score": 3.76,
+      "rank": 207,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1711": {
+      "reels_score": 3.63,
+      "rank": 459,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1712": {
+      "reels_score": 3.75,
+      "rank": 225,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1713": {
+      "reels_score": 3.59,
+      "rank": 527,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1714": {
+      "reels_score": 3.78,
+      "rank": 174,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1715": {
+      "reels_score": 3.59,
+      "rank": 528,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1716": {
+      "reels_score": 3.53,
+      "rank": 620,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1717": {
+      "reels_score": 3.46,
+      "rank": 679,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1718": {
+      "reels_score": 3.87,
+      "rank": 70,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1719": {
+      "reels_score": 3.68,
+      "rank": 349,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1720": {
+      "reels_score": 3.63,
+      "rank": 460,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1721": {
+      "reels_score": 3.85,
+      "rank": 86,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1722": {
+      "reels_score": 3.91,
+      "rank": 46,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1723": {
+      "reels_score": 3.84,
+      "rank": 101,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1724": {
+      "reels_score": 3.61,
+      "rank": 501,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1725": {
+      "reels_score": 3.68,
+      "rank": 350,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1726": {
+      "reels_score": 3.63,
+      "rank": 461,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1727": {
+      "reels_score": 3.79,
+      "rank": 165,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "decision_making",
+        "creativity"
+      ]
+    },
+    "1728": {
+      "reels_score": 3.67,
+      "rank": 375,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1729": {
+      "reels_score": 3.77,
+      "rank": 189,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "communication",
+      "secondary_themes": []
+    },
+    "1730": {
+      "reels_score": 3.49,
+      "rank": 659,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1731": {
+      "reels_score": 3.72,
+      "rank": 266,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking",
+        "creativity"
+      ]
+    },
+    "1732": {
+      "reels_score": 3.76,
+      "rank": 208,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1733": {
+      "reels_score": 3.52,
+      "rank": 629,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1734": {
+      "reels_score": 3.65,
+      "rank": 416,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1735": {
+      "reels_score": 3.85,
+      "rank": 87,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1736": {
+      "reels_score": 3.82,
+      "rank": 132,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1737": {
+      "reels_score": 3.78,
+      "rank": 175,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1738": {
+      "reels_score": 4.02,
+      "rank": 14,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions",
+        "meaning"
+      ]
+    },
+    "1739": {
+      "reels_score": 3.65,
+      "rank": 417,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1740": {
+      "reels_score": 3.61,
+      "rank": 502,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1741": {
+      "reels_score": 3.32,
+      "rank": 741,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "leadership"
+      ]
+    },
+    "1742": {
+      "reels_score": 3.77,
+      "rank": 190,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1743": {
+      "reels_score": 3.8,
+      "rank": 151,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "communication"
+      ]
+    },
+    "1744": {
+      "reels_score": 3.81,
+      "rank": 144,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1745": {
+      "reels_score": 3.56,
+      "rank": 577,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "influence",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1746": {
+      "reels_score": 3.61,
+      "rank": 503,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "meaning"
+      ]
+    },
+    "1747": {
+      "reels_score": 3.88,
+      "rank": 58,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1748": {
+      "reels_score": 3.61,
+      "rank": 504,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1749": {
+      "reels_score": 3.68,
+      "rank": 351,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1750": {
+      "reels_score": 3.84,
+      "rank": 102,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1751": {
+      "reels_score": 3.71,
+      "rank": 291,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1752": {
+      "reels_score": 3.55,
+      "rank": 589,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1753": {
+      "reels_score": 3.92,
+      "rank": 42,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1754": {
+      "reels_score": 3.79,
+      "rank": 166,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1755": {
+      "reels_score": 3.68,
+      "rank": 352,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1756": {
+      "reels_score": 3.7,
+      "rank": 310,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1757": {
+      "reels_score": 3.71,
+      "rank": 292,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1758": {
+      "reels_score": 3.68,
+      "rank": 353,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "focus",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1759": {
+      "reels_score": 3.78,
+      "rank": 176,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1760": {
+      "reels_score": 3.67,
+      "rank": 376,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1761": {
+      "reels_score": 3.51,
+      "rank": 639,
+      "fit_45s": 4,
+      "hook": 2,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1762": {
+      "reels_score": 3.66,
+      "rank": 398,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1763": {
+      "reels_score": 3.58,
+      "rank": 545,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1764": {
+      "reels_score": 3.48,
+      "rank": 663,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1765": {
+      "reels_score": 3.7,
+      "rank": 311,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 5,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1766": {
+      "reels_score": 3.54,
+      "rank": 602,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": [
+        "leadership"
+      ]
+    },
+    "1767": {
+      "reels_score": 3.78,
+      "rank": 177,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1768": {
+      "reels_score": 3.69,
+      "rank": 328,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1769": {
+      "reels_score": 3.85,
+      "rank": 88,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 5,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1770": {
+      "reels_score": 3.92,
+      "rank": 43,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "emotions",
+        "thinking"
+      ]
+    },
+    "1772": {
+      "reels_score": 3.62,
+      "rank": 479,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1774": {
+      "reels_score": 3.61,
+      "rank": 505,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1775": {
+      "reels_score": 3.82,
+      "rank": 133,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1776": {
+      "reels_score": 3.88,
+      "rank": 59,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "creativity",
+        "habits"
+      ]
+    },
+    "1777": {
+      "reels_score": 3.51,
+      "rank": 640,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "influence"
+      ]
+    },
+    "1778": {
+      "reels_score": 3.45,
+      "rank": 688,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "focus",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1779": {
+      "reels_score": 3.62,
+      "rank": 480,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1780": {
+      "reels_score": 3.2,
+      "rank": 758,
+      "fit_45s": 2,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits",
+        "communication"
+      ]
+    },
+    "1781": {
+      "reels_score": 3.53,
+      "rank": 621,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1782": {
+      "reels_score": 3.68,
+      "rank": 354,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "money_career"
+      ]
+    },
+    "1783": {
+      "reels_score": 3.68,
+      "rank": 355,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1784": {
+      "reels_score": 3.79,
+      "rank": 167,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1785": {
+      "reels_score": 3.68,
+      "rank": 356,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "communication",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1786": {
+      "reels_score": 3.42,
+      "rank": 705,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1787": {
+      "reels_score": 3.68,
+      "rank": 357,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1788": {
+      "reels_score": 3.78,
+      "rank": 178,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1789": {
+      "reels_score": 3.79,
+      "rank": 168,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "health",
+      "secondary_themes": []
+    },
+    "1790": {
+      "reels_score": 3.94,
+      "rank": 32,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "resilience",
+      "secondary_themes": []
+    },
+    "1791": {
+      "reels_score": 3.33,
+      "rank": 738,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1792": {
+      "reels_score": 3.71,
+      "rank": 293,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "health"
+      ]
+    },
+    "1794": {
+      "reels_score": 3.65,
+      "rank": 418,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1795": {
+      "reels_score": 3.65,
+      "rank": 419,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1796": {
+      "reels_score": 3.71,
+      "rank": 294,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "communication",
+      "secondary_themes": []
+    },
+    "1797": {
+      "reels_score": 3.58,
+      "rank": 546,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "leadership"
+      ]
+    },
+    "1798": {
+      "reels_score": 3.41,
+      "rank": 710,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1799": {
+      "reels_score": 3.4,
+      "rank": 717,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "communication"
+      ]
+    },
+    "1800": {
+      "reels_score": 3.68,
+      "rank": 358,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "habits",
+        "emotions"
+      ]
+    },
+    "1801": {
+      "reels_score": 3.09,
+      "rank": 761,
+      "fit_45s": 4,
+      "hook": 2,
+      "visual": 2,
+      "primary_theme": "meaning",
+      "secondary_themes": [
+        "emotions"
+      ]
+    },
+    "1802": {
+      "reels_score": 3.56,
+      "rank": 578,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "relationships",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1803": {
+      "reels_score": 3.48,
+      "rank": 664,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1804": {
+      "reels_score": 3.98,
+      "rank": 21,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "habits",
+      "secondary_themes": []
+    },
+    "1805": {
+      "reels_score": 3.86,
+      "rank": 75,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1806": {
+      "reels_score": 3.42,
+      "rank": 706,
+      "fit_45s": 4,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "habits",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1807": {
+      "reels_score": 3.85,
+      "rank": 89,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1808": {
+      "reels_score": 3.55,
+      "rank": 590,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1809": {
+      "reels_score": 3.71,
+      "rank": 295,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "emotions",
+      "secondary_themes": [
+        "habits"
+      ]
+    },
+    "1810": {
+      "reels_score": 3.73,
+      "rank": 248,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1811": {
+      "reels_score": 3.88,
+      "rank": 60,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1812": {
+      "reels_score": 3.7,
+      "rank": 312,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "thinking",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1813": {
+      "reels_score": 3.56,
+      "rank": 579,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1814": {
+      "reels_score": 3.82,
+      "rank": 134,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "creativity"
+      ]
+    },
+    "1815": {
+      "reels_score": 3.88,
+      "rank": 61,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1816": {
+      "reels_score": 3.71,
+      "rank": 296,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 4,
+      "primary_theme": "money_career",
+      "secondary_themes": []
+    },
+    "1817": {
+      "reels_score": 3.94,
+      "rank": 33,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "resilience"
+      ]
+    },
+    "1818": {
+      "reels_score": 3.4,
+      "rank": 718,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1819": {
+      "reels_score": 3.77,
+      "rank": 191,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1820": {
+      "reels_score": 3.93,
+      "rank": 35,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1821": {
+      "reels_score": 3.95,
+      "rank": 30,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "leadership",
+      "secondary_themes": []
+    },
+    "1822": {
+      "reels_score": 3.75,
+      "rank": 226,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1823": {
+      "reels_score": 3.76,
+      "rank": 209,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 2,
+      "primary_theme": "money_career",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1824": {
+      "reels_score": 3.86,
+      "rank": 76,
+      "fit_45s": 5,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "creativity",
+      "secondary_themes": [
+        "thinking"
+      ]
+    },
+    "1825": {
+      "reels_score": 3.75,
+      "rank": 227,
+      "fit_45s": 4,
+      "hook": 5,
+      "visual": 4,
+      "primary_theme": "emotions",
+      "secondary_themes": []
+    },
+    "1826": {
+      "reels_score": 3.55,
+      "rank": 591,
+      "fit_45s": 5,
+      "hook": 4,
+      "visual": 2,
+      "primary_theme": "thinking",
+      "secondary_themes": []
+    },
+    "1827": {
+      "reels_score": 3.55,
+      "rank": 592,
+      "fit_45s": 5,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "creativity",
+      "secondary_themes": []
+    },
+    "1828": {
+      "reels_score": 3.42,
+      "rank": 707,
+      "fit_45s": 4,
+      "hook": 3,
+      "visual": 2,
+      "primary_theme": "resilience",
+      "secondary_themes": []
+    }
+  }
+}

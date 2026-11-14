@@ -1,0 +1,35 @@
+{
+  "story_id": 1662,
+  "kind": "anecdote",
+  "book": {"title": "The Second Mountain", "author": "David Brooks", "year": "2019"},
+  "confidence": "high",
+  "confidence_note": "Verified in a full text of the book (ch. 2 'The Instagram Life', moral-ecologies chapter, conclusion). The old premise, a 1945 versus a 2015 commencement speech ('Be honest, be brave' versus 'Follow your passion'), is not in the book and was rejected; the 'character ethic versus authenticity ethic' and 'Brooks does not criticise authenticity' were also dropped (he criticises it strongly). The story is rebuilt on the book's commencement-address passage, so the topic and title changed.",
+  "facts": [
+    "Brooks says every society has a way of transmitting its values to the young; one of ours is 'a secular sermon called the commencement address'.",
+    "Colleges ask a person distinguished by fantastic career success to claim that career success is not that important, and then these speakers tell audiences not to be afraid to fail: 'failure can be wonderful, if you happen to be J. K. Rowling, Denzel Washington, or Steve Jobs.'",
+    "He says the speeches hand graduates 'great big boxes of nothing': the box of freedom ('The purpose of life is to be free'), possibility ('Your future is limitless!'), authenticity ('Look inside yourself! ... You do you!'), and the emptiest, autonomy ('It's up to you to define your own values... Do what you love!').",
+    "The graduates 'are drowning in freedom'; at each box they ask the next question: what is freedom for, how do I know which path is mine, what can I devote myself to?",
+    "Brooks: the 'you' graduates are told to consult 'is the very thing that hasn't yet formed'. He quotes Kierkegaard on needing to find 'the idea for which I am willing to live and die'.",
+    "Brooks: 'How is it that on this biggest question of all, we have nothing to say?'",
+    "He contrasts two moral ecologies: the group-oriented 'We're All in This Together' of the mid-twentieth century (duty, conformity, humility; it also tolerated racism and trapped many in conformity) and 'I'm Free to Be Myself' (freedom, autonomy, authenticity). His core argument: 'we have overdone it with the individualist worldview.'",
+    "Brooks cites a survey: Harvard Graduate School of Education asked ten thousand middle and high school students whether their parents cared more about achievement or kindness; eighty percent said achievement."
+  ],
+  "scene_details": ["a graduation audience handed four boxes that turn out to be empty", "a speaker who made it saying failure is wonderful", "the question 'What can I devote myself to?'", "ten thousand students asked what their parents care about"],
+  "tension": "Everyone on the stage tells graduates to be free, and the graduates keep asking what for.",
+  "opening_idea": "Open on the speaker who has had a spectacular career telling graduates that failure can be wonderful.",
+  "lessons": [{"idea": "Advice about freedom and being yourself leaves the 'for what' question unanswered; give or ask for a direction outside the self.", "anchor": "The empty boxes of freedom, possibility, authenticity and autonomy.", "example": "A mentor who answers a young colleague's 'what should I do?' with 'follow your heart' instead of a concrete cause to join."}],
+  "reflect": [],
+  "reflect_final": "When someone asks you what they should do with their life, what concrete thing outside themselves would you point to, instead of 'follow your passion'?",
+  "use_cases": [
+    {"situation": "A young relative asks what to do after school.", "move": "Skip 'follow your passion' and ask what cause or people they would like to be useful to, as Brooks says graduates are really asking.", "context": "family"},
+    {"situation": "You are asked to give a short talk to new hires.", "move": "Replace 'you can do anything' with one concrete thing worth devoting yourself to, and say why.", "context": "meeting"},
+    {"situation": "You feel adrift despite plenty of freedom.", "move": "Ask what you could devote yourself to, rather than what you want; Brooks says graduates drown in freedom, not in lack of it.", "context": "self"}
+  ],
+  "pocket_idea": "Freedom, possibility, authenticity and autonomy are Brooks's four empty boxes: ask what to devote yourself to.",
+  "conversation_variants": {
+    "punchline_idea": "Brooks says commencement speeches hand graduates four boxes, and every one of them is empty.",
+    "thirty_sec_idea": "Brooks goes through the commencement speech: freedom, possibility, authenticity, autonomy, four big boxes of nothing; graduates drowning in freedom ask what to devote themselves to.",
+    "question_idea": "",
+    "key_contrast_idea": "freedom, then devotion"
+  }
+}

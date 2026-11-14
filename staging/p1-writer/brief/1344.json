@@ -1,0 +1,65 @@
+{
+  "story_id": 1344,
+  "kind": "concept",
+  "book": {
+    "title": "10% Happier",
+    "author": "Dan Harris",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The voice-in-the-head framing is in the book's subtitle; the refused title comes from a Psychology Today review; the Tolle episode and RAIN come from book summaries and a Goodreads highlight. Book text not read. The old quotes ('I am not that voice...', 'you are an old habit') and the 'ego = inner voice' definition attributed to Harris are unsourced and dropped.",
+  "facts": [
+    "The book's subtitle is 'How I Tamed the Voice in My Head, Reduced Stress Without Losing My Edge, and Found Self-Help That Actually Works'.",
+    "Harris calls the running inner narrator 'the voice in my head'; it comments on everything, often unkindly.",
+    "He wanted to call the book 'The Voice in My Head Is an Asshole'; the publisher said no.",
+    "Reading and interviewing Eckhart Tolle, he recognized himself in the description of people identifying with the stream of thoughts, but 'observe your thoughts' came with no method.",
+    "Meditation gave him a method; he describes it as gaining 'the ability to respond rather than react'.",
+    "He found RAIN practical for strong emotions: Recognize what is happening, Allow it, Investigate how it feels in the body, Non-identification (don't take it as who you are).",
+    "He calls the voice the universal human problem: it narrates everything, often unkindly, the 'monkey mind'. After meditation the voice is still active but no longer completely in control.",
+    "For a while he overcorrected into passivity at work, 'mistaking equanimity for disengagement', until his boss Ben Sherwood pushed back; calm and ambition could coexist.",
+    "He met Tolle's ideas while covering faith, a beat his boss Peter Jennings had given him though he was a lifelong agnostic."
+  ],
+  "scene_details": [
+    "a book title the publisher refused",
+    "four letters, R-A-I-N",
+    "Tolle's instruction 'observe your thoughts' without a how"
+  ],
+  "tension": "Harris knew the voice in his head was the problem long before he knew what to do about it.",
+  "opening_idea": "Start with the title the publisher refused.",
+  "lessons": [
+    {
+      "idea": "Name the voice's comment as a comment, then check it in the body, before you treat it as a fact about you.",
+      "anchor": "RAIN; the refused title."
+    },
+    {
+      "idea": "Insight needs a method.",
+      "anchor": "Tolle without a how."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What sentence does the voice in your head repeat most often, and when did you last check whether it was true?",
+  "use_cases": [
+    {
+      "situation": "After a meeting you keep replaying a clumsy comment you made",
+      "move": "Run RAIN: recognize the replay, allow the embarrassment, notice where you feel it, and don't treat it as who you are.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend says 'I'm such an idiot' after a small mistake",
+      "move": "Mention Harris wanted to call his book 'The Voice in My Head Is an Asshole', then ask what the voice is saying.",
+      "context": "social"
+    },
+    {
+      "situation": "Your child is stuck on 'I'm bad at math'",
+      "move": "Ask them to say it as 'a voice says I'm bad at math' and look at it together.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Harris wanted to title his book after the voice in his head; give yours a name and it stops sounding like you.",
+  "conversation_variants": {
+    "punchline_idea": "Dan Harris wanted to call his book 'The Voice in My Head Is an Asshole'; the publisher refused.",
+    "thirty_sec_idea": "Harris, the inner narrator, Tolle's 'observe your thoughts' with no method, meditation and RAIN as the how.",
+    "question_idea": "What does your inner voice say most?",
+    "key_contrast_idea": "The voice, not you"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1429,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence: rebuilt around the therapist sitting in the patient chair (breakup, friends urging, Wendell, the line she had said to patients, the abandoned happiness-book contract). Sources are Wikipedia and secondary summaries, not the book text. Old unsourced quotes and the work-stress claim dropped. Story is a little under the length target because the verified material is thin.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Karşı koltuktaki terapist",
+  "description": "Terapist Lori Gottlieb, danışanlarına yıllarca söylediği cümleyi bir gün kendi terapistinden duydu. Kitap iki koltuğu yan yana koyar.",
+  "hook": "Başkalarına verdiğiniz hangi öğüdü, kendinize söyletmeye hiç izin vermediniz?",
+  "one_minute_summary": "Lori Gottlieb Los Angeles'ta çalışan bir terapist. Uzun süredir birlikte olduğu erkek arkadaşı, küçük oğluyla yaşamak istemediği için ilişkiyi bitirdi. Çevresi onu bir terapiste gönderdi ve birkaç seanslık bir iş sandığı süreç Wendell'in kanepesinde başladı. Önce ağladı. Sonra Wendell, duygularının olması gerektiği gibi olmak zorunda olmadığını söyledi. Gottlieb bu cümleyi danışanlarına defalarca söylemişti, ama karşı koltuktan duyunca başka bir ağırlığı vardı. Kitap bu iki koltuğu, kendi terapisini ve danışanlarının hikâyelerini, yan yana koyar."
+ },
+ "en": {
+  "title": "The therapist in the other chair",
+  "description": "Therapist Lori Gottlieb spent years telling patients that their feelings need not match what they think they should be. Then she heard it from Wendell.",
+  "hook": "Which piece of advice do you hand out easily that you have never let anyone say back to you?",
+  "one_minute_summary": "Lori Gottlieb is a psychotherapist in Los Angeles. Her long-term boyfriend ended the relationship because he did not want to live with her young son. Friends urged her to see someone, and she booked what she thought would be a few sessions with Wendell. She mostly cried. Then he told her that her feelings did not have to match what she thought they should be, a line she had said to patients many times. From the other chair it landed differently."
+ },
+ "es": {
+  "title": "El terapeuta en el otro sillón",
+  "description": "La terapeuta Lori Gottlieb pasó años diciendo a sus pacientes que sus sentimientos no tienen que ser como deben. Un día se lo dijo Wendell a ella.",
+  "hook": "¿Qué consejo repartes con facilidad que nunca has dejado que alguien te devuelva a ti?",
+  "one_minute_summary": "Lori Gottlieb es psicoterapeuta en Los Ángeles. Su pareja de mucho tiempo terminó la relación porque no quería vivir con su hijo pequeño. Sus amigos le insistieron en que hablara con alguien y reservó lo que creía que serían unas pocas sesiones con Wendell. Sobre todo lloró. Luego él le dijo que sus sentimientos no tenían por qué parecerse a lo que ella creía que debían ser, una frase que ella había dicho a sus pacientes muchas veces. Desde el otro sillón, pesaba distinto."
+ },
+ "de": {
+  "title": "Der Therapeut im anderen Sessel",
+  "description": "Die Therapeutin Lori Gottlieb sagte Patienten jahrelang, ihre Gefühle müssten nicht so sein, wie sie glauben. Dann hörte sie den Satz von Wendell.",
+  "hook": "Welchen Rat gibst du leicht weiter, den du dir noch nie von jemandem hast zurücksagen lassen?",
+  "one_minute_summary": "Lori Gottlieb ist Psychotherapeutin in Los Angeles. Ihr langjähriger Freund beendete die Beziehung, weil er nicht mit ihrem kleinen Sohn zusammenleben wollte. Freunde drängten sie, mit jemandem zu reden, und sie buchte bei Wendell, was sie für ein paar Sitzungen hielt. Sie weinte vor allem. Dann sagte er ihr, ihre Gefühle müssten nicht so sein, wie sie dachte, ein Satz, den sie oft zu Patienten gesagt hatte. Aus dem anderen Sessel klang er anders."
+ }
+}

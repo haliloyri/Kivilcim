@@ -1,0 +1,35 @@
+{
+  "story_id": 1604,
+  "verdict": "keep",
+  "verify_note": "Keep: four-week cold-shower programme confirmed by two summaries (Shortform preview, manassaloi), Wayne State mention and 2024 meta-analysis from Wikipedia and the summaries; no primary text. Old norepinephrine/dopamine/brown-fat figures and the resilience-transfer claim dropped. Health benefits unproven; stated in the story.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Duşun son yarım dakikası",
+    "description": "Wim Hof soğuğa buz banyosuyla değil, sıradan bir duşun sonundaki 30 saniyeyle başlamayı önerir.",
+    "hook": "Rahatsız edici geldiği için kaçındığınız bir şeyin yalnızca yarım dakikalık hâlini deneyebilir misiniz?",
+    "one_minute_summary": "Wim Hof'un yöntemi soğuk, nefes ve zihin tutumu üzerine kurulu. Soğukta küçük başlıyor: buz banyosu yerine dört haftalık bir duş programı öneriyor. İlk hafta duşun sonunda 30 saniye soğuk su, haftada en az beş gün, sonra her hafta 30 saniye ekleyip dördüncü haftada iki dakikaya çıkıyor. 30 saniye çok gelirse 15 ile başlanıyor, kademeli girilebiliyor ve hiçbir şey zorlanmıyor. Araştırmacılar sağlık iddialarından emin değil, kalp dernekleri önce doktora danışmayı öneriyor."
+  },
+  "en": {
+    "title": "Half a Minute of Cold",
+    "description": "Wim Hof starts people on cold with the last 30 seconds of an ordinary shower, not an ice bath.",
+    "hook": "Could you try a half-minute version of something you avoid because it feels uncomfortable?",
+    "one_minute_summary": "Wim Hof's method rests on cold, breathing and mindset. For cold he starts small, with a four-week programme of showers instead of ice baths. Week one is 30 seconds of cold at the end of a shower, at least five days a week, adding 30 seconds each week until two minutes in week four. If 30 is too much, begin with 15, enter gradually and force nothing. Researchers are unsure about the health claims, and heart foundations advise talking to a doctor first."
+  },
+  "es": {
+    "title": "Medio minuto de frío",
+    "description": "Wim Hof empieza con los últimos 30 segundos de una ducha normal, no con un baño de hielo.",
+    "hook": "¿Podrías probar una versión de medio minuto de algo que evitas porque resulta incómodo?",
+    "one_minute_summary": "El método de Wim Hof se apoya en el frío, la respiración y la mentalidad. Con el frío empieza pequeño: cuatro semanas de duchas en vez de baños de hielo. La primera semana son 30 segundos de agua fría al final de la ducha, al menos cinco días, y se añaden 30 cada semana hasta dos minutos. Si 30 es demasiado, se empieza con 15 y no se fuerza nada. Los investigadores dudan de los beneficios y las fundaciones del corazón aconsejan consultar antes a un médico."
+  },
+  "de": {
+    "title": "Die letzte halbe Minute der Dusche",
+    "description": "Wim Hof beginnt mit den letzten 30 Sekunden einer normalen Dusche, nicht mit einem Eisbad.",
+    "hook": "Könntest du eine Halbminutenversion von etwas ausprobieren, das du meidest, weil es unangenehm ist?",
+    "one_minute_summary": "Wim Hofs Methode ruht auf Kälte, Atmung und Einstellung. Bei der Kälte beginnt er klein, mit einem vierwöchigen Duschprogramm statt Eisbädern. Woche eins sind 30 Sekunden kaltes Wasser am Ende der Dusche, an mindestens fünf Tagen, jede Woche kommen 30 dazu bis zwei Minuten in Woche vier. Sind 30 zu viel, beginnt man mit 15, tastet sich heran und erzwingt nichts. Forschende sind bei den Gesundheitsversprechen unsicher, und Herzstiftungen raten, vorher einen Arzt zu fragen."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "book_no": 144,
+  "title": "Scrum: The Art of Doing Twice the Work in Half the Time",
+  "authors": ["Jeff Sutherland", "J.J. Sutherland"],
+  "year": "2014",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Scrum_(software_development)",
+    "https://en.wikipedia.org/wiki/Jeff_Sutherland",
+    "https://www.sumizeit.com/books/scrum",
+    "https://www.shortform.com/summary/scrum-summary-jeff-sutherland"
+  ],
+  "source_note": "Book itself not read. Wikipedia pages on Scrum and Sutherland give the origin and mechanics; summary sites give two further details. The three stand-up questions are from the author's general knowledge of the book and Scrum guides, not re-fetched.",
+  "facts": [
+    {"id":"f1","claim":"The word scrum came from a 1986 Harvard Business Review article, 'The New New Product Development Game', by Hirotaka Takeuchi and Ikujiro Nonaka, based on case studies of firms in the automotive, photocopier and printer industries. They called it a rugby approach: one cross-functional team 'tries to go the distance as a unit, passing the ball back and forth'.","source":"Wikipedia: Scrum","confidence":"high"},
+    {"id":"f2","claim":"Sutherland, John Scumniotales and Jeff McKenna developed a similar approach at Easel Corporation in the early 1990s and called it scrum. Sutherland and Ken Schwaber merged their ideas and presented a paper at OOPSLA '95.","source":"Wikipedia: Scrum; Jeff Sutherland","confidence":"high"},
+    {"id":"f3","claim":"Sutherland flew RF-4C Phantom reconnaissance missions, including in the Vietnam War, from Udorn Royal Thai Air Force Base starting in 1967; later earned a master's in statistics at Stanford and a doctorate in biometrics at the University of Colorado School of Medicine.","source":"Wikipedia: Jeff Sutherland","confidence":"high"},
+    {"id":"f4","claim":"Daily scrum: under 15 minutes, same time and place every day, to announce progress toward the sprint goal and any obstacles, without detailed discussion.","source":"Wikipedia: Scrum","confidence":"high"},
+    {"id":"f5","claim":"The three stand-up questions: what did you do yesterday, what will you do today, what is in your way. Standard in Scrum guides; Sutherland teaches it; page not re-read.","source":"author knowledge","confidence":"medium"},
+    {"id":"f6","claim":"A sprint is normally one week to one month; two weeks is the most common. Each sprint ends with working increments shown to stakeholders and a retrospective picking one or two improvements.","source":"Wikipedia: Scrum; sumizeit","confidence":"high"},
+    {"id":"f7","claim":"A team's capacity for a sprint can be estimated from the work it completed in the last sprint; historical velocity is a guideline to capacity. (Wikipedia marks this needs-citation; it is standard Scrum.)","source":"Wikipedia: Scrum","confidence":"medium"},
+    {"id":"f8","claim":"A burndown chart is a publicly displayed chart: days remaining on the horizontal axis, work remaining on the vertical axis.","source":"Wikipedia: Scrum","confidence":"high"},
+    {"id":"f9","claim":"Summary says the FBI's Virtual Case File project spent about $170 million over five years and delivered nothing usable; a Scrum restart delivered a working system in small increments every few weeks.","source":"sumizeit (secondary)","confidence":"medium"},
+    {"id":"f10","claim":"Sutherland is a former fighter pilot; he introduced the term sprint with Schwaber in the 1995 paper; teams should be no larger than nine.","source":"Shortform preview","confidence":"medium"},
+    {"id":"f11","claim":"A summary cites 'only about 10% of large software projects finish on time, over 80% go over budget' as the book's opening problem statement.","source":"sumizeit","confidence":"low"}
+  ],
+  "rejected": [
+    {"claim":"Old 1528: Sutherland combined Japanese manufacturing philosophy, rugby and brain research in the 1990s.","reason":"Rugby and Japanese firms come via Takeuchi and Nonaka (1986); brain research not found."},
+    {"claim":"Old 1528: direct quote 'big plans vs small experiments...' and claims of use in medicine, education, construction.","reason":"Quote and sector list not confirmed."},
+    {"claim":"Old 1529: standup is 15 minutes standing; three effects: synchronisation, blocker visibility, accountability.","reason":"Under 15 minutes, same place and time supported; three named effects not."},
+    {"claim":"Old 1529: 'hundreds of micro-coordination needs eliminated'.","reason":"Not found."},
+    {"claim":"Old 1530: quote 'stop estimating, measure'.","reason":"Quote not found."},
+    {"claim":"Old 1530: managers' estimates 'almost always wrong' and 'much more accurate'.","reason":"No supported figure; sumizeit's 4x-16x Cone of Uncertainty is low confidence and left out."}
+  ],
+  "stories": {
+    "1528": {"verdict":"keep","fact_ids":["f1","f2","f3","f6","f9"],"note":"Origin story from Wikipedia; medium."},
+    "1529": {"verdict":"keep","fact_ids":["f4","f5","f6"],"note":"Concept, mechanics only; medium."},
+    "1530": {"verdict":"keep","fact_ids":["f6","f7","f8"],"note":"Concept; velocity mechanic from Wikipedia; medium-low."}
+  }
+}

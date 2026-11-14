@@ -1,0 +1,35 @@
+{
+ "story_id": 1346,
+ "verdict": "keep",
+ "verify_note": "Verified in full text, ch. 4. Recentered on the friend's two daughters and the clothing allowance, plus the 13-item Maximization Scale (65+ of 91 borderline clinical depression, correlation caveat). Old claim that research shows maximizers decide better dropped (book only says they 'might do better objectively').",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Aynı Harçlık, İki Kız Kardeş",
+  "description": "Bir kıyafet harçlığı ablanın kavgalarını bitirir, küçük kardeşe ise yalnızca endişe getirir. Barry Schwartz farkı en iyiyi arayanlarla yeterince iyiyle durabilenler arasında görür.",
+  "hook": "Ölçütlerinizi karşılayan bir şey bulduktan sonra bile aramaya devam ettiğiniz alan hangisi?",
+  "one_minute_summary": "Barry Schwartz'ın bir arkadaşı, kıyafet kavgalarını bitirmek için büyük kızına toplu bir harçlık verir ve kavgalar biter. Aynı harçlığı küçük kıza da verirler. Büyüğü beğendiğini alıp geçer. Küçüğü her alışverişte bunun parasının en iyi kullanımı olup olmadığını, iki ay sonra pişman olup olmayacağını düşünür. Schwartz birine yeterci, ötekine maksimizer der. Onun 13 maddelik anketinde en yüksek puanı alanlar daha mutsuzdur, ama bu bir neden değil, bir ilişkidir."
+ },
+ "en": {
+  "title": "Same Allowance, Two Sisters",
+  "description": "A clothing allowance ends the fights with one daughter and brings the other only worry. Barry Schwartz traces the difference to maximizing versus being content with good enough.",
+  "hook": "Where do you keep searching even after you've found something that already meets your standard?",
+  "one_minute_summary": "A friend of Barry Schwartz gives his older daughter a lump-sum clothing allowance, and the fights about clothes stop. The younger daughter gets the same deal. The older one buys what she likes and moves on. The younger one agonizes on every trip: is this the best use of my money, will I regret it in two months? Schwartz calls them a satisficer and a maximizer. In his surveys maximizers reported less happiness, a correlation he is careful not to call proof."
+ },
+ "es": {
+  "title": "La misma paga, dos hermanas",
+  "description": "Una paga para ropa acaba con las peleas de una hija y a la otra solo le trae angustia. Barry Schwartz lo explica con la diferencia entre buscar lo mejor y conformarse con lo suficiente.",
+  "hook": "¿En qué parte de tu vida sigues buscando aunque ya hayas encontrado algo que cumple tus criterios?",
+  "one_minute_summary": "Un amigo de Barry Schwartz da a su hija mayor una suma fija para ropa y se acaban las discusiones. Hace lo mismo con la pequeña. La mayor compra lo que le gusta y sigue adelante. La pequeña sufre en cada tienda pensando si es el mejor uso de su dinero y si se arrepentirá dos meses después. Schwartz llama a una satisfactora y a la otra maximizadora. En sus encuestas los maximizadores se declaraban menos felices, aunque él insiste en que es una correlación."
+ },
+ "de": {
+  "title": "Gleiches Kleidergeld, zwei Schwestern",
+  "description": "Ein festes Kleidergeld beendet den Streit mit der einen Tochter und bringt der anderen nur Sorgen. Barry Schwartz erklärt den Unterschied zwischen Maximierern und Menschen, denen gut genug reicht.",
+  "hook": "Wo suchst du weiter, obwohl du schon etwas gefunden hast, das deine eigenen Maßstäbe erfüllt?",
+  "one_minute_summary": "Ein Freund von Barry Schwartz gibt seiner älteren Tochter ein festes Kleidergeld, und der Streit um Kleidung hört auf. Die jüngere bekommt dasselbe. Die ältere kauft, was ihr gefällt, und denkt nicht weiter nach. Die jüngere quält sich bei jedem Stück: Ist das die beste Verwendung meines Geldes, bereue ich es in zwei Monaten? Schwartz nennt das Satisficer und Maximierer. In seinen Umfragen waren Maximierer unglücklicher, was er ausdrücklich als Zusammenhang und nicht als Beweis bezeichnet."
+ }
+}

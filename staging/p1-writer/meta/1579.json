@@ -1,0 +1,35 @@
+{
+ "story_id": 1579,
+ "verdict": "keep",
+ "verify_note": "Keep: survey share (about 40 percent, 24 minutes per hour), one in nine in sales, word-association result and Grant call-centre figures verified via Wharton, NPR and book excerpt. Sample size omitted (7,000 vs 9,000 conflict). Old manager/entrepreneur split not found.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Satışsız satış",
+  "description": "Pink'in araştırmasına göre iş saatinin yaklaşık 24 dakikası birini ikna etmeye gidiyor. İnsanlar yine de satış deyince en çok \"ısrarcı\" kelimesini düşünüyor.",
+  "hook": "Hangi isteğiniz bu hafta aslında birini ikna etme çabasıydı?",
+  "one_minute_summary": "Daniel Pink'in kitabı için yapılan bir araştırma, iş zamanının kabaca yüzde kırkının, saatte yaklaşık 24 dakikanın, bir şey satılmadan ikna etmeye gittiğini buldu. Amerika'da her dokuz çalışandan biri satışta, geri kalanı başka mesleklerin içinde satış yapıyor. Bir çağrı merkezi çalışmasında en iyi satıcılar dışa dönük de içe dönük de değil, ortadaki ambivertlerdi. Yine de \"satış\" denince akla gelen ilk 25 kelimenin 20'si olumsuzdu ve başta \"ısrarcı\" vardı."
+ },
+ "en": {
+  "title": "Selling Without Calling It That",
+  "description": "Pink's survey found about 24 minutes of every working hour go to moving someone else. Yet the first word people link to sales is \"pushy\".",
+  "hook": "Which request this week was really an attempt to move someone?",
+  "one_minute_summary": "A survey for Daniel Pink's book found people spend roughly 40 percent of work time, about 24 minutes an hour, persuading without selling anything. One in nine American workers is in sales, and the rest do it inside other jobs. In a call-centre study the best sellers were neither extraverts nor introverts but ambiverts in the middle. Still, 20 of the top 25 words people linked to \"sales\" were negative, with \"pushy\" first."
+ },
+ "es": {
+  "title": "Vender sin llamarlo así",
+  "description": "Según Pink, unos 24 minutos de cada hora de trabajo se van en convencer a alguien. Aun así, la palabra que más asociamos a ventas es «pushy».",
+  "hook": "¿Qué petición de esta semana era, en realidad, un intento de convencer?",
+  "one_minute_summary": "Una encuesta para el libro de Daniel Pink mostró que dedicamos cerca del 40 por ciento del tiempo laboral, unos 24 minutos por hora, a persuadir sin vender nada. Uno de cada nueve trabajadores estadounidenses está en ventas y los demás lo hacen dentro de otros oficios. En un estudio de un centro de llamadas, los mejores no eran ni extrovertidos ni introvertidos, sino ambivertidos. Sin embargo, 20 de las 25 primeras palabras asociadas a ventas eran negativas."
+ },
+ "de": {
+  "title": "Verkaufen, ohne es zu nennen",
+  "description": "Nach Pink geht rund 24 Minuten jeder Arbeitsstunde fürs Überzeugen drauf. Trotzdem lautet das erste Wort zu Verkaufen \"aufdringlich\".",
+  "hook": "Welche Bitte war diese Woche in Wahrheit ein Überzeugungsversuch?",
+  "one_minute_summary": "Eine Umfrage für Daniel Pinks Buch ergab, dass Menschen etwa 40 Prozent ihrer Arbeitszeit, rund 24 Minuten pro Stunde, mit Überzeugen verbringen, ohne etwas zu verkaufen. Jeder neunte US-Beschäftigte arbeitet im Vertrieb, die anderen verkaufen innerhalb anderer Berufe. In einer Callcenter-Studie waren die Besten weder Extra- noch Introvertierte, sondern Ambivertierte. Dennoch waren 20 der ersten 25 Assoziationen zu Verkaufen negativ."
+ }
+}

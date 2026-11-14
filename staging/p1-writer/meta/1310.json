@@ -1,0 +1,35 @@
+{
+ "story_id": 1310,
+ "verdict": "keep",
+ "verify_note": "Keep. Old social-network and debt-spiral examples not in the book; replaced with Meadows's own examples (coffee cup, thermostat, brother pushing, soil erosion, piano, capital, bank account) and the rule of 70, verified in the book text (ch. 1).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Fren mi kartopu mu",
+  "description": "Meadows iki döngüyü anlatıyor: biri hedefe çeker, öbürü ne olursa onu büyütür.",
+  "hook": "Bir durum kendi kendine büyüyorsa, onu besleyen halkayı nasıl bulursunuz?",
+  "one_minute_summary": "Donella Meadows iki tür geri bildirim döngüsünü ayırıyor. Dengeleyici döngü bir şeyi hedefe çeker: sıcak kahve oda sıcaklığına soğur, termostat odayı ayarda tutar. Güçlendirici döngü ise kendini besler: kardeşi onu ittikçe o daha çok iter, piyano çaldıkça keyif alır ve daha çok çalar, faiz faiz kazanır. Kestirmesi şu: 70'i büyüme oranına bölersen ikiye katlanma süresini bulursun, yüzde 7'de yaklaşık 10 yıl. Bunun iyi mi kötü mü olduğu, neyin büyüdüğüne bağlı."
+ },
+ "en": {
+  "title": "Brake or snowball",
+  "description": "Meadows describes two loops: one pulls toward a goal, the other amplifies whatever it is given.",
+  "hook": "When something keeps growing on its own, how do you find the loop that feeds it?",
+  "one_minute_summary": "Donella Meadows separates two kinds of feedback loop. A balancing loop pulls toward a goal: hot coffee cools to room temperature, a thermostat holds a room steady. A reinforcing loop feeds itself: the more her brother pushed, the more she pushed back, piano practice brought pleasure and more practice, and interest earns interest. Her shortcut: 70 divided by the growth rate gives the doubling time, about 10 years at 7 percent. Whether that is good news depends on what is growing."
+ },
+ "es": {
+  "title": "Freno o bola de nieve",
+  "description": "Meadows describe dos bucles: uno empuja hacia una meta y el otro amplifica lo que recibe.",
+  "hook": "Cuando algo crece por sí solo, ¿cómo encuentras el bucle que lo alimenta?",
+  "one_minute_summary": "Donella Meadows distingue dos tipos de bucle de retroalimentación. Uno de equilibrio empuja hacia una meta: el café caliente se enfría hasta la temperatura de la sala y el termostato mantiene la habitación estable. Uno de refuerzo se alimenta solo: cuanto más la empujaba su hermano, más empujaba ella, el piano le daba placer y más tocaba, y los intereses generan intereses. Su atajo: 70 dividido entre la tasa de crecimiento da el tiempo de duplicación, unos diez años al 7 por ciento. Que sea bueno depende de qué crece."
+ },
+ "de": {
+  "title": "Bremse oder Schneeball",
+  "description": "Meadows beschreibt zwei Schleifen: Die eine zieht zu einem Ziel, die andere verstärkt, was man ihr gibt.",
+  "hook": "Wenn etwas von selbst wächst, wie findest du die Schleife, die es füttert?",
+  "one_minute_summary": "Donella Meadows unterscheidet zwei Arten von Rückkopplung. Eine ausgleichende Schleife zieht zu einem Ziel: Heißer Kaffee kühlt auf Raumtemperatur ab, ein Thermostat hält den Raum stabil. Eine verstärkende Schleife füttert sich selbst: Je mehr ihr Bruder schubste, desto mehr schubste sie zurück, Klavierüben brachte Freude und mehr Übung, und Zinsen bringen Zinsen. Ihre Faustregel: 70 geteilt durch die Wachstumsrate ergibt die Verdopplungszeit, bei 7 Prozent etwa zehn Jahre. Ob das gut ist, hängt davon ab, was wächst."
+ }
+}

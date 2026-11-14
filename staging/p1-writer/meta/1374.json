@@ -1,0 +1,35 @@
+{
+ "story_id": 1374,
+ "verdict": "keep",
+ "verify_note": "Shrine-maiden background and the house greeting checked against quotes from The Life-Changing Magic of Tidying Up and konmari.com; handbag thanks from secondary sources. The old text's extension of the method to relationships and work habits is not in the book and was dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Evi Selamlayan Danışman",
+  "description": "Marie Kondo bir müşterinin evinde hiçbir şeye dokunmadan önce diz çöküp evi selamlıyor. Bu alışkanlığın kökü, Şinto tapınağında geçen beş yılda.",
+  "hook": "Toparlamaya hiçbir şeye dokunmadan başlamak ne anlama gelir?",
+  "one_minute_summary": "Marie Kondo, toparlama danışmanı olmadan önce beş yıl bir Şinto tapınağında miko olarak çalıştı. The Life-Changing Magic of Tidying Up'ta, bir müşterinin evinde işe başlamadan önce evin ortasında diz çöküp evi içinden selamladığını anlatıyor. Kapının açılışını bir tapınak kapısından geçmeye benzetiyor ve selamı eve saygı göstermenin yolu sayıyor. Lisede eşyalarına canlıymış gibi davranmaya başlamıştı. Eşyaları elle hareket ettirmeyi, birini hafifçe sarsarak uyandırmaya benzetiyor."
+ },
+ "en": {
+  "title": "The Consultant Who Greets the House",
+  "description": "Before touching anything in a client's home, Marie Kondo kneels and greets the house. The habit goes back to her five years at a Shinto shrine.",
+  "hook": "What does it mean to start tidying by touching nothing?",
+  "one_minute_summary": "Before becoming a tidying consultant, Marie Kondo spent five years as a Shinto shrine maiden. In The Life-Changing Magic of Tidying Up she describes kneeling in the centre of a client's home and greeting it before she starts. Opening the door, she writes, resembles passing under a shrine gate, and the greeting shows respect for the house and its contents. She began treating her belongings as if alive in high school, and compares handling them to gently shaking someone awake."
+ },
+ "es": {
+  "title": "La consultora que saluda casas",
+  "description": "Antes de tocar nada en casa de un cliente, Marie Kondo se arrodilla y saluda a la casa. La costumbre viene de sus cinco años en un santuario sintoísta.",
+  "hook": "¿Qué significa empezar a ordenar sin tocar nada?",
+  "one_minute_summary": "Antes de dedicarse al orden, Marie Kondo pasó cinco años como miko en un santuario sintoísta. En The Life-Changing Magic of Tidying Up cuenta que se arrodilla en el centro de la casa de un cliente y la saluda antes de empezar. Abrir la puerta, escribe, se parece a pasar bajo la entrada de un santuario, y el saludo muestra respeto por la casa y lo que contiene. Empezó a tratar sus cosas como si estuvieran vivas en el instituto."
+ },
+ "de": {
+  "title": "Die Beraterin, die das Haus begrüßt",
+  "description": "Bevor Marie Kondo bei Kunden etwas anfasst, kniet sie nieder und begrüßt das Haus. Die Gewohnheit stammt aus ihren fünf Jahren an einem Shinto-Schrein.",
+  "hook": "Was heißt es, mit dem Aufräumen zu beginnen, ohne etwas anzufassen?",
+  "one_minute_summary": "Bevor Marie Kondo Aufräumberaterin wurde, war sie fünf Jahre Schreinmädchen an einem Shinto-Schrein. In The Life-Changing Magic of Tidying Up beschreibt sie, wie sie in der Mitte einer fremden Wohnung kniet und das Haus begrüßt, bevor sie anfängt. Das Öffnen der Tür gleiche dem Gang durch ein Schreintor, und der Gruß zeige Respekt vor dem Haus und allem darin. Schon in der Oberstufe behandelte sie ihre Sachen, als wären sie lebendig."
+ }
+}

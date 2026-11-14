@@ -1,0 +1,58 @@
+{
+ "story_id": 1376,
+ "kind": "concept",
+ "book": {
+  "title": "Meditations",
+  "author": "Marcus Aurelius",
+  "year": ""
+ },
+ "confidence": "high",
+ "confidence_note": "All passages checked in George Long's translation: 4.3 (retreats, 'retire into thyself', things do not touch the soul, 'life is opinion'), 4.7, 8.47, 11.36-37 (Epictetus line copied), 1.7 (Rusticus lent Epictetus's discourses). The old text's invented morning question 'what is in my control today?' and the quote 'things outside the will are neither good nor bad' are not in Meditations in that form (the dichotomy of control is Epictetus's) and were dropped.",
+ "facts": [
+  "4.3: men seek retreats (country houses, sea-shores, mountains); Marcus wants them too, but calls it common; he can retire into himself; nowhere quieter than one's own soul; keep principles brief; return to 'this little territory of thy own'.",
+  "4.3: two thoughts ready to hand: things do not touch the soul, perturbations come only from the opinion within; everything changes immediately; 'the universe is transformation: life is opinion'.",
+  "4.7: 'Take away thy opinion, and then there is taken away the complaint, I have been harmed. Take away the complaint... and the harm is taken away.'",
+  "8.47: 'If thou art pained by any external thing, it is not this thing that disturbs thee, but thy own judgement about it. And it is in thy power to wipe out this judgement now.' If pained at not doing something right, act rather than complain; if an obstacle is insuperable, do not grieve, the cause does not depend on you.",
+  "1.7: Rusticus acquainted him with Epictetus's discourses from his own collection. 11.36: 'No man can rob us of our free will' (Epictetus). 11.37: show no aversion to things not in our power.",
+  "Some books were written on campaign: among the Quadi at the Granua; Carnuntum."
+ ],
+ "scene_details": [
+  "country houses, sea-shores and mountains as wished-for retreats",
+  "'this little territory of thy own'",
+  "the Epictetus line copied into the notebook"
+ ],
+ "tension": "An emperor at war insists the harm lies in his own judgement, not in events.",
+ "opening_idea": "Open on the retreats passage, the 4.7 quote, the Epictetus line or 8.47.",
+ "lessons": [
+  {
+   "idea": "Separate what happened from the judgement you added; it gives you a choice about the next step.",
+   "anchor": "8.47 and 4.7."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "In what bothered you most this week, which sentence did you add on top of what happened?",
+ "use_cases": [
+  {
+   "situation": "Idea sharply criticised",
+   "move": "Restate the plain fact and look at the numbers.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Teammate hurt by a curt email",
+   "move": "Quote Marcus on judgement and read the email word for word.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "Stuck in traffic",
+   "move": "Name what you didn't choose and what you can.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "The event rarely hurts as much as your judgement of it; separate the two before reacting.",
+ "conversation_variants": {
+  "punchline_idea": "A Roman emperor told himself: remove the complaint 'I have been harmed' and the harm is gone.",
+  "thirty_sec_idea": "8.47 plus the retreat passage.",
+  "question_idea": "",
+  "key_contrast_idea": "Event versus judgement"
+ }
+}

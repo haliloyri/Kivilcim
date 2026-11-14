@@ -1,0 +1,64 @@
+{
+  "story_id": 1267,
+  "kind": "concept",
+  "book": {
+    "title": "Why We Sleep",
+    "author": "Matthew Walker",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "Checked against the archive.org full text. The old Federer/LeBron/Sharapova material is not in the book and was removed. The Iguodala figures are one player's tracker data presented by Walker, not a controlled study. Walker's book has been criticised for overstating some numbers, so figures are kept with their scope. The injury chart's exact percentages are not reproduced.",
+  "facts": [
+    "Walker's lab found that overnight motor-skill gains were tied to stage 2 NREM sleep spindles, especially in the last two hours of an eight-hour night, for example 5 to 7 a.m. after falling asleep at 11 p.m.",
+    "Those last two hours are the ones many people cut to get a jump on the day; Walker pictures the coach who trains athletes late and wakes them early.",
+    "Usain Bolt on many occasions napped in the hours before breaking the world record and before Olympic finals he won.",
+    "Walker tells national teams sleep is a powerful, legal performance enhancer; with under eight hours, and especially under six, time to physical exhaustion drops 10 to 30 percent.",
+    "A 2014 study of competitive young athletes found chronic short sleep across a season predicted a much higher injury risk.",
+    "Walker shows teams tracker data from NBA player Andre Iguodala: on nights of more than eight hours versus less, 12% more minutes played and 29% more points per minute; with less sleep, 37% more turnovers and 45% more fouls.",
+    "Walker tells teams that sleep after a game matters as much: it speeds recovery from inflammation, stimulates muscle repair and restocks glucose and glycogen.",
+    "In 2015 the International Olympic Committee published a consensus statement on the essential need for sleep in athletic development.",
+    "Walker notes that very small differences often separate a gold medal from last place.",
+    "Other groups found the same local sleep-and-learning effect; studies have since shown sleep improving motor skills of junior, amateur and elite athletes in sports including tennis, basketball, football, soccer and rowing."
+  ],
+  "scene_details": [
+    "the 5 to 7 a.m. window after an 11 p.m. bedtime",
+    "Bolt napping before Olympic finals",
+    "Iguodala's sleep tracker",
+    "the coach waking athletes early for practice"
+  ],
+  "tension": "The hour an athlete sacrifices for an early session is the hour in which the brain finishes the practice.",
+  "opening_idea": "Open with Usain Bolt sleeping in the hours before an Olympic final.",
+  "lessons": [
+    {
+      "idea": "Protect the end of the night after a day of learning a skill, because that is where the practice is finished.",
+      "anchor": "Spindles in the last two hours; the early-practice coach.",
+      "example": "A new nurse learning to place IV lines sets her alarm later the night after training instead of rising early to review."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "After the next day you spend learning something physical or new, what would you have to move to sleep the last full hour of the night?",
+  "use_cases": [
+    {
+      "situation": "A coach or manager schedules early sessions after late ones.",
+      "move": "Mention that Walker found the last two hours of sleep carry the motor-skill gains, and suggest a later start once.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your teenager has a game and wants to stay up.",
+      "move": "Tell them Bolt napped before finals and suggest one earlier night before the match.",
+      "context": "family"
+    },
+    {
+      "situation": "Learning an instrument or a sport yourself.",
+      "move": "On a practice day, skip the early alarm and notice the next session.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The last two hours of sleep finish what practice started; an early alarm cuts them.",
+  "conversation_variants": {
+    "punchline_idea": "Usain Bolt took naps in the hours before breaking world records.",
+    "thirty_sec_idea": "Walker found skill gains come from sleep spindles in the last two hours of the night, the hours people cut. Iguodala's tracker: more than eight hours meant 29% more points per minute and fewer fouls.",
+    "question_idea": "What do you cut first when the day is busy?",
+    "key_contrast_idea": "early alarm versus finished practice"
+  }
+}

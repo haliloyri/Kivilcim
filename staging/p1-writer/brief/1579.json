@@ -1,0 +1,62 @@
+{
+  "story_id": 1579,
+  "kind": "concept",
+  "book": {
+    "title": "To Sell Is Human",
+    "author": "Daniel H. Pink",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "Survey share (about 40 percent, 24 minutes of each hour) and the negative word association are from Pink's own account as reported by Wharton, NPR and summaries. Sample size is reported as 7,000 in one source and 9,000 in another, so it is omitted. The old text's manager/entrepreneur split and 'seven thousand Americans' claim were not confirmed. No individual anecdote; this is a concept story built on the survey.",
+  "facts": [
+    "Pink had a survey commissioned for the book asking what people do at work; the answer was that they spend roughly 40 percent of work time, about 24 minutes of every hour, on 'non-sales selling': persuading, influencing, convincing others without a purchase being made.",
+    "About one in nine American workers is formally in sales, more than 15 million people.",
+    "Education and health care, the biggest job sector in the US, run largely on persuasion: getting students to pay attention and patients to follow treatment.",
+    "Small businesses and startups, helped by eBay, Etsy and Apple's app store, put more people in the position of selling something themselves.",
+    "In a word-association test on 'sales', 20 of the top 25 words were negative; the top word was 'pushy', and the list included 'yuck' and 'ugh'.",
+    "Pink's introduction says selling changed more in the last ten years than in the previous hundred, and describes it as 'pushing Buicks on a lot or pitching ideas in a meeting'.",
+    "Call-centre study in the book (Adam Grant): hourly sales revenue was $125 for extraverts, $120 for introverts and $155 for ambiverts, people in the middle of the introversion-extraversion scale; the top performers brought in $208 an hour and scored about 4 on the 1-to-7 scale."
+  ],
+  "scene_details": [
+    "24 minutes of every hour",
+    "one in nine workers in sales, over 15 million",
+    "top word in the association test: 'pushy'",
+    "teachers getting attention, patients following treatment",
+    "$125, $120, $155 per hour"
+  ],
+  "tension": "People who would never call themselves salespeople spend about 40 percent of work time selling, yet the word itself makes them wince.",
+  "opening_idea": "Start from 24 minutes of every hour spent moving someone else, then set it against 'pushy', the top word people attach to sales.",
+  "lessons": [
+    {
+      "idea": "Most work is moving other people, so it is worth treating as a skill you prepare for.",
+      "anchor": "About 40 percent of work time, 24 minutes of every hour, is non-sales selling.",
+      "example": "A nurse asking a manager to change the rota is selling, even if she calls it a request."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of one request you made at work this week to get someone to agree, change plans or pay attention: how did you prepare for it, if at all?",
+  "use_cases": [
+    {
+      "situation": "A colleague says they are 'not in sales'.",
+      "move": "Mention Pink's survey: people spend about 24 minutes of every hour persuading someone, and ask which of your own tasks fall in that share.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are about to ask your team to change a process.",
+      "move": "Treat it as a pitch: name who must agree and what each person will ask before you open the meeting.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You dread asking someone for support on an idea.",
+      "move": "Write down who you need to move this week and one sentence for each; Pink says this takes up roughly 40 percent of work time anyway.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Roughly 24 minutes of every working hour go to moving someone; plan for those minutes like any other task.",
+  "conversation_variants": {
+    "punchline_idea": "Pink's survey found we spend about 24 of every 60 working minutes trying to move someone, while 'pushy' tops the words people link to sales.",
+    "thirty_sec_idea": "Pink had workers surveyed about their day. About 40 percent of work time, 24 minutes of each hour, went to persuading and convincing, without anything being sold. Teachers, nurses and startup founders all do it. Yet when people were asked about 'sales', 20 of the top 25 words were negative, led by 'pushy'.",
+    "question_idea": "What share of your day do you spend getting someone to agree?",
+    "key_contrast_idea": "selling, but not called that"
+  }
+}

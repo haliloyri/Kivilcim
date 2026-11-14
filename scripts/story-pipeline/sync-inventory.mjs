@@ -16,7 +16,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import {
-  ROOT, PATHS, LANGS, openDb, readBooks, readStories, readCategories, wordRange,
+  ROOT, PATHS, LANGS, openDb, readBooks, readStories, readCategories, wordRange, DURATION_SPEC,
 } from './lib/store.mjs';
 
 const dryRun = process.argv.includes('--dry-run');
@@ -38,6 +38,14 @@ const STATUS = {
   pending: 'URETILECEK',
   review: 'INCELEMEDE',
 };
+
+/** "Hikaye adi henuz uretilmedi" satirlarinda flag + kaynak korunur, puan yazilmaz. */
+const queueTail = (i) =>
+  i.unnamed
+    ? ` — **Kaynak:** ${i.source}`
+    : ` — **Puan:** ${i.score}/100`;
+const queueHead = (n, i) =>
+  `${n}. [ ] **${i.status}** — ${i.title} — ` + (i.unnamed ? '**HIKAYE ADI HENUZ URETILMEDI** — ' : '');
 
 /** Bekleyen kuyruk satirlarini herhangi bir envanter/legacy md'den cikarir. */
 function parseQueue(text) {
@@ -99,6 +107,8 @@ function parseQueue(text) {
         minutes: [1, 3, 5].includes(minutes) ? minutes : 3,
         score,
         storyId,
+        unnamed: /HIKAYE ADI HENUZ URETILMEDI/.test(rest),
+        source: rest.match(/\*\*Kaynak:\*\*\s*(?<v>.+?)\s*$/u)?.groups.v ?? '',
       });
     }
   }
@@ -230,14 +240,19 @@ for (const b of books) {
   let n = 0;
   for (const s of own) {
     n += 1;
-    const r = wordRange(s.possible_read_minutes || 1);
+    /* P1 hatti sureyi kelimeden hesaplar (round(kelime/200)), bu yuzden DB'de 2/4/6 dk olabilir.
+       1/3/5 icin sozlesme araligi, digerleri icin DB'deki gercek kelime sayisi yazilir. */
+    const pm = s.possible_read_minutes || 1;
+    const wordsLabel = DURATION_SPEC[pm]
+      ? `${wordRange(pm).target} ±${wordRange(pm).tolerance}`
+      : `~${s.target_word_count ?? pm * 200}`;
     const flags = [];
     if (gap(s.langs).length) flags.push(`eksik dil: ${gap(s.langs).join('/')}`);
     if (gap(s.variant_langs).length) flags.push(`eksik varyant: ${gap(s.variant_langs).join('/')}`);
     if (s.current_read_minutes !== s.possible_read_minutes) flags.push(`sure uyumsuz: ${s.current_read_minutes}→${s.possible_read_minutes}`);
     p(
       `${n}. [x] **${STATUS.registered}** — ${s.title_tr ?? '(baslik yok)'} — ` +
-        `**Sure:** ${s.current_read_minutes} dk · **Kelime:** ${r.target} ±${r.tolerance} — ` +
+        `**Sure:** ${s.current_read_minutes} dk · **Kelime:** ${wordsLabel} — ` +
         `\`story_id:${s.id}\` · \`v:${s.version}\` — ` +
         `**Diller:** ${langList(s.langs)} — **Varyant:** ${langList(s.variant_langs)}` +
         (flags.length ? ` — ⚠ ${flags.join(' · ')}` : '')
@@ -247,9 +262,9 @@ for (const b of books) {
     n += 1;
     const r = wordRange(i.minutes);
     p(
-      `${n}. [ ] **${i.status}** — ${i.title} — ` +
-        `**Sure:** ${i.minutes} dk · **Kelime:** ${r.target} ±${r.tolerance} — ` +
-        `**Puan:** ${i.score}/100` +
+      queueHead(n, i) +
+        `**Sure:** ${i.minutes} dk · **Kelime:** ${r.target} ±${r.tolerance}` +
+        queueTail(i) +
         (i.storyId ? ` — \`story_id:${i.storyId}\`` : '')
     );
   }
@@ -278,9 +293,9 @@ if (orphanGroups.length) {
       n += 1;
       const r = wordRange(i.minutes);
       p(
-        `${n}. [ ] **${i.status}** — ${i.title} — ` +
-          `**Sure:** ${i.minutes} dk · **Kelime:** ${r.target} ±${r.tolerance} — ` +
-          `**Puan:** ${i.score}/100`
+        queueHead(n, i) +
+          `**Sure:** ${i.minutes} dk · **Kelime:** ${r.target} ±${r.tolerance}` +
+          queueTail(i)
       );
     }
     p('');

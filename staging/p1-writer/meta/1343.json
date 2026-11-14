@@ -1,0 +1,35 @@
+{
+ "story_id": 1343,
+ "verdict": "keep",
+ "verify_note": "The modest 10 percent claim, 'respond rather than react' and the seven-second delay, his father's mantra, the retreat teacher's seventeen worries and 'Is this useful?', and the Paris Hilton interview come from a Psychology Today review, Kirkus and summaries. Invented email/20-minute quote, '1000 percent' quote and cortisol research dropped. Medium confidence.",
+ "title_changed": {
+  "tr": false,
+  "en": false,
+  "es": false,
+  "de": false
+ },
+ "tr": {
+  "title": "Yüzde on daha mutlu",
+  "description": "Dan Harris meditasyondan yalnızca yüzde 10 bekliyor. Öğretmeninin verdiği en iyi araç ise tek bir soru: bu işe yarıyor mu?",
+  "hook": "Bu hafta en çok tekrarladığınız endişe size gerçekten yardım etti mi?",
+  "one_minute_summary": "Dan Harris, meditasyonun onu yaklaşık yüzde 10 daha mutlu yaptığını söyler, fazlasını değil. Kazandığı şey, bir dürtü ile davranış arasında küçük bir boşluktur ve bunu canlı ödül törenlerindeki yedi saniyelik gecikmeye benzetir. Babasının 'güvenliğin bedeli güvensizliktir' sözü yıllarca kaygılarını haklı çıkarmıştı. Sessiz bir inzivada bir öğretmen, kaçırılmış bir uçuş için on yedi kez endişelenmenin anlamsız olduğunu söyledi ve tek bir soru verdi: bu işe yarıyor mu?"
+ },
+ "en": {
+  "title": "Ten percent happier",
+  "description": "Dan Harris promises only about ten percent from meditation. The best tool he took from a retreat teacher was one question: is this useful?",
+  "hook": "Did the worry you replayed most this week actually help you prepare?",
+  "one_minute_summary": "Dan Harris says meditation made him about ten percent happier, and no more. What he gained was a small gap between an urge and acting on it, which he compares to the seven-second delay on live award shows. His father's mantra, 'The price of security is insecurity,' had long justified his worrying. On a silent retreat a teacher told him that worrying seventeen times about a missed flight was pointless, and gave him one question: is this useful?"
+ },
+ "es": {
+  "title": "Diez por ciento más feliz",
+  "description": "Dan Harris solo promete alrededor de un diez por ciento con la meditación. La mejor herramienta que le dio un maestro fue una pregunta: ¿esto es útil?",
+  "hook": "¿Te ayudó de verdad la preocupación que más repetiste esta semana?",
+  "one_minute_summary": "Dan Harris dice que meditar lo hizo más o menos un diez por ciento más feliz, y nada más. Ganó un pequeño hueco entre el impulso y el acto, que compara con el retraso de siete segundos de las galas en directo. El lema de su padre, 'la seguridad tiene un precio: la inseguridad', justificaba sus preocupaciones. En un retiro en silencio, un maestro le dijo que preocuparse diecisiete veces por un vuelo perdido no tenía sentido y le dio una pregunta: ¿esto es útil?"
+ },
+ "de": {
+  "title": "Zehn Prozent glücklicher",
+  "description": "Dan Harris verspricht von Meditation nur etwa zehn Prozent. Das beste Werkzeug von einem Retreat-Lehrer war eine einzige Frage: Ist das nützlich?",
+  "hook": "Hat dir die Sorge, die du diese Woche am häufigsten wiederholt hast, wirklich geholfen?",
+  "one_minute_summary": "Dan Harris sagt, Meditation habe ihn ungefähr zehn Prozent glücklicher gemacht, mehr nicht. Gewonnen hat er eine kleine Lücke zwischen Impuls und Handlung, die er mit der Sieben-Sekunden-Verzögerung bei Live-Preisverleihungen vergleicht. Der Leitsatz seines Vaters, 'Der Preis der Sicherheit ist die Unsicherheit', rechtfertigte lange seine Sorgen. Auf einem Schweige-Retreat sagte ihm ein Lehrer, siebzehnmal Sorge um einen verpassten Flug sei sinnlos, und gab ihm eine Frage mit: Ist das nützlich?"
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1455,
+ "verdict": "keep",
+ "verify_note": "Keep: exile passage verified in the CBS News excerpt (hands circle, Hui Muslims, golden cage, five decades of refugee life, 'wherever you have friends', Abrams on pain and suffering). Old text's invented 'Tutu asks, Dalai Lama is silent' scene, apartheid singing and quotes dropped. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Küçük daire, geniş daire",
+  "description": "Dalai Lama sürgünü, bakışını başkalarının acısına doğru genişleterek taşır ve Potala'ya altın kafes der.",
+  "hook": "Daireyi genişletirseniz hangi zorluğunuz farklı görünür?",
+  "one_minute_summary": "Dalai Lama ellerini küçük bir daire yapıp sonra açarak sürgünü anlatır. Yalnızca Tibet'in zorluklarına baktığında endişelenir, görüşünü Çin'deki Hui Müslümanları gibi başkalarının acısını da içine alacak şekilde genişlettiğinde kendi acısı hafifler. Abrams bunu acının inkârı değil, ıstıraptan merhamete kayma olarak görür. Potala'ya 'altın kafes' der ve son elli yılın mülteci hayatını tercih ettiğini söyler. Evin, sevgi gördüğünüz yer olduğunu da ekler."
+ },
+ "en": {
+  "title": "Small circle, wide circle",
+  "description": "The Dalai Lama carries exile by widening his view to others' suffering, and calls the Potala a golden cage.",
+  "hook": "What difficulty looks different if you widen the circle?",
+  "one_minute_summary": "The Dalai Lama explained exile by cupping his hands into a small circle and then opening them wide. When he looks only at Tibet's troubles he worries; when he widens his view to others' suffering, including Hui Muslims in China, his own lessens. Abrams calls this a shift from anguish toward compassion, not a denial of pain. He calls the Potala a golden cage and says he prefers the last five decades of refugee life."
+ },
+ "es": {
+  "title": "Círculo pequeño, círculo amplio",
+  "description": "El Dalai Lama sobrelleva el exilio ampliando la mirada al sufrimiento ajeno y llama jaula de oro al Potala.",
+  "hook": "¿Qué dificultad se ve distinta si amplías el círculo?",
+  "one_minute_summary": "El Dalai Lama explicó el exilio juntando las manos en un círculo pequeño y abriéndolas después. Cuando mira solo los problemas del Tíbet se preocupa; cuando amplía la mirada al sufrimiento de otros, incluidos los musulmanes hui de China, el suyo se alivia. Abrams lo llama un paso de la angustia hacia la compasión, no una negación del dolor. Llama al Potala una jaula de oro y dice preferir las últimas cinco décadas de vida de refugiado."
+ },
+ "de": {
+  "title": "Enger Kreis, weiter Kreis",
+  "description": "Der Dalai Lama trägt das Exil, indem er den Blick auf das Leid anderer weitet, und nennt den Potala einen goldenen Käfig.",
+  "hook": "Welche Schwierigkeit sieht anders aus, wenn du den Kreis weitest?",
+  "one_minute_summary": "Der Dalai Lama erklärte das Exil, indem er die Hände zu einem kleinen Kreis zusammenlegte und dann weit öffnete. Schaut er nur auf Tibets Probleme, macht er sich Sorgen; weitet er den Blick auf das Leid anderer, auch der Hui-Muslime in China, wird sein eigenes leichter. Abrams nennt das eine Verschiebung von der Qual zum Mitgefühl, keine Leugnung des Schmerzes. Den Potala nennt er einen goldenen Käfig und zieht die letzten fünf Jahrzehnte als Flüchtling vor."
+ }
+}

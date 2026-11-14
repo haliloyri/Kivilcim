@@ -1,0 +1,41 @@
+{
+  "book_no": 109,
+  "title": "Wherever You Go, There You Are: Mindfulness Meditation in Everyday Life",
+  "authors": ["Jon Kabat-Zinn"],
+  "year": "1994",
+  "db_title_note": "DB lists the book as 'Mindfulness' (1994). The only Kabat-Zinn book of 1994 is Wherever You Go, There You Are; the old TR text also builds on 'Nereye gidersen git, orada ol'. Stories are written on that book. No primary text was readable (archive.org copy is borrow-only); all facts come from secondary summaries, so confidence is medium at best.",
+  "sources": [
+    "https://www.wealthofhappiness.com/whever-you-go-there-yo/",
+    "https://calvinrosser.com/notes/wherever-you-go-there-you-are-jon-kabat-zinn/",
+    "https://fourminutebooks.com/wherever-you-go-there-you-are-summary/",
+    "https://archive.org/details/whereveryougothe00kaba"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "Wherever You Go, There You Are: Mindfulness Meditation in Everyday Life, Jon Kabat-Zinn, first published 1994. Kabat-Zinn is a medicine professor (UMass Medical School) who studied with Thich Nhat Hanh.", "source": "fourminutebooks summary; archive.org catalogue record", "confidence": "high"},
+    {"id": "f2", "claim": "Definition from the first chapter: 'Mindfulness means paying attention in a particular way: on purpose, in the present moment, and nonjudgmentally.'", "source": "wealthofhappiness, calvinrosser, quote pages (consistent wording)", "confidence": "high"},
+    {"id": "f3", "claim": "Walking meditation: you are not walking to get anywhere. You go back and forth on a path or circle a loop, and having no destination makes it easier to be where you are.", "source": "wealthofhappiness summary (Ch. 16)", "confidence": "medium"},
+    {"id": "f4", "claim": "In walking, attention goes to the whole motion of the foot or to its parts, optionally paired with the breath; if you notice yourself rushing, you slow down.", "source": "wealthofhappiness summary", "confidence": "medium"},
+    {"id": "f5", "claim": "The chapter 'This Is It': meditation is not about improving yourself or getting somewhere else, but about recognizing where you already are.", "source": "wealthofhappiness summary (Ch. 3)", "confidence": "medium"},
+    {"id": "f6", "claim": "Meditation is a way to wake up from automatic, unconscious living: much of life runs on automatic and many moments pass without being lived. The Afterword warns against sleepwalking through life and 'telling ourselves nice stories'.", "source": "wealthofhappiness summary (Intro, Ch. 1, Afterword)", "confidence": "medium"},
+    {"id": "f7", "claim": "Mindfulness is practised in daily life, for example while showering, eating, parenting; the advice is to do one thing at a time.", "source": "wealthofhappiness; fourminutebooks ('engage with one activity at a time')", "confidence": "medium"},
+    {"id": "f8", "claim": "'Forgetting or neglecting to be mindful can teach you a lot more than just being mindful all the time.' (Ch. 18)", "source": "wealthofhappiness summary", "confidence": "medium"},
+    {"id": "f9", "claim": "Thoughts and emotions are compared to weather on a mountain: we take them personally, but their strongest characteristic is that they are impersonal. Weather should be met and known for what it is, not ignored.", "source": "wealthofhappiness summary (Ch. 14)", "confidence": "medium"},
+    {"id": "f10", "claim": "Lake image: a still lake reflects everything clearly; wind stirs waves and the reflections blur. You can notice both states without judging either.", "source": "wealthofhappiness summary (Ch. 15)", "confidence": "medium"},
+    {"id": "f11", "claim": "Notes describe meditation as seeing thoughts as thoughts and experiences as experiences, noticing the gap between what happens and the stories we tell about it. 'Meditation is about letting the mind be as it is.'", "source": "calvinrosser notes", "confidence": "medium"},
+    {"id": "f12", "claim": "When the question 'Am I doing this right?' shows up, do not answer it; come back to the present moment.", "source": "wealthofhappiness summary (Ch. 13)", "confidence": "medium"}
+  ],
+  "rejected": [
+    {"claim": "Killingsworth and Gilbert 2010 (Science): people think about something else about 47% of waking time.", "reason": "Real study, but not in Kabat-Zinn's 1994 book; cannot be attributed to it."},
+    {"claim": "Quote 'Nereye gidersen git, orada ol' as the book's teaching about vacations not helping because the mind comes along.", "reason": "Vacation argument not verified in the book; the title phrase itself is real but its explanation could not be confirmed."},
+    {"claim": "You forget 80% of your commute; brain automates routine tasks to save energy.", "reason": "Invented figure and neuroscience framing; not in the book."},
+    {"claim": "Quote 'Farkindalik pratigi hayati uzatmiyor ama her ani daha canli kiliyor'.", "reason": "No source; looks fabricated."},
+    {"claim": "'Bu dusunce mi yoksa gercek mi?' as Kabat-Zinn's question; 'sürücü koltuğu'; stress hormone coding; reframing 'I am unloved' to 'the thought is passing'.", "reason": "Not found in the book summaries; the weather and lake images are the verified thought material."},
+    {"claim": "Kabat-Zinn developed this practice for chronic pain, anxiety, depression with statistically significant MBSR results.", "reason": "MBSR research is real but belongs to other works; not attributable to this book."},
+    {"claim": "Meditation as a non-religious, secular framing of attention.", "reason": "Not confirmed in sources read."}
+  ],
+  "stories": {
+    "1423": {"verdict": "keep", "fact_ids": ["f1", "f3", "f4", "f5"], "note": "Rebuilt around walking with no destination and 'This Is It'; Killingsworth stat and vacation claim dropped."},
+    "1424": {"verdict": "keep", "fact_ids": ["f2", "f6", "f7", "f8"], "note": "Rebuilt on the 'on purpose' definition, life on automatic, one thing at a time, forgetting as teacher; the 80% commute figure dropped."},
+    "1425": {"verdict": "keep", "fact_ids": ["f9", "f10", "f11", "f12"], "note": "Rebuilt on the mountain-weather and lake images; invented 'driver's seat' and clinical claims dropped."}
+  }
+}

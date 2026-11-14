@@ -1,0 +1,35 @@
+{
+ "story_id": 1660,
+ "verdict": "keep",
+ "verify_note": "Keep: introduction and 'The Quickening' of The Second Mountain verified in a full text. Old 'wrong mountain', 'career restructuring', 'thinned friendships in 2013' and 'NYT columnist at the summit' dropped; Brooks says the second mountain does not reject the first. Divorce in summer 2013 and his own first-mountain passage are the personal facts used.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İlk dağın bedeli",
+  "description": "David Brooks ilk dağına delice şanslı diyor. Ama o tırmanış onu sevdiklerine karşı mesafeli yaptı ve 2013 yazında boşandı.",
+  "hook": "Meşgul bir haftada kendiniz dışındaki hangi kişi ya da amaç ihmal ettikleriniz listesinin başında olurdu?",
+  "one_minute_summary": "David Brooks, hayatın iki dağlı bir biçimi olduğunu söyler. İlk dağda insan kimlik kurar, ego inşa eder ve puan tutar. Kendi ilk dağı için delice şanslıydı der, ama tırmanış onu mesafeli ve az konuşan biri yaptı. Hatalarını ihmal hataları diye sayar: iki eski dostu için çok meşgul olması gibi. 2013 yazında boşandı ve kendini yalnız, aşağılanmış ve savrulmuş hissetti. İkinci dağı birincinin zıddı değil, onu izleyen yolculuk olarak anlatır: egodan katkıya geçiş."
+ },
+ "en": {
+  "title": "What the first mountain cost",
+  "description": "David Brooks calls his first mountain insanely lucky. The climb left him aloof, and in 2013 he divorced.",
+  "hook": "In a busy week, which person or cause outside yourself would top the list of things you neglect?",
+  "one_minute_summary": "David Brooks says many lives have a two-mountain shape. On the first mountain you build an identity and an ego and keep score. He calls his own first mountain insanely lucky, yet the climb left him aloof and uncommunicative. He lists his failures as failures of omission, like being too busy for two old friends. In the summer of 2013 his divorce arrived, and he felt lonely, humiliated and adrift. He describes the second mountain as the journey after the first, not its rejection: from ego to contribution."
+ },
+ "es": {
+  "title": "Lo que costó la primera montaña",
+  "description": "David Brooks llama «increíblemente afortunada» a su primera montaña. La subida lo dejó distante y en 2013 se divorció.",
+  "hook": "En una semana ocupada, ¿qué persona o causa fuera de ti encabezaría la lista de lo que descuidas?",
+  "one_minute_summary": "David Brooks dice que muchas vidas tienen forma de dos montañas. En la primera construyes una identidad y un ego y llevas la cuenta. Llama a su propia primera montaña increíblemente afortunada, pero la subida lo dejó distante y poco comunicativo. Enumera sus fallos como fallos de omisión, por ejemplo estar demasiado ocupado para dos viejos amigos. En el verano de 2013 llegó su divorcio y se sintió solo, humillado y a la deriva."
+ },
+ "de": {
+  "title": "Was der erste Berg kostete",
+  "description": "David Brooks nennt seinen ersten Berg wahnsinnig glücklich. Der Aufstieg machte ihn distanziert, und 2013 wurde er geschieden.",
+  "hook": "Welche Person oder Sache außerhalb von dir stünde in einer vollen Woche oben auf der Liste dessen, was du vernachlässigst?",
+  "one_minute_summary": "David Brooks sagt, viele Leben hätten die Form von zwei Bergen. Auf dem ersten baust du eine Identität und ein Ego auf und zählst mit. Seinen eigenen ersten Berg nennt er wahnsinnig glücklich, doch der Aufstieg machte ihn distanziert und verschlossen. Seine Fehler beschreibt er als Fehler der Unterlassung, etwa zu beschäftigt für zwei alte Freunde zu sein. Im Sommer 2013 kam die Scheidung, und er fühlte sich einsam, gedemütigt und treibend."
+ }
+}

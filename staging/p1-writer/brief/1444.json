@@ -1,0 +1,33 @@
+{
+  "story_id": 1444,
+  "kind": "concept",
+  "book": {"title": "The Loyalty Effect", "author": "Frederick F. Reichheld", "year": "1996"},
+  "confidence": "medium",
+  "confidence_note": "Book text not available. Facts come from the Publishers Weekly review (half of customers in five years, employees in four and a half, investors in under a year; cause-and-effect between employee and customer loyalty), publisher copy and a reader summary for the finer numbers (10-30% of customers a year, employee turnover 15-25%), which is medium confidence. The old text's complaint percentages, 'iceberg' term and 8-10 versus 5 word-of-mouth numbers are not attributable to the book and were dropped. The figures describe the mid-1990s business climate and could not be independently checked.",
+  "facts": [
+    "Reichheld, a director at Bain & Company, wrote the book; Publishers Weekly (1996) describes the idea of loyalty as old-fashioned, seemingly obvious, and overlooked amid rapid turnover in business.",
+    "Major companies replace about half their customers in five years, about half their employees in four (jacket) or four and a half (Publishers Weekly) years, and about half their investors in under a year.",
+    "A reader summary: a typical company loses 10% to 30% of its customers each year; employee turnover of 15% to 25% a year is common; about 40% of US employees stay two years or less; disloyalty reduces corporate performance by 25% to 50% or more.",
+    "Customer defection is one of the most revealing measures of business failure; the goal is zero defections.",
+    "Central thesis: a cause-and-effect relationship between employee loyalty and customer loyalty. Disloyal employees rarely build lasting relationships with customers, which take time; long-term employees add value through training, efficiency, customer selection, retention and referrals.",
+    "Core recommendation: loyalty-based management, actively retaining customers and targeting those likely to stay; State Farm and Toyota/Lexus are examples of companies that improved their bottom line through loyalty."
+  ],
+  "scene_details": ["half the customers gone in about five years", "half the investors gone in under a year", "defection as a yardstick of failure"],
+  "tension": "Companies count the customers they win; the book asks them to count the ones who leave.",
+  "opening_idea": "Open with the three half-lives: customers five years, employees four and a half, investors under one.",
+  "lessons": [{"idea": "Count departures as carefully as arrivals; who leaves shows how you are doing.", "anchor": "Defection as a measure of business failure.", "example": "A small bakery that counts new faces but never notes which regulars stopped coming."}],
+  "reflect": [],
+  "reflect_final": "Which person who quietly drifted away from you or your work lately could tell you something useful about why?",
+  "use_cases": [
+    {"situation": "The team celebrates a good month of sign-ups.", "move": "Ask how many people left in the same month and whether anyone knows why.", "context": "meeting"},
+    {"situation": "A client or colleague has gone quiet.", "move": "Say you noticed the silence and ask whether anything you did or didn't do is worth hearing about.", "context": "oneonone"},
+    {"situation": "You run a small shop or side business and feel good about new customers.", "move": "Note that Reichheld treats who leaves as a measure of how you are doing, and ask which regulars have stopped coming.", "context": "self"}
+  ],
+  "pocket_idea": "Count who leaves as carefully as who arrives; every departure is a measure of how you are doing.",
+  "conversation_variants": {
+    "punchline_idea": "Reichheld's book says a big company replaces half its customers in about five years and half its investors in under one.",
+    "thirty_sec_idea": "Reichheld argues companies should watch departures: major firms replace about half their customers in five years, employees in four and a half, investors in under a year; he treats defection as a measure of failure and loyalty of staff as the cause of loyal customers.",
+    "question_idea": "",
+    "key_contrast_idea": "arrivals versus departures"
+  }
+}

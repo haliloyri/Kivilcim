@@ -1,0 +1,35 @@
+{
+  "story_id": 1560,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt. RAIN and the angry client are not in the full text of Radical Acceptance; replaced with Brach's own scene outside her son Narayan's door (ch. 5), which shows anger giving way to fear and grief.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Oğlunun kapısında beklemek",
+    "description": "Tara Brach oğlunun odasının önünde öfkesini hemen boşaltmak yerine durdu. Öfkenin altından korku ve üzüntü çıktı.",
+    "hook": "Öfkelendiğiniz son anda, öfkenin altında gerçekte ne vardı?",
+    "one_minute_summary": "Tara Brach ve ergen oğlu Narayan bilgisayar oyunu yüzünden savaş halindeydi. Bir akşam oğlunun kapısının önünde, içinden ekrana kaya fırlatmayı hayal ederek bekledi. Bu kez içeri dalmadı. Öfkenin göğsünde baskı, çenesinde kasılma olduğunu fark etti. Sonra baskı yerini bir sızıya bıraktı ve altından korku çıktı: oğlunun başarısız olmasından korkuyordu. Ardından üzüntü geldi, suçlama hikâyeleri çekildi. İçeri girdiğinde aynı şeyleri söyledi ama dinleyebiliyordu. Odadan çıkarken aralarında sıcak bir his vardı."
+  },
+  "en": {
+    "title": "Waiting outside her son's door",
+    "description": "Tara Brach stood outside her son's room, ready to explode. She paused instead, and found fear and grief under the anger.",
+    "hook": "The last time you were angry, what was underneath it?",
+    "one_minute_summary": "Tara Brach and her teenage son Narayan were in a standoff over a computer game. One evening she stood outside his door, imagining a boulder through the screen. This time she waited and noticed the anger as pressure in her chest and a clenched jaw. Under it she found fear that her son would fail, then grief. The blame stories receded. She walked in, said much what she had said before, but could listen, and left on a warm note."
+  },
+  "es": {
+    "title": "Ante la puerta de su hijo",
+    "description": "Tara Brach se quedó ante la habitación de su hijo, a punto de estallar. En vez de entrar, hizo una pausa y encontró miedo y pena bajo la ira.",
+    "hook": "La última vez que te enfadaste, ¿qué había debajo de esa ira?",
+    "one_minute_summary": "Tara Brach y su hijo adolescente Narayan vivían en guerra por un videojuego. Una tarde esperó ante su puerta, imaginando una roca contra la pantalla. Esta vez no entró. Notó la ira como presión en el pecho, mandíbula apretada, corazón acelerado. La presión se volvió un dolor sordo y debajo apareció el miedo a que su hijo fracasara, y luego la pena. Las historias de culpa se retiraron. Entró y dijo cosas parecidas a las de antes, pero pudo escuchar, y salió con una sensación cálida entre los dos."
+  },
+  "de": {
+    "title": "Vor der Tür ihres Sohnes",
+    "description": "Tara Brach stand vor dem Zimmer ihres Sohnes, kurz vor dem Ausbruch. Sie wartete, und unter der Wut fand sie Angst und Trauer.",
+    "hook": "Als du zuletzt wütend warst: Was lag darunter?",
+    "one_minute_summary": "Tara Brach und ihr jugendlicher Sohn Narayan lagen wegen eines Computerspiels im Dauerstreit. Eines Abends stand sie vor seiner Tür und stellte sich einen Felsbrocken im Bildschirm vor. Diesmal wartete sie und spürte die Wut als Druck in Brust und Hals, als verkrampften Kiefer, als pochendes Herz. Der Druck wandelte sich in einen dumpfen Schmerz, darunter lagen die Angst, ihr Sohn könne scheitern, und Trauer. Die Schuldgeschichten wichen. Sie ging hinein, sagte Ähnliches wie zuvor, konnte aber zuhören, und es blieb eine warme Stimmung."
+  }
+}

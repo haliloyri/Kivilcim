@@ -1,0 +1,35 @@
+{
+ "story_id": 1314,
+ "verdict": "keep",
+ "verify_note": "Verified in full text. Wrong claim that 80%+ close in adolescence dropped; maturity not presented as the result of the first two phases. Recentered on Sarah and Elizabeth, the book's own Adolescence case.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Sabah Yedideki Telefon",
+  "description": "Sarah'nın her işi yapan yardımcısı Elizabeth, iki yıl sonra tek bir telefonla işi bırakır. Michael E. Gerber bunu devretmek değil, çekip giderek yönetmek olarak okur.",
+  "hook": "Yarın sabah en güvendiğiniz kişi arayıp bırakırsa, neyi nasıl yapacağınızı bilir miydiniz?",
+  "one_minute_summary": "Michael E. Gerber küçük işletmelerin üç evresini anlatır: bebeklik, ergenlik ve olgunluk. Ergenlikte sahibi işi ilk çalışana verip kaçar. Turtacı Sarah için bu kişi Elizabeth'ti. Hesapları tuttu, pişirdi, temizledi, üç kişiyi işe alıp yetiştirdi. Bir çarşamba sabahı yedide arayıp başka bir iş bulduğunu söyledi ve kapattı. Onun aldıkları da gitti, Sarah yeniden tek başına kaldı. Gerber'e göre Sarah ona körü körüne güvenmiş, rolü hiç tanımlamamıştı."
+ },
+ "en": {
+  "title": "The 7 A.M. Phone Call",
+  "description": "Sarah's right-hand employee Elizabeth runs half the pie shop for two years, then quits with one phone call. Michael E. Gerber calls it management by abdication.",
+  "hook": "If your most trusted helper quit by phone tomorrow morning, would you know how to do what they did?",
+  "one_minute_summary": "Michael E. Gerber describes three phases of a small business: Infancy, Adolescence and Maturity. In Adolescence the owner hands work to a first hire and runs. For the pie baker Sarah, that hire was Elizabeth. She did the books, baked, cleaned, and hired and trained three people. One Wednesday at seven she phoned to say she'd taken another job, and hung up. Her hires soon left and Sarah went back to doing everything alone. Gerber's verdict: she trusted blindly and never defined the role."
+ },
+ "es": {
+  "title": "La llamada de las siete",
+  "description": "Elizabeth, la mano derecha de Sarah, lleva media tienda de tartas durante dos años y se va con una sola llamada. Michael E. Gerber lo llama gestión por abdicación.",
+  "hook": "Si tu persona de más confianza lo dejara mañana por teléfono, ¿sabrías hacer lo que hacía ella?",
+  "one_minute_summary": "Michael E. Gerber describe tres fases de un pequeño negocio: Infancia, Adolescencia y Madurez. En la Adolescencia, el dueño pasa el trabajo a su primer empleado y desaparece. Para Sarah, la pastelera, esa persona fue Elizabeth. Llevaba las cuentas, horneaba, limpiaba y contrató y formó a tres personas. Un miércoles a las siete llamó para decir que tenía otro trabajo y colgó. Su gente se fue después y Sarah volvió a hacerlo todo sola. Según Gerber, confió a ciegas y nunca definió el papel."
+ },
+ "de": {
+  "title": "Der Anruf um sieben",
+  "description": "Elizabeth, Sarahs rechte Hand, führt zwei Jahre lang den halben Pie-Laden und kündigt dann mit einem einzigen Anruf. Michael E. Gerber nennt das Führen durch Abdankung.",
+  "hook": "Wenn dein wichtigster Helfer morgen früh telefonisch kündigt, wüsstest du, wie seine Arbeit geht?",
+  "one_minute_summary": "Michael E. Gerber beschreibt drei Phasen kleiner Firmen: Kindheit, Jugend und Reife. In der Jugend drückt der Besitzer die Arbeit dem ersten Angestellten in die Hand und verschwindet. Bei der Pie-Bäckerin Sarah war das Elizabeth. Sie führte die Bücher, backte, putzte und stellte drei Leute ein. An einem Mittwoch um sieben rief sie an, sie habe eine neue Stelle, und legte auf. Ihre Leute gingen bald, Sarah machte wieder alles allein. Gerber sagt, sie habe blind vertraut und die Rolle nie beschrieben."
+ }
+}

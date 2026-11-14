@@ -1,0 +1,188 @@
+{
+  "book_no": 145,
+  "title": "SPIN Selling",
+  "authors": [
+    "Neil Rackham"
+  ],
+  "year": "1988",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Neil_Rackham",
+    "https://www.sellingandpersuasiontechniques.com/SPIN-selling.html",
+    "https://lifeclub.org/books/spin-selling-neil-rackham-review-summary",
+    "https://makeheadway.com/library/books/spin-selling-summary/",
+    "https://www.huthwaiteinternational.com/spin-methodology",
+    "https://www.supersummary.com/spin-selling/preface-chapter-2-summary (via search snippet)"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "SPIN Selling (1988) is built on research by Rackham's Huthwaite group: a team of about 30 researchers who analysed 35,000 sales calls in over 20 countries across roughly 12 years, with initial backing of about $1 million and support from Xerox and IBM. Wikipedia calls it the first project to measure selling and buying behaviour scientifically.",
+      "source": "Wikipedia Neil Rackham; Headway; lifeclub",
+      "confidence": "medium"
+    },
+    {
+      "id": "f2",
+      "claim": "The team waited seven years before publishing because findings did not match most sales training in use; Rackham has said several publishers initially rejected the manuscript.",
+      "source": "Headway summary; Wikipedia",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "The book defines closing as 'a behavior used by the seller which implies or invites commitment, so that the buyer's next statement accepts or denies commitment' (quoted from a summary, p. 21).",
+      "source": "SuperSummary snippet",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Findings on closing: pressure-style closes can work for low-priced items (small sales); in large sales aggressive closing tends to annoy the buyer and can be ineffective or harmful. The book is mainly about larger sales.",
+      "source": "lifeclub; reviews",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Rackham measures success in larger sales by buyer commitment, not by closing: an 'Advance' is a step that moves the sale forward (counts as success), a 'Continuation' is a call that ends with no agreed next step (counts as failure). Top sellers plan a range of small, achievable Advances for each call.",
+      "source": "sellingandpersuasiontechniques.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "The book divides a sale into four stages: Opening (preliminaries), Investigating, Demonstrating Capability, Obtaining Commitment. In large, complex sales Investigating is the most crucial stage.",
+      "source": "sellingandpersuasiontechniques.com; lifeclub; Huthwaite",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "The first group of about 1,000 salespeople trained in SPIN was compared with control groups from the same companies and made about 17% more sales (secondary sources; scope not independently verified).",
+      "source": "Headway; sellingandpersuasiontechniques.com",
+      "confidence": "low"
+    },
+    {
+      "id": "f8",
+      "claim": "SPIN stands for Situation, Problem, Implication, Need-payoff questions. Situation questions gather facts about the buyer's circumstances; asking many correlated with lower success, and successful sellers do their homework to need fewer.",
+      "source": "sellingandpersuasiontechniques.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Problem questions explore the buyer's difficulties and dissatisfactions and surface implied needs; experienced sellers ask more of them, and earlier.",
+      "source": "sellingandpersuasiontechniques.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Implication questions explore the effects and seriousness of a problem (such as overtime costs or staff turnover) and raise the buyer's motivation to change; sources call them the most powerful, and skill in them does not improve automatically with experience. Top sellers bring in solutions late, after the problem's effects are discussed.",
+      "source": "sellingandpersuasiontechniques.com; lifeclub; search results",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Need-payoff questions get the buyer to state the value of a solution, turning implied needs into explicit needs. Benefits stated by the buyer carry more weight and sound less pushy. In successful calls the buyer does most of the talking.",
+      "source": "sellingandpersuasiontechniques.com; lifeclub",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Implied needs are weaker signals that surface as general concerns; explicit needs are specific wants the customer states. The seller's job is to develop implied needs into explicit ones.",
+      "source": "lifeclub",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Features are facts about the product; advantages describe how it can help; a benefit shows how the offering meets an explicit need the buyer has expressed. The book advises selling benefits rather than features and advantages.",
+      "source": "sellingandpersuasiontechniques.com; lifeclub",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Leading with features or advantages triggers objections that slow the sale; weaker sellers provoke objections by listing features or price-related advantages before understanding needs, while skilled sellers prevent them by developing explicit needs first and addressing causes, not symptoms. Opening benefit statements work better in small sales than in large ones.",
+      "source": "lifeclub; sellingandpersuasiontechniques.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Uncovering several problems is safer than fixating on one, because a single focus can invite objections about weak areas of the offering.",
+      "source": "sellingandpersuasiontechniques.com",
+      "confidence": "low"
+    },
+    {
+      "id": "f16",
+      "claim": "Inc. ranked SPIN Selling first on its 2013 list of the best how-to-sell books, saying it turned selling from an art into a science; it was a New York Times business bestseller (Wikipedia, Neil Rackham).",
+      "source": "Wikipedia Neil Rackham",
+      "confidence": "medium"
+    },
+    {
+      "id": "f17",
+      "claim": "A request for a proposal does not count as an Advance unless the buyer also agrees to a follow-up action; in successful calls the buyer does most of the talking; an opening benefit statement works better in small sales than in large ones.",
+      "source": "sellingandpersuasiontechniques.com",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Direct quote 'Büyük satış küçük satışın büyük versiyonu değil... tamamen farklı bir psikoloji' (1531 old text)",
+      "reason": "Not found in any source; invented quotation."
+    },
+    {
+      "claim": "Closing techniques failing because 'pressure triggers resistance' presented as Rackham's stated mechanism",
+      "reason": "Sources say closing annoys buyers in large sales; the pressure-resistance causal chain is not attributed to the book."
+    },
+    {
+      "claim": "Old text's list of 'techniques that work in small sales: emphasising advantages, early objection closing, strong close'",
+      "reason": "Only closing is documented; emphasising advantages is documented as weaker."
+    },
+    {
+      "claim": "Need-payoff question wording 'If you solved this problem, what would it contribute?' and the line 'the customer becomes their own persuader; people believe what they say more than what they hear' (1532 old text)",
+      "reason": "Wording and the persuasion-psychology quote are not attributable to the book."
+    },
+    {
+      "claim": "'Sonuç soruları' ordering; successful sellers ask in a fixed S-P-I-N sequence (1532 old text)",
+      "reason": "Huthwaite itself describes SPIN as a flexible framework, not a rigid sequence."
+    },
+    {
+      "claim": "Early benefits create resistance because the buyer feels the seller's need is being put on them; the '30% time saving' example and 'result questions' wording (1533 old text)",
+      "reason": "The 30% example and the quote are not in the sources. The documented claim is that advantages/features before needs trigger objections."
+    },
+    {
+      "claim": "Example illustrations from summaries (a $300 printer growing into a $50,000 printing system; a hybrid car saving $5,000 a year on gas; a 24-hour deadline by a real estate agent)",
+      "reason": "Come from one summary article, not confirmed as the book's own cases; not used in the story."
+    }
+  ],
+  "stories": {
+    "1531": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f16",
+        "f17"
+      ],
+      "note": "Kept as a concept/research story built on Huthwaite's 35,000 calls and the closing findings; invented quote dropped. Medium confidence: secondary sources only."
+    },
+    "1532": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12"
+      ],
+      "note": "Kept around the four question types and implied vs explicit needs; sources attribute the 'buyer talks most' finding. Medium confidence."
+    },
+    "1533": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f12",
+        "f13",
+        "f14",
+        "f15"
+      ],
+      "note": "Kept around features vs advantages vs benefits and objections; invented 30% example dropped. Medium confidence."
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "book_no": 195,
+  "title": "Why Buddhism Is True",
+  "authors": ["Robert Wright"],
+  "year": "2017",
+  "sources": [
+    "https://www.garrisoninstitute.org/science/why-buddhism-is-true/",
+    "https://elevatesociety.com/why-buddhism-is-true-summary-review",
+    "https://www.npr.org/sections/13.7/2017/09/26/553712812/why-why-buddhism-is-true-is-true",
+    "https://en.wikipedia.org/wiki/Why_Buddhism_is_True"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "Wright argues natural selection designed the human mind to crave: it favors traits that do a good job of getting genes into the next generation, not traits that make people content. Never-ending dissatisfaction helped ancestors reproduce.", "source": "Garrison Institute interview/article", "confidence": "high"},
+    {"id": "f2", "claim": "The happiness of reaching a goal tends to fade; evolutionary psychology's explanation is that, without fading, animals would stop pursuing food and sex.", "source": "Garrison Institute", "confidence": "high"},
+    {"id": "f3", "claim": "Wright's hiking example: every rustle in the underbrush produces a surge of fear. The fear can be adaptive even if no snake is there, since selection favors a false alarm ('better safe than sorry').", "source": "Garrison Institute", "confidence": "medium"},
+    {"id": "f4", "claim": "Public speaking induces anxiety in many people, even sleeplessness before a presentation. Wright says we are not designed for that situation: ancestral life had no large public talks, so an old response fires in a new setting.", "source": "Garrison Institute, search summaries", "confidence": "medium"},
+    {"id": "f5", "claim": "Wright says mindfulness meditation can quiet the mind enough to begin freeing you from some mechanisms of distortion; if you change how you relate to anxiety and stop identifying with it, that is an incremental realisation of not-self. Observing feelings without acting on them is not suppression.", "source": "Garrison Institute, elevatesociety", "confidence": "medium"},
+    {"id": "f6", "claim": "On a retreat Wright felt 'the bounds of myself had dissolved'; a bird singing outside the meditation hall seemed 'no less a part of me than a tingling in my foot'.", "source": "Garrison Institute", "confidence": "medium"},
+    {"id": "f7", "claim": "Wright's version of Buddhism is secular, centred on mindfulness meditation, without supernatural beliefs; critics question both his naturalised Buddhism and his evolutionary psychology.", "source": "Wikipedia", "confidence": "high"}
+  ],
+  "rejected": [
+    {"claim": "Four-bullet list: good things feel temporary, bad things permanent, future anxiety chronic, social comparison constant.", "reason": "Only the fading of satisfaction and the misfiring of fear/anxiety are sourced."},
+    {"claim": "Quoted line 'This brain got stuck on a negative thought, it is a program'.", "reason": "Not a verifiable Wright quote."},
+    {"claim": "'Observation opens a field of choice, and choice is freedom.'", "reason": "Not sourced to Wright."},
+    {"claim": "Buddhism said thousands of years ago the mind is an unreliable narrator, desires produce pain, self is an illusion.", "reason": "Too vague as stated; used only Wright's own examples."}
+  ],
+  "stories": {
+    "1680": {"verdict": "keep", "fact_ids": ["f1", "f2", "f3", "f4", "f5"], "note": "Concept story around the rustle-in-the-underbrush and the speech anxiety examples; retreat detail optional."}
+  }
+}

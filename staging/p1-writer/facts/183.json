@@ -1,0 +1,128 @@
+{
+  "book_no": 183,
+  "title": "Braving the Wilderness: The Quest for True Belonging and the Courage to Stand Alone",
+  "authors": [
+    "Brené Brown"
+  ],
+  "year": "2017",
+  "sources": [
+    "https://fourminutebooks.com/braving-the-wilderness-summary/",
+    "https://www.shortform.com/summary/braving-the-wilderness-summary-brene-brown",
+    "https://en.wikipedia.org/wiki/Dancing_in_the_Streets",
+    "https://www.psychologytoday.com/gb/blog/passion/202210/dancing-in-the-streets-the-value-collective-joy"
+  ],
+  "source_note": "Book itself not read; summary sites partly blocked or paywalled. The belonging quote, BRAVING list and Integrity definition are from the author's knowledge of the book (high familiarity, not re-fetched). Collective joy and pain material is the lowest-confidence part.",
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The book (2017) is about true belonging and the courage to stand alone. Brown's wording: true belonging does not require us to change who we are; it requires us to be who we are. Belonging first needs belonging to ourselves.",
+      "source": "author knowledge; fourminutebooks ('belonging to ourselves')",
+      "confidence": "medium"
+    },
+    {
+      "id": "f2",
+      "claim": "Fitting in means conforming to other people's expectations, such as nodding along to avoid conflict; true belonging means feeling secure communicating and living out your values whatever others think.",
+      "source": "Shortform preview",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Brown began writing herself permission slips; the first said 'you're allowed to be goofy, have fun, and enjoy life'.",
+      "source": "fourminutebooks",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "The book's trust framework BRAVING: Boundaries, Reliability, Accountability, Vault, Integrity, Non-judgment, Generosity. Integrity is defined as choosing courage over comfort, choosing what is right over what is fun, fast or easy, and practicing your values, not just professing them.",
+      "source": "author knowledge; fourminutebooks lists reliable, own your mistakes, respect boundaries, be generous",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Shortform lists strategies: resolve conflict with curiosity and boundaries, question false 'us versus them' dichotomies, remember what unites us by being present in joyful and painful moments, build trust in yourself and others.",
+      "source": "Shortform preview",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Brown names three obstacles: lack of shared humanity, lack of compassion, fear of becoming an outsider.",
+      "source": "Shortform preview",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Antoine Leiris's letter 'You Will Not Have My Hate', written after the November 2015 Paris attacks that killed 130, is used for the lesson of turning anger into betterness, not bitterness.",
+      "source": "fourminutebooks",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "The book discusses collective joy and collective pain as ways people connect, with 'Hold hands. With strangers.' as one of four practices. The idea of collective effervescence (Durkheim) and Barbara Ehrenreich's Dancing in the Streets (group events with music, synchronised movement, costumes, loss of self; elites turn participants into spectators) lie behind it. That Brown cites Durkheim and Ehrenreich is from memory, not confirmed.",
+      "source": "author knowledge; Wikipedia: Dancing in the Streets",
+      "confidence": "low"
+    },
+    {
+      "id": "f9",
+      "claim": "Brown sets Maya Angelou's idea that you are free when you realise you belong no place and every place, as the book's theme.",
+      "source": "author knowledge",
+      "confidence": "low"
+    },
+    {
+      "id": "f10",
+      "claim": "The other BRAVING elements as Brown describes them: Boundaries (respect what the other says is and is not okay; ask when unclear); Reliability (do what you say you will do); Accountability (own mistakes, apologize, make amends); Vault (do not share what is not yours to share); Non-judgment (each can ask for what they need and talk about feelings without judgment); Generosity (the most generous interpretation of others' intentions, words and actions).",
+      "source": "author knowledge of the book; fourminutebooks lists reliable, own mistakes, respect boundaries, be generous",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Old 1645: Brown asked people whether conforming made them belong; answer no; people with strongest belonging could accept standing alone and being rejected.",
+      "reason": "Study framing not confirmed; the book's own belonging statement (f1, f2) used instead."
+    },
+    {
+      "claim": "Old 1645: Brown spent years as someone who 'got along with everyone' moving between groups.",
+      "reason": "Not found; only the permission-slips detail (f3) is supported."
+    },
+    {
+      "claim": "Old 1646: strongest people name two or three values with concrete behaviours; quote 'My value is courage...'.",
+      "reason": "Not found; replaced by the Integrity definition (f4)."
+    },
+    {
+      "claim": "Old 1647: Brown shopping in a supermarket the day after 9/11, strangers hugging.",
+      "reason": "Not found in any source; dropped."
+    },
+    {
+      "claim": "Old 1647: social media shows only good moments; 'I too' framing.",
+      "reason": "Not confirmed."
+    }
+  ],
+  "stories": {
+    "1645": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f5",
+        "f6"
+      ],
+      "note": "Concept; medium-low."
+    },
+    "1646": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f4",
+        "f7"
+      ],
+      "note": "Retitled to Integrity: practicing values. Medium-low."
+    },
+    "1647": {
+      "verdict": "delete",
+      "fact_ids": [
+        "f5",
+        "f8"
+      ],
+      "note": "Collective joy and pain cannot be tied to the book with sourced detail; old 9/11 scene unverified. Delete."
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "story_id": 1604,
+  "kind": "concept",
+  "book": {
+    "title": "The Wim Hof Method",
+    "author": "Wim Hof",
+    "year": "2020"
+  },
+  "confidence": "medium",
+  "confidence_note": "Facts from the publisher page, a book summary and Wikipedia; no primary text. The old norepinephrine (300 to 500 percent), dopamine, brown fat and inflammation figures, and the claim that the first cold moment is the real training, were not found and are dropped. The 30-second schedule comes from a summary and is medium. Evidence for health benefits is unsettled; the story states it.",
+  "facts": [
+    "The book rests on three pillars: cold exposure, breathing and mindset or commitment.",
+    "Its first chapter on cold is titled \"A Cold Shower a Day Keeps the Doctor Away\".",
+    "A summary of the book's starter schedule: in week one, 30 seconds of cold at the end of a shower, at least five days a week; add 30 seconds each week until two minutes in week four.",
+    "Someone who cannot manage 30 seconds can begin with 15.",
+    "Researchers are not certain that cold exposure improves health and stress as Hof says; the American Heart Association and British Heart Foundation advise talking to a doctor before cold exposure.",
+    "Hof recommends a four-week cold-shower programme instead of starting with ice baths, so the body is not shocked.",
+    "He says to enter the cold gradually if needed, feet and legs first, then arms, then torso, and to follow the body's feedback without forcing anything.",
+    "Hof, known as the Iceman, developed the method over nearly forty years.",
+    "The book mentions Wayne State University experiments in which Hof held his core temperature in extreme cold, and warns readers not to try those at home.",
+    "A 2024 meta-analysis of eight studies of the method (15 to 48 people each) rated their quality very low and called for more research."
+  ],
+  "scene_details": [
+    "the last 30 seconds of a shower",
+    "30 seconds added each week",
+    "two minutes in week four"
+  ],
+  "tension": "The book's entry point to cold is not an ice bath but the last half minute of a normal shower.",
+  "opening_idea": "Open on the end of an ordinary shower and a hand on the tap.",
+  "lessons": [
+    {
+      "idea": "A hard habit is easier to start when it is attached to something you already do and cut to a size you cannot refuse.",
+      "anchor": "Thirty seconds of cold at the end of the shower, with 15 as a fallback.",
+      "example": "Someone who wants to read more puts one page on the pillow each night instead of promising an hour."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one thing you avoid because it feels uncomfortable, and how could you try a version of it that lasts only half a minute?",
+  "use_cases": [
+    {
+      "situation": "A friend asks how to start with cold showers.",
+      "move": "The book begins with 30 seconds at the end of an ordinary shower; suggest 15 if that is too much, and check with a doctor if you have a heart condition.",
+      "context": "social"
+    },
+    {
+      "situation": "You keep putting off a task you dread.",
+      "move": "Do the first 30 seconds of it today.",
+      "context": "self"
+    },
+    {
+      "situation": "Your child dreads cold water at the pool.",
+      "move": "Let them enter a little at a time and let them stop when they say stop.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Tie a hard thing to an old routine and cut it to half a minute.",
+  "conversation_variants": {
+    "punchline_idea": "Wim Hof's first cold step is not an ice bath but the last 30 seconds of an ordinary shower.",
+    "thirty_sec_idea": "Wim Hof's method has three pillars: cold, breathing and mindset. For cold he starts small. A summary of the book gives week one as 30 seconds of cold at the end of a shower, five days a week, adding 30 seconds each week up to two minutes. If 30 is too much, begin with 15. Researchers are still unsure about the health claims.",
+    "question_idea": "What small discomfort could you try?",
+    "key_contrast_idea": "half a minute first"
+  }
+}

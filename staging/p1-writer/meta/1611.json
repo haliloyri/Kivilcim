@@ -1,0 +1,35 @@
+{
+ "story_id": 1611,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence: recast from the unsourced 'best 30 days' statistic to Bogle's 'The Grand Illusion' chapter, 1980-2005: S&P 500 12.5% a year vs 7.3% for the average fund investor (one secondary article); a Dalbar survey and the writer's own compounding illustration are labelled as such in the text. Old statistic dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Yüzde 12,5'e karşı 7,3",
+  "description": "25 yılda S&P 500 yılda ortalama yüzde 12,5 kazandı, ortalama fon yatırımcısı yüzde 7,3. Bogle'ın bölümü buna Büyük Yanılsama diyor.",
+  "hook": "Yatırımcılar neden endeksten bu kadar az kazandı?",
+  "one_minute_summary": "Bogle 1980'den 2005'e uzanan 25 yılı karşılaştırıyor. S&P 500 yılda ortalama yüzde 12,5 kazandı, ortalama fon yatırımcısı yüzde 7,3. Maliyetler farkın yalnızca bir kısmını açıklıyor. Ana neden davranış: güçlü bir dönemden sonra fon almak, zayıf bir dönemden sonra satmak ve hangi fonu tutacağını seçmek. Ayrı bir Dalbar araştırması aynı biçimde bir fark gösteriyor. Bogle'ın bölüm başlığı fark için Büyük Yanılsama."
+ },
+ "en": {
+  "title": "12.5 percent, 7.3 percent",
+  "description": "Over 25 years the S&P 500 averaged 12.5 percent a year while the average fund investor earned 7.3. Bogle's chapter calls it The Grand Illusion.",
+  "hook": "Why did investors earn so much less than the index?",
+  "one_minute_summary": "Bogle compares the 25 years from 1980 to 2005. The S&P 500 averaged 12.5 percent a year, and the average fund investor earned 7.3. Costs explain only part of the gap. The main cause is behavior: buying funds after a strong stretch, selling after a weak one and choosing which fund to hold. A separate Dalbar survey shows a gap of the same shape. Bogle's chapter title for the difference is The Grand Illusion."
+ },
+ "es": {
+  "title": "El 12,5 % y el 7,3 %",
+  "description": "En 25 años el S&P 500 rindió de media un 12,5 % anual y el inversor medio en fondos, un 7,3 %. El capítulo de Bogle lo llama La gran ilusión.",
+  "hook": "¿Por qué los inversores ganaron tanto menos que el índice?",
+  "one_minute_summary": "Bogle compara los 25 años de 1980 a 2005. El S&P 500 rindió de media un 12,5 % anual y el inversor medio en fondos, un 7,3 %. Los costes explican solo parte de la brecha. La causa principal es el comportamiento: comprar fondos tras una buena racha, vender tras una mala y elegir qué fondo tener. Una encuesta aparte de Dalbar muestra una brecha de la misma forma. El título del capítulo de Bogle para la diferencia es La gran ilusión."
+ },
+ "de": {
+  "title": "12,5 gegen 7,3 Prozent",
+  "description": "In 25 Jahren erzielte der S&P 500 im Schnitt 12,5 Prozent im Jahr, der durchschnittliche Fondsanleger 7,3. Bogles Kapitel heißt Die große Illusion.",
+  "hook": "Warum verdienten Anleger so viel weniger als der Index?",
+  "one_minute_summary": "Bogle vergleicht die 25 Jahre von 1980 bis 2005. Der S&P 500 brachte im Schnitt 12,5 Prozent im Jahr, der durchschnittliche Fondsanleger 7,3. Kosten erklären nur einen Teil der Lücke. Hauptursache ist das Verhalten: nach einer starken Phase Fonds kaufen, nach einer schwachen verkaufen und den Fonds auswählen. Eine getrennte Dalbar-Untersuchung zeigt eine Lücke derselben Form. Bogles Kapiteltitel für den Unterschied lautet Die große Illusion."
+ }
+}

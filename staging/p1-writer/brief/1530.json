@@ -1,0 +1,56 @@
+{
+  "story_id": 1530,
+  "kind": "concept",
+  "book": {
+    "title": "Scrum: The Art of Doing Twice the Work in Half the Time",
+    "author": "Jeff Sutherland and J.J. Sutherland",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Velocity and burndown mechanics from Wikipedia; the FBI figure ($170 million, five years, nothing usable, then Scrum increments) from a summary site and left hedged. Old text's quote and 'much more accurate' claim dropped. Mechanism story at the low end.",
+  "facts": [
+    "A summary says the FBI's Virtual Case File project spent about $170 million over five years and delivered nothing usable; the restarted effort used Scrum and delivered working pieces every few weeks.",
+    "A team's capacity for a sprint can be estimated from the work it finished in the last sprint.",
+    "Historical velocity is a guideline for what the team can take on.",
+    "A burndown chart is shown publicly: days remaining on the horizontal axis, work remaining on the vertical axis.",
+    "A sprint ends with a demonstration of working increments."
+  ],
+  "scene_details": [
+    "a burndown chart on the wall",
+    "a count of finished items from the last sprint"
+  ],
+  "tension": "Instead of asking a team to guess a date, ask what they actually finished last time.",
+  "opening_idea": "Open on the FBI project that had spent five years and had nothing to show.",
+  "lessons": [
+    {
+      "idea": "Plan from what you actually finished, not from what you hope to finish",
+      "anchor": "velocity from the last sprint; Everyday: a freelancer who checks how many invoices she really sent last week before promising a client a number"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you looked at what you really finished in each of your last three weeks, what would you promise differently next week?",
+  "use_cases": [
+    {
+      "situation": "A manager asks when the project will be done",
+      "move": "Last sprint we finished this much. At that rate here is a range. I would rather give you that than a hopeful date.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A client wants a deadline",
+      "move": "Here is what I finished in the last two weeks. Based on that, this is what I can promise.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You overplan every Sunday",
+      "move": "I will count what I actually finished last week before I write this week's list.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Look at what you finished last time before promising the next. Capacity is a count, not a feeling.",
+  "conversation_variants": {
+    "punchline_idea": "Scrum plans next sprint from what the team really finished in the last one.",
+    "thirty_sec_idea": "A summary of Sutherland's book says the FBI spent about $170 million over five years on a system that delivered nothing usable, then restarted with Scrum and delivered working pieces every few weeks. Part of the fix is to plan from what the team actually finished last sprint and to show remaining work on a public burndown chart.",
+    "question_idea": "",
+    "key_contrast_idea": "count, not guess"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1418,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence: Four Actions definitions from the authors' site; Cirque grid from secondary pages that differ slightly on a few items (stated in the text). Old mapping (raised sophisticated environment and artistic theme) corrected to the sourced grid.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Cirque'in çıkardıkları",
+  "description": "Cirque du Soleil hayvanları, yıldız numaraları ve koridor satıcılarını çıkardı, mizahı ve tehlikeyi azalttı, müzik ve danslı bir tema yarattı. Kim ve Mauborgne bunu dört soru için kullanıyor.",
+  "hook": "Cirque bir sirkten neyi çıkardı?",
+  "one_minute_summary": "Cirque du Soleil sirke bakıp yıldız sanatçıları, hayvan gösterilerini, koridor satıcılarını ve fazladan gösteri alanlarını çıkardı. Mizahı ve tehlikeyi azalttı, mekânı artırdı, bir tema, rafine bir ortam, müzik ve dans yarattı. W. Chan Kim ve Renée Mauborgne bunu dört soru için kullanıyor: neyi yok etmeli, azaltmalı, artırmalı ve yaratmalı. Amaç, öne çıkmak ile maliyeti düşük tutmak arasındaki tercihi kırmak. Kaynaklar tablonun birkaç kaleminde küçük farklar gösteriyor ama örüntü aynı."
+ },
+ "en": {
+  "title": "What Cirque left out",
+  "description": "Cirque du Soleil removed animals, star acts and aisle vendors, reduced humor and danger, and created a theme with music and dance. Kim and Mauborgne use it for four questions.",
+  "hook": "What did Cirque cut from a circus?",
+  "one_minute_summary": "Cirque du Soleil looked at the circus and cut star performers, animal shows, aisle vendors and extra arenas. It reduced humor and danger, raised the venue, and created a theme, a refined setting, music and dance. W. Chan Kim and Renée Mauborgne use it for four questions: what to eliminate, reduce, raise and create. The aim is to break the trade-off between standing out and keeping costs low."
+ },
+ "es": {
+  "title": "Lo que el Cirque quitó",
+  "description": "El Cirque du Soleil quitó animales, estrellas y vendedores de pasillo, redujo humor y peligro y creó un tema con música y danza. Kim y Mauborgne lo usan para cuatro preguntas.",
+  "hook": "¿Qué quitó el Cirque de un circo?",
+  "one_minute_summary": "El Cirque du Soleil miró el circo y quitó artistas estrella, espectáculos con animales, vendedores de pasillo y escenarios extra. Redujo el humor y el peligro, elevó el recinto y creó un tema, un ambiente refinado, música y danza. W. Chan Kim y Renée Mauborgne lo usan para cuatro preguntas: qué eliminar, reducir, elevar y crear. El objetivo es romper el dilema entre destacar y mantener costes bajos."
+ },
+ "de": {
+  "title": "Was Cirque gestrichen hat",
+  "description": "Cirque du Soleil strich Tiere, Starnummern und Verkäufer im Gang, verringerte Humor und Gefahr und schuf ein Thema mit Musik und Tanz. Kim und Mauborgne nutzen es für vier Fragen.",
+  "hook": "Was nahm Cirque einem Zirkus weg?",
+  "one_minute_summary": "Cirque du Soleil nahm dem Zirkus Starartisten, Tiernummern, Verkäufer im Gang und zusätzliche Spielstätten. Es verringerte Humor und Gefahr, steigerte den Spielort und schuf ein Thema, eine verfeinerte Umgebung, Musik und Tanz. W. Chan Kim und Renée Mauborgne nutzen das für vier Fragen: was streichen, verringern, steigern und schaffen. Ziel ist es, den Zielkonflikt zwischen Auffallen und niedrigen Kosten zu brechen."
+ }
+}

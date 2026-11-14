@@ -1,0 +1,35 @@
+{
+ "story_id": 1415,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence: rebuilt around the Lincoln militia anecdote as Maxwell tells it and the Mother Teresa 1994 breakfast, from secondary summaries; details of Lincoln's service are disputed, so the story carries a caveat. Old Texas preacher and quotes dropped as unverifiable.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Lincoln ve dağıtılan bölük",
+  "description": "Maxwell'e göre Lincoln âdet gereği yüzbaşı oldu ve bir kapıda adamlarının izleme isteğini kaybetti. Etki Yasası, rütbenin verildiğini, etkinin kazanıldığını söyler.",
+  "hook": "Bir yüzbaşı bir kapıda hangi komutu unuttu?",
+  "one_minute_summary": "Maxwell'in anlatımında genç Lincoln 1832'de bir milis birliği kurup âdet gereği yüzbaşı oldu. Bir kapıda doğru komutu hatırlayamayınca bölüğü iki dakikalığına dağıttığını söyledi. Etkisi azaldı ve hizmeti er olarak bitirdi. Maxwell yanına Rahibe Teresa'nın 1994 konuşmasını koyuyor: hemen herkesi gücendirdi ama onu dinlediler. Yasası şu: liderlik atanamaz, yalnızca etkiyle kazanılır. Lincoln'ün hizmetinin ayrıntıları anlatımlara göre değişiyor. Lincoln'ün hizmetinin ayrıntıları anlatımlara göre değişiyor, o yüzden Maxwell'in anlatımı olarak okunmalı."
+ },
+ "en": {
+  "title": "Lincoln and the dismissed company",
+  "description": "As Maxwell tells it, Lincoln got a captain's rank by custom and lost his men's willingness to follow at a gate. His Law of Influence says rank is handed out and influence is earned.",
+  "hook": "What command did a captain forget at a gate?",
+  "one_minute_summary": "In Maxwell's retelling, young Lincoln raised a militia company in 1832 and became captain by custom. Unable to recall the right command at a gate, he shouted that the company was dismissed for two minutes. His influence fell, and he finished as a private. Maxwell sets Mother Teresa's 1994 speech beside it: she offended nearly everyone, yet they listened. His law: leadership cannot be assigned, only earned through influence. Details of Lincoln's service differ between retellings."
+ },
+ "es": {
+  "title": "Lincoln y la compañía disuelta",
+  "description": "Según Maxwell, Lincoln fue capitán por costumbre y perdió las ganas de seguirlo de sus hombres ante una puerta. Su Ley de la Influencia dice que el rango se entrega y la influencia se gana.",
+  "hook": "¿Qué orden olvidó un capitán ante una puerta?",
+  "one_minute_summary": "En el relato de Maxwell, un joven Lincoln reunió una compañía de milicia en 1832 y fue capitán por costumbre. Al no recordar la orden correcta ante una puerta, gritó que la compañía quedaba disuelta dos minutos. Su influencia cayó y acabó como soldado raso. Maxwell pone al lado el discurso de la Madre Teresa de 1994: ofendió a casi todos y aun así la escucharon. Su ley: el liderazgo no se asigna, se gana con influencia. Los detalles del servicio de Lincoln varían según el relato."
+ },
+ "de": {
+  "title": "Lincoln und die entlassene Kompanie",
+  "description": "Nach Maxwell wurde Lincoln dem Brauch nach Hauptmann und verlor an einem Tor die Bereitschaft seiner Männer zu folgen. Sein Gesetz des Einflusses: Rang wird verliehen, Einfluss verdient.",
+  "hook": "Welchen Befehl vergaß ein Hauptmann an einem Tor?",
+  "one_minute_summary": "In Maxwells Darstellung stellte der junge Lincoln 1832 eine Milizkompanie auf und wurde dem Brauch nach Hauptmann. An einem Tor fiel ihm der richtige Befehl nicht ein, er rief, die Kompanie sei zwei Minuten entlassen. Sein Einfluss sank, er endete als Soldat. Maxwell stellt Mutter Teresas Rede von 1994 daneben: Sie verärgerte fast alle, doch man hörte ihr zu. Sein Gesetz: Führung lässt sich nicht zuweisen, nur durch Einfluss verdienen. Lincolns Dienst wird unterschiedlich erzählt."
+ }
+}

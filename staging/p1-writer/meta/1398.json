@@ -1,0 +1,35 @@
+{
+  "story_id": 1398,
+  "verdict": "keep",
+  "verify_note": "Keep, thin and low confidence: trusting-teams practice from Shortform, a Verbal to Visual summary and an army.mil article on a 2019 Sinek talk; the book's own Shell Oil and Marine OCS cases were not retrieved. Talk quotes are not from the book text. Old trust-currency quote and the work-by-choice question dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Hata yaptım demek ucuz olsun",
+    "description": "Simon Sinek'e göre sonsuz oyun, hatasını ve yardım ihtiyacını söyleyebilen ekipler ister. Tonu lider belirler.",
+    "hook": "İşte son zamanlarda hangi hatayı ya da şüpheyi kendinize sakladınız?",
+    "one_minute_summary": "Simon Sinek, The Infinite Game'in beş uygulamasından ikincisinde güvene dayalı ekipleri anlatır: üyelerin duygularını söylemekte, yardım istemekte ve hatalarını kabul etmekte kendini güvende hissettiği ekipler. Güven yoksa, kitabın özetlerine göre insanlar hataları saklar, bilmediklerini biliyormuş gibi yapar ve sorunlar birikir. Sinek üyeleri performans ve güvenle tartar, kimsenin güvenmediği yüksek performanslıya karşı uyarır. Liderin işi dinlemek ve insanların korkmadan sorun söylemesine izin vermektir."
+  },
+  "en": {
+    "title": "Make \"I Made a Mistake\" Cheap",
+    "description": "Simon Sinek says an infinite game needs teams where people can admit mistakes and ask for help. The leader sets the tone.",
+    "hook": "What mistake or doubt did you keep to yourself at work recently?",
+    "one_minute_summary": "In the second of the five practices in The Infinite Game, Simon Sinek describes trusting teams: members who feel safe expressing feelings, asking for help and admitting mistakes. Without that, summaries of the book say, people hide mistakes, fake expertise and let problems pile up. He sizes up team members on performance and trust and warns about the high performer nobody trusts. The leader's job is to listen and let people raise issues without fear of repercussions."
+  },
+  "es": {
+    "title": "Que decir \"me equivoqué\" salga barato",
+    "description": "Para Simon Sinek, un juego infinito necesita equipos donde se pueda admitir errores y pedir ayuda. El líder marca el tono.",
+    "hook": "¿Qué error o duda te guardaste hace poco en el trabajo?",
+    "one_minute_summary": "En la segunda de las cinco prácticas de The Infinite Game, Simon Sinek describe los equipos de confianza: miembros que se sienten seguros para expresar sentimientos, pedir ayuda y admitir errores. Sin eso, según los resúmenes del libro, se ocultan errores, se finge saber y los problemas se acumulan. Mide a los miembros por rendimiento y confianza y advierte sobre el alto rendimiento en quien nadie confía. El trabajo del líder es escuchar y dejar que se planteen problemas sin miedo a represalias."
+  },
+  "de": {
+    "title": "Fehler zugeben leicht machen",
+    "description": "Simon Sinek sagt, ein unendliches Spiel braucht Teams, in denen man Fehler zugeben und um Hilfe bitten kann. Die Führung gibt den Ton an.",
+    "hook": "Welchen Fehler oder Zweifel hast du zuletzt bei der Arbeit für dich behalten?",
+    "one_minute_summary": "In der zweiten der fünf Praktiken von The Infinite Game beschreibt Simon Sinek vertrauensvolle Teams: Mitglieder, die sich sicher fühlen, Gefühle auszudrücken, um Hilfe zu bitten und Fehler zuzugeben. Fehlt das, verbergen Menschen nach Zusammenfassungen des Buches Fehler, täuschen Wissen vor, und Probleme stauen sich. Er misst Mitglieder an Leistung und Vertrauen und warnt vor dem Leistungsträger, dem keiner traut. Die Aufgabe der Führung ist, zuzuhören und Probleme ohne Angst vor Folgen zuzulassen."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "story_id": 1394,
+  "kind": "concept",
+  "book": {"title": "Eat That Frog!", "author": "Brian Tracy", "year": "2001"},
+  "confidence": "high",
+  "confidence_note": "Chapters 3 and 5 read in an early-edition full text. The old 'Tracy asks himself every morning' opening was not found and is dropped; the 'one task makes the day a success' line is not stated in that form and is dropped.",
+  "facts": [
+    "Chapter 3: the 80/20 rule, or Pareto Principle, named for Vilfredo Pareto who first wrote about it in 1895; Tracy applies it to tasks: about 20 percent of your tasks hold 80 percent of the value.",
+    "With ten items on a list, Tracy says two may be worth as much as the other eight together; often one item is worth more than the other nine combined. That item is the frog.",
+    "Tasks may take the same time, yet one or two contribute five or ten times the value of the others.",
+    "Most people procrastinate on the few valuable items and keep busy with the trivial many; they look busy all day yet accomplish little.",
+    "His rule: resist the temptation to clear up small things first. Before starting, ask whether the task is in the top 20 percent or the bottom 80.",
+    "Chapter 5, ABCDE: write the list for tomorrow ('think on paper') and put a letter before each item before starting the first one.",
+    "A is a must with serious consequences (visiting a key customer, a report the boss needs for a board meeting); several A tasks become A-1, A-2, A-3, and A-1 is the biggest, ugliest frog.",
+    "B should-do with mild consequences ('tadpoles'), e.g. returning an unimportant phone message or checking email; never do a B while an A is undone.",
+    "C is nice to do with no consequences (coffee or lunch with a coworker); D is delegate; E is eliminate, often kept out of habit or because you enjoy it.",
+    "Tracy says start A-1 immediately and stay with it until finished, and practise the method daily for a month."
+  ],
+  "scene_details": ["a list of ten items with one worth more than the other nine", "a letter written in front of each item before the first task", "an A-1 frog and a B tadpole", "coffee with a coworker marked C"],
+  "tension": "A list of ten looks like ten equal jobs, yet Tracy says one of them outweighs the rest, and it is usually the one avoided.",
+  "opening_idea": "Open on the ten-item list and the one item worth more than the other nine together.",
+  "lessons": [{"idea": "Rank by consequence before you start, so the hardest valuable task is not decided by mood.", "anchor": "A-1 versus the B tadpole: never do a B while an A is undone.", "example": "A shop owner sorting the day's calls by what happens if each is skipped."}],
+  "reflect": [],
+  "reflect_final": "Look at your list for tomorrow: which item would carry serious consequences if skipped, and which would nobody notice if it vanished?",
+  "use_cases": [
+    {"situation": "Your list has twelve items and all feel urgent.", "move": "Put a letter in front of each. Tracy says never do a B while an A is undone, so start with the A-1.", "context": "self"},
+    {"situation": "A teammate is always busy but the key report slips.", "move": "Ask which item on their list is the A; suggest the coffee-and-inbox items wait until it is done.", "context": "oneonone"},
+    {"situation": "Weekly planning with the team.", "move": "Ask the group to mark each item D or E if someone else could do it or it could go, before assigning the rest.", "context": "meeting"}
+  ],
+  "pocket_idea": "Before starting, put a letter on every item. Do no B until the A-1 is finished.",
+  "conversation_variants": {
+    "punchline_idea": "On a ten-item list, Tracy says one item can outweigh the other nine put together, and that is the one people dodge.",
+    "thirty_sec_idea": "Tracy tells you to letter your list: A for serious consequences, B for tadpoles, C for nice, D delegate, E eliminate; then do A-1 first.",
+    "question_idea": "",
+    "key_contrast_idea": "A-1 before tadpoles"
+  }
+}

@@ -24,6 +24,8 @@ import { MilestoneReviewModal } from './LearningMilestoneModal';
 import BadgeShareSheet from '../BadgeShareSheet';
 import ScreenHeader from '../ScreenHeader';
 import { buildBooksMilestoneShare, buildRankShare, buildWeeklyShare } from '../../utils/careerShare';
+import { toUpperFor } from '../../utils/locale';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const REQUIREMENT_ICONS = {
@@ -202,7 +204,7 @@ const CareerPathExperience = ({ navigation, route }) => {
     : career.displayedTitle
       ? t(IDENTITY_BY_TITLE[career.displayedTitle] || 'career.heroCopy', lang)
       : t('career.hero.startCopy', lang);
-  const heroEyebrow = summitReached
+  const heroEyebrow = toUpperFor(summitReached
     ? t('career.hero.eyebrow.summit', lang)
     : career.isPathSelectionDue
       ? t('career.hero.eyebrow.promoted', lang)
@@ -210,7 +212,7 @@ const CareerPathExperience = ({ navigation, route }) => {
         ? t('career.hero.eyebrow.new', lang)
         : activePathDefinition
           ? t(activePathDefinition.titleKey, lang)
-          : t('career.hero.eyebrow.current', lang);
+          : t('career.hero.eyebrow.current', lang), lang);
   const nextProgress = career.nextNode ? nodeProgress(career.nextNode) : 1;
   const incompleteRows = (career.nextNode?.requirementRows || [])
     .filter((row) => !row.completed)
@@ -288,7 +290,7 @@ const CareerPathExperience = ({ navigation, route }) => {
           <View style={styles.nextHead}>
             <CareerNodeMark node={career.nextNode} status="future" isDark={isDark} size={64} />
             <View style={{ flex: 1 }}>
-              {activePathDefinition ? <Text selectable style={[styles.nextEyebrow, { color: colors.primaryText || colors.primary }]}>{t(activePathDefinition.titleKey, lang)}</Text> : null}
+              {activePathDefinition ? <Text selectable style={[styles.nextEyebrow, { color: colors.primaryText || colors.primary }]}>{toUpperFor(t(activePathDefinition.titleKey, lang), lang)}</Text> : null}
               <Text selectable style={[styles.nextTitle, { color: colors.text }]}>{t(career.nextNode.titleKey, lang)}</Text>
             </View>
           </View>
@@ -421,10 +423,12 @@ const CareerPathExperience = ({ navigation, route }) => {
   );
 
   return (
+    // Same top edge as the other tabs: content scrolls under an opaque safe
+    // area instead of behind the status bar and Dynamic Island.
+    <SafeAreaView edges={['top', 'left', 'right']} style={{ flex: 1, backgroundColor: colors.background }}>
     <ScrollView
       style={{ flex: 1, backgroundColor: colors.background }}
       contentContainerStyle={[styles.content, { paddingHorizontal: layout.padding.horizontal, paddingBottom: 36 }]}
-      contentInsetAdjustmentBehavior="automatic"
     >
       <ScreenHeader
         style={styles.screenHeader}
@@ -462,6 +466,7 @@ const CareerPathExperience = ({ navigation, route }) => {
         cta={heroCta}
         onShare={career.displayedTitle && !isNewUser ? openTitleShare : null}
         shareLabel={t('career.share.title', lang)}
+        lang={lang}
       />
 
       <TouchableOpacity accessibilityRole="button" accessibilityLabel={weekLine} onPress={() => setSegment('rhythm')} style={[styles.weekStrip, card]}>
@@ -487,6 +492,7 @@ const CareerPathExperience = ({ navigation, route }) => {
       <BadgeShareSheet visible={!!shareAchievement} achievement={shareAchievement} name={userProfile?.displayName} onClose={() => setShareAchievement(null)} />
       <CareerPathSwitchSheet path={pendingPath} currentTitleKey={career.profileTitle} nextTitleKey={career.paths[pendingPath?.id]?.filter((node) => node.status === 'completed').slice(-1)[0]?.titleKey || 'careerNode.traveler.title'} onCancel={() => setPendingPath(null)} onConfirm={async () => { if (isPreviewing) return; await switchPath(pendingPath.id); setPendingPath(null); setShowPathChoices(false); }} />
     </ScrollView>
+    </SafeAreaView>
   );
 };
 

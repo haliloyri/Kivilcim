@@ -47,7 +47,7 @@ Uygulamayı ilk kez açan kullanıcıya gösterilen kurulum akışı. Üst kıs�
 
 | Adım | İçerik |
 |------|--------|
-| 0 | **Hoş Geldin** — Logo animasyonu + karşılama metni + gerçek bir hikâye kartı (kullanıcının dilinde özeti olan hikâyelerden seçilir) |
+| 0 | **Hoş Geldin** — Albi (maskot, selamlama pozu) + karşılama metni + gerçek bir hikâye kartı (kullanıcının dilinde özeti olan hikâyelerden seçilir) |
 | 1 | **Kategori Seçimi** — İlgi alanları (min. 2 seçim zorunlu) |
 | 2 | **Günlük Plan** — Okuma planı (3dk / 6dk / 9dk, tek seçim) + hatırlatma zamanı (Sabah / Öğle / Akşam, çoklu seçim) |
 

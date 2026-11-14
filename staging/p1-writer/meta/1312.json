@@ -1,0 +1,35 @@
+{
+ "story_id": 1312,
+ "verdict": "keep",
+ "verify_note": "Verified in full text of The E-Myth Revisited (1995). Sarah is a woman (old text said man); invented '20h baking / 60h managing' dropped. Recentered on the 7 a.m. scene, the aunt, and the three personalities.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Turtadan Nefret Eden Fırıncı",
+  "description": "Herkesin en iyi turtacı dediği Sarah, kendi dükkânının üçüncü yılında turtaya dayanamaz hale gelir. Michael E. Gerber bunun nedenini bir işi bilmekle o işi yapan şirketi yönetmek arasındaki farkta görür.",
+  "hook": "En sevdiğiniz işi kendi işiniz yapsaydınız, ona günün kaç saati kalırdı?",
+  "one_minute_summary": "Sarah o kadar iyi turta yapıyordu ki arkadaşları dükkân açması için ısrar etti. Michael E. Gerber onunla üç yıl sonra, sabahın yedisinde tanıştı. Gece ikide kalkmıştı, kasa, banka ve kira arasında turtaya ancak bir dilim kalmıştı. Turtadan nefret ettiğini söyleyip ağladı ve fırını tekmeledi. Gerber'e göre sorun Ölümcül Varsayım: bir işin teknik tarafını bilmek, o işi yapan şirketi yönetmeyi bilmek demek değildir. Her girişimci aynı anda Girişimci, Yönetici ve Teknisyendir."
+ },
+ "en": {
+  "title": "The Baker Who Hated Pies",
+  "description": "Sarah, praised as the best pie baker around, opens her own shop and three years later can't stand the smell of pies. Michael E. Gerber explains why knowing the work isn't knowing the business.",
+  "hook": "If you turned the work you love into your own business, how many hours a day would be left for it?",
+  "one_minute_summary": "Sarah baked such good pies that her friends pushed her to open a shop. Michael E. Gerber met her three years in, at 7 a.m. She had been up since two, and her day ran from baking to the register, the bank and next month's rent. She cried, kicked the oven and said she hated pies. Gerber calls it the Fatal Assumption: understanding the technical work doesn't mean understanding a business that does it. Every owner is Entrepreneur, Manager and Technician at once."
+ },
+ "es": {
+  "title": "La pastelera que odiaba las tartas",
+  "description": "Sarah, a quien todos llamaban la mejor pastelera, abre su tienda y tres años después no soporta el olor de las tartas. Michael E. Gerber explica por qué saber hacer el trabajo no es saber llevar el negocio.",
+  "hook": "Si convirtieras el trabajo que amas en tu propio negocio, ¿cuántas horas al día te quedarían para él?",
+  "one_minute_summary": "Sarah hacía unas tartas tan buenas que sus amigas la empujaron a abrir una tienda. Michael E. Gerber la conoció tres años después, a las siete de la mañana. Llevaba en pie desde las dos y su día iba de las tartas a la caja, el banco y el alquiler. Lloró, pateó el horno y dijo que odiaba las tartas. Gerber lo llama la Suposición Fatal: entender el trabajo técnico no es entender el negocio que lo hace. Todo dueño es a la vez Emprendedor, Gerente y Técnico."
+ },
+ "de": {
+  "title": "Die Bäckerin, die Pies hasste",
+  "description": "Sarah, die alle für die beste Pie-Bäckerin hielten, eröffnet ihren eigenen Laden und erträgt drei Jahre später den Geruch von Pies nicht mehr. Michael E. Gerber erklärt, warum die Arbeit zu können nicht heißt, das Geschäft zu verstehen.",
+  "hook": "Wenn du die Arbeit, die du liebst, zu deinem eigenen Geschäft machst, wie viele Stunden am Tag bleiben dir dann noch dafür?",
+  "one_minute_summary": "Sarah backte so gute Pies, dass ihre Freundinnen sie zu einem eigenen Laden drängten. Michael E. Gerber traf sie drei Jahre später um sieben Uhr morgens. Sie war seit zwei Uhr auf, und ihr Tag reichte vom Backen über Kasse und Bank bis zur Miete. Sie weinte, trat gegen den Ofen und sagte, sie hasse Pies. Gerber nennt es die Fatale Annahme: Wer die fachliche Arbeit versteht, versteht noch nicht das Unternehmen. Jeder Gründer ist Unternehmer, Manager und Techniker zugleich."
+ }
+}

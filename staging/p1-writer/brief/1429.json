@@ -1,0 +1,61 @@
+{
+  "story_id": 1429,
+  "kind": "anecdote",
+  "book": {
+    "title": "Maybe You Should Talk to Someone",
+    "author": "Lori Gottlieb",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Checked against Wikipedia, Shortform/GradeSaver previews and summaries, not the book text. Old text quotes and the work-stress claim dropped. The Wendell line about feelings is from summaries. DB title is the Turkish edition title Terapi.",
+  "facts": [
+    "Lori Gottlieb is a psychotherapist in Los Angeles.",
+    "Her long-term boyfriend ended the relationship because he did not want to live with her young son, though he had known about the boy from the start. She had expected to marry him.",
+    "Friends urged her to see a therapist, so she began seeing Wendell.",
+    "In the first sessions she mostly cried on his couch over the lost relationship and the future she had pictured. She had planned only a few sessions.",
+    "After the crying stage Wendell suggested she was struggling with something larger than the breakup.",
+    "Wendell told her her feelings did not have to match what she thinks they should be; she realised she had said the same thing to her own patients many times, but it landed differently from the other chair.",
+    "She had a contract for a happiness book she could not write; in therapy she accepted breaking it and repaying the advance, and started the book that became this memoir."
+  ],
+  "scene_details": [
+    "the couch where she cried in the first sessions",
+    "friends telling her to see someone",
+    "a few sessions planned, many more taken",
+    "the same sentence she had said to patients, heard from Wendell"
+  ],
+  "tension": "A trained therapist who gives out the sentence daily cannot give it to herself until someone else says it to her.",
+  "opening_idea": "Open on the sentence Wendell says to her, which she has said to her own patients many times, and what it was like to hear it.",
+  "lessons": [
+    {
+      "idea": "Knowing the advice is different from hearing it said to you; someone outside your head can say it so that it lands.",
+      "anchor": "Gottlieb hears Wendell say what she herself has said to patients.",
+      "example": "A baker who tells apprentices to rest still bakes through her own sick days until a friend says it to her."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which piece of advice do you give others easily that you have never let someone say back to you?",
+  "use_cases": [
+    {
+      "situation": "A friend always advises everyone else.",
+      "move": "Mention that Gottlieb needed Wendell to say aloud what she told her patients, then ask what they would tell themselves.",
+      "context": "social"
+    },
+    {
+      "situation": "You catch yourself giving a colleague advice you ignore.",
+      "move": "Say the advice out loud to a trusted person as if they were the one hearing it, and notice if it lands differently.",
+      "context": "self"
+    },
+    {
+      "situation": "A family member refuses help because they are the helper.",
+      "move": "Tell them Gottlieb did a few sessions that turned into many, and offer to be the one who listens first.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Even the person who gives the advice needs someone else to say it to her; borrow a second chair.",
+  "conversation_variants": {
+    "punchline_idea": "A therapist heard from her own therapist the sentence she had said to patients for years.",
+    "thirty_sec_idea": "Gottlieb, a therapist, is left by a boyfriend who will not live with her son. Friends send her to Wendell for a few sessions. She cries, then he says her feelings do not have to match what they should be, a line she had said to patients.",
+    "question_idea": "",
+    "key_contrast_idea": "giving advice, hearing it"
+  }
+}

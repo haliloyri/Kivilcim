@@ -1,0 +1,35 @@
+{
+  "story_id": 1567,
+  "kind": "concept",
+  "book": {"title": "The Talent Code", "author": "Daniel Coyle", "year": "2009"},
+  "confidence": "medium",
+  "confidence_note": "Scenes (Brunio, Jennie, futsal, Liverpool study, Miranda quote) come from Coyle's own published excerpt. Myelin description rests on secondary summaries. The 'up to ten times faster' claim and the old text's pianist, lab scene and 'every error sends a message to myelin' were left out as unverified.",
+  "facts": [
+    "From December 2006 Coyle visited nine small talent hotbeds: a tennis court in Moscow, a vocal studio in Dallas, a Caribbean baseball island, a soccer field in Sao Paulo and others.",
+    "He noticed players alternating between fluent, fast movement and slow, halting struggle.",
+    "Brunio, 11, in Sao Paulo, fails at the elastico, slows it down, breaks it into parts, tries each, and something clicks.",
+    "Jennie, 24, in Dallas rehearses the chorus of 'Running Out of Time', stops at each miss and gets the measure on the sixth try.",
+    "Deep practice: targeted struggle at the edge of ability, a sweet spot where reach exceeds grasp; attention to mistakes helps the circuit fire better; the paradox is that struggle makes you smarter.",
+    "Myelin: fatty insulation around neurons; more of it means faster, more accurate signals; builds when a circuit fires repeatedly; living tissue, not fixed at birth; practice makes myelin, myelin makes perfect.",
+    "Futsal: small heavy ball, small court; players touch it about six times more per minute than in outdoor soccer (Liverpool University study cited); Juninho did not play on a full-size grass pitch until 14; Dr. Emilio Miranda: 'No time plus no space equals better skills.'",
+    "Coyle: talent looks predestined but we have a good deal of control over which skills we develop; three elements: deep practice, ignition, master coaching."
+  ],
+  "scene_details": ["Brunio slowing the elastico and splitting it into parts", "Jennie stopping at every miss until the sixth try", "the small heavy futsal ball", "Moscow tennis court, Dallas vocal studio"],
+  "tension": "Players in nine hotbeds spend much of their time stalling and stumbling, yet that is where skill grows.",
+  "opening_idea": "Open on Brunio failing at the elastico and slowing it down.",
+  "lessons": [{"idea": "Put practice time into the exact spot where you stall, slowed down and isolated.", "anchor": "Brunio splitting the elastico into parts; Jennie returning to the failed measure.", "example": "A cook who scorches the sauce at the same step repeats only that step on low heat."}],
+  "reflect": [],
+  "reflect_final": "Which part of something you practise keeps catching you, and what would it look like to slow that stretch down and repeat only it this week?",
+  "use_cases": [
+    {"situation": "You stall at the same spot in something you practise.", "move": "Brunio split his move into parts; slow down the one stretch that fails and repeat only it.", "context": "self"},
+    {"situation": "A colleague is discouraged after a mistake.", "move": "Say the stall is where the practice works and run that one step slowly together.", "context": "oneonone"},
+    {"situation": "A child wants to quit from frustration.", "move": "Cut the skill into pieces and ask for one more try of the first piece.", "context": "family"}
+  ],
+  "pocket_idea": "A boy cut a missed trick into parts and slowed it; rehearse only your first stumble.",
+  "conversation_variants": {
+    "punchline_idea": "Brunio's failed elastico is where Coyle says skill gets built.",
+    "thirty_sec_idea": "Brunio slows and splits a trick until it clicks; Coyle saw stop-and-go in nine hotbeds and ties it to myelin.",
+    "question_idea": "",
+    "key_contrast_idea": "stumble then slow down"
+  }
+}

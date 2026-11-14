@@ -1,0 +1,63 @@
+{
+ "story_id": 1385,
+ "kind": "anecdote",
+ "book": {
+  "title": "Atomic Habits",
+  "author": "James Clear",
+  "year": "2018"
+ },
+ "confidence": "medium",
+ "confidence_note": "The DB title 'Sağlıklı Olmak' (2019) does not exist; this is Atomic Habits (2018), chapter 6, verified on Clear's own site and in Thorndike et al. 2012. The old text's Stanford study with fruit by the registers and an 18% rise is not in the book and is replaced by the book's Massachusetts General Hospital study. Willpower-depletion claims are dropped. Medium because of the title mismatch; the study itself is high. Added from the paper: an earlier labelling phase and a 24-month follow-up.",
+ "facts": [
+  "Anne Thorndike, a primary care physician at Massachusetts General Hospital in Boston, ran a six-month study in the hospital cafeteria.",
+  "The refrigerators next to the cash registers held only soda; her team added water to them and placed baskets of bottled water next to food stations around the room. Soda stayed in the main refrigerators.",
+  "Nobody said a word to the people eating there.",
+  "Over the next three months soda sales fell 11.4% and bottled water sales rose 25.8%. Similar changes to the food produced similar results.",
+  "Context: the published study (Thorndike et al., 2012) first added color-coded traffic-light labels; the water figures come from the later placement phase. A follow-up found the shift toward healthier purchases held for 24 months.",
+  "Clear's point: people often choose products for where they are, not what they are; environment is the invisible hand that shapes behaviour.",
+  "His suggestions: put pill bottles next to the bathroom faucet; fill a few water bottles and set them around the house. Cookies on the counter get eaten without hunger; vitamins in the pantry are easy to skip.",
+  "Clear cites psychologist Kurt Lewin's 1936 equation: behaviour is a function of the person in their environment.",
+  "Clear tells of a Dutch suburb in the 1970s energy crisis: nearly identical houses, some with the electric meter in the basement, others in the main upstairs hallway; households that could see their meter used less energy. The exact percentage is left out (not verified).",
+  "The chapter is titled 'Motivation Is Overrated; Environment Often Matters More'."
+ ],
+ "scene_details": [
+  "refrigerators next to the cash registers that held only soda",
+  "baskets of bottled water next to food stations",
+  "a pill bottle by the bathroom faucet",
+  "an electric meter in the hallway instead of the basement"
+ ],
+ "tension": "Sales shifted without one sign, price change or word to the diners.",
+ "opening_idea": "Start with the refrigerator next to the cash register that held only soda.",
+ "lessons": [
+  {
+   "idea": "Put the healthy option where your hand already goes, and the unhealthy one a step away.",
+   "anchor": "water in the refrigerator next to the register"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which spot in your home does your hand reach for most often, and what healthy thing could you put there tonight?",
+ "use_cases": [
+  {
+   "situation": "Office kitchen keeps sweets on the counter",
+   "move": "Mention the hospital cafeteria that put water by the registers; suggest a fruit bowl in that spot.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You keep forgetting vitamins",
+   "move": "Put the bottle next to the toothbrush.",
+   "context": "self"
+  },
+  {
+   "situation": "Kids snack on chips after school",
+   "move": "Swap the shelf positions of fruit and chips.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "A hospital moved water next to the register and soda sales fell; move the good choice to where your hand goes.",
+ "conversation_variants": {
+  "punchline_idea": "A hospital cut soda sales without saying a word, just by putting water in the fridge by the register.",
+  "thirty_sec_idea": "Thorndike, Mass General, fridge by registers, baskets of water; nobody told; soda -11.4%, water +25.8%; Clear's point.",
+  "question_idea": "",
+  "key_contrast_idea": "placement over willpower"
+ }
+}

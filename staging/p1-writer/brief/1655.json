@@ -1,0 +1,61 @@
+{
+  "story_id": 1655,
+  "kind": "concept",
+  "book": {
+    "title": "Creativity: Flow and the Psychology of Discovery and Invention",
+    "author": "Mihaly Csikszentmihalyi",
+    "year": "1996"
+  },
+  "confidence": "medium",
+  "confidence_note": "Source is thin. The five-step list is cited to the book in secondary sources (p. 79 per one blog); page not read. Old four stages and Newton, Archimedes and Kekule examples dropped as unconfirmed. No named case, so the story stays near the length floor.",
+  "facts": [
+    "The book rests on in-depth interviews with about 91 exceptional individuals from many fields (one catalogue says nearly one hundred).",
+    "Csikszentmihalyi says the creative process normally takes five steps.",
+    "Preparation: becoming immersed in a set of problematic issues.",
+    "Incubation: ideas churn around below the threshold of consciousness.",
+    "Insight: the moment when the pieces of the puzzle fall together.",
+    "Evaluation: deciding whether the insight is worth pursuing.",
+    "Elaboration: the longest and hardest part of the process.",
+    "He warns that the steps are more recursive than linear.",
+    "Caveat: reports of incubation come from creators looking back, sometimes years later, and a 2016 review calls their reliability questionable.",
+    "Graham Wallas drew on Poincare's 1910 account of mathematical creation and named the stage of unconscious work 'incubation'; Poincare's own report concerned events nearly thirty years earlier (editorial context from a 2016 review)."
+  ],
+  "scene_details": [
+    "the aha moment placed third in a list of five",
+    "elaboration named as the longest step"
+  ],
+  "tension": "The moment everyone remembers is the third of five steps, and not the longest.",
+  "opening_idea": "Open on the count: five steps, and the flash of insight is only the third.",
+  "lessons": [
+    {
+      "idea": "Count elaboration as part of the idea",
+      "anchor": "insight as step three of five and elaboration as the longest; Everyday: a home cook who invents a soup in a flash and then adjusts salt and timing for weeks"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of an idea of yours that stalled after the first spark. Which step were you in, and what did it still need?",
+  "use_cases": [
+    {
+      "situation": "A colleague is discouraged that their idea needs more work",
+      "move": "Csikszentmihalyi puts the aha at step three of five and elaboration last and longest. Which step are we in now?",
+      "context": "oneonone"
+    },
+    {
+      "situation": "The team wants quick results from a brainstorm",
+      "move": "Insight is one of five steps. Let's agree on how we will evaluate it before we start building.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You drop ideas once the excitement fades",
+      "move": "The spark is step three. I will write down what elaboration would still ask of me before I give up.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The aha is step three of five. If an idea feels stalled, name which step it is in.",
+  "conversation_variants": {
+    "punchline_idea": "The aha moment is only step three of five in Csikszentmihalyi's account of how creativity works.",
+    "thirty_sec_idea": "Csikszentmihalyi says the creative process normally takes five steps: preparation, incubation, insight, evaluation and elaboration. The aha is third. Elaboration is the longest and hardest. He warns the steps loop more than they line up, and a later review notes that creators' memories of incubation may not be reliable.",
+    "question_idea": "",
+    "key_contrast_idea": "the spark, then the work"
+  }
+}

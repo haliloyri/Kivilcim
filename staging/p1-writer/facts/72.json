@@ -1,0 +1,44 @@
+{
+  "book_no": 72,
+  "title": "The E-Myth Revisited",
+  "authors": ["Michael E. Gerber"],
+  "year": "1995",
+  "note": "DB Turkish title 'İşin Özü', DB year 1986 (original The E-Myth). The Sarah / All About Pies story, the three phases with Harry, and the Ray Kroc chapter are verified in the full text of The E-Myth Revisited (archive.org djvu text; this copy is a later updated printing with 2000 franchise figures). Brief uses The E-Myth Revisited, 1995.",
+  "sources": [
+    "https://archive.org/details/TheEMythRevisitedMichaelE.Gerber",
+    "https://www.shortform.com/pdf/the-e-myth-revisited-pdf-michael-gerber",
+    "https://sive.rs/book/EMythRevisited",
+    "https://en.wikipedia.org/wiki/Ray_Kroc"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "Gerber met Sarah after she had run her pie shop for three years. The shop is called All About Pies, which Gerber says is not its real name. She told him: 'They have been the longest three years of my life.'", "source": "full text ch.1", "confidence": "high"},
+    {"id": "f2", "claim": "Sarah told Gerber she now hates baking pies, cannot stand the thought, smell or sight of pies, and started crying. It was 7 a.m., thirty minutes before opening.", "source": "full text ch.1", "confidence": "high"},
+    {"id": "f3", "claim": "Sarah had been in the shop since 3 a.m., up since 2, and listed the day: get pies ready, open, serve customers, clean up, close, shop, reconcile the cash register, go to the bank, dinner, prepare tomorrow's bake, ending at 9:30 or 10 p.m., then figure out how to pay next month's rent.", "source": "full text ch.1", "confidence": "high"},
+    {"id": "f4", "claim": "Her best friends had told her she was crazy not to open a pie shop because she was so good at it; she saw it as a way out of a horrible job. She kicked the huge black oven and was deep in debt; she had bought the best oak floors, best ovens, charming displays.", "source": "full text ch.1", "confidence": "high"},
+    {"id": "f5", "claim": "Sarah learned baking as a girl from her aunt, who lived with the family; the aunt told her: 'Sarah, dear, we have all the time in the world. Baking pies is not about getting done. It's about baking pies.' Gerber said: 'It's time to learn all about pies all over again.'", "source": "full text ch.1", "confidence": "high"},
+    {"id": "f6", "claim": "Gerber calls the trigger the Entrepreneurial Seizure and names the Fatal Assumption: if you understand the technical work of a business, you understand a business that does that technical work. The technician who starts a business goes through exhilaration, terror, exhaustion and despair.", "source": "full text ch.1", "confidence": "high"},
+    {"id": "f7", "claim": "Everybody who goes into business is three people in one: the Entrepreneur, the Manager and the Technician; each wants to be the boss and none wants a boss. Gerber's typical owner is 10 percent Entrepreneur, 20 percent Manager, 70 percent Technician.", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f8", "claim": "Three phases: Infancy (owner and business are the same; remove the owner and the business disappears; it ends when the owner realizes the business cannot keep running this way), Adolescence (begins when the owner gets help; first hire is typically someone for the books, Gerber's illustrative 'Harry'; the owner hands over and runs: Management by Abdication rather than Delegation), and Maturity (exemplified by McDonald's, Federal Express, Disney, which started out with a mature perspective).", "source": "full text ch.3-6", "confidence": "high"},
+    {"id": "f9", "claim": "When the business grows past the owner's Comfort Zone, it can return to Infancy ('get small' again), go for broke, or hang on for dear life.", "source": "full text ch.5", "confidence": "high"},
+    {"id": "f10", "claim": "Sarah's 'Harry' was Elizabeth, hired when the shop was six months old. Elizabeth did the books, helped bake, cleaned, hired and trained the first three employees and took on more as the business grew over two years. On a Wednesday, June 10th, at seven in the morning, she phoned to say she had taken another job because she could not afford to work for what Sarah paid. The people she hired left soon after. Sarah has done everything herself since: 'I got small again.' 'So, there's my Comfort Zone.' Gerber: 'Start all over again, but differently this time.'", "source": "full text ch.5", "confidence": "high"},
+    {"id": "f11", "claim": "Gerber's diagnosis of Elizabeth: Sarah trusted her blindly and never did the work of agreeing what the role was and setting out the rules; true trust comes from knowing.", "source": "full text ch.5", "confidence": "high"},
+    {"id": "f12", "claim": "A fifty-two-year-old milkshake machine salesman, Ray Kroc, walked into the MacDonald brothers' hamburger stand in San Bernardino, California, to sell them a milkshake machine. It worked 'like a Swiss watch': burgers made quickly, efficiently, inexpensively and identically, by high school kids, and anyone could do it. He convinced the brothers to let him franchise their method and later bought them out.", "source": "full text ch.7; Shortform", "confidence": "high"},
+    {"id": "f13", "claim": "Gerber: the genius of McDonald's is the Business Format Franchise, which gives the franchisee a whole system of doing business, not just a name. 'The hamburger wasn't his product. McDonald's was.' The franchisee wanted to know one thing: 'Does it work?' Kroc built a systems-dependent business, not a people-dependent one, and 'went to work on his business, not in it,' thinking like an engineer on a pre-production prototype.", "source": "full text ch.7", "confidence": "high"},
+    {"id": "f14", "claim": "Sarah objected that her aunt would see McDonald's as the opposite of a model. Gerber answered that McDonald's keeps its promise every time, and that her aunt had one kitchen while Kroc had thousands.", "source": "full text ch.7", "confidence": "high"},
+    {"id": "f15", "claim": "Gerber's advice: go to work on your business rather than in it; treat it as the pre-production prototype of a mass-produceable product; ask how the business can work without you.", "source": "full text ch.8", "confidence": "high"},
+    {"id": "f16", "claim": "Gerber's intro cites: of about a million businesses started each year, at least 40 percent fail in the first year and more than 80 percent within five years.", "source": "full text intro; Shortform", "confidence": "medium"},
+    {"id": "f17", "claim": "Editorial: historical sources date Kroc's first San Bernardino visit to 1954, while the book says 1952. Stories omit the year.", "source": "Wikipedia Ray Kroc", "confidence": "high"}
+  ],
+  "rejected": [
+    {"claim": "Sarah was a man ('en iyi pasta yapan adamdı').", "reason": "Book: Sarah is a woman."},
+    {"claim": "After six months she baked 20 hours a week and managed 60.", "reason": "Not in the book; she had run the shop three years when Gerber met her."},
+    {"claim": "Gerber asks 'Does McDonald's sell good hamburgers?' and says 'McDonald's sells a system, not hamburgers.'", "reason": "Not a book quote; closest real line is 'the hamburger wasn't his product. McDonald's was.'"},
+    {"claim": "More than 80 percent of businesses close in the adolescence stage.", "reason": "Book says over 80 percent fail within five years and that most failures happen when Infancy ends; not tied to Adolescence."},
+    {"claim": "Mature businesses arise after passing through infancy and adolescence.", "reason": "Book says Maturity is not the end product of the first two phases; mature companies start with that perspective."}
+  ],
+  "stories": {
+    "1312": {"verdict": "keep", "fact_ids": ["f1","f2","f3","f4","f5","f6","f7"], "note": "Sarah's 7 a.m. scene and the three personalities."},
+    "1313": {"verdict": "keep", "fact_ids": ["f12","f13","f14","f15","f17"], "note": "Recentered on Kroc's San Bernardino visit and 'the business is the product'; invented hamburger-quality dialogue dropped."},
+    "1314": {"verdict": "keep", "fact_ids": ["f8","f9","f10","f11"], "note": "Recentered on Sarah and Elizabeth as the book's Adolescence case; wrong 80% claim dropped."}
+  }
+}

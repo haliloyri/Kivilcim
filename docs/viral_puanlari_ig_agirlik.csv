@@ -1,0 +1,751 @@
+﻿new_rank,old_rank,story_id,title,main_category,book_title,hook,emotion,share,save,voice,arc,video,trust,old_total,new_total,old_decision,new_decision,recommended_format,fact_check_note
+1,2,1534,Havacılıktan öğrenmek — başarı kültürü vs öğrenme kültürü,Felsefe,Black Box Thinking,14,9,14,13,9,10,20,5,94,94.8,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+2,1,1410,Varsayımda bulunmamak — üçüncü anlaşma,Felsefe,Dört Anlaşma,15,9,14,14,10,10,19,4,95,94.8,Öncelikli video,Öncelikli video,Reel + Carousel,Kaynak kontrolü önerilir
+3,3,1483,Columbia uzay mekiği ve sessizlik bedeli,Liderlik,The Fearless Organization,14,9,14,13,9,10,19,5,93,93.6,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+4,6,1456,Phantom limb — hayalet uzuv ve beynin gerçeği,Psikoloji,Beynin Sırları,14,9,14,13,9,10,18,5,92,92.3,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+5,4,1339,Huffington'ın çöküşü,Sağlık,Uyku Devrimi,15,9,13,13,9,10,19,4,92,92.2,Öncelikli video,Öncelikli video,Reel + Carousel,Kaynak kontrolü önerilir
+6,5,1369,FBI rehine müzakeresi,İletişim,İnsanı Anlamak,15,9,13,13,9,10,19,4,92,92.2,Öncelikli video,Öncelikli video,Reel + Carousel,Kaynak kontrolü önerilir
+7,7,1430,Değişim istemek ile değişmek istemek,Psikoloji,Terapi,15,9,13,13,10,10,18,4,92,91.5,Öncelikli video,Öncelikli video,Reel + Carousel,Kaynak kontrolü önerilir
+8,8,1504,Mevzisel müzakere tuzağı,İletişim,Müzakerede Evet Almak,14,8,14,15,9,10,17,5,92,91.4,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+9,18,1694,Seabiscuit Büyük Buhran'a Nasıl Umut Oldu?,Tarih,Seabiscuit,13,10,14,11,9,9,19,5,90,91.2,Öncelikli video,Öncelikli video,Soru odaklı Reel,Standart doğrulama
+10,17,1788,Aslandan Kaçan Zebra,Sağlık,Why Zebras Don't Get Ulcers,14,10,15,11,10,8,19,3,90,91.1,Öncelikli video,Öncelikli video,Soru odaklı Reel,Kaynak kontrolü şart
+11,10,1472,Uyku ve yaratıcı problem çözme,Verimlilik,Dinlenmenin Gücü,14,9,14,13,9,10,17,5,91,91.1,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+12,11,1547,Moore Yasası ve bileşik büyümenin kavranmayan gücü,Bilim,İkinci Makine Çağı,14,9,14,13,9,10,17,5,91,91.1,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+13,9,1701,Basit Bir Kontrol Listesi Kaç Hayat Kurtarabilir?,Sağlık,The Checklist Manifesto,14,9,13,13,9,10,18,5,91,91.0,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+14,19,1284,Hazine hep başladığın yerde,Büyüme,Kaybedilen Cennet,15,9,13,11,9,9,19,5,90,90.9,Öncelikli video,Öncelikli video,Soru odaklı Reel,Standart doğrulama
+15,16,1720,24 Reçel Neden 6 Reçelden Daha Az Sattı?,Psikoloji,The Paradox of Choice,15,7,14,13,9,7,20,5,90,90.8,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+16,28,1693,Shackleton'ın 800 Millik Kurtuluş Yolculuğu,Tarih,Endurance,14,8,14,10,9,10,19,5,89,90.6,Video kuyruğu,Öncelikli video,Soru odaklı Reel,Standart doğrulama
+17,39,1792,Barışı Öğrenen Sürü,Sağlık,Why Zebras Don't Get Ulcers,13,10,15,8,10,9,20,3,88,90.3,Video kuyruğu,Öncelikli video,Soru odaklı Reel,Kaynak kontrolü şart
+18,20,1303,Hindinin yanlış öğrenimi,Felsefe,Siyah Kuğu,15,8,13,13,9,9,19,4,90,90.2,Öncelikli video,Öncelikli video,Reel + Carousel,Kaynak kontrolü önerilir
+19,21,1321,Polaroid'in anlık cevabı,Verimlilik,Güçlü Sorular,15,8,13,13,9,9,19,4,90,90.2,Öncelikli video,Öncelikli video,Reel + Carousel,Kaynak kontrolü önerilir
+20,22,1345,Kot pantolon ve felç edici özgürlük,Psikoloji,The Paradox of Choice,15,8,13,13,9,9,19,4,90,90.2,Öncelikli video,Öncelikli video,Reel + Carousel,Kaynak kontrolü önerilir
+21,23,1417,Cirque du Soleil ve yeni pazar yaratma,Liderlik,Mavi Okyanus Stratejisi,15,9,13,13,9,9,19,3,90,90.2,Öncelikli video,Öncelikli video,Reel + Carousel,Kaynak kontrolü şart
+22,12,1161,İtfaiyecinin ölümcül sezgisi,Psikoloji,Sezgi Gücü,15,10,13,13,10,8,17,5,91,90.2,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+23,13,1205,Hazinenin geri dönüşü,Büyüme,Kaybedilen Cennet,15,10,13,13,10,8,17,5,91,90.2,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+24,24,1572,Ortak amaç — 'neden' sorusu kültürü bir arada tutar,Liderlik,Kültür Kodu,14,9,14,13,9,9,17,5,90,90.1,Öncelikli video,Öncelikli video,Reel + Carousel,Standart doğrulama
+25,40,1749,Okyanusta 47 Gün: Louis Zamperini,Tarih,Unbroken,13,10,14,9,9,9,19,5,88,89.9,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Standart doğrulama
+26,29,1707,Metroda Bir Cümle Bütün Hikâyeyi Nasıl Değiştirdi?,Büyüme,The 7 Habits of Highly Effective People,12,10,14,11,10,9,19,4,89,89.8,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Kaynak kontrolü önerilir
+27,31,1501,Sezginin gerçek değeri,Tarih,Korkudan Öğrenmek,14,10,15,12,9,8,17,4,89,89.8,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+28,32,1546,Satranç makinesi ve insan-makine işbirliği,Bilim,İkinci Makine Çağı,15,9,15,12,9,8,17,4,89,89.8,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+29,15,1118,H.M.'nin sonsuz şimdi'si,Psikoloji,Beyin Fırtınası,15,10,13,14,10,8,16,5,91,89.7,Öncelikli video,Video kuyruğu,Reel + Carousel,Standart doğrulama
+30,14,1219,Harvard'ın 85 yıllık mutluluk araştırması,Psikoloji,The Good Life,15,10,13,15,10,8,17,3,91,89.6,Öncelikli video,Video kuyruğu,Reel + Carousel,Kaynak kontrolü şart
+31,30,1494,Sosyal bağlantı ve iyileşme,Psikoloji,Kayıp Bağlantılar,15,10,15,13,9,8,17,2,89,89.4,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü şart
+32,25,1115,Ronald Read'in görünmez serveti,Finans,The Psychology of Money,15,10,13,14,9,8,17,4,90,89.4,Öncelikli video,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+33,42,1748,Everest'te Saat İkiyi Geçince,Tarih,Into Thin Air,14,9,13,10,9,9,19,5,88,89.2,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Standart doğrulama
+34,41,1695,Çernobil Gecesi Kontrol Odasında Ne Oldu?,Tarih,Midnight in Chernobyl,14,7,13,12,8,10,19,5,88,89.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+35,33,1441,Kapı tasarımı ve hata yerine kullanıcıyı suçlamak,Verimlilik,Gündelik Nesneler Tasarımı,14,8,14,13,9,9,17,5,89,89.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+36,34,1535,Bilişsel uyumsuzluk — hatayı kabul edememenin psikolojisi,Felsefe,Black Box Thinking,14,9,14,13,9,8,17,5,89,89.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+37,35,1584,Anlam — para ve statünün ötesindeki arayış,Verimlilik,Bütün Beyin,14,9,14,13,9,8,17,5,89,89.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+38,26,1119,Kör nokta ve beynin uydurma sanatı,Psikoloji,Beyin Fırtınası,15,8,13,14,10,8,17,5,90,88.9,Öncelikli video,Video kuyruğu,Reel + Carousel,Standart doğrulama
+39,27,1170,Sistem 1 ve Sistem 2,Psikoloji,Karar Verme Sanatı,15,8,13,14,10,8,17,5,90,88.9,Öncelikli video,Video kuyruğu,Reel + Carousel,Standart doğrulama
+40,36,1086,Notları bıraktığı an,Liderlik,Başlangıç Noktası,15,10,13,12,10,8,17,4,89,88.6,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+41,37,1462,Hafıza şampiyonlarıyla yarışmak,Felsefe,Kalıcı Hafıza,14,9,14,14,9,8,16,5,89,88.5,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+42,43,1489,Rat Park deneyi — bağımlılığın gerçek nedeni,Felsefe,Bağımlılık Çağı,14,10,15,13,9,8,17,2,88,88.4,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü şart
+43,53,1697,Bronz Madalya Kazananlar Neden Daha Mutlu?,Psikoloji,The Power of Regret,15,9,14,10,9,7,18,5,87,88.3,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Standart doğrulama
+44,52,1729,Filler Ayaklarıyla Kilometrelerce Öteyi Nasıl Dinliyor?,Psikoloji,An Immense World,13,9,14,11,9,8,19,4,87,88.2,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Kaynak kontrolü önerilir
+45,45,1162,Sahte antika ve uzman gözü,Psikoloji,Sezgi Gücü,15,9,13,13,9,8,17,4,88,87.8,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+46,38,1096,Tepki verme özgürlüğü — Viktor Frankl'dan öğrenilen ders,Büyüme,The 7 Habits of Highly Effective People,15,10,13,14,10,8,16,3,89,87.7,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü şart
+47,47,1447,"Hayat kısa değil, biz onu israf ediyoruz",Felsefe,Hayatın Kısalığı Üzerine,14,9,14,14,9,7,16,5,88,87.5,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+48,50,1619,Şeytan döngüsü — saldır ve çekil sarmalı,İletişim,İlişki Psikolojisi,13,9,14,14,9,8,16,5,88,87.5,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+49,44,1536,Marginal kazanımlar — Tour de France'ta bisiklet ekibi devrimi,Felsefe,Black Box Thinking,13,8,14,15,9,7,17,5,88,87.4,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+50,67,1765,Fırçayı Dudağında Sivriltmek,Psikoloji,The Radium Girls,13,9,14,10,9,8,18,5,86,87.3,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Standart doğrulama
+51,84,1759,Ölmeyi Reddeden Hücreler,Psikoloji,The Immortal Life of Henrietta Lacks,14,10,14,9,8,9,18,3,85,87.2,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Kaynak kontrolü şart
+52,55,1734,Uçağı Beş Dakika Kaçırmak Neden Otuz Dakikadan Daha Çok Acıtır?,Finans,The Undoing Project,14,10,14,11,10,8,17,3,87,87.2,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Kaynak kontrolü şart
+53,48,1463,Hafıza sarayı ve uzamsal kodlama,Felsefe,Kalıcı Hafıza,13,8,14,15,9,8,16,5,88,87.2,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+54,49,1516,Anne testi nedir,Verimlilik,Müşteri Geliştirme,14,8,14,15,9,7,16,5,88,87.2,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+55,54,1542,Napkin'de doğan fikirler — büyük kararların basit başlangıçları,Verimlilik,Peçete Arkası,14,8,14,13,9,7,17,5,87,87.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+56,56,1718,Sezar Rubicon’u Geçtiğinde Neden Geri Dönüş Yoktu?,Psikoloji,Rubicon,13,9,13,12,9,9,17,5,87,87.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+57,57,1732,Kokpitte Kaptana İtiraz Etmek Neden Bir Güvenlik Kuralına Dönüştü?,Felsefe,Black Box Thinking,13,9,13,12,9,9,17,5,87,87.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+58,46,1123,Michael Phelps'in görselleştirme rutini,Sağlık,Alışkanlıkların Gücü,15,9,12,14,9,8,17,4,88,87.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+59,61,1448,Ertelemenin ölümcül yanılgısı,Felsefe,Hayatın Kısalığı Üzerine,15,9,14,13,9,7,16,4,87,86.8,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+60,66,1786,Dört Bin Haftalık Ömür,Verimlilik,Four Thousand Weeks,14,6,15,13,9,7,18,4,86,86.7,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+61,51,1152,Toplama kampında anlam arayışı,Felsefe,Büyük Soru,15,10,13,14,10,8,16,2,88,86.7,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü şart
+62,74,1725,2008 Krizi Tony Robbins’in Sorusunu Nasıl Değiştirdi?,Finans,Money: Master the Game,13,9,13,12,8,9,17,5,86,86.6,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+63,62,1486,Johann Hari'nin telefon deneyi,Verimlilik,Çalınan Dikkat,14,9,14,14,9,7,16,4,87,86.5,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+64,59,1112,Michelin rehberinin doğuşu,Finans,Purple Cow,15,8,12,13,9,8,17,5,87,86.4,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+65,68,1264,Edison'ın fabrika yangını,Felsefe,Engel Yolu Açar,14,8,13,12,9,9,18,3,86,86.3,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü şart
+66,70,1315,Instagram'ın pivot mucizesi,Bilim,Müşteriyi Anlamak,14,7,13,12,9,9,18,4,86,86.3,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+67,72,1726,Mendel’in Bezelyeleri Neden Otuz Yıl Sessiz Kaldı?,Psikoloji,The Gene,13,8,13,12,9,8,18,5,86,86.3,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+68,83,1804,Sekiz Mikserlik Sinyal,Liderlik,Grinding It Out,13,6,14,11,9,9,19,4,85,86.2,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Kaynak kontrolü önerilir
+69,71,1363,Dave Goldberg'i kaybetmek,Büyüme,Zihinsel Dayanıklılık,14,9,13,11,10,9,18,2,86,86.2,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Kaynak kontrolü şart
+70,75,1731,George Ferris Paris’in Kulesine Nasıl Cevap Verdi?,Psikoloji,The Devil in the White City,13,8,13,12,9,9,17,5,86,86.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+71,58,1088,Zappos'un sıfır stoklu ilk satışı,Verimlilik,Büyük Sıçrayış,15,8,12,14,9,8,17,4,87,86.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+72,60,1121,Alcoa'nın beklenmedik dönüşümü,Sağlık,Alışkanlıkların Gücü,15,8,12,14,9,8,17,4,87,86.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+73,69,1311,Gecikme ve sabırsızlık tuzağı,Felsefe,Thinking in Systems,14,7,13,13,9,8,18,4,86,86.0,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+74,65,1197,Vietnam gazilerinin dondurulmuş anları,Sağlık,Bedenin Sesi,15,10,12,12,10,8,16,4,87,86.0,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+75,94,1781,Kanla Kurulan Bir Yalan,Liderlik,Bad Blood,13,7,14,9,9,9,19,4,84,85.9,Revize et,Video kuyruğu,Kart testi,Kaynak kontrolü önerilir
+76,86,1710,Dokuz İşçi Sınıfı Genci Berlin’de Tarihe Nasıl Dokundu?,Tarih,The Boys in the Boat,13,9,13,12,8,9,18,3,85,85.8,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü şart
+77,63,1525,Berbat ilk taslak,Finans,Parça Parça Yazmak,13,9,13,15,9,7,16,5,87,85.8,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+78,64,1558,Acıyı ikiye katlamak — birincil ve ikincil acı,Psikoloji,Radikal Kabul,13,9,13,15,9,7,16,5,87,85.8,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+79,89,1764,Zehirin Cezasız Kaldığı Çağ,Psikoloji,The Poisoner's Handbook,13,9,13,12,8,8,17,5,85,85.6,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+80,76,1120,Bölünmüş beyin ve iki ben,Psikoloji,Beyin Fırtınası,15,8,12,13,9,8,17,4,86,85.4,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+81,95,1696,Bedavanın Gizli Maliyeti,Psikoloji,Predictably Irrational,13,7,14,10,9,9,18,4,84,85.3,Revize et,Video kuyruğu,Kart testi,Kaynak kontrolü önerilir
+82,85,1402,Hush Puppies'in gizemli dirilişi,Felsefe,Devrilme Noktası,14,7,13,12,9,9,18,3,85,85.3,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü şart
+83,96,1692,Lincoln Neden Rakiplerini Kabinesine Aldı?,Tarih,Rakipler Takımı,13,8,13,9,9,9,18,5,84,85.3,Revize et,Video kuyruğu,Kart testi,Standart doğrulama
+84,99,1736,En İyi Ekipler Neden Daha Çok Hata Bildiriyordu?,Liderlik,The Fearless Organization,12,9,13,11,8,9,18,4,84,85.2,Revize et,Video kuyruğu,Carousel,Kaynak kontrolü önerilir
+85,101,1741,Ryan Holiday Neden Sakinliği Bir Performans Gücü Saydı?,Felsefe,Stillness Is the Key,12,9,13,11,8,9,18,4,84,85.2,Revize et,Video kuyruğu,Carousel,Kaynak kontrolü önerilir
+86,73,1330,Değerlerin hiyerarşisi,Büyüme,Özgür Olmak,14,7,13,13,10,8,17,4,86,85.2,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü önerilir
+87,80,1172,Linda problemi ve konjunksiyon hatası,Psikoloji,Karar Verme Sanatı,15,8,12,13,9,8,16,5,86,85.2,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+88,87,1279,Zırh kuşanmak ve yalnızlık,Liderlik,Karanlığın Ötesi,14,8,13,12,9,9,17,3,85,85.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Kaynak kontrolü şart
+89,77,1238,Katlanarak büyüme paradoksu,Bilim,Doğrusal Olmayan Gelecek,15,7,12,14,9,7,17,5,86,85.1,Video kuyruğu,Video kuyruğu,Reel + Carousel,Standart doğrulama
+90,90,1191,Howard Hughes'un çöküşü,Felsefe,Ego Is the Enemy,15,9,12,11,9,8,17,4,85,85.1,Video kuyruğu,Video kuyruğu,Soru odaklı Reel,Kaynak kontrolü önerilir
+91,142,1704,İyi Niyetli Bir Tabela Hırsızlığı Nasıl Artırdı?,Psikoloji,Influence,14,5,14,12,7,8,19,4,83,84.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+92,97,1717,Nicholas Carr Neden Bir Kitabı Bitiremez Oldu?,Bilim,The Shallows,12,9,13,11,9,8,18,4,84,84.7,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+93,98,1730,Tim Ferriss Şirketinden Uzaklaşınca Neden İşler Düzelmeye Başladı?,Verimlilik,The 4-Hour Workweek,12,8,13,11,9,9,18,4,84,84.7,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+94,100,1740,İtalya’daki Espresso Barı Starbucks Toplantısını Nasıl Değiştirdi?,Finans,Pour Your Heart Into It,12,9,13,11,9,8,18,4,84,84.7,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+95,79,1142,Arenada dövüşmek,Büyüme,Cesaret Vermek,14,9,12,13,10,7,16,5,86,84.7,Video kuyruğu,Revize et,Reel + Carousel,Standart doğrulama
+96,81,1180,Korkuyla dans etmek,Verimlilik,Yaratıcı Olmak,14,9,12,13,10,7,16,5,86,84.7,Video kuyruğu,Revize et,Reel + Carousel,Standart doğrulama
+97,102,1612,Zengin görünmek ile zengin olmak — sessiz servetin sırrı,Finans,Komşu Milyoner,13,8,14,13,8,7,17,4,84,84.6,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+98,104,1573,Öz meşrulaştırma — zihin nasıl kendini korur,Psikoloji,Hataları Kucaklamak,13,8,13,12,8,8,17,5,84,84.6,Revize et,Revize et,Carousel,Standart doğrulama
+99,110,1722,Pixar’da Bir Filmi Kurtaran Toplantının Patronu Yoktu,Finans,"Creativity, Inc.",13,8,13,12,8,8,17,5,84,84.6,Revize et,Revize et,Carousel,Standart doğrulama
+100,88,1370,Hayır'ın gücü,İletişim,İnsanı Anlamak,13,7,13,14,9,8,17,4,85,84.4,Video kuyruğu,Revize et,Reel + Carousel,Kaynak kontrolü önerilir
+101,103,1222,Marilyn Monroe'nun soyunma odası,İletişim,Karizmatik Olmak,15,9,13,11,9,8,17,2,84,84.4,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+102,111,1733,Beş Küçük Rica Chicken Soup’u Nasıl Fenomene Dönüştürdü?,Büyüme,The Success Principles,12,9,13,11,9,9,17,4,84,84.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+103,112,1735,Lencioni Neden Takım Sorununu Strateji Değil Güven Diye Okudu?,Liderlik,The Five Dysfunctions of a Team,12,9,13,11,9,9,17,4,84,84.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+104,113,1737,Marie Kondo Neden “Bu Bana Neşe Veriyor mu?” Diye Sordu?,Felsefe,The Life-Changing Magic of Tidying Up,12,9,13,11,9,9,17,4,84,84.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+105,114,1754,Zenginliğin Ölümcül Olduğu Topraklar,Tarih,Killers of the Flower Moon,13,8,13,11,9,8,17,5,84,84.4,Revize et,Revize et,Carousel,Standart doğrulama
+106,115,1766,Görünmeyen Katili Yıkamak,Psikoloji,The Butchering Art,13,8,13,11,9,8,17,5,84,84.4,Revize et,Revize et,Carousel,Standart doğrulama
+107,78,1117,Yeterince zengin olmak — tatminsizlik tuzağı,Finans,The Psychology of Money,14,8,12,14,10,7,16,5,86,84.3,Video kuyruğu,Revize et,Reel + Carousel,Standart doğrulama
+108,82,1425,Düşünceler gerçek değildir,Psikoloji,Mindfulness,13,8,12,14,10,8,16,5,86,84.3,Video kuyruğu,Revize et,Reel + Carousel,Standart doğrulama
+109,174,1763,Elinde Eriyen Kaşık,Psikoloji,The Disappearing Spoon,12,8,14,8,9,8,19,4,82,84.2,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+110,143,1721,Kıtalar Bir Yapboz Gibi Uyuşuyorsa Tesadüf müydü?,Psikoloji,A Short History of Nearly Everything,12,8,13,11,8,9,18,4,83,84.2,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+111,106,1598,Beyin-bağırsak aksı — duygu ve mikrop bağlantısı,Sağlık,İyi Bağırsak,14,8,13,13,8,8,17,3,84,84.2,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+112,150,1745,Kağıdı Batıya Taşıyan Savaş,Tarih,The Silk Roads,13,8,13,9,9,9,17,5,83,84.1,Revize et,Revize et,Kart testi,Standart doğrulama
+113,91,1312,Pasta dükkanı sahibinin hatası,Verimlilik,İşin Özü,14,7,12,14,9,9,17,3,85,84.1,Video kuyruğu,Revize et,Reel + Carousel,Kaynak kontrolü şart
+114,213,1771,Karısını Şapka Sanan Adam,Finans,The Man Who Mistook His Wife for a Hat,14,5,14,8,8,8,20,4,81,84.0,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+115,107,1600,Yanlış nefes almak — sessiz salgın,Sağlık,Nefes,13,8,13,14,8,8,17,3,84,83.9,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+116,108,1603,Wim Hof'un dağı — imkansız olduğu söylenenin kanıtı,Sağlık,Soğuk Yöntem,13,8,13,13,9,8,17,3,84,83.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+117,116,1101,Hal Elrod'un ölümden dönüşü,Sağlık,Sabah Rutini,15,10,12,12,9,8,17,1,84,83.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+118,122,1562,Otomatik pilot — zihnin nerede olduğundan habersiz yaşamak,Sağlık,Farkındalık Temelli Yaşam,13,8,13,14,8,7,16,5,84,83.7,Revize et,Revize et,Carousel,Standart doğrulama
+119,124,1576,Ödül paradoksu — para motivasyonu öldürebilir,Büyüme,İşte Anlam,13,8,13,14,8,7,16,5,84,83.7,Revize et,Revize et,Carousel,Standart doğrulama
+120,126,1593,Egzersiz — tek ilaç gibi çalışan tek değişken,Sağlık,Uzun Ömür,13,8,13,14,8,7,16,5,84,83.7,Revize et,Revize et,Carousel,Standart doğrulama
+121,128,1615,Çığlık atan bebek ve kar topu — borcun psikolojik savaşı,Finans,Borç Devrimi,13,8,13,14,8,7,16,5,84,83.7,Revize et,Revize et,Carousel,Standart doğrulama
+122,129,1618,Duygusal bağ — yetişkin bağlanmasının temel ihtiyacı,İletişim,İlişki Psikolojisi,13,8,13,14,8,7,16,5,84,83.7,Revize et,Revize et,Carousel,Standart doğrulama
+123,92,1125,Subaylar en son yer,Liderlik,Liderlik Sanatı,14,9,12,13,10,7,16,4,85,83.7,Video kuyruğu,Revize et,Reel + Carousel,Kaynak kontrolü önerilir
+124,175,1791,"Aynı Elektrik, İki Farklı Sıçan",Sağlık,Why Zebras Don't Get Ulcers,13,6,14,10,9,8,19,3,82,83.6,Revize et,Revize et,Kart testi,Kaynak kontrolü şart
+125,109,1609,Maliyet paradoksu — daha fazla ödemek daha az kazandırır,Finans,Mantıklı Borsa,13,7,13,15,8,7,17,4,84,83.6,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+126,152,1758,Bakterilerin Sakladığı Makas,Psikoloji,The Code Breaker,13,7,13,12,8,8,17,5,83,83.6,Revize et,Revize et,Carousel,Standart doğrulama
+127,117,1453,Sekiz gün sekiz yıla bedel,Psikoloji,Neşeyi Seç,13,8,13,13,9,7,16,5,84,83.5,Revize et,Revize et,Carousel,Standart doğrulama
+128,121,1553,Sahte uyum tuzağı — çatışmadan kaçmak neden ekibi yavaşlatır,Liderlik,The Five Dysfunctions of a Team,13,8,13,13,9,7,16,5,84,83.5,Revize et,Revize et,Carousel,Standart doğrulama
+129,123,1571,Kırılganlığın döngüsü — zayıflık göstermek gücü artırır,Liderlik,Kültür Kodu,13,8,13,13,9,7,16,5,84,83.5,Revize et,Revize et,Carousel,Standart doğrulama
+130,93,1349,Geri çağırma pratiği ve illüzyon bilgisi,Felsefe,Öğrenmeyi Öğrenmek,13,7,12,15,9,8,16,5,85,83.5,Video kuyruğu,Revize et,Reel + Carousel,Standart doğrulama
+131,105,1597,Mikrobiyom — içimizdeki gizli organ,Sağlık,İyi Bağırsak,13,8,13,14,9,7,17,3,84,83.4,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+132,145,1300,Şempanze testi ve insan yanılgısı,Felsefe,Akıl Yürütme,14,7,13,11,9,8,17,4,83,83.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+133,147,1708,Bir Gazete Haberi Zekâ Tanımını Nasıl Değiştirdi?,Psikoloji,Emotional Intelligence,12,8,13,11,9,9,17,4,83,83.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+134,148,1711,Zengin Görünmek ile Zengin Olmak Arasındaki Fark,Finans,The Simple Path to Wealth,12,9,13,11,9,8,17,4,83,83.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+135,149,1742,Bir Telefon Görüşmesi Neden Mutluluk Araştırmasına Dönüştü?,Psikoloji,The Good Life,12,9,13,11,9,8,17,4,83,83.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+136,151,1752,Sessizlik Antlaşması Nasıl Çözüldü?,Tarih,Say Nothing,13,8,13,11,9,7,17,5,83,83.4,Revize et,Revize et,Carousel,Standart doğrulama
+137,154,1342,Panik atağından meditasyona,Psikoloji,Meditasyon,14,8,12,10,9,9,17,4,83,83.4,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+138,140,1610,Haystack'i satın al — tüm samanlığı almak neden kazandırır,Finans,Mantıklı Borsa,13,8,13,14,8,8,15,5,84,83.4,Revize et,Revize et,Carousel,Standart doğrulama
+139,119,1526,Bir inç çerçevesi,Finans,Parça Parça Yazmak,13,7,13,15,8,7,16,5,84,83.3,Revize et,Revize et,Carousel,Standart doğrulama
+140,176,1770,İyi İnsanları Değiştiren Rol,Finans,The Lucifer Effect,13,5,13,11,8,9,18,5,82,83.2,Revize et,Revize et,Carousel,Standart doğrulama
+141,118,1471,Darwin'in yürüyüş yolu,Verimlilik,Dinlenmenin Gücü,13,7,13,14,9,7,16,5,84,83.2,Revize et,Revize et,Carousel,Standart doğrulama
+142,125,1591,Healthspan — uzun yaşamak değil iyi yaşamak,Sağlık,Uzun Ömür,13,8,13,14,9,7,16,4,84,83.2,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+143,133,1143,Her sabah yatağını topla,Büyüme,Fark Yaratmak,14,8,12,13,9,7,16,5,84,83.2,Revize et,Revize et,Carousel,Standart doğrulama
+144,134,1164,Hamburg'da geçen saatler,Liderlik,10.000 Saat Kuralı,14,9,12,13,9,8,16,3,84,83.2,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+145,144,1292,McDonald's aslında ne satıyor?,Finans,Zengin Baba Fakir Baba,14,7,13,12,9,8,17,3,83,83.1,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+146,146,1475,Tarım devrimi — insanlığın en büyük aldatmacası,Tarih,İnsanlığın Kısa Tarihi,13,8,13,12,9,7,17,4,83,83.1,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+147,131,1116,Şans ve risk — Bill Gates'in okul arkadaşı,Finans,The Psychology of Money,14,9,12,12,10,7,16,4,84,83.0,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+148,136,1187,Paraşütle atlayan kadın,Büyüme,Korkusuzluk,14,9,12,12,10,7,16,4,84,83.0,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+149,181,1699,PayPal'ın Rakip Kurucuları Nasıl Takım Oldu?,Liderlik,The Founders,13,6,13,11,8,9,17,5,82,82.9,Revize et,Revize et,Carousel,Standart doğrulama
+150,183,1719,Uykusuz Bir Cerrah Ne Zaman Yardım İstemeli?,Finans,Complications,12,9,13,11,8,8,17,4,82,82.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+151,187,1739,Seth Godin Neden Mor Bir İnek Aradı?,Finans,Purple Cow,12,9,13,11,8,8,17,4,82,82.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+152,186,1728,David Goggins Aynadaki Adamla Neden Konuştu?,Büyüme,Can't Hurt Me,13,7,13,10,9,8,17,5,82,82.8,Revize et,Revize et,Kart testi,Standart doğrulama
+153,188,1746,Roma'yı Büyüten Sıra Dışı Karar,Tarih,SPQR,13,8,13,10,9,9,17,3,82,82.8,Revize et,Revize et,Kart testi,Kaynak kontrolü şart
+154,153,1193,Edison'ın fabrika yangını,Felsefe,Engel Yolu Açar,15,9,12,12,9,8,17,1,83,82.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+155,120,1537,10.000 saat efsanesi ve Anders Ericsson'un gerçek bulgusu,Liderlik,Sıçramak,13,7,13,15,9,7,16,4,84,82.8,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+156,127,1611,Piyasa zamanlaması yanılgısı — içeride kalmak neden her şeyden önemli,Finans,Mantıklı Borsa,13,7,13,15,9,7,16,4,84,82.8,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+157,130,1100,Övgünün tehlikeli iki yüzü,Psikoloji,Zihin Gücü,14,8,12,14,9,7,16,4,84,82.8,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+158,138,1236,Kahraman ve rehber,Finans,Hikaye Anlatıcısı,14,7,12,14,9,7,16,5,84,82.8,Revize et,Revize et,Carousel,Standart doğrulama
+159,215,1755,Amazon'un Yuttuğu Kaşif,Tarih,The Lost City of Z,13,8,13,8,9,7,18,5,81,82.7,Revize et,Revize et,Kart testi,Standart doğrulama
+160,132,1136,Karakter ve ahlakın kökeni,Psikoloji,Sosyal Hayvan,14,8,12,13,10,7,16,4,84,82.7,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+161,137,1190,Epiktetos'un özgürlüğü,Felsefe,Stillness Is the Key,14,9,12,13,10,7,16,3,84,82.7,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+162,155,1375,Marcus Aurelius'un gizli günlüğü,Felsefe,Stoacılık,13,8,12,11,10,8,17,4,83,82.6,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+163,218,1803,Saatin İki Dili,Liderlik,The Culture Map,12,7,13,10,8,8,18,5,81,82.5,Revize et,Revize et,Kart testi,Standart doğrulama
+164,156,1493,İş ve anlam — Londra bankacısı,Psikoloji,Kayıp Bağlantılar,13,8,13,13,9,7,16,4,83,82.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+165,157,1538,Tenis prodigisi ve fırsat ortamının gizli rolü,Liderlik,Sıçramak,13,8,13,13,9,7,16,4,83,82.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+166,158,1543,Sosyal kanıt — otelin havlu deneyi,Psikoloji,Evet Dedirtmek,13,7,13,13,9,7,16,5,83,82.5,Revize et,Revize et,Carousel,Standart doğrulama
+167,159,1568,Tutuşma anı — motivasyonun kimliğe dönüştüğü an,Liderlik,Yetenek Kodu,13,8,13,13,9,7,16,4,83,82.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+168,160,1574,Bellek yanılsaması — hatırladıklarımız ne kadar gerçek,Psikoloji,Hataları Kucaklamak,13,8,13,13,9,7,16,4,83,82.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+169,161,1577,Özerklik — kontrol etmek değil yönlendirmek,Büyüme,İşte Anlam,13,7,13,13,9,7,16,5,83,82.5,Revize et,Revize et,Carousel,Standart doğrulama
+170,135,1182,Bileşik faizin sihri,Finans,Money: Master the Game,15,8,12,15,9,7,16,2,84,82.5,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+171,179,1317,Değişken ödül ve kumar psikolojisi,Bilim,Müşteriyi Anlamak,14,7,13,11,9,8,17,3,82,82.4,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+172,182,1715,Nir Eyal’i Kendi Kızıyla Kaçırdığı An Durdurdu,Verimlilik,Indistractable,12,8,13,11,9,8,17,4,82,82.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+173,184,1723,Bir Gölü Kurtarmak Neden Musluğu Kapatmak Kadar Hızlı Değildir?,Felsefe,Thinking in Systems,12,8,13,11,9,8,17,4,82,82.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+174,185,1724,Darwin Smith Neden Şirketinin Fabrikalarını Sattı?,Verimlilik,Good to Great,12,8,13,11,9,8,17,4,82,82.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+175,189,1768,Oyun Bahçesinden Ekrana Geçiş,Finans,The Anxious Generation,13,7,13,11,9,7,17,5,82,82.4,Revize et,Revize et,Carousel,Standart doğrulama
+176,141,1148,"Sınır koymak ilişkileri yıkmaz, güçlendirir",Büyüme,Sınırlar,14,9,12,13,10,7,15,4,84,82.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+177,216,1756,Soluk Mavi Nokta,Psikoloji,Cosmos,12,7,13,11,8,7,18,5,81,82.2,Revize et,Revize et,Carousel,Standart doğrulama
+178,178,1267,Roger Federer'in 12 saat uyku sırrı,Sağlık,Neden Uyuyoruz,14,7,13,13,8,8,17,2,82,82.2,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+179,162,1587,Işık ve uyku — ekranların biyolojik bedeli,Sağlık,Sirkadyen Kod,13,7,13,14,9,7,16,4,83,82.2,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+180,163,1607,Büyük kazançlara odaklanmak — latte faktörünün yanlışı,Finans,Zengin Olmayı Öğrenmek,13,7,13,14,9,7,16,4,83,82.2,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+181,192,1247,Korkunun yolcu olması,Verimlilik,Yaratıcı Olmak,13,8,13,11,9,8,16,4,82,82.2,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+182,164,1166,Ocak doğanların ligi,Liderlik,10.000 Saat Kuralı,14,8,12,13,9,7,16,4,83,82.2,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+183,139,1094,Büyük taşlar ve kavanoz dersi,Büyüme,The 7 Habits of Highly Effective People,13,8,11,14,10,8,16,4,84,82.0,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+184,190,1253,Hafıza şampiyonlarının tekniği,Felsefe,Zihin Haritası,13,7,12,13,8,8,17,4,82,81.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+185,169,1455,Acı ve neşe bir arada,Psikoloji,Neşeyi Seç,12,8,13,14,9,7,15,5,83,81.9,Revize et,Revize et,Carousel,Standart doğrulama
+186,220,1743,168 Kişi Bir İmparatorluğu Nasıl Esir Aldı?,Tarih,"Guns, Germs, and Steel",13,8,13,10,9,8,17,3,81,81.8,Revize et,Revize et,Kart testi,Kaynak kontrolü şart
+187,253,1793,Kapını Her Sabah Çalan Ortak,Finans,The Intelligent Investor,13,7,13,10,7,8,17,5,80,81.8,Revize et,Revize et,Kart testi,Standart doğrulama
+188,196,1513,Sabit disk sanayisinin dersi,Verimlilik,Yıkıcı İnovasyon,13,7,13,12,9,7,16,5,82,81.8,Revize et,Revize et,Carousel,Standart doğrulama
+189,165,1200,Öğle sarhoşluğu ve dinlenme bilimi,Verimlilik,Saatlerin Efendisi,14,8,12,14,9,7,16,3,83,81.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+190,168,1406,İki dakika kuralı,Verimlilik,Nasıl Başarılı Olunur,13,7,12,14,9,8,16,4,83,81.8,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+191,214,1709,Servet Neden Genellikle Görünmezdir?,Finans,The Psychology of Money,12,7,13,11,9,8,18,3,81,81.7,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+192,217,1784,Sonuna Kadar İyi Yaşamak,Sağlık,Being Mortal,12,8,13,11,9,7,18,3,81,81.7,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+193,167,1318,Rahatsızlıktan kaçma dürtüsü,Verimlilik,Indistractable,13,7,12,13,10,8,16,4,83,81.7,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+194,177,1239,İnsan-makine entegrasyonu,Bilim,Doğrusal Olmayan Gelecek,15,8,13,12,10,6,17,1,82,81.6,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+195,180,1355,Beş büyük pişmanlık,Büyüme,Lider Yok Köle Yok,14,8,13,12,10,7,17,1,82,81.6,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+196,252,1753,Aynı Kazadan İki Farklı Gerçek,Tarih,The Wager,13,7,13,9,8,8,17,5,80,81.6,Revize et,Revize et,Kart testi,Standart doğrulama
+197,170,1511,Kontrol dışındaki şeylerle barışmak,Felsefe,Pratik Stoacılık,12,7,13,15,9,7,15,5,83,81.6,Revize et,Revize et,Carousel,Standart doğrulama
+198,241,1776,"Şimdiki Bir mi, Sonraki İki mi?",Finans,The Marshmallow Test,13,5,13,10,8,8,18,5,80,81.5,Revize et,Revize et,Kart testi,Standart doğrulama
+199,193,1268,Uyku yoksunluğu ve tıbbi hatalar,Sağlık,Neden Uyuyoruz,14,8,13,13,9,7,16,2,82,81.5,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+200,194,1357,Müşteri kim sorusu,Finans,Unutulmaz Markalar,13,7,13,13,9,7,16,4,82,81.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+201,195,1490,Uyuşturucu savaşının paradoksu,Felsefe,Bağımlılık Çağı,13,8,13,13,9,7,16,3,82,81.5,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+202,197,1539,Placebo etkisi ve zihnin performans üzerindeki gücü,Liderlik,Sıçramak,13,8,13,13,9,7,16,3,82,81.5,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+203,239,1807,Hamburgerin Altındaki Arsa,Liderlik,Grinding It Out,13,5,13,11,8,7,19,4,80,81.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+204,219,1716,Kendi Adını Söylemek Stresi Nasıl Azaltabilir?,Finans,Chatter,12,7,13,11,9,8,17,4,81,81.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+205,191,1427,"Yirmi yıllık hekim, beş yıllık hekim",Liderlik,Yetenek Yanılgısı,13,7,12,13,9,8,17,3,82,81.4,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+206,166,1295,Korkular listesi ve felsefeyi tersine çevirmek,Verimlilik,The 4-Hour Workweek,13,7,12,14,10,7,16,4,83,81.3,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+207,199,1195,Uyku ve beyin temizliği,Sağlık,Neden Uyuyoruz,15,8,12,14,8,7,16,2,82,81.3,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+208,200,1325,İçsel eleştirmenin sesi,Verimlilik,Yaratıcı Beyin,13,8,12,11,10,8,16,4,82,81.3,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+209,240,1747,Bisikletçilerin Rüzgar Tüneli,Tarih,The Wright Brothers,13,5,13,11,8,7,18,5,80,81.2,Revize et,Revize et,Carousel,Standart doğrulama
+210,198,1599,Lif — mikrobiyomun birincil yakıtı ve modern diyetin en büyük eksikliği,Sağlık,İyi Bağırsak,13,7,13,14,9,7,16,3,82,81.2,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+211,201,1372,Neşe tetikleyici yöntemi,Felsefe,The Life-Changing Magic of Tidying Up,13,7,12,13,9,8,16,4,82,81.2,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+212,244,1276,PayPal mafyasının gizemi,Verimlilik,Sıfır'dan Bir'e,14,7,13,9,9,8,17,3,80,81.1,Revize et,Revize et,Kart testi,Kaynak kontrolü şart
+213,251,1751,Bombardıman Altında Görünür Olmak,Tarih,The Splendid and the Vile,13,6,13,9,9,8,17,5,80,81.1,Revize et,Revize et,Kart testi,Standart doğrulama
+214,171,1198,Güvenli beden ve iyileşme,Sağlık,Bedenin Sesi,14,9,11,13,10,7,15,4,83,81.1,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+215,242,1789,Bedenin Yakıtı Yanlış Yere Akınca,Sağlık,Why Zebras Don't Get Ulcers,12,9,13,10,9,6,18,3,80,81.0,Revize et,Revize et,Kart testi,Kaynak kontrolü şart
+216,243,1805,Menüyü Küçülten Mutfak,Liderlik,Grinding It Out,12,7,13,10,9,7,18,4,80,81.0,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+217,202,1431,Hikaye anlatımı ve kendini kurban etmek,Psikoloji,Terapi,13,8,12,12,10,8,16,3,82,81.0,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+218,223,1079,Restoran garsonunun bahşiş sırrı,Psikoloji,Influence,14,8,12,12,8,7,16,4,81,81.0,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+219,247,1700,Rastgele Yürüyen Bir Piyasa Yenilebilir mi?,Finans,A Random Walk Down Wall Street,13,5,13,11,8,8,17,5,80,80.9,Revize et,Revize et,Carousel,Standart doğrulama
+220,249,1703,Bir Kaza James Clear’ın Alışkanlık Fikrini Nasıl Değiştirdi?,Sağlık,Atomic Habits,12,7,13,11,8,8,17,4,80,80.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+221,250,1714,Dinlemek Neden Konuşmaktan Daha Zordur?,Psikoloji,You're Not Listening,12,6,13,11,8,9,17,4,80,80.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+222,205,1503,Şiddetin öngörülebilirliği,Tarih,Korkudan Öğrenmek,12,8,13,14,9,7,15,4,82,80.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+223,206,1613,Ekonomik giden rüzgar — aile desteğinin gizli bedeli,Finans,Komşu Milyoner,12,8,13,14,9,7,15,4,82,80.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+224,254,1795,Salondaki Ayakkabı Mağazası,Liderlik,Delivering Happiness,12,7,13,10,9,8,17,4,80,80.8,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+225,221,1366,Freelancer'ın fatura şoku,Verimlilik,Kendi Patronun Ol,13,7,12,12,9,8,17,3,81,80.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+226,257,1354,Ferrari sahibinin manastır ziyareti,Büyüme,Lider Yok Köle Yok,13,8,11,8,9,9,17,5,80,80.8,Revize et,Revize et,Kart testi,Standart doğrulama
+227,222,1474,Bilişsel devrim ve hayali gerçeklikler,Tarih,İnsanlığın Kısa Tarihi,13,7,13,12,9,7,16,4,81,80.8,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+228,203,1527,İçsel eleştirmen ve radyo istasyonları,Finans,Parça Parça Yazmak,12,8,12,14,9,7,16,4,82,80.8,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+229,226,1255,Paraşütle atlayan kadın,Büyüme,Korkusuzluk,13,8,12,11,9,8,16,4,81,80.8,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+230,231,1429,Terapistin kendi terapisti,Psikoloji,Terapi,13,8,12,10,10,8,16,4,81,80.7,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+231,224,1099,Michael Jordan'ın kesim hikayesi,Psikoloji,Zihin Gücü,14,9,12,12,9,7,16,2,81,80.5,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+232,173,1095,Cenaze töreni egzersizi,Büyüme,The 7 Habits of Highly Effective People,14,9,11,14,10,7,14,4,83,80.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+233,245,1477,Ölümsüzlük projesi,Bilim,Homo Deus,13,7,13,11,9,7,17,3,80,80.4,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+234,246,1698,Steve Jobs'ın Kaligrafi Dersi Mac'i Nasıl Değiştirdi?,Liderlik,Steve Jobs,12,6,13,11,9,8,17,4,80,80.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+235,248,1702,Konfor Alanı Bedenimizi Nasıl Zayıflatıyor?,Sağlık,The Comfort Crisis,12,7,13,11,9,7,17,4,80,80.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+236,172,1214,Korkular listesi ve olumsuz canlandırma,Verimlilik,The 4-Hour Workweek,13,8,11,15,10,7,15,4,83,80.4,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+237,295,1777,Bagajdan Doğan Nike,Liderlik,Shoe Dog,12,5,13,9,7,9,18,5,78,80.3,Revize et,Revize et,Kart testi,Standart doğrulama
+238,228,1334,Ölüm ve anlam arasındaki bağ,Felsefe,Her Şey Yolunda,13,8,12,11,10,7,16,4,81,80.3,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+239,230,1408,Sözcüklerin büyüsü — birinci anlaşma,Felsefe,Dört Anlaşma,13,8,12,11,10,8,16,3,81,80.3,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+240,204,1364,"3P tuzağı — kalıcılık, yaygınlık, kişiselleştirme",Büyüme,Zihinsel Dayanıklılık,12,8,11,13,10,8,16,4,82,80.3,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+241,296,1779,Devralınan Şirketleri Değiştirmemek,Liderlik,The Ride of a Lifetime,12,6,13,8,8,9,18,4,78,80.2,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+242,225,1212,McDonald's'ın gerçek işi,Finans,Zengin Baba Fakir Baba,14,7,12,13,9,7,16,3,81,80.2,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+243,207,1510,Negatif görselleştirme — kaybı hayal etmek,Felsefe,Pratik Stoacılık,12,7,12,15,9,7,15,5,82,80.2,Revize et,Revize et,Carousel,Standart doğrulama
+244,208,1560,RAIN pratiği — zor duyguları eritmek için dört adım,Psikoloji,Radikal Kabul,12,7,12,15,9,7,15,5,82,80.2,Revize et,Revize et,Carousel,Standart doğrulama
+245,255,1306,Ormanın yangın ihtiyacı,Felsefe,Antikırılgan,13,7,12,11,9,8,17,3,80,80.1,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+246,209,1140,Savunmasızlığın paradoksu,Büyüme,Cesaret Vermek,13,9,11,13,10,7,15,4,82,80.1,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+247,211,1188,Hayır deme korkusu,Büyüme,Korkusuzluk,13,9,11,13,10,7,15,4,82,80.1,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+248,212,1228,Ambulanstaki uyanış,Büyüme,Yüksek Performans,14,9,11,13,10,7,15,3,82,80.1,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+249,258,1260,Napoleon'ın e-posta kuralı,Felsefe,Stillness Is the Key,13,7,13,13,8,8,16,2,80,80.0,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+250,227,1316,Tetikleyiciler ve alışkanlık tasarımı,Bilim,Müşteriyi Anlamak,13,7,12,12,10,7,16,4,81,80.0,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+251,278,1713,Ryan Holiday’nin Başarısı Neden Bir Uyarıya Dönüştü?,Felsefe,Ego Is the Enemy,12,6,13,11,8,8,17,4,79,79.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+252,279,1738,Kirli Bir Masa Ahlaki Yargıyı Neden Sertleştirdi?,Finans,The Righteous Mind,12,6,13,11,8,8,17,4,79,79.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+253,280,1785,Suçlamanın Altındaki İhtiyaç,İletişim,Nonviolent Communication,12,6,13,10,9,8,17,4,79,79.8,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+254,281,1798,Kültür Pazarlığı,Liderlik,Delivering Happiness,12,6,13,10,9,7,17,5,79,79.8,Revize et,Revize et,Kart testi,Standart doğrulama
+255,256,1309,Salıncak ve sistem düşüncesi,Felsefe,Thinking in Systems,13,7,12,12,9,8,17,2,80,79.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+256,259,1478,Veri dini ve algoritmik otorite,Bilim,Homo Deus,13,7,13,12,9,7,16,3,80,79.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+257,260,1479,Özgür irade yanılsaması,Bilim,Homo Deus,13,7,13,12,9,7,16,3,80,79.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+258,229,1393,Kurbağayı sabah yemek,Verimlilik,Yeme Bozukluğu,13,7,12,14,9,8,16,2,81,79.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+259,269,1400,Wikipedia ve kolektif bilgi üretimi,Bilim,Zeki Kalabalıklar,13,7,12,11,9,8,16,4,80,79.8,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+260,271,1424,Otopilot modu ve bilinçsiz hayat,Psikoloji,Mindfulness,13,7,12,11,9,8,16,4,80,79.8,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+261,210,1146,Hayır diyememek ve tükenişin bedeli,Büyüme,Sınırlar,13,9,11,14,10,7,15,3,82,79.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+262,303,1802,Sözleşmeden Önce Kahve,Liderlik,The Culture Map,12,6,13,9,8,9,17,4,78,79.6,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+263,233,1581,Geri çekilme hakkı — en güçlü satış cümlesi,Finans,Satışın Yeni Yüzü,12,7,12,14,9,7,15,5,81,79.6,Revize et,Revize et,Carousel,Standart doğrulama
+264,293,1744,Küçük Bir Ada Çöküşten Nasıl Kaçtı?,Tarih,Collapse,12,6,13,10,8,7,18,4,78,79.5,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+265,297,1794,Boş Konfeti,Liderlik,Delivering Happiness,11,7,13,10,8,8,18,3,78,79.5,Revize et,Revize et,Kart testi,Kaynak kontrolü şart
+266,261,1248,Merak yaratıcılığın pusulası,Verimlilik,Yaratıcı Olmak,13,7,12,12,9,7,16,4,80,79.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+267,267,1346,Maksimizer ve satisficer,Psikoloji,The Paradox of Choice,13,7,12,12,9,7,16,4,80,79.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+268,268,1381,Tetris etkisi ve beyin yeniden programlama,Psikoloji,Mutluluğun Peşinde,13,7,12,12,9,8,16,3,80,79.5,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+269,283,1270,Vietnam gazilerinin dondurulmuş bedenleri,Sağlık,Bedenin Sesi,13,8,12,9,9,8,16,4,79,79.5,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+270,232,1059,Britanya bisiklet takımının yüzde iki felsefesi,Sağlık,Atomic Habits,14,8,11,14,9,7,16,2,81,79.5,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+271,277,1390,Hedefin netliği ve beyin aktivasyonu,Liderlik,Hedeflere Ulaşmak,14,7,13,11,9,8,17,0,79,79.4,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+272,304,1806,Des Plaines’teki İlk Kopya,Liderlik,Grinding It Out,13,5,13,11,7,7,17,5,78,79.4,Revize et,Revize et,Carousel,Standart doğrulama
+273,238,1230,Su gibi olmak,Liderlik,Savaş Sanatı,13,8,11,12,10,7,15,5,81,79.4,Revize et,Revize et,Carousel,Standart doğrulama
+274,294,1760,Ağaçların Gizli Ağı,Psikoloji,The Hidden Life of Trees,11,7,13,9,9,7,18,4,78,79.3,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+275,300,1761,Ne Bitki Ne Hayvan: Mantarların Dünyası,Psikoloji,Entangled Life,12,7,13,10,8,7,17,4,78,79.2,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+276,305,1808,Hamburger Üniversitesi,Liderlik,Grinding It Out,12,7,13,10,8,7,17,4,78,79.2,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+277,262,1281,Değerler ve değer çatışması,Liderlik,Karanlığın Ötesi,12,7,12,13,9,7,16,4,80,79.2,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+278,263,1298,Fırsatın maliyeti,Verimlilik,Minimalizm,13,6,12,13,9,7,16,4,80,79.2,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+279,265,1313,McDonald's ve işletme prototipi,Verimlilik,İşin Özü,13,6,12,13,9,8,16,3,80,79.2,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+280,270,1405,İki dakikada karar ver,Verimlilik,Nasıl Başarılı Olunur,13,7,12,13,9,8,16,2,80,79.2,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+281,234,1608,Zengin hayat tasarımı — paranın araç olduğunu hatırlamak,Finans,Zengin Olmayı Öğrenmek,12,7,12,15,9,6,15,5,81,79.2,Revize et,Revize et,Carousel,Standart doğrulama
+282,298,1706,Bir Yüz Neden Binlerce İstatistikten Güçlüdür?,Psikoloji,Against Empathy,12,7,13,9,9,7,17,4,78,79.1,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+283,299,1727,Aynı Dosyaya Bakan Uzmanlar Neden Farklı Fiyat Söyledi?,Finans,Noise,12,7,13,9,9,7,17,4,78,79.1,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+284,306,1378,Öğrenilmiş çaresizlik deneyi,Psikoloji,İyimserlik Öğrenmek,14,8,12,8,9,9,17,1,78,79.1,Revize et,Revize et,Kart testi,Kaynak kontrolü şart
+285,235,1067,Ertelemenin gerçek kökü: korku,Verimlilik,Şimdi Başla,13,9,11,13,10,7,15,3,81,79.1,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+286,237,1194,Marcus Aurelius'un mektupları,Felsefe,Engel Yolu Açar,13,8,11,13,10,7,15,4,81,79.1,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+287,360,1387,Ateş üzerinde yürümek,Büyüme,İçsel Güç,14,8,13,4,9,9,18,1,76,79.0,Kartla test,Revize et,Kart testi,Kaynak kontrolü şart
+288,302,1801,Evet'in Ağırlığı,Liderlik,The Culture Map,11,6,13,11,8,8,17,4,78,78.9,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+289,301,1775,Yokluğun Zihni Daraltması,Finans,Scarcity,12,6,13,10,9,7,17,4,78,78.8,Revize et,Revize et,Kart testi,Kaynak kontrolü önerilir
+290,323,1783,Bay Piyasa ile Ortaklık,Finans,The Intelligent Investor,13,5,13,10,7,7,17,5,77,78.8,Kartla test,Revize et,Kart testi,Standart doğrulama
+291,264,1307,Barbell stratejisi,Felsefe,Antikırılgan,13,6,12,14,9,7,16,3,80,78.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+292,266,1320,Çevre tasarımı ve sürtüşme,Verimlilik,Indistractable,13,6,12,14,9,7,16,3,80,78.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+293,274,1517,Konuşmaların en kötü hataları,Verimlilik,Müşteri Geliştirme,12,6,12,15,8,7,15,5,80,78.8,Revize et,Revize et,Carousel,Standart doğrulama
+294,236,1110,Öfke döngüsü ve nörolojik kaçırılma,Psikoloji,Emotional Intelligence,13,8,11,14,10,7,15,3,81,78.8,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+295,282,1250,Serbest piyasanın en güçlü kuvveti,Finans,Money: Master the Game,13,6,12,13,8,8,16,3,79,78.7,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+296,285,1412,Harvard Business School paradoksu,Psikoloji,Sessizlik,13,7,12,10,10,8,16,3,79,78.7,Revize et,Revize et,Kart testi,Kaynak kontrolü şart
+297,318,1705,"Akış Rahatken Değil, Sınırdayken Neden Gelir?",Psikoloji,Flow,12,5,13,10,8,7,18,4,77,78.5,Kartla test,Revize et,Kart testi,Kaynak kontrolü önerilir
+298,284,1335,Özgürlük ve seçimin bedeli,Felsefe,Her Şey Yolunda,13,7,12,12,9,7,16,3,79,78.5,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+299,286,1413,Sert satış ve empatin gücü,Psikoloji,Sessizlik,12,7,12,12,9,7,16,4,79,78.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+300,273,1432,OKR'ların doğuşu — Intel ve Andy Grove,Liderlik,Büyüme Kültürü,12,6,11,14,9,8,16,4,80,78.5,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+301,362,1782,Kolay Cevabı Olmayan Kararlar,Liderlik,The Hard Thing About Hard Things,12,5,13,9,7,8,18,4,76,78.3,Kartla test,Revize et,Kart testi,Kaynak kontrolü önerilir
+302,272,1379,Açıklama tarzı ve geleceğin şekli,Psikoloji,İyimserlik Öğrenmek,12,7,11,13,10,7,16,4,80,78.3,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+303,320,1750,John Glenn'in Güvendiği Hesap,Tarih,Hidden Figures,13,4,13,10,8,7,17,5,77,78.2,Kartla test,Revize et,Kart testi,Standart doğrulama
+304,321,1762,Denizde Kaybolmayı Bitiren Saat,Psikoloji,Longitude,13,4,13,10,8,7,17,5,77,78.2,Kartla test,Revize et,Kart testi,Standart doğrulama
+305,325,1790,Serengeti'de Bir Pavyan Sürüsü,Sağlık,Why Zebras Don't Get Ulcers,12,7,13,10,8,7,17,3,77,78.2,Kartla test,Revize et,Kart testi,Kaynak kontrolü şart
+306,363,1289,Yüzde kırk kuralı,Büyüme,Can't Hurt Me,14,8,13,7,8,8,17,1,76,78.2,Kartla test,Revize et,Kart testi,Kaynak kontrolü şart
+307,275,1089,IMVU'nun yanlış yolda koşması,Verimlilik,Büyük Sıçrayış,14,7,11,14,9,7,15,3,80,78.2,Revize et,Revize et,Carousel,Kaynak kontrolü şart
+308,319,1712,Platon’a Göre İktidarı En Çok Kim Hak Eder?,Felsefe,The Republic,12,7,13,9,9,6,17,4,77,78.1,Kartla test,Revize et,Kart testi,Kaynak kontrolü önerilir
+309,291,1080,Sosyal kanıt ve otel havluları,Psikoloji,Influence,14,7,11,13,8,7,15,4,79,78.1,Revize et,Revize et,Carousel,Kaynak kontrolü önerilir
+310,276,1179,İlham perisinin ziyareti,Verimlilik,Yaratıcı Olmak,13,8,10,12,10,7,15,5,80,78.1,Revize et,Revize et,Carousel,Standart doğrulama
+311,366,1797,Çıkış Kapısındaki Teklif,Liderlik,Delivering Happiness,12,7,13,8,8,7,17,4,76,77.9,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+312,288,1359,Pazarlama empati işidir,Finans,Unutulmaz Markalar,12,7,12,13,9,7,15,4,79,77.9,Revize et,Kartla test,Carousel,Kaynak kontrolü önerilir
+313,322,1780,Kural Kitabını Yırtmak,Liderlik,No Rules Rules,12,7,13,10,9,6,17,3,77,77.8,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+314,324,1787,Suyun Sessiz Gücü,Felsefe,Tao Te Ching,11,7,13,10,9,6,17,4,77,77.8,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+315,364,1403,New York'ta suç salgını ve kırık cam teorisi,Felsefe,Devrilme Noktası,14,7,13,7,9,9,17,0,76,77.8,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+316,367,1800,Sandviçin İçindeki Eleştiri,Liderlik,The Culture Map,12,5,13,10,7,8,17,4,76,77.8,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+317,308,1331,Çaresizlik döngüsü ve sorumluluk,Büyüme,Özgür Olmak,13,7,12,11,9,7,16,3,78,77.8,Revize et,Kartla test,Carousel,Kaynak kontrolü şart
+318,289,1606,Otomatik sistem — para kararlarını irade dışına taşımak,Finans,Zengin Olmayı Öğrenmek,12,6,12,15,8,6,15,5,79,77.8,Revize et,Kartla test,Carousel,Standart doğrulama
+319,307,1274,Öğleden sonra çöküşü ve şekerleme sırrı,Verimlilik,Saatlerin Efendisi,13,6,12,13,8,7,16,3,78,77.7,Revize et,Kartla test,Carousel,Kaynak kontrolü şart
+320,365,1757,Tek Denklemin Riski,Psikoloji,A Brief History of Time,11,6,13,9,8,8,17,4,76,77.6,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+321,290,1078,Kapıya ayak koyma tekniği,Psikoloji,Influence,13,7,11,13,9,7,15,4,79,77.6,Revize et,Kartla test,Carousel,Kaynak kontrolü önerilir
+322,361,1769,Bir Davranışın Bir Saniye Öncesi,Finans,Behave,12,5,13,10,8,7,18,3,76,77.5,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+323,287,1319,Zaman kutulaması ve taahhüt,Verimlilik,Indistractable,12,6,11,14,9,7,16,4,79,77.5,Revize et,Kartla test,Carousel,Kaynak kontrolü önerilir
+324,331,1282,Santiago'nun tekrarlayan rüyası,Büyüme,Kaybedilen Cennet,12,8,11,8,9,8,16,5,77,77.5,Kartla test,Kartla test,Kart testi,Standart doğrulama
+325,310,1348,Uyku ve hafıza pekiştirme,Felsefe,Öğrenmeyi Öğrenmek,13,6,11,13,8,8,16,3,78,77.3,Revize et,Kartla test,Carousel,Kaynak kontrolü şart
+326,309,1376,Kontrol edilebilen ve edilemeyen,Felsefe,Stoacılık,12,7,12,13,9,7,16,2,78,77.2,Revize et,Kartla test,Carousel,Kaynak kontrolü şart
+327,326,1085,Dokuz gün arayla iki uçuş denemesi,Liderlik,Başlangıç Noktası,14,8,12,10,9,7,16,1,77,77.2,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+328,328,1333,Umut paradoksu,Felsefe,Her Şey Yolunda,13,7,12,10,9,7,16,3,77,77.2,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+329,292,1350,Aralıklı tekrar ve unutma paradoksu,Felsefe,Öğrenmeyi Öğrenmek,12,6,11,14,9,7,15,5,79,77.2,Revize et,Kartla test,Carousel,Standart doğrulama
+330,327,1291,İki babanın iki dersi,Finans,Zengin Baba Fakir Baba,13,6,12,12,8,8,16,2,77,77.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+331,407,1767,Sallanan Tabaktan Nobel’e,Psikoloji,"Surely You're Joking, Mr. Feynman!",12,6,13,8,8,7,17,4,75,76.9,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+332,409,1796,Telefonda Acele Yok,Liderlik,Delivering Happiness,11,6,13,10,7,7,17,4,75,76.8,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+333,410,1799,Havayı Okumak,Liderlik,The Culture Map,11,6,13,9,8,7,17,4,75,76.6,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+334,311,1280,Cesur liderliğin bedeli,Liderlik,Karanlığın Ötesi,12,7,11,13,9,7,15,4,78,76.6,Revize et,Kartla test,Carousel,Kaynak kontrolü önerilir
+335,313,1326,Sanatçı buluşması ve ilham besleme,Verimlilik,Yaratıcı Beyin,12,7,11,13,9,7,15,4,78,76.6,Revize et,Kartla test,Carousel,Kaynak kontrolü önerilir
+336,329,1396,Sonsuz ve sonlu oyun farkı,Liderlik,Sonsuz Oyun,12,6,12,12,9,7,16,3,77,76.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+337,330,1421,Beş saniyelik kural ve momentum,Sağlık,Mucize Sabah 2,13,7,12,12,9,7,16,1,77,76.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+338,411,1336,FBI ajanının gözlem sanatı,İletişim,Beden Dili,14,7,12,7,9,8,17,1,75,76.4,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+339,334,1278,Gizler ve sırları aramak,Verimlilik,Sıfır'dan Bir'e,13,7,12,10,10,7,15,3,77,76.4,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+340,315,1382,Sosyal yatırım ve bağlantı kalkanı,Psikoloji,Mutluluğun Peşinde,12,8,11,12,10,7,15,3,78,76.4,Revize et,Kartla test,Carousel,Kaynak kontrolü şart
+341,317,1062,Çevre tasarımı ile alışkanlık,Sağlık,Atomic Habits,13,7,10,14,8,7,15,4,78,76.4,Revize et,Kartla test,Carousel,Kaynak kontrolü önerilir
+342,368,1457,Synesthesia — duyuların birbirine karışması,Psikoloji,Beynin Sırları,12,7,12,11,8,6,16,4,76,76.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+343,412,1261,Howard Hughes'ın çöküşü,Felsefe,Ego Is the Enemy,13,7,12,8,8,8,16,3,75,76.3,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+344,332,1294,Muse ve ürün testi deneyi,Verimlilik,The 4-Hour Workweek,13,6,11,13,8,8,16,2,77,76.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+345,333,1263,"Şu an yapıyor olmak, olmak değildir",Felsefe,Ego Is the Enemy,12,7,12,12,9,6,15,4,77,76.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+346,312,1324,Sabah sayfaları ritüeli,Verimlilik,Yaratıcı Beyin,12,7,11,14,9,7,15,3,78,76.2,Revize et,Kartla test,Carousel,Kaynak kontrolü şart
+347,314,1371,Yansıtma ve derin dinleme,İletişim,İnsanı Anlamak,12,6,11,14,9,7,15,4,78,76.2,Revize et,Kartla test,Carousel,Kaynak kontrolü önerilir
+348,454,1778,Boş Sandalyenin Anlamı,Liderlik,The Everything Store,12,4,13,9,7,8,17,4,74,76.1,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+349,370,1491,Kapitalizm ve bağımlılık ekonomisi,Felsefe,Bağımlılık Çağı,12,7,13,12,8,6,15,3,76,76.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+350,373,1468,Kahve evi ve fikir ekosistemi,Verimlilik,Büyük Fikirler,12,7,12,11,8,7,15,4,76,76.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+351,342,1111,Mor inek metaforu,Finans,Purple Cow,14,7,10,12,8,7,15,4,77,76.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+352,347,1163,İlk izlenim ve Warren Harding hatası,Psikoloji,Sezgi Gücü,14,8,11,11,9,7,14,3,77,76.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+353,408,1772,Kararı Sen mi Veriyorsun?,Finans,Incognito,12,4,13,11,8,7,17,3,75,75.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+354,335,1386,Hiçbir zaman iki gün üst üste atla,Sağlık,Sağlıklı Olmak,12,7,12,13,9,7,15,2,77,75.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+355,336,1246,İlham perisi kapıya geldiğinde,Verimlilik,Yaratıcı Olmak,12,7,11,12,9,7,15,4,77,75.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+356,372,1438,Empatinin karanlık yüzü — önyargılı acı,Psikoloji,Against Empathy,12,7,12,12,8,6,15,4,76,75.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+357,316,1418,Dört eylem çerçevesi,Liderlik,Mavi Okyanus Stratejisi,11,6,11,14,10,7,15,4,78,75.8,Revize et,Kartla test,Carousel,Kaynak kontrolü önerilir
+358,379,1072,J.K. Rowling'in otel odası sırrı,Verimlilik,Derin Çalışma,14,7,11,11,8,7,15,3,76,75.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+359,355,1545,Kıtlık ve kayıp korkusu — kazanmak değil kaybetmemek motive eder,Psikoloji,Evet Dedirtmek,12,7,12,14,8,6,13,5,77,75.6,Kartla test,Kartla test,Carousel,Standart doğrulama
+360,415,1401,Flash mob ve anlık koordinasyon,Bilim,Zeki Kalabalıklar,13,7,12,9,9,8,16,1,75,75.5,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+361,416,1426,Notaları kim yazdı,Liderlik,Yetenek Yanılgısı,13,7,12,9,9,8,16,1,75,75.5,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+362,374,1473,Derin oyun ve yenileme,Verimlilik,Dinlenmenin Gücü,11,7,12,13,8,6,15,4,76,75.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+363,375,1487,Dikkat ekonomisi ve dikkat mimarisi,Verimlilik,Çalınan Dikkat,12,6,12,13,8,6,15,4,76,75.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+364,376,1578,Amaç — para ve statünün ötesindeki üçüncü katman,Büyüme,İşte Anlam,12,7,12,13,8,6,15,3,76,75.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+365,337,1332,Belirsizliği kucaklamak,Büyüme,Özgür Olmak,12,7,11,12,10,7,15,3,77,75.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+366,381,1275,Son adım etkisi ve bitiş gücü,Verimlilik,Saatlerin Efendisi,13,6,11,12,8,7,15,4,76,75.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+367,343,1122,Craving döngüsü ve diş macunu,Sağlık,Alışkanlıkların Gücü,14,7,10,14,8,7,15,2,77,75.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+368,413,1277,Rekabetten kaçış ve monopol gücü,Verimlilik,Sıfır'dan Bir'e,13,5,12,11,8,7,16,3,75,75.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+369,414,1304,Uzman tahmini yanılgısı,Felsefe,Siyah Kuğu,13,6,12,11,8,7,16,2,75,75.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+370,359,1561,Jon Kabat-Zinn'in hastanesi — MBSR'nin doğuşu,Sağlık,Farkındalık Temelli Yaşam,12,7,12,14,8,7,12,5,77,75.3,Kartla test,Kartla test,Carousel,Standart doğrulama
+371,487,1774,Dolandırıcının Gerçek Silahı,Finans,The Confidence Game,12,6,13,7,8,6,17,4,73,75.2,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+372,369,1209,Hayatta kalma zihni,Büyüme,Can't Hurt Me,14,9,9,10,9,6,16,3,76,75.2,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+373,338,1340,Uyku ritueli ve ortam tasarımı,Sağlık,Uyku Devrimi,12,6,11,14,9,7,15,3,77,75.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+374,339,1385,Çevre ve sağlık kararları,Sağlık,Sağlıklı Olmak,12,6,11,14,9,7,15,3,77,75.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+375,340,1394,80/20 ve kritik görevler,Verimlilik,Yeme Bozukluğu,12,6,11,14,9,7,15,3,77,75.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+376,341,1395,Odaklanma ve tek görev ilkesi,Verimlilik,Yeme Bozukluğu,12,6,11,14,9,7,15,3,77,75.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+377,387,1423,"Nereye gidersen git, orada ol",Psikoloji,Mindfulness,12,7,11,11,9,7,15,4,76,75.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+378,344,1129,Beynin plastikliği ve yeniden yazılma,Psikoloji,Büyüme Zihniyeti,14,7,10,13,9,7,15,2,77,75.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+379,346,1070,Carl Jung'un taş kulesi inzivası,Verimlilik,Derin Çalışma,13,8,9,12,9,7,15,4,77,75.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+380,391,1569,Yetenek yuvaları — neden bazı küçük yerler büyük yetenkler üretiyor,Liderlik,Yetenek Kodu,12,7,12,13,8,6,14,4,76,75.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+381,350,1206,Kişisel efsane ve kader,Büyüme,Kaybedilen Cennet,13,8,10,11,10,7,14,4,77,75.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+382,486,1773,Fil ve Binicisi,Finans,The Happiness Hypothesis,11,5,13,9,7,7,17,4,73,75.1,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+383,417,1480,Yapay zeka ve iş gücünün geleceği,Tarih,21. Yüzyıl İçin 21 Ders,12,6,13,12,8,6,15,3,75,75.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+384,371,1411,İçe dönükler ve dışa dönükler arasındaki fark,Psikoloji,Sessizlik,12,7,12,11,10,7,15,2,76,75.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+385,377,1586,Zaman kısıtlı beslenme — sadece yeme penceresini daraltmak,Sağlık,Sirkadyen Kod,12,6,12,14,8,6,15,3,76,75.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+386,378,1604,Soğuk duş ve buz banyosu — stresin ters çevrilmesi,Sağlık,Soğuk Yöntem,12,7,12,14,8,6,15,2,76,75.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+387,349,1135,Bağlanma ve başarı ilişkisi,Psikoloji,Sosyal Hayvan,13,9,10,13,9,7,14,2,77,75.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+388,382,1287,Sessizliğin içindeki bilgelik,Felsefe,İnsan Nasıl Düşünür,12,7,11,12,9,7,15,3,76,74.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+389,383,1337,Rahat ve rahatsız beden — temel çizgi,İletişim,Beden Dili,12,6,11,12,9,7,15,4,76,74.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+390,345,1244,Koch'un çalışma saatlerini yarıya indirmesi,Verimlilik,Pareto İlkesi,13,7,10,14,9,7,15,2,77,74.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+391,419,1444,Müşteri kaybı ve görünmez buz buzdağı,Verimlilik,Sadakat Etkisi,12,6,12,12,8,6,15,4,75,74.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+392,380,1251,Zenginliğin gerçek tanımı,Finans,Money: Master the Game,12,6,11,14,8,6,15,4,76,74.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+393,384,1344,Egonun sesi ve gözlemci,Psikoloji,Meditasyon,12,7,11,11,10,7,15,3,76,74.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+394,389,1492,Depresyonun dokuz nedeni,Psikoloji,Kayıp Bağlantılar,12,8,12,14,8,6,14,2,76,74.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+395,390,1502,Gerçek korku ile endişe arasındaki fark,Tarih,Korkudan Öğrenmek,11,7,12,14,8,6,14,4,76,74.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+396,348,1128,'Henüz' kelimesinin gücü,Psikoloji,Büyüme Zihniyeti,13,8,10,14,9,7,14,2,77,74.7,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+397,351,1233,Akıl ve kalp — değişimin iki motoru,Büyüme,Değişimin Gücü,13,7,10,14,9,6,14,4,77,74.7,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+398,404,1563,Tam felaket — zorluğu kucaklamak,Sağlık,Farkındalık Temelli Yaşam,12,7,12,13,8,7,12,5,76,74.7,Kartla test,Kartla test,Carousel,Standart doğrulama
+399,418,1383,Başarı mutluluğu getirmez — tersine çalışır,Psikoloji,Mutluluğun Peşinde,12,7,12,11,9,7,15,2,75,74.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+400,386,1419,Stratejik tuval ve görsel strateji,Liderlik,Mavi Okyanus Stratejisi,12,6,11,13,9,7,15,3,76,74.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+401,397,1544,Taahhüt ve tutarlılık — küçük evet büyük evete zemin hazırlar,Psikoloji,Evet Dedirtmek,12,6,12,14,8,6,13,5,76,74.6,Kartla test,Kartla test,Carousel,Standart doğrulama
+402,398,1575,Piramit kararları — küçük adımlarla büyük yanlışlara doğru kayış,Psikoloji,Hataları Kucaklamak,12,6,12,14,8,6,13,5,76,74.6,Kartla test,Kartla test,Carousel,Standart doğrulama
+403,358,1226,Onay ihtiyacı ve özgürlük,Felsefe,Cesur Olmak,13,9,10,12,10,7,13,3,77,74.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+404,393,1061,Fotoğraf öğrencilerinin kalite vs miktar deneyi,Sağlık,Atomic Habits,14,8,10,13,8,7,14,2,76,74.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+405,353,1131,Bankta oturan adam,Psikoloji,Şimdi ve Burada,13,8,9,12,10,7,14,4,77,74.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+406,354,1167,Rock tırmanıcısının zaman kaybı,Psikoloji,Flow,13,8,9,12,10,7,14,4,77,74.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+407,420,1567,Miyelin — yeteneklerin biyolojik temeli,Liderlik,Yetenek Kodu,12,6,12,13,8,6,15,3,75,74.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+408,421,1585,İç saat — vücudun 24 saatlik ritmi ve sağlık üzerindeki derin etkisi,Sağlık,Sirkadyen Kod,12,6,12,13,8,6,15,3,75,74.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+409,388,1373,Kategori sırasının önemi,Felsefe,The Life-Changing Magic of Tidying Up,12,6,10,14,8,7,15,4,76,74.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+410,436,1196,Roger Federer'in 12 saati,Sağlık,Neden Uyuyoruz,15,8,10,11,8,7,15,1,75,74.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+411,396,1520,Kalbi açık tutmak,Psikoloji,İç Yolculuk,12,8,12,13,9,6,13,3,76,74.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+412,395,1165,Lakeside ve bit pazarından çıkan terminal,Liderlik,10.000 Saat Kuralı,13,8,10,12,9,7,14,3,76,74.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+413,405,1570,Güvenlik sinyalleri — beyin kültürü nasıl okuyor,Liderlik,Kültür Kodu,12,7,12,14,8,7,12,4,76,74.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+414,385,1352,1-3-5 kuralı ve günlük odak,Sağlık,Bir Sonraki Seviye,12,6,11,14,9,7,15,2,76,74.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+415,426,1269,REM uykusu ve duygusal iyileşme,Sağlık,Neden Uyuyoruz,12,7,11,11,9,7,15,3,75,74.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+416,433,1377,Olumsuz görselleştirme — en kötüyü hayal etmek,Felsefe,Stoacılık,12,7,11,11,9,7,15,3,75,74.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+417,439,1476,Mutluluk ve anlam — tarihsel perspektif,Tarih,İnsanlığın Kısa Tarihi,11,7,12,13,8,6,14,4,75,74.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+418,352,1113,"Boya kutusunu değiştirdiler, reklamı değil",Finans,Purple Cow,13,8,9,13,10,6,14,4,77,74.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+419,400,1616,Acil durum fonu — beklenmedik olanı beklemek,Finans,Borç Devrimi,11,6,12,15,8,6,13,5,76,74.2,Kartla test,Kartla test,Carousel,Standart doğrulama
+420,356,1141,Yeterlilik ve utanç kıskacı,Büyüme,Cesaret Vermek,12,9,10,13,10,6,13,4,77,74.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+421,511,1360,Princeton mühendislik anomalileri,Psikoloji,Niyet,14,7,12,5,9,8,17,0,72,74.1,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+422,422,1596,BDNF — beyni büyüten molekül ve onu artırmanın yolları,Sağlık,Beyin ve Diyet,12,6,12,14,8,6,15,2,75,74.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+423,423,1602,CO2 toleransı — oksijen değil karbondioksit kontrolü,Sağlık,Nefes,12,6,12,14,8,6,15,2,75,74.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+424,424,1249,Theodore Johnson'ın taze meyve tasarrufu,Finans,Money: Master the Game,13,6,11,13,8,7,15,2,75,74.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+425,458,1288,Çocukluğun en karanlık gecesi,Büyüme,Can't Hurt Me,12,8,11,10,8,7,15,3,74,74.1,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+426,399,1601,Dakikada beş nefes — kalp ritmi ve sinir sistemi uyumu,Sağlık,Nefes,12,7,12,14,9,6,13,3,76,74.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+427,392,1150,Başarının formülü: Yetenek x Çaba²,Büyüme,Azim,13,7,11,14,9,6,14,2,76,74.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+428,394,1149,West Point'in 'Dayanma' testi,Büyüme,Azim,13,8,10,13,9,7,14,2,76,74.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+429,429,1329,Geri bildirim döngüsü ve sürekli iyileşme,Büyüme,The Success Principles,12,6,11,12,9,7,15,3,75,73.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+430,430,1343,Yüzde on daha mutlu,Psikoloji,Meditasyon,12,7,11,12,9,7,15,2,75,73.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+431,431,1347,Beklenti ve hayal kırıklığı,Psikoloji,The Paradox of Choice,12,7,11,12,9,7,15,2,75,73.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+432,432,1368,Direnç ve yavaş büyümenin avantajı,Verimlilik,Kendi Patronun Ol,12,6,11,12,9,7,15,3,75,73.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+433,434,1397,Sadık rakip — öğreten düşman,Liderlik,Sonsuz Oyun,12,6,11,12,9,7,15,3,75,73.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+434,435,1428,Kendi kör noktanı göremezsin,Liderlik,Yetenek Yanılgısı,12,7,11,12,9,7,15,2,75,73.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+435,357,1151,Tutkuyu bulmak: Bilmek değil keşfetmek,Büyüme,Azim,12,8,10,14,10,6,13,4,77,73.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+436,455,1499,Ortak düşman kültürünün tehlikesi,Liderlik,Kabile Liderliği,11,6,12,12,8,6,15,4,74,73.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+437,428,1323,Naif soru ve uzman körlüğü,Verimlilik,Güçlü Sorular,12,6,11,11,10,7,15,3,75,73.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+438,425,1266,Amor fati — kaderi sevmek,Felsefe,Engel Yolu Açar,11,7,11,13,9,6,15,3,75,73.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+439,427,1314,Olgunluk aşaması ve sistematik büyüme,Verimlilik,İşin Özü,12,6,11,13,9,7,15,2,75,73.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+440,461,1365,Travma sonrası büyüme,Büyüme,Zihinsel Dayanıklılık,12,8,11,10,9,7,15,2,74,73.6,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+441,438,1305,Kırılganlık ve siyah kuğuya hazırlık,Felsefe,Siyah Kuğu,12,6,10,12,9,7,15,4,75,73.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+442,406,1559,Yetersizlik trансı — 'bir şeyler yanlış' hissinin kökenine inmek,Psikoloji,Radikal Kabul,12,8,12,14,9,6,11,4,76,73.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+443,441,1522,Sevgi ve disiplinin birlikte çalışması,Psikoloji,Az Gitme Yolu,11,7,11,14,8,6,14,4,75,73.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+444,443,1158,Uçak kazası ve söylenmeden kalan söz,İletişim,Dürüst Konuşmak,14,10,10,10,10,6,14,1,75,73.5,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+445,456,1589,Hayatta kalma genleri — stres biyolojik saati nasıl yavaşlatıyor,Sağlık,Uzun Yaşam Bilimi,12,6,12,13,8,6,15,2,74,73.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+446,457,1595,Karbonhidrat ve kolesterol — tersine dönen paradigma,Sağlık,Beyin ve Diyet,12,7,12,13,8,6,15,1,74,73.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+447,446,1231,Kazanmak savaşmadan,Liderlik,Savaş Sanatı,12,7,10,12,9,6,14,5,75,73.3,Kartla test,Kartla test,Carousel,Standart doğrulama
+448,450,1224,Jim Kwik'in beyin hasarı,Felsefe,İnsan Beyninin Gücü,14,9,9,11,9,7,14,2,75,73.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+449,437,1211,İki babanın iki farklı dersi,Finans,Zengin Baba Fakir Baba,13,7,10,13,9,7,15,1,75,73.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+450,447,1232,Fil ve kazık,Büyüme,Değişimin Gücü,14,8,10,11,10,7,14,1,75,73.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+451,401,1153,Boş zaman ve varoluş kaygısı,Felsefe,Büyük Soru,12,8,10,13,10,6,13,4,76,73.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+452,402,1221,Karşılaştırmanın tuzağı,Psikoloji,Şükran Günlüğü,12,8,10,13,10,6,13,4,76,73.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+453,459,1299,Dinlenmenin üretkenlik paradoksu,Verimlilik,Minimalizm,12,6,11,13,8,7,15,2,74,73.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+454,462,1467,Kural yüzde elli sekiz,İletişim,Etkileyici Konuşma,12,5,11,13,8,6,15,4,74,73.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+455,463,1556,Ücretsiz iş modeli — Google nasıl bedavaya milyarlar kazanıyor,Verimlilik,İş Modeli Üretimi,11,5,11,13,8,6,15,5,74,73.1,Kartla test,Kartla test,Carousel,Standart doğrulama
+456,440,1302,Korkuyla değil veriyle düşünmek,Felsefe,Akıl Yürütme,11,6,11,14,9,6,14,4,75,73.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+457,465,1073,Newport'un sosyal medyasız akademik kariyeri,Verimlilik,Derin Çalışma,13,7,11,11,9,6,14,3,74,73.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+458,442,1137,"İki saatlik toplantı, tek el sıkışma",Liderlik,Hız ve Güven,13,7,10,13,9,7,14,2,75,73.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+459,444,1176,Bahçedeki bezelye,Verimlilik,Pareto İlkesi,13,7,10,13,9,7,14,2,75,73.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+460,445,1213,80/20 ve işi silmek,Verimlilik,The 4-Hour Workweek,13,7,10,13,9,7,14,2,75,73.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+461,403,1245,Mutluluğun yüzde yirmi kaynağı,Verimlilik,Pareto İlkesi,12,8,10,14,10,6,13,3,76,72.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+462,534,1361,Uzak iyileşme deneyleri,Psikoloji,Niyet,14,8,12,5,9,7,16,0,71,72.8,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+463,491,1074,Andrew Carnegie'nin çelik imparatorluğu,Büyüme,Düşün ve Zengin Ol,13,8,10,10,8,7,15,2,73,72.8,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+464,469,1552,Güven eksikliği — kırılganlık temelli güven neden her şeyin temelidir,Liderlik,The Five Dysfunctions of a Team,11,7,11,13,8,6,14,4,74,72.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+465,466,1127,"Şirketi mi bırakıyorlar, yöneticiyi mi?",Liderlik,Liderlik Sanatı,12,8,11,12,9,6,14,2,74,72.7,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+466,472,1108,Dört yaşında marshmallow testi,Psikoloji,Emotional Intelligence,14,8,10,11,9,7,14,1,74,72.7,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+467,492,1283,Evrenin dili ve işaretler,Büyüme,Kaybedilen Cennet,12,7,10,9,9,7,15,4,73,72.6,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+468,477,1592,Dört süvari — kronik hastalıkların ortak kökeni,Sağlık,Uzun Ömür,12,7,12,14,8,6,13,2,74,72.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+469,451,1204,Zırh ve liderlik,Liderlik,Karanlığın Ötesi,12,8,10,12,10,6,13,4,75,72.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+470,467,1496,Akış anı ve yetenek işareti,Finans,Güçlü Yönler Bulma,11,6,11,14,8,6,14,4,74,72.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+471,468,1524,Sorumluluk ve kurban kimliği,Psikoloji,Az Gitme Yolu,11,6,11,14,8,6,14,4,74,72.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+472,470,1565,Yüzde yüz sorumluluk — suçu dışarıda aramayı bırakmak,Liderlik,Bilinçli Liderlik,11,6,11,14,8,6,14,4,74,72.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+473,471,1566,Duyguları veri olarak kullanmak — bastırmak değil okumak,Liderlik,Bilinçli Liderlik,11,6,11,14,8,6,14,4,74,72.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+474,449,1124,Keystone alışkanlık ve koşu,Sağlık,Alışkanlıkların Gücü,13,8,9,14,9,7,14,1,75,72.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+475,476,1217,Bir aylık e-posta yasağı,Bilim,Hiçbir Şeye Bakmamak,14,8,9,11,9,7,14,2,74,72.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+476,460,1356,Kaizen ilkesi ve sürekli küçük iyileştirme,Büyüme,Lider Yok Köle Yok,12,6,11,14,9,6,15,1,74,72.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+477,489,1389,Kaynak durumu ve performans zirvesi,Büyüme,İçsel Güç,12,6,11,11,9,7,15,2,73,72.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+478,514,1658,Açlık ve tokluk — beden sinyallerine yeniden bağlanmak,Sağlık,İçgüdüsel Yeme,10,6,11,11,7,7,15,5,72,72.2,Kartla test,Kartla test,Carousel,Standart doğrulama
+479,493,1481,Dezenformasyon çağı ve gerçeği bulmak,Tarih,21. Yüzyıl İçin 21 Ders,11,5,12,13,8,6,14,4,73,72.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+480,448,1380,ABCDE modeli — düşünceyi yeniden yapılandırma,Psikoloji,İyimserlik Öğrenmek,11,6,10,14,10,6,14,4,75,72.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+481,488,1351,Sabah 5 kulübü ve beynin altın saatleri,Sağlık,Bir Sonraki Seviye,13,6,11,13,8,7,15,0,73,72.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+482,490,1583,Tasarım — işlevselliğin ötesinde anlam yaratmak,Verimlilik,Bütün Beyin,11,5,11,13,8,6,15,4,73,72.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+483,515,1065,"Aynı sert cümle, iki farklı yer",Liderlik,Dürüst Olmak,14,8,10,9,8,7,15,1,72,72.1,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+484,473,1290,Hesap defteri ve zihinsel güç,Büyüme,Can't Hurt Me,11,7,10,13,9,7,14,3,74,72.0,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+485,464,1235,Sürpriz ve merak boşluğu,İletişim,Yapışkan Fikirler,13,6,10,14,9,5,15,2,74,71.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+486,506,1588,Yaşlanma bir hastalıktır — ve tedavi edilebilir,Sağlık,Uzun Yaşam Bilimi,12,7,12,13,8,6,13,2,73,71.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+487,517,1466,Beyin dostu hikaye anlatımı,İletişim,Etkileyici Konuşma,11,6,12,11,8,6,14,4,72,71.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+488,495,1459,Liderlik ve duygusal bulaşıcılık,Liderlik,İş Hayatında Duygusal Zeka,11,6,11,13,8,6,14,4,73,71.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+489,496,1464,Unutma ve hatırlamanın paradoksu,Felsefe,Kalıcı Hafıza,11,6,11,13,8,6,14,4,73,71.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+490,497,1469,Yavaş sezgi ve uzun kuluçka,Verimlilik,Büyük Fikirler,11,6,11,13,8,6,14,4,73,71.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+491,498,1484,"Psikolojik güvenlik nedir, ne değildir",Liderlik,The Fearless Organization,11,5,11,13,8,6,14,5,73,71.8,Kartla test,Kartla test,Carousel,Standart doğrulama
+492,500,1519,Evin kiracısı değil sahibi olmak,Psikoloji,İç Yolculuk,11,7,11,13,8,6,14,3,73,71.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+493,478,1169,Otomatik pilot ve bilinçli seçim,Psikoloji,Flow,12,7,10,13,9,6,13,4,74,71.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+494,527,1647,Ortak ağrı — yalnızlığı aşmanın beklenmedik yolu,Psikoloji,Çölde Yürümek,10,8,10,11,7,7,14,5,72,71.7,Kartla test,Kartla test,Carousel,Standart doğrulama
+495,475,1207,Bahçıvan ve zihin,Felsefe,İnsan Nasıl Düşünür,12,7,9,13,9,6,14,4,74,71.7,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+496,512,1409,Kişisel almama sanatı — ikinci anlaşma,Felsefe,Dört Anlaşma,12,7,11,10,9,7,15,1,72,71.6,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+497,537,1666,Her adım bir dua — yürürken farkındalık,Psikoloji,İçsel Barış,9,9,11,10,7,6,15,4,71,71.6,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+498,479,1174,Roosevelt'in isim hafızası,İletişim,İkna Sanatı,12,8,10,12,10,6,13,3,74,71.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+499,481,1241,Roosevelt'in isim ezberleyen dehası,İletişim,İkna Sanatı,12,8,10,12,10,6,13,3,74,71.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+500,452,1155,Sabotaj zihninin beş sesi,Psikoloji,Olumlu Zeka,12,8,9,14,10,6,13,3,75,71.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+501,453,1160,Hikayelerden gerçeklere dönmek,İletişim,Dürüst Konuşmak,12,7,9,14,10,6,13,4,75,71.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+502,518,1582,Sol beyin çağının sonu — sağ beynin yükselişi,Verimlilik,Bütün Beyin,12,6,12,12,8,6,14,2,72,71.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+503,499,1518,İlerleme belirtisi olarak para,Verimlilik,Müşteri Geliştirme,11,5,11,14,8,6,14,4,73,71.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+504,501,1550,"Doğru kişi, doğru yer — GWC testi",Liderlik,Ölçülebilir Büyüme,11,5,11,14,8,6,14,4,73,71.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+505,513,1548,Beyin sermayesi çağı — idealar maddi kaynaklardan daha değerli,Bilim,İkinci Makine Çağı,11,5,11,12,8,6,15,4,72,71.4,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+506,535,1272,Çocukluk ihmalinin iz bıraktığı beyin,Sağlık,Bedenin Sesi,13,8,11,9,8,6,15,1,71,71.4,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+507,494,1404,"Bağlayıcılar, Bilgeler ve Satıcılar",Felsefe,Devrilme Noktası,11,6,11,13,9,6,14,3,73,71.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+508,474,1322,"Soru hiyerarşisi — neden, nasıl, ne",Verimlilik,Güçlü Sorular,11,5,10,15,9,6,14,4,74,71.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+509,502,1171,Çapalama etkisi ve müzayede,Psikoloji,Karar Verme Sanatı,15,7,10,12,9,6,14,0,73,71.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+510,503,1202,Gizli sırlar ve kontrarian düşünce,Verimlilik,Sıfır'dan Bir'e,12,7,10,12,9,6,14,3,73,71.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+511,480,1178,Az ama öz ilişkiler,Verimlilik,Pareto İlkesi,12,8,10,13,10,6,13,2,74,71.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+512,482,1060,Kimlik temelli alışkanlık,Sağlık,Atomic Habits,12,7,9,14,9,6,13,4,74,71.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+513,484,1215,"Daha az, daha odaklı",Verimlilik,Minimalizm,12,7,9,14,9,6,13,4,74,71.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+514,523,1107,Soytarıyı koruyan şey espri değildi,Liderlik,Güç Yasaları,13,7,10,10,9,6,14,3,72,71.0,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+515,525,1265,Marcus Aurelius'un taht zorunluluğu,Felsefe,Engel Yolu Açar,12,7,10,10,9,7,14,3,72,71.0,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+516,538,1144,Köpekbalığı havuzu ve korku,Büyüme,Fark Yaratmak,14,8,10,8,9,7,15,0,71,70.9,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+517,529,1594,Gluten ve beyin — beklenmedik bağlantı,Sağlık,Beyin ve Diyet,12,7,12,13,8,6,13,1,72,70.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+518,485,1132,Ağrı ile acının farkı,Psikoloji,Şimdi ve Burada,13,9,8,12,10,7,13,2,74,70.9,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+519,536,1458,Ayna nöronlar ve empati biyolojisi,Psikoloji,Beynin Sırları,11,6,11,11,8,6,15,3,71,70.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+520,519,1436,Reddin anatomisi — itiraz yönetimi,Finans,Satışın Psikolojisi,11,5,11,13,8,6,14,4,72,70.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+521,521,1579,Hepimiz satıcıyız — satış mesleğinin yeniden tanımı,Finans,Satışın Yeni Yüzü,11,5,11,13,8,6,14,4,72,70.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+522,483,1063,İki dakika kuralı,Sağlık,Atomic Habits,12,6,9,15,9,6,13,4,74,70.8,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+523,504,1392,En büyük hedef ve günlük adım,Liderlik,Hedeflere Ulaşmak,11,6,10,14,9,6,14,3,73,70.7,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+524,524,1256,Acının kaçınılmazlığı ve acıdan kaçma bedeli,Büyüme,Korkusuzluk,11,7,10,11,9,7,14,3,72,70.7,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+525,548,1662,Karakter ahlakı — erdemi yeniden keşfetmek,Felsefe,Yeniden Doğmak,10,8,10,11,7,6,14,5,71,70.7,Kartla test,Kartla test,Carousel,Standart doğrulama
+526,507,1237,BrandScript ve basit mesaj,Finans,Hikaye Anlatıcısı,12,6,10,15,8,5,13,4,73,70.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+527,508,1512,Stoacı akşam muhasebesi,Felsefe,Pratik Stoacılık,10,6,10,15,8,6,13,5,73,70.6,Kartla test,Kartla test,Carousel,Standart doğrulama
+528,509,1181,Yaratıcılık bir sorumluluk,Verimlilik,Yaratıcı Olmak,12,8,9,11,10,6,13,4,73,70.6,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+529,520,1451,Uyku öncesi programlama,Büyüme,Bilinçaltının Gücü,11,6,11,14,8,6,14,2,72,70.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+530,522,1614,"Zaman, enerji, para — milyonerlerin gerçek yatırımı",Finans,Komşu Milyoner,11,5,11,14,8,6,14,3,72,70.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+531,540,1201,Monopol mu rekabet mi?,Verimlilik,Sıfır'dan Bir'e,13,6,11,11,8,6,14,2,71,70.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+532,541,1435,Satışın psikolojik temeli — insanlar duygularla alır,Finans,Satışın Psikolojisi,11,6,11,11,8,6,14,4,71,70.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+533,505,1407,Haftalık gözden geçirme ritüeli,Verimlilik,Nasıl Başarılı Olunur,11,6,9,15,8,6,14,4,73,70.5,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+534,526,1358,Kabile ve liderlik,Finans,Unutulmaz Markalar,11,6,10,12,9,6,14,4,72,70.3,Kartla test,Kartla test,Carousel,Kaynak kontrolü önerilir
+535,554,1632,Şefkatli sınır — iyileşmenin pratik kapısı,Sağlık,Bedenin Hayır Demesi,9,9,10,10,7,7,15,3,70,70.2,Kartla test,Kartla test,Kart testi,Kaynak kontrolü şart
+536,555,1656,Alanın kapıcıları — yaratıcılığın sosyal boyutu,Verimlilik,Yaratıcılık ve Akış,9,9,10,10,7,6,15,4,70,70.2,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+537,556,1668,İnterbeing — her şeyin birbirine bağlılığı,Psikoloji,İçsel Barış,9,8,10,10,7,7,15,4,70,70.2,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+538,516,1257,Sorumluluk ve güç arasındaki bağ,Büyüme,Korkusuzluk,12,6,9,12,9,7,15,2,72,70.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+539,558,1629,Toplumsal travma — sessizliğin suç ortaklığı,Psikoloji,Travma ve İyileşme,10,8,9,9,7,7,15,5,70,70.2,Kartla test,Kartla test,Kart testi,Standart doğrulama
+540,528,1083,Volan etkisi,Verimlilik,Good to Great,12,7,9,13,8,6,14,3,72,70.2,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+541,539,1297,Tek gemi filosunun zafer sırrı,Verimlilik,Minimalizm,12,6,10,12,8,7,15,1,71,70.1,Kartla test,Kartla test,Carousel,Kaynak kontrolü şart
+542,581,1338,Güven ve otoriteyi yansıtan duruş,İletişim,Beden Dili,13,6,11,8,8,7,16,0,69,70.0,Düşük öncelik,Kartla test,Kart testi,Kaynak kontrolü şart
+543,565,1628,Güç ve bağ — iyileşmenin iki ayağı,Psikoloji,Travma ve İyileşme,9,9,10,10,7,7,14,4,70,70.0,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+544,567,1637,Toksik toplum — bağımlılığı besleyen sistem,Finans,Her Şey Gerçek Olabilir,9,9,10,10,7,7,14,4,70,70.0,Kartla test,Kartla test,Kart testi,Kaynak kontrolü önerilir
+545,542,1497,Gallup araştırması ve iş tatmini,Finans,Güçlü Yönler Bulma,11,5,11,13,8,6,14,3,71,69.8,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+546,543,1185,Einstein'ın görsel düşünce sırrı,Felsefe,Zihin Haritası,13,7,10,12,8,6,14,1,71,69.8,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+547,544,1327,101 hedef listesi,Büyüme,The Success Principles,13,6,10,12,8,7,14,1,71,69.8,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+548,566,1633,DEHB bir bozukluk değil — uyumsuzluk,Psikoloji,Dağınık Beyin,10,8,10,11,7,7,14,3,70,69.7,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+549,510,1154,Sorumluluk özgürlüğün diğer yüzü,Felsefe,Büyük Soru,12,7,9,13,10,6,12,4,73,69.7,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+550,583,1234,Jared ve Subway diyeti,İletişim,Yapışkan Fikirler,14,7,9,8,7,7,15,2,69,69.6,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+551,530,1449,Stoacı saat — her anı bilinçli yaşamak,Felsefe,Hayatın Kısalığı Üzerine,10,5,10,15,8,6,13,5,72,69.6,Kartla test,Düşük öncelik,Carousel,Standart doğrulama
+552,533,1243,Bahçedeki bezelyenin sırrı,Verimlilik,Pareto İlkesi,12,7,9,13,9,7,13,2,72,69.4,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+553,560,1105,"Beş rejim, tek diplomat",Liderlik,Güç Yasaları,13,7,10,9,9,7,14,1,70,69.3,Kartla test,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+554,587,1671,Bağlantısı kesilen bir zihin — öfkenin gerçek kaynağı,Psikoloji,Öfke,9,8,10,9,7,8,14,4,69,69.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+555,588,1687,Mutluluk tuzağı — daha iyi hissetmeye çalışmak neden işe yaramıyor,Psikoloji,Psikolojik Esneklik,9,8,10,9,7,8,14,4,69,69.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+556,549,1066,Neden kimse bana söylemedi?,Liderlik,Dürüst Olmak,13,8,9,11,9,6,14,1,71,69.3,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+557,582,1691,İlişki yönetimi — bağlantı kurmak bir beceridir,Psikoloji,Bütünleşik Zekanın Gücü,9,8,10,10,7,6,15,4,69,69.2,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+558,602,1669,Öfkeyi pişirmek — soğutma değil dönüştürme,Psikoloji,Öfke,9,9,10,7,7,7,15,4,68,69.2,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+559,559,1075,Edison'ın 10.000 başarısızlığı,Büyüme,Düşün ve Zengin Ol,13,7,10,11,8,6,14,1,70,69.2,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+560,557,1296,Dışarıdan çalışma ve konum bağımsızlığı,Verimlilik,The 4-Hour Workweek,12,6,9,11,8,8,15,1,70,69.1,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+561,531,1114,En iyi olmak kimin için?,Finans,Purple Cow,12,6,9,14,9,5,13,4,72,69.1,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+562,532,1177,80/20 ve zaman yönetimi,Verimlilik,Pareto İlkesi,12,7,9,14,9,6,13,2,72,69.1,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+563,551,1168,Cerrahın ameliyathanede kaybolması,Psikoloji,Flow,12,7,9,11,9,6,13,4,71,69.1,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+564,545,1388,Altı insan ihtiyacı,Büyüme,İçsel Güç,11,6,10,13,9,6,14,2,71,69.0,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+565,546,1420,Beyin kimyası ve sabah saati,Sağlık,Mucize Sabah 2,11,6,10,13,9,6,14,2,71,69.0,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+566,547,1422,Vizyon ve kimlik netliği,Sağlık,Mucize Sabah 2,11,6,10,13,9,6,14,2,71,69.0,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+567,562,1399,Japonya'da cep telefonuyla koordinasyon,Bilim,Zeki Kalabalıklar,11,6,10,10,9,7,14,3,70,69.0,Kartla test,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+568,586,1623,Kaygılı-kaçıngan tuzağı — zıt stiller neden birbirini çeker,İletişim,Bağlanma Teorisi,9,8,10,10,7,7,14,4,69,69.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+569,561,1273,Hemingway'in biyolojik saat ritmi,Verimlilik,Saatlerin Efendisi,12,5,10,12,8,7,14,2,70,68.8,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+570,564,1415,Etkinin yasası — asıl para birimi ilişki,Liderlik,Liderlik 21 Yasası,11,7,10,11,9,6,14,2,70,68.7,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+571,553,1605,Wim Hof nefes tekniği — kontrollü hiperventilasyon ve tutma,Sağlık,Soğuk Yöntem,13,7,12,13,9,6,10,1,71,68.7,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+572,601,1638,Şefkatin nörobilimi — bağlantı bağımlılığın panzehiri,Finans,Her Şey Gerçek Olabilir,9,9,10,9,7,6,15,3,68,68.6,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+573,569,1285,Bahçıvan ve zihin toprağı,Felsefe,İnsan Nasıl Düşünür,11,6,10,12,8,6,13,4,70,68.6,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+574,585,1308,Stres ve kas büyümesi — antikırılganlığın bedeni,Felsefe,Antikırılgan,12,7,10,10,8,6,14,2,69,68.5,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+575,610,1677,Yüzde bir daha iyi — bileşik büyümenin alışkanlık versiyonu,Liderlik,Başarılı Değişim,10,6,10,10,6,7,14,5,68,68.5,Düşük öncelik,Düşük öncelik,Kart testi,Standart doğrulama
+576,589,1076,Barnes'ın Edison ortaklığı hayali,Büyüme,Düşün ve Zengin Ol,13,8,9,9,8,7,14,1,69,68.5,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+577,550,1069,Karşı konulmaz bir güç olarak 'şimdi',Verimlilik,Şimdi Başla,12,7,9,13,9,6,13,2,71,68.4,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+578,584,1293,Vergi sistemi ve şirket stratejisi,Finans,Zengin Baba Fakir Baba,12,5,11,13,7,6,14,1,69,68.3,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+579,563,1414,Tavan yasası — kim olduğun neye ulaşabileceğini belirler,Liderlik,Liderlik 21 Yasası,11,6,10,12,9,6,14,2,70,68.3,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+580,604,1626,Yeniden ebeveynlik — kendini iyileştirmenin yolu,Psikoloji,Duygusal Olgunlaşmamış Ebeveynler,9,7,10,9,7,8,14,4,68,68.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+581,605,1635,Utanç sarmalı — DEHB ve kimlik yarası,Psikoloji,Dağınık Beyin,9,9,10,9,7,7,14,3,68,68.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+582,607,1652,Günlük hayatta akış — sıradan anların dönüşümü,Psikoloji,Akış Bulmak,9,7,10,9,7,8,14,4,68,68.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+583,608,1667,Öfkeli bir mektup göndermemek — duyguya alan tanımak,Psikoloji,İçsel Barış,9,8,10,9,7,7,14,4,68,68.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+584,609,1673,Dikkat artığı — taşınan zihin maliyeti,Verimlilik,Konsantrasyon Gücü,10,7,10,9,7,6,14,5,68,68.3,Düşük öncelik,Düşük öncelik,Kart testi,Standart doğrulama
+585,590,1271,Güvenli beden — iyileşmenin temeli,Sağlık,Bedenin Sesi,11,8,9,10,8,7,14,2,69,68.2,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+586,571,1398,Sonsuz liderler ve güven kültürü,Liderlik,Sonsuz Oyun,10,6,10,12,9,6,13,4,70,68.1,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+587,606,1646,Kutup yıldızı değerleri — kalabalığa rağmen yolunu bulmak,Psikoloji,Çölde Yürümek,9,7,10,10,7,7,14,4,68,68.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+588,611,1681,İnternet ve derin okuma — kaybedilen bir beceri,Bilim,The Shallows,10,7,10,10,7,7,14,3,68,68.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+589,612,1688,Bilişsel ayrışma — düşüncelerden mesafe almanın ACT yöntemi,Psikoloji,Psikolojik Esneklik,9,8,10,10,7,6,14,4,68,68.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+590,632,1627,Travmanın dili — sözsüz yaranın kökeni,Psikoloji,Travma ve İyileşme,9,9,10,7,7,7,14,4,67,68.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+591,572,1461,Öz farkındalığın gücü ve kör nokta,Liderlik,İş Hayatında Duygusal Zeka,10,5,10,14,8,6,13,4,70,67.9,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+592,573,1482,Meditasyon ve öz tanıma çağı,Tarih,21. Yüzyıl İçin 21 Ders,10,6,10,14,8,5,13,4,70,67.9,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+593,574,1521,Bırakmak ve gerçek özgürlük,Psikoloji,İç Yolculuk,10,6,10,14,8,5,13,4,70,67.9,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+594,575,1523,Gerçeği kabul etme cesareti,Psikoloji,Az Gitme Yolu,10,6,10,14,8,5,13,4,70,67.9,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+595,568,1087,Altın Çember ve tartışmalı gerekçesi,Liderlik,Başlangıç Noktası,12,7,10,13,9,5,13,1,70,67.8,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+596,570,1367,Tek kişilik şirketin gücü,Verimlilik,Kendi Patronun Ol,11,6,10,13,9,6,13,2,70,67.8,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+597,552,1147,Sınırların üç türü,Büyüme,Sınırlar,11,7,9,14,9,5,12,4,71,67.8,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+598,629,1620,Hold me tight anı — yeniden bağlanmanın kapısı,İletişim,İlişki Psikolojisi,9,8,10,8,7,7,14,4,67,67.7,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+599,637,1661,Taahhüt kültürü — seçenekler çağında derinliği bulmak,Felsefe,Yeniden Doğmak,9,9,10,8,7,6,14,4,67,67.7,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+600,628,1690,Öz farkındalık — duygusal zekanın temeli,Psikoloji,Bütünleşik Zekanın Gücü,10,4,10,11,6,6,15,5,67,67.4,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+601,592,1374,Eşyaların enerjisi ve ev farkındalığı,Felsefe,The Life-Changing Magic of Tidying Up,11,6,10,11,9,6,13,3,69,67.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+602,630,1621,"Üç bağlanma stili — güvenli, kaygılı, kaçıngan",İletişim,Bağlanma Teorisi,9,7,10,9,7,7,14,4,67,67.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+603,633,1631,Stres ve bağışıklık — neden duygular fizyoloji değiştirir,Sağlık,Bedenin Hayır Demesi,9,8,10,9,7,7,14,3,67,67.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+604,634,1636,Bağımlılık bir seçim değil — acının dili,Finans,Her Şey Gerçek Olabilir,9,8,10,9,7,6,14,4,67,67.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+605,635,1648,Duygu dili — adlandıramadığınızı yönetemezsiniz,Psikoloji,Kalbin Haritası,10,7,10,9,7,5,14,5,67,67.3,Düşük öncelik,Düşük öncelik,Kart testi,Standart doğrulama
+606,638,1665,Şimdiki an — tek gerçek ev,Psikoloji,Yeni Toprak,9,8,10,9,7,6,14,4,67,67.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+607,639,1679,On dakika — küçük bir pratiğin büyük dönüşümü,Psikoloji,Yeni Başlayanlar İçin Meditasyon,9,8,10,9,7,6,14,4,67,67.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+608,646,1362,Topluluk niyeti ve dalgalanma etkisi,Psikoloji,Niyet,13,7,11,5,9,6,15,0,66,67.2,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+609,627,1651,Akış deneyimi — zamanın eridiği bilinç hali,Psikoloji,Akış Bulmak,9,6,10,10,7,6,15,4,67,67.2,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+610,647,1645,Gerçek aitlik — onay için değil özgünlük için,Psikoloji,Çölde Yürümek,9,7,10,7,7,7,15,4,66,67.2,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+611,603,1450,Bilinçaltı ve otonom sinir sistemi,Büyüme,Bilinçaltının Gücü,11,6,10,11,8,6,14,2,68,67.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+612,591,1220,Şükranın beyin kimyası,Psikoloji,Şükran Günlüğü,13,7,10,13,8,5,13,0,69,67.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+613,576,1192,Öğrenci zihniyeti,Felsefe,Ego Is the Enemy,11,7,9,13,9,5,12,4,70,67.2,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+614,594,1617,Bütçe — paranın patronu olmak,Finans,Borç Devrimi,10,4,10,15,7,5,13,5,69,67.1,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+615,631,1622,Kaçıngan paradoksu — yakınlık isteyen ama uzaklaşan,İletişim,Bağlanma Teorisi,9,6,10,10,7,7,14,4,67,67.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+616,636,1657,Diyet kültürünün reddi — besinleri ahlaki kategoriden çıkarmak,Sağlık,İçgüdüsel Yeme,9,7,10,10,7,6,14,4,67,67.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+617,659,1678,Meditasyon yanılgısı — zihnin boşalması değil farkındalık,Psikoloji,Yeni Başlayanlar İçin Meditasyon,9,9,10,7,7,6,14,4,66,67.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+618,613,1189,Büyük İskender'in hareketsizliği,Felsefe,Stillness Is the Key,13,7,9,9,9,6,14,1,68,67.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+619,577,1203,Güvenlik alanından çıkmak,Liderlik,Karanlığın Ötesi,11,8,9,12,10,5,12,3,70,67.0,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+620,593,1540,Her problem görsel düşünceyle çözülebilir,Verimlilik,Peçete Arkası,10,5,10,14,8,5,13,4,69,66.9,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+621,595,1090,Build-Measure-Learn döngüsü,Verimlilik,Büyük Sıçrayış,12,6,9,13,8,6,13,2,69,66.9,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+622,597,1384,Küçük sağlık kazanımlarının bileşimi,Sağlık,Sağlıklı Olmak,10,7,9,13,8,6,13,3,69,66.9,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+623,578,1218,Dijital minimalizm felsefesi,Bilim,Hiçbir Şeye Bakmamak,11,6,9,14,9,5,12,4,70,66.8,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+624,652,1641,Minnettarlık ve neşe — en cesur duygular,Büyüme,Özgür Olmak 2,9,7,10,8,7,7,14,4,66,66.7,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+625,654,1644,Devrilme ve kalkış — iyileşmenin üç aşaması,Büyüme,Güçlü Kalkmak,9,7,10,8,7,7,14,4,66,66.7,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+626,579,1223,Varlık — karizmanın temeli,İletişim,Karizmatik Olmak,11,7,9,13,10,5,12,3,70,66.7,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+627,598,1391,Hedefin altı P'si,Liderlik,Hedeflere Ulaşmak,11,6,9,14,8,6,13,2,69,66.6,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+628,623,1259,Çınar ağacı ve fırtına,Felsefe,Stillness Is the Key,10,7,9,11,8,6,13,4,68,66.6,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+629,599,1126,"Soyut lider mi, somut lider mi?",Liderlik,Liderlik Sanatı,11,7,9,12,9,5,12,4,69,66.5,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+630,614,1485,Lider davranışı ve güvenlik iklimi,Liderlik,The Fearless Organization,10,5,10,14,7,5,13,4,68,66.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+631,616,1495,Zayıfları düzeltmek değil güçlüleri geliştirmek,Finans,Güçlü Yönler Bulma,10,5,10,14,7,5,13,4,68,66.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+632,617,1515,Kaynak dağıtımı ve strateji icra uçurumu,Verimlilik,Yıkıcı İnovasyon,10,4,10,14,7,5,13,5,68,66.4,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+633,618,1557,İş modeli inovasyonu — rakibi taklit etmek değil yeniden tasarlamak,Verimlilik,İş Modeli Üretimi,10,4,10,14,7,5,13,5,68,66.4,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+634,596,1353,İkiz döngüsü — kazanma ve öğrenme,Sağlık,Bir Sonraki Seviye,10,6,9,13,9,6,13,3,69,66.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+635,622,1227,Geçmiş ve şimdiki an,Felsefe,Cesur Olmak,12,8,9,10,9,6,13,1,68,66.4,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+636,580,1097,Hesap empati ve önce anlamak,Büyüme,The 7 Habits of Highly Effective People,11,8,9,13,10,5,11,3,70,66.4,Kartla test,Düşük öncelik,Carousel,Kaynak kontrolü şart
+637,650,1630,"Bastırılan duygu, beden dili — hastalık mesajın taşıyıcısı",Sağlık,Bedenin Hayır Demesi,9,8,10,9,7,6,14,3,66,66.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+638,651,1639,Yeterince iyi olmak — mükemmeliyetçiliğin gerçek bedeli,Büyüme,Özgür Olmak 2,9,7,10,9,7,6,14,4,66,66.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+639,653,1642,Arenada olmak — düşme cesareti,Büyüme,Güçlü Kalkmak,10,6,10,9,7,5,14,5,66,66.3,Düşük öncelik,Düşük öncelik,Kart testi,Standart doğrulama
+640,655,1650,Kin ve öfke — taşınan ağırlıkların farkı,Psikoloji,Kalbin Haritası,9,8,10,9,7,5,14,4,66,66.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+641,657,1660,İki dağ — birinci ve ikinci hayat,Felsefe,Yeniden Doğmak,10,7,10,9,7,6,14,3,66,66.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+642,658,1663,Ego ve öz — kimlik yanılsamasının kökü,Psikoloji,Yeni Toprak,9,7,10,9,7,6,14,4,66,66.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+643,619,1068,İtalyan ressam ve gevşeme paradoksu,Verimlilik,Şimdi Başla,12,7,9,12,8,6,13,1,68,66.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+644,615,1488,Odaklanmanın gerçek düşmanları,Verimlilik,Çalınan Dikkat,10,4,10,15,7,5,13,4,68,66.1,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+645,649,1624,Duygusal olgunlaşmamış ebeveyn — sevgi var ama bağ yok,Psikoloji,Duygusal Olgunlaşmamış Ebeveynler,9,7,10,10,7,5,14,4,66,66.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+646,656,1659,Duygusal yeme — besinden beklenen şey besin veremez,Sağlık,İçgüdüsel Yeme,9,7,10,10,7,5,14,4,66,66.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+647,660,1680,Evrimsel beyin ve aldatmaca — neden zihin her zaman yanlış hissedebilir,Psikoloji,Meditasyonla İyileşme,8,8,10,10,7,5,14,4,66,66.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+648,661,1683,"Üç odak türü — iç, dış ve sistem odağı",Verimlilik,Dikkatin Gücü,9,6,10,10,7,6,14,4,66,66.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+649,662,1684,Dikkat eğitimi — beyin kası olarak odak,Verimlilik,Dikkatin Gücü,9,6,10,10,7,6,14,4,66,66.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+650,663,1686,Değerlere dayalı eylem — duygu değil değer rehberlik eder,Psikoloji,Duygusal Çeviklik,9,7,10,10,7,5,14,4,66,66.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+651,686,1640,Utanç ve suçluluk — birbirinden çok farklı iki his,Büyüme,Özgür Olmak 2,9,7,10,7,7,7,14,4,65,66.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+652,620,1184,Risk asimetrisi ve kayıptan kaçınma,Finans,Money: Master the Game,12,6,9,13,8,5,13,2,68,65.9,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+653,648,1437,Güven inşası ve ilk izlenim,Finans,Satışın Psikolojisi,10,5,11,10,8,5,14,3,66,65.8,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+654,642,1554,Sonuçlara odaklanma — ego mu yoksa ekip mi kazansın,Liderlik,The Five Dysfunctions of a Team,10,4,10,13,7,5,13,5,67,65.8,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+655,624,1454,Sekiz neşe sütunu,Psikoloji,Neşeyi Seç,9,5,10,15,7,5,12,5,68,65.8,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+656,640,1081,Kıtlık ve sınırlı üretim yanılsaması,Psikoloji,Influence,12,6,10,12,8,5,13,1,67,65.6,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+657,621,1186,Bir sayfada bir kitap,Felsefe,Zihin Haritası,12,6,9,14,8,5,13,1,68,65.6,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+658,688,1664,Acı bedeni — geçmişin duygusal tortusu,Psikoloji,Yeni Toprak,9,6,10,10,6,6,14,4,65,65.5,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+659,689,1675,Kimlik temelli alışkanlıklar — ben bu tür biriyim,Liderlik,Başarılı Değişim,9,5,10,10,6,7,14,4,65,65.5,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+660,664,1210,Aklın rahatlama dürtüsü,Büyüme,Can't Hurt Me,13,7,9,9,8,6,14,0,66,65.5,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+661,644,1440,Tükenme ve empatinin bedeli,Psikoloji,Against Empathy,10,6,10,13,7,5,12,4,67,65.5,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+662,626,1242,Eleştiri yapmadan değiştirme sanatı,İletişim,İkna Sanatı,12,7,9,12,9,5,12,2,68,65.5,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+663,641,1465,TED sahnesindeki üç sır,İletişim,Etkileyici Konuşma,10,4,10,14,7,5,13,4,67,65.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+664,643,1564,Çizginin altında ya da üstünde — iki liderlik hali,Liderlik,Bilinçli Liderlik,10,4,10,14,7,5,13,4,67,65.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+665,685,1625,Rolü tersine çevirmek — ebeveynin çocuğu olan çocuk,Psikoloji,Duygusal Olgunlaşmamış Ebeveynler,9,8,10,9,7,5,14,3,65,65.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+666,687,1653,Yaşam kalitesi ve akış — mutluluğun yanlış aranması,Psikoloji,Akış Bulmak,9,7,10,9,7,5,14,4,65,65.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+667,625,1098,Sabit ve büyüme zihniyeti farkı,Psikoloji,Zihin Gücü,11,7,9,14,8,5,12,2,68,65.3,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+668,706,1689,EQ neden IQ'dan daha belirleyici — başarının gizli faktörü,Psikoloji,Bütünleşik Zekanın Gücü,10,5,10,8,6,6,14,5,64,65.2,Düşük öncelik,Düşük öncelik,Kart testi,Standart doğrulama
+669,600,1159,Ortak zemin yaratma sanatı,İletişim,Dürüst Konuşmak,11,7,8,13,10,5,11,4,69,65.1,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+670,702,1649,Kıskançlık ve haset — sık karıştırılan iki ayrı yara,Psikoloji,Kalbin Haritası,9,7,10,7,7,6,14,4,64,65.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+671,705,1682,Hafıza ve Google etkisi — bilgiyi saklamaktan aramaya geçiş,Bilim,The Shallows,9,7,10,7,7,6,14,4,64,65.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+672,665,1433,Yüksek hedef kültürü — moonshot düşünce,Liderlik,Büyüme Kültürü,10,4,10,13,7,5,13,4,66,64.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+673,666,1443,Zihinsel modeller ve tasarımın gizli dili,Verimlilik,Gündelik Nesneler Tasarımı,10,4,10,13,7,5,13,4,66,64.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+674,667,1446,Sadakat ve kârlılığın matematiği,Verimlilik,Sadakat Etkisi,10,4,10,13,7,5,13,4,66,64.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+675,668,1452,İnanç ve gerçekleşme döngüsü,Büyüme,Bilinçaltının Gücü,10,5,10,13,7,5,13,3,66,64.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+676,669,1533,Faydaları açıklamanın paradoksu,Finans,SPIN Satış,10,4,10,13,7,5,13,4,66,64.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+677,670,1580,Kafa kafaya bilgi — asimetrik bilginin ortadan kalkması,Finans,Satışın Yeni Yüzü,10,4,10,13,7,5,13,4,66,64.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+678,671,1252,Einstein'ın görsel düşünme sırrı,Felsefe,Zihin Haritası,12,5,9,12,7,6,13,2,66,64.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+679,690,1258,Büyük İskender'in hareketsizlik dersi,Felsefe,Stillness Is the Key,11,6,9,10,7,7,14,1,65,64.7,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+680,673,1341,Başarının yeni tanımı,Sağlık,Uyku Devrimi,10,6,9,11,8,6,13,3,66,64.6,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+681,674,1416,Zemin yasası — güven liderliğin temelidir,Liderlik,Liderlik 21 Yasası,10,6,9,11,8,6,13,3,66,64.6,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+682,701,1643,Hikaye tamamlama — beyin boşluğu nasıl dolduruyor,Büyüme,Güçlü Kalkmak,9,5,10,10,6,6,14,4,64,64.5,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+683,703,1654,Yaratıcı kişilik — paradoksların insanı,Verimlilik,Yaratıcılık ve Akış,10,4,10,10,6,5,14,5,64,64.5,Düşük öncelik,Düşük öncelik,Kart testi,Standart doğrulama
+684,704,1676,İki dakika kuralı — başlamak bitirmekten önemlidir,Liderlik,Başarılı Değişim,9,4,10,10,6,7,14,4,64,64.5,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+685,700,1634,Dopamin ve anlam — DEHB beyninin gerçek ihtiyacı,Psikoloji,Dağınık Beyin,9,7,10,9,7,5,14,3,64,64.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+686,707,1670,Öfkeli bebeği taşımak — şefkatli bakım pratiği,Psikoloji,Öfke,9,7,9,8,7,6,14,4,64,64.3,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+687,716,1685,Düşünce kancaları — zihni ele geçiren hikayeler,Psikoloji,Duygusal Çeviklik,9,4,10,8,6,8,14,4,63,64.2,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+688,672,1301,Dünya dört gelir düzeyinde,Felsefe,Akıl Yürütme,11,5,9,12,8,6,13,2,66,64.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+689,691,1091,Jack Canfield'ın 100 dolarlık banknot hedefi,Verimlilik,Odaklanma Gücü,13,7,9,9,8,6,13,0,65,64.2,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+690,675,1199,Hemingway'in sabah ritmi,Verimlilik,Saatlerin Efendisi,12,6,8,12,8,6,13,1,66,63.9,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+691,645,1133,Şimdiki anın kapısı,Psikoloji,Şimdi ve Burada,11,7,8,12,9,5,11,4,67,63.9,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+692,715,1672,Derin çalışma — yüzeysel çalışmanın antitezi,Verimlilik,Konsantrasyon Gücü,9,5,10,9,6,6,14,4,63,63.8,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+693,694,1439,Rasyonel şefkat — empatinin ötesi,Psikoloji,Against Empathy,10,5,10,12,7,5,12,4,65,63.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+694,678,1071,Adam Grant'in toplu e-posta stratejisi,Verimlilik,Derin Çalışma,12,6,8,13,7,6,12,2,66,63.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+695,676,1310,Geri bildirim döngüleri ve kendi kendini besleyen kısır döngüler,Felsefe,Thinking in Systems,10,5,9,13,8,5,12,4,66,63.7,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+696,693,1286,Koşullar değil karakter belirler,Felsefe,İnsan Nasıl Düşünür,11,7,8,10,8,6,13,2,65,63.6,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+697,677,1064,Bir yürüyüşte söylenen tek cümle,Liderlik,Dürüst Olmak,11,7,8,11,9,6,12,2,66,63.5,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+698,692,1173,Köpek çalınan adam,İletişim,İkna Sanatı,12,7,8,9,9,6,13,1,65,63.4,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+699,679,1175,Eleştiri yerine soru sormak,İletişim,İkna Sanatı,11,7,8,12,9,6,12,1,66,63.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+700,680,1082,Kirpi Konsepti,Verimlilik,Good to Great,11,6,8,13,8,5,11,4,66,63.1,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+701,682,1138,"Görünmez vergi, görünmez temettü",Liderlik,Hız ve Güven,11,6,8,13,8,5,11,4,66,63.1,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+702,681,1130,Şampiyonların sırrı: zorluğu sevmek,Psikoloji,Büyüme Zihniyeti,11,7,8,12,9,5,11,3,66,62.9,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+703,683,1157,Zorlukları hediyeye çevirmek,Psikoloji,Olumlu Zeka,11,7,8,12,9,5,11,3,66,62.9,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+704,727,1655,"Yaratıcı süreç — hazırlık, kuluçka ve aydınlanma",Verimlilik,Yaratıcılık ve Akış,9,4,10,9,6,6,14,4,62,62.8,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+705,728,1674,Derin çalışma ritüelleri — kapasitenin kasıtlı inşası,Verimlilik,Konsantrasyon Gücü,9,5,10,9,6,5,14,4,62,62.8,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü önerilir
+706,708,1590,mTOR ve AMPK — hücrenin büyüme-onarım dengesi,Sağlık,Uzun Yaşam Bilimi,10,4,10,13,7,5,13,2,64,62.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+707,709,1470,Bitişen olasılıklar — sınırı genişletmek,Verimlilik,Büyük Fikirler,10,4,9,12,7,5,13,4,64,62.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+708,711,1531,Büyük satışın küçük satıştan farkı,Finans,SPIN Satış,10,4,10,12,7,5,12,4,64,62.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+709,695,1498,Beş kabile aşaması,Liderlik,Kabile Liderliği,10,4,9,14,7,5,12,4,65,62.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+710,696,1505,BATNA — en iyi alternatif,İletişim,Müzakerede Evet Almak,10,3,9,14,7,5,12,5,65,62.8,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+711,717,1104,Bismarck'ın savaşmadan kazanma sanatı,Liderlik,Güç Yasaları,13,6,8,8,8,6,14,0,63,62.5,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+712,697,1532,Dört soru türü ve ihtiyaç keşfi,Finans,SPIN Satış,9,3,9,15,7,5,12,5,65,62.5,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+713,710,1240,Köpek çalan komşuya farklı yaklaşım,İletişim,İkna Sanatı,11,7,8,9,9,6,13,1,64,62.4,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+714,684,1183,Finansal özgürlüğün beş adımı,Finans,Money: Master the Game,11,6,8,15,8,4,11,3,66,62.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+715,712,1109,IQ'yu geçen EQ deneyi,Psikoloji,Emotional Intelligence,12,7,9,11,8,5,12,0,64,62.3,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+716,698,1093,Odak sistemi ve kurbağayı yemek,Verimlilik,Odaklanma Gücü,12,6,8,13,8,5,12,1,65,62.3,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+717,718,1328,Ayna ilkesi ve dış yansıma,Büyüme,The Success Principles,12,6,8,9,8,6,13,1,63,61.9,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+718,699,1229,Enerji yönetimi ve niyet,Büyüme,Yüksek Performans,11,6,8,12,9,5,11,3,65,61.9,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+719,713,1084,"Önce kim, sonra ne",Verimlilik,Good to Great,11,6,8,12,8,5,11,3,64,61.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+720,719,1500,Liderlik ve kültür şekillendirme,Liderlik,Kabile Liderliği,9,4,9,13,7,5,12,4,63,61.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+721,720,1509,Kısa vadeli kazanımlar ve değişim momentumu,Liderlik,Değişim Yönetimi,9,4,9,13,7,5,12,4,63,61.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+722,721,1514,İki tür inovasyon,Verimlilik,Yıkıcı İnovasyon,9,3,9,13,7,5,12,5,63,61.2,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+723,722,1528,Scrum'ın doğuşu,Liderlik,Çevik Yönetim,9,3,9,13,7,5,12,5,63,61.2,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+724,723,1092,Bir yıl 101 hedef deneyi,Verimlilik,Odaklanma Gücü,12,7,8,11,8,5,12,0,63,61.0,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+725,724,1103,Beş saniyelik kural ve erken kalkma,Sağlık,Sabah Rutini,12,6,8,11,8,5,12,1,63,61.0,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+726,725,1134,Bilinçdışının gizli gücü,Psikoloji,Sosyal Hayvan,12,6,8,11,8,5,12,1,63,61.0,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+727,733,1262,Genç askerin kibri,Felsefe,Ego Is the Enemy,10,6,9,11,7,5,11,3,62,60.6,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+728,726,1145,"Kolay olmayacak, devam et",Büyüme,Fark Yaratmak,11,7,8,10,9,5,11,2,63,60.6,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+729,729,1442,Görünürlük ve geri bildirim — iyi tasarımın iki direği,Verimlilik,Gündelik Nesneler Tasarımı,9,4,9,12,7,4,12,5,62,60.5,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+730,714,1139,Dördünden biri eksikse olmuyor,Liderlik,Hız ve Güven,10,6,8,14,8,4,10,4,64,60.5,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+731,735,1506,Nesnel kriterler ve meşruiyet,İletişim,Müzakerede Evet Almak,9,3,9,13,6,6,11,5,62,60.4,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+732,736,1508,Güçlendirici koalisyon,Liderlik,Değişim Yönetimi,9,4,9,13,6,6,11,4,62,60.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+733,737,1541,SQVID çerçevesi — doğru görseli seçmek,Verimlilik,Peçete Arkası,9,3,9,13,6,6,11,5,62,60.4,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+734,738,1549,Vizyonun kağıtta kalması — EOS neden işletmeleri kurtarıyor,Liderlik,Ölçülebilir Büyüme,9,3,9,13,6,6,11,5,62,60.4,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+735,731,1445,Net Tavsiye Skoru'nun doğuşu,Verimlilik,Sadakat Etkisi,9,3,8,13,6,6,12,5,62,60.3,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+736,732,1530,Tahmin etmek değil ölçmek,Liderlik,Çevik Yönetim,9,3,8,13,6,6,12,5,62,60.3,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+737,730,1507,Sekiz adım ve hata bir,Liderlik,Değişim Yönetimi,9,3,9,13,7,5,12,4,62,60.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+738,742,1434,Şeffaflık ve hizalanma,Liderlik,Büyüme Kültürü,9,4,9,13,6,6,10,5,62,60.2,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+739,739,1555,Business Model Canvas — bir sayfada tüm iş modeli,Verimlilik,İş Modeli Üretimi,9,3,9,14,6,5,11,5,62,60.1,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+740,741,1551,Haftalık L10 toplantısı — kaosun ritme dönüşmesi,Liderlik,Ölçülebilir Büyüme,9,3,8,14,6,6,11,5,62,59.8,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+741,734,1460,Beş yetkinlik çerçevesi,Liderlik,İş Hayatında Duygusal Zeka,9,5,9,14,7,5,11,2,62,59.6,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+742,740,1529,Günlük stand-up ve şeffaflık,Liderlik,Çevik Yönetim,9,4,8,13,7,5,11,5,62,59.6,Düşük öncelik,Düşük öncelik,Carousel,Standart doğrulama
+743,743,1208,Karakter ve koşullar,Felsefe,İnsan Nasıl Düşünür,12,6,7,10,8,5,12,1,61,59.0,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+744,744,1254,Her iki beyin yarımküresini birlikte kullanmak,Felsefe,Zihin Haritası,11,6,7,10,7,6,12,1,60,58.5,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+745,745,1102,SAVERS — altı alışkanlığın bilimi,Sağlık,Sabah Rutini,11,6,7,13,7,4,11,1,60,57.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+746,746,1106,İtibar yasasının söylemediği sanılan kısmı,Liderlik,Güç Yasaları,10,6,7,11,8,4,10,4,60,57.2,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü önerilir
+747,747,1216,Tek gemi filosu,Verimlilik,Minimalizm,10,6,7,12,8,4,10,2,59,55.8,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+748,748,1156,PQ — olumlu zeka kası,Psikoloji,Olumlu Zeka,11,6,7,11,8,4,11,0,58,55.4,Düşük öncelik,Düşük öncelik,Carousel,Kaynak kontrolü şart
+749,749,1225,Hız okuma ve anlama,Felsefe,İnsan Beyninin Gücü,12,5,7,10,6,4,11,0,55,53.8,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart
+750,750,1077,500 dolarlık karar,Büyüme,Düşün ve Zengin Ol,10,6,6,8,7,5,11,0,53,51.6,Düşük öncelik,Düşük öncelik,Kart testi,Kaynak kontrolü şart

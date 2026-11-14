@@ -1,0 +1,35 @@
+{
+  "story_id": 1605,
+  "verdict": "keep",
+  "verify_note": "Keep: breathing steps confirmed by two summaries (Shortform preview, manassaloi); Radboud 2014 trial design and outcomes from PubMed 24799686; caveats and safety from Wikipedia. Whether the book itself cites the trial is unverified. Old hold-time, euphoria and reprogram-biology claims dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "12'ye 12: nefes denemesi",
+    "description": "Wim Hof'un temel nefes egzersizi adım adım ve bilinen tek küçük denemesiyle birlikte anlatılır, güvenlik uyarısıyla.",
+    "hook": "Uyguladığınız hangi sağlık alışkanlığı hiç doğrulamadığınız bir vaade dayanıyor?",
+    "one_minute_summary": "Wim Hof'un temel egzersizi 30 ila 40 derin nefes, son verişten sonra bir tutuş, sonra 10 ila 15 saniye tutulan derin bir nefes ve üç dört turdan oluşur, yaklaşık yirmi dakika sürer. Radboud Üniversitesi'nde eğitimli 12 gönüllü ile eğitimsiz 12 gönüllüye endotoksin verildi ve eğitilen grup daha az grip benzeri belirti bildirdi. Deneme küçüktü, 2024 meta-analizi kaliteyi çok düşük buldu. Nefes suda ya da duşta ayakta yapılmaz, çünkü bayılmaya yol açabilir."
+  },
+  "en": {
+    "title": "12 Against 12: The Breathing Trial",
+    "description": "Wim Hof's basic breathing exercise, step by step, with the one small trial behind it and a safety warning.",
+    "hook": "Which health habit you follow rests on a promise you have never checked?",
+    "one_minute_summary": "Wim Hof's basic exercise is 30 to 40 deep breaths, a hold after the last exhale, then a deep breath held 10 to 15 seconds, repeated three or four times over about twenty minutes. At Radboud University, 12 trained and 12 untrained volunteers received endotoxin, and the trained group reported fewer flu-like symptoms. It was a small trial, and a 2024 meta-analysis rated study quality very low. The breathing is never done in water or standing in the shower, because it can cause fainting."
+  },
+  "es": {
+    "title": "12 contra 12: el ensayo",
+    "description": "El ejercicio básico de respiración de Wim Hof paso a paso, con el único ensayo pequeño detrás y una advertencia de seguridad.",
+    "hook": "¿Qué hábito de salud que sigues descansa en una promesa que nunca has comprobado?",
+    "one_minute_summary": "El ejercicio básico de Wim Hof son de 30 a 40 respiraciones profundas, una retención tras la última exhalación y una inhalación profunda sostenida de 10 a 15 segundos, repetido tres o cuatro veces. En la Radboud University, 12 voluntarios entrenados y 12 sin entrenar recibieron endotoxina, y el grupo entrenado refirió menos síntomas de gripe. Fue un ensayo pequeño y un metaanálisis de 2024 calificó la calidad de muy baja. No se hace en el agua ni de pie en la ducha, porque puede causar desmayos."
+  },
+  "de": {
+    "title": "12 gegen 12: Die Atemstudie",
+    "description": "Wim Hofs Grundatmung Schritt für Schritt, mit der einen kleinen Studie dahinter und einer Sicherheitswarnung.",
+    "hook": "Welche Gesundheitsgewohnheit von dir beruht auf einem Versprechen, das du nie geprüft hast?",
+    "one_minute_summary": "Wim Hofs Grundübung besteht aus 30 bis 40 tiefen Atemzügen, einer Pause nach dem letzten Ausatmen, dann einem tiefen Atemzug, der 10 bis 15 Sekunden gehalten wird, drei- oder viermal in etwa zwanzig Minuten. An der Radboud-Universität bekamen 12 geschulte und 12 ungeschulte Freiwillige Endotoxin, und die geschulte Gruppe berichtete von weniger grippeähnlichen Symptomen. Die Studie war klein, eine Metaanalyse von 2024 stufte die Qualität als sehr niedrig ein. Nie im Wasser oder stehend unter der Dusche, weil es ohnmächtig machen kann."
+  }
+}

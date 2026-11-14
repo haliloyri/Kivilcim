@@ -1,0 +1,35 @@
+{
+ "story_id": 1423,
+ "verdict": "keep",
+ "verify_note": "Keep: rebuilt on Kabat-Zinn's walking meditation with no destination and the chapter 'This Is It' (secondary summaries only; archive.org copy is borrow-only). Killingsworth-Gilbert 47% study and the vacation claim dropped (not in the book). DB label 'Mindfulness' mapped to Wherever You Go, There You Are (1994).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Hedefsiz yürüyüş",
+  "description": "Kabat-Zinn'in yürüyüş meditasyonunda varış noktası yoktur. Patikada gidip gelmek, zaten olduğunuz yeri fark etmenin en yalın yoludur.",
+  "hook": "Gideceğiniz yer olmasa, ayağınızın yere basışında ne fark ederdiniz?",
+  "one_minute_summary": "Jon Kabat-Zinn yürüyüşten hedefi çıkarıyor. Bir patikada ileri geri gidiyorsunuz ya da bir döngüyü dolaşıyorsunuz, dikkatiniz ayağınızın yere basışında. Acele ettiğinizi fark edince yavaşlıyorsunuz. Kitaba göre varış noktası olmayınca bulunduğunuz yerde olmak kolaylaşıyor, çünkü zihnin atlayacağı bir sonraki durak kalmıyor. Kitabın bir bölümünün adı da bunu söylüyor: Bu An. Meditasyon başka bir yere ulaşmak için değil, zaten olduğunuz yeri fark etmek için."
+ },
+ "en": {
+  "title": "Walking with nowhere to go",
+  "description": "In Kabat-Zinn's walking meditation there is no destination. Pacing a path back and forth is the plainest way to notice where you already are.",
+  "hook": "If you had nowhere to be on your next short walk, what would you notice about your feet?",
+  "one_minute_summary": "Jon Kabat-Zinn teaches walking meditation by removing the goal. You go back and forth on a short path or around a loop, with your attention on how the foot lands. If you catch yourself rushing, you slow down. With no destination, he says, it's easier to be where you are, because the mind has no next stop to jump to. A chapter called This Is It says the same thing: meditation is about recognizing where you already are."
+ },
+ "es": {
+  "title": "Caminar sin meta",
+  "description": "En la meditación caminando de Kabat-Zinn no hay destino. Ir y venir por un sendero es la forma más simple de notar dónde estás ya.",
+  "hook": "Si en tu próximo paseo corto no tuvieras adónde llegar, ¿qué notarías en tus pies?",
+  "one_minute_summary": "Jon Kabat-Zinn enseña a caminar sin destino. Recorres un sendero de ida y vuelta o un circuito, con la atención puesta en cómo apoya el pie, y si notas prisa, reduces el paso. Sin meta, explica, resulta más fácil estar donde estás, porque la mente no tiene una próxima parada a la que saltar. Un capítulo del libro se titula This Is It: meditar es reconocer dónde estás ya, no llegar a otro lugar."
+ },
+ "de": {
+  "title": "Gehen ohne Ziel",
+  "description": "In Kabat-Zinns Gehmeditation gibt es kein Ziel. Einen Weg hin und her zu gehen ist der einfachste Weg zu bemerken, wo du schon bist.",
+  "hook": "Was würdest du an deinen Füßen bemerken, wenn du auf deinem nächsten kurzen Weg nirgends ankommen müsstest?",
+  "one_minute_summary": "Jon Kabat-Zinn nimmt dem Gehen das Ziel. Du läufst einen Pfad hin und her oder drehst eine Runde und achtest darauf, wie der Fuß aufsetzt. Merkst du, dass du eilst, wirst du langsamer. Ohne Ziel, sagt er, fällt es leichter, dort zu sein, wo du bist, weil der Kopf keine nächste Haltestelle hat. Ein Kapitel heißt This Is It: Meditation lässt dich erkennen, wo du schon bist, statt dich anderswohin zu bringen."
+ }
+}

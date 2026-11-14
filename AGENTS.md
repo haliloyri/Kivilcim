@@ -82,7 +82,8 @@ Custom agents in `.github/agents/`:
 | **RN UI Developer** | Create/modify screens, components, navigation with proper patterns |
 | **i18n Manager** | Add/update/audit translation keys across all 4 languages (en, tr, es, de) |
 | **Albor Yolu Phase Runner** | Execute Albor Yolu phases 0–10 in a persistent implement-test-checkpoint loop |
-| **hikaye-yazari** (`.claude/agents/`) | Menu: find 10 new books, find story titles, write stories, list stories from local DB and regenerate a whole Sürüm; selectable model (default Sonnet 5.5); output only to `staging/p1-writer/` |
+| **hikaye-yazari** (`.claude/agents/`) | Menu: find 10 new books, find story titles, write stories, list stories from local DB and regenerate a whole Sürüm, write editor-approved stories to DB; selectable model (default Sonnet 5.5); output only to `staging/p1-writer/`. Mode bodies live in `.claude/agent-modes/hikaye-yazari/` and are read on demand |
+| **hikaye-editor** (`.claude/agents/`) | Opus polish pass after hikaye-yazari: small `Edit`s to lesson, opening, pocket line and AI tells in `staging/p1-writer/`, re-validates, never writes the DB. Flow: hikaye-yazari (sonnet) → `EDITOR_IDS` → hikaye-editor → `DB_READY_IDS` → hikaye-yazari Mod 5 (haiku) |
 
 ## Available Skills
 Custom skills in `.github/skills/`:

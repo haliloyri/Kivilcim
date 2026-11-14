@@ -1,0 +1,35 @@
+{
+ "story_id": 1628,
+ "verdict": "keep",
+ "verify_note": "Keep, high confidence on the quotes: the empowerment principle, author and arbiter of her own recovery, advice-support-assistance-affection-and-care-but-not-cure, recovery only within relationships, safety first, therapist as witness and ally, and the survivor setting the pace are verified in recoverystories.info and a page-133 citation; the book text itself was not read. The old two-approaches framing and the what-do-I-want-to-eat example are dropped. Quotation marks only in English, other languages paraphrase. Story a little under the length target.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Çare değil özen",
+  "description": "Judith Herman, başkalarının travma yaşayana neler sunabileceğini sayar ve bilerek tek bir şeyi listeden çıkarır.",
+  "hook": "Yakınınızdan biri bir sonraki sefer zorlandığında ona neyi sunar, hangi kararı ona bırakırsınız?",
+  "one_minute_summary": "Judith Herman, Trauma and Recovery kitabında iyileşmenin ilk ilkesini koyar: hayatta kalan, kendi iyileşmesinin yazarı ve hakemi olmalıdır. Başkaları öğüt, destek, yardım, sevgi ve özen sunabilir, ama çare sunamaz. Hayatta kalandan kontrolü alan bir müdahale, yararına görünse bile zarar verebilir. Ama iyileşme yalnızlıkta olmaz: önce güvenlik gelir, sonra güveni yeniden kuran ilişkiler. Terapist tanık ve müttefiktir, hızı ise hayatta kalan belirler."
+ },
+ "en": {
+  "title": "Care, not cure",
+  "description": "Judith Herman lists what others can offer someone recovering from trauma and leaves one thing off the list on purpose.",
+  "hook": "The next time someone close to you struggles, what could you offer and what would you leave for them to decide?",
+  "one_minute_summary": "In Trauma and Recovery, Judith Herman sets out the first principle of recovery: the survivor must be the author and arbiter of her own recovery. Others can offer advice, support, assistance, affection and care, but not cure. An intervention that takes control from the survivor can harm even when it looks helpful. Recovery also cannot happen in isolation: safety first, then relationships that rebuild trust. The therapist is witness and ally, and the survivor sets the pace."
+ },
+ "es": {
+  "title": "Cuidado, no cura",
+  "description": "Judith Herman enumera lo que otros pueden ofrecer a quien se recupera de un trauma y deja fuera una cosa a propósito.",
+  "hook": "La próxima vez que alguien cercano pase un mal momento, ¿qué podrías ofrecerle y qué decisión le dejarías?",
+  "one_minute_summary": "En Trauma and Recovery, Judith Herman fija el primer principio de la recuperación: la sobreviviente debe ser autora y árbitro de su propia recuperación. Los demás pueden ofrecer consejo, apoyo, ayuda, afecto y cuidado, pero no cura. Una intervención que quita el control a la sobreviviente puede dañar aunque parezca útil. Además, la recuperación no puede darse en aislamiento: primero la seguridad y luego relaciones que reconstruyen la confianza. El terapeuta es testigo y aliado, y ella marca el ritmo."
+ },
+ "de": {
+  "title": "Fürsorge, keine Heilung",
+  "description": "Judith Herman zählt auf, was andere einem Menschen nach einem Trauma anbieten können, und lässt bewusst eines weg.",
+  "hook": "Wenn dir das nächste Mal jemand Nahestehendes schwerfällt, was könntest du anbieten und welche Entscheidung ließest du bei ihm?",
+  "one_minute_summary": "In Trauma and Recovery formuliert Judith Herman das erste Prinzip der Genesung: Die Überlebende soll Autorin und Schiedsrichterin ihrer Genesung sein. Andere können Rat, Unterstützung, Beistand, Zuneigung und Fürsorge anbieten, aber keine Heilung. Ein Eingriff, der der Überlebenden die Kontrolle nimmt, kann schaden, auch wenn er hilfreich wirkt. Zugleich ist Genesung in Isolation unmöglich: erst Sicherheit, dann Beziehungen, die Vertrauen wieder aufbauen. Die Therapeutin ist Zeugin und Verbündete, das Tempo bestimmt die Überlebende."
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "story_id": 1570,
+ "kind": "anecdote",
+ "book": {"title": "The Culture Code", "author": "Daniel Coyle", "year": "2018"},
+ "confidence": "medium",
+ "confidence_note": "Pentland's sociometer case and the belonging-cue qualities come from summaries (lifeclub, grahammann); the book itself was not readable. The old text's Navy SEAL officer quote and the 'brain on defence' sequence are not verified and were dropped. Participant counts and the outcomes of the negotiations are not given and none are used.",
+ "facts": [
+  "Alex 'Sandy' Pentland of the MIT Media Lab used a sociometer, a sensor that records signals like eye contact, mimicry and physical closeness.",
+  "He had people wear it during role-played negotiations about salary, vacation and benefits.",
+  "From the first five minutes of data he could predict each negotiation's outcome.",
+  "The interaction mattered more than the content of the talk.",
+  "Coyle's belonging cues share three qualities: energy, individualization and future orientation, and they send one message: you are safe here."
+ ],
+ "scene_details": ["a sensor worn during a role-played negotiation", "eye contact, mimicry, physical closeness", "the first five minutes"],
+ "tension": "The words of a negotiation mattered less than the way people sat, looked and mirrored each other in the first minutes.",
+ "opening_idea": "Open with the sensor worn by people role-playing a salary negotiation.",
+ "lessons": [{"idea": "People read safety from small signals long before the content of the talk arrives, so how you start a conversation sets what can be said in it.", "anchor": "Pentland predicted negotiation outcomes from the first five minutes of eye contact, mimicry and closeness"}],
+ "reflect": [],
+ "reflect_final": "In the first minutes of your next meeting, which small signal, such as eye contact or a name, could tell someone that they belong in it?",
+ "use_cases": [
+  {"situation": "A new person joins your team call", "move": "Greet them by name, look at them when they speak, and ask for their view first.", "context": "meeting"},
+  {"situation": "A child comes home quiet", "move": "Put the phone down, turn toward them and ask one open question, without pushing for content.", "context": "family"},
+  {"situation": "You start a one-to-one with a tense colleague", "move": "Mention that the first five minutes set the tone, then begin with something personal before the agenda.", "context": "oneonone"}
+ ],
+ "pocket_idea": "The first five minutes of a talk, eye contact and closeness, can say more than the words that follow.",
+ "conversation_variants": {
+  "punchline_idea": "A sensor predicted who would win a role-played negotiation from the first five minutes, before the content mattered.",
+  "thirty_sec_idea": "MIT's Sandy Pentland had people wear a sensor during role-played negotiations over salary, vacation and benefits. From the first five minutes of eye contact, mimicry and closeness he could predict the outcome. Daniel Coyle uses it to show that belonging cues carry one message: you are safe here.",
+  "question_idea": "",
+  "key_contrast_idea": "signals before words"
+ }
+}

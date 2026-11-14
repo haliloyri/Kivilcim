@@ -1,0 +1,6 @@
+{
+ "punchline": "400 yarda arayla saniyede 32 bin bitten 40 bite.",
+ "thirty_sec": "Ekim 1986'da 400 yarda arayla duran iki yer arasındaki hız 32 Kbps'den 40 bps'ye düştü. Jacobson ve Karels'in 1988 makalesi paket korunumu ve slow-start ile yanıt verdi: tek paketle başla, her onayda bir ekle.",
+ "question": "Aşırı yüklenmiş bir kanala nerede daha çok şey birden göndererek yanıt veriyorsunuz?",
+ "key_contrast": "Tek küçük adımla yeniden başlayın, onaylar döndükçe genişletin."
+}

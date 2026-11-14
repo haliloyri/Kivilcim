@@ -1,0 +1,35 @@
+{
+ "story_id": 1326,
+ "verdict": "keep",
+ "verify_note": "Concept story, medium confidence: artist-date definition, examples and well/trout-pond passages quoted in several secondary sources; full text not accessible. Unverified quote ('the one who only gives burns out') dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Hurdacıda İki Saat",
+  "description": "Julia Cameron'a göre sanat imgelerle çalışır ve iç kuyu bakımsız kalırsa kurur. Çare, haftada iki saat tek başına, keyif için çıkılan bir sanatçı buluşması.",
+  "hook": "En son ne zaman hiçbir şey üretmeden, yalnızca bakmak için bir yere gittiniz?",
+  "one_minute_summary": "Julia Cameron, The Artist's Way kitabında yaratıcılığı bir kuyuya benzetiyor: sanat imgelerle çalışır ve her işte iç kuyudan imge çekeriz. Bakım yapılmazsa kuyu tükenir, durgunlaşır ya da tıkanır. Doldurmak için imgelerin peşine görevle değil keyifle düşmek gerekir, 'ustalık değil gizem'. Aracı sanatçı buluşması: haftada yaklaşık iki saat, tek başına, hurdacı dükkânı, sahil, eski bir film, akvaryum ya da galeri gibi bir yere gitmek. Bir şey üretmek gerekmiyor."
+ },
+ "en": {
+  "title": "Two Hours in a Junk Store",
+  "description": "Julia Cameron says art runs on images and the inner well runs dry without upkeep. Her remedy is the artist date: two hours a week, alone, chosen for delight.",
+  "hook": "When did you last go somewhere just to look, with nothing to produce afterward?",
+  "one_minute_summary": "In The Artist's Way, Julia Cameron compares creativity to a well: art is an image-using system, and every piece of work draws images out. Without upkeep the well becomes depleted, stagnant or blocked. Filling it means pursuing images for delight rather than duty: 'think mystery, not mastery.' Her tool is the artist date, about two hours a week spent alone somewhere like a junk store, the beach, an old movie, an aquarium or a gallery. Nothing has to be made afterward."
+ },
+ "es": {
+  "title": "Dos horas entre trastos",
+  "description": "Julia Cameron dice que el arte funciona con imágenes y que el pozo interior se seca sin mantenimiento. Su remedio es la cita con el artista: dos horas a la semana, a solas, elegidas por gusto.",
+  "hook": "¿Cuándo fue la última vez que fuiste a algún sitio solo a mirar, sin tener que producir nada después?",
+  "one_minute_summary": "En The Artist's Way, Julia Cameron compara la creatividad con un pozo: el arte es un sistema que usa imágenes y cada obra las saca de ahí. Sin mantenimiento, el pozo se agota, se estanca o se obstruye. Llenarlo es perseguir imágenes por disfrute y no por obligación: 'misterio, no maestría'. Su herramienta es la cita con el artista, unas dos horas a la semana a solas en un sitio como una tienda de trastos, la playa, una película antigua, un acuario o una galería."
+ },
+ "de": {
+  "title": "Zwei Stunden im Trödelladen",
+  "description": "Julia Cameron sagt, Kunst arbeitet mit Bildern, und der innere Brunnen trocknet ohne Pflege aus. Ihr Mittel ist das Künstler-Date: zwei Stunden pro Woche, allein, aus Freude gewählt.",
+  "hook": "Wann warst du zuletzt irgendwo, nur um zu schauen, ohne danach etwas herstellen zu müssen?",
+  "one_minute_summary": "In The Artist's Way vergleicht Julia Cameron Kreativität mit einem Brunnen: Kunst arbeitet mit Bildern, und jedes Werk holt Bilder heraus. Ohne Pflege erschöpft, versumpft oder verstopft der Brunnen. Ihn zu füllen heißt, Bildern aus Freude statt aus Pflicht nachzugehen: Geheimnis statt Meisterschaft. Ihr Werkzeug ist das Künstler-Date, etwa zwei Stunden pro Woche allein, etwa in einem Trödelladen, am Meer, bei einem alten Film, im Aquarium oder in einer Galerie. Danach muss nichts entstehen."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1453,
+ "verdict": "keep",
+ "verify_note": "Keep: Dharamsala visit, April 2015, one week, eightieth birthday, Abrams moderating, guiding question, trick-candle cake at the Tibetan Children's Village (Time caption), belly-poke teasing (secondary summary). Old text reversed the direction of the invitation and invented quotes and a paired 'obstacles/pillars' list; rewritten. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Bir hafta, tek soru",
+  "description": "Nisan 2015'te Tutu, Dalai Lama'nın seksenüncü doğum günü için Dharamsala'ya gitti ve ikisi acı karşısında neşeyi konuştu.",
+  "hook": "Acı kesinken neşe nasıl bulunur?",
+  "one_minute_summary": "Nisan 2015'te Başpiskopos Desmond Tutu, Dalai Lama'nın seksenüncü doğum gününü kutlamak için Dharamsala'daki evine gitti. Bir hafta boyunca, Douglas Abrams'ın sorularıyla tek bir soruyu konuştular: yaşamın kaçınılmaz acısı karşısında neşeyi nasıl buluruz? Birbirleriyle şakalaştılar, pratiklerini paylaştılar ve konuşmaları üç bölümlü bir kitaba çevirdiler: neşenin doğası, engelleri ve sekiz sütunu. Kitap bir hediye olarak düşünüldü. Buna dayanan kitap bir hediye olarak düşünüldü."
+ },
+ "en": {
+  "title": "One week, one question",
+  "description": "In April 2015 Tutu visited the Dalai Lama in Dharamsala for his eightieth birthday, and they talked about joy in the face of suffering.",
+  "hook": "How do you find joy when suffering is certain?",
+  "one_minute_summary": "In April 2015, Archbishop Desmond Tutu traveled to the Dalai Lama's home in Dharamsala to celebrate his eightieth birthday. For a week, with Douglas Abrams asking the questions, they talked about one thing: how to find joy in the face of life's inevitable suffering. They teased each other, shared their practices and turned the talks into a book in three parts: the nature of joy, its obstacles and the eight pillars. It was meant as a gift."
+ },
+ "es": {
+  "title": "Una semana, una pregunta",
+  "description": "En abril de 2015 Tutu visitó al Dalai Lama en Dharamsala por su octogésimo cumpleaños y hablaron de la alegría ante el sufrimiento.",
+  "hook": "¿Cómo se halla alegría cuando el sufrimiento es seguro?",
+  "one_minute_summary": "En abril de 2015, el arzobispo Desmond Tutu viajó a la casa del Dalai Lama en Dharamsala para celebrar su octogésimo cumpleaños. Durante una semana, con las preguntas de Douglas Abrams, hablaron de una sola cosa: cómo encontrar alegría frente al inevitable sufrimiento de la vida. Se tomaron el pelo, compartieron sus prácticas y convirtieron las charlas en un libro de tres partes: la naturaleza de la alegría, sus obstáculos y los ocho pilares. Se concibió como un regalo."
+ },
+ "de": {
+  "title": "Eine Woche, eine Frage",
+  "description": "Im April 2015 besuchte Tutu den Dalai Lama in Dharamsala zu dessen achtzigstem Geburtstag, und sie sprachen über Freude im Angesicht des Leids.",
+  "hook": "Wie findet man Freude, wenn das Leid gewiss ist?",
+  "one_minute_summary": "Im April 2015 reiste Erzbischof Desmond Tutu in das Haus des Dalai Lama in Dharamsala, um dessen achtzigsten Geburtstag zu feiern. Eine Woche lang sprachen sie mit den Fragen von Douglas Abrams über eines: Wie finden wir Freude angesichts des unvermeidlichen Leids des Lebens? Sie neckten sich, teilten ihre Übungen und machten aus den Gesprächen ein Buch in drei Teilen: das Wesen der Freude, ihre Hindernisse und die acht Säulen. Es war als Geschenk gedacht."
+ }
+}

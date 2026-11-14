@@ -1,0 +1,59 @@
+{
+ "story_id": 1372,
+ "kind": "concept",
+ "book": {
+  "title": "The Life-Changing Magic of Tidying Up",
+  "author": "Marie Kondo",
+  "year": "2011"
+ },
+ "confidence": "medium",
+ "confidence_note": "Core quotes (the criterion 'whether or not it gives you a thrill of pleasure when you touch it', 'keep things because you love them, not just because', the two causes, the three approaches, worldly desires decreasing, tidying as a tool) come from a summary that quotes the English edition. Thanking unused clothes and gifts for the joy they gave is from secondary quote collections (medium). Year is the Japanese original (2011); the English edition is 2014. The old text's client dialogue about a blouse and the 'energy giving or taking' framing are not in the book and were dropped.",
+ "facts": [
+  "Kondo thought about storage from age five, discovered discarding as a teenager, and began treating belongings as if alive in high school; she later tidied clients' homes.",
+  "Criterion: pick up each item; 'whether or not it gives you a thrill of pleasure when you touch it'. She also phrases it as 'speak to your heart' or 'moves you'.",
+  "'Keep things because you love them, not just because.' Two reasons people can't let go: attachment to the past or fear for the future.",
+  "An item bought and never used gave joy when bought and completed its role; a gift's role is to be received; thank the item for the joy and let it go.",
+  "Three approaches to possessions: face them now, face them sometime, or avoid them until the day we die.",
+  "Discarding comes before deciding where to store; items of one category are gathered in one place first.",
+  "After tidying, many clients say their worldly desires decreased. 'Tidying is just a tool, not the final destination.'"
+ ],
+ "scene_details": [
+  "a sweater held in both hands",
+  "a pile of one category on the floor",
+  "thanking a never-worn shirt before letting it go"
+ ],
+ "tension": "We keep many things that give us nothing, and reasons don't help us decide.",
+ "opening_idea": "Open on the never-worn item being thanked, or on the hand-held test, without naming the author.",
+ "lessons": [
+  {
+   "idea": "Judge an object while holding it; the feeling is more honest than the reasons.",
+   "anchor": "The touch criterion and the thank-you ritual."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which object at home do you keep only from attachment to the past or fear for the future?",
+ "use_cases": [
+  {
+   "situation": "Clearing a wardrobe as a family",
+   "move": "Hold each item; keep what brings joy, thank and bag the rest.",
+   "context": "family"
+  },
+  {
+   "situation": "Unused expensive gadget",
+   "move": "Thank it for the joy on purchase day and let it go.",
+   "context": "self"
+  },
+  {
+   "situation": "Friend can't part with a disliked gift",
+   "move": "Share Kondo's view that a gift's job ends when received.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "Hold each object; if no joy, thank it for the joy it once gave and let go.",
+ "conversation_variants": {
+  "punchline_idea": "Kondo says a shirt you never wore already did its job the day you bought it.",
+  "thirty_sec_idea": "The touch test and the thank-you ritual.",
+  "question_idea": "",
+  "key_contrast_idea": "Feeling over reasons"
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1461,
+  "verdict": "keep",
+  "verify_note": "Keep, low confidence. Book not read; study details (Boyatzis 1982, Kelley 1998, Saks 1995, Holahan and Sears 1995, 360-degree finding) come from Goleman's later reprint of the same research, blind-spot list from the publisher's reader's guide. Old 'common blind spots' list dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kendi puanınız, başkasının puanı",
+    "description": "Goleman'ın aktardığı çalışmalarda doğru öz değerlendirme yıldızları ayırıyor; ortalamalar kendini abartırken yıldızlar çoğu zaman küçümsüyor.",
+    "hook": "Kendinize puan verdiğiniz bir beceride size dürüst puan verecek kim?",
+    "one_minute_summary": "Daniel Goleman, Working with Emotional Intelligence kitabında öz farkındalığı başa koyuyor ve doğru öz değerlendirmeyi öne çıkarıyor. Aktardığı çalışmalarda bu yetkinlik AT&T ve 3M gibi şirketlerdeki bilgi çalışanlarının neredeyse her yıldızında görülmüş. 360 derece değerlendirmelerde ortalama performans gösterenler güçlü yanlarını abartmış, yıldızlar nadiren abartmış ve çoğu zaman küçümsemiş. Bu alandaki açık kariyeri raydan çıkarabilir. Çalışma ayrıntıları kitabın değil, Goleman'ın sonraki yazısının aktarımına dayanıyor."
+  },
+  "en": {
+    "title": "Your score, someone else's score",
+    "description": "In studies Goleman cites, accurate self-assessment marks star performers: average performers overrate themselves while stars often underrate.",
+    "hook": "Who would give you an honest score on a skill you usually rate yourself on?",
+    "one_minute_summary": "In Working with Emotional Intelligence, Daniel Goleman puts self-awareness first and singles out accurate self-assessment. In studies he cites, it appeared in nearly every star among several hundred knowledge workers at firms like AT&T and 3M. On 360-degree ratings, average performers overestimated their strengths, while stars rarely did and often underestimated theirs. A gap here, he says, can derail a career. The study details come from Goleman's later retelling of the research, not from the book text."
+  },
+  "es": {
+    "title": "Tu nota, la nota de otros",
+    "description": "En los estudios que cita Goleman, la autoevaluación precisa distingue a las estrellas: los medios se sobrevaloran y las estrellas a menudo se infravaloran.",
+    "hook": "¿Quién te daría una nota honesta en una habilidad que sueles puntuarte tú?",
+    "one_minute_summary": "En Working with Emotional Intelligence, Daniel Goleman pone la autoconciencia en primer lugar y destaca la autoevaluación precisa. En los estudios que cita, apareció en casi todas las estrellas entre varios cientos de trabajadores del conocimiento de empresas como AT&T y 3M. En las valoraciones de 360 grados, los trabajadores medios sobrestimaban sus puntos fuertes, mientras que las estrellas rara vez lo hacían y a menudo los subestimaban. Una carencia aquí, dice, puede descarrilar una carrera. Los detalles proceden de un relato posterior de Goleman, no del texto del libro."
+  },
+  "de": {
+    "title": "Deine Note, die Note der anderen",
+    "description": "In Studien, die Goleman nennt, kennzeichnet genaue Selbsteinschätzung die Stars: Durchschnittskräfte überschätzen sich, Stars unterschätzen sich oft.",
+    "hook": "Wer würde dir in einer Fähigkeit, die du dir selbst bewertest, eine ehrliche Note geben?",
+    "one_minute_summary": "In Working with Emotional Intelligence stellt Daniel Goleman die Selbstwahrnehmung an den Anfang und hebt die genaue Selbsteinschätzung hervor. In den Studien, die er nennt, zeigte sie sich bei fast jedem Star unter einigen hundert Wissensarbeitern bei Firmen wie AT&T und 3M. In 360-Grad-Beurteilungen überschätzten Durchschnittskräfte ihre Stärken, Stars taten es selten und unterschätzten oft die eigenen. Eine Lücke hier, sagt er, kann eine Laufbahn entgleisen lassen. Die Studiendetails stammen aus Golemans späterer Darstellung der Forschung, nicht aus dem Buchtext."
+  }
+}

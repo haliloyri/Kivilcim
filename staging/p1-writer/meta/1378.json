@@ -1,0 +1,35 @@
+{
+ "story_id": 1378,
+ "verdict": "keep",
+ "verify_note": "Verified against Maier & Seligman's 2016 review of the original 1967 triadic study and Hiroto's human study. Added the yoked design, the two-thirds/90% result, the one-in-three exception and the 2016 'got it backwards' caveat. Dropped the claim that depression is usually not chemical.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Atlanmayan Alçak Engel",
+  "description": "Aynı şokları alan iki köpekten biri sonra alçak bir engeli bile denemedi. Martin Seligman bu farktan öğrenilmiş çaresizlik kavramını çıkardı.",
+  "hook": "Çabanızın işe yaramadığı bir dönemden sonra, işe yarayacağı anı fark edebilir misiniz?",
+  "one_minute_summary": "1960'larda Martin Seligman ve Steven Maier köpekleri çiftler halinde aynı şoklara maruz bıraktı. Birinin burnuyla bastırdığı panel şoku kesiyordu, ötekininki hiçbir şey değiştirmiyordu. Ertesi gün kaçmak için alçak bir engeli atlamak yetiyordu, ama kontrolü olmayanların yaklaşık üçte ikisi bunu hiç öğrenemedi. Donald Hiroto insanlarla gürültü kullanarak benzer sonuç aldı. Yine de insanların yaklaşık üçte biri hiç çaresiz hale getirilemedi. 2016'da Maier ve Seligman teoriyi düzeltti: pasiflik varsayılan tepkiymiş, öğrenilen şey kontrol."
+ },
+ "en": {
+  "title": "The Barrier Nobody Jumped",
+  "description": "Two dogs got the same shocks, and only one later failed to jump a low barrier. Martin Seligman built the idea of learned helplessness on that difference.",
+  "hook": "After a stretch where effort changed nothing, would you notice when it started to matter again?",
+  "one_minute_summary": "In the 1960s Martin Seligman and Steven Maier wired dogs in pairs to the same shocks. One could stop them by pressing a panel with its nose; the other's efforts did nothing. The next day, escape meant jumping a low barrier, yet about two-thirds of the dogs without control never learned it. Donald Hiroto found a similar pattern in people exposed to noise, though about one in three never became helpless. In 2016 Maier and Seligman revised the theory: passivity is the default, and what gets learned is control."
+ },
+ "es": {
+  "title": "La barrera que nadie saltó",
+  "description": "Dos perros recibían las mismas descargas y solo uno dejó después de intentar saltar una barrera baja. Martin Seligman construyó sobre esa diferencia la idea de indefensión aprendida.",
+  "hook": "Después de una racha en la que tu esfuerzo no cambió nada, ¿notarías el momento en que vuelve a importar?",
+  "one_minute_summary": "En los sesenta, Martin Seligman y Steven Maier conectaron perros por parejas a las mismas descargas. Uno podía cortarlas apretando un panel con el hocico; el otro no podía hacer nada. Luego bastaba con saltar una barrera baja, pero unos dos tercios de los perros sin control nunca lo aprendieron. Con personas y ruido pasó algo parecido, aunque una de cada tres nunca se volvió indefensa. En 2016, Maier y Seligman corrigieron la teoría: la pasividad es la respuesta por defecto y lo que se aprende es el control."
+ },
+ "de": {
+  "title": "Die Hürde, die keiner nahm",
+  "description": "Zwei Hunde bekamen dieselben Stromstöße, und nur einer versuchte später nicht mal, eine niedrige Wand zu überspringen. Daraus entwickelte Martin Seligman die Idee der erlernten Hilflosigkeit.",
+  "hook": "Würdest du nach einer Phase, in der Anstrengung nichts brachte, merken, wann sie wieder zählt?",
+  "one_minute_summary": "In den 1960ern verbanden Martin Seligman und Steven Maier Hunde paarweise mit denselben Stromstößen. Einer konnte sie mit der Nase an einer Platte stoppen, der andere konnte nichts tun. Am nächsten Tag reichte ein Sprung über eine niedrige Wand, doch etwa zwei Drittel der Hunde ohne Kontrolle lernten ihn nie. Donald Hiroto fand Ähnliches bei Menschen und Lärm, wobei sich etwa jeder Dritte nie hilflos machen ließ. 2016 korrigierten Maier und Seligman die Theorie: Passivität ist die Grundreaktion, gelernt wird Kontrolle."
+ }
+}

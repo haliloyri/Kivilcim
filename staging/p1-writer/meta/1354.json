@@ -1,0 +1,35 @@
+{
+ "story_id": 1354,
+ "verdict": "keep",
+ "verify_note": "Verified in the full text of The Monk Who Sold His Ferrari (1997), ch. 1-5. Fiction stated clearly. Fixed: Julian lived with the Sages of Sivana in a mountain village, not a monastery; about three years passed. Added book details: courtroom seven, the Ferrari in the driveway, the knock on John's door.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Ferrari'li Avukatın Çöküşü",
+  "description": "Robin Sharma'nın fablında yıldız avukat Julian Mantle mahkemede kalp krizi geçirir, Ferrari'si dahil her şeyini satıp Himalayalar'a gider. Üç yıl sonra tanınmaz halde döner.",
+  "hook": "İş daha acil göründüğü için görmezden geldiğiniz bir işaret var mı?",
+  "one_minute_summary": "Robin Sharma'nın fablında Julian Mantle ülkenin en ünlü ceza avukatlarındandır. Ferrari'si, jeti, malikânesi vardır ama uyuyamaz, evliliği bitmiştir, elli üçünde yetmişinde gibi görünür. Bir pazartesi mahkemede kalp krizi geçirir. Doktor ya hukuk ya hayat der. Julian her şeyi satar, Hindistan'a gider ve Himalayalar'da Sivana Bilgeleri'ni bulur. Yaklaşık üç yıl sonra eski meslektaşı John'un kapısında, otuzlarında gibi görünen biri olarak belirir."
+ },
+ "en": {
+  "title": "The Lawyer Who Sold the Ferrari",
+  "description": "In Robin Sharma's fable, star trial lawyer Julian Mantle collapses in court, sells everything including his red Ferrari and goes to the Himalayas. Three years later he is unrecognizable.",
+  "hook": "Which warning sign have you been explaining away because work felt more urgent?",
+  "one_minute_summary": "In Robin Sharma's fable, Julian Mantle is one of the country's top trial lawyers, with a Ferrari, a jet and a mansion. He also can't sleep, his marriage has failed, and at fifty-three he looks nearly eighty. One Monday he has a heart attack in court. His doctor says: the Law or your life. He sells everything, goes to India and finds the Sages of Sivana. About three years later he walks into John's office looking decades younger."
+ },
+ "es": {
+  "title": "El abogado que vendió su Ferrari",
+  "description": "En la fábula de Robin Sharma, el abogado estrella Julian Mantle sufre un infarto en pleno juicio, lo vende todo y se va al Himalaya. Tres años después nadie lo reconoce.",
+  "hook": "¿Qué señal llevas tiempo justificando porque el trabajo parecía más urgente?",
+  "one_minute_summary": "En la fábula de Robin Sharma, Julian Mantle es uno de los mejores abogados del país, con Ferrari, avión privado y mansión. También duerme mal, su matrimonio se ha roto y a los cincuenta y tres aparenta casi ochenta. Un lunes sufre un infarto en el juzgado. El médico le dice: el Derecho o la vida. Lo vende todo, se va a la India y encuentra a los Sabios de Sivana. Unos tres años después aparece en el despacho de John con aspecto de tener décadas menos."
+ },
+ "de": {
+  "title": "Der Anwalt, der seinen Ferrari verkaufte",
+  "description": "In Robin Sharmas Fabel bricht Staranwalt Julian Mantle im Gerichtssaal zusammen, verkauft alles samt rotem Ferrari und geht in den Himalaya. Drei Jahre später ist er kaum wiederzuerkennen.",
+  "hook": "Welches Warnzeichen redest du dir klein, weil die Arbeit dringender scheint?",
+  "one_minute_summary": "In Robin Sharmas Fabel ist Julian Mantle einer der gefragtesten Strafverteidiger des Landes, mit Ferrari, Jet und Villa. Er schläft kaum, seine Ehe ist gescheitert, und mit dreiundfünfzig sieht er fast wie achtzig aus. An einem Montag erleidet er im Gerichtssaal einen Herzinfarkt. Der Arzt sagt: das Recht oder dein Leben. Er verkauft alles, reist nach Indien und findet die Weisen von Sivana. Etwa drei Jahre später steht er in Johns Büro und sieht Jahrzehnte jünger aus."
+ }
+}

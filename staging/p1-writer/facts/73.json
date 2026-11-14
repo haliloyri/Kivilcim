@@ -1,0 +1,38 @@
+{
+  "book_no": 73,
+  "title": "Hooked: How to Build Habit-Forming Products",
+  "authors": ["Nir Eyal"],
+  "year": "2014",
+  "note": "DB Turkish title 'Müşteriyi Anlamak' is not a faithful title. Facts verified in the full text of Hooked (archive.org djvu text, 'with Ryan Hoover').",
+  "sources": [
+    "https://archive.org/details/hooked-how-to-build-habit-forming-products_202610",
+    "https://www.nirandfar.com/hooked/",
+    "https://en.wikipedia.org/wiki/Instagram"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "The Hook Model has four phases: trigger, action, variable reward and investment.", "source": "full text", "confidence": "high"},
+    {"id": "f2", "claim": "Yin (not her real name) is in her mid-twenties, lives in Palo Alto, attends Stanford and is compulsively hooked on Instagram; she snaps and posts dozens of pictures a day, moody snapshots filtered to look like the late 1970s.", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f3", "claim": "Instagram was purchased by Facebook for $1 billion in 2012 and had 150 million users (at the time of writing); Eyal notes the price was driven by many factors including a rumored bidding war.", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f4", "claim": "Yin quote: 'It's just fun. I don't have a problem or anything. I just use it whenever I see something cool. I feel I need to grab it before it's gone.'", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f5", "claim": "Yin's habit started with an external trigger, a friend's recommendation, and weeks of repeated use. Her photos shared on Facebook and Twitter act as external triggers for others; others found the app via media, bloggers and Apple's App Store featuring; once installed, the app icon and push notifications call users back.", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f6", "claim": "With repeated use the cue moves inside: the fear of losing a special moment brings a pang of stress, and the user opens Instagram to capture a photo. Instagram also relieves boredom and fear of missing out.", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f7", "claim": "Habits are like pearls: an irritant inside the oyster triggers layers of nacre; triggers are the grit new habits build on. New habits are sparked by external triggers, but associations with internal triggers keep users hooked; this can take weeks or months.", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f8", "claim": "Negative emotions (boredom, loneliness, frustration, confusion, indecisiveness) are powerful internal triggers that prompt an almost instant, often mindless action to quell the feeling.", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f9", "claim": "Missouri University of Science and Technology: in 2011, 216 undergraduates volunteered to have their internet activity tracked anonymously over the academic year; researchers compared the data of students treated at university health services for depression symptoms. Sriram Chellappan: participants with depressive symptoms 'tended to engage in very high email usage', plus more video watching, gaming and chatting. Eyal: the study showed people with depression symptoms used the internet more; one hypothesis is that they seek relief from negative emotions.", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f10", "claim": "Eyal's examples: bored people turn to dramatic headlines, stressed people to Pinterest, lonely people to Facebook and Twitter, uncertainty to Google; email checks whether someone needs us.", "source": "full text ch.2", "confidence": "high"},
+    {"id": "f11", "claim": "In the 1950s B.F. Skinner put pigeons in a box that delivered a food pellet each time they pressed a lever; then the machine released food after a random number of taps. The intermittent reward dramatically increased how often the pigeons tapped.", "source": "full text ch.4", "confidence": "high"},
+    {"id": "f12", "claim": "Eyal proposes three types of variable reward: tribe (social), hunt (resources, information), self (mastery, completion). Email uses all three: who wrote (tribe), what opportunity or threat it brings (hunt), the urge to clear unread messages and control the inbox (self).", "source": "full text ch.4", "confidence": "high"},
+    {"id": "f13", "claim": "Twitter's feed mixes mundane and relevant content; sometimes a user finds interesting news, sometimes not, and keeps scrolling. Slot machines are a classic reward of the hunt.", "source": "full text ch.4", "confidence": "high"}
+  ],
+  "rejected": [
+    {"claim": "Burbn pivot by Systrom and Krieger and the decision to keep only photo sharing.", "reason": "Not in Hooked; Hooked's Instagram case is Yin and the trigger path."},
+    {"claim": "Skinner used a rat that became obsessive and kept pressing even without food.", "reason": "Hooked describes pigeons and an increased number of taps; no 'obsessive' detail."},
+    {"claim": "Quotes 'I felt bored, opened Instagram; lonely, looked at Facebook' attributed as user statements.", "reason": "Not quotes from the book; the book gives these as general emotion-product pairings."},
+    {"claim": "'Uncertain reward is always more addictive than certain reward.'", "reason": "Overgeneralization not stated in the book."}
+  ],
+  "stories": {
+    "1315": {"verdict": "keep", "fact_ids": ["f1","f2","f3","f4","f5","f6","f7"], "note": "Recentered on Yin and Instagram's trigger path; Burbn dropped."},
+    "1316": {"verdict": "keep", "fact_ids": ["f8","f9","f10","f7"], "note": "Missouri S&T study as the book's case for internal triggers."},
+    "1317": {"verdict": "keep", "fact_ids": ["f11","f12","f13"], "note": "Pigeons (not rats); email as triple variable reward."}
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "book_no": 135,
+ "title": "The Gift of Fear",
+ "authors": ["Gavin de Becker"],
+ "year": "1997",
+ "sources": [
+  "https://en.wikipedia.org/wiki/The_Gift_of_Fear",
+  "https://lifeclub.org/books/the-gift-of-fear-gavin-de-becker-review-summary",
+  "https://www.supersummary.com/the-gift-of-fear/chapters-1-3-summary",
+  "https://www.shortform.com/blog/gavin-de-becker-threat-assessment/",
+  "https://thepowermoves.com/the-gift-of-fear-summary-review/"
+ ],
+ "facts": [
+  {"id": "g1", "claim": "The Gift of Fear: Survival Signals That Protect Us from Violence, Gavin de Becker, 1997, Little, Brown; 16 weeks on the NYT bestseller list.", "source": "Wikipedia", "confidence": "high"},
+  {"id": "g2", "claim": "Chapter 1 opens with Kelly, carrying groceries up to her apartment; the bag ripped and cans of cat food rolled down the stairs.", "source": "lifeclub summary, supersummary", "confidence": "medium"},
+  {"id": "g3", "claim": "A man on the stairs below picked up the cans and offered to carry them up. Kelly felt unease and tried to decline; he insisted, using 'we' ('we have a cat to feed up there').", "source": "lifeclub summary", "confidence": "medium"},
+  {"id": "g4", "claim": "She felt unease from the moment she heard his voice but did not honor it; he got into her apartment and attacked her; she barely managed to get away. (Details of the attack omitted.)", "source": "supersummary, lifeclub", "confidence": "medium"},
+  {"id": "g5", "claim": "De Becker later breaks down the man's tactics: forced teaming (the 'we'), charm, and typecasting (suggesting she was too proud to accept help, so she would prove him wrong).", "source": "supersummary", "confidence": "medium"},
+  {"id": "g6", "claim": "Pre-incident indicators (PINs) in the book: forced teaming (false 'we'), charm and niceness (used to disarm mistrust), too many details (liars add detail), typecasting (a mild insult that invites you to prove it wrong), loan sharking (unsolicited help that creates a debt), the unsolicited promise, discounting the word 'no'.", "source": "Wikipedia", "confidence": "high"},
+  {"id": "g7", "claim": "True fear is a brief, urgent biological response to a real threat; worry or anxiety is voluntary, manufactured, and not tied to actual danger. De Becker urges heeding true fear but warns against inventing reasons to be afraid, since constant worry causes stress and distracts from real threats.", "source": "Shortform, Goodreads summary, supersummary", "confidence": "medium"},
+  {"id": "g8", "claim": "Reviewer's reading: repeatedly in the book, people who ignored their instincts and trusted logic ended up facing violence.", "source": "Journal of Information Systems review (paraphrase)", "confidence": "low"},
+  {"id": "g9", "claim": "Chapter 6 introduces JACA (justification, alternatives, consequences, ability) for predicting violence. Critics note it is a practitioner framework with limited published evidence.", "source": "supersummary, thepowermoves review", "confidence": "medium"}
+ ],
+ "rejected": [
+  {"claim": "A woman got into an elevator with a man holding a bag, felt she should leave, did not, and was attacked.", "reason": "Not the book's opening case; the book's case is Kelly and the groceries."},
+  {"claim": "The brain unconsciously processes hundreds of micro-expressions and inconsistencies and returns them as unease (as de Becker's stated mechanism).", "reason": "Not verified in wording; kept out."},
+  {"claim": "Threateners see themselves as victims ('they pushed me to this') as de Becker's pattern.", "reason": "Not verified; only JACA 'justification' is supported."},
+  {"claim": "'Every warning gets labelled crazy or insecure and the signal vanishes' (quote).", "reason": "Unverified quote."}
+ ],
+ "stories": {
+  "1501": {"verdict": "keep", "fact_ids": ["g2", "g3", "g4"], "note": "Elevator scenario replaced by the book's Kelly case."},
+  "1502": {"verdict": "keep", "fact_ids": ["g7", "g8"], "note": "Concept; the book's case is thin in sources, confidence low-medium."},
+  "1503": {"verdict": "keep", "fact_ids": ["g5", "g6"], "note": "Pre-incident indicators, using Kelly's stairwell man as the book's own illustration."}
+ }
+}

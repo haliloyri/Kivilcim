@@ -1,0 +1,35 @@
+{
+ "story_id": 1347,
+ "verdict": "keep",
+ "verify_note": "Verified in full text, ch. 10-11. Recentered on the Oregon wine anecdote and expectations; Roy Porter, the hedged depression estimate and the Amish figure kept with Schwartz's interpretation flagged. Invented 'expectation-outcome gap' quote and social media (not in a 2004 book) dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "On İki Şaraplık Raf",
+  "description": "Barry Schwartz Oregon'da küçük bir bakkaldan vasat bir şarap alır ve memnun kalır. Aynı şişe binlerce şarabın olduğu bir mağazada onu hayal kırıklığına uğratacaktı.",
+  "hook": "Sizi hayal kırıklığına uğratan şey sonucun kendisi miydi, yoksa ondan beklediğiniz mi?",
+  "one_minute_summary": "Barry Schwartz Oregon kıyısında küçük bir bakkaldan akşam yemeği için şarap alır. Rafta on iki kadar seçenek vardır, aldığı şişe vasattır ama çok iyisini beklemediği için memnun kalır. Binlerce şarabın olduğu bir mağazada aynı şişe onu hayal kırıklığına uğratacaktı. Schwartz'a göre seçenek arttıkça beklenti yükselir ve memnuniyetimizi o beklentiye göre ölçeriz. Önerisi baktığımız seçenekleri azaltmak, yeterince iyiyle yetinmek ve rastlantıya yer bırakmaktır."
+ },
+ "en": {
+  "title": "A Shelf of a Dozen Wines",
+  "description": "On the Oregon coast Barry Schwartz buys a mediocre wine from a tiny grocery and is perfectly happy. In a store with thousands of bottles, the same wine would have let him down.",
+  "hook": "Was it the result that disappointed you, or what all those options had led you to expect?",
+  "one_minute_summary": "On vacation on the Oregon coast, Barry Schwartz buys wine at a small grocery with about a dozen options. The bottle isn't very good, and he is satisfied, because he expected nothing better. In a store with thousands of wines, the same bottle would have disappointed him. Schwartz argues that more choice raises expectations and that we judge results against them. His advice: consider fewer options, settle for good enough, and leave room for serendipity."
+ },
+ "es": {
+  "title": "Una estantería con doce vinos",
+  "description": "En la costa de Oregón, Barry Schwartz compra un vino mediocre en una tiendecita y queda satisfecho. La misma botella le habría decepcionado en una tienda con miles.",
+  "hook": "¿Te decepcionó el resultado o lo que tantas opciones te habían hecho esperar?",
+  "one_minute_summary": "De vacaciones en la costa de Oregón, Barry Schwartz compra vino en una tiendecita con unas doce botellas. El que se lleva no es muy bueno, pero queda satisfecho porque no esperaba nada mejor. En una tienda con miles de vinos, esa misma botella le habría decepcionado. Para Schwartz, más opciones elevan las expectativas y medimos lo que conseguimos contra ellas. Propone mirar menos opciones, conformarse con lo suficiente y dejar sitio a lo inesperado."
+ },
+ "de": {
+  "title": "Ein Regal mit zwölf Weinen",
+  "description": "An der Küste von Oregon kauft Barry Schwartz einen mittelmäßigen Wein in einem kleinen Laden und ist zufrieden. Dieselbe Flasche hätte ihn in einem Geschäft mit Tausenden enttäuscht.",
+  "hook": "Hat dich das Ergebnis enttäuscht oder das, was die große Auswahl dich erwarten ließ?",
+  "one_minute_summary": "Im Urlaub an der Küste von Oregon kauft Barry Schwartz Wein in einem kleinen Laden mit etwa zwölf Sorten. Der Wein ist nicht besonders gut, aber er ist zufrieden, weil er nichts Besseres erwartet hat. In einem Geschäft mit Tausenden Weinen hätte ihn dieselbe Flasche enttäuscht. Schwartz folgert, dass mehr Auswahl die Erwartungen hebt und wir Ergebnisse an ihnen messen. Er rät, weniger Optionen anzuschauen, sich mit gut genug zufriedenzugeben und dem Zufall Raum zu lassen."
+ }
+}

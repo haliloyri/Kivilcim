@@ -1,0 +1,36 @@
+{
+  "story_id": 1660,
+  "kind": "anecdote",
+  "book": {"title": "The Second Mountain", "author": "David Brooks", "year": "2019"},
+  "confidence": "high",
+  "confidence_note": "Verified in a full text of the book (introduction and 'The Quickening'). Old text's 'wrong mountain', 'career restructuring', 'thinned friendships in 2013', 'NYT columnist at the summit' and 'the transition mostly comes after a break' are not supported in that form and were dropped; Brooks says the second mountain does not reject the first. Only the divorce in the summer of 2013 and his own first-mountain description are used as personal facts.",
+  "facts": [
+    "Brooks describes a two-mountain shape of life: on the first mountain people establish an identity, cultivate talents, build a secure ego and try to make a mark; they keep score ('How do I measure up? Where do I rank?').",
+    "Its goals are the ones the culture endorses: to be a success, well thought of, invited into the right circles, personally happy.",
+    "Some reach the top and find it unsatisfying ('Is this all there is?'); others are knocked off by failure or by something unexpected such as a death, a cancer scare or an addiction; they end up 'in the valley'.",
+    "Brooks about himself: 'My first mountain was an insanely lucky one. I achieved far more professional success than I ever expected to.' But the climb made him 'aloof, invulnerable, and uncommunicative' and he 'sidestepped the responsibilities of relationship'.",
+    "He names his failures as 'failures of omission' and 'the sins of withdrawal: evasion, workaholism, conflict avoidance'; he says he was too busy, too distant for two old friends who live 250 miles away.",
+    "'Then came the events of the summer of 2013... My divorce happened. I was lonely, humiliated, adrift. I had a constant physical sensation of burning in my stomach and gut.' He and his ex-wife agreed not to discuss the marriage and divorce in public.",
+    "In seasons of suffering 'you have a tendency to grip the steering wheel tighter... but sometimes you get defeated and just let go of the wheel. Strange things begin happening.'",
+    "'The second mountain is not the opposite of the first mountain. To climb it doesn't mean rejecting the first mountain. It's the journey after it.' The test: where is your ultimate appeal, to self or to something outside of self?",
+    "First mountain: building up the ego, acquisition, ambitious, strategic, independent. Second mountain: shedding the ego, contribution, relational, intimate, relentless. 'You conquer your first mountain... You are conquered by your second mountain.'"
+  ],
+  "scene_details": ["a constant burning sensation in the stomach", "gripping the steering wheel tighter, then letting go", "two old friends 250 miles away", "keeping score: 'How do I measure up?'"],
+  "tension": "A man whose first climb went far better than he expected describes it as the thing that made him aloof, and a divorce that did not fit the plan.",
+  "opening_idea": "Open on 'an insanely lucky' first mountain and what it did to him, before the divorce.",
+  "lessons": [{"idea": "Ask where your ultimate appeal lies, to yourself or to something outside you; the second mountain adds a direction, it does not erase the first.", "anchor": "Brooks's own list of failures of omission, such as the friends 250 miles away.", "example": "A shop owner who is proud of the business notices she has not visited a friend in years and puts one visit in the diary."}],
+  "reflect": [],
+  "reflect_final": "Where in your life do you keep score, and where is the person or cause outside yourself that you keep too busy to show up for?",
+  "use_cases": [
+    {"situation": "You catch yourself comparing your title with a peer's.", "move": "Ask whether you are keeping score, as Brooks says first-mountain people do, and name one thing you could give someone this week.", "context": "self"},
+    {"situation": "A friend has hit a wall after a big success.", "move": "Ask what the success did not give them; Brooks says some find the top unsatisfying and wonder 'Is this all there is?'.", "context": "social"},
+    {"situation": "A colleague you rarely call is going through something.", "move": "Call, without an agenda; Brooks lists failures of omission, being too busy to show up, among his own.", "context": "oneonone"}
+  ],
+  "pocket_idea": "Brooks's failures were omissions, not scandals: the friends he was too busy to call. Name one you owe a call.",
+  "conversation_variants": {
+    "punchline_idea": "Brooks calls his first mountain insanely lucky, and says its lasting damage was being too busy for the people he loved.",
+    "thirty_sec_idea": "Brooks's first career climb went better than he hoped, but it left him aloof; the summer of 2013 brought his divorce, and the second mountain is what he calls the journey after the first.",
+    "question_idea": "",
+    "key_contrast_idea": "keeping score, giving yourself away"
+  }
+}

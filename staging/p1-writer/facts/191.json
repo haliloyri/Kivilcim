@@ -1,0 +1,134 @@
+{
+  "book_no": 191,
+  "title": "Anger: Wisdom for Cooling the Flames",
+  "authors": [
+    "Thich Nhat Hanh"
+  ],
+  "year": "2001",
+  "sources": [
+    "https://www.goodreads.com/work/quotes/1075552",
+    "https://www.goodreads.com/book/show/901387",
+    "https://www.theosophy-nw.org/theosnw/reviews/anger.htm",
+    "https://www.spiritualityandpractice.com/book-reviews/view/3246/anger"
+  ],
+  "source_note": "Full text not readable (archive PDF returned font-encoded stream; Wikipedia pages 404). Facts come from verbatim quote pages and search summaries of the book's text. Thin sourcing.",
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Anger is compared to a potato: a raw potato cannot be eaten; mindfulness is the fire that cooks the potatoes of anger.",
+      "source": "search summary of book text (archive PDF), library review quoting him",
+      "confidence": "medium"
+    },
+    {
+      "id": "f2",
+      "claim": "Verbatim quote: 'Anger is like a howling baby, suffering and crying. The baby needs his mother to embrace him.'",
+      "source": "goodreads.com/work/quotes/1075552",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "A passage pictures a mother who strikes her crying baby and fails to see that she and the child are one; we are the mothers of our own anger.",
+      "source": "search summary of book text",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Mindful breathing gives the caring energy of a mother; simply embracing anger and breathing in and out is enough. Verbatim: 'When anger comes up in us, we should begin to practice mindful breathing right away'.",
+      "source": "goodreads quote page; search summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Verbatim: 'we should try not to do anything or say anything when we are angry.'",
+      "source": "goodreads quote page",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Verbatim: 'You discover that the main cause of your suffering is the seed of anger in you, because it has been watered too often, by yourself and by other people.'",
+      "source": "goodreads quote page",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Verbatim: 'You have to protect yourself and your beloved ones by practicing selective watering.'",
+      "source": "goodreads quote page",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "Anger is likened to garbage that can become compost, and compost becomes a flower (reader note and review); 'cooling the flames' is in the subtitle.",
+      "source": "spiritualityandpractice review, reader notes, title",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Anger is read as a sign that something needs taking care of; one can care for it like a crying baby (pick up, speak quietly, find what is wrong).",
+      "source": "publisher-style description, reader review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Thich Nhat Hanh is a Vietnamese monk.",
+      "source": "book descriptions",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Three-step 'recognition, embrace, look deeply' list with underlying causes hurt, unheard, fear, disappointment",
+      "reason": "Could not confirm the list or its wording in the book."
+    },
+    {
+      "claim": "The criticism example (someone criticises you; you were tired, doubted yourself, hoped to be understood)",
+      "reason": "Not found in any source; likely invented in the old text."
+    },
+    {
+      "claim": "'Do not expect a miracle the first time; softening reflects outward'",
+      "reason": "Unverified."
+    },
+    {
+      "claim": "Mother who calms the baby by saying 'I am here, all is well'",
+      "reason": "Not confirmed; sources only say pick up, speak quietly, find the cause."
+    },
+    {
+      "claim": "'Store consciousness' and the exact practice name for seeds",
+      "reason": "Not confirmed from accessible text; left out."
+    }
+  ],
+  "stories": {
+    "1669": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f4",
+        "f5",
+        "f8",
+        "f9",
+        "f10"
+      ],
+      "note": "Potato image confirmed by secondary summaries only."
+    },
+    "1670": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f9"
+      ],
+      "note": "Baby quote verbatim; mother-strikes-baby passage medium."
+    },
+    "1671": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7",
+        "f4"
+      ],
+      "note": "Old story title says 'disconnected mind'; only the seed passage is confirmed, so story keeps to seeds. Medium-low."
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "story_id": 1551,
+  "kind": "concept",
+  "book": {
+    "title": "Traction: Get a Grip on Your Business",
+    "author": "Gino Wickman",
+    "year": ""
+  },
+  "confidence": "medium",
+  "confidence_note": "Agenda from EOS Worldwide page; book wording not read. 12-hour claim dropped.",
+  "facts": [
+    "Weekly, same day and time, start and end on time, 90 minutes.",
+    "Segue 5, Scorecard 5, Rock Review 5, Headlines 5, To-Do 5, IDS 60, Conclude 5.",
+    "First sections only report; off-track Rocks go to the issues list.",
+    "IDS: identify, discuss, solve, most important issue first, root cause.",
+    "To-Dos owned for seven days.",
+    "Anyone can call tangent alert; meeting is rated at the end."
+  ],
+  "scene_details": [
+    "a fixed clock",
+    "an issues list",
+    "tangent alert"
+  ],
+  "tension": "Meetings that discuss everything and close nothing.",
+  "opening_idea": "Seven fixed segments with minutes.",
+  "lessons": [
+    {
+      "idea": "Give a meeting a fixed order.",
+      "anchor": "Level 10 agenda"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which unresolved topic could a fixed structure close?",
+  "use_cases": [
+    {
+      "situation": "Meeting circles the same topics",
+      "move": "First half hour reports only, then solve the top issue.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Conversation drifts",
+      "move": "Tangent alert. Put it on the issues list.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your own weekly plan",
+      "move": "Same hour each Sunday, solve one issue.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Same day, same hour, reports first, then solving: a fixed order turns talk into decisions.",
+  "conversation_variants": {
+    "punchline_idea": "Ninety minutes, sixty of them solving.",
+    "thirty_sec_idea": "Level 10 agenda, IDS, to-dos.",
+    "question_idea": "",
+    "key_contrast_idea": "chat vs decision"
+  }
+}

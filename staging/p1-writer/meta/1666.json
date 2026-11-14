@@ -1,0 +1,35 @@
+{
+  "story_id": 1666,
+  "verdict": "keep",
+  "verify_note": "Keep. Book text read in full (Rider 1995 edition of the 1991 book). Walking meditation passages checked; no invented scene.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Sadece yürümek için yürümek",
+    "description": "Thich Nhat Hanh'a göre yürüyüş meditasyonunda varılacak yer yoktur; adımlar nefesle sayılır ve ayaklar yeri hisseder.",
+    "hook": "Haftanızdaki hangi yolu yalnızca yürüyüş olarak bırakabilirsiniz?",
+    "one_minute_summary": "Thich Nhat Hanh, Peace Is Every Step kitabında yürüyüşün çoğu zaman koşuya benzediğini yazıyor. Önerdiği yürüyüş meditasyonu yavaş ve dışarıda yapılır: her nefes alışta üç adım, her verişte üç adım, ciğerler isterse dört. Ayaklarınızın yere değdiğine dikkat eder, güzel bir şey görünce durur, sonra yeniden başlarsınız. Kural bir yere varmaya çalışmamaktır, çünkü ona göre hedefi düşünmek adımları kaybettirir. Mutlu ve huzurlu hissediyorsanız doğru yapıyorsunuz. Bulaşık yıkamak da hem araç hem amaçtır."
+  },
+  "en": {
+    "title": "Walking just to walk",
+    "description": "In Thich Nhat Hanh's walking meditation there is nowhere to arrive: steps follow the breath and the feet feel the ground.",
+    "hook": "Which regular walk of your week could you leave as just a walk?",
+    "one_minute_summary": "In Peace Is Every Step, Thich Nhat Hanh says we walk all day but usually more like running. His walking meditation is slow and outdoors: three steps with each in-breath and three with each out-breath, four if your lungs want four. You feel your feet meet the earth, stop when something beautiful catches your eye, then start again. The rule is not to try to arrive anywhere, because thinking about a goal loses your steps. If you feel happy and peaceful, you are practicing correctly."
+  },
+  "es": {
+    "title": "Caminar sin llegar",
+    "description": "En la meditación caminando de Thich Nhat Hanh no hay adónde llegar: los pasos siguen la respiración y los pies sienten el suelo.",
+    "hook": "¿Qué trayecto habitual de tu semana podrías dejar solo como paseo?",
+    "one_minute_summary": "En Peace Is Every Step, Thich Nhat Hanh escribe que caminamos todo el día, pero más bien como quien corre. Su meditación caminando es lenta y al aire libre: tres pasos con cada inspiración y tres con cada espiración, cuatro si los pulmones lo piden. Notas los pies sobre la tierra, te paras si algo hermoso te llama la atención y empiezas de nuevo. La regla es no intentar llegar a ninguna parte, porque pensar en una meta hace perder los pasos."
+  },
+  "de": {
+    "title": "Gehen ohne anzukommen",
+    "description": "In Thich Nhat Hanhs Gehmeditation gibt es kein Ziel: Die Schritte folgen dem Atem, und die Füße spüren den Boden.",
+    "hook": "Welchen regelmäßigen Weg deiner Woche könntest du einfach nur als Weg lassen?",
+    "one_minute_summary": "In Peace Is Every Step schreibt Thich Nhat Hanh, dass wir den ganzen Tag gehen, aber meist eher rennen. Seine Gehmeditation ist langsam und draußen: drei Schritte beim Einatmen, drei beim Ausatmen, vier, wenn die Lunge es will. Du spürst die Füße auf der Erde, bleibst stehen, wenn dir etwas Schönes auffällt, und fängst neu an. Die Regel lautet, nirgendwo ankommen zu wollen, denn der Gedanke an ein Ziel lässt dich die Schritte verlieren. Fühlst du dich glücklich und friedlich, machst du es richtig."
+  }
+}

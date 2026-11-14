@@ -1,0 +1,35 @@
+{
+ "story_id": 1382,
+ "verdict": "keep",
+ "verify_note": "Achor's own 1,600-student finding (social support beats GPA, income, SAT; r = 0.7 vs. usual 0.3 threshold), 'Very Happy People' and Vaillant's 'love' summary from the book. Old 'two groups at the same stress level', oxytocin/cortisol and weekly-message claims dropped. Correlation caveat added.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Stres Anında Kime Tutunursunuz",
+  "description": "Harvard'da stresli öğrenciler içine kapanıyordu. Shawn Achor'ın 1.600 öğrencilik çalışması, mutluluğu en iyi sosyal desteğin öngördüğünü gösterdi.",
+  "hook": "Zor bir haftada ilk iptal ettiğiniz buluşma hangisi oluyor?",
+  "one_minute_summary": "Shawn Achor Harvard'da baskı arttıkça öğrencilerin içine kapandığını, arkadaşlarından ve ailesinden uzaklaştığını gördü. Ardından yaklaşık 1.600 öğrencinin iyi oluşunu inceledi. Mutluluğu en güçlü öngören etken sosyal destekti, notlardan, aile gelirinden ve SAT puanından çok daha güçlü. Korelasyon 0,7 çıktı. 268 erkeği on yıllarca izleyen Harvard çalışmasının yöneticisi George Vaillant da bulguları tek kelimeyle özetledi: sevgi. Achor'a göre stres anında insanlardan çekilmek yerine onlara yatırım yapmak gerekir. Çalışma bir ilişki gösterir, nedeni tek başına kanıtlamaz."
+ },
+ "en": {
+  "title": "Hold On Under Stress",
+  "description": "Stressed Harvard students turned inward. Shawn Achor's study of 1,600 of them found social support the strongest predictor of happiness.",
+  "hook": "In a hard week, which plan do you cancel first?",
+  "one_minute_summary": "At Harvard, Shawn Achor saw students turn inward as pressure rose, pulling away from friends and family. He then studied the well-being of about 1,600 undergraduates. Social support predicted happiness far better than grades, family income or SAT scores, with a correlation of 0.7. George Vaillant, who directed a Harvard study following 268 men for decades, summed up its findings in one word: love. Achor's advice is to invest in people under stress rather than pull back. The study shows a strong link, not proof of cause on its own."
+ },
+ "es": {
+  "title": "A quién te agarras bajo presión",
+  "description": "Los estudiantes estresados de Harvard se encerraban. El estudio de Shawn Achor con 1.600 de ellos halló que el apoyo social era lo que mejor predecía la felicidad.",
+  "hook": "En una semana dura, ¿qué plan cancelas primero?",
+  "one_minute_summary": "En Harvard, Shawn Achor vio que, bajo presión, muchos estudiantes se encerraban y se alejaban de amigos y familia. Después estudió el bienestar de unos 1.600 de ellos. El apoyo social predecía la felicidad mucho mejor que las notas, los ingresos familiares o el SAT, con una correlación de 0,7. George Vaillant, que dirigió durante décadas un estudio de Harvard con 268 hombres, resumió sus resultados en una palabra: amor. Achor aconseja invertir en las personas bajo estrés en lugar de apartarse."
+ },
+ "de": {
+  "title": "Woran du dich unter Druck hältst",
+  "description": "Gestresste Harvard-Studierende zogen sich zurück. Shawn Achors Studie mit 1.600 von ihnen fand: Soziale Unterstützung sagt Glück am besten voraus.",
+  "hook": "Welchen Termin sagst du in einer harten Woche als Erstes ab?",
+  "one_minute_summary": "In Harvard sah Shawn Achor, wie sich Studierende bei steigendem Druck zurückzogen, weg von Freunden und Familie. Dann untersuchte er das Wohlbefinden von rund 1.600 von ihnen. Soziale Unterstützung sagte Glück weit besser voraus als Noten, Familieneinkommen oder Testergebnisse, mit einer Korrelation von 0,7. George Vaillant, der jahrzehntelang eine Harvard-Studie mit 268 Männern leitete, fasste deren Ergebnisse in einem Wort zusammen: Liebe. Achor rät, unter Stress in Menschen zu investieren, statt sich zurückzuziehen. Die Studie zeigt einen starken Zusammenhang, beweist aber allein keine Ursache."
+ }
+}

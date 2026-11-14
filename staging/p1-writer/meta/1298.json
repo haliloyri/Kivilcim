@@ -1,0 +1,35 @@
+{
+ "story_id": 1298,
+ "verdict": "keep",
+ "verify_note": "Keep. McKeown's hospital/client-meeting story verified via Shortform summaries and his Tim Ferriss Show retelling; 90 percent rule and Derek Sivers line verified via chapter summaries. Unverified quote ('saying yes to good opportunities...') dropped. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Doksanın altı sıfırdır",
+  "description": "Kızı doğduktan bir gün sonra gittiği önemsiz bir toplantı, McKeown'ı yüzde 90 kuralına götürüyor.",
+  "hook": "Bir teklif yalnızca 'iyi' ise ona neden hayır demelisiniz?",
+  "one_minute_summary": "Greg McKeown kızı doğduktan bir gün sonra hastanedeyken bir iş arkadaşının çağrısıyla müşteri toplantısına gidiyor. Saygı kazanacağını düşünüyor, ama müşteri ona daha az değer veriyor gibi görünüyor ve toplantı önemsiz çıkıyor. Sonradan bunu, birini memnun etmek için verilmiş bir evet olarak görüyor. Vardığı sonuç: hayatınıza siz öncelik vermezseniz başkası verir. Önerdiği araç yüzde 90 kuralı: tek ölçüte göre 0'dan 100'e puan ver, 90'ın altı sıfırdır."
+ },
+ "en": {
+  "title": "Below 90 is zero",
+  "description": "A pointless meeting the day after his daughter's birth led McKeown to the 90 percent rule.",
+  "hook": "Why turn down an offer that is merely good?",
+  "one_minute_summary": "The day after his daughter was born, Greg McKeown left the hospital for a client meeting a colleague asked him to attend. He expected respect. Instead the client seemed to think less of him, and the meeting turned out to be unimportant. He later called it a yes given to please someone. His conclusion: if you don't prioritize your life, someone else will. His tool is the 90 percent rule: score an option against one criterion, and anything under 90 becomes zero."
+ },
+ "es": {
+  "title": "Menos de 90 es cero",
+  "description": "Una reunión sin importancia al día siguiente de nacer su hija llevó a McKeown a la regla del 90 por ciento.",
+  "hook": "¿Por qué rechazar una oferta que solo es buena?",
+  "one_minute_summary": "Al día siguiente del nacimiento de su hija, Greg McKeown dejó el hospital para ir a una reunión con un cliente que le pidió un compañero. Esperaba respeto. En cambio, el cliente pareció valorarlo menos y la reunión resultó poco importante. Más tarde lo llamó un sí dado para agradar. Su conclusión: si no priorizas tu vida, otro lo hará. Su herramienta es la regla del 90 por ciento: puntúa según un criterio y todo lo que no llegue a 90 vale cero."
+ },
+ "de": {
+  "title": "Unter 90 ist null",
+  "description": "Ein unwichtiger Termin am Tag nach der Geburt seiner Tochter führte McKeown zur 90-Prozent-Regel.",
+  "hook": "Warum solltest du ein Angebot ablehnen, das nur gut ist?",
+  "one_minute_summary": "Am Tag nach der Geburt seiner Tochter verließ Greg McKeown das Krankenhaus für einen Kundentermin, um den ihn ein Kollege gebeten hatte. Er erwartete Respekt. Stattdessen schien der Kunde ihn weniger zu schätzen, und der Termin war unwichtig. Später nannte er es ein Ja, um jemandem zu gefallen. Seine Lehre: Wenn du deinem Leben keine Prioritäten gibst, tut es jemand anderes. Sein Werkzeug ist die 90-Prozent-Regel: an einem Kriterium bewerten, alles unter 90 zählt als null."
+ }
+}

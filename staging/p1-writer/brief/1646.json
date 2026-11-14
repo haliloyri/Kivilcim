@@ -1,0 +1,57 @@
+{
+  "story_id": 1646,
+  "kind": "concept",
+  "book": {
+    "title": "Braving the Wilderness",
+    "author": "Brené Brown",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "BRAVING list and the Integrity definition are from the author's knowledge of the book, not re-fetched; fourminutebooks confirms several of the traits. Old text's 'two or three values' study and quote dropped; story retitled to the book's own Integrity element. Concept story at the low end.",
+  "facts": [
+    "Brown's trust framework is BRAVING: Boundaries, Reliability, Accountability, Vault, Integrity, Non-judgment, Generosity.",
+    "Integrity means choosing courage over comfort.",
+    "Integrity means choosing what is right over what is fun, fast, or easy.",
+    "Integrity means practicing your values, not just professing them.",
+    "Summaries list the traits as being reliable, owning your mistakes, respecting boundaries and being generous.",
+    "True belonging means living out your values whatever others think."
+  ],
+  "scene_details": [
+    "a value written on a wall",
+    "a choice between the fast way and the right way"
+  ],
+  "tension": "A value you only profess costs nothing, and a value you practice sometimes costs something.",
+  "opening_idea": "Open on the difference between professing and practicing.",
+  "lessons": [
+    {
+      "idea": "Test a value by the moment it costs you something",
+      "anchor": "integrity as practicing values, not professing them; Everyday: a shop owner who says honesty is a value and returns the extra change a customer overpaid"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which value do you profess most easily, and where did you last practice it when the fast or easy way was open?",
+  "use_cases": [
+    {
+      "situation": "A teammate suggests a shortcut that bends a rule",
+      "move": "Brown defines integrity as choosing what is right over what is fast or easy. Can we take the slower way on this one?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend asks you to keep quiet about a mistake",
+      "move": "I want to be reliable, and that includes owning it. Let us tell them together.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You say honesty is your value and avoid a hard conversation",
+      "move": "I said honesty matters. This week I will say the thing I am putting off.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Practice your value where it costs something: choose what is right over what is fast or easy.",
+  "conversation_variants": {
+    "punchline_idea": "Brown's definition of integrity: practicing your values, not just professing them.",
+    "thirty_sec_idea": "In Braving the Wilderness, Brené Brown lists seven elements of trust, from boundaries to generosity. Integrity is one: choosing courage over comfort, choosing what is right over what is fun, fast or easy, and practicing your values rather than just professing them. It is the part that only shows up when it costs something.",
+    "question_idea": "",
+    "key_contrast_idea": "professing, practicing"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1539,
+  "verdict": "keep",
+  "verify_note": "Keep, thin and lower confidence: Syed's Sydney 2000 experience and the explicit/implicit explanation of choking from the spiked review, lifeclub and search summaries of Bounce; no primary text. Re-centred on choking; the 1995 darts/sports-drink experiment and the claim that elite athletes train mind and body equally dropped as unsourced. Placebo soldiers (low) and perspective habit come from one summary each.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Uzman neden tıkanır",
+    "description": "Matthew Syed 2000 Sidney Olimpiyatları'nda kendi seviyesinin altında oynadı ve bunu iki beyin sistemiyle açıkladı.",
+    "hook": "Normalde iyi yaptığınız bir şeyde en son ne zaman tökezlediniz ve kendinizi ne yaparken izliyordunuz?",
+    "one_minute_summary": "Matthew Syed 2000 Sidney Olimpiyatları'nda en önemli turnuvasında en iyi hâlinin çok altında oynadı. Sonra tıkanmayı açık ve örtük sistemle açıkladı: beceri örtük sistemde otomatik çalışır, baskı altında kontrol, aynı anda çok şey yapamayan açık sisteme kayar ve uzman ustalaştığı şeyde zorlanır. Örnek, pahalı bir halıda dolu şarap kadehi taşımaktır. Bir eleştirmen bu açıklamanın tıkanmayı önlemek için az şey söylediğini belirtiyor."
+  },
+  "en": {
+    "title": "Why Experts Choke",
+    "description": "Matthew Syed played far below his best at the 2000 Sydney Olympics and explained it with two brain systems.",
+    "hook": "When did you last stumble at something you normally do well, and what were you watching yourself do?",
+    "one_minute_summary": "At the 2000 Sydney Olympics Matthew Syed played far below his best at the most important tournament of his career. He later explained choking with an explicit and an implicit system: skill runs automatically in the implicit one, but under pressure control shifts to the explicit one, which cannot do many things at once, and the expert struggles with what he had mastered. The example is carrying a full glass of wine across an expensive carpet. A reviewer notes the explanation says little about avoiding it."
+  },
+  "es": {
+    "title": "Por qué se bloquean los expertos",
+    "description": "Matthew Syed jugó muy por debajo de su nivel en los Juegos de Sídney 2000 y lo explicó con dos sistemas cerebrales.",
+    "hook": "¿Cuándo fue la última vez que tropezaste en algo que haces bien, y qué te observabas hacer?",
+    "one_minute_summary": "En los Juegos Olímpicos de Sídney 2000, Matthew Syed jugó muy por debajo de su mejor nivel en el torneo más importante de su carrera. Después explicó el bloqueo con un sistema explícito y otro implícito: la destreza funciona sola en el implícito, pero bajo presión el control pasa al explícito, que no puede hacer muchas cosas a la vez. El ejemplo es llevar una copa de vino llena por una alfombra cara. Un reseñista señala que la explicación dice poco sobre cómo evitarlo."
+  },
+  "de": {
+    "title": "Warum Experten blockieren",
+    "description": "Matthew Syed spielte bei den Olympischen Spielen 2000 weit unter seinem Besten und erklärte es mit zwei Hirnsystemen.",
+    "hook": "Wann bist du zuletzt bei etwas gestolpert, das du sonst gut kannst, und was hast du dir dabei zugeschaut?",
+    "one_minute_summary": "Bei den Olympischen Spielen 2000 in Sydney spielte Matthew Syed bei seinem wichtigsten Turnier weit unter seinem Besten. Später erklärte er Blockaden mit einem expliziten und einem impliziten System: Können läuft im impliziten automatisch, unter Druck wandert die Kontrolle ins explizite, das nicht viele Dinge gleichzeitig kann, und der Experte kämpft mit dem, was er beherrschte. Das Beispiel ist ein volles Weinglas über einem teuren Teppich. Ein Rezensent merkt an, die Erklärung sage wenig darüber, wie man es vermeidet."
+  }
+}

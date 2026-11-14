@@ -1,0 +1,170 @@
+{
+  "book_no": 94,
+  "title": "Learned Optimism",
+  "authors": [
+    "Martin E. P. Seligman"
+  ],
+  "year": "1990",
+  "note": "DB Turkish title 'İyimserlik Öğrenmek'. Original English title Learned Optimism (Knopf, 1990). Full text was not accessible; facts rest on Seligman's own papers (1967 triadic design via Maier & Seligman 2016 review; Seligman & Schulman 1986 Met Life paper), his interviews, and multiple book summaries/reader highlights. Exact book wording is not quoted.",
+  "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4920136",
+    "https://www.npr.org/transcripts/859713746",
+    "https://researchgate.net/profile/Peter-Schulman/publication/232497771_Explanatory_Style_as_a_Predictor_of_Productivity_and_Quitting_Among_Life_Insurance_Sales_Agents",
+    "https://www.waldentesting.com/sasq-media",
+    "https://www.thinkadvisor.com/amp/2008/09/30/learning-to-be-a-rich-optionist/",
+    "https://en.wikipedia.org/wiki/Learned_optimism",
+    "https://www.goodreads.com/notes/12661483-learned-optimism/1836391-donna-partow?page=1",
+    "https://goby-radish-xtcz.squarespace.com/blog/learned-optimism/dispute2",
+    "https://www.oprah.com/spirit/how-to-silence-your-inner-critic-how-to-be-nicer-to-yourself",
+    "https://bps.org.uk/psychologist/why-didnt-dog-jump-out-box"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "In the mid-1960s at the University of Pennsylvania, dogs given tone-paired shocks in a hammock were later put in a shuttlebox where escape needed only a jump over a low barrier; many did not escape and passively waited the shock out.",
+      "source": "Maier & Seligman 2016 review (PMC4920136)",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Seligman and Steven Maier's triadic design (published 1967): one group could end the shock by pressing a panel with the nose; a yoked group received exactly the same shocks but nothing it did had any effect; a third group received no shock.",
+      "source": "PMC4920136",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "In the shuttlebox, about two-thirds of the yoked (inescapable) animals failed to learn to escape, while about 90% of the escapable and no-shock animals learned it easily.",
+      "source": "PMC4920136",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Donald Hiroto ran a human version: loud noise that could be stopped by pressing buttons, the same noise with no control, or no noise; afterwards in a new task where moving a hand turned the noise off, most of the no-control group did not try; some said nothing had worked, so why try.",
+      "source": "PMC4920136; Hiroto & Seligman 1975",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "About one in three people could not be made helpless in the lab; Seligman says this made him ask what made them resilient, which led to explanatory style. About one in ten seemed helpless from the start.",
+      "source": "NPR 2020 interview (one-third, Seligman's own words); one-in-ten via secondary column",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Seligman named the phenomenon learned helplessness and linked it to depression.",
+      "source": "summaries; PMC4920136",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Caveat: in 2016 Maier and Seligman wrote that 'the original theory got it backwards': passivity under prolonged shock is the default, unlearned response; what is learned is control, detected by the medial prefrontal cortex.",
+      "source": "PMC4920136",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "Explanatory style has three dimensions: permanence (always vs. this time), pervasiveness (everything vs. this area), personalization (me vs. circumstances). Pessimists explain bad events as permanent, pervasive and their own fault; optimists as temporary, specific and not wholly their fault. For good events the pattern reverses: optimists see successes as permanent, pervasive and their own doing.",
+      "source": "book summaries; Goodreads highlights of Learned Optimism",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Met Life: agents scoring in the top half on Seligman's Attributional Style Questionnaire sold 37% more insurance in their first two years than those in the bottom half; in a second study, top-half scorers stayed in the job at twice the rate of bottom-half scorers.",
+      "source": "Seligman & Schulman 1986, JPSP",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Met Life president John Creedon turned to Seligman because the company lost many new agents to quitting; selling insurance involves repeated rejection.",
+      "source": "ThinkAdvisor; resilience-brief; summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "A 'special force' of 129 applicants who failed the industry career-profile test but scored as strong optimists was hired; they outsold the pessimists in the regular force by 21% in the first year and 57% in the second.",
+      "source": "Fortune excerpt quoted by waldentesting; ThinkAdvisor",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "The ABC model comes from Albert Ellis: Adversity, Belief, Consequence. Seligman adds D (Disputation) and E (Energization). Feelings and actions (C) follow from the belief (B) about the adversity, not from the adversity alone.",
+      "source": "Wikipedia; summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f13",
+      "claim": "The reader is asked to record ABC episodes from daily life over a few days to see the belief between event and reaction.",
+      "source": "summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Disputation has four tacks: Evidence, Alternatives, Implications (even if true, is it a catastrophe?), Usefulness. Where disputing is not possible in the moment, distraction or scheduling a later time to think it over.",
+      "source": "summaries; squarespace blog",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Seligman suggests disputing your own pessimistic thought as if a third person whose job is to make your life miserable, or a rival for your job, had said it.",
+      "source": "Oprah.com interview with Seligman",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Depression is usually not a chemical problem but learned helplessness.",
+      "reason": "Overstated; not a supported claim attributable to the book in this form."
+    },
+    {
+      "claim": "The exact quote 'Most people jump from A to C; noticing the B filter changes everything.'",
+      "reason": "Not found; presented as a direct quote in old text."
+    },
+    {
+      "claim": "Job-interview rejection example as the book's example.",
+      "reason": "Not found in the book; may only be used as an invented lesson example."
+    },
+    {
+      "claim": "Seligman ran the dog experiment alone in 1967.",
+      "reason": "Joint with Steven Maier (and Overmier earlier)."
+    },
+    {
+      "claim": "Optimists sold 88% more (top vs bottom decile).",
+      "reason": "Only secondary; not used."
+    }
+  ],
+  "stories": {
+    "1378": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7"
+      ],
+      "note": "Learned helplessness experiment; add 2016 revision caveat."
+    },
+    "1379": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f8",
+        "f9",
+        "f10",
+        "f11"
+      ],
+      "note": "Explanatory style anchored in the Met Life case."
+    },
+    "1380": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f12",
+        "f13",
+        "f14",
+        "f15"
+      ],
+      "note": "Concept story; no verified book case, so no invented scene."
+    }
+  }
+}

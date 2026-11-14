@@ -1,0 +1,130 @@
+{
+ "book_no": 129,
+ "title": "The Fearless Organization",
+ "authors": [
+  "Amy C. Edmondson"
+ ],
+ "year": "2018",
+ "sources": [
+  "https://www.leanblog.org/2020/01/amy-edmondson-psychological-safety-speaking-up/ (interview)",
+  "https://www.mindtools.com/a2sfubu/the-fearless-organization (interview)",
+  "https://www.shortform.com/blog/the-fearless-organization-book/",
+  "https://explore.psychsafety.com/n/edmondson-2018.md",
+  "https://psnet.ahrq.gov/issue/learning-mistakes-easier-said-done-group-and-organizational-influences-detection-and",
+  "https://dash.harvard.edu/entities/publication/13a7b031-0fdd-45ec-a7e0-2b80e2bc679f (1999 ASQ abstract)",
+  "Google Books API: John Wiley & Sons, published 2018-11-20"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "As a graduate student Edmondson studied how teamwork related to medication errors in hospital units. She found that the units with the strongest teamwork and leadership reported the most errors, the opposite of what she expected.",
+   "source": "Shortform; PSNet (1996 JABS study); leanblog interview",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "She read the gap as a difference in climate, not in the number of mistakes made: in some units people said 'let's check that, is that the right dose?', in others people hid things 'under the rug' if they could. Hidden errors do not get counted.",
+   "source": "leanblog interview (her words); PSNet",
+   "confidence": "medium"
+  },
+  {
+   "id": "f3",
+   "claim": "Edmondson calls the idea that psychological safety means being nice 'the most important misconception'. Her words in interview: 'Psychological safety is not about being nice. Psychological safety is the opposite of tiptoeing.'",
+   "source": "leanblog interview",
+   "confidence": "high (interview, not book text)"
+  },
+  {
+   "id": "f4",
+   "claim": "She says psychological safety does not lower standards or ambition: 'only with psychological safety can we stretch and accomplish great things together.' It also does not mean no consequences.",
+   "source": "leanblog interview; mindtools",
+   "confidence": "high (interview)"
+  },
+  {
+   "id": "f5",
+   "claim": "Her definition: a belief that one's voice is valued and that it is safe to raise ideas, questions, concerns and mistakes; in the 1999 paper, a shared belief that the team is safe for interpersonal risk-taking.",
+   "source": "mindtools; ASQ abstract",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "The book opens with Christina Price, a neonatal nurse who stays silent about a medication a premature baby needs rather than challenge the treating physician, to show that silence can be a locally rational response to perceived risk.",
+   "source": "psychsafety.com notes on the book",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Chapter 1 is titled 'The Underpinning' and includes sections 'Why Fear Is Not an Effective Motivator' and 'What Psychological Safety Is Not'.",
+   "source": "publisher table of contents via search",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Leader toolkit (chapter 7): setting the stage, inviting participation, responding productively. Responding productively means expressing appreciation, destigmatising failure and sanctioning clear violations.",
+   "source": "psychsafety.com; mindtools",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Responding productively, in interview: thank people for bad news or an unusual idea, then move to problem-solving, so they keep speaking up.",
+   "source": "mindtools interview",
+   "confidence": "high (interview)"
+  },
+  {
+   "id": "f10",
+   "claim": "Inviting participation: ask directly for views and build forums; open-door policies are not enough. Leaders can model humility, e.g. 'I have knowledge and experience. I am almost certainly missing something.'",
+   "source": "psychsafety.com; leanblog interview",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Edmondson's 1999 study of 51 teams in a manufacturing company linked team psychological safety to learning behaviour; team leader coaching is named as one structure in the model. The abstract does not report a size of leader effect.",
+   "source": "ASQ abstract",
+   "confidence": "high (paper, not the book)"
+  },
+  {
+   "id": "f12",
+   "claim": "In her ICU work, senior physicians in high-safety units actively asked others to speak up, for instance by saying they might miss something. This is from interview, not confirmed as book text.",
+   "source": "mindtools interview",
+   "confidence": "low for the book"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1484: 'psychologically safe nurse teams made fewer errors in reality', and 'quote: if your team brings only good news, you do not hear bad news'",
+   "reason": "Interpretation (fewer true errors) is not stated in sources as a measured result; the quote is not found. Only the reporting-versus-making distinction is kept, hedged."
+  },
+  {
+   "claim": "Old 1484: 'high-safety teams argue more but the arguments are about the subject, not people'",
+   "reason": "Quote not found in any source."
+  },
+  {
+   "claim": "Old 1485: 'leader climate is formed by small daily moments' plus the 51-team study showing leader coaching shaped safety",
+   "reason": "The 1999 paper is not the book and its abstract gives no leader effect size; 'small daily moments' is not a sourced claim. Replaced by the toolkit."
+  },
+  {
+   "claim": "Old 1485: 'when a leader belittles someone in a meeting everyone takes notes'; 'a leader admitting a mistake tells the team errors are allowed'",
+   "reason": "Plausible but not found as book claims; only the humility modeling in interview is kept."
+  }
+ ],
+ "stories": {
+  "1484": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4"
+   ],
+   "note": "Core: the hospital finding (strongest teams reported the most errors) and the not-nice misconception. Interview quotes are Edmondson's, used only as her words, no quotation marks in story. Medium-high confidence."
+  },
+  "1485": {
+   "verdict": "delete",
+   "fact_ids": [
+    "f8",
+    "f9",
+    "f10"
+   ],
+   "note": "Old claims (51 teams, small daily moments) are from the 1999 paper or unsourced. The book-grounded replacement (leader toolkit) is known only from interviews and summaries and filled about 215-250 words in test drafts, under the hard floors in tr/en/de; stretching it would be padding and the toolkit is the book chapter 7 headline, not a story. Delete, or rewrite later from the book text."
+  }
+ }
+}

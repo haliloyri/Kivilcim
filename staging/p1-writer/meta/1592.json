@@ -1,0 +1,35 @@
+{
+  "story_id": 1592,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: Four Horsemen and metabolic link from reviews of Outlive; book text not read. Old inflammation-as-root claim and causal chain dropped; the connecting claim comes from one summary, so it is hedged as Attia's view and an association.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Dört süvari",
+    "description": "Peter Attia, çoğumuzun öleceği dört hastalığı sayıyor ve metabolik sağlığı temel görüyor. İnsülin direnci diğer riskle ilişkili, ama bu bir ilişki.",
+    "hook": "Sağlığınızda, paranızda ya da işinizde hangi erken işareti ancak geç bakıyorsunuz?",
+    "one_minute_summary": "Peter Attia, Outlive kitabında kalp hastalığı, kanser, Alzheimer gibi sinir sistemi hastalıkları ve tip 2 diyabeti dört süvari olarak sayıyor. Çoğu insanın bunlardan biriyle öleceğini söylüyor. Metabolik sağlığı temel sayıyor ve yükselmiş insülini maden ocağındaki kanarya diye anıyor. İnsülin direnci ötekilerin riskiyle ilişkili, ama bu bir ilişki ve nedensellik değil. Bu yüzden Attia, sorun görünür olmadan erken işaretleri izlemeyi savunuyor."
+  },
+  "en": {
+    "title": "The Four Horsemen",
+    "description": "Peter Attia names four diseases that most people die of and treats metabolic health as foundational. Insulin resistance goes with higher risk of the others, an association.",
+    "hook": "Which early signal do you check only after something goes wrong?",
+    "one_minute_summary": "In Outlive, Peter Attia lists heart disease, cancer, neurodegenerative disease such as Alzheimer's, and type 2 diabetes as the Four Horsemen. He says most people will die of one of them. He treats metabolic health as foundational and calls raised insulin the canary in the coal mine. Insulin resistance goes with higher risk of the others, an association rather than a proven cause. So Attia argues for watching early signals before trouble shows."
+  },
+  "es": {
+    "title": "Los Cuatro Jinetes",
+    "description": "Peter Attia nombra cuatro enfermedades de las que muere la mayoría y considera fundamental la salud metabólica. La resistencia a la insulina acompaña a mayor riesgo de las demás, una asociación.",
+    "hook": "¿Qué señal temprana miras solo cuando algo ya ha ido mal?",
+    "one_minute_summary": "En Outlive, Peter Attia enumera la enfermedad cardiaca, el cáncer, la enfermedad neurodegenerativa como el alzhéimer y la diabetes tipo 2 como los Cuatro Jinetes. Dice que la mayoría morirá de una de ellas. Considera fundamental la salud metabólica y llama a la insulina alta el canario de la mina. La resistencia a la insulina acompaña a un mayor riesgo de las demás, una asociación y no una causa demostrada. Por eso Attia defiende vigilar las señales tempranas antes de que haya problemas."
+  },
+  "de": {
+    "title": "Die Vier Reiter",
+    "description": "Peter Attia nennt vier Krankheiten, an denen die meisten sterben, und hält die Stoffwechselgesundheit für grundlegend. Insulinresistenz geht mit höherem Risiko für die anderen einher, ein Zusammenhang.",
+    "hook": "Welches frühe Signal prüfst du erst, wenn schon etwas schiefgeht?",
+    "one_minute_summary": "In Outlive zählt Peter Attia Herzkrankheit, Krebs, neurodegenerative Erkrankung wie Alzheimer und Typ-2-Diabetes als die Vier Reiter auf. Er sagt, die meisten Menschen sterben an einer davon. Er hält die Stoffwechselgesundheit für grundlegend und nennt erhöhtes Insulin den Kanarienvogel im Bergwerk. Insulinresistenz geht mit höherem Risiko für die anderen einher, ein Zusammenhang und keine bewiesene Ursache. Deshalb plädiert Attia dafür, frühe Signale zu beobachten, bevor Probleme sichtbar werden."
+  }
+}

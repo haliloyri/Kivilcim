@@ -1,0 +1,35 @@
+{
+ "story_id": 1286,
+ "verdict": "keep",
+ "verify_note": "Keep. Allen's line 'Circumstance does not make the man; it reveals him to himself' and his three cases (poor shirker, rich glutton, wage-cutting employer) checked against the Gutenberg text. Old 'modern psychology' claim and invented quotes dropped; editorial caveat added that 'suffering is always from wrong thought' is a 1903 moral claim.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Koşullar insanı gösterir",
+  "description": "James Allen, istediği sonuca karşı çalışan alışkanlığını göremeyen üç adamı anlatır ve koşulların insanı kendine gösterdiğini söyler.",
+  "hook": "İstediğiniz bir sonuca karşı sessizce çalışan bir alışkanlığınız var mı?",
+  "one_minute_summary": "James Allen, As a Man Thinketh'te koşulların insanı yapmadığını, onu kendine gösterdiğini yazar. Örneği üç adamdır: daha iyi bir ev isteyip işinden kaçan ve işvereni kandıran yoksul, oburluktan hastalanıp tedaviye servet vermeye hazır ama yemekten vazgeçmeyen zengin, ücretleri kesip iflas edince koşulları suçlayan işveren. Allen kimsenin iç dünyasının dışarıdan yargılanamayacağını da ekler. Her acının yanlış düşünceden geldiği iddiası ise 1903'ten kalan ahlaki bir görüştür, bir bulgu değildir."
+ },
+ "en": {
+  "title": "Circumstance reveals the man",
+  "description": "James Allen describes three men who cannot see the habit working against what they want, and says circumstance reveals a person to himself.",
+  "hook": "Is one of your habits quietly working against a result you want?",
+  "one_minute_summary": "In As a Man Thinketh, James Allen writes that circumstance does not make the man, it reveals him to himself. His examples are three men: a poor man who wants a better home but shirks work and cheats his employer, a rich glutton who would pay a fortune for a cure but won't change his diet, and an employer who cuts wages, goes bankrupt and blames circumstances. His claim that all suffering comes from wrong thought is a 1903 moral view, not evidence."
+ },
+ "es": {
+  "title": "Las circunstancias revelan",
+  "description": "James Allen describe a tres hombres que no ven el hábito que juega contra lo que desean, y dice que las circunstancias revelan a la persona.",
+  "hook": "¿Tienes un hábito que trabaja en silencio contra lo que quieres?",
+  "one_minute_summary": "En As a Man Thinketh, James Allen escribe que las circunstancias no hacen al hombre, sino que lo revelan ante sí mismo. Sus ejemplos son tres hombres: un pobre que quiere un hogar mejor pero rehúye el trabajo y engaña a su patrón, un rico glotón que pagaría una fortuna por curarse pero no cambia su mesa, y un patrón que rebaja sueldos, quiebra y culpa a las circunstancias. Su idea de que todo sufrimiento nace del pensamiento es una visión moral de 1903."
+ },
+ "de": {
+  "title": "Umstände offenbaren den Menschen",
+  "description": "James Allen beschreibt drei Männer, die die Gewohnheit gegen ihr eigenes Ziel nicht sehen, und sagt, Umstände offenbaren einen Menschen sich selbst.",
+  "hook": "Arbeitet eine deiner Gewohnheiten still gegen ein Ziel, das du willst?",
+  "one_minute_summary": "In As a Man Thinketh schreibt James Allen, die Umstände machen den Menschen nicht, sie offenbaren ihn sich selbst. Seine Beispiele sind drei Männer: ein Armer, der ein besseres Zuhause will, aber die Arbeit meidet und seinen Arbeitgeber betrügt, ein reicher Vielfraß, der ein Vermögen für Heilung zahlen würde, aber weiter üppig isst, und ein Arbeitgeber, der Löhne kürzt, pleitegeht und den Umständen die Schuld gibt. Dass alles Leid aus falschem Denken komme, ist eine moralische Sicht von 1903, kein Beleg."
+ }
+}

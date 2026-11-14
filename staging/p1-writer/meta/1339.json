@@ -1,0 +1,35 @@
+{
+ "story_id": 1339,
+ "verdict": "keep",
+ "verify_note": "Collapse (April 6, 2007), broken cheekbone, 18-hour days for two years, MRI/CAT/echocardiogram and the waiting-room questions verified in Huffington's own words and Fortune. Unsourced quotes ('If this is success...', 'third revolution') and the 4-5 hours figure dropped.",
+ "title_changed": {
+  "tr": false,
+  "en": false,
+  "es": false,
+  "de": false
+ },
+ "tr": {
+  "title": "Huffington'ın çöküşü",
+  "description": "İki yıl boyunca günde on sekiz saat çalışan Arianna Huffington, 2007'de bitkinlikten yere yığıldı ve elmacık kemiğini kırdı. Testler hastalık değil, uykusuzluk buldu.",
+  "hook": "Az uyumakla övünmek size neye mal oluyor?",
+  "one_minute_summary": "6 Nisan 2007 sabahı Arianna Huffington çalışma odasının zemininde, kan içinde yatıyordu. The Huffington Post'u kurarken iki yıl boyunca günde on sekiz saat çalışmış, bitkinlikten bayılıp başını masaya çarpmış ve elmacık kemiğini kırmıştı. Beyin MR'ı, tomografi ve ekokardiyografi yalnızca yorgunluk ve uykusuzluk gösterdi. Bekleme salonlarında kendine sorular sordu. The Sleep Revolution, tükenmişliği başarının bedeli, uykusuzluğu bir onur nişanı sayan inanca karşı yazıldı."
+ },
+ "en": {
+  "title": "Huffington's collapse",
+  "description": "After two years of 18-hour days, Arianna Huffington collapsed from exhaustion in 2007 and broke her cheekbone. The tests found no illness, only lack of sleep.",
+  "hook": "What is bragging about little sleep really costing you?",
+  "one_minute_summary": "On April 6, 2007, Arianna Huffington was lying on her home-office floor in a pool of blood. After two years of 18-hour days building The Huffington Post, she had collapsed from exhaustion, hit her head on her desk and broken her cheekbone. A brain MRI, a CAT scan and an echocardiogram found only exhaustion and lack of sleep. In the waiting rooms she started asking questions. The Sleep Revolution argues against treating burnout as the price of success."
+ },
+ "es": {
+  "title": "El colapso de Huffington",
+  "description": "Tras dos años de jornadas de dieciocho horas, Arianna Huffington se desplomó de agotamiento en 2007 y se rompió el pómulo. Las pruebas no encontraron enfermedad, solo falta de sueño.",
+  "hook": "¿Cuánto te está costando presumir de dormir poco?",
+  "one_minute_summary": "El 6 de abril de 2007, Arianna Huffington estaba tendida en el suelo de su despacho sobre un charco de sangre. Tras dos años de jornadas de dieciocho horas levantando The Huffington Post, se había desplomado de agotamiento, se había golpeado con el escritorio y se había roto el pómulo. Una resonancia, un TAC y un ecocardiograma solo mostraron agotamiento y falta de sueño. En las salas de espera empezó a hacerse preguntas, y de ahí nació The Sleep Revolution."
+ },
+ "de": {
+  "title": "Huffingtons Zusammenbruch",
+  "description": "Nach zwei Jahren mit Achtzehn-Stunden-Tagen brach Arianna Huffington 2007 vor Erschöpfung zusammen und brach sich das Jochbein. Gefunden wurde keine Krankheit, nur Schlafmangel.",
+  "hook": "Was kostet es dich wirklich, mit wenig Schlaf zu prahlen?",
+  "one_minute_summary": "Am 6. April 2007 lag Arianna Huffington in ihrem Arbeitszimmer in einer Blutlache auf dem Boden. Nach zwei Jahren mit Achtzehn-Stunden-Tagen für The Huffington Post war sie vor Erschöpfung zusammengebrochen, mit dem Kopf gegen den Schreibtisch geschlagen und hatte sich das Jochbein gebrochen. MRT, CT und Echokardiogramm fanden nur Erschöpfung und Schlafmangel. In den Wartezimmern begann sie, sich Fragen zu stellen. Daraus wurde The Sleep Revolution, ein Buch gegen Schlafmangel als Ehrenabzeichen."
+ }
+}

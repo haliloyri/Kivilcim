@@ -1,0 +1,42 @@
+{
+  "story_id": 1313,
+  "kind": "anecdote",
+  "book": {"title": "The E-Myth Revisited", "author": "Michael E. Gerber", "year": "1995"},
+  "confidence": "high",
+  "confidence_note": "Verified in the full text. The book dates Kroc's visit to 1952; historical sources say 1954, so the year is omitted. The old text's 'Does McDonald's sell good hamburgers?' dialogue and 'McDonald's sells a system, not hamburgers' quote are not in the book; the real line is 'the hamburger wasn't his product. McDonald's was.' Book's revenue and store figures are left out because they are dated.",
+  "facts": [
+    "A fifty-two-year-old milkshake machine salesman, Ray Kroc, walked into a hamburger stand in San Bernardino, California, run by two brothers, to sell them a milkshake machine.",
+    "Gerber writes that the stand worked 'like a Swiss watch': hamburgers made quickly, efficiently, inexpensively and identically, and anyone could do it.",
+    "Kroc watched high school kids working with precision under the owners' supervision while long lines of customers waited.",
+    "He convinced the brothers to let him franchise their method and later bought them out.",
+    "Gerber: franchising was over a hundred years old; Kroc's innovation was the Business Format Franchise, which hands the franchisee a whole system of doing business, not just a name.",
+    "'What Ray Kroc understood at McDonald's was that the hamburger wasn't his product. McDonald's was.' The franchisee wanted to know one thing: 'Does it work?'",
+    "Because franchisees left to their own devices would fail, Kroc built a systems-dependent business, not a people-dependent one, a business that could work without him; he 'went to work on his business, not in it,' like an engineer on a pre-production prototype.",
+    "When the pie-shop owner Sarah objected that her aunt would see McDonald's as the opposite of a model, Gerber answered that McDonald's keeps its promise every time, and that her aunt had one kitchen while Kroc had thousands."
+  ],
+  "scene_details": [
+    "a salesman carrying a milkshake machine into a hamburger stand",
+    "high school kids flipping burgers with precision while long lines wait",
+    "'like a Swiss watch'",
+    "the aunt's single kitchen against thousands of kitchens"
+  ],
+  "tension": "A salesman came to sell one machine and left wanting to sell the whole stand's way of working.",
+  "opening_idea": "Start with a 52-year-old milkshake machine salesman stepping into a San Bernardino hamburger stand and watching teenagers work.",
+  "lessons": [
+    {"idea": "Treat the way your work gets done as something you can write down and hand over, so the result stays the same when you are not there.", "anchor": "Teenagers produced identical burgers because the method, not one cook, carried the quality.", "everyday_example_idea": "A café owner writes a one-page opening routine so any new barista can open the shop the same way."}
+  ],
+  "reflect": [],
+  "reflect_final": "Which task that only you know how to do could someone else do tomorrow if you wrote down its steps tonight?",
+  "use_cases": [
+    {"situation": "A recurring task always waits for one colleague.", "move": "Suggest writing the steps down so a newcomer can do it, the way Kroc's teenagers made the same burger.", "context": "meeting"},
+    {"situation": "You're about to go on holiday and fear the inbox.", "move": "Write a one-page 'how this runs without me' note and test it on a colleague before you leave.", "context": "self"},
+    {"situation": "A relative runs a small shop and is never off.", "move": "Ask which one routine could be written down so someone else can do it the same way.", "context": "family"}
+  ],
+  "pocket_idea": "Kroc didn't sell the burger; he sold a kitchen that works the same in anyone's hands.",
+  "conversation_variants": {
+    "punchline_idea": "Ray Kroc walked into a burger stand to sell a milkshake machine and realised the stand's routine was the real product.",
+    "thirty_sec_idea": "A 52-year-old milkshake machine salesman visits a burger stand in San Bernardino. High school kids are making identical burgers fast, cheap, like a Swiss watch. He talks the brothers into letting him franchise the method. Gerber's point: the hamburger wasn't Kroc's product. The business that worked without him was.",
+    "question_idea": "",
+    "key_contrast_idea": "Selling burgers, selling the method"
+  }
+}

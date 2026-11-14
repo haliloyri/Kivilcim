@@ -1,0 +1,35 @@
+{
+ "story_id": 1681,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence: Carr's drifting concentration, the Friedman War and Peace line, the plasticity examples (monkeys, violinists, London taxi drivers), Nietzsche's writing ball and the hypertext research come from notes and essay summaries, not the book text. The invented diary and Tolstoy details of the old text are dropped; War and Peace is Friedman's line. The story presents the thesis as Carr's argument and says it is no measurement of one reader. Story slightly under the length target.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Bir iki sayfa sonra dikkat kayıyor",
+  "description": "Nicholas Carr, beynini kurcalayan biri varmış gibi hissettiğini yazdı. Beynin esnekliği bu hissi nasıl açıklıyor?",
+  "hook": "Gününüzün hangi kısmında okumayı tek parça sürdürebilirdiniz ve bunu ne bölüyor?",
+  "one_minute_summary": "Nicholas Carr, yıllardır birinin beynini kurcaladığını hissettiğini yazar: eskiden uzun metinlere dalarken artık dikkati bir iki sayfa sonra kayıyor. Aktardığı blog yazarı Bruce Friedman da uzun bir metni okuyup özümseme yeteneğini neredeyse tamamen kaybettiğini söylüyor. Carr bunu beynin esnekliğiyle açıklar: beyin tekrar edilene uyum sağlar, taksi şoförlerinin şehri zihinlerinde haritalaması gibi. Hipermetin araştırmalarına göre bağlantıya tıklayıp tıklamamaya karar vermek okumaya ek bir iş yükler. Bu, Carr'ın savıdır, tek bir okurun ölçümü değildir."
+ },
+ "en": {
+  "title": "Mind drifting after two pages",
+  "description": "Nicholas Carr wrote that it felt as if someone were tinkering with his brain. Plasticity is how he explains the feeling.",
+  "hook": "Where in your day could one stretch of reading or work be held in a single piece, and what usually breaks it?",
+  "one_minute_summary": "Nicholas Carr writes that for some years he has felt that someone or something has been tinkering with his brain: where he once sank into long prose, his attention now drifts after a page or two. A blogger he quotes, Bruce Friedman, says he has almost totally lost the ability to read a longer text. Carr explains this through plasticity: the brain adapts to what we repeat, as London taxi drivers do. This is his argument, not a measurement of one reader."
+ },
+ "es": {
+  "title": "Dos páginas, y la mente huye",
+  "description": "Nicholas Carr escribió que sentía como si alguien manipulara su cerebro. La plasticidad es su forma de explicar esa sensación.",
+  "hook": "¿En qué momento de tu día podrías sostener una lectura o un trabajo de una sola pieza y qué suele interrumpirlo?",
+  "one_minute_summary": "Nicholas Carr escribe que desde hace unos años siente que alguien o algo anda manipulando su cerebro: donde antes se sumergía en prosa larga, ahora su atención se va tras una o dos páginas. Un blogger al que cita, Bruce Friedman, dice haber perdido casi por completo la capacidad de leer un texto largo. Carr lo explica con la plasticidad: el cerebro se adapta a lo que repetimos, como los taxistas de Londres. Es su argumento, no una medición de un lector concreto."
+ },
+ "de": {
+  "title": "Nach zwei Seiten abgeschweift",
+  "description": "Nicholas Carr schrieb, es fühle sich an, als bastle jemand an seinem Gehirn. Mit Plastizität erklärt er das Gefühl.",
+  "hook": "Wo in deinem Tag könntest du eine Zeitspanne Lesen oder Arbeit am Stück halten, und was unterbricht sie meistens?",
+  "one_minute_summary": "Nicholas Carr schreibt, er habe seit einigen Jahren das Gefühl, dass jemand oder etwas an seinem Gehirn herumbastelt: Wo er früher in langer Prosa versank, schweift seine Aufmerksamkeit nun nach ein, zwei Seiten ab. Ein Blogger, den er zitiert, Bruce Friedman, sagt, er habe die Fähigkeit, längere Texte zu lesen, fast ganz verloren. Carr erklärt das mit Plastizität: Das Gehirn passt sich an das an, was wir wiederholen. Das ist sein Argument, keine Messung eines Lesers."
+ }
+}

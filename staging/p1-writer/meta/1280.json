@@ -1,0 +1,35 @@
+{
+ "story_id": 1280,
+ "verdict": "keep",
+ "verify_note": "Keep. Avoiding tough conversations as the top-ranked barrier is quoted from Brown's own excerpt; 150 C-level leaders and the 'nice and polite' norm from summaries (medium). Unverified 'seven-year study' and time/trust-cost quote dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kaçılan zor konuşmalar",
+  "description": "Liderler cesaretin önündeki engelleri sıraladığında en üste kendi kaçtıkları zor konuşmaları koydu.",
+  "hook": "Haftalardır yumuşatarak geçiştirdiğiniz bir geri bildirim var mı?",
+  "one_minute_summary": "Brené Brown, Dare to Lead için 150 üst düzey yöneticiyle görüştü. Cevapları netti: daha cesur liderlere ve kültürlere ihtiyaç var. Sonra cesaretin önündeki on engeli saydılar ve en üste zor konuşmalardan, dürüst geri bildirimden kaçınmayı koydular. Kimi bunu cesaret eksikliğine, kimi beceri eksikliğine bağladı. Yarıdan fazlası 'nazik ve kibar' olma normunun kılıf olduğunu söyledi. Brown'ın cevabı kısadır: net olmak naziktir, net olmamak nezaketsizliktir."
+ },
+ "en": {
+  "title": "The conversations leaders avoid",
+  "description": "When leaders listed what blocks courage at work, they put the tough conversations they avoid at the top.",
+  "hook": "Which feedback have you been softening for weeks?",
+  "one_minute_summary": "For Dare to Lead, Brené Brown's team interviewed 150 C-level leaders, who said they need braver leaders and more courageous cultures. Asked what gets in the way, they named ten barriers and ranked first: avoiding tough conversations, including honest, productive feedback. Some blamed a lack of courage, others a lack of skills, and more than half a culture of being 'nice and polite' used as the excuse. Brown's answer: clear is kind, unclear is unkind."
+ },
+ "es": {
+  "title": "Las conversaciones que evitamos",
+  "description": "Cuando los directivos listaron lo que frena el valor en el trabajo, pusieron primero las conversaciones difíciles que ellos mismos esquivan.",
+  "hook": "¿Qué crítica llevas semanas suavizando?",
+  "one_minute_summary": "Para Dare to Lead, el equipo de Brené Brown entrevistó a 150 altos directivos, que pidieron líderes más valientes y culturas con más coraje. Al listar los obstáculos, pusieron en primer lugar evitar las conversaciones difíciles, incluida la crítica honesta. Unos lo atribuyeron a la falta de valor, otros a la falta de habilidades, y más de la mitad a una cultura de ser 'amables y educados' que servía de excusa. Brown responde: ser claro es ser amable."
+ },
+ "de": {
+  "title": "Gemiedene schwierige Gespräche",
+  "description": "Als Topmanager aufzählten, was Mut im Job bremst, setzten sie die schwierigen Gespräche, denen sie ausweichen, auf Platz eins.",
+  "hook": "Welches Feedback schwächst du seit Wochen ab?",
+  "one_minute_summary": "Für Dare to Lead befragte Brené Browns Team 150 Topmanager, die mutigere Führung und mutigere Kulturen forderten. Bei den zehn Hindernissen stand ganz oben: Wir weichen schwierigen Gesprächen aus, auch ehrlichem Feedback. Manche nannten fehlenden Mut, andere fehlende Fähigkeiten, und mehr als die Hälfte eine Kultur des 'nett und höflich', die als Ausrede dient. Browns Antwort: Klarheit ist freundlich, Unklarheit ist unfreundlich."
+ }
+}

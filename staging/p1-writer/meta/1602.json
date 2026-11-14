@@ -1,0 +1,35 @@
+{
+ "story_id": 1602,
+ "verdict": "keep",
+ "verify_note": "Keep with low confidence: the Bohr effect is verified physiology (Christian Bohr, father of Niels Bohr); that Nestor's chapter 'Less' builds on it is confirmed only through secondary summaries. Old text's panic-loop story, 40-second breath-hold threshold and Olympian claims dropped. Thin material; flag for editor.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Bohr etkisi ve yavaş nefes",
+  "description": "Karbondioksit hemoglobinin oksijeni bırakmasına yardım eder. Nestor bu yüzden daha az ve daha yavaş nefesi savunur.",
+  "hook": "Daha çok nefes her zaman daha çok oksijen demek mi?",
+  "one_minute_summary": "Yüz yıldan uzun süre önce Christian Bohr, hemoglobinin çevresinde daha fazla karbondioksit varken oksijeni daha kolay bıraktığını buldu. James Nestor'un *Breath* kitabı bunu, aşırı nefes almanın dokulara daha az oksijen bırakabileceğini ve dakikada yaklaşık 5,5 nefesin daha iyi olabileceğini savunmak için kullanır. Bohr etkisi ders kitabı fizyolojisidir, yavaş nefesin yararlarını ne kadar açıkladığı ise Nestor'un savıdır. Hikâye bu yüzden temkinli okunmalı."
+ },
+ "en": {
+  "title": "The Bohr effect and slow breathing",
+  "description": "Carbon dioxide helps hemoglobin release oxygen. James Nestor uses that to argue for breathing less and slower.",
+  "hook": "Does more breath always mean more oxygen?",
+  "one_minute_summary": "More than a century ago, Christian Bohr found that hemoglobin releases oxygen more easily when there is more carbon dioxide around it. James Nestor's *Breath* uses this to argue that over-breathing can leave less oxygen for the tissues, and that about 5.5 breaths a minute may serve better. The Bohr effect is textbook physiology; how far it explains the benefits of slow breathing is Nestor's argument."
+ },
+ "es": {
+  "title": "Efecto Bohr y respiración lenta",
+  "description": "El dióxido de carbono ayuda a la hemoglobina a soltar oxígeno. James Nestor lo usa para defender respirar menos y más despacio.",
+  "hook": "¿Más aire significa siempre más oxígeno?",
+  "one_minute_summary": "Hace más de un siglo, Christian Bohr descubrió que la hemoglobina suelta el oxígeno con más facilidad cuando hay más dióxido de carbono alrededor. *Breath*, de James Nestor, lo usa para argumentar que respirar de más puede dejar menos oxígeno a los tejidos y que unas 5,5 respiraciones por minuto pueden servir mejor. El efecto Bohr es fisiología de manual; hasta dónde explica los beneficios de respirar despacio es el argumento de Nestor."
+ },
+ "de": {
+  "title": "Der Bohr-Effekt und langsames Atmen",
+  "description": "Kohlendioxid hilft dem Hämoglobin, Sauerstoff abzugeben. James Nestor nutzt das für weniger und langsamere Atmung.",
+  "hook": "Heißt mehr Luft immer mehr Sauerstoff?",
+  "one_minute_summary": "Vor mehr als hundert Jahren fand Christian Bohr heraus, dass Hämoglobin Sauerstoff leichter abgibt, wenn mehr Kohlendioxid in der Nähe ist. James Nestors *Breath* nutzt das, um zu argumentieren, dass zu viel Atmen den Geweben weniger Sauerstoff lassen kann und dass etwa 5,5 Atemzüge pro Minute besser dienen können. Der Bohr-Effekt ist Lehrbuchphysiologie; wie weit er die Vorteile langsamen Atmens erklärt, ist Nestors Argument."
+ }
+}

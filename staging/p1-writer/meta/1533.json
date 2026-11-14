@@ -1,0 +1,30 @@
+{
+  "story_id": 1533,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt with medium confidence: summaries agree on feature/advantage/benefit definitions and on features and advantages triggering objections. Old 30% example and invented quote dropped.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Önce ihtiyaç, sonra fayda",
+    "description": "Rackham'a göre özellikleri ve avantajları erken sıralayan satıcı itiraz toplar. Fayda, ancak alıcının dile getirdiği bir ihtiyacı karşıladığında doğar.",
+    "hook": "Birine bir şey önerirken, ne işe yaradığını anlatmadan önce neye ihtiyacı olduğunu sordunuz mu?",
+    "one_minute_summary": "Rackham'ın 35.000 görüşmelik araştırmasına dayanan SPIN Selling üç şeyi ayırır: özellik ürüne dair bir olgudur, avantaj nasıl yardım edebileceğini anlatır, fayda ise alıcının dile getirdiği açık bir ihtiyacı nasıl karşıladığını gösterir. Özellik ve avantajla başlamak itirazları tetikler ve satışı yavaşlatır. Usta satıcılar itirazı cevaplamak yerine önler: önce açık ihtiyacı geliştirir, belirtilere değil nedenlere değinir. Küçük satışta baştaki fayda cümlesi büyük satıştan daha iyi çalışır."
+  },
+  "en": {
+    "title": "Need first, pitch second",
+    "description": "In Rackham's research, sellers who listed what a product does before hearing the buyer's need collected objections. A benefit exists only once there is a need to meet.",
+    "hook": "When you recommend something, do you ask what the person needs before you say what it does?",
+    "one_minute_summary": "SPIN Selling, built on 35,000 sales calls, separates three things: a feature is a fact about the product, an advantage describes how it can help, and a benefit shows how it meets an explicit need the buyer has voiced. Leading with features or advantages triggers objections and slows the sale. Skilled sellers prevent objections by developing the need first and addressing causes, not symptoms. An opening benefit statement works better in small sales than in large ones."
+  },
+  "es": {
+    "title": "Primero la necesidad",
+    "description": "En la investigación de Rackham, los vendedores que enumeraban lo que hace el producto antes de oír la necesidad del comprador acumulaban objeciones. Un beneficio solo existe cuando hay una necesidad que cubrir.",
+    "hook": "Cuando recomiendas algo, ¿preguntas qué necesita la persona antes de contarle qué hace?",
+    "one_minute_summary": "SPIN Selling, basado en 35 000 llamadas de venta, distingue tres cosas: una característica es un hecho sobre el producto, una ventaja describe cómo puede ayudar y un beneficio muestra cómo cubre una necesidad explícita que el comprador ha expresado. Empezar por características o ventajas provoca objeciones y frena la venta. Los vendedores hábiles las previenen desarrollando primero la necesidad y atendiendo a las causas, no a los síntomas. En ventas pequeñas, un beneficio al inicio funciona mejor que en las grandes."
+  },
+  "de": {
+    "title": "Erst der Bedarf, dann das Angebot",
+    "description": "In Rackhams Forschung sammelten Verkäufer Einwände, die zuerst aufzählten, was ein Produkt kann. Ein Nutzen entsteht erst, wenn es ein Bedürfnis zu erfüllen gibt.",
+    "hook": "Fragst du bei einer Empfehlung zuerst, was die Person braucht, bevor du sagst, was es kann?",
+    "one_minute_summary": "SPIN Selling, gestützt auf 35.000 Verkaufsgespräche, unterscheidet drei Dinge: Ein Merkmal ist eine Tatsache über das Produkt, ein Vorteil beschreibt, wie es helfen kann, und ein Nutzen zeigt, wie es ein ausdrücklich geäußertes Bedürfnis des Käufers erfüllt. Wer mit Merkmalen oder Vorteilen beginnt, löst Einwände aus und bremst den Verkauf. Geschickte Verkäufer verhindern Einwände, indem sie zuerst das Bedürfnis entwickeln und Ursachen statt Symptome ansprechen."
+  }
+}

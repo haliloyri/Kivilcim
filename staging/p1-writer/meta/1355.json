@@ -1,0 +1,35 @@
+{
+ "story_id": 1355,
+ "verdict": "keep",
+ "verify_note": "The five regrets of the dying come from Bronnie Ware (2009/2011), not from this book. Recentered on the book's own 'deathbed mentality' (ch. 11): Divea's hourglass, the tree-planting line and John's father's 'more time at the office' line, all verified in the full text. Title changes.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Bilgelerin Kum Saati",
+  "description": "Hiçbir şeye sahip olmayan Himalaya bilgelerinin her birinin küçük bir kum saati vardır. Robin Sharma'nın fablında bu kum saati, Julian'ı ölüm döşeği sorusuna götürür.",
+  "hook": "Bugün son gününüz olsaydı, uzun zamandır ertelediğiniz hangi şeyi yapardınız?",
+  "one_minute_summary": "Robin Sharma'nın fablında Julian Mantle Himalayalar'daki bilgelerle yaşarken en genç bilge Divea ona üflenmiş camdan ve sandal ağacından minicik bir kum saati getirir. Her bilge çocukken bir tane almıştır, ölümlü olduklarını her gün hatırlamak için. Divea'nın öğüdü, ağaç dikmenin en iyi zamanının kırk yıl önce, ikinci en iyisinin bugün olduğudur. Julian buna ölüm döşeği zihniyeti der: her sabah bugün son gün olsaydı ne yapacağınızı sormak."
+ },
+ "en": {
+  "title": "The Sages' Hourglass",
+  "description": "The Himalayan sages own nothing, yet each keeps a tiny hourglass. In Robin Sharma's fable it leads Julian to the deathbed question.",
+  "hook": "If today were your last day, which long-postponed thing would you finally do?",
+  "one_minute_summary": "In Robin Sharma's fable, Julian Mantle is living with sages in the Himalayas when the youngest, Divea, brings him a tiny hourglass of blown glass and sandalwood. Every sage received one as a child, as a daily reminder of mortality. Her advice: the best time to plant a tree was forty years ago, the second best is today. Julian calls it the deathbed mentality: ask each morning what you would do if this were your last day."
+ },
+ "es": {
+  "title": "Un reloj de arena en Sivana",
+  "description": "Los sabios del Himalaya no poseen nada, pero cada uno guarda un pequeño reloj de arena. En la fábula de Robin Sharma, ese reloj lleva a Julian a la pregunta del último día.",
+  "hook": "Si hoy fuera tu último día, ¿qué cosa aplazada harías por fin?",
+  "one_minute_summary": "En la fábula de Robin Sharma, Julian Mantle vive con unos sabios en el Himalaya cuando la más joven, Divea, le regala un diminuto reloj de arena de vidrio soplado y sándalo. Todos recibieron uno de niños, para recordar cada día que iban a morir. Su consejo: el mejor momento para plantar un árbol fue hace cuarenta años, el segundo mejor es hoy. Julian lo llama la mentalidad de lecho de muerte: preguntarse cada mañana qué harías si fuera tu último día."
+ },
+ "de": {
+  "title": "Die Sanduhr der Weisen",
+  "description": "Die Weisen im Himalaya besitzen nichts, doch jeder hat eine kleine Sanduhr. In Robin Sharmas Fabel führt sie Julian zur Frage nach dem letzten Tag.",
+  "hook": "Wenn heute dein letzter Tag wäre, was Aufgeschobenes würdest du endlich tun?",
+  "one_minute_summary": "In Robin Sharmas Fabel lebt Julian Mantle bei Weisen im Himalaya, als die jüngste, Divea, ihm eine winzige Sanduhr aus geblasenem Glas und Sandelholz schenkt. Jeder von ihnen bekam als Kind eine, als tägliche Erinnerung an die eigene Sterblichkeit. Ihr Rat: Die beste Zeit, einen Baum zu pflanzen, war vor vierzig Jahren, die zweitbeste ist heute. Julian nennt das die Sterbebett-Haltung: Frag dich jeden Morgen, was du tätest, wenn heute dein letzter Tag wäre."
+ }
+}

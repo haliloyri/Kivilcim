@@ -1,0 +1,35 @@
+{
+ "story_id": 1678,
+ "verdict": "keep",
+ "verify_note": "Keep with medium confidence: book text not available; checked against publisher blurb, a chapter summary and excerpt-style listings. Road image and the 'shiny car' detail rest on secondary sources and are hedged in the text. Old opening, 'forgot the bill / tomorrow's meeting' examples and the 'return muscle' image dropped. DB title differs from the real title (Get Some Headspace / The Headspace Guide to Meditation and Mindfulness).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Yoldaki parlak araba",
+  "description": "Andy Puddicombe'ın yol imgesinde arabalar düşüncelerdir. Zor olan, en parlak olanın peşine düştüğünüzü fark edip kızmadan dönmek.",
+  "hook": "Dikkatiniz bir işten koptuğunda kendinize ne söylüyorsunuz?",
+  "one_minute_summary": "Andy Puddicombe'ın Take10 egzersizi günde on dakikadır: dik oturur, birkaç derin nefes alır, nefesi kendi ritmine bırakırsınız. Kitabın özetlerine göre amaç zihni boşaltmak değil. Yol imgesinde yoğun bir yolun kenarında oturursunuz ve geçen her araba bir düşünce, duyum ya da duygudur. Zor olan, yalnızca izlememektir: özellikle parlak bir arabanın peşine düşer, dakikalar sonra sürüklendiğinizi fark edersiniz. Egzersiz o anı fark edip kızmadan nefese dönmeyi öğretir."
+ },
+ "en": {
+  "title": "The shiny car on the road",
+  "description": "In Andy Puddicombe's road image, the cars are your thoughts. The hard part is noticing you chased the shiny one, and coming back without scolding.",
+  "hook": "What do you usually say to yourself when you notice your attention has wandered?",
+  "one_minute_summary": "Andy Puddicombe's Take10 exercise is ten minutes a day: sit upright, take a few deep breaths, let the breath settle. According to summaries of the book, emptying the mind is not the aim. In his road image you sit beside a busy road, and each passing car is a thought, a sensation or an emotion. The trouble is that we do not just watch: we chase one particularly shiny car and notice minutes later. The exercise trains that noticing, and the return to the breath without irritation."
+ },
+ "es": {
+  "title": "El coche brillante de la carretera",
+  "description": "En la imagen de Andy Puddicombe, los coches son tus pensamientos. Lo difícil es notar que perseguiste el brillante y volver sin regañarte.",
+  "hook": "¿Qué sueles decirte cuando notas que tu atención se ha ido?",
+  "one_minute_summary": "El ejercicio Take10 de Andy Puddicombe dura diez minutos al día: sentarse con la espalda recta, respirar hondo unas veces y dejar que la respiración encuentre su ritmo. Según los resúmenes del libro, el objetivo no es vaciar la mente. En su imagen de la carretera estás al borde de una vía transitada y cada coche que pasa es un pensamiento, una sensación o una emoción. El problema es que no nos limitamos a mirar: perseguimos uno especialmente brillante y lo notamos minutos después."
+ },
+ "de": {
+  "title": "Das glänzende Auto an der Straße",
+  "description": "In Andy Puddicombes Straßenbild sind die Autos deine Gedanken. Schwer ist, zu merken, dass du dem glänzenden nachgelaufen bist, und ohne Vorwurf zurückzukehren.",
+  "hook": "Was sagst du dir meistens, wenn du merkst, dass deine Aufmerksamkeit abgeschweift ist?",
+  "one_minute_summary": "Andy Puddicombes Übung Take10 dauert zehn Minuten am Tag: aufrecht sitzen, ein paar tiefe Atemzüge, den Atem in seinen Rhythmus finden lassen. Nach Zusammenfassungen des Buchs besteht das Ziel nicht darin, den Kopf zu leeren. In seinem Straßenbild sitzt du am Rand einer vollen Straße, und jedes Auto ist ein Gedanke, eine Empfindung oder ein Gefühl. Das Schwierige ist, dass wir nicht nur zuschauen: Wir jagen einem besonders glänzenden hinterher und merken es erst Minuten später. Geübt wird dieses Bemerken und die Rückkehr zum Atem ohne Ärger."
+ }
+}

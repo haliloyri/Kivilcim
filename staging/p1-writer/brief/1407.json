@@ -1,0 +1,59 @@
+{
+ "story_id": 1407,
+ "kind": "concept",
+ "book": {
+  "title": "Getting Things Done",
+  "author": "David Allen",
+  "year": "2001"
+ },
+ "confidence": "low",
+ "confidence_note": "Concept; the three-phase weekly review (Get Clear, Get Current, Get Creative) is confirmed only in secondary summaries and Allen's company material, not the book text; steps are kept generic. Old text's one-hour ritual, 'mental integration' and 'GTD without review is just a list' were dropped.",
+ "facts": [
+  "Allen asks for a regular, preferably weekly, review of all lists.",
+  "Allen's workflow has five stages: collect, process, organize, review, do; the weekly review is the 'review' stage that keeps the other four current.",
+  "Three phases: Get Clear, Get Current, Get Creative.",
+  "Get Clear: collect loose papers and materials, empty the inbox, empty your head.",
+  "Get Current: review next-action lists, calendar past and upcoming, waiting-for list and project lists.",
+  "Get Creative: look over someday/maybe items."
+ ],
+ "scene_details": [
+  "loose papers",
+  "the waiting-for list",
+  "the someday/maybe list"
+ ],
+ "tension": "A system you built works for a while, then the world moves and you stop trusting it.",
+ "opening_idea": "Open on the three words: clear, current, creative, and the list that is out of date.",
+ "lessons": [
+  {
+   "idea": "A list you trust has to be refreshed on a schedule.",
+   "anchor": "Get Current.",
+   "example": "A shared grocery list that nobody updates gets ignored and everyone buys by memory."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which list or calendar of yours is furthest out of date, and when this week will you sit down to bring it current?",
+ "use_cases": [
+  {
+   "situation": "Your task list feels stale.",
+   "move": "Spend a short slot looking at each list and removing what is done, as in Allen's Get Current.",
+   "context": "self"
+  },
+  {
+   "situation": "A team board has drifted from reality.",
+   "move": "Propose a weekly check of the next-action and waiting-for items.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A friend says they abandoned their system.",
+   "move": "Ask what they stopped looking at; suggest one weekly look.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "A list you trust needs a weekly check: clear the inbox, bring the lists current, then look at someday.",
+ "conversation_variants": {
+  "punchline_idea": "Allen's weekly review keeps a list trustworthy.",
+  "thirty_sec_idea": "David Allen's Weekly Review has three steps: get clear, get current, get creative. Empty the inbox, check each list against what is really going on, then look at what you might do someday.",
+  "question_idea": "",
+  "key_contrast_idea": "list vs trusted list"
+ }
+}

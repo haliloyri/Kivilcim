@@ -1,0 +1,138 @@
+{
+ "book_no": 71,
+ "title": "Thinking in Systems: A Primer",
+ "authors": [
+  "Donella H. Meadows"
+ ],
+ "year": "2008",
+ "sources": [
+  "https://archive.org/details/thinking-in-systems-donella-meadows",
+  "https://en.wikipedia.org/wiki/Thinking_In_Systems:_A_Primer",
+  "https://www.chelseagreen.com/product/thinking-in-systems/"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Introduction: Meadows perches a Slinky on one upturned palm, grasps it from the top with the other hand, pulls the bottom hand away; the lower end drops and yo-yos. Students say 'Your hand. You took away your hand.'",
+   "source": "Book text, Introduction",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "She repeats it with the box the Slinky came in: nothing happens, the box just hangs. The answer lies within the Slinky; the hands suppress or release behavior latent in the spring's structure. 'That is a central insight of systems theory.'",
+   "source": "Book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "'The system, to a large extent, causes its own behavior!' An outside event may unleash it, but the same event on a different system likely gives a different result. Her examples: competitors rarely cause a company to lose market share; the losing company creates its losses at least in part through its own policies; the flu virus does not attack you, you set up the conditions.",
+   "source": "Book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Balancing loop example: a cup of hot coffee cools toward room temperature; rate depends on the difference; iced coffee warms. Thermostat-furnace keeps a room near its setting.",
+   "source": "Book text, ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Reinforcing loop: amplifying, self-multiplying, snowballing, a vicious or virtuous circle. Examples: 'the more my brother pushed me, the more I pushed him back'; soil erosion fewer roots more erosion; 'the more I practice piano, the more pleasure I get ... the more I play'.",
+   "source": "Book text, ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Bank account: the more money, the more interest, added back to earn more. Doubling time approx 70 divided by growth rate: $100 at 7% doubles in 10 years; at 5% in 14 years.",
+   "source": "Book text, ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Meadows challenges students to name a decision made without a feedback loop; most common answers are falling in love and committing suicide. 'If you see feedback loops everywhere, you're already in danger of becoming a systems thinker!'",
+   "source": "Book text, ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Car dealership: keeps inventory covering ten days of sales; three delays: perception (averages sales over five days), response (makes up one-third of a shortfall per order), delivery (five days from factory). A permanent 10 percent jump in sales causes oscillations: she orders too much, then too little.",
+   "source": "Book text, ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "'It isn't because the car dealer is stupid'; she lacks timely information and faces physical delays. Shortening perception delay to two days: oscillations a bit worse; shortening reaction to two days: very much worse. Increasing response delay from three days to six greatly damps them. 'High leverage, wrong direction.'",
+   "source": "Book text, ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Meadows: try a shower with a very long pipe between mixer and showerhead to feel hot and cold oscillations from a long response delay.",
+   "source": "Book text, ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Further examples in the Introduction: political leaders don't cause recessions or booms, ups and downs are inherent in the structure of the market economy. Definition: a system is a set of things interconnected so that they produce their own pattern of behavior over time. Also: oil-exporting nations are not solely responsible for oil-price rises; importing nations' consumption, pricing and investment policies built economies vulnerable to supply interruptions.",
+   "source": "Book text, Introduction",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Playground: buying a swing vs planting a tree",
+   "reason": "Not found in the book"
+  },
+  {
+   "claim": "Company inefficiency: replace employee vs redesign incentives; stress: vacation vs habits (as Meadows's examples)",
+   "reason": "Not the book's examples"
+  },
+  {
+   "claim": "Social networks gain and lose users via reinforcing loops",
+   "reason": "Not in the book"
+  },
+  {
+   "claim": "Compound interest 'miracle' vs debt spiral 'nightmare'",
+   "reason": "Book's wording is vicious/virtuous circle; debt spiral not verified"
+  },
+  {
+   "claim": "Central bank rates take 12-18 months to act",
+   "reason": "Not in the book"
+  },
+  {
+   "claim": "Company strategy dropped just as it was starting to work",
+   "reason": "Not the book's example"
+  }
+ ],
+ "stories": {
+  "1309": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f11"
+   ],
+   "note": "Center (system structure vs symptoms) is the book's central insight; swing/tree replaced by the Slinky demonstration."
+  },
+  "1310": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f4",
+    "f5",
+    "f6",
+    "f7"
+   ],
+   "note": "Center (balancing vs reinforcing loops) in ch. 1; social-network example replaced by the book's coffee, brother, piano, bank account."
+  },
+  "1311": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f8",
+    "f9",
+    "f10"
+   ],
+   "note": "Center (delays and overreaction) in ch. 2; central-bank example replaced by the car dealership; shower is in the book (long pipe)."
+  }
+ }
+}

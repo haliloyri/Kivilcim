@@ -1,0 +1,35 @@
+{
+ "story_id": 1581,
+ "verdict": "keep",
+ "verify_note": "Keep, rebuilt: old two-group honesty experiment ('product not right for everyone') not found in any source and dropped. Replaced with the art-student problem-finding study Pink uses for clarity (27 objects, about three dozen students, decade and two-decade follow-ups; excerpt on the Marginalian). The two-question framing is from secondary sources and is introduced as Csikszentmihalyi's later description.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Masadaki 27 nesne",
+  "description": "Sanat öğrencilerinden bazıları hemen çizmeye başladı, bazıları nesnelerle uzun uğraştı. Yıllar sonra aradaki fark ortaya çıktı.",
+  "hook": "Şu an hızlıca çözmeye çalıştığınız hangi iş için doğru soruyu henüz sormadınız?",
+  "one_minute_summary": "Getzels ve Csikszentmihalyi'nin 1960'lardaki çalışmasında yaklaşık üç düzine sanat öğrencisi, masadaki 27 nesneyle natürmort kurup çizdi. Kimi hızlı çözdü, kimi daha fazla nesneyle daha uzun uğraştı. On yıl sonra yarısı sanatı bırakmıştı. Kalanların neredeyse hepsi uzun uğraşanlardı ve yirmi yıl sonra sanat camiasının ölçütlerine göre daha başarılıydılar. Pink bunu berraklık, yani doğru sorunu bulma fikrinin kökü olarak anlatıyor. Kitap bunu bir bağlantı olarak anlatıyor, tek başına başarıyı getirdiğine dair bir kanıt olarak değil."
+ },
+ "en": {
+  "title": "The Table of 27 Objects",
+  "description": "Some art students began drawing at once while others kept handling the objects. A decade later the difference had a shape.",
+  "hook": "Which task are you rushing, and what would you ask first with ten more minutes?",
+  "one_minute_summary": "In a 1960s study by Getzels and Csikszentmihalyi, about three dozen art students arranged a still life from 27 objects and drew it. Some solved it fast; others handled more objects and took longer. Ten years on, about half had left art, and those who stayed were almost all the slower ones. Twenty years on they were more successful by the art world's standards. Pink uses this to explain clarity: finding the problem before solving one."
+ },
+ "es": {
+  "title": "Una mesa con 27 objetos",
+  "description": "Unos estudiantes de arte empezaron a dibujar de inmediato; otros se demoraron con los objetos. Diez años después, la diferencia se notaba.",
+  "hook": "¿Qué tarea resuelves con prisa y qué preguntarías primero con diez minutos más?",
+  "one_minute_summary": "En un estudio de los años sesenta de Getzels y Csikszentmihalyi, unas tres docenas de estudiantes de arte montaron un bodegón con 27 objetos y lo dibujaron. Unos lo resolvieron rápido y otros manipularon más objetos y tardaron más. Diez años después, la mitad había dejado el arte y los que seguían eran casi todos los lentos. A los veinte años eran más exitosos según la comunidad artística. Pink lo usa para explicar la claridad: encontrar el problema antes de resolverlo."
+ },
+ "de": {
+  "title": "Der Tisch mit 27 Gegenständen",
+  "description": "Manche Kunststudenten griffen sofort zum Stift, andere hantierten länger mit den Gegenständen. Zehn Jahre später zeigte sich der Unterschied.",
+  "hook": "Welche Aufgabe löst du in Eile, und was würdest du mit zehn Minuten mehr zuerst fragen?",
+  "one_minute_summary": "In einer Studie der 1960er von Getzels und Csikszentmihalyi arrangierten etwa drei Dutzend Kunststudenten aus 27 Gegenständen ein Stillleben und zeichneten es. Manche lösten es schnell, andere hantierten länger. Zehn Jahre später hatte die Hälfte die Kunst verlassen, und die Übrigen waren fast alle die Langsameren. Nach zwanzig Jahren waren sie nach Maßstäben der Kunstwelt erfolgreicher. Pink nutzt das, um Klarheit zu erklären: das Problem finden, bevor man eines löst."
+ }
+}

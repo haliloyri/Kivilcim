@@ -1,0 +1,35 @@
+{
+  "story_id": 1416,
+  "kind": "anecdote",
+  "book": {"title": "The 21 Irrefutable Laws of Leadership", "author": "John C. Maxwell", "year": "1998"},
+  "confidence": "medium",
+  "confidence_note": "Law of Solid Ground (trust is the foundation of leadership) and Maxwell's Skyline case come from secondary summaries; the exact details of his three decisions are as reported there. The old text's building-collapse metaphor, quote and 'history examples' were not found and dropped. Vietnam example kept to one short clause.",
+  "facts": [
+    "Law 6, the Law of Solid Ground: trust is the foundation of leadership.",
+    "'Character makes trust possible. And trust makes leadership possible.' Leaders cannot lose trust and continue to influence others.",
+    "Maxwell compares trust to change in your pocket: good decisions add coins, mistakes take coins out.",
+    "He had been senior pastor at Skyline Church for eight years and led it successfully.",
+    "He then made three major decisions without his usual process: firing someone, cancelling a service, changing part of the Christmas show.",
+    "Trust fell. He apologised publicly and asked forgiveness, and won the congregation's trust back.",
+    "Mistakes of ability are easier to recover from than mistakes of character, such as lying about a project's status.",
+    "Followers' trust shows in how much they tell you, bad news included."
+  ],
+  "scene_details": ["change in a pocket: coins added by good decisions and taken out by mistakes", "three decisions: a firing, a cancelled service, a changed Christmas show", "a public apology to the congregation"],
+  "tension": "A leader with eight years of credit spends it in three decisions made without his usual process.",
+  "opening_idea": "Open on the eight years at Skyline and the three decisions made differently.",
+  "lessons": [{"idea": "When you skip your usual way of deciding, you draw on trust without noticing; a plain apology puts some back.", "anchor": "Maxwell's three decisions and the public apology."}],
+  "reflect": [],
+  "reflect_final": "Which recent decision of yours skipped the way people expect you to decide, and what would you say to the people it affected?",
+  "use_cases": [
+    {"situation": "You changed a plan without telling the people who depend on it", "move": "Say: I changed this without checking with you, and that was the wrong way to do it. Here is what I will do next time.", "context": "meeting"},
+    {"situation": "A friend broke a promise to you and is avoiding the subject", "move": "Say: Maxwell compares trust to pocket change. I'd like to put a few coins back. Can we talk about what happened?", "context": "social"},
+    {"situation": "You notice your team only tells you good news", "move": "Ask: what is one thing you hesitated to tell me this week? Thank the answer before reacting.", "context": "oneonone"}
+  ],
+  "pocket_idea": "Trust works like pocket change: each decision adds or removes coins, and an honest apology can put some back.",
+  "conversation_variants": {
+    "punchline_idea": "Maxwell had led his church well for eight years, and three decisions made outside his usual process still cost him the congregation's trust.",
+    "thirty_sec_idea": "Senior pastor with eight good years makes three big decisions his usual way aside, trust drops, he apologises publicly and wins it back; Maxwell calls trust the foundation of leadership.",
+    "question_idea": "",
+    "key_contrast_idea": "credit and withdrawal"
+  }
+}

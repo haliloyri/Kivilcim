@@ -1,0 +1,35 @@
+{
+ "story_id": 1419,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence: strategy canvas definition from the authors' site; Southwest details (dropped meals, seat choice, hub connectivity; focus on friendly service, speed, frequent point-to-point departures; the car comparison and tagline) from secondary summaries. Old 'companies are surprised' claim and unverified lists dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Southwest ve araba",
+  "description": "Kim ve Mauborgne'un strateji tuvali rakiplerin ne kadar birbirine benzediğini gösterir. Southwest havayollarının sunduklarının çoğunu kesti ve rakip olarak arabayı gördü.",
+  "hook": "Southwest aslında kiminle rekabet ediyordu?",
+  "one_minute_summary": "Kim ve Mauborgne bir sektörü strateji tuvaline çiziyor ve rakiplerin çizgilerinin benzediğini buluyor. Southwest yemeği, koltuk seçimini ve merkez aktarmayı kesti, güler yüzlü hizmeti, hızı ve düşük fiyata sık seferi tuttu. Yazarlar aynı tuvale araba yolculuğunu çizdi ve Southwest uçmayı arabaya benzeterek sürücüleri çekti. Özetlerde alıntılanan slogan: uçağın hızı, arabanın fiyatı, ne zaman isterseniz. Daha hızlı ve daha sık seferler Southwest'i öncü yaptı."
+ },
+ "en": {
+  "title": "Southwest and the car",
+  "description": "Kim and Mauborgne's strategy canvas shows how alike rivals look. Southwest cut most of what airlines offered and named the car as its competitor.",
+  "hook": "Who was Southwest really competing with?",
+  "one_minute_summary": "Kim and Mauborgne plot an industry on a strategy canvas and find rivals' lines look alike. Southwest cut meals, seat choice and hub connections and kept friendly service, speed and frequent departures at a low price. The authors drew car travel on the same chart, and Southwest drew drivers by making flying more like driving. A tagline cited in summaries: the speed of the plane at the price of the car, whenever you need it."
+ },
+ "es": {
+  "title": "Southwest y el coche",
+  "description": "El lienzo estratégico de Kim y Mauborgne muestra lo parecidos que son los rivales. Southwest recortó casi todo lo que ofrecían las aerolíneas y vio al coche como competidor.",
+  "hook": "¿Con quién competía de verdad Southwest?",
+  "one_minute_summary": "Kim y Mauborgne dibujan un sector en un lienzo estratégico y ven que las líneas de los rivales se parecen. Southwest recortó las comidas, la elección de asiento y las conexiones, y se quedó con el servicio amable, la rapidez y las salidas frecuentes a precio bajo. Los autores dibujaron el viaje en coche en el mismo gráfico, y Southwest atrajo a los conductores haciendo que volar se pareciera a conducir. Un eslogan citado en resúmenes: la velocidad del avión al precio del coche."
+ },
+ "de": {
+  "title": "Southwest und das Auto",
+  "description": "Die Strategie-Leinwand von Kim und Mauborgne zeigt, wie ähnlich Rivalen aussehen. Southwest strich das meiste, was Fluggesellschaften boten, und sah das Auto als Konkurrenten.",
+  "hook": "Mit wem konkurrierte Southwest wirklich?",
+  "one_minute_summary": "Kim und Mauborgne zeichnen eine Branche auf eine Strategie-Leinwand und sehen, dass die Linien der Rivalen sich ähneln. Southwest strich Essen, Sitzplatzwahl und Drehkreuz-Anbindung und behielt freundlichen Service, Tempo und häufige Abflüge zum niedrigen Preis. Die Autoren zeichneten das Autofahren in dieselbe Grafik, und Southwest zog Fahrer an, indem es das Fliegen dem Fahren ähnlicher machte. Ein zitierter Slogan: die Geschwindigkeit des Flugzeugs zum Preis des Autos."
+ }
+}

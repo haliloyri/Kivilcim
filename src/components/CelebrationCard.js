@@ -4,6 +4,7 @@ import Svg, { Circle, Line } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../locales/i18n';
+import { toUpperFor } from '../utils/locale';
 
 // DESIGN.md: petrol band + dawn sun on top, paper body below. Gold only for light/reward.
 const ON_DAWN = '#2A1E08';
@@ -87,7 +88,7 @@ export const CelebrationCard = ({
         {emblem}
       </View>
       <View style={styles.body}>
-        {kicker ? <Text style={[styles.kicker, { color: locked ? colors.textSecondary : colors.dawnText }]}>{kicker}</Text> : null}
+        {kicker ? <Text style={[styles.kicker, { color: locked ? colors.textSecondary : colors.dawnText }]}>{toUpperFor(kicker, lang)}</Text> : null}
         {title ? <Text accessibilityRole="header" style={[styles.title, { color: colors.text }]}>{title}</Text> : null}
         {subtitle ? <Text style={[styles.subtitle, { color: colors.primaryText }]}>{subtitle}</Text> : null}
         {description ? <Text style={[styles.desc, { color: colors.textSecondary }]}>{description}</Text> : null}

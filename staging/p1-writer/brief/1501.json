@@ -1,0 +1,32 @@
+{
+ "story_id": 1501,
+ "kind": "anecdote",
+ "book": {"title": "The Gift of Fear", "author": "Gavin de Becker", "year": "1997"},
+ "confidence": "medium",
+ "confidence_note": "The old text's elevator scenario is not the book's opening case and was replaced by Kelly's stairwell case, which is described the same way in two summaries; the original text could not be read. The words the man used and her exact thoughts are paraphrased from summaries, so no dialogue is used and violent details are kept out. The 'brain processes hundreds of micro-incongruities' mechanism was not verified and is omitted.",
+ "facts": [
+  "Chapter 1 opens with Kelly, carrying a bag of groceries up to her apartment.",
+  "The bag ripped and cans of cat food rolled down the stairs.",
+  "A man on the stairs below picked up the cans and offered to carry them up.",
+  "Kelly felt uneasy from the moment she heard his voice and tried to decline; he insisted, using the word 'we'.",
+  "She did not honor the unease, and he ended up in her apartment, where he attacked her; she barely managed to get away."
+ ],
+ "scene_details": ["cat food cans rolling down the stairs", "a man on the stairs below, offering to carry", "the word 'we' in his insistence"],
+ "tension": "She felt unease right away and still let him carry the cans, because declining a kind offer felt wrong.",
+ "opening_idea": "Start with the cans of cat food rolling down the stairs.",
+ "lessons": [{"idea": "A reluctance you cannot justify is still information; you may act on it without proving it to anyone.", "anchor": "Kelly felt uneasy at the man's voice and still let him carry her cans upstairs"}],
+ "reflect": [],
+ "reflect_final": "When did a feeling of unease last go unexplained, and what stopped you from simply acting on it?",
+ "use_cases": [
+  {"situation": "A stranger offers to help carry something and you feel uneasy", "move": "Say 'No, thanks, I've got it' once, without an explanation, and keep walking.", "context": "social"},
+  {"situation": "A friend dismisses a bad feeling about a new acquaintance", "move": "Recall Kelly's stairwell: ask what exactly felt off, and agree it does not need to be proven.", "context": "oneonone"},
+  {"situation": "You catch yourself explaining away a vague discomfort", "move": "Write one sentence about what you noticed before you reason it away.", "context": "self"}
+ ],
+ "pocket_idea": "You may refuse help without a reason; unease is enough of one.",
+ "conversation_variants": {
+  "punchline_idea": "Kelly felt uneasy the moment the stranger spoke, and her politeness is what let him up the stairs.",
+  "thirty_sec_idea": "In The Gift of Fear, Kelly's grocery bag rips on the stairs and cat food cans roll down. A man below collects them and insists on carrying them up. She feels uneasy at his voice and tries to decline, but he keeps saying we. De Becker's point: the feeling was right, the politeness was the trap.",
+  "question_idea": "",
+  "key_contrast_idea": "polite or safe"
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1527,
+  "verdict": "keep",
+  "verify_note": "Keep: the mice-in-a-mason-jar exercise with the volume control verified on a quoting page and a quote listing. Old radio-station trio, scripted lines and 'real faces' claims dropped; chapter title unconfirmed, no full text, so medium confidence.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kavanozdaki fareler",
+    "description": "Anne Lamott, başınızdaki eleştirel sesleri fareye çevirip kavanoza koymayı ve sesini kısmayı önerir. Sonra taslağın başına dönersiniz.",
+    "hook": "Hangi iç ses işe başlamanızı en çok bölüyor?",
+    "one_minute_summary": "Anne Lamott başımızdaki eleştirel seslere pratik bir egzersiz önerir. Gözlerinizi kapatın, mırıltı başlasın. Konuşan kişiyi fare olarak hayal edin, kuyruğundan tutup bir kavanoza bırakın. Ebeveynler, müteahhitler, avukatlar, iş arkadaşları, çocuklar, kafanızda yakınan herkes aynı yoldan girer. Kapağı kapatın, farelerin camı tırmalamasını izleyin. Kavanozun üstünde bir ses düğmesi var: bir dakikalığına sonuna kadar açıp öfkeli, ihmal edilmiş, suçluluk dayatan sesleri dinleyin. Sonra sonuna kadar kısın ve berbat ilk taslağınıza dönün."
+  },
+  "en": {
+    "title": "The jar with a volume knob",
+    "description": "Anne Lamott turns the critical voices in a writer's head into mice in a mason jar, then hands you the volume control.",
+    "hook": "Which voice interrupts you most when you start something new?",
+    "one_minute_summary": "Anne Lamott offers an exercise for the critical voices in your head. Close your eyes until the chatter starts, imagine each speaker as a mouse, pick it up by the tail and drop it into a mason jar. Parents, contractors, lawyers, colleagues and children go in the same way. Put on the lid, then imagine a volume control: all the way up for a minute, all the way down. Leave it down and get back to your shitty first draft."
+  },
+  "es": {
+    "title": "El tarro con volumen",
+    "description": "Anne Lamott convierte las voces críticas de la cabeza en ratones dentro de un tarro y te da el control del volumen.",
+    "hook": "¿Qué voz te interrumpe más cuando empiezas algo?",
+    "one_minute_summary": "Anne Lamott propone un ejercicio para las voces críticas de tu cabeza. Cierra los ojos hasta que empiece el parloteo, imagina a cada hablante como un ratón, levántalo por la cola y déjalo caer en un tarro de cristal. Padres, contratistas, abogados, colegas e hijos entran del mismo modo. Pon la tapa e imagina un control de volumen: del todo arriba un minuto, luego del todo abajo. Déjalo abajo y vuelve a tu pésimo primer borrador."
+  },
+  "de": {
+    "title": "Das Glas mit Lautstärkeregler",
+    "description": "Anne Lamott macht aus den kritischen Stimmen im Kopf Mäuse in einem Einmachglas und gibt dir den Lautstärkeregler.",
+    "hook": "Welche Stimme unterbricht dich am meisten, wenn du etwas Neues beginnst?",
+    "one_minute_summary": "Anne Lamott schlägt eine Übung für die kritischen Stimmen im Kopf vor. Schließ die Augen, bis das Geplapper beginnt, stell dir jeden Sprecher als Maus vor, heb sie am Schwanz hoch und lass sie in ein Einmachglas fallen. Eltern, Handwerker, Anwälte, Kollegen und Kinder kommen auf demselben Weg hinein. Deckel drauf, dann ein Lautstärkeregler: eine Minute ganz laut, dann ganz leise. Lass ihn leise und geh zurück zu deinem miesen ersten Entwurf."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "story_id": 1526,
+  "kind": "anecdote",
+  "book": { "title": "Bird by Bird", "author": "Anne Lamott", "year": "1994" },
+  "confidence": "medium",
+  "confidence_note": "Title anecdote and the one-inch frame/Doctorow passage confirmed across several summaries and quoting pages; the full text was not available. The kitchen-table location is only in bookseller blurbs (one summary says the family cabin), so the scene stays at 'the table'. The old text's biology project, crying and 'one inch frame from the father' were dropped: the frame is Lamott's own desk reminder from the Short Assignments chapter. Outcome of the brother's report is not stated in the sources and is not claimed.",
+  "facts": [
+    "Lamott's brother was ten and had three months to write a report on birds; it was due the next day and he had not started.",
+    "He sat close to tears at the table, with binder paper, pencils and unopened books on birds around him, immobilized by the size of the task.",
+    "Their father sat down beside him, put an arm around his shoulder and said: 'Bird by bird, buddy. Just take it bird by bird.'",
+    "Lamott calls short assignments the first useful concept she has and compares writing a whole novel at once to trying to scale a glacier.",
+    "She tells the story to students who feel overwhelmed by a project.",
+    "On her desk is a one-inch picture frame; it reminds her she only has to write down as much as she can see through it, for example describing a main character once, the first time she appears, in one paragraph.",
+    "She cites E. L. Doctorow: writing a novel is like driving a car at night; you can see only as far as your headlights, but you can make the whole trip that way."
+  ],
+  "scene_details": ["binder paper, pencils, unopened bird books", "father's arm around the boy's shoulder", "the one-inch picture frame on the desk", "headlights at night"],
+  "tension": "A boy with three months behind him and one day left sits frozen in front of a task that looks like one block.",
+  "opening_idea": "Start with the objects on the table and the boy close to tears, without the father's line.",
+  "lessons": [ { "idea": "Pick the one piece you can finish today instead of facing the whole task.", "anchor": "the father's 'bird by bird' and the one-inch frame" } ],
+  "reflect": [],
+  "reflect_final": "What is the one small piece of a big task you have been avoiding that you could finish before tonight?",
+  "use_cases": [
+    { "situation": "A team freezes in front of a big launch", "move": "Name the one piece that can be finished this week and postpone the rest of the plan.", "context": "meeting" },
+    { "situation": "A long report has sat untouched", "move": "Mention the father's 'bird by bird' and write only the opening section today.", "context": "self" },
+    { "situation": "A child is buried under homework", "move": "Ask for the smallest thing in the pile and do it together first.", "context": "family" }
+  ],
+  "pocket_idea": "Look at a huge task through a one-inch frame and finish only what fits inside.",
+  "conversation_variants": {
+    "punchline_idea": "One sentence from a father turned a three-month report into a single bird.",
+    "thirty_sec_idea": "Brother, ten, bird report due tomorrow, father says bird by bird; Lamott keeps a one-inch frame on her desk.",
+    "question_idea": "",
+    "key_contrast_idea": "whole report, one bird"
+  }
+}

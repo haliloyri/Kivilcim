@@ -1,0 +1,57 @@
+{
+  "story_id": 1487,
+  "kind": "concept",
+  "book": {
+    "title": "Stolen Focus",
+    "author": "Johann Hari",
+    "year": "2022"
+  },
+  "confidence": "low",
+  "confidence_note": "No named insider, no quote and no figure about a platform's design could be confirmed, so the story stays at the level of the book's argument and the examples Wikipedia names. Old text's executive, quote and cigarette comparison dropped. Story at the lowest allowed length.",
+  "facts": [
+    "Hari argues that social media and other apps are designed to capture and hold attention.",
+    "He names Facebook and YouTube as platforms that try to maximise screen time to collect personal data and to drive recommendations and longer engagement.",
+    "The book features Silicon Valley dissidents who figured out how to hack human attention.",
+    "Hari argues the crisis comes from systemic forces and not only from personal failure.",
+    "His proposals are collective: regulation of tech companies, treating attention as a public health issue, an 'attention rebellion'.",
+    "Always-on work and constant availability are argued to cause stress and lower productivity."
+  ],
+  "scene_details": [
+    "a recommendation list that keeps going",
+    "a screen time total"
+  ],
+  "tension": "If the product is built to keep you looking, 'use it less' puts the whole job on the person it was built for.",
+  "opening_idea": "Open on a feed that keeps offering the next item and the data collected behind it.",
+  "lessons": [
+    {
+      "idea": "Check who designed the environment before blaming yourself for how you behave in it",
+      "anchor": "Facebook and YouTube maximising screen time; Everyday: a shopper who always walks out with a candy bar from the till and blames themselves instead of noticing the shop put it at the till"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which app or habit that eats your time was built to keep you there, and what small change at the setting level could you try this week?",
+  "use_cases": [
+    {
+      "situation": "A colleague says they are weak for scrolling all day",
+      "move": "Apps like Facebook and YouTube are built to keep screen time up. Maybe the setting needs changing before you do. Want to turn off autoplay together?",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Family dinner where everyone reaches for a phone",
+      "move": "These apps are made to hold us. Phones in a basket for twenty minutes, and we see what we talk about.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel guilty about your screen time total",
+      "move": "The design worked as intended. I will turn off one notification type today and see what changes.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Facebook and YouTube are built to keep you on screen, so change the setting before you blame your willpower.",
+  "conversation_variants": {
+    "punchline_idea": "Hari's argument: apps built to hold your attention are doing their job, so the fix cannot be your willpower alone.",
+    "thirty_sec_idea": "In Stolen Focus, Johann Hari says apps are built to capture attention. He points to Facebook and YouTube as platforms that push screen time up to gather data and keep people watching, and says the book's Silicon Valley dissidents learned how attention can be hacked. His answer is collective: regulation and an attention rebellion.",
+    "question_idea": "",
+    "key_contrast_idea": "willpower versus design"
+  }
+}

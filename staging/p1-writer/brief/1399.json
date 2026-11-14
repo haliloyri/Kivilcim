@@ -1,0 +1,35 @@
+{
+  "story_id": 1399,
+  "kind": "concept",
+  "book": {"title": "Smart Mobs", "author": "Howard Rheingold", "year": "2002"},
+  "confidence": "medium",
+  "confidence_note": "Details come from a chapter-1 reading blog with page references, a Rheingold-authored Edge summary, a Stanford class page and Wikipedia; not the book text. The old text's '2002 Tokyo metro, decide within seconds' scene was dropped as unsourced. Press 'thumb tribes' label is from CNN via Wikipedia, attributed to press accounts. No ratios beyond the stated 90 percent and 300 members.",
+  "facts": [
+    "Rheingold interviewed dozens of young people on Tokyo streets about texting and keitai and accompanied flocks of teenagers converging on public places coordinated by text messages.",
+    "Mizuko Ito argues phones freed youth from the tyranny of the land line shared by inquisitive family members; her team noted over 90 percent of Tokyo teenagers have cell phones.",
+    "New norm: texting someone counts as being present; arriving late is fine if you stay in contact by text.",
+    "NTT DoCoMo designed and sold i-mode to youth as fashion and technology (easy menus, affordable price, reservations, ringtones, fortune telling); hired a former magazine launch employee for marketing; a user quoted calls it a remote control for your life.",
+    "Helsinki: Finns in their twenties, funded by an American entrepreneur, built a shared urban living space (location, virtual community, mobile social network, cooperative); 300 members a year after launch.",
+    "Seattle WTO protesters used SMS, mobile phones and the internet. Stockholm: fare-jumpers text warnings about ticket inspectors; party organizers text address books and guests show the message at the door.",
+    "Smart mobs consist of people able to act in concert even if they do not know each other; they emerge when communication and computing technologies amplify human talents for cooperation.",
+    "Rheingold compares such networks to swarm intelligence of ants, bees, fish and birds, and chose the word mob deliberately for its dark resonances."
+  ],
+  "scene_details": ["flocks of teenagers converging on public places by text", "the land line shared with inquisitive family members", "guests showing the text message at the door", "fare-jumpers texting about inspectors on the train"],
+  "tension": "A phone changed what counts as showing up for a whole generation of Tokyo youth.",
+  "opening_idea": "Open on the Tokyo rule that texting counts as being present and lateness is fine if you text.",
+  "lessons": [{"idea": "Say aloud what a message counts for in your group.", "anchor": "Tokyo teens' shared norm that a text counts as being present.", "example": "A colleagues' group chat where one reads a late note as polite and another as careless."}],
+  "reflect": [],
+  "reflect_final": "Think of a group chat or household you text every day: which unwritten rule about lateness or replies do you follow that the others may not share?",
+  "use_cases": [
+    {"situation": "Colleagues disagree on whether a late text is acceptable.", "move": "In Tokyo a text counted as being present; agree on what you send when late, and how early.", "context": "meeting"},
+    {"situation": "A parent and teenager clash over the phone.", "move": "Mention the researcher's point about the family land line; ask what stays private and what the parent needs to know.", "context": "family"},
+    {"situation": "A friend group's plans shift by message.", "move": "Agree that a 'late' text means coming and the group waits a bit.", "context": "social"}
+  ],
+  "pocket_idea": "In Tokyo a text meant being present; tell your group what your messages count as.",
+  "conversation_variants": {
+    "punchline_idea": "Among Tokyo teens a text counted as being there and lateness was fine if you texted.",
+    "thirty_sec_idea": "Rheingold followed Tokyo teen flocks steered by texts; Ito says phone freed them from the family land line; over 90 percent had one; texting counted as presence; he calls such groups smart mobs.",
+    "question_idea": "",
+    "key_contrast_idea": "land line, then keitai"
+  }
+}

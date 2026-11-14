@@ -1,0 +1,63 @@
+{
+  "story_id": 1299,
+  "kind": "concept",
+  "book": {
+    "title": "Essentialism",
+    "author": "Greg McKeown",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not directly available; the violinist figures (8.6 hours a day, about an hour more than the average American, 2.8 hours of naps a week; sleep ranked second after practice) come from multiple chapter summaries and reader notes and match Ericsson's 1993 study. The Geoff case (CEO at 36, 4-6 hours of sleep, breakdown) rests on one detailed chapter summary: use only that a young CEO who slept little and travelled constantly broke down and could not work for weeks, without exact numbers. Old reference claims (4-5 hours of practice, 'those who slept the most' as the top trait, 'eight hours of sleep allow four hours of focus') are not supported and dropped. Editorial caveat: Ericsson's study was small and correlational.",
+  "facts": [
+    "In Essentialism, McKeown opens the chapter on sleep with Geoff, a young CEO of a global microlending organization who travelled most of the year and slept only a few hours a night.",
+    "Geoff's health broke down; for weeks he could barely function.",
+    "McKeown then turns to K. Anders Ericsson's study of violinists, the research later popularized as the '10,000 hour' idea.",
+    "Ericsson's study compared violin students at a music academy in Berlin whom their teachers had sorted into the best and the merely good.",
+    "The best violinists practiced more than the merely good ones; McKeown points out that the second factor separating them was sleep.",
+    "The top players averaged 8.6 hours of sleep in every 24 hours, about an hour more than the average American, and napped about 2.8 hours a week.",
+    "The researchers' reading, which McKeown adopts: rest let the best players practice with greater concentration, so they got more out of each hour.",
+    "McKeown writes that sleep enhances your ability to explore, make connections and do less but better during your waking hours; the violin study is the one Malcolm Gladwell later popularized as the '10,000 hour rule'.",
+    "McKeown's argument: sleep protects the ability to choose well, which is the core skill of doing less but better.",
+    "Editorial caveat: Ericsson's group was small and the result shows the best slept more, not that sleep alone made them the best. The students recorded their own practice and sleep in diaries; no one was assigned an amount of sleep."
+  ],
+  "scene_details": [
+    "a CEO living on a few hours of sleep between flights",
+    "8.6 hours of sleep a day",
+    "afternoon naps, 2.8 hours a week"
+  ],
+  "tension": "The famous study about practice hours contains a second, quieter finding most people skip.",
+  "opening_idea": "Start with the number: 8.6 hours, in the study everyone cites for practice.",
+  "lessons": [
+    {
+      "idea": "Treat sleep as part of the work you want to do well, since tired people choose badly.",
+      "anchor": "The best violinists practiced more and slept more; Geoff's breakdown.",
+      "everyday_example_idea": "A nurse finishing night shifts leaves the big decision about changing jobs until after two nights of proper sleep."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which decision coming up this week would you rather make after a full night's sleep than at the end of a long day?",
+  "use_cases": [
+    {
+      "situation": "A colleague boasts about sleeping five hours to get more done.",
+      "move": "Mention that in Ericsson's violin study, cited by McKeown, the top players slept more than the good ones, not less.",
+      "context": "social"
+    },
+    {
+      "situation": "Your team wants to make a big decision late in the evening.",
+      "move": "Propose deciding first thing tomorrow, after everyone has slept.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are tempted to stay up to finish one more task.",
+      "move": "Write the next step on a note, close the laptop, and start with it in the morning.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The best violinists practiced most and slept more; guard sleep as part of the work.",
+  "conversation_variants": {
+    "punchline_idea": "The study behind the 10,000-hour idea also found the best violinists slept about an hour more than the average American.",
+    "thirty_sec_idea": "Ericsson's violinists: practice first, sleep second, 8.6 hours and naps; McKeown's point about choosing well; small-study caveat.",
+    "question_idea": "",
+    "key_contrast_idea": "More practice, more sleep"
+  }
+}

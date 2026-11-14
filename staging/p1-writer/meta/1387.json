@@ -1,0 +1,35 @@
+{
+  "story_id": 1387,
+  "verdict": "keep",
+  "verify_note": "Keep, medium. Book text read. Old firewalk story is not in Awaken the Giant Within and was dropped; story rebuilt on the book's references and four-minute-mile passage. The counts 37 and 300 are Robbins's own figures, stated as such. DB title 'Icsel Guc' assumed to be this 1991 book.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Dört dakikalık mil",
+    "description": "Robbins'e göre inanç bir masa tablasıdır, deneyimler bacaklarıdır; Bannister'ın koşusu bunu mil üzerinden gösterir.",
+    "hook": "Kendiniz için imkânsız dediğiniz hangi şeyi tanıdığınız biri çoktan yaptı?",
+    "one_minute_summary": "Tony Robbins, Awaken the Giant Within kitabında inancı bir şey hakkında duyulan kesinlik hissi olarak tanımlıyor. Bir fikir bacağı olmayan bir masa tablası gibi, deneyimler ise bacakları. Bin yıllarca mili dört dakikanın altında koşmak imkânsız sayıldı. 1954'te Roger Bannister bunu başardı, Robbins'e göre koşuyu zihninde tekrar tekrar prova ederek. Robbins kendi hesabıyla, bir yıl içinde 37, ertesi yıl 300 koşucunun daha aştığını yazıyor. Ona göre bir örnek, diğerlerine inanç için yeni bir bacak veriyor."
+  },
+  "en": {
+    "title": "The four-minute mile",
+    "description": "For Robbins a belief is a tabletop and experiences are its legs, and Bannister's mile shows how one example adds legs for others.",
+    "hook": "What do you call impossible that someone you know has already done?",
+    "one_minute_summary": "In Awaken the Giant Within, Tony Robbins defines a belief as a feeling of certainty about something. An idea is a tabletop with no legs, and experiences are the legs. For thousands of years people believed a mile under four minutes was impossible. In 1954 Roger Bannister did it, by Robbins's account after rehearsing the run in his mind again and again. Robbins writes that 37 other runners broke four minutes within a year and 300 the year after. One example gave the rest a new leg."
+  },
+  "es": {
+    "title": "La milla de cuatro minutos",
+    "description": "Para Robbins una creencia es un tablero y las experiencias son sus patas; la milla de Bannister muestra cómo un ejemplo da patas a otros.",
+    "hook": "¿Qué llamas imposible que alguien a quien conoces ya ha hecho?",
+    "one_minute_summary": "En Awaken the Giant Within, Tony Robbins define una creencia como una sensación de certeza sobre algo. Una idea es un tablero sin patas y las experiencias son las patas. Durante miles de años se creyó imposible correr una milla en menos de cuatro minutos. En 1954 Roger Bannister lo logró, según Robbins tras ensayar la carrera mentalmente una y otra vez. Robbins escribe que 37 corredores más bajaron de cuatro minutos en un año y 300 al siguiente, cifras suyas. Un ejemplo dio a los demás una pata nueva."
+  },
+  "de": {
+    "title": "Die Vier-Minuten-Meile",
+    "description": "Für Robbins ist eine Überzeugung eine Tischplatte und Erfahrungen sind ihre Beine; Bannisters Meile zeigt, wie ein Beispiel anderen Beine gibt.",
+    "hook": "Was nennst du unmöglich, das jemand, den du kennst, längst getan hat?",
+    "one_minute_summary": "In Awaken the Giant Within definiert Tony Robbins eine Überzeugung als ein Gefühl von Gewissheit über etwas. Eine Idee ist eine Tischplatte ohne Beine, Erfahrungen sind die Beine. Jahrtausendelang hielt man es für unmöglich, die Meile unter vier Minuten zu laufen. 1954 schaffte es Roger Bannister, nach Robbins, indem er den Lauf im Kopf immer wieder durchspielte. Robbins schreibt, 37 weitere Läufer liefen binnen eines Jahres unter vier Minuten und 300 im Jahr darauf, seine eigenen Zahlen. Ein Beispiel gab den anderen ein neues Bein."
+  }
+}

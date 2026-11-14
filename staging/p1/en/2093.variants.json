@@ -1,0 +1,6 @@
+{
+ "punchline": "The perfect cache needs a crystal ball, so it became a yardstick.",
+ "thirty_sec": "In 1966 László Bélády published a paper in the IBM Systems Journal describing MIN: evict the page whose next use is farthest in the future. It cannot run live because it needs the future, but it is the floor against which real policies are measured.",
+ "question": "Which thing on your desk or inbox is taking the space of something you will need soon?",
+ "key_contrast": "Judge by when you will next need it, estimated from the past."
+}

@@ -1,0 +1,147 @@
+{
+  "book_no": 171,
+  "title": "The Little Book of Common Sense Investing",
+  "authors": [
+    "John C. Bogle"
+  ],
+  "year": "2007",
+  "sources": [
+    "https://acquirersmultiple.com/2016/07/the-magic-of-compounding-returns-the-tyranny-of-compounding-costs-john-bogle",
+    "https://patch.com/massachusetts/northandover/bp--how-investors-beat-themselves-55f5df33",
+    "https://www.supersummary.com/the-little-book-of-common-sense-investing/summary (search snippet)",
+    "https://en.wikipedia.org/wiki/The_Little_Book_of_Common_Sense_Investing",
+    "Goodreads Bogle quote page (haystack line)"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Bogle's exhibit on costs: $10,000 invested in the stock market for 50 years grows to about $469,000. The same $10,000 in a fund that returns 5.5% a year after costs grows to about $145,400, a shortfall of $323,600.",
+      "source": "Acquirer's Multiple post quoting the book; arithmetic checked (8% vs 5.5% compounding)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f2",
+      "claim": "Cost erosion along the way: after year 1 about $10,800 vs $10,550 (about 2% lost); year 10 about $21,600 vs $17,100 (21% lost); year 30 about $100,600 vs $49,800 (50% lost); at the end costs took nearly 70% of what the market would have accumulated.",
+      "source": "Acquirer's Multiple post",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "Bogle: the investor supplied 100% of the capital and bore 100% of the risk but earned only 31% of the market's return.",
+      "source": "Acquirer's Multiple post",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Bogle's lines: 'The miracle of compounding returns is overwhelmed by the tyranny of compounding costs.' 'Where returns are concerned, time is your friend. But where costs are concerned, time is your enemy.'",
+      "source": "Acquirer's Multiple post",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Bogle says picking a mutual fund that will beat the market over the long run is, in Cervantes' observation, like looking for a needle in a haystack; his corollary: 'Don't look for the needle in the haystack. Just buy the haystack!' A broad index fund owns the whole market (the haystack).",
+      "source": "Goodreads quote page, summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Bogle's arithmetic: gross return minus costs equals net return; investors as a group earn the market's return before costs and less after them. The theme recurs through the book ('the relentless rules of humble arithmetic').",
+      "source": "summaries, TOC search result",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Chapter 'The Grand Illusion': over the 25 years 1980-2005 the S&P 500 averaged 12.5% a year while the average fund investor earned 7.3%. Costs explain only part of the gap; the main cause is investor behaviour, especially timing and fund selection.",
+      "source": "Patch.com article summarising Bogle (secondary)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Investors tend to buy funds after they have performed well and sell after they have performed poorly.",
+      "source": "Supersummary plot summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "The book's subtitle: 'The Only Way to Guarantee Your Fair Share of Stock Market Returns'.",
+      "source": "library record (TUM catalogue)",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Bogle added to his exhibit a real stretch: in the 1980s and 1990s stocks averaged 17.5% a year and the average fund 15%.",
+      "source": "Acquirer's Multiple post quoting the book",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Illustration computed by the writer, not stated by Bogle: taken as steady annual rates over 25 years, $10,000 at 12.5% grows to about $190,000 and at 7.3% to about $58,000.",
+      "source": "arithmetic (1.125^25 = 19.0; 1.073^25 = 5.8)",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "A separate survey (Dalbar, 20 years ending Dec. 31, 2010) found stock fund investors earned 3.83% a year against 9.14% for the S&P 500; reported in the same article as Bogle's figures.",
+      "source": "Patch.com article",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Two investors, $10,000 a year for 40 years, 7% market return, 2% vs 0.05% fee, ending at $1.1M vs $2.1M.",
+      "reason": "Not Bogle's exhibit; the book's exhibit is $10,000 over 50 years ($469,000 vs about $145,400)."
+    },
+    {
+      "claim": "'Cost paradox' term and active managers do more analysis and trading.",
+      "reason": "Term not found in the book."
+    },
+    {
+      "claim": "S&P SPIVA reports show most active managers trail the index over ten-year periods.",
+      "reason": "Not verified as in the 2007 book; leave out."
+    },
+    {
+      "claim": "'Winners erase the losers' and the 'zero-sum' wording as Bogle's.",
+      "reason": "Not verified verbatim; used only the gross-minus-cost arithmetic."
+    },
+    {
+      "claim": "S&P 500 about 11% a year 1980-2005; missing the best 30 of 9,000 days drops it to 2%; losing 80% of return.",
+      "reason": "Not attributed to Bogle in any source found; looks like a generic market-timing statistic."
+    },
+    {
+      "claim": "Advice list 'stay in, buy monthly, buy more on drops'.",
+      "reason": "Not confirmed as Bogle's wording."
+    }
+  ],
+  "stories": {
+    "1609": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f10"
+      ],
+      "note": "Rebuilt on Bogle's own 50-year exhibit; the 40-year two-investor scenario dropped."
+    },
+    "1610": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f9"
+      ],
+      "note": "Rebuilt on Cervantes' needle-in-haystack line and the gross-minus-cost arithmetic; SPIVA claim dropped. Thin material, short story."
+    },
+    "1611": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f7",
+        "f8",
+        "f11",
+        "f12"
+      ],
+      "note": "Recast from market timing 'best 30 days' (unsourced) to The Grand Illusion, investor returns vs index 1980-2005. Medium confidence, secondary sources."
+    }
+  }
+}

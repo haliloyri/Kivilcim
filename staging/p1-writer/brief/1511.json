@@ -1,0 +1,61 @@
+{
+  "story_id": 1511,
+  "kind": "concept",
+  "book": {
+    "title": "A Guide to the Good Life",
+    "author": "William B. Irvine",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "Trichotomy, tennis example and the novelist example are consistent across reviews and reader notes; no full text available. The old text's morning ritual question, its lists (weather, others' opinions, the past, illness; traffic, a neighbour's opinion) and the claim that most anxiety comes from energy spent on uncontrollable things are not Irvine's as far as sources show and were dropped. Critics such as Donald Robertson argue the trichotomy and the idea of internal goals are not found in ancient Stoicism; Irvine himself says his version differs from any particular Stoic. The reviewer's investing analogy is not used.",
+  "facts": [
+    "Epictetus's central choice, as Irvine presents it, is whether to concern ourselves with things external to us or things internal.",
+    "Irvine adds a third category: things we fully control, things we do not control at all, and things we control only partly. Complete control covers our goals, values and character.",
+    "A tennis match belongs to the middle category: winning depends partly on the opponent and on chance.",
+    "So the Stoic player sets an internal goal, to play his best, instead of the external goal, to win. By internalizing a goal he avoids tying his emotional response to whether it happens.",
+    "Internal goals lower the chance of being upset by the outcome, though not necessarily the chance of winning.",
+    "A second example: an aspiring novelist should aim to write well rather than only to get published. Irvine admits it may look like a mind game, but calls it an effective trick for staying joyful.",
+    "Critics such as Donald Robertson say the trichotomy and internal goals are not found in ancient Stoicism; Irvine admits his version differs from any particular Stoic and aims at tranquility.",
+    "Epictetus compares us to actors in a play written by the Fates; Marcus advises accepting the past and present and loving the people fate places around us (reader notes).",
+    "You cannot control your opponent's shots, but you can control your preparation and how you play (interview framing)."
+  ],
+  "scene_details": [
+    "the tennis match with an opponent across the net",
+    "the novelist at a desk aiming to write well",
+    "three categories: all, none, part"
+  ],
+  "tension": "A match, a manuscript, a job offer all depend partly on other people, so a goal like winning ties your mood to something you cannot fully control.",
+  "opening_idea": "Open on the tennis match nobody fully controls, without naming the author.",
+  "lessons": [
+    {
+      "idea": "For things only partly in your hands, set a goal that sits wholly in your hands.",
+      "anchor": "play your best instead of win; write well instead of get published"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In which part-controlled situation of this week could you swap the outcome you want for a goal that sits entirely in your hands?",
+  "use_cases": [
+    {
+      "situation": "Your pitch depends on a client's decision",
+      "move": "Name the part you control, explaining clearly and answering honestly, and set that as today's goal.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You wait for exam or interview results",
+      "move": "Recall the tennis player: the preparation was yours and it is finished.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is crushed by a rejection",
+      "move": "Ask which part was theirs, the preparation or the answers, and begin there.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Set the goal you fully control, such as playing your best, not the result that depends on others.",
+  "conversation_variants": {
+    "punchline_idea": "A Stoic tennis player decides before the first serve that winning is not the goal.",
+    "thirty_sec_idea": "Irvine splits life into things you fully control, not at all, or partly; the tennis match is partly, so aim to play your best; the novelist aims to write well.",
+    "question_idea": "",
+    "key_contrast_idea": "win, play your best"
+  }
+}

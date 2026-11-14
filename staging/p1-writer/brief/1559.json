@@ -1,0 +1,36 @@
+{
+  "story_id": 1559,
+  "kind": "anecdote",
+  "book": {"title": "Radical Acceptance", "author": "Tara Brach", "year": "2003"},
+  "confidence": "high",
+  "confidence_note": "Checked against the full text (prologue and chapter 1). The old text's retreat hand-raising scene and its evolutionary/cultural explanation are not in the book and were dropped; the book's own evidence is Brach's weekend hike, her clients, a friend's image and Marilyn's dying mother.",
+  "facts": [
+    "In college Brach went hiking for a weekend with an older, wiser friend of twenty-two; by a stream the friend said she was learning to be 'her own best friend', and Brach broke down sobbing.",
+    "Brach was harassed by an inner judge, 'merciless, relentless, nit-picking, driving, often invisible but always on the job'; her guiding assumption was 'Something is fundamentally wrong with me'. In the eyes of the world she was highly functional; internally she was anxious, driven, often depressed.",
+    "In her early teens she imagined living inside a transparent orb separating her from other people; when she felt bad about herself the walls grew thick.",
+    "She calls the state of living through a lens of personal insufficiency 'the trance of unworthiness'. After twenty years as psychologist and Buddhist teacher with thousands of clients and students, the suffering, at a ten-day retreat or a weekly therapy session, is basically the same: the fear of being flawed.",
+    "It takes little to set it off: hearing of someone else's accomplishments, being criticised, an argument, a mistake at work. A friend: 'Feeling that something is wrong with me is the invisible and toxic gas I am always breathing.'",
+    "Marilyn, a meditation student, spent many hours at her dying mother's bedside, reading, meditating beside her late at night, holding her hand, telling her over and over she loved her. Her mother was mostly unconscious, her breath labored and erratic.",
+    "One morning before dawn the mother opened her eyes, looked clearly and intently at Marilyn and whispered, 'You know, all my life I thought something was wrong with me.' She shook her head slightly, as if to say 'What a waste', closed her eyes, drifted back into a coma and died several hours later.",
+    "Marilyn called it her mother's 'parting gift': she realised she did not have to lose her life in the same way and, out of love for her mother and life, resolved to hold herself with more acceptance and kindness.",
+    "A successful writer and teacher friend told Brach 'My main challenge isn't shame, it's pride', describing how easily she feels superior to others and rides surges of feeling special."
+  ],
+  "scene_details": ["a stream, water swirling around rocks", "a transparent orb with thickening walls", "a hand held at a deathbed", "a mother shaking her head slightly", "an 'invisible and toxic gas'"],
+  "tension": "A dying woman's one sentence reveals what she carried for a lifetime; what does the same sentence do in ordinary days?",
+  "opening_idea": "Open with Marilyn at her mother's bedside and the one sentence her mother whispered before dawn, or with Brach's orb.",
+  "lessons": [{"idea": "The belief 'something is wrong with me' runs in the background and starts at ordinary moments; catching it as it starts lets you treat it as a thought you are having.", "anchor": "The friend's 'invisible and toxic gas' and the small triggers.", "example": "Going quiet when a colleague announces a promotion."}],
+  "reflect": [],
+  "reflect_final": "After criticism or a small mistake, what sentence about yourself starts playing in your head, word for word?",
+  "use_cases": [
+    {"situation": "A colleague belittles themselves after a mistake in a meeting.", "move": "Separate the fix from the verdict: name what to change and leave 'something is wrong with me' out of it.", "context": "meeting"},
+    {"situation": "You make a small mistake and the old sentence starts.", "move": "Name it as a thought passing through and ask what actually needs fixing.", "context": "self"},
+    {"situation": "A friend calls themselves a failure after a bad review.", "move": "Mention Marilyn's mother, who said she had spent her life thinking something was wrong with her, and offer to look at the review together.", "context": "oneonone"}
+  ],
+  "pocket_idea": "Before dying a mother whispered that she had always thought something was wrong with her; catch that thought early.",
+  "conversation_variants": {
+    "punchline_idea": "A dying woman whispered that she spent her whole life thinking something was wrong with her, and her daughter decided not to.",
+    "thirty_sec_idea": "Marilyn sat by her dying mother for hours; before dawn the mother whispered she had always thought something was wrong with her; Marilyn took it as a parting gift and resolved to treat herself kindly.",
+    "question_idea": "",
+    "key_contrast_idea": "verdict, not fact"
+  }
+}

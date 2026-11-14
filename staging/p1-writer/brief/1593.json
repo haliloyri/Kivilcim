@@ -1,0 +1,62 @@
+{
+  "story_id": 1593,
+  "kind": "concept",
+  "book": {
+    "title": "Outlive",
+    "author": "Peter Attia",
+    "year": "2023"
+  },
+  "confidence": "medium",
+  "confidence_note": "From reviews and the JAMA Network Open abstract. That Attia cites exactly the Cleveland Clinic study is likely but not confirmed, so the story says his case rests on data like it. Old text's comparison with hypertension and obesity and 'the only variable' claim were dropped. Study is observational.",
+  "facts": [
+    "Attia calls VO2 max perhaps the single most powerful marker of longevity, and exercise the most powerful longevity drug.",
+    "A Cleveland Clinic study (Mandsager et al., JAMA Network Open, 2018) followed 122,007 patients who had treadmill tests, median 8.4 years.",
+    "People with low fitness had about five times the mortality risk of elite performers, and the risk tied to low fitness was comparable to or greater than coronary disease, smoking and diabetes.",
+    "The study is observational, so it shows association, not cause.",
+    "Zone 2 is the pace where you can talk but would not want to chat; Attia suggests about three hours a week as a minimum.",
+    "VO2 max intervals: four minutes hard, four minutes easy, repeated four to six times, once or twice a week.",
+    "Strength priorities include grip, loaded carries and hip hinging; low muscle strength is associated with roughly double the mortality.",
+    "VO2 max falls about 10 percent per decade, faster after 50.",
+    "Fitness target: the elite range for your age and sex, roughly the top 2 percent, then the elite range for someone twenty years younger.",
+    "Step-down test: step off an 18-inch block and take a full three seconds to reach the ground."
+  ],
+  "scene_details": [
+    "a treadmill test",
+    "the pace where you can talk but would not want to chat",
+    "four minutes hard, four minutes easy"
+  ],
+  "tension": "Fitness outranked famous risk factors in a large data set, yet it is the one most people never measure.",
+  "opening_idea": "Open on the treadmill data set and the group with low fitness.",
+  "lessons": [
+    {
+      "idea": "Replace a feeling with a number you can retest",
+      "anchor": "low fitness measured on a treadmill versus how fit people feel; Everyday: a cafe owner who counts receipts for a week and finds the slow hour is a different one"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which everyday physical task, like climbing stairs or carrying bags, do you suspect is harder than a year ago, and how could you check?",
+  "use_cases": [
+    {
+      "situation": "A friend says they feel fit enough",
+      "move": "Attia points to measured fitness, not a feeling. Want to time the same stair climb now and again in a month?",
+      "context": "social"
+    },
+    {
+      "situation": "You are choosing a gym routine",
+      "move": "Attia mixes an easy talkable pace, hard intervals and strength work. Which of those three do I actually never do?",
+      "context": "self"
+    },
+    {
+      "situation": "A parent says they walk enough",
+      "move": "Attia's low-fitness group in one study had more risk than smokers. Would you try a loaded carry of grocery bags and tell me how it felt?",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Attia calls VO2 max perhaps the strongest longevity marker. Get yours measured once, then watch it.",
+  "conversation_variants": {
+    "punchline_idea": "In a Cleveland Clinic data set, low treadmill fitness carried about five times the mortality risk of elite fitness.",
+    "thirty_sec_idea": "A Cleveland Clinic study of 122,007 treadmill tests found low fitness carried about five times the mortality risk of elite fitness, comparable to or above smoking and diabetes. It is observational. Attia builds on this: VO2 max, he says, may be the strongest longevity marker, and he asks for easy talkable cardio, hard intervals and strength work.",
+    "question_idea": "",
+    "key_contrast_idea": "fit, not just not sick"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "story_id": 1268,
+  "kind": "concept",
+  "book": {
+    "title": "Why We Sleep",
+    "author": "Matthew Walker",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "Checked against the archive.org full text. The old claim that a surgeon after 24 hours equals 0.08 blood alcohol is wrong: the book's study is of healthy adults after nineteen hours awake (elsewhere Walker writes twenty-two hours, an internal inconsistency; nineteen is used). Resident figures are Walker's summary of studies such as Landrigan 2004. Disease-risk list from the old text dropped as off-focus. Some of Walker's figures have been publicly criticised.",
+  "facts": [
+    "Residents often worked thirty hours in one go, sometimes twice a week, with twelve-hour shifts in between.",
+    "On a thirty-hour shift residents commit 36% more serious medical errors, such as a wrong drug dose or an implement left inside a patient, than those working sixteen hours or less.",
+    "After a thirty-hour shift they make 460% more diagnostic mistakes in the ICU, are 73% more likely to stab themselves with a needle or cut themselves with a scalpel, and 168% more likely to crash driving home.",
+    "An Australian study: after nineteen hours awake, people were as impaired on an attention test as those at the legal driving limit of 0.08% blood alcohol; the decline began at fifteen hours.",
+    "Walker asks whether you would accept treatment from a doctor who took a few swigs from a hip flask in front of you.",
+    "In Dinges's study, ten days of six hours of sleep a night left people as impaired as a full night without sleep, and participants consistently underestimated how impaired they were, like someone at a bar saying 'I'm fine to drive home'.",
+    "Pilot studies limiting residents to sixteen-hour shifts with an eight-hour rest cut serious medical errors by over 20%.",
+    "Walker describes 'baseline resetting': with chronic short sleep over months or years, people acclimate, and low-level exhaustion becomes their accepted normal; they no longer link it to their reduced performance.",
+    "Walker notes the irony that a resident who spent the night in the ER saving car-crash victims may end up back in the same ER as a crash victim after a microsleep on the drive home."
+  ],
+  "scene_details": [
+    "the hip flask of whiskey",
+    "a 7 a.m. wake-up and a 2 a.m. drive home",
+    "the scalpel and the hypodermic needle",
+    "'I'm fine to drive home'"
+  ],
+  "tension": "A doctor with a hip flask would be stopped at the door; a doctor on hour thirty is not.",
+  "opening_idea": "Open with the resident's thirty-hour shift and the drive home afterwards.",
+  "lessons": [
+    {
+      "idea": "When short of sleep, judge your fitness by hours awake rather than by how you feel.",
+      "anchor": "Dinges: people underestimated their impairment.",
+      "example": "A parent after a night with a sick child lets the partner drive to the pharmacy instead of trusting 'I feel okay'."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When did you last tell someone you were fine after very little sleep, and what were you about to do next?",
+  "use_cases": [
+    {
+      "situation": "Planning shifts or deadlines that run through the night.",
+      "move": "Point out the nineteen-hour study and ask for a hand-over before people pass that mark.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend says they're fine to drive after an all-nighter.",
+      "move": "Say Walker's line: tired people rate themselves fine while tests say otherwise; offer a lift or a nap.",
+      "context": "social"
+    },
+    {
+      "situation": "You plan to work late before an important task.",
+      "move": "Count hours since waking and move the risky task earlier.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "After nineteen hours awake you test like a drunk driver but still feel fine; count hours, not feelings.",
+  "conversation_variants": {
+    "punchline_idea": "After nineteen hours awake, people did as badly on attention tests as legally drunk drivers.",
+    "thirty_sec_idea": "Walker: residents on thirty-hour shifts make 36% more serious errors and crash far more on the drive home; after nineteen hours awake anyone tests like a drunk driver, and sleep-short people underrate their impairment.",
+    "question_idea": "Would you let a tired friend drive you home?",
+    "key_contrast_idea": "feeling fine, testing drunk"
+  }
+}

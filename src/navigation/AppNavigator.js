@@ -411,7 +411,6 @@ export default function AppNavigator() {
       try {
         await setAudioModeAsync({
           playsInSilentMode: true,
-          shouldPlayInBackground: false,
         });
 
         if (soundRef.current) {

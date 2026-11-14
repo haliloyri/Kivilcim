@@ -1,0 +1,35 @@
+{
+ "story_id": 1331,
+ "verdict": "keep",
+ "verify_note": "Doorstep baby and fault/responsibility distinction verified from book quotes. William James's one-year experiment confirmed as in the book by a Goodreads quote; 1872 and 'rebirth' from summaries. The Frankl quote is not tied to the book and was dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kapıdaki Bebek",
+  "description": "Kapınıza bırakılan bir bebek sizin suçunuz değildir, ama sonrası sizin kararınızdır. Mark Manson bunu William James'in bir yıllık deneyiyle anlatır.",
+  "hook": "Suçunuz olmayan hangi sorun hâlâ sizin kararınızı bekliyor?",
+  "one_minute_summary": "Mark Manson, sorumluluk ile kusuru karıştırmayı bir yanılgı olarak görür. Kapınıza birinin bıraktığı bir bebek sizin suçunuz değildir, ama ne yapacağınız artık sizin kararınızdır. 1872 civarında filozof William James'in hayatı dağılıyordu ve canına kıymayı düşünüyordu. Bir gece kendine bir yıl verdi: hayatındaki her şeyden yüzde yüz sorumluymuş gibi yaşayacak, koşullarını değiştirmek için her şeyi yapacaktı. Sonradan bunu yeniden doğuşu olarak anlattı."
+ },
+ "en": {
+  "title": "The Baby on the Doorstep",
+  "description": "A baby left on your doorstep isn't your fault, but what happens next is your call. Mark Manson makes the point with William James's one-year experiment.",
+  "hook": "Which problem isn't your fault but still waits on a decision only you can make?",
+  "one_minute_summary": "Around 1872 William James's life was falling apart and he had thought about suicide. One night, reading Charles Peirce, he made a deal: for one year he would believe he was 100 percent responsible for everything in his life and do all he could to change it. He later called it his rebirth. Mark Manson uses it against the responsibility/fault fallacy. A newborn left on your doorstep isn't your fault, but what you do next is your responsibility."
+ },
+ "es": {
+  "title": "El bebé en la puerta",
+  "description": "Un bebé abandonado en tu puerta no es culpa tuya, pero lo que pase después es decisión tuya. Mark Manson lo explica con el experimento de un año de William James.",
+  "hook": "¿Qué problema no es culpa tuya pero sigue esperando tu decisión?",
+  "one_minute_summary": "Hacia 1872, la vida del filósofo William James se desmoronaba y había pensado en quitársela. Una noche, leyendo a Charles Peirce, se dio un plazo de doce meses: viviría como si fuera responsable al cien por cien de todo lo que le ocurría y haría lo posible por cambiarlo. Después lo llamó su renacimiento. Mark Manson lo usa para separar culpa y responsabilidad: un bebé dejado en tu puerta no es culpa tuya, pero sí es tuya la decisión."
+ },
+ "de": {
+  "title": "Das Baby vor der Haustür",
+  "description": "Ein Baby vor deiner Tür ist nicht deine Schuld, aber was danach passiert, entscheidest du. Mark Manson erzählt dazu vom einjährigen Experiment des William James.",
+  "hook": "Welches Problem ist nicht deine Schuld und wartet trotzdem auf deine Entscheidung?",
+  "one_minute_summary": "Um 1872 brach das Leben des Philosophen William James auseinander, er dachte an Selbstmord. Eines Nachts, beim Lesen von Charles Peirce, schloss er einen Pakt: Ein Jahr lang wollte er sich für alles in seinem Leben verantwortlich halten und alles tun, um es zu ändern. Später nannte er das seine Wiedergeburt. Mark Manson trennt so Schuld und Verantwortung: Ein Neugeborenes vor deiner Haustür ist nicht deine Schuld, doch die nächste Entscheidung liegt bei dir."
+ }
+}

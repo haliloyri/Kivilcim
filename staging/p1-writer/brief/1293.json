@@ -1,0 +1,66 @@
+{
+  "story_id": 1293,
+  "kind": "concept",
+  "book": {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "year": "1997"
+  },
+  "confidence": "medium",
+  "confidence_note": "Checked against the book text (Lesson 4, 'The History of Taxes and the Power of Corporations'). The earn/spend/tax order, tax history, file-folder line and 'Why not own the ladder?' are in the book. The old reference claim that the wealth gap 'becomes enormous over decades' and the quoted moral were not found and are dropped. Kiyosaki's tax claims are contested: critics (Motley Fool, John T. Reed) call the corporate advice oversimplified, and deducting personal vacations or gym dues through a company can be illegal; this must appear as an editorial caveat. The existence of a real 'rich dad' is disputed; the story attributes everything to the book.",
+  "facts": [
+    "In Rich Dad Poor Dad, Kiyosaki recalls his schoolteacher praising Robin Hood as a hero who robbed the rich to give to the poor; his 'rich dad' called Robin Hood a crook.",
+    "Rich dad's version of tax history: early taxes were temporary, to pay for wars (Britain against Napoleon, America's Civil War); England made income tax permanent in 1874, the United States in 1913 with the 16th Amendment.",
+    "According to rich dad, those taxes were first sold as taxes on the rich only; as government's appetite grew they spread down to the middle class and the poor, the very people who voted for them.",
+    "Kiyosaki describes a corporation as 'merely a file folder with some legal documents in it', sitting in an attorney's office and registered with a state agency.",
+    "Kiyosaki says the rich came to corporations in the days of sailing ships: investors put money into a corporation to finance one voyage; if the ship was lost, the crew lost their lives while the investors lost only the money they had put into that voyage.",
+    "The book's central contrast: employees earn, get taxed, and try to live on what is left; a corporation earns, spends everything it can, and is taxed on anything that is left.",
+    "As corporate expenses he lists car payments, insurance, repairs, health-club memberships and vacations turned into 'board meetings in Hawaii', and calls it legal.",
+    "He writes that the average American works from January to May, four to five months, just to cover taxes.",
+    "When young Robert repeated his father's advice to climb the corporate ladder, rich dad chuckled: 'Why not own the ladder?'",
+    "Rich dad told the boys the biggest bully was not the boss or the supervisor but the tax man, who will always take more if you let him.",
+    "Rich dad paid smart tax accountants and attorneys because it cost less than paying the government: 'Be smart and you won't be pushed around as much.'",
+    "Editorial caveat: critics call this advice oversimplified at best; running personal costs like holidays or gym dues through a company can break tax law, and rules differ by country."
+  ],
+  "scene_details": [
+    "a corporation as a file folder in an attorney's office",
+    "vacations renamed 'board meetings in Hawaii'",
+    "working from January to May just to cover taxes",
+    "rich dad chuckling: 'Why not own the ladder?'"
+  ],
+  "tension": "Two people earn the same money, but one pays tax before spending and the other spends first and pays tax on what is left.",
+  "opening_idea": "Start with the Robin Hood story told in class, and a man who called the hero a crook.",
+  "lessons": [
+    {
+      "idea": "Look at the order in which money leaves your hands, not only at how much comes in; the rules around income decide what stays.",
+      "anchor": "Employee: earn, taxed, spend the rest; corporation: earn, spend, taxed on the rest.",
+      "everyday_example_idea": "A freelance designer who keeps receipts for the laptop and software she really uses for work ends the year with a different tax bill than a friend with the same income who never asked an accountant."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which rule about your income, a deduction, a contract term or a payroll option, have you never asked a professional about?",
+  "use_cases": [
+    {
+      "situation": "A friend says taxes are simply what they are and there is nothing to learn.",
+      "move": "Mention Kiyosaki's order, earn-spend-tax vs earn-tax-spend, and suggest asking an accountant what legally applies to them, while noting critics say his examples go too far.",
+      "context": "social"
+    },
+    {
+      "situation": "Your teenager gets a first payslip and is surprised by the deductions.",
+      "move": "Sit down with the payslip and go line by line: what was taken before the money reached you, and why.",
+      "context": "family"
+    },
+    {
+      "situation": "You are setting up side income or freelance work.",
+      "move": "Book one hour with a tax adviser before the first invoice and ask which costs are legitimately business costs.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Kiyosaki's point is the order: earn, spend, then pay tax, or earn, pay tax, then spend.",
+  "conversation_variants": {
+    "punchline_idea": "Kiyosaki's rich dad called Robin Hood a crook and said a corporation is just a file folder in a lawyer's office.",
+    "thirty_sec_idea": "Rich dad's tax history, the earn/spend/tax order contrast, 'Why not own the ladder?', plus the critics' caveat.",
+    "question_idea": "",
+    "key_contrast_idea": "Tax first vs spend first"
+  }
+}

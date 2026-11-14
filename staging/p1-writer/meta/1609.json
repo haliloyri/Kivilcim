@@ -1,0 +1,35 @@
+{
+ "story_id": 1609,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence: rebuilt on Bogle's 50-year cost exhibit ($10,000: about $469,000 vs about $145,400 after costs at 5.5%), figures from a secondary post and checked arithmetically; market rate not stated in the source so none given. Old 40-year, 7%, $1.1M vs $2.1M scenario dropped (not Bogle's).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Elli yılın küçük ücreti",
+  "description": "Bogle 10.000 doları elli yıl izliyor: piyasada yaklaşık 469.000, fon maliyetlerinden sonra yaklaşık 145.400 dolar. Birinci yıl farkı yalnızca yaklaşık 250 dolar.",
+  "hook": "250 dolarlık fark bir yılın sonunda önemli mi?",
+  "one_minute_summary": "Bogle 10.000 doları ve elli yılı alıyor. Maliyetsiz borsada para yaklaşık 469.000 dolara çıkıyor, maliyetlerden sonra yılda yüzde 5,5 getiren bir fonda yaklaşık 145.400. Bir yıl sonra fark yaklaşık 250 dolar, otuzuncu yılda ise piyasanın kazancının yarısı gitmiş. Yatırımcı sermayenin ve riskin tamamını üstlenip piyasa getirisinin yüzde 31'ini almış. Bogle'ın sözü: bileşik getirinin mucizesi, bileşik maliyetlerin zorbalığı altında eziliyor. Aritmetik hep aynı: brüt getiri eksi maliyet, net getiridir."
+ },
+ "en": {
+  "title": "Fifty years of small fees",
+  "description": "Bogle follows $10,000 for fifty years: about $469,000 in the market, about $145,400 after fund costs. The gap after year one is only about $250.",
+  "hook": "Does a gap of $250 matter after a year?",
+  "one_minute_summary": "Bogle takes $10,000 and fifty years. In the stock market with no costs it grows to about $469,000; in a fund returning 5.5 percent a year after costs, about $145,400. After one year the gap is about $250, but by year thirty half of the market's gain is gone. The investor supplied all the capital and risk and kept 31 percent of the market's return. His line: the miracle of compounding returns is overwhelmed by the tyranny of compounding costs."
+ },
+ "es": {
+  "title": "Cincuenta años de comisión",
+  "description": "Bogle sigue 10.000 dólares durante cincuenta años: unos 469.000 en el mercado, unos 145.400 tras los costes del fondo. La brecha al primer año es solo de unos 250 dólares.",
+  "hook": "¿Importa una diferencia de 250 dólares al cabo de un año?",
+  "one_minute_summary": "Bogle toma 10.000 dólares y cincuenta años. En el mercado de acciones sin costes crecen hasta unos 469.000; en un fondo que rinde un 5,5 % anual tras costes, hasta unos 145.400. Al primer año la diferencia es de unos 250 dólares, y en el año treinta falta la mitad de la ganancia. El inversor aportó todo el capital y el riesgo y se quedó con el 31 % del rendimiento del mercado. Su frase: los costes compuestos tiranizan a los rendimientos compuestos."
+ },
+ "de": {
+  "title": "Fünfzig Jahre kleine Gebühr",
+  "description": "Bogle verfolgt 10.000 Dollar fünfzig Jahre lang: etwa 469.000 am Markt, etwa 145.400 nach Fondskosten. Der Abstand nach einem Jahr beträgt nur rund 250 Dollar.",
+  "hook": "Zählt ein Abstand von 250 Dollar nach einem Jahr?",
+  "one_minute_summary": "Bogle nimmt 10.000 Dollar und fünfzig Jahre. Am Aktienmarkt ohne Kosten werden daraus etwa 469.000, in einem Fonds mit 5,5 Prozent im Jahr nach Kosten etwa 145.400. Nach einem Jahr beträgt der Unterschied rund 250 Dollar, im dreißigsten Jahr fehlt schon die Hälfte des Marktgewinns. Der Anleger lieferte Kapital und Risiko und bekam 31 Prozent der Marktrendite. Sein Satz: Das Wunder der Zinseszinsen auf Erträge wird von der Tyrannei der Zinseszinsen auf Kosten erdrückt."
+ }
+}

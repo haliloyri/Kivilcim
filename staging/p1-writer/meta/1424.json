@@ -1,0 +1,35 @@
+{
+ "story_id": 1424,
+ "verdict": "keep",
+ "verify_note": "Keep: rebuilt on the definition ('on purpose'), life on automatic, one thing at a time, and the line that forgetting to be mindful teaches more (secondary summaries only). Invented 80% commute figure and brain-energy claim dropped. DB label 'Mindfulness' mapped to Wherever You Go, There You Are (1994).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Bilerek yaşamak",
+  "description": "Kabat-Zinn'in tanımı \"bilerek\" sözcüğüyle başlar. Dikkatin kaydığını fark etmek de pratiğin kendisidir.",
+  "hook": "Duş ya da yemek gibi hangi tek işi, yalnızca onu yaparak geçirmeyi deneyebilirsiniz?",
+  "one_minute_summary": "Jon Kabat-Zinn farkındalığı şöyle tanımlıyor: bilerek, şimdiki anda ve yargılamadan dikkat vermek. Kitaba göre hayatın büyük kısmı otomatik akıyor ve pek çok an yaşanmadan geçiyor. Önerisi basit: duşta, yemekte, çocukla birlikteyken tek bir işi yapmak. En rahatlatıcı cümlesi ise farkında olmayı unutmanın da çok şey öğretebileceğini söylüyor. Yani dikkatin kaydığını fark ettiğiniz an pratiğin dışına düşmek değil, pratiğin kendisi. Bu yüzden her dönüş, pratiğin bir sonraki adımı sayılır."
+ },
+ "en": {
+  "title": "Doing it on purpose",
+  "description": "Kabat-Zinn's definition of mindfulness begins with 'on purpose'. Noticing that your attention drifted is already part of the practice.",
+  "hook": "Which one ordinary task, a shower or a meal, could you try doing as the only thing this week?",
+  "one_minute_summary": "Jon Kabat-Zinn defines mindfulness as paying attention on purpose, in the present moment, and without judging. The book says much of life runs on automatic and many moments pass unlived. His suggestion is plain: in the shower, over a meal, with a child, do one thing at a time. One of its kinder lines says that forgetting to be mindful can teach you more than always being mindful. So the moment you catch yourself drifting is the practice, not a failure of it."
+ },
+ "es": {
+  "title": "Hacerlo a propósito",
+  "description": "La definición de Kabat-Zinn empieza por 'a propósito'. Darte cuenta de que la atención se fue ya forma parte de la práctica.",
+  "hook": "¿Qué tarea corriente, una ducha o una comida, podrías probar haciendo solo eso esta semana?",
+  "one_minute_summary": "Jon Kabat-Zinn define la atención plena como prestar atención a propósito, en el presente y sin juzgar. El libro dice que buena parte de la vida va en automático y que muchos momentos pasan sin ser vividos. Su consejo es sencillo: en la ducha, en una comida, con un niño, haz una sola cosa cada vez. Una de sus frases más amables dice que olvidarse de estar atento puede enseñar más que estarlo siempre. El momento en que te pillas distraído es la práctica."
+ },
+ "de": {
+  "title": "Absichtlich leben",
+  "description": "Kabat-Zinns Definition von Achtsamkeit beginnt mit 'absichtlich'. Zu merken, dass die Aufmerksamkeit abdriftet, gehört schon zur Übung.",
+  "hook": "Welche eine alltägliche Tätigkeit, eine Dusche oder eine Mahlzeit, könntest du diese Woche als einziges Tun ausprobieren?",
+  "one_minute_summary": "Jon Kabat-Zinn beschreibt Achtsamkeit als absichtliche, gegenwärtige und nicht urteilende Aufmerksamkeit. Laut Buch läuft ein großer Teil des Lebens im Automatikmodus, und viele Momente gehen ungelebt vorbei. Sein Vorschlag ist schlicht: unter der Dusche, beim Essen, mit einem Kind immer nur eine Sache tun. Einer der freundlicheren Sätze sagt, dass das Vergessen der Achtsamkeit mehr lehren kann als ständige Achtsamkeit. Der Moment, in dem du abdriftest und es merkst, ist die Übung."
+ }
+}

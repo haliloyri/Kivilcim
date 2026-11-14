@@ -1,0 +1,65 @@
+{
+  "story_id": 1342,
+  "kind": "anecdote",
+  "book": {
+    "title": "10% Happier",
+    "author": "Dan Harris",
+    "year": "2014"
+  },
+  "confidence": "high",
+  "confidence_note": "The panic attack and its causes are in Harris's own account published by ABC News and in Kirkus. The old text's antidepressants and alcohol are wrong (the book says cocaine and ecstasy after war reporting) and are replaced; the quotes 'I am not my thoughts' and similar are unsourced and dropped.",
+  "facts": [
+    "On June 7, 2004, shortly after seven in the morning, Dan Harris was filling in on Good Morning America, reading the hourly news headlines, six stories, to about five million viewers.",
+    "Halfway through, panic hit: his heart pounded, he gasped for air and could barely speak. He cut the segment short with 'Back to you.'",
+    "Before that he had spent years covering wars in Afghanistan, Israel, the Palestinian territories and Iraq.",
+    "In 2003 he became depressed and self-medicated with cocaine and ecstasy, mostly on weekends.",
+    "A psychiatrist told him the drugs had raised the adrenaline in his brain, making a panic attack far more likely, and told him to stop immediately.",
+    "His boss and mentor Peter Jennings had assigned him to cover faith, though he was a lifelong agnostic; interviews with Eckhart Tolle and Deepak Chopra did not give him a method he could use.",
+    "He had dismissed meditation as the 'exclusive province of bearded swamis, unwashed hippies, and fans of John Tesh music'.",
+    "Through his wife, who liked the books of the psychiatrist Mark Epstein, he met Epstein and started meditating.",
+    "Kirkus reports that meditation helped him fairly quickly; he describes it as a way to steady himself as he moved through the world. He later spent ten days on a silent retreat."
+  ],
+  "scene_details": [
+    "six headlines on a teleprompter, 'Back to you' halfway through",
+    "five million viewers at seven in the morning",
+    "bearded swamis, unwashed hippies and John Tesh fans"
+  ],
+  "tension": "A news anchor who had reported from war zones fell apart reading six headlines, and the fix came from the practice he mocked.",
+  "opening_idea": "Start with the six headlines and 'Back to you' halfway through.",
+  "lessons": [
+    {
+      "idea": "Look for the cause of a crisis in what you did to cope before it, not only in the moment it broke.",
+      "anchor": "War zones, drugs on weekends, then the on-air attack."
+    },
+    {
+      "idea": "Keep your skepticism but test the thing anyway.",
+      "anchor": "Swamis and hippies vs Epstein."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What habit that helps you get through hard weeks might be costing you more than you notice?",
+  "use_cases": [
+    {
+      "situation": "A friend jokes that meditation is for hippies",
+      "move": "Tell them Dan Harris said the same, then tried it after panicking live on Good Morning America.",
+      "context": "social"
+    },
+    {
+      "situation": "A colleague is pushing through stress with late nights and drinks",
+      "move": "Ask privately how they're coping and whether it's still working.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You keep dismissing something you have never tried",
+      "move": "Try it once properly with a guide and judge it after.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Harris mocked meditation until six headlines broke him on live TV; test the thing you're sure is nonsense.",
+  "conversation_variants": {
+    "punchline_idea": "Dan Harris had a panic attack reading the headlines to five million people on Good Morning America.",
+    "thirty_sec_idea": "War reporting, cocaine and ecstasy, the GMA panic, the psychiatrist, the faith beat, the skeptic who started meditating through Mark Epstein.",
+    "question_idea": "What did you mock before you tried it?",
+    "key_contrast_idea": "From skeptic to sitting"
+  }
+}

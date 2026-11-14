@@ -1,0 +1,35 @@
+{
+  "story_id": 1641,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: gratitude finding from an interview and summaries; sources disagree on which Brown book first uses 'foreboding joy'.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Neşe ve minnettarlık",
+    "description": "Brown'a göre neşe geldiğinde kaybetme korkusu da gelir. Neşeyi hissedenler minnettarlığı pratik eder.",
+    "hook": "Güzel bir anın içinde hangi kayıp korkusu aklınıza geldi?",
+    "one_minute_summary": "Brené Brown, The Gifts of Imperfection kitabında minnettarlık ve neşeyi bir rehber ilke olarak ele alır. Araştırmasında neşeyi gerçekten hissedebilen herkes düzenli minnettarlık pratiği yapıyordu. Neşe geldiğinde birçok insan kaybetme korkusu yaşar. Brown buna ürkütücü neşe der ve en neşeli insanların felaketi prova etmek yerine minnettar olduklarını söylediklerini anlatır. Terimin hangi Brown kitabında doğduğu kaynaklarda tutarsız, bu yüzden ayrıntıları kitaptan doğrulayın."
+  },
+  "en": {
+    "title": "Joy and gratitude",
+    "description": "For Brown, fear of loss arrives with joy. Those who feel joy practice gratitude.",
+    "hook": "What fear of loss crossed your mind in a good moment?",
+    "one_minute_summary": "In The Gifts of Imperfection, Brené Brown treats gratitude and joy as one of ten guideposts. In her research everyone able to truly feel joy regularly practiced gratitude. When joy arrives, many people feel fear of loss, which she calls foreboding joy, and the joyful respond by naming what they are grateful for instead of rehearsing disaster. Sources disagree on which Brown book first uses that term, so check details in the book."
+  },
+  "es": {
+    "title": "Alegría y gratitud",
+    "description": "Para Brown, con la alegría llega el miedo a perder. Quienes sienten alegría practican la gratitud.",
+    "hook": "¿Qué miedo a perder algo se te cruzó en un buen momento?",
+    "one_minute_summary": "En The Gifts of Imperfection, Brené Brown trata la gratitud y la alegría como una de diez guías. En su investigación, todos los que podían sentir alegría de verdad practicaban la gratitud con regularidad. Cuando llega la alegría, mucha gente siente miedo a perder, lo que ella llama alegría premonitoria, y quienes la viven nombran lo que agradecen en vez de ensayar el desastre. Las fuentes no coinciden sobre en qué libro de Brown aparece primero ese término, así que comprueba los detalles en el libro."
+  },
+  "de": {
+    "title": "Freude und Dankbarkeit",
+    "description": "Für Brown kommt mit der Freude die Angst vor Verlust. Wer Freude spürt, übt Dankbarkeit.",
+    "hook": "Welche Verlustangst kam dir in einem guten Moment?",
+    "one_minute_summary": "In The Gifts of Imperfection behandelt Brené Brown Dankbarkeit und Freude als einen von zehn Wegweisern. In ihrer Forschung übten alle, die echte Freude spüren konnten, regelmäßig Dankbarkeit. Wenn Freude kommt, spüren viele Angst vor Verlust, die sie vorausahnende Freude nennt, und die Freudvollen benennen, wofür sie dankbar sind, statt die Katastrophe zu proben. Die Quellen sind uneins, in welchem Brown-Buch der Begriff zuerst steht, prüfe Details im Buch."
+  }
+}

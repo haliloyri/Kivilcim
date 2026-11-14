@@ -3,7 +3,7 @@
 Web sitesindeki "hikâye okuma" demo ekranı için içerik. Her kategoriden bir hikâye seçildi.
 
 - **Kaynak:** `assets/albor.db`, yalnızca `stories.version = 'SON55'` hikâyeleri.
-- **Seçim ölçütü:** Spark-Reels viral puanlama listesi (`analysis/viral-scoring/outputs/current/hikaye_viral_puanlari.csv`). Her kategoride en yüksek puanlı SON55 hikâyesi alındı. Puanlar hikâyenin önceki metin sürümüne göre verildi; aşağıdaki metinler güncel SON55 metnidir.
+- **Seçim ölçütü:** Albor-Reels viral puanlama listesi (`analysis/viral-scoring/outputs/current/hikaye_viral_puanlari.csv`). Her kategoride en yüksek puanlı SON55 hikâyesi alındı. Puanlar hikâyenin önceki metin sürümüne göre verildi; aşağıdaki metinler güncel SON55 metnidir.
 - **Diller:** tr, en, es, de (web sitesinin 4 dili).
 - **Metin:** Uygulamadaki ham işaretlemeyle aynen verildi. Aşağıdaki işaretleme kuralına göre render edin; işaretler ekranda görünmemeli.
 

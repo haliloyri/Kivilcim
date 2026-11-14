@@ -1,0 +1,35 @@
+{
+ "story_id": 1309,
+ "verdict": "keep",
+ "verify_note": "Keep. Old swing-vs-tree example not in the book; replaced with Meadows's own Slinky demonstration from the Introduction, the system definition and her examples (leaders, competitors, oil, flu), verified in the book text.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Slinky ve boş kutu",
+  "description": "Meadows bir oyuncak yayla, davranışın dışarıdaki elden değil sistemin yapısından geldiğini gösteriyor.",
+  "hook": "Aynı el hareketi neden bir yayı zıplatıp bir kutuyu kıpırdatmaz?",
+  "one_minute_summary": "Donella Meadows derslerinde bir Slinky'yi avucuna oturtup yukarıdan tutuyor ve alttaki elini çekiyor. Yay sekip inip çıkıyor ve öğrenciler 'Elini çektin' diyor. Aynı hareketi Slinky'nin kutusuyla yapınca kutu öylece asılı kalıyor. Meadows'a göre davranış yayın yapısındaydı, el yalnızca onu serbest bıraktı. Sistemler davranışlarını büyük ölçüde kendileri üretir: rakipler bir şirkete pazar payını nadiren kaybettirir, grip virüsü de ancak hazırladığımız koşullarda çoğalır."
+ },
+ "en": {
+  "title": "The Slinky and the box",
+  "description": "With a toy spring and an empty box, Meadows shows that behavior comes from a system's structure, not the outside hand.",
+  "hook": "Why does the same hand movement make a Slinky bounce but leave a box still?",
+  "one_minute_summary": "Donella Meadows would perch a Slinky on her palm, hold it from above and pull her lower hand away. It bounced, and students said her hand had done it. She repeated the move with the Slinky's box, and the box just hung there. The behavior was latent in the spring; the hands only released it. Systems, she argues, largely cause their own behavior: competitors rarely cost a company its market share, and the flu thrives in conditions we set up."
+ },
+ "es": {
+  "title": "El Slinky y la caja",
+  "description": "Con un muelle de juguete y una caja vacía, Meadows muestra que el comportamiento nace de la estructura del sistema.",
+  "hook": "¿Por qué el mismo gesto hace rebotar un Slinky y deja quieta una caja?",
+  "one_minute_summary": "Donella Meadows apoyaba un Slinky en la palma, lo sujetaba desde arriba y retiraba la mano de abajo. El muelle rebotaba y los alumnos decían que era por su mano. Repetía el gesto con la caja del Slinky, y la caja se quedaba colgando. El comportamiento estaba latente en el muelle; las manos solo lo liberaban. Según ella, los sistemas causan en gran parte su propio comportamiento: los competidores rara vez hacen perder cuota de mercado y la gripe prospera en las condiciones que creamos."
+ },
+ "de": {
+  "title": "Slinky und Karton",
+  "description": "Mit einer Spielzeugfeder und einem leeren Karton zeigt Meadows, dass Verhalten aus der Struktur eines Systems kommt.",
+  "hook": "Warum lässt dieselbe Handbewegung einen Slinky springen und einen Karton ruhig hängen?",
+  "one_minute_summary": "Donella Meadows legte einen Slinky auf ihre Handfläche, hielt ihn von oben und zog die untere Hand weg. Er hüpfte, und die Studierenden sagten, ihre Hand sei schuld. Dann machte sie dasselbe mit dem Karton des Slinky, und der hing einfach da. Das Verhalten steckte in der Feder, die Hände setzten es nur frei. Systeme verursachen ihr Verhalten großteils selbst, sagt sie: Konkurrenten kosten selten Marktanteile, und die Grippe gedeiht unter Bedingungen, die wir schaffen."
+ }
+}

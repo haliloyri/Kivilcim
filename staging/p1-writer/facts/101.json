@@ -1,0 +1,150 @@
+{
+ "book_no": 101,
+ "title": "Smart Mobs: The Next Social Revolution",
+ "authors": [
+  "Howard Rheingold"
+ ],
+ "year": "2002",
+ "sources": [
+  "https://smartmobsgroup.blogspot.com/2008/04/chapter-1-shibuya-epiphany.html",
+  "https://www.edge.org/node/21115",
+  "https://web.stanford.edu/class/symbsys205/Rheingold_Barish.html",
+  "https://en.wikipedia.org/wiki/Smart_mob"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Rheingold: 'Smart mobs emerge when communication and computing technologies amplify human talents for cooperation.' Smart mobs consist of people able to act in concert even if they do not know each other.",
+   "source": "chapter-1 reading blog; Wikipedia quoting book",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Rheingold interviewed dozens of young people on Tokyo streets about texting and keitai (mobile phones) and accompanied flocks of teenagers as they converged on public places coordinated by text messages.",
+   "source": "reading blog; Edge piece by Rheingold",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Anthropologist Mizuko Ito, cited in the book, argues phones freed youth from 'the tyranny of the land line shared by inquisitive family members'. Her team noted over 90 percent of Tokyo teenagers have cell phones.",
+   "source": "reading blog (page refs)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f4",
+   "claim": "New norm: texting someone counts as being present, and arriving late is acceptable if you stay in contact by text.",
+   "source": "reading blog",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "NTT DoCoMo designed and marketed i-mode for youth, sold as fashion and technology; one user quoted calls the phone a 'remote control for your life'.",
+   "source": "reading blog",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "Tokyo and Helsinki teens, nicknamed thumb tribes for texting with their thumbs, are described as early smart mobs.",
+   "source": "Edge piece; Wikipedia citing CNN",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Philippines, January 2001: a text message, quoted as 'Go 2EDSA, Wear blck', circulated among citizens; crowds gathered at the EDSA Shrine and President Estrada was removed from office. Rheingold cites it as an example of text-coordinated crowds deposing a government.",
+   "source": "Stanford class page; Rheingold on Edge; Tilly chapter; Wikipedia",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Crowd and message counts for the Estrada protest differ between sources (tens of thousands that night, over a million over days). No number is used.",
+   "source": "multiple",
+   "confidence": "low"
+  },
+  {
+   "id": "f9",
+   "claim": "Rheingold uses the word 'mob' deliberately because of its dark resonances; he notes the same networks can serve terrorists and criminal networks ('netwar').",
+   "source": "Edge piece",
+   "confidence": "medium"
+  },
+  {
+   "id": "f10",
+   "claim": "Helsinki: a group of Finns in their twenties, funded by an American entrepreneur, built a 'shared urban living space' combining a physical location, a virtual community, a mobile social network and a cooperative organization; 300 members a year after launch. Stockholm: fare-jumpers use SMS to warn each other about ticket inspectors on a train; party organizers text their address books and guests must show the message at the door.",
+   "source": "chapter-1 reading blog (page refs 17, 18)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Seattle anti-WTO protesters used constantly updated websites, mobile phones and swarming tactics; UK drivers organized spontaneous fuel-price protests with mobile communications.",
+   "source": "Edge piece; reading blog",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "Rheingold (p. 176 as quoted) compares 'computer-wearing social networks of thinking, communicating humans' to the swarm intelligence of ants, bees, fish and birds.",
+   "source": "Stanford class page quoting the book",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "NTT DoCoMo hired a former magazine launch employee for i-mode marketing; WTO protesters in Seattle used SMS, mobile phones and the internet to organize.",
+   "source": "chapter-1 reading blog",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1399: 'in 2002 Tokyo metros, youth decided where to meet within seconds, restaurant changing live'.",
+   "reason": "Scene not found in the book; replaced by the sourced Ito/keitai details."
+  },
+  {
+   "claim": "Old 1400: Wikipedia launched 2001 by Wales and Sanger, larger than Britannica in a few years, error rate comparable to professional encyclopedias.",
+   "reason": "Not in a book published in 2002; the Nature comparison is from 2005. Central subject cannot be bound to this book."
+  },
+  {
+   "claim": "Old 1401: Bill Wasik's Central Park flash mob, New York 2003.",
+   "reason": "Wasik's flash mobs started in 2003, after the book. Not in Smart Mobs."
+  },
+  {
+   "claim": "Old 1401: Iran and the Arab Spring.",
+   "reason": "Post-date the book (2002)."
+  },
+  {
+   "claim": "Old 1401: 'Rheingold foresaw it, and it happened'.",
+   "reason": "Unsupported."
+  }
+ ],
+ "stories": {
+  "1399": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f10",
+    "f9",
+    "f11",
+    "f12",
+    "f13"
+   ],
+   "note": "Rebuilt on the Tokyo keitai/thumb-tribe material the book actually has."
+  },
+  "1400": {
+   "verdict": "delete",
+   "fact_ids": [],
+   "note": "Wikipedia vs Britannica is not in Smart Mobs (2002). No other supported account fits the slot without padding."
+  },
+  "1401": {
+   "verdict": "delete",
+   "fact_ids": [
+    "f7",
+    "f8",
+    "f9",
+    "f11"
+   ],
+   "note": "Old central subject (Wasik flash mob 2003, Arab Spring) post-dates the 2002 book. A Philippines/Seattle/fuel-protest story is possible but rests on secondary excerpts and gives only ~150 supported words; the exact text message and the Estrada details could not be tied to the book text. Deleted instead of padded."
+  }
+ }
+}

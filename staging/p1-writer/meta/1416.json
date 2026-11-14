@@ -1,0 +1,35 @@
+{
+ "story_id": 1416,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence: rebuilt on the Law of Solid Ground (trust is the foundation of leadership), Maxwell's own Skyline case and the pocket-change image, from secondary summaries. Old building-collapse metaphor and quote dropped as unverifiable. Vietnam kept to a short clause.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Sekiz yılın güveni, üç karar",
+  "description": "Skyline Kilisesi'nde sekiz iyi yıldan sonra Maxwell olağan sürecin dışında üç karar aldı ve güveni kaybetti. Güveni bozuk paraya benzetiyor.",
+  "hook": "Üç karar, sekiz yıllık bir vaize neye mal oldu?",
+  "one_minute_summary": "John Maxwell, Skyline Kilisesi'nde sekiz yıl başpapaz olarak çalışmıştı. Olağan sürecini kullanmadan üç büyük karar aldı: birini işten çıkardı, bir ayini iptal etti ve Noel gösterisinin bir bölümünü değiştirdi. Cemaatin güveni düştü. Herkesin önünde özür dileyip af istedi ve güveni geri kazandı. Maxwell güveni liderliğin temeli sayıyor ve bozuk paraya benzetiyor: iyi kararlar para ekler, hatalar çıkarır. Karakterin güveni mümkün kıldığını, güvenin de liderliği mümkün kıldığını yazıyor."
+ },
+ "en": {
+  "title": "Three decisions, eight years of trust",
+  "description": "After eight good years at Skyline Church, Maxwell made three decisions outside his usual process and lost trust. He compares trust to pocket change.",
+  "hook": "What did three decisions cost a pastor of eight years?",
+  "one_minute_summary": "John Maxwell had led Skyline Church as senior pastor for eight years when he made three major decisions without his usual process: he fired someone, cancelled a service and changed part of the Christmas show. The congregation's trust dropped. He apologized in public, asked forgiveness and won it back. Maxwell calls trust the foundation of leadership and compares it to pocket change: good decisions add coins, mistakes take them out."
+ },
+ "es": {
+  "title": "Ocho años de confianza, tres decisiones",
+  "description": "Tras ocho buenos años en la iglesia Skyline, Maxwell tomó tres decisiones fuera de su proceso habitual y perdió confianza. Compara la confianza con monedas del bolsillo.",
+  "hook": "¿Qué le costaron tres decisiones a un pastor de ocho años?",
+  "one_minute_summary": "John Maxwell llevaba ocho años como pastor principal de la iglesia Skyline cuando tomó tres decisiones importantes sin su proceso habitual: despidió a alguien, canceló un servicio y cambió una parte del espectáculo de Navidad. La confianza de la congregación cayó. Pidió disculpas en público, rogó perdón y la recuperó. Maxwell llama a la confianza el cimiento del liderazgo y la compara con monedas de bolsillo: las buenas decisiones añaden, los errores quitan."
+ },
+ "de": {
+  "title": "Acht Jahre Vertrauen, drei Entscheidungen",
+  "description": "Nach acht guten Jahren in der Skyline Church traf Maxwell drei Entscheidungen außerhalb seines Verfahrens und verlor Vertrauen. Er vergleicht Vertrauen mit Kleingeld.",
+  "hook": "Was kosteten drei Entscheidungen einen Pastor nach acht Jahren?",
+  "one_minute_summary": "John Maxwell war acht Jahre leitender Pastor der Skyline Church, als er drei große Entscheidungen ohne sein übliches Verfahren traf: Er entließ jemanden, sagte einen Gottesdienst ab und änderte einen Teil des Weihnachtsprogramms. Das Vertrauen der Gemeinde sank. Er entschuldigte sich öffentlich, bat um Verzeihung und gewann es zurück. Maxwell nennt Vertrauen das Fundament von Führung und vergleicht es mit Kleingeld: gute Entscheidungen legen Münzen dazu, Fehler nehmen welche weg."
+ }
+}

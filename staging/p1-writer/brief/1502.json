@@ -1,0 +1,31 @@
+{
+ "story_id": 1502,
+ "kind": "concept",
+ "book": {"title": "The Gift of Fear", "author": "Gavin de Becker", "year": "1997"},
+ "confidence": "low",
+ "confidence_note": "The fear-versus-worry distinction is reported consistently by Shortform, Goodreads and SuperSummary summaries, but no case from the book could be verified for this idea and the original text could not be read. The old text's quote about worry being 'noise' was not found and is dropped. The story therefore stays short and explains the distinction only; no scene or invented example is used.",
+ "facts": [
+  "De Becker separates true fear from worry or anxiety.",
+  "True fear is a brief, urgent biological response to a real threat.",
+  "Worry or anxiety is something we manufacture; it is voluntary and not tied to actual danger.",
+  "De Becker urges heeding true fear but warns against inventing reasons to be afraid, because constant worry causes stress and distracts from real threats."
+ ],
+ "scene_details": [],
+ "tension": "Both feel like fear in the body, yet only one of them is a signal about something happening now.",
+ "opening_idea": "Open with the difference in tempo: true fear is brief and urgent, worry can run for weeks.",
+ "lessons": [{"idea": "Asking whether anything threatening is happening at this moment sorts a feeling into signal or worry, and each calls for a different response.", "anchor": "true fear is brief and urgent; worry is manufactured and not tied to actual danger"}],
+ "reflect": [],
+ "reflect_final": "Think of a fear you carried this week: was anything threatening actually happening at the time, or was it a story your mind was running?",
+ "use_cases": [
+  {"situation": "You are lying awake rehearsing a bad outcome", "move": "Ask yourself 'is anything threatening happening right now?' and write the answer in one word.", "context": "self"},
+  {"situation": "A friend spirals about a possible problem", "move": "Ask whether it is happening now or whether it is something they are picturing.", "context": "oneonone"},
+  {"situation": "A colleague raises a vague risk in a meeting", "move": "Ask what concrete sign they have seen, so the team can separate a real signal from a worry.", "context": "meeting"}
+ ],
+ "pocket_idea": "Ask whether the threat is happening now; if not, you are worrying, and worry can wait.",
+ "conversation_variants": {
+  "punchline_idea": "True fear lasts seconds and demands action; worry can last all week and demands nothing.",
+  "thirty_sec_idea": "Gavin de Becker separates true fear from worry. True fear is a brief, urgent response to a real threat, and he wants you to heed it. Worry is manufactured, voluntary, and not tied to actual danger; it drains you and distracts you from real risks.",
+  "question_idea": "",
+  "key_contrast_idea": "signal or story"
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1551,
+  "verdict": "keep",
+  "verify_note": "Keep, medium-high: Level 10 agenda from the EOS Worldwide page; book wording not read. Old 12-hours-to-90-minutes claim dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Doksan dakikalık toplantı",
+    "description": "Wickman'ın Level 10 toplantısı doksan dakikadır ve sabit bir sırası vardır. Altmış dakika sorun çözmeye gider.",
+    "hook": "Hangi toplantınız sabit bir düzenle karara bağlanabilir?",
+    "one_minute_summary": "Gino Wickman'ın Traction kitabındaki Level 10 toplantısı her hafta aynı gün ve saatte, doksan dakika sürer. Yedi bölüm vardır: geçiş, gösterge tablosu, kayalar, haberler ve yapılacaklar beşer dakika, ardından altmış dakika IDS, yani sorunları belirleyip tartışıp çözmek. Çıkan kararlar yedi günlük işlere dönüşür. Konu dağılırsa herkes tangent alert diyebilir. Gündem, kitabın değil EOS sitesinin anlatımına dayanıyor, bu yüzden kitaptaki ayrıntılarla karşılaştırarak okuyun."
+  },
+  "en": {
+    "title": "The ninety-minute meeting",
+    "description": "Wickman's Level 10 meeting runs ninety minutes in a fixed order. Sixty of them go to solving issues.",
+    "hook": "Which of your meetings could a fixed structure turn into decisions?",
+    "one_minute_summary": "In Gino Wickman's Traction, the Level 10 meeting runs ninety minutes at the same day and hour every week. It has seven segments: the segue, scorecard, Rock review, headlines and to-dos take five minutes each, then sixty go to IDS, identifying, discussing and solving the top issues. Decisions become seven-day to-dos. Anyone can call tangent alert when talk drifts. The agenda follows the EOS site, not the book itself."
+  },
+  "es": {
+    "title": "La reunión de noventa minutos",
+    "description": "La reunión Level 10 de Wickman dura noventa minutos con un orden fijo. Sesenta se dedican a resolver problemas.",
+    "hook": "¿Qué reunión tuya podría convertir una estructura fija en decisiones?",
+    "one_minute_summary": "En Traction, de Gino Wickman, la reunión Level 10 dura noventa minutos, el mismo día y hora cada semana. Tiene siete bloques: transición, marcador, rocas, titulares y tareas, de cinco minutos cada uno, y luego sesenta para IDS, identificar, discutir y resolver los problemas principales. Las decisiones se vuelven tareas de siete días. Si la charla se desvía, cualquiera dice tangent alert. La agenda sigue la web de EOS, no el libro mismo."
+  },
+  "de": {
+    "title": "Das Neunzig-Minuten-Meeting",
+    "description": "Wickmans Level-10-Meeting dauert neunzig Minuten in fester Reihenfolge. Sechzig davon gehören dem Lösen von Problemen.",
+    "hook": "Welches deiner Meetings könnte eine feste Struktur zu Entscheidungen machen?",
+    "one_minute_summary": "In Gino Wickmans Traction dauert das Level-10-Meeting neunzig Minuten, jede Woche am selben Tag zur selben Uhrzeit. Es hat sieben Abschnitte: Überleitung, Kennzahlen, Rocks, Schlagzeilen und To-dos zu je fünf Minuten, dann sechzig für IDS, die wichtigsten Probleme identifizieren, diskutieren und lösen. Entscheidungen werden zu Siebentage-To-dos. Driftet das Gespräch, kann jeder Tangent Alert rufen. Die Agenda folgt der EOS-Seite, nicht dem Buch selbst."
+  }
+}

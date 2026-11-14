@@ -1,0 +1,135 @@
+{
+  "book_no": 81,
+  "title": "The Sleep Revolution",
+  "authors": [
+    "Arianna Huffington"
+  ],
+  "year": "2016",
+  "note": "Full subtitle: Transforming Your Life, One Night at a Time. Full text not read; facts come from Huffington's own words in interviews given for the book launch and from reviews.",
+  "sources": [
+    "https://amerisleep.com/blog/interview-arianna-huffington/",
+    "https://fortune.com/2016/04/05/arianna-huffington-sleep-revolution",
+    "https://kirkusreviews.com/book-reviews/arianna-huffington/the-sleep-revolution/print",
+    "https://news.wttw.com/2016/04/28/arianna-huffington-s-wake-call-prompted-sleep-revolution",
+    "https://www.penguinrandomhouse.com/books/237250/thrive-by-arianna-huffington/",
+    "https://www.porchlightbooks.com/products/thrive-arianna-huffington-9780804140843"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "'On the morning of April 6, 2007, I was lying on the floor of my home office in a pool of blood.' On her way down her head hit the corner of her desk; she broke her cheekbone. She had collapsed from exhaustion and sleep deprivation.",
+      "source": "Huffington in amerisleep interview; Fortune; WTTW",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "For the two years she was building The Huffington Post she worked regular 18-hour days.",
+      "source": "Fortune",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Afterwards she went 'from doctor to doctor, from brain MRI to CAT scan to echocardiogram' to rule out an underlying condition; 'doctors' waiting rooms, it turns out, were good places for me to ask myself a lot of questions.'",
+      "source": "amerisleep interview (Huffington's words)",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "She names the belief at the heart of the sleep crisis: that 'overwork and burnout are the price we must pay in order to succeed'; going without sleep is treated as 'a badge of honor'.",
+      "source": "Fortune; amerisleep interview",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "The book covers how common sleep deprivation is, especially among professionals and college students, warns about sleep medications such as Ambien, and urges seven to eight hours a night.",
+      "source": "Kirkus",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Her top recommendation: get all devices out of the bedroom. She turns them off at a set time each night and 'gently escort[s] them out of my bedroom'.",
+      "source": "Fortune; amerisleep interview",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "She treats the transition to sleep as 'a sacrosanct ritual': a hot bath with Epsom salts and a candle flickering nearby; she no longer sleeps in workout clothes but in pajamas, nightdresses or T-shirts dedicated to sleep; sometimes chamomile or lavender tea.",
+      "source": "amerisleep interview (Huffington's words)",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "Huffington installed nap rooms at The Huffington Post; staff were reluctant at first, then the rooms were 'perpetually full'. She predicted nap rooms would become as common as conference rooms.",
+      "source": "amerisleep interview; Fortune; HuffPost Canada",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "The 'two legs of a stool' image (money and power) and the Third Metric of well-being, wisdom, wonder and giving come from her earlier book Thrive (2014), not from The Sleep Revolution.",
+      "source": "Penguin Random House and Porchlight descriptions of Thrive",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Huffington admits she did not realize the importance of sleep until 2007 and says: 'I don't want you to make the mistakes I did.'",
+      "source": "Fortune",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Quote 'If this is what success looks like, what does failure look like?' as said in the moment.",
+      "reason": "Not found in reachable sources for this book; dropped."
+    },
+    {
+      "claim": "Quote 'We need a third revolution, a sleep and well-being revolution, next to the business and technology revolutions.'",
+      "reason": "No source."
+    },
+    {
+      "claim": "Screens off 30 minutes before bed, light book, dimmed lights as her exact system; 'the bath is the transition ritual between day and night' quote.",
+      "reason": "The 30 minutes and the quote are not sourced; the ritual is reported in her own words without them."
+    },
+    {
+      "claim": "Eight hours of poor sleep is less useful than six hours of deep sleep; quality is decided in the hour before bed.",
+      "reason": "No source; contradicts her 7-8 hours advice."
+    },
+    {
+      "claim": "Two-legged stool, wisdom, wonder, generosity as success pillars; 'a company that lets staff work on sleep debt writes letters with a blunt pencil'.",
+      "reason": "The stool and pillars belong to Thrive (2014); the pencil quote has no source."
+    }
+  ],
+  "stories": {
+    "1339": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f10"
+      ],
+      "note": "Collapse story kept; invented quotes removed; the doctors' tests and waiting-room questions added."
+    },
+    "1340": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f6",
+        "f7",
+        "f4",
+        "f5",
+        "f2",
+        "f10",
+        "f3"
+      ],
+      "note": "Bedtime ritual rebuilt from her own words; invented 30 minutes and 8-vs-6-hours claim dropped."
+    },
+    "1341": {
+      "verdict": "delete",
+      "fact_ids": [
+        "f9"
+      ],
+      "note": "The central idea (success as a stool with more legs, well-being/wisdom/wonder/giving) is from Thrive, a different book; the workplace quote is unsourced."
+    }
+  }
+}

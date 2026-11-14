@@ -1,0 +1,153 @@
+{
+  "book_no": 91,
+  "title": "Never Split the Difference: Negotiating As If Your Life Depended On It",
+  "authors": [
+    "Chris Voss",
+    "Tahl Raz"
+  ],
+  "year": "2016",
+  "sources": [
+    "https://www.m-vg.de/mediafiles/Leseprobe/9783868816563.pdf",
+    "https://risewithdrew.com/negotiating-lesson-4-be-a-mirror/",
+    "https://chrislehnes.substack.com/p/never-split-the-difference-by-chris",
+    "https://scienceofpeople-com.pages.dev/never-split-difference-summary/",
+    "https://www.masterclass.com/classes/chris-voss-teaches-the-art-of-negotiation/chapters/case-study-chase-manhattan-bank-robbery",
+    "https://www.foxnews.com/entertainment/never-split-the-difference-by-chris-voss.amp"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Never Split the Difference (2016) by Chris Voss with Tahl Raz. Voss was a Kansas City police officer, then an FBI hostage negotiator and the FBI's lead international kidnapping negotiator.",
+      "source": "publisher description (Fox News excerpt page); German publisher sample",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Chapter 1: at Harvard, Robert Mnookin (head of the Harvard negotiation research project) and Gabriella Blum ambush Voss with a role play; Mnookin's secretary puts a tape recorder on the table. Mnookin: 'We have your son, Voss. Pay a million dollars or he dies.' Voss answers 'How am I supposed to do that?' and asks how he can know his son is alive. After about three minutes Blum takes over, gets the same questions; Mnookin's face reddens. Mnookin ends with: it looks like the FBI might have something to teach us.",
+      "source": "German publisher sample (Redline Verlag), ch. 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "In 2006 Voss took the Harvard Law School winter negotiation course (144 students). In a buyer-seller exercise he took everything his partner Andy (pseudonym) had, including a quarter of the budget Andy had been told to keep in reserve; it happened again the next day. Voss: 'I just ask questions.'",
+      "source": "German publisher sample, ch. 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "The FBI and NYPD had adopted the problem-solving approach of Getting to Yes (Harvard Negotiation Project, founded 1979). After the Ruby Ridge standoff (Idaho, 1992) and the Waco siege of David Koresh's Branch Davidians (Texas, 1993), it was clear most hostage negotiations were not rational problem-solving situations. In October 1993 Deputy Attorney General Philip B. Heymann published a report on the lessons of Waco.",
+      "source": "German publisher sample, ch. 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Voss draws on Kahneman and Tversky: people are not fully rational; System 1 (fast, instinctive, emotional) drives System 2 (slow, deliberate, logical). Negotiating only with System 2 tools is like trying to make an omelette without knowing how to crack an egg.",
+      "source": "German publisher sample, ch. 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Tactical empathy: understanding the feelings and mindset of the counterpart and what lies behind them; labeling puts a name to an emotion ('It seems like you're worried about making the wrong move').",
+      "source": "scienceofpeople summary; chrislehnes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "Chapter 4 'Beware Yes, Master No': 'No' gives the speaker a feeling of safety and control and often means 'I'm not ready to agree yet'. Three kinds of yes: counterfeit (a dodge to end the talk), confirmation (reflexive, no commitment), commitment (real agreement). Great negotiators seek 'No' because the real negotiation often starts there.",
+      "source": "chrislehnes; scienceofpeople summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Example phrasing: 'Is now a bad time to talk?' instead of 'Do you have a few minutes to talk?'; also 'Would it be ridiculous to...?'",
+      "source": "chrislehnes; scienceofpeople summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Mirroring: repeat the last three words, or the one to three most important words, the other person said, often with an inquisitive tone; the late-night FM DJ voice.",
+      "source": "risewithdrew (quoting the book)",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Office example: an impulsive boss known for 'drive-bys' asks for two copies of all the paperwork. The employee mirrors ('Two copies?'); the boss explains, ends up asking for two digital backups, and the next day emails 'The two digital backups will be fine.' A week of work avoided.",
+      "source": "risewithdrew (retelling the book)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Psychologist Richard Wiseman's waiter study: one group used positive reinforcement ('great', 'no problem', 'sure'), the other repeated orders back. Mirroring waiters' average tip was 70 percent higher.",
+      "source": "risewithdrew (quoting the book)",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "1993 Chase Manhattan bank robbery in Brooklyn: two robbers held hostages; Voss was on the phone; he mirrored a robber's statement ('We chased your driver away?'), after which the robber poured out information.",
+      "source": "MasterClass case-study page; chrislehnes",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Voss quote: 'People decide with emotion, not logic, and negotiation that ignores emotions fails.'",
+      "reason": "Not a verified quote; the book's argument is paraphrased instead."
+    },
+    {
+      "claim": "Voss quote: 'The best negotiator is not the one who talks most but the one who listens most.'",
+      "reason": "Not found as a quote."
+    },
+    {
+      "claim": "Voss quote: 'This looks stupid but it works...' about mirroring.",
+      "reason": "Not found as a quote."
+    },
+    {
+      "claim": "'Yes is the close, no is the opening' as Voss's summary line.",
+      "reason": "Paraphrase, not verified wording; idea kept, quote dropped."
+    },
+    {
+      "claim": "'Isn't this unfair to you?' reliably gets a no; 'I understand you don't want to deal with this' tactic.",
+      "reason": "Not verified as book examples."
+    },
+    {
+      "claim": "'Have you given up on this project?' one-line email.",
+      "reason": "Not verified in accessible sources; not used."
+    }
+  ],
+  "stories": {
+    "1369": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "note": "Rebuilt around the verified Harvard role play and the FBI's post-Waco turn away from pure problem-solving."
+    },
+    "1370": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f3",
+        "f7",
+        "f8",
+        "f3"
+      ],
+      "note": "Kept the 'No' idea; dropped unverified tactics and quotes."
+    },
+    "1371": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f9",
+        "f10",
+        "f11",
+        "f12"
+      ],
+      "note": "Mirroring told through the two-copies office case and the Wiseman waiter study; invented quotes dropped."
+    }
+  }
+}

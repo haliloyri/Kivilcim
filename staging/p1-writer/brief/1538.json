@@ -1,0 +1,60 @@
+{
+  "story_id": 1538,
+  "kind": "anecdote",
+  "book": {
+    "title": "Bounce",
+    "author": "Matthew Syed",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Facts from the spiked review and summaries; no primary text. Peter Charters and the Omega club name come from summaries only; the 24-hour access and the one-table detail are consistent. Dropped: Federer comparison, postcode medal share, claim that neighbours reached national level. The \"more than the rest of the nation combined\" phrase is the reviewer's wording of a 1980s period; keep it hedged.",
+  "facts": [
+    "Matthew Syed grew up on an unremarkable road in south-east England with no sporting background.",
+    "He became England's top table tennis player and a two-time Olympian.",
+    "For a period in the 1980s his street and the surrounding area produced more outstanding table tennis players than the rest of the nation combined.",
+    "A teacher at his local school, England's top table tennis coach, recruited Syed, his older brother and other promising children to a local club with 24-hour access.",
+    "The brothers practised against each other for hours a day, starting on a tournament-sized table in their parents' large garage.",
+    "Syed concedes that with fewer opportunities he might not have been number one in England, possibly \"number one thousand and one\".",
+    "A summary describes the Omega club as a small one-table hut open around the clock to members, and Peter Charters as the primary-school teacher who invited interested children to it."
+  ],
+  "scene_details": [
+    "a tournament-sized table in the garage",
+    "a club open around the clock",
+    "a school teacher who was England's top coach"
+  ],
+  "tension": "One ordinary road produced a run of top players; Syed asks why before accepting the answer talent.",
+  "opening_idea": "Open on the table filling his parents' garage.",
+  "lessons": [
+    {
+      "idea": "Before crediting talent, look for the room, the coach and the practice partners that were already in place.",
+      "anchor": "The street, the teacher-coach, the 24-hour club and the brother.",
+      "example": "A neighbour who reads brilliantly may simply have grown up in a house where an adult read to her every evening."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which early opportunity, such as a person, a place or a free evening, made you better at something than you realised?",
+  "use_cases": [
+    {
+      "situation": "A friend's success is put down to talent.",
+      "move": "Syed's street had a top coach and a club open all day; ask where they practised and who worked with them.",
+      "context": "social"
+    },
+    {
+      "situation": "A young relative wants to improve at a sport or instrument.",
+      "move": "Look for a practice partner and a regular place before buying equipment.",
+      "context": "family"
+    },
+    {
+      "situation": "You doubt you have talent for something.",
+      "move": "Find out who could coach you and when you could practise regularly.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Before you decide you lack talent, check whether you ever had a coach, a place and a practice partner.",
+  "conversation_variants": {
+    "punchline_idea": "Matthew Syed says one ordinary road in England produced more top table tennis players than the rest of the country combined for a spell in the 1980s.",
+    "thirty_sec_idea": "Matthew Syed grew up on an ordinary road in south-east England and became England's top table tennis player. For a stretch in the 1980s his street produced more outstanding players than the rest of the country combined. A teacher who was England's top coach recruited him and his brother to a club with 24-hour access, and they trained for hours. Syed admits he might have been just another player without that.",
+    "question_idea": "Who helped you early?",
+    "key_contrast_idea": "talent or setting"
+  }
+}

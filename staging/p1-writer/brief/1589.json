@@ -1,0 +1,64 @@
+{
+  "story_id": 1589,
+  "kind": "concept",
+  "book": {
+    "title": "Lifespan",
+    "author": "David A. Sinclair",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "From reviews and summaries, not the book text. Old text's opening examples (fasting animals, cold mice) and slogans ('biology thrives on hardship') dropped; no source ties them to the book. Much of the supporting evidence is animal or early research, flagged in the story.",
+  "facts": [
+    "The survival circuit is a set of longevity genes inherited from the earliest life forms: sirtuins, mTOR and AMPK.",
+    "It evolved to get organisms through famine and cold winters.",
+    "In comfortable modern life it sits mostly dormant, in Sinclair's view.",
+    "Going hungry now and then, getting cold and working out hard are mild stresses that switch it on.",
+    "Sirtuins then tell cells to strengthen their defences and repair themselves without permanent damage.",
+    "Mammals have seven sirtuins, SIRT1 to SIRT7, involved in inflammation, energy metabolism and DNA repair.",
+    "Sirtuins need NAD+, a coenzyme whose levels fall with age.",
+    "His practical advice includes eating less often, skipping meals, less animal protein, high-intensity exercise, cold exposure and sauna.",
+    "Summaries note that parts of this rest on early animal research.",
+    "A synopsis of the advice lists skipping a meal, an eight-hour eating window, no food in the three hours before bed, occasional cold showers or ice baths, sauna and high-intensity intervals; sourced only to a secondary synopsis, so low.",
+    "Sinclair believes humans could live beyond 120, even 150, without the usual frailty; typical lifespan today is about 80 (medium).",
+    "Exercise is linked to longer telomeres and higher NAD levels (medium)."
+  ],
+  "scene_details": [
+    "a skipped meal",
+    "a cold shower or cold exposure",
+    "seven sirtuins named SIRT1 to SIRT7"
+  ],
+  "tension": "A circuit built for famine and cold has little to do in a warm, fed life.",
+  "opening_idea": "Open on the dormant alarm: a system built for hunger and cold that modern life rarely sounds.",
+  "lessons": [
+    {
+      "idea": "Use small deliberate demands for capacities that comfort lets fade",
+      "anchor": "the survival circuit sitting dormant in modern comfort; Everyday: someone who always takes the lift and finds the stairs hard on the day it breaks"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your week does everything come easy, and what small, safe demand could you add there on purpose?",
+  "use_cases": [
+    {
+      "situation": "Friends plan another long dinner and drive",
+      "move": "Sinclair says the body's defences switch on with mild stress. Want to walk first, even twenty minutes, before we eat?",
+      "context": "social"
+    },
+    {
+      "situation": "You notice you never skip a meal or climb a stair",
+      "move": "I have not asked my body for anything lately. This week I will try one small demand that my doctor would be fine with.",
+      "context": "self"
+    },
+    {
+      "situation": "A parent asks what Sinclair's advice means for them",
+      "move": "He suggests skipping meals and cold exposure, but the evidence is partly from animals. Let's ask your doctor which part fits you.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Sinclair says our survival circuit evolved for famine and cold. Give it one small, safe demand this week.",
+  "conversation_variants": {
+    "punchline_idea": "Sinclair thinks our bodies carry a famine-and-cold alarm that a warm, fed life seldom sounds.",
+    "thirty_sec_idea": "Sinclair says every cell inherits a survival circuit, sirtuins, mTOR and AMPK, built for famine and cold. Modern life keeps it quiet. Mild stress such as a skipped meal, cold or hard exercise switches it on and sirtuins push cells to defend and repair. Parts of this rest on animal work, so treat it as his argument.",
+    "question_idea": "",
+    "key_contrast_idea": "comfort, or mild stress"
+  }
+}

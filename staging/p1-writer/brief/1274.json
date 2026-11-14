@@ -1,0 +1,65 @@
+{
+  "story_id": 1274,
+  "kind": "concept",
+  "book": {
+    "title": "When: The Scientific Secrets of Perfect Timing",
+    "author": "Daniel H. Pink",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Duke anesthesia figures come from a published excerpt of When and the Duke press release; Danish test and nap details from reader highlights and reviews; no full text available. Hand-washing is from Pink's interviews and left out of the story. Old claims (2-4 p.m. accident share, NASA/Google/Japan nap policies, 'five minutes and coffee') are not verified and were dropped. Hand-washing and vigilance time-outs come from Pink's interviews and a book summary (medium).",
+  "facts": [
+    "Pink cites a Duke study of about 90,000 surgeries: anesthesia problems were significantly more frequent for cases starting in the 3 and 4 p.m. hours, about 1% at 9 a.m. versus 4.2% at 4 p.m.",
+    "Actual patient harm was 0.3% at 8 a.m. and 1% at 3 p.m.; the researchers said afternoon circadian lows impair doctors' vigilance.",
+    "Danish schoolchildren scored worse on tests taken later in the day; a 20 to 30 minute break 'to eat, play, and chat' before the test raised scores, and the gain was larger than the hourly decline.",
+    "Pink's 'nappuccino': drink coffee, then nap; caffeine takes about twenty-five minutes to enter the bloodstream.",
+    "Ideal naps run ten to twenty minutes; longer brings sleep inertia. Five-minute naps did little; ten-minute naps had effects lasting nearly three hours.",
+    "Pink's comparison for the Danish break: the boost was like students having about three extra weeks in the classroom; and 'if there were a break after every hour, test scores would actually improve over the course of the day.'",
+    "Pink's rules for a restorative break: moving beats stationary, social beats solo, outside beats inside.",
+    "Duke researchers also noted most anesthesia events were not serious harm.",
+    "Pink cites University of Pennsylvania research showing hand-washing in hospitals deteriorates considerably in the afternoon.",
+    "The Duke authors also pointed to end-of-day fatigue and afternoon hand-offs between staff.",
+    "Pink describes hospitals adding 'vigilance' time-outs, short structured breaks, to counter afternoon errors."
+  ],
+  "scene_details": [
+    "the 3 and 4 p.m. operating slots",
+    "Danish children breaking to eat, play and chat",
+    "coffee before a nap",
+    "the ten-to-twenty-minute window"
+  ],
+  "tension": "Same hospital, same anesthesiologists, yet the 4 p.m. case is about four times riskier than the 9 a.m. case.",
+  "opening_idea": "Open on the operating schedule: a surgery booked for 4 p.m.",
+  "lessons": [
+    {
+      "idea": "Plan a short real break before anything that needs care in the afternoon, instead of pushing through the trough.",
+      "anchor": "Danish break effect; nappuccino.",
+      "example": "An accountant who files reports after lunch takes a quick walk outside before checking the figures."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What careful task usually lands in your mid-afternoon, and what short break could you put right before it?",
+  "use_cases": [
+    {
+      "situation": "Booking an important appointment or procedure.",
+      "move": "Ask for a morning slot and mention the Duke anesthesia data Pink cites.",
+      "context": "self"
+    },
+    {
+      "situation": "Team review always set for 3 p.m.",
+      "move": "Propose a fifteen-minute break before it, like the Danish test break.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Partner fading every afternoon on weekends.",
+      "move": "Suggest a coffee followed by a twenty-minute nap and see how the evening goes.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Coffee, then a nap under twenty minutes: the caffeine arrives as you wake.",
+  "conversation_variants": {
+    "punchline_idea": "At one hospital, anesthesia problems were about four times as frequent at 4 p.m. as at 9 a.m.",
+    "thirty_sec_idea": "Pink: at Duke, afternoon operations had far more anesthesia problems; Danish kids tested worse later but a 20-30 minute break erased the drop; his fix is the nappuccino, coffee then a short nap.",
+    "question_idea": "When does your afternoon slump hit?",
+    "key_contrast_idea": "push through versus break"
+  }
+}

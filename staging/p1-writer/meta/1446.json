@@ -1,0 +1,35 @@
+{
+  "story_id": 1446,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt with medium confidence: reader summary and publisher copy (full text not available). Old 'five times' ratio and 'several referrals' claim dropped; retention-profit estimate flagged as contested.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kazanmak pahalı, tutmak kazandırır",
+    "description": "Reichheld müşterinin zamanla ne maliyet getirdiğine ve ne kazandırdığına bakar. Birçok şirket yine de yalnızca yeni müşteriyi ödüllendirir.",
+    "hook": "İşinizde ya da ilişkilerinizde kalmış olanı mı, yoksa yeni gelen kişiyi mi daha çok ağırlıyorsunuz?",
+    "one_minute_summary": "Frederick Reichheld'in The Loyalty Effect kitabına göre yeni müşteri kazanmak pahalıdır: üst yöneticiler satış tekliflerine karışır, yardım hattı aramalarının çoğu yeni müşterilerden gelir. Sadık müşteri ise taban kâr, maliyet tasarrufu, tavsiye ve fiyat primi getirir. Birçok şirket yine de satışçıyı yeni müşteri getirdiği için ödüllendirir, elde tutmak için değil. Kitabın kapağı, elde tutmadaki küçük bir artışın kârı ikiye katlayabileceğini söyler, ama bu tür hesaplar tartışmalıdır."
+  },
+  "en": {
+    "title": "Paid for arrivals, not for staying",
+    "description": "Reichheld looks at what a customer costs and brings in over time. Many companies still pay only for the new ones.",
+    "hook": "Where do you spend effort on someone new while a person who stayed gets taken for granted?",
+    "one_minute_summary": "According to Frederick Reichheld's The Loyalty Effect, winning a customer is costly: senior managers get pulled into proposals and most help desk calls come from new customers. A loyal customer adds base profit, cost savings, referrals and a price premium. Yet many companies pay salespeople for new accounts, not for keeping them. The jacket says a small gain in retention can double profits, though similar retention-to-profit calculations have been disputed."
+  },
+  "es": {
+    "title": "Pagar por llegar, no por quedarse",
+    "description": "Reichheld examina lo que cuesta y aporta un cliente con el tiempo. Muchas empresas siguen pagando solo por los nuevos.",
+    "hook": "¿Dónde te esfuerzas por alguien nuevo mientras das por hecha a la persona que se quedó?",
+    "one_minute_summary": "Según The Loyalty Effect, de Frederick Reichheld, ganar un cliente es caro: los directivos se ven arrastrados a las propuestas y la mayoría de las llamadas al servicio de atención vienen de clientes nuevos. Un cliente leal aporta beneficio base, ahorro de costes, recomendaciones y una prima de precio. Aun así, muchas empresas pagan a sus vendedores por cuentas nuevas y no por mantenerlas. La cubierta dice que una pequeña mejora de retención puede duplicar los beneficios, aunque cálculos parecidos se han discutido."
+  },
+  "de": {
+    "title": "Bezahlt wird fürs Gewinnen",
+    "description": "Reichheld fragt, was ein Kunde über die Zeit kostet und bringt. Viele Firmen bezahlen trotzdem nur die neuen.",
+    "hook": "Wo steckst du Mühe in jemand Neues, während die Person, die geblieben ist, als selbstverständlich gilt?",
+    "one_minute_summary": "Nach Frederick Reichhelds The Loyalty Effect ist ein Neukunde teuer: Führungskräfte werden in Angebote hineingezogen, und die meisten Anrufe beim Helpdesk kommen von neuen Kunden. Ein treuer Kunde bringt Grundgewinn, Kosteneinsparungen, Empfehlungen und einen Preisaufschlag. Dennoch bezahlen viele Firmen Verkäufer für neue Aufträge und nicht fürs Halten. Der Umschlag verspricht, ein kleiner Zuwachs bei der Kundenbindung könne den Gewinn verdoppeln, doch ähnliche Rechnungen sind umstritten."
+  }
+}

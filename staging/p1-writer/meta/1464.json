@@ -1,0 +1,35 @@
+{
+  "story_id": 1464,
+  "verdict": "keep",
+  "verify_note": "Keep with low confidence: topic rebuilt around the Shereshevsky/Luria case, reported in reviews of the book, and the cost of not forgetting; old sleep and 'selective forgetting' claims not found and dropped. Borges link and the 'forgetting' idea rest on one quote attribution and one summary and are hedged. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Unutamayan adam",
+    "description": "Luria'nın otuz yıl boyunca incelediği S., duyduğu her şeyi akılda tutuyordu ve bu ona pahalıya mal oldu. Foer, unutmanın da zihnin işi olduğunu savunuyor.",
+    "hook": "Hangi ayrıntıları gereksiz yere taşıyorsunuz?",
+    "one_minute_summary": "1928'de S. adlı bir Rus gazeteci, olağanüstü bir hafızası olduğunu söyleyerek psikolog A. R. Luria'nın ofisine geldi. Luria onu yaklaşık otuz yıl inceledi. S. yabancı dildeki metinleri ve anlamadığı formülleri ezberleyip yıllarca tutabiliyordu. Ama zihni ufak ayrıntılar ve duyumlarla doluydu, soyutlama ve genelleme yapmakta zorlanıyor, pratik hayatta ve işte güçlük çekiyordu. Foer vakayı Borges'in Funes'iyle ilişkilendirir ve unutmanın zihnin işleyişinin parçası olduğunu savunur."
+  },
+  "en": {
+    "title": "The man who could not forget",
+    "description": "Luria studied S. for thirty years: a man who kept everything and paid for it. Foer uses the case to argue that forgetting is part of how a mind works.",
+    "hook": "Which details are you carrying that you could set down?",
+    "one_minute_summary": "In 1928 a Russian journalist known as S. came to the psychologist A. R. Luria's office claiming an unusually powerful memory. Luria studied him for about thirty years. S. could memorize foreign-language passages and abstruse formulas he did not understand and keep them for years. His mind, though, was cluttered with trivial details and sensations, and he struggled to abstract or generalize and to manage ordinary work. Foer ties the case to Borges's Funes and to the idea that forgetting is part of how a mind works."
+  },
+  "es": {
+    "title": "El hombre que no podía olvidar",
+    "description": "Luria estudió durante treinta años a S., que lo guardaba todo y lo pagó caro. Foer usa el caso para argumentar que olvidar forma parte de cómo funciona una mente.",
+    "hook": "¿Qué detalles cargas que podrías soltar?",
+    "one_minute_summary": "En 1928 un periodista ruso conocido como S. acudió a la consulta del psicólogo A. R. Luria asegurando tener una memoria fuera de lo común. Luria lo estudió unos treinta años. S. memorizaba pasajes en otros idiomas y fórmulas abstrusas que no entendía y las conservaba durante años. Pero su mente estaba llena de detalles triviales y sensaciones, y le costaba abstraer, generalizar y desempeñarse en un trabajo corriente. Foer lo une al Funes de Borges y a la idea de que olvidar es parte del funcionamiento de una mente."
+  },
+  "de": {
+    "title": "Der Mann, der nicht vergessen konnte",
+    "description": "Luria untersuchte S. dreißig Jahre lang: einen Mann, der alles behielt und dafür zahlte. Foer nutzt den Fall für die These, dass Vergessen zum Funktionieren eines Geistes gehört.",
+    "hook": "Welche Details trägst du mit dir herum, die du ablegen könntest?",
+    "one_minute_summary": "1928 kam ein russischer Journalist namens S. in das Büro des Psychologen A. R. Luria und behauptete, ein außergewöhnliches Gedächtnis zu haben. Luria untersuchte ihn etwa dreißig Jahre lang. S. konnte fremdsprachige Passagen und abstruse Formeln, die er nicht verstand, auswendig lernen und jahrelang behalten. Sein Kopf war aber voller Belanglosigkeiten und Sinneseindrücke, und er tat sich schwer mit Abstrahieren, Verallgemeinern und gewöhnlicher Arbeit. Foer verbindet den Fall mit Borges' Funes und der Idee, dass Vergessen zum Funktionieren eines Geistes gehört."
+  }
+}

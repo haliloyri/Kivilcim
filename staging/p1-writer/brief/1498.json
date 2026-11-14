@@ -1,0 +1,66 @@
+{
+  "story_id": 1498,
+  "kind": "concept",
+  "book": {
+    "title": "Tribal Leadership",
+    "author": "Dave Logan, John King, Halee Fischer-Wright",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "Checked against Gallup's write-up and a long summary (fs.blog); the book text itself was not read. Study length differs by source (ten years vs over eight), so only 'more than 24,000 people in about two dozen companies' is used. The stage shares come from one secondary summary and their denominator is unstated, so they are hedged as 'one summary'. Old text's 24,000 'employees over ten years', 'Logan' as sole author, the Apple-IBM claim and the 'directive' quote were dropped. No named case from the book, so facts are the framework itself.",
+  "facts": [
+    "Tribal Leadership (2008) is by Dave Logan, John King and Halee Fischer-Wright.",
+    "The authors describe a study of more than 24,000 people in about two dozen companies.",
+    "Tribes are natural groups of roughly 20 to 150 people that form whatever the org chart says.",
+    "Five stages, each with its own sentence: 'Life sucks', 'My life sucks', 'I'm great (and you're not)', 'We're great', 'Life is great'.",
+    "One summary lists the split as roughly 2, 25, 49, 22 and 2 percent from stage one to five; the denominator is not stated.",
+    "At stage three people win as individuals, hoard knowledge, relate in pairs; the most common words are 'I', then 'me' and 'my'; typical complaints are too busy, no time, poor support.",
+    "Tribal leadership focuses on two things: the words people use and the types of relationships they form.",
+    "Leverage rule: speak at most one stage above where the group is.",
+    "To move a stage-three group: ask open questions about what people value, then set projects too big to finish without partnering.",
+    "Stage two members do not try much, do not hold each other accountable and say nothing will change; one summary links stage one to street gangs.",
+    "One summary lists signs of moving up: people say we instead of I, networks grow from a few dozen contacts to several hundred, and they work less while getting more done.",
+    "Stage five (the team that built the first Macintosh is the cited example) is rare and unstable; such teams often drop back to stage four to regroup."
+  ],
+  "scene_details": [
+    "the words 'I', 'me', 'my' as the most common words at stage three",
+    "five sentences, one per stage",
+    "more than 24,000 people, about two dozen companies",
+    "'too busy, no time, poor support' as the stage-three complaint"
+  ],
+  "tension": "A group's culture can be heard in its everyday sentences, and the most common stage is the one where everybody says 'I'.",
+  "opening_idea": "Open on the pronouns: at the common stage the most frequent words are 'I', 'me', 'my'.",
+  "lessons": [
+    {
+      "idea": "Listen to the words a group uses before trying to change it, and answer one stage up, not three.",
+      "anchor": "The five stage sentences and the 'one stage above' rule.",
+      "example": "A shop owner counts 'my customer' versus 'our customer' in staff chat before announcing teamwork."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which sentence do you hear most often among the people you work or live with, and which of the five stages does it sound like?",
+  "use_cases": [
+    {
+      "situation": "A team keeps saying 'my project, my client' in meetings.",
+      "move": "Tell the team that the book's stage-three groups say 'I, me, my' most; propose one deliverable nobody can finish alone.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague says they are too busy and unsupported.",
+      "move": "Ask what they value most in their work, then offer one task to share with you.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You notice you say 'I' in every plan you make for a group.",
+      "move": "Rewrite one plan so a named partner owns the other half.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Count the pronouns a group uses; which one dominates shows where a change should start.",
+  "conversation_variants": {
+    "punchline_idea": "The most common words at the most common stage of workplace culture are 'I', 'me' and 'my'.",
+    "thirty_sec_idea": "Tribal Leadership sorts groups into five stages by one sentence each; the common stage three says 'I'm great and you're not'; leaders listen to words and give shared work too big for one person.",
+    "question_idea": "",
+    "key_contrast_idea": "I-talk to we-talk"
+  }
+}

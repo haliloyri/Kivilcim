@@ -1,0 +1,65 @@
+{
+  "story_id": 1500,
+  "kind": "concept",
+  "book": {
+    "title": "Tribal Leadership",
+    "author": "Dave Logan, John King, Halee Fischer-Wright",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "Built from Gallup's write-up and an fs.blog summary, not the book text. The old text's quote 'a tribal leader does not give directives', the claim that the best leaders were 'nodes' bridging groups, the meeting scene and 'fifth-stage tribes share leadership' were not found and are dropped. What is supported: the words-and-relationships focus, the stage-three habit of keeping people apart, the open-question and too-big-to-do-alone moves, triads on shared values, and 'one stage above'. No named case; facts are the framework itself.",
+  "facts": [
+    "Tribal Leadership (2008) is by Dave Logan, John King and Halee Fischer-Wright.",
+    "Tribal leadership focuses on two things: the words people use and the types of relationships they form.",
+    "Tribes determine whether new leaders succeed and how much work gets done, and can make corporate culture initiatives ineffective; most people do not notice their tribe's dynamics.",
+    "At stage three people relate in pairs, and a stage-three person keeps people apart so they do not compare notes.",
+    "To move a stage-three group: ask open-ended questions to learn what people value, then build projects too big to finish without partnering.",
+    "Stage-three people hoard knowledge as lone warriors and complain they are too busy, with no time and poor support.",
+    "Stage-four relationships are triads, three-person relationships anchored on shared values.",
+    "Leverage rule: speak at most one stage above where the group is; for stage two, find the people who want change and speak stage-three language to them one-on-one.",
+    "One summary lists signs of moving up: people say we instead of I, networks grow from a few dozen contacts to several hundred, they work less and get more done.",
+    "Successful tribal leaders earn cult-like loyalty; followers often move with a leader who gets promoted.",
+    "Stage-four leaders suggest regular 'oil changes': team conversations on what is working, what is not and how to fix it."
+  ],
+  "scene_details": [
+    "a stage-three person keeping people apart so they do not compare notes",
+    "a project too big for one person to finish",
+    "three-person relationships anchored on a shared value",
+    "'oil change' team conversations"
+  ],
+  "tension": "A stage-three high performer keeps people apart; the tribal leader's work is to put them together.",
+  "opening_idea": "Open on the stage-three habit of keeping people apart so they never compare notes.",
+  "lessons": [
+    {
+      "idea": "Introduce two people around something they both care about, instead of passing messages between them.",
+      "anchor": "Pairs at stage three versus triads anchored on shared values at stage four.",
+      "example": "A shop manager joins two colleagues who both care about the same repair complaints instead of relaying messages."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which two people around you could do better work together, and what do they both already care about that you could name when you introduce them?",
+  "use_cases": [
+    {
+      "situation": "Two colleagues keep sending you their complaints about each other.",
+      "move": "Because stage-three relationships run in pairs through one person, ask both what they value in the work, then set one job they cannot finish alone.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A team's plan depends on one person holding all the contacts.",
+      "move": "Propose that two others meet the contacts too, around a goal the team shares.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Two relatives each tell you their side separately.",
+      "move": "Name what both want for the family and suggest they plan one thing together.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Replace a go-between with a shared goal: three people tied to one value can do what a pair cannot.",
+  "conversation_variants": {
+    "punchline_idea": "According to Tribal Leadership, a stage-three person keeps people apart so they never compare notes.",
+    "thirty_sec_idea": "Tribal Leadership says a leader works on two things: the words people use and the relationships they form. At stage three people relate in pairs through one person. The fix is open questions about what people value and a project too big to finish alone, which builds triads on shared values.",
+    "question_idea": "",
+    "key_contrast_idea": "pairs to threes"
+  }
+}

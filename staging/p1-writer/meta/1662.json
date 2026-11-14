@@ -1,0 +1,35 @@
+{
+ "story_id": 1662,
+ "verdict": "keep",
+ "verify_note": "Keep with changed premise: the old 1945-versus-2015 commencement speeches are not in The Second Mountain and were rejected; rebuilt on the book's commencement-address passage (ch. 2, the four 'boxes of nothing') plus the moral-ecology contrast. Title and hook changed; the 'Brooks does not criticise authenticity' claim was wrong and dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Dört boş kutu",
+  "description": "David Brooks'a göre mezuniyet konuşmaları gençlere dört kutu verir: özgürlük, imkân, özgünlük, özerklik. Dördü de boş.",
+  "hook": "Biri size hayatıyla ne yapması gerektiğini sorsa, 'tutkunu izle' yerine hangi somut şeyi gösterirdiniz?",
+  "one_minute_summary": "David Brooks mezuniyet konuşmasını laik bir vaaz olarak görür: büyük kariyerli konuşmacı başarının önemsiz olduğunu söyler. Gençlere verilen armağanlar ona göre koskoca boş kutulardır: özgürlük, imkân, özgünlük ve en boşu özerklik. Mezunlar özgürlükte boğulur ve her kutuyu bırakıp şunu sorar: kendimi neye adayabilirim? Brooks bunu bir kültür kaymasına bağlar: 'Hepimiz bu işte beraberiz'den 'Kendim olmakta özgürüm'e. Ana tezi, bireyci dünya görüşünü abarttığımızdır."
+ },
+ "en": {
+  "title": "Four empty boxes",
+  "description": "David Brooks says commencement speeches hand graduates four boxes, freedom, possibility, authenticity and autonomy, and all are empty.",
+  "hook": "When someone asks what to do with their life, what concrete thing would you point to instead of 'follow your passion'?",
+  "one_minute_summary": "David Brooks calls the commencement address a secular sermon: a speaker famous for career success says success is not that important. The gifts handed to graduates are, in his words, great big boxes of nothing: freedom, possibility, authenticity and, emptiest of all, autonomy. The graduates, drowning in freedom, put each one down and ask the next question: what can I devote myself to? Brooks ties this to a shift from 'We're All in This Together' to 'I'm Free to Be Myself'. His core argument is that we have overdone individualism."
+ },
+ "es": {
+  "title": "Cuatro cajas vacías",
+  "description": "Según David Brooks, los discursos de graduación entregan cuatro cajas, libertad, posibilidad, autenticidad y autonomía, y están vacías.",
+  "hook": "Cuando alguien pregunta qué hacer con su vida, ¿qué cosa concreta señalarías en lugar de «sigue tu pasión»?",
+  "one_minute_summary": "David Brooks ve el discurso de graduación como un sermón laico: un orador famoso por su éxito profesional dice que el éxito no es tan importante. Los regalos que reciben los graduados son, en sus palabras, grandes cajas llenas de nada: libertad, posibilidad, autenticidad y, la más vacía, autonomía. Los graduados, ahogados en libertad, dejan cada una y hacen la siguiente pregunta: ¿a qué puedo dedicarme? Brooks lo vincula con un cambio de «Estamos todos juntos en esto» a «Soy libre de ser yo mismo»."
+ },
+ "de": {
+  "title": "Vier leere Kisten",
+  "description": "Laut David Brooks geben Abschlussreden Absolventen vier Kisten in die Hand, Freiheit, Möglichkeit, Authentizität, Autonomie, und alle sind leer.",
+  "hook": "Wenn dich jemand fragt, was er mit seinem Leben tun soll, worauf würdest du konkret hinweisen statt auf 'folge deiner Leidenschaft'?",
+  "one_minute_summary": "David Brooks sieht die Abschlussrede als weltliche Predigt: Ein für beruflichen Erfolg bekannter Redner sagt, Erfolg sei nicht so wichtig. Die Geschenke an die Absolventen sind in seinen Worten große Kisten voller Nichts: Freiheit, Möglichkeit, Authentizität und, am leersten, Autonomie. Die Absolventen, die in Freiheit ertrinken, legen jede ab und stellen die nächste Frage: Wofür kann ich mich einsetzen? Brooks verbindet das mit einem Wandel von „Wir sitzen alle im selben Boot“ zu „Ich bin frei, ich selbst zu sein“. Sein Kernargument lautet, wir hätten den Individualismus übertrieben."
+ }
+}

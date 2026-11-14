@@ -1,0 +1,35 @@
+{
+ "story_id": 1283,
+ "verdict": "keep",
+ "verify_note": "Keep. Old text had Santiago penniless and fleeing; rewritten from the novel's actual oasis episode (two hawks, vision, chieftains' condition, alchemist's test, attack, fifty gold). Attacker count and counselor offer medium. Book title fixed: The Alchemist (old input said 'Kaybedilen Cennet').",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İki şahin ve vaha",
+  "description": "Simyacı'da Santiago iki şahinin kavgasından bir saldırı sezer ve bunu canı pahasına vahanın reislerine söyler.",
+  "hook": "Fark ettiğiniz bir uyarıyı söylemek için ne kadarını göze alırdınız?",
+  "one_minute_summary": "Paulo Coelho'nun Simyacı romanında Santiago'nun kervanı, silahın yasak olduğu Al-Fayoum vahasında mahsur kalır. Çölde bir şahinin ötekine saldırdığını görür ve ardından vahaya giren silahlı bir ordu görüntüsü belirir. Deve sürücüsünün sözüyle reislere gider. Reisler erkekleri silahlandırır, ama saldırı gelmezse Santiago'nun canıyla ödeyeceğini söyler. O gece simyacı onu sınar. Ertesi gün yaklaşık beş yüz savaşçı gelir ve yenilir. Santiago elli altın alır ve simyacının öğrencisi olur."
+ },
+ "en": {
+  "title": "Two hawks and an oasis",
+  "description": "In The Alchemist, Santiago reads an attack in a fight between two hawks and risks his life to warn the oasis.",
+  "hook": "How much would you risk to say a warning sign out loud?",
+  "one_minute_summary": "In Paulo Coelho's The Alchemist, Santiago's caravan is stuck at the oasis of Al-Fayoum, where weapons are banned. In the desert he sees one hawk attack another, then a vision of an army riding in. On the camel driver's advice he tells the chieftains. They arm their men but warn that if no attack comes, he will pay with his life. That night the alchemist tests him. Next day about five hundred tribesmen ride in and are beaten. Santiago gets fifty gold pieces."
+ },
+ "es": {
+  "title": "Dos halcones y un oasis",
+  "description": "En El alquimista, Santiago intuye un ataque en la pelea de dos halcones y se juega la vida para avisar al oasis.",
+  "hook": "¿Cuánto arriesgarías por decir en voz alta una señal de alarma?",
+  "one_minute_summary": "En El alquimista de Paulo Coelho, la caravana de Santiago queda varada en el oasis de Al-Fayoum, donde las armas están prohibidas. En el desierto ve a un halcón atacar a otro y luego un ejército entrando en el oasis. Por consejo del camellero, avisa a los jefes, que arman a sus hombres pero le advierten que si no hay ataque pagará con su vida. Esa noche el alquimista lo pone a prueba. Al día siguiente unos quinientos guerreros son derrotados y Santiago recibe cincuenta monedas de oro."
+ },
+ "de": {
+  "title": "Zwei Falken und eine Oase",
+  "description": "Im Alchimisten liest Santiago aus dem Kampf zweier Falken einen Angriff und setzt sein Leben ein, um die Oase zu warnen.",
+  "hook": "Wie viel würdest du riskieren, um ein Warnzeichen auszusprechen?",
+  "one_minute_summary": "In Paulo Coelhos Der Alchimist sitzt Santiagos Karawane in der Oase Al-Fayoum fest, wo Waffen verboten sind. In der Wüste sieht er einen Falken einen anderen angreifen und dann ein Heer, das in die Oase reitet. Auf Rat des Kameltreibers geht er zu den Stammesführern. Sie bewaffnen ihre Männer, doch bleibt der Angriff aus, soll er mit dem Leben zahlen. Nachts prüft ihn der Alchimist. Am nächsten Tag werden etwa fünfhundert Krieger geschlagen, Santiago erhält fünfzig Goldstücke."
+ }
+}

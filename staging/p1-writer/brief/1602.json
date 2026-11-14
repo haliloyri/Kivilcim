@@ -1,0 +1,59 @@
+{
+ "story_id": 1602,
+ "kind": "concept",
+ "book": {
+  "title": "Breath",
+  "author": "James Nestor",
+  "year": "2020"
+ },
+ "confidence": "low",
+ "confidence_note": "Concept; the Bohr effect is verified as physiology. How Nestor builds the argument (chapter 'Less', breathing less and slower) is only confirmed through summaries. Old text's panic attack loop, 40-second hold threshold, Olympic athletes and 'Nestor believed deeper breaths = more oxygen' dropped. Thin material; story kept short.",
+ "facts": [
+  "Hemoglobin releases oxygen more readily when carbon dioxide in the blood is higher; when CO2 falls, hemoglobin holds oxygen tighter. This is the Bohr effect, described by Christian Bohr around 1904.",
+  "Nestor's chapter 'Less' argues that breathing less and more slowly keeps CO2 at a healthy level.",
+  "A summary line: CO2 is crucial for respiration, not just a waste product.",
+  "The slow pace he recommends is about 5.5 breaths a minute.",
+  "Working tissues make CO2 and acid, so hemoglobin unloads oxygen where it is most needed; in the lungs, as CO2 is exhaled, it picks oxygen up again (standard physiology).",
+  "Christian Bohr was the father of physicist Niels Bohr.",
+  "A summary says normal breathing lets the lungs absorb about a quarter of the oxygen they take in."
+ ],
+ "scene_details": [
+  "hemoglobin letting go of oxygen",
+  "CO2 as a signal not a waste"
+ ],
+ "tension": "More air in does not mean more oxygen delivered.",
+ "opening_idea": "Open on the Danish physiologist Christian Bohr and what he found about hemoglobin.",
+ "lessons": [
+  {
+   "idea": "Calm breathing is not under-breathing.",
+   "anchor": "Bohr effect: CO2 helps hemoglobin release oxygen.",
+   "example": "After a sprint you gasp; after a minute of slow breaths your hands warm."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "The next time you feel short of breath from worry, what happens if you slow your exhale rather than take a bigger breath?",
+ "use_cases": [
+  {
+   "situation": "You feel breathless during a stressful email.",
+   "move": "Make the exhale a little longer than the inhale and keep the breaths small.",
+   "context": "self"
+  },
+  {
+   "situation": "A friend gulps air when upset.",
+   "move": "Ask them to breathe out slowly with you before anything else.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "A teammate says deep breaths always help.",
+   "move": "Share the Bohr effect: low CO2 can make hemoglobin hold on to oxygen.",
+   "context": "meeting"
+  }
+ ],
+ "pocket_idea": "Oxygen is released with the help of carbon dioxide, so slower and lighter breathing can deliver more.",
+ "conversation_variants": {
+  "punchline_idea": "Breathing harder can leave hemoglobin holding on to its oxygen.",
+  "thirty_sec_idea": "Christian Bohr found around 1904 that hemoglobin lets go of oxygen more easily when blood CO2 is higher. Nestor uses it to argue for breathing less and slower, about 5.5 breaths a minute.",
+  "question_idea": "",
+  "key_contrast_idea": "gulping vs slow breathing"
+ }
+}

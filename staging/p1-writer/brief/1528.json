@@ -1,0 +1,58 @@
+{
+  "story_id": 1528,
+  "kind": "anecdote",
+  "book": {
+    "title": "Scrum: The Art of Doing Twice the Work in Half the Time",
+    "author": "Jeff Sutherland and J.J. Sutherland",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Origin facts from Wikipedia pages on Scrum and Jeff Sutherland, book not read. Old text's brain-research and sector claims dropped. Facts are about the history, not the book's own scenes, so attribution to the book is kept light.",
+  "facts": [
+    "In 1986 Hirotaka Takeuchi and Ikujiro Nonaka published 'The New New Product Development Game' in Harvard Business Review, based on case studies of firms in the car, photocopier and printer industries.",
+    "They called it a rugby approach: one cross-functional team that tries to go the distance as a unit, passing the ball back and forth.",
+    "In the early 1990s Jeff Sutherland, John Scumniotales and Jeff McKenna built a similar approach at Easel Corporation and called it scrum.",
+    "Sutherland had flown RF-4C Phantom reconnaissance missions from Udorn in Thailand, including missions in the Vietnam War.",
+    "Sutherland and Ken Schwaber merged their ideas and presented a paper at OOPSLA '95.",
+    "A sprint is normally one week to one month, most often two weeks.",
+    "A summary of the book says the FBI's Virtual Case File project spent about $170 million over five years with nothing usable."
+  ],
+  "scene_details": [
+    "a rugby team passing the ball",
+    "a two-week sprint"
+  ],
+  "tension": "A software method got its name from a rugby formation used in a 1986 paper about cars and copiers.",
+  "opening_idea": "Open on the rugby scrum in a paper about photocopiers.",
+  "lessons": [
+    {
+      "idea": "Move the whole team through the work together instead of passing it down a line",
+      "anchor": "rugby 'passing the ball back and forth'; Everyday: a kitchen crew where one person writes the menu, another buys, a third cooks, versus all three planning together each morning"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where does work in your team pass from one person to the next, and what would change if they worked on it together?",
+  "use_cases": [
+    {
+      "situation": "A project is handed from design to build to testing",
+      "move": "Takeuchi and Nonaka described a team passing the ball back and forth, like rugby. Can design and testing sit together for the first week?",
+      "context": "meeting"
+    },
+    {
+      "situation": "Siblings split the chores, each doing their part alone",
+      "move": "Let's do the kitchen together for ten minutes and see who needs what.",
+      "context": "family"
+    },
+    {
+      "situation": "You plan a long task alone, step by step",
+      "move": "I will do a two-week sprint, then see what I actually have.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Scrum took its name from a rugby team passing the ball back and forth. Plan the work together, not in a line.",
+  "conversation_variants": {
+    "punchline_idea": "The word scrum came from a 1986 paper that compared product teams to rugby, long before it named a software method.",
+    "thirty_sec_idea": "In 1986 two professors, Takeuchi and Nonaka, studied car, copier and printer firms and compared their teams to rugby, passing the ball back and forth. In the early 1990s Jeff Sutherland, a former reconnaissance pilot, used a similar approach at Easel and called it scrum. In 1995 he and Ken Schwaber presented it in a paper.",
+    "question_idea": "",
+    "key_contrast_idea": "relay versus rugby"
+  }
+}

@@ -1,0 +1,60 @@
+{
+ "story_id": 1379,
+ "kind": "concept",
+ "book": {
+  "title": "Learned Optimism",
+  "author": "Martin E. P. Seligman",
+  "year": "1990"
+ },
+ "confidence": "medium",
+ "confidence_note": "The three dimensions are the book's core and well attested. The 37% figure and the doubled retention come from Seligman & Schulman's 1986 paper, which the book reports. Creedon's approach and the 'special force' (129 people; 21% and 57%) rest on a Fortune excerpt and trade press, not the book text I could read, so medium. Old text's sample sentences are not quoted as the book's. The 88% decile figure is omitted.",
+ "facts": [
+  "Seligman describes explanatory style along three dimensions: permanence (always vs. this time), pervasiveness (everything vs. this one area), personalization (my fault vs. the circumstances).",
+  "Pessimists explain bad events as permanent, pervasive and their own fault; optimists as temporary, specific and not wholly their fault.",
+  "For good events the pattern reverses: optimists see a success as lasting and their own doing; pessimists put it down to luck or the circumstances of the day.",
+  "Met Life's president, John Creedon, came to Seligman because the company lost many new agents; selling insurance means facing refusal after refusal.",
+  "Seligman's questionnaire measured how agents explained bad events. Agents in the top half sold 37% more insurance in their first two years than those in the bottom half.",
+  "Seligman and his colleague Peter Schulman published the Met Life results in 1986 in a psychology journal.",
+  "In a later group of new hires, top-half scorers stayed in the job at twice the rate of the bottom half.",
+  "Met Life also hired a 'special force' of 129 applicants who had failed the industry's career-profile test but scored as strong optimists; they outsold the pessimists in the regular force by 21% in the first year and 57% in the second."
+ ],
+ "scene_details": [
+  "an agent hearing 'no' on the phone, call after call",
+  "a questionnaire about imagined bad events",
+  "129 people hired despite failing the standard test"
+ ],
+ "tension": "Met Life hired people its own test had rejected, because of how they explained a 'no'.",
+ "opening_idea": "Open with the 129 applicants who failed the industry test and were hired anyway, on the strength of a questionnaire about explanations.",
+ "lessons": [
+  {
+   "idea": "Check the three words in your explanation of a setback: always, everything, me; replace each with what is actually true.",
+   "anchor": "agents who explained refusals as temporary and specific sold more and stayed longer"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Think of your last real setback: which word in your own explanation of it, always, everything or me, would you now change?",
+ "use_cases": [
+  {
+   "situation": "A colleague says after a lost client 'I'm just bad at sales'",
+   "move": "Ask what was specific to this case and what will be different with the next one.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "Team debrief after a failed launch",
+   "move": "Mention that Met Life's optimistic agents sold more because they explained a 'no' as about this call; separate this time from always.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You fail an exam or interview",
+   "move": "Write the explanation and circle any always/everything/me; rewrite it.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Seligman's salespeople heard the same no; the ones who said 'this time' kept dialing.",
+ "conversation_variants": {
+  "punchline_idea": "Met Life hired 129 people who had failed its test, because they explained rejection well, and they outsold the pessimists.",
+  "thirty_sec_idea": "Met Life losing agents; Seligman's questionnaire; top half sold 37% more; special force 21%/57%; three dimensions.",
+  "question_idea": "",
+  "key_contrast_idea": "this time, not always"
+ }
+}

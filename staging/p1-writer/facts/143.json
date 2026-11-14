@@ -1,0 +1,233 @@
+{
+  "book_no": 143,
+  "title": "Bird by Bird",
+  "authors": [
+    "Anne Lamott"
+  ],
+  "year": "1994",
+  "sources": [
+    "https://www.supersummary.com/bird-by-bird/summary/ (title anecdote; blocked 429, confirmed via search snippets and shmoop)",
+    "https://shmoop.com/study-guides/bird-by-bird/part-1-chapter-2-summary.html",
+    "https://notes.andymatuschak.org/zWxo7SzXzdGq1cHd3TUXquw",
+    "https://nownovel.com/here-are-10-key-takeaways-from-bird-by-bird-instructions-for-a-writing-life-by-anne-lamotte/",
+    "https://womenwordswisdom.com/2014/05/11/anne-lamott-on-the-down-draft/",
+    "https://mbird.com/2013/03/anne-lamott-on-dropping-whiny-guilt-mongering-voices-into-mason-jars/",
+    "https://www.goodreads.com/work/quotes/841198-bird-by-bird-some-instructions-on-writing-and-life",
+    "https://openlab.citytech.cuny.edu/sears-fall2020-englco9/?p=1110",
+    "https://courses.ems.psu.edu/emsc302/node/484",
+    "https://www.andydehnart.com/blog/shitty-first-drafts/",
+    "https://knowt.com/note/ab6ec34e-13db-4e64-9774-03e08925312f/Anne-Lamotts-Writing-Process-Shitty-Fi",
+    "https://ecmendenhall.github.io/blog/blog/2013/06/10/shitty-first-drafts/"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Title anecdote: Lamott's brother was ten years old and had three months to write a report on birds; it was due the next day and he had not started.",
+      "source": "shmoop, supersummary snippets, bookseller blurbs",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "He sat at the kitchen table close to tears, surrounded by binder paper, pencils and unopened books about birds, immobilized by the size of the task. (The shmoop summary places the scene at the family cabin; the kitchen-table wording is from bookseller blurbs. Scene kept to 'the table'.)",
+      "source": "bookseller blurbs; shmoop",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "Their father sat down beside him, put an arm around his shoulder and said: 'Bird by bird, buddy. Just take it bird by bird.'",
+      "source": "shmoop; several quoting sources",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Lamott calls short assignments the first useful concept she has; she compares trying to write a whole novel at once to trying to scale a glacier.",
+      "source": "nownovel summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "She keeps a one-inch picture frame on her desk as a reminder that she only has to write down as much as she can see through it; her example is describing a main character just once, the first time she appears, in one paragraph.",
+      "source": "shmoop; Matuschak notes (quoting 'write down as much as I can see through a one-inch picture frame')",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "She cites E. L. Doctorow: writing a novel is like driving a car at night; you can see only as far as your headlights, but you can make the whole trip that way.",
+      "source": "shmoop; supersummary snippet",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Shitty First Drafts chapter: 'Almost all good writing begins with terrible first efforts. You need to start somewhere.'",
+      "source": "multiple course/quote pages",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "The first draft is the child's draft, where you let it all pour out and then let it romp all over the place, knowing that no one is going to see it and that you can shape it later.",
+      "source": "citytech, Macmillan reprint, nownovel",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "A friend of Lamott's says the first draft is the down draft (you just get it down), the second is the up draft (you fix it up), and the third is the dental draft, where you check every tooth to see if it is loose or cramped or decayed, or even, God help us, healthy.",
+      "source": "womenwordswisdom excerpt; attribution to the friend noted by sources",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Voices exercise: close your eyes, let the inner chatter start, imagine each voice's owner as a mouse, pick it up by the tail and drop it into a mason jar. Put the lid on and watch the mouse people clawing at the glass.",
+      "source": "mbird.com quoting Bird by Bird",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "Imagine a volume-control button on the jar. Turn it all the way up for a minute and listen to the stream of angry, neglected, guilt-mongering voices. Then turn it all the way down and watch the frantic mice lunge at the glass, trying to get to you. Leave it down and get back to your shitty first draft.",
+      "source": "mbird.com; goodreads quote page",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "The voices to drop in the jar include high-maintenance parents and anyone else who whines in your head (contractors, lawyers, colleagues, children).",
+      "source": "mbird.com excerpt",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Lamott's radio station image for the inner critic is called KFKD, playing nonstop in your head. Reported only by summaries; wording not confirmed.",
+      "source": "search summary",
+      "confidence": "low"
+    },
+    {
+      "id": "f14",
+      "claim": "Lamott's father is named Kenneth (as reported by a summary of the title story); she calls short assignments the first of the two most useful things she has to say about writing, and advises taking a big job 'little by little in short bites'.",
+      "source": "nownovel summary; shmoop",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "In Shitty First Drafts Lamott says non-writers imagine that real writers sit down feeling wildly enthusiastic and confident; in fact not one of the writers she knows does so routinely, and not one writes elegant first drafts (she allows one exception, whom the writers do not like very much).",
+      "source": "andydehnart.com quoting the chapter; knowt notes",
+      "confidence": "high"
+    },
+    {
+      "id": "f16",
+      "claim": "'Very few writers really know what they are doing until they've done it.' The right words and sentences 'just do not come pouring out like ticker tape most of the time.'",
+      "source": "ecmendenhall.github.io quoting the chapter",
+      "confidence": "high"
+    },
+    {
+      "id": "f17",
+      "claim": "'For me and most of the other writers I know... the only way I can get anything written at all is to write really, really shitty first drafts.'",
+      "source": "ecmendenhall.github.io; several reprints",
+      "confidence": "high"
+    },
+    {
+      "id": "f18",
+      "claim": "Her advice: start by getting something, anything, down on paper. In the child's draft, if a character wants to say 'Well, so what, Mr. Poopy Pants?', let her.",
+      "source": "andydehnart.com; knowt notes",
+      "confidence": "high"
+    },
+    {
+      "id": "f19",
+      "claim": "Her own example is her restaurant (food) reviews: field research, time with friends, meticulous notes; each first draft was panic-inducing, but writing a long first draft was cathartic. In the up draft she used colored pens to select and organize material.",
+      "source": "knowt notes of the essay",
+      "confidence": "medium"
+    },
+    {
+      "id": "f20",
+      "claim": "The Shitty First Drafts chapter is the third chapter of the book's first section.",
+      "source": "andydehnart.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "f21",
+      "claim": "Lamott says that left to its own devices her mind spends much of its time having conversations with people who are not there; quieting the critical voices is 'at least half the battle I fight daily'.",
+      "source": "mbird.com (page summary with short quotes)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f22",
+      "claim": "The voices she hears while drafting include an unimpressed imagined reader, a menacing critic, her disapproving parents and a dismissive literary figure.",
+      "source": "mbird.com page summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f23",
+      "claim": "A hypnotist taught her the mouse-in-a-jar visualization.",
+      "source": "mbird.com page summary",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "'Tüm iyi yazarlar berbat ilk taslaklar yazar. Fark, onların bunu bildikleri.' as a Lamott quote",
+      "reason": "No such wording found; only 'almost all good writing begins with terrible first efforts' is verified"
+    },
+    {
+      "claim": "Lamott's rule 'İzniniz var. Berbat yazmaya.' / 'you have permission'",
+      "reason": "Not verified as a quote"
+    },
+    {
+      "claim": "Old claim that the brother's project was biology and that he was crying at the table",
+      "reason": "Book says birds report and close to tears; 'biology' and crying not verified"
+    },
+    {
+      "claim": "Old claim that the bird anecdote IS the one-inch frame ('bir inç çerçevesi' from the father)",
+      "reason": "Two separate chapters: the bird story is the title story; the one-inch frame is Lamott's own desk reminder in Short Assignments"
+    },
+    {
+      "claim": "Three radio stations (perfectionism, comparison, impostor) with scripted lines",
+      "reason": "Not verified; the verified voice material is the mice-in-a-jar exercise"
+    },
+    {
+      "claim": "Old claim that the voices have 'real faces' and that every writer works with the same crowd; 'productive people learned to work with the voices'",
+      "reason": "Not verified as the book's wording"
+    },
+    {
+      "claim": "'Perfectionism is the voice of the oppressor'",
+      "reason": "Not confirmed; left out"
+    }
+  ],
+  "stories": {
+    "1525": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f7",
+        "f8",
+        "f9",
+        "f15",
+        "f16",
+        "f17",
+        "f18",
+        "f19"
+      ],
+      "note": "Shitty first drafts: writers' reality, child's draft, down/up/dental drafts, restaurant-review example. Invented quote and permission rule dropped. Medium-high confidence."
+    },
+    "1526": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f14"
+      ],
+      "note": "Title anecdote plus Short Assignments (frame, Doctorow). Old text conflated them."
+    },
+    "1527": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f10",
+        "f11",
+        "f12",
+        "f21",
+        "f22",
+        "f23"
+      ],
+      "note": "Rebuilt on the mice-in-a-jar exercise; invented radio-station trio dropped."
+    }
+  }
+}

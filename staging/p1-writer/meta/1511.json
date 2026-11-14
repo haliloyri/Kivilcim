@@ -1,0 +1,35 @@
+{
+  "story_id": 1511,
+  "verdict": "keep",
+  "verify_note": "Keep: trichotomy of control, tennis and novelist examples consistent across reviews and notes. Old morning ritual, weather/traffic lists and the anxiety claim dropped; critics' objection added; no full text, medium confidence.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kazanmak değil, en iyi oynamak",
+    "description": "Irvine'e göre bazı şeyler kısmen elimizdedir. Tenis maçında Stoacı, kazanmak yerine elinden gelenin en iyisini oynamayı hedefler.",
+    "hook": "Bu hafta sonucu başkasına da bağlı olan hangi iş için kendi elinizdeki bir hedef koyabilirsiniz?",
+    "one_minute_summary": "William Irvine hayatı üçe ayırır: tamamen elimizdekiler, hiç elimizde olmayanlar ve kısmen elimizdekiler. Tenis maçı üçüncüsüdür, çünkü kazanmak rakibe ve şansa da bağlıdır. Stoacı oyuncu bu yüzden kazanmak yerine elinden gelenin en iyisini oynamayı hedefler. Böylece duygusal tepkisini sonuca bağlamaz. Bu, galip gelme şansını mutlaka artırmaz, ama sonuçtan sarsılma ihtimalini azaltır. Bir romancı da yalnızca yayımlanmayı değil, iyi yazmayı hedeflemelidir. Eleştirmenler bunun antik Stoacılıkta bulunmadığını söyler."
+  },
+  "en": {
+    "title": "Play your best, not win",
+    "description": "Irvine splits life into what we control fully, not at all and partly. In a tennis match, the Stoic aims to play his best, not to win.",
+    "hook": "In which part-controlled situation this week could you set a goal that is entirely yours?",
+    "one_minute_summary": "William Irvine sorts life into things we fully control, things we do not control, and things we control partly. A tennis match is the third kind, because winning depends partly on the opponent and on chance. The Stoic player therefore aims to play his best rather than to win, which keeps his mood from hanging on the result. It lowers the chance of being upset, not necessarily of losing. A novelist should aim to write well. Critics say this is not in ancient Stoicism."
+  },
+  "es": {
+    "title": "Jugar lo mejor posible",
+    "description": "Irvine divide la vida en lo que controlamos del todo, lo que no y lo que controlamos a medias. En el tenis, el estoico apunta a jugar lo mejor posible, no a ganar.",
+    "hook": "¿En qué situación a medias controlable de esta semana podrías fijarte una meta enteramente tuya?",
+    "one_minute_summary": "William Irvine clasifica la vida en lo que controlamos del todo, lo que no controlamos y lo que controlamos en parte. Un partido de tenis es de la tercera clase, porque ganar depende en parte del rival y del azar. El jugador estoico se propone jugar lo mejor posible en lugar de ganar, así su ánimo no cuelga del resultado. Eso reduce la probabilidad de disgustarse, no necesariamente la de perder. Un novelista debería querer escribir bien. Los críticos dicen que esto no está en el estoicismo antiguo."
+  },
+  "de": {
+    "title": "Das Beste geben statt gewinnen",
+    "description": "Irvine teilt das Leben in ganz, gar nicht und teilweise Kontrollierbares. Beim Tennis zielt der Stoiker darauf, sein Bestes zu geben, nicht zu gewinnen.",
+    "hook": "In welcher nur teilweise kontrollierbaren Lage dieser Woche könntest du dir ein Ziel setzen, das ganz bei dir liegt?",
+    "one_minute_summary": "William Irvine ordnet das Leben in Dinge, die wir ganz, gar nicht oder teilweise kontrollieren. Ein Tennismatch gehört zur dritten Art, weil der Sieg teils vom Gegner und vom Zufall abhängt. Der stoische Spieler will deshalb sein Bestes geben statt gewinnen, und seine Stimmung hängt nicht am Ergebnis. Das senkt die Gefahr, verärgert zu sein, nicht unbedingt die Gefahr zu verlieren. Ein angehender Romanautor soll gut schreiben wollen, nicht nur veröffentlicht werden. Kritiker sagen, das finde sich im antiken Stoizismus nicht."
+  }
+}

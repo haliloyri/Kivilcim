@@ -1,0 +1,158 @@
+{
+  "book_no": 78,
+  "title": "The Subtle Art of Not Giving a F*ck",
+  "authors": [
+    "Mark Manson"
+  ],
+  "year": "2016",
+  "note": "DB titles (tr 'Özgür Olmak', de 'Frei sein', es 'Ser libre') are not faithful titles; the en DB title is the real one. Full text not read; facts come from Kindle highlights, Goodreads quotes, chapter listings and summaries. Confidence capped at medium.",
+  "sources": [
+    "https://notes.elie.net/zdata/kindle/Manson-The+Subtle+Art+of+Not+Giving+a+Fck",
+    "https://grahammann.net/book-notes/the-subtle-art-of-not-giving-a-fuck-mark-manson",
+    "https://www.goodreads.com/quotes/8630575-but-there-are-also-problems-that-we-aren-t-at-fault",
+    "https://www.goodreads.com/quotes/9571372-but-one-night-while-reading-lectures-by-the-philosopher-charles",
+    "https://markmanson.net/the-prime-belief",
+    "https://www.goodreads.com/notes/123198703-the-subtle-art-of-not-giving-a-f-ck/11245230-jason/b87aaf12-e0db-4339-adad-7a22dddbb1a9",
+    "https://www.koreatimes.co.kr/lifestyle/books/20171229/why-the-subtle-art-of-not-giving-a-f-is-a-bestseller",
+    "https://search.icpl.org/Record/1478111",
+    "https://www.ybrikman.com/blog/2018/03/14/the-subtle-art-of-not-giving-a-f-ck/",
+    "https://app.getstoryshots.com/book-summary/the-subtle-art-of-not-giving-a-fck"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Chapter 2, 'Happiness Is a Problem', has a section 'Choose Your Struggle'. Kindle highlights: 'What pain do you want in your life? What are you willing to struggle for?' and 'The relevant question is, \"What pain do you want to sustain?\"'",
+      "source": "Kindle highlights (elie.net); library catalog table of contents",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Highlight: 'Everything worthwhile in life is won through surmounting the associated negative experience.'",
+      "source": "Kindle highlights (elie.net)",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Book notes: the people who enjoy the stresses and uncertainties of the starving-artist lifestyle are the ones who ultimately live it and make it.",
+      "source": "grahammann.net notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Manson illustrates 'choose your struggle' with his own long fantasy of being a rock star: he dreamed of the stage for years but never did the work it required, because he wanted the result and not the process.",
+      "source": "One summary ('his own story of trying to become a rock star'); wording not verified",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Chapter 5: the responsibility/fault fallacy. Some problems are not our fault, yet we are still responsible for them. Example: you wake up and find a newborn on your doorstep; it isn't your fault, but you must decide what to do, and you own the results of that choice.",
+      "source": "Goodreads quote from the book",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Fault is about choices already made; responsibility is about the choices you are making now. Highlight: 'we, individually, are responsible for everything in our lives' and 'Accepting responsibility for our problems is thus the first step to solving them.'",
+      "source": "Kindle highlights; Goodreads/secondary paraphrase for the past/present wording",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "William James: around 1872 his life was falling apart and he considered taking his own life. One night, reading lectures by the philosopher Charles Peirce, he decided on a one-year experiment: believe he was 100 percent responsible for everything that occurred in his life and do everything to change his circumstances; if nothing improved, he would accept he was powerless. He later called this his rebirth.",
+      "source": "Goodreads quote from the book; Manson's own blog; StoryShots summary (1872, rebirth)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Chapter 6: 'You're Wrong About Everything (But So Am I)'. Growth is an endlessly iterative process; certainty is the enemy of growth.",
+      "source": "grahammann.net notes; catalog TOC",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Manson's Law of Avoidance: 'The more something threatens your identity, the more you will avoid it.'",
+      "source": "grahammann.net notes; multiple summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Section 'How to Be a Little Less Certain of Yourself' poses three questions: 'What if I'm wrong?', 'What would it mean if I were wrong?', 'Would being wrong create a better or a worse problem than my current problem, for both myself and others?'",
+      "source": "Goodreads reader notes; Goodreads quote pages",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Manson: if you believe you know everything you won't learn anything; accepting your ignorance is where learning begins.",
+      "source": "Korea Times review paraphrase",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Chapter 2 sections include 'Happiness Comes from Solving Problems'. Manson's point: problems never disappear, they are traded or upgraded; summaries give the example of an entrepreneur who escapes a boss's demands only to answer to investors.",
+      "source": "Library catalog TOC; StoryShots teaser",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "'Why do athletes train six hours a day?' and 'why do some people stay in hard relationships?' as Manson's questions.",
+      "reason": "No source; invented framing."
+    },
+    {
+      "claim": "'The great majority of people who want the result but not the process never reach it.'",
+      "reason": "No source; sweeping claim."
+    },
+    {
+      "claim": "Manson quotes Viktor Frankl on choosing one's response in the camps.",
+      "reason": "No source ties Frankl to this chapter of the book."
+    },
+    {
+      "claim": "Quotes 'Taking responsibility is not weakness, it is the only door to power' and 'You may not always control what happens...'",
+      "reason": "Paraphrases presented as quotes; not found."
+    },
+    {
+      "claim": "Alcohol, overwork and compulsive relationships are all attempts to suppress uncertainty; learning to sit with uncertainty makes them unnecessary.",
+      "reason": "No source."
+    },
+    {
+      "claim": "'The people with the most rigid views grow least; the most flexible learn most.'",
+      "reason": "Sweeping claim without source."
+    },
+    {
+      "claim": "Meredith and recovered false memories as a case in chapter 6.",
+      "reason": "Could not be tied to this book by any reachable source; not used."
+    }
+  ],
+  "stories": {
+    "1330": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f12"
+      ],
+      "note": "Recentered on the book's own question and Manson's rock-star fantasy; invented athlete examples dropped."
+    },
+    "1331": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7"
+      ],
+      "note": "Recentered on the doorstep baby and William James's one-year experiment; Frankl dropped."
+    },
+    "1332": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12"
+      ],
+      "note": "Concept story built on the Law of Avoidance and the three questions; the alcohol/overwork claim dropped. No concrete case confirmed, so the story stays short."
+    }
+  }
+}

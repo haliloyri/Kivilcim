@@ -1,0 +1,35 @@
+{
+ "story_id": 1275,
+ "verdict": "keep",
+ "verify_note": "Keep, corrected: marathon figure is 48% overrepresentation (not 'nearly double'); 'last step effect' is not Pink's term and was dropped. Midpoint material (Gersick's day six of eleven, Berger and Pope's halftime effect) carries the mid-project slump. Added caveat: the 9-ender findings were contested by later reanalyses (Frontiers in Psychology 2015). Title changed.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Devre arasında bir sayı geride",
+  "description": "Daniel Pink'e göre on yılın sonu ve projenin ortası bizi ya durgunluğa ya da harekete iter. Ortayı görünür kılmak farkı yaratıyor.",
+  "hook": "Üzerinde çalıştığınız işin ortası size durgunluk mu getiriyor, uyandırma mı?",
+  "one_minute_summary": "Adam Alter ve Hal Hershfield, 29, 39, 49 gibi bir on yılın son yılındaki insanların ilk maratonu koşanlar arasında yüzde 48 fazla olduğunu buldu, ama bu bulgu sonradan yapılan analizlerde sorgulandı. Daniel Pink'in asıl ilgisi orta noktalarda: on bir günlük bir işte öğrenci grupları altıncı gün zayıf yaklaşımı bırakıp yeni bir stratejiye geçti, NBA'de devre arasına bir sayı geride giren takımlar beklenenden sık kazandı. Önerisi: orta noktaları görünür kılın ve oraya varınca 'eyvah, hadi' deyin."
+ },
+ "en": {
+  "title": "One point down at halftime",
+  "description": "Daniel Pink argues that the end of a decade and the middle of a project can push us into a slump or into action, and marking the midpoint helps.",
+  "hook": "Is the middle of your current project a slump or a wake-up call?",
+  "one_minute_summary": "Adam Alter and Hal Hershfield found that people at 29, 39 or 49 were 48 percent overrepresented among first-time marathoners, a result later reanalyses questioned. Daniel Pink's real interest is midpoints. In an eleven-day project, student teams dropped a weak approach around day six and adopted a new strategy, and NBA teams one point behind at halftime won more often than expected. His advice: make midpoints visible, and when you reach one, say 'uh-oh' and get going rather than 'oh no' and give up."
+ },
+ "es": {
+  "title": "Un punto abajo al descanso",
+  "description": "Daniel Pink sostiene que el final de una década y la mitad de un proyecto pueden hundirnos o activarnos, y que marcar la mitad ayuda.",
+  "hook": "¿La mitad de tu proyecto actual es un bache o un despertador?",
+  "one_minute_summary": "Adam Alter y Hal Hershfield encontraron que las personas de 29, 39 o 49 años estaban sobrerrepresentadas en un 48 por ciento entre quienes corren su primer maratón, aunque análisis posteriores lo pusieron en duda. A Daniel Pink le interesan los puntos medios: en un proyecto de once días, grupos de estudiantes abandonaron un enfoque flojo hacia el día seis, y en la NBA los equipos un punto abajo al descanso ganaban más de lo esperado. Su consejo: haz visibles las mitades."
+ },
+ "de": {
+  "title": "Ein Punkt Rückstand zur Halbzeit",
+  "description": "Daniel Pink meint, dass das Ende eines Jahrzehnts und die Mitte eines Projekts uns lähmen oder antreiben können, und dass es hilft, die Mitte zu markieren.",
+  "hook": "Ist die Mitte deines aktuellen Projekts ein Durchhänger oder ein Weckruf?",
+  "one_minute_summary": "Adam Alter und Hal Hershfield fanden, dass Menschen mit 29, 39 oder 49 unter Marathon-Erstläufern um 48 Prozent überrepräsentiert waren, ein Befund, den spätere Auswertungen anzweifelten. Daniel Pink interessiert sich vor allem für Mittelpunkte: In einem Elf-Tage-Projekt verwarfen Studierendengruppen um Tag sechs einen schwachen Ansatz, und NBA-Teams mit einem Punkt Rückstand zur Halbzeit gewannen öfter als erwartet. Sein Rat: Mach Mittelpunkte sichtbar und sag dort 'Oha, los geht's' statt 'Oh nein'."
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1531,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt with medium confidence: full text not available, facts from Wikipedia (Rackham, Huthwaite) and summaries. Old invented quote and pressure-resistance mechanism dropped; 17% training result flagged as secondary.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "İmzasız biten başarılı görüşme",
+    "description": "Rackham'ın 35.000 satış görüşmesi araştırması, küçük satışta işleyen kapanış baskısının büyük satışta ters tepebildiğini gösteriyor. Başarı ölçüsü imza değil, kabul edilen sonraki adım.",
+    "hook": "Bir görüşme imzasız bitince başarısız mı sayılır?",
+    "one_minute_summary": "Neil Rackham'ın Huthwaite ekibi yaklaşık on iki yıl boyunca otuz kadar araştırmacıyla 20'den fazla ülkede 35.000 satış görüşmesini inceledi. Bulgular o günün satış eğitimine uymuyordu. Kapanış baskısı küçük, ucuz satışlarda işleyebilir, büyük satışlarda ise alıcıyı sıkar. Rackham büyük satışta başarıyı imzayla değil, alıcının kabul ettiği bir sonraki adımla ölçer: bu bir 'ilerleme'dir. Adımsız biten görüşme 'süreklilik'tir ve başarısız sayılır. Kitaba göre büyük satış 'araştırma' aşamasında şekillenir."
+  },
+  "en": {
+    "title": "A call without a signature",
+    "description": "Rackham's study of 35,000 sales calls found that the push to close, useful on small purchases, tends to backfire on large ones. Success becomes an agreed next step.",
+    "hook": "When a meeting ends without a yes, did it fail?",
+    "one_minute_summary": "Neil Rackham's Huthwaite team, about thirty researchers, examined 35,000 sales calls in more than twenty countries over roughly twelve years. The findings did not match most sales training. A pressing close can work on small, cheap sales but tends to annoy buyers in large ones. For large sales Rackham measures success by commitment: an Advance is a next step the buyer agrees to, while a call ending with none is a Continuation and counts as failure. In big sales, he says, the Investigating stage matters most."
+  },
+  "es": {
+    "title": "La llamada que acaba sin firma",
+    "description": "El estudio de Rackham sobre 35 000 llamadas halló que la presión para cerrar, útil en compras pequeñas, suele salir mal en las grandes. El éxito pasa a ser un siguiente paso acordado.",
+    "hook": "Cuando una reunión termina sin un sí, ¿ha fracasado?",
+    "one_minute_summary": "El equipo Huthwaite de Neil Rackham, unos treinta investigadores, analizó 35 000 llamadas de venta en más de veinte países durante unos doce años. Los hallazgos no encajaban con la formación habitual. Un cierre insistente puede funcionar en ventas pequeñas y baratas, pero en las grandes suele molestar al comprador. Rackham mide el éxito por el compromiso: un «avance» es un paso que el comprador acepta; una llamada sin ninguno es una «continuación» y cuenta como fracaso. En ventas grandes, la fase de investigación es la clave."
+  },
+  "de": {
+    "title": "Das Gespräch ohne Unterschrift",
+    "description": "Rackhams Studie über 35.000 Verkaufsgespräche zeigt: Der Druck zum Abschluss hilft bei kleinen Käufen, kann bei großen aber nach hinten losgehen. Erfolg ist dann ein vereinbarter nächster Schritt.",
+    "hook": "Ist ein Gespräch ohne Ja gescheitert?",
+    "one_minute_summary": "Neil Rackhams Huthwaite-Team, rund dreißig Forschende, untersuchte über etwa zwölf Jahre 35.000 Verkaufsgespräche in mehr als zwanzig Ländern. Die Ergebnisse passten nicht zu den meisten Verkaufstrainings. Ein drängender Abschluss kann bei kleinen, billigen Käufen funktionieren, verärgert bei großen Käufen aber den Käufer. Rackham misst Erfolg an der Verbindlichkeit: Ein Advance ist ein Schritt, dem der Käufer zustimmt; ein Gespräch ohne einen solchen heißt Continuation und gilt als Misserfolg. Bei großen Verkäufen ist die Phase der Bedarfsklärung entscheidend."
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1277,
+ "verdict": "keep",
+ "verify_note": "Keep. Airline vs Google figures (2012: 37 cents on a $178 fare; 21% margin; 68% vs 3.4%; British restaurant in Palo Alto) verified in book summaries. Old Apple 'new category' example and unverified quotes dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Havayolları ve Google",
+  "description": "Peter Thiel, 37 sentlik havayolu kârını Google'ın kâr marjıyla yan yana koyarak rekabetin kârı nasıl erittiğini gösteriyor.",
+  "hook": "Herkesle aynı şeyi sattığınız bir yarışta emeğinizin karşılığı nereye gidiyor?",
+  "one_minute_summary": "Peter Thiel, Zero to One'da 2012'nin iki rakamını yan yana koyar. Amerikan havayolları ortalama 178 dolarlık biletten yolcu başına 37 sent kâr eder, Google ise yaklaşık 50 milyar dolarlık gelirinin yüzde 21'ini tutar. Thiel'e göre fark rekabettir: havayolları birbiriyle yarışır, Google tek başınadır. İki taraf da gerçeği saklar. Google kendini reklam pazarında yüzde 3,4'lük küçük bir oyuncu gibi anlatır, Palo Alto'nun tek İngiliz restoranı ise pazarını daraltıp rakipsiz görünür."
+ },
+ "en": {
+  "title": "Airlines and Google",
+  "description": "Peter Thiel sets the airlines' 37 cents per passenger beside Google's profit margin to show how competition eats profit.",
+  "hook": "When everyone sells the same thing, where does the value of your work end up?",
+  "one_minute_summary": "In Zero to One, Peter Thiel compares two 2012 numbers. US airlines made 37 cents per passenger on an average $178 fare, while Google kept 21% of about $50 billion in revenue. The difference, he argues, is competition: the airlines fight each other, Google stands alone. Both sides hide it. Google, with 68% of search, calls itself an advertising company with a 3.4% share, and a restaurant calls itself the only British one in Palo Alto."
+ },
+ "es": {
+  "title": "Aerolíneas y Google",
+  "description": "Peter Thiel compara los 37 centavos por pasajero de las aerolíneas con el margen de Google para mostrar cómo la competencia se come el beneficio.",
+  "hook": "Cuando todos venden lo mismo, ¿adónde va a parar el valor de tu trabajo?",
+  "one_minute_summary": "En Zero to One, Peter Thiel compara dos cifras de 2012. Las aerolíneas estadounidenses ganaban 37 centavos por pasajero en billetes de 178 dólares de media, mientras Google se quedaba con el 21 % de unos 50.000 millones de ingresos. La diferencia es la competencia: las aerolíneas pelean entre sí, Google está sola. Ambos bandos lo disfrazan. Google se presenta como un actor pequeño de la publicidad, y un restaurante presume de ser el único británico de Palo Alto."
+ },
+ "de": {
+  "title": "Airlines und Google",
+  "description": "Peter Thiel stellt die 37 Cent Gewinn der Airlines pro Passagier neben Googles Marge und zeigt, wie Wettbewerb den Gewinn auffrisst.",
+  "hook": "Wenn alle dasselbe verkaufen, wo landet dann der Wert deiner Arbeit?",
+  "one_minute_summary": "In Zero to One vergleicht Peter Thiel zwei Zahlen aus 2012. US-Airlines verdienten 37 Cent pro Passagier bei durchschnittlich 178 Dollar Ticketpreis, Google behielt 21 Prozent von rund 50 Milliarden Dollar Umsatz. Der Unterschied ist der Wettbewerb: Die Airlines bekämpfen sich, Google steht allein. Beide Seiten verschleiern das. Google mit 68 Prozent des Suchmarkts nennt sich einen kleinen Werbeanbieter mit 3,4 Prozent, ein Restaurant das einzige britische in Palo Alto."
+ }
+}

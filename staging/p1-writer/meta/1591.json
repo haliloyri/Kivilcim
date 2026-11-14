@@ -1,0 +1,35 @@
+{
+  "story_id": 1591,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: marginal decade and Centenarian Decathlon from reviews and summaries of Outlive; book text not read. Old bedside scene and invented quote dropped; sample task lists vary by source and are hedged.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Marjinal onyıl",
+    "description": "Peter Attia hayatın son on yılını planlamayı öneriyor. Yüzüncü Yıl Dekatlonu, ileride yapmak istediğiniz işlerden geriye doğru çalışmayı sağlıyor.",
+    "hook": "Seksen beş yaşında rahatça yapmak istediğiniz sıradan bir iş ne?",
+    "one_minute_summary": "Peter Attia, Outlive kitabında tıbbın çoğunlukla yaşam süresine baktığını söylüyor. Hayatın son on yılına marjinal onyıl diyor: kişi hayatta ama sevdiği şeylerin çoğunu yapamıyor. Önerisi, ileride yapmak istediğiniz on fiziksel görevi seçmek ve bugünkü çalışmanızı onlardan geriye doğru kurmak. Örnekler arasında yerden tek kolla kalkmak ve alışveriş poşeti taşımak var. VO2 max on yılda yaklaşık yüzde 10 düştüğü için yedek kapasiteyi 40'lı ve 50'li yaşlarda biriktirmeyi öneriyor."
+  },
+  "en": {
+    "title": "The marginal decade",
+    "description": "Peter Attia urges you to plan for the last ten years of life. His Centenarian Decathlon works backward from what you want to do later.",
+    "hook": "What is one ordinary task you hope to do easily at eighty-five?",
+    "one_minute_summary": "In Outlive, Peter Attia says medicine mostly aims at lifespan. He calls the last ten years of life the marginal decade: alive, but unable to do much of what you enjoy. His proposal is to pick ten physical tasks you want to manage late in life and set today's training backward from them. Samples include getting up from the floor with one arm and carrying groceries. Because VO2 max falls about 10 percent a decade, he urges building reserve in your forties and fifties."
+  },
+  "es": {
+    "title": "La década marginal",
+    "description": "Peter Attia propone planear los últimos diez años de vida. Su Decatlón del Centenario trabaja hacia atrás desde lo que querrás hacer más tarde.",
+    "hook": "¿Qué tarea corriente esperas hacer con facilidad a los ochenta y cinco?",
+    "one_minute_summary": "En Outlive, Peter Attia dice que la medicina apunta sobre todo a la esperanza de vida. Llama década marginal a los últimos diez años: vivo, pero sin poder hacer gran parte de lo que disfrutas. Propone elegir diez tareas físicas que quieres poder hacer de mayor y fijar el entrenamiento de hoy hacia atrás desde ellas, como levantarse del suelo con un brazo o cargar la compra. Como el VO2 máx. baja cerca de un 10 por ciento por década, insiste en construir reserva a los cuarenta y cincuenta."
+  },
+  "de": {
+    "title": "Das marginale Jahrzehnt",
+    "description": "Peter Attia rät, die letzten zehn Lebensjahre zu planen. Sein Centenarian Decathlon rechnet rückwärts von dem, was du später tun willst.",
+    "hook": "Welche gewöhnliche Aufgabe möchtest du mit fünfundachtzig mühelos schaffen?",
+    "one_minute_summary": "In Outlive sagt Peter Attia, die Medizin ziele vor allem auf die Lebensdauer. Die letzten zehn Lebensjahre nennt er das marginale Jahrzehnt: lebendig, aber unfähig, vieles zu tun, was du genießt. Sein Vorschlag ist, zehn körperliche Aufgaben zu wählen, die du im Alter noch schaffen willst, und das heutige Training rückwärts davon festzulegen. Beispiele sind mit einem Arm vom Boden aufstehen und Einkäufe tragen. Weil die VO2max pro Jahrzehnt um etwa 10 Prozent sinkt, drängt er auf Reserve in den Vierzigern und Fünfzigern."
+  }
+}

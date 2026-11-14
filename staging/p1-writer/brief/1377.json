@@ -1,0 +1,59 @@
+{
+ "story_id": 1377,
+ "kind": "concept",
+ "book": {
+  "title": "Meditations",
+  "author": "Marcus Aurelius",
+  "year": ""
+ },
+ "confidence": "high",
+ "confidence_note": "Passages checked in George Long's translation: 11.33 (fig in winter), 11.34 (Epictetus: whisper 'To-morrow perchance thou wilt die' when kissing a child; bad omen objection; ears of corn), 11.35 (grapes), 7.27 (think of what you have, but don't overvalue), 2.11 (may depart this moment; gods). The Latin label 'premeditatio malorum' does not appear in Meditations (written in Greek) and is only mentioned as a later name, not attributed to Marcus. The old text's invented quote ('say this was a trust left to me') and the claim that he daily imagined losing health and empire were dropped.",
+ "facts": [
+  "11.34: Epictetus said a man kissing his child should whisper 'To-morrow perchance thou wilt die'; objection: words of bad omen; reply: no word expressing a work of nature is ill-omened, or it would be ill-omened to speak of ears of corn being reaped.",
+  "11.33: to look for a fig in winter is a madman's act; so is looking for one's child when it is no longer allowed.",
+  "11.35: the unripe grape, the ripe bunch, the dried grape: all changes into something which exists not yet.",
+  "7.27: think less of what you lack than of what you have; pick the best and reflect how eagerly you'd seek them if absent; but don't overvalue them so as to be disturbed if you lose them.",
+  "2.11: since you may depart life this very moment, regulate every act and thought accordingly; if there are gods, leaving is not to be feared.",
+  "Meditations was written in Greek; the Latin term for this practice does not appear in it."
+ ],
+ "scene_details": [
+  "kissing a child while whispering",
+  "ears of corn being reaped",
+  "fig in winter",
+  "unripe grape, ripe bunch, dried grape"
+ ],
+ "tension": "A loving gesture paired with a thought of death, defended as natural.",
+ "opening_idea": "Open on 7.27, the corn reply, the grapes, or the whisper.",
+ "lessons": [
+  {
+   "idea": "Briefly picture something you have as gone; you see its value and cling less.",
+   "anchor": "7.27 and 11.34."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which person you see daily could you greet differently if you imagined missing them?",
+ "use_cases": [
+  {
+   "situation": "Rushing child to school",
+   "move": "Recall Marcus's whisper and pause for a hug.",
+   "context": "family"
+  },
+  {
+   "situation": "Complaining about an old phone",
+   "move": "Ask how much you'd miss it before shopping.",
+   "context": "self"
+  },
+  {
+   "situation": "Friend argued with mother",
+   "move": "Share Marcus's reminder and suggest a call.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "Look at something you love and think how eagerly you'd search for it if it were gone.",
+ "conversation_variants": {
+  "punchline_idea": "Marcus Aurelius copied Epictetus's advice to whisper 'tomorrow you may die' while kissing your child.",
+  "thirty_sec_idea": "11.34 with the corn answer, then 7.27.",
+  "question_idea": "",
+  "key_contrast_idea": "Hold it closer, cling less"
+ }
+}

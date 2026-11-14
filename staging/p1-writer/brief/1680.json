@@ -1,0 +1,34 @@
+{
+  "story_id": 1680,
+  "kind": "concept",
+  "book": {"title": "Why Buddhism Is True", "author": "Robert Wright", "year": "2017"},
+  "confidence": "medium",
+  "confidence_note": "Examples come from an interview-style article with Wright and summaries, not the book text. The rustling-underbrush and public-speaking examples are Wright's illustrations, not events. The old text's four-bullet list and the 'this brain got stuck' quote could not be verified and were dropped.",
+  "facts": [
+    "Wright argues natural selection designed the mind to crave: it favors traits that get genes into the next generation, not contentment.",
+    "The happiness of reaching a goal fades; without that fading, animals would stop pursuing food and sex.",
+    "On a hike, every rustle in the underbrush gives a surge of fear; selection favors a false alarm over a missed snake ('better safe than sorry').",
+    "Public speaking causes anxiety in many people, even sleeplessness before a presentation; ancestral life had no large public talks, so an old response fires in a new setting.",
+    "Mindfulness meditation can quiet the mind enough to begin freeing you from some mechanisms of distortion.",
+    "Changing how you relate to anxiety so you no longer identify with it is, for Wright, an incremental realisation of not-self.",
+    "Observing a feeling without acting on it is not the same as suppressing it."
+  ],
+  "scene_details": ["a rustle in the underbrush on a hike", "a night of poor sleep before a presentation", "satisfaction that fades after a goal is reached"],
+  "tension": "The same mind that keeps us alive is the one that never lets us settle.",
+  "opening_idea": "Open with the rustle in the underbrush and the jolt of fear.",
+  "lessons": [{"idea": "A feeling that arrives on its own schedule can be watched before it is obeyed.", "anchor": "Anxiety before a talk as an old alarm in a new place."}],
+  "reflect": [],
+  "reflect_final": "Which worry or comparison keeps returning to you, and what would change if you watched it arrive like a rustle in the bushes?",
+  "use_cases": [
+    {"situation": "The night before an important presentation and you cannot sleep", "move": "Tell yourself: this is an old alarm in a new place. Note where it sits in the body and let it be for a minute.", "context": "self"},
+    {"situation": "Your partner is anxious about an upcoming event", "move": "Say: your mind is doing its job of keeping watch. Let's name what is actually at stake.", "context": "family"},
+    {"situation": "A colleague spirals about a small error", "move": "Ask: is this the situation, or the old alarm? Help them separate the two.", "context": "oneonone"}
+  ],
+  "pocket_idea": "Selection built the mind to keep you alert, not content: treat a rustle of worry as a signal to watch, not an order.",
+  "conversation_variants": {
+    "punchline_idea": "Wright says the mind that jumps at every rustle in the bushes was built to get genes along, not to keep you content.",
+    "thirty_sec_idea": "Wright: natural selection built the mind to crave and to react at every rustle, so satisfaction fades and anxiety fires at speeches; meditation lets you watch it.",
+    "question_idea": "",
+    "key_contrast_idea": "alarm or truth"
+  }
+}

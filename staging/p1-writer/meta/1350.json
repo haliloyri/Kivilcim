@@ -1,0 +1,35 @@
+{
+ "story_id": 1350,
+ "verdict": "keep",
+ "verify_note": "Verified in Make It Stick ch. 3 (Moulton et al., Annals of Surgery 2006): 38 residents, four lessons in one day vs a week apart, 16 percent of the one-day group damaged vessels beyond repair. Anki, a fixed 3-day/1-week/1-month schedule and an invented quote dropped; Leitner box added from the book.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Tek Günde Öğrenen Cerrahlar",
+  "description": "Otuz sekiz cerrahi asistanı aynı dört mikrocerrahi dersini ya tek günde ya haftalara yayarak alır. Bir ay sonra canlı sıçanlardaki ameliyat farkı ortaya koyar.",
+  "hook": "Bir beceriyi biraz unuttuktan sonra çalışmak, neden onu daha iyi öğrenmenizi sağlasın?",
+  "one_minute_summary": "Otuz sekiz cerrahi asistanı minicik damarları birleştirmeyi dört kısa derste öğrenir. Yarısı dersleri tek günde alır, yarısı haftada bir. Bir ay sonra canlı sıçanlarda sınanırlar. Haftaya yayılan grup daha hızlıdır, daha az el hareketi yapar ve daha başarılıdır. Tek günde öğrenenlerin yüzde 16'sı damarı onarılamayacak şekilde zedeler. Make It Stick'e göre biraz unuttuktan sonra hatırlamak için harcanan çaba pekiştirmeyi yeniden tetikler, ama aralıklı pratik daha az verimli hissettirir."
+ },
+ "en": {
+  "title": "Surgeons Who Learned in a Day",
+  "description": "Thirty-eight surgical residents take the same four microsurgery lessons, either in one day or a week apart. A month later, live rats on the operating table show the difference.",
+  "hook": "Why would letting a skill fade a little make you better at it?",
+  "one_minute_summary": "Thirty-eight surgical residents learn to reattach tiny vessels in four short lessons. Half take them in a single day, half a week apart. A month later they operate on live rats. The spaced group is faster, needs fewer hand movements and succeeds more often, while 16 percent of the one-day group damage the vessels beyond repair. Make It Stick explains that the effort of recalling after a little forgetting retriggers consolidation, even though spaced practice feels less productive."
+ },
+ "es": {
+  "title": "Cirujanos que aprendieron en un día",
+  "description": "Treinta y ocho residentes de cirugía reciben las mismas cuatro lecciones de microcirugía, en un día o con una semana de separación. Un mes después, las ratas del quirófano muestran la diferencia.",
+  "hook": "¿Por qué dejar que una habilidad se olvide un poco te haría mejor en ella?",
+  "one_minute_summary": "Treinta y ocho residentes de cirugía aprenden a unir vasos diminutos en cuatro lecciones breves. La mitad las recibe en un solo día y la otra mitad con una semana entre cada una. Un mes después operan a ratas vivas. El grupo espaciado es más rápido, hace menos movimientos y acierta más, y el 16 % del grupo de un día daña los vasos sin remedio. Según Make It Stick, el esfuerzo de recordar tras olvidar un poco reactiva la consolidación, aunque espaciar parezca menos productivo."
+ },
+ "de": {
+  "title": "Chirurgen, die an einem Tag lernten",
+  "description": "Achtunddreißig angehende Chirurgen bekommen dieselben vier Lektionen Mikrochirurgie, an einem Tag oder im Wochenabstand. Einen Monat später zeigen lebende Ratten auf dem OP-Tisch den Unterschied.",
+  "hook": "Warum sollte es dich besser machen, eine Fähigkeit ein wenig zu vergessen?",
+  "one_minute_summary": "Achtunddreißig angehende Chirurgen lernen in vier kurzen Lektionen, winzige Gefäße zu verbinden. Die eine Hälfte an einem Tag, die andere mit je einer Woche Pause. Einen Monat später operieren alle an lebenden Ratten. Die verteilte Gruppe ist schneller, braucht weniger Handgriffe und hat mehr Erfolg, während 16 Prozent der Ein-Tages-Gruppe die Gefäße irreparabel beschädigen. Laut Make It Stick setzt die Mühe des Abrufens nach etwas Vergessen die Konsolidierung neu in Gang, auch wenn verteiltes Üben sich weniger produktiv anfühlt."
+ }
+}

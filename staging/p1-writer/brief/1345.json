@@ -1,0 +1,61 @@
+{
+ "story_id": 1345,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Paradox of Choice",
+  "author": "Barry Schwartz",
+  "year": "2004"
+ },
+ "confidence": "high",
+ "confidence_note": "Verified against the full text of the prologue and ch. 4. The old text's 'tried for hours and left unhappy' is wrong: the jeans turned out fine; the cost was a daylong project full of self-doubt. 'About six years ago' is relative to the book; no exact year given.",
+ "facts": [
+  "Schwartz went to the Gap to buy jeans, size 32-28; he wears jeans until they fall apart, so it had been a while.",
+  "The young salesperson asked: slim fit, easy fit, relaxed fit, baggy or extra baggy; stonewashed, acid-washed or distressed; button-fly or zipper-fly; faded or regular.",
+  "He said he wanted 'regular jeans', 'the kind that used to be the only kind'; she didn't know and asked an older colleague.",
+  "Now unsure regular was right, he asked about the differences, was shown a diagram of the cuts, took one pair of each into the dressing room and tried them all in front of a mirror.",
+  "Little was riding on it, but he was convinced one option had to be right for him. He chose easy fit because 'relaxed fit' implied he was getting soft in the middle.",
+  "The jeans turned out just fine, but buying pants 'should not be a daylong project'. It used to be a five-minute affair with an imperfect fit; now it cost time, energy, self-doubt, anxiety and dread.",
+  "Before that trip he didn't care about fit; once he knew there were several cuts, 'Suddenly, I cared.' He'd been nudged toward being a 'denim maximizer', his standards altered forever.",
+  "Book thesis: some choice is liberating, but as options keep growing, 'choice no longer liberates, but debilitates. It might even be said to tyrannize.'"
+ ],
+ "scene_details": [
+  "the question list: slim, easy, relaxed, baggy, extra baggy; stonewashed, acid-washed, distressed; button-fly or zipper-fly",
+  "a diagram showing how the cuts differ",
+  "one pair of each type under his arm in the dressing room, a mirror",
+  "'regular jeans, the kind that used to be the only kind'"
+ ],
+ "tension": "A five-minute errand for one pair of jeans turns into a day of doubt, and the jeans he picks are fine.",
+ "opening_idea": "Start with the salesperson's string of questions in answer to 'a pair of jeans, 32-28'.",
+ "lessons": [
+  {
+   "idea": "Adding options can make you care about a difference you never cared about, and that new care is the cost.",
+   "anchor": "Before the trip he didn't care about fit; after seeing the cuts, 'Suddenly, I cared.'"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which small purchase or choice became a long project for you only because there were many options?",
+ "use_cases": [
+  {
+   "situation": "Friend spent an evening comparing near-identical phones",
+   "move": "Schwartz went in for one pair of jeans and spent a day on fits that didn't matter to him before. Ask which difference actually matters to them.",
+   "context": "social"
+  },
+  {
+   "situation": "Team keeps adding variants to a simple decision",
+   "move": "Propose fixing the two criteria that matter before looking at more options.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You're stuck choosing a small household item",
+   "move": "Write the one criterion that matters, take the first option that meets it, and notice whether you miss the rest.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Before opening the catalogue, decide which difference you truly care about, or the jeans diagram will decide for you.",
+ "conversation_variants": {
+  "punchline_idea": "The salesperson had to ask an older colleague what 'regular jeans' meant.",
+  "thirty_sec_idea": "Schwartz asks for a pair of jeans, gets a list of cuts and washes, tries all, picks easy fit, jeans fine, but a five-minute errand became a day of self-doubt; suddenly he cared about fit.",
+  "question_idea": "",
+  "key_contrast_idea": "five minutes to a day"
+ }
+}

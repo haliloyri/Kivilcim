@@ -1,0 +1,35 @@
+{
+  "story_id": 1500,
+  "verdict": "keep",
+  "verify_note": "Keep: words-and-relationships focus, stage-three pairs, open-question and too-big-to-do-alone moves confirmed in Gallup's piece and fs.blog. Old 'node' framing, the directive quote and the meeting scene dropped. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "İkiliden üçlüye",
+    "description": "Tribal Leadership'e göre kabile lideri insanları birbirinden uzak tutmaz, ortak bir değer etrafında bir araya getirir.",
+    "hook": "Çevrenizde birbiriyle tanışması gereken iki kişi var mı?",
+    "one_minute_summary": "Tribal Leadership'e göre liderlik iki şeye bakar: insanların kullandığı kelimelere ve kurdukları ilişkilere. Üçüncü aşamada ilişkiler ikili kurulur ve bu aşamadaki biri, insanlar notlarını karşılaştırmasın diye onları birbirinden ayrı tutar. Çözüm, önce açık sorularla insanların neye değer verdiğini öğrenmek, sonra tek kişinin bitiremeyeceği bir iş kurmaktır. Üçlü ilişkiler ortak değerlere bağlanır. Gruba en fazla bir basamak yukarıdan konuşmak gerekir. İşaretler: “biz” demeye başlarlar, ağları genişler ve daha az çalışıp daha çok iş bitirirler."
+  },
+  "en": {
+    "title": "Keeping people apart",
+    "description": "A stage-three person keeps people apart so they never compare notes, says Tribal Leadership. A tribal leader joins them around a value.",
+    "hook": "Which two people near you should be talking to each other?",
+    "one_minute_summary": "Tribal Leadership says a leader works on two things: the words people use and the relationships they form. At stage three, relationships run in pairs and the person at the centre keeps people apart so they do not compare notes. The way out is to ask open questions about what people value, then set a project too big to finish alone. Relationships then form in threes around a shared value. The leader speaks at most one stage above the group. Signs of progress: people say 'we', their networks widen and they work less while getting more done."
+  },
+  "es": {
+    "title": "Presentar en vez de separar",
+    "description": "Según Tribal Leadership, quien está en la etapa tres mantiene a la gente separada. El líder de la tribu la une alrededor de un valor.",
+    "hook": "¿Qué dos personas de tu entorno deberían hablar entre sí?",
+    "one_minute_summary": "Tribal Leadership dice que un líder trabaja en dos cosas: las palabras que usa la gente y las relaciones que forma. En la etapa tres las relaciones van de dos en dos y quien está en el centro separa a los demás para que no comparen notas. La salida es hacer preguntas abiertas sobre lo que importa a cada uno y plantear un proyecto demasiado grande para uno solo. Las relaciones pasan a armarse de a tres en torno a un valor. El líder habla una etapa por encima del grupo. Señales de avance: dicen «nosotros», sus redes crecen y trabajan menos logrando más."
+  },
+  "de": {
+    "title": "Von zweien zu dreien",
+    "description": "Wer auf Stufe drei steht, hält Leute getrennt, sagt Tribal Leadership. Der Stammesführer verbindet sie über einen gemeinsamen Wert.",
+    "hook": "Welche zwei Menschen in deiner Nähe sollten miteinander reden?",
+    "one_minute_summary": "Nach Tribal Leadership arbeitet eine Führungskraft an zwei Dingen: an den Wörtern, die Menschen benutzen, und an den Beziehungen, die sie eingehen. Auf Stufe drei laufen Beziehungen zu zweit, und wer in der Mitte steht, hält die anderen getrennt, damit sie keine Notizen vergleichen. Der Ausweg sind offene Fragen danach, was den Leuten wichtig ist, und ein Vorhaben, das für eine Person zu groß ist. So entstehen Dreierbeziehungen um einen gemeinsamen Wert. Zeichen des Fortschritts: Man sagt „wir“, Netzwerke wachsen, und man schafft mehr bei weniger Arbeit."
+  }
+}

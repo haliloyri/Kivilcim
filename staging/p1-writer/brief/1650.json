@@ -1,0 +1,62 @@
+{
+  "story_id": 1650,
+  "kind": "concept",
+  "book": {
+    "title": "Atlas of the Heart",
+    "author": "Brené Brown",
+    "year": "2021"
+  },
+  "confidence": "medium",
+  "confidence_note": "Built from secondary summaries and an excerpt page, not the book text. Old text's claim that anger is 'alive' and resentment (kin) is 'dead', its forgiveness advice and its 'anger vs resentment test' were not found and are dropped; they contradict Brown's actual classification, resentment as part of the envy family. Brown's own words are paraphrased, never quoted. Exhaustion link and 'unfairness' wording come from single summaries and are hedged. Brackett's role is given only as the source of the reclassification per one summary.",
+  "facts": [
+    "Atlas of the Heart (2021) by Brené Brown maps 87 emotions and experiences.",
+    "Brown writes that she had always thought resentment lived close to anger.",
+    "She came to see that resentment is not part of the anger family; it is a function of envy.",
+    "One summary says the idea came out of an interview with emotions researcher Marc Brackett.",
+    "The book's section on comparison also holds envy, jealousy, admiration, schadenfreude and freudenfreude.",
+    "Summaries describe resentment as bitterness tied to perceived unfairness, with envy hidden under the frustration or anger on the surface.",
+    "In Time's summary, what people most often envy is looks, status and wealth.",
+    "Another summary says resentment can point to an unspoken need or an unfair balance.",
+    "One summary says resentment often follows physical or emotional exhaustion."
+  ],
+  "scene_details": [
+    "resentment filed beside envy, not beside anger",
+    "an interview with Marc Brackett as the turning point",
+    "tiredness as a common starting point for resentment"
+  ],
+  "tension": "Brown had always filed resentment with anger, and an interview showed her it belongs with envy.",
+  "opening_idea": "Open on Brown's admission that she had always placed resentment next to anger.",
+  "lessons": [
+    {
+      "idea": "When you resent someone, ask what they have that you want before deciding who wronged you.",
+      "anchor": "Brown's reclassification of resentment under envy.",
+      "example": "A baker resents a colleague who leaves on time and asks what time off she herself wants."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of someone you resent right now: what do they have, or get, that you quietly want for yourself?",
+  "use_cases": [
+    {
+      "situation": "You catch yourself resenting a colleague who leaves early.",
+      "move": "Ask what you want that they have, perhaps rest or recognition, before you raise any complaint.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is bitter that a peer got a break they wanted.",
+      "move": "Say that Brown files resentment next to envy and ask what they want for themselves.",
+      "context": "social"
+    },
+    {
+      "situation": "At home, one partner resents the other's free evening.",
+      "move": "Name the rest you are missing and ask for a block of your own.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Resentment sits beside envy: under the grievance, look for what you want.",
+  "conversation_variants": {
+    "punchline_idea": "Brown had always filed resentment next to anger until she learned it belongs beside envy.",
+    "thirty_sec_idea": "Brené Brown had always thought resentment lived close to anger. After talking with emotions researcher Marc Brackett, she concluded it is a function of envy instead. In Atlas of the Heart it appears in the comparison section, and one summary links it to exhaustion and a sense of unfairness.",
+    "question_idea": "",
+    "key_contrast_idea": "anger or envy's neighbour"
+  }
+}

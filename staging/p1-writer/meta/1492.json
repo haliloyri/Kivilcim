@@ -1,0 +1,35 @@
+{
+  "story_id": 1492,
+  "verdict": "keep",
+  "verify_note": "Keep: Hari's paroxetine history confirmed in a BJGP review; nine-causes list from summaries. The old 'never truly recovered', pharma-marketing and 'antidepressants save lives' statements were not confirmed and dropped. Presented as Hari's disputed argument, with critics noted. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "On sekiz yaşında bir ilaç, dokuz neden",
+    "description": "Hari gençken antidepresan kullandı ve ona seratonin eksikliği denmişti. Kitabı dokuz neden sayar, yedisi kopan bağlantılar.",
+    "hook": "Hayatınızda hangi bağlantı şu an en ince?",
+    "one_minute_summary": "Johann Hari gençken paroksetin yazıldı ve doktoru depresyonunun beyindeki kimyasal dengesizlikten, düşük serotoninden geldiğini söyledi. Doz birkaç yıl içinde 20 miligramdan 60'a çıktı. Lost Connections'da depresyonun yalnızca kimyasal bir dengesizlik olmadığını savunur ve dokuz neden sayar: anlamlı iş, diğer insanlar, anlamlı değerler, çocukluk travması, statü ve saygı, doğa, umutlu bir gelecek, ayrıca iki biyolojik etken. İlk yedisi kopmuş bağlantılar. Eleştirmenler Hari'nin kanıtlarını seçtiğini söylüyor."
+  },
+  "en": {
+    "title": "One tablet, nine causes",
+    "description": "As a teenager Johann Hari was told his depression was a serotonin shortage. His book lists nine causes, seven of them lost connections.",
+    "hook": "Which kind of connection feels thinnest in your life right now?",
+    "one_minute_summary": "As a teenager Johann Hari was prescribed paroxetine, and his doctor told him depression was a chemical imbalance, depleted serotonin. Over a few years the dose rose from 20 to 60 milligrams. In Lost Connections he argues depression is far from simply a chemical imbalance and names nine causes: meaningful work, other people, meaningful values, childhood trauma, status and respect, the natural world, a hopeful future, and two biological factors. Seven are lost connections. Critics say Hari selects his evidence."
+  },
+  "es": {
+    "title": "Una pastilla, nueve causas",
+    "description": "De adolescente, a Johann Hari le dijeron que su depresión era falta de serotonina. Su libro enumera nueve causas, siete de ellas conexiones perdidas.",
+    "hook": "¿Qué tipo de conexión se siente más fina ahora mismo en tu vida?",
+    "one_minute_summary": "De adolescente, a Johann Hari le recetaron paroxetina y su médico le dijo que la depresión era un desequilibrio químico, falta de serotonina. En unos años la dosis subió de 20 a 60 miligramos. En Lost Connections sostiene que la depresión dista de ser solo un desequilibrio químico y nombra nueve causas: trabajo con sentido, otras personas, valores con sentido, trauma infantil, estatus y respeto, la naturaleza, un futuro esperanzador y dos factores biológicos. Siete son conexiones perdidas. Los críticos dicen que elige las pruebas."
+  },
+  "de": {
+    "title": "Eine Tablette, neun Ursachen",
+    "description": "Als Teenager hieß es bei Johann Hari, seine Depression sei Serotoninmangel. Sein Buch nennt neun Ursachen, sieben davon verlorene Verbindungen.",
+    "hook": "Welche Art von Verbindung ist in deinem Leben gerade am dünnsten?",
+    "one_minute_summary": "Als Teenager bekam Johann Hari Paroxetin verschrieben, und sein Arzt sagte ihm, Depression sei ein chemisches Ungleichgewicht, ein Mangel an Serotonin. Binnen weniger Jahre stieg die Dosis von 20 auf 60 Milligramm. In Lost Connections vertritt er, Depression sei weit mehr als ein chemisches Ungleichgewicht, und nennt neun Ursachen: sinnvolle Arbeit, andere Menschen, sinnvolle Werte, Kindheitstrauma, Status und Respekt, die Natur, eine hoffnungsvolle Zukunft und zwei biologische Faktoren. Sieben sind verlorene Verbindungen. Kritiker sagen, Hari wähle Belege aus."
+  }
+}

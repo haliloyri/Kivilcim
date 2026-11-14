@@ -1,0 +1,38 @@
+{
+  "book_no": 187,
+  "title": "Intuitive Eating",
+  "authors": ["Evelyn Tribole", "Elyse Resch"],
+  "year": "1995",
+  "sources": [
+    "https://www.intuitiveeating.org/10-principles-of-intuitive-eating/",
+    "https://www.intuitiveeating.org/about-us/what-is-intuitive-eating/",
+    "https://en.wikipedia.org/wiki/Intuitive_eating",
+    "https://eat-move-save.extension.illinois.edu/blog/intuitive-eating-introduction-new-actually-old-way-being-food"
+  ],
+  "source_note": "Book text not read. Principle wording comes from the authors' own site (intuitiveeating.org). Year 1995 as in the DB; sources conflict (1993/1995; Wikipedia cites the 2012 third edition). Principle numbering on the site today (Reject Diet Culture, Honor Your Hunger, Make Peace with Food, Discover the Satisfaction Factor, Feel Your Fullness, Challenge the Food Police, ...) differs from earlier editions, so the text avoids principle numbers.",
+  "facts": [
+    {"id":"f1","claim":"Intuitive Eating is by registered dietitians Evelyn Tribole and Elyse Resch; it has ten principles; the approach focuses on responding to hunger and fullness cues, not on weight control, and it does not ban or restrict foods.","source":"Wikipedia; intuitiveeating.org","confidence":"high"},
+    {"id":"f2","claim":"Reject Diet Culture: discard diet books and food plans that promise a better life through restriction; direct your anger at the false promises of diet culture, not at yourself. Quoted on the site: 'the lies from diet culture have led you to feel as if you were a failure'.","source":"intuitiveeating.org","confidence":"high"},
+    {"id":"f3","claim":"Make Peace with Food: end the struggle over eating by giving yourself unconditional permission to eat; forbidding foods tends to fuel cravings and bingeing.","source":"intuitiveeating.org","confidence":"high"},
+    {"id":"f4","claim":"Challenge the Food Police: the internal voice that enforces diet-based rules and delivers guilt and criticism should be quieted. 'The food police monitor the unreasonable rules that dieting has created.'","source":"intuitiveeating.org","confidence":"high"},
+    {"id":"f5","claim":"Honor Your Hunger: meet your body's energy needs so extreme hunger does not take over, and respond to early hunger cues to rebuild trust with food ('Learning to honor the first biological signal of hunger').","source":"intuitiveeating.org","confidence":"high"},
+    {"id":"f6","claim":"Feel Your Fullness: notice when hunger fades and you become comfortably full; pause during meals to check how the food tastes and how full you feel.","source":"intuitiveeating.org","confidence":"high"},
+    {"id":"f7","claim":"Discover the Satisfaction Factor: enjoyment is a valid goal of eating; eating foods you truly want in a pleasant setting helps you feel content with smaller amounts.","source":"intuitiveeating.org","confidence":"high"},
+    {"id":"f8","claim":"Cope with Your Emotions with Kindness: restriction can itself trigger loss of control; address anxiety, loneliness, boredom or anger through other means since food only offers temporary relief. 'Food won't fix any of these feelings.'","source":"intuitiveeating.org","confidence":"high"},
+    {"id":"f9","claim":"Respect Your Body: accept your genetic body size and shape, like your shoe size; harsh criticism of your body makes it harder to reject diet mentality. Honor Your Health: gentle nutrition; 'Progress, not perfection, is what counts.'","source":"intuitiveeating.org","confidence":"high"},
+    {"id":"f10","claim":"The site says Intuitive Eating is not a diet or food plan, has no pass-or-fail rules, and works through body awareness it calls interoceptive awareness.","source":"intuitiveeating.org","confidence":"high"},
+    {"id":"f11","claim":"Evidence caveats (Wikipedia): not designed for weight loss; observational studies link it to less overeating and better self-regulation but cannot show causation; not enough evidence for long-term weight loss; may reduce eating-disorder symptoms and weight concerns; results vary; people told to follow a specific diet by a doctor may not be able to; lack of a set plan and a steep learning curve in reading cues are criticisms.","source":"Wikipedia","confidence":"high"}
+  ],
+  "rejected": [
+    {"claim":"Tribole worked for decades with chronic dieters and saw the same pattern","reason":"Anecdotal framing not found in sources."},
+    {"claim":"The 'what-the-hell' effect named by Tribole; foods as 'sin/crime' moral categories","reason":"Term not on the authors' pages; it comes from dieting research by others. Moral labeling is only supported as 'food police' guilt."},
+    {"claim":"A patient who opens the fridge at night, feels lonely and out of control, with dialogue","reason":"Invented scene, not found in any source."},
+    {"claim":"Babies cry when hungry and the brain evolved to produce hunger signals; dieting suppresses them","reason":"Babies line appears on an extension page, not tied to the book; evolutionary claim unverified."},
+    {"claim":"Rule 'no eating after 8 pm' as typical dieter behavior; cycle emotion-eating-guilt-more emotion","reason":"Not found in the book material."}
+  ],
+  "stories": {
+    "1657": {"verdict":"keep","fact_ids":["f1","f2","f3","f4","f10","f11"],"note":"Concept story from the authors' principles; no anecdote."},
+    "1658": {"verdict":"keep","fact_ids":["f5","f6","f7","f10","f11"],"note":"Hunger, fullness and satisfaction principles."},
+    "1659": {"verdict":"keep","fact_ids":["f8","f9","f2","f11"],"note":"Emotional eating principle; thin, old patient scene dropped."}
+  }
+}

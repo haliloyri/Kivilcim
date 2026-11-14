@@ -1,0 +1,35 @@
+{
+  "story_id": 1645,
+  "verdict": "keep",
+  "verify_note": "Keep, medium-low: belonging statement and BRAVING context from author knowledge; fitting-in definition, three obstacles and strategies from the Shortform preview; permission slips from fourminutebooks; 'belonging to ourselves first' from fourminutebooks. Old text's study and anecdotes dropped. es open contains English words by mistake risk: check.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Uyum mu, aitlik mi",
+    "description": "Brown, uyum sağlamayı gerçek aitlikten ayırıyor. Alıntılar özet kaynaklara dayanıyor.",
+    "hook": "Başınızı sallayıp aslında katılmadığınız bir oda hangisi?",
+    "one_minute_summary": "Brené Brown, Braving the Wilderness'ta uyum sağlamayı gerçek aitlikten ayırıyor. Uyum, başkalarının beklentilerine uymak. Gerçek aitlik, başkaları ne düşünürse düşünsün değerlerinizi yaşayabilecek kadar güvende olmak. Kendine izin kâğıtları yazarak başladı. Kitap aitliğin önünde üç engel sayıyor ve dört strateji öneriyor. Bu ayrıntılar özet kaynaklardan geliyor, kitabın sayfasından doğrulanmadı."
+  },
+  "en": {
+    "title": "Fitting in or belonging",
+    "description": "Brown separates fitting in from true belonging. The detail comes from summaries of the book.",
+    "hook": "Which room do you nod along in while disagreeing?",
+    "one_minute_summary": "In Braving the Wilderness, Brené Brown separates fitting in from true belonging. Fitting in is conforming to what others expect. True belonging is feeling secure enough to live your values whatever others think. She started with permission slips to herself. The book names three obstacles to belonging and four strategies. These details come from summaries and were not checked against the book's pages."
+  },
+  "es": {
+    "title": "Encajar o pertenecer",
+    "description": "Brown separa encajar de pertenecer de verdad. El detalle procede de resúmenes del libro.",
+    "hook": "¿En qué sala asientes aunque no estés de acuerdo?",
+    "one_minute_summary": "En Braving the Wilderness, Brené Brown separa encajar de pertenecer de verdad. Encajar es adaptarse a lo que esperan los demás. Pertenecer de verdad es sentirse seguro para vivir tus valores pase lo que pase con la opinión ajena. Empezó con permisos escritos a sí misma. El libro nombra tres obstáculos y cuatro estrategias. Estos detalles salen de resúmenes y no se comprobaron en las páginas del libro."
+  },
+  "de": {
+    "title": "Anpassen oder dazugehören",
+    "description": "Brown trennt Anpassung von wahrer Zugehörigkeit. Die Angaben stammen aus Zusammenfassungen des Buches.",
+    "hook": "In welchem Raum nickst du, obwohl du anderer Meinung bist?",
+    "one_minute_summary": "In Braving the Wilderness trennt Brené Brown Anpassung von wahrer Zugehörigkeit. Anpassung heißt, den Erwartungen anderer zu entsprechen. Wahre Zugehörigkeit heißt, sich sicher genug zu fühlen, die eigenen Werte zu leben, was andere auch denken. Sie begann mit Erlaubnisscheinen an sich selbst. Das Buch nennt drei Hindernisse und vier Strategien. Diese Angaben stammen aus Zusammenfassungen und wurden nicht an den Buchseiten geprüft."
+  }
+}

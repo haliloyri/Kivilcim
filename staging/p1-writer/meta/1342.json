@@ -1,0 +1,35 @@
+{
+ "story_id": 1342,
+ "verdict": "keep",
+ "verify_note": "Panic attack on Good Morning America (June 7, 2004), war reporting, cocaine and ecstasy, the psychiatrist's explanation, Jennings's faith beat, Tolle/Chopra and Mark Epstein verified via Harris's ABC account and Kirkus. The old text's antidepressants/alcohol were wrong and are replaced; unsourced quotes dropped.",
+ "title_changed": {
+  "tr": false,
+  "en": false,
+  "es": true,
+  "de": false
+ },
+ "tr": {
+  "title": "Panik atağından meditasyona",
+  "description": "ABC muhabiri Dan Harris, 2004'te Good Morning America'da haber okurken canlı yayında panik atak geçirdi. Alay ettiği meditasyona giden yol oradan başladı.",
+  "hook": "Zor haftaları atlatmanızı sağlayan alışkanlık size neye mal oluyor?",
+  "one_minute_summary": "7 Haziran 2004'te Dan Harris, Good Morning America'da altı haberi okurken canlı yayında panik atak geçirdi ve bölümü yarıda kesti. Yıllarca savaş haberleri yapmış, 2003'te depresyona girip hafta sonları kokain ve ekstazi kullanmıştı. Psikiyatrist uyuşturucunun adrenalini yükselttiğini söyledi, Harris bıraktı. Tolle ve Chopra ona yöntem vermedi. Meditasyonu hippilerin işi sayıyordu ama eşinin sevdiği psikiyatrist Mark Epstein sayesinde denedi ve kısa sürede faydasını gördü."
+ },
+ "en": {
+  "title": "From panic attacks to meditation",
+  "description": "ABC's Dan Harris had a panic attack live on Good Morning America in 2004. It set him on the road to meditation, a practice he had openly mocked.",
+  "hook": "Which coping habit might be costing you more than you notice?",
+  "one_minute_summary": "On June 7, 2004, Dan Harris panicked live on Good Morning America halfway through six headlines and cut to 'Back to you.' After years of war reporting he had become depressed and used cocaine and ecstasy on weekends; a psychiatrist said the drugs had raised his adrenaline. He quit. Tolle and Chopra gave him no usable method, and he dismissed meditation as a thing for swamis and hippies, until the psychiatrist Mark Epstein got him to try it. It helped."
+ },
+ "es": {
+  "title": "Del pánico a la meditación",
+  "description": "Dan Harris, de ABC, sufrió un ataque de pánico en directo en Good Morning America en 2004. De ahí arrancó su camino hacia la meditación, de la que antes se burlaba.",
+  "hook": "¿Qué costumbre que te ayuda a aguantar te está costando más de lo que crees?",
+  "one_minute_summary": "El 7 de junio de 2004, Dan Harris sufrió un ataque de pánico en directo en Good Morning America, a mitad de seis titulares. Tras años cubriendo guerras se había deprimido y tomaba cocaína y éxtasis los fines de semana; un psiquiatra le explicó que las drogas le habían disparado la adrenalina, y lo dejó. Tolle y Chopra no le dieron un método. Creía que meditar era cosa de hippies, hasta que el psiquiatra Mark Epstein lo llevó a probarlo."
+ },
+ "de": {
+  "title": "Von Panikattacken bis hin zur Meditation",
+  "description": "ABC-Korrespondent Dan Harris bekam 2004 live bei Good Morning America eine Panikattacke. Damit begann sein Weg zur Meditation, über die er gespottet hatte.",
+  "hook": "Welche Gewohnheit, die dich durchhalten lässt, kostet dich mehr, als du merkst?",
+  "one_minute_summary": "Am 7. Juni 2004 bekam Dan Harris live bei Good Morning America mitten in sechs Meldungen eine Panikattacke und gab hastig ab. Nach Jahren in Kriegsgebieten war er depressiv geworden und nahm an Wochenenden Kokain und Ecstasy. Ein Psychiater erklärte, die Drogen hätten sein Adrenalin erhöht, und er hörte auf. Tolle und Chopra gaben ihm keine Methode. Meditation hielt er für Hippiekram, bis der Psychiater Mark Epstein ihn zum Ausprobieren brachte."
+ }
+}

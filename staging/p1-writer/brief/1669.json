@@ -1,0 +1,59 @@
+{
+  "story_id": 1669,
+  "kind": "concept",
+  "book": {
+    "title": "Anger: Wisdom for Cooling the Flames",
+    "author": "Thich Nhat Hanh",
+    "year": "2001"
+  },
+  "confidence": "medium",
+  "confidence_note": "Full text not read; potato image and breathing advice come from secondary summaries and quote pages. Old text's three-step list and underlying emotions omitted.",
+  "facts": [
+    "Thich Nhat Hanh compares anger to a potato: a raw potato cannot be eaten.",
+    "Mindfulness is the fire that cooks it.",
+    "When anger comes up, begin mindful breathing right away; embracing anger and breathing in and out is enough.",
+    "Try not to say or do anything while angry.",
+    "He also likens anger to garbage that becomes compost and then a flower.",
+    "Anger signals something needs taking care of."
+  ],
+  "scene_details": [
+    "a raw potato",
+    "the fire",
+    "the breath in and out",
+    "the closed mouth"
+  ],
+  "tension": "Anger cannot be swallowed raw or handed on raw.",
+  "opening_idea": "A raw potato nobody bites into.",
+  "lessons": [
+    {
+      "idea": "Let anger cook before serving it.",
+      "anchor": "raw potato, mindfulness as fire"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If something irritated you lately, what would you say differently after two breaths?",
+  "use_cases": [
+    {
+      "situation": "A colleague dismisses your proposal",
+      "move": "I'm annoyed right now. Give me two breaths and I'll answer properly.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Tension at home",
+      "move": "I'd rather not say this raw. Can we talk in ten minutes?",
+      "context": "family"
+    },
+    {
+      "situation": "A message made you angry",
+      "move": "If I write now it goes out uncooked; breathe first, reply after.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Raw anger is like a raw potato: breathe until it is cooked, then decide what to say.",
+  "conversation_variants": {
+    "punchline_idea": "Anger is a raw potato; it needs the fire of mindfulness before it is edible.",
+    "thirty_sec_idea": "Potato, fire, breathing, not speaking, compost.",
+    "question_idea": "",
+    "key_contrast_idea": "raw anger vs cooked anger"
+  }
+}

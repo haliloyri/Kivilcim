@@ -1,0 +1,35 @@
+{
+ "story_id": 1273,
+ "verdict": "keep",
+ "verify_note": "Keep with new case: the Hemingway morning routine is not attributable to When. Center (time of day changes which work goes well) rebuilt on the book's opening tweets study, the earnings-calls study and the analytic/insight split. No full text available; confirmed via reviews, reader highlights and summaries. Title changed.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Zirve, çukur ve toparlanma",
+  "description": "Daniel Pink'e göre ruh hâlimiz gün içinde bir zirveden çukura iniyor ve her iş bu eğrinin farklı bir noktasına uyuyor.",
+  "hook": "En önemli işinizi gerçekten en keskin olduğunuz saatte mi yapıyorsunuz?",
+  "one_minute_summary": "Daniel Pink kitabına 500 milyon tweet'lik bir çalışmayla başlıyor: insanların dili sabah daha olumlu, öğleden sonra düşüyor, akşam toparlanıyor ve bu desen kıtalar boyunca aynı. 26.000'den fazla şirket sonuç toplantısında da öğleden sonrakiler daha huysuz ve kavgacı çıkmış. Pink'in vardığı yer şu: dikkat ve mantık isteyen analitik işler çoğumuz için sabah zirvesinde daha iyi gidiyor, ani içgörü isteyen işler ise biraz yorgun olduğumuz saatlerde, zihnin bekçisi gevşediğinde."
+ },
+ "en": {
+  "title": "Peak, trough and recovery",
+  "description": "Daniel Pink shows that mood follows a daily curve, and that different kinds of work belong at different points on it.",
+  "hook": "Is your most important task actually landing in your sharpest hour?",
+  "one_minute_summary": "Daniel Pink opens with a study of about 500 million tweets: language turns more positive in the morning, dips in the afternoon and recovers in the evening, across continents. In more than 26,000 company earnings calls, afternoon calls came out more irritable and combative. Pink's conclusion is practical. Analytic work that needs focus tends to go best at the morning peak for most people, while insight problems often go better when we are a little tired and the mind's guard is down."
+ },
+ "es": {
+  "title": "Pico, valle y recuperación",
+  "description": "Daniel Pink muestra que el ánimo sigue una curva diaria y que cada tipo de trabajo encaja en un punto distinto de ella.",
+  "hook": "¿Cae tu tarea más importante en tu hora más despierta?",
+  "one_minute_summary": "Daniel Pink arranca con un estudio de unos 500 millones de tuits: el lenguaje es más positivo por la mañana, cae por la tarde y se recupera por la noche, en todos los continentes. En más de 26.000 conferencias de resultados de empresas, las de la tarde salieron más irritables y combativas. Conclusión de Pink: el trabajo analítico suele salir mejor en el pico de la mañana para la mayoría, y los problemas que piden una idea repentina, cuando estamos algo cansados y la mente baja la guardia."
+ },
+ "de": {
+  "title": "Hoch, Tief und Erholung",
+  "description": "Daniel Pink zeigt, dass unsere Stimmung einer Tageskurve folgt und jede Art von Arbeit an eine andere Stelle dieser Kurve gehört.",
+  "hook": "Liegt deine wichtigste Aufgabe wirklich in deiner wachsten Stunde?",
+  "one_minute_summary": "Daniel Pink beginnt mit einer Studie über rund 500 Millionen Tweets: Die Sprache wird morgens positiver, sinkt am Nachmittag und erholt sich am Abend, auf allen Kontinenten. In mehr als 26.000 Telefonkonferenzen zu Quartalszahlen fielen die Gespräche am Nachmittag gereizter und streitlustiger aus. Pinks Schluss ist praktisch: Analytische Arbeit gelingt den meisten im morgendlichen Hoch, Einsichtsaufgaben dagegen oft dann, wenn wir etwas müde sind und die innere Wache lockerer wird."
+ }
+}

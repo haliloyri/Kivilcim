@@ -1,0 +1,6 @@
+{
+ "punchline": "Von 32.000 Bit pro Sekunde auf 40, auf nur 400 Yards.",
+ "thirty_sec": "Im Oktober 1986 fiel der Durchsatz zwischen zwei Standorten in 400 Yards Abstand von 32 kbit/s auf 40 bit/s. Der Aufsatz von Jacobson und Karels von 1988 antwortete mit Paketerhaltung und Slow-Start: mit einem Paket beginnen, pro Bestätigung eines mehr.",
+ "question": "Wo antwortest du auf einen überlasteten Kanal damit, mehr auf einmal zu senden?",
+ "key_contrast": "Mit einem kleinen Schritt neu starten und mit Bestätigungen ausweiten."
+}

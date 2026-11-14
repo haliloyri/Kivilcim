@@ -1,0 +1,194 @@
+{
+ "book_no": 86,
+ "title": "The Monk Who Sold His Ferrari",
+ "authors": "Robin S. Sharma",
+ "year": "1997",
+ "sources": [
+  "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma",
+  "https://www.supersummary.com/the-monk-who-sold-his-ferrari/chapter-9-summary/",
+  "https://kaizen.com/what-is-kaizen/",
+  "https://www.qualitydigest.com/inside/healthcare-column/putting-continuous-back-health-care-improvement-080811.html"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The book is a fable (fiction), copyright 1997. Narrator John, a lawyer, tells the story of his mentor Julian Mantle.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), copyright page",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Julian, one of the country's most distinguished trial lawyers, known for three-thousand-dollar Italian suits, collapsed in the middle of a packed courtroom; the bailiff started CPR.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "He worked eighteen-hour days; seven-figure income, a mansion, a private jet, a summer home on a tropical island and his prized possession, a shiny red Ferrari parked in the center of his driveway. He could not sleep more than a couple of hours without waking guilty about a file.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "His marriage failed, he no longer spoke with his father; at fifty-three he looked as if he were in his late seventies. John had known him for seventeen years.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "The massive heart attack came on a Monday morning in courtroom number seven, while he argued the Air Atlantic case, the same courtroom where they had won the 'Mother of All Murder Trials'.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 1-2",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "His doctor's ultimatum: give up the Law or give up his life. He quit the firm, sold his mansion, his plane, his private island and even his Ferrari, and went to India.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 2-3",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "A temple caretaker, Yogi Krishnan, told him of the Great Sages of Sivana high in the Himalayas ('Sivana' means 'oasis of enlightenment'); nobody knew where they lived. Julian climbed alone, without a Sherpa guide, and met Yogi Raman, the eldest sage.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 3-4",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "After only three weeks in Sivana he began noticing beauty in ordinary things, a starry night, a spider's web after rain.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 5",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "About three years after he left, a man who looked to be in his mid-thirties knocked at John's office and would not leave: 'Is this how you treat all of your visitors, John...?' It was Julian, lineless face, no cough.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 2-3",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Yogi Raman's fable: a garden, a six-story red lighthouse, a nine-foot, nine-hundred-pound sumo wrestler wearing a pink wire cable, a gold stopwatch, yellow roses, a path of diamonds. The seven elements are memory pegs for the sages' system.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 6 and 11",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "John's father: 'John, on your deathbed you will never wish you spent more time at the office.' John then started spending a little more time at home.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "About six months after Julian arrived, Divea, the youngest sage, brought him a gift from all the sages: a miniature hourglass of blown glass and a small piece of sandalwood. Each sage had received one as a child as a daily reminder of mortality.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 11",
+   "confidence": "high"
+  },
+  {
+   "id": "f13",
+   "claim": "The gold stopwatch symbolizes time; 'time slips through our hands like grains of sand'; everyone gets days of twenty-four hours.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 11",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "Divea's advice: 'the best time to plant a tree was forty years ago. The second best time is today.' Julian: 'Develop a deathbed mentality': live every day as if it was your last; ask 'What would I do today if it was my last?'; you will start focusing on the meaningful things you have been putting off. John: 'Sounds kind of morbid.' Julian: it is a philosophy about life.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 11",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Chapter 11 techniques include the Ancient Rule of 20, Have the Courage to Say 'No', and the Deathbed Mentality.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 11 Action Summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "The sumo wrestler symbolizes kaizen, which Yogi Raman says the great teachers of the ancient East developed centuries ago; 'This Japanese word means constant and never-ending improvement.' 'Self-mastery is the DNA of life mastery'; success on the outside begins within.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 9",
+   "confidence": "high"
+  },
+  {
+   "id": "f17",
+   "claim": "Julian tells John (215 pounds) to do push-ups until he can do no more. John stops at twenty-three. Julian: 'Do ten more.' John does ten. Yogi Raman did the same with Julian: 'pain was a great teacher'; people grow most in the 'Zone of the Unknown'; 'The only limits on your life are those that you set yourself.'",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 9",
+   "confidence": "high"
+  },
+  {
+   "id": "f18",
+   "claim": "John then lists what he could improve: exercise, his nasty temper and habit of interrupting, his worry habit. Chapter 9 techniques: Do the Things You Fear; the 10 Ancient Rituals for Radiant Living.",
+   "source": "https://archive.org/details/TheMonkWhoSoldHisFerrariRobinS.Sharma (full text, HarperCollins ed.), ch. 9",
+   "confidence": "high"
+  },
+  {
+   "id": "f19",
+   "claim": "Editorial: as a management term, kaizen reached Western business through Masaaki Imai's 1986 book and is tied to postwar Japanese industry; the 'centuries-old' origin is the fable's framing.",
+   "source": "kaizen.com; Quality Digest",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Julian stayed years in a monastery.",
+   "reason": "He lived with the Sages of Sivana in a mountain village; about three years passed before his return."
+  },
+  {
+   "claim": "Research on the dying listing five regrets (live my dream, work less, express feelings, friends, let myself be happy).",
+   "reason": "Bronnie Ware's list (2009 blog, 2011 book); not in The Monk Who Sold His Ferrari."
+  },
+  {
+   "claim": "Sharma: 'The best moment is always the present moment.'",
+   "reason": "Not found as a quote in the book."
+  },
+  {
+   "claim": "Toyota factories, one-minute savings.",
+   "reason": "Not in the book."
+  },
+  {
+   "claim": "'If you get 1% better every day you will be 37% better in a year.'",
+   "reason": "Not in the book (popularized by James Clear, 2018) and mathematically wrong (1.01^365 is about 37.8 times, not 37 percent)."
+  },
+  {
+   "claim": "'Not revolution, evolution' quote.",
+   "reason": "Not found in the book."
+  }
+ ],
+ "stories": {
+  "1354": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9"
+   ],
+   "note": "Fixed: village of Sivana, not a monastery; fiction stated clearly."
+  },
+  "1355": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f11",
+    "f12",
+    "f13",
+    "f14",
+    "f15"
+   ],
+   "note": "Five-regrets list is not in the book; recentered on the book's own deathbed mentality (Divea's hourglass, John's father). Title changes."
+  },
+  "1356": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f10",
+    "f16",
+    "f17",
+    "f18",
+    "f19"
+   ],
+   "note": "Recentered on the sumo wrestler and the push-up scene; 1%/37% and Toyota dropped; kaizen origin caveat added."
+  }
+ }
+}

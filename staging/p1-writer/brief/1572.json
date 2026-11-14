@@ -1,0 +1,32 @@
+{
+ "story_id": 1572,
+ "kind": "anecdote",
+ "book": {"title": "The Culture Code", "author": "Daniel Coyle", "year": "2018"},
+ "confidence": "low",
+ "confidence_note": "Only secondary summaries support this: the Credo as 311 words carved in granite, the 1982 Tylenol poisoning as a test of culture, and Credo meetings led by senior managers. The old text's CEO quote, the 31 million bottles recall, the 1943 date, the year of loss and the two-year recovery could not be verified against the book (sources conflict on bottle counts) and were dropped. No deaths count is used. The story is short and says what the book claims, not what happened in the boardroom.",
+ "facts": [
+  "Johnson & Johnson's Credo is a document of 311 words, carved into a granite wall at the company's New Jersey headquarters and displayed at business locations.",
+  "Coyle uses the 1982 Tylenol poisoning as a case of a crisis testing a company's culture.",
+  "The company's answer to that crisis was found in the 311 words of the Credo, per summaries of the book.",
+  "J&J held regular meetings in which senior managers discussed and challenged the Credo.",
+  "Coyle's view of purpose: it is built by linking where the group is to where it wants to go, using a few clear signals repeated."
+ ],
+ "scene_details": ["311 words carved into a granite wall", "meetings where managers argue over the Credo", "the Tylenol poisoning of 1982"],
+ "tension": "A company's stated values only count when a crisis forces a decision against comfort.",
+ "opening_idea": "Open with 311 words cut into a granite wall in New Jersey.",
+ "lessons": [{"idea": "Values become usable in a crisis only if people have discussed them before; a text on a wall does nothing unless it is argued over in ordinary meetings.", "anchor": "the Credo carved in granite and J&J's managers' meetings about it"}],
+ "reflect": [],
+ "reflect_final": "If a hard decision landed on your desk tomorrow, which written value of your team would you actually point to, and has anyone discussed it lately?",
+ "use_cases": [
+  {"situation": "Your team has a values poster nobody mentions", "move": "Pick one value and ask in the next meeting what it would have us do about a current problem.", "context": "meeting"},
+  {"situation": "A family choice between easy and right", "move": "Ask what you said you cared about, and decide from that.", "context": "family"},
+  {"situation": "You face a decision under pressure", "move": "Write your one stated priority at the top of a page before listing the options.", "context": "self"}
+ ],
+ "pocket_idea": "A value you never discuss will not help in a crisis; talk about it while things are calm.",
+ "conversation_variants": {
+  "punchline_idea": "Johnson & Johnson cut 311 words into granite, and then kept managers arguing over them.",
+  "thirty_sec_idea": "Daniel Coyle points to the Johnson & Johnson Credo, 311 words carved in granite at its New Jersey headquarters. When the 1982 Tylenol poisoning hit, the company's answer was in those words. Coyle's point is that managers had been meeting to discuss and challenge it long before.",
+  "question_idea": "",
+  "key_contrast_idea": "wall text, daily use"
+ }
+}

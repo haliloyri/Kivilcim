@@ -1,0 +1,65 @@
+{
+  "story_id": 1269,
+  "kind": "concept",
+  "book": {
+    "title": "Why We Sleep",
+    "author": "Matthew Walker",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "Theory and experiment verified in the archive.org full text (chapter 'Dreaming as Overnight Therapy'). The REM/noradrenaline mechanism is Walker's theory with supporting evidence, not settled fact. Walker presents prazosin as approved for trauma nightmares, but a large 2018 VA trial (Raskind et al., NEJM) found it no better than placebo; the story states this caveat. Old PTSD/anxiety/depression causal chain and the 'sleep is therapeutic' quote dropped.",
+  "facts": [
+    "Walker set out to test the saying that time heals all wounds, suspecting it was time spent in dream sleep.",
+    "During REM sleep the stress chemical noradrenaline is completely shut off in the brain, the only time in twenty-four hours, while emotion and memory regions like the amygdala and hippocampus reactivate.",
+    "Experiment: healthy young adults viewed emotional images in an MRI scanner twice, twelve hours apart; half viewed morning then evening while awake, half evening then the next morning after sleep.",
+    "Those who slept reported significantly less emotion and showed a large drop in amygdala reactivity, with the prefrontal cortex re-engaged; the awake group's reactions were as strong or stronger.",
+    "The quality of REM sleep, reflecting the drop in stress chemistry, predicted who got the overnight relief.",
+    "Walker's phrase: REM sleep is 'sleeping to remember' the details and 'sleeping to forget' the painful emotional charge.",
+    "Dr. Murray Raskind at a VA hospital near Seattle gave veterans with PTSD the blood-pressure drug prazosin and their recurring nightmares eased; prazosin suppresses noradrenaline in the brain.",
+    "A large 2018 trial in veterans with chronic PTSD found prazosin no better than placebo for nightmares.",
+    "Walker's illustration: most of our strongest childhood memories are emotional (being separated from parents, nearly being hit by a car), yet recalling them no longer brings back the same intensity; he credits REM sleep for stripping the emotion while keeping the memory.",
+    "Raskind's patients returned after a few weeks of treatment saying, in effect, 'Doc, it's the strangest thing, my dreams don't have those flashback nightmares anymore.'",
+    "Walker argues that if REM sleep did not do this, every recall of a salient memory would bring back the same stressful charge, leaving us in chronic anxiety."
+  ],
+  "scene_details": [
+    "the MRI scanner and the same emotional images twelve hours later",
+    "the amygdala calming after sleep",
+    "prazosin, a blood-pressure pill",
+    "'time heals all wounds'"
+  ],
+  "tension": "Same images, same twelve hours; only one group got upset all over again.",
+  "opening_idea": "Open with the saying 'time heals all wounds' and Walker deciding to test it in a scanner.",
+  "lessons": [
+    {
+      "idea": "Give a painful day a night of sleep before deciding how you feel about it.",
+      "anchor": "The awake group stayed as reactive; the sleep group calmed.",
+      "example": "After a harsh comment from a boss, someone writes the reply but waits until after a night's sleep to send it."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What recent upsetting moment did you judge late at night, and how did it look the next morning?",
+  "use_cases": [
+    {
+      "situation": "A friend wants to settle an argument at midnight.",
+      "move": "Mention Walker's scanner study: after a night's sleep the same images hit less hard; suggest talking tomorrow.",
+      "context": "social"
+    },
+    {
+      "situation": "A family row is escalating in the evening.",
+      "move": "Propose pausing until breakfast and say why.",
+      "context": "family"
+    },
+    {
+      "situation": "You are replaying a bad moment in bed.",
+      "move": "Note the decision you're tempted to make and look at it again in the morning.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The same upsetting images hit less after a night's sleep; let REM work before you reply.",
+  "conversation_variants": {
+    "punchline_idea": "In REM sleep the brain's stress chemical noradrenaline shuts off completely, the only time it does all day.",
+    "thirty_sec_idea": "Walker scanned people looking at upsetting images twice, twelve hours apart; those who slept in between reacted far less, those awake did not. REM sleep, with noradrenaline off, seems to strip the emotional charge.",
+    "question_idea": "Has a problem ever looked smaller the next morning?",
+    "key_contrast_idea": "time versus dream sleep"
+  }
+}

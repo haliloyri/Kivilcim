@@ -1,0 +1,35 @@
+{
+  "story_id": 1549,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: vision ladder, Rocks and Image One from a summary; book not read. Old 'Kaldıraç' component and one-page claim dropped; year omitted.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Vizyondan çeyrek işine",
+    "description": "Wickman vizyonu on yıldan çeyreğe uzanan bir merdivene böler. Çeyreklik her kayanın tek bir sahibi vardır.",
+    "hook": "Önümüzdeki üç ayın tek önemli işini kim üstlenecek?",
+    "one_minute_summary": "Gino Wickman'ın Traction kitabında vizyon bir slogan olarak kalmaz, bir merdivene bölünür: çekirdek değerler, çekirdek odak, on yıllık hedef, üç yıllık resim, bir yıllık plan ve çeyreklik kayalar. Çeyrekte yaklaşık yedi kaya seçilir ve her birine tek bir sahip verilir. Bir özette Image One adlı şirket ağ işini bırakıp asıl odağına döner. Anlatım ikinci el özete dayanıyor ve kitabın tamamı okunmadı, bu yüzden ayrıntıları kitapta doğrulayın."
+  },
+  "en": {
+    "title": "From vision to this quarter",
+    "description": "Wickman breaks vision into a ladder from ten years to one quarter. Each quarterly Rock has a single owner.",
+    "hook": "Who owns the one important job of your next three months?",
+    "one_minute_summary": "In Gino Wickman's Traction, vision is not left as a slogan but broken into a ladder: core values, core focus, a ten-year target, a three-year picture, a one-year plan and quarterly Rocks. Each quarter the team picks about seven Rocks and gives each to one person. One summary tells how a company called Image One dropped its networking division to return to its core focus. This rests on a secondary summary and the book was not read in full, so check details in the book."
+  },
+  "es": {
+    "title": "De la visión al trimestre",
+    "description": "Wickman divide la visión en una escalera de diez años a un trimestre. Cada roca trimestral tiene un único dueño.",
+    "hook": "¿Quién es dueño del único trabajo importante de tus próximos tres meses?",
+    "one_minute_summary": "En Traction, de Gino Wickman, la visión no queda como eslogan sino que se divide en una escalera: valores centrales, enfoque central, objetivo a diez años, imagen a tres años, plan a un año y rocas trimestrales. Cada trimestre se eligen unas siete rocas y se da cada una a una sola persona. Un resumen cuenta que Image One dejó su división de redes para volver a su enfoque central. Esto se apoya en un resumen secundario, así que comprueba los detalles en el libro."
+  },
+  "de": {
+    "title": "Von der Vision zum Quartal",
+    "description": "Wickman zerlegt die Vision in eine Leiter vom Zehnjahresziel bis zum Quartal. Jeder Quartalsrock hat genau einen Eigentümer.",
+    "hook": "Wem gehört die eine wichtige Aufgabe deiner nächsten drei Monate?",
+    "one_minute_summary": "In Gino Wickmans Traction bleibt die Vision kein Slogan, sondern wird in eine Leiter zerlegt: Kernwerte, Kernfokus, Zehnjahresziel, Dreijahresbild, Einjahresplan und Quartals-Rocks. Jedes Quartal wählt das Team etwa sieben Rocks und gibt jeden einer Person. Eine Zusammenfassung erzählt, wie die Firma Image One ihre Netzwerksparte aufgab und zum Kernfokus zurückkehrte. Das stützt sich auf eine Zusammenfassung, das Buch wurde nicht ganz gelesen, prüfe Details im Buch."
+  }
+}

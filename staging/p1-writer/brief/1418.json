@@ -1,0 +1,35 @@
+{
+  "story_id": 1418,
+  "kind": "anecdote",
+  "book": {"title": "Blue Ocean Strategy", "author": "W. Chan Kim and Renée Mauborgne", "year": "2005"},
+  "confidence": "medium",
+  "confidence_note": "Four Actions definitions are from the authors' site (high). The Cirque grid comes from secondary pages that differ slightly on where some items sit; the version used matches the study page and shortform. Founder detail is from one source. The old text's mapping (raised sophisticated environment and artistic theme) was corrected.",
+  "facts": [
+    "The Four Actions Framework asks four questions: what to eliminate that the industry takes for granted, what to reduce well below the standard, what to raise well above it, and what to create that the industry has never offered.",
+    "Its aim is to break the trade-off between differentiation and low cost.",
+    "Cirque du Soleil's founder Guy Laliberté had been a street performer and treated the traditional circus as a red ocean.",
+    "Cirque eliminated star performers, animal shows, aisle concession sales and multiple show arenas.",
+    "It reduced fun and humor, and thrill and danger.",
+    "It raised the unique venue.",
+    "It created a theme, a refined environment, multiple productions, and artistic music and dance.",
+    "Dropping animals and star performers removed expensive elements, which cut costs."
+  ],
+  "scene_details": ["no animals and no star performers", "no vendors selling in the aisles", "a theme and artistic music and dance in place of the old acts"],
+  "tension": "A circus with no animals and no stars: what is left to sell?",
+  "opening_idea": "Open with the list of what Cirque left out.",
+  "lessons": [{"idea": "Asking what to drop, shrink, grow and add in a fixed order forces choices competitors skip.", "anchor": "Cirque's grid."}],
+  "reflect": [],
+  "reflect_final": "In what you offer now, which feature do you keep only because everyone in your field has it, and what would you add in its place?",
+  "use_cases": [
+    {"situation": "Planning next quarter's offer with your team", "move": "Say: Cirque dropped animals and star acts. What is our version of that? List one thing we eliminate before we add anything.", "context": "meeting"},
+    {"situation": "Redesigning your weekly schedule", "move": "Draw four columns: drop, shrink, grow, add. Fill each with one thing.", "context": "self"},
+    {"situation": "A friend is launching a small service", "move": "Ask: what does everyone in your field do that your customers never asked for?", "context": "social"}
+  ],
+  "pocket_idea": "Cirque left out animals and star acts and still sold a premium show: ask what you can drop before what you can add.",
+  "conversation_variants": {
+    "punchline_idea": "Cirque du Soleil removed the animals, the star acts and the aisle vendors, and called it a circus.",
+    "thirty_sec_idea": "Cirque du Soleil removed animals, stars and aisle concessions, cut thrill and humor, raised the venue and created a theme with music and dance.",
+    "question_idea": "",
+    "key_contrast_idea": "drop, shrink, grow, add"
+  }
+}

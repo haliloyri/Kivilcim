@@ -1,0 +1,35 @@
+{
+  "story_id": 1463,
+  "verdict": "keep",
+  "verify_note": "Keep: Simonides legend and the spatial-memory method confirmed in reviews and Psychology Today, with the Rhetorica ad Herennium date; the story is presented as a legend. Old evolution claim, the 1453 example and 'creativity' line not found and dropped. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Çöken salon ve oturma düzeni",
+    "description": "Efsaneye göre ozan Simonides, çöken bir ziyafet salonunda kimin nerede oturduğunu hatırlayarak ölüleri tanıttı. Hafıza sarayı buradan çıktı.",
+    "hook": "Neyi aklınızda tutmanız gerekiyorsa onu hangi bildik yere bırakırdınız?",
+    "one_minute_summary": "Efsaneye göre Yunan ozan Simonides, bir ziyafette bir ulak tarafından dışarı çağrıldı ve o çıkınca tavan çöktü. Konukların cesetleri tanınmayacak hale gelmişti, ama Simonides kimin nerede oturduğunu hatırlıyordu ve ölüler böyle tanındı. Hikâye, bilgiyi tanıdık bir mekânda bir güzergâh boyunca yerleştirip zihinde dolaşarak geri almaya dayanan hafıza sarayının kökeni sayılır. Yorumcular hikâyenin doğru mu efsane mi olduğunu bilmediğimizi söylüyor. Joshua Foer bu yöntemle bir yıl çalışıp 2006 USA Hafıza Şampiyonası'nı kazandı."
+  },
+  "en": {
+    "title": "Who sat where",
+    "description": "Legend says the poet Simonides named the dead of a collapsed banquet by remembering where each guest sat. The memory palace began there.",
+    "hook": "What would you leave in a room you know well to find later?",
+    "one_minute_summary": "Legend says the Greek poet Simonides was called out of a banquet by a messenger just before the roof fell in. The guests were crushed beyond recognition, but he recalled where each had been sitting, and the bodies were identified. The story is credited as the start of the memory palace: place information along a route through a familiar place, then walk it in your mind. Reviews call it possibly accurate and possibly myth. Joshua Foer trained with the method for about a year before winning the 2006 USA Memory Championship."
+  },
+  "es": {
+    "title": "Quién se sentaba dónde",
+    "description": "Cuenta la leyenda que el poeta Simónides nombró a los muertos de un banquete recordando dónde se sentaba cada uno. De ahí nace el palacio de la memoria.",
+    "hook": "¿Qué dejarías en una habitación que conoces para encontrarlo luego?",
+    "one_minute_summary": "Según la leyenda, el poeta griego Simónides fue llamado afuera de un banquete por un mensajero justo antes de que se derrumbara el techo. Los invitados quedaron irreconocibles, pero él recordaba dónde estaba sentado cada uno y así se identificó a los muertos. La historia se considera el origen del palacio de la memoria: colocar información a lo largo de un recorrido por un lugar conocido y recorrerlo luego mentalmente. Las reseñas dicen que puede ser cierta o un mito. Joshua Foer entrenó con el método un año y ganó el campeonato de 2006."
+  },
+  "de": {
+    "title": "Wer wo saß",
+    "description": "Der Legende nach nannte der Dichter Simonides die Toten eines eingestürzten Gastmahls, indem er sich erinnerte, wo jeder saß. So begann der Gedächtnispalast.",
+    "hook": "Was würdest du in einem Raum, den du kennst, ablegen, um es später zu finden?",
+    "one_minute_summary": "Der Legende nach wurde der griechische Dichter Simonides von einem Boten aus einem Gastmahl gerufen, kurz bevor das Dach einstürzte. Die Gäste waren nicht mehr zu erkennen, doch er wusste, wo jeder gesessen hatte, und so ließen sich die Toten identifizieren. Die Geschichte gilt als Ursprung des Gedächtnispalasts: Informationen entlang eines Wegs durch einen vertrauten Ort ablegen und ihn im Kopf abschreiten. Rezensionen nennen sie möglicherweise wahr, möglicherweise Mythos. Joshua Foer trainierte ein Jahr mit der Methode und gewann 2006 die US-Meisterschaft."
+  }
+}

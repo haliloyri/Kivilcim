@@ -1,0 +1,136 @@
+{
+  "book_no": 97,
+  "title": "Awaken the Giant Within",
+  "authors": [
+    "Anthony (Tony) Robbins"
+  ],
+  "year": "1991",
+  "sources": [
+    "https://archive.org/download/awaken-the-giant-within-anthony-robbins1/awaken-the-giant-within-anthony-robbins1_djvu.txt (full English text, an annotated study edition, read locally)",
+    "https://en.wikipedia.org/wiki/Awaken_the_Giant_Within (publication facts: Simon & Schuster, 1 Nov 1991)"
+  ],
+  "source_note": "Book text read. DB title 'Icsel Guc' is taken to be Awaken the Giant Within (1991); the text itself names 'Inner Strength' only as an earlier work. The firewalk physics and the 'six human needs' of the old texts do not appear in this book.",
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Robbins: a belief is 'a feeling of certainty about something'. An idea is like a tabletop with no legs; it will not stand by itself. The legs are references, experiences that back the idea up. 'Those are the legs that make your tabletop solid.'",
+      "source": "chapter on belief systems",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Sources of references: personal experience, information from other people, books, tapes, movies, and imagination alone. The strongest legs come from personal experiences with a lot of emotion attached, painful or pleasurable; the more references, the stronger the belief. References can be real or imaginary, accurate or inaccurate.",
+      "source": "belief systems chapter",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "For thousands of years people held the belief that a human could not run a mile in under four minutes. In 1954 Roger Bannister broke that barrier.",
+      "source": "belief systems chapter",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Robbins says Bannister got there not merely by physical practice but by constantly rehearsing the event in his mind, breaking the four-minute barrier so many times with such emotional intensity that he created vivid references that became an unquestioned command to his nervous system. (Robbins's account of Bannister's method.)",
+      "source": "belief systems chapter",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Robbins writes that the greatest effect of the breakthrough was on others: within one year of Bannister's run 37 other runners broke four minutes, and the year after that 300 did the same. (Figures as given by Robbins; not independently checked.)",
+      "source": "belief systems chapter",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Robbins: many people live by 'being realistic' because they failed before; he says most people who keep saying 'let's be realistic' are living in fear of being disappointed again.",
+      "source": "chapter on limiting beliefs",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Robbins defines a state as the sum of millions of neurological processes, the sum total of our experience at any moment. Forgetting a friend's name or how to spell 'house' is not stupidity, he says, but being in a 'stupid state'. The difference between acting badly or brilliantly is the state of mind and body, not ability.",
+      "source": "chapter on state (quoting Unlimited Power)",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "'To change your ability, change your state.' Two primary ways to change an emotional state: change how you use your body (physiology), or change your focus.",
+      "source": "state chapter",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "TV analogy: physiology is the electricity the set needs; focus is the channel. 'Emotion is created by motion.' Every emotion has a physiology linked to it: posture, breathing, patterns of movement, facial expressions.",
+      "source": "'Physiology: The Power of Movement'",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Exercise: swing your arms slowly and routinely like a bored, humorless symphony conductor with a bored face, notice the feeling; then clap your hands explosively and snap them out with a big silly grin and a loud sound, and the feeling changes.",
+      "source": "'Physiology'",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "Robbins says people in his Date With Destiny seminar write all the emotions they feel in an average week, and the average is less than a dozen (his claim); we have over eighty muscles in the face.",
+      "source": "'Physiology'",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Robbins worked with John Denver, who had writer's block. They found his best songs had come after something physical: skiing down a mountain, flying his jet or biplane, driving his sports car fast. Frustrations had kept him from the same intense outdoor activity. Robbins says that getting back into a strong physiology restored the flow of his creativity immediately.",
+      "source": "state chapter",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Walking on coals at about 800 degrees Celsius, explained by physics (old 1387)",
+      "reason": "Not in Awaken the Giant Within. Firewalking is only mentioned in passing in one reader's story. Story rebuilt on references and the four-minute mile."
+    },
+    {
+      "claim": "Six human needs: certainty, variety, significance, connection, growth, contribution (old 1388)",
+      "reason": "Not found in this book's text; verified absent. Story deleted."
+    },
+    {
+      "claim": "'Knowledge is not power; applied knowledge is power' quoted as Robbins (old 1389)",
+      "reason": "Not in the text as quoted."
+    },
+    {
+      "claim": "Posture shown to the brain as 'low energy mode' (old 1389 mechanism)",
+      "reason": "Book states the link between physiology and emotion without that neurological wording."
+    }
+  ],
+  "stories": {
+    "1387": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "note": "Title changed: firewalk not in book; rebuilt on references and the four-minute mile."
+    },
+    "1388": {
+      "verdict": "delete",
+      "fact_ids": [],
+      "note": "Six human needs not in the book; no other central subject maps to this title."
+    },
+    "1389": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12"
+      ],
+      "note": "State and physiology; John Denver example."
+    }
+  }
+}

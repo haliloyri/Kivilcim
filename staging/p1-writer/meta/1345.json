@@ -1,0 +1,35 @@
+{
+ "story_id": 1345,
+ "verdict": "keep",
+ "verify_note": "Verified against the full text of The Paradox of Choice (2004), prologue and ch. 4. Fixed: the jeans turned out fine (old text said he left unhappy); the cost was a daylong project and self-doubt. Invented 'three problems' list dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Bir Kot Pantolon İçin Bütün Gün",
+  "description": "Barry Schwartz tek bir kot almak için mağazaya girer ve bir kesim şemasıyla kabinde koca bir gün geçirir. Kot gayet iyi çıkar, asıl bedel başka yerdedir.",
+  "hook": "Daha önce hiç umursamadığınız bir farkı, sırf seçenek çoğaldığı için umursamaya başladığınız oldu mu?",
+  "one_minute_summary": "Barry Schwartz kot almak için Gap'e gider ve bedenini söyler. Karşılığında dar, rahat, bol, taşlanmış, düğmeli ya da fermuarlı diye uzayan bir soru listesi alır. Normal kot isteyince görevli bunun ne olduğunu kıdemli bir meslektaşına sormak zorunda kalır. Schwartz her kesimi dener ve easy fit'i seçer. Kot gayet iyi çıkar, ama beş dakikalık iş kendinden şüpheyle dolu bir güne dönüşmüştür. Üstelik artık daha önce umursamadığı kalıbı umursamaktadır."
+ },
+ "en": {
+  "title": "A Whole Day for Jeans",
+  "description": "Barry Schwartz walks into the Gap for one pair of jeans and ends up in the dressing room with every cut. The jeans are fine; the cost lies elsewhere.",
+  "hook": "Have you ever started caring about a difference only because the shop offered you so many versions of it?",
+  "one_minute_summary": "Barry Schwartz asks for a pair of jeans and gets a list of questions back: slim, easy, relaxed, baggy, stonewashed, button-fly. When he asks for regular jeans, the salesperson has to check with an older colleague. He tries every cut, studies the mirror and picks easy fit. The jeans turn out fine. But a five-minute errand has become a day of self-doubt, and he now cares about fit in a way he never did before."
+ },
+ "es": {
+  "title": "Un día entero por unos vaqueros",
+  "description": "Barry Schwartz entra en una tienda a por unos vaqueros y acaba en el probador con un par de cada corte. Los vaqueros le quedan bien, pero el precio fue otro.",
+  "hook": "¿Te ha pasado empezar a preocuparte por una diferencia solo porque la tienda te ofrecía demasiadas versiones?",
+  "one_minute_summary": "Barry Schwartz pide unos vaqueros y recibe una lista de preguntas: slim, easy, relaxed, a la piedra, con botones o con cremallera. Cuando pide unos normales, la dependienta tiene que preguntar a una compañera qué eran. Se prueba un par de cada corte y elige el easy. Los vaqueros le quedan bien, pero lo que antes eran cinco minutos se convierte en un día de dudas, y desde entonces le importa un ajuste en el que antes ni se fijaba."
+ },
+ "de": {
+  "title": "Ein ganzer Tag für eine Jeans",
+  "description": "Barry Schwartz will bei Gap nur eine Jeans kaufen und landet mit jedem Schnitt in der Umkleide. Die Hose passt gut, bezahlt hat er mit etwas anderem.",
+  "hook": "Ist dir schon einmal ein Unterschied wichtig geworden, nur weil der Laden so viele Varianten davon hatte?",
+  "one_minute_summary": "Barry Schwartz will eine Jeans kaufen und bekommt eine Liste von Fragen zurück: slim, easy, relaxed, stonewashed, Knöpfe oder Reißverschluss. Als er eine normale Jeans verlangt, muss die Verkäuferin eine ältere Kollegin fragen. Er probiert jeden Schnitt und nimmt easy fit. Die Hose passt gut. Doch aus fünf Minuten ist ein Tag voller Selbstzweifel geworden, und plötzlich ist ihm eine Passform wichtig, über die er vorher nie nachgedacht hat."
+ }
+}

@@ -1,0 +1,40 @@
+{
+  "story_id": 1316,
+  "kind": "anecdote",
+  "book": {"title": "Hooked: How to Build Habit-Forming Products", "author": "Nir Eyal", "year": "2014"},
+  "confidence": "high",
+  "confidence_note": "Verified in the full text of Hooked. The study shows a correlation, not that the internet causes depression or that email relieves it; Eyal offers the relief explanation as one hypothesis. The old text's first-person user quotes ('I felt bored, I opened Instagram') are not in the book and are dropped.",
+  "facts": [
+    "In 2011, 216 undergraduates at the Missouri University of Science and Technology volunteered to have their internet activity tracked anonymously over the academic year.",
+    "At the end, researchers compared the anonymized data with that of students who had visited university health services for symptoms of depression.",
+    "Study author Sriram Chellappan wrote that participants with depressive symptoms 'tended to engage in very high email usage', along with more video watching, gaming and chatting.",
+    "Eyal: the study showed people with symptoms of depression used the internet more; one hypothesis is that they feel negative emotions more often and turn to technology for relief.",
+    "Eyal lists negative emotions such as boredom, loneliness, frustration, confusion and indecisiveness as powerful internal triggers that prompt an almost instant, often mindless action.",
+    "His pairings: boredom sends people to dramatic headlines, stress to Pinterest, loneliness to Facebook and Twitter, uncertainty to Google; email answers the question of whether someone needs us.",
+    "Once a product is linked to a feeling, users return on their own without external prompts; forming that link can take weeks or months."
+  ],
+  "scene_details": [
+    "216 students' web activity logged anonymously for an academic year",
+    "very high email use among students with depressive symptoms",
+    "checking email to see if someone needs us"
+  ],
+  "tension": "Students with symptoms of depression did not just use the internet more; they checked their email far more, and the reason may be a feeling, not a message.",
+  "opening_idea": "Start with the 216 students who let researchers log every website they visited for a year.",
+  "lessons": [
+    {"idea": "Many repeated checks answer a feeling rather than a need for information; noticing which feeling it is gives you a choice.", "anchor": "Heavy email checking clustered with depressive symptoms; Eyal reads email as a way to see if someone needs us.", "everyday_example_idea": "Someone sees they refresh their inbox mostly on evenings they feel left out, and calls a friend instead."}
+  ],
+  "reflect": [],
+  "reflect_final": "When you last checked your email or a feed with nothing new expected, what were you feeling just before you did it?",
+  "use_cases": [
+    {"situation": "A colleague jokes that they check email every five minutes.", "move": "Mention the Missouri study: heavy email checking tracked with low mood. Ask, kindly, whether the checking helps.", "context": "oneonone"},
+    {"situation": "You open a feed in the evening for the third time.", "move": "Write one word for the feeling on a sticky note before you scroll.", "context": "self"},
+    {"situation": "A teenager at home spends evenings scrolling.", "move": "Ask what kind of day it was before talking about screen time.", "context": "family"}
+  ],
+  "pocket_idea": "When you check email with nothing to expect, the inbox may be answering a feeling, not a message.",
+  "conversation_variants": {
+    "punchline_idea": "A Missouri study found that students with depressive symptoms checked their email far more than others.",
+    "thirty_sec_idea": "In 2011, 216 students at a Missouri university let researchers log their internet use for a year. Students who'd sought help for depression used the internet more, especially email, plus video, games and chat. Nir Eyal's reading in Hooked: bad feelings are powerful triggers, and we reach for whatever brought relief last time. It's a correlation, but it explains a lot of checking.",
+    "question_idea": "",
+    "key_contrast_idea": "Checking for feeling, not news"
+  }
+}

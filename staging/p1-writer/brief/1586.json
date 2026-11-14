@@ -1,0 +1,63 @@
+{
+  "story_id": 1586,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Circadian Code",
+    "author": "Satchin Panda",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Mouse study (100 days, 8-hour window, 28 percent lower weight) and eight-person pilot are from Salk/ScienceDaily reports of Panda's papers; the old text said 18 weeks and a 12-week human study, which could not be verified. Panda himself said human studies were needed, and Salk notes risk for undiagnosed fasting hypoglycemia, so a caveat is kept. Not checked against the book text itself.",
+  "facts": [
+    "Panda's lab fed two groups of mice a diet with 60 percent of calories from fat. One ate whenever it liked; the other had access only in an 8-hour window each night, so it fasted about 16 hours a day.",
+    "Both high-fat groups ate the same number of calories.",
+    "After 100 days the mice that ate freely had gained weight and developed high cholesterol, high blood glucose, liver damage and worse motor control.",
+    "The restricted mice weighed 28 percent less and showed none of these effects, and did better on an exercise test.",
+    "Panda said at the time: we will have to wait for human studies to prove this. Co-author Megumi Hatori said there are bound to be limits.",
+    "A later pilot with eight overweight people who ate over 14 hours a day asked them to eat within 10 to 11 hours without changing anything else; after 16 weeks they had lost weight and said they felt more energetic and slept better.",
+    "Panda cautioned that eating duration is not the only way to improve health and may be risky for people with undiagnosed fasting hypoglycemia.",
+    "The pilot participants kept a weekly 'feedogram', a chart of their eating pattern, during the 16 weeks.",
+    "Two control groups of mice ate a standard diet with about 13 percent of calories from fat."
+  ],
+  "scene_details": [
+    "same calories, different clocks",
+    "an 8-hour window each night",
+    "eight volunteers, 16 weeks",
+    "weekly feedogram"
+  ],
+  "tension": "Two groups ate the same calories of the same food; only the clock differed, and so did the outcome.",
+  "opening_idea": "Start with two cages of mice eating the same high-fat food at different hours.",
+  "lessons": [
+    {
+      "idea": "The hours you eat may matter as well as how much; try narrowing them if your doctor agrees.",
+      "anchor": "Mice with an 8-hour window weighed 28 percent less on the same calories.",
+      "example": "Someone who snacks until midnight could set the kitchen closed at a fixed evening time for one week and see how they sleep."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you wanted to test your own eating hours, what one change to the evening would you try and what would you check afterward?",
+  "use_cases": [
+    {
+      "situation": "A friend asks about eating windows.",
+      "move": "Say the mouse study found 28 percent less weight on equal calories, but humans are different; Panda said we must wait for human studies.",
+      "context": "social"
+    },
+    {
+      "situation": "You want to try a shorter eating day.",
+      "move": "Tell your doctor first, especially if you have diabetes or low blood sugar, then try one week.",
+      "context": "self"
+    },
+    {
+      "situation": "Your partner snacks late every night.",
+      "move": "Ask to compare how you both sleep this week if the kitchen closes at a fixed time.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Same food, same calories, different clock: ask a doctor before you narrow your eating window.",
+  "conversation_variants": {
+    "punchline_idea": "Mice ate the same calories of the same food; the ones with an 8-hour window weighed 28 percent less.",
+    "thirty_sec_idea": "Panda's lab gave mice the same fatty food. Free eaters gained weight and developed liver damage; mice limited to 8 hours a night weighed 28 percent less. Panda said human studies were needed. A pilot with eight people eating within 10 to 11 hours reported better energy and sleep.",
+    "question_idea": "If you narrowed your eating hours, what would you want to notice?",
+    "key_contrast_idea": "when, not how much"
+  }
+}

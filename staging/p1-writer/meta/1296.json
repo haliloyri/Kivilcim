@@ -1,0 +1,35 @@
+{
+ "story_id": 1296,
+ "verdict": "keep",
+ "verify_note": "Keep. Sherwood's five-step remote-work negotiation verified in the book text ('Disappearing Act'), framed as the book's worked example, not a real client. Old details (real client, Portugal, two months, made permanent) dropped. Sick-day tactic reported, not endorsed.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İki günlük deneme",
+  "description": "Ferriss'in örnek mühendisi Sherwood, ofisten kaçışını küçük ve geri alınabilir denemelerle adım adım kuruyor.",
+  "hook": "Patronunuzdan büyük bir değişikliği nasıl iki haftalık bir denemeye çevirirsiniz?",
+  "one_minute_summary": "Ferriss, ofisten kaçışı Sherwood adlı örnek bir mühendis üzerinden anlatıyor. Sherwood önce şirkete bir kurs ödetiyor, sonra iki gün evden çalışıp fazladan çıkardığı tasarımları kaydediyor. Patronu Bill'e haftada iki gün evden çalışmayı, iki haftalık ve her an durdurulabilir bir deneme olarak öneriyor. Rakamlar iyi gelince dört gün, sonra tam zamanlı istiyor ve bunu doğru zamanda yapıyor. Sonunda Münih'e 524 dolarlık bilet alıyor."
+ },
+ "en": {
+  "title": "The two-day trial",
+  "description": "Ferriss's example engineer, Sherwood, escapes the office through small trials his boss can cancel at any time.",
+  "hook": "How do you turn a big request into a two-week trial your boss can stop?",
+  "one_minute_summary": "Ferriss walks through an example engineer he calls Sherwood. Sherwood gets the company to pay for a course, works two sick days from home and logs three extra designs a day. He then asks his boss Bill for two remote days for two weeks, cancellable any time. With good numbers he moves to four days, then full time, asking at a moment when his team needs him. He ends up with a $524 ticket to Munich for Oktoberfest."
+ },
+ "es": {
+  "title": "La prueba de dos días",
+  "description": "Sherwood, el ingeniero de ejemplo de Ferriss, sale de la oficina con pruebas pequeñas que su jefe puede cancelar cuando quiera.",
+  "hook": "¿Cómo conviertes una gran petición en una prueba de dos semanas que tu jefe pueda detener?",
+  "one_minute_summary": "Ferriss sigue a un ingeniero de ejemplo al que llama Sherwood. Primero logra que la empresa le pague un curso, luego trabaja dos días de baja desde casa y anota tres diseños más al día. Después le pide a su jefe, Bill, dos días en remoto durante dos semanas, cancelables en cualquier momento. Con buenos números pasa a cuatro días y luego a tiempo completo, pidiéndolo cuando el equipo lo necesita. Acaba comprando un billete a Múnich por 524 dólares."
+ },
+ "de": {
+  "title": "Der Zwei-Tage-Test",
+  "description": "Ferriss' Beispielingenieur Sherwood kommt mit kleinen Tests aus dem Büro, die sein Chef jederzeit stoppen kann.",
+  "hook": "Wie machst du aus einer großen Bitte einen Zwei-Wochen-Test, den dein Chef jederzeit beenden kann?",
+  "one_minute_summary": "Ferriss begleitet einen Beispielingenieur, den er Sherwood nennt. Erst lässt er sich von der Firma einen Kurs bezahlen, dann arbeitet er zwei Krankheitstage von zu Hause und notiert drei Entwürfe mehr pro Tag. Danach bittet er seinen Chef Bill um zwei Homeoffice-Tage für zwei Wochen, jederzeit kündbar. Mit guten Zahlen werden es vier Tage, dann Vollzeit, gefragt in einem Moment, in dem das Team ihn braucht. Am Ende kauft er für 524 Dollar ein Ticket nach München."
+ }
+}

@@ -1,0 +1,44 @@
+{
+  "book_no": 160,
+  "title": "Drive: The Surprising Truth About What Motivates Us",
+  "authors": ["Daniel H. Pink"],
+  "year": "2009",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Drive:_The_Surprising_Truth_About_What_Motivates_Us",
+    "https://en.wikipedia.org/wiki/Overjustification_effect",
+    "https://fourminutebooks.com/drive-summary/",
+    "https://www.asmp.org/strictly-business-blog/fedex-days/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2736104",
+    "https://www.sciencedaily.com/releases/2009/05/090514111402.htm",
+    "https://selfdeterminationtheory.org/rochester-review-self-determined-motivates/"
+  ],
+  "source_note": "Book itself not read. Facts from Wikipedia, summaries, an ASMP blog on FedEx Days, the PMC copy of Niemiec, Ryan and Deci (2009), and a web search on Deci's puzzle study. That Drive cites the Rochester graduates study is recalled, not confirmed.",
+  "facts": [
+    {"id":"f1","claim":"Drive by Daniel H. Pink was published on 29 December 2009 by Riverhead (256 pages).","source":"Wikipedia","confidence":"high"},
+    {"id":"f2","claim":"Core argument: motivation is largely intrinsic, built on autonomy, mastery and purpose. Pay enough to take the issue of money off the table. Higher pay improves performance only on basic mechanical tasks; for cognitive tasks it led to lower performance.","source":"Wikipedia","confidence":"high"},
+    {"id":"f3","claim":"Deci's puzzle study (Journal of Personality and Social Psychology, 1971): subjects interested in a puzzle (Soma cube pieces). Control group never paid over three days; experimental group unpaid on day 1, paid on day 2, unpaid on day 3. In a break in the middle of each session subjects were observed doing whatever they liked; time spent on the puzzle was measured. Paid group played more on day 2 and significantly less on day 3 than control.","source":"Wikipedia Overjustification effect; web search","confidence":"high"},
+    {"id":"f4","claim":"Setup details in retellings: seven Soma pieces, puzzle drawings, magazines (Time, The New Yorker, Playboy) on the table; Deci left the room and watched through a one-way window. Break length and per-puzzle pay vary between sources, so both are omitted.","source":"web search, mixed quality","confidence":"medium"},
+    {"id":"f5","claim":"Caveat: Eisenberger and Cameron (1996) questioned the study; the lower interest might reflect a negative reaction to the reward being withdrawn, and free time is a weak measure compared with self-reports.","source":"Wikipedia Overjustification effect","confidence":"high"},
+    {"id":"f6","claim":"Candle problem: participants offered money for a fast solution performed much worse than those offered none.","source":"fourminutebooks","confidence":"medium"},
+    {"id":"f7","claim":"Children's drawing study: children rewarded for drawing later refused to draw without a reward; unrewarded children kept drawing for fun.","source":"fourminutebooks","confidence":"medium"},
+    {"id":"f8","claim":"Atlassian introduced FedEx Days in 2005 (now called ShipIt Day). The name borrows FedEx's promise to ship overnight, so participants get 24 hours to originate, develop and deliver something new. One account says the 2005 version gave developers a day and a half and that results were shown to colleagues at the end. Format modeled on Google's 20 percent time. Several companies credit Drive as inspiration.","source":"ASMP blog; web search","confidence":"medium"},
+    {"id":"f9","claim":"Companies report expanded skills, new collaborations and renewed excitement from FedEx days; no measured figures.","source":"ASMP blog","confidence":"medium"},
+    {"id":"f10","claim":"Autonomy in Pink's account covers what you do, when, how and with whom (task, time, technique, team).","source":"search summary; own knowledge","confidence":"medium"},
+    {"id":"f11","claim":"Niemiec, Ryan and Deci (2009, Journal of Research in Personality): recent college graduates rated the importance of extrinsic aims (money, fame, image) and intrinsic aims (personal growth, relationships, community) at one and two years after college. Attaining intrinsic aims related to better psychological health; attaining extrinsic aims did not, and was linked to indicators of ill-being. Mediated by satisfaction of needs for autonomy, competence and relatedness. Correlational, self-reported.","source":"PMC2736104; ScienceDaily","confidence":"high"},
+    {"id":"f12","claim":"Pink put Deci and Ryan front and center, calling their work the sun around which the other research orbits. He frames purpose maximization against profit maximization.","source":"Rochester Review via selfdeterminationtheory.org","confidence":"medium"}
+  ],
+  "rejected": [
+    {"claim":"Old text: 1969 Soma experiment with money per puzzle","reason":"Published 1971; pay structure varies by source"},
+    {"claim":"Controlling vs informational feedback sentences ('you earn a reward' vs 'you are really good at this')","reason":"Not confirmed as Drive content"},
+    {"claim":"Atlassian: monthly free day starting 2006, dozens of products and patches","reason":"Sources give 2005 and no output figures"},
+    {"claim":"Google 20 percent time produced Gmail and Google Maps","reason":"Not confirmed from sources found"},
+    {"claim":"Pink defines three types of autonomy (task, time, technique)","reason":"Four aspects, including team"},
+    {"claim":"fMRI study: imagining money lights reward center, imagining contributing also lights meaning region","reason":"No source"},
+    {"claim":"TOMS Shoes as Pink's purpose example","reason":"No source"}
+  ],
+  "stories": {
+    "1576": {"verdict":"keep","fact_ids":["f3","f4","f5","f6","f7"],"note":"Anecdote; solid."},
+    "1577": {"verdict":"keep","fact_ids":["f8","f9","f10"],"note":"Thin on outcomes; story may run about 10 percent short."},
+    "1578": {"verdict":"keep","fact_ids":["f11","f12"],"note":"Reframed around the Rochester graduates study replacing the unsupported fMRI/TOMS text. Whether Drive cites it is medium confidence."}
+  }
+}

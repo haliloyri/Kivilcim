@@ -1,0 +1,35 @@
+{
+ "story_id": 1518,
+ "verdict": "keep",
+ "verify_note": "Keep: commitment and advancement, the three currencies and the quoted lines verified in several detailed summaries, not full text. Old text's invented ten-interview founder, 'commitment ladder' and credit-card lines dropped. Concept, medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Toplantıdan sonra ne olacak",
+  "description": "Rob Fitzpatrick'e göre iyi bir müşteri toplantısı zaman, itibar ya da para getirir ve bir sonraki adımı belirler.",
+  "hook": "Son toplantınızda karşınızdaki neden vazgeçti?",
+  "one_minute_summary": "Rob Fitzpatrick'in *The Mom Test* kitabına göre bir müşteri toplantısı ancak taahhüt ve ilerleme getirdiyse başarılıdır. Taahhüt, müşterinin değer verdiği bir şeyden vazgeçmesidir: zaman, itibar (bir tanıştırma ya da referans) ya da para (kapora, ön sipariş). İlerleme, satış sürecinde bir sonraki gerçek adımdır. \"Çıkınca haber ver\" hiçbir şey saymaz, \"Prototipi satın alabilir miyim?\" sayar. Ne kadar çok vazgeçiyorlarsa o kadar ciddiye alın."
+ },
+ "en": {
+  "title": "What happens after the meeting",
+  "description": "Rob Fitzpatrick says a good customer meeting gets time, reputation or money and sets a next step.",
+  "hook": "What did the other person give up in your last meeting?",
+  "one_minute_summary": "In Rob Fitzpatrick's *The Mom Test*, a customer meeting counts only if it delivers commitment or advancement. Commitment means the customer gives up something they value: time, reputation (an introduction or testimonial) or money (a deposit, a pre-order). Advancement is a real next step in the sales process. 'Let me know when it launches' counts for nothing; 'Can I buy the prototype?' counts. The more they give up, the more seriously you can take them."
+ },
+ "es": {
+  "title": "Qué pasa tras la reunión",
+  "description": "Según Rob Fitzpatrick, una buena reunión con un cliente consigue tiempo, reputación o dinero y fija un siguiente paso.",
+  "hook": "¿A qué renunció la otra persona en tu última reunión?",
+  "one_minute_summary": "En *The Mom Test*, de Rob Fitzpatrick, una reunión con un cliente solo cuenta si logra compromiso o avance. Compromiso es que el cliente renuncie a algo que valora: tiempo, reputación (una presentación o un testimonio) o dinero (un depósito, un pedido anticipado). Avance es un paso real del proceso de venta. «Avísame cuando salga» no cuenta; «¿Puedo comprar el prototipo?» sí. Cuanto más ceden, más en serio puedes tomarlos."
+ },
+ "de": {
+  "title": "Was nach dem Treffen passiert",
+  "description": "Laut Rob Fitzpatrick bringt ein gutes Kundengespräch Zeit, Ansehen oder Geld und legt einen nächsten Schritt fest.",
+  "hook": "Was hat der andere in deinem letzten Treffen aufgegeben?",
+  "one_minute_summary": "In Rob Fitzpatricks *The Mom Test* zählt ein Kundengespräch nur, wenn es Commitment oder Fortschritt bringt. Commitment heißt, der Kunde gibt etwas auf, das ihm wichtig ist: Zeit, Ansehen (eine Vorstellung oder Empfehlung) oder Geld (Anzahlung, Vorbestellung). Fortschritt ist ein echter nächster Schritt im Verkaufsprozess. „Sag Bescheid, wenn es startet“ zählt nicht, „Kann ich den Prototyp kaufen?“ schon. Je mehr er aufgibt, desto ernster nimmst du ihn."
+ }
+}

@@ -1,0 +1,38 @@
+{
+  "book_no": 116,
+  "title": "The Loyalty Effect",
+  "authors": ["Frederick F. Reichheld"],
+  "year": "1996",
+  "sources": [
+    "https://www.publishersweekly.com/9780875844480 (Publishers Weekly review, 4 March 1996)",
+    "https://stevebooks.blogspot.com/2005/05/loyalty-effect-hidden-force-behind.html (reader summary; numbers medium confidence)",
+    "https://en.wikipedia.org/wiki/The_Loyalty_Effect",
+    "https://en.wikipedia.org/wiki/Loyalty_business_model",
+    "https://openlibrary.org/books/OL803497M/The_loyalty_effect"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "The Loyalty Effect: The Hidden Force Behind Growth, Profits, and Lasting Value (1996, Harvard Business School Press) was written by Frederick F. Reichheld, a director at Bain & Company, with Bain editor Thomas Teal credited as co-author on the revised edition.", "source": "Publishers Weekly; Wikipedia", "confidence": "high"},
+    {"id": "f2", "claim": "The book says major companies replace about half their customers in five years, about half their employees in four (the jacket) or four and a half (Publishers Weekly) years, and about half their investors in under a year.", "source": "Publishers Weekly; publisher copy", "confidence": "high"},
+    {"id": "f3", "claim": "A reader summary adds: a typical company loses 10% to 30% of its customers each year; employee turnover of 15% to 25% a year is common; about 40% of US employees stay with an employer two years or less; disloyalty reduces corporate performance by 25% to 50% or more.", "source": "stevebooks blog summary", "confidence": "medium"},
+    {"id": "f4", "claim": "Customer defection is described as one of the most revealing measures of business failure; the goal the book sets is zero customer defection.", "source": "stevebooks blog summary", "confidence": "medium"},
+    {"id": "f5", "claim": "Central thesis: a cause-and-effect relationship between employee loyalty and customer loyalty. Disloyal employees rarely build lasting customer relationships, which take time; long-term employees add value through training, efficiency, customer selection, retention and referrals.", "source": "Publishers Weekly; blog summary", "confidence": "medium"},
+    {"id": "f6", "claim": "Core recommendation is 'loyalty-based management': actively retaining customers and targeting those likely to stay loyal. Examples of companies that improved their results through loyalty include State Farm and Toyota/Lexus (also MBNA, John Deere, Leo Burnett per the catalog description).", "source": "Publishers Weekly; Open Library", "confidence": "medium"},
+    {"id": "f7", "claim": "The jacket claims a small gain in customer retention can double profits; a reader summary puts it as a 5% rise in retention raising an average customer's value by 25% to 100%. Another 1990 Reichheld and Sasser calculation cited on Wikipedia gives 25% to 85%, so the exact range is unsettled.", "source": "Open Library; blog; Wikipedia Loyalty business model", "confidence": "low"},
+    {"id": "f8", "claim": "Why loyal customers pay: acquisition costs can turn negative once base profit, cost savings, referrals and price premiums are counted; referred prospects close at significantly higher rates than walk-in customers; senior managers often make sales proposals, which inflates acquisition costs; most help desk calls come from new customers; in mature companies 20% to 30% of acquisition spending is often wasteful.", "source": "stevebooks blog summary", "confidence": "medium"},
+    {"id": "f9", "claim": "Many companies pay salespeople for winning new customers rather than keeping existing ones; salespeople who do not expect to stay have little reason to pursue repeat business; the sales channel should attract the right customers, not just many.", "source": "stevebooks blog summary", "confidence": "medium"},
+    {"id": "f10", "claim": "Caveat: Wikipedia notes that Carrol and Reichheld (1992) disputed some retention-to-profit calculations (such as the 1990 Reichheld and Sasser figures) as resting on faulty cross-sectional analysis.", "source": "Wikipedia Loyalty business model", "confidence": "medium"}
+  ],
+  "rejected": [
+    {"claim": "Customers who leave: 4% to 14% complain, the rest leave silently; the 'iceberg problem' term (1444 old text)", "reason": "Not found in the sources for this book; the numbers are widely cited from consumer-complaint research, not from the book."},
+    {"claim": "A leaving customer tells 8 to 10 people, a retained customer 5 (1444 old text)", "reason": "Not found in any source for this book."},
+    {"claim": "'Long-term interest of the customer before the short-term interest of the company' as the only path to loyalty (1444 old text)", "reason": "Not stated in the sources in that form; replaced by loyalty-based management as documented."},
+    {"claim": "Net Promoter Score (the 0-10 'would you recommend' question, promoters/passives/detractors) as a finding of The Loyalty Effect (1445 old text)", "reason": "NPS was introduced by Reichheld in a 2003 Harvard Business Review article and the 2006 book The Ultimate Question, ten years after The Loyalty Effect. Not in this book. Story deleted."},
+    {"claim": "Acquiring a new customer costs up to five times as much as retaining one (1446 old text)", "reason": "The 'five times' ratio is not in the sources for this book."},
+    {"claim": "Loyal customers spend more in year 1, year 2, year 5 and are less price sensitive, each referral brings 'several' customers at zero cost (1446 old text)", "reason": "General direction (more profit with tenure, referrals, price premium) is supported; 'several customers' and the year-by-year spending are not and were dropped."}
+  ],
+  "stories": {
+    "1444": {"verdict": "keep", "fact_ids": ["f2", "f3", "f4", "f5", "f6"], "note": "Rebuilt around the book's own turnover figures (half of customers, employees, investors) and defection as a measure of failure. Complaint/iceberg and word-of-mouth numbers are not in the book and were dropped. Medium confidence."},
+    "1445": {"verdict": "delete", "fact_ids": [], "note": "Net Promoter Score is not in The Loyalty Effect (1996). It came with Reichheld's 2003 HBR article and 2006 book The Ultimate Question. The story cannot be tied to this book."},
+    "1446": {"verdict": "keep", "fact_ids": ["f7", "f8", "f9", "f10"], "note": "Rebuilt around the economics of loyal customers and the incentive to pay for acquisition; the unsupported 'five times' ratio dropped; honest caveat on retention-profit calculations added. Medium confidence."}
+  }
+}

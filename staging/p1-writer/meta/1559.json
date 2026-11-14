@@ -1,0 +1,35 @@
+{
+  "story_id": 1559,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt from the prologue and chapter 1 of the full text (Marilyn's mother, Brach's hike, the 'toxic gas' friend, the proud writer). Retreat hand-raising and evolutionary/cultural claims are not in the book and were dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Annenin fısıldadığı cümle",
+    "description": "Ölmekte olan bir anne hayatı boyunca kendinde bir sorun olduğunu düşündüğünü fısıldadı. Tara Brach bu cümlenin sıradan günlerde nasıl çalıştığını anlatıyor.",
+    "hook": "Hata yaptığınızda kafanızda hangi cümle kendiliğinden çalmaya başlıyor?",
+    "one_minute_summary": "Marilyn, ölmekte olan annesinin başında saatler geçirdi. Anne şafaktan önce gözlerini açıp fısıldadı: hayatım boyunca bende bir sorun olduğunu düşündüm. Sonra gözlerini kapadı ve birkaç saat sonra öldü. Marilyn bunu annesinin veda hediyesi olarak gördü ve kendine daha şefkatle yaklaşmaya karar verdi. Tara Brach bu duruma 'yetersizlik transı' der. Binlerce danışanında gördüğü gibi tetikleyici küçüktür: başkasının başarısı, bir eleştiri, işte yapılan bir hata. Bir arkadaşı bunu sürekli soluduğu görünmez, zehirli bir gaza benzetmişti."
+  },
+  "en": {
+    "title": "A mother's whispered sentence",
+    "description": "A dying woman whispered that she had spent her whole life thinking something was wrong with her. Tara Brach shows how that sentence runs through ordinary days.",
+    "hook": "When you make a small mistake, which sentence about yourself starts playing on its own?",
+    "one_minute_summary": "Marilyn spent many hours beside her dying mother. Before dawn her mother opened her eyes and whispered that all her life she had thought something was wrong with her, then closed them and died hours later. Marilyn took it as a parting gift and resolved to treat herself with more kindness. Tara Brach calls this belief the trance of unworthiness and sees it start from small things: someone's accomplishment, a criticism, a mistake at work."
+  },
+  "es": {
+    "title": "La frase de la moribunda",
+    "description": "Una mujer moribunda susurró que toda su vida había pensado que algo andaba mal con ella. Tara Brach muestra cómo esa frase suena en los días corrientes.",
+    "hook": "Cuando cometes un pequeño error, ¿qué frase sobre ti empieza a sonar sola?",
+    "one_minute_summary": "Marilyn pasó muchas horas junto a su madre moribunda. Antes del amanecer, la madre abrió los ojos y susurró que toda su vida había pensado que algo andaba mal con ella; murió horas después. Marilyn lo tomó como un regalo de despedida y decidió tratarse con más amabilidad. Tara Brach llama a esta creencia el trance de la falta de valía y la ve nacer de cosas pequeñas: un logro ajeno, una crítica, un error en el trabajo."
+  },
+  "de": {
+    "title": "Der Satz der sterbenden Mutter",
+    "description": "Eine Sterbende flüsterte, sie habe ihr Leben lang gedacht, mit ihr stimme etwas nicht. Tara Brach zeigt, wie dieser Satz durch gewöhnliche Tage läuft.",
+    "hook": "Welcher Satz über dich selbst springt an, wenn dir ein kleiner Fehler passiert?",
+    "one_minute_summary": "Marilyn verbrachte viele Stunden am Bett ihrer sterbenden Mutter. Vor Tagesanbruch öffnete diese die Augen und flüsterte, sie habe ihr Leben lang gedacht, mit ihr stimme etwas nicht. Dann schloss sie die Augen und starb Stunden später. Marilyn nahm es als Abschiedsgeschenk und beschloss, freundlicher mit sich umzugehen. Tara Brach nennt diese Überzeugung die Trance der Unwürdigkeit. Nach zwanzig Jahren mit Tausenden Klienten sieht sie sie an Kleinigkeiten anspringen: Erfolge anderer, Kritik, ein Fehler im Büro, ein unsichtbares, giftiges Gas."
+  }
+}

@@ -1,0 +1,60 @@
+{
+ "story_id": 1516,
+ "kind": "concept",
+ "book": {
+  "title": "The Mom Test",
+  "author": "Rob Fitzpatrick",
+  "year": "2013"
+ },
+ "confidence": "medium",
+ "confidence_note": "Concept story; the book gives no single event here, only the premise and rules. Verified against several detailed summaries and quoted lines, not the full text. Old text's invented quotes, the ten-interview scenario and the 'commitment ladder' were dropped.",
+ "facts": [
+  "Title idea: ask your mom whether your business idea is good and she will usually say yes, because she wants to support you; but almost anyone can mislead you, often without meaning to.",
+  "Three rules: talk about their life instead of your idea; ask about specific past events instead of generics or opinions about the future; talk less and listen more.",
+  "'They own the problem, you own the solution.'",
+  "Bad question: 'Do you think my idea for a product that does X is any good?' Better to ask how they handle X now, which products they use, what problems they hit.",
+  "Bad question: 'Would you buy a product that did X?' Better to find out whether X is a real pain or something they mostly ignore.",
+  "Bad question: 'How much would you pay for a product that did X?' Better to ask how much time and money X costs them now and whether they have paid for past fixes.",
+  "'Once you start talking about your idea, they stop talking about their problems.'"
+ ],
+ "scene_details": [
+  "the mom who answers yes",
+  "the three bad questions each ending in 'a product that did X'",
+  "'Talk me through the last time X happened'"
+ ],
+ "tension": "A kind, honest-sounding yes from someone who cares about you tells you almost nothing about whether the idea is good.",
+ "opening_idea": "Open on the mom and her yes: she is the one person guaranteed to say it, and the book is named after her.",
+ "lessons": [
+  {
+   "idea": "Ask about what people already did, not about what they think of your idea.",
+   "anchor": "The three bad questions and their past-tense replacements.",
+   "example": "Someone planning a dog-walking service asks neighbours how they handled the last week they were away."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which idea or plan of yours have you only tested on people who like you, and who could you ask about their last real experience of the problem?",
+ "use_cases": [
+  {
+   "situation": "A friend is excited about their new business idea and asks what you think.",
+   "move": "Skip the verdict and ask how they or their customers handle the problem today, the way the book swaps 'is my idea any good' for 'how do you deal with X now'.",
+   "context": "social"
+  },
+  {
+   "situation": "You are about to pitch a project to a colleague whose work it affects.",
+   "move": "Ask them to talk you through the last time the problem came up before you describe your solution; once you pitch, they stop talking about their problem.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "Before you start a side project, you want proof anyone needs it.",
+   "move": "Write down three past-tense questions about the problem and ask them of two people who are not close friends.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "The mom says yes out of love; ask about the last time the problem happened, because past behaviour cannot be flattering.",
+ "conversation_variants": {
+  "punchline_idea": "Your mom will say your idea is great; that is exactly why her answer is useless.",
+  "thirty_sec_idea": "Rob Fitzpatrick named The Mom Test after the person guaranteed to say yes to your business idea. His fix is to stop asking about the idea: ask about their life, ask about specific times it happened, and talk less.",
+  "question_idea": "",
+  "key_contrast_idea": "asking opinion vs asking about last time"
+ }
+}

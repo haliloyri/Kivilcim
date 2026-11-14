@@ -1,0 +1,43 @@
+{
+  "language": "de",
+  "model_id": "eleven_multilingual_v2",
+  "source": "https://elevenlabs.io/text-to-speech/german (ElevenLabs voice library previews)",
+  "groups": [
+    {
+      "folder": "1-psikoloji-saglik-kisisel-gelisim",
+      "main_category_ids": [1, 6, 3],
+      "categories": ["Psikoloji", "Sağlık", "Kişisel Gelişim"],
+      "voices": [
+        { "name": "Thomas Schendel", "voice_id": "Fghah4fztZORbiKfIGAs", "gender": "male", "role": "primary" },
+        { "name": "Lana Weiss", "voice_id": "rAmra0SCIYOxYmRNDSm3", "gender": "female", "role": "alternative" }
+      ]
+    },
+    {
+      "folder": "2-is-liderlik-verimlilik",
+      "main_category_ids": [2, 4, 9],
+      "categories": ["İş Dünyası", "Liderlik", "Verimlilik"],
+      "voices": [
+        { "name": "Otto", "voice_id": "FTNCalFNG5bRnkkaP5Ug", "gender": "male", "role": "primary" },
+        { "name": "Mila", "voice_id": "dCnu06FiOZma2KVNUoPZ", "gender": "female", "role": "alternative" }
+      ]
+    },
+    {
+      "folder": "3-bilim-felsefe-toplum",
+      "main_category_ids": [5, 7, 8],
+      "categories": ["Bilim", "Felsefe", "Toplum"],
+      "voices": [
+        { "name": "Clemens Hartmann", "voice_id": "elrPOnQZaau5IoISMrJe", "gender": "male", "role": "primary" },
+        { "name": "Christian Plasa", "voice_id": "NBqeXKdZHweef6y0B67V", "gender": "male", "role": "alternative" }
+      ]
+    },
+    {
+      "folder": "4-iletisim-diger",
+      "main_category_ids": [10, 11],
+      "categories": ["İletişim", "Diğer"],
+      "voices": [
+        { "name": "Leonie", "voice_id": "uvysWDLbKpA4XvpD3GI6", "gender": "female", "role": "primary" },
+        { "name": "Ben", "voice_id": "aTTiK3YzK3dXETpuDE2h", "gender": "male", "role": "alternative" }
+      ]
+    }
+  ]
+}

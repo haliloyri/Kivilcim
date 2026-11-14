@@ -1,0 +1,171 @@
+{
+ "book_no": 49,
+ "title": "Dare to Lead",
+ "authors": "Brené Brown",
+ "year": "2018",
+ "sources": [
+  "https://www.abebooks.com/Dare-Lead-Brave-Work-Tough-Conversations/32123729549/bd",
+  "https://groundedcuriosity.com/book-review-dare-to-lead-brave-work-tough-conversations-by-brene-brown/",
+  "https://giuseppemartinengo.org/?p=2071",
+  "https://youexec.com/resources/dare-to-lead-by-brene-brown",
+  "https://www.gwaea.org/2023/04/13/dare-to-lead-based-on-the-research-of-brene-brown/",
+  "https://brenebrown.com/blog/2018/10/15/clear-is-kind-unclear-is-unkind",
+  "https://www.shortform.com/blog/?p=51577",
+  "https://knowledge.wharton.upenn.edu/article/brene-brown-on-values-vulnerability-and-playing-to-win",
+  "https://www.goodreads.com/notes/40887547-dare-to-lead/161823420-elena-n/c2c769f9-2874-4195-b174-cc7ff8c8e784",
+  "https://pce.sandiego.edu/dare-to-lead-values/"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "In 2014, standing across from several hundred military special forces soldiers on a base in the Midwest, Brown defined vulnerability as the emotion we experience during uncertainty, risk and emotional exposure, and asked: 'Can you give me a single example of courage that you've witnessed in another soldier or experienced in your own life that did not require experiencing vulnerability?'",
+   "source": "AbeBooks book excerpt; groundedcuriosity review (p.23); giuseppemartinengo",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "The room fell completely silent ('Crickets'). A young soldier said: 'No, ma'am. Three tours. I can't think of a single act of courage that doesn't require managing massive vulnerability.'",
+   "source": "AbeBooks excerpt; groundedcuriosity",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Brown says she has since asked the question a couple of hundred times in meeting rooms around the world.",
+   "source": "AbeBooks excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Brown contrasts armored leadership with daring leadership: armored leaders drive perfectionism and fear of failure, need to be the knower and be right, use power over people, and collect gold stars; daring leaders model healthy striving, aim to be learners and get it right, use power with people, and give gold stars.",
+   "source": "youexec summary; shortform",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Brown: 'When we get to the place that the armor is so thick that we no longer feel anything, we experience a real death.' And: 'Vulnerability is not winning or losing. It's having the courage to show up when you can't control the outcome.'",
+   "source": "AbeBooks excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Brown's research for the book included interviews with 150 global C-level leaders, asked what (if anything) about the way people lead must change to succeed in a complex, fast-changing environment. The answer: 'We need braver leaders and more courageous cultures.'",
+   "source": "giuseppemartinengo; groundedcuriosity; WebSearch summaries (gwaea)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Leaders named ten behaviors and cultural issues that get in the way of courage; the one ranked as the greatest concern was 'we avoid tough conversations, including giving honest, productive feedback.'",
+   "source": "Brown's own blog excerpt 'Clear is kind' (via search); Scribd preview listing it as item 01 (via search)",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Some leaders attributed the avoidance to a lack of courage, others to a lack of skills, and more than half talked about a cultural norm of 'nice and polite' used as an excuse to avoid tough conversations.",
+   "source": "WebSearch summary of the book's research section",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Brown's line: 'Clear is kind. Unclear is unkind.'",
+   "source": "brenebrown.com blog; giuseppemartinengo; groundedcuriosity",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Living into values: Brown gives a list of more than 100 values and asks readers to narrow it to two core values ('if everything is a priority, nothing is'). Each value is then turned into three or four behaviors that support it and three or four slippery behaviors that move you out of it.",
+   "source": "pce.sandiego; shortform; groundedcuriosity; youexec",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Brown's own two central values are faith and courage.",
+   "source": "Goodreads reader highlight of the book; Wharton interview with Adam Grant",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "Narrowing a long list to two is described as hard for almost everyone; most people identify with ten or twenty values.",
+   "source": "WebSearch summary of a review",
+   "confidence": "low"
+  },
+  {
+   "id": "f13",
+   "claim": "Values must be translated into behaviors that can be 'taught, practiced, and evaluated'; Brown: living into our values means we do more than profess them, we practice them.",
+   "source": "shortform overview; sachinjain mindmap quote",
+   "confidence": "medium"
+  },
+  {
+   "id": "f14",
+   "claim": "The book's subtitle is 'Brave Work. Tough Conversations. Whole Hearts.' The first skill set, 'rumbling with vulnerability', covers tough conversations in which we stay vulnerable, generous and curious.",
+   "source": "publisher listing; groundedcuriosity",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Brown: 'Vulnerability is not winning or losing. It's having the courage to show up when you can't control the outcome.'",
+   "source": "AbeBooks excerpt",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "A CEO told Brown 'My team doesn't tell me the truth'; 'A leader cannot look weak' dialogue (1279 old text)",
+   "reason": "No source; invented scene with invented dialogue."
+  },
+  {
+   "claim": "Brown conducted 'thousands' of interviews with leaders and listed 'perfectionism armor', 'always look strong armor', 'never doubt armor'",
+   "reason": "Armor names not in the book; the book's armored/daring pairs are in f4."
+  },
+  {
+   "claim": "A seven-year study of 150 executives put avoiding hard conversations at the top of obstacles (1280 old text)",
+   "reason": "The 150 leaders and the tough-conversations ranking are separate findings (f6, f7); 'seven years' is not verified for this study."
+  },
+  {
+   "claim": "Quote 'Not having the hard conversation creates both a time cost and a trust cost'",
+   "reason": "Not a verified quote."
+  },
+  {
+   "claim": "Strongest leaders have two, at most three core values (1281 old text)",
+   "reason": "Book asks everyone to choose two (f10); it is not a finding about the 'strongest leaders'."
+  },
+  {
+   "claim": "Brown asks leaders 'which value overrides the other in a hard decision?'",
+   "reason": "Not found."
+  }
+ ],
+ "stories": {
+  "1279": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f15"
+   ],
+   "note": "Center (armor vs vulnerability in leaders) is the book's Part One. Old CEO scene replaced by the verified special forces scene."
+  },
+  "1280": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f14"
+   ],
+   "note": "Center (avoiding tough conversations) is the book's top-ranked barrier."
+  },
+  "1281": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f10",
+    "f11",
+    "f12",
+    "f13"
+   ],
+   "note": "Center (two core values, values tested by behavior) is the 'Living into our values' part."
+  }
+ }
+}

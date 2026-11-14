@@ -1,0 +1,35 @@
+{
+ "story_id": 1315,
+ "verdict": "keep",
+ "verify_note": "Verified in full text of Hooked (2014). Burbn pivot story is not in Hooked and was dropped; recentered on Yin (pseudonym) and Instagram's move from external to internal triggers.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Yin ve Kaçan An",
+  "description": "Stanford'da bir öğrenci her gün düzinelerce fotoğraf paylaşıyor ve bir sorunu olmadığını söylüyor. Nir Eyal, Instagram alışkanlığının bir arkadaş tavsiyesinden bir duyguya nasıl geçtiğini anlatıyor.",
+  "hook": "Hiçbir bildirim gelmeden telefonu elinize aldığınızda, sizi asıl ne çağırıyor?",
+  "one_minute_summary": "Nir Eyal, Stanford'da okuyan ve Instagram'a günde düzinelerce fotoğraf yükleyen Yin'i anlatıyor. Yin bir sorunu olmadığını, güzel bir şeyi kaybolmadan yakalaması gerektiğini söylüyor. Alışkanlık bir arkadaşın tavsiyesiyle başladı, sonra simge ve bildirimler devreye girdi. Haftalar içinde işaret içeri taşındı: özel bir anı kaybetme korkusu küçük bir stres yaratıyor, fotoğraf çekmek onu dindiriyor. Eyal'e göre alışkanlığı başlatan dış tetikleyiciler, sürdüren ise bir duyguyla kurulan bağ."
+ },
+ "en": {
+  "title": "Yin and the Vanishing Moment",
+  "description": "A Stanford student posts dozens of photos a day and says she has no problem. Nir Eyal traces how her Instagram habit moved from a friend's tip to a feeling.",
+  "hook": "When you pick up your phone with no notification, what is actually calling you?",
+  "one_minute_summary": "Nir Eyal describes Yin, a Stanford student who posts dozens of Instagram photos a day and insists she has no problem; she just needs to grab things before they're gone. Her habit began with a friend's recommendation, then the icon and notifications. Within weeks the cue moved inside: the fear of losing a special moment brings a small pang of stress, and taking a photo eases it. Eyal argues that external triggers start a habit, but a link to a feeling keeps it going."
+ },
+ "es": {
+  "title": "Yin y el instante fugaz",
+  "description": "Una estudiante de Stanford sube decenas de fotos al día y dice que no tiene ningún problema. Nir Eyal explica cómo su hábito de Instagram pasó de un consejo de una amiga a una emoción.",
+  "hook": "Cuando coges el móvil sin que haya llegado ninguna notificación, ¿qué te está llamando en realidad?",
+  "one_minute_summary": "Nir Eyal cuenta el caso de Yin, una estudiante de Stanford que sube decenas de fotos al día a Instagram y asegura que no tiene ningún problema: solo quiere atrapar las cosas antes de que desaparezcan. Su hábito empezó con la recomendación de una amiga, luego el icono y las notificaciones. En semanas, la señal se mudó dentro: el miedo a perder un momento especial causa una punzada de estrés y hacer la foto la calma. Para Eyal, lo externo inicia el hábito y la emoción lo mantiene."
+ },
+ "de": {
+  "title": "Yin und der flüchtige Moment",
+  "description": "Eine Studentin in Stanford postet täglich Dutzende Fotos und sagt, sie habe kein Problem. Nir Eyal zeigt, wie ihre Instagram-Gewohnheit vom Tipp einer Freundin zu einem Gefühl wurde.",
+  "hook": "Wenn du dein Handy ohne jede Benachrichtigung in die Hand nimmst, was ruft dich da eigentlich?",
+  "one_minute_summary": "Nir Eyal beschreibt Yin, eine Studentin in Stanford, die täglich Dutzende Fotos auf Instagram stellt und versichert, sie habe kein Problem; sie müsse schöne Dinge nur festhalten, bevor sie weg sind. Angefangen hat es mit dem Tipp einer Freundin, dann kamen Symbol und Benachrichtigungen. Nach Wochen wanderte das Signal nach innen: Die Angst, einen besonderen Moment zu verlieren, löst einen kleinen Stich aus, und ein Foto lindert ihn. Laut Eyal starten äußere Auslöser eine Gewohnheit, ein Gefühl hält sie."
+ }
+}

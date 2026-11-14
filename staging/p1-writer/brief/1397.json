@@ -1,0 +1,61 @@
+{
+  "story_id": 1397,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Infinite Game",
+    "author": "Simon Sinek",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Facts from summaries (Four Minute Books, Shortform, search summaries); no primary text. The two-summit anecdote is consistent across sources; the figure of every presenter is a paraphrase and omitted. Old Mac vs PC ads, the Sinek quote and the term loyal rival were dropped. Adam Grant episode medium and paraphrased only.",
+  "facts": [
+    "Sinek was invited by both Apple and Microsoft to speak at their education summits.",
+    "At Microsoft's summit the presenters spent much of their time on how they would beat Apple.",
+    "At Apple's summit the presenters talked about how Apple was helping teachers teach.",
+    "Sinek takes the contrast as a sign of an infinite mindset at Apple that cared little about beating a competitor.",
+    "He defines a worthy rival as a competitor who is better than you at something and so shows you where to improve.",
+    "He tells that for years he treated the author Adam Grant as a competitor; after meeting Grant he concluded the way he had seen him had to do with himself, not Grant.",
+    "Sinek says a healthier attitude toward rivals improves resilience, resource management, innovation and personal integrity; one reviewer finds the chapter's opening vignette romanticized.",
+    "Summaries of the book cite Microsoft's Zune, its answer to the iPod, which did not catch on, and Steve Ballmer dismissing the iPhone as not worth replicating, as the cost of fixating on a rival."
+  ],
+  "scene_details": [
+    "two education summits",
+    "Microsoft presenters talking about Apple",
+    "Apple presenters talking about teachers"
+  ],
+  "tension": "The same invitation from two rivals produced two opposite rooms: one watched the competitor, one watched the customer.",
+  "opening_idea": "Open on the two summit invitations from rivals within a short time.",
+  "lessons": [
+    {
+      "idea": "A competitor who is better at something can show you what to work on, if you look at them instead of at the scoreboard.",
+      "anchor": "Apple presenters talking about teachers; Sinek's years of seeing Adam Grant as a competitor.",
+      "example": "A café owner whose neighbour bakes better bread can ask what the neighbour does at 5 a.m. instead of cutting prices."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Who is doing something better than you right now, and what is one thing you could ask or watch to learn from them?",
+  "use_cases": [
+    {
+      "situation": "A meeting turns into a rant about a competitor.",
+      "move": "Sinek heard Microsoft presenters talk mostly about Apple; ask what our customers need that we are not yet giving them.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague gets praise for work you also do.",
+      "move": "Ask them what they do first when they start that kind of task.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You catch yourself comparing your work to a rival's.",
+      "move": "Write one thing they do better and one step you could copy this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Name one rival who is better than you at something and ask what you could learn from them this week.",
+  "conversation_variants": {
+    "punchline_idea": "Simon Sinek watched two rival summits: at one the talks were about beating Apple, at the other about helping teachers.",
+    "thirty_sec_idea": "Simon Sinek was invited to speak at both Apple's and Microsoft's education summits. At Microsoft the presenters kept coming back to beating Apple. At Apple they talked about helping teachers teach. Sinek read it as two mindsets. He says a worthy rival is someone better than you at something, who shows you where to improve.",
+    "question_idea": "Who pushes you to be better?",
+    "key_contrast_idea": "watch rival, watch customer"
+  }
+}

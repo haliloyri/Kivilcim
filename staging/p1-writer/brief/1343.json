@@ -1,0 +1,64 @@
+{
+  "story_id": 1343,
+  "kind": "concept",
+  "book": {
+    "title": "10% Happier",
+    "author": "Dan Harris",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "The 10 percent claim, 'respond rather than react' with the seven-second delay comparison, the retreat teacher's 'Is this useful?' and his father's mantra come from a Psychology Today review and book summaries; the book text was not read. The teacher is identified as Joseph Goldstein in one summary only, so he is named with care. The old email/20-minute quote, the '1000 percent' quote and the cortisol meta-analysis are not from the book and are dropped.",
+  "facts": [
+    "Harris's verdict on meditation is modest: it made him about 10 percent happier, and it is not a cure-all.",
+    "He uses the figure as an answer to skeptics who expect a convert's grand claims; the title started half as a joke.",
+    "What he gained is 'the ability to respond rather than react', a short gap before acting on an urge.",
+    "He compares it to the seven-second delay used on live award shows.",
+    "His father's mantra, 'The price of security is insecurity', had long justified his habit of worrying.",
+    "On a ten-day silent retreat a teacher told him that worrying 'seventeen times' about a missed flight was pointless.",
+    "The teacher's question for any worry: 'Is this useful?' Worry that prepares you stays; worry that only loops can go.",
+    "The book recounts a tense interview with Paris Hilton that tested his new calm."
+  ],
+  "scene_details": [
+    "the seven-second delay on a live award show",
+    "a missed flight worried about seventeen times",
+    "a ten-day silent retreat"
+  ],
+  "tension": "A book about meditation promises only ten percent, and that small number is the point.",
+  "opening_idea": "Start with the seven-second delay used on live award-show broadcasts.",
+  "lessons": [
+    {
+      "idea": "Ask of a worry whether it is useful; keep the part that prepares you and drop the repeats.",
+      "anchor": "'Is this useful?' and the seventeen worries about one flight."
+    },
+    {
+      "idea": "Expect modest, real change.",
+      "anchor": "10 percent."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which worry did you repeat most this week, and what part of it actually helped you prepare?",
+  "use_cases": [
+    {
+      "situation": "Before a presentation the team keeps listing everything that could go wrong",
+      "move": "Ask 'is this useful?' for each worry and turn the useful ones into a task.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend asks if meditation will change their life",
+      "move": "Say Dan Harris, a TV anchor, claims ten percent, and that's why you believe him.",
+      "context": "social"
+    },
+    {
+      "situation": "You notice you've replayed the same worry for the fifth time",
+      "move": "Count it like Harris's teacher did and ask whether repeat number five adds anything.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A worry repeated seventeen times about one flight is one useful worry and sixteen echoes.",
+  "conversation_variants": {
+    "punchline_idea": "Harris's whole pitch for meditation is ten percent, and his teacher's best tip was one question: is this useful?",
+    "thirty_sec_idea": "Harris's modest 10 percent, the seven-second delay, the retreat teacher and the seventeen worries about a missed flight.",
+    "question_idea": "What worry did you replay this week?",
+    "key_contrast_idea": "Respond, not react"
+  }
+}

@@ -1,0 +1,206 @@
+{
+ "book_no": 47,
+ "title": "When: The Scientific Secrets of Perfect Timing",
+ "authors": [
+  "Daniel H. Pink"
+ ],
+ "year": "2018",
+ "sources": [
+  "https://www.inkl.com/news/when-the-scientific-secrets-of-perfect-timing-review-timely-guide",
+  "https://healthland.time.com/?p=43894",
+  "https://www.goodreads.com/notes/35786699-when/79698863-tricia-henry",
+  "https://youexec.com/resources/when-by-daniel-pink",
+  "https://research.tedneward.com/management/when.html",
+  "https://www.stern.nyu.edu/experience-stern/news/hbr-lev-earnings-calls.md",
+  "https://www.pcma.org/?p=68221",
+  "https://www.fool.com/investing/2018/06/26/the-science-of-timing-an-interview-with-dan-pink.aspx",
+  "https://corporate.dukehealth.org/news/time-surgery-influences-rate-adverse-health-events-due-anesthesia",
+  "https://www.legalcheek.com/2018/02/youll-do-better-in-morning-exams-than-afternoon-ones-new-book-reveals",
+  "https://www.goodreads.com/notes/35786699-when/134516656-tom-long?page=2",
+  "https://www.bps.org.uk/research-digest/how-losing-can-increase-your-chances-winning",
+  "https://insider.catalystleader.com/read/qa-with-daniel-pink",
+  "https://news.cornell.edu/node/270698",
+  "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.00792/pdf",
+  "https://github.com/erikgahner/meaning",
+  "https://www.goodmorningamerica.com/news/story/birthday-years-ending-prompt-big-life-decisions-study-27033786"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Pink opens with a Cornell study (Golder and Macy): about 500 million tweets from about 2.4 million users in 84 countries over two years; positive affect rose in the morning, dropped in the afternoon, rose again in the evening - peak, trough, rebound - across continents and time zones.",
+   "source": "Guardian review via inkl; Time Healthland; Goodreads highlight",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Earnings calls study (Chen, Demers, Lev): 26,000+ calls from about 2,100 US firms; afternoon calls were 'more negative, irritable, and combative' than morning calls, and the tone affected stock prices.",
+   "source": "Goodreads highlight; NYU Stern/HBR op-ed",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "For analytic tasks people perform better in the morning (peak); for insight tasks most people (larks and 'third birds') do better in the late afternoon/early evening when their guard is down; Pink calls this the 'inspiration paradox'. Owls are reversed.",
+   "source": "youexec summary; tedneward notes; Goodreads highlight",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Larks and third birds experience the day as peak, trough, rebound; owls in roughly reverse order.",
+   "source": "tedneward notes",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Duke study cited by Pink: about 90,000 surgeries; anesthetic adverse events were significantly more frequent for cases starting in the 3 and 4 p.m. hours: about 1% at 9 a.m. vs 4.2% at 4 p.m.; actual harm 0.3% at 8 a.m. vs 1% at 3 p.m. Researchers: afternoon circadian lows impair physician vigilance.",
+   "source": "PCMA book excerpt; Duke Health press release; Fool interview",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Pink cites University of Pennsylvania research that hand-washing in hospitals deteriorates considerably in the afternoon.",
+   "source": "Fool interview; Wharton interview",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Danish schoolchildren scored worse on standardised tests taken later in the day; a 20-30 minute break 'to eat, play, and chat' before a test raised scores; 'a break causes an improvement that is larger than the hourly deterioration'.",
+   "source": "Goodreads highlights; Legal Cheek; PNAS 2016",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Nappuccino: drink coffee, then nap; caffeine takes about twenty-five minutes to enter the bloodstream; ideal naps are ten to twenty minutes; longer brings sleep inertia; five-minute naps did little, ten-minute naps had effects lasting nearly three hours.",
+   "source": "Goodreads highlights; tedneward notes; focusu review",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Alter and Hershfield: '9-enders' (ages 29, 39, 49...) are overrepresented among first-time marathoners by 48 percent; about half the people in a typical marathon are first-timers.",
+   "source": "Goodreads highlights; sketchplanations; drkmchow blog",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Alter and Hershfield propose that nearing the end of a decade people do a kind of 'meaning audit' of their lives.",
+   "source": "sketchplanations; drkmchow",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Connie Gersick's study: business students had eleven days for a case analysis; around the midpoint (day six) the groups dropped their weak initial approach and adopted a new strategy.",
+   "source": "Goodreads highlight (Tom Long); The Ladders",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "Berger and Pope: in 18,000+ NBA games, teams trailing by one point at halftime won more often than expected. Pink's advice: at a midpoint say 'uh-oh' and get to work rather than 'oh no' and give up; make midpoints visible.",
+   "source": "BPS Research Digest; Catalyst Q&A; youexec",
+   "confidence": "high"
+  },
+  {
+   "id": "f13",
+   "claim": "Golder and Macy: on weekends the morning mood peak came about two hours later; mood still declined during the day on weekends, so the pattern was not only work-driven.",
+   "source": "Cornell news release; Cornell Sun",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "Pink: Danish break boost equivalent to about three extra weeks in the classroom; a break every hour would make scores rise over the day; restorative breaks: moving over stationary, social over solo, outside over inside.",
+   "source": "youexec; Goodreads highlight; tedneward notes",
+   "confidence": "medium"
+  },
+  {
+   "id": "f15",
+   "claim": "Duke authors pointed to end-of-day fatigue and afternoon hand-offs; some hospitals added vigilance time-outs (Pink, via summary).",
+   "source": "Duke Health press release; youexec summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f16",
+   "claim": "Midpoints can be a slump or a spark; after the midpoint teams are less open to new ideas but most open to coaching. Halftime effect about half the size of home-court advantage; motivation the proposed cause.",
+   "source": "tedneward notes; BPS Research Digest; Berger & Pope paper",
+   "confidence": "medium"
+  },
+  {
+   "id": "f17",
+   "claim": "Alter and Hershfield reported 9-enders ran faster marathons than people two years younger or older.",
+   "source": "Good Morning America report on PNAS 2014",
+   "confidence": "medium"
+  },
+  {
+   "id": "f18",
+   "claim": "Later work contested the 9-ender effect (Frontiers in Psychology 2015 commentary found no evidence; a reanalysis found the marathon effect non-significant when whole decades are compared).",
+   "source": "Frontiers in Psychology 2015; Gahner reanalysis",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Hemingway's morning routine as Pink's example; 'Pink examined thousands of studies and found Hemingway intuitively right'",
+   "reason": "No source puts this in When."
+  },
+  {
+   "claim": "Prefrontal cortex at full capacity in the morning; late-night second peak",
+   "reason": "Not verified in the book."
+  },
+  {
+   "claim": "Traffic, medical and industrial accidents concentrated 2-4 p.m.",
+   "reason": "Not verified as a book statistic; only anesthesia data verified."
+  },
+  {
+   "claim": "NASA pilots, Google employees, Japanese firms made naps official policy",
+   "reason": "Not verified in the book."
+  },
+  {
+   "claim": "'Five minutes and a cup of coffee'",
+   "reason": "Book says five-minute naps do little; ten to twenty minutes."
+  },
+  {
+   "claim": "29/39/49-year-olds register at nearly double the rate of 28/38/48-year-olds",
+   "reason": "Book figure is 48% overrepresentation."
+  },
+  {
+   "claim": "'Last step effect' as Pink's term",
+   "reason": "Not Pink's term; his midpoint/ending framing differs."
+  }
+ ],
+ "stories": {
+  "1273": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f13"
+   ],
+   "note": "Hemingway anecdote rejected; center (time of day changes which work goes well) rebuilt on the tweets study, earnings calls and analytic vs insight. Title changed."
+  },
+  "1274": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f14",
+    "f6",
+    "f15"
+   ],
+   "note": "Afternoon trough rebuilt on Duke anesthesia data, Danish break study and the nappuccino; unverified accident stats and company nap policies dropped."
+  },
+  "1275": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f9",
+    "f10",
+    "f11",
+    "f12",
+    "f16",
+    "f17",
+    "f18"
+   ],
+   "note": "Marathon figure corrected to 48%; 'last step effect' label dropped; midpoint material (Gersick, halftime) used for the mid-project slump. Title changed."
+  }
+ }
+}

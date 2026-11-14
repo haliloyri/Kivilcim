@@ -1,0 +1,35 @@
+{
+  "story_id": 1460,
+  "verdict": "keep",
+  "verify_note": "Keep, low confidence. Book not read (lending-only copy; summary sites blocked). Facts from the publisher's reader's guide, catalogue summary and Goleman's later reprint. Old 12-20 / 88-80 percent figures dropped; 'twice as important' stated as Goleman's disputed claim.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Beş boyut, yirmi beş yetkinlik",
+    "description": "Goleman insan becerilerini 25 yetkinliğe ve beş kümeye böler, IQ'dan iki kat önemli olduklarını savunur; eleştirenler var.",
+    "hook": "Beş kümeden hangisine günlük işinizde en az yaslanıyorsunuz?",
+    "one_minute_summary": "Daniel Goleman, Working with Emotional Intelligence kitabında 25 duygusal yetkinliği beş boyuta ayırıyor: öz farkındalık, öz düzenleme, motivasyon, empati ve sosyal beceriler. Yıldız performansta bunların IQ'dan ya da teknik uzmanlıktan iki kat önemli olduğunu savunuyor, eleştirenler rakamı meta-analizlerin desteklemediğini söylüyor. Yıldızlar ekibin potansiyelini en çok büyüten kişiler. IQ'nun aksine bu beceriler geliştirilebilir. Bu bilgilere kitabın kendisini değil, yayıncı rehberini ve ikinci el özetleri dayandırdım."
+  },
+  "en": {
+    "title": "Five groups, 25 competencies",
+    "description": "Goleman splits people skills into 25 competencies in five groups and argues they matter twice as much as IQ, a claim critics dispute.",
+    "hook": "Which of the five groups do you lean on least in your daily work?",
+    "one_minute_summary": "In Working with Emotional Intelligence, Daniel Goleman sorts 25 emotional competencies into five dimensions: self-awareness, self-regulation, motivation, empathy and social skills. He argues that for star performance they matter twice as much as IQ or technical expertise, though critics say meta-analytic data does not support the figure. Stars are the people best able to maximize a team's potential. Unlike IQ, these skills can be developed. This summary rests on the publisher's guide and secondary summaries, not on the book text."
+  },
+  "es": {
+    "title": "Cinco grupos, 25 competencias",
+    "description": "Goleman divide las habilidades con la gente en 25 competencias de cinco grupos y defiende que pesan el doble que el cociente intelectual; hay críticos.",
+    "hook": "¿En cuál de los cinco grupos te apoyas menos en tu trabajo diario?",
+    "one_minute_summary": "En Working with Emotional Intelligence, Daniel Goleman ordena 25 competencias emocionales en cinco dimensiones: autoconciencia, autorregulación, motivación, empatía y habilidades sociales. Defiende que para el rendimiento estelar importan el doble que el cociente intelectual o la pericia técnica, aunque los críticos dicen que los datos metaanalíticos no respaldan la cifra. Las estrellas maximizan el potencial de un equipo. A diferencia del cociente intelectual, se pueden desarrollar. Este resumen se apoya en la guía de la editorial y en resúmenes secundarios, no en el texto del libro."
+  },
+  "de": {
+    "title": "Fünf Gruppen, 25 Kompetenzen",
+    "description": "Goleman teilt Menschenkenntnis in 25 Kompetenzen in fünf Gruppen auf und meint, sie zählten doppelt so viel wie der IQ, was Kritiker bestreiten.",
+    "hook": "Auf welche der fünf Gruppen stützt du dich im Alltag am wenigsten?",
+    "one_minute_summary": "In Working with Emotional Intelligence ordnet Daniel Goleman 25 emotionale Kompetenzen fünf Dimensionen zu: Selbstwahrnehmung, Selbststeuerung, Motivation, Empathie und soziale Fähigkeiten. Er meint, für Spitzenleistung zählten sie doppelt so viel wie IQ oder Fachwissen, doch Kritiker sagen, metaanalytische Daten stützten die Zahl nicht. Stars sind die, die das Potenzial eines Teams am besten ausschöpfen. Anders als der IQ lassen sich diese Fähigkeiten entwickeln. Diese Zusammenfassung beruht auf dem Leitfaden des Verlags und Sekundärquellen, nicht auf dem Buchtext."
+  }
+}

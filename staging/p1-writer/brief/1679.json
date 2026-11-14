@@ -1,0 +1,61 @@
+{
+  "story_id": 1679,
+  "kind": "concept",
+  "book": {
+    "title": "The Headspace Guide to Meditation",
+    "author": "Andy Puddicombe",
+    "year": "2012"
+  },
+  "confidence": "low",
+  "confidence_note": "Book text itself was not available; checked against Wikipedia, the publisher blurb, a chapter summary (Dygest) and reader-submitted quotes. Old text's scene (friends in London asking how to meditate), the health claims (prefrontal cortex, amygdala, sleep), 'free starter' and 'compounding' are dropped as unsupported. The 'ten minutes a day' unit is well supported; the scenic material is thin, so the story will be short. DB title differs from the real one. No health claims in the story.",
+  "facts": [
+    "The book's core promise, in its publisher blurb: quiet the mind, feel less stressed and less tired in just ten minutes a day.",
+    "The exercise is called Take10: ten minutes, once a day, with the steps of sitting upright, a few deep breaths, then natural breathing, and returning to the breath when the mind wanders.",
+    "Puddicombe left his sports science studies in 1994 after a bereavement and trained about ten years as a Buddhist monk in Nepal, India, Myanmar, Thailand, Russia and elsewhere, with full ordination in the Tibetan tradition at a Himalayan monastery in India; he returned to the UK in 2004.",
+    "Headspace was co-founded by Puddicombe and Richard Pierson in London in 2010, first as an events company; an app existed by January 2012.",
+    "Phrases attributed to the book: 'we are still only talking about ten minutes' and 'this is ten minutes that is going to set up your entire day for you'.",
+    "The ten minutes are described as a training ground for the rest of the waking day; the book carries mindfulness into eating, walking, running and falling asleep.",
+    "The book's author bio describes him as a former Buddhist monk with a degree in Circus Arts."
+  ],
+  "scene_details": [
+    "ten minutes, once a day",
+    "an upright back and resting hands",
+    "years in monasteries across Nepal, India, Myanmar, Thailand and Russia",
+    "an events company started in London"
+  ],
+  "tension": "A man who trained for about ten years in monasteries sells the practice as ten minutes a day.",
+  "opening_idea": "Open on the contrast: about ten years of monastic training on one side, a method sized at ten minutes on the other.",
+  "lessons": [
+    {
+      "idea": "A practice sized to fit a day gets done; one sized to an ideal waits for a free afternoon that does not come.",
+      "anchor": "The decision to size the method at ten minutes a day after years in monasteries.",
+      "example": "Someone who wants to learn an instrument sets a short fixed slot after dinner instead of waiting for a free weekend."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your usual day could a fixed ten minutes go without anything else being moved, and what is the practice you would put in it?",
+  "use_cases": [
+    {
+      "situation": "A friend says they have no time to start meditating.",
+      "move": "Mention that the book is built around ten minutes a day, one fixed slot, and ask where that slot could sit.",
+      "context": "social"
+    },
+    {
+      "situation": "You want to begin a new habit.",
+      "move": "Size it to ten minutes and attach it to something you already do each day.",
+      "context": "self"
+    },
+    {
+      "situation": "A team wants a wellbeing plan.",
+      "move": "Propose one ten-minute slot a day, as in the Take10 idea, before anything bigger.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "After years of monastic training, Puddicombe sized his method at ten minutes a day: pick a slot that fits your real day.",
+  "conversation_variants": {
+    "punchline_idea": "A man with about ten years of monastic training built his method around ten minutes a day.",
+    "thirty_sec_idea": "Puddicombe left university in 1994, trained about ten years as a monk, came back and co-founded Headspace in 2010; his book's unit is ten minutes a day.",
+    "question_idea": "",
+    "key_contrast_idea": "ten years, ten minutes"
+  }
+}

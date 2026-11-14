@@ -1,0 +1,60 @@
+{
+ "story_id": 1347,
+ "kind": "concept",
+ "book": {
+  "title": "The Paradox of Choice",
+  "author": "Barry Schwartz",
+  "year": "2004"
+ },
+ "confidence": "high",
+ "confidence_note": "Verified in full text, ch. 10-11. The Oregon wine is Schwartz's own anecdote; no store or wine names. The depression figure is hedged in the book ('by some estimates'). The old quote about an 'expectation-outcome gap' is not verbatim and is dropped; social media is not in a 2004 book.",
+ "facts": [
+  "On vacation in a tiny seaside town on the Oregon coast, Schwartz bought wine at a small grocery that had about a dozen options.",
+  "What he got wasn't very good, but he didn't expect very good, so he was satisfied.",
+  "In a store with hundreds or thousands of options his expectations would have been far higher, and the same bottle would have left him sorely disappointed.",
+  "He applies it to jeans: when they came in one variety he was satisfied with the fit; now he expects them to fit 'as though they were custom-made'.",
+  "Health: Americans live longer and healthier than ever, yet medical historian Roy Porter notes unparalleled anxiety about health.",
+  "By some estimates depression in 2000 was about ten times as likely as in 1900; depression among the Amish of Lancaster County is less than 20 percent of the national rate, a community with few life choices but expectations to match.",
+  "With limitless choice, people may get better results but feel worse, and often blame themselves.",
+  "His strategy 'Control Expectations': our evaluation of an experience depends on how it compares with what we expected; reduce the options you consider, be a satisficer, allow for serendipity."
+ ],
+ "scene_details": [
+  "a small grocery on the Oregon coast with about a dozen wines",
+  "the same bottle imagined on a shelf of thousands",
+  "jeans expected to fit 'as though they were custom-made'"
+ ],
+ "tension": "The same mediocre bottle satisfies him in one shop and would have disappointed him in another.",
+ "opening_idea": "Start with the not-very-good bottle from the dozen on the Oregon shelf and his satisfaction with it.",
+ "lessons": [
+  {
+   "idea": "Your satisfaction is measured against what you expected, so the size of the shelf shapes the expectation before you taste anything.",
+   "anchor": "Same wine, a dozen options versus thousands."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which recent choice disappointed you mostly because the wide range of options made you expect something close to perfect?",
+ "use_cases": [
+  {
+   "situation": "Partner disappointed by a restaurant after long research",
+   "move": "Schwartz says a mediocre wine from a dozen options satisfied him; suggest next time picking from a short list and seeing if the meal feels better.",
+   "context": "family"
+  },
+  {
+   "situation": "Team frustrated a hire 'isn't perfect' after a huge candidate pool",
+   "move": "Ask what was actually expected for the role and whether the hire meets that.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Booking a holiday",
+   "move": "Limit yourself to three options and leave one evening unplanned; notice how the unplanned evening feels.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "A shelf of thousands raises the bar before you taste; choose from fewer and the same wine can satisfy.",
+ "conversation_variants": {
+  "punchline_idea": "A not-very-good wine satisfied him because the shop only had a dozen.",
+  "thirty_sec_idea": "Schwartz on the Oregon coast buys mediocre wine from a dozen options and is satisfied; in a store with thousands the same bottle would disappoint. Choice raises expectations; satisfaction is measured against them.",
+  "question_idea": "",
+  "key_contrast_idea": "small shelf, happy buyer"
+ }
+}

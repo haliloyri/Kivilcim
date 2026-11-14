@@ -1,0 +1,59 @@
+{
+  "story_id": 1670,
+  "kind": "concept",
+  "book": {
+    "title": "Anger: Wisdom for Cooling the Flames",
+    "author": "Thich Nhat Hanh",
+    "year": "2001"
+  },
+  "confidence": "medium",
+  "confidence_note": "Baby quote is verbatim; mother-strikes-baby passage and 'mothers of our own anger' from a summary of the text.",
+  "facts": [
+    "Anger is like a howling baby, suffering and crying; the baby needs his mother to embrace him.",
+    "One passage pictures a mother striking her crying baby, failing to see she and the child are one.",
+    "We are the mothers of our own anger.",
+    "A good mother picks the baby up, speaks quietly, looks for what makes it cry.",
+    "Mindful breathing gives the caring energy of a mother; embracing anger and breathing is enough.",
+    "Try not to say or do anything when angry.",
+    "Anger signals something needs care."
+  ],
+  "scene_details": [
+    "arms around a baby",
+    "a quiet voice",
+    "the breath"
+  ],
+  "tension": "We shout at our own anger instead of holding it.",
+  "opening_idea": "A howling baby with no one turning round.",
+  "lessons": [
+    {
+      "idea": "Hold your anger instead of scolding it.",
+      "anchor": "crying baby, mother's arms, breath"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Next time anger arrives like a crying baby, what is the first small thing you do to take it in your arms?",
+  "use_cases": [
+    {
+      "situation": "Scolding yourself after a tense meeting",
+      "move": "My anger is like a crying baby, so I won't shout at it.",
+      "context": "self"
+    },
+    {
+      "situation": "Child upset, your voice rising",
+      "move": "Give me a minute, I'm angry too. I'll breathe and then listen.",
+      "context": "family"
+    },
+    {
+      "situation": "A friend tells you how angry they are",
+      "move": "You don't have to push it down. I'm here, tell me.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "If anger is a crying baby, do not shout at it. Hold it with your breath.",
+  "conversation_variants": {
+    "punchline_idea": "Anger is a howling baby that needs holding.",
+    "thirty_sec_idea": "Baby image, mother who strikes baby, breathing, not speaking.",
+    "question_idea": "",
+    "key_contrast_idea": "scold vs hold"
+  }
+}

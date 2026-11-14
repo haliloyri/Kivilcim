@@ -1,0 +1,35 @@
+{
+ "story_id": 1381,
+ "verdict": "keep",
+ "verify_note": "Corrected the study: Harvard Medical School (Stickgold et al., published 2000), 27 people, several hours a day for three days; not 'early 1990s, thousands of hours'. Shop-shelf and parking details dropped. Spam-filter image, 'paradise into hell' and three-good-things follow-ups from the book.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Her Yerde Düşen Bloklar",
+  "description": "Üç gün Tetris oynayan insanlar her yerde blok görmeye başladı. Shawn Achor bunu, işimizin bize neyi aramayı öğrettiğine dair bir uyarı olarak okur.",
+  "hook": "İşiniz size gün boyu neyi aramayı öğretiyor?",
+  "one_minute_summary": "Harvard Tıp Fakültesi'nde 27 kişi üç gün boyunca her gün saatlerce Tetris oynadı. Sonra bazıları rüyalarında düşen şekiller gördü, bazıları uyanıkken bile dünyayı blok dizisi gibi gördü. Shawn Achor buna Tetris Etkisi der: beyin pratik ettiği deseni aramayı sürdürür. Dikkat bir spam filtresi gibi yalnızca aramaya ayarlandığı şeyi içeri alır ve sorun aramaya alışan biri olumluyu kaçırır. Achor'ın önerisi her gün üç iyi şey yazmak. Bunu bir hafta yapanlar altı ay sonra bile daha mutluydu."
+ },
+ "en": {
+  "title": "Falling Blocks Everywhere",
+  "description": "After three days of Tetris, people saw blocks everywhere. Shawn Achor reads it as a warning about what our jobs train us to look for.",
+  "hook": "What does your work train you to look for all day?",
+  "one_minute_summary": "At Harvard Medical School, 27 people played Tetris for several hours a day, three days running. Afterwards some dreamed of falling shapes, and some saw the world as rows of blocks even while awake. Shawn Achor calls it the Tetris Effect: the brain keeps hunting for the pattern it has practised. Like a spam filter, attention lets through only what it is set to find. His fix is writing three good things a day. People who did it for a week were happier six months later."
+ },
+ "es": {
+  "title": "Bloques cayendo por todas partes",
+  "description": "Tras tres días de Tetris, la gente veía bloques por todas partes. Shawn Achor lo lee como un aviso sobre lo que el trabajo nos entrena a buscar.",
+  "hook": "¿Qué te entrena tu trabajo a buscar durante todo el día?",
+  "one_minute_summary": "En la Facultad de Medicina de Harvard, 27 personas jugaron al Tetris varias horas al día durante tres días. Después, algunas soñaban con figuras que caían y otras veían el mundo como filas de bloques incluso despiertas. Shawn Achor lo llama efecto Tetris: el cerebro sigue buscando el patrón que ha practicado. Como un filtro de spam, la atención solo deja pasar lo que busca. Su remedio es apuntar tres cosas buenas al día; quienes lo hicieron una semana seguían más contentos seis meses después."
+ },
+ "de": {
+  "title": "Überall fallende Blöcke",
+  "description": "Nach drei Tagen Tetris sahen Menschen überall Blöcke. Shawn Achor liest das als Warnung, worauf uns die Arbeit trainiert.",
+  "hook": "Worauf trainiert dich deine Arbeit den ganzen Tag?",
+  "one_minute_summary": "An der Harvard Medical School spielten 27 Menschen drei Tage lang jeweils mehrere Stunden Tetris. Danach träumten manche von fallenden Formen, andere sahen die Welt sogar im Wachzustand als Reihen von Steinen. Shawn Achor nennt das Tetris-Effekt: Das Gehirn sucht weiter nach dem Muster, das es geübt hat. Aufmerksamkeit funktioniert wie ein Spamfilter und lässt nur durch, wonach sie sucht, also übersieht ein auf Probleme trainierter Kopf das Gute. Sein Mittel: täglich drei gute Dinge aufschreiben. Wer das eine Woche tat, war sechs Monate später glücklicher."
+ }
+}

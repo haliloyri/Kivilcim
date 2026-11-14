@@ -1,0 +1,58 @@
+{
+  "story_id": 1681,
+  "kind": "concept",
+  "book": {
+    "title": "The Shallows",
+    "author": "Nicholas Carr",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Carr own reading drift and the Friedman line are from notes and essay summaries, not book text. Old diary and Tolstoy invented details dropped; War and Peace is Friedman, not Carr. Plasticity examples from notes. The story presents the thesis as Carr argument, not proof.",
+  "facts": [
+    "The Shallows grew out of Carr 2008 Atlantic essay \"Is Google Making Us Stupid?\".",
+    "Carr writes that for some years he has felt that someone or something has been tinkering with his brain. His concentration drifts after a page or two where he once immersed himself in long prose.",
+    "He quotes Bruce Friedman, a blogger on computers in medicine, who says he has almost totally lost the ability to read and absorb a longer text: he cannot read War and Peace anymore.",
+    "Carr argues the brain is plastic: it adapts to what it is repeatedly asked to do. Examples: monkeys using tools, violinists, London taxi drivers who build detailed mental maps.",
+    "Carr cites research suggesting linear text beats hypertext for comprehension and retention."
+  ],
+  "scene_details": [
+    "concentration drifting after a page or two",
+    "Friedman and War and Peace",
+    "the mental maps of London taxi drivers"
+  ],
+  "tension": "A writer who spent his life reading finds his attention slipping after a page or two.",
+  "opening_idea": "Start with Carr noticing the page two of a text and his mind leaving.",
+  "lessons": [
+    {
+      "idea": "The brain strengthens what you ask it to do often, so the way you read now shapes the reader you become.",
+      "anchor": "Carr concentration drift and the taxi drivers plasticity.",
+      "example": "A cook who only tastes quickly loses patience for slow sauces."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your day is there one stretch of reading or work you could hold in a single piece, and what usually breaks it?",
+  "use_cases": [
+    {
+      "situation": "You are at your desk and keep switching tabs.",
+      "move": "Say you read how the brain tunes itself to what you repeat, and keep one tab open for 25 minutes.",
+      "context": "self"
+    },
+    {
+      "situation": "Friends joke that nobody finishes books now.",
+      "move": "Mention Friedman saying he could no longer read War and Peace, and ask what each of you actually finishes.",
+      "context": "social"
+    },
+    {
+      "situation": "Your family is on phones at dinner.",
+      "move": "Suggest one meal with phones in another room, and notice how the conversation runs.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The brain gets better at what you repeat, including skimming; pick which one you practise today.",
+  "conversation_variants": {
+    "punchline_idea": "Nicholas Carr says it felt like someone was tinkering with his brain: a page or two and his mind drifted.",
+    "thirty_sec_idea": "Nicholas Carr noticed his concentration drifting after a page or two. A blogger he quotes said he could no longer read War and Peace. Carr argues that the brain adapts to what we repeat, as London taxi drivers show.",
+    "question_idea": "",
+    "key_contrast_idea": "skimming, or deep reading"
+  }
+}

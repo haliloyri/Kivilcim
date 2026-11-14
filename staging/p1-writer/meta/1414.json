@@ -1,0 +1,35 @@
+{
+ "story_id": 1414,
+ "verdict": "keep",
+ "verify_note": "Keep: rebuilt on Maxwell's Law of the Lid, the 1 to 10 scale and the McDonald brothers vs Kroc (chapter summaries, medium confidence). Old 'two founders' scenario and unverifiable quotes dropped. Kroc deal date varies by source, so none is given.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Hamburgerlerin üstündeki tavan",
+  "description": "Maxwell'in Tavan Yasası, liderlik becerisinin her şeyin sınırını çizdiğini söyler. İki kardeşte hamburger ve mutfak vardı, Kroc'ta daha yüksek bir tavan.",
+  "hook": "Mutfak iyi çalışırken işinizin sınırını ne çiziyor?",
+  "one_minute_summary": "Dick ve Maurice McDonald Güney Kaliforniya'da küçük ve verimli bir hamburger işi yürütüp rahat geçiniyordu. Ray Kroc kardeşlerle ortak oldu, sonra tüm hakları satın aldı. 1955 ile 1959 arasında yaklaşık yüz restoran açıldı, dört yıl sonra beş yüz oldu. Maxwell bunu Tavan Yasası için kullanıyor: liderlik becerisi 1 ile 10 arası bir ölçekte sınırı çizer ve liderliği öğrenmek, yalnızca çok çalışmaktan çok daha fazla getirir."
+ },
+ "en": {
+  "title": "The lid over the hamburgers",
+  "description": "Maxwell's Law of the Lid says leadership ability caps everything else. Two brothers had the burgers and the kitchen; Kroc had a higher lid.",
+  "hook": "What caps your work when the kitchen already runs well?",
+  "one_minute_summary": "Dick and Maurice McDonald ran a small, efficient hamburger business in Southern California and lived comfortably. Ray Kroc partnered with them and later bought the rights; between 1955 and 1959 about a hundred restaurants opened, and four years later there were five hundred. John Maxwell uses it for his Law of the Lid: leadership ability sets a ceiling, on a scale of 1 to 10, and studying leadership raises it far more than working harder."
+ },
+ "es": {
+  "title": "El techo sobre las hamburguesas",
+  "description": "La Ley del Techo de Maxwell dice que la capacidad de liderar limita todo lo demás. Dos hermanos tenían las hamburguesas y la cocina; Kroc tenía un techo más alto.",
+  "hook": "¿Qué limita tu trabajo cuando la cocina ya funciona bien?",
+  "one_minute_summary": "Dick y Maurice McDonald dirigían un pequeño y eficiente negocio de hamburguesas en el sur de California y vivían cómodamente. Ray Kroc se asoció con ellos y más tarde compró los derechos; entre 1955 y 1959 se abrieron unos cien restaurantes y cuatro años después, quinientos. John Maxwell lo usa para su Ley del Techo: la capacidad de liderar fija un límite en una escala del 1 al 10, y estudiar liderazgo lo sube mucho más que trabajar más."
+ },
+ "de": {
+  "title": "Der Deckel über den Burgern",
+  "description": "Maxwells Gesetz des Deckels sagt, dass die Führungsfähigkeit alles andere begrenzt. Zwei Brüder hatten Burger und Küche, Kroc hatte einen höheren Deckel.",
+  "hook": "Was begrenzt deine Arbeit, wenn die Küche längst läuft?",
+  "one_minute_summary": "Dick und Maurice McDonald führten in Südkalifornien ein kleines, effizientes Burger-Geschäft und lebten bequem davon. Ray Kroc tat sich mit ihnen zusammen und kaufte später die Rechte; zwischen 1955 und 1959 eröffneten rund hundert Restaurants, vier Jahre später fünfhundert. John Maxwell nutzt das für sein Gesetz des Deckels: Die Führungsfähigkeit setzt auf einer Skala von 1 bis 10 die Grenze, und Führen zu lernen hebt sie weit mehr als mehr Arbeit."
+ }
+}

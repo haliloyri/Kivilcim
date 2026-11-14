@@ -1,0 +1,148 @@
+{
+ "book_no": 42,
+ "title": "Stillness Is the Key",
+ "authors": [
+  "Ryan Holiday"
+ ],
+ "year": "2019",
+ "sources": [
+  "https://archive.org/details/stillness-is-the-key-ryan-holiday",
+  "https://www.artofmanliness.com/articles/podcast-565-stillness-is-the-key/",
+  "https://michaelwsherwood.substack.com/p/book-review-summary-stillness-is",
+  "https://www.goodreads.com/notes/48592071-stillness-is-the-key/6340185-ram-n-nogueras-p-rez",
+  "https://tim.blog/2009/02/12/napoleon-on-news-and-information-management-plus-video-on-outsourcing-e-mail-and-more/"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The book opens with John F. Kennedy: between going to bed on October 15, 1962 and waking the next morning, the CIA identified Soviet ballistic missile sites under construction in Cuba, ninety miles from US shores (the 'Thirteen Days').",
+   "source": "archive.org full text; Sherwood summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Kennedy's first eighteen months had gone badly: the failed Bay of Pigs invasion in April 1961 (the CIA pressured him into it) and being dominated by Khrushchev in Vienna.",
+   "source": "archive.org full text; Sherwood summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "His advisors' advice was immediate and emphatic: destroy the missile sites with full military force, followed by a full-scale invasion of Cuba; 'aggression must be met with aggression'.",
+   "source": "archive.org full text; Sherwood summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Kennedy had recently read Barbara Tuchman's The Guns of August, about leaders rushing into World War I and being unable to stop; he wanted everyone to slow down and think.",
+   "source": "archive.org full text; Sherwood summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "His handwritten notes during the crisis repeat words: 'Missile. Missile. Missile.', 'Veto. Veto. Veto. Veto.', 'Consensus' six times; on a yellow legal pad he drew two sailboats; on White House stationery he wrote 'We are demanding withdrawal of the missiles.'",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "He asked advisors why the Russians did this and what advantage they sought. He chose a blockade (nearly half his advisors opposed it) because it preserved options, used 'time as a tool', and called it a 'quarantine'.",
+   "source": "archive.org full text; Art of Manliness interview",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "In tense moments he went to the Rose Garden, took long swims and sat in his rocking chair; he left the room so advisors could debate freely.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "On October 26, eleven days into the crisis, Khrushchev wrote that the two of them were pulling on a rope with a knot of war in the middle; the Soviets then signalled they would remove the missiles. Kennedy pledged not to invade Cuba and secretly agreed to remove US missiles in Turkey months later.",
+   "source": "archive.org full text; Sherwood summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Napoleon, as a general, had his secretary wait three weeks before opening any correspondence; he loved to note how many 'important' issues had resolved themselves and needed no reply.",
+   "source": "archive.org full text; Goodreads highlight; Art of Manliness",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Holiday notes Napoleon was never negligent of his duties. He told messengers never to wake him with good news; bad news (an unfolding crisis) was to be brought immediately: 'Rouse me instantly, for then there is not a moment to be lost.'",
+   "source": "archive.org full text; Emerson via tim.blog",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Holiday's advice in that chapter (Limit Your Inputs): give things a little space, don't consume news in real time, don't let your inbox lord over your life; the important stays important, the unimportant shows its insignificance. Eisenhower later refused unopened mail and sorted urgent vs important.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "The anecdote's origin is Emerson's essay on Napoleon (Representative Men).",
+   "source": "tim.blog quoting Emerson; Art of Manliness",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Holiday quotes Epictetus ('be content to appear clueless or stupid in extraneous matters') and Dorothy Day's 1942 diary ('Turn off your radio, put away your daily paper'); Eisenhower found much was urgent but not important ('Eisenhower Box').",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "Holiday: lawyers bury the other side in paper, intelligence operatives flood the enemy with propaganda ('analysis paralysis'); advice: don't consume news in real time, be a season or two behind on trends, don't let your inbox lord over your life.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Alexander the Great ordered his army to wait for days before a great victory, then said 'Now'",
+   "reason": "Not in the book. Alexander appears only as an example of ego (drunk, killing a friend) and in the Diogenes meeting."
+  },
+  {
+   "claim": "Stoic plane tree (çınar) staying upright in a storm thanks to its roots",
+   "reason": "Not in the book's full text; the only tree passages are Gladstone's tree chopping and a falling branch as mortality image."
+  },
+  {
+   "claim": "Holiday's exercise: wait 24 hours before replying, a night before sending an angry message, a week before a big decision",
+   "reason": "Not found in the Napoleon chapter."
+  }
+ ],
+ "stories": {
+  "1258": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8"
+   ],
+   "note": "Alexander anecdote not in book; center (stillness before a big decision) kept with the book's own opening case, Kennedy in the Cuban Missile Crisis. Title changed."
+  },
+  "1259": {
+   "verdict": "delete",
+   "fact_ids": [],
+   "note": "Tree-and-roots Stoic metaphor is not in the book; no concrete case carries the story's center."
+  },
+  "1260": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f9",
+    "f10",
+    "f11",
+    "f12",
+    "f13",
+    "f14"
+   ],
+   "note": "Napoleon's three-week mail delay verified in full text; invented 24h/one-week exercise dropped; good-news/bad-news rule added."
+  }
+ }
+}

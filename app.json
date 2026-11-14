@@ -5,7 +5,7 @@
     "scheme": "albor",
     "version": "1.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "backgroundColor": "#1D4A47",
     "icon": "./assets/logo/albor_app_icon.png",
     "locales": {
@@ -22,6 +22,7 @@
         "NSPhotoLibraryAddUsageDescription": "Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister."
       },
       "privacyManifests": {
+        "NSPrivacyTracking": true,
         "NSPrivacyCollectedDataTypes": [
           {
             "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeName",
@@ -42,9 +43,10 @@
           {
             "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeDeviceID",
             "NSPrivacyCollectedDataTypeLinked": true,
-            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypeTracking": true,
             "NSPrivacyCollectedDataTypePurposes": [
-              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality",
+              "NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising"
             ]
           },
           {

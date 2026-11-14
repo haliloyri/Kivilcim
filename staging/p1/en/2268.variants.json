@@ -1,0 +1,6 @@
+{
+ "punchline": "A three-digit rounding changed two months of weather.",
+ "thirty_sec": "In 1961 Edward Lorenz reran a weather simulation, typing .506 instead of .506127, and left for coffee. Two months of simulated weather came out drastically different, showing that small differences grow and that long-range forecasting is very hard.",
+ "question": "Which small assumption does your most distant forecast hang on?",
+ "key_contrast": "A small error grows; it does not fade."
+}

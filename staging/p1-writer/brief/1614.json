@@ -1,0 +1,31 @@
+{
+ "story_id": 1614,
+ "kind": "concept",
+ "book": {"title": "The Millionaire Next Door", "author": "Thomas J. Stanley and William D. Danko", "year": "1996"},
+ "confidence": "medium",
+ "confidence_note": "Figures come from Wikipedia and reader notes (8.4 hours/month for middle-income PAWs, about 83 percent more than UAWs); the original text was not accessible. The old text's 8 hours versus 2 hours and the tax/insurance savings claims are not in the book and were rejected. The Willis anecdote comes from a secondary summary. Survivorship-bias criticism by Taleb noted.",
+ "facts": [
+  "The authors call people with high net worth for their income and age PAWs (Prodigious Accumulators of Wealth) and those with low net worth for their income UAWs (Under Accumulators).",
+  "PAWs spend nearly twice as many hours a month planning their investments as UAWs (about 83 percent more); among middle-income PAWs the figure is about 8.4 hours a month.",
+  "UAWs often say they will start investing once they earn roughly ten percent more income, and usually do not.",
+  "Mr. Willis was a Walmart executive for ten years and bought no shares of the company during its growth, although he had the knowledge to do so."
+ ],
+ "scene_details": ["8.4 hours a month on investment planning", "Mr. Willis, ten years at Walmart, no shares", "the promise to invest after a ten percent raise"],
+ "tension": "A man with inside knowledge of a fast-growing company bought none of it, while the people who built wealth spent nearly twice the hours on their investments.",
+ "opening_idea": "Open with Mr. Willis: ten years at Walmart during its growth, no shares bought.",
+ "lessons": [{"idea": "Wealth follows attention to money, not only income; time given to planning is part of the mechanism.", "anchor": "PAWs spent nearly twice as many monthly hours on investments as UAWs"}],
+ "reflect": [],
+ "reflect_final": "If you set aside a fixed hour this month to look at your own money, what is the one decision you would finally make in it?",
+ "use_cases": [
+  {"situation": "A partner says there is no time for the budget", "move": "Mention that the book's accumulators spent about eight hours a month on investments, and propose one fixed hour on a set evening.", "context": "family"},
+  {"situation": "You keep saying you will invest after the next raise", "move": "Book one hour in your calendar this week and pick one amount to move now.", "context": "self"},
+  {"situation": "A colleague mentions company stock options they never looked at", "move": "Ask how long it would take to read the terms, and offer to compare notes after you both do.", "context": "meeting"}
+ ],
+ "pocket_idea": "Mr. Willis knew Walmart from inside and bought nothing; knowing is not the same as acting on it.",
+ "conversation_variants": {
+  "punchline_idea": "A Walmart executive for ten years bought no Walmart shares while the company grew.",
+  "thirty_sec_idea": "Stanley and Danko found that people who built wealth spent nearly twice as many hours on their investments each month, about eight for the middle-income group, while others promised to start after a ten percent raise. One Walmart executive never bought a share in ten years.",
+  "question_idea": "",
+  "key_contrast_idea": "knowing versus acting"
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "story_id": 1597,
+ "kind": "concept",
+ "book": {
+  "title": "The Good Gut",
+  "author": "Justin Sonnenburg and Erica Sonnenburg",
+  "year": "2015"
+ },
+ "confidence": "medium",
+ "confidence_note": "Book text not read; page-cited lines come from a reference-by-reference review. Old figures (38 trillion, 70 percent, 90 percent serotonin), C-section and over-hygiene claims omitted as unverified. Few concrete scenes exist, so the story is short.",
+ "facts": [
+  "Justin and Erica Sonnenburg are Stanford microbiology researchers; The Good Gut appeared in 2015.",
+  "The book reports that germ-free mice, raised with no microbial exposure, develop severe airway responses similar to asthma when allergens are present.",
+  "Mice colonized by a full microbiota are protected from that response.",
+  "Early-life antibiotic use can directly change the composition of the microbiota, and the book links it to lasting weight gain; it also says these studies have not established antibiotics as a cause of immune-mediated disease.",
+  "Breastfeeding is linked in the book to a lower risk of allergies, asthma, obesity and even diabetes; the evidence behind this is mostly observational.",
+  "The book argues Western diets supply too few of the fibers gut microbes can ferment, which lowers microbial diversity.",
+  "Children raised on farms have fewer allergies than children who were not (book p.67).",
+  "In a twin experiment (cited Ridaura et al., 2013), mice given microbes from an obese twin gained more body fat, about 10 percent relative to controls, while mice given the lean twin's microbes stayed lean; the effect was modest.",
+  "Antibiotics disrupt connections in the microbes' food web; observational studies link childhood antibiotics to higher body weight."
+ ],
+ "scene_details": [
+  "mice raised with no microbial exposure",
+  "an allergen in the air",
+  "a mouse colonized with a full microbiota",
+  "a course of antibiotics early in life",
+  "a pair of twins, one lean and one obese",
+  "children growing up on a farm"
+ ],
+ "tension": "A body with no microbes sounds like the safest start, yet the germ-free mice react to allergens like asthmatics.",
+ "opening_idea": "The authors ask readers to stop picturing gut bacteria as invaders, and point to mice that have none.",
+ "lessons": [
+  {
+   "idea": "Treat your gut as a community you feed, not a tube you fill.",
+   "anchor": "germ-free mice and the effect of a full microbiota"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which one regular meal of yours would you change for a week to see how your digestion responds?",
+ "use_cases": [
+  {
+   "situation": "A friend finishes antibiotics and wants to 'get back to normal'",
+   "move": "Mention the germ-free mice: bacteria seem to help the immune system, so ask what food she could add for the gut afterwards.",
+   "context": "social"
+  },
+  {
+   "situation": "Planning the week's shopping",
+   "move": "Add one fibre-rich plant you rarely buy, and note how your stomach feels.",
+   "context": "self"
+  },
+  {
+   "situation": "A parent worries about being too clean",
+   "move": "Say that the book ties microbes to immune calm but cautions the evidence is partly observational.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "Mice raised without any microbes reacted to allergens like asthmatics, so feed the gut community, do not only clear it.",
+ "conversation_variants": {
+  "punchline_idea": "Mice raised with no microbes at all developed asthma-like airway reactions to allergens.",
+  "thirty_sec_idea": "Germ-free mice story with the colonized control and the caution on evidence.",
+  "question_idea": "",
+  "key_contrast_idea": "invaders or helpers"
+ }
+}

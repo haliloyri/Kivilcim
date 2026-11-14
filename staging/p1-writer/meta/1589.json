@@ -1,0 +1,35 @@
+{
+  "story_id": 1589,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: survival circuit and mild stress from reviews of Lifespan; book text not read. Old opening examples and slogans dropped. Diet details come from a secondary synopsis (low) and are flagged; evidence partly animal.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Konfor alarmı uyutur mu?",
+    "description": "Sinclair'e göre bedenimizde kıtlık ve soğuk için kurulmuş bir devre var. Kanıtın bir kısmı hayvan çalışmalarına dayanıyor.",
+    "hook": "Haftanızda bedeninizden hiçbir şey istemeyen bir bölüm var mı?",
+    "one_minute_summary": "David Sinclair, Lifespan kitabında sirtüinler, mTOR ve AMPK'den oluşan bir hayatta kalma devresi anlatıyor. İlk canlılardan miras kalan bu devre kıtlık ve soğuk için evrimleşti ve rahat bir yaşamda çoğunlukla uyuyor. Arada bir aç kalmak, üşümek ya da bedeni zorlamak gibi hafif stres onu uyandırıyor ve sirtüinler hücreyi savunma ve onarıma yöneltiyor. Kanıtın bir kısmı hayvan çalışmalarına dayanıyor, o yüzden bunu Sinclair'in savı olarak okuyun ve değişiklik öncesinde doktora danışın."
+  },
+  "en": {
+    "title": "The famine alarm",
+    "description": "Sinclair says cells carry a circuit built for famine and cold. Part of the evidence rests on animal studies.",
+    "hook": "Is there a part of your week that never asks anything of your body?",
+    "one_minute_summary": "In Lifespan, David Sinclair describes a survival circuit made of sirtuins, mTOR and AMPK. Inherited from the earliest life forms, it evolved for famine and cold and mostly sleeps in a comfortable life. Mild stress, such as an occasional hungry stretch, cold or hard exercise, switches it on, and sirtuins push cells toward defence and repair. Part of the evidence rests on animal studies, so read this as Sinclair's argument and ask a doctor before changing how you eat or train."
+  },
+  "es": {
+    "title": "La alarma del hambre",
+    "description": "Sinclair dice que las células llevan un circuito hecho para el hambre y el frío. Parte de la evidencia viene de estudios con animales.",
+    "hook": "¿Hay una parte de tu semana que nunca le pide nada a tu cuerpo?",
+    "one_minute_summary": "En Lifespan, David Sinclair describe un circuito de supervivencia formado por sirtuinas, mTOR y AMPK. Heredado de las primeras formas de vida, nació para el hambre y el frío y casi siempre duerme en una vida cómoda. Un estrés leve, como pasar algo de hambre, el frío o el ejercicio duro, lo enciende, y las sirtuinas empujan a las células hacia la defensa y la reparación. Parte de la evidencia viene de animales: léelo como su argumento y consulta a un médico antes de cambiar cómo comes."
+  },
+  "de": {
+    "title": "Der Alarm für Hunger",
+    "description": "Sinclair sagt, Zellen trügen einen Schaltkreis für Hunger und Kälte. Ein Teil der Belege stützt sich auf Tierstudien.",
+    "hook": "Gibt es in deiner Woche einen Teil, der deinem Körper nie etwas abverlangt?",
+    "one_minute_summary": "In Lifespan beschreibt David Sinclair einen Überlebensschaltkreis aus Sirtuinen, mTOR und AMPK. Von den ersten Lebensformen geerbt, entstand er für Hunger und Kälte und schläft im bequemen Leben meist. Milder Stress wie ein gelegentlicher Hunger, Kälte oder hartes Training schaltet ihn ein, und die Sirtuine drängen die Zellen zu Abwehr und Reparatur. Ein Teil der Belege stützt sich auf Tierstudien. Lies es also als Sinclairs Argument und frag einen Arzt, bevor du änderst, wie du isst oder trainierst."
+  }
+}

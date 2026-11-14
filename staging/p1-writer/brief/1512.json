@@ -1,0 +1,61 @@
+{
+  "story_id": 1512,
+  "kind": "concept",
+  "book": {
+    "title": "A Guide to the Good Life",
+    "author": "William B. Irvine",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "Only secondary descriptions (reader notes, reviews, interview transcript); no full text. Irvine calls the practice a bedtime meditation and derives it from Seneca; the sample questions come from a reviewer's notes and may be paraphrased. The old text's three evening questions, its quote ('Stoacılar günü muhasebesiz kapatmıyordu...') and the Marcus Aurelius detail ('Bugün sinirimi kaybettim...') are not supported and were dropped. The interview line (progress, not perfection) is Irvine's spoken framing, not necessarily the book's wording. Added Seneca's own account in On Anger III.36 (Sextius's questions; lamp removed, wife silent; conditional pardon; two examples), verified in a public-domain translation quoted on a blog; these details come from Seneca, not necessarily from Irvine's book, and the story says so.",
+  "facts": [
+    "Irvine calls the practice a bedtime meditation, derived from Seneca: before sleep you review the day's events, how you responded and how a Stoic should have responded.",
+    "Seneca's stated goal was to reduce his vices and mistakes each day.",
+    "Notes give sample questions: what failings did you resist, where did you improve, what problems did you solve; did you let others upset you, give in to temptation, let go of worry about something beyond your control, and are you careful to internalize your goals.",
+    "The checklist separates things under complete control, no control and some but not complete control, so it reuses the trichotomy of control.",
+    "Stoic meditation here is active reflection on the day, not emptying the mind; Irvine finds some forms of Buddhist meditation time-consuming and physically and mentally challenging.",
+    "The nightly review also reminds you to use techniques like negative visualization, which are easy to forget when life is going well.",
+    "In an interview Irvine said the goal is progress, not perfection: you will never achieve Stoic perfection.",
+    "Seneca's own account in On Anger III.36 (outside the book): Sextius asked at day's end what bad habit he had cured, which vice restrained, how improved. Seneca reviews his whole day once the lamp is removed and his wife has fallen silent, concealing and omitting nothing.",
+    "Seneca forgives a lapse on condition it is not repeated; he resolves not to argue with people unwilling to learn, and to consider whether a listener can bear the truth before rebuking."
+  ],
+  "scene_details": [
+    "the lamp removed and a silent wife",
+    "a checklist of questions",
+    "a lapse forgiven on condition"
+  ],
+  "tension": "Reviewing a day can turn into self-punishment, yet the Stoic aim is to notice one thing to do better tomorrow.",
+  "opening_idea": "Open on bedtime as a time for going through the day, not for emptying the mind, without naming the author.",
+  "lessons": [
+    {
+      "idea": "Review the day as a coach, looking for one adjustment, not as a judge handing down a verdict.",
+      "anchor": "Seneca's goal of reducing his vices each day and Irvine's progress, not perfection"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you walked through today before sleep, which one moment would you handle differently tomorrow, and what would the change be?",
+  "use_cases": [
+    {
+      "situation": "You end a tense day",
+      "move": "Run a short review before bed: where did someone upset me, and what would I do next time?",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague asks how you keep improving",
+      "move": "Describe the evening check, what you resisted and where you got better, and offer to try it tonight.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your teenager had a rough day",
+      "move": "Skip the trial and ask two questions: what went okay today, and what would you do differently?",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "At bedtime ask not who was right today but what you would do differently tomorrow.",
+  "conversation_variants": {
+    "punchline_idea": "Seneca's bedtime routine was a count of vices, not a prayer.",
+    "thirty_sec_idea": "Irvine, following Seneca, treats bedtime as a review of how you responded to the day, with a checklist of questions and the aim of progress, not perfection.",
+    "question_idea": "",
+    "key_contrast_idea": "verdict, adjustment"
+  }
+}

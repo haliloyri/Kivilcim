@@ -1,0 +1,182 @@
+{
+ "book_no": 188,
+ "title": "The Second Mountain",
+ "authors": [
+  "David Brooks"
+ ],
+ "year": "2019",
+ "sources": [
+  "https://archive.org/details/the-second-mountain-david-brooks (full text, read directly: introduction, ch. 2 'The Instagram Life', ch. on moral ecologies, ch. on commitment, 'The Quickening', conclusion)",
+  "https://www.penguinrandomhouse.com/books/315139/the-second-mountain-by-david-brooks/"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Brooks describes a two-mountain life shape. On the first mountain people establish an identity, cultivate talents, build a secure ego and try to make a mark; they think about reputation, 'keeping score. How do I measure up? Where do I rank?' Goals are the ones the culture endorses: success, being well thought of, the right social circles, personal happiness.",
+   "source": "intro",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Some get to the top and find it unsatisfying ('Is this all there is?'); others are knocked off by failure; others by something unexpected such as a death, a cancer scare or addiction. They end up 'in the valley'. For some the valley is 'the making of them': they realise there is a yearning to care for others.",
+   "source": "intro",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "'The second mountain is not the opposite of the first mountain. To climb it doesn't mean rejecting the first mountain. It's the journey after it.' He says the test is where your ultimate appeal lies: to self, or to something outside of self.",
+   "source": "intro",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "First mountain: building up the ego, acquisition, ambitious, strategic, independent. Second mountain: shedding the ego, contribution, relational, intimate, relentless. 'You conquer your first mountain... You are conquered by your second mountain. You surrender to some summons.'",
+   "source": "intro",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Brooks about himself: 'My first mountain was an insanely lucky one. I achieved far more professional success than I ever expected to.' But the climb made him 'aloof, invulnerable, and uncommunicative', he sidestepped the responsibilities of relationship; his failures were 'of omission', 'the sins of withdrawal: evasion, workaholism, conflict avoidance'. He and his ex-wife agreed not to discuss their marriage and divorce in public.",
+   "source": "intro",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "'Then came the events of the summer of 2013 and the suffering that entailed. My divorce happened. I was lonely, humiliated, adrift. I had a constant physical sensation of burning in my stomach and gut.' In seasons of suffering 'you have a tendency to grip the steering wheel tighter... but sometimes you get defeated and just let go of the wheel. Strange things begin happening.'",
+   "source": "'The Quickening'",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Commitment: 'making a promise to something without expecting a reward'; 'You have reached the point of the double negative. I can't not do this.' A contract is weighing pros and cons and the person does not change; a commitment 'changes who you are'. Most people make four big commitments: to a vocation, to a spouse and family, to a philosophy or faith, to a community. All require 'a willingness to close off other options'.",
+   "source": "commitment chapter",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "'On the first mountain, a person makes individual choices and keeps their options open. The second mountain is a vale of promise making.' 'A thick life is defined by commitments and obligations. The life well lived is a journey from open options to sweet compulsions.'",
+   "source": "commitment chapter",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Brooks lists what commitments give: identity ('how we introduce ourselves to strangers'), purpose, a higher freedom ('freedom to' versus 'freedom from': 'You have to chain yourself to the piano and practice for year after year if you want to have the freedom to really play'; Tim Keller: real freedom 'is not so much the absence of restrictions as finding the right ones'), and moral character.",
+   "source": "commitment chapter",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "A commitment is also love and promise 'put under law': people bind future selves to obligations for the moments when feelings falter ('falling in love with something and then building a structure of behavior around it for those moments when love falters').",
+   "source": "commitment chapter",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "'After several years of pursuing open options, it's not so much that you lose the thread of the meaning of your life; you have trouble even staying focused on the question.' People deliberate over little choices more than big ones: before buying a car they read ratings and resale values; for a vocation 'they just sort of slide rather than decide'; they 'marry the person whom they happen to be living with'.",
+   "source": "ch. 2; ch. on decisions",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Commencement chapter (ch. 2, 'The Instagram Life'): colleges ask someone distinguished by career success to claim career success is not important and not to fear failure; 'From this young people learn that failure can be wonderful, if you happen to be J. K. Rowling, Denzel Washington, or Steve Jobs.'",
+   "source": "ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f13",
+   "claim": "Brooks says speakers hand graduates 'great big boxes of nothing': the box of freedom ('The purpose of life is to be free'), possibility ('Your future is limitless!'), authenticity ('Look inside yourself! You do you!'), and the emptiest box, autonomy ('It's up to you to define your own values... Do what you love!'). The graduates 'are drowning in freedom' and put each box down, asking what to devote themselves to.",
+   "source": "ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "Brooks: the 'you' graduates are told to consult 'is the very thing that hasn't yet formed'. He quotes Kierkegaard: 'what am I to do, not about what I must know... finding the idea for which I am willing to live and die.' Brooks: 'How is it that on this biggest question of all, we have nothing to say?'",
+   "source": "ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Moral ecologies: around the middle third of the twentieth century a group-oriented ecology ('We're All in This Together'), duty, conformity, humility, reticence, self-effacement; it also tolerated racism and anti-Semitism and trapped many in conformity. It was replaced by 'I'm Free to Be Myself': freedom, autonomy, authenticity. Brooks's core argument: 'we have overdone it with the individualist worldview.'",
+   "source": "ch. on moral ecologies; conclusion",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "Brooks cites a survey: Harvard Graduate School of Education asked ten thousand middle and high school students whether their parents cared more about achievement or kindness; eighty percent said achievement.",
+   "source": "ch. on moral ecologies",
+   "confidence": "high"
+  },
+  {
+   "id": "f17",
+   "claim": "Brooks quotes L. A. Paul on big life choices: 'You shouldn't fool yourself, you have no idea what you are getting into.' Deep commitment 'happens when some person or cause or field of research has become part of your very identity': 'I'm a musician. I'm a Jew. I'm a scientist. I'm a Marine.'",
+   "source": "ch. on decisions; commitment chapter",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1660: Brooks had a 'career restructuring' and thinned friendships in 2013, was a NYT columnist at the summit, 'realized he had climbed the wrong mountain'.",
+   "reason": "Book says the first mountain is not wrong or rejected (f3). Career restructuring not found. Divorce in summer 2013 verified (f6); thin friendships appear as failures of withdrawal (f5), not as 2013 events."
+  },
+  {
+   "claim": "Old 1660: second mountain 'the commitment mountain, unconditional... a marriage, community, cause, profession'.",
+   "reason": "Roughly f7 but 'commitment' is the second mountain's mode, not its single definition; rewritten."
+  },
+  {
+   "claim": "Old 1660: Brooks says transition 'mostly comes after a break'.",
+   "reason": "Book lists three ways (f2), including success that feels hollow. Rewritten."
+  },
+  {
+   "claim": "Old 1661: 'taking commitment feels like loss of freedom, later like identity gain'.",
+   "reason": "Identity gain is f9 but 'feels like loss of freedom' is not Brooks's wording; the book speaks of 'freedom to'. Rewritten."
+  },
+  {
+   "claim": "Old 1661: 'Maybe a better one exists' thought, neighbourhood, job examples.",
+   "reason": "Not Brooks's examples; his are f11."
+  },
+  {
+   "claim": "Old 1662: a 1945 commencement speech ('Be honest. Be brave...') versus a 2015 one ('Follow your passion...').",
+   "reason": "No such pair in the book. Book's commencement material is f12-f14; the moral-ecology contrast is f15."
+  },
+  {
+   "claim": "Old 1662: 'character ethic versus authenticity ethic', Brooks 'does not criticise' authenticity.",
+   "reason": "Brooks does criticise it heavily (f13, f15). Character as habit-built virtue is from his earlier book, not verified here."
+  }
+ ],
+ "stories": {
+  "1660": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6"
+   ],
+   "note": "Two mountains, anchored in Brooks's own 2013 divorce and the 'first mountain was insanely lucky' passage. 'Wrong mountain' framing explicitly rejected."
+  },
+  "1661": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f7",
+    "f8",
+    "f9",
+    "f10",
+    "f11",
+    "f17"
+   ],
+   "note": "Open options to commitments; contract vs commitment; piano chain."
+  },
+  "1662": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f12",
+    "f13",
+    "f14",
+    "f15"
+   ],
+   "note": "Old premise (1945 vs 2015 speeches) unsupported; rebuilt on the commencement-speech chapter. Title and hook change. Core topic (culture of authenticity vs deeper moral grounding) still on-book."
+  }
+ }
+}

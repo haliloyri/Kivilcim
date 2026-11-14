@@ -1,0 +1,35 @@
+{
+  "story_id": 1487,
+  "verdict": "keep",
+  "verify_note": "Keep, low-medium: Facebook/YouTube design argument and the collective remedies from Wikipedia and the book's site; no named insider, quote or figure confirmed, so old text's executive, quote and cigarette comparison dropped. Story is a faithful summary of the argument only.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Dikkat için kurulmuş ekranlar",
+    "description": "Hari'ye göre uygulamalar dikkati tutmak için tasarlanıyor, bu yüzden çözüm yalnızca kişisel irade olamaz. Kitabın savı özet kaynaklara dayanıyor.",
+    "hook": "Hangi uygulamayı sizi tutmak için kurulmuş olarak görüyorsunuz?",
+    "one_minute_summary": "Johann Hari, Stolen Focus'ta uygulamaların dikkati yakalamak için tasarlandığını savunuyor. Facebook ve YouTube'u, veri toplamak ve etkileşimi uzatmak için ekran süresini artıran platformlar olarak anıyor. Gözünü ayıramamanın düz bir kişisel zayıflık olmadığını, çözümün de ortak olması gerektiğini söylüyor: düzenleme, halk sağlığı bakışı, kısa çalışma saatleri. Adlı bir tanık ya da rakam doğrulanamadığı için ayrıntı vermiyorum."
+  },
+  "en": {
+    "title": "Screens built to hold you",
+    "description": "Hari argues that apps are designed to keep your attention, so the fix cannot be willpower alone. The argument is taken from summaries of the book.",
+    "hook": "Which app do you think was built to keep you looking?",
+    "one_minute_summary": "In Stolen Focus, Johann Hari says many apps are designed to capture attention. He names Facebook and YouTube as platforms that push screen time up to collect data and lengthen engagement. Failing to look away, he argues, is not a plain personal weakness, and the answer has to be collective: regulation, attention as a public health issue, shorter working hours. No named insider or figure could be confirmed, so none is given."
+  },
+  "es": {
+    "title": "Pantallas hechas para retenerte",
+    "description": "Hari sostiene que las apps se diseñan para retener tu atención, así que la solución no puede ser solo la voluntad. El argumento sale de resúmenes del libro.",
+    "hook": "¿Qué app crees que se construyó para que sigas mirando?",
+    "one_minute_summary": "En Stolen Focus, Johann Hari dice que muchas apps están diseñadas para captar la atención. Nombra a Facebook y YouTube como plataformas que suben el tiempo de pantalla para recoger datos y alargar la interacción. No poder apartar la vista, sostiene, no es una simple debilidad personal, y la respuesta debe ser colectiva: regulación, atención como asunto de salud pública, jornadas más cortas. No se pudo confirmar ningún testigo ni cifra, así que no se da ninguno."
+  },
+  "de": {
+    "title": "Bildschirme zum Festhalten",
+    "description": "Hari argumentiert, Apps seien darauf angelegt, deine Aufmerksamkeit zu halten, also könne Willenskraft allein nicht die Lösung sein. Das Argument stammt aus Zusammenfassungen des Buches.",
+    "hook": "Welche App wurde deiner Meinung nach gebaut, damit du hinsiehst?",
+    "one_minute_summary": "In Stolen Focus sagt Johann Hari, viele Apps seien darauf angelegt, Aufmerksamkeit einzufangen. Er nennt Facebook und YouTube als Plattformen, die Bildschirmzeit steigern, um Daten zu sammeln und die Nutzung zu verlängern. Nicht wegsehen zu können sei keine schlichte persönliche Schwäche, und die Antwort müsse kollektiv sein: Regulierung, Aufmerksamkeit als Frage der öffentlichen Gesundheit, kürzere Arbeitszeiten. Ein benannter Insider oder eine Zahl ließ sich nicht bestätigen, daher gibt es keine."
+  }
+}

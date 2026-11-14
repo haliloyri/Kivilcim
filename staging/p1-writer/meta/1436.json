@@ -1,0 +1,30 @@
+{
+  "story_id": 1436,
+  "verdict": "keep",
+  "verify_note": "Keep, re-grounded with low confidence: only a summary preview was available. Old claim that objections signal interest, its quotation and the real-objection/excuse split could not be tied to the book; the documented fear of rejection (cold calling, three remedies) replaces it.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Reddedilme korkusu bir kastır",
+    "description": "Brian Tracy'ye göre satışçıları en çok reddedilme korkusu geri tutar. Reddedilmek kişisel değildir ve cesaret kas gibi kullandıkça güçlenir.",
+    "hook": "Reddedilebileceği için ertelediğiniz bir arama, mesaj ya da istek var mı?",
+    "one_minute_summary": "Bir özete göre Brian Tracy'nin The Psychology of Selling kitabı satışçıyı geri tutan şeyin reddedilme korkusu olduğunu söyler. Randevu için soğuk arama çoğu zaman gerekir ve kitap bunu satışın en stresli, en az sevilen kısmı olarak tarif eder. Çözümü üç parçadır: reddedilmek kişisel değildir, cesaret pratikle kas gibi güçlenir ve olumlu iç konuşma yardımcı olur. Kitap ayrıca sık gelen itirazlara önceden cevap hazırlamayı önerir."
+  },
+  "en": {
+    "title": "The 'no' that stops the call",
+    "description": "Brian Tracy names fear of rejection as the main thing holding salespeople back. His answer: it is not personal, and courage grows with use.",
+    "hook": "Is there a call, message or request you keep putting off because of how it might be received?",
+    "one_minute_summary": "According to a summary of Brian Tracy's The Psychology of Selling, the fear of rejection is the main thing holding salespeople back. Getting an appointment usually means cold calling, which the book calls the most stressful and least-liked part of selling. Tracy's three remedies: rejection is not personal, courage strengthens with practice like a muscle, and positive self-talk helps. He also advises preparing answers to common objections ahead of time."
+  },
+  "es": {
+    "title": "El no que frena la llamada",
+    "description": "Brian Tracy señala el miedo al rechazo como lo que más frena a los vendedores. Su respuesta: no es personal y el valor crece con el uso.",
+    "hook": "¿Hay una llamada, un mensaje o una petición que aplazas por cómo podrían recibirla?",
+    "one_minute_summary": "Según un resumen de The Psychology of Selling, de Brian Tracy, el miedo al rechazo es lo que más frena a los vendedores. Conseguir una cita suele exigir llamadas en frío, que el libro describe como la parte más estresante y menos querida de vender. Los tres remedios de Tracy: el rechazo no es personal, el valor se fortalece con la práctica como un músculo y el diálogo interno positivo ayuda. También aconseja preparar de antemano respuestas a las objeciones habituales."
+  },
+  "de": {
+    "title": "Das Nein, das den Anruf bremst",
+    "description": "Brian Tracy nennt die Angst vor Ablehnung als größtes Hindernis für Verkäufer. Seine Antwort: Sie ist nicht persönlich, und Mut wächst durch Gebrauch.",
+    "hook": "Gibt es einen Anruf, eine Nachricht oder eine Bitte, die du aufschiebst, weil sie schlecht ankommen könnte?",
+    "one_minute_summary": "Laut einer Zusammenfassung von Brian Tracys The Psychology of Selling ist die Angst vor Ablehnung das, was Verkäufer am meisten bremst. Für einen Termin braucht man meist Kaltakquise, die das Buch als den stressigsten und unbeliebtesten Teil des Verkaufens beschreibt. Tracys drei Mittel: Ablehnung ist nicht persönlich, Mut wächst durch Übung wie ein Muskel, und positives Selbstgespräch hilft. Außerdem rät er, Antworten auf häufige Einwände vorab vorzubereiten."
+  }
+}

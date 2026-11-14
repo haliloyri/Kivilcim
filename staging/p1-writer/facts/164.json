@@ -1,0 +1,201 @@
+{
+  "book_no": 164,
+  "title": "Lifespan",
+  "authors": [
+    "David A. Sinclair (with Matthew D. LaPlante)"
+  ],
+  "year": "2019",
+  "sources": [
+    "https://lifespan.io/reviewing-david-sinclairs-first-lifespan-book/",
+    "https://readingraphics.com/book-summary-lifespan-why-we-age-and-why-we-dont-have-to/",
+    "https://www.stackingyears.com/blog/david-sinclair-information-theory-aging",
+    "https://strengthforlongevity.substack.com/p/lifespan-why-we-age-and-why-we-do",
+    "https://www.nei.nih.gov/research-and-training/research-news/vision-revision",
+    "https://www.reviewofophthalmology.com/article/study-supports-reversal-of-vision-loss-from-glaucoma",
+    "https://ipscell.com/2025/01/perspectives-as-charles-brenner-challenges-david-sinclair-on-longevity/",
+    "https://lifespan.io/sinclair-epigenetic-information-theory/"
+  ],
+  "source_note": "Book itself not read; archive.org full text was not retrievable in this environment. All facts come from summaries and reviews of the book, so most are medium. No narrative anecdote was found; all three stories are concept stories.",
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Sinclair argues aging should be treated as a disease: it is the common factor behind conditions from cancer to osteoporosis. He criticises the disease-by-disease approach (a 'whack-a-mole' pattern, per one reviewer) as having extended lifespan but not healthspan, and says not classing aging as a disease misdirects research funding.",
+      "source": "lifespan.io review; readingraphics summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "His Information Theory of Aging: loss of epigenetic information is the root cause. DNA is the digital information and stays intact enough for cells to be reset to a youthful state; the epigenome (for example methyl groups that block gene expression) is analog information whose predictable drift drives the hallmarks of aging.",
+      "source": "lifespan.io review; readingraphics; stackingyears",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Sinclair traces the theory back to yeast work as a young scientist in Leonard Guarente's lab, where breaks in DNA made the Sir2 protein (the first known sirtuin) leave its normal post at the mating-type genes.",
+      "source": "secondary summaries only",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Looking ahead, the book points to partial reprogramming with Yamanaka factors to reset methylation patterns, and to senolytics. It presents reset as a prospect, not a human treatment.",
+      "source": "lifespan.io review; stackingyears",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Editorial caveat: a Nature paper from Sinclair's lab (Lu et al., December 2020, after the book) delivered three reprogramming factors (Oct4, Sox2, Klf4) to retinal ganglion cells in mice. It restored youthful DNA methylation patterns and improved vision in a mouse glaucoma model and in aged mice. Mice only.",
+      "source": "NEI news; Review of Ophthalmology; Nature 588:124-129",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Critics say the information theory has not been tested; Charles Brenner and Timmons wrote a letter to Cell titled 'The information theory of aging has not been tested' about a 2023 paper from Sinclair's lab. A reviewer on a pro-longevity site also says the theory ignores factors such as advanced glycation end products.",
+      "source": "ipscell.com; lifespan.io review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "The 'survival circuit' is a set of longevity genes inherited from the earliest life forms: sirtuins, mTOR (TOR) and AMPK. It evolved to get organisms through famine and cold, and sits mostly dormant in comfortable modern life.",
+      "source": "readingraphics; supersummary via search; lifespan.io review",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "Mild biological stress (going hungry now and then, getting cold, working out hard) switches the circuit on; sirtuins tell cells to strengthen their defences and repair themselves without permanent damage.",
+      "source": "readingraphics; Outside review via search",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Mammals have seven sirtuins (SIRT1 to SIRT7), involved in inflammation, energy metabolism, DNA repair and gene regulation. They need NAD+, a coenzyme whose levels fall with age.",
+      "source": "lifespan.io review; readingraphics",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Practical advice in the book includes eating less often (intermittent fasting, skipping meals), less animal protein and more vegetables, regular exercise including high-intensity intervals, and cold exposure; also sauna.",
+      "source": "lifespan.io review; readingraphics; strengthforlongevity",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "TOR drives growth when food is plentiful; when times are bad it limits growth and recycles cell components (autophagy). AMPK is an enzyme that responds to low energy and switches on glucose and fatty-acid metabolism.",
+      "source": "readingraphics; lifespan.io review",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "Eating fewer branched-chain amino acids (mainly from animal protein) reduces mTOR activation; exercise and metformin activate AMPK.",
+      "source": "strengthforlongevity; readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Rapamycin, which inhibits mTOR, extended mouse lifespan by 9 to 14 percent, at the cost of a weaker immune response. Metformin, which activates AMPK, is described as mimicking aspects of caloric restriction.",
+      "source": "lifespan.io review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "A reviewer pushes back on the red-meat stance, while accepting the caution about overstimulating mTOR with too much protein; a commenter on one summary raises muscle loss, which the summary does not address.",
+      "source": "Outside review via search; strengthforlongevity",
+      "confidence": "low"
+    },
+    {
+      "id": "f15",
+      "claim": "A synopsis of the book's advice lists: eat less often or skip one or two meals; try an eating window of about eight hours; avoid eating in the three hours before bed; occasional cold showers or ice baths; sauna, said to induce heat shock proteins; high-intensity intervals plus strength and cardio work.",
+      "source": "strengthforlongevity synopsis (secondary, not the book)",
+      "confidence": "low"
+    },
+    {
+      "id": "f16",
+      "claim": "Sinclair believes humans could live beyond 120, even 150, without the usual frailty of old age; a typical lifespan today is around 80.",
+      "source": "readingraphics summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f17",
+      "claim": "Exercise is linked in the book to longer telomeres and higher NAD levels.",
+      "source": "lifespan.io review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f18",
+      "claim": "A synopsis says occasional protein restriction is said to support longevity.",
+      "source": "strengthforlongevity synopsis",
+      "confidence": "low"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Old 1588: med-school exchange where Sinclair asked why aging is not a disease and the teacher answered 'because it happens to everyone'.",
+      "reason": "No source found; reads as an invented dialogue."
+    },
+    {
+      "claim": "Old 1588: Sinclair reset old mice's eyes in his lab and sight returned, presented as in the book.",
+      "reason": "The Nature paper is from December 2020, after the 2019 book. Used only as an editorial caveat (f5)."
+    },
+    {
+      "claim": "Old 1588: cells 'forget' what they are.",
+      "reason": "Loose paraphrase; replaced by the digital/analog framing (f2)."
+    },
+    {
+      "claim": "Scratched-CD analogy.",
+      "reason": "Sources disagree on which part is scratched (disc or player); left out."
+    },
+    {
+      "claim": "Old 1589: constant comfort 'speeds up the biological clock'; 'biology thrives on hardship'.",
+      "reason": "Slogan, not supported as stated."
+    },
+    {
+      "claim": "Old 1589: cold-exposed mice live longer; fasting animals live longer, as the book's opening question.",
+      "reason": "No source ties these exact examples to the book."
+    },
+    {
+      "claim": "Old 1590: a cell either grows or repairs and cannot do both; continuous growth raises cancer risk; continuous repair causes muscle loss.",
+      "reason": "No source states these as the book's claims."
+    },
+    {
+      "claim": "Old 1590: autophagy clears cancer cells; fasting 'opens the door' to it.",
+      "reason": "Cancer-clearing not supported; softened to recycling of components (f11)."
+    }
+  ],
+  "stories": {
+    "1588": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "note": "Aging as a disease and information loss. Concept, no book anecdote. Medium: mouse reset result post-dates the book and is flagged as caveat."
+    },
+    "1589": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f15",
+        "f16",
+        "f17"
+      ],
+      "note": "Survival circuit and mild stress. Concept. Evidence mostly animal; flagged."
+    },
+    "1590": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f11",
+        "f12",
+        "f13",
+        "f14",
+        "f18"
+      ],
+      "note": "mTOR and AMPK. Concept. Rapamycin mouse figure kept with its immune cost."
+    }
+  }
+}

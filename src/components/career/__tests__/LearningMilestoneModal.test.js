@@ -42,9 +42,9 @@ it('re-opens a reached milestone in review mode without writing seen state', asy
   const { MilestoneReviewModal } = require('../LearningMilestoneModal');
   const onClose = jest.fn();
   let tree; await act(async () => { tree = TestRenderer.create(<MilestoneReviewModal milestone={{ id: 'cat_science', type: 'category', category: 'Bilim', categoryRaw: 'Science' }} onClose={onClose} />); });
-  expect(texts(tree)).toContain('Kilometre taşı');
+  expect(texts(tree)).toContain('KİLOMETRE TAŞI');
   expect(texts(tree)).toContain('İlk Bilim fikrin');
   expect(texts(tree)).toContain('Kapat');
-  expect(texts(tree)).not.toContain('Yeni kilometre taşı');
+  expect(texts(tree)).not.toContain('YENİ KİLOMETRE TAŞI');
   await act(async () => { tree.unmount(); });
 });

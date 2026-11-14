@@ -1,0 +1,35 @@
+{
+ "story_id": 1304,
+ "verdict": "keep",
+ "verify_note": "Keep. Calibration test (98 percent ranges missed close to 45 percent), Tetlock's ~27,000 predictions from ~300 experts and Makridakis competitions verified in the book text (ch. 10). Dart-board and weather claims dropped. Editorial caveat on Tetlock's later superforecasters added.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Ünlü uzmanın tahmini",
+  "description": "Taleb'in aktardığı araştırmalarda uzmanlar sandıklarından çok yanıldı, en ünlüler de daha kötü tahmin yaptı.",
+  "hook": "Bir uzmanın itibarı tahminlerinin isabetini artırır mı, azaltır mı?",
+  "one_minute_summary": "Taleb, insanlardan yüzde 98 emin oldukları aralıkları vermelerinin istendiği bir testi anlatıyor: ıskalama yüzde 2 değil, yüzde 45'e yakın çıkıyor. Philip Tetlock 300'e yakın uzmandan 27 bin civarında tahmin topluyor. Hatalar uzmanların sandığının kat kat üstünde, ünü büyük olanlar daha kötü. Makridakis'in yarışmalarında karmaşık yöntemler basitleri her zaman yenmiyor. Taleb'in önerisi: tahmine değil hazırlığa yatırım yapın. Tetlock sonradan şansı yenen küçük bir grup da buldu."
+ },
+ "en": {
+  "title": "When famous experts forecast",
+  "description": "In the research Taleb describes, experts missed far more than they thought, and the famous ones did worse.",
+  "hook": "Does an expert's reputation make their forecasts better or worse?",
+  "one_minute_summary": "Taleb describes a test where people give ranges they are 98 percent sure of, and miss close to 45 percent of the time instead of 2. Philip Tetlock collected about 27,000 predictions from nearly 300 experts. Their errors were many times what they expected, and those with big reputations did worse. In Makridakis's competitions, complex methods did not reliably beat simple ones. Taleb's advice: invest in preparedness, not prediction. Tetlock later found a few forecasters who beat chance on short questions."
+ },
+ "es": {
+  "title": "Cuando pronostican los famosos",
+  "description": "En las investigaciones que cuenta Taleb, los expertos fallaron mucho más de lo que creían, y los famosos lo hicieron peor.",
+  "hook": "¿La fama de un experto mejora o empeora sus pronósticos?",
+  "one_minute_summary": "Taleb describe una prueba en la que la gente da rangos de los que está segura al 98 por ciento y falla cerca del 45 por ciento. Philip Tetlock reunió unas 27.000 predicciones de casi 300 expertos. Sus errores fueron muy superiores a lo que esperaban, y los de mayor reputación lo hicieron peor. En las competiciones de Makridakis, los métodos complejos no superaban siempre a los simples. Consejo de Taleb: prepárate en vez de predecir. Luego Tetlock halló unos pocos mejores que el azar."
+ },
+ "de": {
+  "title": "Wenn Berühmte vorhersagen",
+  "description": "In den Studien, die Taleb beschreibt, lagen Experten viel öfter daneben als gedacht, und die Berühmten schnitten schlechter ab.",
+  "hook": "Macht der Ruf eines Experten seine Prognosen besser oder schlechter?",
+  "one_minute_summary": "Taleb beschreibt einen Test, bei dem Menschen Spannen mit 98 Prozent Sicherheit nennen und fast 45 Prozent statt 2 Prozent danebenliegen. Philip Tetlock sammelte rund 27.000 Prognosen von knapp 300 Experten. Ihre Fehler lagen weit über ihren eigenen Schätzungen, und die mit großem Ruf schnitten schlechter ab. In Makridakis' Wettbewerben schlugen komplexe Methoden die einfachen nicht verlässlich. Talebs Rat: in Vorbereitung investieren, nicht in Vorhersage. Später fand Tetlock einige, die kurzfristig besser als der Zufall waren."
+ }
+}

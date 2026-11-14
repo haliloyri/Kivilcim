@@ -1,0 +1,61 @@
+{
+  "story_id": 1310,
+  "kind": "concept",
+  "book": {
+    "title": "Thinking in Systems",
+    "author": "Donella H. Meadows",
+    "year": "2008"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against the book text (chapter 1). The old reference examples (social networks, a 'miracle vs nightmare' framing, debt spiral) are not the book's and are dropped; replaced by the book's own coffee cup, thermostat, brother, soil, piano and bank account examples and its rule of 70.",
+  "facts": [
+    "In Thinking in Systems, Meadows describes two basic kinds of feedback loop.",
+    "A balancing loop pulls a stock toward a goal: a cup of hot coffee cools toward room temperature, faster when the difference is bigger, and a glass of iced coffee warms toward it. A thermostat and furnace keep a room near the setting.",
+    "A reinforcing loop amplifies whatever direction of change is imposed on it: a vicious or virtuous circle, snowballing.",
+    "Her examples: when she and her brother were kids, the more he pushed her the more she pushed him back. The more soil erodes, the fewer plants grow, so fewer roots hold the soil. The more she practiced piano, the more pleasure she got, so the more she played.",
+    "A bank account is a reinforcing loop: the more money in it, the more interest it earns, which is added and earns more.",
+    "Her shortcut: doubling time is about 70 divided by the growth rate in percent; $100 at 7 percent doubles in about 10 years, at 5 percent in about 14.",
+    "She challenges students to name a decision made without any feedback; the most common suggestions are falling in love and committing suicide, and she leaves the reader to judge.",
+    "She warns: if you start seeing feedback loops everywhere, you are already in danger of becoming a systems thinker."
+  ],
+  "scene_details": [
+    "a cup of coffee cooling to room temperature",
+    "a brother pushing, and pushing back",
+    "$100 at 7 percent, doubled in ten years"
+  ],
+  "tension": "The same simple structure can quietly settle things down or make them run away, and from the inside the two feel alike.",
+  "opening_idea": "Start with the brother pushing and the push back.",
+  "lessons": [
+    {
+      "idea": "When something keeps growing or shrinking on its own, find the loop that feeds it and decide whether to add a brake or more fuel.",
+      "anchor": "Brother pushing, soil erosion, piano pleasure, bank interest; coffee cooling as the balancing contrast.",
+      "everyday_example_idea": "A runner who skips one week finds running harder, so she skips more; she breaks the loop with one very short run instead of waiting to feel ready."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which habit or situation in your life feeds itself, getting better or worse the more it happens, and in which direction is it running now?",
+  "use_cases": [
+    {
+      "situation": "A disagreement in a meeting is escalating with every reply.",
+      "move": "Name it like Meadows's brothers pushing back, and suggest a pause before the next reply.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend says saving a little each month is pointless.",
+      "move": "Share Meadows's rule of 70: at 7 percent, money doubles in about ten years.",
+      "context": "social"
+    },
+    {
+      "situation": "You are avoiding something and it gets harder each day.",
+      "move": "Do the smallest possible version today to turn the loop the other way.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The more he pushed, the more she pushed back: find which loop is feeding your problem.",
+  "conversation_variants": {
+    "punchline_idea": "Meadows explains runaway loops with her brother: the more he pushed her, the more she pushed back.",
+    "thirty_sec_idea": "Coffee cools (balancing) vs brother, soil, piano, bank (reinforcing); rule of 70; feedback loops everywhere.",
+    "question_idea": "",
+    "key_contrast_idea": "Brake or snowball"
+  }
+}

@@ -1,0 +1,61 @@
+{
+ "story_id": 1382,
+ "kind": "concept",
+ "book": {
+  "title": "The Happiness Advantage",
+  "author": "Shawn Achor",
+  "year": "2010"
+ },
+ "confidence": "medium",
+ "confidence_note": "The 1,600-student finding and 0.7 correlation are Achor's own first-person claim, quoted by Farnam Street and a chapter abstract; Vaillant's 'love' summary and the 'Very Happy People' finding are also in the chapter. The old text's 'two groups at the same stress level', oxytocin/cortisol claims and the weekly-message advice are not supported and dropped. Correlational study: no causal claim beyond Achor's interpretation.",
+ "facts": [
+  "At Harvard, Achor watched students under heavy pressure turn inward, away from friends and family, just when they needed support most.",
+  "Achor notes that after arriving at Harvard students face a harsh realization: half of them are now below average; used to being the best, they fall hard, and the depression that follows pulls them inward.",
+  "His study of about 1,600 Harvard undergraduates found social support a far greater predictor of happiness than any other factor measured, more than GPA, family income, SAT scores, age, gender or race.",
+  "The correlation between social support and happiness was 0.7; Achor notes most psychology findings count as significant around 0.3.",
+  "In the 'Very Happy People' study, the one trait that set the happiest 10% apart was the strength of their social relationships.",
+  "The Harvard Men Study followed 268 men from college entry in the late 1930s; in 2009 its long-time director George Vaillant summed up the findings in one word: love.",
+  "Achor: the most successful people hold tighter to their social support under stress; instead of divesting, they invest.",
+  "Vaillant added: seventy years of evidence that our relationships with other people matter, and matter more than anything else in the world."
+ ],
+ "scene_details": [
+  "a student alone with the books during exam pressure",
+  "1,600 Harvard undergraduates surveyed",
+  "268 men followed for seventy years",
+  "Vaillant's one-word answer: love"
+ ],
+ "tension": "Under stress, the smart move feels like pulling away to work harder, and Achor's data point the other way.",
+ "opening_idea": "Open on Harvard students in exam season shutting the door and dropping friends to study more.",
+ "lessons": [
+  {
+   "idea": "When pressure rises, keep one standing contact instead of cancelling it.",
+   "anchor": "social support predicted happiness more than GPA or income"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "During your last stressful stretch, which person did you drop first, and what would a ten-minute call with them look like this week?",
+ "use_cases": [
+  {
+   "situation": "A colleague is skipping lunches to catch up",
+   "move": "Mention that in Achor's 1,600-student study, support beat grades and income; invite them for a short lunch.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "You are about to cancel plans because of a deadline",
+   "move": "Shorten the plan instead of cancelling it.",
+   "context": "self"
+  },
+  {
+   "situation": "A friend goes quiet during a hard time",
+   "move": "Send a short message without asking for a reply.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "Under pressure, Harvard's happiest students held on to people; keep one meeting you'd want to cancel.",
+ "conversation_variants": {
+  "punchline_idea": "In a study of 1,600 Harvard students, friends predicted happiness better than grades, income or SAT scores.",
+  "thirty_sec_idea": "Stressed students turning inward; Achor's 1,600 study; 0.7; Vaillant's 'love'; invest, don't divest.",
+  "question_idea": "",
+  "key_contrast_idea": "pull away vs. hold on"
+ }
+}

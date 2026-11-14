@@ -1,0 +1,166 @@
+{
+ "book_no": 111,
+ "title": "Maybe You Should Talk to Someone",
+ "authors": [
+  "Lori Gottlieb"
+ ],
+ "year": "2019",
+ "db_title": "Terapi (Turkish edition title in the DB)",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Maybe_You_Should_Talk_to_Someone",
+  "https://www.shortform.com/blog/lori-gottlieb-maybe-you-should-talk-to-someone/",
+  "https://www.gradesaver.com/maybe-you-should-talk-to-someone/study-guide/summary",
+  "https://www.tosummarise.com/book-summary-maybe-you-should-talk-to-someone-by-lori-gottlieb/",
+  "https://lifeclub.org/books/maybe-you-should-talk-to-someone-lori-gottlieb-review-summary",
+  "https://www.shortform.com/pdf/maybe-you-should-talk-to-someone-pdf-lori-gottlieb (preview)",
+  "https://www.martin.fl.us/resources/maybe-you-should-talk-to-someone (discussion kit, cited via search snippet)"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Gottlieb is a psychotherapist in Los Angeles. The memoir (Houghton Mifflin Harcourt, April 2, 2019) follows her own therapy with Wendell alongside the stories of her patients.",
+   "source": "Wikipedia",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Her long-term boyfriend ended the relationship because he did not want to live with her young son, although he had known about the boy from the start. She had expected to marry him.",
+   "source": "Wikipedia; Shortform preview; GradeSaver",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Friends urged her to see a therapist. She began seeing Wendell; in the first sessions she mostly cried on the couch over the lost relationship and the future she had pictured. She had planned only a few sessions.",
+   "source": "Wikipedia; GradeSaver",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "After the crying stage Wendell suggested she was struggling with something larger than the breakup.",
+   "source": "Wikipedia; GradeSaver",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Gottlieb first wanted Wendell to confirm that her ex was a bad person; her own phrase for him was a 'sociopath' (a longer expletive-laden version is quoted in a summary). Wendell did not validate that story.",
+   "source": "Shortform preview; tosummarise; lifeclub",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "Through Wendell she came to see deeper worries behind the anger: fear of death, concern about leaving her son an orphan, the meaning of her own life. A passing remark that her life was 'half over' is said to have tipped Wendell off.",
+   "source": "Shortform preview; lifeclub",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Wendell tells her her feelings do not have to match what she thinks they should be. Gottlieb realises she has said the same thing to her own patients many times, but it lands differently from the other chair.",
+   "source": "tosummarise; search summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "She had a contract for a book about happiness that she could not write. In therapy she accepted breaking it and repaying the advance, and began the book that became this memoir.",
+   "source": "Shortform preview; lifeclub",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "A discussion kit quotes the book as saying it is Wendell's job to help her 'edit my story' (p. 115).",
+   "source": "Martin County library kit via search snippet",
+   "confidence": "low"
+  },
+  {
+   "id": "f10",
+   "claim": "Gottlieb describes herself as an unreliable narrator and withholds some key facts until well into the book, as patients like John reveal important things only after months.",
+   "source": "reviews; tosummarise",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Chapter 39 ('How Humans Change') presents Prochaska's five stages of change (pre-contemplation, contemplation, preparation, action, maintenance) and applies them to Charlotte, a young patient whose drinking Gottlieb uses as the example.",
+   "source": "SuperSummary snippet; tosummarise",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "Charlotte starts therapy thinking of herself as a 'social drinker' and does not connect her drinking with a parent's alcoholism. She repeatedly gets involved with unsuitable men, including one she met in the waiting room (called 'The Dude' in a summary).",
+   "source": "Wikipedia; SuperSummary snippet; Shortform",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Later Charlotte asks Gottlieb to recommend an outpatient alcohol program and asks to move her appointment so she will not sit in the waiting room with The Dude. By the end she is sober.",
+   "source": "Shortform preview",
+   "confidence": "medium"
+  },
+  {
+   "id": "f14",
+   "claim": "The book notes people resist change, even good change, because the familiar feels safer; for Charlotte, changing would mean learning to socialise without alcohol and dating differently, i.e. giving up what felt familiar.",
+   "source": "tosummarise; lifeclub",
+   "confidence": "medium"
+  },
+  {
+   "id": "f15",
+   "claim": "Therapist John is a successful Hollywood TV producer who is abrasive and blames others; his rudeness masks the grief for his young son Gabe, who died in a car accident.",
+   "source": "Wikipedia; tosummarise",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1429: Gottlieb's long career summary, 'her life collapsed: single-mother stress, work stress'; the quote 'Bir terapistin terapisti olarak oturmak ...' and 'terapistler de insandır, en iyi terapistler kırılganlıklarıyla yüzleşmiş olanlardır'",
+   "reason": "Quote not found in any source; work-stress claim unsupported."
+  },
+  {
+   "claim": "Old 1430: a patient says 'I want to change my life: let my spouse, job, city change'; Gottlieb quote 'people do not come to therapy to change, they come to escape pain'",
+   "reason": "Scene and quote not found in any source; invented illustration."
+  },
+  {
+   "claim": "Old 1431: patient who blames her mother for years; Gottlieb quote 'you can rewrite your story'; the three reinterpretation questions",
+   "reason": "Not found in any source. Replaced by Gottlieb's own sociopath story from the book."
+  },
+  {
+   "claim": "Charlotte's exact age",
+   "reason": "Sources conflict (twenties, 20, 21, 25)."
+  },
+  {
+   "claim": "'Everyone changes only when pain exceeds fear' style generalisations",
+   "reason": "Not attributable."
+  }
+ ],
+ "stories": {
+  "1429": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f7",
+    "f8"
+   ],
+   "note": "Rebuilt around the therapist sitting in the patient chair: breakup, friends urging, crying on Wendell's couch, her few-sessions plan, Wendell's line about feelings. Old quotes dropped. Medium confidence, secondary sources only."
+  },
+  "1430": {
+   "verdict": "delete",
+   "fact_ids": [
+    "f11",
+    "f12",
+    "f13",
+    "f14"
+   ],
+   "note": "Old thesis unsupported. The only book-grounded replacement (Charlotte and Prochaska chapter 39) is known only from secondary summaries and filled about 200 words in a test draft, under the 280-word hard floor; stretching it would be padding. Delete (or rewrite later from the book text)."
+  },
+  "1431": {
+   "verdict": "delete",
+   "fact_ids": [
+    "f5",
+    "f6",
+    "f9",
+    "f10"
+   ],
+   "note": "Old patient-and-mother scene unsupported. Book-grounded replacement (her own sociopath verdict, Wendell declining, anger covering fear of death) overlaps 1429 and filled only about 260 words in a test draft, under the 280-word hard floor, from secondary summaries only. Delete; the same material would only repeat 1429."
+  }
+ }
+}

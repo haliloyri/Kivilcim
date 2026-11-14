@@ -1,0 +1,35 @@
+{
+ "story_id": 1674,
+ "verdict": "keep",
+ "verify_note": "Keep with a book-identity flag (DB 'Konsantrasyon Gücü' by CNewport 2020; content is Deep Work 2016). Darwin's seven o'clock walk (via son Francis), Jung's Bollingen Tower (1922) and Gates's Think Weeks checked against secondary summaries; the ritual structure and four scheduling philosophies from a book summary. Old Marx and Woody Allen routines not found and dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Darwin'in yedideki yürüyüşü",
+  "description": "Newport'a göre yoğun çalışma kendiliğinden olmuyor. Darwin, Jung ve Gates yerlerini ve saatlerini önceden seçmişti.",
+  "hook": "Odaklı çalışmaya başlamanızı hangi tek kural kolaylaştırırdı?",
+  "one_minute_summary": "Cal Newport, Deep Work'te yoğun çalışmaya ritüel gerektiğini söylüyor: sabit yer, süre ve kurallar. Darwin her sabah yedide kısa bir yürüyüşe çıkıp yaklaşık sekizden dokuz buçuğa kadar çalıştı. Jung 1922'de Bollingen Kulesi'ni yapmaya başladı. Gates yılda iki kez Think Week geçirdi ve 1995'te ünlü bir not yazdı. Newport programlamanın dört yolunu sayıyor. Ders: Yeri, saati ve kuralları önceden belirleyin. Böylece başlamak bir pazarlık olmaktan çıkıyor."
+ },
+ "en": {
+  "title": "Darwin's Walk at Seven",
+  "description": "Newport argues that concentrated work rarely happens by accident. Darwin, Jung and Gates chose place and time ahead of the thinking.",
+  "hook": "Which single rule would make your next focused session easier to begin?",
+  "one_minute_summary": "Cal Newport argues in Deep Work that concentrated work needs a ritual: a fixed place, a set time and rules. Darwin rose at seven for a short walk and worked about eight to half past nine. Jung began building his Bollingen Tower in 1922. Gates took Think Weeks twice a year and wrote a famous memo in 1995. Newport names four scheduling styles. The lesson: settle the place, the hour and the rules in advance."
+ },
+ "es": {
+  "title": "Darwin paseaba a las siete",
+  "description": "Newport sostiene que el trabajo concentrado rara vez ocurre por casualidad. Darwin, Jung y Gates eligieron lugar y hora antes de pensar.",
+  "hook": "¿Qué regla concreta te facilitaría empezar tu próxima sesión de concentración?",
+  "one_minute_summary": "Cal Newport sostiene en Deep Work que el trabajo concentrado necesita un ritual: un lugar fijo, un tiempo determinado y reglas. Darwin se levantaba a las siete para dar un breve paseo y trabajaba de ocho a nueve y media más o menos. Jung empezó su torre de Bollingen en 1922. Gates tomaba Think Weeks dos veces al año y escribió un memorando famoso en 1995. Newport nombra cuatro maneras de programarlo. La lección: decide de antemano lugar, hora y reglas."
+ },
+ "de": {
+  "title": "Darwins Spaziergang um sieben",
+  "description": "Newport zufolge entsteht konzentrierte Arbeit selten zufällig. Darwin, Jung und Gates wählten Ort und Zeit vor dem Denken.",
+  "hook": "Welche einzelne Regel würde dir den Beginn deiner nächsten konzentrierten Sitzung erleichtern?",
+  "one_minute_summary": "Cal Newport schreibt in Deep Work, konzentrierte Arbeit brauche ein Ritual: einen festen Ort, eine bestimmte Dauer und Regeln. Darwin stand um sieben für einen kurzen Spaziergang auf und arbeitete etwa von acht bis halb zehn. Jung begann 1922 mit seinem Turm in Bollingen. Gates nahm sich zweimal im Jahr Think Weeks und schrieb 1995 ein berühmtes Memo. Newport nennt vier Planungsstile. Die Lehre: Lege Ort, Uhrzeit und Regeln vorher fest."
+ }
+}

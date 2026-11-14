@@ -1,0 +1,35 @@
+{
+ "story_id": 1311,
+ "verdict": "keep",
+ "verify_note": "Keep. Old central-bank and strategy examples not in the book; replaced with Meadows's car-dealership model (three delays, 10 percent sales jump, faster reaction worsens, 3-to-6-day response delay damps) and her long-pipe shower, verified in the book text (ch. 2). Model clearly marked as a simulation.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Hızlı tepki, büyük salınım",
+  "description": "Meadows'un araba bayisi modeli, gecikmeli bir sistemde daha hızlı tepki vermenin salınımı nasıl büyüttüğünü gösteriyor.",
+  "hook": "Bir düzeltmenin etkisi geç geliyorsa, neden beklemek daha hızlı sonuç verebilir?",
+  "one_minute_summary": "Donella Meadows otoparkında on günlük satışa yetecek araç tutan bir bayi modeli kuruyor, üç gecikmeyle: beş günlük satış ortalaması, açığın üçte birini kapatan siparişler ve beş günlük teslimat. Satışlar yüzde 10 artınca bayi önce çok, sonra az sipariş veriyor ve stok bir dolup bir boşalıyor. Daha hızlı tepki vermek işi kötüleştiriyor, tepkiyi üç günden altı güne çıkarmak salınımı söndürüyor. Meadows buna 'yüksek kaldıraç, yanlış yön' diyor ve uzun borulu bir duşa benzetiyor."
+ },
+ "en": {
+  "title": "React faster, swing harder",
+  "description": "Meadows's car-dealer model shows how reacting faster in a delayed system makes the swings worse.",
+  "hook": "If a fix takes time to work, why might waiting get you there sooner?",
+  "one_minute_summary": "Donella Meadows models a car dealer who keeps ten days of sales on the lot, with three delays: a five-day sales average, orders that close a third of any gap, and five-day delivery. When sales rise 10 percent, the dealer orders too much, then too little, and the lot swings between full and empty. Reacting faster makes it worse, while stretching the response from three days to six calms it. Meadows calls it high leverage, wrong direction, and compares it to a shower with a long pipe."
+ },
+ "es": {
+  "title": "Más prisa, más vaivén",
+  "description": "El modelo del concesionario de Meadows muestra cómo reaccionar más rápido en un sistema con retrasos agranda las oscilaciones.",
+  "hook": "Si un arreglo tarda en notarse, ¿por qué esperar puede llevarte antes al resultado?",
+  "one_minute_summary": "Meadows modela un concesionario que quiere diez días de ventas en el aparcamiento, con tres retrasos: un promedio de ventas de cinco días, pedidos que cubren un tercio de lo que falta y entregas de cinco días. Cuando las ventas suben un 10 por ciento, la dueña pide de más, luego de menos, y el aparcamiento pasa de lleno a vacío. Reaccionar más rápido empeora todo, y alargar la respuesta de tres a seis días lo calma. Meadows lo llama palanca poderosa, dirección equivocada."
+ },
+ "de": {
+  "title": "Schneller reagiert, stärker geschwankt",
+  "description": "Meadows' Autohaus-Modell zeigt, wie schnelleres Reagieren in einem verzögerten System die Schwankungen vergrößert.",
+  "hook": "Wenn eine Korrektur erst später wirkt, warum kommt Warten oft schneller ans Ziel?",
+  "one_minute_summary": "Donella Meadows modelliert ein Autohaus, das zehn Tage Verkauf auf dem Hof haben will, mit drei Verzögerungen: ein Fünf-Tage-Durchschnitt der Verkäufe, Bestellungen, die ein Drittel der Lücke schließen, und fünf Tage Lieferzeit. Steigen die Verkäufe um 10 Prozent, bestellt die Händlerin zu viel, dann zu wenig, und der Hof pendelt zwischen voll und leer. Schneller reagieren macht es schlimmer, die Reaktion von drei auf sechs Tage zu verlängern beruhigt es. Meadows nennt das hoher Hebel, falsche Richtung, wie bei einer Dusche mit langem Rohr."
+ }
+}

@@ -1,0 +1,118 @@
+{
+ "book_no": 196,
+ "title": "The Shallows",
+ "authors": [
+  "Nicholas Carr"
+ ],
+ "year": "2010",
+ "sources": [
+  "https://rylanschaeffer.github.io/content/learning/book_summaries/carr_shallows.html",
+  "https://www.litcharts.com/lit/the-shallows/characters/eric-kandel",
+  "https://www.eweek.com/de/search-engines/google-bad-for-the-brain-recall-study-says/ (Sparrow study dated July 2011)",
+  "https://www.supersummary.com/the-shallows/prologue-digression-1-summary (via search snippet)",
+  "search snippets on Chapter 9 'Search, Memory' (study guides)"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The Shallows: What the Internet Is Doing to Our Brains (W. W. Norton, 2010) grew out of Carr's 2008 Atlantic essay 'Is Google Making Us Stupid?'",
+   "source": "summaries",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Carr writes that for some years he has had an uncomfortable sense that someone or something has been tinkering with his brain. His concentration drifts after a page or two where he once immersed himself in long prose.",
+   "source": "notes quoting the opening; summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f3",
+   "claim": "He quotes Bruce Friedman, a blogger on computers in medicine, who says he has almost totally lost the ability to read and absorb a longer text; Friedman: 'I can't read War and Peace anymore.'",
+   "source": "essay summaries (Friedman attribution confirmed)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f4",
+   "claim": "Carr argues the brain is plastic: it adapts to what it is repeatedly asked to do; a skill exercised strengthens, one neglected weakens. His examples include monkeys using tools, violinists and London taxi drivers who build detailed mental maps.",
+   "source": "rylanschaeffer notes",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "Hypertext research: evaluating links adds mental work unrelated to reading; Carr says research favors linear text for comprehension, retention and learning.",
+   "source": "rylanschaeffer notes",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "Chapter 9 ('Search, Memory'): Carr uses Eric Kandel's early-1970s experiments on the sea slug Aplysia to show that moving information from short-term to long-term memory changes synapses (more synaptic terminals, triggered by serotonin).",
+   "source": "LitCharts; study guides",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Consolidation depends on attention. Kandel is quoted: 'For a memory to persist, the incoming information must be thoroughly and deeply processed.' Carr: 'The key to memory consolidation is attentiveness.'",
+   "source": "LitCharts; rylanschaeffer notes",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Working memory is small; long-term memory can expand and contract almost without limit by growing and pruning synaptic terminals.",
+   "source": "synopsis snippet",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Carr: the Web is a convenient supplement to personal memory, but when we use it as a substitute and bypass the inner processes of consolidation, we risk emptying our minds of their riches. He denies that computer memory and human memory are equivalent.",
+   "source": "synopsis snippet; rylanschaeffer notes",
+   "confidence": "medium"
+  },
+  {
+   "id": "f10",
+   "claim": "Carr says that writing about his days helps him remember them better.",
+   "source": "rylanschaeffer notes",
+   "confidence": "low"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1681: Carr kept a diary, tried to read Tolstoy and long essays and failed",
+   "reason": "No source; War and Peace is Friedman's line, not Carr's. 'Diary' is invented."
+  },
+  {
+   "claim": "Old 1681: 'reading books is learned, not natural; the internet reverses it'; list of fast scanning, multitasking, instant gratification",
+   "reason": "Partly reflects the book's thesis but not as stated; not used as quotes."
+  },
+  {
+   "claim": "Old 1682: psychologist Betsy Sparrow's experiment told to Carr's readers in the book; 'saved' group remembered less",
+   "reason": "Sparrow, Liu and Wegner appeared in Science in July 2011, after the 2010 book; Carr discussed it on his blog, not (verified) in the book. The study stays out of the story."
+  },
+  {
+   "claim": "Old 1682: 'cognitive offloading', 'creativity comes from the network'",
+   "reason": "Not Carr's wording; replaced by Carr's own Kandel/consolidation argument."
+  }
+ ],
+ "stories": {
+  "1681": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5"
+   ],
+   "note": "Carr's own reading drift, Friedman's confession, plasticity examples (taxi drivers, monkeys, violinists) without inflating to proof of damage. Medium confidence, secondary sources."
+  },
+  "1682": {
+   "verdict": "delete",
+   "fact_ids": [
+    "f6",
+    "f7",
+    "f8",
+    "f9"
+   ],
+   "note": "Central claim (Sparrow study) is not in the 2010 book: Sparrow, Liu and Wegner appeared in Science in July 2011. The replacement from Chapter 9 (Kandel, consolidation, Web as supplement vs substitute) is known only from study-guide snippets and filled about 265 words in a test draft, under the 280-word hard floor. Delete, or rewrite later from the book text."
+  }
+ }
+}

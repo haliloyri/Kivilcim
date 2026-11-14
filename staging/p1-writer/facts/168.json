@@ -1,0 +1,174 @@
+{
+ "book_no": 168,
+ "title": "Breath",
+ "authors": [
+  "James Nestor"
+ ],
+ "year": "2020",
+ "sources": [
+  "https://www.penguinrandomhouse.com/articles/breath-excerpt/",
+  "https://ascopost.com/issues/september-25-2021/breathing-properly-may-help-you-live-longer/",
+  "https://eyalshifroni.com/blog/a-summary-of-breath/",
+  "https://readingraphics.com/book-summary-breath-james-nestor/",
+  "https://pubmed.ncbi.nlm.nih.gov/11751348/",
+  "https://en.wikipedia.org/wiki/Bohr_effect"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Nestor took part in a Stanford experiment run by Dr. Jayakar Nayak, Stanford's chief of rhinology research, with Anders Olsson, a 49-year-old breathing therapist from Stockholm. Phase one: about ten days of mouth-only breathing; phase two: about ten days of nose-only breathing. Participants returned to Stanford between phases for tests.",
+   "source": "PRH excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Nostrils were blocked with silicone plugs with surgical tape over them, so no air moved through the nose. Participants ate, exercised and slept as usual.",
+   "source": "PRH excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Baseline: Nestor's X-ray showed a severely deviated septum with severe obstruction in the left nostril; Nayak sampled about 200,000 sinus cells and did endoscopic exams.",
+   "source": "PRH excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Mouth-breathing phase: snoring up almost 5,000 percent (4,820% in one account), sleep apnea averaging 25 episodes a night, systolic blood pressure up to 142 mm Hg (stage 2 hypertension), blood oxygen dipped below 85%.",
+   "source": "ASCO Post; eyalshifroni summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "Both men had higher stress hormones, higher blood pressure and reduced heart rate variability in the mouth phase; Nestor also got a bacterial nasal infection.",
+   "source": "readingraphics; pulmonologyadvisor summaries",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "Nose phase: sleep apnea disappeared, snoring fell about 85 percent and stopped after two nights for both, Nestor's blood pressure returned to a healthy range (one source: 124), the infection cleared without treatment.",
+   "source": "readingraphics; eyalshifroni",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Caveat: single self-experimenters, two men; no peer-reviewed publication found; figures differ between press accounts.",
+   "source": "search of sources",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Slow breathing: the ideal relaxed pace in the book is 5.5 seconds in and 5.5 seconds out, about 5.5 breaths a minute.",
+   "source": "readingraphics; eyalshifroni",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Bernardi et al., BMJ 2001: 23 healthy adults in Florence and Pavia; reciting the Ave Maria (rosary) and yoga mantras slowed breathing to about six per minute and increased variability in cardiovascular rhythms; baroreflex sensitivity rose from 9.5 to 11.5 ms/mm Hg. The authors suggested the rosary may have partly evolved because it synchronised with cardiovascular rhythms (their interpretation).",
+   "source": "PubMed abstract; secondary summaries connecting to Nestor",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Bohr effect: hemoglobin gives up oxygen more readily when blood carbon dioxide is higher; when CO2 falls, hemoglobin holds on to oxygen more tightly. Described by Danish physiologist Christian Bohr around 1904.",
+   "source": "Wikipedia: Bohr effect",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Nestor's chapter 'Less' argues that breathing less and more slowly leaves CO2 at a healthy level; summary: 'CO2 is crucial for respiration, not just a waste product'.",
+   "source": "readingraphics; eyalshifroni",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Nasal breathing: the nose is the body's gatekeeper; nasal breathing supplies nitric oxide (a summary says the nose can raise nitric oxide several-fold and allow more oxygen absorption).",
+   "source": "eyalshifroni; readingraphics",
+   "confidence": "low"
+  },
+  {
+   "id": "f14",
+   "claim": "In the BMJ 2001 study spontaneous respiratory rate was 14.1 (SD 4.8) per minute; talking slowed it; Ave Maria in Latin and the mantra (om-mani-padme-om in the paper) brought it to close to 6 per minute; comparison also with metronome-paced breathing.",
+   "source": "abstract summary via search of BMJ/PubMed",
+   "confidence": "medium"
+  },
+  {
+   "id": "f15",
+   "claim": "Christian Bohr was the father of physicist Niels Bohr; in tissues working cells make CO2 and acid so hemoglobin unloads oxygen there, and re-loads it in the lungs.",
+   "source": "Wikipedia: Bohr effect; standard physiology",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "Nestor chapter list: Part Two includes chapters Nose, Exhale, Slow, Less, Chewing.",
+   "source": "eyalshifroni summary",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old text: blood pressure dangerous by day five; concentration and anxiety worsening; all symptoms reversed within ten days.",
+   "reason": "Day five is not sourced; concentration/anxiety not found; reversal was within the nose phase, roughly ten days."
+  },
+  {
+   "claim": "Old text: modern humans breathe through the mouth 80 percent of the time.",
+   "reason": "No source."
+  },
+  {
+   "claim": "Old text: shamans, modern medicine protocols, dozens of techniques with the same rate; 'ancestors found it intuitively'.",
+   "reason": "Only the rosary/mantra study is verified."
+  },
+  {
+   "claim": "Old text: 'Om Mani Padme Hum' and Ave Maria presented as proof; kidney claims; blood pressure dropping, performance rising from 5.5 breaths.",
+   "reason": "Study shows slowed breathing and cardiovascular rhythm synchronisation, not those outcomes."
+  },
+  {
+   "claim": "Old text: Nestor was lifelong taught 'breathe deeper, more oxygen'; Bohr 'discovered 1904'; breath hold under 40 seconds is low tolerance.",
+   "reason": "Nestor's personal belief not sourced; 40-second threshold is from other authors (not verified in the book)."
+  },
+  {
+   "claim": "Old text: Olympic athletes, meditation masters and breath therapists all aim for CO2 tolerance.",
+   "reason": "Not verified."
+  },
+  {
+   "claim": "Old text: jaw pushed back, airway narrows, night oxygen drops with mouth breathing.",
+   "reason": "Oxygen dip is in Nestor's own result (below 85%); jaw claim not verified here."
+  },
+  {
+   "claim": "Om mani padme hum lasts 5 to 6 seconds (summary)",
+   "reason": "Secondary source only; the study's mantra is spelled om-mani-padme-om; dropped."
+  }
+ ],
+ "stories": {
+  "1600": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f4",
+    "f5",
+    "f6",
+    "f7"
+   ],
+   "note": "Stanford nose-plug experiment."
+  },
+  "1601": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f8",
+    "f9",
+    "f14"
+   ],
+   "note": "Slow breathing and prayer rhythm. Thin; medium confidence."
+  },
+  "1602": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f11",
+    "f12",
+    "f15"
+   ],
+   "note": "Bohr effect and breathing less. Concept, thin; low-medium confidence."
+  }
+ }
+}

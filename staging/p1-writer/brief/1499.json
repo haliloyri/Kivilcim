@@ -1,0 +1,67 @@
+{
+  "story_id": 1499,
+  "kind": "concept",
+  "book": {
+    "title": "Tribal Leadership",
+    "author": "Dave Logan, John King, Halee Fischer-Wright",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "Stage-four material taken from Gallup's write-up and an fs.blog summary, not from the book text. The old text's Logan quote about a common enemy and its claim that Apple's identity against IBM had to change were not found and are dropped; the supported rule is 'the bigger the foe, the more powerful the tribe'. Stage five is described by the sources as possibility-driven; whether it needs no foe is the sources' reading, so it is phrased as the book's description, not a causal claim. No named case except the first Macintosh team.",
+  "facts": [
+    "Tribal Leadership (2008) is by Dave Logan, John King and Halee Fischer-Wright.",
+    "Stage four's sentence is 'We're great'; members share values and knowledge and collaborate.",
+    "Stage-four relationships come in threes, anchored on shared values, not in pairs.",
+    "In stage four, competition shifts outward, to another tribe or company; the rule of thumb is 'the bigger the foe, the more powerful the tribe'.",
+    "Stage-four leaders feel pulled by the group; losing the tribe hurts a person's sense of self.",
+    "A stage-four tribe rejects people who do not fit, like a transplant that does not take.",
+    "Stage five says 'Life is great': innocent wonderment, building things no one has dreamed of, because it is possible.",
+    "Stage five occurs about two percent of the time and is unstable; the team that built the first Macintosh is the example.",
+    "Such teams often drop back to stage four to regroup before trying again.",
+    "A tribe is 20 to 150 people; one nearing 150 splits in two.",
+    "Gallup lists Genentech, Pixar, Apple and parts of IBM and General Electric as stage-five examples.",
+    "One summary lists signs a stage-four group is moving up: more varied networks and time allocated by values and noble missions.",
+    "Stage-four advice: regular 'oil changes', team conversations about what is working, what is not and how to fix it; recruit people who share the tribe's values."
+  ],
+  "scene_details": [
+    "the 'bigger the foe, the more powerful the tribe' rule",
+    "a transplant that does not take",
+    "the team that built the first Macintosh",
+    "regular 'oil change' conversations"
+  ],
+  "tension": "A tribe at its strongest runs on a rival, yet the book's top stage is driven by something else.",
+  "opening_idea": "Start with the rule 'the bigger the foe, the more powerful the tribe' and ask what the foe is doing for the group.",
+  "lessons": [
+    {
+      "idea": "Give a strong group something to make as well as someone to beat.",
+      "anchor": "The foe rule versus the first Macintosh team's wonderment.",
+      "example": "A kitchen crew united against the restaurant across the street asks what it would cook if that restaurant closed."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If the rival or the problem your group rallies against disappeared tomorrow, what would the people around you still want to build together?",
+  "use_cases": [
+    {
+      "situation": "The quarter's plan is framed entirely around beating a competitor.",
+      "move": "Say that the book's stage-four tribes grow with a bigger foe, then ask what the team would make if the rival vanished.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friends' club bonds mostly by complaining about another group.",
+      "move": "Suggest a joint project for the club with no rival in it.",
+      "context": "social"
+    },
+    {
+      "situation": "You work harder when you want to prove someone wrong.",
+      "move": "Write down what you would build if that person stopped watching.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A foe makes a tribe strong; a thing worth making keeps it going when the foe is gone.",
+  "conversation_variants": {
+    "punchline_idea": "In Tribal Leadership, the rule at stage four is that the bigger the foe, the more powerful the tribe.",
+    "thirty_sec_idea": "Stage four of Tribal Leadership is 'We're great': values, triads and a rival outside. The top stage, built by teams like the first Macintosh crew, is driven by wonder at what is possible and is unstable, so teams often drop back to regroup.",
+    "question_idea": "",
+    "key_contrast_idea": "foe to purpose"
+  }
+}

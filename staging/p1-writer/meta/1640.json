@@ -1,0 +1,35 @@
+{
+  "story_id": 1640,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: definitions and consequences confirmed by summaries; apology pair attributed via fs.blog; exact book location unconfirmed. Old mother anecdote dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Suçluluk ile utanç",
+    "description": "Brown'a göre suçluluk davranışa, utanç kişiye bakar. Biri onarmaya, öteki saklanmaya götürür.",
+    "hook": "Son pişmanlığınızda kendinize ne dediniz?",
+    "one_minute_summary": "Brené Brown, The Gifts of Imperfection kitabında suçluluk ile utancı ayırır. Suçluluk kötü bir şey yaptım der, davranışı değerlerle karşılaştırır ve değişimi harekete geçirebilir. Utanç ben kötüyüm der, bağımlılık, saldırganlık, depresyon ve şiddetle ilişkilendirilir. Özür cümlelerinde de fark görünür: bir hata yaptım ile ben bir hataymışım. Özür cümlelerinin yeri kitapta doğrulanamadı, bu yüzden bunu Brown'a atfedilen bir ayrım olarak okuyun."
+  },
+  "en": {
+    "title": "Guilt and shame",
+    "description": "For Brown, guilt looks at the act and shame looks at the person. One leads to repair, the other to hiding.",
+    "hook": "What did you tell yourself the last time you regretted something?",
+    "one_minute_summary": "In The Gifts of Imperfection, Brené Brown separates guilt from shame. Guilt says I did something bad, compares behavior with values and can set change in motion. Shame says I am bad and is linked with addiction, aggression, depression and violence. Even apologies show it: I made a mistake versus I am a mistake. The book location of that apology pair could not be confirmed, so read it as a distinction attributed to Brown."
+  },
+  "es": {
+    "title": "Culpa y vergüenza",
+    "description": "Para Brown, la culpa mira el acto y la vergüenza mira a la persona. Una lleva a reparar, la otra a esconderse.",
+    "hook": "¿Qué te dijiste la última vez que lamentaste algo?",
+    "one_minute_summary": "En The Gifts of Imperfection, Brené Brown separa la culpa de la vergüenza. La culpa dice hice algo malo, compara la conducta con los valores y puede poner un cambio en marcha. La vergüenza dice soy malo y se asocia con adicción, agresividad, depresión y violencia. Hasta las disculpas lo muestran: cometí un error frente a soy un error. No se pudo confirmar dónde aparece ese par de disculpas en el libro, así que léelo como una distinción atribuida a Brown."
+  },
+  "de": {
+    "title": "Schuld und Scham",
+    "description": "Für Brown schaut Schuld auf die Tat und Scham auf den Menschen. Das eine führt zur Wiedergutmachung, das andere ins Verstecken.",
+    "hook": "Was hast du dir gesagt, als du zuletzt etwas bereut hast?",
+    "one_minute_summary": "In The Gifts of Imperfection trennt Brené Brown Schuld von Scham. Schuld sagt, ich habe etwas Schlechtes getan, hält das Verhalten gegen die Werte und kann Veränderung anstoßen. Scham sagt, ich bin schlecht, und wird mit Sucht, Aggression, Depression und Gewalt verbunden. Selbst Entschuldigungen zeigen es: ich habe einen Fehler gemacht oder ich bin ein Fehler. Die Fundstelle dieses Paares im Buch ließ sich nicht bestätigen, lies es als Unterscheidung, die Brown zugeschrieben wird."
+  }
+}

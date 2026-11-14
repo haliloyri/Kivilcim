@@ -39,7 +39,14 @@ const isTestStoreKey = (key) => typeof key === 'string' && key.startsWith('test_
 // LIVE (production, real device) → real store key.
 // Debug build (Metro / dev client, incl. simulator) → Test Store demo purchases.
 // Anything else (preview/apk release builds, simulators) → no billing.
+// EXPO_PUBLIC_DISABLE_BILLING=1 turns billing off entirely, e.g. while a
+// RevenueCat key is wrong and the SDK would otherwise block startup.
+const BILLING_DISABLED = ['1', 'true'].includes(
+  String(process.env.EXPO_PUBLIC_DISABLE_BILLING || '').trim().toLowerCase(),
+);
+
 const PLATFORM_API_KEY = (() => {
+  if (BILLING_DISABLED) return null;
   if (MONETIZATION_LIVE) return isPlaceholderKey(STORE_API_KEY) ? null : STORE_API_KEY;
   if (__DEV__ && isTestStoreKey(RC_CONFIG.testStoreApiKey)) return RC_CONFIG.testStoreApiKey;
   return null;
@@ -82,9 +89,12 @@ const getPurchases = () => {
 };
 
 let _configured = false;
+// Set after a failed configure (e.g. "wrong API key"): billing stays off for
+// this session instead of retrying, and the app keeps running without it.
+let _configureFailed = false;
 
 export const initBilling = async () => {
-  if (!BILLING_LIVE) return false;
+  if (!BILLING_LIVE || _configureFailed) return false;
   const Purchases = getPurchases();
   if (!Purchases) return false;
   if (_configured) return true;
@@ -96,7 +106,9 @@ export const initBilling = async () => {
     _configured = true;
     return true;
   } catch (e) {
-    console.error('[billing] configure failed:', e);
+    _configureFailed = true;
+    // warn, not error: a bad key must not raise a red dev overlay over the app
+    console.warn('[billing] configure failed, billing disabled for this session:', e?.message || e);
     return false;
   }
 };
@@ -259,7 +271,7 @@ export const fetchEntitlement = async () => {
     const customerInfo = await Purchases.getCustomerInfo();
     return { entitled: hasEntitlement(customerInfo), entitlement: entitlementSnapshot(customerInfo) };
   } catch (e) {
-    console.error('[billing] getCustomerInfo failed:', e);
+    console.warn('[billing] getCustomerInfo failed:', e?.message || e);
     return null;
   }
 };
@@ -273,17 +285,27 @@ export const fetchEntitlement = async () => {
  */
 export const addCustomerInfoListener = (callback) => {
   if (!BILLING_LIVE) return () => {};
-  const Purchases = getPurchases();
-  if (!Purchases || typeof Purchases.addCustomerInfoUpdateListener !== 'function') {
-    return () => {};
-  }
-  const listener = Purchases.addCustomerInfoUpdateListener((customerInfo) => {
-    callback({
-      entitled: hasEntitlement(customerInfo),
-      entitlement: entitlementSnapshot(customerInfo),
-    });
+  let listener = null;
+  let removed = false;
+  // Attach only once the SDK is configured: adding a listener to an
+  // unconfigured SDK (e.g. after a wrong API key) throws natively.
+  initBilling().then((ok) => {
+    if (!ok || removed) return;
+    const Purchases = getPurchases();
+    if (!Purchases || typeof Purchases.addCustomerInfoUpdateListener !== 'function') return;
+    try {
+      listener = Purchases.addCustomerInfoUpdateListener((customerInfo) => {
+        callback({
+          entitled: hasEntitlement(customerInfo),
+          entitlement: entitlementSnapshot(customerInfo),
+        });
+      });
+    } catch (e) {
+      console.warn('[billing] customer info listener failed:', e?.message || e);
+    }
   });
   return () => {
+    removed = true;
     if (listener && typeof listener.remove === 'function') listener.remove();
   };
 };

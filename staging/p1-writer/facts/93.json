@@ -1,0 +1,162 @@
+{
+  "book_no": 93,
+  "title": "Meditations",
+  "authors": [
+    "Marcus Aurelius"
+  ],
+  "year": "",
+  "sources": [
+    "http://classics.mit.edu/Antoninus/meditations.html",
+    "https://www.gutenberg.org/ebooks/2680",
+    "https://en.wikipedia.org/wiki/Meditations"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Written in Greek by the Roman emperor Marcus Aurelius, probably between 170 and 180 AD, much of it while on military campaigns; 12 books. Probably not intended for publication. The Greek heading Ta eis heauton means 'things to himself'; 'Meditations' is a later title.",
+      "source": "Wikipedia",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Book 1 ends 'Among the Quadi at the Granua'; Book 2 ends 'This in Carnuntum.'",
+      "source": "Long translation (MIT Classics)",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Book 1 lists what he owes to others; from Rusticus he learned not to show himself off as a man who practises much discipline, to abstain from rhetoric, poetry and fine writing, to write letters simply; Rusticus gave him the discourses of Epictetus from his own collection (1.7).",
+      "source": "Long translation 1.7",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "5.1: 'In the morning when thou risest unwillingly, let this thought be present: I am rising to the work of a human being... Or have I been made for this, to lie in the bed-clothes and keep myself warm? But this is more pleasant.'",
+      "source": "Long translation 5.1",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "2.1: 'Begin the morning by saying to thyself, I shall meet with the busy-body, the ungrateful, arrogant, deceitful, envious, unsocial.' ... nor can I be angry with my kinsman; we are made for co-operation, like feet, hands, eyelids.",
+      "source": "Long translation 2.1",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "8.47: 'If thou art pained by any external thing, it is not this thing that disturbs thee, but thy own judgement about it. And it is in thy power to wipe out this judgement now.' Continues: if you are pained because you are not doing something right, why not act rather than complain?",
+      "source": "Long translation 8.47",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "4.7: 'Take away thy opinion, and then there is taken away the complaint, I have been harmed. Take away the complaint, I have been harmed, and the harm is taken away.'",
+      "source": "Long translation 4.7",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "11.36 (quoting Epictetus): 'No man can rob us of our free will.' 11.37: one should not show aversion toward things not in our power.",
+      "source": "Long translation 11.36-37",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "11.34: 'When a man kisses his child, said Epictetus, he should whisper to himself, To-morrow perchance thou wilt die. But those are words of bad omen. No word is a word of bad omen which expresses any work of nature; or if it is so, it is also a word of bad omen to speak of the ears of corn being reaped.'",
+      "source": "Long translation 11.34",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "7.27: 'Think not so much of what thou hast not as of what thou hast: but of the things which thou hast select the best, and then reflect how eagerly they would have been sought, if thou hadst them not. At the same time take care not to overvalue them, so as to be disturbed if ever thou shouldst not have them.'",
+      "source": "Long translation 7.27",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "2.11: 'Since it is possible that thou mayest depart from life this very moment, regulate every act and thought accordingly.'",
+      "source": "Long translation 2.11",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "Earliest clear mention by another writer: around 907 AD, Arethas of Caesarea.",
+      "source": "Wikipedia",
+      "confidence": "high"
+    },
+    {
+      "id": "f13",
+      "claim": "4.3: men seek retreats (houses in the country, sea-shores, mountains); one can retire into oneself; nowhere quieter than one's own soul; 'this little territory of thy own'; two thoughts: things do not touch the soul, perturbations come only from the opinion within; all things change; 'The universe is transformation: life is opinion.'",
+      "source": "Long translation 4.3",
+      "confidence": "high"
+    },
+    {
+      "id": "f14",
+      "claim": "11.33: 'To look for the fig in winter is a madman's act: such is he who looks for his child when it is no longer allowed.' 11.35: 'The unripe grape, the ripe bunch, the dried grape, all are changes, not into nothing, but into something which exists not yet.' 2.11 continues: to go away from among men, if there are gods, is not a thing to be afraid of, for the gods will not involve thee in evil.",
+      "source": "Long translation 11.33, 11.35, 2.11",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Diary lines 'I can't get up in the morning, staying in bed is tempting', 'someone angered me, I struggled to control my reaction'.",
+      "reason": "Paraphrased as if quotes; real passage 5.1 used instead."
+    },
+    {
+      "claim": "Marcus asked himself every morning 'What is in my control today and what is not?'",
+      "reason": "Not in the text; the dichotomy of control is Epictetus's formulation."
+    },
+    {
+      "claim": "Marcus quote: 'Things outside the will are neither good nor bad; good and bad lie only within our will.'",
+      "reason": "Not this wording in Meditations; closer to Epictetus."
+    },
+    {
+      "claim": "Marcus imagined daily losing loved ones, health and empire; quote 'say this was a trust left to me'.",
+      "reason": "Not in the text in this form; 11.34 and 7.27 used instead."
+    },
+    {
+      "claim": "Stoics called it 'premeditatio malorum' (as Marcus's term).",
+      "reason": "The Latin term is not in Meditations (written in Greek); not attributed to him."
+    },
+    {
+      "claim": "Book written 1800 years ago / Turkish title 'Stoacılık'.",
+      "reason": "DB title is a collection label; the work is Meditations."
+    }
+  ],
+  "stories": {
+    "1375": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f12"
+      ],
+      "note": "Private-notebook framing verified; invented diary quotes replaced with 5.1 and 2.1."
+    },
+    "1376": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f3",
+        "f6",
+        "f7",
+        "f8",
+        "f13",
+        "f2"
+      ],
+      "note": "Recentered on judgement (8.47, 4.7) and the Epictetus line he copied; invented morning question and quote dropped."
+    },
+    "1377": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f10",
+        "f11",
+        "f14",
+        "f1"
+      ],
+      "note": "Recentered on 11.34 and 7.27; 'premeditatio malorum' label and invented quote dropped."
+    }
+  }
+}

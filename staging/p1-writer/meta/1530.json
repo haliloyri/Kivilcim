@@ -1,0 +1,35 @@
+{
+  "story_id": 1530,
+  "verdict": "keep",
+  "verify_note": "Keep, medium-low: velocity as capacity from the last sprint is a Wikipedia statement marked as needing a citation; burndown chart and sprint facts from Wikipedia; Sutherland's degrees from Wikipedia; FBI figures from one summary, hedged. Old text's quote and 'much more accurate' claim dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Tahmin yerine sayım",
+    "description": "Scrum bir sonraki sprinti son sprintte bitirilen işe göre planlıyor. Hız kavramı Wikipedia'da kaynak istenen bir ifade, FBI ayrıntısı tek bir özetten.",
+    "hook": "Son üç haftada gerçekte neyi bitirdiniz?",
+    "one_minute_summary": "Scrum, bir ekibin kapasitesini son sprintte tamamladığı işten tahmin etmeyi ve kalan işi herkese açık bir burndown grafiğinde göstermeyi öneriyor. Sutherland istatistik ve biyometri eğitimi almış biri. Bir özete göre FBI'ın Virtual Case File projesi beş yılda yaklaşık 170 milyon dolar harcadı ve kullanılabilir bir şey çıkarmadı, Scrum'la yeniden başlayınca birkaç haftada bir çalışan parçalar geldi. Hız ifadesi ve FBI rakamı ikinci el kaynaklara dayanıyor."
+  },
+  "en": {
+    "title": "Count, don't guess",
+    "description": "Scrum plans the next sprint from the work finished in the last one. The velocity idea comes from a Wikipedia line that needs a citation; the FBI detail from one summary.",
+    "hook": "What did you really finish in the last three weeks?",
+    "one_minute_summary": "Scrum suggests estimating a team's capacity from the work it completed in the last sprint and showing remaining work on a public burndown chart. Sutherland trained in statistics and biometrics. One summary says the FBI's Virtual Case File project spent about $170 million over five years with nothing usable, and that a Scrum restart delivered working pieces every few weeks. The velocity statement and the FBI figure rest on secondary sources."
+  },
+  "es": {
+    "title": "Contar, no adivinar",
+    "description": "Scrum planifica el siguiente sprint con el trabajo terminado en el anterior. La idea de velocidad procede de una frase de Wikipedia que pide cita; el dato del FBI, de un solo resumen.",
+    "hook": "¿Qué terminaste de verdad en las últimas tres semanas?",
+    "one_minute_summary": "Scrum propone estimar la capacidad de un equipo a partir del trabajo que completó en el último sprint y mostrar el trabajo pendiente en un gráfico burndown público. Sutherland se formó en estadística y biometría. Un resumen dice que el proyecto Virtual Case File del FBI gastó unos 170 millones de dólares en cinco años sin entregar nada utilizable, y que un reinicio con Scrum entregó piezas funcionando cada pocas semanas. La afirmación sobre la velocidad y la cifra del FBI se apoyan en fuentes secundarias."
+  },
+  "de": {
+    "title": "Zählen statt raten",
+    "description": "Scrum plant den nächsten Sprint nach der im letzten erledigten Arbeit. Die Velocity-Idee stammt aus einer Wikipedia-Zeile, die einen Beleg braucht; das FBI-Detail aus einer einzigen Zusammenfassung.",
+    "hook": "Was hast du in den letzten drei Wochen wirklich geschafft?",
+    "one_minute_summary": "Scrum schlägt vor, die Kapazität eines Teams aus der im letzten Sprint erledigten Arbeit zu schätzen und die übrige Arbeit in einem öffentlichen Burndown-Diagramm zu zeigen. Sutherland ist in Statistik und Biometrie ausgebildet. Eine Zusammenfassung sagt, das FBI-Projekt Virtual Case File habe in fünf Jahren etwa 170 Millionen Dollar verbraucht, ohne etwas Brauchbares zu liefern, und ein Neustart mit Scrum habe alle paar Wochen funktionierende Teile geliefert. Die Velocity-Aussage und die FBI-Zahl beruhen auf Zweitquellen."
+  }
+}

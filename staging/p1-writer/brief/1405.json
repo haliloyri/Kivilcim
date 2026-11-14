@@ -1,0 +1,58 @@
+{
+ "story_id": 1405,
+ "kind": "concept",
+ "book": {
+  "title": "Getting Things Done",
+  "author": "David Allen",
+  "year": "2001"
+ },
+ "confidence": "medium",
+ "confidence_note": "Concept; no anecdote in the sources reachable. Open loops, next action, 'mind like water' and the pond image verified in secondary summaries and GTD material, not full text. Old text's dry-cleaning scene, invented consulting figure and 'dozens of tasks' dropped.",
+ "facts": [
+  "Allen calls unfinished commitments and ideas held in the head 'open loops'; carried in the head they drain concentration.",
+  "Remedy: move each one out of the head into a trusted external system.",
+  "For each one, decide the outcome and the very next action, a physical step.",
+  "His image for the calm state is 'mind like water' from karate: a pebble thrown into a still pond, the water answers in proportion and returns to calm.",
+  "'Your mind is for having ideas, not holding them' is attributed to him (wording varies)."
+ ],
+ "scene_details": [
+  "a pebble in a still pond",
+  "the very next physical action",
+  "a trusted list outside the head"
+ ],
+ "tension": "A task you already agreed to do keeps tugging at attention until it is written down with a next step.",
+ "opening_idea": "Open on the still pond and the pebble, then turn to the unwritten thing in the head.",
+ "lessons": [
+  {
+   "idea": "Write the next physical step, not just the topic.",
+   "anchor": "very next action in open-loop clearing.",
+   "example": "'Plan holiday' becomes 'ask sister which weeks she is free'."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which one unfinished thing keeps coming back to you, and what is the very next physical step you could write for it today?",
+ "use_cases": [
+  {
+   "situation": "Your head is full at the end of a workday.",
+   "move": "List what is still open and give each item a next physical step; Allen's open loops stay loud until they have one.",
+   "context": "self"
+  },
+  {
+   "situation": "A colleague says they are overwhelmed.",
+   "move": "Ask them to name the one thing nagging them and what the first physical step would be.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "A meeting ends with vague tasks.",
+   "move": "Before closing, ask each person to say the next physical action and who does it.",
+   "context": "meeting"
+  }
+ ],
+ "pocket_idea": "A task left in your head keeps asking for attention; write its next physical step in a place you trust.",
+ "conversation_variants": {
+  "punchline_idea": "An open loop stays loud until it has a next physical step written down.",
+  "thirty_sec_idea": "David Allen calls unfinished things in your head open loops. His fix: get them out into a trusted list and for each decide the very next physical action. The goal is a mind like water, calm, then responding in proportion.",
+  "question_idea": "",
+  "key_contrast_idea": "stuck in head vs written step"
+ }
+}

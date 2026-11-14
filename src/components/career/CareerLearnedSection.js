@@ -3,6 +3,7 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
 import { t } from '../../locales/i18n';
+import { toUpperFor } from '../../utils/locale';
 import { getCategoryImage, getCategoryTheme } from '../../utils/categoryImages';
 import { listReachedMilestones } from '../../utils/learningMilestones';
 
@@ -57,7 +58,7 @@ const CareerLearnedSection = ({ summary, onOpenStory, onOpenMilestone }) => {
 
             {reachedMilestones.length ? (
               <View style={styles.block}>
-                <Text style={[styles.eyebrow, { color: colors.textSecondary }]}>{t('career.learned.milestones', lang)}</Text>
+                <Text style={[styles.eyebrow, { color: colors.textSecondary }]}>{toUpperFor(t('career.learned.milestones', lang), lang)}</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipRow}>
                   {reachedMilestones.map((milestone) => {
                     const isBooks = milestone.type === 'books';
@@ -107,7 +108,7 @@ const CareerLearnedSection = ({ summary, onOpenStory, onOpenMilestone }) => {
                 <Text style={[styles.blockTitle, { color: colors.text }]}>
                   {t('career.learned.strongest', lang, { category: summary.strongest.name })}
                 </Text>
-                <Text style={[styles.eyebrow, { color: colors.textSecondary }]}>{t('career.learned.map', lang)}</Text>
+                <Text style={[styles.eyebrow, { color: colors.textSecondary }]}>{toUpperFor(t('career.learned.map', lang), lang)}</Text>
                 {summary.categories.map((category) => {
                   const accent = getCategoryTheme(category.rawName || category.name, isDark).accent;
                   return (
@@ -125,7 +126,7 @@ const CareerLearnedSection = ({ summary, onOpenStory, onOpenMilestone }) => {
 
             {summary.recent.length ? (
               <View style={styles.block}>
-                <Text style={[styles.eyebrow, { color: colors.textSecondary }]}>{t('career.learned.recent', lang)}</Text>
+                <Text style={[styles.eyebrow, { color: colors.textSecondary }]}>{toUpperFor(t('career.learned.recent', lang), lang)}</Text>
                 {summary.recent.map((item) => {
                   const accent = getCategoryTheme(item.categoryRaw || item.category, isDark).accent;
                   return (

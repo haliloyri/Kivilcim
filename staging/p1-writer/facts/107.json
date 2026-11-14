@@ -1,0 +1,35 @@
+{
+  "book_no": 107,
+  "title": "Blue Ocean Strategy",
+  "authors": ["W. Chan Kim", "Renée Mauborgne"],
+  "year": "2005",
+  "sources": [
+    "https://www.blueoceanstrategy.com/tools/four-actions-framework/",
+    "https://www.blueoceanstrategy.com/tools/strategy-canvas/",
+    "https://www.shortform.com/blog/four-actions-framework-blue-ocean-strategy/",
+    "https://www.intrafocus.com/blog/blue-ocean-strategy/",
+    "https://www.impactplus.com/impact-book-summaries/blue-ocean-strategy-renee-mauborgne-w-chan-kim",
+    "https://maaw.info/ArticleSummaries/ArtSumKimMauborgne02.htm",
+    "https://en.wikipedia.org/wiki/Blue_Ocean_Strategy"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "Four Actions Framework: Eliminate factors the industry takes for granted that add no value; Reduce factors well below the industry standard (products overdesigned in the race to match competitors); Raise factors well above the standard by removing compromises customers make; Create factors the industry has never offered. The aim is to break the trade-off between differentiation and low cost.", "source": "blueoceanstrategy.com", "confidence": "high"},
+    {"id": "f2", "claim": "Cirque du Soleil: its founder Guy Laliberte had been a street performer and treated the traditional circus as a red ocean; the show combined circus and acrobatic skills with adult theatre, original music and a storyline.", "source": "intrafocus", "confidence": "medium"},
+    {"id": "f3", "claim": "Cirque's grid: Eliminate star performers, animal shows, aisle concession sales, multiple show arenas. Reduce fun and humor, thrill and danger. Raise the unique venue. Create theme, refined environment, multiple productions, artistic music and dance. Sources differ slightly on placement of some items.", "source": "shortform, study pages", "confidence": "medium"},
+    {"id": "f4", "claim": "Dropping expensive elements such as animals and star performers cut Cirque's costs while the show targeted a more refined, higher-priced experience.", "source": "rework, intrafocus", "confidence": "medium"},
+    {"id": "f5", "claim": "Strategy canvas: horizontal axis shows the range of factors an industry competes on and invests in; vertical axis shows the level buyers receive on each. Plotting rivals shows how similar their strategies look to buyers, which signals a red ocean.", "source": "blueoceanstrategy.com", "confidence": "high"},
+    {"id": "f6", "claim": "Southwest Airlines on the canvas: rivals invested across many factors; Southwest dropped or cut things such as meals, seat choice and hub connectivity, and concentrated on friendly service, speed and frequent point-to-point departures at a low price.", "source": "maaw summary, impactplus", "confidence": "medium"},
+    {"id": "f7", "claim": "The authors set car travel on the canvas as a comparison; Southwest attracted car drivers by making flying more like driving. A tagline cited: 'The speed of the plane at the price of the car, whenever you need it.'", "source": "impactplus, maaw (secondary)", "confidence": "medium"},
+    {"id": "f8", "claim": "Book published 2005 by Harvard Business School Press (HBR article 2004).", "source": "library records, publisher listings", "confidence": "high"}
+  ],
+  "rejected": [
+    {"claim": "Cirque 'raised sophisticated environment and artistic theme; created storytelling and multiple productions' as given in the old text.", "reason": "Mapping differs from the sourced grid (theme, refined environment and multiple productions are 'create'; unique venue is 'raise')."},
+    {"claim": "Most companies are surprised to find competitors' profiles nearly identical.", "reason": "No source for the surprise; kept only the canvas's stated purpose."},
+    {"claim": "Southwest eliminated business class and airport lounges.", "reason": "Not confirmed in sources; used meals, seat choice and hub connectivity only."},
+    {"claim": "'Creating a blue ocean is not creativity but asking systematic questions.'", "reason": "Not a verified quote."}
+  ],
+  "stories": {
+    "1418": {"verdict": "keep", "fact_ids": ["f1", "f2", "f3", "f4"], "note": "Four Actions with Cirque du Soleil, using the sourced grid."},
+    "1419": {"verdict": "keep", "fact_ids": ["f5", "f6", "f7", "f8"], "note": "Strategy canvas with Southwest vs car; the 'companies are surprised' line dropped."}
+  }
+}

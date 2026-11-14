@@ -1,0 +1,167 @@
+{
+ "book_no": 55,
+ "title": "Essentialism: The Disciplined Pursuit of Less",
+ "authors": [
+  "Greg McKeown"
+ ],
+ "year": "2014",
+ "sources": [
+  "https://mduan-shortform.netlify.app/essentialism",
+  "https://www.shortform.com/blog/wp-json/wp/v2/posts/30383",
+  "https://www.goodreads.com/quotes/3189262-the-word-priority-came-into-the-english-language-in-the",
+  "https://quotefancy.com/quote/2577559/Greg-McKeown-The-word-priority-came-into-the-English-language-in-the-1400s-It-was",
+  "https://www.etymonline.com/word/prioritize",
+  "https://www.tpr.org/2014-07-26/lessons-in-essentialism-getting-more-out-of-life-by-doing-less",
+  "https://thefortyfive.blogspot.com/2025/05/essentialism-xvi-essence-of.html",
+  "https://goodmenproject.com/featured-content/the-understated-power-of-sorting-out-your-priorities-ndgt/",
+  "https://thefortyfive.blogspot.com/2025/04/essentialism-xv-essence-of-essentialist.html",
+  "https://tim.blog/2019/01/12/the-tim-ferriss-show-transcripts-greg-mckeown/"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "McKeown's account: the word 'priority' came into English in the 1400s, was singular, meaning the very first thing, and stayed singular for about 500 years; in the 1900s it was pluralized. (Dictionaries confirm the 15th-century origin; the plural date is the author's claim.)",
+   "source": "Book quote via Goodreads/Quotefancy; Merriam-Webster/etymonline for origin",
+   "confidence": "medium"
+  },
+  {
+   "id": "f2",
+   "claim": "The book's 'Sam Elliot' (a name used in the book; summaries flag it as a pseudonym), a Silicon Valley executive, said yes to everything bosses and colleagues asked, felt his time went to things that did not matter, his performance slipped and he considered quitting to become a consultant.",
+   "source": "Shortform summary; mduan Shortform; TPR",
+   "confidence": "medium"
+  },
+  {
+   "id": "f3",
+   "claim": "A mentor advised Sam to do only what he would do as a consultant and nothing else. He began asking whether a request was the most important thing he could do at that moment, attended fewer meetings, joined fewer e-mail debates, focused on a few high-value projects; his performance ratings rose and he received a large bonus.",
+   "source": "Shortform summary; mduan Shortform",
+   "confidence": "medium"
+  },
+  {
+   "id": "f4",
+   "claim": "The 'paradox of success': clarity of purpose brings success; success brings more options and requests; options diffuse effort; the person loses the clarity that brought success. McKeown cites Jim Collins on 'the undisciplined pursuit of more'.",
+   "source": "mduan Shortform",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "McKeown's own story: the day after his daughter was born, at the hospital, he was answering work e-mails and calls; a colleague asked him to come to a client meeting; he went, expecting the client to respect the sacrifice. The client seemed to think less of him for leaving, and the meeting turned out to be unimportant. His conclusion: if you don't prioritize your life, someone else will.",
+   "source": "Shortform; mduan Shortform; Tim Ferriss Show transcript",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "90 percent rule (chapter 'Select'): identify the single most important criterion, score the option 0-100; if lower than 90, change it to 0 and reject it.",
+   "source": "thefortyfive blog; goodmenproject; mduan Shortform",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "McKeown cites Derek Sivers's 'No more yes. It's either HELL YEAH! or no.'",
+   "source": "thefortyfive blog; goodmenproject",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Sleep chapter: McKeown cites K. Anders Ericsson's study of violinists (the study behind the '10,000 hour' idea). The best violinists practiced more; the second factor separating them from the merely good was sleep: they averaged 8.6 hours per 24 hours, about an hour more than the average American, and napped about 2.8 hours a week. The researchers' reading: rest let them practice with more concentration.",
+   "source": "thefortyfive blog; mduan Shortform; reader notes",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Sleep chapter opens with Geoff, who at 36 was CEO of a global microlending organization, travelling 60-70% of the year and sleeping 4-6 hours a night; his health broke down and for weeks he could not function.",
+   "source": "thefortyfive blog (single detailed source)",
+   "confidence": "low"
+  },
+  {
+   "id": "f10",
+   "claim": "Editorial caveat: Ericsson's 1993 study was small (a few dozen music students in Berlin) and correlational; it shows the best slept more, not that sleep caused their level.",
+   "source": "Ericsson, Krampe, Tesch-Romer 1993 (Psychological Review), general knowledge",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "McKeown: sleep enhances the ability to explore, make connections and do less but better throughout waking hours. The violinist study is the one later popularized by Malcolm Gladwell as the '10,000 hour rule'.",
+   "source": "Scribd review quote; mduan Shortform; thefortyfive blog",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "McKeown later described the hospital decision as a mistake: he had said yes to please someone, and in doing so let down his family, his own integrity and even the client relationship.",
+   "source": "Tim Ferriss Show transcript; Bob Morris interview (search summary)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Ericsson's 1993 study compared violin students at the music academy in West Berlin whom their teachers had sorted into the best and the merely good (plus a group of future music teachers). Sleep and practice were recorded through diaries and estimates the students themselves kept; nobody was assigned an amount of sleep.",
+   "source": "Ericsson, Krampe & Tesch-Romer 1993, Psychological Review (original study)",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Naval battle: five ships concentrated on one target beat dozens",
+   "reason": "Not found in Essentialism; no source"
+  },
+  {
+   "claim": "McKeown 'observed high-performing employees of companies and found the best say the most selective no'",
+   "reason": "Not verified as a study in the book; Sam Elliot case used instead"
+  },
+  {
+   "claim": "Quote 'Saying yes to good opportunities is missing great ones'",
+   "reason": "Wording not verified; idea covered by the 90 percent rule"
+  },
+  {
+   "claim": "'If your first reaction isn't definitely yes, the answer must be no' as McKeown's own test",
+   "reason": "Book attributes the HELL YEAH line to Derek Sivers; McKeown's own tool is the 90 percent rule"
+  },
+  {
+   "claim": "Best musicians practised 4-5 hours a day vs expected 12-14",
+   "reason": "Figures not verified in Essentialism"
+  },
+  {
+   "claim": "'They were the ones who slept the most' as the elite's most notable trait",
+   "reason": "Book ranks sleep second after practice"
+  },
+  {
+   "claim": "'Eight hours of sleep enables four hours of intense work; six hours yields eight shallow ones'",
+   "reason": "Invented arithmetic"
+  },
+  {
+   "claim": "'Ericsson rejected this popular formulation himself'",
+   "reason": "About the 10,000-hour rule, not about this content; not needed"
+  }
+ ],
+ "stories": {
+  "1297": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4"
+   ],
+   "note": "Center (spread effort vs few things) is the book's thesis; invented naval battle replaced by the 'priority' word history and the Sam Elliot case."
+  },
+  "1298": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f5",
+    "f6",
+    "f7",
+    "f12"
+   ],
+   "note": "Center (saying no to good options) is in 'Select'; built on McKeown's hospital story and the 90 percent rule; unverified quote dropped."
+  },
+  "1299": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f8",
+    "f9",
+    "f10",
+    "f11",
+    "f13"
+   ],
+   "note": "Center (sleep as protection of capability) is the Sleep chapter; invented hours dropped; Ericsson figures kept with a small-study caveat; Geoff low confidence, used without exact numbers."
+  }
+ }
+}

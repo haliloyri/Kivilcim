@@ -1,0 +1,31 @@
+{
+  "book_no": 54,
+  "title": "The 4-Hour Workweek",
+  "authors": ["Timothy Ferriss"],
+  "year": "2007",
+  "sources": [
+    "https://archive.org/details/FERRISSTimothyThe4HourWorkweek",
+    "https://mympcapital.blogspot.com/2020/10/the-4-hour-workweek-l-for-liberation.html",
+    "https://www.shortform.com/blog/?p=21727"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "Chapter 'Disappearing Act: How to Escape the Office'. Ferriss introduces Sherwood and Johanna earlier as worked case studies ('Let's use two people, Sherwood and Johanna'); the remote-work section returns to Sherwood under the heading 'Trading Bosses for Beer: An Oktoberfest Case Study'.", "source": "Book text (expanded ed., archive.org)", "confidence": "high"},
+    {"id": "f2", "claim": "Sherwood is a mechanical engineer who sells French sailor shirts on the side; after cutting time-wasters he produces twice as many designs in half the time. He has moved about 80% of communication with his boss to e-mail and 20% to phone and deliberately holds back some productivity to show a jump later.", "source": "Book text", "confidence": "high"},
+    {"id": "f3", "claim": "Five steps starting July 12 in the slow season, lasting about two months, ending with two weeks at Oktoberfest in Munich: 1 increase investment (asks the company to pay for a four-week industrial design class), 2 prove output offsite, 3 prepare quantifiable benefit, 4 propose a revocable trial, 5 expand remote time.", "source": "Book text; mympcapital blog", "confidence": "high"},
+    {"id": "f4", "claim": "Step 2: he calls in sick on Tuesday and Wednesday, doubles output, leaves an e-mail trail, and uses a free trial of GoToMyPC to run the CAD software licensed on his office desktop. Result: three more designs per day than his average and three extra billable hours in total.", "source": "Book text; mympcapital blog", "confidence": "high"},
+    {"id": "f5", "claim": "Step 4: around 3 p.m. on a relaxed Thursday he knocks on boss Bill's door, asks for 'two minutes', and proposes working from home Mondays and Tuesdays for a two-week trial that Bill can veto any time. He asked for two days so he could fall back to one if refused; Bill agrees: 'it's just a test'.", "source": "Book text", "confidence": "high"},
+    {"id": "f6", "claim": "Step 5: he makes remote days his most productive, brings a bullet-point page of results, asks for four days remote for another two weeks, ready to settle for three. Bill worries he is on his way out and that everyone will want the same; Sherwood answers that only people who show higher productivity should get it. Bill agrees: 'don't go blabbing about it.'", "source": "Book text; mympcapital blog", "confidence": "high"},
+    {"id": "f7", "claim": "On September 19 he asks for a two-week full-time remote trial while visiting relatives, timing it during a project that needs him, prepared to quit; the boss agrees. Ferriss: getting what you want often depends more on when you ask than how. Sherwood buys a $524 round-trip ticket to Munich.", "source": "Book text", "confidence": "high"},
+    {"id": "f8", "claim": "Ferriss's two aims: show the business benefit of remote work and make it too costly to refuse. Two days instead of five because it is less for management to accept and lets him rehearse remote work first.", "source": "Book text", "confidence": "high"},
+    {"id": "f9", "claim": "Same chapter opens with a real case: Dave Camarillo of HP, who worked from China for 30 days without telling anyone.", "source": "Book text", "confidence": "high"}
+  ],
+  "rejected": [
+    {"claim": "'Ferriss tells the story of a real client'", "reason": "Sherwood is the book's illustrative case study, not presented as a real client"},
+    {"claim": "Worked two months from Portugal; arrangement made permanent", "reason": "Book: Munich, Oktoberfest, two weeks; no Portugal, no 'permanent'"},
+    {"claim": "Proposal line 'I can work from Europe for two months; if performance drops I'll come back'", "reason": "Not in the book"},
+    {"claim": "'Many limits are just boundaries never asked about' as Ferriss's quote", "reason": "Paraphrase, not a verified quote"}
+  ],
+  "stories": {
+    "1296": {"verdict": "keep", "fact_ids": ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"], "note": "Center (step-by-step remote negotiation) is in the book; rebuilt on Sherwood's actual steps, clearly framed as the book's worked example. Calling in sick is the book's tactic and is reported, not endorsed."}
+  }
+}

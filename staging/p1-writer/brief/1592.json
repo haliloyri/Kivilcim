@@ -1,0 +1,62 @@
+{
+  "story_id": 1592,
+  "kind": "concept",
+  "book": {
+    "title": "Outlive",
+    "author": "Peter Attia",
+    "year": "2023"
+  },
+  "confidence": "medium",
+  "confidence_note": "From reviews and summaries. Old text's shared root of chronic inflammation and the causal chain from insulin resistance to the three other diseases are not in the sources and were dropped. The metabolic link is attributed to Attia as his clinical view, from one summary plus a detailed review, so medium. No numbers from insulin resistance used.",
+  "facts": [
+    "Attia calls four chronic diseases the Four Horsemen: heart disease, cancer, neurodegenerative disease such as Alzheimer's, and type 2 diabetes with metabolic dysfunction.",
+    "He says the odds are overwhelming that most people will die of one of them.",
+    "Medicine 2.0 mostly reacts once disease is established; Medicine 3.0 starts earlier and weighs the risk of doing nothing.",
+    "Attia treats metabolic health as foundational.",
+    "He calls elevated insulin the canary in the coal mine of metabolic disorder.",
+    "Insulin resistance is linked to higher risk of cancer, Alzheimer's and cardiovascular death; this is an association.",
+    "One summary calls insulin sensitivity the variable connecting all four horsemen.",
+    "Medicine 3.0 uses five tactics: exercise, nutrition, sleep, emotional health and exogenous molecules such as drugs, hormones and supplements.",
+    "Half of major adverse cardiovascular events in men and a third in women happen before 65.",
+    "In a glucose tolerance test, early insulin resistance shows as a sharp insulin rise in the first 30 minutes that stays high for the next hour."
+  ],
+  "scene_details": [
+    "a canary in a coal mine",
+    "four named diseases",
+    "five tactics on a short list"
+  ],
+  "tension": "Four different-looking diseases, one early warning that shows up years before any of them.",
+  "opening_idea": "Open on the four names and the odds Attia gives for most people.",
+  "lessons": [
+    {
+      "idea": "Watch the early signal, not only the late damage",
+      "anchor": "raised insulin as the canary in the coal mine; Everyday: a fleet mechanic who checks oil every month instead of waiting for the engine light"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which early signal in your health, money or work do you currently check only after something has already gone wrong?",
+  "use_cases": [
+    {
+      "situation": "The team reviews errors only after they reach customers",
+      "move": "Attia's canary in the coal mine is an early signal. What could we check weekly that shows trouble before customers do?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A parent has put off a routine blood test",
+      "move": "Attia says elevated insulin can warn years ahead. Would you do the test if I came along?",
+      "context": "family"
+    },
+    {
+      "situation": "You only see a doctor when something hurts",
+      "move": "I only look when it breaks. I will ask for one early marker this year and see what it says.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Attia calls raised insulin the canary in the coal mine. Check the early signal, not only the late damage.",
+  "conversation_variants": {
+    "punchline_idea": "Attia names four diseases that most of us will die of, and one early signal that may warn of all of them.",
+    "thirty_sec_idea": "Attia says most people will die of one of four chronic diseases: heart disease, cancer, Alzheimer's or type 2 diabetes. He treats metabolic health as foundational and calls raised insulin the canary in the coal mine. Insulin resistance is linked to higher risk of the others, an association, so he argues for checking early signals instead of waiting.",
+    "question_idea": "",
+    "key_contrast_idea": "early warning, late damage"
+  }
+}

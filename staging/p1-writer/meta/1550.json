@@ -1,0 +1,35 @@
+{
+  "story_id": 1550,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: GWC and the engineer example from a summary. Old promoted-salesperson anecdote dropped as unsourced.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Üç soruyla doğru koltuk",
+    "description": "Wickman bir koltuğa uygunluğu üç soruyla ölçer: kavrıyor mu, istiyor mu, gücü var mı.",
+    "hook": "Üstlendiğiniz rolde üç sorudan hangisi eksik?",
+    "one_minute_summary": "Gino Wickman'ın Traction kitabında doğru insan değerleri paylaşan, doğru koltuk ise GWC'yi karşılayan kişidir: işi kavrıyor, istiyor ve yürütecek kapasitesi var. Üçünün de cevabı evet olmalıdır. Bir özet, yönetici pozisyonunu kavrayan ve yürütecek kapasitesi olan ama istemeyen bir mühendisi anlatır. Hayır, yeteneğe değil koltuk uyumuna yazılır ve bu ayrım, iyi bir çalışanı kaybetmeden başka bir göreve taşımanın yolunu açar. Anlatım ikinci el özete dayanıyor, bu yüzden kitaptaki tanımlarla karşılaştırın."
+  },
+  "en": {
+    "title": "Three questions for a seat",
+    "description": "Wickman tests the fit of a person to a seat with three questions: do they get it, want it, have the capacity.",
+    "hook": "Which of the three is missing in a role you hold?",
+    "one_minute_summary": "In Gino Wickman's Traction, the right person shares the company's values, and the right seat is one that passes GWC: the person gets the job, wants it and has the capacity to do it. All three must be yes. One summary describes an engineer who grasps an executive position and has the capacity for it but does not want it. The no is written against the fit, not the talent. This rests on a secondary summary, so compare the definitions with the book."
+  },
+  "es": {
+    "title": "Tres preguntas para un puesto",
+    "description": "Wickman mide el encaje de una persona con un puesto con tres preguntas: lo entiende, lo quiere, tiene capacidad.",
+    "hook": "¿Cuál de las tres falta en un puesto que ocupas?",
+    "one_minute_summary": "En Traction, de Gino Wickman, la persona adecuada comparte los valores de la empresa y el asiento adecuado es el que supera GWC: la persona entiende el trabajo, lo quiere y tiene la capacidad de hacerlo. Las tres deben ser un sí. Un resumen describe a un ingeniero que comprende un puesto directivo y tiene capacidad para él, pero no lo quiere. El no se apunta al encaje, no al talento. Esto se apoya en un resumen secundario, así que compara las definiciones con el libro."
+  },
+  "de": {
+    "title": "Drei Fragen für einen Sitz",
+    "description": "Wickman prüft die Passung zwischen Mensch und Sitz mit drei Fragen: Begreift er es, will er es, hat er die Kapazität.",
+    "hook": "Welche der drei Fragen fehlt bei einer Rolle, die du hast?",
+    "one_minute_summary": "In Gino Wickmans Traction teilt der richtige Mensch die Werte der Firma, und der richtige Sitz besteht GWC: Die Person begreift die Aufgabe, will sie und hat die Kapazität dafür. Alle drei müssen Ja sein. Eine Zusammenfassung beschreibt einen Ingenieur, der einen Führungsposten begreift und die Kapazität hat, ihn aber nicht will. Das Nein gilt der Passung, nicht dem Talent. Das stützt sich auf eine Zusammenfassung, vergleiche die Definitionen mit dem Buch."
+  }
+}

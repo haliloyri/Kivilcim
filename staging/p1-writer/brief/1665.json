@@ -1,0 +1,34 @@
+{
+  "story_id": 1665,
+  "kind": "concept",
+  "book": {"title": "A New Earth", "author": "Eckhart Tolle", "year": "2005"},
+  "confidence": "high",
+  "confidence_note": "Verified in a full text of A New Earth (ch. 7, 'The Paradox of Time' and the preceding section on the three ways the ego treats the present moment). The old Q and A ('what day is it?', 'ten years from now') is not in the book and was dropped, as were the 'breath, touch, sound' methods. Tolle's claims about time are philosophical, presented as his view.",
+  "facts": [
+    "Tolle: 'there is only ever this moment. Life is always now.' Past or future moments exist only when you remember or anticipate them, and you do that by thinking in 'the only moment there is: this one'.",
+    "He says the present moment is confused with what happens in it, with content; that confusion produces the illusion of time and the illusion of ego.",
+    "Example: he met old friends after almost thirty years; the mother walked with a cane, seemed to have shrunk, her face 'shriveled like an old apple'; the daughter, once full of energy, looked worn out after bringing up three children. 'Time had done this to them.' Yet it all happens in the Now.",
+    "He grants that clock time is needed for practical purposes such as an appointment or a trip; what he objects to is psychological time, the mind's preoccupation with past and future.",
+    "The ego treats the present moment in three ways: as a means to an end (never fully here because always busy getting elsewhere), as an obstacle (impatience, frustration, stress, life as a problem to solve before you can be happy), or as an enemy (hating what you do, complaining, internal dialogue of shoulds and blame).",
+    "'The present moment is all you ever have'; his question: 'What is my relationship with the present moment?' with three checks: means, obstacle, enemy.",
+    "Noticing the dysfunction is itself presence: 'The seeing is the arising Presence.' 'With the seeing comes the power of choice.' He suggests asking the question often until you no longer need it."
+  ],
+  "scene_details": ["old friends not seen for almost thirty years", "a mother with a cane, face like an old apple", "a daughter worn out after three children", "the three checks: means, obstacle, enemy"],
+  "tension": "Everything about those friends shows time, and Tolle says all of it happened in the one moment there is.",
+  "opening_idea": "Open on the meeting with the old friends after almost thirty years and his shock at their faces.",
+  "lessons": [{"idea": "Ask how you are treating this moment: as a stepping stone, an obstacle or an enemy.", "anchor": "Tolle's three ways and the question about your relationship with the present moment.", "example": "Someone stuck in a queue treats it as lost time and, once they notice, treats it as a moment they are actually in."}],
+  "reflect": [],
+  "reflect_final": "Think of a moment from today you treated as a stepping stone, an obstacle or an enemy: what did you do in it, and what would you do differently?",
+  "use_cases": [
+    {"situation": "You are waiting for a result and cannot concentrate.", "move": "Ask yourself Tolle's question: am I treating this moment as a means, an obstacle or an enemy? Name which one.", "context": "self"},
+    {"situation": "A friend is stuck complaining about their week.", "move": "Ask what they are doing in this moment, not what is wrong with the week.", "context": "social"},
+    {"situation": "A long meeting is dragging.", "move": "Notice if you are treating it as an obstacle; choose one thing in the room to listen to fully.", "context": "meeting"}
+  ],
+  "pocket_idea": "Ask: am I treating this moment as a means, an obstacle or an enemy? Noticing is the first move.",
+  "conversation_variants": {
+    "punchline_idea": "Tolle met old friends after thirty years and saw time on their faces, yet says it all happened in one moment.",
+    "thirty_sec_idea": "Tolle meets old friends after almost thirty years, shocked by their faces, then says even that happened only in the Now; his question is whether you treat the moment as means, obstacle or enemy.",
+    "question_idea": "",
+    "key_contrast_idea": "stepping stone, obstacle, enemy"
+  }
+}

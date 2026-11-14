@@ -1,0 +1,42 @@
+{
+  "book_no": 190,
+  "title": "Peace Is Every Step",
+  "authors": ["Thich Nhat Hanh"],
+  "year": "1991",
+  "sources": [
+    "https://archive.org/download/thichnhathanh/THICH%20NHAT%20HANH.rar/THICH%20NHAT%20HANH%2FEBOOK%2FENG%2FThich%20Nhat%20Hanh%20-%20Peace%20Is%20Every%20Step.pdf (full text read locally; Rider 1995 UK edition, first published Bantam 1991)"
+  ],
+  "source_note": "Book text itself read (archive.org PDF, text extracted). DB title is the Turkish 'Icsel Baris'; English original title used.",
+  "facts": [
+    {"id":"f1","claim":"Walking meditation is 'walking not in order to arrive, but just to walk'. Done slowly, alone or with friends, if possible in some beautiful place; one can take a child's hand.","source":"Part Two, 'Walking Meditation'","confidence":"high"},
+    {"id":"f2","claim":"Although we walk all the time, our walking is usually more like running; such walking prints anxiety and sorrow on the Earth. We should walk so that we only print peace and serenity. Any child can do it.","source":"'Walking Meditation'","confidence":"high"},
+    {"id":"f3","claim":"Outdoors, walk a little slower than normal pace and coordinate breathing with steps, e.g. three steps with each in-breath and three with each out-breath, saying 'In, in, in. Out, out, out.' Naming the breath makes it more real, like saying a friend's name. If lungs want four steps give four, if two give two; in and out need not be equal (three in, four out). 'If you feel happy, peaceful, and joyful while you are walking, you are practicing correctly.'","source":"'Walking Meditation'","confidence":"high"},
+    {"id":"f4","claim":"Be aware of the contact between your feet and the Earth. 'Walk as if you are kissing the Earth with your feet.'","source":"'Walking Meditation'","confidence":"high"},
+    {"id":"f5","claim":"When you see something beautiful (a tree, a flower, children playing) you may stop and look while following your breath so you do not get caught in thoughts; to resume, just start again.","source":"'Walking Meditation'","confidence":"high"},
+    {"id":"f6","claim":"'Every step makes a flower bloom under our feet', but only if we do not think of the future or the past and know life can only be found in the present moment.","source":"'Walking Meditation'","confidence":"high"},
+    {"id":"f7","claim":"A Buddhist word means 'wishlessness' or 'aimlessness': you do not put something in front of you and run after it, because everything is already here. In walking meditation 'we do not try to arrive anywhere. We only make peaceful, happy steps.' Thinking of the future, of what we want to realize, loses our steps. The same holds for sitting meditation, tangerine, tea.","source":"Part Two","confidence":"high"},
+    {"id":"f8","claim":"Washing the dishes is at the same time a means and an end: we wash to have clean dishes and also just to wash them, living fully in each moment.","source":"'Washing Dishes'","confidence":"high"},
+    {"id":"f9","claim":"Walking meditation when angry: go outside; verse 'Breathing in, I know that anger is here. Breathing out, I know that the anger is me. ... I know this feeling will pass ... I am strong enough to take care of this anger'; give full attention to the contact of soles and earth; wait until calm enough to look directly at the anger; then it subsides and we feel stronger.","source":"'Walking Meditation When Angry'","confidence":"high"},
+    {"id":"f10","claim":"When angry we want to think about the person (rudeness, dishonesty...) and the more we think about, listen to or look at him the more anger flares. 'Like a fireman, we have to pour water on the blaze first and not waste time looking for the one who set the house on fire.' We refrain from doing or saying anything while anger persists, which avoids damage we may regret later.","source":"Anger section","confidence":"high"},
+    {"id":"f11","claim":"Mindfulness is not a judge; it is like an older sister looking after and comforting her younger sister. Awareness does not suppress anger or drive it out; it just looks after it.","source":"Anger section","confidence":"high"},
+    {"id":"f12","claim":"Pillow-pounding: expressing anger can rehearse it and strengthen it. Punching a pillow may work temporarily because we spend energy and feel better when exhausted, but roots remain; after eating, if the seeds are watered again, anger is reborn and we pound the pillow again.","source":"'Pillow-Pounding'","confidence":"high"},
+    {"id":"f13","claim":"Anger as compost: a gardener sees flowers in smelly compost and does not feel disgusted; compost gives birth to flowers in a few months.","source":"Anger section","confidence":"high"},
+    {"id":"f14","claim":"Cooking Our Potatoes: raw potatoes are not thrown away but cooked: fire = mindfulness, lid = concentration; after about ten minutes it boils, after half an hour we smell something different; anger transformed into understanding and compassion.","source":"'Cooking Our Potatoes'","confidence":"high"},
+    {"id":"f15","claim":"Roots of anger: lack of understanding of ourselves and of causes; the primary roots are in ourselves, other people secondary. We accept earthquakes and floods have causes; the person who angered us also has reasons. 'Someone who speaks badly to us may have been spoken to in exactly the same way just the day before, or by his alcoholic father when he was a child.' Not saying a person who viciously attacks should not be disciplined, but first take care of our own seeds of negativity, then act from compassion not retribution.","source":"'The Roots of Anger'","confidence":"high"},
+    {"id":"f16","claim":"Interbeing: 'If you are a poet, you will see clearly that there is a cloud floating in this sheet of paper.' Without a cloud no rain; without rain trees cannot grow; without trees no paper. Cloud and paper 'inter-are'. 'Interbeing' is not in the dictionary; inter- plus 'to be' gives 'inter-be'.","source":"Part Three, 'Interbeing'","confidence":"high"},
+    {"id":"f17","claim":"Looking deeper: sunshine is in the paper; the logger who cut the tree and brought it to the mill; the wheat that became his daily bread; the logger's father and mother; and ourselves, because the paper is part of our perception ('Your mind is in here and mine is also'). Time, space, earth, rain, minerals in the soil, sunshine, cloud, river, heat all co-exist with the paper.","source":"'Interbeing'","confidence":"high"},
+    {"id":"f18","claim":"'To be is to inter-be.' 'This sheet of paper is, because everything else is.' Return the sunshine to the sun, or the logger to his mother, and there is no paper. The paper is made only of 'non-paper' elements.","source":"'Interbeing'","confidence":"high"},
+    {"id":"f19","claim":"Roses and garbage inter-are: in five or six days the cut rose becomes part of the garbage, and garbage in a few months can be transformed into vegetables and a rose.","source":"'Flowers and Garbage'","confidence":"high"}
+  ],
+  "rejected": [
+    {"claim":"Write an angry letter and sleep on it, reread next morning (old 1667)","reason":"Not found in Peace Is Every Step; the only letter chapter is a protest/love letter to a congressman. Story rebuilt on the book's own anger practice."},
+    {"claim":"Direct quote 'If we rush to get somewhere else, every step is a means... and that later never comes' (old 1666)","reason":"Not in the text; paraphrase of f7 only."},
+    {"claim":"Hanh holds up a sheet of paper and asks a listener 'Is there a cloud in this paper?' (old 1668)","reason":"Book states it as an 'if you are a poet' reflection, no scene with a listener."},
+    {"claim":"'Understanding the enemy is not approving the enemy'; anger as a fire where each thought is a log (old 1667/1668)","reason":"Not in the text in this wording; fireman and compost images are the book's own."}
+  ],
+  "stories": {
+    "1666": {"verdict":"keep","fact_ids":["f1","f2","f3","f4","f5","f6","f7","f8"],"note":"Walking meditation as walking just to walk."},
+    "1667": {"verdict":"keep","fact_ids":["f9","f10","f11","f12","f13","f14"],"note":"Title changed: old angry-letter premise unsupported; rebuilt on fireman image, pillow-pounding and walking when angry."},
+    "1668": {"verdict":"keep","fact_ids":["f15","f16","f17","f18","f19"],"note":"Interbeing, with its use on the person who hurts you."}
+  }
+}

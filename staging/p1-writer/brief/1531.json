@@ -1,0 +1,34 @@
+{
+  "story_id": 1531,
+  "kind": "concept",
+  "book": {"title": "SPIN Selling", "author": "Neil Rackham", "year": "1988"},
+  "confidence": "medium",
+  "confidence_note": "The book's full text was not available; facts come from Wikipedia and several summaries and reviews, which agree on the research size and the closing finding but give no figures for how closing performed. The old text's direct quote ('a big sale is not a bigger small sale') and its pressure-resistance mechanism are not attributable and were dropped. The 17 percent training result is secondary and flagged as a claim.",
+  "facts": [
+    "Rackham founded the Huthwaite Research Group in 1974 and, with support from Xerox and IBM, raised an initial $1 million for a study of selling. A team of about 30 researchers examined 35,000 sales calls in over 20 countries across roughly 12 years; Wikipedia describes it as the first project to measure selling and buying behaviour scientifically.",
+    "The findings did not match most sales training, and the team waited seven years before publishing (Headway summary); Rackham has said several publishers initially rejected the manuscript.",
+    "The book defines closing as a seller behaviour that implies or invites commitment, so that the buyer's next statement accepts or denies it.",
+    "Pressure-style closing can work in small, low-priced sales; in large sales aggressive closing tends to annoy the buyer and can be ineffective or harmful. The book is mainly about larger sales.",
+    "In larger sales success is measured by buyer commitment: an 'Advance' moves the sale forward (success); a 'Continuation' ends with no agreed next step (failure). Top sellers plan a range of small, achievable Advances for each call.",
+    "A sale has four stages: Opening, Investigating, Demonstrating Capability, Obtaining Commitment; in large, complex sales Investigating is the most crucial.",
+    "Secondary accounts say the first group of about 1,000 salespeople trained in SPIN made about 17% more sales than control groups from the same companies; who measured this is not stated."
+  ],
+  "scene_details": ["35,000 sales calls", "a team of about thirty researchers", "seven years' wait before publishing", "an Advance versus a Continuation"],
+  "tension": "Closing techniques that work on small purchases seem to fail on large ones; what should a seller aim for instead?",
+  "opening_idea": "Open with the size of the study and the seven-year wait, because the results contradicted what sales trainers taught.",
+  "lessons": [{"idea": "In big decisions, aim for a next step the other person freely agrees to rather than pressing for a yes.", "anchor": "Advance versus Continuation.", "example": "Agreeing on a day to bring a written estimate instead of pushing for a signature."}],
+  "reflect": [],
+  "reflect_final": "In the last conversation where you wanted a decision from someone, what small next step could they have agreed to freely?",
+  "use_cases": [
+    {"situation": "End of a client meeting, urge to press for a yes.", "move": "Ask which one step they would be comfortable agreeing to today: a call with their team, a trial, a date for the proposal.", "context": "meeting"},
+    {"situation": "Your manager has not decided on your proposal.", "move": "Say you are not asking for a decision today and ask when they will have looked at it.", "context": "oneonone"},
+    {"situation": "You are about to follow up with a hesitant buyer and want to push.", "move": "Recall that Rackham's research found pressure to close backfires in large sales and ask for the smallest next step instead.", "context": "self"}
+  ],
+  "pocket_idea": "In large decisions pressure for a yes tends to backfire; ask for one agreed next step.",
+  "conversation_variants": {
+    "punchline_idea": "After studying 35,000 sales calls Rackham found the push to close, which works on small purchases, tends to backfire on big ones.",
+    "thirty_sec_idea": "Rackham's team studied 35,000 sales calls, found small-sale habits like pressing to close fail in large sales, and defined success as an agreed next step, an Advance, rather than a signature.",
+    "question_idea": "",
+    "key_contrast_idea": "a yes versus a next step"
+  }
+}

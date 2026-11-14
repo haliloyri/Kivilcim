@@ -1,0 +1,35 @@
+{
+ "story_id": 1344,
+ "verdict": "keep",
+ "verify_note": "Subtitle, the refused title, Tolle's 'observe your thoughts' without method, RAIN, 'respond rather than react' and the passivity episode with Ben Sherwood come from Psychology Today, summaries and a Goodreads highlight. Invented quotes ('I am not that voice...', 'you are an old habit') and the ego definition dropped. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kafamdaki Ses",
+  "description": "Dan Harris kitabına 'Kafamdaki Ses Bir Pislik' adını vermek istedi. İçimizde her şeye yorum yapan sesle nasıl başa çıktığını anlatıyor.",
+  "hook": "Kafanızdaki ses size en çok hangi cümleyi söylüyor?",
+  "one_minute_summary": "Dan Harris içimizde her şeye yorum yapan, çoğu zaman kaba konuşan sesi herkesin ortak sorunu sayar ve kitabına 'Kafamdaki Ses Bir Pislik' adını vermek istemiştir. Eckhart Tolle'yi okuyunca kendini tanıdı ama 'düşüncelerini gözlemle' tavsiyesinin bir yöntemi yoktu. Yöntemi meditasyonda buldu: dürtüyle davranış arasında küçük bir boşluk ve RAIN, yani fark et, izin ver, incele, özdeşleşme. Ses susmadı. Bir süre fazla pasifleşti ama sakinlikle hırsın bir arada durabileceğini öğrendi."
+ },
+ "en": {
+  "title": "The Voice in My Head",
+  "description": "Dan Harris wanted to call his book 'The Voice in My Head Is an Asshole.' He found a method, not just an insight, for dealing with the inner narrator.",
+  "hook": "What sentence does the voice in your head repeat most?",
+  "one_minute_summary": "Dan Harris treats the inner narrator that comments on everything, usually unkindly, as the universal human problem; he wanted to title his book 'The Voice in My Head Is an Asshole.' Reading Eckhart Tolle, he recognised himself, but 'observe your thoughts' came with no method. Meditation supplied one: a gap between urge and action, and RAIN, recognize, allow, investigate, non-identification. The voice kept talking. For a while he turned too passive at work, then learned calm and ambition can coexist."
+ },
+ "es": {
+  "title": "La voz en mi cabeza",
+  "description": "Dan Harris quería titular su libro 'La voz en mi cabeza es un imbécil'. Encontró un método, no solo una idea, para tratar con ese narrador interior.",
+  "hook": "¿Qué frase repite más la voz de tu cabeza?",
+  "one_minute_summary": "Dan Harris ve al narrador interior que lo comenta todo, casi siempre con poca amabilidad, como el gran problema humano, y quería titular su libro 'La voz en mi cabeza es un imbécil'. Leyendo a Eckhart Tolle se reconoció, pero 'observa tus pensamientos' no venía con método. La meditación se lo dio: un hueco entre impulso y acto, y RAIN, reconocer, permitir, investigar, no identificarse. La voz siguió hablando. Un tiempo fue demasiado pasivo, hasta aprender que calma y ambición conviven."
+ },
+ "de": {
+  "title": "Die Stimme in meinem Kopf",
+  "description": "Dan Harris wollte sein Buch 'Die Stimme in meinem Kopf ist ein Arschloch' nennen. Er fand eine Methode, nicht nur eine Einsicht, für den Umgang mit dem inneren Erzähler.",
+  "hook": "Welchen Satz wiederholt die Stimme in deinem Kopf am häufigsten?",
+  "one_minute_summary": "Dan Harris hält den inneren Erzähler, der alles meist unfreundlich kommentiert, für das Grundproblem aller Menschen und wollte sein Buch 'Die Stimme in meinem Kopf ist ein Arschloch' nennen. Bei Eckhart Tolle erkannte er sich wieder, doch 'Beobachte deine Gedanken' kam ohne Methode. Meditation lieferte sie: eine Lücke zwischen Impuls und Handlung und RAIN, erkennen, zulassen, untersuchen, nicht identifizieren. Eine Weile wurde er zu passiv, bis er lernte, dass Ruhe und Ehrgeiz zusammenpassen."
+ }
+}

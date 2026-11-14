@@ -1,0 +1,57 @@
+{
+  "story_id": 1639,
+  "kind": "concept",
+  "book": {
+    "title": "The Gifts of Imperfection",
+    "author": "Brené Brown",
+    "year": "2010"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book not read; shield, healthy striving and subtitle from summaries; definition and guidepost placement from memory.",
+  "facts": [
+    "Brown analysed thousands of interviews and split people into worthiness and inadequacy groups.",
+    "Perfectionism is a twenty-ton shield that prevents taking flight.",
+    "If I look perfect, act perfect, I can avoid shame, judgment and blame.",
+    "Perfectionism is other-focused (what will people think); healthy striving is self-focused (how can I improve).",
+    "Shame, judgment or blame after the fact are blamed on not being perfect enough, feeding the loop.",
+    "Subtitle and ten guideposts; perfectionism under self-compassion."
+  ],
+  "scene_details": [
+    "a twenty-ton shield",
+    "taking flight"
+  ],
+  "tension": "Standard or defence?",
+  "opening_idea": "Twenty tons on the back.",
+  "lessons": [
+    {
+      "idea": "Ask whose eyes you work for.",
+      "anchor": "shield, other vs self focus"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In a recent task, whose eyes were you polishing the last details for?",
+  "use_cases": [
+    {
+      "situation": "Reworking finished work again",
+      "move": "Does this improve the work or quiet my fear of criticism?",
+      "context": "self"
+    },
+    {
+      "situation": "Colleague delays delivery for perfection",
+      "move": "Send as is, improve with feedback.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Child tears up a drawing",
+      "move": "Who were you drawing it for?",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Perfectionism is a twenty-ton shield: put it down and ask how the work itself could improve.",
+  "conversation_variants": {
+    "punchline_idea": "Perfectionism is a shield, not a high standard.",
+    "thirty_sec_idea": "Shield, definition, other vs self focus.",
+    "question_idea": "",
+    "key_contrast_idea": "shield vs striving"
+  }
+}

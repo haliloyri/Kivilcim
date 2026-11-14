@@ -1,0 +1,61 @@
+{
+  "story_id": 1580,
+  "kind": "concept",
+  "book": {
+    "title": "To Sell Is Human",
+    "author": "Daniel H. Pink",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "The dealer-versus-buyer contrast, information parity and seller beware are verified in Pink's Wharton interview and NPR conversation. The old text's 'head-to-head information era', the 'hide price / be transparent' two-model contrast and the doctor-diagnosis analogy could not be verified and are dropped. Clarity as problem-finding is from Pink's ABCs. The book gives no single case, so the dealer contrast is its own illustration.",
+  "facts": [
+    "Two decades earlier a Chevy dealer knew far more about a Malibu than the buyer who walked onto the lot.",
+    "Today a buyer can arguably know more about cars than the dealer, using enthusiast sites. Pink calls this the move from information asymmetry to information parity.",
+    "Pink recasts 'caveat emptor' (buyer beware): it is still good advice, but 'caveat venditor', seller beware, is now just as relevant.",
+    "Deception worked mostly because buyers lacked information or expertise; with reviews, ratings and comparison shopping, sellers have more reason to be fair.",
+    "Parity has not ended lying or cheating; it removed one of its easiest conditions.",
+    "What is left for the seller, in Pink's ABCs, is clarity: helping others see their situation in a new way and spot problems they had not noticed, including cases where the buyer is wrong about the problem.",
+    "The old formula was 'Always Be Closing', associated with Alec Baldwin's character in Glengarry Glen Ross and built on pressure. Pink's new ABCs are attunement, buoyancy and clarity."
+  ],
+  "scene_details": [
+    "a Chevy Malibu on the lot",
+    "a buyer reading enthusiast sites",
+    "caveat emptor turned into caveat venditor",
+    "Always Be Closing"
+  ],
+  "tension": "Once a buyer knows as much as the dealer, what does the seller have left to offer?",
+  "opening_idea": "Start with the Chevy dealer who knew far more about the Malibu than the person standing next to it.",
+  "lessons": [
+    {
+      "idea": "When the other person can check your facts, your value moves to seeing what they have not noticed.",
+      "anchor": "A buyer with enthusiast sites can know more about the car than the dealer; clarity is what remains.",
+      "example": "A repair shop owner whose customers have already read the forums is useful by spotting the real fault behind the symptom."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a time someone arrived knowing more than you expected: what could you still have added that they had not noticed?",
+  "use_cases": [
+    {
+      "situation": "A customer shows up having read all the reviews.",
+      "move": "Start by asking what they already found, then add what the reviews left out; Pink says the buyer may now know more than the dealer.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your team wants to hide a weak point in a pitch.",
+      "move": "Say that the client can find it in minutes, so we should name it first; this is Pink's seller beware.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend asks which product to buy.",
+      "move": "Share what you know and ask what problem they are really solving, since clarity is what a seller can still add.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "If the buyer can look up the facts, your use is spotting the problem they have not seen.",
+  "conversation_variants": {
+    "punchline_idea": "Two decades ago the dealer knew the Malibu better than the buyer; now the buyer may know it better than the dealer.",
+    "thirty_sec_idea": "A generation ago a Chevy dealer knew far more about the Malibu than the buyer. Today the buyer reads enthusiast sites and may know more than the dealer. Pink turns buyer beware into seller beware, and says what remains for the seller is clarity: spotting problems the buyer has not noticed.",
+    "question_idea": "When did a customer, patient or client last know more than you expected?",
+    "key_contrast_idea": "from secret to shared facts"
+  }
+}

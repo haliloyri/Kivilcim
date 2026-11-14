@@ -1,0 +1,171 @@
+{
+  "book_no": 199,
+  "title": "The Happiness Trap",
+  "authors": [
+    "Russ Harris"
+  ],
+  "year": "2007",
+  "sources": [
+    "https://newley.com/2021/12/05/book-notes-the-happiness-trap-how-to-stop-struggling-and-start-living-by-russ-harris/",
+    "https://www.shortform.com/summary/the-happiness-trap-summary-russ-harris",
+    "https://en.wikipedia.org/wiki/The_Happiness_Trap",
+    "https://www.kathleenkillen.com/blog/book-review-the-happiness-trap-by-russ-harris (via search snippet)",
+    "https://thinkr.org/newsletter/the-happiness-trap (via search snippet)",
+    "https://thinkr.org/newsletter/the-happiness-trap",
+    "https://bookquotemonster.wordpress.com/2014/07/27/the-happiness-trap-how-to-stop-struggling-and-start-living-by-russ-harris/"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The book (2007) is by physician and therapist Russ Harris and brings acceptance and commitment therapy (ACT) to general readers.",
+      "source": "Wikipedia",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Harris's definition of the trap: to find happiness we try to avoid or get rid of bad feelings, but the harder we try, the more bad feelings we create (p.27 per reading notes).",
+      "source": "newley.com notes",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Harris says a full life brings a full range of human emotions (p.5 per notes). Happiness here means living a meaningful life aligned with values, not constant good feelings.",
+      "source": "newley.com notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Control strategies come in two kinds: fight (overpower negative thoughts and feelings, e.g. suppression) and flight (avoid or ignore them).",
+      "source": "shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Harris uses quicksand to illustrate his 'struggle switch': the more you struggle, the worse the situation gets. The struggle switch can be turned off; techniques include 'dropping anchor'.",
+      "source": "book review via search; Wikipedia",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Defusion means seeing thoughts as just words and pictures instead of fighting, fleeing or fixating on them. One technique is to prefix the thought: 'I notice I'm having the thought that...'.",
+      "source": "newley.com notes; search snippets",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "A chapter excerpt warns that many readers, meeting defusion, turn it into a control strategy (a client called John does); it is not about getting rid of thoughts.",
+      "source": "search snippet of the chapter",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "The thinking self produces a running judgmental commentary; the observing self watches it neutrally. Notes compare emotions to weather and the observing self to the sky.",
+      "source": "shortform preview; newley notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Values are not goals to tick off but guiding principles for how you want to act. Harris: 'A value involves continuous behavior', example: treating family with respect. Committed action: accept your situation, identify an action that fits your values, take it.",
+      "source": "shortform preview; newley notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Hooked/unhooked: Harris's term for being caught up in thoughts and feelings; Oliver Burkeman of The Guardian highlighted the 'unhooking' idea.",
+      "source": "Wikipedia",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Three evolved traits behind the trap per Harris: threat detection, fitting into a group, and a drive to accumulate and improve; they once helped survival and now cause imaginary threats and constant comparison.",
+      "source": "shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Quicksand: in quicksand your emotions tell you to struggle, but you mustn't; struggling makes it worse. Harris pairs it with the 'struggle switch', an imaginary switch in the back of the brain: when on, we amplify a negative feeling by focusing on it and trying to get rid of it; when off, we notice it and let it be there without fighting it.",
+      "source": "thinkr.org newsletter; bookquotemonster quotes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "The thinking self is like a radio playing constantly in the background; most of the time it is 'Radio Doom and Gloom', broadcasting negative stories 24 hours a day.",
+      "source": "bookquotemonster quotes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Defusion techniques: add the words 'I'm having the thought that...' to the thought; imagine a cartoon character saying your thought aloud; react with 'Thanks Mind, but I'm not playing today'; when hooked on a thought, unhook and return to breathing.",
+      "source": "bookquotemonster quotes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "'Feelings are not values.' Values are guiding principles for how to act, not feelings to produce; ACT in short: Accept thoughts and feelings and be present, Connect with your values, Take effective action.",
+      "source": "bookquotemonster; thinkr",
+      "confidence": "medium"
+    },
+    {
+      "id": "f16",
+      "claim": "Six core ACT principles in the book: defusion, expansion, connection, the observing self, values, committed action.",
+      "source": "thinkr.org",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "'Mutluluğu hedeflemeyin' as a direct quote; 90% of self-help says the opposite",
+      "reason": "No such wording or figure found"
+    },
+    {
+      "claim": "Quicksand: the right move is to spread out and distribute weight",
+      "reason": "Only 'struggling makes it worse' confirmed; the spreading detail not confirmed"
+    },
+    {
+      "claim": "Happiness is a by-product of a values-based life as Harris's own phrase",
+      "reason": "Not confirmed as wording; only the values-meaning link is verified"
+    },
+    {
+      "claim": "'Struggling feels stronger, running makes it bigger' as quoted",
+      "reason": "Old text's wording"
+    },
+    {
+      "claim": "Repeat 'Ben yetersizim' until it feels true, then 'I'm having the thought I'm inadequate' exercise",
+      "reason": "Exact exercise not verified; only the prefix technique is"
+    },
+    {
+      "claim": "Leaves floating on a stream visualisation",
+      "reason": "Common ACT exercise but not confirmed in this book by any source consulted"
+    },
+    {
+      "claim": "Defusion dramatically reduces the thought's power; makes values-based choice easier (as quoted)",
+      "reason": "Not verified as wording; the excerpt actually warns defusion is not about getting rid of thoughts"
+    }
+  ],
+  "stories": {
+    "1687": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f12",
+        "f15"
+      ],
+      "note": "Concept: the trap definition, fight/flight strategies, struggle switch. Invented quote and statistic dropped. Medium-low confidence."
+    },
+    "1688": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f6",
+        "f7",
+        "f8",
+        "f10",
+        "f13",
+        "f14"
+      ],
+      "note": "Concept: defusion with the 'I notice I'm having the thought' prefix. Invented exercise dropped. Low-medium confidence."
+    }
+  }
+}

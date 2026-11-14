@@ -1,0 +1,35 @@
+{
+ "story_id": 1503,
+ "kind": "concept",
+ "book": {"title": "The Gift of Fear", "author": "Gavin de Becker", "year": "1997"},
+ "confidence": "medium",
+ "confidence_note": "The seven pre-incident indicators are listed on Wikipedia and the Kelly analysis is described in a SuperSummary page. The old text's 'victim role' pattern and the quote about warnings labelled crazy were not verified and are dropped. JACA exists in the book (chapter 6) but is left out here to keep one idea. The book itself was not readable, so definitions are paraphrased from summaries. The book's own case: the stairwell man in Kelly's story.",
+ "facts": [
+  "De Becker calls the behaviours that tend to appear before violence pre-incident indicators.",
+  "Forced teaming: creating a false 'we', as if you and the other person share a problem.",
+  "Charm and niceness: used to disarm mistrust.",
+  "Too many details: liars add detail to seem credible.",
+  "Typecasting: a mild insult that invites you to prove it wrong.",
+  "Loan sharking: unsolicited help that creates a debt.",
+  "The unsolicited promise, and discounting the word 'no': refusing to accept a refusal.",
+  "In Kelly's stairwell case, the man used 'we' while insisting on carrying her cans, and suggested she was too proud to accept help."
+ ],
+ "scene_details": ["the word 'we' in the stairwell", "being called too proud to accept help", "a promise nobody asked for"],
+ "tension": "Each move looks like ordinary kindness; the pattern shows only when you see them together.",
+ "opening_idea": "Open on the stairwell man calling Kelly too proud to accept help.",
+ "lessons": [{"idea": "Naming a behaviour (forced we, a promise nobody asked for, ignored no) lets you react to what the person does instead of how polite they sound.", "anchor": "the stairwell man's 'we' and his suggestion that Kelly was too proud to accept help"}],
+ "reflect": [],
+ "reflect_final": "Which of these moves, a pushed 'we' or a refusal that is not accepted, have you seen recently and answered with politeness instead?",
+ "use_cases": [
+  {"situation": "Someone you just met keeps saying 'we' about your plans", "move": "Say 'I'd rather do this on my own' and watch whether it is accepted.", "context": "social"},
+  {"situation": "A stranger insists on helping after you decline", "move": "Repeat one calm 'no', like Kelly at the stairs, and treat a refusal that is ignored as information.", "context": "oneonone"},
+  {"situation": "Someone makes a promise nobody asked for", "move": "Note it to yourself and ask why they felt the need to say it.", "context": "self"}
+ ],
+ "pocket_idea": "A 'we' from a stranger, or a no that is not accepted, is behaviour worth noticing before you answer politely.",
+ "conversation_variants": {
+  "punchline_idea": "The stranger in Kelly's stairwell never threatened her; he said we and called her too proud.",
+  "thirty_sec_idea": "Gavin de Becker lists pre-incident indicators: a forced we, charm, too many details, typecasting, unsolicited help, a promise nobody asked for, and ignoring the word no. In Kelly's stairwell the man used we and hinted she was too proud to accept help. Each move looked kind.",
+  "question_idea": "",
+  "key_contrast_idea": "kind-looking tactics"
+ }
+}

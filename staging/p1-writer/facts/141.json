@@ -1,0 +1,39 @@
+{
+  "book_no": 141,
+  "title": "The Untethered Soul: The Journey Beyond Yourself",
+  "authors": ["Michael A. Singer"],
+  "year": "2007",
+  "sources": [
+    "https://readingraphics.com/book-summary-the-untethered-soul/",
+    "https://lifeclub.org/books/the-untethered-soul-michael-a-singer-review-summary",
+    "https://www.sumizeit.com/blog/the-untethered-soul-summary-a-guide-to-inner-freedom",
+    "https://en.wikipedia.org/wiki/Michael_A._Singer"
+  ],
+  "source_note": "Book text not read; chapter titles and ideas come from three summaries and Wikipedia. Anecdotes in summaries are marked medium because it is unclear whether they are the book's own. Turkish edition title 'Ic Yolculuk' is not used in text.",
+  "facts": [
+    {"id":"f1","claim":"The Untethered Soul (2007) is Michael A. Singer's third book; Wikipedia calls it a collection of lectures on yoga, philosophy, the self and the theory of mind. It became popular after Singer's 2012 Super Soul Sunday interview and was a New York Times bestseller (seven weeks on the list).","source":"Wikipedia","confidence":"high"},
+    {"id":"f2","claim":"Part I, Awakening Consciousness: 'The Voice Inside Your Head', 'Your Inner Roommate', 'Who Are You?', 'The Lucid Self'. Part II, Experiencing Energy: 'Infinite Energy', 'The Secrets of the Spiritual Heart', 'Transcending the Tendency to Close'. Part III, Freeing Yourself: 'Let Go Now or Fall', 'Removing Your Inner Thorn', 'Stealing Freedom for Your Soul', 'Pain, the Price of Freedom'. Part IV: 'Taking Down the Walls', 'Far, Far Beyond', 'Letting Go of False Solidity'. Part V: 'The Path of Unconditional Happiness', 'The Spiritual Path of Nonresistance', 'Contemplating Death', 'The Secret of the Middle Way', 'The Loving Eyes of God'.","source":"readingraphics summary","confidence":"high"},
+    {"id":"f3","claim":"The inner voice is pictured as a separate person, a roommate living in your head, endlessly judging, criticizing, nitpicking. To distance yourself, ask 'Which part of me is bothered by this?'","source":"readingraphics","confidence":"medium"},
+    {"id":"f4","claim":"Singer's reflection questions: 'Who sees when I see? Who hears when I hear? Who knows that I know?' The summary ties them to Ramana Maharshi's 'Who am I?'. Real meditation means you 'become aware of your awareness'.","source":"readingraphics","confidence":"medium"},
+    {"id":"f5","claim":"Summary examples: self-talk 'Can you shut up, I'm trying to sleep!'; thoughts about the weather or traffic change nothing; a lucid dream, where you know you are dreaming, as an analogy for being conscious in daily life. Unclear whether these are Singer's own examples.","source":"readingraphics","confidence":"medium"},
+    {"id":"f6","claim":"Core claim as summarized: you are not your thoughts, you are the one who notices them; the 'personal self' is how you perceive yourself and your thought patterns, and 'the real you is merely aware of the role these thoughts and feelings play'.","source":"sumizeit; lifeclub","confidence":"medium"},
+    {"id":"f7","claim":"Energy blocks when you close up or resist things, people and experiences, or cling to certain experiences; blocked energy 'can't reach your heart', which then becomes weaker and more susceptible to fear. Summary example: after a partner leaves you feel depressed and lethargic; when the ex calls wanting to come over you feel a sudden burst of energy.","source":"readingraphics; lifeclub","confidence":"medium"},
+    {"id":"f8","claim":"Splinter metaphor: a splinter hurts when touched and can keep you up at night from accidental bumps; you can either avoid touching it or pull it out. 'Letting go of your fear is just like removing a splinter.' Chapter title: 'Removing Your Inner Thorn'.","source":"lifeclub; readingraphics (chapter title)","confidence":"medium"},
+    {"id":"f9","claim":"Part III teaches releasing fears and disturbances as early as possible. Quoted line: 'The prerequisite to true freedom is to decide that you do not want to suffer anymore.' Negative thoughts are to 'pass through you' and 'float on by'.","source":"readingraphics; lifeclub","confidence":"medium"},
+    {"id":"f10","claim":"The personal self 'functions like a cage' that consciousness cannot get out of; clinging to thoughts builds the cage; animals in small zoo cages illustrate being trapped in your own self; being absorbed in a film so you forget the world is compared to clinging.","source":"lifeclub","confidence":"medium"},
+    {"id":"f11","claim":"The book is a spiritual teaching. The summaries give no empirical measurement that its practices work; it invites the reader to test them.","source":"inference from all sources","confidence":"high"},
+    {"id":"f12","claim":"Singer co-founded Medical Manager in 1981; FBI/IRS searched its offices in 2003; a 2009 securities-fraud prosecution ended in a 2010 deferred prosecution agreement. This is told in The Surrender Experiment (2015), his autobiography, not in The Untethered Soul.","source":"Wikipedia","confidence":"high"}
+  ],
+  "rejected": [
+    {"claim":"A child scrapes a knee and cries but returns to play; an adult carries a bad remark for years (1520)","reason":"Not found in any source; looks invented."},
+    {"claim":"'Donmus enerji' and a 'censor' that closes inside (1520)","reason":"Neither term appears in the summaries; the book's own terms are blocked energy and closing the heart."},
+    {"claim":"Singer's company grew, a federal investigation began, and he asked 'can I let go of this?' (1521); quote 'the hardest practice I did'","reason":"The company and investigation belong to The Surrender Experiment (2015), not The Untethered Soul; quote unverified."},
+    {"claim":"'Identity comes from an inner state, not circumstances'; 'freedom is inside' as a Singer quote","reason":"Not verifiable as his wording."},
+    {"claim":"'This is not mystical, it can be applied every moment' as Singer's framing (1519)","reason":"Unverified; the book is explicitly a spiritual teaching."}
+  ],
+  "stories": {
+    "1519": {"verdict":"keep","fact_ids":["f2","f3","f4","f5","f6","f11"],"note":"Inner roommate and the observer; medium confidence."},
+    "1520": {"verdict":"keep","fact_ids":["f2","f7","f8","f11"],"note":"Heart closing and the splinter; old child anecdote dropped."},
+    "1521": {"verdict":"keep","fact_ids":["f2","f9","f10","f11","f12"],"note":"Letting go via Let Go Now or Fall, cage image; old federal-investigation anecdote belongs to another book and is dropped."}
+  }
+}

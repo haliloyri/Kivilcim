@@ -1,0 +1,30 @@
+{
+  "story_id": 1437,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt with low confidence: only a summary preview of the book was available (planned openings, dress, punctuality, materials, suggestion). Old invented quote and 'seven seconds' figure dropped; Willis and Todorov 2006 added as verified outside context; the unsourced 95% clothing claim flagged.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Saniyenin onda biri",
+    "description": "Bir yüz hakkındaki güven yargısı saniyenin onda birinde oluşuyor. Tracy satışçıya açılışı baştan planlamasını, zamanında ve düzenli gelmesini öğütler.",
+    "hook": "Bir sonraki ilk karşılaşmanızda, ilk dakikanın hangi kısmını önceden belirleyebilirsiniz?",
+    "one_minute_summary": "2006'da Willis ve Todorov, tanımadık yüzlere saniyenin onda biri kadar bakmanın, süre sınırı olmadan verilen güvenilirlik yargılarıyla örtüşen yargılar için yettiğini gösterdi. Brian Tracy'nin The Psychology of Selling kitabı hızlı ilk izlenimden yola çıkıp açılış cümlelerini kelimesi kelimesine planlamayı, düzgün giyinmeyi, dakik, düzenli ve kibar olmayı, malzemeleri temiz tutmayı önerir. Bir özet, ilk izlenimin yüzde 95'inin kıyafetten geldiği iddiasını aktarır, ama arkasında çalışma yok."
+  },
+  "en": {
+    "title": "A tenth of a second",
+    "description": "People judge a stranger's face in about a tenth of a second. Brian Tracy advises salespeople to plan the opening, arrive on time and keep materials tidy.",
+    "hook": "Before your next first meeting, which part of the first minute could you settle in advance?",
+    "one_minute_summary": "In a 2006 study by Willis and Todorov, a 100-millisecond look at an unfamiliar face produced judgments matching those made with no time limit. Brian Tracy's The Psychology of Selling starts from the same fact, that people form quick first impressions, and advises planning openings word for word, dressing neatly, being punctual, organized and polite, and keeping materials clean. A summary reports that clothing drives 95 percent of a first impression, a claim with no named study."
+  },
+  "es": {
+    "title": "Una décima de segundo",
+    "description": "La gente juzga el rostro de un desconocido en una décima de segundo. Brian Tracy aconseja a los vendedores planear la apertura, ser puntuales y cuidar los materiales.",
+    "hook": "Antes de tu próximo primer encuentro, ¿qué parte del primer minuto podrías resolver de antemano?",
+    "one_minute_summary": "En un estudio de 2006 de Willis y Todorov, mirar 100 milisegundos un rostro desconocido produjo juicios iguales a los hechos sin límite de tiempo. The Psychology of Selling, de Brian Tracy, parte del mismo hecho, que formamos primeras impresiones rápidas, y aconseja planificar las aperturas palabra por palabra, vestir con pulcritud, ser puntual, organizado y educado y mantener limpios los materiales. Un resumen cuenta que la ropa da el 95 % de una primera impresión, una afirmación sin estudio citado."
+  },
+  "de": {
+    "title": "Eine Zehntelsekunde",
+    "description": "Menschen beurteilen ein fremdes Gesicht in etwa einer Zehntelsekunde. Brian Tracy rät Verkäufern, den Einstieg zu planen, pünktlich zu sein und Unterlagen ordentlich zu halten.",
+    "hook": "Welchen Teil der ersten Minute könntest du vor deinem nächsten Erstkontakt schon festlegen?",
+    "one_minute_summary": "In einer Studie von Willis und Todorov (2006) genügten 100 Millisekunden Blick auf ein fremdes Gesicht für Urteile, die denen ohne Zeitlimit entsprachen. Brian Tracys The Psychology of Selling geht von derselben Tatsache aus, dass wir schnelle erste Eindrücke bilden, und rät, Einstiege wörtlich zu planen, sich gepflegt zu kleiden, pünktlich, organisiert und höflich zu sein und Unterlagen sauber zu halten. Eine Zusammenfassung behauptet, Kleidung bestimme 95 Prozent des ersten Eindrucks, ohne Studie."
+  }
+}

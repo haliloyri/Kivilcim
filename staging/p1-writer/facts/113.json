@@ -1,0 +1,152 @@
+{
+  "book_no": 113,
+  "title": "The Psychology of Selling",
+  "authors": [
+    "Brian Tracy"
+  ],
+  "year": "2006",
+  "sources": [
+    "https://www.shortform.com/summary/the-psychology-of-selling-summary-brian-tracy (preview: emotional buying, fear of rejection, first impressions, cold calling, self-concept)",
+    "https://mindfulcircles.org/the-psychology-of-selling-increase-your-sales-faster-and-easier-than-you-ever-thought-possible-by-brian-tracy-book-summary/ (low reliability, not used for facts)",
+    "https://pubmed.ncbi.nlm.nih.gov/16866745/ (Willis and Todorov 2006, Psychological Science 17(7), 592-598)",
+    "https://www.princeton.edu/main/news/archive/S15/62/69K40/ (Princeton news on the same study)",
+    "https://bps.org.uk/research-digest/your-trustworthiness-judged-tenth-second-or-less",
+    "Descartes' Error (Damasio, 1994) via secondary summaries: https://mail.serendipstudio.org/bb/damasio/Damasioreview.html"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The Psychology of Selling (Brian Tracy; DB year 2006) presents the central claim that all buying decisions are emotional rather than rational.",
+      "source": "Shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f2",
+      "claim": "Customer desires listed: money and security, personal growth, love and companionship, health, status and prestige.",
+      "source": "Shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "Customer fears listed: fear of losing money (overspending on a poorly judged purchase) and fear of making a mistake (buying something they won't want, don't need, or that won't work as expected).",
+      "source": "Shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Pitching is benefit-focused (what the product does, not what it is); the book covers a 'show, tell, ask' format and tailors presentations to six buyer types.",
+      "source": "Shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Editorial context: Antonio Damasio's Descartes' Error (1994) describes a patient, Elliot, who after surgery to remove a tumour had intact intellect but flat emotion and then struggled with practical decisions, which is used to argue that emotion is part of ordinary decision-making. It supports 'emotion matters in choice' more than 'choice is only emotional'.",
+      "source": "Secondary summaries of Descartes' Error",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Fear of rejection is called the main barrier for salespeople; it is triggered by possible disapproval, judgment or rudeness. Three ways to deal with it: rejection is not personal and is an expected, normal part of sales; courage grows with practice like a muscle; positive self-talk helps, for example repeating upbeat lines such as 'I'm doing great! I love my work!'",
+      "source": "Shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "Getting an appointment usually requires cold calling, which the book describes as the most stressful and least-liked part of selling. It treats prospecting as a learnable skill and advises preparing answers to common objections in advance.",
+      "source": "Shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Self-concept shapes attitude, and a positive attitude helps in three ways: customers respond more warmly, you enjoy and practise sales tasks more, and your earnings comfort zone rises. According to the summary, people tend to earn within about 10% of what they believe they are worth.",
+      "source": "Shortform preview",
+      "confidence": "low"
+    },
+    {
+      "id": "f9",
+      "claim": "People form quick first impressions, so the book advises planning opening statements word for word. It advises neat, professional dress, punctuality, organisation and politeness, and clean, well-kept materials (a coffee-stained brochure is the example). The power of suggestion uses subtle social cues to look professional, in control and expert.",
+      "source": "Shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "The Shortform preview says 95 percent of a first impression is determined by clothing; no study is named.",
+      "source": "Shortform preview",
+      "confidence": "low"
+    },
+    {
+      "id": "f11",
+      "claim": "Outside research: Willis and Todorov (Psychological Science, 2006), five experiments on unfamiliar faces shown for varied times: a 100-millisecond exposure was enough for trait judgements to match judgements made with no time limit; going from 100 to 500 ms made judgements more negative and raised confidence; the strongest correlation was for trustworthiness.",
+      "source": "PubMed; Princeton; BPS Research Digest",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "The book opens by counting: the top 20% of salespeople earn about 80% of the profession's money; a winning edge is a small, steady advantage in skill, like a horse that wins by a nose and collects ten times the prize of second place. Also: a goal framework from annual income goal to daily activities (calls, presentations, follow-ups) with subgoals in a daily schedule.",
+      "source": "Shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Willis and Todorov detail: university students rated photographs of actors' faces; traits were attractiveness, likeability, competence, trustworthiness, aggressiveness; a comparison group had unlimited time; extra time mainly raised confidence rather than improving ratings.",
+      "source": "BPS Research Digest",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "'People buy with emotions and justify with logic' and 'sell the feeling, not the benefit' as Tracy quotes (1435 old text), including the insurance example 'you sleep well'",
+      "reason": "The quotation and the insurance example are not found in the sources; the book's documented claim is that all buying decisions are emotional."
+    },
+    {
+      "claim": "Top salespeople see objections as a sign of interest; 'An objection is a sign of interest, an uninterested customer isn't sitting there' as Tracy quote; objections split into 'real objections and excuses'; the question 'Is there anything other than price?' (1436 old text)",
+      "reason": "Not found in the sources; the preview only says to prepare answers to common objections. The fear of rejection, which the sources do document, replaces it."
+    },
+    {
+      "claim": "'The first minute of a sales call is more decisive than the remaining twenty-nine' (Tracy quote), 'seven seconds' figure, and the three ingredients appearance, tone and body language (1437 old text)",
+      "reason": "Quote not found; the old text itself says the 'seven seconds' figure has no known source. The documented items are dress, punctuality, organisation, well-kept materials, planned openings."
+    },
+    {
+      "claim": "Willis and Todorov show 100 ms is enough 'to form a trustworthiness judgment' for a face",
+      "reason": "Verified, but reported in the story as an outside study, not as Tracy's claim."
+    },
+    {
+      "claim": "Mental filtering, six emotional triggers, Feel-Felt-Found, anchoring, 42% goal writing, 25% time blocking, anecdotes about car and software salesmen (low-reliability summary)",
+      "reason": "Source looks machine-written; none of it corroborated. Not used."
+    }
+  ],
+  "stories": {
+    "1435": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f12"
+      ],
+      "note": "Rebuilt on the documented central claim (all buying is emotional, with listed desires and fears) plus Damasio's Elliot as outside context. Quotation and insurance example dropped. Low confidence: book text not available."
+    },
+    "1436": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f6",
+        "f7",
+        "f8",
+        "f12"
+      ],
+      "note": "Old text's 'objection as interest' claim could not be tied to the book; re-grounded on the fear of rejection that the sources document. Low confidence."
+    },
+    "1437": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f10",
+        "f11",
+        "f13"
+      ],
+      "note": "Kept on the documented first-impression advice (planned openings, dress, punctuality, materials, suggestion), with the Willis and Todorov study as outside context. Invented quote and 'seven seconds' dropped. Low confidence."
+    }
+  }
+}

@@ -56,3 +56,13 @@ artifacts/albor-carousels/
 
 # Build artifacts
 *.ipa
+
+# Azure TTS toplu çıktıları (büyük mp3 dosyaları)
+seslendirmeler/azure-*/
+
+.venv-laya/
+models/
+staging/tagging/finetune/
+
+# fastlane kimlik bilgileri (Apple ID e-postası içerir)
+ios/fastlane/

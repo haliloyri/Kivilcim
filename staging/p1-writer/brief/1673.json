@@ -1,0 +1,32 @@
+{
+ "story_id": 1673,
+ "kind": "anecdote",
+ "book": {"title": "Deep Work", "author": "Cal Newport", "year": "2016"},
+ "confidence": "medium",
+ "confidence_note": "Leroy's study is verified from the Wharton Knowledge piece and several summaries of the book. The old text's 23-minute interruption figure and the 230-minute arithmetic are not attributable to Deep Work and were dropped, as was the 'enemies of deep work' wording. Participant numbers are not stated and none are used. The DB book title 'Konsantrasyon Gücü' could not be matched; content matches Deep Work.",
+ "facts": [
+  "Sophie Leroy wrote a 2009 paper called 'Why Is It So Hard to Do My Work?' and introduced the term attention residue.",
+  "When you switch from task A to task B, your attention does not follow at once: part of it stays on task A.",
+  "In her lab studies participants solved word puzzles, were interrupted to evaluate resumes, and then took a quick lexical decision test that measured leftover residue.",
+  "People with attention residue performed worse on the next task, and more residue meant worse performance.",
+  "The residue is thickest when the work on task A was unbounded and low in intensity."
+ ],
+ "scene_details": ["word puzzles", "resumes to evaluate", "a quick lexical decision test"],
+ "tension": "People who left a task unfinished did worse on the next one, although they had nothing else in front of them.",
+ "opening_idea": "Open inside the lab: a person solving word puzzles is interrupted to read resumes.",
+ "lessons": [{"idea": "Switching cost is not only the time to switch; the unfinished task keeps a share of attention, so finishing or bounding a task before moving on protects the next one.", "anchor": "residue was thickest after work on the first task was unbounded"}],
+ "reflect": [],
+ "reflect_final": "Which task do you usually leave half open before a call or a message, and what small step could mark it as finished for now?",
+ "use_cases": [
+  {"situation": "You are about to jump from a report to a meeting", "move": "Write one line on where the report stands and what comes next, so it does not follow you into the room.", "context": "self"},
+  {"situation": "A colleague pings you mid-task", "move": "Cite Leroy's puzzle study: say you will finish the step you are on and reply in twenty minutes.", "context": "oneonone"},
+  {"situation": "Your team stacks back-to-back meetings", "move": "Propose ten minutes between them to close what each one opened.", "context": "meeting"}
+ ],
+ "pocket_idea": "An unfinished task follows you into the next one; write where you stopped before you switch.",
+ "conversation_variants": {
+  "punchline_idea": "In Leroy's study, people interrupted mid-puzzle carried the puzzle into the next task and did worse on it.",
+  "thirty_sec_idea": "Researcher Sophie Leroy had people solve word puzzles, interrupted them to evaluate resumes, then tested them. Those still stuck on the puzzles did worse, and the more unfinished the first task, the worse the second. Cal Newport calls it attention residue.",
+  "question_idea": "",
+  "key_contrast_idea": "switching leaves residue"
+ }
+}

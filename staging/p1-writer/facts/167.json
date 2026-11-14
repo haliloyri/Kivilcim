@@ -1,0 +1,192 @@
+{
+ "book_no": 167,
+ "title": "The Good Gut: Taking Control of Your Weight, Your Mood, and Your Long-term Health",
+ "authors": [
+  "Justin Sonnenburg",
+  "Erica Sonnenburg"
+ ],
+ "year": "2015",
+ "sources": [
+  "https://www.redpenreviews.org/reviews/the-good-gut-taking-control-of-your-weight-your-mood-and-your-long-term-health/",
+  "https://med.stanford.edu/news/all-news/2017/08/hunter-gatherers-seasonal-gut-microbe-diversity-loss.html",
+  "https://www.sciencenews.org/blog/scicurious/low-fiber-diets-make-gut-microbes-poop-out",
+  "https://everydaynewme.com/article/the-good-gut-review-sonnenburg",
+  "https://catalog.burlesontx.com/Record/365703"
+ ],
+ "source_note": "Book text not read (archive.org copy is lending-only). Page-cited quotes come from a reference-by-reference review (redpenreviews) that quotes the book with page numbers, plus Stanford/Science News pieces on the authors' own research. Book year 2015 (Penguin Press hardcover).",
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The Good Gut is by Stanford microbiology researchers Justin and Erica Sonnenburg; subtitle 'Taking Control of Your Weight, Your Mood, and Your Long-term Health'; Penguin Press 2015.",
+   "source": "library catalog; publisher listing via search",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Book p.69 (as quoted): germ-free mice, raised in the extreme conditions of no microbial exposure, develop severe airway responses similar to asthma when allergens are present; mice colonized by a full microbiota are protected.",
+   "source": "redpenreviews (reference check rated 4/4)",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Book p.140 (as quoted): scientists noted that microbe-free mice have a personality that is distinct from mice with a normal microbiota. The cited paper concluded that presence or absence of intestinal microbiota influences the development of behavior.",
+   "source": "redpenreviews",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Book p.57: antibiotic use early in life can have a direct impact on the composition of the microbiota; the passage links early antibiotics to long-lasting weight gain (reviewer rated that claim 2.3/4). Book p.69: these studies have not established a causative role for antibiotics in immune-mediated disease.",
+   "source": "redpenreviews",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "Book p.212: breastfeeding is linked to a lower risk of allergies, asthma, obesity and even diabetes. The cited review rests mostly on observational studies, which cannot show causation.",
+   "source": "redpenreviews",
+   "confidence": "medium"
+  },
+  {
+   "id": "f6",
+   "claim": "The book argues Western diets supply too few of the fibers gut microbes can ferment, with reduced microbial diversity as a result; fermentable fiber is its central dietary theme.",
+   "source": "everydaynewme review; Cal Poly blurb via search",
+   "confidence": "medium"
+  },
+  {
+   "id": "f7",
+   "claim": "Book p.17: the Hadza, hunter-gatherers in Tanzania, eat 100 to 150 grams of fiber per day. The reviewer found no study measuring this directly but found it plausible. Science News says the exact amount is hard to calculate.",
+   "source": "redpenreviews; sciencenews.org",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Justin Sonnenburg (Stanford, 2017): 'The Hadza get 100 or more grams of fiber a day in their food, on average. We average 15 grams per day.' The Hadza are a population of just over 1,000 in Tanzania's Rift Valley, fewer than 200 following the traditional life; diet of meat, berries, baobab, tubers, honey.",
+   "source": "Stanford Medicine news 2017",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Stanford study: 350 stool samples from 188 Hadza over about one year. Some gut species declined in the wet season (honey-heavy) and recovered in the dry season (tuber-heavy); samples from the same season a year apart were nearly identical. Hadza microbiota more diverse than that of city dwellers in industrialized countries. This is the Sonnenburg lab's 2017 study, not in the 2015 book.",
+   "source": "Stanford Medicine news 2017",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Book p.205: increased fiber consumption among 76 to 95-year-olds is directly related to elevated short-chain fatty acid production (cited study Cuervo et al. 2013, rated 4/4).",
+   "source": "redpenreviews",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Sonnenburg lab mouse study (Nature 2016, after the book): mice moved from high-fiber to low-fiber diet lost microbial diversity; about 60 percent of bacterial species fell in numbers; pups of low-fiber mice lost more diversity each generation; some species were permanently lost after four generations. Researchers have not established whether the loss affects health, and mouse results may not transfer to people.",
+   "source": "sciencenews.org; sciencedaily",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "A reviewer notes later trials suggest fermented foods (yogurt, kefir, kimchi) increase microbial diversity and reduce some inflammatory markers; the book discusses fermented foods positively. Reviewer also warns other books overclaim links from gut bacteria to depression.",
+   "source": "everydaynewme review",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Book p.67: children raised on farms have fewer allergies than children living in very clean, affluent households (cited review, Wlasiuk 2012, says 'nonfarm' children).",
+   "source": "redpenreviews",
+   "confidence": "medium"
+  },
+  {
+   "id": "f14",
+   "claim": "Book p.129: when a low-diversity microbiota from an obese twin was transferred into mice, those mice got fat. The cited paper (Ridaura et al., Science 2013) compared twins discordant for obesity; microbiota from the obese twin raised mouse body fat by about 10 percent relative to controls (roughly 12 to 13.2 percent absolute); the lean twin's microbiota gave lean mice. Reviewer calls the effect modest.",
+   "source": "redpenreviews",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Book p.174: antibiotics disrupt connections within the complex food web, leaving a resource gap. p.18: US adults had the least diverse microbiota in a cited comparison with two nonindustrial populations.",
+   "source": "redpenreviews",
+   "confidence": "medium"
+  },
+  {
+   "id": "f16",
+   "claim": "Reviewer summaries describe the book's action steps: eat a wide variety of fermentable fiber (microbiota accessible carbohydrates: beans, whole grains, fruits, vegetables), eat fermented foods, avoid unnecessary antibiotics, spend time outdoors; the microbiota is called an 'internal drug factory' and the gut a 'second brain' for its neurons. When fiber is scarce, bacteria feed on the mucosal lining (summary claim, medium).",
+   "source": "taralmccoy.com review",
+   "confidence": "medium"
+  },
+  {
+   "id": "f17",
+   "claim": "Book p.140 cites Neufeld et al. 2011: the presence or absence of conventional intestinal microbiota influences the development of behavior and is accompanied by brain neurochemical changes. One review adds that mouse studies show microbe transplants between mice changing mood and personality-related behavior (unclear how deeply the book covers this).",
+   "source": "redpenreviews; taralmccoy.com",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "38 trillion microbes, more than human cells",
+   "reason": "No source found; book's own figure not confirmed."
+  },
+  {
+   "claim": "70 percent of the immune system trained by microbiome; 90 percent of serotonin made in the gut",
+   "reason": "Popular figures, not found in any source tied to the book."
+  },
+  {
+   "claim": "Cesarean birth and over-hygiene as causes; chronic disease rise 'coincides' with lost diversity",
+   "reason": "Not found in the verified material; correlation framing unsafe."
+  },
+  {
+   "claim": "Germ-free mice were dramatically more anxious, froze in new places, avoided social contact, and transplant calmed them",
+   "reason": "Not found in sources; direction of germ-free anxiety findings is mixed in the literature. The book (p.140) only says 'distinct personality'."
+  },
+  {
+   "claim": "Vagus nerve as two-way highway with most traffic from gut to brain",
+   "reason": "Not in verified book material."
+  },
+  {
+   "claim": "Hadza average 150 g fiber exactly, Americans 15 g as the book's pairing; Hadza have extremely low rates of obesity, diabetes, autoimmunity, depression",
+   "reason": "Book says 100-150 g (estimate); disease-rate claim unsupported."
+  },
+  {
+   "claim": "Butyrate is main fuel for colon cells, protects against colon cancer",
+   "reason": "Not in the verified book material; only fiber-to-SCFA link (p.205) confirmed."
+  },
+  {
+   "claim": "Probiotics and fermented foods reduce anxiety",
+   "reason": "Not confirmed from the book; only later trials for diversity/inflammation."
+  },
+  {
+   "claim": "Breastfeeding lowers allergy risk (used earlier in draft)",
+   "reason": "Kept in facts f5 but not used in story; observational and off-theme."
+  }
+ ],
+ "stories": {
+  "1597": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f4",
+    "f5",
+    "f6"
+   ],
+   "note": "Concept story on germ-free mice and early-life disturbance; thin, written short."
+  },
+  "1598": {
+   "verdict": "delete",
+   "fact_ids": [
+    "f3",
+    "f17"
+   ],
+   "note": "Too thin: one book line plus its cited paper; drafts 25-30 percent under length floor."
+  },
+  "1599": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f7",
+    "f8",
+    "f9",
+    "f10",
+    "f11",
+    "f6"
+   ],
+   "note": "Best supported of the three."
+  }
+ }
+}

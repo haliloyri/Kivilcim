@@ -1,0 +1,32 @@
+{
+  "story_id": 1437,
+  "kind": "concept",
+  "book": {"title": "The Psychology of Selling", "author": "Brian Tracy", "year": "2006"},
+  "confidence": "low",
+  "confidence_note": "The book's text was not available; facts come from a single summary preview (Shortform). The old text's quotation ('the first minute is more decisive than the remaining twenty-nine'), the 'seven seconds' figure and the three-part list (appearance, tone, body language) could not be found and were dropped. The summary's claim that 95 percent of a first impression comes from clothing has no named study and is flagged in the story as doubtful. Willis and Todorov (2006) is real, verified outside research used as context and clearly separated from Tracy's advice. Publication year follows the library record (2006).",
+  "facts": [
+    "People form quick first impressions, so the book advises planning opening statements word for word.",
+    "Advice: neat, professional dress; punctuality, organisation and politeness (lateness or disorganisation makes customers think the product or company is lower quality); clean, well-kept materials (a coffee-stained brochure is the summary's example).",
+    "The power of suggestion plants ideas in the customer's mind through subtle social cues; the aim is to appear professional, in control and expert.",
+    "The summary says 95 percent of a first impression is determined by clothing; no study is named.",
+    "Outside research: Willis and Todorov (Psychological Science, 2006): five experiments with unfamiliar faces shown for varied times; a 100-millisecond exposure was enough for trait judgements to match judgements made with no time limit; 100 to 500 ms made judgements more negative and raised confidence; 500 ms to one second changed judgements little; the strongest correlation was for trustworthiness."
+  ],
+  "scene_details": ["a face shown for a tenth of a second", "a coffee-stained brochure", "an opening statement planned word for word", "punctuality as a signal of quality"],
+  "tension": "Judgments of a stranger form almost instantly; what can a person actually prepare?",
+  "opening_idea": "Open on the 100-millisecond face and the unchanged trustworthiness ratings.",
+  "lessons": [{"idea": "Settle the part of the first moment you control in advance, so attention is free for the person in front of you.", "anchor": "Planned openings, punctuality, tidy materials.", "example": "A job candidate who decides beforehand how they arrive, what they wear and what their first sentence is."}],
+  "reflect": [],
+  "reflect_final": "Before your next meeting with someone new, which part of the first minute, how you arrive, look or begin, could you settle in advance?",
+  "use_cases": [
+    {"situation": "You are about to meet a client for the first time.", "move": "Start with one planned sentence about why you asked for the meeting.", "context": "meeting"},
+    {"situation": "A friend is nervous before a job interview.", "move": "Share Tracy's advice to plan openings word for word and offer to hear their first sentence.", "context": "oneonone"},
+    {"situation": "You are often a few minutes late.", "move": "Note the summary's point that lateness makes people assume the product or company is lower quality, and leave earlier next time.", "context": "self"}
+  ],
+  "pocket_idea": "Strangers judge fast; plan your first sentence, arrive on time, keep your materials tidy.",
+  "conversation_variants": {
+    "punchline_idea": "People rated a stranger's trustworthiness after seeing the face for a tenth of a second, and the ratings matched those given with unlimited time.",
+    "thirty_sec_idea": "In a 2006 study a tenth of a second was enough for people to judge a face as they would with unlimited time. Tracy's practical advice for salespeople: plan the opening word for word, be punctual and tidy. His claim that clothing accounts for 95 percent of a first impression has no study behind it.",
+    "question_idea": "",
+    "key_contrast_idea": "fast judgment, planned opening"
+  }
+}

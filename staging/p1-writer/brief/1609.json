@@ -1,0 +1,60 @@
+{
+  "story_id": 1609,
+  "kind": "concept",
+  "book": {
+    "title": "The Little Book of Common Sense Investing",
+    "author": "John C. Bogle",
+    "year": "2007"
+  },
+  "confidence": "medium",
+  "confidence_note": "Figures come from Bogle's 50-year cost exhibit as quoted in a secondary post and checked arithmetically; the market rate is not stated in the source (about 8% fits), so the story gives no market rate. The old text's 40-year, 7% and $1.1M vs $2.1M scenario is not Bogle's and was dropped.",
+  "facts": [
+    "Bogle's exhibit: $10,000 invested in the stock market for 50 years grows to about $469,000.",
+    "The same $10,000 in a fund that returns 5.5% a year after costs grows to about $145,400, a gap of $323,600.",
+    "After year 1 the two stand at about $10,800 and $10,550.",
+    "After year 10: about $21,600 vs $17,100 (21% lost); after year 30: about $100,600 vs $49,800 (50% lost).",
+    "At the end, costs took nearly 70% of what the market would have accumulated.",
+    "Bogle: the investor put up 100% of the capital and bore 100% of the risk but earned only 31% of the market's return.",
+    "His lines: 'The miracle of compounding returns is overwhelmed by the tyranny of compounding costs.' 'Where returns are concerned, time is your friend. But where costs are concerned, time is your enemy.'",
+    "In the 1980s and 1990s stocks averaged 17.5% a year and the average fund 15% (a 2.5-point gap)."
+  ],
+  "scene_details": [
+    "$10,800 against $10,550 after the first year",
+    "$100,600 against $49,800 after thirty years",
+    "$469,000 against $145,400 after fifty"
+  ],
+  "tension": "The gap after year one is about $250, small enough to ignore; by year fifty it is $323,600.",
+  "opening_idea": "Start with the two first-year balances, $10,800 and $10,550, and let the gap grow.",
+  "lessons": [
+    {
+      "idea": "A small recurring cost compounds just like a return, so it is worth finding out what you pay each year.",
+      "anchor": "Year one gap of about $250 against the $323,600 gap at fifty years."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which recurring cost in your own money, small each time but regular, have you never added up over several years?",
+  "use_cases": [
+    {
+      "situation": "Choosing between two funds with similar track records",
+      "move": "Say: Bogle's exhibit left an investor with 31% of the market's return after costs. Show me the yearly cost of each.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A relative suggests a managed product at a family dinner",
+      "move": "Ask: what does it charge each year, and what would that be after thirty years?",
+      "context": "family"
+    },
+    {
+      "situation": "Reviewing your own monthly subscriptions and fees",
+      "move": "List every cost that renews on its own and pick one to look up this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Costs compound like returns: Bogle's $10,000 grew to $469,000 without them and about $145,400 with them over fifty years.",
+  "conversation_variants": {
+    "punchline_idea": "Bogle's investor supplied all the capital and all the risk and kept 31% of the market's return.",
+    "thirty_sec_idea": "Bogle's exhibit: $10,000 for 50 years, $469,000 in the market vs about $145,400 after fund costs at 5.5%.",
+    "question_idea": "",
+    "key_contrast_idea": "small fee, big gap"
+  }
+}

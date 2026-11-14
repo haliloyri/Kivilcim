@@ -1,0 +1,61 @@
+{
+  "story_id": 1488,
+  "kind": "concept",
+  "book": {
+    "title": "Stolen Focus",
+    "author": "Johann Hari",
+    "year": "2022"
+  },
+  "confidence": "medium",
+  "confidence_note": "Facts from Wikipedia, publisher site and a catalogue blurb; book not read. Only causes named in those sources are used; old text's diet, stress ranking and evolution claims dropped. No case told in detail, so the story is a tour of the causes and the odd examples the book features.",
+  "facts": [
+    "Hari divides the book into 12 deeper causes of the attention crisis.",
+    "Among them are physical and mental exhaustion, constant interruption by smartphones, switching between tasks, the decline of mind-wandering, and pollution.",
+    "Multitasking is described as ineffective and switching between tasks as wearing down the brain.",
+    "Mind-wandering is described as essential for attention to work properly.",
+    "The book features veterinarians who diagnose dogs with ADHD.",
+    "It features a favela in Rio where everyone lost attention in an unusual way.",
+    "It features an office in New Zealand that found a technique to restore workers' attention.",
+    "Always-on work culture is argued to cause stress and lower productivity."
+  ],
+  "scene_details": [
+    "twelve causes, one per chapter",
+    "vets diagnosing dogs",
+    "a favela in Rio",
+    "an office in New Zealand"
+  ],
+  "tension": "A book that starts from phones ends up listing exhaustion, interrupted work, lost daydreaming and pollution too.",
+  "opening_idea": "Open on the count: twelve causes, and the phone is only one of them.",
+  "lessons": [
+    {
+      "idea": "When focus fails, look at the whole day and not only at the phone",
+      "anchor": "the twelve causes list; Everyday: a bookkeeper who blames her phone for mistakes that appear on the days she slept badly and was interrupted every ten minutes"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which part of your day, other than your phone, takes the most from your focus, and what would you change in it first?",
+  "use_cases": [
+    {
+      "situation": "A friend blames their phone for everything",
+      "move": "Hari lists twelve causes, and the phone is one. Did you sleep well this week? Interruptions at work?",
+      "context": "social"
+    },
+    {
+      "situation": "The team asks for a no-phone rule",
+      "move": "Hari counts constant interruption and task switching as causes too. Can we also try one block with no meetings and no chat?",
+      "context": "meeting"
+    },
+    {
+      "situation": "You feel unfocused despite a clean screen",
+      "move": "The book says exhaustion and interruptions matter as much. I will go to bed earlier tonight and check my focus tomorrow.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Hari names twelve causes of lost focus. Before you blame your phone, check the other eleven in your own day.",
+  "conversation_variants": {
+    "punchline_idea": "Hari's list of lost-focus causes has twelve entries, and the phone is only one of them.",
+    "thirty_sec_idea": "Stolen Focus splits the attention crisis into twelve causes, one per chapter. Phones are in there, but so are exhaustion, constant interruptions, the decline of mind-wandering and pollution. The book also visits vets who diagnose dogs with ADHD and an office in New Zealand that found a way to restore attention.",
+    "question_idea": "",
+    "key_contrast_idea": "phone versus whole day"
+  }
+}

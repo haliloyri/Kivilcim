@@ -1,0 +1,31 @@
+{
+ "story_id": 1672,
+ "kind": "concept",
+ "book": {"title": "Deep Work", "author": "Cal Newport", "year": "2016"},
+ "confidence": "medium",
+ "confidence_note": "The DB lists the book as 'Konsantrasyon Gücü' by 'CNewport' (2020); no Turkish edition with that title was found. The Turkish edition of Deep Work found is 'Pürdikkat' (Metropolis, 2019). All content here matches Deep Work. The old text's 1-2 hours claim, the 'value coordination' line and the Newport 'ratio' question were not found in the book and were dropped. Definitions are verified from several summaries; the four-hour limit is from one summary. The book gives no worked case here, so the story stays on the definitions and formula.",
+ "facts": [
+  "Newport defines deep work as professional activities performed in a state of distraction-free concentration that push cognitive capabilities to their limit, create new value, improve skill and are hard to replicate.",
+  "Shallow work is non-cognitively demanding, logistical-style tasks, often done while distracted, such as answering email, attending status meetings and filling out forms; it tends not to create much new value and is easy to replicate.",
+  "The formula: High-Quality Work Produced = (Time Spent) x (Intensity of Focus).",
+  "Newport says experts max out around four hours of deep work a day, beginners far less."
+ ],
+ "scene_details": ["the email inbox, the status meeting and the form as shallow work", "the formula time spent times intensity of focus", "four hours a day as an expert's ceiling"],
+ "tension": "Two people can sit at a desk for the same hours and produce very different amounts, because focus is a multiplier.",
+ "opening_idea": "Open on the formula: time spent multiplied by intensity of focus.",
+ "lessons": [{"idea": "Hours at the desk are only half of the output equation; the focus attached to them is the other half, so protecting a few intense hours can beat many scattered ones.", "anchor": "output = time spent x intensity of focus; experts reach about four hours a day"}],
+ "reflect": [],
+ "reflect_final": "Which task on this week's list actually needs your full focus, and what would you move out of its way to give it a clean hour?",
+ "use_cases": [
+  {"situation": "Your team fills the day with status meetings", "move": "Cite Newport's point that output is time times focus and propose one meeting-free morning for the work that needs thinking.", "context": "meeting"},
+  {"situation": "You answer email in the same hour you plan to write", "move": "Move email to the end of the block and let the first hour go to the hard task.", "context": "self"},
+  {"situation": "A colleague asks for a quick question during your focused hour", "move": "Say you are in the middle of something and give a time when you can answer.", "context": "oneonone"}
+ ],
+ "pocket_idea": "Output is time multiplied by focus, so one hour with no inbox can outweigh three scattered ones.",
+ "conversation_variants": {
+  "punchline_idea": "Newport's formula is time spent times intensity of focus, so a distracted hour counts for less than it looks.",
+  "thirty_sec_idea": "Cal Newport splits work in two. Deep work is distraction-free effort that stretches your skill and is hard to copy. Shallow work is email, status meetings and forms. His formula: quality equals time spent times intensity of focus. Experts, he says, top out around four deep hours a day.",
+  "question_idea": "",
+  "key_contrast_idea": "deep versus shallow"
+ }
+}

@@ -1,0 +1,34 @@
+{
+  "story_id": 1558,
+  "kind": "anecdote",
+  "book": {"title": "Radical Acceptance", "author": "Tara Brach", "year": "2003"},
+  "confidence": "high",
+  "confidence_note": "Checked against the full text of Radical Acceptance (chapter 5). The old text's chronic-back-pain patient and the 'second arrow' framing are not in the book and were dropped; the book's own labor story, four-year illness and the saying 'Pain is inevitable, but suffering is optional' replace them.",
+  "facts": [
+    "Brach and her husband planned a home birth, no drugs, with a midwife; she wanted to be as wakeful and present as possible and trusted meditation and yoga to help her 'go with the flow'.",
+    "Early in labor, knowing resistance made contractions worse, she relaxed into each one, breathing and making sounds without inhibition.",
+    "When her son's head started crowning the pain shot up; she thought 'This much pain has got to mean something is going wrong'; her whole body tightened and her deep slow breaths became the shallow quick breathing of panic.",
+    "Her midwife, used to seeing fear and resistance, said 'Nothing's wrong, honey . . . it's all completely natural, it's just painful.' She had to repeat it several times before it began to sink in; in the burning pain, pressure, tearing and exhaustion Brach remembered to breathe deeply and relax. 'It was just pain, not wrong.'",
+    "Brach: reacting with fear she added the belief that something was wrong; the Buddha taught we suffer when we cling to or resist experience; 'Pain is inevitable, but suffering is optional'; fear of pain is often the most unpleasant part of a painful experience.",
+    "Four years of chronic illness: each bout of fatigue or indigestion flooded her mind with stories ('Something's very wrong . . . maybe I'm seriously sick', too much black tea), with a stomach cramp came a feeling of personal weakness and shame; pain signalled some sort of character flaw. She wonders whether the worries that tightened her muscles increased her exhaustion.",
+    "She quotes Jon Kabat-Zinn: symptoms and our feelings about them are messengers; a king might kill a messenger whose message he disliked; denying the message or raging against it is not an intelligent way to heal. Pain is the body's call to pay attention: heat, we pull our hand from the fire; weakness and headache, we get something to eat."
+  ],
+  "scene_details": ["a home birth with a midwife", "deep slow breaths turning into shallow quick ones", "the midwife saying 'it's just painful' several times", "black tea blamed for a cramp", "a hand pulled away from fire"],
+  "tension": "The same pain was bearable until a thought about its meaning arrived; what did that thought add?",
+  "opening_idea": "Open on the breathing: calm and deep until the pain jumps, then panicked and shallow.",
+  "lessons": [{"idea": "A hard sensation arrives with a second reaction, the belief that it should not be happening; separating them lets you ask what the body actually needs.", "anchor": "The midwife's 'it's just painful'.", "example": "A headache on deadline day with dread and self-blame stacked on top."}],
+  "reflect": [],
+  "reflect_final": "In your last bout of pain, tiredness or worry, what did you tell yourself it said about you as a person?",
+  "use_cases": [
+    {"situation": "A headache or aching back starts on a busy day.", "move": "Say to yourself it is a sensation, not a verdict, and ask what the body is asking for: water, a pause, a stretch.", "context": "self"},
+    {"situation": "A friend spirals about what their recurring pain means.", "move": "Share the midwife's line to Brach, 'nothing's wrong, it's just painful', and ask whether that helps or something else would.", "context": "oneonone"},
+    {"situation": "A child falls and panics.", "move": "Acknowledge the hurt, check it together, then breathe slowly side by side.", "context": "family"}
+  ],
+  "pocket_idea": "A midwife's 'it's just painful' separated the pain from the alarm; name the sensation before the verdict.",
+  "conversation_variants": {
+    "punchline_idea": "Mid-labor Brach's breathing broke at a thought about the pain, and a midwife's four plain words brought it back.",
+    "thirty_sec_idea": "Brach planned a calm home birth, breathed through early contractions, panicked at the thought that so much pain meant something was wrong, and was steadied by the midwife's 'it's just painful'.",
+    "question_idea": "",
+    "key_contrast_idea": "painful, not wrong"
+  }
+}

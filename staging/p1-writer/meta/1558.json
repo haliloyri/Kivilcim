@@ -1,0 +1,30 @@
+{
+  "story_id": 1558,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt. Facts from the full text of Radical Acceptance ch. 5 (home birth, midwife, four-year illness, Kabat-Zinn quote). Old patient case and 'second arrow' are not in the book and were dropped.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Sadece acıyor, yanlış değil",
+    "description": "Tara Brach doğum sırasında acının kendisine bir de acı hakkındaki düşüncesini eklediğini fark etti. Ebenin tek cümlesi ikisini ayırdı.",
+    "hook": "Canınız yandığında acıyla mı, yoksa acının ne anlama geldiği korkusuyla mı uğraşıyorsunuz?",
+    "one_minute_summary": "Tara Brach doğumu evde, ebe eşliğinde ve ilaçsız yapmayı planladı; meditasyon ve yoganın akışa bırakmasına yardım edeceğine güveniyordu. Başta kasılmalara direnmeyip gevşedi. Sonra oğlunun başı göründü, acı fırladı ve aklına şu geldi: bu kadar acı bir şeylerin ters gittiği demek olmalı. Nefesi panikle kısaldı. Ebe 'Bir şey yok tatlım, sadece acıyor' dedi ve birkaç tekrardan sonra Brach nefesine döndü. Ona göre acı kaçınılmazdır, ama acıya eklenen 'yanlış bir şey var' inancı ıstırabı büyütür."
+  },
+  "en": {
+    "title": "Just painful, not wrong",
+    "description": "Tara Brach describes how, mid-labor, a thought about her pain added to the pain itself. A midwife's plain sentence pulled the two apart.",
+    "hook": "When something hurts, how much of it is the hurt and how much is what you decide it means?",
+    "one_minute_summary": "Tara Brach planned a home birth with a midwife, trusting her meditation and yoga practice. Early on she relaxed into each contraction. Then her son's head began to crown, the pain shot up, and she thought: this much pain must mean something is going wrong. Her body tightened and her breathing turned to panic. The midwife said, 'Nothing's wrong, honey, it's just painful,' and after several repeats Brach remembered to breathe. Her reading: pain is real, but adding the belief that something is wrong turns it into suffering."
+  },
+  "es": {
+    "title": "Solo duele, no es grave",
+    "description": "Tara Brach cuenta cómo, en pleno parto, un pensamiento sobre el dolor se sumó al dolor mismo. Una frase de su partera separó ambas cosas.",
+    "hook": "Cuando algo te duele, ¿cuánto es dolor y cuánto es lo que decides que significa?",
+    "one_minute_summary": "Tara Brach planeó un parto en casa con una partera, confiando en su práctica de meditación y yoga. Al principio se relajó con cada contracción. Cuando la cabeza de su hijo empezó a coronar, el dolor se disparó y pensó que tanto dolor significaba que algo iba mal. Su cuerpo se tensó y respiró con pánico. La partera le dijo «no pasa nada, cariño, solo duele», y tras repetirlo varias veces Brach recordó respirar. Para ella, el dolor es real, pero creer que algo va mal lo convierte en sufrimiento."
+  },
+  "de": {
+    "title": "Es tut nur weh",
+    "description": "Tara Brach beschreibt, wie mitten in der Geburt ein Gedanke über den Schmerz zum Schmerz selbst hinzukam. Der Satz einer Hebamme trennte beides.",
+    "hook": "Wenn dir etwas wehtut, wie viel davon ist der Schmerz und wie viel das, was du daraus machst?",
+    "one_minute_summary": "Tara Brach plante eine Hausgeburt mit Hebamme und vertraute auf Meditation und Yoga. Anfangs entspannte sie sich in jede Wehe hinein. Dann begann der Kopf ihres Sohnes zu krönen, der Schmerz schoss hoch, und sie dachte, so viel Schmerz müsse heißen, dass etwas schiefgeht. Ihr Körper spannte sich an, die Atmung wurde panisch. Die Hebamme sagte: Es ist nichts falsch, Schatz, es tut nur weh. Nach mehreren Wiederholungen konnte Brach wieder atmen. Ihr Fazit: Schmerz ist echt, doch die Überzeugung, etwas sei falsch, macht daraus Leiden."
+  }
+}

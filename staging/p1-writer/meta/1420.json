@@ -1,0 +1,35 @@
+{
+ "story_id": 1420,
+ "verdict": "keep",
+ "verify_note": "Keep: rebuilt on The Miracle Equation (Hal Elrod, Harmony, 2019): two decisions, unwavering faith + extraordinary effort, one mission, monthly targets, removing obstacles. Secondary summaries and publisher page only (full text not read). Old cortisol/identity framing dropped. Facts file 108.json.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Önce söz, sonra küçük adımlar",
+  "description": "Elrod'un denkleminde büyük hedef iki karara dayanır: ne olursa olsun bağlı kalma sözü ve her günkü tutarlı çaba.",
+  "hook": "Bugün hiç istemeseniz bile devam edeceğiniz tek hedef hangisi?",
+  "one_minute_summary": "Hal Elrod'un The Miracle Equation kitabına göre büyük bir hedef iki karardan geçiyor. Birincisi sarsılmaz inanç: ne olursa olsun, ne hissederseniz hissedin tek bir hedefe bağlı kalma sözü. İkincisi olağanüstü çaba, yani tutarlılık: her gün yapılan küçük adımlar. Elrod tek bir ana görev seçmenizi, onu aylık hedeflere bölmenizi ve spor kıyafetini arabada tutmak gibi engelleri baştan kaldırmanızı öneriyor. İnanç kararı her aksilikte yeniden veriliyor. Bu özet kitabın tamamına değil, ikincil kaynaklara dayanıyor."
+ },
+ "en": {
+  "title": "Vow first, small steps after",
+  "description": "In Elrod's equation a big goal rests on two decisions: a vow you keep whatever you feel, and consistent daily effort.",
+  "hook": "Which one goal would you still work on tomorrow even with no belief in it?",
+  "one_minute_summary": "In Hal Elrod's The Miracle Equation, a big goal moves from possible to inevitable through two decisions. The first is unwavering faith: a vow to stick to one goal no matter what happens outside or how you feel inside. The second is extraordinary effort, which Elrod describes as consistency, small actions every day. He advises picking one mission, splitting it into monthly targets, and removing obstacles, such as keeping gym clothes in the car. This summary rests on secondary sources, not the full text."
+ },
+ "es": {
+  "title": "Primero la promesa, luego pasos pequeños",
+  "description": "En la ecuación de Elrod una meta grande descansa en dos decisiones: una promesa que cumples sientas lo que sientas y un esfuerzo constante.",
+  "hook": "¿Qué única meta seguirías trabajando mañana aunque no creyeras en ella?",
+  "one_minute_summary": "Según The Miracle Equation de Hal Elrod, una meta grande pasa de posible a inevitable con dos decisiones. La primera es la fe inquebrantable: una promesa de seguir con una sola meta pase lo que pase fuera y sientas lo que sientas dentro. La segunda es el esfuerzo extraordinario, que Elrod describe como constancia, pequeñas acciones cada día. Aconseja elegir una misión, partirla en objetivos mensuales y quitar obstáculos, como dejar la ropa de gimnasio en el coche. El resumen se apoya en fuentes secundarias, no en el texto completo."
+ },
+ "de": {
+  "title": "Erst das Versprechen, dann kleine Schritte",
+  "description": "In Elrods Gleichung ruht ein großes Ziel auf zwei Entscheidungen: einem Versprechen, das du trotz aller Gefühle hältst, und beständigem Einsatz.",
+  "hook": "Welches eine Ziel würdest du morgen weiterverfolgen, auch wenn du nicht mehr daran glaubst?",
+  "one_minute_summary": "In Hal Elrods The Miracle Equation führen zwei Entscheidungen ein großes Ziel von möglich zu unausweichlich. Die erste ist unerschütterlicher Glaube: ein Versprechen, bei einem Ziel zu bleiben, egal was draußen geschieht und wie du dich innen fühlst. Die zweite ist außergewöhnlicher Einsatz, den Elrod als Beständigkeit beschreibt, kleine Handlungen jeden Tag. Er rät, eine Mission zu wählen, sie in Monatsziele zu teilen und Hindernisse zu entfernen, etwa die Sportsachen im Auto zu lassen. Die Zusammenfassung stützt sich auf Sekundärquellen, nicht auf den vollen Text."
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "story_id": 1454,
+ "kind": "concept",
+ "book": {
+  "title": "The Book of Joy",
+  "author": "Dalai Lama, Desmond Tutu and Douglas Abrams",
+  "year": "2016"
+ },
+ "confidence": "medium",
+ "confidence_note": "Pillar list verified in Time and Friends Journal (high). The reported takeaway (joy comes from not focusing too much on yourself) is Time's paraphrase. Old text listed the wrong 'eight pillars', invented a Tutu quote and cited oxytocin and cortisol, so all dropped.",
+ "facts": [
+  "Book is in three parts: the nature of true joy, the obstacles to joy, the eight pillars of joy.",
+  "Eight pillars, four of the mind and four of the heart.",
+  "Mind: perspective, humility, humor, acceptance.",
+  "Heart: forgiveness, gratitude, compassion, generosity.",
+  "Time's takeaway: joy comes from not focusing too much on yourself.",
+  "The Dalai Lama poking Tutu's belly and Tutu calling him mischievous (secondary summary).",
+  "Obstacles covered in part two: fear, stress, anxiety, anger, frustration, sadness, grief, despair, loneliness, envy, illness and fear of death.",
+  "A reviewer notes the Dalai Lama favors proactive mental training while Tutu's advice leans toward responding after hurt (Friends Journal).",
+  "Tutu: 'You are made for perfection, but you are not yet perfect. You are a masterpiece in the making.' (Friends Journal)",
+  "The Dalai Lama on perspective: when he looks only at the difficulties in his own country he worries; widening to others' suffering lessens his own."
+ ],
+ "scene_details": [
+  "four pillars of the mind and four of the heart",
+  "the teasing"
+ ],
+ "tension": "A joy that depends on a list of eight habits, split in two groups.",
+ "opening_idea": "Open on the two halves: perspective, humility, humor, acceptance and forgiveness, gratitude, compassion, generosity.",
+ "lessons": [
+  {
+   "idea": "Pick one pillar for the week.",
+   "anchor": "The eight pillars split into mind and heart.",
+   "example": "Choose gratitude and name one thing at dinner."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which of the eight pillars would change your week most if you leaned on it, and where would you start?",
+ "use_cases": [
+  {
+   "situation": "A tense day at work.",
+   "move": "Choose humor or perspective and use it in one conversation.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You and a sibling are not speaking.",
+   "move": "Try forgiveness as a pillar of the heart and send one short message.",
+   "context": "family"
+  },
+  {
+   "situation": "A low mood.",
+   "move": "Pick one of the eight and write down one action.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Eight pillars of joy, four of the mind and four of the heart; pick one.",
+ "conversation_variants": {
+  "punchline_idea": "The eight pillars of joy split into four of the mind and four of the heart.",
+  "thirty_sec_idea": "The Book of Joy lists eight pillars: perspective, humility, humor, acceptance, then forgiveness, gratitude, compassion, generosity. The Dalai Lama and Tutu talked through them for a week.",
+  "question_idea": "",
+  "key_contrast_idea": "mind vs heart"
+ }
+}

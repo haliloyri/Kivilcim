@@ -1,0 +1,35 @@
+{
+ "story_id": 1319,
+ "verdict": "keep",
+ "verify_note": "Verified in full text. Invented to-do-list and 'deceiving yourself' quotes dropped, as is the strict 'sleep/exercise/eat first' order. Recentered on the Eyal/Julie household task lists and timeboxing.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İki Liste, Bir Takvim",
+  "description": "Nir Eyal ev işlerini adil paylaştığını sanıyordu, ta ki eşiyle yaptıkları işleri yan yana yazana kadar. Çözümü, her işe takvimde bir saat vermek oldu.",
+  "hook": "Önemli dediğiniz şeylerin kaçının bu hafta takviminizde gerçekten bir saati var?",
+  "one_minute_summary": "Nir Eyal'e göre yapılacaklar listesindeki işler bir günden ötekine itilir, bu yüzden değerlerden başlayıp zamanı kendimiz, ilişkilerimiz ve işimiz arasında takvimde ayırmak gerekir. Bunu evde sınadı. Eşi Julie ile ev işleri yüzünden sürekli tartışıyor, akşamlar gözyaşıyla bitiyordu. Bir buluşma gününde ikisi de yaptığı her işi yazdı ve Julie'nin listesi bitmek bilmedi. İşleri paylaştılar ve her birini takvime saatiyle koydular. Kızıyla da her cuma bir 'eğlence kavanozundan' etkinlik çekiyorlar."
+ },
+ "en": {
+  "title": "Two Lists, One Calendar",
+  "description": "Nir Eyal thought he shared the housework fairly until he and his wife wrote their chores side by side. The fix was giving every task a time on the calendar.",
+  "hook": "How many of the things you call important actually have a time on your calendar this week?",
+  "one_minute_summary": "Nir Eyal argues that to-do lists let tasks slide from day to day, so he starts from values and timeboxes his calendar across three domains: you, relationships and work. He tested it at home. He and his wife Julie kept arguing about chores, and evenings ended in late dinners and tears. On a date day they each listed every household task they did, and Julie's list seemed endless. They split the jobs and put each one on the calendar. With his daughter, a 'fun jar' fills Friday afternoons."
+ },
+ "es": {
+  "title": "Dos listas, una agenda",
+  "description": "Nir Eyal creía repartir las tareas de casa con justicia hasta que él y su mujer las escribieron una al lado de la otra. La solución fue dar a cada tarea una hora en la agenda.",
+  "hook": "¿Cuántas de las cosas que llamas importantes tienen de verdad una hora en tu agenda esta semana?",
+  "one_minute_summary": "Nir Eyal sostiene que las listas de tareas dejan que todo pase de un día al siguiente, así que empieza por los valores y reparte su agenda en tres ámbitos: tú, tus relaciones y tu trabajo. Lo probó en casa. Él y su mujer, Julie, discutían por las tareas domésticas y muchas noches acababan en lágrimas. En un día de cita, cada uno apuntó todo lo que hacía y la lista de Julie parecía no acabar. Se repartieron el trabajo y metieron cada tarea en la agenda."
+ },
+ "de": {
+  "title": "Zwei Listen, ein Kalender",
+  "description": "Nir Eyal hielt seine Aufteilung der Hausarbeit für fair, bis er und seine Frau ihre Aufgaben nebeneinander aufschrieben. Die Lösung war, jeder Aufgabe einen Termin zu geben.",
+  "hook": "Wie viele der Dinge, die du wichtig nennst, haben diese Woche wirklich einen Termin in deinem Kalender?",
+  "one_minute_summary": "Nir Eyal meint, To-do-Listen lassen Aufgaben von Tag zu Tag rutschen, deshalb beginnt er bei seinen Werten und verteilt seinen Kalender auf drei Bereiche: du selbst, Beziehungen und Arbeit. Getestet hat er das zu Hause. Er und seine Frau Julie stritten über die Hausarbeit, viele Abende endeten in Tränen. An einem Date-Tag schrieb jeder alle Aufgaben auf, die er erledigt, und Julies Liste schien endlos. Sie teilten die Arbeit neu auf und trugen jede Aufgabe mit Uhrzeit in den Kalender ein."
+ }
+}

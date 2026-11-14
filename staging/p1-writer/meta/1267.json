@@ -1,0 +1,35 @@
+{
+ "story_id": 1267,
+ "verdict": "keep",
+ "verify_note": "Keep with new case: Federer's '12 hours', the journalist dialogue and the LeBron/Sharapova list are not in Why We Sleep. Rebuilt on the book's own material: Usain Bolt's naps, the last-two-hours spindle finding and Andre Iguodala's tracker data. Title changed.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Antrenmanı bitiren son iki saat",
+  "description": "Matthew Walker'a göre gün içinde çalışılan beceri gecenin son saatlerinde pekişiyor. Erken alarm tam o saatleri kesiyor.",
+  "hook": "Yeni bir şey öğrendiğiniz günün gecesinde uykunuzun hangi kısmını feda ediyorsunuz?",
+  "one_minute_summary": "Matthew Walker'ın laboratuvarı, gün içinde öğrenilen hareket becerilerinin uykuda geliştiğini ve bu kazancın en çok sekiz saatlik uykunun son iki saatine bağlı olduğunu buldu. Yani güne erken başlamak için ilk kestiğimiz saatlere. Usain Bolt dünya rekoru kırmadan ve olimpiyat finallerinden önce bile kestirmişti. Walker takımlara Andre Iguodala'nın uyku verisini gösteriyor: sekiz saatten fazla uyuduğu gecelerin ardından dakika başına yüzde 29 daha fazla sayı, daha az top kaybı ve faul. Bu tek bir oyuncunun kaydı, kontrollü bir deney değil."
+ },
+ "en": {
+  "title": "The two hours that finish practice",
+  "description": "Matthew Walker found that skills practiced by day settle in the last hours of the night, the ones an early alarm cuts.",
+  "hook": "Which part of your sleep do you give up after a day of learning something new?",
+  "one_minute_summary": "Matthew Walker's lab found that motor skills improve during sleep, and that the gain depends most on the last two hours of an eight-hour night, the hours people cut to start early. Usain Bolt napped before breaking the world record and before Olympic finals. Walker shows teams Andre Iguodala's tracker data: after nights of more than eight hours, 29 percent more points per minute and fewer turnovers and fouls. It is one player's record rather than a controlled study, but it makes the point in a locker room."
+ },
+ "es": {
+  "title": "Las horas que terminan el entrenamiento",
+  "description": "Matthew Walker descubrió que lo practicado de día se asienta en las últimas horas de la noche, justo las que recorta el despertador.",
+  "hook": "¿Qué parte de tu sueño sacrificas después de un día aprendiendo algo nuevo?",
+  "one_minute_summary": "El laboratorio de Matthew Walker vio que las habilidades motoras mejoran al dormir, sobre todo de las dos últimas horas de una noche de ocho, las que se recortan al madrugar. Usain Bolt dormía siesta antes de batir el récord del mundo y antes de finales olímpicas. Walker enseña a los equipos los datos de Andre Iguodala: tras noches de más de ocho horas, un 29 por ciento más de puntos por minuto y menos pérdidas y faltas. Es el registro de un solo jugador, no un ensayo controlado."
+ },
+ "de": {
+  "title": "Zwei Stunden, die das Training vollenden",
+  "description": "Matthew Walker fand, dass sich tagsüber Geübtes in den letzten Stunden der Nacht festigt, genau denen, die ein früher Wecker streicht.",
+  "hook": "Welchen Teil deines Schlafs opferst du nach einem Tag, an dem du etwas Neues gelernt hast?",
+  "one_minute_summary": "Matthew Walkers Labor fand heraus, dass sich motorische Fertigkeiten im Schlaf verbessern und dass dieser Gewinn vor allem an den letzten zwei Stunden einer Achtstundennacht hängt, also an den Stunden, die man für einen frühen Start opfert. Usain Bolt machte vor Weltrekorden und olympischen Finals Nickerchen. Walker zeigt Teams die Trackerdaten von Andre Iguodala: nach mehr als acht Stunden 29 Prozent mehr Punkte pro Minute und weniger Ballverluste und Fouls. Das ist die Aufzeichnung eines Spielers, keine kontrollierte Studie."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1407,
+ "verdict": "keep",
+ "verify_note": "Keep with low confidence: five workflow stages and the Get Clear, Get Current, Get Creative review verified only in secondary summaries and GTD company material, not the book text; steps kept generic. Old text's one-hour ritual, 'mental integration' and 'GTD without review is just a list' dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Haftalık gözden geçirme",
+  "description": "David Allen'a göre haftalık gözden geçirme listelere güveni korur: temizle, güncelle, yarat.",
+  "hook": "Hangi listeniz ya da takviminiz en eski hâlinde duruyor?",
+  "one_minute_summary": "David Allen *Getting Things Done* kitabında iş akışını beş aşamada anlatır: topla, işle, düzenle, gözden geçir, yap. Gözden geçirmenin en önemli biçimi haftalık olandır ve üç evresi vardır: Temizle (gelen kutusunu ve kafayı boşalt), Güncelle (listeleri ve takvimi gerçeğe yetiştir), Yarat (bir gün belki fikirlerine bak). Onsuz liste, ona en son ne zaman dokunduğunuza dair hafızanız kadar güvenilirdir. Böylece güvendiğiniz bir sisteminiz olur."
+ },
+ "en": {
+  "title": "The weekly review",
+  "description": "David Allen says a weekly review keeps lists trustworthy: get clear, get current, get creative.",
+  "hook": "Which of your lists or calendars is furthest out of date?",
+  "one_minute_summary": "In *Getting Things Done*, David Allen describes five workflow stages: collect, process, organize, review and do. The most important form of review is weekly, in three phases. Get Clear means emptying your inbox and your head. Get Current means checking your lists and calendar against the week that actually happened. Get Creative means looking over your someday ideas. Without it, a list is only as trustworthy as your memory of when you last touched it."
+ },
+ "es": {
+  "title": "La revisión semanal",
+  "description": "Según David Allen, la revisión semanal mantiene fiables las listas: despejar, actualizar, crear.",
+  "hook": "¿Qué lista o calendario tuyo está más desactualizado?",
+  "one_minute_summary": "En *Getting Things Done*, David Allen describe cinco etapas: recoger, procesar, organizar, revisar y hacer. La forma más importante de revisar es la semanal, con tres fases. Despejar es vaciar la bandeja y la cabeza. Actualizar es contrastar listas y calendario con la semana que de verdad pasó. Crear es repasar tus ideas de algún día. Sin ella, una lista es tan fiable como tu recuerdo de la última vez que la tocaste."
+ },
+ "de": {
+  "title": "Die Wochenübersicht",
+  "description": "David Allen zufolge hält die Wochenübersicht Listen verlässlich: klar werden, aktuell werden, kreativ werden.",
+  "hook": "Welche deiner Listen oder Kalender ist am weitesten veraltet?",
+  "one_minute_summary": "In *Getting Things Done* beschreibt David Allen fünf Stufen: sammeln, klären, organisieren, durchsehen und erledigen. Die wichtigste Form des Durchsehens ist die wöchentliche, in drei Phasen. Klar werden heißt, Eingang und Kopf zu leeren. Aktuell werden heißt, Listen und Kalender mit der wirklich gelebten Woche abzugleichen. Kreativ werden heißt, die Irgendwann-Ideen anzusehen. Ohne sie ist eine Liste nur so verlässlich wie deine Erinnerung daran, wann du sie zuletzt angefasst hast."
+ }
+}

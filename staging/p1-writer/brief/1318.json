@@ -1,0 +1,41 @@
+{
+  "story_id": 1318,
+  "kind": "anecdote",
+  "book": {"title": "Indistractable", "author": "Nir Eyal", "year": "2019"},
+  "confidence": "high",
+  "confidence_note": "Verified in the full text of Indistractable (written with Julie Li). The old text's long quote ('Distraction doesn't come from outside...') is a paraphrase, not the book's wording; the book says 'distraction starts from within'. Daughter's name is not given and is not used.",
+  "facts": [
+    "Nir Eyal and his daughter were playing games from an activity book designed to bring dads and daughters closer: name each other's favorite things, build a paper airplane from a page, then answer 'If you could have any superpower, what would it be?'",
+    "Eyal says he cannot tell you what his daughter answered because his mind was on his phone. When she asked 'Daddy, what would your superpower be?' he said 'Just a second. I just need to respond to this one thing.'",
+    "She went quiet; by the time he looked up, she had left the room. He admits the same scene had played out countless times.",
+    "After finding her and apologizing, he went extreme: a flip phone (abandoned because he missed GPS, saved addresses and audiobooks), a print newspaper subscription (a stack of unread papers piled next to him as he watched TV news), a 1990s word processor with no internet (he started flipping through unrelated books on his shelf).",
+    "His conclusion: removing online technology didn't work; he had replaced one distraction with another. The first step is to recognize that distraction starts from within, as an escape from discomfort.",
+    "He uses four steps (from psychologist Jonathan Bricker): look for the discomfort before the distraction, write down the trigger, explore the sensation with curiosity, beware of transition moments.",
+    "His own tell: the urge to google something while writing, which he calls a diversion from difficult work. His 'ten-minute rule': it's fine to give in, but not right now; wait ten minutes and surf the urge, and the urge usually passes."
+  ],
+  "scene_details": [
+    "a paper airplane folded from a page of an activity book",
+    "'Just a second. I just need to respond to this one thing.'",
+    "a pile of unread newspapers next to the TV",
+    "a 1990s word processor beside a bookshelf"
+  ],
+  "tension": "He cut the internet out of his life and still got distracted, by a newspaper pile and a bookshelf.",
+  "opening_idea": "Start with the activity-book question 'If you could have any superpower?' and a father who can't say what his daughter answered.",
+  "lessons": [
+    {"idea": "Before blaming a device, find the uncomfortable feeling that sends you to it; the device changes, the feeling stays.", "anchor": "Eyal swapped phone for flip phone, web for paper, laptop for an offline word processor, and found new distractions each time.", "everyday_example_idea": "A student who deletes a game finds herself cleaning her desk whenever an essay gets hard, and starts writing down the moment it happens."}
+  ],
+  "reflect": [],
+  "reflect_final": "The last time you left a hard task for something easier, what feeling was there in the moment you switched?",
+  "use_cases": [
+    {"situation": "A friend says they'll quit social media to focus.", "move": "Tell them Eyal tried a flip phone and offline word processor and still drifted to his bookshelf; suggest noting the feeling before each drift first.", "context": "social"},
+    {"situation": "At home a child wants your attention while you're on your phone.", "move": "Put the phone face down and say 'I'm here', then answer the question they asked.", "context": "family"},
+    {"situation": "You want to google something mid-task.", "move": "Write down the urge and the feeling, wait ten minutes, then decide.", "context": "self"}
+  ],
+  "pocket_idea": "Eyal swapped his smartphone for a flip phone and got distracted by his bookshelf; the urge to escape moved with him.",
+  "conversation_variants": {
+    "punchline_idea": "Nir Eyal cut the internet out of his writing and caught himself flipping through random books on the shelf instead.",
+    "thirty_sec_idea": "Nir Eyal missed his daughter's answer to 'what superpower would you want?' because he was on his phone. He went extreme: flip phone, paper newspaper, offline word processor. The papers piled up unread and he started flipping through books on the shelf. His conclusion: distraction starts from within. Now he notes the feeling and waits ten minutes before giving in.",
+    "question_idea": "",
+    "key_contrast_idea": "Blame the device, find the feeling"
+  }
+}

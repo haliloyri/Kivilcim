@@ -1,0 +1,61 @@
+{
+ "story_id": 1348,
+ "kind": "anecdote",
+ "book": {
+  "title": "Make It Stick",
+  "author": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+  "year": "2014"
+ },
+ "confidence": "medium",
+ "confidence_note": "Mia Blundetto's jump school story and the consolidation passage are verified in the full text (ch. 4). The old story's sleep experiment (morning vs evening groups, 12 hours) and REM/deep sleep claims are not in the book; the book only says sleep 'seems to help' consolidation. Story recentered on consolidation; sleep appears as the book's hedge only. Confidence medium because the title topic changes.",
+ "facts": [
+  "Mia Blundetto, 23, a Marine first lieutenant posted to logistics in Okinawa, needed jump school to command an air delivery platoon. She said: 'I hate falling, that feeling in your chest.' She would not go down a water slide until middle school, yet told her commanding officer, 'Yes, sir, I'll jump out of planes.'",
+  "At the Army's jump school at Fort Benning, Georgia, trainees may not carry a notebook or take notes; they listen, watch, rehearse, execute. The test is in the doing.",
+  "The parachute landing fall spreads the impact over the balls of the feet, the side of the calf, thigh, hip and back, in six possible directions. It is first taught in a gravel pit, then practiced again and again.",
+  "Difficulty rises over weeks: a two-foot platform, a zip line a dozen feet up, a twelve-foot platform with a jump-door mockup where the instructor drops you the last two or three feet from random directions, then a thirty-four-foot tower. Practice is spaced and mixed as trainees wait their turn.",
+  "In week three trainees make five real jumps. On Mia's third, from a C130 at 1,250 feet, a green parachute wrapped around her at the count of four thousand; she was on top of another jumper's canopy. She 'just sort of swam out' and steered away, and said it didn't frighten her.",
+  "The authors explain that new learning is labile; in consolidation the brain reorganizes and stabilizes memory traces over several hours or longer, replaying the learning and linking it to what you already know.",
+  "'Sleep seems to help memory consolidation, but in any case' consolidation occurs over a period of time; elsewhere: practice with at least a day between sessions is good.",
+  "Their analogy: an essay draft put aside to ferment reads clearer a day or two later."
+ ],
+ "scene_details": [
+  "no notebook allowed at Fort Benning",
+  "the gravel pit where the landing fall is first demonstrated",
+  "the instructor pulling the release and dropping her the last two or three feet",
+  "a green parachute wrapped around her at four thousand"
+ ],
+ "tension": "A woman who hated falling ends up tangled in another jumper's canopy, and handles it calmly.",
+ "opening_idea": "Open on 'four thousand' and the green parachute around Mia, then step back to the gravel pit.",
+ "lessons": [
+  {
+   "idea": "Learning keeps settling after the session ends, so leave time between practice sessions instead of packing them into one.",
+   "anchor": "Weeks of spaced landing-fall practice before the real jump; consolidation over hours and days."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What skill are you trying to learn in one long sitting that might settle better if you split it across several days?",
+ "use_cases": [
+  {
+   "situation": "Student plans an all-night study session before an exam",
+   "move": "Mia's jump school spread one landing roll over weeks of short drills. Suggest splitting tonight's work into two evenings with sleep in between.",
+   "context": "family"
+  },
+  {
+   "situation": "Planning a one-day training for new staff",
+   "move": "Propose three short sessions a week apart instead of one long day.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Learning a new tool for work",
+   "move": "Practice twenty minutes today, then try it again tomorrow without notes and see what stayed.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Mia learned to fall in a gravel pit weeks before the plane; give learning days to settle before you need it.",
+ "conversation_variants": {
+  "punchline_idea": "A Marine who wouldn't use a water slide as a kid swam out of another jumper's parachute in mid-air.",
+  "thirty_sec_idea": "Mia hates falling but goes to jump school; no notes, weeks of landing falls from rising heights; on third real jump lands on another canopy, swims out calmly. Authors: learning consolidates over time, sleep seems to help; space practice.",
+  "question_idea": "",
+  "key_contrast_idea": "weeks of drills, calm in the air"
+ }
+}

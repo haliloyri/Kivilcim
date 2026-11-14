@@ -1,0 +1,60 @@
+{
+ "story_id": 1383,
+ "kind": "concept",
+ "book": {
+  "title": "The Happiness Advantage",
+  "author": "Shawn Achor",
+  "year": "2010"
+ },
+ "confidence": "medium",
+ "confidence_note": "The formula critique is the book's central argument. The 225-study / 275,000-person meta-analysis (Lyubomirsky, King & Diener 2005) is verified; its authors say the link runs both ways and much evidence is correlational. The doctors study (44 internists, small bag of candy) is from Achor's own account; Achor's 'nearly twice as fast' is kept as his claim. The Soweto scene comes from a chapter abstract (medium); the old '95 percent' is not used as a number.",
+ "facts": [
+  "Achor questions the common formula: work hard, become successful, then be happy. Each success moves the goalpost, so happiness keeps being postponed.",
+  "His claim is the reverse order: happiness comes first and fuels performance.",
+  "A meta-analysis by Sonja Lyubomirsky, Laura King and Ed Diener reviewed 225 studies covering more than 275,000 people; happiness was linked to success at work, in relationships and in health, and often came before it. The authors say the influence runs both ways.",
+  "The meta-analysis also found happy people more inclined to seek out and take on new goals.",
+  "In one study, 44 doctors were asked to diagnose a patient from a file. Half were first given a small bag of candy as a thank-you, which they were not to eat during the task. The doctors in a good mood reached the correct diagnosis earlier; Achor puts it at nearly twice as fast.",
+  "Students who thought about the happiest day of their lives right before a maths test outperformed their peers.",
+  "Achor asked students at a school in Soweto who liked schoolwork; almost every hand went up. His escort said they saw schoolwork as a privilege their parents never had.",
+  "Achor's explanation: positive emotions flood the brain with dopamine and serotonin, which he says turn up the brain's learning centres, helping organise, keep and retrieve information faster."
+ ],
+ "scene_details": [
+  "a bag of candy handed over and left unopened",
+  "a patient file being read toward a diagnosis",
+  "raised hands in a Soweto classroom"
+ ],
+ "tension": "A bag of candy no one ate changed how fast doctors found a diagnosis.",
+ "opening_idea": "Start with the 44 doctors and the unopened bag of candy.",
+ "lessons": [
+  {
+   "idea": "Put a small good moment before hard work instead of saving it as the reward afterwards.",
+   "anchor": "candy given before the diagnosis, not after"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which small pleasure do you only allow yourself after finishing a task, and what would change if you moved it to before you start?",
+ "use_cases": [
+  {
+   "situation": "Before a hard team session",
+   "move": "Mention the doctors who were given candy before the diagnosis; start with a minute of good news.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You've told yourself you'll relax once a project is done",
+   "move": "Move one small enjoyable thing to the start of the day.",
+   "context": "self"
+  },
+  {
+   "situation": "A child must study for an exam",
+   "move": "Begin with a short happy memory or a laugh, then study.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "The doctors got their candy before the diagnosis; move your small reward to before the hard part.",
+ "conversation_variants": {
+  "punchline_idea": "Doctors given a bag of candy they didn't even eat found the right diagnosis faster.",
+  "thirty_sec_idea": "Formula vs goalposts; meta-analysis 225 studies; 44 doctors candy; Achor's reverse order.",
+  "question_idea": "",
+  "key_contrast_idea": "happy first, then work"
+ }
+}

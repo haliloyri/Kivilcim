@@ -1,0 +1,35 @@
+{
+  "story_id": 1588,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: aging-as-disease and information theory from reviews and summaries of Lifespan; book text not read. Old med-school dialogue and the book-event claim of reversed mouse vision dropped; the 2020 mouse paper is a labelled caveat after the book, with the Brenner critique.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Yaşlanma bir hastalık mı?",
+    "description": "Sinclair yaşlanmayı birçok hastalığın ortak köküne bağlıyor. Kuramı henüz sınanmış değil ve fare sonuçları insana geçmiş değil.",
+    "hook": "Birbirinden ayrı görünen hastalıkların altında tek bir neden olabilir mi?",
+    "one_minute_summary": "David Sinclair, Lifespan kitabında yaşlanmanın kendisini hastalık sayıyor. Ona göre kök neden, hücrenin DNA'yı nasıl okuyacağını bildiren epigenetik bilginin kaybı. DNA dijital, epigenom ise analog ve zamanla kayıyor. Kitaptan sonra, 2020'de, farelerde üç faktör retinaya verildi ve görme düzeldi. Bunlar fare sonuçları. Charles Brenner gibi eleştirmenler kuramın henüz sınanmadığını söylüyor. Bu yüzden Sinclair'in savını kesin bilgi değil, güçlü bir hipotez olarak okumak gerekir."
+  },
+  "en": {
+    "title": "Aging as one disease",
+    "description": "Sinclair argues that aging is the shared root of many illnesses. His theory is untested and the mouse results have not reached people.",
+    "hook": "What if many separate diseases sit on one underlying cause?",
+    "one_minute_summary": "In Lifespan, David Sinclair says aging should count as a disease. His root cause is the loss of epigenetic information, the marks that tell a cell how to read its DNA. DNA is digital, while the epigenome is analog and drifts over time. After the book, in 2020, three factors given to the retinas of mice improved their vision. Those are mouse results. Critics such as Charles Brenner say the theory has not been tested, so read Sinclair's claim as a strong hypothesis, not settled fact."
+  },
+  "es": {
+    "title": "El envejecimiento como enfermedad",
+    "description": "Sinclair propone que el envejecimiento es la raíz común de muchas dolencias. Su teoría no está probada y los resultados en ratones no han llegado a las personas.",
+    "hook": "¿Y si muchas enfermedades distintas tuvieran una sola causa de fondo?",
+    "one_minute_summary": "En Lifespan, David Sinclair afirma que el envejecimiento debería contarse como enfermedad. Su causa de fondo es la pérdida de información epigenética, las marcas que dicen a la célula cómo leer su ADN. El ADN es digital y el epigenoma es analógico y se desvía con el tiempo. Tras el libro, en 2020, tres factores aplicados a la retina de ratones mejoraron su visión. Son resultados en ratones. Críticos como Charles Brenner dicen que la teoría no se ha puesto a prueba: es una hipótesis fuerte, no un hecho."
+  },
+  "de": {
+    "title": "Altern als eine Krankheit",
+    "description": "Sinclair sieht im Altern die gemeinsame Wurzel vieler Leiden. Seine Theorie ist nicht getestet, und die Mäuseergebnisse haben Menschen nicht erreicht.",
+    "hook": "Was, wenn viele verschiedene Krankheiten dieselbe Ursache haben?",
+    "one_minute_summary": "In Lifespan sagt David Sinclair, das Altern solle als Krankheit gelten. Seine Grundursache ist der Verlust epigenetischer Information, der Marken, die der Zelle sagen, wie sie ihre DNA liest. Die DNA ist digital, das Epigenom analog und verschiebt sich mit der Zeit. Nach dem Buch, 2020, verbesserten drei Faktoren in der Netzhaut von Mäusen deren Sehen. Das sind Mäuseergebnisse. Kritiker wie Charles Brenner sagen, die Theorie sei nicht getestet. Lies Sinclairs Behauptung also als starke Hypothese und nicht als gesichertes Wissen."
+  }
+}

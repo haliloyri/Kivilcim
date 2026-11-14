@@ -1,0 +1,35 @@
+{
+  "story_id": 1393,
+  "kind": "concept",
+  "book": {"title": "Eat That Frog!", "author": "Brian Tracy", "year": "2001"},
+  "confidence": "medium",
+  "confidence_note": "Checked against an early-edition full text (intro, ch. 2). The old text's Mark Twain attribution is not in the book text ('it has been said') and was dropped; the 'subconscious drain' claim is replaced by the book's night-before list point. Percentages (25 percent, two hours saved) are Tracy's own claims, no study cited. DB title 'Yeme Bozukluğu' is a wrong Turkish label for this book.",
+  "facts": [
+    "Tracy opens with a saying he says has been told for many years: if the first thing you do each morning is eat a live frog, you go through the day knowing that is probably the worst thing that will happen to you.",
+    "His 'frog' is the biggest, most important task, the one you are most likely to put off, and also the one that can do the most for your results.",
+    "He quotes two more lines: with two frogs, eat the ugliest first; and if you have to eat a live frog, it does not pay to sit and look at it for very long.",
+    "Chapter 2: write tomorrow's list the night before, at the end of the workday; carry over what is unfinished and add everything for the next day.",
+    "Tracy says the subconscious works on the list while you sleep and you may wake with ideas for doing the job faster.",
+    "All you need is paper and a pen; when something new comes up, add it to the list before you do it.",
+    "Tracy says planning takes ten or twelve minutes and saves at least two hours of wasted time (his estimate).",
+    "Ticking items off gives a visible picture of progress, which he says helps overcome procrastination."
+  ],
+  "scene_details": ["a sheet of paper and a pen at the end of the workday", "the list carried over item by item to the next day", "the live frog that 'does not pay to sit and look at'", "items ticked off one by one"],
+  "tension": "The task you dread keeps sliding down the day; Tracy's answer starts the evening before, not the morning.",
+  "opening_idea": "Open on the frog line itself: the worst thing of your day, eaten first, plus the ugly detail that you should not sit and stare at it.",
+  "lessons": [{"idea": "Decide the dreaded task the evening before so the morning has nothing left to negotiate.", "anchor": "Tracy's night-before list and the frog you do not sit and look at.", "example": "A tailor who lays out the one difficult alteration on the table before leaving the shop."}],
+  "reflect": [],
+  "reflect_final": "Which task on your desk right now is the live frog, and what would the list you write tonight have to say about it?",
+  "use_cases": [
+    {"situation": "End of the workday, you are about to leave with the hard task untouched.", "move": "Write tomorrow's list now and put the dreaded task at the top; Tracy says the list works on you overnight.", "context": "self"},
+    {"situation": "A colleague keeps starting their day with email.", "move": "Ask what the one task is that they would rather not look at, and suggest they open with it tomorrow.", "context": "oneonone"},
+    {"situation": "Team stand-up where everyone lists easy wins.", "move": "Ask each person to name their frog for tomorrow before they go home.", "context": "meeting"}
+  ],
+  "pocket_idea": "Write tonight which task is your frog, and eat it before anything else tomorrow.",
+  "conversation_variants": {
+    "punchline_idea": "Tracy's advice is to pick the frog at night, because staring at it in the morning is the problem.",
+    "thirty_sec_idea": "Tracy's frog is the task you dread; he has you write it on tomorrow's list tonight, then do it first.",
+    "question_idea": "",
+    "key_contrast_idea": "frog first"
+  }
+}

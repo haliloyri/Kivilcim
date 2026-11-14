@@ -1,0 +1,35 @@
+{
+  "story_id": 1655,
+  "verdict": "keep",
+  "verify_note": "Keep, medium-low: five-step list cited to the book by secondary sources only (page not read). Old four stages and Newton, Archimedes and Kekule examples dropped. Story near the length floor; total and story-share warnings expected.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Beş yaratıcı adım",
+    "description": "Csikszentmihalyi'ye göre yaratıcı süreç beş adımdan oluşuyor ve aha anı yalnızca üçüncüsü. Liste ikinci el kaynaklara dayanıyor.",
+    "hook": "Kıvılcımdan sonra tıkanan bir fikriniz hangi adımda kaldı?",
+    "one_minute_summary": "Csikszentmihalyi, Creativity kitabında yaratıcı sürecin normalde beş adımdan geçtiğini söylüyor: hazırlık, kuluçka, içgörü, değerlendirme ve ayrıntılandırma. İçgörü üçüncü adım, ayrıntılandırma ise en uzun ve en zor olanı. Adımlar çizgiden çok döngü gibi işliyor. Kuluçka anlatıları geriye dönük hatıralara dayandığı için 2016 tarihli bir inceleme güvenilirliklerini sorunlu buluyor. Listeyi kitaba ikinci el kaynaklardan bağladım, sayfayı doğrulayamadım."
+  },
+  "en": {
+    "title": "Five steps, not one flash",
+    "description": "Csikszentmihalyi counts five steps in the creative process, and the aha is only the third. The list is cited to the book by secondary sources.",
+    "hook": "Which of the five steps did your last stalled idea stop in?",
+    "one_minute_summary": "In Creativity, Csikszentmihalyi says the creative process normally takes five steps: preparation, incubation, insight, evaluation and elaboration. The insight is third, and elaboration is the longest and hardest. He warns the steps loop more than they line up. Because accounts of incubation are looked back on, a 2016 review questions their reliability. I could only confirm the list through secondary sources, not the page itself."
+  },
+  "es": {
+    "title": "Cinco pasos, no un destello",
+    "description": "Csikszentmihalyi cuenta cinco pasos en el proceso creativo y la intuición es solo el tercero. La lista se atribuye al libro en fuentes secundarias.",
+    "hook": "¿En cuál de los cinco pasos se detuvo tu última idea atascada?",
+    "one_minute_summary": "En Creativity, Csikszentmihalyi dice que el proceso creativo suele tener cinco pasos: preparación, incubación, intuición, evaluación y elaboración. La intuición es la tercera, y la elaboración es la más larga y difícil. Advierte que los pasos se repiten más que se alinean. Como los relatos de incubación son retrospectivos, una revisión de 2016 duda de su fiabilidad. Solo pude confirmar la lista por fuentes secundarias, no en la página del libro."
+  },
+  "de": {
+    "title": "Fünf Schritte, kein Blitz",
+    "description": "Csikszentmihalyi zählt fünf Schritte im kreativen Prozess, und das Aha ist nur der dritte. Die Liste wird dem Buch in Zweitquellen zugeschrieben.",
+    "hook": "In welchem der fünf Schritte blieb deine letzte stockende Idee stehen?",
+    "one_minute_summary": "In Creativity sagt Csikszentmihalyi, der kreative Prozess verlaufe normalerweise in fünf Schritten: Vorbereitung, Inkubation, Einsicht, Bewertung und Ausarbeitung. Die Einsicht ist der dritte, die Ausarbeitung der längste und härteste. Er warnt, dass die Schritte eher in Schleifen laufen. Weil Berichte über Inkubation rückblickend sind, zweifelt eine Übersicht von 2016 an ihrer Zuverlässigkeit. Die Liste konnte ich nur über Zweitquellen bestätigen, nicht auf der Buchseite."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "story_id": 1279,
+  "kind": "anecdote",
+  "book": {
+    "title": "Dare to Lead",
+    "author": "Brené Brown",
+    "year": "2018"
+  },
+  "confidence": "high",
+  "confidence_note": "The special forces scene and quotes come from a published excerpt of the book and a review citing p.23. The old text's CEO conversation and invented armor names have no source and were dropped. The armored/daring pairs come from summaries of the book.",
+  "facts": [
+    "In 2014 Brown stood in front of several hundred military special forces soldiers on a base in the Midwest.",
+    "She defined vulnerability as the emotion we experience during uncertainty, risk and emotional exposure.",
+    "She asked: 'Can you give me a single example of courage that you've witnessed in another soldier or experienced in your own life that did not require experiencing vulnerability?'",
+    "The room went completely silent. 'Crickets.'",
+    "A young soldier said: 'No, ma'am. Three tours. I can't think of a single act of courage that doesn't require managing massive vulnerability.'",
+    "Brown has since asked the question a couple of hundred times in meeting rooms around the world.",
+    "She contrasts armored leadership (perfectionism and fear of failure, being the knower who must be right, power over people, collecting gold stars) with daring leadership (healthy striving, being a learner, power with people, giving gold stars).",
+    "Brown: 'When we get to the place that the armor is so thick that we no longer feel anything, we experience a real death.'",
+    "Brown: 'Vulnerability is not winning or losing. It's having the courage to show up when you can't control the outcome.'"
+  ],
+  "scene_details": [
+    "several hundred special forces soldiers on a Midwest base",
+    "complete silence: 'Crickets'",
+    "'No, ma'am. Three tours.'",
+    "collecting gold stars vs giving them"
+  ],
+  "tension": "A researcher tells a room of elite soldiers that courage needs vulnerability, and waits for one counterexample.",
+  "opening_idea": "Open on the silence after her question in front of the soldiers.",
+  "lessons": [
+    {
+      "idea": "Notice the armor you put on when unsure, such as needing to be the one who knows, and replace one instance with an honest 'I'm not sure yet'.",
+      "anchor": "Knower vs learner pair; the soldier's 'managing massive vulnerability'.",
+      "everyday_example_idea": "A new shift manager who always answers instantly, even when guessing, versus saying she will check."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In which recurring conversation do you most need to look like the one who knows, and what would you say there if you dropped that need?",
+  "use_cases": [
+    {
+      "situation": "Your team expects you to have the answer to a new problem.",
+      "move": "Say you do not know yet, name what you will find out, and invite their ideas.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague hides that a task is beyond them.",
+      "move": "Mention the soldier's three tours and that courage meant managing vulnerability, then ask what is hard for them.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your teenager will not admit a mistake.",
+      "move": "Admit a mistake of your own first, plainly.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Even soldiers after three tours could not name courage without vulnerability; drop the armor once today.",
+  "conversation_variants": {
+    "punchline_idea": "Brown asked hundreds of special forces soldiers for one act of courage without vulnerability, and nobody could give one.",
+    "thirty_sec_idea": "2014 base, question, silence, soldier's three tours answer; she has asked it a couple hundred times since.",
+    "question_idea": "",
+    "key_contrast_idea": "armor vs courage"
+  }
+}

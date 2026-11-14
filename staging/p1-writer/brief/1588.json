@@ -1,0 +1,61 @@
+{
+  "story_id": 1588,
+  "kind": "concept",
+  "book": {
+    "title": "Lifespan",
+    "author": "David A. Sinclair",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "Built from reviews and summaries, not the book text (full text unavailable). Old text's med-school dialogue and 'reset old mice's eyes' as a book event dropped; the 2020 Nature mouse paper post-dates the book and is used only as a labelled caveat. Scratched-CD analogy left out because sources disagree on which part is scratched. No book anecdote exists for this concept.",
+  "facts": [
+    "Sinclair argues aging should be treated as a disease: it is the common factor behind conditions from cancer to osteoporosis.",
+    "He criticises the disease-by-disease approach as extending lifespan but not healthspan, and says not classing aging as a disease misdirects research funding.",
+    "His Information Theory of Aging: loss of epigenetic information is the root cause.",
+    "DNA is the digital information and stays intact enough for cells to be reset to a youthful state.",
+    "The epigenome, for example methyl groups that block gene expression, is analog information whose predictable drift drives the hallmarks of aging.",
+    "Reviews trace the theory to yeast work in Leonard Guarente's lab, where DNA breaks made the Sir2 protein leave its post at the mating-type genes.",
+    "The book points to partial reprogramming with Yamanaka factors as a prospect, not a human treatment.",
+    "Caveat after the book: a December 2020 Nature paper from his lab put three reprogramming factors into retinal ganglion cells in mice and restored youthful methylation and better vision in a glaucoma model and in aged mice. Mice only.",
+    "Critics, including Charles Brenner in a letter to Cell, say the theory has not been tested."
+  ],
+  "scene_details": [
+    "methyl groups sitting on DNA and blocking genes",
+    "the Sir2 protein leaving its post in yeast",
+    "the mouse retina in the 2020 paper"
+  ],
+  "tension": "If aging is one cause behind many diseases, why do doctors treat each disease separately, and is the cause really lost information?",
+  "opening_idea": "Open on the contrast: every cell holds an intact DNA text, yet the layer that decides which genes are read has drifted.",
+  "lessons": [
+    {
+      "idea": "Ask what several problems share before fixing each one",
+      "anchor": "disease-by-disease treatment versus one underlying cause; Everyday: a baker whose bread, rolls and cakes all come out dry and who adjusts three recipes before checking the oven"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which problem at work or at home keeps coming back in different forms, and what might those versions have in common?",
+  "use_cases": [
+    {
+      "situation": "A team lists three separate complaints that all arrive late",
+      "move": "Sinclair's argument is that one cause can sit under many diseases. Before we fix each complaint, what do the three have in common?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A relative keeps treating symptoms one visit at a time",
+      "move": "Sinclair says doctors chase one disease at a time. Could we write all the symptoms on one page and look for what links them?",
+      "context": "family"
+    },
+    {
+      "situation": "You fix the same household issue for the third time",
+      "move": "Three repairs, same problem. I will stop patching and look for the one cause under all of them.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Sinclair names one cause, lost epigenetic information, behind many ailments. Look for the shared cause behind problems that keep returning.",
+  "conversation_variants": {
+    "punchline_idea": "Sinclair says the DNA text stays intact while the layer deciding which genes are read drifts.",
+    "thirty_sec_idea": "Sinclair calls aging a disease with one root cause: the cell keeps its DNA but loses epigenetic information, the marks that decide which genes are read. He says doctors fight one disease at a time and gain lifespan, not healthspan. Mouse work after the book restored vision in old mice, but it is mice, and critics say the theory is untested.",
+    "question_idea": "",
+    "key_contrast_idea": "many diseases, one cause"
+  }
+}

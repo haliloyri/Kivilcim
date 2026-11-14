@@ -39,6 +39,31 @@ export const getDeviceLang = () => {
 export const intlLocaleFor = (lang) => APP_LANG_TO_LOCALE[lang] || DEFAULT_INTL_LOCALE;
 
 /**
+ * Uppercases text for the in-app language. iOS applies `textTransform:
+ * 'uppercase'` without a locale, so Turkish "i" becomes "I" instead of "İ"
+ * ("LIDERLIK"). Map the Turkish pair by hand (Hermes locale support varies);
+ * the native transform is then a no-op on the already-uppercased string.
+ */
+export const toUpperFor = (text, lang) => {
+  const value = String(text ?? '');
+  if (lang === 'tr') return value.replace(/i/g, 'İ').replace(/ı/g, 'I').toUpperCase();
+  return value.toUpperCase();
+};
+
+/**
+ * Percent formatter driven by the in-app language ("%67" in Turkish,
+ * "67%" in English). `value` is a whole-number percentage (67, not 0.67).
+ */
+export const formatPercent = (value, lang) => {
+  if (typeof value !== 'number' || !Number.isFinite(value)) return '';
+  try {
+    return new Intl.NumberFormat(intlLocaleFor(lang), { style: 'percent', maximumFractionDigits: 0 }).format(value / 100);
+  } catch (e) {
+    return lang === 'tr' ? `%${Math.round(value)}` : `${Math.round(value)}%`;
+  }
+};
+
+/**
  * Currency formatter driven by the in-app language. Falls back to
  * "<amount> <CODE>" when Intl or the currency code is unavailable.
  */

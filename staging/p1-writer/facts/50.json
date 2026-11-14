@@ -1,0 +1,117 @@
+{
+ "book_no": 50,
+ "title": "The Alchemist",
+ "authors": "Paulo Coelho",
+ "year": "1988",
+ "sources": [
+  "https://www.litcharts.com/lit/the-alchemist/summary",
+  "https://cliffsnotes-v1.prod.webpr.hmhco.com/literature/a/the-alchemist/summary-and-analysis/part-2-oasis-episode",
+  "https://www.shmoop.com/study-guides/literature/the-alchemist/summary",
+  "https://storgy.com/works/the-alchemist/chapters/10/",
+  "https://makeheadway.com/blog/the-alchemist-summary/"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The Alchemist is a novel. Santiago, a young shepherd from Andalusia, travels toward the Egyptian pyramids after a recurring dream of treasure. The king Melchizedek tells him to follow omens and gives him two stones, Urim and Thummim, but tells him to rely on his own decisions.",
+   "source": "LitCharts",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Tribal wars in the desert stop Santiago's caravan at the oasis of Al-Fayoum, which is neutral ground: weapons are banned there.",
+   "source": "storgy; WebSearch summary of CliffsNotes",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "In the desert near the oasis Santiago watches hawks flying high; one hawk attacks another. He then sees an image of an army with drawn swords riding into the oasis.",
+   "source": "LitCharts ('a hawk attack another'); CliffsNotes summary via search; makeheadway",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "He tells the camel driver, who tells him to go to the tribal chieftains. He warns them.",
+   "source": "CliffsNotes summary via search; LitCharts",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "The chieftains decide the men of the oasis will break the agreement and carry arms the next day. If the warning proves false, Santiago will pay with his life; if true, he will be rewarded.",
+   "source": "LitCharts; Shmoop",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Leaving the chieftains that night, Santiago is confronted by a stranger on horseback who threatens him; Santiago says he is not afraid to die, and the stranger turns out to be the alchemist, who calls it a test of courage.",
+   "source": "LitCharts",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "The next day about five hundred tribesmen ride into the oasis with weapons hidden under their robes; the armed men of the oasis defeat them.",
+   "source": "CliffsNotes summary via search; Shmoop",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Santiago receives fifty pieces of gold and is asked to become counselor of the oasis.",
+   "source": "LitCharts (fifty pieces of gold); CliffsNotes via search (counselor)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Santiago reads the vision without reasoning it out; the oasis survives and his prediction is borne out. The alchemist then takes him on as his student.",
+   "source": "storgy",
+   "confidence": "medium"
+  },
+  {
+   "id": "f10",
+   "claim": "The novel ends with Santiago finding that the treasure was buried under a sycamore in the ruined church in Spain where his journey began.",
+   "source": "makeheadway",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Melchizedek gives Santiago two stones, Urim and Thummim, but tells him to rely on his own decisions. Earlier, in a crystal shop in Tangier, Santiago shows he has learned to read omens: seeing a tired man climbing the hill, he suggests selling tea.",
+   "source": "LitCharts",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Santiago stood in the desert with money gone and direction lost, saw two hawks dance, fled and was saved (old text)",
+   "reason": "Contradicts the novel: he did not flee; he warned the chieftains and risked his life."
+  },
+  {
+   "claim": "Quote 'The universe speaks, but only those who listen hear'",
+   "reason": "Not a verified line from the novel."
+  },
+  {
+   "claim": "Coelho interprets omens as selective attention (job ads, lovers)",
+   "reason": "Not in the novel; a modern psychological gloss."
+  },
+  {
+   "claim": "Book title 'Kaybedilen Cennet'",
+   "reason": "Wrong title in the old input; DB book 50 is Simyacı / The Alchemist."
+  }
+ ],
+ "stories": {
+  "1283": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f11"
+   ],
+   "note": "Center (reading omens, the hawks) is a real scene in the novel; old text distorted it. Rewritten from the actual oasis episode."
+  }
+ }
+}

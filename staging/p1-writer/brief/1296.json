@@ -1,0 +1,63 @@
+{
+  "story_id": 1296,
+  "kind": "anecdote",
+  "book": {
+    "title": "The 4-Hour Workweek",
+    "author": "Timothy Ferriss",
+    "year": "2007"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against the book text (chapter 'Disappearing Act: How to Escape the Office', expanded edition). Sherwood is the book's worked case study, introduced as an example person, not a real client; the story must say so. The old reference details (real client, Portugal, two months, made permanent, the quoted 'Europe' proposal) are not in the book and are dropped. Calling in sick to test remote work is Ferriss's tactic; report it, do not endorse it.",
+  "facts": [
+    "In The 4-Hour Workweek, Ferriss walks through an example person he calls Sherwood: a mechanical engineer with a side business selling French sailor shirts, who wants to escape constant office supervision.",
+    "After cutting time-wasters, Sherwood produces twice as many designs in half the time; he has moved about 80 percent of contact with his boss to e-mail and the rest to phone.",
+    "Step one: he asks the company to pay for a four-week industrial design class, so the company has invested more in him.",
+    "Step two: he calls in sick on a Tuesday and Wednesday, works from home using a free trial of GoToMyPC to run the CAD software licensed on his office desktop, and keeps records: three more designs per day than his average and three extra billable hours in total.",
+    "Step three: he turns that into a bullet-point list framed as a business benefit, crediting no commute and less office noise.",
+    "Step four: around 3 p.m. on a relaxed Thursday he knocks on his boss Bill's door, asks for two minutes, and proposes working from home Mondays and Tuesdays for a two-week trial Bill can veto any time. He asks for two days so he can fall back to one; Bill agrees, 'it's just a test'.",
+    "Step five: after strong remote days he asks for four days a week for another two weeks, ready to settle for three. Bill worries he is about to quit and that everyone will want the same; Sherwood says only people who show higher productivity should get it. Bill agrees: 'don't go blabbing about it.'",
+    "Later he asks for a two-week full-time remote trial during a project that needs his expertise; Ferriss notes that what you get often depends more on when you ask than how. The boss agrees and Sherwood buys a $524 round-trip ticket to Munich for Oktoberfest.",
+    "Ferriss's reasoning: ask for an inch and turn it into a foot without setting off panic alarms, and rehearse remote work before going for more."
+  ],
+  "scene_details": [
+    "GoToMyPC piloting an office desktop from home",
+    "a knock on Bill's door around 3 p.m. on a quiet Thursday, 'two minutes should be plenty'",
+    "a bullet-point page of extra designs and billable hours",
+    "a $524 ticket to Munich"
+  ],
+  "tension": "An engineer wants to leave the office for good, but asking for it outright would set off alarms.",
+  "opening_idea": "Start with the knock on Bill's door and the request for two minutes, before revealing where it leads.",
+  "lessons": [
+    {
+      "idea": "Ask for a small, reversible trial with numbers attached instead of a big permanent change.",
+      "anchor": "Two days, two weeks, veto any time; then four days; then full-time.",
+      "everyday_example_idea": "A shop employee who wants to run the shop's social account asks to try it for one month and report the results, instead of asking for a new job title."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What change you want at work could you shrink into a two-week trial that the other person could stop at any time?",
+  "use_cases": [
+    {
+      "situation": "You want a flexible arrangement from your manager.",
+      "move": "Propose a short trial with a clear review date and say they can end it any time, the way Ferriss's Sherwood asked for two days for two weeks.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your team is debating a big process change.",
+      "move": "Suggest piloting it in one part of the work for two weeks and comparing numbers before deciding.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A housemate or partner is wary of a new household arrangement.",
+      "move": "Offer to try it for two weeks and talk again on a set day.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Sherwood asked for two remote days on a two-week trial the boss could veto, then built from the numbers.",
+  "conversation_variants": {
+    "punchline_idea": "Ferriss's example engineer got to Oktoberfest by first asking his boss for just two days at home on a two-week trial.",
+    "thirty_sec_idea": "Sherwood's steps: training, sick-day test with records, two-day trial, four days, full-time, Munich ticket.",
+    "question_idea": "",
+    "key_contrast_idea": "Small trial, big freedom"
+  }
+}

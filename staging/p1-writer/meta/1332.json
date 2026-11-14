@@ -1,0 +1,35 @@
+{
+ "story_id": 1332,
+ "verdict": "keep",
+ "verify_note": "Chapter title, Manson's Law of Avoidance and the three questions confirmed by notes and quote pages. No concrete case could be verified, so it stays a concept story. The alcohol/overwork claim and rigid-vs-flexible generalisation are unsourced and dropped. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Ya Yanılıyorsam?",
+  "description": "Mark Manson'ın Kaçınma Yasası: bir şey kimliğinizi ne kadar tehdit ediyorsa ondan o kadar kaçarsınız. Ona karşı önerdiği üç soru.",
+  "hook": "Kendinizle ilgili hangi inancı sınamaktan en çok kaçıyorsunuz?",
+  "one_minute_summary": "Mark Manson bir bölümüne 'Her Konuda Yanılıyorsunuz (Ama Ben de Öyle)' adını verir. Ona göre büyümek her seferinde biraz daha az yanılmaktır ve kesinlik bunun düşmanıdır. Kaçınma Yasası şöyle der: bir şey kimliğinizi ne kadar tehdit ediyorsa, ondan o kadar kaçarsınız. Bu yüzden en emin olduğumuz inançlar hiç sınanmaz. Manson üç soru önerir: Ya yanılıyorsam? Yanılsaydım bu ne anlama gelirdi? Yanılmak bana daha iyi bir sorun mu getirirdi, daha kötü mü?"
+ },
+ "en": {
+  "title": "What If I'm Wrong?",
+  "description": "Manson's Law of Avoidance says the more something threatens your identity, the more you avoid it. He answers it with three questions about being wrong.",
+  "hook": "Which belief about yourself are you least willing to test?",
+  "one_minute_summary": "Mark Manson's chapter 'You're Wrong About Everything (But So Am I)' argues that growth means becoming a little less wrong each time, and that certainty stops learning. His Law of Avoidance: the more something threatens your identity, the more you will avoid it, so the beliefs we're surest of go untested. He offers three questions: What if I'm wrong? What would it mean if I were wrong? Would being wrong create a better or a worse problem than my current one?"
+ },
+ "es": {
+  "title": "¿Y si me equivoco?",
+  "description": "La Ley de la Evitación de Manson: cuanto más amenaza algo tu identidad, más lo evitas. Su respuesta son tres preguntas sobre equivocarse.",
+  "hook": "¿Qué creencia sobre ti mismo te cuesta más poner a prueba?",
+  "one_minute_summary": "En el capítulo 'Te equivocas en todo (pero yo también)', Mark Manson sostiene que crecer es equivocarse un poco menos cada vez y que la certeza frena el aprendizaje. Su Ley de la Evitación dice: cuanto más amenaza algo tu identidad, más lo evitarás. Por eso las creencias más seguras nunca se prueban. Propone tres preguntas: ¿Y si me equivoco? ¿Qué significaría equivocarme? ¿Equivocarme crearía un problema mejor o peor que el que tengo ahora?"
+ },
+ "de": {
+  "title": "Was, wenn ich mich irre?",
+  "description": "Mansons Gesetz der Vermeidung: Je mehr etwas deine Identität bedroht, desto mehr meidest du es. Dagegen setzt er drei Fragen zum eigenen Irrtum.",
+  "hook": "Welche Überzeugung über dich selbst würdest du am ungernsten prüfen?",
+  "one_minute_summary": "Mark Manson schlägt drei Fragen für Überzeugungen vor, an denen wir kaum zweifeln: Was, wenn ich mich irre? Was würde es bedeuten, wenn ich mich irre? Würde ein Irrtum ein besseres oder schlechteres Problem schaffen als mein jetziges? Dahinter steht sein Gesetz der Vermeidung: Je mehr etwas deine Identität bedroht, desto mehr wirst du es vermeiden. Sein Kapitel heißt 'Du irrst dich in allem (aber ich auch)', denn Gewissheit hält er für den Feind des Wachstums."
+ }
+}

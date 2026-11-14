@@ -1,0 +1,140 @@
+{
+  "book_no": 77,
+  "title": "The Success Principles",
+  "authors": [
+    "Jack Canfield",
+    "Janet Switzer"
+  ],
+  "year": "2005",
+  "note": "DB lists 2004; the first edition (HarperCollins, 1st ed., 522 pp., ISBN 0060594888) is dated 2005 in the archive.org catalogue record. Principle 1 was read directly in the publisher's OverDrive excerpt (Introduction, Principles 1-3, full table of contents). Principle 19 text was not reachable; facts for it come from summaries and reader highlights.",
+  "sources": [
+    "https://excerpts.cdn.overdrive.com/FormatType-410/0293-1/A33/F6D/55/SuccessPrinciples.epub",
+    "https://archive.org/details/successprinciple00canf",
+    "https://publishersweekly.com/9780060594886",
+    "https://www.shortform.com/blog/the-success-principles-by-jack-canfield/",
+    "https://www.huffpost.com/entry/formula-to-create-better-outcomes_n_5697f8a4e4b0ce496423ba6a",
+    "https://quotewise.io/q/38pit2/"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The book has 64 principles in six parts. Principle 1 is 'Take 100% Responsibility for Your Life'; Principle 19 is 'Use Feedback to Your Advantage'.",
+      "source": "Publisher excerpt, table of contents",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Canfield learned the formula E + R = O (Event + Response = Outcome) from Dr. Robert Resnick, a psychotherapist in Los Angeles. Every outcome is the result of how you responded to earlier events. If you don't like the outcome, you can blame the event or change your response.",
+      "source": "Publisher excerpt, Principle 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Northridge earthquake, 1994: Canfield lived through it in Los Angeles. Two days later he watched CNN interview commuters on a damaged freeway; a normal 1-hour drive had become 2 or 3 hours. The first driver said angrily: 'I hate California. First there were fires, then floods, and now an earthquake!' and that he would be late whatever time he left.",
+      "source": "Publisher excerpt, Principle 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "The second driver, in the car behind, was all smiles: he had left home at 5 a.m., had music cassettes and Spanish-language tapes, a cell phone, coffee in a thermos, his lunch and a book. 'It's no problem.' Canfield: if the earthquake or traffic were the deciding variable, everyone would have been angry; leaving prepared or unprepared made the difference.",
+      "source": "Publisher excerpt, Principle 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "A friend's Lexus dealership in Southern California: when the Gulf War broke out, people stopped coming in. Newspaper and radio ads were not working; sales fell steadily. Among several new tries, the one that worked was driving a fleet of new cars to country clubs, marinas, polo grounds and parties in Beverly Hills and Westlake Village and inviting people to test-drive. A high percentage bought or leased; they ended up selling more cars per week than before the war.",
+      "source": "Publisher excerpt, Principle 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Canfield: you control only three things, the thoughts you think, the images you visualize and the actions you take. Example pair: a $400 bonus spent on a night out leaves you broke; invested in a mutual fund it raises net worth.",
+      "source": "Publisher excerpt, Principle 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Canfield on complaining: people only complain about things they can change; nobody complains about gravity. People also complain to the wrong person (about the spouse at work, about work to the spouse). Replace complaining with requests and action.",
+      "source": "Publisher excerpt, Principle 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "When something doesn't turn out as planned, ask: 'How did I create that? What was I thinking? What were my beliefs? ... What do I need to do differently next time to get the result I want?'",
+      "source": "Publisher excerpt, Principle 1",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Principle 19: feedback tells you when you are getting off track and need to correct course. People often hold back feedback because they fear a negative reaction, so you have to ask for it.",
+      "source": "Shortform summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Canfield recommends the question 'On a scale of 1 to 10, how would you rate the quality of our relationship (service/product)?' and says he asks his wife and coworkers a version of it every week; answers below 10 often come with specific suggestions for improvement.",
+      "source": "Shortform summary; Canfield-attributed quote on quotewise.io. A follow-up 'what would it take to make it a 10' is not verified and is not used as a book fact.",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "A reader highlight from the book describes an airplane that is off course at least 90 percent of the time because of weather and turbulence, while the pilot keeps correcting from instrument feedback until it lands.",
+      "source": "Goodreads reader highlight via search; exact wording and route not verified",
+      "confidence": "low"
+    },
+    {
+      "id": "f12",
+      "claim": "Canfield's second sample question for asking feedback: 'In what ways do you see me holding myself back?' He advises accepting feedback gracefully.",
+      "source": "Shortform summary",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Two business people join the same network; after three months one has ten new clients, the other zero.",
+      "reason": "Not in the book. The book's real two-people case is the Northridge commuters."
+    },
+    {
+      "claim": "Quote 'The outside world is a mirror of your inner beliefs.'",
+      "reason": "No source."
+    },
+    {
+      "claim": "Canfield backs the idea with the Pygmalion (teacher expectation) research.",
+      "reason": "Not found in Principle 1 or in any summary."
+    },
+    {
+      "claim": "Canfield's missile metaphor: a missile constantly drifts and corrects.",
+      "reason": "No source. The feedback image attributed to the book is an airplane, and even that rests on one reader highlight."
+    },
+    {
+      "claim": "'Failure is not an end but feedback' as a Canfield line.",
+      "reason": "Paraphrase, no source."
+    }
+  ],
+  "stories": {
+    "1328": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f8"
+      ],
+      "note": "Recentered from an invented networking pair to the book's Northridge commuters and the Lexus dealership (E + R = O). Read in the publisher excerpt."
+    },
+    "1329": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f9",
+        "f10",
+        "f11",
+        "f12"
+      ],
+      "note": "Recentered on asking for feedback (the weekly 1-to-10 question). Missile metaphor dropped. Medium confidence: Principle 19 text not read directly."
+    }
+  }
+}

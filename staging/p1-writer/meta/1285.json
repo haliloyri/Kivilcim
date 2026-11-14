@@ -1,0 +1,35 @@
+{
+ "story_id": 1285,
+ "verdict": "keep",
+ "verify_note": "Keep. Garden passage, put/fall verbs, master-gardener and corn/nettles lines checked against the Project Gutenberg full text. Old paraphrased quote replaced by Allen's wording; editorial note that the circumstances claim is moral, not empirical.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Zihin bir bahçedir",
+  "description": "James Allen zihni, bakılmasa da bir şey veren bir bahçeye benzetir: iyi tohum konur, yabani ot kendiliğinden düşer.",
+  "hook": "Zihninizde siz ekmeden büyüyen düşünceler hangileri?",
+  "one_minute_summary": "James Allen, 1903'te yazdığı As a Man Thinketh'te zihni bir bahçeye benzetir: işlense de ihmal edilse de bir şey verecektir. Yararlı tohum konmazsa, yabani ot tohumları kendiliğinden düşer ve çoğalır. Allen fiilleri bile ayırır: iyi tohum konur, yabani ot düşer. Bahçıvan gibi kötü düşünceleri ayıklayıp iyi olanları büyüten kişi, kendi ruhunun usta bahçıvanı olduğunu keşfeder. Mısırdan mısır, ısırgandan ısırgan çıkar. Allen'ın koşullar hakkındaki geniş iddiası ise bir bulgu değil, ahlaki bir görüştür."
+ },
+ "en": {
+  "title": "The garden of the mind",
+  "description": "James Allen likens the mind to a garden that grows something either way: good seeds are put in, weed-seeds fall in.",
+  "hook": "Which thoughts are growing in your mind without you planting them?",
+  "one_minute_summary": "In As a Man Thinketh (1903), James Allen compares the mind to a garden that must bring forth something whether it is tended or not. If no useful seeds are put in, weed-seeds fall in on their own and multiply. He even italicizes the verbs: good seeds are put, weeds fall. Whoever keeps weeding discovers he is the master-gardener of his soul. Corn gives corn, nettles give nettles. His wider claim about circumstances is moral, not a measured finding."
+ },
+ "es": {
+  "title": "El jardín de la mente",
+  "description": "James Allen compara la mente con un jardín que siempre da algo: las buenas semillas se ponen, las malas hierbas caen solas.",
+  "hook": "¿Qué pensamientos crecen en tu mente sin que los hayas sembrado?",
+  "one_minute_summary": "En As a Man Thinketh (1903), James Allen compara la mente con un jardín que da fruto lo cuides o no. Si no se ponen semillas útiles, las de malas hierbas caen solas y se multiplican. Incluso marca los verbos en cursiva: lo bueno se pone, lo malo cae. Quien arranca las malas hierbas con constancia descubre que es el maestro jardinero de su alma. Del maíz sale maíz y de la ortiga, ortiga. Su idea más amplia sobre las circunstancias es moral, no un hallazgo medido."
+ },
+ "de": {
+  "title": "Der Garten des Geistes",
+  "description": "James Allen vergleicht den Geist mit einem Garten, der immer etwas hervorbringt: Gute Samen werden gelegt, Unkraut fällt von selbst.",
+  "hook": "Welche Gedanken wachsen in deinem Kopf, ohne dass du sie gesät hast?",
+  "one_minute_summary": "In As a Man Thinketh (1903) vergleicht James Allen den Geist mit einem Garten, der etwas hervorbringt, ob man ihn pflegt oder nicht. Werden keine nützlichen Samen hineingelegt, fallen Unkrautsamen von selbst hinein und vermehren sich. Allen setzt sogar die Verben kursiv: Gutes wird gelegt, Unkraut fällt. Wer beharrlich jätet, entdeckt, dass er der Meistergärtner seiner Seele ist. Aus Mais wird Mais, aus Nesseln Nesseln. Seine weitere Behauptung über die Umstände ist moralisch, kein Befund."
+ }
+}

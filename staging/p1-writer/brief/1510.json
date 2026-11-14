@@ -1,0 +1,63 @@
+{
+  "story_id": 1510,
+  "kind": "concept",
+  "book": {
+    "title": "A Guide to the Good Life",
+    "author": "William B. Irvine",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "Details come from reader notes, reviews and an interview transcript; no full text available. The old text's quote ('Sahip olduklarınızı zaten kaybetmiş gibi...'), the morning timing of the practice, the coffee example and claims about faster adaptation after real loss are not supported and were dropped. The Epictetus parting and saying-grace examples come from reader notes (medium). Critics (Donald Robertson) argue Irvine's tranquility aim and version of the technique differ from the ancient Stoics; kept out of the story except as Irvine's own stated aim.",
+  "facts": [
+    "Negative visualization means imagining losing what you value (a spouse, a car, a job); the Stoics thought it makes you value those things more. Irvine calls it the single most valuable technique in the Stoics' psychological tool kit.",
+    "Hedonic adaptation: people get what they want (marriage, children, house, car, job), take it for granted and form grander desires.",
+    "Irvine presents the technique as a way to learn to want the things we already have.",
+    "Epictetus advises silently reminding yourself, when parting from a friend, that this might be your final parting.",
+    "Saying grace is a form of it: pause to consider that the food might not have been available.",
+    "The Stoics practice it periodically, a few times a day or week, not constantly, which keeps them from becoming pessimists.",
+    "Seneca: be the user, but not the slave, of the gifts of Fortune; possessions are on loan from Fortune.",
+    "Irvine's aim is tranquility rather than virtue as an end in itself.",
+    "Epictetus advised imagining the death of your child while kissing the child goodnight, so you learn to appreciate the child's existence (reviewer's notes, medium).",
+    "Irvine frames the practice as contemplating the impermanence of the world around us and treating each visit, meal and meeting as possibly the last; the point is to appreciate small things, not to turn gloomy."
+  ],
+  "scene_details": [
+    "parting from a friend",
+    "pausing before a meal",
+    "a car, a job, a spouse imagined lost",
+    "possessions on loan from Fortune"
+  ],
+  "tension": "Getting what you wanted makes you stop noticing it, and the remedy is to imagine losing it, but only briefly.",
+  "opening_idea": "Open on the list of things people work for and then stop noticing, without naming the author.",
+  "lessons": [
+    {
+      "idea": "Picture a loss briefly and on purpose, then put it away, so what you have becomes noticeable again.",
+      "anchor": "hedonic adaptation and the pause before a meal"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which person or thing in your ordinary week have you stopped noticing, and when could you pause on it for one minute?",
+  "use_cases": [
+    {
+      "situation": "Everyone at dinner is on their phone",
+      "move": "Take a short pause before eating, as with saying grace, to think that this meal might not have been here.",
+      "context": "family"
+    },
+    {
+      "situation": "You say goodbye to a friend at the station",
+      "move": "Recall Epictetus's reminder that a parting might be the last, and say plainly that you are glad of the day.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A good routine has turned dull",
+      "move": "Picture it gone for a minute once or twice this week, then put the thought down and notice what is there.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Imagine losing something you have for one minute, then put the thought down and notice it.",
+  "conversation_variants": {
+    "punchline_idea": "Saying grace is already a Stoic exercise: for a moment the food might not have been there.",
+    "thirty_sec_idea": "People get what they want and stop noticing it; Irvine's Stoic fix is to picture the loss briefly and periodically, from a parting with a friend to a pause before a meal.",
+    "question_idea": "",
+    "key_contrast_idea": "taken for granted, noticed again"
+  }
+}

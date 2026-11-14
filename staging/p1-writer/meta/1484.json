@@ -1,0 +1,35 @@
+{
+ "story_id": 1484,
+ "verdict": "keep",
+ "verify_note": "Keep, medium-high confidence: the hospital finding (strongest teams reported the most errors) and the not-nice misconception are supported; Edmondson interview wording is used as her view, not as book quotes. Old quotes and the fewer-real-errors claim dropped; the story says only that reporting rose and hidden errors are not counted. The Christina Price opening and Project Aristotle come from secondary notes on the book (medium).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "En iyi ekipler çok hata bildirdi",
+  "description": "Amy Edmondson hastane servislerini karşılaştırırken en güçlü ekiplerin en çok hata bildirdiğini gördü. Sayılar neyi ölçüyordu?",
+  "hook": "Bir sorunu size erkenden getiren son kişiye ilk dakikada ne söylediniz?",
+  "one_minute_summary": "Amy Edmondson doktora öğrencisiyken hastane servislerinde ekip çalışması ile ilaç hataları arasındaki ilişkiye baktı. En güçlü ekiplerin en az hata yapacağını bekledi, ama bu servisler en çok hata bildirdi. Onu bu farkı iklim farkı olarak okudu: bazı servislerde hemşireler dozu yüksek sesle kontrol edebiliyor, bazılarında şüpheler halının altına süpürülüyordu. Hatanın söylenmediği yerde sayı da düşük çıkar. Bunun adı psikolojik güvenlik. Edmondson bunun nazik olmak anlamına gelmediğini ve hırsı da düşürmediğini söyler."
+ },
+ "en": {
+  "title": "Best teams reported most errors",
+  "description": "Amy Edmondson compared hospital units and found the strongest teams reported the most medication errors. What were the numbers measuring?",
+  "hook": "When did someone last bring you a problem early, and what did you say in the first minute?",
+  "one_minute_summary": "As a graduate student, Amy Edmondson studied how teamwork related to medication errors in hospital units. She expected the strongest teams to make the fewest mistakes, yet they reported the most. She read the gap as a difference in climate: in some units nurses could say let us check that dose, in others things went under the rug. An error nobody mentions never reaches the count. She later called the climate psychological safety, and she says it is not about being nice and does not lower ambition."
+ },
+ "es": {
+  "title": "Los mejores equipos informaron más errores",
+  "description": "Amy Edmondson comparó unidades de hospital y vio que los mejores equipos informaban de más errores de medicación. ¿Qué medían los números?",
+  "hook": "¿Cuándo fue la última vez que alguien te trajo un problema a tiempo y qué dijiste en el primer minuto?",
+  "one_minute_summary": "Siendo estudiante de posgrado, Amy Edmondson estudió cómo se relacionaba el trabajo en equipo con los errores de medicación en unidades de hospital. Esperaba que los mejores equipos cometieran menos errores, pero informaron de más. Leyó la diferencia como una diferencia de clima: en unas unidades las enfermeras decían comprobemos esa dosis, en otras todo se barría bajo la alfombra. Un error que nadie menciona no llega al recuento. Más tarde llamó seguridad psicológica a ese clima, y dice que no significa ser amable ni rebaja la ambición."
+ },
+ "de": {
+  "title": "Beste Teams meldeten die meisten Fehler",
+  "description": "Amy Edmondson verglich Krankenhausstationen und fand, dass die stärksten Teams die meisten Medikationsfehler meldeten. Was maßen die Zahlen?",
+  "hook": "Wann hat dir zuletzt jemand ein Problem früh gebracht, und was hast du in der ersten Minute gesagt?",
+  "one_minute_summary": "Als Doktorandin untersuchte Amy Edmondson, wie Teamarbeit und Medikationsfehler auf Krankenhausstationen zusammenhingen. Sie erwartete, dass die stärksten Teams die wenigsten Fehler machen, doch sie meldeten die meisten. Sie las den Unterschied als Unterschied im Klima: Auf manchen Stationen sagten Pflegekräfte, prüfen wir die Dosis, auf anderen wurde alles unter den Teppich gekehrt. Ein Fehler, den niemand erwähnt, taucht nie in der Zählung auf. Später nannte sie dieses Klima psychologische Sicherheit, und sie sagt, es bedeute nicht Nettsein und senke den Ehrgeiz nicht."
+ }
+}

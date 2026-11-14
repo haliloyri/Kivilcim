@@ -1,0 +1,38 @@
+{
+ "book_no": 192,
+ "title": "Deep Work",
+ "authors": ["Cal Newport"],
+ "year": "2016",
+ "sources": [
+  "https://knowledge.wharton.upenn.edu/article/deep-work-the-secret-to-achieving-peak-productivity/",
+  "https://imaddabbura.github.io/books-summaries/deep-work",
+  "https://calnewport.com/carl-jungs-fantastical-retreat/",
+  "https://1000kitap.com (Turkish edition 'Pürdikkat', Metropolis, 2019)"
+ ],
+ "facts": [
+  {"id": "d1", "claim": "Deep Work: Rules for Focused Success in a Distracted World, Cal Newport, 2016. DB title 'Konsantrasyon Gücü' (2020) could not be matched to a Turkish edition; the Turkish edition found is 'Pürdikkat' (Metropolis, 2019). All stories rest on Deep Work.", "source": "1000kitap, search", "confidence": "medium"},
+  {"id": "d2", "claim": "Newport defines deep work as professional activities performed in a state of distraction-free concentration that push cognitive capabilities to their limit, create new value, improve skill and are hard to replicate.", "source": "book summaries", "confidence": "high"},
+  {"id": "d3", "claim": "Shallow work: non-cognitively demanding, logistical-style tasks, often performed while distracted, such as answering email, attending status meetings, filling out forms; they tend not to create much new value and are easy to replicate.", "source": "book summaries", "confidence": "high"},
+  {"id": "d4", "claim": "Newport's formula: High-Quality Work Produced = (Time Spent) x (Intensity of Focus).", "source": "Wharton Knowledge", "confidence": "high"},
+  {"id": "d5", "claim": "Sophie Leroy (2009 paper 'Why Is It So Hard to Do My Work?') introduced attention residue: after switching from task A to task B, part of your attention stays on A.", "source": "Wharton Knowledge", "confidence": "high"},
+  {"id": "d6", "claim": "The residue is thickest when the work on task A was unbounded and low in intensity.", "source": "Wharton Knowledge", "confidence": "high"},
+  {"id": "d7", "claim": "In Leroy's lab studies participants solved word puzzles, were interrupted to evaluate resumes, then took a quick lexical decision test to measure leftover residue. People with attention residue performed worse on the next task; more residue meant worse performance.", "source": "Wharton Knowledge", "confidence": "high"},
+  {"id": "d8", "claim": "Newport says experts max out around four hours of deep work a day, beginners far less.", "source": "imaddabbura summary", "confidence": "medium"},
+  {"id": "d9", "claim": "Ritualizing: decide where you will work and for how long; set rules for the session (no internet, or an output target); prepare support (food, drinks, a walk before starting).", "source": "imaddabbura summary", "confidence": "medium"},
+  {"id": "d10", "claim": "Newport describes four scheduling philosophies: monastic, bimodal, rhythmic and journalistic; Carl Jung is cited as a bimodal example.", "source": "imaddabbura summary", "confidence": "medium"},
+  {"id": "d11", "claim": "Carl Jung began building the Bollingen Tower retreat in 1922; Newport's point is that Jung retreated there to advance his work, not to escape it.", "source": "calnewport.com blog", "confidence": "medium"},
+  {"id": "d12", "claim": "Bill Gates took 'Think Weeks' twice a year, isolating himself (often in a lakeside cottage) to read and think; in a 1995 Think Week he wrote the 'Internet Tidal Wave' memo.", "source": "summaries of the book", "confidence": "medium"},
+  {"id": "d13", "claim": "Darwin kept a strict structure while perfecting On the Origin of Species: as his son Francis remembered, he rose promptly at seven to take a short walk, and worked in his study about 8 to 9:30.", "source": "reader notes / blog quoting the book", "confidence": "medium"}
+ ],
+ "rejected": [
+  {"claim": "Typical knowledge workers get one to two hours of deep work a week/day (measured).", "reason": "No such figure found in the book."},
+  {"claim": "An interrupted knowledge worker needs on average 23 minutes to regain focus; ten interruptions cost 230 minutes.", "reason": "Not attributable to Deep Work (comes from other research)."},
+  {"claim": "Karl Marx worked at the same desk in the British Museum; Woody Allen the same typewriter every day.", "reason": "Not found in Deep Work sources."},
+  {"claim": "Open offices and constant notifications are enemies of deep work (Newport quote).", "reason": "Wording not verified."}
+ ],
+ "stories": {
+  "1672": {"verdict": "keep", "fact_ids": ["d2", "d3", "d4", "d8"], "note": "Definitions and the time x intensity formula; invented hour counts dropped."},
+  "1673": {"verdict": "keep", "fact_ids": ["d5", "d6", "d7"], "note": "Leroy experiment replaces unverified 23-minute arithmetic."},
+  "1674": {"verdict": "keep", "fact_ids": ["d9", "d10", "d11", "d12", "d13"], "note": "Darwin, Jung and Gates replace Marx and Woody Allen."}
+ }
+}

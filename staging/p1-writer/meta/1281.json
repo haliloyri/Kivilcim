@@ -1,0 +1,35 @@
+{
+ "story_id": 1281,
+ "verdict": "keep",
+ "verify_note": "Keep. List of 100+ values, cut to two, supporting and slippery behaviors confirmed by several summaries; Brown's own pair (faith and courage) medium. Old claim that 'the strongest leaders have two or three values' dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Yüz değerden iki değere",
+  "description": "Brené Brown okura yüzden fazla değer verip yalnızca ikisini tutmasını ve her biri için davranış yazmasını ister.",
+  "hook": "Yalnızca iki değer tutsaydınız, hangileri kalırdı?",
+  "one_minute_summary": "Brené Brown, Dare to Lead'de okura yüzden fazla değerlik bir liste verir ve ikisi hariç hepsinin üstünü çizmesini ister, çünkü her şey öncelikse hiçbir şey öncelik değildir. Kendi iki değeri inanç ve cesarettir. Ardından her değer için onu yaşadığınızı gösteren üç dört davranış, yanına da değerden kaydığınızda yaptığınız kaygan davranışlar yazılır. Böylece değer bir slogan olmaktan çıkar, hangi davranışın tekrarlanacağını ve hangisinin durdurulacağını gösteren bir sayfaya dönüşür."
+ },
+ "en": {
+  "title": "From a hundred values to two",
+  "description": "Brené Brown hands readers over a hundred values, lets them keep two, and asks for the behaviors behind each.",
+  "hook": "If you kept only two values, which would they be?",
+  "one_minute_summary": "In Dare to Lead, Brené Brown gives readers a list of more than a hundred values and asks them to cross out all but two, because if everything is a priority, nothing is. Her own two are faith and courage. For each value you then write three or four behaviors that show it, and next to them the slippery behaviors you fall into when you drift away. The value stops being a slogan and becomes a page you can check yourself against."
+ },
+ "es": {
+  "title": "De cien valores a dos",
+  "description": "Brené Brown entrega más de cien valores, deja quedarse con dos y pide las conductas detrás de cada uno.",
+  "hook": "Si solo conservaras dos valores, ¿cuáles serían?",
+  "one_minute_summary": "En Dare to Lead, Brené Brown entrega una lista de más de cien valores y pide tachar todos menos dos, porque si todo es prioridad, nada lo es. Los suyos son la fe y el valor. Para cada uno se escriben tres o cuatro conductas que lo muestran y, al lado, las conductas resbaladizas en las que caes cuando te alejas. Así el valor deja de ser un eslogan y se convierte en una página con la que comprobarte."
+ },
+ "de": {
+  "title": "Von hundert Werten zu zwei",
+  "description": "Brené Brown gibt über hundert Werte vor, lässt nur zwei übrig und verlangt das Verhalten dahinter.",
+  "hook": "Wenn du nur zwei Werte behalten dürftest, welche wären es?",
+  "one_minute_summary": "In Dare to Lead gibt Brené Brown eine Liste mit über hundert Werten aus und verlangt, alle bis auf zwei zu streichen, denn wenn alles Priorität hat, hat nichts Priorität. Ihre eigenen sind Glaube und Mut. Zu jedem Wert schreibst du drei oder vier Verhaltensweisen, die ihn zeigen, und daneben die rutschigen, in die du fällst, wenn du dich entfernst. So wird aus dem Slogan eine Seite, an der du dich messen kannst."
+ }
+}

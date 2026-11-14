@@ -1,0 +1,35 @@
+{
+ "story_id": 1369,
+ "verdict": "keep",
+ "verify_note": "Chapter 1 of Never Split the Difference (2016) checked in the publisher's reading sample. The old text's generic bank-robbery scene and invented Voss quotes were dropped. Rebuilt on the Harvard role play with Mnookin and Blum and the FBI's turn after Ruby Ridge and Waco.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Harvard'da Sahte Bir Fidye",
+  "description": "İki Harvard profesörü Chris Voss'a oğlunu kaçırmış gibi pazarlık kuruyor. FBI müzakerecisinin tek bir soruyla oyunu nasıl çevirdiğini ve FBI'ın neden mantıktan duyguya döndüğünü anlatıyor.",
+  "hook": "Bir milyon dolarlık tehdide hangi soru cevap olabilir?",
+  "one_minute_summary": "Chris Voss, Never Split the Difference'ın başında Harvard'daki bir rol oyununu anlatıyor. Robert Mnookin kaçıran rolüne giriyor ve bir milyon dolar istiyor. Voss \"Bunu nasıl yapmam gerekiyor?\" diye soruyor, ardından oğlunun yaşadığını nereden bileceğini. Gabriella Blum da deniyor ama aynı sorularla karşılaşıyor ve Mnookin, FBI'ın öğretecek bir şeyi olabileceğini kabul ediyor. Voss'a göre FBI, Ruby Ridge ve Waco'dan sonra rehine pazarlıklarının rasyonel problem çözme olmadığını anlamıştı."
+ },
+ "en": {
+  "title": "A Fake Ransom at Harvard",
+  "description": "Two Harvard professors stage a kidnapping to test Chris Voss. One calm question turns the game, and the FBI's history explains why emotion matters.",
+  "hook": "What question answers a million-dollar threat?",
+  "one_minute_summary": "Chris Voss opens Never Split the Difference with a role play at Harvard. Robert Mnookin plays a kidnapper demanding a million dollars for Voss's son. Voss asks, \"How am I supposed to do that?\" and then how he can know his son is alive. Gabriella Blum takes over and gets the same questions, and Mnookin concedes the FBI might have something to teach them. Voss explains that after Ruby Ridge and Waco the FBI had to accept that hostage talks are not rational problem-solving."
+ },
+ "es": {
+  "title": "Un falso rescate en Harvard",
+  "description": "Dos profesores de Harvard montan un secuestro de prueba para Chris Voss. Una pregunta tranquila da la vuelta al juego y explica por qué el FBI aprendió a contar con las emociones.",
+  "hook": "¿Qué pregunta puede responder a una amenaza de un millón de dólares?",
+  "one_minute_summary": "Chris Voss abre Never Split the Difference con un ensayo en Harvard. Robert Mnookin hace de secuestrador y pide un millón por el hijo de Voss. Voss responde \"¿Y cómo se supone que voy a hacer eso?\" y pregunta cómo sabe que su hijo sigue vivo. Gabriella Blum lo intenta y recibe las mismas preguntas, y Mnookin admite que el FBI quizá tenga algo que enseñarles. Tras Ruby Ridge y Waco, explica Voss, el FBI dejó de tratar los rehenes como problemas racionales."
+ },
+ "de": {
+  "title": "Ein falsches Lösegeld in Harvard",
+  "description": "Zwei Harvard-Professoren inszenieren für Chris Voss eine Entführung. Eine ruhige Frage dreht das Spiel, und die Geschichte des FBI zeigt, warum Gefühle zählen.",
+  "hook": "Welche Frage beantwortet eine Drohung über eine Million Dollar?",
+  "one_minute_summary": "Chris Voss beginnt Never Split the Difference mit einem Rollenspiel in Harvard. Robert Mnookin spielt einen Entführer, der eine Million Dollar für Voss' Sohn verlangt. Voss fragt: \"Wie soll ich das machen?\", und dann, woher er wissen soll, dass sein Sohn lebt. Gabriella Blum versucht es auch und bekommt dieselben Fragen, bis Mnookin einräumt, das FBI könne ihnen etwas beibringen. Nach Ruby Ridge und Waco, so Voss, musste das FBI akzeptieren, dass Geiselverhandlungen keine rationale Problemlösung sind."
+ }
+}

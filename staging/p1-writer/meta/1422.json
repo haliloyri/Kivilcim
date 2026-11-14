@@ -1,0 +1,35 @@
+{
+ "story_id": 1422,
+ "verdict": "keep",
+ "verify_note": "Keep: rebuilt on the Five-Minute Rule for emotional pain in The Miracle Equation (Elrod, 2019) and the suffering-as-resistance framing; two secondary summaries, full text not read. Old text (cortisol window; the five-second rule is Mel Robbins's) dropped. Facts file 108.json.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Beş dakikalık kural",
+  "description": "Elrod kötü haber için zamanlayıcı kuruyor: beş dakika serbestçe üzülün, sonra yüksek sesle bir cümleyle kapatın.",
+  "hook": "Değiştiremeyeceğiniz bir şey ters gittiğinde ilk beş dakikayı nasıl geçirirdiniz?",
+  "one_minute_summary": "Hal Elrod'un The Miracle Equation kitabında duygusal acı için Beş Dakika Kuralı var. Kötü bir şey olunca zamanlayıcıyı beş dakikaya kurup ne gerekiyorsa yapıyorsunuz: ağlamak, şikâyet etmek, bağırmak. Süre dolunca yüksek sesle \"değiştiremem\" deyip devam ediyorsunuz. Elrod'a göre acı gerçeğe direnmekten doğuyor ve duygusal acı çoğu zaman olaydan çok ona verdiğimiz karşılıkla ilgili. Huzur da mutluluk değil, değiştiremeyeceğiniz şeyi kabul etmek. Bu özet kitabın tamamına değil, ikincil kaynaklara dayanıyor."
+ },
+ "en": {
+  "title": "The five-minute rule",
+  "description": "Elrod sets a timer for bad news: five minutes to feel it however you need, then one spoken sentence to close it.",
+  "hook": "When something goes wrong that you cannot change, what would you do with the first five minutes?",
+  "one_minute_summary": "Hal Elrod's The Miracle Equation has a Five-Minute Rule for emotional pain. When something bad happens, set a timer for five minutes and do whatever you need: cry, complain, scream. When it rings, say \"can't change it\" out loud and move on. Elrod says suffering is the direct result of resisting our reality, and that emotional pain depends less on what happens than on how we respond. This summary rests on secondary sources, not the full text."
+ },
+ "es": {
+  "title": "La regla de cinco minutos",
+  "description": "Elrod pone un temporizador a las malas noticias: cinco minutos para sentirlas como necesites y una frase en voz alta para cerrarlas.",
+  "hook": "Cuando algo sale mal y no puedes cambiarlo, ¿qué harías con los primeros cinco minutos?",
+  "one_minute_summary": "The Miracle Equation de Hal Elrod trae una Regla de los Cinco Minutos para el dolor emocional. Cuando pasa algo malo, pones un temporizador de cinco minutos y haces lo que necesites: llorar, quejarte, gritar. Al sonar, dices \"no puedo cambiarlo\" en voz alta y sigues. Según Elrod, el sufrimiento es el resultado directo de resistirnos a nuestra realidad, y el dolor emocional depende menos de lo que ocurre que de cómo respondemos. El resumen se apoya en fuentes secundarias, no en el texto completo."
+ },
+ "de": {
+  "title": "Die Fünf-Minuten-Regel",
+  "description": "Elrod stellt bei schlechten Nachrichten einen Timer: fünf Minuten fühlen, wie du es brauchst, dann ein laut gesprochener Schlusssatz.",
+  "hook": "Was würdest du mit den ersten fünf Minuten tun, wenn etwas schiefgeht, das du nicht ändern kannst?",
+  "one_minute_summary": "Hal Elrods The Miracle Equation enthält eine Fünf-Minuten-Regel für seelischen Schmerz. Passiert etwas Schlimmes, stellst du einen Timer auf fünf Minuten und tust, was du brauchst: weinen, klagen, schreien. Klingelt er, sagst du laut \"kann ich nicht ändern\" und machst weiter. Nach Elrod ist Leiden die direkte Folge davon, sich gegen die Wirklichkeit zu wehren, und seelischer Schmerz hängt weniger vom Ereignis ab als von unserer Reaktion. Die Zusammenfassung stützt sich auf Sekundärquellen, nicht auf den vollen Text."
+ }
+}

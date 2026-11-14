@@ -1,0 +1,64 @@
+{
+  "story_id": 1494,
+  "kind": "anecdote",
+  "book": {
+    "title": "Lost Connections",
+    "author": "Johann Hari",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The farmer account is checked against secondhand summaries (a Substack summary and others); tellings differ on small details, and the book text was not read. Old text's 'tractor accident' is wrong (a land mine) and its village-healer dialogue, 'cows and milk shared with neighbours' and 'group therapy as good as drugs' claims were not found and are dropped. Summerfield as the source is reported by one summary (low). Critics say Hari cherry-picks, so the case is presented as an illustration, not a trial.",
+  "facts": [
+    "Lost Connections (2018) by Johann Hari names nine causes of depression and anxiety, among them a lost hopeful or secure future and lost meaningful work.",
+    "A Cambodian farmer lost his left leg to a land mine.",
+    "He got an artificial limb but did not recover; he felt constant anxiety about the future and despair.",
+    "Doctors and neighbours sat with him and talked through his life.",
+    "His old rice-paddy work was too hard for him now, so they bought him a cow so he could become a dairy farmer.",
+    "Over the following months and years his depression went away.",
+    "Locals described the cow as 'an analgesic, and antidepressant'.",
+    "One summary attributes the account to Dr Derek Summerfield, who studied mental health in Cambodia.",
+    "Hari argues depression is far from simply a chemical imbalance, though chemistry may be a small part of it.",
+    "Critics note that Hari is a writer rather than a scientist and accuse him of cherry-picking evidence."
+  ],
+  "scene_details": [
+    "a land mine and a left leg",
+    "a rice paddy too hard to work now",
+    "doctors and neighbours sitting down to talk through his life",
+    "a cow bought for him, 'an analgesic, and antidepressant'"
+  ],
+  "tension": "An artificial limb fixed the leg but not the despair; what did?",
+  "opening_idea": "Open on the land mine and the artificial limb that did not bring recovery.",
+  "lessons": [
+    {
+      "idea": "Ask what useful role a person could still have, and help them get a first step toward it.",
+      "anchor": "The cow gave the farmer new work and a future.",
+      "example": "A retired teacher who has stopped leaving the flat is asked by neighbours to tutor their children."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When did you last feel useful to someone else, and what would it take to have that feeling again this month?",
+  "use_cases": [
+    {
+      "situation": "A friend has withdrawn since losing their job.",
+      "move": "Ask what they would like to be useful at, as the Cambodian doctors and neighbours asked about the farmer's life, then offer one small first step.",
+      "context": "social"
+    },
+    {
+      "situation": "A grandparent has stopped doing things since retiring.",
+      "move": "Ask them to teach you one thing they know well.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel flat since a project ended.",
+      "move": "Name one thing you could be useful at for someone this week and arrange it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A cow gave a Cambodian farmer work and a future; ask what could give someone a use again.",
+  "conversation_variants": {
+    "punchline_idea": "In Hari's telling, a Cambodian farmer's depression lifted after neighbours bought him a cow.",
+    "thirty_sec_idea": "Johann Hari tells of a Cambodian farmer who lost his left leg to a land mine and sank into despair even with an artificial limb. Doctors and neighbours sat down with him and bought him a cow so he could farm dairy. Over months and years his depression went away. Hari reads it as a lost future being rebuilt.",
+    "question_idea": "",
+    "key_contrast_idea": "limb fixed, future missing"
+  }
+}

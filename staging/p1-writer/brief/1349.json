@@ -1,0 +1,61 @@
+{
+ "story_id": 1349,
+ "kind": "anecdote",
+ "book": {
+  "title": "Make It Stick",
+  "author": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+  "year": "2014"
+ },
+ "confidence": "high",
+ "confidence_note": "The student with the D, the UCLA fire extinguisher study and the 148-student rereading studies are verified in ch. 1. The old text's term 'illusion knowledge' and the 'read once, test twice beats read three times' ratio are not in the book text and are dropped. The student is unnamed in the book.",
+ "facts": [
+  "A first-year student knocks on a professor's door after a low grade, a D, on his first introductory psychology test.",
+  "He attended every lecture, took diligent notes, read the text and highlighted it; then he highlighted his notes and reviewed the highlights several times until it all felt familiar.",
+  "The professor asks: did he use the key concepts at the back of each chapter to test himself, could he define 'conditioned stimulus' and use it in a paragraph, did he turn main points into questions or put ideas in his own words? No in every case.",
+  "Surveys show highlighting, underlining and poring over notes are by far the most-used study strategies.",
+  "In Washington University studies, 148 students read textbook and Scientific American passages once or twice in a row; rereading gave no benefit under these conditions.",
+  "Familiarity with a text and fluency in reading it create an illusion of mastery; being able to repeat a phrase is no sign of understanding.",
+  "At UCLA most faculty and students in the Psychology Building could not identify the fire extinguisher closest to their office; a professor of 25 years found it inches from the doorknob he turned every day.",
+  "The authors' remedy: retrieval practice, quizzing yourself, which also shows you what you actually know."
+ ],
+ "scene_details": [
+  "highlighted notes reviewed until familiar",
+  "a knock on the professor's office door",
+  "'conditioned stimulus' as a test question",
+  "a fire extinguisher inches from a doorknob"
+ ],
+ "tension": "The most diligent student in the room gets a D, and his method felt like it was working.",
+ "opening_idea": "Open with the knock and the D, then reveal how carefully he studied.",
+ "lessons": [
+  {
+   "idea": "Familiarity feels like knowing; test yourself with the book closed to find out which it is.",
+   "anchor": "Highlights reviewed until familiar; no answer to 'define conditioned stimulus'."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What topic do you feel you know well that you have never tried to explain without notes?",
+ "use_cases": [
+  {
+   "situation": "Teen rereading notes the night before a test",
+   "move": "In one study a student who reread his highlights until they felt familiar still got a D. Suggest closing the notebook and explaining one concept aloud.",
+   "context": "family"
+  },
+  {
+   "situation": "After a training, team says 'we got it'",
+   "move": "Ask each person to write down the three main steps without the slides.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Finishing a chapter of a book",
+   "move": "Close it and write three sentences on what it said, then check what you missed.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Highlighted pages feel familiar; close the book and explain one idea aloud to learn what you know.",
+ "conversation_variants": {
+  "punchline_idea": "A professor of 25 years found the fire extinguisher inches from his own doorknob.",
+  "thirty_sec_idea": "A diligent student gets a D: he reread highlighted notes until familiar but never tested himself. Make It Stick says rereading in a row gave no benefit in studies; fluency is an illusion of mastery; quiz yourself instead.",
+  "question_idea": "",
+  "key_contrast_idea": "familiar is not known"
+ }
+}

@@ -19,6 +19,7 @@ import { FEATURE_FLAGS } from '../config/featureFlags';
 import { t } from '../locales/i18n';
 import { getStoryByLang } from '../db/db';
 import { getCategoryTheme, getCategoryPillImage } from '../utils/categoryImages';
+import { getStoryCollection } from '../constants/storyCollections';
 import { readableTextOn } from '../theme/theme';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
@@ -27,7 +28,7 @@ import { shouldShowAd, rewardedGate, loadRewarded, showRewarded, loadInterstitia
 import { getShareLabel, getShareUrl } from '../utils/share';
 import { hasReachedReadingCompletion, isShortStoryFullyVisible, ONE_MINUTE_SUMMARY_DWELL_MS, SHORT_STORY_DWELL_MS } from '../utils/storyCompletion';
 import { getStoryAudioUrl } from '../utils/storyAudio';
-import { intlLocaleFor } from '../utils/locale';
+import { intlLocaleFor, toUpperFor } from '../utils/locale';
 import StoryBody from '../components/story/StoryBody';
 import ReaderPanels from '../components/story/ReaderPanels';
 import ReaderActions from '../components/story/ReaderActions';
@@ -128,6 +129,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
 
     try {
       player.pause();
+      player.clearLockScreenControls();
     } catch {
       // The player may already have completed or been released by the platform.
     }
@@ -384,7 +386,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const displayCat = t(localStory.cat_display || localStory.cat || story.cat, localLang);
   const displayHook = localStory.hook || story.hook || '';
   const oneMinuteSummary = String(localStory.one_minute_summary || '').trim();
-  const collectionCode = String(story?.version ?? '').trim().toUpperCase();
+  const storyCollection = getStoryCollection(story?.version);
   const categoryKey = story.parent_cat_raw || story.parent_cat || localStory.cat || story.cat;
   const baseCategoryTheme = getCategoryTheme(categoryKey, isDark);
   // Category colour marks icon, section bars and small labels only; the main
@@ -647,7 +649,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
       narrationCapTimerRef.current = setTimeout(stopStoryNarration, NARRATION_MAX_MS);
     };
 
-    if (isSpeaking || storyAudioPlayerRef.current) {
+    // Resume instead of restarting when playback was paused from the lock screen.
+    if (!isSpeaking && storyAudioPlayerRef.current) {
+      storyAudioPlayerRef.current.play();
+      setIsSpeaking(true);
+      return;
+    }
+
+    if (isSpeaking) {
       stopStoryNarration();
       return;
     }
@@ -665,16 +674,32 @@ const StoryDetailScreen = ({ route, navigation }) => {
       await setAudioModeAsync({
         allowsRecording: false,
         playsInSilentMode: true,
-        shouldPlayInBackground: false,
+        shouldPlayInBackground: true,
+        // Required for the OS to tie the lock screen controls to this player.
+        interruptionMode: 'doNotMix',
       });
 
       const player = createAudioPlayer({ uri: storyAudioUrl }, { updateInterval: 250 });
       storyAudioPlayerRef.current = player;
+      player.setActiveForLockScreen(true, {
+        title: displayTitle,
+        artist: t('brandText', localLang),
+      });
       setIsSpeaking(true);
       speechStartedAt.current = Date.now();
 
+      let playbackBegan = false;
       storyAudioSubscriptionRef.current = player.addListener('playbackStatusUpdate', (status) => {
-        if (!status.didJustFinish || storyAudioPlayerRef.current !== player) return;
+        if (storyAudioPlayerRef.current !== player) return;
+
+        // Keep the in-app button in sync when playback is paused from the lock
+        // screen. The early updates before play() takes effect are ignored, so
+        // a not-yet-started player is never reported as paused.
+        if (!status.didJustFinish) {
+          if (status.playing) playbackBegan = true;
+          if (playbackBegan) setIsSpeaking(status.playing);
+          return;
+        }
 
         releaseStoryAudioPlayer();
         setIsSpeaking(false);
@@ -1288,16 +1313,6 @@ const StoryDetailScreen = ({ route, navigation }) => {
       fontFamily: 'Inter_600SemiBold',
       fontSize: 13,
     },
-    collectionCode: {
-      fontFamily: 'Inter_600SemiBold',
-      fontSize: 11,
-      letterSpacing: 0.5,
-      borderWidth: 1,
-      borderRadius: 6,
-      paddingHorizontal: 6,
-      paddingVertical: 1,
-      overflow: 'hidden',
-    },
     headerPillLeft: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -1875,9 +1890,14 @@ const StoryDetailScreen = ({ route, navigation }) => {
         >
           <View style={styles.storyHero}>
             <View style={styles.categoryRow}>
-              <Text style={[styles.categoryName, { color: categoryTheme.textAccent, textTransform: 'uppercase', letterSpacing: 1 }]}>{displayCat}</Text>
-              {collectionCode ? (
-                <Text style={[styles.collectionCode, { color: categoryTheme.textAccent, borderColor: categoryTheme.borderColor }]}>{collectionCode}</Text>
+              <Text style={[styles.categoryName, { color: categoryTheme.textAccent, textTransform: 'uppercase', letterSpacing: 1 }]}>{toUpperFor(displayCat, lang)}</Text>
+              {storyCollection ? (
+                <Ionicons
+                  name={storyCollection.icon}
+                  size={15}
+                  color={categoryTheme.textAccent}
+                  accessibilityLabel={t(storyCollection.label, localLang)}
+                />
               ) : null}
             </View>
             <Animated.Text style={[styles.detailTitle, titleEnterStyle]}>{displayTitle}</Animated.Text>
@@ -1976,7 +1996,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                       <View style={styles.takeawayLabelRow}>
                         <Ionicons name="bulb-outline" size={15} color={categoryTheme.accent} />
                         <Text style={[styles.takeawayLabel, { color: categoryTheme.textAccent }]}>
-                          {t('takeawayLabel', lang)}
+                          {toUpperFor(t('takeawayLabel', lang), lang)}
                         </Text>
                       </View>
                       <Text style={[styles.takeawayText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * lineSpacing }]}>
@@ -2011,7 +2031,7 @@ const StoryDetailScreen = ({ route, navigation }) => {
                       <View style={styles.takeawayLabelRow}>
                         <Ionicons name="chatbubble-ellipses-outline" size={15} color={categoryTheme.borderColor} />
                         <Text style={[styles.reflectionLabel, { color: categoryTheme.textAccent }]}>
-                          {t('reflectionLabel', lang)}
+                          {toUpperFor(t('reflectionLabel', lang), lang)}
                         </Text>
                       </View>
                       <Text style={[styles.reflectionText, { fontSize: fontSize + 1, lineHeight: (fontSize + 1) * lineSpacing }]}>

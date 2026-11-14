@@ -1,0 +1,142 @@
+{
+  "book_no": 151,
+  "title": "Traction: Get a Grip on Your Business",
+  "authors": [
+    "Gino Wickman"
+  ],
+  "year": "",
+  "sources": [
+    "https://lifeclub.org/books/traction-gino-wickman-review-summary",
+    "https://www.eosworldwide.com/level-10-meeting",
+    "https://www.supersummary.com/traction/key-figures/"
+  ],
+  "source_note": "Book not read. Level 10 agenda from EOS Worldwide page; vision, Rocks and GWC from a book summary. DB lists 2011 (revised edition); year left out of the text.",
+  "facts": [
+    {
+      "id": "t1",
+      "claim": "Six key components: Vision, People, Data, Issues, Process, Traction.",
+      "source": "search results summarising the book",
+      "confidence": "high"
+    },
+    {
+      "id": "t2",
+      "claim": "Vision component: three to seven core values, core focus, ten-year target, three-year picture, one-year plan, quarterly Rocks; choose a target market because you cannot please everyone.",
+      "source": "lifeclub.org summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "t3",
+      "claim": "Three-year picture and one-year plan carry revenue, profit and measurables; one-year plan also lists goals for the year.",
+      "source": "general knowledge of the Vision/Traction Organizer, not on fetched pages",
+      "confidence": "medium"
+    },
+    {
+      "id": "t4",
+      "claim": "Image One dropped its computer-networking division and returned to its core focus of simplifying clients' printing (summary also gives a growth figure, left out).",
+      "source": "lifeclub.org summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "t5",
+      "claim": "Rocks: team generates 10-20 goals, narrows to about seven, each assigned to one person; each leader sets one to three individual Rocks; 90 days is about as long as one person can stay focused on one project.",
+      "source": "lifeclub.org summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "t6",
+      "claim": "People: right people (share core values) in right seats; seat fit is tested by GWC: Get it, Want it, Capacity to do it; a 'no' on any means not right for that seat.",
+      "source": "lifeclub.org; search summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "t7",
+      "claim": "Capacity covers mental, physical and emotional strength and time.",
+      "source": "old text and general knowledge of EOS wording",
+      "confidence": "medium"
+    },
+    {
+      "id": "t8",
+      "claim": "People Analyzer rates each employee against each core value as most of the time, sometimes or never.",
+      "source": "lifeclub.org",
+      "confidence": "medium"
+    },
+    {
+      "id": "t9",
+      "claim": "Example: an engineer who Gets it and has the Capacity for an executive role but does not Want it.",
+      "source": "lifeclub.org",
+      "confidence": "medium"
+    },
+    {
+      "id": "t10",
+      "claim": "Level 10 meeting: weekly, same day and time, start and end on time, 90 minutes: Segue 5, Scorecard 5, Rock Review 5, Customer and Employee Headlines 5, To-Do List 5, IDS 60, Conclude 5.",
+      "source": "eosworldwide.com/level-10-meeting",
+      "confidence": "high"
+    },
+    {
+      "id": "t11",
+      "claim": "IDS = Identify, Discuss, Solve: start with the most important issue, get to root cause, discuss openly, solve; a decision may produce To-Dos someone owns for the next seven days. Off-track Rocks go to the Issues List; first sections are reporting only.",
+      "source": "eosworldwide.com; search results",
+      "confidence": "high"
+    },
+    {
+      "id": "t12",
+      "claim": "Anyone can call 'tangent alert!' when a meeting drifts; at the end the meeting is rated.",
+      "source": "lifeclub.org; eosworldwide.com",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Six components include 'Kaldıraç' (leverage)",
+      "reason": "Wrong; the sixth is Traction."
+    },
+    {
+      "claim": "A company cut weekly meeting time from 12 hours to 90 minutes",
+      "reason": "No source."
+    },
+    {
+      "claim": "Star salesperson promoted to sales manager failed (GWC origin story)",
+      "reason": "Not found in sources; only the engineer example is."
+    },
+    {
+      "claim": "Vision answers fit on one page",
+      "reason": "Unverified; dropped."
+    },
+    {
+      "claim": "Meeting format 'good news 5 min, metrics 5, reviews 5, goals 5, IDS 60'",
+      "reason": "Replaced by the confirmed EOS agenda."
+    }
+  ],
+  "stories": {
+    "1549": {
+      "verdict": "keep",
+      "fact_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "note": "Medium."
+    },
+    "1550": {
+      "verdict": "keep",
+      "fact_ids": [
+        "t6",
+        "t7",
+        "t8",
+        "t9"
+      ],
+      "note": "Medium."
+    },
+    "1551": {
+      "verdict": "keep",
+      "fact_ids": [
+        "t10",
+        "t11",
+        "t12"
+      ],
+      "note": "Agenda from EOS site; book wording not read."
+    }
+  }
+}

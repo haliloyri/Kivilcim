@@ -1,0 +1,131 @@
+{
+  "book_no": 121,
+  "title": "Working with Emotional Intelligence",
+  "authors": [
+    "Daniel Goleman"
+  ],
+  "year": "1998",
+  "sources": [
+    "https://www.penguinrandomhouse.com/books/69111/working-with-emotional-intelligence-by-daniel-goleman/readers-guide/",
+    "https://www.eiconsortium.org/reprints/ei_theory_performance.html (Goleman, 'An EI-Based Theory of Performance', a later chapter citing the same research)",
+    "https://library.leadership.illinois.edu/bib/909 (catalogue summary, via search)",
+    "https://www.supersummary.com/working-with-emotional-intelligence/summary (via search snippet; page blocked)"
+  ],
+  "source_note": "Book itself NOT read (archive.org copy is lending-only; summary sites rate-limited or blocked). Facts come from the publisher's reader's guide and from Goleman's own later reprint of the studies. Confidence is medium to low.",
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Working with Emotional Intelligence (1998) is the follow-up to Goleman's Emotional Intelligence. It argues that emotional intelligence matters more than IQ in today's fluid work environment, and that unlike IQ it can be developed.",
+      "source": "Penguin Random House reader's guide",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "The book's model has 25 emotional competencies grouped into five dimensions: self-awareness, self-regulation, motivation, empathy and social skills (personal and social competence). Goleman later refined it to 20 competencies in four clusters.",
+      "source": "secondary summaries; eiconsortium reprint",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "Catalogue summary: Goleman claims that in determining star performance in every field, emotional intelligence matters twice as much as IQ or technical expertise. Critics say meta-analytic data does not support the 'twice as important' claim.",
+      "source": "University of Illinois library record; critical commentary via search",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Star performers excel as individuals and are best able to maximize a team's potential. Data tracking star performers over decades: team building and adapting to change mattered little in the 1970s but were crucial by the 1990s, and change catalyst and leveraging diversity emerged as new traits.",
+      "source": "reader's guide quoting the book",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Goleman cites Kelley (1998): several hundred knowledge workers, including computer scientists and auditors, at companies such as AT&T and 3M; Accurate Self-Assessment appeared in nearly every star performer. Boyatzis (1982): several hundred managers from twelve organizations, with accurate self-assessment the hallmark of superior performance.",
+      "source": "eiconsortium reprint (same studies)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "On 360-degree assessments, average performers tended to overestimate their strengths, while star performers rarely did and often underestimated their abilities, which Goleman links to high internal standards.",
+      "source": "eiconsortium reprint",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "A deficit in accurate self-assessment can operate as a career derailer (Goleman 1998b).",
+      "source": "via search snippet of reprint",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "The reader's guide lists blind spots that keep someone from self-awareness: blind ambition, unrealistic goals, relentless striving, drives others, power hungry, insatiable need for recognition, preoccupation with appearances, need to seem perfect. It also notes 'We need time to be introspective, but we don't get it - or don't take it.'",
+      "source": "reader's guide, discussion questions 11 and 12",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "McClelland found a tipping point: people who excelled in six or more competencies; stars typically had strengths in at least one competency from each cluster.",
+      "source": "eiconsortium reprint",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Goleman's examples of emotional self-awareness at work: financial planners who managed their own reactions when discussing mortality in life insurance sales; store managers best at managing their own stress ran the most profitable stores of a national retail chain.",
+      "source": "eiconsortium reprint",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Self-confidence evidence Goleman cites: Saks (1995), 112 entry-level accountants, where self-efficacy predicted supervisor-rated performance ten months later more strongly than skill or prior training; Holahan and Sears (1995), a sixty-year study of more than 1,000 high-IQ people, where early self-confidence predicted career success.",
+      "source": "eiconsortium reprint",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "IQ and technical skills explain 12-20 percent of leadership success and EI 88-80 percent (old 1460)",
+      "reason": "Numbers garbled and unsourced. Replaced by the 'twice as important' claim with its critics."
+    },
+    {
+      "claim": "Experiment: leaders assigned good or bad moods shaped team results (old 1459)",
+      "reason": "Not found in this book; emotional contagion is Primal Leadership (2002) material."
+    },
+    {
+      "claim": "Most leaders rate their self-awareness above average; common blind spots are harshness under pressure, poor reaction to criticism, nervousness at uncertainty, belittling others (old 1461)",
+      "reason": "Not found. The book's own blind-spot list is f8."
+    },
+    {
+      "claim": "Hay/McBer figures (3,781 executives, 50-70 percent of climate) as book content",
+      "reason": "From Goleman's 2001 reprint, not confirmed in the 1998 book; not used."
+    }
+  ],
+  "stories": {
+    "1459": {
+      "verdict": "delete",
+      "fact_ids": [],
+      "note": "Emotional contagion experiment not attributable to this book; belongs to Primal Leadership."
+    },
+    "1460": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f9"
+      ],
+      "note": "Five dimensions, 25 competencies, 'twice as important' claim with caveat."
+    },
+    "1461": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f10",
+        "f11"
+      ],
+      "note": "Accurate self-assessment and blind spots; medium-low confidence."
+    }
+  }
+}

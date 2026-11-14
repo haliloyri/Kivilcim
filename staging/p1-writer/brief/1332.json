@@ -1,0 +1,63 @@
+{
+  "story_id": 1332,
+  "kind": "concept",
+  "book": {
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "Chapter title, the Law of Avoidance and the three questions are confirmed by several notes and quote pages; exact wording of the questions may differ slightly from print. No concrete case from the chapter could be verified, so the story stays a concept with no invented protagonist. The old claims about alcohol/overwork as uncertainty suppression and rigid vs flexible people are unsourced and dropped.",
+  "facts": [
+    "Manson's chapter is titled 'You're Wrong About Everything (But So Am I)'.",
+    "His view: growth is an endless process of being a little less wrong; certainty is the enemy of growth.",
+    "If you believe you already know, you stop learning; admitting you don't know is where learning begins.",
+    "Manson's Law of Avoidance: 'The more something threatens your identity, the more you will avoid it.'",
+    "In a section on becoming a little less certain of yourself he poses three questions.",
+    "Question 1: 'What if I'm wrong?' Question 2: 'What would it mean if I were wrong?'",
+    "Question 3: 'Would being wrong create a better or a worse problem than my current problem, for both myself and others?'",
+    "Earlier in the book Manson argues that problems never disappear, they get traded or upgraded; the third question applies that idea to beliefs."
+  ],
+  "scene_details": [
+    "three questions asked in order, the third weighing which problem is better",
+    "a belief that feels like part of who you are, and the urge to avoid anything that tests it"
+  ],
+  "tension": "The beliefs we are most sure of are the ones we protect from testing, because being wrong about them feels like losing part of ourselves.",
+  "opening_idea": "Start with the chapter title's blunt claim, that you are wrong about everything and so is the author.",
+  "lessons": [
+    {
+      "idea": "When a belief feels like part of your identity, test it with the third question: which problem would being wrong leave you with?",
+      "anchor": "Law of Avoidance and the three questions."
+    },
+    {
+      "idea": "Certainty stops learning.",
+      "anchor": "Chapter thesis."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which belief about yourself would you least like to test, and what would actually change if it turned out to be wrong?",
+  "use_cases": [
+    {
+      "situation": "Two colleagues are stuck defending their plans",
+      "move": "Suggest each answer Manson's third question: would being wrong leave us with a better or worse problem?",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are sure a friend is upset with you",
+      "move": "Ask 'what if I'm wrong?' and check with them before acting on it.",
+      "context": "social"
+    },
+    {
+      "situation": "You avoid a skill because 'I'm not that kind of person'",
+      "move": "Name the identity the belief protects and try one small test of it this week.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The beliefs you avoid testing are often the ones holding up your identity; ask what being wrong would cost.",
+  "conversation_variants": {
+    "punchline_idea": "Manson's Law of Avoidance: the more something threatens who you think you are, the more you avoid it.",
+    "thirty_sec_idea": "Manson's chapter 'You're wrong about everything (but so am I)', the Law of Avoidance and the three questions, ending on 'better or worse problem'.",
+    "question_idea": "What belief have you changed that you were once sure of?",
+    "key_contrast_idea": "Sure and stuck"
+  }
+}

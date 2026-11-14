@@ -1,0 +1,35 @@
+{
+ "story_id": 1328,
+ "verdict": "keep",
+ "verify_note": "Principle 1 read in the publisher's excerpt. The old networking pair, 'mirror' quote and Pygmalion link are not in the book; recentered on the book's Northridge commuters, the Lexus dealership and E + R = O. Year 2005 (first edition).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Aynı Trafik, İki Sürücü",
+  "description": "1994 depreminden sonra aynı trafikte biri öfkeli, biri keyifli iki sürücü vardı. Jack Canfield farkı E + R = O formülüyle açıklar: olay aynı, tepki farklı.",
+  "hook": "Hep koşullara bağladığınız bir sonuçta sizin tepkinizin payı ne kadar?",
+  "one_minute_summary": "1994 Northridge depreminden iki gün sonra CNN, hasarlı otoyolda bekleyen sürücülerle konuştu. Biri öfkeyle Kaliforniya'dan nefret ettiğini söyledi. Arkasındaki sabah beşte çıkmıştı, yanında kahve, yemek, kitap ve dil kasetleri vardı ve hiç dert etmiyordu. Jack Canfield bunu E + R = O ile anlatır: olay artı tepki eşittir sonuç. Savaşta müşteri gelmeyince arabaları marinalara götüren bir Lexus bayisi de satışlarını savaş öncesinin üstüne çıkardı. Değişen olay değil, tepkiydi."
+ },
+ "en": {
+  "title": "Same Jam, Two Drivers",
+  "description": "Two days after the 1994 Northridge earthquake, two drivers sat in the same traffic and had completely different mornings. Jack Canfield uses them to explain E + R = O.",
+  "hook": "How much of a result you blame on circumstances comes from your own response?",
+  "one_minute_summary": "Two days after the Northridge earthquake, CNN interviewed drivers stuck on a damaged freeway. One was furious and sure he'd be late whatever he did. The man behind him had left at 5 a.m. with coffee, lunch, a book and Spanish tapes, and called it no problem. Jack Canfield's formula is E + R = O: event plus response equals outcome. A Lexus dealer whose showroom emptied in the Gulf War drove cars to marinas and polo grounds and ended up selling more than before."
+ },
+ "es": {
+  "title": "El mismo atasco, dos conductores",
+  "description": "Cuando la guerra del Golfo vació un concesionario Lexus, sacaron los coches a la calle y vendieron más que antes. Jack Canfield lo explica con E + R = O y con dos conductores tras un terremoto.",
+  "hook": "¿Cuánto de lo que culpas a las circunstancias depende de tu respuesta?",
+  "one_minute_summary": "Al estallar la guerra del Golfo, nadie entraba en un concesionario Lexus de California y los anuncios no servían. Llevaron los coches nuevos a clubes, puertos deportivos y fiestas para que la gente los probara, y acabaron vendiendo más por semana que antes de la guerra. Jack Canfield lo explica con E + R = O: evento más respuesta igual a resultado. Tras el terremoto de 1994 vio lo mismo en un atasco: un conductor furioso y otro tranquilo, con café, almuerzo y cintas de español."
+ },
+ "de": {
+  "title": "Gleicher Stau, zwei Fahrer",
+  "description": "Nach dem Erdbeben von 1994 standen zwei Fahrer im selben Stau, einer wütend, einer gelassen. Jack Canfield erklärt den Unterschied mit E + R = O.",
+  "hook": "Wie viel von dem, was du den Umständen anlastest, hängt an deiner Reaktion?",
+  "one_minute_summary": "Zwei Tage nach dem Northridge-Erdbeben fragte ein CNN-Reporter Fahrer auf einer beschädigten Autobahn. Der erste schimpfte über Brände, Fluten und Beben und sagte, er komme sowieso zu spät. Der Fahrer dahinter war um fünf losgefahren, hatte Kaffee, Essen, ein Buch und Spanischkassetten dabei und sagte: kein Problem. Jack Canfield nennt das E + R = O, Ereignis plus Reaktion ergibt das Ergebnis. Ein Lexus-Händler fuhr im Golfkrieg seine Autos zu Jachthäfen und verkaufte am Ende mehr als vorher."
+ }
+}

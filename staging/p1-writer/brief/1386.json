@@ -1,0 +1,60 @@
+{
+ "story_id": 1386,
+ "kind": "concept",
+ "book": {
+  "title": "Atomic Habits",
+  "author": "James Clear",
+  "year": "2018"
+ },
+ "confidence": "medium",
+ "confidence_note": "The DB title 'Sağlıklı Olmak' (2019) does not exist; content is Atomic Habits (2018), chapter 16. 'Missing once is an accident. Missing twice is the start of a new habit.' and 'the first mistake is never the one that ruins you' are verified from Clear's own excerpt. The 'bad workouts / ten squats' passage is from reader highlights and summaries (medium) and is paraphrased. Lally's finding is outside research, not from the book. Old 'brain encodes' claims and the unverified quote are dropped. The paper-clip opening of the same chapter is verified on Clear's site.",
+ "facts": [
+  "The rule appears in Clear's chapter on habit tracking: marking each day a habit is done. He notes that life is messy and what matters is getting back on track quickly.",
+  "The same chapter opens with Trent Dyrsmid, a 23-year-old stockbroker at a bank in Abbotsford, Canada, in 1993: every morning two jars on his desk, one with 120 paper clips, one empty; after each sales call he moved one clip. Clear writes that within 18 months he was bringing in $5 million to the firm.",
+  "Clear's rule: never miss twice. 'Missing once is an accident. Missing twice is the start of a new habit.'",
+  "He writes that the first mistake is never the one that ruins you; it is the spiral of repeated mistakes that follows.",
+  "About his own training: missing one workout happens, but he won't miss two in a row.",
+  "The trap is all-or-nothing thinking: believing that if you can't do something perfectly, you shouldn't do it at all.",
+  "Clear says the bad workouts are often the most important: on a sluggish day, doing something, ten squats, five sprints, a push-up, keeps the gains from the good days instead of recording a zero.",
+  "Outside research, not from the book: in Phillippa Lally's study at University College London, 96 volunteers each picked one daily behaviour, such as a piece of fruit with lunch or a 15-minute run before dinner, and rated daily how automatic it felt. Reaching peak automaticity took 66 days on average, from 18 to a predicted 254. A single missed day had little effect on later progress; many missed days lowered the level reached."
+ ],
+ "scene_details": [
+  "two jars on a desk, one with 120 paper clips",
+  "a habit tracker with one empty box",
+  "ten squats on a sluggish day"
+ ],
+ "tension": "The day you miss is rarely the problem; the day after is.",
+ "opening_idea": "Start with the empty box on a habit tracker and the decision the next morning.",
+ "lessons": [
+  {
+   "idea": "After a miss, make the next session small enough that you'll do it, so the record shows something instead of zero.",
+   "anchor": "ten squats on a sluggish day"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which habit did you drop after one missed day, and what is the smallest version you could do tomorrow?",
+ "use_cases": [
+  {
+   "situation": "A friend says the diet is over because of one dinner",
+   "move": "Mention Clear's rule; the next meal is the one that counts.",
+   "context": "social"
+  },
+  {
+   "situation": "You skipped yesterday's walk",
+   "move": "Do a five-minute walk today.",
+   "context": "self"
+  },
+  {
+   "situation": "Child missed one day of reading practice",
+   "move": "Read one page together tonight.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "One missed day is an accident; protect the day after with a version too small to skip.",
+ "conversation_variants": {
+  "punchline_idea": "Clear's rule is simple: missing once is an accident, missing twice starts a new habit.",
+  "thirty_sec_idea": "Never miss twice; first mistake vs spiral; bad workouts matter; ten squats; Lally.",
+  "question_idea": "",
+  "key_contrast_idea": "accident vs. new habit"
+ }
+}

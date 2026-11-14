@@ -1,0 +1,35 @@
+{
+ "story_id": 1325,
+ "verdict": "keep",
+ "verify_note": "Concept story, medium confidence: serpent and Jaws passages quoted consistently in several secondary sources; full text not accessible. Invented painter scene and unverified quotes ('old injuries', 'Ah, it's you') dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Üstü Çizilmiş Köpekbalığı",
+  "description": "Julia Cameron iç eleştirmene Sansürcü diyor ve onu bir çizgi film yılanı ya da Jaws'taki köpekbalığı olarak çizip üstünü çizmeyi öneriyor. Ses konuşmaya devam etse de artık gerçek gibi duyulmuyor.",
+  "hook": "İçinizdeki eleştirmen bir çizgi film karakteri olsaydı, neye benzerdi?",
+  "one_minute_summary": "Julia Cameron, The Artist's Way kitabında sanatçıyı durduran iç sese Sansürcü diyor. Onu yaratıcı Cennet bahçenizde tıslayan bir çizgi film yılanı olarak düşünmenizi, ya da Jaws'taki köpekbalığını çizip üstüne çarpı atarak çalıştığınız yere asmanızı öneriyor. Ona göre Sansürcü'yü kötü huylu küçük bir karaktere dönüştürmek gücünü gevşetiyor ve olumsuz görüşü gerçek sayılmıyor. Sabah sayfaları da ondan kaçmanın bir yolu, ilk haftadaki canavarlar listesi de seslerin kaynağını gösteriyor."
+ },
+ "en": {
+  "title": "The Crossed-Out Shark",
+  "description": "Julia Cameron calls the inner critic the Censor and suggests drawing it as a cartoon serpent or the Jaws shark, then crossing it out. The voice may keep talking, but it stops sounding like the truth.",
+  "hook": "If your inner critic were a cartoon character, what would it look like?",
+  "one_minute_summary": "In The Artist's Way, Julia Cameron calls the voice that stops artists the Censor. She suggests picturing it as a cartoon serpent hissing in your creative Eden, or drawing the shark from Jaws, putting an X through it and pinning it where you work. Turning the Censor into a nasty little character, she says, loosens its power, and its negative opinion is not the truth. Morning pages help you slip past it, and a first-week list of 'monsters' shows where some of its lines came from."
+ },
+ "es": {
+  "title": "El tiburón tachado",
+  "description": "Julia Cameron llama Censor al crítico interior y propone dibujarlo como una serpiente de dibujos o el tiburón de Tiburón y tacharlo. La voz puede seguir hablando, pero deja de sonar a verdad.",
+  "hook": "Si tu crítico interior fuera un dibujo animado, ¿qué aspecto tendría?",
+  "one_minute_summary": "En The Artist's Way, Julia Cameron llama Censor a la voz que frena a los artistas. Propone imaginarlo como una serpiente de dibujos que sisea en tu Edén creativo, o dibujar el tiburón de Tiburón, tacharlo y colgarlo donde trabajas. Convertir al Censor en un personajillo desagradable, dice, le quita poder, y su opinión negativa no es la verdad. Las páginas matutinas ayudan a esquivarlo, y una lista de 'monstruos' en la primera semana muestra de dónde salieron algunas de sus frases."
+ },
+ "de": {
+  "title": "Der durchgestrichene Hai",
+  "description": "Julia Cameron nennt den inneren Kritiker den Zensor und schlägt vor, ihn als Comicschlange oder als Hai aus Der weiße Hai zu zeichnen und durchzustreichen. Die Stimme redet vielleicht weiter, klingt aber nicht mehr nach Wahrheit.",
+  "hook": "Wenn dein innerer Kritiker eine Zeichentrickfigur wäre, wie sähe er aus?",
+  "one_minute_summary": "In The Artist's Way nennt Julia Cameron die Stimme, die Künstler bremst, den Zensor. Sie rät, ihn sich als Zeichentrickschlange vorzustellen, die im kreativen Garten Eden zischt, oder den Hai aus Der weiße Hai zu zeichnen, durchzustreichen und dort aufzuhängen, wo man arbeitet. Den Zensor zur fiesen kleinen Figur zu machen, nimmt ihm laut Cameron Macht, und seine negative Meinung ist nicht die Wahrheit. Morgenseiten helfen, an ihm vorbeizukommen, und eine Liste der 'Monster' zeigt, woher manche Sätze stammen."
+ }
+}

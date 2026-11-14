@@ -1,0 +1,35 @@
+{
+  "story_id": 1435,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt with low confidence: only a summary preview was available (central claim, five desires, two fears, benefit-focused pitch). Old quotation and insurance example dropped; Damasio's Elliot added as flagged outside context.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Özellikler listesinde olmayan korkular",
+    "description": "Brian Tracy'ye göre alıcılar duyguyla satın alır: para kaybetme ve hata yapma korkusu, özellik listesinin hiçbir yerinde yazmaz.",
+    "hook": "Son tereddüt ettiğiniz satın almada hangi hatadan kaçınmaya çalışıyordunuz?",
+    "one_minute_summary": "Bir özete göre Brian Tracy'nin The Psychology of Selling kitabının ana iddiası, bütün satın alma kararlarının mantıktan çok duygusal olduğudur. Alıcıyı para ve güvenlik, kişisel gelişim, sevgi, sağlık ve statü çeker; iki korku onu geri tutar: para kaybetmek ve hata yapmak. Sunumlar da ürünün ne olduğundan çok alıcıya ne yaptığı üzerine kurulur. Nörolog Damasio'nun duyguları silik hastası Elliot, duygunun karara dahil olduğunu gösterir, ama muhakemenin hiç yer almadığını göstermez."
+  },
+  "en": {
+    "title": "The fears no spec sheet lists",
+    "description": "According to Brian Tracy, buying is emotional, and the buyer's two fears, losing money and making a mistake, appear on no spec sheet.",
+    "hook": "The last time you hesitated over a purchase, which mistake were you trying to avoid?",
+    "one_minute_summary": "A summary of Brian Tracy's The Psychology of Selling states its central claim: all buying decisions are emotional rather than rational. Buyers are pulled by money and security, personal growth, love, health and status, and held back by two fears, losing money and making a mistake. Pitches, accordingly, focus on what the product does for the buyer. Neuroscientist Damasio's patient Elliot, who lost his emotions and then struggled to decide, shows that feeling is part of choosing, though not that reasoning plays no part."
+  },
+  "es": {
+    "title": "Los miedos que ninguna ficha recoge",
+    "description": "Según Brian Tracy, comprar es emocional, y los dos miedos del comprador, perder dinero y equivocarse, no aparecen en ninguna ficha técnica.",
+    "hook": "La última vez que dudaste ante una compra, ¿qué error intentabas evitar?",
+    "one_minute_summary": "Un resumen de The Psychology of Selling, de Brian Tracy, recoge su idea central: todas las decisiones de compra son emocionales, no racionales. Al comprador lo atraen el dinero y la seguridad, el crecimiento personal, el amor, la salud y el estatus, y lo frenan dos miedos: perder dinero y equivocarse. Por eso las presentaciones se centran en lo que el producto hace por él. El paciente Elliot de Damasio, que perdió sus emociones y luego no sabía decidir, muestra que sentir forma parte de elegir."
+  },
+  "de": {
+    "title": "Die Ängste, die kein Datenblatt nennt",
+    "description": "Nach Brian Tracy ist Kaufen emotional, und die zwei Ängste des Käufers, Geld zu verlieren und einen Fehler zu machen, stehen auf keinem Datenblatt.",
+    "hook": "Welchen Fehler wolltest du vermeiden, als du zuletzt vor einem Kauf gezögert hast?",
+    "one_minute_summary": "Eine Zusammenfassung von Brian Tracys The Psychology of Selling nennt dessen Kernaussage: Alle Kaufentscheidungen sind emotional, nicht rational. Käufer werden von Geld und Sicherheit, persönlichem Wachstum, Liebe, Gesundheit und Status angezogen und von zwei Ängsten gebremst, Geld zu verlieren und einen Fehler zu machen. Präsentationen stellen deshalb dar, was das Produkt für den Käufer tut. Damasios Patient Elliot, der seine Gefühle verlor und kaum noch entscheiden konnte, zeigt, dass Fühlen zum Entscheiden gehört, aber nicht, dass Denken keine Rolle spielt."
+  }
+}

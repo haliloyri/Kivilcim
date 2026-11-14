@@ -1,0 +1,188 @@
+{
+  "book_no": 96,
+  "title": "Atomic Habits",
+  "authors": [
+    "James Clear"
+  ],
+  "year": "2018",
+  "note": "DB lists 'Sağlıklı Olmak' by James Clear (2019). No book by James Clear with that title (or an English equivalent such as 'Atomic Habits for Health') could be found; Clear's only book in this period is Atomic Habits (Avery, 2018). All three stories' centers (1% gains / British Cycling, environment design, never miss twice) are from Atomic Habits, so briefs are attributed to Atomic Habits, 2018. Main sources are Clear's own site excerpts of the book chapters.",
+  "sources": [
+    "https://jamesclear.com/marginal-gains",
+    "https://jamesclear.com/atomic-habits/cycling",
+    "https://jamesclear.com/choice-architecture",
+    "https://jamesclear.com/habit-tracker",
+    "https://www.goodreads.com/notes/54615491-atomic-habits/60561951-trivikram/9ef111b1-c193-4df6-8400-9355a7069c49",
+    "https://naresh-chaurasia.github.io/connect2naresh/books/atomic-habits",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3329221",
+    "https://www.ucl.ac.uk/news/2009/aug/how-long-does-it-take-form-habit",
+    "https://bps.org.uk/research-digest/how-form-habit",
+    "https://jamesclear.com/paper-clips"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "British Cycling hired Dave Brailsford as performance director in 2003. Before that, British riders had won one Olympic gold since 1908 and no Briton had won the Tour de France in 110 years; a top European bike maker refused to sell bikes to the team for fear of hurting its sales.",
+      "source": "jamesclear.com/marginal-gains (book ch.1 excerpt)",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Brailsford's 'aggregation of marginal gains': look for a 1% improvement in everything. Examples: redesigned seats, alcohol on tires for grip, electrically heated overshorts, biofeedback sensors, testing massage gels, the best pillow and mattress for each rider, a surgeon teaching riders to wash their hands to cut colds, painting the inside of the team truck white to spot dust.",
+      "source": "jamesclear.com/marginal-gains",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Results: at the 2008 Beijing Olympics the team won a large share of road and track golds (Clear's corrected figure: 8 of 14, 57%); Bradley Wiggins won the Tour de France in 2012; 2007-2017 totals 178 world championships, 66 Olympic or Paralympic golds, 5 Tour de France wins.",
+      "source": "jamesclear.com/marginal-gains",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Clear's math: 1% better every day for a year ends about 37 times better; 1% worse every day ends near zero.",
+      "source": "jamesclear.com/marginal-gains",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Caveat: Clear later posted an update saying the story is more complicated: questions were raised about the team's use of therapeutic use exemptions; investigations were unresolved as of October 2018; he says chapter 1 is about compounding habits, not cycling.",
+      "source": "jamesclear.com/atomic-habits/cycling",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Identity: every action is a vote for the type of person you wish to become.",
+      "source": "Atomic Habits ch.2 (widely quoted)",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "Anne Thorndike, a primary care physician at Massachusetts General Hospital in Boston, ran a six-month cafeteria study: water was added to the refrigerators next to the cash registers, which had held only soda, and baskets of bottled water were placed by food stations. Nobody was told. Over the next three months soda sales fell 11.4% and bottled water sales rose 25.8%. Similar changes to the food produced similar results.",
+      "source": "jamesclear.com/choice-architecture (book ch.6 excerpt); Thorndike et al. 2012",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "Clear's environment examples: cookies on the counter get eaten without hunger; a guitar in the closet or vitamins in the pantry make the habit easy to skip; ideas: pill bottles next to the bathroom faucet, filled water bottles placed around the house.",
+      "source": "jamesclear.com/choice-architecture",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Never miss twice: 'Missing once is an accident. Missing twice is the start of a new habit.' The first mistake is never the one that ruins you; it is the spiral of repeated mistakes that follows. Clear: 'Missing one workout happens, but I'm not going to miss two in a row.'",
+      "source": "jamesclear.com/habit-tracker (book ch.16 excerpt)",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "The problem is not slipping up but all-or-nothing thinking: believing that if you can't do it perfectly you shouldn't do it at all. Bad workouts are often the most important: sluggish days maintain the gains from good days; doing something (ten squats, five sprints, a push-up) instead of recording a zero matters.",
+      "source": "jamesclear.com/habit-tracker; Goodreads reader highlights; summary site",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Outside research: Phillippa Lally's UCL study (Lally et al. 2010): 96 volunteers (82 completed) each chose one daily behaviour, such as eating a piece of fruit with lunch or a 15-minute run before dinner, repeated for 84 days and rated how automatic it felt. Average time to peak automaticity 66 days, range 18 to a predicted 254. A single missed day had little impact on later gains; many missed repeats lowered the level reached.",
+      "source": "UCL news 2009/Lally et al. 2010",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "Thorndike et al. 2012 combined a first phase of color-coded traffic-light labels with a later choice-architecture phase; bottled water rose 25.8% in phase 2 with no rise at two comparison cafeterias. A follow-up found healthier purchases maintained for 24 months.",
+      "source": "PMC3329221; clinicaltrials NCT01604499; MGH follow-up",
+      "confidence": "high"
+    },
+    {
+      "id": "f13",
+      "claim": "Clear cites Kurt Lewin's 1936 equation B = f(P, E): behaviour is a function of the person in their environment.",
+      "source": "Atomic Habits ch.6 summaries (litcharts, chapter summaries)",
+      "confidence": "high"
+    },
+    {
+      "id": "f14",
+      "claim": "Clear tells of a Dutch suburb during the 1970s energy crisis: nearly identical houses, some with the electric meter in the basement, others upstairs in the main hallway; households whose meter was easy to see used less energy. (Exact percentage not verified, omitted.)",
+      "source": "Atomic Habits ch.6 summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Clear: environment is the invisible hand that shapes human behaviour; people often choose products not because of what they are but because of where they are.",
+      "source": "jamesclear.com/choice-architecture; ch.6 summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f16",
+      "claim": "The rule sits in Clear's chapter on habit tracking: a tracker records each day the habit is done; Clear notes life is messy and what matters is getting back on track quickly.",
+      "source": "jamesclear.com/habit-tracker",
+      "confidence": "high"
+    },
+    {
+      "id": "f17",
+      "claim": "Chapter 16 opens with Trent Dyrsmid, a 23-year-old stockbroker hired by a bank in Abbotsford, Canada, in 1993. Each morning he put two jars on his desk, one with 120 paper clips and one empty, and moved a clip after each sales call. Clear writes that within 18 months he was bringing in $5 million to the firm.",
+      "source": "jamesclear.com/paper-clips (ch.16 excerpt); Time",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Book 'Sağlıklı Olmak' by James Clear (2019).",
+      "reason": "No such book found; content is from Atomic Habits (2018)."
+    },
+    {
+      "claim": "Stanford cafeteria study with fruit near registers, healthy eating up 18%.",
+      "reason": "Not in Atomic Habits; the book's cafeteria case is Thorndike's Massachusetts General Hospital study."
+    },
+    {
+      "claim": "'Drink one more glass of water every day' as Clear's example.",
+      "reason": "Not found as such."
+    },
+    {
+      "claim": "Quote 'A bad workout is always better than no workout. 10 minutes, 5 minutes, 1 minute'.",
+      "reason": "Not verified as worded; replaced by the verified 'bad workouts / ten squats' passage paraphrased."
+    },
+    {
+      "claim": "Brain encodes one missed day as exception and two as new norm.",
+      "reason": "Neuroscience framing not in sources."
+    },
+    {
+      "claim": "Willpower is depleted by every decision.",
+      "reason": "Not attributed to this chapter; ego-depletion contested; dropped."
+    }
+  ],
+  "stories": {
+    "1384": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "note": "Reattributed to Atomic Habits; health beats (pillows, hand washing) inside British Cycling; caveat from Clear's update."
+    },
+    "1385": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f7",
+        "f8",
+        "f12",
+        "f13",
+        "f14",
+        "f15"
+      ],
+      "note": "Old Stanford claim replaced with the book's Massachusetts General Hospital study."
+    },
+    "1386": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f10",
+        "f11",
+        "f16",
+        "f17"
+      ],
+      "note": "Never miss twice; Lally as outside research."
+    }
+  }
+}

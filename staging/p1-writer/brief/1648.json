@@ -1,0 +1,62 @@
+{
+  "story_id": 1648,
+  "kind": "concept",
+  "book": {
+    "title": "Atlas of the Heart",
+    "author": "Brené Brown",
+    "year": "2021"
+  },
+  "confidence": "medium",
+  "confidence_note": "Checked against Time's piece on the book, an excerpt page of definitions and chapter summaries; the book text itself was not read. Old text's 'more than 50 percent use only three words' and 'you cannot manage what you cannot name' are not found and are dropped. Supported: surveys of about 7,000 people over five years, on average three emotions named as felt (happiness, sadness, anger), 87 emotions and experiences in 13 land masses. No named person's case. The envy/jealousy contrast is used only as one example of two close words.",
+  "facts": [
+    "Atlas of the Heart (2021) by Brené Brown maps 87 emotions and experiences.",
+    "The 87 are grouped into 13 'land masses', each presented as a destination.",
+    "Time reports surveys of about 7,000 people over five years.",
+    "On average people could identify only three emotions as they were actually feeling them: happiness, sadness and anger.",
+    "Two of the places in the book are titled 'Places We Go When Things Are Uncertain or Too Much' and 'Places We Go When We Compare'.",
+    "The subtitle is Mapping Meaningful Connection and the Language of Human Experience; published 30 November 2021 (Random House), later a five-episode HBO Max series.",
+    "In the comparison section the book sets comparison, admiration, envy, jealousy, schadenfreude and freudenfreude side by side.",
+    "Envy is wanting something another person has; jealousy is fearing the loss of a relationship, or part of one, that you already have."
+  ],
+  "scene_details": [
+    "three words: happiness, sadness, anger",
+    "87 emotions on one map",
+    "13 land masses, each a destination",
+    "'Places We Go When We Compare' as a chapter title"
+  ],
+  "tension": "People feel a great many things but, on average, could name three; the book answers with a map of 87.",
+  "opening_idea": "Open on the average of three emotion words people could name as they felt them.",
+  "lessons": [
+    {
+      "idea": "Reach for a second, more exact word for a feeling before acting on the first.",
+      "anchor": "Three words on average versus 87 entries on the map.",
+      "example": "A cook after a bad shift says he is angry and, with a more exact word, finds out what the evening was about."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of the last time you said you were angry, sad or fine: which more exact word might fit what was happening?",
+  "use_cases": [
+    {
+      "situation": "A colleague says they are 'just mad' after a meeting.",
+      "move": "Ask which kind: Brown's map separates feelings that look the same from outside, such as envy and jealousy.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You say 'I'm angry' and cannot say more.",
+      "move": "Write down three other words that might fit and pick the closest before you reply.",
+      "context": "self"
+    },
+    {
+      "situation": "A child says they feel bad.",
+      "move": "Offer two more specific words and ask if either fits.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Three feeling words cover most of what people name; the map lists 87, so look for the more exact one.",
+  "conversation_variants": {
+    "punchline_idea": "In Brené Brown's surveys, people could name on average only three emotions as they felt them.",
+    "thirty_sec_idea": "Brené Brown's team surveyed about 7,000 people over five years and found they could name, on average, three emotions as they felt them: happiness, sadness, anger. Her Atlas of the Heart maps 87 in 13 groups, each a place we go.",
+    "question_idea": "",
+    "key_contrast_idea": "three words, eighty-seven"
+  }
+}

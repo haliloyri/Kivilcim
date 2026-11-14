@@ -1,0 +1,35 @@
+{
+ "story_id": 1375,
+ "verdict": "keep",
+ "verify_note": "Checked in the Long translation of Meditations and Wikipedia. The old text's invented diary lines were replaced with the real passages 5.1 and 2.1, plus the Rusticus debt and the campaign place notes. The work is Meditations; the DB collection title 'Stoacılık' is kept only at book level.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İmparatorun Kendine Notları",
+  "description": "Marcus Aurelius bugün Meditations diye okunan notları sınırdaki seferlerde, Yunanca ve yalnızca kendisi için yazdı. İçlerinde yataktan kalkmak için kendine yazdığı bir not da var.",
+  "hook": "Dünyanın en güçlü adamı neden kendine not yazardı?",
+  "one_minute_summary": "Marcus Aurelius, bugün Meditations adıyla bilinen notları büyük olasılıkla 170-180 arasında, askerî seferlerde ve Yunanca yazdı. Başlık \"kendine olanlar\" anlamına geliyor ve metin muhtemelen yayımlanmak için yazılmadı. İlk kitapta Rusticus'tan sade yazmayı öğrendiğini not ediyor. Beşinci kitapta yataktan kalkmak istemeyen kendisiyle tartışıyor, ikinci kitapta güne nankör ve kıskanç insanlarla karşılaşacağını kendine söyleyerek başlıyor. Başka bir yazarın ondan söz ettiği ilk açık kayıt 907 civarına ait."
+ },
+ "en": {
+  "title": "An Emperor's Notes to Himself",
+  "description": "Marcus Aurelius wrote what we now call Meditations on campaign, in Greek, for himself alone. One note argues him out of bed.",
+  "hook": "Why would the most powerful man in the world write notes to himself?",
+  "one_minute_summary": "Marcus Aurelius wrote the notes now known as Meditations in Greek, probably between 170 and 180, much of it on campaign. The heading means roughly \"things to himself\", and the text was probably not meant for publication. Book One records what Rusticus taught him, including writing simply. Book Five argues with his wish to stay in bed; Book Two starts the day expecting busybodies and ungrateful people and reminds him not to be angry. The earliest clear mention by another writer comes around 907."
+ },
+ "es": {
+  "title": "Notas de un emperador",
+  "description": "Marco Aurelio escribió lo que hoy llamamos Meditations en campaña, en griego y solo para sí. En una nota discute consigo mismo para salir de la cama.",
+  "hook": "¿Por qué el hombre más poderoso del mundo se escribía notas a sí mismo?",
+  "one_minute_summary": "Marco Aurelio escribió las notas que hoy conocemos como Meditations en griego, probablemente entre 170 y 180 y en buena parte en campaña. El encabezado significa más o menos «cosas para sí mismo», y no parece pensado para publicarse. El libro primero recoge lo que aprendió de Rústico, como escribir con sencillez. En el quinto discute con sus ganas de quedarse en la cama; en el segundo empieza el día contando con gente ingrata y se recuerda no enfadarse."
+ },
+ "de": {
+  "title": "Die Notizen eines Kaisers",
+  "description": "Marcus Aurelius schrieb, was wir heute Meditations nennen, auf Feldzügen, auf Griechisch und nur für sich. Eine Notiz überredet ihn, aufzustehen.",
+  "hook": "Warum schrieb der mächtigste Mann der Welt Notizen an sich selbst?",
+  "one_minute_summary": "Marcus Aurelius schrieb die Notizen, die heute als Meditations bekannt sind, auf Griechisch, wahrscheinlich zwischen 170 und 180 und vieles auf Feldzügen. Die Überschrift bedeutet etwa \"an sich selbst\", veröffentlicht werden sollten sie wohl nie. Im ersten Buch hält er fest, was er von Rusticus lernte, etwa schlicht zu schreiben. Im fünften streitet er mit seiner Lust, im Bett zu bleiben, im zweiten stellt er sich morgens auf undankbare Menschen ein und nimmt sich vor, ihnen nicht zu zürnen."
+ }
+}

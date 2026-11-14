@@ -1,0 +1,34 @@
+{
+ "book_no": 172,
+ "title": "The Millionaire Next Door",
+ "authors": ["Thomas J. Stanley", "William D. Danko"],
+ "year": "1996",
+ "sources": [
+  "https://en.wikipedia.org/wiki/The_Millionaire_Next_Door",
+  "https://fedsoc.org/commentary/publications/book-review-the-millionaire-next-door-by-thomas-j-stanley-ph-d-william-d-danko-ph-d",
+  "https://www.goodreads.com/notes/50926504-the-millionaire-next-door/6681656-jason/188145c7-7915-4ae1-bc58-227d694a026b",
+  "https://www.supersummary.com/the-millionaire-next-door/chapter-5-summary/"
+ ],
+ "facts": [
+  {"id": "f1", "claim": "The Millionaire Next Door, Thomas J. Stanley and William D. Danko, 1996 (Gallery Books).", "source": "Wikipedia", "confidence": "high"},
+  {"id": "f2", "claim": "The authors split people into PAWs (Prodigious Accumulators of Wealth, net worth well above one tenth of age times realized pretax household income) and UAWs (Under Accumulators, low net worth relative to income).", "source": "Wikipedia", "confidence": "high"},
+  {"id": "f3", "claim": "Among the seven traits of wealth accumulators the book lists: they did not receive regular cash support from their parents, and their adult children are economically self-sufficient.", "source": "Wikipedia", "confidence": "high"},
+  {"id": "f4", "claim": "Economic Outpatient Care (EOC): affluent parents give money and other economic gifts to their adult children and grandchildren.", "source": "supersummary chapter 5 snippet, Wikipedia", "confidence": "high"},
+  {"id": "f5", "claim": "The authors argue EOC backfires: adult children who receive regular gifts tend to accumulate less wealth than comparable people who do not; the book reports that accountant households receiving parental cash gifts hold about 57 percent of the net worth of accountant households that do not.", "source": "fedsoc book review snippet, Wikipedia (recipients 57 percent of net worth)", "confidence": "medium"},
+  {"id": "f6", "claim": "EOC can give a false sense of security, leading recipients to buy homes above their means.", "source": "Wikipedia", "confidence": "medium"},
+  {"id": "f7", "claim": "Time: among middle-income respondents PAWs spend about 8.4 hours per month planning their investments; the book puts PAWs at nearly twice the hours of UAWs (83 percent more).", "source": "Goodreads notes, Wikipedia", "confidence": "medium"},
+  {"id": "f8", "claim": "UAWs commonly say they will start investing once they earn about ten percent more income, and usually do not.", "source": "Wikipedia and secondary summaries", "confidence": "medium"},
+  {"id": "f9", "claim": "Mr. Willis, a Walmart executive for ten years, bought no shares of the company during its growth although he had the knowledge to do so.", "source": "Wikipedia (from supersummary)", "confidence": "medium"},
+  {"id": "f10", "claim": "Nassim Taleb criticized the book for survivorship bias and for being published near the peak of a long bull market.", "source": "Wikipedia", "confidence": "medium"}
+ ],
+ "rejected": [
+  {"claim": "Stanley asked millionaires how many hours they spent on financial planning last month; the answer was over 8 hours versus under 2 for non-accumulators.", "reason": "Not found in the book; the real figures are PAW vs UAW investment-planning hours."},
+  {"claim": "One hour of tax planning saves thousands, one hour of insurance comparison saves hundreds.", "reason": "No source in the book."},
+  {"claim": "Children of rich families become poorer; self-made people accumulate far more on average (as a general sweeping rule).", "reason": "Overstated; supported only as the EOC comparison."},
+  {"claim": "Stanley says the most valuable gift to a child is financial independence habits, not cash (as a quote).", "reason": "Wording not verifiable."}
+ ],
+ "stories": {
+  "1613": {"verdict": "keep", "fact_ids": ["f3", "f4", "f5", "f6", "f10"], "note": "Concept with the book's own comparison (accountants). Old text rewritten."},
+  "1614": {"verdict": "keep", "fact_ids": ["f2", "f7", "f8", "f9"], "note": "Hours figures replaced with the book's PAW vs UAW investment-planning comparison."}
+ }
+}

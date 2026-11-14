@@ -1,0 +1,164 @@
+{
+  "book_no": 181,
+  "title": "The Gifts of Imperfection",
+  "authors": [
+    "Brené Brown"
+  ],
+  "year": "2010",
+  "sources": [
+    "https://ursummary.com/?p=2836",
+    "https://www.supersummary.com/the-gifts-of-imperfection/chapters-7-9-summary",
+    "https://fs.blog/brene-brown-guilt-shame/",
+    "https://www.bookbrowse.com/bb_briefs/detail/index.cfm/ezine_preview_number/26703/the-gifts-of-imperfection"
+  ],
+  "source_note": "Book not read; DB title 'Özgür Olmak 2' mapped to The Gifts of Imperfection from content (perfectionism, shame/guilt, joy). Facts from summaries, search snippets and memory of the book; confidence marked.",
+  "facts": [
+    {
+      "id": "g1",
+      "claim": "Subtitle: Let Go of Who You Think You're Supposed to Be and Embrace Who You Are. Ten guideposts, each pairing something to cultivate with something to let go of.",
+      "source": "search snippets, summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "g2",
+      "claim": "Perfectionism is a twenty-ton shield we lug around thinking it protects us, when it prevents us from taking flight.",
+      "source": "ursummary.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "g3",
+      "claim": "Perfectionism: if I look perfect, do everything perfectly, act perfectly, I can minimise or avoid shame, judgment and blame; a defensive strategy, not drive for excellence.",
+      "source": "ursummary.com; memory of the book",
+      "confidence": "medium"
+    },
+    {
+      "id": "g4",
+      "claim": "Perfectionism is other-focused ('What will people think?'); healthy striving is self-focused ('How can I improve?').",
+      "source": "ursummary.com",
+      "confidence": "high"
+    },
+    {
+      "id": "g5",
+      "claim": "Perfectionism sits under self-compassion ('letting go of perfectionism') among the guideposts.",
+      "source": "memory of table of contents",
+      "confidence": "medium"
+    },
+    {
+      "id": "g6",
+      "claim": "When shame, judgment or blame come anyway, perfectionists often blame not being perfect enough, which feeds the cycle.",
+      "source": "memory of the book",
+      "confidence": "medium"
+    },
+    {
+      "id": "g7",
+      "claim": "Shame: intensely painful feeling of believing we are flawed and unworthy of love and belonging; 'I am bad'. Guilt: 'I did something bad'.",
+      "source": "ursummary; fs.blog; Brown's definition",
+      "confidence": "high"
+    },
+    {
+      "id": "g8",
+      "claim": "Guilt holds a behaviour against our values and can motivate positive change; shame is associated with addiction, aggression, depression, violence.",
+      "source": "ursummary; fs.blog",
+      "confidence": "high"
+    },
+    {
+      "id": "g9",
+      "claim": "Apology contrast: 'I'm sorry. I made a mistake.' vs 'I'm sorry. I am a mistake.'",
+      "source": "fs.blog page on Brown; exact book location unconfirmed",
+      "confidence": "medium"
+    },
+    {
+      "id": "g10",
+      "claim": "Shame grows in secrecy and silence and 'hates having words wrapped around it'; the book offers four shame-resilience steps.",
+      "source": "ursummary (four steps); memory",
+      "confidence": "medium"
+    },
+    {
+      "id": "g11",
+      "claim": "Guidepost 4: Cultivating Gratitude and Joy: Letting Go of Scarcity and Fear of the Dark.",
+      "source": "supersummary.com",
+      "confidence": "high"
+    },
+    {
+      "id": "g12",
+      "claim": "In her research Brown never met someone able to feel joy without regularly practicing gratitude.",
+      "source": "Oprah interview via search summary; book wording unconfirmed",
+      "confidence": "medium"
+    },
+    {
+      "id": "g13",
+      "claim": "Foreboding joy: when joy arrives, many people feel fear of loss and imagine catastrophe; a parent looking at a child; joyful people respond by practicing gratitude.",
+      "source": "ursummary; search results (sources disagree on which book first uses the term)",
+      "confidence": "medium"
+    },
+    {
+      "id": "g14",
+      "claim": "We cannot numb painful emotions selectively; numbing the dark also numbs joy and gratitude.",
+      "source": "ursummary",
+      "confidence": "medium"
+    },
+    {
+      "id": "g15",
+      "claim": "Brown analysed thousands of interviews and split people into those living with worthiness and those who struggled.",
+      "source": "ursummary",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Brown asked people 'do you feel good enough' and most answered 'not successful, thin, productive enough'",
+      "reason": "No source."
+    },
+    {
+      "claim": "Mother who yelled at child: 'terrible mother' vs 'yelling was bad' anecdote",
+      "reason": "Not confirmed in the book; dropped."
+    },
+    {
+      "claim": "Brown asked for the most joyful people and expected 'I'm naturally cheerful'",
+      "reason": "Not supported; replaced by her gratitude finding."
+    },
+    {
+      "claim": "'Mourning joy in advance' as Brown's phrase",
+      "reason": "Her term is foreboding joy."
+    },
+    {
+      "claim": "'Perfect version vs real version, answer always the second' framing",
+      "reason": "Unverified."
+    }
+  ],
+  "stories": {
+    "1639": {
+      "verdict": "keep",
+      "fact_ids": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6",
+        "g15"
+      ],
+      "note": "Medium."
+    },
+    "1640": {
+      "verdict": "keep",
+      "fact_ids": [
+        "g7",
+        "g8",
+        "g9",
+        "g10"
+      ],
+      "note": "Apology pair medium."
+    },
+    "1641": {
+      "verdict": "keep",
+      "fact_ids": [
+        "g11",
+        "g12",
+        "g13",
+        "g14"
+      ],
+      "note": "Medium; term origin disputed in sources."
+    }
+  }
+}

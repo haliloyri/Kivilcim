@@ -1,0 +1,63 @@
+{
+  "story_id": 1329,
+  "kind": "concept",
+  "book": {
+    "title": "The Success Principles",
+    "author": "Jack Canfield",
+    "year": "2005"
+  },
+  "confidence": "medium",
+  "confidence_note": "Principle 19 ('Use Feedback to Your Advantage') exists per the publisher's table of contents, but its text was not read. The weekly 1-to-10 question to his wife and coworkers comes from a Shortform summary and a Canfield-attributed quote; the airplane image rests on one reader highlight, so it is told only as Canfield's comparison, without a route or exact percentage. The old missile metaphor has no source and is dropped. No follow-up wording is attributed to Canfield.",
+  "facts": [
+    "Principle 19 of the book is 'Use Feedback to Your Advantage'.",
+    "Canfield compares the path to a goal with a flight: the plane is off its exact course most of the time and the pilot keeps correcting from the instruments' feedback until it arrives.",
+    "Feedback tells you when you are drifting off track and need to correct course.",
+    "People around you often hold feedback back because they fear you will react badly, so you have to ask for it.",
+    "Canfield recommends a direct question: 'On a scale of 1 to 10, how would you rate the quality of our relationship (service/product)?'",
+    "He says he asks his wife and his coworkers a version of this question every week.",
+    "A second question he suggests: 'In what ways do you see me holding myself back?' He advises taking the answer gracefully.",
+    "An answer below 10 usually comes with specific suggestions for what would make it better."
+  ],
+  "scene_details": [
+    "a pilot correcting from the instruments while the plane drifts",
+    "a weekly question to his wife: a number from 1 to 10"
+  ],
+  "tension": "Feedback is the thing that keeps you on course, yet the people who could give it usually stay quiet unless asked.",
+  "opening_idea": "Start with the number: once a week Canfield asks his own wife to rate their relationship from 1 to 10.",
+  "lessons": [
+    {
+      "idea": "Ask for a number, then ask what would raise it; a specific question gets an answer people otherwise keep to themselves.",
+      "anchor": "The weekly 1-to-10 question to his wife and coworkers."
+    },
+    {
+      "idea": "Being off course is normal; staying off course comes from not asking.",
+      "anchor": "The airplane comparison."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Who could tell you something useful about your work or relationship this week, and what number question would you ask them?",
+  "use_cases": [
+    {
+      "situation": "End of a project with a client",
+      "move": "Ask the client to rate the work from 1 to 10 and what would have made it higher.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A quiet evening with your partner",
+      "move": "Borrow Canfield's weekly habit: ask for a number for the past week, then listen without defending.",
+      "context": "family"
+    },
+    {
+      "situation": "Your manager says 'fine' about everything",
+      "move": "Ask for a 1-to-10 rating on one specific deliverable and one change that would add a point.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Canfield asks his wife for a weekly number from 1 to 10; ask yours, and listen to what's missing.",
+  "conversation_variants": {
+    "punchline_idea": "Jack Canfield asks his wife every week to rate their relationship from 1 to 10.",
+    "thirty_sec_idea": "Canfield's flight comparison, people's silence, the weekly 1-to-10 question and the suggestions that follow.",
+    "question_idea": "Who have you never asked for honest feedback?",
+    "key_contrast_idea": "Guessing versus asking"
+  }
+}

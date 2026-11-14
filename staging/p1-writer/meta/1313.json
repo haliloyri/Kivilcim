@@ -1,0 +1,35 @@
+{
+ "story_id": 1313,
+ "verdict": "keep",
+ "verify_note": "Verified in full text. Invented 'Does McDonald's sell good hamburgers?' dialogue and 'sells a system' quote dropped; real line 'the hamburger wasn't his product. McDonald's was.' Visit year omitted (book 1952 vs historical 1954).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kroc'un Gerçek Ürünü",
+  "description": "Ray Kroc bir hamburgerciye milkshake makinesi satmaya gider ve liseli çocukların saat gibi işleyen düzenini görür. Michael E. Gerber'e göre Kroc'un asıl ürünü hamburger değil, onsuz da çalışan işin kendisiydi.",
+  "hook": "Siz bir hafta ortadan kaybolsanız, işiniz aynı kalitede dönmeye devam eder miydi?",
+  "one_minute_summary": "Elli iki yaşındaki milkshake makinesi satıcısı Ray Kroc, San Bernardino'da iki kardeşin işlettiği bir hamburgerciye girdi. Liseli çocuklar aynı burgeri hızlı, ucuz ve İsviçre saati gibi çıkarıyordu. Kroc kardeşleri yöntemi bayilikle çoğaltmaya ikna etti. Michael E. Gerber'e göre Kroc'un buluşu, bayiye isimle birlikte bütün iş sistemini vermesiydi. Bayi yalnızca 'Çalışıyor mu?' diye soruyordu. Kroc da insana değil sisteme dayanan, kendisi olmadan işleyen bir iş kurdu."
+ },
+ "en": {
+  "title": "Kroc's Real Product",
+  "description": "Ray Kroc walks into a burger stand to sell a milkshake machine and sees teenagers working like a Swiss watch. Michael E. Gerber argues that Kroc's real product was a business that worked without him.",
+  "hook": "If you vanished for a week, would your work keep running at the same quality?",
+  "one_minute_summary": "Ray Kroc, a 52-year-old milkshake machine salesman, walked into a San Bernardino burger stand run by two brothers. High school kids were turning out identical burgers fast and cheap, like a Swiss watch. Kroc talked the brothers into letting him franchise the method. In Michael E. Gerber's telling, his breakthrough was handing franchisees a whole system, not just a name. The franchisee only asked: does it work? So Kroc built a business that depended on systems, not people, and ran without him."
+ },
+ "es": {
+  "title": "El verdadero producto de Kroc",
+  "description": "Ray Kroc entra en un puesto de hamburguesas para vender una batidora y ve a unos chicos trabajar como un reloj suizo. Michael E. Gerber sostiene que su producto real era un negocio que funcionaba sin él.",
+  "hook": "Si desaparecieras una semana, ¿tu trabajo seguiría saliendo con la misma calidad?",
+  "one_minute_summary": "Ray Kroc, un vendedor de batidoras de cincuenta y dos años, entró en un puesto de hamburguesas de San Bernardino que llevaban dos hermanos. Unos chicos de instituto sacaban hamburguesas idénticas, rápidas y baratas, como un reloj suizo. Kroc convenció a los hermanos para franquiciar el método. Según Michael E. Gerber, su gran idea fue dar al franquiciado un sistema completo y no solo un nombre. El franquiciado solo preguntaba si funcionaba, así que Kroc construyó un negocio que funcionaba sin él."
+ },
+ "de": {
+  "title": "Krocs eigentliches Produkt",
+  "description": "Ray Kroc betritt einen Burgerstand, um einen Milchshake-Mixer zu verkaufen, und sieht Schüler arbeiten wie ein Schweizer Uhrwerk. Michael E. Gerber meint, Krocs eigentliches Produkt war ein Geschäft, das ohne ihn lief.",
+  "hook": "Wenn du eine Woche verschwindest, läuft deine Arbeit dann in derselben Qualität weiter?",
+  "one_minute_summary": "Ray Kroc, ein 52-jähriger Vertreter für Milchshake-Mixer, betrat in San Bernardino einen Burgerstand zweier Brüder. Schüler machten dort identische Burger, schnell und billig, wie ein Schweizer Uhrwerk. Kroc überredete die Brüder, ihm das Franchising der Methode zu überlassen. Laut Michael E. Gerber lag sein Durchbruch darin, Franchisenehmern ein ganzes System statt nur eines Namens zu geben. Die fragten nur: Funktioniert es? Also baute Kroc ein Geschäft, das von Systemen abhing und ohne ihn lief."
+ }
+}

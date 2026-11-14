@@ -1,0 +1,206 @@
+{
+ "book_no": 99,
+ "title": "Eat That Frog!",
+ "authors": [
+  "Brian Tracy"
+ ],
+ "year": "2001",
+ "sources": [
+  "https://ocf.berkeley.edu/~wcsc/wp-content/uploads/Brian-Tracy-Eat-That-Frog.pdf (early-edition full text, read directly: introduction, ch. 2, 3, 5, 19, 21)",
+  "https://www.bkconnection.com/static/Eat-That-Frog-EXCERPT.pdf (publisher page, chapter list)",
+  "https://weekplan.net/lessons-from-eat-that-frog",
+  "https://www.shortform.com/blog/?p=28281"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Introduction: 'It has been said for many years that if the first thing you do each morning is to eat a live frog, you can go through the day with the satisfaction of knowing that that is probably the worst thing that is going to happen to you all day long.' Tracy does not name Mark Twain in the book text read.",
+   "source": "book intro (full text)",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Tracy's 'frog' is the biggest, most important task, the one you are most likely to procrastinate on, and also the one that can have the greatest positive impact on your results.",
+   "source": "book intro",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Two more lines Tracy quotes as sayings: 'If you have to eat two frogs, eat the ugliest one first' and 'If you have to eat a live frog, it doesn't pay to sit and look at it for very long.'",
+   "source": "book intro",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Chapter 2 (Plan Every Day in Advance): make out the list the night before, at the end of the workday; move unfinished items over and add everything for the next day. Tracy says the subconscious mind works on the list while you sleep and you may wake with ideas.",
+   "source": "book ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Chapter 2: all you need is a piece of paper and a pen; always work from a list; when something new comes up, add it to the list before doing it. Tracy claims a 25% or more productivity gain from the first day of working from a list (his claim, no study cited).",
+   "source": "book ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Chapter 2: planning the day takes about ten or twelve minutes and Tracy says it saves at least two hours (100-120 minutes) of wasted time; 'every minute spent in planning saves as many as ten minutes in execution' (author's estimate).",
+   "source": "book ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Chapter 2: tick items off as you complete them; the visual picture of accomplishment motivates.",
+   "source": "book ch. 2",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Chapter 3: 80/20 rule, also called the Pareto Principle after Vilfredo Pareto, who first wrote about it in 1895. Tracy applies it: 20% of tasks account for 80% of the value of what you do.",
+   "source": "book ch. 3",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Chapter 3: if you have ten items on a list, two will be worth as much or more than the other eight together; often one item out of ten is worth more than the other nine combined, and 'this task is invariably the frog that you should eat first'. Each task may take the same time but one or two contribute five or ten times the value.",
+   "source": "book ch. 3",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Chapter 3: most people procrastinate on the top 10-20% most valuable items and busy themselves with the least important 80%. 'You often see people who appear to be busy all day long but they seem to accomplish very little.' Rule: 'Resist the temptation to clear up small things first.' Question to ask before starting: 'Is this task in the top 20% of my activities or in the bottom 80%?'",
+   "source": "book ch. 3",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Chapter 5 ABCDE method: write the list for the coming day, 'think on paper', put a letter before each item before starting the first task.",
+   "source": "book ch. 5",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "A = very important, a must do, serious consequences if done or not (examples: visiting a key customer, finishing a report the boss needs for a board meeting). 'These are the frogs of your life.' Several A tasks get A-1, A-2, A-3; A-1 is 'your biggest, ugliest frog of all'.",
+   "source": "book ch. 5",
+   "confidence": "high"
+  },
+  {
+   "id": "f13",
+   "claim": "B = should do, mild consequences ('the tadpoles of your work life'): returning an unimportant phone message, reviewing email. Rule: never do a B task when an A task is undone.",
+   "source": "book ch. 5",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "C = nice to do, no consequences either way (phoning a friend, coffee or lunch with a coworker). D = delegate whatever someone else can do, to free time for A tasks. E = eliminate, may have been important once but no longer matters, often kept out of habit or because you enjoy it.",
+   "source": "book ch. 5",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Tracy: start immediately on A-1 and stay at it until complete; 'Eat the whole frog'. He suggests practising the method every day for the next month so it becomes a habit.",
+   "source": "book ch. 5",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "Chapter 21 (Single Handle Every Task): once you begin, keep working without diversion until the task is 100% complete; repeat 'Back to work!' whenever tempted to stop or do something else.",
+   "source": "book ch. 21",
+   "confidence": "high"
+  },
+  {
+   "id": "f17",
+   "claim": "Chapter 21: concentrating single-mindedly can reduce the time needed by 50% or more (Tracy's claim). 'It has been estimated' (no source given) that starting and stopping, picking a task up and putting it down, can increase the time needed by as much as 500%.",
+   "source": "book ch. 21",
+   "confidence": "medium"
+  },
+  {
+   "id": "f18",
+   "claim": "Chapter 21: each time you return to a task you must work out where you were, overcome inertia and rebuild momentum and rhythm. Stopping breaks the cycle and moves you back up the 'Efficiency Curve'.",
+   "source": "book ch. 21",
+   "confidence": "high"
+  },
+  {
+   "id": "f19",
+   "claim": "Chapter 19 (Create Large Chunks of Time): Tracy suggests setting aside thirty, sixty and ninety minute time segments for important tasks; turn off the telephone, eliminate all distractions, work non-stop. Example: a salesperson resolves to phone prospects for one solid hour between 10 and 11 AM. He says working at home in the morning without interruption can get three times as much done as in a busy office (his claim). Tracy also suggests planning your work thoroughly before a business flight so that once the plane takes off you can work non-stop for the entire flight.",
+   "source": "book ch. 19",
+   "confidence": "high"
+  },
+  {
+   "id": "f20",
+   "claim": "Chapter 21: 'Every great achievement of mankind has been preceded by a long period of hard, concentrated work until the job was done.' When you prepare thoroughly and begin, refusing to stop until done, you develop energy, enthusiasm and motivation, and work faster and more effectively.",
+   "source": "book ch. 21",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old text 1393 attributes the frog line to Mark Twain by name.",
+   "reason": "Book intro says only 'it has been said'; the Twain attribution is contested in secondary sources (also credited to Chamfort). Dropped."
+  },
+  {
+   "claim": "Old 1393: unfinished task 'works in the subconscious, drains energy, voice goes quiet after doing it'.",
+   "reason": "Not in the text read. The book's subconscious point is about the list made the night before (f4)."
+  },
+  {
+   "claim": "Old 1393 examples (unfiled tax return, hard client call, pending decision).",
+   "reason": "Not Tracy's examples; book's examples are f12-f14."
+  },
+  {
+   "claim": "Old 1394: 'Tracy asks himself every morning: if I could only do one thing today...'.",
+   "reason": "Not found in book text read."
+  },
+  {
+   "claim": "Old 1394: 'a day in which the A task is completed is a successful day regardless'.",
+   "reason": "Not stated as such; book says start A-1 and stay until complete."
+  },
+  {
+   "claim": "Old 1395: 'a study shows task-switchers are 40% less productive'.",
+   "reason": "No 40% figure in the book. Replaced by Tracy's own unsourced estimates (50% faster, up to 500% longer)."
+  },
+  {
+   "claim": "Old 1395: brain switches rapidly, 'context switching cost', quality drops, blocks of 25, 45, 90 minutes, phone off, notifications off, one window.",
+   "reason": "Not in book. Book gives 30/60/90 minute segments (f19) and phone off, no distractions; no notifications or windows."
+  }
+ ],
+ "stories": {
+  "1393": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7"
+   ],
+   "note": "Frog saying plus night-before list. Twain, 'subconscious drain' dropped. Kind: concept; thin on a scene, so rely on list/paper/pen details."
+  },
+  "1394": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f8",
+    "f9",
+    "f10",
+    "f11",
+    "f12",
+    "f13",
+    "f14",
+    "f15"
+   ],
+   "note": "80/20 and ABCDE. Old 'morning question' dropped."
+  },
+  "1395": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f16",
+    "f17",
+    "f18",
+    "f19",
+    "f20"
+   ],
+   "note": "Single handling. 40% figure replaced; both numbers are Tracy's own estimates and must be hedged."
+  }
+ }
+}

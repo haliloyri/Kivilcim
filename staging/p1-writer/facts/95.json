@@ -1,0 +1,165 @@
+{
+  "book_no": 95,
+  "title": "The Happiness Advantage",
+  "authors": [
+    "Shawn Achor"
+  ],
+  "year": "2010",
+  "note": "DB Turkish title 'Mutluluğun Peşinde'. Full text not accessible; facts rest on a detailed chapter-by-chapter abstract that quotes Achor's first-person passages (IIT Delhi book abstract), Farnam Street quotes, Achor interviews, and the primary studies he cites (Stickgold 2000; Lyubomirsky, King & Diener 2005; Estrada, Isen & Young 1997).",
+  "sources": [
+    "https://web.iitd.ac.in/~prbijwe/Book_Abstracts/C3_N14_The%20Happiness%20Advantage%20By%20Shawn%20Achor.pdf",
+    "https://fs.blog/the-keys-to-happiness/",
+    "https://glenn-roberts-4m5l.squarespace.com/blog/happiness-advantage-part-iii",
+    "https://www.scientificamerican.com/article/tetris-dreams",
+    "https://sciencedaily.com/releases/2000/10/001013073843.htm",
+    "https://goodthinkinc.com/project/the-build-network-let-them-eat-candy/",
+    "https://www.foxnews.com/story/happiness-may-lead-to-success.print",
+    "https://penguinrandomhouse.com/books/isbn/9780307591548"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Achor describes a Harvard Medical School study in which 27 people played Tetris for multiple hours a day, three days in a row. Some could not stop dreaming of falling shapes; others kept seeing the shapes everywhere in waking hours, the world as sequences of Tetris blocks.",
+      "source": "book summaries; Stickgold et al. 2000 Science (27 subjects: 12 novices, 10 experts, 5 amnesics; over 60% reported game images at sleep onset)",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Achor calls this a 'cognitive afterimage' and names the pattern the Tetris Effect: the brain keeps scanning for whatever pattern it has been practising.",
+      "source": "book abstract",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Achor compares attention to an email spam filter: we remember roughly one of over 100 pieces of information; the filter lets through what it has been programmed to find. Work often rewards scanning for problems, stresses and injustices, and the better we get at it the more positives we miss; 'even a paradise can become a hell'.",
+      "source": "book abstract",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "His remedy: write a daily list of three good things from the last 24 hours, about five minutes a day; items need only be specific. People who did it for one week were happier and less depressed at 1, 3 and 6 month follow-ups. Achor: ritualize it, pick the same time each day, keep the materials at hand, set an alarm if needed.",
+      "source": "book abstract; Seligman et al. 2005",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Social Investment principle: Achor's study of about 1,600 Harvard undergraduates found social support a far greater predictor of happiness than any other factor, more than GPA, family income, SAT scores, age, gender or race; the correlation was 0.7, where most psychology findings count as significant around 0.3.",
+      "source": "Farnam Street quoting Achor; book abstract",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "At Harvard, Achor saw stressed students under pressure turn inward, away from friends, family and social support, at the time they needed it most. He writes that the most successful people hold tighter to their social support: instead of divesting, they invest. After entering Harvard, students realize half of them are now below average; the depression that follows pulls them inward.",
+      "source": "book abstract",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "The Harvard Men Study (Grant Study) followed 268 men from college entry in the late 1930s; in 2009 its director George Vaillant told The Atlantic he could sum up the findings in one word: love. He added: '70 years of evidence that our relationships with other people matter, and matter more than anything else in the world.'",
+      "source": "book abstract",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "In the 'Very Happy People' study, the one characteristic distinguishing the happiest 10% was the strength of their social relationships.",
+      "source": "book abstract; Farnam Street",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Achor challenges the formula 'work hard, become successful, then be happy': each success moves the goalpost, so happiness keeps receding. He argues happiness comes first and fuels success.",
+      "source": "book summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Meta-analysis by Sonja Lyubomirsky, Laura King and Ed Diener (Psychological Bulletin, 2005) reviewed 225 studies covering more than 275,000 people; happiness was linked to success in work, relationships and health and often preceded it. The authors note the relation runs both ways. Happy individuals were more inclined to seek out and undertake new goals.",
+      "source": "Fox/WebMD write-up; the paper",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "Doctors study: 44 internists; half were given a small bag of candy as thanks beforehand (not eaten during the study). The doctors put in a good mood reached the correct diagnosis earlier; Achor says nearly twice as fast.",
+      "source": "Goodthink interview with Achor; Estrada et al. 1997",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Students primed to feel happy before a math test (thinking of the happiest day of their lives) outperformed their peers.",
+      "source": "book abstract",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Achor visited a school in Soweto and asked who liked schoolwork; nearly all hands went up. His escort said they saw schoolwork as a privilege their parents did not have.",
+      "source": "book abstract",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Achor: positive emotions flood the brain with dopamine and serotonin, which dial up the learning centres; we organise new information, keep it longer and retrieve it faster.",
+      "source": "book abstract",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Tetris study was in the early 1990s with thousands of hours.",
+      "reason": "Wrong: Stickgold et al. 2000, multiple hours over three days."
+    },
+    {
+      "claim": "Participants pictured stacking boxes on shop shelves and cars into parking spots.",
+      "reason": "Not found in sources; dropped."
+    },
+    {
+      "claim": "Two groups at the same stress level compared directly.",
+      "reason": "Not the design; Achor's study is correlational across 1,600 students."
+    },
+    {
+      "claim": "Social connection raises oxytocin, lowers cortisol and opens learning capacity.",
+      "reason": "Not verified as worded; dropped."
+    },
+    {
+      "claim": "Achor recommends reaching out to someone once a week.",
+      "reason": "Not found."
+    },
+    {
+      "claim": "Each positive emotion via dopamine is 'critical for adaptation' wording.",
+      "reason": "Vague; replaced by book's own examples."
+    }
+  ],
+  "stories": {
+    "1381": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "note": "Tetris Effect; correct the study details."
+    },
+    "1382": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7",
+        "f8"
+      ],
+      "note": "Social investment; correct the invented two-group design."
+    },
+    "1383": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "f13",
+        "f14"
+      ],
+      "note": "Happiness first; doctors case and meta-analysis."
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1656,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: systems model from summaries of Creativity; book text not read. The old tree-in-the-forest framing, Bach and Van Gogh, and 'community' as the third part were dropped; the book calls it the field. The Einstein example comes from a lecture transcript and is attributed to it, low confidence.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Birey, alan ve saha",
+    "description": "Csikszentmihalyi'ye göre yaratıcılık üç parçadan doğuyor: birey, alan ve onay veren uzmanlar. Einstein örneği bir konuşmadan geliyor.",
+    "hook": "Kendi alanınızda çalışmanızı ilk kim değerlendirir?",
+    "one_minute_summary": "Csikszentmihalyi, Creativity kitabında yaratıcılığı üç parçalı bir sistem olarak anlatıyor: yeni şeyi üreten birey, simgesel kuralları olan alan ve kapıcı görevi gören uzmanlardan oluşan saha. Yaratıcı kişi alanı değiştirir, ama bunu ancak sahanın açık ya da örtük onayıyla yapabilir. Bir konuşmasında Einstein'ın fikirlerini az sayıda önde gelen fizik profesörünün onayladığını söylüyor; bunu kitapta doğrulayamadım. Anlatı ikinci el özetlere dayanıyor, o yüzden ayrıntıları temkinli okuyun."
+  },
+  "en": {
+    "title": "Individual, domain, field",
+    "description": "Csikszentmihalyi says creativity needs three parts: a person, a domain and the experts who accept the work. The Einstein example comes from a lecture.",
+    "hook": "Who in your field would be the first to judge your work?",
+    "one_minute_summary": "In Creativity, Csikszentmihalyi describes creativity as a system of three parts: the individual who makes something new, a domain with symbolic rules, and a field of experts who act as gatekeepers. A creative person changes the domain, but only with the field's consent. In a lecture he says a small number of leading physics professors certified Einstein's ideas; I could not confirm that in the book. The account rests on secondary summaries."
+  },
+  "es": {
+    "title": "Individuo, dominio y campo",
+    "description": "Csikszentmihalyi dice que la creatividad necesita tres partes: una persona, un dominio y los expertos que aceptan la obra. El ejemplo de Einstein viene de una conferencia.",
+    "hook": "¿Quién en tu campo sería el primero en juzgar tu trabajo?",
+    "one_minute_summary": "En Creativity, Csikszentmihalyi describe la creatividad como un sistema de tres partes: el individuo que hace algo nuevo, un dominio con reglas simbólicas y un campo de expertos que hacen de guardianes. Una persona creativa cambia el dominio, pero solo con el consentimiento del campo. En una conferencia dice que un pequeño número de profesores de física destacados certificó las ideas de Einstein; no pude confirmarlo en el libro. El relato se apoya en resúmenes secundarios."
+  },
+  "de": {
+    "title": "Individuum, Domäne, Feld",
+    "description": "Csikszentmihalyi sagt, Kreativität brauche drei Teile: eine Person, eine Domäne und die Experten, die die Arbeit annehmen. Das Einstein-Beispiel stammt aus einem Vortrag.",
+    "hook": "Wer in deinem Feld würde deine Arbeit als Erstes beurteilen?",
+    "one_minute_summary": "In Creativity beschreibt Csikszentmihalyi Kreativität als System aus drei Teilen: dem Individuum, das etwas Neues schafft, einer Domäne mit symbolischen Regeln und einem Feld von Experten, die als Torhüter wirken. Ein kreativer Mensch verändert die Domäne, aber nur mit Zustimmung des Feldes. In einem Vortrag sagt er, eine kleine Zahl führender Physikprofessoren habe Einsteins Ideen beglaubigt; im Buch konnte ich das nicht bestätigen. Der Bericht stützt sich auf Sekundärquellen."
+  }
+}

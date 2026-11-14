@@ -1,0 +1,61 @@
+{
+ "story_id": 1355,
+ "kind": "concept",
+ "book": {
+  "title": "The Monk Who Sold His Ferrari",
+  "author": "Robin S. Sharma",
+  "year": "1997"
+ },
+ "confidence": "medium",
+ "confidence_note": "The five regrets of the dying (old text) come from Bronnie Ware, not this book; dropped. Recentered on the book's own 'deathbed mentality' (ch. 11): Divea's hourglass and John's father's line, both verified in the full text. Fiction: Divea and John are characters. Confidence medium because the story's center changes.",
+ "facts": [
+  "Sharma's book is a fable: John hears his former mentor Julian Mantle describe what he learned from the Sages of Sivana in the Himalayas.",
+  "John's father had told him: 'John, on your deathbed you will never wish you spent more time at the office.' John began spending a little more time at home.",
+  "About six months after Julian arrived in Sivana, Divea, the youngest sage, came to his hut with a gift from all the sages: a miniature hourglass of blown glass and a small piece of sandalwood.",
+  "Each sage had received one as a child; though they owned nothing, the hourglasses were daily reminders of mortality and of living full days.",
+  "In Yogi Raman's fable a gold stopwatch stands for time, which 'slips through our hands like grains of sand'.",
+  "Divea's advice: the best time to plant a tree was forty years ago; the second best time is today. 'Develop a deathbed mentality.'",
+  "Julian: ask yourself each day 'What would I do today if it was my last?'; you start on the meaningful things you've been putting off. John calls it morbid; Julian answers that it is a philosophy about life.",
+  "The chapter's techniques also include having the courage to say 'no'."
+ ],
+ "scene_details": [
+  "a miniature hourglass of blown glass and sandalwood",
+  "each sage given one as a child",
+  "a gold stopwatch in the fable's garden",
+  "'What would I do today if it was my last?'"
+ ],
+ "tension": "Monks who own nothing each keep an hourglass, and give one to the lawyer who used to own everything.",
+ "opening_idea": "Open with Divea unwrapping the hourglass in Julian's hut.",
+ "lessons": [
+  {
+   "idea": "Use the deathbed question on one ordinary day to find the thing you keep postponing, then do it today.",
+   "anchor": "Divea's hourglass and the question 'What would I do today if it was my last?'"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What meaningful thing have you postponed for so long that you no longer notice you are postponing it?",
+ "use_cases": [
+  {
+   "situation": "Planning the weekend with family",
+   "move": "In Sharma's fable each monk kept a small hourglass. Let's each pick one thing we've kept putting off and do it this weekend.",
+   "context": "family"
+  },
+  {
+   "situation": "Friend says they'll call their parent 'when things calm down'",
+   "move": "Ask what would happen if they called this evening instead.",
+   "context": "social"
+  },
+  {
+   "situation": "Writing tomorrow's to-do list",
+   "move": "Put the thing you've postponed longest at the top and say no to one smaller task.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "The sages kept hourglasses to see time pass; name one postponed thing and do it before the sand runs out today.",
+ "conversation_variants": {
+  "punchline_idea": "Monks who owned nothing still each kept a little hourglass.",
+  "thirty_sec_idea": "In Sharma's fable, Julian gets an hourglass from the youngest sage, a daily reminder of mortality. Her advice: best time to plant a tree was forty years ago, second best is today. Julian calls it the deathbed mentality: ask what you'd do if today were your last.",
+  "question_idea": "",
+  "key_contrast_idea": "someday versus today"
+ }
+}

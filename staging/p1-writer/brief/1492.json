@@ -1,0 +1,62 @@
+{
+  "story_id": 1492,
+  "kind": "concept",
+  "book": {
+    "title": "Lost Connections",
+    "author": "Johann Hari",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Hari's prescription history comes from a British Journal of General Practice review (paroxetine as a teenager, told it was a serotonin chemical imbalance, dose rising from 20 mg to 60 mg over a few years). The 18-year-old detail comes from one summary and is left out. The nine-causes list and the Kirsch figure come from summaries and a feature article, not the book text, and critics (for example Dean Burnett) say Hari cherry-picked, so the text presents the nine causes as Hari's argument. Old text's 'never truly recovered', 'big pharma marketing' and 'antidepressants save lives for some' claims were not confirmed and are dropped. No advice to stop medication is given or implied.",
+  "facts": [
+    "As a teenager Hari was prescribed paroxetine (sold as Paxil) and told by his GP that his depression came from a chemical imbalance, depleted serotonin.",
+    "A review says the dose rose from 20 mg to 60 mg over a period of a few years.",
+    "Lost Connections (2018) argues that depression is far from simply a chemical imbalance, though chemistry may be a small part.",
+    "Hari cites Irving Kirsch's meta-analysis, which he describes as showing a mood improvement of only 1.8 points on the Hamilton scale.",
+    "The book names nine causes: disconnection from meaningful work, other people, meaningful values, childhood trauma, status and respect, the natural world, a hopeful or secure future, plus two biological factors, genes and brain changes.",
+    "Hari says the first seven are connections that have been lost; only two of the nine are biological.",
+    "The book also reports on responses to lost connection: an East London doctor's practice became a hub for volunteer groups, offering patients one of over a hundred ways to reconnect such as pottery, exercise and gardening; one group turned an urban plot into a garden (Substack summary).",
+    "Critics, such as the psychiatrist Dean Burnett, say Hari cherry-picked evidence and exaggerated the novelty of his findings; a reviewer notes he is a writer, not a scientist."
+  ],
+  "scene_details": [
+    "a first tablet of paroxetine, 20 mg",
+    "the dose climbing to 60 mg",
+    "a list of nine causes, seven of them lost connections",
+    "a GP saying 'chemical imbalance' and 'serotonin'"
+  ],
+  "tension": "A teenager is told depression is a chemical shortage; the adult he becomes argues the list of causes is much longer.",
+  "opening_idea": "Open on the 20 mg tablet and the doctor's explanation, then the dose climbing to 60 mg.",
+  "lessons": [
+    {
+      "idea": "Ask what a person is cut off from, alongside how they feel.",
+      "anchor": "Hari's list: work, people, values, status, nature, future, childhood.",
+      "example": "A flatmate who seems low since moving cities has lost the people and routines he knew."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Looking at your own life or someone close to you, which kind of connection feels thinnest right now, and what small step could thicken it?",
+  "use_cases": [
+    {
+      "situation": "A colleague seems low since the team was reshuffled.",
+      "move": "Ask which part of work or which people they miss; Hari lists lost work and lost relationships among the causes he names.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A friend says they want to stop their antidepressants after reading the book.",
+      "move": "Say the book's argument is disputed and suggest they talk to their doctor before changing anything.",
+      "context": "social"
+    },
+    {
+      "situation": "You have felt flat for weeks.",
+      "move": "List the seven connections and mark the one that feels thinnest, then bring it up with someone you trust or a professional.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Hari's list has nine causes; seven are lost connections, so ask what someone has lost touch with.",
+  "conversation_variants": {
+    "punchline_idea": "Hari was prescribed an antidepressant as a teenager and later wrote a book arguing depression has nine causes, only two of them biological.",
+    "thirty_sec_idea": "As a teenager Johann Hari was prescribed paroxetine and told depression was a serotonin imbalance; the dose rose from 20 to 60 milligrams. His book Lost Connections argues for nine causes, seven of them lost connections to work, people, values and more. Critics say he picks his evidence.",
+    "question_idea": "",
+    "key_contrast_idea": "chemistry or connection"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1505,
+ "verdict": "keep",
+ "verify_note": "Keep: concept story on BATNA (term coined in the book; chapter 'What If They Are More Powerful?'), thin material from study guides, so story is short. Old text's job-offer example and invented quote dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Elinizdeki alternatif",
+  "description": "Fisher ve Ury'ye göre müzakere gücü, anlaşma olmazsa ne yapabileceğinize bağlıdır. Bu alternatif, her teklifi tarttığınız ölçüdür.",
+  "hook": "Önümüzdeki zor konuşma sonuçsuz kalsa gerçekte ne yapardınız?",
+  "one_minute_summary": "Fisher ve Ury'nin Getting to Yes kitabında bir bölümün başlığı şu: Karşı taraf daha güçlüyse ne olacak? Cevap, yazarların ortaya attığı BATNA, yani anlaşma olmazsa elinizdeki en iyi alternatif. Müzakere etme nedeniniz, müzakere etmeden alabileceğinizden daha iyisini elde etmek. Her teklifi alternatifinizle karşılaştırırsınız, böylece hem çok kötü bir teklifi kabul etmezsiniz hem de işinize yarayacak olanı reddetmezsiniz. Bu ölçü sizi kötü bir teklifi kabul etmekten korur."
+ },
+ "en": {
+  "title": "Know your alternative",
+  "description": "For Fisher and Ury, power at the table depends on what you can do if there is no deal. That alternative is the yardstick for every offer.",
+  "hook": "If your next hard conversation fell through, what would you really do?",
+  "one_minute_summary": "A chapter of Fisher and Ury's Getting to Yes asks what to do if the other side is more powerful. The answer is the BATNA, a term the authors coined for the best alternative to a negotiated agreement. You negotiate to get something better than you could get without negotiating, so you hold each offer up against that alternative. It protects you from two mistakes: accepting terms that are too unfavorable and turning down terms that would serve you."
+ },
+ "es": {
+  "title": "Conoce tu alternativa",
+  "description": "Para Fisher y Ury, el poder en la mesa depende de lo que puedes hacer si no hay trato. Esa alternativa es la vara con la que mides cada oferta.",
+  "hook": "Si tu próxima conversación difícil fracasara, ¿qué harías de verdad?",
+  "one_minute_summary": "Un capítulo de Getting to Yes, de Fisher y Ury, pregunta qué hacer si la otra parte es más poderosa. La respuesta es el BATNA, término que los autores acuñaron para la mejor alternativa a un acuerdo negociado. Negocias para obtener algo mejor que lo que lograrías sin negociar, así que comparas cada oferta con esa alternativa. Te protege de dos errores: aceptar condiciones demasiado desfavorables y rechazar condiciones que te convendrían."
+ },
+ "de": {
+  "title": "Kenne deine Alternative",
+  "description": "Für Fisher und Ury hängt die Macht am Tisch davon ab, was du ohne Einigung tun kannst. Diese Alternative ist der Maßstab für jedes Angebot.",
+  "hook": "Wenn dein nächstes schwieriges Gespräch scheitern würde, was würdest du wirklich tun?",
+  "one_minute_summary": "Ein Kapitel von Getting to Yes fragt, was zu tun ist, wenn die andere Seite mächtiger ist. Die Antwort ist die BATNA, ein von Fisher und Ury geprägter Begriff für die beste Alternative zu einer Verhandlungslösung. Du verhandelst, um mehr zu erreichen als ohne Verhandlung, also hältst du jedes Angebot gegen diese Alternative. Sie schützt vor zwei Fehlern: zu ungünstige Bedingungen anzunehmen und Bedingungen abzulehnen, die dir nützen würden."
+ }
+}

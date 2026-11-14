@@ -1,0 +1,62 @@
+{
+  "story_id": 1324,
+  "kind": "concept",
+  "book": {
+    "title": "The Artist's Way",
+    "author": "Julia Cameron",
+    "year": "1992"
+  },
+  "confidence": "medium",
+  "confidence_note": "The book's full text was not accessible; wording comes from consistent quotations in secondary sources and Cameron's own site. The old claim that most participants reported surprising changes within weeks is not a measured result and is dropped, as is 'before making coffee'. No single dated scene is told; this is a concept story built on the tool's own rules.",
+  "facts": [
+    "Julia Cameron began teaching blocked artists in 1978; the work grew from one-on-one sessions into workshops and a course, and then into The Artist's Way.",
+    "The book's first tool is morning pages: three pages of longhand writing, strictly stream-of-consciousness, written first thing in the morning.",
+    "There is no wrong way to do them; they are not high art, and no topic is too trivial to go on the page.",
+    "By spilling out of bed and straight onto the page every morning, Cameron says, you learn to evade the Censor, the inner critic; since there is no wrong way, the Censor's opinion doesn't count.",
+    "Cameron advises not rereading the pages, and not letting anyone else read them, at least for the first eight weeks.",
+    "On her own writing she says: 'I learned to just show up at the page and write down what I heard.' And: 'I didn't have to be in the mood.'",
+    "Cameron writes that morning pages are nonnegotiable: never skip or skimp on them.",
+    "Beyond the reach of the Censor's babble, she says, we find our own quiet center, where we hear the still, small voice.",
+    "Of students working the process she says she sees 'a certain amount of defiance and giddiness in the first few weeks.'"
+  ],
+  "scene_details": [
+    "three pages, by hand, before anything else in the morning",
+    "a notebook nobody, including the writer, rereads for eight weeks",
+    "'just show up at the page'"
+  ],
+  "tension": "The cure Cameron gives blocked artists is writing that is not supposed to be good.",
+  "opening_idea": "Start with the rule itself: three handwritten pages every morning that no one, not even the writer, is supposed to read.",
+  "lessons": [
+    {
+      "idea": "Get the noise onto paper before you try to do the work that matters; a page with no standard lets you start without waiting for the right mood.",
+      "anchor": "Morning pages have no wrong way and are not reread, so the Censor has nothing to judge.",
+      "everyday_example_idea": "A manager writes three messy lines about what's worrying her before opening the quarterly report she's been avoiding."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What would you write tomorrow morning on a page you knew nobody, including you, would read for eight weeks?",
+  "use_cases": [
+    {
+      "situation": "A friend says they want to write but never feel ready.",
+      "move": "Tell them Cameron's rule: three pages by hand, first thing, no wrong way, and don't reread them for eight weeks.",
+      "context": "social"
+    },
+    {
+      "situation": "You're stuck before starting a hard document.",
+      "move": "Write one page by hand of whatever is in your head, then open the document.",
+      "context": "self"
+    },
+    {
+      "situation": "A team brainstorm stalls because everyone self-edits.",
+      "move": "Give everyone five minutes of private, unread scribbling before anyone shares an idea.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Three messy pages before breakfast give the inner critic nothing to grade.",
+  "conversation_variants": {
+    "punchline_idea": "Julia Cameron's main cure for blocked artists is three pages a day you're told not to reread.",
+    "thirty_sec_idea": "Julia Cameron spent years teaching blocked artists, and her first tool is odd: every morning, write three pages by hand, whatever comes, no wrong way. Don't reread them, at least for eight weeks. The point is to show up at the page without waiting for the mood, and get past the inner critic she calls the Censor.",
+    "question_idea": "",
+    "key_contrast_idea": "Messy pages, clear head"
+  }
+}

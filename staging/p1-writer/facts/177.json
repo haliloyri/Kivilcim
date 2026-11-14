@@ -1,0 +1,151 @@
+{
+ "book_no": 177,
+ "title": "Trauma and Recovery",
+ "authors": [
+  "Judith Lewis Herman"
+ ],
+ "year": "1992",
+ "db_title": "Travma ve İyileşme (Turkish edition title in the DB)",
+ "sources": [
+  "https://www.recoverystories.info/judith-herman-trauma-and-recovery/ (quotes with context)",
+  "https://www.getabstract.com/en/summary/trauma-and-recovery/8958",
+  "https://childusa.org/?p=86739 (quotes p. 133, via search)",
+  "https://www.wbur.org/hereandnow/2023/05/16/judith-herman-abuse-survivors",
+  "course handout and review snippets quoting pp. 37-38 (via search)",
+  "goodreads quote pages for the 'atrocities' opening (via search)"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Trauma and Recovery: The Aftermath of Violence (Basic Books, 1992) by Judith Lewis Herman, psychiatrist.",
+   "source": "catalogs",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Herman describes three stages of recovery. Stage one: establishing safety. Stage two: remembrance and mourning. Stage three: reconnection with ordinary life. 'The first task of recovery is to establish the survivor's safety. This task takes precedence over all others.'",
+   "source": "recoverystories.info quotes",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "'The first principle of recovery is empowerment of the survivor. She must be the author and arbiter of her own recovery.' Others can give 'advice, support, assistance, affection, and care, but not cure.' Interventions that take control from the survivor can harm recovery even when they seem in her interest.",
+   "source": "recoverystories.info; childusa (p. 133)",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "'Recovery can take place only within the context of relationships; it cannot occur in isolation.' Trauma isolates; a group re-creates a sense of belonging and bears witness.",
+   "source": "recoverystories.info; WBUR",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "In the second stage the survivor tells the story 'completely, in depth and in detail'; this work of reconstruction 'actually transforms the traumatic memory'. The therapist is witness and ally, 'in whose presence the survivor can speak of the unspeakable'.",
+   "source": "recoverystories.info",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Approaching traumatic memories 'too precipitately leads to a fruitless and damaging reliving of the trauma'; the survivor chooses when to confront them.",
+   "source": "recoverystories.info",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Herman, drawing on Pierre Janet, describes traumatic memories as frozen and wordless; they 'lack verbal narrative and context' and are encoded as vivid sensations and images (pp. 37-38 per a course handout). Normal memory works like telling a story that joins the person's life narrative.",
+   "source": "course handout via search",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Reconstructing the memory in words lets it be integrated into the survivor's life story (Herman citing Janet).",
+   "source": "search summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Opening of the book: 'The ordinary response to atrocities is to banish them from consciousness.' 'Atrocities, however, refuse to be buried.' The conflict between the will to deny horrible events and the will to proclaim them aloud is the central dialectic of psychological trauma.",
+   "source": "goodreads quote pages via search",
+   "confidence": "medium"
+  },
+  {
+   "id": "f10",
+   "claim": "Herman's history chapter treats hysteria, shell shock and domestic violence as the three major paradigms of trauma study of the past hundred years.",
+   "source": "reviews via search",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Late 1800s Paris: Charcot recorded hysteria symptoms in women and was not interested in their thoughts or in curing them. His followers Janet and Freud talked with patients and concluded hysteria was caused by psychological trauma.",
+   "source": "getAbstract excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "Freud's 1896 paper 'The Aetiology of Hysteria' named premature sexual experience (child abuse) as the root; he later repudiated this view, since so many patients would have meant abuse was more widespread than society would accept.",
+   "source": "getAbstract excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "The 'political context' can support or hinder the study of trauma; domestic abuse and rape were largely unexplored before the 1970s.",
+   "source": "getAbstract; review snippets",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1627: a war veteran says 'I have no story, only sounds, images, a body'; Herman's list 'verbal, timestamped, contextual' for normal memory",
+   "reason": "Veteran quote not found; the normal-memory list is not verified."
+  },
+  {
+   "claim": "Old 1627: 'the brain cannot process memory normally under extreme stress'",
+   "reason": "Neurobiological claim not verified as Herman's; the narrative framing is kept instead."
+  },
+  {
+   "claim": "Old 1628: 'two approaches, therapist-centered and individual-centered; both needed' and 'the therapist is witness, the victim is the hero'; 'What do I want to eat today?' choice",
+   "reason": "Two-approach framing and food example not found in sources. Replaced by the verified empowerment and relationship quotes."
+  },
+  {
+   "claim": "Old 1629: Charcot found many hysterical women had been sexually abused, and this was suppressed",
+   "reason": "Contradicts the source: Charcot was not interested in their stories; it was Janet and Freud. Dropped."
+  },
+  {
+   "claim": "Old 1629: World War I war neuroses documented then denied; Vietnam veterans unheard for years",
+   "reason": "Shell shock as a paradigm is supported, but details of the Vietnam episode not confirmed; only hedged mentions are used."
+  }
+ ],
+ "stories": {
+  "1627": {
+   "verdict": "delete",
+   "fact_ids": [
+    "f5",
+    "f6",
+    "f7",
+    "f8"
+   ],
+   "note": "Old veteran quote and neurobiology claims unsupported. Replacement (traumatic memory as wordless fragments, transformed by telling) rests on a course-handout quote (medium) and overlaps the witness and pacing material already used in 1628; it would fill roughly 250 words. Delete; rewrite later from the book text if wanted."
+  },
+  "1628": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f2",
+    "f3",
+    "f4"
+   ],
+   "note": "Verified quotes: empowerment, author and arbiter, advice-support-care-not-cure, not in isolation. High confidence."
+  },
+  "1629": {
+   "verdict": "delete",
+   "fact_ids": [
+    "f9",
+    "f10",
+    "f11",
+    "f12",
+    "f13"
+   ],
+   "note": "Old claim that Charcot found abuse is the reverse of the source (Janet and Freud listened, Charcot did not). Replacement (denial versus telling, Freud 1896 retreat) comes from secondary snippets only and filled about 269 words in a test draft, under the 280-word hard floor. Delete; rewrite later from the book text if wanted."
+  }
+ }
+}

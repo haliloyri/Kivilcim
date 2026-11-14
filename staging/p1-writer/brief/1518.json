@@ -1,0 +1,59 @@
+{
+ "story_id": 1518,
+ "kind": "concept",
+ "book": {
+  "title": "The Mom Test",
+  "author": "Rob Fitzpatrick",
+  "year": "2013"
+ },
+ "confidence": "medium",
+ "confidence_note": "Concept; commitment and advancement and the quoted lines are verified across several detailed summaries, not the full text. Old text's invented ten-interview founder, the 'commitment ladder' and 'credit card out' lines dropped.",
+ "facts": [
+  "A meeting counts only if the customer gives up something they value (time, reputation or money) and moves on to the next real step of the sales funnel.",
+  "Time: a scheduled next meeting, feedback on wireframes, a trial. Reputation: an introduction to a decision maker or teammate, a public testimonial. Money: letter of intent, pre-order, deposit.",
+  "'If you don't know what happens next after a product or sales meeting, the meeting was pointless.'",
+  "'The more they're giving up, the more seriously you can take what they're saying.'",
+  "Bad endings: 'Looks great, let me know when it launches!' and 'I would definitely buy that.'",
+  "Good endings: 'When can we start the trial?' and 'Can I buy the prototype?'"
+ ],
+ "scene_details": [
+  "'let me know when it launches'",
+  "'Can I buy the prototype?'",
+  "a scheduled next meeting with a goal"
+ ],
+ "tension": "A meeting full of enthusiasm can still change nothing; the book asks what the other person gave up.",
+ "opening_idea": "Open on 'Looks great, let me know when it launches!' placed next to 'Can I buy the prototype?'",
+ "lessons": [
+  {
+   "idea": "Judge a conversation by what the other person gave up and what happens next.",
+   "anchor": "time, reputation, money as three kinds of commitment.",
+   "example": "A cousin loves your catering idea; the one who books a tasting date has told you more than the one who cheers."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Think of your last meeting about something you are building: what did the other person give up, and what was the next step you both agreed on?",
+ "use_cases": [
+  {
+   "situation": "A meeting ended warmly with nothing agreed.",
+   "move": "Before you leave, ask for one next step that costs them something: a date for a follow-up with a clear goal.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A contact says they love what you are making.",
+   "move": "Ask whether they would introduce you to someone who has the problem; the book counts introductions as reputation.",
+   "context": "social"
+  },
+  {
+   "situation": "You review your own notes after a customer call.",
+   "move": "Mark each call by what the person gave up and what comes next; if neither is there, mark it as a compliment only.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "A warm meeting with no next step was pointless: ask for time, an introduction or money before you leave.",
+ "conversation_variants": {
+  "punchline_idea": "If you do not know what happens next after the meeting, the book says the meeting was pointless.",
+  "thirty_sec_idea": "Fitzpatrick's test for a customer meeting is simple: did they give up something they value, and did it move forward? Time, an introduction, a deposit all count. 'Looks great, let me know when it launches' counts for nothing.",
+  "question_idea": "",
+  "key_contrast_idea": "enthusiasm vs a next step"
+ }
+}

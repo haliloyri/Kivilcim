@@ -1,0 +1,174 @@
+{
+  "book_no": 148,
+  "title": "The Back of the Napkin",
+  "authors": [
+    "Dan Roam"
+  ],
+  "year": "2008",
+  "sources": [
+    "https://www.theglobeandmail.com/report-on-business/when-a-diagram-is-worth-a-thousand-synapses/article671227",
+    "https://steevsbooknotes.blogspot.com/2008/12/book-notes-back-of-napkin.html",
+    "https://readingraphics.com/book-summary-the-back-of-the-napkin/",
+    "https://www.core77.com/posts/9256/Book-Review-The-Back-of-the-Napkin-by-Dan-Roam",
+    "https://www.penguinrandomhouse.com/books/300247/the-back-of-the-napkin-expanded-edition-by-dan-roam (catalog copy via search)",
+    "https://en.wikipedia.org/wiki/The_Back_of_the_Napkin (not fetched)",
+    "https://texascooppower.com/good-on-paper/",
+    "https://en.wikipedia.org/wiki/Herb_Kelleher"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Subtitle: Solving Problems and Selling Ideas with Pictures. Roam argues any problem can be made clearer with a picture, and any picture can be made with the same set of tools and rules.",
+      "source": "catalog; reading notes quoting p.13",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "In the introduction Roam notes kindergarteners draw freely while adults do not; adults have forgotten how to express themselves visually.",
+      "source": "core77 review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "The book says visual thinking needs no artistic skill, only three tools everyone has: eyes (to look), mind's eye (to imagine) and hand-eye coordination (to draw and show).",
+      "source": "readingraphics; Globe and Mail",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Four steps of visual thinking: look, see, imagine, show (collecting and screening; selecting and clumping; seeing what is not there; making it clear).",
+      "source": "readingraphics; reading notes p.37",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Six ways of seeing map to six pictures: who/what to a portrait, how much to a chart, where to a map, when to a timeline, how to a flowchart, why to a multiple-variable plot.",
+      "source": "reading notes p.15/134; readingraphics",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "SQVID: five pairs used when imagining an idea: simple vs elaborate, quality vs quantity, vision vs execution, individual attributes vs comparison, delta (change) vs status quo.",
+      "source": "reading notes p.107; readingraphics",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "SQVID can be run in order to focus the idea, or each pair can be weighted toward what matters most to the audience (audience focusing).",
+      "source": "reading notes p.108",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Case study company in the book: SAX Inc., an accounting software company whose sales are stagnating as competitors gain ground.",
+      "source": "readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Southwest Airlines origin: Rollin King, winding down a small regional carrier, talked the idea over with his lawyer Herb Kelleher: a small airline linking large Texas cities rather than small towns.",
+      "source": "Globe and Mail review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "The sketch: a triangle with Dallas, Houston and San Antonio at its corners (three dots for the cities, three arrows for direct flights), drawn on a napkin, set against the tangled route maps of traditional hub-and-spoke airlines.",
+      "source": "Globe and Mail; catalog copy",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Roam uses the story to show that a simple picture made the airline easy to sell to investors and customers. Accounts differ on who held the pen (King or Kelleher). The Globe reviewer adds that the airline might have started without the napkin.",
+      "source": "Globe and Mail; catalog copy",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Part Three: begin from a blank napkin, draw the most important element in the middle; for a competitive landscape start with yourself, because you know you are there.",
+      "source": "core77 review (paraphrase)",
+      "confidence": "low"
+    },
+    {
+      "id": "f13",
+      "claim": "Outside the book: Wikipedia calls the cocktail-napkin story a founding myth; Kelleher and King both said there was no literal napkin. Kelleher was one of King's law clients; with banker John Parker they developed the Texas Triangle low-cost concept, modeled largely on California's Pacific Southwest Airlines.",
+      "source": "Wikipedia (Herb Kelleher)",
+      "confidence": "high"
+    },
+    {
+      "id": "f14",
+      "claim": "Outside the book: Texas Co-op Power reports that not long before he died in June 2014 King said the napkin story wasn't entirely true, calling it a 'hell of a good story'. A bronze replica of the napkin sits at Southwest's headquarters at Dallas Love Field. The company was co-founded in March 1967 and first flew in June 1971.",
+      "source": "Texas Co-op Power",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Texas Co-op Power's telling places the legend in San Antonio in 1966, in a restaurant with a bar; the triangle has Dallas at the apex, San Antonio bottom left and Houston as the third corner; King was a pilot and businessman, Kelleher a lawyer.",
+      "source": "Texas Co-op Power",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Conference with 200 people, 15 raising hands to draw",
+      "reason": "Not found in any source"
+    },
+    {
+      "claim": "Cave people drew 40,000 years before writing; brain evolved for images not text",
+      "reason": "Not verified as Roam's claim"
+    },
+    {
+      "claim": "Roam watched thousands of presentations; CEO pie chart for growth, engineer bubble chart for a process",
+      "reason": "Invented anecdotes not found in the book"
+    },
+    {
+      "claim": "SQVID question wording ('Tek mesaj mi, birden fazla mı?') and mapping to line chart, matrix etc.",
+      "reason": "Old text's glosses not verified; verified are the five pairs and the six-W picture mapping"
+    },
+    {
+      "claim": "Southwest triangle in 1966 with exact year, 'thousands of pages of analysis' contrast",
+      "reason": "Year not confirmed in the book; contrast invented"
+    },
+    {
+      "claim": "FedEx logo designer Lindon Leader and the hidden arrow",
+      "reason": "Not found as part of Roam's book"
+    },
+    {
+      "claim": "Roam: 'the drawing on the napkin decides, the report legitimizes it'",
+      "reason": "Invented"
+    }
+  ],
+  "stories": {
+    "1540": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "note": "Concept: nobody needs to draw well; kindergarteners vs adults, three tools. Conference numbers dropped. Medium-low confidence."
+    },
+    "1541": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7",
+        "f8"
+      ],
+      "note": "Concept: SQVID pairs and six-W pictures. Invented CEO/engineer anecdote dropped."
+    },
+    "1542": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f10",
+        "f11",
+        "f13",
+        "f14",
+        "f15"
+      ],
+      "note": "Southwest triangle with an honest caveat: founding myth, no literal napkin per Kelleher and King. Year, FedEx dropped. Medium-low confidence."
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+ "book_no": 103,
+ "title": "Getting Things Done",
+ "authors": [
+  "David Allen"
+ ],
+ "year": "2001",
+ "sources": [
+  "https://gettingthingsdone.com/2020/05/the-two-minute-rule-2/",
+  "https://www.todoist.com/inspiration/two-minute-rule",
+  "https://en.wikipedia.org/wiki/Getting_Things_Done",
+  "https://gettingthingsdone.com/2026/03/gtd-open-loops-3-steps-clear-your-mind-2/",
+  "https://kk.org/cooltools/?p=576"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Allen calls unfinished commitments and ideas held in the head 'open loops' (also 'incompletes' or 'stuff'); keeping them in short-term memory drains the ability to concentrate on other things.",
+   "source": "Wikipedia; GTD site; summaries",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "His remedy: get them out of the head into a trusted external system, and for each one decide the outcome and 'the very next action', a physical step.",
+   "source": "GTD site; summaries",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Allen's image for the calm state: 'mind like water', from karate, the position of perfect readiness; a pebble thrown in a still pond makes water respond in proportion to the force, then return to calm.",
+   "source": "book-notes summaries; Allen's own phrase is a registered trademark",
+   "confidence": "medium"
+  },
+  {
+   "id": "f4",
+   "claim": "Allen's line 'Your mind is for having ideas, not holding them' is attributed to him; wording varies between sources.",
+   "source": "summaries; trademark list",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "Two-minute rule, Allen's words: 'If an action will take less than two minutes, it should be done at the moment it's defined.'",
+   "source": "todoist.com quoting book; GTD site",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Reasoning: two minutes is 'the efficiency cutoff', the point 'where it starts taking longer to store and track an item than to deal with it.' (Allen in talk: it would take longer than two minutes to look at it again and review it.)",
+   "source": "todoist.com; gettingthingsdone.com",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Before applying the rule you first decide the very next action on the item.",
+   "source": "gettingthingsdone.com",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Caveat in the same source: do not 'become a slave to spending your day doing two-minute actions'; it applies mainly to new input. Allen also says two minutes is a guideline.",
+   "source": "todoist.com; summaries",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Allen's own claim in a talk: he has no backlog of two-minute items because they are all done; executives told him this habit was 'worth the price of admission'.",
+   "source": "gettingthingsdone.com (talk)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f10",
+   "claim": "Weekly Review: Allen asks for a regular, preferably weekly, review of all lists; three phases named Get Clear, Get Current, Get Creative.",
+   "source": "GTD summaries; fortelabs",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Get Clear: collect loose papers and materials, empty the inbox, empty your head. Get Current: review next-action lists, calendar (past and upcoming), waiting-for list, project lists. Get Creative: look over someday/maybe items.",
+   "source": "GTD summaries",
+   "confidence": "medium"
+  },
+  {
+   "id": "f12",
+   "claim": "Allen's workflow stages: collect, process, organize, review, do (2001 edition wording); the weekly review is the review stage.",
+   "source": "GTD summaries (Wikipedia)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Processing routine: for each inbox item decide the action; under two minutes do it, otherwise delegate or defer to a list (Allen's do/delegate/defer).",
+   "source": "GTD summaries; standard description of the book",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old text: a consulting client who held 'cleaning sessions' once or twice a month lasting hours, then stopped after the two-minute rule.",
+   "reason": "Invented client anecdote; no source."
+  },
+  {
+   "claim": "Old text: dry cleaning clothes example with 'kıyafetler' nagging at night.",
+   "reason": "Not found in any source as Allen's example."
+  },
+  {
+   "claim": "Old text: 'the number comes from Allen's consulting experience' (dozens of open tasks).",
+   "reason": "No number is given in the facts; dropped."
+  },
+  {
+   "claim": "Old text: 'Allen says without weekly review GTD is just a task list, with it a trust system'; weekly one-hour ritual 'mental integration'.",
+   "reason": "Not verified as Allen's words; duration and 'zihinsel bütünleşme' not found."
+  },
+  {
+   "claim": "Old text: 'two-minute tasks postponed, mind carries them six months'.",
+   "reason": "Invented aphorism."
+  },
+  {
+   "claim": "Old text: 'a task takes a minute just to enter and track'.",
+   "reason": "Book's reasoning is the efficiency cutoff; the one-minute figure is not sourced."
+  }
+ ],
+ "stories": {
+  "1405": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4"
+   ],
+   "note": "Open loops and next action. Concept, no book anecdote."
+  },
+  "1406": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f13"
+   ],
+   "note": "Two-minute rule with its own caveat."
+  },
+  "1407": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f10",
+    "f11",
+    "f1",
+    "f12"
+   ],
+   "note": "Weekly Review. Medium confidence."
+  }
+ }
+}

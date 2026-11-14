@@ -1,0 +1,35 @@
+{
+  "story_id": 1646,
+  "verdict": "keep",
+  "verify_note": "Keep, medium-low: BRAVING list and the three-part Integrity definition from author knowledge (not re-fetched); plain-word traits from fourminutebooks; values-despite-others from the Shortform preview. Old text's 'two or three values' study and quote dropped; retitled to the book's own element.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Değeri söylemek, uygulamak",
+    "description": "Brown'a göre bütünlük, değerlerini yalnızca söylemek değil, uygulamaktır. BRAVING listesi ve tanım kitabın bilgisine dayanıyor, sayfa doğrulanmadı.",
+    "hook": "Hangi değeri en kolay söylüyorsunuz?",
+    "one_minute_summary": "Brené Brown güvenin yedi unsurunu BRAVING kısaltmasıyla sayıyor, bütünlük bunlardan biri: rahatlık yerine cesareti, hızlı ya da kolay yerine doğruyu seçmek ve değerleri uygulamak. Bu bütünlük tanımı ve liste kitap bilgisine dayanıyor, sayfa doğrulanmadı, eski metindeki iki üç değer araştırması ve alıntı atıldı."
+  },
+  "en": {
+    "title": "Professing or practicing a value",
+    "description": "Brown defines integrity as practicing your values, not just professing them. The BRAVING list and the definition rest on the author's knowledge of the book; the page was not checked.",
+    "hook": "Which value do you profess most easily?",
+    "one_minute_summary": "Brené Brown lists seven elements of trust under BRAVING, and integrity is one: choosing courage over comfort, choosing what is right over what is fun, fast or easy, and practicing your values. The list and the definition rest on knowledge of the book and were not checked against a page. The old text's study of two or three values and its quote were dropped."
+  },
+  "es": {
+    "title": "Declarar o practicar un valor",
+    "description": "Brown define la integridad como practicar tus valores y no solo declararlos. La lista BRAVING y la definición se basan en el conocimiento del libro; no se comprobó la página.",
+    "hook": "¿Qué valor declaras con más facilidad?",
+    "one_minute_summary": "Brené Brown enumera siete elementos de la confianza con la sigla BRAVING, y la integridad es uno: elegir el valor sobre la comodidad, lo correcto sobre lo divertido, rápido o fácil, y practicar tus valores. La lista y la definición se basan en el conocimiento del libro y no se comprobaron en una página. El estudio de dos o tres valores del texto antiguo y su cita se descartaron."
+  },
+  "de": {
+    "title": "Einen Wert bekennen oder leben",
+    "description": "Brown definiert Integrität als die eigenen Werte leben, nicht nur bekennen. Die BRAVING-Liste und die Definition beruhen auf Kenntnis des Buches, die Seite wurde nicht geprüft.",
+    "hook": "Welchen Wert bekennst du am leichtesten?",
+    "one_minute_summary": "Brené Brown nennt sieben Elemente des Vertrauens unter BRAVING, und Integrität ist eines: Mut über Bequemlichkeit stellen, das Richtige dem Schnellen oder Leichten vorziehen und die eigenen Werte leben. Liste und Definition beruhen auf Kenntnis des Buches und wurden nicht an einer Seite geprüft. Die Studie zu zwei oder drei Werten und das Zitat des alten Textes wurden verworfen."
+  }
+}

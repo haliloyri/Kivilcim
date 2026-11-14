@@ -1,0 +1,35 @@
+{
+  "story_id": 1590,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: mTOR and AMPK from reviews of Lifespan; book text not read. Old claims that a cell cannot grow and repair at once and that autophagy clears cancer cells dropped. Rapamycin mouse figure kept with its immune cost; red-meat stance disputed by a reviewer.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Büyümek mi, onarmak mı?",
+    "description": "Sinclair iki enzimle büyüme ve geri dönüşüm dengesini anlatıyor. İlaç sonuçları farelerden geliyor, bazı beslenme önerileri tartışmalı.",
+    "hook": "Haftanızda hiçbir şeyin eklenmediği, bakıma ayrılmış bir aralık var mı?",
+    "one_minute_summary": "David Sinclair, Lifespan kitabında iki enzimi tanıtıyor. TOR besin bolken büyümeyi sürdürür, kötü zamanlarda büyümeyi kısar ve hücre parçalarını geri dönüştürür. AMPK düşük enerjiye yanıt verir. Hayvansal proteini azaltmak mTOR'u düşürür. Rapamisin farelerde yaşam süresini yüzde 9 ile 14 uzattı, ama bağışıklığı zayıflattı. Bir inceleme yazarı kırmızı et konusundaki tavrına itiraz ediyor. Rakamlar farelerden geliyor, insanda aynı sonucun alınacağı kesin değil."
+  },
+  "en": {
+    "title": "Grow now, repair later",
+    "description": "Sinclair describes two enzymes that balance growth and recycling. The drug results come from mice, and parts of the diet advice are disputed.",
+    "hook": "Does your week have a stretch where nothing new is added and things get looked after?",
+    "one_minute_summary": "In Lifespan, David Sinclair introduces two enzymes. TOR drives growth when food is plentiful; in lean times it holds growth back and cells recycle their parts. AMPK responds to low energy. Eating less animal protein lowers mTOR. Rapamycin added 9 to 14 percent to mouse lifespan but weakened immunity. One reviewer disputes his stance on red meat. The figures come from mice, so the same result in people is not assured."
+  },
+  "es": {
+    "title": "Crecer ahora, reparar luego",
+    "description": "Sinclair describe dos enzimas que equilibran crecimiento y reciclaje. Los resultados de fármacos vienen de ratones y parte de los consejos de dieta se discute.",
+    "hook": "¿Tiene tu semana un tramo donde no se añade nada nuevo y se cuida lo que hay?",
+    "one_minute_summary": "En Lifespan, David Sinclair presenta dos enzimas. TOR impulsa el crecimiento cuando hay comida; en tiempos de escasez lo frena y las células reciclan sus piezas. AMPK responde a la poca energía. Comer menos proteína animal baja mTOR. La rapamicina sumó entre un 9 y un 14 por ciento a la vida de los ratones, pero debilitó la inmunidad. Un crítico discute su postura sobre la carne roja. Las cifras vienen de ratones, así que el mismo resultado en personas no está asegurado."
+  },
+  "de": {
+    "title": "Jetzt wachsen, später reparieren",
+    "description": "Sinclair beschreibt zwei Enzyme, die Wachstum und Recycling ausbalancieren. Die Medikamentenergebnisse stammen von Mäusen, und Teile der Ernährungsratschläge sind umstritten.",
+    "hook": "Hat deine Woche einen Abschnitt, in dem nichts Neues hinzukommt und Vorhandenes gepflegt wird?",
+    "one_minute_summary": "In Lifespan stellt David Sinclair zwei Enzyme vor. TOR treibt das Wachstum, wenn Nahrung da ist; in mageren Zeiten bremst es, und Zellen recyceln ihre Teile. AMPK reagiert auf wenig Energie. Weniger tierisches Eiweiß senkt mTOR. Rapamycin verlängerte das Mäuseleben um 9 bis 14 Prozent, schwächte aber die Immunabwehr. Ein Rezensent bestreitet seine Haltung zu rotem Fleisch. Die Zahlen stammen von Mäusen, dasselbe Ergebnis beim Menschen ist nicht gesichert."
+  }
+}

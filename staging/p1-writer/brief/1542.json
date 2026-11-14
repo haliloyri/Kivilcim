@@ -1,0 +1,35 @@
+{
+  "story_id": 1542,
+  "kind": "anecdote",
+  "book": { "title": "The Back of the Napkin", "author": "Dan Roam", "year": "2008" },
+  "confidence": "low",
+  "confidence_note": "The book's telling is known only from secondary descriptions (Globe and Mail review, publisher/catalog copy); no full text. Sources differ on who held the pen (King or Kelleher), so that is left open. Editorial caveat added from outside sources: Wikipedia calls the napkin story a founding myth and says Kelleher and King both said there was no literal napkin; Texas Co-op Power reports King said shortly before his death in June 2014 that it was not entirely true ('a hell of a good story'). The old text's 1966 'thousands of pages of analysis' contrast, the FedEx logo story and the closing lines about decisions were not found and were dropped. The 1966 San Antonio restaurant setting is the legend's telling, not necessarily the book's.",
+  "facts": [
+    "Rollin King, a pilot and businessman winding down a small regional carrier, talked the idea over with his lawyer Herb Kelleher: a small airline linking large Texas cities rather than small towns.",
+    "Roam's book (per publisher copy) has a bar napkin and a pen used to sketch how to beat the traditional hub-and-spoke airlines; accounts differ on whether King or Kelleher drew it.",
+    "The legend places the scene in a San Antonio restaurant with a bar in 1966.",
+    "The sketch is a triangle with Dallas at the top, San Antonio at the bottom left and Houston as the third corner: three dots for the cities, three arrows for direct flights.",
+    "The Globe and Mail review calls the drawing neat and simple, unlike the spaghetti of lines of traditional carriers' route maps.",
+    "Roam uses the story to show that the picture made the airline easy to sell to investors and customers.",
+    "Caveat: Kelleher and King both later said there was no literal napkin, and Wikipedia calls it a founding myth; Texas Co-op Power reports King said shortly before his death in June 2014 that the story wasn't entirely true, a 'hell of a good story'.",
+    "Southwest keeps a bronze replica of the napkin at its headquarters at Dallas Love Field; the company was co-founded in March 1967 and first flew in June 1971."
+  ],
+  "scene_details": ["a bar napkin and a pen", "three dots and three arrows", "Dallas at the top, San Antonio bottom left, Houston third corner", "spaghetti route maps of hub-and-spoke carriers", "bronze replica of the napkin at Love Field"],
+  "tension": "A whole airline is told as three dots and three arrows on a napkin, yet the people involved later said the napkin was not literally there.",
+  "opening_idea": "Open on the three dots and three arrows on a bar napkin without naming the founders or the author.",
+  "lessons": [ { "idea": "An idea you can draw in a few marks is easy for others to repeat and back.", "anchor": "the Southwest triangle" } ],
+  "reflect": [],
+  "reflect_final": "If you had to draw your current project with only a few dots and arrows, which parts would you put on the page?",
+  "use_cases": [
+    { "situation": "You pitch a plan to someone who needs convincing", "move": "Say that Southwest is told as three cities and three arrows, and draw your plan with three dots and arrows before explaining it.", "context": "meeting" },
+    { "situation": "A friend's business idea sounds complicated", "move": "Ask them to draw it in a few marks so you can see its shape first.", "context": "social" },
+    { "situation": "Your own plan feels tangled", "move": "Redraw it as dots for places or people and arrows for the links, dropping what does not fit.", "context": "self" }
+  ],
+  "pocket_idea": "If an idea cannot be drawn in a few dots and arrows, simplify it before you sell it.",
+  "conversation_variants": {
+    "punchline_idea": "An airline pitched as three dots and three arrows, even if the napkin was a legend.",
+    "thirty_sec_idea": "Triangle of three Texas cities on a napkin versus spaghetti route maps; Roam says it made the airline easy to sell; the founders later said there was no literal napkin.",
+    "question_idea": "",
+    "key_contrast_idea": "spaghetti, triangle"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1329,
+ "verdict": "keep",
+ "verify_note": "Principle 19 ('Use Feedback to Your Advantage') confirmed in the book's contents; its text was not read. The weekly 1-to-10 question to his wife and coworkers rests on a summary and a Canfield-attributed quote; the airplane image on one reader highlight. The old missile metaphor is unsourced and dropped. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Haftalık 1'den 10'a Sorusu",
+  "description": "Jack Canfield her hafta karısına ve çalışma arkadaşlarına ilişkilerine 1'den 10'a kaç puan verdiklerini soruyor. Geri bildirimin neden sorulması gerektiğini anlatıyor.",
+  "hook": "Size kim, sormadığınız için söylemediği bir şeyi biliyor olabilir?",
+  "one_minute_summary": "Jack Canfield geri bildirimi bir uçuşa benzetir: uçak sürekli biraz rotadan çıkar, pilot göstergelere bakıp düzeltir. İnsanlar ise çoğu zaman saptığımızı söylemez, kötü tepki vereceğimizden çekinirler. Canfield bu yüzden doğrudan sorar: 1'den 10'a ilişkimize kaç verirsin? Bunu her hafta karısına ve çalışma arkadaşlarına sorduğunu söyler. 10'un altındaki cevaplar genellikle somut bir öneriyle gelir. İkinci sorusu daha açıktır: kendimi nerede geri tutuyorum?"
+ },
+ "en": {
+  "title": "The Weekly 1-to-10 Question",
+  "description": "Jack Canfield asks his wife and coworkers every week to rate their relationship from 1 to 10. Feedback keeps you on course, but people rarely give it unless asked.",
+  "hook": "Who around you knows something useful that they'll only say if you ask?",
+  "one_minute_summary": "Jack Canfield compares working toward a goal to a flight: the plane is off its line most of the time and the pilot keeps correcting from the instruments. The people around us notice when we drift but usually stay quiet, afraid of how we'll react. So Canfield asks directly: on a scale of 1 to 10, how would you rate our relationship? He says he asks his wife and coworkers every week. Anything under ten tends to come with a concrete suggestion."
+ },
+ "es": {
+  "title": "La pregunta del 1 al 10",
+  "description": "Jack Canfield pide cada semana a su mujer y a sus compañeros que puntúen su relación del 1 al 10. Quien te rodea ve tus desvíos, pero calla si no preguntas.",
+  "hook": "¿Quién podría decirte algo útil que nunca te dirá si no lo preguntas?",
+  "one_minute_summary": "Jack Canfield parte de una observación: la gente que nos rodea ve cuándo nos desviamos, pero se lo calla por miedo a nuestra reacción. Por eso propone preguntar: del 1 al 10, ¿qué nota le pondrías a nuestra relación? Dice que se lo pregunta a su mujer y a sus compañeros cada semana, y que las notas por debajo de diez llegan con sugerencias concretas. Lo compara con un avión que va casi siempre algo fuera de su línea y corrige sin parar."
+ },
+ "de": {
+  "title": "Die wöchentliche Frage nach der Zahl",
+  "description": "Jack Canfield bittet seine Frau und seine Mitarbeiter jede Woche um eine Zahl von 1 bis 10. Feedback hält dich auf Kurs, doch ungefragt bekommst du es selten.",
+  "hook": "Wer in deinem Umfeld weiß etwas Nützliches, das er nur sagt, wenn du fragst?",
+  "one_minute_summary": "Jack Canfield vergleicht den Weg zu einem Ziel mit einem Flug: Das Flugzeug ist fast nie genau auf seiner Linie, und der Pilot korrigiert laufend nach den Instrumenten. Im Alltag schweigen diese Instrumente oft, weil andere unsere Reaktion fürchten. Also fragt Canfield direkt: Wie würdest du unsere Beziehung von 1 bis 10 bewerten? Er stellt die Frage jede Woche seiner Frau und seinen Mitarbeitern. Antworten unter zehn bringen meist einen konkreten Vorschlag mit."
+ }
+}

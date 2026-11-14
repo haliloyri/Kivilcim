@@ -1,0 +1,30 @@
+{
+  "story_id": 1532,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt with medium confidence: full text not available, facts from summaries/reviews (four question types, roles, buyer-talks-most). Invented example questions and persuasion quote dropped.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Değeri alıcının ağzından duymak",
+    "description": "Rackham satıcıların sorularını dört türe ayırdı. En güçlüleri sorunun sonuçlarını soran ve çözümün değerini alıcıya söyleten sorulardı.",
+    "hook": "Bir fikrin değerini karşınızdakinin kendi sözleriyle duymayı ne zaman denediniz?",
+    "one_minute_summary": "Rackham'ın araştırması 35.000 satış görüşmesinde satıcıların sorularını Durum, Problem, Etki ve İhtiyaç-getirisi diye dört türe ayırdı. Çok Durum sorusu daha düşük başarıyla birlikte gitti. Problem soruları ima edilen ihtiyaçları ortaya çıkarır. Etki soruları bir problemin sonuçlarını ve ciddiyetini sorar ve en güçlüleri sayılır. İhtiyaç-getirisi soruları alıcıya çözümün değerini kendi ağzıyla söyletir ve ihtiyacı açık hale getirir. Başarılı görüşmelerde konuşmanın çoğunu alıcı yapıyordu."
+  },
+  "en": {
+    "title": "Hearing the value in their words",
+    "description": "Rackham sorted sellers' questions into four kinds. The strongest ones followed a problem to its effects and let the buyer say what a solution was worth.",
+    "hook": "When did you last let someone else say out loud why your idea matters?",
+    "one_minute_summary": "The research behind SPIN Selling sorted sellers' questions across 35,000 calls into Situation, Problem, Implication and Need-payoff. Many Situation questions went with lower success. Problem questions bring out implied needs. Implication questions explore a problem's effects and seriousness and are called the most powerful. Need-payoff questions have the buyer state the value of a solution, which makes the need explicit and sounds less pushy. In successful calls the buyer did most of the talking."
+  },
+  "es": {
+    "title": "El valor dicho por el comprador",
+    "description": "Rackham clasificó las preguntas de los vendedores en cuatro tipos. Las más potentes seguían un problema hasta sus efectos y dejaban que el comprador dijera cuánto valía la solución.",
+    "hook": "¿Cuándo dejaste por última vez que otra persona dijera por qué importa tu idea?",
+    "one_minute_summary": "La investigación detrás de SPIN Selling clasificó las preguntas de los vendedores en 35 000 llamadas en situación, problema, implicación y necesidad-beneficio. Muchas preguntas de situación fueron de la mano de menos éxito. Las de problema sacan a la luz necesidades implícitas. Las de implicación exploran los efectos y la gravedad de un problema y se consideran las más potentes. Las de necesidad-beneficio hacen que el comprador exprese el valor de la solución, algo menos insistente. En las llamadas exitosas el comprador hablaba más."
+  },
+  "de": {
+    "title": "Den Nutzen vom Käufer hören",
+    "description": "Rackham ordnete die Fragen von Verkäufern in vier Arten. Am stärksten waren die, die ein Problem bis zu seinen Folgen verfolgten und den Käufer den Wert der Lösung nennen ließen.",
+    "hook": "Wann hast du zuletzt jemand anderen laut sagen lassen, warum deine Idee wichtig ist?",
+    "one_minute_summary": "Die Forschung hinter SPIN Selling ordnete die Fragen von Verkäufern in 35.000 Gesprächen in Situations-, Problem-, Auswirkungs- und Nutzenfragen. Viele Situationsfragen gingen mit geringerem Erfolg einher. Problemfragen fördern unausgesprochene Bedürfnisse zutage. Auswirkungsfragen erkunden Folgen und Schwere eines Problems und gelten als die stärksten. Nutzenfragen lassen den Käufer den Wert der Lösung selbst benennen, was weniger aufdringlich wirkt. In erfolgreichen Gesprächen sprach hauptsächlich der Käufer."
+  }
+}

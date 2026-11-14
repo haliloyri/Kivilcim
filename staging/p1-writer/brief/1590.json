@@ -1,0 +1,62 @@
+{
+  "story_id": 1590,
+  "kind": "concept",
+  "book": {
+    "title": "Lifespan",
+    "author": "David A. Sinclair",
+    "year": "2019"
+  },
+  "confidence": "medium",
+  "confidence_note": "From reviews and summaries. Old text's claims that a cell cannot grow and repair at once, that constant repair causes muscle loss and that autophagy clears cancer cells are not supported and were dropped. Rapamycin mouse figure kept with its immune cost. Reviewers dispute the red-meat stance; flagged.",
+  "facts": [
+    "TOR drives growth when food is plentiful.",
+    "When times are bad it limits growth and recycles cell components, a process called autophagy.",
+    "AMPK is an enzyme that responds to low energy and switches on glucose and fatty-acid metabolism.",
+    "Eating fewer branched-chain amino acids, found mainly in animal protein, reduces mTOR activation.",
+    "Exercise and the drug metformin activate AMPK.",
+    "Sinclair advises less animal protein and more vegetables.",
+    "Rapamycin inhibits mTOR and extended mouse lifespan by 9 to 14 percent, at the cost of a weaker immune response.",
+    "Metformin is described as mimicking aspects of caloric restriction.",
+    "One reviewer disputes the red-meat stance while accepting the caution on overstimulating mTOR; a commenter raised muscle loss.",
+    "Occasional protein restriction is said to support longevity (low, synopsis)."
+  ],
+  "scene_details": [
+    "a cell recycling its own parts",
+    "a mouse with 9 to 14 percent longer life and a weaker immune response",
+    "a plate with less animal protein"
+  ],
+  "tension": "Two switches, one for growth and one for recycling, and a diet that mostly presses the first.",
+  "opening_idea": "Open on the recycling: in bad times a cell breaks down its own parts instead of building.",
+  "lessons": [
+    {
+      "idea": "Build pauses into any system that is always pushing forward",
+      "anchor": "TOR growth versus recycling in lean times; Everyday: a carpenter who takes orders without stopping and never sharpens the tools"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which part of your week has no time set aside for maintenance, and what would you look after first if it did?",
+  "use_cases": [
+    {
+      "situation": "The team ships nonstop with no slack",
+      "move": "Sinclair describes cells that only recycle their parts when growth pauses. Can we block one afternoon with no new work, just fixing what is broken?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is cutting protein after reading about mTOR",
+      "move": "Sinclair's own critics worry about muscle loss. Maybe check with a doctor before changing how much you eat.",
+      "context": "social"
+    },
+    {
+      "situation": "Your evenings are always filled",
+      "move": "Cells recycle when growth stops. I will leave one evening with nothing planned and see what I get around to.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Sinclair's cells recycle only when growth pauses. Leave one slot in your day where nothing new gets added.",
+  "conversation_variants": {
+    "punchline_idea": "A cell in lean times stops growing and starts recycling its own parts.",
+    "thirty_sec_idea": "Sinclair describes two enzymes. TOR drives growth when food is plentiful. When times are bad it limits growth and cells recycle their parts. AMPK responds to low energy. Eating less animal protein lowers mTOR activity, and the drug rapamycin did the same in mice, adding 9 to 14 percent to lifespan with a weaker immune response. Critics question parts of his diet advice.",
+    "question_idea": "",
+    "key_contrast_idea": "grow now, repair later"
+  }
+}

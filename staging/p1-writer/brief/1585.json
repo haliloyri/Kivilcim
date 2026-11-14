@@ -1,0 +1,62 @@
+{
+  "story_id": 1585,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Circadian Code",
+    "author": "Satchin Panda",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The three-week app study with over 150 San Diego adults and the 'metabolic jetlag' idea are from Panda's 2015 Cell Metabolism paper and Salk release, which the book draws on; it was not checked against the book text itself, so confidence is medium. The old text's Nobel Prize, orchestra metaphor, shift-worker fat storage and 18-week mice claims were not verified and are dropped. Panda's book year is 2018 (June, Rodale hardcover), while the DB has 2019.",
+  "facts": [
+    "Panda's group built a phone app so that people could photograph everything they ate and drank; each picture carried a time stamp.",
+    "More than 150 healthy adults aged 21 to 55, recruited in San Diego and not on a diet, did this for three weeks.",
+    "Most of them ate across 15 hours or longer each day.",
+    "Less than a quarter of daily calories came before noon, and over a third after 6 p.m.",
+    "The photos also showed patterns: coffee and milk in the morning, alcohol in the evening, tea all day, yogurt as a morning food, ice cream in the evening.",
+    "The authors proposed that irregular meal timing causes 'metabolic jetlag', with metabolic organs out of step with the body's clock.",
+    "Beyond meal timing, nearly two-thirds of participants took supplements or vitamins at times that varied from day to day, and medication timing varied too.",
+    "Volunteers were recruited through online and print ads in San Diego and had to come to the lab to sign consent; reminders went out about once a day.",
+    "There were no shift workers in the data; the authors said larger studies with shift workers are needed."
+  ],
+  "scene_details": [
+    "time-stamped photo of every meal and drink",
+    "a 15-hour eating day",
+    "less than a quarter of calories before noon, over a third after 6 p.m."
+  ],
+  "tension": "People who thought of themselves as eating three meals a day turned out to be eating across 15 hours or more.",
+  "opening_idea": "Start with the time stamps on the photos and what they showed about when a normal day actually begins and ends.",
+  "lessons": [
+    {
+      "idea": "You can only fix your eating hours once you see them, so record them for a short stretch before changing anything.",
+      "anchor": "Over 150 adults photographed every bite and drink and found they ate over 15 hours.",
+      "example": "Someone who believes dinner is early might find, when they write it down, that snacks run until bedtime."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you looked at time-stamped photos of everything you ate yesterday, when would your eating day have started and when would it have ended?",
+  "use_cases": [
+    {
+      "situation": "You wonder if your eating times are fine.",
+      "move": "Take a photo of everything you eat for a few days, as Panda's volunteers did, and read the first and last times.",
+      "context": "self"
+    },
+    {
+      "situation": "A partner says they eat 'normally'.",
+      "move": "Offer to compare when each of you first and last ate this week; the app study found most people spanned 15 hours or more.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague asks about late dinners.",
+      "move": "Mention that Panda's study found over a third of calories came after 6 p.m., and ask when they usually stop eating.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "A time-stamped photo of each meal shows how long your eating day really is.",
+  "conversation_variants": {
+    "punchline_idea": "People in Panda's app study ate across 15 hours or longer, with a third of calories after 6 p.m.",
+    "thirty_sec_idea": "Panda's group asked over 150 San Diego adults to photograph everything they ate and drank for three weeks. Most ate across 15 hours or longer; less than a quarter of calories came before noon, over a third after 6 p.m. The authors call irregular eating times metabolic jetlag.",
+    "question_idea": "When does your eating day start and end?",
+    "key_contrast_idea": "three meals, fifteen hours"
+  }
+}

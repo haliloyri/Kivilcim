@@ -1,0 +1,266 @@
+{
+  "book_no": 138,
+  "title": "A Guide to the Good Life",
+  "authors": [
+    "William B. Irvine"
+  ],
+  "year": "2008",
+  "sources": [
+    "https://www.shortform.com/summary/a-guide-to-the-good-life-summary-william-b-irvine",
+    "https://bmcr.brynmawr.edu/?p=26558",
+    "https://zhurnaly.com/z/Guide to the Good Life.html",
+    "https://whatisstoicism.com/?p=1355",
+    "https://metapsychology.net/?p=4903 (via search snippet)",
+    "https://llm-book-kb.vercel.app/kb/concepts/negative-visualization (via search snippet)",
+    "https://theengineeringmanager.substack.com/p/the-trichotomy-of-control (via search snippet)",
+    "https://www.goodreads.com/notes/19669566-a-guide-to-the-good-life/23237054-keshav",
+    "https://theengineeringmanager.substack.com/p/the-trichotomy-of-control",
+    "https://donaldrobertson.name/2013/05/17/review-of-irvines-a-guide-to-the-good-life-the-ancient-art-of-stoic-joy-2009/",
+    "https://www.theinvestorspodcast.com/the-good-life/tgl006-a-guide-to-the-good-life-with-william-irvine/",
+    "https://alyelganzouri.com/book-review/a-guide-to-the-good-life-review/",
+    "https://omdventures.com/essays/a-guide-to-the-good-life-by-william-irvine",
+    "https://theosophyproject.blogspot.com/2016/10/senecas-daily-examination-of-conscience.html (Seneca, On Anger III.36, translation)"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Negative visualization, drawn from Seneca and Epictetus, is Irvine's foremost Stoic technique: imagine losing what you have (life, possessions, friends, family) so you do not take it for granted.",
+      "source": "BMCR review; shortform; zhurnaly",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Irvine's reading: learn to want the things you already have by taking time each day to imagine losing them. The aim is appreciation, not anxiety, and it also helps if loss actually comes.",
+      "source": "shortform summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "Irvine's examples of what to imagine: that one's wife has left, that one's car was stolen, that one lost a job.",
+      "source": "zhurnaly review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Hedonic adaptation: people lose interest in things after working to get them. One key to happiness is to forestall that adaptation; negative visualization is the counter.",
+      "source": "whatisstoicism highlights; goodreads notes",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Irvine distinguishes prospective negative visualization (imagining losing what you have) from retrospective (imagining you never had what you lost). Periodically reflecting that today could be your last also belongs here.",
+      "source": "summary page; whatisstoicism",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Irvine later admits negative visualization is little more than a psychological trick (per a critical reviewer quoting him).",
+      "source": "zhurnaly review",
+      "confidence": "low"
+    },
+    {
+      "id": "f7",
+      "claim": "Epictetus's central choice, as Irvine presents it, is whether to concern ourselves with things external to us or things internal.",
+      "source": "whatisstoicism highlights",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Irvine splits what happens into things we fully control, things we do not control, and things we partly control (a trichotomy).",
+      "source": "BMCR review",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "His example for the middle category is a tennis match: whether you win depends partly on your opponent, so the Stoic sets the goal of playing the best he can, which is within his control. This is internalizing goals, meant to protect tranquility.",
+      "source": "BMCR review; several summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "A reviewer quotes Irvine: we have complete control over the goals we set for ourselves, and disputes how far that holds (social norms, brain chemistry).",
+      "source": "zhurnaly review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Practice of nightly review: Irvine calls it a bedtime meditation, derived from Seneca, in which you review the day's events, how you responded and how a Stoic should have responded.",
+      "source": "whatisstoicism; shortform; supersummary snippet",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Sample checklist items (Chapter 8 per a reviewer): are we careful to internalize our goals? Did you let others upset you? Did you give in to temptation? Did you let go of worry about something beyond your control? The review also reminds you to use techniques like negative visualization, which are easy to forget when life is going well.",
+      "source": "zhurnaly; shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Reader notes: negative visualization means imagining losing what you value (a spouse, a car, a job); Stoics thought it makes you value those things more. Irvine calls it 'the single most valuable technique in the Stoics' psychological tool kit' and presents it as a way to 'learn how to want the things we already have'.",
+      "source": "goodreads reader notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Hedonic adaptation, as Irvine describes it: people get what they want (marriage, children, house, car, job), take it for granted and form grander desires.",
+      "source": "goodreads reader notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Epictetus advises silently reminding yourself, when parting from a friend, that 'this might be our final parting'. Saying grace is described as a form of negative visualization: pause to consider that the food might not have been available.",
+      "source": "goodreads reader notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f16",
+      "claim": "The Stoics practice it periodically, a few times a day or week, not constantly, which keeps them from becoming pessimists. Seneca: be 'the user, but not the slave, of the gifts of Fortune'; possessions are 'on loan' from Fortune.",
+      "source": "goodreads reader notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f17",
+      "claim": "Irvine's reframed control: complete control covers your goals, values and character; the tennis player cannot control the match fully (winning depends partly on the opponent and chance), so he sets an internal goal of playing his best rather than winning. Internal goals lower the chance of being upset, not necessarily the chance of winning.",
+      "source": "goodreads notes; engineering manager substack",
+      "confidence": "medium"
+    },
+    {
+      "id": "f18",
+      "claim": "Second example of internalizing goals: an aspiring novelist should aim to write well rather than only to get published. Irvine admits it may look like a mind game but calls it an effective trick for reversing hedonic adaptation.",
+      "source": "goodreads notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f19",
+      "claim": "In an interview Irvine attributes the evening review to Seneca: at bedtime reflect on how well you practiced Stoicism that day and where you fell short, then try to do better the next day; the goal is progress, not perfection ('You will never achieve stoic perfection').",
+      "source": "Investors Podcast transcript (interview, not the book)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f20",
+      "claim": "Irvine replaces the traditional goal of virtue with tranquility and admits his version is unlike the Stoicism of any particular Stoic (p.244); critics such as Donald Robertson dispute his trichotomy and goal internalization as un-Stoic.",
+      "source": "Donald Robertson review",
+      "confidence": "high"
+    },
+    {
+      "id": "f21",
+      "claim": "Epictetus advised imagining the death of your child while kissing the child goodnight, so you learn to appreciate the child's existence (reviewer's notes on the book, medium).",
+      "source": "omdventures notes on the book",
+      "confidence": "medium"
+    },
+    {
+      "id": "f22",
+      "claim": "Irvine frames negative visualization as contemplating the impermanence of the world around us; a related habit is treating each visit, meal or meeting as possibly the last. The point is to appreciate small things, not to be pessimistic.",
+      "source": "omdventures notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f23",
+      "claim": "Evening review (notes): before sleep ask yourself what failings you resisted, where you improved and what problems you solved; Stoic meditation is active reflection on the day, not emptying the mind. Questions include whether you were disciplined, gave in to envy, dwelt on the past, or blamed others instead of yourself. Seneca's stated goal was to reduce his vices and mistakes each day.",
+      "source": "omdventures notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f24",
+      "claim": "For things you control only partly, Irvine says to internalize goals; one reviewer's investing analogy: do not aim at a target return, aim to study a set number of companies and hold a portfolio you believe in.",
+      "source": "omdventures notes (analogy is the reviewer's)",
+      "confidence": "low"
+    },
+    {
+      "id": "f25",
+      "claim": "Seneca was executed on Nero's order and accepted his death calmly; Marcus Aurelius financed wars by selling imperial possessions rather than raising taxes (reviewer's notes on the book's biography material).",
+      "source": "omdventures notes",
+      "confidence": "low"
+    },
+    {
+      "id": "f26",
+      "claim": "Outside the book (Seneca, On Anger III.36): Sextius, at day's end, asked his mind what bad habit it had cured, which vice it had restrained and how it had improved. Seneca says that when the lamp has been removed and his wife, who knows his habit, has fallen silent, he reviews his whole day, replaying what he said and did. 'I conceal nothing from myself, and omit nothing.'",
+      "source": "Seneca, On Anger (translation quoted on theosophyproject.blogspot.com)",
+      "confidence": "high"
+    },
+    {
+      "id": "f27",
+      "claim": "Outside the book (Seneca): he does not dread his faults, because he can forgive a lapse on condition that it is not repeated. Examples: he argued too combatively, so he resolves not to argue with people unwilling to learn; he rebuked someone too bluntly and hurt instead of correcting, so he should consider whether the listener can bear the truth.",
+      "source": "Seneca, On Anger III.36 (same translation)",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Quote: 'Sahip olduklarınızı zaten kaybetmiş gibi deneyimlediğinizde...' as Irvine's words",
+      "reason": "No such wording found"
+    },
+    {
+      "claim": "Coffee example in the old text; Stoics asked themselves every MORNING 'what if I lost this'",
+      "reason": "Not from the book; the morning timing is not verified"
+    },
+    {
+      "claim": "Old claim that Stoics asked a morning question 'Is this in my control?' with lists: weather, others' thoughts, the past, illness",
+      "reason": "Not verified as Irvine's lists"
+    },
+    {
+      "claim": "Traffic, other people's opinions, weather examples",
+      "reason": "Old text's own examples, not Irvine's"
+    },
+    {
+      "claim": "Quote: 'Stoacılar günü muhasebesiz kapatmıyordu...'",
+      "reason": "No such wording found"
+    },
+    {
+      "claim": "Three evening questions (which bad habits fought, how could I have behaved better, which value did I follow)",
+      "reason": "Not verified as Irvine's wording; verified is the Seneca-derived bedtime review and checklist items"
+    },
+    {
+      "claim": "Marcus Aurelius did this in Meditations by recording his failures ('I lost my temper today')",
+      "reason": "Not supported as Irvine's account"
+    },
+    {
+      "claim": "Claim that anxiety mostly comes from energy spent on uncontrollable things; the shock is smaller and adaptation faster after real loss",
+      "reason": "Not verified (only that it helps if loss comes)"
+    }
+  ],
+  "stories": {
+    "1510": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f13",
+        "f14",
+        "f15",
+        "f16",
+        "f21",
+        "f22"
+      ],
+      "note": "Concept: negative visualization against hedonic adaptation. Morning ritual and quote dropped. Medium confidence."
+    },
+    "1511": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f17",
+        "f18",
+        "f20"
+      ],
+      "note": "Concept: trichotomy of control and the tennis match. Old lists dropped."
+    },
+    "1512": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f11",
+        "f12",
+        "f19",
+        "f23",
+        "f26",
+        "f27"
+      ],
+      "note": "Concept: Seneca-derived bedtime review. Seneca's own account (lamp, wife silent, conditional pardon) added from On Anger. Three-question list and Marcus detail dropped. Medium confidence."
+    }
+  }
+}

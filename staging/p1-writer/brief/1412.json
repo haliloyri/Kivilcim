@@ -1,0 +1,63 @@
+{
+  "story_id": 1412,
+  "kind": "anecdote",
+  "book": {
+    "title": "Quiet",
+    "author": "Susan Cain",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "Facts from reviews (Inside Story, Fuqua library, search summaries of chapter 1); no primary text. The old faculty quote, Karpov and the Buffett/Gates/Einstein list were dropped as unverified. Subarctic exercise detail medium. Source is thin; keep the story short.",
+  "facts": [
+    "Cain visits Harvard Business School, which she calls the Spiritual Capital of Extroversion.",
+    "Future leaders there are taught to act confidently and make decisions with incomplete information.",
+    "Classroom participation drives status and grades.",
+    "Each incoming class runs the Subarctic Survival Situation: groups of students brainstorm how to survive a cold-weather crash with limited resources.",
+    "Students come largely to build lasting personal networks; the days are group exercises and the evenings, in Cain's phrase, an extreme sport.",
+    "Cain asked one student whether anyone on campus was quieter. He answered: \"I could not tell you.\"",
+    "Cain argues that introverts prefer to work independently and that solitude can be a catalyst for innovation; group brainstorming is less effective than assumed.",
+    "Per studies Cain cites, one third to one half of Americans are introverts, with the same average IQ as extroverts and tending to earn better grades.",
+    "Financial executives told Cain that cautious, introverted leaders on Wall Street might have noticed warning signs before the meltdown (their view).",
+    "Cain calls the spread of group work the New Groupthink and says it should not dominate the school day."
+  ],
+  "scene_details": [
+    "the Subarctic Survival Situation",
+    "the student who said \"I could not tell you\"",
+    "participation counted toward grades"
+  ],
+  "tension": "A school built to train confident talkers cannot say if any quiet student exists on its campus.",
+  "opening_idea": "Open on the student Cain asked whether anyone on campus was quieter and his answer, I could not tell you.",
+  "lessons": [
+    {
+      "idea": "When a group rewards whoever speaks first, the group hears speed, not the quality of thinking.",
+      "anchor": "Participation tied to status and grades at HBS; the student who could not name a quiet classmate.",
+      "example": "In a weekly planning call the person with the quickest answer sets the plan while the careful one writes a better idea after the call."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In your last meeting, whose idea reached you late or not at all, and what format would have let it arrive?",
+  "use_cases": [
+    {
+      "situation": "A meeting rewards the first answer.",
+      "move": "At Harvard Business School, Cain found participation counted toward grades; offer to take written ideas before the discussion so quieter people count.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A teammate sends good ideas by message after the meeting.",
+      "move": "Ask them to send it before the next meeting, and read it first.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You think of the better point on the way home.",
+      "move": "Write it down tonight and send it tomorrow morning.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "If a room only hears whoever speaks first, ask for ideas in writing before the discussion starts.",
+  "conversation_variants": {
+    "punchline_idea": "Asked if anyone at Harvard Business School was quieter, a student told Susan Cain: I could not tell you.",
+    "thirty_sec_idea": "Susan Cain visited Harvard Business School and found a place where classroom participation drives status and grades, days are group exercises and evenings are an extreme sport. She asked one student whether anyone on campus was quieter. He said he could not tell her. Her point: a system built to reward talking may never see the people who think best alone.",
+    "question_idea": "When do you think best, alone or aloud?",
+    "key_contrast_idea": "speaking fast, thinking deep"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1260,
+ "verdict": "keep",
+ "verify_note": "Keep: Napoleon's three-week mail delay and good-news/bad-news wake-up rule verified in the full text (chapter 'Limit Your Inputs'); origin in Emerson. Invented 24-hour/one-week waiting exercise dropped; old title said 'email', corrected.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Napoleon'un mühürlü mektupları",
+  "description": "Napoleon mektupları üç hafta açmadı ama kötü haber için gece yarısı uyandırılmak istedi. Ryan Holiday bunu bir süzgeç olarak anlatıyor.",
+  "hook": "Bugün size ulaşanlardan hangisi gerçekten sizi uyandırmaya değer?",
+  "one_minute_summary": "Napoleon generalken sekreterine gelen mektupları üç hafta açmamasını söylemişti. Sonunda okunduklarında 'önemli' denen meselelerin çoğu kendiliğinden çözülmüş olurdu. Ama kötü haber ayrıydı: ulaklar onu gece yarısı bile derhal uyandıracaktı. Ryan Holiday bunu, neyin bekleyebileceğine önceden karar veren bir süzgeç olarak anlatıyor. Bir buçuk yüzyıl sonra Eisenhower da kendisine açılmamış posta verilmesini yasakladı, çünkü acil olanın çoğu önemli değildi. Holiday'in önerisi: haberleri anı anına izlemeyin, gelen kutunuzun gününüzü yönetmesine izin vermeyin."
+ },
+ "en": {
+  "title": "Napoleon's sealed letters",
+  "description": "Napoleon left his letters unopened for three weeks but wanted bad news at once. Ryan Holiday reads it as a filter for what reaches you.",
+  "hook": "Which of today's messages actually deserves to wake you up?",
+  "one_minute_summary": "As a general, Napoleon had his secretary leave every letter unopened for three weeks. When he finally heard them, many supposedly important issues had resolved themselves. Bad news was the exception: messengers had orders to wake him instantly. Ryan Holiday presents this as a filter that decides in advance what may interrupt you. A century and a half later, Eisenhower refused unopened mail, having noticed that much of what was urgent was not important. Holiday's advice: don't follow news in real time, and don't let your inbox run your day."
+ },
+ "es": {
+  "title": "Las cartas cerradas de Napoleón",
+  "description": "Napoleón dejaba las cartas sin abrir tres semanas, pero quería las malas noticias al instante. Ryan Holiday lo presenta como un filtro.",
+  "hook": "¿Cuál de los mensajes de hoy merece de verdad despertarte?",
+  "one_minute_summary": "Siendo general, Napoleón hacía que su secretario dejara cada carta cerrada tres semanas. Cuando por fin se la leían, muchos asuntos se habían resuelto solos. Las malas noticias eran la excepción: los mensajeros debían despertarlo al instante. Ryan Holiday lo presenta como un filtro que decide de antemano qué puede interrumpirte. Siglo y medio después, Eisenhower prohibió que le entregaran correo sin abrir, porque mucho de lo urgente no era importante. Holiday aconseja no seguir las noticias en tiempo real."
+ },
+ "de": {
+  "title": "Napoleons versiegelte Briefe",
+  "description": "Napoleon ließ Briefe drei Wochen ungeöffnet, wollte schlechte Nachrichten aber sofort. Ryan Holiday beschreibt das als Filter.",
+  "hook": "Welche Nachricht von heute ist es wirklich wert, dich zu wecken?",
+  "one_minute_summary": "Als General ließ Napoleon seinen Sekretär jeden Brief drei Wochen ungeöffnet liegen. Wenn er ihn dann hörte, hatten sich viele angeblich wichtige Dinge von selbst erledigt. Schlechte Nachrichten waren die Ausnahme: Dafür sollten ihn die Boten sofort wecken. Ryan Holiday beschreibt das als Filter, der vorher festlegt, was dich unterbrechen darf. Anderthalb Jahrhunderte später ließ sich Eisenhower keine ungeöffnete Post geben, weil vieles Dringende nicht wichtig war. Holidays Rat: Verfolge Nachrichten nicht in Echtzeit und lass dein Postfach nicht deinen Tag bestimmen."
+ }
+}

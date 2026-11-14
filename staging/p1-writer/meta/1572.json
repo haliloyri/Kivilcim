@@ -1,0 +1,35 @@
+{
+ "story_id": 1572,
+ "verdict": "keep",
+ "verify_note": "Keep with low confidence: only secondary summaries support the 311-word Credo carved in granite, the 1982 Tylenol poisoning as a culture test, and the Credo meetings (J&J heritage page credits James Burke). Old CEO quote, 31 million bottles, 1943 date and two-year recovery could not be verified and were dropped; no death count used.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Granite kazınmış 311 sözcük",
+  "description": "Johnson & Johnson'ın Credo'su granit bir duvara kazınmıştı. Coyle, Tylenol krizinde cevabın o sözcüklerde bulunduğunu anlatıyor.",
+  "hook": "Zor bir karar gelse ekibinizin hangi yazılı değerine işaret ederdiniz?",
+  "one_minute_summary": "Daniel Coyle, Johnson & Johnson'ın New Jersey'deki merkezinde granit bir duvara kazınmış 311 sözcüklük Credo'yu anlatıyor. 1982 Tylenol zehirlenmesi geldiğinde şirketin cevabı bu sözcüklerde bulundu. Yöneticiler Credo'yu düzenli toplantılarda tartışıp sorguluyordu; şirketin kendi tarihi bunu CEO James Burke'e bağlıyor. Kaynaklar kriz rakamlarında ayrışıyor, bu yüzden rakam kullanılmadı. Ders: Değerlerinizi kriz gelmeden konuşun. Credo yalnızca duvarda durmuyor, düzenli tartışmayla canlı tutuluyordu ve kriz geldiğinde şirket ona baktı."
+ },
+ "en": {
+  "title": "311 Words in Granite",
+  "description": "Johnson & Johnson's Credo was carved into a granite wall. Coyle says that in the Tylenol crisis the company's answer was found in those words.",
+  "hook": "If a hard decision landed tomorrow, which written value of your team would you point to?",
+  "one_minute_summary": "Daniel Coyle describes Johnson & Johnson's 311-word Credo, carved into a granite wall at its New Jersey headquarters. When the 1982 Tylenol poisoning hit, the company's answer was found in those words. Managers had met regularly to discuss and challenge the Credo, and the company's own history credits CEO James Burke with starting that. Sources disagree on crisis figures, so none are used. The lesson: talk about your values before a crisis."
+ },
+ "es": {
+  "title": "311 palabras en granito",
+  "description": "El Credo de Johnson & Johnson estaba grabado en un muro de granito. Coyle cuenta que en la crisis del Tylenol la respuesta estaba en esas palabras.",
+  "hook": "Si mañana llegara una decisión difícil, ¿a qué valor escrito de tu equipo apuntarías?",
+  "one_minute_summary": "Daniel Coyle describe el Credo de Johnson & Johnson, de 311 palabras, grabado en un muro de granito en su sede de Nueva Jersey. Cuando llegó el envenenamiento del Tylenol de 1982, la respuesta de la empresa estaba en esas palabras. Los directivos se reunían con regularidad para discutir y poner a prueba el Credo, y la propia historia de la empresa lo atribuye al director James Burke. Las fuentes discrepan en las cifras y no se usan. La lección: habla de tus valores antes de la crisis."
+ },
+ "de": {
+  "title": "311 Wörter in Granit",
+  "description": "Das Credo von Johnson & Johnson war in eine Granitwand gemeißelt. Coyle erzählt, dass in der Tylenol-Krise die Antwort der Firma in diesen Worten lag.",
+  "hook": "Wenn dir morgen eine schwere Entscheidung bevorstünde, auf welchen schriftlichen Wert deines Teams würdest du zeigen?",
+  "one_minute_summary": "Daniel Coyle beschreibt das 311 Wörter lange Credo von Johnson & Johnson, in eine Granitwand am Hauptsitz in New Jersey gemeißelt. Als 1982 die Tylenol-Vergiftungen kamen, lag die Antwort der Firma in diesen Wörtern. Manager trafen sich regelmäßig, um das Credo zu diskutieren und zu prüfen, was die Firmengeschichte Vorstandschef James Burke zuschreibt. Quellen weichen bei Zahlen der Krise ab, daher werden keine genannt. Die Lehre: Sprich über deine Werte, bevor die Krise kommt."
+ }
+}

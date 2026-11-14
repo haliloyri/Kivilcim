@@ -1,0 +1,35 @@
+{
+  "story_id": 1648,
+  "verdict": "keep",
+  "verify_note": "Keep: 87 emotions, 13 land masses and the three-emotions average confirmed in Time's piece; old '50 percent' figure and the 'cannot manage what you cannot name' line dropped. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Üç kelime, seksen yedi duygu",
+    "description": "Brené Brown'ın taramalarında insanlar hissettiklerini ortalama üç kelimeyle adlandırabildi. Kalbin Haritası 87 duyguyu haritalar.",
+    "hook": "Son kızgınlığınıza hangi daha kesin kelime uyardı?",
+    "one_minute_summary": "Brené Brown'ın ekibi beş yılda yaklaşık 7.000 kişiyi taradı. İnsanlar o anda hissettikleri duygulardan ortalama yalnızca üçünü adlandırabildi: mutluluk, üzüntü ve öfke. Brown da Atlas of the Heart'ı bir harita olarak kurdu: 87 duygu ve deneyim, her biri bir varış noktası gibi sunulan 13 kara parçasına bölünmüş. Bölüm başlıkları “Belirsiz ya da Fazla Geldiğinde Gittiğimiz Yerler” ve “Kıyasladığımızda Gittiğimiz Yerler” gibi durumları anlatır. Fikir, daha az kelimeyle yetinmek yerine tam kelimeyi aramak."
+  },
+  "en": {
+    "title": "Three words, eighty-seven emotions",
+    "description": "In Brené Brown's surveys, people named on average three emotions as they felt them. Atlas of the Heart maps 87.",
+    "hook": "Which more exact word fits the last time you felt angry?",
+    "one_minute_summary": "Brené Brown's team surveyed about 7,000 people over five years and found that, on average, people could name only three emotions as they were feeling them: happiness, sadness and anger. Her answer was Atlas of the Heart, a map of 87 emotions and experiences grouped into 13 land masses, each presented as a destination. Chapter titles such as 'Places We Go When We Compare' name situations rather than single feelings. The idea is to look for the exact word instead of settling for the nearest of three."
+  },
+  "es": {
+    "title": "Tres palabras y ochenta y siete emociones",
+    "description": "En las encuestas de Brené Brown, la gente nombraba de media tres emociones al sentirlas. Atlas of the Heart mapea 87.",
+    "hook": "¿Qué palabra más exacta encaja con tu último enfado?",
+    "one_minute_summary": "El equipo de Brené Brown encuestó a unas 7.000 personas durante cinco años y vio que, de media, solo sabían nombrar tres emociones mientras las sentían: felicidad, tristeza y enfado. Su respuesta fue Atlas of the Heart, un mapa de 87 emociones y experiencias en 13 masas de tierra, cada una presentada como un destino. Títulos como «Lugares a los que vamos cuando comparamos» nombran situaciones, no un solo sentimiento. La idea es buscar la palabra exacta en vez de conformarse con la más cercana de tres."
+  },
+  "de": {
+    "title": "Drei Wörter, siebenundachtzig Gefühle",
+    "description": "In Brené Browns Umfragen nannten Menschen im Schnitt drei Gefühle, während sie sie fühlten. Atlas of the Heart kartiert 87.",
+    "hook": "Welches genauere Wort passt auf deine letzte Wut?",
+    "one_minute_summary": "Brené Browns Team befragte über fünf Jahre rund 7.000 Menschen und stellte fest, dass sie im Schnitt nur drei Gefühle benennen konnten, während sie sie erlebten: Glück, Traurigkeit und Wut. Ihre Antwort war Atlas of the Heart, eine Karte mit 87 Gefühlen und Erfahrungen in 13 Landmassen, jede als Reiseziel vorgestellt. Kapitelnamen wie „Orte, an die wir gehen, wenn wir vergleichen“ benennen Situationen, nicht einzelne Gefühle. Die Idee: das genaue Wort suchen statt sich mit dem nächsten von dreien zu begnügen."
+  }
+}

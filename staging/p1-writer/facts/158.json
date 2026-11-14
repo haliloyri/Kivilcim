@@ -1,0 +1,36 @@
+{
+ "book_no": 158,
+ "title": "The Culture Code",
+ "authors": ["Daniel Coyle"],
+ "year": "2018",
+ "sources": [
+  "https://www.grahammann.net/book-notes/the-culture-code-by-daniel-coyle",
+  "https://lifeclub.org/books/the-culture-code-daniel-coyle-review-summary",
+  "https://knowt.com/note/7f6aa5b1-a9f7-4560-8b6b-bde1447e56e0/Three-Hundred-and-Eleven-Words-Comprehe",
+  "https://www.jnj.com/our-heritage/meet-james-e-burke-the-chairman-and-ceo-of-johnson-johnson-who-steered-the-company-and-its-credo-toward-modernization-in-the-1970s-and-1980s",
+  "https://bookpal.com/blog/authorconnect-chat-dan-coyle-discusses-culture-with-bookpal"
+ ],
+ "facts": [
+  {"id": "c1", "claim": "The Culture Code: The Secrets of Highly Successful Groups, Daniel Coyle, 2018. Three skills: build safety, share vulnerability, establish purpose.", "source": "summaries", "confidence": "high"},
+  {"id": "c2", "claim": "Belonging cues include physical proximity, eye contact, energy, turn-taking, and whether everyone talks to everyone; they share three qualities (energy, individualization, future orientation) and send one message: 'You are safe here.'", "source": "grahammann notes", "confidence": "medium"},
+  {"id": "c3", "claim": "Alex 'Sandy' Pentland (MIT Media Lab) used a sociometer, a sensor recording signals such as eye contact, mimicry and physical closeness, during role-played negotiations (salary, vacation, benefits). He could predict each negotiation's outcome from the first five minutes of data; the interaction mattered more than the content of the talk.", "source": "lifeclub summary", "confidence": "medium"},
+  {"id": "c4", "claim": "Vulnerability loop (described with Harvard's Jeff Polzer): person A signals vulnerability, B detects it, B signals their own, A detects that, and a norm of trust and closeness forms.", "source": "grahammann, lifeclub", "confidence": "medium"},
+  {"id": "c5", "claim": "Dave Cooper, a military team leader in the book, has teams hold an after-action review right after each mission; enlisted men lead it, no rank, no agenda, no minutes; teams replay each decision and keep asking why. Cooper says the most important words a leader can say are 'I screwed that up.'", "source": "grahammann notes", "confidence": "medium"},
+  {"id": "c6", "claim": "Pixar teams 'plus' early drafts by offering solutions rather than giving 'notes'; the book lists BrainTrusts with after-action reviews as candor-building practices.", "source": "grahammann notes", "confidence": "medium"},
+  {"id": "c7", "claim": "Johnson & Johnson's Credo is a 311-word document carved into a granite wall at the New Jersey headquarters and displayed at business locations.", "source": "knowt notes on the book", "confidence": "medium"},
+  {"id": "c8", "claim": "Coyle uses the 1982 Tylenol poisoning as a case of a crisis testing culture; the company's answer was found in the 311 words of the Credo.", "source": "Culture Works summary, bookpal interview", "confidence": "medium"},
+  {"id": "c9", "claim": "J&J held regular meetings with senior managers to challenge and discuss the Credo (the 'Credo Challenge', started under CEO James Burke).", "source": "lifeclub summary, J&J heritage page", "confidence": "medium"},
+  {"id": "c10", "claim": "Purpose is built by linking where the group is to where it wants to go, repeating a few clear signals.", "source": "grahammann notes", "confidence": "medium"}
+ ],
+ "rejected": [
+  {"claim": "A senior SEAL officer told a junior: 'I made the wrong call last operation, I should have listened to you' (Coyle observing SEAL Team Six).", "reason": "Not verifiable; replaced by Cooper's documented after-action practice."},
+  {"claim": "Pixar executives said 'I may be wrong' and 'I need help' in meetings; Pixar's streak is no coincidence (as the book's claim).", "reason": "Not verified in wording."},
+  {"claim": "J&J CEO asked 'What do our values say?'; 31 million bottles recalled; company took a big loss and returned stronger after two years.", "reason": "Recall count varies by source (31 vs 32 million), the quote and the recovery claim are unverified."},
+  {"claim": "Credo dating from 1943 and the phrase 'patients and consumers first' in the book.", "reason": "Not verified against the book; omitted."}
+ ],
+ "stories": {
+  "1570": {"verdict": "keep", "fact_ids": ["c2", "c3"], "note": "SEAL scene dropped; rebuilt on Pentland's sociometer case and belonging cues."},
+  "1571": {"verdict": "keep", "fact_ids": ["c4", "c5", "c6"], "note": "Pixar quotes dropped; Cooper's after-action review plus vulnerability loop."},
+  "1572": {"verdict": "keep", "fact_ids": ["c7", "c8", "c9", "c10"], "note": "Numbers and the CEO quote dropped; Credo carved in granite and Tylenol as the book's case. Low-medium confidence."}
+ }
+}

@@ -1,0 +1,30 @@
+{
+  "story_id": 1541,
+  "verdict": "keep",
+  "verify_note": "Keep: SQVID pairs and the six questions with their pictures are consistent across summaries. Old CEO/engineer anecdote, question glosses and chart mapping dropped; no full text, so medium confidence.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Resmin hangi tarafı",
+    "description": "Dan Roam'ın SQVID'i, bir fikri çizmeden önce beş zıt çiftten birini seçtirir. Altı soruyla altı resim de eşleşir.",
+    "hook": "Son hazırladığınız sunumda izleyiciniz basit mi yoksa ayrıntılı bir resim istiyordu?",
+    "one_minute_summary": "Dan Roam'ın SQVID'i, bir fikri çizmeden önce beş zıt çifte bakmayı önerir: basit ya da ayrıntılı, nitelik ya da nicelik, vizyon ya da uygulama, tek özellik ya da karşılaştırma, değişim ya da mevcut durum. Çiftleri sırayla geçip fikri odaklayabilir ya da izleyiciye en önemli olana göre tartabilirsiniz. Altı soru da birer resimle eşleşir: kim ya da ne için portre, ne kadar için grafik, nerede için harita, ne zaman için zaman çizelgesi, nasıl için akış şeması, neden için çok değişkenli çizim."
+  },
+  "en": {
+    "title": "Which side of the picture",
+    "description": "Dan Roam's SQVID makes you pick a side in five pairs of opposites before drawing. Six questions each have a matching picture.",
+    "hook": "Did your audience on your last slide want simple or elaborate?",
+    "one_minute_summary": "Dan Roam's SQVID asks you to lean toward one side in five pairs before you draw: simple or elaborate, quality or quantity, vision or execution, individual or comparison, change or status quo. You can run the pairs in order to focus the idea, or weight each one toward what matters most to the audience. Six questions each have a matching picture: who or what, a portrait; how much, a chart; where, a map; when, a timeline; how, a flowchart; why, a multiple-variable plot."
+  },
+  "es": {
+    "title": "A qué lado del dibujo",
+    "description": "El SQVID de Dan Roam te hace elegir lado en cinco pares de opuestos antes de dibujar. Seis preguntas tienen cada una su dibujo.",
+    "hook": "¿Tu público quería lo simple o lo elaborado en tu última diapositiva?",
+    "one_minute_summary": "El SQVID de Dan Roam pide inclinarse por un lado en cinco pares antes de dibujar: simple o elaborado, cualitativo o cuantitativo, visión o ejecución, individual o comparación, cambio o statu quo. Puedes recorrer los pares en orden para enfocar la idea o ponderar cada uno según lo que más le importa al público. Seis preguntas tienen su dibujo: quién o qué, un retrato; cuánto, un gráfico; dónde, un mapa; cuándo, una línea de tiempo; cómo, un diagrama de flujo; por qué, un gráfico multivariable."
+  },
+  "de": {
+    "title": "Welche Seite des Bildes",
+    "description": "Dan Roams SQVID lässt dich vor dem Zeichnen in fünf Gegensatzpaaren eine Seite wählen. Sechs Fragen haben je ein passendes Bild.",
+    "hook": "Wollte dein Publikum bei deiner letzten Folie schlicht oder aufwendig?",
+    "one_minute_summary": "Dan Roams SQVID verlangt, vor dem Zeichnen in fünf Paaren eine Seite zu wählen: einfach oder aufwendig, Qualität oder Quantität, Vision oder Umsetzung, einzeln oder im Vergleich, Veränderung oder Status quo. Du kannst die Paare der Reihe nach durchgehen, um die Idee zu schärfen, oder jedes danach gewichten, was dem Publikum am wichtigsten ist. Sechs Fragen haben je ein Bild: wer oder was, ein Porträt; wie viel, ein Diagramm; wo, eine Karte; wann, eine Zeitleiste; wie, ein Flussdiagramm; warum, ein Mehrvariablen-Plot."
+  }
+}

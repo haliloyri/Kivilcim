@@ -1,0 +1,61 @@
+{
+  "story_id": 1297,
+  "kind": "concept",
+  "book": {
+    "title": "Essentialism",
+    "author": "Greg McKeown",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not directly available; checked through Shortform summaries, published quotes and a public-radio review. The old reference text's naval battle (five ships against dozens) was not found and is dropped, as is the claim that McKeown studied high performers and found the best said the most 'no'. 'Sam Elliot' is the name the book uses; summaries flag it as a pseudonym, so do not present it as a verified real person beyond 'an executive the book calls Sam Elliot'. The plural-of-priority date is McKeown's claim; dictionaries confirm only the 15th-century origin.",
+  "facts": [
+    "In Essentialism, McKeown writes that the word 'priority' came into English in the 1400s, was singular, meant the very first thing, and stayed singular for about 500 years; only in the 1900s did people start speaking of 'priorities'.",
+    "He describes a 'paradox of success': clarity of purpose brings success; success brings more options and requests; the extra options scatter effort; and the person loses the clarity that produced the success.",
+    "He quotes Jim Collins on 'the undisciplined pursuit of more' as a trap.",
+    "The book tells of a Silicon Valley executive it calls Sam Elliot, who said yes to everything his bosses and colleagues asked and felt his days went to things that did not matter.",
+    "Sam's performance slipped and he seriously considered quitting to become a consultant.",
+    "A mentor told him to do only the things he would do as a consultant, and nothing else.",
+    "Sam started asking whether each request was the most important thing he could be doing at that moment; he went to fewer meetings, stayed out of many e-mail debates and put his effort into a few high-value projects.",
+    "His performance ratings went up and he received a large bonus."
+  ],
+  "scene_details": [
+    "the word 'priority', singular for about 500 years",
+    "a calendar of meetings Sam stopped attending",
+    "the mentor's test: only what you would do as a consultant"
+  ],
+  "tension": "A capable executive is so willing that his yeses push his best work aside, and the success that earned him the requests is eroding.",
+  "opening_idea": "Start with the odd fact about the word 'priority' having no plural for centuries.",
+  "lessons": [
+    {
+      "idea": "Before accepting a request, ask whether it is the single most important thing you could do with that time.",
+      "anchor": "Sam's mentor: only what you'd do as a consultant; fewer meetings, a few high-value projects.",
+      "everyday_example_idea": "A teacher who is asked to join a third committee checks it against the one thing she most wants this term, preparing a new course, and says no."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you had to name one priority for this month, in the singular, which current commitment would no longer fit?",
+  "use_cases": [
+    {
+      "situation": "Your manager adds a new project to an already full list.",
+      "move": "Ask which one item should come first, and which should pause, since 'priority' used to be singular.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A team planning meeting produces ten 'top priorities'.",
+      "move": "Propose picking the one that matters most this quarter and parking the rest openly.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You notice your week is full of meetings you could skip.",
+      "move": "Apply Sam's mentor's test to tomorrow's calendar: keep only what you would do if you were hired as an outside consultant.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "'Priority' meant one first thing for 500 years; ask what yours is before saying yes.",
+  "conversation_variants": {
+    "punchline_idea": "McKeown says 'priority' had no plural for about 500 years; we invented 'priorities' only in the 1900s.",
+    "thirty_sec_idea": "Sam Elliot, the yes-to-everything executive, the consultant test, fewer meetings, better ratings and bonus.",
+    "question_idea": "",
+    "key_contrast_idea": "Many yeses, one priority"
+  }
+}

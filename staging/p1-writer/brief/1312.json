@@ -1,0 +1,42 @@
+{
+  "story_id": 1312,
+  "kind": "anecdote",
+  "book": {"title": "The E-Myth Revisited", "author": "Michael E. Gerber", "year": "1995"},
+  "confidence": "high",
+  "confidence_note": "Verified in the full text of The E-Myth Revisited. Sarah is a woman (the old text called her a man). 'All About Pies' is not the shop's real name, per Gerber. The old '20 hours baking, 60 hours managing after six months' line is not in the book and is dropped. Sarah's words are quoted as given in the book.",
+  "facts": [
+    "Michael E. Gerber met Sarah after she had run her pie shop for three years; she told him they had been 'the longest three years of my life.'",
+    "Gerber calls the shop All About Pies and notes this is not its real name.",
+    "At 7 a.m., thirty minutes before opening, Sarah told him she now hated baking pies, could not stand the thought, the smell or the sight of pies, and started crying.",
+    "She had been in the shop since 3 a.m., up since 2; her day ran through baking, opening, customers, cleaning, closing, shopping, reconciling the cash register, the bank, dinner and tomorrow's bake until 9:30 or 10 p.m., and then she still had to work out next month's rent.",
+    "Her best friends had told her she was crazy not to open a pie shop because she was so good at it; she saw it as a way out of a horrible job. She kicked the huge black oven. She was deep in debt after buying the best oak floors and the best ovens.",
+    "As a girl she learned to bake from her aunt, who lived with the family and told her: 'Sarah, dear, we have all the time in the world. Baking pies is not about getting done. It's about baking pies.'",
+    "Gerber calls the urge that started the shop an Entrepreneurial Seizure and names the Fatal Assumption: if you understand the technical work of a business, you understand a business that does that work.",
+    "He says everyone who goes into business is three people in one: the Entrepreneur, the Manager and the Technician, and each wants to be the boss. His reply to Sarah: 'It's time to learn all about pies all over again.'"
+  ],
+  "scene_details": [
+    "a clock ticking loudly in the empty shop at 7 a.m.",
+    "Sarah wiping her eyes with her apron",
+    "Sarah kicking the huge black oven",
+    "the aunt's line: baking pies is not about getting done"
+  ],
+  "tension": "The woman everyone called the best pie baker now cannot stand the smell of pies, inside the shop she built to bake them.",
+  "opening_idea": "Start at 7 a.m. in the shop, half an hour before opening, with a baker who says she hates pies.",
+  "lessons": [
+    {"idea": "Being good at the work and running the business that sells the work are separate jobs; plan for the second before it eats the first.", "anchor": "Sarah's day: an hour list of register, bank, rent and shopping around the baking she loved.", "everyday_example_idea": "A skilled hairdresser opening her own salon writes down every non-haircut task before signing the lease."}
+  ],
+  "reflect": [],
+  "reflect_final": "Which part of your work do you love, and which tasks around it would take over your week if you did it on your own?",
+  "use_cases": [
+    {"situation": "A friend is about to quit a job to turn a hobby into a business.", "move": "Ask them to list every task in a normal day of that business besides the craft itself, the way Sarah's day ran from 2 a.m. baking to the bank and the rent.", "context": "social"},
+    {"situation": "Your team's best specialist is promoted to lead the team.", "move": "Ask which of their old tasks they will keep and which new management tasks they will block time for.", "context": "meeting"},
+    {"situation": "You're tempted to launch a side business around a skill.", "move": "Write one page on the three roles: who will do the work, who will keep order, who will plan the next year.", "context": "self"}
+  ],
+  "pocket_idea": "Baking great pies and running a pie shop are two different jobs; know which one you are signing up for.",
+  "conversation_variants": {
+    "punchline_idea": "After three years running her own pie shop, the woman everyone called the best baker said she couldn't stand the smell of pies.",
+    "thirty_sec_idea": "Sarah baked so well her friends pushed her to open a pie shop. Gerber met her three years in, at 7 a.m., up since 2, crying, kicking the oven, saying she hated pies. The baking was only one slice of a day of register, bank and rent. Gerber's point: knowing the work is not knowing the business.",
+    "question_idea": "",
+    "key_contrast_idea": "Great baker, exhausted owner"
+  }
+}

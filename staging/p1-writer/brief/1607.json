@@ -1,0 +1,32 @@
+{
+  "story_id": 1607,
+  "kind": "concept",
+  "book": {"title": "I Will Teach You to Be Rich", "author": "Ramit Sethi", "year": "2009"},
+  "confidence": "low",
+  "confidence_note": "Thin sourcing: details come from a book review, Sethi's website (Next $100 principle, stylist example via a news piece) and a summary giving bucket percentages; none checked against the 2009 text. The old text's $1,500 coffee figure, rent 30-40 percent, car costs and compounding raise were dropped as unverified. The 25-33 percent cut is Sethi's own target for his own two categories, not a promised result. Overlaps 1606 on the buckets.",
+  "facts": [
+    "Sethi is famously indifferent to cutting daily lattes and avoids tracking every penny; he focuses on the five to ten decisions that drive most results ('Big Wins'), including automating savings and negotiating salary.",
+    "Conscious spending plan: a budget looks backward, a plan lets you look forward; spend extravagantly on what you love, cut costs mercilessly on what you do not.",
+    "Four buckets: fixed costs, investments, savings, guilt-free spending; one summary: fixed costs about 50-60 percent of take-home, investments about 10 percent, savings 5-10 percent, guilt-free spending the remainder.",
+    "Next $100 principle (website): pick the top two discretionary expenses (his: eating out and going out), cut them 25-33 percent over six months, send the cash to investing and travel; big wins come from a couple of categories rather than trimming everything a little.",
+    "Once bills are paid and saving/investing automated, the remaining money is yours to spend; his example is a personal stylist because he enjoys dressing well."
+  ],
+  "scene_details": ["the daily latte left alone", "eating out and going out as his own two categories", "a personal stylist as his own spending example"],
+  "tension": "A money book that does not ask you to give up the daily coffee but asks you to cut hard elsewhere.",
+  "opening_idea": "Open on the latte surviving untouched and the stylist, then the short list of bigger things.",
+  "lessons": [{"idea": "Cut where costs are big and keep what you love.", "anchor": "Next $100: two biggest discretionary expenses; the latte left alone.", "example": "Someone gives up takeaway coffee but ignores a yearly gym fee for a gym they do not use."}],
+  "reflect": [],
+  "reflect_final": "Of everything you spend on without much thought, which one or two items are large enough to matter and which of them would you truly miss?",
+  "use_cases": [
+    {"situation": "You are about to cancel a small treat to save money.", "move": "List your two biggest optional costs first and cut the one you barely use.", "context": "self"},
+    {"situation": "A partner wants to cut small pleasant spending.", "move": "Quote the rule to cut mercilessly on what you do not love and ask which two things you would miss.", "context": "family"},
+    {"situation": "A team trims many tiny costs.", "move": "Look at the two biggest optional costs first.", "context": "meeting"}
+  ],
+  "pocket_idea": "Keep the small pleasure; check your two biggest optional costs first.",
+  "conversation_variants": {
+    "punchline_idea": "Sethi is indifferent to the latte and cuts hard on the two biggest optional costs.",
+    "thirty_sec_idea": "No latte ban; 5-10 big decisions; Next $100 on two biggest discretionary expenses cut 25-33 percent; rest is yours.",
+    "question_idea": "",
+    "key_contrast_idea": "big costs, small pleasures"
+  }
+}

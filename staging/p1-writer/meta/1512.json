@@ -1,0 +1,30 @@
+{
+  "story_id": 1512,
+  "verdict": "keep",
+  "verify_note": "Keep with low confidence: bedtime review derived from Seneca verified in reviews and an interview; sample questions from reader notes. Old three-question list, quote and Marcus journal detail dropped; no full text.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Yatmadan önce hesaplaşma",
+    "description": "Irvine, Seneca'dan gelen bir pratiği anlatır: gün sonunda zihni boşaltmak yerine günü gözden geçirmek.",
+    "hook": "Bu akşam günü gözden geçirseniz, yarın hangi anı farklı yaşardınız?",
+    "one_minute_summary": "William Irvine'e göre Stoacı yatma vakti, Seneca'dan gelen bir meditasyondur. Günün olaylarını, onlara nasıl tepki verdiğinizi ve bir Stoacının nasıl tepki vermesi gerektiğini gözden geçirirsiniz. Seneca'nın amacı her gün kusurlarını ve hatalarını azaltmaktı. Sorular arasında şunlar var: hangi zaafa direndim, nerede gelişim gösterdim, başkalarının beni üzmesine izin verdim mi, hedeflerimi içselleştirdim mi. Bu, zihni boşaltmak değil, günü etkin biçimde düşünmektir. Amaç ilerlemedir, mükemmellik değil."
+  },
+  "en": {
+    "title": "The bedtime review",
+    "description": "Irvine describes a practice from Seneca: at bedtime, instead of emptying the mind, you go through the day and see where you could do better.",
+    "hook": "If you walked through today before sleep, which moment would you handle differently?",
+    "one_minute_summary": "William Irvine describes a bedtime meditation derived from Seneca. Before sleep you go through the day's events, how you responded and how a Stoic should have responded. Seneca's goal was to reduce his vices and mistakes each day. Sample questions: what failing did you resist, where did you improve, did you let others upset you, did you give in to temptation, did you let go of worry beyond your control. It is active reflection, not an empty mind, and the aim is progress rather than perfection."
+  },
+  "es": {
+    "title": "El repaso antes de dormir",
+    "description": "Irvine describe una práctica de Séneca: antes de dormir, en vez de vaciar la mente, repasas el día y ves dónde podrías mejorar.",
+    "hook": "Si repasaras hoy tu día antes de dormir, ¿qué momento manejarías distinto mañana?",
+    "one_minute_summary": "William Irvine describe una meditación nocturna derivada de Séneca. Antes de dormir repasas los hechos del día, cómo respondiste y cómo debería haber respondido un estoico. El objetivo de Séneca era reducir cada día sus vicios y errores. Preguntas de ejemplo: qué defecto resistí, en qué mejoré, si dejé que otros me molestaran, si cedí a la tentación o si solté la preocupación por lo que no controlo. Es reflexión activa, no mente en blanco, y busca el progreso, no la perfección."
+  },
+  "de": {
+    "title": "Der Rückblick vor dem Schlafen",
+    "description": "Irvine beschreibt eine Übung von Seneca: Vor dem Schlafen den Kopf nicht leeren, sondern den Tag durchgehen und sehen, wo es besser geht.",
+    "hook": "Wenn du heute vor dem Schlafen deinen Tag durchgehst, welchen Moment würdest du morgen anders angehen?",
+    "one_minute_summary": "William Irvine beschreibt eine Meditation vor dem Schlafen, die auf Seneca zurückgeht. Du gehst die Ereignisse des Tages durch, wie du reagiert hast und wie ein Stoiker hätte reagieren sollen. Senecas Ziel war, jeden Tag seine Laster und Fehler zu verringern. Beispielfragen: Welcher Schwäche habe ich widerstanden, wo wurde ich besser, habe ich mich von anderen ärgern lassen, der Versuchung nachgegeben, die Sorge um Unkontrollierbares losgelassen? Es ist aktives Nachdenken, kein leerer Kopf, und das Ziel ist Fortschritt statt Perfektion."
+  }
+}

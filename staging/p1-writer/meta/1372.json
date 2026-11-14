@@ -1,0 +1,35 @@
+{
+ "story_id": 1372,
+ "verdict": "keep",
+ "verify_note": "Checked against quotes from The Life-Changing Magic of Tidying Up (Japanese 2011, English 2014). The client blouse dialogue and the 'gives or takes energy' framing in the old text are not in the book and were dropped. Rebuilt on the touch criterion, the two causes and the thank-you ritual.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Elinizdeki Eşyanın Cevabı",
+  "description": "Marie Kondo bir eşyanın kalıp kalmayacağını, ona dokununca sevinç verip vermediğine bakarak belirliyor. Sevindirmeyen eşyaya ise teşekkür edip veda ediyor.",
+  "hook": "Bir eşyayı neden tuttuğunuzu elinize aldığınızda mı daha iyi anlarsınız?",
+  "one_minute_summary": "Marie Kondo, The Life-Changing Magic of Tidying Up'ta her eşyayı tek tek eline alıp dokununca sevinç verip vermediğine bakmayı öneriyor. Eşyaları sevdiğimiz için tutmamızı, \"öylesine\" tutmamamızı istiyor. Bırakamamanın iki nedeni var: geçmişe bağlılık ya da gelecek korkusu. Hiç kullanılmamış bir giysi bile alındığı gün sevinç vermiş, görevini tamamlamıştır, bu yüzden ona teşekkür edip bırakılabilir. Kondo'ya göre önce atmak gelir, yerleştirmek sonra."
+ },
+ "en": {
+  "title": "The Answer in Your Hands",
+  "description": "Marie Kondo decides what stays by whether an item sparks joy when touched. What fails the test gets thanked before it goes.",
+  "hook": "Do you know why you keep something better once it's in your hands?",
+  "one_minute_summary": "In The Life-Changing Magic of Tidying Up, Marie Kondo asks you to pick up each item and keep it only if touching it gives a thrill of pleasure. Keep things because you love them, not just because. When we can't let go, she says, it is attachment to the past or fear for the future. A shirt never worn gave joy the day it was bought and has done its job, so you can thank it and let it go. Discarding comes before storing."
+ },
+ "es": {
+  "title": "La respuesta está en tus manos",
+  "description": "Marie Kondo decide qué se queda según si un objeto da alegría al tocarlo. A lo que no la da, le da las gracias antes de dejarlo ir.",
+  "hook": "¿Sabes mejor por qué guardas algo cuando lo tienes en la mano?",
+  "one_minute_summary": "En The Life-Changing Magic of Tidying Up, Marie Kondo propone coger cada objeto y quedárselo solo si al tocarlo produce un estremecimiento de placer. Guarda las cosas porque las quieres, no porque sí. Cuando no podemos soltar algo, dice, es apego al pasado o miedo al futuro. La camisa nunca usada dio alegría el día de la compra y ya cumplió su papel, así que se le pueden dar las gracias y dejarla ir. Primero se descarta, después se guarda."
+ },
+ "de": {
+  "title": "Die Antwort liegt in deiner Hand",
+  "description": "Marie Kondo entscheidet, was bleibt, danach, ob ein Gegenstand beim Berühren Freude auslöst. Was den Test nicht besteht, bekommt ein Dankeschön.",
+  "hook": "Weißt du besser, warum du etwas behältst, wenn du es in der Hand hältst?",
+  "one_minute_summary": "In The Life-Changing Magic of Tidying Up rät Marie Kondo, jedes Teil in die Hand zu nehmen und es nur zu behalten, wenn es beim Berühren ein Glücksgefühl auslöst. Behalte Dinge, weil du sie liebst, nicht einfach so. Wer nicht loslassen kann, hängt an der Vergangenheit oder fürchtet die Zukunft. Ein nie getragenes Hemd hat beim Kauf Freude gemacht und seine Aufgabe erfüllt, also darf man ihm danken und es gehen lassen. Erst aussortieren, dann einräumen."
+ }
+}

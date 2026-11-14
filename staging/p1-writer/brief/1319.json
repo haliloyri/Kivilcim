@@ -1,0 +1,42 @@
+{
+  "story_id": 1319,
+  "kind": "anecdote",
+  "book": {"title": "Indistractable", "author": "Nir Eyal", "year": "2019"},
+  "confidence": "high",
+  "confidence_note": "Verified in the full text. The old text's quotes ('a to-do list is the enemy of attention control', 'if you do something else in that slot you're deceiving yourself') are not in the book and are dropped; so is the strict 'sleep, exercise, eat first' ordering. The Lockman figure is a quoted outside statistic, left out.",
+  "facts": [
+    "Eyal says the usual approach is a to-do list, and tasks tend to get pushed from one day to the next; he says to start from values instead and make time for them.",
+    "He sorts time into three life domains: you, relationships and work.",
+    "Timeboxing means deciding what you will do and when; the goal is a calendar with no white space, and success is measured by whether you did what you planned. 'You can't call something a distraction unless you know what it's distracting you from.'",
+    "Eyal and his wife Julie kept bickering about why household tasks weren't getting done; he admits he did less than his share and didn't see the tasks she handled.",
+    "Julie couldn't tell him how to help because working that out was itself work; evenings ended in late dinners, hurt feelings and sometimes tears.",
+    "On one of their date days they sat down and listed every household task each of them did, leaving nothing out; comparing her seemingly endless list with his was a wake-up call.",
+    "They agreed to split the jobs and timeboxed them on their schedules, leaving no doubt about when each would get done.",
+    "He also schedules time with his daughter: they wrote over a hundred activities on paper strips in a 'fun jar' and pull one every Friday afternoon; he and Julie schedule a date twice a month."
+  ],
+  "scene_details": [
+    "two lists of household tasks side by side, one seemingly endless",
+    "late dinners and hurt feelings",
+    "a 'fun jar' of paper strips pulled every Friday afternoon",
+    "a calendar with no white space"
+  ],
+  "tension": "Eyal believed he valued equality at home, until he and his wife wrote their chores side by side.",
+  "opening_idea": "Start at the table on a date day: two lists of household jobs, one much longer than the other.",
+  "lessons": [
+    {"idea": "Give the things you value a time slot, not just a place on a list; a task with no time gets pushed to tomorrow.", "anchor": "The Eyals' chores only got done fairly once each one had a slot on the calendar.", "everyday_example_idea": "Two flatmates who argue about cleaning put 'bathroom, Saturday 10:00' in their shared calendar."}
+  ],
+  "reflect": [],
+  "reflect_final": "Which thing you say matters to you has no time on your calendar this week, and where could it go?",
+  "use_cases": [
+    {"situation": "At home you keep arguing about who does what.", "move": "Suggest each of you lists every task you do, as Eyal and his wife did, then put the split jobs on the calendar.", "context": "family"},
+    {"situation": "A colleague's to-do list keeps rolling over.", "move": "Help them move the top two items into specific time blocks this week.", "context": "oneonone"},
+    {"situation": "You plan your week.", "move": "Block one slot for yourself and one for someone close before work fills the rest.", "context": "self"}
+  ],
+  "pocket_idea": "A chore with a name and a time slot gets done; a chore on a list waits for whoever notices.",
+  "conversation_variants": {
+    "punchline_idea": "Nir Eyal thought he shared the housework fairly until he and his wife listed their chores side by side.",
+    "thirty_sec_idea": "Nir Eyal and his wife kept arguing over chores, and evenings ended in late dinners and tears. On a date day they each listed every household task they did. Hers was seemingly endless. They split the jobs and put each one on the calendar with a time. In Indistractable he says that's the point: if it has no time, you can't even tell when you've been distracted from it.",
+    "question_idea": "",
+    "key_contrast_idea": "Listed versus scheduled"
+  }
+}

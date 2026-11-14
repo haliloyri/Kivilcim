@@ -1,0 +1,30 @@
+{
+  "story_id": 1540,
+  "verdict": "keep",
+  "verify_note": "Keep with low confidence: only reviews and summaries available. Kindergarten contrast, three tools, four steps verified in several summaries; the invented conference numbers and cave-painting claim from the old text dropped.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Çizemem diyenlere",
+    "description": "Dan Roam'a göre anaokulundaki çocuklar özgürce çizer, yetişkinler ise unutmuştur. Oysa çizmek için gereken üç araç herkesin elinde.",
+    "hook": "Hangi problemi bu hafta bir kâğıda kutu ve oklarla dökseniz daha iyi anlardınız?",
+    "one_minute_summary": "Dan Roam'a göre anaokulundaki çocuklar özgürce çizer, yetişkinler ise görsel anlatım yeteneklerini unutmuştur. Roam görsel düşünmeyi, aceleyle hazırlanan bir sunumda bir peçeteye basit bir çerçeve çizerek keşfetmiştir. Savı şu: her problem bir resimle netleşir ve her resim aynı araçlarla yapılabilir. Araçlar herkeste var: bakmak için gözler, hayal etmek için zihin gözü, çizmek için el ve göz eşgüdümü. Sanatsal yetenek gerekmez. Yöntemin dört adımı: bak, gör, hayal et, göster."
+  },
+  "en": {
+    "title": "Tools you already have",
+    "description": "Kindergarteners draw freely and adults stop. Dan Roam argues the three tools for solving problems with pictures never went away.",
+    "hook": "Which problem this week would you understand better after thirty seconds of boxes and arrows?",
+    "one_minute_summary": "Dan Roam notes that kindergarteners draw freely while adults have forgotten how to express themselves visually. He found visual thinking when a last-minute presentation made him sketch a simple framework on a napkin. His claim is that any problem can be made clearer with a picture and that anyone can draw one with the same tools: eyes to look, the mind's eye to imagine and hand-eye coordination to draw. No artistic skill is needed. The method has four steps: look, see, imagine, show."
+  },
+  "es": {
+    "title": "Herramientas que ya tienes",
+    "description": "Los niños de preescolar dibujan sin miedo y los adultos lo olvidan. Dan Roam sostiene que las tres herramientas siguen ahí.",
+    "hook": "¿Qué problema de esta semana entenderías mejor con treinta segundos de cajas y flechas?",
+    "one_minute_summary": "Dan Roam observa que los niños de preescolar dibujan con libertad y los adultos han olvidado cómo expresarse visualmente. Descubrió el pensamiento visual cuando una presentación de última hora lo llevó a esbozar un marco sencillo en una servilleta. Su tesis: cualquier problema se aclara con un dibujo y cualquiera puede hacerlo con las mismas herramientas: los ojos para mirar, el ojo de la mente para imaginar y la coordinación mano-ojo para dibujar. No hace falta talento artístico. El método tiene cuatro pasos: mirar, ver, imaginar y mostrar."
+  },
+  "de": {
+    "title": "Werkzeug, das du hast",
+    "description": "Kindergartenkinder zeichnen frei, Erwachsene verlernen es. Dan Roam sagt: Das Werkzeug für Bilder, die Probleme lösen, ist noch da.",
+    "hook": "Welches Problem würdest du diese Woche nach dreißig Sekunden Kästchen und Pfeilen besser verstehen?",
+    "one_minute_summary": "Dan Roam beobachtet, dass Kindergartenkinder frei zeichnen und Erwachsene verlernt haben, sich visuell auszudrücken. Visuelles Denken entdeckte er bei einer kurzfristigen Präsentation, als er einen einfachen Rahmen auf eine Serviette skizzierte. Seine These: Jedes Problem wird mit einem Bild klarer, und jeder kann es mit denselben Werkzeugen zeichnen: Augen zum Schauen, das innere Auge zum Vorstellen und Hand-Auge-Koordination zum Zeichnen. Künstlerisches Talent braucht es nicht. Die Methode hat vier Schritte: schauen, sehen, vorstellen, zeigen."
+  }
+}

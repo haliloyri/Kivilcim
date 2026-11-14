@@ -1,0 +1,35 @@
+{
+  "story_id": 1397,
+  "verdict": "keep",
+  "verify_note": "Keep: two education summits (Microsoft vs Apple) and worthy-rival idea from Four Minute Books, Shortform and search summaries; no primary text. Old Mac vs PC ads, the Sinek quote and the term loyal rival dropped. Zune/Ballmer and Adam Grant episodes are medium and hedged.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Rakibe bakan ve müşteriye bakan",
+    "description": "Simon Sinek iki rakibin zirvesinde iki ayrı zihniyet görür. Değerli rakip, nerede gelişeceğinizi gösteren kişidir.",
+    "hook": "Şu anda sizden daha iyi yapan biri var mı ve ondan ne öğrenebilirsiniz?",
+    "one_minute_summary": "Simon Sinek hem Microsoft'un hem Apple'ın eğitim zirvesine konuşmacı olarak çağrıldı. Microsoft'ta sunucular çoğunlukla Apple'ı nasıl geçeceklerinden söz etti, Apple'da öğretmenlere nasıl yardım ettiklerinden. Sinek bunu iki zihniyet olarak okur ve değerli rakip fikrini kurar: sizden bir konuda daha iyi olan ve nerede gelişebileceğinizi gösteren biri. Yıllarca yazar Adam Grant'i rakip saymış, sonra bunun kendisiyle ilgili olduğunu fark etmiş. Bir eleştirmen anlatıyı fazla romantik buluyor."
+  },
+  "en": {
+    "title": "Watching the Rival, Watching the Customer",
+    "description": "Simon Sinek sat through two rival summits and heard two mindsets. A worthy rival shows you where to improve.",
+    "hook": "Is anyone doing something better than you right now, and what could you learn from them?",
+    "one_minute_summary": "Simon Sinek was invited to speak at both Microsoft's and Apple's education summits. At Microsoft the presenters mostly talked about beating Apple, at Apple about helping teachers teach. Sinek reads it as two mindsets and builds the idea of the worthy rival: someone better than you at something, who shows you where to improve. For years he treated the author Adam Grant as a competitor before seeing that this said more about him. One reviewer finds the account romanticized."
+  },
+  "es": {
+    "title": "Mirar al rival, mirar al cliente",
+    "description": "Simon Sinek oyó dos mentalidades en las cumbres de dos rivales. Un rival digno te muestra dónde mejorar.",
+    "hook": "¿Hay alguien que lo haga mejor que tú ahora mismo, y qué podrías aprender de él?",
+    "one_minute_summary": "A Simon Sinek lo invitaron a las cumbres de educación de Microsoft y de Apple. En Microsoft, los ponentes hablaron sobre todo de superar a Apple, y en Apple, de ayudar a los profesores a enseñar. Sinek lo lee como dos mentalidades y construye la idea del rival digno: alguien mejor que tú en algo, que te muestra dónde mejorar. Durante años vio al autor Adam Grant como competidor, hasta notar que eso decía más de él. Un reseñista encuentra el relato demasiado romántico."
+  },
+  "de": {
+    "title": "Rivale oder Kunde im Blick",
+    "description": "Simon Sinek hörte auf zwei rivalisierenden Gipfeln zwei Denkweisen. Ein würdiger Rivale zeigt dir, wo du besser werden kannst.",
+    "hook": "Macht gerade jemand etwas besser als du, und was könntest du von ihm lernen?",
+    "one_minute_summary": "Simon Sinek wurde zu den Bildungsgipfeln von Microsoft und von Apple eingeladen. Bei Microsoft sprachen die Vortragenden vor allem davon, Apple zu schlagen, bei Apple davon, Lehrern beim Unterrichten zu helfen. Sinek liest das als zwei Denkweisen und entwickelt die Idee des würdigen Rivalen: jemand, der in etwas besser ist als du und dir zeigt, wo du dich verbessern kannst. Jahrelang sah er den Autor Adam Grant als Konkurrenten, bis er merkte, dass das mehr über ihn sagte. Ein Rezensent findet den Bericht zu romantisch."
+  }
+}

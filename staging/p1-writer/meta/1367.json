@@ -1,0 +1,35 @@
+{
+ "story_id": 1367,
+ "verdict": "keep",
+ "verify_note": "Checked against publisher pages and detailed summaries of Company of One (2019). The 'big companies have lower margins' finding and the 'optimize before you scale' quote are not in the book and were dropped. Recentered on Jarvis's upper-bound idea with the Southwest 1996 example (medium confidence, from summaries).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Büyümeye Tavan Koymak",
+  "description": "Yüzü aşkın şehir Southwest Airlines'ı isterken havayolu yalnızca dört yeni nokta seçti. Paul Jarvis bu örnekle hedeflere taban kadar tavan da koymayı savunuyor.",
+  "hook": "İşinizde hangi hedefin bir üst sınırı olsaydı daha rahat nefes alırdınız?",
+  "one_minute_summary": "Paul Jarvis, Company of One'da büyümeyi varsayılan hedef saymayan küçük işleri anlatıyor. Her büyüme fırsatına iki soru soruyor: gerçekten gerekli mi, gerekliyse aynı ya da daha az kaynakla yapılabilir mi? Örneği Southwest Airlines: 1996'da yüzü aşkın şehir hizmet isterken havayolu dört yeni nokta ekledi ve Jarvis'e göre bu fren kârda kalmasına yardım etti. Kitap hedeflere tavan koymayı, tabanı da sahibine tam maaş ödeyen asgari uygulanabilir kâr olarak tanımlamayı öneriyor."
+ },
+ "en": {
+  "title": "A Ceiling for Growth",
+  "description": "More than a hundred cities wanted Southwest Airlines and it opened four. Paul Jarvis uses the case to argue that every goal needs a ceiling as well as a floor.",
+  "hook": "What would change if one of your goals had a point where more stops helping?",
+  "one_minute_summary": "In Company of One, Paul Jarvis describes businesses that question growth before treating it as the goal. Every chance to expand gets two questions: is it truly needed, and can it be done with the same resources or fewer? His example is Southwest Airlines in 1996, when more than a hundred cities wanted it and it added four; Jarvis says the restraint helped it stay profitable. He proposes a ceiling for each goal, with a floor of minimum viable profit that pays the owner a full salary."
+ },
+ "es": {
+  "title": "Un techo para crecer",
+  "description": "Más de cien ciudades querían a Southwest Airlines y la aerolínea abrió cuatro destinos. Paul Jarvis usa el caso para defender que cada meta necesita un techo además de un suelo.",
+  "hook": "¿Qué cambiaría si una de tus metas tuviera un punto a partir del cual más ya no te ayuda?",
+  "one_minute_summary": "En Company of One, Paul Jarvis describe negocios que cuestionan el crecimiento antes de aceptarlo como meta. Cada oportunidad pasa por dos preguntas: ¿hace falta de verdad? Y si hace falta, ¿se puede con los mismos recursos o con menos? Su ejemplo es Southwest Airlines en 1996: más de cien ciudades la pedían y abrió cuatro destinos, un freno que según Jarvis la ayudó a seguir ganando dinero. Propone un techo para cada meta y un suelo, el beneficio mínimo viable."
+ },
+ "de": {
+  "title": "Eine Obergrenze fürs Wachstum",
+  "description": "Über hundert Städte wollten Southwest Airlines, und die Airline eröffnete vier Ziele. Paul Jarvis zeigt daran, warum jedes Ziel eine Obergrenze braucht.",
+  "hook": "Was würde sich ändern, wenn eines deiner Ziele einen Punkt hätte, ab dem mehr nicht mehr hilft?",
+  "one_minute_summary": "In Company of One beschreibt Paul Jarvis Firmen, die Wachstum hinterfragen, bevor sie es zum Ziel machen. Jede Chance muss zwei Fragen bestehen: Braucht es das wirklich, und geht es mit denselben oder weniger Mitteln? Sein Beispiel ist Southwest Airlines 1996: Über hundert Städte wollten die Airline, sie eröffnete vier neue Ziele, und laut Jarvis half ihr das, profitabel zu bleiben. Er empfiehlt für jedes Ziel eine Obergrenze und als Boden einen minimalen tragfähigen Gewinn."
+ }
+}

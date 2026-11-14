@@ -14,6 +14,7 @@ import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
 import { revenueAttrs, getTrialEligibility } from '../services/billing';
 import { formatCurrency } from '../utils/locale';
 import { getLogo } from '../constants/logos';
+import Albi from '../components/Albi';
 
 // Trial copy (paywallTrial*, paywallEarlyTrialTrial*) says "7 days".
 const TRIAL_COPY_DAYS = 7;
@@ -790,7 +791,18 @@ const PaywallScreen = ({ navigation, route }) => {
           contentContainerStyle={{ paddingBottom: Math.max(insets.bottom, 12) + 12 }}
         >
           <View style={styles.hero}>
-            <HeroSun color={colors.dawn} />
+            {/* Albi replaces the sun at the two moments that are about the reader,
+                not the offer: first story finished, daily quota used up. */}
+            {isEarlyTrial || isFreeLimitReached ? (
+              <Albi
+                pose={isEarlyTrial ? 'hedef_tamam' : 'kota_doldu'}
+                size={64}
+                disc
+                style={{ position: 'absolute', right: 12, top: 12 }}
+              />
+            ) : (
+              <HeroSun color={colors.dawn} />
+            )}
             <Text style={styles.heroEyebrow}>{t('paywallEyebrow', lang)}</Text>
             <Text style={styles.heroTitle} accessibilityRole="header">{t(heroTitleKey, lang)}</Text>
             <Text style={styles.heroSub}>{t(heroSubKey, lang)}</Text>

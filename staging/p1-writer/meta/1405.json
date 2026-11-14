@@ -1,0 +1,35 @@
+{
+ "story_id": 1405,
+ "verdict": "keep",
+ "verify_note": "Keep: open loops, next action, 'mind like water' and the pond image verified in secondary summaries and GTD material, not full text. Old text's dry-cleaning scene, invented consulting figure and 'dozens of tasks' dropped. Concept story, medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Açık döngüler ve sonraki adım",
+  "description": "David Allen'a göre zihni meşgul eden şey bitmemiş işlerdir. Her birine bir sonraki fiziksel adımı yazmak kafayı boşaltır.",
+  "hook": "Aklınıza sürekli dönen bitmemiş şey hangisi?",
+  "one_minute_summary": "David Allen'ın *Getting Things Done* kitabı, karateden alınmış 'su gibi zihin' görüntüsüyle başlar: çakıl taşına ölçülü karşılık veren durgun su. Zihin bunu yapamaz, çünkü açık döngülerle doludur: yapmayı kabul edip hiçbir yere koymadığınız şeyler. Çare, hepsini güvenilir bir listeye almak ve her biri için sonraki fiziksel adımı yazmak. 'Annemin doğum günü' bir konudur, 'çiçekçiyi ara' ise bir adımdır. Böylece zihin listeyi kollamayı bırakır."
+ },
+ "en": {
+  "title": "Open loops and the next step",
+  "description": "David Allen says unfinished things crowd the mind. Writing the next physical step for each one clears it.",
+  "hook": "Which unfinished thing keeps coming back to you?",
+  "one_minute_summary": "David Allen's *Getting Things Done* borrows 'mind like water' from karate: still water answering a pebble in proportion. A busy mind cannot, he says, because it is full of open loops, things you agreed to do and put nowhere. The remedy is to move them onto a trusted list and write the very next physical step for each. 'Mother's birthday' is a topic; 'phone the florist' is a step."
+ },
+ "es": {
+  "title": "Lazos abiertos y siguiente paso",
+  "description": "Según David Allen, lo pendiente llena la mente. Escribir el siguiente paso físico de cada cosa la despeja.",
+  "hook": "¿Qué cosa sin terminar vuelve a ti una y otra vez?",
+  "one_minute_summary": "*Getting Things Done*, de David Allen, toma del kárate la imagen de la «mente como el agua»: un agua en calma que responde a una piedrecita en proporción. Una mente ocupada no puede, dice, porque está llena de lazos abiertos, cosas que aceptaste hacer y no pusiste en ningún sitio. El remedio es llevarlas a una lista de confianza y escribir el siguiente paso físico de cada una. «El cumpleaños de mamá» es un tema; «llamar a la floristería» es un paso."
+ },
+ "de": {
+  "title": "Offene Schleifen und der nächste Schritt",
+  "description": "David Allen zufolge füllt Unerledigtes den Kopf. Den nächsten körperlichen Schritt dazu aufzuschreiben leert ihn.",
+  "hook": "Welche unerledigte Sache kommt immer wieder zu dir zurück?",
+  "one_minute_summary": "David Allens *Getting Things Done* entlehnt dem Karate das Bild vom „Geist wie Wasser“: stilles Wasser, das auf einen Kiesel im richtigen Maß antwortet. Ein voller Kopf kann das nicht, sagt er, weil er voller offener Schleifen steckt, Dinge, die du zugesagt und nirgendwo hingelegt hast. Das Mittel: auf eine verlässliche Liste damit und zu jeder den nächsten körperlichen Schritt aufschreiben. „Geburtstag meiner Mutter“ ist ein Thema, „Floristin anrufen“ ein Schritt."
+ }
+}

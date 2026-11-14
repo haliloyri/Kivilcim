@@ -1,0 +1,35 @@
+{
+  "story_id": 1499,
+  "verdict": "keep",
+  "verify_note": "Keep: stage-four traits and the foe rule confirmed in Gallup's piece and an fs.blog summary. The old Logan quote and the Apple-IBM claim were not found and are dropped. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Düşman büyüdükçe kabile güçlenir",
+    "description": "Dördüncü aşamadaki kabileyi bir rakip birbirine bağlar. Tribal Leadership beşinci aşamayı ise başka bir şey sürükler.",
+    "hook": "Grubunuz neye karşı birleşiyor, neyi yapmak için?",
+    "one_minute_summary": "Tribal Leadership'te dördüncü aşamanın cümlesi “Biz harikayız.” Bu aşamada insanlar değerleri ve bilgiyi paylaşır, ilişkiler üçlü kurulur ve rekabet dışarıdaki bir kabileye ya da şirkete yönelir. Kitabın kuralı şu: düşman ne kadar büyükse kabile o kadar güçlüdür. Uyum göstermeyenler ise reddedilir. Beşinci aşama “Hayat harika” der ve mümkün olduğu için yeni şeyler yapar. Bu aşamaya ilk Macintosh'u yapan ekip örnek, ama nadirdir ve ekipler çoğu zaman yeniden toparlanmak için dördüncüye döner."
+  },
+  "en": {
+    "title": "The bigger the foe",
+    "description": "At stage four, Tribal Leadership says, a rival holds the tribe together. The top stage runs on something else.",
+    "hook": "Is your group united against something or for something?",
+    "one_minute_summary": "In Tribal Leadership, stage four says 'We're great'. People share values and knowledge, relationships form in threes, and competition points at another tribe or company. The book's rule is that the bigger the foe, the more powerful the tribe, and people who do not fit are pushed out like a transplant that does not take. Stage five says 'Life is great' and builds things because they are possible. The team behind the first Macintosh is the example, but it is rare and unstable, so such teams often fall back to stage four."
+  },
+  "es": {
+    "title": "Cuanto mayor el rival",
+    "description": "En la etapa cuatro de Tribal Leadership, un rival cohesiona a la tribu. La etapa más alta funciona con otra fuerza.",
+    "hook": "¿Tu grupo se une contra algo o a favor de algo?",
+    "one_minute_summary": "En Tribal Leadership la etapa cuatro dice «Somos geniales». La gente comparte valores y conocimiento, las relaciones se arman de a tres y la competencia apunta a otra tribu o a otra empresa. La regla del libro: cuanto mayor es el rival, más fuerte es la tribu, y quien no encaja es rechazado como un trasplante que no prende. La etapa cinco dice «La vida es genial» y construye cosas porque son posibles. El equipo del primer Macintosh es el ejemplo, pero es rara e inestable y esos equipos suelen volver a la cuatro."
+  },
+  "de": {
+    "title": "Je größer der Gegner",
+    "description": "Auf Stufe vier hält nach Tribal Leadership ein Gegner den Stamm zusammen. Die höchste Stufe läuft mit etwas anderem.",
+    "hook": "Wogegen oder wofür hält deine Gruppe zusammen?",
+    "one_minute_summary": "In Tribal Leadership lautet der Satz der vierten Stufe „Wir sind großartig“. Die Leute teilen Werte und Wissen, Beziehungen entstehen zu dritt, und der Wettbewerb richtet sich gegen einen anderen Stamm oder eine andere Firma. Die Regel des Buchs: Je größer der Gegner, desto stärker der Stamm. Wer nicht passt, wird abgestoßen wie ein Transplantat, das nicht anwächst. Stufe fünf sagt „Das Leben ist großartig“ und baut Dinge, weil sie möglich sind. Das Team des ersten Macintosh ist das Beispiel, aber solche Teams fallen oft auf Stufe vier zurück."
+  }
+}

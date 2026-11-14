@@ -1,0 +1,187 @@
+{
+  "book_no": 163,
+  "title": "The Circadian Code",
+  "authors": [
+    "Satchin Panda"
+  ],
+  "year": "2018",
+  "identity_check": "DB book 1363 / list_no 163: tr 'Sirkadyen Kod', en 'The Circadian Code', Satchin Panda, year 2019 in DB. Rodale hardcover is dated June 2018 (paperback Feb 2020), so brief uses 2018; DB year 2019 left unchanged. No duplicate under another title in the DB.",
+  "sources": [
+    "https://www.salk.edu/news-release/mobile-app-records-our-erratic-eating-habits/",
+    "https://www.sciencedaily.com/releases/2012/05/120517131703.htm",
+    "https://en.wikipedia.org/wiki/Satchidananda_Panda",
+    "https://www.shortform.com/summary/the-circadian-code-summary-satchin-panda",
+    "https://www.schweitzer-online.de/en/buch/Panda/Circadian-Code/9781635652437/A42461015/"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Panda's group (Salk Institute) helped identify melanopsin, a blue-light-sensitive pigment in cells of the eye (intrinsically photosensitive retinal ganglion cells) that passes ambient light information to the brain's master clock. Science papers 2002, 2003, 2005.",
+      "source": "Wikipedia; Salk",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "One 2003 paper showed melanopsin is needed for the clock-and-light responses of blind mice; summaries of the book state the light-sensing protein works even in people who are blind or visually impaired.",
+      "source": "Wikipedia; Shortform book summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "Light is the most powerful time cue (zeitgeber) for the circadian rhythm, per the book summary.",
+      "source": "Shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Blue light at night suppresses melatonin and disrupts sleep; reducing night-time blue light and getting morning daylight help the rhythm re-synchronise.",
+      "source": "Blinkist/Shortform-style summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Panda's 2015 app study (Gill and Panda, Cell Metabolism): over 150 healthy adults aged 21 to 55 in San Diego, not on a diet, photographed everything they ate and drank for three weeks; each photo was time-stamped.",
+      "source": "Salk news release 24 Sep 2015",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Most participants ate across 15 hours or longer a day; less than a quarter of daily calories came before noon and over a third after 6 p.m.",
+      "source": "Salk news release",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "The authors proposed that irregular meal timing causes 'metabolic jetlag', metabolic organs falling out of sync with the body's circadian rhythms.",
+      "source": "Salk news release",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "Hatori et al. 2012 mouse study (Panda lab): two groups ate a diet with 60% of calories from fat; one ate whenever it wanted, the other only in an 8-hour window each night (about 16 hours fasting). After 100 days both ate the same calories; free-eating mice gained weight and developed high cholesterol, high blood glucose, liver damage and worse motor control; the restricted mice weighed 28% less and showed none of these effects.",
+      "source": "ScienceDaily 2012 / Salk",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Panda in 2012: 'we will have to wait for human studies to prove this'; co-author Megumi Hatori said there are bound to be limits to the protection.",
+      "source": "ScienceDaily",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Pilot with eight overweight people who ate over 14 hours a day: asked to eat within 10 to 11 hours with no other change. After 16 weeks they had lost weight, said they felt more energetic and slept better. Small pilot.",
+      "source": "Salk news release",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "Panda cautioned that changing eating duration is not the only way to improve health and may be risky for people with undiagnosed fasting hypoglycemia.",
+      "source": "Salk news release",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "App study details: participants were recruited through online and print ads in San Diego and had to visit the lab to sign consent; reminders went out about once a day; food data were not stored in the app. Photos recorded location and time.",
+      "source": "Salk release",
+      "confidence": "high"
+    },
+    {
+      "id": "f13",
+      "claim": "Beyond meal timing the photos showed other patterns: nearly two-thirds of participants took supplements or vitamins, at times that varied from day to day, as did medication; coffee and milk in the morning, alcohol in the evening, tea throughout the day, yogurt as a morning food, sandwiches and burgers at lunch, vegetables and ice cream in the evening; chocolate and candy photos from about 10 a.m. onward.",
+      "source": "Salk release",
+      "confidence": "high"
+    },
+    {
+      "id": "f14",
+      "claim": "The study had no shift-worker data; the authors said larger studies including shift workers are needed. They also noted that humans differ metabolically from small model animals.",
+      "source": "Salk release; paper abstract",
+      "confidence": "high"
+    },
+    {
+      "id": "f15",
+      "claim": "Pilot participants kept a weekly 'feedogram' (chart of their eating pattern) during the 16 weeks.",
+      "source": "Salk release",
+      "confidence": "high"
+    },
+    {
+      "id": "f16",
+      "claim": "Mouse control groups ate a standard diet with about 13% of calories from fat under similar conditions.",
+      "source": "ScienceDaily",
+      "confidence": "high"
+    },
+    {
+      "id": "f17",
+      "claim": "Panda has led a lab at the Salk Institute in San Diego since 2004; his group's melanopsin work is cited in research on light therapy for insomnia, ADHD and migraines; a 2019 Science paper described the functional diversity of human melanopsin cells.",
+      "source": "Wikipedia",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "2017 Nobel Prize in Physiology or Medicine (three scientists), every cell has a clock.",
+      "reason": "Nobel is real but connection to the book not verified; left out."
+    },
+    {
+      "claim": "Orchestra / conductor metaphor (sunlight and meal timing as conductor).",
+      "reason": "Not found in any source."
+    },
+    {
+      "claim": "Night-shift workers store more fat from the same food.",
+      "reason": "Salk release says no shift-worker data in the app study; unverified."
+    },
+    {
+      "claim": "Mice study lasted 18 weeks and showed diabetes symptoms; 12-week human study with 10-hour window, blood pressure drop.",
+      "reason": "Duration 100 days per ScienceDaily; the 16-week eight-person pilot is the verified human one; blood pressure and 12 weeks unverified."
+    },
+    {
+      "claim": "200,000 years of firelight; 150 years of electric light; 20 years of phones; phone at 10 pm tricks brain.",
+      "reason": "Not sourced to the book."
+    },
+    {
+      "claim": "IARC 2019 classifies night shift as 2A; shift workers' rates of insulin resistance and heart disease.",
+      "reason": "Not from the book; dropped."
+    },
+    {
+      "claim": "Light and screen changes measurably improved sleep within two weeks in Panda's work.",
+      "reason": "Not found."
+    }
+  ],
+  "stories": {
+    "1585": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7",
+        "f12",
+        "f13",
+        "f14"
+      ],
+      "note": "Rebuilt on the 150-person app study and 'metabolic jetlag'. Nobel and orchestra items dropped."
+    },
+    "1586": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f15",
+        "f16"
+      ],
+      "note": "Mice: 100 days not 18 weeks. Eight-person pilot replaces the unverified 12-week study; caveats from Panda included."
+    },
+    "1587": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f17"
+      ],
+      "note": "Thin: melanopsin mechanism only; no numbers from the book beyond published papers. Confidence low."
+    }
+  }
+}

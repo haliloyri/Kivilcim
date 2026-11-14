@@ -1,0 +1,33 @@
+{
+  "story_id": 1446,
+  "kind": "concept",
+  "book": {"title": "The Loyalty Effect", "author": "Frederick F. Reichheld", "year": "1996"},
+  "confidence": "medium",
+  "confidence_note": "Book text not available. The economics (acquisition cost, base profit, cost savings, referrals, price premium, pay for new customers) come from a reader summary and publisher copy; the exact percentages disagree between sources, so they are hedged. The old text's 'five times more expensive' ratio, 'several new customers per loyal one' and year-by-year spending pattern are not attributable and were dropped. The retention-profit estimate is flagged as contested by a 1992 Carrol and Reichheld paper noted on Wikipedia.",
+  "facts": [
+    "Senior managers are often pulled into sales proposals for new accounts, which inflates acquisition cost, and most help desk calls come from new customers (reader summary).",
+    "A loyal customer adds base profit, cost savings, referrals and a price premium; once these are counted, acquisition cost can turn negative. In mature companies 20% to 30% of acquisition spending is often wasteful.",
+    "Prospects who arrive by referral close at significantly higher rates than walk-in customers.",
+    "Many companies pay salespeople for winning new customers rather than keeping existing ones; salespeople who do not expect to stay have little reason to pursue repeat business; the sales channel should attract the right customers, not just many. A typical company loses 10% to 30% of its customers a year.",
+    "The jacket claims a small gain in retention can double profits; a reader summary puts it as a 5% rise in retention raising an average customer's value by 25% to 100%; an earlier Reichheld and Sasser (1990) calculation gives 25% to 85%.",
+    "Caveat: Carrol and Reichheld (1992) disputed some of these retention-to-profit calculations as resting on faulty cross-sectional analysis (Wikipedia, Loyalty business model)."
+  ],
+  "scene_details": ["a senior manager writing a sales proposal for a new account", "help desk calls from new customers", "a referral against a walk-in", "a bonus for new accounts only"],
+  "tension": "A company pays for the arrival of customers while most of the profit comes from the ones who stay.",
+  "opening_idea": "Open on the pay structure: the person who wins a customer is paid, the person who keeps one often is not.",
+  "lessons": [{"idea": "What you pay or praise decides what people chase; reward keeping as well as winning.", "anchor": "Salespeople paid for new customers, not retention.", "example": "A cafe bonus for loyalty-card sign-ups while nobody is thanked for remembering a regular."}],
+  "reflect": [],
+  "reflect_final": "In your work or friendships, where do you put effort into winning someone new while the person who stayed gets taken for granted?",
+  "use_cases": [
+    {"situation": "The sales bonus plan is being set.", "move": "Point out that you pay for new accounts and ask what it would take to also reward renewals and referrals.", "context": "meeting"},
+    {"situation": "You are about to spend the week chasing new clients.", "move": "Remember that most help desk calls come from new customers and first reach out to a regular you haven't talked to in a while.", "context": "self"},
+    {"situation": "A colleague closed a new account while a longtime client's renewal slips.", "move": "Celebrate the win, then propose a date to talk with the client who has been there longest.", "context": "oneonone"}
+  ],
+  "pocket_idea": "Winning a customer is the expensive part; keeping one is where the profit builds. Reward both.",
+  "conversation_variants": {
+    "punchline_idea": "In many companies the person who wins a customer gets the bonus and the one who keeps them gets nothing, which Reichheld argues is backwards.",
+    "thirty_sec_idea": "Reichheld looks at what a customer costs and brings: new customers are expensive to win, loyal ones add base profit, savings, referrals and a price premium; yet many firms pay salespeople only for new accounts.",
+    "question_idea": "",
+    "key_contrast_idea": "winning versus keeping"
+  }
+}

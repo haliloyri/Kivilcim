@@ -1,0 +1,57 @@
+{
+  "story_id": 1645,
+  "kind": "concept",
+  "book": {
+    "title": "Braving the Wilderness",
+    "author": "Brené Brown",
+    "year": "2017"
+  },
+  "confidence": "medium",
+  "confidence_note": "Belonging statement and fitting-in definition from the book (author knowledge, Shortform preview); permission slips from fourminutebooks. Old text's study framing and personal history dropped. No dramatised case, so a concept story at the low end.",
+  "facts": [
+    "True belonging does not require us to change who we are; it requires us to be who we are.",
+    "Fitting in means conforming to other people's expectations, for example nodding along to avoid conflict.",
+    "True belonging means feeling secure in communicating and living out your values whatever others think.",
+    "Belonging is described as mostly about belonging to ourselves first.",
+    "Brown began writing herself permission slips; the first said you are allowed to be goofy, have fun, and enjoy life.",
+    "She names three obstacles: lack of shared humanity, lack of compassion, fear of becoming an outsider."
+  ],
+  "scene_details": [
+    "a permission slip written to yourself",
+    "nodding along in a meeting"
+  ],
+  "tension": "Fitting in feels like belonging while it lasts, and it costs you the person you were fitting in as.",
+  "opening_idea": "Open on a permission slip Brown wrote to herself.",
+  "lessons": [
+    {
+      "idea": "Check whether you are agreeing or belonging",
+      "anchor": "fitting in as nodding along; Everyday: a team member who agrees in the meeting and complains in the corridor"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where do you nod along when you disagree, and what is one sentence you could say there that you actually mean?",
+  "use_cases": [
+    {
+      "situation": "The group is making a plan you doubt",
+      "move": "Brown says fitting in is nodding along to avoid conflict. I have a different view, can I say it?",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend group's joke goes too far",
+      "move": "I am going to sit this one out. I like you all, I just do not find it funny.",
+      "context": "social"
+    },
+    {
+      "situation": "You are tired of performing at family gatherings",
+      "move": "Next time I will write myself a permission slip: I am allowed to leave at nine.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Write yourself a permission slip: you are allowed to be goofy. Belonging starts where you stop nodding along.",
+  "conversation_variants": {
+    "punchline_idea": "Fitting in means nodding along, and Brown's answer is to start by giving yourself permission to be who you are.",
+    "thirty_sec_idea": "Brené Brown separates fitting in from belonging. Fitting in is conforming to what others expect, like nodding along to avoid a fight. True belonging is being secure enough to live your values whatever others think. She started with permission slips to herself, the first one saying she was allowed to be goofy and enjoy life.",
+    "question_idea": "",
+    "key_contrast_idea": "fitting in, belonging"
+  }
+}

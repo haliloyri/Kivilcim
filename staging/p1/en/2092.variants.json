@@ -1,0 +1,6 @@
+{
+ "punchline": "Ulam stopped calculating solitaire and started dealing it.",
+ "thirty_sec": "In 1946, recovering from an illness, Stanislaw Ulam asked how often a Canfield solitaire comes out. Instead of computing it, he thought of laying it out many times and counting, an idea von Neumann turned into a neutron calculation on ENIAC in 1948.",
+ "question": "Which decision are you trying to settle by reasoning that you could settle by running it and counting?",
+ "key_contrast": "Sample the answer instead of deriving it."
+}

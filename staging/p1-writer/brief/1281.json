@@ -1,0 +1,63 @@
+{
+  "story_id": 1281,
+  "kind": "concept",
+  "book": {
+    "title": "Dare to Lead",
+    "author": "Brené Brown",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The 100+ values list, the narrowing to two and the supporting/slippery behaviors are confirmed by several summaries. Brown's own pair (faith and courage) comes from a reader's highlight of the book plus a Wharton interview (medium). The old text's claim that 'the strongest leaders have two or three values' and its quoted question are not in the book and were dropped. The book gives no numbered case study for this exercise, so the story describes the exercise itself.",
+  "facts": [
+    "In the part on 'living into our values', Brown hands readers a list of more than 100 values.",
+    "She asks them to narrow it down to two core values; her reasoning: if everything is a priority, nothing is.",
+    "Most people find themselves drawn to ten or twenty, so the cut to two is hard.",
+    "Brown's own two are faith and courage.",
+    "Each of the two values is then turned into three or four behaviors that support it.",
+    "Next to them go three or four 'slippery' behaviors: what you do when you drift out of the value.",
+    "The point is to practice values, not just profess them.",
+    "Brown: living into our values means that we do more than profess our values, we practice them; we walk our talk.",
+    "For organizations, Brown says values must be translated into behaviors that can be taught, practiced and evaluated."
+  ],
+  "scene_details": [
+    "a printed list of more than 100 values",
+    "crossing out until two remain",
+    "faith and courage",
+    "a column of slippery behaviors"
+  ],
+  "tension": "Choosing two values from a hundred means crossing out things you believe in.",
+  "opening_idea": "Open on the long list and the instruction to keep only two.",
+  "lessons": [
+    {
+      "idea": "A value counts when you can name the behavior it requires and the behavior that betrays it.",
+      "anchor": "Supporting vs slippery behaviors for each of two values.",
+      "everyday_example_idea": "A parent who values patience writes down what she does when she loses it (raising her voice in the morning rush)."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If you kept only two values, which slippery behavior of yours would show up first on a busy day?",
+  "use_cases": [
+    {
+      "situation": "Your team has a wall poster with eight values.",
+      "move": "Suggest each person names the two they would keep and one slippery behavior for each.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A partner and you disagree on how to spend a weekend.",
+      "move": "Each say your two values and see where the plan fits both.",
+      "context": "family"
+    },
+    {
+      "situation": "You are deciding whether to take on a new commitment.",
+      "move": "Check it against your two values and your slippery list.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Cut a hundred values to two, then write what you do when you slip out of each.",
+  "conversation_variants": {
+    "punchline_idea": "Brené Brown gives people more than a hundred values and lets them keep only two; hers are faith and courage.",
+    "thirty_sec_idea": "List of 100+; narrow to two; supporting and slippery behaviors; Brown's own faith and courage.",
+    "question_idea": "",
+    "key_contrast_idea": "professed vs practiced"
+  }
+}

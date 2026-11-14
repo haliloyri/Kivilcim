@@ -1,0 +1,65 @@
+{
+  "story_id": 1283,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "year": "1988"
+  },
+  "confidence": "medium",
+  "confidence_note": "This is a scene from a novel. Hawks, vision, the chieftains' condition, the alchemist's test, the attack and the fifty gold pieces are confirmed by several study guides. The number of attackers (about five hundred) and the counselor offer each rest on one summary (medium). The old text had Santiago penniless and fleeing; in the novel he stays and warns the oasis, so the old version was rewritten. An unverified quote and a modern 'selective attention' gloss were dropped. The original title is Portuguese (O Alquimista); the English title is used as given. The crystal shop is in Tangier per standard summaries of the novel; the tea idea is from LitCharts.",
+  "facts": [
+    "Santiago, a young shepherd from Andalusia, follows a recurring dream of treasure toward the Egyptian pyramids; a king told him to follow omens.",
+    "The king is Melchizedek; he gives Santiago two stones, Urim and Thummim, but tells him to rely on his own decisions.",
+    "Earlier, working in a crystal shop in Tangier, Santiago shows he has learned to read omens: seeing a tired man climbing the hill, he suggests selling tea in the shop.",
+    "Tribal wars stop his caravan at the oasis of Al-Fayoum, neutral ground where weapons are banned.",
+    "In the desert he watches two hawks flying high; one attacks the other.",
+    "He then sees an image of an army with drawn swords riding into the oasis.",
+    "The camel driver tells him to take it to the tribal chieftains.",
+    "The chieftains decide the men will break the oasis agreement and carry weapons the next day. If no attack comes, Santiago will pay with his life; if it comes, he will be rewarded.",
+    "That night a stranger on horseback threatens him; Santiago says he is not afraid to die. The stranger is the alchemist, who calls it a test of courage.",
+    "The next day about five hundred tribesmen ride in with weapons under their robes; the armed men of the oasis defeat them.",
+    "Santiago receives fifty pieces of gold and is asked to become counselor of the oasis; the alchemist takes him on as his student."
+  ],
+  "scene_details": [
+    "two hawks, one attacking the other",
+    "an army with drawn swords in a vision",
+    "a neutral oasis where weapons are banned",
+    "fifty pieces of gold"
+  ],
+  "tension": "A newcomer sees an omen nobody else saw, and reporting it means staking his life on it.",
+  "opening_idea": "Open on the two hawks, one diving at the other above the desert.",
+  "lessons": [
+    {
+      "idea": "When you notice a warning sign others have not, say it plainly to the people who can act, even if it may make you look foolish.",
+      "anchor": "Santiago tells the chieftains and accepts the condition.",
+      "everyday_example_idea": "A junior nurse who notices a patient's small change and tells the senior doctor instead of waiting."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What small sign have you noticed lately that you have kept to yourself, and who is the one person who should hear about it?",
+  "use_cases": [
+    {
+      "situation": "You spot a risk in a plan everyone has approved.",
+      "move": "Name what you saw and what it could mean, and ask the group to check it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend dismisses a gut feeling about a deal.",
+      "move": "Recall that Santiago reported the hawks even with his life at stake, and suggest they at least mention it.",
+      "context": "social"
+    },
+    {
+      "situation": "You notice a repeated pattern in your own week.",
+      "move": "Write it down and decide one action on it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Santiago saw two hawks fight and warned the oasis; say the sign you noticed to someone who can act.",
+  "conversation_variants": {
+    "punchline_idea": "In The Alchemist, a fight between two hawks becomes a warning that saves an oasis, but only because Santiago dares to say it.",
+    "thirty_sec_idea": "Oasis, hawks, vision of army, chieftains' condition, alchemist test, attack, fifty gold.",
+    "question_idea": "",
+    "key_contrast_idea": "seeing vs speaking up"
+  }
+}

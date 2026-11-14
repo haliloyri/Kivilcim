@@ -1,0 +1,63 @@
+{
+ "story_id": 1600,
+ "kind": "anecdote",
+ "book": {
+  "title": "Breath",
+  "author": "James Nestor",
+  "year": "2020"
+ },
+ "confidence": "medium",
+ "confidence_note": "Setup verified in Penguin Random House excerpt; results (snoring, apnea, 142 mm Hg, recovery) rest on press coverage and secondary summaries whose figures differ; no peer-reviewed paper found. Exact percent for snoring omitted. Old text's day-five claim, 80 percent mouth-breather figure and concentration/anxiety claims dropped.",
+ "facts": [
+  "Nestor and Anders Olsson, a 49-year-old breathing therapist from Stockholm, volunteered for a Stanford experiment run by Dr. Jayakar Nayak, chief of rhinology research.",
+  "Phase one: about ten days breathing only through the mouth. Phase two: about ten days breathing only through the nose.",
+  "Nostrils were blocked with silicone plugs and surgical tape; they ate, exercised and slept as usual.",
+  "Before starting, Nestor's X-ray showed a severely deviated septum; Nayak sampled about 200,000 sinus cells.",
+  "Both returned to Stanford between phases for tests.",
+  "In the mouth phase Nestor's snoring rose almost 5,000 percent and he averaged about 25 sleep apnea episodes a night.",
+  "His systolic blood pressure climbed to 142 (stage 2 hypertension) and his blood oxygen dipped below 85 percent in one report.",
+  "Both men had higher stress hormones and lower heart rate variability; Nestor got a nasal infection.",
+  "In the nose phase sleep apnea disappeared, snoring fell and stopped after two nights, blood pressure returned to a healthy range and the infection cleared without treatment.",
+  "Two participants only, results from press accounts."
+ ],
+ "scene_details": [
+  "silicone plugs under surgical tape",
+  "ten days, then ten days",
+  "the stage-2 reading of 142"
+ ],
+ "tension": "Two healthy men plug their noses on purpose; what does ten days of mouth breathing do to a body that felt fine?",
+ "opening_idea": "Open on the silicone plugs and tape sealing the nostrils at Stanford.",
+ "lessons": [
+  {
+   "idea": "Notice how you breathe at rest and let the nose do it.",
+   "anchor": "the swing between mouth phase and nose phase.",
+   "example": "Someone who wakes with a dry mouth tapes nothing but notices when it happens."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "When you are working at your desk or reading on your phone, are you breathing through your nose or your mouth, and what changes if you switch?",
+ "use_cases": [
+  {
+   "situation": "You notice yourself mouth breathing at your desk.",
+   "move": "Close your lips and breathe through your nose for the next few minutes; Nestor's snoring and blood pressure swung when he moved between modes.",
+   "context": "self"
+  },
+  {
+   "situation": "A partner complains about your snoring.",
+   "move": "Mention the Stanford experiment and ask them to tell you if the snoring is worse on stuffy nights.",
+   "context": "family"
+  },
+  {
+   "situation": "A friend says breathing does not matter.",
+   "move": "Describe the plugs-and-tape experiment and the two phases, and ask what they notice in their own sleep.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "Ten days of mouth breathing sent Nestor's blood pressure to 142; ten days of nose breathing brought it back.",
+ "conversation_variants": {
+  "punchline_idea": "Nestor plugged his nose for ten days and his blood pressure hit 142.",
+  "thirty_sec_idea": "James Nestor taped silicone plugs into his nose for ten days at Stanford, breathing only through his mouth. His snoring exploded, he got sleep apnea and his blood pressure hit 142. Ten days of nose breathing and it mostly reversed.",
+  "question_idea": "",
+  "key_contrast_idea": "mouth ten days vs nose ten days"
+ }
+}

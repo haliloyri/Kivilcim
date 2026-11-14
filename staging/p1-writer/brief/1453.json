@@ -1,0 +1,62 @@
+{
+ "story_id": 1453,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Book of Joy",
+  "author": "Dalai Lama, Desmond Tutu and Douglas Abrams",
+  "year": "2016"
+ },
+ "confidence": "medium",
+ "confidence_note": "Setup (April 2015, Dharamsala, Tutu visiting the Dalai Lama for his 80th, one week, Abrams moderating, guiding question) verified in publisher and Time pages; cake and trick candles from a Time photo caption; belly-poke and 'mischievous' from one secondary summary. Old text reversed the visit and invented quotes and a 'joy obstacle' list.",
+ "facts": [
+  "In April 2015 Archbishop Desmond Tutu traveled to the Dalai Lama's home in Dharamsala, India, for a week of conversation to celebrate the Dalai Lama's eightieth birthday.",
+  "Douglas Abrams moderated and wrote the book from those talks.",
+  "Their question: how do we find joy in the face of life's inevitable suffering?",
+  "They teased each other continually and shared their spiritual practices.",
+  "On April 23, 2015 there was a birthday cake with trick candles at the Tibetan Children's Village school in Dharamsala.",
+  "The Dalai Lama has lived as a refugee for about five decades.",
+  "The book has three parts: the nature of true joy, the obstacles, the eight pillars.",
+  "Publisher description: the Archbishop has never claimed sainthood and the Dalai Lama considers himself a simple monk; they share daily joy practices.",
+  "Abrams set the stories alongside research from scientists and psychologists (review)."
+ ],
+ "scene_details": [
+  "cake with trick candles at the Tibetan Children's Village",
+  "a week of talks in Dharamsala",
+  "teasing"
+ ],
+ "tension": "Two men with long records of suffering were asked how to find joy, and they spent a week answering it while teasing each other.",
+ "opening_idea": "Open on the trick candles at the school birthday party in Dharamsala.",
+ "lessons": [
+  {
+   "idea": "Ask the question with someone, not alone.",
+   "anchor": "A week of talks with Abrams as moderator.",
+   "example": "Two neighbours sit down on a Sunday to decide how to handle a noisy road."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Who could you sit down with for an hour to talk honestly about how you keep going when things are hard?",
+ "use_cases": [
+  {
+   "situation": "A friend is going through something hard.",
+   "move": "Ask how they find any light in it, as Tutu and the Dalai Lama asked each other.",
+   "context": "social"
+  },
+  {
+   "situation": "A family dinner turns tense.",
+   "move": "Suggest everyone tells one thing that gave them joy this week.",
+   "context": "family"
+  },
+  {
+   "situation": "You are stuck in a gloomy mood.",
+   "move": "Write one question you would put to a wise friend and ask it.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Tutu flew to Dharamsala to ask the Dalai Lama one question: how to find joy despite suffering.",
+ "conversation_variants": {
+  "punchline_idea": "They spent a week asking how to find joy in the face of suffering.",
+  "thirty_sec_idea": "In April 2015 Desmond Tutu flew to the Dalai Lama's home in Dharamsala for his eightieth birthday. For a week, with Douglas Abrams asking questions, they talked about joy and suffering and teased each other. The book is their gift.",
+  "question_idea": "",
+  "key_contrast_idea": "suffering vs joy"
+ }
+}

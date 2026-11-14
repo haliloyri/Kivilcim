@@ -1,0 +1,35 @@
+{
+  "story_id": 1486,
+  "verdict": "keep",
+  "verify_note": "Keep, medium-low: Provincetown detox, flip phone and map from Wikipedia; three months from one review; 65-second and three-minute figures attributed only to the book's own site. Old text's phone count, 'no phone' and quote dropped. Story near the floor.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Üç ay kapaklı telefonla",
+    "description": "Hari Provincetown'da kapaklı telefon ve basılı haritayla yaşadı. Sessizlik işe yaradı, ama kitabı sorunun disiplinden büyük olduğunu söylüyor.",
+    "hook": "Bir saatliğine telefonu başka odaya bıraksanız neye uzanırdınız?",
+    "one_minute_summary": "Johann Hari, Stolen Focus'ta Provincetown'da bir plaj evinde, internete girmeyen bir telefon ve basılı haritayla geçirdiği dönemi anlatıyor. Bir değerlendirmeye göre üç ay sürmüş. Başta tedirgin olmuş, sonra tek işe odaklanmak kolaylaşmış, zihni dolaşırken yeni fikirler gelmiş. Kitap yine de dikkat kaybını on iki nedene bağlıyor ve tek bir kişinin disiplininden büyük olduğunu savunuyor. Bazı rakamlar yalnızca kitabın sitesinden bildirilmiş."
+  },
+  "en": {
+    "title": "Three months on a flip phone",
+    "description": "Hari lived with a flip phone and a paper map in Provincetown. The quiet helped, but his book says the problem is bigger than discipline.",
+    "hook": "What would you reach for if your phone sat in another room for an hour?",
+    "one_minute_summary": "In Stolen Focus, Johann Hari describes a stay in a Provincetown beach house with a flip phone that could not get online and a printed road map. One review says it lasted three months. He was agitated at first, then found it easier to stay with one task, and new ideas came as his mind wandered. The book still traces lost attention to twelve causes and argues it is bigger than one person's discipline. Some figures come only from the book's website."
+  },
+  "es": {
+    "title": "Tres meses con teléfono de tapa",
+    "description": "Hari vivió con un teléfono de tapa y un mapa de papel en Provincetown. El silencio ayudó, pero su libro dice que el problema supera la disciplina.",
+    "hook": "¿A qué te lanzarías si tu móvil estuviera una hora en otra habitación?",
+    "one_minute_summary": "En Stolen Focus, Johann Hari describe una estancia en una casa de playa de Provincetown con un teléfono de tapa sin internet y un mapa de carretera impreso. Una reseña dice que duró tres meses. Al principio estaba agitado, luego le fue más fácil quedarse con una tarea y llegaron ideas nuevas mientras su mente divagaba. El libro aun así atribuye la pérdida de atención a doce causas y sostiene que supera la disciplina de una persona. Algunas cifras proceden solo de la web del libro."
+  },
+  "de": {
+    "title": "Drei Monate mit Klapphandy",
+    "description": "Hari lebte in Provincetown mit Klapphandy und Papierkarte. Die Ruhe half, doch sein Buch sagt, das Problem sei größer als Disziplin.",
+    "hook": "Wonach würdest du greifen, wenn dein Handy eine Stunde im anderen Zimmer läge?",
+    "one_minute_summary": "In Stolen Focus beschreibt Johann Hari einen Aufenthalt in einem Strandhaus in Provincetown mit einem Klapphandy ohne Internet und einer gedruckten Straßenkarte. Laut einer Besprechung dauerte er drei Monate. Anfangs war er unruhig, dann fiel ihm das Bleiben bei einer Aufgabe leichter, und beim Schweifen der Gedanken kamen neue Ideen. Das Buch führt den Aufmerksamkeitsverlust dennoch auf zwölf Ursachen zurück. Einige Zahlen stammen nur von der Website des Buches."
+  }
+}

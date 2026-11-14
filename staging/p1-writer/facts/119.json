@@ -1,0 +1,171 @@
+{
+ "book_no": 119,
+ "title": "The Book of Joy",
+ "authors": [
+  "Dalai Lama",
+  "Desmond Tutu",
+  "Douglas Abrams"
+ ],
+ "year": "2016",
+ "sources": [
+  "https://www.penguinrandomhouse.com/books/533718/the-book-of-joy-by-his-holiness-the-dalai-lama-and-archbishop-desmond-tutu-with-douglas-abrams/",
+  "https://www.cbsnews.com/news/excerpt-the-book-of-joy-the-dalai-lama",
+  "https://time.com/4504000/book-of-joy",
+  "https://www.friendsjournal.org/?p=3027528",
+  "https://en.wikipedia.org/wiki/The_Book_of_Joy"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Archbishop Desmond Tutu traveled to the Dalai Lama's home in Dharamsala, India, in April 2015 for a week of conversation, to celebrate the Dalai Lama's eightieth birthday; the book is the gift they made from it. Douglas Abrams moderated and wrote it.",
+   "source": "PRH; Time; publisher pages",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Their guiding question: how do we find joy in the face of life's inevitable suffering?",
+   "source": "PRH",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "They teased each other continually and shared their spiritual practices. The Dalai Lama poking Tutu's belly and Tutu calling him mischievous is reported by a secondary summary.",
+   "source": "PRH; summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f4",
+   "claim": "The birthday cake picture was taken at the Tibetan Children's Village school in Dharamsala on April 23, 2015, with trick candles.",
+   "source": "Time photo caption",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "The book has three parts: the nature of true joy, the obstacles to joy, and the eight pillars of joy.",
+   "source": "summaries; PRH",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Eight pillars, four of the mind and four of the heart. Mind: perspective, humility, humor, acceptance. Heart: forgiveness, gratitude, compassion, generosity.",
+   "source": "Time; Friends Journal",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Obstacles named: fear, stress, anxiety, anger, frustration, sadness, grief, despair, loneliness, envy, illness, death.",
+   "source": "PRH; Friends Journal",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Central takeaway reported by Time: joy comes from not focusing too much on yourself; generosity and compassion are seen as pivotal.",
+   "source": "Time; summaries",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "The Dalai Lama on exile: when he looks only at the difficulties in his own country he worries; when he widens his view to others' suffering, including Hui Muslims in China, his own suffering lessens.",
+   "source": "CBS excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "The Dalai Lama: had he stayed in the Potala in Lhasa he would have stayed in what is often called 'a golden cage'; 'So, personally, I prefer the last five decades of refugee life.'",
+   "source": "CBS excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "The Dalai Lama: 'Wherever you have friends that's your country, and wherever you receive love, that's your home.'",
+   "source": "CBS excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Abrams links this to the saying 'Pain is inevitable; suffering is optional' and to the Buddhist Sallatha Sutta, which separates physical pain from the added suffering of how we respond.",
+   "source": "CBS excerpt",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "In the same excerpt Tutu says he would be very sulky in his friend's place, and the Dalai Lama's face does not show it (summary of excerpt).",
+   "source": "Quartz summary of CBS excerpt",
+   "confidence": "low"
+  },
+  {
+   "id": "f14",
+   "claim": "Publisher description: the Archbishop has never claimed sainthood and the Dalai Lama considers himself a simple monk; the book ends with daily joy practices.",
+   "source": "PRH page",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Friends Journal: the Dalai Lama tends to favor proactive mental training while Tutu's advice focuses on responding after hurt; Tutu: 'You are made for perfection, but you are not yet perfect. You are a masterpiece in the making.'",
+   "source": "Friends Journal review",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old text: Tutu invited the Dalai Lama to Dharamsala for Tutu's eightieth birthday in 2015, sorted in eight days.",
+   "reason": "Reversed. Tutu traveled to the Dalai Lama's home for the Dalai Lama's 80th; one week."
+  },
+  {
+   "claim": "Old text: eight joy obstacles (fear, anger, regret, sadness, hopelessness, loneliness, envy, pain) each with a 'pillar'.",
+   "reason": "Wrong structure. The book names obstacles, then eight pillars, not paired."
+  },
+  {
+   "claim": "Old text: quotes 'Neşeyi seçebilirsin...' 'Acı gerçek ve ağır...'.",
+   "reason": "Not found in any source."
+  },
+  {
+   "claim": "Old text: eight pillars: clarity of mind, sincerity, meaning, connection, ... generosity as eighth per Tutu; oxytocin and cortisol research.",
+   "reason": "Wrong list; science not verified."
+  },
+  {
+   "claim": "Old text: Tutu asked the Dalai Lama how he lives with his pain; he was silent, then answered 'acıyı inkar etmiyorum'.",
+   "reason": "Invented scene; the verified exile material is a different passage."
+  },
+  {
+   "claim": "Old text: apartheid-era people sang and danced while suffering.",
+   "reason": "Not verified in the book."
+  }
+ ],
+ "stories": {
+  "1453": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f14"
+   ],
+   "note": "Origin of the week in Dharamsala. Corrected direction of the visit."
+  },
+  "1454": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f5",
+    "f6",
+    "f8",
+    "f3",
+    "f7",
+    "f15"
+   ],
+   "note": "Eight pillars, mind and heart. Rewritten from the corrected list."
+  },
+  "1455": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f9",
+    "f10",
+    "f11",
+    "f12"
+   ],
+   "note": "Dalai Lama on exile and perspective, replacing the invented Tutu-asks scene."
+  }
+ }
+}

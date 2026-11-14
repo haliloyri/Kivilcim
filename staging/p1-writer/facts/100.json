@@ -1,0 +1,222 @@
+{
+  "book_no": 100,
+  "title": "The Infinite Game",
+  "authors": [
+    "Simon Sinek"
+  ],
+  "year": "2019",
+  "sources": [
+    "https://www.shortform.com/blog/simon-sinek-infinite-mindset/",
+    "https://fourminutebooks.com/the-infinite-game-summary/",
+    "https://thestrategybridge.org/the-bridge/2020/4/29/reviewing-the-infinite-game",
+    "https://www.shortform.com/blog/simon-sinek-trusting-teams/",
+    "https://en.wikipedia.org/wiki/The_Infinite_Game",
+    "https://www.army.mil/article/230973/simon_sinek_talks_leadership_at_army_profession_forum",
+    "https://verbaltovisual.com/?p=3445"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Sinek builds the book on James Carse's distinction: a finite game has known players, fixed rules and an agreed end with a winner (soccer); an infinite game has known and unknown players, rules that can change, and the aim of keeping the game going.",
+      "source": "Wikipedia; 4minutebooks; Strategy Bridge",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Sinek applies it to business, relationships and education: there is no final winner, so a finite mindset (play to beat others) is the wrong one for an infinite game.",
+      "source": "Wikipedia; 4minutebooks",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Finite-minded leaders chase near-term profit and react to disruption and to specific rivals; infinite-minded leaders aim to stay in the game and grow stronger from setbacks.",
+      "source": "shortform",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Sinek cites a study that the lifespan of S&P 500 companies fell from about 61 years to about 18.",
+      "source": "4minutebooks",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Five practices: advance a just cause, build trusting teams, study worthy rivals, practice existential flexibility, show the courage to lead.",
+      "source": "shortform; 4minutebooks",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Sinek was invited to education summits by both Apple and Microsoft. At Microsoft's, presenters spent much of their time on how to beat Apple; at Apple's, presenters talked about how Apple was helping teachers teach.",
+      "source": "4minutebooks; shortform; search summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "A worthy rival is a competitor who is better than you at something and so shows you where to improve.",
+      "source": "shortform; search summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "Sinek says he spent years treating the author Adam Grant as a competitor; after meeting him he concluded that how he had seen Grant had to do with himself, not with Grant (paraphrase).",
+      "source": "4minutebooks",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Summaries of the book use Microsoft as the example of rival-fixation: it answered the iPod with the Zune, which did not catch on, and Steve Ballmer dismissed the iPhone as not worth replicating.",
+      "source": "shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "A trusting team is one whose members feel safe expressing feelings, asking for help, discussing problems and admitting mistakes.",
+      "source": "shortform",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "Where trust is missing, members hide mistakes and fake expertise instead of asking for help, so problems pile up unaddressed.",
+      "source": "shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Leaders set the tone by listening to concerns and letting people raise issues without fear of repercussions.",
+      "source": "shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "The trusting-teams chapters use Shell Oil and the US Marine Corps Officer Candidate School as examples (details not retrieved).",
+      "source": "Strategy Bridge review",
+      "confidence": "low"
+    },
+    {
+      "id": "f14",
+      "claim": "Sinek defines a just cause as 'a specific vision of a future state that does not yet exist'; a valid one is for something, inclusive, service-oriented, resilient and idealistic.",
+      "source": "Four Minute Books",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Sinek says the five practices should be adopted together.",
+      "source": "Shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f16",
+      "claim": "A reviewer notes that Carse acknowledges everyone plays finite games, and that Sinek puts a negative connotation on anything finite.",
+      "source": "Wikipedia",
+      "confidence": "medium"
+    },
+    {
+      "id": "f17",
+      "claim": "Sinek claims that adopting a healthier attitude toward rivals improves resilience, resource management, innovation and personal integrity; the worthy-rival chapter opens with an autobiographical story, which one reviewer finds overly romanticized.",
+      "source": "Strategy Bridge review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f18",
+      "claim": "Sinek (December 2019 Army Profession Forum talk and interview, tied to the book's 'Building Trusting Teams' practice) calls psychological safety the foundation for trusting teams, a 'biological and anthropological concept' not up for debate; people must feel safe enough to perform at their best.",
+      "source": "army.mil",
+      "confidence": "high"
+    },
+    {
+      "id": "f19",
+      "claim": "In that talk his examples of what people must be free to say: 'I made a mistake' and 'I need help'; if soldiers cannot say them, he says the leader has failed. High performers with low trust may deliver short-term results but damage the organization over time.",
+      "source": "army.mil",
+      "confidence": "medium"
+    },
+    {
+      "id": "f20",
+      "claim": "Summary of the practice: assess members on performance and earned trust. High performance with low trust is the person to watch (hoards information, takes credit, puts own career first); low performance with high trust may be worth keeping if coachable.",
+      "source": "verbaltovisual summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f21",
+      "claim": "When people feel safe they speak up, admit mistakes, ask for help and raise concerns, which improves information flow.",
+      "source": "verbaltovisual; search summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f22",
+      "claim": "In the same talk Sinek called trust 'the root of all friendships, relationships, trusting teams' and said it lets people rely on each other 'with our frailty, with our insecurity'; he also said admitting fear or doubt about one's qualifications should be possible.",
+      "source": "army.mil",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Companies with infinite mindset include Apple, Disney, Amazon, lasting decades; finite ones collapse after short-term gains",
+      "reason": "Amazon not found; Disney appears for existential flexibility only; collapse claim not found."
+    },
+    {
+      "claim": "Apple's Mac vs PC ads attacked Microsoft, then Apple stopped talking about Microsoft",
+      "reason": "Not in any summary of the book."
+    },
+    {
+      "claim": "Quote: 'A finite player follows the rival. An infinite player follows their own vision.'",
+      "reason": "No source."
+    },
+    {
+      "claim": "Sinek calls the rival 'loyal rival' who pushes you to second place",
+      "reason": "The book's term is worthy rival."
+    },
+    {
+      "claim": "Quote: 'Building trust is slow, destroying it is fast. Trust is your most valuable currency.'",
+      "reason": "No source."
+    },
+    {
+      "claim": "Trust culture means customers feel the company decides for them; Sinek asks whether leaders work because they have to or want to",
+      "reason": "No source."
+    },
+    {
+      "claim": "Navy SEALs choose trust over performance",
+      "reason": "Appears in a summary, but the book it comes from is uncertain (Sinek has several books)."
+    }
+  ],
+  "stories": {
+    "1396": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f14",
+        "f15",
+        "f16"
+      ],
+      "note": "Concept story, Carse's two games. No named company case; kept to the mechanism."
+    },
+    "1397": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f6",
+        "f7",
+        "f8",
+        "f17"
+      ],
+      "note": "Rebuilt on the two summits and the worthy-rival idea; Mac vs PC and the quote dropped."
+    },
+    "1398": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f10",
+        "f11",
+        "f12",
+        "f13",
+        "f18",
+        "f19",
+        "f20",
+        "f21",
+        "f22"
+      ],
+      "note": "Thin: book's own cases not retrieved. Short concept story, low confidence."
+    }
+  }
+}

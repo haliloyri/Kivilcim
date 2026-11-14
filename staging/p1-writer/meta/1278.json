@@ -1,0 +1,35 @@
+{
+ "story_id": 1278,
+ "verdict": "keep",
+ "verify_note": "Keep. Interview question, the three bad answers, the answer template and Thiel's own answer verified (fs.blog excerpt). Airbnb/Uber secret framing from summaries (medium). DoorDash/SpaceX and an invented quote dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Thiel'in görüşme sorusu",
+  "description": "Peter Thiel her adaya, çok az kişinin katıldığı önemli bir gerçeği sorar ve en sık duyduğu cevapların neden kötü olduğunu anlatır.",
+  "hook": "En cesur fikrinize gerçekten az kişi mi katılıyor, yoksa herkes zaten aynı şeyi mi söylüyor?",
+  "one_minute_summary": "Peter Thiel iş görüşmelerinde hep aynı şeyi sorar: Çok az insanın sizinle aynı fikirde olduğu önemli bir gerçek nedir? En sık duyduğu cevaplar eğitim sisteminin çöktüğü, Amerika'nın eşsiz olduğu ve Tanrı'nın olmadığıdır. Thiel üçünü de kötü bulur, çünkü ya pek çok kişi zaten katılır ya da eski bir tartışmada taraf tutulur. İyi cevap 'çoğu insan x'e inanıyor, ama gerçek tersi' kalıbına uyar. Thiel'e göre her büyük şirket böyle bir sırrın üzerine kurulur."
+ },
+ "en": {
+  "title": "Thiel's interview question",
+  "description": "Peter Thiel asks every candidate for an important truth few people share, and explains why the most common answers fail.",
+  "hook": "Do few people really share your boldest idea, or does everyone already say it?",
+  "one_minute_summary": "Peter Thiel asks every job candidate: what important truth do very few people agree with you on? The answers he hears most are that education is broken, that America is exceptional, or that there is no God. He calls them bad, since many already agree or they just pick a side in an old debate. A good answer follows the pattern 'most people believe x, but the truth is the opposite.' Every great business, he argues, is built on such a secret."
+ },
+ "es": {
+  "title": "La pregunta de Thiel",
+  "description": "Peter Thiel pide a cada candidato una verdad importante que casi nadie comparte y explica por qué fallan las respuestas más comunes.",
+  "hook": "¿De verdad poca gente comparte tu idea más atrevida, o ya la dice todo el mundo?",
+  "one_minute_summary": "Peter Thiel pregunta a cada candidato qué verdad importante sostiene con la que casi nadie está de acuerdo. Las respuestas que más oye son que la educación está rota, que Estados Unidos es excepcional o que Dios no existe. Le parecen malas: o ya las comparte mucha gente o solo toman partido en un debate viejo. Una buena respuesta sigue la forma 'la mayoría cree x, pero la verdad es lo contrario'. Para Thiel, toda gran empresa nace de un secreto así."
+ },
+ "de": {
+  "title": "Thiels Bewerbungsfrage",
+  "description": "Peter Thiel fragt jeden Bewerber nach einer wichtigen Wahrheit, die kaum jemand teilt, und erklärt, warum die häufigsten Antworten scheitern.",
+  "hook": "Teilen wirklich nur wenige deine kühnste Idee, oder sagen sie längst alle?",
+  "one_minute_summary": "Peter Thiel fragt jeden Bewerber: Welche wichtige Wahrheit vertrittst du, der nur wenige zustimmen? Am häufigsten hört er, das Bildungssystem sei kaputt, Amerika außergewöhnlich oder es gebe keinen Gott. Alles schlecht, findet er, weil viele das schon glauben oder es ein alter Streit ist. Eine gute Antwort folgt dem Muster: Die meisten glauben x, aber die Wahrheit ist das Gegenteil. Jedes große Unternehmen, so Thiel, beruht auf einem solchen Geheimnis."
+ }
+}

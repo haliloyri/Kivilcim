@@ -1,0 +1,401 @@
+list_no,kitap,yazar,yil,kategori,hikaye_sayisi
+1,"Atomic Habits","James Clear",2018,"Sağlık",12
+2,"Dürüst Olmak","Kim Scott",2017,Liderlik,3
+3,"Şimdi Başla","Neil Fiore",1988,Verimlilik,3
+4,"Derin Çalışma","Cal Newport",2016,Verimlilik,4
+5,"Düşün ve Zengin Ol","Napoleon Hill",1937,Motivasyon,4
+6,Influence,"Robert Cialdini",1984,Psikoloji,5
+7,"Good to Great","Jim Collins",2001,Verimlilik,4
+8,"Başlangıç Noktası","Simon Sinek",2009,Liderlik,3
+9,"Büyük Sıçrayış","Eric Ries",2011,"Girişimcilik",3
+10,"Odaklanma Gücü","Jack Canfield",1999,Verimlilik,3
+11,"The 7 Habits of Highly Effective People","Stephen Covey",1989,"Büyüme",5
+12,"Zihin Gücü","Carol Dweck",2006,Psikoloji,6
+13,"Sabah Rutini","Hal Elrod",2012,"Alışkanlıklar",3
+14,"Güç Yasaları","Robert Greene",1998,Strateji,4
+15,"Emotional Intelligence","Daniel Goleman",1995,Psikoloji,4
+16,"Purple Cow","Seth Godin",2003,Finans,5
+17,"The Psychology of Money","Morgan Housel",2020,Finans,4
+18,"Beyin Fırtınası","David Eagleman",2015,"Nörobilim",3
+19,"Alışkanlıkların Gücü","Charles Duhigg",2012,"Alışkanlıklar",4
+20,"Liderlik Sanatı","Simon Sinek",2014,Liderlik,3
+22,"Şimdi ve Burada","Eckhart Tolle",1997,"Farkındalık",3
+23,"Sosyal Hayvan","David Brooks",2011,Psikoloji,3
+24,"Hız ve Güven","Stephen M. R. Covey",2006,Liderlik,3
+25,"Cesaret Vermek","Brené Brown",2012,"Kişisel Gelişim",3
+26,"Fark Yaratmak","William H. McRaven",2017,Motivasyon,3
+27,"Sınırlar","Nedra Tawwab",2021,"Kişisel Gelişim",3
+28,Azim,"Angela Duckworth",2016,Motivasyon,3
+29,"Büyük Soru","Viktor Frankl",1946,Felsefe,3
+30,"Olumlu Zeka","Shirzad Chamine",2012,Psikoloji,3
+31,"Dürüst Konuşmak","Kerry Patterson",2002,"İletişim",3
+32,"Sezgi Gücü","Malcolm Gladwell",2005,Psikoloji,3
+33,"10.000 Saat Kuralı","Malcolm Gladwell",2008,"Başarı",3
+34,Flow,"Mihaly Csikszentmihalyi",1990,Psikoloji,4
+35,"Karar Verme Sanatı","Daniel Kahneman",2011,Psikoloji,3
+36,"İkna Sanatı","Dale Carnegie",1936,"İletişim",6
+37,"Pareto İlkesi","Richard Koch",1997,Verimlilik,6
+38,"Yaratıcı Olmak","Elizabeth Gilbert",2015,"Yaratıcılık",6
+39,"Money: Master the Game","Tony Robbins",2014,Finans,7
+40,"Zihin Haritası","Tony Buzan",1993,"Öğrenme",5
+41,Korkusuzluk,"Susan Jeffers",1987,Motivasyon,5
+42,"Stillness Is the Key","Ryan Holiday",2019,Felsefe,5
+43,"Ego Is the Enemy","Ryan Holiday",2016,Felsefe,6
+44,"Engel Yolu Açar","Ryan Holiday",2014,Felsefe,5
+45,"Neden Uyuyoruz","Matthew Walker",2017,"Sağlık",5
+46,"Bedenin Sesi","Bessel van der Kolk",2014,"Sağlık",5
+47,"Saatlerin Efendisi","Daniel Pink",2018,Verimlilik,5
+48,"Sıfır'dan Bir'e","Peter Thiel",2014,"Girişimcilik",5
+49,"Karanlığın Ötesi","Brené Brown",2018,Liderlik,5
+50,"Simyacı","Paulo Coelho",1988,"İlham",5
+51,"İnsan Nasıl Düşünür","James Allen",1903,Felsefe,5
+52,"Can't Hurt Me","David Goggins",2018,"Büyüme",6
+53,"Zengin Baba Fakir Baba","Robert Kiyosaki",1997,Finans,5
+54,"The 4-Hour Workweek","Tim Ferriss",2007,Verimlilik,6
+55,Minimalizm,"Greg McKeown",2014,Verimlilik,5
+56,"Hiçbir Şeye Bakmamak","Cal Newport",2019,Teknoloji,2
+57,"The Good Life","Robert Waldinger",2023,Psikoloji,2
+58,"Şükran Günlüğü","Janice Kaplan",2015,Mutluluk,2
+59,"Karizmatik Olmak","Olivia Fox Cabane",2012,"İletişim",2
+60,"İnsan Beyninin Gücü","Jim Kwik",2020,"Öğrenme",2
+61,"Cesur Olmak","Ichiro Kishimi",2013,Felsefe,2
+62,"Yüksek Performans","Brendon Burchard",2017,"Kişisel Gelişim",2
+63,"Savaş Sanatı","Sun Tzu",-500,Strateji,2
+64,"Değişimin Gücü","Chip Heath",2010,"Değişim",2
+65,"Yapışkan Fikirler","Chip Heath",2007,"İletişim",2
+66,"Hikaye Anlatıcısı","Donald Miller",2017,Pazarlama,2
+67,"Doğrusal Olmayan Gelecek","Ray Kurzweil",2005,Teknoloji,2
+68,"Akıl Yürütme","Hans Rosling",2018,"Düşünme",3
+69,"Siyah Kuğu","Nassim Taleb",2007,"Düşünme",3
+70,"Antikırılgan","Nassim Taleb",2012,"Düşünme",3
+71,"Thinking in Systems","Donella Meadows",2008,Verimlilik,4
+72,"İşin Özü","Michael Gerber",1986,"Girişimcilik",3
+73,"Müşteriyi Anlamak","Nir Eyal",2014,"Ürün",3
+74,Indistractable,"Nir Eyal",2019,Verimlilik,4
+75,"Güçlü Sorular","Warren Berger",2014,"Yaratıcılık",3
+76,"Yaratıcı Beyin","Julia Cameron",1992,"Yaratıcılık",3
+77,"The Success Principles","Jack Canfield ve Janet Switzer",2005,"Büyüme",4
+78,"Ustalık Gerektiren Kafaya Takmama Sanatı","Mark Manson",2016,"Kişisel Gelişim",3
+79,"Her Şey Yolunda","Mark Manson",2019,Felsefe,2
+80,"Beden Dili","Joe Navarro",2008,"İletişim",3
+81,"Uyku Devrimi","Arianna Huffington",2016,"Sağlık",2
+82,"%10 Daha Mutlu","Dan Harris",2014,"Farkındalık",3
+83,"The Paradox of Choice","Barry Schwartz",2004,Psikoloji,4
+84,"Öğrenmeyi Öğrenmek","Peter C. Brown, Henry L. Roediger III ve Mark A. McDaniel",2014,"Öğrenme",3
+85,"Bir Sonraki Seviye","Robin Sharma",2018,"Alışkanlıklar",3
+86,"Ferrari'sini Satan Bilge","Robin Sharma",1997,"İlham",3
+87,"Unutulmaz Markalar","Seth Godin",2018,Pazarlama,3
+88,Niyet,"Lynne McTaggart",2007,"Farkındalık",3
+89,"Zihinsel Dayanıklılık","Sheryl Sandberg",2017,"Dayanıklılık",3
+90,"Kendi Patronun Ol","Paul Jarvis",2019,"Girişimcilik",3
+91,"İnsanı Anlamak","Chris Voss",2016,"Müzakere",3
+92,"The Life-Changing Magic of Tidying Up","Marie Kondo",2011,Felsefe,4
+93,"Stoacılık","Marcus Aurelius",180,Felsefe,3
+94,"İyimserlik Öğrenmek","Martin Seligman",1990,Psikoloji,3
+95,"Mutluluğun Peşinde","Shawn Achor",2010,Mutluluk,3
+97,"İçsel Güç","Tony Robbins",1991,Motivasyon,2
+98,"Hedeflere Ulaşmak","Brian Tracy",2003,Hedefler,1
+99,"Yeme Bozukluğu","Brian Tracy",2001,Verimlilik,3
+100,"Sonsuz Oyun","Simon Sinek",2019,Strateji,3
+101,"Zeki Kalabalıklar","Howard Rheingold",2002,Teknoloji,1
+102,"Devrilme Noktası","Malcolm Gladwell",2000,Sosyoloji,3
+103,"Nasıl Başarılı Olunur","David Allen",2001,Verimlilik,3
+104,"Dört Anlaşma","Don Miguel Ruiz",1997,Felsefe,3
+105,Sessizlik,"Susan Cain",2012,Psikoloji,2
+106,"Liderlik 21 Yasası","John C. Maxwell",1998,Liderlik,3
+107,"Mavi Okyanus Stratejisi","W. Chan Kim",2004,Strateji,3
+108,"Mucize Denklem","Hal Elrod",2019,"Alışkanlıklar",3
+109,Mindfulness,"Jon Kabat-Zinn",1994,"Farkındalık",3
+110,"Yetenek Yanılgısı","Geoff Colvin",2008,"Başarı",3
+111,Terapi,"Lori Gottlieb",2019,Psikoloji,1
+112,"Büyüme Kültürü","John Doerr",2018,"Yönetim",3
+113,"Satışın Psikolojisi","Brian Tracy",2006,"Satış",3
+114,"Against Empathy","Paul Bloom",2016,Psikoloji,4
+115,"Gündelik Nesneler Tasarımı","Don Norman",1988,"Tasarım",3
+116,"Sadakat Etkisi","Frederick Reichheld",1996,"İş Dünyası",2
+117,"Hayatın Kısalığı Üzerine",Seneca,49,Felsefe,2
+118,"Bilinçaltının Gücü","Joseph Murphy",1963,Motivasyon,3
+119,"Neşeyi Seç","Dalai Lama",2016,Mutluluk,3
+120,"Beynin Sırları","V.S. Ramachandran",2011,"Nörobilim",3
+121,"İş Hayatında Duygusal Zeka","Daniel Goleman",1998,Liderlik,2
+122,"Kalıcı Hafıza","Joshua Foer",2011,"Öğrenme",3
+123,"Etkileyici Konuşma","Carmine Gallo",2014,"İletişim",3
+124,"Büyük Fikirler","Steven Johnson",2010,"Yaratıcılık",3
+125,"Dinlenmenin Gücü","Alex Soojung-Kim Pang",2016,Verimlilik,2
+126,"İnsanlığın Kısa Tarihi","Yuval Noah Harari",2011,Tarih,3
+127,"Homo Deus","Yuval Noah Harari",2015,Gelecek,3
+128,"21. Yüzyıl İçin 21 Ders","Yuval Noah Harari",2018,"Güncel",3
+129,"The Fearless Organization","Amy Edmondson",2018,Liderlik,3
+130,"Çalınan Dikkat","Johann Hari",2022,Verimlilik,3
+131,"Bağımlılık Çağı","Johann Hari",2015,Toplum,2
+132,"Kayıp Bağlantılar","Johann Hari",2018,Psikoloji,3
+133,"Güçlü Yönler Bulma","Marcus Buckingham",2001,Kariyer,3
+134,"Kabile Liderliği","Dave Logan",2008,Liderlik,3
+135,"Korkudan Öğrenmek","Gavin de Becker",1997,"Güvenlik",3
+136,"Müzakerede Evet Almak","Roger Fisher",1981,"Müzakere",3
+137,"Değişim Yönetimi","John Kotter",1996,"Yönetim",3
+138,"Pratik Stoacılık","William Irvine",2008,Felsefe,3
+139,"Yıkıcı İnovasyon","Clayton Christensen",1997,"İş Dünyası",3
+140,"Müşteri Geliştirme","Rob Fitzpatrick",2013,"Girişimcilik",3
+141,"İç Yolculuk","Michael A. Singer",2007,"Farkındalık",3
+142,"Az Gitme Yolu","M. Scott Peck",1978,Psikoloji,3
+143,"Parça Parça Yazmak","Anne Lamott",1994,"Yazarlık",3
+144,"Çevik Yönetim","Jeff Sutherland",2014,"Yönetim",3
+145,"SPIN Satış","Neil Rackham",1988,"Satış",3
+146,"Black Box Thinking","Matthew Syed",2015,Felsefe,4
+147,"Sıçramak","Matthew Syed",2010,"Başarı",3
+148,"Peçete Arkası","Dan Roam",2008,"Yaratıcılık",3
+149,"Evet Dedirtmek","Noah Goldstein",2007,Psikoloji,3
+150,"İkinci Makine Çağı","Erik Brynjolfsson",2014,Teknoloji,3
+151,"Ölçülebilir Büyüme","Gino Wickman",2011,"Yönetim",3
+152,"The Five Dysfunctions of a Team","Patrick Lencioni",2002,Liderlik,4
+153,"İş Modeli Üretimi","Alexander Osterwalder",2010,"Girişimcilik",3
+154,"Radikal Kabul","Tara Brach",2003,"Farkındalık",3
+155,"Farkındalık Temelli Yaşam","Jon Kabat-Zinn",1990,"Sağlık",3
+156,"Bilinçli Liderlik","Jim Dethmer, Diana Chapman, Kaley Warner Klemp",2014,Liderlik,3
+157,"Yetenek Kodu","Daniel Coyle",2009,"Başarı",3
+158,"Kültür Kodu","Daniel Coyle",2018,Liderlik,3
+159,"Hataları Kucaklamak","Carol Tavris",2007,Psikoloji,3
+160,"İşte Anlam","Daniel Pink",2009,Motivasyon,3
+161,"Satışın Yeni Yüzü","Daniel Pink",2012,"Satış",3
+162,"Bütün Beyin","Daniel Pink",2005,"Yaratıcılık",3
+163,"Sirkadyen Kod","Satchin Panda",2019,"Sağlık",3
+164,"Uzun Yaşam Bilimi","David Sinclair",2019,"Sağlık",3
+165,"Uzun Ömür","Peter Attia",2023,"Sağlık",3
+166,"Beyin ve Diyet","David Perlmutter",2013,"Sağlık",3
+167,"İyi Bağırsak","Justin Sonnenburg",2015,"Sağlık",2
+168,Nefes,"James Nestor",2020,"Sağlık",3
+169,"Soğuk Yöntem","Wim Hof",2020,"Sağlık",3
+170,"Zengin Olmayı Öğrenmek","Ramit Sethi",2009,Finans,2
+171,"Mantıklı Borsa","John Bogle",2007,Finans,3
+172,"Komşu Milyoner","Thomas Stanley",1996,Finans,3
+173,"Borç Devrimi","Dave Ramsey",2003,Finans,3
+174,"İlişki Psikolojisi","Sue Johnson",2008,"İlişkiler",3
+175,"Bağlanma Teorisi","Amir Levine",2010,"İlişkiler",3
+176,"Duygusal Olgunlaşmamış Ebeveynler","Lindsay Gibson",2015,Psikoloji,3
+177,"Travma ve İyileşme","Judith Herman",1992,Psikoloji,1
+178,"Bedenin Hayır Demesi","Gabor Maté",2003,"Sağlık",3
+179,"Dağınık Beyin","Gabor Maté",1999,Psikoloji,3
+180,"Her Şey Gerçek Olabilir","Gabor Maté",2008,"Bağımlılık",3
+181,"Özgür Olmak 2","Brené Brown",2010,"Kişisel Gelişim",3
+182,"Güçlü Kalkmak","Brené Brown",2015,"Dayanıklılık",3
+183,"Çölde Yürümek","Brené Brown",2017,Topluluk,2
+184,"Kalbin Haritası","Brené Brown",2021,Duygular,3
+185,"Akış Bulmak","Mihaly Csikszentmihalyi",1997,Psikoloji,3
+186,"Yaratıcılık ve Akış","Mihaly Csikszentmihalyi",1996,"Yaratıcılık",3
+187,"İçgüdüsel Yeme","Evelyn Tribole",1995,"Sağlık",3
+188,"Yeniden Doğmak","David Brooks",2019,Felsefe,3
+189,"Yeni Toprak","Eckhart Tolle",2005,"Farkındalık",3
+190,"İçsel Barış","Thich Nhat Hanh",1991,"Farkındalık",3
+191,"Öfke","Thich Nhat Hanh",2001,Psikoloji,3
+194,"Yeni Başlayanlar İçin Meditasyon","Andy Puddicombe",2012,"Farkındalık",2
+195,"Meditasyonla İyileşme","Robert Wright",2017,"Farkındalık",1
+196,"The Shallows","Nicholas Carr",2010,Bilim,2
+197,"Dikkatin Gücü","Daniel Goleman",2013,Verimlilik,2
+198,"Duygusal Çeviklik","Susan David",2016,Psikoloji,2
+199,"Psikolojik Esneklik","Russ Harris",2007,Psikoloji,2
+200,"Bütünleşik Zekanın Gücü","Travis Bradberry",2009,Psikoloji,3
+201,"Rakipler Takımı","Doris Kearns Goodwin",2005,Tarih,1
+202,Endurance,"Alfred Lansing",1959,Tarih,1
+203,Seabiscuit,"Laura Hillenbrand",2001,Tarih,1
+204,"Midnight in Chernobyl","Adam Higginbotham",2019,Tarih,1
+205,"Predictably Irrational","Dan Ariely",2008,Psikoloji,1
+206,"The Power of Regret","Daniel H. Pink",2022,Psikoloji,1
+207,"Steve Jobs","Walter Isaacson",2011,Liderlik,1
+208,"The Founders","Jimmy Soni",2022,Liderlik,1
+209,"A Random Walk Down Wall Street","Burton G. Malkiel",1973,Finans,1
+210,"The Checklist Manifesto","Atul Gawande",2009,"Sağlık",1
+211,"The Comfort Crisis","Michael Easter",2021,"Sağlık",1
+212,"The Boys in the Boat","Daniel James Brown",2013,Tarih,1
+213,"The Simple Path to Wealth","J. L. Collins",2016,Finans,1
+214,"The Republic",Plato,"c. 375 BCE",Felsefe,1
+215,Rubicon,"Tom Holland",2003,Tarih,1
+216,"A Short History of Nearly Everything","Bill Bryson",2003,Bilim,1
+217,Chatter,"Ethan Kross",2021,Psikoloji,1
+218,"Creativity, Inc.","Ed Catmull ve Amy Wallace",2014,Liderlik,1
+219,Complications,"Atul Gawande",2002,"Sağlık",1
+220,"You're Not Listening","Kate Murphy",2020,"İletişim",1
+221,"The Devil in the White City","Erik Larson",2003,Tarih,1
+222,"The Gene","Siddhartha Mukherjee",2016,Bilim,1
+223,"An Immense World","Ed Yong",2022,Bilim,1
+224,Noise,"Daniel Kahneman, Olivier Sibony ve Cass R. Sunstein",2021,Psikoloji,1
+225,"The Undoing Project","Michael Lewis",2016,Psikoloji,1
+226,"The Righteous Mind","Jonathan Haidt",2012,Psikoloji,1
+227,"Pour Your Heart Into It","Howard Schultz ve Dori Jones Yang",1997,Liderlik,1
+228,"Guns, Germs, and Steel","Jared Diamond",1997,Tarih,1
+229,Collapse,"Jared Diamond",2005,Tarih,1
+230,"The Silk Roads","Peter Frankopan",2015,Tarih,1
+231,SPQR,"Mary Beard",2015,Tarih,1
+232,"The Wright Brothers","David McCullough",2015,Tarih,1
+233,"Into Thin Air","Jon Krakauer",1997,Tarih,1
+234,Unbroken,"Laura Hillenbrand",2010,Tarih,1
+235,"Hidden Figures","Margot Lee Shetterly",2016,Tarih,1
+236,"The Splendid and the Vile","Erik Larson",2020,Tarih,1
+237,"Say Nothing","Patrick Radden Keefe",2018,Tarih,1
+238,"The Wager","David Grann",2023,Tarih,1
+239,"Killers of the Flower Moon","David Grann",2017,Tarih,1
+240,"The Lost City of Z","David Grann",2009,Tarih,1
+241,Cosmos,"Carl Sagan",1980,Bilim,1
+242,"A Brief History of Time","Stephen Hawking",1988,Bilim,1
+243,"The Code Breaker","Walter Isaacson",2021,Bilim,1
+244,"The Immortal Life of Henrietta Lacks","Rebecca Skloot",2010,Bilim,1
+245,"The Hidden Life of Trees","Peter Wohlleben",2015,Bilim,1
+246,"Entangled Life","Merlin Sheldrake",2020,Bilim,1
+247,Longitude,"Dava Sobel",1995,Bilim,1
+248,"The Disappearing Spoon","Sam Kean",2010,Bilim,1
+249,"The Poisoner's Handbook","Deborah Blum",2010,Bilim,1
+250,"The Radium Girls","Kate Moore",2017,Bilim,1
+251,"The Butchering Art","Lindsey Fitzharris",2017,Bilim,1
+252,"Surely You're Joking, Mr. Feynman!","Richard P. Feynman ve Ralph Leighton",1985,Bilim,1
+253,"The Anxious Generation","Jonathan Haidt",2024,Psikoloji,1
+254,Behave,"Robert M. Sapolsky",2017,Psikoloji,1
+255,"The Lucifer Effect","Philip Zimbardo",2007,Psikoloji,1
+256,"The Man Who Mistook His Wife for a Hat","Oliver Sacks",1985,Psikoloji,0
+257,Incognito,"David Eagleman",2011,Psikoloji,1
+258,"The Happiness Hypothesis","Jonathan Haidt",2006,Psikoloji,0
+259,"The Confidence Game","Maria Konnikova",2016,Psikoloji,1
+260,Scarcity,"Sendhil Mullainathan ve Eldar Shafir",2013,Psikoloji,1
+261,"The Marshmallow Test","Walter Mischel",2014,Psikoloji,1
+262,"Shoe Dog","Phil Knight",2016,Liderlik,1
+263,"The Everything Store","Brad Stone",2013,Liderlik,1
+264,"The Ride of a Lifetime","Robert Iger",2019,Liderlik,1
+265,"No Rules Rules","Reed Hastings ve Erin Meyer",2020,Liderlik,1
+266,"Bad Blood","John Carreyrou",2018,Liderlik,1
+267,"The Hard Thing About Hard Things","Ben Horowitz",2014,Liderlik,1
+268,"The Intelligent Investor","Benjamin Graham",1949,Finans,1
+269,"Being Mortal","Atul Gawande",2014,"Sağlık",1
+270,"Nonviolent Communication","Marshall B. Rosenberg",1999,"İletişim",1
+271,"Four Thousand Weeks","Oliver Burkeman",2021,Verimlilik,1
+272,"Tao Te Ching","Lao Tzu",-400,Felsefe,1
+273,"Why Zebras Don't Get Ulcers","Robert M. Sapolsky",1994,"Sağlık",5
+274,"Delivering Happiness","Tony Hsieh",2010,Liderlik,5
+275,"The Culture Map","Erin Meyer",2014,Liderlik,5
+276,"Grinding It Out","Ray Kroc",1977,Liderlik,5
+277,Range,"David Epstein",2019,"Büyüme",10
+278,"Give and Take","Adam Grant",2013,Liderlik,10
+279,"Extreme Ownership","Jocko Willink, Leif Babin",2015,Liderlik,1
+280,"The Demon-Haunted World","Carl Sagan",1995,Bilim,5
+281,"The Spy and the Traitor","Ben Macintyre",2018,Tarih,5
+282,"The Emperor of All Maladies","Siddhartha Mukherjee",2010,"Sağlık",5
+283,Pre-Suasion,"Robert Cialdini",2016,"İletişim",5
+284,"Born to Run","Christopher McDougall",2009,"Sağlık",5
+285,"Ultra-Processed People","Chris van Tulleken",2023,"Sağlık",5
+286,"Band of Brothers","Stephen E. Ambrose",1992,Tarih,5
+287,"The Warmth of Other Suns","Isabel Wilkerson",2010,Tarih,5
+288,"The Big Short","Michael Lewis",2010,Finans,5
+289,"Smarter Faster Better","Charles Duhigg",2016,Verimlilik,4
+290,"Make Time","Jake Knapp, John Zeratsky",2018,Verimlilik,3
+291,"Think Again","Adam Grant",2021,"Kişisel Gelişim",5
+292,"The Selfish Gene","Richard Dawkins",1976,Bilim,5
+293,"The Body: A Guide for Occupants","Bill Bryson",2019,"Sağlık",5
+294,"How to Know a Person","David Brooks",2023,"İlişkiler",5
+295,"The 5 Love Languages","Gary Chapman",1992,"İlişkiler",5
+296,Storyworthy,"Matthew Dicks",2018,"İletişim",2
+297,"What Happened to You?","Bruce D. Perry, Oprah Winfrey",2021,Psikoloji,4
+298,"The Daily Stoic","Ryan Holiday, Stephen Hanselman",2016,Felsefe,5
+299,"The Art of Happiness","Dalai Lama, Howard C. Cutler",1998,Mutluluk,5
+300,"Liar's Poker","Michael Lewis",1989,Finans,4
+301,"Principles: Life and Work","Ray Dalio",2017,"Yönetim",3
+302,"When Breath Becomes Air","Paul Kalanithi",2016,"Sağlık",5
+303,"Turn the Ship Around!","L. David Marquet",2012,Liderlik,5
+304,"The Richest Man in Babylon","George S. Clason",1926,Finans,5
+305,"One Up On Wall Street","Peter Lynch with John Rothchild",1989,Finans,4
+306,"Difficult Conversations","Douglas Stone, Bruce Patton, Sheila Heen",1999,"İletişim",5
+307,"Talking to Strangers","Malcolm Gladwell",2019,"İletişim",4
+308,"Letters from a Stoic",Seneca,65,Felsefe,5
+309,"How Not to Die","Michael Greger with Gene Stone",2015,"Sağlık",5
+310,"Stiff: The Curious Lives of Human Cadavers","Mary Roach",2003,Bilim,5
+311,"The Consolations of Philosophy","Alain de Botton",2000,Felsefe,5
+312,Misbehaving,"Richard H. Thaler",2015,Finans,5
+313,"Against the Gods","Peter L. Bernstein",1996,Finans,5
+314,"Made in America","Sam Walton with John Huey",1992,Liderlik,5
+315,Supercommunicators,"Charles Duhigg",2024,"İletişim",5
+316,"Thanks for the Feedback","Douglas Stone and Sheila Heen",2014,"İletişim",4
+317,"The Antidote","Oliver Burkeman",2012,"Büyüme",5
+318,Exercised,"Daniel E. Lieberman",2020,"Sağlık",5
+319,"The Omnivore's Dilemma","Michael Pollan",2006,"Sağlık",5
+320,"The Sixth Extinction","Elizabeth Kolbert",2014,Bilim,5
+321,"The Psychopath Test","Jon Ronson",2011,Psikoloji,5
+322,"Barbarians at the Gate","Bryan Burrough and John Helyar",1989,Finans,5
+323,"When Genius Failed","Roger Lowenstein",2000,Finans,5
+324,"Dead Wake","Erik Larson",2015,Tarih,5
+325,"Destiny of the Republic","Candice Millard",2011,Tarih,5
+326,"Team of Teams","Stanley McChrystal",2015,Liderlik,5
+327,"Thinking in Bets","Annie Duke",2018,Verimlilik,3
+328,"Salt Sugar Fat","Michael Moss",2013,"Sağlık",5
+329,"Bad Science","Ben Goldacre",2008,Bilim,5
+330,Nudge,"Richard H. Thaler and Cass R. Sunstein",2008,Psikoloji,4
+331,Peak,"K. Anders Ericsson and Robert Pool",2016,Verimlilik,5
+332,"Flash Boys","Michael Lewis",2014,Finans,5
+333,"Too Big to Fail","Andrew Ross Sorkin",2009,Finans,5
+334,"The Man Who Solved the Market","Gregory Zuckerman",2019,Finans,5
+335,"Algorithms to Live By","Brian Christian and Tom Griffiths",2016,Verimlilik,5
+336,"Trillion Dollar Coach","Eric Schmidt, Jonathan Rosenberg and Alan Eagle",2019,Liderlik,5
+337,"In the Heart of the Sea","Nathaniel Philbrick",2000,Tarih,5
+338,"The Guns of August","Barbara W. Tuchman",1962,Tarih,5
+339,"Genghis Khan and the Making of the Modern World","Jack Weatherford",2004,Tarih,5
+340,Humankind,"Rutger Bregman",2019,Tarih,4
+341,"Everything Is Tuberculosis","John Green",2025,Tarih,5
+342,"I Contain Multitudes","Ed Yong",2016,Bilim,5
+343,"How to Change Your Mind","Michael Pollan",2018,"Sağlık",5
+344,"Dopamine Nation","Anna Lembke",2021,"Sağlık",3
+345,"Stumbling on Happiness","Daniel Gilbert",2006,Psikoloji,5
+346,Willpower,"Roy F. Baumeister and John Tierney",2011,Psikoloji,4
+347,"You Are Not So Smart","David McRaney",2011,Psikoloji,5
+348,Mastery,"Robert Greene",2012,"Büyüme",4
+349,"Fooled by Randomness","Nassim Nicholas Taleb",2001,Finans,5
+350,Multipliers,"Liz Wiseman and Greg McKeown",2010,Liderlik,3
+351,"Same as Ever","Morgan Housel",2023,Finans,4
+352,"A Man for All Markets","Edward O. Thorp",2017,Finans,5
+353,"Die with Zero","Bill Perkins",2020,Finans,2
+354,"High Output Management","Andy Grove",1983,Liderlik,3
+355,"Elon Musk","Walter Isaacson",2023,Liderlik,5
+356,"Slow Productivity","Cal Newport",2024,Verimlilik,5
+357,Ultralearning,"Scott H. Young",2019,Verimlilik,4
+358,"Empire of the Summer Moon","S. C. Gwynne",2010,Tarih,5
+359,Caste,"Isabel Wilkerson",2020,Tarih,4
+360,"Silent Spring","Rachel Carson",1962,Bilim,5
+361,"The Double Helix","James D. Watson",1968,Bilim,5
+362,"The Honest Truth About Dishonesty","Dan Ariely",2012,Psikoloji,2
+363,Sway,"Ori Brafman and Rom Brafman",2008,Psikoloji,3
+364,Spark,"John J. Ratey with Eric Hagerman",2008,"Sağlık",5
+365,"The Obesity Code","Jason Fung",2016,"Sağlık",5
+366,"How to Think Like a Roman Emperor","Donald J. Robertson",2019,Felsefe,5
+367,"Born a Crime","Trevor Noah",2016,"Büyüme",5
+368,Originals,"Adam Grant",2016,"Büyüme",5
+369,"Hidden Potential","Adam Grant",2023,"Büyüme",3
+370,"TED Talks","Chris Anderson",2016,"İletişim",4
+371,Freakonomics,"Steven D. Levitt and Stephen J. Dubner",2005,Finans,5
+372,Moneyball,"Michael Lewis",2003,Liderlik,5
+373,"The Smartest Guys in the Room","Bethany McLean and Peter Elkind",2003,Finans,5
+374,Superforecasting,"Philip E. Tetlock and Dan Gardner",2015,Psikoloji,4
+375,"The Signal and the Noise","Nate Silver",2012,Bilim,5
+376,"The Innovators","Walter Isaacson",2014,Tarih,5
+377,"The Ghost Map","Steven Johnson",2006,Tarih,5
+378,"Billion Dollar Whale","Tom Wright and Bradley Hope",2018,Finans,5
+379,"So Good They Can't Ignore You","Cal Newport",2012,Verimlilik,4
+380,"The Master Switch","Tim Wu",2010,Tarih,5
+381,"The Wisdom of Crowds","James Surowiecki",2004,Psikoloji,5
+382,"David and Goliath","Malcolm Gladwell",2013,"Büyüme",4
+383,"Why Nations Fail","Daron Acemoglu and James A. Robinson",2012,Tarih,5
+384,"The Soul of a New Machine","Tracy Kidder",1981,Liderlik,5
+385,"Lost Moon","Jim Lovell and Jeffrey Kluger",1994,Liderlik,5
+386,"The Right Stuff","Tom Wolfe",1979,Tarih,4
+387,"Mountains Beyond Mountains","Tracy Kidder",2003,"Sağlık",5
+388,"The Hot Zone","Richard Preston",1994,Bilim,5
+389,"The Making of the Atomic Bomb","Richard Rhodes",1986,Tarih,5
+390,"The Premonition","Michael Lewis",2021,"Sağlık",4
+391,"Lab Girl","Hope Jahren",2016,Bilim,4
+392,Educated,"Tara Westover",2018,"Büyüme",4
+393,"The Boy Who Harnessed the Wind","William Kamkwamba and Bryan Mealer",2009,"Büyüme",5
+394,"Nickel and Dimed","Barbara Ehrenreich",2001,Finans,5
+395,"Fast Food Nation","Eric Schlosser",2001,"Sağlık",2
+396,Open,"Andre Agassi",2009,"Büyüme",4
+397,"The Power of Moments","Chip Heath, Dan Heath",2017,Psikoloji,5
+398,"The Dictator's Handbook","Bruce Bueno de Mesquita and Alastair Smith",2011,Liderlik,4
+399,Spillover,"David Quammen",2012,Bilim,4
+400,"The Mythical Man-Month","Frederick P. Brooks Jr.",1975,Verimlilik,3
+401,"Skunk Works","Ben R. Rich, Leo Janos",1994,Liderlik,5
+402,"Rocket Boys","Homer Hickam",1998,"Büyüme",5
+403,"The Idea Factory","Jon Gertner",2012,Bilim,5
+404,"Leonardo da Vinci","Walter Isaacson",2017,"Büyüme",5

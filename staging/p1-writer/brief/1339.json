@@ -1,0 +1,65 @@
+{
+  "story_id": 1339,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Sleep Revolution",
+    "author": "Arianna Huffington",
+    "year": "2016"
+  },
+  "confidence": "high",
+  "confidence_note": "The collapse, injury, 18-hour days and the medical tests are in Huffington's own words in launch interviews and reported by Fortune; she tells the story in the book. The old quotes ('If this is success...', 'third revolution') are not verified and dropped; the 4-5 hours sleep figure is not sourced and dropped.",
+  "facts": [
+    "On the morning of April 6, 2007, Arianna Huffington was lying on the floor of her home office in a pool of blood.",
+    "She had collapsed from exhaustion; on the way down her head hit the corner of her desk and she broke her cheekbone.",
+    "For the two years she was building The Huffington Post she had been working regular 18-hour days.",
+    "Afterwards she went from doctor to doctor, from a brain MRI to a CAT scan to an echocardiogram, to find out whether something deeper was wrong.",
+    "She writes that doctors' waiting rooms turned out to be good places to ask herself a lot of questions.",
+    "The tests pointed to exhaustion and lack of sleep.",
+    "In the book she names the belief behind the sleep crisis: that overwork and burnout are the price of success, with going without sleep worn as a badge of honor.",
+    "The book argues for seven to eight hours of sleep a night and warns about relying on sleep medications such as Ambien.",
+    "Huffington says she did not grasp the importance of sleep until 2007 and tells readers: 'I don't want you to make the mistakes I did.'"
+  ],
+  "scene_details": [
+    "the corner of a desk and a broken cheekbone",
+    "a brain MRI, a CAT scan, an echocardiogram",
+    "doctors' waiting rooms"
+  ],
+  "tension": "The founder of a booming site lay on her office floor, and the medical tests found nothing but exhaustion.",
+  "opening_idea": "Start with the date and the floor: April 6, 2007, a home office, blood, the corner of a desk.",
+  "lessons": [
+    {
+      "idea": "Treat bragging about little sleep as a warning, not a credential.",
+      "anchor": "18-hour days ending in a broken cheekbone; 'badge of honor'."
+    },
+    {
+      "idea": "Use a forced pause to ask what you are optimizing for.",
+      "anchor": "The waiting rooms."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What would you stop doing this week if you counted lost sleep as a real cost of your work?",
+  "use_cases": [
+    {
+      "situation": "A colleague boasts about sleeping four hours before a deadline",
+      "move": "Mention that Huffington's 18-hour days ended with her face on the corner of a desk, and ask what can wait until tomorrow.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family member works through every night",
+      "move": "Ask them to pick one night this week when the laptop closes at a fixed time.",
+      "context": "family"
+    },
+    {
+      "situation": "You are waiting at a doctor's office or stuck somewhere",
+      "move": "Use the wait the way Huffington did: write one question about how you are living.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Huffington needed a broken cheekbone to stop wearing sleeplessness as a badge; you can drop the badge earlier.",
+  "conversation_variants": {
+    "punchline_idea": "After two years of 18-hour days, Arianna Huffington woke up on her office floor with a broken cheekbone.",
+    "thirty_sec_idea": "April 2007, collapse, MRI-CAT-echo, nothing but exhaustion; waiting rooms and questions; the belief that burnout is the price of success.",
+    "question_idea": "Do you brag about how little you sleep?",
+    "key_contrast_idea": "Exhaustion as a badge"
+  }
+}

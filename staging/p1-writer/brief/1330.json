@@ -1,0 +1,61 @@
+{
+  "story_id": 1330,
+  "kind": "concept",
+  "book": {
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The two questions and the 'everything worthwhile' line are verified Kindle highlights. The rock-star fantasy is Manson's own example per a chapter summary; its exact wording, duration and details are not verified, so it is told without quotes or specifics. The old athlete and relationship examples and the 'great majority never succeed' claim are invented and dropped.",
+  "facts": [
+    "In the chapter 'Happiness Is a Problem', under 'Choose Your Struggle', Manson asks: 'What pain do you want in your life? What are you willing to struggle for?'",
+    "Earlier in the same chapter, under 'Happiness Comes from Solving Problems', Manson argues that problems never disappear; they get traded or upgraded, as when someone leaves a demanding boss to start a company and now answers to investors.",
+    "He says the question that decides how things turn out is not what you want to enjoy but 'What pain do you want to sustain?'",
+    "For years Manson fantasized about being a rock star; he wanted the stage and the result, not the work and practice it required, and it never happened.",
+    "In his account, the people who enjoy the stresses and uncertainties of the starving-artist life are the ones who end up living it and making it.",
+    "Kindle highlight: 'Everything worthwhile in life is won through surmounting the associated negative experience.'"
+  ],
+  "scene_details": [
+    "a long-running daydream of being on stage as a rock star",
+    "the starving artist's uncertain life that some people actually enjoy"
+  ],
+  "tension": "Almost everyone wants the result; Manson argues the result goes to the people who want its pain.",
+  "opening_idea": "Start with Manson's own unrealized rock-star dream.",
+  "lessons": [
+    {
+      "idea": "Choose a goal by the daily struggle you are willing to live with, not by the picture of the result.",
+      "anchor": "Rock-star fantasy without the practice; the starving artist who enjoys the uncertainty."
+    },
+    {
+      "idea": "Pain is part of anything worthwhile.",
+      "anchor": "'Everything worthwhile...' highlight."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which goal do you keep imagining the end of, and what everyday part of it would you actually have to like doing?",
+  "use_cases": [
+    {
+      "situation": "A friend says they want to start a business",
+      "move": "Ask which part of the daily grind they would enjoy even on bad weeks.",
+      "context": "social"
+    },
+    {
+      "situation": "You are choosing between two career paths",
+      "move": "Write down the typical bad day in each and pick the one whose bad day you can stand.",
+      "context": "self"
+    },
+    {
+      "situation": "A team member wants a promotion",
+      "move": "Talk about the new tasks and pressure that come with it, then ask which of those they want.",
+      "context": "oneonone"
+    }
+  ],
+  "pocket_idea": "Manson dreamed of the stage, not the practice: pick goals by the struggle you're willing to enjoy.",
+  "conversation_variants": {
+    "punchline_idea": "Manson's real test for a goal: what pain do you want to sustain?",
+    "thirty_sec_idea": "Manson's rock-star dream that never happened because he wanted the stage and not the work; the question 'what pain do you want'.",
+    "question_idea": "Which struggle do you secretly enjoy?",
+    "key_contrast_idea": "Want the result, want the work"
+  }
+}

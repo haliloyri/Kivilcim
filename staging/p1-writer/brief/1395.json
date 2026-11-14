@@ -1,0 +1,66 @@
+{
+  "story_id": 1395,
+  "kind": "concept",
+  "book": {
+    "title": "Eat That Frog!",
+    "author": "Brian Tracy",
+    "year": "2001"
+  },
+  "confidence": "medium",
+  "confidence_note": "Chapter 21 and 19 read in an early-edition full text. The old '40 percent lower productivity' study and '25/45/90 minute' blocks are not in the book and are dropped; the book's own numbers (50 percent shorter, up to 500 percent longer) are Tracy's estimates ('it has been estimated', no source) and must be hedged as such. Book gives 30/60/90 minute segments.",
+  "facts": [
+    "Chapter 21, 'Single Handle Every Task': once you begin, keep working without diversion until the job is 100 percent complete.",
+    "When tempted to stop, Tracy suggests repeating the words 'Back to work!' over and over.",
+    "He says concentrating single-mindedly can cut the time needed by 50 percent or more.",
+    "He writes that it 'has been estimated' (no source) that starting and stopping, picking a task up and putting it down, can increase the time needed by as much as 500 percent.",
+    "Each return costs: you must work out where you were, overcome inertia and rebuild momentum and rhythm. Stopping moves you back up the 'Efficiency Curve'.",
+    "Chapter 19: carve out thirty, sixty and ninety minute segments for important work; turn off the telephone, remove distractions, work non-stop.",
+    "His example: a salesperson resolves to phone prospects for one solid hour, between 10 and 11 AM.",
+    "He claims you can get three times as much done working at home in the morning without interruptions as in a busy office (his claim).",
+    "Tracy suggests planning work thoroughly before a business flight, so that once the plane takes off you can work non-stop for the entire flight.",
+    "Tracy writes that every great achievement of mankind was preceded by a long period of hard, concentrated work until the job was done.",
+    "He says that when you prepare thoroughly, begin, and refuse to stop until the job is done, you develop energy, enthusiasm and motivation and work faster and more effectively."
+  ],
+  "scene_details": [
+    "the words 'Back to work!' repeated aloud",
+    "the telephone turned off",
+    "one solid hour between 10 and 11 AM",
+    "a task picked up, put down, picked up again",
+    "a plane's whole flight used as an uninterrupted block"
+  ],
+  "tension": "Every pause on a task feels free, yet Tracy says each return costs time to find your place again.",
+  "opening_idea": "Open on the hour between 10 and 11 or on the words 'Back to work!', not on a study.",
+  "lessons": [
+    {
+      "idea": "The cost of an interruption is the restart, so protect one block for one job.",
+      "anchor": "Returning to a task means finding your place and rebuilding rhythm; Tracy's 'Back to work!'.",
+      "example": "A bookkeeper who answers a text mid-reconciliation and has to recount the column."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is the one job that would move forward most if you gave it a single hour with the phone off, and when could that hour be?",
+  "use_cases": [
+    {
+      "situation": "You keep leaving a report to check messages.",
+      "move": "Tracy says each return costs you finding your place again; set one block for the report with the phone off and say 'Back to work' when you drift.",
+      "context": "self"
+    },
+    {
+      "situation": "A colleague pulls you aside mid-task.",
+      "move": "Ask whether it can wait until your block ends in an hour, and give a concrete time.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Team meeting overloaded with parallel threads.",
+      "move": "Propose that each person owns one big task for one protected hour tomorrow, with no calls in it.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Pick one job, turn off the phone, work one block; every restart costs you finding your place again.",
+  "conversation_variants": {
+    "punchline_idea": "Tracy writes that starting and stopping a task can stretch it by as much as 500 percent, an estimate he gives without a source.",
+    "thirty_sec_idea": "Tracy's single-handling: pick the top task, keep at it until done, say 'Back to work' when you drift; stopping means finding your place again.",
+    "question_idea": "",
+    "key_contrast_idea": "one block, one job"
+  }
+}

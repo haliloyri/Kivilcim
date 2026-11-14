@@ -1,0 +1,35 @@
+{
+ "story_id": 1517,
+ "verdict": "keep",
+ "verify_note": "Keep: three kinds of bad data (compliments, fluff, ideas), the fool's gold line and the fluff forms verified in several detailed summaries. A dashboard example found in one report was dropped because it is not clearly the author's own. Old text's invented quotes dropped. Concept, medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Müşterinin altın görünümlü pirinci",
+  "description": "Rob Fitzpatrick üç kötü veri türü sayar: iltifat, lafla geçiştirme ve fikir. Her birinin çaresi, soruna en son ne zaman rastlandığını sormaktır.",
+  "hook": "\"Bunu kesinlikle alırdım\" size gerçekte ne söyler?",
+  "one_minute_summary": "Rob Fitzpatrick'in *The Mom Test* kitabı müşterilerin kötü cevaplarını üçe ayırır: iltifat, lafla geçiştirme ve fikir. İltifat altın görünümlü pirinçtir. Lafla geçiştirme genel iddialar (\"hep\"), gelecek vaatleri (\"alırdım\") ve varsayımlardır (\"belki\"). En tehlikelisi \"Bunu kesinlikle alırdım\" cümlesidir. Çare, soruna en son ne zaman gerçekten rastlandığını sormak. Özellik isteklerinde neden istediklerini ve bugün ne yaptıklarını sorun. Her seferinde ilk adım, görüşü bırakıp geçmişe sormaktır."
+ },
+ "en": {
+  "title": "Fool's gold from customers",
+  "description": "Rob Fitzpatrick names three kinds of bad data: compliments, fluff and ideas. Each is answered by asking about the last time the problem happened.",
+  "hook": "What does 'I would definitely buy that' really tell you?",
+  "one_minute_summary": "Rob Fitzpatrick's *The Mom Test* sorts bad customer answers into compliments, fluff and ideas. Compliments are fool's gold: shiny and worthless. Fluff comes as generic claims ('I always'), future promises ('I would') and hypotheticals ('I might'), and 'I would definitely buy that' is the most dangerous. The remedy is to ask about the last time the problem actually happened. For feature requests, ask why they want it and what they do now."
+ },
+ "es": {
+  "title": "El oro de tontos del cliente",
+  "description": "Rob Fitzpatrick nombra tres tipos de mal dato: cumplidos, paja e ideas. Cada uno se responde preguntando por la última vez que pasó el problema.",
+  "hook": "¿Qué te dice de verdad «lo compraría sin dudar»?",
+  "one_minute_summary": "*The Mom Test*, de Rob Fitzpatrick, clasifica las malas respuestas de los clientes en cumplidos, paja e ideas. Los cumplidos son oro de tontos: brillantes y sin valor. La paja son afirmaciones generales («siempre»), promesas («lo compraría») e hipótesis («quizá»), y «lo compraría sin dudar» es la más peligrosa. El remedio es preguntar por la última vez que pasó el problema. Ante una petición de función, pregunta por qué la quieren y qué hacen ahora."
+ },
+ "de": {
+  "title": "Katzengold im Kundengespräch",
+  "description": "Rob Fitzpatrick nennt drei Arten schlechter Daten: Komplimente, Geschwätz und Ideen. Jede beantwortest du mit der Frage nach dem letzten Mal.",
+  "hook": "Was sagt „Das würde ich auf jeden Fall kaufen“ wirklich?",
+  "one_minute_summary": "Rob Fitzpatricks *The Mom Test* sortiert schlechte Kundenantworten in Komplimente, Geschwätz und Ideen. Komplimente sind Katzengold: glänzend und wertlos. Geschwätz sind allgemeine Behauptungen („immer“), Versprechen („würde ich“) und Möglichkeiten („vielleicht“), und „Das würde ich auf jeden Fall kaufen“ ist am gefährlichsten. Das Mittel: nach dem letzten Mal fragen, als das Problem wirklich auftrat. Bei Funktionswünschen frag, warum sie sie wollen und was sie heute tun."
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1526,
+  "verdict": "keep",
+  "verify_note": "Keep: title anecdote and Short Assignments (one-inch frame, Doctorow) confirmed in summaries and quote pages. Old conflation of the bird story with the one-inch frame, the biology project and the crying removed.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kuş kuş ilerlemek",
+    "description": "Anne Lamott'un kardeşi, ertesi gün teslim edilecek kuş raporunun karşısında donup kalmıştı. Babasının tek cümlesi işi bir kuşluk parçaya indirdi.",
+    "hook": "Başlayamadığınız işin yalnızca ilk kuşu hangisi?",
+    "one_minute_summary": "Anne Lamott'un on yaşındaki kardeşinin kuşlar üzerine bir raporu vardı. Üç ayı olmuştu, rapor ertesi gün teslim edilecekti ve çocuk henüz başlamamıştı. Masada bağlama kâğıdı, kalemler ve açılmamış kuş kitapları duruyordu. Babaları yanına oturup omzuna kolunu attı ve 'Kuş kuş, evlat' dedi. Lamott aynı fikri yazarlara da önerir: işi kısa görevlere böl. Masasında bir inçlik resim çerçevesi tutar ve yalnızca onun içinden görebildiği kadarını yazar. E. L. Doctorow'un farlar benzetmesi de aynı yere varır: gece yolunda yalnızca farların gösterdiği kadarını görürsünüz, yine de bütün yolu gidebilirsiniz."
+  },
+  "en": {
+    "title": "Bird by bird at the table",
+    "description": "Anne Lamott's ten-year-old brother sat frozen in front of a bird report due the next day. One sentence from their father cut the job down to a single bird.",
+    "hook": "Which part of the task you keep avoiding could you finish before tonight?",
+    "one_minute_summary": "Anne Lamott's brother was ten, with a report on birds due the next day and three months already gone. He sat at the table with binder paper, pencils and unopened bird books, close to tears. Their father put an arm around him and said, 'Bird by bird, buddy.' Lamott carries the idea into her advice on short assignments, keeps a one-inch picture frame on her desk, and quotes E. L. Doctorow on headlights."
+  },
+  "es": {
+    "title": "Pájaro a pájaro",
+    "description": "Un niño de diez años no sabía cómo empezar un informe sobre aves que vencía al día siguiente. Una frase de su padre se convirtió en el título del libro de Anne Lamott.",
+    "hook": "¿Qué parte de esa tarea que evitas podrías terminar hoy mismo?",
+    "one_minute_summary": "En su escritorio, una escritora guarda un marco de una pulgada que le recuerda que solo debe escribir lo que ve a través de él. La idea nace en una noche de la infancia de Anne Lamott: su hermano, de diez años, tenía un informe sobre pájaros para el día siguiente y no había empezado. Su padre se sentó a su lado, le pasó un brazo por los hombros y le dijo: 'Pájaro a pájaro, amigo'. Lamott lo une a la imagen de E. L. Doctorow sobre conducir de noche."
+  },
+  "de": {
+    "title": "Vogel für Vogel",
+    "description": "Ein Zehnjähriger sitzt vor einem Vogelbericht, der morgen fällig ist. Der Satz seines Vaters gab Anne Lamotts Buch den Titel.",
+    "hook": "Welches Stück einer großen Aufgabe könntest du noch heute erledigen?",
+    "one_minute_summary": "Anne Lamotts Bruder war zehn und hatte drei Monate Zeit für einen Bericht über Vögel, ohne angefangen zu haben. Am Abend vor der Abgabe saß er mit Ordnerpapier, Bleistiften und ungeöffneten Vogelbüchern am Tisch, den Tränen nah. Der Vater setzte sich zu ihm, legte den Arm um seine Schulter und sagte: 'Vogel für Vogel, Kumpel.' Lamott überträgt das auf kurze Schreibaufgaben, hält einen Bilderrahmen von einem Zoll bereit und zitiert E. L. Doctorow über Scheinwerfer."
+  }
+}

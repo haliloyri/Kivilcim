@@ -1,0 +1,35 @@
+{
+  "story_id": 1650,
+  "verdict": "keep",
+  "verify_note": "Keep: rebuilt on Brown's actual claim that resentment belongs to the envy family, not anger; the old anger-alive and resentment-dead frame, forgiveness advice and anger test were not found and are dropped. Secondary sources only, no direct quote used.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kin kıskançlığın komşusu",
+    "description": "Brené Brown kinin öfkenin yanında durduğunu sanıyordu. Sonra onun hasetle aynı ailede olduğunu gördü.",
+    "hook": "Birine kızgınlığınızın altında onda olan hangi şeyi istiyorsunuz?",
+    "one_minute_summary": "Brené Brown, Atlas of the Heart'ta uzun süre kini öfkeye yakın saydığını anlatır. Duygu araştırmacısı Marc Brackett'la yapılan bir görüşmeden sonra kinin öfke ailesinden olmadığını, hasedin bir işlevi olduğunu gördü. Bir özete göre kin, algılanan haksızlığa bağlı bir acılıktır ve öfkenin altında haset yatar. Başka bir özet, kinin çoğu zaman fiziksel ya da duygusal yorgunluktan sonra geldiğini söyler. Kitapta kin, kıyas bölümünde haset ve kıskançlığın komşusudur. Pratik sonuç şu: kine kapıldığınızda önce karşınızdakinde olan ve sizin istediğiniz şeye bakın."
+  },
+  "en": {
+    "title": "Resentment lives next to envy",
+    "description": "Brené Brown had always thought resentment lived close to anger. She came to see it as part of the envy family.",
+    "hook": "Under the resentment you feel now, what do you want that they have?",
+    "one_minute_summary": "In Atlas of the Heart, Brené Brown says she had always thought resentment lived close to anger. After a conversation with emotions researcher Marc Brackett, she concluded that it is not part of the anger family at all but a function of envy. One summary describes it as bitterness tied to perceived unfairness, and another says it often follows exhaustion. In her map it appears in the comparison section beside envy and jealousy. The practical reading: when resentment shows up, look first at what the other person has that you want."
+  },
+  "es": {
+    "title": "El resentimiento vive junto a la envidia",
+    "description": "Brené Brown creía que el resentimiento estaba cerca del enfado. Llegó a verlo como parte de la familia de la envidia.",
+    "hook": "Bajo el resentimiento que sientes ahora, ¿qué quieres que tiene la otra persona?",
+    "one_minute_summary": "En Atlas of the Heart, Brené Brown cuenta que siempre había pensado que el resentimiento vivía cerca del enfado. Tras una conversación con el investigador de emociones Marc Brackett concluyó que no pertenece a la familia del enfado, sino que es una función de la envidia. Un resumen lo describe como amargura ligada a una injusticia percibida y otro dice que suele llegar tras el agotamiento. En su mapa aparece en la sección de comparaciones junto a la envidia y los celos. Lectura práctica: cuando surja el resentimiento, mira primero qué tiene el otro que tú quieres."
+  },
+  "de": {
+    "title": "Groll wohnt neben dem Neid",
+    "description": "Brené Brown hielt Groll lange für einen Nachbarn der Wut. Dann sah sie ihn als Teil der Neid-Familie.",
+    "hook": "Was willst du unter dem Groll, den du gerade spürst, was der andere hat?",
+    "one_minute_summary": "In Atlas of the Heart erzählt Brené Brown, dass sie Groll immer in der Nähe der Wut verortet hatte. Nach einem Gespräch mit dem Emotionsforscher Marc Brackett kam sie zu dem Schluss, dass er gar nicht zur Wut-Familie gehört, sondern eine Funktion des Neids ist. Eine Zusammenfassung beschreibt ihn als Bitterkeit über empfundene Ungerechtigkeit, eine andere sagt, er folge oft auf Erschöpfung. In ihrer Karte steht er im Abschnitt über das Vergleichen neben Neid und Eifersucht. Praktisch heißt das: Taucht Groll auf, schau zuerst, was der andere hat, das du willst."
+  }
+}

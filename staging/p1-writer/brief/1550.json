@@ -1,0 +1,57 @@
+{
+  "story_id": 1550,
+  "kind": "concept",
+  "book": {
+    "title": "Traction: Get a Grip on Your Business",
+    "author": "Gino Wickman",
+    "year": ""
+  },
+  "confidence": "medium",
+  "confidence_note": "Engineer example and definitions from a summary; capacity wording and 'ask for every seat' from general EOS knowledge. Old salesperson anecdote dropped.",
+  "facts": [
+    "Right people share core values; right seats fit by GWC.",
+    "GWC: Get it, Want it, Capacity to do it; a no on any means not right for that seat.",
+    "Capacity covers mental, physical and emotional strength and time.",
+    "People Analyzer rates each person on each core value: most of the time, sometimes, never.",
+    "Example: an engineer gets an executive role and has the capacity but does not want it."
+  ],
+  "scene_details": [
+    "a seat",
+    "a chart with columns",
+    "an engineer"
+  ],
+  "tension": "Capable but unwilling.",
+  "opening_idea": "An engineer who does not want the executive seat.",
+  "lessons": [
+    {
+      "idea": "Test a role with three questions.",
+      "anchor": "GWC, engineer example"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which of get, want, capacity is missing in a role you hold?",
+  "use_cases": [
+    {
+      "situation": "Offering an employee a new role",
+      "move": "Do you want it? Do you have the time and energy?",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Making a high performer a manager",
+      "move": "Get it, want it, capacity: all three yes before we decide.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You were offered a promotion",
+      "move": "I can do it, but do I want it? Write it down.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Grasp, want, capacity: if one says no, the problem may be the seat.",
+  "conversation_variants": {
+    "punchline_idea": "A capable person who does not want the seat is not the right fit.",
+    "thirty_sec_idea": "GWC and the engineer.",
+    "question_idea": "",
+    "key_contrast_idea": "able vs willing"
+  }
+}

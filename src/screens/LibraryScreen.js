@@ -12,9 +12,9 @@ import { useStories } from '../context/StoriesContext';
 import { t } from '../locales/i18n';
 import CategoryPill from '../components/CategoryPill';
 import ScreenHeader from '../components/ScreenHeader';
-import LibraryEmptyArt from '../components/LibraryEmptyArt';
+import Albi from '../components/Albi';
 import { getCategoryTheme, getCategoryImage } from '../utils/categoryImages';
-import { intlLocaleFor } from '../utils/locale';
+import { intlLocaleFor, toUpperFor } from '../utils/locale';
 import { extractShareParts } from '../utils/storyMarkup';
 import useRecordedStoryIds from '../hooks/useRecordedStoryIds';
 
@@ -98,7 +98,7 @@ const ResumeCard = ({ story, progress, width, onPress }) => {
     >
       <HeroSun color={colors.dawn} />
       <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 12, letterSpacing: 1, color: colors.dawn, textTransform: 'uppercase' }} numberOfLines={1}>
-        {catLabel}{mins ? `  ·  ${mins} ${t('minLabel', lang)}` : ''}
+        {toUpperFor(catLabel, lang)}{mins ? `  ·  ${mins} ${t('minLabel', lang)}` : ''}
       </Text>
       <Text style={{ fontFamily: 'PlayfairDisplay_700Bold', fontSize: 22, lineHeight: 26, color: HERO_TEXT, marginTop: 10, marginBottom: 18, maxWidth: '78%' }} numberOfLines={3}>
         {story.title}
@@ -457,10 +457,6 @@ const LibraryScreen = ({ navigation }) => {
       marginHorizontal: hPad, marginTop: 8, borderRadius: layout.radius.card, padding: 22, paddingTop: 26,
       backgroundColor: colors.heroSurface, borderWidth: 1, borderColor: colors.heroBorder, overflow: 'hidden',
     },
-    heroEmptyIcon: {
-      width: 84, height: 84, borderRadius: 42, alignItems: 'center', justifyContent: 'center',
-      backgroundColor: 'rgba(245,241,232,0.10)',
-    },
     heroEmptyTitle: {
       fontFamily: 'PlayfairDisplay_700Bold', fontSize: 24, lineHeight: 30, color: '#F5F1E8', marginTop: 28,
     },
@@ -711,9 +707,7 @@ const LibraryScreen = ({ navigation }) => {
         ListEmptyComponent={emptyState.hero ? (
           <View style={styles.heroEmpty}>
             <HeroSun color={colors.dawn} />
-            <View style={styles.heroEmptyIcon}>
-              <LibraryEmptyArt kind={emptyState.art} accent={colors.dawn} size={52} />
-            </View>
+            <Albi pose={emptyState.art === 'recordings' ? 'dinleme' : 'bos_kutuphane'} size={84} disc />
             <Text style={styles.heroEmptyTitle}>{emptyState.title}</Text>
             <Text style={styles.heroEmptyText}>{emptyState.sub}</Text>
             <TouchableOpacity

@@ -1,0 +1,61 @@
+{
+ "story_id": 1346,
+ "kind": "concept",
+ "book": {
+  "title": "The Paradox of Choice",
+  "author": "Barry Schwartz",
+  "year": "2004"
+ },
+ "confidence": "high",
+ "confidence_note": "Verified in full text, ch. 4. The two daughters are an unnamed friend's children as Schwartz reports them; no names or ages beyond 'twelve-year-old' for the younger. Maximizer-unhappiness link is correlation, as Schwartz himself notes. The old claim that research shows maximizers make better decisions is dropped: the book only says they 'might do better objectively'.",
+ "facts": [
+  "A friend of Schwartz and his wife fought with their style-conscious older daughter about clothes; they gave her a lump-sum clothing allowance and the arguments stopped.",
+  "They did the same with the younger daughter. The older, a satisficer, bought what she liked, often on impulse, without worrying about what she passed up.",
+  "The younger, a maximizer about clothing, felt anguish on each trip: was this the best use of her money, would she regret it two months later when seasons and styles changed. Schwartz: 'This was too much to ask of a twelve-year-old.' Her 'clothing liberation' gave much worry and little joy.",
+  "A maximizer can only know she has the best sweater by checking all the sweaters; a satisficer has standards, searches until something meets them, and stops.",
+  "The satisficer is not settling for mediocrity; she 'is content with the merely excellent as opposed to the absolute best'.",
+  "Herbert Simon introduced 'satisficing' in the 1950s and argued that once the costs of searching are counted, satisficing is the maximizing strategy.",
+  "Schwartz and colleagues built a 13-item survey scored 13 to 91 and gave it to several thousand people; those scoring 65 or more had depression scores in the borderline clinical range. He stresses this is correlation, not proven cause.",
+  "Maximizing is domain specific; nobody maximizes everything, so most people can satisfice more often."
+ ],
+ "scene_details": [
+  "a lump-sum clothing allowance",
+  "the younger girl asking whether she'll regret an item two months later when styles change",
+  "a survey item: 'I never settle for second best'",
+  "a score of 65 or more out of 91"
+ ],
+ "tension": "Two sisters get the same allowance and the same freedom; one enjoys it, the other is worn out by it.",
+ "opening_idea": "Open on the clothing allowance that ended the fights with the older daughter and then failed with the younger.",
+ "lessons": [
+  {
+   "idea": "Set your 'good enough' standard before you start looking, so the search has an end.",
+   "anchor": "The satisficer stops when something meets her standard; the younger daughter had no stopping point."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "In which part of your life do you keep searching after you've found something that already meets your standard?",
+ "use_cases": [
+  {
+   "situation": "Child agonizing over spending birthday money",
+   "move": "Schwartz tells of a twelve-year-old for whom a clothing allowance meant worry; help the child name two things the item must do, then let them stop.",
+   "context": "family"
+  },
+  {
+   "situation": "Colleague can't finalize a vendor after weeks",
+   "move": "Ask which vendor already meets every requirement and suggest signing that one.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "You're on the fifth hotel comparison site",
+   "move": "Write your three must-haves, book the first that meets them, close the tabs.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Write your standard before you shop; when something meets it, stop, like the sister who enjoyed her allowance.",
+ "conversation_variants": {
+  "punchline_idea": "The same clothing allowance ended one sister's fights and gave the other only worry.",
+  "thirty_sec_idea": "Friend's two daughters get a clothing allowance; older buys what she likes, younger agonizes over best use and regret; Schwartz: maximizer vs satisficer; maximizers on his scale reported less happiness.",
+  "question_idea": "",
+  "key_contrast_idea": "best versus good enough"
+ }
+}

@@ -1,0 +1,61 @@
+{
+  "story_id": 1581,
+  "kind": "anecdote",
+  "book": {
+    "title": "To Sell Is Human",
+    "author": "Daniel H. Pink",
+    "year": "2012"
+  },
+  "confidence": "high",
+  "confidence_note": "The art-student study (Getzels and Csikszentmihalyi) is in Pink's own text as the basis of the clarity idea; counts (about three dozen students, 27 objects, a decade, then another) are from the book excerpt. The two-sentence framing of the questions is from secondary sources and is therefore left out of the story. The old text's two-group honesty experiment ('this product is not right for everyone') was not found anywhere and is dropped. The two-question framing is from secondary sources (low confidence) and is introduced as Csikszentmihalyi's later description.",
+  "facts": [
+    "The study was run by Jacob Getzels and Mihaly Csikszentmihalyi in the 1960s; the book describes it as the root of Pink's idea of clarity.",
+    "About three dozen fourth-year art students were given a table of 27 objects and asked to arrange a still life and draw it.",
+    "Some students solved the task quickly. Others handled more objects and took longer.",
+    "A decade later about half of them had left the art world.",
+    "The half who had become professional artists were almost entirely the ones who had taken longer to find a problem.",
+    "A further decade on, the problem finders were significantly more successful, by the standards of the artistic community, than their peers.",
+    "Pink uses this for clarity: the ability to help others see problems they did not know they had, not only solve the one they name.",
+    "Csikszentmihalyi later described the two starting questions as 'How can I produce a good drawing?' and 'What good drawing can I produce?' (secondary sources; wording not confirmed as Pink's)."
+  ],
+  "scene_details": [
+    "a table with 27 objects",
+    "some students picking up more objects, taking longer",
+    "a decade later, then another decade"
+  ],
+  "tension": "The students who took longest over the preparation were the ones still in the art world ten and twenty years later.",
+  "opening_idea": "Start with the table of 27 objects and the art students who kept handling them while others began drawing.",
+  "lessons": [
+    {
+      "idea": "Spending time finding the right problem can matter more than solving the first one quickly.",
+      "anchor": "Problem finders among the art students were almost all the ones who became professional artists.",
+      "example": "A baker asked to fix a slow Saturday could first find out whether it is the oven, the queue or the recipe that holds things up."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which task are you rushing to solve right now, and what question would you ask before starting, if you gave it ten more minutes?",
+  "use_cases": [
+    {
+      "situation": "Your team starts fixing a problem at once.",
+      "move": "Ask for ten minutes to list what we are actually trying to solve; the art students who took longer over the objects did better a decade later.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A client asks for a specific change.",
+      "move": "Ask what is happening behind the request before agreeing to the change.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You face a vague goal.",
+      "move": "Write three versions of the problem and choose which one to work on.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Before you solve the first problem, spend ten minutes finding out whether it is the right one.",
+  "conversation_variants": {
+    "punchline_idea": "The art students who lingered over the 27 objects were the ones still painting a decade later.",
+    "thirty_sec_idea": "Art students were given 27 objects and asked to arrange a still life and draw it. Some started quickly; others handled more objects and took longer. A decade later about half had left art, and those who stayed were almost all the slower ones. Another decade on, they were more successful by the art world's standards. Pink calls it problem finding.",
+    "question_idea": "What problem did you solve this month before asking if it was the right one?",
+    "key_contrast_idea": "fast fix vs right question"
+  }
+}

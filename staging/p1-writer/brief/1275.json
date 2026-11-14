@@ -1,0 +1,65 @@
+{
+  "story_id": 1275,
+  "kind": "concept",
+  "book": {
+    "title": "When: The Scientific Secrets of Perfect Timing",
+    "author": "Daniel H. Pink",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The 48 percent figure and 'about half of marathon runners are first-timers' are book highlights; the old 'nearly double' and the 'last step effect' label were not supported and were dropped. The 'meaning audit' framing is Alter and Hershfield's as reported by secondary sources. Gersick's eleven-day case study detail comes from a reader highlight; Berger and Pope from published coverage. The 9-ender effect has been contested in later reanalyses; the story states this caveat.",
+  "facts": [
+    "Adam Alter and Hal Hershfield call people at ages ending in nine (29, 39, 49) '9-enders'.",
+    "They found 9-enders are overrepresented among first-time marathon runners by 48 percent; about half the people in a typical marathon are first-timers.",
+    "They suggest that nearing the end of a decade people run a kind of 'meaning audit' of their lives.",
+    "Connie Gersick studied business students given eleven days for a case analysis; around the midpoint, day six, groups dropped their weak first approach and adopted a new strategy.",
+    "Berger and Pope found that in thousands of NBA games teams trailing by one point at halftime won more often than expected.",
+    "Pink's advice: make midpoints visible, and when you reach one, say 'uh-oh' and get going rather than 'oh no' and give up.",
+    "Pink: midpoints can bring us down in a slump or fire us up as a spark.",
+    "Pink notes that after the midpoint teams are less open to new ideas but most open to coaching.",
+    "In Berger and Pope's analysis the halftime one-point-behind effect was roughly half the size of home-court advantage, and lab experiments pointed to motivation as the cause.",
+    "Alter and Hershfield also reported that 9-enders who ran marathons ran faster than people two years younger or older, which they read as harder training.",
+    "Caveat: later work questioned the 9-ender findings; a 2015 commentary in Frontiers in Psychology found no evidence of an intensified search for meaning near a new decade, and a reanalysis argued the marathon effect weakens when whole decades are compared."
+  ],
+  "scene_details": [
+    "age 29 at the start line",
+    "the 48 percent",
+    "day six of eleven",
+    "down by one at halftime"
+  ],
+  "tension": "A birthday changes nothing physical, yet 29-year-olds sign up for their first marathon far more than 28-year-olds.",
+  "opening_idea": "Open at a marathon start line full of first-timers, many of them 29, 39 or 49.",
+  "lessons": [
+    {
+      "idea": "Mark the middle of a long project so it can work as a wake-up call instead of a slump.",
+      "anchor": "Gersick's day-six switch; down by one at halftime.",
+      "example": "A student writing a thesis puts a dated halfway review in the calendar and rewrites the plan that day."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where is the halfway point of something you are working on now, and what would you change if you reached it this week?",
+  "use_cases": [
+    {
+      "situation": "A long project sagging in the middle.",
+      "move": "Call a midpoint check; Pink cites teams that dropped a weak approach around day six of eleven.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend turning 39 says it's too late.",
+      "move": "Mention that 9-enders are 48% overrepresented among first-time marathoners and ask what they would audit.",
+      "context": "social"
+    },
+    {
+      "situation": "Your own goal feels stalled.",
+      "move": "Mark today as halftime and decide one change.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A team slightly behind at halftime fights harder; mark your project's middle and treat it as halftime.",
+  "conversation_variants": {
+    "punchline_idea": "People in the last year of a decade are 48 percent overrepresented among first-time marathoners.",
+    "thirty_sec_idea": "Alter and Hershfield found 9-enders far more likely to run a first marathon. Pink adds midpoints: student teams switched strategy around day six of eleven, and NBA teams down one at halftime won more often.",
+    "question_idea": "What did you start at 29, 39 or 49?",
+    "key_contrast_idea": "slump or wake-up call"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "story_id": 1661,
+  "kind": "concept",
+  "book": {
+    "title": "The Second Mountain",
+    "author": "David Brooks",
+    "year": "2019"
+  },
+  "confidence": "high",
+  "confidence_note": "Verified in a full text of the book (commitment chapter, ch. 2, decision chapter). Old text's 'maybe a better one exists' examples are dropped; 'commitment feels like a loss of freedom then gains identity' is replaced by Brooks's own freedom-to versus freedom-from passage. Commitment is Brooks's argument, not a finding.",
+  "facts": [
+    "Brooks writes that after several years of pursuing open options 'it's not so much that you lose the thread of the meaning of your life; you have trouble even staying focused on the question.'",
+    "He notes people deliberate more over small choices than big ones: before buying a car they read ratings and check resale values; for a vocation they 'just sort of slide rather than decide'; they marry the person they happen to be living with.",
+    "'On the first mountain, a person makes individual choices and keeps their options open. The second mountain is a vale of promise making.'",
+    "Most of us make four big commitments: to a vocation, to a spouse and family, to a philosophy or faith, to a community. All require a vow, an investment of time and effort, 'a willingness to close off other options'.",
+    "A commitment is 'making a promise to something without expecting a return'; 'I can't not do this.' A contract is weighing pros and cons and the person does not change; a commitment 'changes who you are'.",
+    "A commitment is love and promise 'put under law': people bind their future selves to obligations for moments when feelings falter ('falling in love with something and then building a structure of behavior around it for those moments when love falters').",
+    "'Our commitments give us our identity. They are how we introduce ourselves to strangers.'",
+    "'Freedom from' versus 'freedom to': 'You have to chain yourself to the piano and practice for year after year if you want to have the freedom to really play.' Tim Keller: real freedom 'is not so much the absence of restrictions as finding the right ones.'",
+    "'A thick life is defined by commitments and obligations. The life well lived is a journey from open options to sweet compulsions.'",
+    "Brooks quotes L. A. Paul on the big choices of life: 'You shouldn't fool yourself, you have no idea what you are getting into.'",
+    "Brooks: deep commitment 'happens when some person or cause or field of research has become part of your very identity': 'I'm a musician. I'm a scientist. I'm a Marine.'",
+    "Brooks notes that 'commitment' derives from the Latin mittere, 'to send': the committed person sends herself out and gives another a claim."
+  ],
+  "scene_details": [
+    "a car bought after reading the ratings and the resale values",
+    "a career slid into because someone gave you a job",
+    "a person chained to the piano year after year",
+    "'I can't not do this'"
+  ],
+  "tension": "People research a car for days and slide into a career and a marriage; Brooks says the second kind of choice is where freedom is actually spent.",
+  "opening_idea": "Open on the car bought after reading every rating next to the career entered by sliding.",
+  "lessons": [
+    {
+      "idea": "Choose what to give up on purpose, and bind your future self to it; the structure keeps you going when the feeling fades.",
+      "anchor": "The piano chain and the commitments built under law.",
+      "example": "A runner who signs up for a spring race and books a Saturday group run so the plan survives a tired week."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which one commitment in your life do you actually keep because of a structure around it, and what would a similar structure do for the one you keep postponing?",
+  "use_cases": [
+    {
+      "situation": "You keep postponing a decision about a path you half-want.",
+      "move": "Write down what you would have to close off to commit, as Brooks says every commitment requires, and see whether you still want it.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend has drifted between options for years.",
+      "move": "Ask what they would be willing to chain themselves to, like the pianist; avoid telling them what to choose.",
+      "context": "social"
+    },
+    {
+      "situation": "A partner and you both avoid naming your commitment.",
+      "move": "Ask what structure around it would keep you going on a tired week.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Brooks says you chain yourself to the piano to gain the freedom to play: pick the chain, not just the wish.",
+  "conversation_variants": {
+    "punchline_idea": "People study the ratings before buying a car and slide into a career, Brooks says, though the big choices need the most deliberation.",
+    "thirty_sec_idea": "Brooks sees people deliberate over cars and drift into jobs and marriages; his answer is commitment, a promise with a structure around it, with freedom as the freedom to play, bought by years at the piano.",
+    "question_idea": "",
+    "key_contrast_idea": "open options, chosen chains"
+  }
+}

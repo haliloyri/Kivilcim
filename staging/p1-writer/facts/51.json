@@ -1,0 +1,163 @@
+{
+ "book_no": 51,
+ "title": "As a Man Thinketh",
+ "authors": "James Allen",
+ "year": "1903",
+ "sources": [
+  "https://www.gutenberg.org/cache/epub/4507/pg4507.txt"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Foreword: 'This little volume (the result of meditation and experience) is not intended as an exhaustive treatise...' Its aim is to show that people 'themselves are makers of themselves' by the thoughts they choose and encourage.",
+   "source": "Gutenberg full text, Foreword",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "'A man's mind may be likened to a garden, which may be intelligently cultivated or allowed to run wild; but whether cultivated or neglected, it must, and will, bring forth. If no useful seeds are put into it, then an abundance of useless weed-seeds will fall therein, and will continue to produce their kind.'",
+   "source": "Gutenberg, 'Effect of Thought on Circumstances'",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "As a gardener keeps his plot free from weeds and grows the flowers and fruits he requires, a man may weed out wrong, useless and impure thoughts and cultivate right, useful and pure ones; he then discovers he is the 'master-gardener of his soul'.",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "'Every thought-seed sown or allowed to fall into the mind, and to take root there, produces its own, blossoming sooner or later into act.' 'Nothing can come from corn but corn, nothing from nettles but nettles.'",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "'Circumstance does not make the man; it reveals him to himself.' 'Men are anxious to improve their circumstances, but are unwilling to improve themselves; they therefore remain bound.'",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Allen's three cases: a wretchedly poor man who wants better home comforts but shirks his work and deceives his employer because his wages are low; a rich man with a painful disease from gluttony who will pay large sums for a cure but will not give up rich food; an employer who uses crooked measures to avoid paying the regulation wage, cuts his workers' pay to raise profits, goes bankrupt in reputation and riches, and blames circumstances.",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Allen adds that a person's whole soul-condition cannot be judged by another from the outside of his life: an honest man may suffer privations, a dishonest one may acquire wealth.",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Allen claims 'Suffering is always the effect of wrong thought in some direction' and that 'Every man is where he is by the law of his being'; 'A man does not come to the almshouse or the jail by the tyranny of fate or circumstance'.",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Editorial caveat: Allen's claim that circumstances and suffering always follow from thought is a 1903 moral-philosophical assertion, not an empirical finding; poverty and illness have causes outside a person's thinking.",
+   "source": "editorial (no study cited in the book)",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Chapter 'Serenity': 'Calmness of mind is one of the beautiful jewels of wisdom. It is the result of long and patient effort in self-control.' The calm man 'ceases to fuss and fume and worry and grieve'.",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "'Even the ordinary trader will find his business prosperity increase as he develops a greater self-control and equanimity, for people will always prefer to deal with a man whose demeanour is strongly equable.'",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "The strong, calm man 'is like a shade-giving tree in a thirsty land, or a sheltering rock in a storm.' Allen asks how many people 'sour their lives' and 'ruin all that is sweet and beautiful by explosive tempers'.",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f13",
+   "claim": "The book closes: 'Keep your hand firmly upon the helm of thought... Self-control is strength; Right Thought is mastery; Calmness is power. Say unto your heart, \"Peace, be still!\"'",
+   "source": "Gutenberg",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "'Humanity surges with uncontrolled passion, is tumultuous with ungoverned grief, is blown about by anxiety and doubt; only the wise man, only he whose thoughts are controlled and purified, makes the winds and the storms of the soul obey him.' 'In the ocean of life the isles of Blessedness are smiling, and the sunny shore of your ideal awaits your coming.'",
+   "source": "Gutenberg, 'Serenity'",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Quote 'Zihin de öyle; kasıtlı olarak beslenmezse rastgele büyür' (1285)",
+   "reason": "Not Allen's wording; the real passage is f2."
+  },
+  {
+   "claim": "Modern psychology confirms circumstances matter less than believed (1286)",
+   "reason": "Not in the book; unsourced claim."
+  },
+  {
+   "claim": "Quote 'You may not change everything outside, but you can change everything inside' (1286)",
+   "reason": "Not in the book."
+  },
+  {
+   "claim": "Same circumstances, two people build different lives (1286)",
+   "reason": "Not Allen's example; his examples are f6."
+  },
+  {
+   "claim": "Buddha, Newton during the Cambridge plague, Thoreau at Walden (1287)",
+   "reason": "Not in the book; the word 'silence' or 'solitude' does not appear in the text."
+  },
+  {
+   "claim": "Default mode network neuroscience (1287)",
+   "reason": "Not in the book."
+  },
+  {
+   "claim": "Quote 'In silence, when mental noise falls quiet, a man can see his own nature more clearly' (1287)",
+   "reason": "Not in the book."
+  },
+  {
+   "claim": "Allen's practice: set aside daily phone-free silent time (1287)",
+   "reason": "Not in the book."
+  }
+ ],
+ "stories": {
+  "1285": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4"
+   ],
+   "note": "Garden metaphor is the opening of the main chapter."
+  },
+  "1286": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9"
+   ],
+   "note": "Uses Allen's three cases with an editorial caveat."
+  },
+  "1287": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f10",
+    "f11",
+    "f12",
+    "f13",
+    "f14"
+   ],
+   "note": "Silence/retreat theme is absent; refocused on the book's 'Serenity' chapter (calmness as the jewel of wisdom). Title changes."
+  }
+ }
+}

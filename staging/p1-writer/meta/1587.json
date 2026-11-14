@@ -1,0 +1,35 @@
+{
+ "story_id": 1587,
+ "verdict": "keep",
+ "verify_note": "Keep, thin: melanopsin mechanism from Panda's Science papers, Wikipedia and book summaries only; no scene or numbers from the book text. Old claims (200,000 years of firelight, phone at 10 p.m., IARC night-shift rating, two-week improvement) unverified and dropped. Confidence low.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Gözdeki ikinci iş",
+  "description": "Kör fareler bile vücut saatlerini ışığa göre ayarladı. Gözde resim yerine parlaklık okuyan hücreler var.",
+  "hook": "Yatmadan önceki son saatte çevrenizdeki hangi ışığı bir hafta değiştirirdiniz?",
+  "one_minute_summary": "Satchin Panda'nın ekibi, gözdeki bazı hücrelerde bulunan, mavi ışığa duyarlı melanopsini tanımlamaya katkıda bulundu. Bu hücreler resim üretmez, ana saate ortamın parlaklığını bildirir. 2003'te yayımlanan bir çalışma kör farelerin saat tepkilerinin buna bağlı olduğunu gösterdi. Kitap özetlerine göre gece mavi ışık melatonini baskılıyor, sabah gün ışığı ritmin hizalanmasına yardım ediyor. Hangi saatte ne kadar ışığın ne etki ettiği ise kitap özetlerinden kesin biçimde çıkarılamıyor, bu yüzden sayı verilmiyor ve bir sağlık sorununuz varsa hekime danışmak gerekir."
+ },
+ "en": {
+  "title": "The Eye's Second Job",
+  "description": "Blind mice still set their body clocks by light. Special eye cells read brightness, not pictures.",
+  "hook": "Which light around you before bed would you change for a week?",
+  "one_minute_summary": "Satchin Panda's team helped identify melanopsin, a blue-light-sensitive pigment in special eye cells. These cells make no pictures; they tell the brain's master clock how bright it is. A 2003 paper showed blind mice still shifted their clocks by light through it. According to book summaries, blue light at night suppresses melatonin, while morning daylight helps the rhythm line up."
+ },
+ "es": {
+  "title": "El segundo trabajo del ojo",
+  "description": "Los ratones ciegos ajustaban su reloj a la luz. Unas células del ojo leen el brillo, no las imágenes.",
+  "hook": "¿Qué luz de antes de dormir cambiarías durante una semana?",
+  "one_minute_summary": "El equipo de Satchin Panda ayudó a identificar la melanopsina, un pigmento sensible a la luz azul en células especiales del ojo. Esas células no forman imágenes; informan al reloj maestro del cerebro de cuánta luz hay. Un artículo de 2003 mostró que los ratones ciegos seguían ajustando su reloj gracias a ella. Según resúmenes del libro, la luz azul de noche suprime la melatonina y la luz del día ayuda a alinear el ritmo."
+ },
+ "de": {
+  "title": "Die zweite Aufgabe des Auges",
+  "description": "Blinde Mäuse stellten ihre innere Uhr trotzdem nach dem Licht. Besondere Augenzellen melden Helligkeit statt Bilder.",
+  "hook": "Welches Licht vor dem Schlafen würdest du eine Woche lang ändern?",
+  "one_minute_summary": "Satchin Pandas Team half, Melanopsin zu identifizieren, einen blauempfindlichen Farbstoff in besonderen Augenzellen. Diese Zellen erzeugen keine Bilder, sondern melden der Hauptuhr im Gehirn, wie hell es ist. Eine Arbeit von 2003 zeigte, dass blinde Mäuse ihre Uhr dank Melanopsin weiter nach dem Licht stellten. Nach Zusammenfassungen des Buches unterdrückt blaues Licht nachts das Melatonin, Tageslicht am Morgen hilft dem Rhythmus."
+ }
+}

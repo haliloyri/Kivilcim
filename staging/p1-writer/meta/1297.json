@@ -1,0 +1,35 @@
+{
+ "story_id": 1297,
+ "verdict": "keep",
+ "verify_note": "Keep. Old naval-battle example not found in Essentialism and removed. Rebuilt on the book's 'priority' word history (plural date marked as McKeown's claim), the paradox of success and the Sam Elliot case (name used in the book, likely pseudonym), verified via several chapter summaries. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Önceliğin çoğulu yoktu",
+  "description": "McKeown'a göre 'öncelik' yüzyıllarca tekildi. Her şeye evet diyen bir yöneticiyi tek bir soru kurtarıyor.",
+  "hook": "Bir isteğe evet demeden önce kendinize hangi tek soruyu sorarsınız?",
+  "one_minute_summary": "McKeown'a göre İngilizcede öncelik kelimesi 1400'lerde girdi ve beş yüz yıl kadar tekil kaldı. Başarı paradoksunu da anlatıyor: netlik başarı getirir, başarı istek getirir, istekler çabayı dağıtır. Sam Elliot adını verdiği bir yönetici her şeye evet diyordu ve istifayı düşünüyordu. Akıl hocası ona yalnızca danışman olsa yapacağı işleri yapmasını söyledi. Sam toplantıları ve e-posta tartışmalarını azalttı, birkaç projeye odaklandı, notları yükseldi ve prim aldı."
+ },
+ "en": {
+  "title": "Priority used to be singular",
+  "description": "McKeown says 'priority' had no plural for centuries, and one question rescued an executive who said yes to everything.",
+  "hook": "What single question would you ask before saying yes to the next request?",
+  "one_minute_summary": "McKeown writes that 'priority' entered English in the 1400s and stayed singular for about five hundred years. He describes a paradox of success: clarity brings success, success brings requests, and requests scatter effort. An executive he calls Sam Elliot said yes to everything until his performance slipped. A mentor told him to do only what he'd do as a consultant. Sam cut meetings and e-mail fights, focused on a few projects, and got better ratings and a large bonus."
+ },
+ "es": {
+  "title": "La prioridad era una sola",
+  "description": "Según McKeown, 'prioridad' pasó siglos sin plural, y una sola pregunta rescató a un ejecutivo que decía que sí a todo.",
+  "hook": "¿Qué única pregunta te harías antes de aceptar la próxima petición?",
+  "one_minute_summary": "McKeown escribe que la palabra inglesa para prioridad entró en el siglo XV y siguió en singular unos quinientos años. Describe una paradoja del éxito: la claridad trae éxito, el éxito trae peticiones y las peticiones dispersan el esfuerzo. Un ejecutivo al que llama Sam Elliot aceptaba todo hasta que su rendimiento cayó. Un mentor le dijo que hiciera solo lo que haría un consultor. Sam dejó reuniones y discusiones por correo, se centró en pocos proyectos y logró mejores evaluaciones y una prima."
+ },
+ "de": {
+  "title": "Priorität war ein Einzelwort",
+  "description": "Laut McKeown hatte 'priority' jahrhundertelang keine Mehrzahl, und eine einzige Frage rettete einen Manager, der zu allem Ja sagte.",
+  "hook": "Welche eine Frage stellst du dir, bevor du der nächsten Bitte zusagst?",
+  "one_minute_summary": "McKeown schreibt, das englische Wort 'priority' sei im 15. Jahrhundert aufgekommen und rund fünfhundert Jahre in der Einzahl geblieben. Er beschreibt ein Paradox des Erfolgs: Klarheit bringt Erfolg, Erfolg bringt Anfragen, Anfragen zerstreuen die Kraft. Ein Manager, den er Sam Elliot nennt, sagte zu allem Ja, bis seine Leistung nachließ. Ein Mentor riet ihm, nur zu tun, was er als Berater tun würde. Sam strich Meetings und E-Mail-Debatten, konzentrierte sich auf wenige Projekte und bekam bessere Bewertungen und einen Bonus."
+ }
+}

@@ -37,6 +37,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 import { useUserData } from '../context/UserDataContext';
 import { t } from '../locales/i18n';
+import { toUpperFor } from '../utils/locale';
 import StorytellerOverlay from '../components/StorytellerOverlay';
 import VoiceRecorderSheet, { useStoryVoiceRecorder } from '../components/story/VoiceRecorderSheet';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
@@ -693,7 +694,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
         {/* ── Story header (compact) ───────────────────────────────────── */}
         <View style={styles.storyHeader}>
           <Text style={[styles.categoryLabel, { color: colors.textSecondary }]} numberOfLines={1}>
-            <Text style={{ color: categoryTheme.accent }}>{displayCat ? displayCat.toUpperCase() : ''}</Text>
+            <Text style={{ color: categoryTheme.accent }}>{displayCat ? toUpperFor(displayCat, lang) : ''}</Text>
             {story.min ? `  ·  ${story.min} ${t('minLabel', lang)}` : ''}
           </Text>
           <Text style={styles.storyTitle} numberOfLines={2}>
@@ -764,7 +765,7 @@ const UseInConversationScreen = ({ route, navigation }) => {
           <View style={styles.previewCard}>
             {showEssence ? (
               <View style={styles.essenceRow}>
-                <Text style={styles.essenceLabel}>{t('mv_situation_label', lang).toUpperCase()}</Text>
+                <Text style={styles.essenceLabel}>{toUpperFor(t('mv_situation_label', lang), lang)}</Text>
                 <Text style={styles.essenceText}>{selected.situation}</Text>
               </View>
             ) : null}

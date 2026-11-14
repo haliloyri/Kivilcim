@@ -2,7 +2,25 @@
 // APP, not the device locale. `Intl.NumberFormat(undefined, …)` reads the device
 // — so someone on a German phone who chose Spanish got German formatting.
 
-import { DEFAULT_INTL_LOCALE, formatCurrency, intlLocaleFor } from '../locale';
+import { DEFAULT_INTL_LOCALE, formatCurrency, intlLocaleFor, toUpperFor } from '../locale';
+
+describe('toUpperFor', () => {
+  it('keeps the Turkish dotted and dotless i apart', () => {
+    expect(toUpperFor('Liderlik', 'tr')).toBe('LİDERLİK');
+    expect(toUpperFor('Okuma ritmi', 'tr')).toBe('OKUMA RİTMİ');
+    expect(toUpperFor('Kaldığın yerden', 'tr')).toBe('KALDIĞIN YERDEN');
+  });
+
+  it('uses plain uppercasing for other languages', () => {
+    expect(toUpperFor('Leadership', 'en')).toBe('LEADERSHIP');
+    expect(toUpperFor('Liderazgo', 'es')).toBe('LIDERAZGO');
+  });
+
+  it('returns an empty string for missing text', () => {
+    expect(toUpperFor(undefined, 'tr')).toBe('');
+    expect(toUpperFor(null, 'en')).toBe('');
+  });
+});
 
 describe('intlLocaleFor', () => {
   it('maps every supported app language', () => {

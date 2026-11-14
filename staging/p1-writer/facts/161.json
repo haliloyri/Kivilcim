@@ -1,0 +1,181 @@
+{
+  "book_no": 161,
+  "title": "To Sell Is Human",
+  "authors": [
+    "Daniel H. Pink"
+  ],
+  "year": "2012",
+  "identity_check": "DB book 1361 / list_no 161: tr 'Satışın Yeni Yüzü', en 'To Sell Is Human', Daniel Pink 2012. Matches Pink, To Sell Is Human: The Surprising Truth About Moving Others (Riverhead, Dec 2012). No duplicate under another title in the DB.",
+  "sources": [
+    "https://knowledge.wharton.upenn.edu/article/daniel-pink-putting-your-best-pitch-forward-in-a-society-of-salespeople/",
+    "https://www.themarginalian.org/2013/02/01/dan-pink-to-sell-is-human/ (book excerpt)",
+    "https://tech.co/news/summary-dan-pink-to-sell-is-human-2013-01",
+    "https://www.npr.org/transcripts/168132488",
+    "https://www.porchlightbooks.com/products/to-sell-is-human-daniel-h-pink-9781594487156"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "A survey commissioned for the book found people spend roughly 40% of their work time (about 24 minutes of every hour) on 'non-sales selling': persuading, influencing and convincing others in ways that do not involve a purchase.",
+      "source": "Wharton interview; tech.co summary; NPR",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Sample size of that survey: Wharton says 7,000 full-time adult workers (mean 41%); another summary says over 9,000 respondents. Story says only 'about 40 percent' and omits the sample size.",
+      "source": "Wharton; secondary summaries",
+      "confidence": "low"
+    },
+    {
+      "id": "f3",
+      "claim": "About one in nine American workers is in sales, over 15 million people.",
+      "source": "tech.co; Wharton",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Education and health care, the largest job sector in the US economy, run largely on persuasion: getting students to pay attention, getting patients to follow treatment.",
+      "source": "tech.co summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Small businesses and startups, enabled by eBay, Etsy and Apple's app store, have put more people in the position of selling something themselves.",
+      "source": "tech.co summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "In a word-association survey about 'sales', 20 of the top 25 words were negative; the top word was 'pushy', and the list included 'yuck' and 'ugh'.",
+      "source": "Wharton interview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "Pink's introduction says selling has changed more in the last ten years than in the previous hundred, and frames it as 'pushing Buicks on a lot or pitching ideas in a meeting'.",
+      "source": "Book excerpt (Marginalian)",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "Information shift: two decades earlier a Chevy dealer knew far more about a Malibu than the buyer; today a buyer can arguably know more about cars than the dealer, using enthusiast sites. Pink calls the move from information asymmetry to information parity.",
+      "source": "Wharton interview",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Pink recasts 'caveat emptor' (buyer beware): still sound advice, but 'caveat venditor' (seller beware) is now just as relevant. Deception worked when buyers lacked information or expertise; with reviews, ratings and comparison shopping sellers have more incentive to be fair.",
+      "source": "NPR transcript; tech.co",
+      "confidence": "high"
+    },
+    {
+      "id": "f10",
+      "claim": "Caution: reduced information asymmetry has not ended lying and cheating.",
+      "source": "secondary review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Pink's 'new ABCs' replace the old 'Always Be Closing' with attunement, buoyancy and clarity. Clarity: helping others see their situation in a new way and spot problems they did not know they had; includes cases where the buyer misjudges or does not see the problem.",
+      "source": "Wharton; Marginalian excerpt",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "Problem-finding study (Getzels and Csikszentmihalyi, 1960s): about three dozen fourth-year art students arranged a still life from 27 objects and drew it. Some solved the task quickly; others handled more objects and took longer.",
+      "source": "Book excerpt (Marginalian)",
+      "confidence": "high"
+    },
+    {
+      "id": "f13",
+      "claim": "Csikszentmihalyi's framing of the two approaches: 'How can I produce a good drawing?' versus 'What good drawing can I produce?'. Reported by secondary sources; used in the story only as Csikszentmihalyi's later description.",
+      "source": "secondary blog posts",
+      "confidence": "low"
+    },
+    {
+      "id": "f14",
+      "claim": "Follow-up: a decade later about half the students had left the art world; the other half became professional artists, and that group was almost entirely problem finders. A further decade on, the problem finders were significantly more successful, by the standards of the artistic community, than their peers.",
+      "source": "Book excerpt (Marginalian)",
+      "confidence": "high"
+    },
+    {
+      "id": "f15",
+      "claim": "Call-centre study (Adam Grant) in the book: hourly sales revenue was $125 for extraverts, $120 for introverts and $155 for ambiverts, people in the middle of the introversion-extraversion scale. The top performers brought in $208 an hour and scored about 4 on the 1-7 scale.",
+      "source": "Book excerpt (Marginalian)",
+      "confidence": "high"
+    },
+    {
+      "id": "f16",
+      "claim": "The old ABC is 'Always Be Closing', the approach associated with Alec Baldwin's character in Glengarry Glen Ross, which relies on pressure. Pink's new ABCs are attunement (understanding the other person's view), buoyancy (staying afloat amid rejection) and clarity.",
+      "source": "Wharton interview; Marginalian excerpt",
+      "confidence": "high"
+    },
+    {
+      "id": "f17",
+      "claim": "Question example: in 1980 Reagan asked 'Are you better off than you were four years ago?'; Pink says questions get people to persuade themselves. Romney's campaign tried the same in 2012 and it backfired because voters compared their lives with 2008.",
+      "source": "Wharton interview",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Pink surveyed 7,000 workers and managers/entrepreneurs spend more than 40 percent.",
+      "reason": "7,000 vs 9,000 sample conflict; managers/entrepreneurs split not found."
+    },
+    {
+      "claim": "'Kafa kafaya bilgi' dönemi, bayi/Carfax-style detail, 'old model: hide price; new model: be transparent', doctor-diagnosis analogy.",
+      "reason": "Not found in sources; only asymmetry to parity and seller beware verified."
+    },
+    {
+      "claim": "Experiment with two seller groups, one saying 'this product is not right for everyone', with higher satisfaction, repeat purchase and referral rates; 'right to withdraw' (geri çekilme hakkı).",
+      "reason": "Could not be found in any source; treated as fabricated. Story 1581 rebuilt on the problem-finding study."
+    },
+    {
+      "claim": "Pink asks 'When did you last tell a customer this may not be right for you?'",
+      "reason": "Not found."
+    },
+    {
+      "claim": "Seller should listen more than speak; ratio reversal.",
+      "reason": "Not found in sources."
+    }
+  ],
+  "stories": {
+    "1579": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f15"
+      ],
+      "note": "40%/24 minutes kept; sample size dropped; 'everyone is a salesperson' framing kept as the book's thesis."
+    },
+    "1580": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f16",
+        "f17"
+      ],
+      "note": "Rebuilt on verified asymmetry to parity and seller beware; unverified doctor analogy dropped."
+    },
+    "1581": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f11",
+        "f12",
+        "f13",
+        "f14"
+      ],
+      "note": "Old two-group honesty experiment unverifiable and dropped; rebuilt on the art-student problem-finding study Pink uses for clarity."
+    }
+  }
+}

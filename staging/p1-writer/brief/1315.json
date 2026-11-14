@@ -1,0 +1,42 @@
+{
+  "story_id": 1315,
+  "kind": "anecdote",
+  "book": {"title": "Hooked: How to Build Habit-Forming Products", "author": "Nir Eyal", "year": "2014"},
+  "confidence": "high",
+  "confidence_note": "Verified in the full text of Hooked. The old text's Burbn pivot story is not in Hooked and is dropped; Hooked's Instagram case is Yin (a pseudonym) and how her trigger moved from outside to inside. The 150 million users figure is as of the book's writing.",
+  "facts": [
+    "Yin (not her real name) is in her mid-twenties, lives in Palo Alto and attends Stanford; Eyal says she is compulsively hooked on Instagram and snaps and posts dozens of pictures a day.",
+    "Her snapshots are filtered to look like they were taken in the late 1970s.",
+    "Yin says: 'It's just fun. I don't have a problem or anything. I just use it whenever I see something cool. I feel I need to grab it before it's gone.'",
+    "Facebook bought Instagram for $1 billion in 2012, when it had 150 million users; Eyal notes the price had many causes, including a rumored bidding war.",
+    "Yin's habit began with an external trigger, a friend's recommendation, followed by weeks of repeated use; her photos shared on Facebook and Twitter in turn acted as triggers for others, and the app icon and push notifications called users back.",
+    "With repetition the cue moved inside: the fear of losing a special moment brings a small pang of stress, and opening Instagram to take a photo relieves it.",
+    "Eyal compares habits to pearls: a bit of grit inside an oyster triggers layer after layer of nacre. New habits are sparked by external triggers, but internal triggers keep users hooked, and this can take weeks or months.",
+    "The trigger is the first of the Hook Model's four phases: trigger, action, variable reward, investment."
+  ],
+  "scene_details": [
+    "dozens of photos a day filtered to look like the late 1970s",
+    "'I need to grab it before it's gone'",
+    "a friend's recommendation, then an app icon on the home screen",
+    "grit inside an oyster growing layers of nacre"
+  ],
+  "tension": "A Stanford student says she has no problem with Instagram, yet she posts dozens of photos a day and no longer needs anything to remind her to open it.",
+  "opening_idea": "Start with Yin in Palo Alto taking another photo filtered to look like the 1970s, saying she just needs to grab it before it's gone.",
+  "lessons": [
+    {"idea": "A habit is set when a feeling, not a reminder, starts the action; to see a habit clearly, name the feeling that comes just before it.", "anchor": "Yin's cue moved from a friend's tip and the icon to the fear of losing a moment.", "everyday_example_idea": "Someone notices they open the fridge not when hungry but whenever a work email irritates them."}
+  ],
+  "reflect": [],
+  "reflect_final": "Which app do you open without any notification, and what feeling is usually there a second before your thumb moves?",
+  "use_cases": [
+    {"situation": "Your team is designing a feature to bring users back.", "move": "Ask which feeling users have right before they'd need it, the way Instagram answered the fear of losing a moment, rather than adding another notification.", "context": "meeting"},
+    {"situation": "A friend says they 'don't have a problem' with an app.", "move": "Ask what they feel just before they open it, without judging.", "context": "social"},
+    {"situation": "You catch yourself reaching for your phone.", "move": "Before unlocking, say the feeling out loud to yourself in one word.", "context": "self"}
+  ],
+  "pocket_idea": "A habit is formed when a feeling, not a notification, sends your hand to the app.",
+  "conversation_variants": {
+    "punchline_idea": "Yin started Instagram because a friend recommended it; she keeps opening it because she fears losing a moment.",
+    "thirty_sec_idea": "Nir Eyal describes Yin, a Stanford student who posts dozens of Instagram photos a day and says she has no problem. Her habit started with a friend's tip, then the app icon and notifications. After weeks of use she didn't need any of that: the fear of a moment slipping away was enough. Eyal says that shift from outside cue to inside feeling is how a habit sets.",
+    "question_idea": "",
+    "key_contrast_idea": "From reminder to feeling"
+  }
+}

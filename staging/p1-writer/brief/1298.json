@@ -1,0 +1,62 @@
+{
+  "story_id": 1298,
+  "kind": "anecdote",
+  "book": {
+    "title": "Essentialism",
+    "author": "Greg McKeown",
+    "year": "2014"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text not directly available; the hospital story is confirmed by several Shortform summaries and McKeown's own retelling on the Tim Ferriss Show; the 90 percent rule and the Derek Sivers line by several chapter summaries. Exact wording of the hospital story (day of week, colleague's words) is unknown; do not invent dialogue. The old quote 'saying yes to good opportunities is missing great ones' was not verified and is dropped. The 'hell yeah or no' line is Sivers's, cited by McKeown.",
+  "facts": [
+    "In Essentialism, McKeown recalls the day after his daughter was born: he was in the hospital with his wife and the newborn, and was answering work e-mails and calls.",
+    "A colleague asked him to come to a client meeting that day.",
+    "He went, expecting the client to respect him for the sacrifice.",
+    "The client seemed to think less of him for leaving his wife and newborn, and the meeting turned out to be unimportant.",
+    "His conclusion: if you don't prioritize your life, someone else will.",
+    "McKeown later called it a mistake: he had said yes to please someone, and in doing so let down his family, his own integrity and even the client relationship.",
+    "In the chapter 'Select' he offers the 90 percent rule: name the single most important criterion for a decision, score the option from 0 to 100, and if it scores below 90, change the score to 0 and reject it.",
+    "He cites entrepreneur Derek Sivers: 'No more yes. It's either HELL YEAH! or no.'",
+    "The rule means turning down good options, ones that would score 60 or 70, to keep room for the few that really fit."
+  ],
+  "scene_details": [
+    "a phone buzzing with work e-mails in a maternity ward",
+    "a client meeting that turned out not to matter",
+    "a score from 0 to 100, with everything under 90 changed to 0"
+  ],
+  "tension": "A new father leaves his wife and baby for a meeting he believes will win respect.",
+  "opening_idea": "Start in the hospital room with the work phone, the day after the birth.",
+  "lessons": [
+    {
+      "idea": "Score an option against one clear criterion before agreeing; a merely good option is a no.",
+      "anchor": "The hospital meeting would have failed any honest score; the 90 percent rule.",
+      "everyday_example_idea": "A woman offered a well-paid weekend project scores it against her one criterion for the year, time with her young kids, gets 50, and declines."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which request on your calendar this week would score below 90 if you rated it against the one thing you most care about?",
+  "use_cases": [
+    {
+      "situation": "A colleague invites you to a meeting that clashes with something personal that matters.",
+      "move": "Say you can't make it, offer a written update, and name the clash honestly; McKeown went to his and regretted it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You are choosing between two job offers or two flats that both seem 'fine'.",
+      "move": "Write the one criterion that matters most and score each from 0 to 100; anything under 90 is out.",
+      "context": "self"
+    },
+    {
+      "situation": "Your partner feels you keep saying yes to everyone but family.",
+      "move": "Agree together on one family priority for the month and check new invitations against it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Score a request against your one criterion; anything below 90 becomes a 0.",
+  "conversation_variants": {
+    "punchline_idea": "The day after his daughter was born, McKeown left the hospital for a client meeting that turned out not to matter.",
+    "thirty_sec_idea": "Hospital, work phone, client meeting, no respect gained, 'if you don't prioritize your life, someone else will', then the 90 percent rule.",
+    "question_idea": "",
+    "key_contrast_idea": "Good enough is a no"
+  }
+}

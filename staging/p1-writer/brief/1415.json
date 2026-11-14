@@ -1,0 +1,61 @@
+{
+  "story_id": 1415,
+  "kind": "anecdote",
+  "book": {
+    "title": "The 21 Irrefutable Laws of Leadership",
+    "author": "John C. Maxwell",
+    "year": "1998"
+  },
+  "confidence": "medium",
+  "confidence_note": "Definition and the Lincoln anecdote come from secondary summaries; details of Lincoln's 1832 militia service are disputed, so the account is attributed to Maxwell's telling. The old text's Texas preacher and quotes could not be verified and were dropped. Mother Teresa example is from a secondary summary plus a search excerpt of Noonan's description; medium.",
+  "facts": [
+    "Law 2, the Law of Influence: 'The true measure of leadership is influence, nothing more, nothing less.'",
+    "Maxwell says true leadership cannot be awarded, appointed or assigned; it comes only from influence, which must be earned.",
+    "He lists five myths about leadership, among them the position myth: a title does not make someone a leader.",
+    "As Maxwell tells it, young Lincoln organised volunteers for a militia in the 1832 Black Hawk War and, by the usual practice, became their captain.",
+    "Lincoln knew little about soldiering.",
+    "Trying to get his men through a gate, he could not recall the proper command and shouted: 'This company is dismissed for two minutes, when it will fall in again on the other side of the gate.'",
+    "In Maxwell's account his influence declined: he began as captain and ended as a private.",
+    "Mother Teresa spoke at the 1994 National Prayer Breakfast in Washington about family values and abortion; she offended nearly everyone present, yet they listened and most applauded at the end. Her standing came from character and track record, not an office."
+  ],
+  "scene_details": [
+    "a gate that the company has to pass through",
+    "the shouted command: dismissed for two minutes, fall in again on the other side",
+    "the rank going from captain to private",
+    "an audience of Washington figures that listened and applauded a speaker who had just offended them"
+  ],
+  "tension": "A man gets a rank by custom, then has to move a group of men through a gate and has no command ready.",
+  "opening_idea": "Open at the gate with the company waiting and the command Lincoln could not remember.",
+  "lessons": [
+    {
+      "idea": "Influence shows in who people turn to and act on without being told twice, which a title cannot supply.",
+      "anchor": "Lincoln held the rank but his orders carried little weight; Maxwell's measure is influence, nothing more."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of someone at work whose advice people follow without being told to; what do they do day to day that earns that, and which of it could you try?",
+  "use_cases": [
+    {
+      "situation": "You just got a title and want the team to follow your lead",
+      "move": "Ask each person one question about what slows them down, act on one answer within a week, then tell them you did.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague with no title keeps being asked for help by new hires",
+      "move": "Say: people come to you before they come to me. What do you do that I should be doing?",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your family keeps ignoring the rules you announce",
+      "move": "Drop the announcement. Ask what each person would change about the way things run and try one suggestion for a week.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A rank is handed out, influence is earned: Lincoln's company could not follow the captain's command to cross a gate.",
+  "conversation_variants": {
+    "punchline_idea": "Lincoln started as captain of his militia company and ended as a private: the rank was never the leadership.",
+    "thirty_sec_idea": "Young Lincoln, captain by custom, forgets the command at a gate and dismisses the company for two minutes; Maxwell uses it to show influence is earned.",
+    "question_idea": "",
+    "key_contrast_idea": "rank or influence"
+  }
+}

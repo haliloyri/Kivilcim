@@ -1,0 +1,166 @@
+{
+  "book_no": 82,
+  "title": "10% Happier",
+  "authors": [
+    "Dan Harris"
+  ],
+  "year": "2014",
+  "note": "Full subtitle: How I Tamed the Voice in My Head, Reduced Stress Without Losing My Edge, and Found Self-Help That Actually Works. DB tr/de/es titles ('Meditasyon' etc.) are not translated titles. Full text not read; ABC News published Harris's own excerpt-style account.",
+  "sources": [
+    "https://abcnews.com/m/story?id=22469789",
+    "https://www.kirkusreviews.com/book-reviews/dan-harris/10-happier/print/",
+    "https://www.psychologytoday.com/us/blog/plato-pop/201404/how-be-10-happier",
+    "https://booksthatslay.com/10-percent-happier-book-summary/",
+    "https://nextbigideaclub.com/magazine/conversation-how-meditation-helped-this-news-anchor-recover-from-addiction/17678/amp/",
+    "https://www.goodreads.com/notes/22433379-10-happier/13168636-bindu-upadhyay/721b3473-e748-4018-bd79-23f71f85188a",
+    "https://www.bokus.com/bok/9780063356474/10-happier"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "On 7 June 2004, 'shortly after seven on a sunny spring morning', Harris was filling in on Good Morning America reading the hourly news headlines, six stories, in front of about five million people. Halfway through, panic hit: pounding heart, gasping, barely able to speak; he cut it short with 'Back to you.'",
+      "source": "Harris's account on ABC News; Next Big Idea Club",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "After years covering wars in Afghanistan, Israel, the Palestinian territories and Iraq, he became depressed in 2003 and self-medicated with cocaine and ecstasy, mostly on weekends. A psychiatrist told him the drugs had raised the adrenaline in his brain, making a panic attack far more likely, and told him to stop immediately.",
+      "source": "ABC News (Harris)",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "His boss and mentor Peter Jennings had assigned him to cover faith, though Harris was a lifelong agnostic. Interviews with Eckhart Tolle and Deepak Chopra did not give him a usable method.",
+      "source": "ABC News; Kirkus",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "He had dismissed meditation as the 'exclusive province of bearded swamis, unwashed hippies, and fans of John Tesh music'. Through his wife, who had liked books by the psychiatrist Mark Epstein, he met Epstein and started meditating.",
+      "source": "Kirkus (book quote)",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Tolle's description of identifying with the stream of thoughts in the head hit home, but 'observe your thoughts' came with no method. Harris calls the inner narrator 'the voice in my head'; he wanted to title the book 'The Voice in My Head Is an Asshole', and the publisher said no.",
+      "source": "booksthatslay summary; Psychology Today",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Harris's verdict on meditation: it makes him about 10 percent happier; it is not a cure-all. He uses the figure as a modest answer to skeptics. The title began half as a joke.",
+      "source": "Psychology Today; booksthatslay; interviews",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "Meditation gave him 'the ability to respond rather than react', a short delay before acting on the voice's urges, which he compares to the seven-second delay on live award shows.",
+      "source": "Psychology Today",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "On a ten-day silent retreat, a teacher (Joseph Goldstein) told him that worrying about a missed flight 'seventeen times' was pointless and to ask of a worry: 'Is this useful?'",
+      "source": "Psychology Today; booksthatslay",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "RAIN: Recognize, Allow, Investigate, Non-identification; Harris found it practical and repeatable for strong emotions.",
+      "source": "Goodreads highlight; booksthatslay",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "His father's mantra 'The price of security is insecurity' had long justified his worrying.",
+      "source": "Psychology Today",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Kirkus mentions a tense interview with Paris Hilton that tested his new calm.",
+      "source": "Kirkus",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Meditation helped him relatively quickly; it 'became a way to steel myself as I moved through the world'. The book recounts a 10-day retreat.",
+      "source": "Kirkus",
+      "confidence": "high"
+    },
+    {
+      "id": "f13",
+      "claim": "Harris treats the voice in the head as the universal human problem: it narrates everything, often with unkind commentary, and meditation helps tame this 'monkey mind'. The voice stays active but is no longer completely in control.",
+      "source": "Psychology Today; booksthatslay",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "After he started meditating, Harris for a while became too passive at work, 'mistaking equanimity for disengagement'; his boss Ben Sherwood pushed back, and Harris learned that calm and ambition can coexist.",
+      "source": "booksthatslay summary",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Harris had used antidepressants and alcohol to cope.",
+      "reason": "The book's account is cocaine and ecstasy after war reporting; antidepressants/alcohol not sourced."
+    },
+    {
+      "claim": "Harris called meditation the business of 'hippies and corporate motivational speakers'.",
+      "reason": "His actual line (Kirkus): bearded swamis, unwashed hippies, John Tesh fans."
+    },
+    {
+      "claim": "Quotes 'Thoughts were observed and floated away' and 'I am not my thoughts'.",
+      "reason": "No source."
+    },
+    {
+      "claim": "Harris: 'I distrust anything that promises 1000 percent' and 'an email used to keep me angry for hours, now 20 minutes'.",
+      "reason": "No source."
+    },
+    {
+      "claim": "Meta-analyses report cortisol drops strongest in high-stress groups that fade at follow-up.",
+      "reason": "Not from the book; not needed."
+    },
+    {
+      "claim": "Quote 'Meditation's greatest gift: I am not that voice, I am the one who can hear it' and 'You are an old habit'.",
+      "reason": "No source."
+    }
+  ],
+  "stories": {
+    "1342": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f12"
+      ],
+      "note": "Panic attack story corrected (drugs, not antidepressants/alcohol) and the road to meditation."
+    },
+    "1343": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f6",
+        "f7",
+        "f8",
+        "f10",
+        "f11"
+      ],
+      "note": "The modest 10 percent claim and the 'Is this useful?' question; invented email/20-minute quote dropped."
+    },
+    "1344": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f9",
+        "f7",
+        "f13",
+        "f14",
+        "f3"
+      ],
+      "note": "The voice in the head, the refused title and RAIN; invented quotes dropped."
+    }
+  }
+}

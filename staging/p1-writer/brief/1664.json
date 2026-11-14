@@ -1,0 +1,35 @@
+{
+  "story_id": 1664,
+  "kind": "concept",
+  "book": {"title": "A New Earth", "author": "Eckhart Tolle", "year": "2005"},
+  "confidence": "high",
+  "confidence_note": "Verified in a full text of A New Earth (ch. 5 The Pain-Body, ch. 6 Breaking Free). Old text's invented examples (late arrival, sharp criticism), the claim 'the pain-body hates awareness' and the question 'is my pain-body waking up?' are dropped; the story uses Tolle's own marriage example. Tolle's pain-body is his own concept, not a scientific finding; the story presents it as his claim.",
+  "facts": [
+    "Tolle holds that any negative emotion not fully faced and let go leaves a remnant of pain; remnants join into an energy field living in the cells of the body, 'an accumulation of old emotional pain', which he calls the pain-body.",
+    "It has a dormant and an active stage; dormant usually a few weeks, sometimes days or months, rarely years.",
+    "When ready to feed it 'can use the most insignificant event as a trigger, something somebody says or does, or even a thought'.",
+    "Alone, it feeds on your thoughts, which turn negative; with other people, 'preferably your partner or a close family member', it provokes them to feed on the drama.",
+    "'You don't just marry your wife or husband, you also marry her or his pain-body.' Not long after moving in together, a partner's voice may turn harsh, she accuses or shouts, most likely over a relatively trivial matter, or goes withdrawn; asked what is wrong she says 'Nothing', while her hostile energy says 'Everything is wrong'.",
+    "Tolle says the person who speaks then is the pain-body speaking through her, not the real face.",
+    "People with dense pain-bodies blow insignificant matters up out of all proportion; they cannot tell the difference between an event and their reaction to it. Road rage over someone driving too slowly is one of his examples.",
+    "Freedom begins with realising you have a pain-body and being present enough to notice it as a heavy influx of negative emotion when it becomes active; recognised, it can no longer pretend to be you and loses energy once the link to your thinking is cut."
+  ],
+  "scene_details": ["a partner's voice turning harsh over a trivial matter", "'Nothing is wrong' said while the energy says 'Everything is wrong'", "a driver in road rage over someone driving too slowly", "the weeks of dormancy before it wakes"],
+  "tension": "A trivial remark meets a reaction out of all proportion, and Tolle says the size of the reaction belongs to something older.",
+  "opening_idea": "Open on the couple moving in together and the sudden change of voice over something small, before Tolle's name for it.",
+  "lessons": [{"idea": "When a reaction is far bigger than its trigger, look for the older feeling before arguing about the trigger.", "anchor": "Tolle's 'Nothing is wrong' said with a hostile energy that says everything is.", "example": "Someone snaps at a friend over a late reply and, once calm, sees the snap was about something that had been building for weeks."}],
+  "reflect": [],
+  "reflect_final": "Think of your last reaction that was bigger than its trigger: what had been building before it, and what did you notice in your body at the start?",
+  "use_cases": [
+    {"situation": "You feel a sudden heavy wave of irritation over something small.", "move": "Notice it as a heavy influx of emotion in the body before replying, as Tolle suggests; wait one breath before you speak.", "context": "self"},
+    {"situation": "Your partner turns hostile over something trivial and says 'nothing is wrong'.", "move": "Leave the trivial thing alone and ask softly later, when it has passed, what has been weighing on them.", "context": "family"},
+    {"situation": "A colleague overreacts in a meeting.", "move": "Respond to the feeling instead of the content: 'This seems to matter a lot to you. Do you want to tell me more?'", "context": "meeting"}
+  ],
+  "pocket_idea": "Tolle says a trivial trigger can wake old pain: notice the heavy wave before you answer it.",
+  "conversation_variants": {
+    "punchline_idea": "Tolle says you marry your partner's pain-body too, and it shows up over something trivial.",
+    "thirty_sec_idea": "Tolle's pain-body: leftover emotion that goes dormant, wakes on a trivial trigger, and feeds on thoughts or on drama with a partner; noticing it as a heavy wave stops it passing for you.",
+    "question_idea": "",
+    "key_contrast_idea": "trigger versus old pain"
+  }
+}

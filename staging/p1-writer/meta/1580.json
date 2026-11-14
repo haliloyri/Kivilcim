@@ -1,0 +1,35 @@
+{
+ "story_id": 1580,
+ "verdict": "keep",
+ "verify_note": "Keep: dealer-versus-buyer contrast, information parity, caveat venditor, ABCs, Reagan/Romney question example verified in Wharton and NPR. Old 'kafa kafaya' phrasing, hide-price/transparency contrast and doctor analogy unverified and dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Bilgi artık alıcıda",
+  "description": "Yirmi yıl önce satıcı Malibu'yu alıcıdan iyi bilirdi. Bugün alıcı meraklıların sitelerini okuyup gelebiliyor.",
+  "hook": "Karşınızdaki sizden fazlasını bildiğinde ona hangi sorunu gösterebilirsiniz?",
+  "one_minute_summary": "Yirmi yıl önce bir Chevy satıcısı Malibu'yu alıcıdan çok daha iyi bilirdi. Bugün alıcı meraklı sitelerini okuyup gelebiliyor. Daniel Pink buna bilgi asimetrisinden eşitliğe geçiş diyor ve \"alıcı dikkat etsin\" kuralının yanına \"satıcı dikkat etsin\"i koyuyor. Eski formül \"Always Be Closing\" idi. Yeni ABC'lerden berraklık, alıcının henüz görmediği sorunu fark ettirmek anlamına geliyor. Pink bunun yalan ve hileyi tümüyle bitirmediğini, yalnızca en kolay zeminini daralttığını da ekliyor."
+ },
+ "en": {
+  "title": "When the Buyer Knows More",
+  "description": "Two decades ago the dealer knew the Malibu better than the buyer. Today the buyer may arrive better informed than the dealer.",
+  "hook": "What could you still show someone who arrives better informed than you?",
+  "one_minute_summary": "Two decades ago a Chevy dealer knew far more about the Malibu than the buyer. Today the buyer reads enthusiast sites and may know more. Daniel Pink calls this the move from information asymmetry to parity, and sets seller beware beside buyer beware. The old formula was Always Be Closing. Among his new ABCs, clarity means helping people notice problems they had not spotted."
+ },
+ "es": {
+  "title": "Cuando el comprador sabe más",
+  "description": "Hace veinte años el vendedor conocía el Malibu mejor que el comprador. Hoy el comprador puede llegar mejor informado que el concesionario.",
+  "hook": "¿Qué podrías mostrar a alguien que llega mejor informado de lo que esperabas?",
+  "one_minute_summary": "Hace veinte años, un concesionario de Chevy sabía mucho más del Malibu que el comprador. Hoy el comprador lee sitios de aficionados y puede saber más. Daniel Pink lo llama el paso de la asimetría a la paridad de información y añade «que se cuide el vendedor» al «que se cuide el comprador». La vieja fórmula era Always Be Closing. De sus nuevos ABC, la claridad consiste en ayudar a notar problemas que no se habían visto."
+ },
+ "de": {
+  "title": "Wenn der Käufer mehr weiß",
+  "description": "Vor zwanzig Jahren kannte der Händler den Malibu besser als der Käufer. Heute kommt der Käufer oft besser informiert.",
+  "hook": "Was könntest du jemandem zeigen, der besser informiert kommt als erwartet?",
+  "one_minute_summary": "Vor zwanzig Jahren wusste ein Chevy-Händler weit mehr über den Malibu als der Käufer. Heute liest der Käufer Seiten für Autoliebhaber und weiß womöglich mehr. Daniel Pink nennt das den Wandel von der Informationsasymmetrie zur Parität und stellt dem Käufer-Vorsicht die Verkäufer-Vorsicht zur Seite. Die alte Formel hieß Always Be Closing. Von seinen neuen ABC bedeutet Klarheit, Probleme zu bemerken, die der andere noch nicht gesehen hat."
+ }
+}

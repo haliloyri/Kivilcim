@@ -1,0 +1,56 @@
+{
+  "story_id": 1398,
+  "kind": "concept",
+  "book": {
+    "title": "The Infinite Game",
+    "author": "Simon Sinek",
+    "year": "2019"
+  },
+  "confidence": "low",
+  "confidence_note": "Facts from Shortform and a review only; the book's own cases for the trusting-teams chapters (reviewer names Shell Oil and the Marine Corps Officer Candidate School) were not retrieved, so no case is used. Old quotes about trust being slow to build and the currency line, and the question about working by choice, were dropped. Keep the story short. Talk-sourced quotes (army.mil) are not from the book text; keep them hedged.",
+  "facts": [
+    "Building trusting teams is the second of Sinek's five practices for an infinite game.",
+    "A trusting team is one whose members feel safe expressing feelings, asking for help, discussing problems and admitting mistakes.",
+    "Where trust is missing, people hide mistakes and fake expertise instead of asking for help, so problems pile up unaddressed.",
+    "Sinek says leaders set the tone by listening to concerns and letting people raise issues without fear of repercussions.",
+    "In a 2019 talk tied to the book's practice, Sinek calls psychological safety the foundation of trusting teams and says people must feel free to say 'I made a mistake' and 'I need help'; if they cannot, the leader has failed.",
+    "Summaries describe assessing members on performance and trust: high performance with low trust is the one to watch, low performance with high trust may be kept if coachable.",
+    "When people feel safe they speak up, admit mistakes and raise concerns, so information flows better."
+  ],
+  "scene_details": [],
+  "tension": "A team where nobody admits a mistake looks smooth until the unreported problems come due.",
+  "opening_idea": "Start from the hidden mistake: someone who fakes knowing instead of asking for help.",
+  "lessons": [
+    {
+      "idea": "Make it cheap to say I made a mistake or I need help, because that is how problems reach you early.",
+      "anchor": "Teams without trust hide mistakes and fake expertise so problems pile up.",
+      "example": "A kitchen manager thanks the cook who admits a burnt batch, so the next cook flags a bad delivery on the spot."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one mistake or doubt you kept to yourself at work recently, and what would have made it safe to say?",
+  "use_cases": [
+    {
+      "situation": "A teammate finds an error in their own work.",
+      "move": "Thank them first, then ask what help they need; Sinek says teams without trust hide mistakes until they pile up.",
+      "context": "meeting"
+    },
+    {
+      "situation": "You are unsure and fear looking weak.",
+      "move": "Say: I do not know this yet, can you show me?",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You lead a small group at home or at a club.",
+      "move": "Say aloud one mistake of your own this week and what you did about it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Thank the first person who admits a mistake; problems then reach you while they are still small.",
+  "conversation_variants": {
+    "punchline_idea": "In a team without trust, people hide mistakes and fake expertise, and the problems pile up quietly.",
+    "thirty_sec_idea": "Simon Sinek says an infinite game needs teams where people feel safe to ask for help and admit mistakes. Without that, they hide errors and fake knowing, and problems pile up unseen. He puts the job on leaders: listen to concerns and let people raise issues without fear of repercussions.",
+    "question_idea": "When did you last admit a mistake at work?",
+    "key_contrast_idea": "hide or say"
+  }
+}

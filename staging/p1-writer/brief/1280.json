@@ -1,0 +1,63 @@
+{
+  "story_id": 1280,
+  "kind": "concept",
+  "book": {
+    "title": "Dare to Lead",
+    "author": "Brené Brown",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "The top-ranked barrier (avoiding tough conversations, including honest feedback) is quoted from Brown's own excerpt. The 150 C-level leaders and the 'braver leaders' answer come from several summaries (medium). The split into courage, skills and the 'nice and polite' norm is from one summary (medium). The old text's 'seven-year study' framing and its quote about time and trust cost are not verified and were dropped.",
+  "facts": [
+    "For the book Brown's team interviewed 150 global C-level leaders, asking what about the way people lead must change to succeed in a complex, fast-changing world.",
+    "Their answer: 'We need braver leaders and more courageous cultures.'",
+    "Leaders then named ten behaviors and cultural issues that get in the way of courage.",
+    "The one ranked as the greatest concern: 'We avoid tough conversations, including giving honest, productive feedback.'",
+    "Some leaders put this down to a lack of courage, others to a lack of skills.",
+    "More than half described a cultural norm of 'nice and polite' that was used as the excuse to avoid those conversations.",
+    "Brown's line from the book: 'Clear is kind. Unclear is unkind.'",
+    "The book's subtitle is 'Brave Work. Tough Conversations. Whole Hearts.'",
+    "The first of Brown's skill sets, 'rumbling with vulnerability', covers tough conversations in which we stay vulnerable, generous and curious instead of avoiding them."
+  ],
+  "scene_details": [
+    "150 C-level leaders around the world",
+    "a list of ten things in the way",
+    "'nice and polite' as the cover",
+    "'Clear is kind. Unclear is unkind.'"
+  ],
+  "tension": "Leaders who asked for braver cultures named their own avoided conversations as the biggest obstacle.",
+  "opening_idea": "Open on the leaders' answer, 'We need braver leaders', and then the item they put at the top of the list.",
+  "lessons": [
+    {
+      "idea": "Treat vague politeness as a cost to the other person; say the specific thing clearly and kindly.",
+      "anchor": "'Nice and polite' norm; clear is kind.",
+      "everyday_example_idea": "A tenant who keeps smiling at a noisy neighbor until resentment builds, versus naming the hour and the noise once."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which feedback have you been softening for weeks, and what one clear sentence would say it?",
+  "use_cases": [
+    {
+      "situation": "A project review where everyone says 'looks good' but you see a problem.",
+      "move": "Say clear is kind and name the one issue specifically.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A direct report keeps missing deadlines and you have only hinted.",
+      "move": "Book a short talk and say exactly what is late and what you need.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Family keeps not mentioning a recurring problem.",
+      "move": "Mention that leaders called 'nice and polite' their excuse, and raise the topic yourself.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Leaders ranked avoided feedback as their biggest barrier; clear is kind, unclear is unkind.",
+  "conversation_variants": {
+    "punchline_idea": "When leaders listed what blocks courage at work, the top item was the hard conversations they themselves avoid.",
+    "thirty_sec_idea": "150 leaders; braver leaders; ten barriers; top: avoiding tough conversations; reasons: courage, skills, nice and polite; clear is kind.",
+    "question_idea": "",
+    "key_contrast_idea": "polite vs clear"
+  }
+}

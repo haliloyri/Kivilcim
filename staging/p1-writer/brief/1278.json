@@ -1,0 +1,36 @@
+{
+  "story_id": 1278,
+  "kind": "concept",
+  "book": {"title": "Zero to One", "author": "Peter Thiel", "year": "2014"},
+  "confidence": "high",
+  "confidence_note": "Interview question, bad answers, answer form and Thiel's own answer are verified from book excerpts. The Airbnb/Uber framing comes from summaries (medium); exact wording not verified, so it is told without quotes. DoorDash and SpaceX from the old text are not in the book and were dropped, as was an unverified quote about secrets.",
+  "facts": [
+    "Whenever Thiel interviews someone for a job, he asks: 'What important truth do very few people agree with you on?'",
+    "It is intellectually hard because what school teaches is by definition agreed upon, and psychologically hard because the answer must be something the speaker knows is unpopular.",
+    "Thiel writes that brilliant thinking is rare, but courage is in even shorter supply than genius.",
+    "The most common answers are 'our educational system is broken', 'America is exceptional' and 'there is no God'. Thiel calls them bad: the first two may be true but many people already agree, the third just picks a side in a familiar debate.",
+    "A good answer takes the form 'Most people believe in x, but the truth is the opposite of x.'",
+    "Thiel's own answer: most people think globalization will define the future, but technology matters more.",
+    "He argues every great business is built around a secret hidden from the outside, about nature or about people.",
+    "Airbnb and Uber are his examples of secrets visible to anyone: empty rooms and empty car seats as supply nobody was using.",
+    "Four trends keep people from looking: incrementalism, risk aversion, complacency and 'flatness', the sense that someone smarter somewhere must have found it already."
+  ],
+  "scene_details": ["a job interview with one question", "the three answers Thiel hears most", "the sentence form 'most people believe x, but the truth is the opposite of x'"],
+  "tension": "One interview question that most candidates fail, not for lack of intelligence, but because the answer has to be unpopular.",
+  "opening_idea": "Open in the interview room on the single question Thiel asks every candidate.",
+  "lessons": [{"idea": "Test your own beliefs with the 'most people believe x, but...' sentence; an answer many already share is not a secret.", "anchor": "The three bad answers Thiel hears most.", "everyday_example_idea": "A teacher who thinks her school's homework policy is wrong writes the sentence and finds half the staff already says the same."}],
+  "reflect": [],
+  "reflect_final": "What is one thing you believe about your own field that most colleagues would disagree with, and how could you check it this month?",
+  "use_cases": [
+    {"situation": "A brainstorming session keeps producing ideas everyone agrees with.", "move": "Ask Thiel's interview question and have each person complete 'most people believe x, but...'.", "context": "meeting"},
+    {"situation": "Over dinner a friend shares a contrarian idea.", "move": "Ask what evidence would show it is wrong instead of judging it.", "context": "social"},
+    {"situation": "You have a hunch at work nobody shares.", "move": "Write it as one sentence and name one small test.", "context": "self"}
+  ],
+  "pocket_idea": "If many people already agree with your bold idea, it is not a secret; write the 'most believe x' sentence.",
+  "conversation_variants": {
+    "punchline_idea": "Thiel's favorite interview question: what important truth do very few people agree with you on? Most answers fail because many people already agree.",
+    "thirty_sec_idea": "Interview question; bad answers; good answer form; Thiel's own answer globalization vs technology.",
+    "question_idea": "",
+    "key_contrast_idea": "popular opinion vs hidden truth"
+  }
+}

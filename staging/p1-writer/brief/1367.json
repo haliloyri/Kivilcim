@@ -1,0 +1,60 @@
+{
+ "story_id": 1367,
+ "kind": "concept",
+ "book": {
+  "title": "Company of One",
+  "author": "Paul Jarvis",
+  "year": "2019"
+ },
+ "confidence": "medium",
+ "confidence_note": "Book content checked through publisher pages and several detailed summaries (Readingraphics, Shortform, Paul Minors); no full text available. The Southwest 1996 example (100+ cities asked, 4 added, stayed profitable) is reported from a summary of the book; the same example appears in Jim Collins's Great by Choice. The old text's claim that big companies have lower margins than small ones, the quote 'optimize before you scale', and any figures about Jarvis's own income are not supported and are dropped.",
+ "facts": [
+  "Company of One (2019) by Paul Jarvis: a company of one questions growth before accepting it as the default goal; it can be one person or a small team.",
+  "Jarvis designed websites for corporations like Microsoft and Mercedes-Benz and worked with athletes such as Shaquille O'Neal and Steve Nash; he runs his work from home on an island on Canada's west coast.",
+  "Two questions for any growth: is it truly needed, and if so, can it be done with the same or fewer resources.",
+  "Four traits of a company of one: resilience, autonomy, speed, simplicity.",
+  "In 1996 more than 100 cities wanted Southwest Airlines; it added only four new locations. Per Jarvis, the restraint helped it stay profitable while most airlines lost money.",
+  "Goals should have an upper bound (where returns start to diminish), not only a lower bound.",
+  "Minimum viable profit: profit enough to pay the owner a full-time salary, viable if it sustains the person over time.",
+  "Jarvis asks 'how do I make my business better?' instead of 'how do I make it larger?'; quote: 'Not all growth is beneficial, and some growth can actually reduce your resilience and your autonomy.'"
+ ],
+ "scene_details": [
+  "a list of more than 100 cities asking for Southwest's planes, four of them chosen",
+  "Jarvis's home office on an island off Canada's west coast",
+  "a goal written with both a floor (minimum viable profit) and a ceiling"
+ ],
+ "tension": "Demand is there and growth would be easy, yet the business deliberately says yes to only a few.",
+ "opening_idea": "Open on the Southwest list: more than a hundred cities asking, four chosen.",
+ "lessons": [
+  {
+   "idea": "Give each goal an upper bound as well as a floor, so extra opportunities are weighed against what is enough.",
+   "anchor": "Southwest adding four of 100+ cities; minimum viable profit as the floor."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which current goal would change if you set in advance the point where more stops helping?",
+ "use_cases": [
+  {
+   "situation": "Team proposes expanding into a new market",
+   "move": "Ask Jarvis's two questions and mention that Southwest once picked four cities out of more than a hundred.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A new project doesn't fit your month",
+   "move": "Point to the ceiling you set and offer a later start.",
+   "context": "self"
+  },
+  {
+   "situation": "A freelancer friend says yes to every client",
+   "move": "Calculate together the profit that pays a full salary; clients beyond it are a choice.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "Southwest chose four cities out of a hundred: give each goal a ceiling so the no is pre-decided.",
+ "conversation_variants": {
+  "punchline_idea": "More than a hundred cities wanted Southwest; it opened four.",
+  "thirty_sec_idea": "Jarvis's Southwest example plus the floor/ceiling idea.",
+  "question_idea": "",
+  "key_contrast_idea": "A ceiling for growth"
+ }
+}

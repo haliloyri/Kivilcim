@@ -1,0 +1,118 @@
+{
+  "book_no": 174,
+  "title": "Hold Me Tight: Seven Conversations for a Lifetime of Love",
+  "authors": [
+    "Sue Johnson"
+  ],
+  "year": "2008",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Emotionally_focused_therapy",
+    "https://relationshipcounsellingtoronto.squarespace.com/blog/recognizing-the-demon-dialogues",
+    "https://empathi.com/blog/what-is-the-protest-polka/"
+  ],
+  "source_note": "Book text not read. Demon dialogues confirmed by several secondary pages; Hold Me Tight conversation and A.R.E. rest on the author's general knowledge of the book. DB title is 'İlişki Psikolojisi'; the book is Hold Me Tight.",
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Hold Me Tight (2008) by Sue Johnson is built on seven conversations. The first is about recognising the 'demon dialogues', patterns that trap couples.",
+      "source": "search results; author knowledge",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Johnson's Emotionally Focused Therapy was formulated and tested with Les Greenberg in 1985; she later integrated attachment theory, which she treats as the defining theory of adult love. The problem is placed in the reinforcing cycle between partners, not in one partner.",
+      "source": "Wikipedia (EFT)",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Three demon dialogues. Find the Bad Guy: partners go in a circle blaming each other, each defending themselves. Protest Polka: one partner reaches out and protests the disconnect, the other withdraws and pushes back against perceived criticism. Freeze and Flee: follows the polka; the pursuing partner has given up, both step back, and the result is icy silence with no connection.",
+      "source": "relationshipcounsellingtoronto.squarespace.com; search results",
+      "confidence": "high"
+    },
+    {
+      "id": "f4",
+      "claim": "Johnson frames the pursuer's protest as an attachment protest: in effect the partner is asking whether they matter to the other. The page's image: one person knocking on a brick wall, hoping the other will open it.",
+      "source": "empathi.com; squarespace blog",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Suggested response: treat the pattern as a shared enemy and stay with the present moment; both partners learn to recognise each other's desperation. The connection may be 'forgotten' rather than gone.",
+      "source": "squarespace blog",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "EFT's stages: de-escalate the negative cycle; restructure the bond by accessing disowned needs and emotions, accepting the other's experience and expressing needs; then consolidate new cycles.",
+      "source": "Wikipedia (EFT)",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "The book's 'Hold Me Tight' conversation (conversation four) is where a partner, from a softened, vulnerable position, asks directly for what they need instead of attacking or retreating. The book frames the key attachment question as whether the partner is accessible, responsive and engaged (A.R.E.).",
+      "source": "author knowledge of the book; not confirmed by fetched pages",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "A 2019 meta-analysis (Beasley and Ager) found EFT significantly improves relationship satisfaction, with gains sustained up to two years.",
+      "source": "Wikipedia (EFT)",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "EFT's first couples manual was published in 1988. Johnson's nine-step model has three stages (de-escalation, restructuring the bond, consolidation). Attachment styles as described: anxious partners seek reassurance and may use blame, avoidant partners tend to solve problems dispassionately (Johnson and Sims 2000).",
+      "source": "Wikipedia (EFT)",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Old text: Johnson worked with couples for ten years, hundreds of sessions, thousands of arguments.",
+      "reason": "Not supported."
+    },
+    {
+      "claim": "Old text: the two quoted questions ('Orada mısın? Önemli miyim?...') presented as Johnson's words.",
+      "reason": "Not verbatim; only the paraphrase (are you there for me) is supported."
+    },
+    {
+      "claim": "Old text: the woman pursues, the man withdraws, with quoted complaints.",
+      "reason": "Invented case; book/EFT do not assign roles by gender."
+    },
+    {
+      "claim": "Old text: couple in session, woman says she feels lonely beside him, man's eyes fill with tears and replies 'I was always here'.",
+      "reason": "Invented scene and dialogue; not verified in the book."
+    }
+  ],
+  "stories": {
+    "1618": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f2",
+        "f4",
+        "f7",
+        "f9"
+      ],
+      "note": "Concept story: attachment question under conflict."
+    },
+    "1619": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f3",
+        "f5"
+      ],
+      "note": "Three dialogues, cycle as shared enemy."
+    },
+    "1620": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f6",
+        "f7",
+        "f8"
+      ],
+      "note": "Hold me tight conversation; medium confidence."
+    }
+  }
+}

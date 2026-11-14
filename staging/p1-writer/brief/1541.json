@@ -1,0 +1,59 @@
+{
+  "story_id": 1541,
+  "kind": "concept",
+  "book": {
+    "title": "The Back of the Napkin",
+    "author": "Dan Roam",
+    "year": "2008"
+  },
+  "confidence": "medium",
+  "confidence_note": "SQVID pairs and the six-ways-of-seeing mapping are consistent across several summaries (reading notes with page numbers, readingraphics); no full text was available. The old text's anecdote (a CEO with a pie chart, an engineer with a bubble chart), its glosses of each SQVID question and the mapping to line chart, matrix and flow diagram are not in any source and were dropped. SAX Inc. is the book's case-study company (summary); the training-manager example is from the Globe and Mail review.",
+  "facts": [
+    "SQVID is a set of five filters for refining an idea at the imagine step; each is a pair of opposites: simple vs elaborate, quality vs quantity, vision vs execution, individual attributes vs comparison, delta (change) vs status quo.",
+    "Short descriptions: simple vs elaborate is how much detail to include; quality vs quantity is how to express the idea; vision vs execution is the level at which to present it; individual vs comparison is how to position it; delta vs status quo is what to emphasize.",
+    "The five pairs can be run in order (idea focusing) or each pair can be weighted toward what matters most to the audience (audience focusing).",
+    "Six ways of seeing map to six pictures: who/what to a portrait, how much to a chart, where to a map, when to a timeline, how to a flowchart, why to a multiple-variable plot. 'For each of the six ways of seeing there is one corresponding way of showing.'",
+    "The book's case study follows SAX Inc., an accounting software company whose sales are stagnating as competitors gain ground.",
+    "In the Globe and Mail review, a training manager at a new company uses the six questions to organize its many training programs: who is trained, where lessons happen and when they occur.",
+    "The toolbox is counted 3-4-5-6: three tools, four steps, five filters, six questions. In Roam's sequence the six questions belong to seeing, SQVID to imagining, and the picture to showing, which has three steps: choose a framework, develop the idea, draw and share it."
+  ],
+  "scene_details": [
+    "five pairs of opposites",
+    "six questions each with one picture",
+    "a training manager organizing programs by who, where, when"
+  ],
+  "tension": "The same idea can be drawn in many ways, and picking the wrong one is easy without a way to choose.",
+  "opening_idea": "Open on the five pairs of opposites and the question of what the picture is for, without naming the author.",
+  "lessons": [
+    {
+      "idea": "Decide which side of a pair matters to the audience before choosing the picture.",
+      "anchor": "weighting the pairs toward the audience"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a chart or slide you made recently: which side of a pair, simple or elaborate, change or current state, did your audience actually need?",
+  "use_cases": [
+    {
+      "situation": "You are about to present quarterly numbers",
+      "move": "Ask whether the point is change or the current state before you draw, and let that choose the picture.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague shows a crowded slide",
+      "move": "Ask which side of the pair matters most to the audience, simple or elaborate, one item or a comparison, and cut toward it.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You must sketch a plan for a landlord",
+      "move": "Use the six questions (who, how much, where, when, how, why), pick the one that matters and draw its picture.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Before you draw, pick a side in each pair: simple or elaborate, change or current state.",
+  "conversation_variants": {
+    "punchline_idea": "Roam gives every question one picture: who gets a portrait, when gets a timeline.",
+    "thirty_sec_idea": "Five pairs of opposites help choose what a picture should say; six questions each have a matching picture.",
+    "question_idea": "",
+    "key_contrast_idea": "which picture, which side"
+  }
+}

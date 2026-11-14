@@ -1,0 +1,35 @@
+{
+  "story_id": 1525,
+  "verdict": "keep",
+  "verify_note": "Keep: Shitty First Drafts chapter confirmed via quoting pages and study notes (child's draft, Mr. Poopy Pants, down/up/dental drafts, restaurant-review example). Invented quote and 'permission' rule from the old text dropped; no full text available, so medium confidence.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Önce berbat taslak",
+    "description": "Anne Lamott'a göre iyi yazan yazarlar bile kendinden emin oturup zarif bir ilk taslak yazmaz. İlk taslak, kimsenin görmeyeceği çocuk taslağıdır.",
+    "hook": "Hangi işi, ilk hâli yeterince iyi olmayacağı için hâlâ başlamadınız?",
+    "one_minute_summary": "Anne Lamott'a göre yazı yazmayanlar, yazarların coşkuyla ve özgüvenle masaya oturduğunu sanır. Oysa tanıdığı yazarların hiçbiri zarif bir ilk taslak yazmaz. Kendisi restoran eleştirileri için arkadaşlarıyla yemeğe gider, titizlikle not tutardı, ama ilk taslak onu paniğe sokardı. Ona göre ilk taslak çocuk taslağıdır: her şeyi dökersiniz, kimse görmeyecek, sonra biçim verirsiniz. Bir arkadaşı üç taslağı şöyle adlandırır: inen taslak, çıkan taslak ve dişçi taslağı. Önemli olan, bir yerden başlamak ve kâğıda her neyse bir şey yazmaktır."
+  },
+  "en": {
+    "title": "The draft nobody sees",
+    "description": "Anne Lamott says none of the writers she knows writes an elegant first draft. The first draft is the child's draft, and nobody will read it.",
+    "hook": "Which piece of work are you holding back because the first version won't be good?",
+    "one_minute_summary": "People who don't write imagine writers sitting down confident and enthusiastic, Anne Lamott says, but none of the writers she knows works that way. Her own restaurant reviews meant dinners with friends, careful notes and a first draft that brought panic. Her fix is the child's draft: let it all pour out, knowing no one will see it. A friend names the stages down, up and dental. Almost all good writing begins with terrible first efforts."
+  },
+  "es": {
+    "title": "El borrador que nadie ve",
+    "description": "Según Anne Lamott, ningún escritor que ella conoce escribe un primer borrador elegante. El primero es el borrador del niño, y nadie lo va a leer.",
+    "hook": "¿Qué trabajo retienes porque la primera versión no sería lo bastante buena?",
+    "one_minute_summary": "Quien no escribe imagina a los escritores sentándose entusiasmados y seguros, pero ninguno de los que Lamott conoce trabaja así y ninguno escribe un primer borrador elegante. Ella escribía reseñas de restaurantes: cenas con amigos, notas minuciosas y un primer borrador que le daba pánico. Su consejo es tratar el primero como el borrador del niño: dejarlo salir todo, sabiendo que nadie lo verá. Una amiga nombra las tres etapas: borrador descendente, ascendente y dental. Casi toda buena escritura empieza con primeros intentos terribles."
+  },
+  "de": {
+    "title": "Der erste Entwurf zählt nicht",
+    "description": "Anne Lamott kennt keinen Autor, der elegante erste Entwürfe schreibt. Der erste Entwurf ist der Kinderentwurf, und niemand wird ihn lesen.",
+    "hook": "Welche Arbeit hältst du zurück, weil die erste Fassung nicht gut genug wäre?",
+    "one_minute_summary": "Wer nicht schreibt, stellt sich Autoren begeistert und selbstsicher am Schreibtisch vor. Anne Lamott kennt keinen, der so arbeitet, und keinen, der elegante erste Entwürfe schreibt. Für ihre Restaurantkritiken aß sie mit Freunden, machte genaue Notizen und geriet beim ersten Entwurf in Panik. Ihr Rat: Der erste Entwurf ist der Kinderentwurf. Alles darf heraus, denn niemand sieht ihn. Eine Freundin nennt die drei Stufen Down-, Up- und Dental-Entwurf. Fast alles gute Schreiben beginnt mit furchtbaren ersten Versuchen."
+  }
+}

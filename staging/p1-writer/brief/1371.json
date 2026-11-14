@@ -1,0 +1,59 @@
+{
+ "story_id": 1371,
+ "kind": "concept",
+ "book": {
+  "title": "Never Split the Difference",
+  "author": "Chris Voss",
+  "year": "2016"
+ },
+ "confidence": "medium",
+ "confidence_note": "Mirroring definition, the Wiseman waiter study (70 percent higher average tip) and the two-copies office case come from a blog that quotes the book closely; the email line 'The two digital backups will be fine' and 'It's fine. You can store it anywhere' are quoted there. The 1993 Chase Manhattan Brooklyn robbery and the mirror 'We chased your driver away?' are confirmed by a summary and Voss's MasterClass page, not the text itself. The old text's invented Voss quotes ('this looks stupid but it works', 'the best negotiator listens most') were dropped.",
+ "facts": [
+  "Mirroring: repeat the last three words or the one to three most important words, with an inquisitive tone; Voss advises the late-night FM DJ voice; mirroring can cover body language and tempo, but in negotiation focus on words.",
+  "1993: two robbers held hostages at a Chase Manhattan branch in Brooklyn; Voss mirrored a robber's complaint as 'We chased your driver away?' and the robber poured out information.",
+  "Richard Wiseman's waiter study: positive reinforcement ('great', 'no problem', 'sure') vs. repeating orders; mirroring waiters' average tip was 70 percent higher.",
+  "Office: a boss known for 'drive-bys' asks for two paper copies of all paperwork, one in-house, one for the client; the employee mirrors 'Two copies?'; the client never asked for one.",
+  "Asked where to store the in-house copy, the boss says 'It's fine. You can store it anywhere'; mirrored again, he asks for them in his office plus two digital backups.",
+  "Next day's email: 'The two digital backups will be fine.' About a week of work avoided."
+ ],
+ "scene_details": [
+  "the boss stopping at the desk for a 'drive-by'",
+  "'Two copies?' said calmly",
+  "the next-morning email about two digital backups",
+  "waiters repeating orders back"
+ ],
+ "tension": "An employee faces a week of pointless work and cannot refuse a boss.",
+ "opening_idea": "Open on the boss's drive-by request, or the waiter groups, or the robbery phone call.",
+ "lessons": [
+  {
+   "idea": "Before pushing back, repeat the last words as a question; the other person explains and the need becomes clear.",
+   "anchor": "'Two copies?' and the 70 percent waiter result."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "In which upcoming hard conversation would you like to hear more by repeating the other person's last words?",
+ "use_cases": [
+  {
+   "situation": "Vague request in a meeting ('more professional')",
+   "move": "Mirror 'More professional?' and wait.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Child says everyone hates them",
+   "move": "Mirror 'Everyone hates you?'",
+   "context": "family"
+  },
+  {
+   "situation": "Friend in sales says customers don't open up",
+   "move": "Mention the waiter study and suggest repeating the customer's last words.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "Hand the last words back as a question: 'Two copies?' erased a week of pointless work.",
+ "conversation_variants": {
+  "punchline_idea": "Waiters who just repeated the order got 70 percent bigger tips.",
+  "thirty_sec_idea": "The two-copies office case with the email ending.",
+  "question_idea": "",
+  "key_contrast_idea": "Repeat, don't argue"
+ }
+}

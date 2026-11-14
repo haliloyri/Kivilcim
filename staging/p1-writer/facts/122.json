@@ -1,0 +1,39 @@
+{
+ "book_no": 122,
+ "title": "Moonwalking with Einstein",
+ "authors": ["Joshua Foer"],
+ "year": "2011",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Moonwalking_with_Einstein",
+  "https://www.npr.org/2011/02/23/134003962/Moonwalking-With-Einstein",
+  "https://www.washingtonindependentreviewofbooks.com/bookreview/moonwalking-with-einstein",
+  "https://psychologytoday.com/us/blog/the-child-in-time/201104/moonwalking-simonides",
+  "https://www.goodreads.com/work/quotes/6533383-moonwalking-with-einstein-the-art-and-science-of-remembering-everything",
+  "https://www.discovermagazine.com/3-unique-ways-we-can-remember-the-past-44265"
+ ],
+ "facts": [
+  {"id":"f1","claim":"Moonwalking with Einstein: The Art and Science of Remembering Everything, Joshua Foer, published 2011 (Turkish edition: Kalıcı Hafıza).","source":"Wikipedia","confidence":"high"},
+  {"id":"f2","claim":"Foer attended the 2005 U.S. Memory Championship as a journalist; he met Ed Cooke, a 24-year-old English memory grandmaster, and Cooke agreed to train him.","source":"Wikipedia; reviews","confidence":"high"},
+  {"id":"f3","claim":"After about a year of training Foer won the 2006 USA Memory Championship and set a U.S. record in speed cards: one deck in 1 minute 40 seconds.","source":"Wikipedia; NPR; reviews","confidence":"high"},
+  {"id":"f4","claim":"Foer's own memory was ordinary and the book's thesis is that memory is a trainable skill.","source":"reviews","confidence":"medium"},
+  {"id":"f5","claim":"The memory palace is credited to the Greek poet Simonides, who lived in the fifth century B.C.; the earliest surviving description is in a Latin textbook (Rhetorica ad Herennium, about 86-82 BC).","source":"Washington Independent Review of Books","confidence":"high"},
+  {"id":"f6","claim":"Legend: Simonides was called out of a banquet hall just before the roof fell in; the other guests were crushed beyond recognition; he could recall where each guest had been sitting, which let the bodies be identified.","source":"reviews; Psychology Today","confidence":"high"},
+  {"id":"f7","claim":"The method engages spatial memory: information is placed along a route through a familiar place and retrieved by walking through it in the mind.","source":"reviews","confidence":"high"},
+  {"id":"f8","claim":"Foer meets and examines Daniel Tammet, a self-described savant, and comes to suspect Tammet is closer to memory-contest competitors than to the 'Rain Man' type.","source":"Wikipedia; reviews","confidence":"medium"},
+  {"id":"f9","claim":"Solomon Shereshevsky ('S'), a Russian journalist, came to psychologist A. R. Luria's office in 1928 saying he had an unusually powerful memory. Luria studied him for about 30 years; S could memorize passages in a foreign language and abstruse formulas without understanding them and keep them for years.","source":"reviews; summaries","confidence":"medium"},
+  {"id":"f10","claim":"S was burdened by not forgetting: his mind was cluttered with trivial details and sensations, and he struggled to abstract and generalize; he had trouble holding a normal job.","source":"summaries","confidence":"medium"},
+  {"id":"f11","claim":"Foer links this to Borges's story 'Funes the Memorious' and the line that forgetting, not remembering, is essential to being human (Goodreads quote attribution only).","source":"Goodreads quotes; summaries","confidence":"low"}
+ ],
+ "rejected": [
+  {"claim":"Foer was sure the champions were born geniuses and went to cover the event 'in 2005 skeptical'; champions said 'our memory is no better than yours'","reason":"The quote is not found. The supported version: the champions told him they have ordinary memories (Foer's thesis), kept as an author claim only with medium weight."},
+  {"claim":"Foer won by learning 'old Greek techniques every day' for a year and 'memory is creativity not technique'","reason":"Year and coaching supported; the 'creativity not technique' line is not found."},
+  {"claim":"Memory palace works because evolution made spatial memory critical for finding food and danger; the date 1453 placed in a kitchen","reason":"Evolutionary explanation and 1453 example not found in sources."},
+  {"claim":"Sleep sorts memory and clears the unnecessary; best-memory people are best at selective forgetting; 'Brain has no unlimited storage'","reason":"Sleep claims not found in the book sources; the selective-forgetting claim is replaced with the S/Funes material."},
+  {"claim":"Simonides was at a feast of Scopas","reason":"Host not named in the sources; omitted."}
+ ],
+ "stories": {
+  "1462": {"verdict":"keep","fact_ids":["f2","f3","f4"],"note":"Journalist trains for a year with Ed Cooke and wins the 2006 championship; quote dropped."},
+  "1463": {"verdict":"keep","fact_ids":["f5","f6","f7"],"note":"Simonides legend and how the palace works; evolution/1453 claims dropped."},
+  "1464": {"verdict":"keep","fact_ids":["f9","f10","f11"],"note":"Rebuilt on Shereshevsky: the cost of not forgetting. Sleep claims dropped. Medium confidence, secondary sources only."}
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "book_no": 53,
+ "title": "Rich Dad Poor Dad",
+ "authors": [
+  "Robert T. Kiyosaki"
+ ],
+ "year": "1997",
+ "sources": [
+  "https://archive.org/details/rich-dad-poor-dad",
+  "https://www.fool.com/the-ascent/personal-finance/articles/3-things-rich-dad-poor-dad-gets-wrong-about-building-wealth/",
+  "https://johntreed.com/Kiyosaki.html",
+  "https://www.whitecoatinvestor.com/lessons-rich-dad-poor-dad/",
+  "https://finmasters.com/rich-dad-poor-dad-review/"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Chapter 'Lesson 4: The History of Taxes and the Power of Corporations' opens with Robin Hood: Kiyosaki's teacher called him a romantic hero; rich dad called Robin Hood a crook.",
+   "source": "Book text (archive.org, 20th anniversary ed.)",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Rich dad's tax history as told in the book: temporary war taxes (Britain against Napoleon 1799-1816, America for the Civil War 1861-1865); England made income tax permanent in 1874; the US in 1913 with the 16th Amendment; taxes were first levied only on the rich, then spread to the middle class and the poor.",
+   "source": "Book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Book's core contrast: 'Employees earn and get taxed, and they try to live on what is left. A corporation earns, spends everything it can, and is taxed on anything that is left.'",
+   "source": "Book text, section on Financial IQ / Tax advantages",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Kiyosaki describes a corporation as 'merely a file folder with some legal documents in it' sitting in an attorney's office, registered with a state agency.",
+   "source": "Book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "The book's examples of corporate expenses: vacations as 'board meetings in Hawaii', car payments, insurance, repairs, health-club memberships; he calls it legal and done with pre-tax dollars.",
+   "source": "Book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Kiyosaki writes that average Americans work four to five months a year for the government just to cover taxes ('working from January to May').",
+   "source": "Book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "When young Robert told rich dad his father's advice to climb the corporate ladder, rich dad chuckled: 'Why not own the ladder?'",
+   "source": "Book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Rich dad paid for smart tax accountants and attorneys because it was cheaper than paying the government; his line: 'Be smart and you won't be pushed around as much.' Financial IQ in the book has four parts: accounting, investing, understanding markets, the law.",
+   "source": "Book text",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Critics (Motley Fool, John T. Reed, Finmasters) call the corporate tax advice oversimplified at best; deducting personal vacations or gym dues through a company can be illegal. The existence of a real 'rich dad' is also disputed.",
+   "source": "Motley Fool; johntreed.com; Finmasters; White Coat Investor",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Book: the rich created the corporation in the days of sailing ships to limit risk to the money invested in each voyage; if the ship was lost the crew lost their lives, the investors only the money put into that voyage.",
+   "source": "Book text, Lesson 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Rich dad reminded Mike and Robert that the biggest bully was not the boss or the supervisor but the tax man, who will always take more if you let him.",
+   "source": "Book text, Lesson 4",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Employee: earn -> pay tax -> spend; owner: earn -> spend (business costs) -> pay tax, presented as plain fact without caveat",
+   "reason": "The order is in the book, but whether personal costs are deductible depends on law; kept only as Kiyosaki's claim with an editorial caveat"
+  },
+  {
+   "claim": "'The wealth gap between the two approaches becomes huge over decades'",
+   "reason": "No such figure or statement verified in the book"
+  },
+  {
+   "claim": "People spend on homes, cars, education but invest nothing in financial literacy, as 'Kiyosaki's biggest complaint'",
+   "reason": "Ranking as 'biggest complaint' not supported"
+  },
+  {
+   "claim": "'Financial literacy is not a luxury' as a quoted line",
+   "reason": "Not in the book as a quote"
+  }
+ ],
+ "stories": {
+  "1293": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f10",
+    "f11"
+   ],
+   "note": "Center (earn-spend-tax order) is in Lesson 4. Rebuilt around Robin Hood, tax history, the file-folder corporation and the 'own the ladder' line, with an editorial caveat on legality."
+  }
+ }
+}

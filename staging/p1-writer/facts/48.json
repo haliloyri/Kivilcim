@@ -1,0 +1,43 @@
+{
+  "book_no": 48,
+  "title": "Zero to One",
+  "authors": "Peter Thiel (with Blake Masters)",
+  "year": "2014",
+  "sources": [
+    "https://bbnotes.vercel.app/books/zero-to-one/",
+    "https://fortune.com/2017/01/19/peter-thiels-latest-investment-airlines",
+    "https://businessinsider.in/peter-thiel-google-is-a-monopoly-and-its-a-good-thing/amp_articleshow/42648793.cms",
+    "https://www.grahammann.net/book-notes/zero-to-one-peter-thiel",
+    "https://fs.blog/the-single-best-interview-question-you-can-ask/",
+    "https://qz.com/work/1485668/this-is-peter-thiels-favorite-interview-question",
+    "https://readingraphics.com/?p=3641",
+    "https://www.readtheprofile.com/p/peter-thiel-secrets"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "In 2012, when the average airfare was $178, US airlines made only 37 cents per passenger trip.", "source": "bbnotes summary of the book; Fortune 2017 citing Thiel's WSJ essay with the same 37-cent / $178 figures", "confidence": "high"},
+    {"id": "f2", "claim": "Google, with about $50 billion of 2012 revenue, kept 21% of revenue as profit, more than 100 times the airline industry's profit margin that year; Google was worth about three times all US airlines combined.", "source": "bbnotes summary; WebSearch result summaries of the book", "confidence": "high"},
+    {"id": "f3", "claim": "Thiel's explanation: the airlines compete with each other, Google stands alone. Competition drives profits toward zero; a monopoly can keep the value it creates.", "source": "bbnotes; grahammann notes ('Competition is for losers')", "confidence": "high"},
+    {"id": "f4", "claim": "Monopolists hide their position: Google, with about 68% of search (May 2014; Microsoft ~19%, Yahoo ~10%), describes itself as a small player in global advertising, where its share would be about 3.4% (US search ads ~$17bn of a ~$495bn global ad market).", "source": "WebSearch result quoting the book; bbnotes", "confidence": "high"},
+    {"id": "f5", "claim": "Non-monopolists do the reverse and narrow their market to look unique, e.g. a restaurant defining its market as British food in Palo Alto.", "source": "bbnotes; grahammann ('British food ∩ restaurant ∩ Palo Alto')", "confidence": "high"},
+    {"id": "f6", "claim": "Thiel: rivals become alike and fight precisely because of their sameness; competition makes people imitate rivals instead of creating.", "source": "bbnotes", "confidence": "medium"},
+    {"id": "f7", "claim": "Whenever Thiel interviews someone for a job, he asks: 'What important truth do very few people agree with you on?'", "source": "fs.blog excerpt; qz.com", "confidence": "high"},
+    {"id": "f8", "claim": "The question is intellectually hard because school knowledge is by definition agreed upon, and psychologically hard because the answer must be something the speaker knows is unpopular. 'Brilliant thinking is rare, but courage is in even shorter supply than genius.'", "source": "fs.blog; grahammann", "confidence": "high"},
+    {"id": "f9", "claim": "Common bad answers: 'our educational system is broken', 'America is exceptional', 'there is no God'. The first two may be true but many already agree; the third takes a side in a familiar debate.", "source": "fs.blog", "confidence": "high"},
+    {"id": "f10", "claim": "A good answer takes the form 'Most people believe in x, but the truth is the opposite of x.' Thiel's own answer: most people think globalization will define the future, but technology matters more.", "source": "fs.blog; WebSearch summary", "confidence": "high"},
+    {"id": "f11", "claim": "Every great business is built around a secret that is hidden from the outside. Secrets are of two kinds: about nature and about people.", "source": "readtheprofile; grahammann; WebSearch summaries", "confidence": "high"},
+    {"id": "f12", "claim": "Airbnb and Uber are given as companies built on secrets visible to anyone: Airbnb saw unused rooms as supply and travelers' needs as unmet demand; Uber connected people wanting rides with people willing to drive. Lyft is mentioned with them.", "source": "bbnotes; readingraphics (secondary wording)", "confidence": "medium"},
+    {"id": "f13", "claim": "Four trends keep people from looking for secrets: incrementalism, risk aversion, complacency, and flatness (if a secret existed, someone smarter in the global talent pool would already have found it).", "source": "bbnotes; grahammann", "confidence": "high"}
+  ],
+  "rejected": [
+    {"claim": "Apple won by combining phone, music player and internet device into a new category (1277 old text)", "reason": "Not found as a Zero to One example in any source; the book's Apple mention is a market-cap comparison."},
+    {"claim": "Airline profit margins 'kat kat' vs Google as stated generally", "reason": "Replaced by the book's exact figures (f1, f2)."},
+    {"claim": "Quote 'Gizler var... en büyük fırsatlar orada' (1278 old text)", "reason": "Not a verified quotation; paraphrase only (f11)."},
+    {"claim": "Airbnb founders knew 'people are not afraid to stay in strangers' homes'", "reason": "Book frames it as untapped supply / unmet demand (f12), not this wording."},
+    {"claim": "DoorDash and SpaceX as examples of secrets", "reason": "Not found in the book's secrets chapter in any source."},
+    {"claim": "Real success is not beating rivals but making them irrelevant (quoted line)", "reason": "Not a verified quote."}
+  ],
+  "stories": {
+    "1277": {"verdict": "keep", "fact_ids": ["f1", "f2", "f3", "f4", "f5", "f6"], "note": "Center (competition vs monopoly, airlines vs Google) is the book's chapter 3 example."},
+    "1278": {"verdict": "keep", "fact_ids": ["f7", "f8", "f9", "f10", "f11", "f12", "f13"], "note": "Center (contrarian question, secrets) is chapters 1 and 8."}
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "story_id": 1260,
+  "kind": "anecdote",
+  "book": {
+    "title": "Stillness Is the Key",
+    "author": "Ryan Holiday",
+    "year": "2019"
+  },
+  "confidence": "high",
+  "confidence_note": "Verified in the archive.org full text, chapter 'Limit Your Inputs'. The story goes back to Emerson's essay on Napoleon; Holiday tells it without page-level sourcing. The old text's 24-hour/one-week waiting exercise is not in the book and was dropped.",
+  "facts": [
+    "As a general, Napoleon made it his habit to delay responding to mail: his secretary was told to wait three weeks before opening any correspondence.",
+    "When he finally heard what a letter said, Napoleon loved to note how many supposedly important issues had resolved themselves and needed no reply.",
+    "Holiday stresses Napoleon was never negligent in his duties or out of touch with his government or soldiers.",
+    "He told messengers never to wake him with good news; bad news, an unfolding crisis, was to be brought immediately: 'Rouse me instantly, for then there is not a moment to be lost.'",
+    "Holiday contrasts this with the 'CNN Effect': twenty-four-hour coverage that makes leaders reactive.",
+    "His advice: give things a little space, don't consume news in real time, don't let your inbox lord over your life; the important will still be important, the unimportant will show its insignificance.",
+    "A century and a half later Eisenhower refused to be handed unopened mail and sorted problems by urgency and importance.",
+    "Holiday quotes Epictetus: 'If you wish to improve, be content to appear clueless or stupid in extraneous matters.'",
+    "Napoleon accepted being behind on his mail even if it upset some people or he missed some gossip, because trivial problems had to resolve themselves without him.",
+    "Eisenhower's insight, as Holiday tells it: much that was happening was urgent but not important, and most of what was truly important was not time-sensitive; this became the 'Eisenhower Box'.",
+    "In her 1942 diary Dorothy Day told herself: 'Turn off your radio, put away your daily paper.'",
+    "Holiday notes that drowning someone in information is a tactic: lawyers try to bury the other side in paper, intelligence operatives flood the enemy with propaganda; the result is called analysis paralysis.",
+    "Holiday's concrete advice: don't consume news in real time, be a season or two behind on the latest trend, don't let your inbox lord over your life.",
+    "The story traces back to Ralph Waldo Emerson's essay on Napoleon."
+  ],
+  "scene_details": [
+    "letters left unopened for three weeks",
+    "messengers told not to wake him for good news",
+    "'Rouse me instantly'",
+    "Eisenhower: no unopened mail handed to him",
+    "Dorothy Day's 1942 diary: turn off the radio"
+  ],
+  "tension": "An emperor at war leaves his letters sealed for three weeks; how does that not end in disaster?",
+  "opening_idea": "Start with the secretary and the pile of unopened letters, and the three-week rule.",
+  "lessons": [
+    {
+      "idea": "Sort what reaches you by whether it can wait, and let the rest wait on purpose.",
+      "anchor": "Three-week delay plus the instant wake-up rule for bad news.",
+      "example": "A shop owner checks supplier emails twice a day but keeps the phone on for the delivery van."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which message that feels urgent today would you still care about if you read it three weeks from now?",
+  "use_cases": [
+    {
+      "situation": "Team expects instant replies to every message.",
+      "move": "Propose a rule like Napoleon's: wake me only for bad news; everything else gets a set reply time.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Your inbox sets your day.",
+      "move": "Pick one block for messages and leave notifications off until then.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend is anxious about an unanswered group chat.",
+      "move": "Mention Napoleon's sealed letters: many issues sorted themselves while he waited.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Napoleon left letters sealed for three weeks but wanted bad news at once: decide which is which.",
+  "conversation_variants": {
+    "punchline_idea": "Napoleon ordered messengers never to wake him for good news, only bad.",
+    "thirty_sec_idea": "Napoleon's secretary waited three weeks before opening letters; by then many 'urgent' matters had settled. But bad news woke him instantly. Holiday uses it to argue for filtering inputs.",
+    "question_idea": "What would happen if you read your messages a day late?",
+    "key_contrast_idea": "urgent versus important"
+  }
+}

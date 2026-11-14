@@ -1,0 +1,170 @@
+{
+  "book_no": 169,
+  "title": "The Wim Hof Method",
+  "authors": [
+    "Wim Hof"
+  ],
+  "year": "2020",
+  "sources": [
+    "https://www.soundstrue.com/products/the-wim-hof-method-1",
+    "https://www2.publishersweekly.com/9781683644095",
+    "https://readingraphics.com/book-summary-the-wim-hof-method/",
+    "https://en.wikipedia.org/wiki/Wim_Hof",
+    "https://pubmed.ncbi.nlm.nih.gov/24799686/",
+    "https://www.shortform.com/pdf/the-wim-hof-method-pdf-wim-hof",
+    "https://manassaloi.com/booksummaries/2021/09/14/wim-hof-method-hof.html"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The Wim Hof Method (Sounds True, 20 October 2020, with Elissa Epel) rests on three pillars: cold exposure, breathing, and mindset/commitment.",
+      "source": "Sounds True; Publishers Weekly; summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "The cold chapter is titled 'A Cold Shower a Day Keeps the Doctor Away'.",
+      "source": "summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "Suggested start: week 1, 30 seconds of cold at the end of a shower, at least five days a week; add 30 seconds each week up to two minutes in week four. Someone who cannot manage 30 seconds can start with 15.",
+      "source": "book summary (search result)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Researchers are not certain that cold exposure improves health and stress as Hof says; the American Heart Association and British Heart Foundation advise consulting a physician first and note weak evidence.",
+      "source": "Wikipedia; search summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Basic breathing exercise: about 20 minutes, ideally before breakfast on an empty stomach, sitting or lying down. 30 to 40 deep breaths into belly, chest, head, exhale without force.",
+      "source": "readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Tingling or lightheadedness is described as normal as carbon dioxide falls.",
+      "source": "readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "After the last exhale hold the breath as long as comfortable; at the urge to breathe, inhale fully, hold 10 to 15 seconds, exhale. Repeat for 3 to 4 rounds; holds tend to get longer. A baseline hold test before and after a round shows the change.",
+      "source": "readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Radboud University, 2014 PNAS trial (Kox et al.): 24 healthy volunteers, 12 trained in meditation, breathing and cold exposure and 12 untrained; all received 2 ng/kg E. coli endotoxin. The trained group reported fewer flu-like symptoms, higher anti-inflammatory IL-10 and lower TNF-alpha, IL-6, IL-8. Single small trial.",
+      "source": "PubMed 24799686; search summary",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Whether the book itself cites the Radboud trial and its figures was not verified.",
+      "source": "-",
+      "confidence": "low"
+    },
+    {
+      "id": "f10",
+      "claim": "Hyperventilation-style breathing can cause brief unconsciousness; underwater this can lead to shallow-water blackout, and drownings of practitioners have been reported. A 2024 meta-analysis of eight studies (15 to 48 people each) rated study quality very low.",
+      "source": "Wikipedia",
+      "confidence": "high"
+    },
+    {
+      "id": "f11",
+      "claim": "Hof recommends a four-week cold-shower programme rather than starting with ice baths, to avoid shocking the body. After the normal warm shower, end with cold: week 1 30 seconds, then add 30 seconds each week, reaching two minutes in week 4, at least five days a week. If 30 seconds is too much start with 15; you may enter gradually, feet and legs first, then arms, then torso; follow the body's feedback and do not force it.",
+      "source": "Shortform preview; manassaloi summary (two sources agree)",
+      "confidence": "high"
+    },
+    {
+      "id": "f12",
+      "claim": "Hof, known as 'the Iceman', developed the method over nearly forty years; as a child he spent time outdoors in nature with his twin brother.",
+      "source": "manassaloi; Shortform preview",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Breathing safety in the book: sit or lie down, do not practise near water or standing in the shower because you may faint; the exercises are relatively difficult and may cause fainting. Do not force breath holds or cold exposure.",
+      "source": "Shortform preview; manassaloi",
+      "confidence": "high"
+    },
+    {
+      "id": "f14",
+      "claim": "Breathing steps confirmed by two summaries: about 30 deep breaths (up to 40), hold after the last exhale until the urge to breathe, one deep inhale held 10 to 15 seconds, repeat the cycle three to four times; about 20 minutes, best before breakfast.",
+      "source": "Shortform preview; manassaloi",
+      "confidence": "high"
+    },
+    {
+      "id": "f15",
+      "claim": "The book mentions experiments at Wayne State University in which Hof maintained his core temperature in extreme cold; the book warns readers not to try those at home. Hof's feats are not in dispute; the health benefits of the method remain unproven.",
+      "source": "manassaloi summary; Wikipedia",
+      "confidence": "medium"
+    },
+    {
+      "id": "f16",
+      "claim": "Criticism: Hof told media that research showed his body could neutralize bacteria faster, which the study did not conclude; his lead researchers warned that claims about arthritis, multiple sclerosis and cancer were scientifically unjustified.",
+      "source": "Wikipedia",
+      "confidence": "high"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Norepinephrine rises 300 to 500 percent, dopamine rises, brown fat activates, inflammation markers fall (1604)",
+      "reason": "No source ties these figures to the book."
+    },
+    {
+      "claim": "Facing the first cold shower is the 'real training' of mental resilience; resilience transfers to every hardship",
+      "reason": "Not found in sources; interpretive."
+    },
+    {
+      "claim": "Hold times of 1-3 minutes on average",
+      "reason": "Not in sources."
+    },
+    {
+      "claim": "Early users cried, laughed, felt euphoria; first hearers laughed at the technique (1605)",
+      "reason": "No source."
+    },
+    {
+      "claim": "You can reprogram your biology in minutes; 15 minutes lying down will change your biology",
+      "reason": "Overclaim; 20 minutes in sources; no such promise."
+    },
+    {
+      "claim": "Radboud: much fewer symptoms than normal group, immune system opened to conscious control",
+      "reason": "Reworded to the study's actual design and reported outcomes (f8)."
+    }
+  ],
+  "stories": {
+    "1604": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f11",
+        "f12",
+        "f15"
+      ],
+      "note": "Concept story built on the book's four-week cold-shower programme (two summaries agree). Physiology figures dropped. Medium."
+    },
+    "1605": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f10",
+        "f13",
+        "f14",
+        "f16"
+      ],
+      "note": "Breathing steps from a summary, Radboud from PubMed; safety caveat included."
+    }
+  }
+}

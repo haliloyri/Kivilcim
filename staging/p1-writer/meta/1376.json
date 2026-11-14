@@ -1,0 +1,35 @@
+{
+ "story_id": 1376,
+ "verdict": "keep",
+ "verify_note": "Passages 4.3, 4.7, 8.47, 11.36-37 and 1.7 checked in the Long translation of Meditations. The invented daily 'what is in my control?' question and the misattributed quote about the will were dropped; the dichotomy of control is Epictetus's, which Marcus copied in 11.36.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Zarar Yargıdadır",
+  "description": "Marcus Aurelius defterinde, kendisini üzen şeyin olayların değil kendi yargısının olduğunu tekrar tekrar hatırlatıyor. Bu düşünceyi hocası Rusticus'un tanıttığı Epiktetos'tan almıştı.",
+  "hook": "Sizi gerçekten üzen olayın kendisi mi, yoksa ona eklediğiniz cümle mi?",
+  "one_minute_summary": "Marcus Aurelius, Meditations'ın dördüncü kitabında insanların kırda evler, deniz kıyıları ve dağlar gibi sığınaklar aradığını, oysa insanın her an kendi içine çekilebileceğini yazıyor. Yanında iki düşünce tutuyor: şeyler ruha dokunmaz, huzursuzluk içerideki kanaatten gelir. Kanaati kaldırınca \"zarar gördüm\" şikâyetinin, şikâyeti kaldırınca zararın da kalktığını yazıyor. Sekizinci kitapta bunu açıkça söylüyor: canını sıkan şey değil, ona dair yargısı. Fikirleri Rusticus'un tanıttığı Epiktetos'tan geliyor."
+ },
+ "en": {
+  "title": "The Harm Is in the Judgement",
+  "description": "Marcus Aurelius keeps reminding himself in his notebook that what disturbs him is his judgement, not events. He met the idea through Epictetus.",
+  "hook": "Is it what happened that bothers you, or the sentence you added to it?",
+  "one_minute_summary": "In Book Four of Meditations, Marcus Aurelius notes that people long for country houses, sea-shores and mountains, yet anyone can retire into himself at will. He keeps two thoughts ready: things do not touch the soul, and disturbances come from the opinion within. Take away the opinion and the complaint goes, he writes; take away the complaint and the harm goes. In Book Eight: it is not the external thing that disturbs you but your judgement of it. Rusticus had introduced him to Epictetus."
+ },
+ "es": {
+  "title": "El daño está en el juicio",
+  "description": "Marco Aurelio se recuerda una y otra vez en su cuaderno que lo que le perturba es su juicio y no los hechos. Conoció la idea a través de Epicteto.",
+  "hook": "¿Te molesta lo que pasó o la frase que tú le añadiste?",
+  "one_minute_summary": "En el libro cuarto de Meditations, Marco Aurelio anota que la gente desea casas en el campo, playas y montañas, aunque cualquiera puede retirarse a sí mismo cuando quiera. Guarda dos ideas: las cosas no tocan el alma y las perturbaciones nacen de la opinión interior. Quita la opinión y se va la queja; quita la queja y se va el daño. En el libro octavo lo dice claro: no te perturba lo externo, sino tu juicio sobre ello. Rústico le había dado a conocer a Epicteto."
+ },
+ "de": {
+  "title": "Der Schaden liegt im Urteil",
+  "description": "Marcus Aurelius erinnert sich in seinem Heft immer wieder, dass ihn sein Urteil beunruhigt und nicht die Ereignisse. Den Gedanken lernte er über Epiktet kennen.",
+  "hook": "Stört dich das Geschehene oder der Satz, den du selbst hinzugefügt hast?",
+  "one_minute_summary": "Im vierten Buch der Meditations notiert Marcus Aurelius, dass Menschen sich nach Landhäusern, Meeresufern und Bergen sehnen, obwohl jeder sich jederzeit in sich selbst zurückziehen kann. Er hält zwei Gedanken bereit: Die Dinge berühren die Seele nicht, die Unruhe kommt aus der Meinung im Inneren. Nimm die Meinung weg, und die Klage ist weg; nimm die Klage weg, und der Schaden ist weg. Im achten Buch: Nicht das Äußere beunruhigt dich, sondern dein Urteil darüber. Rusticus hatte ihn mit Epiktet bekannt gemacht."
+ }
+}

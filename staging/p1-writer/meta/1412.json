@@ -1,0 +1,35 @@
+{
+  "story_id": 1412,
+  "verdict": "keep",
+  "verify_note": "Keep, thin: Harvard Business School chapter scene from reviews (Inside Story, Fuqua, Princeton Alumni Weekly); no primary text. Old faculty quote, Karpov and Buffett/Gates/Einstein list dropped as unverified. Story at the low end of the word range.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Daha sessiz biri var mı?",
+    "description": "Susan Cain Harvard Business School'da, konuşmanın puan getirdiği bir yer görür. Bir öğrencinin cevabı çok şey söyler.",
+    "hook": "Son toplantınızda kimin fikri odaya hiç ulaşmadı?",
+    "one_minute_summary": "Susan Cain, Quiet için Harvard Business School'a gitti ve orayı Dışa Dönüklüğün Manevi Başkenti diye adlandırdı. Derste katılım statü ve not belirliyor, yeni dönem Subarktik Hayatta Kalma alıştırmasıyla başlıyor, akşamlar bir tür aşırı spora dönüşüyor. Kampüste daha sessiz biri olup olmadığını sorduğu öğrenci bilemediğini söyledi. Cain, içe dönüklerin yalnız çalışmayı tercih ettiğini ve grup beyin fırtınasının sanıldığından az verimli olduğunu savunuyor."
+  },
+  "en": {
+    "title": "Is Anyone Here Quieter?",
+    "description": "Susan Cain visits Harvard Business School, where speaking earns status and grades. One student's answer says a lot.",
+    "hook": "In your last meeting, whose idea never reached the room?",
+    "one_minute_summary": "Susan Cain visited Harvard Business School for Quiet and nicknamed it the Spiritual Capital of Extroversion. There, participation drives status and grades, each new class runs the Subarctic Survival Situation, and evenings are an extreme sport. When she asked a student whether anyone on campus was quieter, he said he couldn't tell her. Cain argues that introverts prefer working alone and that group brainstorming is less effective than assumed."
+  },
+  "es": {
+    "title": "¿Hay alguien más callado?",
+    "description": "Susan Cain visita Harvard Business School, donde hablar da estatus y notas. La respuesta de un estudiante dice mucho.",
+    "hook": "En tu última reunión, ¿la idea de quién no llegó a la sala?",
+    "one_minute_summary": "Susan Cain visitó Harvard Business School para Quiet y la bautizó como la Capital Espiritual de la Extroversión. Allí la participación define el estatus y las notas, cada promoción nueva hace la Situación de Supervivencia Subártica y las noches son un deporte extremo. Cuando preguntó a un estudiante si alguien en el campus era más callado, él no supo decírselo. Cain sostiene que los introvertidos prefieren trabajar solos y que la lluvia de ideas en grupo rinde menos de lo que se cree."
+  },
+  "de": {
+    "title": "Gibt es hier jemand Leiseren?",
+    "description": "Susan Cain besucht die Harvard Business School, wo Reden Status und Noten bringt. Die Antwort eines Studenten sagt viel.",
+    "hook": "Wessen Idee kam in deiner letzten Besprechung nie im Raum an?",
+    "one_minute_summary": "Susan Cain besuchte für Quiet die Harvard Business School und nannte sie die geistige Hauptstadt der Extroversion. Dort bestimmt die Beteiligung über Status und Noten, jeder neue Jahrgang absolviert die Subarctic Survival Situation, die Abende sind ein Extremsport. Als sie einen Studenten fragte, ob jemand auf dem Campus leiser sei, wusste er es nicht. Cain argumentiert, Introvertierte arbeiten lieber allein und Gruppen-Brainstorming sei weniger wirksam als gedacht."
+  }
+}

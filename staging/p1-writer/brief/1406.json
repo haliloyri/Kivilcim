@@ -1,0 +1,59 @@
+{
+ "story_id": 1406,
+ "kind": "concept",
+ "book": {
+  "title": "Getting Things Done",
+  "author": "David Allen",
+  "year": "2001"
+ },
+ "confidence": "medium",
+ "confidence_note": "Concept; rule wording and efficiency reasoning quoted from GTD sources and Todoist's quote of the book. The old client anecdote (email cleanup sessions) is not sourced and was dropped.",
+ "facts": [
+  "Allen: 'If an action will take less than two minutes, it should be done at the moment it's defined.'",
+  "Reasoning: two minutes is 'the efficiency cutoff', the point where it starts taking longer to store and track an item than to deal with it.",
+  "First decide the very next action on the item; then apply the rule.",
+  "Warning: do not become a slave to spending your day doing two-minute actions; it applies mainly to new input.",
+  "Allen says two minutes is a guideline.",
+  "In a talk Allen says he has no backlog of two-minute items because they are all done."
+ ],
+ "scene_details": [
+  "a short reply",
+  "a receipt put away",
+  "a quick thank-you note"
+ ],
+ "tension": "Filing a small task can cost more than doing it, yet people store it anyway.",
+ "opening_idea": "Open on the two-minute line itself: the cost of storing and tracking a tiny task versus finishing it.",
+ "lessons": [
+  {
+   "idea": "Do the tiny thing when it arrives, but not at the cost of the real work.",
+   "anchor": "efficiency cutoff and Allen's own warning.",
+   "example": "A reply that takes a minute is sent at once; a long report waits for its slot."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which small item has been sitting on your list longer than it would take to finish, and when will you next be able to do it right away?",
+ "use_cases": [
+  {
+   "situation": "An email arrives that needs one short answer.",
+   "move": "Answer now if it takes under two minutes; Allen says storing and tracking it would cost more.",
+   "context": "self"
+  },
+  {
+   "situation": "A teammate keeps a list of tiny to-dos.",
+   "move": "Suggest finishing anything under two minutes as it comes in, and keep the list for what is longer.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "A meeting produces a handful of quick follow-ups.",
+   "move": "Do the ones under two minutes before the next meeting starts and log the rest.",
+   "context": "meeting"
+  }
+ ],
+ "pocket_idea": "If it takes under two minutes, do it as it arrives; tracking it costs more.",
+ "conversation_variants": {
+  "punchline_idea": "Allen's cutoff is when tracking a task costs more than doing it.",
+  "thirty_sec_idea": "David Allen's two-minute rule: if an action takes under two minutes, do it as soon as you see it. Writing it down and returning later costs more than the task. He also warns against letting it eat the whole day.",
+  "question_idea": "",
+  "key_contrast_idea": "track it vs finish it"
+ }
+}

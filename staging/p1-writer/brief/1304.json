@@ -1,0 +1,64 @@
+{
+  "story_id": 1304,
+  "kind": "concept",
+  "book": {
+    "title": "The Black Swan",
+    "author": "Nassim Nicholas Taleb",
+    "year": "2007"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against the book text (chapter 10, 'The Scandal of Prediction', and chapter 13). The old reference claims (experts no different from random, a dart board vs an MBA analyst, weather forecasts beyond ten days) are not in the book as stated and are dropped. Taleb says economists' forecasts are at best slightly better than random. Editorial caveat: Tetlock's later research (Superforecasting, 2015) found some forecasters reliably beat chance on short horizons.",
+  "facts": [
+    "In The Black Swan, Taleb describes a test: people are asked to give a range they are 98 percent sure contains the answer, for questions like the population of Rajasthan; only about 2 percent should miss.",
+    "The miss rate turned out to be close to 45 percent; the first group tested were Harvard Business School students.",
+    "Taleb's comment on the result: we seem to be about twenty-two times too comfortable with what we know. About a quarter of Tetlock's experts were economists.",
+    "Taleb then turns to the psychologist Philip Tetlock, who asked political and economic experts to judge the likelihood of events about five years ahead: around 27,000 predictions from close to 300 specialists.",
+    "Experts' error rates were many times what they had estimated; a PhD gave no advantage over an undergraduate degree, well-published professors none over journalists.",
+    "The one regularity: those with big reputations were worse predictors than those with none.",
+    "Tetlock was mainly interested in why experts did not notice they were not good at their own business: how they spun stories afterwards to protect their self-esteem.",
+    "Tetlock recorded the defences experts used afterwards: 'I was playing a different game', 'it was an outlier', 'I was almost right'.",
+    "Spyros Makridakis ran forecasting competitions; he and Michele Hibon concluded that statistically sophisticated methods do not necessarily forecast better than simpler ones.",
+    "Taleb's advice: invest in preparedness, not in prediction.",
+    "Editorial caveat: Tetlock's later work found a minority of forecasters who did beat chance on short questions."
+  ],
+  "scene_details": [
+    "'I am 98 percent confident the population of Rajasthan is between...'",
+    "about 27,000 predictions from close to 300 specialists",
+    "'I was almost right'"
+  ],
+  "tension": "People who are paid to forecast miss far more often than they think, and the most famous miss most.",
+  "opening_idea": "Start with the Rajasthan question and the 98 percent range.",
+  "lessons": [
+    {
+      "idea": "When you plan, widen your range of outcomes and prepare for being wrong instead of polishing one forecast.",
+      "anchor": "45 percent missed a 98 percent range; reputation made predictions worse; 'invest in preparedness, not in prediction'.",
+      "everyday_example_idea": "A family planning a move keeps a cash buffer for three extra months of rent instead of trusting the agent's estimate of when the old flat will sell."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which forecast you are currently relying on, a sales number, a date, a price, would hurt you most if it were badly wrong?",
+  "use_cases": [
+    {
+      "situation": "A plan rests on one confident forecast.",
+      "move": "Ask what we do if it's off by half, and mention Tetlock's finding that famous experts did worse.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is sure a stock or house price will rise.",
+      "move": "Ask what range they'd bet on with 98 percent confidence, then suggest widening it.",
+      "context": "social"
+    },
+    {
+      "situation": "You are setting a deadline for yourself.",
+      "move": "Write the date you expect, then add a buffer for the case you are wrong.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "People missed their own 98 percent ranges almost half the time: plan for a wide miss.",
+  "conversation_variants": {
+    "punchline_idea": "In Tetlock's study cited by Taleb, experts with big reputations predicted worse than unknown ones.",
+    "thirty_sec_idea": "98 percent ranges missed 45 percent; Tetlock's 27,000 predictions; Makridakis; 'invest in preparedness'; caveat on superforecasters.",
+    "question_idea": "",
+    "key_contrast_idea": "Forecast less, prepare more"
+  }
+}

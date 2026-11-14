@@ -1,0 +1,35 @@
+{
+ "story_id": 1425,
+ "verdict": "keep",
+ "verify_note": "Keep: rebuilt on the mountain-weather and lake images and the 'Am I doing this right?' advice (secondary summaries only). Invented 'driver's seat', stress-hormone coding and clinical-trial claims dropped. DB label 'Mindfulness' mapped to Wherever You Go, There You Are (1994).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Düşünce hava gibi geçer",
+  "description": "Kabat-Zinn düşünceleri bir dağın üstündeki havaya ve rüzgârlı bir göle benzetir. Düşünce orada kalabilir, ama bir hüküm olmak zorunda değildir.",
+  "hook": "Sizi bu hafta en çok meşgul eden düşünce, hava gibi geçiyormuş gibi bakıldığında ne olurdu?",
+  "one_minute_summary": "Jon Kabat-Zinn düşünceleri ve duyguları iki imgeyle anlatıyor. Birincisi bir dağın üstündeki hava: kişisel algılarız ama en belirgin özelliği kişisel olmaması. İkincisi bir göl: durgunken çevresini net yansıtır, rüzgârda yansımalar bulanır, ama iki hâl de yargılanmadan fark edilebilir. Dikkat sırasında \"doğru mu yapıyorum?\" sorusu belirirse cevaplamıyor, nefese ve şimdiki ana dönüyorsunuz. Düşünce orada kalabilir, yalnızca üstüne hüküm yazılmaz. Bu mesafe, düşünceyi bir hükme çevirmeden duymayı sağlar."
+ },
+ "en": {
+  "title": "Thoughts as weather",
+  "description": "Kabat-Zinn compares thoughts to weather on a mountain and wind on a lake. A thought can stay without becoming a verdict.",
+  "hook": "Which thought has followed you this week, and how would it look if you treated it as passing weather?",
+  "one_minute_summary": "Jon Kabat-Zinn gives two images for thoughts and emotions. One is weather on a mountain: we take it personally, but its most striking quality is that it is impersonal. The other is a lake: still water reflects clearly, wind blurs the reflections, and you can notice both without judging. When the question 'Am I doing this right?' appears during practice, he says not to answer it but to return to the breath. The thought may stay, it just gets no verdict."
+ },
+ "es": {
+  "title": "El pensamiento como el tiempo",
+  "description": "Kabat-Zinn compara los pensamientos con el tiempo en una montaña y el viento en un lago. Un pensamiento puede quedarse sin volverse un veredicto.",
+  "hook": "¿Qué pensamiento te ha acompañado esta semana y cómo se vería si lo trataras como tiempo que pasa?",
+  "one_minute_summary": "Jon Kabat-Zinn usa dos imágenes para los pensamientos y las emociones. Una es el tiempo sobre una montaña: lo tomamos como algo personal, pero lo más llamativo es que no lo es. La otra es un lago: en calma refleja con nitidez, con viento los reflejos se difuminan, y puedes notar ambos estados sin juzgar. Si durante la práctica aparece la pregunta de si lo haces bien, no se contesta: se vuelve a la respiración. El pensamiento puede quedarse, solo sin veredicto."
+ },
+ "de": {
+  "title": "Gedanken wie Wetter",
+  "description": "Kabat-Zinn vergleicht Gedanken mit dem Wetter auf einem Berg und dem Wind auf einem See. Ein Gedanke darf bleiben, ohne zum Urteil zu werden.",
+  "hook": "Welcher Gedanke begleitet dich diese Woche, und wie sähe er aus, wenn du ihn als vorbeiziehendes Wetter behandelst?",
+  "one_minute_summary": "Jon Kabat-Zinn nutzt zwei Bilder für Gedanken und Gefühle. Das eine ist das Wetter auf einem Berg: Wir nehmen es persönlich, aber seine auffälligste Eigenschaft ist, dass es unpersönlich ist. Das andere ist ein See: Still spiegelt er klar, bei Wind verschwimmen die Spiegelungen, und du kannst beides bemerken, ohne zu urteilen. Taucht beim Üben die Frage auf, ob du es richtig machst, beantwortest du sie nicht, sondern kehrst zum Atem zurück. Der Gedanke darf bleiben, er bekommt nur kein Urteil."
+ }
+}

@@ -1,0 +1,34 @@
+{
+  "story_id": 1533,
+  "kind": "concept",
+  "book": {"title": "SPIN Selling", "author": "Neil Rackham", "year": "1988"},
+  "confidence": "medium",
+  "confidence_note": "Book text not available; the definitions of feature, advantage and benefit and the link to objections come from several summaries that agree. The old text's '30 percent time saving' example, its quote about 'loading the seller's need onto the customer' and the 'result questions' wording are not attributable and were dropped. No real case from the book is documented, so the story explains the mechanism.",
+  "facts": [
+    "The research behind the book examined 35,000 sales calls over roughly 12 years.",
+    "A feature is a fact about the product; an advantage describes how it can help; a benefit shows how it meets an explicit need the buyer has expressed. The book advises selling benefits rather than features and advantages.",
+    "Leading with features or advantages triggers objections that slow the sale. Weaker sellers provoke objections by listing features or price-related advantages before they understand the buyer's needs.",
+    "Skilled sellers prevent objections by developing explicit needs first and addressing causes rather than symptoms.",
+    "Opening benefit statements work better in small sales than in large ones.",
+    "Uncovering several problems is safer than fixating on one, which can invite objections about weak areas of the offering.",
+    "Need-payoff questions let the buyer state the benefit; what the buyer states carries more weight and sounds less pushy. One summary: people buy when the pain of the problem outweighs the cost of the solution."
+  ],
+  "scene_details": ["three terms: feature, advantage, benefit", "objections piling up after an early pitch", "a need the buyer has already voiced"],
+  "tension": "Sellers like to describe what the product does, yet that is exactly what tends to provoke objections.",
+  "opening_idea": "Open on the calls where sellers announced what the product could do early, and objections piled up.",
+  "lessons": [{"idea": "Let the other person's need come before your description of what a thing does; a benefit only exists once there is a need for it to meet.", "anchor": "Benefit as the answer to an explicit need.", "example": "Recommending a new scheduling tool after asking which part of the week costs the most time."}],
+  "reflect": [],
+  "reflect_final": "When you last recommended something to a friend or colleague, what did you know about their need before you described its features?",
+  "use_cases": [
+    {"situation": "You are about to present a new tool to your team.", "move": "Ask which part of their week costs the most time and show only what touches that.", "context": "meeting"},
+    {"situation": "A parent resists switching to a new phone.", "move": "Ask what is hardest about the current one and start there.", "context": "family"},
+    {"situation": "A friend objects to your suggestion straight away.", "move": "Note that objections pile up when features come before needs, and ask what they would want it to fix.", "context": "social"}
+  ],
+  "pocket_idea": "Objections tend to follow features announced too early; ask what they need first, then say what yours does.",
+  "conversation_variants": {
+    "punchline_idea": "In Rackham's research, the seller who explains what the product does before hearing what the buyer needs is the one who collects the objections.",
+    "thirty_sec_idea": "Rackham separates features, advantages and benefits; a benefit shows how the offering meets a need the buyer has voiced; sellers who lead with features collect objections, skilled ones develop the need first.",
+    "question_idea": "",
+    "key_contrast_idea": "pitch before need"
+  }
+}

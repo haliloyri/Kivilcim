@@ -6,6 +6,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
 import { t } from '../../locales/i18n';
+import { toUpperFor } from '../../utils/locale';
 import { parseInline } from '../../utils/storyMarkup';
 
 const SECTION_TITLE_KEYS = {
@@ -192,7 +193,7 @@ const StoryBody = ({
               <View key={key} style={styles.reflectionBox}>
                 <View style={styles.labelRow}>
                   <Ionicons name="chatbubble-ellipses-outline" size={15} color={accent} />
-                  <Text style={[styles.smallLabel, { color: textAccent }]}>{t('reflectionLabel', lang)}</Text>
+                  <Text style={[styles.smallLabel, { color: textAccent }]}>{toUpperFor(t('reflectionLabel', lang), lang)}</Text>
                 </View>
                 <RichText
                   text={seg.content}

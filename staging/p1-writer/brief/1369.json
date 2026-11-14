@@ -1,0 +1,59 @@
+{
+ "story_id": 1369,
+ "kind": "anecdote",
+ "book": {
+  "title": "Never Split the Difference",
+  "author": "Chris Voss",
+  "year": "2016"
+ },
+ "confidence": "high",
+ "confidence_note": "Chapter 1 checked in the publisher's German reading sample (Redline, Kompromisslos verhandeln): Harvard role play with Mnookin and Blum, the tape recorder, 'How am I supposed to do that?', about three minutes, Mnookin's concession, Getting to Yes, Ruby Ridge 1992, Waco 1993, Heymann's October 1993 report, Kahneman's System 1/2 and the omelette image. Only 'How am I supposed to do that?' is quoted; other lines are paraphrased because the English wording was not checked. The old text's invented bank-robber scene and quotes ('people decide with emotion...') were dropped. Co-author Tahl Raz omitted from prose.",
+ "facts": [
+  "Voss: Kansas City patrol officer, then FBI hostage negotiator, then the FBI's lead international kidnapping negotiator.",
+  "Robert Mnookin, head of Harvard's negotiation research program, invited Voss to talk; Gabriella Blum, international negotiation and armed-conflict specialist with years in the Middle East, walked in; Mnookin's secretary put a tape recorder on the table.",
+  "Mnookin, playing kidnapper: Voss's son for a million dollars or he dies; then threatened to kill him right away.",
+  "Voss, after a long look and a smile: 'How am I supposed to do that?' Then asked how he could know his son was alive and how he could pay without knowing.",
+  "After about three minutes Blum took over, telling Mnookin not to let Voss play cat and mouse; she got the same questions; Mnookin tried again and reddened; Voss ended it; Mnookin conceded the FBI might have something to teach them.",
+  "The FBI had embraced the problem-solving approach of Getting to Yes; after Ruby Ridge (Idaho, 1992) and Waco (Texas, 1993) it was undeniable that most hostage negotiations were not rational problem-solving; in October 1993 Deputy Attorney General Philip B. Heymann published a report on lessons of Waco.",
+  "Voss draws on Kahneman: System 1 fast, instinctive, emotional; System 2 slow, logical; System 1 steers System 2. Negotiating with System 2 tools only is like making an omelette without knowing how to crack an egg."
+ ],
+ "scene_details": [
+  "a tape recorder set on the table by Mnookin's secretary",
+  "the million-dollar ransom demand",
+  "Mnookin's face reddening"
+ ],
+ "tension": "Two Harvard experts ambush an FBI negotiator; he answers a death threat with a mild-sounding question.",
+ "opening_idea": "Open on the staged kidnapping in the Harvard office, the tape recorder, without revealing the question.",
+ "lessons": [
+  {
+   "idea": "Meet an impossible demand with a 'how' question, which hands the problem back and reveals limits.",
+   "anchor": "'How am I supposed to do that?' in the Mnookin role play."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which recent demand could you have answered by asking how you were expected to deliver it?",
+ "use_cases": [
+  {
+   "situation": "Client wants more scope, same budget",
+   "move": "Ask how they want it done within the budget and what to drop.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Manager sets an impossible deadline",
+   "move": "Ask how you are supposed to make it and which task should wait.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "Teenager pushes to stay out late",
+   "move": "Mention Voss's question to kidnappers, then ask how they will show they are safe.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "Voss met a million-dollar threat with 'How am I supposed to do that?': hand problems back to their owners.",
+ "conversation_variants": {
+  "punchline_idea": "Two Harvard professors staged a kidnapping for an FBI negotiator; one question made them give up.",
+  "thirty_sec_idea": "The Mnookin role play from ambush to concession.",
+  "question_idea": "",
+  "key_contrast_idea": "Logic meets emotion"
+ }
+}

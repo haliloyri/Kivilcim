@@ -1,0 +1,58 @@
+{
+  "story_id": 1587,
+  "kind": "concept",
+  "book": {
+    "title": "The Circadian Code",
+    "author": "Satchin Panda",
+    "year": "2018"
+  },
+  "confidence": "low",
+  "confidence_note": "Melanopsin and the eye's non-image light cells are from Panda's Science papers (2002, 2003, 2005); the book summaries confirm light as the main time cue and blue light at night suppressing melatonin. The book itself was not available; old text claims about 200,000 years of firelight, phone at 10 p.m., shift-work cancer ratings and a two-week improvement were not verified and are dropped. No individual scene; the story is a mechanism explanation, so scene details are thin.",
+  "facts": [
+    "Panda's group helped identify melanopsin, a pigment in certain cells of the eye that responds to blue light and tells the brain's master clock how bright the surroundings are. Papers appeared in Science in 2002, 2003 and 2005.",
+    "These cells report brightness, not pictures; a 2003 paper showed the clock-and-light responses in blind mice depend on melanopsin, and the book summaries say the pigment works even in people who are blind or visually impaired.",
+    "Light is the strongest time cue for the body clock (zeitgeber).",
+    "Blue light at night suppresses melatonin and disrupts sleep; less blue light at night and daylight in the morning help the rhythm line up again.",
+    "Panda has led a lab at the Salk Institute in San Diego since 2004; the melanopsin work is cited in research on light therapy for insomnia, ADHD and migraines, and a 2019 Science paper described the functional diversity of these cells in humans."
+  ],
+  "scene_details": [
+    "melanopsin cells in the eye that report brightness, not images",
+    "blind mice that still shifted their clock",
+    "blue light from screens at night"
+  ],
+  "tension": "The eye has a second job: telling the brain what time it is, and it keeps doing it in the dark.",
+  "opening_idea": "Start with blind mice whose body clocks still followed the light.",
+  "lessons": [
+    {
+      "idea": "Your clock reads brightness, so what you look at in the evening can tell your brain it is still daytime.",
+      "anchor": "Melanopsin cells respond to blue light and report to the master clock.",
+      "example": "A student scrolling a bright phone in bed after midnight and one reading on a dim lamp send different signals."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What light is around you in the last hour before sleep, and what is one change you could make for a week?",
+  "use_cases": [
+    {
+      "situation": "Your partner scrolls in bed.",
+      "move": "Mention that blue light at night suppresses melatonin, and suggest dimming the screen or swapping it for a lamp tonight.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel slow in the morning.",
+      "move": "Step outside for daylight with your first coffee; light is the body clock's strongest time cue.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend complains about sleep.",
+      "move": "Ask what light they have in the evening, and share that melanopsin cells respond to blue light.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Your brain reads the light as the time; give it dim light at night and daylight in the morning.",
+  "conversation_variants": {
+    "punchline_idea": "Blind mice still adjusted their body clocks to light, because eye cells called melanopsin cells read brightness, not images.",
+    "thirty_sec_idea": "Panda's team helped identify melanopsin, a blue-light-sensitive pigment in cells of the eye that tell the master clock how bright it is, even in blind mice. Blue light at night suppresses melatonin; morning daylight helps the clock line up.",
+    "question_idea": "What light do you use in your last hour before bed?",
+    "key_contrast_idea": "screen at night, sun in morning"
+  }
+}

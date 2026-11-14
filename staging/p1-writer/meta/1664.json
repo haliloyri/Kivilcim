@@ -1,0 +1,35 @@
+{
+ "story_id": 1664,
+ "verdict": "keep",
+ "verify_note": "Keep: pain-body chapter (ch. 5) and Breaking Free (ch. 6) verified in a full text. Old invented examples, 'pain-body hates awareness' and the 'is my pain-body waking?' question dropped; the story uses Tolle's marriage example. The pain-body is Tolle's concept, presented as his claim.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Evlilikte acı beden",
+  "description": "Eckhart Tolle'ye göre eşinizle evlenirken onun acı bedeniyle de evlenirsiniz. Küçük bir tetikleyici eski bir acıyı uyandırır.",
+  "hook": "Tetikleyicisinden çok büyük olan son tepkinizde bedeninizde ne fark ederdiniz?",
+  "one_minute_summary": "Eckhart Tolle'ye göre tam yüzleşilmemiş her olumsuz duygu geride acı bırakır. Kalıntılar bedende bir enerji alanı oluşturur ve Tolle buna acı beden der. Haftalarca uyur, sonra en önemsiz bir olayla, bir sözle ya da bir düşünceyle uyanır. Yalnızsanız düşüncelerinizi, yanınızda partneriniz varsa onunla çıkacak dramı yer. Örneği evlilik: birlikte yaşamaya başladıktan kısa süre sonra partnerin sesi sertleşir ve 'hiçbir şey' derken bakışı her şey der. Çıkış yolu, onu bedende ağır bir duygu akını olarak fark etmektir."
+ },
+ "en": {
+  "title": "The pain-body at home",
+  "description": "Eckhart Tolle says you marry your partner's pain-body too. A small trigger can wake an old pain.",
+  "hook": "What would you have noticed in your body in your last reaction that was bigger than its trigger?",
+  "one_minute_summary": "Eckhart Tolle holds that any negative emotion not fully faced leaves a remnant of pain, and the remnants form an energy field in the body he calls the pain-body. It sleeps for weeks, then wakes at the most insignificant event, a word or even a thought. Alone, it feeds on your thoughts, and with a partner it feeds on the drama. His example is a marriage: soon after moving in together a partner's voice turns harsh, and she says 'Nothing' while her energy says everything."
+ },
+ "es": {
+  "title": "El cuerpo de dolor en casa",
+  "description": "Según Eckhart Tolle, al casarte con alguien te casas con su cuerpo de dolor. Un detonante pequeño puede despertar un dolor antiguo.",
+  "hook": "En tu última reacción mucho mayor que su detonante, ¿qué habrías notado en el cuerpo?",
+  "one_minute_summary": "Según Eckhart Tolle, toda emoción negativa que no se afronta del todo deja un resto de dolor, y esos restos forman en el cuerpo un campo de energía al que llama cuerpo de dolor. Duerme semanas y despierta ante el suceso más insignificante, una palabra o hasta un pensamiento. A solas se alimenta de tus pensamientos y, con la pareja, del drama."
+ },
+ "de": {
+  "title": "Der Schmerzkörper zu Hause",
+  "description": "Laut Eckhart Tolle heiratet man den Schmerzkörper des Partners gleich mit. Ein kleiner Auslöser kann alten Schmerz wecken.",
+  "hook": "Was hättest du bei deiner letzten, viel zu großen Reaktion in deinem Körper bemerkt?",
+  "one_minute_summary": "Nach Eckhart Tolle hinterlässt jede nicht voll durchlebte negative Emotion einen Rest Schmerz, und die Reste bilden im Körper ein Energiefeld, das er Schmerzkörper nennt. Er schläft wochenlang und erwacht bei dem unbedeutendsten Ereignis, einem Wort oder auch nur einem Gedanken. Allein nährt er sich von deinen Gedanken, mit Partner vom Drama. Sein Beispiel ist eine Ehe: Kurz nach dem Zusammenziehen wird die Stimme der Partnerin hart, und sie sagt 'Nichts', während ihre Energie alles sagt. Sein Ausweg ist, ihn als schwere Welle von Emotion zu bemerken."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1506,
+ "verdict": "keep",
+ "verify_note": "Keep, rewritten: used-car haggling scene replaced by the Law of the Sea (US-India, MIT model) and cut-and-choose from the objective-criteria chapter (study guides, no primary text). Unconfirmed insurance-claim figures left out.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Biri keser, öteki seçer",
+  "description": "Fisher ve Ury baskıya değil, ilkeye boyun eğmeyi önerir. En yalın örnek, tatlıyı bölerken biri keser, öteki önce seçer.",
+  "hook": "Bir fiyat konuşmasında ikinizin de kabul edebileceği hangi dış ölçü olabilirdi?",
+  "one_minute_summary": "Getting to Yes'te yazarlar nesnel ölçütlerde ısrar etmeyi öneriyor. En basit örnek tatlı paylaşımı: biri keser, öteki önce seçer, böylece kesen eşit keser. Deniz Hukuku Konferansı'nda ABD ile Hindistan, madencilik ücreti konusunda anlaşamıyordu. İki taraf da MIT'de geliştirilmiş bir ekonomik modele baktı ve ikisi de görüşünü yeniden düşündü. Roller ters olsa karşı taraf bu şartları kabul eder miydi diye sormak da hızlı bir sınama."
+ },
+ "en": {
+  "title": "One cuts, one chooses",
+  "description": "Fisher and Ury say to yield to principle, not pressure. The simplest case is a dessert: one person cuts, the other picks first.",
+  "hook": "In a price talk, which outside yardstick could you both have accepted?",
+  "one_minute_summary": "In Getting to Yes, Fisher and Ury insist on objective criteria. The simplest case is dividing a dessert: one cuts, the other chooses, so the cutter cuts evenly. At the Law of the Sea Conference, the United States and India disagreed over a mining fee. Both looked at an economic model developed at MIT, and both reconsidered. A quick test the authors suggest: would the other side accept these terms if the roles were reversed?"
+ },
+ "es": {
+  "title": "Uno corta, otro elige",
+  "description": "Fisher y Ury proponen ceder ante el principio, no ante la presión. El caso más simple es un postre: uno corta y el otro elige primero.",
+  "hook": "En una charla sobre un precio, ¿qué vara de medir externa podríais haber aceptado los dos?",
+  "one_minute_summary": "En Getting to Yes, Fisher y Ury insisten en criterios objetivos. El caso más simple es repartir un postre: uno corta y el otro elige, así que quien corta lo hace igual. En la Conferencia sobre el Derecho del Mar, Estados Unidos e India discrepaban sobre una tasa minera. Ambos miraron un modelo económico desarrollado en el MIT y ambos reconsideraron. Una prueba rápida que sugieren los autores: ¿aceptaría la otra parte estas condiciones si los papeles se invirtieran?"
+ },
+ "de": {
+  "title": "Einer schneidet, einer wählt",
+  "description": "Fisher und Ury raten, sich dem Prinzip zu beugen, nicht dem Druck. Der einfachste Fall ist ein Nachtisch: Einer schneidet, der andere wählt zuerst.",
+  "hook": "Welchen äußeren Maßstab hättet ihr beide in einem Preisgespräch akzeptieren können?",
+  "one_minute_summary": "In Getting to Yes bestehen Fisher und Ury auf objektiven Kriterien. Der einfachste Fall ist das Teilen eines Nachtischs: Einer schneidet, der andere wählt zuerst, also schneidet der Schneidende gleich. Auf der Seerechtskonferenz waren die USA und Indien über eine Bergbaugebühr uneins. Beide sahen sich ein am MIT entwickeltes Wirtschaftsmodell an, und beide überdachten ihre Haltung. Eine Schnellprobe der Autoren: Würde die andere Seite diese Bedingungen akzeptieren, wenn die Rollen vertauscht wären?"
+ }
+}

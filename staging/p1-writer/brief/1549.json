@@ -1,0 +1,57 @@
+{
+  "story_id": 1549,
+  "kind": "concept",
+  "book": {
+    "title": "Traction: Get a Grip on Your Business",
+    "author": "Gino Wickman",
+    "year": ""
+  },
+  "confidence": "medium",
+  "confidence_note": "Book not read; vision pieces and Image One from a summary; EOS terms. Year omitted. Growth figure and 'one page' claim omitted.",
+  "facts": [
+    "Six components: vision, people, data, issues, process, traction.",
+    "Vision: three to seven core values, a core focus, ten-year target, three-year picture, one-year plan, quarterly Rocks, a target market.",
+    "Three-year picture and one-year plan carry revenue, profit and measurables.",
+    "Image One dropped its networking division to return to simplifying clients' printing.",
+    "Rocks: 10-20 goals narrowed to about seven, each with one owner; 1-3 personal Rocks per leader; 90 days is about the limit of focus on one project."
+  ],
+  "scene_details": [
+    "seven Rocks each with one name",
+    "a dropped division",
+    "a ladder from ten years to one quarter"
+  ],
+  "tension": "Vision stays in the founder's head.",
+  "opening_idea": "Seven people, seven answers.",
+  "lessons": [
+    {
+      "idea": "Tie the far goal to one job this quarter.",
+      "anchor": "vision ladder, Rocks with owners"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which single job could you finish in three months and give to one person?",
+  "use_cases": [
+    {
+      "situation": "Too many priorities for the quarter",
+      "move": "Cut to about seven and give each an owner.",
+      "context": "meeting"
+    },
+    {
+      "situation": "Employee can't say what their goal feeds",
+      "move": "Which yearly goal does your work feed? Pick one job.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Big dream, small business",
+      "move": "That company dropped networking to return to printing. What would I drop?",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Bring the ten-year target down to this quarter: choose the job with one name next to it.",
+  "conversation_variants": {
+    "punchline_idea": "A vision is real when it lands as one job on one desk.",
+    "thirty_sec_idea": "Ladder, Rocks, Image One.",
+    "question_idea": "",
+    "key_contrast_idea": "wall goal vs desk job"
+  }
+}

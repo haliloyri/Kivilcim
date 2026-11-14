@@ -7,56 +7,63 @@
     "year": "1987"
   },
   "confidence": "high",
-  "confidence_note": "Verified from Chapter 5 ('Pollyanna Rides Again') of Susan Jeffers's Feel the Fear and Do It Anyway (1987). The book defines taking responsibility as never blaming anyone else—or yourself—for anything you are being, doing, having, or feeling, and outlines the six concrete practices of responsibility, the hidden 'payoffs' of staying stuck, and the shift from victim language ('I have to') to choice language ('I choose to'). DB book title is Turkish 'Korkusuzluk'.",
+  "confidence_note": "Checked against the archive.org full text of the responsibility chapter. The old text's written 'I chose this' exercise is not in the book in that form and was dropped. Jeffers explicitly limits the claim: you cause your reactions, not everything that happens to you.",
   "facts": [
-    "In Feel the Fear and Do It Anyway, Susan Jeffers defines taking responsibility as never blaming anyone else for anything you are being, doing, having, or feeling.",
-    "Jeffers observes that people often repeat complaints about their job, their relationship, or their money while believing that outside circumstances trapped them there.",
-    "She proposes reframing each complaint as an active choice: turning complaints about a job, a relationship, or money into 'I am choosing to stay in this job,' 'I am choosing to stay in this relationship,' or 'I am choosing to keep this lifestyle.'",
-    "The first reaction to this reframing is usually resistance—insisting that nobody would willingly choose to be unhappy or stuck.",
-    "Jeffers explains that every stuck situation contains hidden 'payoffs,' such as avoiding the risk of failure, avoiding the effort of searching for a new job, or keeping the comfort of a familiar routine.",
-    "She clarifies that taking responsibility is not blaming yourself or calling yourself a failure; self-blame is just another way of playing the victim.",
-    "Instead, she outlines practical steps: noticing the exact moments when you slip into victim thinking, quieting the harsh inner 'chatterbox' voice, identifying what you actually want, and choosing one concrete action toward it.",
-    "Once a person acknowledges that staying, leaving, or changing their attitude toward the same situation is a choice, they stop giving their power away to other people or circumstances."
+    "Jeffers opens the chapter asking whether you are a 'victim' or taking responsibility; many people think they take responsibility when they do not.",
+    "Edward, a wealthy high-powered executive, lives in constant anxiety; when Jeffers suggested professional help he said all would be fine if his wife were more loving, his boss stopped leaning on him and his son stopped taking drugs.",
+    "Jeffers writes that people are consciously or unconsciously 'choosing' to be in the lousy job or the destructive relationship.",
+    "She does not ask readers to believe they are responsible for everything that happens; she asks them to see themselves as the cause of their reactions to it.",
+    "Her first definition: taking responsibility means never blaming anyone else for anything you are being, doing, having or feeling. The second: it also means not blaming yourself.",
+    "Jeffers describes her own past: countless hours on the phone with girlfriends complaining about the men in her life (one always late, one stingy, one who played too much golf); she calls it a 'Moan and Groan Society'. The payoff was not having to create her own happiness.",
+    "Jean hated her job and played the 'if only' game: if only the job market were better, if only she had better skills.",
+    "Jean's hidden payoffs: no risk of rejection in a job search; the job was easy and she knew she could handle it; no extra energy needed; it was relatively secure.",
+    "Seeing the payoffs gave Jean at least three choices: stay and stay miserable, stay and choose to enjoy the job, or choose to find a better job. She left and found a new job.",
+    "Jeffers says payoffs are easy to find once you know they exist: sit down with pencil and paper and list them, or ask a friend."
   ],
   "scene_details": [
-    "a written list of daily complaints about work, relationships, or money",
-    "writing 'I am choosing this' beneath each complaint on the page",
-    "the hidden payoffs that make an unpleasant routine feel safer than leaving",
-    "the internal chatterbox voice repeating excuses or self-blame"
+    "Edward's three 'if only' conditions: wife, boss, son",
+    "Jean's 'if only the job market were better'",
+    "pencil and paper to list the payoffs",
+    "three choices: stay miserable, stay and enjoy, leave",
+    "hours on the phone in the 'Moan and Groan Society'"
   ],
-  "tension": "People hate being called a victim, yet repeating 'I have no choice' about a job or relationship hands all their power to the very situation they complain about.",
-  "opening_idea": "Start with the physical exercise on paper: writing down a familiar complaint about work, a relationship, or money, and adding the line 'I am choosing this' right underneath it.",
+  "tension": "Jean hates her job and blames the market, yet she stays; what is actually keeping her there?",
+  "opening_idea": "Start with Jean at the job she hates and her 'if only' sentences about the market and her skills.",
   "lessons": [
     {
-      "idea": "Name the hidden payoff in a situation you keep complaining about so you can see your actual choice.",
-      "anchor": "Jeffers shows that people stay in jobs or routines they dislike because of unexamined payoffs like safety or avoiding risk, and rewording complaints as choices exposes those trade-offs.",
-      "everyday_example_idea": "A graphic designer who complains every week about a demanding client realizes she stays because the steady monthly retainer saves her from having to pitch new customers."
+      "idea": "Ask what a stuck situation is giving you before asking who caused it.",
+      "anchor": "Jean's payoffs: no rejection, an easy job, security.",
+      "example": "Someone keeps postponing a hard conversation with a flatmate; the payoff is avoiding an awkward evening."
+    },
+    {
+      "idea": "Responsibility here means owning your reaction, not blaming yourself.",
+      "anchor": "Definitions one and two."
     }
   ],
   "reflect": [],
-  "reflect_final": "In a situation you complained about this week, what hidden convenience or safety are you getting by leaving things as they are?",
+  "reflect_final": "Pick one complaint you repeat often: what does staying where you are quietly save you from having to face?",
   "use_cases": [
     {
-      "situation": "You catch yourself complaining about the same work task for the third week in a row.",
-      "move": "Use Jeffers's paper exercise: write the complaint down, add 'I am choosing to keep doing this because...' and name the payoff you get from not changing it.",
+      "situation": "A friend keeps complaining about a job they won't leave.",
+      "move": "Ask, without judging, what the job makes easy for them; Jeffers found that listing those payoffs is what unstuck Jean.",
+      "context": "social"
+    },
+    {
+      "situation": "You catch yourself saying 'if only' about your own situation.",
+      "move": "Take paper, write the 'if only', then list what staying protects you from.",
       "context": "self"
     },
     {
-      "situation": "A colleague in a one-on-one says the team has no choice about a broken process.",
-      "move": "Say: 'Part of this is outside our hands, but which piece are we choosing to put up with right now because fixing it feels like too much trouble?'",
-      "context": "oneonone"
-    },
-    {
-      "situation": "A friend keeps venting about a draining commitment they agreed to.",
-      "move": "Ask gently: 'What is saying yes protecting you from having to deal with if you said no?'",
-      "context": "social"
+      "situation": "A team keeps blaming another department for a stalled project.",
+      "move": "Propose listing what the team controls and what the delay is conveniently sparing it.",
+      "context": "meeting"
     }
   ],
-  "pocket_idea": "Write 'I am choosing this' under your biggest complaint to see the trade-off you are making and reclaim your next move.",
+  "pocket_idea": "Jean stayed in a job she hated because it spared her rejection; list what your stuck spot spares you.",
   "conversation_variants": {
-    "punchline_idea": "Writing 'I am choosing this' under a complaint does not mean you like the situation; it shows you where your power still sits.",
-    "thirty_sec_idea": "In Feel the Fear and Do It Anyway, Susan Jeffers asks people to take their biggest complaints—about a job, a relationship, or money—and write 'I am choosing this' underneath. People resist at first because they did not choose the problem. Jeffers points out that we still choose how long we stay and what hidden convenience keeps us from acting. Naming that choice without blaming yourself gives you back the ability to change either your move or your attitude.",
-    "question_idea": "",
-    "key_contrast_idea": "Helpless complaint vs conscious choice"
+    "punchline_idea": "Jean's 'if only the market were better' hid four comfortable payoffs; once listed, she left.",
+    "thirty_sec_idea": "Jean hated her job, blamed the market and her skills; Jeffers made her list payoffs (no rejection, easy, secure); with three choices visible she found a new job.",
+    "question_idea": "What complaint do you repeat that might be protecting you from something?",
+    "key_contrast_idea": "if only versus payoffs"
   }
 }

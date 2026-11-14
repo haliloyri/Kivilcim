@@ -1,0 +1,35 @@
+{
+ "story_id": 1269,
+ "verdict": "keep",
+ "verify_note": "Keep: 'overnight therapy' theory, noradrenaline shut-off in REM and the twelve-hour MRI experiment verified in the full text. Prazosin/Raskind added with the 2018 NEJM caveat (no better than placebo). Old PTSD causal chain and the 'sleep is therapeutic' quote dropped.",
+ "title_changed": {
+  "tr": false,
+  "en": false,
+  "es": false,
+  "de": false
+ },
+ "tr": {
+  "title": "REM uykusu ve duygusal iyileşme",
+  "description": "Matthew Walker'ın deneyinde aynı üzücü görüntüler, arada bir gece uyuyanları çok daha az etkiledi. Walker bunu REM uykusuna bağlıyor.",
+  "hook": "Canınızı sıkan bir şeyi gece mi değerlendirmek daha doğru, ertesi sabah mı?",
+  "one_minute_summary": "Matthew Walker, 'zaman her yarayı iyileştirir' sözünü sınadı. İnsanlara MR cihazında duygusal görüntüler gösterdi, on iki saat sonra aynılarını yeniden gösterdi. Arada bir gece uyuyanların duygusal tepkisi ve amigdala etkinliği belirgin biçimde düştü, gün boyu uyanık kalanlarda düşmedi. Walker bunu REM uykusuna bağlıyor: o sırada stres kimyasalı noradrenalin tamamen kesiliyor. Gazilerde prazosin denemeleri umut verici başlamıştı, ama 2018'deki geniş bir çalışmada ilaç kâbuslarda plasebodan iyi çıkmadı."
+ },
+ "en": {
+  "title": "REM sleep and emotional recovery",
+  "description": "In Matthew Walker's experiment, the same upsetting images affected people far less after a night's sleep. He credits REM sleep.",
+  "hook": "Is a painful moment better judged at midnight or the next morning?",
+  "one_minute_summary": "Matthew Walker set out to test whether time heals all wounds. People viewed emotional images in an MRI scanner and saw them again twelve hours later. Those who slept in between felt much less emotional and showed a sharp drop in amygdala activity; those who stayed awake did not. Walker links this to REM sleep, when the stress chemical noradrenaline is switched off. Early prazosin results in veterans looked promising, but a large 2018 trial found the drug no better than placebo for nightmares."
+ },
+ "es": {
+  "title": "Sueño REM y recuperación emocional",
+  "description": "En el experimento de Matthew Walker, las mismas imágenes inquietantes afectaban mucho menos tras una noche de sueño. Él lo atribuye al REM.",
+  "hook": "¿Conviene juzgar un mal momento a medianoche o a la mañana siguiente?",
+  "one_minute_summary": "Matthew Walker quiso comprobar si el tiempo lo cura todo. Mostró imágenes emotivas a varias personas dentro de un escáner y se las volvió a mostrar doce horas después. Quienes durmieron entre medias se sintieron mucho menos afectados y su amígdala se calmó; quienes siguieron despiertos, no. Walker lo atribuye al sueño REM, cuando la noradrenalina se apaga. Los primeros resultados de la prazosina en veteranos parecían prometedores, pero un gran ensayo de 2018 no la encontró mejor que un placebo contra las pesadillas."
+ },
+ "de": {
+  "title": "REM-Schlaf und emotionale Erholung",
+  "description": "In Matthew Walkers Experiment trafen dieselben belastenden Bilder Menschen nach einer Nacht Schlaf deutlich weniger. Er führt das auf den REM-Schlaf zurück.",
+  "hook": "Beurteilst du einen schmerzhaften Moment besser um Mitternacht oder am nächsten Morgen?",
+  "one_minute_summary": "Matthew Walker wollte prüfen, ob die Zeit alle Wunden heilt. Menschen sahen im MRT-Scanner emotionale Bilder und zwölf Stunden später dieselben Bilder noch einmal. Wer dazwischen geschlafen hatte, fühlte sich deutlich weniger aufgewühlt, und die Amygdala reagierte schwächer, bei den Wachgebliebenen nicht. Walker führt das auf den REM-Schlaf zurück, in dem Noradrenalin abgeschaltet ist. Erste Ergebnisse mit Prazosin bei Veteranen wirkten vielversprechend, doch eine große Studie von 2018 fand es gegen Albträume nicht besser als ein Placebo."
+ }
+}

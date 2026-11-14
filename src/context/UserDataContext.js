@@ -41,6 +41,7 @@ import { clearCareerData } from '../db/userDb';
 import { notifyCareerDataChanged, recordCareerApplication, recordCareerInsightSaved, recordCareerStoryCompletion } from '../services/careerEvents';
 import { migrateLegacyCareerPath } from '../services/migrateCareerPath';
 import { updateCareerIdeaPackage } from '../utils/careerIdeaPackage';
+import { STORY_COLLECTION_IDS, DEFAULT_STORY_COLLECTIONS } from '../constants/storyCollections';
 
 const UserDataContext = createContext();
 const SEEN_BADGES_STORAGE_KEY = '@albor_seen_earned_badges';
@@ -80,8 +81,6 @@ const PREMIUM_BONUS_STORAGE_KEY = '@albor_premium_bonus_until';
 // date-keyed record the "3 free stories" limit is not a limit at all — reading
 // them just moves them out of the candidate pool and three more become free.
 const FREE_READS_STORAGE_KEY = '@albor_free_reads';
-const STORY_COLLECTION_IDS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55', 'opus55_2', 'son55'];
-const DEFAULT_STORY_COLLECTIONS = ['new', 'son55'];
 const EMPTY_PREFERENCES = {
   categories: [], time: null, reminderWindow: 'evening', reminderHour: 21,
   reminderWindows: ['evening'], storyVersion: 2, storyCollections: DEFAULT_STORY_COLLECTIONS,

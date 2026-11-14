@@ -1,0 +1,35 @@
+{
+ "story_id": 1600,
+ "verdict": "keep",
+ "verify_note": "Keep: setup (Stanford, Dr. Jayakar Nayak, Anders Olsson, plugs and tape, two ten-day phases) verified in the Penguin Random House excerpt; results (snoring, apnea, 142, recovery) rest on press coverage and secondary summaries whose figures differ; no peer-reviewed paper found. Old text's day-five claim and 80 percent mouth-breather figure dropped. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "On gün tıkalı burun",
+  "description": "Nestor ve bir nefes terapisti Stanford'da on gün yalnızca ağızdan nefes aldı. Horlama, apne ve kan basıncı fırladı, burun nefesiyle geri döndü.",
+  "hook": "Burnunu on gün tıkasan vücuduna ne olur?",
+  "one_minute_summary": "James Nestor ve Stockholmlu nefes terapisti Anders Olsson, Stanford'da on gün burunlarına silikon tıkaç takıp yalnızca ağızdan nefes aldı. Nestor'un horlaması yaklaşık yüzde 5.000 arttı, geceye ortalama 25 apne atağı geçirdi ve kan basıncı 142'ye çıktı. Sonraki on gün burundan nefes aldılar: apne kayboldu, horlama durdu, kan basıncı sağlıklı aralığa döndü. İki kişilik, hakemli olmayan bir deneydir. Bu, iki kişilik bir deneyin sonucudur."
+ },
+ "en": {
+  "title": "Ten days with plugged noses",
+  "description": "James Nestor and a breathing therapist breathed only through their mouths for ten days at Stanford. Snoring, apnea and blood pressure jumped, then reversed with nose breathing.",
+  "hook": "What would ten days of mouth breathing do to you?",
+  "one_minute_summary": "James Nestor and Stockholm breathing therapist Anders Olsson had their noses plugged with silicone for about ten days at Stanford. Nestor's snoring rose almost 5,000 percent, he averaged about 25 apnea episodes a night and his blood pressure reached 142. Ten days of nose breathing followed: apnea vanished, snoring stopped and blood pressure returned to a healthy range. It is a two-person experiment, not a peer-reviewed trial."
+ },
+ "es": {
+  "title": "Diez días con la nariz tapada",
+  "description": "James Nestor y un terapeuta de respiración respiraron solo por la boca diez días en Stanford. Ronquidos, apnea y presión se dispararon y se revirtieron por la nariz.",
+  "hook": "¿Qué te haría respirar por la boca diez días?",
+  "one_minute_summary": "James Nestor y el terapeuta de respiración Anders Olsson, de Estocolmo, se taparon la nariz con silicona unos diez días en Stanford. Los ronquidos de Nestor subieron casi un 5.000 por ciento, tuvo de media unos 25 episodios de apnea por noche y su presión llegó a 142. Siguieron diez días respirando por la nariz: la apnea desapareció, los ronquidos cesaron y la presión volvió a un rango sano. Es un experimento de dos personas, no un ensayo revisado por pares."
+ },
+ "de": {
+  "title": "Zehn Tage mit verstopfter Nase",
+  "description": "James Nestor und ein Atemtherapeut atmeten in Stanford zehn Tage nur durch den Mund. Schnarchen, Apnoe und Blutdruck stiegen und gingen mit der Nasenatmung zurück.",
+  "hook": "Was würden zehn Tage Mundatmung mit dir machen?",
+  "one_minute_summary": "James Nestor und der Stockholmer Atemtherapeut Anders Olsson ließen sich in Stanford etwa zehn Tage die Nase mit Silikon verschließen. Nestors Schnarchen stieg um fast 5.000 Prozent, er hatte im Schnitt rund 25 Apnoe-Episoden pro Nacht, und sein Blutdruck erreichte 142. Es folgten zehn Tage Nasenatmung: Die Apnoe verschwand, das Schnarchen hörte auf, der Blutdruck normalisierte sich. Es ist ein Experiment mit zwei Personen, keine begutachtete Studie."
+ }
+}

@@ -1,0 +1,62 @@
+{
+  "story_id": 1463,
+  "kind": "anecdote",
+  "book": {
+    "title": "Moonwalking with Einstein",
+    "author": "Joshua Foer",
+    "year": "2011"
+  },
+  "confidence": "medium",
+  "confidence_note": "Simonides legend and the technique's description checked against reviews, Psychology Today and the Washington Independent Review of Books; the book text itself was not read. Reviews differ on small details (some say Simonides was hired to recite an ode; none names Scopas), so those are left out. Old text's evolutionary explanation, the date 1453 in a kitchen and the 'creativity not technique' line are not found and are dropped. The story is a legend; the text says so.",
+  "facts": [
+    "The memory palace is credited to the Greek poet Simonides, who lived in the fifth century B.C.",
+    "According to the legend, Simonides was called out of a banquet hall by a messenger just before the roof fell in.",
+    "The other guests were crushed beyond recognition.",
+    "Simonides could recall where each guest had been sitting minutes before, which let the bodies be identified.",
+    "Reviews call the story possibly accurate, possibly mythological.",
+    "The method uses spatial memory: information is placed along a route through a familiar place and retrieved by walking through it in the mind.",
+    "The earliest surviving description of the technique is in a Latin textbook, Rhetorica ad Herennium, about 86 to 82 BC, roughly four centuries after Simonides; the technique was clearly in use in between.",
+    "Foer trained for about a year and won the 2006 USA Memory Championship."
+  ],
+  "scene_details": [
+    "a messenger calling a poet away from a banquet",
+    "the roof falling in on the seated guests",
+    "seats around the banquet table recalled one by one",
+    "walking through a familiar building in the mind"
+  ],
+  "tension": "All the dead are unrecognisable and the one survivor can still say where each sat.",
+  "opening_idea": "Open on the roof coming down and the one man standing outside.",
+  "lessons": [
+    {
+      "idea": "Park each thing you must remember in a place you know well, then walk past it.",
+      "anchor": "Simonides recalling who sat where; the memory palace as a route.",
+      "example": "A waiter learning a new menu pictures each dish on a different step of the staircase at home."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which list or set of points do you keep losing, and which familiar room or route could hold one item at each stop?",
+  "use_cases": [
+    {
+      "situation": "You have to remember five points for a talk.",
+      "move": "Walk through your home in your mind and leave one point in each room; Simonides identified the dead by where they sat.",
+      "context": "self"
+    },
+    {
+      "situation": "A child must learn a list for school.",
+      "move": "Let them place each item in a spot on the way from the front door to their bed.",
+      "context": "family"
+    },
+    {
+      "situation": "A colleague keeps forgetting the order of a process.",
+      "move": "Suggest picturing each step at a different desk on the office route.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Put each thing to remember at a stop on a route you know; walk it again to read it back.",
+  "conversation_variants": {
+    "punchline_idea": "Legend says a poet identified the crushed guests of a banquet by remembering where each one sat.",
+    "thirty_sec_idea": "The Greek poet Simonides was called out of a banquet just before the roof fell in. The guests were unrecognisable, but he remembered where each had sat. That is the legend behind the memory palace, the method Joshua Foer trained with for a year before winning the 2006 USA Memory Championship.",
+    "question_idea": "",
+    "key_contrast_idea": "list to route"
+  }
+}

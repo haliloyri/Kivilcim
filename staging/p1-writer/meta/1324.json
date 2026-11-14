@@ -1,0 +1,35 @@
+{
+ "story_id": 1324,
+ "verdict": "keep",
+ "verify_note": "Concept story, medium confidence: The Artist's Way (1992) full text not accessible; morning pages rules from consistent secondary quotations and Cameron's site. Unsupported 'most participants reported surprising changes within weeks' and 'before coffee' dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kimsenin Okumadığı Üç Sayfa",
+  "description": "Julia Cameron tıkanmış sanatçılara her sabah elle üç sayfa yazmalarını ve onları sekiz hafta boyunca okumamalarını önerir. Amaç güzel yazmak değil, iç eleştirmenin elinden kurtulmak.",
+  "hook": "Kimsenin okumayacağını bilseniz, yarın sabah ilk olarak kâğıda ne dökerdiniz?",
+  "one_minute_summary": "Julia Cameron 1978'den beri tıkanmış sanatçılarla çalışıyor ve The Artist's Way kitabının ilk aracı sabah sayfaları. Her sabah uyanır uyanmaz elle, bilinç akışıyla üç sayfa yazılıyor. Yanlış bir yolu yok, hiçbir konu fazla önemsiz değil ve sayfalar atlanmıyor. İlk sekiz hafta onları kimse, yazan da dahil, okumuyor. Cameron'a göre bu sayede Sansürcü dediği iç eleştirmenden kaçmayı öğreniyorsunuz. Kendisi de yazmak için havasında olmayı beklemediğini söylüyor."
+ },
+ "en": {
+  "title": "Three Pages Nobody Reads",
+  "description": "Julia Cameron tells blocked artists to write three pages by hand every morning and not read them for eight weeks. The point isn't good writing but slipping past the inner critic.",
+  "hook": "If you knew nobody would read it, what would you pour onto a page first thing tomorrow?",
+  "one_minute_summary": "Julia Cameron has worked with blocked artists since 1978, and the first tool in The Artist's Way is morning pages: three pages of longhand, stream of consciousness, written as soon as you wake. There is no wrong way to do them, nothing is too trivial, and they are never skipped. For at least eight weeks nobody reads them, including you. Cameron says this is how you learn to evade the inner critic she calls the Censor. She herself doesn't wait to be in the mood."
+ },
+ "es": {
+  "title": "Tres páginas que nadie lee",
+  "description": "Julia Cameron pide a los artistas bloqueados que escriban tres páginas a mano cada mañana y no las lean en ocho semanas. No se trata de escribir bien, sino de esquivar al crítico interior.",
+  "hook": "Si supieras que nadie lo va a leer, ¿qué volcarías en una página mañana a primera hora?",
+  "one_minute_summary": "Julia Cameron trabaja con artistas bloqueados desde 1978, y la primera herramienta de The Artist's Way son las páginas matutinas: tres páginas a mano, en flujo de conciencia, nada más despertar. No hay forma equivocada de hacerlas, ningún tema es demasiado trivial y no se saltan nunca. Durante al menos ocho semanas nadie las lee, ni siquiera tú. Según Cameron, así aprendes a esquivar al crítico interior que llama el Censor. Ella misma no espera a estar de humor para escribir."
+ },
+ "de": {
+  "title": "Drei Seiten, die niemand liest",
+  "description": "Julia Cameron rät blockierten Künstlern, jeden Morgen drei Seiten von Hand zu schreiben und sie acht Wochen lang nicht zu lesen. Es geht nicht um gutes Schreiben, sondern darum, am inneren Kritiker vorbeizukommen.",
+  "hook": "Wenn du wüsstest, dass es niemand liest, was würdest du morgen früh als Erstes aufs Papier bringen?",
+  "one_minute_summary": "Julia Cameron arbeitet seit 1978 mit blockierten Künstlern, und das erste Werkzeug in The Artist's Way sind die Morgenseiten: drei Seiten von Hand, im Bewusstseinsstrom, gleich nach dem Aufwachen. Es gibt keine falsche Art, kein Thema ist zu banal, und sie fallen nie aus. Mindestens acht Wochen lang liest sie niemand, auch du nicht. So lernst du laut Cameron, dem inneren Kritiker auszuweichen, den sie den Zensor nennt. Sie selbst wartet beim Schreiben nicht auf Stimmung."
+ }
+}

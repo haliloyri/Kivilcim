@@ -1,0 +1,35 @@
+{
+ "story_id": 1268,
+ "verdict": "keep",
+ "verify_note": "Keep, corrected: the old 'surgeon after 24 hours equals 0.08 blood alcohol' claim is wrong; the book's study is of healthy adults after nineteen hours awake. Resident 30-hour-shift figures, Dinges's underestimation finding and baseline resetting verified in the full text. Disease-risk list dropped as off-focus.",
+ "title_changed": {
+  "tr": false,
+  "en": false,
+  "es": false,
+  "de": false
+ },
+ "tr": {
+  "title": "Uyku yoksunluğu ve tıbbi hatalar",
+  "description": "Matthew Walker'a göre on dokuz saat uyanık kalmak dikkati yasal sınırdaki alkol kadar bozuyor ve uykusuz kalanlar bunu fark etmiyor.",
+  "hook": "Az uyuduğunuz bir günde \"iyiyim\" hissinize ne kadar güvenebilirsiniz?",
+  "one_minute_summary": "Matthew Walker, otuz saatlik nöbetlerdeki asistan hekimlerin on altı saat çalışanlara göre yüzde 36 daha fazla ciddi hata yaptığını, eve dönerken kaza risklerinin de katlandığını aktarıyor. Avustralya'daki bir çalışmada on dokuz saat uyanık kalan sağlıklı yetişkinler, dikkat testinde yasal sürüş sınırındaki sarhoşlar kadar kötü sonuç aldı. En sinsi bulgu ise uykusuz kalanların kendi durumlarını sürekli olduğundan iyi sanması. Nöbetleri on altı saatle sınırlayan pilot çalışmalarda ciddi hatalar yüzde 20'den fazla azaldı."
+ },
+ "en": {
+  "title": "Sleep deprivation and medical errors",
+  "description": "Matthew Walker shows that nineteen hours awake impairs attention as much as the legal alcohol limit, and tired people rarely notice.",
+  "hook": "After a short night, how far can you trust the feeling that you're fine?",
+  "one_minute_summary": "Matthew Walker reports that residents on thirty-hour shifts make 36 percent more serious medical errors than those working sixteen hours or less, and crash far more often on the drive home. In an Australian study, healthy adults awake for nineteen hours did as badly on an attention test as people at the legal driving limit. The most harmful finding is that sleep-deprived people consistently underrate their impairment. Pilot studies capping residents at sixteen-hour shifts cut serious errors by more than 20 percent."
+ },
+ "es": {
+  "title": "Falta de sueño y errores médicos",
+  "description": "Matthew Walker muestra que diecinueve horas despierto afectan a la atención tanto como el límite legal de alcohol, y que quien duerme poco no lo nota.",
+  "hook": "Después de dormir poco, ¿cuánto puedes fiarte de la sensación de estar bien?",
+  "one_minute_summary": "Matthew Walker cuenta que los residentes en turnos de treinta horas cometen un 36 por ciento más de errores médicos graves que quienes trabajan dieciséis o menos, y que tienen muchos más accidentes al volver a casa. En un estudio australiano, adultos sanos con diecinueve horas despiertos rindieron en una prueba de atención como quienes estaban en el límite legal de alcohol. Y quien duerme poco subestima su deterioro. Limitar los turnos a dieciséis horas redujo los errores graves en más de un 20 por ciento."
+ },
+ "de": {
+  "title": "Schlafmangel und medizinische Fehler",
+  "description": "Matthew Walker zeigt, dass neunzehn Stunden wach die Aufmerksamkeit so stark mindern wie die Promillegrenze, und dass Müde das kaum merken.",
+  "hook": "Wie weit kannst du nach einer kurzen Nacht dem Gefühl trauen, fit zu sein?",
+  "one_minute_summary": "Matthew Walker berichtet, dass Assistenzärzte in Dreißigstundenschichten 36 Prozent mehr schwere Behandlungsfehler machen als Kollegen mit höchstens sechzehn Stunden und auf dem Heimweg viel häufiger Unfälle bauen. In einer australischen Studie schnitten gesunde Erwachsene nach neunzehn Stunden ohne Schlaf im Aufmerksamkeitstest so schlecht ab wie Menschen an der gesetzlichen Promillegrenze. Am schädlichsten ist, dass Unausgeschlafene ihre Beeinträchtigung durchweg unterschätzen. Schichten von höchstens sechzehn Stunden senkten schwere Fehler um mehr als 20 Prozent."
+ }
+}

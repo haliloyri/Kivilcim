@@ -1,0 +1,6 @@
+{
+ "punchline": "Brooks compared software to a werewolf and said no silver bullet would kill it within a decade.",
+ "thirty_sec": "In 1986 Fred Brooks opened a paper with a werewolf and a silver bullet. Software, he said, has accidental difficulties, like assembly language, that better tools remove, and essential ones, like complexity and constant change, that no tool removes. So no single technique would give a tenfold improvement within ten years. His hopeful answers were buying software, prototyping, growing systems step by step and finding great designers.",
+ "question": "",
+ "key_contrast": "Tool problem, real problem"
+}

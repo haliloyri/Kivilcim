@@ -1,0 +1,175 @@
+{
+  "book_no": 76,
+  "title": "The Artist's Way",
+  "authors": [
+    "Julia Cameron"
+  ],
+  "year": "1992",
+  "note": "DB Turkish title 'Yaratıcı Beyin' is not a faithful title. Full text is borrow-only on archive.org, not accessible. Facts rely on consistent quotations in secondary sources and Cameron's own site; confidence capped at medium. The book gives tools and concepts, not one dated event, so all three stories are concept stories.",
+  "sources": [
+    "https://www.penguinrandomhouse.com/books/349644/the-artists-way-by-julia-cameron/",
+    "https://www.themuse.com/advice/the-easy-morning-ritual-thatll-help-you-clear-your-mind",
+    "https://www.dailygood.org/story/805/julia-cameron-on-how-to-get-out-of-your-own-way-maria-popova/",
+    "https://juliacameronlive.com/tag/morning-pages",
+    "https://www.teachingauthors.com/2012/08/replenishing-our-inner-well.html",
+    "https://oscarzepedasartistsway.blogspot.com/2011/05/filling-well-stocking-pond.html",
+    "https://www.goodreads.com/quotes/10622038-filling-the-well-involves-the-active-pursuit-of-images-to",
+    "https://library.peoplespharmacy.com/artists-way-julia-cameron",
+    "https://writeordiemag.com/features/should-you-finally-do-the-artists-way"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Morning pages: three pages of longhand writing, strictly stream-of-consciousness, written first thing in the morning.",
+      "source": "The Muse quoting the book; multiple secondary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f2",
+      "claim": "There is no wrong way to do morning pages; they are not high art; no topic is too trivial.",
+      "source": "Cameron's site; secondary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "By spilling out of bed straight onto the page every morning, you learn to evade the Censor; because there is no wrong way, the Censor's opinion does not count.",
+      "source": "Popova/dailygood quoting book; secondary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Cameron advises not rereading the pages, and not letting anyone else read them, at least for the first eight weeks.",
+      "source": "secondary summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Cameron on her own practice: 'I learned to just show up at the page and write down what I heard... I didn't have to be in the mood.'",
+      "source": "Popova/dailygood quoting Cameron",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Cameron began teaching blocked artists in 1978; the work grew from one-on-one sessions to workshops and a course, then the book.",
+      "source": "Popova/dailygood",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "The Censor: a nasty internal and eternal critic. 'Think of your Censor as a cartoon serpent, slithering around your creative Eden, hissing vile things to keep you off guard.' If a serpent doesn't work, draw another cartoon image, perhaps the shark from Jaws, put an X through it, and post it where you write. Making it a nasty clever little character begins to pry loose its power. The Censor's negative opinion is not the truth.",
+      "source": "multiple secondary quoting the Basic Tools chapter",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Week 1 ('Recovering a Sense of Safety') includes listing historic 'monsters' (enemies of your creative self-worth) and 'champions'.",
+      "source": "multiple reader blogs; PRH table of contents",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Artist date: 'a block of time, perhaps two hours weekly, especially set aside and committed to nurturing your creative consciousness, your inner artist.' Done alone. Examples: a great junk store, a solo trip to the beach, an old movie, an aquarium or art gallery.",
+      "source": "teachingauthors quoting book; heroic.us",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Filling the well: 'Art is an image-using system.' Making art draws images out of an inner well, ideally like a well-stocked trout pond; without upkeep the well becomes depleted, stagnant or blocked. 'Filling the well involves the active pursuit of images to refresh our artistic reservoirs.' 'In filling the well, think magic. Think delight. Think fun. Do not think duty.' 'Think mystery, not mastery.' Example: if I drive this road, not my usual road, what will I see?",
+      "source": "blog quotes; Goodreads quotes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "'Morning pages are nonnegotiable. Never skip or skimp on your morning pages.'",
+      "source": "heroic.us philosopher note quoting the book",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "'Beyond the reach of the Censor's babble we find our own quiet center, the place where we hear the still, small voice.' The Censor 'resides in our (left) brain'.",
+      "source": "heroic.us; Popova/dailygood quoting the book",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Cameron on students working the process: 'I see a certain amount of defiance and giddiness in the first few weeks.'",
+      "source": "Popova/dailygood quoting the book",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Trout-pond passage: 'We've got big fish, little fish, fat fish, skinny fish, an abundance of artistic fish to fry.' And: 'Do what intrigues you, explore what interests you; think mystery, not mastery.'",
+      "source": "blog and Goodreads quotes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Pages can hold anything: last night's dreams, plans for the day, things you're excited or worried about.",
+      "source": "Shortform summary of the book",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Within a few weeks most participants reported surprising changes.",
+      "reason": "No measured outcome in the book; unsupported."
+    },
+    {
+      "claim": "A painter in front of the canvas hears 'Real painters don't do this' and the brush stops.",
+      "reason": "Invented scene."
+    },
+    {
+      "claim": "Quote 'This voice comes from inside, mostly from old injuries.'",
+      "reason": "Not a verified quote."
+    },
+    {
+      "claim": "Quote 'Creativity gives out and must take in; the one who only gives burns out.'",
+      "reason": "Not a verified quote."
+    },
+    {
+      "claim": "Morning pages happen 'before making coffee'.",
+      "reason": "Not verified."
+    },
+    {
+      "claim": "Many readers find their monsters list short but louder than champions.",
+      "reason": "Single reader blog, not the book."
+    }
+  ],
+  "stories": {
+    "1324": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f11",
+        "f12",
+        "f13",
+        "f15"
+      ],
+      "note": "Concept: morning pages."
+    },
+    "1325": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f3",
+        "f7",
+        "f8",
+        "f12"
+      ],
+      "note": "Concept: the Censor as cartoon serpent."
+    },
+    "1326": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f9",
+        "f10",
+        "f14"
+      ],
+      "note": "Concept: filling the well and the artist date."
+    }
+  }
+}

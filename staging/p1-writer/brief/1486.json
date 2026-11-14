@@ -1,0 +1,60 @@
+{
+  "story_id": 1486,
+  "kind": "anecdote",
+  "book": {
+    "title": "Stolen Focus",
+    "author": "Johann Hari",
+    "year": "2022"
+  },
+  "confidence": "medium",
+  "confidence_note": "Facts from Wikipedia, the book's site and one review; book not read. Duration of three months comes from one review. Old text's phone count, 'no phone' and quote dropped. Thin, story near the floor.",
+  "facts": [
+    "Hari stayed in a beach house in Provincetown, Massachusetts.",
+    "His phone was a flip phone that could not get online; he used a printed road map to get around.",
+    "The stay lasted three months, alone and screen-free (one review).",
+    "At first he felt agitated.",
+    "The longer he stayed away, the easier it became to clear his mind and stay with one task.",
+    "Letting his mind wander brought new ideas.",
+    "The book then reports that attention is eroded by twelve deeper causes, not only by personal weakness.",
+    "The book's site cites about 65 seconds of focus on one task for US college students and about three minutes for office workers ('reportedly')."
+  ],
+  "scene_details": [
+    "a flip phone that cannot get online",
+    "a printed road map",
+    "a beach house in Provincetown"
+  ],
+  "tension": "A writer on attention cuts the internet for three months, yet the book he writes says willpower is not the whole answer.",
+  "opening_idea": "Open on the flip phone and the paper map in a rented beach house.",
+  "lessons": [
+    {
+      "idea": "A personal fix shows what is possible but does not explain why it was hard",
+      "anchor": "Hari's detox helped him clear his head while the book still goes on to name twelve causes; Everyday: someone who finally finishes a report in a quiet library but cannot reproduce that at the open-plan office"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of one place or hour where you stay with a task easily. What does that setting have that your usual desk does not?",
+  "use_cases": [
+    {
+      "situation": "A friend says they just need more willpower to stop scrolling",
+      "move": "Hari spent three months with a flip phone and a paper map and it was still not only about willpower. What gets in your way when you try to focus?",
+      "context": "social"
+    },
+    {
+      "situation": "The team is told to be more focused in a chat full of pings",
+      "move": "One flip-phone detox cannot fix this. Can we pick two hours with notifications off and see what changes?",
+      "context": "meeting"
+    },
+    {
+      "situation": "You blame yourself for losing an afternoon to your phone",
+      "move": "Quiet helped Hari's mind wander and clear. Tonight I will put the phone in another room for one hour and notice what I reach for.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A flip phone and a paper map cleared one writer's head, but only because he could leave. Notice what in your day you cannot leave.",
+  "conversation_variants": {
+    "punchline_idea": "Hari swapped his smartphone for a flip phone and a paper map, and the quiet helped, but the book says that is not the whole answer.",
+    "thirty_sec_idea": "Johann Hari rented a beach house in Provincetown and left the internet behind, with a flip phone and a paper road map. He was agitated at first, then found it easier to stay with one task, and his mind wandered to new ideas. His book still argues the problem is bigger than one person's discipline.",
+    "question_idea": "",
+    "key_contrast_idea": "quiet versus the system"
+  }
+}

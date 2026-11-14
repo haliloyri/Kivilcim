@@ -1,0 +1,35 @@
+{
+ "story_id": 1370,
+ "verdict": "keep",
+ "verify_note": "Harvard course scene verified in the publisher's sample of Never Split the Difference (2016); 'No' chapter ideas confirmed by several summaries. Unverified tactics and the 'yes is the close, no is the opening' line were dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Hiç Hayır Demeyen Adam",
+  "description": "Harvard'daki eğitmen Chris Voss'a sadece hayır deyip mi kazandığını sordu, oysa o kelimeyi hiç söylememişti. Voss'un hayırı arayan müzakere anlayışı.",
+  "hook": "Karşınızdakine hayır deme fırsatı vermek neden işinize yarar?",
+  "one_minute_summary": "Chris Voss, 2006'da Harvard'daki müzakere kursunda eşi Andy'nin bütçesinin tamamını, saklaması gereken dörtte biri de dahil, alıyor. Eğitmen Sheila Heen ona sadece hayır deyip mi baktığını soruyor. Voss bu kelimeyi hiç kullanmamış, soruları öyle duyulmuş. Never Split the Difference'a göre hayır çoğu zaman \"henüz hazır değilim\" demek ve insana güven verir. Evetin sahte, onay ve bağlılık türleri var. Öneri: \"Birkaç dakikanız var mı?\" yerine \"Şimdi kötü bir zaman mı?\" diye sormak."
+ },
+ "en": {
+  "title": "The Man Who Never Said No",
+  "description": "A Harvard instructor asked Chris Voss whether he just said no and stared people down, though he never used the word. Voss's case for seeking the no.",
+  "hook": "Why would you want the other person to say no?",
+  "one_minute_summary": "At Harvard's 2006 winter negotiation course, Chris Voss took everything his partner Andy had, including the quarter he was told to keep in reserve. Instructor Sheila Heen asked whether he simply said no and stared. He never said the word; his questions only sounded like it. In Never Split the Difference, Voss argues that no makes people feel safe and in control, while yes comes in counterfeit, confirmation and commitment forms. His tip: ask \"Is now a bad time to talk?\""
+ },
+ "es": {
+  "title": "El hombre que nunca decía no",
+  "description": "En Harvard le preguntaron a Chris Voss si solo decía que no y miraba fijamente, aunque nunca usó la palabra. Por qué Voss busca el no.",
+  "hook": "¿Por qué te conviene que el otro pueda decirte que no?",
+  "one_minute_summary": "En el curso de negociación de Harvard de 2006, Chris Voss se llevó todo el presupuesto de su pareja, Andy, incluida la cuarta parte que debía reservar. La profesora Sheila Heen le preguntó si solo decía que no y miraba fijamente. Nunca dijo esa palabra; sus preguntas sonaban así. En Never Split the Difference, Voss sostiene que el no da seguridad y control, y que hay tres tipos de sí: falso, de confirmación y de compromiso. Su consejo: preguntar «¿es mal momento para hablar?»."
+ },
+ "de": {
+  "title": "Der Mann, der nie Nein sagte",
+  "description": "Eine Dozentin in Harvard fragte Chris Voss, ob er nur Nein sage und die Leute anstarre, dabei benutzte er das Wort nie. Warum Voss das Nein sucht.",
+  "hook": "Warum solltest du wollen, dass dein Gegenüber Nein sagt?",
+  "one_minute_summary": "Im Harvard-Winterkurs 2006 holte Chris Voss das ganze Budget seines Partners Andy heraus, auch das Viertel, das dieser zurückhalten sollte. Dozentin Sheila Heen fragte, ob er nur Nein sage und starre. Er hatte das Wort nie benutzt, seine Fragen klangen nur so. In Never Split the Difference erklärt Voss, dass ein Nein Sicherheit und Kontrolle gibt und dass es ein falsches, ein bestätigendes und ein verbindliches Ja gibt. Sein Rat: \"Ist es gerade ein schlechter Zeitpunkt?\""
+ }
+}

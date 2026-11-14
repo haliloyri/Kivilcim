@@ -1,0 +1,35 @@
+{
+ "story_id": 1395,
+ "verdict": "keep",
+ "verify_note": "Keep: single handling (ch. 21) and large chunks of time (ch. 19) verified in an early-edition full text. Old '40 percent' study and 25/45/90-minute blocks are not in the book and were replaced; 50 percent faster and up to 500 percent slower are Tracy's own unsourced estimates and are hedged.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Tek blok, tek iş",
+  "description": "Brian Tracy'ye göre bir işi bırakıp yeniden almak süreyi uzatır. Çözümü telefonsuz bloklar ve 'işe dön' cümlesi.",
+  "hook": "Bir saat telefonsuz tek bir işe verseniz, bu hafta hangi iş en çok ilerlerdi?",
+  "one_minute_summary": "Brian Tracy kitabını tek bir kuralla kapatır: işe başladıysanız yüzde yüz bitene kadar saptırmayın ve dağıldıkça kendinize işe dön deyin. Gerekçesi yeniden başlamanın bedeli: her dönüşte nerede kaldığınızı bulmalı ve ritmi baştan kurmalısınız. Bölmenin süreyi çok uzattığına dair rakamlar Tracy'nin kendi tahminidir ve kaynak göstermez. Çözümü otuz, altmış ya da doksan dakikalık, telefonsuz bloklar. Örneği, sabah bir saat yalnızca müşteri adaylarını arayan bir satış elemanı."
+ },
+ "en": {
+  "title": "One block, one job",
+  "description": "Brian Tracy says starting and stopping a task stretches it. His fix is phone-free blocks and a line to say when you drift.",
+  "hook": "If you gave one job an hour with your phone off, which would move most this week?",
+  "one_minute_summary": "Brian Tracy ends his book with a rule he calls single handling: once you begin a task, stay with it until it is finished, and tell yourself 'Back to work!' when you drift. His reason is the cost of restarting, since each return means finding your place and rebuilding your rhythm. His numbers on how much stopping stretches a task are his own unsourced estimates. His fix is thirty, sixty or ninety minute blocks with the phone off, like the salesperson who phones prospects for one hour each morning."
+ },
+ "es": {
+  "title": "Un bloque, una tarea",
+  "description": "Según Brian Tracy, empezar y parar una tarea la alarga. Su remedio son bloques sin teléfono y una frase para cuando te dispersas.",
+  "hook": "Si dieras una hora sin teléfono a un solo trabajo, ¿cuál avanzaría más esta semana?",
+  "one_minute_summary": "Brian Tracy cierra su libro con una regla que llama manejar cada tarea de una sola vez: si empiezas algo, sigue hasta terminarlo y dite «de vuelta al trabajo» cuando te disperses. Su razón es el coste de reiniciar: cada vez que vuelves tienes que encontrar tu sitio y recuperar el ritmo. Sus cifras sobre cuánto alarga parar una tarea son estimaciones suyas, sin fuente. Su remedio son bloques de treinta, sesenta o noventa minutos con el teléfono apagado, como un vendedor que llama una hora."
+ },
+ "de": {
+  "title": "Ein Block, eine Aufgabe",
+  "description": "Laut Brian Tracy verlängert Anfangen und Aufhören eine Aufgabe. Sein Mittel sind Blöcke ohne Telefon und ein Satz fürs Abdriften.",
+  "hook": "Welche Aufgabe würde diese Woche am meisten vorankommen, wenn du ihr eine Stunde ohne Handy gibst?",
+  "one_minute_summary": "Brian Tracy beendet sein Buch mit einer Regel, die er Single Handling nennt: Hast du eine Aufgabe begonnen, bleib dabei, bis sie fertig ist, und sag dir „Zurück an die Arbeit!“, wenn du abdriftest. Sein Grund ist der Neustart: Bei jeder Rückkehr musst du deinen Platz finden und den Rhythmus neu aufbauen. Seine Zahlen dazu, wie stark Unterbrechen eine Aufgabe dehnt, sind eigene Schätzungen ohne Quelle. Sein Mittel sind Blöcke von dreißig, sechzig oder neunzig Minuten ohne Telefon."
+ }
+}

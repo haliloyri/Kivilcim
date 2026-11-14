@@ -1,0 +1,35 @@
+{
+ "story_id": 1393,
+ "verdict": "keep",
+ "verify_note": "Keep: frog saying, night-before list, master/monthly/weekly lists verified in an early-edition full text of Eat That Frog!. Mark Twain attribution dropped (book says 'it has been said'); percentages are Tracy's own claims. DB book title 'Yeme Bozukluğu' is a wrong Turkish label for this book.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kurbağayı akşamdan seçmek",
+  "description": "Brian Tracy'nin kurbağası sabah yenir ama hangisi olduğuna bir akşam önce karar verilir. Liste, bir kâğıt ve bir kalem yeter.",
+  "hook": "Yarın sabah ertelemeye en yatkın olacağınız iş hangisi?",
+  "one_minute_summary": "Brian Tracy'nin kurbağası, günün en büyük ve en önemli işidir, yani ertelemeye en yatkın olduğunuz iş. Tracy ona sabah uzun uzun bakmamayı öğütler, ama kararı sabaha bırakmaz. Listeyi iş gününün sonunda, bir kâğıt ve bir kalemle yazdırır: bitmeyenleri taşır, ertesi günün işlerini eklersiniz. Ona göre liste siz uyurken de çalışır ve sabah neye başlayacağınız bellidir. Planlamanın on, on iki dakikada en az iki saat kazandırdığı Tracy'nin kendi tahminidir, bir araştırma değil."
+ },
+ "en": {
+  "title": "Choose the frog the night before",
+  "description": "Brian Tracy's frog is eaten in the morning, but he wants it chosen the evening before, on paper, at the end of the workday.",
+  "hook": "Which task would you be most tempted to leave off the top of tomorrow's list?",
+  "one_minute_summary": "Brian Tracy's frog is the biggest, most important task on your plate, the one you are most likely to put off. His rule is to eat it first and not sit looking at it, but he wants the choosing done the evening before. At the end of the workday you write tomorrow's list on paper, carrying over what is unfinished. He says the list keeps working while you sleep. His figures, ten or twelve minutes of planning saving two hours, are his own estimate."
+ },
+ "es": {
+  "title": "Elegir la rana la víspera",
+  "description": "La rana de Brian Tracy se come por la mañana, pero él quiere que se elija la tarde anterior, con papel y bolígrafo.",
+  "hook": "¿Qué tarea te costaría más poner arriba del todo en la lista de mañana?",
+  "one_minute_summary": "La rana de Brian Tracy es la tarea más grande e importante de tu lista, la que más probablemente aplazarás. Su regla es comértela primera y no quedarte mirándola, pero quiere que la elección se haga la víspera. Al terminar la jornada escribes la lista de mañana en papel y pasas a ella lo pendiente. Según él, la lista sigue trabajando mientras duermes. Las cifras que da, diez o doce minutos de planificación que ahorran dos horas, son una estimación suya, no un estudio."
+ },
+ "de": {
+  "title": "Den Frosch am Vorabend wählen",
+  "description": "Brian Tracys Frosch wird morgens gegessen, aber er will ihn schon am Vorabend aussuchen, mit Papier und Stift.",
+  "hook": "Welche Aufgabe würdest du morgen am ehesten nicht ganz oben auf die Liste setzen?",
+  "one_minute_summary": "Brian Tracys Frosch ist die größte, wichtigste Aufgabe auf deiner Liste, jene, die du am ehesten aufschiebst. Seine Regel lautet, ihn zuerst zu essen und nicht lange anzustarren, doch entschieden wird am Vorabend. Am Ende des Arbeitstages schreibst du die Liste für morgen auf Papier und übernimmst, was liegen geblieben ist. Laut Tracy arbeitet sie weiter, während du schläfst. Seine Zahlen, zehn bis zwölf Minuten Planung für zwei gesparte Stunden, sind seine eigene Schätzung, keine Studie."
+ }
+}

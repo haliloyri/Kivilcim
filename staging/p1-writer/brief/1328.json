@@ -1,0 +1,65 @@
+{
+  "story_id": 1328,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Success Principles",
+    "author": "Jack Canfield",
+    "year": "2005"
+  },
+  "confidence": "high",
+  "confidence_note": "Principle 1 read directly in the publisher's excerpt. Year: first edition is 2005 (DB says 2004). The old text's networking pair, 'mirror' quote and Pygmalion link are not in the book and are dropped; the book's own two-people case is the Northridge commuters. Canfield co-wrote the book with Janet Switzer.",
+  "facts": [
+    "Canfield learned E + R = O (Event + Response = Outcome) from Dr. Robert Resnick, a Los Angeles psychotherapist: every outcome follows from how you responded to earlier events.",
+    "Faced with an outcome you don't like, Canfield says you have two choices: blame the event, or change your response until the outcome changes.",
+    "Canfield lived through the 1994 Northridge earthquake in Los Angeles. Two days later he watched CNN interview commuters on a damaged freeway; a normal 1-hour drive had become 2 or 3 hours.",
+    "The first driver answered angrily: 'I hate California. First there were fires, then floods, and now an earthquake!' He said he would be late whatever time he left.",
+    "The driver in the car behind was all smiles. He had left home at 5 a.m. and had music cassettes, Spanish-language tapes, a cell phone, coffee in a thermos, his lunch and a book. 'It's no problem.'",
+    "Canfield: if the earthquake or the traffic were the deciding variable, everyone would have been angry. Leaving prepared or unprepared made the difference.",
+    "A friend's Lexus dealership in Southern California: when the Gulf War broke out, people stopped coming in. Newspaper and radio ads stopped working and sales fell steadily.",
+    "Of several new tries, the one that worked: driving a fleet of new cars to country clubs, marinas, polo grounds and parties in Beverly Hills and Westlake Village and inviting people to take a test drive. A high percentage bought or leased; they ended up selling more cars per week than before the war.",
+    "Canfield says you control only three things: the thoughts you think, the images you visualize and the actions you take."
+  ],
+  "scene_details": [
+    "two cars in the same jam on a quake-damaged freeway, a CNN reporter knocking on each window",
+    "coffee in a thermos, Spanish-language tapes and a packed lunch on the passenger side",
+    "a fleet of new Lexus cars driven out to marinas and polo grounds"
+  ],
+  "tension": "Two drivers sat in the same traffic on the same morning; one was furious and one was fine, and the earthquake can't explain the difference.",
+  "opening_idea": "Start at the car window: a CNN reporter, a freeway jam two days after the quake, and a driver listing fires, floods and the earthquake.",
+  "lessons": [
+    {
+      "idea": "When an outcome is bad, look for the part of your response you can still change before blaming the event.",
+      "anchor": "The thermos driver and the dealership changed their response to an event they could not change."
+    },
+    {
+      "idea": "Prepared responses beat good luck in shared bad conditions.",
+      "anchor": "Same freeway, different outcomes."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Name a result you keep blaming on circumstances and one response of yours you could change before it happens next time.",
+  "use_cases": [
+    {
+      "situation": "The team blames the market for falling sales",
+      "move": "Mention the Lexus dealer who took cars to the marinas when nobody came in, then ask for one new response to test this month.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is furious about a commute that keeps getting worse",
+      "move": "Ask what would go in the car if the delay were certain: coffee, a podcast, an earlier start.",
+      "context": "social"
+    },
+    {
+      "situation": "You catch yourself complaining about the same thing for the third time",
+      "move": "Write the event, your usual response and one different response you will try next time.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "On the same jammed freeway, the driver with a thermos had a different day: change the response, not the traffic.",
+  "conversation_variants": {
+    "punchline_idea": "Two drivers in the same earthquake jam: one cursing California, one with coffee, lunch and Spanish tapes.",
+    "thirty_sec_idea": "CNN interviews two drivers after Northridge; then the Lexus dealer who drove cars to the rich instead of waiting; Canfield's E + R = O.",
+    "question_idea": "When did you change how you responded to something you couldn't change?",
+    "key_contrast_idea": "Blame the event or change the response"
+  }
+}

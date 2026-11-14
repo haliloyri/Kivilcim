@@ -1,0 +1,33 @@
+{
+ "story_id": 1571,
+ "kind": "anecdote",
+ "book": {"title": "The Culture Code", "author": "Daniel Coyle", "year": "2018"},
+ "confidence": "medium",
+ "confidence_note": "Dave Cooper's after-action review and 'I screwed that up' come from a book-notes page; the original text was not readable and sources call him a military team leader without naming his unit in every case, so the story calls him that. Pixar: only 'plussing' and the BrainTrust as candor practices are supported; the old text's quoted Pixar sentences were dropped. The vulnerability loop sequence is given consistently by two summaries.",
+ "facts": [
+  "Dave Cooper's teams hold an after-action review right after each mission.",
+  "Enlisted men lead it; there is no rank, no agenda and no minutes.",
+  "The team replays each decision and keeps asking why until the truth comes out.",
+  "Cooper says the most important words a leader can say are 'I screwed that up.'",
+  "Coyle describes a vulnerability loop: A signals vulnerability, B detects it, B signals their own, A detects that, and a norm of trust forms.",
+  "At Pixar, teams 'plus' early drafts by offering solutions instead of giving notes."
+ ],
+ "scene_details": ["a review held right after the mission, no rank, no agenda, no minutes", "the words 'I screwed that up'", "'plussing' a draft with a solution"],
+ "tension": "A leader's admission, not a speech about openness, is what lets everyone else admit things too.",
+ "opening_idea": "Open with the after-action review: enlisted men leading it, no rank, no agenda, no minutes.",
+ "lessons": [{"idea": "When the person with the most standing admits an error first, others find it easier to say what they got wrong, and problems surface sooner.", "anchor": "Cooper's 'I screwed that up' opens the review"}],
+ "reflect": [],
+ "reflect_final": "What is one mistake of yours from this month that you could say out loud to your team in a single sentence?",
+ "use_cases": [
+  {"situation": "A project finished and nobody wants to say what went wrong", "move": "Start the debrief yourself: 'I screwed up this step; here is what I would do differently.'", "context": "meeting"},
+  {"situation": "A colleague shows an unfinished draft", "move": "Add a suggestion to what works, the Pixar way of plussing, instead of listing flaws.", "context": "oneonone"},
+  {"situation": "Your kid hides a bad grade", "move": "Tell them about a recent mistake of yours first, then ask about theirs.", "context": "family"}
+ ],
+ "pocket_idea": "Say 'I screwed that up' first, and watch who speaks next.",
+ "conversation_variants": {
+  "punchline_idea": "After every mission Dave Cooper's teams ran a review with no rank, no agenda and no minutes.",
+  "thirty_sec_idea": "Daniel Coyle describes Dave Cooper's review right after each mission: enlisted men lead it, no rank, no agenda, no minutes, and every decision is replayed with why. Cooper says a leader's most important words are I screwed that up. Coyle calls what follows a vulnerability loop.",
+  "question_idea": "",
+  "key_contrast_idea": "admit first, others follow"
+ }
+}

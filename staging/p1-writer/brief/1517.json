@@ -1,0 +1,59 @@
+{
+ "story_id": 1517,
+ "kind": "concept",
+ "book": {
+  "title": "The Mom Test",
+  "author": "Rob Fitzpatrick",
+  "year": "2013"
+ },
+ "confidence": "medium",
+ "confidence_note": "Concept; the three kinds of bad data, the fool's gold line, the three fluff forms and the 'Why do you want that?' fix are verified across several detailed summaries, not the full text. A dashboard/CSV/PDF example found in one report was dropped: it is unclear it is Fitzpatrick's own account. Old text's three 'mistakes' and invented quotes dropped.",
+ "facts": [
+  "Chapter on bad data names three kinds: compliments, fluff and ideas.",
+  "'Compliments are the fool's gold of customer learning: shiny, distracting, and worthless.'",
+  "To handle a compliment, do not accept it; ask why they like it, what else they have tried, what it cost them.",
+  "Fluff has three forms: generic claims ('I usually', 'I always'), future promises ('I will', 'I would') and hypotheticals ('I might', 'I could').",
+  "The most dangerous line is 'I would definitely buy that'; steer back to the last time they ran into the problem.",
+  "When someone asks for a feature, find the problem under it: 'Why do you want that?'"
+ ],
+ "scene_details": [
+  "'I would definitely buy that'",
+  "'Why do you want that?'",
+  "the last time they ran into the problem"
+ ],
+ "tension": "The warmest, most promising things a customer says are the least useful.",
+ "opening_idea": "Open on 'I would definitely buy that', the sentence the book calls the most dangerous kind of fluff.",
+ "lessons": [
+  {
+   "idea": "Treat praise and promises as noise until a specific past example backs them.",
+   "anchor": "fool's gold compliments and 'I would definitely buy that'.",
+   "example": "A friend says they would love your recipe box; asking when they last cooked from scratch tells you more."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What was the last compliment or promise about your work that you took as good news, and what specific question could have tested it?",
+ "use_cases": [
+  {
+   "situation": "Someone says 'that is a great idea' after you describe your plan.",
+   "move": "Thank them and ask what they do today about the problem and when it last cost them time or money; the book calls compliments fool's gold.",
+   "context": "social"
+  },
+  {
+   "situation": "A customer says they would definitely buy it when it is ready.",
+   "move": "Ask them to walk through the last time the problem came up and what they tried; that is how the book turns 'I would' into evidence.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A user asks for a new feature.",
+   "move": "Before you add a requested feature, ask 'Why do you want that?' and what they do about it now; the book treats a feature request as a symptom of a deeper problem.",
+   "context": "oneonone"
+  }
+ ],
+ "pocket_idea": "Compliments and 'I would buy that' are fool's gold: ask what they did the last time the problem came up.",
+ "conversation_variants": {
+  "punchline_idea": "A compliment feels like a result but it has no facts in it.",
+  "thirty_sec_idea": "A customer asked Fitzpatrick for analytics, so he built a flexible dashboard. Then came CSV export, then PDFs. They only wanted good-looking charts to show their own clients each week. Asking why behind the request would have saved the build.",
+  "question_idea": "",
+  "key_contrast_idea": "praise vs facts"
+ }
+}

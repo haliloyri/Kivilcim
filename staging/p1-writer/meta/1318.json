@@ -1,0 +1,35 @@
+{
+ "story_id": 1318,
+ "verdict": "keep",
+ "verify_note": "Verified in full text of Indistractable (2019). Old long quote was a paraphrase; book says 'distraction starts from within'. Daughter superpower scene, failed digital detox, Bricker's four steps and ten-minute rule.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kapaklı Telefon Yetmedi",
+  "description": "Nir Eyal kızının süper güç sorusunu telefona dalıp kaçırınca interneti hayatından çıkarmayı dener. Yine de dikkati dağılır ve sorunun içeride başladığını anlar.",
+  "hook": "Telefonunuzu bıraksanız, zor bir anda dikkatiniz bu sefer nereye kaçardı?",
+  "one_minute_summary": "Nir Eyal, kızıyla bir etkinlik kitabını doldururken telefona dalar ve kızının süper güç cevabını kaçırır. Ardından teknolojiyi suçlayıp kapaklı telefona, basılı gazeteye ve internetsiz bir kelime işlemciye geçer. Gazeteler okunmadan yığılır, yazarken de kitaplıktaki ilgisiz kitapları karıştırır. Vardığı sonuç: dikkat dağınıklığı içeriden başlar ve çoğu zaman bir rahatsızlıktan kaçıştır. Psikolog Jonathan Bricker'ın dört adımını ve on dakika kuralını kullanıyor: dürtüye teslim olmak serbest, ama şimdi değil."
+ },
+ "en": {
+  "title": "The Flip Phone Didn't Help",
+  "description": "After missing his daughter's superpower answer because of his phone, Nir Eyal tries to cut the internet out of his life. He still gets distracted and concludes the problem starts within.",
+  "hook": "If you gave up your phone, where would your attention run the next time a task got hard?",
+  "one_minute_summary": "Doing an activity book with his daughter, Nir Eyal got absorbed in his phone and missed her answer to the superpower question. He blamed technology and switched to a flip phone, a print newspaper and an offline word processor. The papers piled up unread, and while writing he started flipping through unrelated books on his shelf. His conclusion: distraction starts from within, usually as an escape from discomfort. He uses psychologist Jonathan Bricker's four steps and a ten-minute rule: giving in is allowed, but only later."
+ },
+ "es": {
+  "title": "El móvil de tapa no bastó",
+  "description": "Tras perderse la respuesta de su hija sobre los superpoderes por estar con el móvil, Nir Eyal intenta sacar internet de su vida. Sigue distrayéndose y concluye que el problema empieza por dentro.",
+  "hook": "Si dejaras el móvil, ¿hacia dónde se escaparía tu atención la próxima vez que una tarea se pusiera difícil?",
+  "one_minute_summary": "Haciendo un cuaderno de actividades con su hija, Nir Eyal se enganchó al móvil y se perdió su respuesta a la pregunta de los superpoderes. Culpó a la tecnología y pasó a un móvil de tapa, un periódico en papel y un procesador de textos sin internet. Los periódicos se apilaron sin leer y, al escribir, acabó hojeando libros de la estantería. Su conclusión: la distracción empieza por dentro, casi siempre como huida de una incomodidad. Usa los cuatro pasos de Jonathan Bricker y la regla de los diez minutos."
+ },
+ "de": {
+  "title": "Das Klapphandy half nicht",
+  "description": "Weil er am Handy war, verpasste Nir Eyal die Superkraft-Antwort seiner Tochter und versuchte, das Internet aus seinem Leben zu verbannen. Er ließ sich trotzdem ablenken und erkannte, dass das Problem innen beginnt.",
+  "hook": "Wenn du dein Handy aufgibst, wohin flieht deine Aufmerksamkeit, wenn eine Aufgabe das nächste Mal schwierig wird?",
+  "one_minute_summary": "Beim Mitmachbuch mit seiner Tochter versank Nir Eyal im Handy und verpasste ihre Antwort auf die Frage nach der Superkraft. Er gab der Technik die Schuld und wechselte zu Klapphandy, Papierzeitung und einem Schreibgerät ohne Internet. Die Zeitungen stapelten sich ungelesen, und beim Schreiben blätterte er in Büchern aus dem Regal. Sein Schluss: Ablenkung beginnt im Inneren, meist als Flucht vor Unbehagen. Er nutzt Jonathan Brickers vier Schritte und eine Zehn-Minuten-Regel: Nachgeben ist erlaubt, aber erst später."
+ }
+}

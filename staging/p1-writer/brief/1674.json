@@ -1,0 +1,32 @@
+{
+ "story_id": 1674,
+ "kind": "anecdote",
+ "book": {"title": "Deep Work", "author": "Cal Newport", "year": "2016"},
+ "confidence": "medium",
+ "confidence_note": "Examples checked against secondary summaries (Darwin's 7 a.m. walk and morning session as remembered by son Francis, Jung's Bollingen Tower from 1922, Gates's Think Weeks, the ritual structure). The old text's Karl Marx and Woody Allen routines and the 'muscle' framing were not found and were dropped. Details of Jung's tower use and Gates's cottage are kept minimal. DB title 'Konsantrasyon Gücü' could not be matched; content matches Deep Work.",
+ "facts": [
+  "Newport says to ritualize deep work: decide where you will work and for how long, set rules for the session (for example no internet, or a target for output), and prepare support such as food, drinks and a walk before starting.",
+  "Darwin, while perfecting On the Origin of Species, kept a strict structure: his son Francis remembered him rising promptly at seven for a short walk, then working in his study around 8 to 9:30.",
+  "Carl Jung began building the Bollingen Tower retreat in 1922; Newport's point is that Jung went there to advance his work, not to escape it.",
+  "Bill Gates took 'Think Weeks' twice a year, isolating himself, often in a lakeside cottage, to read and think; in a 1995 Think Week he wrote the 'Internet Tidal Wave' memo.",
+  "Newport describes four scheduling philosophies: monastic, bimodal, rhythmic and journalistic."
+ ],
+ "scene_details": ["Darwin's short walk at seven", "Jung's Bollingen Tower, from 1922", "Gates's Think Week in a lakeside cottage", "no internet as a session rule"],
+ "tension": "Famous thinkers did not wait to feel like working; they fixed the place, the hour and the rules in advance.",
+ "opening_idea": "Open with Darwin rising promptly at seven for a short walk before the study.",
+ "lessons": [{"idea": "Settling the place, the time and the rules ahead of time removes the daily negotiation with yourself about whether to start.", "anchor": "Darwin's seven o'clock walk and his study session, Gates's Think Weeks, Jung's tower"}],
+ "reflect": [],
+ "reflect_final": "What single rule, such as a fixed place or a closed inbox, would make your next focused session easier to begin?",
+ "use_cases": [
+  {"situation": "You never start the report you keep postponing", "move": "Pick one desk and one start time for tomorrow, and put your phone in another room.", "context": "self"},
+  {"situation": "A teammate wants to join your focus hour", "move": "Mention that Darwin walked at seven and worked by eight every day, and offer to meet right after your block.", "context": "oneonone"},
+  {"situation": "The family shares a small home office", "move": "Agree on one fixed hour when the door is closed and what each person does in it.", "context": "family"}
+ ],
+ "pocket_idea": "Fix where, when and under which rules you work, like Darwin's walk at seven, and starting stops being a decision.",
+ "conversation_variants": {
+  "punchline_idea": "Darwin took a short walk at seven every morning, then worked; he did not wait for inspiration.",
+  "thirty_sec_idea": "Cal Newport points to Darwin rising at seven for a short walk and working by eight, to Jung building a tower in 1922, and to Bill Gates vanishing for Think Weeks twice a year. The common move is deciding place, time and rules in advance so starting is automatic.",
+  "question_idea": "",
+  "key_contrast_idea": "ritual instead of mood"
+ }
+}

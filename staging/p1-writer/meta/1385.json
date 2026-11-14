@@ -1,0 +1,35 @@
+{
+ "story_id": 1385,
+ "verdict": "keep",
+ "verify_note": "DB book 'Sağlıklı Olmak' (2019) does not exist; content is Atomic Habits (2018), ch.6. Old 'Stanford cafeteria, fruit at registers, +18%' is not in the book and is replaced by the book's Massachusetts General Hospital study (Thorndike; soda -11.4%, water +25.8% over three months), with Lewin's equation and the Dutch meter example. Willpower-depletion claim dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kasanın Yanındaki Su",
+  "description": "Boston'daki bir hastane, kimseye bir şey söylemeden suyu kasanın yanına koyarak gazlı içecek satışını düşürdü. James Clear bunu ortamın davranış üzerindeki gücüne örnek gösterir.",
+  "hook": "Evinizde elinizin en sık uzandığı yerde şu an ne duruyor?",
+  "one_minute_summary": "Massachusetts Genel Hastanesi'nde doktor Anne Thorndike kafeteryada küçük bir değişiklik yaptı. Kasaların yanındaki, yalnızca gazlı içecek bulunan buzdolaplarına su eklendi, yemek tezgâhlarının yanına su sepetleri kondu. Kimseye bir şey söylenmedi. Üç ayda gazlı içecek satışı yüzde 11,4 düştü, su satışı yüzde 25,8 arttı. James Clear bunu Kurt Lewin'in davranış ile ortam denklemine ve sayacı koridorda duran Hollanda evlerine bağlar. Ona göre çoğu zaman bir şeyi nerede durduğu için seçeriz."
+ },
+ "en": {
+  "title": "Water Next to the Till",
+  "description": "A Boston hospital cut soda sales without saying a word, just by putting water next to the registers. James Clear uses it to show how much our surroundings decide.",
+  "hook": "What sits right now in the spot at home your hand reaches for most?",
+  "one_minute_summary": "At Massachusetts General Hospital, Dr Anne Thorndike made one change in the cafeteria. The fridges beside the cash registers, which held only soda, got water too, and baskets of bottled water went next to the food stations. Nobody was told. Over three months, soda sales fell 11.4 percent and water sales rose 25.8 percent. James Clear ties this to Kurt Lewin's equation of behaviour and environment and to Dutch homes with the electric meter in the hallway. We often choose things, he says, because of where they are."
+ },
+ "es": {
+  "title": "El agua junto a la caja",
+  "description": "Un hospital de Boston redujo la venta de refrescos sin decir una palabra, solo poniendo agua junto a las cajas. James Clear lo usa para mostrar cuánto decide el entorno.",
+  "hook": "¿Qué hay ahora mismo en el rincón de tu casa que más alcanza tu mano?",
+  "one_minute_summary": "En la cafetería del Hospital General de Massachusetts, la doctora Anne Thorndike cambió una cosa. Las neveras junto a las cajas, que solo tenían refrescos, recibieron agua, y se pusieron cestas de botellas junto a la comida. No se avisó a nadie. En tres meses, los refrescos bajaron un 11,4 % y el agua subió un 25,8 %. James Clear lo une a la ecuación de Kurt Lewin y a unas casas holandesas con el contador en el pasillo. A menudo elegimos por dónde están las cosas."
+ },
+ "de": {
+  "title": "Wasser neben der Kasse",
+  "description": "Ein Krankenhaus in Boston senkte den Limoverkauf, ohne ein Wort zu sagen, nur mit Wasser neben den Kassen. James Clear zeigt daran, wie viel die Umgebung entscheidet.",
+  "hook": "Was liegt gerade an der Stelle in deiner Wohnung, nach der deine Hand am häufigsten greift?",
+  "one_minute_summary": "Am Massachusetts General Hospital änderte die Ärztin Anne Thorndike eine Sache in der Cafeteria. In die Kühlschränke neben den Kassen, in denen nur Limonade stand, kam Wasser, und neben die Essensausgaben Körbe mit Flaschen. Niemand wurde informiert. In drei Monaten sank der Limoverkauf um 11,4 Prozent, der Wasserverkauf stieg um 25,8 Prozent. James Clear verbindet das mit Kurt Lewins Gleichung von Verhalten und Umgebung und mit niederländischen Häusern, deren Stromzähler im Flur hing. Oft wählen wir etwas, weil es dort steht, wo es steht."
+ }
+}

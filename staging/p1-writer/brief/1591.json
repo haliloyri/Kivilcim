@@ -1,0 +1,61 @@
+{
+  "story_id": 1591,
+  "kind": "concept",
+  "book": {
+    "title": "Outlive",
+    "author": "Peter Attia",
+    "year": "2023"
+  },
+  "confidence": "medium",
+  "confidence_note": "From reviews and summaries, not the book text. Old text's bedside scene with an 85-year-old man was dropped as unsourced. The 30-pound child item varies by version and is not used with a number. Whether the book spells out marginal decade exactly as summarised is medium.",
+  "facts": [
+    "Attia contrasts Medicine 2.0, which mainly aims at lifespan and staving off death, with Medicine 3.0.",
+    "Medicine 3.0 emphasises prevention, starts from an honest assessment of risk, including the risk of doing nothing, and gives more weight to healthspan.",
+    "The marginal decade is the last ten years of life, when people may be alive but unable to do what they enjoy.",
+    "Attia wants readers to name what they want to do in that decade and work backward to train for it now; his aim is a bonus decade.",
+    "The Centenarian Decathlon: choose ten physical tasks you want to still do late in life, then set today's fitness target backward from them.",
+    "Reported sample tasks: getting up from the floor using at most one arm, carrying groceries for several blocks, picking up a child, climbing stairs.",
+    "VO2 max falls about 10 percent per decade, faster after 50, so reserve is built in the 40s and 50s.",
+    "Items on one version of the list: lifting a twenty-pound suitcase into an overhead compartment, balancing on one leg for thirty seconds, climbing four flights of stairs in three minutes (low; versions differ).",
+    "Attia says you need to be quite fit in your 50s to manage picking up a grandchild, hiking or carrying groceries upstairs in your 90s."
+  ],
+  "scene_details": [
+    "getting up from the floor with one arm",
+    "carrying groceries for several blocks",
+    "a list of ten tasks"
+  ],
+  "tension": "A long life can end in years without the movements that made it worth living.",
+  "opening_idea": "Open on the term itself: Attia's name for the last ten years lived in decline.",
+  "lessons": [
+    {
+      "idea": "Set today's target by working backward from what you want to do later",
+      "anchor": "the Centenarian Decathlon; Everyday: a baker planning to hand the shop to a nephew and writing recipes down now"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What is one ordinary physical task you hope to do easily at eighty-five, and what in your current week supports it?",
+  "use_cases": [
+    {
+      "situation": "You are planning a holiday with the family",
+      "move": "Attia asks which physical tasks you want to manage late in life. Which one would you pick: stairs, a bag of groceries, the floor?",
+      "context": "family"
+    },
+    {
+      "situation": "A friend says exercise is boring",
+      "move": "Attia works backward from a list of tasks he wants to still do. What is one thing you want to be able to do at eighty?",
+      "context": "social"
+    },
+    {
+      "situation": "You never think about the long term",
+      "move": "Picking up the groceries for several blocks is on Attia's list. I will write mine down today.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Name the physical tasks you want to manage late in life. Then set this month's training from that list.",
+  "conversation_variants": {
+    "punchline_idea": "Attia asks you to name the physical tasks you still want at the end, then train backward.",
+    "thirty_sec_idea": "Attia says medicine mostly aims at lifespan, not at the last ten years, which he calls the marginal decade, when people are alive but cannot do what they enjoy. His Centenarian Decathlon starts from ten physical tasks you want late in life, like getting up from the floor with one arm or carrying groceries, and sets today's training backward from them.",
+    "question_idea": "",
+    "key_contrast_idea": "more years, better years"
+  }
+}

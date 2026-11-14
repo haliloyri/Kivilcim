@@ -1,0 +1,35 @@
+{
+ "story_id": 1680,
+ "verdict": "keep",
+ "verify_note": "Keep, medium confidence: concept story from Wright's examples (rustle in the underbrush, fading satisfaction, public-speaking anxiety, mindfulness meditation, retreat) via an interview-style article and summaries, not the book text; critics' caveat included. Old four-bullet list, 'program' quote and 'observation is freedom' line dropped as unverifiable.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Çalıdaki hışırtıya sıçrayan zihin",
+  "description": "Robert Wright, doğal seçilimin zihni arzulamak ve her hışırtıda sıçramak için kurduğunu söylüyor. Meditasyon, duyguya uymadan önce onu izlemenizi sağlıyor.",
+  "hook": "Çalılardaki bir hışırtı sizi neden sıçratır?",
+  "one_minute_summary": "Robert Wright, doğal seçilimin zihni memnun olmak için değil, arzulamak için kurduğunu savunuyor. Yürüyüşte bir hışırtı sizi sıçratır, yılan olmasa da, çünkü yanlış alarm kaçırılandan iyidir. Tatmin silikleşir ki hayvanlar yemek ve çiftleşmenin peşinde koşsun, konuşma kaygısı da yanlış yerde çalan eski bir alarm. Meditasyon bir duyguya uymadan önce onu izlemenizi sağlıyor. Eleştirmenler doğallaştırılmış Budizm anlayışını ve evrimsel psikolojisini sorguluyor."
+ },
+ "en": {
+  "title": "The mind built to jump",
+  "description": "Robert Wright says natural selection built the mind to crave and to jump at every rustle. Meditation lets you watch the feeling before you obey it.",
+  "hook": "Why does a rustle in the bushes make you jump?",
+  "one_minute_summary": "Robert Wright argues natural selection built the mind to crave, not to be content. A rustle on a hike makes you flinch even with no snake, because a false alarm beats a missed one. Satisfaction fades so animals keep pursuing food and sex, and speech anxiety is an old alarm in a new place. Meditation lets you watch a feeling before you obey it. Critics question his naturalized Buddhism and his evolutionary psychology."
+ },
+ "es": {
+  "title": "La mente hecha para sobresaltarse",
+  "description": "Robert Wright dice que la selección natural construyó la mente para desear y sobresaltarse con cada crujido. La meditación permite observar el sentimiento antes de obedecerlo.",
+  "hook": "¿Por qué un crujido entre los arbustos te sobresalta?",
+  "one_minute_summary": "Robert Wright sostiene que la selección natural construyó la mente para desear, no para estar contenta. Un crujido en una caminata te sobresalta aunque no haya serpiente, porque una falsa alarma sale mejor que una omitida. La satisfacción se desvanece para que los animales sigan buscando comida y sexo, y la ansiedad ante un discurso es una alarma antigua en un lugar nuevo. La meditación permite observar un sentimiento antes de obedecerlo. Los críticos cuestionan su budismo naturalizado."
+ },
+ "de": {
+  "title": "Der Geist, der zusammenzuckt",
+  "description": "Robert Wright sagt, die natürliche Auslese habe den Geist zum Begehren und zum Zusammenzucken bei jedem Rascheln gebaut. Meditation lässt dich das Gefühl beobachten, bevor du ihm folgst.",
+  "hook": "Warum lässt dich ein Rascheln im Gebüsch zusammenzucken?",
+  "one_minute_summary": "Robert Wright argumentiert, die natürliche Auslese habe den Geist zum Begehren gebaut, nicht zur Zufriedenheit. Ein Rascheln auf der Wanderung lässt dich zusammenzucken, auch ohne Schlange, denn ein Fehlalarm ist besser als ein verpasster. Befriedigung verblasst, damit Tiere Nahrung und Sex weiter suchen, und die Angst vor dem Vortrag ist ein alter Alarm am falschen Ort. Meditation lässt dich ein Gefühl beobachten, bevor du ihm folgst. Kritiker stellen seinen naturalisierten Buddhismus infrage."
+ }
+}

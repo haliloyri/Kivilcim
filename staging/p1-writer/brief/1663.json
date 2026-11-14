@@ -1,0 +1,35 @@
+{
+  "story_id": 1663,
+  "kind": "anecdote",
+  "book": {"title": "A New Earth", "author": "Eckhart Tolle", "year": "2005"},
+  "confidence": "high",
+  "confidence_note": "Verified in a full text of A New Earth (ch. 2 'The Voice in the Head', ch. 3). The old text's 'Who are you?' framing, 'all real but not you' and 'awareness is a space' are not Tolle's wording and were dropped; the story is rebuilt on his own tube anecdote. Tolle gives no dates for the incident beyond 'first-year student at the University of London, aged 25'.",
+  "facts": [
+    "Tolle was a first-year student at the University of London, aged twenty-five, and rode the tube twice a week to the library.",
+    "A woman in her early thirties sat opposite him, with the seats on either side of her empty, talking to herself in a loud, angry voice, as if arguing with someone in the empty seat ('...so I said to her you are a liar how dare you accuse me of...').",
+    "She got off at Tottenham Court Road and he followed about twenty steps behind, still hearing her argument, until she entered Senate House, where he was also going, and vanished into an elevator.",
+    "In the men's room, washing his hands, he thought 'I hope I don't end up like her', then realised he had said it aloud and the man next to him glanced over.",
+    "His thought: 'Oh my God, I'm already like her.' His mind was as incessantly active as hers; her underlying emotion seemed anger, his anxiety; she thought out loud, he thought in his head.",
+    "For a moment he stood back from his own mind and saw it from a deeper perspective; looking at his face in the mirror he laughed out loud: 'Life isn't as serious as my mind makes it out to be.'",
+    "Tolle calls it only a glimpse, quickly forgotten; he spent the next three years in anxiety and depression and awareness returned later.",
+    "What the 'I' identifies with, per Tolle: roles, opinions, likes and dislikes, memories that define 'me and my story'. He says: whenever you notice the voice you realise you are not the voice but the one who is aware of it."
+  ],
+  "scene_details": ["a tube carriage with empty seats on either side of the woman", "a loud, angry one-sided argument", "twenty steps behind her to Senate House", "washing hands in the men's room and saying the thought aloud", "laughing at his own face in the mirror"],
+  "tension": "A student who thinks thinking is the answer to everything watches a woman argue with an empty seat, then hears himself say the same kind of thing aloud.",
+  "opening_idea": "Open on the carriage: a full train, two empty seats on either side of one woman, and the voice that explains why.",
+  "lessons": [{"idea": "You can catch the running commentary in your head and notice that you are the one hearing it.", "anchor": "Tolle's whisper in the men's room and the laugh in the mirror.", "example": "Someone rehearsing an argument with a landlord in the shower catches the voice mid-sentence and lets it finish without joining in."}],
+  "reflect": [],
+  "reflect_final": "In the last day, when did you catch an argument you were running silently in your head, and what did you notice once you saw it?",
+  "use_cases": [
+    {"situation": "You are replaying a conversation with someone who wronged you.", "move": "Say to yourself: there is the voice again. Tolle's point is that noticing it means you are the one listening.", "context": "self"},
+    {"situation": "A friend is stuck telling you the same grievance.", "move": "Ask gently whether they notice the story starting up, without calling it silly; Tolle saw himself in someone else's.", "context": "social"},
+    {"situation": "Before a tense meeting you rehearse what you will say.", "move": "Notice you are arguing with someone who is not in the room, and stop at the first sentence.", "context": "meeting"}
+  ],
+  "pocket_idea": "Tolle overheard his own mind in a stranger on the tube: when you catch the voice, you are the one listening to it.",
+  "conversation_variants": {
+    "punchline_idea": "Tolle whispered 'I hope I don't end up like her' about a stranger, then heard himself say it aloud.",
+    "thirty_sec_idea": "A woman argued with an empty seat on the tube; Tolle followed her to the library, muttered a thought aloud in the men's room, realised his mind ran just as constantly, and laughed at himself in the mirror.",
+    "question_idea": "",
+    "key_contrast_idea": "the voice and the listener"
+  }
+}

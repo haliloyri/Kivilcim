@@ -1,0 +1,1314 @@
+story_id,kitap_no,kitap,yazar,kategori,hikaye_basligi,surum,hassas,kalite
+1059,1,"Atomic Habits","James Clear","Sağlık","Britanya bisiklet takımının yüzde iki felsefesi",Argon,0,
+1060,1,"Atomic Habits","James Clear","Sağlık","Kimlik temelli alışkanlık",Opus55,0,
+1061,1,"Atomic Habits","James Clear","Sağlık","Fotoğraf öğrencilerinin kalite vs miktar deneyi",Opus55,0,
+1062,1,"Atomic Habits","James Clear","Sağlık","Çevre tasarımı ile alışkanlık",Opus55,0,
+1063,1,"Atomic Habits","James Clear","Sağlık","İki dakika kuralı",Opus55,0,
+1064,2,"Dürüst Olmak","Kim Scott",Liderlik,"Bir yürüyüşte söylenen tek cümle",Opus55,0,
+1065,2,"Dürüst Olmak","Kim Scott",Liderlik,"Aynı sert cümle, iki farklı yer",Opus55,0,
+1066,2,"Dürüst Olmak","Kim Scott",Liderlik,"Neden kimse bana söylemedi?",Opus55,0,
+1067,3,"Şimdi Başla","Neil Fiore",Verimlilik,"Ertelemenin gerçek kökü: korku",Opus55,0,
+1068,3,"Şimdi Başla","Neil Fiore",Verimlilik,"İtalyan ressam ve gevşeme paradoksu",Opus55,0,
+1069,3,"Şimdi Başla","Neil Fiore",Verimlilik,"Karşı konulmaz bir güç olarak 'şimdi'",Opus55,0,
+1070,4,"Derin Çalışma","Cal Newport",Verimlilik,"Carl Jung'un taş kulesi inzivası",Opus55,0,
+1071,4,"Derin Çalışma","Cal Newport",Verimlilik,"Adam Grant'in toplu e-posta stratejisi",Opus55,0,
+1072,4,"Derin Çalışma","Cal Newport",Verimlilik,"J.K. Rowling'in otel odası sırrı",Opus55,0,
+1073,4,"Derin Çalışma","Cal Newport",Verimlilik,"Newport'un sosyal medyasız akademik kariyeri",Opus55,0,
+1074,5,"Düşün ve Zengin Ol","Napoleon Hill",Motivasyon,"Andrew Carnegie'nin çelik imparatorluğu",Opus55,0,
+1075,5,"Düşün ve Zengin Ol","Napoleon Hill",Motivasyon,"Edison'ın 10.000 başarısızlığı",Opus55,0,
+1076,5,"Düşün ve Zengin Ol","Napoleon Hill",Motivasyon,"Barnes'ın Edison ortaklığı hayali",Opus55,0,
+1077,5,"Düşün ve Zengin Ol","Napoleon Hill",Motivasyon,"500 dolarlık karar",Opus55,0,
+1078,6,Influence,"Robert Cialdini",Psikoloji,"Kapıya ayak koyma tekniği",Opus55,0,
+1079,6,Influence,"Robert Cialdini",Psikoloji,"Restoran garsonunun bahşiş sırrı",Opus55,0,
+1080,6,Influence,"Robert Cialdini",Psikoloji,"Sosyal kanıt ve otel havluları",Opus55,0,
+1081,6,Influence,"Robert Cialdini",Psikoloji,"Kıtlık ve sınırlı üretim yanılsaması",Opus55,0,
+1082,7,"Good to Great","Jim Collins",Verimlilik,"Kirpi Konsepti",Opus55,0,
+1083,7,"Good to Great","Jim Collins",Verimlilik,"Volan etkisi",Opus55,0,
+1084,7,"Good to Great","Jim Collins",Verimlilik,"Önce kim, sonra ne",Opus55,0,
+1085,8,"Başlangıç Noktası","Simon Sinek",Liderlik,"Dokuz gün arayla iki uçuş denemesi",Opus55,0,
+1086,8,"Başlangıç Noktası","Simon Sinek",Liderlik,"Notları bıraktığı an",Opus55,0,
+1087,8,"Başlangıç Noktası","Simon Sinek",Liderlik,"Altın Çember ve tartışmalı gerekçesi",Opus55,0,
+1088,9,"Büyük Sıçrayış","Eric Ries","Girişimcilik","Zappos'un sıfır stoklu ilk satışı",Opus55,0,
+1089,9,"Büyük Sıçrayış","Eric Ries","Girişimcilik","IMVU'nun yanlış yolda koşması",Opus55,0,
+1090,9,"Büyük Sıçrayış","Eric Ries","Girişimcilik","Build-Measure-Learn döngüsü",Opus55,0,
+1091,10,"Odaklanma Gücü","Jack Canfield",Verimlilik,"Jack Canfield'ın 100 dolarlık banknot hedefi",Opus55,0,
+1092,10,"Odaklanma Gücü","Jack Canfield",Verimlilik,"Bir yıl 101 hedef deneyi",Opus55,0,
+1093,10,"Odaklanma Gücü","Jack Canfield",Verimlilik,"Odak sistemi ve kurbağayı yemek",Opus55,0,
+1094,11,"The 7 Habits of Highly Effective People","Stephen Covey","Büyüme","Büyük taşlar ve kavanoz dersi",Opus55,0,
+1095,11,"The 7 Habits of Highly Effective People","Stephen Covey","Büyüme","Cenaze töreni egzersizi",Opus55,0,
+1096,11,"The 7 Habits of Highly Effective People","Stephen Covey","Büyüme","Tepki verme özgürlüğü — Viktor Frankl'dan öğrenilen ders",Opus55,0,
+1097,11,"The 7 Habits of Highly Effective People","Stephen Covey","Büyüme","Hesap empati ve önce anlamak",Opus55,0,
+1098,12,"Zihin Gücü","Carol Dweck",Psikoloji,"Sabit ve büyüme zihniyeti farkı",Opus55,0,
+1099,12,"Zihin Gücü","Carol Dweck",Psikoloji,"Michael Jordan'ın kesim hikayesi",Opus55,0,
+1100,12,"Zihin Gücü","Carol Dweck",Psikoloji,"Övgünün tehlikeli iki yüzü",Opus55,0,
+1101,13,"Sabah Rutini","Hal Elrod","Alışkanlıklar","Hal Elrod'un ölümden dönüşü",Opus55,0,
+1102,13,"Sabah Rutini","Hal Elrod","Alışkanlıklar","SAVERS — altı alışkanlığın bilimi",Opus55,0,
+1103,13,"Sabah Rutini","Hal Elrod","Alışkanlıklar","Beş saniyelik kural ve erken kalkma",Opus55,0,
+1104,14,"Güç Yasaları","Robert Greene",Strateji,"Bismarck'ın savaşmadan kazanma sanatı",Opus55,0,
+1105,14,"Güç Yasaları","Robert Greene",Strateji,"Beş rejim, tek diplomat",Opus55,0,
+1106,14,"Güç Yasaları","Robert Greene",Strateji,"İtibar yasasının söylemediği sanılan kısmı",Opus55,0,
+1107,14,"Güç Yasaları","Robert Greene",Strateji,"Soytarıyı koruyan şey espri değildi",Opus55,0,
+1108,15,"Emotional Intelligence","Daniel Goleman",Psikoloji,"Dört yaşında marshmallow testi",Opus55,0,
+1109,15,"Emotional Intelligence","Daniel Goleman",Psikoloji,"IQ'yu geçen EQ deneyi",Opus55,0,
+1110,15,"Emotional Intelligence","Daniel Goleman",Psikoloji,"Öfke döngüsü ve nörolojik kaçırılma",Opus55,0,
+1111,16,"Purple Cow","Seth Godin",Finans,"Mor inek metaforu",Opus55,0,
+1112,16,"Purple Cow","Seth Godin",Finans,"Michelin rehberinin doğuşu",Opus55,0,
+1113,16,"Purple Cow","Seth Godin",Finans,"Boya kutusunu değiştirdiler, reklamı değil",Opus55,0,
+1114,16,"Purple Cow","Seth Godin",Finans,"En iyi olmak kimin için?",Opus55,0,
+1115,17,"The Psychology of Money","Morgan Housel",Finans,"Ronald Read'in görünmez serveti",Opus55,0,
+1116,17,"The Psychology of Money","Morgan Housel",Finans,"Şans ve risk — Bill Gates'in okul arkadaşı",Opus55,0,
+1117,17,"The Psychology of Money","Morgan Housel",Finans,"Yeterince zengin olmak — tatminsizlik tuzağı",Opus55,0,
+1118,18,"Beyin Fırtınası","David Eagleman","Nörobilim","H.M.'nin sonsuz şimdi'si",Opus55,0,
+1119,18,"Beyin Fırtınası","David Eagleman","Nörobilim","Kör nokta ve beynin uydurma sanatı",Opus55,0,
+1120,18,"Beyin Fırtınası","David Eagleman","Nörobilim","Bölünmüş beyin ve iki ben",Argon,0,
+1121,19,"Alışkanlıkların Gücü","Charles Duhigg","Alışkanlıklar","Alcoa'nın beklenmedik dönüşümü",Opus55,0,
+1122,19,"Alışkanlıkların Gücü","Charles Duhigg","Alışkanlıklar","Craving döngüsü ve diş macunu",Opus55,0,
+1123,19,"Alışkanlıkların Gücü","Charles Duhigg","Alışkanlıklar","Michael Phelps'in görselleştirme rutini",Opus55,0,
+1124,19,"Alışkanlıkların Gücü","Charles Duhigg","Alışkanlıklar","Keystone alışkanlık ve koşu",Opus55,0,
+1125,20,"Liderlik Sanatı","Simon Sinek",Liderlik,"Subaylar en son yer",Opus55,0,
+1126,20,"Liderlik Sanatı","Simon Sinek",Liderlik,"Soyut lider mi, somut lider mi?",Opus55,0,
+1127,20,"Liderlik Sanatı","Simon Sinek",Liderlik,"Şirketi mi bırakıyorlar, yöneticiyi mi?",Opus55,0,
+1128,12,"Zihin Gücü","Carol Dweck",Psikoloji,"'Henüz' kelimesinin gücü",Opus55,0,
+1129,12,"Zihin Gücü","Carol Dweck",Psikoloji,"Beynin plastikliği ve yeniden yazılma",Opus55,0,
+1130,12,"Zihin Gücü","Carol Dweck",Psikoloji,"Şampiyonların sırrı: zorluğu sevmek",Opus55,0,
+1131,22,"Şimdi ve Burada","Eckhart Tolle","Farkındalık","Bankta oturan adam",Opus55,0,
+1132,22,"Şimdi ve Burada","Eckhart Tolle","Farkındalık","Ağrı ile acının farkı",Opus55,0,
+1133,22,"Şimdi ve Burada","Eckhart Tolle","Farkındalık","Şimdiki anın kapısı",Opus55,0,
+1134,23,"Sosyal Hayvan","David Brooks",Psikoloji,"Bilinçdışının gizli gücü",Opus55,0,
+1135,23,"Sosyal Hayvan","David Brooks",Psikoloji,"Bağlanma ve başarı ilişkisi",Opus55,0,
+1136,23,"Sosyal Hayvan","David Brooks",Psikoloji,"Karakter ve ahlakın kökeni",Opus55,0,
+1137,24,"Hız ve Güven","Stephen M. R. Covey",Liderlik,"İki saatlik toplantı, tek el sıkışma",Opus55,0,
+1138,24,"Hız ve Güven","Stephen M. R. Covey",Liderlik,"Görünmez vergi, görünmez temettü",Opus55,0,
+1139,24,"Hız ve Güven","Stephen M. R. Covey",Liderlik,"Dördünden biri eksikse olmuyor",Opus55,0,
+1140,25,"Cesaret Vermek","Brené Brown","Kişisel Gelişim","Savunmasızlığın paradoksu",Opus55,0,
+1141,25,"Cesaret Vermek","Brené Brown","Kişisel Gelişim","Yeterlilik ve utanç kıskacı",Opus55,0,
+1142,25,"Cesaret Vermek","Brené Brown","Kişisel Gelişim","Arenada dövüşmek",Opus55,0,
+1143,26,"Fark Yaratmak","William H. McRaven",Motivasyon,"Her sabah yatağını topla",Opus55,0,
+1144,26,"Fark Yaratmak","William H. McRaven",Motivasyon,"Köpekbalığı havuzu ve korku",Opus55,0,
+1145,26,"Fark Yaratmak","William H. McRaven",Motivasyon,"Kolay olmayacak, devam et",Opus55,0,
+1146,27,"Sınırlar","Nedra Tawwab","Kişisel Gelişim","Hayır diyememek ve tükenişin bedeli",Opus55,0,
+1147,27,"Sınırlar","Nedra Tawwab","Kişisel Gelişim","Sınırların üç türü",Opus55,0,
+1148,27,"Sınırlar","Nedra Tawwab","Kişisel Gelişim","Sınır koymak ilişkileri yıkmaz, güçlendirir",Opus55,0,
+1149,28,Azim,"Angela Duckworth",Motivasyon,"West Point'in 'Dayanma' testi",Opus55,0,
+1150,28,Azim,"Angela Duckworth",Motivasyon,"Başarının formülü: Yetenek x Çaba²",Opus55,0,
+1151,28,Azim,"Angela Duckworth",Motivasyon,"Tutkuyu bulmak: Bilmek değil keşfetmek",Opus55,0,
+1152,29,"Büyük Soru","Viktor Frankl",Felsefe,"Toplama kampında anlam arayışı",Opus55,0,
+1153,29,"Büyük Soru","Viktor Frankl",Felsefe,"Boş zaman ve varoluş kaygısı",Opus55,0,
+1154,29,"Büyük Soru","Viktor Frankl",Felsefe,"Sorumluluk özgürlüğün diğer yüzü",Opus55,0,
+1155,30,"Olumlu Zeka","Shirzad Chamine",Psikoloji,"Sabotaj zihninin beş sesi",Opus55,0,
+1156,30,"Olumlu Zeka","Shirzad Chamine",Psikoloji,"PQ — olumlu zeka kası",Opus55,0,
+1157,30,"Olumlu Zeka","Shirzad Chamine",Psikoloji,"Zorlukları hediyeye çevirmek",Opus55,0,
+1158,31,"Dürüst Konuşmak","Kerry Patterson","İletişim","Uçak kazası ve söylenmeden kalan söz",Opus55,0,
+1159,31,"Dürüst Konuşmak","Kerry Patterson","İletişim","Ortak zemin yaratma sanatı",Opus55,0,
+1160,31,"Dürüst Konuşmak","Kerry Patterson","İletişim","Hikayelerden gerçeklere dönmek",Opus55,0,
+1161,32,"Sezgi Gücü","Malcolm Gladwell",Psikoloji,"İtfaiyecinin ölümcül sezgisi",Opus55,0,
+1162,32,"Sezgi Gücü","Malcolm Gladwell",Psikoloji,"Sahte antika ve uzman gözü",Opus55,0,
+1163,32,"Sezgi Gücü","Malcolm Gladwell",Psikoloji,"İlk izlenim ve Warren Harding hatası",Opus55,0,
+1164,33,"10.000 Saat Kuralı","Malcolm Gladwell","Başarı","Hamburg'da geçen saatler",Opus55,0,
+1165,33,"10.000 Saat Kuralı","Malcolm Gladwell","Başarı","Lakeside ve bit pazarından çıkan terminal",Opus55,0,
+1166,33,"10.000 Saat Kuralı","Malcolm Gladwell","Başarı","Ocak doğanların ligi",Opus55,0,
+1167,34,Flow,"Mihaly Csikszentmihalyi",Psikoloji,"Rock tırmanıcısının zaman kaybı",Opus55,0,
+1168,34,Flow,"Mihaly Csikszentmihalyi",Psikoloji,"Cerrahın ameliyathanede kaybolması",Opus55,0,
+1169,34,Flow,"Mihaly Csikszentmihalyi",Psikoloji,"Otomatik pilot ve bilinçli seçim",Opus55,0,
+1170,35,"Karar Verme Sanatı","Daniel Kahneman",Psikoloji,"Sistem 1 ve Sistem 2",Opus55,0,
+1171,35,"Karar Verme Sanatı","Daniel Kahneman",Psikoloji,"Çapalama etkisi ve müzayede",Opus55,0,
+1172,35,"Karar Verme Sanatı","Daniel Kahneman",Psikoloji,"Linda problemi ve konjunksiyon hatası",Opus55,0,
+1173,36,"İkna Sanatı","Dale Carnegie","İletişim","Köpek çalınan adam",Opus55,0,
+1174,36,"İkna Sanatı","Dale Carnegie","İletişim","Roosevelt'in isim hafızası",Opus55,0,
+1175,36,"İkna Sanatı","Dale Carnegie","İletişim","Eleştiri yerine soru sormak",Opus55,0,
+1176,37,"Pareto İlkesi","Richard Koch",Verimlilik,"Bahçedeki bezelye",Opus55,0,
+1177,37,"Pareto İlkesi","Richard Koch",Verimlilik,"80/20 ve zaman yönetimi",Opus55,0,
+1178,37,"Pareto İlkesi","Richard Koch",Verimlilik,"Az ama öz ilişkiler",Opus55,0,
+1179,38,"Yaratıcı Olmak","Elizabeth Gilbert","Yaratıcılık","İlham perisinin ziyareti",Opus55,0,
+1180,38,"Yaratıcı Olmak","Elizabeth Gilbert","Yaratıcılık","Korkuyla dans etmek",Opus55,0,
+1181,38,"Yaratıcı Olmak","Elizabeth Gilbert","Yaratıcılık","Yaratıcılık bir sorumluluk",Opus55,0,
+1182,39,"Money: Master the Game","Tony Robbins",Finans,"Bileşik faizin sihri",Opus55,0,
+1183,39,"Money: Master the Game","Tony Robbins",Finans,"Finansal özgürlüğün beş adımı",Opus55,0,
+1184,39,"Money: Master the Game","Tony Robbins",Finans,"Risk asimetrisi ve kayıptan kaçınma",Opus55,0,
+1185,40,"Zihin Haritası","Tony Buzan","Öğrenme","Einstein'ın görsel düşünce sırrı",Opus55,0,
+1186,40,"Zihin Haritası","Tony Buzan","Öğrenme","Bir sayfada bir kitap",Opus55,0,
+1187,41,Korkusuzluk,"Susan Jeffers",Motivasyon,"Paraşütle atlayan kadın",Opus55,0,
+1188,41,Korkusuzluk,"Susan Jeffers",Motivasyon,"Hayır deme korkusu",Opus55,0,
+1189,42,"Stillness Is the Key","Ryan Holiday",Felsefe,"Büyük İskender'in hareketsizliği",Opus55,0,
+1190,42,"Stillness Is the Key","Ryan Holiday",Felsefe,"Epiktetos'un özgürlüğü",Opus55,0,
+1191,43,"Ego Is the Enemy","Ryan Holiday",Felsefe,"Howard Hughes'un çöküşü",Opus55,0,
+1192,43,"Ego Is the Enemy","Ryan Holiday",Felsefe,"Öğrenci zihniyeti",Opus55,0,
+1193,44,"Engel Yolu Açar","Ryan Holiday",Felsefe,"Edison'ın fabrika yangını",Opus55,0,
+1194,44,"Engel Yolu Açar","Ryan Holiday",Felsefe,"Marcus Aurelius'un mektupları",Opus55,0,
+1195,45,"Neden Uyuyoruz","Matthew Walker","Sağlık","Uyku ve beyin temizliği",Opus55,0,
+1196,45,"Neden Uyuyoruz","Matthew Walker","Sağlık","Roger Federer'in 12 saati",Opus55,0,
+1197,46,"Bedenin Sesi","Bessel van der Kolk","Sağlık","Vietnam gazilerinin dondurulmuş anları",Opus55,0,
+1198,46,"Bedenin Sesi","Bessel van der Kolk","Sağlık","Güvenli beden ve iyileşme",Opus55,0,
+1199,47,"Saatlerin Efendisi","Daniel Pink",Verimlilik,"Hemingway'in sabah ritmi",Opus55,0,
+1200,47,"Saatlerin Efendisi","Daniel Pink",Verimlilik,"Öğle sarhoşluğu ve dinlenme bilimi",Argon,0,
+1201,48,"Sıfır'dan Bir'e","Peter Thiel","Girişimcilik","Monopol mu rekabet mi?",Opus55,0,
+1202,48,"Sıfır'dan Bir'e","Peter Thiel","Girişimcilik","Gizli sırlar ve kontrarian düşünce",Opus55,0,
+1203,49,"Karanlığın Ötesi","Brené Brown",Liderlik,"Güvenlik alanından çıkmak",Opus55,0,
+1204,49,"Karanlığın Ötesi","Brené Brown",Liderlik,"Zırh ve liderlik",Opus55,0,
+1205,50,"Simyacı","Paulo Coelho","İlham","Hazinenin geri dönüşü",Opus55,0,
+1206,50,"Simyacı","Paulo Coelho","İlham","Kişisel efsane ve kader",Opus55,0,
+1207,51,"İnsan Nasıl Düşünür","James Allen",Felsefe,"Bahçıvan ve zihin",Opus55,0,
+1208,51,"İnsan Nasıl Düşünür","James Allen",Felsefe,"Karakter ve koşullar",Opus55,0,
+1209,52,"Can't Hurt Me","David Goggins","Büyüme","Hayatta kalma zihni",Opus55,0,
+1210,52,"Can't Hurt Me","David Goggins","Büyüme","Aklın rahatlama dürtüsü",Opus55,0,
+1211,53,"Zengin Baba Fakir Baba","Robert Kiyosaki",Finans,"İki babanın iki farklı dersi",Opus55,0,
+1212,53,"Zengin Baba Fakir Baba","Robert Kiyosaki",Finans,"McDonald's'ın gerçek işi",Opus55,0,
+1213,54,"The 4-Hour Workweek","Tim Ferriss",Verimlilik,"80/20 ve işi silmek",Opus55,0,
+1214,54,"The 4-Hour Workweek","Tim Ferriss",Verimlilik,"Korkular listesi ve olumsuz canlandırma",Opus55,0,
+1215,55,Minimalizm,"Greg McKeown",Verimlilik,"Daha az, daha odaklı",Opus55,0,
+1216,55,Minimalizm,"Greg McKeown",Verimlilik,"Tek gemi filosu",Opus55,0,
+1217,56,"Hiçbir Şeye Bakmamak","Cal Newport",Teknoloji,"Bir aylık e-posta yasağı",Opus55,0,
+1218,56,"Hiçbir Şeye Bakmamak","Cal Newport",Teknoloji,"Dijital minimalizm felsefesi",Opus55,0,
+1219,57,"The Good Life","Robert Waldinger",Psikoloji,"Harvard'ın 85 yıllık mutluluk araştırması",Opus55,0,
+1220,58,"Şükran Günlüğü","Janice Kaplan",Mutluluk,"Şükranın beyin kimyası",Opus55,0,
+1221,58,"Şükran Günlüğü","Janice Kaplan",Mutluluk,"Karşılaştırmanın tuzağı",Opus55,0,
+1222,59,"Karizmatik Olmak","Olivia Fox Cabane","İletişim","Marilyn Monroe'nun soyunma odası",Opus55,0,
+1223,59,"Karizmatik Olmak","Olivia Fox Cabane","İletişim","Varlık — karizmanın temeli",Opus55,0,
+1224,60,"İnsan Beyninin Gücü","Jim Kwik","Öğrenme","Jim Kwik'in beyin hasarı",Opus55,0,
+1225,60,"İnsan Beyninin Gücü","Jim Kwik","Öğrenme","Hız okuma ve anlama",Opus55,0,
+1226,61,"Cesur Olmak","Ichiro Kishimi",Felsefe,"Onay ihtiyacı ve özgürlük",Opus55,0,
+1227,61,"Cesur Olmak","Ichiro Kishimi",Felsefe,"Geçmiş ve şimdiki an",Opus55,0,
+1228,62,"Yüksek Performans","Brendon Burchard","Kişisel Gelişim","Ambulanstaki uyanış",Opus55,0,
+1229,62,"Yüksek Performans","Brendon Burchard","Kişisel Gelişim","Enerji yönetimi ve niyet",Opus55,0,
+1230,63,"Savaş Sanatı","Sun Tzu",Strateji,"Su gibi olmak",Opus55,0,
+1231,63,"Savaş Sanatı","Sun Tzu",Strateji,"Kazanmak savaşmadan",Opus55,0,
+1232,64,"Değişimin Gücü","Chip Heath","Değişim","Fil ve kazık",Opus55,0,
+1233,64,"Değişimin Gücü","Chip Heath","Değişim","Akıl ve kalp — değişimin iki motoru",Opus55,0,
+1234,65,"Yapışkan Fikirler","Chip Heath","İletişim","Jared ve Subway diyeti",Opus55,0,
+1235,65,"Yapışkan Fikirler","Chip Heath","İletişim","Sürpriz ve merak boşluğu",Opus55,0,
+1236,66,"Hikaye Anlatıcısı","Donald Miller",Pazarlama,"Kahraman ve rehber",Opus55,0,
+1237,66,"Hikaye Anlatıcısı","Donald Miller",Pazarlama,"BrandScript ve basit mesaj",Opus55,0,
+1238,67,"Doğrusal Olmayan Gelecek","Ray Kurzweil",Teknoloji,"Katlanarak büyüme paradoksu",Opus55,0,
+1239,67,"Doğrusal Olmayan Gelecek","Ray Kurzweil",Teknoloji,"İnsan-makine entegrasyonu",Opus55,0,
+1240,36,"İkna Sanatı","Dale Carnegie","İletişim","Köpek çalan komşuya farklı yaklaşım",Opus55,0,
+1241,36,"İkna Sanatı","Dale Carnegie","İletişim","Roosevelt'in isim ezberleyen dehası",Opus55,0,
+1242,36,"İkna Sanatı","Dale Carnegie","İletişim","Eleştiri yapmadan değiştirme sanatı",Opus55,0,
+1243,37,"Pareto İlkesi","Richard Koch",Verimlilik,"Bahçedeki bezelyenin sırrı",Opus55,0,
+1244,37,"Pareto İlkesi","Richard Koch",Verimlilik,"Koch'un çalışma saatlerini yarıya indirmesi",Opus55,0,
+1245,37,"Pareto İlkesi","Richard Koch",Verimlilik,"Mutluluğun yüzde yirmi kaynağı",Opus55,0,
+1246,38,"Yaratıcı Olmak","Elizabeth Gilbert","Yaratıcılık","İlham perisi kapıya geldiğinde",Opus55,0,
+1247,38,"Yaratıcı Olmak","Elizabeth Gilbert","Yaratıcılık","Korkunun yolcu olması",Opus55,0,
+1248,38,"Yaratıcı Olmak","Elizabeth Gilbert","Yaratıcılık","Merak yaratıcılığın pusulası",Opus55,0,
+1249,39,"Money: Master the Game","Tony Robbins",Finans,"Theodore Johnson'ın taze meyve tasarrufu",Opus55,0,
+1250,39,"Money: Master the Game","Tony Robbins",Finans,"Serbest piyasanın en güçlü kuvveti",Opus55,0,
+1251,39,"Money: Master the Game","Tony Robbins",Finans,"Zenginliğin gerçek tanımı",Opus55,0,
+1252,40,"Zihin Haritası","Tony Buzan","Öğrenme","Einstein'ın görsel düşünme sırrı",Opus55,0,
+1253,40,"Zihin Haritası","Tony Buzan","Öğrenme","Hafıza şampiyonlarının tekniği",Opus55,0,
+1254,40,"Zihin Haritası","Tony Buzan","Öğrenme","Her iki beyin yarımküresini birlikte kullanmak",Opus55,0,
+1255,41,Korkusuzluk,"Susan Jeffers",Motivasyon,"Paraşütle atlayan kadın",Opus55,0,
+1256,41,Korkusuzluk,"Susan Jeffers",Motivasyon,"Acının kaçınılmazlığı ve acıdan kaçma bedeli",Opus55,0,
+1257,41,Korkusuzluk,"Susan Jeffers",Motivasyon,"Jean'i işte tutan getiriler",Opus55-3,0,
+1258,42,"Stillness Is the Key","Ryan Holiday",Felsefe,"Kennedy'nin on üç günü",Opus55-3,0,
+1260,42,"Stillness Is the Key","Ryan Holiday",Felsefe,"Napoleon'un mühürlü mektupları",Opus55-3,0,
+1261,43,"Ego Is the Enemy","Ryan Holiday",Felsefe,"Howard Hughes'ın çöküşü",SON55,0,
+1262,43,"Ego Is the Enemy","Ryan Holiday",Felsefe,"Hammett Yeniden Öğrenci Oldu",SON55,0,
+1263,43,"Ego Is the Enemy","Ryan Holiday",Felsefe,"Boyd'un Çatal Yol Konuşması",SON55,0,
+1264,44,"Engel Yolu Açar","Ryan Holiday",Felsefe,"Edison'ın fabrika yangını",SON55,0,
+1265,44,"Engel Yolu Açar","Ryan Holiday",Felsefe,"Marcus Aurelius ve Asi General",SON55,0,
+1266,44,"Engel Yolu Açar","Ryan Holiday",Felsefe,"Jack Johnson'ın Gülümsemesi",SON55,0,
+1267,45,"Neden Uyuyoruz","Matthew Walker","Sağlık","Antrenmanı bitiren son iki saat",Opus55-3,0,
+1268,45,"Neden Uyuyoruz","Matthew Walker","Sağlık","Uyku yoksunluğu ve tıbbi hatalar",Opus55-3,0,
+1269,45,"Neden Uyuyoruz","Matthew Walker","Sağlık","REM uykusu ve duygusal iyileşme",Opus55-3,0,
+1270,46,"Bedenin Sesi","Bessel van der Kolk","Sağlık","Alarm Çalıyor, Konuşma Susuyor",SON55,0,
+1271,46,"Bedenin Sesi","Bessel van der Kolk","Sağlık","Yoga ve travma",SON55,0,
+1272,46,"Bedenin Sesi","Bessel van der Kolk","Sağlık","Çocukluk Anketi ve Yetişkin Sağlığı",SON55,0,
+1273,47,"Saatlerin Efendisi","Daniel Pink",Verimlilik,"Zirve, çukur ve toparlanma",Opus55-3,0,
+1274,47,"Saatlerin Efendisi","Daniel Pink",Verimlilik,"Öğleden sonra ve nappuccino",Opus55-3,0,
+1275,47,"Saatlerin Efendisi","Daniel Pink",Verimlilik,"Devre arasında bir sayı geride",Opus55-3,0,
+1276,48,"Sıfır'dan Bir'e","Peter Thiel","Girişimcilik","Bir Girişim, Yedi Şirket",SON55,0,
+1277,48,"Sıfır'dan Bir'e","Peter Thiel","Girişimcilik","Havayolları ve Google",Opus55-3,0,
+1278,48,"Sıfır'dan Bir'e","Peter Thiel","Girişimcilik","Thiel'in görüşme sorusu",Opus55-3,0,
+1279,49,"Karanlığın Ötesi","Brené Brown",Liderlik,"Zırh ve cesaret",Opus55-3,0,
+1280,49,"Karanlığın Ötesi","Brené Brown",Liderlik,"Kaçılan zor konuşmalar",Opus55-3,0,
+1281,49,"Karanlığın Ötesi","Brené Brown",Liderlik,"Yüz değerden iki değere",Opus55-3,0,
+1282,50,"Simyacı","Paulo Coelho","İlham","İki Kez Gelen Rüya",SON55,0,
+1283,50,"Simyacı","Paulo Coelho","İlham","İki şahin ve vaha",Opus55-3,0,
+1284,50,"Simyacı","Paulo Coelho","İlham","Yabani İncirin Altında Kazmak",SON55,0,
+1285,51,"İnsan Nasıl Düşünür","James Allen",Felsefe,"Zihin bir bahçedir",Opus55-3,0,
+1286,51,"İnsan Nasıl Düşünür","James Allen",Felsefe,"Koşullar insanı gösterir",Opus55-3,0,
+1287,51,"İnsan Nasıl Düşünür","James Allen",Felsefe,"Sakinliğin gücü",Opus55-3,0,
+1288,52,"Can't Hurt Me","David Goggins","Büyüme","Paten Salonundan Indiana'ya",SON55,0,
+1289,52,"Can't Hurt Me","David Goggins","Büyüme","101 Mil ve Yüzde Kırk Kuralı",SON55,0,
+1290,52,"Can't Hurt Me","David Goggins","Büyüme","Goggins'in Kurabiye Kavanozu",SON55,0,
+1291,53,"Zengin Baba Fakir Baba","Robert Kiyosaki",Finans,"İki Baba, Yasak Bir Cümle",SON55,0,
+1292,53,"Zengin Baba Fakir Baba","Robert Kiyosaki",Finans,"Hamburger mi, Gayrimenkul mü?",SON55,0,
+1293,53,"Zengin Baba Fakir Baba","Robert Kiyosaki",Finans,"Önce vergi mi, önce gider mi",Opus55-3,0,
+1294,54,"The 4-Hour Workweek","Tim Ferriss",Verimlilik,"Önce Reklam, Sonra Ürün",SON55,0,
+1295,54,"The 4-Hour Workweek","Tim Ferriss",Verimlilik,"Hiçbir Şey Yapmamanın Bedelini Yazmak",SON55,0,
+1296,54,"The 4-Hour Workweek","Tim Ferriss",Verimlilik,"İki günlük deneme",Opus55-3,0,
+1297,55,Minimalizm,"Greg McKeown",Verimlilik,"Önceliğin çoğulu yoktu",Opus55-3,0,
+1298,55,Minimalizm,"Greg McKeown",Verimlilik,"Doksanın altı sıfırdır",Opus55-3,0,
+1299,55,Minimalizm,"Greg McKeown",Verimlilik,"Kemancıların uykusu",Opus55-3,0,
+1300,68,"Akıl Yürütme","Hans Rosling","Düşünme","Şempanze testi ve insan yanılgısı",SON55,0,
+1301,68,"Akıl Yürütme","Hans Rosling","Düşünme","Dünya dört gelir düzeyinde",SON55,0,
+1302,68,"Akıl Yürütme","Hans Rosling","Düşünme","Korkuyla değil veriyle düşünmek",SON55,0,
+1303,69,"Siyah Kuğu","Nassim Taleb","Düşünme","Hindinin Bin Günü",SON55,0,
+1304,69,"Siyah Kuğu","Nassim Taleb","Düşünme","Ünlü uzmanın tahmini",Opus55-3,0,
+1305,69,"Siyah Kuğu","Nassim Taleb","Düşünme","Hindi ve halter",Opus55-3,0,
+1306,70,"Antikırılgan","Nassim Taleb","Düşünme","Ormanın yangın ihtiyacı",SON55,0,
+1307,70,"Antikırılgan","Nassim Taleb","Düşünme","Barbell stratejisi",SON55,0,
+1308,70,"Antikırılgan","Nassim Taleb","Düşünme","Stres ve kas büyümesi — antikırılganlığın bedeni",SON55,0,
+1309,71,"Thinking in Systems","Donella Meadows",Verimlilik,"Slinky ve boş kutu",Opus55-3,0,
+1310,71,"Thinking in Systems","Donella Meadows",Verimlilik,"Fren mi kartopu mu",Opus55-3,0,
+1311,71,"Thinking in Systems","Donella Meadows",Verimlilik,"Hızlı tepki, büyük salınım",Opus55-3,0,
+1312,72,"İşin Özü","Michael Gerber","Girişimcilik","Turtadan Nefret Eden Fırıncı",Opus55-3,0,
+1313,72,"İşin Özü","Michael Gerber","Girişimcilik","Kroc'un Gerçek Ürünü",Opus55-3,0,
+1314,72,"İşin Özü","Michael Gerber","Girişimcilik","Sabah Yedideki Telefon",Opus55-3,0,
+1315,73,"Müşteriyi Anlamak","Nir Eyal","Ürün","Yin ve Kaçan An",Opus55-3,0,
+1316,73,"Müşteriyi Anlamak","Nir Eyal","Ürün","E-posta Kutusundaki Duygu",Opus55-3,0,
+1317,73,"Müşteriyi Anlamak","Nir Eyal","Ürün","Skinner'ın Güvercinleri",Opus55-3,0,
+1318,74,Indistractable,"Nir Eyal",Verimlilik,"Kapaklı Telefon Yetmedi",Opus55-3,0,
+1319,74,Indistractable,"Nir Eyal",Verimlilik,"İki Liste, Bir Takvim",Opus55-3,0,
+1320,74,Indistractable,"Nir Eyal",Verimlilik,"Yüz Dolar ve Bir Çakmak",Opus55-3,0,
+1321,75,"Güçlü Sorular","Warren Berger","Yaratıcılık","Polaroid'in anlık cevabı",SON55,0,
+1322,75,"Güçlü Sorular","Warren Berger","Yaratıcılık","Soru hiyerarşisi — neden, nasıl, ne",SON55,0,
+1323,75,"Güçlü Sorular","Warren Berger","Yaratıcılık","Naif soru ve uzman körlüğü",SON55,0,
+1324,76,"Yaratıcı Beyin","Julia Cameron","Yaratıcılık","Kimsenin Okumadığı Üç Sayfa",Opus55-3,0,
+1325,76,"Yaratıcı Beyin","Julia Cameron","Yaratıcılık","Üstü Çizilmiş Köpekbalığı",Opus55-3,0,
+1326,76,"Yaratıcı Beyin","Julia Cameron","Yaratıcılık","Hurdacıda İki Saat",Opus55-3,0,
+1327,77,"The Success Principles","Jack Canfield ve Janet Switzer","Büyüme","Otuz Yapmak, Otuz Sahip Olmak, Otuz Olmak",SON55,0,
+1328,77,"The Success Principles","Jack Canfield ve Janet Switzer","Büyüme","Aynı Trafik, İki Sürücü",Opus55-3,0,
+1329,77,"The Success Principles","Jack Canfield ve Janet Switzer","Büyüme","Haftalık 1'den 10'a Sorusu",Opus55-3,0,
+1330,78,"Ustalık Gerektiren Kafaya Takmama Sanatı","Mark Manson","Kişisel Gelişim","Hangi Acıyı İstiyorsunuz?",Opus55-3,0,
+1331,78,"Ustalık Gerektiren Kafaya Takmama Sanatı","Mark Manson","Kişisel Gelişim","Kapıdaki Bebek",Opus55-3,0,
+1332,78,"Ustalık Gerektiren Kafaya Takmama Sanatı","Mark Manson","Kişisel Gelişim","Ya Yanılıyorsam?",Opus55-3,0,
+1333,79,"Her Şey Yolunda","Mark Manson",Felsefe,"Umut paradoksu",SON55,0,
+1335,79,"Her Şey Yolunda","Mark Manson",Felsefe,"Özgürlük ve seçimin bedeli",SON55,0,
+1336,80,"Beden Dili","Joe Navarro","İletişim","Dürüst beyin ve ayaklar",SON55,0,
+1337,80,"Beden Dili","Joe Navarro","İletişim","Önce temel çizgiyi öğren",SON55,0,
+1338,80,"Beden Dili","Joe Navarro","İletişim","Eller, alan ve güven",SON55,0,
+1339,81,"Uyku Devrimi","Arianna Huffington","Sağlık","Huffington'ın çöküşü",Opus55-3,0,
+1340,81,"Uyku Devrimi","Arianna Huffington","Sağlık","Telefon Yatak Odasından Çıkar",Opus55-3,0,
+1342,82,"%10 Daha Mutlu","Dan Harris","Farkındalık","Panik atağından meditasyona",Opus55-3,0,
+1343,82,"%10 Daha Mutlu","Dan Harris","Farkındalık","Yüzde on daha mutlu",Opus55-3,0,
+1344,82,"%10 Daha Mutlu","Dan Harris","Farkındalık","Kafamdaki Ses",Opus55-3,0,
+1345,83,"The Paradox of Choice","Barry Schwartz",Psikoloji,"Bir Kot Pantolon İçin Bütün Gün",Opus55-3,0,
+1346,83,"The Paradox of Choice","Barry Schwartz",Psikoloji,"Aynı Harçlık, İki Kız Kardeş",Opus55-3,0,
+1347,83,"The Paradox of Choice","Barry Schwartz",Psikoloji,"On İki Şaraplık Raf",Opus55-3,0,
+1348,84,"Öğrenmeyi Öğrenmek","Peter C. Brown, Henry L. Roediger III ve Mark A. McDaniel","Öğrenme","Paraşüt Okulundaki Çakıl Çukuru",Opus55-3,0,
+1349,84,"Öğrenmeyi Öğrenmek","Peter C. Brown, Henry L. Roediger III ve Mark A. McDaniel","Öğrenme","Fosforlu Notlar ve Bir D Notu",Opus55-3,0,
+1350,84,"Öğrenmeyi Öğrenmek","Peter C. Brown, Henry L. Roediger III ve Mark A. McDaniel","Öğrenme","Tek Günde Öğrenen Cerrahlar",Opus55-3,0,
+1351,85,"Bir Sonraki Seviye","Robin Sharma","Alışkanlıklar","Zafer Saati",SON55,0,
+1352,85,"Bir Sonraki Seviye","Robin Sharma","Alışkanlıklar","Günde Beş Küçük Hedef",SON55,0,
+1353,85,"Bir Sonraki Seviye","Robin Sharma","Alışkanlıklar","Odaklı Çalışma, Planlı Toparlanma",SON55,0,
+1354,86,"Ferrari'sini Satan Bilge","Robin Sharma","İlham","Ferrari'li Avukatın Çöküşü",Opus55-3,0,
+1355,86,"Ferrari'sini Satan Bilge","Robin Sharma","İlham","Bilgelerin Kum Saati",Opus55-3,0,
+1356,86,"Ferrari'sini Satan Bilge","Robin Sharma","İlham","Yirmi Üç Şınav, On Tane Daha",Opus55-3,0,
+1357,87,"Unutulmaz Markalar","Seth Godin",Pazarlama,"Müşteri kim sorusu",SON55,0,
+1358,87,"Unutulmaz Markalar","Seth Godin",Pazarlama,"Kabile ve liderlik",SON55,0,
+1359,87,"Unutulmaz Markalar","Seth Godin",Pazarlama,"Pazarlama empati işidir",SON55,0,
+1360,88,Niyet,"Lynne McTaggart","Farkındalık","Princeton mühendislik anomalileri",SON55,0,
+1361,88,Niyet,"Lynne McTaggart","Farkındalık","Uzak iyileşme deneyleri",SON55,0,
+1362,88,Niyet,"Lynne McTaggart","Farkındalık","Topluluk niyeti ve dalgalanma etkisi",SON55,0,
+1363,89,"Zihinsel Dayanıklılık","Sheryl Sandberg","Dayanıklılık","Dave Goldberg'i kaybetmek",SON55,0,
+1364,89,"Zihinsel Dayanıklılık","Sheryl Sandberg","Dayanıklılık","3P tuzağı — kalıcılık, yaygınlık, kişiselleştirme",SON55,0,
+1365,89,"Zihinsel Dayanıklılık","Sheryl Sandberg","Dayanıklılık","Travma sonrası büyüme",SON55,0,
+1366,90,"Kendi Patronun Ol","Paul Jarvis","Girişimcilik","Freelancer'ın fatura şoku",SON55,0,
+1367,90,"Kendi Patronun Ol","Paul Jarvis","Girişimcilik","Büyümeye Tavan Koymak",Opus55-3,0,
+1368,90,"Kendi Patronun Ol","Paul Jarvis","Girişimcilik","Tahmine Göre Açılan Mağazalar",Opus55-3,0,
+1369,91,"İnsanı Anlamak","Chris Voss","Müzakere","Harvard'da Sahte Bir Fidye",Opus55-3,0,
+1370,91,"İnsanı Anlamak","Chris Voss","Müzakere","Hiç Hayır Demeyen Adam",Opus55-3,0,
+1371,91,"İnsanı Anlamak","Chris Voss","Müzakere","İki Kopya mı?",Opus55-3,0,
+1372,92,"The Life-Changing Magic of Tidying Up","Marie Kondo",Felsefe,"Elinizdeki Eşyanın Cevabı",Opus55-3,0,
+1373,92,"The Life-Changing Magic of Tidying Up","Marie Kondo",Felsefe,"Önce Kıyafetler, En Son Hatıralar",Opus55-3,0,
+1374,92,"The Life-Changing Magic of Tidying Up","Marie Kondo",Felsefe,"Evi Selamlayan Danışman",Opus55-3,0,
+1375,93,"Stoacılık","Marcus Aurelius",Felsefe,"İmparatorun Kendine Notları",Opus55-3,0,
+1376,93,"Stoacılık","Marcus Aurelius",Felsefe,"Zarar Yargıdadır",Opus55-3,0,
+1377,93,"Stoacılık","Marcus Aurelius",Felsefe,"Öperken Fısıldanan Cümle",Opus55-3,0,
+1378,94,"İyimserlik Öğrenmek","Martin Seligman",Psikoloji,"Atlanmayan Alçak Engel",Opus55-3,0,
+1379,94,"İyimserlik Öğrenmek","Martin Seligman",Psikoloji,"Reddedilmeyi Açıklayan Satıcılar",Opus55-3,0,
+1380,94,"İyimserlik Öğrenmek","Martin Seligman",Psikoloji,"Kendi Sesinize İtiraz Etmek",Opus55-3,0,
+1381,95,"Mutluluğun Peşinde","Shawn Achor",Mutluluk,"Her Yerde Düşen Bloklar",Opus55-3,0,
+1382,95,"Mutluluğun Peşinde","Shawn Achor",Mutluluk,"Stres Anında Kime Tutunursunuz",Opus55-3,0,
+1383,95,"Mutluluğun Peşinde","Shawn Achor",Mutluluk,"Şeker Önce Gelince",Opus55-3,0,
+1384,1,"Atomic Habits","James Clear","Sağlık","El Yıkamayla Başlayan Zafer",Opus55-3,0,
+1385,1,"Atomic Habits","James Clear","Sağlık","Kasanın Yanındaki Su",Opus55-3,0,
+1386,1,"Atomic Habits","James Clear","Sağlık","İkinci Boş Gün",Opus55-3,0,
+1387,97,"İçsel Güç","Tony Robbins",Motivasyon,"Dört dakikalık mil",SON55,0,
+1389,97,"İçsel Güç","Tony Robbins",Motivasyon,"Durumu bedenle değiştirmek",SON55,0,
+1390,98,"Hedeflere Ulaşmak","Brian Tracy",Hedefler,"Kimsenin bulamadığı çalışma",SON55,0,
+1393,99,"Yeme Bozukluğu","Brian Tracy",Verimlilik,"Kurbağayı akşamdan seçmek",SON55,0,
+1394,99,"Yeme Bozukluğu","Brian Tracy",Verimlilik,"A-1 iribaşlardan önce gelir",SON55,0,
+1395,99,"Yeme Bozukluğu","Brian Tracy",Verimlilik,"Tek blok, tek iş",SON55,0,
+1396,100,"Sonsuz Oyun","Simon Sinek",Strateji,"Son düdüğü olmayan oyun",SON55,0,
+1397,100,"Sonsuz Oyun","Simon Sinek",Strateji,"Rakibe bakan ve müşteriye bakan",SON55,0,
+1398,100,"Sonsuz Oyun","Simon Sinek",Strateji,"Hata yaptım demek ucuz olsun",SON55,0,
+1399,101,"Zeki Kalabalıklar","Howard Rheingold",Teknoloji,"Mesaj, orada olmak demekti",SON55,0,
+1402,102,"Devrilme Noktası","Malcolm Gladwell",Sosyoloji,"30.000 Çiftten 430.000 Çifte",SON55,0,
+1403,102,"Devrilme Noktası","Malcolm Gladwell",Sosyoloji,"Üç Gecelik Boya, Bir Silindir",SON55,0,
+1404,102,"Devrilme Noktası","Malcolm Gladwell",Sosyoloji,"Revere'in Çaldığı Kapılar",SON55,0,
+1405,103,"Nasıl Başarılı Olunur","David Allen",Verimlilik,"Açık döngüler ve sonraki adım",SON55,0,
+1406,103,"Nasıl Başarılı Olunur","David Allen",Verimlilik,"İki dakika eşiği",SON55,0,
+1407,103,"Nasıl Başarılı Olunur","David Allen",Verimlilik,"Haftalık gözden geçirme",SON55,0,
+1408,104,"Dört Anlaşma","Don Miguel Ruiz",Felsefe,"Bir Ses Hakkında Tek Cümle",SON55,0,
+1409,104,"Dört Anlaşma","Don Miguel Ruiz",Felsefe,"Yabancı Sana Aptal Diyor",SON55,0,
+1410,104,"Dört Anlaşma","Don Miguel Ruiz",Felsefe,"Alışveriş Merkezindeki Gülümseme",SON55,0,
+1411,105,Sessizlik,"Susan Cain",Psikoloji,"Sessiz olmak korkmak değildir",SON55,0,
+1412,105,Sessizlik,"Susan Cain",Psikoloji,"Daha sessiz biri var mı?",SON55,0,
+1414,106,"Liderlik 21 Yasası","John C. Maxwell",Liderlik,"Hamburgerlerin üstündeki tavan",SON55,0,
+1415,106,"Liderlik 21 Yasası","John C. Maxwell",Liderlik,"Lincoln ve dağıtılan bölük",SON55,0,
+1416,106,"Liderlik 21 Yasası","John C. Maxwell",Liderlik,"Sekiz yılın güveni, üç karar",SON55,0,
+1417,107,"Mavi Okyanus Stratejisi","W. Chan Kim",Strateji,"Hayvansız Sirk",SON55,0,
+1418,107,"Mavi Okyanus Stratejisi","W. Chan Kim",Strateji,"Cirque'in çıkardıkları",SON55,0,
+1419,107,"Mavi Okyanus Stratejisi","W. Chan Kim",Strateji,"Southwest ve araba",SON55,0,
+1420,108,"Mucize Denklem","Hal Elrod","Alışkanlıklar","Önce söz, sonra küçük adımlar",SON55,0,
+1421,108,"Mucize Denklem","Hal Elrod","Alışkanlıklar","Şans mı, emek mi",SON55,0,
+1422,108,"Mucize Denklem","Hal Elrod","Alışkanlıklar","Beş dakikalık kural",SON55,0,
+1423,109,Mindfulness,"Jon Kabat-Zinn","Farkındalık","Hedefsiz yürüyüş",SON55,0,
+1424,109,Mindfulness,"Jon Kabat-Zinn","Farkındalık","Bilerek yaşamak",SON55,0,
+1425,109,Mindfulness,"Jon Kabat-Zinn","Farkındalık","Düşünce hava gibi geçer",SON55,0,
+1426,110,"Yetenek Yanılgısı","Geoff Colvin","Başarı","Notaları kim yazdı",SON55,0,
+1427,110,"Yetenek Yanılgısı","Geoff Colvin","Başarı","Yirmi yıllık hekim, beş yıllık hekim",SON55,0,
+1428,110,"Yetenek Yanılgısı","Geoff Colvin","Başarı","Kendi kör noktanı göremezsin",SON55,0,
+1429,111,Terapi,"Lori Gottlieb",Psikoloji,"Karşı koltuktaki terapist",SON55,0,
+1432,112,"Büyüme Kültürü","John Doerr","Yönetim","Intel'in Operation Crush'ı",SON55,0,
+1433,112,"Büyüme Kültürü","John Doerr","Yönetim","Chrome'un Zorlayıcı Hedefleri",SON55,0,
+1434,112,"Büyüme Kültürü","John Doerr","Yönetim","MyFitnessPal'da Bağımlılık Toplantısı",SON55,0,
+1435,113,"Satışın Psikolojisi","Brian Tracy","Satış","Özellikler listesinde olmayan korkular",SON55,0,
+1436,113,"Satışın Psikolojisi","Brian Tracy","Satış","Reddedilme korkusu bir kastır",SON55,0,
+1437,113,"Satışın Psikolojisi","Brian Tracy","Satış","Saniyenin onda biri",SON55,0,
+1438,114,"Against Empathy","Paul Bloom",Psikoloji,"Empatinin karanlık yüzü — önyargılı acı",SON55,0,
+1439,114,"Against Empathy","Paul Bloom",Psikoloji,"Rasyonel şefkat — empatinin ötesi",SON55,0,
+1440,114,"Against Empathy","Paul Bloom",Psikoloji,"Tükenme ve empatinin bedeli",SON55,0,
+1441,115,"Gündelik Nesneler Tasarımı","Don Norman","Tasarım","Kapı tasarımı ve hata yerine kullanıcıyı suçlamak",SON55,0,
+1442,115,"Gündelik Nesneler Tasarımı","Don Norman","Tasarım","Görünürlük ve geri bildirim — iyi tasarımın iki direği",SON55,0,
+1443,115,"Gündelik Nesneler Tasarımı","Don Norman","Tasarım","Zihinsel modeller ve tasarımın gizli dili",SON55,0,
+1444,116,"Sadakat Etkisi","Frederick Reichheld","İş Dünyası","Müşterilerin yarısı beş yılda gider",SON55,0,
+1446,116,"Sadakat Etkisi","Frederick Reichheld","İş Dünyası","Kazanmak pahalı, tutmak kazandırır",SON55,0,
+1447,117,"Hayatın Kısalığı Üzerine",Seneca,Felsefe,"Planlandığı gibi geçen günler",SON55,0,
+1448,117,"Hayatın Kısalığı Üzerine",Seneca,Felsefe,"Ellinci yıldan sonra",SON55,0,
+1450,118,"Bilinçaltının Gücü","Joseph Murphy",Motivasyon,"Bilinçaltı, Tohum ve Toprak",SON55,0,
+1451,118,"Bilinçaltının Gücü","Joseph Murphy",Motivasyon,"Uykudan Önce Tek Sorun",SON55,0,
+1452,118,"Bilinçaltının Gücü","Joseph Murphy",Motivasyon,"İnandığınız Gibi Olsun",SON55,0,
+1453,119,"Neşeyi Seç","Dalai Lama",Mutluluk,"Bir hafta, tek soru",SON55,0,
+1454,119,"Neşeyi Seç","Dalai Lama",Mutluluk,"Neşenin sekiz sütunu",SON55,0,
+1455,119,"Neşeyi Seç","Dalai Lama",Mutluluk,"Küçük daire, geniş daire",SON55,0,
+1456,120,"Beynin Sırları","V.S. Ramachandran","Nörobilim","Ayna kutusu",SON55,0,
+1457,120,"Beynin Sırları","V.S. Ramachandran","Nörobilim","Beşlerin Arasındaki İkiler",SON55,0,
+1458,120,"Beynin Sırları","V.S. Ramachandran","Nörobilim","Sadece İzleyen Maymun",SON55,0,
+1460,121,"İş Hayatında Duygusal Zeka","Daniel Goleman",Liderlik,"Beş boyut, yirmi beş yetkinlik",SON55,0,
+1461,121,"İş Hayatında Duygusal Zeka","Daniel Goleman",Liderlik,"Kendi puanınız, başkasının puanı",SON55,0,
+1462,122,"Kalıcı Hafıza","Joshua Foer","Öğrenme","Seyirciden şampiyona",SON55,0,
+1463,122,"Kalıcı Hafıza","Joshua Foer","Öğrenme","Çöken salon ve oturma düzeni",SON55,0,
+1464,122,"Kalıcı Hafıza","Joshua Foer","Öğrenme","Unutamayan adam",SON55,0,
+1465,123,"Etkileyici Konuşma","Carmine Gallo","İletişim","TED sahnesindeki üç sır",SON55,0,
+1466,123,"Etkileyici Konuşma","Carmine Gallo","İletişim","Beyin dostu hikaye anlatımı",SON55,0,
+1467,123,"Etkileyici Konuşma","Carmine Gallo","İletişim","Kural yüzde elli sekiz",SON55,0,
+1468,124,"Büyük Fikirler","Steven Johnson","Yaratıcılık","Londra'nın Kahvehaneleri",SON55,0,
+1469,124,"Büyük Fikirler","Steven Johnson","Yaratıcılık","Yavaş Sezgi",SON55,0,
+1470,124,"Büyük Fikirler","Steven Johnson","Yaratıcılık","Bitişik Olanak",SON55,0,
+1471,125,"Dinlenmenin Gücü","Alex Soojung-Kim Pang",Verimlilik,"Darwin'in Dört Saatlik Günü",SON55,0,
+1473,125,"Dinlenmenin Gücü","Alex Soojung-Kim Pang",Verimlilik,"Churchill'in Derin Oyunu",SON55,0,
+1474,126,"İnsanlığın Kısa Tarihi","Yuval Noah Harari",Tarih,"Muz Karşılığı Vaat",SON55,0,
+1475,126,"İnsanlığın Kısa Tarihi","Yuval Noah Harari",Tarih,"Buğday insanı evcilleştirdi",SON55,0,
+1476,126,"İnsanlığın Kısa Tarihi","Yuval Noah Harari",Tarih,"Mutluluk beklentiyle ölçülür",SON55,0,
+1477,127,"Homo Deus","Yuval Noah Harari",Gelecek,"Ölümsüzlük projesi",SON55,0,
+1478,127,"Homo Deus","Yuval Noah Harari",Gelecek,"Veri dini ve algoritmik otorite",SON55,0,
+1479,127,"Homo Deus","Yuval Noah Harari",Gelecek,"Özgür irade yanılsaması",SON55,0,
+1480,128,"21. Yüzyıl İçin 21 Ders","Yuval Noah Harari","Güncel","Yapay zeka ve iş gücünün geleceği",SON55,0,
+1481,128,"21. Yüzyıl İçin 21 Ders","Yuval Noah Harari","Güncel","Dezenformasyon çağı ve gerçeği bulmak",SON55,0,
+1482,128,"21. Yüzyıl İçin 21 Ders","Yuval Noah Harari","Güncel","Meditasyon ve öz tanıma çağı",SON55,0,
+1483,129,"The Fearless Organization","Amy Edmondson",Liderlik,"Columbia Toplantısındaki Sessizlik",SON55,0,
+1484,129,"The Fearless Organization","Amy Edmondson",Liderlik,"En iyi ekipler çok hata bildirdi",SON55,0,
+1486,130,"Çalınan Dikkat","Johann Hari",Verimlilik,"Üç ay kapaklı telefonla",SON55,0,
+1487,130,"Çalınan Dikkat","Johann Hari",Verimlilik,"Dikkat için kurulmuş ekranlar",SON55,0,
+1488,130,"Çalınan Dikkat","Johann Hari",Verimlilik,"Telefon tek şüpheli değil",SON55,0,
+1489,131,"Bağımlılık Çağı","Johann Hari",Toplum,"Rat Park deneyi",SON55,0,
+1490,131,"Bağımlılık Çağı","Johann Hari",Toplum,"Portekiz'in uyuşturucu yasası",SON55,0,
+1492,132,"Kayıp Bağlantılar","Johann Hari",Psikoloji,"On sekiz yaşında bir ilaç, dokuz neden",SON55,0,
+1493,132,"Kayıp Bağlantılar","Johann Hari",Psikoloji,"Yüzde on üç ve kontrol",SON55,0,
+1494,132,"Kayıp Bağlantılar","Johann Hari",Psikoloji,"Bir inek ve bir gelecek",SON55,0,
+1495,133,"Güçlü Yönler Bulma","Marcus Buckingham",Kariyer,"Zayıfları düzeltmek değil güçlüleri geliştirmek",SON55,0,
+1496,133,"Güçlü Yönler Bulma","Marcus Buckingham",Kariyer,"Akış anı ve yetenek işareti",SON55,0,
+1497,133,"Güçlü Yönler Bulma","Marcus Buckingham",Kariyer,"Gallup araştırması ve iş tatmini",SON55,0,
+1498,134,"Kabile Liderliği","Dave Logan",Liderlik,"Ben, benim, bana",SON55,0,
+1499,134,"Kabile Liderliği","Dave Logan",Liderlik,"Düşman büyüdükçe kabile güçlenir",SON55,0,
+1500,134,"Kabile Liderliği","Dave Logan",Liderlik,"İkiliden üçlüye",SON55,0,
+1501,135,"Korkudan Öğrenmek","Gavin de Becker","Güvenlik","Merdivendeki kedi maması",SON55,0,
+1502,135,"Korkudan Öğrenmek","Gavin de Becker","Güvenlik","Gerçek korku, üretilen endişe",SON55,0,
+1503,135,"Korkudan Öğrenmek","Gavin de Becker","Güvenlik","Nezaket gibi görünen işaretler",SON55,0,
+1504,136,"Müzakerede Evet Almak","Roger Fisher","Müzakere","Üçüncü pencere",SON55,0,
+1505,136,"Müzakerede Evet Almak","Roger Fisher","Müzakere","Elinizdeki alternatif",SON55,0,
+1506,136,"Müzakerede Evet Almak","Roger Fisher","Müzakere","Biri keser, öteki seçer",SON55,0,
+1507,137,"Değişim Yönetimi","John Kotter","Yönetim","Kötü Anketi Yayımlayan Başkan",SON55,0,
+1508,137,"Değişim Yönetimi","John Kotter","Yönetim","Koalisyonda Kim Oturmalı",SON55,0,
+1509,137,"Değişim Yönetimi","John Kotter","Yönetim","Görünür İlk Kazanım",SON55,0,
+1510,138,"Pratik Stoacılık","William Irvine",Felsefe,"Kaybı kısaca hayal etmek",SON55,0,
+1511,138,"Pratik Stoacılık","William Irvine",Felsefe,"Kazanmak değil, en iyi oynamak",SON55,0,
+1512,138,"Pratik Stoacılık","William Irvine",Felsefe,"Yatmadan önce hesaplaşma",SON55,0,
+1513,139,"Yıkıcı İnovasyon","Clayton Christensen","İş Dünyası","Dinlemek Liderliği Kaybettirince",SON55,0,
+1514,139,"Yıkıcı İnovasyon","Clayton Christensen","İş Dünyası","Müşteriyi dinleyen sürücü üreticileri",SON55,0,
+1515,139,"Yıkıcı İnovasyon","Clayton Christensen","İş Dünyası","Seagate'in rafa kalkan prototipi",SON55,0,
+1516,140,"Müşteri Geliştirme","Rob Fitzpatrick","Girişimcilik","Annenin evet'i bedava",SON55,0,
+1517,140,"Müşteri Geliştirme","Rob Fitzpatrick","Girişimcilik","Müşterinin altın görünümlü pirinci",SON55,0,
+1518,140,"Müşteri Geliştirme","Rob Fitzpatrick","Girişimcilik","Toplantıdan sonra ne olacak",SON55,0,
+1519,141,"İç Yolculuk","Michael A. Singer","Farkındalık","Kafandaki ev arkadaşı",SON55,0,
+1520,141,"İç Yolculuk","Michael A. Singer","Farkındalık","Kalpteki kıymık",SON55,0,
+1521,141,"İç Yolculuk","Michael A. Singer","Farkındalık","Tutunmak kafesi kurar",SON55,0,
+1522,142,"Az Gitme Yolu","M. Scott Peck",Psikoloji,"Sevgi ve disiplinin birlikte çalışması",SON55,0,
+1523,142,"Az Gitme Yolu","M. Scott Peck",Psikoloji,"Gerçeği kabul etme cesareti",SON55,0,
+1524,142,"Az Gitme Yolu","M. Scott Peck",Psikoloji,"Sorumluluk ve kurban kimliği",SON55,0,
+1525,143,"Parça Parça Yazmak","Anne Lamott","Yazarlık","Önce berbat taslak",SON55,0,
+1526,143,"Parça Parça Yazmak","Anne Lamott","Yazarlık","Kuş kuş ilerlemek",SON55,0,
+1527,143,"Parça Parça Yazmak","Anne Lamott","Yazarlık","Kavanozdaki fareler",SON55,0,
+1528,144,"Çevik Yönetim","Jeff Sutherland","Yönetim","Scrum nasıl doğdu",SON55,0,
+1529,144,"Çevik Yönetim","Jeff Sutherland","Yönetim","Günlük scrum on beş dakikada",SON55,0,
+1530,144,"Çevik Yönetim","Jeff Sutherland","Yönetim","Tahmin yerine sayım",SON55,0,
+1531,145,"SPIN Satış","Neil Rackham","Satış","İmzasız biten başarılı görüşme",SON55,0,
+1532,145,"SPIN Satış","Neil Rackham","Satış","Değeri alıcının ağzından duymak",SON55,0,
+1533,145,"SPIN Satış","Neil Rackham","Satış","Önce ihtiyaç, sonra fayda",SON55,0,
+1534,146,"Black Box Thinking","Matthew Syed",Felsefe,"Portland Üzerinde Dönen Uçak",SON55,0,
+1535,146,"Black Box Thinking","Matthew Syed",Felsefe,"Bilişsel uyumsuzluk",SON55,0,
+1536,146,"Black Box Thinking","Matthew Syed",Felsefe,"Marjinal kazanımlar",SON55,0,
+1537,147,"Sıçramak","Matthew Syed","Başarı","10.000 saat ve zor kısım",SON55,0,
+1538,147,"Sıçramak","Matthew Syed","Başarı","Bir sokak, bir koç, bir kulüp",SON55,0,
+1539,147,"Sıçramak","Matthew Syed","Başarı","Uzman neden tıkanır",SON55,0,
+1540,148,"Peçete Arkası","Dan Roam","Yaratıcılık","Çizemem diyenlere",SON55,0,
+1541,148,"Peçete Arkası","Dan Roam","Yaratıcılık","Resmin hangi tarafı",SON55,0,
+1542,148,"Peçete Arkası","Dan Roam","Yaratıcılık","Üç nokta, üç ok",SON55,0,
+1543,149,"Evet Dedirtmek","Noah Goldstein",Psikoloji,"Sosyal kanıt — otelin havlu deneyi",SON55,0,
+1544,149,"Evet Dedirtmek","Noah Goldstein",Psikoloji,"Taahhüt ve tutarlılık — küçük evet büyük evete zemin hazırlar",SON55,0,
+1545,149,"Evet Dedirtmek","Noah Goldstein",Psikoloji,"Kıtlık ve kayıp korkusu — kazanmak değil kaybetmemek motive eder",SON55,0,
+1546,150,"İkinci Makine Çağı","Erik Brynjolfsson",Teknoloji,"Makineyle birlikte koşmak",SON55,0,
+1547,150,"İkinci Makine Çağı","Erik Brynjolfsson",Teknoloji,"Satranç tahtasının ikinci yarısı",SON55,0,
+1548,150,"İkinci Makine Çağı","Erik Brynjolfsson",Teknoloji,"145.000'e karşı 15 kişi",SON55,0,
+1549,151,"Ölçülebilir Büyüme","Gino Wickman","Yönetim","Vizyondan çeyrek işine",SON55,0,
+1550,151,"Ölçülebilir Büyüme","Gino Wickman","Yönetim","Üç soruyla doğru koltuk",SON55,0,
+1551,151,"Ölçülebilir Büyüme","Gino Wickman","Yönetim","Doksan dakikalık toplantı",SON55,0,
+1552,152,"The Five Dysfunctions of a Team","Patrick Lencioni",Liderlik,"Napa'da Sorulan En Kötü İş",SON55,0,
+1553,152,"The Five Dysfunctions of a Team","Patrick Lencioni",Liderlik,"Uyumlu Toplantılar Neden Susar",SON55,0,
+1554,152,"The Five Dysfunctions of a Team","Patrick Lencioni",Liderlik,"Bu Rakam Kimin?",SON55,0,
+1555,153,"İş Modeli Üretimi","Alexander Osterwalder","Girişimcilik","Dokuz kutuluk iş modeli",SON55,0,
+1556,153,"İş Modeli Üretimi","Alexander Osterwalder","Girişimcilik","Bedavanın bedelini kim öder",SON55,0,
+1557,153,"İş Modeli Üretimi","Alexander Osterwalder","Girişimcilik","Para kazanmanın yedi yolu",SON55,0,
+1558,154,"Radikal Kabul","Tara Brach","Farkındalık","Sadece acıyor, yanlış değil",SON55,0,
+1559,154,"Radikal Kabul","Tara Brach","Farkındalık","Annenin fısıldadığı cümle",SON55,0,
+1560,154,"Radikal Kabul","Tara Brach","Farkındalık","Oğlunun kapısında beklemek",SON55,0,
+1561,155,"Farkındalık Temelli Yaşam","Jon Kabat-Zinn","Sağlık","Jon Kabat-Zinn'in hastanesi — MBSR'nin doğuşu",SON55,0,
+1562,155,"Farkındalık Temelli Yaşam","Jon Kabat-Zinn","Sağlık","Otomatik pilot — zihnin nerede olduğundan habersiz yaşamak",SON55,0,
+1563,155,"Farkındalık Temelli Yaşam","Jon Kabat-Zinn","Sağlık","Tam felaket — zorluğu kucaklamak",SON55,0,
+1564,156,"Bilinçli Liderlik","Jim Dethmer, Diana Chapman, Kaley Warner Klemp",Liderlik,"Çizginin Altında ya da Üstünde",SON55,0,
+1565,156,"Bilinçli Liderlik","Jim Dethmer, Diana Chapman, Kaley Warner Klemp",Liderlik,"Yüzde Yüz Sorumluluk",SON55,0,
+1566,156,"Bilinçli Liderlik","Jim Dethmer, Diana Chapman, Kaley Warner Klemp",Liderlik,"Duyguyu Bedende Bulmak",SON55,0,
+1567,157,"Yetenek Kodu","Daniel Coyle","Başarı","Brunio'nun yavaşlattığı hareket",SON55,0,
+1568,157,"Yetenek Kodu","Daniel Coyle","Başarı","İlk Nota Çalmadan Önce Sorulan Soru",SON55,0,
+1569,157,"Yetenek Kodu","Daniel Coyle","Başarı","Spartak'ta Topsuz Vuruş",SON55,0,
+1570,158,"Kültür Kodu","Daniel Coyle",Liderlik,"İlk beş dakikanın sensörü",SON55,0,
+1571,158,"Kültür Kodu","Daniel Coyle",Liderlik,"Ben bunu berbat ettim",SON55,0,
+1572,158,"Kültür Kodu","Daniel Coyle",Liderlik,"Granite kazınmış 311 sözcük",SON55,0,
+1573,159,"Hataları Kucaklamak","Carol Tavris",Psikoloji,"Savcının ses kaydı",SON55,0,
+1574,159,"Hataları Kucaklamak","Carol Tavris",Psikoloji,"Çok geç basılan kitap",SON55,0,
+1575,159,"Hataları Kucaklamak","Carol Tavris",Psikoloji,"Piramidin tepesinde iki öğrenci",SON55,0,
+1576,160,"İşte Anlam","Daniel Pink",Motivasyon,"Ödül bulmacayı değiştirdiğinde",SON55,0,
+1577,160,"İşte Anlam","Daniel Pink",Motivasyon,"Konu serbest, saat sabit",SON55,0,
+1578,160,"İşte Anlam","Daniel Pink",Motivasyon,"Peşinde koştuğunuz hedef",SON55,0,
+1579,161,"Satışın Yeni Yüzü","Daniel Pink","Satış","Satışsız satış",SON55,0,
+1580,161,"Satışın Yeni Yüzü","Daniel Pink","Satış","Bilgi artık alıcıda",SON55,0,
+1581,161,"Satışın Yeni Yüzü","Daniel Pink","Satış","Masadaki 27 nesne",SON55,0,
+1582,162,"Bütün Beyin","Daniel Pink","Yaratıcılık","Sol beyin çağının sonu",SON55,0,
+1583,162,"Bütün Beyin","Daniel Pink","Yaratıcılık","İşlevin Ötesinde Tasarım",SON55,0,
+1584,162,"Bütün Beyin","Daniel Pink","Yaratıcılık","Paranın ötesinde anlam",SON55,0,
+1585,163,"Sirkadyen Kod","Satchin Panda","Sağlık","Üç öğün, on beş saat",SON55,0,
+1586,163,"Sirkadyen Kod","Satchin Panda","Sağlık","Aynı yemek, farklı saat",SON55,0,
+1587,163,"Sirkadyen Kod","Satchin Panda","Sağlık","Gözdeki ikinci iş",SON55,0,
+1588,164,"Uzun Yaşam Bilimi","David Sinclair","Sağlık","Yaşlanma bir hastalık mı?",SON55,0,
+1589,164,"Uzun Yaşam Bilimi","David Sinclair","Sağlık","Konfor alarmı uyutur mu?",SON55,0,
+1590,164,"Uzun Yaşam Bilimi","David Sinclair","Sağlık","Büyümek mi, onarmak mı?",SON55,0,
+1591,165,"Uzun Ömür","Peter Attia","Sağlık","Marjinal onyıl",SON55,0,
+1592,165,"Uzun Ömür","Peter Attia","Sağlık","Dört süvari",SON55,0,
+1593,165,"Uzun Ömür","Peter Attia","Sağlık","Kondisyon bir gösterge",SON55,0,
+1594,166,"Beyin ve Diyet","David Perlmutter","Sağlık","Gluten ve beyin",SON55,0,
+1595,166,"Beyin ve Diyet","David Perlmutter","Sağlık","Yağ Çıktı, Şeker Girdi",SON55,0,
+1596,166,"Beyin ve Diyet","David Perlmutter","Sağlık","BDNF ve beyin",SON55,0,
+1597,167,"İyi Bağırsak","Justin Sonnenburg","Sağlık","Mikropsuz fareler ve astım",SON55,0,
+1599,167,"İyi Bağırsak","Justin Sonnenburg","Sağlık","Hadzalar ve lif",SON55,0,
+1600,168,Nefes,"James Nestor","Sağlık","On gün tıkalı burun",SON55,0,
+1601,168,Nefes,"James Nestor","Sağlık","Dakikada altı nefes",SON55,0,
+1602,168,Nefes,"James Nestor","Sağlık","Bohr etkisi ve yavaş nefes",SON55,0,
+1603,169,"Soğuk Yöntem","Wim Hof","Sağlık","Kutup Dairesi'nin Kuzeyinde Çıplak Ayak Yarı Maraton",SON55,0,
+1604,169,"Soğuk Yöntem","Wim Hof","Sağlık","Duşun son yarım dakikası",SON55,0,
+1605,169,"Soğuk Yöntem","Wim Hof","Sağlık","12'ye 12: nefes denemesi",SON55,0,
+1606,170,"Zengin Olmayı Öğrenmek","Ramit Sethi",Finans,"Ayın yedisine kadar karar yok",SON55,0,
+1607,170,"Zengin Olmayı Öğrenmek","Ramit Sethi",Finans,"Kahveye dokunmayan para planı",SON55,0,
+1609,171,"Mantıklı Borsa","John Bogle",Finans,"Elli yılın küçük ücreti",SON55,0,
+1610,171,"Mantıklı Borsa","John Bogle",Finans,"İğneyi aramayın",SON55,0,
+1611,171,"Mantıklı Borsa","John Bogle",Finans,"Yüzde 12,5'e karşı 7,3",SON55,0,
+1612,172,"Komşu Milyoner","Thomas Stanley",Finans,"Yaş Çarpı Gelir, Bölü On",SON55,0,
+1613,172,"Komşu Milyoner","Thomas Stanley",Finans,"Aile parası ve yüzde 57",SON55,0,
+1614,172,"Komşu Milyoner","Thomas Stanley",Finans,"Walmart'ta on yıl, sıfır hisse",SON55,0,
+1615,173,"Borç Devrimi","Dave Ramsey",Finans,"Borç Kartopu: Önce En Küçüğü",SON55,0,
+1616,173,"Borç Devrimi","Dave Ramsey",Finans,"Acil durum fonu",SON55,0,
+1617,173,"Borç Devrimi","Dave Ramsey",Finans,"Paranın patronu olmak",SON55,0,
+1618,174,"İlişki Psikolojisi","Sue Johnson","İlişkiler","Kavganın altındaki soru",SON55,0,
+1619,174,"İlişki Psikolojisi","Sue Johnson","İlişkiler","Üç şeytan diyalogu",SON55,0,
+1620,174,"İlişki Psikolojisi","Sue Johnson","İlişkiler","Sitemi değil ihtiyacı söylemek",SON55,0,
+1621,175,"Bağlanma Teorisi","Amir Levine","İlişkiler","Üç bağlanma stili — güvenli, kaygılı, kaçıngan",SON55,0,
+1622,175,"Bağlanma Teorisi","Amir Levine","İlişkiler","Kaçıngan paradoksu — yakınlık isteyen ama uzaklaşan",SON55,0,
+1623,175,"Bağlanma Teorisi","Amir Levine","İlişkiler","Kaygılı-kaçıngan tuzağı",SON55,0,
+1624,176,"Duygusal Olgunlaşmamış Ebeveynler","Lindsay Gibson",Psikoloji,"Bakım Var, Duyulma Yok",SON55,0,
+1625,176,"Duygusal Olgunlaşmamış Ebeveynler","Lindsay Gibson",Psikoloji,"Ebeveynin İhtiyacı Önce Geldiğinde",SON55,0,
+1626,176,"Duygusal Olgunlaşmamış Ebeveynler","Lindsay Gibson",Psikoloji,"İyileşme Fantezisini Bırakmak",SON55,0,
+1628,177,"Travma ve İyileşme","Judith Herman",Psikoloji,"Çare değil özen",SON55,0,
+1630,178,"Bedenin Hayır Demesi","Gabor Maté","Sağlık","Hayır Diyemeyen Kişi",SON55,0,
+1631,178,"Bedenin Hayır Demesi","Gabor Maté","Sağlık","Stres ve bağışıklık",SON55,0,
+1632,178,"Bedenin Hayır Demesi","Gabor Maté","Sağlık","İyileşmenin Yedi A'sı",SON55,0,
+1633,179,"Dağınık Beyin","Gabor Maté",Psikoloji,"Budapeşte'de Ağlayan Bebek",SON55,0,
+1634,179,"Dağınık Beyin","Gabor Maté",Psikoloji,"Sevdiği İşe Odaklanan Öğretim Görevlisi",SON55,0,
+1635,179,"Dağınık Beyin","Gabor Maté",Psikoloji,"John'un Karnesi ve Babasının Sözleri",SON55,0,
+1636,180,"Her Şey Gerçek Olabilir","Gabor Maté","Bağımlılık","Bağımlılık bir seçim değil — acının dili",SON55,0,
+1637,180,"Her Şey Gerçek Olabilir","Gabor Maté","Bağımlılık","Toksik toplum — bağımlılığı besleyen sistem",SON55,0,
+1638,180,"Her Şey Gerçek Olabilir","Gabor Maté","Bağımlılık","Şefkatin nörobilimi — bağlantı bağımlılığın panzehiri",SON55,0,
+1639,181,"Özgür Olmak 2","Brené Brown","Kişisel Gelişim","Yirmi tonluk kalkan",SON55,0,
+1640,181,"Özgür Olmak 2","Brené Brown","Kişisel Gelişim","Suçluluk ile utanç",SON55,0,
+1641,181,"Özgür Olmak 2","Brené Brown","Kişisel Gelişim","Neşe ve minnettarlık",SON55,0,
+1642,182,"Güçlü Kalkmak","Brené Brown","Dayanıklılık","Arenada olmak — düşme cesareti",SON55,0,
+1643,182,"Güçlü Kalkmak","Brené Brown","Dayanıklılık","Hikaye tamamlama — beyin boşluğu nasıl dolduruyor",SON55,0,
+1644,182,"Güçlü Kalkmak","Brené Brown","Dayanıklılık","Devrilme ve kalkış — iyileşmenin üç aşaması",SON55,0,
+1645,183,"Çölde Yürümek","Brené Brown",Topluluk,"Uyum mu, aitlik mi",SON55,0,
+1646,183,"Çölde Yürümek","Brené Brown",Topluluk,"Değeri söylemek, uygulamak",SON55,0,
+1648,184,"Kalbin Haritası","Brené Brown",Duygular,"Üç kelime, seksen yedi duygu",SON55,0,
+1649,184,"Kalbin Haritası","Brené Brown",Duygular,"İki kişi mi, üç kişi mi",SON55,0,
+1650,184,"Kalbin Haritası","Brené Brown",Duygular,"Kin kıskançlığın komşusu",SON55,0,
+1651,185,"Akış Bulmak","Mihaly Csikszentmihalyi",Psikoloji,"Akış deneyimi — zamanın eridiği bilinç hali",SON55,0,
+1652,185,"Akış Bulmak","Mihaly Csikszentmihalyi",Psikoloji,"Günlük hayatta akış — sıradan anların dönüşümü",SON55,0,
+1653,185,"Akış Bulmak","Mihaly Csikszentmihalyi",Psikoloji,"Yaşam kalitesi ve akış — mutluluğun yanlış aranması",SON55,0,
+1654,186,"Yaratıcılık ve Akış","Mihaly Csikszentmihalyi","Yaratıcılık","Zıt çiftler",SON55,0,
+1655,186,"Yaratıcılık ve Akış","Mihaly Csikszentmihalyi","Yaratıcılık","Beş yaratıcı adım",SON55,0,
+1656,186,"Yaratıcılık ve Akış","Mihaly Csikszentmihalyi","Yaratıcılık","Birey, alan ve saha",SON55,0,
+1657,187,"İçgüdüsel Yeme","Evelyn Tribole","Sağlık","Öfkeyi diyete yöneltmek",SON55,0,
+1658,187,"İçgüdüsel Yeme","Evelyn Tribole","Sağlık","Açlığı ve doygunluğu dinlemek",SON55,0,
+1659,187,"İçgüdüsel Yeme","Evelyn Tribole","Sağlık","Duygu mu açlık mı",SON55,0,
+1660,188,"Yeniden Doğmak","David Brooks",Felsefe,"İlk dağın bedeli",SON55,0,
+1661,188,"Yeniden Doğmak","David Brooks",Felsefe,"Zincirli piyano",SON55,0,
+1662,188,"Yeniden Doğmak","David Brooks",Felsefe,"Dört boş kutu",SON55,0,
+1663,189,"Yeni Toprak","Eckhart Tolle","Farkındalık","Metrodaki kadın ve kafadaki ses",SON55,0,
+1664,189,"Yeni Toprak","Eckhart Tolle","Farkındalık","Evlilikte acı beden",SON55,0,
+1665,189,"Yeni Toprak","Eckhart Tolle","Farkındalık","Şimdi'nin üç yüzü",SON55,0,
+1666,190,"İçsel Barış","Thich Nhat Hanh","Farkındalık","Sadece yürümek için yürümek",SON55,0,
+1667,190,"İçsel Barış","Thich Nhat Hanh","Farkındalık","Önce yangın, sonra suçlu",SON55,0,
+1668,190,"İçsel Barış","Thich Nhat Hanh","Farkındalık","Kâğıdın içindeki bulut",SON55,0,
+1669,191,"Öfke","Thich Nhat Hanh",Psikoloji,"Çiğ patates gibi öfke",SON55,0,
+1670,191,"Öfke","Thich Nhat Hanh",Psikoloji,"Ağlayan bebek ve öfke",SON55,0,
+1671,191,"Öfke","Thich Nhat Hanh",Psikoloji,"Öfkenin tohumu",SON55,0,
+1675,1,"Atomic Habits","James Clear","Sağlık","Kimlikten başlayan alışkanlık",SON55,0,
+1676,1,"Atomic Habits","James Clear","Sağlık","İki Dakika Kuralı",SON55,0,
+1677,1,"Atomic Habits","James Clear","Sağlık","Yüzde bir ve buz küpü",SON55,0,
+1678,194,"Yeni Başlayanlar İçin Meditasyon","Andy Puddicombe","Farkındalık","Yoldaki parlak araba",SON55,0,
+1679,194,"Yeni Başlayanlar İçin Meditasyon","Andy Puddicombe","Farkındalık","On yıl, on dakika",SON55,0,
+1680,195,"Meditasyonla İyileşme","Robert Wright","Farkındalık","Çalıdaki hışırtıya sıçrayan zihin",SON55,0,
+1681,196,"The Shallows","Nicholas Carr",Bilim,"Bir iki sayfa sonra dikkat kayıyor",SON55,0,
+1683,197,"Dikkatin Gücü","Daniel Goleman",Verimlilik,"İç, Öteki ve Dış Odak",SON55,0,
+1684,197,"Dikkatin Gücü","Daniel Goleman",Verimlilik,"Dikkat Bir Kas Gibi",SON55,0,
+1685,198,"Duygusal Çeviklik","Susan David",Psikoloji,"Düşünce Kancasından Çıkmak",SON55,0,
+1686,198,"Duygusal Çeviklik","Susan David",Psikoloji,"Duygu Gösterir, Değer Yönlendirir",SON55,0,
+1687,199,"Psikolojik Esneklik","Russ Harris",Psikoloji,"Mücadele düğmesi",SON55,0,
+1688,199,"Psikolojik Esneklik","Russ Harris",Psikoloji,"Düşünce, yalnızca düşünce",SON55,0,
+1689,200,"Bütünleşik Zekanın Gücü","Travis Bradberry",Psikoloji,"IQ, Kişilik ve EQ",SON55,0,
+1690,200,"Bütünleşik Zekanın Gücü","Travis Bradberry",Psikoloji,"Önce Adlandır, Sonra Değerlendir",SON55,0,
+1691,200,"Bütünleşik Zekanın Gücü","Travis Bradberry",Psikoloji,"Suçlamada Çözüm Cümlesi",SON55,0,
+1692,201,"Rakipler Takımı","Doris Kearns Goodwin",Tarih,"Lincoln Neden Rakiplerini Kabinesine Aldı?",SON55,0,
+1693,202,Endurance,"Alfred Lansing",Tarih,"Shackleton'ın 800 Millik Kurtuluş Yolculuğu",SON55,0,
+1694,203,Seabiscuit,"Laura Hillenbrand",Tarih,"Seabiscuit Büyük Buhran'a Nasıl Umut Oldu?",SON55,0,
+1695,204,"Midnight in Chernobyl","Adam Higginbotham",Tarih,"Çernobil Gecesi Kontrol Odasında Ne Oldu?",SON55,0,
+1696,205,"Predictably Irrational","Dan Ariely",Psikoloji,"Bedavanın Gizli Maliyeti",SON55,0,
+1697,206,"The Power of Regret","Daniel H. Pink",Psikoloji,"Bronz Madalya Kazananlar Neden Daha Mutlu?",SON55,0,
+1698,207,"Steve Jobs","Walter Isaacson",Liderlik,"Steve Jobs'ın Kaligrafi Dersi Mac'i Nasıl Değiştirdi?",SON55,0,
+1699,208,"The Founders","Jimmy Soni",Liderlik,"PayPal'ın Rakip Kurucuları Nasıl Takım Oldu?",SON55,0,
+1700,209,"A Random Walk Down Wall Street","Burton G. Malkiel",Finans,"Rastgele Yürüyen Bir Piyasa Yenilebilir mi?",SON55,0,
+1701,210,"The Checklist Manifesto","Atul Gawande","Sağlık","Basit Bir Kontrol Listesi Kaç Hayat Kurtarabilir?",SON55,0,
+1702,211,"The Comfort Crisis","Michael Easter","Sağlık","Konfor Alanı Bedenimizi Nasıl Zayıflatıyor?",SON55,0,
+1703,1,"Atomic Habits","James Clear","Sağlık","Bir Kaza James Clear’ın Alışkanlık Fikrini Nasıl Değiştirdi?",SON55,0,
+1704,6,Influence,"Robert Cialdini",Psikoloji,"İyi Niyetli Bir Tabela Hırsızlığı Nasıl Artırdı?",SON55,0,
+1705,34,Flow,"Mihaly Csikszentmihalyi",Psikoloji,"Akış Rahatken Değil, Sınırdayken Neden Gelir?",SON55,0,
+1706,114,"Against Empathy","Paul Bloom",Psikoloji,"Bir Yüz Neden Binlerce İstatistikten Güçlüdür?",SON55,0,
+1707,11,"The 7 Habits of Highly Effective People","Stephen Covey","Büyüme","Metroda Bir Cümle Bütün Hikâyeyi Nasıl Değiştirdi?",Opus55,0,
+1708,15,"Emotional Intelligence","Daniel Goleman",Psikoloji,"Bir Gazete Haberi Zekâ Tanımını Nasıl Değiştirdi?",SON55,0,
+1709,17,"The Psychology of Money","Morgan Housel",Finans,"Servet Neden Genellikle Görünmezdir?",SON55,0,
+1710,212,"The Boys in the Boat","Daniel James Brown",Tarih,"Dokuz İşçi Sınıfı Genci Berlin’de Tarihe Nasıl Dokundu?",SON55,0,
+1711,213,"The Simple Path to Wealth","J. L. Collins",Finans,"Pirinç ve Fasulyeyle Yaşayan Keşişin Cevabı",SON55,0,
+1712,214,"The Republic",Plato,Felsefe,"Platon’a Göre İktidarı En Çok Kim Hak Eder?",SON55,0,
+1713,43,"Ego Is the Enemy","Ryan Holiday",Felsefe,"Ryan Holiday’nin Başarısı Neden Bir Uyarıya Dönüştü?",SON55,0,
+1714,220,"You're Not Listening","Kate Murphy","İletişim","Dinlemek Neden Konuşmaktan Daha Zordur?",SON55,0,
+1715,74,Indistractable,"Nir Eyal",Verimlilik,"Nir Eyal’i Kendi Kızıyla Kaçırdığı An Durdurdu",SON55,0,
+1716,217,Chatter,"Ethan Kross",Psikoloji,"Kendi Adını Söylemek Stresi Nasıl Azaltabilir?",SON55,0,
+1717,196,"The Shallows","Nicholas Carr",Bilim,"Nicholas Carr Neden Bir Kitabı Bitiremez Oldu?",SON55,0,
+1718,215,Rubicon,"Tom Holland",Tarih,"Sezar Rubicon’u Geçtiğinde Neden Geri Dönüş Yoktu?",SON55,0,
+1719,219,Complications,"Atul Gawande","Sağlık","Yorgun Bir Asistan Kendi Sınırını Görebilir mi?",SON55,0,
+1720,83,"The Paradox of Choice","Barry Schwartz",Psikoloji,"24 Reçel Neden 6 Reçelden Daha Az Sattı?",SON55,0,
+1721,216,"A Short History of Nearly Everything","Bill Bryson",Bilim,"Kıtalar Bir Yapboz Gibi Uyuşuyorsa Tesadüf müydü?",SON55,0,
+1722,218,"Creativity, Inc.","Ed Catmull ve Amy Wallace",Liderlik,"Pixar’da Bir Filmi Kurtaran Toplantının Patronu Yoktu",SON55,0,
+1723,71,"Thinking in Systems","Donella Meadows",Verimlilik,"Küvet Neden Musluk Kadar Hızlı Değişmez?",SON55,0,
+1724,7,"Good to Great","Jim Collins",Verimlilik,"Darwin Smith Neden Şirketinin Fabrikalarını Sattı?",SON55,0,
+1725,39,"Money: Master the Game","Tony Robbins",Finans,"2008 Krizinden Sonra Tony Robbins Kimlere Sordu?",SON55,0,
+1726,222,"The Gene","Siddhartha Mukherjee",Bilim,"Mendel’in Bezelyeleri Neden Otuz Yıl Sessiz Kaldı?",SON55,0,
+1727,224,Noise,"Daniel Kahneman, Olivier Sibony ve Cass R. Sunstein",Psikoloji,"Aynı Dosyaya Bakan Uzmanlar Neden Farklı Fiyat Söyledi?",SON55,0,
+1728,52,"Can't Hurt Me","David Goggins","Büyüme","David Goggins Aynadaki Adamla Neden Konuştu?",SON55,0,
+1729,223,"An Immense World","Ed Yong",Bilim,"Filler Ayaklarıyla Kilometrelerce Öteyi Nasıl Dinliyor?",SON55,0,
+1730,54,"The 4-Hour Workweek","Tim Ferriss",Verimlilik,"Tim Ferriss Darboğazın Kendisi Olduğunu Nasıl Fark Etti?",SON55,0,
+1731,221,"The Devil in the White City","Erik Larson",Tarih,"George Ferris Paris’in Kulesine Nasıl Cevap Verdi?",Opus55,0,
+1732,146,"Black Box Thinking","Matthew Syed",Felsefe,"Kokpitte Kaptana İtiraz Etmek Neden Bir Güvenlik Kuralına Dönüştü?",SON55,0,
+1733,77,"The Success Principles","Jack Canfield ve Janet Switzer","Büyüme","Ret Üstüne Ret: Chicken Soup Günde Beş Adımla Nasıl Yayımlandı?",SON55,0,
+1734,225,"The Undoing Project","Michael Lewis",Psikoloji,"Aynı Limuzin, Aynı Trafik: Kim Daha Çok Üzülür?",SON55,0,
+1735,152,"The Five Dysfunctions of a Team","Patrick Lencioni",Liderlik,"Lencioni’nin Piramidi Neden Güvenle Başlar?",SON55,0,
+1736,129,"The Fearless Organization","Amy Edmondson",Liderlik,"En İyi Ekipler Neden Daha Çok Hata Bildiriyordu?",SON55,0,
+1737,92,"The Life-Changing Magic of Tidying Up","Marie Kondo",Felsefe,"Marie Kondo Neden “Bu Bana Neşe Veriyor mu?” Diye Sordu?",SON55,0,
+1738,226,"The Righteous Mind","Jonathan Haidt",Psikoloji,"Kirli Bir Masa Ahlaki Yargıyı Etkiler mi?",SON55,0,
+1739,16,"Purple Cow","Seth Godin",Finans,"Seth Godin Neden Mor Bir İnek Aradı?",SON55,0,
+1740,227,"Pour Your Heart Into It","Howard Schultz ve Dori Jones Yang",Liderlik,"Milano’daki Espresso Barları Howard Schultz’a Ne Gösterdi?",SON55,0,
+1741,42,"Stillness Is the Key","Ryan Holiday",Felsefe,"Kennedy'nin Not Defterindeki Yelkenliler",SON55,0,
+1742,57,"The Good Life","Robert Waldinger",Psikoloji,"724 Hayatı İzleyen Araştırma Mutluluk Hakkında Ne Buldu?",SON55,0,
+1743,228,"Guns, Germs, and Steel","Jared Diamond",Tarih,"168 Kişi Bir İmparatorluğu Nasıl Esir Aldı?",SON55,0,
+1744,229,Collapse,"Jared Diamond",Tarih,"Küçük Bir Ada Çöküşten Nasıl Kaçtı?",SON55,0,
+1745,230,"The Silk Roads","Peter Frankopan",Tarih,"Şahın Fiyatı: Pers Petrolünün Kapısı",SON55,0,
+1746,231,SPQR,"Mary Beard",Tarih,"Roma'yı Büyüten Sıra Dışı Karar",SON55,0,
+1747,232,"The Wright Brothers","David McCullough",Tarih,"Bisikletçilerin Rüzgar Tüneli",SON55,0,
+1748,233,"Into Thin Air","Jon Krakauer",Tarih,"Everest'te Saat İkiyi Geçince",SON55,0,
+1749,234,Unbroken,"Laura Hillenbrand",Tarih,"Okyanusta 47 Gün: Louis Zamperini",SON55,0,
+1750,235,"Hidden Figures","Margot Lee Shetterly",Tarih,"John Glenn'in Güvendiği Hesap",SON55,0,
+1751,236,"The Splendid and the Vile","Erik Larson",Tarih,"Bombardıman Altında Görünür Olmak",SON55,0,
+1752,237,"Say Nothing","Patrick Radden Keefe",Tarih,"Sessizlik Antlaşması Nasıl Çözüldü?",SON55,0,
+1753,238,"The Wager","David Grann",Tarih,"Aynı Kazadan İki Farklı Gerçek",SON55,0,
+1754,239,"Killers of the Flower Moon","David Grann",Tarih,"Zenginliğin Ölümcül Olduğu Topraklar",SON55,0,
+1755,240,"The Lost City of Z","David Grann",Tarih,"Amazon'un Yuttuğu Kaşif",SON55,0,
+1756,241,Cosmos,"Carl Sagan",Bilim,"Gölgesiz Öğle Vakti",SON55,0,
+1757,242,"A Brief History of Time","Stephen Hawking",Bilim,"Tek Denklemin Riski",SON55,0,
+1758,243,"The Code Breaker","Walter Isaacson",Bilim,"Bakterilerin Sakladığı Makas",SON55,0,
+1759,244,"The Immortal Life of Henrietta Lacks","Rebecca Skloot",Bilim,"Ölmeyi Reddeden Hücreler",SON55,0,
+1760,245,"The Hidden Life of Trees","Peter Wohlleben",Bilim,"Ağaçların Gizli Ağı",SON55,0,
+1761,246,"Entangled Life","Merlin Sheldrake",Bilim,"Ne Bitki Ne Hayvan: Mantarların Dünyası",SON55,0,
+1762,247,Longitude,"Dava Sobel",Bilim,"Denizde Kaybolmayı Bitiren Saat",SON55,0,
+1763,248,"The Disappearing Spoon","Sam Kean",Bilim,"Elinde Eriyen Kaşık",SON55,0,
+1764,249,"The Poisoner's Handbook","Deborah Blum",Bilim,"Zehirin Cezasız Kaldığı Çağ",SON55,0,
+1765,250,"The Radium Girls","Kate Moore",Bilim,"Fırçayı Dudağında Sivriltmek",SON55,0,
+1766,251,"The Butchering Art","Lindsey Fitzharris",Bilim,"Görünmeyen Katili Yıkamak",SON55,0,
+1767,252,"Surely You're Joking, Mr. Feynman!","Richard P. Feynman ve Ralph Leighton",Bilim,"Sallanan Tabaktan Nobel’e",SON55,0,
+1768,253,"The Anxious Generation","Jonathan Haidt",Psikoloji,"Oyun Bahçesinden Ekrana Geçiş",SON55,0,
+1769,254,Behave,"Robert M. Sapolsky",Psikoloji,"Bir Davranışın Bir Saniye Öncesi",SON55,0,
+1770,255,"The Lucifer Effect","Philip Zimbardo",Psikoloji,"İyi İnsanları Değiştiren Rol",SON55,0,
+1772,257,Incognito,"David Eagleman",Psikoloji,"Kararı Sen mi Veriyorsun?",SON55,0,
+1774,259,"The Confidence Game","Maria Konnikova",Psikoloji,"Dolandırıcının Gerçek Silahı",SON55,0,
+1775,260,Scarcity,"Sendhil Mullainathan ve Eldar Shafir",Psikoloji,"Yokluğun Zihni Daraltması",SON55,0,
+1776,261,"The Marshmallow Test","Walter Mischel",Psikoloji,"Şimdiki Bir mi, Sonraki İki mi?",SON55,0,
+1777,262,"Shoe Dog","Phil Knight",Liderlik,"Bagajdan Doğan Nike",SON55,0,
+1778,263,"The Everything Store","Brad Stone",Liderlik,"Hoparlördeki Dört Buçuk Dakika",SON55,0,
+1779,264,"The Ride of a Lifetime","Robert Iger",Liderlik,"Devralınan Şirketleri Değiştirmemek",SON55,0,
+1780,265,"No Rules Rules","Reed Hastings ve Erin Meyer",Liderlik,"Kural Kitabını Yırtmak",SON55,0,
+1781,266,"Bad Blood","John Carreyrou",Liderlik,"Kanla Kurulan Bir Yalan",SON55,0,
+1782,267,"The Hard Thing About Hard Things","Ben Horowitz",Liderlik,"Kolay Cevabı Olmayan Kararlar",SON55,0,
+1783,268,"The Intelligent Investor","Benjamin Graham",Finans,"Bay Piyasa ile Ortaklık",SON55,0,
+1784,269,"Being Mortal","Atul Gawande","Sağlık","Sonuna Kadar İyi Yaşamak",SON55,0,
+1785,270,"Nonviolent Communication","Marshall B. Rosenberg","İletişim","Suçlamanın Altındaki İhtiyaç",SON55,0,
+1786,271,"Four Thousand Weeks","Oliver Burkeman",Verimlilik,"Dört Bin Haftalık Ömür",SON55,0,
+1787,272,"Tao Te Ching","Lao Tzu",Felsefe,"Suyun Sessiz Gücü",SON55,0,
+1788,273,"Why Zebras Don't Get Ulcers","Robert M. Sapolsky","Sağlık","Aslandan Kaçan Zebra",SON55,0,
+1789,273,"Why Zebras Don't Get Ulcers","Robert M. Sapolsky","Sağlık","Bedenin Yakıtı Yanlış Yere Akınca",SON55,0,
+1790,273,"Why Zebras Don't Get Ulcers","Robert M. Sapolsky","Sağlık","Serengeti'de Bir Pavyan Sürüsü",SON55,0,
+1791,273,"Why Zebras Don't Get Ulcers","Robert M. Sapolsky","Sağlık","Aynı Elektrik, İki Farklı Sıçan",SON55,0,
+1792,273,"Why Zebras Don't Get Ulcers","Robert M. Sapolsky","Sağlık","Barışı Öğrenen Sürü",SON55,0,
+1794,274,"Delivering Happiness","Tony Hsieh",Liderlik,"Boş Konfeti",Opus55-2,0,
+1795,274,"Delivering Happiness","Tony Hsieh",Liderlik,"Salondaki Ayakkabı Mağazası",Opus55-2,0,
+1796,274,"Delivering Happiness","Tony Hsieh",Liderlik,"Telefonda Acele Yok",Opus55-2,0,
+1797,274,"Delivering Happiness","Tony Hsieh",Liderlik,"Çıkış Kapısındaki Teklif",Opus55-2,0,
+1798,274,"Delivering Happiness","Tony Hsieh",Liderlik,"Kültür Pazarlığı",Opus55-2,0,
+1799,275,"The Culture Map","Erin Meyer",Liderlik,"Havayı Okumak",Opus55-2,0,
+1800,275,"The Culture Map","Erin Meyer",Liderlik,"Sandviçin İçindeki Eleştiri",Opus55-2,0,
+1801,275,"The Culture Map","Erin Meyer",Liderlik,"Evet'in Ağırlığı",Opus55-2,0,
+1802,275,"The Culture Map","Erin Meyer",Liderlik,"Sözleşmeden Önce Kahve",Opus55-2,0,
+1803,275,"The Culture Map","Erin Meyer",Liderlik,"Saatin İki Dili",Opus55-2,0,
+1804,276,"Grinding It Out","Ray Kroc",Liderlik,"Sekiz Mikserlik Sinyal",Opus55-2,0,
+1805,276,"Grinding It Out","Ray Kroc",Liderlik,"Menüyü Küçülten Mutfak",Opus55-2,0,
+1806,276,"Grinding It Out","Ray Kroc",Liderlik,"Des Plaines’teki İlk Kopya",Opus55-2,0,
+1807,276,"Grinding It Out","Ray Kroc",Liderlik,"Hamburgerin Altındaki Arsa",Opus55-2,0,
+1808,276,"Grinding It Out","Ray Kroc",Liderlik,"Hamburger Üniversitesi",Opus55-2,0,
+1809,277,Range,"David Epstein","Büyüme","Roger Federer'in geç dallanması",SON55,0,
+1810,277,Range,"David Epstein","Büyüme","Van Gogh'un geç başlangıcı",SON55,0,
+1811,277,Range,"David Epstein","Büyüme","Kepler'in analoji ile keşfi",SON55,0,
+1812,277,Range,"David Epstein","Büyüme","""Kötü niyetli"" öğrenme ortamları",SON55,0,
+1813,277,Range,"David Epstein","Büyüme","Yapışkan not ve yan projeler",SON55,0,
+1814,277,Range,"David Epstein","Büyüme","InnoCentive'de alan dışı çözücüler",SON55,0,
+1815,277,Range,"David Epstein","Büyüme","Gunpei Yokoi ve Game Boy",SON55,0,
+1816,277,Range,"David Epstein","Büyüme","Kariyer 'uyum kalitesi'",SON55,0,
+1817,277,Range,"David Epstein","Büyüme","Satrançta yapay zekânın üstünlüğü",SON55,0,
+1818,277,Range,"David Epstein","Büyüme","Flynn etkisi ve soyut düşünme",SON55,0,
+1819,278,"Give and Take","Adam Grant",Liderlik,"Vericiler merdivenin hem altında hem üstünde",SON55,0,
+1820,278,"Give and Take","Adam Grant",Liderlik,"Bir öğretmenin her öğrencide yetenek görmesi",SON55,0,
+1821,278,"Give and Take","Adam Grant",Liderlik,"Adam Rifkin'in beş dakikalık iyiliği",SON55,0,
+1822,278,"Give and Take","Adam Grant",Liderlik,"Frank Lloyd Wright ve alıcı tuzağı",SON55,0,
+1823,278,"Give and Take","Adam Grant",Liderlik,"Cömert satıcının uzun oyunu",SON55,0,
+1824,278,"Give and Take","Adam Grant",Liderlik,"Pigmalion etkisi",SON55,0,
+1825,278,"Give and Take","Adam Grant",Liderlik,"Kekeme avukat Dave Walton",SON55,0,
+1826,278,"Give and Take","Adam Grant",Liderlik,"Jon Huntsman'ın el sıkışması",SON55,0,
+1827,278,"Give and Take","Adam Grant",Liderlik,"Simpsons yazım odasının cömert kültürü",SON55,0,
+1828,278,"Give and Take","Adam Grant",Liderlik,"Öz-koruyucu verici",SON55,0,
+1829,279,"Extreme Ownership","Jocko Willink, Leif Babin",Liderlik,"Bunun tek sorumlusu ben",SON55,0,strong
+1830,280,"The Demon-Haunted World","Carl Sagan",Bilim,"Mars'taki yüz",SON55,0,strong
+1831,280,"The Demon-Haunted World","Carl Sagan",Bilim,"Tahta ve ip",SON55,0,strong
+1832,280,"The Demon-Haunted World","Carl Sagan",Bilim,"Gözleri bağlı hastalar",SON55,0,strong
+1833,280,"The Demon-Haunted World","Carl Sagan",Bilim,"Mars'ın kanalları",SON55,0,strong
+1834,280,"The Demon-Haunted World","Carl Sagan",Bilim,"Eksik iki saat",SON55,0,strong
+1835,281,"The Spy and the Traitor","Ben Macintyre",Tarih,"Bagajdaki casus",SON55,0,strong
+1836,281,"The Spy and the Traitor","Ben Macintyre",Tarih,"İki poşet",SON55,0,strong
+1837,281,"The Spy and the Traitor","Ben Macintyre",Tarih,"Moskova'ya dönüş",SON55,0,strong
+1838,281,"The Spy and the Traitor","Ben Macintyre",Tarih,"Tatbikat mı, saldırı mı",SON55,0,strong
+1839,281,"The Spy and the Traitor","Ben Macintyre",Tarih,"Duvardan Prag'a",SON55,0,strong
+1840,282,"The Emperor of All Maladies","Siddhartha Mukherjee","Sağlık","On altı çocuk, on remisyon",SON55,1,strong
+1841,282,"The Emperor of All Maladies","Siddhartha Mukherjee","Sağlık","Daha az kesmek",SON55,0,strong
+1842,282,"The Emperor of All Maladies","Siddhartha Mukherjee","Sağlık","Sayarak kanıtlamak",SON55,0,strong
+1843,282,"The Emperor of All Maladies","Siddhartha Mukherjee","Sağlık","Süzülmüş tümör",SON55,0,strong
+1844,282,"The Emperor of All Maladies","Siddhartha Mukherjee","Sağlık","Tek bir proteine nişan",SON55,0,strong
+1845,283,Pre-Suasion,"Robert Cialdini","İletişim","Bulutlu kanepe",SON55,0,strong
+1846,283,Pre-Suasion,"Robert Cialdini","İletişim","Çiçekçinin önünde",SON55,0,strong
+1847,283,Pre-Suasion,"Robert Cialdini","İletişim","Sandığın başında okul",SON55,0,strong
+1848,283,Pre-Suasion,"Robert Cialdini","İletişim","Korku filminden sonra",SON55,0,strong
+1849,283,Pre-Suasion,"Robert Cialdini","İletişim","Aileye söyleyeceği gibi",SON55,0,weak
+1850,284,"Born to Run","Christopher McDougall","Sağlık","Sandaletli çoban",SON55,0,strong
+1851,284,"Born to Run","Christopher McDougall","Sağlık","Winfield'da önde olmak",SON55,0,strong
+1852,284,"Born to Run","Christopher McDougall","Sağlık","Andale huevones",SON55,0,strong
+1853,284,"Born to Run","Christopher McDougall","Sağlık","Koşmak için biçimlenen beden",SON55,0,strong
+1854,284,"Born to Run","Christopher McDougall","Sağlık","Dört gün sonra bir derenin kenarında",SON55,1,strong
+1855,285,"Ultra-Processed People","Chris van Tulleken","Sağlık","Aynı tabak, farklı iştah",SON55,0,strong
+1856,285,"Ultra-Processed People","Chris van Tulleken","Sağlık","Bir ay aşırı işlenmiş",SON55,0,strong
+1857,285,"Ultra-Processed People","Chris van Tulleken","Sağlık","Nehirdeki market",SON55,0,strong
+1858,285,"Ultra-Processed People","Chris van Tulleken","Sağlık","Etiketten önce yapılış",SON55,0,weak
+1859,285,"Ultra-Processed People","Chris van Tulleken","Sağlık","Kömürden tereyağı",SON55,0,strong
+1860,286,"Band of Brothers","Stephen E. Ambrose",Tarih,"Dört top, yirmi üç adam",SON55,0,strong
+1861,286,"Band of Brothers","Stephen E. Ambrose",Tarih,"Çavuşlar komutanı istemedi",SON55,0,strong
+1862,286,"Band of Brothers","Stephen E. Ambrose",Tarih,"Foy'da komutan değişti",SON55,0,strong
+1863,286,"Band of Brothers","Stephen E. Ambrose",Tarih,"Currahee'de aynı yol",SON55,0,strong
+1864,286,"Band of Brothers","Stephen E. Ambrose",Tarih,"Kaufering'de kayıt tutmak",SON55,1,weak
+1865,287,"The Warmth of Other Suns","Isabel Wilkerson",Tarih,"Garland Caddesi'ndeki ev",SON55,1,strong
+1866,287,"The Warmth of Other Suns","Isabel Wilkerson",Tarih,"Postacının rehberi",SON55,0,strong
+1867,287,"The Warmth of Other Suns","Isabel Wilkerson",Tarih,"Büyük Kuzey Seferi",SON55,0,strong
+1868,287,"The Warmth of Other Suns","Isabel Wilkerson",Tarih,"29. Cadde plajı",SON55,1,strong
+1869,287,"The Warmth of Other Suns","Isabel Wilkerson",Tarih,"Altı milyon karar",SON55,0,strong
+1870,288,"The Big Short","Michael Lewis",Finans,"Kaybetmeyi yazan doktor",SON55,0,strong
+1871,288,"The Big Short","Michael Lewis",Finans,"Seksen katı getiren küçük ofis",SON55,0,strong
+1872,288,"The Big Short","Michael Lewis",Finans,"Bahisten önce yemek",SON55,0,strong
+1873,288,"The Big Short","Michael Lewis",Finans,"En az elli fon",SON55,0,strong
+1874,288,"The Big Short","Michael Lewis",Finans,"Haklı çıkan, kaybeden trader",SON55,0,weak
+1875,289,"Smarter Faster Better","Charles Duhigg",Verimlilik,"Stall'ı kimse teşhis edemedi",SON55,1,strong
+1876,289,"Smarter Faster Better","Charles Duhigg",Verimlilik,"Aynı işçiler, başka düzen",SON55,0,strong
+1877,289,"Smarter Faster Better","Charles Duhigg",Verimlilik,"Uzayan arıza zinciri",SON55,0,strong
+1878,289,"Smarter Faster Better","Charles Duhigg",Verimlilik,"Elsa kız kardeş olunca",SON55,0,strong
+1879,290,"Make Time","Jake Knapp, John Zeratsky",Verimlilik,"300 eski makinedeki Gmail",SON55,0,strong
+1880,290,"Make Time","Jake Knapp, John Zeratsky",Verimlilik,"Oyun kumandalı otel robotu",SON55,0,strong
+1881,290,"Make Time","Jake Knapp, John Zeratsky",Verimlilik,"Telefondan silinen uygulamalar",SON55,0,strong
+1882,291,"Think Again","Adam Grant","Kişisel Gelişim","Kendi yangınını çıkaran adam",SON55,1,strong
+1883,291,"Think Again","Adam Grant","Kişisel Gelişim","Koşu bandındaki uyarı",SON55,0,strong
+1884,291,"Think Again","Adam Grant","Kişisel Gelişim","Radyo dizisi ve normlar",SON55,0,strong
+1885,291,"Think Again","Adam Grant","Kişisel Gelişim","Gece yarısı telekonferansı",SON55,0,strong
+1886,291,"Think Again","Adam Grant","Kişisel Gelişim","Yirmi yedi kaçan üçlük",SON55,0,strong
+1887,292,"The Selfish Gene","Richard Dawkins",Bilim,"Kopyalayan program kazandı",SON55,0,strong
+1888,292,"The Selfish Gene","Richard Dawkins",Bilim,"Kanı paylaşan yarasalar",SON55,0,strong
+1889,292,"The Selfish Gene","Richard Dawkins",Bilim,"Kararlı ama en iyi değil",SON55,0,strong
+1890,292,"The Selfish Gene","Richard Dawkins",Bilim,"Aynı yuvadaki iki arı",SON55,0,strong
+1891,292,"The Selfish Gene","Richard Dawkins",Bilim,"Pahalı kuyruk",SON55,0,strong
+1892,293,"The Body: A Guide for Occupants","Bill Bryson","Sağlık","Kolundan kalbe",SON55,0,strong
+1893,293,"The Body: A Guide for Occupants","Bill Bryson","Sağlık","Bardaktaki bakteri",SON55,0,strong
+1894,293,"The Body: A Guide for Occupants","Bill Bryson","Sağlık","Midedeki pencere",SON55,0,strong
+1895,293,"The Body: A Guide for Occupants","Bill Bryson","Sağlık","Onbir gün uykusuz",SON55,0,strong
+1896,293,"The Body: A Guide for Occupants","Bill Bryson","Sağlık","Newgate'teki altı mahkûm",SON55,0,strong
+1897,294,"How to Know a Person","David Brooks","İlişkiler","Trendeki yabancılar",SON55,0,strong
+1898,294,"How to Know a Person","David Brooks","İlişkiler","Nyquist'in kahvaltı masası",SON55,0,weak
+1899,294,"How to Know a Person","David Brooks","İlişkiler","Kurye ve eski rahibe",SON55,0,strong
+1900,294,"How to Know a Person","David Brooks","İlişkiler","Yedi millik yol",SON55,0,strong
+1901,294,"How to Know a Person","David Brooks","İlişkiler","Sertlikten sıcaklığa",SON55,0,strong
+1902,295,"The 5 Love Languages","Gary Chapman","İlişkiler","On iki yıllık not defteri",SON55,0,strong
+1903,295,"The 5 Love Languages","Gary Chapman","İlişkiler","Yirmi yıldır konuşmadık",SON55,0,weak
+1904,295,"The 5 Love Languages","Gary Chapman","İlişkiler","Açık kalan çekmeceler",SON55,0,weak
+1905,295,"The 5 Love Languages","Gary Chapman","İlişkiler","On çalışmanın incelemesi",SON55,0,strong
+1906,295,"The 5 Love Languages","Gary Chapman","İlişkiler","8.500 kopyayla başlayan kitap",SON55,0,weak
+1907,296,Storyworthy,"Matthew Dicks","İletişim","Bozuk lastik, hayır kutusu",SON55,0,strong
+1908,296,Storyworthy,"Matthew Dicks","İletişim","Kaza değil, bekleme odası",SON55,1,weak
+1909,297,"What Happened to You?","Bruce D. Perry, Oprah Winfrey",Psikoloji,"Bir soru daha",SON55,1,strong
+1910,297,"What Happened to You?","Bruce D. Perry, Oprah Winfrey",Psikoloji,"Bükreş'te bir çekiliş",SON55,0,strong
+1911,297,"What Happened to You?","Bruce D. Perry, Oprah Winfrey",Psikoloji,"Vaiz denen küçük kız",SON55,0,strong
+1912,297,"What Happened to You?","Bruce D. Perry, Oprah Winfrey",Psikoloji,"Önce düzenle, sonra konuş",SON55,0,strong
+1913,298,"The Daily Stoic","Ryan Holiday, Stephen Hanselman",Felsefe,"Sarayı satan imparator",SON55,0,strong
+1914,298,"The Daily Stoic","Ryan Holiday, Stephen Hanselman",Felsefe,"Okunmadan yakılan mektuplar",SON55,0,strong
+1915,298,"The Daily Stoic","Ryan Holiday, Stephen Hanselman",Felsefe,"Hücrede kalan son karar",SON55,1,strong
+1916,298,"The Daily Stoic","Ryan Holiday, Stephen Hanselman",Felsefe,"Son akşam yemeği",SON55,1,strong
+1917,298,"The Daily Stoic","Ryan Holiday, Stephen Hanselman",Felsefe,"Son gecede gemiler",SON55,1,strong
+1918,299,"The Art of Happiness","Dalai Lama, Howard C. Cutler",Mutluluk,"Beyrut'ta 2.454 gün",SON55,0,strong
+1919,299,"The Art of Happiness","Dalai Lama, Howard C. Cutler",Mutluluk,"Paltonun astarındaki kitap",SON55,1,strong
+1920,299,"The Art of Happiness","Dalai Lama, Howard C. Cutler",Mutluluk,"Acısız yaralar",SON55,0,strong
+1921,299,"The Art of Happiness","Dalai Lama, Howard C. Cutler",Mutluluk,"Piyango ve felç",SON55,0,weak
+1922,299,"The Art of Happiness","Dalai Lama, Howard C. Cutler",Mutluluk,"Yüzde yetmiş sorusu",SON55,0,weak
+1923,300,"Liar's Poker","Michael Lewis",Finans,"Tarrytown'da bir hafta sonu",SON55,0,strong
+1924,300,"Liar's Poker","Michael Lewis",Finans,"Kapının ardındaki piyasa",SON55,0,weak
+1925,300,"Liar's Poker","Michael Lewis",Finans,"Kapıyı seçtiğiniz birine açmak",SON55,0,weak
+1926,300,"Liar's Poker","Michael Lewis",Finans,"Üç buçuk aylık sessizlik",SON55,0,weak
+1927,301,"Principles: Life and Work","Ray Dalio","Yönetim","1982: Gelmeyen çöküş",SON55,0,strong
+1928,301,"Principles: Life and Work","Ray Dalio","Yönetim","Fırtınadan önce yapılan ölçü aleti",SON55,0,weak
+1929,301,"Principles: Life and Work","Ray Dalio","Yönetim","İki odalı daireden bir şirket",SON55,0,strong
+1930,302,"When Breath Becomes Air","Paul Kalanithi","Sağlık","Kendi tomografisi",SON55,1,strong
+1931,302,"When Breath Becomes Air","Paul Kalanithi","Sağlık","Dondurma alalım",SON55,1,strong
+1932,302,"When Breath Becomes Air","Paul Kalanithi","Sağlık","Eğrinin neresindesiniz",SON55,1,weak
+1933,302,"When Breath Becomes Air","Paul Kalanithi","Sağlık","Edebiyattan tıbba",SON55,0,strong
+1934,302,"When Breath Becomes Air","Paul Kalanithi","Sağlık","Yine de bir çocuk",SON55,1,strong
+1935,303,"Turn the Ship Around!","L. David Marquet",Liderlik,"Var olmayan 2/3 kademe",SON55,0,strong
+1936,303,"Turn the Ship Around!","L. David Marquet",Liderlik,"Niyetim şu: gemiyi daldırmak",SON55,0,strong
+1937,303,"Turn the Ship Around!","L. David Marquet",Liderlik,"Her ziyaretçiye üç isim",SON55,0,weak
+1938,303,"Turn the Ship Around!","L. David Marquet",Liderlik,"Brifing yok, sertifikasyon var",SON55,0,weak
+1939,303,"Turn the Ship Around!","L. David Marquet",Liderlik,"Yedi imza",SON55,0,weak
+1940,304,"The Richest Man in Babylon","George S. Clason",Finans,"Haritacının kitapçıkları",SON55,0,weak
+1941,304,"The Richest Man in Babylon","George S. Clason",Finans,"Kil tabletlerdeki aile şirketi",SON55,0,weak
+1942,304,"The Richest Man in Babylon","George S. Clason",Finans,"Borç tabletini yıkamak",SON55,1,weak
+1943,304,"The Richest Man in Babylon","George S. Clason",Finans,"180 dolarlık üç hisse",SON55,0,strong
+1944,304,"The Richest Man in Babylon","George S. Clason",Finans,"Parkmetresiz yer arayan kapıcı",SON55,0,strong
+1945,305,"One Up On Wall Street","Peter Lynch with John Rothchild",Finans,"Plastik yumurtadaki külotlu çorap",SON55,0,strong
+1946,305,"One Up On Wall Street","Peter Lynch with John Rothchild",Finans,"Herkesin batacak dediği Chrysler",SON55,0,weak
+1947,305,"One Up On Wall Street","Peter Lynch with John Rothchild",Finans,"Golf çantasından Fidelity'ye",SON55,0,strong
+1948,305,"One Up On Wall Street","Peter Lynch with John Rothchild",Finans,"On katına çıkan yüz hisse",SON55,0,weak
+1949,306,"Difficult Conversations","Douglas Stone, Bruce Patton, Sheila Heen","İletişim","Aynı maç, iki farklı oyun",SON55,0,weak
+1950,306,"Difficult Conversations","Douglas Stone, Bruce Patton, Sheila Heen","İletişim","Soruyu soran daha bilgili sayıldı",SON55,0,weak
+1951,306,"Difficult Conversations","Douglas Stone, Bruce Patton, Sheila Heen","İletişim","İlk üç dakika",SON55,0,weak
+1952,306,"Difficult Conversations","Douglas Stone, Bruce Patton, Sheila Heen","İletişim","Bilge geri bildirim",SON55,0,weak
+1953,306,"Difficult Conversations","Douglas Stone, Bruce Patton, Sheila Heen","İletişim","Üçgenlerin niyeti",SON55,0,weak
+1954,307,"Talking to Strangers","Malcolm Gladwell","İletişim","Küba masasındaki casus",SON55,0,weak
+1955,307,"Talking to Strangers","Malcolm Gladwell","İletişim","Bir telefon yeterdi",SON55,0,strong
+1956,307,"Talking to Strangers","Malcolm Gladwell","İletişim","Chamberlain'ın izlenimi",SON55,0,weak
+1957,307,"Talking to Strangers","Malcolm Gladwell","İletişim","Devriyesiz mahalleler",SON55,0,strong
+1958,308,"Letters from a Stoic",Seneca,Felsefe,"Denize atlayan Seneca",SON55,0,strong
+1959,308,"Letters from a Stoic",Seneca,Felsefe,"Bir gecede yok olan Lyon",SON55,0,strong
+1960,308,"Letters from a Stoic",Seneca,Felsefe,"Napoli tünelindeki ürperti",SON55,0,strong
+1961,308,"Letters from a Stoic",Seneca,Felsefe,"Scipio'nun karanlık hamamı",SON55,0,strong
+1962,308,"Letters from a Stoic",Seneca,Felsefe,"Kapıdaki Felicio",SON55,0,strong
+1963,309,"How Not to Die","Michael Greger with Gene Stone","Sağlık","Kırk sekiz kalp hastası",SON55,0,strong
+1964,309,"How Not to Die","Michael Greger with Gene Stone","Sağlık","Bırakanlar ve sürdürenler",SON55,0,strong
+1965,309,"How Not to Die","Michael Greger with Gene Stone","Sağlık","Sayının etrafındaki aralık",SON55,0,strong
+1966,309,"How Not to Die","Michael Greger with Gene Stone","Sağlık","Tekerlekli sandalyedeki büyükanne",SON55,0,weak
+1967,309,"How Not to Die","Michael Greger with Gene Stone","Sağlık","Pritikin'in kalbi",SON55,0,weak
+1968,310,"Stiff: The Curious Lives of Human Cadavers","Mary Roach",Bilim,"Beden Çiftliği",SON55,1,strong
+1969,310,"Stiff: The Curious Lives of Human Cadavers","Mary Roach",Bilim,"Kızaktaki profesör",SON55,1,strong
+1970,310,"Stiff: The Curious Lives of Human Cadavers","Mary Roach",Bilim,"Altı hastada bir",SON55,1,strong
+1971,310,"Stiff: The Curious Lives of Human Cadavers","Mary Roach",Bilim,"Çivi ve ağırlık",SON55,1,weak
+1972,310,"Stiff: The Curious Lives of Human Cadavers","Mary Roach",Bilim,"Eksik halka",SON55,1,weak
+1973,311,"The Consolations of Philosophy","Alain de Botton",Felsefe,"Cezası bedava yemek",SON55,1,strong
+1974,311,"The Consolations of Philosophy","Alain de Botton",Felsefe,"Bir parça peynir, bir şölen",SON55,0,strong
+1975,311,"The Consolations of Philosophy","Alain de Botton",Felsefe,"Nehre açılan savaş",SON55,0,strong
+1976,311,"The Consolations of Philosophy","Alain de Botton",Felsefe,"Montaigne'in dostu ve sessiz korku",SON55,1,strong
+1977,311,"The Consolations of Philosophy","Alain de Botton",Felsefe,"Lüzern'den Zerdüşt'e",SON55,0,weak
+1978,312,Misbehaving,"Richard H. Thaler",Finans,"Kaju kasesi",SON55,0,strong
+1979,312,Misbehaving,"Richard H. Thaler",Finans,"Kupa pazarı",SON55,0,strong
+1980,312,Misbehaving,"Richard H. Thaler",Finans,"Kar küreği anketi",SON55,0,strong
+1981,312,Misbehaving,"Richard H. Thaler",Finans,Liste,SON55,0,strong
+1982,312,Misbehaving,"Richard H. Thaler",Finans,"Bavullar ve geçmiş",SON55,0,weak
+1983,313,"Against the Gods","Peter L. Bernstein",Finans,"Yarım kalan oyunun payı",SON55,0,strong
+1984,313,"Against the Gods","Peter L. Bernstein",Finans,"Ölüm cetvellerini sayan tuhafiyeci",SON55,1,weak
+1985,313,"Against the Gods","Peter L. Bernstein",Finans,"Bir kumarın gerçek değeri",SON55,0,weak
+1986,313,"Against the Gods","Peter L. Bernstein",Finans,"Ortalamaya dönen boylar",SON55,0,strong
+1987,313,"Against the Gods","Peter L. Bernstein",Finans,"Kütüphanedeki öğleden sonra",SON55,0,weak
+1988,314,"Made in America","Sam Walton with John Huey",Liderlik,"Yenilenmeyen kira",SON55,0,strong
+1989,314,"Made in America","Sam Walton with John Huey",Liderlik,"Self-servis dükkân",SON55,0,weak
+1990,314,"Made in America","Sam Walton with John Huey",Liderlik,"Alçaktan uçan Walton",SON55,0,weak
+1991,314,"Made in America","Sam Walton with John Huey",Liderlik,"Şehirleri devlere bırakan adam",SON55,0,weak
+1992,314,"Made in America","Sam Walton with John Huey",Liderlik,"Wall Street'te hula",SON55,0,weak
+1993,315,Supercommunicators,"Charles Duhigg","İletişim","Yılanların bakışıyla",SON55,0,strong
+1994,315,Supercommunicators,"Charles Duhigg","İletişim","Yasmin'le akşam yemeği",SON55,0,strong
+1995,315,Supercommunicators,"Charles Duhigg","İletişim","Kâğıtlar yere düşünce",SON55,0,strong
+1996,315,Supercommunicators,"Charles Duhigg","İletişim","Ameliyat isteyen hastalar",SON55,0,weak
+1997,315,Supercommunicators,"Charles Duhigg","İletişim","Öğle yemeği öneren eş",SON55,0,strong
+1998,316,"Thanks for the Feedback","Douglas Stone and Sheila Heen","İletişim","Piyango ve sabah kahvesi",SON55,0,weak
+1999,316,"Thanks for the Feedback","Douglas Stone and Sheila Heen","İletişim","Tabanınızı tanıyın",SON55,0,weak
+2000,316,"Thanks for the Feedback","Douglas Stone and Sheila Heen","İletişim","Yorumu görevden size çekmeyin",SON55,0,weak
+2001,316,"Thanks for the Feedback","Douglas Stone and Sheila Heen","İletişim","Acemiye övgü, uzmana eleştiri",SON55,0,weak
+2002,317,"The Antidote","Oliver Burkeman","Büyüme","Beyaz ayıyı düşünmeyin",SON55,0,strong
+2003,317,"The Antidote","Oliver Burkeman","Büyüme","Saat ikide dönün",SON55,1,strong
+2004,317,"The Antidote","Oliver Burkeman","Büyüme","Güzel hayalin bedeli",SON55,0,weak
+2005,317,"The Antidote","Oliver Burkeman","Büyüme","Bahçedeki yüz kadın",SON55,0,weak
+2006,317,"The Antidote","Oliver Burkeman","Büyüme","Ölülerin sofrası",SON55,0,weak
+2007,318,Exercised,"Daniel E. Lieberman","Sağlık","Şoför ve biletçi",SON55,0,weak
+2008,318,Exercised,"Daniel E. Lieberman","Sağlık","Harvard mezunları ve eğri",SON55,0,weak
+2009,318,Exercised,"Daniel E. Lieberman","Sağlık","Hadza'nın iki rakamı",SON55,0,weak
+2010,318,Exercised,"Daniel E. Lieberman","Sağlık","Aynı enerji, daha çok yürüyüş",SON55,0,weak
+2011,318,Exercised,"Daniel E. Lieberman","Sağlık","Ayakkabısız çocuklar",SON55,0,weak
+2012,319,"The Omnivore's Dilemma","Michael Pollan","Sağlık","534 numaralı dananın 27 doları",SON55,0,strong
+2013,319,"The Omnivore's Dilemma","Michael Pollan","Sağlık","Önce inekler, sonra tavuklar",SON55,0,strong
+2014,319,"The Omnivore's Dilemma","Michael Pollan","Sağlık","Arabada yenen mısır",SON55,0,strong
+2015,319,"The Omnivore's Dilemma","Michael Pollan","Sağlık","Havadan gelen azot",SON55,0,weak
+2016,319,"The Omnivore's Dilemma","Michael Pollan","Sağlık","Dördüncü yemek",SON55,0,weak
+2017,320,"The Sixth Extinction","Elizabeth Kolbert",Bilim,"İlk pozitif sürüntü",SON55,0,strong
+2018,320,"The Sixth Extinction","Elizabeth Kolbert",Bilim,"Cuvier'nin çene kemikleri",SON55,0,weak
+2019,320,"The Sixth Extinction","Elizabeth Kolbert",Bilim,"Brüksel'deki kuşun derisi",SON55,0,strong
+2020,320,"The Sixth Extinction","Elizabeth Kolbert",Bilim,"Yarım inçlik kil",SON55,0,strong
+2021,320,"The Sixth Extinction","Elizabeth Kolbert",Bilim,"Köpüren denizde kim kaldı",SON55,0,strong
+2022,321,"The Psychopath Test","Jon Ronson",Psikoloji,"Delilik taklidi yapan Tony",SON55,0,strong
+2023,321,"The Psychopath Test","Jon Ronson",Psikoloji,"Sağlıklı sekiz kişi, on iki hastane",SON55,0,weak
+2024,321,"The Psychopath Test","Jon Ronson",Psikoloji,"Yirmi maddelik liste",SON55,0,strong
+2025,321,"The Psychopath Test","Jon Ronson",Psikoloji,"Chainsaw Al ve kontrol listesi",SON55,0,strong
+2026,321,"The Psychopath Test","Jon Ronson",Psikoloji,"Oak Ridge'te LSD ve kapsül",SON55,1,strong
+2027,322,"Barbarians at the Gate","Bryan Burrough and John Helyar",Finans,"İçerideki yağmacı",SON55,0,strong
+2028,322,"Barbarians at the Gate","Bryan Burrough and John Helyar",Finans,"Dumansız sigara",SON55,0,strong
+2029,322,"Barbarians at the Gate","Bryan Burrough and John Helyar",Finans,"Daha kesin teklif",SON55,0,weak
+2030,322,"Barbarians at the Gate","Bryan Burrough and John Helyar",Finans,"Hangardaki uçaklar",SON55,0,weak
+2031,322,"Barbarians at the Gate","Bryan Burrough and John Helyar",Finans,"Aynı kâğıt, ağır borç",SON55,0,weak
+2032,323,"When Genius Failed","Roger Lowenstein",Finans,"Ağustosun 1,8 milyar doları",SON55,0,strong
+2033,323,"When Genius Failed","Roger Lowenstein",Finans,"Fed'in odasında on dört firma",SON55,0,strong
+2034,323,"When Genius Failed","Roger Lowenstein",Finans,"Nobel ödüllü ekip",SON55,0,strong
+2035,323,"When Genius Failed","Roger Lowenstein",Finans,"Sermayeyi geri vermek",SON55,0,strong
+2036,323,"When Genius Failed","Roger Lowenstein",Finans,"Salomon'dan ayrılış",SON55,0,weak
+2037,324,"Dead Wake","Erik Larson",Tarih,"Kıyıya dönen kaptan",SON55,0,strong
+2038,324,"Dead Wake","Erik Larson",Tarih,"Periskopun dışında kalanlar",SON55,1,strong
+2039,324,"Dead Wake","Erik Larson",Tarih,"Yatık güvertede can botları",SON55,1,strong
+2040,324,"Dead Wake","Erik Larson",Tarih,"Adını anmadığı gemi",SON55,0,strong
+2041,324,"Dead Wake","Erik Larson",Tarih,"Oda 40 ve sırrın bedeli",SON55,0,weak
+2042,325,"Destiny of the Republic","Candice Millard",Tarih,"Konuşmayı başkası için yapan aday",SON55,0,weak
+2043,325,"Destiny of the Republic","Candice Millard",Tarih,"Bell'in dedektörü ve yanlış yön",SON55,1,strong
+2044,325,"Destiny of the Republic","Candice Millard",Tarih,"On iki doktor, sterilize edilmemiş eller",SON55,1,strong
+2045,325,"Destiny of the Republic","Candice Millard",Tarih,"Yeni isim yapıştırılmış konuşma",SON55,1,strong
+2046,325,"Destiny of the Republic","Candice Millard",Tarih,"Bir gecede yarım mil ray",SON55,1,weak
+2047,326,"Team of Teams","Stanley McChrystal",Liderlik,"Schmidt ve kronometre",SON55,0,strong
+2048,326,"Team of Teams","Stanley McChrystal",Liderlik,"Taylor'ın rakibi: Gilbreth'in iskelesi",SON55,0,weak
+2049,326,"Team of Teams","Stanley McChrystal",Liderlik,"Süper takımlar, süper askerler değil",SON55,0,strong
+2050,326,"Team of Teams","Stanley McChrystal",Liderlik,"Zerkavi'ye giden yol",SON55,1,weak
+2051,326,"Team of Teams","Stanley McChrystal",Liderlik,"Acıtana kadar paylaş",SON55,0,weak
+2052,327,"Thinking in Bets","Annie Duke",Verimlilik,"Bir yardın hesabı",SON55,0,strong
+2053,327,"Thinking in Bets","Annie Duke",Verimlilik,"Sonuca bakıp yargılamak",SON55,0,strong
+2054,327,"Thinking in Bets","Annie Duke",Verimlilik,"Okuduğuna inanan beyin",SON55,0,weak
+2055,328,"Salt Sugar Fat","Michael Moss","Sağlık","114 slayt",SON55,0,weak
+2056,328,"Salt Sugar Fat","Michael Moss","Sağlık","61 tatlılık düzeyi",SON55,0,weak
+2057,328,"Salt Sugar Fat","Michael Moss","Sağlık","Öğle yemeği tamamen senin",SON55,0,weak
+2058,328,"Salt Sugar Fat","Michael Moss","Sağlık","Ağır kullanıcılar",SON55,0,strong
+2059,328,"Salt Sugar Fat","Michael Moss","Sağlık","Tuzsuz waffle",SON55,0,weak
+2060,329,"Bad Science","Ben Goldacre",Bilim,"Ölü kedinin sertifikası",SON55,0,strong
+2061,329,"Bad Science","Ben Goldacre",Bilim,"On iki çocuk, büyük bir korku",SON55,0,strong
+2062,329,"Bad Science","Ben Goldacre",Bilim,"Eksik bölüm",SON55,1,strong
+2063,329,"Bad Science","Ben Goldacre",Bilim,"Moladaki sahte bilim",SON55,0,strong
+2064,329,"Bad Science","Ben Goldacre",Bilim,"Yetmiş üç milyonda bir",SON55,1,strong
+2065,330,Nudge,"Richard H. Thaler and Cass R. Sunstein",Psikoloji,"Zam gelince tasarruf",SON55,0,strong
+2066,330,Nudge,"Richard H. Thaler and Cass R. Sunstein",Psikoloji,"Varsayılan yüzde üç",SON55,0,strong
+2067,330,Nudge,"Richard H. Thaler and Cass R. Sunstein",Psikoloji,"Bağış kartının varsayılanı",SON55,0,strong
+2068,330,Nudge,"Richard H. Thaler and Cass R. Sunstein",Psikoloji,"Pisuvardaki sinek",SON55,0,weak
+2069,331,Peak,"K. Anders Ericsson and Robert Pool",Verimlilik,"Koşu süreleri olarak rakamlar",SON55,0,strong
+2070,331,Peak,"K. Anders Ericsson and Robert Pool",Verimlilik,"Berlin'deki kemancılar ve on bin saat",SON55,0,strong
+2071,331,Peak,"K. Anders Ericsson and Robert Pool",Verimlilik,"Taksicilerin hipokampüsü",SON55,0,strong
+2072,331,Peak,"K. Anders Ericsson and Robert Pool",Verimlilik,"Franklin ve Spectator",SON55,0,strong
+2073,331,Peak,"K. Anders Ericsson and Robert Pool",Verimlilik,"Mutlak kulağı öğrenen çocuklar",SON55,0,weak
+2074,332,"Flash Boys","Michael Lewis",Finans,"Düz çizilmiş kablo",SON55,0,weak
+2075,332,"Flash Boys","Michael Lewis",Finans,"Birlikte varan emirler",SON55,0,strong
+2076,332,"Flash Boys","Michael Lewis",Finans,"Derhal kaç mikrosaniye?",SON55,0,strong
+2077,332,"Flash Boys","Michael Lewis",Finans,"Bir yükleme, çok mahkeme",SON55,0,strong
+2078,332,"Flash Boys","Michael Lewis",Finans,"Broşürdeki söz",SON55,0,weak
+2079,333,"Too Big to Fail","Andrew Ross Sorkin",Finans,"İki dolarlık pazar gecesi",SON55,0,strong
+2080,333,"Too Big to Fail","Andrew Ross Sorkin",Finans,"Pazar günü yapılamayan oylama",SON55,0,weak
+2081,333,"Too Big to Fail","Andrew Ross Sorkin",Finans,"Notun düştüğü gün",SON55,0,weak
+2082,333,"Too Big to Fail","Andrew Ross Sorkin",Finans,"Banka olmayı seçen iki yatırım bankası",SON55,0,weak
+2083,333,"Too Big to Fail","Andrew Ross Sorkin",Finans,"Kaybedilen 700 milyar dolarlık oylama",SON55,0,strong
+2084,334,"The Man Who Solved the Market","Gregory Zuckerman",Finans,"Taylor'a mektup",SON55,0,strong
+2085,334,"The Man Who Solved the Market","Gregory Zuckerman",Finans,"Kullanımı olmayan makale",SON55,0,weak
+2086,334,"The Man Who Solved the Market","Gregory Zuckerman",Finans,"Altı katına satmak",SON55,0,strong
+2087,334,"The Man Who Solved the Market","Gregory Zuckerman",Finans,"Ortalama ile bileşik",SON55,0,weak
+2088,334,"The Man Who Solved the Market","Gregory Zuckerman",Finans,"Çöpe giden mektup",SON55,0,strong
+2089,335,"Algorithms to Live By","Brian Christian and Tom Griffiths",Verimlilik,"Kepler'in on bir adayı",SON55,0,weak
+2090,335,"Algorithms to Live By","Brian Christian and Tom Griffiths",Verimlilik,"Mars'ı kilitleyen düşük öncelikli iş",SON55,0,weak
+2091,335,"Algorithms to Live By","Brian Christian and Tom Griffiths",Verimlilik,"Saniyede 32 binden 40 bite",SON55,0,weak
+2092,335,"Algorithms to Live By","Brian Christian and Tom Griffiths",Verimlilik,"Pasyansı saymak",SON55,0,weak
+2093,335,"Algorithms to Live By","Brian Christian and Tom Griffiths",Verimlilik,"Geleceği gören önbellek",SON55,0,weak
+2094,336,"Trillion Dollar Coach","Eric Schmidt, Jonathan Rosenberg and Alan Eagle",Liderlik,"Kaybeden antrenör",SON55,0,strong
+2095,336,"Trillion Dollar Coach","Eric Schmidt, Jonathan Rosenberg and Alan Eagle",Liderlik,"Kapanan şirketin onuru",SON55,0,weak
+2096,336,"Trillion Dollar Coach","Eric Schmidt, Jonathan Rosenberg and Alan Eagle",Liderlik,"Duyurunun düştüğü gün",SON55,0,weak
+2097,336,"Trillion Dollar Coach","Eric Schmidt, Jonathan Rosenberg and Alan Eagle",Liderlik,"Havuz başındaki teklif",SON55,0,strong
+2098,336,"Trillion Dollar Coach","Eric Schmidt, Jonathan Rosenberg and Alan Eagle",Liderlik,"Yardıma ihtiyacım yok",SON55,0,strong
+2099,337,"In the Heart of the Sea","Nathaniel Philbrick",Tarih,"On dakika",SON55,0,strong
+2100,337,"In the Heart of the Sea","Nathaniel Philbrick",Tarih,"Korkunun seçtiği rota",SON55,1,strong
+2101,337,"In the Heart of the Sea","Nathaniel Philbrick",Tarih,"Adada kalan üç adam",SON55,0,strong
+2102,337,"In the Heart of the Sea","Nathaniel Philbrick",Tarih,"Şanssız denen kaptan",SON55,0,strong
+2103,337,"In the Heart of the Sea","Nathaniel Philbrick",Tarih,"Melville'in yeminli ifadesi",SON55,0,strong
+2104,338,"The Guns of August","Barbara W. Tuchman",Tarih,"Dokuz kralın son cenazesi",SON55,0,strong
+2105,338,"The Guns of August","Barbara W. Tuchman",Tarih,"Willy ve Nicky'nin telgrafları",SON55,0,weak
+2106,338,"The Guns of August","Barbara W. Tuchman",Tarih,"Moltke ve imparatorun gecesi",SON55,0,strong
+2107,338,"The Guns of August","Barbara W. Tuchman",Tarih,"Goeben'i kaçıran tek kelime",SON55,0,strong
+2108,338,"The Guns of August","Barbara W. Tuchman",Tarih,"Marne'ın taksileri",SON55,0,weak
+2109,339,"Genghis Khan and the Making of the Modern World","Jack Weatherford",Tarih,"Bir aşık kemiği, bir ömür",SON55,0,strong
+2110,339,"Genghis Khan and the Making of the Modern World","Jack Weatherford",Tarih,"Esirin mührü",SON55,0,weak
+2111,339,"Genghis Khan and the Making of the Modern World","Jack Weatherford",Tarih,"Üç milde bir çıngırak",SON55,0,strong
+2112,339,"Genghis Khan and the Making of the Modern World","Jack Weatherford",Tarih,"Ölümsüzlük iksiri yok",SON55,0,weak
+2113,339,"Genghis Khan and the Making of the Modern World","Jack Weatherford",Tarih,"Yüksek bir mezar",SON55,1,weak
+2114,340,Humankind,"Rutger Bregman",Tarih,"Altı çocuk, bir ada",SON55,0,strong
+2115,340,Humankind,"Rutger Bregman",Tarih,"Siperler arasında bir şarkı",SON55,0,strong
+2116,340,Humankind,"Rutger Bregman",Tarih,"Kazananlara söylenen kelime",SON55,0,weak
+2117,340,Humankind,"Rutger Bregman",Tarih,"Boş yataklar",SON55,1,strong
+2118,341,"Everything Is Tuberculosis","John Green",Tarih,"Dokuz sandığı çocuk",SON55,1,strong
+2119,341,"Everything Is Tuberculosis","John Green",Tarih,"İki sayfalık konuşma",SON55,0,weak
+2120,341,"Everything Is Tuberculosis","John Green",Tarih,"Kaşıktaki aşı",SON55,1,weak
+2121,341,"Everything Is Tuberculosis","John Green",Tarih,"Ödülde olmayan isim",SON55,0,weak
+2122,341,"Everything Is Tuberculosis","John Green",Tarih,"Aynı sayfadaki iki cümle",SON55,1,strong
+2123,342,"I Contain Multitudes","Ed Yong",Bilim,"Her şafakta boşaltılan koloni",SON55,0,strong
+2124,342,"I Contain Multitudes","Ed Yong",Bilim,"Denizden ödünç alınan gen",SON55,0,weak
+2125,342,"I Contain Multitudes","Ed Yong",Bilim,"Şansla seçilen on iki bölge",SON55,0,strong
+2126,342,"I Contain Multitudes","Ed Yong",Bilim,"Bitin bakterisindeki eksik harf",SON55,0,weak
+2127,342,"I Contain Multitudes","Ed Yong",Bilim,"Mikropsuz yaşayan melezler",SON55,0,weak
+2128,343,"How to Change Your Mind","Michael Pollan","Sağlık","Bisikletle eve dönüş",SON55,1,strong
+2129,343,"How to Change Your Mind","Michael Pollan","Sağlık","Şapelin bodrum katı",SON55,1,strong
+2130,343,"How to Change Your Mind","Michael Pollan","Sağlık","Tasarımı gizleyen altı gönüllü",SON55,1,strong
+2131,343,"How to Change Your Mind","Michael Pollan","Sağlık","Bir makalenin bedeli",SON55,0,weak
+2132,343,"How to Change Your Mind","Michael Pollan","Sağlık","Kovulma mı, izin mi?",SON55,0,strong
+2133,344,"Dopamine Nation","Anna Lembke","Sağlık","Bir sevinç nöbeti",SON55,0,strong
+2134,344,"Dopamine Nation","Anna Lembke","Sağlık","Bir ay ekransız",SON55,1,weak
+2135,344,"Dopamine Nation","Anna Lembke","Sağlık","Terazideki gremlin'ler",SON55,0,weak
+2136,345,"Stumbling on Happiness","Daniel Gilbert",Psikoloji,"Geri alınabilir seçim",SON55,0,weak
+2137,345,"Stumbling on Happiness","Daniel Gilbert",Psikoloji,"Kadro reddinden sonraki yıllar",SON55,0,weak
+2138,345,"Stumbling on Happiness","Daniel Gilbert",Psikoloji,"Kaliforniya mutlu eder mi?",SON55,0,weak
+2139,345,"Stumbling on Happiness","Daniel Gilbert",Psikoloji,"Kurada kötü çıkan ev",SON55,0,weak
+2140,345,"Stumbling on Happiness","Daniel Gilbert",Psikoloji,"Aç karnına liste",SON55,0,weak
+2141,346,Willpower,"Roy F. Baumeister and John Tierney",Psikoloji,"Turp ve kurabiye",SON55,0,weak
+2142,346,Willpower,"Roy F. Baumeister and John Tierney",Psikoloji,"Moladan önce ve sonra",SON55,0,weak
+2143,346,Willpower,"Roy F. Baumeister and John Tierney",Psikoloji,"Cihaz çaldığında",SON55,0,strong
+2144,346,Willpower,"Roy F. Baumeister and John Tierney",Psikoloji,"Dunedin çocukları",SON55,0,strong
+2145,347,"You Are Not So Smart","David McRaney",Psikoloji,"Limon suyu ve görünmezlik",SON55,0,weak
+2146,347,"You Are Not So Smart","David McRaney",Psikoloji,"Tufan gelmeyince",SON55,0,weak
+2147,347,"You Are Not So Smart","David McRaney",Psikoloji,"Tanık sayısı",SON55,1,strong
+2148,347,"You Are Not So Smart","David McRaney",Psikoloji,"Alışveriş merkezinde kaybolmak",SON55,0,weak
+2149,347,"You Are Not So Smart","David McRaney",Psikoloji,"Herkese uyan on üç cümle",SON55,0,weak
+2150,348,Mastery,"Robert Greene","Büyüme","Davy'ye giden cilt",SON55,0,weak
+2151,348,Mastery,"Robert Greene","Büyüme","Babanın itirazları",SON55,0,strong
+2152,348,Mastery,"Robert Greene","Büyüme","İneğin gözüyle",SON55,0,weak
+2153,348,Mastery,"Robert Greene","Büyüme","Nannerl'in defteri",SON55,0,weak
+2154,349,"Fooled by Randomness","Nassim Nicholas Taleb",Finans,"Hayatta kalan fonlar",SON55,0,weak
+2155,349,"Fooled by Randomness","Nassim Nicholas Taleb",Finans,"Daktilo başındaki makaklar",SON55,0,weak
+2156,349,"Fooled by Randomness","Nassim Nicholas Taleb",Finans,"Daktilo düzeninin hikâyesi",SON55,0,weak
+2157,349,"Fooled by Randomness","Nassim Nicholas Taleb",Finans,"Yanılmayı planlayan tüccar",SON55,0,weak
+2158,349,"Fooled by Randomness","Nassim Nicholas Taleb",Finans,"Zaten bildiğini sanmak",SON55,0,weak
+2159,350,Multipliers,"Liz Wiseman and Greg McKeown",Liderlik,"Aynı adam, iki oda",SON55,0,weak
+2160,350,Multipliers,"Liz Wiseman and Greg McKeown",Liderlik,"Yüzde 48'e karşı yüzde 95",SON55,0,weak
+2161,350,Multipliers,"Liz Wiseman and Greg McKeown",Liderlik,"Eski Diminisher'ın koçluğu",SON55,0,weak
+2162,351,"Same as Ever","Morgan Housel",Finans,"Gizli defter",SON55,0,weak
+2163,351,"Same as Ever","Morgan Housel",Finans,"Köpek, kinin ve ışık",SON55,0,weak
+2164,351,"Same as Ever","Morgan Housel",Finans,"Sezgi gibi gelen fikir",SON55,0,weak
+2165,351,"Same as Ever","Morgan Housel",Finans,"Tek denklem",SON55,0,weak
+2166,352,"A Man for All Markets","Edward O. Thorp",Finans,"Birkaç dakikalık randevu",SON55,0,strong
+2167,352,"A Man for All Markets","Edward O. Thorp",Finans,"On bin dolarlık merdiven",SON55,0,weak
+2168,352,"A Man for All Markets","Edward O. Thorp",Finans,"Kulağındaki hoparlör",SON55,0,strong
+2169,352,"A Man for All Markets","Edward O. Thorp",Finans,"Formülü tahmin eden adam",SON55,0,weak
+2170,352,"A Man for All Markets","Edward O. Thorp",Finans,"Ya New York limanında bomba patlarsa?",SON55,0,weak
+2171,353,"Die with Zero","Bill Perkins",Finans,"Ölüm döşeğinin beş pişmanlığı",SON55,0,weak
+2172,353,"Die with Zero","Bill Perkins",Finans,"Yapmadıklarınızın saati",SON55,0,weak
+2173,354,"High Output Management","Andy Grove",Liderlik,"Üç dakikalık yumurta",SON55,0,weak
+2174,354,"High Output Management","Andy Grove",Liderlik,"Crush harekâtı: 2.000 hedef",SON55,0,weak
+2175,354,"High Output Management","Andy Grove",Liderlik,"Pinpon masasındaki OKR",SON55,0,weak
+2176,355,"Elon Musk","Walter Isaacson",Liderlik,"Üç kayıp, bir deneme daha",SON55,0,weak
+2177,355,"Elon Musk","Walter Isaacson",Liderlik,"Yörüngedeki ağırlık",SON55,0,weak
+2178,355,"Elon Musk","Walter Isaacson",Liderlik,"Köprü olarak 40 milyon dolar",SON55,0,weak
+2179,355,"Elon Musk","Walter Isaacson",Liderlik,"Söz verilen tarih, ölçülen hız",SON55,0,weak
+2180,355,"Elon Musk","Walter Isaacson",Liderlik,"Tek cümlelik neden",SON55,0,weak
+2181,356,"Slow Productivity","Cal Newport",Verimlilik,"Panjurdaki delik",SON55,0,weak
+2182,356,"Slow Productivity","Cal Newport",Verimlilik,"Onay aşaması da projedir",SON55,0,weak
+2183,356,"Slow Productivity","Cal Newport",Verimlilik,"Chawton'daki küçük masa",SON55,0,weak
+2184,356,"Slow Productivity","Cal Newport",Verimlilik,"Barakadaki dört yıl",SON55,0,weak
+2185,356,"Slow Productivity","Cal Newport",Verimlilik,"Boş kalan defter",SON55,0,weak
+2186,357,Ultralearning,"Scott H. Young",Verimlilik,"33 ders, kendi notu",SON55,0,strong
+2187,357,Ultralearning,"Scott H. Young",Verimlilik,"Kore'de sessiz bir ay",SON55,0,strong
+2188,357,Ultralearning,"Scott H. Young",Verimlilik,"Üst üste binen yüz",SON55,0,weak
+2189,357,Ultralearning,"Scott H. Young",Verimlilik,"Bildiğini işaretleyen oyuncu",SON55,0,weak
+2190,358,"Empire of the Summer Moon","S. C. Gwynne",Tarih,"Mavi gözlü kadın",SON55,1,strong
+2191,358,"Empire of the Summer Moon","S. C. Gwynne",Tarih,"Kurşun işlemeyecek vaadi",SON55,1,strong
+2192,358,"Empire of the Summer Moon","S. C. Gwynne",Tarih,"Walker ve altıpatlar",SON55,0,strong
+2193,358,"Empire of the Summer Moon","S. C. Gwynne",Tarih,"Aynı yoldan geçen general",SON55,1,weak
+2194,358,"Empire of the Summer Moon","S. C. Gwynne",Tarih,"Atanan şef",SON55,0,strong
+2195,359,Caste,"Isabel Wilkerson",Tarih,"Berlin'deki Amerikan dosyası",SON55,1,strong
+2196,359,Caste,"Isabel Wilkerson",Tarih,"Müdürün tanıtışı",SON55,0,strong
+2197,359,Caste,"Isabel Wilkerson",Tarih,"Mutfaktaki askerler",SON55,0,weak
+2198,359,Caste,"Isabel Wilkerson",Tarih,"Okyanus ötesi bir mektup",SON55,0,weak
+2199,360,"Silent Spring","Rachel Carson",Bilim,"Duxbury'den gelen mektup",SON55,0,weak
+2200,360,"Silent Spring","Rachel Carson",Bilim,"Kaybedilen dava",SON55,0,strong
+2201,360,"Silent Spring","Rachel Carson",Bilim,"Dava tehdidi, parodi, slogan",SON55,0,weak
+2202,360,"Silent Spring","Rachel Carson",Bilim,"Bir cümlelik yanıt",SON55,0,strong
+2203,360,"Silent Spring","Rachel Carson",Bilim,"Yürürlük tarihi olan yasak",SON55,0,weak
+2204,361,"The Double Helix","James D. Watson",Bilim,"Napoli'deki keskin noktalar",SON55,0,weak
+2205,361,"The Double Helix","James D. Watson",Bilim,"Cambridge'deki ilk model",SON55,0,strong
+2206,361,"The Double Helix","James D. Watson",Bilim,"Fotoğraf 51'in yolu",SON55,0,strong
+2207,361,"The Double Helix","James D. Watson",Bilim,"Bazlar ve kimyager Donohue",SON55,0,weak
+2208,361,"The Double Helix","James D. Watson",Bilim,"25 Nisan 1953: üç makale",SON55,0,strong
+2209,362,"The Honest Truth About Dishonesty","Dan Ariely",Psikoloji,"Sahte çıkan dürüstlük verisi",SON55,0,weak
+2210,362,"The Honest Truth About Dishonesty","Dan Ariely",Psikoloji,"On Emir'i hatırlamak",SON55,0,weak
+2211,363,Sway,"Ori Brafman and Rom Brafman",Psikoloji,"Sis, sessizlik ve kalkış",SON55,1,strong
+2212,363,Sway,"Ori Brafman and Rom Brafman",Psikoloji,"Bir dolar için bir dolardan fazlası",SON55,0,weak
+2213,363,Sway,"Ori Brafman and Rom Brafman",Psikoloji,"Metrodaki kemancı",SON55,0,strong
+2214,364,Spark,"John J. Ratey with Eric Hagerman","Sağlık","Sıfırıncı saat",SON55,0,strong
+2215,364,Spark,"John J. Ratey with Eric Hagerman","Sağlık","Doğum günü işareti",SON55,0,weak
+2216,364,Spark,"John J. Ratey with Eric Hagerman","Sağlık","Yirmi dakikalık yürüyüş",SON55,0,weak
+2217,364,Spark,"John J. Ratey with Eric Hagerman","Sağlık","Seçici fayda",SON55,0,weak
+2218,364,Spark,"John J. Ratey with Eric Hagerman","Sağlık","Koşu süresi ve karne",SON55,0,weak
+2219,365,"The Obesity Code","Jason Fung","Sağlık","Kilo düştü, kalp aynı kaldı",SON55,0,strong
+2220,365,"The Obesity Code","Jason Fung","Sağlık","Aynı soy, farklı vadi",SON55,0,strong
+2221,365,"The Obesity Code","Jason Fung","Sağlık","Yarı açlıktaki otuz altı adam",SON55,1,weak
+2222,365,"The Obesity Code","Jason Fung","Sağlık","Yağ azaldı, kalp krizi azalmadı",SON55,0,weak
+2223,365,"The Obesity Code","Jason Fung","Sağlık","382 günlük açlık raporu",SON55,1,weak
+2224,366,"How to Think Like a Roman Emperor","Donald J. Robertson",Felsefe,"Hocaya yazılan itiraf",SON55,0,strong
+2225,366,"How to Think Like a Roman Emperor","Donald J. Robertson",Felsefe,"Bir parça ekmek, bir bağ",SON55,0,strong
+2226,366,"How to Think Like a Roman Emperor","Donald J. Robertson",Felsefe,"Havanın ve aklın vebası",SON55,1,weak
+2227,366,"How to Think Like a Roman Emperor","Donald J. Robertson",Felsefe,"Gömülen baş",SON55,0,strong
+2228,366,"How to Think Like a Roman Emperor","Donald J. Robertson",Felsefe,"Sabah provası, Tuna kıyısı",SON55,0,weak
+2229,367,"Born a Crime","Trevor Noah","Büyüme","Işıkta açılan kapı",SON55,1,strong
+2230,367,"Born a Crime","Trevor Noah","Büyüme","Parkta iki kadın",SON55,0,strong
+2231,367,"Born a Crime","Trevor Noah","Büyüme","Svaziland'lı baba",SON55,0,strong
+2232,367,"Born a Crime","Trevor Noah","Büyüme","Çalılıktaki çocuk",SON55,0,weak
+2233,367,"Born a Crime","Trevor Noah","Büyüme","Dili kalkan yapan çocuk",SON55,0,weak
+2234,368,Originals,"Adam Grant","Büyüme","Grant'in kaçırdığı yatırım",SON55,0,strong
+2235,368,Originals,"Adam Grant","Büyüme","Kodak'ın erken kamerası",SON55,0,weak
+2236,368,Originals,"Adam Grant","Büyüme","Postadaki CD",SON55,0,weak
+2237,368,Originals,"Adam Grant","Büyüme","Metni bırakan konuşma",SON55,0,weak
+2238,368,Originals,"Adam Grant","Büyüme","Excite'ın reddettiği teklif",SON55,0,weak
+2239,369,"Hidden Potential","Adam Grant","Büyüme","Şakayı kendisi yazmak zorundaydı",SON55,0,strong
+2240,369,"Hidden Potential","Adam Grant","Büyüme","Öğrenme stili etiketi",SON55,0,strong
+2241,369,"Hidden Potential","Adam Grant","Büyüme","Önce tek başına, sonra birlikte",SON55,0,weak
+2242,370,"TED Talks","Chris Anderson","İletişim","Sahnedeki gerçek beyin",SON55,1,weak
+2243,370,"TED Talks","Chris Anderson","İletişim","Doktorun radyosu",SON55,0,weak
+2244,370,"TED Talks","Chris Anderson","İletişim","Geri çekilen güç duruşu",SON55,0,weak
+2245,370,"TED Talks","Chris Anderson","İletişim","Salonun dışına",SON55,0,weak
+2246,371,Freakonomics,"Steven D. Levitt and Stephen J. Dubner",Finans,"Ceza bir fiyata dönüşünce",SON55,0,strong
+2247,371,Freakonomics,"Steven D. Levitt and Stephen J. Dubner",Finans,"Cevap kâğıdındaki B'ler",SON55,0,strong
+2248,371,Freakonomics,"Steven D. Levitt and Stephen J. Dubner",Finans,"Bagelcinin para kutusu",SON55,0,strong
+2249,371,Freakonomics,"Steven D. Levitt and Stephen J. Dubner",Finans,"Sekizinci galibiyet",SON55,0,strong
+2250,371,Freakonomics,"Steven D. Levitt and Stephen J. Dubner",Finans,"Çete defterinin piramidi",SON55,0,weak
+2251,372,Moneyball,"Michael Lewis",Liderlik,"Giambi'nin gittiği kış",SON55,0,weak
+2252,372,Moneyball,"Michael Lewis",Liderlik,"Jeremy Brown ve 35. seçim",SON55,0,strong
+2253,372,Moneyball,"Michael Lewis",Liderlik,"Yetmiş beş kopya",SON55,0,weak
+2254,372,Moneyball,"Michael Lewis",Liderlik,"Birinci kaledeki yakalayıcı",SON55,0,strong
+2255,372,Moneyball,"Michael Lewis",Liderlik,"11-0'dan 12-11'e",SON55,0,weak
+2256,373,"The Smartest Guys in the Room","Bethany McLean and Peter Elkind",Finans,"Gelecekteki kârı bugün yazmak",SON55,0,weak
+2257,373,"The Smartest Guys in the Room","Bethany McLean and Peter Elkind",Finans,"Çözerseniz bana da haber verin",SON55,0,strong
+2258,373,"The Smartest Guys in the Room","Bethany McLean and Peter Elkind",Finans,"Notun sorusunu kim belirledi",SON55,0,weak
+2259,373,"The Smartest Guys in the Room","Bethany McLean and Peter Elkind",Finans,"Resmin yarısını gören şebeke",SON55,0,weak
+2260,373,"The Smartest Guys in the Room","Bethany McLean and Peter Elkind",Finans,"Bir saatlik toplantı",SON55,0,weak
+2261,374,Superforecasting,"Philip E. Tetlock and Dan Gardner",Psikoloji,"""Ciddi ihtimal"" ne demekti",SON55,0,strong
+2262,374,Superforecasting,"Philip E. Tetlock and Dan Gardner",Psikoloji,"Bir ev, dört rakam",SON55,0,strong
+2263,374,Superforecasting,"Philip E. Tetlock and Dan Gardner",Psikoloji,"Beş takımlı turnuva",SON55,0,strong
+2264,374,Superforecasting,"Philip E. Tetlock and Dan Gardner",Psikoloji,"Polonyum sorusu",SON55,0,weak
+2265,375,"The Signal and the Noise","Nate Silver",Bilim,"Anlamsız kale hamlesi",SON55,0,strong
+2266,375,"The Signal and the Noise","Nate Silver",Bilim,"49 fitlik sayı",SON55,0,weak
+2267,375,"The Signal and the Noise","Nate Silver",Bilim,"1976 domuz gribi alarmı",SON55,0,weak
+2268,375,"The Signal and the Noise","Nate Silver",Bilim,"Üç hane",SON55,0,weak
+2269,375,"The Signal and the Noise","Nate Silver",Bilim,"Üçlü A'nın sırrı",SON55,0,weak
+2270,376,"The Innovators","Walter Isaacson",Tarih,"Ada'nın notları",SON55,0,strong
+2271,376,"The Innovators","Walter Isaacson",Tarih,"Altyazıda olmayanlar",SON55,0,weak
+2272,376,"The Innovators","Walter Isaacson",Tarih,"Deftere bantlanan güve",SON55,0,weak
+2273,376,"The Innovators","Walter Isaacson",Tarih,"On iki çip yerine bir",SON55,0,weak
+2274,376,"The Innovators","Walter Isaacson",Tarih,"Konuşmadan göstermek",SON55,0,weak
+2275,377,"The Ghost Map","Steven Johnson",Tarih,"Pompanın kolu",SON55,1,strong
+2276,377,"The Ghost Map","Steven Johnson",Tarih,"Çürütmeye çıkan papaz",SON55,1,weak
+2277,377,"The Ghost Map","Steven Johnson",Tarih,"Aynı sokak, farklı boru",SON55,1,strong
+2278,377,"The Ghost Map","Steven Johnson",Tarih,"Büyük Pislik ve ödeme planı",SON55,0,strong
+2279,377,"The Ghost Map","Steven Johnson",Tarih,Hastalanmayanlar,SON55,1,strong
+2280,378,"Billion Dollar Whale","Tom Wright and Bradley Hope",Finans,"Bir jet, bir tablo, bir otel",SON55,0,strong
+2281,378,"Billion Dollar Whale","Tom Wright and Bradley Hope",Finans,"Kod adı Magnolia",SON55,0,strong
+2282,378,"Billion Dollar Whale","Tom Wright and Bradley Hope",Finans,"Okyanustaki yat",SON55,0,strong
+2283,378,"Billion Dollar Whale","Tom Wright and Bradley Hope",Finans,"Hayat sanatı taklit etti",SON55,0,strong
+2284,378,"Billion Dollar Whale","Tom Wright and Bradley Hope",Finans,"606 milyonun faturası",SON55,0,weak
+2285,379,"So Good They Can't Ignore You","Cal Newport",Verimlilik,"Jobs'un konuşması ve itiraz",SON55,0,strong
+2286,379,"So Good They Can't Ignore You","Cal Newport",Verimlilik,"Aynı masa, farklı anlam",SON55,0,weak
+2287,379,"So Good They Can't Ignore You","Cal Newport",Verimlilik,"Yüzde 61'den yüzde 45'e",SON55,0,weak
+2288,379,"So Good They Can't Ignore You","Cal Newport",Verimlilik,"Zevk ile iş arasındaki boşluk",SON55,0,weak
+2289,380,"The Master Switch","Tim Wu",Tarih,"Mektupla gelen taviz",SON55,0,weak
+2290,380,"The Master Switch","Tim Wu",Tarih,"Elin yasak olmayan hâli",SON55,0,weak
+2291,380,"The Master Switch","Tim Wu",Tarih,"Zarar kanıtı kimde",SON55,0,weak
+2292,380,"The Master Switch","Tim Wu",Tarih,"Listede olmayanın kamerası",SON55,0,weak
+2293,380,"The Master Switch","Tim Wu",Tarih,"Kulakla kanıtlanan fark",SON55,0,weak
+2294,381,"The Wisdom of Crowds","James Surowiecki",Psikoloji,"Öküzün ağırlığı",SON55,0,strong
+2295,381,"The Wisdom of Crowds","James Surowiecki",Psikoloji,"Seyirci mi, uzman mı",SON55,0,weak
+2296,381,"The Wisdom of Crowds","James Surowiecki",Psikoloji,"Kayıp denizaltının yeri",SON55,1,weak
+2297,381,"The Wisdom of Crowds","James Surowiecki",Psikoloji,"Jelibon kavanozu",SON55,0,weak
+2298,381,"The Wisdom of Crowds","James Surowiecki",Psikoloji,"Kapatılan tahmin piyasası",SON55,0,weak
+2299,382,"David and Goliath","Malcolm Gladwell","Büyüme","Baskıyı bilmeyen antrenör",SON55,0,strong
+2300,382,"David and Goliath","Malcolm Gladwell","Büyüme","Albany'de tutmayan yürüyüş",SON55,1,weak
+2301,382,"David and Goliath","Malcolm Gladwell","Büyüme","Dört okul, bir banka başkanlığı",SON55,0,weak
+2302,382,"David and Goliath","Malcolm Gladwell","Büyüme","Dört ilaç, ayrı bir deneme",SON55,1,weak
+2303,383,"Why Nations Fail","Daron Acemoglu and James A. Robinson",Tarih,"Çitin iki yanı",SON55,0,strong
+2304,383,"Why Nations Fail","Daron Acemoglu and James A. Robinson",Tarih,"Ortak ambar, boş kale",SON55,1,weak
+2305,383,"Why Nations Fail","Daron Acemoglu and James A. Robinson",Tarih,"Elmastan önce kurallar",SON55,0,weak
+2306,383,"Why Nations Fail","Daron Acemoglu and James A. Robinson",Tarih,"Kraliçenin reddettiği makine",SON55,0,weak
+2307,383,"Why Nations Fail","Daron Acemoglu and James A. Robinson",Tarih,"Kralı değiştirmek yetmedi",SON55,0,weak
+2308,384,"The Soul of a New Machine","Tracy Kidder",Liderlik,"Bodrumdan kafeteryaya",SON55,0,weak
+2309,384,"The Soul of a New Machine","Tracy Kidder",Liderlik,"Sigorta diye sunulan makine",SON55,0,weak
+2310,384,"The Soul of a New Machine","Tracy Kidder",Liderlik,"Hardy Boys ve yazılmak",SON55,0,weak
+2311,384,"The Soul of a New Machine","Tracy Kidder",Liderlik,"Her şey iyi yapılmaya değmez",SON55,0,weak
+2312,384,"The Soul of a New Machine","Tracy Kidder",Liderlik,"Duyurudan sonra dağılan ekip",SON55,0,weak
+2313,385,"Lost Moon","Jim Lovell and Jeffrey Kluger",Liderlik,"Kare filtre, yuvarlak delik",SON55,0,strong
+2314,385,"Lost Moon","Jim Lovell and Jeffrey Kluger",Liderlik,"Elle yakılan motor",SON55,0,weak
+2315,385,"Lost Moon","Jim Lovell and Jeffrey Kluger",Liderlik,"Swigert'in vergi beyannamesi",SON55,0,weak
+2316,385,"Lost Moon","Jim Lovell and Jeffrey Kluger",Liderlik,"Normalin beşte biri",SON55,0,weak
+2317,385,"Lost Moon","Jim Lovell and Jeffrey Kluger",Liderlik,"Planlı sessizlik uzadığında",SON55,0,weak
+2318,386,"The Right Stuff","Tom Wolfe",Tarih,"Süpürge sapı ve ses duvarı",SON55,0,weak
+2319,386,"The Right Stuff","Tom Wolfe",Tarih,"508 dosyadan yedi astronota",SON55,0,weak
+2320,386,"The Right Stuff","Tom Wolfe",Tarih,"Okyanustaki kapak",SON55,0,weak
+2321,386,"The Right Stuff","Tom Wolfe",Tarih,"Elle eve dönüş",SON55,0,weak
+2322,387,"Mountains Beyond Mountains","Tracy Kidder","Sağlık","Ekose pantolonlu müteahhit",SON55,0,weak
+2323,387,"Mountains Beyond Mountains","Tracy Kidder","Sağlık","Barajın yanındaki klinik",SON55,0,weak
+2324,387,"Mountains Beyond Mountains","Tracy Kidder","Sağlık","Sırt çantasıyla yamaca",SON55,0,weak
+2325,387,"Mountains Beyond Mountains","Tracy Kidder","Sağlık","Üç dolarlık ilaç, on dört sent",SON55,0,weak
+2326,387,"Mountains Beyond Mountains","Tracy Kidder","Sağlık","Dörtte biri ölüyordu",SON55,1,weak
+2327,388,"The Hot Zone","Richard Preston",Bilim,"Reston'daki maymun evi",SON55,0,strong
+2328,388,"The Hot Zone","Richard Preston",Bilim,"Mikroskoptaki ikinci hastalık",SON55,0,weak
+2329,388,"The Hot Zone","Richard Preston",Bilim,"Yambuku'da bir iğne",SON55,1,strong
+2330,388,"The Hot Zone","Richard Preston",Bilim,"Maymun böbreği ve Marburg",SON55,1,strong
+2331,388,"The Hot Zone","Richard Preston",Bilim,"Kitum Mağarası'nın cevapsız sorusu",SON55,1,weak
+2332,389,"The Making of the Atomic Bomb","Richard Rhodes",Tarih,"Kırmızı ışıkta doğan fikir",SON55,0,weak
+2333,389,"The Making of the Atomic Bomb","Richard Rhodes",Tarih,"Einstein'ın imzaladığı mektup",SON55,0,strong
+2334,389,"The Making of the Atomic Bomb","Richard Rhodes",Tarih,"Frisch-Peierls bildirisi",SON55,0,strong
+2335,389,"The Making of the Atomic Bomb","Richard Rhodes",Tarih,"Yarım wattlık ilk kanıt",SON55,0,weak
+2336,389,"The Making of the Atomic Bomb","Richard Rhodes",Tarih,"Kâğıt parçalarıyla Trinity tahmini",SON55,0,weak
+2337,390,"The Premonition","Michael Lewis","Sağlık","Lise öğrencisinin kasabası",SON55,0,weak
+2338,390,"The Premonition","Michael Lewis","Sağlık","On altı gün, iki gün",SON55,1,weak
+2339,390,"The Premonition","Michael Lewis","Sağlık","Kutulanmış kitler",SON55,0,weak
+2340,390,"The Premonition","Michael Lewis","Sağlık","Başkanın okuduğu kitap",SON55,0,weak
+2341,391,"Lab Girl","Hope Jahren",Bilim,"Çitlembik tohumunun kabuğu",SON55,0,weak
+2342,391,"Lab Girl","Hope Jahren",Bilim,"Bill'e iş yoksa bana da yok",SON55,0,strong
+2343,391,"Lab Girl","Hope Jahren",Bilim,"Sade sözlerle",SON55,1,weak
+2344,391,"Lab Girl","Hope Jahren",Bilim,"Arktik'te sürüklenmiş odun",SON55,0,weak
+2345,392,Educated,"Tara Westover","Büyüme","Altyazıdaki kelime",SON55,1,strong
+2346,392,Educated,"Tara Westover","Büyüme","İlk sınavın cevabı",SON55,0,strong
+2347,392,Educated,"Tara Westover","Büyüme","Kapı kapı doktoraya",SON55,0,weak
+2348,392,Educated,"Tara Westover","Büyüme","Aynı geçmişin iki anlatısı",SON55,1,weak
+2349,393,"The Boy Who Harnessed the Wind","William Kamkwamba and Bryan Mealer","Büyüme","Kıtlık ve boş sıra",SON55,1,strong
+2350,393,"The Boy Who Harnessed the Wind","William Kamkwamba and Bryan Mealer","Büyüme","Resimlerden okumak",SON55,0,strong
+2351,393,"The Boy Who Harnessed the Wind","William Kamkwamba and Bryan Mealer","Büyüme","Hurdalıktaki parça listesi",SON55,0,strong
+2352,393,"The Boy Who Harnessed the Wind","William Kamkwamba and Bryan Mealer","Büyüme","Bir haber, bir blog, bir bilet",SON55,0,strong
+2353,393,"The Boy Who Harnessed the Wind","William Kamkwamba and Bryan Mealer","Büyüme","Komşuların telefon sırası",SON55,0,weak
+2354,394,"Nickel and Dimed","Barbara Ehrenreich",Finans,"Üç kural ve bir araba",SON55,0,weak
+2355,394,"Nickel and Dimed","Barbara Ehrenreich",Finans,"Depozito duvarı",SON55,0,weak
+2356,394,"Nickel and Dimed","Barbara Ehrenreich",Finans,"Saatte yirmi beş dolar",SON55,0,strong
+2357,394,"Nickel and Dimed","Barbara Ehrenreich",Finans,"Zaman hırsızlığı",SON55,0,strong
+2358,394,"Nickel and Dimed","Barbara Ehrenreich",Finans,"Geriye kalan iki yüz dolar",SON55,0,weak
+2359,395,"Fast Food Nation","Eric Schlosser","Sağlık","Yüz elli beş derece",SON55,1,weak
+2360,395,"Fast Food Nation","Eric Schlosser","Sağlık","Yağ gitti, tat kaldı",SON55,0,weak
+2361,396,Open,"Andre Agassi","Büyüme","Ejderha ve bir milyon top",SON55,0,strong
+2362,396,Open,"Andre Agassi","Büyüme","Peruk düşmesin diye dua",SON55,0,strong
+2363,396,Open,"Andre Agassi","Büyüme","Soda yalanı",SON55,1,strong
+2364,396,Open,"Andre Agassi","Büyüme","141. sıradan geri dönüş",SON55,0,weak
+2365,397,"The Power of Moments","Chip Heath, Dan Heath",Psikoloji,"Telefondaki buz çubuğu",SON55,0,strong
+2366,397,"The Power of Moments","Chip Heath, Dan Heath",Psikoloji,"Mezuniyet yerine imza günü",SON55,0,weak
+2367,397,"The Power of Moments","Chip Heath, Dan Heath",Psikoloji,"Koridordaki kız çocuğu",SON55,0,weak
+2368,397,"The Power of Moments","Chip Heath, Dan Heath",Psikoloji,"Uçaktaki şaka",SON55,0,weak
+2369,397,"The Power of Moments","Chip Heath, Dan Heath",Psikoloji,"Masadaki saban",SON55,0,weak
+2370,398,"The Dictator's Handbook","Bruce Bueno de Mesquita and Alastair Smith",Liderlik,"Kinşasa'daki danışman",SON55,0,weak
+2371,398,"The Dictator's Handbook","Bruce Bueno de Mesquita and Alastair Smith",Liderlik,"Petrol hesabı",SON55,0,weak
+2372,398,"The Dictator's Handbook","Bruce Bueno de Mesquita and Alastair Smith",Liderlik,Burs,SON55,0,weak
+2373,398,"The Dictator's Handbook","Bruce Bueno de Mesquita and Alastair Smith",Liderlik,"Yirmi iki oy",SON55,0,weak
+2374,399,Spillover,"David Quammen",Bilim,"Elenen hastalıklar",SON55,1,weak
+2375,399,Spillover,"David Quammen",Bilim,"İlk etiket yanlış çıktı",SON55,1,weak
+2376,399,Spillover,"David Quammen",Bilim,"Dışkıdan haritaya",SON55,0,strong
+2377,399,Spillover,"David Quammen",Bilim,"Dokuzuncu kat",SON55,1,weak
+2378,400,"The Mythical Man-Month","Frederick P. Brooks Jr.",Verimlilik,"Geç kalan projeye insan eklemek",SON55,0,strong
+2379,400,"The Mythical Man-Month","Frederick P. Brooks Jr.",Verimlilik,"Gümüş kurşun yok",SON55,0,strong
+2380,400,"The Mythical Man-Month","Frederick P. Brooks Jr.",Verimlilik,"Cerrahi ekip",SON55,0,weak
+2381,401,"Skunk Works","Ben R. Rich, Leo Janos",Liderlik,"Sirk çadırındaki kokarca",SON55,0,weak
+2382,401,"Skunk Works","Ben R. Rich, Leo Janos",Liderlik,"Ast sayısına bağlı olmayan maaş",SON55,0,weak
+2383,401,"Skunk Works","Ben R. Rich, Leo Janos",Liderlik,"Zamanında ve bütçenin altında",SON55,0,weak
+2384,401,"Skunk Works","Ben R. Rich, Leo Janos",Liderlik,"Rakibin titanyumu",SON55,0,weak
+2385,401,"Skunk Works","Ben R. Rich, Leo Janos",Liderlik,"On üç dakikalık uçuş",SON55,0,weak
+2386,402,"Rocket Boys","Homer Hickam","Büyüme","Coalwood'un üzerindeki ışık",SON55,0,weak
+2387,402,"Rocket Boys","Homer Hickam","Büyüme","Bir kitap, bir cesaret",SON55,0,strong
+2388,402,"Rocket Boys","Homer Hickam","Büyüme","Altı fitten otuz bir bin fite",SON55,0,strong
+2389,402,"Rocket Boys","Homer Hickam","Büyüme","Babasının sakladığı lüle",SON55,0,strong
+2390,402,"Rocket Boys","Homer Hickam","Büyüme","Indianapolis'te madalya",SON55,0,weak
+2391,403,"The Idea Factory","Jon Gertner",Bilim,"Uzun koridorun bahsi",SON55,0,weak
+2392,403,"The Idea Factory","Jon Gertner",Bilim,"Yedi günlük aralık",SON55,0,weak
+2393,403,"The Idea Factory","Jon Gertner",Bilim,"Bilginin birimi",SON55,0,weak
+2394,403,"The Idea Factory","Jon Gertner",Bilim,"Aylar süren gösteri",SON55,0,weak
+2395,403,"The Idea Factory","Jon Gertner",Bilim,"Süpürülen güvercin pisliği",SON55,0,weak
+2396,404,"Leonardo da Vinci","Walter Isaacson","Büyüme","Resim en sonda",SON55,0,weak
+2397,404,"Leonardo da Vinci","Walter Isaacson","Büyüme","Kuru sıvadaki deney",SON55,0,weak
+2398,404,"Leonardo da Vinci","Walter Isaacson","Büyüme","Mangallar ve akan boya",SON55,0,weak
+2399,404,"Leonardo da Vinci","Walter Isaacson","Büyüme","Ayna yazısının sırrı",SON55,0,weak
+2400,404,"Leonardo da Vinci","Walter Isaacson","Büyüme","Teslim edilmeyen portre",SON55,0,weak

@@ -1,0 +1,35 @@
+{
+  "story_id": 1529,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: under-15-minute, same-time-and-place, progress-and-obstacles rules from Wikipedia; three questions from standard Scrum teaching, wording not checked in the book; team size of nine from one summary. Old text's three named effects and 'hundreds of coordination needs' dropped. Mechanism story, no case.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Günlük scrum on beş dakikada",
+    "description": "Scrum'ın günlük toplantısı on beş dakikadan kısa ve engelleri adlandırmak için var. Üç soru standart Scrum öğretisinden.",
+    "hook": "Şu an ekibinizde kimsenin bilmediği hangi engeli taşıyorsunuz?",
+    "one_minute_summary": "Günlük scrum on beş dakikadan kısa sürer, her gün aynı saatte ve aynı yerde yapılır. Herkes dün ne yaptığını, bugün ne yapacağını ve önünde ne olduğunu söyler, ayrıntılar sonraya kalır. Amaç engelleri erken adlandırmaktır. Üç soru standart Scrum öğretisinden alındı, kitaptaki tam ifadesi doğrulanmadı. Ekibin dokuz kişiyi aşmaması önerisi tek bir özetten geliyor."
+  },
+  "en": {
+    "title": "The fifteen-minute stand-up",
+    "description": "Scrum's daily meeting is under fifteen minutes and exists to name obstacles. The three questions come from standard Scrum teaching.",
+    "hook": "What snag are you carrying that nobody on your team knows about yet?",
+    "one_minute_summary": "The daily scrum lasts under fifteen minutes at the same time and place each day. Everyone says what they did yesterday, what they will do today and what is in their way, and the details wait. The goal is to name obstacles early. The three questions come from standard Scrum teaching, not checked against the book's exact wording, and the team-size limit of nine rests on one summary."
+  },
+  "es": {
+    "title": "La reunión de pie de quince minutos",
+    "description": "La reunión diaria de Scrum dura menos de quince minutos y sirve para nombrar obstáculos. Las tres preguntas son de la enseñanza estándar de Scrum.",
+    "hook": "¿Qué obstáculo llevas que nadie de tu equipo conoce todavía?",
+    "one_minute_summary": "El scrum diario dura menos de quince minutos, a la misma hora y en el mismo lugar cada día. Cada uno dice lo que hizo ayer, lo que hará hoy y qué se interpone, y los detalles esperan. La meta es nombrar obstáculos pronto. Las tres preguntas proceden de la enseñanza estándar de Scrum, sin comprobar su redacción exacta en el libro, y el límite de nueve personas sale de un solo resumen."
+  },
+  "de": {
+    "title": "Das Fünfzehn-Minuten-Stand-up",
+    "description": "Das tägliche Treffen bei Scrum dauert unter fünfzehn Minuten und dient dazu, Hindernisse zu benennen. Die drei Fragen stammen aus der Standard-Scrum-Lehre.",
+    "hook": "Welches Hindernis trägst du mit dir, von dem in deinem Team noch niemand weiß?",
+    "one_minute_summary": "Das Daily Scrum dauert unter fünfzehn Minuten, jeden Tag zur selben Zeit am selben Ort. Jeder sagt, was er gestern tat, was er heute tut und was ihm im Weg steht, die Einzelheiten warten. Ziel ist, Hindernisse früh zu benennen. Die drei Fragen stammen aus der Standard-Scrum-Lehre, ihr genauer Wortlaut im Buch wurde nicht geprüft, und die Teamgröße von neun beruht auf einer einzigen Zusammenfassung."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1396,
+  "verdict": "keep",
+  "verify_note": "Keep: Carse finite vs infinite game and Sinek's five practices from summaries and reviews (Shortform, Four Minute Books, Strategy Bridge, Wikipedia); no primary text. S&P 500 lifespan figures kept approximate. Old Apple/Disney/Amazon claims dropped. Concept story, no company case.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Son düdüğü olmayan oyun",
+    "description": "Simon Sinek, iş dünyasını James Carse'ın sonsuz oyunu üzerinden okur. Amaç kazanmak değil, oyunda kalmaktır.",
+    "hook": "Son zamanlarda öne geçmek için verdiğiniz karar, oyunda kalmak için de doğru olur muydu?",
+    "one_minute_summary": "Futbolun sabit kuralları ve bir kazananı var. Simon Sinek, James Carse'tan yola çıkarak iş dünyasını sonsuz bir oyun sayar: oyuncular gelip gider, kurallar değişir, kimse kalıcı kazanmaz. Sonlu zihniyetli lider kısa vadeli kâr kovalar ve rakiplere tepki verir, sonsuz zihniyetli olan sarsıntıyı bekler ve daha güçlü çıkmak ister. Sinek S&P 500 şirket ömrünün yaklaşık 61 yıldan yaklaşık 18 yıla düştüğünü anar ve beş uygulama önerir. Bir eleştirmen onun sonlu olana fazla olumsuz baktığını söylüyor."
+  },
+  "en": {
+    "title": "The Game With No Final Whistle",
+    "description": "Simon Sinek reads business through James Carse's infinite game. The aim is to stay in the game, not to win it.",
+    "hook": "Would a decision you made to come out ahead also have kept you in the game?",
+    "one_minute_summary": "Soccer has fixed rules and a winner. Simon Sinek, borrowing from James Carse, says business is an infinite game: players come and go, rules change, nobody wins for good. A finite-minded leader chases near-term profit and reacts to rivals, an infinite-minded one expects disruption and aims to come out stronger. Sinek cites S&P 500 lifespans falling from about 61 years to about 18 and proposes five practices. One reviewer says he treats the finite too negatively."
+  },
+  "es": {
+    "title": "El juego sin pitido final",
+    "description": "Simon Sinek lee los negocios con el juego infinito de James Carse. La meta es seguir en el juego, no ganarlo.",
+    "hook": "¿Una decisión que tomaste para salir ganando también te habría mantenido en el juego?",
+    "one_minute_summary": "El fútbol tiene reglas fijas y un ganador. Simon Sinek, a partir de James Carse, dice que los negocios son un juego infinito: los jugadores van y vienen, las reglas cambian y nadie gana para siempre. El líder de mentalidad finita persigue el beneficio inmediato, el de mentalidad infinita cuenta con las sacudidas y quiere salir más fuerte. Sinek cita que la vida de las empresas del S&P 500 cayó de unos 61 a unos 18 años y propone cinco prácticas."
+  },
+  "de": {
+    "title": "Das Spiel ohne Schlusspfiff",
+    "description": "Simon Sinek liest das Geschäft mit James Carses unendlichem Spiel. Ziel ist, im Spiel zu bleiben, nicht es zu gewinnen.",
+    "hook": "Hätte dich eine Entscheidung, die du getroffen hast, um vorne zu liegen, auch im Spiel gehalten?",
+    "one_minute_summary": "Fußball hat feste Regeln und einen Sieger. Simon Sinek sagt mit James Carse, Geschäft sei ein unendliches Spiel: Spieler kommen und gehen, Regeln ändern sich, niemand gewinnt für immer. Wer endlich denkt, jagt kurzfristigen Gewinn und reagiert auf Rivalen, wer unendlich denkt, rechnet mit Erschütterungen und will stärker daraus hervorgehen. Sinek nennt sinkende Lebensdauern von S&P-500-Firmen, von etwa 61 auf etwa 18 Jahre, und schlägt fünf Praktiken vor. Ein Rezensent findet, er sehe das Endliche zu negativ."
+  }
+}

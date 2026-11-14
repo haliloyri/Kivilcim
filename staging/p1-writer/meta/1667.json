@@ -1,0 +1,35 @@
+{
+  "story_id": 1667,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt. The old 'write an angry letter and sleep on it' premise is not in Peace Is Every Step and was dropped; the story follows the book's fireman, pillow-pounding and walking-when-angry passages (book text read).",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Önce yangın, sonra suçlu",
+    "description": "Thich Nhat Hanh'a göre öfkelenince önce kendi öfkenize bakmalı, nefes alıp yürümeli ve karşınızdakini sonraya bırakmalısınız.",
+    "hook": "Bir sonraki öfke anınızda ilk dakikalarda bedeninizle ne yapabilirsiniz?",
+    "one_minute_summary": "Thich Nhat Hanh, Peace Is Every Step kitabında öfkelenince karşımızdakini düşündükçe öfkenin alevlendiğini yazıyor. Önerisi bir itfaiyeci gibi önce yangına su dökmek: nefes alın, öfke sürerken bir şey söylemeyin ya da yapmayın, dışarı çıkıp dikkatinizi ayak tabanlarınıza verin. Yastığa yumruk atmak bir süre rahatlatır ama kökler yerinde kalır, tohumlar sulanırsa öfke geri gelir. Yatıştıktan sonra öfkeye doğrudan bakıp onu anlamaya çalışabilirsiniz. Farkındalık yargıç değil, küçük kardeşine bakan bir ablaya benzer."
+  },
+  "en": {
+    "title": "Fire first, culprit later",
+    "description": "Thich Nhat Hanh says that when you are angry you should tend the anger first, breathing and walking, and leave the other person for later.",
+    "hook": "What could you do with your body in the first minutes of your next anger?",
+    "one_minute_summary": "In Peace Is Every Step, Thich Nhat Hanh says that when we are angry we think about the person who caused it, and the more we think, the hotter it burns. His advice is a fireman's: water on the blaze first. Breathe, say and do nothing while it lasts, and walk outside with your attention on the soles of your feet. Punching a pillow tires the anger for a while, but the roots stay and it returns if the seeds are watered."
+  },
+  "es": {
+    "title": "Primero el fuego",
+    "description": "Según Thich Nhat Hanh, al enfadarte primero atiendes la ira, respirando y caminando, y dejas a la otra persona para después.",
+    "hook": "¿Qué podrías hacer con tu cuerpo en los primeros minutos de tu próxima rabia?",
+    "one_minute_summary": "En Peace Is Every Step, Thich Nhat Hanh escribe que cuando nos enfadamos pensamos en quien lo provocó, y cuanto más pensamos, más arde. Su consejo es de bombero: primero agua al fuego. Respira, no digas ni hagas nada mientras dure y sal a caminar con la atención en las plantas de los pies. Golpear una almohada cansa la ira un rato, pero las raíces siguen y vuelve si las semillas se riegan. Cuando estés sereno, puedes mirarla e intentar comprenderla."
+  },
+  "de": {
+    "title": "Erst das Feuer",
+    "description": "Laut Thich Nhat Hanh kümmerst du dich bei Wut zuerst um sie, atmest und gehst, und lässt den anderen für später.",
+    "hook": "Was könntest du in den ersten Minuten deiner nächsten Wut mit dem Körper tun?",
+    "one_minute_summary": "In Peace Is Every Step schreibt Thich Nhat Hanh, dass wir bei Wut an den denken, der sie ausgelöst hat, und je mehr wir denken, desto mehr brennt es. Sein Rat ist der eines Feuerwehrmanns: zuerst Wasser auf den Brand. Atme, sag und tu nichts, solange sie anhält, und geh nach draußen, mit der Aufmerksamkeit auf den Fußsohlen. Ein Kissen zu boxen erschöpft die Wut eine Weile, doch die Wurzeln bleiben. Bist du ruhig, kannst du sie anschauen und verstehen. Achtsamkeit ist eine ältere Schwester, kein Richter."
+  }
+}

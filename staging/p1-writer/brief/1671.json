@@ -1,0 +1,56 @@
+{
+  "story_id": 1671,
+  "kind": "concept",
+  "book": {
+    "title": "Anger: Wisdom for Cooling the Flames",
+    "author": "Thich Nhat Hanh",
+    "year": "2001"
+  },
+  "confidence": "low",
+  "confidence_note": "Only the seed passage and selective watering are confirmed (verbatim quotes). The old title's 'disconnected mind' angle and criticism example could not be confirmed.",
+  "facts": [
+    "The main cause of suffering is the seed of anger in you.",
+    "The seed has been watered too often, by yourself and by other people.",
+    "Selective watering protects you and your beloved ones.",
+    "Try not to say or do anything when angry; begin mindful breathing right away."
+  ],
+  "scene_details": [
+    "a seed",
+    "water",
+    "a watering can (metaphor)"
+  ],
+  "tension": "The trigger is outside, the seed is inside.",
+  "opening_idea": "A seed does nothing until watered.",
+  "lessons": [
+    {
+      "idea": "Look for the seed under the anger.",
+      "anchor": "seed watered by self and others"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which thought or habit of yours carried water to your last anger?",
+  "use_cases": [
+    {
+      "situation": "Replaying an argument all evening",
+      "move": "I'm going to stop watering this seed and go for a walk.",
+      "context": "self"
+    },
+    {
+      "situation": "Someone at home made you angry",
+      "move": "I'm angry and part of that is mine. I'll calm down and talk.",
+      "context": "family"
+    },
+    {
+      "situation": "A comment in a meeting angers you",
+      "move": "That hit me. I'll breathe and think again before answering.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "The seed of anger is inside you; which seed you water is yours to choose.",
+  "conversation_variants": {
+    "punchline_idea": "The main cause is a seed watered too often.",
+    "thirty_sec_idea": "Seed, water by self and others, selective watering, breathing.",
+    "question_idea": "",
+    "key_contrast_idea": "seed vs other person"
+  }
+}

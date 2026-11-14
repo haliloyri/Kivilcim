@@ -1,0 +1,33 @@
+{
+  "story_id": 1532,
+  "kind": "concept",
+  "book": {"title": "SPIN Selling", "author": "Neil Rackham", "year": "1988"},
+  "confidence": "medium",
+  "confidence_note": "Book text not available; facts come from reviews and summaries that agree on the four question types and their roles. The old text's example question wordings, its claim that the buyer 'becomes their own persuader' and a fixed S-P-I-N order are not attributable (Huthwaite calls SPIN a flexible framework) and were dropped. No example of a real call is documented, so the story explains the mechanism.",
+  "facts": [
+    "The research behind the book examined 35,000 sales calls and sorted what sellers asked into Situation, Problem, Implication and Need-payoff questions.",
+    "Situation questions gather facts about the buyer's circumstances; asking many correlated with lower success, senior buyers dislike factual questioning, and successful sellers do their homework to need fewer.",
+    "Problem questions explore the buyer's difficulties and dissatisfaction and surface implied needs, which are weaker signals such as general concerns; experienced sellers ask more of them and earlier. Uncovering several problems is safer than fixating on one.",
+    "Implication questions explore the effects and seriousness of a problem and raise the buyer's motivation to change; sources call them the most powerful, and skill in them does not improve automatically with experience. Top sellers introduce solutions late, after the problem's effects have been discussed.",
+    "Need-payoff questions get the buyer to state the value of a solution, turning an implied need into an explicit one; benefits stated by the buyer carry more weight and sound less pushy.",
+    "In successful calls the buyer does most of the talking. One summary adds that open questions showed no link to sales success. Huthwaite describes SPIN as a flexible framework rather than a rigid sequence."
+  ],
+  "scene_details": ["35,000 sales calls sorted by question type", "the seller who did homework before the call", "a buyer saying the value aloud"],
+  "tension": "Sellers ask many questions, but only some kinds of questions separated the successful calls from the others.",
+  "opening_idea": "Open with the finding that many Situation questions went with lower success, a surprise for anyone who thinks asking about the buyer's setup is diligence.",
+  "lessons": [{"idea": "Let the other person say what a solution would be worth to them; their own words carry more weight than yours.", "anchor": "Need-payoff questions.", "example": "A teacher asking a parent what would change at home if homework stopped being a fight."}],
+  "reflect": [],
+  "reflect_final": "Which part of the value of your last proposal could the other person have said in their own words, if you had asked?",
+  "use_cases": [
+    {"situation": "A client hesitates over your proposal.", "move": "Ask what fixing the problem would change for their team and let them answer in their own words.", "context": "meeting"},
+    {"situation": "A teenager resists changing study habits.", "move": "Ask what they would do with the evening if homework stopped taking all of it.", "context": "family"},
+    {"situation": "A colleague is stuck with a slow process.", "move": "Say that Rackham's method has the value come from them, then ask what fixing the process would give them back.", "context": "oneonone"}
+  ],
+  "pocket_idea": "Ask what solving the problem would be worth to them, then let them say it.",
+  "conversation_variants": {
+    "punchline_idea": "In Rackham's 35,000 calls, sellers who asked many fact-finding Situation questions tended to do worse.",
+    "thirty_sec_idea": "Rackham's team sorted sellers' questions into four kinds; many Situation questions went with lower success; Implication questions on a problem's effects were called the most powerful; Need-payoff questions let the buyer state the value in their own words.",
+    "question_idea": "",
+    "key_contrast_idea": "facts versus effects"
+  }
+}

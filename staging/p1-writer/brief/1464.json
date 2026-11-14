@@ -1,0 +1,62 @@
+{
+  "story_id": 1464,
+  "kind": "anecdote",
+  "book": {
+    "title": "Moonwalking with Einstein",
+    "author": "Joshua Foer",
+    "year": "2011"
+  },
+  "confidence": "low",
+  "confidence_note": "Rebuilt around the case of S. (Solomon Shereshevsky) and A. R. Luria, which review and summary sources report as part of the book; the book text was not read and the sources are secondary. The link to Borges's 'Funes the Memorious' and the 'forgetting is essential to being human' idea rest on a Goodreads quote attribution and one summary, so they are hedged. Old text's sleep-sorting claims, 'brain has no unlimited storage' quote and the 'best memory people forget best' claim were not found and are dropped. A Discover piece adds that S.'s memory was not photographic and he used method-of-loci-like techniques.",
+  "facts": [
+    "Moonwalking with Einstein is subtitled The Art and Science of Remembering Everything.",
+    "In 1928 a Russian journalist known as S. (Solomon Shereshevsky) came to the office of psychologist A. R. Luria claiming an unusually powerful memory.",
+    "Luria studied him for about thirty years.",
+    "S. could memorize passages in a foreign language and abstruse formulas he did not understand, and keep them for years.",
+    "S.'s mind was cluttered with trivial details and sensations; he struggled to abstract or generalize and had trouble with practical life and work.",
+    "Foer links the case to Borges's story 'Funes the Memorious', about a man cursed with perfect recall, and to the idea that forgetting is essential to being human (attribution via Goodreads and one summary).",
+    "Luria also described what he called the art of forgetting (one summary).",
+    "A Discover piece says S.'s memory was not exactly photographic and that he used techniques similar to the method of loci."
+  ],
+  "scene_details": [
+    "a formula or foreign passage S. could recite years later without understanding it",
+    "thirty years of Luria's notes on one man",
+    "a mind cluttered with trivial details and sensations",
+    "a book subtitled The Art and Science of Remembering Everything"
+  ],
+  "tension": "A man who remembered everything could not use his mind the way other people do.",
+  "opening_idea": "Open on the man who could recite a formula he did not understand years later, and what that cost him.",
+  "lessons": [
+    {
+      "idea": "Decide what is worth keeping before you try to remember it.",
+      "anchor": "S.'s cluttered mind and trouble abstracting.",
+      "example": "A project manager keeps the three decisions that matter instead of every message."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which details do you keep carrying around, in notes or in your head, that you could safely let go of this week?",
+  "use_cases": [
+    {
+      "situation": "You are about to take notes on a long meeting.",
+      "move": "Write only the three decisions and the owner of each; S. kept everything and could not pick out what mattered.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A student at home tries to memorize a whole chapter word for word.",
+      "move": "Ask them to say the main idea first and then pick the five details worth keeping.",
+      "context": "family"
+    },
+    {
+      "situation": "Your phone and notebook are full of things you never reread.",
+      "move": "Delete or archive one folder this week and notice whether you miss it.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Remembering everything cost S. the ability to see patterns, so choose what to keep.",
+  "conversation_variants": {
+    "punchline_idea": "A man who could not forget struggled to see patterns, according to Foer's retelling of Luria's case.",
+    "thirty_sec_idea": "In 1928 a Russian journalist came to the psychologist Luria claiming a remarkable memory. Luria studied him for thirty years: he could keep formulas he did not understand, but his mind was cluttered and he struggled to generalize. Foer uses the case to argue that forgetting is part of how a mind works.",
+    "question_idea": "",
+    "key_contrast_idea": "remember all, see less"
+  }
+}

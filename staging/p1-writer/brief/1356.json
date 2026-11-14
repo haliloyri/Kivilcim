@@ -1,0 +1,61 @@
+{
+ "story_id": 1356,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Monk Who Sold His Ferrari",
+  "author": "Robin S. Sharma",
+  "year": "1997"
+ },
+ "confidence": "high",
+ "confidence_note": "Sumo wrestler, kaizen and the push-up scene verified in full text (ch. 6, 9). The old text's '1% better daily = 37% better in a year' is not in the book and is mathematically wrong; Toyota and the 'evolution not revolution' quote are not in the book. The fable says kaizen was developed in the ancient East centuries ago; outside sources tie the management term to postwar Japanese industry and Masaaki Imai's 1986 book, so this is noted as a caveat.",
+ "facts": [
+  "In Yogi Raman's fable a nine-foot, nine-hundred-pound sumo wrestler wearing only a pink wire cable walks out of a red lighthouse into a garden.",
+  "The wrestler stands for kaizen, which the fable says the great teachers of the ancient East developed centuries ago: 'This Japanese word means constant and never-ending improvement.'",
+  "Julian's line: 'Self-mastery is the DNA of life mastery'; success on the outside begins within.",
+  "Julian tells John, who weighs 215 pounds, to do push-ups until he truly cannot do any more. John stops at twenty-three.",
+  "Julian says: 'Do ten more.' John does ten and lies on the floor exhausted.",
+  "Yogi Raman had done the same with Julian: 'pain was a great teacher'; people grow most in the 'Zone of the Unknown'; 'The only limits on your life are those that you set yourself.'",
+  "Afterward John lists what he could improve: exercise, his nasty temper and habit of interrupting, his worry habit. The chapter's techniques: Do the Things You Fear; the 10 Ancient Rituals for Radiant Living.",
+  "Editorial caveat: as a business term, kaizen reached the West through Masaaki Imai's 1986 book about Japanese industry; the 'ancient' origin is the fable's framing."
+ ],
+ "scene_details": [
+  "a sumo wrestler stepping out of a red lighthouse in a pink wire cable",
+  "John's 215-pound frame on the floor",
+  "twenty-three push-ups, then ten more",
+  "a hot summer evening, sweat"
+ ],
+ "tension": "A man swears twenty-three push-ups is his absolute limit, then does ten more because someone asked.",
+ "opening_idea": "Open with John on the floor at push-up twenty-three, saying he can't do any more.",
+ "lessons": [
+  {
+   "idea": "The point where you say 'that's my limit' is often a guess; test it with a small extra step.",
+   "anchor": "Twenty-three push-ups called the limit, then ten more."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Where in your week did you recently call something your limit without testing one more small step?",
+ "use_cases": [
+  {
+   "situation": "Team says the deadline can't move any further",
+   "move": "In Sharma's fable a man called 23 push-ups his limit and then did ten more. Can we try one more small step and see where the real limit is?",
+   "context": "meeting"
+  },
+  {
+   "situation": "Friend says they're 'just not good at' running",
+   "move": "Ask what one extra minute on their next run would feel like.",
+   "context": "social"
+  },
+  {
+   "situation": "You give up on a hard task at the usual point",
+   "move": "Do one more small piece after the moment you want to stop, and notice how it felt.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "John's limit was twenty-three push-ups until he did ten more; test your limit with one more small step.",
+ "conversation_variants": {
+  "punchline_idea": "He swore 23 push-ups was his limit, then did ten more.",
+  "thirty_sec_idea": "In Sharma's fable, Julian makes John do push-ups until he can't: 23. 'Do ten more.' He does. The sumo wrestler in the fable stands for kaizen, constant improvement; limits are often self-set.",
+  "question_idea": "",
+  "key_contrast_idea": "my limit, plus ten"
+ }
+}

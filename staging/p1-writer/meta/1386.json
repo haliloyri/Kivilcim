@@ -1,0 +1,35 @@
+{
+ "story_id": 1386,
+ "verdict": "keep",
+ "verify_note": "DB book 'Sağlıklı Olmak' (2019) does not exist; content is Atomic Habits (2018), ch.16. 'Missing once is an accident...' and 'first mistake' verified on Clear's site; 'bad workouts / ten squats' from reader highlights (paraphrased). Paper-clip opening of the chapter added. Lally's study given as outside research. Old 'brain encodes' claims and unverified quote dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İkinci Boş Gün",
+  "description": "James Clear'ın kuralı basit: bir kez kaçırmak kazadır, iki kez kaçırmak yeni bir alışkanlığın başlangıcı. Asıl mesele ilk boş günden sonraki sabahtır.",
+  "hook": "Bir alışkanlığı tek bir boş günden sonra bıraktığınız oldu mu?",
+  "one_minute_summary": "James Clear alışkanlık takibini anlatırken kusursuz bir seri beklemez. Takvimde er geç boş bir kutu kalır. Kuralı şudur: hiçbir zaman iki kez kaçırma. Ona göre insanı ilk hata batırmaz, ardından gelen hata sarmalı batırır ve bu sarmalı ya hep ya hiç düşüncesi başlatır. Bu yüzden kötü günlerde on squat ya da tek bir şınav bile sıfırdan iyidir. Kitap dışından Phillippa Lally'nin çalışması da tek bir kaçırılan günün alışkanlığın oturmasını pek etkilemediğini gösterir."
+ },
+ "en": {
+  "title": "The Second Empty Day",
+  "description": "James Clear's rule is simple: missing once is an accident, missing twice is the start of a new habit. What matters is the morning after the first empty day.",
+  "hook": "Have you ever dropped a habit after a single missed day?",
+  "one_minute_summary": "James Clear doesn't expect a perfect streak when he writes about tracking habits. Sooner or later a box on the calendar stays empty. His rule is to never miss twice. The first mistake isn't what ruins you, he argues; the spiral of repeated mistakes is, and all-or-nothing thinking starts it. So on a bad day, ten squats or a single push-up beat recording a zero. Outside the book, Phillippa Lally's study found that one missed day barely affected how a habit formed."
+ },
+ "es": {
+  "title": "El segundo día en blanco",
+  "description": "La regla de James Clear es sencilla: fallar una vez es un accidente, fallar dos veces es el comienzo de un hábito nuevo. Lo que importa es la mañana después del primer día en blanco.",
+  "hook": "¿Alguna vez dejaste un hábito por un solo día perdido?",
+  "one_minute_summary": "James Clear no espera una racha perfecta. Tarde o temprano una casilla del calendario queda en blanco. Su regla es no fallar nunca dos veces. El primer error no es lo que te hunde, sostiene, sino la espiral de errores repetidos que pone en marcha el pensamiento de todo o nada. Por eso, en un mal día, diez sentadillas o una sola flexión valen más que un cero. Fuera del libro, el estudio de Phillippa Lally halló que un día perdido apenas afectaba al hábito."
+ },
+ "de": {
+  "title": "Der zweite leere Tag",
+  "description": "James Clears Regel ist einfach: Einmal auslassen ist ein Versehen, zweimal ist der Beginn einer neuen Gewohnheit. Es kommt auf den Morgen nach dem ersten leeren Tag an.",
+  "hook": "Hast du schon mal eine Gewohnheit nach einem einzigen verpassten Tag aufgegeben?",
+  "one_minute_summary": "James Clear erwartet keine perfekte Serie, wenn er über das Festhalten von Gewohnheiten schreibt. Früher oder später bleibt ein Kästchen im Kalender leer. Seine Regel lautet, nie zweimal auszulassen. Der erste Fehler ruiniert dich nicht, sagt er, gefährlich ist die Spirale wiederholter Fehler, die das Alles-oder-nichts-Denken auslöst. Deshalb sind an einem schlechten Tag zehn Kniebeugen oder ein einziger Liegestütz besser als eine Null. Außerhalb des Buchs fand Phillippa Lally, dass ein verpasster Tag die Gewohnheitsbildung kaum beeinflusste."
+ }
+}

@@ -1,0 +1,30 @@
+{
+  "story_id": 1687,
+  "verdict": "keep",
+  "verify_note": "Keep: Harris's trap definition, fight/flight strategies, quicksand and struggle switch confirmed in notes and summaries. Old invented quote, '90% of self-help' figure and quicksand 'spread out' detail dropped; no full text, so medium confidence.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Mücadele düğmesi",
+    "description": "Harris'e göre kötü hisleri yok etmeye çalıştıkça onları çoğaltırız. Çare, düğmeyi kapatıp değerlerinize göre hareket etmektir.",
+    "hook": "İyi hissedene kadar ertelediğiniz hangi iş var?",
+    "one_minute_summary": "Russ Harris, mutluluk tuzağını şöyle tarif eder: mutlu olmak için kötü hislerden kurtulmaya çalışırız, ama ne kadar çok uğraşırsak o kadar çok kötü his üretiriz. Bastırmak savaşmaktır, kaçmak kaçınmaktır, ikisi de işe yaramaz. Yüzen kum örneğinde içgüdü çırpınmaktır, ama çırpınmak durumu kötüleştirir. Harris'in mücadele düğmesi kapalıyken hisleri fark edip kalmalarına izin verirsiniz. Hisler değer değildir, değerler nasıl davranmak istediğinizdir. Formül: kabul et, değerlerinle bağ kur, etkili adım at."
+  },
+  "en": {
+    "title": "The struggle switch",
+    "description": "Russ Harris says trying to get rid of bad feelings creates more of them. His fix is to turn the switch off and act on your values.",
+    "hook": "What have you been putting off until you feel better?",
+    "one_minute_summary": "Russ Harris describes the happiness trap this way: to find happiness we try to avoid or get rid of bad feelings, but the harder we try, the more bad feelings we create. Fighting them by suppression and fleeing from them both feed the trap. In quicksand the instinct is to struggle, and struggling makes it worse. Harris's struggle switch, when off, lets you notice a feeling and let it be. Feelings are not values, and his short formula is accept, connect with your values, take effective action."
+  },
+  "es": {
+    "title": "El interruptor de la lucha",
+    "description": "Según Harris, cuanto más intentamos librarnos de los malos sentimientos, más los creamos. Su salida es apagar el interruptor y actuar según tus valores.",
+    "hook": "¿Qué llevas posponiendo hasta sentirte mejor?",
+    "one_minute_summary": "Russ Harris describe así la trampa de la felicidad: para ser felices intentamos evitar o eliminar los malos sentimientos, pero cuanto más lo intentamos, más malos sentimientos creamos. Luchar contra ellos, suprimiéndolos, y huir de ellos alimentan la trampa. En las arenas movedizas el instinto es forcejear, y forcejear empeora todo. Con el interruptor de la lucha apagado notas el sentimiento y lo dejas estar. Los sentimientos no son valores, y su fórmula breve es aceptar, conectar con tus valores y dar un paso eficaz."
+  },
+  "de": {
+    "title": "Der Kampfschalter",
+    "description": "Harris zufolge erzeugen wir mehr schlechte Gefühle, je mehr wir sie loswerden wollen. Sein Weg: den Schalter ausschalten und nach den eigenen Werten handeln.",
+    "hook": "Was schiebst du auf, bis du dich besser fühlst?",
+    "one_minute_summary": "Russ Harris beschreibt die Glücksfalle so: Um glücklich zu sein, versuchen wir, schlechte Gefühle zu vermeiden oder loszuwerden, doch je mehr wir uns anstrengen, desto mehr schlechte Gefühle erzeugen wir. Sie zu unterdrücken und vor ihnen zu fliehen nährt die Falle. Im Treibsand ist der Instinkt zu strampeln, und Strampeln macht es schlimmer. Bei ausgeschaltetem Kampfschalter bemerkst du das Gefühl und lässt es sein. Gefühle sind keine Werte, und die Kurzformel lautet: annehmen, mit den Werten verbinden, wirksam handeln."
+  }
+}

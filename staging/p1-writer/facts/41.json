@@ -1,0 +1,118 @@
+{
+ "book_no": 41,
+ "title": "Feel the Fear and Do It Anyway",
+ "authors": [
+  "Susan Jeffers"
+ ],
+ "year": "1987",
+ "sources": [
+  "https://archive.org/stream/FeelTheFearAndDoItAnyway/Feel%20the%20Fear%20and%20Do%20It%20Anyway.txt",
+  "https://capacity-building.com/excerpts/feel-the-fear-and-do-it-anyway-book-excerpts/",
+  "https://www.supersummary.com/feel-the-fear-and-do-it-anyway/summary/",
+  "https://citywire.com/new-model-adviser/news/book-review-feel-the-fear-and-do-it-anyway-by-susan-jeffers/a465370"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The chapter opens: 'Are you a victim, or are you taking responsibility for your life?' Jeffers says many people think they take responsibility when they do not; the victim mentality is subtle and takes many forms.",
+   "source": "archive.org full text; citywire review",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Example Edward: a wealthy high-powered executive in constant anxiety; when Jeffers suggested professional help he said everything would be fine if his wife were more loving, his boss stopped leaning on him and his son stopped taking drugs.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Example Mara: great job, lovely apartment, many friends; continual complaint about her ex-husband who never pays child support, and a son accusing her of being selfish.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Jeffers writes that you are consciously or unconsciously 'choosing' to be in that lousy job, choosing to stay in a destructive relationship, etc.; if you can create your own misery you can also create your own joy.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Jeffers explicitly does not ask the reader to believe they are responsible for all experiences in life; she asks them to believe they are the cause of their reactions to everything that happens to them.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "She gives seven definitions of taking responsibility; the first: never blaming anyone else for anything you are being, doing, having or feeling. The second: not blaming yourself.",
+   "source": "archive.org full text; capacity-building excerpts",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Jeffers describes her own past: hours on the phone with girlfriends complaining about the men in her life ('one was always late, one was incredibly stingy...'); she calls it a 'Moan and Groan Society'; the payoff was not having to create her own happiness.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Now when angry at her husband she asks herself: 'What am I not doing in my life that I could be doing that I am blaming him for not doing for me?'",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Case Jean: stuck in a job she hated, playing the 'if only' game (if only the job market were better, if only she had better skills). Her payoffs: no risk of rejection in a job search, the job was easy and she knew she could handle it, no extra energy needed, relatively secure.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Once Jean saw her payoffs she had at least three choices: stay and be miserable, stay and choose to enjoy the job, or choose to find a more satisfying job. She broke away and found a new job.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Jeffers says payoffs are not hard to find once you know they exist: sit down with pencil and paper and list them; if you cannot find them, ask a friend.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Pain-to-Power vocabulary: 'I can't' to 'I won't', 'I should' to 'I could', 'It's not my fault' to 'I'm totally responsible', 'If only' to 'Next time'.",
+   "source": "capacity-building excerpts; archive.org full text",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Exercise: write 'Bunu ben seçtim' under every complaint (old text's three-line rewrite list as a formal exercise)",
+   "reason": "The book states the 'you are choosing to' framing in prose and recommends listing payoffs; a written 'I chose this' exercise under each complaint is not verified in that form."
+  },
+  {
+   "claim": "'As your attitude changes, circumstances start changing too'",
+   "reason": "Not found as a book claim; promise-like generalisation."
+  },
+  {
+   "claim": "'Taking responsibility is not taking blame, it is taking back power' as a quote",
+   "reason": "Idea matches definition 2 (not blaming yourself) but the wording is not a book quote."
+  }
+ ],
+ "stories": {
+  "1257": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f4",
+    "f5",
+    "f6",
+    "f9",
+    "f10",
+    "f11"
+   ],
+   "note": "Center (victim vs choosing, responsibility as not blaming) verified in full text; rebuilt around Jean's payoffs and Edward. Unverified 'write I chose this' exercise dropped."
+  }
+ }
+}

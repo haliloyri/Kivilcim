@@ -1,0 +1,35 @@
+{
+ "story_id": 1287,
+ "verdict": "keep",
+ "verify_note": "Keep with refocus. The old center (silence; Buddha, Newton, Thoreau, default mode network) is not in the book; 'silence' and 'solitude' do not occur in the text. Rebuilt from the book's final chapter 'Serenity' (calmness as the jewel of wisdom, the ordinary trader, shade tree, helm, 'Peace, be still!'), checked against Gutenberg. Title changed in all languages.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Sakinliğin gücü",
+  "description": "James Allen düşünce üzerine kitabını sakinlikle bitirir ve sıradan bir tüccarın bile dengeli kaldıkça kazandığını söyler.",
+  "hook": "Öfkelenmeye başladığınız anda ilk cümlenizi kim seçiyor?",
+  "one_minute_summary": "James Allen, As a Man Thinketh'in son bölümüne 'Dinginlik' adını verir ve zihnin sakinliğini bilgeliğin mücevherlerinden biri sayar. Ona göre sakinlik uzun bir öz denetim çabasının sonucudur. Örneği sıradan bir tüccardır: öz denetimi arttıkça işi gelişir, çünkü insanlar dengeli biriyle iş yapmayı seçer. Sakin insanı susuz toprakta gölge veren ağaca, fırtınada sığınılan kayaya benzetir. Kitap, düşüncenin dümenini sıkı tutma çağrısıyla ve 'Huzur bul, sakin ol!' satırıyla kapanır."
+ },
+ "en": {
+  "title": "The power of calm",
+  "description": "James Allen ends his book on thought with serenity, and says even an ordinary trader prospers by staying steady.",
+  "hook": "When you start to fume, who chooses your first sentence?",
+  "one_minute_summary": "James Allen names the final chapter of As a Man Thinketh 'Serenity' and calls calmness of mind one of the beautiful jewels of wisdom, the result of long effort in self-control. His example is an ordinary trader whose business grows as he becomes more even-tempered, because people prefer to deal with someone steady. He likens the calm person to a shade-giving tree in a thirsty land and a rock in a storm, and ends: keep your hand on the helm of thought. 'Peace, be still!'"
+ },
+ "es": {
+  "title": "El poder de la calma",
+  "description": "James Allen cierra su libro sobre el pensamiento con la serenidad y dice que hasta un comerciante corriente prospera si se mantiene firme.",
+  "hook": "Cuando empiezas a echar humo, ¿quién elige tu primera frase?",
+  "one_minute_summary": "James Allen titula 'Serenidad' el último capítulo de As a Man Thinketh y llama a la calma de la mente una de las joyas de la sabiduría, fruto de un largo esfuerzo de dominio propio. Su ejemplo es un comerciante corriente cuyo negocio crece a medida que se vuelve más sereno, porque la gente prefiere tratar con alguien equilibrado. Compara a la persona tranquila con un árbol que da sombra en tierra sedienta y cierra pidiendo mano firme en el timón del pensamiento: '¡Paz, cálmate!'"
+ },
+ "de": {
+  "title": "Die Kraft der Ruhe",
+  "description": "James Allen beendet sein Buch über das Denken mit Gelassenheit und sagt, sogar ein gewöhnlicher Händler gewinnt, wenn er ruhig bleibt.",
+  "hook": "Wer wählt deinen ersten Satz, wenn du zu schäumen beginnst?",
+  "one_minute_summary": "James Allen nennt das letzte Kapitel von As a Man Thinketh 'Gelassenheit' und die Ruhe des Geistes eines der schönen Juwelen der Weisheit, Ergebnis langer Mühe um Selbstbeherrschung. Sein Beispiel ist ein gewöhnlicher Kaufmann, dessen Geschäft wächst, je ausgeglichener er wird, weil Menschen lieber mit jemand Ruhigem zu tun haben. Den ruhigen Menschen vergleicht er mit einem Schatten spendenden Baum im durstigen Land und schließt mit der Hand am Steuer des Denkens: 'Friede, sei still!'"
+ }
+}

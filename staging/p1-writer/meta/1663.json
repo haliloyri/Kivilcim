@@ -1,0 +1,35 @@
+{
+ "story_id": 1663,
+ "verdict": "keep",
+ "verify_note": "Keep: Tolle's tube anecdote (A New Earth, ch. 2 'The Voice in the Head') and the 'you are not the voice' passage (ch. 3) verified in a full text. Old 'Who are you?' framing and 'awareness is a space' dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Metrodaki kadın ve kafadaki ses",
+  "description": "Eckhart Tolle metroda boş koltukla tartışan bir kadını izledi, sonra tuvalette kendi zihninin aynısını yaptığını fark etti.",
+  "hook": "Son günlerde kafanızda sessizce sürdürdüğünüz bir tartışmada kendinize ne söylüyordunuz?",
+  "one_minute_summary": "Londra Üniversitesi'nde yirmi beş yaşındaki öğrenci Eckhart Tolle, metroda yanındaki boş koltukla öfkeyle tartışan bir kadını üniversiteye kadar izledi. Tuvalette ellerini yıkarken içinden umarım onun gibi olmam diye geçirdi ve bunu yüksek sesle söylediğini fark etti. Zihni de onunki kadar durmadan çalışıyordu, yalnızca içinden. Bir an geri çekilip aynada kendine güldü. Kitabın başka yerinde kafadaki sesi yakalamayı önerir: fark ettiğiniz an, sesin siz olmadığınızı, onu fark eden olduğunuzu anlarsınız."
+ },
+ "en": {
+  "title": "The voice on the tube",
+  "description": "Eckhart Tolle followed a woman arguing with an empty seat, then caught his own mind doing the same.",
+  "hook": "What would you hear yourself saying in an argument you have been running silently lately?",
+  "one_minute_summary": "Eckhart Tolle was a 25-year-old first-year student at the University of London when a woman on the tube argued angrily with the empty seat beside her. He followed her to the library. In the men's room he muttered that he hoped never to end up like her, then realised he had said it aloud and that his own mind ran just as constantly, only silently. For a moment he stood back from it and laughed at himself in the mirror."
+ },
+ "es": {
+  "title": "La voz en el metro",
+  "description": "Eckhart Tolle siguió a una mujer que discutía con un asiento vacío y luego descubrió que su propia mente hacía lo mismo.",
+  "hook": "¿Qué te oirías decir en una discusión que llevas últimamente en silencio?",
+  "one_minute_summary": "Eckhart Tolle era un estudiante de primer año de veinticinco años en la Universidad de Londres cuando una mujer discutió enfurecida con el asiento vacío de al lado en el metro. La siguió hasta la biblioteca. En el baño murmuró que ojalá no acabara como ella, y se dio cuenta de que lo había dicho en voz alta y de que su propia mente corría igual de sin parar, solo que en silencio. Por un momento se apartó de ella y se rio de sí mismo en el espejo."
+ },
+ "de": {
+  "title": "Die Stimme in der U-Bahn",
+  "description": "Eckhart Tolle folgte einer Frau, die mit einem leeren Sitz stritt, und merkte dann, dass sein eigener Kopf dasselbe tat.",
+  "hook": "Was würdest du dich in einem Streit sagen hören, den du zuletzt stumm geführt hast?",
+  "one_minute_summary": "Eckhart Tolle war ein fünfundzwanzigjähriger Erstsemester an der University of London, als in der U-Bahn eine Frau wütend mit dem leeren Sitz neben sich stritt. Er folgte ihr bis zur Bibliothek. Auf der Toilette murmelte er, er wolle nicht enden wie sie, merkte dann, dass er es laut gesagt hatte und dass sein eigener Kopf genauso unaufhörlich lief, nur still. Für einen Moment trat er zurück und lachte im Spiegel über sich."
+ }
+}

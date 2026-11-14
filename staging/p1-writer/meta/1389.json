@@ -1,0 +1,35 @@
+{
+  "story_id": 1389,
+  "verdict": "keep",
+  "verify_note": "Keep, medium. Book text read. John Denver case, state and physiology passages are in the book; Robbins's claims (seminar average under a dozen emotions; creativity restored immediately) are his own reports. Old 'knowledge is power' quote and 'low energy mode' wording dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Durumu bedenle değiştirmek",
+    "description": "Robbins'e göre yapabildiğimiz iş durumumuza bağlıdır; John Denver'ın tıkanıklığı hareketle çözüldü.",
+    "hook": "Zor bir anınızdan önce hangi hareketi deneyebilirsiniz?",
+    "one_minute_summary": "Tony Robbins, Awaken the Giant Within kitabında John Denver'la yazma tıkanıklığı üzerine çalıştığını anlatıyor. Denver'ın en iyi şarkıları kayak, uçuş ya da hızlı sürüşün ardından gelmişti. Güçlü bir fizyolojiye dönünce yaratıcılığı hemen geri geldi, diyor Robbins. Ona göre durum, milyonlarca sinirsel sürecin toplamıdır ve yetenek değil durum kötü ya da parlak davranmayı belirler. Durumu bedeni farklı kullanarak ya da odağı değiştirerek değiştirirsiniz. Duygu hareketle yaratılır, diyor."
+  },
+  "en": {
+    "title": "Change state with the body",
+    "description": "For Robbins what we can do depends on our state, and John Denver's writer's block gave way to movement.",
+    "hook": "Which movement could you try before your next demanding moment?",
+    "one_minute_summary": "In Awaken the Giant Within, Tony Robbins describes working with John Denver on writer's block. Denver's best songs had followed skiing, flying or fast driving. When he got back into a strong physiology, Robbins says, his creativity returned at once. Robbins defines a state as the sum of millions of neurological processes, and holds that acting badly or brilliantly depends on state, not ability. You change state by using your body differently or by changing focus. Emotion, he writes, is created by motion."
+  },
+  "es": {
+    "title": "Cambiar de estado con el cuerpo",
+    "description": "Para Robbins lo que podemos hacer depende de nuestro estado, y el bloqueo de John Denver cedió con movimiento.",
+    "hook": "¿Qué movimiento podrías probar antes de tu próximo momento exigente?",
+    "one_minute_summary": "En Awaken the Giant Within, Tony Robbins cuenta que trabajó con John Denver en su bloqueo de escritor. Sus mejores canciones habían seguido a esquiar, volar o conducir rápido. Al volver a una fisiología fuerte, dice Robbins, su creatividad regresó de inmediato. Robbins define un estado como la suma de millones de procesos neurológicos y sostiene que actuar mal o brillantemente depende del estado, no de la capacidad. Se cambia de estado usando el cuerpo de otra manera o cambiando el foco. La emoción, escribe, se crea con el movimiento."
+  },
+  "de": {
+    "title": "Den Zustand über den Körper ändern",
+    "description": "Für Robbins hängt unser Können von unserem Zustand ab, und John Denvers Schreibblockade löste sich durch Bewegung.",
+    "hook": "Welche Bewegung könntest du vor deinem nächsten anspruchsvollen Moment ausprobieren?",
+    "one_minute_summary": "In Awaken the Giant Within erzählt Tony Robbins, wie er mit John Denver an dessen Schreibblockade arbeitete. Denvers beste Songs waren nach Skifahren, Fliegen oder schnellem Fahren entstanden. Als er in eine kräftige Körperhaltung zurückkehrte, kehrte seine Kreativität laut Robbins sofort zurück. Robbins definiert einen Zustand als Summe von Millionen neurologischer Vorgänge und meint, schlechtes oder brillantes Handeln hänge vom Zustand ab, nicht von der Fähigkeit. Man ändert ihn über den Körper oder den Fokus. Emotion entstehe durch Bewegung."
+  }
+}

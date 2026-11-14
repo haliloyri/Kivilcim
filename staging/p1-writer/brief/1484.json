@@ -1,0 +1,59 @@
+{
+  "story_id": 1484,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Fearless Organization",
+    "author": "Amy C. Edmondson",
+    "year": "2018"
+  },
+  "confidence": "medium",
+  "confidence_note": "Hospital finding (strongest teams reported most errors) is solid in Shortform and PSNet. The \"not nice\" line and the \"check that dose\" contrast are Edmondson interview wording, not confirmed book text, so no quotation marks. Old quotes and \"fewer real errors\" claim dropped; the story says only that reporting rose, and that hidden errors are not counted.",
+  "facts": [
+    "As a graduate student Edmondson studied how teamwork related to medication errors in hospital units.",
+    "She expected the better teams to report fewer errors; the units with the strongest teamwork and leadership reported the most.",
+    "She read the difference as a difference in climate. In some units people said \"let us check that, is that the right dose?\"; in others people put things under the rug if they could.",
+    "Errors that are hidden are not counted.",
+    "Edmondson calls the idea that psychological safety means being nice the most important misconception; she says it is the opposite of tiptoeing.",
+    "She also says it does not mean lower standards."
+  ],
+  "scene_details": [
+    "a nurse asking whether it is the right dose",
+    "things put under the rug",
+    "a count of reported errors going up"
+  ],
+  "tension": "The best teams had the worst error numbers.",
+  "opening_idea": "Start with the table of error counts and the surprise of which units sat at the top.",
+  "lessons": [
+    {
+      "idea": "A rising count of reported problems can mean people feel safe to report, so read the count together with the climate.",
+      "anchor": "The best teams reported the most errors.",
+      "example": "A restaurant with many logged complaints may be one where staff actually write them down."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When did someone last bring you a problem early, and what did you do in the next minute?",
+  "use_cases": [
+    {
+      "situation": "A team report shows more incidents this month.",
+      "move": "Ask whether people are speaking up more or things are getting worse, and look at what changed in how you respond.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A report from a direct report is full of good news.",
+      "move": "Ask which part they were unsure to tell you, saying you want it early.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "Your child hides a bad grade.",
+      "move": "Thank them for telling you, then ask what they want to do about it.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "More reported mistakes can be a sign of a team that tells the truth.",
+  "conversation_variants": {
+    "punchline_idea": "Edmondson expected good hospital teams to report fewer errors; they reported more.",
+    "thirty_sec_idea": "Amy Edmondson studied hospital teams and medication errors expecting the strongest ones to report the fewest. The opposite happened. Some units checked doses aloud, others hid things. Higher counts did not mean more mistakes, only more honesty.",
+    "question_idea": "",
+    "key_contrast_idea": "few reports, or hidden ones"
+  }
+}

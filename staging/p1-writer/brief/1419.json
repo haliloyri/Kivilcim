@@ -1,0 +1,33 @@
+{
+  "story_id": 1419,
+  "kind": "anecdote",
+  "book": {"title": "Blue Ocean Strategy", "author": "W. Chan Kim and Renée Mauborgne", "year": "2005"},
+  "confidence": "medium",
+  "confidence_note": "Canvas definition is from the authors' site (high). Southwest details (dropped meals, seat choice, hub connectivity; kept friendly service, speed, frequent point-to-point departures; the car comparison and tagline) come from secondary summaries and are medium. The old text's 'most companies are surprised' claim and unverified lists (business class, lounges) were dropped.",
+  "facts": [
+    "The strategy canvas has the factors an industry competes and invests in along the horizontal axis and the level buyers receive on each along the vertical axis.",
+    "Plotting rivals shows how similar their strategies look to buyers, which signals a red ocean.",
+    "Rival airlines invested across many factors.",
+    "Southwest dropped or cut meals, seat choice and hub connectivity and concentrated on friendly service, speed and frequent point-to-point departures at a low price.",
+    "The authors set car travel on the canvas as a comparison.",
+    "Southwest attracted car drivers by making flying more like driving; a tagline cited: 'The speed of the plane at the price of the car, whenever you need it.'"
+  ],
+  "scene_details": ["a line plotted across factors such as meals, seat choice, speed", "car travel drawn on the same chart as flights", "frequent departures between pairs of cities"],
+  "tension": "Everyone's line on the chart looks the same, and one airline picks the car as its rival.",
+  "opening_idea": "Open with the chart and the extra line the authors draw for the car.",
+  "lessons": [{"idea": "Putting your offer on the same chart as your rivals shows whether you are different or only similar.", "anchor": "Southwest's line against the other airlines' and the car."}],
+  "reflect": [],
+  "reflect_final": "If you drew your offer and your closest rival's on one chart, which two or three factors would the lines separate on?",
+  "use_cases": [
+    {"situation": "Strategy discussion where everyone repeats the same selling points", "move": "Say: let's plot us and the two closest rivals on factors. Southwest cut most of them and kept three.", "context": "meeting"},
+    {"situation": "Choosing how to stand out in a job search", "move": "List what every candidate shows, then choose two things you will do differently.", "context": "self"},
+    {"situation": "A friend's café looks like every other café", "move": "Ask: what do customers choose you for that the café next door cannot say?", "context": "social"}
+  ],
+  "pocket_idea": "Southwest drew the car on the airline chart and kept only the factors a driver cares about: plot yourself before you compete.",
+  "conversation_variants": {
+    "punchline_idea": "Southwest picked the car as its competitor and cut most of what other airlines offered.",
+    "thirty_sec_idea": "Airlines plotted on a chart look alike; Southwest cut meals and seat choice, kept friendly service, speed and frequent departures at a low price, and drew car drivers.",
+    "question_idea": "",
+    "key_contrast_idea": "copy or different"
+  }
+}

@@ -1,0 +1,60 @@
+{
+ "story_id": 1384,
+ "kind": "anecdote",
+ "book": {
+  "title": "Atomic Habits",
+  "author": "James Clear",
+  "year": "2018"
+ },
+ "confidence": "medium",
+ "confidence_note": "The DB lists the book as 'Sağlıklı Olmak' by James Clear (2019); no such book exists. The story comes from Atomic Habits (2018), chapter 1, verified on Clear's own site. Clear later corrected the 2008 share to 8 of 14 road and track golds (57%), and added an update that the team's use of therapeutic use exemptions was questioned and investigations were unresolved; this goes in as a caveat. Old 'one more glass of water' example is not the book's. Medium because of the title mismatch.",
+ "facts": [
+  "In 2003 British Cycling hired Dave Brailsford as performance director. British riders had won one Olympic gold since 1908, no Briton had won the Tour de France in 110 years, and a top European bike maker refused to sell to the team for fear of hurting its sales.",
+  "Brailsford's plan: the aggregation of marginal gains, finding a 1% improvement in everything the team did.",
+  "Gains included redesigned bike seats, alcohol rubbed on tires for grip, testing massage gels, the best pillow and mattress for each rider, a surgeon teaching riders to wash their hands to catch fewer colds, and the inside of the team truck painted white to spot dust.",
+  "At the 2008 Beijing Olympics the team won 8 of 14 road and track golds; in 2012 Bradley Wiggins became the first British Tour de France winner. From 2007 to 2017 British riders won 178 world championships, 66 Olympic or Paralympic golds and 5 Tours de France.",
+  "Clear's arithmetic: 1% better every day for a year is about 37 times better; 1% worse every day ends near zero.",
+  "Clear: every action is a vote for the type of person you wish to become.",
+  "Caveat: Clear later posted an update that questions had been raised about the team's use of therapeutic use exemptions and that investigations were unresolved; he says the chapter is about compounding habits, not cycling."
+ ],
+ "scene_details": [
+  "a pillow and mattress chosen for each rider",
+  "a surgeon showing riders how to wash their hands",
+  "the inside of the team truck painted white",
+  "alcohol rubbed on tires"
+ ],
+ "tension": "A national team with one Olympic gold in a century started by fixing pillows and hand washing.",
+ "opening_idea": "Start with a surgeon teaching professional cyclists how to wash their hands.",
+ "lessons": [
+  {
+   "idea": "Look for the small health inputs you repeat every day, such as sleep, hygiene and the first drink of the day, because they compound.",
+   "anchor": "pillows, mattresses and hand washing in a cycling team"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which daily health detail, like your pillow, your water or the way you wash your hands, have you never thought worth improving by one percent?",
+ "use_cases": [
+  {
+   "situation": "Family wants to 'get healthy' all at once",
+   "move": "Pick one daily detail like bedtime or water; adjust it this week.",
+   "context": "family"
+  },
+  {
+   "situation": "Team planning a big wellness program",
+   "move": "Mention British Cycling started with hand washing and pillows; start with one small daily thing.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You fall off an ambitious diet",
+   "move": "Ask what a 1% better version of today's meal looks like.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "A world-beating team started with pillows and hand washing; improve one daily health detail by a little.",
+ "conversation_variants": {
+  "punchline_idea": "Britain's cycling team hired a surgeon to teach riders how to wash their hands.",
+  "thirty_sec_idea": "Brailsford 2003, pillows, hand washing, white truck; 2008, 2012 Wiggins; 1% math; caveat on TUE questions.",
+  "question_idea": "",
+  "key_contrast_idea": "tiny daily gains"
+ }
+}

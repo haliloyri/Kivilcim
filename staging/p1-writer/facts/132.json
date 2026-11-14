@@ -1,0 +1,40 @@
+{
+ "book_no": 132,
+ "title": "Lost Connections",
+ "authors": ["Johann Hari"],
+ "year": "2018",
+ "sources": [
+  "https://posttraumaticgrowth.substack.com/p/25-lost-connections-why-youre-depressed",
+  "https://bjgp.org/content/bjgp/68/672/331.full.pdf",
+  "https://www.sbs.com.au/voices/article/johann-hari-modern-life-is-making-us-sick/0mdenkshj",
+  "https://www.supersummary.com/lost-connections/summary/",
+  "https://www.shortform.com/blog/work-related-depression/",
+  "https://imhu.org/post/the-real-cause-of-the-depression-epidemic"
+ ],
+ "facts": [
+  {"id":"f1","claim":"Lost Connections: Why You're Depressed and How to Find Hope (2018) by Johann Hari (subtitle varies by edition).","source":"BJGP review","confidence":"high"},
+  {"id":"f2","claim":"As a teenager Hari was prescribed paroxetine, told by his GP the depression came from 'a chemical imbalance in the brain' due to depleted serotonin; the dose rose from 20 mg to 60 mg over a few years (BJGP review). First tablet at 18 (Substack summary).","source":"BJGP; Substack summary","confidence":"medium"},
+  {"id":"f3","claim":"Hari argues depression is far from simply a chemical imbalance; he cites Irving Kirsch's meta-analysis, which he describes as a mood improvement of only 1.8 points on the Hamilton scale, 'no meaningful effect at least for the average person'. Critics say Hari cherry-picked.","source":"SBS feature; BJGP review","confidence":"medium"},
+  {"id":"f4","claim":"The book names nine causes: disconnection from meaningful work, other people, meaningful values, childhood trauma, status and respect, the natural world, a hopeful or secure future, and two biological factors (genes and brain changes).","source":"book table of contents via summaries","confidence":"medium"},
+  {"id":"f5","claim":"Hari says the first seven are connections that have been lost, and that only two of the nine are biological.","source":"review","confidence":"medium"},
+  {"id":"f6","claim":"Work chapter: a Gallup survey (2011-2012) found about 13% of people say they are engaged in their work (63% not engaged, 24% actively disengaged), across 142 countries.","source":"Shortform and Big Think summaries","confidence":"medium"},
+  {"id":"f7","claim":"Michael Marmot's work on the British civil service (Whitehall) found that the lower an employee's rank, the higher the stress and the likelihood of a heart attack; Hari stresses lack of control as the key factor and says control predicts depression better than workplace, status or pay.","source":"summaries","confidence":"medium"},
+  {"id":"f8","claim":"Three workplace factors he names as harmful: feeling controlled, effort without reward, low status. A bike repairman named Josh and colleagues turned their workplace into a cooperative.","source":"Substack summary","confidence":"medium"},
+  {"id":"f9","claim":"Cambodia: a farmer lost his left leg to a land mine; he got an artificial limb but did not recover and felt constant anxiety about the future and despair.","source":"Substack summary","confidence":"medium"},
+  {"id":"f10","claim":"Doctors and neighbours sat with him and talked through his life; the old rice-paddy work was too hard for him now, so they bought him a cow so he could become a dairy farmer. Over the following months and years his depression went away. Locals described the cow as 'an analgesic, and antidepressant'.","source":"Substack summary","confidence":"medium"},
+  {"id":"f11","claim":"The account came via Dr Derek Summerfield, who studied mental health in Cambodia (tellings differ on whether a psychiatrist visited in 2001).","source":"Substack summary","confidence":"low"}
+ ],
+ "rejected": [
+  {"claim":"The nine causes include 'not feeling you deserve real respect' as a separate item and 'gene-environment interaction'","reason":"Book's list: status and respect is one item; genes and brain changes are two biological items."},
+  {"claim":"Hari used antidepressants for years and 'never truly recovered' ; works 'a little'","reason":"Teen prescription and rising dose supported; the 'never fully recovered' wording is not confirmed."},
+  {"claim":"A London banker interviewed by Hari, high salary, resigned to mentor teenagers, depression eased within months","reason":"Not found in any source. Replaced with the Gallup and Whitehall material."},
+  {"claim":"'Meaningless work' is a strong predictor of depression and anxiety 'according to research'; brain signals 'not worth the energy'","reason":"Vague; replaced by specific Marmot and Gallup items."},
+  {"claim":"The Cambodian farmer lost his leg in a tractor accident; a village healer asked what he liked; he sold milk and shared with neighbours","reason":"Cause was a land mine (not tractor). Village-healer dialogue and the milk-sharing details are not found."},
+  {"claim":"Group therapy and social interventions show results 'comparable to or more lasting than drugs'","reason":"Vague, unsourced; not used."}
+ ],
+ "stories": {
+  "1492": {"verdict":"keep","fact_ids":["f2","f3","f4","f5"],"note":"Hari's own prescription and the nine-causes list; includes critics caveat."},
+  "1493": {"verdict":"keep","fact_ids":["f6","f7","f8"],"note":"Banker anecdote unverifiable and dropped; rebuilt on Gallup 13% and Marmot's Whitehall control finding."},
+  "1494": {"verdict":"keep","fact_ids":["f9","f10","f11"],"note":"Cambodian farmer corrected (land mine, not tractor); a cow; locals' phrase."}
+ }
+}

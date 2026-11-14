@@ -1,0 +1,35 @@
+{
+  "story_id": 1411,
+  "verdict": "keep",
+  "verify_note": "Keep: shy vs introvert and Kagan infant study from reviews and summaries of Quiet (Inside Story, Shortform, lifeclub); no primary text. High-reactive share omitted (sources differ). Old claims of curious calm extrovert babies and a neurological preference dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Sessiz olmak korkmak değildir",
+    "description": "Susan Cain, utangaçlık ile içe dönüklüğü ayırır. Kagan'ın bebek deneyi bu farkın nereden geldiğini gösterir.",
+    "hook": "Utangaç dediğiniz kişi aslında kalabalıktan mı yoruluyor, yargılanmaktan mı çekiniyor?",
+    "one_minute_summary": "Jerome Kagan 1989'da Harvard'da yaklaşık 500 dört aylık bebeği patlayan balonlara, kayıttan seslere ve alkol kokulu pamuğa maruz bıraktı. Kimi bebek kollarını bacaklarını çırpıp ağladı, kimi sakin kaldı. Ağlayanların sessiz çocuklar olacağını öngördü ve iki ile on bir yaş arasında yeniden sınadı; çoğu tuttu. Susan Cain bunu, utangaçlığı yani yargılanma korkusunu, aşırı uyarıcı ortamlardan kaçınan içe dönüklükten ayırmak için kullanır. Kagan reaktivitenin tek yol olmadığını da vurguladı."
+  },
+  "en": {
+    "title": "Quiet Is Not Fear",
+    "description": "Susan Cain separates shyness from introversion. Kagan's infant study shows where the difference may begin.",
+    "hook": "When someone steps back from a crowd, is it fear of judgment or too much noise?",
+    "one_minute_summary": "In 1989 the Harvard psychologist Jerome Kagan exposed about 500 four-month-old babies to taped voices, popping balloons and an alcohol-scented swab. Some flailed and cried, some stayed calm. He predicted the criers would become quiet children and retested them between ages two and eleven; most matched. Susan Cain uses it to separate shyness, the fear of social disapproval, from introversion, a preference for low-stimulation places. Kagan stressed that reactivity is not the only route."
+  },
+  "es": {
+    "title": "Callado no es asustado",
+    "description": "Susan Cain separa la timidez de la introversión. El estudio de bebés de Kagan muestra dónde puede empezar la diferencia.",
+    "hook": "Cuando alguien se aparta de la multitud, ¿es miedo al juicio o demasiado ruido?",
+    "one_minute_summary": "En 1989, el psicólogo de Harvard Jerome Kagan expuso a unos 500 bebés de cuatro meses a voces grabadas, globos que estallaban y un algodón con olor a alcohol. Unos se agitaron y lloraron, otros siguieron tranquilos. Predijo que los llorones serían niños callados y los reevaluó entre los dos y los once años; la mayoría coincidió. Susan Cain separa con ello la timidez, el miedo a la desaprobación, de la introversión, la preferencia por entornos poco estimulantes."
+  },
+  "de": {
+    "title": "Still heißt nicht ängstlich",
+    "description": "Susan Cain trennt Schüchternheit von Introversion. Kagans Babystudie zeigt, wo der Unterschied beginnen könnte.",
+    "hook": "Wenn sich jemand aus der Menge zurückzieht: Ist es Angst vor Urteil oder zu viel Lärm?",
+    "one_minute_summary": "1989 setzte der Harvard-Psychologe Jerome Kagan rund 500 vier Monate alte Babys aufgenommenen Stimmen, platzenden Luftballons und einem Wattestäbchen mit Alkoholgeruch aus. Manche ruderten und weinten, andere blieben ruhig. Er sagte voraus, die Weiner würden still werden, und prüfte sie zwischen zwei und elf Jahren erneut; die meisten passten. Susan Cain trennt damit Schüchternheit, die Angst vor Missbilligung, von Introversion, der Vorliebe für reizarme Umgebungen. Kagan betonte, Reaktivität sei nicht der einzige Weg."
+  }
+}

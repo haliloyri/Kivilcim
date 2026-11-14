@@ -1,0 +1,67 @@
+{
+  "story_id": 1678,
+  "kind": "concept",
+  "book": {
+    "title": "The Headspace Guide to Meditation",
+    "author": "Andy Puddicombe",
+    "year": "2012"
+  },
+  "confidence": "medium",
+  "confidence_note": "Book text itself was not available; checked against the publisher blurb, a chapter summary (Dygest) and excerpt-style listings. The road image and the 'chase a shiny car' detail come from secondary excerpts, wording not verified, so they are paraphrased and attributed to 'as Puddicombe describes it'. Old text's opening ('Puddicombe heard for years: I can't, my mind won't stop'), the 'forgot the bill / tomorrow's meeting' thoughts and the 'return muscle' image are not found and dropped. Title in DB differs from the real one (Get Some Headspace / The Headspace Guide to Meditation and Mindfulness).",
+  "facts": [
+    "The book teaches one exercise it calls Take10: ten minutes, once a day.",
+    "Emptying the mind is not the aim; thoughts arise the way a heartbeat does, and forcing silence is compared to stirring muddy water harder to make it clear.",
+    "Before the exercise, a brief check-in on the body, the sounds around you and your mood.",
+    "Sit undisturbed with an upright back and resting hands; take a few deep breaths, then let the breath return to its natural rhythm.",
+    "When the mind wanders, notice it without irritation and return to the breath.",
+    "If the mind is loud, count breaths from one to ten and back.",
+    "The road image: you sit at the side of a busy road with traffic in both directions; each passing car or truck is a thought, a physical sensation or an emotion. The task is to sit and watch them go by.",
+    "The usual trap: we do not just watch, we run into the road, chase a particularly shiny car, get caught up in where it is going and only minutes later notice we were dragged off.",
+    "Puddicombe says it gets easier with practice, with less urge to run into the road.",
+    "He does not say all thinking is bad; creative and problem-solving thoughts have value.",
+    "Puddicombe trained for about ten years as a Buddhist monk in Asia before writing the book (secondary sources).",
+    "The method warns against two errors: white-knuckle effort and drowsy vagueness; the target is 'relaxed alertness'.",
+    "The ten minutes are described as a training ground for the rest of the waking day."
+  ],
+  "scene_details": [
+    "a busy road with traffic in both directions",
+    "a particularly shiny car you chase",
+    "counting breaths from one to ten and back",
+    "an upright back and resting hands"
+  ],
+  "tension": "Most beginners decide they are failing at meditation the moment thoughts arrive, and the book's image says arriving thoughts are the road itself.",
+  "opening_idea": "Open on the roadside seat and the one detail that the reader will recognise: the particularly shiny car that you chase before you notice.",
+  "lessons": [
+    {
+      "idea": "A wandering mind is the exercise, not the failure; the skill is noticing sooner and returning without scolding yourself.",
+      "anchor": "The chased shiny car and the moment you notice you were dragged off.",
+      "example": "Someone reading an email drifts to a worry, notices, and goes back to the line they were on without a lecture to themselves."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Next time your attention is pulled off a task, how would you handle the moment you notice it, and what do you usually say to yourself then?",
+  "use_cases": [
+    {
+      "situation": "A friend says they cannot meditate because their mind will not stop.",
+      "move": "Describe the road image: thoughts are traffic, the exercise is the noticing and the return, not silence.",
+      "context": "social"
+    },
+    {
+      "situation": "You catch yourself rereading the same paragraph.",
+      "move": "Name the shiny car you followed and go back to the line without scolding yourself.",
+      "context": "self"
+    },
+    {
+      "situation": "A tense meeting where your attention keeps leaving the speaker.",
+      "move": "Notice the drift, take one breath, and return to the speaker's words.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "A wandering mind is traffic on the road you are sitting beside: notice the car you chased and come back, without scolding.",
+  "conversation_variants": {
+    "punchline_idea": "In Puddicombe's road image the cars are your thoughts, and the mistake is chasing the shiny one.",
+    "thirty_sec_idea": "Sit by a busy road, each car a thought, sensation or emotion. The job is to watch, but we chase the shiny car and notice minutes later; notice and return to the breath.",
+    "question_idea": "",
+    "key_contrast_idea": "watch the car, don't chase"
+  }
+}

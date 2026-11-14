@@ -1,0 +1,62 @@
+{
+  "story_id": 1649,
+  "kind": "concept",
+  "book": {
+    "title": "Atlas of the Heart",
+    "author": "Brené Brown",
+    "year": "2021"
+  },
+  "confidence": "medium",
+  "confidence_note": "Definitions confirmed on an excerpt page and in Time and chapter summaries; the book text was not read. Old text's advice to read envy as 'I want that too', its writer example and its claim that talking to the third person strengthens the relationship were not found and are dropped from the story (some survive only as reader-side proposals in the lesson and use cards). The 'jealousy is a response to anger, sadness or fear' line comes from one set of notes and is hedged. No named case in the book is used.",
+  "facts": [
+    "Atlas of the Heart (2021) by Brené Brown places envy and jealousy in the section 'Places We Go When We Compare'.",
+    "The comparison section also holds comparison, admiration, schadenfreude and freudenfreude.",
+    "Envy occurs when we want something that another person has; looks, status and wealth are the big trio.",
+    "Jealousy is when we fear losing a relationship, or a valued part of a relationship, that we already have.",
+    "Envy involves two parties (you and the person who has the thing); jealousy typically involves three (you, the person you value, and the perceived rival).",
+    "Schadenfreude is pleasure at another's misfortune and freudenfreude is joy at another's good fortune (standard definitions in the book).",
+    "One set of notes on the book says jealousy is a response to feelings such as anger, sadness and fear.",
+    "The book maps 87 emotions and experiences in 13 land masses."
+  ],
+  "scene_details": [
+    "looks, status and wealth as the big trio of what people envy",
+    "two people for envy, three for jealousy",
+    "jealousy as fear of losing a relationship or part of one",
+    "the section title 'Places We Go When We Compare'"
+  ],
+  "tension": "Everyday speech treats envy and jealousy as one word; Brown's definitions differ in what is at stake and how many people are in the picture.",
+  "opening_idea": "Open with the head count: two people for envy, three for jealousy.",
+  "lessons": [
+    {
+      "idea": "Count the people in the picture before you name the feeling.",
+      "anchor": "Two parties for envy, three for jealousy.",
+      "example": "Someone who says 'I am jealous of my cousin's new flat' is describing a wish for a flat; someone who feels uneasy about a friend's new group is describing a fear of losing time together."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Think of a recent pang of envy or jealousy: how many people were in the picture, and what does that count say about what you want?",
+  "use_cases": [
+    {
+      "situation": "A friend says they are jealous of a colleague's promotion.",
+      "move": "Ask whether it is the job they want or someone they are afraid of losing; Brown's definitions separate the two.",
+      "context": "social"
+    },
+    {
+      "situation": "You feel uneasy when your partner spends Friday with a new group.",
+      "move": "Say what you fear losing, such as time together, and ask for one fixed evening.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A twinge of envy hits when a peer announces a win.",
+      "move": "Write down what exactly they have that you want, then whether it is within reach.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Count the people: wanting what someone has involves two, fearing to lose someone involves three.",
+  "conversation_variants": {
+    "punchline_idea": "By Brown's definitions, envy has two people in it and jealousy has three.",
+    "thirty_sec_idea": "In Atlas of the Heart, Brené Brown separates two words we blur. Envy is wanting something another person has, looks, status or wealth. Jealousy is fearing the loss of a relationship you already have, and usually involves a third person. Counting the people tells you which one you feel.",
+    "question_idea": "",
+    "key_contrast_idea": "want or fear losing"
+  }
+}

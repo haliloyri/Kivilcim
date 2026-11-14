@@ -1,0 +1,35 @@
+{
+ "story_id": 1570,
+ "verdict": "keep",
+ "verify_note": "Keep: the old Navy SEAL officer quote is unverified. Rebuilt on Alex Pentland's sociometer negotiations (first five minutes predicted the outcome) and the three qualities of belonging cues, from a lifeclub summary and book notes; original text not readable, medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İlk beş dakikanın sensörü",
+  "description": "Pentland'ın sensörü, müzakerenin sonucunu ilk beş dakikadan tahmin etti. Coyle bunu aidiyet ipuçlarını anlatmak için kullanıyor.",
+  "hook": "Bir sonraki konuşmanızın ilk dakikalarında hangi küçük sinyali verebilirsiniz?",
+  "one_minute_summary": "MIT'den Alex Pentland, insanlara maaş, tatil ve yan haklar üzerine rol yaptıkları müzakerelerde sensör taktırdı. Göz teması, taklit ve fiziksel yakınlığın ilk beş dakikasından sonucu tahmin edebildi; etkileşim içerikten daha çok şey belirliyordu. Daniel Coyle bunu aidiyet ipuçlarını açıklamak için kullanıyor: enerji, bireysellik ve gelecek yönelimi taşıyan, tek mesaj veren sinyaller. Ders: Konuşmaya önce sinyallerle başlayın. İlk dakikalar bir grubun ait olup olmadığına karar verdiği anlardır."
+ },
+ "en": {
+  "title": "The First Five Minutes",
+  "description": "A sensor predicted negotiation outcomes from the first five minutes. Coyle uses it to explain belonging cues.",
+  "hook": "Which small signal could you send in the first minutes of your next conversation?",
+  "one_minute_summary": "MIT's Alex Pentland had people wear a sensor during role-played negotiations about salary, vacation and benefits. From the first five minutes of eye contact, mimicry and physical closeness he could predict the outcome, and the interaction mattered more than the content. Daniel Coyle uses this to explain belonging cues, signals with energy, individualisation and future orientation that say: you are safe here. The lesson: start a conversation with signals, then content."
+ },
+ "es": {
+  "title": "Cinco minutos, un sensor",
+  "description": "Un sensor predijo el resultado de negociaciones a partir de los cinco primeros minutos. Coyle lo usa para explicar las señales de pertenencia.",
+  "hook": "¿Qué señal pequeña podrías enviar en los primeros minutos de tu próxima conversación?",
+  "one_minute_summary": "Alex Pentland, del MIT, hizo que unas personas llevaran un sensor en negociaciones simuladas sobre sueldo, vacaciones y beneficios. Con los primeros cinco minutos de contacto visual, imitación y cercanía pudo predecir el resultado, y la interacción pesaba más que el contenido. Daniel Coyle lo usa para explicar las señales de pertenencia, con energía, individualización y orientación al futuro, que dicen: aquí estás a salvo. La lección: empieza una conversación con señales y luego con contenido."
+ },
+ "de": {
+  "title": "Die ersten fünf Minuten",
+  "description": "Ein Sensor sagte den Ausgang von Verhandlungen aus den ersten fünf Minuten voraus. Coyle erklärt damit Zugehörigkeitssignale.",
+  "hook": "Welches kleine Signal könntest du in den ersten Minuten deines nächsten Gesprächs senden?",
+  "one_minute_summary": "Alex Pentland vom MIT ließ Menschen bei gespielten Verhandlungen über Gehalt, Urlaub und Zusatzleistungen einen Sensor tragen. Aus den ersten fünf Minuten Blickkontakt, Nachahmung und Nähe konnte er den Ausgang vorhersagen, und die Interaktion wog schwerer als der Inhalt. Daniel Coyle erklärt damit Zugehörigkeitssignale mit Energie, Individualität und Zukunftsbezug: Hier bist du sicher. Die Lehre: Beginne ein Gespräch mit Signalen, dann mit Inhalt."
+ }
+}

@@ -1,0 +1,55 @@
+{
+  "fit_45s": {
+    "type": "score",
+    "instructions": "Can this story be told completely in a 45-second vertical video?",
+    "criteria": [
+      "no, needs several steps or concepts",
+      "only with heavy cuts, context lost",
+      "one idea but long setup",
+      "one idea and one example, small cuts",
+      "yes, one striking idea, fits easily"
+    ]
+  },
+  "hook": {
+    "type": "score",
+    "instructions": "How strong is the opening hook for the first 3 seconds of a short video?",
+    "criteria": [
+      "none, generic or definition opening",
+      "interesting topic, flat opening",
+      "a question or contrast, needs rewriting",
+      "surprising claim, number or scene",
+      "first sentence alone stops the scroll"
+    ]
+  },
+  "visual": {
+    "type": "score",
+    "instructions": "How easily can this story be shown with visuals instead of on-screen text?",
+    "criteria": [
+      "fully abstract, text only",
+      "abstract, forced metaphor",
+      "an object or person, not central",
+      "a concrete scene or experiment",
+      "a sequence of scenes, clear without sound"
+    ]
+  },
+  "primary_theme": {
+    "type": "choice",
+    "instructions": "Which skill does the reader mainly build from this story?",
+    "criteria": {
+      "leadership": "Leadership: leading teams, delegation, vision, culture",
+      "communication": "Communication: listening, explaining, feedback, hard conversations",
+      "influence": "Influence & negotiation: negotiation, persuasion, selling",
+      "relationships": "Relationships & empathy: family, partner, friendship, trust",
+      "decision_making": "Decision making: choices, risk, biases, probability",
+      "thinking": "Thinking & mental models: logic, systems thinking, learning",
+      "resilience": "Resilience: hardship, failure, recovery, courage",
+      "emotions": "Emotions & self-awareness: anger, anxiety, stress, self-compassion",
+      "habits": "Habits & discipline: willpower, routines, behaviour change",
+      "focus": "Focus & productivity: deep work, time, attention",
+      "creativity": "Creativity & innovation: generating ideas, experiments, invention",
+      "money_career": "Money & career: finance, startups, work life, strategy",
+      "health": "Health & body: sleep, nutrition, brain, exercise",
+      "meaning": "Meaning & values: purpose, philosophy, ethics, happiness"
+    }
+  }
+}

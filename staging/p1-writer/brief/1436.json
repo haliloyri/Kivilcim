@@ -1,0 +1,32 @@
+{
+  "story_id": 1436,
+  "kind": "concept",
+  "book": {"title": "The Psychology of Selling", "author": "Brian Tracy", "year": "2006"},
+  "confidence": "low",
+  "confidence_note": "The book's text was not available; facts come from a single summary preview (Shortform). The old text's claim that objections are a sign of interest, its quotation and the real-objection-versus-excuse split could not be found in any source and were dropped; the book's documented treatment of 'no' is the fear of rejection, so the story is re-grounded there. The 10 percent earnings figure is the summary's report of the book's claim, with no named study. Publication year follows the library record (2006).",
+  "facts": [
+    "A summary calls the fear of rejection the main fear holding salespeople back; it is triggered by possible disapproval, judgment or rudeness.",
+    "Getting an appointment usually requires cold calling, which the book describes as the most stressful and least-liked part of selling; it treats prospecting as a learnable skill and advises preparing answers to common objections in advance.",
+    "Three ways to overcome the fear: rejection is not personal and is an expected, normal part of sales; courage takes practice and strengthens with use like a muscle; positive self-talk helps, for example repeating upbeat lines such as 'I'm doing great! I love my work!'.",
+    "Self-concept (how you see yourself and your skills) shapes attitude; a positive attitude helps customers respond more warmly, makes you enjoy and practise sales tasks more, and raises your earnings comfort zone. People tend to earn within about 10% of what they believe they are worth (a self-described $50,000 person earns roughly that).",
+    "The book opens by counting: the top 20% of salespeople earn about 80% of the profession's money; a winning edge is a small, steady advantage in skill, like a horse that wins by a nose and collects ten times the prize of second place."
+  ],
+  "scene_details": ["a cold call dreaded and put off", "courage as a muscle", "the upbeat line 'I'm doing great! I love my work!'", "a horse winning by a nose"],
+  "tension": "The step that starts every sale, asking, is the one most salespeople like least.",
+  "opening_idea": "Open on cold calling as the most stressful and least-liked part of selling.",
+  "lessons": [{"idea": "Treat an expected 'no' as part of the job and let courage grow by use, instead of waiting until the dread has passed.", "anchor": "Rejection is not personal; courage is a muscle.", "example": "A freelancer who has put off phoning prospective clients makes the first call and finds the next easier."}],
+  "reflect": [],
+  "reflect_final": "What is one call, message or request you keep putting off because of how it might be received?",
+  "use_cases": [
+    {"situation": "You keep postponing a call you are nervous about.", "move": "Remind yourself a 'no' is normal and not a verdict on you, make the call, and note how it went.", "context": "self"},
+    {"situation": "A colleague dreads asking a client for an appointment.", "move": "Say it is the least-liked part for most people and prepare an answer to a common objection together.", "context": "meeting"},
+    {"situation": "A friend who just started selling is discouraged after rejections.", "move": "Share Tracy's view that rejection isn't personal and courage grows with practice, then ask which call went best.", "context": "oneonone"}
+  ],
+  "pocket_idea": "Rejection is an expected part of asking; courage grows with use like a muscle, so ask once more.",
+  "conversation_variants": {
+    "punchline_idea": "In Tracy's book the hardest part of selling is the cold call, and the cure for dreading it is more calls.",
+    "thirty_sec_idea": "Tracy names fear of rejection as the main thing holding salespeople back: cold calling is the most stressful, least-liked part. His remedy is three things: rejection is not personal, courage grows with practice like a muscle, and upbeat self-talk helps.",
+    "question_idea": "",
+    "key_contrast_idea": "dread and practice"
+  }
+}

@@ -1,0 +1,210 @@
+{
+ "book_no": 140,
+ "title": "The Mom Test",
+ "authors": [
+  "Rob Fitzpatrick"
+ ],
+ "year": "2013",
+ "sources": [
+  "https://www.ybrikman.com/blog/2023/03/29/the-mom-test/",
+  "https://mtlynch.io/book-reports/the-mom-test/",
+  "https://www.greaterwrong.com/posts/fuktKYSvzFMTfPpeT/the-mom-test-summary-and-thoughts",
+  "https://readwise.io/reader/shared/01gkmd7v2fv29z8bvcc57kcydy"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "The title: if you ask your mom whether your business idea is good she will usually say yes, because she wants to support you. The book's point is that almost anyone can give you misleading answers, often without meaning to (not wanting to hurt you, not knowing their own preferences, nothing at stake).",
+   "source": "ybrikman summary; Blinkist/Readwise summaries",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Three rules: talk about their life instead of your idea; ask about specific past events instead of generics or opinions about the future; talk less and listen more.",
+   "source": "ybrikman; mtlynch; multiple summaries",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "'They own the problem, you own the solution.'",
+   "source": "ybrikman summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f4",
+   "claim": "Bad question: 'Do you think my idea for a product that does X is any good?' Better: ask how they handle X today, what products they use, what problems they hit.",
+   "source": "ybrikman summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Bad question: 'Would you buy a product that did X?' Better: find out whether X is a real pain or something they mostly ignore, and how they solve it now.",
+   "source": "ybrikman summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Bad question: 'How much would you pay for a product that did X?' Better: ask how much time and money X costs them now and whether they have paid for past solutions; or ask for a pre-order.",
+   "source": "ybrikman summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "'Once you start talking about your idea, they stop talking about their problems.'",
+   "source": "mtlynch book report (quote)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "'If they haven't looked for ways of solving it already, they're not going to look for (or buy) yours.'",
+   "source": "mtlynch book report (quote)",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "Good questions listed: 'Talk me through the last time X happened'; 'Why do you bother with X?'; 'What else have you tried for X?'; 'Who else should I talk to?'",
+   "source": "ybrikman summary",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Chapter 2 names three kinds of bad data: compliments, fluff, and ideas.",
+   "source": "ybrikman; Blinkist; Readwise summaries",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "'Compliments are the fool's gold of customer learning: shiny, distracting, and worthless.' The fix: do not accept the compliment, dig for facts: why they like it, what else they have tried, what it cost them.",
+   "source": "mtlynch quote; ybrikman",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Fluff has three forms: generic claims ('I usually', 'I always', 'I never'), future-tense promises ('I will', 'I would'), and hypotheticals ('I might', 'I could'). The most dangerous is 'I would definitely buy that'; steer back to the last time they ran into the problem.",
+   "source": "ybrikman; mtlynch",
+   "confidence": "high"
+  },
+  {
+   "id": "f13",
+   "claim": "Ideas and feature requests: when someone asks for a feature, find the underlying problem, their current workaround and motivation; 'Why do you want that?'.",
+   "source": "ybrikman",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Commitment and advancement: a meeting counts only if the customer gives up something they value (time, reputation or money) and moves to the next real step of the sales funnel.",
+   "source": "ybrikman; mtlynch; Readwise",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "Commitment types: time (a scheduled next meeting, feedback on wireframes, a trial), reputation (an introduction to a decision maker or teammate, a public testimonial), money (letter of intent, pre-order, deposit).",
+   "source": "ybrikman; mtlynch",
+   "confidence": "high"
+  },
+  {
+   "id": "f17",
+   "claim": "'If you don't know what happens next after a product or sales meeting, the meeting was pointless.' and 'The more they're giving up, the more seriously you can take what they're saying.'",
+   "source": "mtlynch quotes",
+   "confidence": "medium"
+  },
+  {
+   "id": "f18",
+   "claim": "Bad meeting endings: 'Looks great, let me know when it launches!' and 'I would definitely buy that.' Good ones: 'When can we start the trial?' and 'Can I buy the prototype?'",
+   "source": "ybrikman",
+   "confidence": "high"
+  },
+  {
+   "id": "f19",
+   "claim": "Money is not required early on: in first meetings a commitment of time or an introduction can do; one quoted good ending is 'There are a couple people I can introduce you to...'.",
+   "source": "Readwise/Blinkist-type summaries",
+   "confidence": "medium"
+  },
+  {
+   "id": "f20",
+   "claim": "Good question list also includes: 'Why do you bother with X?', 'What else have you tried for X?', 'Who else should I talk to?'",
+   "source": "ybrikman summary",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old text: Fitzpatrick 'says' the mom 'lies because she loves you', quoted as 'Annen sizi sevdiği için yalan söylüyor. Bu veri değil, nezaket.'",
+   "reason": "Invented quote; book says the mom is the example of someone who will want to support you."
+  },
+  {
+   "claim": "Old text: the 'mom test' is passed only if you get real data even when she would lie out of love.",
+   "reason": "Paraphrase of the book's idea but framed as a pass/fail test; not verified as stated."
+  },
+  {
+   "claim": "Old text: 'Bu konuda ne kadar para harcadınız?' as a verbatim recommended question.",
+   "reason": "Book's wording differs (time and money it costs now; paid for past solutions); used the verified version."
+  },
+  {
+   "claim": "Old text: 'Gelecek yerine geçmiş sorun' quote 'insanlar geçmişte dürüst, gelecekte iyimserdir'.",
+   "reason": "Not found verbatim in any source."
+  },
+  {
+   "claim": "Old text: ten interviews, all say great idea, three 'surely use', product launched and nobody bought.",
+   "reason": "Invented scenario, not from the book."
+  },
+  {
+   "claim": "Old text: 'taahhüt merdiveni' (commitment ladder) as Fitzpatrick's term.",
+   "reason": "Not in book; book speaks of commitment and advancement."
+  },
+  {
+   "claim": "Old text: 'if the customer says yes but... it is a confirmed no'; 'credit card out is real approval'.",
+   "reason": "Not found in book."
+  },
+  {
+   "claim": "Preferences vs behaviour example: people say they like strong coffee but order weak milky coffee.",
+   "reason": "Appears in one blog summary only; not confirmed to be the book's own example."
+  },
+  {
+   "claim": "Fitzpatrick's startup lost about 10 million dollars treating fluff as commitment.",
+   "reason": "Only in one third-party summary; no passage found."
+  },
+  {
+   "claim": "Analytics dashboard, CSV and PDF export example presented as Fitzpatrick's own story",
+   "reason": "Found in a third-party book report where the 'author' may be the report's writer; not attributable to the book."
+  }
+ ],
+ "stories": {
+  "1516": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9"
+   ],
+   "note": "Why mom answers mislead, three rules, three bad questions and their fixes. Concept story, no event from the book."
+  },
+  "1517": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f10",
+    "f11",
+    "f12",
+    "f13"
+   ],
+   "note": "Bad data: compliments, fluff, ideas. Concept story; no event."
+  },
+  "1518": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f15",
+    "f16",
+    "f17",
+    "f18",
+    "f19"
+   ],
+   "note": "Commitment and advancement."
+  }
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1593,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: fitness as predictor from reviews of Outlive and the JAMA Network Open abstract of the Cleveland Clinic study (read). That Attia cites exactly this study is likely but unconfirmed, so the story says his case rests on data like it. Old hypertension, obesity and only-variable claims dropped. Observational caveat carried.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kondisyon bir gösterge",
+    "description": "Cleveland Klinik verisinde düşük kondisyon, elit kondisyonun yaklaşık beş katı ölüm riski taşıdı. Çalışma gözlemsel, nedensellik kanıtlamıyor.",
+    "hook": "Günlük hangi fiziksel iş bir yıl öncesine göre zorlaştı?",
+    "one_minute_summary": "Cleveland Klinik'te 122.007 koşu bandı testi ortanca 8,4 yıl izlendi ve düşük kondisyon, elit kondisyonun yaklaşık beş katı ölüm riski taşıdı. Bu risk koroner hastalık, sigara ve diyabetle kıyaslanabilir ya da daha yüksekti, ama çalışma gözlemseldi. Peter Attia, Outlive kitabında VO2 max'in belki en güçlü uzun ömür göstergesi olduğunu söylüyor. Konuşabileceğiniz tempoda kardiyo, zor aralıklar ve kuvvet çalışması öneriyor. Kondisyonlu insanlar başka açılardan da farklı olabilir."
+  },
+  "en": {
+    "title": "Fitness as a marker",
+    "description": "In a Cleveland Clinic data set, low fitness carried about five times the mortality risk of elite fitness. The study is observational and does not prove cause.",
+    "hook": "Which everyday physical task is harder than it was a year ago?",
+    "one_minute_summary": "In a Cleveland Clinic study, 122,007 treadmill tests were followed for a median of 8.4 years, and low fitness carried about five times the mortality risk of elite fitness. That risk was comparable to or greater than coronary disease, smoking and diabetes, but the study is observational. In Outlive, Peter Attia says VO2 max may be the strongest longevity marker. He asks for talkable-pace cardio, hard intervals and strength work. Fit people may differ in other ways too."
+  },
+  "es": {
+    "title": "La forma física como marcador",
+    "description": "En datos de la Clínica Cleveland, la forma física baja suponía cerca de cinco veces el riesgo de mortalidad de la de élite. El estudio es observacional y no prueba la causa.",
+    "hook": "¿Qué tarea física cotidiana te cuesta más que hace un año?",
+    "one_minute_summary": "En un estudio de la Clínica Cleveland se siguieron 122.007 pruebas en cinta una mediana de 8,4 años, y la forma física baja suponía cerca de cinco veces el riesgo de mortalidad de la de élite. Era comparable o mayor que el de la enfermedad coronaria, el tabaco y la diabetes, pero el estudio es observacional. En Outlive, Peter Attia dice que el VO2 máx. quizá sea el mejor marcador de longevidad. Pide cardio a ritmo hablable, intervalos duros y fuerza. Las personas en forma pueden diferir en otras cosas."
+  },
+  "de": {
+    "title": "Fitness als Marker",
+    "description": "In Daten der Cleveland Clinic trug niedrige Fitness etwa das Fünffache des Sterberisikos von Spitzenfitness. Die Studie ist beobachtend und beweist keine Ursache.",
+    "hook": "Welche alltägliche körperliche Aufgabe fällt dir schwerer als vor einem Jahr?",
+    "one_minute_summary": "In einer Studie der Cleveland Clinic wurden 122.007 Laufbandtests im Median 8,4 Jahre verfolgt, und niedrige Fitness trug etwa das Fünffache des Sterberisikos von Spitzenfitness. Das Risiko war vergleichbar mit Koronarerkrankung, Rauchen und Diabetes oder größer, die Studie ist aber beobachtend. In Outlive sagt Peter Attia, die VO2max sei vielleicht der stärkste Langlebigkeitsmarker. Er verlangt Ausdauer im Redetempo, harte Intervalle und Krafttraining. Fitte Menschen können sich auch in anderem unterscheiden."
+  }
+}

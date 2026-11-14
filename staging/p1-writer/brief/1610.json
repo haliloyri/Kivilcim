@@ -1,0 +1,58 @@
+{
+  "story_id": 1610,
+  "kind": "concept",
+  "book": {
+    "title": "The Little Book of Common Sense Investing",
+    "author": "John C. Bogle",
+    "year": "2007"
+  },
+  "confidence": "medium",
+  "confidence_note": "Needle-in-haystack line and cost arithmetic are well attested; no concrete case in the book was verified for this idea, so the story stays short and concept-based. The old text's SPIVA claim and 'winners erase losers' wording were not verified and dropped.",
+  "facts": [
+    "Bogle says picking a mutual fund that will beat the stock market over the long term is, in Cervantes' observation, like looking for a needle in a haystack.",
+    "His corollary: 'Don't look for the needle in the haystack. Just buy the haystack!'",
+    "A broad index fund owns the whole market, the haystack, instead of trying to pick which stocks win.",
+    "His arithmetic: gross return minus costs equals net return; investors as a group earn the market's return before costs and less after them.",
+    "Active funds spend on research and trading, and that expense comes out of the investors' returns; the index fund's cost is low.",
+    "The book's subtitle promises 'the only way to guarantee your fair share of stock market returns'."
+  ],
+  "scene_details": [
+    "a haystack with a needle in it",
+    "Cervantes' remark that Bogle borrows",
+    "a single subtraction: gross return minus costs"
+  ],
+  "tension": "The effort of finding the needle is paid for by the very people hoping for it.",
+  "opening_idea": "Open on the needle in the haystack and who pays for the search.",
+  "lessons": [
+    {
+      "idea": "If you cannot pick the winner ahead of time, owning everything and paying little is a sound plan.",
+      "anchor": "The haystack line."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your life do you pay someone to find the needle, and what would it look like to settle for the haystack?",
+  "use_cases": [
+    {
+      "situation": "A colleague pitches a stock tip over coffee",
+      "move": "Say: Bogle's line is don't look for the needle, buy the haystack. What makes this the needle?",
+      "context": "social"
+    },
+    {
+      "situation": "Planning your own savings",
+      "move": "Check what the fund holds and costs; if you pay someone to pick, ask what they do that the whole market does not.",
+      "context": "self"
+    },
+    {
+      "situation": "Advising a family member new to investing",
+      "move": "Explain it as gross return minus costs equals net return, and look at costs first.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "The search for the one winning fund is paid for out of your returns; owning the whole haystack skips the search.",
+  "conversation_variants": {
+    "punchline_idea": "Bogle's advice on picking a winning fund: don't look for the needle, buy the haystack.",
+    "thirty_sec_idea": "Bogle borrows Cervantes' needle in a haystack for picking winning funds and answers: buy the haystack, own the market, and pay little for it.",
+    "question_idea": "",
+    "key_contrast_idea": "needle or haystack"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "story_id": 1687,
+  "kind": "concept",
+  "book": {
+    "title": "The Happiness Trap",
+    "author": "Russ Harris",
+    "year": "2007"
+  },
+  "confidence": "medium",
+  "confidence_note": "Details come from reading notes, a newsletter summary, quote pages and Wikipedia; no full text. The old text's quote ('Mutluluğu hedeflemeyin'), the claim that ninety percent of self-help says the opposite, the 'happiness is a by-product' wording and the 'spread out to escape quicksand' detail are not verified and were dropped; only 'struggling makes it worse' is confirmed. 'Feelings are not values' and the Doom and Gloom radio come from a quote page (medium).",
+  "facts": [
+    "The Happiness Trap (2007) is by physician and therapist Russ Harris and brings acceptance and commitment therapy (ACT) to general readers.",
+    "Harris's definition of the trap: to find happiness we try to avoid or get rid of bad feelings, but the harder we try, the more bad feelings we create.",
+    "Control strategies come in two kinds: fight (overpower negative thoughts and feelings, e.g. suppression) and flight (avoid or ignore them).",
+    "Quicksand: your emotions tell you to struggle, but struggling makes it worse. The struggle switch is an imaginary switch in the back of the brain: when on, we amplify a negative feeling by trying to get rid of it; when off, we notice it and let it be there.",
+    "The thinking self is like a radio constantly playing in the background, mostly Radio Doom and Gloom, negative stories 24 hours a day.",
+    "A full life brings a full range of human emotions; happiness here means a meaningful life lived by your values, not constant good feelings.",
+    "'Feelings are not values.' ACT in short: accept your thoughts and feelings and be present, connect with your values, take effective action.",
+    "Reading notes list the myth that humans are naturally happy; society says everyone can and should be happy and media images make us envy people who seem beautiful, intelligent and wealthy. Three evolved traits (threat detection, fitting into a group, a drive to accumulate and improve) now create imaginary threats and constant comparison.",
+    "Notes compare emotions to weather and the observing self to the sky."
+  ],
+  "scene_details": [
+    "quicksand and the instinct to struggle",
+    "an imaginary switch at the back of the brain",
+    "a radio playing Doom and Gloom all day"
+  ],
+  "tension": "The more we work at getting rid of bad feelings, the more of them we create, yet we keep working at it.",
+  "opening_idea": "Open on quicksand and the instinct to struggle, without naming the author.",
+  "lessons": [
+    {
+      "idea": "Take the step your values point to with the feeling still there, instead of waiting for the feeling to go.",
+      "anchor": "turning the struggle switch off and 'feelings are not values'"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which task are you postponing until you feel better, and could you take its first small step today with the feeling still there?",
+  "use_cases": [
+    {
+      "situation": "You catch yourself saying you will start when you feel ready",
+      "move": "Say that feelings are not values and take the first step with the nerves along.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend tries to talk themselves out of anxiety",
+      "move": "Mention that the harder we try to get rid of a feeling, the more of it we create, and ask what they would do today with it still there.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A teammate waits to feel confident before presenting",
+      "move": "Say the nerves do not have to leave; start with the first slide and let the feeling ride along.",
+      "context": "meeting"
+    }
+  ],
+  "pocket_idea": "Don't wait for the feeling to leave: do the next valued thing with it along.",
+  "conversation_variants": {
+    "punchline_idea": "In quicksand the instinct is to struggle, and in Harris's book the same instinct is what keeps bad feelings alive.",
+    "thirty_sec_idea": "Harris says trying to get rid of bad feelings creates more of them; he turns off the struggle switch and acts on values with the feelings along.",
+    "question_idea": "",
+    "key_contrast_idea": "struggle, let it be"
+  }
+}

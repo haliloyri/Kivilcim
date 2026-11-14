@@ -1,0 +1,59 @@
+{
+ "story_id": 1370,
+ "kind": "concept",
+ "book": {
+  "title": "Never Split the Difference",
+  "author": "Chris Voss",
+  "year": "2016"
+ },
+ "confidence": "medium",
+ "confidence_note": "The Harvard course scene (2006, 144 students, Andy as pseudonym, the reserved quarter of the budget, Sheila Heen asking whether he just says no and stares) is verified in the publisher's reading sample of chapter 1. The chapter-4 ideas (no as safety and control, three kinds of yes, 'Is now a bad time to talk?', 'Would it be ridiculous...?') come from several summaries, not the full text, so they are paraphrased. Old-text tactics ('Isn't this unfair to you?', 'I understand you don't want to deal with this') and the line 'yes is the close, no is the opening' are not verified and were dropped.",
+ "facts": [
+  "In 2006 Voss joined Harvard Law School's winter negotiation course; 144 students on day one; he was the only non-academic.",
+  "First exercise: buyer and seller. His partner 'Andy' (pseudonym) made an offer with a rational case; Voss answered with variations of 'How am I supposed to do that?'",
+  "Andy had been told to keep a quarter of his budget in reserve; Voss got all of it. The next day it happened again with another partner.",
+  "Instructor Sheila Heen asked if he simply said 'No' and stared until people gave in; he had never said the word, but his questions sounded like it, and partners began negotiating against themselves.",
+  "'No' gives a feeling of safety and control and often means 'not ready to agree yet'; skilled negotiators seek it because the real negotiation often starts there.",
+  "Three kinds of yes: counterfeit, confirmation, commitment.",
+  "'Is now a bad time to talk?' instead of 'Do you have a few minutes to talk?'; also 'Would it be ridiculous to...?'"
+ ],
+ "scene_details": [
+  "Sheila Heen writing every pair's price on the board",
+  "the reserve quarter of Andy's budget",
+  "the phone-call opener 'Is now a bad time to talk?'"
+ ],
+ "tension": "A man who never says 'no' gets accused of only saying 'no', and wins every exercise.",
+ "opening_idea": "Open on Andy's reserved quarter disappearing, or Heen's question.",
+ "lessons": [
+  {
+   "idea": "Leave people an easy no; feeling in control, they voice their real objection.",
+   "anchor": "'Is now a bad time to talk?' and the three kinds of yes."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which request this week could you phrase so the other person can decline comfortably?",
+ "use_cases": [
+  {
+   "situation": "Need a word with a busy manager",
+   "move": "Ask 'Is now a bad time to talk?'",
+   "context": "oneonone"
+  },
+  {
+   "situation": "Asking a friend a big favour",
+   "move": "Ask whether it would be ridiculous to ask, and make a no fine.",
+   "context": "social"
+  },
+  {
+   "situation": "Everyone says yes, nobody acts",
+   "move": "Name the counterfeit yes from Voss and invite objections now.",
+   "context": "meeting"
+  }
+ ],
+ "pocket_idea": "Swap 'Do you have a minute?' for 'Is now a bad time?': an easy no gets the honest answer.",
+ "conversation_variants": {
+  "punchline_idea": "Voss was accused of only saying no at Harvard, though he never said the word.",
+  "thirty_sec_idea": "Andy, the reserve, Heen's question, then the bad-time phrasing.",
+  "question_idea": "",
+  "key_contrast_idea": "Seek the no"
+ }
+}

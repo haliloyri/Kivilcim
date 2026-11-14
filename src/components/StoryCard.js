@@ -70,6 +70,9 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
   // DB already returns translated content for the active language
   const displayTitle = story.title || '';
   const displaySrc = story.source_book || '';
+  const sourceLine = [displaySrc, story.author].filter(Boolean).join(' · ');
+  // Teaser: the story's hook, else its description. Caller-supplied supportText wins.
+  const teaser = supportText ? '' : String(story.hook || story.description || '').trim();
   // Always use the main category (parent_cat) for display label
   const rawDisplayCat = t(story.parent_cat || story.cat, lang) || '';
   const displayCat = toPascalCase(rawDisplayCat);
@@ -280,6 +283,13 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
       color: locked ? colors.primaryText : colors.textSecondary,
       marginTop: 8,
     },
+    sourceLine: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12,
+      lineHeight: 17,
+      color: colors.textSecondary,
+      marginTop: 6,
+    },
     cardMeta: {
       fontFamily: 'Inter_400Regular',
       fontSize: 13,
@@ -394,6 +404,9 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
               {readMins ? `  ·  ${readMins} ${t('minLabel', lang)}` : ''}
             </Text>
           )}
+          {!usageDate && sourceLine ? (
+            <Text numberOfLines={1} style={{ fontFamily: 'Inter_400Regular', fontSize: 12, color: colors.textSecondary, marginTop: 2 }}>{sourceLine}</Text>
+          ) : null}
         </View>
 
         {locked ? (
@@ -493,6 +506,12 @@ const StoryCard = ({ story, locked, isRead, onPress, type = 'standard', hideCate
           >
             {displayTitle}
           </Text>
+          {sourceLine ? (
+            <Text numberOfLines={1} style={styles.sourceLine}>{sourceLine}</Text>
+          ) : null}
+          {teaser && !isCompact ? (
+            <Text numberOfLines={2} style={styles.supportText}>{teaser}</Text>
+          ) : null}
           {supportText ? (
             <Text numberOfLines={2} style={styles.supportText}>{supportText}</Text>
           ) : null}

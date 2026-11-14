@@ -1,0 +1,59 @@
+{
+ "story_id": 1368,
+ "kind": "concept",
+ "book": {
+  "title": "Company of One",
+  "author": "Paul Jarvis",
+  "year": "2019"
+ },
+ "confidence": "medium",
+ "confidence_note": "Cases (Shoes of Prey, Zynga), the Startup Genome 74% figure, the investor argument and 'missed projections are more likely' come from detailed summaries (Shortform, Readingraphics), not the full text. Shoes of Prey's 2018 collapse is confirmed by press. The old text's tree metaphor and claims that Jarvis never took investment and ran his business 10+ years are not supported and were dropped. The book's 'not only a bad strategy but harmful' line is paraphrased, not quoted.",
+ "facts": [
+  "Shoes of Prey, an Australian custom-shoe startup where customers designed shoes online, opened physical stores in malls worldwide, took venture capital, moved to the US and hired many staff; store sales fell short of projections; after mass layoffs it collapsed in 2018.",
+  "Zynga, after its free games succeeded, spent $100 million on its own data centers; it later struggled with industry change, laid off many employees and closed the centers.",
+  "Startup Genome Project: 74% of the high-growth tech startups studied failed because they scaled too fast.",
+  "Rapid growth usually requires outside investors who want returns; their agenda can conflict with the company's mission and promises to customers. Spending on projected revenue is a gamble; missing projections is statistically more likely.",
+  "A company of one protects resilience, autonomy, speed and simplicity.",
+  "Before growth: is it truly needed, and can it be done with the same or fewer resources?",
+  "Jarvis calls growth as a primary focus a bad and entirely harmful strategy."
+ ],
+ "scene_details": [
+  "customers designing their own shoes on a website",
+  "Shoes of Prey stores in shopping malls",
+  "$100 million of Zynga data centers later closed"
+ ],
+ "tension": "Growth bought to make the company stronger becomes the fixed cost that brings it down.",
+ "opening_idea": "Start with the shoe brand leaving the screen for mall stores, or Zynga buying its own data centers.",
+ "lessons": [
+  {
+   "idea": "Before a growth step, price the downside: which fixed costs must be paid if the projected sales do not arrive.",
+   "anchor": "Shoes of Prey's mall stores built on projections; missed projections are more likely."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which growth decision you are weighing would hurt most if the expected sales never came?",
+ "use_cases": [
+  {
+   "situation": "Leadership wants a bigger office based on a forecast",
+   "move": "Mention Shoes of Prey's stores built on projections and ask how the rent gets paid if the forecast misses.",
+   "context": "meeting"
+  },
+  {
+   "situation": "A founder friend weighs an investment offer",
+   "move": "Ask who decides after the money and whether expected returns clash with customer promises.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "About to make a big business purchase",
+   "move": "Check whether today's income pays for it; if it relies on future sales, wait.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Shoes of Prey built stores for sales that never came: before growing, ask what pays the rent if sales don't.",
+ "conversation_variants": {
+  "punchline_idea": "Zynga spent $100 million on its own data centers and later closed them.",
+  "thirty_sec_idea": "Shoes of Prey's path from website to mall stores to collapse, plus the 74% figure.",
+  "question_idea": "",
+  "key_contrast_idea": "Fast growth, fragile company"
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1316,
+ "verdict": "keep",
+ "verify_note": "Verified in full text. Missouri S&T 2011 study (216 students) is the book's case for internal triggers; framed as correlation, Eyal's relief explanation marked as hypothesis. Invented first-person user quotes dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "E-posta Kutusundaki Duygu",
+  "description": "Missouri'de bir yıl boyunca izlenen 216 öğrencinin verileri, depresyon belirtisi taşıyanların e-postaya çok daha sık baktığını gösterdi. Nir Eyal bunu duyguların en güçlü tetikleyici olmasıyla açıklıyor.",
+  "hook": "Beklediğiniz bir şey yokken gelen kutunuzu açtığınızda, aslında neye cevap veriyorsunuz?",
+  "one_minute_summary": "Nir Eyal, Missouri Bilim ve Teknoloji Üniversitesi'nde 2011'de yapılan bir çalışmayı anlatıyor. 216 öğrencinin internet kullanımı bir yıl boyunca anonim olarak izlendi. Depresyon belirtisiyle yardım isteyenler interneti daha çok kullanıyordu, özellikle e-postayı. Eyal, bunun olumsuz duygulardan rahatlama arayışı olabileceğini bir hipotez olarak sunuyor ve çalışmanın bir ilişki gösterdiğini belirtiyor. Ona göre can sıkıntısı, yalnızlık ve belirsizlik en güçlü içsel tetikleyiciler ve e-posta, birinin bize ihtiyacı olup olmadığını öğrenme yolu."
+ },
+ "en": {
+  "title": "What the Inbox Answers",
+  "description": "A year of logs from 216 Missouri students showed that those with depressive symptoms checked email far more. Nir Eyal reads it as evidence that feelings are the strongest triggers.",
+  "hook": "When you open your inbox expecting nothing, what are you really answering?",
+  "one_minute_summary": "Nir Eyal describes a 2011 study at the Missouri University of Science and Technology. For a year, 216 students had their internet use tracked anonymously. Those who had sought help for depressive symptoms used the internet more, especially email. Eyal offers, as a hypothesis, that they may be seeking relief from negative feelings, and the study shows correlation, not cause. For him, boredom, loneliness and uncertainty are among the strongest internal triggers, and checking email is a way of finding out whether someone needs us."
+ },
+ "es": {
+  "title": "Lo que responde el correo",
+  "description": "Un año de registros de 216 estudiantes de Misuri mostró que quienes tenían síntomas depresivos miraban el correo mucho más. Nir Eyal lo lee como prueba de que las emociones son los detonantes más fuertes.",
+  "hook": "Cuando abres el correo sin esperar nada, ¿a qué estás respondiendo en realidad?",
+  "one_minute_summary": "Nir Eyal describe un estudio de 2011 en la Universidad de Ciencia y Tecnología de Misuri. Durante un curso se registró de forma anónima el uso de internet de 216 estudiantes. Quienes habían pedido ayuda por síntomas de depresión usaban más internet, sobre todo el correo. Eyal propone, como hipótesis, que buscaban alivio de emociones negativas, y el estudio muestra correlación, no causa. Para él, el aburrimiento, la soledad y la incertidumbre son detonantes internos potentes, y mirar el correo es saber si alguien nos necesita."
+ },
+ "de": {
+  "title": "Was das Postfach beantwortet",
+  "description": "Ein Jahr Daten von 216 Studierenden in Missouri zeigte, dass jene mit depressiven Symptomen ihre Mails viel öfter checkten. Nir Eyal liest das als Beleg, dass Gefühle die stärksten Auslöser sind.",
+  "hook": "Wenn du dein Postfach öffnest und nichts erwartest, worauf antwortest du dann eigentlich?",
+  "one_minute_summary": "Nir Eyal beschreibt eine Studie von 2011 an der Missouri University of Science and Technology. Ein Jahr lang wurde die Internetnutzung von 216 Studierenden anonym aufgezeichnet. Wer sich wegen depressiver Symptome Hilfe geholt hatte, war mehr online, vor allem im Mailpostfach. Eyal vermutet, ausdrücklich als Hypothese, eine Suche nach Erleichterung von negativen Gefühlen; die Studie zeigt einen Zusammenhang, keine Ursache. Für ihn sind Langeweile, Einsamkeit und Unsicherheit starke innere Auslöser, und ein Blick ins Postfach verrät, ob uns jemand braucht."
+ }
+}

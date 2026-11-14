@@ -1,0 +1,35 @@
+{
+  "story_id": 1488,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: the list of causes and the odd examples come from Wikipedia, the book's site and a blurb; no cause is ranked and no mechanism beyond what those pages say is given. Old text's diet, stress-ranking and evolution claims dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Telefon tek şüpheli değil",
+    "description": "Hari dikkat krizini on iki nedene ayırıyor, telefon yalnızca biri. Liste özet kaynaklara dayanıyor.",
+    "hook": "Telefon dışında günün hangi kısmı odağınızı en çok yiyor?",
+    "one_minute_summary": "Stolen Focus, dikkat krizini on iki nedene bölüyor. Telefon da bunlardan biri, ama bitkinlik, sürekli bölünme, çoklu görevin yıpratıcılığı, zihnin dolaşmasının azalması ve kirlilik de listede. Kitap ayrıca köpeklere DEHB teşhisi koyan veterinerlere, Rio'daki bir favelaya ve Yeni Zelanda'daki bir ofise yer veriyor. Hiçbir nedenin ağırlığı sıralanmıyor, eski metindeki beslenme ve stres iddiaları doğrulanamadı."
+  },
+  "en": {
+    "title": "The phone is not the only suspect",
+    "description": "Hari splits the attention crisis into twelve causes, and the phone is only one. The list comes from summaries of the book.",
+    "hook": "Which part of your day, other than your phone, takes most of your focus?",
+    "one_minute_summary": "Stolen Focus divides the attention crisis into twelve causes. The phone is one, but so are exhaustion, constant interruption, the wear of task switching, the decline of mind-wandering and pollution. The book also features vets who diagnose dogs with ADHD, a favela in Rio and a New Zealand office. No cause is ranked here, and the old text's diet and stress claims could not be confirmed."
+  },
+  "es": {
+    "title": "El móvil no es el único sospechoso",
+    "description": "Hari reparte la crisis de atención en doce causas y el móvil es solo una. La lista procede de resúmenes del libro.",
+    "hook": "¿Qué parte de tu día, además del móvil, te quita más concentración?",
+    "one_minute_summary": "Stolen Focus divide la crisis de atención en doce causas. El móvil es una, pero también lo son el agotamiento, las interrupciones constantes, el desgaste de cambiar de tarea, el declive del vagabundeo mental y la contaminación. El libro presenta además a veterinarios que diagnostican TDAH a perros, una favela de Río y una oficina de Nueva Zelanda. No se ordena ninguna causa y las afirmaciones del texto antiguo sobre dieta y estrés no se pudieron confirmar."
+  },
+  "de": {
+    "title": "Das Handy ist nicht der einzige Verdächtige",
+    "description": "Hari teilt die Aufmerksamkeitskrise in zwölf Ursachen auf, das Handy ist nur eine. Die Liste stammt aus Zusammenfassungen des Buches.",
+    "hook": "Welcher Teil deines Tages außer dem Handy nimmt deiner Konzentration am meisten?",
+    "one_minute_summary": "Stolen Focus teilt die Aufmerksamkeitskrise in zwölf Ursachen. Das Handy ist eine, daneben stehen Erschöpfung, ständige Unterbrechung, der Verschleiß durch Aufgabenwechsel, der Rückgang des Tagträumens und Umweltverschmutzung. Das Buch stellt außerdem Tierärzte, die Hunden ADHS diagnostizieren, eine Favela in Rio und ein Büro in Neuseeland vor. Keine Ursache wird hier gewichtet, die Behauptungen des alten Textes zu Ernährung und Stress ließen sich nicht bestätigen."
+  }
+}

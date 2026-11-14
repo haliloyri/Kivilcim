@@ -1,0 +1,130 @@
+{
+ "book_no": 69,
+ "title": "The Black Swan: The Impact of the Highly Improbable",
+ "authors": [
+  "Nassim Nicholas Taleb"
+ ],
+ "year": "2007",
+ "sources": [
+  "https://archive.org/details/the-black-swan-the-impact-of-the-highly-improbable-nassim-nicholas-taleb",
+  "https://en.wikipedia.org/wiki/The_Black_Swan:_The_Impact_of_the_Highly_Improbable",
+  "https://en.wikipedia.org/wiki/Antifragile_(book)",
+  "https://en.wikipedia.org/wiki/Superforecasting"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Calibration test described in the book: people give a range they are 98 percent confident contains the answer (e.g. population of Rajasthan); about 2 percent should miss. Researchers found the miss rate close to 45 percent; the first sample was Harvard Business School students.",
+   "source": "Book text, ch. 10",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Philip Tetlock asked political and economic experts to judge the likelihood of events about five years ahead: around 27,000 predictions from close to 300 specialists, about a quarter economists. Error rates were many times what experts estimated; a PhD gave no edge over an undergraduate degree, well-published professors none over journalists; those with big reputations predicted worse.",
+   "source": "Book text, ch. 10",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Experts' defences Tetlock catalogued: 'I was playing a different game', 'it was an outlier', 'I was almost right'.",
+   "source": "Book text, ch. 10",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Taleb reviewed economics papers: no convincing evidence economists can predict; at best slightly better than random. Makridakis and Hibon's M-Competitions (M3 completed 1999): statistically sophisticated methods do not necessarily give more accurate forecasts than simpler ones.",
+   "source": "Book text, ch. 10",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Taleb's advice: invest in preparedness, not in prediction.",
+   "source": "Book text, ch. 13",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Turkey (after Bertrand Russell's chicken): fed every day, each feeding firms its belief that humans look after it; on the Wednesday afternoon before Thanksgiving it is slaughtered. Its sense of safety was highest when the risk was highest. Figure: 'One thousand and one days of history'.",
+   "source": "Book text, ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Barbell strategy: rather than 'medium risk', put about 85-90 percent in extremely safe instruments like Treasury bills and 10-15 percent in extremely speculative bets; no Black Swan can hurt beyond the floor.",
+   "source": "Book text, ch. 13",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Positive vs negative Black Swan businesses: movies, some publishing, scientific research, venture capital lose small to win big; military, catastrophe insurance, banking and lending face mainly downside. William Goldman: 'Nobody knows anything' about movie sales.",
+   "source": "Book text, ch. 13",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Editorial caveat: Tetlock's later Good Judgment Project (Superforecasting, 2015) found some forecasters reliably beat chance on short horizons.",
+   "source": "Wikipedia: Superforecasting",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "After the 45 percent result Taleb asks: 'Are we twenty-two times too comfortable with what we know? It seems so.' In Tetlock's sample economists were about a quarter.",
+   "source": "Book text, ch. 10",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Tetlock's main focus was less the experts' competence than why they did not realize they were not good at their own business: how they spun their stories afterwards (belief defense, protecting self-esteem).",
+   "source": "Book text, ch. 10",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "'Expert forecasts were not significantly different from random guessing'",
+   "reason": "Taleb says economists' predictions are at best slightly better than random; Tetlock's finding is about error rates and reputation"
+  },
+  {
+   "claim": "Dart board vs MBA analyst",
+   "reason": "Not in the book as stated"
+  },
+  {
+   "claim": "Weather forecasts break down beyond 10 days; economic forecasts unreliable even for a few months",
+   "reason": "Not verified in the book"
+  },
+  {
+   "claim": "'Antifragile' as a concept of The Black Swan",
+   "reason": "Term and framework come from Taleb's later book Antifragile (2012)"
+  },
+  {
+   "claim": "'Manage small losses to build immunity to large shocks' as Black Swan advice",
+   "reason": "Immunity framing is Antifragile; Black Swan's version is the barbell and limiting downside"
+  }
+ ],
+ "stories": {
+  "1304": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f9",
+    "f10",
+    "f11"
+   ],
+   "note": "Center (expert prediction fails) is ch. 10; rebuilt on Tetlock, the 45 percent calibration result and Makridakis; dart claim dropped; caveat on Superforecasting."
+  },
+  "1305": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f6",
+    "f7",
+    "f8",
+    "f5"
+   ],
+   "note": "Old center 'antifragile' belongs to a later book; rebuilt on the book's own turkey and barbell (preparedness against negative, exposure to positive Black Swans)."
+  }
+ }
+}

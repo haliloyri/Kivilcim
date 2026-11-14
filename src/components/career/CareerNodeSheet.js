@@ -3,6 +3,7 @@ import { AccessibilityInfo, findNodeHandle, Modal, ScrollView, StyleSheet, Text,
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../context/ThemeContext';
 import { t } from '../../locales/i18n';
+import { toUpperFor } from '../../utils/locale';
 import useReducedMotion from '../../hooks/useReducedMotion';
 import CareerNodeMark from './CareerNodeMark';
 import { getCareerVisual } from '../../constants/careerVisuals';
@@ -40,7 +41,7 @@ const CareerNodeSheet = ({ node, onClose }) => {
           <View style={styles.header}>
             <CareerNodeMark node={node} status={node.status} isDark={isDark} size={72} showCheck={false} />
             <View style={{ flex: 1 }}>
-              <Text selectable style={[styles.eyebrow, { color: isDone ? accent : colors.dawnText }]}>{t(`career.nodeState.${node.status}`, lang)}</Text>
+              <Text selectable style={[styles.eyebrow, { color: isDone ? accent : colors.dawnText }]}>{toUpperFor(t(`career.nodeState.${node.status}`, lang), lang)}</Text>
               <Text ref={titleRef} accessible accessibilityRole="header" selectable style={[styles.title, { color: colors.text }]}>{t(node.titleKey, lang)}</Text>
             </View>
             <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('career.close', lang)} onPress={onClose} style={[styles.close, { backgroundColor: colors.surfaceContainerHigh }]}>

@@ -23,6 +23,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { t } from '../locales/i18n';
+import { toUpperFor } from '../utils/locale';
 import { SHARE_CARD_ICON } from '../constants/logos';
 
 // App icon (navy rounded square, cropped to its edges) — reads as the Albor
@@ -219,7 +220,7 @@ export const ShareCardCanvas = ({
                     numberOfLines={2}
                     style={{ flex: 1, fontFamily: 'Inter_500Medium', fontSize: 24, lineHeight: 30, color: th.sub, textTransform: 'uppercase', letterSpacing: 1.5, marginLeft: 12 }}
                   >
-                    {t('share_source', lang)}{sourceBook}
+                    {toUpperFor(`${t('share_source', lang)}${sourceBook}`, lang)}
                   </Text>
                 </>
               ) : null}

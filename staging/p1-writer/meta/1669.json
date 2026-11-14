@@ -1,0 +1,35 @@
+{
+  "story_id": 1669,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: potato image and breathing advice from secondary summaries; full text not read. Old three-step list dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Çiğ patates gibi öfke",
+    "description": "Thich Nhat Hanh öfkeyi pişmesi gereken çiğ bir patatese benzetir. Ateş farkındalık, mutfak ise nefestir.",
+    "hook": "Son sinirlendiğinizde öfkeyi ham haliyle mi söylediniz?",
+    "one_minute_summary": "Thich Nhat Hanh, Anger kitabında öfkeyi çiğ bir patatese benzetir. Çiğ patates yenmez, önce ateşte pişmesi gerekir ve bu ateş farkındalıktır. Öfke yükselince hemen bilinçli nefes almaya başlamak, öfkeliyken bir şey söylememeye ve yapmamaya çalışmak önerilir. Aynı kitapta öfke çöp gibidir, çöp kompost olur, kompost çiçeğe dönüşür. Öfke ilgilenilmesi gereken bir şeyin işaretidir. Anlatım, kitabın ikinci el özetlerine dayanıyor, bu yüzden bir tarif değil bir imge olarak okuyun."
+  },
+  "en": {
+    "title": "Anger as a raw potato",
+    "description": "Thich Nhat Hanh compares anger to a raw potato that has to be cooked. The fire is mindfulness, and the cooking is breathing.",
+    "hook": "Last time you were angry, did you serve it raw?",
+    "one_minute_summary": "In Anger, Thich Nhat Hanh compares anger to a potato. A raw potato cannot be eaten, so it goes on the fire, and the fire is mindfulness. When anger comes up he advises mindful breathing right away and trying not to say or do anything while angry. He also pictures anger as garbage that becomes compost and then a flower, and as a sign something needs care. This retelling rests on secondary summaries of the book, so treat it as an image, not a recipe."
+  },
+  "es": {
+    "title": "La rabia, una papa cruda",
+    "description": "Thich Nhat Hanh compara la rabia con una papa cruda que hay que cocinar. El fuego es la atención plena y la cocción es la respiración.",
+    "hook": "¿La última vez que te enfadaste, serviste la rabia cruda?",
+    "one_minute_summary": "En Anger, Thich Nhat Hanh compara la rabia con una papa. Una papa cruda no se come, así que va al fuego, y ese fuego es la atención plena. Cuando la rabia sube, aconseja respirar con conciencia de inmediato e intentar no decir ni hacer nada. También la imagina como basura que se vuelve abono y luego flor, y como señal de que algo necesita cuidado. Este resumen se apoya en resúmenes secundarios del libro, así que tómalo como una imagen, no como una receta."
+  },
+  "de": {
+    "title": "Wut als rohe Kartoffel",
+    "description": "Thich Nhat Hanh vergleicht Wut mit einer rohen Kartoffel, die gegart werden muss. Das Feuer ist Achtsamkeit, das Garen ist das Atmen.",
+    "hook": "Hast du deine letzte Wut roh serviert?",
+    "one_minute_summary": "In Anger vergleicht Thich Nhat Hanh Wut mit einer Kartoffel. Eine rohe Kartoffel isst man nicht, sie kommt aufs Feuer, und das Feuer ist Achtsamkeit. Steigt Wut auf, rät er, sofort achtsam zu atmen und möglichst nichts zu sagen oder zu tun. Außerdem sieht er Wut als Abfall, der zu Kompost und dann zur Blume wird, und als Zeichen, dass etwas Fürsorge braucht. Diese Nacherzählung stützt sich auf Zusammenfassungen des Buches, nimm sie als Bild, nicht als Rezept."
+  }
+}

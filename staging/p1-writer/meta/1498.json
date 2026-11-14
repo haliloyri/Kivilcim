@@ -1,0 +1,35 @@
+{
+  "story_id": 1498,
+  "verdict": "keep",
+  "verify_note": "Keep: five-stage framework confirmed in Gallup's piece and an fs.blog summary; study scope hedged (sources differ), shares attributed to one summary. Old text's single-author framing and 'directive' angle dropped. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Ben, benim, bana",
+    "description": "Tribal Leadership'e göre bir grubun kültürü en çok kullandığı cümleden anlaşılır. En yaygın aşamada herkes “ben” der.",
+    "hook": "Ekibinizde en çok hangi cümle söyleniyor?",
+    "one_minute_summary": "Logan, King ve Fischer-Wright, 24.000'den fazla kişiyi inceleyip grupları beş aşamaya ayırdı. Her aşamanın bir cümlesi var: “Hayat berbat”, “Benim hayatım berbat”, “Ben harikayım, sen değil”, “Biz harikayız”, “Hayat harika”. Üçüncü aşamada en sık geçen kelimeler “ben”, “bana” ve “benim”. Yazarlara göre lider iki şeye bakar: insanların kullandığı kelimeler ve kurdukları ilişkiler. Gruba en fazla bir aşama yukarıdan konuşmak gerekir. Üçüncü aşamadakilere, tek başına bitirilemeyecek kadar büyük işler vermek onları birbirine yaklaştırır."
+  },
+  "en": {
+    "title": "I, me and my",
+    "description": "In Tribal Leadership, a group's culture shows in the sentence it says most. At the most common stage, that sentence starts with 'I'.",
+    "hook": "Which sentence do you hear most in your own team?",
+    "one_minute_summary": "Dave Logan, John King and Halee Fischer-Wright studied more than 24,000 people in about two dozen companies and sorted groups into five stages, each with its own sentence: 'Life sucks', 'My life sucks', 'I'm great (and you're not)', 'We're great', 'Life is great'. At stage three the commonest words are 'I', 'me' and 'my'. A tribal leader listens to the words and the relationships, speaks one stage above the group, and sets work too big for one person to finish."
+  },
+  "es": {
+    "title": "La frase que delata a un equipo",
+    "description": "Según Tribal Leadership, cada grupo habla desde una de cinco frases. La más común empieza por yo.",
+    "hook": "¿Qué frase se repite más entre la gente con la que trabajas?",
+    "one_minute_summary": "Dave Logan, John King y Halee Fischer-Wright estudiaron a más de 24.000 personas en unas dos docenas de empresas y distinguieron cinco etapas, cada una con su frase: «La vida apesta», «Mi vida apesta», «Soy genial (y tú no)», «Somos geniales» y «La vida es genial». En la tercera, las palabras más frecuentes son «yo», «me» y «mi». El líder escucha esas palabras y las relaciones, habla una etapa por encima del grupo y propone trabajos que nadie puede terminar solo."
+  },
+  "de": {
+    "title": "Ich, mir, mein",
+    "description": "Nach Tribal Leadership verrät der häufigste Satz, in welcher Phase eine Gruppe steckt. Auf der verbreiteten Stufe beginnt er mit „ich“.",
+    "hook": "Welchen Satz hörst du in deinem Team am häufigsten?",
+    "one_minute_summary": "Dave Logan, John King und Halee Fischer-Wright untersuchten mehr als 24.000 Menschen in rund zwei Dutzend Firmen und ordneten Gruppen fünf Stufen zu, jede mit einem eigenen Satz: „Das Leben nervt“, „Mein Leben nervt“, „Ich bin großartig (und du nicht)“, „Wir sind großartig“, „Das Leben ist großartig“. Auf Stufe drei fallen am meisten „ich“, „mir“ und „mein“. Ein Stammesführer hört auf Wörter und Beziehungen, spricht eine Stufe höher und stellt Aufgaben, die keiner allein schafft."
+  }
+}

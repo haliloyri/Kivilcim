@@ -1,0 +1,189 @@
+{
+  "book_no": 186,
+  "title": "Creativity: Flow and the Psychology of Discovery and Invention",
+  "authors": [
+    "Mihaly Csikszentmihalyi"
+  ],
+  "year": "1996",
+  "sources": [
+    "https://faisalhoque.com/creative-people-rebellious-and-conservative-traits/",
+    "https://www.psychologytoday.com/au/articles/199607/the-creative-personality",
+    "https://bemis2.marmot.org/Record/.b11477581",
+    "https://www.britannica.com/topic/creativity/Research-on-the-creative-process",
+    "https://concepts.dsebastien.net/concept/creative-process/",
+    "https://www.goodreads.com/book/show/66322.Creativity"
+  ],
+  "source_note": "Book itself not read (archive.org full text fetch was blocked). Facts from summaries and blogs quoting the book. DB English title is 'Creativity'; full title used here.",
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The book rests on in-depth interviews with about 91 exceptional individuals from many fields. (One catalogue says nearly one hundred; the Nobel-laureate count in the old text was not found.)",
+      "source": "supersummary via search; catalogue listing",
+      "confidence": "medium"
+    },
+    {
+      "id": "f2",
+      "claim": "Csikszentmihalyi describes the creative personality as holding opposite traits at once and lists ten pairs: energetic yet restful; smart yet naive; playful yet disciplined; imaginative yet grounded in reality; extroverted and introverted; humble and proud; flexible about gender roles; rebellious and conservative; passionate yet objective; open to suffering and to enjoyment.",
+      "source": "faisalhoque.com summary; Medium and Psychology Today pieces via search",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "On rebellious and conservative: 'It is impossible to be creative without having first internalized an area of culture' (as quoted by a summary). Creators absorb the tradition before they challenge it.",
+      "source": "faisalhoque.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "On playful and disciplined: Csikszentmihalyi cites Vasari's account of the painter Paolo Uccello, who stayed up through the night working out perspective, delighted with it.",
+      "source": "faisalhoque.com summary (exact wording of Vasari's line not confirmed, so no quotation)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "On passionate and objective: Csikszentmihalyi quotes the historian Natalie Davis on detaching from her own writing so she can accept criticism of it.",
+      "source": "faisalhoque.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "The trait he finds most consistent: the ability to enjoy the process of creation for its own sake.",
+      "source": "faisalhoque.com",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "Systems model: creativity arises from three parts. The domain is the body of symbolic rules and procedures (mathematics, music). The field is the group of experts who decide whether a new idea enters the domain (gatekeepers). The individual uses the domain's symbols to produce something new. All three are needed.",
+      "source": "supersummary via search; Platform Creativity article; Goodreads pages 27-28",
+      "confidence": "high"
+    },
+    {
+      "id": "f8",
+      "claim": "His definition: a creative person is someone whose thoughts or actions change a domain or establish a new one, and a domain cannot be changed without the explicit or implicit consent of the field responsible for it.",
+      "source": "Goodreads, SlideShare quoting pp. 27-28",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "In a lecture transcript Csikszentmihalyi says Einstein's ideas were certified as creative by a small number of leading physics professors. Taken from his lecture, not confirmed as a passage in the book.",
+      "source": "lecture transcript via search",
+      "confidence": "low"
+    },
+    {
+      "id": "f10",
+      "claim": "The creative process has five steps: preparation (immersion in a set of problematic issues), incubation (ideas 'churn around' below the threshold of consciousness), insight (the aha moment), evaluation (deciding whether the insight is worth pursuing), elaboration (the longest and hardest part). The book warns the stages are more recursive than linear. The five-step list is cited to the book, p. 79.",
+      "source": "concepts.dsebastien.net; blogs citing p. 79; search summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Editorial caveat: reports of incubation come from creators looking back, sometimes years later, and a 2016 review calls their reliability questionable.",
+      "source": "Frontiers in Psychology 2016 review via search",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "On intelligence: studies suggest a cutoff near IQ 120, above which more IQ does not necessarily bring more creativity.",
+      "source": "search summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Graham Wallas drew on Poincare's 1910 analysis of mathematical creation and labelled the stage in which a problem is not consciously processed 'incubation'; Poincare himself did not use that term, and his self-report concerned experiences nearly 30 years earlier. Csikszentmihalyi works from the classical staged model and warns it is recursive.",
+      "source": "Frontiers in Psychology 2016 review via search; search summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "In the systems model, location matters because it decides access to information about the domain, stimulation of novelty, and closeness to the field's centres of power.",
+      "source": "plot summary via search",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "One source illustrates the field with modern art: the people who decide which new paintings or sculptures deserve to be seen, bought and included in collections, and so added to the domain, with Manhattan as the setting.",
+      "source": "Platform Creativity article via search (whether this is the book's own example is unconfirmed)",
+      "confidence": "low"
+    },
+    {
+      "id": "f16",
+      "claim": "Flexible about gender roles: in his tests creative girls were more dominant than their peers and creative boys more sensitive and less aggressive (per a summary).",
+      "source": "faisalhoque.com summary",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Old 1654: interviewees included Nobel laureates, artists, inventors, writers and scientists, 91 people.",
+      "reason": "91 is plausible; Nobel count not found. Kept 'about 91' only."
+    },
+    {
+      "claim": "Old 1654: someone who calls themselves creative but avoids these paradoxes is probably not truly creative; creative people draw energy from the tension.",
+      "reason": "Not found as the author's claim."
+    },
+    {
+      "claim": "Old 1655: four stages (preparation, incubation, illumination, verification).",
+      "reason": "Book's list is five steps incl. evaluation and elaboration (f10). Four-stage version is Wallas."
+    },
+    {
+      "claim": "Old 1655: Newton's apple, Archimedes' bath, Kekulé's dream, each after years of work, as the book's examples.",
+      "reason": "Not confirmed in the book; Kekulé accounts are also contested (f11)."
+    },
+    {
+      "claim": "Old 1655: preparation can take years; to speed insight, manage preparation and incubation on purpose; walk, sleep.",
+      "reason": "Practical prescription not found in sources."
+    },
+    {
+      "claim": "Old 1656: tree-falls-in-the-forest opening quote.",
+      "reason": "Not found in sources; invented framing."
+    },
+    {
+      "claim": "Old 1656: third part is 'community'.",
+      "reason": "The book calls it the field (f7)."
+    },
+    {
+      "claim": "Old 1656: Bach would have been lost without recognition; Van Gogh unknown in life.",
+      "reason": "Not found as the book's examples."
+    },
+    {
+      "claim": "Old 1656: isolation kills creativity.",
+      "reason": "Not found as stated."
+    }
+  ],
+  "stories": {
+    "1654": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f12",
+        "f16"
+      ],
+      "note": "Ten paradoxes; concrete items Uccello and Davis. Medium."
+    },
+    "1655": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f10",
+        "f11",
+        "f13"
+      ],
+      "note": "Five stages; thin source, no named case, so short and honest. Medium-low."
+    },
+    "1656": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f7",
+        "f8",
+        "f9",
+        "f14",
+        "f15"
+      ],
+      "note": "Domain, field, individual. No confirmed book case; Einstein example flagged low (lecture)."
+    }
+  }
+}

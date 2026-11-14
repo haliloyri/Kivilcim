@@ -1,0 +1,65 @@
+{
+  "story_id": 1340,
+  "kind": "concept",
+  "book": {
+    "title": "The Sleep Revolution",
+    "author": "Arianna Huffington",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The ritual (devices escorted out, bath with Epsom salts and a candle, clothes dedicated to sleep, chamomile or lavender tea) is in Huffington's own words from launch interviews for the book; it is assumed to match the book's account but the book text was not read. The old '30 minutes', 'light book, dimmed lights', the bath quote, the melatonin mechanics and 'eight bad hours vs six deep hours' are unsourced and dropped.",
+  "facts": [
+    "Huffington calls her transition to sleep 'a sacrosanct ritual'.",
+    "Her top recommendation is to get all devices out of the bedroom; she turns hers off at a set time every night and 'gently escorts' them out of her bedroom.",
+    "Before bed she takes a hot bath with Epsom salts, with a candle flickering nearby.",
+    "She used to sleep in her workout clothes; now she keeps pajamas, nightdresses, even T-shirts dedicated to sleep.",
+    "Sometimes she has a cup of chamomile or lavender tea if she wants something warm before bed.",
+    "She built this after her 2007 collapse from exhaustion; the book argues against the belief that sleeplessness is a badge of honor.",
+    "The book urges seven to eight hours a night and warns against relying on sleeping pills such as Ambien.",
+    "Before the collapse she had worked regular 18-hour days for two years while building The Huffington Post; she says she did not grasp the importance of sleep until 2007.",
+    "After the collapse she went from doctor to doctor (brain MRI, CAT scan, echocardiogram); the tests pointed to exhaustion and lack of sleep."
+  ],
+  "scene_details": [
+    "phones 'escorted' out of the bedroom at a set time",
+    "Epsom salts and a candle by the bath",
+    "workout clothes swapped for pajamas kept only for sleep"
+  ],
+  "tension": "The woman who once worked 18-hour days now treats going to bed as a ceremony, and the first step is sending the phone out of the room.",
+  "opening_idea": "Start with the phone being walked out of the bedroom like a guest.",
+  "lessons": [
+    {
+      "idea": "Mark the end of the day with physical signals your body can learn, and start with the phone leaving the room.",
+      "anchor": "Devices out, bath, sleep-only clothes."
+    },
+    {
+      "idea": "A ritual beats willpower at night.",
+      "anchor": "'Sacrosanct ritual'."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "What one object could you take out of your bedroom tonight to make the end of your day clearer?",
+  "use_cases": [
+    {
+      "situation": "Your teenager keeps the phone under the pillow",
+      "move": "Propose a shared rule: all phones charge in the kitchen after a set time, yours included.",
+      "context": "family"
+    },
+    {
+      "situation": "You fall asleep in the clothes you wore all evening",
+      "move": "Put one set of clothes aside only for sleep and change into it as the signal.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend says they scroll until 1 a.m.",
+      "move": "Tell them Huffington escorts her devices out of the bedroom at a set hour, and ask what time theirs would be.",
+      "context": "social"
+    }
+  ],
+  "pocket_idea": "Huffington walks her phone out of the bedroom every night: give your day an exit the body can recognize.",
+  "conversation_variants": {
+    "punchline_idea": "Arianna Huffington 'gently escorts' her phone out of the bedroom every night.",
+    "thirty_sec_idea": "After her collapse, Huffington's ritual: devices out at a set time, Epsom bath and candle, pajamas instead of gym clothes, sometimes chamomile tea.",
+    "question_idea": "What does your last half hour before sleep look like?",
+    "key_contrast_idea": "Phone out, sleep in"
+  }
+}

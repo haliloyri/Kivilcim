@@ -1,0 +1,61 @@
+{
+  "story_id": 1325,
+  "kind": "concept",
+  "book": {
+    "title": "The Artist's Way",
+    "author": "Julia Cameron",
+    "year": "1992"
+  },
+  "confidence": "medium",
+  "confidence_note": "Full text not accessible; the serpent and Jaws passages are quoted consistently across several secondary sources. The old text's painter scene and quotes ('this voice comes from old injuries'; 'Ah, it's you, I recognise you') are not verified and are dropped. The 'monsters' list is a Week 1 exercise described by many readers; its exact wording is not quoted.",
+  "facts": [
+    "Cameron calls the inner critic the Censor, a nasty internal and eternal critic.",
+    "She writes: 'Think of your Censor as a cartoon serpent, slithering around your creative Eden, hissing vile things to keep you off guard.'",
+    "If a serpent doesn't work for you, she suggests another cartoon image, perhaps the shark from Jaws; draw it, put an X through it, and post it where you write.",
+    "Making the Censor into the nasty, clever little character it is, she says, begins to pry loose some of its power.",
+    "She tells readers that the Censor's negative opinion is not the truth.",
+    "Morning pages help: by writing first thing every morning, you learn to evade the Censor, and because there is no wrong way to write them, its opinion doesn't count.",
+    "In the first week of the course, readers list historic 'monsters', people who damaged their creative self-worth, and 'champions' who encouraged it.",
+    "Cameron places the Censor in the logical (left) brain, and says that beyond the reach of its babble we find our own quiet center."
+  ],
+  "scene_details": [
+    "a cartoon serpent slithering around a creative Eden",
+    "a drawing of the shark from Jaws with an X through it, pinned where you write",
+    "a list of old monsters and champions"
+  ],
+  "tension": "Cameron's answer to the voice that stops artists is to draw it as a cartoon and cross it out.",
+  "opening_idea": "Start with the drawing: a cartoon serpent or the Jaws shark, an X through it, pinned above a desk.",
+  "lessons": [
+    {
+      "idea": "Give the critical voice a separate shape so you can hear it as one voice among others, not as the truth about your work.",
+      "anchor": "Cameron's cartoon serpent and crossed-out shark turn the Censor into a character.",
+      "everyday_example_idea": "A cook who hears 'that'll be bland' before every new dish names that voice after a fussy relative and tastes the food anyway."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "If your inner critic were a cartoon, what would it look like and what line would it hiss most often?",
+  "use_cases": [
+    {
+      "situation": "A friend says 'I'm not a real artist' about their hobby.",
+      "move": "Tell them Cameron's trick: draw that voice as a cartoon serpent, cross it out, and pin it above the desk.",
+      "context": "social"
+    },
+    {
+      "situation": "Your child tears up a drawing because it's 'bad'.",
+      "move": "Ask what the 'bad' voice would look like as a cartoon and draw it together.",
+      "context": "family"
+    },
+    {
+      "situation": "You hear 'this is stupid' before sharing an idea.",
+      "move": "Note the line on paper as the critic's, then share the idea anyway.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Draw your inner critic as a cartoon and cross it out; a hissing snake is easier to ignore than the truth.",
+  "conversation_variants": {
+    "punchline_idea": "Julia Cameron tells blocked artists to draw their inner critic as a cartoon snake and put an X through it.",
+    "thirty_sec_idea": "In The Artist's Way, Julia Cameron calls the inner critic the Censor. Her advice: picture it as a cartoon serpent hissing in your creative Eden, or the shark from Jaws. Draw it, cross it out, pin it where you work. Turning it into a nasty little character loosens its grip, and its opinion stops sounding like the truth.",
+    "question_idea": "",
+    "key_contrast_idea": "Truth versus a cartoon"
+  }
+}

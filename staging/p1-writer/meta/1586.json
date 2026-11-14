@@ -1,0 +1,35 @@
+{
+ "story_id": 1586,
+ "verdict": "keep",
+ "verify_note": "Keep, rebuilt: mouse study is 100 days (ScienceDaily/Salk), not 18 weeks; eight-person 16-week pilot replaces the unverified 12-week study; Panda's caveats (human studies needed; fasting hypoglycemia) included. Not checked against the book text; confidence medium.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Aynı yemek, farklı saat",
+  "description": "Fareler aynı kaloriyi aldı. Yemek hakkı gecede 8 saatle sınırlananlar yüzde 28 daha hafifti.",
+  "hook": "Kendi yeme saatlerinizi sınasaydınız akşam düzeninizde neyi değiştirirdiniz?",
+  "one_minute_summary": "Panda'nın laboratuvarı farelere aynı yağlı yemi verdi. Serbest yiyenler kilo aldı ve karaciğer hasarı geliştirdi. Yemek hakkı gecede 8 saatle sınırlananlar yüzde 28 daha hafifti ve bu sorunları göstermedi. Panda insan çalışmalarının gerektiğini söyledi. Sekiz kişilik bir denemede 10 ila 11 saatlik pencere, daha iyi enerji ve uyku getirdi. Teşhis edilmemiş açlık hipoglisemisi olanlar için yeme süresini değiştirmek riskli olabilir."
+ },
+ "en": {
+  "title": "Same Food, Different Clock",
+  "description": "Mice ate identical calories. Those limited to an 8-hour window weighed 28 percent less.",
+  "hook": "If you tested your own eating hours, what would you change in your evenings?",
+  "one_minute_summary": "Panda's lab fed mice the same fatty diet. Free eaters gained weight and developed liver damage; mice limited to 8 hours a night weighed 28 percent less and showed none of those problems. Panda said human studies were needed. A pilot with eight people who ate within 10 to 11 hours reported better energy and sleep. Changing eating hours may be risky for people with undiagnosed fasting hypoglycemia."
+ },
+ "es": {
+  "title": "Misma comida, otro reloj",
+  "description": "Los ratones ingirieron las mismas calorías. Los limitados a una ventana de 8 horas pesaban un 28 por ciento menos.",
+  "hook": "Si probaras tus propios horarios de comida, ¿qué cambiarías en tus noches?",
+  "one_minute_summary": "El laboratorio de Panda dio a unos ratones la misma dieta grasa. Los que comieron sin límite engordaron y sufrieron daño hepático; los limitados a 8 horas por noche pesaban un 28 por ciento menos y no mostraron esos problemas. Panda dijo que hacían falta estudios en humanos. Un piloto con ocho personas que comieron en 10 u 11 horas contó mejor energía y sueño. Cambiar los horarios puede ser arriesgado con hipoglucemia en ayunas no diagnosticada."
+ },
+ "de": {
+  "title": "Gleiches Futter, andere Uhr",
+  "description": "Die Mäuse nahmen gleich viele Kalorien auf. Die mit einem 8-Stunden-Fenster wogen 28 Prozent weniger.",
+  "hook": "Wenn du deine eigenen Essenszeiten testen würdest, was würdest du am Abend ändern?",
+  "one_minute_summary": "Pandas Labor gab Mäusen dasselbe fettreiche Futter. Frei fressende nahmen zu und bekamen Leberschäden; die auf 8 Stunden pro Nacht beschränkten wogen 28 Prozent weniger und zeigten nichts davon. Panda sagte, es brauche Studien am Menschen. Ein Pilotversuch mit acht Menschen, die in 10 bis 11 Stunden aßen, berichtete von mehr Energie und besserem Schlaf. Bei nicht diagnostizierter Nüchternhypoglykämie kann das riskant sein."
+ }
+}

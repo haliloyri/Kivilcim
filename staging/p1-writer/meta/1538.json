@@ -1,0 +1,35 @@
+{
+  "story_id": 1538,
+  "verdict": "keep",
+  "verify_note": "Keep: Syed's own street, teacher-coach, 24-hour club and brother from the spiked review, lifeclub-type summaries and aibrary snippets; no primary text. Peter Charters and the Omega name are from summaries only; the \"more than the rest of the nation\" phrase is the reviewer's, hedged. Federer-mother claim, postcode medal share and neighbours-reached-national-level dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Bir sokak, bir koç, bir kulüp",
+    "description": "Matthew Syed'in çocukluk sokağı, yetenek yerine ortamın gücünü gösterir: bir koç, hiç kapanmayan bir kulüp ve bir kardeş.",
+    "hook": "Hangi erken fırsat sizi fark ettiğinizden daha iyi bir şeyde yetiştirdi?",
+    "one_minute_summary": "Matthew Syed güneydoğu İngiltere'de sıradan bir sokakta büyüdü ve İngiltere'nin bir numaralı masa tenisçisi oldu. Bir değerlendirmeye göre 1980'lerde bir dönem sokağı, ülkenin geri kalanının toplamından fazla üst düzey oyuncu yetiştirdi. İngiltere'nin en iyi koçu olan bir öğretmen onu ve ağabeyini yirmi dört saat erişimli bir kulübe aldı, evde de garajda turnuva masasında saatlerce oynadılar. Syed, fırsatlar olmasa belki \"bir numara bin bir\" olacağını kabul ediyor."
+  },
+  "en": {
+    "title": "One Street, One Coach, One Club",
+    "description": "Matthew Syed's childhood street shows the power of setting over talent: a coach, a club that never closed and a brother.",
+    "hook": "Which early opportunity made you better at something than you realised?",
+    "one_minute_summary": "Matthew Syed grew up on an ordinary road in south-east England and became England's top table tennis player. By one review's account, in the 1980s his street produced more outstanding players than the rest of the country combined. A teacher who was England's top coach recruited him and his brother to a club with 24-hour access, and at home they played for hours on a tournament table in the garage. Syed admits that without those opportunities he might have been \"number one thousand and one.\""
+  },
+  "es": {
+    "title": "Una calle, un entrenador, un club",
+    "description": "La calle donde creció Matthew Syed muestra el poder del entorno sobre el talento: un entrenador, un club siempre abierto y un hermano.",
+    "hook": "¿Qué oportunidad temprana te hizo mejor en algo de lo que imaginabas?",
+    "one_minute_summary": "Matthew Syed creció en una calle corriente del sureste de Inglaterra y fue el mejor jugador de tenis de mesa del país. Según una reseña, en los ochenta su calle produjo más jugadores sobresalientes que el resto de Inglaterra junto. Un profesor que era el mejor entrenador lo reclutó a él y a su hermano para un club con acceso las 24 horas, y en casa jugaban durante horas en una mesa de torneo en el garaje. Syed admite que sin esas oportunidades quizá habría sido \"el número mil uno\"."
+  },
+  "de": {
+    "title": "Eine Straße, ein Trainer, ein Verein",
+    "description": "Matthew Syeds Kindheitsstraße zeigt die Macht des Umfelds über das Talent: ein Trainer, ein nie schließender Verein und ein Bruder.",
+    "hook": "Welche frühe Gelegenheit hat dich in etwas besser gemacht, als dir bewusst war?",
+    "one_minute_summary": "Matthew Syed wuchs an einer gewöhnlichen Straße im Südosten Englands auf und wurde Englands bester Tischtennisspieler. Nach der Darstellung einer Rezension brachte seine Straße in den 1980ern mehr herausragende Spieler hervor als der Rest des Landes zusammen. Ein Lehrer, der Englands bester Trainer war, warb ihn und seinen Bruder für einen Verein mit Zugang rund um die Uhr an, zu Hause spielten sie stundenlang an einem Turniertisch in der Garage. Syed räumt ein, ohne diese Chancen wäre er vielleicht \"die Nummer tausendundeins\" gewesen."
+  }
+}

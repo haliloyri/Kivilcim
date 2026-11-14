@@ -1,0 +1,35 @@
+{
+ "story_id": 1454,
+ "verdict": "keep",
+ "verify_note": "Keep: list of eight pillars (mind: perspective, humility, humor, acceptance; heart: forgiveness, gratitude, compassion, generosity) verified in Time and Friends Journal; obstacles list and mind/heart contrast from reviews. Old text's wrong pillar list, invented Tutu quote and oxytocin/cortisol claims dropped. Medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Neşenin sekiz sütunu",
+  "description": "Kitap neşeyi sekiz sütuna böler: dördü zihne, dördü kalbe ait. Birini seçmek haftayı değiştirebilir.",
+  "hook": "Sekiz sütundan hangisi haftanızı en çok değiştirirdi?",
+  "one_minute_summary": "*The Book of Joy*'un son bölümü neşenin sekiz sütununu sayar. Dördü zihne aittir: bakış açısı, alçakgönüllülük, mizah, kabulleniş. Dördü kalbe aittir: bağışlama, şükran, merhamet, cömertlik. Sütunlar, ikinci bölümde işlenen korku, öfke, yas, hastalık gibi engellere verilen cevaptır. Bir eleştirmene göre Dalai Lama önceden zihin eğitimini, Tutu ise yaradan sonra nasıl karşılık verileceğini öne çıkarıyor. Kitabın ana çıkarımı, neşenin kendine fazla odaklanmamaktan geldiği."
+ },
+ "en": {
+  "title": "The eight pillars of joy",
+  "description": "The book splits joy into eight pillars, four of the mind and four of the heart. Picking one may change your week.",
+  "hook": "Which of the eight pillars would change your week most?",
+  "one_minute_summary": "The last part of *The Book of Joy* names eight pillars of joy. Four are of the mind: perspective, humility, humor, acceptance. Four are of the heart: forgiveness, gratitude, compassion, generosity. They answer the obstacles covered earlier, such as fear, anger, grief and illness. One reviewer notes that the Dalai Lama favors advance mental training while Tutu leans toward responding after hurt. A reported takeaway: joy comes from not focusing too much on yourself."
+ },
+ "es": {
+  "title": "Los ocho pilares de la alegría",
+  "description": "El libro divide la alegría en ocho pilares, cuatro de la mente y cuatro del corazón. Elegir uno puede cambiar tu semana.",
+  "hook": "¿Cuál de los ocho pilares cambiaría más tu semana?",
+  "one_minute_summary": "La última parte de *The Book of Joy* nombra ocho pilares de la alegría. Cuatro son de la mente: perspectiva, humildad, humor, aceptación. Cuatro son del corazón: perdón, gratitud, compasión, generosidad. Responden a los obstáculos tratados antes, como el miedo, la ira, el duelo y la enfermedad. Un crítico señala que el Dalai Lama favorece el entrenamiento mental previo y Tutu se inclina por responder tras el daño. Una idea central: la alegría viene de no centrarse demasiado en uno mismo."
+ },
+ "de": {
+  "title": "Die acht Säulen der Freude",
+  "description": "Das Buch teilt Freude in acht Säulen, vier des Geistes und vier des Herzens. Eine zu wählen kann deine Woche verändern.",
+  "hook": "Welche der acht Säulen würde deine Woche am meisten verändern?",
+  "one_minute_summary": "Der letzte Teil von *The Book of Joy* nennt acht Säulen der Freude. Vier gehören dem Geist: Perspektive, Demut, Humor, Akzeptanz. Vier gehören dem Herzen: Vergebung, Dankbarkeit, Mitgefühl, Großzügigkeit. Sie antworten auf die zuvor behandelten Hindernisse wie Angst, Wut, Trauer und Krankheit. Ein Rezensent bemerkt, der Dalai Lama setze auf vorausschauendes Geistestraining, Tutu eher auf Reaktion nach der Verletzung. Eine berichtete Erkenntnis: Freude entsteht daraus, nicht zu sehr bei sich selbst zu verweilen."
+ }
+}

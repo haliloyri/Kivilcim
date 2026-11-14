@@ -1,0 +1,35 @@
+{
+ "story_id": 1516,
+ "verdict": "keep",
+ "verify_note": "Keep: The Mom Test premise, three rules and three bad questions verified in several detailed summaries, not full text. Old text's invented quotes, ten-interview scenario and 'commitment ladder' dropped. Concept story, medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Annenin evet'i bedava",
+  "description": "Rob Fitzpatrick'e göre annenizin onayı bilgi değildir. Fikir yerine geçen sefer ne olduğunu sormak gerçek veri verir.",
+  "hook": "Annenizin onayladığı fikir gerçekten iyi mi?",
+  "one_minute_summary": "Rob Fitzpatrick'in *The Mom Test* kitabı, iş fikrinize evet diyecek annenizin cevabının neden işe yaramadığını anlatır. Hemen herkes, çoğunlukla nezaketten, sizi yanıltabilir. Üç kural koyar: fikrinizi değil karşınızdakinin hayatını konuşun, geçmişteki somut olayları sorun, az konuşup çok dinleyin. 'Alır mıydın?' yerine bugün sorunu nasıl hallettiklerini ve en son ne zaman yaşandığını sorun. Fikri anlatmaya başlayınca insanlar kendi sorunlarından söz etmeyi bırakır."
+ },
+ "en": {
+  "title": "The mom who says yes",
+  "description": "Rob Fitzpatrick says your mom's approval tells you nothing. Asking about the last time the problem happened gives real data.",
+  "hook": "Why is your mom's yes the least useful answer?",
+  "one_minute_summary": "Rob Fitzpatrick's *The Mom Test* starts from the one person guaranteed to approve your business idea. Almost anyone can mislead you, usually out of kindness. His three rules: talk about their life instead of your idea, ask about specific past events, and talk less. Instead of 'would you buy this?', ask how they handle the problem today and have them talk you through the last time it happened. Once you pitch, people stop describing their own problems."
+ },
+ "es": {
+  "title": "El sí de una madre",
+  "description": "Según Rob Fitzpatrick, la aprobación de tu madre no es información. Preguntar por la última vez que pasó el problema da datos reales.",
+  "hook": "¿Por qué el sí de tu madre es la respuesta menos útil?",
+  "one_minute_summary": "*The Mom Test*, de Rob Fitzpatrick, parte de la única persona que seguro aprobará tu idea de negocio. Casi cualquiera puede despistarte, sobre todo por amabilidad. Sus tres reglas: habla de su vida y no de tu idea, pregunta por hechos concretos del pasado y habla menos. En lugar de «¿lo comprarías?», pregunta cómo resuelven el problema hoy y pídeles que te cuenten la última vez que ocurrió. En cuanto presentas la idea, dejan de describir su propio problema."
+ },
+ "de": {
+  "title": "Das Ja deiner Mutter",
+  "description": "Laut Rob Fitzpatrick sagt die Zustimmung deiner Mutter nichts. Die Frage nach dem letzten Mal, als das Problem auftrat, liefert echte Daten.",
+  "hook": "Warum ist das Ja deiner Mutter die nutzloseste Antwort?",
+  "one_minute_summary": "Rob Fitzpatricks *The Mom Test* geht von der einen Person aus, die deiner Geschäftsidee garantiert zustimmt. Fast jeder kann dich in die Irre führen, meist aus Freundlichkeit. Seine drei Regeln: Sprich über ihr Leben statt über deine Idee, frag nach konkreten Ereignissen der Vergangenheit und rede weniger. Statt „Würdest du das kaufen?“ frag, wie sie das Problem heute lösen, und lass dir das letzte Mal erzählen. Sobald du die Idee vorstellst, hören sie auf, von ihrem Problem zu reden."
+ }
+}

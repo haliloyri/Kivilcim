@@ -1,0 +1,221 @@
+{
+ "book_no": 84,
+ "title": "Make It Stick",
+ "authors": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+ "year": "2014",
+ "sources": [
+  "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown",
+  "https://pubmed.ncbi.nlm.nih.gov/16926566/",
+  "https://clinicaltrials.gov/study/NCT03626025"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Mia Blundetto, 23, first lieutenant in the US Marine Corps, posted to logistics in Okinawa, had to pass jump school to become air delivery platoon commander. She said: 'I hate falling, that feeling in your chest. There's not a day in my life I wanted to jump out of an airplane.' She would not go down a water slide until middle school. She told her commanding officer: 'Yes, sir, I'll jump out of planes.'",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 4 'Embrace Difficulties'",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Army jump school at Fort Benning, Georgia: trainees may not carry a notebook or write notes; they listen, watch, rehearse, execute. Testing is the principal instructional medium and the test is in the doing.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Parachute landing fall (PLF): hit the ground and roll so the impact spreads over the balls of the feet, side of calf, thigh, hip and back; six possible directions. First taught in a gravel pit: explained, demonstrated, tried, corrected, tried again.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Difficulty rises over the following weeks: a platform two feet high; a zip line a dozen feet up; a twelve-foot platform with a jump-door mockup where the instructor, not the trainee, pulls the release and drops them the last two or three feet from random directions; a thirty-four-foot tower.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "Practice is spaced and interleaved, partly by default as trainees wait their turn at each station. In week 3 they jump for real: five exits from a military transport for jump wings.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "On her third jump from a C130 at 1,250 feet, Mia was first at the port door; at the count of four thousand a green parachute wrapped around her: she had landed on top of the first jumper's canopy. She 'just sort of swam out' and steered away. She said it did not frighten her.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Consolidation: new learning is labile; the brain reorganizes and stabilizes memory traces over several hours or longer; scientists believe it replays or rehearses the learning, fills in blank spots and connects it to prior knowledge.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 4 'Consolidation'",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "The book says 'sleep seems to help memory consolidation, but in any case, consolidation ... occurs over a period of time', and elsewhere 'Sleep seems to play a large role in memory consolidation, so practice with at least a day in between sessions is good.' Sleep is a hedged side point, not a studied topic in the book.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 3 and ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "Analogy: writing an essay. The first draft is rangy; you put it aside to ferment; a day or two later what you want to say has become clearer.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "'Desirable difficulties' is a term coined by psychologists Elizabeth and Robert Bjork.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Surveys: highlighting, underlining and poring over notes and texts are by far the most-used study strategies.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Washington University studies (2008): 148 students at two universities read five passages from textbooks and Scientific American, once or twice in succession; no rereading benefit at all under these conditions. Rereading once after a meaningful lapse of time can help.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f13",
+   "claim": "Rising familiarity with a text and fluency in reading it create an illusion of mastery ('illusions of knowing'); being able to repeat phrases is no sign of understanding.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 1 'Illusions of Knowing'",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "A first-year student knocks on a professor's door after a low grade (a D) on the first introductory psychology test. He attended every lecture, took diligent notes, highlighted the text, then highlighted his notes and reviewed the highlights several times until it all felt familiar. Had he used the key concepts at the back of each chapter to test himself, could he define 'conditioned stimulus' and use it in a paragraph, had he turned main points into questions or put ideas in his own words? No in every case.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "A study asked UCLA Psychology Building faculty and students to identify the fire extinguisher closest to their office; most failed. One professor of 25 years found it right next to his office door, inches from the doorknob he turned every day.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 1",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "Retrieval practice (quizzing yourself) is more effective than rereading and acts as a reality check on what you actually know; students who don't quiz themselves tend to overestimate their mastery.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 1-2",
+   "confidence": "high"
+  },
+  {
+   "id": "f17",
+   "claim": "Thirty-eight surgical residents took four short lessons in microsurgery (reattaching tiny vessels), each instruction plus practice. Half did all four in a single day, the normal in-service schedule; the others had a week between lessons.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 3 'Spaced Practice'; Moulton et al., Annals of Surgery 244 (2006) 400-409",
+   "confidence": "high"
+  },
+  {
+   "id": "f18",
+   "claim": "Tested a month after the last session, the spaced group outperformed in all areas: time to complete, number of hand movements, success reattaching the severed, pulsating aortas of live rats. In the single-day group, 16 percent damaged the rats' vessels beyond repair and could not complete the surgery.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 3",
+   "confidence": "high"
+  },
+  {
+   "id": "f19",
+   "claim": "The findings prompted the medical school to reexamine its practice of cramming a technique into one intensive session.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 3 note 3",
+   "confidence": "high"
+  },
+  {
+   "id": "f20",
+   "claim": "Why spacing works: consolidation unfolds over hours and may take days; the extra effort to retrieve after 'a little forgetting' retriggers consolidation. Interval: enough that practice is not mindless repetition and a little forgetting has set in, but not so much that retrieval becomes relearning.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 3",
+   "confidence": "high"
+  },
+  {
+   "id": "f21",
+   "claim": "Spaced practice feels less productive; even participants who did better with spacing believed they learned better with massed practice. Cramming has been likened to binge-and-purge eating.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 3",
+   "confidence": "high"
+  },
+  {
+   "id": "f22",
+   "claim": "Leitner box: flashcards in four boxes; cards you miss are practiced often, cards you know less often; a missed card goes back to the first box.",
+   "source": "https://archive.org/details/make-it-stick-the-science-of-successful-learning-peter-c.-brown (full text), ch. 3",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Morning vs evening groups tested 12 hours apart; sleepers remembered much better (old 1348).",
+   "reason": "Not in Make It Stick; book only says sleep 'seems to help' consolidation."
+  },
+  {
+   "claim": "Consolidation happens in REM and deep sleep; neuronal connections strengthened.",
+   "reason": "Not in the book."
+  },
+  {
+   "claim": "'Learning is completed during sleep, not at the desk.'",
+   "reason": "Overstates the book's hedged line."
+  },
+  {
+   "claim": "Brown calls it 'illusion knowledge' (illüzyon bilgisi).",
+   "reason": "Book's terms are 'illusion of mastery' / 'illusions of knowing'."
+  },
+  {
+   "claim": "Reading once and testing twice beats reading three times (as Brown's own finding).",
+   "reason": "Specific ratio not found in the book text; not used."
+  },
+  {
+   "claim": "Quote: 'A little difficulty is a good thing. Information retrieved with difficulty leaves a deeper trace.'",
+   "reason": "Not a verbatim quote; idea of desirable difficulty is in book but the quote is invented."
+  },
+  {
+   "claim": "Anki; schedule of 3 days, a week, a month.",
+   "reason": "Not in the book (book describes the Leitner box)."
+  },
+  {
+   "claim": "Peter Brown as sole author.",
+   "reason": "Book is co-written by Peter C. Brown, Henry L. Roediger III and Mark A. McDaniel."
+  }
+ ],
+ "stories": {
+  "1348": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f10"
+   ],
+   "note": "Sleep is only a hedged side mention in the book; recentered on consolidation through Mia Blundetto's jump school. Title changes."
+  },
+  "1349": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f11",
+    "f12",
+    "f13",
+    "f14",
+    "f15",
+    "f16"
+   ],
+   "note": "Recentered on the D-grade student and the illusion of knowing; invented study ratio dropped."
+  },
+  "1350": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f17",
+    "f18",
+    "f19",
+    "f20",
+    "f21",
+    "f22"
+   ],
+   "note": "Recentered on the 38 surgical residents; 'a little forgetting' passage verbatim; Anki and invented quote dropped."
+  }
+ }
+}

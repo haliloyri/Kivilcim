@@ -1,0 +1,63 @@
+{
+  "story_id": 1688,
+  "kind": "concept",
+  "book": {
+    "title": "The Happiness Trap",
+    "author": "Russ Harris",
+    "year": "2007"
+  },
+  "confidence": "low",
+  "confidence_note": "Details from reading notes, a newsletter summary, a quote page and a search snippet of a chapter excerpt; no full text. The old text's 'repeat I am inadequate until it feels true' exercise, the leaves-on-a-stream visualization (common in ACT but not confirmed in this book by any consulted source) and the 'dramatically reduces the thought's power' wording were dropped. The excerpt actually warns that defusion is not about getting rid of thoughts.",
+  "facts": [
+    "Harris: the thinking self is like a radio constantly playing in the background, mostly Radio Doom and Gloom, broadcasting negative stories 24 hours a day.",
+    "Defusion means seeing thoughts, images and memories as just words and pictures, without fighting them, running from them or staying too focused on them.",
+    "One technique: add the words 'I'm having the thought that...' to the thought, which gives psychological distance.",
+    "Another: imagine a cartoon character speaking your thought aloud.",
+    "Another: react with 'Thanks Mind, but I'm not playing today.'",
+    "Hooked and unhooked: when you get hooked on a thought, unhook yourself and return to breathing; The Guardian's Oliver Burkeman highlighted the unhooking idea.",
+    "A chapter excerpt warns that many readers, meeting defusion, try to use it as a control strategy, as a client called John does; it is not about getting rid of thoughts.",
+    "The observing self watches the thinking self's commentary neutrally; notes compare emotions to weather and the observing self to the sky.",
+    "Defusion is the first of six core ACT principles in the book (defusion, expansion, connection, observing self, values, committed action); committed action means accept your situation, pick an action that fits your values and take it.",
+    "Notes say the 'I'm having the thought that' prefix brings relief from rumination, and suggest ten deep breaths to reach the observing self."
+  ],
+  "scene_details": [
+    "a radio that never switches off",
+    "the words 'I'm having the thought that' put in front",
+    "a cartoon character saying the thought aloud",
+    "unhooking and returning to the breath"
+  ],
+  "tension": "A thought that sounds like a fact is hard to ignore, yet fighting it tends to feed it.",
+  "opening_idea": "Open on the five words that change a thought's status, without naming the author.",
+  "lessons": [
+    {
+      "idea": "Name the thought as a thought before you decide what to do about it.",
+      "anchor": "'I'm having the thought that' and Thanks Mind"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which thought keeps replaying when you start something, and what would change if you put 'I'm having the thought that' in front of it?",
+  "use_cases": [
+    {
+      "situation": "A harsh thought loops while you work",
+      "move": "Answer it with 'Thanks Mind, but I'm not playing today' and go back to the task.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend says 'I'm such a failure'",
+      "move": "Suggest phrasing it as 'I'm having the thought that I'm a failure' and ask what changes.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A child freezes at 'I can't do this' before homework",
+      "move": "Let a cartoon character say the thought aloud, then ask for the first line of the assignment.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Say 'I'm having the thought that' before the thought, and notice who is saying it.",
+  "conversation_variants": {
+    "punchline_idea": "Five words in front of a thought change its job from fact to broadcast.",
+    "thirty_sec_idea": "Harris's thinking self is a radio playing Doom and Gloom; defusion adds 'I'm having the thought that', a cartoon voice or 'Thanks, Mind', then you return to the breath.",
+    "question_idea": "",
+    "key_contrast_idea": "fact, just a thought"
+  }
+}

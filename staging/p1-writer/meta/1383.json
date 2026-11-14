@@ -1,0 +1,35 @@
+{
+ "story_id": 1383,
+ "verdict": "keep",
+ "verify_note": "Formula critique and goalpost image from the book; Lyubomirsky, King & Diener 2005 (225 studies, 275,000+ people, influence both ways) verified; 44 doctors with candy from Achor's account, 'nearly twice as fast' kept as his claim; Soweto scene and happy-day maths test from the book. Old vague dopamine wording replaced with Achor's attributed explanation.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Şeker Önce Gelince",
+  "description": "Shawn Achor 'çok çalış, başarılı ol, sonra mutlu ol' formülünü tersine çevirir. Doktorlara tanıdan önce verilen bir paket şeker, bunun en somut örneği.",
+  "hook": "Kendinize ancak iş bitince izin verdiğiniz keyif hangisi?",
+  "one_minute_summary": "Shawn Achor çok çalışıp başarılı olunca mutlu olacağımız formülünü sorgular, çünkü her başarıda hedef ileri kayar. Dayanağı 275.000'den fazla kişiyi kapsayan 225 çalışmalık bir derleme. Mutluluk iş, ilişki ve sağlıktaki başarıyla bağlantılı ve çoğu zaman ondan önce geliyor, etki iki yönlü. Bir çalışmada 44 doktorun yarısına tanıdan önce küçük bir paket şeker verildi, yemediler bile. Keyfi yerinde olanlar doğru tanıya daha erken ulaştı. Soweto'da okul ödevini ayrıcalık gören çocuklar da aynı fikri anlatır."
+ },
+ "en": {
+  "title": "Candy Before the Diagnosis",
+  "description": "Shawn Achor turns 'work hard, succeed, then be happy' around. A bag of candy given to doctors before a diagnosis is his clearest example.",
+  "hook": "Which small pleasure do you only allow yourself once the work is done?",
+  "one_minute_summary": "Shawn Achor questions the formula of working hard, succeeding and then being happy, because every success moves the goalpost. He leans on a review of 225 studies covering more than 275,000 people: happiness was linked to success at work, in relationships and in health, often came first, and the influence ran both ways. In one study, half of 44 doctors got a small bag of candy before diagnosing a patient file. They didn't eat it, yet they reached the right diagnosis earlier."
+ },
+ "es": {
+  "title": "Los caramelos, antes del diagnóstico",
+  "description": "Shawn Achor le da la vuelta a \"trabaja duro, triunfa y luego sé feliz\". Una bolsa de caramelos entregada a unos médicos antes del diagnóstico es su ejemplo más claro.",
+  "hook": "¿Qué pequeño placer te permites solo cuando acabas el trabajo?",
+  "one_minute_summary": "Shawn Achor cuestiona la fórmula de trabajar duro, triunfar y luego ser feliz, porque cada éxito mueve la meta. Se apoya en una revisión de 225 estudios con más de 275.000 personas: la felicidad iba ligada al éxito en el trabajo, las relaciones y la salud, a menudo llegaba antes y la influencia iba en ambos sentidos. En un estudio, la mitad de 44 médicos recibió una bolsa de caramelos antes de diagnosticar un historial. No se los comieron, y aun así acertaron antes."
+ },
+ "de": {
+  "title": "Süßigkeiten vor der Diagnose",
+  "description": "Shawn Achor dreht \"hart arbeiten, Erfolg haben, dann glücklich sein\" um. Eine Tüte Süßigkeiten für Ärzte vor der Diagnose ist sein klarstes Beispiel.",
+  "hook": "Welche kleine Freude gönnst du dir erst, wenn die Arbeit erledigt ist?",
+  "one_minute_summary": "Shawn Achor stellt die Formel infrage, nach der wir erst hart arbeiten, dann Erfolg haben und schließlich glücklich sind, denn jeder Erfolg verschiebt das Ziel. Er stützt sich auf eine Auswertung von 225 Studien mit über 275.000 Menschen: Glück hing mit Erfolg in Beruf, Beziehungen und Gesundheit zusammen, kam oft zuerst, und der Einfluss wirkte in beide Richtungen. In einer Studie bekam die Hälfte von 44 Ärzten vor einer Diagnose eine Tüte Süßigkeiten. Sie aßen sie nicht und fanden die richtige Diagnose trotzdem früher."
+ }
+}

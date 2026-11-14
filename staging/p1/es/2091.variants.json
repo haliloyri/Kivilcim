@@ -1,0 +1,6 @@
+{
+ "punchline": "De 32.000 bits por segundo a 40, a solo 400 yardas.",
+ "thirty_sec": "En octubre de 1986 el caudal entre dos centros a 400 yardas cayó de 32 Kbps a 40 bps. El artículo de Jacobson y Karels de 1988 respondió con la conservación de paquetes y slow-start: empezar con un paquete y sumar uno por acuse.",
+ "question": "¿Dónde respondes a un canal desbordado enviando más de golpe?",
+ "key_contrast": "Reinicia con un paso pequeño y amplía según vuelvan las confirmaciones."
+}

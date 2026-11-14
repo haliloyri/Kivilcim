@@ -1,0 +1,59 @@
+{
+ "story_id": 1380,
+ "kind": "concept",
+ "book": {
+  "title": "Learned Optimism",
+  "author": "Martin E. P. Seligman",
+  "year": "1990"
+ },
+ "confidence": "medium",
+ "confidence_note": "The ABCDE structure, Ellis's origin, and the four disputation tacks are well attested in summaries of Learned Optimism. I could not verify a specific worked example from the book, so the story uses none; the job-interview example in the old text is not presented as the book's. The 'rival' framing comes from a Seligman interview and is paraphrased, not quoted. The old direct quote 'most people jump from A to C' is dropped.",
+ "facts": [
+  "Seligman builds on psychologist Albert Ellis's ABC: Adversity, the Belief you form about it, and the Consequence, what you feel and do.",
+  "The key point is that C follows from B, not from A alone; people usually notice only the event and their reaction.",
+  "The reader first records ABC episodes from ordinary days to catch the belief in between.",
+  "Seligman adds D, Disputation, and E, Energization, the change in energy and feeling after a successful dispute.",
+  "Disputation has four tacks: Evidence (what supports the belief), Alternatives (other causes), Implications (even if true, is it a catastrophe), Usefulness (does dwelling on it help right now).",
+  "Seligman suggests disputing the thought as if a third person whose aim was to make you miserable, or a rival for your job, had said it.",
+  "When disputing isn't possible in the moment, distract yourself or set a later time to think it over."
+ ],
+ "scene_details": [
+  "five letters written in a column: A, B, C, D, E",
+  "a written record of ordinary bad moments",
+  "the accusing sentence imagined in a rival's voice"
+ ],
+ "tension": "People treat a thought in their own head as a fact they never check, while they would argue at once with a rival who said the same thing.",
+ "opening_idea": "Open with the gap between A and C: the event and the feeling, with an unseen sentence in between.",
+ "lessons": [
+  {
+   "idea": "Answer your harshest belief the way you would answer an unfair accuser, using evidence and other explanations.",
+   "anchor": "Seligman's rival framing and the four tacks"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What sentence did you tell yourself after your last disappointment, and what would you reply if a rival had said it to you?",
+ "use_cases": [
+  {
+   "situation": "A friend says 'I ruined everything' after a mistake",
+   "move": "Ask for the evidence and one other explanation.",
+   "context": "social"
+  },
+  {
+   "situation": "You feel crushed after critical feedback",
+   "move": "Write A, B, C; then reply to B as if a rival said it, using the four tacks.",
+   "context": "self"
+  },
+  {
+   "situation": "Teen says 'Everyone hates me' after a bad day",
+   "move": "Ask what happened, then what else could explain it.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "Your worst thought would not survive if a rival said it aloud; argue back with evidence.",
+ "conversation_variants": {
+  "punchline_idea": "Seligman's trick: treat your harshest thought as if a rival had said it, and you'll argue back.",
+  "thirty_sec_idea": "Ellis's ABC, the belief in between, Seligman adds dispute (four tacks) and energization.",
+  "question_idea": "",
+  "key_contrast_idea": "accept vs. argue back"
+ }
+}

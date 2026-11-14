@@ -21,13 +21,21 @@
     "story:publish": "node scripts/p1/publish-local.mjs",
     "story:check-docs": "node scripts/p1/check-docs.mjs",
     "story:score": "node scripts/p1/score-models.mjs",
+    "tag:export": "node scripts/tagging/export-sample.mjs",
+    "tag:check": "node scripts/tagging/evaluate.mjs --check",
+    "tag:laya": "USE_TF=0 .venv-laya/bin/python scripts/tagging/run-laya.py",
+    "tag:finetune": "USE_TF=0 .venv-laya/bin/python scripts/tagging/finetune-laya.py",
+    "tag:run-chat": "node scripts/tagging/run-model.mjs",
+    "tag:eval": "node scripts/tagging/evaluate.mjs",
+    "tag:build": "node scripts/tagging/build-outputs.mjs",
     "build:apk:dev": "eas build --platform android --profile development",
     "build:apk": "eas build --platform android --profile apk",
     "build:apk:local": "eas build --platform android --profile apk --local",
     "screenshots": "node scripts/generate-screenshots.mjs",
     "merge": "node scripts/merge.mjs",
     "test": "jest --runInBand",
-    "test:career": "jest --runInBand src/config/__tests__/featureFlags.test.js src/utils/__tests__/careerProgress.test.js src/utils/__tests__/careerLearning.test.js src/utils/__tests__/careerShare.test.js src/utils/__tests__/learningMilestones.test.js src/utils/__tests__/careerNextAction.test.js src/utils/__tests__/careerNavigation.test.js src/utils/__tests__/careerSync.test.js src/utils/__tests__/localDate.test.js src/utils/__tests__/storyCompletion.test.js src/utils/__tests__/careerToolkit.test.js src/utils/__tests__/careerIdeaPackage.test.js src/utils/__tests__/careerPreview.test.js src/services/__tests__/careerEvents.test.js src/services/__tests__/careerSchema.test.js src/services/__tests__/migrateCareerPath.test.js src/services/__tests__/offlineQueue.test.js src/locales/__tests__/careerCopy.test.js src/components/career/__tests__/CareerPathExperience.smoke.test.js src/components/career/__tests__/LearningMilestoneModal.test.js"
+    "test:career": "jest --runInBand src/config/__tests__/featureFlags.test.js src/utils/__tests__/careerProgress.test.js src/utils/__tests__/careerLearning.test.js src/utils/__tests__/careerShare.test.js src/utils/__tests__/learningMilestones.test.js src/utils/__tests__/careerNextAction.test.js src/utils/__tests__/careerNavigation.test.js src/utils/__tests__/careerSync.test.js src/utils/__tests__/localDate.test.js src/utils/__tests__/storyCompletion.test.js src/utils/__tests__/careerToolkit.test.js src/utils/__tests__/careerIdeaPackage.test.js src/utils/__tests__/careerPreview.test.js src/services/__tests__/careerEvents.test.js src/services/__tests__/careerSchema.test.js src/services/__tests__/migrateCareerPath.test.js src/services/__tests__/offlineQueue.test.js src/locales/__tests__/careerCopy.test.js src/components/career/__tests__/CareerPathExperience.smoke.test.js src/components/career/__tests__/LearningMilestoneModal.test.js",
+    "ios:device": "bash scripts/install-ios.sh"
   },
   "dependencies": {
     "@expo-google-fonts/dm-sans": "^0.4.2",

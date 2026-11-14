@@ -1,0 +1,763 @@
+﻿rank;story_id;title;book;category;words;reels_score;fit_45s;hook;visual;primary_theme
+1;1459;Liderlik ve duygusal bulaşıcılık;İş Hayatında Duygusal Zeka;Liderlik;160;4.31;4;5;5;emotions
+2;1369;FBI rehine müzakeresi;İnsanı Anlamak;Müzakere;130;4.22;5;5;4;influence
+3;1430;Değişim istemek ile değişmek istemek;Terapi;Psikoloji;153;4.12;5;5;5;relationships
+4;1473;Churchill'in Derin Oyunu;Dinlenmenin Gücü;Verimlilik;467;4.12;5;5;4;thinking
+5;1571;Kırılganlığın döngüsü — zayıflık göstermek gücü artırır;Kültür Kodu;Liderlik;148;4.12;5;5;4;creativity
+6;1335;Özgürlük ve seçimin bedeli;Her Şey Yolunda;Felsefe;136;4.09;5;5;4;meaning
+7;1672;Derin çalışma — yüzeysel çalışmanın antitezi;Konsantrasyon Gücü;Verimlilik;162;4.08;5;5;4;focus
+8;1665;Şimdiki an — tek gerçek ev;Yeni Toprak;Farkındalık;163;4.07;5;5;2;thinking
+9;1261;Howard Hughes'ın çöküşü;Ego Is the Enemy;Felsefe;527;4.06;5;5;4;emotions
+10;1707;Metroda Bir Cümle Bütün Hikâyeyi Nasıl Değiştirdi?;The 7 Habits of Highly Effective People;Büyüme;597;4.06;5;5;4;creativity
+11;1151;Tutkuyu bulmak: Bilmek değil keşfetmek;Azim;Motivasyon;621;4.03;5;5;4;creativity
+12;1283;Evrenin dili ve işaretler;Simyacı;İlham;157;4.03;5;5;4;emotions
+13;1573;Savcının ses kaydı;Hataları Kucaklamak;Psikoloji;467;4.03;5;5;4;emotions
+14;1738;Kirli Bir Masa Ahlaki Yargıyı Etkiler mi?;The Righteous Mind;Psikoloji;442;4.02;5;5;4;thinking
+15;1439;Rasyonel şefkat — empatinin ötesi;Against Empathy;Psikoloji;473;3.99;5;4;4;relationships
+16;1095;Cenaze töreni egzersizi;The 7 Habits of Highly Effective People;Büyüme;783;3.98;4;5;4;habits
+17;1133;Şimdiki anın kapısı;Şimdi ve Burada;Farkındalık;619;3.98;5;5;4;emotions
+18;1191;Howard Hughes'un çöküşü;Ego Is the Enemy;Felsefe;601;3.98;5;5;4;creativity
+19;1380;ABCDE modeli — düşünceyi yeniden yapılandırma;İyimserlik Öğrenmek;Psikoloji;161;3.98;5;5;4;thinking
+20;1417;Hayvansız Sirk;Mavi Okyanus Stratejisi;Strateji;434;3.98;5;5;2;creativity
+21;1804;Sekiz Mikserlik Sinyal;Grinding It Out;Liderlik;409;3.98;4;4;4;habits
+22;1171;Çapalama etkisi ve müzayede;Karar Verme Sanatı;Psikoloji;609;3.97;5;4;4;thinking
+23;1266;Jack Johnson'ın Gülümsemesi;Engel Yolu Açar;Felsefe;495;3.97;5;5;4;emotions
+24;1317;Değişken ödül ve kumar psikolojisi;Müşteriyi Anlamak;Ürün;162;3.97;5;5;4;creativity
+25;1664;Acı bedeni — geçmişin duygusal tortusu;Yeni Toprak;Farkındalık;162;3.97;5;3;4;thinking
+26;1588;Yaşlanma bir hastalıktır — ve tedavi edilebilir;Uzun Yaşam Bilimi;Sağlık;160;3.96;5;5;4;health
+27;1199;Hemingway'in sabah ritmi;Saatlerin Efendisi;Verimlilik;633;3.95;5;5;4;habits
+28;1404;Revere'in Çaldığı Kapılar;Devrilme Noktası;Sosyoloji;417;3.95;5;4;4;thinking
+29;1616;Acil durum fonu;Borç Devrimi;Finans;427;3.95;4;4;4;money_career
+30;1821;Adam Rifkin'in beş dakikalık iyiliği;Give and Take;Liderlik;399;3.95;5;5;4;leadership
+31;1361;Uzak iyileşme deneyleri;Niyet;Farkındalık;443;3.94;5;5;4;health
+32;1790;Serengeti'de Bir Pavyan Sürüsü;Why Zebras Don't Get Ulcers;Sağlık;384;3.94;4;5;4;resilience
+33;1817;Satrançta yapay zekânın üstünlüğü;Range;Büyüme;407;3.94;5;5;4;creativity
+34;1382;Sosyal yatırım ve bağlantı kalkanı;Mutluluğun Peşinde;Mutluluk;146;3.93;5;5;4;emotions
+35;1820;Bir öğretmenin her öğrencide yetenek görmesi;Give and Take;Liderlik;395;3.93;5;5;4;creativity
+36;1109;IQ'yu geçen EQ deneyi;Emotional Intelligence;Psikoloji;818;3.92;5;5;4;emotions
+37;1156;PQ — olumlu zeka kası;Olumlu Zeka;Psikoloji;653;3.92;5;4;4;habits
+38;1206;Kişisel efsane ve kader;Simyacı;İlham;605;3.92;5;5;4;creativity
+39;1273;Hemingway'in biyolojik saat ritmi;Saatlerin Efendisi;Verimlilik;150;3.92;5;5;2;habits
+40;1484;"Psikolojik güvenlik nedir, ne değildir";The Fearless Organization;Liderlik;155;3.92;5;5;2;leadership
+41;1553;Uyumlu Toplantılar Neden Susar;The Five Dysfunctions of a Team;Liderlik;437;3.92;4;5;4;leadership
+42;1753;Aynı Kazadan İki Farklı Gerçek;The Wager;Tarih;408;3.92;5;5;2;emotions
+43;1770;İyi İnsanları Değiştiren Rol;The Lucifer Effect;Psikoloji;430;3.92;5;5;4;creativity
+44;1083;Volan etkisi;Good to Great;Verimlilik;784;3.91;5;5;4;thinking
+45;1145;"Kolay olmayacak, devam et";Fark Yaratmak;Motivasyon;604;3.91;5;4;4;emotions
+46;1722;Pixar’da Bir Filmi Kurtaran Toplantının Patronu Yoktu;"Creativity, Inc.";Liderlik;424;3.91;5;5;4;creativity
+47;1205;Hazinenin geri dönüşü;Simyacı;İlham;588;3.9;5;5;4;emotions
+48;1271;Yoga ve travma;Bedenin Sesi;Sağlık;435;3.9;4;5;4;health
+49;1501;Sezginin gerçek değeri;Korkudan Öğrenmek;Güvenlik;137;3.9;4;5;4;emotions
+50;1694;Seabiscuit Büyük Buhran'a Nasıl Umut Oldu?;Seabiscuit;Tarih;456;3.9;5;4;4;emotions
+51;1070;Carl Jung'un taş kulesi inzivası;Derin Çalışma;Verimlilik;723;3.89;4;5;4;thinking
+52;1103;Beş saniyelik kural ve erken kalkma;Sabah Rutini;Alışkanlıklar;792;3.89;5;4;4;emotions
+53;1647;Ortak ağrı — yalnızlığı aşmanın beklenmedik yolu;Çölde Yürümek;Topluluk;170;3.89;5;5;4;emotions
+54;1702;Konfor Alanı Bedenimizi Nasıl Zayıflatıyor?;The Comfort Crisis;Sağlık;474;3.89;4;5;4;health
+55;1201;Monopol mu rekabet mi?;Sıfır'dan Bir'e;Girişimcilik;682;3.88;5;5;2;money_career
+56;1326;Sanatçı buluşması ve ilham besleme;Yaratıcı Beyin;Yaratıcılık;130;3.88;5;5;4;creativity
+57;1554;Bu Rakam Kimin?;The Five Dysfunctions of a Team;Liderlik;448;3.88;4;4;4;leadership
+58;1747;Bisikletçilerin Rüzgar Tüneli;The Wright Brothers;Tarih;408;3.88;4;5;4;thinking
+59;1776;"Şimdiki Bir mi, Sonraki İki mi?";The Marshmallow Test;Psikoloji;427;3.88;5;4;4;emotions
+60;1811;Kepler'in analoji ile keşfi;Range;Büyüme;421;3.88;5;3;4;thinking
+61;1815;Gunpei Yokoi ve Game Boy;Range;Büyüme;413;3.88;5;5;4;creativity
+62;1168;Cerrahın ameliyathanede kaybolması;Flow;Psikoloji;615;3.87;5;5;4;health
+63;1256;Acının kaçınılmazlığı ve acıdan kaçma bedeli;Korkusuzluk;Motivasyon;611;3.87;5;5;4;thinking
+64;1306;Ormanın yangın ihtiyacı;Antikırılgan;Düşünme;438;3.87;5;4;4;resilience
+65;1401;Flash mob ve anlık koordinasyon;Zeki Kalabalıklar;Teknoloji;152;3.87;5;5;4;resilience
+66;1471;Darwin'in Dört Saatlik Günü;Dinlenmenin Gücü;Verimlilik;419;3.87;5;5;4;thinking
+67;1521;Bırakmak ve gerçek özgürlük;İç Yolculuk;Farkındalık;159;3.87;5;5;4;emotions
+68;1529;Günlük stand-up ve şeffaflık;Çevik Yönetim;Yönetim;152;3.87;5;5;4;creativity
+69;1618;Duygusal bağ — yetişkin bağlanmasının temel ihtiyacı;İlişki Psikolojisi;İlişkiler;162;3.87;5;5;4;relationships
+70;1718;Sezar Rubicon’u Geçtiğinde Neden Geri Dönüş Yoktu?;Rubicon;Tarih;426;3.87;4;5;4;resilience
+71;1181;Yaratıcılık bir sorumluluk;Yaratıcı Olmak;Yaratıcılık;588;3.86;5;5;4;creativity
+72;1189;Büyük İskender'in hareketsizliği;Stillness Is the Key;Felsefe;634;3.86;5;5;4;emotions
+73;1438;Empatinin karanlık yüzü — önyargılı acı;Against Empathy;Psikoloji;485;3.86;5;5;4;relationships
+74;1591;Healthspan — uzun yaşamak değil iyi yaşamak;Uzun Ömür;Sağlık;159;3.86;5;5;2;health
+75;1805;Menüyü Küçülten Mutfak;Grinding It Out;Liderlik;413;3.86;4;4;4;money_career
+76;1824;Pigmalion etkisi;Give and Take;Liderlik;400;3.86;5;5;4;creativity
+77;1085;Dokuz gün arayla iki uçuş denemesi;Başlangıç Noktası;Liderlik;723;3.85;5;5;2;creativity
+78;1089;IMVU'nun yanlış yolda koşması;Büyük Sıçrayış;Girişimcilik;805;3.85;5;4;4;resilience
+79;1120;Bölünmüş beyin ve iki ben;Beyin Fırtınası;Nörobilim;519;3.85;5;4;4;health
+80;1155;Sabotaj zihninin beş sesi;Olumlu Zeka;Psikoloji;662;3.85;5;4;2;thinking
+81;1222;Marilyn Monroe'nun soyunma odası;Karizmatik Olmak;İletişim;552;3.85;5;4;4;relationships
+82;1249;Theodore Johnson'ın taze meyve tasarrufu;Money: Master the Game;Finans;658;3.85;5;4;4;money_career
+83;1318;Rahatsızlıktan kaçma dürtüsü;Indistractable;Verimlilik;143;3.85;5;5;2;focus
+84;1437;Güven inşası ve ilk izlenim;Satışın Psikolojisi;Satış;199;3.85;5;4;4;creativity
+85;1629;Toplumsal travma — sessizliğin suç ortaklığı;Travma ve İyileşme;Psikoloji;176;3.85;5;3;4;focus
+86;1721;Kıtalar Bir Yapboz Gibi Uyuşuyorsa Tesadüf müydü?;A Short History of Nearly Everything;Bilim;429;3.85;5;5;4;thinking
+87;1735;Lencioni’nin Piramidi Neden Güvenle Başlar?;The Five Dysfunctions of a Team;Liderlik;439;3.85;4;5;4;leadership
+88;1769;Bir Davranışın Bir Saniye Öncesi;Behave;Psikoloji;415;3.85;5;5;5;emotions
+89;1807;Hamburgerin Altındaki Arsa;Grinding It Out;Liderlik;391;3.85;5;4;4;money_career
+90;1062;Çevre tasarımı ile alışkanlık;Atomic Habits;Sağlık;715;3.84;5;4;4;habits
+91;1123;Michael Phelps'in görselleştirme rutini;Alışkanlıkların Gücü;Alışkanlıklar;763;3.84;5;4;4;emotions
+92;1138;"Görünmez vergi, görünmez temettü";Hız ve Güven;Liderlik;624;3.84;5;5;2;habits
+93;1161;İtfaiyecinin ölümcül sezgisi;Sezgi Gücü;Psikoloji;591;3.84;5;4;4;habits
+94;1200;Öğle sarhoşluğu ve dinlenme bilimi;Saatlerin Efendisi;Verimlilik;504;3.84;4;4;4;health
+95;1330;Değerlerin hiyerarşisi;Özgür Olmak;Kişisel Gelişim;136;3.84;5;5;4;meaning
+96;1333;Umut paradoksu;Her Şey Yolunda;Felsefe;145;3.84;5;5;4;thinking
+97;1460;Beş yetkinlik çerçevesi;İş Hayatında Duygusal Zeka;Liderlik;145;3.84;5;5;2;thinking
+98;1508;Koalisyonda Kim Oturmalı;Değişim Yönetimi;Yönetim;504;3.84;5;5;4;decision_making
+99;1628;Güç ve bağ — iyileşmenin iki ayağı;Travma ve İyileşme;Psikoloji;160;3.84;5;3;4;emotions
+100;1689;"IQ, Kişilik ve EQ";Bütünleşik Zekanın Gücü;Psikoloji;481;3.84;5;4;4;creativity
+101;1723;Küvet Neden Musluk Kadar Hızlı Değişmez?;Thinking in Systems;Verimlilik;469;3.84;5;4;4;thinking
+102;1750;John Glenn'in Güvendiği Hesap;Hidden Figures;Tarih;407;3.84;5;5;4;creativity
+103;1110;Öfke döngüsü ve nörolojik kaçırılma;Emotional Intelligence;Psikoloji;789;3.83;5;4;4;emotions
+104;1131;Bankta oturan adam;Şimdi ve Burada;Farkındalık;610;3.83;5;4;4;emotions
+105;1136;Karakter ve ahlakın kökeni;Sosyal Hayvan;Psikoloji;642;3.83;5;5;4;emotions
+106;1152;Toplama kampında anlam arayışı;Büyük Soru;Felsefe;633;3.83;5;5;4;thinking
+107;1197;Vietnam gazilerinin dondurulmuş anları;Bedenin Sesi;Sağlık;604;3.83;5;5;4;thinking
+108;1216;Tek gemi filosu;Minimalizm;Verimlilik;656;3.83;4;4;4;thinking
+109;1228;Ambulanstaki uyanış;Yüksek Performans;Kişisel Gelişim;623;3.83;5;4;4;habits
+110;1232;Fil ve kazık;Değişimin Gücü;Değişim;638;3.83;5;4;4;creativity
+111;1246;İlham perisi kapıya geldiğinde;Yaratıcı Olmak;Yaratıcılık;608;3.83;5;4;4;thinking
+112;1465;TED sahnesindeki üç sır;Etkileyici Konuşma;İletişim;141;3.83;5;5;2;creativity
+113;1498;Beş kabile aşaması;Kabile Liderliği;Liderlik;139;3.83;5;5;4;leadership
+114;1503;Şiddetin öngörülebilirliği;Korkudan Öğrenmek;Güvenlik;156;3.83;5;4;4;thinking
+115;1560;RAIN pratiği — zor duyguları eritmek için dört adım;Radikal Kabul;Farkındalık;167;3.83;5;5;4;emotions
+116;1593;Egzersiz — tek ilaç gibi çalışan tek değişken;Uzun Ömür;Sağlık;166;3.83;5;4;4;health
+117;1651;Akış deneyimi — zamanın eridiği bilinç hali;Akış Bulmak;Psikoloji;455;3.83;4;4;4;creativity
+118;1706;Bir Yüz Neden Binlerce İstatistikten Güçlüdür?;Against Empathy;Psikoloji;472;3.83;5;5;4;relationships
+119;1101;Hal Elrod'un ölümden dönüşü;Sabah Rutini;Alışkanlıklar;792;3.82;5;4;2;emotions
+120;1165;Lakeside ve bit pazarından çıkan terminal;10.000 Saat Kuralı;Başarı;616;3.82;5;4;4;creativity
+121;1219;Harvard'ın 85 yıllık mutluluk araştırması;The Good Life;Psikoloji;651;3.82;4;5;4;creativity
+122;1227;Geçmiş ve şimdiki an;Cesur Olmak;Felsefe;607;3.82;5;5;4;emotions
+123;1231;Kazanmak savaşmadan;Savaş Sanatı;Strateji;610;3.82;5;4;4;leadership
+124;1282;İki Kez Gelen Rüya;Simyacı;İlham;460;3.82;5;4;2;thinking
+125;1286;Koşullar değil karakter belirler;İnsan Nasıl Düşünür;Felsefe;124;3.82;5;5;4;thinking
+126;1296;Dışarıdan çalışma ve konum bağımsızlığı;The 4-Hour Workweek;Verimlilik;153;3.82;5;5;2;influence
+127;1366;Freelancer'ın fatura şoku;Kendi Patronun Ol;Girişimcilik;426;3.82;4;5;4;focus
+128;1466;Beyin dostu hikaye anlatımı;Etkileyici Konuşma;İletişim;147;3.82;5;5;4;creativity
+129;1520;Kalbi açık tutmak;İç Yolculuk;Farkındalık;158;3.82;5;5;4;emotions
+130;1643;Hikaye tamamlama — beyin boşluğu nasıl dolduruyor;Güçlü Kalkmak;Dayanıklılık;166;3.82;5;5;4;thinking
+131;1683;"İç, Öteki ve Dış Odak";Dikkatin Gücü;Verimlilik;420;3.82;5;5;4;focus
+132;1736;En İyi Ekipler Neden Daha Çok Hata Bildiriyordu?;The Fearless Organization;Liderlik;451;3.82;5;5;4;health
+133;1775;Yokluğun Zihni Daraltması;Scarcity;Psikoloji;465;3.82;5;4;2;emotions
+134;1814;InnoCentive'de alan dışı çözücüler;Range;Büyüme;406;3.82;5;4;4;money_career
+135;1126;"Soyut lider mi, somut lider mi?";Liderlik Sanatı;Liderlik;774;3.81;5;5;4;leadership
+136;1456;Ayna kutusu;Beynin Sırları;Nörobilim;416;3.81;4;5;4;health
+137;1468;Londra'nın Kahvehaneleri;Büyük Fikirler;Yaratıcılık;434;3.81;5;5;4;thinking
+138;1499;Ortak düşman kültürünün tehlikesi;Kabile Liderliği;Liderlik;153;3.81;5;4;2;creativity
+139;1506;Nesnel kriterler ve meşruiyet;Müzakerede Evet Almak;Müzakere;141;3.81;5;5;4;thinking
+140;1519;Evin kiracısı değil sahibi olmak;İç Yolculuk;Farkındalık;167;3.81;5;3;4;thinking
+141;1530;Tahmin etmek değil ölçmek;Çevik Yönetim;Yönetim;150;3.81;5;3;4;resilience
+142;1536;Marjinal kazanımlar;Black Box Thinking;Felsefe;430;3.81;4;5;4;thinking
+143;1703;Bir Kaza James Clear’ın Alışkanlık Fikrini Nasıl Değiştirdi?;Atomic Habits;Sağlık;459;3.81;5;4;4;habits
+144;1744;Küçük Bir Ada Çöküşten Nasıl Kaçtı?;Collapse;Tarih;421;3.81;5;5;4;thinking
+145;1139;Dördünden biri eksikse olmuyor;Hız ve Güven;Liderlik;631;3.8;5;4;4;emotions
+146;1203;Güvenlik alanından çıkmak;Karanlığın Ötesi;Liderlik;657;3.8;4;5;2;emotions
+147;1247;Korkunun yolcu olması;Yaratıcı Olmak;Yaratıcılık;601;3.8;5;4;4;emotions
+148;1301;Dünya dört gelir düzeyinde;Akıl Yürütme;Düşünme;440;3.8;4;4;4;thinking
+149;1549;Vizyonun kağıtta kalması — EOS neden işletmeleri kurtarıyor;Ölçülebilir Büyüme;Yönetim;160;3.8;5;4;2;creativity
+150;1619;Şeytan döngüsü — saldır ve çekil sarmalı;İlişki Psikolojisi;İlişkiler;157;3.8;5;5;2;relationships
+151;1743;168 Kişi Bir İmparatorluğu Nasıl Esir Aldı?;"Guns, Germs, and Steel";Tarih;432;3.8;5;5;4;thinking
+152;1224;Jim Kwik'in beyin hasarı;İnsan Beyninin Gücü;Öğrenme;606;3.79;5;5;2;health
+153;1248;Merak yaratıcılığın pusulası;Yaratıcı Olmak;Yaratıcılık;613;3.79;5;4;2;creativity
+154;1281;Değerler ve değer çatışması;Karanlığın Ötesi;Liderlik;146;3.79;5;5;2;leadership
+155;1287;Sessizliğin içindeki bilgelik;İnsan Nasıl Düşünür;Felsefe;151;3.79;5;5;2;thinking
+156;1302;Korkuyla değil veriyle düşünmek;Akıl Yürütme;Düşünme;447;3.79;5;3;4;emotions
+157;1315;Instagram'ın pivot mucizesi;Müşteriyi Anlamak;Ürün;134;3.79;5;4;4;creativity
+158;1352;Günde Beş Küçük Hedef;Bir Sonraki Seviye;Alışkanlıklar;433;3.79;5;5;4;habits
+159;1389;Kaynak durumu ve performans zirvesi;İçsel Güç;Motivasyon;137;3.79;5;4;4;thinking
+160;1413;Sert satış ve empatin gücü;Sessizlik;Psikoloji;154;3.79;5;5;2;leadership
+161;1469;Yavaş Sezgi;Büyük Fikirler;Yaratıcılık;442;3.79;5;4;4;creativity
+162;1489;Rat Park deneyi;Bağımlılık Çağı;Toplum;452;3.79;4;4;4;thinking
+163;1590;mTOR ve AMPK — hücrenin büyüme-onarım dengesi;Uzun Yaşam Bilimi;Sağlık;184;3.79;5;4;4;health
+164;1678;Meditasyon yanılgısı — zihnin boşalması değil farkındalık;Yeni Başlayanlar İçin Meditasyon;Farkındalık;156;3.79;4;5;4;thinking
+165;1727;Aynı Dosyaya Bakan Uzmanlar Neden Farklı Fiyat Söyledi?;Noise;Psikoloji;446;3.79;5;5;4;thinking
+166;1754;Zenginliğin Ölümcül Olduğu Topraklar;Killers of the Flower Moon;Tarih;426;3.79;5;4;4;relationships
+167;1784;Sonuna Kadar İyi Yaşamak;Being Mortal;Sağlık;420;3.79;5;3;4;health
+168;1789;Bedenin Yakıtı Yanlış Yere Akınca;Why Zebras Don't Get Ulcers;Sağlık;412;3.79;5;5;2;health
+169;1288;Paten Salonundan Indiana'ya;Can't Hurt Me;Büyüme;427;3.78;5;5;2;emotions
+170;1313;McDonald's ve işletme prototipi;İşin Özü;Girişimcilik;153;3.78;5;4;2;money_career
+171;1384;Küçük sağlık kazanımlarının bileşimi;Sağlıklı Olmak;Sağlık;136;3.78;5;2;4;health
+172;1545;Kıtlık ve kayıp korkusu — kazanmak değil kaybetmemek motive eder;Evet Dedirtmek;Psikoloji;163;3.78;4;3;4;thinking
+173;1567;Miyelin — yeteneklerin biyolojik temeli;Yetenek Kodu;Başarı;171;3.78;5;4;4;health
+174;1714;Dinlemek Neden Konuşmaktan Daha Zordur?;You're Not Listening;İletişim;417;3.78;5;3;2;habits
+175;1737;Marie Kondo Neden “Bu Bana Neşe Veriyor mu?” Diye Sordu?;The Life-Changing Magic of Tidying Up;Felsefe;437;3.78;4;5;4;creativity
+176;1759;Ölmeyi Reddeden Hücreler;The Immortal Life of Henrietta Lacks;Bilim;413;3.78;5;4;2;health
+177;1767;Sallanan Tabaktan Nobel’e;"Surely You're Joking, Mr. Feynman!";Bilim;428;3.78;4;4;4;thinking
+178;1788;Aslandan Kaçan Zebra;Why Zebras Don't Get Ulcers;Sağlık;400;3.78;4;5;4;emotions
+179;1086;Notları bıraktığı an;Başlangıç Noktası;Liderlik;706;3.77;5;4;4;creativity
+180;1102;SAVERS — altı alışkanlığın bilimi;Sabah Rutini;Alışkanlıklar;772;3.77;5;4;4;health
+181;1236;Kahraman ve rehber;Hikaye Anlatıcısı;Pazarlama;593;3.77;5;4;4;creativity
+182;1274;Öğleden sonra çöküşü ve şekerleme sırrı;Saatlerin Efendisi;Verimlilik;152;3.77;5;4;4;habits
+183;1311;Gecikme ve sabırsızlık tuzağı;Thinking in Systems;Verimlilik;153;3.77;5;5;2;thinking
+184;1464;Unutma ve hatırlamanın paradoksu;Kalıcı Hafıza;Öğrenme;150;3.77;4;4;4;thinking
+185;1480;Yapay zeka ve iş gücünün geleceği;21. Yüzyıl İçin 21 Ders;Güncel;469;3.77;4;5;2;thinking
+186;1493;İş ve anlam — Londra bankacısı;Kayıp Bağlantılar;Psikoloji;146;3.77;5;5;2;money_career
+187;1622;Kaçıngan paradoksu — yakınlık isteyen ama uzaklaşan;Bağlanma Teorisi;İlişkiler;443;3.77;5;3;4;relationships
+188;1659;Duygusal yeme — besinden beklenen şey besin veremez;İçgüdüsel Yeme;Sağlık;173;3.77;5;5;2;communication
+189;1729;Filler Ayaklarıyla Kilometrelerce Öteyi Nasıl Dinliyor?;An Immense World;Bilim;427;3.77;5;5;4;communication
+190;1742;724 Hayatı İzleyen Araştırma Mutluluk Hakkında Ne Buldu?;The Good Life;Psikoloji;438;3.77;5;4;4;thinking
+191;1819;Vericiler merdivenin hem altında hem üstünde;Give and Take;Liderlik;405;3.77;5;4;4;emotions
+192;1119;Kör nokta ve beynin uydurma sanatı;Beyin Fırtınası;Nörobilim;711;3.76;4;5;2;creativity
+193;1149;West Point'in 'Dayanma' testi;Azim;Motivasyon;635;3.76;5;4;4;communication
+194;1194;Marcus Aurelius'un mektupları;Engel Yolu Açar;Felsefe;625;3.76;4;4;4;thinking
+195;1209;Hayatta kalma zihni;Can't Hurt Me;Büyüme;604;3.76;5;4;4;health
+196;1230;Su gibi olmak;Savaş Sanatı;Strateji;607;3.76;5;4;4;habits
+197;1334;Ölüm ve anlam arasındaki bağ;Her Şey Yolunda;Felsefe;130;3.76;5;5;2;thinking
+198;1383;Başarı mutluluğu getirmez — tersine çalışır;Mutluluğun Peşinde;Mutluluk;163;3.76;5;5;4;thinking
+199;1390;Kimsenin bulamadığı çalışma;Hedeflere Ulaşmak;Hedefler;468;3.76;5;4;2;creativity
+200;1474;Muz Karşılığı Vaat;İnsanlığın Kısa Tarihi;Tarih;448;3.76;5;4;4;creativity
+201;1481;Dezenformasyon çağı ve gerçeği bulmak;21. Yüzyıl İçin 21 Ders;Güncel;474;3.76;5;4;4;creativity
+202;1494;Sosyal bağlantı ve iyileşme;Kayıp Bağlantılar;Psikoloji;147;3.76;5;4;2;emotions
+203;1603;Kutup Dairesi'nin Kuzeyinde Çıplak Ayak Yarı Maraton;Soğuk Yöntem;Sağlık;436;3.76;5;4;4;thinking
+204;1605;Wim Hof nefes tekniği — kontrollü hiperventilasyon ve tutma;Soğuk Yöntem;Sağlık;171;3.76;5;4;4;thinking
+205;1652;Günlük hayatta akış — sıradan anların dönüşümü;Akış Bulmak;Psikoloji;430;3.76;4;4;4;habits
+206;1698;Steve Jobs'ın Kaligrafi Dersi Mac'i Nasıl Değiştirdi?;Steve Jobs;Liderlik;434;3.76;5;3;4;focus
+207;1710;Dokuz İşçi Sınıfı Genci Berlin’de Tarihe Nasıl Dokundu?;The Boys in the Boat;Tarih;482;3.76;5;4;4;habits
+208;1732;Kokpitte Kaptana İtiraz Etmek Neden Bir Güvenlik Kuralına Dönüştü?;Black Box Thinking;Felsefe;445;3.76;4;5;4;thinking
+209;1823;Cömert satıcının uzun oyunu;Give and Take;Liderlik;402;3.76;4;5;2;money_career
+210;1096;Tepki verme özgürlüğü — Viktor Frankl'dan öğrenilen ders;The 7 Habits of Highly Effective People;Büyüme;735;3.75;5;4;4;habits
+211;1130;Şampiyonların sırrı: zorluğu sevmek;Büyüme Zihniyeti;Psikoloji;578;3.75;5;4;4;creativity
+212;1142;Arenada dövüşmek;Cesaret Vermek;Kişisel Gelişim;624;3.75;5;5;3;thinking
+213;1175;Eleştiri yerine soru sormak;İkna Sanatı;İletişim;617;3.75;5;3;4;thinking
+214;1180;Korkuyla dans etmek;Yaratıcı Olmak;Yaratıcılık;588;3.75;5;4;2;emotions
+215;1182;Bileşik faizin sihri;Money: Master the Game;Finans;645;3.75;5;4;4;money_career
+216;1187;Paraşütle atlayan kadın;Korkusuzluk;Motivasyon;593;3.75;5;5;2;emotions
+217;1395;Odaklanma ve tek görev ilkesi;Yeme Bozukluğu;Verimlilik;159;3.75;5;4;4;creativity
+218;1431;Hikaye anlatımı ve kendini kurban etmek;Terapi;Psikoloji;165;3.75;5;5;2;health
+219;1450;"Bilinçaltı, Tohum ve Toprak";Bilinçaltının Gücü;Motivasyon;440;3.75;5;4;2;thinking
+220;1475;Tarım devrimi — insanlığın en büyük aldatmacası;İnsanlığın Kısa Tarihi;Tarih;155;3.75;4;5;4;thinking
+221;1528;Scrum'ın doğuşu;Çevik Yönetim;Yönetim;149;3.75;5;4;4;resilience
+222;1558;Acıyı ikiye katlamak — birincil ve ikincil acı;Radikal Kabul;Farkındalık;170;3.75;5;3;4;health
+223;1640;Utanç ve suçluluk — birbirinden çok farklı iki his;Özgür Olmak 2;Kişisel Gelişim;176;3.75;5;5;2;thinking
+224;1692;Lincoln Neden Rakiplerini Kabinesine Aldı?;Rakipler Takımı;Tarih;447;3.75;5;3;4;leadership
+225;1712;Platon’a Göre İktidarı En Çok Kim Hak Eder?;The Republic;Felsefe;424;3.75;5;5;4;thinking
+226;1822;Frank Lloyd Wright ve alıcı tuzağı;Give and Take;Liderlik;400;3.75;5;5;2;creativity
+227;1825;Kekeme avukat Dave Walton;Give and Take;Liderlik;369;3.75;4;5;4;emotions
+228;1084;"Önce kim, sonra ne";Good to Great;Verimlilik;805;3.74;5;5;2;thinking
+229;1132;Ağrı ile acının farkı;Şimdi ve Burada;Farkındalık;614;3.74;5;5;4;emotions
+230;1198;Güvenli beden ve iyileşme;Bedenin Sesi;Sağlık;661;3.74;4;5;4;health
+231;1307;Barbell stratejisi;Antikırılgan;Düşünme;457;3.74;4;4;4;thinking
+232;1320;Çevre tasarımı ve sürtüşme;Indistractable;Verimlilik;119;3.74;5;4;4;creativity
+233;1362;Topluluk niyeti ve dalgalanma etkisi;Niyet;Farkındalık;451;3.74;5;5;4;relationships
+234;1364;"3P tuzağı — kalıcılık, yaygınlık, kişiselleştirme";Zihinsel Dayanıklılık;Dayanıklılık;437;3.74;5;4;2;thinking
+235;1483;Columbia Toplantısındaki Sessizlik;The Fearless Organization;Liderlik;440;3.74;5;5;2;emotions
+236;1485;Lider davranışı ve güvenlik iklimi;The Fearless Organization;Liderlik;169;3.74;5;5;4;leadership
+237;1544;Taahhüt ve tutarlılık — küçük evet büyük evete zemin hazırlar;Evet Dedirtmek;Psikoloji;151;3.74;5;5;2;thinking
+238;1585;İç saat — vücudun 24 saatlik ritmi ve sağlık üzerindeki derin etkisi;Sirkadyen Kod;Sağlık;169;3.74;5;4;2;health
+239;1587;Işık ve uyku — ekranların biyolojik bedeli;Sirkadyen Kod;Sağlık;202;3.74;5;5;4;health
+240;1594;Gluten ve beyin;Beyin ve Diyet;Sağlık;448;3.74;5;5;4;health
+241;1061;Fotoğraf öğrencilerinin kalite vs miktar deneyi;Atomic Habits;Sağlık;756;3.73;5;4;4;habits
+242;1122;Craving döngüsü ve diş macunu;Alışkanlıkların Gücü;Alışkanlıklar;730;3.73;4;4;4;health
+243;1144;Köpekbalığı havuzu ve korku;Fark Yaratmak;Motivasyon;574;3.73;4;4;4;emotions
+244;1166;Ocak doğanların ligi;10.000 Saat Kuralı;Başarı;632;3.73;5;3;4;emotions
+245;1253;Hafıza şampiyonlarının tekniği;Zihin Haritası;Öğrenme;617;3.73;5;4;4;creativity
+246;1269;REM uykusu ve duygusal iyileşme;Neden Uyuyoruz;Sağlık;168;3.73;4;3;4;emotions
+247;1355;Beş büyük pişmanlık;Lider Yok Köle Yok;İlham;137;3.73;5;5;2;thinking
+248;1810;Van Gogh'un geç başlangıcı;Range;Büyüme;413;3.73;5;5;2;creativity
+249;1066;Neden kimse bana söylemedi?;Dürüst Olmak;Liderlik;748;3.72;5;5;4;leadership
+250;1091;Jack Canfield'ın 100 dolarlık banknot hedefi;Odaklanma Gücü;Verimlilik;789;3.72;5;4;2;focus
+251;1115;Ronald Read'in görünmez serveti;The Psychology of Money;Finans;780;3.72;5;4;2;money_career
+252;1169;Otomatik pilot ve bilinçli seçim;Flow;Psikoloji;616;3.72;5;4;4;resilience
+253;1184;Risk asimetrisi ve kayıptan kaçınma;Money: Master the Game;Finans;642;3.72;5;4;2;money_career
+254;1190;Epiktetos'un özgürlüğü;Stillness Is the Key;Felsefe;618;3.72;5;4;2;resilience
+255;1213;80/20 ve işi silmek;The 4-Hour Workweek;Verimlilik;617;3.72;5;4;4;thinking
+256;1220;Şükranın beyin kimyası;Şükran Günlüğü;Mutluluk;613;3.72;5;4;4;health
+257;1259;Çınar ağacı ve fırtına;Stillness Is the Key;Felsefe;138;3.72;5;5;2;thinking
+258;1354;Ferrari sahibinin manastır ziyareti;Lider Yok Köle Yok;İlham;130;3.72;5;5;4;resilience
+259;1367;Tek kişilik şirketin gücü;Kendi Patronun Ol;Girişimcilik;148;3.72;5;4;4;thinking
+260;1406;İki dakika kuralı;Nasıl Başarılı Olunur;Verimlilik;159;3.72;5;4;2;emotions
+261;1440;Tükenme ve empatinin bedeli;Against Empathy;Psikoloji;428;3.72;5;3;4;health
+262;1490;Portekiz'in uyuşturucu yasası;Bağımlılık Çağı;Toplum;446;3.72;5;4;4;meaning
+263;1492;Depresyonun dokuz nedeni;Kayıp Bağlantılar;Psikoloji;142;3.72;5;5;2;emotions
+264;1504;Mevzisel müzakere tuzağı;Müzakerede Evet Almak;Müzakere;122;3.72;5;5;2;influence
+265;1510;Negatif görselleştirme — kaybı hayal etmek;Pratik Stoacılık;Felsefe;154;3.72;5;4;2;emotions
+266;1731;George Ferris Paris’in Kulesine Nasıl Cevap Verdi?;The Devil in the White City;Tarih;721;3.72;5;4;4;emotions
+267;1087;Altın Çember ve tartışmalı gerekçesi;Başlangıç Noktası;Liderlik;855;3.71;5;4;4;creativity
+268;1088;Zappos'un sıfır stoklu ilk satışı;Büyük Sıçrayış;Girişimcilik;750;3.71;5;4;4;creativity
+269;1176;Bahçedeki bezelye;Pareto İlkesi;Verimlilik;615;3.71;5;4;4;thinking
+270;1277;Rekabetten kaçış ve monopol gücü;Sıfır'dan Bir'e;Girişimcilik;153;3.71;5;4;2;money_career
+271;1323;Naif soru ve uzman körlüğü;Güçlü Sorular;Yaratıcılık;147;3.71;5;5;4;thinking
+272;1325;İçsel eleştirmenin sesi;Yaratıcı Beyin;Yaratıcılık;135;3.71;5;4;4;emotions
+273;1332;Belirsizliği kucaklamak;Özgür Olmak;Kişisel Gelişim;139;3.71;4;5;4;thinking
+274;1344;Egonun sesi ve gözlemci;Meditasyon;Farkındalık;151;3.71;5;3;4;thinking
+275;1378;Öğrenilmiş çaresizlik deneyi;İyimserlik Öğrenmek;Psikoloji;141;3.71;5;5;2;resilience
+276;1385;Çevre ve sağlık kararları;Sağlıklı Olmak;Sağlık;130;3.71;5;5;2;health
+277;1411;İçe dönükler ve dışa dönükler arasındaki fark;Sessizlik;Psikoloji;172;3.71;5;4;2;thinking
+278;1412;Harvard Business School paradoksu;Sessizlik;Psikoloji;158;3.71;5;4;2;creativity
+279;1424;Otopilot modu ve bilinçsiz hayat;Mindfulness;Farkındalık;157;3.71;5;3;4;habits
+280;1428;Kendi kör noktanı göremezsin;Yetenek Yanılgısı;Başarı;431;3.71;5;5;4;emotions
+281;1433;Chrome'un Zorlayıcı Hedefleri;Büyüme Kültürü;Yönetim;434;3.71;4;4;4;creativity
+282;1435;Satışın psikolojik temeli — insanlar duygularla alır;Satışın Psikolojisi;Satış;167;3.71;5;4;4;creativity
+283;1444;Müşteri kaybı ve görünmez buz buzdağı;Sadakat Etkisi;İş Dünyası;171;3.71;5;5;2;emotions
+284;1452;İnandığınız Gibi Olsun;Bilinçaltının Gücü;Motivasyon;444;3.71;5;4;2;thinking
+285;1546;Satranç makinesi ve insan-makine işbirliği;İkinci Makine Çağı;Teknoloji;158;3.71;5;5;4;creativity
+286;1547;Moore Yasası ve bileşik büyümenin kavranmayan gücü;İkinci Makine Çağı;Teknoloji;173;3.71;5;4;4;creativity
+287;1576;Ödül paradoksu — para motivasyonu öldürebilir;İşte Anlam;Motivasyon;165;3.71;5;3;4;thinking
+288;1644;Devrilme ve kalkış — iyileşmenin üç aşaması;Güçlü Kalkmak;Dayanıklılık;159;3.71;5;4;4;thinking
+289;1656;Alanın kapıcıları — yaratıcılığın sosyal boyutu;Yaratıcılık ve Akış;Yaratıcılık;156;3.71;5;4;2;creativity
+290;1676;İki Dakika Kuralı;Başarılı Değişim;Yönetim;448;3.71;5;4;2;habits
+291;1751;Bombardıman Altında Görünür Olmak;The Splendid and the Vile;Tarih;393;3.71;5;5;4;emotions
+292;1757;Tek Denklemin Riski;A Brief History of Time;Bilim;401;3.71;5;4;4;creativity
+293;1792;Barışı Öğrenen Sürü;Why Zebras Don't Get Ulcers;Sağlık;380;3.71;5;4;4;emotions
+294;1796;Telefonda Acele Yok;Delivering Happiness;Liderlik;450;3.71;5;4;2;communication
+295;1809;Roger Federer'in geç dallanması;Range;Büyüme;414;3.71;5;5;2;emotions
+296;1816;Kariyer 'uyum kalitesi';Range;Büyüme;412;3.71;5;3;4;money_career
+297;1104;Bismarck'ın savaşmadan kazanma sanatı;Güç Yasaları;Strateji;713;3.7;5;4;4;emotions
+298;1125;Subaylar en son yer;Liderlik Sanatı;Liderlik;747;3.7;5;3;4;leadership
+299;1127;"Şirketi mi bırakıyorlar, yöneticiyi mi?";Liderlik Sanatı;Liderlik;751;3.7;5;5;2;thinking
+300;1153;Boş zaman ve varoluş kaygısı;Büyük Soru;Felsefe;635;3.7;5;5;2;emotions
+301;1167;Rock tırmanıcısının zaman kaybı;Flow;Psikoloji;609;3.7;5;4;4;emotions
+302;1254;Her iki beyin yarımküresini birlikte kullanmak;Zihin Haritası;Öğrenme;660;3.7;5;4;4;health
+303;1284;Yabani İncirin Altında Kazmak;Simyacı;İlham;438;3.7;5;4;2;creativity
+304;1309;Salıncak ve sistem düşüncesi;Thinking in Systems;Verimlilik;151;3.7;4;4;4;thinking
+305;1397;Sadık rakip — öğreten düşman;Sonsuz Oyun;Strateji;146;3.7;5;4;2;emotions
+306;1513;Dinlemek Liderliği Kaybettirince;Yıkıcı İnovasyon;İş Dünyası;474;3.7;4;4;4;creativity
+307;1531;Büyük satışın küçük satıştan farkı;SPIN Satış;Satış;143;3.7;5;3;2;creativity
+308;1598;Beyin-bağırsak aksı — duygu ve mikrop bağlantısı;İyi Bağırsak;Sağlık;156;3.7;4;4;4;emotions
+309;1695;Çernobil Gecesi Kontrol Odasında Ne Oldu?;Midnight in Chernobyl;Tarih;435;3.7;5;4;4;resilience
+310;1756;Gölgesiz Öğle Vakti;Cosmos;Bilim;483;3.7;4;4;4;thinking
+311;1765;Fırçayı Dudağında Sivriltmek;The Radium Girls;Bilim;417;3.7;5;3;5;health
+312;1812;"""Kötü niyetli"" öğrenme ortamları";Range;Büyüme;416;3.7;5;4;4;thinking
+313;1076;Barnes'ın Edison ortaklığı hayali;Düşün ve Zengin Ol;Motivasyon;710;3.69;4;4;2;thinking
+314;1118;H.M.'nin sonsuz şimdi'si;Beyin Fırtınası;Nörobilim;763;3.69;5;4;4;emotions
+315;1124;Keystone alışkanlık ve koşu;Alışkanlıkların Gücü;Alışkanlıklar;730;3.69;5;4;4;habits
+316;1204;Zırh ve liderlik;Karanlığın Ötesi;Liderlik;632;3.69;4;3;4;leadership
+317;1223;Varlık — karizmanın temeli;Karizmatik Olmak;İletişim;567;3.69;5;4;4;thinking
+318;1250;Serbest piyasanın en güçlü kuvveti;Money: Master the Game;Finans;644;3.69;5;4;4;money_career
+319;1331;Çaresizlik döngüsü ve sorumluluk;Özgür Olmak;Kişisel Gelişim;128;3.69;5;3;2;thinking
+320;1347;Beklenti ve hayal kırıklığı;The Paradox of Choice;Psikoloji;130;3.69;5;5;4;thinking
+321;1388;Altı insan ihtiyacı;İçsel Güç;Motivasyon;135;3.69;5;3;4;thinking
+322;1451;Uykudan Önce Tek Sorun;Bilinçaltının Gücü;Motivasyon;453;3.69;5;5;2;thinking
+323;1486;Johann Hari'nin telefon deneyi;Çalınan Dikkat;Verimlilik;158;3.69;5;5;2;thinking
+324;1579;Hepimiz satıcıyız — satış mesleğinin yeniden tanımı;Satışın Yeni Yüzü;Satış;160;3.69;5;3;4;influence
+325;1592;Dört süvari — kronik hastalıkların ortak kökeni;Uzun Ömür;Sağlık;172;3.69;5;5;2;health
+326;1641;Minnettarlık ve neşe — en cesur duygular;Özgür Olmak 2;Kişisel Gelişim;163;3.69;4;5;4;thinking
+327;1673;Dikkat artığı — taşınan zihin maliyeti;Konsantrasyon Gücü;Verimlilik;167;3.69;4;4;4;thinking
+328;1768;Oyun Bahçesinden Ekrana Geçiş;The Anxious Generation;Psikoloji;435;3.69;5;4;2;emotions
+329;1069;Karşı konulmaz bir güç olarak 'şimdi';Şimdi Başla;Verimlilik;773;3.68;4;4;2;habits
+330;1093;Odak sistemi ve kurbağayı yemek;Odaklanma Gücü;Verimlilik;782;3.68;5;4;4;focus
+331;1113;"Boya kutusunu değiştirdiler, reklamı değil";Purple Cow;Finans;811;3.68;5;4;2;creativity
+332;1147;Sınırların üç türü;Sınırlar;Kişisel Gelişim;637;3.68;5;4;4;thinking
+333;1159;Ortak zemin yaratma sanatı;Dürüst Konuşmak;İletişim;606;3.68;5;4;4;creativity
+334;1193;Edison'ın fabrika yangını;Engel Yolu Açar;Felsefe;606;3.68;4;4;4;creativity
+335;1217;Bir aylık e-posta yasağı;Hiçbir Şeye Bakmamak;Teknoloji;609;3.68;5;4;2;habits
+336;1229;Enerji yönetimi ve niyet;Yüksek Performans;Kişisel Gelişim;567;3.68;4;4;4;habits
+337;1265;Marcus Aurelius ve Asi General;Engel Yolu Açar;Felsefe;510;3.68;4;4;4;thinking
+338;1346;Maksimizer ve satisficer;The Paradox of Choice;Psikoloji;140;3.68;5;4;4;thinking
+339;1353;"Odaklı Çalışma, Planlı Toparlanma";Bir Sonraki Seviye;Alışkanlıklar;448;3.68;5;4;2;habits
+340;1418;Dört eylem çerçevesi;Mavi Okyanus Stratejisi;Strateji;155;3.68;5;4;2;creativity
+341;1538;Tenis prodigisi ve fırsat ortamının gizli rolü;Sıçramak;Başarı;150;3.68;5;3;4;leadership
+342;1541;SQVID çerçevesi — doğru görseli seçmek;Peçete Arkası;Yaratıcılık;186;3.68;4;4;2;creativity
+343;1543;Sosyal kanıt — otelin havlu deneyi;Evet Dedirtmek;Psikoloji;159;3.68;4;3;4;thinking
+344;1551;Haftalık L10 toplantısı — kaosun ritme dönüşmesi;Ölçülebilir Büyüme;Yönetim;151;3.68;5;4;2;resilience
+345;1596;BDNF ve beyin;Beyin ve Diyet;Sağlık;422;3.68;5;3;4;health
+346;1621;"Üç bağlanma stili — güvenli, kaygılı, kaçıngan";Bağlanma Teorisi;İlişkiler;441;3.68;5;3;4;emotions
+347;1636;Bağımlılık bir seçim değil — acının dili;Her Şey Gerçek Olabilir;Bağımlılık;151;3.68;5;5;2;emotions
+348;1662;Karakter ahlakı — erdemi yeniden keşfetmek;Yeniden Doğmak;Felsefe;160;3.68;4;4;4;emotions
+349;1719;Yorgun Bir Asistan Kendi Sınırını Görebilir mi?;Complications;Sağlık;414;3.68;5;5;2;health
+350;1725;2008 Krizinden Sonra Tony Robbins Kimlere Sordu?;Money: Master the Game;Finans;430;3.68;4;3;4;money_career
+351;1749;Okyanusta 47 Gün: Louis Zamperini;Unbroken;Tarih;421;3.68;5;4;4;emotions
+352;1755;Amazon'un Yuttuğu Kaşif;The Lost City of Z;Tarih;432;3.68;5;5;2;creativity
+353;1758;Bakterilerin Sakladığı Makas;The Code Breaker;Bilim;400;3.68;5;4;4;focus
+354;1782;Kolay Cevabı Olmayan Kararlar;The Hard Thing About Hard Things;Liderlik;508;3.68;5;4;4;thinking
+355;1783;Bay Piyasa ile Ortaklık;The Intelligent Investor;Finans;454;3.68;5;4;2;thinking
+356;1785;Suçlamanın Altındaki İhtiyaç;Nonviolent Communication;İletişim;446;3.68;5;4;2;communication
+357;1787;Suyun Sessiz Gücü;Tao Te Ching;Felsefe;414;3.68;5;3;4;creativity
+358;1800;Sandviçin İçindeki Eleştiri;The Culture Map;Liderlik;440;3.68;5;5;2;thinking
+359;1079;Restoran garsonunun bahşiş sırrı;Influence;Psikoloji;766;3.67;4;4;4;influence
+360;1137;"İki saatlik toplantı, tek el sıkışma";Hız ve Güven;Liderlik;646;3.67;5;4;2;thinking
+361;1140;Savunmasızlığın paradoksu;Cesaret Vermek;Kişisel Gelişim;566;3.67;4;5;4;emotions
+362;1143;Her sabah yatağını topla;Fark Yaratmak;Motivasyon;591;3.67;4;3;4;decision_making
+363;1196;Roger Federer'in 12 saati;Neden Uyuyoruz;Sağlık;625;3.67;4;4;4;health
+364;1262;Hammett Yeniden Öğrenci Oldu;Ego Is the Enemy;Felsefe;516;3.67;4;5;2;influence
+365;1264;Edison'ın fabrika yangını;Engel Yolu Açar;Felsefe;485;3.67;4;4;4;thinking
+366;1299;Dinlenmenin üretkenlik paradoksu;Minimalizm;Verimlilik;167;3.67;5;4;4;creativity
+367;1360;Princeton mühendislik anomalileri;Niyet;Farkındalık;448;3.67;5;4;2;creativity
+368;1396;Sonsuz ve sonlu oyun farkı;Sonsuz Oyun;Strateji;150;3.67;5;3;2;creativity
+369;1476;Mutluluk ve anlam — tarihsel perspektif;İnsanlığın Kısa Tarihi;Tarih;153;3.67;5;3;2;thinking
+370;1479;Özgür irade yanılsaması;Homo Deus;Gelecek;147;3.67;4;5;2;thinking
+371;1500;Liderlik ve kültür şekillendirme;Kabile Liderliği;Liderlik;141;3.67;5;3;4;leadership
+372;1534;Portland Üzerinde Dönen Uçak;Black Box Thinking;Felsefe;432;3.67;4;4;2;emotions
+373;1584;Paranın ötesinde anlam;Bütün Beyin;Yaratıcılık;418;3.67;5;4;4;thinking
+374;1601;Dakikada beş nefes — kalp ritmi ve sinir sistemi uyumu;Nefes;Sağlık;164;3.67;4;3;4;health
+375;1728;David Goggins Aynadaki Adamla Neden Konuştu?;Can't Hurt Me;Büyüme;425;3.67;4;4;4;emotions
+376;1760;Ağaçların Gizli Ağı;The Hidden Life of Trees;Bilim;484;3.67;4;4;2;creativity
+377;1068;İtalyan ressam ve gevşeme paradoksu;Şimdi Başla;Verimlilik;830;3.66;5;4;2;habits
+378;1075;Edison'ın 10.000 başarısızlığı;Düşün ve Zengin Ol;Motivasyon;721;3.66;5;4;4;creativity
+379;1092;Bir yıl 101 hedef deneyi;Odaklanma Gücü;Verimlilik;779;3.66;5;4;2;focus
+380;1105;"Beş rejim, tek diplomat";Güç Yasaları;Strateji;762;3.66;5;3;2;communication
+381;1129;Beynin plastikliği ve yeniden yazılma;Büyüme Zihniyeti;Psikoloji;619;3.66;5;4;2;thinking
+382;1172;Linda problemi ve konjunksiyon hatası;Karar Verme Sanatı;Psikoloji;668;3.66;4;3;4;thinking
+383;1202;Gizli sırlar ve kontrarian düşünce;Sıfır'dan Bir'e;Girişimcilik;620;3.66;5;3;4;thinking
+384;1235;Sürpriz ve merak boşluğu;Yapışkan Fikirler;İletişim;593;3.66;5;5;2;creativity
+385;1237;BrandScript ve basit mesaj;Hikaye Anlatıcısı;Pazarlama;617;3.66;4;4;4;creativity
+386;1316;Tetikleyiciler ve alışkanlık tasarımı;Müşteriyi Anlamak;Ürün;164;3.66;5;3;4;creativity
+387;1379;Açıklama tarzı ve geleceğin şekli;İyimserlik Öğrenmek;Psikoloji;147;3.66;5;3;4;creativity
+388;1423;"Nereye gidersen git, orada ol";Mindfulness;Farkındalık;168;3.66;5;5;2;thinking
+389;1463;Hafıza sarayı ve uzamsal kodlama;Kalıcı Hafıza;Öğrenme;169;3.66;5;4;2;creativity
+390;1512;Stoacı akşam muhasebesi;Pratik Stoacılık;Felsefe;138;3.66;5;5;2;thinking
+391;1532;Dört soru türü ve ihtiyaç keşfi;SPIN Satış;Satış;140;3.66;5;3;4;creativity
+392;1574;Çok geç basılan kitap;Hataları Kucaklamak;Psikoloji;461;3.66;5;3;2;relationships
+393;1599;Lif — mikrobiyomun birincil yakıtı ve modern diyetin en büyük eksikliği;İyi Bağırsak;Sağlık;156;3.66;5;4;2;health
+394;1637;Toksik toplum — bağımlılığı besleyen sistem;Her Şey Gerçek Olabilir;Bağımlılık;156;3.66;5;5;2;thinking
+395;1645;Gerçek aitlik — onay için değil özgünlük için;Çölde Yürümek;Topluluk;158;3.66;5;5;2;emotions
+396;1677;Yüzde bir ve buz küpü;Başarılı Değişim;Yönetim;461;3.66;5;4;4;habits
+397;1700;Rastgele Yürüyen Bir Piyasa Yenilebilir mi?;A Random Walk Down Wall Street;Finans;423;3.66;5;4;4;creativity
+398;1762;Denizde Kaybolmayı Bitiren Saat;Longitude;Bilim;389;3.66;4;4;4;thinking
+399;1067;Ertelemenin gerçek kökü: korku;Şimdi Başla;Verimlilik;720;3.65;4;4;3;habits
+400;1100;Övgünün tehlikeli iki yüzü;Zihin Gücü;Psikoloji;750;3.65;5;4;4;emotions
+401;1134;Bilinçdışının gizli gücü;Sosyal Hayvan;Psikoloji;626;3.65;5;3;4;thinking
+402;1178;Az ama öz ilişkiler;Pareto İlkesi;Verimlilik;599;3.65;4;4;4;relationships
+403;1297;Tek gemi filosunun zafer sırrı;Minimalizm;Verimlilik;164;3.65;5;3;2;leadership
+404;1314;Olgunluk aşaması ve sistematik büyüme;İşin Özü;Girişimcilik;143;3.65;5;3;2;creativity
+405;1408;Bir Ses Hakkında Tek Cümle;Dört Anlaşma;Felsefe;453;3.65;5;5;2;meaning
+406;1419;Stratejik tuval ve görsel strateji;Mavi Okyanus Stratejisi;Strateji;143;3.65;4;5;2;thinking
+407;1422;Vizyon ve kimlik netliği;Mucize Sabah 2;Alışkanlıklar;153;3.65;5;3;2;habits
+408;1454;Sekiz neşe sütunu;Neşeyi Seç;Mutluluk;150;3.65;4;5;2;meaning
+409;1458;Sadece İzleyen Maymun;Beynin Sırları;Nörobilim;440;3.65;5;4;2;health
+410;1461;Öz farkındalığın gücü ve kör nokta;İş Hayatında Duygusal Zeka;Liderlik;148;3.65;5;5;2;creativity
+411;1569;Spartak'ta Topsuz Vuruş;Yetenek Kodu;Başarı;450;3.65;5;4;4;leadership
+412;1612;"Yaş Çarpı Gelir, Bölü On";Komşu Milyoner;Finans;430;3.65;4;4;2;thinking
+413;1642;Arenada olmak — düşme cesareti;Güçlü Kalkmak;Dayanıklılık;168;3.65;4;5;2;emotions
+414;1658;Açlık ve tokluk — beden sinyallerine yeniden bağlanmak;İçgüdüsel Yeme;Sağlık;172;3.65;4;4;2;health
+415;1660;İki dağ — birinci ve ikinci hayat;Yeniden Doğmak;Felsefe;170;3.65;5;4;2;money_career
+416;1734;"Aynı Limuzin, Aynı Trafik: Kim Daha Çok Üzülür?";The Undoing Project;Psikoloji;451;3.65;4;4;2;emotions
+417;1739;Seth Godin Neden Mor Bir İnek Aradı?;Purple Cow;Finans;436;3.65;5;3;4;thinking
+418;1794;Boş Konfeti;Delivering Happiness;Liderlik;434;3.65;5;3;4;creativity
+419;1795;Salondaki Ayakkabı Mağazası;Delivering Happiness;Liderlik;427;3.65;5;4;4;emotions
+420;1078;Kapıya ayak koyma tekniği;Influence;Psikoloji;753;3.64;4;4;4;influence
+421;1080;Sosyal kanıt ve otel havluları;Influence;Psikoloji;745;3.64;5;5;2;influence
+422;1106;İtibar yasasının söylemediği sanılan kısmı;Güç Yasaları;Strateji;738;3.64;5;4;4;emotions
+423;1108;Dört yaşında marshmallow testi;Emotional Intelligence;Psikoloji;709;3.64;5;2;4;thinking
+424;1157;Zorlukları hediyeye çevirmek;Olumlu Zeka;Psikoloji;627;3.64;5;4;4;thinking
+425;1177;80/20 ve zaman yönetimi;Pareto İlkesi;Verimlilik;620;3.64;4;4;4;thinking
+426;1185;Einstein'ın görsel düşünce sırrı;Zihin Haritası;Öğrenme;624;3.64;5;4;4;creativity
+427;1290;Goggins'in Kurabiye Kavanozu;Can't Hurt Me;Büyüme;437;3.64;5;4;2;creativity
+428;1303;Hindinin Bin Günü;Siyah Kuğu;Düşünme;441;3.64;5;5;2;meaning
+429;1305;Kırılganlık ve siyah kuğuya hazırlık;Siyah Kuğu;Düşünme;132;3.64;5;3;4;thinking
+430;1329;Geri bildirim döngüsü ve sürekli iyileşme;The Success Principles;Büyüme;139;3.64;5;5;2;thinking
+431;1341;Başarının yeni tanımı;Uyku Devrimi;Sağlık;134;3.64;5;4;2;creativity
+432;1345;Kot pantolon ve felç edici özgürlük;The Paradox of Choice;Psikoloji;132;3.64;5;4;2;creativity
+433;1583;İşlevin Ötesinde Tasarım;Bütün Beyin;Yaratıcılık;431;3.64;4;4;2;creativity
+434;1589;Hayatta kalma genleri — stres biyolojik saati nasıl yavaşlatıyor;Uzun Yaşam Bilimi;Sağlık;163;3.64;5;4;4;habits
+435;1600;Yanlış nefes almak — sessiz salgın;Nefes;Sağlık;166;3.64;5;5;2;health
+436;1620;Hold me tight anı — yeniden bağlanmanın kapısı;İlişki Psikolojisi;İlişkiler;154;3.64;4;5;2;emotions
+437;1627;Travmanın dili — sözsüz yaranın kökeni;Travma ve İyileşme;Psikoloji;167;3.64;5;5;2;thinking
+438;1632;İyileşmenin Yedi A'sı;Bedenin Hayır Demesi;Sağlık;426;3.64;5;4;2;emotions
+439;1663;Ego ve öz — kimlik yanılsamasının kökü;Yeni Toprak;Farkındalık;175;3.64;5;5;2;thinking
+440;1671;Bağlantısı kesilen bir zihin — öfkenin gerçek kaynağı;Öfke;Psikoloji;158;3.64;5;4;2;emotions
+441;1063;İki dakika kuralı;Atomic Habits;Sağlık;766;3.63;5;4;4;habits
+442;1090;Build-Measure-Learn döngüsü;Büyük Sıçrayış;Girişimcilik;869;3.63;5;4;4;resilience
+443;1192;Öğrenci zihniyeti;Ego Is the Enemy;Felsefe;600;3.63;5;4;4;emotions
+444;1207;Bahçıvan ve zihin;İnsan Nasıl Düşünür;Felsefe;599;3.63;5;4;4;thinking
+445;1212;McDonald's'ın gerçek işi;Zengin Baba Fakir Baba;Finans;618;3.63;5;4;2;money_career
+446;1270;"Alarm Çalıyor, Konuşma Susuyor";Bedenin Sesi;Sağlık;432;3.63;4;4;4;health
+447;1294;"Önce Reklam, Sonra Ürün";The 4-Hour Workweek;Verimlilik;441;3.63;5;4;2;creativity
+448;1295;Hiçbir Şey Yapmamanın Bedelini Yazmak;The 4-Hour Workweek;Verimlilik;455;3.63;5;4;2;creativity
+449;1328;Ayna ilkesi ve dış yansıma;The Success Principles;Büyüme;123;3.63;5;5;2;thinking
+450;1377;Olumsuz görselleştirme — en kötüyü hayal etmek;Stoacılık;Felsefe;133;3.63;5;5;2;thinking
+451;1429;Terapistin kendi terapisti;Terapi;Psikoloji;144;3.63;5;5;2;thinking
+452;1527;İçsel eleştirmen ve radyo istasyonları;Parça Parça Yazmak;Yazarlık;146;3.63;5;4;2;creativity
+453;1542;Napkin'de doğan fikirler — büyük kararların basit başlangıçları;Peçete Arkası;Yaratıcılık;167;3.63;5;4;2;creativity
+454;1649;Kıskançlık ve haset — sık karıştırılan iki ayrı yara;Kalbin Haritası;Duygular;177;3.63;5;4;2;relationships
+455;1684;Dikkat Bir Kas Gibi;Dikkatin Gücü;Verimlilik;438;3.63;4;4;4;focus
+456;1690;"Önce Adlandır, Sonra Değerlendir";Bütünleşik Zekanın Gücü;Psikoloji;446;3.63;4;3;4;emotions
+457;1691;Suçlamada Çözüm Cümlesi;Bütünleşik Zekanın Gücü;Psikoloji;422;3.63;5;4;4;emotions
+458;1697;Bronz Madalya Kazananlar Neden Daha Mutlu?;The Power of Regret;Psikoloji;436;3.63;4;4;2;emotions
+459;1711;Pirinç ve Fasulyeyle Yaşayan Keşişin Cevabı;The Simple Path to Wealth;Finans;489;3.63;5;4;2;money_career
+460;1720;24 Reçel Neden 6 Reçelden Daha Az Sattı?;The Paradox of Choice;Psikoloji;437;3.63;4;3;4;thinking
+461;1726;Mendel’in Bezelyeleri Neden Otuz Yıl Sessiz Kaldı?;The Gene;Bilim;439;3.63;5;4;2;thinking
+462;1077;500 dolarlık karar;Düşün ve Zengin Ol;Motivasyon;692;3.62;4;4;2;creativity
+463;1238;Katlanarak büyüme paradoksu;Doğrusal Olmayan Gelecek;Teknoloji;639;3.62;4;4;3;creativity
+464;1272;Çocukluk Anketi ve Yetişkin Sağlığı;Bedenin Sesi;Sağlık;432;3.62;4;3;4;health
+465;1298;Fırsatın maliyeti;Minimalizm;Verimlilik;150;3.62;5;3;2;thinking
+466;1321;Polaroid'in anlık cevabı;Güçlü Sorular;Yaratıcılık;156;3.62;5;3;4;creativity
+467;1348;Uyku ve hafıza pekiştirme;Öğrenmeyi Öğrenmek;Öğrenme;147;3.62;4;4;2;thinking
+468;1426;Notaları kim yazdı;Yetenek Yanılgısı;Başarı;465;3.62;5;5;2;thinking
+469;1427;"Yirmi yıllık hekim, beş yıllık hekim";Yetenek Yanılgısı;Başarı;440;3.62;5;3;2;health
+470;1455;Acı ve neşe bir arada;Neşeyi Seç;Mutluluk;152;3.62;5;5;2;thinking
+471;1540;Her problem görsel düşünceyle çözülebilir;Peçete Arkası;Yaratıcılık;167;3.62;5;3;2;thinking
+472;1606;Otomatik sistem — para kararlarını irade dışına taşımak;Zengin Olmayı Öğrenmek;Finans;150;3.62;5;3;2;thinking
+473;1609;Maliyet paradoksu — daha fazla ödemek daha az kazandırır;Mantıklı Borsa;Finans;158;3.62;5;3;2;money_career
+474;1635;John'un Karnesi ve Babasının Sözleri;Dağınık Beyin;Psikoloji;450;3.62;4;4;2;thinking
+475;1638;Şefkatin nörobilimi — bağlantı bağımlılığın panzehiri;Her Şey Gerçek Olabilir;Bağımlılık;161;3.62;4;3;4;thinking
+476;1650;Kin ve öfke — taşınan ağırlıkların farkı;Kalbin Haritası;Duygular;175;3.62;4;4;2;emotions
+477;1653;Yaşam kalitesi ve akış — mutluluğun yanlış aranması;Akış Bulmak;Psikoloji;467;3.62;5;3;4;habits
+478;1686;"Duygu Gösterir, Değer Yönlendirir";Duygusal Çeviklik;Psikoloji;419;3.62;4;3;4;emotions
+479;1772;Kararı Sen mi Veriyorsun?;Incognito;Psikoloji;430;3.62;5;4;2;health
+480;1779;Devralınan Şirketleri Değiştirmemek;The Ride of a Lifetime;Liderlik;454;3.62;4;4;2;thinking
+481;1071;Adam Grant'in toplu e-posta stratejisi;Derin Çalışma;Verimlilik;815;3.61;4;4;2;habits
+482;1117;Yeterince zengin olmak — tatminsizlik tuzağı;The Psychology of Money;Finans;799;3.61;5;4;2;money_career
+483;1135;Bağlanma ve başarı ilişkisi;Sosyal Hayvan;Psikoloji;630;3.61;5;4;4;relationships
+484;1160;Hikayelerden gerçeklere dönmek;Dürüst Konuşmak;İletişim;608;3.61;5;3;2;creativity
+485;1173;Köpek çalınan adam;İkna Sanatı;İletişim;634;3.61;5;4;2;emotions
+486;1174;Roosevelt'in isim hafızası;İkna Sanatı;İletişim;623;3.61;4;4;2;thinking
+487;1210;Aklın rahatlama dürtüsü;Can't Hurt Me;Büyüme;603;3.61;5;4;4;resilience
+488;1233;Akıl ve kalp — değişimin iki motoru;Değişimin Gücü;Değişim;626;3.61;4;4;2;emotions
+489;1241;Roosevelt'in isim ezberleyen dehası;İkna Sanatı;İletişim;597;3.61;5;4;2;influence
+490;1251;Zenginliğin gerçek tanımı;Money: Master the Game;Finans;615;3.61;5;4;4;money_career
+491;1292;"Hamburger mi, Gayrimenkul mü?";Zengin Baba Fakir Baba;Finans;435;3.61;5;4;2;money_career
+492;1373;Kategori sırasının önemi;The Life-Changing Magic of Tidying Up;Felsefe;134;3.61;4;4;4;creativity
+493;1387;Ateş üzerinde yürümek;İçsel Güç;Motivasyon;124;3.61;5;3;4;thinking
+494;1416;Zemin yasası — güven liderliğin temelidir;Liderlik 21 Yasası;Liderlik;171;3.61;5;3;4;meaning
+495;1447;Planlandığı gibi geçen günler;Hayatın Kısalığı Üzerine;Felsefe;440;3.61;4;5;2;thinking
+496;1470;Bitişik Olanak;Büyük Fikirler;Yaratıcılık;433;3.61;4;3;4;thinking
+497;1497;Gallup araştırması ve iş tatmini;Güçlü Yönler Bulma;Kariyer;145;3.61;4;5;2;money_career
+498;1566;Duyguyu Bedende Bulmak;Bilinçli Liderlik;Liderlik;440;3.61;5;3;4;thinking
+499;1654;Yaratıcı kişilik — paradoksların insanı;Yaratıcılık ve Akış;Yaratıcılık;150;3.61;4;5;4;creativity
+500;1693;Shackleton'ın 800 Millik Kurtuluş Yolculuğu;Endurance;Tarih;484;3.61;5;4;2;thinking
+501;1724;Darwin Smith Neden Şirketinin Fabrikalarını Sattı?;Good to Great;Verimlilik;427;3.61;5;3;4;thinking
+502;1740;Milano’daki Espresso Barları Howard Schultz’a Ne Gösterdi?;Pour Your Heart Into It;Liderlik;439;3.61;4;4;2;habits
+503;1746;Roma'yı Büyüten Sıra Dışı Karar;SPQR;Tarih;422;3.61;5;4;2;thinking
+504;1748;Everest'te Saat İkiyi Geçince;Into Thin Air;Tarih;413;3.61;5;4;2;habits
+505;1774;Dolandırıcının Gerçek Silahı;The Confidence Game;Psikoloji;436;3.61;5;4;2;creativity
+506;1114;En iyi olmak kimin için?;Purple Cow;Finans;735;3.6;4;4;2;creativity
+507;1163;İlk izlenim ve Warren Harding hatası;Sezgi Gücü;Psikoloji;606;3.6;5;5;2;leadership
+508;1179;İlham perisinin ziyareti;Yaratıcı Olmak;Yaratıcılık;634;3.6;5;3;4;habits
+509;1374;Eşyaların enerjisi ve ev farkındalığı;The Life-Changing Magic of Tidying Up;Felsefe;134;3.6;5;3;4;thinking
+510;1403;"Üç Gecelik Boya, Bir Silindir";Devrilme Noktası;Sosyoloji;493;3.6;5;4;2;emotions
+511;1581;Geri çekilme hakkı — en güçlü satış cümlesi;Satışın Yeni Yüzü;Satış;174;3.6;5;3;4;creativity
+512;1634;Sevdiği İşe Odaklanan Öğretim Görevlisi;Dağınık Beyin;Psikoloji;468;3.6;4;4;2;creativity
+513;1696;Bedavanın Gizli Maliyeti;Predictably Irrational;Psikoloji;443;3.6;5;4;2;thinking
+514;1072;J.K. Rowling'in otel odası sırrı;Derin Çalışma;Verimlilik;695;3.59;4;4;4;creativity
+515;1111;Mor inek metaforu;Purple Cow;Finans;743;3.59;5;4;3;creativity
+516;1162;Sahte antika ve uzman gözü;Sezgi Gücü;Psikoloji;622;3.59;5;4;2;creativity
+517;1239;İnsan-makine entegrasyonu;Doğrusal Olmayan Gelecek;Teknoloji;644;3.59;4;4;4;thinking
+518;1245;Mutluluğun yüzde yirmi kaynağı;Pareto İlkesi;Verimlilik;611;3.59;4;4;2;emotions
+519;1393;Kurbağayı sabah yemek;Yeme Bozukluğu;Verimlilik;158;3.59;5;3;2;emotions
+520;1398;Sonsuz liderler ve güven kültürü;Sonsuz Oyun;Strateji;140;3.59;5;3;4;leadership
+521;1496;Akış anı ve yetenek işareti;Güçlü Yönler Bulma;Kariyer;154;3.59;4;5;4;emotions
+522;1539;Placebo etkisi ve zihnin performans üzerindeki gücü;Sıçramak;Başarı;154;3.59;4;4;2;thinking
+523;1623;Kaygılı-kaçıngan tuzağı;Bağlanma Teorisi;İlişkiler;469;3.59;5;3;2;relationships
+524;1661;Taahhüt kültürü — seçenekler çağında derinliği bulmak;Yeniden Doğmak;Felsefe;166;3.59;5;5;2;thinking
+525;1705;"Akış Rahatken Değil, Sınırdayken Neden Gelir?";Flow;Psikoloji;446;3.59;4;4;4;creativity
+526;1709;Servet Neden Genellikle Görünmezdir?;The Psychology of Money;Finans;429;3.59;4;5;2;money_career
+527;1713;Ryan Holiday’nin Başarısı Neden Bir Uyarıya Dönüştü?;Ego Is the Enemy;Felsefe;433;3.59;5;3;4;creativity
+528;1715;Nir Eyal’i Kendi Kızıyla Kaçırdığı An Durdurdu;Indistractable;Verimlilik;395;3.59;5;5;2;thinking
+529;1059;Britanya bisiklet takımının yüzde iki felsefesi;Atomic Habits;Sağlık;588;3.58;5;4;2;habits
+530;1060;Kimlik temelli alışkanlık;Atomic Habits;Sağlık;802;3.58;5;4;2;habits
+531;1099;Michael Jordan'ın kesim hikayesi;Zihin Gücü;Psikoloji;758;3.58;4;4;2;emotions
+532;1148;"Sınır koymak ilişkileri yıkmaz, güçlendirir";Sınırlar;Kişisel Gelişim;626;3.58;5;4;4;relationships
+533;1226;Onay ihtiyacı ve özgürlük;Cesur Olmak;Felsefe;581;3.58;5;3;2;emotions
+534;1300;Şempanze testi ve insan yanılgısı;Akıl Yürütme;Düşünme;440;3.58;4;4;2;thinking
+535;1310;Geri bildirim döngüleri ve kendi kendini besleyen kısır döngüler;Thinking in Systems;Verimlilik;158;3.58;5;4;4;creativity
+536;1312;Pasta dükkanı sahibinin hatası;İşin Özü;Girişimcilik;151;3.58;5;3;2;creativity
+537;1349;Geri çağırma pratiği ve illüzyon bilgisi;Öğrenmeyi Öğrenmek;Öğrenme;142;3.58;5;4;2;thinking
+538;1400;Wikipedia ve kolektif bilgi üretimi;Zeki Kalabalıklar;Teknoloji;160;3.58;5;3;2;creativity
+539;1425;Düşünceler gerçek değildir;Mindfulness;Farkındalık;165;3.58;5;5;2;thinking
+540;1436;Reddin anatomisi — itiraz yönetimi;Satışın Psikolojisi;Satış;153;3.58;5;3;2;creativity
+541;1505;BATNA — en iyi alternatif;Müzakerede Evet Almak;Müzakere;129;3.58;4;3;4;influence
+542;1507;Kötü Anketi Yayımlayan Başkan;Değişim Yönetimi;Yönetim;463;3.58;4;5;2;leadership
+543;1552;Napa'da Sorulan En Kötü İş;The Five Dysfunctions of a Team;Liderlik;448;3.58;5;3;2;leadership
+544;1701;Basit Bir Kontrol Listesi Kaç Hayat Kurtarabilir?;The Checklist Manifesto;Sağlık;435;3.58;5;4;2;health
+545;1763;Elinde Eriyen Kaşık;The Disappearing Spoon;Bilim;456;3.58;4;4;2;thinking
+546;1797;Çıkış Kapısındaki Teklif;Delivering Happiness;Liderlik;425;3.58;5;4;2;money_career
+547;1112;Michelin rehberinin doğuşu;Purple Cow;Finans;787;3.57;4;3;4;thinking
+548;1234;Jared ve Subway diyeti;Yapışkan Fikirler;İletişim;604;3.57;5;5;2;emotions
+549;1340;Uyku ritueli ve ortam tasarımı;Uyku Devrimi;Sağlık;144;3.57;4;4;2;habits
+550;1357;Müşteri kim sorusu;Unutulmaz Markalar;Pazarlama;539;3.57;5;4;2;creativity
+551;1365;Travma sonrası büyüme;Zihinsel Dayanıklılık;Dayanıklılık;434;3.57;5;3;4;leadership
+552;1407;Haftalık gözden geçirme ritüeli;Nasıl Başarılı Olunur;Verimlilik;180;3.57;5;2;2;thinking
+553;1415;Etkinin yasası — asıl para birimi ilişki;Liderlik 21 Yasası;Liderlik;163;3.57;5;3;2;leadership
+554;1445;Net Tavsiye Skoru'nun doğuşu;Sadakat Etkisi;İş Dünyası;167;3.57;5;3;4;influence
+555;1477;Ölümsüzlük projesi;Homo Deus;Gelecek;156;3.57;5;2;2;creativity
+556;1495;Zayıfları düzeltmek değil güçlüleri geliştirmek;Güçlü Yönler Bulma;Kariyer;147;3.57;4;3;4;leadership
+557;1514;İki tür inovasyon;Yıkıcı İnovasyon;İş Dünyası;157;3.57;5;3;4;creativity
+558;1564;Çizginin Altında ya da Üstünde;Bilinçli Liderlik;Liderlik;443;3.57;5;4;2;leadership
+559;1575;Piramidin tepesinde iki öğrenci;Hataları Kucaklamak;Psikoloji;443;3.57;4;3;4;thinking
+560;1602;CO2 toleransı — oksijen değil karbondioksit kontrolü;Nefes;Sağlık;167;3.57;4;3;2;thinking
+561;1631;Stres ve bağışıklık;Bedenin Hayır Demesi;Sağlık;430;3.57;5;3;4;health
+562;1669;Öfkeyi pişirmek — soğutma değil dönüştürme;Öfke;Psikoloji;152;3.57;4;3;3;emotions
+563;1682;Hafıza ve Google etkisi — bilgiyi saklamaktan aramaya geçiş;The Shallows;Bilim;159;3.57;5;4;2;thinking
+564;1073;Newport'un sosyal medyasız akademik kariyeri;Derin Çalışma;Verimlilik;791;3.56;5;3;2;thinking
+565;1074;Andrew Carnegie'nin çelik imparatorluğu;Düşün ve Zengin Ol;Motivasyon;798;3.56;4;3;4;thinking
+566;1107;Soytarıyı koruyan şey espri değildi;Güç Yasaları;Strateji;827;3.56;5;4;2;emotions
+567;1275;Son adım etkisi ve bitiş gücü;Saatlerin Efendisi;Verimlilik;170;3.56;4;3;4;creativity
+568;1276;"Bir Girişim, Yedi Şirket";Sıfır'dan Bir'e;Girişimcilik;437;3.56;5;3;2;money_career
+569;1420;Beyin kimyası ve sabah saati;Mucize Sabah 2;Alışkanlıklar;167;3.56;5;4;2;habits
+570;1441;Kapı tasarımı ve hata yerine kullanıcıyı suçlamak;Gündelik Nesneler Tasarımı;Tasarım;155;3.56;4;3;2;thinking
+571;1518;İlerleme belirtisi olarak para;Müşteri Geliştirme;Girişimcilik;152;3.56;5;3;4;thinking
+572;1537;10.000 saat efsanesi ve Anders Ericsson'un gerçek bulgusu;Sıçramak;Başarı;163;3.56;4;4;2;thinking
+573;1580;Kafa kafaya bilgi — asimetrik bilginin ortadan kalkması;Satışın Yeni Yüzü;Satış;168;3.56;5;4;4;thinking
+574;1597;Mikrobiyom — içimizdeki gizli organ;İyi Bağırsak;Sağlık;168;3.56;4;4;2;health
+575;1626;İyileşme Fantezisini Bırakmak;Duygusal Olgunlaşmamış Ebeveynler;Psikoloji;440;3.56;5;3;2;communication
+576;1675;Kimlikten başlayan alışkanlık;Başarılı Değişim;Yönetim;473;3.56;4;4;4;habits
+577;1745;Şahın Fiyatı: Pers Petrolünün Kapısı;The Silk Roads;Tarih;454;3.56;4;5;2;influence
+578;1802;Sözleşmeden Önce Kahve;The Culture Map;Liderlik;431;3.56;5;3;2;relationships
+579;1813;Gore-Tex ve yan projeler;Range;Büyüme;433;3.56;4;3;4;creativity
+580;1158;Uçak kazası ve söylenmeden kalan söz;Dürüst Konuşmak;İletişim;644;3.55;5;4;2;emotions
+581;1351;Zafer Saati;Bir Sonraki Seviye;Alışkanlıklar;443;3.55;4;4;2;emotions
+582;1381;Tetris etkisi ve beyin yeniden programlama;Mutluluğun Peşinde;Mutluluk;145;3.55;5;4;2;creativity
+583;1453;Sekiz gün sekiz yıla bedel;Neşeyi Seç;Mutluluk;167;3.55;5;5;2;emotions
+584;1488;Odaklanmanın gerçek düşmanları;Çalınan Dikkat;Verimlilik;161;3.55;4;3;2;creativity
+585;1586;Zaman kısıtlı beslenme — sadece yeme penceresini daraltmak;Sirkadyen Kod;Sağlık;158;3.55;5;4;4;health
+586;1615;Borç Kartopu: Önce En Küçüğü;Borç Devrimi;Finans;451;3.55;4;4;4;money_career
+587;1617;Paranın patronu olmak;Borç Devrimi;Finans;445;3.55;5;4;2;money_career
+588;1655;"Yaratıcı süreç — hazırlık, kuluçka ve aydınlanma";Yaratıcılık ve Akış;Yaratıcılık;142;3.55;5;5;2;thinking
+589;1752;Sessizlik Antlaşması Nasıl Çözüldü?;Say Nothing;Tarih;397;3.55;5;4;2;emotions
+590;1808;Hamburger Üniversitesi;Grinding It Out;Liderlik;384;3.55;5;4;2;money_career
+591;1826;Jon Huntsman'ın el sıkışması;Give and Take;Liderlik;394;3.55;5;4;2;thinking
+592;1827;Simpsons yazım odasının cömert kültürü;Give and Take;Liderlik;392;3.55;5;3;2;creativity
+593;1183;Finansal özgürlüğün beş adımı;Money: Master the Game;Finans;630;3.54;5;4;4;money_career
+594;1255;Paraşütle atlayan kadın;Korkusuzluk;Motivasyon;631;3.54;5;4;2;emotions
+595;1279;Zırh kuşanmak ve yalnızlık;Karanlığın Ötesi;Liderlik;143;3.54;5;4;2;leadership
+596;1324;Sabah sayfaları ritüeli;Yaratıcı Beyin;Yaratıcılık;151;3.54;5;4;2;creativity
+597;1350;Aralıklı tekrar ve unutma paradoksu;Öğrenmeyi Öğrenmek;Öğrenme;156;3.54;4;4;2;thinking
+598;1402;30.000 Çiftten 430.000 Çifte;Devrilme Noktası;Sosyoloji;473;3.54;4;4;4;creativity
+599;1410;Alışveriş Merkezindeki Gülümseme;Dört Anlaşma;Felsefe;435;3.54;4;3;4;relationships
+600;1522;Sevgi ve disiplinin birlikte çalışması;Az Gitme Yolu;Psikoloji;449;3.54;4;4;2;thinking
+601;1570;Güvenlik sinyalleri — beyin kültürü nasıl okuyor;Kültür Kodu;Liderlik;170;3.54;4;4;4;health
+602;1766;Görünmeyen Katili Yıkamak;The Butchering Art;Bilim;435;3.54;4;3;2;health
+603;1098;Sabit ve büyüme zihniyeti farkı;Zihin Gücü;Psikoloji;810;3.53;5;3;2;emotions
+604;1121;Alcoa'nın beklenmedik dönüşümü;Alışkanlıkların Gücü;Alışkanlıklar;818;3.53;4;4;2;thinking
+605;1215;"Daha az, daha odaklı";Minimalizm;Verimlilik;601;3.53;4;4;2;creativity
+606;1322;"Soru hiyerarşisi — neden, nasıl, ne";Güçlü Sorular;Yaratıcılık;152;3.53;5;4;2;creativity
+607;1337;Önce temel çizgiyi öğren;Beden Dili;İletişim;454;3.53;5;3;2;creativity
+608;1338;"Eller, alan ve güven";Beden Dili;İletişim;436;3.53;4;3;2;habits
+609;1342;Panik atağından meditasyona;Meditasyon;Farkındalık;118;3.53;4;5;2;thinking
+610;1358;Kabile ve liderlik;Unutulmaz Markalar;Pazarlama;461;3.53;5;3;2;thinking
+611;1399;Japonya'da cep telefonuyla koordinasyon;Zeki Kalabalıklar;Teknoloji;168;3.53;4;4;2;creativity
+612;1421;Beş saniyelik kural ve momentum;Mucize Sabah 2;Alışkanlıklar;170;3.53;4;4;2;health
+613;1509;Görünür İlk Kazanım;Değişim Yönetimi;Yönetim;436;3.53;4;4;2;habits
+614;1511;Kontrol dışındaki şeylerle barışmak;Pratik Stoacılık;Felsefe;150;3.53;5;3;4;thinking
+615;1526;Bir inç çerçevesi;Parça Parça Yazmak;Yazarlık;163;3.53;5;4;2;thinking
+616;1604;Soğuk duş ve buz banyosu — stresin ters çevrilmesi;Soğuk Yöntem;Sağlık;150;3.53;4;3;2;emotions
+617;1668;İnterbeing — her şeyin birbirine bağlılığı;İçsel Barış;Farkındalık;157;3.53;4;4;2;thinking
+618;1670;Öfkeli bebeği taşımak — şefkatli bakım pratiği;Öfke;Psikoloji;149;3.53;4;4;2;habits
+619;1699;PayPal'ın Rakip Kurucuları Nasıl Takım Oldu?;The Founders;Liderlik;431;3.53;5;4;2;creativity
+620;1716;Kendi Adını Söylemek Stresi Nasıl Azaltabilir?;Chatter;Psikoloji;418;3.53;5;3;2;emotions
+621;1781;Kanla Kurulan Bir Yalan;Bad Blood;Liderlik;468;3.53;4;4;2;creativity
+622;1097;Hesap empati ve önce anlamak;The 7 Habits of Highly Effective People;Büyüme;827;3.52;5;4;2;habits
+623;1164;Hamburg'da geçen saatler;10.000 Saat Kuralı;Başarı;616;3.52;4;4;2;leadership
+624;1221;Karşılaştırmanın tuzağı;Şükran Günlüğü;Mutluluk;579;3.52;5;4;4;emotions
+625;1370;Hayır'ın gücü;İnsanı Anlamak;Müzakere;135;3.52;5;3;2;thinking
+626;1448;Ellinci yıldan sonra;Hayatın Kısalığı Üzerine;Felsefe;442;3.52;4;4;2;thinking
+627;1624;"Bakım Var, Duyulma Yok";Duygusal Olgunlaşmamış Ebeveynler;Psikoloji;444;3.52;5;3;4;emotions
+628;1681;İnternet ve derin okuma — kaybedilen bir beceri;The Shallows;Bilim;157;3.52;4;4;2;creativity
+629;1733;Ret Üstüne Ret: Chicken Soup Günde Beş Adımla Nasıl Yayımlandı?;The Success Principles;Büyüme;440;3.52;4;3;4;creativity
+630;1195;Uyku ve beyin temizliği;Neden Uyuyoruz;Sağlık;627;3.51;4;3;4;health
+631;1208;Karakter ve koşullar;İnsan Nasıl Düşünür;Felsefe;620;3.51;5;4;2;thinking
+632;1260;Napoleon'ın e-posta kuralı;Stillness Is the Key;Felsefe;174;3.51;4;5;2;habits
+633;1409;Yabancı Sana Aptal Diyor;Dört Anlaşma;Felsefe;437;3.51;4;4;2;emotions
+634;1502;Gerçek korku ile endişe arasındaki fark;Korkudan Öğrenmek;Güvenlik;145;3.51;5;3;2;thinking
+635;1524;Sorumluluk ve kurban kimliği;Az Gitme Yolu;Psikoloji;437;3.51;5;3;2;emotions
+636;1582;Sol beyin çağının sonu;Bütün Beyin;Yaratıcılık;426;3.51;4;3;4;thinking
+637;1613;Ekonomik giden rüzgar — aile desteğinin gizli bedeli;Komşu Milyoner;Finans;157;3.51;5;4;2;money_career
+638;1680;Evrimsel beyin ve aldatmaca — neden zihin her zaman yanlış hissedebilir;Meditasyonla İyileşme;Farkındalık;179;3.51;4;3;2;thinking
+639;1761;Ne Bitki Ne Hayvan: Mantarların Dünyası;Entangled Life;Bilim;396;3.51;4;2;4;thinking
+640;1777;Bagajdan Doğan Nike;Shoe Dog;Liderlik;490;3.51;5;4;2;money_career
+641;1154;Sorumluluk özgürlüğün diğer yüzü;Büyük Soru;Felsefe;590;3.5;5;3;2;creativity
+642;1304;Uzman tahmini yanılgısı;Siyah Kuğu;Düşünme;143;3.5;5;4;2;thinking
+643;1363;Dave Goldberg'i kaybetmek;Zihinsel Dayanıklılık;Dayanıklılık;417;3.5;5;3;4;leadership
+644;1414;Tavan yasası — kim olduğun neye ulaşabileceğini belirler;Liderlik 21 Yasası;Liderlik;158;3.5;4;3;2;thinking
+645;1443;Zihinsel modeller ve tasarımın gizli dili;Gündelik Nesneler Tasarımı;Tasarım;171;3.5;4;3;2;thinking
+646;1516;Anne testi nedir;Müşteri Geliştirme;Girişimcilik;149;3.5;5;5;2;thinking
+647;1550;"Doğru kişi, doğru yer — GWC testi";Ölçülebilir Büyüme;Yönetim;180;3.5;5;3;2;money_career
+648;1214;Korkular listesi ve olumsuz canlandırma;The 4-Hour Workweek;Verimlilik;638;3.49;5;4;2;emotions
+649;1289;101 Mil ve Yüzde Kırk Kuralı;Can't Hurt Me;Büyüme;476;3.49;4;4;4;thinking
+650;1319;Zaman kutulaması ve taahhüt;Indistractable;Verimlilik;145;3.49;5;3;2;communication
+651;1356;Kaizen ilkesi ve sürekli küçük iyileştirme;Lider Yok Köle Yok;İlham;144;3.49;5;4;2;thinking
+652;1368;Direnç ve yavaş büyümenin avantajı;Kendi Patronun Ol;Girişimcilik;156;3.49;4;3;2;creativity
+653;1372;Neşe tetikleyici yöntemi;The Life-Changing Magic of Tidying Up;Felsefe;143;3.49;5;4;2;thinking
+654;1432;Intel'in Operation Crush'ı;Büyüme Kültürü;Yönetim;424;3.49;4;4;2;leadership
+655;1482;Meditasyon ve öz tanıma çağı;21. Yüzyıl İçin 21 Ders;Güncel;456;3.49;4;4;2;health
+656;1561;Jon Kabat-Zinn'in hastanesi — MBSR'nin doğuşu;Farkındalık Temelli Yaşam;Sağlık;158;3.49;4;3;2;thinking
+657;1630;Hayır Diyemeyen Kişi;Bedenin Hayır Demesi;Sağlık;427;3.49;5;4;2;emotions
+658;1639;Yeterince iyi olmak — mükemmeliyetçiliğin gerçek bedeli;Özgür Olmak 2;Kişisel Gelişim;153;3.49;4;3;2;meaning
+659;1730;Tim Ferriss Darboğazın Kendisi Olduğunu Nasıl Fark Etti?;The 4-Hour Workweek;Verimlilik;428;3.49;4;4;2;thinking
+660;1559;Yetersizlik trансı — 'bir şeyler yanlış' hissinin kökenine inmek;Radikal Kabul;Farkındalık;165;3.48;4;3;2;emotions
+661;1608;Zengin hayat tasarımı — paranın araç olduğunu hatırlamak;Zengin Olmayı Öğrenmek;Finans;165;3.48;5;2;4;thinking
+662;1679;On dakika — küçük bir pratiğin büyük dönüşümü;Yeni Başlayanlar İçin Meditasyon;Farkındalık;174;3.48;5;2;2;thinking
+663;1764;Zehirin Cezasız Kaldığı Çağ;The Poisoner's Handbook;Bilim;436;3.48;5;4;2;health
+664;1803;Saatin İki Dili;The Culture Map;Liderlik;439;3.48;4;4;2;emotions
+665;1170;Sistem 1 ve Sistem 2;Karar Verme Sanatı;Psikoloji;637;3.47;5;4;2;thinking
+666;1258;Büyük İskender'in hareketsizlik dersi;Stillness Is the Key;Felsefe;130;3.47;4;3;2;thinking
+667;1263;Boyd'un Çatal Yol Konuşması;Ego Is the Enemy;Felsefe;520;3.47;4;4;2;meaning
+668;1394;80/20 ve kritik görevler;Yeme Bozukluğu;Verimlilik;147;3.47;4;3;4;creativity
+669;1405;İki dakikada karar ver;Nasıl Başarılı Olunur;Verimlilik;165;3.47;4;5;2;thinking
+670;1565;Yüzde Yüz Sorumluluk;Bilinçli Liderlik;Liderlik;433;3.47;5;3;2;thinking
+671;1633;Budapeşte'de Ağlayan Bebek;Dağınık Beyin;Psikoloji;455;3.47;5;4;2;health
+672;1666;Her adım bir dua — yürürken farkındalık;İçsel Barış;Farkındalık;169;3.47;5;3;2;emotions
+673;1257;Sorumluluk ve güç arasındaki bağ;Korkusuzluk;Motivasyon;149;3.46;5;5;2;thinking
+674;1268;Uyku yoksunluğu ve tıbbi hatalar;Neden Uyuyoruz;Sağlık;148;3.46;5;3;2;health
+675;1336;Dürüst beyin ve ayaklar;Beden Dili;İletişim;448;3.46;4;3;2;health
+676;1359;Pazarlama empati işidir;Unutulmaz Markalar;Pazarlama;417;3.46;4;4;2;communication
+677;1657;Diyet kültürünün reddi — besinleri ahlaki kategoriden çıkarmak;İçgüdüsel Yeme;Sağlık;182;3.46;5;2;4;thinking
+678;1667;Öfkeli bir mektup göndermemek — duyguya alan tanımak;İçsel Barış;Farkındalık;174;3.46;4;3;2;emotions
+679;1717;Nicholas Carr Neden Bir Kitabı Bitiremez Oldu?;The Shallows;Bilim;421;3.46;4;3;2;thinking
+680;1116;Şans ve risk — Bill Gates'in okul arkadaşı;The Psychology of Money;Finans;841;3.45;4;3;2;creativity
+681;1211;İki babanın iki farklı dersi;Zengin Baba Fakir Baba;Finans;673;3.45;5;2;2;thinking
+682;1240;Köpek çalan komşuya farklı yaklaşım;İkna Sanatı;İletişim;589;3.45;5;4;2;relationships
+683;1446;Sadakat ve kârlılığın matematiği;Sadakat Etkisi;İş Dünyası;155;3.45;4;3;2;thinking
+684;1515;Kaynak dağıtımı ve strateji icra uçurumu;Yıkıcı İnovasyon;İş Dünyası;127;3.45;5;4;2;creativity
+685;1577;Özerklik — kontrol etmek değil yönlendirmek;İşte Anlam;Motivasyon;155;3.45;4;3;2;creativity
+686;1610;Haystack'i satın al — tüm samanlığı almak neden kazandırır;Mantıklı Borsa;Finans;165;3.45;5;4;2;thinking
+687;1614;"Zaman, enerji, para — milyonerlerin gerçek yatırımı";Komşu Milyoner;Finans;143;3.45;4;4;2;money_career
+688;1778;Hoparlördeki Dört Buçuk Dakika;The Everything Store;Liderlik;482;3.45;4;4;2;focus
+689;1146;Hayır diyememek ve tükenişin bedeli;Sınırlar;Kişisel Gelişim;618;3.44;5;2;4;habits
+690;1386;Hiçbir zaman iki gün üst üste atla;Sağlıklı Olmak;Sağlık;158;3.44;5;2;4;health
+691;1648;Duygu dili — adlandıramadığınızı yönetemezsiniz;Kalbin Haritası;Duygular;154;3.44;4;4;2;meaning
+692;1685;Düşünce Kancasından Çıkmak;Duygusal Çeviklik;Psikoloji;436;3.44;5;4;3;emotions
+693;1141;Yeterlilik ve utanç kıskacı;Cesaret Vermek;Kişisel Gelişim;622;3.43;4;4;2;emotions
+694;1562;Otomatik pilot — zihnin nerede olduğundan habersiz yaşamak;Farkındalık Temelli Yaşam;Sağlık;155;3.43;5;5;2;emotions
+695;1150;Başarının formülü: Yetenek x Çaba²;Azim;Motivasyon;614;3.42;4;4;2;creativity
+696;1218;Dijital minimalizm felsefesi;Hiçbir Şeye Bakmamak;Teknoloji;699;3.42;5;3;2;emotions
+697;1243;Bahçedeki bezelyenin sırrı;Pareto İlkesi;Verimlilik;618;3.42;5;3;4;thinking
+698;1434;MyFitnessPal'da Bağımlılık Toplantısı;Büyüme Kültürü;Yönetim;445;3.42;5;3;2;thinking
+699;1487;Dikkat ekonomisi ve dikkat mimarisi;Çalınan Dikkat;Verimlilik;145;3.42;5;3;2;thinking
+700;1548;Beyin sermayesi çağı — idealar maddi kaynaklardan daha değerli;İkinci Makine Çağı;Teknoloji;175;3.42;5;3;2;creativity
+701;1568;İlk Nota Çalmadan Önce Sorulan Soru;Yetenek Kodu;Başarı;433;3.42;4;4;2;emotions
+702;1611;Piyasa zamanlaması yanılgısı — içeride kalmak neden her şeyden önemli;Mantıklı Borsa;Finans;156;3.42;5;3;2;thinking
+703;1674;Derin çalışma ritüelleri — kapasitenin kasıtlı inşası;Konsantrasyon Gücü;Verimlilik;170;3.42;4;4;2;habits
+704;1708;Bir Gazete Haberi Zekâ Tanımını Nasıl Değiştirdi?;Emotional Intelligence;Psikoloji;433;3.42;5;3;4;health
+705;1786;Dört Bin Haftalık Ömür;Four Thousand Weeks;Verimlilik;397;3.42;5;4;2;habits
+706;1806;Des Plaines’teki İlk Kopya;Grinding It Out;Liderlik;411;3.42;4;4;2;habits
+707;1828;Öz-koruyucu verici;Give and Take;Liderlik;394;3.42;4;3;2;resilience
+708;1081;Kıtlık ve sınırlı üretim yanılsaması;Influence;Psikoloji;774;3.41;4;4;2;influence
+709;1572;Ortak amaç — 'neden' sorusu kültürü bir arada tutar;Kültür Kodu;Liderlik;163;3.41;5;3;2;money_career
+710;1798;Kültür Pazarlığı;Delivering Happiness;Liderlik;435;3.41;5;4;2;creativity
+711;1186;Bir sayfada bir kitap;Zihin Haritası;Öğrenme;660;3.4;5;4;2;thinking
+712;1244;Koch'un çalışma saatlerini yarıya indirmesi;Pareto İlkesi;Verimlilik;609;3.4;5;3;2;thinking
+713;1252;Einstein'ın görsel düşünme sırrı;Zihin Haritası;Öğrenme;604;3.4;5;4;2;creativity
+714;1293;Vergi sistemi ve şirket stratejisi;Zengin Baba Fakir Baba;Finans;152;3.4;5;5;2;thinking
+715;1555;Business Model Canvas — bir sayfada tüm iş modeli;İş Modeli Üretimi;Girişimcilik;173;3.4;5;4;2;creativity
+716;1704;İyi Niyetli Bir Tabela Hırsızlığı Nasıl Artırdı?;Influence;Psikoloji;439;3.4;4;4;2;influence
+717;1799;Havayı Okumak;The Culture Map;Liderlik;438;3.4;4;4;2;thinking
+718;1818;Flynn etkisi ve soyut düşünme;Range;Büyüme;410;3.4;5;4;2;thinking
+719;1065;"Aynı sert cümle, iki farklı yer";Dürüst Olmak;Liderlik;769;3.39;5;4;2;emotions
+720;1188;Hayır deme korkusu;Korkusuzluk;Motivasyon;621;3.39;5;4;2;thinking
+721;1064;Bir yürüyüşte söylenen tek cümle;Dürüst Olmak;Liderlik;783;3.38;5;3;2;creativity
+722;1225;Hız okuma ve anlama;İnsan Beyninin Gücü;Öğrenme;631;3.38;3;4;2;habits
+723;1442;Görünürlük ve geri bildirim — iyi tasarımın iki direği;Gündelik Nesneler Tasarımı;Tasarım;173;3.37;4;4;2;thinking
+724;1457;Beşlerin Arasındaki İkiler;Beynin Sırları;Nörobilim;470;3.37;4;3;2;creativity
+725;1462;Hafıza şampiyonlarıyla yarışmak;Kalıcı Hafıza;Öğrenme;143;3.37;4;4;2;thinking
+726;1535;Bilişsel uyumsuzluk;Black Box Thinking;Felsefe;427;3.37;4;4;2;thinking
+727;1308;Stres ve kas büyümesi — antikırılganlığın bedeni;Antikırılgan;Düşünme;430;3.36;4;3;2;health
+728;1371;Yansıtma ve derin dinleme;İnsanı Anlamak;Müzakere;127;3.36;5;4;2;thinking
+729;1478;Veri dini ve algoritmik otorite;Homo Deus;Gelecek;155;3.36;5;3;2;thinking
+730;1517;Konuşmaların en kötü hataları;Müşteri Geliştirme;Girişimcilik;148;3.36;4;4;2;thinking
+731;1267;Roger Federer'in 12 saat uyku sırrı;Neden Uyuyoruz;Sağlık;152;3.35;4;3;2;health
+732;1285;Bahçıvan ve zihin toprağı;İnsan Nasıl Düşünür;Felsefe;144;3.35;4;3;3;thinking
+733;1291;"İki Baba, Yasak Bir Cümle";Zengin Baba Fakir Baba;Finans;442;3.35;4;4;2;meaning
+734;1556;Ücretsiz iş modeli — Google nasıl bedavaya milyarlar kazanıyor;İş Modeli Üretimi;Girişimcilik;177;3.35;5;3;2;money_career
+735;1625;Ebeveynin İhtiyacı Önce Geldiğinde;Duygusal Olgunlaşmamış Ebeveynler;Psikoloji;433;3.35;4;3;4;emotions
+736;1280;Cesur liderliğin bedeli;Karanlığın Ötesi;Liderlik;145;3.33;5;4;2;leadership
+737;1607;Büyük kazançlara odaklanmak — latte faktörünün yanlışı;Zengin Olmayı Öğrenmek;Finans;166;3.33;4;4;2;money_career
+738;1791;"Aynı Elektrik, İki Farklı Sıçan";Why Zebras Don't Get Ulcers;Sağlık;416;3.33;4;3;2;emotions
+739;1327;"Otuz Yapmak, Otuz Sahip Olmak, Otuz Olmak";The Success Principles;Büyüme;445;3.32;4;4;2;money_career
+740;1557;İş modeli inovasyonu — rakibi taklit etmek değil yeniden tasarlamak;İş Modeli Üretimi;Girişimcilik;155;3.32;3;4;2;creativity
+741;1741;Kennedy'nin Not Defterindeki Yelkenliler;Stillness Is the Key;Felsefe;449;3.32;4;4;2;emotions
+742;1128;'Henüz' kelimesinin gücü;Büyüme Zihniyeti;Psikoloji;811;3.31;4;4;2;thinking
+743;1094;Büyük taşlar ve kavanoz dersi;The 7 Habits of Highly Effective People;Büyüme;782;3.3;4;4;2;habits
+744;1242;Eleştiri yapmadan değiştirme sanatı;İkna Sanatı;İletişim;597;3.3;5;4;2;influence
+745;1687;Mutluluk tuzağı — daha iyi hissetmeye çalışmak neden işe yaramıyor;Psikolojik Esneklik;Psikoloji;159;3.3;5;3;2;emotions
+746;1688;Bilişsel ayrışma — düşüncelerden mesafe almanın ACT yöntemi;Psikolojik Esneklik;Psikoloji;152;3.3;4;3;2;thinking
+747;1082;Kirpi Konsepti;Good to Great;Verimlilik;779;3.29;5;3;2;thinking
+748;1339;Huffington'ın çöküşü;Uyku Devrimi;Sağlık;136;3.28;5;4;2;habits
+749;1533;Faydaları açıklamanın paradoksu;SPIN Satış;Satış;155;3.27;4;3;2;creativity
+750;1646;Kutup yıldızı değerleri — kalabalığa rağmen yolunu bulmak;Çölde Yürümek;Topluluk;161;3.24;4;4;2;thinking
+751;1525;Berbat ilk taslak;Parça Parça Yazmak;Yazarlık;148;3.23;4;4;2;creativity
+752;1578;Amaç — para ve statünün ötesindeki üçüncü katman;İşte Anlam;Motivasyon;183;3.23;5;3;2;emotions
+753;1376;Kontrol edilebilen ve edilemeyen;Stoacılık;Felsefe;134;3.22;4;3;2;meaning
+754;1375;Marcus Aurelius'un gizli günlüğü;Stoacılık;Felsefe;123;3.21;4;2;2;habits
+755;1523;Gerçeği kabul etme cesareti;Az Gitme Yolu;Psikoloji;439;3.21;5;3;2;thinking
+756;1343;Yüzde on daha mutlu;Meditasyon;Farkındalık;162;3.2;5;2;2;emotions
+757;1563;Tam felaket — zorluğu kucaklamak;Farkındalık Temelli Yaşam;Sağlık;159;3.2;5;2;2;thinking
+758;1780;Kural Kitabını Yırtmak;No Rules Rules;Liderlik;484;3.2;2;4;2;thinking
+759;1278;Gizler ve sırları aramak;Sıfır'dan Bir'e;Girişimcilik;150;3.18;4;2;2;creativity
+760;1595;"Yağ Çıktı, Şeker Girdi";Beyin ve Diyet;Sağlık;411;3.09;4;2;2;habits
+761;1801;Evet'in Ağırlığı;The Culture Map;Liderlik;426;3.09;4;2;2;meaning
+762;1467;Kural yüzde elli sekiz;Etkileyici Konuşma;İletişim;165;2.91;4;2;2;creativity

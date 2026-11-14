@@ -1,0 +1,61 @@
+{
+  "story_id": 1309,
+  "kind": "anecdote",
+  "book": {
+    "title": "Thinking in Systems",
+    "author": "Donella H. Meadows",
+    "year": "2008"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against the book text (Introduction). The old reference example (buying a swing vs planting a tree in a playground) and the company/stress examples are not in the book and are dropped. The Slinky demonstration is Meadows's own classroom routine, told in the first person in the book; the students' answer is quoted in the book.",
+  "facts": [
+    "In Thinking in Systems, Donella Meadows describes a demonstration she used early on when teaching: she perches a Slinky on one upturned palm and grasps it from the top with the fingers of the other hand.",
+    "She pulls the bottom hand away. The lower end of the Slinky drops, bounces back up and yo-yos, hanging from her fingers.",
+    "She asks what made it bounce. The students answer: 'Your hand. You took away your hand.'",
+    "She then takes the box the Slinky came in, holds it the same way and pulls the lower hand away with as much drama as she can. Nothing happens; the box just hangs there.",
+    "The answer lies within the Slinky itself: the hands only suppress or release behavior latent in the structure of the spring. She calls this a central insight of systems theory.",
+    "She writes that the system, to a large extent, causes its own behavior; an outside event may unleash it, but the same event on a different system will likely give a different result.",
+    "Her examples: competitors rarely cause a company to lose market share; the company creates its losses at least in part through its own policies. The flu virus does not attack you; you set up the conditions for it to flourish.",
+    "Other examples she gives: political leaders don't cause recessions or economic booms; ups and downs are inherent in the structure of the market economy. Her definition: a system is a set of things, people, cells, molecules, interconnected so that they produce their own pattern of behavior over time. Oil-exporting nations are not solely responsible for oil-price rises: the importing nations' own consumption, pricing and investment policies built economies vulnerable to supply interruptions."
+  ],
+  "scene_details": [
+    "a Slinky perched on an upturned palm",
+    "the spring yo-yoing from her fingers",
+    "the empty Slinky box hanging motionless"
+  ],
+  "tension": "Everyone in the room is sure the hand caused the bounce, until the same move on a box does nothing.",
+  "opening_idea": "Start with the Slinky on her palm and the hand pulled away.",
+  "lessons": [
+    {
+      "idea": "When the same problem keeps coming back, look at the structure that produces it before blaming the latest trigger.",
+      "anchor": "Same hand movement, Slinky bounces, box does not; the behavior is in the spring.",
+      "everyday_example_idea": "A family that argues every Sunday evening notices the fights always start when everyone is planning the week at once, and moves the planning to a calmer moment."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which recurring problem in your work or home do you usually blame on the latest trigger rather than on how things are set up?",
+  "use_cases": [
+    {
+      "situation": "The team blames a competitor for lost customers.",
+      "move": "Mention Meadows's point that competitors rarely cause lost market share and ask which of our own policies might be doing it.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A colleague keeps getting blamed for missed deadlines.",
+      "move": "Ask together what in the workflow keeps producing the delay, before deciding who is at fault.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "The same argument returns at home.",
+      "move": "Notice when and where it starts, and change that setting once before discussing who is right.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Pull the hand away from a Slinky and it bounces, from a box nothing: look at the structure.",
+  "conversation_variants": {
+    "punchline_idea": "Meadows's students said her hand made the Slinky bounce, so she did the same with the empty box and nothing happened.",
+    "thirty_sec_idea": "Slinky on palm, hand away, bounce, 'your hand', box test, nothing; behavior lies in the structure; competitors example.",
+    "question_idea": "",
+    "key_contrast_idea": "Trigger vs structure"
+  }
+}

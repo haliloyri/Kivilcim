@@ -1,0 +1,35 @@
+{
+ "story_id": 1299,
+ "verdict": "keep",
+ "verify_note": "Keep. Ericsson violin figures (8.6 h sleep, about an hour more than the average American, 2.8 h naps a week, sleep second after practice) verified via multiple chapter summaries and the original study. Invented hour arithmetic removed. Geoff case from a single detailed summary, used without exact numbers (low). Small-study, correlational caveat added.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kemancıların uykusu",
+  "description": "10.000 saat araştırmasının az anlatılan ikinci bulgusu: en iyi kemancılar daha çok uyuyordu.",
+  "hook": "En iyi kemancıları iyilerden ayıran ikinci şey neydi?",
+  "one_minute_summary": "McKeown uyku bölümüne, az uyuyup sonunda haftalarca çalışamaz hale gelen genç bir CEO ile başlıyor. Sonra Ericsson'un kemancı araştırmasına geçiyor. En iyiler daha çok pratik yapıyordu, ama ikinci fark uykuydu: günde ortalama 8,6 saat, haftada yaklaşık 2,8 saat de kestirme. Araştırmacılara göre dinlenmek daha odaklı pratik sağlıyordu. McKeown'a göre yorgun zihin kötü seçer. Not: grup küçüktü ve sonuç yalnızca bir ilişki gösteriyor."
+ },
+ "en": {
+  "title": "The violinists' sleep",
+  "description": "The overlooked second finding of the 10,000-hour study: the best violinists also slept more.",
+  "hook": "What else set the best violinists apart, besides practice?",
+  "one_minute_summary": "McKeown opens his sleep chapter with a young CEO who slept a few hours a night until his health broke down for weeks. Then he turns to Ericsson's violin study. The best players practiced more, but the second difference was sleep: 8.6 hours a day on average, plus about 2.8 hours of naps a week. The researchers thought rest let them practice with more focus. For McKeown, a tired mind chooses badly. Caveat: the group was small and the finding is a correlation."
+ },
+ "es": {
+  "title": "El sueño de los violinistas",
+  "description": "El segundo hallazgo olvidado del estudio de las 10.000 horas: los mejores violinistas también dormían más.",
+  "hook": "¿Qué más distinguía a los mejores violinistas, además de la práctica?",
+  "one_minute_summary": "McKeown abre su capítulo sobre el sueño con un joven director general que dormía pocas horas hasta que su salud se vino abajo durante semanas. Luego pasa al estudio de Ericsson con violinistas. Los mejores practicaban más, pero la segunda diferencia era el sueño: 8,6 horas al día de media y unas 2,8 horas de siesta a la semana. Los investigadores creían que el descanso les daba más concentración. Para McKeown, una mente cansada elige mal. Ojo: el grupo era pequeño y es una correlación."
+ },
+ "de": {
+  "title": "Der Schlaf der Geiger",
+  "description": "Der übersehene zweite Befund der 10.000-Stunden-Studie: Die besten Geiger schliefen auch mehr.",
+  "hook": "Was unterschied die besten Geiger außer dem Üben noch von den guten?",
+  "one_minute_summary": "McKeown beginnt sein Kapitel über Schlaf mit einem jungen Chef, der wenige Stunden schlief, bis seine Gesundheit wochenlang zusammenbrach. Dann kommt Ericssons Geigenstudie. Die Besten übten mehr, doch der zweite Unterschied war der Schlaf: im Schnitt 8,6 Stunden am Tag und etwa 2,8 Stunden Mittagsschlaf pro Woche. Die Forscher meinten, Erholung ermöglichte konzentrierteres Üben. Für McKeown wählt ein müder Kopf schlecht. Einschränkung: Die Gruppe war klein, und es ist nur ein Zusammenhang."
+ }
+}

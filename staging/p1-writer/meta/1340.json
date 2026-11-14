@@ -1,0 +1,35 @@
+{
+ "story_id": 1340,
+ "verdict": "keep",
+ "verify_note": "Ritual rebuilt from Huffington's own words in launch interviews (devices escorted out at a set time, Epsom bath and candle, sleep-only clothes, chamomile or lavender tea); assumed to match the book. Unsourced '30 minutes', bath quote, melatonin mechanics and 'eight bad hours vs six deep' dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Telefon Yatak Odasından Çıkar",
+  "description": "Arianna Huffington her gece belli bir saatte cihazlarını yatak odasından çıkarıyor. Ardından Epsom tuzlu banyo ve yalnızca uyku için ayrılmış pijamalar geliyor.",
+  "hook": "Bu gece yatak odanızdan hangi tek eşyayı çıkarabilirsiniz?",
+  "one_minute_summary": "2007'de bitkinlikten bayılıp elmacık kemiğini kırdıktan sonra Arianna Huffington akşamlarını yeniden kurdu. Uykuya geçişi kutsal bir ritüel olarak görüyor. Her gece aynı saatte cihazlarını kapatıp yatak odasından dışarı uğurluyor. Ardından Epsom tuzlu sıcak bir banyo, yanında bir mum. Spor kıyafetleriyle uyumayı bıraktı, yalnızca uyku için ayırdığı pijamaları var. Bazen papatya çayı içiyor. Kitabı yedi sekiz saat uykuyu öneriyor ve uyku ilaçlarına yaslanmaya karşı uyarıyor."
+ },
+ "en": {
+  "title": "The Phone Leaves the Bedroom",
+  "description": "Every night at a set time, Arianna Huffington escorts her devices out of the bedroom. Then come an Epsom salt bath and clothes kept only for sleep.",
+  "hook": "What one object could leave your bedroom tonight?",
+  "one_minute_summary": "After collapsing from exhaustion in 2007, Arianna Huffington rebuilt her evenings into what she calls a sacrosanct ritual. At a fixed time she turns off her devices and gently escorts them out of the bedroom. Then a hot bath with Epsom salts and a candle nearby. She no longer sleeps in workout clothes but in pajamas kept only for sleep, sometimes with chamomile tea. Her book urges seven to eight hours a night without leaning on sleeping pills."
+ },
+ "es": {
+  "title": "El móvil sale del dormitorio",
+  "description": "Cada noche, a una hora fija, Arianna Huffington saca sus aparatos del dormitorio. Después vienen el baño con sales de Epsom y la ropa reservada solo para dormir.",
+  "hook": "¿Qué objeto podrías sacar esta noche de tu dormitorio?",
+  "one_minute_summary": "Tras desplomarse de agotamiento en 2007, Arianna Huffington convirtió sus noches en lo que llama un ritual sagrado. A una hora fija apaga sus aparatos y los acompaña fuera del dormitorio. Después, un baño caliente con sales de Epsom y una vela cerca. Ya no duerme con la ropa de deporte, sino con pijamas reservados para dormir, y a veces toma una manzanilla. Su libro defiende las siete u ocho horas sin depender de somníferos como el Ambien."
+ },
+ "de": {
+  "title": "Das Handy verlässt das Schlafzimmer",
+  "description": "Jeden Abend zu einer festen Uhrzeit bringt Arianna Huffington ihre Geräte aus dem Schlafzimmer. Danach folgen ein Bad mit Bittersalz und Kleidung nur zum Schlafen.",
+  "hook": "Welchen Gegenstand könntest du heute Abend aus deinem Schlafzimmer räumen?",
+  "one_minute_summary": "Nach ihrem Zusammenbruch 2007 hat Arianna Huffington ihre Abende zu einem, wie sie sagt, heiligen Ritual umgebaut. Zu einer festen Uhrzeit schaltet sie ihre Geräte aus und begleitet sie behutsam aus dem Schlafzimmer. Dann ein heißes Bad mit Bittersalz und einer Kerze. Statt in Sportsachen schläft sie in Pyjamas, die nur fürs Bett bestimmt sind, manchmal mit Kamillentee. Ihr Buch wirbt für sieben bis acht Stunden Schlaf ohne Schlafmittel wie Ambien."
+ }
+}

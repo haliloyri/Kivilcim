@@ -1,0 +1,37 @@
+{
+  "book_no": 74,
+  "title": "Indistractable: How to Control Your Attention and Choose Your Life",
+  "authors": ["Nir Eyal", "Julie Li"],
+  "year": "2019",
+  "note": "Facts verified in the full text (archive.org djvu text). Credit line: Nir Eyal with Julie Li; stories name Nir Eyal as author.",
+  "sources": [
+    "https://archive.org/details/indistractable-how-to-control-your-attent-nir-eyal",
+    "https://www.nirandfar.com/indistractable/"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "Eyal and his daughter (their only child) were doing an activity book for dads and daughters: name each other's favorite things, build a paper airplane from a page, then answer 'If you could have any superpower, what would it be?' He was on his phone, said 'Just a second. I just need to respond to this one thing.' She went quiet; when he looked up she was gone. He says the same scene had played out countless times.", "source": "full text ch.1", "confidence": "high"},
+    {"id": "f2", "claim": "After apologizing he tried a digital detox: a flip phone (gave up: no GPS, saved addresses, audiobooks), a print newspaper subscription (stack of unread papers while he watched TV news), a 1990s word processor without internet (he flipped through unrelated books on the shelf). 'I'd just replaced one distraction with another.'", "source": "full text ch.1", "confidence": "high"},
+    {"id": "f3", "claim": "First step: recognize that distraction starts from within. 'Time management is pain management'; distraction is an attempt to escape discomfort.", "source": "full text ch.1, ch.4", "confidence": "high"},
+    {"id": "f4", "claim": "Four steps to reimagine an internal trigger (from Jonathan Bricker): look for the discomfort preceding the distraction; write down the trigger (time, activity, feeling) on a Distraction Tracker; explore the sensation with curiosity; beware liminal moments. Eyal's own urge: googling something while writing, which he calls a diversion from difficult work.", "source": "full text ch.6", "confidence": "high"},
+    {"id": "f5", "claim": "Ten-minute rule: when Eyal wants to check his phone he tells himself it is fine to give in, but not now; wait ten minutes, 'surfing the urge'. After ten minutes the urge has usually passed.", "source": "full text ch.6", "confidence": "high"},
+    {"id": "f6", "claim": "To-do lists: tasks get pushed day after day; start from values instead. 'You can't call something a distraction unless you know what it's distracting you from.' Timeboxing = deciding what you will do and when; goal is a calendar with no white space; success is whether you did what you planned. Three life domains: you, relationships, work.", "source": "full text ch.10", "confidence": "high"},
+    {"id": "f7", "claim": "Eyal and his wife Julie bickered about undone housework; he admits he did less than his share and did not see her tasks; evenings ended in late dinners, hurt feelings and sometimes tears. On one of their date days they listed every household task each did; her list was much longer. They split the jobs and timeboxed them on their schedules.", "source": "full text ch.11", "confidence": "high"},
+    {"id": "f8", "claim": "Eyal schedules weekly time with his daughter: they wrote over a hundred activities on paper strips in a 'fun jar' and pull one every Friday afternoon. He and Julie schedule a date twice a month.", "source": "full text ch.11", "confidence": "high"},
+    {"id": "f9", "claim": "Precommitment / Ulysses pact. Effort pact: kSafe (formerly Kitchen Safe), a container with a timer lock by David Krippendorf and Ryan Tseng; apps SelfControl, Freedom, Forest (a virtual tree dies if you leave the app).", "source": "full text ch.22-23", "confidence": "high"},
+    {"id": "f10", "claim": "Price pact: NEJM smoking study cited (control 6%, $800 reward group 17%, $150 deposit group 52% among those who accepted). Eyal's own: the gym was free in his apartment complex but he kept skipping. He taped a crisp hundred-dollar bill to the wall calendar next to the date of his next workout and bought a ninety-nine-cent lighter: burn the calories or burn the bill ('burn or burn'). He says he has used it over three years, gained twelve pounds of muscle and never burned the bill.", "source": "full text ch.24", "confidence": "high"},
+    {"id": "f11", "claim": "Eyal says precommitments should be used only after the other steps (internal triggers, traction time, external triggers).", "source": "full text ch.22", "confidence": "high"},
+    {"id": "f12", "claim": "Eyal reports that ego depletion (willpower as a limited resource) is disputed; Dweck's study found depletion only in those who believed willpower is limited.", "source": "full text ch.9", "confidence": "high"}
+  ],
+  "rejected": [
+    {"claim": "Quote 'Distraction doesn't come from outside. It comes from inside. We're escaping discomfort.' as verbatim.", "reason": "Paraphrase; book's line is 'distraction starts from within'."},
+    {"claim": "'A to-do list is the enemy of attention control' and 'If you do something else in that slot you are deceiving yourself' as quotes.", "reason": "Not book quotes."},
+    {"claim": "Order: timebox you first, then relationships, then work.", "reason": "Book names three domains and starts with 'you' time, but the strict sleep/exercise/eat order is not supported as stated."},
+    {"claim": "Removing apps from home screen cuts impulsive opens by 40 percent.", "reason": "Number not in the book."},
+    {"claim": "Willpower is limited and every decision depletes it.", "reason": "Book argues the opposite."}
+  ],
+  "stories": {
+    "1318": {"verdict": "keep", "fact_ids": ["f1","f2","f3","f4","f5"], "note": "Daughter superpower scene, failed detox, internal triggers."},
+    "1319": {"verdict": "keep", "fact_ids": ["f6","f7","f8"], "note": "Timeboxing through the Eyal/Julie housework list."},
+    "1320": {"verdict": "keep", "fact_ids": ["f9","f10","f11","f12"], "note": "Recentered on precommitment pacts: kSafe and the hundred-dollar bill."}
+  }
+}

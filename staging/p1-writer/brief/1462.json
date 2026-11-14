@@ -1,0 +1,62 @@
+{
+  "story_id": 1462,
+  "kind": "anecdote",
+  "book": {
+    "title": "Moonwalking with Einstein",
+    "author": "Joshua Foer",
+    "year": "2011"
+  },
+  "confidence": "medium",
+  "confidence_note": "Checked against Wikipedia, NPR and several reviews; the book text was not read. Supported: Foer attended the 2005 U.S. Memory Championship as a journalist, met Ed Cooke (24, English grandmaster), trained about a year, won the 2006 USA championship and set a U.S. speed-cards record of 1 min 40 s; later placed 13th at the World Memory Championships in London with bronze in names and faces. Old text's champions quote, 'sceptic' framing and 'ancient Greek techniques every day' details are not found and dropped. The bar scene is from one review and kept to one clause. Foer's own ordinary memory is reported by reviews (medium).",
+  "facts": [
+    "Joshua Foer attended the 2005 U.S. Memory Championship as a journalist.",
+    "There he met Ed Cooke, a 24-year-old English memory grandmaster.",
+    "After the contest, hours of talk and several rounds of beer at a local bar, Cooke offered to coach him.",
+    "Reviews say Foer's own memory was ordinary and that the book's thesis is that memory is a trainable skill.",
+    "After about a year of training he won the 2006 USA Memory Championship.",
+    "He set a U.S. record in speed cards: one deck in 1 minute 40 seconds.",
+    "At the World Memory Championships in London he placed 13th overall and won bronze in names and faces.",
+    "The book examines Daniel Tammet, a self-described savant, and Foer comes to suspect he has more in common with the memory-contest competitors than with the Rain Man type of savant.",
+    "The book was published in 2011; it debuted at number 3 on the New York Times bestseller list and stayed eight weeks (Wikipedia)."
+  ],
+  "scene_details": [
+    "a bar after the contest, hours of talk and several rounds of beer",
+    "a deck of cards memorized in 1 minute 40 seconds",
+    "a 24-year-old English memory grandmaster"
+  ],
+  "tension": "A journalist who came to watch the memory contest ends up winning it a year later; how much of that is training?",
+  "opening_idea": "Open on the 1:40 deck of cards and the fact that the man who did it had come as a spectator.",
+  "lessons": [
+    {
+      "idea": "Before writing a skill off as not for you, put a coach and a year of practice next to it.",
+      "anchor": "Foer arrives as a reporter and wins after a year with Cooke.",
+      "example": "Someone who says she is hopeless with names has never practised with a method."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which skill have you written off as not for you without ever practising it with someone who already knows the method?",
+  "use_cases": [
+    {
+      "situation": "A colleague says they are just bad at remembering names.",
+      "move": "Mention that Foer, a journalist with an ordinary memory, trained a year with a coach, and ask if they want to try a method together.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "You tell yourself you have a bad memory.",
+      "move": "Pick one thing you keep forgetting and ask someone who is good at it how they learned it.",
+      "context": "self"
+    },
+    {
+      "situation": "A student at home says they cannot memorize.",
+      "move": "Ask them to teach you the method they use and compare it with one from a friend.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "A reporter with an ordinary memory won a national title after a year with a coach, so ask who could teach you.",
+  "conversation_variants": {
+    "punchline_idea": "Joshua Foer went to the national memory championship as a reporter and won it the next year.",
+    "thirty_sec_idea": "Joshua Foer covered the 2005 U.S. Memory Championship as a journalist, met English grandmaster Ed Cooke, and trained with him for about a year. In 2006 he won, with a U.S. record of one deck of cards in 1 minute 40 seconds. His book argues memory is a trainable skill.",
+    "question_idea": "",
+    "key_contrast_idea": "spectator to champion"
+  }
+}

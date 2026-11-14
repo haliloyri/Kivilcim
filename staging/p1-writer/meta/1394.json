@@ -1,0 +1,35 @@
+{
+ "story_id": 1394,
+ "verdict": "keep",
+ "verify_note": "Keep: 80/20 (ch. 3) and ABCDE (ch. 5) verified in an early-edition full text. Old 'morning question' opening and the 'a day with A done is a good day' line are not in the book and were dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "A-1 iribaşlardan önce gelir",
+  "description": "Brian Tracy listenize beş harfle bakmanızı ister. On maddelik listede bir madde, öteki dokuzun toplamından değerli olabilir.",
+  "hook": "Listenizde gerçekte A olan ama hep sona kalan madde hangisi?",
+  "one_minute_summary": "Brian Tracy, 80/20 kuralını yapılacaklar listesine uygular: işlerin yaklaşık beşte biri değerin büyük kısmını taşır. On maddeden biri, öteki dokuzun toplamından değerli olabilir ve çoğu kişi ona en son bakar. Çözümü beş harf: A yapılması şart olan, B hafif sonuçlu iribaş, C yapılırsa güzel, D devredilecek, E silinecek iş. Kural, bir A açıkken B'ye dokunmamak. Sonra A-1'e başlayıp bitene kadar sürdürürsünüz. Tracy yöntemi bir ay denemenizi önerir."
+ },
+ "en": {
+  "title": "A-1 before the tadpoles",
+  "description": "Brian Tracy wants five letters on your list before you start. On a list of ten, one item can outweigh the other nine.",
+  "hook": "If you lettered tomorrow's list, which item you keep postponing would be a real A?",
+  "one_minute_summary": "Brian Tracy applies the 80/20 rule to your to-do list: about a fifth of your tasks hold most of the value, and on a list of ten one item can be worth more than the other nine together. Most people dodge it. His fix is five letters: A is a must with serious consequences, B a tadpole with mild ones, C nice, D delegate, E eliminate. Never do a B while an A is undone. Then start A-1 and stay with it."
+ },
+ "es": {
+  "title": "La A-1 antes que los renacuajos",
+  "description": "Brian Tracy quiere cinco letras en tu lista antes de empezar. En una lista de diez, una tarea puede valer más que las otras nueve.",
+  "hook": "Si pusieras una letra a cada punto de mañana, ¿cuál de los que aplazas sería una A?",
+  "one_minute_summary": "Brian Tracy aplica la regla 80/20 a tu lista de tareas: alrededor de una quinta parte de ellas concentra casi todo el valor, y en una lista de diez una sola puede valer más que las otras nueve juntas. La mayoría la esquiva. Su remedio son cinco letras: A es lo imprescindible con consecuencias serias, B un renacuajo con consecuencias leves, C agradable, D delegar, E eliminar. Nunca hagas una B con una A pendiente. Después empieza por la A-1 y no la sueltes."
+ },
+ "de": {
+  "title": "A-1 vor den Kaulquappen",
+  "description": "Brian Tracy will fünf Buchstaben vor deiner Liste sehen. Bei zehn Punkten kann einer mehr wert sein als die anderen neun.",
+  "hook": "Welcher Punkt, den du ständig aufschiebst, wäre bei dir ein echtes A?",
+  "one_minute_summary": "Brian Tracy überträgt die 80/20-Regel auf deine To-do-Liste: Etwa ein Fünftel der Aufgaben macht den Großteil des Werts aus, und bei zehn Punkten kann einer mehr wert sein als die anderen neun zusammen. Die meisten drücken sich davor. Sein Mittel sind fünf Buchstaben: A ist ein Muss mit ernsten Folgen, B eine Kaulquappe mit milden, C nett, D abgeben, E streichen. Kein B, solange ein A offen ist. Dann beginnst du bei A-1 und bleibst dran."
+ }
+}

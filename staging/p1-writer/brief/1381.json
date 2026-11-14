@@ -1,0 +1,59 @@
+{
+ "story_id": 1381,
+ "kind": "concept",
+ "book": {
+  "title": "The Happiness Advantage",
+  "author": "Shawn Achor",
+  "year": "2010"
+ },
+ "confidence": "medium",
+ "confidence_note": "Achor's account of the Tetris study matches the real study (Stickgold et al., Harvard Medical School, published 2000: 27 participants, several hours over three days). The old text's 'early 1990s', 'thousands of hours' and the shop-shelf and parking-lot details are not supported and are dropped. Book text accessed through a detailed chapter abstract and summaries, so medium. 'Neuroplasticity' claim not used.",
+ "facts": [
+  "Achor describes a Harvard Medical School study in which 27 people played Tetris for multiple hours a day, three days in a row.",
+  "Afterwards some could not stop dreaming of falling shapes; others kept seeing the shapes in their waking hours, the world as sequences of Tetris blocks.",
+  "Achor calls this a cognitive afterimage and names it the Tetris Effect: the brain keeps scanning for the pattern it has practised.",
+  "He compares attention to a spam filter: we remember roughly one of more than 100 pieces of information, and the filter lets through what it has been set to find.",
+  "Many jobs reward scanning for problems, stresses and injustices; the better people get at it, the more positives they miss. Achor: even a paradise can become a hell.",
+  "His exercise: each day write three specific good things from the last 24 hours, about five minutes. People who did it for one week were happier and less depressed at one, three and six months.",
+  "Achor says the exercise works through consistency: ritualize it, same time each day, keep the notebook handy, set an alarm if needed."
+ ],
+ "scene_details": [
+  "falling Tetris blocks seen after the game is off",
+  "a spam filter deciding what reaches the inbox",
+  "a list of three good things from the last 24 hours"
+ ],
+ "tension": "Three days of a falling-block game were enough to make people see blocks everywhere; the same thing happens with the patterns a job trains.",
+ "opening_idea": "Start with the players who closed their eyes after three days of Tetris and still saw shapes falling.",
+ "lessons": [
+  {
+   "idea": "Your attention runs the search you practise; give it a second search on purpose.",
+   "anchor": "three days of Tetris retrained what people saw"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What does your work train you to spot all day, and where outside work has that search started showing up?",
+ "use_cases": [
+  {
+   "situation": "End of a heavy work week",
+   "move": "Write three specific good things from the last day.",
+   "context": "self"
+  },
+  {
+   "situation": "Team retrospectives only list problems",
+   "move": "Mention the Tetris players who saw blocks everywhere; add one round of what worked.",
+   "context": "meeting"
+  },
+  {
+   "situation": "Family dinner turns to complaints",
+   "move": "Ask each person for one specific good thing from today.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "Three days of Tetris made people see falling blocks everywhere; choose what your mind practises seeing.",
+ "conversation_variants": {
+  "punchline_idea": "After three days of Tetris, people saw falling blocks even with their eyes closed, and our jobs train us the same way.",
+  "thirty_sec_idea": "27 players, three days, shapes in dreams and streets; Achor: problem-scanning jobs; three good things a week, effects at six months.",
+  "question_idea": "",
+  "key_contrast_idea": "what you scan for"
+ }
+}

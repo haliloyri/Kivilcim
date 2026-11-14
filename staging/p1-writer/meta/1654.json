@@ -1,0 +1,35 @@
+{
+  "story_id": 1654,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: the ten paradoxical traits from summaries and blogs quoting Creativity; book text not read. Old Nobel count, 'avoiding paradoxes means not truly creative' and 'draw energy from tension' dropped. Uccello is Vasari's account as summarised, with no direct quote; the interview count of 91 is approximate.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Zıt çiftler",
+    "description": "Csikszentmihalyi, yaratıcı insanlarda tek bir özellik değil, bir arada duran zıt çiftler buldu. Anlatı ikinci el özetlere dayanıyor.",
+    "hook": "Hangi alışkanlığınızın ihmal ettiğiniz bir karşıtı var?",
+    "one_minute_summary": "Mihaly Csikszentmihalyi, Creativity kitabında yaklaşık 91 olağanüstü insanla görüşmeye dayanıyor. Yaratıcı kişiliği, zıt özellikleri aynı anda taşıyan biri olarak tarif ediyor ve on çift sayıyor: enerjik ve dinlenmiş, oyuncu ve disiplinli, tutkulu ve nesnel gibi. Vasari'ye göre Uccello geceyi perspektife harcadı, tarihçi Natalie Davis eleştiriyi kabul etmek için yazısından uzaklaştı. En tutarlı özellik, yaratmanın kendisinden keyif almak. Anlatı ikinci el özetlere dayanıyor."
+  },
+  "en": {
+    "title": "Ten pairs of opposites",
+    "description": "Csikszentmihalyi found no single creative trait in his interviews, but opposites held together in one person. The account rests on summaries of the book.",
+    "hook": "Which of your habits has an opposite you tend to neglect?",
+    "one_minute_summary": "Mihaly Csikszentmihalyi's Creativity draws on interviews with about 91 exceptional people. He describes the creative personality as holding opposite traits at once and lists ten pairs, such as energetic and restful, playful and disciplined, passionate and objective. By Vasari's account Uccello spent a night working out perspective, and the historian Natalie Davis stepped back from her own writing to take criticism. The most consistent trait was enjoying the process itself. The account rests on secondary summaries."
+  },
+  "es": {
+    "title": "Diez pares de opuestos",
+    "description": "Csikszentmihalyi no halló un único rasgo creativo en sus entrevistas, sino opuestos reunidos en una persona. El relato se apoya en resúmenes del libro.",
+    "hook": "¿Qué hábito tuyo tiene un opuesto que sueles descuidar?",
+    "one_minute_summary": "Creativity, de Mihaly Csikszentmihalyi, se apoya en entrevistas con unas 91 personas excepcionales. Describe la personalidad creativa como la que reúne rasgos opuestos a la vez y enumera diez pares, como enérgico y descansado, juguetón y disciplinado, apasionado y objetivo. Según Vasari, Uccello pasó una noche resolviendo la perspectiva, y la historiadora Natalie Davis se apartaba de su texto para aceptar las críticas. El rasgo más constante era disfrutar del proceso mismo. El relato se apoya en resúmenes secundarios."
+  },
+  "de": {
+    "title": "Zehn Gegensatzpaare",
+    "description": "Csikszentmihalyi fand in seinen Interviews keinen einzelnen kreativen Zug, sondern Gegensätze in einer Person. Der Bericht stützt sich auf Zusammenfassungen des Buchs.",
+    "hook": "Welche deiner Gewohnheiten hat einen Gegenpol, den du meist vernachlässigst?",
+    "one_minute_summary": "Mihaly Csikszentmihalyis Creativity stützt sich auf Interviews mit rund 91 außergewöhnlichen Menschen. Er beschreibt die kreative Persönlichkeit als eine, die Gegensätze zugleich vereint, und nennt zehn Paare, etwa energiegeladen und ausgeruht, verspielt und diszipliniert, leidenschaftlich und objektiv. Nach Vasari blieb Uccello eine Nacht über der Perspektive wach, und die Historikerin Natalie Davis löste sich von ihrem Text, um Kritik anzunehmen. Der beständigste Zug war die Freude am Prozess selbst. Der Bericht stützt sich auf Sekundärquellen."
+  }
+}

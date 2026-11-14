@@ -1,0 +1,59 @@
+{
+ "story_id": 1374,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Life-Changing Magic of Tidying Up",
+  "author": "Marie Kondo",
+  "year": "2011"
+ },
+ "confidence": "medium",
+ "confidence_note": "Shrine-maiden years, the house greeting, the shrine-gate comparison, 'my way of showing respect for the house and its contents', 'I began to treat my belongings as if they were alive when I was a high school student' and the 'gentle shake' line are quoted from the book in Bustle and a summary (high). Kneeling in the centre and greeting aloud or silently come from konmari.com. Thanking her handbag each evening is from secondary columns (medium). The Shinto/kami link is stated as commonly said, not as Kondo's own claim. The old text's 'thank your bag as you enter it', 'manager not owner' framing and extension to relationships and work habits are not in the book and were dropped.",
+ "facts": [
+  "Kondo visited her community shrine often as a child and worked five years as a Shinto shrine maiden (miko).",
+  "She greets a client's house before tidying; the custom came 'quite naturally based on the etiquette of worshipping at Shinto shrines'.",
+  "The moment a client opens the door 'resembles the atmosphere when one passes under a shrine gate'; the greeting is 'my way of showing respect for the house and its contents'.",
+  "She kneels formally in the centre of the house and introduces herself in her mind; the greeting can be aloud or silent.",
+  "'I began to treat my belongings as if they were alive when I was a high school student.' She greets her own house on coming home and thanks her handbag for the day's work.",
+  "'Just like the gentle shake we use to wake someone up, we can stimulate our belongings by physically moving them.'",
+  "Her method is commonly described as partly inspired by Shinto, which holds that things can have a spirit (kami)."
+ ],
+ "scene_details": [
+  "kneeling in the centre of a client's home before touching anything",
+  "the shrine gate",
+  "thanking a handbag when setting it down"
+ ],
+ "tension": "A tidying expert's first act in a messy home is to touch nothing.",
+ "opening_idea": "Open on the kneeling greeting with closed cupboards, without naming her.",
+ "lessons": [
+  {
+   "idea": "Treat the things that serve you with care; it changes how you put them away and what you notice.",
+   "anchor": "Greeting the house and thanking the handbag."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which daily object would you handle differently if you saw it as something that works for you?",
+ "use_cases": [
+  {
+   "situation": "Child flings school bag",
+   "move": "Empty it together and put it in its place.",
+   "context": "family"
+  },
+  {
+   "situation": "Coming home tired",
+   "move": "Empty and store your bag, as Kondo does with a thank-you.",
+   "context": "self"
+  },
+  {
+   "situation": "Helping a friend tidy",
+   "move": "Walk through once before touching anything.",
+   "context": "social"
+  }
+ ],
+ "pocket_idea": "Kondo starts tidying by greeting the house; treat belongings like things that served you.",
+ "conversation_variants": {
+  "punchline_idea": "Marie Kondo kneels and greets a client's house before touching a single thing.",
+  "thirty_sec_idea": "Shrine years, the greeting, the handbag thanks.",
+  "question_idea": "",
+  "key_contrast_idea": "Respect before sorting"
+ }
+}

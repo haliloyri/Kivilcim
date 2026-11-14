@@ -1,0 +1,35 @@
+{
+ "story_id": 1384,
+ "verdict": "keep",
+ "verify_note": "DB book 'Sağlıklı Olmak' (James Clear, 2019) does not exist; content is from Atomic Habits (2018), ch.1, verified on jamesclear.com. Story now cites Atomic Habits. Old 'one more glass of water' example dropped. Uses Clear's corrected 2008 figure (8 of 14) and his own update on TUE questions as a caveat.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "El Yıkamayla Başlayan Zafer",
+  "description": "İngiliz bisiklet takımı bir yüzyıllık başarısızlıktan sonra işe yastıklar, masaj jelleri ve el yıkama dersiyle başladı. James Clear küçük kazanımların birikimini bu hikâyeyle anlatır.",
+  "hook": "Her gün tekrarladığınız hangi sağlık ayrıntısını hiç iyileştirmeyi düşünmediniz?",
+  "one_minute_summary": "2003'te İngiliz bisikleti dipteydi: 1908'den beri tek olimpiyat altını vardı ve bir üretici takıma bisiklet satmayı reddediyordu. Yeni direktör Dave Brailsford her şeyde yüzde 1'lik iyileşme aradı: seleler, masaj jelleri, her sporcuya özel yastık ve yatak, el yıkamayı öğreten bir cerrah. 2008'de takım yol ve pistteki 14 altının 8'ini aldı, 2012'de Wiggins Fransa Turu'nu kazandı. James Clear her gün yüzde 1'in bir yılda yaklaşık 37 kat ettiğini hesaplar ve sonradan takımın ilaç muafiyetleriyle ilgili soru işaretlerini not eder."
+ },
+ "en": {
+  "title": "Winning Began With Hand Washing",
+  "description": "After a century of losing, Britain's cycling team started with pillows, massage gels and a lesson in hand washing. James Clear uses it to show how small gains compound.",
+  "hook": "Which health detail you repeat every day have you never thought worth improving?",
+  "one_minute_summary": "In 2003 British cycling was at a low, with one Olympic gold since 1908. New director Dave Brailsford looked for 1 percent gains everywhere: seats, massage gels, the right pillow and mattress for each rider, a surgeon teaching hand washing. In 2008 the team won 8 of 14 road and track golds, and in 2012 Wiggins won the Tour de France. James Clear notes that 1 percent a day adds up to about 37 times in a year, and later flagged questions about the team's medical exemptions."
+ },
+ "es": {
+  "title": "Ganar empezó lavándose las manos",
+  "description": "Tras un siglo de derrotas, el equipo británico de ciclismo empezó por almohadas, geles de masaje y una lección de lavado de manos. James Clear lo usa para mostrar cómo se acumulan las mejoras pequeñas.",
+  "hook": "¿Qué detalle de salud que repites cada día nunca pensaste en mejorar?",
+  "one_minute_summary": "En 2003 el ciclismo británico estaba en lo más bajo, con un solo oro olímpico desde 1908. Dave Brailsford buscó mejoras del 1 % en todo: sillines, geles de masaje, la almohada y el colchón de cada corredor, un cirujano que enseñó a lavarse las manos. En 2008 ganaron 8 de 14 oros en ruta y pista, y en 2012 Wiggins ganó el Tour. James Clear calcula que un 1 % diario equivale a unas 37 veces en un año, y luego señaló dudas sobre sus exenciones médicas."
+ },
+ "de": {
+  "title": "Ein Sieg, der mit Händewaschen begann",
+  "description": "Nach einem Jahrhundert ohne Erfolge fing das britische Radsportteam mit Kissen, Massagegelen und einer Lektion im Händewaschen an. James Clear zeigt daran, wie sich kleine Gewinne summieren.",
+  "hook": "Welches tägliche Gesundheitsdetail hast du nie für verbesserungswürdig gehalten?",
+  "one_minute_summary": "2003 lag der britische Radsport am Boden, mit einer olympischen Goldmedaille seit 1908. Der neue Direktor Dave Brailsford suchte überall nach 1 Prozent: Sättel, Massagegele, das richtige Kissen und die richtige Matratze für jeden Fahrer, ein Chirurg, der Händewaschen lehrte. 2008 holte das Team 8 von 14 Goldmedaillen auf Straße und Bahn, 2012 gewann Wiggins die Tour. James Clear rechnet vor, dass 1 Prozent täglich in einem Jahr etwa das 37-Fache ergibt, und wies später auf offene Fragen zu medizinischen Ausnahmegenehmigungen hin."
+ }
+}

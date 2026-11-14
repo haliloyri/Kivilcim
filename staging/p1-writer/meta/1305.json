@@ -1,0 +1,35 @@
+{
+ "story_id": 1305,
+ "verdict": "keep",
+ "verify_note": "Keep, re-centred. Old centre 'antifragile' comes from Taleb's later book Antifragile (2012), not The Black Swan; removed. Rebuilt on the book's own turkey problem (ch. 4) and barbell strategy with positive/negative Black Swans (ch. 13), verified in the book text.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Hindi ve halter",
+  "description": "Taleb'in hindisi en güvende hissettiği gün kesiliyor. Cevap ise kayıpları sınırlayan halter stratejisi.",
+  "hook": "Uzun süre her şey yolunda gidince neden kendinizi en çok riskte saymalısınız?",
+  "one_minute_summary": "Taleb, her gün beslenen bir hindiyi anlatıyor. Her öğün insanların onu kolladığına dair inancını büyütüyor ve Şükran Günü'nden önceki çarşamba kesiliyor. Güven duygusu riskin en yüksek olduğu anda zirvedeydi. Taleb'in cevabı halter stratejisi: paranın yüzde 85-90'ı çok güvenli araçlarda, yüzde 10-15'i çok spekülatif bahislerde. Böylece hiçbir siyah kuğu sizi tabanın altına itemez. Sinema ve araştırma gibi alanlarda az kaybedip çok kazanmak, bankacılıkta ise sürprizlerden korunmak gerekir."
+ },
+ "en": {
+  "title": "The turkey and the barbell",
+  "description": "Taleb's turkey is killed on the day it feels safest. His answer is a barbell that caps the downside.",
+  "hook": "Why should a long, calm stretch make you more careful, not less?",
+  "one_minute_summary": "Taleb tells of a turkey fed every day, each meal strengthening its belief that humans look after it, until the Wednesday before Thanksgiving. Its sense of safety peaked when the risk was highest. His answer is the barbell: about 85 to 90 percent of money in extremely safe instruments and 10 to 15 percent in very speculative bets, so no Black Swan can push you below the floor. In film or research you lose small to win big, while in lending surprises mostly hurt."
+ },
+ "es": {
+  "title": "El pavo y la barra",
+  "description": "El pavo de Taleb muere el día en que más seguro se siente. Su respuesta es una estrategia que limita las pérdidas.",
+  "hook": "¿Por qué una larga etapa tranquila debería volverte más prudente?",
+  "one_minute_summary": "Taleb cuenta de un pavo al que alimentan cada día y cada comida refuerza su confianza hasta el miércoles anterior a Acción de Gracias. Se sentía más seguro justo cuando el riesgo era mayor. Su respuesta es la barra con pesas: entre el 85 y el 90 por ciento del dinero en instrumentos muy seguros y el resto en apuestas muy especulativas, para que ningún cisne negro te hunda. En cine o investigación se pierde poco y se gana mucho, en préstamos las sorpresas duelen."
+ },
+ "de": {
+  "title": "Truthahn und Hantel",
+  "description": "Talebs Truthahn wird an dem Tag geschlachtet, an dem er sich am sichersten fühlt. Die Antwort ist eine Hantel, die Verluste begrenzt.",
+  "hook": "Warum sollte dich eine lange ruhige Phase vorsichtiger machen statt sorgloser?",
+  "one_minute_summary": "Taleb erzählt von einem Truthahn, der jeden Tag gefüttert wird, und jede Mahlzeit bestärkt seinen Glauben, dass die Menschen gut zu ihm sind, bis zum Mittwoch vor Thanksgiving. Am sichersten fühlte er sich, als das Risiko am größten war. Talebs Antwort ist die Hantel: etwa 85 bis 90 Prozent des Geldes extrem sicher, 10 bis 15 Prozent in sehr spekulative Wetten, damit kein Schwarzer Schwan dich unter den Boden drückt. In Film oder Forschung verliert man wenig und gewinnt viel, beim Kreditgeben schaden Überraschungen."
+ }
+}

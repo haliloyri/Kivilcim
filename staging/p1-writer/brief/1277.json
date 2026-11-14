@@ -1,0 +1,34 @@
+{
+  "story_id": 1277,
+  "kind": "concept",
+  "book": {"title": "Zero to One", "author": "Peter Thiel", "year": "2014"},
+  "confidence": "high",
+  "confidence_note": "Figures (37 cents on a $178 average fare in 2012; Google's 21% margin on about $50 billion; 68% vs 3.4%) come from multiple summaries of the book. The old text's Apple 'new category' example and its quoted lines are not in the book and were dropped. The airline margin implied by 37 cents is the book's figure for 2012 only; other years differ.",
+  "facts": [
+    "In 2012, when the average US airfare was $178, the airlines made only 37 cents per passenger trip.",
+    "That same year Google brought in about $50 billion and kept 21% of it as profit, more than 100 times the airline industry's margin.",
+    "Google was worth about three times all US airlines combined.",
+    "Thiel's reading: the airlines compete with each other, Google stands alone. Competition pushes profits toward zero; a monopoly keeps what it creates.",
+    "Monopolists hide it: Google, with about 68% of search in May 2014, calls itself an advertising company, where its share would look like 3.4%.",
+    "Non-monopolists do the reverse and shrink their market to look unique, like a restaurant that calls itself the only British restaurant in Palo Alto.",
+    "Thiel argues rivals become alike and fight because of their sameness, imitating each other instead of creating."
+  ],
+  "scene_details": ["a $178 ticket and 37 cents left over", "68% of search vs 3.4% of advertising", "the only British restaurant in Palo Alto"],
+  "tension": "An industry that carries huge numbers of passengers keeps almost nothing, while one search company keeps a fifth of every dollar.",
+  "opening_idea": "Open on the 37 cents left from a $178 ticket.",
+  "lessons": [{"idea": "Before competing harder, ask whether you are in a crowded fight where everyone looks the same, and look for the part of your work that has no close substitute.", "anchor": "Airlines vs Google margins; rivals fight because they are alike.", "everyday_example_idea": "A freelance designer who keeps cutting prices against identical offers versus one who offers something nobody nearby does."}],
+  "reflect": [],
+  "reflect_final": "In your work, where are you competing on the same terms as everyone else, and what could you offer that has no close copy?",
+  "use_cases": [
+    {"situation": "A team plans to win by undercutting a rival's price.", "move": "Point to the 37 cents airlines kept from a $178 fare and ask what the team could offer that rivals cannot copy.", "context": "meeting"},
+    {"situation": "A friend opening a shop describes their market as tiny and unique.", "move": "Ask kindly whether the market is truly theirs or just narrowly defined, like the only British restaurant in Palo Alto.", "context": "social"},
+    {"situation": "You keep comparing yourself with one colleague.", "move": "List what you do that they do not, and spend next week's extra effort there.", "context": "self"}
+  ],
+  "pocket_idea": "Airlines fought each other for 37 cents a ticket; look for the work nobody else is doing.",
+  "conversation_variants": {
+    "punchline_idea": "In 2012 US airlines kept 37 cents from a $178 ticket while Google kept 21% of its revenue.",
+    "thirty_sec_idea": "Thiel compares airlines (37 cents per trip on $178) and Google (21% margin); competition eats profit; monopolies hide behind big market definitions, small players behind tiny ones.",
+    "question_idea": "",
+    "key_contrast_idea": "crowded fight vs own ground"
+  }
+}

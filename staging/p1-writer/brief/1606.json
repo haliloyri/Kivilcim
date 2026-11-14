@@ -1,0 +1,33 @@
+{
+  "story_id": 1606,
+  "kind": "concept",
+  "book": {"title": "I Will Teach You to Be Rich", "author": "Ramit Sethi", "year": "2009"},
+  "confidence": "medium",
+  "confidence_note": "Mechanics (accounts, 5th/7th schedule, 5-10 percent savings, about 10 percent Roth IRA, $500 buffer, opt-out study) come from Sethi's own website page on automation and summaries; not checked against the 2009 text, and the study figures are his citation of a 401(k) result. The old text's interviews of hundreds of people and its 'even the least disciplined get rich' promise were dropped. The 4-bucket list and percentage ranges are from reviews.",
+  "facts": [
+    "Sethi: 'It's not about willpower'; automation reduces the daily decisions that lead people to do nothing.",
+    "He cites a 401(k) study: making enrollment opt-out instead of opt-in raised contribution rates from under 40 percent to nearly 100 percent (a retirement-enrollment result).",
+    "Step 1: link accounts (401(k) to checking via direct deposit; checking to Roth IRA, savings, credit card). Step 2: ask companies to move bill dates to payday.",
+    "Example with payday on the 1st: 401(k) portion withheld, take-home to checking with a $500 buffer at first; on the 5th transfers to savings (typically 5-10 percent of income per his plan) and Roth IRA (roughly 10 percent of take-home); on the 7th autopay for recurring bills.",
+    "He prefers paying bills by credit card, then paying the card in full from checking, with an email notification to review the statement first; if you cannot afford the savings figure, start with $5.",
+    "Conscious spending plan buckets: fixed costs, savings, investments, guilt-free spending; what remains is yours to spend."
+  ],
+  "scene_details": ["paycheck lands on the 1st", "transfers on the 5th", "autopay on the 7th", "$500 buffer in checking", "email notice before the card statement is paid"],
+  "tension": "People who mean to save still do nothing; he removes the monthly decision instead of asking for discipline.",
+  "opening_idea": "Open on the paycheck arriving on the 1st and everything settled by the 7th with no decision made.",
+  "lessons": [{"idea": "Put a recurring decision into a one-time setup.", "anchor": "The 5th and 7th transfers set once.", "example": "A shop owner sets supplier payment on a fixed date instead of paying by hand."}],
+  "reflect": [],
+  "reflect_final": "Which recurring decision in your week or month do you keep remaking by hand, and what would one single setup that runs without you look like?",
+  "use_cases": [
+    {"situation": "A month ended with nothing set aside.", "move": "Set one transfer for the day after payday, as in Sethi's 5th-of-the-month transfer, and see what's left.", "context": "self"},
+    {"situation": "A couple argues about saving every month.", "move": "Agree on the amount once and let the transfer run.", "context": "family"},
+    {"situation": "A friend says they will start saving next month.", "move": "Mention the opt-out study and propose a $5 transfer now.", "context": "oneonone"}
+  ],
+  "pocket_idea": "Set the transfer for the day after payday; decide once and the month stops asking.",
+  "conversation_variants": {
+    "punchline_idea": "Money moved by the 7th with no decision made.",
+    "thirty_sec_idea": "Not willpower; paycheck on the 1st, automatic transfers on the 5th, autopay on the 7th; opt-out study.",
+    "question_idea": "",
+    "key_contrast_idea": "decide once, not monthly"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "story_id": 1585,
+ "verdict": "keep",
+ "verify_note": "Keep, rebuilt: Salk 2015 app study (over 150 San Diego adults, three weeks, 15+ hour eating days, under a quarter of calories before noon, over a third after 6 p.m., metabolic jetlag) verified in the Salk news release. Not checked against the book text itself; confidence medium. Nobel Prize, orchestra metaphor and shift-worker claims dropped as unverified.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Üç öğün, on beş saat",
+  "description": "Gönüllüler üç hafta boyunca yediği her şeyi saat damgalı fotoğrafladı. Çoğu günde 15 saat ya da daha uzun yiyordu.",
+  "hook": "Dün yediğiniz her şeyin saat damgalı fotoğrafı olsaydı, yeme gününüz ne zaman başlayıp biterdi?",
+  "one_minute_summary": "Satchin Panda'nın laboratuvarı, 150'den fazla San Diego'lu yetişkinden üç hafta boyunca yedikleri her şeyi saat damgalı fotoğraflamalarını istedi. Çoğu günde 15 saat ya da daha uzun yiyordu. Günlük kalorinin dörtte birinden azı öğleden önce, üçte birinden fazlası akşam 6'dan sonra alınıyordu. Yazarlar bu düzensizliğe metabolik jet lag adını verdi, ama bunun önerilen bir mekanizma olduğunu vurguladı. Çalışmada vardiyalı çalışan verisi yoktu ve yazarlar daha büyük çalışmalar gerektiğini söyledi."
+ },
+ "en": {
+  "title": "Fifteen Hours of Eating",
+  "description": "Volunteers photographed everything they ate for three weeks. Most ate across 15 hours or more a day.",
+  "hook": "If yesterday's meals had time stamps, when would your eating day have begun and ended?",
+  "one_minute_summary": "Panda's lab asked over 150 San Diego adults to photograph everything they ate and drank for three weeks. Most ate across 15 hours or longer. Less than a quarter of daily calories came before noon and over a third after 6 p.m. The authors called irregular meal timing metabolic jetlag and noted it is a proposed mechanism, with no shift workers in the data."
+ },
+ "es": {
+  "title": "Quince horas de comida",
+  "description": "Los voluntarios fotografiaron todo lo que comieron durante tres semanas. La mayoría comía a lo largo de 15 horas o más al día.",
+  "hook": "Si las comidas de ayer tuvieran marca de hora, ¿cuándo habría empezado y terminado tu día de comidas?",
+  "one_minute_summary": "El laboratorio de Panda pidió a más de 150 adultos de San Diego que fotografiaran todo lo que comían y bebían durante tres semanas. La mayoría comía a lo largo de 15 horas o más. Menos de una cuarta parte de las calorías llegaba antes del mediodía y más de un tercio después de las seis. Los autores llamaron jet lag metabólico a esa irregularidad y aclararon que es un mecanismo propuesto, sin trabajadores por turnos en los datos."
+ },
+ "de": {
+  "title": "Fünfzehn Stunden essen",
+  "description": "Freiwillige fotografierten drei Wochen lang alles, was sie aßen. Die meisten aßen über 15 Stunden am Tag verteilt.",
+  "hook": "Wenn gestern jede Mahlzeit einen Zeitstempel hätte, wann hätte dein Essenstag begonnen und geendet?",
+  "one_minute_summary": "Pandas Labor bat über 150 Erwachsene in San Diego, drei Wochen lang alles zu fotografieren, was sie aßen und tranken. Die meisten aßen über 15 Stunden oder länger. Weniger als ein Viertel der Tageskalorien kam vor Mittag, mehr als ein Drittel nach 18 Uhr. Die Autoren nannten das metabolischen Jetlag und betonten, dass es ein vorgeschlagener Mechanismus ist, ohne Schichtarbeiter in den Daten."
+ }
+}

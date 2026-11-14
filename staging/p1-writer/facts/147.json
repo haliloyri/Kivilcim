@@ -1,0 +1,214 @@
+{
+  "book_no": 147,
+  "title": "Bounce",
+  "authors": [
+    "Matthew Syed"
+  ],
+  "year": "2010",
+  "sources": [
+    "https://www.spiked-online.com/2010/08/27/could-anybody-bend-it-like-beckham/",
+    "https://lifeclub.org/books/bounce-matthew-syed-review-summary",
+    "https://fivelessonsfrom.blogspot.com/2014/08/bounce-by-matthew-syed.html",
+    "https://www.yorkshirepost.co.uk/sport/nick-westby-only-hours-of-practice-can-make-you-a-natural-born-sportsman-1864349",
+    "https://www.aibrary.ai/podcasts/bounce-mozart-federer-picasso-beckham-and-the-science-of-success/summary-bounce-mozart-federer-picasso-beckham-and-the-science-of-success",
+    "https://pubmed.ncbi.nlm.nih.gov/24986855/"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Full title: Bounce: Mozart, Federer, Picasso, Beckham and the Science of Success (Matthew Syed, 2010). Its central point is the primacy of practice over innate talent.",
+      "source": "spiked review; summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Syed engages Gladwell's 10,000-hour idea and Anders Ericsson's research: excellence generally takes around ten years or 10,000 hours of purposeful practice, often with coaching.",
+      "source": "spiked; summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "In the study of violin students the top performers averaged about 10,000 hours of serious practice, the least skilled about 4,000; practice time was the only factor directly linked to achievement. (Another source gives the middle group 8,000 and lowest 6,000; figures vary.)",
+      "source": "lifeclub; blog",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Purposeful practice means pushing past your comfort zone; people tend to stop practising purposefully once they reach a comfortable level, top performers keep going beyond their current skills.",
+      "source": "lifeclub; fivelessonsfrom",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Ericsson calls the visible moment of brilliance 'the iceberg illusion': years of unseen practice lie beneath it.",
+      "source": "spiked review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Syed grew up on an unremarkable road in south-east England with no sporting background; he became England's top table tennis player and a two-time Olympian.",
+      "source": "spiked review",
+      "confidence": "high"
+    },
+    {
+      "id": "f7",
+      "claim": "For a period in the 1980s his street and the surrounding area produced more outstanding table tennis players than the rest of the nation combined.",
+      "source": "spiked review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "A teacher at his local school, who was England's top table tennis coach (named Peter Charters in summaries), recruited Syed, his older brother and other promising children to a local club (Omega) with 24-hour access.",
+      "source": "spiked; summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "The brothers practised against each other for hours a day, starting on a tournament-sized table in their parents' large garage.",
+      "source": "spiked review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Syed concedes that if more young people had shared his opportunities he might not have been number one in England, possibly 'number one thousand and one'.",
+      "source": "spiked review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "At the 2000 Sydney Olympics Syed was 'humiliated', playing far below his best at his most important tournament.",
+      "source": "spiked review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Syed explains choking with two brain systems, explicit and implicit. Under pressure control of a familiar task shifts to the explicit system, which 'cannot do many things at once', and the expert struggles with what they had mastered. Example: carrying a full glass of wine across an expensive carpet makes you slow down and watch each step.",
+      "source": "spiked; lifeclub",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Andre Agassi's father reasoned that a child who hit 2,500 balls a day would be unbeatable (Syed's example of volume).",
+      "source": "spiked review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Syed accepts that the rules do not apply directly to less complex sports such as running.",
+      "source": "spiked review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "Later research tempers the practice thesis: a 2014 meta-analysis by Macnamara, Hambrick and Oswald found deliberate practice explained about 26% of performance differences in games, 21% in music, 18% in sports.",
+      "source": "Macnamara et al. 2014 (Psychological Science); also used in approved story 1426",
+      "confidence": "high"
+    },
+    {
+      "id": "f16",
+      "claim": "Syed attributes Roger Federer's ability to anticipate serves to learned, practised skill rather than faster reactions.",
+      "source": "spiked review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f17",
+      "claim": "One summary describes the Omega club as a small, one-table hut open around the clock for members only, where Syed trained with his brother; Peter Charters, a teacher at the local primary school and table tennis enthusiast, invited interested children there.",
+      "source": "aibrary summary; search snippets",
+      "confidence": "medium"
+    },
+    {
+      "id": "f18",
+      "claim": "Syed describes novices as consciously monitoring what they do while they build the neural framework for a task; under pressure the explicit system pulls a skilled player back toward beginner-style play and disrupts the smooth workings of the subconscious.",
+      "source": "interview excerpt and search summaries of Bounce",
+      "confidence": "medium"
+    },
+    {
+      "id": "f19",
+      "claim": "Reviewer Mick Hume notes that Syed concludes choking 'just happens' with nothing to be done, and argues this explanation risks sounding as biologically determinist as the talent myths Syed rejects.",
+      "source": "spiked review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f20",
+      "claim": "A summary says the book recounts severely injured soldiers injected with saline whose pain subsided while they believed it was morphine (a placebo example of mind affecting body).",
+      "source": "lifeclub; fivelessonsfrom (variant: surgery without anaesthetic)",
+      "confidence": "low"
+    },
+    {
+      "id": "f21",
+      "claim": "A summary says that before big competitions Syed puts things in perspective by thinking about relationships, health and family, which reduces the pressure.",
+      "source": "lifeclub summary",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Ericsson protested that Gladwell misread him: quality not hours (1537)",
+      "reason": "Not shown to be in Bounce."
+    },
+    {
+      "claim": "Groups 10,000 / 8,000 / 4,000 hours at age 20; a musician could reach the world stage in 3 years of purposeful practice vs 10 years of ordinary",
+      "reason": "Figures disagree between sources; the 3-year vs 10-year comparison is unsourced."
+    },
+    {
+      "claim": "Purposeful practice = exact limit, immediate feedback, systematic error analysis, fix next attempt",
+      "reason": "Only the push-past-comfort part is sourced."
+    },
+    {
+      "claim": "Club open 7 days 24 hours; neighbours reached national level; medals share from one postcode (1538)",
+      "reason": "24-hour access sourced, the rest not; postcode medals unsourced."
+    },
+    {
+      "claim": "Federer's mother was a tennis coach and he had free club access",
+      "reason": "Not found in sources; likely false."
+    },
+    {
+      "claim": "1995 darts player, two sports drinks, 18 percent score rise (1539)",
+      "reason": "No source."
+    },
+    {
+      "claim": "Best athletes train mind and body equally, mental control under pressure is a skill",
+      "reason": "Syed's Sydney conclusion in one review is that choking 'just happens'; claim not found."
+    }
+  ],
+  "stories": {
+    "1537": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f13",
+        "f14",
+        "f15",
+        "f16"
+      ],
+      "note": "Kept to the violin study and purposeful practice; figures hedged."
+    },
+    "1538": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f10",
+        "f17"
+      ],
+      "note": "Syed's own street; Federer and postcode dropped."
+    },
+    "1539": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f11",
+        "f12",
+        "f18",
+        "f19",
+        "f20",
+        "f21"
+      ],
+      "note": "Re-centred on choking via Syed's Sydney experience; darts experiment dropped. Thin, medium-low."
+    }
+  }
+}

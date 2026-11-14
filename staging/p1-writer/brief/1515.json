@@ -1,0 +1,36 @@
+{
+  "story_id": 1515,
+  "kind": "anecdote",
+  "book": {"title": "The Innovator's Dilemma", "author": "Clayton M. Christensen", "year": "1997"},
+  "confidence": "medium",
+  "confidence_note": "Seagate 3.5-inch episode and numbers come from reading notes and summaries of the book (not book text). The old text's 50 million vs 20 million budget scene and the invented quote were dropped. Lepore critique added as caveat. The 1980 5.25-inch and 98 percent 1.8-inch figures are from the same secondary notes.",
+  "facts": [
+    "Seagate's 5.25-inch drive (1980) was not wanted by minicomputer makers, so it sold to desktop PCs; by the 3.5-inch prototype its customers were desktop makers.",
+    "Rodime, a Scottish entrant, developed the 3.5-inch architecture in 1984; sales were not significant until Conner Peripherals began shipping in 1987.",
+    "Seagate built a working 3.5-inch prototype around 1985; its marketing and executive side argued the market wanted higher capacity at lower cost per megabyte.",
+    "Prototypes shown to existing customers drew lukewarm reviews; the program manager lowered his sales estimates; executives cancelled the program.",
+    "Christensen stresses leaders' failures were not due to passivity or risk aversion.",
+    "Conner Peripherals, a spin-off of Seagate and Miniscribe people, shipped 3.5-inch drives from 1987 to portable and laptop computers.",
+    "Seagate began making 3.5-inch drives in 1988 after considerable management effort; it sold to desktop makers rather than the emerging laptop market, cutting into its own sales.",
+    "By 1995 entrants controlled 98 percent of the $130 million 1.8-inch market.",
+    "Jill Lepore argues Christensen's cases do not fully support his thesis; disk drives are a main example."
+  ],
+  "scene_details": ["working 3.5-inch prototype shown to current customers", "program manager lowering his sales estimate", "executives cancelling the program", "Conner shipping to laptops in 1987"],
+  "tension": "Every step of a sensible process killed a drive that later cut into the firm's own sales.",
+  "opening_idea": "Open on the prototype shrugged at by Seagate's own customers and the manager cutting his estimate.",
+  "lessons": [{"idea": "A cool reception from today's customers describes them, not the idea's whole market.", "anchor": "Seagate's lukewarm customers; Conner's 1987 laptop sales.", "example": "A baker's regulars say no to a smaller cheaper loaf."}],
+  "reflect": [],
+  "reflect_final": "Is there an idea you dropped because the people you usually ask were unenthusiastic, and who have you not yet asked who might judge it differently?",
+  "use_cases": [
+    {"situation": "A proposal is shelved because current clients showed no interest.", "move": "Seagate's customers were lukewarm and the project died; propose showing it to one non-customer.", "context": "meeting"},
+    {"situation": "A colleague's idea stalls after first feedback.", "move": "Say the reaction may only describe the usual audience; show it to someone outside it.", "context": "oneonone"},
+    {"situation": "You are about to quit a side project because friends shrugged.", "move": "Show it to one person from another circle first.", "context": "self"}
+  ],
+  "pocket_idea": "Seagate's customers shrugged at its small drive and it was cancelled; ask outsiders before judging an idea.",
+  "conversation_variants": {
+    "punchline_idea": "Seagate's customers shrugged at the 3.5-inch drive, it was cancelled, and the same drive cut into Seagate's own sales.",
+    "thirty_sec_idea": "Prototype shown to customers, lukewarm, estimate lowered, project cancelled; Conner shipped to laptops in 1987; Seagate sold to desktops and cannibalised itself.",
+    "question_idea": "",
+    "key_contrast_idea": "current customers, new market"
+  }
+}

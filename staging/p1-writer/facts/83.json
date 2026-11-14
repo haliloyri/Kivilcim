@@ -1,0 +1,226 @@
+{
+ "book_no": 83,
+ "title": "The Paradox of Choice",
+ "authors": "Barry Schwartz",
+ "year": "2004",
+ "sources": [
+  "https://archive.org/details/the-paradox-of-choice-barry-schwartz",
+  "https://reason.com/?p=36172",
+  "https://www.enotes.com/topics/paradox-choice"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Prologue: 'about six years ago' Schwartz went to the Gap to buy jeans, size 32-28. He wears jeans until they fall apart, so it had been a while since his last purchase.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), Prologue",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "The young salesperson asked: slim fit, easy fit, relaxed fit, baggy or extra baggy; stonewashed, acid-washed or distressed; button-fly or zipper-fly; faded or regular.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), Prologue",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Stunned, he said he just wanted 'regular jeans', 'the kind that used to be the only kind'. She did not know what that meant and had to ask an older colleague.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), Prologue",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Now unsure regular was what he wanted, he asked about the differences, was shown a diagram of the cuts, took one pair of each type into the dressing room, tried them all in front of a mirror and asked again. Little was riding on it, but he was convinced one option had to be right. He chose easy fit because 'relaxed fit' implied he was getting soft in the middle.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), Prologue",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "The jeans turned out just fine, but buying a pair of pants 'should not be a daylong project'. Before, a buyer settled for an imperfect fit but it was a five-minute affair; now it took time, energy, self-doubt, anxiety and dread.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), Prologue",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Thesis: with no choice life is almost unbearable; more choice brings autonomy and liberation; as choices keep growing, negatives escalate until overload: 'choice no longer liberates, but debilitates. It might even be said to tyrannize.'",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), Prologue",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Chapter 4: before the trip he did not care about fit; once he learned there were several cuts, 'Suddenly, I cared.' He had been nudged toward being a 'denim maximizer'; his standards for jeans were altered forever.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4 'Does Choice Create Maximizers?'",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "Chapter 10: when jeans came in one variety he was satisfied with the fit; now he expects jeans to fit 'as though they were custom-made'. The proliferation of options leads to raised expectations.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 10",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "A maximizer can only be sure she has the best sweater by checking all sweaters and all prices. A satisficer has criteria and standards, searches until an item meets them, and stops, e.g. buys the sweater in the first store if it meets fit, quality and price.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f10",
+   "claim": "Satisficers are not settling for mediocrity: the satisficer 'is content with the merely excellent as opposed to the absolute best'.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "Herbert Simon, Nobel Prize-winning economist and psychologist, introduced 'satisficing' in the 1950s and argued that once the costs of gathering information are counted, satisficing is in fact the maximizing strategy.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Schwartz and colleagues built a 13-item survey (Maximization Scale), each item rated 1-7, total 13-91; 65 or higher is the maximizing end, 40 or lower the satisficing end. Given to several thousand people. Items include 'I never settle for second best' and drafting even a letter to a friend several times.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f13",
+   "claim": "Maximizers make more product comparisons before and after buying, take longer to decide, compare their purchases with others' more, feel more regret, think more about alternatives, feel less positive about purchases; they savor good events less, recover more slowly from bad ones and ruminate more.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "High scorers were less satisfied with life, less happy, less optimistic and more depressed; scores of 65+ fell in the borderline clinical depression range. Schwartz stresses this is correlation, not proven causation, though he believes maximizing plays a causal role.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Maximizers might do better objectively but tend to do worse subjectively (the sweater: a better sweater, but doubts about time spent, unexamined alternatives, friends' deals).",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "Maximizing is domain specific: nobody maximizes everything; most people have the capacity to satisfice and can apply it more often.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4",
+   "confidence": "high"
+  },
+  {
+   "id": "f17",
+   "claim": "A friend's two daughters: parents gave the older, style-conscious daughter a lump-sum clothing allowance and the clothes arguments stopped. They did the same with the younger. The older, a satisficer, bought what she liked, often on impulse, without worrying. The younger, a maximizer with clothing, felt anguish on each trip over whether this was the best use of her money and whether she would regret it two months later when seasons and styles changed. 'This was too much to ask of a twelve-year-old.' Her 'clothing liberation' gave 'much worry and little joy'.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 4 'Maximizing and the Choice Problem'",
+   "confidence": "high"
+  },
+  {
+   "id": "f18",
+   "claim": "On vacation in a tiny seaside town on the Oregon coast, Schwartz bought wine at a small grocery with about a dozen options. What he got was not very good, but he did not expect good, so he was satisfied. In a store with hundreds or thousands of options, the same bottle would have left him sorely disappointed.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 10",
+   "confidence": "high"
+  },
+  {
+   "id": "f19",
+   "claim": "American health is better than ever and people live longer, yet medical historian Roy Porter notes unparalleled anxiety about health; Americans expect to live even longer without loss of capacity.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 10",
+   "confidence": "high"
+  },
+  {
+   "id": "f20",
+   "claim": "US GDP more than doubled in thirty years while the share calling themselves 'very happy' fell about 5 percent, about 14 million people.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 11",
+   "confidence": "high"
+  },
+  {
+   "id": "f21",
+   "claim": "'By some estimates', depression in 2000 was about ten times as likely as in 1900.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 11",
+   "confidence": "high"
+  },
+  {
+   "id": "f22",
+   "claim": "Depression among the Amish of Lancaster County, Pennsylvania, is less than 20 percent of the national rate; Schwartz argues they have less control but not less compared to what they expect.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 11",
+   "confidence": "high"
+  },
+  {
+   "id": "f23",
+   "claim": "Strategy 9 'Control Expectations': our evaluation of an experience depends on how it compares with expectations; to lower them: reduce the options you consider, be a satisficer, allow for serendipity. Strategy 10 is 'Curtail Social Comparison'.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 11 'What We Can Do'",
+   "confidence": "high"
+  },
+  {
+   "id": "f24",
+   "claim": "With limitless choice we produce better results but feel worse; when results disappoint we ask why and often blame ourselves.",
+   "source": "https://archive.org/details/the-paradox-of-choice-barry-schwartz (full text, HarperCollins e-book), ch. 11",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "He tried for hours and left unhappy (old 1345 text).",
+   "reason": "Book: the jeans turned out just fine; the complaint is that it became a 'daylong project' with self-doubt. 'Left unhappy' overstates."
+  },
+  {
+   "claim": "Three problems of infinite choice: decision paralysis, decreasing satisfaction, rising expectations (as a list).",
+   "reason": "A summary framing, not the book's structure; ideas exist separately (ch. 1-2, 10)."
+  },
+  {
+   "claim": "Research shows maximizers' decisions are usually better.",
+   "reason": "Book only says they 'might do better objectively'; the job-seeker salary study (Iyengar, Wells, Schwartz) was published in 2006, after the book."
+  },
+  {
+   "claim": "Quote: 'Disappointment comes not from outcomes but from the expectation-outcome gap.'",
+   "reason": "Not verbatim in the book; idea is paraphrase of ch. 10/11. Not usable as a quote."
+  },
+  {
+   "claim": "Social media shows 'best moments'; comparing real life to curated lives.",
+   "reason": "Book is 2004; social media is not in it."
+  },
+  {
+   "claim": "'Do the important decisions as maximizer, trivial as satisficer' as Schwartz's strategy.",
+   "reason": "Close in spirit (domain-specific, choose when to choose) but not stated this way; not used."
+  }
+ ],
+ "stories": {
+  "1345": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7"
+   ],
+   "note": "Prologue jeans story, verified verbatim. Fixed: jeans turned out fine; issue is daylong project + self-doubt."
+  },
+  "1346": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f9",
+    "f10",
+    "f11",
+    "f12",
+    "f13",
+    "f14",
+    "f15",
+    "f16",
+    "f17"
+   ],
+   "note": "Recentered on the two daughters with a clothing allowance plus the Maximization Scale; correlation caveat kept."
+  },
+  "1347": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f8",
+    "f18",
+    "f19",
+    "f21",
+    "f22",
+    "f23",
+    "f24"
+   ],
+   "note": "Recentered on the Oregon wine and expectations; social media and invented quote dropped."
+  }
+ }
+}

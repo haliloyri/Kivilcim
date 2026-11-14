@@ -1,0 +1,35 @@
+{
+ "story_id": 1293,
+ "verdict": "keep",
+ "verify_note": "Keep. Earn/spend/tax order, tax history, sailing-ship corporations, file-folder line and 'Why not own the ladder?' verified in the book text (Lesson 4). Unsupported claims (wealth gap over decades, quoted moral) dropped. Editorial caveat added: critics call the corporate deductions oversimplified or illegal.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Önce vergi mi, önce gider mi",
+  "description": "Kiyosaki'nin zengin babasına göre çalışanla şirket arasındaki fark, kazancın hangi sırayla vergilendiğinde. Tavsiyenin tartışmalı yanı da notuyla birlikte.",
+  "hook": "Aynı parayı kazanan iki kişiden biri neden önce harcayıp sonra vergi öder?",
+  "one_minute_summary": "Kiyosaki'nin zengin babası Robin Hood'a hırsız diyordu. Ona göre vergiler önce savaşlar için geçiciydi, sonra 1874'te İngiltere'de, 1913'te Amerika'da kalıcı oldu ve zamanla orta sınıfa indi. Kitabın asıl karşılaştırması bir sıralama: çalışan kazanır, vergi öder, kalanla yaşar. Şirket kazanır, harcar, kalandan vergi öder. Babası merdiveni tırmanmayı öğütleyince zengin baba merdivenin sahibi olmayı sordu. Eleştirmenler ise tatil gibi kişisel giderleri şirkete yazmanın kanunu çiğneyebileceği konusunda uyarıyor."
+ },
+ "en": {
+  "title": "Tax first or spend first",
+  "description": "In Rich Dad Poor Dad, the gap between employee and company comes down to the order in which income meets tax. Includes the critics' warning.",
+  "hook": "Why does one earner spend first and pay tax later, while another does the reverse?",
+  "one_minute_summary": "Kiyosaki's rich dad called Robin Hood a crook and a corporation a file folder in a lawyer's office. Taxes, he said, began as wartime stopgaps, became permanent in England in 1874 and the US in 1913, and slid down to the middle class. The key contrast is order: employees earn, get taxed and live on the rest, while companies earn, spend and are taxed on what remains. Critics warn that some of his example deductions can break tax law."
+ },
+ "es": {
+  "title": "Primero impuestos o primero gastos",
+  "description": "En Rich Dad Poor Dad, la diferencia entre empleado y empresa está en el orden en que el ingreso se encuentra con el impuesto. Incluye la advertencia de los críticos.",
+  "hook": "¿Por qué alguien que gana lo mismo puede gastar primero y pagar impuestos después?",
+  "one_minute_summary": "El padre rico de Kiyosaki llamaba ladrón a Robin Hood y veía una sociedad como una carpeta en el despacho de un abogado. Según él, los impuestos nacieron para pagar guerras, se hicieron permanentes en 1874 en Inglaterra y en 1913 en Estados Unidos, y bajaron hasta la clase media. Su contraste central es de orden: el empleado gana, paga y vive con lo que queda, la empresa gana, gasta y paga sobre el resto. Los críticos avisan que algunas de sus deducciones pueden ser ilegales."
+ },
+ "de": {
+  "title": "Erst Steuer oder erst Ausgabe",
+  "description": "In Rich Dad Poor Dad liegt der Unterschied zwischen Angestellten und Firma in der Reihenfolge, in der Einkommen auf Steuer trifft. Mit dem Einwand der Kritiker.",
+  "hook": "Warum gibt jemand mit gleichem Einkommen zuerst aus und zahlt danach Steuern?",
+  "one_minute_summary": "Kiyosakis reicher Vater nannte Robin Hood einen Gauner und eine Firma einen Aktenordner im Büro eines Anwalts. Steuern, sagte er, begannen als Kriegsabgabe, wurden 1874 in England und 1913 in den USA dauerhaft und wanderten zur Mittelschicht hinunter. Der zentrale Gegensatz ist eine Reihenfolge: Angestellte verdienen, zahlen Steuern und leben vom Rest, Firmen verdienen, geben aus und versteuern, was übrig bleibt. Kritiker warnen, dass manche seiner Beispielabzüge gegen das Steuerrecht verstoßen können."
+ }
+}

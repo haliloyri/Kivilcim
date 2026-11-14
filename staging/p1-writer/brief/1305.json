@@ -1,0 +1,63 @@
+{
+  "story_id": 1305,
+  "kind": "concept",
+  "book": {
+    "title": "The Black Swan",
+    "author": "Nassim Nicholas Taleb",
+    "year": "2007"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against the book text (chapter 4 'One Thousand and One Days' and chapter 13). The old reference text built the story on 'antifragile', a concept from Taleb's later book Antifragile (2012), not The Black Swan; it is dropped. The story is rebuilt on the book's own turkey problem and barbell strategy. Percentages (85-90 / 10-15) are Taleb's illustration for money, not a rule for life.",
+  "facts": [
+    "In The Black Swan, Taleb borrows a problem from the philosopher Bertrand Russell (who used a chicken) and tells it with a turkey that is fed every day.",
+    "Every feeding firms up the turkey's belief that humans are looking after its interests.",
+    "On the afternoon of the Wednesday before Thanksgiving it is killed. Its feeling of safety was at its highest when the risk was at its highest.",
+    "The chart in the book is titled 'One thousand and one days of history': a thousand days of data say nothing about day 1,001.",
+    "Taleb's answer as a former trader is the barbell: instead of 'medium risk', put about 85 to 90 percent of money in extremely safe instruments such as Treasury bills and 10 to 15 percent in extremely speculative bets.",
+    "That way no Black Swan can push you below your floor, while the small speculative part stays open to big surprises.",
+    "He separates positive and negative Black Swan activities: in film, some publishing, scientific research and venture capital you lose small to win big; in banking, lending or catastrophe insurance surprises mostly hurt.",
+    "He quotes screenwriter William Goldman on film sales: 'Nobody knows anything.'",
+    "His summary: invest in preparedness, not in prediction."
+  ],
+  "scene_details": [
+    "a turkey fed every day for a thousand days",
+    "the Wednesday afternoon before Thanksgiving",
+    "Treasury bills on one end, speculative bets on the other",
+    "'Nobody knows anything'"
+  ],
+  "tension": "The longer things go well, the safer the turkey feels, right up to the day they do not.",
+  "opening_idea": "Start with the turkey and the daily feeding, without naming the day yet.",
+  "lessons": [
+    {
+      "idea": "Split your exposure: make the downside you cannot survive very safe, and take small, cheap bets where a surprise can only help.",
+      "anchor": "Turkey's confidence peaks before the end; the barbell of Treasury bills and small speculative bets.",
+      "everyday_example_idea": "A graphic designer keeps a steady part-time job that covers rent and spends two evenings a week on her own illustration books, where one surprise hit could matter and a flop costs little."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where in your life does a long calm stretch make you feel safest, and what would day one thousand and one look like there?",
+  "use_cases": [
+    {
+      "situation": "Your team points to years of stable sales as proof nothing will change.",
+      "move": "Mention Taleb's turkey, whose confidence was highest just before Thanksgiving, and ask what would hurt most if the trend broke.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend is putting all their savings into one 'moderately risky' plan.",
+      "move": "Describe Taleb's barbell: keep most of it very safe and only a small part in bold bets.",
+      "context": "social"
+    },
+    {
+      "situation": "You depend on one client or one income source.",
+      "move": "Write down what you would do if it stopped next month, and take one step toward a safety floor.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "The turkey felt safest the day before Thanksgiving; build a floor that a surprise cannot break.",
+  "conversation_variants": {
+    "punchline_idea": "Taleb's turkey grows more confident with every meal for a thousand days, then meets the Wednesday before Thanksgiving.",
+    "thirty_sec_idea": "Turkey fed daily, confidence peaks, killed before Thanksgiving; Taleb's barbell: very safe floor plus small bold bets.",
+    "question_idea": "",
+    "key_contrast_idea": "Safe floor, bold edge"
+  }
+}

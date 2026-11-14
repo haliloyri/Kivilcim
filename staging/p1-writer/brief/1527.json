@@ -1,0 +1,61 @@
+{
+  "story_id": 1527,
+  "kind": "concept",
+  "book": {
+    "title": "Bird by Bird",
+    "author": "Anne Lamott",
+    "year": "1994"
+  },
+  "confidence": "medium",
+  "confidence_note": "The mice-in-a-mason-jar exercise with the volume control is confirmed on a quoting page (mbird.com) and a quote page; the chapter title and page could not be confirmed and no full text was available. 'KFKD' radio station is reported only by a summary and was left out. The old text's three radio stations (perfectionism, comparison, impostor) with scripted lines, 'the voices have real faces', and 'these voices make you not special' are not verified and were dropped. Concept story: the exercise is the book's own example. Added from mbird.com page summary: the 'half the battle' line, the voices she hears while drafting and the hypnotist (medium).",
+  "facts": [
+    "Lamott says that, left to its own devices, her mind spends much of its time having conversations with people who are not there; quieting the critical voices is 'at least half the battle I fight daily'.",
+    "Voices she hears while drafting include an unimpressed imagined reader, a menacing critic and her disapproving parents.",
+    "A hypnotist taught her a visualization: get quiet, isolate a critical voice, imagine its speaker as a mouse, pick it up by the tail and drop it into a mason jar.",
+    "The same goes for high-maintenance parents, contractors, lawyers, colleagues, children and anyone whining in her head.",
+    "She puts the lid on and watches the mouse people clawing at the glass.",
+    "She imagines a volume control on the jar, turns it all the way up for a minute and listens to the stream of angry, neglected, guilt-mongering voices.",
+    "Then she turns it all the way down and watches the frantic mice lunge at the glass, trying to get to her.",
+    "Leave it down, and get back to your shitty first draft."
+  ],
+  "scene_details": [
+    "mouse picked up by the tail",
+    "mason jar with the lid on",
+    "mouse people clawing at the glass",
+    "volume control on the jar"
+  ],
+  "tension": "The voices do not go away and do not stop clawing, yet the writer has to get back to the draft.",
+  "opening_idea": "Open with the oddity: the voices fit in a jar and the jar has a volume knob, without naming the author.",
+  "lessons": [
+    {
+      "idea": "Give a nagging inner voice a form and a volume setting, then go back to the work with the volume down.",
+      "anchor": "the mouse in the mason jar with a volume control"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which voice in your head interrupts you most when you start something, and what would it look like as a small figure behind glass?",
+  "use_cases": [
+    {
+      "situation": "A harsh voice starts as you open the document",
+      "move": "Say you hear it, picture it in the jar with the lid on, turn the volume down and get back to the draft.",
+      "context": "self"
+    },
+    {
+      "situation": "A friend keeps replaying a critical comment from a boss",
+      "move": "Suggest putting the speaker in a jar as a mouse: turn it up once to listen, then down, and say the next step.",
+      "context": "oneonone"
+    },
+    {
+      "situation": "A sister is stopped by voices when she wants to paint",
+      "move": "Offer the jar image: one mouse per voice, volume all the way up once, then all the way down.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Put the loudest critic in a jar, turn the volume down and go back to the draft.",
+  "conversation_variants": {
+    "punchline_idea": "The voices in your head fit in a mason jar, and the jar has a volume knob.",
+    "thirty_sec_idea": "Close your eyes, turn each voice into a mouse, drop it in a jar, volume up once, volume down, back to the draft.",
+    "question_idea": "",
+    "key_contrast_idea": "voice up, voice down"
+  }
+}

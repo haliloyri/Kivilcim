@@ -1,0 +1,61 @@
+{
+  "story_id": 1311,
+  "kind": "concept",
+  "book": {
+    "title": "Thinking in Systems",
+    "author": "Donella H. Meadows",
+    "year": "2008"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against the book text (chapter 2, car dealership inventory). The car dealer is a model Meadows builds and simulates, not a real person; say so. The shower appears in the book as a long pipe between mixer and showerhead. The old reference examples (central bank 12-18 months, a company dropping its strategy) are not in the book and are dropped.",
+  "facts": [
+    "In Thinking in Systems, Meadows builds a model of a car dealership that wants enough cars on the lot to cover ten days of sales.",
+    "She adds three delays: a perception delay (the dealer averages sales over five days before acting), a response delay (she makes up a third of any shortfall with each order), and a delivery delay (five days from the factory).",
+    "Then sales rise by 10 percent and stay there. Inventory drops, the dealer waits to be sure, orders more, inventory drops further while orders are on the way, then the cars arrive and inventory overshoots; she cuts back, orders too little, and inventory swings again.",
+    "Meadows: this is not because the dealer is stupid; she lacks timely information and her orders cannot act at once.",
+    "The dealer decides to react faster. Shortening the perception delay to two days makes the swings a bit worse; shortening the response to two days makes them very much worse.",
+    "Lengthening the response delay from three days to six greatly damps the swings.",
+    "Meadows calls it 'high leverage, wrong direction': fixers pull a strong lever the wrong way.",
+    "She adds a shower with a very long pipe between the mixer and the showerhead as a way to feel these hot and cold swings directly."
+  ],
+  "scene_details": [
+    "cars on a lot meant to cover ten days of sales",
+    "five days from factory to lot",
+    "a shower with a very long pipe"
+  ],
+  "tension": "A dealer tries to fix the swings by reacting faster, and the swings grow.",
+  "opening_idea": "Start with the 10 percent jump in sales and the lot of cars emptying.",
+  "lessons": [
+    {
+      "idea": "When your action takes time to show its effect, wait for the result before adding more correction.",
+      "anchor": "Faster reaction made the swings worse; doubling the response delay calmed them; the long shower pipe.",
+      "everyday_example_idea": "Someone adjusting the heating in a new flat turns the dial once, then waits an hour before touching it again, instead of nudging it every ten minutes."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Where are you currently correcting something again before the last correction has had time to show its effect?",
+  "use_cases": [
+    {
+      "situation": "A manager wants to change a new process after one bad week.",
+      "move": "Mention Meadows's car dealer, whose swings got worse when she reacted faster, and ask to wait for one more cycle of data.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A friend keeps changing their diet every few days because the scale hasn't moved.",
+      "move": "Suggest picking one change and giving it a few weeks before judging it.",
+      "context": "social"
+    },
+    {
+      "situation": "You want to adjust something you changed yesterday.",
+      "move": "Write down when its effect should show, and do nothing until then.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Meadows's car dealer calmed her swings by reacting slower: wait for the long pipe.",
+  "conversation_variants": {
+    "punchline_idea": "In Meadows's model the car dealer made her inventory swings worse by reacting faster and calmed them by waiting longer.",
+    "thirty_sec_idea": "Ten days of cars, three delays, 10 percent rise, overshoot; faster made it worse, slower fixed it; shower pipe.",
+    "question_idea": "",
+    "key_contrast_idea": "React faster, swing harder"
+  }
+}

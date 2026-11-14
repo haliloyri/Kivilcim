@@ -1,0 +1,60 @@
+{
+ "story_id": 1455,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Book of Joy",
+  "author": "Dalai Lama, Desmond Tutu and Douglas Abrams",
+  "year": "2016"
+ },
+ "confidence": "medium",
+ "confidence_note": "Quotes and exile passage verified in the CBS News excerpt. Tutu's remark about being sulky is only in a secondary summary and left out of the story. Old text's invented Tutu-asks scene, apartheid dancing and quotes dropped.",
+ "facts": [
+  "The Dalai Lama: when he looks only at the difficulties in his own country he worries.",
+  "When he widens his view to include others' suffering, including Hui Muslims in China, his own suffering lessens.",
+  "Abrams: this is a shift from anguish toward compassion, not a denial of pain.",
+  "'If I remained in the Potala in Lhasa, I would have stayed in what has often been described as a golden cage.'",
+  "'So, personally, I prefer the last five decades of refugee life.'",
+  "'Wherever you have friends that's your country, and wherever you receive love, that's your home.'",
+  "Abrams links this to the saying 'Pain is inevitable; suffering is optional' and to the Buddhist Sallatha Sutta.",
+  "Abrams notes the Dalai Lama sees his situation as connected to other people's, not set against theirs."
+ ],
+ "scene_details": [
+  "the Dalai Lama cupping his hands in a small circle and widening them",
+  "the golden cage of the Potala"
+ ],
+ "tension": "A man who lost his country says he prefers the life of a refugee.",
+ "opening_idea": "Open on the Dalai Lama's hands, cupped into a small circle and then opened wide.",
+ "lessons": [
+  {
+   "idea": "Widen the frame around your own trouble.",
+   "anchor": "His view of Tibetans and of others' suffering.",
+   "example": "After a rejection, look at how many others have faced the same."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "What is one difficulty of yours that looks different if you widen the circle to include others who face something similar?",
+ "use_cases": [
+  {
+   "situation": "A friend is consumed by their own bad news.",
+   "move": "Ask who else they know who is in a similar spot and what that person needs.",
+   "context": "social"
+  },
+  {
+   "situation": "You are stuck on a problem at work.",
+   "move": "List what you have gained from the situation, as the Dalai Lama does with refugee life.",
+   "context": "self"
+  },
+  {
+   "situation": "A teammate is bitter after a move.",
+   "move": "Ask what the new place makes possible.",
+   "context": "oneonone"
+  }
+ ],
+ "pocket_idea": "The Dalai Lama calls the Potala a golden cage; widen your view and a loss can show what it opened.",
+ "conversation_variants": {
+  "punchline_idea": "The Dalai Lama says he prefers five decades as a refugee to the Potala.",
+  "thirty_sec_idea": "Asked about exile, the Dalai Lama widened his hands to show his view: he worries when he looks only at Tibet, but others suffer too. He called the Potala a golden cage.",
+  "question_idea": "",
+  "key_contrast_idea": "small circle vs wide circle"
+ }
+}

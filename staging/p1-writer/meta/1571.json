@@ -1,0 +1,35 @@
+{
+ "story_id": 1571,
+ "verdict": "keep",
+ "verify_note": "Keep: Pixar quotes in the old text not verified and dropped. Rebuilt on Dave Cooper's after-action review (no rank, agenda or minutes; 'I screwed that up'), the vulnerability loop and Pixar's plussing, from a book-notes page and summaries; original text not readable, medium confidence. Cooper is called a military team leader because sources vary on his unit.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Ben bunu berbat ettim",
+  "description": "Dave Cooper'ın görev sonrası toplantısında rütbe, gündem ve tutanak yok. Coyle'a göre güven, liderin hatayı ilk kabul etmesiyle başlıyor.",
+  "hook": "Bu ay hangi hatanızı ekibinize tek cümleyle söyleyebilirsiniz?",
+  "one_minute_summary": "Daniel Coyle, askerî ekip lideri Dave Cooper'ı anlatıyor. Birimleri her görevden sonra erlerin yönettiği, rütbesiz, gündemsiz ve tutanaksız bir değerlendirme yapıyor; her karar neden diye sorularak yeniden oynatılıyor. Cooper'a göre liderin en önemli sözleri Ben bunu berbat ettim. Coyle sonrasını kırılganlık döngüsü diye adlandırıyor. Pixar'da ekipler taslağa not yerine çözüm ekliyor. Ders: Kendi hatanızı önce siz söyleyin. Böylece hata bulmak suçlu aramaktan ayrılıyor."
+ },
+ "en": {
+  "title": "I Screwed That Up",
+  "description": "Dave Cooper's after-action review has no rank, agenda or minutes. Coyle says trust starts when the leader admits an error first.",
+  "hook": "Which of your mistakes from this month could you say to your team in one sentence?",
+  "one_minute_summary": "Daniel Coyle describes military team leader Dave Cooper, whose units hold a review after each mission led by enlisted men, with no rank, agenda or minutes, replaying every decision with why. Cooper says a leader's most important words are I screwed that up. Coyle calls what follows a vulnerability loop. At Pixar, teams plus a draft by adding a solution instead of notes. The lesson: say your own mistake first."
+ },
+ "es": {
+  "title": "Lo hice mal",
+  "description": "La revisión de Dave Cooper no tiene rango, orden del día ni acta. Según Coyle, la confianza empieza cuando el líder admite un error primero.",
+  "hook": "¿Qué error tuyo de este mes podrías decirle a tu equipo en una frase?",
+  "one_minute_summary": "Daniel Coyle describe a Dave Cooper, jefe de equipo militar, cuyas unidades hacen tras cada misión una revisión dirigida por soldados rasos, sin rango, orden del día ni acta, repasando cada decisión con el porqué. Cooper dice que lo más importante que puede decir un líder es lo hice mal. Coyle llama a lo que sigue círculo de vulnerabilidad. En Pixar, los equipos suman una solución al borrador en lugar de notas. La lección: di primero tu propio error."
+ },
+ "de": {
+  "title": "Das habe ich verbockt",
+  "description": "Dave Coopers Nachbesprechung kennt keinen Rang, keine Tagesordnung, kein Protokoll. Nach Coyle beginnt Vertrauen, wenn der Anführer als Erster einen Fehler zugibt.",
+  "hook": "Welchen deiner Fehler aus diesem Monat könntest du deinem Team in einem Satz sagen?",
+  "one_minute_summary": "Daniel Coyle beschreibt den militärischen Teamführer Dave Cooper, dessen Einheiten nach jedem Einsatz eine von Mannschaftsdienstgraden geleitete Nachbesprechung halten, ohne Rang, Tagesordnung oder Protokoll, und jede Entscheidung mit dem Warum durchspielen. Cooper sagt, die wichtigsten Worte eines Anführers seien Das habe ich verbockt. Coyle nennt das Folgende eine Verletzlichkeitsschleife. Bei Pixar ergänzen Teams Entwürfe um eine Lösung statt um Notizen. Die Lehre: Nenne deinen eigenen Fehler zuerst."
+ }
+}

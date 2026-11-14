@@ -1,0 +1,61 @@
+{
+ "story_id": 1354,
+ "kind": "anecdote",
+ "book": {
+  "title": "The Monk Who Sold His Ferrari",
+  "author": "Robin S. Sharma",
+  "year": "1997"
+ },
+ "confidence": "high",
+ "confidence_note": "The book is a fable; Julian Mantle and John are fictional. Details verified in the full text (ch. 1-5). The old text's 'monastery' is wrong: he lived with the Sages of Sivana in a mountain village; 'years' is about three years by John's account. Julian's earlier 'great tragedy' is hinted at in ch. 1 but not used.",
+ "facts": [
+  "Robin Sharma's book is a fable told by John, a lawyer, about his mentor Julian Mantle, one of the country's most distinguished trial lawyers.",
+  "Julian worked eighteen-hour days and owned a mansion, a private jet, a summer home on a tropical island and his prized possession, a shiny red Ferrari parked in the center of his driveway.",
+  "He could not sleep more than a couple of hours without waking guilty about a file; his marriage failed and he stopped speaking to his father; at fifty-three he looked as if he were in his late seventies.",
+  "On a Monday morning in courtroom number seven, arguing the Air Atlantic case, he collapsed with a massive heart attack in front of a packed room; the bailiff started CPR.",
+  "His doctor's ultimatum was the Law or his life. He quit, sold the mansion, the plane, the island and even the Ferrari, and went to India.",
+  "A temple caretaker told him of the Great Sages of Sivana somewhere high in the Himalayas; nobody knew where. Julian climbed alone, without a Sherpa guide, and found them.",
+  "Within three weeks in Sivana he began noticing beauty in ordinary things like a spider's web after rain.",
+  "About three years later, a man who looked to be in his mid-thirties knocked on John's office door and refused to leave until John saw him. It was Julian, his face lineless, his cough gone."
+ ],
+ "scene_details": [
+  "three-thousand-dollar Italian suits",
+  "the red Ferrari parked in the center of the driveway",
+  "courtroom number seven on a Monday morning",
+  "a spider's web after rain"
+ ],
+ "tension": "The man with everything collapses in the courtroom where he once won his biggest case, and comes back years later unrecognizable.",
+ "opening_idea": "Open on the collapse in a packed courtroom, the bailiff doing CPR.",
+ "lessons": [
+  {
+   "idea": "Treat early warning signs in your own life as information, before an outside event forces the decision.",
+   "anchor": "Sleepless nights, failed marriage, looking 70s at 53, then the heart attack and the ultimatum."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which signal from your body or your relationships have you been explaining away because work seemed more urgent?",
+ "use_cases": [
+  {
+   "situation": "Friend boasts about 80-hour weeks",
+   "move": "In Sharma's fable, Julian had the Ferrari and the jet and still collapsed in court. Ask what their body has been telling them lately.",
+   "context": "social"
+  },
+  {
+   "situation": "Your manager praises you for always being reachable",
+   "move": "Say you want to agree on hours when you're not reachable, so the work stays good.",
+   "context": "oneonone"
+  },
+  {
+   "situation": "You notice you wake at night thinking about files",
+   "move": "Write down that sign and one thing you'll drop this week; see how the next nights go.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Julian sold the Ferrari only after the courtroom collapse; read your warning signs while you can still choose.",
+ "conversation_variants": {
+  "punchline_idea": "The lawyer who had the red Ferrari had to sell it to find out why he had collapsed.",
+  "thirty_sec_idea": "Julian Mantle, star trial lawyer with a Ferrari and a jet, collapses with a heart attack in court. Doctor: law or life. He sells everything, goes to India, finds the Sages of Sivana, and three years later shows up at John's office looking decades younger.",
+  "question_idea": "",
+  "key_contrast_idea": "courtroom to mountain"
+ }
+}

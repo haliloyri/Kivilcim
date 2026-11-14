@@ -1,0 +1,64 @@
+{
+  "story_id": 1605,
+  "kind": "concept",
+  "book": {
+    "title": "The Wim Hof Method",
+    "author": "Wim Hof",
+    "year": "2020"
+  },
+  "confidence": "medium",
+  "confidence_note": "Breathing steps come from a book summary (readingraphics); Radboud trial design and outcomes from PubMed 24799686. Whether the book cites that trial and its figures is unverified. Old claims (hold times of 1 to 3 minutes, early users crying and laughing, biology reprogrammed in minutes) dropped. Safety caveat (blackout, drownings) from Wikipedia is mandatory in the story.",
+  "facts": [
+    "The basic breathing exercise in the book takes about 20 minutes, ideally before breakfast on an empty stomach, sitting or lying down.",
+    "You take 30 to 40 deep breaths into belly, chest and head, and exhale without force.",
+    "Tingling or lightheadedness is described as normal as carbon dioxide falls.",
+    "After the last exhale you hold your breath as long as is comfortable; at the urge to breathe you inhale fully, hold for 10 to 15 seconds and exhale. You repeat for three or four rounds.",
+    "Holds tend to get longer; a baseline hold before and after a round shows the change.",
+    "In a 2014 trial at Radboud University, 24 healthy volunteers were split 12 and 12: one group was trained in meditation, breathing and cold exposure, the other was not. All received a dose of E. coli endotoxin.",
+    "The trained group reported fewer flu-like symptoms and had higher anti-inflammatory and lower inflammatory markers; it is a single small trial.",
+    "This kind of breathing can cause hyperventilation and brief unconsciousness, which in water can be fatal; practitioners have drowned.",
+    "In the book, the breathing is done sitting or lying down and never near water or standing in the shower, because it can cause fainting; breath holds are not to be forced.",
+    "Hof told media that research showed his body could neutralize bacteria faster, which the study did not conclude; a 2024 meta-analysis of eight studies (15 to 48 people each) rated study quality very low."
+  ],
+  "scene_details": [
+    "30 to 40 deep breaths",
+    "hold after the last exhale",
+    "inhale, hold 10 to 15 seconds",
+    "12 trained and 12 untrained volunteers"
+  ],
+  "tension": "A breathing drill that makes your fingers tingle is also the subject of one of the few controlled trials on the method.",
+  "opening_idea": "Open on the tingling and lightheadedness the book calls normal, then the first round.",
+  "lessons": [
+    {
+      "idea": "A claim about the body is worth more when you can say how many people tested it, and how small the test was.",
+      "anchor": "The Radboud trial: 24 volunteers, 12 and 12, one study.",
+      "example": "A friend swears by a supplement; ask what happened to people who did not take it before you copy her."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which health habit you follow rests on a promise you have never checked, and where could you look for the evidence?",
+  "use_cases": [
+    {
+      "situation": "A friend praises the method in a group chat.",
+      "move": "The Radboud trial had 12 trained and 12 untrained people; ask how many were studied and note that one small trial is not proof.",
+      "context": "social"
+    },
+    {
+      "situation": "You want to try the breathing.",
+      "move": "Read the book's steps first, do it sitting or lying down and never in water or while driving.",
+      "context": "self"
+    },
+    {
+      "situation": "A family member has a heart condition.",
+      "move": "Tell them to speak to their doctor before cold or breath work.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Before copying a health method, ask how many people were tested and whether they were compared with a control group.",
+  "conversation_variants": {
+    "punchline_idea": "The best-known study of the Wim Hof breathing method compared just 12 trained people with 12 untrained.",
+    "thirty_sec_idea": "Wim Hof's basic breathing exercise is 30 to 40 deep breaths, a breath hold after the last exhale, then one deep inhale held for 10 to 15 seconds, repeated three or four times. At Radboud University, 12 trained volunteers and 12 untrained ones got an endotoxin; the trained reported fewer flu-like symptoms. It was small, and doing the breathing in water can be deadly.",
+    "question_idea": "What would convince you a method works?",
+    "key_contrast_idea": "12 against 12"
+  }
+}

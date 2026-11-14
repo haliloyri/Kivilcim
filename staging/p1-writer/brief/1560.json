@@ -1,0 +1,36 @@
+{
+  "story_id": 1560,
+  "kind": "anecdote",
+  "book": {"title": "Radical Acceptance", "author": "Tara Brach", "year": "2003"},
+  "confidence": "high",
+  "confidence_note": "Checked against the full text (chapter 5). RAIN (with 'Nurture') and the angry client in the old text are not in this book and were dropped. Rebuilt on Brach's own scene with her son Narayan, which carries the same insight: anger gives way to fear and then grief once felt in the body.",
+  "facts": [
+    "Halfway through son Narayan's eighth-grade year, he and Brach were in a painful, angry standoff: grades sliding, daily fights over computer play, homework, phone time, bedtime. The more she monitored, reminded and scolded, the more he turned a deaf ear; his room was becoming a late-night video arcade.",
+    "Her anger seeped into daily life: she sat in the car stewing when he kept her waiting, pounced when he forgot to feed the dog or change the cat litter, and when he asked her to order a pizza answered vindictively 'Well, you didn't clean your room, so why should I?'",
+    "Lying awake one night she imagined looking back on his teen years and seeing that misunderstandings and anger had devoured their time together. It jarred her. She regularly used the art of pausing but had forgotten to; she resolved to pause before the next encounter.",
+    "Next evening, half an hour after the agreed homework time, she stood outside his closed door hearing the muffled sounds of Everquest, his favourite game. Anger mounted; she imagined heaving a giant boulder into the computer screen, a recurring fantasy. Instead she waited.",
+    "In the pause she noticed the anger as mounting pressure in chest and throat, tight shoulders and hands, clenched jaw, pounding heart, heat in her face. It would have been far easier to barge in.",
+    "The sensations shifted: the pressure gave way to a deep soreness 'as if a fist were gripping my heart'. 'I'm afraid of something,' she realised: that Narayan would fail, be unhappy, and that it was all her fault. When a blame story arose ('It's his fault I feel like this') she almost stormed in but turned her attention back to her body. A sinking feeling and heavy ache came, her eyes moistened, the stories of blame and failure receded and tenderness grew.",
+    "She knocked; he mumbled 'C'min'. He looked up with guilty eyes: 'I was just getting off, Mom. What time is it anyway?' (his watch on the dresser, not his wrist); 'Are you angry? I'm sorry . . . I just lost track.' She pulled a chair close: 'It's okay, hon, but we need to talk.'",
+    "What she said was not new, but she felt different: aware of breath, posture, where her hands rested. She listened, heard how much he got from mastering the game, sympathised with 'lights out' when he was not tired. When she kissed the top of his head and left there was 'a good warm feeling between us'.",
+    "Her reading: opening mindfully to the sensations she found the roots of her reactivity; she had been avoiding the unpleasant sensations that make up fear and sorrow, and the grip of her anger and stories loosened."
+  ],
+  "scene_details": ["muffled sounds of Everquest through a closed door", "a giant boulder imagined through the screen", "clenched jaw, tight hands, heat in the face", "a fist gripping the heart", "his watch on the dresser"],
+  "tension": "Brach stands outside her son's door ready to explode; what does the anger turn into if she waits?",
+  "opening_idea": "Open at the door with the game sounds and the boulder fantasy, before she decides to wait.",
+  "lessons": [{"idea": "Anger often covers something harder to feel; a short pause lets you see what, and the conversation changes.", "anchor": "Brach's pause at Narayan's door: anger, then fear, then grief.", "example": "A manager irritated by a late report waits a minute and finds worry about the project underneath."}],
+  "reflect": [],
+  "reflect_final": "The last time you were angry at someone you love, what fear or sadness was hiding under that anger, do you think?",
+  "use_cases": [
+    {"situation": "A teenager breaks an agreement again and you feel heat rising.", "move": "Say you are angry and need a minute, then return to talk about the agreement.", "context": "family"},
+    {"situation": "You feel irritation rising before a hard conversation.", "move": "Ask where you feel it in the body and, like Brach finding fear under her anger, what is under yours.", "context": "self"},
+    {"situation": "A colleague's late delivery makes you want to snap.", "move": "Take a minute before replying and speak about what the delay means for the deadline, not about whose fault it is.", "context": "meeting"}
+  ],
+  "pocket_idea": "Brach paused outside her son's door and found fear under her anger; pause long enough to look under yours.",
+  "conversation_variants": {
+    "punchline_idea": "Outside her son's door, ready to throw an imaginary boulder at his computer, Brach waited and found fear, not rage.",
+    "thirty_sec_idea": "Brach and her teenage son were at war over a computer game; one night she stood outside his door with a boulder fantasy, paused, felt the anger as pressure in her body, found fear and grief under it, and walked in able to listen.",
+    "question_idea": "",
+    "key_contrast_idea": "anger, then what's under it"
+  }
+}

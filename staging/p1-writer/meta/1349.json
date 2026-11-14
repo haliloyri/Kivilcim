@@ -1,0 +1,35 @@
+{
+ "story_id": 1349,
+ "verdict": "keep",
+ "verify_note": "Verified in Make It Stick ch. 1: the D-grade student, the UCLA fire extinguisher study, the 148-student rereading studies. Old term 'illusion knowledge' (book: illusion of mastery/knowing) and the 'read once, test twice' ratio are not in the book text and were dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Fosforlu Notlar ve Bir D Notu",
+  "description": "Bütün derslere giren, kitabın altını çizen çalışkan bir öğrenci ilk sınavdan D alır. Make It Stick, tanıdık gelmenin neden bilmek sanıldığını anlatır.",
+  "hook": "İyi bildiğinizi düşündüğünüz bir konuyu, notlarınıza bakmadan anlatabilir misiniz?",
+  "one_minute_summary": "Çalışkan bir birinci sınıf öğrencisi psikoloji sınavından D alır. Bütün derslere girmiş, kitabın altını çizmiş, işaretli notlarını tanıdık gelene kadar okumuştur. Ama kendini hiç sınamamış, kavramları kitap kapalıyken anlatmayı denememiştir. Make It Stick'e göre arka arkaya okumak araştırmalarda hiçbir fayda göstermedi ve akıcılık ustalık yanılsaması yaratır. UCLA'da yirmi beş yıllık bir profesör en yakın yangın söndürücüyü kapı kolunun yanında bulur. Çare kitabı kapatıp hatırlamaya çalışmaktır."
+ },
+ "en": {
+  "title": "Highlighted Notes and a D",
+  "description": "A diligent student who went to every lecture and highlighted everything gets a D on his first test. Make It Stick explains why familiarity feels like knowing.",
+  "hook": "Could you explain a topic you know well without looking at your notes even once?",
+  "one_minute_summary": "A hardworking first-year gets a D on his first psychology test. He attended every lecture, highlighted the textbook and reread his highlighted notes until everything felt familiar. He never tested himself. Make It Stick describes studies where rereading in a row gave no benefit at all, and explains how fluency creates an illusion of mastery. At UCLA, a professor of twenty-five years finds the nearest fire extinguisher inches from his doorknob. The remedy is closing the book and trying to recall."
+ },
+ "es": {
+  "title": "Apuntes subrayados y una D",
+  "description": "Un estudiante aplicado que fue a todas las clases y lo subrayó todo saca una D en su primer examen. Make It Stick explica por qué la familiaridad se confunde con saber.",
+  "hook": "¿Podrías explicar un tema que crees dominar sin mirar tus apuntes ni una sola vez?",
+  "one_minute_summary": "Un estudiante de primer año, muy aplicado, saca una D en su primer examen de psicología. Fue a todas las clases, subrayó el libro y repasó lo subrayado hasta que todo le sonaba, pero nunca se puso a prueba. Make It Stick cita estudios en los que releer dos veces seguidas no aportó nada y explica cómo la fluidez crea una ilusión de dominio. En la UCLA, un profesor con veinticinco años en el edificio encuentra el extintor junto a su puerta. El remedio es cerrar el libro y recordar."
+ },
+ "de": {
+  "title": "Markierte Notizen und ein D",
+  "description": "Ein fleißiger Student, der jede Vorlesung besucht und alles markiert hat, bekommt in seiner ersten Prüfung ein D. Make It Stick erklärt, warum sich Vertrautheit wie Wissen anfühlt.",
+  "hook": "Könntest du ein Thema, das du gut zu kennen glaubst, ohne einen Blick in deine Notizen erklären?",
+  "one_minute_summary": "Ein fleißiger Erstsemester bekommt in seiner ersten Psychologieprüfung ein D. Er war in jeder Vorlesung, hat das Lehrbuch markiert und seine Markierungen gelesen, bis alles vertraut war, sich aber nie selbst abgefragt. Make It Stick nennt Studien, in denen zweimaliges Lesen direkt hintereinander nichts brachte, und erklärt, wie Flüssigkeit eine Illusion von Beherrschung erzeugt. An der UCLA findet ein Professor nach fünfundzwanzig Jahren den Feuerlöscher direkt neben seiner Tür. Das Gegenmittel: Buch zu und abrufen."
+ }
+}

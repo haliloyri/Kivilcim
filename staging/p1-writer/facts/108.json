@@ -1,0 +1,39 @@
+{
+  "book_no": 108,
+  "title": "The Miracle Equation",
+  "authors": ["Hal Elrod"],
+  "year": "2019",
+  "sources": [
+    "https://penguinrandomhouse.com/books/600801/the-miracle-equation-by-hal-elrod",
+    "https://fourminutebooks.com/the-miracle-equation-summary/",
+    "https://makeheadway.com/library/books/the-miracle-equation-summary/",
+    "https://elevatesociety.com/the-miracle-equation-summary-review",
+    "https://nonfictionfix.beehiiv.com/p/miracle-equation"
+  ],
+  "research_note": "Full text not read (borrow-only / paywalled). Secondary summaries only. Year: Penguin Random House lists ebook/audio 2019-04-16 (Harmony); user said 2016, which matches only Elrod's cancer diagnosis year, so 2019 used. DB label 'Mucize Sabah 2' resolved by user to The Miracle Equation (Turkish: Mucize Denklem; not to be written in story text).",
+  "facts": [
+    {"id": "f1", "claim": "The book is The Miracle Equation by Hal Elrod, published by Harmony; ebook and audiobook listed April 2019. Subtitle: The Two Decisions That Move Your Biggest Goals from Possible, to Probable, to Inevitable.", "source": "penguinrandomhouse.com, booksrun listing", "confidence": "high"},
+    {"id": "f2", "claim": "The equation is Unwavering Faith + Extraordinary Effort = Miracles; the two decisions are unwavering faith and extraordinary effort.", "source": "penguinrandomhouse.com, fourminutebooks, makeheadway, elevatesociety", "confidence": "high"},
+    {"id": "f3", "claim": "Unwavering faith is described as a vow to yourself to stick to one goal no matter what is going on externally or how you feel internally, with no excuses; also as complete belief in the goal and in your ability to achieve it. Setbacks will happen and faith is what gets you back up.", "source": "fourminutebooks, makeheadway, elevatesociety", "confidence": "medium"},
+    {"id": "f4", "claim": "Extraordinary effort is described as consistency: focused, persistent action built from small daily steps; 'the key to success is not one remarkable action, but a series of small actions that you take every day.'", "source": "fourminutebooks, elevatesociety", "confidence": "medium"},
+    {"id": "f5", "claim": "Goal advice: choose one overarching mission instead of many goals, like an Olympic athlete focusing on one sport; break it into monthly targets for urgency; reshape the environment to remove obstacles (example: gym clothes kept in the car); micro-steps; block time on the calendar.", "source": "elevatesociety", "confidence": "medium"},
+    {"id": "f6", "claim": "Chapter titles include 'Your Mission', 'Your First Decision: Unwavering Faith', 'Your Second Decision: Extraordinary Effort', 'Maintaining Miracles', plus a 30-Day Challenge.", "source": "elevatesociety, penguinrandomhouse", "confidence": "medium"},
+    {"id": "f7", "claim": "Two types of miracles: passive (unexplainable, beyond control) and active/created (made through belief, determination and work). People who pursue active miracles are called Miracle Mavens.", "source": "makeheadway, elevatesociety", "confidence": "medium"},
+    {"id": "f8", "claim": "Passive miracle example: Donnie Register, working in an antique store, was about to be shot; he raised his hands to his face and the bullet bounced off his gold wedding ring.", "source": "makeheadway, elevatesociety", "confidence": "medium"},
+    {"id": "f9", "claim": "The Five-Minute Rule for emotional pain: when something bad happens, give yourself a fixed window of five minutes (set a timer) to feel it however you need (cry, complain, scream); when time is up say 'can't change it' out loud and move on.", "source": "fourminutebooks, elevatesociety", "confidence": "medium"},
+    {"id": "f10", "claim": "Elrod's framing: suffering is the direct result of resisting our reality; emotional pain rarely has to do with what happens to us but with how we respond. Peace means accepting what you cannot change, not being happy about it.", "source": "fourminutebooks, elevatesociety", "confidence": "medium"},
+    {"id": "f11", "claim": "Quote attributed to the book: 'The real purpose of every goal you set is to become the type of person who can consistently set and achieve significant goals.'", "source": "elevatesociety (single source)", "confidence": "low"}
+  ],
+  "rejected": [
+    {"claim": "'Morning motivation paradox' and cortisol / prefrontal cortex window as Elrod's explanation.", "reason": "No source ties this to Elrod or to this book."},
+    {"claim": "Mel Robbins and Elrod 'independently reached the same discovery'; five-second physical move defeats the excuse list.", "reason": "The 5 Second Rule is Mel Robbins's 2017 book; the Elrod five-minute rule is about emotional pain, unrelated."},
+    {"claim": "Morning routine as identity building, 'ben bu kişiyim' affirmations as the core of a second book.", "reason": "Identity/SAVERS belong to The Miracle Morning (2012), not The Miracle Equation; no source for this claim."},
+    {"claim": "Book dated 2016 / 2017.", "reason": "Publisher listing says 2019; 2016 is Elrod's cancer diagnosis year."},
+    {"claim": "Roger Bannister / John Landy, Dr. Seuss, Elvis, Rister Ratemo, Jesse Levine anecdotes.", "reason": "Single secondary source each; not needed."}
+  ],
+  "stories": {
+    "1420": {"verdict": "keep", "fact_ids": ["f1","f2","f3","f4","f5","f6"], "note": "Rebuilt on the two decisions and the equation."},
+    "1421": {"verdict": "keep", "fact_ids": ["f7","f8","f3"], "note": "Rebuilt on passive vs created miracles, Donnie Register ring, Miracle Mavens."},
+    "1422": {"verdict": "keep", "fact_ids": ["f9","f10"], "note": "Rebuilt on the Five-Minute Rule for emotional pain."}
+  }
+}

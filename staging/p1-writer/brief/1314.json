@@ -1,0 +1,43 @@
+{
+  "story_id": 1314,
+  "kind": "anecdote",
+  "book": {"title": "The E-Myth Revisited", "author": "Michael E. Gerber", "year": "1995"},
+  "confidence": "high",
+  "confidence_note": "Verified in the full text. The old claim that over 80 percent of businesses close in the adolescence stage is wrong and dropped. Elizabeth's story is Sarah's own account to Gerber; 'Harry' is Gerber's illustrative first hire. Maturity is not presented as the natural result of the first two phases.",
+  "facts": [
+    "Gerber describes three phases: Infancy, when owner and business are the same and removing the owner makes the business disappear; Adolescence, which begins when the owner gets help; Maturity.",
+    "In Adolescence the typical owner hands work to a first hire, Gerber's illustrative bookkeeper 'Harry', and runs: Gerber calls it Management by Abdication rather than Delegation.",
+    "When the business grows past the owner's Comfort Zone it can return to Infancy ('get small' again), go for broke, or hang on for dear life.",
+    "Sarah, the pie-shop owner, told Gerber: 'My Harry was Elizabeth.' She hired Elizabeth when the shop was six months old.",
+    "Elizabeth did the books, helped bake, cleaned in the morning and after closing, hired and trained the first three employees, and took on more as the business grew over the next two years.",
+    "On a Wednesday, June 10th, Sarah believes, at seven in the morning, Elizabeth phoned to say she would not come in any longer: she had taken another job and could not afford to work for what Sarah paid. Sarah laughed, thinking it was a joke; Elizabeth said she was sorry and hung up.",
+    "The pies still had to come out of the oven, so Sarah went to work; the people Elizabeth hired left soon after, and Sarah has done everything herself since. 'I got small again.' 'So, there's my Comfort Zone.'",
+    "Gerber's reading: Sarah trusted Elizabeth blindly and never did the work of agreeing on the role and the rules; true trust comes from knowing. His answer: 'Start all over again, but differently this time.'",
+    "Gerber: Maturity is not the end product of the first two phases; companies like McDonald's, Federal Express and Disney started with that perspective."
+  ],
+  "scene_details": [
+    "a phone call at seven in the morning on a Wednesday",
+    "Sarah laughing, 'C'mon Elizabeth', before the line goes dead",
+    "pies that still had to come out of the oven",
+    "Elizabeth doing the books, the baking and the cleaning"
+  ],
+  "tension": "The one person who did everything for Sarah left with a single phone call, and Sarah did not know what Elizabeth's job really was.",
+  "opening_idea": "Start with a seven a.m. phone call to a pie shop: the employee who does everything says she is not coming back.",
+  "lessons": [
+    {"idea": "When you hand work to someone, agree on what the role is and how it should be done; handing it over and stepping away leaves you with nothing when that person leaves.", "anchor": "Elizabeth did books, baking and hiring with no agreed role; one call emptied the shop.", "everyday_example_idea": "A parent who hands the weekly shopping to a teenager writes the list and budget together instead of saying 'just handle it'."}
+  ],
+  "reflect": [],
+  "reflect_final": "Who in your work or home quietly carries a job you never defined together, and what would you write down with them first?",
+  "use_cases": [
+    {"situation": "You're delegating a task to a new team member.", "move": "Spend ten minutes agreeing what done looks like and how they'll report, instead of handing it over and disappearing.", "context": "oneonone"},
+    {"situation": "One colleague has become the only person who knows how something works.", "move": "Say: 'If you rang in tomorrow and quit, like Elizabeth did at the pie shop, what would we not know how to do?' and list it together.", "context": "meeting"},
+    {"situation": "A partner handles all the household bills.", "move": "Sit together once and write where each bill lives and when it's due.", "context": "family"}
+  ],
+  "pocket_idea": "Handing work over is not delegating until you've agreed what the job is; otherwise one phone call can empty the shop.",
+  "conversation_variants": {
+    "punchline_idea": "Sarah's right-hand woman did the books, baking and hiring for two years, then quit with one phone call at seven in the morning.",
+    "thirty_sec_idea": "Sarah hired Elizabeth six months into her pie shop. Elizabeth did the books, baked, cleaned and hired three people. Then one Wednesday at 7 a.m. she phoned: new job, better pay, sorry. Her hires left soon after and Sarah went back to doing it all alone. Gerber calls it management by abdication: Sarah handed it over and never defined the job.",
+    "question_idea": "",
+    "key_contrast_idea": "Handing off versus delegating"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1286,
+  "kind": "concept",
+  "book": {"title": "As a Man Thinketh", "author": "James Allen", "year": "1903"},
+  "confidence": "high",
+  "confidence_note": "Quotes and the three cases checked against the Project Gutenberg text. Old text's 'modern psychology confirms' claim, the 'two people in the same conditions' example and invented quotes were dropped. Editorial caveat required: Allen asserts that suffering always comes from wrong thought and that no one reaches the almshouse by fate; this is a 1903 moral claim, not evidence, and poverty or illness often have causes outside a person's thinking. Allen himself warns that another person's inner condition cannot be judged from the outside.",
+  "facts": [
+    "Allen: 'Circumstance does not make the man; it reveals him to himself.'",
+    "'Men are anxious to improve their circumstances, but are unwilling to improve themselves; they therefore remain bound.'",
+    "Case one: a wretchedly poor man wants better home comforts, yet shirks his work and deceives his employer because he thinks his wages are too low.",
+    "Case two: a rich man with a painful, persistent disease from gluttony will pay large sums to be cured but will not give up rich food.",
+    "Case three: an employer uses crooked measures to avoid the regulation wage and cuts his workers' pay to raise profits; when he goes bankrupt in reputation and riches, he blames circumstances.",
+    "Allen says he gives the three cases only to illustrate that people cause their circumstances, nearly always unconsciously, while aiming at a good end.",
+    "He adds that someone's whole inner condition cannot be judged by another from outside: an honest man may suffer privations, a dishonest one may grow rich.",
+    "Allen also claims suffering is always the effect of wrong thought; this is his assertion, not a demonstrated fact."
+  ],
+  "scene_details": ["the poor man cheating the employer over low wages", "the rich glutton offering large sums for a cure", "the employer cutting wages and then blaming circumstances"],
+  "tension": "Each man wants a better result while feeding the very habit that blocks it.",
+  "opening_idea": "Open on the rich man who will pay anything for his health except giving up his rich dinners.",
+  "lessons": [{"idea": "When you want a result to change, look for the habit of yours that works against the same goal, without blaming yourself for things outside your control.", "anchor": "Three men aiming at a good end while encouraging the opposite.", "everyday_example_idea": "Someone who wants more savings but keeps a paid app subscription they never use."}],
+  "reflect": [],
+  "reflect_final": "What result do you want right now, and which habit of yours is quietly working against it?",
+  "use_cases": [
+    {"situation": "A friend complains about debt but describes regular impulse buys.", "move": "Ask gently which one habit, if changed, would help the goal most, without lecturing.", "context": "social"},
+    {"situation": "A team blames the market for missed targets.", "move": "Mention Allen's employer who cut wages and blamed circumstances, and ask which internal decision is worth reviewing.", "context": "meeting"},
+    {"situation": "You keep postponing exercise while wishing for more energy.", "move": "Name the habit that blocks it and change it once this week.", "context": "self"}
+  ],
+  "pocket_idea": "Allen's glutton would pay any price for health but his dinners; find the habit fighting your goal.",
+  "conversation_variants": {
+    "punchline_idea": "Allen's rich glutton will pay any sum for a cure except the one price that matters: giving up rich food.",
+    "thirty_sec_idea": "Circumstance reveals; three men; employer blames circumstances; caveat that Allen's claim goes too far.",
+    "question_idea": "",
+    "key_contrast_idea": "blaming vs looking inward"
+  }
+}

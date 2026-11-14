@@ -33,7 +33,7 @@ it.each(all)('renders %s', async (id, vm) => {
 });
 
 const EXPECTED_TITLE = {
-  new_user: 'Yolumun başındayım',
+  new_user: 'Yolunun başındasın',
   common_progress: 'İlk Işık',
   path_selection: 'Fikir Avcısı',
   active_path: 'Derin Düşünür',

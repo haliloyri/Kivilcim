@@ -15,8 +15,10 @@ import { useUserData } from '../context/UserDataContext';
 import { useStories } from '../context/StoriesContext';
 import { useCareerPath } from '../context/CareerPathContext';
 import { FEATURE_FLAGS } from '../config/featureFlags';
+import { STORY_COLLECTIONS, DEFAULT_STORY_COLLECTIONS } from '../constants/storyCollections';
 import { getLegalUrls, localizedHomeUrl, SUPPORT_EMAIL, SUBSCRIPTION_URLS } from '../constants/externalLinks';
 import { t } from '../locales/i18n';
+import { toUpperFor } from '../utils/locale';
 import CategoryPill from '../components/CategoryPill';
 import ScreenHeader from '../components/ScreenHeader';
 import { getCategoryPillImage, getCategoryTheme } from '../utils/categoryImages';
@@ -37,12 +39,6 @@ const LANGUAGES = [
   { code: 'es', label: 'Español' },
   { code: 'de', label: 'Deutsch' },
 ];
-const STORY_COLLECTIONS = ['classic', 'new', 'agent', 'focus', 'conversation', 'originals', 'opus55', 'opus55_2', 'son55'];
-const STORY_COLLECTION_LABEL = {
-  classic: 'storyCollectionClassic', new: 'storyCollectionNew', agent: 'storyCollectionAgent',
-  focus: 'storyCollectionFocus', conversation: 'storyCollectionConversation', originals: 'storyCollectionOriginals',
-  opus55: 'storyCollectionOpus55', opus55_2: 'storyCollectionOpus55_2', son55: 'storyCollectionSon55',
-};
 
 // Brand motif (same drawing as HomeScreen's hero). Decorative only.
 const HeroSun = ({ color }) => (
@@ -95,7 +91,7 @@ const ProfileScreen = ({ navigation }) => {
 
   const remindersEnabled = preferences?.remindersEnabled !== false;
   const selectedReminders = preferences?.reminderWindows || [preferences?.reminderWindow || 'evening'];
-  const selectedStoryCollections = preferences?.storyCollections?.length ? preferences.storyCollections : ['new', 'opus55'];
+  const selectedStoryCollections = preferences?.storyCollections?.length ? preferences.storyCollections : DEFAULT_STORY_COLLECTIONS;
   const themeValue = themePreference || themeMode || 'system';
   const langLabel = (LANGUAGES.find((l) => l.code === lang) || LANGUAGES[0]).label;
   const interestCount = selectedCategories.length;
@@ -421,7 +417,7 @@ const ProfileScreen = ({ navigation }) => {
 
   const Section = ({ label, children, style }) => (
     <View style={s.section}>
-      {label ? <Text style={s.sectionLabel}>{label}</Text> : null}
+      {label ? <Text style={s.sectionLabel}>{toUpperFor(label, lang)}</Text> : null}
       <View style={[s.card, style]}>{children}</View>
     </View>
   );
@@ -588,6 +584,20 @@ const ProfileScreen = ({ navigation }) => {
             </View>
           ) : null}
           <Row icon="globe-outline" title={t('languageLabel', lang)} value={langLabel} onPress={() => setSheet('language')} />
+          {/* Collection picker names internal generation batches (model names);
+              readers get DEFAULT_STORY_COLLECTIONS, so it stays a dev tool. */}
+          {__DEV__ && (
+            <View style={s.divider}>
+              <Row first icon="albums-outline" title={t('storyVersionSetting', lang)} sub={t('storyVersionSettingSub', lang)} chevron={false} />
+              <View style={[s.rowExtra, s.chipRow]}>
+                {STORY_COLLECTIONS.map(({ id, label, icon }) => (
+                  <Chip key={id} label={t(label, lang)} icon={icon}
+                    active={selectedStoryCollections.includes(id)}
+                    onPress={() => handleStoryCollectionToggle(id)} />
+                ))}
+              </View>
+            </View>
+          )}
         </Section>
 
         {/* 5 · Görünüm */}
@@ -648,16 +658,6 @@ const ProfileScreen = ({ navigation }) => {
                   trackColor={{ false: colors.border, true: colors.primary }} thumbColor="#FFFFFF" />
               )}
             />
-            <View style={s.divider}>
-              <Row first icon="albums-outline" title={t('storyVersionSetting', lang)} sub={t('storyVersionSettingSub', lang)} chevron={false} />
-              <View style={[s.rowExtra, s.chipRow]}>
-                {STORY_COLLECTIONS.map((id) => (
-                  <Chip key={id} label={t(STORY_COLLECTION_LABEL[id], lang)}
-                    active={selectedStoryCollections.includes(id)}
-                    onPress={() => handleStoryCollectionToggle(id)} />
-                ))}
-              </View>
-            </View>
             <Row icon="paper-plane-outline" title={t('notifyTest', lang)} onPress={scheduleTestNotification} />
           </Section>
         )}

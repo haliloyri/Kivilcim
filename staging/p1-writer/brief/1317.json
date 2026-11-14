@@ -1,0 +1,41 @@
+{
+  "story_id": 1317,
+  "kind": "anecdote",
+  "book": {"title": "Hooked: How to Build Habit-Forming Products", "author": "Nir Eyal", "year": "2014"},
+  "confidence": "high",
+  "confidence_note": "Verified in the full text of Hooked. The book describes pigeons, not a rat, and an increased number of taps, not obsessive pressing without food; old details dropped. The 'uncertain reward is always more addictive' generalization is not in the book.",
+  "facts": [
+    "In the 1950s B.F. Skinner put pigeons in a box that delivered a food pellet every time they pressed a lever; the pigeons learned the link.",
+    "Then he added variability: the machine gave food only after a random number of taps. Sometimes the lever paid out, sometimes not.",
+    "Eyal reports that the intermittent reward dramatically increased the number of times the pigeons tapped the lever.",
+    "Eyal proposes three kinds of variable reward: the tribe (social), the hunt (resources and information) and the self (mastery, completion).",
+    "He says email uses all three: uncertainty about who wrote and the duty to reply (tribe), possible opportunities or threats to our work (hunt), and the urge to sort and clear unread messages and gain control of the inbox (self).",
+    "The Twitter feed mixes mundane and relevant posts; sometimes a user finds interesting news and sometimes not, so she keeps scrolling.",
+    "Slot machines are his classic example of variable rewards of the hunt."
+  ],
+  "scene_details": [
+    "a pigeon pecking a lever in a box",
+    "a pellet that sometimes drops and sometimes doesn't",
+    "an unread count that keeps changing",
+    "a feed of mundane and relevant posts"
+  ],
+  "tension": "Pigeons pressed more when the food came less predictably.",
+  "opening_idea": "Start with a pigeon in Skinner's box, pressing a lever that pays out only some of the time.",
+  "lessons": [
+    {"idea": "When you can't predict what a check will bring, the uncertainty itself keeps you checking; knowing which reward you're chasing lets you decide when to look.", "anchor": "Skinner's pigeons tapped more under random payouts; email offers tribe, hunt and self rewards at once.", "everyday_example_idea": "A freelancer who refreshes her inbox all day sets two fixed times to check client mail."}
+  ],
+  "reflect": [],
+  "reflect_final": "Which of your daily checks feels like a lever that sometimes pays out, and which reward are you actually hoping for?",
+  "use_cases": [
+    {"situation": "A team complains about constant inbox checking.", "move": "Share Skinner's pigeons and propose fixed check-in times for email.", "context": "meeting"},
+    {"situation": "A friend says a game or app 'just keeps pulling me back'.", "move": "Ask which part feels unpredictable: people, new things, or finishing something.", "context": "social"},
+    {"situation": "You notice yourself refreshing an inbox.", "move": "Ask which reward you hope for (a person, an opportunity, a clear inbox) and decide when to check next.", "context": "self"}
+  ],
+  "pocket_idea": "The lever that pays only sometimes gets pressed the most; know which reward you're pressing for.",
+  "conversation_variants": {
+    "punchline_idea": "Skinner's pigeons tapped the lever far more once food came only after a random number of taps.",
+    "thirty_sec_idea": "Skinner put pigeons in a box where pressing a lever dropped food. Then he made it random: sometimes food, sometimes nothing. The pigeons tapped much more. Nir Eyal says email works the same way, three times over: who wrote, what opportunity it brings, and the itch to clear the unread count.",
+    "question_idea": "",
+    "key_contrast_idea": "Sure reward, random reward"
+  }
+}

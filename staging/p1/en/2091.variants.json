@@ -1,0 +1,6 @@
+{
+ "punchline": "From 32,000 bits per second to 40, over 400 yards.",
+ "thirty_sec": "In October 1986 throughput between two sites 400 yards apart fell from 32 Kbps to 40 bps. Jacobson and Karels' 1988 paper answered with packet conservation and slow-start: begin with one packet and add one per acknowledgment.",
+ "question": "Where do you answer an overloaded channel by sending more at once?",
+ "key_contrast": "Restart with one small step and widen as confirmations return."
+}

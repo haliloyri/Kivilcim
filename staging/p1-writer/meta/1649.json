@@ -1,0 +1,35 @@
+{
+  "story_id": 1649,
+  "verdict": "keep",
+  "verify_note": "Keep: envy and jealousy definitions and the two-versus-three parties confirmed in Time, an excerpt page and chapter summaries. Old 'read envy as I want that too', the writer example and the claim about talking to the third person were not found and are kept out of the story. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "İki kişi mi, üç kişi mi",
+    "description": "Brené Brown'a göre haset iki kişilik, kıskançlık üç kişilik bir resimdir. Sayı, hangi duyguyu yaşadığınızı söyler.",
+    "hook": "Son kıskançlığınızda resimde kaç kişi vardı?",
+    "one_minute_summary": "Brené Brown, Atlas of the Heart'ta haset ile kıskançlığı ayırır. Haset, başkasında olan bir şeyi istemektir: güzellik, statü ya da para en büyük üçlüdür. Kıskançlık ise elinizdeki bir ilişkiyi ya da onun değerli bir parçasını yitirme korkusudur. Hasette iki taraf vardır, siz ve o şeye sahip olan kişi. Kıskançlıkta çoğu zaman üç taraf vardır: siz, değer verdiğiniz kişi ve algıladığınız rakip. Bir not özeti, kıskançlığı öfke, üzüntü ya da korku gibi duygulara verilen bir karşılık olarak anlatır. Sayı doğru adı bulmaya yardım eder."
+  },
+  "en": {
+    "title": "Two people or three",
+    "description": "In Brené Brown's Atlas of the Heart, envy has two people in it and jealousy has three. The count shows which one you feel.",
+    "hook": "How many people were in the picture the last time you felt jealous?",
+    "one_minute_summary": "In Atlas of the Heart, Brené Brown separates envy from jealousy. Envy is wanting something another person has, and looks, status and wealth are the big three. Jealousy is fearing the loss of a relationship, or a valued part of one, that you already have. Envy has two parties, you and the person who has the thing. Jealousy usually has three: you, the person you value and the perceived rival. One set of notes on the book calls jealousy a response to anger, sadness or fear. Counting the people helps you find the right word."
+  },
+  "es": {
+    "title": "Dos personas o tres",
+    "description": "Para Brené Brown, la envidia tiene dos personas y los celos tres. Contar sirve para saber cuál sientes.",
+    "hook": "¿Cuántas personas había en la escena la última vez que sentiste celos?",
+    "one_minute_summary": "En Atlas of the Heart, Brené Brown separa la envidia de los celos. La envidia es querer algo que tiene otra persona, y belleza, estatus y dinero son el gran trío. Los celos son el miedo a perder una relación, o una parte valiosa de ella, que ya tienes. La envidia tiene dos partes, tú y quien tiene la cosa. Los celos suelen tener tres: tú, la persona que valoras y el rival que percibes. Unas notas sobre el libro describen los celos como respuesta a enfado, tristeza o miedo. Contar a las personas ayuda a dar con la palabra."
+  },
+  "de": {
+    "title": "Zwei Personen oder drei",
+    "description": "Bei Brené Brown kommen im Neid zwei Menschen vor und in der Eifersucht drei. Das Zählen zeigt, welches Gefühl du hast.",
+    "hook": "Wie viele Menschen waren im Bild, als du zuletzt eifersüchtig warst?",
+    "one_minute_summary": "In Atlas of the Heart trennt Brené Brown Neid von Eifersucht. Neid heißt, etwas haben zu wollen, was ein anderer hat, und Aussehen, Status und Reichtum sind das große Trio. Eifersucht ist die Angst, eine Beziehung oder einen wertvollen Teil davon zu verlieren, die man schon hat. Im Neid gibt es zwei Beteiligte, dich und den, der das Ding besitzt. In der Eifersucht meist drei: dich, den Menschen, der dir wichtig ist, und den vermuteten Rivalen. Eine Notizsammlung zum Buch nennt Eifersucht eine Reaktion auf Wut, Traurigkeit oder Angst. Das Zählen hilft beim richtigen Wort."
+  }
+}

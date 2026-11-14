@@ -1,0 +1,39 @@
+{
+  "book_no": 136,
+  "title": "Getting to Yes",
+  "authors": ["Roger Fisher", "William Ury"],
+  "year": "1981",
+  "db_title_note": "DB: 'Müzakerede Evet Almak' by Roger Fisher (1981); the book is Getting to Yes by Roger Fisher and William Ury (Bruce Patton joined in later editions). No primary text readable; facts come from study guides, medium confidence.",
+  "sources": [
+    "https://litcharts.com/lit/getting-to-yes/chapter-3-focus-on-interests-not-positions",
+    "https://litcharts.com/lit/getting-to-yes/chapter-5-insist-on-using-objective-criteria",
+    "https://www.negotiations.com/articles/getting-to-yes-book-review/",
+    "https://litcharts.com/lit/getting-to-yes/terms/batna"
+  ],
+  "facts": [
+    {"id": "f1", "claim": "Getting to Yes, Roger Fisher and William Ury, first published 1981. Four principles: separate people from the problem, focus on interests not positions, invent options for mutual gain, insist on objective criteria.", "source": "negotiations.com review", "confidence": "high"},
+    {"id": "f2", "claim": "Library window: two men argue in a library, one wants the window open, the other closed (no draft). The librarian opens a window in the next room: fresh air without a draft.", "source": "litcharts ch.3", "confidence": "high"},
+    {"id": "f3", "claim": "Camp David 1978: Israel wanted to keep part of the Sinai, Egypt wanted all of it back. Israel's interest was security (no Egyptian forces massed near its border); Egypt's was sovereignty. Outcome: Sinai returned to Egypt under a demilitarization condition.", "source": "litcharts ch.3", "confidence": "high"},
+    {"id": "f4", "claim": "Method: ask why you want something and why the other side does not; the authors say people often identify a cause, not a purpose, when asked why. Basic interests listed: security, economic well-being, sense of belonging, recognition, control over one's life.", "source": "litcharts ch.3; negotiations.com", "confidence": "medium"},
+    {"id": "f5", "claim": "The authors coined the term BATNA, 'best alternative to a negotiated agreement'.", "source": "negotiations.com; litcharts", "confidence": "high"},
+    {"id": "f6", "claim": "'The reason you negotiate is to produce something better than the results you can obtain without negotiating.' The BATNA is the standard against which an offer is measured; the authors treat it as the main source of a negotiator's power, rather than money or influence.", "source": "litcharts BATNA entry, study-guide quoting the book", "confidence": "medium"},
+    {"id": "f7", "claim": "Chapter title: 'What If They Are More Powerful? (Develop Your BATNA)'.", "source": "litcharts, Cliff Notes summary", "confidence": "high"},
+    {"id": "f8", "claim": "Objective criteria chapter: negotiators should rest agreements on fair standards such as market value, replacement cost, precedent, scientific judgment, professional standards, efficiency, reciprocity. 'Yield to principle, not to pressure.'", "source": "litcharts ch.5; negotiations.com", "confidence": "high"},
+    {"id": "f9", "claim": "Law of the Sea Conference: the U.S. and India disagreed on whether mining companies should pay a fee to start mining. After looking at an economic model developed at MIT, both reconsidered and neither had to back down.", "source": "litcharts ch.5", "confidence": "medium"},
+    {"id": "f10", "claim": "Fair procedures: dividing a dessert, 'one cuts, the other chooses' gives the cutter a reason to cut evenly; also taking turns, drawing lots, letting a third party decide.", "source": "litcharts ch.5", "confidence": "medium"},
+    {"id": "f11", "claim": "Reciprocity test: ask whether the other side would accept the same terms if positions were reversed.", "source": "litcharts ch.5", "confidence": "medium"}
+  ],
+  "rejected": [
+    {"claim": "Two siblings and one orange (one wants juice, the other the peel) told as the book's example.", "reason": "Not found in the chapter material; widely told as negotiation folklore. Replaced by library window and Camp David."},
+    {"claim": "The term 'positional bargaining trap' with the mother splitting the orange.", "reason": "Book discusses positional bargaining; the orange scenario is not verified."},
+    {"claim": "Direct quote: 'BATNA'niz güçlüyse müzakerede güçlüsünüz...'", "reason": "No source; the verified quote is the 'reason you negotiate' line."},
+    {"claim": "Job interview with a second offer in hand as the book's BATNA example.", "reason": "Plausible illustration but not found in the book; allowed only as reader-side lesson example."},
+    {"claim": "Used-car haggling as the book's objective criteria example with 'market average', 'independent valuation'.", "reason": "Car-value-by-several-measures and an insurance claim appear in study guides, but exact figures could not be confirmed, so left out. Replaced by Law of the Sea and cut-and-choose."},
+    {"claim": "Insurance adjuster offered $13,600; claimant won $18,024 using comparable cars.", "reason": "One study guide only, no second source."}
+  ],
+  "stories": {
+    "1504": {"verdict": "keep", "fact_ids": ["f1", "f2", "f3", "f4"], "note": "Orange dropped; library window and Camp David carry interests vs positions."},
+    "1505": {"verdict": "keep", "fact_ids": ["f5", "f6", "f7"], "note": "Concept story; thin on scenes, so shorter. Job-offer example and the invented quote dropped from story."},
+    "1506": {"verdict": "keep", "fact_ids": ["f8", "f9", "f10", "f11"], "note": "Car-haggling replaced by Law of the Sea MIT model and cut-and-choose."}
+  }
+}

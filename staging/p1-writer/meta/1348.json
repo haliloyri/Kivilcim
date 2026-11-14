@@ -1,0 +1,35 @@
+{
+ "story_id": 1348,
+ "verdict": "keep",
+ "verify_note": "Make It Stick (2014) is by Brown, Roediger and McDaniel. The old morning/evening sleep experiment and REM/deep-sleep claims are not in the book; it only says sleep 'seems to help' consolidation. Recentered on Mia Blundetto's jump school (ch. 4) and consolidation, sleep kept as the book's hedge. Title changes.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Paraşüt Okulundaki Çakıl Çukuru",
+  "description": "Düşmekten nefret eden bir deniz piyadesi subayı haftalarca iniş çalışır ve havada başka bir paraşüte takıldığında sakin kalır. Make It Stick, öğrenmenin zamana yayılarak nasıl pekiştiğini anlatır.",
+  "hook": "Öğrendiğiniz bir şeyin, çalışma bittikten sonra da sizde yerleşmeye devam ettiğini hiç düşündünüz mü?",
+  "one_minute_summary": "Mia Blundetto düşmekten nefret eden bir deniz piyadesi subayıdır ama görevi için paraşüt okuluna gitmesi gerekir. Fort Benning'de not almak yasaktır. Haftalarca önce çakıl çukurunda, sonra giderek yükselen platformlarda iniş yuvarlanması çalışır. Üçüncü gerçek atlayışında başka bir askerin paraşütünün üstüne düşer ve sakince yüzerek çıkar. Make It Stick'in yazarlarına göre öğrenme saatler ve günler içinde pekişir. Uyku buna yardım ediyor gibi görünür, bu yüzden pratiğin arasına en az bir gün koymak iyidir."
+ },
+ "en": {
+  "title": "The Gravel Pit at Jump School",
+  "description": "A Marine officer who hates falling practises landings for weeks, then stays calm when she lands on another jumper's parachute. Make It Stick explains how learning settles over time.",
+  "hook": "What if part of learning happens after you've stopped practising?",
+  "one_minute_summary": "Mia Blundetto hates falling, but her Marine Corps job requires jump school. At Fort Benning no notes are allowed. For weeks she practises the landing roll, first in a gravel pit, then from higher platforms and a tower. On her third real jump she drops onto another soldier's canopy and simply swims out. The authors of Make It Stick explain that learning consolidates over hours and days. Sleep seems to help, so practice with at least a day between sessions works well."
+ },
+ "es": {
+  "title": "El foso de grava de Mia",
+  "description": "Una teniente de los marines que odia caer practica aterrizajes durante semanas y mantiene la calma cuando cae sobre otro paracaídas. Make It Stick explica cómo se asienta lo aprendido con el tiempo.",
+  "hook": "¿Y si una parte del aprendizaje ocurriera después de dejar de practicar?",
+  "one_minute_summary": "Mia Blundetto odia caer, pero su puesto en los marines exige pasar por la escuela de saltos. En Fort Benning no se pueden tomar apuntes. Durante semanas practica la caída, primero en un foso de grava y luego desde plataformas cada vez más altas. En su tercer salto real cae sobre el paracaídas de otro soldado y sale nadando, tranquila. Según los autores de Make It Stick, lo aprendido se consolida durante horas y días, el sueño parece ayudar y conviene dejar al menos un día entre sesiones."
+ },
+ "de": {
+  "title": "Die Kiesgrube der Sprungschule",
+  "description": "Eine Offizierin der Marines, die das Fallen hasst, übt wochenlang Landungen und bleibt ruhig, als sie auf einem fremden Fallschirm landet. Make It Stick erklärt, wie sich Gelerntes mit der Zeit setzt.",
+  "hook": "Was, wenn ein Teil des Lernens erst passiert, nachdem du aufgehört hast zu üben?",
+  "one_minute_summary": "Mia Blundetto hasst das Fallen, muss für ihren Posten bei den Marines aber in die Sprungschule. In Fort Benning sind Notizen verboten. Wochenlang übt sie die Landerolle, erst in einer Kiesgrube, dann von immer höheren Plattformen. Beim dritten echten Sprung landet sie auf dem Schirm eines anderen Soldaten und schwimmt ruhig heraus. Laut den Autoren von Make It Stick festigt sich Gelerntes über Stunden und Tage. Schlaf scheint zu helfen, deshalb ist ein Tag Abstand zwischen Übungseinheiten sinnvoll."
+ }
+}

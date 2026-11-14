@@ -1,0 +1,35 @@
+{
+ "story_id": 1356,
+ "verdict": "keep",
+ "verify_note": "Verified in full text, ch. 6 and 9: the sumo wrestler symbolizes kaizen; John does 23 push-ups, then ten more. The old '1% daily = 37% in a year' claim is not in the book (and mathematically wrong); Toyota and the 'evolution not revolution' quote dropped. Caveat added: kaizen as a business term spread via Masaaki Imai (1986).",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Yirmi Üç Şınav, On Tane Daha",
+  "description": "Robin Sharma'nın fablında John yirmi üç şınavda sınırına geldiğini söyler, Julian on tane daha ister. Sumo güreşçisinin simgelediği kaizen bu küçük deneyle anlatılır.",
+  "hook": "Sınırım dediğiniz nokta gerçekten sınırınız mı, yoksa bir tahmin mi?",
+  "one_minute_summary": "Robin Sharma'nın fablında Julian, eski meslektaşı John'dan gerçekten yapamayacağı noktaya kadar şınav çekmesini ister. John yirmi üçte yere çöker. Julian on tane daha ister ve John çeker. Julian'ın Himalayalar'daki öğretmeni Yogi Raman da ona aynısını yaptırmıştır: hayattaki tek sınırlar kendi koyduklarımızdır. Masalda bunu kaizeni, yani sürekli gelişmeyi temsil eden bir sumo güreşçisi simgeler. Kaizenin iş dünyasına 1986'da Masaaki Imai'nin kitabıyla yayıldığı notu da eklenir."
+ },
+ "en": {
+  "title": "Twenty-Three Push-Ups, Then Ten More",
+  "description": "In Robin Sharma's fable John says twenty-three push-ups is his limit, and Julian asks for ten more. The sumo wrestler's kaizen is taught through that small test.",
+  "hook": "Is the point you call your limit really a limit, or just a guess?",
+  "one_minute_summary": "In Robin Sharma's fable, Julian tells his former colleague John to do push-ups until he truly cannot do another. John collapses at twenty-three. Julian asks for ten more, and John does them. Julian's teacher in the Himalayas, Yogi Raman, had put him through the same test: the only limits on your life are those you set yourself. In the fable, a sumo wrestler stands for kaizen, constant improvement. A note adds that kaizen spread in business through Masaaki Imai's 1986 book."
+ },
+ "es": {
+  "title": "Veintitrés flexiones y diez más",
+  "description": "En la fábula de Robin Sharma, John dice que veintitrés flexiones son su límite y Julian le pide diez más. El kaizen del luchador de sumo se enseña con esa pequeña prueba.",
+  "hook": "¿El punto que llamas tu límite es de verdad un límite o solo una suposición?",
+  "one_minute_summary": "En la fábula de Robin Sharma, Julian le pide a su antiguo colega John que haga flexiones hasta que de verdad no pueda más. John se derrumba en la veintitrés. Julian le pide diez más y John las hace. A Julian su maestro Yogi Raman le hizo lo mismo: los únicos límites de tu vida son los que tú mismo te pones. En la fábula, un luchador de sumo representa el kaizen, la mejora constante. El término empresarial se difundió con un libro de Masaaki Imai de 1986."
+ },
+ "de": {
+  "title": "Dreiundzwanzig Liegestütze und zehn mehr",
+  "description": "In Robin Sharmas Fabel nennt John dreiundzwanzig Liegestütze seine Grenze, und Julian verlangt zehn mehr. Das Kaizen des Sumoringers wird mit diesem kleinen Test erklärt.",
+  "hook": "Ist die Stelle, die du deine Grenze nennst, wirklich eine Grenze oder nur eine Vermutung?",
+  "one_minute_summary": "In Robin Sharmas Fabel fordert Julian seinen früheren Kollegen John auf, Liegestütze zu machen, bis wirklich keiner mehr geht. Bei dreiundzwanzig bricht John zusammen. Julian verlangt zehn mehr, und John schafft sie. Julians Lehrer im Himalaya, Yogi Raman, hatte ihm dasselbe abverlangt: Die einzigen Grenzen in deinem Leben setzt du dir selbst. In der Fabel steht ein Sumoringer für Kaizen, die ständige Verbesserung. Eine Anmerkung ergänzt, dass der Begriff durch Masaaki Imais Buch von 1986 in die Wirtschaft kam."
+ }
+}

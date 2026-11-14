@@ -1,0 +1,33 @@
+{
+ "book_no": 157,
+ "title": "The Talent Code",
+ "authors": ["Daniel Coyle"],
+ "year": "2009",
+ "sources": [
+  "https://danielcoyle.com/excerpt-talent-code/",
+  "https://retinart.net/reading-list/the-talent-code/",
+  "https://www.shortform.com/summary/the-talent-code-summary-daniel-coyle",
+  "https://www.supersummary.com/the-talent-code/part-1-summary/"
+ ],
+ "facts": [
+  {"id":"f1","claim":"Coyle describes myelin as the fatty insulation around neurons; like insulation on wiring, more of it lets signals travel faster and more accurately. 'Practice makes myelin, and myelin makes perfect.'","source":"retinart summary; Substack preview quoting the opening; Shortform","confidence":"medium"},
+  {"id":"f2","claim":"Myelin is living tissue, grows, and is not fixed at birth; it builds when a specific circuit fires repeatedly.","source":"retinart; Shortform","confidence":"medium"},
+  {"id":"f3","claim":"Starting in December 2006 Coyle visited nine small 'talent hotbeds' (chicken-wire Harvards), among them a tennis court in Moscow, a soccer field in Sao Paulo, a vocal studio in Dallas, a school in San Jose and a baseball island in the Caribbean. He noticed players alternating between fluent, fast movement and slow, halting struggle.","source":"danielcoyle.com excerpt","confidence":"high"},
+  {"id":"f4","claim":"In Sao Paulo, 11-year-old Brunio fails at a ball-handling move called the elastico, slows it down, breaks it into parts, and then 'something clicks'.","source":"danielcoyle.com excerpt","confidence":"high"},
+  {"id":"f5","claim":"In Dallas, Jennie (24) rehearses the chorus of 'Running Out of Time', stopping at each miss, and gets the measure right on the sixth try.","source":"danielcoyle.com excerpt","confidence":"high"},
+  {"id":"f6","claim":"Deep practice: struggling in certain targeted ways at the edge of current ability, in a 'sweet spot' where reach exceeds grasp. Mistakes, and attention to them, are part of how the circuit fires better. Coyle's paradox: the struggle makes you smarter.","source":"excerpt; retinart","confidence":"high"},
+  {"id":"f7","claim":"Futsal: small heavy ball, fewer players, small court. Players touch the ball about six times more per minute than in outdoor soccer, per a Liverpool University study cited in the excerpt. Juninho did not play on a full-size grass pitch until he was 14. Dr. Emilio Miranda: 'No time plus no space equals better skills.'","source":"danielcoyle.com excerpt","confidence":"high"},
+  {"id":"f8","claim":"Coyle claims specific kinds of practice build skill up to ten times faster than conventional practice.","source":"retinart summary","confidence":"low"},
+  {"id":"f9","claim":"Coyle's three elements: deep practice, ignition, master coaching. He defines talent narrowly as repeatable skills that do not depend on physical size. 'Although talent feels and looks predestined, in fact we have a good deal of control over what skills we develop.'","source":"retinart; excerpt","confidence":"medium"}
+ ],
+ "rejected": [
+  {"claim":"Old text: Coyle learned of myelin 'in a neuroscience lab' by surprise.","reason":"Coyle is a journalist reporting research and hotbeds; the lab scene is not sourced."},
+  {"claim":"Old text: a pianist practises daily and ten years later fingers move almost by themselves.","reason":"Invented illustration."},
+  {"claim":"Old text: everyone is born with similar plasticity; the difference is only the rate of myelin build-up.","reason":"Overstatement; not found as Coyle's claim."},
+  {"claim":"Old text: 'every error sends myelin a message that the pathway must be strengthened'.","reason":"Not in the book in this form; only that errors help the circuit fire better."},
+  {"claim":"Up to ten times faster as established result.","reason":"Coyle's claim only; no verifiable study. Kept out of the story."}
+ ],
+ "stories": {
+  "1567": {"verdict":"keep","fact_ids":["f1","f3","f4","f6","f7","f9"],"note":"Concept story. Rebuilt around Brunio's elastico and the futsal ball; the book's own scenes replace the invented pianist. Myelin details medium confidence (secondary summaries)."}
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "story_id": 1668,
+  "verdict": "keep",
+  "verify_note": "Keep. Book text read; interbeing passage and 'Roots of Anger' quoted closely. Old scene of Hanh holding up paper and asking a listener was dropped (not in the text).",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Kâğıdın içindeki bulut",
+    "description": "Thich Nhat Hanh bir kâğıtta bulutu, oduncuyu ve ekmeği görür ve aynı bakışı size kötü konuşan birine de tutar.",
+    "hook": "Size sert konuşan birinin sözlerinin arkasında neler olabilir?",
+    "one_minute_summary": "Thich Nhat Hanh, Peace Is Every Step kitabında bir kâğıdın içinde bulutun, güneşin, oduncunun, ekmeği yapan buğdayın ve oduncunun anne babasının da olduğunu söylüyor. Bulutsuz yağmur, yağmursuz ağaç, ağaçsız kâğıt olmaz. Buna interbeing diyor ve güneşi güneşe geri verirseniz kâğıt kalmaz. Aynı bakışı öfkeye çeviriyor: size kötü konuşan kişiye bir gün önce de öyle konuşulmuş olabilir. Önce kendi olumsuz tohumlarınıza bakın, sonra gerekirse şefkatle harekete geçin."
+  },
+  "en": {
+    "title": "The cloud in the paper",
+    "description": "Thich Nhat Hanh finds a cloud, a logger and his bread in a sheet of paper, then turns that look on someone who speaks badly to you.",
+    "hook": "What might have stood behind the harsh words someone said to you?",
+    "one_minute_summary": "In Peace Is Every Step, Thich Nhat Hanh says a sheet of paper holds a cloud, the sunshine, the logger, the wheat that became his bread and the logger's parents. No cloud, no rain, no tree, no paper. He calls this interbeing, and says that if you return the sunshine to the sun, the paper is gone. He turns the same look on anger: the person who speaks badly to you may have been spoken to that way the day before."
+  },
+  "es": {
+    "title": "La nube en la hoja",
+    "description": "Thich Nhat Hanh encuentra una nube, un leñador y su pan en una hoja de papel, y aplica esa mirada a quien te habla mal.",
+    "hook": "¿Qué puede haber detrás de las palabras duras de alguien que te habló mal?",
+    "one_minute_summary": "En Peace Is Every Step, Thich Nhat Hanh dice que una hoja de papel contiene una nube, el sol, el leñador, el trigo de su pan y los padres del leñador. Sin nube no hay lluvia, sin lluvia no hay árbol, sin árbol no hay papel. Lo llama interser, y si devuelves el sol al sol, la hoja desaparece. Aplica la misma mirada a la ira: a quien te habla mal quizá le hablaron así el día anterior. Primero cuida tus propias semillas de negatividad y luego actúa con compasión."
+  },
+  "de": {
+    "title": "Die Wolke im Blatt",
+    "description": "Thich Nhat Hanh findet in einem Blatt Papier eine Wolke, einen Holzfäller und sein Brot und richtet den Blick auf einen, der schlecht mit dir spricht.",
+    "hook": "Was könnte hinter den harten Worten eines anderen gestanden haben?",
+    "one_minute_summary": "In Peace Is Every Step sagt Thich Nhat Hanh, dass in einem Blatt Papier eine Wolke steckt, der Sonnenschein, der Holzfäller, der Weizen für sein Brot und die Eltern des Holzfällers. Ohne Wolke kein Regen, ohne Regen kein Baum, ohne Baum kein Papier. Er nennt das Inter-sein, und gibst du den Sonnenschein der Sonne zurück, ist das Papier fort. Denselben Blick richtet er auf Wut: Wer schlecht mit dir spricht, wurde am Vortag vielleicht genauso angesprochen. Erst deine eigenen Samen der Negativität, dann Mitgefühl."
+  }
+}

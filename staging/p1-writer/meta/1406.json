@@ -1,0 +1,35 @@
+{
+ "story_id": 1406,
+ "verdict": "keep",
+ "verify_note": "Keep: rule wording and efficiency reasoning quoted from GTD material and Todoist's quote of the book; do-delegate-defer routine is Allen's processing flow. Old client anecdote (email cleanup sessions) not sourced and dropped. Concept, medium confidence.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İki dakika eşiği",
+  "description": "David Allen'a göre iki dakikadan kısa süren işi geldiği anda yapmak, onu kaydedip takip etmekten ucuzdur.",
+  "hook": "Listenizde bitirmekten uzun bekleyen küçük iş hangisi?",
+  "one_minute_summary": "David Allen'ın iki dakika kuralı: bir eylem iki dakikadan az sürecekse tanımlandığı anda yapılmalı. Nedeni hesap: bundan sonra işi saklayıp takip etmek, işin kendisinden uzun sürer. Önce bir sonraki eylem belirlenir, sonra kural uygulanır. Allen, günün iki dakikalık işlerle geçmesine karşı da uyarır ve iki dakikayı bir kılavuz sayar. Uzun işler ya başkasına verilir ya da bir listeye ertelenir. Önce eylem belirlenir, sonra iki dakika ölçülür."
+ },
+ "en": {
+  "title": "The two-minute cutoff",
+  "description": "David Allen says an action under two minutes is cheaper to do now than to record and track.",
+  "hook": "Which small item has outlived the time it would take to finish?",
+  "one_minute_summary": "David Allen's two-minute rule: if an action takes under two minutes, do it the moment it is defined. His reason is arithmetic: past that point, storing and tracking an item takes longer than doing it. You first decide the next action, then apply the rule. Allen also warns against letting two-minute tasks eat the day and calls the figure a guideline. Longer tasks are handed to someone else or deferred to a list."
+ },
+ "es": {
+  "title": "El límite de dos minutos",
+  "description": "Según David Allen, hacer ya una acción de menos de dos minutos cuesta menos que apuntarla y seguirla.",
+  "hook": "¿Qué asunto pequeño lleva más tiempo en tu lista del que costaría terminarlo?",
+  "one_minute_summary": "La regla de los dos minutos de David Allen: si una acción lleva menos de dos minutos, se hace en el momento en que se define. Su razón es aritmética: pasado ese punto, guardar y seguir el asunto lleva más tiempo que hacerlo. Primero se decide la siguiente acción y luego se aplica la regla. Allen advierte también contra que estas tareas se coman el día y llama a la cifra una pauta. Lo más largo se delega o se aplaza en una lista."
+ },
+ "de": {
+  "title": "Die Zwei-Minuten-Grenze",
+  "description": "Laut David Allen ist es billiger, eine Handlung unter zwei Minuten sofort zu erledigen, als sie zu notieren und zu verfolgen.",
+  "hook": "Welche Kleinigkeit steht länger auf deiner Liste, als sie dauern würde?",
+  "one_minute_summary": "David Allens Zwei-Minuten-Regel: Dauert eine Handlung weniger als zwei Minuten, erledige sie, wenn sie festgelegt wird. Sein Grund ist Rechnung: Darüber hinaus dauert Ablegen und Verfolgen länger als das Tun. Erst legst du die nächste Handlung fest, dann wendest du die Regel an. Allen warnt auch davor, dass solche Aufgaben den Tag auffressen, und nennt die Zahl eine Richtschnur. Längeres wird abgegeben oder auf eine Liste geschoben."
+ }
+}

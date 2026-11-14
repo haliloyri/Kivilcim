@@ -1,0 +1,35 @@
+{
+  "story_id": 1462,
+  "verdict": "keep",
+  "verify_note": "Keep: Foer's journey (2005 as journalist, Ed Cooke, 2006 title, 1:40 speed cards, 13th at the worlds) confirmed on Wikipedia, NPR and reviews. Old champions' quote and 'sceptic' framing not found and dropped. Book itself not read.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Seyirciden şampiyona",
+    "description": "Joshua Foer 2005'te hafıza şampiyonasına muhabir olarak gitti. Bir yıl sonra o şampiyonayı kazandı.",
+    "hook": "Hangi beceriyi hiç çalışmadan “bana göre değil” diye bir kenara koydunuz?",
+    "one_minute_summary": "Joshua Foer 2005'teki ABD Hafıza Şampiyonası'na gazeteci olarak gitti ve orada 24 yaşındaki İngiliz hafıza ustası Ed Cooke'la tanıştı. Cooke ona koçluk yapmayı önerdi. Yaklaşık bir yıl çalıştıktan sonra Foer 2006 USA Hafıza Şampiyonası'nı kazandı ve hızlı kart dalında ABD rekoru kırdı: bir deste 1 dakika 40 saniyede. Londra'daki Dünya Hafıza Şampiyonası'nda ise genel sıralamada 13. oldu. Kitabın tezi, hafızanın çalışılarak geliştirilebilen bir beceri olduğu."
+  },
+  "en": {
+    "title": "From spectator to champion",
+    "description": "Joshua Foer went to the 2005 memory championship as a reporter. A year later he won it.",
+    "hook": "Which skill have you written off without ever practising it?",
+    "one_minute_summary": "Joshua Foer attended the 2005 U.S. Memory Championship as a journalist and met Ed Cooke, a 24-year-old English memory grandmaster. Cooke offered to coach him. After about a year of training, Foer won the 2006 USA championship and set a U.S. speed-cards record, one deck in 1 minute 40 seconds. At the World Memory Championships in London he placed 13th overall. His book argues that memory is a trainable skill."
+  },
+  "es": {
+    "title": "Del público al campeonato",
+    "description": "Joshua Foer fue al campeonato de memoria de 2005 como periodista. Un año después lo ganó.",
+    "hook": "¿Qué habilidad has descartado sin haberla practicado nunca?",
+    "one_minute_summary": "Joshua Foer asistió al Campeonato de Memoria de EE. UU. de 2005 como periodista y conoció a Ed Cooke, un gran maestro inglés de la memoria de 24 años. Cooke se ofreció a entrenarlo. Tras un año de práctica, Foer ganó el campeonato de 2006 y batió el récord estadounidense de cartas rápidas: una baraja en 1 minuto y 40 segundos. En el Mundial de Londres quedó decimotercero. Su libro sostiene que la memoria es una habilidad entrenable."
+  },
+  "de": {
+    "title": "Vom Zuschauer zum Meister",
+    "description": "Joshua Foer ging 2005 als Reporter zur Gedächtnismeisterschaft. Ein Jahr später gewann er sie.",
+    "hook": "Welche Fähigkeit hast du abgeschrieben, ohne sie je geübt zu haben?",
+    "one_minute_summary": "Joshua Foer besuchte 2005 als Journalist die US-Gedächtnismeisterschaft und lernte Ed Cooke kennen, einen 24-jährigen englischen Gedächtnis-Großmeister. Cooke bot an, ihn zu trainieren. Nach etwa einem Jahr gewann Foer 2006 die US-Meisterschaft und stellte einen US-Rekord im Schnellkartenspiel auf: ein Kartenspiel in 1 Minute 40 Sekunden. Bei der Weltmeisterschaft in London wurde er Dreizehnter. Sein Buch vertritt die These, Gedächtnis sei eine trainierbare Fähigkeit."
+  }
+}

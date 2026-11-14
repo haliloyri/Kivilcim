@@ -1,0 +1,35 @@
+{
+  "story_id": 1639,
+  "verdict": "keep",
+  "verify_note": "Keep, medium: shield, healthy-striving contrast and subtitle from summaries; definition and guidepost placement partly from memory. DB label 'Özgür Olmak 2' mapped to The Gifts of Imperfection.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Yirmi tonluk kalkan",
+    "description": "Brown mükemmeliyetçiliği korunmak için taşınan yirmi tonluk bir kalkan olarak anlatır. Sağlıklı çabalama ise kendi gelişimine bakar.",
+    "hook": "Son rötuşları kimin gözü için yapıyorsunuz?",
+    "one_minute_summary": "Brené Brown, The Gifts of Imperfection kitabında mükemmeliyetçiliğe yirmi tonluk kalkan der: korumak için taşınır ama uçmayı engeller. Düşüncesi, mükemmel görünürsem utanç ve yargıdan kaçarım şeklindedir. Mükemmeliyetçilik başkalarına dönüktür ve insanlar ne düşünecek diye merak eder, sağlıklı çabalama kendine dönüktür ve nasıl daha iyi olabilirim diye. Anlatım ikinci el özetlere dayanıyor, bu yüzden tanımları kitaptan doğrulayın. Farkı belirleyen şey, işin kimin gözü için yapıldığıdır."
+  },
+  "en": {
+    "title": "The twenty-ton shield",
+    "description": "Brown describes perfectionism as a twenty-ton shield carried for protection. Healthy striving looks at one's own improvement.",
+    "hook": "Whose eyes are you polishing the last details for?",
+    "one_minute_summary": "In The Gifts of Imperfection, Brené Brown calls perfectionism a twenty-ton shield: carried for protection, it prevents taking flight. Its thought is that if I look perfect I can avoid shame and judgment. Perfectionism is other-focused and wonders what people will think, while healthy striving is self-focused and asks how to improve. This rests on secondary summaries, so check the definitions in the book."
+  },
+  "es": {
+    "title": "El escudo de veinte toneladas",
+    "description": "Brown describe el perfeccionismo como un escudo de veinte toneladas que se carga para protegerse. El esfuerzo sano mira la propia mejora.",
+    "hook": "¿Para los ojos de quién pules los últimos detalles?",
+    "one_minute_summary": "En The Gifts of Imperfection, Brené Brown llama al perfeccionismo un escudo de veinte toneladas: se carga para protegerse y no deja echar a volar. Su idea es que si me veo perfecto puedo evitar la vergüenza y el juicio. El perfeccionismo se orienta a los demás y se pregunta qué pensará la gente, mientras que el esfuerzo sano se orienta a uno mismo y pregunta cómo mejorar. Esto se apoya en resúmenes secundarios, así que comprueba las definiciones en el libro."
+  },
+  "de": {
+    "title": "Der Zwanzig-Tonnen-Schild",
+    "description": "Brown beschreibt Perfektionismus als Zwanzig-Tonnen-Schild, den man zum Schutz trägt. Gesundes Streben schaut auf die eigene Verbesserung.",
+    "hook": "Für wessen Augen polierst du die letzten Details?",
+    "one_minute_summary": "In The Gifts of Imperfection nennt Brené Brown Perfektionismus einen Zwanzig-Tonnen-Schild: Man trägt ihn zum Schutz, doch er hindert am Abheben. Ihr Gedanke ist, dass ich Scham und Urteil vermeiden kann, wenn ich perfekt aussehe. Perfektionismus ist auf andere gerichtet und fragt, was die Leute denken, gesundes Streben ist auf sich selbst gerichtet und fragt, wie ich besser werden kann. Das stützt sich auf Zusammenfassungen, prüfe die Definitionen im Buch."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "story_id": 1285,
+  "kind": "concept",
+  "book": {"title": "As a Man Thinketh", "author": "James Allen", "year": "1903"},
+  "confidence": "high",
+  "confidence_note": "All facts and quotes checked against the public-domain full text (Project Gutenberg). The old text's 'Zihin de öyle...' quote was a paraphrase and is replaced by Allen's actual wording. Allen's broader claim that thought shapes circumstances is a moral assertion, not a tested finding.",
+  "facts": [
+    "Allen calls the book 'this little volume', the result of meditation and experience, not an exhaustive treatise.",
+    "Its aim: to show that people 'themselves are makers of themselves' by the thoughts they choose and encourage.",
+    "Main image: a mind is like a garden that may be intelligently cultivated or allowed to run wild, but either way it must and will bring forth.",
+    "If no useful seeds are put into it, useless weed-seeds will fall into it and keep producing their kind.",
+    "As a gardener keeps his plot free from weeds and grows the flowers and fruits he requires, a person can weed out wrong, useless and impure thoughts and cultivate useful ones.",
+    "Doing this, a person discovers he is 'the master-gardener of his soul'.",
+    "Every thought-seed sown or allowed to fall and take root blossoms sooner or later into act; 'nothing can come from corn but corn, nothing from nettles but nettles'."
+  ],
+  "scene_details": ["a plot that runs wild if left alone", "weed-seeds falling in on their own", "corn from corn, nettles from nettles", "the master-gardener"],
+  "tension": "Doing nothing with your mind is not neutral: something grows anyway.",
+  "opening_idea": "Open on the weed-seeds that fall into an untended plot by themselves.",
+  "lessons": [{"idea": "Treat the thoughts you repeat as seeds you allow to stay, and notice one that keeps coming back so you can decide whether to keep it.", "anchor": "Seeds put in vs seeds that fall in.", "everyday_example_idea": "Someone who scrolls news before sleep and wakes with the same worry, versus reading something chosen."}],
+  "reflect": [],
+  "reflect_final": "Which thought has been growing in your mind this week without you planting it, and what would you rather put in its place?",
+  "use_cases": [
+    {"situation": "A colleague keeps repeating that a project is doomed.", "move": "Ask what one useful thought about it they could put in instead.", "context": "oneonone"},
+    {"situation": "Your child keeps saying 'I'm bad at math'.", "move": "Mention Allen's line that nettles grow nettles, and ask what they did solve today.", "context": "family"},
+    {"situation": "You notice the same worry each morning.", "move": "Write it down and pick one thought to read in its place tomorrow.", "context": "self"}
+  ],
+  "pocket_idea": "An untended mind still grows weeds; choose one thought to plant before one falls in.",
+  "conversation_variants": {
+    "punchline_idea": "Allen wrote in 1903 that a mind left alone is not empty; weeds fall in by themselves.",
+    "thirty_sec_idea": "Little volume; garden cultivated or wild; weed-seeds fall; corn from corn; master-gardener.",
+    "question_idea": "",
+    "key_contrast_idea": "planted vs fallen in"
+  }
+}

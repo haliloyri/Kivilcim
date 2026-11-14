@@ -1,0 +1,61 @@
+{
+  "story_id": 1540,
+  "kind": "concept",
+  "book": {
+    "title": "The Back of the Napkin",
+    "author": "Dan Roam",
+    "year": "2008"
+  },
+  "confidence": "low",
+  "confidence_note": "No full text available; details come from reviews and summaries (Globe and Mail, Core77, reading notes, publisher copy). The old text's conference with 200 people and 15 raised hands, the 40,000-year cave claim and 'brain evolved for images not text' were not found anywhere and were dropped. The Part Three 'start with yourself' advice is a reviewer's paraphrase (low). The last-minute napkin presentation is from a single summary (medium).",
+  "facts": [
+    "In the introduction Roam notes that kindergarteners draw freely while adults do not; adults have forgotten how to express themselves visually.",
+    "A summary says Roam found visual thinking when he had to give a last-minute presentation: he sketched a simple framework on a napkin, which clarified his thinking and helped him present.",
+    "His claim: any problem can be made clearer with a picture, and any picture can be created with the same set of tools and rules.",
+    "Visual thinking needs no artistic skill, only three tools everyone has: eyes (to look), mind's eye (to imagine), hand-eye coordination (to draw and show).",
+    "Four steps: look (collect and screen), see (select and clump), imagine (see what is not there), show (make it clear).",
+    "In the part on developing ideas, start from a blank napkin and draw the most important element in the middle; for a competitive landscape start with yourself, because you know you are there (reviewer's paraphrase).",
+    "Simple hand-drawn sketches help you discover and clarify your own ideas and explain them to others.",
+    "The subtitle names two jobs, solving problems and selling ideas with pictures; the book has four parts: an introduction, then discovering, developing and selling ideas."
+  ],
+  "scene_details": [
+    "a napkin and a pen",
+    "kindergarteners drawing freely",
+    "three tools: eyes, mind's eye, hand-eye coordination",
+    "most important element drawn in the middle"
+  ],
+  "tension": "Adults who draw freely as children now say they cannot draw, yet the book claims they already own every tool needed.",
+  "opening_idea": "Contrast kindergarteners who draw freely with adults who do not, without naming the author.",
+  "lessons": [
+    {
+      "idea": "A sketch is a thinking tool, and a rough one is enough.",
+      "anchor": "the three tools everyone has and the napkin sketch"
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which problem on your desk this week would you understand better after thirty seconds of boxes and arrows on scrap paper?",
+  "use_cases": [
+    {
+      "situation": "The team talks past each other about a process",
+      "move": "Draw boxes and arrows live, say 'this is how I understand it', and invite corrections.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A tangled problem circles in your head",
+      "move": "Remember the three tools (eyes, mind's eye, hand) and put the problem on one sheet before thinking more.",
+      "context": "self"
+    },
+    {
+      "situation": "A child says 'I can't draw' about a school diagram",
+      "move": "Do an intentionally rough stick-figure version together and see whether it helps explain the idea.",
+      "context": "family"
+    }
+  ],
+  "pocket_idea": "Rough boxes and arrows on scrap paper are enough to see a problem.",
+  "conversation_variants": {
+    "punchline_idea": "Kindergarteners draw without a worry; adults forgot how, and the book says the tools are still in their pockets.",
+    "thirty_sec_idea": "Roam found visual thinking when a last-minute presentation made him sketch on a napkin; his claim is that eyes, mind's eye and hand are enough.",
+    "question_idea": "",
+    "key_contrast_idea": "can't draw, can sketch"
+  }
+}

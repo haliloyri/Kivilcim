@@ -1,0 +1,35 @@
+{
+ "story_id": 1274,
+ "verdict": "keep",
+ "verify_note": "Keep, cleaned: Duke anesthesia figures (via a published excerpt of When and the Duke release), Danish break study and the nappuccino retained. Unverified claims (2-4 p.m. accident share, NASA/Google/Japan nap policies, 'five minutes and a cup of coffee') dropped. Hand-washing and vigilance time-outs from Pink's interviews/summary (medium). Title changed.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Öğleden sonra ve nappuccino",
+  "description": "Daniel Pink öğleden sonraki çukurun ameliyathanede bile hata getirdiğini ve kısa bir molanın bunu telafi edebildiğini anlatıyor.",
+  "hook": "Öğleden sonra dikkatinizin düştüğü saate hangi işi koyuyorsunuz?",
+  "one_minute_summary": "Daniel Pink, Duke hastanesindeki yaklaşık 90.000 ameliyatın kayıtlarını aktarıyor: anestezi sorunları saat 15 ve 16'da başlayan vakalarda çok daha sıktı, sabah dokuzda yüzde 1 civarındayken saat dörtte yüzde 4,2'ye çıkıyordu. Danimarkalı öğrenciler gün ilerledikçe sınavlarda düşüyordu, ama yirmi otuz dakikalık bir mola bu düşüşü fazlasıyla telafi ediyordu. Pink'in en sevdiği mola 'nappuccino': önce kahve, hemen ardından on ile yirmi dakikalık bir şekerleme, kafein tam uyanırken devreye giriyor."
+ },
+ "en": {
+  "title": "The afternoon trough and the nappuccino",
+  "description": "Daniel Pink shows the afternoon dip causing errors even in operating rooms, and a short break making up for it.",
+  "hook": "What task do you usually put in the hour your attention drops?",
+  "one_minute_summary": "Daniel Pink cites Duke hospital data on about 90,000 surgeries: anesthesia problems were far more frequent for cases starting at 3 or 4 p.m., about 1 percent at 9 a.m. against 4.2 percent at 4 p.m. Danish schoolchildren scored worse later in the day, but a twenty-to-thirty-minute break more than made up the drop. Pink's favorite break is the nappuccino: coffee, then straight away a nap of ten to twenty minutes, so the caffeine arrives as you wake."
+ },
+ "es": {
+  "title": "Valle de tarde y nappuccino",
+  "description": "Daniel Pink muestra que el bajón de la tarde provoca errores incluso en el quirófano y que una pausa corta puede compensarlo.",
+  "hook": "¿Qué tarea sueles poner justo en la hora en que tu atención cae?",
+  "one_minute_summary": "Daniel Pink recoge datos de unas 90.000 operaciones en el hospital de Duke: los problemas de anestesia eran mucho más frecuentes en las intervenciones de las tres y las cuatro de la tarde, alrededor del 1 por ciento a las nueve frente al 4,2 a las cuatro. Los escolares daneses rendían peor cuanto más tarde era el examen, pero una pausa de veinte o treinta minutos compensaba de sobra la caída. Su pausa favorita es el nappuccino: café y, enseguida, una siesta de diez a veinte minutos."
+ },
+ "de": {
+  "title": "Das Nachmittagstief und der Nappuccino",
+  "description": "Daniel Pink zeigt, dass das Nachmittagstief sogar im Operationssaal Fehler bringt und eine kurze Pause es ausgleichen kann.",
+  "hook": "Welche Aufgabe legst du meist genau in die Stunde, in der deine Aufmerksamkeit absackt?",
+  "one_minute_summary": "Daniel Pink zitiert Daten von rund 90.000 Operationen am Krankenhaus der Duke University: Narkoseprobleme waren bei Eingriffen um 15 oder 16 Uhr viel häufiger, etwa 1 Prozent um 9 Uhr gegenüber 4,2 Prozent um 16 Uhr. Dänische Schulkinder schnitten später am Tag schlechter ab, aber eine Pause von zwanzig bis dreißig Minuten glich das mehr als aus. Pinks Lieblingspause ist der Nappuccino: erst Kaffee, dann sofort zehn bis zwanzig Minuten schlafen, damit das Koffein beim Aufwachen wirkt."
+ }
+}

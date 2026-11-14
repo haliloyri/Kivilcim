@@ -1,0 +1,62 @@
+{
+  "story_id": 1539,
+  "kind": "anecdote",
+  "book": {
+    "title": "Bounce",
+    "author": "Matthew Syed",
+    "year": "2010"
+  },
+  "confidence": "low",
+  "confidence_note": "Facts from the spiked review and lifeclub summary; no primary text. Syed's own Sydney 2000 experience and the explicit/implicit explanation are medium. Dropped: the 1995 darts and sports-drink experiment, the claim that elite athletes train mind and body equally. The wine-glass image comes from a summary. Keep the story short. Placebo soldiers (low) and perspective habit (medium) come from one summary each.",
+  "facts": [
+    "At the 2000 Sydney Olympics Matthew Syed was \"humiliated\": he played far below his best at the most important tournament of his career.",
+    "He later explained choking with two brain systems, the explicit and the implicit.",
+    "An expert's skill sits in the implicit system, running automatically.",
+    "Under pressure control of the familiar task shifts to the explicit system, which \"cannot do many things at once\", and the expert struggles with something already mastered.",
+    "His everyday example: carrying a full glass of wine across an expensive carpet makes you slow down and watch every step.",
+    "Syed describes novices as consciously monitoring each step while they build a skill; under pressure the explicit system pulls a skilled player back toward beginner-style play.",
+    "A reviewer notes Syed treats choking as something that just happens, and argues that explanation is as biologically determinist as the talent myths Syed rejects.",
+    "A summary says that before big competitions Syed puts things in perspective by thinking about relationships, health and family, which lowers the pressure.",
+    "A summary says the book tells of severely injured soldiers injected with saline whose pain subsided while they believed it was morphine (mind affecting body; low confidence)."
+  ],
+  "scene_details": [
+    "Sydney 2000",
+    "a full glass of wine over an expensive carpet",
+    "watching every step"
+  ],
+  "tension": "The best table tennis player in England played far below his level at the tournament that mattered most.",
+  "opening_idea": "Open on Sydney 2000 and the result Syed calls humiliating.",
+  "lessons": [
+    {
+      "idea": "Skills that run on their own can be disrupted by watching them step by step, so under pressure give your attention to something other than the mechanics.",
+      "anchor": "The glass of wine across the carpet; Sydney 2000.",
+      "example": "A confident driver who starts naming each pedal and mirror during a test hesitates and stalls."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "When did you last stumble at something you do well, and what were you watching yourself do in that moment?",
+  "use_cases": [
+    {
+      "situation": "You rehearse a presentation you know well.",
+      "move": "Syed says watching each step of a skilled act can break it; focus on what you want the audience to take away, not the order of your words.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A teenager freezes in a match or exam.",
+      "move": "Ask what they were thinking about in the moment, not what went wrong.",
+      "context": "family"
+    },
+    {
+      "situation": "You tense up before a performance.",
+      "move": "Pick one outside target such as the person at the back of the room.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "Under pressure, aim your attention at the goal instead of the steps your body already knows.",
+  "conversation_variants": {
+    "punchline_idea": "Matthew Syed, one of England's best table tennis players, was humiliated at the 2000 Olympics and later explained why experts choke.",
+    "thirty_sec_idea": "At the Sydney Olympics in 2000, Matthew Syed played far below his best. He later explained choking with two brain systems. Skill lives in an implicit system. Under pressure control moves to the explicit system, which cannot do many things at once, so an expert starts to struggle with what they had mastered. It is like carrying a full glass of wine across an expensive carpet.",
+    "question_idea": "When have you choked?",
+    "key_contrast_idea": "steps versus flow"
+  }
+}

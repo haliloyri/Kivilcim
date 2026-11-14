@@ -18,11 +18,14 @@ import StoryCard from '../components/StoryCard';
 import CategoryPill from '../components/CategoryPill';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import DawnGlow from '../components/DawnGlow';
+import Albi from '../components/Albi';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import Svg, { Circle, Line } from 'react-native-svg';
 import { t, getGreeting } from '../locales/i18n';
+import { toUpperFor } from '../utils/locale';
 import { ANALYTICS_EVENTS, trackEvent } from '../utils/analytics';
+import { getStoryCollectionId } from '../constants/storyCollections';
 import { getCategoryImage, getCategoryTheme, getCategoryBanner, getBadgeBanner, getCategoryPillImage } from '../utils/categoryImages';
 import { shouldShowAd, loadRewarded, showRewarded } from '../utils/ads';
 import BadgeIcon, { BADGE_MAP } from '../components/BadgeIcon';
@@ -257,20 +260,6 @@ const DailyProgressRing = ({ done, total, size = 42, colors, isDark, onPress }) 
   );
 };
 
-const getStoryCollectionId = (version) => {
-  const value = String(version ?? '').trim().toUpperCase();
-  if (value === '1') return 'classic';
-  if (value === '2') return 'new';
-  if (value === 'A2') return 'agent';
-  if (/^F\d+$/.test(value)) return 'focus';
-  if (/^C\d+$/.test(value)) return 'conversation';
-  if (value === 'OH') return 'originals';
-  if (value === 'OPUS55') return 'opus55';
-  if (value === 'OPUS55-2') return 'opus55_2';
-  if (value === 'SON55') return 'son55';
-  return 'new';
-};
-
 // Brand motif: sun rising over the hero card (logo language). Decorative only.
 const HeroSun = ({ color }) => (
   <Svg
@@ -390,7 +379,8 @@ const HomeScreen = ({ navigation }) => {
   // Language strings
   const greeting = getGreeting(lang);
   const todayDateLabel = new Date().toLocaleDateString(DATE_LOCALES[lang] || 'en-US', { weekday: 'long', day: 'numeric', month: 'long' });
-  const greetingName = userProfile?.displayName ? `${greeting}, ${userProfile.displayName}` : greeting;
+  const greetingFirstName = userProfile?.displayName ? String(userProfile.displayName).trim().split(/\s+/)[0] : '';
+  const greetingName = greetingFirstName ? `${greeting}, ${greetingFirstName}` : greeting;
   const categoriesLabel = t('categoriesLabel', lang);
   const todayLabel = t('todayLabel', lang);
   const allStoriesLabel = t('home_all_stories', lang);
@@ -663,10 +653,10 @@ const HomeScreen = ({ navigation }) => {
     ? categoryFiltered.filter((story) => storyMatchesSearch(story, searchQuery))
     : categoryFiltered;
 
-  // Uzun hikâyeler önce, aynı sürede olanlarda yeni hikâyeler önce görünsün.
+  // Viral puanı yüksek hikâyeler önce, eşit puanda yeni hikâyeler önce görünsün.
   const sortedStories = [...searchFiltered].sort(
     (a, b) =>
-      Number(b.min || b.possible_read_minutes || 1) - Number(a.min || a.possible_read_minutes || 1) ||
+      Number(b.viral_score || 0) - Number(a.viral_score || 0) ||
       Number(b.story_id) - Number(a.story_id)
   );
 
@@ -1310,14 +1300,14 @@ const HomeScreen = ({ navigation }) => {
       lineHeight: typography.spacing.screenTitleLineHeight,
       color: colors.text,
       letterSpacing: 0.1,
-      marginTop: 5,
+      marginTop: 2,
     },
     headerDate: {
       fontFamily: 'Inter_500Medium',
       fontSize: 13,
       color: colors.textSecondary,
       letterSpacing: 0.2,
-      marginTop: 4,
+      marginTop: 6,
     },
     streakPill: {
       minWidth: 44,
@@ -1968,7 +1958,7 @@ const HomeScreen = ({ navigation }) => {
       width: 40,
       height: 40,
       borderRadius: 12,
-      backgroundColor: 'rgba(255,255,255,0.92)',
+      backgroundColor: isDark ? 'rgba(255,255,255,0.14)' : 'rgba(255,255,255,0.92)',
       alignItems: 'center',
       justifyContent: 'center',
       overflow: 'hidden',
@@ -2328,9 +2318,14 @@ const HomeScreen = ({ navigation }) => {
         {/* Header */}
         <View style={styles.homeHeader}>
           <View style={styles.brandLogo}>
-            <View>
-              <Text style={styles.brandLogoText} numberOfLines={1}>{greetingName}</Text>
-              <Text style={styles.headerDate}>{todayDateLabel}</Text>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.headerDate} numberOfLines={1}>{todayDateLabel}</Text>
+              <Text
+                style={styles.brandLogoText}
+                numberOfLines={1}
+                adjustsFontSizeToFit
+                minimumFontScale={0.7}
+              >{greetingName}</Text>
             </View>
           </View>
           {streak > 0 && (
@@ -2350,7 +2345,6 @@ const HomeScreen = ({ navigation }) => {
               <View style={{ width: 42, height: 42, borderRadius: 21, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surfaceContainerHigh }}>
                 <Ionicons name={career.isPathSelectionDue ? 'compass-outline' : career.activePath ? getCareerPathIconName(career.activePath) : 'ribbon-outline'} size={20} color={colors.primaryText} />
               </View>
-              <Text style={styles.headerBadgeSub} numberOfLines={1}>{t(career.isPathSelectionDue ? 'career.choosePathShort' : career.profileTitle, lang)}</Text>
             </TouchableOpacity>
           ) : doneCount < personalizedTarget && (
             <TouchableOpacity
@@ -2416,13 +2410,13 @@ const HomeScreen = ({ navigation }) => {
           const rs = resumeItem.story;
           const rsCatRaw = rs.parent_cat_raw || rs.parent_cat || rs.cat;
           const rsCat = toPascalCase(t(rs.parent_cat || rs.cat, lang) || '');
-          const rsPill = getCategoryPillImage(rsCatRaw, false);
+          const rsPill = getCategoryPillImage(rsCatRaw, isDark);
           const rsMins = Number(rs.min || rs.possible_read_minutes) || personalizedMinutes;
           const rsLeft = Math.max(1, Math.ceil(rsMins * (1 - resumeItem.percent / 100)));
           return (
             <View style={styles.resumeCard}>
               <HeroSun color={colors.dawn} />
-              <Text style={styles.resumeEyebrow}>{t('libraryContinueTitle', lang)}</Text>
+              <Text style={styles.resumeEyebrow}>{toUpperFor(t('libraryContinueTitle', lang), lang)}</Text>
               <View style={styles.resumeCatRow}>
                 <View style={styles.resumeCatBadge}>
                   {rsPill.source ? <Image source={rsPill.source} style={styles.resumeCatBadgeImg} resizeMode="contain" /> : null}
@@ -2533,7 +2527,7 @@ const HomeScreen = ({ navigation }) => {
                   <Ionicons name={primaryHomeAction.icon} size={26} color={iconColor} />
                 </View>
                 <View style={styles.primaryActionTextWrap}>
-                  <Text style={[styles.primaryActionEyebrow, { color: eyebrowColor }]}>{primaryHomeAction.eyebrow}</Text>
+                  <Text style={[styles.primaryActionEyebrow, { color: eyebrowColor }]}>{toUpperFor(primaryHomeAction.eyebrow, lang)}</Text>
                   <Text
                     style={[styles.primaryActionTitle, { color: titleColor }]}
                     numberOfLines={2}
@@ -2662,7 +2656,7 @@ const HomeScreen = ({ navigation }) => {
                   <>
                     <View style={styles.primaryActionTop}>
                       <View style={[styles.primaryActionTextWrap, { maxWidth: '50%' }]}>
-                        <Text style={[styles.primaryActionEyebrow, { color: cardTextColors.eyebrowColor }]}>{t('home_badge_journey_label', lang)}</Text>
+                        <Text style={[styles.primaryActionEyebrow, { color: cardTextColors.eyebrowColor }]}>{toUpperFor(t('home_badge_journey_label', lang), lang)}</Text>
                         <Text style={[styles.primaryActionTitle, { color: cardTextColors.titleColor }]}>{t(badge.titleKey, lang)}</Text>
                       </View>
                     </View>
@@ -2749,9 +2743,14 @@ const HomeScreen = ({ navigation }) => {
             accessibilityLabel={t('home_daily_strip_title', lang, { done: doneCount, total: Math.max(personalizedTarget, 1) })}
           >
             <View style={styles.dailyStripTop}>
-              <Text style={styles.dailyStripTitle}>
-                {t('home_daily_strip_title', lang, { done: doneCount, total: Math.max(personalizedTarget, 1) })}
-              </Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                {doneCount >= Math.max(personalizedTarget, 1) && (
+                  <Albi pose={isDark ? 'dark_mode' : 'hedef_tamam'} size={36} />
+                )}
+                <Text style={styles.dailyStripTitle}>
+                  {t('home_daily_strip_title', lang, { done: doneCount, total: Math.max(personalizedTarget, 1) })}
+                </Text>
+              </View>
               <Text style={styles.dailyStripLink}>{t('home_daily_strip_link', lang)}</Text>
             </View>
             <View style={styles.dailyStripDots}>
@@ -2883,7 +2882,7 @@ const HomeScreen = ({ navigation }) => {
         {!loading && !isSearchActive && (
           <>
             <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>
-              {categoriesLabel}
+              {toUpperFor(categoriesLabel, lang)}
             </Text>
             <FlatList
               ref={categoryScrollRef}
@@ -2911,7 +2910,7 @@ const HomeScreen = ({ navigation }) => {
           </>
         )}
 
-        {!loading && !isSearchActive && <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>{allStoriesLabel}</Text>}
+        {!loading && !isSearchActive && <Text style={[styles.sectionLabel, { paddingHorizontal: layout.padding.horizontal }]}>{toUpperFor(allStoriesLabel, lang)}</Text>}
         
         <View style={{ paddingHorizontal: layout.padding.horizontal }}>
           {loading ? null : sortedStories.length === 0 ? (
@@ -2978,7 +2977,7 @@ const HomeScreen = ({ navigation }) => {
                         />
                         <View style={{ flex: 1 }}>
                           <Text style={styles.dailyPanelTitle} numberOfLines={1}>
-                            {t('home_daily_cta', lang)}
+                            {toUpperFor(t('home_daily_cta', lang), lang)}
                           </Text>
                           <Text style={styles.dailyPanelSub}>{doneCount} / {panelStories.length}</Text>
                         </View>
@@ -3123,7 +3122,7 @@ const HomeScreen = ({ navigation }) => {
                       letterSpacing: 1.2,
                       textTransform: 'uppercase',
                     }}>
-                      {t('home_more_stories', lang)}
+                      {toUpperFor(t('home_more_stories', lang), lang)}
                     </Text>
                     <View style={{ flex: 1, height: 1, backgroundColor: colors.border }} />
                   </View>

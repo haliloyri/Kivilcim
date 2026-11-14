@@ -1,0 +1,62 @@
+{
+  "story_id": 1287,
+  "kind": "concept",
+  "book": {
+    "title": "As a Man Thinketh",
+    "author": "James Allen",
+    "year": "1903"
+  },
+  "confidence": "high",
+  "confidence_note": "Checked against the Project Gutenberg text. The old story (Buddha, Newton in the plague, Thoreau at Walden, default mode network, daily silent time, a quote about silence) is not in the book; the words 'silence' and 'solitude' do not occur. The story is rebuilt from the book's closing chapter 'Serenity', which treats calmness of mind as the fruit of self-control. Allen gives no named person or case; his concrete images are the ordinary trader, the shade tree, the rock, and the helm.",
+  "facts": [
+    "The last chapter is called 'Serenity'. It opens: 'Calmness of mind is one of the beautiful jewels of wisdom.'",
+    "Allen says calmness is the result of long and patient effort in self-control.",
+    "As a person understands how thought works in himself and others, he 'ceases to fuss and fume and worry and grieve'.",
+    "His practical example: even the ordinary trader will find his business prosper as he grows in self-control and equanimity, because people prefer to deal with someone whose manner is steady.",
+    "The strong, calm man is 'like a shade-giving tree in a thirsty land, or a sheltering rock in a storm'.",
+    "Allen asks how many people sour their lives and ruin what is sweet by explosive tempers.",
+    "Allen writes that humanity surges with uncontrolled passion and is blown about by anxiety and doubt; only the wise man, whose thoughts are controlled, makes the winds and storms of the soul obey him. He tells tempest-tossed souls that in the ocean of life the isles of Blessedness and the sunny shore of their ideal await them.",
+    "The book ends: keep your hand firmly on the helm of thought; 'Self-control is strength; Right Thought is mastery; Calmness is power. Say unto your heart, \"Peace, be still!\"'"
+  ],
+  "scene_details": [
+    "the ordinary trader whose customers prefer a steady manner",
+    "a shade-giving tree in a thirsty land",
+    "a hand firmly on the helm",
+    "'Peace, be still!'"
+  ],
+  "tension": "Allen ends a book about thought not with ambition but with calm, and claims even a shopkeeper's trade depends on it.",
+  "opening_idea": "Open on the ordinary trader whose customers choose the steady one.",
+  "lessons": [
+    {
+      "idea": "Calm is practiced self-control, and other people feel its effect before you do; notice the moment you start to fume and steady your reply once.",
+      "anchor": "The trader; 'fuss and fume'.",
+      "everyday_example_idea": "A receptionist who stays level with an angry caller and becomes the one colleagues send difficult calls to."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "In which situation this week did you fuss and fume, and how would a steadier first reply have sounded there?",
+  "use_cases": [
+    {
+      "situation": "A meeting turns heated.",
+      "move": "Lower your voice, restate the question and slow the pace.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A family member arrives upset.",
+      "move": "Be the shade tree Allen describes: listen before answering.",
+      "context": "family"
+    },
+    {
+      "situation": "You feel a temper rising before a reply.",
+      "move": "Wait one breath and say Allen's line 'Peace, be still' to yourself before typing.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "People prefer to deal with a steady person; keep your hand on the helm when you start to fume.",
+  "conversation_variants": {
+    "punchline_idea": "James Allen ended his book on thought with a shopkeeper: customers prefer the one who stays calm.",
+    "thirty_sec_idea": "Serenity chapter; calm from self-control; trader; shade tree; explosive tempers; helm.",
+    "question_idea": "",
+    "key_contrast_idea": "fuming vs steady"
+  }
+}

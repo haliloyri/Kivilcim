@@ -1,0 +1,64 @@
+{
+  "story_id": 1331,
+  "kind": "anecdote",
+  "book": {
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "year": "2016"
+  },
+  "confidence": "medium",
+  "confidence_note": "The doorstep example and the fault/responsibility distinction are verified from book quotes. The William James episode is confirmed as in the book by a Goodreads quote; the 1872 date and the word 'rebirth' come from summaries and Manson's blog, and no further biographical detail is used. The old Frankl quote and the invented 'tek kapı' line are dropped.",
+  "facts": [
+    "Manson calls it the responsibility/fault fallacy: some problems are not our fault, yet we are still responsible for them.",
+    "His example: you wake up and find a newborn baby left on your doorstep. It isn't your fault, but now you have to decide what to do, and whatever you choose, you are responsible for the result.",
+    "Fault comes from choices already made; responsibility comes from the choices you are making now.",
+    "Around 1872 the philosopher William James's life was falling apart and he considered ending it.",
+    "One night, reading lectures by the philosopher Charles Peirce, James decided on a one-year experiment: for a year he would believe he was 100 percent responsible for everything that happened in his life and do all he could to change his circumstances.",
+    "If nothing improved after the year, he would accept that he was powerless.",
+    "James's life changed; he later called that decision his rebirth.",
+    "Manson: 'Accepting responsibility for our problems is thus the first step to solving them.'"
+  ],
+  "scene_details": [
+    "a newborn left on the doorstep in the morning",
+    "James reading Charles Peirce's lectures late at night",
+    "a diary-like deal with himself: twelve months"
+  ],
+  "tension": "James was not to blame for most of his troubles, and still bet his life on treating them as his own to fix.",
+  "opening_idea": "Start with the doorstep: a baby you didn't ask for and the decision you now own.",
+  "lessons": [
+    {
+      "idea": "Separate who caused a problem from who will act on it; arguing about fault can wait, the next choice can't.",
+      "anchor": "Doorstep baby; James's one-year bet."
+    },
+    {
+      "idea": "Responsibility looks forward, fault looks back.",
+      "anchor": "Manson's distinction."
+    }
+  ],
+  "reflect": [],
+  "reflect_final": "Which problem in your life is not your fault but still waits for a decision only you can make this week?",
+  "use_cases": [
+    {
+      "situation": "A meeting turns into finding who caused a mistake",
+      "move": "Say fault can be sorted later and ask who takes the next step today.",
+      "context": "meeting"
+    },
+    {
+      "situation": "A sibling keeps blaming a parent for an old family issue",
+      "move": "Agree it wasn't their fault, then ask what they want to do about it now.",
+      "context": "family"
+    },
+    {
+      "situation": "You inherit a messy project from someone who left",
+      "move": "Remember the baby on the doorstep: list the first three decisions that are now yours.",
+      "context": "self"
+    }
+  ],
+  "pocket_idea": "A baby on your doorstep isn't your fault, but what happens next is your decision.",
+  "conversation_variants": {
+    "punchline_idea": "William James gave himself one year of acting as if everything in his life were his responsibility.",
+    "thirty_sec_idea": "James in 1872, considering suicide, reads Peirce and makes a one-year bet of total responsibility; it changes his life; Manson's doorstep baby.",
+    "question_idea": "What isn't your fault but is still yours to handle?",
+    "key_contrast_idea": "Fault looks back"
+  }
+}

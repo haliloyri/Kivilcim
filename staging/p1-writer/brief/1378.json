@@ -1,0 +1,60 @@
+{
+ "story_id": 1378,
+ "kind": "anecdote",
+ "book": {
+  "title": "Learned Optimism",
+  "author": "Martin E. P. Seligman",
+  "year": "1990"
+ },
+ "confidence": "high",
+ "confidence_note": "Experiment details verified in Maier & Seligman's 2016 review of the original work (Seligman & Maier 1967; Hiroto & Seligman 1975); book full text not accessed, so no book wording is quoted. 'About one in three never became helpless' rests on Seligman's own interview statement (medium). Old claim that depression is usually 'not chemical' is dropped. Added the 2016 revision as an editorial caveat. No dog behaviour beyond 'passively waited the shock out' is used.",
+ "facts": [
+  "In the mid-1960s at the University of Pennsylvania, dogs given shocks paired with a tone were later put in a shuttlebox, where escape needed only a jump over a low barrier; many did not escape and passively waited the shock out.",
+  "Seligman and Steven Maier designed a three-group test (published 1967): one group could stop the shock by pressing a panel with its nose; a yoked group received exactly the same shocks, but nothing it did had any effect; a third group got no shock.",
+  "In the shuttlebox, about two-thirds of the no-control animals failed to learn to escape; about 90% of the panel group and the no-shock group learned easily.",
+  "Seligman called this learned helplessness and connected it to depression.",
+  "Donald Hiroto ran a human version with loud noise that could be stopped by pressing buttons, the same noise with no control, or no noise. In a new task where moving a hand turned the noise off, most of the no-control group did not try; some said nothing had worked, so why try.",
+  "About one in three people could not be made helpless in the lab; Seligman says this made him ask what made them resilient, the question behind Learned Optimism.",
+  "Caveat: in 2016 Maier and Seligman wrote that the original theory 'got it backwards': passivity under prolonged shock is the default, unlearned response; what animals learn is control, detected in the medial prefrontal cortex."
+ ],
+ "scene_details": [
+  "a panel the dog could press with its nose",
+  "a shuttlebox with a low barrier to jump",
+  "the same shocks, delivered in pairs: one dog with control, one yoked",
+  "a person's hand moving to turn off a loud noise"
+ ],
+ "tension": "The dogs that did not escape had received exactly the same shocks as dogs that did; only one thing differed.",
+ "opening_idea": "Start with the two dogs wired to the same shocks: one presses a panel with its nose and the shock stops for both; the other's pressing does nothing.",
+ "lessons": [
+  {
+   "idea": "After a stretch where effort made no difference, test whether it makes a difference now before concluding it doesn't.",
+   "anchor": "the low barrier in the shuttlebox that the yoked dogs did not jump"
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which situation in your life did you stop trying in after it went badly once or twice, and what would one small new test of it look like?",
+ "use_cases": [
+  {
+   "situation": "A team member says 'we tried that, it never works'",
+   "move": "Ask when it was last tried and what has changed since; propose one small test this week.",
+   "context": "meeting"
+  },
+  {
+   "situation": "You avoid a task because past attempts failed",
+   "move": "Recall that the dogs had a low barrier they never tested; do one small attempt and note what happens.",
+   "context": "self"
+  },
+  {
+   "situation": "A child says 'I'm bad at maths, it's pointless'",
+   "move": "Separate the old experience from today's task; pick one problem to try together.",
+   "context": "family"
+  }
+ ],
+ "pocket_idea": "The dogs never tested the low barrier; check whether today's barrier is the old one.",
+ "conversation_variants": {
+  "punchline_idea": "Two dogs got identical shocks; only the one whose pressing didn't matter later failed to jump a low barrier.",
+  "thirty_sec_idea": "Panel dog vs yoked dog, shuttlebox, two-thirds gave up; humans with noise did the same; one in three never gave up; 2016 revision.",
+  "question_idea": "",
+  "key_contrast_idea": "control vs. same pain"
+ }
+}

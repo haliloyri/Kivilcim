@@ -1,0 +1,35 @@
+{
+ "story_id": 1601,
+ "verdict": "keep",
+ "verify_note": "Keep with medium confidence: 5.5-second pace from secondary summaries of the book; Bernardi et al. BMJ 2001 verified via abstract (23 adults, about 14 breaths a minute at rest falling to about 6 with Ave Maria or mantra, baroreflex 9.5 to 11.5). Old text's shamanic rituals, 'dozens of techniques' and claimed outcomes dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Dakikada altı nefes",
+  "description": "2001'deki bir çalışmada Ave Maria ve yoga mantrası nefesi dakikada yaklaşık altıya düşürdü.",
+  "hook": "Bir dua nefesinizi nasıl yavaşlatır?",
+  "one_minute_summary": "Bernardi ve arkadaşlarının 2001 tarihli *BMJ* çalışmasında Floransa ve Pavia'da 23 sağlıklı yetişkin Latince Ave Maria ve bir yoga mantrası okudu. Dinlenirken dakikada ortalama 14 nefes alan gönüllüler, okurken yaklaşık altıya indi ve kalp-damar ritimlerindeki değişkenlik arttı. James Nestor'un *Breath* kitabı da 5,5 saniye alış, 5,5 saniye veriş hızını önerir. Yazarlar tespihin bu ritimle uyumlu olduğunu öne sürdü, bu yorumdur."
+ },
+ "en": {
+  "title": "Six breaths a minute",
+  "description": "In a 2001 study, reciting the Ave Maria and a yoga mantra slowed breathing to about six a minute.",
+  "hook": "How does a prayer slow your breathing?",
+  "one_minute_summary": "In a 2001 *BMJ* study by Bernardi and colleagues, 23 healthy adults in Florence and Pavia recited the Ave Maria in Latin and a yoga mantra. At rest they averaged about 14 breaths a minute; reciting brought it near six, with more variability in heart and blood-pressure rhythms. James Nestor's *Breath* recommends 5.5 seconds in and out. The authors' idea that the rosary evolved to fit these rhythms is an interpretation."
+ },
+ "es": {
+  "title": "Seis respiraciones por minuto",
+  "description": "En un estudio de 2001, recitar el Ave María y un mantra de yoga redujo la respiración a unas seis por minuto.",
+  "hook": "¿Cómo frena una oración tu respiración?",
+  "one_minute_summary": "En un estudio del *BMJ* de 2001 de Bernardi y colaboradores, 23 adultos sanos de Florencia y Pavía recitaron el Ave María en latín y un mantra de yoga. En reposo hacían unas 14 respiraciones por minuto; al recitar bajaron a cerca de seis, con más variabilidad en los ritmos del corazón y la presión. *Breath*, de James Nestor, recomienda 5,5 segundos al inspirar y al espirar. La idea de los autores de que el rosario evolucionó para encajar con estos ritmos es una interpretación."
+ },
+ "de": {
+  "title": "Sechs Atemzüge pro Minute",
+  "description": "In einer Studie von 2001 senkten Ave Maria und ein Yoga-Mantra die Atmung auf etwa sechs pro Minute.",
+  "hook": "Wie verlangsamt ein Gebet deine Atmung?",
+  "one_minute_summary": "In einer *BMJ*-Studie von 2001 von Bernardi und Kollegen sprachen 23 gesunde Erwachsene in Florenz und Pavia das Ave Maria auf Latein und ein Yoga-Mantra. In Ruhe kamen sie auf etwa 14 Atemzüge pro Minute, beim Rezitieren auf rund sechs, mit mehr Variabilität in Herz- und Blutdruckrhythmen. James Nestors *Breath* empfiehlt 5,5 Sekunden ein und aus. Die Idee der Autoren, der Rosenkranz habe sich passend zu diesen Rhythmen entwickelt, ist eine Deutung."
+ }
+}

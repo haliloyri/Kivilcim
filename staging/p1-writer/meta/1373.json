@@ -1,0 +1,35 @@
+{
+ "story_id": 1373,
+ "verdict": "keep",
+ "verify_note": "Category order and the 'fatal mistake' line verified against quotes from The Life-Changing Magic of Tidying Up. Invented timings and 'decision muscle' wording in the old text were dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Önce Kıyafetler, En Son Hatıralar",
+  "description": "Marie Kondo evi oda oda değil, eşya türüne göre ve sabit bir sırayla toparlıyor. Kıyafetlerle başlayan sıra, fotoğraflar ve hatıralarla bitiyor.",
+  "hook": "Evinizi neden oda oda toparlayınca hiç bitmiyor?",
+  "one_minute_summary": "Marie Kondo, The Life-Changing Magic of Tidying Up'ta konuma göre toparlamanın ölümcül bir hata olduğunu yazıyor, çünkü aynı türden eşyalar evin her yerine dağılmış. Bir türe ait her şeyi tek bir yığında topluyor ve ancak o zaman ayıklıyor. Sıra sabit: kıyafetler, kitaplar, kâğıtlar, komono ve en son anı eşyaları, kolaydan zora. Önce atmak, sonra yerleştirmek geliyor. Sayısal hedefleri reddediyor ve aynı türden her şeyi tek bir yerde saklamayı öneriyor."
+ },
+ "en": {
+  "title": "Clothes First, Keepsakes Last",
+  "description": "Marie Kondo tidies by kind of object in a fixed order, starting with clothes and ending with photos and keepsakes.",
+  "hook": "Why does tidying room by room never seem to end?",
+  "one_minute_summary": "In The Life-Changing Magic of Tidying Up, Marie Kondo calls tidying by location a fatal mistake, because things of one kind are scattered across the home. She gathers every item of a category into one pile before deciding anything. The order is fixed: clothes, books, papers, komono and finally mementos, from easier decisions to harder ones. Discarding comes before storing. She rejects numerical targets and stores all items of one type in one place."
+ },
+ "es": {
+  "title": "Primero la ropa, luego recuerdos",
+  "description": "Marie Kondo ordena por tipo de objeto y en un orden fijo, empezando por la ropa y terminando con fotos y recuerdos.",
+  "hook": "¿Por qué ordenar habitación por habitación nunca parece terminar?",
+  "one_minute_summary": "En The Life-Changing Magic of Tidying Up, Marie Kondo dice que ordenar por lugares es un error fatal, porque lo de un mismo tipo está repartido por la casa. Reúne todo lo de una categoría en un montón antes de decidir nada. El orden es fijo: ropa, libros, papeles, komono y al final recuerdos, de lo fácil a lo difícil. Primero se descarta y después se guarda. Rechaza las reglas numéricas y guarda todo lo de un tipo en un solo sitio."
+ },
+ "de": {
+  "title": "Erst Kleidung, zuletzt Erinnerungen",
+  "description": "Marie Kondo räumt nach Art der Dinge in fester Reihenfolge auf, beginnend mit Kleidung und endend mit Fotos und Erinnerungsstücken.",
+  "hook": "Warum hört Aufräumen Zimmer für Zimmer nie auf?",
+  "one_minute_summary": "In The Life-Changing Magic of Tidying Up nennt Marie Kondo Aufräumen nach Orten einen fatalen Fehler, weil Dinge einer Art über die ganze Wohnung verteilt sind. Sie sammelt alles einer Kategorie auf einem Haufen, bevor sie entscheidet. Die Reihenfolge ist fest: Kleidung, Bücher, Papiere, Komono, zuletzt Erinnerungsstücke, von leicht zu schwer. Erst aussortieren, dann einräumen. Zahlenziele lehnt sie ab und bewahrt alles einer Art an einem Ort auf."
+ }
+}

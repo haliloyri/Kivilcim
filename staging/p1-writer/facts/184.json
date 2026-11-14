@@ -1,0 +1,32 @@
+{
+ "book_no": 184,
+ "title": "Atlas of the Heart",
+ "authors": ["Brené Brown"],
+ "year": "2021",
+ "sources": [
+  "https://time.com/6122081/brene-brown-atlas-of-the-heart",
+  "https://ryanvle.github.io/ryanQuartz/posts/atlas-of-the-heart",
+  "https://www.supersummary.com/atlas-of-the-heart/introduction-chapters-1-2-summary",
+  "https://www.enotes.com/topics/atlas-heart/chapter-summaries/chapter-2-summary"
+ ],
+ "facts": [
+  {"id":"f1","claim":"Atlas of the Heart (2021) by Brené Brown maps 87 emotions and experiences, grouped into 13 'land masses' (Time).","source":"Time","confidence":"high"},
+  {"id":"f2","claim":"Brown's team surveyed about 7,000 people over five years; on average people could name only three emotions as they were feeling them: happiness, sadness, anger.","source":"Time","confidence":"medium"},
+  {"id":"f3","claim":"Envy occurs when we want something that another person has. Looks, status and wealth are the big trio.","source":"Book definition via excerpt page; Time","confidence":"high"},
+  {"id":"f4","claim":"Jealousy is when we fear losing a relationship, or a valued part of a relationship, that we already have. It involves three parties (you, the person you are close to, and the perceived rival).","source":"excerpt page; chapter summary","confidence":"high"},
+  {"id":"f5","claim":"Envy and jealousy sit in the 'Places We Go When We Compare' section, beside comparison, admiration, schadenfreude and freudenfreude.","source":"supersummary","confidence":"medium"},
+  {"id":"f6","claim":"Brown says she always thought resentment lived close to anger, but it turns out resentment is not part of the anger family; it is a function of envy. The idea came out of an interview with Marc Brackett.","source":"secondary summaries","confidence":"medium"},
+  {"id":"f7","claim":"Resentment involves feelings of unfairness or being treated unfairly, and can hide an unspoken need or an unfair balance.","source":"secondary summaries","confidence":"low"}
+ ],
+ "rejected": [
+  {"claim":"More than 50% of people use only three words (happy, sad, angry)","reason":"Book/Time says 'on average people can identify only three emotions'; no 50% figure."},
+  {"claim":"Anger is alive/informative; resentment (kin) is 'dead' and drains energy; resentment resolved by letting go; 'forgiveness frees you not them'","reason":"Not Brown's Atlas claim. Her claim: resentment is part of envy, not anger. Dropped."},
+  {"claim":"Envy should be read as 'I want that too' (not 'why is he so lucky'); the writer example about a friend's book","reason":"Interpretive advice and example not found in sources; kept out of story, may appear only as a reader-side suggestion in the lesson/use cards."},
+  {"claim":"Naming emotions makes them manageable; 'you can't manage what you can't name'","reason":"Not a quote found in sources; do not attribute."}
+ ],
+ "stories": {
+  "1648": {"verdict":"keep","fact_ids":["f1","f2"],"note":"87 emotions and the three-word finding."},
+  "1649": {"verdict":"keep","fact_ids":["f3","f4","f5"],"note":"Envy (two parties, wanting what they have) vs jealousy (three parties, fear of losing a relationship)."},
+  "1650": {"verdict":"keep","fact_ids":["f6","f7"],"note":"Rebuilt on Brown's actual claim: resentment belongs to envy, not anger. Old anger-alive/resentment-dead frame dropped. Medium confidence, secondary sources only."}
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "book_no": 170,
+ "title": "I Will Teach You to Be Rich",
+ "authors": [
+  "Ramit Sethi"
+ ],
+ "year": "2009",
+ "sources": [
+  "https://yourpersonalfinancehub.substack.com/p/master-your-money-live-your-best",
+  "https://www.gobankingrates.com/money/wealth/ramit-sethi-follow-this-paycheck-routine-to-get-richer-2025/",
+  "https://www.supersummary.com/i-will-teach-you-to-be-rich/chapters-4-5-summary",
+  "https://diaundra.substack.com/p/diaundras-tldr-i-will-teach-you-to",
+  "https://www.iwillteachyoutoberich.com/blog/automate-your-finances/"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Sethi's method sets up an automatic flow: the paycheck lands in checking, then moves by itself to retirement, savings and investment accounts and to bills. Summaries frame it as systems over willpower: the decision is taken out of your hands.",
+   "source": "summaries; Business Insider/GOBankingRates on his routine",
+   "confidence": "medium"
+  },
+  {
+   "id": "f2",
+   "claim": "Conscious spending plan, four buckets: fixed costs, investments, savings, guilt-free spending. One summary gives roughly 50-60% of take-home for fixed costs, about 10% investments, 5-10% savings; guilt-free spending is the remainder.",
+   "source": "substack reviews",
+   "confidence": "medium"
+  },
+  {
+   "id": "f3",
+   "claim": "Sethi's own framing: a budget looks backward, a spending plan lets you look forward. Spend extravagantly on what you love and cut costs mercilessly on what you do not.",
+   "source": "search-reported interview quotes; reviews",
+   "confidence": "medium"
+  },
+  {
+   "id": "f4",
+   "claim": "Sethi is 'famously indifferent' to cutting daily lattes and avoids tracking every penny; he focuses on the handful (five to ten) of financial decisions that drive most results, the 'Big Wins'. Named among them: automating savings and negotiating salary.",
+   "source": "review summary",
+   "confidence": "medium"
+  },
+  {
+   "id": "f5",
+   "claim": "The 85 percent solution: acting at roughly 85% quality beats doing nothing.",
+   "source": "summaries",
+   "confidence": "low"
+  },
+  {
+   "id": "f6",
+   "claim": "A 'Rich Life' defined by the reader appears in reviews and the later edition; whether the 2009 text builds a define-cost-plan-backward method could not be confirmed.",
+   "source": "reviews",
+   "confidence": "low"
+  },
+  {
+   "id": "f7",
+   "claim": "Sethi's automation walk-through (his website): 'It's not about willpower'; automation reduces the daily decisions that lead people to do nothing. Step 1 link accounts: 401(k) to checking by direct deposit; checking to Roth IRA, savings and a credit card; free bill-pay for bills that cannot go on a card. Step 2: ask companies to move bill dates to payday.",
+   "source": "iwillteachyoutoberich.com automate page",
+   "confidence": "medium"
+  },
+  {
+   "id": "f8",
+   "claim": "Monthly flow in his example, payday on the 1st: 401(k) portion withheld, take-home lands in checking, keep a $500 buffer at first; on the 5th automatic transfer to savings sized by the Conscious Spending Plan (typically 5-10% of income; start with $5 if you cannot yet) and to the Roth IRA (roughly 10% of take-home); on the 7th autopay of recurring bills, preferably by credit card paid in full from checking, with an email notification to review the statement first.",
+   "source": "iwillteachyoutoberich.com automate page",
+   "confidence": "medium"
+  },
+  {
+   "id": "f9",
+   "claim": "He cites a 401(k) study: making enrollment opt-out instead of opt-in raised contribution rates from under 40% to nearly 100%.",
+   "source": "iwillteachyoutoberich.com automate page",
+   "confidence": "medium"
+  },
+  {
+   "id": "f10",
+   "claim": "'The Next $100' principle: pick the top two discretionary expenses (his: eating out and going out), cut them by 25-33% over six months, redirect the cash to investing and travel; big wins come from focusing on a couple of categories rather than trimming everything a little.",
+   "source": "iwillteachyoutoberich.com automate page",
+   "confidence": "medium"
+  },
+  {
+   "id": "f11",
+   "claim": "Sethi's site: once bills are paid and savings and investments are automated, the money left is yours to spend; his own example is hiring a personal stylist because he enjoys dressing well.",
+   "source": "GOBankingRates article on his site",
+   "confidence": "medium"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Old 1606: Sethi interviewed hundreds of people; all smart, none implemented.",
+   "reason": "Not sourced."
+  },
+  {
+   "claim": "Old 1606: the four-way split of ten percent investments, 'an amount' to emergency fund etc., and 'even the least disciplined get rich'.",
+   "reason": "Only the 10% investing figure has loose support; the promise is unsupported."
+  },
+  {
+   "claim": "Old 1607: daily coffee cut saves $1,500 a year; Sethi calls it mathematically right but strategically wrong.",
+   "reason": "Figure and phrasing not found."
+  },
+  {
+   "claim": "Old 1607: rent 30-40% of income, cut to 25%; car costs; 10% raise compounding over a career; coffee under one percent.",
+   "reason": "Invented or unverified figures; not used."
+  },
+  {
+   "claim": "Old 1608: 'If you were rich, what would you do?' dialogue; driving without destination metaphor; 'saving is not a virtue'.",
+   "reason": "Not found in the 2009 text; looks like later-edition or invented framing."
+  }
+ ],
+ "stories": {
+  "1606": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f7",
+    "f8",
+    "f9"
+   ],
+   "note": "Concept story on the automatic money flow. Details from Sethi's own site and summaries; not checked against the 2009 text. Medium-low."
+  },
+  "1607": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f3",
+    "f4",
+    "f10",
+    "f11"
+   ],
+   "note": "Latte vs Big Wins; distinct from 1606. Thin sourcing, short story."
+  },
+  "1608": {
+   "verdict": "delete",
+   "fact_ids": [
+    "f6"
+   ],
+   "note": "Rich-Life-first, backward planning not verifiable in the 2009 book; overlaps f3 already used in 1607. No book case to carry it."
+  }
+ }
+}

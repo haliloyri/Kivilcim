@@ -1,0 +1,6 @@
+{
+ "punchline": "A weather task nobody noticed kept resetting a Mars lander.",
+ "thirty_sec": "On Mars Pathfinder a low-priority weather task held a lock that bc_dist needed, medium tasks kept it from running, and bc_sched reset the computer. Reproduced in under 18 hours on the ground, it was fixed by enabling priority inheritance.",
+ "question": "Which urgent piece of your work waits on someone small that everyone keeps interrupting?",
+ "key_contrast": "Lend the blocked task's priority to the blocker."
+}

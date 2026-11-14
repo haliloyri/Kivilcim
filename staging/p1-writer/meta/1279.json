@@ -1,0 +1,35 @@
+{
+ "story_id": 1279,
+ "verdict": "keep",
+ "verify_note": "Keep. The invented CEO dialogue was replaced by the book's verified 2014 special forces scene (published excerpt, p.23) and the armored vs daring leadership pairs.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Zırh ve cesaret",
+  "description": "Brené Brown özel kuvvetler askerlerine kırılganlık gerektirmeyen bir cesaret örneği sorar ve kimse bulamaz.",
+  "hook": "Emin olmadığınızda hangi zırhı giyiyorsunuz?",
+  "one_minute_summary": "Brené Brown, Dare to Lead'de 2014'te bir askeri üste birkaç yüz özel kuvvetler askerine kırılganlık gerektirmeyen tek bir cesaret örneği sorduğunu anlatır. Salon susar. Genç bir asker 'Hayır hanımefendi. Üç görev turu' diyerek böyle bir örnek düşünemediğini söyler. Brown buradan zırhlı ve cesur liderliği karşılaştırır: biri her şeyi bilen olmak ve altın yıldız toplamak ister, öteki öğrenmeye çalışır ve yıldızı başkalarına verir. Zırh kalınlaştıkça hiçbir şey hissetmez hale geliriz."
+ },
+ "en": {
+  "title": "Armor and courage",
+  "description": "Brené Brown asks special forces soldiers for one act of courage without vulnerability, and nobody has one.",
+  "hook": "What armor do you put on when you're not sure?",
+  "one_minute_summary": "In Dare to Lead, Brené Brown recalls standing before several hundred special forces soldiers in 2014 and asking for one example of courage that didn't require vulnerability. Silence. Then a young soldier said: 'No, ma'am. Three tours.' He couldn't name one. Brown uses this to contrast armored leaders, who need to be the knower and collect gold stars, with daring leaders, who aim to learn and hand gold stars out. Armor that grows too thick, she warns, stops us feeling anything."
+ },
+ "es": {
+  "title": "Coraza y valor",
+  "description": "Brené Brown pide a soldados de fuerzas especiales un acto de valor sin vulnerabilidad, y nadie lo encuentra.",
+  "hook": "¿Qué coraza te pones cuando no estás seguro?",
+  "one_minute_summary": "En Dare to Lead, Brené Brown cuenta que en 2014 preguntó a varios cientos de soldados de fuerzas especiales por un solo acto de valor que no hubiera exigido vulnerabilidad. Silencio. Un soldado joven respondió: 'No, señora. Tres misiones', y no encontró ninguno. Brown contrapone al líder acorazado, que necesita ser el que sabe y colecciona estrellas doradas, con el líder que se atreve, que busca aprender y reparte las estrellas. Una coraza demasiado gruesa, advierte, nos deja sin sentir."
+ },
+ "de": {
+  "title": "Rüstung und Mut",
+  "description": "Brené Brown fragt Elitesoldaten nach Mut ohne Verletzlichkeit, und keiner findet ein Beispiel.",
+  "hook": "Welche Rüstung legst du an, wenn du unsicher bist?",
+  "one_minute_summary": "In Dare to Lead erzählt Brené Brown, wie sie 2014 mehrere hundert Soldaten der Spezialkräfte nach einem einzigen Beispiel für Mut ohne Verletzlichkeit fragte. Stille. Ein junger Soldat sagte: 'Nein, Ma'am. Drei Einsätze.' Ihm fiel keines ein. Brown stellt die gepanzerte Führungskraft, die alles wissen muss und goldene Sterne sammelt, der mutigen gegenüber, die lernen will und Sterne verteilt. Wird die Rüstung zu dick, warnt sie, fühlen wir nichts mehr."
+ }
+}

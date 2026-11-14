@@ -1,0 +1,58 @@
+{
+ "story_id": 1373,
+ "kind": "concept",
+ "book": {
+  "title": "The Life-Changing Magic of Tidying Up",
+  "author": "Marie Kondo",
+  "year": "2011"
+ },
+ "confidence": "high",
+ "confidence_note": "Category order (clothes, books, papers, komono, mementos), discarding before storing, 'tidying up by location is a fatal mistake', the clutter definition, the two storage rules and the 'seven jackets and ten blouses' critique are quoted from the English edition in a detailed summary and confirmed by Wikipedia. Gathering a whole category into one pile on the floor is widely summarized but not quoted verbatim (medium). The old text's timings ('each photo takes ten minutes') and 'decision muscle' wording are not in the book and were dropped. Year is the Japanese original.",
+ "facts": [
+  "Clutter is caused by a failure to return things to where they belong.",
+  "Two parts of tidying: discarding and deciding where to store; discarding first.",
+  "'Tidying up by location is a fatal mistake': same-type items are scattered across rooms.",
+  "All items of one category are gathered in one place (a pile on the floor) before deciding.",
+  "Order: clothes, books, papers, komono (miscellany), mementos; from easier to harder decisions; sentimental items last.",
+  "Numerical goals such as 'seven jackets and ten blouses is the perfect amount' are one reason other methods rebound.",
+  "Storage rules: store all items of the same type in the same place; don't scatter storage space."
+ ],
+ "scene_details": [
+  "every piece of clothing in one heap on the floor",
+  "the fixed order ending with photos and keepsakes"
+ ],
+ "tension": "Room-by-room tidying never finishes because the same kind of thing lives everywhere.",
+ "opening_idea": "Open on the single heap, the fixed order, or the 'seven jackets' rule.",
+ "lessons": [
+  {
+   "idea": "Tidy one category at a time, gathered in one place, so you decide once.",
+   "anchor": "The clothes heap and the fatal-mistake line."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which kind of thing in your home is so scattered that one pile of it would surprise you?",
+ "use_cases": [
+  {
+   "situation": "Family tidying weekend",
+   "move": "All clothes in one place first, books next, photos last.",
+   "context": "family"
+  },
+  {
+   "situation": "About to open the photo box",
+   "move": "Recall Kondo leaves keepsakes for last; start with papers.",
+   "context": "self"
+  },
+  {
+   "situation": "Shared drive is a mess",
+   "move": "Gather each document type in one place before sorting.",
+   "context": "meeting"
+  }
+ ],
+ "pocket_idea": "Tidy by category: one pile per kind, keepsakes last.",
+ "conversation_variants": {
+  "punchline_idea": "Kondo calls tidying room by room a fatal mistake.",
+  "thirty_sec_idea": "The heap, the order and why mementos come last.",
+  "question_idea": "",
+  "key_contrast_idea": "Category before room"
+ }
+}

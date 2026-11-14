@@ -1,0 +1,35 @@
+{
+ "story_id": 1421,
+ "verdict": "keep",
+ "verify_note": "Keep: rebuilt on passive vs created miracles in The Miracle Equation (Elrod, 2019): Donnie Register's wedding ring, Miracle Mavens, roadblocks as learning. Secondary summaries only; the Register account is short and not read in the full text. Old text (Mel Robbins five-second rule, prefrontal cortex) dropped. Facts file 108.json.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Şans mı, emek mi",
+  "description": "Bir kurşun alyansa çarpıp seker. Elrod bu mucizeyi anlatır, sonra beklemeniz gerekmeyen türünü gösterir.",
+  "hook": "Kendiliğinden yoluna girmesini umduğunuz hangi şeyi kendiniz kurabilirdiniz?",
+  "one_minute_summary": "Hal Elrod'un The Miracle Equation kitabında Donnie Register, açıklanamayan bir mucizenin örneği: bir antikacı dükkânında vurulmak üzereyken ellerini yüzüne kaldırmış ve kurşun altın alyansından sekmiş. Elrod buna pasif mucize diyor, kimsenin planlayamayacağı bir şey. Asıl önem verdiği tür, inanç, kararlılık ve çalışmayla yaratılan aktif mucize. Bu yolun peşindekilere Miracle Maven diyor. Yolda aksilik çıkacağını, engelin öğrenilecek bir şey olduğunu söylüyor. Bu özet kitabın tamamına değil, ikincil kaynaklara dayanıyor."
+ },
+ "en": {
+  "title": "Luck or built",
+  "description": "A bullet bounces off a wedding ring. Elrod uses that miracle to show the kind you should not wait for.",
+  "hook": "What have you been hoping would simply work out that you could start building yourself?",
+  "one_minute_summary": "In Hal Elrod's The Miracle Equation, Donnie Register is the picture of a miracle nobody can explain: about to be shot in an antique store, he raised his hands to his face and the bullet bounced off his gold wedding ring. Elrod calls this a passive miracle, something no one can plan. The kind he cares about is the active, created miracle, reached through belief, determination and hard work. He calls people who pursue it Miracle Mavens. This summary rests on secondary sources, not the full text."
+ },
+ "es": {
+  "title": "Suerte o construcción",
+  "description": "Una bala rebota en una alianza. Elrod usa ese milagro para mostrar el que no debes esperar.",
+  "hook": "¿Qué esperas desde hace tiempo que se arregle solo y podrías empezar a construir tú?",
+  "one_minute_summary": "En The Miracle Equation de Hal Elrod, Donnie Register es el ejemplo de un milagro que nadie explica: trabajaba en una tienda de antigüedades, a punto de recibir un disparo, se llevó las manos a la cara y la bala rebotó en su alianza de oro. Elrod lo llama milagro pasivo. El que le importa es el milagro activo o creado, que se alcanza con fe, determinación y trabajo duro. A quienes lo buscan los llama Miracle Mavens. El resumen se apoya en fuentes secundarias, no en el texto completo."
+ },
+ "de": {
+  "title": "Glück oder gebaut",
+  "description": "Eine Kugel prallt an einem Ehering ab. Elrod nutzt dieses Wunder, um die Sorte zu zeigen, auf die du nicht warten sollst.",
+  "hook": "Worauf hoffst du schon lange von allein, das du selbst aufbauen könntest?",
+  "one_minute_summary": "In Hal Elrods The Miracle Equation ist Donnie Register das Bild eines unerklärlichen Wunders: Er arbeitete in einem Antiquitätenladen, es sollte auf ihn geschossen werden, er hob die Hände vors Gesicht, und die Kugel prallte an seinem goldenen Ehering ab. Elrod nennt das ein passives Wunder, etwas, das niemand planen kann. Ihm geht es um das aktive, geschaffene Wunder, das durch Glauben, Entschlossenheit und harte Arbeit entsteht. Wer es anstrebt, heißt bei ihm Miracle Maven. Die Zusammenfassung stützt sich auf Sekundärquellen, nicht auf den vollen Text."
+ }
+}

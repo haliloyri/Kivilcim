@@ -1,0 +1,42 @@
+{
+  "story_id": 1320,
+  "kind": "anecdote",
+  "book": {"title": "Indistractable", "author": "Nir Eyal", "year": "2019"},
+  "confidence": "high",
+  "confidence_note": "Verified in the full text. The old text's 40 percent figure is not in the book and is dropped. The old 'willpower is limited, every decision drains it' claim contradicts the book, which reports that ego depletion is disputed. The book's twelve pounds of muscle is Eyal's own report, not a controlled result.",
+  "facts": [
+    "Eyal calls these tools precommitments, after Ulysses, who had himself tied to the mast to hear the Sirens without steering toward them.",
+    "Effort pact: inventors David Krippendorf and Ryan Tseng made kSafe (formerly Kitchen Safe), a plastic container with a timer lock in the lid, to stop their own late-night snacking; you could smash it with a hammer, but the extra effort makes that unlikely.",
+    "Price pact: a gym in Eyal's apartment complex was free and fully equipped, yet he kept finding reasons to skip workouts.",
+    "He taped a crisp hundred-dollar bill to the calendar on his wall next to the date of his next workout, and put a ninety-nine-cent lighter nearby.",
+    "Every day the choice was to burn the calories by exercising or burn the hundred-dollar bill; unless he was truly sick, those were the only options.",
+    "He says he has used this 'burn or burn' technique for over three years, gained twelve pounds of muscle, and never burned the bill.",
+    "Eyal recommends precommitments only after dealing with internal triggers, making time for what matters and handling external triggers.",
+    "He reports that the idea of willpower as a limited resource is disputed; a Dweck study found depletion only in people who believed willpower runs out."
+  ],
+  "scene_details": [
+    "a crisp hundred-dollar bill taped to a wall calendar",
+    "a ninety-nine-cent lighter next to it",
+    "a free gym in the same building",
+    "a cookie container with a timer lock in the lid"
+  ],
+  "tension": "The gym was free and in his building, and he still skipped it.",
+  "opening_idea": "Start with the hundred-dollar bill taped to a wall calendar and a cheap lighter beside it.",
+  "lessons": [
+    {"idea": "Make the decision once, while you're calm, and set up a cost for breaking it later; then the tired moment has nothing to negotiate.", "anchor": "The bill and the lighter turned a daily debate into two options.", "everyday_example_idea": "A writer who keeps skipping her morning hour tells a friend she'll pay for coffee every day she misses it."}
+  ],
+  "reflect": [],
+  "reflect_final": "Which plan do you keep renegotiating with yourself, and what small cost could you set today so the choice is already made?",
+  "use_cases": [
+    {"situation": "A friend keeps skipping workouts they want to do.", "move": "Tell them about Eyal's hundred-dollar bill and lighter, and suggest a smaller stake they would hate to lose.", "context": "social"},
+    {"situation": "You want to stop snacking late at night.", "move": "Put the snacks somewhere that takes real effort to reach, decided now, not at 11 p.m.", "context": "self"},
+    {"situation": "A team keeps missing its own focus time.", "move": "Propose a shared pact: phones in one box for the first hour of the workshop.", "context": "meeting"}
+  ],
+  "pocket_idea": "Burn the calories or burn the bill: decide the cost of skipping before the tired moment arrives.",
+  "conversation_variants": {
+    "punchline_idea": "Nir Eyal taped a hundred-dollar bill and a lighter to his calendar: skip the gym, burn the bill.",
+    "thirty_sec_idea": "Nir Eyal had a free gym in his own building and still skipped it. So he taped a hundred-dollar bill next to each workout on his calendar and put a lighter beside it. Burn the calories or burn the bill. He says he's done it for over three years, gained muscle, and never burned the money. In Indistractable he calls it a price pact: you decide while calm, so the lazy moment can't argue.",
+    "question_idea": "",
+    "key_contrast_idea": "Daily debate, decided once"
+  }
+}

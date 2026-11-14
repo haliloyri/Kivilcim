@@ -1,0 +1,39 @@
+{
+ "book_no": 134,
+ "title": "Tribal Leadership",
+ "authors": ["Dave Logan", "John King", "Halee Fischer-Wright"],
+ "year": "2008",
+ "sources": [
+  "https://news.gallup.com/businessjournal/106903/five-stages-workplace-tribes.aspx",
+  "https://fs.blog/tribal-leadership/",
+  "https://www.publishersweekly.com/978-0-0612-5130-6",
+  "https://www.chieflearningofficer.com/?p=24112"
+ ],
+ "facts": [
+  {"id":"f1","claim":"Tribal Leadership (2008) is by Dave Logan, John King and Halee Fischer-Wright; the TR edition title is Kabile Liderliği. Main authors Logan, King, Fischer-Wright, so 'Dave Logan' alone as sole author is incomplete.","source":"Publishers Weekly / Gallup","confidence":"high"},
+  {"id":"f2","claim":"The authors describe a study of more than 24,000 people in about two dozen companies; Gallup's write-up calls it a ten-year study (another source says more than eight years).","source":"Gallup Business Journal; Chief Learning Officer","confidence":"medium"},
+  {"id":"f3","claim":"Tribes are natural groups of roughly 20 to 150 people that form regardless of the org chart.","source":"Gallup; fs.blog","confidence":"high"},
+  {"id":"f4","claim":"Five stages, each with its own language: 1 'Life sucks', 2 'My life sucks', 3 'I'm great (and you're not)', 4 'We're great', 5 'Life is great'.","source":"Publishers Weekly; Gallup","confidence":"high"},
+  {"id":"f5","claim":"Listed shares of the organizations/people studied: stage 1 about 2%, stage 2 about 25%, stage 3 about 49%, stage 4 about 22%, stage 5 about 2%. Scope of the denominator is not stated in the secondary source.","source":"fs.blog summary","confidence":"medium"},
+  {"id":"f6","claim":"Stage 3: people compete for personal wins, hoard knowledge, relate in two-person pairs; the most common words are 'I', then 'me' and 'my'. Stage three people complain they are too busy and have no time and poor support.","source":"Gallup; fs.blog","confidence":"medium"},
+  {"id":"f7","claim":"Tribal leadership focuses on two things: the words people use and the types of relationships they form.","source":"fs.blog","confidence":"high"},
+  {"id":"f8","claim":"Leverage rule: speak at most one stage above where the group is.","source":"Gallup","confidence":"medium"},
+  {"id":"f9","claim":"Stage 3 to 4 leverage: ask open-ended questions to learn what people value, then build projects too big to finish without partnering; encourage three-person relationships (triads) anchored on shared values.","source":"Gallup; fs.blog","confidence":"medium"},
+  {"id":"f10","claim":"Stage 4: members share values and knowledge; competition shifts outward to another tribe or company; the rule 'the bigger the foe, the more powerful the tribe'; relationships are triads built on shared values.","source":"Gallup; fs.blog","confidence":"medium"},
+  {"id":"f11","claim":"Stage 5: 'innocent wonderment', 'life is great'; about 2% of the time and unstable; the team that built the first Macintosh is the cited example; such teams often drop back to stage 4 to regroup.","source":"fs.blog; Gallup","confidence":"medium"},
+  {"id":"f12","claim":"Stage-four leaders suggest regular 'oil changes': team conversations about what is working, what is not, and how to fix it.","source":"fs.blog","confidence":"medium"},
+  {"id":"f13","claim":"Gallup piece reports some stage-four groups claimed 'a three thousand percent increase in profitability' over stage three.","source":"Gallup","confidence":"low"}
+ ],
+ "rejected": [
+  {"claim":"Logan alone studied 24,000 employees 'over ten years' (old text)","reason":"Three authors; duration varies by source. Use 'the authors' and 'more than 24,000 people in about two dozen companies'."},
+  {"claim":"Stage-5 groups 'made history performances' / stage 4 trap is a common enemy with a Logan quote 'identity built around a common enemy dissolves when the enemy vanishes'","reason":"Quote not found. The book's stage-four adversary rule is supported; the quote is not."},
+  {"claim":"Apple's 'fight IBM' identity changed over time","reason":"Not confirmed from the sources found. Apple appears only as a stage-five example in the Gallup text; Macintosh team via fs.blog."},
+  {"claim":"'Tribal leader does not give directives' quote; leaders as 'node points' bridging groups; mediating tension at a meeting by pointing to a shared customer-experience value","reason":"Quote and scene not found; the supported point is the words/relationships focus and the triad move."},
+  {"claim":"Fifth-stage tribes spread leadership to everyone","reason":"Not found in sources."}
+ ],
+ "stories": {
+  "1498": {"verdict":"keep","fact_ids":["f2","f4","f5","f6","f7","f8"],"note":"Five stages as a listening tool; stage-three words I/me/my; leader listens to the words."},
+  "1499": {"verdict":"keep","fact_ids":["f4","f10","f11","f12"],"note":"Stage four runs on a foe; macintosh team as stage five; quote and Apple-IBM claim dropped."},
+  "1500": {"verdict":"keep","fact_ids":["f7","f8","f9"],"note":"Rebuilt on the supported leverage: triads and tasks too big to do alone; node/bridge quote and meeting scene dropped."}
+ }
+}

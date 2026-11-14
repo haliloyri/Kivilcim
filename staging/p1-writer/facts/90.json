@@ -1,0 +1,162 @@
+{
+  "book_no": 90,
+  "title": "Company of One: Why Staying Small Is the Next Big Thing for Business",
+  "authors": [
+    "Paul Jarvis"
+  ],
+  "year": "2019",
+  "sources": [
+    "https://www.penguin.co.uk/books/312524/company-of-one/9780241380222",
+    "https://readingraphics.com/?p=71865",
+    "https://shortform.com/blog/?p=112163",
+    "https://paulminors.com/blog/company-of-one-by-paul-jarvis-book-summary-pdf/",
+    "https://binarymoon.co.uk/reading/company-of-one",
+    "https://kirkusreviews.com/book-reviews/paul-jarvis/company-of-one/print"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Company of One (2019) by Paul Jarvis. A company of one is a business that questions growth instead of accepting it as the default; it can be one person or a small team.",
+      "source": "Penguin; binarymoon review; readingraphics",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Jarvis worked as a corporate web designer for clients such as Microsoft and Mercedes-Benz and had athletes such as Shaquille O'Neal and Steve Nash as clients, then turned to helping entrepreneurs build online brands. He works from his home on an island on Canada's west coast (Vancouver Island).",
+      "source": "Shortform; Paul Minors; binarymoon",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "A company of one asks two questions about growth: is growth truly needed here, and if so, can it be done with the same or fewer resources.",
+      "source": "readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Jarvis argues for setting an upper bound on goals (the point where returns start to diminish), not only a lower bound.",
+      "source": "readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Jarvis's example: in 1996 Southwest Airlines could have expanded to more than 100 cities that wanted its service but added only four new locations; the restraint helped it stay profitable while most airlines lost money.",
+      "source": "readingraphics (summary of the book); the same example appears in Jim Collins's Great by Choice",
+      "confidence": "medium"
+    },
+    {
+      "id": "f6",
+      "claim": "Minimum viable profit (MVPr): profit high enough to cover a full-time salary for the owner(s); 'viable' if it sustains the person over time.",
+      "source": "Paul Minors",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "Jarvis contrasts the question 'what can I do to make my business better?' with 'what can I do to grow my business larger?'",
+      "source": "Paul Minors",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Quote: 'Not all growth is beneficial, and some growth can actually reduce your resilience and your autonomy.'",
+      "source": "readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "Quote: 'Growth, as a primary focus, is not only a bad business strategy, but an entirely harmful one.'",
+      "source": "readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Jarvis cites the Startup Genome Project: 74% of high-growth tech startups failed because they scaled too quickly.",
+      "source": "readingraphics",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Zynga, after its free games succeeded, spent $100 million on its own data centers; it later struggled to keep up with industry changes, laid off many employees and closed the centers.",
+      "source": "Shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Shoes of Prey, an Australian custom-shoe startup, expanded from web sales into physical stores in malls, took venture capital, moved to the United States and hired many staff; store sales fell short of projections and it collapsed in 2018 after mass layoffs.",
+      "source": "Shortform; SmartCompany (closure 2018, liquidation 2019)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Rapid growth usually requires outside investors, who want returns and may have agendas that conflict with the company's mission and its customers. Spending on projected revenue is a gamble.",
+      "source": "Shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Four traits of a company of one: resilience, autonomy, speed, simplicity.",
+      "source": "Paul Minors; dansilvestre",
+      "confidence": "high"
+    },
+    {
+      "id": "f15",
+      "claim": "Spending based on projected revenue is a gamble; missing projections is the statistically more likely outcome (no figures given).",
+      "source": "Shortform",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Big companies have lower profit margins than small businesses (presented as Jarvis's research finding).",
+      "reason": "No source shows the book makes this data claim."
+    },
+    {
+      "claim": "Jarvis quote: 'Optimize before you scale. Perfect before you grow.'",
+      "reason": "Not found in any source; likely invented."
+    },
+    {
+      "claim": "Jarvis uses a tree metaphor (fast-growing trees have weak trunks).",
+      "reason": "Not found in any source."
+    },
+    {
+      "claim": "Jarvis's own business grew slowly, never took investment and has run steadily for more than ten years.",
+      "reason": "Not verified as a claim in the book; left out."
+    },
+    {
+      "claim": "Pets.com spent $17 million on ads in Q2 2000 against $8.8 million revenue.",
+      "reason": "Single summary source, figures not checked against the book; not used."
+    }
+  ],
+  "stories": {
+    "1367": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f14"
+      ],
+      "note": "Recentered from the unsupported 'margins' claim to the book's upper bound / enough idea with the Southwest 1996 example."
+    },
+    "1368": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "f13",
+        "f14",
+        "f3",
+        "f15"
+      ],
+      "note": "Recentered on the book's cases of growth that broke companies (Shoes of Prey, Zynga) and the Startup Genome figure; tree metaphor and Jarvis-biography claims dropped."
+    }
+  }
+}

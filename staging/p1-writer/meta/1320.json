@@ -1,0 +1,35 @@
+{
+ "story_id": 1320,
+ "verdict": "keep",
+ "verify_note": "Verified in full text. Invented 40% figure dropped; old 'willpower is limited' claim contradicts the book (Eyal reports ego depletion is disputed). Recentered from 'friction' to precommitment: the hundred-dollar price pact and kSafe effort pact.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Yüz Dolar ve Bir Çakmak",
+  "description": "Nir Eyal ücretsiz spor salonuna gitmeyi sürekli atlayınca takvimine yüz dolar ve bir çakmak koyar. Ya kaloriyi yakacak ya parayı.",
+  "hook": "Kendinizle her gün yeniden pazarlık ettiğiniz bir plan varsa, onu bir kez ve kalıcı olarak nasıl karara bağlardınız?",
+  "one_minute_summary": "Nir Eyal'in oturduğu sitede ücretsiz bir spor salonu vardı ve yine de gitmiyordu. Takvimine bir sonraki antrenman gününün yanına yüz dolar bantladı, yanına doksan dokuz sentlik bir çakmak koydu. Ya kaloriyi yakacak ya banknotu. Üç yılı aşkın süredir böyle yaptığını, kas kazandığını ve parayı hiç yakmadığını yazıyor. Buna fiyat anlaşması diyor. Kitapta ayrıca zaman kilitli kurabiye kabı kSafe ile çaba anlaşmasını anlatıyor ve iradenin sınırlı olduğu fikrinin tartışmalı olduğunu aktarıyor."
+ },
+ "en": {
+  "title": "A Bill and a Lighter",
+  "description": "Nir Eyal kept skipping his free gym, so he taped a hundred-dollar bill and a lighter to his calendar. Burn the calories or burn the bill.",
+  "hook": "Is there a plan you renegotiate with yourself every day, and how would you settle it once and for all?",
+  "one_minute_summary": "Nir Eyal's apartment complex had a free gym, and he still skipped it. So he taped a hundred-dollar bill next to his next workout on the wall calendar and set a ninety-nine-cent lighter beside it: burn the calories or burn the bill. He says he has kept it up for over three years, gained twelve pounds of muscle and never burned the money. He calls it a price pact. The book also describes effort pacts like the time-locked kSafe and reports that limited-willpower theory is disputed."
+ },
+ "es": {
+  "title": "Un billete y un mechero",
+  "description": "Nir Eyal se saltaba una y otra vez su gimnasio gratuito, así que pegó un billete de cien dólares y un mechero en su calendario. Quemar las calorías o quemar el billete.",
+  "hook": "¿Hay algún plan que renegocias contigo cada día, y cómo podrías zanjarlo de una vez?",
+  "one_minute_summary": "El edificio de Nir Eyal tenía un gimnasio gratis y aun así no iba. Pegó un billete de cien dólares junto a su próximo entrenamiento en el calendario de la pared y dejó al lado un mechero de noventa y nueve centavos: quemar las calorías o quemar el billete. Dice que lleva más de tres años así, que ha ganado músculo y que nunca quemó el dinero. Lo llama pacto de precio. El libro describe también pactos de esfuerzo, como el kSafe, y cuestiona la voluntad limitada."
+ },
+ "de": {
+  "title": "Ein Schein und ein Feuerzeug",
+  "description": "Nir Eyal schwänzte immer wieder sein kostenloses Fitnessstudio, also klebte er einen Hundertdollarschein und ein Feuerzeug an seinen Kalender. Kalorien verbrennen oder den Schein.",
+  "hook": "Gibt es einen Plan, den du jeden Tag neu mit dir verhandelst, und wie könntest du ihn ein für alle Mal entscheiden?",
+  "one_minute_summary": "In Nir Eyals Wohnanlage gab es ein kostenloses Fitnessstudio, und trotzdem ging er nicht hin. Er klebte einen Hundertdollarschein neben das nächste Training an seinen Wandkalender und legte ein Feuerzeug für neunundneunzig Cent daneben: Kalorien verbrennen oder den Schein. Er sagt, er macht das seit über drei Jahren, hat Muskeln aufgebaut und nie Geld verbrannt. Er nennt es einen Preispakt. Das Buch beschreibt auch Aufwandspakte wie den zeitgesperrten kSafe und stellt die Idee begrenzter Willenskraft in Frage."
+ }
+}

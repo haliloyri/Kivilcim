@@ -1,0 +1,35 @@
+{
+ "story_id": 1257,
+ "verdict": "keep",
+ "verify_note": "Keep: victim/responsibility chapter verified in the archive.org full text of Feel the Fear and Do It Anyway. Rebuilt around Jean's hidden payoffs, Edward and Jeffers's own 'Moan and Groan Society'; the unverified 'write I chose this under every complaint' exercise dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Jean'i işte tutan getiriler",
+  "description": "Susan Jeffers'a göre nefret ettiğimiz bir durumda kalmamızın gizli getirileri vardır. Jean bunları kâğıda dökünce yerinden kıpırdayabildi.",
+  "hook": "Sürekli yakındığınız bir durum sizi aslında neyden koruyor?",
+  "one_minute_summary": "Jean işinden nefret ediyor, suçu iş piyasasına ve becerilerine atıyordu. Susan Jeffers ona işte kalmanın ne kazandırdığına baktırdı: iş ararken reddedilme riski yoktu, iş kolaydı, üstesinden geleceğini biliyordu ve güvenceliydi. Jeffers bunlara getiri diyor. Jean bunları görünce önünde üç yol belirdi: kalıp mutsuz olmak, kalıp işinden keyif almak ya da gitmek. Ayrıldı ve yeni bir iş buldu. Jeffers'ın sınırı da net: başınıza gelen her şeyden değil, ona verdiğiniz tepkiden sorumlusunuz ve kendinizi suçlamanız da gerekmez."
+ },
+ "en": {
+  "title": "The payoffs that kept Jean",
+  "description": "Susan Jeffers argues that the situations we complain about often pay us something. Once Jean listed those payoffs, she could finally move.",
+  "hook": "What is a complaint you keep repeating quietly protecting you from?",
+  "one_minute_summary": "Jean hated her job and blamed the market and her skills. Susan Jeffers had her look at what staying actually gave her: no job search, so no rejection, easy work she knew she could handle, and security. Jeffers calls these payoffs. Seeing them, Jean had three options: stay miserable, stay and enjoy the job, or leave. She left and found a new one. Jeffers draws a clear line: you cause your reactions, not everything that happens to you, and blaming yourself is no better than blaming others."
+ },
+ "es": {
+  "title": "Lo que retenía a Jean",
+  "description": "Susan Jeffers sostiene que las situaciones de las que nos quejamos suelen darnos algo a cambio. Cuando Jean hizo la lista, pudo moverse.",
+  "hook": "¿De qué te protege una queja que repites una y otra vez?",
+  "one_minute_summary": "Jean odiaba su trabajo y culpaba al mercado y a sus habilidades. Susan Jeffers le hizo mirar qué ganaba quedándose: no buscar empleo y no arriesgarse al rechazo, un trabajo fácil que dominaba y estabilidad. Jeffers las llama ganancias ocultas. Al verlas, Jean tuvo tres caminos: seguir infeliz, quedarse y disfrutarlo o irse. Se fue y encontró un empleo nuevo. Jeffers marca un límite claro: eres la causa de tus reacciones, no de todo lo que te pasa, y tampoco tienes que culparte a ti."
+ },
+ "de": {
+  "title": "Was Jean festhielt",
+  "description": "Susan Jeffers meint, dass Situationen, über die wir klagen, uns oft etwas einbringen. Als Jean diese Gewinne aufschrieb, kam sie in Bewegung.",
+  "hook": "Wovor schützt dich eine Klage, die du immer wieder wiederholst?",
+  "one_minute_summary": "Jean hasste ihren Job und gab dem Arbeitsmarkt und ihren Fähigkeiten die Schuld. Susan Jeffers ließ sie anschauen, was ihr das Bleiben brachte: keine Jobsuche und damit keine Absage, leichte Arbeit, die sie beherrschte, und Sicherheit. Jeffers nennt das verdeckte Gewinne. Danach sah Jean drei Wege: unglücklich bleiben, bleiben und es mögen oder gehen. Sie ging und fand eine neue Stelle. Jeffers zieht eine klare Grenze: Du verursachst deine Reaktionen, nicht alles, was dir passiert, und dir selbst die Schuld zu geben hilft auch nicht."
+ }
+}

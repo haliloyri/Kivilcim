@@ -1,0 +1,61 @@
+{
+ "story_id": 1350,
+ "kind": "anecdote",
+ "book": {
+  "title": "Make It Stick",
+  "author": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+  "year": "2014"
+ },
+ "confidence": "high",
+ "confidence_note": "The surgical residents study is in ch. 3 and matches Moulton et al., Annals of Surgery 2006. The '16 percent' figure is as stated in the book (not in the abstract). Anki, a fixed 3-day/1-week/1-month schedule and the quoted line in the old text are not in the book and are dropped.",
+ "facts": [
+  "Thirty-eight surgical residents took four short lessons in microsurgery: how to reattach tiny vessels, each lesson instruction plus practice.",
+  "Half did all four lessons in one day, the normal in-service schedule; the other half had a week between lessons.",
+  "A month after the last session, the spaced group did better on every measure: time to finish, number of hand movements, and success reattaching the severed, pulsating aortas of live rats.",
+  "Among the one-day group, 16 percent damaged the rats' vessels beyond repair and could not complete the surgery.",
+  "The findings prompted the medical school to reexamine its habit of cramming a technique into one intensive session.",
+  "The authors' explanation: consolidation takes hours or days; the extra effort of retrieving after 'a little forgetting' retriggers it.",
+  "How long to wait: long enough that practice isn't mindless repetition and a little forgetting has set in, not so long that it becomes relearning.",
+  "Spaced practice feels less productive; even people who did better with spacing believed they had learned more from massed practice."
+ ],
+ "scene_details": [
+  "four short lessons in reattaching tiny vessels",
+  "the severed, pulsating aorta of a live rat",
+  "a week's gap between lessons",
+  "the normal in-service schedule: all in one day"
+ ],
+ "tension": "Same lessons, same total time, but one schedule produced surgeons who damaged vessels beyond repair.",
+ "opening_idea": "Start with the rat's aorta and the residents who could not finish the repair, without saying yet which group they were in.",
+ "lessons": [
+  {
+   "idea": "Let a little forgetting happen before you practice again, because the effort of recalling is what fixes the skill.",
+   "anchor": "Week-apart lessons beat one-day lessons a month later."
+  }
+ ],
+ "reflect": [],
+ "reflect_final": "Which skill would you practice differently this month if you planned the gaps between sessions as deliberately as the sessions?",
+ "use_cases": [
+  {
+   "situation": "Planning onboarding for a new process",
+   "move": "In a surgical study, lessons a week apart beat the same lessons in one day. Can we split the training into four short sessions?",
+   "context": "meeting"
+  },
+  {
+   "situation": "Child wants to practise piano for two hours on Sunday only",
+   "move": "Suggest short sessions on several days and let them notice what they still remember each time.",
+   "context": "family"
+  },
+  {
+   "situation": "Learning vocabulary with flashcards",
+   "move": "Put cards you miss back in the first pile and wait a day before the next round.",
+   "context": "self"
+  }
+ ],
+ "pocket_idea": "Wait until a skill has slipped a little, then practise; the struggle to recall is the lesson.",
+ "conversation_variants": {
+  "punchline_idea": "Surgeons who learned in one day were the ones who damaged the rats' vessels beyond repair.",
+  "thirty_sec_idea": "38 residents, four microsurgery lessons; half in one day, half a week apart. A month later the spaced group was faster, used fewer movements, and succeeded more; 16% of the one-day group couldn't finish. A little forgetting makes recall work.",
+  "question_idea": "",
+  "key_contrast_idea": "one day versus four weeks"
+ }
+}

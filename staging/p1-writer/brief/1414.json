@@ -1,0 +1,35 @@
+{
+  "story_id": 1414,
+  "kind": "anecdote",
+  "book": {"title": "The 21 Irrefutable Laws of Leadership", "author": "John C. Maxwell", "year": "1998"},
+  "confidence": "medium",
+  "confidence_note": "Law of the Lid, the 1-10 scale and the McDonald brothers vs Kroc come from chapter summaries, not the book text. Kroc deal date varies (1954 or 1961), so no date is given for it. The old text's two-founders scenario and quotes were dropped.",
+  "facts": [
+    "Maxwell's first law, the Law of the Lid: a person's leadership ability determines their level of effectiveness; the lower the ability to lead, the lower the lid on potential.",
+    "He puts leadership on a 1 to 10 scale: a leader rated 8 can reach effectiveness of at most 7, a leader rated 4 about 3.",
+    "Dick and Maurice McDonald ran a small, successful hamburger business in Southern California: an efficient kitchen, good customer service, a comfortable living.",
+    "Maxwell says their leadership lid was low: they never grew it into what it later became.",
+    "Ray Kroc partnered with the brothers and later bought the exclusive rights to the business.",
+    "Between 1955 and 1959 about 100 restaurants opened; four years after that there were 500.",
+    "Maxwell's reading: the leadership lid in Kroc's life was sky high.",
+    "The lid can be raised by studying and developing leadership, which pays far more than simply working harder."
+  ],
+  "scene_details": ["a small hamburger business in Southern California with an efficient kitchen", "a count of restaurants: about 100 in 1955 to 1959, then 500", "the scale: an 8 leader reaches 7, a 4 leader reaches 3"],
+  "tension": "Two operators with the same hamburgers, the same kitchen idea: one stays small and comfortable, the other reaches hundreds of restaurants.",
+  "opening_idea": "Start with the brothers' small, working hamburger business and what it did not become, before Kroc and the counts.",
+  "lessons": [{"idea": "Effort is capped by how well you lead others, so raising the skill of leading moves the cap, while adding hours does not.", "anchor": "The brothers' business was efficient and still stayed one small business; the count went from one site to 500 under a different leader."}],
+  "reflect": [],
+  "reflect_final": "In the work you do now, which decision do other people wait on you to make, and what would you need to learn to make it easier to hand over?",
+  "use_cases": [
+    {"situation": "A team lead is working late again while the team waits for approvals", "move": "Say: the brothers' kitchen was efficient and still small. Name one decision you will hand over this week and watch what moves.", "context": "meeting"},
+    {"situation": "You feel stuck although you are putting in long days", "move": "Write one line about whether the limit is your hours or how you lead, then pick one leadership skill to study.", "context": "self"},
+    {"situation": "A friend running a small shop says she cannot grow it", "move": "Ask: if you stepped away for a week, who decides what? Listen to which decisions only she makes.", "context": "social"}
+  ],
+  "pocket_idea": "Good burgers and an efficient kitchen did not lift the brothers' ceiling; the leader's skill did. Raise that before adding hours.",
+  "conversation_variants": {
+    "punchline_idea": "The McDonald brothers had the hamburgers; Maxwell says Kroc had the higher lid.",
+    "thirty_sec_idea": "Brothers with a small efficient hamburger business, Kroc takes it to 100 restaurants then 500, Maxwell says the difference was the lid.",
+    "question_idea": "",
+    "key_contrast_idea": "efficient but capped"
+  }
+}

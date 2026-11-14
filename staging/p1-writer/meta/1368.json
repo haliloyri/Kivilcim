@@ -1,0 +1,35 @@
+{
+ "story_id": 1368,
+ "verdict": "keep",
+ "verify_note": "Checked against summaries of Company of One (2019) and press on Shoes of Prey. The tree metaphor and the claim that Jarvis's own business never took investment for over ten years are not in the sources and were dropped. Recentered on the book's cases (Shoes of Prey, Zynga) and the Startup Genome 74% figure.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Tahmine Göre Açılan Mağazalar",
+  "description": "Shoes of Prey internette tasarlanan ayakkabılardan alışveriş merkezlerine, oradan da çöküşe gitti. Paul Jarvis hızlı büyümenin şirketleri nasıl kırılgan yaptığını anlatıyor.",
+  "hook": "Bir büyüme kararı tutmazsa kirayı ne öder?",
+  "one_minute_summary": "Paul Jarvis, Company of One'da hızlı büyümenin şirketleri nasıl devirdiğini örneklerle anlatıyor. Shoes of Prey internette iyi satınca alışveriş merkezlerine mağaza açtı, yatırım aldı ve Amerika'ya taşındı. Mağazalar tahminin altında kaldı, şirket 2018'de çöktü. Zynga 100 milyon dolarlık veri merkezlerini sonunda kapattı. Startup Genome'a göre incelenen hızlı büyüyen girişimlerin yüzde 74'ü çok hızlı ölçeklendiği için battı. Jarvis her adımdan önce büyümenin gerekli olup olmadığını sormayı öneriyor."
+ },
+ "en": {
+  "title": "Stores Built on a Forecast",
+  "description": "Shoes of Prey went from a design-your-own-shoes website to mall stores worldwide and then collapse. Paul Jarvis shows how fast growth makes a company fragile.",
+  "hook": "If a growth bet misses, what pays the rent?",
+  "one_minute_summary": "In Company of One, Paul Jarvis uses real cases to show growth breaking companies. Shoes of Prey sold well online, then opened mall stores worldwide, took venture capital and moved to the US. Store sales fell short of projections and it collapsed in 2018. Zynga spent $100 million on data centers it later closed. The Startup Genome Project found 74 percent of the high-growth tech startups it studied failed from scaling too fast. Jarvis asks whether growth is needed before each step."
+ },
+ "es": {
+  "title": "Tiendas abiertas sobre una previsión",
+  "description": "Shoes of Prey pasó de una web para diseñar zapatos a tiendas en centros comerciales y luego al cierre. Paul Jarvis muestra cómo crecer deprisa vuelve frágil a una empresa.",
+  "hook": "Si una apuesta de crecimiento falla, ¿qué paga el alquiler?",
+  "one_minute_summary": "En Company of One, Paul Jarvis muestra con casos reales cómo el crecimiento rompe empresas. Shoes of Prey vendía bien por internet, abrió tiendas en centros comerciales, aceptó capital riesgo y se mudó a Estados Unidos. Las tiendas vendieron menos de lo previsto y en 2018 se hundió. Zynga gastó 100 millones en centros de datos que luego cerró. Según el Startup Genome Project, el 74 % de las startups estudiadas fracasó por escalar demasiado rápido."
+ },
+ "de": {
+  "title": "Läden auf einer Prognose",
+  "description": "Shoes of Prey ging von einer Website zum Schuhe-Entwerfen in Einkaufszentren weltweit und dann pleite. Paul Jarvis zeigt, wie schnelles Wachstum eine Firma zerbrechlich macht.",
+  "hook": "Wenn eine Wachstumswette danebengeht, was zahlt dann die Miete?",
+  "one_minute_summary": "In Company of One zeigt Paul Jarvis an echten Fällen, wie Wachstum Firmen zerbricht. Shoes of Prey verkaufte online gut, eröffnete dann Läden in Einkaufszentren weltweit, nahm Risikokapital auf und zog in die USA. Die Läden blieben unter der Prognose, 2018 brach die Firma zusammen. Zynga steckte 100 Millionen Dollar in Rechenzentren, die es später schloss. Laut Startup Genome Project scheiterten 74 Prozent der untersuchten Tech-Start-ups am zu schnellen Skalieren."
+ }
+}

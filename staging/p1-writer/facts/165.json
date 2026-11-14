@@ -1,0 +1,189 @@
+{
+  "book_no": 165,
+  "title": "Outlive",
+  "authors": [
+    "Peter Attia (with Bill Gifford)"
+  ],
+  "year": "2023",
+  "sources": [
+    "https://grahammann.net/book-notes/outlive-peter-attia",
+    "https://eigenposts.github.io/thoughts/outlive",
+    "https://lifestylemedicine.stanford.edu/?p=46084",
+    "https://www.insidehook.com/wellness/best-routine-longevity-centenarian-decathlon",
+    "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2707428",
+    "https://www1.racgp.org.au/ajgp/2026/march/outlive-the-science-and-art-of-longevity"
+  ],
+  "source_note": "Book itself not read. Facts come from detailed reviews and summaries; the Mandsager study abstract was read directly. No bedside anecdote was found; all three are concept stories. 'Outlive' (Attia) is a different book from 'Lifespan' (Sinclair), so books 164 and 165 are not duplicates.",
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Attia contrasts Medicine 2.0, which mainly focuses on lifespan and staving off death, with Medicine 3.0, which emphasises prevention, treats each patient as an individual, starts from an honest assessment of risk (including the risk of doing nothing) and gives more weight to healthspan, quality of life.",
+      "source": "grahammann book notes; racgp review",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "The Four Horsemen are heart disease (atherosclerotic), cancer, neurodegenerative disease (Alzheimer's) and type 2 diabetes/metabolic dysfunction. Attia says the odds are overwhelming that most people will die of one of these chronic diseases of aging.",
+      "source": "grahammann; summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f3",
+      "claim": "Marginal Decade: the last ten years of life when people may be alive but unable to do what they enjoy. Attia urges readers to name what they want to do in that decade and work backward to train for it now; his aim is to turn it into a 'bonus decade'.",
+      "source": "racgp review; summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Centenarian Decathlon: pick the ten physical tasks you most want to still be able to do late in life, then set your current fitness target backward from them. Sample items reported from the book: rise from the floor using at most one arm for support, carry groceries for several blocks, pick up a child (30 pounds in one version), climb stairs.",
+      "source": "Stanford Lifestyle Medicine page; InsideHook; eigenposts",
+      "confidence": "medium"
+    },
+    {
+      "id": "f5",
+      "claim": "Attia calls VO2 max perhaps the single most powerful marker of longevity, and exercise the most powerful longevity drug.",
+      "source": "grahammann; summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Cleveland Clinic study (Mandsager et al., JAMA Network Open, 2018): 122,007 patients who had treadmill tests, median follow-up 8.4 years. People with low fitness had about five times the mortality risk of elite performers. The risk tied to low fitness was comparable to or greater than that of coronary disease, smoking and diabetes. Observational, so association not cause.",
+      "source": "JAMA Netw Open abstract (read). That Attia cites this exact study in the book is likely but not confirmed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "Zone 2 is the pace where you can talk but would not want to chat; Attia suggests about three hours a week as a minimum (for example four 45-minute sessions). VO2 max intervals: four minutes hard, four minutes easy, repeated four to six times, once or twice a week.",
+      "source": "grahammann; eigenposts",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Strength priorities include grip, loaded carries, pulling and hip hinging. Benchmarks reported: a dead hang of about two minutes for a 40-year-old man; stepping off an 18-inch block and taking three seconds to reach the ground. Low muscle strength is associated with roughly double the mortality.",
+      "source": "grahammann; eigenposts",
+      "confidence": "medium"
+    },
+    {
+      "id": "f9",
+      "claim": "VO2 max falls about 10 percent per decade, faster after 50, so Attia says to build reserve in your 40s and 50s.",
+      "source": "grahammann; eigenposts",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Attia treats metabolic health as foundational: elevated insulin is the 'canary in the coal mine' of metabolic disorder, and insulin resistance is linked to higher risk of cancer, Alzheimer's and cardiovascular death. One summary calls insulin sensitivity the variable connecting all four horsemen.",
+      "source": "grahammann; one aibrary summary",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Attia lists five tactics of Medicine 3.0: exercise, nutrition, sleep, emotional health, and exogenous molecules (drugs, hormones, supplements).",
+      "source": "summaries",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Other Decathlon items reported in one version of the list: lifting a twenty-pound suitcase into an overhead compartment, balancing on one leg for thirty seconds with eyes open, climbing four flights of stairs in three minutes.",
+      "source": "Stanford Lifestyle Medicine page via search (versions differ)",
+      "confidence": "low"
+    },
+    {
+      "id": "f13",
+      "claim": "Attia argues you need to be quite fit in your 50s to manage things like picking up a grandchild, hiking or carrying groceries upstairs in your 90s.",
+      "source": "eigenposts review",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Half of major adverse cardiovascular events in men, and a third in women, happen before age 65.",
+      "source": "grahammann notes (Outlive ch. 7)",
+      "confidence": "medium"
+    },
+    {
+      "id": "f15",
+      "claim": "In a 75-gram oral glucose tolerance test, early insulin resistance shows as a sharp insulin rise in the first 30 minutes that stays high for the next hour.",
+      "source": "grahammann notes",
+      "confidence": "medium"
+    },
+    {
+      "id": "f16",
+      "claim": "Attia's fitness target is the elite range for your age and sex (roughly the top 2 percent), then the elite range for someone two decades younger. He starts patients on four-minute intervals after about six months of endurance work.",
+      "source": "grahammann; eigenposts",
+      "confidence": "medium"
+    },
+    {
+      "id": "f17",
+      "claim": "Attia's step-down test: step off an 18-inch block and take a full three seconds to reach the ground, as a check of eccentric strength.",
+      "source": "eigenposts",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Old 1591: Attia at the bedside of an 85-year-old man, alive but bedridden, alone, unable to think or move.",
+      "reason": "No source; invented scene."
+    },
+    {
+      "claim": "Old 1591: 'your health at 80 does not start at 80, it starts at 40' as Attia's words.",
+      "reason": "Not found as a quote."
+    },
+    {
+      "claim": "Old 1592: the four diseases share chronic inflammation as a common root, 'branches of the same tree'.",
+      "reason": "Inflammation as the root is not in the sources. The supported link is metabolic health / insulin resistance (f10), single-source."
+    },
+    {
+      "claim": "Old 1592: insulin resistance raises blood sugar, inflammation damages vessel walls, brain cells are harmed, growth signals break (a causal chain).",
+      "reason": "Unsourced chain; dropped."
+    },
+    {
+      "claim": "Old 1593: fitness predicts mortality better than smoking, hypertension, diabetes and obesity.",
+      "reason": "Study compares with coronary disease, smoking, diabetes only; hypertension and obesity not supported."
+    },
+    {
+      "claim": "Old 1593: no other variable matches cardio fitness and muscle; exercise is the only variable that builds health.",
+      "reason": "Overclaim; replaced with the 'most powerful longevity drug' wording (f5)."
+    },
+    {
+      "claim": "Old 1593: do not lift needlessly heavy at 50 but build muscle mass at 50 or you will not walk at 80.",
+      "reason": "Not found; dropped."
+    }
+  ],
+  "stories": {
+    "1591": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f3",
+        "f4",
+        "f9",
+        "f12",
+        "f13"
+      ],
+      "note": "Marginal Decade and Centenarian Decathlon as the entry; Medicine 2.0 vs 3.0 secondary. Concept."
+    },
+    "1592": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f2",
+        "f10",
+        "f1",
+        "f14",
+        "f15"
+      ],
+      "note": "Four Horsemen and metabolic link. Medium; the shared-root claim is single-source and hedged as Attia's view."
+    },
+    "1593": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7",
+        "f8",
+        "f9",
+        "f16",
+        "f17"
+      ],
+      "note": "Fitness as predictor and the three kinds of training. Observational caveat carried."
+    }
+  }
+}

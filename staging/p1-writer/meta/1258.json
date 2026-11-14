@@ -1,0 +1,35 @@
+{
+ "story_id": 1258,
+ "verdict": "keep",
+ "verify_note": "Keep with new case: the Alexander the Great 'wait, then Now' story is not in Stillness Is the Key. The center (stillness before a big decision) is the book's own opening case, Kennedy in the Cuban Missile Crisis, verified against the full text. Title changed.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kennedy'nin on üç günü",
+  "description": "Füze krizinde danışmanlar hemen saldırı isterken Kennedy yavaşladı, soru sordu ve geri alınabilir bir yol seçti.",
+  "hook": "Büyük bir kararın eşiğinde, en sert seçeneği almadan önce kendinize hangi soruyu sorarsınız?",
+  "one_minute_summary": "Ekim 1962'de CIA, Küba'da Sovyet füze rampaları buldu. Danışmanlar hemen bombalama ve ardından işgal istedi. Domuzlar Körfezi'nde CIA baskısına boyun eğmiş olan Kennedy bu kez yavaşladı. The Guns of August'u yeni okumuştu, Rusların neden böyle yaptığını sordu, notlarına tek cümle yazdı: füzelerin geri çekilmesini talep ediyoruz. Geri alınabilir bir abluka seçti ve ona karantina dedi. On birinci gün Kruşçev ortasında savaş düğümü olan bir ipten söz eden bir mektup yazdı, füzeler söküldü."
+ },
+ "en": {
+  "title": "Kennedy's thirteen days",
+  "description": "With advisors demanding an immediate strike on Cuba, Kennedy slowed down, asked questions and chose a move he could still undo.",
+  "hook": "Before your next big decision, what would you ask before taking the most forceful option?",
+  "one_minute_summary": "In October 1962 the CIA found Soviet missile sites in Cuba, and Kennedy's advisors wanted an airstrike followed by an invasion. Having been pushed into the Bay of Pigs, and fresh from reading The Guns of August, he slowed everyone down. He asked why the Soviets had done it, wrote one sentence about what he wanted, and chose a blockade he called a quarantine because it could be undone. Eleven days in, Khrushchev wrote of a rope with a knot of war, and the missiles came out."
+ },
+ "es": {
+  "title": "Los trece días de Kennedy",
+  "description": "Mientras sus asesores pedían atacar Cuba de inmediato, Kennedy frenó, hizo preguntas y eligió un paso que todavía podía deshacer.",
+  "hook": "Antes de tu próxima gran decisión, ¿qué preguntarías antes de elegir la opción más contundente?",
+  "one_minute_summary": "En octubre de 1962 la CIA encontró bases de misiles soviéticos en Cuba y los asesores de Kennedy pidieron bombardear e invadir. Él ya había cedido a la presión en Bahía de Cochinos y acababa de leer The Guns of August, así que frenó a todos. Preguntó por qué lo habían hecho los rusos, escribió en una frase lo que exigía y eligió un bloqueo que llamó cuarentena porque se podía deshacer. A los once días Jruschov escribió sobre un nudo de guerra y los misiles se retiraron."
+ },
+ "de": {
+  "title": "Kennedys dreizehn Tage",
+  "description": "Während seine Berater sofort Kuba angreifen wollten, bremste Kennedy, stellte Fragen und wählte einen Schritt, den er noch zurücknehmen konnte.",
+  "hook": "Was würdest du vor deiner nächsten großen Entscheidung fragen, bevor du die härteste Option wählst?",
+  "one_minute_summary": "Im Oktober 1962 entdeckte die CIA sowjetische Raketenrampen auf Kuba, und Kennedys Berater wollten bombardieren und einmarschieren. Nach der Schweinebucht und frisch nach der Lektüre von The Guns of August bremste er alle. Er fragte, warum die Sowjets das getan hatten, schrieb in einem Satz auf, was er forderte, und wählte eine Blockade, die er Quarantäne nannte, weil sie sich zurücknehmen ließ. Nach elf Tagen schrieb Chruschtschow von einem Seil mit einem Knoten des Krieges, und die Raketen wurden abgezogen."
+ }
+}

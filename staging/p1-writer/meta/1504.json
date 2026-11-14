@@ -1,0 +1,35 @@
+{
+ "story_id": 1504,
+ "verdict": "keep",
+ "verify_note": "Keep, rewritten: orange anecdote is not verifiable as Getting to Yes material (dropped). Rebuilt on the library window and Camp David 1978 from the interests chapter (study guides, no primary text). DB author 'Roger Fisher' only; book is by Fisher and Ury.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Üçüncü pencere",
+  "description": "Fisher ve Ury'ye göre pozisyonlar çatışır ama ihtiyaçlar çoğu zaman çatışmaz. Kütüphaneci iki adamın pencere kavgasını yan odanın penceresiyle çözdü.",
+  "hook": "Son anlaşmazlığınızda tarafınız aslında hangi ihtiyacı koruyordu?",
+  "one_minute_summary": "Fisher ve Ury'nin kitabında iki adam kütüphanede bir pencere yüzünden tartışıyor, biri açık istiyor, biri kapalı. Kütüphaneci nedeni sorar: biri temiz hava istiyor, öteki cereyan istemiyor. Yan odanın penceresini açar, hava gelir, cereyan olmaz. Aynı mantık 1978 Camp David'de de işledi. İsrail güvenlik, Mısır egemenlik istiyordu ve Sina askerden arındırılmış olarak Mısır'a döndü. Pozisyonlar çatışır ama ihtiyaçlar çoğu zaman çatışmaz."
+ },
+ "en": {
+  "title": "The third window",
+  "description": "For Fisher and Ury, positions collide but the needs behind them often don't. A librarian ended a window fight by opening a different one.",
+  "hook": "In your last disagreement, what need was your side actually protecting?",
+  "one_minute_summary": "In Fisher and Ury's book, two men argue in a library: one wants a window open, the other shut. The librarian asks what each really wants. One wants fresh air, the other no draft, so she opens a window in the next room and both get what they came for. The same logic worked at Camp David in 1978. Israel wanted security, Egypt wanted sovereignty, and the Sinai went back to Egypt demilitarized. Positions collide, but the needs behind them often don't."
+ },
+ "es": {
+  "title": "La tercera ventana",
+  "description": "Para Fisher y Ury las posiciones chocan, pero las necesidades de detrás a menudo no. Una bibliotecaria zanjó una disputa abriendo otra ventana.",
+  "hook": "En tu último desacuerdo, ¿qué necesidad estaba protegiendo realmente tu parte?",
+  "one_minute_summary": "En el libro de Fisher y Ury, dos hombres discuten en una biblioteca, uno quiere la ventana abierta y el otro cerrada. La bibliotecaria pregunta qué busca cada uno. Uno quiere aire, el otro no quiere corriente, así que abre una ventana de la sala contigua y los dos quedan conformes. La misma lógica funcionó en Camp David, en 1978: Israel quería seguridad, Egipto soberanía, y el Sinaí volvió a Egipto desmilitarizado. Las posiciones chocan, las necesidades a menudo no."
+ },
+ "de": {
+  "title": "Das dritte Fenster",
+  "description": "Für Fisher und Ury prallen Positionen aufeinander, die Bedürfnisse dahinter oft nicht. Eine Bibliothekarin beendete einen Fensterstreit mit einem anderen Fenster.",
+  "hook": "Welches Bedürfnis hat deine Seite im letzten Streit tatsächlich geschützt?",
+  "one_minute_summary": "In Fisher und Urys Buch streiten zwei Männer in einer Bibliothek, der eine will das Fenster offen, der andere zu. Die Bibliothekarin fragt, was jeder eigentlich will. Der eine braucht Luft, der andere will keinen Zug, also öffnet sie ein Fenster im Nebenraum, und beide sind zufrieden. Dieselbe Logik wirkte 1978 in Camp David: Israel ging es um Sicherheit, Ägypten um Hoheit, und der Sinai ging entmilitarisiert an Ägypten zurück. Positionen prallen aufeinander, die Bedürfnisse dahinter oft nicht."
+ }
+}

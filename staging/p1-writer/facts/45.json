@@ -1,0 +1,202 @@
+{
+ "book_no": 45,
+ "title": "Why We Sleep",
+ "authors": [
+  "Matthew Walker"
+ ],
+ "year": "2017",
+ "sources": [
+  "https://archive.org/details/why-we-sleep-by-matthew-walker_202501",
+  "https://www.masterclass.com/classes/matthew-walker-teaches-the-science-of-better-sleep/chapters/sleep-to-thrive",
+  "https://www.npr.org/sections/health-shots/2012/01/16/144672190/ending-nightmares-caused-by-ptsd",
+  "https://www.kqed.org/quest/28257/can-ptsd-nightmares-be-cured",
+  "https://www.nejm.org/doi/full/10.1056/NEJMoa1507598",
+  "https://guzey.com/books/why-we-sleep/"
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "claim": "Walker's lab found overnight motor-skill gains tied to stage 2 NREM sleep spindles, especially in the last two hours of an eight-hour night (e.g. 5 to 7 a.m. if asleep at 11 p.m.) - the hours many cut short.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f2",
+   "claim": "Walker pictures the Olympic coach who trains athletes late and wakes them early, denying that late-night phase.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f3",
+   "claim": "Usain Bolt has on many occasions napped in the hours before breaking the world record and before Olympic finals he won.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f4",
+   "claim": "Walker tells sports teams that sleep is a powerful, legal performance enhancer; with less than eight and especially less than six hours, time to physical exhaustion drops 10 to 30 percent and aerobic output falls.",
+   "source": "archive.org full text; MasterClass excerpt",
+   "confidence": "high"
+  },
+  {
+   "id": "f5",
+   "claim": "A 2014 study of competitive young athletes (Milewski et al.) found chronic short sleep across a season predicted much higher injury risk.",
+   "source": "archive.org full text; endnote",
+   "confidence": "high"
+  },
+  {
+   "id": "f6",
+   "claim": "Walker shows teams sleep-tracker data from Andre Iguodala (Golden State Warriors): with more than eight hours vs less, +12% minutes played, +29% points per minute, +2% three-point percentage, +9% free-throw percentage; with less sleep +37% turnovers and +45% fouls.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f7",
+   "claim": "Residents on a thirty-hour straight shift commit 36% more serious medical errors (wrong drug dose, surgical implement left inside) than those working sixteen hours or less, and after such a shift make 460% more diagnostic mistakes in the ICU.",
+   "source": "archive.org full text; Landrigan NEJM 2004 via search",
+   "confidence": "high"
+  },
+  {
+   "id": "f8",
+   "claim": "After a thirty-hour shift residents are 73% more likely to stab themselves with a needle or cut themselves with a scalpel, and 168% more likely to have a car crash driving home.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f9",
+   "claim": "An attending surgeon not allowed at least a six-hour sleep opportunity the night before has a 170% increased risk of a serious surgical error such as organ damage or major haemorrhage.",
+   "source": "archive.org full text",
+   "confidence": "medium"
+  },
+  {
+   "id": "f10",
+   "claim": "An Australian study: after nineteen hours awake, sleep-deprived people were as cognitively impaired as those at the legal driving limit (0.08% blood alcohol); the decline began after fifteen hours awake. Walker asks whether you would accept treatment from a doctor who took swigs from a hip flask.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f11",
+   "claim": "In Dinges's study, ten days of six hours of sleep a night made people as impaired as 24 hours without sleep; participants consistently underestimated their impairment, 'like someone at a bar ... telling you I'm fine to drive home'.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f12",
+   "claim": "Pilot studies limiting residents to sixteen-hour shifts with an eight-hour rest cut serious medical errors by over 20%.",
+   "source": "archive.org full text",
+   "confidence": "medium"
+  },
+  {
+   "id": "f13",
+   "claim": "Chapter 10 'Dreaming as Overnight Therapy': Walker tested whether time heals all wounds or time spent in dream sleep. During REM sleep, noradrenaline is completely shut off in the brain - the only time in 24 hours - while emotion and memory regions (amygdala, hippocampus) reactivate.",
+   "source": "archive.org full text; NPR",
+   "confidence": "high"
+  },
+  {
+   "id": "f14",
+   "claim": "Experiment: healthy young adults viewed emotional images in an MRI scanner twice, twelve hours apart; half saw them morning then evening (awake), half evening then next morning (after sleep). Those who slept felt significantly less emotional and showed a large drop in amygdala reactivity with prefrontal re-engagement; the awake group did not. REM sleep quality predicted the effect.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f15",
+   "claim": "Walker's phrase: REM sleep is 'sleeping to remember' the details and 'sleeping to forget' the painful emotional charge.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f16",
+   "claim": "Dr. Murray Raskind at a VA hospital near Seattle gave veterans with PTSD the blood-pressure drug prazosin; their recurring nightmares eased. Prazosin suppresses noradrenaline in the brain, matching Walker's theory.",
+   "source": "archive.org full text; NPR; KQED",
+   "confidence": "high"
+  },
+  {
+   "id": "f17",
+   "claim": "Caveat: a large 2018 VA trial (Raskind et al., NEJM) found prazosin did not reduce trauma nightmares more than placebo in chronic PTSD veterans.",
+   "source": "NEJM 2018;378:507-517",
+   "confidence": "high"
+  },
+  {
+   "id": "f18",
+   "claim": "Caveat: Why We Sleep has been criticised for overstating some figures (e.g. Guzey's review).",
+   "source": "guzey.com",
+   "confidence": "medium"
+  },
+  {
+   "id": "f19",
+   "claim": "Post-game sleep speeds recovery from inflammation, stimulates muscle repair and restocks glucose and glycogen; IOC 2015 consensus statement on sleep in athletic development; small margins separate gold from last.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  },
+  {
+   "id": "f20",
+   "claim": "Baseline resetting: with chronic sleep restriction people acclimate to impaired performance as their normal. Irony: a resident leaving the ER may return as a crash victim after a microsleep.",
+   "source": "archive.org full text",
+   "confidence": "high"
+  }
+ ],
+ "rejected": [
+  {
+   "claim": "Roger Federer said he sleeps twelve hours a night (journalist dialogue)",
+   "reason": "Not in the book."
+  },
+  {
+   "claim": "LeBron James, Maria Sharapova sleep habits",
+   "reason": "Not in the book."
+  },
+  {
+   "claim": "Most world-class athletes sleep over eight hours, some aim for twelve (Walker 'researched this pattern')",
+   "reason": "Not in the book."
+  },
+  {
+   "claim": "A surgeon awake 24 hours performs like one at 0.08 blood alcohol",
+   "reason": "Book's study is general adults after nineteen hours awake; not surgeons, not 24 hours."
+  },
+  {
+   "claim": "Doping is tested but sleep restriction is legal (as Walker's ironic observation)",
+   "reason": "Not found in that form; book only calls sleep a legal performance enhancer."
+  },
+  {
+   "claim": "Walker quote 'Sleep is therapeutic'",
+   "reason": "Not verified as a quote."
+  }
+ ],
+ "stories": {
+  "1267": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f19"
+   ],
+   "note": "Federer dialogue and athlete list rejected; rebuilt on Bolt naps, Iguodala tracker data and the late-night spindle window. Title changed."
+  },
+  "1268": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f7",
+    "f8",
+    "f10",
+    "f11",
+    "f12",
+    "f20"
+   ],
+   "note": "Surgeon/0.08 claim corrected to the nineteen-hour general study; residents' 30-hour shift data and self-misjudgment kept."
+  },
+  "1269": {
+   "verdict": "keep",
+   "fact_ids": [
+    "f13",
+    "f14",
+    "f15",
+    "f16",
+    "f17"
+   ],
+   "note": "Overnight therapy verified; prazosin added with 2018 NEJM caveat."
+  }
+ }
+}

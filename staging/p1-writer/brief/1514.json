@@ -1,0 +1,35 @@
+{
+  "story_id": 1514,
+  "kind": "concept",
+  "book": {"title": "The Innovator's Dilemma", "author": "Clayton M. Christensen", "year": "1997"},
+  "confidence": "medium",
+  "confidence_note": "Disk-drive chain taken from reading notes and summaries of the book, not the book text. The old text's direct quote, the 'separate unit' advice and generic margin claims were dropped as unverified. Numbers (22 percent, two-thirds, about half) are kept with their scope. Lepore critique included as caveat.",
+  "facts": [
+    "In the 1970s the standard drive was 14-inch, sold to mainframe makers who wanted capacity.",
+    "The 14-inch makers listened to established customers, who pulled them along a capacity trajectory of about 22 percent per year; Christensen says leaders were held captive by customers.",
+    "Established firms led nearly every sustaining innovation; their failures were not due to passivity or risk aversion.",
+    "8-inch drives came from entrants around 1978-1980, lower capacity, suited to minicomputers; initially more per megabyte though lower total price; later cheaper per megabyte and moved into low-end mainframes.",
+    "Two-thirds of 14-inch makers never entered the 8-inch market; those that did were about two years behind; every 14-inch maker eventually failed (per the account).",
+    "Seagate's 5.25-inch drive (1980) had about a sixth of the capacity of an 8-inch and five times the access time; minicomputer makers were not interested, so Seagate went to desktop PCs; about half of 8-inch makers never entered and eventually failed.",
+    "Disruptive products offer less of what mainstream customers want, in simpler designs from off-the-shelf parts, with different attributes valued in a new market. The 1.8-inch drive's largest first market was portable heart monitors.",
+    "Critic Jill Lepore argues Christensen's cases do not fully support his thesis; disk drives are one focus."
+  ],
+  "scene_details": ["14-inch drives going to mainframe makers", "8-inch drive suited to minicomputers", "Seagate's 5.25-inch drive going to desktop PCs", "portable heart monitors as the first 1.8-inch market"],
+  "tension": "Firms that listened closely to their best customers missed the next drive size and mostly failed.",
+  "opening_idea": "Open on the two-thirds of 14-inch makers that never built an 8-inch drive, while doing everything customers asked.",
+  "lessons": [{"idea": "Check what loyal customers ask for against a possible use elsewhere.", "anchor": "Mainframe customers pulled makers along; minicomputers and desktop PCs bought the smaller drive.", "example": "A carpenter's sturdy chairs for loyal clients versus a rough light stool for outsiders."}],
+  "reflect": [],
+  "reflect_final": "Which request from your most loyal customers or colleagues keeps steering your work in one direction, and who outside that circle might use a plainer version of it?",
+  "use_cases": [
+    {"situation": "Team plans only from current clients' requests.", "move": "The 14-inch makers listened and still lost; ask who is not asking yet and what they use.", "context": "meeting"},
+    {"situation": "You tune skills only to what your employer rewards.", "move": "Try one small thing nobody asked for and see who it helps.", "context": "self"},
+    {"situation": "A friend dismisses a plain, cheap newcomer.", "move": "Seagate's 5.25-inch drive was weaker on paper; ask who buys the cheap version and for what.", "context": "social"}
+  ],
+  "pocket_idea": "Mainframe makers wanted bigger drives while startups sold smaller ones elsewhere; ask who your plainer version could serve.",
+  "conversation_variants": {
+    "punchline_idea": "14-inch makers listened so well they were held captive by their customers.",
+    "thirty_sec_idea": "Drive makers listened to mainframe customers; startups sold smaller drives to minicomputers; two-thirds of 14-inch makers never entered; Seagate went to desktop PCs.",
+    "question_idea": "",
+    "key_contrast_idea": "listening versus drifting"
+  }
+}

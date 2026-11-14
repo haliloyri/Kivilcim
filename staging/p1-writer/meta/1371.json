@@ -1,0 +1,35 @@
+{
+ "story_id": 1371,
+ "verdict": "keep",
+ "verify_note": "Mirroring, the Wiseman waiter study and the two-copies office case checked against close quotations of Never Split the Difference (2016); the 1993 Brooklyn bank mirror from a summary and MasterClass. Invented Voss quotes in the old text dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "İki Kopya mı?",
+  "description": "Bir çalışan, yöneticisinin bir haftalık gereksiz iş isteyen talimatını yalnızca son kelimeleri soru gibi tekrar ederek eritiyor. Chris Voss'un aynalama tekniği.",
+  "hook": "Karşınızdakinin son sözlerini tekrar etmek size ne kazandırır?",
+  "one_minute_summary": "Chris Voss, Never Split the Difference'ta aynalamayı anlatıyor: karşınızdakinin son üç ya da en önemli kelimesini soru tonuyla geri vermek. Bir ofiste yönetici iki kâğıt kopya isteyince çalışan \"İki kopya mı?\" diye soruyor, müşterinin kopya istemediği ortaya çıkıyor ve ertesi gün iki dijital yedeğin yeterli olduğu yazılıyor. Voss tekniği 1993'te Brooklyn'deki bir banka soygununda da kullanmıştı. Wiseman'ın deneyinde siparişi tekrar eden garsonlar yüzde 70 daha fazla bahşiş aldı."
+ },
+ "en": {
+  "title": "Two Copies?",
+  "description": "An employee talks a boss out of a week of pointless work by repeating his last words as a question. Chris Voss's mirroring technique.",
+  "hook": "What can repeating someone's last words get you?",
+  "one_minute_summary": "In Never Split the Difference, Chris Voss explains mirroring: repeat the last three words, or the key ones, as a curious question. A boss asks for two paper copies of everything; the employee asks \"Two copies?\", it emerges the client never wanted one, and the next day's email says two digital backups will be fine. Voss used the same move on a Brooklyn bank robber in 1993. In Richard Wiseman's study, waiters who repeated orders earned 70 percent higher tips."
+ },
+ "es": {
+  "title": "¿Dos copias?",
+  "description": "Un empleado se ahorra una semana de trabajo inútil repitiendo como pregunta las últimas palabras de su jefe. La técnica del espejo de Chris Voss.",
+  "hook": "¿Qué ganas repitiendo las últimas palabras del otro?",
+  "one_minute_summary": "En Never Split the Difference, Chris Voss explica la técnica del espejo: repetir las tres últimas palabras, o las clave, con tono de pregunta. Un jefe pide dos copias en papel de todo; el empleado pregunta «¿Dos copias?», sale a la luz que el cliente nunca pidió ninguna y al día siguiente un correo dice que bastan dos copias digitales. Voss usó lo mismo con un atracador en Brooklyn en 1993. En el estudio de Wiseman, los camareros que repetían el pedido ganaban un 70 % más de propina."
+ },
+ "de": {
+  "title": "Zwei Kopien?",
+  "description": "Ein Angestellter erspart sich eine Woche unnötiger Arbeit, indem er die letzten Worte seines Chefs als Frage wiederholt. Chris Voss' Technik des Spiegelns.",
+  "hook": "Was bringt es dir, die letzten Worte deines Gegenübers zu wiederholen?",
+  "one_minute_summary": "In Never Split the Difference erklärt Chris Voss das Spiegeln: die letzten drei oder die wichtigsten Wörter als neugierige Frage zurückgeben. Ein Chef verlangt zwei Papierkopien; der Angestellte fragt \"Zwei Kopien?\", es stellt sich heraus, dass der Kunde keine wollte, und am nächsten Tag reichen zwei digitale Sicherungen. Voss nutzte das 1993 bei einem Bankräuber in Brooklyn. In Richard Wisemans Studie bekamen Kellner, die Bestellungen wiederholten, 70 Prozent mehr Trinkgeld."
+ }
+}

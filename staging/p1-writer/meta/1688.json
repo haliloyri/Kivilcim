@@ -1,0 +1,30 @@
+{
+  "story_id": 1688,
+  "verdict": "keep",
+  "verify_note": "Keep with low confidence: defusion techniques (prefix, cartoon voice, Thanks Mind) and the Doom and Gloom radio confirmed in notes and a quote page. Old repeat-until-it-feels-true exercise and leaves-on-a-stream dropped as unverified; no full text.",
+  "title_changed": {"tr": true, "en": true, "es": true, "de": true},
+  "tr": {
+    "title": "Düşünce, yalnızca düşünce",
+    "description": "Harris'e göre bir düşünceyi başına 'şu düşünceye sahibim' ekleyerek bir mesafe kazanırsınız. Düşünce gitmez, ama gerçek gibi durmaz.",
+    "hook": "Bir işe başlarken hangi düşünce hep tekrar ediyor?",
+    "one_minute_summary": "Russ Harris'e göre düşünen zihin, arka planda sürekli çalan bir radyo gibidir ve çoğu zaman olumsuz hikâyeler yayınlar. Ayrışma, düşünceleri yalnızca sözcük ve resim olarak görmektir. Tekniklerden biri, düşüncenin başına 'şu düşünceye sahibim' demektir. Başka biri, düşünceyi çizgi film karakterinin yüksek sesle söylediğini hayal etmektir. Üçüncüsü, 'Teşekkürler Zihin, ama bugün oynamıyorum' demektir. Bir düşünceye takılınca kendinizi çözüp nefese dönersiniz. Ayrışma, düşünceleri yok etmek için değildir."
+  },
+  "en": {
+    "title": "Just a thought",
+    "description": "Russ Harris suggests putting 'I'm having the thought that' in front of a harsh thought. It doesn't go away, but it stops sounding like a fact.",
+    "hook": "Which thought keeps replaying when you start something?",
+    "one_minute_summary": "Russ Harris says the thinking self is like a radio playing in the background, mostly negative stories. Defusion means seeing thoughts as just words and pictures. One technique is to put 'I'm having the thought that' in front of the thought. Another is to imagine a cartoon character saying it aloud. A third is to answer with 'Thanks Mind, but I'm not playing today.' When a thought hooks you, you unhook and return to the breath. A chapter warns that defusion is not a way of getting rid of thoughts."
+  },
+  "es": {
+    "title": "Solo un pensamiento",
+    "description": "Russ Harris propone anteponer «estoy teniendo el pensamiento de que» a un pensamiento duro. No desaparece, pero deja de sonar a hecho.",
+    "hook": "¿Qué pensamiento se repite cuando empiezas algo?",
+    "one_minute_summary": "Según Russ Harris, la mente pensante es como una radio que suena de fondo, casi siempre con historias negativas. La defusión consiste en ver los pensamientos como simples palabras e imágenes. Una técnica es anteponer «estoy teniendo el pensamiento de que». Otra, imaginar a un personaje de dibujos animados diciéndolo en voz alta. Una tercera, responder «Gracias, Mente, pero hoy no juego». Cuando un pensamiento te engancha, te desenganchas y vuelves a la respiración. Un capítulo advierte que la defusión no sirve para eliminar pensamientos."
+  },
+  "de": {
+    "title": "Nur ein Gedanke",
+    "description": "Russ Harris rät, einem harten Gedanken »Ich habe den Gedanken, dass« voranzustellen. Er verschwindet nicht, klingt aber nicht mehr wie eine Tatsache.",
+    "hook": "Welcher Gedanke wiederholt sich, wenn du etwas beginnst?",
+    "one_minute_summary": "Laut Russ Harris ist das denkende Selbst wie ein Radio im Hintergrund, meist mit negativen Geschichten. Defusion heißt, Gedanken als bloße Worte und Bilder zu sehen. Eine Technik ist, dem Gedanken »Ich habe den Gedanken, dass« voranzustellen. Eine andere, sich eine Zeichentrickfigur vorzustellen, die ihn laut sagt. Eine dritte, zu antworten: »Danke, Verstand, aber heute spiele ich nicht mit.« Verhakt dich ein Gedanke, löst du dich und kehrst zum Atem zurück. Ein Kapitel warnt, dass Defusion kein Mittel ist, Gedanken loszuwerden."
+  }
+}

@@ -1,0 +1,32 @@
+{
+ "story_id": 1613,
+ "kind": "concept",
+ "book": {"title": "The Millionaire Next Door", "author": "Thomas J. Stanley and William D. Danko", "year": "1996"},
+ "confidence": "medium",
+ "confidence_note": "Checked against Wikipedia and secondary summaries; the original text was not accessible. The 57 percent accountant comparison is reported by summaries and the exact sample and wording were not verified. Old text's 'tailwind' framing, the claim that self-made people accumulate far more across the board and the quoted parenting advice were dropped. Taleb's survivorship-bias criticism exists and is not used in the story.",
+ "facts": [
+  "Stanley and Danko call regular money from affluent parents to adult children and grandchildren 'Economic Outpatient Care' (EOC).",
+  "Their list of traits of big wealth accumulators includes two about this: they did not receive regular cash support from their parents, and their adult children are economically self-sufficient.",
+  "The authors report that adult children who receive such gifts tend to accumulate less than comparable people who do not receive them.",
+  "In the comparison of accountants, households receiving parental cash gifts hold about 57 percent of the net worth of accountant households that do not.",
+  "The gifts can give recipients a false sense of security, and some buy homes above their means."
+ ],
+ "scene_details": ["the parental cash gift", "the house bought above the buyer's means", "accountants compared with accountants"],
+ "tension": "Parents give money to help, yet the book finds the helped adult children end up with less than peers in the same job who got nothing.",
+ "opening_idea": "Start from the accountant comparison: same occupation, one group gets cash from parents, and holds 57 percent of the net worth.",
+ "lessons": [{"idea": "Help that removes the need to build your own cushion can quietly stop that cushion from growing.", "anchor": "accountants who received parental cash gifts held about 57 percent of the net worth of accountants who did not"}],
+ "reflect": [],
+ "reflect_final": "Where in your life has help you received, or gave, made the next step easier today and the step after it harder?",
+ "use_cases": [
+  {"situation": "A sibling asks whether to keep covering an adult child's rent", "move": "Mention the book's finding that gifted accountants held about 57 percent of what non-gifted accountants did, then ask which expense the gift could stop covering first.", "context": "family"},
+  {"situation": "You catch yourself leaning on a regular top-up from relatives", "move": "Write down the one monthly cost you would drop if the top-up ended, and cover it yourself this month.", "context": "self"},
+  {"situation": "A friend is deciding whether to buy a house with family money", "move": "Ask what they would buy if the family money were not there.", "context": "social"}
+ ],
+ "pocket_idea": "A regular gift can buy a house above your means; ask what you would build if it stopped.",
+ "conversation_variants": {
+  "punchline_idea": "Accountants who got cash from their parents held 57 percent of the net worth of accountants who did not.",
+  "thirty_sec_idea": "Stanley and Danko compare accountants: those whose parents regularly gave them cash held about 57 percent of the net worth of those who got nothing; the gifts also encouraged houses above their means.",
+  "question_idea": "",
+  "key_contrast_idea": "gift versus own cushion"
+ }
+}

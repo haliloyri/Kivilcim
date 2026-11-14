@@ -1,0 +1,35 @@
+{
+ "story_id": 1665,
+ "verdict": "keep",
+ "verify_note": "Keep: 'The Paradox of Time' and the three ways the ego treats the present moment (ch. 7) verified in a full text. Old Q and A and 'breath, touch, sound' dropped; rebuilt on Tolle's thirty-years friends example and his three-ways question.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Şimdi'nin üç yüzü",
+  "description": "Eckhart Tolle eski dostlarını otuz yıl sonra görüp şaşırdı, sonra zamanın hepsini şimdi'de yaşandığını yazdı.",
+  "hook": "Bugün bir anı araç, engel ya da düşman gibi yaşadığınızı fark etseydiniz, hangi işte fark ederdiniz?",
+  "one_minute_summary": "Eckhart Tolle, neredeyse otuz yıl sonra eski dostlarını gördü ve şaşırdı: anne bastonla yürüyordu, kızı üç çocuktan sonra bitkindi. Zamanın bunu yaptığını düşündü. Ama kitapta her şeyin zamana bağlı göründüğünü, hepsinin şimdi'de olduğunu söyler: zamanın kendisini hiç yaşamazsınız. Egonun şimdiye üç biçimde davrandığını anlatır: araç, engel ya da düşman. Sorusu şu: şimdiki anla ilişkim nedir? Cevabı görmek farkındalıktır ve seçme gücünü getirir."
+ },
+ "en": {
+  "title": "Three faces of the Now",
+  "description": "Eckhart Tolle met old friends after almost thirty years and saw time on their faces, yet says it all happened in the Now.",
+  "hook": "In the middle of which task today would you notice you were treating a moment as a means, an obstacle or an enemy?",
+  "one_minute_summary": "After almost thirty years, Eckhart Tolle met old friends and was shocked: the mother walked with a cane, her daughter looked worn out after three children. Time had done this, he thought. Yet in the book he says everything seems subject to time but all of it happens in the Now, and you never experience time itself. He describes three ways the ego treats the present moment: as a means to an end, as an obstacle, or as an enemy."
+ },
+ "es": {
+  "title": "Las tres caras del Ahora",
+  "description": "Eckhart Tolle vio el paso del tiempo en unos viejos amigos tras casi treinta años y aun así dice que todo ocurrió en el Ahora.",
+  "hook": "¿En mitad de qué tarea de hoy notarías que tratas un momento como medio, obstáculo o enemigo?",
+  "one_minute_summary": "Tras casi treinta años, Eckhart Tolle se encontró con unos viejos amigos y se impresionó: la madre andaba con bastón y su hija parecía agotada por tres hijos. El tiempo les había hecho eso, pensó. Pero en el libro dice que todo parece sujeto al tiempo y que todo ocurre en el Ahora, y que nunca experimentas el tiempo mismo. Describe tres maneras en que el ego trata el momento presente: como medio para un fin, como obstáculo o como enemigo."
+ },
+ "de": {
+  "title": "Die drei Gesichter des Jetzt",
+  "description": "Eckhart Tolle sah nach fast dreißig Jahren die Zeit in den Gesichtern alter Freunde und sagt doch, alles geschehe im Jetzt.",
+  "hook": "Bei welcher Aufgabe heute würdest du bemerken, dass du einen Augenblick als Mittel, Hindernis oder Feind behandelst?",
+  "one_minute_summary": "Nach fast dreißig Jahren traf Eckhart Tolle alte Freunde und erschrak: Die Mutter ging am Stock, die Tochter wirkte erschöpft von drei Kindern. Die Zeit habe das getan, dachte er. Doch im Buch sagt er, alles scheine der Zeit unterworfen, und alles geschehe im Jetzt, die Zeit selbst erlebe man nie. Er beschreibt drei Arten, wie das Ego den gegenwärtigen Augenblick behandelt: als Mittel zum Zweck, als Hindernis oder als Feind. Seine Frage lautet, wie dein Verhältnis zum gegenwärtigen Augenblick ist."
+ }
+}

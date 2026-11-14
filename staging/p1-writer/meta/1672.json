@@ -1,0 +1,35 @@
+{
+ "story_id": 1672,
+ "verdict": "keep",
+ "verify_note": "Keep with a book-identity flag: the DB lists 'Konsantrasyon Gücü' by CNewport (2020) but all content matches Cal Newport's Deep Work (2016); no Turkish edition with that title found (Turkish edition found: Pürdikkat). Definitions and the time x intensity formula verified from summaries; four-hour limit from one summary. Old 1-2 hour claim dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Zaman çarpı odak",
+  "description": "Cal Newport'a göre üretilen iş, harcanan zaman ile odak yoğunluğunun çarpımı. Derin ve yüzeysel çalışma arasındaki fark bu çarpımda saklı.",
+  "hook": "Bir günün kaç saatinde gerçekten tam dikkatiniz vardı?",
+  "one_minute_summary": "Cal Newport işi ikiye ayırıyor. Derin çalışma, dikkat dağıtıcısız yapılan, zihni sınırına zorlayan ve kopyalanması zor işlerdir. Yüzeysel çalışma e-posta, durum toplantısı ve form gibi lojistik işlerdir. Formülü şu: Nitelikli iş, zaman çarpı odak yoğunluğu. Uzmanlar günde dört saat civarında derin çalışmayla sınırlı kalıyor. Ders: Masada geçen saatle odaklı saati ayırın ve en zor işe ilk temiz bloğu verin. Bir hafta sonunda eksik olanın saatler mi odak mı olduğu görünür."
+ },
+ "en": {
+  "title": "Time Multiplied by Focus",
+  "description": "Cal Newport's formula says quality work equals time spent times intensity of focus. It explains why a long day can produce little.",
+  "hook": "How many hours of your last workday had your full attention?",
+  "one_minute_summary": "Cal Newport splits professional effort in two. Deep work is distraction-free concentration that stretches your skill and is hard to copy. Shallow work is logistical tasks such as email, status meetings and forms. His formula: high-quality work equals time spent times intensity of focus. Experts, he says, reach about four deep hours a day. The lesson: count focused hours, not desk hours, and give your hardest task the first clean block."
+ },
+ "es": {
+  "title": "Tiempo por concentración",
+  "description": "Según Cal Newport, el trabajo de calidad es igual al tiempo dedicado por la intensidad de la concentración. Explica por qué una jornada larga puede rendir poco.",
+  "hook": "¿Cuántas horas de tu última jornada tuvieron toda tu atención?",
+  "one_minute_summary": "Cal Newport divide el esfuerzo profesional en dos. El trabajo profundo es concentración sin distracciones que exige tu habilidad y es difícil de copiar. El superficial son tareas logísticas como correo, reuniones de seguimiento y formularios. Su fórmula: trabajo de calidad igual a tiempo por intensidad de concentración. Los expertos, dice, llegan a unas cuatro horas profundas al día. La lección: cuenta las horas de concentración, no las de mesa."
+ },
+ "de": {
+  "title": "Zeit mal Konzentration",
+  "description": "Nach Cal Newport ist gute Arbeit gleich Zeit mal Intensität der Konzentration. Das erklärt, warum ein langer Tag wenig bringen kann.",
+  "hook": "Wie viele Stunden deines letzten Arbeitstags hatten deine volle Aufmerksamkeit?",
+  "one_minute_summary": "Cal Newport teilt berufliche Anstrengung in zwei Arten. Tiefe Arbeit ist ablenkungsfreie Konzentration, die dein Können fordert und schwer zu kopieren ist. Flache Arbeit sind logistische Aufgaben wie E-Mails, Statusmeetings und Formulare. Seine Formel: gute Arbeit gleich Zeit mal Intensität der Konzentration. Experten schaffen laut ihm etwa vier tiefe Stunden am Tag. Die Lehre: Zähle Konzentrationsstunden, nicht Schreibtischstunden. So zeigt sich nach einer Woche, woran es fehlt."
+ }
+}

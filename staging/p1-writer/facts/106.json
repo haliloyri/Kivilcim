@@ -1,0 +1,157 @@
+{
+  "book_no": 106,
+  "title": "The 21 Irrefutable Laws of Leadership",
+  "authors": [
+    "John C. Maxwell"
+  ],
+  "year": "1998",
+  "sources": [
+    "https://www.success.com/expand-your-leadership-limits-with-the-law-of-the-lid",
+    "https://www.shortform.com/blog/the-law-of-influence-2/",
+    "https://www.shortform.com/blog/?p=34172",
+    "https://flamingoconnections.blogspot.com/2010/04/law-of-solid-ground.html",
+    "https://supersummary.com/the-21-irrefutable-laws-of-leadership/chapters-1-5-summary (search snippet only)"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Law of the Lid (Law 1): leadership ability determines a person's level of effectiveness; the lower the ability to lead, the lower the lid on potential. Maxwell rates leadership on a 1-10 scale: a leader at 8 can reach effectiveness of at most 7, a leader at 4 about 3.",
+      "source": "success.com, supersummary snippet",
+      "confidence": "high"
+    },
+    {
+      "id": "f2",
+      "claim": "Maxwell's example: Dick and Maurice McDonald built a small, successful hamburger business in Southern California with an efficient kitchen and good customer service; it gave them a comfortable living.",
+      "source": "success.com, supersummary snippet",
+      "confidence": "medium"
+    },
+    {
+      "id": "f3",
+      "claim": "Ray Kroc partnered with the McDonald brothers (sources give 1954 or 1961 for the deal) and later bought the exclusive rights. Between 1955 and 1959 about 100 restaurants opened; four years after that there were 500. Maxwell's reading: the leadership lid in Kroc's life was sky high.",
+      "source": "success.com, supersummary snippet",
+      "confidence": "medium"
+    },
+    {
+      "id": "f4",
+      "claim": "Maxwell's remedy: the lid can be raised by studying and developing leadership; improving leadership gives far greater returns than simply working harder. Replacing the leader is the other route organizations take.",
+      "source": "success.com",
+      "confidence": "high"
+    },
+    {
+      "id": "f5",
+      "claim": "Law of Influence (Law 2): 'The true measure of leadership is influence, nothing more, nothing less.' True leadership cannot be awarded, appointed or assigned; it comes only from influence, which must be earned.",
+      "source": "shortform, several summaries",
+      "confidence": "high"
+    },
+    {
+      "id": "f6",
+      "claim": "Maxwell lists five myths about leadership in this chapter (management, entrepreneur, knowledge, pioneer, position): a title, a business launched or knowledge held does not by itself make someone a leader.",
+      "source": "shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f7",
+      "claim": "Lincoln anecdote as Maxwell tells it: young Lincoln organised volunteers for a militia in the 1832 Black Hawk War, and by the usual practice the organiser became captain. He knew little about soldiering. Trying to get his men through a gate he could not recall the proper command and shouted: 'This company is dismissed for two minutes, when it will fall in again on the other side of the gate.' His influence fell; he started as captain and ended as a private. Historical details of his service are disputed (forum source), so the story is attributed to Maxwell.",
+      "source": "shortform, search snippets",
+      "confidence": "medium"
+    },
+    {
+      "id": "f8",
+      "claim": "Law of Solid Ground (Law 6): trust is the foundation of leadership. 'Character makes trust possible. And trust makes leadership possible.' 'Leaders cannot lose trust and continue to influence others.'",
+      "source": "flamingoconnections, shortform",
+      "confidence": "high"
+    },
+    {
+      "id": "f9",
+      "claim": "Maxwell compares trust to change in your pocket: good decisions add coins, mistakes take coins out, and admitting a mistake and apologising can put some back.",
+      "source": "flamingoconnections",
+      "confidence": "medium"
+    },
+    {
+      "id": "f10",
+      "claim": "Maxwell's own case: as senior pastor at Skyline Church he had led successfully for eight years, then made three major decisions without his usual process (firing someone, cancelling a service, changing part of the Christmas show). Trust dropped. He apologised publicly, asked forgiveness and won the congregation's trust back.",
+      "source": "shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f11",
+      "claim": "Followers' trust shows in how much they tell you, bad news included. Mistakes of ability are easier to recover from than mistakes of character such as lying about a project's status. Character develops through integrity, authenticity and discipline.",
+      "source": "shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f12",
+      "claim": "Vietnam as Maxwell's failure case: public support eroded as the war dragged on and leaders (McNamara, Johnson) misled the public; McNamara resigned and Johnson did not run again.",
+      "source": "shortform",
+      "confidence": "medium"
+    },
+    {
+      "id": "f13",
+      "claim": "Mother Teresa at the 1994 National Prayer Breakfast in Washington (Peggy Noonan's description is quoted in the chapter): she spoke of God, love and families, including family values and abortion. She offended nearly everyone present, yet they listened rather than heckling or leaving and most applauded at the end. Her standing rested on character and track record, not office.",
+      "source": "shortform; search excerpt of Noonan's description",
+      "confidence": "medium"
+    },
+    {
+      "id": "f14",
+      "claim": "Character shows people consistency, potential and whether you deserve respect; to build it Maxwell names integrity (honesty even when it hurts), authenticity (being yourself) and discipline (doing the right thing daily).",
+      "source": "shortform; flamingoconnections",
+      "confidence": "medium"
+    }
+  ],
+  "rejected": [
+    {
+      "claim": "Two men start identical companies (same sector, capital, product) and end up with a small profitable firm vs a big one; 'the only difference is leadership capacity'.",
+      "reason": "Not found in Maxwell; the book's Lid example is the McDonald brothers and Kroc."
+    },
+    {
+      "claim": "Quoted lines 'A organization never exceeds its leader's lid... if the lid is high...' and 'an assistant can behave like an 8, a CEO can stay a 3'.",
+      "reason": "Quotes not verifiable; only the 8 to 7 and 4 to 3 illustration is sourced."
+    },
+    {
+      "claim": "Texas preacher who built influence with no title.",
+      "reason": "No source; not found in the chapter summaries."
+    },
+    {
+      "claim": "Building with cracking foundation metaphor and quote 'When character cracks, leadership cracks'; history examples of collapses; 'building character takes years, losing it a moment'.",
+      "reason": "Quote and metaphor not found; the book's image is trust as foundation and as pocket change."
+    },
+    {
+      "claim": "Solid Ground as 'character is the ground' only.",
+      "reason": "Maxwell's law is about trust; character is what makes trust possible."
+    }
+  ],
+  "stories": {
+    "1414": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "note": "Rebuilt around McDonald brothers vs Kroc and the 1-10 scale; old 'two founders' scenario dropped."
+    },
+    "1415": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f5",
+        "f6",
+        "f7",
+        "f13"
+      ],
+      "note": "Rebuilt around the Lincoln militia anecdote as Maxwell tells it; Texas preacher dropped. Medium confidence."
+    },
+    "1416": {
+      "verdict": "keep",
+      "fact_ids": [
+        "f8",
+        "f9",
+        "f10",
+        "f11",
+        "f12",
+        "f14"
+      ],
+      "note": "Rebuilt around trust as foundation: Skyline case and the pocket-change image; old building-collapse metaphor dropped."
+    }
+  }
+}

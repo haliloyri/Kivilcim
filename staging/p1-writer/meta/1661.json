@@ -1,0 +1,35 @@
+{
+ "story_id": 1661,
+ "verdict": "keep",
+ "verify_note": "Keep: commitment chapter, ch. 2 and decision chapter of The Second Mountain verified in a full text. Old 'maybe a better one exists' examples dropped; replaced by Brooks's own car-versus-career contrast, contract-versus-commitment passage and the piano chain.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Zincirli piyano",
+  "description": "David Brooks'a göre insanlar araba için puanlara bakar, kariyere ve evliliğe ise kayarak girer. Çözümü taahhüt.",
+  "hook": "Çevresine bir yapı kurduğunuz için sürdürdüğünüz taahhüt, erteleyip durduğunuz bir şey için ne değiştirirdi?",
+  "one_minute_summary": "David Brooks, insanların küçük seçimleri büyüklerden daha dikkatle tartığını söyler: araba için puanlara bakar, kariyere ve evliliğe ise kayarak girerler. Çözümü taahhüttür, yani karşılık beklemeden verilmiş bir söz. Sözleşmede insan değişmez, taahhüt kim olduğunuzu değiştirir. Taahhüt aşk ve söz, ama bir yapının altında: duyguların gevşediği anlar için kurulmuş davranış çerçevesi. Özgürlüğü ikiye böler: -den özgürlük ve -e özgürlük. Gerçekten çalabilmek için yıllarca piyanoya zincirlenmek gerekir."
+ },
+ "en": {
+  "title": "The chained piano",
+  "description": "David Brooks says people research a car and slide into careers and marriages. His answer is commitment.",
+  "hook": "What would a structure like the one around your steadiest commitment change for something you keep postponing?",
+  "one_minute_summary": "David Brooks says people deliberate more over small choices than big ones: they check a car's ratings, then slide into a career and marry whoever they happen to live with. His answer is commitment, a promise made without expecting a return. A contract weighs pros and cons and leaves you unchanged, while a commitment changes who you are. It is love and promise put under law, a structure of behaviour for when feeling falters. He splits freedom in two: freedom from and freedom to."
+ },
+ "es": {
+  "title": "El piano encadenado",
+  "description": "Según David Brooks, la gente investiga un coche y se desliza hacia una carrera y un matrimonio. Su respuesta es el compromiso.",
+  "hook": "¿Qué cambiaría una estructura como la de tu compromiso más firme en algo que sigues aplazando?",
+  "one_minute_summary": "David Brooks dice que la gente delibera más con las decisiones pequeñas que con las grandes: mira las valoraciones de un coche, pero se desliza hacia una carrera y se casa con quien casualmente vive con ella. Su respuesta es el compromiso, una promesa hecha sin esperar nada a cambio. Un contrato pesa pros y contras y no te cambia; un compromiso cambia quién eres. Es amor y promesa puestos bajo ley, una estructura de conducta para cuando el sentimiento flaquea."
+ },
+ "de": {
+  "title": "Das angekettete Klavier",
+  "description": "Laut David Brooks recherchieren Menschen ein Auto und rutschen in Beruf und Ehe hinein. Seine Antwort ist die Verpflichtung.",
+  "hook": "Was würde eine Struktur wie die um deine stabilste Verpflichtung bei etwas ändern, das du aufschiebst?",
+  "one_minute_summary": "David Brooks sagt, Menschen denken über kleine Entscheidungen länger nach als über große: Sie prüfen die Bewertungen eines Autos, rutschen aber in einen Beruf und heiraten, wer gerade nebenan wohnt. Seine Antwort ist die Verpflichtung, ein Versprechen ohne Erwartung einer Gegenleistung. Ein Vertrag wägt ab und verändert dich nicht, eine Verpflichtung verändert, wer du bist. Sie ist Liebe und Versprechen unter einem Gesetz, ein Gerüst für die Momente, in denen das Gefühl schwankt. Er teilt Freiheit in Freiheit von und Freiheit zu: Um zu spielen, kettest du dich ans Klavier."
+ }
+}

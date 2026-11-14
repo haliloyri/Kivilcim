@@ -1,0 +1,35 @@
+{
+  "story_id": 1444,
+  "verdict": "keep",
+  "verify_note": "Keep, rebuilt with medium confidence: Publishers Weekly review and reader summary (full text not available). Old complaint percentages, 'iceberg' term and word-of-mouth numbers are not in the book and were dropped.",
+  "title_changed": {
+    "tr": true,
+    "en": true,
+    "es": true,
+    "de": true
+  },
+  "tr": {
+    "title": "Müşterilerin yarısı beş yılda gider",
+    "description": "Reichheld'e göre büyük şirketler beş yılda müşterilerinin, dört buçuk yılda çalışanlarının yarısını değiştirir. Giden herkes bir ölçüt sayılır.",
+    "hook": "Yakınlarda sizden sessizce uzaklaşan biri varsa, bunun nedenini hiç sordunuz mu?",
+    "one_minute_summary": "Frederick Reichheld'in The Loyalty Effect kitabına göre büyük şirketler yaklaşık beş yılda müşterilerinin, dört buçuk yılda çalışanlarının ve bir yıldan kısa sürede yatırımcılarının yarısını değiştirir. Bir okur özeti, tipik bir şirketin her yıl müşterilerinin yüzde 10 ila 30'unu kaybettiğini aktarır. Reichheld müşteri kaybını başarısızlığın en açık ölçütlerinden biri sayar ve çalışan bağlılığının müşteri bağlılığına neden olduğunu savunur. Önerisi, müşteriyi elde tutmaya ve kalma ihtimali yüksek olanlara yönelen sadakat temelli yönetimdir."
+  },
+  "en": {
+    "title": "Half the customers in five years",
+    "description": "Reichheld reports that major companies replace half their customers in about five years, half their employees in four and a half. Every departure is a measure.",
+    "hook": "Has anyone close to you quietly drifted away lately, and did you ever ask why?",
+    "one_minute_summary": "According to Frederick Reichheld's The Loyalty Effect, major companies replace about half their customers in five years, half their employees in four and a half, and half their investors in under a year. A reader summary adds that a typical company loses 10 to 30 percent of its customers a year. Reichheld treats defection as one of the clearest measures of failure and argues employee loyalty causes customer loyalty. His answer is loyalty-based management: keep customers and target those likely to stay."
+  },
+  "es": {
+    "title": "Contar a los que se van",
+    "description": "Según Reichheld, las grandes empresas sustituyen a la mitad de sus clientes en unos cinco años y a la mitad de sus empleados en cuatro y medio. Cada salida es una medida.",
+    "hook": "¿Alguien cercano se ha alejado en silencio últimamente y llegaste a preguntarle por qué?",
+    "one_minute_summary": "Según The Loyalty Effect, de Frederick Reichheld, las grandes empresas sustituyen a la mitad de sus clientes en unos cinco años, a la mitad de sus empleados en cuatro y medio y a la mitad de sus inversores en menos de un año. Reichheld ve la deserción como una de las medidas más claras del fracaso y sostiene que la lealtad de los empleados causa la de los clientes. Propone una gestión basada en la lealtad: retener a los clientes y apuntar a los que probablemente se queden."
+  },
+  "de": {
+    "title": "Die halbe Kundschaft in fünf Jahren",
+    "description": "Laut Reichheld ersetzen große Firmen etwa die Hälfte ihrer Kunden in fünf Jahren und die Hälfte der Mitarbeiter in viereinhalb. Jeder Abgang ist ein Maßstab.",
+    "hook": "Hat sich zuletzt jemand in deiner Nähe leise zurückgezogen, und hast du nach dem Grund gefragt?",
+    "one_minute_summary": "Nach Frederick Reichhelds The Loyalty Effect ersetzen große Firmen etwa die Hälfte ihrer Kunden in fünf Jahren, die Hälfte ihrer Mitarbeiter in viereinhalb und die Hälfte ihrer Investoren in weniger als einem Jahr. Eine Leserzusammenfassung ergänzt, ein typisches Unternehmen verliere jährlich 10 bis 30 Prozent seiner Kunden. Reichheld sieht Abwanderung als einen der deutlichsten Maßstäbe für Misserfolg und führt Kundentreue auf Mitarbeitertreue zurück. Seine Antwort ist loyalitätsbasiertes Management."
+  }
+}

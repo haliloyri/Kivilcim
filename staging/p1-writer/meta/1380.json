@@ -1,0 +1,35 @@
+{
+ "story_id": 1380,
+ "verdict": "keep",
+ "verify_note": "ABC from Albert Ellis, D and E added by Seligman, four disputation tacks, distraction and the 'rival' framing (from a Seligman interview, paraphrased). No book worked example could be verified, so the story carries none; the old job-interview example and the invented A-to-C quote are dropped.",
+ "title_changed": {
+  "tr": true,
+  "en": true,
+  "es": true,
+  "de": true
+ },
+ "tr": {
+  "title": "Kendi Sesinize İtiraz Etmek",
+  "description": "Martin Seligman, olay ile duygu arasındaki cümleyi yakalayıp ona bir rakibe cevap verir gibi itiraz etmeyi öğreten beş harflik bir yöntem önerir.",
+  "hook": "En sert düşüncenizi bir rakip söyleseydi, ona nasıl cevap verirdiniz?",
+  "one_minute_summary": "Albert Ellis tepkilerimizi üç harfe ayırmıştı: olay, olay hakkındaki inanç ve ardından gelen duygu ile davranış. Martin Seligman *Learned Optimism* kitabında buna itiraz ve enerji harflerini ekler. Önce birkaç gün boyunca aksilikleri ve o an kurulan cümleyi yazmak gerekir. Sonra o cümleye, sizi mutsuz etmek isteyen bir rakip söylemiş gibi itiraz edilir: kanıt ne, başka açıklama var mı, doğruysa bile felaket mi, şu an düşünmek işe yarıyor mu? Son harf, itirazdan sonra dönen enerjidir."
+ },
+ "en": {
+  "title": "Arguing With Your Own Voice",
+  "description": "Martin Seligman offers a five-letter method for catching the sentence between an event and a feeling, and answering it as you would answer a rival.",
+  "hook": "If a rival said your harshest thought out loud, how would you answer?",
+  "one_minute_summary": "Albert Ellis split our reactions into three letters: the adversity, the belief about it and the consequence in feeling and action. In Learned Optimism, Martin Seligman adds disputation and energization. First you spend a few days writing down bad moments and the sentence you told yourself. Then you dispute that sentence as if a rival who wanted you miserable had said it: what is the evidence, what else explains it, is it really a catastrophe, does dwelling on it help? The last letter is the energy that returns."
+ },
+ "es": {
+  "title": "Discutir con tu propia voz",
+  "description": "Martin Seligman propone un método de cinco letras para atrapar la frase que hay entre lo que pasa y lo que sientes, y contestarla como a un rival.",
+  "hook": "Si un rival dijera en voz alta tu pensamiento más duro, ¿qué le contestarías?",
+  "one_minute_summary": "Albert Ellis separó nuestras reacciones en tres letras: la adversidad, la creencia sobre ella y la consecuencia en lo que sentimos y hacemos. En Learned Optimism, Martin Seligman añade la discusión y la energización. Primero se apuntan durante unos días los contratiempos y la frase que uno se dijo. Después se discute esa frase como si la hubiera dicho un rival empeñado en amargarte: qué pruebas hay, qué otra causa pudo haber, si es de verdad una catástrofe, si sirve darle vueltas. La última letra es la energía que vuelve."
+ },
+ "de": {
+  "title": "Der eigenen Stimme widersprechen",
+  "description": "Martin Seligman schlägt eine Methode aus fünf Buchstaben vor, mit der du den Satz zwischen Ereignis und Gefühl erwischst und ihm wie einem Rivalen antwortest.",
+  "hook": "Was würdest du antworten, wenn ein Rivale deinen härtesten Gedanken laut sagte?",
+  "one_minute_summary": "Albert Ellis zerlegte unsere Reaktionen in drei Buchstaben: die Widrigkeit, die Überzeugung darüber und die Folge in Gefühl und Handeln. In Learned Optimism ergänzt Martin Seligman das Widerlegen und die Energetisierung. Zuerst notierst du ein paar Tage lang Ärgernisse und den Satz, den du dir dazu gesagt hast. Dann widersprichst du diesem Satz, als käme er von einem Rivalen: Welche Belege gibt es, was erklärt es sonst, ist es wirklich eine Katastrophe, hilft das Grübeln? Der letzte Buchstabe ist die Energie, die zurückkommt."
+ }
+}
