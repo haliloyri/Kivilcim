@@ -1,5 +1,3 @@
-jest.mock('../Albi', () => 'Albi');
-
 import React from 'react';
 import { AccessibilityInfo, Animated } from 'react-native';
 import TestRenderer, { act } from 'react-test-renderer';
@@ -16,18 +14,6 @@ const mount = async ({ size = 200, reduceMotion = false } = {}) => {
   jest.spyOn(AccessibilityInfo, 'isReduceMotionEnabled').mockResolvedValue(reduceMotion);
   await act(async () => { tree = TestRenderer.create(<AnimatedLogo size={size} />); });
 };
-
-test('renders Albi with the selamlama pose at 85% of size', async () => {
-  await mount({ size: 200 });
-  const albi = tree.root.findByType('Albi');
-  expect(albi.props.pose).toBe('selamlama');
-  expect(albi.props.size).toBeCloseTo(170);
-});
-
-test('scales Albi with size', async () => {
-  await mount({ size: 120 });
-  expect(tree.root.findByType('Albi').props.size).toBeCloseTo(102);
-});
 
 test('keeps the root box size x size', async () => {
   await mount({ size: 200 });

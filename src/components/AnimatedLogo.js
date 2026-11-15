@@ -1,17 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet, View, AccessibilityInfo } from 'react-native';
 import Svg, { Circle, Defs, G, Line, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
-import Albi from './Albi';
 
-// Vector version of the Albor mark (book, glow and rays), split into layers
-// so each part can be animated independently. The viewBox is centred on the
-// glow (512, 540) so scale transforms pivot around it. Albi stands on top.
+// Vector version of the Albor mark (book + rising sun), split into layers
+// so each part can be animated independently. The viewBox is centred on the sun
+// (512, 540) so scale transforms pivot around it.
 const VIEW_BOX = '112 140 800 800';
-
-// Albi stands on the open book. Starting values, tuned on the simulator.
-const ALBI_SCALE = 0.85; // Albi's side as a fraction of the logo box
-const ALBI_FEET = 0.6; // y of his feet as a fraction of the logo box height
-const LIGHT_SHIFT = 0.275; // glow + rays move up behind him, fraction of the box
+const VB_SIZE = 800;
 
 // Deep Petrol night behind the rising gold sun (was navy #1D2F4C).
 export const LOGO_BACKGROUND = '#1D4A47';
@@ -54,6 +49,19 @@ const Rays = () => (
   </Svg>
 );
 
+const Sun = () => (
+  <Svg width="100%" height="100%" viewBox={VIEW_BOX}>
+    <Defs>
+      <RadialGradient id="alSun" cx="500" cy="495" r="135" gradientUnits="userSpaceOnUse">
+        <Stop offset="0" stopColor="#FFF1CC" />
+        <Stop offset="0.6" stopColor="#FEDC94" />
+        <Stop offset="1" stopColor="#F7B85C" />
+      </RadialGradient>
+    </Defs>
+    <Circle cx="512" cy="540" r="103" fill="url(#alSun)" />
+  </Svg>
+);
+
 export const Book = () => (
   <Svg width="100%" height="100%" viewBox={VIEW_BOX}>
     <Defs>
@@ -82,13 +90,12 @@ export const Book = () => (
 
 /**
  * Animated brand mark for the loading screen.
- * Intro: the book is already there (matches the native splash image), Albi
- * settles onto its pages, the glow blooms and the rays fan out behind him.
- * Then it idles with a slow "breathing" glow/ray shimmer and a small bob
- * while loading.
+ * Intro: the book is already there (matches the native splash image), the sun
+ * rises from behind the pages, the glow blooms and the rays fan out.
+ * Then it idles with a slow "breathing" glow/ray shimmer while loading.
  */
 const AnimatedLogo = ({ size = 200 }) => {
-  const albiIn = useRef(new Animated.Value(0)).current;
+  const sunRise = useRef(new Animated.Value(0)).current;
   const raysIn = useRef(new Animated.Value(0)).current;
   const glowIn = useRef(new Animated.Value(0)).current;
   const breath = useRef(new Animated.Value(0)).current;
@@ -100,13 +107,13 @@ const AnimatedLogo = ({ size = 200 }) => {
     const run = (reduceMotion) => {
       if (cancelled) return;
       if (reduceMotion) {
-        albiIn.setValue(1);
+        sunRise.setValue(1);
         raysIn.setValue(1);
         glowIn.setValue(1);
         return;
       }
       Animated.parallel([
-        Animated.timing(albiIn, {
+        Animated.timing(sunRise, {
           toValue: 1,
           duration: 1100,
           delay: 150,
@@ -156,26 +163,20 @@ const AnimatedLogo = ({ size = 200 }) => {
     return () => {
       cancelled = true;
       loop?.stop();
-      albiIn.stopAnimation();
+      sunRise.stopAnimation();
       raysIn.stopAnimation();
       glowIn.stopAnimation();
       breath.stopAnimation();
     };
-  }, [albiIn, raysIn, glowIn, breath]);
+  }, [sunRise, raysIn, glowIn, breath]);
 
-  const albiSize = size * ALBI_SCALE;
-  const lightShift = size * LIGHT_SHIFT;
+  const unit = size / VB_SIZE;
 
-  const albiStyle = {
-    opacity: albiIn.interpolate({ inputRange: [0, 0.3, 1], outputRange: [0, 1, 1] }),
+  const sunStyle = {
+    opacity: sunRise.interpolate({ inputRange: [0, 0.25, 1], outputRange: [0, 1, 1] }),
     transform: [
-      {
-        translateY: Animated.add(
-          albiIn.interpolate({ inputRange: [0, 1], outputRange: [24, 0] }),
-          breath.interpolate({ inputRange: [0, 1], outputRange: [0, -3] }),
-        ),
-      },
-      { scale: albiIn.interpolate({ inputRange: [0, 1], outputRange: [0.96, 1] }) },
+      { translateY: sunRise.interpolate({ inputRange: [0, 1], outputRange: [150 * unit, 0] }) },
+      { scale: breath.interpolate({ inputRange: [0, 1], outputRange: [1, 1.03] }) },
     ],
   };
 
@@ -185,7 +186,6 @@ const AnimatedLogo = ({ size = 200 }) => {
       breath.interpolate({ inputRange: [0, 1], outputRange: [0.8, 1] }),
     ),
     transform: [
-      { translateY: -lightShift },
       {
         scale: Animated.add(
           glowIn.interpolate({ inputRange: [0, 1], outputRange: [0.6, 1] }),
@@ -201,7 +201,6 @@ const AnimatedLogo = ({ size = 200 }) => {
       breath.interpolate({ inputRange: [0, 1], outputRange: [1, 0.65] }),
     ),
     transform: [
-      { translateY: -lightShift },
       {
         scale: Animated.add(
           raysIn.interpolate({ inputRange: [0, 1], outputRange: [0.55, 1] }),
@@ -219,23 +218,12 @@ const AnimatedLogo = ({ size = 200 }) => {
       <Animated.View style={[StyleSheet.absoluteFill, raysStyle]}>
         <Rays />
       </Animated.View>
+      <Animated.View style={[StyleSheet.absoluteFill, sunStyle]}>
+        <Sun />
+      </Animated.View>
       <View style={StyleSheet.absoluteFill}>
         <Book />
       </View>
-      <Animated.View
-        style={[
-          {
-            position: 'absolute',
-            left: (size - albiSize) / 2,
-            top: size * ALBI_FEET - albiSize,
-            width: albiSize,
-            height: albiSize,
-          },
-          albiStyle,
-        ]}
-      >
-        <Albi pose="selamlama" size={albiSize} />
-      </Animated.View>
     </View>
   );
 };
