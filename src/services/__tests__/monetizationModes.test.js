@@ -3,8 +3,8 @@
 const EXTRA = {
   revenuecat: { testStoreApiKey: 'test_abc', iosApiKey: 'appl_real', androidApiKey: 'goog_real', products: { monthly: 'monthly', yearly: 'yearly' } },
   admob: {
-    ios: { rewarded: 'ca-app-pub-1/2', interstitial: 'ca-app-pub-1/3', banner: 'ca-app-pub-1/4' },
-    android: { rewarded: 'ca-app-pub-1/5', interstitial: 'ca-app-pub-1/6', banner: 'ca-app-pub-1/7' },
+    ios: { rewarded: 'ca-app-pub-1/2', interstitial: 'ca-app-pub-1/3', banner: 'ca-app-pub-1/4', native: 'ca-app-pub-1/8' },
+    android: { rewarded: 'ca-app-pub-1/5', interstitial: 'ca-app-pub-1/6', banner: 'ca-app-pub-1/7', native: 'ca-app-pub-1/9' },
   },
 };
 
@@ -22,7 +22,7 @@ const load = ({ live, dev, extra = EXTRA, purchases, regionCode = 'TR' }) => {
     jest.doMock('react-native-google-mobile-ads', () => ({
       __esModule: true,
       default: () => ({ initialize: async () => [] }),
-      TestIds: { REWARDED: 'test-rewarded', INTERSTITIAL: 'test-interstitial', BANNER: 'test-banner' },
+      TestIds: { REWARDED: 'test-rewarded', INTERSTITIAL: 'test-interstitial', BANNER: 'test-banner', NATIVE: 'test-native' },
       RewardedAd: {}, InterstitialAd: {}, RewardedAdEventType: {}, AdEventType: {}, BannerAdSize: {},
     }));
     jest.doMock('../../utils/adsConsent', () => ({
@@ -81,6 +81,28 @@ describe('ad units per build', () => {
     const { ads } = load({ live: true, dev: false, extra });
     expect(ads.shouldShowAd({ isPremium: false, isOnboarded: true })).toBe(false);
     expect(ads.shouldShowAd({ isPremium: false, isOnboarded: true, kind: 'interstitial' })).toBe(false);
+  });
+  it("demo builds use Google's test native unit", () => {
+    const { ads } = load({ live: false, dev: false });
+    expect(ads.AD_UNITS.native).toBe('test-native');
+    expect(ads.shouldShowAd({ isPremium: false, isOnboarded: true, kind: 'native' })).toBe(true);
+  });
+  it('live builds use the real native unit', () => {
+    const { ads } = load({ live: true, dev: false });
+    expect(ads.AD_UNITS.native).toBe('ca-app-pub-1/8');
+    expect(ads.shouldShowAd({ isPremium: false, isOnboarded: true, kind: 'native' })).toBe(true);
+    expect(ads.shouldShowAd({ isPremium: true, isOnboarded: true, kind: 'native' })).toBe(false);
+  });
+  it('live build with a placeholder native unit shows no native ad but keeps rewarded', () => {
+    const extra = { ...EXTRA, admob: { ios: { ...EXTRA.admob.ios, native: 'REPLACE_WITH_IOS_NATIVE_UNIT' } } };
+    const { ads } = load({ live: true, dev: false, extra });
+    const user = { isPremium: false, isOnboarded: true };
+    expect(ads.shouldShowAd({ ...user, kind: 'native' })).toBe(false);
+    expect(ads.shouldShowAd(user)).toBe(true);
+  });
+  it('native ads are off in restricted regions', () => {
+    const { ads } = load({ live: true, dev: false, regionCode: 'DE' });
+    expect(ads.shouldShowAd({ isPremium: false, isOnboarded: true, kind: 'native' })).toBe(false);
   });
 });
 

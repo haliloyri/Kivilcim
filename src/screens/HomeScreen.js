@@ -15,6 +15,9 @@ import { resolveCareerActionDestination } from '../utils/careerNavigation';
 import { getCareerPathIconName } from '../utils/careerProgress';
 import { getSelectedCategories } from '../db/db';
 import StoryCard from '../components/StoryCard';
+import NativeAdCard from '../components/NativeAdCard';
+import useNativeAdsEnabled from '../hooks/useNativeAdsEnabled';
+import { insertAdSlots, isAdSlot } from '../utils/adSlots';
 import CategoryPill from '../components/CategoryPill';
 import AdOrPremiumSheet from '../components/AdOrPremiumSheet';
 import DawnGlow from '../components/DawnGlow';
@@ -947,6 +950,17 @@ const HomeScreen = ({ navigation }) => {
     : lockedRaw;
   const teaserStory = (!isPremium && lockedWithoutWeeklyBonus.length > 0) ? lockedWithoutWeeklyBonus[0] : null;
   const locked = teaserStory ? lockedWithoutWeeklyBonus.slice(1) : lockedWithoutWeeklyBonus;
+  // One ordered list of every card in "More stories", so a native ad can follow
+  // every 5th card whatever mix of ready, bonus, teaser and locked cards it holds.
+  // No cap: stories load in pages as the user scrolls, and the ads must keep up.
+  const nativeAdsOn = useNativeAdsEnabled();
+  const gridCards = [
+    ...free.map((story) => ({ key: story.story_id, kind: 'free', story })),
+    ...(weeklyBonusStory ? [{ key: `bonus-${weeklyBonusStory.story_id}`, kind: 'bonus', story: weeklyBonusStory }] : []),
+    ...(teaserStory ? [{ key: `teaser-${teaserStory.story_id}`, kind: 'teaser', story: teaserStory }] : []),
+    ...locked.map((story) => ({ key: story.story_id, kind: 'locked', story })),
+  ];
+  const gridEntries = nativeAdsOn ? insertAdSlots(gridCards, 5, Infinity) : gridCards;
   const dailyDeck = (personalizedStories.length > 0 ? personalizedStories : sortedStories).slice(0, 3);
   const primaryHomeAction = React.useMemo(() => {
     const nextStory = personalizedStories.find((story) => !historySet.has(String(story.story_id))) || personalizedStories[0] || sortedStories[0] || null;
@@ -3138,50 +3152,60 @@ const HomeScreen = ({ navigation }) => {
               )}
 
               <View style={styles.storyGrid}>
-                {free.map(story => (
-                  <StoryCard
-                    key={story.story_id}
-                    story={story}
-                    type="ready"
-                    hideCategory={activeFilter !== 'all'}
-                    isRead={checkIfRead(story.story_id)}
-                    onPress={() => openStory(story, { source: 'home_feed_locked' })}
-                    onUseInConversation={() => navigation.navigate('UseInConversation', { story })}
-                  />
-                ))}
-                {weeklyBonusStory ? (
-                  <StoryCard
-                    key={`bonus-${weeklyBonusStory.story_id}`}
-                    story={weeklyBonusStory}
-                    type="ready"
-                    hideCategory={activeFilter !== 'all'}
-                    supportText={t('homeFreemiumWeeklyBonusHint', lang)}
-                    isRead={checkIfRead(weeklyBonusStory.story_id)}
-                    onPress={() => openStory(weeklyBonusStory, { source: 'home_weekly_bonus', bypassQuota: true })}
-                  />
-                ) : null}
-                {teaserStory ? (
-                  <StoryCard
-                    key={`teaser-${teaserStory.story_id}`}
-                    story={teaserStory}
-                    type="ready"
-                    locked
-                    hideCategory={activeFilter !== 'all'}
-                    supportText={t('homeFreemiumTeaserHint', lang)}
-                    onPress={() => openPaywallFromFreeLimit('home_feed_teaser', teaserStory.story_id)}
-                  />
-                ) : null}
-                {locked.map(story => (
-                  <StoryCard
-                    key={story.story_id}
-                    story={story}
-                    type="ready"
-                    locked
-                    supportText={t('homeFreemiumPremiumBenefit', lang)}
-                    hideCategory={activeFilter !== 'all'}
-                    onPress={() => openPaywallFromFreeLimit('home_feed_locked', story.story_id)}
-                  />
-                ))}
+                {gridEntries.map((entry) => {
+                  if (isAdSlot(entry)) return <NativeAdCard key={entry.key} lang={lang} compact />;
+                  const { story } = entry;
+                  if (entry.kind === 'bonus') {
+                    return (
+                      <StoryCard
+                        key={entry.key}
+                        story={story}
+                        type="ready"
+                        hideCategory={activeFilter !== 'all'}
+                        supportText={t('homeFreemiumWeeklyBonusHint', lang)}
+                        isRead={checkIfRead(story.story_id)}
+                        onPress={() => openStory(story, { source: 'home_weekly_bonus', bypassQuota: true })}
+                      />
+                    );
+                  }
+                  if (entry.kind === 'teaser') {
+                    return (
+                      <StoryCard
+                        key={entry.key}
+                        story={story}
+                        type="ready"
+                        locked
+                        hideCategory={activeFilter !== 'all'}
+                        supportText={t('homeFreemiumTeaserHint', lang)}
+                        onPress={() => openPaywallFromFreeLimit('home_feed_teaser', story.story_id)}
+                      />
+                    );
+                  }
+                  if (entry.kind === 'locked') {
+                    return (
+                      <StoryCard
+                        key={entry.key}
+                        story={story}
+                        type="ready"
+                        locked
+                        supportText={t('homeFreemiumPremiumBenefit', lang)}
+                        hideCategory={activeFilter !== 'all'}
+                        onPress={() => openPaywallFromFreeLimit('home_feed_locked', story.story_id)}
+                      />
+                    );
+                  }
+                  return (
+                    <StoryCard
+                      key={entry.key}
+                      story={story}
+                      type="ready"
+                      hideCategory={activeFilter !== 'all'}
+                      isRead={checkIfRead(story.story_id)}
+                      onPress={() => openStory(story, { source: 'home_feed_locked' })}
+                      onUseInConversation={() => navigation.navigate('UseInConversation', { story })}
+                    />
+                  );
+                })}
               </View>
             </>
           )}

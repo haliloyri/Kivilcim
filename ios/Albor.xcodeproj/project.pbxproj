@@ -216,7 +216,7 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1250;
-						DevelopmentTeam = "KJ4336N98X";
+						DevelopmentTeam = "JC7J7JAM24";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -453,14 +453,14 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.albor.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alborapp.app;
 				PRODUCT_NAME = Albor;
 				SWIFT_OBJC_BRIDGING_HEADER = "Albor/Albor-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
-				DEVELOPMENT_TEAM = "KJ4336N98X";
+				DEVELOPMENT_TEAM = "JC7J7JAM24";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 			};
@@ -474,7 +474,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Albor/Albor.entitlements;
 				CURRENT_PROJECT_VERSION = 20;
-				GAD_APPLICATION_IDENTIFIER = "ca-app-pub-1087148522890227~7920022425";
+				GAD_APPLICATION_IDENTIFIER = "ca-app-pub-8522119154117548~1013927596";
 				INFOPLIST_FILE = Albor/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Albor;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
@@ -491,13 +491,13 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.albor.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alborapp.app;
 				PRODUCT_NAME = Albor;
 				SWIFT_OBJC_BRIDGING_HEADER = "Albor/Albor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
-				DEVELOPMENT_TEAM = "KJ4336N98X";
+				DEVELOPMENT_TEAM = "JC7J7JAM24";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 			};
@@ -534,7 +534,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = KJ4336N98X;
+				DEVELOPMENT_TEAM = JC7J7JAM24;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -610,7 +610,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = KJ4336N98X;
+				DEVELOPMENT_TEAM = JC7J7JAM24;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

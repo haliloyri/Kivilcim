@@ -28,7 +28,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>albor</string>
-				<string>com.albor.app</string>
+				<string>com.alborapp.app</string>
 			</array>
 		</dict>
 	</array>

@@ -6,6 +6,7 @@
  *   shouldShowAd(opts)      → gating check before any ad
  *   loadRewarded(source)    → returns a loaded RewardedAd (or null on error)
  *   loadInterstitial()      → returns a loaded InterstitialAd (or null on error)
+ *   loadNativeAd()          → returns a loaded NativeAd (or null on error)
  *
  * Demo builds (dev, preview, simulator — see config/monetization.js) always
  * use Google's TEST ad units. Live builds use the real unit IDs from
@@ -31,6 +32,7 @@ const isExpoGo = Constants.executionEnvironment === 'storeClient'
 const hasNativeAds = !(isExpoGo || Platform.OS === 'web');
 
 let MobileAds, RewardedAd, RewardedAdEventType, InterstitialAd, AdEventType, BannerAdSize, TestIds;
+let NativeAd, NativeAdView, NativeAsset, NativeAssetType, NativeMediaView;
 
 if (isExpoGo || Platform.OS === 'web') {
   const noop = () => {};
@@ -45,15 +47,21 @@ if (isExpoGo || Platform.OS === 'web') {
   RewardedAdEventType = { LOADED: 'loaded', EARNED_REWARD: 'earned_reward' };
   AdEventType = { LOADED: 'loaded', ERROR: 'error', CLOSED: 'closed' };
   BannerAdSize = { BANNER: 'BANNER' };
-  TestIds = { REWARDED: '', INTERSTITIAL: '', BANNER: '' };
+  TestIds = { REWARDED: '', INTERSTITIAL: '', BANNER: '', NATIVE: '' };
+  NativeAd = null;
+  NativeAdView = null;
+  NativeAsset = null;
+  NativeAssetType = {};
+  NativeMediaView = null;
 } else {
   const ads = require('react-native-google-mobile-ads');
   MobileAds = ads.default;
   ({ RewardedAd, RewardedAdEventType, InterstitialAd, AdEventType, BannerAdSize, TestIds } = ads);
+  ({ NativeAd, NativeAdView, NativeAsset, NativeAssetType, NativeMediaView } = ads);
 }
 
 // ─── Ad Unit IDs ─────────────────────────────────────────────────────────────
-// Real IDs come from app.json → extra.admob.{ios,android}.{rewarded,interstitial,banner}.
+// Real IDs come from app.json → extra.admob.{ios,android}.{rewarded,interstitial,banner,native}.
 const isRealUnitId = (id) => typeof id === 'string' && /^ca-app-pub-\d+\/\d+$/.test(id);
 
 const isAndroid = Platform.OS === 'android';
@@ -96,6 +104,7 @@ export const AD_UNITS = {
   rewarded: useTest ? TestIds.REWARDED : platformUnits.rewarded,
   interstitial: useTest ? TestIds.INTERSTITIAL : platformUnits.interstitial,
   banner: useTest ? TestIds.BANNER : platformUnits.banner,
+  native: useTest ? TestIds.NATIVE : platformUnits.native,
 };
 
 // A live build without a real unit ID shows no ad of that kind (never test ads).
@@ -104,9 +113,10 @@ export const AD_UNITS = {
 // placeholder (rewarded-gated features then fall back to the paywall).
 const INTERSTITIAL_CONFIGURED = useTest || isRealUnitId(AD_UNITS.interstitial);
 const REWARDED_CONFIGURED = useTest || isRealUnitId(AD_UNITS.rewarded);
-const ANY_AD_CONFIGURED = INTERSTITIAL_CONFIGURED || REWARDED_CONFIGURED;
+const NATIVE_CONFIGURED = useTest || isRealUnitId(AD_UNITS.native);
+const ANY_AD_CONFIGURED = INTERSTITIAL_CONFIGURED || REWARDED_CONFIGURED || NATIVE_CONFIGURED;
 
-export { BannerAdSize };
+export { BannerAdSize, NativeAdView, NativeAsset, NativeAssetType, NativeMediaView };
 
 // ─── Interstitial frequency: every 3 stories AND 3-min cooldown ─────────────
 let _storiesReadSinceLastAd = 0;
@@ -155,14 +165,17 @@ export const initAds = async () => {
 // ─── Gating ──────────────────────────────────────────────────────────────────
 /**
  * Returns true if ads should be shown for this user.
- * @param {{ isPremium: boolean, isOnboarded: boolean, kind?: 'rewarded' | 'interstitial' }} opts
+ * @param {{ isPremium: boolean, isOnboarded: boolean, kind?: 'rewarded' | 'interstitial' | 'native' }} opts
  *   kind defaults to 'rewarded' (the ad-or-Premium gates); pass 'interstitial'
- *   for the full-screen ad between stories.
+ *   for the full-screen ad between stories, 'native' for the in-feed cards.
  */
 export const shouldShowAd = ({ isPremium, isOnboarded, kind = 'rewarded' }) => {
   if (isPremium) return false;
   if (!isOnboarded) return false;
-  const configured = kind === 'interstitial' ? INTERSTITIAL_CONFIGURED : REWARDED_CONFIGURED;
+  const configured = {
+    interstitial: INTERSTITIAL_CONFIGURED,
+    native: NATIVE_CONFIGURED,
+  }[kind] ?? REWARDED_CONFIGURED;
   if (!configured || !hasNativeAds) return false;
   if (isAdRestrictedRegion()) return false;
   if (!canRequestAds()) return false;
@@ -178,6 +191,22 @@ export const rewardedGate = ({ isPremium, isOnboarded = true, alreadyUnlocked = 
     isPremium,
     alreadyUnlocked,
   });
+
+// ─── Native Ad ───────────────────────────────────────────────────────────────
+/**
+ * Loads one NativeAd for a single placement, or null when it cannot be had.
+ * A NativeAd can back only one view at a time, so every placement loads its
+ * own; the caller must destroy() it when it unmounts.
+ */
+export const loadNativeAd = async () => {
+  if (isAdRestrictedRegion() || !NATIVE_CONFIGURED || !NativeAd) return null;
+  try {
+    return await NativeAd.createForAdRequest(AD_UNITS.native, adRequestOptions());
+  } catch (e) {
+    console.warn('[ads] native load error:', e?.message);
+    return null;
+  }
+};
 
 // ─── Rewarded Ad ─────────────────────────────────────────────────────────────
 // A rewarded ad is requested ahead of time and kept ready, instead of being

@@ -30,6 +30,9 @@ import { hasReachedReadingCompletion, isShortStoryFullyVisible, ONE_MINUTE_SUMMA
 import { getStoryAudioUrl } from '../utils/storyAudio';
 import { intlLocaleFor, toUpperFor } from '../utils/locale';
 import StoryBody from '../components/story/StoryBody';
+import NativeAdCard from '../components/NativeAdCard';
+import useNativeAdsEnabled from '../hooks/useNativeAdsEnabled';
+import { pickReaderAdIndex } from '../utils/adSlots';
 import ReaderPanels from '../components/story/ReaderPanels';
 import ReaderActions from '../components/story/ReaderActions';
 import Reanimated, { useAnimatedRef, useAnimatedStyle, useScrollOffset, useSharedValue } from 'react-native-reanimated';
@@ -372,6 +375,11 @@ const StoryDetailScreen = ({ route, navigation }) => {
   const displayTitle = localStory.title || '';
   const displayBody = localStory.body || '';
   const parsedBody = React.useMemo(() => parseStoryMarkup(displayBody), [displayBody]);
+  const nativeAdsOn = useNativeAdsEnabled();
+  const readerAdIndex = React.useMemo(
+    () => (nativeAdsOn && parsedBody.format === 'p1' ? pickReaderAdIndex(parsedBody.segments) : -1),
+    [nativeAdsOn, parsedBody],
+  );
   const storySectionHeadings = React.useMemo(() => ({
     story: t('storySectionStory', localLang),
     lessons: t('storySectionLessons', localLang),
@@ -1922,6 +1930,8 @@ const StoryDetailScreen = ({ route, navigation }) => {
                 lineSpacing={lineSpacing}
                 categoryTheme={categoryTheme}
                 lang={localLang}
+                adSlotIndex={readerAdIndex}
+                renderAdSlot={() => <NativeAdCard lang={localLang} compact style={{ marginVertical: 16 }} />}
                 renderLessonFooter={FEATURE_FLAGS.careerPathV1 ? (seg) => (seg.index !== 1 ? null : (
                   <TouchableOpacity
                     style={[styles.takeawaySaveButton, { borderColor: categoryTheme.borderColor, backgroundColor: isTakeawaySaved ? `${categoryTheme.accent}18` : colors.background }]}

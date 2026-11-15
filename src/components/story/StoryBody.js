@@ -66,6 +66,8 @@ const UseCaseCard = ({ seg, styles, actionColor, fontSize, lineSpacing, lang, on
  * @param {string}   props.lang
  * @param {(seg:object) => React.ReactNode} [props.renderLessonFooter]
  * @param {(seg:object) => void} [props.onTryUseCase]
+ * @param {number}   [props.adSlotIndex]   segment the ad is drawn right before (-1: none)
+ * @param {() => React.ReactNode} [props.renderAdSlot]
  */
 const StoryBody = ({
   segments,
@@ -75,6 +77,8 @@ const StoryBody = ({
   lang,
   renderLessonFooter,
   onTryUseCase,
+  adSlotIndex = -1,
+  renderAdSlot,
 }) => {
   const { colors, isDark } = useTheme();
   const accent = categoryTheme?.accent || colors.primary;
@@ -87,9 +91,7 @@ const StoryBody = ({
   // ('self') cards stay on the reading page.
   const hasSelfCard = segments.some((s) => s.type === 'usecase' && s.context === 'self');
 
-  return (
-    <View>
-      {segments.map((seg, idx) => {
+  const renderSegment = (seg, idx) => {
         const key = `${seg.type}-${idx}`;
         switch (seg.type) {
           case 'section': {
@@ -245,6 +247,14 @@ const StoryBody = ({
           default:
             return null;
         }
+  };
+
+  return (
+    <View>
+      {segments.map((seg, idx) => {
+        const node = renderSegment(seg, idx);
+        if (idx !== adSlotIndex || !renderAdSlot) return node;
+        return <React.Fragment key={`ad-${idx}`}>{renderAdSlot()}{node}</React.Fragment>;
       })}
     </View>
   );

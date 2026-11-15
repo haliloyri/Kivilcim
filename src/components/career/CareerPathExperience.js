@@ -23,6 +23,8 @@ import CareerLearnedSection from './CareerLearnedSection';
 import { MilestoneReviewModal } from './LearningMilestoneModal';
 import BadgeShareSheet from '../BadgeShareSheet';
 import ScreenHeader from '../ScreenHeader';
+import NativeAdCard from '../NativeAdCard';
+import useNativeAdsEnabled from '../../hooks/useNativeAdsEnabled';
 import { buildBooksMilestoneShare, buildRankShare, buildWeeklyShare } from '../../utils/careerShare';
 import { toUpperFor } from '../../utils/locale';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -68,6 +70,7 @@ const CareerPathExperience = ({ navigation, route }) => {
   const hasTrackedExposure = useRef(false);
   const previewCareer = __DEV__ ? buildCareerPreview(previewScenarioId) : null;
   const isPreviewing = Boolean(previewCareer);
+  const nativeAdsOn = useNativeAdsEnabled();
   const career = previewCareer || persistedCareer;
   const learning = useMemo(() => buildLearningSummary({ events: careerEvents, stories }), [careerEvents, stories]);
   const openTitleShare = () => {
@@ -486,6 +489,11 @@ const CareerPathExperience = ({ navigation, route }) => {
       {segment === 'journey' ? renderJourney() : null}
       {segment === 'learned' ? <CareerLearnedSection summary={learning} onOpenStory={isPreviewing ? null : openStoryById} onOpenMilestone={setReviewMilestone} /> : null}
       {segment === 'rhythm' ? <CareerRhythmSection onShareWeek={learning.week.stories > 0 ? openWeeklyShare : null} shareWeekLabel={t('career.share.weekCta', lang)} weekLine={t('career.rhythm.week', lang, { stories: learning.week.stories, minutes: learning.week.minutes })} totalReads={totalReads} streak={streak} longestStreak={longestStreak} todayReadsCount={todayReadsCount} isPremium={isPremium} streakFreezeCredits={streakFreezeCredits} streakFreezeDates={streakFreezeDates} onUseFreeze={(date) => { if (!isPreviewing) useStreakFreeze(date); }} onOpenPaywall={() => { if (!isPreviewing) navigation.navigate('Paywall', { source: 'career_rhythm_streak_freeze', reason: 'streak_freeze' }); }} /> : null}
+
+      {/* Learned and Rhythm only: the map is where ranks are earned, so it stays ad-free. */}
+      {nativeAdsOn && !isPreviewing && (segment === 'learned' || segment === 'rhythm')
+        ? <NativeAdCard lang={lang} compact style={{ marginTop: 32 }} />
+        : null}
 
       <CareerNodeSheet node={selectedNode} onClose={closeNodeSheet} />
       <MilestoneReviewModal milestone={reviewMilestone} onClose={() => setReviewMilestone(null)} onShare={isPreviewing ? null : shareReviewedMilestone} />

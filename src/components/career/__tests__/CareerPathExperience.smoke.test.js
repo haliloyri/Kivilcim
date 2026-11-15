@@ -10,6 +10,8 @@ jest.mock('../../../context/StoriesContext', () => ({ useStories: () => ({ stori
 jest.mock('../../../db/userDb', () => ({ getLegacyBadgeIds: () => Promise.resolve([]) }));
 jest.mock('../../../db/db', () => ({ getReadHistory: () => Promise.resolve([]) }));
 jest.mock('../../../utils/analytics', () => ({ ANALYTICS_EVENTS: {}, trackEvent: jest.fn() }));
+// The native ad card pulls in utils/ads, whose AdMob native module does not exist in Jest.
+jest.mock('../../../utils/ads', () => ({ shouldShowAd: () => false, loadNativeAd: async () => null }));
 // First render pays the cold-start transform cost; give the file headroom.
 jest.setTimeout(20000);
 import React from 'react';

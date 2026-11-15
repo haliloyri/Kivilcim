@@ -17,6 +17,9 @@ import { getCategoryTheme, getCategoryImage } from '../utils/categoryImages';
 import { intlLocaleFor, toUpperFor } from '../utils/locale';
 import { extractShareParts } from '../utils/storyMarkup';
 import useRecordedStoryIds from '../hooks/useRecordedStoryIds';
+import useNativeAdsEnabled from '../hooks/useNativeAdsEnabled';
+import NativeAdCard from '../components/NativeAdCard';
+import { insertAdSlots, isAdSlot } from '../utils/adSlots';
 
 // Library = "action on top, archive below":
 //   1. Kaldığın yerden  – stories scrolled into but not finished (inProgressStories)
@@ -344,6 +347,13 @@ const LibraryScreen = ({ navigation }) => {
     if (isSearching) list = list.filter((story) => storyMatchesSearch(story, searchQuery));
     return list;
   }, [baseArchive, effectiveCategory, sortBy, readCountsByStory, isSearching, searchQuery]);
+
+  // Counts and empty states keep using visibleArchive; only the list adds ad slots.
+  const nativeAdsOn = useNativeAdsEnabled();
+  const listData = useMemo(
+    () => (nativeAdsOn ? insertAdSlots(visibleArchive, 6, 3) : visibleArchive),
+    [nativeAdsOn, visibleArchive],
+  );
 
   const emptyState = useMemo(() => {
     const goHome = () => navigation.navigate('HomeTab');
@@ -699,10 +709,14 @@ const LibraryScreen = ({ navigation }) => {
       <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={colors.background} />
 
       <FlatList
-        data={visibleArchive}
-        keyExtractor={(story) => `${activeCollection}-${story.story_id}`}
-        renderItem={({ item }) => <View style={styles.rowWrap}>{renderStoryRow(item, activeCollection)}</View>}
-        ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
+        data={listData}
+        keyExtractor={(item) => (isAdSlot(item) ? `${activeCollection}-${item.key}` : `${activeCollection}-${item.story_id}`)}
+        renderItem={({ item }) => (isAdSlot(item)
+          ? <View style={styles.rowWrap}><NativeAdCard lang={lang} compact style={{ marginBottom: 10 }} /></View>
+          : <View style={styles.rowWrap}>{renderStoryRow(item, activeCollection)}</View>)}
+        // No gap after an ad slot: the card carries its own bottom margin, so an
+        // ad that never loads leaves no double gap.
+        ItemSeparatorComponent={({ leadingItem }) => (isAdSlot(leadingItem) ? null : <View style={{ height: 10 }} />)}
         ListHeaderComponent={listHeader}
         ListEmptyComponent={emptyState.hero ? (
           <View style={styles.heroEmpty}>

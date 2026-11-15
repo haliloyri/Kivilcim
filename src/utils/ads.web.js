@@ -68,9 +68,18 @@ export const AD_UNITS = {
   banner: useTest
     ? TestIds.BANNER
     : (isAndroid ? PROD_ANDROID_BANNER : PROD_IOS_BANNER),
+  native: '',
 };
 
 export { BannerAdSize };
+
+// Native ads need the native AdMob module, which web does not have. These keep
+// the exports in step with ads.js so shared components import cleanly.
+export const NativeAdView = null;
+export const NativeAsset = null;
+export const NativeAssetType = {};
+export const NativeMediaView = null;
+export const loadNativeAd = async () => null;
 
 // ─── Interstitial frequency: every 3 stories AND 3-min cooldown ─────────────
 let _storiesReadSinceLastAd = 0;
@@ -114,11 +123,12 @@ export const initAds = async () => {
 // ─── Gating ──────────────────────────────────────────────────────────────────
 /**
  * Returns true if ads should be shown for this user.
- * @param {{ isPremium: boolean, isOnboarded: boolean }} opts
+ * @param {{ isPremium: boolean, isOnboarded: boolean, kind?: string }} opts
  */
-export const shouldShowAd = ({ isPremium, isOnboarded }) => {
+export const shouldShowAd = ({ isPremium, isOnboarded, kind }) => {
   if (isPremium) return false;
   if (!isOnboarded) return false;
+  if (kind === 'native') return false; // no native AdMob module on web
   return true;
 };
 

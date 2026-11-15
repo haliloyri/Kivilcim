@@ -16,7 +16,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.albor.app",
+      "bundleIdentifier": "com.alborapp.app",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "NSPhotoLibraryAddUsageDescription": "Albor, oluşturduğun paylaşım kartlarını galerine kaydetmek için izin ister."
@@ -90,9 +90,9 @@
       [
         "react-native-google-mobile-ads",
         {
-          "_comment": "Only used if `expo prebuild` regenerates ios/ and android/. The committed native projects are the source of truth: Debug uses Google's sample app ID, Release uses the real iOS one (ca-app-pub-1087148522890227~7920022425) (ios: GAD_APPLICATION_IDENTIFIER build setting in project.pbxproj; android: manifestPlaceholders in android/app/build.gradle). Ad UNIT ids live in extra.admob.",
+          "_comment": "Only used if `expo prebuild` regenerates ios/ and android/. The committed native projects are the source of truth: Debug uses Google's sample app ID, Release uses the real iOS one (ca-app-pub-8522119154117548~1013927596) (ios: GAD_APPLICATION_IDENTIFIER build setting in project.pbxproj; android: manifestPlaceholders in android/app/build.gradle). Ad UNIT ids live in extra.admob.",
           "androidAppId": "ca-app-pub-3940256099942544~3347511713",
-          "iosAppId": "ca-app-pub-1087148522890227~7920022425",
+          "iosAppId": "ca-app-pub-8522119154117548~1013927596",
           "userTrackingUsageDescription": "Albor'u ücretsiz tutmak için reklam gösteriyoruz. İzin verirsen bu tanımlayıcı, sana daha alakalı reklamlar göstermek için kullanılır. Reddetsen de uygulamanın tamamı çalışır.",
           "skAdNetworkItems": [
             "cstr6suwn9.skadnetwork",
@@ -181,7 +181,7 @@
       },
       "revenuecat": {
         "_comment": "testStoreApiKey: RevenueCat Test Store, used only in debug (__DEV__) builds for demo purchases. iosApiKey/androidApiKey: real appl_*/goog_* public SDK keys, used only when MONETIZATION_LIVE (src/config/monetization.js). Preview/simulator release builds have no billing. See BILLING_SETUP.md.",
-        "testStoreApiKey": "test_zQNQaEomhNzTWshNkFgryXpMoSk",
+        "testStoreApiKey": "test_rweERPvZrmgwgZeKpWqMVyPpXiC",
         "iosApiKey": "appl_IVEnLayWTEUdvyanutlnrFjXvgQ",
         "androidApiKey": "REPLACE_WITH_GOOG_KEY",
         "entitlementId": "albor_pro",
@@ -196,14 +196,16 @@
         "_comment": "Real AdMob ad unit IDs, used only when MONETIZATION_LIVE. Demo builds always use Google test units. blockRestrictedRegions: keep ads fully off in EEA/UK/CH (true) or serve them after UMP consent (false).",
         "blockRestrictedRegions": true,
         "ios": {
-          "rewarded": "ca-app-pub-1087148522890227/6356668477",
-          "interstitial": "ca-app-pub-1087148522890227/8687318342",
-          "banner": "REPLACE_WITH_IOS_BANNER_UNIT"
+          "rewarded": "ca-app-pub-8522119154117548/1739705968",
+          "interstitial": "REPLACE_WITH_IOS_INTERSTITIAL_UNIT",
+          "banner": "REPLACE_WITH_IOS_BANNER_UNIT",
+          "native": "ca-app-pub-8522119154117548/5447996622"
         },
         "android": {
           "rewarded": "REPLACE_WITH_ANDROID_REWARDED_UNIT",
           "interstitial": "REPLACE_WITH_ANDROID_INTERSTITIAL_UNIT",
-          "banner": "REPLACE_WITH_ANDROID_BANNER_UNIT"
+          "banner": "REPLACE_WITH_ANDROID_BANNER_UNIT",
+          "native": "REPLACE_WITH_ANDROID_NATIVE_UNIT"
         }
       },
       "supabase": {
