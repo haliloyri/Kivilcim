@@ -5,6 +5,7 @@ import { getReadHistory } from '../db/db';
 import { t } from '../locales/i18n';
 import { ANALYTICS_EVENTS, trackEvent } from './analytics';
 import { upsertPushToken, removePushToken } from '../services/supabase';
+import { getNotificationAttachments, clearNotificationImageCache } from './notificationImages';
 
 export const WEEKLY_RECAP_NOTIFICATION_TYPE = 'weekly_recap';
 
@@ -59,14 +60,25 @@ const getReminderMinute = (windowKey, isWeekend = false) => {
   return REMINDER_WINDOW_MINUTES[windowKey] ?? REMINDER_WINDOW_MINUTES.evening;
 };
 
+// Albi thumbnail pose per notification type (iOS only, see notificationImages.js).
+const NOTIFICATION_POSE = { daily: 'okuma', streak: 'dark_mode', weekly: 'hedef_tamam' };
+
+// Adds the Albi image when one could be prepared; without it the notification
+// is scheduled exactly as before.
+const withAttachments = async (content, kind) => {
+  const attachments = await getNotificationAttachments(NOTIFICATION_POSE[kind]);
+  return attachments.length > 0 ? { ...content, attachments } : content;
+};
+
 /**
  * Schedule a single notification for each day in `days` array at the given hour/minute.
  * Returns a promise that resolves when all are scheduled.
  */
-const scheduleWeeklyForDays = async ({ days, hour, minute, content }) => {
+const scheduleWeeklyForDays = async ({ days, hour, minute, makeContent }) => {
   for (const weekday of days) {
     await Notifications.scheduleNotificationAsync({
-      content,
+      // Built per day: each notification needs its own image file copy.
+      content: await makeContent(),
       trigger: {
         type: 'weekly',
         weekday,
@@ -248,6 +260,7 @@ export async function scheduleDailyNotifications(options = 'tr') {
 
   // Clear existing scheduled notifications to avoid duplicates
   await Notifications.cancelAllScheduledNotificationsAsync();
+  clearNotificationImageCache();
 
   // Android requires a notification channel
   if (Platform.OS === 'android') {
@@ -261,12 +274,12 @@ export async function scheduleDailyNotifications(options = 'tr') {
 
   const planKey = getPlanNotificationKey(dailyStoryTarget);
 
-  const notifContent = (bodyText) => ({
+  const notifContent = (bodyText, kind) => withAttachments({
     title: t('brandText', lang),
     body: bodyText,
     sound: true,
     ...(Platform.OS === 'android' ? { channelId: 'default' } : {}),
-  });
+  }, kind);
 
   // Schedule weekday (Mon–Fri) and weekend (Sat–Sun) notifications per window
   for (const window of reminderWindows) {
@@ -279,14 +292,14 @@ export async function scheduleDailyNotifications(options = 'tr') {
       days: WEEKDAYS,
       hour: weekdayHour,
       minute: weekdayMinute,
-      content: notifContent(body),
+      makeContent: () => notifContent(body, 'daily'),
     });
 
     await scheduleWeeklyForDays({
       days: WEEKEND_DAYS,
       hour: weekendHour,
       minute: weekendMinute,
-      content: notifContent(body),
+      makeContent: () => notifContent(body, 'daily'),
     });
   }
 
@@ -300,20 +313,20 @@ export async function scheduleDailyNotifications(options = 'tr') {
       streak,
       daysSinceLastRead,
     });
-    const streakContent = notifContent(streakRiskBody);
+    const makeStreakContent = () => notifContent(streakRiskBody, 'streak');
 
     await scheduleWeeklyForDays({
       days: WEEKDAYS,
       hour: 22,
       minute: 30,
-      content: streakContent,
+      makeContent: makeStreakContent,
     });
 
     await scheduleWeeklyForDays({
       days: WEEKEND_DAYS,
       hour: 21,
       minute: 45,
-      content: streakContent,
+      makeContent: makeStreakContent,
     });
   }
 
@@ -321,13 +334,13 @@ export async function scheduleDailyNotifications(options = 'tr') {
   // look back on. Tapping it deep-links to İlerleme and opens the share card.
   if (totalReads > 0) {
     await Notifications.scheduleNotificationAsync({
-      content: {
+      content: await withAttachments({
         title: t('career.notif.weeklyTitle', lang),
         body: t('career.notif.weeklyBody', lang),
         sound: true,
         data: { type: WEEKLY_RECAP_NOTIFICATION_TYPE },
         ...(Platform.OS === 'android' ? { channelId: 'default' } : {}),
-      },
+      }, 'weekly'),
       trigger: { type: 'weekly', weekday: 1, hour: 18, minute: 30 },
     });
   }
