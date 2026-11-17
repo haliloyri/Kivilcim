@@ -18,6 +18,9 @@ const load = ({ live, dev, extra = EXTRA, purchases, regionCode = 'TR' }) => {
     jest.doMock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { extra }, executionEnvironment: 'bare' } }));
     jest.doMock('react-native', () => ({ Platform: { OS: 'ios', select: (o) => o.ios } }));
     jest.doMock('expo-localization', () => ({ getLocales: () => [{ regionCode }] }));
+    jest.doMock('@react-native-async-storage/async-storage', () => ({
+      __esModule: true, default: { getItem: async () => null, setItem: async () => {} },
+    }));
     jest.doMock('react-native-purchases', () => ({ __esModule: true, default: purchases || {} }));
     jest.doMock('react-native-google-mobile-ads', () => ({
       __esModule: true,
@@ -28,7 +31,7 @@ const load = ({ live, dev, extra = EXTRA, purchases, regionCode = 'TR' }) => {
     jest.doMock('../../utils/adsConsent', () => ({
       gatherAdsConsent: async () => ({ canRequestAds: true }), adRequestOptions: () => ({}), canRequestAds: () => true,
     }));
-    mods = { billing: require('../billing'), ads: require('../../utils/ads') };
+    mods = { billing: require('../billing'), ads: require('../../utils/ads'), grace: require('../../utils/installGrace') };
   });
   return mods;
 };
@@ -103,6 +106,26 @@ describe('ad units per build', () => {
   it('native ads are off in restricted regions', () => {
     const { ads } = load({ live: true, dev: false, regionCode: 'DE' });
     expect(ads.shouldShowAd({ isPremium: false, isOnboarded: true, kind: 'native' })).toBe(false);
+  });
+});
+
+describe('ad-free first days after install', () => {
+  const DAY = 24 * 60 * 60 * 1000;
+  const user = { isPremium: false, isOnboarded: true };
+
+  it('hides interstitial and native ads for 3 days but keeps the rewarded ad', () => {
+    const { ads, grace } = load({ live: false, dev: false });
+    grace.__setInstallAtForTests(Date.now() - DAY);
+    expect(ads.shouldShowAd({ ...user, kind: 'interstitial' })).toBe(false);
+    expect(ads.shouldShowAd({ ...user, kind: 'native' })).toBe(false);
+    expect(ads.shouldShowAd(user)).toBe(true);
+  });
+
+  it('shows interstitial and native ads once 3 days have passed', () => {
+    const { ads, grace } = load({ live: false, dev: false });
+    grace.__setInstallAtForTests(Date.now() - 3 * DAY - 1000);
+    expect(ads.shouldShowAd({ ...user, kind: 'interstitial' })).toBe(true);
+    expect(ads.shouldShowAd({ ...user, kind: 'native' })).toBe(true);
   });
 });
 

@@ -73,9 +73,15 @@ bir önceki ekranda yapılan iki seçimi tekrar ediyordu.
 `notification_permission_result`, `onboarding_first_story_shown`, `onboarding_time_budget_selected`,
 `onboarding_notification_time_selected`.
 
-**Premium teklifi:** Kurulum bitince değil, kullanıcı **ilk hikâyesini bitirip bir
-sekmeye döndüğünde** gösterilir (`early_trial` / `first_story_complete`); okuma
-ekranının üstüne hiç düşmez. Kurulumu atlayan kullanıcıya hiç gösterilmez.
+**Premium teklifi:** Kurulum bitince, kullanıcı ana sekmeye düştüğünde bir kez
+gösterilir (`early_trial` / `onboarding_complete`). Kurulumu atlayan kullanıcıya
+gösterilmez. Sonraki otomatik teklifler (`scheduled_offer`) yalnızca uygulama
+öğleden önce ya da 18:00'den sonra açıldığında ve son tekliften en az 3 gün sonra
+çıkar (`src/utils/paywallSchedule.js`). Premium kullanıcıya hiç çıkmaz.
+
+**Reklamsız dönem:** Kurulumdan sonraki ilk 3 gün hikâye arası tam ekran reklam ve
+akış içi reklam kartları gösterilmez (`src/utils/installGrace.js`). Kilitli içerikte
+"reklam izle ya da Premium" seçeneği bu sürede de çalışır.
 
 ---
 

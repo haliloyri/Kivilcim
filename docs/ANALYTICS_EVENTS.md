@@ -42,7 +42,7 @@ When: Paywall screen is opened.
 
 Payload:
 - reason: string (none | free_limit_reached | early_trial | storyteller_mode | one_minute_summary | image_card | profile_upgrade | streak_freeze)
-- source: string (direct | onboarding_complete | profile_upsell | use_in_conversation | story_detail_one_minute_summary | story_detail_card | progress_streak_freeze | home_featured_story_locked | home_daily_panel_locked | home_feed_teaser | home_feed_locked | home_for_you_locked | home_first_session_locked | home_primary_action_locked | home_module_card_locked | search_locked | career_toolkit_locked | story_detail_next)
+- source: string (direct | onboarding_complete | scheduled_offer | profile_upsell | use_in_conversation | story_detail_one_minute_summary | story_detail_card | progress_streak_freeze | home_featured_story_locked | home_daily_panel_locked | home_feed_teaser | home_feed_locked | home_for_you_locked | home_first_session_locked | home_primary_action_locked | home_module_card_locked | search_locked | career_toolkit_locked | story_detail_next)
 - selectedPlan: string
 - selectedPlanId: string (monthly | yearly)
 - lang: string
@@ -56,7 +56,7 @@ Payload:
 - selectedPlan: string
 - selectedPlanId: string (monthly | yearly)
 - selectedPrice: string
-- source: string (for example direct | onboarding_complete | profile_upsell | use_in_conversation | home_feed_locked)
+- source: string (for example direct | onboarding_complete | scheduled_offer | profile_upsell | use_in_conversation | home_feed_locked)
 - reason: string (none | free_limit_reached | early_trial | storyteller_mode | image_card | profile_upgrade | streak_freeze)
 - lang: string
 
@@ -67,7 +67,7 @@ Payload:
 - selectedPlan: string
 - selectedPlanId: string (monthly | yearly)
 - selectedPrice: string
-- source: string (for example direct | onboarding_complete | profile_upsell | use_in_conversation | home_feed_locked)
+- source: string (for example direct | onboarding_complete | scheduled_offer | profile_upsell | use_in_conversation | home_feed_locked)
 - reason: string (none | free_limit_reached | early_trial | storyteller_mode | image_card | profile_upgrade | streak_freeze)
 - lang: string
 
@@ -86,7 +86,7 @@ Payload:
 - period_type: string (NORMAL | TRIAL | INTRO)
 - is_trial_conversion: boolean
 - expires_at: string | null (null when non-expiring)
-- source: string (for example direct | onboarding_complete | profile_upsell | use_in_conversation | home_feed_locked)
+- source: string (for example direct | onboarding_complete | scheduled_offer | profile_upsell | use_in_conversation | home_feed_locked)
 - reason: string (none | free_limit_reached | early_trial | storyteller_mode | image_card | profile_upgrade | streak_freeze)
 - lang: string
 
@@ -115,7 +115,7 @@ Payload:
 - selectedPlan: string
 - selectedPlanId: string (monthly | yearly)
 - selectedPrice: string
-- source: string (for example direct | onboarding_complete | profile_upsell | use_in_conversation | home_feed_locked)
+- source: string (for example direct | onboarding_complete | scheduled_offer | profile_upsell | use_in_conversation | home_feed_locked)
 - reason: string (none | free_limit_reached | early_trial | storyteller_mode | image_card | profile_upgrade | streak_freeze)
 - lang: string
 - failureReason: string

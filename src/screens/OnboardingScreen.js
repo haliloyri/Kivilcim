@@ -203,11 +203,11 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const handleFinish = async () => {
-    // Arm the trial offer before completing onboarding.
+    // Arm the Premium offer before completing onboarding.
     //
     // It can't be pushed from here: `saveOnboarding` flips `isOnboarded`, which
     // swaps the navigator's screen set and unmounts this component. AppNavigator
-    // picks the flag up once the reader has finished their first story.
+    // picks the flag up as soon as the reader lands on a tab.
     await AsyncStorage.setItem(PENDING_ONBOARDING_PAYWALL_KEY, 'true').catch(() => {});
     await updateUserProfile({ displayName: name.trim() || null });
     // Mark the profile prompt seen BEFORE saveOnboarding: that call flips

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Platform, Modal, View, Text, Pressable, TouchableOpacity, StyleSheet, Animated, Easing, Image } from 'react-native';
+import { Platform, Modal, View, Text, Pressable, TouchableOpacity, StyleSheet, Animated, Easing, Image, AppState } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Haptics from 'expo-haptics';
 import { createAudioPlayer, setAudioModeAsync } from 'expo-audio';
@@ -301,6 +301,8 @@ function MainTabs() {
 
 import LaunchScreen from '../screens/LaunchScreen';
 import { PENDING_ONBOARDING_PAYWALL_KEY } from '../screens/OnboardingScreen';
+import { LAST_OFFER_KEY, shouldOfferPaywall } from '../utils/paywallSchedule';
+import { getInstallAt } from '../utils/installGrace';
 
 export default function AppNavigator() {
   const {
@@ -346,25 +348,18 @@ export default function AppNavigator() {
     return () => setBadgePresentationBlocked('badge_share_sheet', false);
   }, [shareSheetBadge, setBadgePresentationBlocked]);
 
-  // First-story trial offer.
-  //
-  // The highest-intent moment is not the end of setup — it is the moment the
-  // reader has just finished a story and liked it. Offering before that asks
-  // someone to pay for something they have not experienced, which is also why
-  // `skip` never arms this flag.
+  // Post-onboarding Premium offer.
   //
   // OnboardingScreen arms a flag rather than navigating, because completing
-  // onboarding swaps the navigator's screen set out from under it. We wait for
-  // two conditions: the first completed read (`totalReads`, written by
-  // addToHistory at the end of the story), and the reader being back on a tab —
-  // so the offer never covers the end of the story they are still reading.
+  // onboarding swaps the navigator's screen set out from under it. Once the
+  // reader lands on a tab, the offer opens. `skip` never arms this flag.
   //
-  // Fires once per install and only for a non-premium reader.
+  // Fires once per install and only for a non-premium reader. It also starts
+  // the gap before the next scheduled offer (see utils/paywallSchedule.js).
   const onboardingPaywallHandledRef = useRef(false);
   useEffect(() => {
     if (!isOnboarded || !isNavigationReady || isLoadingUserData) return;
     if (onboardingPaywallHandledRef.current) return;
-    if (totalReads < 1) return;
     if (!TAB_ROUTE_NAMES.includes(activeRouteName)) return;
 
     let cancelled = false;
@@ -382,14 +377,50 @@ export default function AppNavigator() {
       await AsyncStorage.removeItem(PENDING_ONBOARDING_PAYWALL_KEY).catch(() => {});
 
       if (isPremium) return;
+      await AsyncStorage.setItem(LAST_OFFER_KEY, String(Date.now())).catch(() => {});
       appNavigationRef.current?.navigate('Paywall', {
         reason: 'early_trial',
-        source: 'first_story_complete',
+        source: 'onboarding_complete',
       });
     })();
 
     return () => { cancelled = true; };
-  }, [isOnboarded, isNavigationReady, isLoadingUserData, isPremium, totalReads, activeRouteName]);
+  }, [isOnboarded, isNavigationReady, isLoadingUserData, isPremium, activeRouteName]);
+
+  // Scheduled Premium offer: when the app is opened before noon or in the
+  // evening, at most once per OFFER_GAP_DAYS (utils/paywallSchedule.js). The
+  // post-onboarding offer above goes first and starts the gap.
+  const [foregroundTick, setForegroundTick] = useState(0);
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active') setForegroundTick((n) => n + 1);
+    });
+    return () => sub.remove();
+  }, []);
+
+  useEffect(() => {
+    if (!isOnboarded || !isNavigationReady || isLoadingUserData || isPremium) return;
+    if (!TAB_ROUTE_NAMES.includes(activeRouteName)) return;
+
+    let cancelled = false;
+    (async () => {
+      try {
+        if ((await AsyncStorage.getItem(PENDING_ONBOARDING_PAYWALL_KEY)) === 'true') return;
+        const storedLast = Number(await AsyncStorage.getItem(LAST_OFFER_KEY));
+        const lastOfferAt = Number.isFinite(storedLast) && storedLast > 0 ? storedLast : getInstallAt();
+        if (cancelled || !shouldOfferPaywall({ lastOfferAt, isPremium, isOnboarded })) return;
+        await AsyncStorage.setItem(LAST_OFFER_KEY, String(Date.now()));
+        appNavigationRef.current?.navigate('Paywall', {
+          reason: 'scheduled_offer',
+          source: 'scheduled_offer',
+        });
+      } catch (e) {
+        // Storage unavailable: skip the offer rather than risk repeating it.
+      }
+    })();
+
+    return () => { cancelled = true; };
+  }, [isOnboarded, isNavigationReady, isLoadingUserData, isPremium, activeRouteName, foregroundTick]);
 
   useEffect(() => {
     return () => {

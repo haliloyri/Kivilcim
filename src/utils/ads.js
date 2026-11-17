@@ -21,6 +21,7 @@ import Constants from 'expo-constants';
 import { isRestrictedRegion, resolveRewardedGate } from './adRegion';
 import { MONETIZATION_LIVE } from '../config/monetization';
 import { gatherAdsConsent, adRequestOptions, canRequestAds } from './adsConsent';
+import { isInAdGrace } from './installGrace';
 
 const ADMOB_CONFIG = Constants.expoConfig?.extra?.admob ?? {};
 
@@ -172,6 +173,9 @@ export const initAds = async () => {
 export const shouldShowAd = ({ isPremium, isOnboarded, kind = 'rewarded' }) => {
   if (isPremium) return false;
   if (!isOnboarded) return false;
+  // New installs get no in-page ads for their first days; the opt-in rewarded
+  // ad is not one of them.
+  if (kind !== 'rewarded' && isInAdGrace()) return false;
   const configured = {
     interstitial: INTERSTITIAL_CONFIGURED,
     native: NATIVE_CONFIGURED,

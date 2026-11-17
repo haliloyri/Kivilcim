@@ -10,6 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { setupNotificationHandler, registerAndSavePushToken, WEEKLY_RECAP_NOTIFICATION_TYPE } from './src/utils/notifications';
 import { ANALYTICS_EVENTS, trackEvent, initAnalytics, setAnalyticsContext } from './src/utils/analytics';
 import { initAds } from './src/utils/ads';
+import { initInstallGrace } from './src/utils/installGrace';
 import { getDeviceLang } from './src/utils/locale';
 
 setupNotificationHandler();
@@ -150,6 +151,7 @@ function Main() {
       await initDb();
       await seedData();
       await initUserDb();
+      await initInstallGrace();
       initAds().catch(e => console.warn('initAds error:', e?.message));
 
       // Online membership: reuse the device session or create an anonymous one.

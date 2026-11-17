@@ -16,6 +16,7 @@
 import { Platform } from 'react-native';
 import Constants from 'expo-constants';
 import { resolveRewardedGate } from './adRegion';
+import { isInAdGrace } from './installGrace';
 
 // react-native-google-mobile-ads is a native module — not available in Expo Go.
 // We provide no-op stubs so the app doesn't crash during development.
@@ -129,6 +130,7 @@ export const shouldShowAd = ({ isPremium, isOnboarded, kind }) => {
   if (isPremium) return false;
   if (!isOnboarded) return false;
   if (kind === 'native') return false; // no native AdMob module on web
+  if (kind === 'interstitial' && isInAdGrace()) return false;
   return true;
 };
 
