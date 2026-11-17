@@ -665,6 +665,14 @@ const PaywallScreen = ({ navigation, route }) => {
       textAlign: 'center',
       marginTop: 8,
     },
+    trialInfoText: {
+      fontFamily: 'Inter_500Medium',
+      fontSize: 12.5,
+      lineHeight: 18,
+      color: colors.primaryText,
+      textAlign: 'center',
+      marginTop: 8,
+    },
     disclosureText: {
       fontFamily: 'Inter_400Regular',
       fontSize: 11,
@@ -870,6 +878,9 @@ const PaywallScreen = ({ navigation, route }) => {
 
             {trialBadge && !purchaseConfirmed && (
               <Text style={styles.trialBadgeText}>{trialBadge}</Text>
+            )}
+            {!trialBadge && billingLive && !purchaseConfirmed && (
+              <Text style={styles.trialInfoText}>{t('paywallTrialAvailability', lang)}</Text>
             )}
           </View>
 
