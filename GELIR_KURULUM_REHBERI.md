@@ -10,7 +10,6 @@ Bu rehber kodda zaten yazılı olan RevenueCat + AdMob + PostHog entegrasyonunu 
 |---|---|---|
 | Aylık ürün ID | `monthly` | `app.json → extra.revenuecat.products.monthly` |
 | Yıllık ürün ID | `yearly` | `app.json → extra.revenuecat.products.yearly` |
-| Ömür boyu ürün ID | `lifetime` | `app.json → extra.revenuecat.products.lifetime` |
 | Entitlement ID | `Albor Pro` | `app.json → extra.revenuecat.entitlementId` |
 | Offering ID | `default` | `app.json → extra.revenuecat.offeringId` |
 
@@ -32,7 +31,7 @@ kapalı):
 | TR | ₺ mevcut seviye | ₺ |
 
 **Free trial: 7 gün** (`monthly` ve `yearly` için Introductory Offer → Free).
-`lifetime`'a deneme yok. Paywall kopyası (4 dilde) denemenin var olduğunu
+Paywall kopyası (4 dilde) denemenin var olduğunu
 varsayıyor — store'da tanımlamadan yayına çıkarsan bu kopya yanlış beyan olur.
 
 **Reklamlar AB'de kapalı.** `src/utils/adRegion.js` EEA + UK'de hiç reklam
@@ -59,10 +58,10 @@ Canlı ortamda App Store / Google Play satın alımları RevenueCat üzerinden y
    - Bir **Subscription Group** oluştur (ör. "Albor Subscriptions").
    - 2 Ürün ekle:
      - `monthly`: Aylık abonelik (auto-renewable).
-     - `yearly`: Yıllık abonelik (auto-renewable). Ayrıca `lifetime`: tek seferlik (non-consumable).
+     - `yearly`: Yıllık abonelik (auto-renewable).
 2. **Google Play Console:**
    - Uygulamanız → **Monetize** → **Subscriptions**.
-   - Aynı ürün ID'leri ile (`monthly`, `yearly`) abonelikleri ve `lifetime` in-app ürününü tanımla.
+   - Aynı ürün ID'leri ile (`monthly`, `yearly`) abonelikleri tanımla.
 
 ### Adım 1.3: RevenueCat Entitlement & Offering Yapılandırması
 1. RevenueCat Dashboard → **Entitlements** → **+ New entitlement**:
@@ -73,7 +72,7 @@ Canlı ortamda App Store / Google Play satın alımları RevenueCat üzerinden y
    - [ ] `yearly` (1 yıl)
 4. [ ] Her ürün için **fiyatları** ayarla. Apple'ın fiyat matrisinden bir baz fiyat seç; Apple diğer ülkelere otomatik bölgesel fiyat üretir (Madde 3'ün mağaza tarafı budur).
 5. [ ] Her ürüne yerelleştirilmiş ad/açıklama gir (tr/en/es/de).
-6. [ ] **Free trial:** `monthly` ve `yearly` için **Introductory Offer → Free, 7 gün** ekle (`lifetime`'a deneme yok).
+6. [ ] **Free trial:** `monthly` ve `yearly` için **Introductory Offer → Free, 7 gün** ekle.
 7. [ ] Ürünler "Ready to Submit" durumuna gelsin (ilk app review ile birlikte onaylanır).
 
 ## 2. Play Console — abonelikler (Android)
@@ -94,12 +93,11 @@ Canlı ortamda App Store / Google Play satın alımları RevenueCat üzerinden y
 2. [ ] **Project Settings → Apps**: iki uygulama ekle
    - [ ] Apple App Store app (App Store Connect shared secret / in-app purchase key'i iste).
    - [ ] Google Play app (Play service account JSON bağla).
-3. [ ] **Products**: `monthly`, `yearly` ve `lifetime`'ı her iki platformdan import et.
-4. [ ] **Entitlements**: `Albor Pro` adında entitlement oluştur → üç ürünü de ona bağla.
-5. [ ] **Offerings**: `default` adında offering oluştur → içine 3 **package** ekle:
+3. [ ] **Products**: `monthly` ve `yearly`'yi her iki platformdan import et.
+4. [ ] **Entitlements**: `Albor Pro` adında entitlement oluştur → iki ürünü de ona bağla.
+5. [ ] **Offerings**: `default` adında offering oluştur → içine 2 **package** ekle:
    - [ ] Monthly package → `monthly`
    - [ ] Annual package → `yearly`
-   - [ ] Lifetime package → `lifetime`
 6. [ ] **API Keys → Public SDK keys**: iOS anahtarı `appl_...`, Android anahtarı `goog_...` ile başlar. Bunları kopyala.
 7. [ ] `app.json` içine yapıştır:
    ```json
@@ -108,7 +106,7 @@ Canlı ortamda App Store / Google Play satın alımları RevenueCat üzerinden y
      "androidApiKey": "goog_XXXXXXXXXXXXXXXX",
      "entitlementId": "Albor Pro",
      "offeringId": "default",
-     "products": { "monthly": "monthly", "yearly": "yearly", "lifetime": "lifetime" }
+     "products": { "monthly": "monthly", "yearly": "yearly" }
    }
    ```
    > Gerçek anahtar girilince `BILLING_LIVE` otomatik `true` olur; paywall canlı yerel fiyatları (`priceString`) gösterir.

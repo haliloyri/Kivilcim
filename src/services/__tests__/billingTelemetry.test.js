@@ -83,11 +83,11 @@ describe('entitlementSnapshot', () => {
     expect(snapshot.isTrial).toBe(false);
   });
 
-  // A lifetime purchase has no expiry — treating a missing date as "expired"
-  // would revoke Premium from someone who paid once.
+  // A non-expiring entitlement has no expiry — treating a missing date as
+  // "expired" would revoke Premium from someone who paid for it.
   it('carries a null expiry for a non-expiring entitlement', () => {
     const snapshot = entitlementSnapshot(customerInfo({
-      productIdentifier: 'lifetime',
+      productIdentifier: 'non_expiring',
       periodType: 'NORMAL',
     }));
     expect(snapshot.active).toBe(true);

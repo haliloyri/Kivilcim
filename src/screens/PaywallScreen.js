@@ -64,10 +64,6 @@ const PLAN_SPECS = {
     popular: true,
     badgeKey: 'paywallAnnualBestValue',
   },
-  lifetime: {
-    nameKey: 'planLifetime',
-    perKey: 'perLifetime',
-  },
 };
 
 const FEATURES = [
@@ -186,7 +182,7 @@ const PaywallScreen = ({ navigation, route }) => {
 
   // Only render plans the store actually offers. Before the offering loads (or
   // when billing isn't connected) show monthly + yearly as priceless shells so
-  // the layout doesn't jump; `lifetime` appears only once it's really there.
+  // the layout doesn't jump.
   const plans = React.useMemo(() => {
     const available = livePackages
       ? PLAN_ORDER.filter((id) => livePackages[id])
@@ -244,8 +240,8 @@ const PaywallScreen = ({ navigation, route }) => {
 
   // The offer right after the first finished story leads with the free trial
   // instead of "unlock Premium": that reader has seen one story, and the ask is
-  // 7 free days, not a purchase. Only when a trial really applies — `lifetime`
-  // is a one-off and an unreachable store has no trial to promise.
+  // 7 free days, not a purchase. Only when a trial really applies — an
+  // unreachable store has no trial to promise.
   const heroTitleKey = isEarlyTrial && showsTrial ? 'paywallEarlyTrialTrialTitle' : paywallVariant.titleKey;
   const heroSubKey = isEarlyTrial && showsTrial ? 'paywallEarlyTrialTrialSub' : paywallVariant.subKey;
 

@@ -37,11 +37,10 @@ both stores and in RevenueCat:
 | Offering ID | `default` |
 | Monthly product ID | `monthly` |
 | Yearly product ID | `yearly` |
-| Lifetime product ID | `lifetime` |
 
 `src/services/billing.js` maps store products onto the plan keys
-`monthly` / `yearly` / `lifetime`, and falls back to RevenueCat's standard
-package types (`offering.monthly` / `offering.annual` / `offering.lifetime`) if a
+`monthly` / `yearly`, and falls back to RevenueCat's standard
+package types (`offering.monthly` / `offering.annual`) if a
 product ID doesn't match.
 
 ## Pricing — set it per market, by hand
@@ -62,14 +61,13 @@ Set country prices manually, with auto-convert **off**:
 | TR | current ₺ level | ₺ | Local purchasing power |
 
 Yearly is the headline plan (59–66% of Education subscribers pick annual);
-monthly is the anchor; `lifetime` is a third, higher anchor.
+monthly is the anchor.
 
 ## Free trial
 
 **7 days**, as an Introductory Offer → Free on every auto-renewing product.
 Half of Education apps use a 5–9 day trial, and the hard-paywall conversion peak
-sits at the 7-day expiry. `lifetime` gets no trial — the paywall hides the trial
-badge when it's selected.
+sits at the 7-day expiry.
 
 The paywall copy already assumes the trial exists (`paywallTrialSub`,
 `paywallTrialBadge`, `paywallTrialNote` in all four languages). If you ship
@@ -81,9 +79,8 @@ without configuring it in the stores, that copy becomes a false claim.
 1. Agreements, Tax, and Banking → sign the **Paid Applications** agreement.
 2. Create a **Subscription Group** (e.g. "Albor Premium") with two
    **auto-renewable subscriptions**: `monthly` (1 month) and `yearly` (1 year).
-3. Create `lifetime` as a **non-consumable** in-app purchase.
-4. Set prices per country from the table above (auto-convert off).
-5. Add an **Introductory Offer → Free, 7 days** to `monthly` and `yearly`.
+3. Set prices per country from the table above (auto-convert off).
+4. Add an **Introductory Offer → Free, 7 days** to `monthly` and `yearly`.
 6. Add localized display name + description for **tr / en / es / de**, and a
    review screenshot for each product.
 7. Note the **App-Specific Shared Secret** (for RevenueCat).
@@ -94,11 +91,10 @@ without configuring it in the stores, that copy becomes a false claim.
 1. Set up a **merchant account** (Payments profile).
 2. Monetize → Subscriptions → create `monthly` (monthly base plan) and `yearly`
    (yearly base plan), both auto-renewing.
-3. Monetize → In-app products → create `lifetime`.
-4. Set regional prices from the table above.
-5. Add a **free-trial offer (7 days)** to each subscription base plan.
-6. Activate everything.
-7. Create a service-account credential JSON and grant it Play Console access
+3. Set regional prices from the table above.
+4. Add a **free-trial offer (7 days)** to each subscription base plan.
+5. Activate everything.
+6. Create a service-account credential JSON and grant it Play Console access
    (for RevenueCat).
 
 ### 3. RevenueCat
@@ -106,10 +102,10 @@ without configuring it in the stores, that copy becomes a false claim.
    **Android app** (package `com.albor.app`).
 2. Paste the App Store shared secret and upload the Google service account JSON.
 3. Create the entitlement **`Albor Pro`**.
-4. Import `monthly`, `yearly`, `lifetime` from both stores and attach all three
+4. Import `monthly` and `yearly` from both stores and attach both
    to `Albor Pro`.
-5. Create an **Offering** named `default` with a Monthly, an Annual and a
-   Lifetime package.
+5. Create an **Offering** named `default` with a Monthly and an Annual
+   package.
 6. Copy the **public SDK keys** (`appl_…` for Apple, `goog_…` for Google).
 7. Point the RevenueCat **webhook** at
    `supabase/functions/revenuecat-webhook` so renewals, cancellations and
@@ -125,7 +121,7 @@ delete the `_comment` placeholder note:
   "androidApiKey": "goog_xxxxxxxxxxxxxxxx",
   "entitlementId": "Albor Pro",
   "offeringId": "default",
-  "products": { "monthly": "monthly", "yearly": "yearly", "lifetime": "lifetime" }
+  "products": { "monthly": "monthly", "yearly": "yearly" }
 }
 ```
 
@@ -141,13 +137,13 @@ RevenueCat needs native code; it will not work in Expo Go.
 - [ ] With a `test_…` key still in place: Subscribe shows the "purchases aren't
       available" alert, Premium stays **off**, and **no**
       `paywall_purchase_succeeded` event fires.
-- [ ] Sandbox purchase of monthly, yearly **and** lifetime unlocks Premium.
+- [ ] Sandbox purchase of monthly and yearly unlocks Premium.
 - [ ] `paywall_purchase_succeeded` carries a numeric `revenue`, an ISO
       `currency` and a `product_id`.
 - [ ] **Restore purchase** works on a fresh install / second device.
 - [ ] Paywall prices come from the store: DE shows `49,99 €`, ES `39,99 €`,
       US `$49.99`, TR `₺…`. No hardcoded currency anywhere.
-- [ ] The 7-day trial badge shows for monthly/yearly and **not** for lifetime.
+- [ ] The 7-day trial badge shows for monthly/yearly.
 - [ ] The auto-renew disclosure shows under the CTA, and Terms + Privacy links open.
 - [ ] Refunding the sandbox purchase removes Premium — via the customer-info
       listener while the app is open, and on next launch.

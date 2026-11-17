@@ -120,7 +120,6 @@ describe('free trial eligibility', () => {
     const trials = await billing.getTrialEligibility({
       monthly: pkg('monthly', week),
       yearly: pkg('yearly', week),
-      lifetime: pkg('lifetime', week),
     });
     expect(trials).toEqual({ monthly: { days: 7 } });
   });

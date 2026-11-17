@@ -65,7 +65,7 @@ export const PRODUCT_IDS = RC_CONFIG.products || {};
 // key (it matches app.json -> extra.revenuecat.products); `annual` is accepted
 // as an alias so older configs and RevenueCat's `offering.annual` package type
 // both keep resolving.
-export const PLAN_KEYS = ['monthly', 'yearly', 'lifetime'];
+export const PLAN_KEYS = ['monthly', 'yearly'];
 
 const productIdFor = (planKey) =>
   planKey === 'yearly'
@@ -131,7 +131,7 @@ export const entitlementSnapshot = (customerInfo) => {
   return {
     active: true,
     productId: ent.productIdentifier || null,
-    expiresAt: ent.expirationDate || null,   // null for lifetime / non-expiring
+    expiresAt: ent.expirationDate || null,   // null when non-expiring
     willRenew: !!ent.willRenew,
     periodType: ent.periodType || null,      // NORMAL | TRIAL | INTRO
     isTrial: ent.periodType === 'TRIAL',
@@ -158,7 +158,7 @@ export const revenueAttrs = (pkg) => {
 };
 
 // Returns the available packages for the active offering, mapped by plan key
-// ('monthly' / 'yearly' / 'lifetime') so the paywall can read live localized
+// ('monthly' / 'yearly') so the paywall can read live localized
 // prices. Returns null when billing isn't live or the offering is empty.
 export const getOfferingPackages = async () => {
   if (!(await initBilling())) return null;
@@ -180,7 +180,6 @@ export const getOfferingPackages = async () => {
     if (!byPlan.yearly && (offering.annual || offering.yearly)) {
       byPlan.yearly = offering.annual || offering.yearly;
     }
-    if (!byPlan.lifetime && offering.lifetime) byPlan.lifetime = offering.lifetime;
 
     return Object.keys(byPlan).length ? byPlan : null;
   } catch (e) {
@@ -199,7 +198,7 @@ export const getTrialEligibility = async (packagesByPlan) => {
   if (!packagesByPlan || !(await initBilling())) return {};
   const Purchases = getPurchases();
   const candidates = Object.entries(packagesByPlan).filter(([plan, pkg]) =>
-    plan !== 'lifetime' && pkg?.product?.introPrice && Number(pkg.product.introPrice.price) === 0);
+    pkg?.product?.introPrice && Number(pkg.product.introPrice.price) === 0);
   if (!candidates.length) return {};
 
   let eligibility = null;

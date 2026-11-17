@@ -188,8 +188,7 @@
         "offeringId": "default",
         "products": {
           "monthly": "monthly",
-          "yearly": "yearly",
-          "lifetime": "lifetime"
+          "yearly": "yearly"
         }
       },
       "admob": {
