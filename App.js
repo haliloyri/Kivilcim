@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Notifications from 'expo-notifications';
 import * as Linking from 'expo-linking';
-import { View } from 'react-native';
+import { LogBox, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -53,6 +53,9 @@ import { ensureDeviceSession, claimReferral, getCachedDeviceUserId } from './src
 import { migrateLocalToServer } from './src/services/migrateLocalToServer';
 import { initOfflineQueueFlush } from './src/services/offlineQueue';
 import { isOnline, onReconnect } from './src/services/connectivity';
+
+// Mağaza ekran görüntüsü çekiminde geliştirici uyarı kutuları karelere girmesin.
+if (process.env.EXPO_PUBLIC_STORE_SHOTS === '1') LogBox.ignoreAllLogs();
 
 // Share links (see src/utils/share.js) carry `?s={referrerDeviceId}&st={storyId}&l={lang}`.
 // A universal-link tap while the app is installed — or a custom `albor://`

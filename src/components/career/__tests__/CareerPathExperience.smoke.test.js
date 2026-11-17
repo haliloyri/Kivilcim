@@ -56,3 +56,23 @@ it('opens the title share card', async () => {
   expect(texts(tree)).toContain('Sıradaki Kâşif sen misin?');
   await act(async () => { await new Promise((resolve) => setTimeout(resolve, 300)); tree.unmount(); });
 });
+
+describe('store screenshot flag', () => {
+  const hasPreviewToggle = async () => {
+    mockCareer = buildCareerPreview('common_progress');
+    let tree; await act(async () => { tree = TestRenderer.create(<CareerPathExperience navigation={nav} />); });
+    const found = tree.root.findAll((n) => n.props.accessibilityLabel === 'Yolu önizle' && typeof n.props.onPress === 'function').length > 0;
+    await act(async () => { tree.unmount(); });
+    return found;
+  };
+  afterEach(() => { delete process.env.EXPO_PUBLIC_STORE_SHOTS; });
+
+  it('shows the dev preview toggle without the flag', async () => {
+    expect(await hasPreviewToggle()).toBe(true);
+  });
+
+  it('hides the dev preview toggle when EXPO_PUBLIC_STORE_SHOTS=1', async () => {
+    process.env.EXPO_PUBLIC_STORE_SHOTS = '1';
+    expect(await hasPreviewToggle()).toBe(false);
+  });
+});

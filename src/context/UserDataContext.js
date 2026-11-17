@@ -267,6 +267,8 @@ export const UserDataProvider = ({ children }) => {
   const [premiumBonusUntil, setPremiumBonusUntil] = useState(null);
 
   const isPremium = useMemo(() => {
+    // Mağaza ekran görüntüsü çekimi: reklam ve kilit görünmesin (yalnızca geliştirme derlemesi).
+    if (__DEV__ && process.env.EXPO_PUBLIC_STORE_SHOTS === '1') return true;
     if (hasPaidPremium) return true;
     return !!premiumBonusUntil && Date.now() < premiumBonusUntil;
   }, [hasPaidPremium, premiumBonusUntil]);

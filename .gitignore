@@ -66,3 +66,6 @@ staging/tagging/finetune/
 
 # fastlane kimlik bilgileri (Apple ID e-postası içerir)
 ios/fastlane/
+
+# App Store görsel üretimi ara dosyaları
+docs/app-store/build/

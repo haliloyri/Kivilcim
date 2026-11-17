@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Albor store strip</title>
+<!--
+  App Store panoramik şeridi: 7920×2868, 6 kare × 1320.
+  build.mjs bu sayfayı başsız Chrome ile ?lang=<dil> ile açar.
+  Veri: ../../docs/app-store/build/<dil>-data.js → window.STRIP = { tagline, frames, subs, shots, albi }.
+  Kural: metin, öne çıkan kart ve Albi kare sınırını geçmez; yalnızca cihaz, yol ve güneş geçer.
+  Başlıkta *yıldız arası* metin vurgulanır (italik + renk).
+-->
+<style>
+  @font-face { font-family: 'Playfair'; font-weight: 700; src: url('../../node_modules/@expo-google-fonts/playfair-display/700Bold/PlayfairDisplay_700Bold.ttf'); }
+  @font-face { font-family: 'Playfair'; font-weight: 700; font-style: italic; src: url('../../node_modules/@expo-google-fonts/playfair-display/700Bold_Italic/PlayfairDisplay_700Bold_Italic.ttf'); }
+  @font-face { font-family: 'Inter'; font-weight: 500; src: url('../../node_modules/@expo-google-fonts/inter/500Medium/Inter_500Medium.ttf'); }
+  @font-face { font-family: 'Inter'; font-weight: 600; src: url('../../node_modules/@expo-google-fonts/inter/600SemiBold/Inter_600SemiBold.ttf'); }
+  :root {
+    --paper: #F7F3EC; --petrol: #1B4B48; --dawn: #E9A94B; --ink: #24211E; --on-hero: #F5F1E8;
+    --frame: 1320px; --h: 2868px;
+    --screen-w: 960px; --screen-h: 2086px; --bezel: 16px;
+    --device-top: 800px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 7920px; height: var(--h); overflow: hidden; background: var(--paper); }
+  #strip { position: relative; width: 7920px; height: var(--h); }
+
+  .bg { position: absolute; top: 0; width: var(--frame); height: var(--h); background: var(--paper); }
+  .bg.hero { background: radial-gradient(120% 70% at 50% 62%, #245E5A 0%, var(--petrol) 70%); }
+
+  #deco { position: absolute; inset: 0; z-index: 1; }
+
+  .caption { position: absolute; top: 176px; z-index: 3; color: var(--ink); }
+  .caption .title {
+    font-family: 'Playfair', Georgia, serif; font-weight: 700;
+    font-size: 116px; line-height: 1.08; letter-spacing: -1px;
+    text-wrap: balance; overflow-wrap: normal; word-break: keep-all; hyphens: none;
+  }
+  .caption .title em { font-style: italic; color: var(--petrol); white-space: nowrap; }
+  .caption .sub {
+    margin-top: 30px; font-family: 'Inter', sans-serif; font-weight: 500;
+    font-size: 50px; line-height: 1.28; opacity: 0.74; text-wrap: balance;
+  }
+  .caption.hero { color: var(--on-hero); }
+  .caption.hero .title em { color: var(--dawn); }
+  .tagline {
+    position: absolute; top: 104px; z-index: 3;
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 34px; letter-spacing: 5px;
+    text-transform: uppercase; color: var(--dawn); white-space: nowrap;
+  }
+
+  .device {
+    position: absolute; top: var(--device-top); z-index: 2;
+    width: calc(var(--screen-w) + 2 * var(--bezel));
+    height: calc(var(--screen-h) + 2 * var(--bezel));
+    padding: var(--bezel); border-radius: 138px; background: var(--ink);
+    box-shadow: 0 50px 110px rgba(36, 33, 30, 0.30);
+  }
+  .device .screen { position: relative; width: var(--screen-w); height: var(--screen-h); border-radius: 122px; overflow: hidden; }
+  .device img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .device .dim { position: absolute; inset: 0; background: rgba(36, 33, 30, 0.30); }
+
+  /* Öne çıkan kart: ham çekimden kesilir, cihazın üstünde büyütülmüş durur. */
+  .pop {
+    position: absolute; z-index: 4; background-repeat: no-repeat;
+    box-shadow: 0 36px 80px rgba(36, 33, 30, 0.34), 0 0 0 1px rgba(36, 33, 30, 0.06);
+  }
+
+  .albi { position: absolute; z-index: 5; filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.30)); }
+</style>
+</head>
+<body>
+<div id="strip"></div>
+<script>
+  const FRAME = 1320, RAW_W = 1320, SCREEN_W = 960, BEZEL = 16, DEVICE_W = SCREEN_W + 2 * BEZEL, DEVICE_TOP = 800;
+  const K = SCREEN_W / RAW_W; // ham piksel → şerit pikseli
+  const SPILL = 180;
+  // Kare içi cihaz solu. 2 sağa, 5 sola taşar; ortadaki dört cihaz bitişik bir sıra olur.
+  const DEVICE_LEFT = [164, FRAME + SPILL - DEVICE_W, 250, 78, -SPILL, 164];
+  const HERO = [true, false, false, false, false, true];
+  // Öne çıkan kartlar. rect: ham çekimde [x, y, g, y]; scale: ham piksel çarpanı; left: kare içi sol (yoksa aslının üstünde ortalanır);
+  // dim: kart yana kaydığında arkadaki ekran karartılır.
+  const POPS = [
+    null,
+    { rect: [60, 536, 1200, 1124], scale: 0.8, left: 44, rot: -2, radius: 44, dim: true },
+    { rect: [62, 733, 1196, 782], scale: 0.88, rot: 2, radius: 42 },
+    { rect: [120, 946, 1080, 1078], scale: 0.84, rot: -3, radius: 34 },
+    { rect: [60, 456, 1200, 803], scale: 0.86, left: 236, rot: 2, radius: 74 },
+    null,
+  ];
+  // Albi: kare (0 tabanlı), poz dosyası, kare içi sol, üst, boyut.
+  const ALBI = [
+    [0, 'kota_doldu', 900, 2420, 400],
+    [1, 'okuma', 60, 2380, 440],
+    [4, 'hedef_tamam', 840, 2330, 470],
+    [5, 'bos_kutuphane', 0, 2340, 500],
+  ];
+  const NODE_Y = [716, 650, 716, 650, 716, 650];
+
+  const lang = new URLSearchParams(location.search).get('lang') || 'tr';
+  const s = document.createElement('script');
+  s.src = `../../docs/app-store/build/${lang}-data.js`;
+  s.onload = () => render(window.STRIP);
+  document.head.appendChild(s);
+
+  function el(tag, cls, parent) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    parent.appendChild(e);
+    return e;
+  }
+
+  function render({ tagline, frames, subs, shots, albi, rects }) {
+    const strip = document.getElementById('strip');
+
+    const tag = el('div', 'tagline check', strip);
+    tag.dataset.frame = '1';
+    tag.style.left = '96px';
+    tag.textContent = tagline;
+
+    for (let i = 0; i < 6; i++) {
+      const x = i * FRAME;
+      el('div', 'bg' + (HERO[i] ? ' hero' : ''), strip).style.left = x + 'px';
+
+      const cap = el('div', 'caption' + (HERO[i] ? ' hero' : ''), strip);
+      cap.dataset.frame = String(i + 1);
+      cap.style.left = x + 96 + 'px';
+      cap.style.width = FRAME - 192 + 'px';
+      const title = el('span', '', el('div', 'title', cap));
+      frames[i].split('*').forEach((part, n) => {
+        if (n % 2) el('em', '', title).textContent = part;
+        else title.appendChild(document.createTextNode(part));
+      });
+      el('span', '', el('div', 'sub', cap)).textContent = subs[i];
+
+      const devX = x + DEVICE_LEFT[i];
+      const dev = el('div', 'device', strip);
+      dev.style.left = devX + 'px';
+      const screen = el('div', 'screen', dev);
+      el('img', '', screen).src = shots[i];
+
+      const p = POPS[i];
+      if (!p) continue;
+      if (p.dim) el('div', 'dim', screen);
+      const [rx, ry, rw, rh] = rects[i + 1] || p.rect;
+      const w = rw * p.scale, h = rh * p.scale;
+      const cx = devX + BEZEL + (rx + rw / 2) * K;
+      const cy = DEVICE_TOP + BEZEL + (ry + rh / 2) * K;
+      const pop = el('div', 'pop check', strip);
+      pop.dataset.frame = String(i + 1);
+      pop.style.cssText += `left:${p.left != null ? x + p.left : cx - w / 2}px;top:${cy - h / 2}px;width:${w}px;height:${h}px;`
+        + `border-radius:${p.radius}px;transform:rotate(${p.rot}deg);`
+        + `background-image:url("${shots[i]}");background-size:${RAW_W * p.scale}px auto;`
+        + `background-position:${-rx * p.scale}px ${-ry * p.scale}px;`;
+    }
+
+    for (const [f, pose, left, top, size] of ALBI) {
+      const a = el('img', 'albi check', strip);
+      a.dataset.frame = String(f + 1);
+      a.src = `${albi}/${pose}.png`;
+      a.style.cssText += `left:${f * FRAME + left}px;top:${top}px;width:${size}px;height:${size}px;`;
+    }
+
+    // Güneş kare 1|2 sınırında doğar. Altın yol şeridi baştan sona kat eder; her cihazın üstünde numaralı bir durak vardır.
+    const nodes = DEVICE_LEFT.map((l, i) => [i * FRAME + l + DEVICE_W / 2, NODE_Y[i]]);
+    const pts = [[-60, 680], ...nodes, [7980, 700]];
+    let d = `M${pts[0][0]},${pts[0][1]}`;
+    for (let i = 1; i < pts.length; i++) {
+      const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], m = (x1 - x0) / 2;
+      d += ` C${x0 + m},${y0} ${x1 - m},${y1} ${x1},${y1}`;
+    }
+    const stops = nodes.map(([nx, ny], i) => `
+      <circle cx="${nx}" cy="${ny}" r="52" fill="${HERO[i] ? '#1B4B48' : '#F7F3EC'}"/>
+      <circle cx="${nx}" cy="${ny}" r="40" fill="#E9A94B"/>
+      <text x="${nx}" y="${ny + 13}" text-anchor="middle" font-family="Inter" font-weight="600" font-size="36" fill="#24211E">${i + 1}</text>`).join('');
+    strip.insertAdjacentHTML('beforeend', `
+      <svg id="deco" width="7920" height="2868" viewBox="0 0 7920 2868" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="3960" cy="2000" r="860" fill="#E9A94B" opacity="0.10"/>
+        <circle cx="1320" cy="1090" r="440" fill="#E9A94B" opacity="0.13"/>
+        <circle cx="1320" cy="1090" r="345" fill="none" stroke="#E9A94B" stroke-width="6" opacity="0.5"/>
+        <circle cx="1320" cy="1090" r="250" fill="#E9A94B"/>
+        <path d="${d}" fill="none" stroke="#E9A94B" stroke-width="44" stroke-linecap="round" opacity="0.22"/>
+        <path d="${d}" fill="none" stroke="#E9A94B" stroke-width="14" stroke-linecap="round"/>
+        ${stops}
+      </svg>`);
+
+    document.fonts.ready.then(() => {
+      // Taşma denetimi: başlık ya da alt başlık 2 satırı aşıyorsa, ya da metin / kart / Albi kare sınırını geçiyorsa build.mjs durur.
+      // Satır sayısı span'in satır kutularından sayılır (Playfair glifleri satır yüksekliğini aştığı için scrollHeight güvenilmez).
+      const lines = (span) => new Set([...span.getClientRects()].map((r) => Math.round(r.top))).size;
+      const crosses = (p) => {
+        const r = p.getBoundingClientRect(), x0 = (p.dataset.frame - 1) * FRAME;
+        return r.left < x0 || r.right > x0 + FRAME;
+      };
+      const bad = [
+        ...[...document.querySelectorAll('.caption')].filter((c) => [...c.querySelectorAll(':scope > div > span')].some((sp) => lines(sp) > 2) || c.scrollWidth > c.clientWidth + 1),
+        ...[...document.querySelectorAll('.check')].filter(crosses),
+      ].map((c) => c.dataset.frame);
+      document.body.dataset.overflow = [...new Set(bad)].join(',');
+      document.body.dataset.ready = '1';
+    });
+  }
+</script>
+</body>
+</html>

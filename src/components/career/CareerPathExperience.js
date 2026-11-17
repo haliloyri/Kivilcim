@@ -49,7 +49,11 @@ const nodeProgress = (node) => {
   return rows.reduce((sum, row) => sum + Math.min(1, row.target > 0 ? row.current / row.target : 1), 0) / rows.length;
 };
 
+// Mağaza ekran görüntüsü çekiminde geliştirici önizleme kontrolü gizlenir (EXPO_PUBLIC_STORE_SHOTS=1).
+const showCareerPreview = () => __DEV__ && process.env.EXPO_PUBLIC_STORE_SHOTS !== '1';
+
 const CareerPathExperience = ({ navigation, route }) => {
+  const canPreview = showCareerPreview();
   const { colors, layout, isDark, lang } = useTheme();
   const { userProfile, todayReadsCount, streak, totalReads, longestStreak, isPremium, streakFreezeCredits, streakFreezeDates, useStreakFreeze, setBadgePresentationBlocked } = useUserData();
   const { stories } = useStories();
@@ -68,7 +72,7 @@ const CareerPathExperience = ({ navigation, route }) => {
   const conditionsTitleRef = useRef(null);
   const hasTrackedView = useRef(false);
   const hasTrackedExposure = useRef(false);
-  const previewCareer = __DEV__ ? buildCareerPreview(previewScenarioId) : null;
+  const previewCareer = canPreview ? buildCareerPreview(previewScenarioId) : null;
   const isPreviewing = Boolean(previewCareer);
   const nativeAdsOn = useNativeAdsEnabled();
   const career = previewCareer || persistedCareer;
@@ -439,7 +443,7 @@ const CareerPathExperience = ({ navigation, route }) => {
         subtitle={t('career.subtitle', lang)}
         right={(
           <View style={styles.headerActions}>
-        {__DEV__ ? <TouchableOpacity accessibilityRole="button" accessibilityState={{ expanded: showPreviewControls }} accessibilityLabel={t('career.preview.toggle', lang)} onPress={() => setShowPreviewControls((visible) => !visible)} style={[styles.iconButton, card, (showPreviewControls || isPreviewing) && { backgroundColor: colors.primaryContainer || `${colors.primary}18`, borderColor: colors.primary }]}><Ionicons name="eye-outline" size={20} color={colors.primaryText || colors.primary} /></TouchableOpacity> : null}
+        {canPreview ? <TouchableOpacity accessibilityRole="button" accessibilityState={{ expanded: showPreviewControls }} accessibilityLabel={t('career.preview.toggle', lang)} onPress={() => setShowPreviewControls((visible) => !visible)} style={[styles.iconButton, card, (showPreviewControls || isPreviewing) && { backgroundColor: colors.primaryContainer || `${colors.primary}18`, borderColor: colors.primary }]}><Ionicons name="eye-outline" size={20} color={colors.primaryText || colors.primary} /></TouchableOpacity> : null}
         <View accessible accessibilityLabel={`${streak || 0} ${t('streakDays', lang)}`} style={[styles.streakPill, card]}>
           <Ionicons name="flame" size={16} color={colors.reward || colors.primary} />
           <Text style={[styles.streakText, { color: colors.rewardText || colors.text }]}>{String(streak || 0)}</Text>
@@ -448,7 +452,7 @@ const CareerPathExperience = ({ navigation, route }) => {
         )}
       />
 
-      {__DEV__ && showPreviewControls ? <View style={[styles.previewPanel, { borderColor: `${colors.primary}66`, backgroundColor: `${colors.primary}10` }]}>
+      {canPreview && showPreviewControls ? <View style={[styles.previewPanel, { borderColor: `${colors.primary}66`, backgroundColor: `${colors.primary}10` }]}>
         <View><Text selectable style={[styles.previewTitle, { color: colors.text }]}>{t('career.preview.toggle', lang)}</Text><Text selectable style={[styles.previewCopy, { color: colors.textSecondary }]}>{t(isPreviewing ? 'career.preview.activeNotice' : 'career.preview.copy', lang)}</Text></View>
         <View style={styles.previewChoices}>
           {CAREER_PREVIEW_SCENARIOS.map((scenario) => <TouchableOpacity key={scenario.id} accessibilityRole="button" accessibilityState={{ selected: previewScenarioId === scenario.id }} accessibilityLabel={t(scenario.labelKey, lang)} onPress={() => { setPreviewScenarioId(scenario.id); setShowConditions(false); setShowPathChoices(false); setSelectedNode(null); }} style={[styles.previewChoice, { borderColor: previewScenarioId === scenario.id ? colors.primary : colors.border, backgroundColor: previewScenarioId === scenario.id ? `${colors.primary}18` : colors.background }]}><Text selectable style={[styles.previewChoiceText, { color: previewScenarioId === scenario.id ? colors.primary : colors.text }]}>{t(scenario.labelKey, lang)}</Text></TouchableOpacity>)}
